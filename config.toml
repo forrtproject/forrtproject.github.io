@@ -6,7 +6,6 @@
 
 # Title of your site
 title = "FORRT"
-publishDir = "docs"
 # The URL of your site.
 # End your URL with a `/` trailing slash, e.g. `https://example.com/`.
 baseurl = "/"
