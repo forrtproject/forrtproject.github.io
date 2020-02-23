@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Categories | FORRT</title>
+    <link>https://forrtproject.github.io/forrt/categories/</link>
+      <atom:link href="https://forrtproject.github.io/forrt/categories/index.xml" rel="self" type="application/rss+xml" />
+    <description>Categories</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>Except where otherwise noted, content on this site is licensed under a [Creative Commons Attribution 4.0 International license](https://creativecommons.org/licenses/by/4.0/).
+</copyright><lastBuildDate>Wed, 20 Apr 2016 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>img/map[gravatar:%!s(bool=false) shape:square]</url>
+      <title>Categories</title>
+      <link>https://forrtproject.github.io/forrt/categories/</link>
+    </image>
+    
+    <item>
+      <title>Demo</title>
+      <link>https://forrtproject.github.io/forrt/categories/demo/</link>
+      <pubDate>Wed, 20 Apr 2016 00:00:00 +0000</pubDate>
+      <guid>https://forrtproject.github.io/forrt/categories/demo/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>R</title>
+      <link>https://forrtproject.github.io/forrt/categories/r/</link>
+      <pubDate>Thu, 23 Jul 2015 21:13:14 -0500</pubDate>
+      <guid>https://forrtproject.github.io/forrt/categories/r/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

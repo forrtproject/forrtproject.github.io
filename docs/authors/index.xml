@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Authors | FORRT</title>
+    <link>https://forrtproject.github.io/forrt/authors/</link>
+      <atom:link href="https://forrtproject.github.io/forrt/authors/index.xml" rel="self" type="application/rss+xml" />
+    <description>Authors</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>Except where otherwise noted, content on this site is licensed under a [Creative Commons Attribution 4.0 International license](https://creativecommons.org/licenses/by/4.0/).
+</copyright><lastBuildDate>Sat, 25 Jan 2020 14:53:38 -0500</lastBuildDate>
+    <image>
+      <url>img/map[gravatar:%!s(bool=false) shape:square]</url>
+      <title>Authors</title>
+      <link>https://forrtproject.github.io/forrt/authors/</link>
+    </image>
+    
+    <item>
+      <title></title>
+      <link>https://forrtproject.github.io/forrt/authors/flavio-azevedo/</link>
+      <pubDate>Sat, 25 Jan 2020 14:53:38 -0500</pubDate>
+      <guid>https://forrtproject.github.io/forrt/authors/flavio-azevedo/</guid>
+      <description>&lt;p&gt;Flavio Azevedo, a Fulbright fellow, is currently working as a research associate at the Institute for Communication Science (IfKW) at Friedrich Schiller University Jena, Germany. Recently, Flavio was named as one of the 100 most influential early career Portuguese via the “Global Shapers” initiative by the World Economic Forum.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://forrtproject.github.io/forrt/authors/forrt/</link>
+      <pubDate>Sat, 25 Jan 2020 14:53:38 -0500</pubDate>
+      <guid>https://forrtproject.github.io/forrt/authors/forrt/</guid>
+      <description>&lt;hr&gt;
+&lt;p&gt;Current norms for the teaching and mentoring of higher-education are rooted in obsolete practices of bygone eras. Improving transparency and rigor of science is the responsibility of all who engage in it, but ongoing attempts have neglected an essential aspect of the academic machinery: students. FORRT, a Framework for Open and Reproducible Research Training, is introduced to raise awareness of the pedagogical implications of Open Science and its associated challenges (curricular reform, epistemological uncertainty, methods education, openness and social justice). Aimed at the training of researchers and consumers of science, FORRT is an effective, evolving, and community-driven framework toward the incremental adoption of principled teaching and mentoring practices, and supporting instructors by collating existing teaching pedagogies and materials to be reused and adapted for use within new and existing courses.&lt;/p&gt;
+&lt;p&gt;With FORRT, educators in higher-education have an unprecedented opportunity to shape the minds and future of the consumers of science and the next generation of academics. At its best, FORRT should be the answer to the question &lt;em&gt;&lt;strong&gt;“what are the best conceivable educational practices in higher education and how to achieve it?”&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>admin</title>
+      <link>https://forrtproject.github.io/forrt/authors/admin/</link>
+      <pubDate>Sun, 07 Apr 2019 00:00:00 +0000</pubDate>
+      <guid>https://forrtproject.github.io/forrt/authors/admin/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Robert Ford</title>
+      <link>https://forrtproject.github.io/forrt/authors/robert-ford/</link>
+      <pubDate>Tue, 01 Sep 2015 00:00:00 +0000</pubDate>
+      <guid>https://forrtproject.github.io/forrt/authors/robert-ford/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>
