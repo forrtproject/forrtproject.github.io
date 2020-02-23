@@ -1,0 +1,18 @@
+# Theme metadata
+name = "forrt"
+
+# Is theme light or dark?
+light = true
+
+# Primary
+primary = "#69b3a2"
+
+# Menu
+menu_primary = "#222"
+menu_text = "#fefdf6"
+menu_text_active = "#b8336a"
+#menu_title = "#888"
+menu_title = "#69b3a2"
+# Home sections
+home_section_odd = "rgb(255, 255, 255)"
+home_section_even = "rgb(247, 247, 247)"
