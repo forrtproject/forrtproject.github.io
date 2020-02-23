@@ -1,0 +1,46 @@
+{{ $ := .root }}
+{{ $page := .page }}
+
+<div class="row featurette">
+  {{ with $page.Title }}
+  <div class="col-md-12 section-heading">
+    <h1>{{ . | markdownify | emojify }}</h1>
+    {{ if $page.Params.subtitle }}<p>{{ $page.Params.subtitle | markdownify | emojify }}</p>{{ end }}
+  </div>
+  {{ end }}
+  {{ with $page.Content }}
+  <div class="col-md-12">
+    {{ . }}
+  </div>
+  {{ end }}
+</div>
+{{ range $page.Params.featurealt }}
+  {{ $pack := or .icon_pack "fas" }}
+  {{ $pack_prefix := $pack }}
+  {{ if in (slice "fab" "fas" "far" "fal") $pack }}
+    {{ $pack_prefix = "fa" }}
+  {{ end }}
+<div class="row py-3">
+  {{ if eq .imgside "left" }}
+      <div class="col-sm-4 align-self-center">
+      {{ with .buttonurl }}<a href="{{ . }}">{{end}}{{ with .img }}<img class="rounded mx-auto d-block mt-4 mb-4 w-50" src="img/{{ . }}">{{end}} {{if .buttonurl}} </a> {{end}}
+      </div>
+        <div class="col-sm-8 align-self-center">
+        <h3>{{ .name | markdownify | emojify }}</h3>
+        {{ with .description }}<p>{{ . | markdownify | emojify }}</p>{{ end }}
+        {{ with .buttonurl }}<a href="{{ . }}" class="btn btn-menu btn-outline-primary">{{end}}{{ with .buttondescr }}{{ . | markdownify | emojify }}{{end}} <i class="fa fa-angle-right"></i></a>
+      </div>
+  {{ end }}
+  {{ if eq .imgside "right" }}
+      <div class="col-sm-8 align-self-center">
+        <h3>{{ .name | markdownify | emojify }}</h3>
+        {{ with .description }}<p>{{ . | markdownify | emojify }}</p>{{ end }}
+        {{ with .buttonurl }}<a href="{{ . }}" class="btn btn-menu btn-outline-primary">{{end}}{{ with .buttondescr }}{{ . | markdownify | emojify }}{{end}} <i class="fa fa-angle-right"></i></a>
+      </div>
+      <div class="col-sm-4 align-self-center">
+      {{ with .buttonurl }}<a href="{{ . }}">{{end}}{{ with .img }}<img class="rounded mx-auto d-block mt-4 mb-4 w-50" src="img/{{ . }}">{{end}} {{if .buttonurl}} </a> {{end}}
+      </div>
+{{ end }}
+</div>  
+{{ end }}
+  
