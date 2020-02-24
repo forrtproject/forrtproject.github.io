@@ -13,7 +13,7 @@ subtitle = "Subscribe to our newsletter, get the latest news from FORRT and abou
 
 [design]
   # Choose how many columns the section has. Valid values: 1 or 2.
-  columns = "1"
+  columns = "2"
 
 [design.background]
   # Apply a background color, gradient, or image.
@@ -49,6 +49,5 @@ subtitle = "Subscribe to our newsletter, get the latest news from FORRT and abou
  # CSS class.
  css_class = ""
 +++
-
 <div id="form" class=""><form netlify id="" method="post"><div class="col-lg-8" style="padding-top:15px"><div class="input-group"><label class="sr-only" for="inlineFormEmail">Email</label>
 <input name="email" type="email" class="form-control" id="inlineFormEmail" placeholder="Email"><div class="input-group-append"><button class="btn btn-outline-primary" type="submit">Subscribe</button></div></div></div></form></div>

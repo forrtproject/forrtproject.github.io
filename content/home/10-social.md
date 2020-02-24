@@ -6,14 +6,14 @@
 widget = "blank"  # See https://sourcethemes.com/academic/docs/page-builder/
 headless = true  # This file represents a page section.
 active = true  # Activate this widget? true/false
-weight = 20  # Order that this section will appear.
+weight = 100  # Order that this section will appear.
 
-title = "**Welcome to FORRT**<br><br>"
-subtitle = "*In pursuit of the best conceivable educational practices in higher education*"
+title = "Our social media stream"
+subtitle = "#FORRTproject <br> <blockquote class='twitter-tweet' data-theme='light'><p lang='en' dir='ltr'>It&#39;s an exciting time for FORRT. <br><br>We&#39;ve just released the first version of our preprint &quot;introducing a Framework for Open and Reproducible Research Training&quot; <a href='https://t.co/lRzC8tN8En'>https://t.co/lRzC8tN8En</a> 🥳</p>&mdash; FORRT (@FORRTproject) <a href='https://twitter.com/FORRTproject/status/1207303102245801984?ref_src=twsrc%5Etfw'>December 18, 2019</a></blockquote> <script async src='https://platform.twitter.com/widgets.js' charset='utf-8'></script>"
 
 [design]
   # Choose how many columns the section has. Valid values: 1 or 2.
-  columns = "1"
+  columns = "2"
 
 [design.background]
   # Apply a background color, gradient, or image.
@@ -22,8 +22,7 @@ subtitle = "*In pursuit of the best conceivable educational practices in higher 
   #   Any HTML color name or Hex value is valid.
 
   # Background color.
-   color = "#fefdf6"
-  # color = "#69b3a2" # greenish
+   color = "#222"
   
   # Background gradient.
   # gradient_start = "DeepSkyBlue"
@@ -37,7 +36,7 @@ subtitle = "*In pursuit of the best conceivable educational practices in higher 
   # image_parallax = true  # Use a fun parallax-like fixed background effect? true/false
 
   # Text color (true=light or false=dark).
-  text_color_light = false
+  text_color_light = true
 
 [design.spacing]
   # Customize the section spacing. Order is top, right, bottom, left.
@@ -45,8 +44,18 @@ subtitle = "*In pursuit of the best conceivable educational practices in higher 
 
 [advanced]
  # Custom CSS. 
- css_style = "font-size: 1.25rem;"
+ css_style = ""
  
  # CSS class.
- css_class = "text-center"
+ css_class = ""
 +++
+
+<div class="row justify-content-center">
+
+<div class="col-md-88>
+
+<a class="twitter-timeline" data-height="5495 data-theme="light" href="https://twitter.com/FORRTproject?ref_src=twsrc%5Etfw">Tweets by FORRTproject</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> 
+
+</div>
+
+</div>
