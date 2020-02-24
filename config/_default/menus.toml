@@ -11,25 +11,25 @@
 
 [[main]]
   name = "FORRT"  # A link title for your page.
-  url = "forrt/"  # The URL of your page.
+  url = "/forrt/"  # The URL of your page.
   weight = 20  # The position of your page in the menu.
   identifier = "forrt"
   
 [[main]]
   name = "About"  # A link title for your page.
-  url = "/forrt#about"  # The URL of your page.
+  url = "/forrt/"  # The URL of your page.
   weight = 21  # The position of your page in the menu.
   parent = "forrt"
 
 [[main]]
   name = "History"  # A link title for your page.
-  url = "/forrt#history"  # The URL of your page.
+  url = "/forrt#2-history"  # The URL of your page.
   weight = 22  # The position of your page in the menu.
   parent = "forrt"
   
 [[main]]
   name = "Adopting FORRT"  # A link title for your page.
-  url = "/forrt#adopting"  # The URL of your page.
+  url = "/forrt#3-adopting"  # The URL of your page.
   weight = 23  # The position of your page in the menu.
   parent = "forrt"  
 
@@ -46,26 +46,32 @@
   parent = "forrt"
 
 [[main]]
+  name = "Survey"  # A link title for your page.
+  url = "/forrt/survey/"  # The URL of your page.
+  weight = 26  # The position of your page in the menu.
+  parent = "forrt"
+
+[[main]]
   name = "Code of Conduct"  # A link title for your page.
   url = "/coc"  # The URL of your page.
   weight = 100  # The position of your page in the menu.
 
 
 [[main]]
-  name = "Education NEXUS"
-  url = "/nexus"
+  name = "Educational NEXUS"
+  url = "/courses/example/"
   weight = 30
-  identifier = "nexus"
+#  identifier = "nexus"
 
-[[main]]
-  name = "Example of a course"
-  url = "/courses/"
-  weight = 31
-  parent = "nexus"
+#[[main]]
+#  name = "Example of a course"
+#  url = "/courses/example/"
+#  weight = 31
+#  parent = "nexus"
 
 [[main]]
   name = "Pedagogies"
-  url = "/docs/"
+  url = "/courses/example/"
   weight = 37
 
 [[main]]

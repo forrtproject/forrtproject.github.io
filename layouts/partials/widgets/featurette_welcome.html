@@ -9,11 +9,6 @@
   </div>
   {{ end }}
 
-  {{ with $page.Content }}
-  <div class="col-md-12">
-    {{ . }}
-  </div>
-  {{ end }}
 
   {{ range $page.Params.feature }}
   {{ $pack := or .icon_pack "fas" }}
@@ -23,7 +18,7 @@
   {{ end }}
   <div class="col-12 col-sm-4">
     {{ with .icon }}<div class="featurette-icon"><i class="{{ $pack }} {{ $pack_prefix }}-{{ . }}"></i></div>{{ end }}
-    {{ with .img }}<div class="pb-2"><img src="img/{{ . }}" class="mx-auto w-25"></div>{{ end }}
+    {{ with .img }}<div class="pb-2"><img src="{{ (printf "img/%s" .) | absURL }}" class="mx-auto w-25"></div>{{ end }}
     <h3>{{ .name | markdownify | emojify }}</h3>
     {{ with .description }}<p>{{ . | markdownify | emojify }}</p>{{ end }}
   </div>
@@ -69,5 +64,12 @@
       {{ .label | markdownify | emojify | safeHTML }}
     </p>
     {{ end }}
+</div>
+<div class="row">
+  {{ with $page.Content }}
+  <div class="col-md-12">
+    {{ . }}
+  </div>
+  {{ end }}
 
 </div>
