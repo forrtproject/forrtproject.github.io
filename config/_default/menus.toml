@@ -6,7 +6,7 @@
 [[main]]
   pre = "<i class='fa fa-home'></i>  "
   name = "Home"
-  url = "/#2-welcome"
+  url = "/#1-hero"
   weight = 10
 
 [[main]]
@@ -34,7 +34,7 @@
   parent = "forrt"  
 
 [[main]]
-  name = "Advocacy (click to see your talks)"  # A link title for your page.
+  name = "Advocacy"  # A link title for your page.
   url = "/talk"  # The URL of your page.
   weight = 24  # The position of your page in the menu.
   parent = "forrt"
@@ -73,13 +73,3 @@
   name = "Pedagogies"
   url = "/courses/example/"
   weight = 37
-
-[[main]]
-  name = "Contact Us"
-  url = "/#8-contact"
-  weight = 60
-
-[[main]]
-  name = "News"  # A link title for your page.
-  url = "/post"  # The URL of your page.
-  weight = 45  # The position of your page in the menu.

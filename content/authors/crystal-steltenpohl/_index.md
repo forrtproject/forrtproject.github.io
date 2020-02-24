@@ -1,16 +1,16 @@
 ---
 # Display name
-name: "Flávio Azevedo"
+name: "Crystal Steltenpohl"
 
 # Username (this should match the folder name and the name on publications)
 authors:
-- Name "Flavio Azevedo"
+- Name "Crystal Steltenpohl"
 
 # Is this the primary user of the site?
 superuser: false
 
 # Role/position (e.g., Professor of Artificial Intelligence)
-role: 
+role:
 
 # Organizations/Affiliations
 organizations:
@@ -41,26 +41,22 @@ education:
 social:
 - icon: twitter
   icon_pack: fab
-  link: https://twitter.com/Flavio_Azevedo_
+  link: https://twitter.com/CNSteltenpohl
 - icon: google-scholar
   icon_pack: ai
-  link: https://scholar.google.com/citations?user=O2Mp3ygAAAAJ&hl
+  link: https://scholar.google.com/citations?user=wNDNuToAAAAJ
 - icon: orcid
   icon_pack: ai
   link: https://orcid.org/0000-0001-9000-8513
-- icon: publons
-  icon_pack: ai
-  link: https://publons.com/researcher/1551653/flavio-azevedo/
+# - icon: publons
+#   icon_pack: ai
+#   link: https://publons.com/researcher/1551653/flavio-azevedo/
 - icon: osf
   icon_pack: ai
-  link: https://osf.io/6ycwh/
+  link: https://osf.io/nwe62/
 - icon: github
   icon_pack: fab
-  link: https://github.com/flavioazevedo
-- icon: envelope
-  icon_pack: fas
-  link: 'mailto:FORRTproject@gmail.com'  # For a direct email link, use "mailto:test@example.org".
-
+  link: https://github.com/CNSteltenpohl
 # Link to a PDF of your resume/CV from the About widget.
 # To enable, copy your resume/CV to `static/files/cv.pdf` and uncomment the lines below.
 # - icon: cv
@@ -73,7 +69,7 @@ email: ""
 # Organizational groups that you belong to (for People widget)
 #   Set this to `[]` or comment out if you are not using People widget.
 user_groups:
-- "Steering Committee" 
+- "Steering Committee"
 ---
 
-Flavio Azevedo, a Fulbright fellow, is currently working as a research associate at the Institute for Communication Science (IfKW) at Friedrich Schiller University Jena, Germany. Recently, Flavio was named as one of the 100 most influential early career Portuguese via the “Global Shapers” initiative by the World Economic Forum.
+Crystal Steltenpohl is an assistant professor of psychology and founder of the Online Technologies Lab at the University of Southern Indiana. As a scholar, gamer, and participant in online worlds, her major research interests revolve around how we interact with various technologies, especially those that house online communities. She is particularly interested in understanding how technologies influence communities and the self.

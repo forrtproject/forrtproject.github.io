@@ -3,15 +3,14 @@ authors:
 - admin
 categories:
 - Demo
-date: "2016-04-20T00:00:00Z"
+date: "2020-02-24T00:00:00Z"
 draft: false
-featured: false
+featured: true
 image:
   caption: 'Image credit: [**Unsplash**](https://unsplash.com/photos/CpkOjOcXdUY)'
   focal_point: ""
   placement: 2
   preview_only: false
-lastmod: "2019-04-17T00:00:00Z"
 projects: []
 subtitle: 'Create a beautifully simple website in under 10 minutes :rocket:'
 summary: Create a beautifully simple website in under 10 minutes.

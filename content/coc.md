@@ -18,8 +18,19 @@ title: 'Code of Conduct'
 layouts: post
 ---
 
-## Our Pledge
+{{< alert warning >}}
+Please note this is a copy of Contributor's Covenant, version 2.0, as seen here: https://www.contributor-covenant.org 
 
+We MAY want to modify it in accordance with FORRT's principles.
+
+Possible sources for inspiration are: 
+https://psysciacc.org/code-of-conduct/
+https://www.projecttier.org/about/statement-diversity-and-inclusion/
+  
+and others.
+{{< /alert >}}
+
+## Our Pledge
 
 We as members, contributors, and leaders pledge to make participation in our community a harassment-free experience for everyone, regardless of age, body size, visible or invisible disability, ethnicity, sex characteristics, gender identity and expression, level of experience, education, socio-economic status, nationality, personal appearance, race, religion, or sexual identity and orientation. We pledge to act and interact in ways that contribute to an open, welcoming, diverse, inclusive, and healthy community.
 
@@ -106,15 +117,3 @@ Community Impact Guidelines were inspired by [Mozilla's code of conduct enforcem
 For answers to common questions about this code of conduct, see the [FAQ](https://www.contributor-covenant.org/faq). Translations are also [available]( https://www.contributor-covenant.org/translations).
 
 ***
-
-```{redcars}
-Please note this is a copy of Contributor's Covenant, version 2.0, as seen here: https://www.contributor-covenant.org 
-
-We MAY want to modify it in accordance with FORRT's principles.
-
-Possible sources for inspiration are: 
-https://psysciacc.org/code-of-conduct/
-https://www.projecttier.org/about/statement-diversity-and-inclusion/
-  
-and others.
-```
