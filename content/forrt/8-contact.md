@@ -3,7 +3,7 @@
 widget = "featurette_welcome"  # See https://sourcethemes.com/academic/docs/page-builder/
 headless = true  # This file represents a page section.
 active = true  # Activate this widget? true/false
-weight = 80  # Order that this section will appear.
+weight = 200  # Order that this section will appear.
 
 title = "Get in touch"
 subtitle = "Whether you have questions getting started or you want to know how to best integrate FORRT features into your workflow, we’re here to help you."

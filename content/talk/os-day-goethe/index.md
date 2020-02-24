@@ -3,6 +3,7 @@ title: FORRT presentation @ Open Science Day at Goethe University
 
 abstract: The Frankfurt Open Science Initiative organized an Open Science Day in Frankfurt at Goethe University whose theme revolved around Open Science and Teaching. FORRT was featured as one of the two main talks, and it was recorded.
 
+featured: true
 location: Goethe University
 address:
   city: Frankfurt Am Main
@@ -17,7 +18,6 @@ date: "2020-01-15T14:00:00Z"
 date_end: "2020-01-15T18:00:00Z"
 event: Open Science Day at Goethe University
 event_url: https://twitter.com/@OpenScienceFFM
-featured: false
 image:
   caption: 'Image credit: [**@OpenScienceFFM**](https://twitter.com/@OpenScienceFFM)'
   focal_point: Right

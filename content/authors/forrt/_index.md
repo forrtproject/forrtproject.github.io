@@ -1,7 +1,7 @@
 ---
 authors:
 - forrt
-bio: Our interests are in reproducible framework.
+bio: For a better future.
   matter.
 # education:
 #   courses:
@@ -24,22 +24,33 @@ name: FORRT
 # - name: Stanford University
 #   url: ""
 # role: Professor of Artificial Intelligence
-# social:
-# - icon: envelope
-#   icon_pack: fas
-#   link: '#contact'
-# - icon: twitter
-#   icon_pack: fab
-#   link: https://twitter.com/GeorgeCushen
+social:
+- icon: twitter
+  icon_pack: fab
+  link: https://twitter.com/FORRTproject
 # - icon: google-scholar
 #   icon_pack: ai
-#   link: https://scholar.google.co.uk/citations?user=sIwtMXoAAAAJ
-# - icon: github
-#   icon_pack: fab
-#   link: https://github.com/gcushen
+#   link: https://scholar.google.com/citations?user=wNDNuToAAAAJ
+# - icon: orcid
+#   icon_pack: ai
+#   link: https://orcid.org/0000-0001-9000-8513
+# - icon: publons
+#   icon_pack: ai
+#   link: https://publons.com/researcher/1551653/flavio-azevedo/
+- icon: osf
+  icon_pack: ai
+  link: https://osf.io/mb46h/
+- icon: github
+  icon_pack: fab
+  link: https://github.com/forrtproject
+- icon: envelope
+  icon_pack: fas
+  link: 'mailto:FORRTproject@gmail.com' 
 superuser: true
 user_groups:
-- Researchers
+  - "Advisors"
+  - "Principled Teachers and Mentors"
+  - "Code of Conduct Committee"
 # true/false to display over picture
 display_name: false
 ---

@@ -55,12 +55,10 @@ classtitle = "text-center"
 +++
 
 ---
+{{< alert warning >}}
+[Missing: describe (a) who we are; how to reach us (again! info also on “get-involved”), explain rationale for FORRT, why, etc]
+{{< /alert >}}
 
-[describe (a) who we are; how to reach us (again! info also on “get-involved”), explain rationale for FORRT, why, etc]
-
-Lorem ipsum dolor sit amet, an conceptam definitiones vix, velit blandit mandamus no has. Dolorum interesset sadipscing duo id, cum et oratio corpora nostrum, quo primis alterum probatus no. Ius in luptatum erroribus, quem adversarium ne his. Et viris voluptaria nec, id nam adhuc sensibus, euismod abhorreant eloquentiam at eam. Ea vix accusam comprehensam, usu ea omnium intellegat honestatis, ad vix alia tollit urbanitas. An sit enim dissentiunt, ei evertitur disputationi cum. Qui ei rebum veritus, mel at facilis civibus sapientem.
-
-Lorem utamur graecis mei an, erat debet ignota ut eam, ut graece mucius ridens eam. Pri ne nibh idque alienum, et autem accusam delicatissimi eum, mea patrioque pertinacia definitionem te. Id autem alterum facilisi ius. Cu error decore dictas per, vim dicat suscipiantur at. Mundi graece indoctum per no, et mei sumo voluptatum. Ea eos vero dolor, enim equidem argumentum has ad. Usu id essent verear. Audiam probatus te sit, ex sed pertinacia cotidieque. Elitr aliquid sapientem mea ne, ius hinc salutatus ullamcorper in. Ut maluisset urbanitas suscipiantur sed. Vel facete possim definitiones in, vis ex sumo autem dolor. Has nostrum ocurreret eloquentiam te, his ad maluisset splendide percipitur.
 
 # Mission & Aims
 
@@ -84,5 +82,6 @@ With FORRT, educators in higher-education have an unprecedented opportunity to s
 
 ## Where is FORRT in the Globe?
 ***
-
+{{< alert warning >}}
 [insert map here]
+{{< /alert >}}

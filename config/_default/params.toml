@@ -10,7 +10,7 @@
 #   Browse built-in themes in `themes/academic/data/themes/`
 #   Browse user installed themes in `data/themes/`
 theme = "forrt"
-
+logo = "FORRT.svg"
 # Enable users to switch between day and night mode?
 day_night = true
 
@@ -62,7 +62,7 @@ math = false
 
 # Enable diagram rendering? true/false
 #   If false, you can enable diagrams on a per page basis as needed.
-diagram = false
+diagram = true
 
 # Privacy pack
 #   Show a cookie consent message to visitors
@@ -71,8 +71,8 @@ privacy_pack = true
 
 # Enable visitors to edit pages?
 #   `repo` defines the repository URL. `editable` defines which page types can be edited.
-edit_page = {repo_url = "https://github.com/samguay/forrt", content_dir = "", repo_branch = "master", editable = {docs = true, page = true, post = true}}
-
+edit_page = {repo_url = "https://github.com/forrtproject/forrt", content_dir = "", repo_branch = "master", editable = {docs = true, page = true, post = true}}
+gh_repo = "https://github.com/forrtproject/forrt"
 ############################
 ## Contact details
 ##
@@ -117,10 +117,10 @@ contact_links = [
 ############################
 
 # Default image for social sharing and search engines. Place image in `static/img/` folder and specify image name here.
-sharing_image = ""
+sharing_image = "FORRT_banner.svg"
 
 # Twitter username (without @). Used when a visitor shares your site on Twitter.
-twitter = ""
+twitter = "FORRTproject"
 
 ############################
 ## Regional Settings
@@ -140,7 +140,7 @@ address_format = "en-us"
 ############################
 
 # Main menu alignment (l = left, c = center, r = right) and logo options.
-main_menu = {align = "l", show_logo = true}
+main_menu = {align = "c", show_logo = true}
 
 # Show estimated reading time for posts? (true/false)
 reading_time = true

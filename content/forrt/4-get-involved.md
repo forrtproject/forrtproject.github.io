@@ -72,6 +72,8 @@ We have also opened a Slack channel to keep everyone up-to-date and to provide a
 
 We created a live-version of the manuscript for community participation and feedback [FORRT working Manuscript](tinyURL.com/FORRTworkingDOC). FORRT is operated as an open contributorship - all are welcome to contribute, and we aim to recognise all contributions. See the [manuscript](https://tinyurl.com/FORRTslack) for more information.
 
+{{< alert warning >}}
 [be more specific here. we need help with several parts of educational hub and pedagogies]
+{{< /alert >}}
 
 We are asking contributions for FORRT educational NEXUS, an e-learning platform acting as a hub for community-driven initiatives and resources. In this sense, the manuscript is only a (small) part of FORRT. As described in the manuscript, this platform will present the fullest opportunity FORRT has to offer. We will be particularly interested in contributions to the website, so if you (or your peers) are able to contribute to the development of the website, you would be helping make FORRT a powerful reality. But we also welcome other essential contributions such sharing your course materials, volunteering for OS mentoring, and submitting pedagogical reports of open and reproducible courses. 
