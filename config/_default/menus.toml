@@ -59,7 +59,7 @@
 
 [[main]]
   name = "Educational NEXUS"
-  url = "/courses/example/"
+  url = "/courses/example/nexus/"
   weight = 30
 #  identifier = "nexus"
 
