@@ -52,9 +52,9 @@ subtitle = "#FORRTproject <br> <blockquote class='twitter-tweet' data-theme='lig
 
 <div class="row justify-content-center">
 
-<div class="col-md-88>
+<div class="col-md-10">
 
-<a class="twitter-timeline" data-height="5495 data-theme="light" href="https://twitter.com/FORRTproject?ref_src=twsrc%5Etfw">Tweets by FORRTproject</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> 
+<a class="twitter-timeline" data-height="490" data-dnt="true" data-theme="light" href="https://twitter.com/FORRTproject?ref_src=twsrc%5Etfw">Tweets by FORRTproject</a>  
 
 </div>
 
