@@ -16,7 +16,8 @@ subtitle = ""
   user_groups = ["Steering Committee",
                  "Advisors",
                  "Principled Teachers and Mentors",
-                 "Code of Conduct Committee"]
+                 "Code of Conduct Committee",
+                 "Contributors"]
 
 [design]
   # Show user's social networking links? (true/false)
