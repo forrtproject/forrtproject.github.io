@@ -9,7 +9,7 @@ active = true  # Activate this widget? true/false
 weight = 20  # Order that this section will appear.
 
 title = "**Welcome to FORRT**<br><br>"
-subtitle = "*In pursuit of the best conceivable educational practices in higher education*"
+subtitle = "*In pursuit of the best conceivable educational practices in higher education This is how you modify a file*"
 
 [design]
   # Choose how many columns the section has. Valid values: 1 or 2.
@@ -22,7 +22,7 @@ subtitle = "*In pursuit of the best conceivable educational practices in higher 
   #   Any HTML color name or Hex value is valid.
 
   # Background color.
-   color = "#fefdf6"
+   color = "pink"
   # color = "#69b3a2" # greenish
   
   # Background gradient.
@@ -50,3 +50,5 @@ subtitle = "*In pursuit of the best conceivable educational practices in higher 
  # CSS class.
  css_class = "text-center"
 +++
+
+I can add some content as well. **This will be bold**
