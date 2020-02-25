@@ -1,10 +1,10 @@
 ---
 # Display name
-name: "Kimberley Quinn"
+name: "{{ replace .Name "-" " " | title }}"
 
 # Username (this should match the folder name and the name on publications)
 authors:
-- Name "Kimberley Quinn"
+- Name "{{ replace .Name "-" " " | title }}"
 
 # Is this the primary user of the site?
 superuser: false
@@ -39,18 +39,28 @@ education:
 #   For an email link, use "fas" icon pack, "envelope" icon, and a link in the
 #   form "mailto:your-email@example.com" or "#contact" for contact widget.
 social:
-- icon: envelope
-  icon_pack: fas
-  link: '#contact'  # For a direct email link, use "mailto:test@example.org".
 - icon: twitter
   icon_pack: fab
   link: https://twitter.com/USERNAME
 - icon: google-scholar
   icon_pack: ai
-  link: https://scholar.google.com/citations?user=PERSON-ID
+  link: https://scholar.google.com/citations?user=PERSONID
+- icon: orcid
+  icon_pack: ai
+  link: https://orcid.org/PERSONID
+- icon: publons
+  icon_pack: ai
+  link: https://publons.com/researcher/1551653/USERNAME
+- icon: osf
+  icon_pack: ai
+  link: https://osf.io/PERSONID
 - icon: github
   icon_pack: fab
   link: https://github.com/USERNAME
+- icon: envelope # comment the three lines to disable email.
+  icon_pack: fas
+  link: 'mailto:EMAILTOBEUSED' 
+  
 # Link to a PDF of your resume/CV from the About widget.
 # To enable, copy your resume/CV to `static/files/cv.pdf` and uncomment the lines below.
 # - icon: cv
@@ -63,5 +73,5 @@ email: ""
 # Organizational groups that you belong to (for People widget)
 #   Set this to `[]` or comment out if you are not using People widget.
 user_groups:
-- "Steering Committee"
+  - Contributors
 ---
