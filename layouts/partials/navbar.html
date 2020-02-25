@@ -47,7 +47,7 @@
     <div class="navbar-collapse main-menu-item collapse {{ if eq $align_menu "c" }}justify-content-center{{ else if eq $align_menu "r" }}justify-content-end{{else}}justify-content-start{{ end }}" id="navbar-content">
 
       <!-- Left Nav Bar -->
-      <ul class="navbar-nav d-md-inline-flex">
+      <ul class="navbar-nav d-md-inline-flex font-weight-bold text-uppercase">
         {{ range site.Menus.main }}
 
         {{ if .HasChildren }}

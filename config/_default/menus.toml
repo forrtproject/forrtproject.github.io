@@ -3,11 +3,11 @@
 #     desired widget in your `content/home/` folder.
 #   The weight parameter defines the order that the links will appear in.
 
-[[main]]
-  pre = "<i class='fa fa-home'></i>  "
-  name = "Home"
-  url = "/#1-hero"
-  weight = 10
+#[[main]]
+#  pre = "<i class='fa fa-home'></i>  "
+#  name = "Home"
+#  url = "/#1-hero"
+#  weight = 10
 
 [[main]]
   name = "FORRT"  # A link title for your page.
@@ -22,40 +22,63 @@
   parent = "forrt"
 
 [[main]]
-  name = "History"  # A link title for your page.
-  url = "/forrt#2-history"  # The URL of your page.
-  weight = 22  # The position of your page in the menu.
-  parent = "forrt"
-  
-[[main]]
   name = "Adopting FORRT"  # A link title for your page.
-  url = "/forrt#3-adopting"  # The URL of your page.
-  weight = 23  # The position of your page in the menu.
+  url = "/forrt#adopting"  # The URL of your page.
+  weight = 22  # The position of your page in the menu.
   parent = "forrt"  
 
 [[main]]
   name = "Advocacy"  # A link title for your page.
-  url = "/talk"  # The URL of your page.
-  weight = 24  # The position of your page in the menu.
-  parent = "forrt"
-  
-[[main]]
-  name = "Mission"  # A link title for your page.
-  url = "/forrt#mission"  # The URL of your page.
-  weight = 25  # The position of your page in the menu.
-  parent = "forrt"
-
-[[main]]
-  name = "Survey"  # A link title for your page.
-  url = "/forrt/survey/"  # The URL of your page.
-  weight = 26  # The position of your page in the menu.
+  url = "/forrt#advocacy"  # The URL of your page.
+  weight = 23  # The position of your page in the menu.
   parent = "forrt"
 
 [[main]]
   name = "Code of Conduct"  # A link title for your page.
   url = "/coc"  # The URL of your page.
-  weight = 100  # The position of your page in the menu.
+  weight = 24  # The position of your page in the menu.
+  parent = "forrt"
 
+[[main]]
+  name = "Get Involved"  # A link title for your page.
+  url = "/forrt#get-involved"  # The URL of your page.
+  weight = 25  # The position of your page in the menu.
+  parent = "forrt"
+
+[[main]]
+  name = "Mission"  # A link title for your page.
+  url = "/forrt#mission"  # The URL of your page.
+  weight = 26  # The position of your page in the menu.
+  parent = "forrt"
+
+[[main]]
+  name = "News"  # A link title for your page.
+  url = "/forrt#featured"  # The URL of your page.
+  weight = 27  # The position of your page in the menu.
+  parent = "forrt"
+  
+[[main]]
+  name = "People"  # A link title for your page.
+  url = "/forrt#people"  # The URL of your page.
+  weight = 28  # The position of your page in the menu.
+  parent = "forrt"
+  
+[[main]]
+  name = "Policy Making"  # A link title for your page.
+  url = "/forrt#policy-making"  # The URL of your page.
+  weight = 29  # The position of your page in the menu.
+  parent = "forrt"
+  
+[[main]]
+  name = "Survey"  # A link title for your page.
+  url = "/forrt#survey"  # The URL of your page.
+  weight = 30  # The position of your page in the menu.
+  parent = "forrt"
+
+#[[main]]
+#  name = "Code of Conduct"  # A link title for your page.
+#  url = "/coc"  # The URL of your page.
+#  weight = 100  # The position of your page in the menu.
 
 [[main]]
   name = "Educational NEXUS"

@@ -1,40 +1,31 @@
 +++
-# A Featured Publications section created with the Featured Content widget.
-# This section displays publications from `content/publication/` which have
-# `featured = true` in their front matter.
+# A "Meet the Team" section created with the People widget.
+# This section displays people from `content/authors/` which belong to the `user_groups` below.
 
-widget = "featured"  # See https://sourcethemes.com/academic/docs/page-builder/
+widget = "people"  # See https://sourcethemes.com/academic/docs/page-builder/
 headless = true  # This file represents a page section.
 active = true  # Activate this widget? true/false
 weight = 80  # Order that this section will appear.
 
-title = "News"
-subtitle = "Recently added Presentations, Events, Posts, etc."
+title = "People"
+subtitle = ""
 
 [content]
-  # Page type to display. E.g. post, talk, or publication.
-  page_type = ["talk", "post"]
+  # Choose which groups/teams of users to display.
+  #   Edit `user_groups` in each user's profile to add them to one or more of these groups.
+  user_groups = ["Steering Committee",
+                 "Advisors",
+                 "Principled Teachers and Mentors",
+                 "Code of Conduct Committee",
+                 "Contributors"]
 
-  # Choose how much pages you would like to display (0 = all pages)
-  count = 0
-
-  # Page order. Descending (desc) or ascending (asc) date.
-  order = "desc"
-
-  # Filter posts by a taxonomy term.
-  [content.filters]
-    tag = ""
-    category = ""
-    publication_type = ""
-  
 [design]
-  # Toggle between the various page layout types.
-  #   1 = List
-  #   2 = Compact
-  #   3 = Card
-  #   4 = Citation (publication only)
-  view = 1
-  
+  # Show user's social networking links? (true/false)
+  show_social = true
+
+  # Show user's interests? (true/false)
+  show_interests = false
+
 [design.background]
   # Apply a background color, gradient, or image.
   #   Uncomment (by removing `#`) an option to apply it.
