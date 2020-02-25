@@ -23,7 +23,7 @@ classtitle = "text-center"
   #   Any HTML color name or Hex value is valid.
 
   # Background color.
-   color = "#fefdf6"
+  # color = "#fefdf6"
   # color = "#69b3a2" # greenish
   
   # Background gradient.
