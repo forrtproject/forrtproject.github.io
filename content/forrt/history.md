@@ -2,7 +2,7 @@
 widget = "history"
 headless = true  # This file represents a page section.
 active = true  # Activate this widget? true/false
-weight = 20  # Order that this section will appear.
+weight = 60  # Order that this section will appear.
 title = "History"
 subtitle = """It's important to us that FORRT is an open contributorship - we aim that all can contribute, and all contributions are recognised.
 
