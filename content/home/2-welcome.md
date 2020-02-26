@@ -22,7 +22,7 @@ subtitle = "*In pursuit of the best conceivable educational practices in higher 
   #   Any HTML color name or Hex value is valid.
 
   # Background color.
-   color = "#fefdf6"
+  # color = "#fefdf6"
   # color = "#69b3a2" # greenish
   
   # Background gradient.

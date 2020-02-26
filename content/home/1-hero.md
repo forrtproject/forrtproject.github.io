@@ -20,7 +20,7 @@ hero_media = "FORRT.svg"
   #   Any HTML color name or Hex value is valid.
 
   # Background color.
-   color = "#fefdf6"
+  # color = "#fefdf6"
   
   # Background gradient.
   # gradient_start = "#4bb4e3"
