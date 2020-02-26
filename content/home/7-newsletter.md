@@ -22,7 +22,7 @@ subtitle = "Subscribe to our newsletter, get the latest news from FORRT and abou
   #   Any HTML color name or Hex value is valid.
 
   # Background color.
-   color = "#fefdf6"
+  # color = "#fefdf6"
   
   # Background gradient.
   # gradient_start = "DeepSkyBlue"
