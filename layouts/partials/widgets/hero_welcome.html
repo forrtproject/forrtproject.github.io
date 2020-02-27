@@ -43,7 +43,7 @@
         {{ else if in (slice "http" "https") $scheme }}
           {{ $target = "target=\"_blank\" rel=\"noopener\"" }}
         {{ end }}
-      <a href="{{ $link | safeURL }}" {{ $target | safeHTMLAttr }} class="hero-cta-alt pl-4">{{ $page.Params.cta_alt.label | markdownify | emojify | safeHTML }} <i class="fas fa-angle-right"></i></a>
+      <a href="{{ $link | safeURL }}" {{ $target | safeHTMLAttr }} class="hero-cta-alt pl-4">{{ $page.Params.cta_alt.label | markdownify | emojify | safeHTML }} <i class="fas fa-angle-right" aria-hidden="true"></i></a>
       {{ end }}
     </p>
     {{ end }}
@@ -59,7 +59,7 @@
   {{ if $page.Params.hero_media }}
   </div>
   <div class="my-auto mx-auto col-lg-7 col-md-6 order-md-2 hero-media border-left border-dark">
-    <img width="100%" src="{{ printf "img/%s" $page.Params.hero_media | relURL }}" alt="">
+    <img width="100%" src="{{ printf "img/%s" $page.Params.hero_media | relURL }}" alt="{{ $page.Params.hero_media_alttext }}">
   </div>
 </div>
 {{ end }}
