@@ -15,7 +15,7 @@
     <div class="d-none d-lg-inline-flex">
       <a class="navbar-brand" href="{{ "/" | relLangURL }}">
         {{- if $has_logo -}}
-          <img src="{{ $logo.RelPermalink }}" alt="{{ site.Title }}">
+          <img src="{{ $logo.RelPermalink }}" alt="{{ site.Title }} Logo. Link to homepage">
         {{- else -}}
           {{- site.Title -}}
         {{- end -}}
@@ -126,17 +126,17 @@
     <ul class="nav-icons navbar-nav flex-row ml-auto d-flex pl-md-2">
       {{ if site.Params.search.engine }}
       <li class="nav-item">
-        <a class="nav-link js-search" href="#"><i class="fas fa-search" aria-hidden="true"></i></a>
+        <a class="nav-link js-search" href="#" alt="Opens search bar"><i class="fas fa-search" aria-hidden="true"></i></a>
       </li>
       {{ end }}
 
       {{ if site.Params.day_night }}
-      <li class="nav-item">
+      <li class="nav-item" aria-hidden="true">
         <a class="nav-link js-dark-toggle" href="#"><i class="fas fa-moon" aria-hidden="true"></i></a>
       </li>
       {{ end }}
       <li class="nav-item">
-        <a class="nav-link" href="{{ .Site.Params.gh_repo }}"><i class="fab fa-github" aria-hidden="true"></i></a>
+        <a class="nav-link" href="{{ .Site.Params.gh_repo }}" alt="Link to FORRT's GitHub repository"><i class="fab fa-github" aria-hidden="true"></i></a>
       </li>
       {{ if .IsTranslated }}
       <li class="nav-item dropdown i18n-dropdown">
