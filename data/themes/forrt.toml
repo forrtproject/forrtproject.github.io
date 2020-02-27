@@ -5,14 +5,16 @@ name = "forrt"
 light = true
 
 # Primary
-primary = "#69b3a2"
+primary = "#004055"
+secondary = "red"
+
 
 # Menu
-menu_primary = "#222"
-menu_text = "#fefdf6"
+menu_primary = "#3e3e3e"
+menu_text = "white"
 menu_text_active = "#b8336a"
 #menu_title = "#888"
 menu_title = "#69b3a2"
 # Home sections
-home_section_odd = "rgb(255, 255, 255)"
-home_section_even = "rgb(247, 247, 247)"
+home_section_odd = "#fefdf6"
+home_section_even = "#fefdf6"

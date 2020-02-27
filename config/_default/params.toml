@@ -167,7 +167,7 @@ plugins_js  = []
   gravatar = false
 
   # Choose a shape for avatar images. Options: circle, square.
-  shape = "square"
+  shape = "circle"
 
 # Available address formats.
 [address_formats]

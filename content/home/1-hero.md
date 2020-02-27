@@ -9,6 +9,7 @@ title = "Framework for <br>Open and <br>Reproducible <br>Research <br>Training"
 
 # Hero image (optional). Enter filename of an image in the `static/img/` folder.
 hero_media = "FORRT.svg"
+hero_media_alttext = "Logo of FORRT is a fort."
 # [design.spacing]
 #   # Customize the section spacing. Order is top, right, bottom, left.
 #   padding = ["20px", "0", "20px", "0"]
@@ -20,7 +21,7 @@ hero_media = "FORRT.svg"
   #   Any HTML color name or Hex value is valid.
 
   # Background color.
-   color = "#fefdf6"
+  # color = "#fefdf6"
   
   # Background gradient.
   # gradient_start = "#4bb4e3"
@@ -40,14 +41,14 @@ hero_media = "FORRT.svg"
 #   Display link(s) by specifying a URL and label below. Icon is optional for `[cta]`.
 #   Remove a link/note by deleting a cta/note block.
 # [cta]
-# url = "https://sourcethemes.com/academic/docs/install/"
-# label = "Get Started"
-# icon_pack = "fas"
-# icon = "download"
+#   url = "https://sourcethemes.com/academic/docs/install/"
+#   label = "Get Started"
+#   icon_pack = "fas"
+#   icon = "download"
   
 # [cta_alt]
-#  url = "https://sourcethemes.com/academic/"
-#  label = "View Documentation"
+#   url = "https://sourcethemes.com/academic/"
+#   label = "View Documentation"
 
 # Note. An optional note to show underneath the links.
 # [cta_note]

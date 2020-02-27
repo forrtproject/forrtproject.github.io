@@ -21,6 +21,7 @@ event_url: https://twitter.com/@OpenScienceFFM
 image:
   caption: 'Image credit: [**@OpenScienceFFM**](https://twitter.com/@OpenScienceFFM)'
   focal_point: Right
+  alttext: "Event schedule with presenter names. Poster."
 links:
 - icon: twitter
   icon_pack: fab
