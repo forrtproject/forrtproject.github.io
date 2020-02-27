@@ -37,6 +37,7 @@ featured: true
 image:
   caption: ""
   focal_point: ""
+  alttext: "MZES Open Social Science Conference written on a photo of a building."
   # preview_only: false
 
 # Custom links (optional).

@@ -9,7 +9,6 @@
   </div>
   {{ end }}
 
-
   {{ range $page.Params.feature }}
   {{ $pack := or .icon_pack "fas" }}
   {{ $pack_prefix := $pack }}
@@ -17,8 +16,8 @@
     {{ $pack_prefix = "fa" }}
   {{ end }}
   <div class="col-12 col-sm-4">
-    {{ with .icon }}<div class="featurette-icon"><i class="{{ $pack }} {{ $pack_prefix }}-{{ . }}"></i></div>{{ end }}
-    {{ with .img }}<div class="pb-2"><img src="{{ (printf "img/%s" .) | absURL }}" class="mx-auto w-25"></div>{{ end }}
+    {{ if .icon }}<div class="featurette-icon"><i class="{{ $pack }} {{ $pack_prefix }}-{{ .icon }}" alt="{{ .iconalttext }}"></i></div>{{ end }}
+    {{ if .img }}<div class="pb-2"><img src="{{ (printf "img/%s" .img) | absURL }}" class="mx-auto w-25" alt="{{ .imgalttext }}"></div>{{ end }}
     <h3>{{ .name | markdownify | emojify }}</h3>
     {{ with .description }}<p>{{ . | markdownify | emojify }}</p>{{ end }}
   </div>
@@ -53,7 +52,7 @@
         {{ else if in (slice "http" "https") $scheme }}
           {{ $target = "target=\"_blank\" rel=\"noopener\"" }}
         {{ end }}
-      <a href="{{ $link | safeURL }}" {{ $target | safeHTMLAttr }} class="hero-cta-alt pl-4">{{ $page.Params.cta_alt.label | markdownify | emojify | safeHTML }} <i class="fas fa-angle-right"></i></a>
+      <a href="{{ $link | safeURL }}" {{ $target | safeHTMLAttr }} class="hero-cta-alt pl-4">{{ $page.Params.cta_alt.label | markdownify | emojify | safeHTML }} <i class="fas fa-angle-right" aria-hidden="true"></i></a>
       {{ end }}
     </p>
     {{ end }}
