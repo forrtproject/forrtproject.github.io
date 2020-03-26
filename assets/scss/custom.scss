@@ -1,1 +1,10 @@
 // Override this file to add your own SCSS styling.
+.border-3 {
+    border-width:3px !important;
+}
+
+.btn-toolbar .btn:first-child {
+    border-radius: 6px; }
+  
+  .btn-toolbar .btn:last-child {
+    border-radius: 6px; }
