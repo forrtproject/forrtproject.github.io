@@ -28,17 +28,17 @@
         <div class="col-sm-8 align-self-center">
         <h3>{{ .name | markdownify | emojify }}</h3>
         {{ with .description }}<p>{{ . | markdownify | emojify }}</p>{{ end }}
-        {{ with .buttonurl }}<a href="{{ . }}" class="btn btn-menu btn-outline-primary">{{end}}{{ with .buttondescr }}{{ . | markdownify | emojify }}{{end}} <i class="fa fa-angle-right" alt="right arrow" aria-hidden="true"></i></a>
+        {{ with .buttonurl }}<a href="{{ . }}" class="btn btn-menu btn-outline-primary">{{end}}{{ with .buttondescr }}{{ . | markdownify | emojify }}{{end}} {{if .buttonurl}}<i class="fa fa-angle-right" alt="right arrow" aria-hidden="true"></i></a>{{end}}
       </div>
   {{ end }}
   {{ if eq .imgside "right" }}
       <div class="col-sm-8 align-self-center">
         <h3>{{ .name | markdownify | emojify }}</h3>
         {{ with .description }}<p>{{ . | markdownify | emojify }}</p>{{ end }}
-        {{ with .buttonurl }}<a href="{{ . }}" class="btn btn-menu btn-outline-primary">{{end}}{{ with .buttondescr }}{{ . | markdownify | emojify }}{{end}} <i class="fa fa-angle-right" aria-hidden="true"></i></a>
+        {{ with .buttonurl }}<a href="{{ . }}" class="btn btn-menu btn-outline-primary">{{end}}{{ with .buttondescr }}{{ . | markdownify | emojify }}{{end}} {{ if .buttonurl }}<i class="fa fa-angle-right" aria-hidden="true"></i></a> {{ end }}
       </div>
       <div class="col-sm-4 align-self-center">
-      {{ with .buttonurl }}<a href="{{ . }}">{{end}}{{ with .img }}<img class="rounded mx-auto d-block mt-4 mb-4 w-50" src="img/{{ . }}">{{end}} {{if .buttonurl}} </a> {{end}}
+      {{ if .buttonurl }}<a href="{{ .buttonurl }}">{{end}}<img class="rounded mx-auto d-block mt-4 mb-4 w-50" src="{{ (printf "img/%s" .img) | absURL }}" alt="{{ .imgalttext }}"> {{if .buttonurl}} </a> {{end}}
       </div>
 {{ end }}
 </div>  
