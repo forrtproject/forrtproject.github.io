@@ -4,7 +4,6 @@ authors:
 categories:
 - Demo
 date: "2020-02-24T00:00:00Z"
-draft: false
 featured: true
 image:
   caption: 'Image credit: [**Unsplash**](https://unsplash.com/photos/CpkOjOcXdUY)'
