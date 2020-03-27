@@ -93,6 +93,7 @@
       {{ $about := index $col 3 }}
       {{ $forrt := index $col 4 }}
       {{ $link := index $col 5}}
+      {{ if ne (len $name) 0 }}
       {{ $js_tag_classes := printf "js-id-%s" (replace (index $col 2) " " "-") }}
       {{/*  <div class="col-sm-3 project-card project-item isotope-item {{ $js_tag_classes | safeHTMLAttr }}">
         <div class="card">
@@ -120,6 +121,7 @@
         </div>
       </div>
     </div>
+    {{end}}
     {{end}}
     {{end}}
   </div>
