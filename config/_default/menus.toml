@@ -44,6 +44,12 @@
   url = "/forrt/"  # The URL of your page.
   weight = 20  # The position of your page in the menu.
   identifier = "forrt"
+
+[[main]]
+  name = "Manuscript"  # A link title for your page.
+  url = "/manuscript/"  # The URL of your page.
+  weight = 15  # The position of your page in the menu.
+  identifier = "forrt"
   
 [[main]]
   name = "Adopting FORRT"  # A link title for your page.
