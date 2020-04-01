@@ -11,16 +11,27 @@
 
 [[main]]
   name = "About FORRT"  # A link title for your page.
-  url = "/about/"  # The URL of your page.
+  url = "about/mission/"  # The URL of your page.
   weight = 10  # The position of your page in the menu.
   identifier = "about"
 
 [[main]]
-  name = "About"  # A link title for your page.
-  url = "/about/"  # The URL of your page.
+  name = "Our Mission"  # A link title for your page.
+  url = "about/mission/"  # The URL of your page.
   weight = 11  # The position of your page in the menu.
   parent = "about"
   
+  
+[[main]]
+  name = "Get Involved"  # A link title for your page.
+  url = "/about/get-involved"  # The URL of your page.
+  weight = 12  # The position of your page in the menu.
+  parent = "about"
+[[main]]
+  name = "Our Community"  # A link title for your page.
+  url = "/about/community"  # The URL of your page.
+  weight = 13  # The position of your page in the menu.
+  parent = "about"
 [[main]]
   name = "Code of Conduct"  # A link title for your page.
   url = "/coc"  # The URL of your page.
@@ -28,54 +39,35 @@
   parent = "about"
   
 [[main]]
-  name = "Get Involved"  # A link title for your page.
-  url = "/about#get-involved"  # The URL of your page.
-  weight = 12  # The position of your page in the menu.
-  parent = "about"
-  
-[[main]]
-  name = "People"  # A link title for your page.
-  url = "/about#people"  # The URL of your page.
-  weight = 11  # The position of your page in the menu.
-  parent = "about"
-  
-[[main]]
   name = "FORRT"  # A link title for your page.
   url = "/forrt/"  # The URL of your page.
   weight = 20  # The position of your page in the menu.
   identifier = "forrt"
-
 [[main]]
-  name = "Manuscript"  # A link title for your page.
+  name = "Our Manuscript"  # A link title for your page.
   url = "/manuscript/"  # The URL of your page.
-  weight = 15  # The position of your page in the menu.
-  identifier = "forrt"
-  
+  weight = 21  # The position of your page in the menu.
+  parent = "forrt"
 [[main]]
   name = "Adopting FORRT"  # A link title for your page.
   url = "/forrt#adopting"  # The URL of your page.
-  weight = 21  # The position of your page in the menu.
+  weight = 22  # The position of your page in the menu.
   parent = "forrt"  
-
 [[main]]
   name = "Advocacy"  # A link title for your page.
   url = "/forrt#advocacy"  # The URL of your page.
-  weight = 22  # The position of your page in the menu.
+  weight = 23  # The position of your page in the menu.
   parent = "forrt"
-
 #[[main]]
 #  name = "News"  # A link title for your page.
 #  url = "/forrt#featured"  # The URL of your page.
 #  weight = 27  # The position of your page in the menu.
 #  parent = "forrt"
-  
-  
 [[main]]
   name = "Policy"  # A link title for your page.
   url = "/forrt#policy"  # The URL of your page.
   weight = 29  # The position of your page in the menu.
   parent = "forrt"
-  
 [[main]]
   name = "Assessment"  # A link title for your page.
   url = "/forrt/assessment/"  # The URL of your page.
@@ -84,47 +76,40 @@
 
 [[main]]
   name = "NEXUS"
-  url = "/nexus/"
+  url = ""
   weight = 30
   identifier = "nexus"
-
 [[main]]
   name = "Clusters"
   url = "/nexus/clusters"
   weight = 31
   parent = "nexus"
-
 [[main]]
   name = "Resources"
   url = "/nexus/resources"
   weight = 32
   parent = "nexus"
-
 [[main]]
   name = "Self-Assessment"
   url = "/nexus/self-assessment"
   weight = 33
   parent = "nexus"
 
-
 [[main]]
   name = "Pedagogies"
   url = "/pedagogies/"
   weight = 40
   identifier = "pedagogies"
-
 [[main]]
   name = "Public"
   url = "/pedagogies/public/"
   weight = 41
   parent = "pedagogies"  
-  
 [[main]]
   name = "Undergraduate"
   url = "/pedagogies/undergraduate/"
   weight = 42
   parent = "pedagogies"  
-
 [[main]]
   name = "Graduate"
   url = "/pedagogies/graduate"
