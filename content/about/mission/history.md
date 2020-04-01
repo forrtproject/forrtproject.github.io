@@ -6,7 +6,7 @@ weight = 15  # Order that this section will appear.
 title = "History"
 subtitle = """It's important to us that FORRT is an open contributorship - we aim that all can contribute, and all contributions are recognised.
 
-We aim to build a community of teachers and mentors supporting one another to give our students the gifts of openness and reproducibility"""
+We aim to build a community of teachers and mentors supporting one another to give our students the gifts of openness and reproducibility."""
 
 # Date format
 #   Refer to https://sourcethemes.com/academic/docs/customization/#date-format
@@ -28,15 +28,8 @@ date_format = "Jan 02, 2006"
   This project was initiated in the *[Teaching replicable and reproducible science hackathon](https://osf.io/x7d45/)* led by Kristen Lane and Heather Urrythe during SIPS 2018 annual meeting.
   
   The initial framework was developed in a subsequent working group consisting of:
-  * Flavio Azevedo
-  * Sam Parsons
-  * Carl Michael Galang
-  * Kristin Lane
-  * Lisa DeBruine
-  * Benjamin Le
-  * Donald Tellinghuisen, and
-  * Madeline Harms
-  * (we apologise if we have missed anybody - please let us know)
+  * Flavio Azevedo, Sam Parsons, Carl Michael Galang, Kristin Lane, Lisa DeBruine, Benjamin Le, Donald Tellinghuisen, and, Madeline Harms;
+  * We apologise if we have missed anybody - please let us know.
   """
 
 [[experience]]

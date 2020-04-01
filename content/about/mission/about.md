@@ -54,17 +54,12 @@ classtitle = "text-center"
 +++
 
 ---
-{{< alert warning >}}
-[Missing: describe (a) who we are; how to reach us (again! info also on “get-involved”), explain rationale for FORRT, why, etc]
-{{< /alert >}}
-
 
 # Mission & Aims
 
 ## FORRT's goals in a nutshell:
 
 * We hope FORRT will kickstart start a conversation on, and advocate for, placing greater support and value in teaching and mentoring – including raising the profile of open teaching materials and recognising their value.
-* We hope FORRT ...
 * We hope FORRT will be a useful tool supporting teachers looking to integrate open and reproducible research practices in their courses. For this we provide a pedagogy for incremental implementation of  
 
 To achieve our goals, and in line with principles enshrined in FORRT, its manuscript will become an open online contributorship project, wherein the work of those supporting OS pedagogies are valued and formally recognized. The same can be said about any contribution to the construction, improvement and maintenance of FORRT's website. With this, we hope to expand the scope and diversity of FORRT’s mission and its team. [Join us in this mission](https://forrtv2.netlify.com/getinvolved).
@@ -78,9 +73,3 @@ With FORRT, educators in higher-education have an unprecedented opportunity to s
 * Psychological Science Accelerator
 * OSKB
 * ICA
-
-## Where is FORRT in the Globe?
-***
-{{< alert warning >}}
-[insert map here]
-{{< /alert >}}
