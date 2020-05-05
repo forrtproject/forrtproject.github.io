@@ -16,7 +16,7 @@
     
     {{ with $st.Content }}{{ . }}{{ end }}
     
-    {{ $url := "https://docs.google.com/spreadsheets/d/e/2PACX-1vTlMp-kKqssGTD4IwsIdvV0Tk28djKp0YJCocc9CKgYV3GgElP4HDOTduMNEIpk-ZQXRsV-03m95RpO/pub?gid=40348166&single=true&output=csv" }}
+    {{ $url :=  "https://docs.google.com/spreadsheets/d/e/2PACX-1vTyA01F71sp6XfedunEVe3gjSGNnZiRirx9cqiTVPkR7zrss0TLdRDMFgeHuvECNWf-c0fwezw97JCN/pub?output=csv"}}
     {{ $sep := "," }}
     {{ $csv := getCSV $sep $url }}
 
