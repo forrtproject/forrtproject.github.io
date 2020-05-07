@@ -43,13 +43,13 @@ subtitle = "---"
 #   Display link(s) by specifying a URL and label below. Icon is optional for `[cta]`.
 #   Remove a link/note by deleting a cta/note block.
  [cta]
-   url = "/about#get-involved"
+   url = "/about/get-involved/"
    label = ":rocket: Get involved now!"
    # icon_pack = "fas"
    # icon = "info"
   
  [cta_alt]
-  url = "/about#get-involved"
+  url = "/about/get-involved/"
   label = "or view how you can help"
 
 # Note. An optional note to show underneath the links.

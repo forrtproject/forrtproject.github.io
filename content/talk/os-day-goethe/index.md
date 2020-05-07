@@ -29,9 +29,8 @@ links:
   url: https://twitter.com/@FORRTproject
 math: true
 projects:
-- internal-project
 publishDate: "2017-01-01T00:00:00Z"
-slides: example
+slides: 
 summary: An example talk using Academic's Markdown slides feature.
 tags: []
 url_code: ""
