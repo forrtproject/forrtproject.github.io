@@ -63,10 +63,3 @@ Make your existing teaching and mentoring materials open. These can in about pro
 Make your research open. An often neglected aspect is that your research serves the community as an educational material. Increasingly, well documented research repositories are used in undergraduate and graduate education. Think of the Collaborative Replications and Education Project in Psychology (CREP), the Political Science Replication Initiative (PSRI), its Economics’ counterpart. How to achieve this? Thankfully, it is very easy. Create an OSF account, include your studies’ materials (code, codebooks, data, etc) in a repository, and you are done!
 
 If you want to learn more about “How to Open Science”, visit [FORRT’s Educational Nexus](/nexus).
-
-{{< alert warning >}}
-[to add]
-There are many ways to implement FORRT's Pricipled Education. 
-
-* One regards the "method of teaching". One can foster an Open envirnoment so students can exercise "Open Learning" in which access to information and good-quality educational materials are not where the "grading" and "evaluation" happens but rather at the processing level, at the creativity, and ability to diferenciate themselves.
-{{< /alert >}}

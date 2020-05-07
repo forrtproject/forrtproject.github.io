@@ -26,7 +26,7 @@ subtitle = "---"
   buttonurl = "manuscript/"
   buttondescr = "Read our manuscript"
   name = "Manuscript"
-  description = "FORRT's team wrote a manuscript aiming at explaing _`why`_ open and reproducible tenets should be incorporated in the teaching and mentoring of prototypical subject matters. We hope it lays the ground work for .... Ut maluisset urbanitas suscipiantur sed. Vel facete possim definitiones in, vis ex sumo autem dolor. Has nostrum ocurreret eloquentiam te, his ad maluisset splendide percipitur. "
+  description = "A description will be added soon."
   
 [[featurealt]]
   # icon = "users"
@@ -38,7 +38,7 @@ subtitle = "---"
   buttonurl = "nexus/"
   buttondescr = "View our educational nexus"
   name = "Educational Nexus"
-  description = "Lorem ipsum dolor sit amet, an conceptam definitiones vix, velit blandit mandamus no has. Dolorum interesset sadipscing duo id, cum et oratio corpora nostrum, quo primis alterum probatus no. Ius in luptatum erroribus, quem adversarium ne his. Et viris voluptaria nec, id nam adhuc sensibus, euismod abhorreant eloquentiam at eam. Ea vix accusam comprehensam, usu ea omnium intellegat honestatis, ad vix alia tollit urbanitas. "  
+  description = "A description will be added soon."  
   
 [[featurealt]]
   # icon = "handshake"
@@ -50,7 +50,7 @@ subtitle = "---"
   buttonurl = "pedagogies/"
   buttondescr = "Discover our pedagogies"
   name = "Pedagogies"
-  description = "Lorem ipsum dolor sit amet, an conceptam definitiones vix, velit blandit mandamus no has. Dolorum interesset sadipscing duo id, cum et oratio corpora nostrum, quo primis alterum probatus no. Ius in luptatum erroribus, quem adversarium ne his. Et viris voluptaria nec, id nam adhuc sensibus, euismod abhorreant eloquentiam at eam. Ea vix accusam comprehensam, usu ea omnium intellegat honestatis, ad vix alia tollit urbanitas."
+  description = "A description will be added soon."
   
 [design.spacing]
   # Customize the section spacing. Order is top, right, bottom, left.

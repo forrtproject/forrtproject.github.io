@@ -6,9 +6,9 @@
 widget = "blank"  # See https://sourcethemes.com/academic/docs/page-builder/
 headless = true  # This file represents a page section.
 active = true  # Activate this widget? true/false
-weight = 60  # Order that this section will appear.
+weight = 20  # Order that this section will appear.
 
-title = "Partnerships"
+title = ""
 subtitle = ""
 
 [design]
@@ -22,7 +22,8 @@ subtitle = ""
   #   Any HTML color name or Hex value is valid.
 
   # Background color.
-   color = "#fefdf6"
+  # color = "#fefdf6"
+  # color = "#69b3a2" # greenish
   
   # Background gradient.
   # gradient_start = "DeepSkyBlue"
@@ -44,18 +45,13 @@ subtitle = ""
 
 [advanced]
  # Custom CSS. 
- css_style = ""
+ css_style = "font-size: 1.25rem;"
  
  # CSS class.
- css_class = ""
+ css_class = "text-center"
 +++
 
-![V2](img/Partnerships_v2.png)
-
-__*Meta-psychology special issue*__. We have an opportunity in conjunction with [Meta-Psychology](https://open.lnu.se/index.php/metapsychology) and the [Psychological Science Accelerator](https://psysciacc.org/) to work on a recurring special issue. The call will request teaching materials, including the pedagogical aspect desired by FORRT. This will be an ongoing source of resources to curate with FORRT and for FORRT to disseminate. This also sets the stage for our vision of academia in which teaching resources are more valued - changing the publications structure to include these excellent and open resources is a part of this. 
-
-__*Center for Open Science Knowledge Base*__. We are partnering up with the [OSKB](https://cos.io/oskb).  
-
-{{% alert note %}}
-We are always looking for new partnerships opportunities. Reach out to us via :e-mail: [FORRTproject@gmail.com](mailto:FORRTproject@gmail.com).
-{{% /alert %}}
+<div class="alert alert-info alert-dismissible">
+  <button type="button" class="close" data-dismiss="alert">&times;</button>
+  <strong>Hi!</strong> This popup is there to let you know that our website is currently in construction mode. It is totally normal if you encounter some bugs and find some pieces missing. Feel free to let us know how you would improve it by <a href="#8-contact" class="alert-link">contacting us</a>. 
+</div>

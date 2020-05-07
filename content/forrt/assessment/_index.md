@@ -7,7 +7,3 @@ date = "2019-07-12"
 +++
 
 Establishing which are the current norms in principled education - and its path forward
-
-{{< alert warning >}}
-[Should the survey page be on its own?]
-{{< /alert >}}

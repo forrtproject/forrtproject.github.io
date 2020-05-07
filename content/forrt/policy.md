@@ -56,6 +56,4 @@ classtitle = "text-center"
 
 ## FORRT’s Policy Proposals
 
-{{< alert warning >}}
-[content needs to be inserted here]
-{{< /alert >}}
+Soon to be added :) 
