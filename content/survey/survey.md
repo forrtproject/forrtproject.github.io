@@ -6,9 +6,9 @@
 widget = "blank"  # See https://sourcethemes.com/academic/docs/page-builder/
 headless = true  # This file represents a page section.
 active = true  # Activate this widget? true/false
-weight = 10  # Order that this section will appear.
+weight = 20  # Order that this section will appear.
 
-title = "FORRT Self-assessment"
+title = "Self-assessment survey"
 subtitle = ""
 
 [design]
@@ -22,7 +22,7 @@ subtitle = ""
   #   Any HTML color name or Hex value is valid.
 
   # Background color.
-  # color = "#fefdf6"
+  color = "#fff"
   # color = "#69b3a2" # greenish
   
   # Background gradient.
@@ -45,15 +45,15 @@ subtitle = ""
 
 [advanced]
  # Custom CSS. 
- css_style = ""
+ css_style = "font-size: 1.25rem;"
  
  # CSS class.
  css_class = ""
 +++
 
 
-{{% alert warning %}} Explanation about the survey and its purpose... {{% /alert %}}
+{{% alert info %}} If the survey isn't rendered properly on this page, you can complete it on the [survey page on Qualtrics](https://maastrichtuniversity.eu.qualtrics.com/jfe/form/SV_9T7GA05HbqxiQTP). {{% /alert %}}
 
-Here's a brief and concise explanation to help you decide whether you want to complete the survey or not. 
-
-To take the survey, scroll down at the bottom of the page or [click here](#survey). 
+<div class="embed-responsive embed-responsive-4by3">
+  <iframe class="embed-responsive-item" src="https://maastrichtuniversity.eu.qualtrics.com/jfe/form/SV_9T7GA05HbqxiQTP" allow="fullscreen"></iframe>
+</div>
