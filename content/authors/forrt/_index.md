@@ -56,6 +56,38 @@ display_name: false
 ---
 
 ***
-Current norms for the teaching and mentoring of higher-education are rooted in obsolete practices of bygone eras. Improving transparency and rigor of science is the responsibility of all who engage in it, but ongoing attempts have neglected an essential aspect of the academic machinery: students. FORRT, a Framework for Open and Reproducible Research Training, is introduced to raise awareness of the pedagogical implications of Open Science and its associated challenges (curricular reform, epistemological uncertainty, methods education, openness and social justice). Aimed at the training of researchers and consumers of science, FORRT is an effective, evolving, and community-driven framework toward the incremental adoption of principled teaching and mentoring practices, and supporting instructors by collating existing teaching pedagogies and materials to be reused and adapted for use within new and existing courses. 
+In a nutshell, FORRT is a Framework for Open and Reproducible Research Training. It aims to provide a pedagogical infrastructure designed to recognize and support the teaching and mentoring of open and reproducible science tenets in tandem with prototypical subject matters in higher education. FORRT strives to be an effective, evolving, and community-driven organization raising awareness of the pedagogical implications of open and reproducible science and its associated challenges (i.e., curricular reform, epistemological uncertainty, methods of education). FORRT also advocates for the opening of teaching and mentoring materials as a means to facilitate access, discovery, and learning to those who otherwise would be educationally disenfranchised.
 
-With FORRT, educators in higher-education have an unprecedented opportunity to shape the minds and future of the consumers of science and the next generation of academics. At its best, FORRT should be the answer to the question ***“what are the best conceivable educational practices in higher education and how to achieve it?”***
+{{< expand "Expand to know more" >}}
+
+### The problem
+
+* Recently, the scientific community took steps to reflect a widespread awareness of, and call for, improved practices ushering in the “credibility revolution” including higher standards of evidence, preregistration, direct replication, transparency, and openness.
+* Structurally, three pillars were proposed to carry social sciences towards academic utopia:  opening scientific communication, restructuring incentives and practices, and collaborative and crowdsourced science. 
+
+However, ongoing attempts have neglected an essential aspect of the academic machinery: students. And indeed, current norms for the teaching and mentoring in higher-education are rooted in obsolete practices of bygone eras. Improving transparency and rigor of science is the responsibility of all who engage in it.
+
+### The solution
+
+* In our view, a scientific utopia has a fourth pillar, whose principal goal is to familiarize students, who are future consumers of science and perhaps themselves knowledge producers, with the intricacies of the process of science. 
+* We believe the teaching and mentoring of reproducible and open research practices is the clearest indicator of the degree to which institutions and/or departments embody principles of credible science. 
+* This demonstration goes beyond paying lip service to best practices, and ensures that students are trained to engage in these practices.
+
+FORRT is designed by, and envisioned for, educators who wish to integrate typical discipline content with open and reproducible science tenets. 
+
+FORRT supports this endeavor through a three-pronged approach:
+
+1. Providing to educators a comprehensive, straightforward, and accessible framework to qualify and quantify the degree of open and reproducible research practices in their teaching and mentoring. Through FORRT’s self-assessment tool, educators are supplied with a personalized pathway toward incremental integration of discipline content with open and reproducible science tenets.  
+   <i class="fas fa-arrow-alt-circle-right text-danger fa-1.5x"></i> [FORRT's clusters](/nexus/clusters)  
+   <i class="fas fa-arrow-alt-circle-right text-danger fa-1.5x"></i> [Test yourself](/nexus/self-assessment)
+
+2. Equipping scholars with high quality pedagogical tools on open and reproducible research practices. Instructors can then adapt successful and implemented pedagogies to help ease the transition and reduce the instructor’s burden.  
+  <i class="fas fa-arrow-alt-circle-right text-danger fa-1.5x"></i> [Our educational nexus](/nexus/resources/)  
+  <i class="fas fa-arrow-alt-circle-right text-danger fa-1.5x"></i> [Pedagogies](/pedagogies/)  
+
+1. Modifying the academic incentive structure regarding teaching and mentoring through recognition and commendations of excellent teaching and mentoring, which in turn are documentable and relevant to the researchers’ visibility, prestige, tenure and promotion reviews; foster social justice through the opening and democratization of scientific-educational resources to those who otherwise would be educationally disenfranchised; and building a community with existing educational initiatives and strengthening our missions, identify and reduce redundancies, and streamline the advancement of open educational practices.  
+  <i class="fas fa-arrow-alt-circle-right text-danger fa-1.5x"></i> **[Our partnerships](/about/partneships)**  
+  <i class="fas fa-arrow-alt-circle-right text-danger fa-1.5x"></i> [Read our manuscript](/manuscript)  
+
+{{< /expand >}}
+

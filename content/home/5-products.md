@@ -26,7 +26,7 @@ subtitle = "---"
   buttonurl = "manuscript/"
   buttondescr = "Read our manuscript"
   name = "Manuscript"
-  description = "A description will be added soon."
+  description = "FORRT’s team wrote a manuscript explaining why open and reproducible tenets should be incorporated in the teaching and mentoring of prototypical subject matters.  In line with principles enshrined in FORRT, this manuscript is an open online contributorship project. The work of all contributors are valued and will be formally recognized. With this, we hope to expand the scope and diversity of FORRT’s mission and its team."
   
 [[featurealt]]
   # icon = "users"
@@ -38,7 +38,7 @@ subtitle = "---"
   buttonurl = "nexus/"
   buttondescr = "View our educational nexus"
   name = "Educational Nexus"
-  description = "A description will be added soon."  
+  description = "The educational NEXUS is a platform for teachers to Find, Access, Interoperate, and Reuse (FAIR) resources and teaching materials. The pedagogical content of all resources will be maximised to facilitate adaptation and reuse. We welcome new contributions to help build diversity in the collated resources. FORRT strongly advocates for these resources being used, cited and recognized."  
   
 [[featurealt]]
   # icon = "handshake"
@@ -50,7 +50,7 @@ subtitle = "---"
   buttonurl = "pedagogies/"
   buttondescr = "Discover our pedagogies"
   name = "Pedagogies"
-  description = "A description will be added soon."
+  description = "FORRT creates, collects and catalogues examples of successful pedagogical approaches in teaching and mentoring as well as the openness of these resources. Interested parties – i.e., scholars, instructors, and educational institutions – can use FORRT’s pedagogies as a template towards the creation of their own teaching strategies. FORRT pedagogies will strive to support teachers and mentors to integrate field-specific education with open and reproducible science tenets."
   
 [design.spacing]
   # Customize the section spacing. Order is top, right, bottom, left.

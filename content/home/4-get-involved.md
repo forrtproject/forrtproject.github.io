@@ -20,7 +20,7 @@ subtitle = "---"
   img = "megaphone.png"
   imgalttext = "Image of a megaphone"
   name = "Spread the Word"
-  description = "Better Education is for everyone. Help us spread the word by joining our [open Slack workspace](https://join.slack.com/t/forrt/shared_invite/enQtODMwODI0OTk4ODgzLTM0ZTQ3NDk5MzA1ZjBmNWJjYTVlN2Y2YTk0ZTJhYTY5NDliMDYzMjg2MWE0ZDRhOTY0ZDY3OTRlNDA4ODQ3NjQ) and invite your friends and colleagues to be part of our community."
+  description = "Better education is for everyone. Help us spread the word by sharing FORRT via Twitter, Facebook, your professional listservs and other social media."
   
 [[feature]]
 #  icon = "users"
@@ -28,8 +28,8 @@ subtitle = "---"
   img = "teamwork.png"
   imgalttext = "Image of a megaphone"
   name = "Join Our Team"
-  description = "Everything we develop and produce is in the open. You can join our team [on GitHub](https://github.com/forrtproject/). If you want to become an active contributors [email us](mailto:FORRTproject@gmail.com)."  
-  
+  description = "Everything we develop and produce is in the open. You can join our team by going through our [onboarding process](https://docs.google.com/document/d/1S5xkHgzSBrajF2tJMJ_7Fi4leOH-a4XKX3L71Ek0tNo/edit?usp=sharing) - there is something for everyone - or via [GitHub](https://github.com/forrtproject/) for those with expertise and willingness to work on website development. You can always [email us](mailto:FORRTproject@gmail.com)."
+
 [[feature]]
   # icon = "handshake"
   # icon_pack = "fas"
@@ -37,7 +37,25 @@ subtitle = "---"
   img = "partner.png"
   imgalttext = "6 arms holding each others' wrist. Illustration."
   name = "Become a Partner"
-  description = "We have three different partner levels (Core, Strategic and Institutional) that help us to develop the principles enshrined in FORRT. If you want to become a partner [email us](mailto:FORRTproject@gmail.com)."
+  description = "We have three different partner levels (Core, Strategic, and Institutional) that help us to develop the principles enshrined in FORRT. If you want to become a partner, [email us](mailto:FORRTproject@gmail.com)."
+
+[[feature]]
+  icon = "scroll"
+  icon_pack = "fas"
+  iconalttext = "scroll"
+  # img = "partner.png"
+  # imgalttext = "6 arms holding each others' wrist. Illustration."
+  name = "Learning about FORRT"
+  description = "We recently released a [preprint](/manuscript) introducing FORRT. You can read it [on our site](/manuscript) or on [PsyArXiv](https://osf.io/bnh7p)."
+
+[[feature]]
+  icon = "slack"
+  icon_pack = "fab"
+  iconalttext = "Slack icon"
+  # img = "partner.png"
+  # imgalttext = "6 arms holding each others' wrist. Illustration."
+  name = "Discuss"
+  description = "We have also opened a Slack channel to keep everyone up-to-date and to provide a platform for ongoing discussions. [You can join us here.](https://join.slack.com/t/forrt/shared_invite/zt-alobr3z7-NOR0mTBfD1vKXn9qlOKqaQ)"
 
 # Call to action links (optional).
 #   Display link(s) by specifying a URL and label below. Icon is optional for `[cta]`.

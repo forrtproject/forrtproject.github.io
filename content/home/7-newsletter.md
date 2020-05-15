@@ -9,7 +9,7 @@ active = false  # Activate this widget? true/false
 weight = 70  # Order that this section will appear.
 
 title = "Stay updated"
-subtitle = "Subscribe to our newsletter, get the latest news from FORRT and about our initiatives."
+subtitle = "Subscribe to our newsletter from FORRT to get the latest news about our initiatives."
 
 [design]
   # Choose how many columns the section has. Valid values: 1 or 2.
