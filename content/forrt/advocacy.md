@@ -7,12 +7,12 @@ headless = true  # This file represents a page section.
 active = true  # Activate this widget? true/false
 weight = 30  # Order that this section will appear.
 
-title = "Advocacy"
-subtitle = "Recent & Upcoming FORRT's Events"
+title = "Grassroots advocacy"
+subtitle = ""
 
 [content]
   # Page type to display. E.g. post, talk, or publication.
-  page_type = "talk"
+  page_type = ""
   
   # Choose how much pages you would like to display (0 = all pages)
   count = 5
@@ -68,8 +68,6 @@ subtitle = "Recent & Upcoming FORRT's Events"
  css_class = ""
 +++
 
-## Focus
+FORRT will have at its disposal a database that combines mentoring and teaching evaluations with its possible causes and correlates. This pedagogic assessment enables a nuanced perspective on the degree of open and reproducible research teaching and mentoring. We have developed a survey to collect information about the extent to which principled teaching and mentoring are implemented in diverse institutions around the globe. Not only should it provide the community with a birds’ eye view into current practices, but it may also help elucidate the factors behind the emergence, development, and sustainability of scientific integrity, principled teaching and open education. For example, in coordination with institutions like the UK’s Reproducibility Network, the German Open-Science Network (NOSI), and the Dutch NWO – all of which share a common mission: investigating factors that contribute to research integrity, robust research practices, promoting training activities, and disseminating best practices – FORRT’s assessment may provide these stakeholders data with which to inform and substantiate policy proposals and advocacy. Indeed, FORRT is in a prime position to mediate the demands between empirical and normative components on a range of emerging and contemporary (politico-)scientific debates. FORRT hopes to work with national and regional ‘open science and education’ institutions – and agencies, organizations, groups and individuals, both in wider society and the local community – to ensure that FORRT’s potential is useful and impactful beyond its main educational scope, and to all those seeking to engage the scientific community.
 
-FORRT’s Advocacy focuses on the promotion of Open and Reproducible teaching and mentoring at various levels of stakeholders, highlighting and stressing the societal, professional and personal advantages that it entails.
-
-FORRT’s Advocacy aims to give voice to teachers and students - at both graduate and undergraduate levels, in both research- and teaching-focused institutions, wherever learning happens in higher-education.
+Learn more about the [survey here](/nexus/self-assessment). If you are interested in helping, please [fill in the survey here](https://maastrichtuniversity.eu.qualtrics.com/jfe/form/SV_9T7GA05HbqxiQTP) and share it broadly with colleagues. It should take no more than 15 minutes to complete the survey. 

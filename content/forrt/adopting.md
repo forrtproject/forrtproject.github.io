@@ -54,12 +54,52 @@ classtitle = "text-center"
 
 +++
 
-## Existing educational materials
+# Principles
 
-Make your existing teaching and mentoring materials open. These can in about prototypical subject-matters like in areas within Psychology, Political Science, Statistics, Economics, Neuroscience, Philosophy, History, etc. These can be in any language. You can then iteratively improve you materials. Non-exhaustive examples are: enhacing its documentation, adding media (transcripts, voice, video), making it multilanguage, and accessible to people with disability. The goal is to make your materials as understandable as possible to others, so they can be useful for both learning and teaching purposes. Other educators can then reuse and/or adapt it to their own context and needs - reducing time encumberment for producing high-quality materials and its access - effectively allowing meaningful participation of civil society in learning, research and innovation.
+## Principled Teaching 
 
-## Past and current research materials
+We believe it is of utmost importance to communicate the facts of science relative to the process by which it was acquired. Scientific claims should be taken in light of epistemic uncertainty – i.e., the intrinsic incertitude about the validity of truth claims (including scientific), to avoid teaching students a false sense of certainty about ‘the facts’ of science. This idea is enshrined at the core of the open science movement, the credibility revolution, open access, and better measurement practices.
 
-Make your research open. An often neglected aspect is that your research serves the community as an educational material. Increasingly, well documented research repositories are used in undergraduate and graduate education. Think of the Collaborative Replications and Education Project in Psychology (CREP), the Political Science Replication Initiative (PSRI), its Economics’ counterpart. How to achieve this? Thankfully, it is very easy. Create an OSF account, include your studies’ materials (code, codebooks, data, etc) in a repository, and you are done!
+### Advantages of principled teaching:
+* it exposes students to a more honest educational process, especially with respect to epistemic uncertainty and its consequences to the facts of science; 
+* it bequeaths first-hand practical experience in probing the production of knowledge which in turn trains students to be good consumers of science; 
+{{< expand "Expand to know more" >}}
+An increasing number of scholars have incorporated reproducible, transparent, and open principles to their research pipeline. However, the associated social and ethical responsibilities towards the teaching of these principles is yet to be realized. It is still common practice to teach subject matters, at undergraduate and graduate levels, for quantitative and qualitative science, without resolutely emphasizing that scientific claims should be taken in light of epistemic uncertainty – i.e., the intrinsic incertitude about the validity of truth claims (including scientific). This has the unfortunate consequence of teaching students a false sense of certainty about ‘the facts’ of science, which can be thought of as misleading, if not unethical.
+{{< /expand >}}
 
-If you want to learn more about “How to Open Science”, visit [FORRT’s Educational Nexus](/nexus).
+
+## Principled Mentoring
+ 
+Central to the academic ethos, the relationship between mentor and mentee is one of scientific genesis, incremental contributions, and personal and professional development. This academic experience is optimized when students feel they can contribute to the supervisor’s research and the product of this contribution is valued. One way to achieve this is to expose students to  the intricacies and procedures of science making, including the flaws and merits of any given research approach. Open and reproducible tenets serve an important role in mentorship pedagogy.
+
+### Advantages of principle mentoring:
+* it enables students to see their work and efforts serve a meaningful practical purpose: to aggregate and positively impact the scientific community
+* it breeds an atmosphere of constructive curiosity and problem-solving; 
+* it endows students with the ability to discover on their own the myriad of ways their skill set and ability can be integrated into the research * process. 
+* it helps shatter the academic glass ceiling and promote engagement with the academic profession.
+* it galvanizes and accelerates the dissemination of reliable, rigorous, replicable, open, reproducible science to a previously uninformed population: undergraduate and graduate students
+
+
+
+
+
+
+
+
+
+
+## Make your existing teaching and mentoring materials open.
+
+Open educational resources are beneficial regardless of subject or language, and allow for community contributions for iterative improvement of materials. Making your teaching and mentoring materials open allows the community to do things like enhance documentation, add media (transcripts, voice, video), translate materials, and improve accessibility. Educators can reuse and/or adapt materials to their own context and needs - reducing time encumberment for producing high-quality materials and its access - effectively allowing meaningful participation of civil society in learning, research and innovation.
+
+## Make your research open.
+
+Increasingly, well-documented research repositories are used as educational resources in undergraduate and graduate education. Additionally, initiatives like the Collaborative Replications and Education Project in Psychology (CREP) and the Political Science Replication Initiative (PSRI) are being developed.
+
+## Roadmap for Graduate Students.
+
+Kathawalla, Silverstein, and Syed propose “[Easing Into Open Science: A Tutorial for Graduate Students](https://psyarxiv.com/vzjdp/)” to assist graduate students to engage in open science practices. They give graduate students ideas on how to approach conversation with their advisors/collaborators, ideas on how to integrate open science practices within the graduate school framework, and specific resources on how to engage with each behavior. And they emphasize that engaging in open science behaviors need not be an all or nothing approach, but rather graduate students can engage with any number of the behaviors outlined. 
+
+We are including more ways, stay tuned!
+
+

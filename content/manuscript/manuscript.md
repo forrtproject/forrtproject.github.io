@@ -8,7 +8,7 @@ headless = true  # This file represents a page section.
 active = true  # Activate this widget? true/false
 weight = 10  # Order that this section will appear.
 
-title = "The manuscript"
+title = "Our manuscript"
 subtitle = ""
 
 [design]
@@ -51,13 +51,8 @@ subtitle = ""
  css_class = ""
 +++
 
+FORRT’s team wrote a manuscript explaining why open and reproducible tenets should be incorporated in the teaching and mentoring of prototypical subject matters.  In line with principles enshrined in FORRT, this manuscript is an open online contributorship project. The work of all contributors are valued and will be formally recognized. With this, we hope to expand the scope and diversity of FORRT’s mission and its team.
 
-{{% alert warning %}}
-How do you want to display the manuscript and what to include?
-* The latest PDF version downloadable?
-* Link to the OSF repo?
-* Link to the *live* manuscript on Google Doc
-* What else?
-{{% /alert %}}
+Read it here or find it on OSF by following this link: https://osf.io/bnh7p
 
 {{< embed name="forrt_v1.pdf" height=1000 >}}
