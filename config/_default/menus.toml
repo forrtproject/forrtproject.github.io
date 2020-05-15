@@ -68,11 +68,11 @@
   url = "/forrt#policy"  # The URL of your page.
   weight = 29  # The position of your page in the menu.
   parent = "forrt"
-[[main]]
-  name = "Assessment"  # A link title for your page.
-  url = "/forrt/assessment/"  # The URL of your page.
-  weight = 30  # The position of your page in the menu.
-  parent = "forrt"
+# [[main]]
+#   name = "Assessment"  # A link title for your page.
+#   url = "/forrt/assessment/"  # The URL of your page.
+#   weight = 30  # The position of your page in the menu.
+#   parent = "forrt"
 
 [[main]]
   name = "NEXUS"
