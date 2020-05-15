@@ -81,17 +81,17 @@
   identifier = "nexus"
 [[main]]
   name = "Clusters"
-  url = "/nexus/clusters"
+  url = "/nexus/1/"
   weight = 31
   parent = "nexus"
 [[main]]
   name = "Resources"
-  url = "/nexus/resources"
+  url = "/resources"
   weight = 32
   parent = "nexus"
 [[main]]
   name = "Self-Assessment"
-  url = "/nexus/self-assessment"
+  url = "/survey"
   weight = 33
   parent = "nexus"
 
@@ -100,18 +100,18 @@
   url = "/pedagogies/"
   weight = 40
   identifier = "pedagogies"
-[[main]]
-  name = "Public"
-  url = "/pedagogies/public/"
-  weight = 41
-  parent = "pedagogies"  
-[[main]]
-  name = "Undergraduate"
-  url = "/pedagogies/undergraduate/"
-  weight = 42
-  parent = "pedagogies"  
-[[main]]
-  name = "Graduate"
-  url = "/pedagogies/graduate"
-  weight = 43
-  parent = "pedagogies"  
+# [[main]]
+#   name = "Public"
+#   url = "/pedagogies/public/"
+#   weight = 41
+#   parent = "pedagogies"  
+# [[main]]
+#   name = "Undergraduate"
+#   url = "/pedagogies/undergraduate/"
+#   weight = 42
+#   parent = "pedagogies"  
+# [[main]]
+#   name = "Graduate"
+#   url = "/pedagogies/graduate"
+#   weight = 43
+#   parent = "pedagogies"  
