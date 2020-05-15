@@ -4,9 +4,7 @@ headless = true  # This file represents a page section.
 active = true  # Activate this widget? true/false
 weight = 15  # Order that this section will appear.
 title = "History"
-subtitle = """It's important to us that FORRT is an open contributorship - we aim that all can contribute, and all contributions are recognised.
-
-We aim to build a community of teachers and mentors supporting one another to give our students the gifts of openness and reproducibility."""
+# subtitle = """It's important to us that FORRT is an open contributorship - we aim that all can contribute, and all contributions are recognised. We aim to build a community of teachers and mentors supporting one another to give our students the gifts of openness and reproducibility."""
 
 # Date format
 #   Refer to https://sourcethemes.com/academic/docs/customization/#date-format
@@ -17,40 +15,40 @@ date_format = "Jan 02, 2006"
 #   Required fields are `title`, `company`, and `date_start`.
 #   Leave `date_end` empty if it's your current employer.
 #   Begin/end multi-line descriptions with 3 quotes `"""`.
-[[experience]]
-  title = "Society for the Improvement of Psychological Science 2018 Meeting"
-  company = "**S**ociety for the **I**mprovement of **P**sychological **S**cience - **SIPS**"
-  company_url = ""
-  location= "Grand Rapids, MI, USA"
-  date_start = "2018-06-24"
-  date_end = "2018-06-26"
-  description = """
-  This project was initiated in the *[Teaching replicable and reproducible science hackathon](https://osf.io/x7d45/)* led by Kristen Lane and Heather Urrythe during SIPS 2018 annual meeting.
-  
-  The initial framework was developed in a subsequent working group consisting of:
-  * Flavio Azevedo, Sam Parsons, Carl Michael Galang, Kristin Lane, Lisa DeBruine, Benjamin Le, Donald Tellinghuisen, and, Madeline Harms;
-  * We apologise if we have missed anybody - please let us know.
-  """
-
-[[experience]]
-  title = "Preprint is finally out! "
-  company = "Introducing a Framework for Open and Reproducible Research Training"
-  company_url = "https://doi.org/10.31219/osf.io/bnh7p"
-  location = "Preprint available @ [osf.io](https://doi.org/10.31219/osf.io/bnh7p)"
-  date_start = "2019-12-19"
-  date_end = ""
-  description = """The [preprint](https://osf.io/bnh7p) is a treatise on why principles of openness, transparency, rigour, social justice, and reproducibility (plus many more!) are essential. We aim to not only introduce FORRT as a project, but lay out why we need more support for teachers."""
-
-[[experience]]
-  title = "Revamping the FORRT website"
-  company = "From V1 to V2"
-  company_url = "/"
-  location = ""
-  date_start = "2019-12-19"
-  date_endnow = "present"
-  description = """Of course, the website is in its early stages. So, if you are interested in website development, get in touch!
-
-FORRTproject@gmail.com"""
+# [[experience]]
+#   title = "Society for the Improvement of Psychological Science 2018 Meeting"
+#   company = "**S**ociety for the **I**mprovement of **P**sychological **S**cience - **SIPS**"
+#   company_url = ""
+#   location= "Grand Rapids, MI, USA"
+#   date_start = "2018-06-24"
+#   date_end = "2018-06-26"
+#   description = """
+#   This project was initiated in the *[Teaching replicable and reproducible science hackathon](https://osf.io/x7d45/)* led by Kristen Lane and # Heather Urrythe during SIPS 2018 annual meeting.
+#   
+#   The initial framework was developed in a subsequent working group consisting of:
+#   * Flavio Azevedo, Sam Parsons, Carl Michael Galang, Kristin Lane, Lisa DeBruine, Benjamin Le, Donald Tellinghuisen, and, Madeline Harms;
+#   * We apologise if we have missed anybody - please let us know.
+#   """
+# 
+# [[experience]]
+#   title = "Preprint is finally out! "
+#   company = "Introducing a Framework for Open and Reproducible Research Training"
+#   company_url = "https://doi.org/10.31219/osf.io/bnh7p"
+#   location = "Preprint available @ [osf.io](https://doi.org/10.31219/osf.io/bnh7p)"
+#   date_start = "2019-12-19"
+#   date_end = ""
+#   description = """The [preprint](https://osf.io/bnh7p) is a treatise on why principles of openness, transparency, rigour, social justice, and # reproducibility (plus many more!) are essential. We aim to not only introduce FORRT as a project, but lay out why we need more support for # teachers."""
+# 
+# [[experience]]
+#   title = "Revamping the FORRT website"
+#   company = "From V1 to V2"
+#   company_url = "/"
+#   location = ""
+#   date_start = "2019-12-19"
+#   date_endnow = "present"
+#   description = """Of course, the website is in its early stages. So, if you are interested in website development, get in touch!
+# 
+# FORRTproject@gmail.com"""
   
 [design.background]
   # Apply a background color, gradient, or image.
@@ -87,3 +85,5 @@ FORRTproject@gmail.com"""
  # CSS class.
  css_class = ""  
 +++
+
+This project was initiated at the 2018 meeting of the Society for the Improvement of Psychological Science in the “Teaching replicable and reproducible science” hackathon led by Kristen Lane and Heather Urry. The initial framework was developed in a subsequent working group consisting of: Flávio Azevedo, Sam Parsons, Carl Michael Galang, Kristin Lane, Lisa DeBruine, Benjamin Le, Donald Tellinghuisen, and Madeline Harms (we apologise if we have missed anybody - please let us know).
