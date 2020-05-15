@@ -14,7 +14,14 @@ subtitle = "Whether you have questions getting started or you want to know how t
   #img = "megaphone.png"
   name = "Email"
   description = " [forrtproject@gmail.com](mailto:FORRTproject@gmail.com)"
-  
+
+[[feature]]
+  icon = "twitter"
+  icon_pack = "fab"
+  # img = "partner.png"
+  name = "Twitter"
+  description = "[Reach out @FORRTproject](https://twitter.com/@FORRTproject)"
+
 [[feature]]
   icon = "slack"
   icon_pack = "fab"
@@ -22,12 +29,12 @@ subtitle = "Whether you have questions getting started or you want to know how t
   name = "Slack"
   description = "[Join our open Slack channel](https://join.slack.com/t/forrt/shared_invite/enQtODMwODI0OTk4ODgzLTM0ZTQ3NDk5MzA1ZjBmNWJjYTVlN2Y2YTk0ZTJhYTY5NDliMDYzMjg2MWE0ZDRhOTY0ZDY3OTRlNDA4ODQ3NjQ)" 
   
-[[feature]]
-  icon = "github"
-  icon_pack = "fab"
-  # img = "partner.png"
-  name = "GitHub"
-  description = "[Join our team on GitHub](https://github.com/flavioazevedo/FORRT)"
+# [[feature]]
+#   icon = "github"
+#   icon_pack = "fab"
+#   # img = "partner.png"
+#   name = "GitHub"
+#   description = "[Join our team on GitHub](https://github.com/flavioazevedo/FORRT)"
 
 # Call to action links (optional).
 #   Display link(s) by specifying a URL and label below. Icon is optional for `[cta]`.

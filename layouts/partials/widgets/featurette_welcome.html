@@ -1,7 +1,7 @@
 {{ $ := .root }}
 {{ $page := .page }}
 
-<div class="row featurette">
+<div class="row featurette justify-content-around">
   {{ with $page.Title }}
   <div class="col-md-12 section-heading">
     <h1>{{ . | markdownify | emojify }}</h1>
