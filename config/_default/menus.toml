@@ -17,7 +17,7 @@
 
 [[main]]
   name = "About us"  # A link title for your page.
-  url = "/about/"  # The URL of your page.
+  url = "/about/us"  # The URL of your page.
   weight = 10  # The position of your page in the menu.
   parent = "about"
 
