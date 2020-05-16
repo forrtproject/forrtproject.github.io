@@ -5,11 +5,11 @@
 widget = "blank"  # See https://sourcethemes.com/academic/docs/page-builder/
 headless = true  # This file represents a page section.
 active = true  # Activate this widget? true/false
-weight = 10  # Order that this section will appear.
+weight = 5  # Order that this section will appear.
 
-title = "About us"
-subtitle = "*In pursuit of the best conceivable educational practices in higher education*"
-classtitle = "text-center"
+title = "Mission & Advocacy"
+subtitle = ""
+classtitle = ""
 
 [design]
   # Choose how many columns the section has. Valid values: 1 or 2.
@@ -41,7 +41,7 @@ classtitle = "text-center"
 
 [design.spacing]
   # Customize the section spacing. Order is top, right, bottom, left.
-  padding = ["60px", "0", "60px", "0"]
+  padding = ["60px", "0", "0", "0"]
 
 
 [advanced]
@@ -55,21 +55,9 @@ classtitle = "text-center"
 
 ---
 
-The Framework for Open and Reproducible Research Training (FORRT) brings together educators and scholars working to improve teaching and mentoring practices in higher education.
-
-For more information about our goals and values, read our [Mission Statement](#Mission-Statement) and [Code of Conduct](/coc).
-
-If you’re looking for educational resources, please take a look at our [Educational Nexus](/nexus) and our [FORRT Pedagogies](/[pedagogies]).
-
-If you’re looking for information about who we are or our organizational structure, take a look at [our community](/about/community).
-
-<br>
-<br>
-
-
 # Mission Statement
 
-*FORRT brings the open scholarship movement to teaching and mentoring, in pursuit of the best conceivable practices in higher education. Our aspiration is to build, together with educators, a pathway towards the incremental adoption of open and reproducible science tenets in education.*
+*FORRT brings the open scholarship and reproducible science movements to teaching and mentoring, in pursuit of the best conceivable practices in higher education. Our aspiration is to build, together with educators, a pathway towards the incremental adoption of open and reproducible science tenets in education.*
 
 <br>
 <br>
@@ -96,12 +84,3 @@ If you’re looking for information about who we are or our organizational struc
 * Advocacy for the creation and maintenance of educational resources. 
 
 Instead of encouraging an atmosphere of competition, we are compiling best practices in teaching open science, scientific literacy, and related topics, while advocating for structural change to foster a collaborative and conducive environment. FORRT supports endeavors to seriously examine current practices in higher education around the perceived relative importance of different academic activities and elevating teaching-related activities within those hierarchies.
-
-
-<br>
-<br>
-
-## FORRT for students
-
-With FORRT, educators in higher-education have increased opportunities to shape the minds and future of the consumers of science and the next generation of academics. Numerous scholars consider as a significant part of their responsibilities to contribute to the next generations’ edification and professional development – i.e., broadening their horizons, imparting expertise into the acquisition of knowledge independently, fostering the conditions to discover connections of seemingly unrelated phenomena, helping develop the tools and self-confidence necessary to challenge outdated dogma and its roots on current societal and educational institutions. FORRT will help educators in accomplishing these downstream goals. In this sense, at its best, FORRT should be the answer to the question “what are the best conceivable educational practices in higher education and how to achieve it?” Unrelated, but equally important, FORRT hopes to contribute to the sustainability of the grassroots movement for the improvement of science and help foster social justice through the democratization of scientific educational resources and pedagogies.
-

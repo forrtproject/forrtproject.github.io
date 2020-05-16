@@ -8,7 +8,7 @@ headless = true  # This file represents a page section.
 active = true  # Activate this widget? true/false
 weight = 100  # Order that this section will appear.
 
-title = "Our social media stream"
+title = "Tweets by @FORRTproject"
 subtitle = "#FORRTproject <br> <blockquote class='twitter-tweet' data-theme='light'><p lang='en' dir='ltr'>It&#39;s an exciting time for FORRT. <br><br>We&#39;ve just released the first version of our preprint &quot;introducing a Framework for Open and Reproducible Research Training&quot; <a href='https://t.co/lRzC8tN8En'>https://t.co/lRzC8tN8En</a> 🥳</p>&mdash; FORRT (@FORRTproject) <a href='https://twitter.com/FORRTproject/status/1207303102245801984?ref_src=twsrc%5Etfw'>December 18, 2019</a></blockquote> <script async src='https://platform.twitter.com/widgets.js' charset='utf-8'></script>"
 
 [design]

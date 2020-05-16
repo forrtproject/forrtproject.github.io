@@ -1,7 +1,7 @@
 ---
 authors:
-- forrt
-bio:
+- Mike Galang
+bio: 
 # education:
 #   courses:
 #   - course: PhD in Artificial Intelligence
@@ -18,7 +18,7 @@ email: ""
 # - Artificial Intelligence
 # - Computational Linguistics
 # - Information Retrieval
-name: FORRT
+name: Mike Galang
 # organizations:
 # - name: Stanford University
 #   url: ""
@@ -47,7 +47,7 @@ social:
   link: 'mailto:FORRTproject@gmail.com' 
 superuser: true
 user_groups:
-  - "Advisors"
+  - "FORRT Ambassadors"
 # true/false to display over picture
 display_name: false
 ---

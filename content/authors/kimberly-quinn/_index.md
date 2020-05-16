@@ -4,7 +4,7 @@ name: "Kimberly Quinn"
 
 # Username (this should match the folder name and the name on publications)
 authors:
-- Name "Kimberly Quinn"
+- "Kimberly Quinn"
 
 # Is this the primary user of the site?
 superuser: false
@@ -64,4 +64,5 @@ email: ""
 #   Set this to `[]` or comment out if you are not using People widget.
 user_groups:
 - "Steering Committee"
+- Code of Conduct Committee
 ---

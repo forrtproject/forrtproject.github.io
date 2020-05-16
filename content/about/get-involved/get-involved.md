@@ -1,6 +1,6 @@
 +++
 # A Skills section created with the Featurette widget.
-widget = "featurette_welcome"  # See https://sourcethemes.com/academic/docs/page-builder/
+widget = "blank"  # See https://sourcethemes.com/academic/docs/page-builder/
 headless = true  # This file represents a page section.
 active = true  # Activate this widget? true/false
 weight = 20  # Order that this section will appear.
@@ -56,7 +56,7 @@ subtitle = """**Join the movement for better education**
 
 [design.spacing]
   # Customize the section spacing. Order is top, right, bottom, left.
-  padding = ["0", "0", "60px", "0"]
+  padding = ["60px", "0", "60px", "0"]
 +++
 
 ## Contribute to the educational NEXUS

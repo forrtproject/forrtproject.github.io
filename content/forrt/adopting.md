@@ -79,22 +79,13 @@ Central to the academic ethos, the relationship between mentor and mentee is one
 * it helps shatter the academic glass ceiling and promote engagement with the academic profession.
 * it galvanizes and accelerates the dissemination of reliable, rigorous, replicable, open, reproducible science to a previously uninformed population: undergraduate and graduate students
 
-
-
-
-
-
-
-
-
-
 ## Make your existing teaching and mentoring materials open.
 
 Open educational resources are beneficial regardless of subject or language, and allow for community contributions for iterative improvement of materials. Making your teaching and mentoring materials open allows the community to do things like enhance documentation, add media (transcripts, voice, video), translate materials, and improve accessibility. Educators can reuse and/or adapt materials to their own context and needs - reducing time encumberment for producing high-quality materials and its access - effectively allowing meaningful participation of civil society in learning, research and innovation.
 
 ## Make your research open.
 
-Increasingly, well-documented research repositories are used as educational resources in undergraduate and graduate education. Additionally, initiatives like the Collaborative Replications and Education Project in Psychology (CREP) and the Political Science Replication Initiative (PSRI) are being developed.
+Increasingly, well-documented research repositories are used as educational resources in undergraduate and graduate education. Additionally, initiatives like the [Collaborative Replications and Education Project in Psychology](https://osf.io/wfc6u/wiki) (CREP) and the [Political Science Replication Initiative](https://projects.iq.harvard.edu/psreplication/home) (PSRI) are being developed.
 
 ## Roadmap for Graduate Students.
 

@@ -66,9 +66,9 @@ subtitle = "---"
    # icon_pack = "fas"
    # icon = "info"
   
- [cta_alt]
-  url = "/about/get-involved/"
-  label = "or view how you can help"
+# [cta_alt]
+#  url = "/about/get-involved/"
+#  label = "or view how you can help"
 
 # Note. An optional note to show underneath the links.
 # [cta_note]
