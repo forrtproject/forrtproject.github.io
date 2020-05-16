@@ -8,7 +8,7 @@ active = true  # Activate this widget? true/false
 weight = 5  # Order that this section will appear.
 
 title = "About us"
-subtitle = "*In pursuit of the best conceivable educational practices in higher education*"
+subtitle = "*Advocating for the integration of open and reproducible science into higher education*"
 classtitle = "text-center"
 
 [design]
