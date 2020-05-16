@@ -76,7 +76,7 @@ FORRT is designed by, and envisioned for, educators who wish to integrate typica
 FORRT supports this endeavor through a three-pronged approach:
 
 1. Providing to educators a comprehensive, straightforward, and accessible framework to qualify and quantify the degree of open and reproducible research practices in their teaching and mentoring. Through FORRT’s self-assessment tool, educators are supplied with a personalized pathway toward incremental integration of discipline content with open and reproducible science tenets.  
-   <i class="fas fa-arrow-alt-circle-right text-danger fa-1.5x"></i> [FORRT's clusters](/nexus/clusters)  
+   <i class="fas fa-arrow-alt-circle-right text-danger fa-1.5x"></i> [FORRT's clusters](/nexus/clusters/1/)  
    <i class="fas fa-arrow-alt-circle-right text-danger fa-1.5x"></i> [FORRT’s self-assessment tool](/survey)
 
 2. Equipping scholars with high quality pedagogical tools on open and reproducible research practices. Instructors can then adapt successful and implemented pedagogies to help ease the transition and reduce the instructor’s burden.  
@@ -84,7 +84,7 @@ FORRT supports this endeavor through a three-pronged approach:
   <i class="fas fa-arrow-alt-circle-right text-danger fa-1.5x"></i> [FORRT’s Pedagogies](/pedagogies/)  
 
 1. Modifying the academic incentive structure regarding teaching and mentoring through recognition and commendations of excellent teaching and mentoring, which in turn are documentable and relevant to the researchers’ visibility, prestige, tenure and promotion reviews; foster social justice through the opening and democratization of scientific-educational resources to those who otherwise would be educationally disenfranchised; and building a community with existing educational initiatives and strengthening our missions, identify and reduce redundancies, and streamline the advancement of open educational practices.  
-  <i class="fas fa-arrow-alt-circle-right text-danger fa-1.5x"></i> **[Institutional Partnerships](/about/partneships)**  
+  <i class="fas fa-arrow-alt-circle-right text-danger fa-1.5x"></i>[Institutional Partnerships](#6-partnerships) 
   <i class="fas fa-arrow-alt-circle-right text-danger fa-1.5x"></i> [FORRT’s Manuscript](/manuscript)  
 
 {{< /expand >}}
