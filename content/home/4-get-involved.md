@@ -20,7 +20,7 @@ subtitle = "---"
   img = "megaphone.png"
   imgalttext = "Image of a megaphone"
   name = "Spread the Word"
-  description = "Better education is for everyone. Help us spread the word by sharing FORRT via Twitter, Facebook, your professional listservs and other social media."
+  description = "Better education is for everyone. Help us spread the word by sharing FORRT via [Twitter](https://twitter.com/FORRTproject), Facebook, your professional listservs and other social media."
   
 [[feature]]
 #  icon = "users"
