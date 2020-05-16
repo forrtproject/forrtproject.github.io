@@ -55,7 +55,7 @@ FORRT’s team wrote a manuscript explaining why open and reproducible tenets sh
 
 Read it here or find it on OSF by following this link: https://osf.io/bnh7p
 
-<iframe src="https://osf.io/bnh7p" width="100%" height="500" allowfullscreen="allowfullscreen"></iframe>
+<iframe src="https://osf.io/bnh7p" width="100%" height="500"></iframe>
 
 
 # {{< embed name="forrt_v1.pdf" height=1000 >}}
