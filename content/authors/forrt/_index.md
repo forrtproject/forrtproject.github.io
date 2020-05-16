@@ -47,7 +47,8 @@ social:
   link: 'mailto:FORRTproject@gmail.com' 
 superuser: true
 user_groups:
-  - "Advisors"
+ # - "Advisors"
+
 # true/false to display over picture
 display_name: false
 ---
