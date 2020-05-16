@@ -18,8 +18,8 @@ abstract: At its very early stage, FORRT was featured at MZES Open Social Scienc
 
 # Talk start and end times.
 #   End time can optionally be hidden by prefixing the line with `#`.
-date: 2020-01-25T14:53:38-05:00
-date_end: 2020-01-27T14:53:38-05:00
+date: 2019-01-25T14:53:38-05:00
+date_end: 2019-01-27T14:53:38-05:00
 all_day: true
 
 # Schedule page publish date (NOT talk date).
