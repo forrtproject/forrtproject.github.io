@@ -46,7 +46,7 @@ subtitle = "---"
   img = "document.png"
   imgalttext = "Document. Illustration."
   name = "Learning about FORRT"
-  description = "We recently released a [preprint](/manuscript) introducing FORRT. You can read it [on our site](/manuscript) or on [PsyArXiv](https://osf.io/bnh7p)."
+  description = "We recently released a [preprint](/manuscript) introducing FORRT. You can read it [on our site](/manuscript) or on [Open Science Framework](https://osf.io/bnh7p)."
 
 [[feature]]
 #  icon = "slack"
