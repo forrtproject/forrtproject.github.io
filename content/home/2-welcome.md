@@ -9,7 +9,7 @@ active = true  # Activate this widget? true/false
 weight = 20  # Order that this section will appear.
 
 title = "**Welcome to FORRT**<br><br>"
-subtitle = "*Advocating for the integration of open and reproducible science into higher education*"
+subtitle = "*Integrating open and reproducible science tenants into higher education*"
 
 [design]
   # Choose how many columns the section has. Valid values: 1 or 2.
