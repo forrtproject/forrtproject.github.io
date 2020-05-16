@@ -1,10 +1,10 @@
 ---
 # Display name
-name: "Leticia Rettore"
+name: "Ben Saunders"
 
 # Username (this should match the folder name and the name on publications)
 authors:
-- Name "Leticia Rettore"
+- Name "Ben Saunders"
 
 # Is this the primary user of the site?
 superuser: false
@@ -63,7 +63,7 @@ email: ""
 # Organizational groups that you belong to (for People widget)
 #   Set this to `[]` or comment out if you are not using People widget.
 user_groups:
-#- "Steering Committee"
 - "Advisors"
-- "Code of Conduct Committee"
+#- "Steering Committee"
+#- "Code of Conduct Committee"
 ---
