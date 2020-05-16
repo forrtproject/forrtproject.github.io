@@ -11,16 +11,21 @@
 
 [[main]]
   name = "About FORRT"  # A link title for your page.
-  url = "about/mission/"  # The URL of your page.
+  url = ""  # The URL of your page.
   weight = 10  # The position of your page in the menu.
   identifier = "about"
 
 [[main]]
-  name = "Our Mission"  # A link title for your page.
+  name = "About us"  # A link title for your page.
+  url = "/about/"  # The URL of your page.
+  weight = 10  # The position of your page in the menu.
+  parent = "about"
+
+[[main]]
+  name = "Mission & Advocacy"  # A link title for your page.
   url = "about/mission/"  # The URL of your page.
   weight = 11  # The position of your page in the menu.
   parent = "about"
-  
   
 [[main]]
   name = "Get Involved"  # A link title for your page.

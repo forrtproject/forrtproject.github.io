@@ -4,8 +4,8 @@
 
 widget = "blank"  # See https://sourcethemes.com/academic/docs/page-builder/
 headless = true  # This file represents a page section.
-active = false  # Activate this widget? true/false
-weight = 10  # Order that this section will appear.
+active = true  # Activate this widget? true/false
+weight = 5  # Order that this section will appear.
 
 title = "About us"
 subtitle = "*In pursuit of the best conceivable educational practices in higher education*"
@@ -41,7 +41,7 @@ classtitle = "text-center"
 
 [design.spacing]
   # Customize the section spacing. Order is top, right, bottom, left.
-  padding = ["100px", "0", "60px", "0"]
+  padding = ["60px", "0", "60px", "0"]
 
 
 [advanced]
@@ -53,3 +53,12 @@ classtitle = "text-center"
 
 +++
 
+---
+
+The Framework for Open and Reproducible Research Training (FORRT) brings together educators and scholars working to improve teaching and mentoring practices in higher education.
+
+For more information about our goals and values, read our [Mission Statement](#Mission-Statement) and [Code of Conduct](/coc).
+
+If you’re looking for educational resources, please take a look at our [Educational Nexus](/nexus) and our [FORRT Pedagogies](/[pedagogies]).
+
+If you’re looking for information about who we are or our organizational structure, take a look at [our community](/about/community).

@@ -39,6 +39,7 @@
       {{ else if in (slice "http" "https") $scheme }}
         {{ $target = "target=\"_blank\" rel=\"noopener\"" }}
       {{ end }}
+   <div class="col-12 col-sm-8">  
     <p class="cta-btns mx-auto pt-3">
       <a href="{{ $link | safeURL }}" {{ $target | safeHTMLAttr }} class="btn btn-primary btn-lg">{{ if $page.Params.cta.icon }}<i class="{{ $pack }} {{ $pack_prefix }}-{{ $page.Params.cta.icon }} pr-1" aria-hidden="true"></i>{{end}}{{ $page.Params.cta.label | markdownify | emojify | safeHTML }}</a>
 
@@ -56,7 +57,7 @@
       {{ end }}
     </p>
     {{ end }}
-
+ </div>
     {{/* Call-to-action note */}}
     {{ with $page.Params.cta_note }}
     <p class="hero-note text-muted mb-0">

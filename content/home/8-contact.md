@@ -6,7 +6,7 @@ active = true  # Activate this widget? true/false
 weight = 80  # Order that this section will appear.
 
 title = "Get in touch"
-subtitle = "Whether you have questions getting started or you want to know how to best integrate FORRT features into your workflow, we’re here to help you."
+subtitle = "Whether you have questions getting started or you want to know how to best integrate FORRT features into your teaching, we’re here to help you."
 
 [[feature]]
   icon = "envelope"

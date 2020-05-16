@@ -61,8 +61,9 @@ This Code of Conduct applies within all community spaces, physical and virtual, 
 
 ### Reporting Issues
 
+If you experience or witness unacceptable behaviour, or have any other concerns, please report it as indicated below. All complaints will be reviewed and investigated promptly and fairly. All community leaders are obligated to respect the privacy and security of the reporter of any incident. All reports will be handled with discretion.
 
-If you experience or witness unacceptable behaviour, or have any other concerns, please report it by contacting the community leaders personally (any member of the FORRT Code of Conduct Committee (Crystal Young; Erin Buchanan, Jordan Wagge; Kimberly Quinn; Sam Parsons; or Flávio Azevedo) or to forrtproject@gmail.com. You may also make a report anonymously through our online form here: https://forms.gle/YQu3FcDTaeLwxRbB6. All complaints will be reviewed and investigated promptly and fairly. All community leaders are obligated to respect the privacy and security of the reporter of any incident.
+If you experience or witness unacceptable behaviour, or have any other concerns, please report it by contacting the community leaders personally (any member of the FORRT Code of Conduct Committee (Kimberly Quinn; Monica Gonzales-Marquez; Sam Parsons; or Flávio Azevedo) or to forrtproject@gmail.com. You may also make a report anonymously through our online form here: https://forms.gle/YQu3FcDTaeLwxRbB6. All complaints will be reviewed and investigated promptly and fairly. All community leaders are obligated to respect the privacy and security of the reporter of any incident.
 
 All reports will be handled with discretion. In your report please include:
 -   Your contact information.

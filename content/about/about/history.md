@@ -2,7 +2,7 @@
 widget = "history"
 headless = true  # This file represents a page section.
 active = true  # Activate this widget? true/false
-weight = 15  # Order that this section will appear.
+weight = 10  # Order that this section will appear.
 title = "History"
 # subtitle = """It's important to us that FORRT is an open contributorship - we aim that all can contribute, and all contributions are recognised. We aim to build a community of teachers and mentors supporting one another to give our students the gifts of openness and reproducibility."""
 

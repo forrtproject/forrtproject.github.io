@@ -92,21 +92,8 @@ subtitle = ""
  css_class = ""
 +++
 
-This is a prototype to automate and populate curated resources from the [[FORRT-EduNex] Google sheet](https://docs.google.com/spreadsheets/d/16G02hzkWEWa_6qGNMmacCiB5cCPGhTk9A_bjGfla3RE/edit#gid=40348166). I think this sheet is linked to a form.
-
-There are {{< resources >}} resource submission so far.
+There are {{< resources >}} resource submission so far in our [[FORRT-EduNex] database](https://docs.google.com/spreadsheets/d/16G02hzkWEWa_6qGNMmacCiB5cCPGhTk9A_bjGfla3RE/edit#gid=40348166.
 
 {{% alert info %}}
 You notice some tools missing and/or you would like to add some resources, **[fill out this form](#form)**.  
 {{% /alert %}}
-
-{{% alert warning %}}
-Do you have other type of Filters you would like to use? 
-
-I also thought we could change the border color of the boxes based on the FORRT principle it is associated. (Matching the color pattern from the manuscript)
-
-I can display the form at the bottom of the page. I need edit access to it though.
-
-(Note that the number is computed automatically)
-{{% /alert %}}
-
