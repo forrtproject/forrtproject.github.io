@@ -51,11 +51,63 @@ subtitle = ""
  css_class = ""
 +++
 
-FORRT’s team wrote a manuscript explaining why open and reproducible tenets should be incorporated in the teaching and mentoring of prototypical subject matters.  In line with principles enshrined in FORRT, this manuscript is an open online contributorship project. The work of all contributors are valued and will be formally recognized. With this, we hope to expand the scope and diversity of FORRT’s mission and its team.
+<br>
 
-Read it here or find it on OSF by following this link: https://osf.io/bnh7p
+FORRT’s team [wrote a manuscript](https://osf.io/bnh7p) explaining why open and reproducible tenets should be incorporated in the teaching and mentoring of prototypical subject matters. Read our extended abstract below, or the full article, or find it on OSF by following this link: https://osf.io/bnh7p.
 
-<iframe src="https://osf.io/bnh7p" width="100%" height="500"></iframe>
+<br>
 
+## Extended Abstract
+
+{{< expand "Read our extended abstract" >}}
+
+<br>
+<div style="text-align: justify">
+<ul>
+
+> “Science is built up of facts as a house is of stones, but a collection of facts is no more a science than a pile of stones is a house” -  Henri Poincare, La Science et l’Hypothese
+
+<br>
+
+Recently, the scientific community has taken steps to increase awareness of, and call for, improved research practices ushering in the “credibility revolution” (Vazire, 2018). It features higher standards of evidence, preregistration, direct replication, transparency, and openness. Structurally, three pillars were proposed to carry science towards academic utopia: open scientific communication (Nosek, & Bar-Anan, 2012), restructured incentives and practices (Nosek, Spies, & Motyl, 2012), and collaborative and crowdsourced science (Uhlmann et al., 2018). In this utopia, then, scientists incorporate research integrity principles with cumulative, collaborative and reproducible practices.
+
+Ongoing calls for reform have focused on research, neglecting an essential aspect of academia: students. In our view, scientific utopia has a fourth pillar whose principal goal is to familiarize students - future consumers of science and potential knowledge creators - with the intricacies of science making processes. The habitual neglect of education in higher education raises a fundamental question: “If science is a process of knowledge production, then is science education best expressed as teaching students the process or as teaching them the knowledge itself?” (Marks, 2009, p. 22). If we focus on teaching students the “facts” of science, we are not actually teaching them science but its products and are misleading them about what science actually is. Furthermore, as higher education aims to prepare students for an increasingly technological workforce - whose advances increasingly affect everyone’s lives - its training ought to provide knowledge for practical adjudication of scientific output.
+
+We introduce a Framework for Open and Reproducible Research Training (FORRT) to raise awareness of the pedagogical implications of open and reproducible science and its associated challenges (i.e., curricular reform, epistemological uncertainty, methods of education, social justice, and principled education). We believe the teaching and mentoring of reproducible and open research practices is the clearest indicator of the degree to which educational institutions embody credible scientific principles (FORRT, 2019). This demonstration goes beyond paying lip service to best practices and ensures higher education students - and the public - become increasingly equipped with open and reproducible research training. Considering that in the United States,  master's degrees are now as common as bachelor's degrees were in the 1960s, and in Europe, countries have quintupled the population with tertiary degrees in the same period (World Bank, 2010), the idea that science education is only desirable for future academics is unbecoming.
+
+FORRT is an evolving, community-driven framework comprised of educators from multiple disciplines working together to (a) recognize and support principled teaching and mentoring; (b) provide pathways toward incremental integration of discipline content with open and reproducible science tenets; (c) empower higher-education students and the general public with the tools to understand, adjudicate, and produce knowledge; (d) foster social justice through the opening and democratization of scientific-educational resources to those who otherwise would be educationally disenfranchised; (e) collate existing teaching and mentoring pedagogies to be reused and repurposed in new contexts; (f) offer instructors appropriate training via a self-assessment and other voluntary educational tools; and (g) promote changes in the academic incentive structure by building a community with existing educational initiatives and strengthening our missions, identify and reduce redundancies, and streamline the advancement of open educational practices. FORRT advocates for the establishment of principled teaching and mentorship as the fourth pillar of a true scientific utopia, empowering citizens to engage in science-making, identify reproducible research, and understand the value of openness and rigor in scientific research.</ul></div>
+
+{{< /expand >}}
+
+<br>
+
+## Manuscript
+
+{{< expand "Read FORRT's manuscript (.pdf)" >}}
 
 # {{< embed name="forrt_v1.pdf" height=1000 >}}
+
+{{< /expand >}}
+
+<br>
+
+## Contribute
+
+{{< expand "Contribute to FORRT's manuscript (Google docs)" >}}
+
+<br>
+
+https://tinyurl.com/FORRTworkingDOC
+
+<ul>
+
+#### Contributorship 
+
+In line with principles enshrined in FORRT, this manuscript is an open online contributorship project. The work of all contributors are valued and are formally recognized. With this, we hope to expand the scope and diversity of FORRT’s mission and its team.
+</ul>
+<br>
+
+{{< /expand >}}
+
+<br>
+

@@ -83,9 +83,9 @@ FORRT supports this endeavor through a three-pronged approach:
   <i class="fas fa-arrow-alt-circle-right text-danger fa-1.5x"></i> [FORRT’s Educational Nexus](/resources/)  
   <i class="fas fa-arrow-alt-circle-right text-danger fa-1.5x"></i> [FORRT’s Pedagogies](/pedagogies/)  
 
-1. Modifying the academic incentive structure regarding teaching and mentoring through recognition and commendations of excellent teaching and mentoring, which in turn are documentable and relevant to the researchers’ visibility, prestige, tenure and promotion reviews; foster social justice through the opening and democratization of scientific-educational resources to those who otherwise would be educationally disenfranchised; and building a community with existing educational initiatives and strengthening our missions, identify and reduce redundancies, and streamline the advancement of open educational practices.  
-  <i class="fas fa-arrow-alt-circle-right text-danger fa-1.5x"></i>[Institutional Partnerships](#6-partnerships)
-  <i class="fas fa-arrow-alt-circle-right text-danger fa-1.5x"></i> [FORRT’s Manuscript](/manuscript)  
+3. Modifying the academic incentive structure regarding teaching and mentoring through recognition and commendations of excellent teaching and mentoring, which in turn are documentable and relevant to the researchers’ visibility, prestige, tenure and promotion reviews; foster social justice through the opening and democratization of scientific-educational resources to those who otherwise would be educationally disenfranchised; and building a community with existing educational initiatives and strengthening our missions, identify and reduce redundancies, and streamline the advancement of open educational practices.  
+  <i class="fas fa-arrow-alt-circle-right text-danger fa-1.5x"></i> [FORRT’s Institutional Partnerships](/#6-partnerships)  
+  <i class="fas fa-arrow-alt-circle-right text-danger fa-1.5x"></i> [FORRT’s Manuscript](/manuscript/)  
 
 {{< /expand >}}
 
