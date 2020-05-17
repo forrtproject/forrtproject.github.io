@@ -60,10 +60,10 @@ subtitle = """**Join the movement for better education**
 +++
 
 ## Contribute to the educational NEXUS
-We are asking contributions for FORRT educational NEXUS, an e-learning platform acting as a hub for community-driven initiatives and resources. As described in the manuscript, this platform will present the fullest opportunity FORRT has to offer. We welcome essential contributions such as sharing your course materials, volunteering for OS mentoring, and submitting pedagogical reports of open and reproducible courses.
+We are asking for contributions to FORRT's educational NEXUS, an e-learning platform acting as a hub for community-driven initiatives and resources. As described in [FORRT's manuscript](/manuscript/), this platform - together with [FORRT Pedagogies](/pedagogies/) - will present the fullest opportunities FORRT has to offer. We welcome essential contributions such as sharing your course materials, volunteering for OS mentoring, taking part in [FORRT self-assessment](/survey/) educational tool, and submitting pedagogical reports of open and reproducible science courses.
 
 ## Contribute to the development of the website
-We will be particularly interested in contributions to the website, so if you (or your peers) are able to contribute to the development of the website, you would be helping make FORRT a powerful reality. 
+We will be particularly interested in contributions to this website, so if you (or your peers) are able to contribute to its development, you would be helping make FORRT a reality. See "Get in touch" below!
 
 ## Comment on the manuscript
-We created a live-version of the manuscript for community participation and feedback FORRT working Manuscript. FORRT is operated as an open contributorship - all are welcome to contribute, and we aim to recognise all contributions. See the manuscript for more information.
+We created a [live-version](https://tinyurl.com/FORRTworkingDOC) of the manuscript for community participation and feedback FORRT working Manuscript. FORRT is operated as an open contributorship - all are welcome to contribute, and we aim to recognise all contributions. See the manuscript for more information.
