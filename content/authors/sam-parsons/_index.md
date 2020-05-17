@@ -6,6 +6,9 @@ name: "Sam Parsons"
 authors:
 - Name "Sam Parsons"
 
+# Date
+date: 2020-05-16
+
 # Is this the primary user of the site?
 superuser: false
 

@@ -17,6 +17,9 @@ organizations:
 - name: 
   url: ""
 
+# Date
+date: 2020-05-17
+
 # Short bio (displayed in user profile at end of posts)
 bio: 
 
