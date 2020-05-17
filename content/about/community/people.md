@@ -53,3 +53,7 @@ subtitle = ""
  # CSS class.
  css_class = ""
 +++
+
+<br>
+
+We are committed to a community that (a) includes all the peoples of the earth — where a person’s demographic characteristics do not determine their online access, opportunities, or quality of experience; (b) promotes civil discourse, human dignity, and individual expression; (c) elevates critical thinking, reasoned argument, shared knowledge, and verifiable facts; and that (d) catalyzes collaboration among diverse communities working together for the common good towards better educational practices in higher education.

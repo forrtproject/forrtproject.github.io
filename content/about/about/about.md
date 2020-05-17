@@ -57,8 +57,8 @@ classtitle = "text-center"
 
 The Framework for Open and Reproducible Research Training (FORRT) brings together educators and scholars working to improve teaching and mentoring practices in higher education.
 
-For more information about our goals and values, read our [Mission Statement](#Mission-Statement) and [Code of Conduct](/coc).
+For more information about our goals and values, read our [Mission Statement](/about/mission) and [Code of Conduct](/coc).
 
-If you’re looking for educational resources, please take a look at our [Educational Nexus](/nexus) and our [FORRT Pedagogies](/[pedagogies]).
+If you’re looking for educational resources, please take a look at our [Educational Nexus](/nexus) and our [FORRT Pedagogies](/pedagogies).
 
 If you’re looking for information about who we are or our organizational structure, take a look at [our community](/about/community).
