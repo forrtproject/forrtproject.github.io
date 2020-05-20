@@ -87,7 +87,7 @@
 #   parent = "forrt"
 
 [[main]]
-  name = "NEXUS"
+  name = "Educational NEXUS"
   url = ""
   weight = 30
   identifier = "nexus"
