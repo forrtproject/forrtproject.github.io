@@ -8,8 +8,8 @@ headless = true  # This file represents a page section.
 active = true  # Activate this widget? true/false
 weight = 20  # Order that this section will appear.
 
-title = "Adopting FORRT"
-subtitle = "*Implementing principled teaching and mentoring practices*"
+title = "FORRT's principles"
+subtitle = ""
 classtitle = "text-center"
 
 [design]
@@ -77,20 +77,4 @@ Central to the academic ethos, the relationship between mentor and mentee is one
 * it breeds an atmosphere of constructive curiosity and problem-solving; 
 * it endows students with the ability to discover on their own the myriad of ways their skill set and ability can be integrated into the research * process. 
 * it helps shatter the academic glass ceiling and promote engagement with the academic profession.
-* it galvanizes and accelerates the dissemination of reliable, rigorous, replicable, open, reproducible science to a previously uninformed population: undergraduate and graduate students
-
-## Make your existing teaching and mentoring materials open.
-
-Open educational resources are beneficial regardless of subject or language, and allow for community contributions for iterative improvement of materials. Making your teaching and mentoring materials open allows the community to do things like enhance documentation, add media (transcripts, voice, video), translate materials, and improve accessibility. Educators can reuse and/or adapt materials to their own context and needs - reducing time encumberment for producing high-quality materials and its access - effectively allowing meaningful participation of civil society in learning, research and innovation.
-
-## Make your research open.
-
-Increasingly, well-documented research repositories are used as educational resources in undergraduate and graduate education. Additionally, initiatives like the [Collaborative Replications and Education Project in Psychology](https://osf.io/wfc6u/wiki) (CREP) and the [Political Science Replication Initiative](https://projects.iq.harvard.edu/psreplication/home) (PSRI) are being developed.
-
-## Roadmap for Graduate Students.
-
-Kathawalla, Silverstein, and Syed propose “[Easing Into Open Science: A Tutorial for Graduate Students](https://psyarxiv.com/vzjdp/)” to assist graduate students to engage in open science practices. They give graduate students ideas on how to approach conversation with their advisors/collaborators, ideas on how to integrate open science practices within the graduate school framework, and specific resources on how to engage with each behavior. And they emphasize that engaging in open science behaviors need not be an all or nothing approach, but rather graduate students can engage with any number of the behaviors outlined. 
-
-We are including more ways, stay tuned!
-
-
+* it galvanizes and accelerates the dissemination of reliable, rigorous, replicable, open, reproducible science to a previously uninformed population: undergraduate and graduate students.
