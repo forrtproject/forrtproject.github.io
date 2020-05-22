@@ -55,7 +55,7 @@
   weight = 22  # The position of your page in the menu.
   parent = "forrt"
 [[main]]
-  name = "Making your resources open"  # A link title for your page.
+  name = "Adopting FORRT's principles"  # A link title for your page.
   url = "/forrt/adopting"  # The URL of your page.
   weight = 24  # The position of your page in the menu.
   parent = "forrt"  
