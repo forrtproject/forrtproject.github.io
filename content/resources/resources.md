@@ -92,8 +92,9 @@ subtitle = ""
  css_class = ""
 +++
 
-There are {{< resources >}} resource submission so far in our [[FORRT-EduNex] database](https://docs.google.com/spreadsheets/d/16G02hzkWEWa_6qGNMmacCiB5cCPGhTk9A_bjGfla3RE/edit#gid=40348166.
+There are more than 700 resources submitted so far in our database. We are currently curating a new and improved version that is compliant with OER Commons for greater findability, accessibility, interoperability, and reusability (FAIR) of these resources.
 
-{{% alert info %}}
-You notice some tools missing and/or you would like to add some resources, **[fill out this form](#form)**.  
-{{% /alert %}}
+
+<br>
+
+If you notice there is an educational resource, research article or pedagocial tool missing in our databased, please consider adding it [here on FORRT's resource submission form](https://docs.google.com/forms/d/e/1FAIpQLSdvMWSxzw3sGTTY1eYIs-nRZoy3ogQ_3Diel-PUDw1Z3pen6w/viewform).
