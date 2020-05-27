@@ -99,7 +99,8 @@ There are more than 700 resources submitted so far in our database. We are curre
 
 If you notice there is an educational resource, research article or pedagocial tool missing in our databased, please consider adding it [here on FORRT's resource submission form](https://docs.google.com/forms/d/e/1FAIpQLSdvMWSxzw3sGTTY1eYIs-nRZoy3ogQ_3Diel-PUDw1Z3pen6w/viewform).
 
-<br><br>
+<br>
 
 ***
 
+<br>
