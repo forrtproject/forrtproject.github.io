@@ -70,7 +70,7 @@ social:
 # Organizational groups that you belong to (for People widget)
 #   Set this to `[]` or comment out if you are not using People widget.
 user_groups:
-- "Steering Committee"
+- ""
 ---
 
 Crystal Steltenpohl is an assistant professor of psychology and founder of the Online Technologies Lab at the University of Southern Indiana. As a scholar, gamer, and participant in online worlds, her major research interests revolve around how we interact with various technologies, especially those that house online communities. She is particularly interested in understanding how technologies influence communities and the self.

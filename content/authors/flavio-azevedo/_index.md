@@ -18,7 +18,7 @@ organizations:
   url: ""
 
 # Date
-date: 2020-05-17
+#date: 2020-05-17
 
 # Short bio (displayed in user profile at end of posts)
 bio: 
@@ -76,7 +76,7 @@ email: ""
 # Organizational groups that you belong to (for People widget)
 #   Set this to `[]` or comment out if you are not using People widget.
 user_groups:
-- "Steering Committee" 
+- ""
 # - Code of Conduct Committee
 # - "FORRT Ambassadors" 
 
