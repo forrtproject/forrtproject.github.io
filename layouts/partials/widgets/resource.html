@@ -16,7 +16,7 @@
     
     {{ with $st.Content }}{{ . }}{{ end }}
     
-    {{ $url :=  "https://docs.google.com/spreadsheets/d/e/2PACX-1vTlMp-kKqssGTD4IwsIdvV0Tk28djKp0YJCocc9CKgYV3GgElP4HDOTduMNEIpk-ZQXRsV-03m95RpO/pub?output=csv"}}
+    {{ $url :=  "https://docs.google.com/spreadsheets/d/e/2PACX-1vRgYcUP3ybhe4x05Xp4-GTf-Cn2snBCW8WOP_N7X-9r80AeCpFAGTfWn6ITtBk-haBkDqXAYXh9a_x4/pub?gid=1924034107&single=true&output=csv"}}
     {{ $sep := "," }}
     {{ $csv := getCSV $sep $url }}
 
@@ -25,7 +25,7 @@
     {{ $taggies := slice "All" }}
     {{ range $idx, $col := $csv }}
     {{ if ne $idx 0 }}
-      {{ $taggies = $taggies | append (index $col 2) }}
+      {{ $taggies = $taggies | append (index $col 11) }}
     {{end}}
     {{ end }}
    {{ $taggies = $taggies | uniq }}
