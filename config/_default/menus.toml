@@ -1,6 +1,6 @@
 # Navigation Links
 #   To link a homepage widget, specify the URL as a hash `#` followed by the filename of the
-#     desired widget in your `content/home/` folder.
+#   desired widget in your `content/home/` folder.
 #   The weight parameter defines the order that the links will appear in.
 
 #[[main]]
@@ -38,11 +38,16 @@
   weight = 13  # The position of your page in the menu.
   parent = "about"
 [[main]]
-  name = "Code of Conduct"  # A link title for your page.
-  url = "/coc"  # The URL of your page.
+  name = "Our Calendar"  # A link title for your page.
+  url = "/about/get-involved/#calendar"  # The URL of your page.
   weight = 14  # The position of your page in the menu.
   parent = "about"
-  
+[[main]]
+  name = "Code of Conduct"  # A link title for your page.
+  url = "/coc"  # The URL of your page.
+  weight = 15  # The position of your page in the menu.
+  parent = "about"
+
 [[main]]
   name = "FORRT"  # A link title for your page.
   url = "/forrt/"  # The URL of your page.
@@ -58,7 +63,7 @@
   name = "Adopting FORRT's principles"  # A link title for your page.
   url = "/forrt/adopting"  # The URL of your page.
   weight = 24  # The position of your page in the menu.
-  parent = "forrt"  
+  parent = "forrt"
 [[main]]
   name = "FORRT's Principles"  # A link title for your page.
   url = "/forrt/principles"  # The URL of your page.
