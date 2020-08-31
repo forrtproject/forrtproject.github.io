@@ -1,0 +1,44 @@
+{{- define "main" -}}
+
+<article class="article">
+
+    {{ partial "resource_page_header" . }}
+    
+    <div class="article-container">
+        <div class="article-container">
+            
+            {{ partial "page_edit" . }}
+            {{ partial "tags" . }}
+            {{ if .Params.abstract }}
+            <h3>{{ i18n "abstract" }}</h3>
+            <p class="pub-abstract border-bottom">{{ .Params.abstract | markdownify }}</p>
+            {{ end }}
+            <div class="article-style">
+                {{ .Content }}
+                {{with .Params.link_to_resource }} <a href="{{ . }}">
+                    <p class="mb-1 pr-2 badge badge-light">Link to resource: {{.}}</p>
+                </a>{{end}}
+            <p class=" mb-1 pr-2"><strong>Type of resources: </strong>{{delimit .Params.Material_Type ", " }}</p>
+            <p class=" mb-1 pr-2"><strong>Education level(s): </strong>{{delimit .Params.Education_Level ", " }}</p>
+            <p class=" mb-1 pr-2"><strong>Primary user(s): </strong>{{delimit .Params.Primary_User ", " }}</p>
+            <p class=" mb-1 pr-2"><strong>Subject area(s): </strong>{{delimit .Params.Subject_Areas ", " }}</p>
+            <p class=" mb-1 pr-2"><strong>Language(s): </strong>{{ .Params.Language }}</p>
+            </div>
+            
+            {{ partial "share" . }}
+            {{ partial "page_author" . }}
+            {{ partial "comments" . }}
+            
+            {{ if site.Params.section_pager }}
+            <div class="article-widget">
+                {{ partial "section_pager" . }}
+            </div>
+            {{ end }}
+            
+            {{ partial "page_related" . }}
+
+            
+        </div>
+</article>
+
+{{- end -}}

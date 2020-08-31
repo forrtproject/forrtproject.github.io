@@ -75,7 +75,7 @@ privacy_pack = true
 
 # Enable visitors to edit pages?
 #   `repo` defines the repository URL. `editable` defines which page types can be edited.
-edit_page = {repo_url = "https://github.com/forrtproject/forrt", content_dir = "", repo_branch = "master", editable = {docs = true, page = true, post = true, authors = true}}
+edit_page = {repo_url = "https://github.com/forrtproject/forrt", content_dir = "", repo_branch = "master", editable = {docs = true, page = true, post = true, authors = true, curated_resources = true}}
 gh_repo = "https://github.com/forrtproject/forrt"
 
 # Show related content at the bottom of pages?
