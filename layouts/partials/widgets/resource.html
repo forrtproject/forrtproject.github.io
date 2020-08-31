@@ -4,126 +4,102 @@
 {{ $ := .root }}
 {{ $st := .page }}
 {{ $items_type := $st.Params.content.page_type | default "project" }}
+{{ $columns := $st.Params.design.columns | default "2" }}
 
-<div class="margin-auto">
-      
-  <div class="center-text">
-    {{ with $st.Title }}<h1 class="mt-0">{{ . | markdownify | emojify }}</h1>{{ end }}
+{{ if ne $columns "1" }}
+{{/* Standard dual-column layout. */}}
+
+<div class="row">
+  <div class="col-12 col-lg-4 section-heading">
+
+    {{ with $st.Title }}<h1>{{ . | markdownify | emojify }}</h1>{{ end }}
     {{ with $st.Params.subtitle }}<p>{{ . | markdownify | emojify }}</p>{{ end }}
-  </div>
-  <div>
-    {{/*  {{ end }}  */}}
-    
-    {{ with $st.Content }}{{ . }}{{ end }}
-    
-    {{ $url :=  "https://docs.google.com/spreadsheets/d/e/2PACX-1vRgYcUP3ybhe4x05Xp4-GTf-Cn2snBCW8WOP_N7X-9r80AeCpFAGTfWn6ITtBk-haBkDqXAYXh9a_x4/pub?gid=1924034107&single=true&output=csv"}}
-    {{ $sep := "," }}
-    {{ $csv := getCSV $sep $url }}
 
-
-    {{/*  this bit go through the Type of resources column in the google sheet and then use $taggies to populate filter bar  */}}
-    {{ $taggies := slice "All" }}
-    {{ range $idx, $col := $csv }}
-    {{ if ne $idx 0 }}
-      {{ $taggies = $taggies | append (index $col 11) }}
-    {{end}}
-    {{ end }}
-   {{ $taggies = $taggies | uniq }}
-   
-   {{ $filter_default := default (int $st.Params.content.filter_default) 0 }}
-    
-    {{/* Parse default filter tag from front matter in the form of either tag name or CSS class name. */}}
-    {{ $default_filter_tag_raw := (index $st.Params.content.filter_button ($filter_default)).tag }}
-    {{ $default_filter_tag := printf ".js-id-%s" (replace $default_filter_tag_raw " " "-") }}
-    {{ if or (eq (substr $default_filter_tag_raw 0 1) "*") (eq (substr $default_filter_tag_raw 0 1) ".") }}
-    {{ $default_filter_tag = $default_filter_tag_raw }}
-    {{ end }}
-    
-    <span class="d-none default-project-filter">{{ $default_filter_tag }}</span>
-    
-    {{/* Only show filter buttons if there are multiple filters. */}}
-    {{ if eq $st.Params.content.filter_fromcsv 1 }}
-    <div class="project-toolbar">
-      <div class="project-filters">
-        <div class="btn-toolbar">
-          <div class="flex-wrap text-center">
-            {{ range $idx, $item := $taggies }}
-            {{/* Parse filter tag from front matter in the form of either tag name or CSS class name. */}}
-            {{ $data_filter := printf ".js-id-%s" (replace $item " " "-") }}
-            {{ if eq $item "All"}}
-            {{ $data_filter = "*" }}
-            {{ end }}
-            <a href="#" data-filter="{{ $data_filter | safeHTMLAttr }}" class="btn btn-primary btn-lg{{ if eq $idx $filter_default }} active{{ end }}">{{ . }}</a>
-            {{ end }}
-          </div>
-        </div>
-      </div>
-    </div>
-    
-{{else}}
-    {{ if gt (len $st.Params.content.filter_button) 1 }}
-    <div class="project-toolbar">
-      <div class="project-filters">
-        <div class="btn-toolbar">
-          <div class="mx-auto">
-            {{ range $idx, $item := $st.Params.content.filter_button }}
-            {{/* Parse filter tag from front matter in the form of either tag name or CSS class name. */}}
-            {{ $data_filter := printf ".js-id-%s" (replace .tag " " "-") }}
-            {{ if or (eq (substr .tag 0 1) "*") (eq (substr .tag 0 1) ".") }}
-            {{ $data_filter = .tag }}
-            {{ end }}
-            <a href="#" data-filter="{{ $data_filter | safeHTMLAttr }}" class="px-3 btn btn-primary btn-lg{{ if eq $idx $filter_default }} active{{ end }}">{{ .name }}</a>
-            {{ end }}
-          </div>
-        </div>
-      </div>
-    </div>
-    {{ end }}
-{{end}}
-    <div class="{{ if or $st.Params.content.filter_button (eq $st.Params.design.view 3) }}isotope projects-container{{end}} {{if eq $st.Params.design.view 3}}js-layout-masonry{{else}}row js-layout-row{{end}} {{ if eq $st.Params.design.view 5 }}project-showcase mt-5{{end}}">
-      {{/*  where site.RegularPages "Type" $items_type  */}}
-      
-      <div class="row">
-        {{ range $idx, $col := $csv }}
-        {{ if ne $idx 0 }}
-        {{/*  <div class="col-sm-6">    */}}
-      {{/*  Based on the google sheet columns  */}}
-      {{ $name := index $col 1 }}
-      {{ $type := index $col 2 }} 
-      {{ $about := index $col 3 }}
-      {{ $forrt := index $col 4 }}
-      {{ $link := index $col 5}}
-      {{ if ne (len $name) 0 }}
-      {{ $js_tag_classes := printf "js-id-%s" (replace (index $col 2) " " "-") }}
-      {{/*  <div class="col-sm-3 project-card project-item isotope-item {{ $js_tag_classes | safeHTMLAttr }}">
-        <div class="card">
-          <div class="card-body">
-          <a href="{{ $link }}"><h5 class="card-title">{{ $name }}</h5></a>
-            <h6 class="card-subtitle mb-2 text-muted">{{ $type }}</h6>
-            <p class="small">{{ $about  | truncate 100 }}</p>
-          </div>
-          <div class="card-footer text-muted small">
-            <a href="{{ $link }}" class="card-link">Link to resource</a>
-          </div>
-        </div>
-      </div>
-      {{end}}
-      {{end}}
-    </div>  */}}
-    <div class="col-sm-6 isotope-item py-1 {{ $js_tag_classes | safeHTMLAttr }}">
-      <div class="border border-3 rounded-sm p-2 ">
-        <a href="{{$link}}"><h4 class="mt-1 border-bottom border-warning pb-1">{{ $name }}</h4></a>
-        {{with $about }} <p class="small mb-1"><strong>Description:</strong> {{ .  | truncate 250 }}</p>{{end}}
-        {{ with $forrt }} <p class="small mb-1"><strong>FORRT principle:</strong> {{.}}</p>{{end}}
-        <div class="d-flex justify-content-between">
-          {{with $type }} <p class="small mb-1 pr-2"><strong>Type of resources: </strong>{{ .  }}</p>{{end}}
-          {{with $link }} <a href="{{ . }}"><p class="btn btn-sm btn-outline-primary mb-1 pr-2">Link to resource</p></a>{{end}}
-        </div>
-      </div>
-    </div>
-    {{end}}
-    {{end}}
-    {{end}}
   </div>
-</div>
+  <div class="col-12 col-lg-8">
+
+    {{ else }}
+    {{/* Single column layout. */}}
+
+    <div class="margin-auto">
+
+      <div class="center-text">
+        {{ with $st.Title }}<h1 class="mt-0">{{ . | markdownify | emojify }}</h1>{{ end }}
+        {{ with $st.Params.subtitle }}<p>{{ . | markdownify | emojify }}</p>{{ end }}
+      </div>
+      <div>
+        {{ end }}
+
+        {{ with $st.Content }}{{ . }}{{ end }}
+
+        {{ if $st.Params.content.filter_button }}
+
+        {{ $filter_default := default (int $st.Params.content.filter_default) 0 }}
+
+        {{/* Parse default filter tag from front matter in the form of either tag name or CSS class name. */}}
+        {{ $default_filter_tag_raw := (index $st.Params.content.filter_button ($filter_default)).FORRT_Clusters }}
+        {{ $default_filter_tag := printf ".js-id-%s" (replace $default_filter_tag_raw " " "-") }}
+        {{ if or (eq (substr $default_filter_tag_raw 0 1) "*") (eq (substr $default_filter_tag_raw 0 1) ".") }}
+        {{ $default_filter_tag = $default_filter_tag_raw }}
+        {{ end }}
+
+        <span class="d-none default-project-filter">{{ $default_filter_tag }}</span>
+
+        {{/* Only show filter buttons if there are multiple filters. */}}
+        {{ if gt (len $st.Params.content.filter_button) 1 }}
+        <div class="project-toolbar">
+          <div class="project-filters">
+            <div class="btn-toolbar">
+              <div class="btn-group flex-wrap">
+                {{ range $idx, $item := $st.Params.content.filter_button }}
+                {{/* Parse filter tag from front matter in the form of either tag name or CSS class name. */}}
+                {{ $data_filter := printf ".js-id-%s" (replace .FORRT_Clusters " " "-") }}
+                {{ if or (eq (substr .FORRT_Clusters 0 1) "*") (eq (substr .FORRT_Clusters 0 1) ".") }}
+                {{ $data_filter = .FORRT_Clusters }}
+                {{ end }}
+                <a href="#" data-filter="{{ $data_filter | safeHTMLAttr }}"
+                  class="btn btn-primary btn-lg{{ if eq $idx $filter_default }} active{{ end }}">{{ .name }}</a>
+                {{ end }}
+              </div>
+            </div>
+          </div>
+        </div>
+        {{ end }}
+        {{ end }}
+
+        <div
+          class="{{ if or $st.Params.content.filter_button (eq $st.Params.design.view 3) }}isotope projects-container{{end}} {{if eq $st.Params.design.view 3}}js-layout-masonry{{else}}row js-layout-row{{end}} {{ if eq $st.Params.design.view 5 }}project-showcase mt-5{{end}}">
+          {{ range $idx, $item := where site.RegularPages "Type" $items_type }}
+
+          {{ $link := $item.RelPermalink }}
+          {{ $target := "" }}
+          {{ if $item.Params.external_link }}
+          {{ $link = $item.Params.external_link }}
+          {{ $target = "target=\"_blank\" rel=\"noopener\"" }}
+          {{ end }}
+
+          {{ if eq $st.Params.design.view 1 }}
+          {{ partial "portfolio_li_list" (dict "item" $item) }}
+          {{ else if eq $st.Params.design.view 2 }}
+          {{ partial "portfolio_li_compact" (dict "item" $item) }}
+          {{ else if eq $st.Params.design.view 3 }}
+          {{ partial "portfolio_li_card" (dict "widget" $st "index" $idx "item" $item "link" $link "target" $target) }}
+          {{ else }}
+          {{ partial "portfolio_li_showcase" (dict "widget" $st "index" $idx "item" $item "link" $link "target" $target) }}
+          {{ end }}
+
+          {{ end }}
+        </div>
+  <ul>
+    Number of resources per FORRT Clusters
+    {{ range $.Site.Taxonomies.FORRT_Clusters.ByCount }}
+    {{ if gt .Count 1 }}
+    <li>
+      <a href="/tags/{{ .Name }}"> {{ .Name }} <small>({{ .Count }})</small></a>
+    </li>
+    {{ end }}
+    {{end}}
+  </ul>
+      </div>
+    </div>
 

@@ -1,0 +1,8 @@
+# Publication types.
+# Each item in the list corresponds to an item in the language packs.
+types = [ "Reproducible_Analyses",
+          "Replication_Research",
+          "Open_Data_and_Materials",
+          "Reproducibility_and_Replicability_Knowledge",
+          "Conceptual_and_Statistical_Knowledge",
+        ]
