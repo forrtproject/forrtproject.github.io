@@ -3,7 +3,12 @@
         "Timestamp":"2020-06-05T19:09:54.895Z",
         "Title":"A Software Tool for Removing Patient Identifying Information from Clinical Documents",
         "link_to_resource":"https:\/\/doi.org\/10.1197\/jamia.M2702",
-        "Creators":"Friedlin, F. J., & McDonald, C. J.",
+        "Creators":[
+            "Friedlin",
+            "F. J.",
+            "& McDonald",
+            "C. J."
+        ],
         "Material_Type":[
             "Primary Source",
             "Reading",

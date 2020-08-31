@@ -3,7 +3,12 @@
         "Timestamp":"2020-05-19T16:51:55.275Z",
         "Title":"Applied Multiple Regression\/Correlation Analysis for the Behavioral Sciences",
         "link_to_resource":"https:\/\/www.amazon.com\/Multiple-Regression-Correlation-Analysis-Behavioral\/dp\/0805822232?ie=UTF8&psc=1&redirect=true&ref_=oh_aui_detailpage_o03_s00",
-        "Creators":"Jacob Cohen, Patricia Cohen, Stephen G. West, Leona S. Aiken",
+        "Creators":[
+            "Jacob Cohen",
+            "Patricia Cohen",
+            "Stephen G. West",
+            "Leona S. Aiken"
+        ],
         "Material_Type":[
             "Textbook"
         ],

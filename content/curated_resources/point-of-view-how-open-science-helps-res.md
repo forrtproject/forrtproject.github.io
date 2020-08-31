@@ -3,7 +3,9 @@
         "Timestamp":"2020-05-29T18:17:17.072Z",
         "Title":"Point of View: How open science helps researchers succeed",
         "link_to_resource":"https:\/\/doi.org\/10.7554\/eLife.16800",
-        "Creators":"Erin C McKiernan et al.",
+        "Creators":[
+            "Erin C McKiernan et al."
+        ],
         "Material_Type":[
             "Primary Source",
             "Reading",

@@ -3,7 +3,9 @@
         "Timestamp":"2020-06-06T19:01:12.709Z",
         "Title":"Things I have learned (so far). ",
         "link_to_resource":"https:\/\/doi.org\/10.1037\/10109-028",
-        "Creators":"Jacob Cohen",
+        "Creators":[
+            "Jacob Cohen"
+        ],
         "Material_Type":[
             "Primary Source",
             "Reading",

@@ -3,7 +3,10 @@
         "Timestamp":"2020-06-06T19:09:00.928Z",
         "Title":"Science or art? How aesthetic standards grease the way through the publication bottleneck but undermine science.",
         "link_to_resource":"https:\/\/doi.org\/10.1177\/1745691612457576",
-        "Creators":"Giner-Sorolla, R. ",
+        "Creators":[
+            "Giner-Sorolla",
+            "R."
+        ],
         "Material_Type":[
             "Primary Source",
             "Reading",

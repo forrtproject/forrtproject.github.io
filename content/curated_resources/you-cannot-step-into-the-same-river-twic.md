@@ -3,7 +3,10 @@
         "Timestamp":"2020-06-04T19:34:14.528Z",
         "Title":"You Cannot Step Into the Same River Twice: When Power Analyses Are Optimistic",
         "link_to_resource":"https:\/\/doi.org\/10.1177\/1745691614548513.",
-        "Creators":"Blakeley B McShane, Ulf B\u00f6ckenholt",
+        "Creators":[
+            "Blakeley B McShane",
+            "Ulf B\u00f6ckenholt"
+        ],
         "Material_Type":[
             "Primary Source",
             "Reading",

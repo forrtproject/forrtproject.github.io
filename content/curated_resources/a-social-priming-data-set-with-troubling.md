@@ -3,7 +3,12 @@
         "Timestamp":"2020-06-10T19:03:22.310Z",
         "Title":"A Social Priming Data Set With Troubling Oddities",
         "link_to_resource":"https:\/\/doi.org\/10.1080\/01973533.2015.1124767",
-        "Creators":"Harold Pashler,Doug Rohrer,Ian Abramson,Tanya Wolfson &Christine R. Harris",
+        "Creators":[
+            "Harold Pashler",
+            "Doug Rohrer",
+            "Ian Abramson",
+            "Tanya Wolfson &Christine R. Harris"
+        ],
         "Material_Type":[
             "Primary Source",
             "Reading",

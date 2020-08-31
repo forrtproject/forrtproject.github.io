@@ -3,7 +3,12 @@
         "Timestamp":"2020-05-22T18:40:59.988Z",
         "Title":"The preregistration revolution",
         "link_to_resource":"https:\/\/www.pnas.org\/content\/115\/11\/2600",
-        "Creators":"Brian A. Nosek, Charles R. Ebersole , Alexander C. DeHaven , and David T. Mellor",
+        "Creators":[
+            "Brian A. Nosek",
+            "Charles R. Ebersole",
+            "Alexander C. DeHaven",
+            "and David T. Mellor"
+        ],
         "Material_Type":[
             "Primary Source",
             "Reading",

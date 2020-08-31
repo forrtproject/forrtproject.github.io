@@ -3,7 +3,9 @@
         "Timestamp":"2020-05-31T18:36:46.879Z",
         "Title":"Lakens, D. (2015). On the challenges of drawing conclusions from p-values just below 0.05. PeerJ, 3, e1142.",
         "link_to_resource":"https:\/\/doi.org\/10.7717\/peerj.1142",
-        "Creators":"Daniel Lakens",
+        "Creators":[
+            "Daniel Lakens"
+        ],
         "Material_Type":[
             "Primary Source",
             "Reading",

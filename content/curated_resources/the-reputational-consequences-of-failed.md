@@ -3,7 +3,9 @@
         "Timestamp":"2020-06-01T18:59:09.866Z",
         "Title":"The Reputational Consequences of Failed Replications and Wrongness Admission among Scientists",
         "link_to_resource":"https:\/\/doi.org\/10.1371\/journal.pone.0143723",
-        "Creators":"Adam K. Fetterman and Kai Sassenberg",
+        "Creators":[
+            "Adam K. Fetterman and Kai Sassenberg"
+        ],
         "Material_Type":[
             "Primary Source",
             "Reading",

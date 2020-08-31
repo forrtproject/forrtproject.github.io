@@ -3,7 +3,9 @@
         "Timestamp":"2020-05-28T13:21:15.116Z",
         "Title":"Performing high\u2010powered studies efficiently with sequential analyses",
         "link_to_resource":"https:\/\/doi.org\/10.1002\/ejsp.2023",
-        "Creators":"Daniel Lakens",
+        "Creators":[
+            "Daniel Lakens"
+        ],
         "Material_Type":[
             "Primary Source",
             "Reading",

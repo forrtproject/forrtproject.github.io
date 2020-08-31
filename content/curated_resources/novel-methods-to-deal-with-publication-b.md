@@ -3,7 +3,15 @@
         "Timestamp":"2020-06-10T19:21:45.893Z",
         "Title":"Novel methods to deal with publication biases: secondary analysis of antidepressant trials in the FDA trial registry database and related journal publications.",
         "link_to_resource":"https:\/\/doi.org\/10.1136\/bmj.b2981",
-        "Creators":"Santiago G Moreno, Alex J Sutton, Erick H Turner, Keith R Abrams, Nicola J Cooper, Tom M Palmer, A E Ades",
+        "Creators":[
+            "Santiago G Moreno",
+            "Alex J Sutton",
+            "Erick H Turner",
+            "Keith R Abrams",
+            "Nicola J Cooper",
+            "Tom M Palmer",
+            "A E Ades"
+        ],
         "Material_Type":[
             "Primary Source",
             "Reading",

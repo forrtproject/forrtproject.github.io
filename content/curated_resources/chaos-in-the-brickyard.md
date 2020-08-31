@@ -3,7 +3,10 @@
         "Timestamp":"2020-06-06T19:33:27.577Z",
         "Title":"Chaos in the brickyard",
         "link_to_resource":"https:\/\/doi.org\/10.1126\/science.142.3590.339",
-        "Creators":"Forscher, B. K.",
+        "Creators":[
+            "Forscher",
+            "B. K."
+        ],
         "Material_Type":[
             "Primary Source",
             "Reading",

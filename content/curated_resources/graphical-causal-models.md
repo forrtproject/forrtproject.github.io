@@ -3,7 +3,9 @@
         "Timestamp":"2020-06-09T16:09:33.815Z",
         "Title":"Graphical Causal Models",
         "link_to_resource":"http:\/\/citeseerx.ist.psu.edu\/viewdoc\/download?doi=10.1.1.364.7505&rep=rep1&type=pdf",
-        "Creators":"Felix Elwert",
+        "Creators":[
+            "Felix Elwert"
+        ],
         "Material_Type":[
             "Primary Source",
             "Reading",

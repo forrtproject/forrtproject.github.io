@@ -32,13 +32,12 @@
       {{ with $summary }}
       <div class="article-style">
         <p>{{ . }}</p>
-        <p class="small mb-1"><strong>Author(s):</strong>{{with $item.Params.Creators }}  {{ . }}{{end}}</p>
-  
+        <p class="small mb-1"><strong>Author(s):</strong> {{delimit $item.Params.Creators ", " }}</p>
         <p class="small mb-1 pr-2"><strong>Type of resources: </strong>{{delimit $item.Params.Material_Type ", " }}</p>
         <p class="small mb-1 pr-2"><strong>Primary user(s): </strong>{{delimit $item.Params.Primary_User ", " }}</p>
         <p class="small mb-1 pr-2"><strong>Subject area(s): </strong>{{delimit $item.Params.Subject_Areas ", " }}</p>
         {{ with $item.Params.Tags }} <p class="small mb-1 pr-2 small"><strong>Tag(s): </strong>{{delimit . ", " }}</p>{{end}}
-        {{with $link }} <a href="{{ . }}">
+        {{with $item.Params.link_to_resource }} <a href="{{ . }}">
           <p class="btn btn-sm btn-outline-primary mb-1 pr-2 d-flex justify-content-around" style="line-height: 1;">Link to resource</p>
         </a>{{end}}
       </div>

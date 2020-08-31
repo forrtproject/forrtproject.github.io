@@ -3,7 +3,14 @@
         "Timestamp":"2020-05-24T12:08:26.709Z",
         "Title":"Goodman, S. N., Fanelli, D., & Ioannidis, J. P. (2016). What does research reproducibility mean?. Science translational medicine, 8(341), 341ps12-341ps12.",
         "link_to_resource":"https:\/\/stm.sciencemag.org\/content\/8\/341\/341ps12\/tab-pdf",
-        "Creators":"Goodman, S. N., Fanelli, D., & Ioannidis, J. P.",
+        "Creators":[
+            "Goodman",
+            "S. N.",
+            "Fanelli",
+            "D.",
+            "& Ioannidis",
+            "J. P."
+        ],
         "Material_Type":[
             "Primary Source",
             "Reading",

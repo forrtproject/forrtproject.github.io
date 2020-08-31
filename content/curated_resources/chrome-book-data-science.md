@@ -3,7 +3,18 @@
         "Timestamp":"2020-05-11T10:36:37.736Z",
         "Title":"Chrome Book Data Science",
         "link_to_resource":"https:\/\/jhudatascience.org\/chromebookdatascience\/",
-        "Creators":"Jeff Leek,  Ashley Johnson, Shannon Ellis, Aboozar Hadavand, John Muschelli, Sean Kross, Leo Collado-Torres, Leah Jager, Sarah McClymont, Leslie Myint",
+        "Creators":[
+            "Jeff Leek",
+            "Ashley Johnson",
+            "Shannon Ellis",
+            "Aboozar Hadavand",
+            "John Muschelli",
+            "Sean Kross",
+            "Leo Collado-Torres",
+            "Leah Jager",
+            "Sarah McClymont",
+            "Leslie Myint"
+        ],
         "Material_Type":[
             "Full Course",
             "Lesson",

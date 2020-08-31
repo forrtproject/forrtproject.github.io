@@ -3,7 +3,13 @@
         "Timestamp":"2020-05-27T16:12:42.502Z",
         "Title":"A 21 word solution.",
         "link_to_resource":"http:\/\/dx.doi.org\/10.2139\/ssrn.2160588",
-        "Creators":"Simmons, Joseph P. and Nelson, Leif D. and Simonsohn, Uri, A ",
+        "Creators":[
+            "Simmons",
+            "Joseph P. and Nelson",
+            "Leif D. and Simonsohn",
+            "Uri",
+            "A"
+        ],
         "Material_Type":[
             "Primary Source",
             "Reading",

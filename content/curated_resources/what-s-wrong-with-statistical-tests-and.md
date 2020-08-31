@@ -3,7 +3,9 @@
         "Timestamp":"2020-06-09T16:00:24.913Z",
         "Title":"What\u2019s wrong with statistical tests \u2013 and where do we go from here? In R. B. Kline, Beyond significance testing: Reforming data analysis methods in behavioral research",
         "link_to_resource":"https:\/\/doi.org\/10.1037\/10693-003",
-        "Creators":"R.B. Kline",
+        "Creators":[
+            "R.B. Kline"
+        ],
         "Material_Type":[
             "Primary Source",
             "Reading",

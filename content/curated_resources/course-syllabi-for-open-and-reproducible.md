@@ -3,7 +3,9 @@
         "Timestamp":"2020-05-11T11:12:54.746Z",
         "Title":"course syllabi for open and reproducible science",
         "link_to_resource":"https:\/\/osf.io\/vkhbt\/wiki\/home\/",
-        "Creators":"Ball et al.",
+        "Creators":[
+            "Ball et al."
+        ],
         "Material_Type":[
             "Reading"
         ],

@@ -3,7 +3,9 @@
         "Timestamp":"2020-06-07T18:39:54.479Z",
         "Title":"Psychology\u2019s Replication Crisis and the Grant Culture: Righting the Ship",
         "link_to_resource":"https:\/\/doi.org\/10.1177\/1745691616687745",
-        "Creators":"Scott O.  Lilienfeld",
+        "Creators":[
+            "Scott O.  Lilienfeld"
+        ],
         "Material_Type":[
             "Primary Source",
             "Reading",

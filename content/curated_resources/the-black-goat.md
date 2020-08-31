@@ -3,7 +3,11 @@
         "Timestamp":"2020-05-16T12:47:35.074Z",
         "Title":"The Black Goat",
         "link_to_resource":"http:\/\/www.theblackgoatpodcast.com\/",
-        "Creators":"Sanjay Srivastava, Alexa Tullett, and Simine Vazire",
+        "Creators":[
+            "Sanjay Srivastava",
+            "Alexa Tullett",
+            "and Simine Vazire"
+        ],
         "Material_Type":[
             "Student Guide",
             "Unit of Study",

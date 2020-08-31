@@ -3,7 +3,10 @@
         "Timestamp":"2020-05-26T14:57:56.043Z",
         "Title":"The GRIM Test: A Simple Technique Detects Numerous Anomalies in the Reporting of Results in Psychology",
         "link_to_resource":"https:\/\/doi.org\/10.1177\/1948550616673876",
-        "Creators":"Nicholas J. L. Brown, James A. J. Heathers",
+        "Creators":[
+            "Nicholas J. L. Brown",
+            "James A. J. Heathers"
+        ],
         "Material_Type":[
             "Primary Source",
             "Reading",

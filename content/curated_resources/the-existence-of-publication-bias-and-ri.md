@@ -3,7 +3,9 @@
         "Timestamp":"2020-05-27T16:04:57.881Z",
         "Title":"The existence of publication bias and risk factors for its occurrence.",
         "link_to_resource":"https:\/\/doi.org\/10.1001\/jama.1990.03440100097014",
-        "Creators":"Kay Dickersin",
+        "Creators":[
+            "Kay Dickersin"
+        ],
         "Material_Type":[
             "Primary Source",
             "Reading",

@@ -3,7 +3,11 @@
         "Timestamp":"2020-05-22T18:33:13.945Z",
         "Title":"Giving Community Psychology Away: A case for open access publishing",
         "link_to_resource":"https:\/\/www.gjcpp.org\/en\/article.php?issue=33&article=199",
-        "Creators":"Crystal N. Steltenpohl, Amy J. Anderson, and Katherine M. Daniels",
+        "Creators":[
+            "Crystal N. Steltenpohl",
+            "Amy J. Anderson",
+            "and Katherine M. Daniels"
+        ],
         "Material_Type":[
             "Primary Source",
             "Reading",

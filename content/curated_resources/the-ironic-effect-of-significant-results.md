@@ -3,7 +3,9 @@
         "Timestamp":"2020-05-26T15:42:09.693Z",
         "Title":"The ironic effect of significant results on the credibility of multiple-study articles.",
         "link_to_resource":"https:\/\/doi.org\/10.1037\/a0029487",
-        "Creators":"Schimmack U",
+        "Creators":[
+            "Schimmack U"
+        ],
         "Material_Type":[
             "Primary Source",
             "Reading",

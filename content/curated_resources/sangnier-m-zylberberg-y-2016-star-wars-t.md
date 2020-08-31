@@ -3,7 +3,12 @@
         "Timestamp":"2020-05-24T12:13:40.761Z",
         "Title":"Sangnier, M., & Zylberberg, Y. (2016). Star wars: The empirics strike back. American Economic Journal: Applied Economics, 8(1), 1-32.",
         "link_to_resource":"https:\/\/doi.org\/10.1257\/app.20150044",
-        "Creators":"Sangnier, M., & Zylberberg, Y. ",
+        "Creators":[
+            "Sangnier",
+            "M.",
+            "& Zylberberg",
+            "Y."
+        ],
         "Material_Type":[
             "Primary Source",
             "Reading"

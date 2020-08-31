@@ -3,7 +3,9 @@
         "Timestamp":"2020-05-11T11:10:12.608Z",
         "Title":"Measurement Matters",
         "link_to_resource":"https:\/\/docs.google.com\/document\/d\/11jyoXtO0m2lUywpC04KjLvI5QcBUY4YtwEvw6cg2cMs\/edit",
-        "Creators":"Eiko Fried  and Jessica Flake",
+        "Creators":[
+            "Eiko Fried  and Jessica Flake"
+        ],
         "Material_Type":[
             "Reading"
         ],

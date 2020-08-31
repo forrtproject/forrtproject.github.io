@@ -3,7 +3,9 @@
         "Timestamp":"2020-05-08T09:04:29.640Z",
         "Title":"Retraction Watch: Michael LaCour archives",
         "link_to_resource":"http:\/\/retractionwatch.com\/category\/by-author\/lacour\/",
-        "Creators":"Alison McCook",
+        "Creators":[
+            "Alison McCook"
+        ],
         "Material_Type":[
             "Reading"
         ],

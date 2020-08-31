@@ -3,7 +3,11 @@
         "Timestamp":"2020-06-04T19:33:08.859Z",
         "Title":"Safeguard Power as a Protection Against Imprecise Power Estimates",
         "link_to_resource":"https:\/\/doi.org\/10.1177\/1745691614528519",
-        "Creators":"Marco Perugini, Marcello Gallucci, and Giulio Costantini",
+        "Creators":[
+            "Marco Perugini",
+            "Marcello Gallucci",
+            "and Giulio Costantini"
+        ],
         "Material_Type":[
             "Primary Source",
             "Reading",

@@ -3,7 +3,9 @@
         "Timestamp":"2020-05-14T10:11:39.371Z",
         "Title":"Mission: P-curve",
         "link_to_resource":"http:\/\/willgervais.com\/blog\/2015\/3\/27\/mission-p-curve",
-        "Creators":"Will Gervais",
+        "Creators":[
+            "Will Gervais"
+        ],
         "Material_Type":[
             "Reading"
         ],

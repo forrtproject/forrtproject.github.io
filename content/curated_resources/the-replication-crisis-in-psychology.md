@@ -3,7 +3,9 @@
         "Timestamp":"2020-06-10T18:53:53.613Z",
         "Title":"The Replication Crisis in Psychology",
         "link_to_resource":"https:\/\/nobaproject.com\/modules\/the-replication-crisis-in-psychology",
-        "Creators":"Edward Diener and Robert Biswas-Diener",
+        "Creators":[
+            "Edward Diener and Robert Biswas-Diener"
+        ],
         "Material_Type":[
             "Primary Source",
             "Reading",

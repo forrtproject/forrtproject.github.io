@@ -3,7 +3,12 @@
         "Timestamp":"2020-05-22T19:22:28.222Z",
         "Title":"Comparing Published Scientific Journal Articlesto Their Pre-print VersionsMart",
         "link_to_resource":"https:\/\/arxiv.org\/abs\/1604.05363",
-        "Creators":"Martin Klein, Peter Broadwell, Sharon E. Farb, Todd Grappone",
+        "Creators":[
+            "Martin Klein",
+            "Peter Broadwell",
+            "Sharon E. Farb",
+            "Todd Grappone"
+        ],
         "Material_Type":[
             "Primary Source",
             "Reading"

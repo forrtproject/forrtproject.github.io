@@ -3,7 +3,9 @@
         "Timestamp":"2020-05-08T09:46:20.016Z",
         "Title":"Interpreting Correlations: an interactive visualization",
         "link_to_resource":"http:\/\/rpsychologist.com\/d3\/correlation\/",
-        "Creators":"Kristoffer Magnusson",
+        "Creators":[
+            "Kristoffer Magnusson"
+        ],
         "Material_Type":[
             "Interactive",
             "Reading",

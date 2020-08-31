@@ -3,7 +3,9 @@
         "Timestamp":"2020-06-03T20:40:01.843Z",
         "Title":"WHY SUMMARIES OF RESEARCH ON PSYCHOLOGICAL THEORIES ARE OFTEN UNINTERPRETABLE",
         "link_to_resource":"https:\/\/doi.org\/10.2466\/pr0.1990.66.1.195",
-        "Creators":"Paul Meehl",
+        "Creators":[
+            "Paul Meehl"
+        ],
         "Material_Type":[
             "Primary Source",
             "Reading",

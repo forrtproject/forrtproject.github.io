@@ -3,7 +3,13 @@
         "Timestamp":"2020-06-08T18:23:12.189Z",
         "Title":"Empirical Evaluation of Very Large Treatment Effects of Medical Interventions",
         "link_to_resource":"https:\/\/doi.org\/10.1001\/jama.2012.13444",
-        "Creators":"Tiago V. Pereira, PhD Ralph I. Horwitz, MD John P. A. Ioannidis, MD, DSc",
+        "Creators":[
+            "Tiago V. Pereira",
+            "PhD Ralph I. Horwitz",
+            "MD John P. A. Ioannidis",
+            "MD",
+            "DSc"
+        ],
         "Material_Type":[
             "Primary Source",
             "Reading"

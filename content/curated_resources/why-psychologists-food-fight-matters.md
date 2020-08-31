@@ -3,7 +3,9 @@
         "Timestamp":"2020-06-09T16:33:06.121Z",
         "Title":"Why Psychologists\u2019 Food Fight Matters",
         "link_to_resource":"https:\/\/slate.com\/technology\/2014\/07\/replication-controversy-in-psychology-bullying-file-drawer-effect-blog-posts-repligate.html",
-        "Creators":"Michelle N.Meyer and Christopher Chabris",
+        "Creators":[
+            "Michelle N.Meyer and Christopher Chabris"
+        ],
         "Material_Type":[
             "Blog"
         ],

@@ -3,7 +3,9 @@
         "Timestamp":"2020-05-24T12:42:57.049Z",
         "Title":"The appropriate use of null hypothesis testing. ",
         "link_to_resource":"https:\/\/doi.org\/10.1037\/1082-989X.1.4.379",
-        "Creators":"R.W. Frick",
+        "Creators":[
+            "R.W. Frick"
+        ],
         "Material_Type":[
             "Primary Source",
             "Reading"

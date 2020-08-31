@@ -3,7 +3,17 @@
         "Timestamp":"2020-05-28T13:40:20.741Z",
         "Title":"Scanning the horizon: towards transparent and reproducible neuroimaging research",
         "link_to_resource":"https:\/\/doi.org\/10.1038\/nrn.2016.167",
-        "Creators":"Russell A. Poldrack, Chris I. Baker, Joke Durnez, Krzysztof J. Gorgolewski, Paul M. Matthews, Marcus R. Munaf\u00f2, Thomas E. Nichols, Jean-Baptiste Poline, Edward Vul & Tal Yarkoni ",
+        "Creators":[
+            "Russell A. Poldrack",
+            "Chris I. Baker",
+            "Joke Durnez",
+            "Krzysztof J. Gorgolewski",
+            "Paul M. Matthews",
+            "Marcus R. Munaf\u00f2",
+            "Thomas E. Nichols",
+            "Jean-Baptiste Poline",
+            "Edward Vul & Tal Yarkoni"
+        ],
         "Material_Type":[
             "Primary Source",
             "Reading",

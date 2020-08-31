@@ -3,7 +3,9 @@
         "Timestamp":"2020-08-06T15:26:43.117Z",
         "Title":"How scientists can stop fooling themselves",
         "link_to_resource":"https:\/\/doi.org\/10.1038\/d41586-020-02275-8",
-        "Creators":"Professor Dorothy Bishop",
+        "Creators":[
+            "Professor Dorothy Bishop"
+        ],
         "Material_Type":[
             "Reading"
         ],

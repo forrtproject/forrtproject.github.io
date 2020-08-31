@@ -3,7 +3,12 @@
         "Timestamp":"2020-06-03T20:44:44.076Z",
         "Title":"Many hands make tight work: Crowdsourcing research can balance discussions, validate findings and better inform policy",
         "link_to_resource":"https:\/\/doi.org\/10.1038\/526189a",
-        "Creators":"Silberzahn, R., & Uhlmann, E.L. ",
+        "Creators":[
+            "Silberzahn",
+            "R.",
+            "& Uhlmann",
+            "E.L."
+        ],
         "Material_Type":[
             "Primary Source",
             "Reading",

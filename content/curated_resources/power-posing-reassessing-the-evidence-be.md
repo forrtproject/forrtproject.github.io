@@ -3,7 +3,9 @@
         "Timestamp":"2020-05-09T07:20:18.729Z",
         "Title":"Power Posing: Reassessing The Evidence Behind The Most Popular TED Talk",
         "link_to_resource":"http:\/\/datacolada.org\/2015\/05\/08\/37-power-posing-reassessing-the-evidence-behind-the-most-popular-ted-talk\/",
-        "Creators":"Joe Simmons and Uri Simonsohn",
+        "Creators":[
+            "Joe Simmons and Uri Simonsohn"
+        ],
         "Material_Type":[
             "Reading"
         ],

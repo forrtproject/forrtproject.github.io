@@ -3,7 +3,9 @@
         "Timestamp":"2020-05-31T18:17:52.489Z",
         "Title":"On the reproducibility of meta-analyses: six practical recommendations",
         "link_to_resource":"https:\/\/doi.org\/10.1186\/s40359-016-0126-3",
-        "Creators":"Daniel Lakens et al.",
+        "Creators":[
+            "Daniel Lakens et al."
+        ],
         "Material_Type":[
             "Primary Source",
             "Reading",

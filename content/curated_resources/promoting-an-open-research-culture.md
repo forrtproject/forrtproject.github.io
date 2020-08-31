@@ -3,7 +3,9 @@
         "Timestamp":"2020-06-07T19:14:30.269Z",
         "Title":"Promoting an open research culture",
         "link_to_resource":"https:\/\/doi.org\/10.1126\/science.aab2374",
-        "Creators":"Nosek et al.",
+        "Creators":[
+            "Nosek et al."
+        ],
         "Material_Type":[
             "Primary Source",
             "Reading",

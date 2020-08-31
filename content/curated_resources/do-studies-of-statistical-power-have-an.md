@@ -3,7 +3,11 @@
         "Timestamp":"2020-05-26T15:15:40.656Z",
         "Title":"Do studies of statistical power have an effect on the power of studies?",
         "link_to_resource":"https:\/\/doi.org\/10.1037\/0033-2909.105.2.309",
-        "Creators":"Sedlmeier, P. & Gigerenzer, G. ",
+        "Creators":[
+            "Sedlmeier",
+            "P. & Gigerenzer",
+            "G."
+        ],
         "Material_Type":[
             "Primary Source",
             "Reading",

@@ -3,7 +3,9 @@
         "Timestamp":"2020-05-09T07:53:18.382Z",
         "Title":"Short R script to plot effect sizes (Cohen's d) and share overlapping are",
         "link_to_resource":"http:\/\/rpsychologist.com\/short-r-script-to-plot-effect-sizes-cohens-d-and-shade-overlapping-area",
-        "Creators":"Kristoffer Magnusson",
+        "Creators":[
+            "Kristoffer Magnusson"
+        ],
         "Material_Type":[
             "Reading",
             "R code"

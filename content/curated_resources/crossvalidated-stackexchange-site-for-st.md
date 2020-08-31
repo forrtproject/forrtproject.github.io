@@ -3,7 +3,9 @@
         "Timestamp":"2020-05-14T11:38:14.786Z",
         "Title":"CrossValidated StackExchange site (for statistics Q&A)",
         "link_to_resource":"http:\/\/stats.stackexchange.com",
-        "Creators":"Anon",
+        "Creators":[
+            "Anon"
+        ],
         "Material_Type":[
             "Student Guide",
             "Teaching\/Learning Strategy",

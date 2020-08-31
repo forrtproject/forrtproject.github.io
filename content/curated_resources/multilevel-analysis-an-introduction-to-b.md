@@ -3,7 +3,10 @@
         "Timestamp":"2020-05-19T16:50:30.775Z",
         "Title":"Multilevel Analysis: An Introduction to Basic and Advanced Multilevel Modeling",
         "link_to_resource":"https:\/\/www.amazon.com\/Multilevel-Analysis-Introduction-Advanced-Modeling\/dp\/0761958908?ie=UTF8&psc=1&redirect=true&ref_=oh_aui_detailpage_o07_s00",
-        "Creators":"Tom A.B. Snijders, Roel Bosker",
+        "Creators":[
+            "Tom A.B. Snijders",
+            "Roel Bosker"
+        ],
         "Material_Type":[
             "Textbook"
         ],

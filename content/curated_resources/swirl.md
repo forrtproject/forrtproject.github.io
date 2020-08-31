@@ -3,7 +3,9 @@
         "Timestamp":"2020-05-11T10:25:12.200Z",
         "Title":"SWIRL",
         "link_to_resource":"https:\/\/swirlstats.com\/",
-        "Creators":"Anon",
+        "Creators":[
+            "Anon"
+        ],
         "Material_Type":[
             "Activity\/Lab",
             "Homework\/Assignment",

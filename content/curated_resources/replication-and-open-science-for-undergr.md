@@ -3,7 +3,9 @@
         "Timestamp":"2020-05-06T14:52:48.000Z",
         "Title":"Replication and Open Science for Undergraduates",
         "link_to_resource":"https:\/\/funderstorms.wordpress.com\/2018\/05\/10\/replication-and-open-science-for-undergraduates\/",
-        "Creators":"David Funder",
+        "Creators":[
+            "David Funder"
+        ],
         "Material_Type":[
             "Reading"
         ],

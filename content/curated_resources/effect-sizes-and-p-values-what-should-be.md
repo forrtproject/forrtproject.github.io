@@ -3,7 +3,11 @@
         "Timestamp":"2020-05-24T12:39:29.922Z",
         "Title":"Effect sizes and p values: What should be reported and what should be replicated? ",
         "link_to_resource":"https:\/\/doi.org\/10.1111\/j.1469-8986.1996.tb02121.x.",
-        "Creators":"ANTHONY G. GREENWALD, RICHARD GONZALEZ, RICHARD J. HARRIS and DONALD GUTHRIE",
+        "Creators":[
+            "ANTHONY G. GREENWALD",
+            "RICHARD GONZALEZ",
+            "RICHARD J. HARRIS and DONALD GUTHRIE"
+        ],
         "Material_Type":[
             "Primary Source",
             "Reading"

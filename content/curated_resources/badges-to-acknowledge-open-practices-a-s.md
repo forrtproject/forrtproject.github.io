@@ -3,7 +3,9 @@
         "Timestamp":"2020-06-05T19:27:33.056Z",
         "Title":"Badges to Acknowledge Open Practices: A Simple, Low-Cost, Effective Method for Increasing Transparency",
         "link_to_resource":"https:\/\/doi.org\/10.1371\/journal.pbio.1002456",
-        "Creators":"Mallory C. Kidwell et al.",
+        "Creators":[
+            "Mallory C. Kidwell et al."
+        ],
         "Material_Type":[
             "Primary Source",
             "Reading",

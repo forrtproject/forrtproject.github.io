@@ -3,7 +3,11 @@
         "Timestamp":"2020-05-31T18:26:32.886Z",
         "Title":"The rules of the game called psychological science",
         "link_to_resource":"https:\/\/doi.org\/10.1177\/1745691612459060",
-        "Creators":" Marjan Bakker, Annette van Dijk, Jelte M. Wicherts",
+        "Creators":[
+            "Marjan Bakker",
+            "Annette van Dijk",
+            "Jelte M. Wicherts"
+        ],
         "Material_Type":[
             "Primary Source",
             "Reading",

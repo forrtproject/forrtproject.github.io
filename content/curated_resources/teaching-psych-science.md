@@ -3,7 +3,11 @@
         "Timestamp":"2020-05-10T08:13:40.715Z",
         "Title":"teaching psych science",
         "link_to_resource":"http:\/\/www.teachpsychscience.org\/",
-        "Creators":"Lewandowski, Jr., Ciarocco and Strohmetz",
+        "Creators":[
+            "Lewandowski",
+            "Jr.",
+            "Ciarocco and Strohmetz"
+        ],
         "Material_Type":[
             "Activity\/Lab",
             "Asssessment"

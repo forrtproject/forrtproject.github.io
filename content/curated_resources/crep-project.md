@@ -3,7 +3,9 @@
         "Timestamp":"2020-05-11T10:56:42.741Z",
         "Title":"CREP project",
         "link_to_resource":"https:\/\/osf.io\/wfc6u\/",
-        "Creators":"Jon Grahe et al.",
+        "Creators":[
+            "Jon Grahe et al."
+        ],
         "Material_Type":[
             "Primary Source",
             "Reading",

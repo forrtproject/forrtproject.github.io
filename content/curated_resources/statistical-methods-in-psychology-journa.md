@@ -3,7 +3,13 @@
         "Timestamp":"2020-06-05T19:33:05.179Z",
         "Title":"Statistical methods in psychology journals: Guidelines and explanations.",
         "link_to_resource":"https:\/\/doi.org\/10.1037\/0003-066X.54.8.594",
-        "Creators":"Wilkinson, L., & Task Force on Statistical Inference, American Psychological Association, Science Directorate.",
+        "Creators":[
+            "Wilkinson",
+            "L.",
+            "& Task Force on Statistical Inference",
+            "American Psychological Association",
+            "Science Directorate."
+        ],
         "Material_Type":[
             "Primary Source",
             "Reading",

@@ -3,7 +3,9 @@
         "Timestamp":"2020-06-03T19:24:46.505Z",
         "Title":"Justify your alpha",
         "link_to_resource":"https:\/\/doi.org\/10.1038\/s41562-018-0311-x",
-        "Creators":"Daniel Lakens et al.",
+        "Creators":[
+            "Daniel Lakens et al."
+        ],
         "Material_Type":[
             "Primary Source",
             "Reading",

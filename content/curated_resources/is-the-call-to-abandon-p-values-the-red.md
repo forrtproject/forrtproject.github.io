@@ -3,7 +3,9 @@
         "Timestamp":"2020-06-05T19:34:31.478Z",
         "Title":"Is the call to abandon p-values the red herring of the replicability crisis? ",
         "link_to_resource":"https:\/\/doi.org\/10.3389\/fpsyg.2015.00245",
-        "Creators":"Victoria Savalei and Elizabeth Dunn",
+        "Creators":[
+            "Victoria Savalei and Elizabeth Dunn"
+        ],
         "Material_Type":[
             "Primary Source",
             "Reading",

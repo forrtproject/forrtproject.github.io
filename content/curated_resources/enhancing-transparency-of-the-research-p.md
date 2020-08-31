@@ -3,7 +3,9 @@
         "Timestamp":"2020-05-29T18:24:21.628Z",
         "Title":"Enhancing transparency of the research process to increase accuracy of findings: A guide for relationship researchers",
         "link_to_resource":"https:\/\/doi.org\/10.1111\/pere.12053",
-        "Creators":"LORNE CAMPBELL  TIMOTHY J. LOVING  ETIENNE P. LEBEL",
+        "Creators":[
+            "LORNE CAMPBELL  TIMOTHY J. LOVING  ETIENNE P. LEBEL"
+        ],
         "Material_Type":[
             "Primary Source",
             "Reading",

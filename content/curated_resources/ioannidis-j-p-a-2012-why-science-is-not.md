@@ -3,7 +3,9 @@
         "Timestamp":"2020-05-23T02:19:21.665Z",
         "Title":"Ioannidis, J. P. A. (2012). Why science is not necessarily self-correcting. Perspectives on Psychological Science, 7, 645-654.",
         "link_to_resource":"https:\/\/doi.org\/10.1177\/1745691612464056",
-        "Creators":"John Ioannidis",
+        "Creators":[
+            "John Ioannidis"
+        ],
         "Material_Type":[
             "Primary Source",
             "Reading",

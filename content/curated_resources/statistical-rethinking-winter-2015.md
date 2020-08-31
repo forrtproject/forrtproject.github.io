@@ -3,7 +3,9 @@
         "Timestamp":"2020-05-15T15:42:02.427Z",
         "Title":"Statistical Rethinking Winter 2015",
         "link_to_resource":"https:\/\/www.youtube.com\/playlist?list=PLDcUM9US4XdMdZOhJWJJD4mDBMnbTWw_z",
-        "Creators":"Richard McElreath",
+        "Creators":[
+            "Richard McElreath"
+        ],
         "Material_Type":[
             "Lecture",
             "Teaching\/Learning Strategy",

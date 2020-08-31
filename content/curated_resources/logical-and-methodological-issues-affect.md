@@ -3,7 +3,10 @@
         "Timestamp":"2020-06-08T18:07:14.930Z",
         "Title":"Logical and methodological issues affecting genetic studies of humans reported in top neuroscience journals. ",
         "link_to_resource":"https:\/\/doi.org\/10.1162\/jocn_a_01192",
-        "Creators":"Grabitz, C.R. et al.",
+        "Creators":[
+            "Grabitz",
+            "C.R. et al."
+        ],
         "Material_Type":[
             "Primary Source",
             "Reading",

@@ -3,7 +3,9 @@
         "Timestamp":"2020-05-27T16:00:43.499Z",
         "Title":"The file drawer problem and tolerance for null results.",
         "link_to_resource":"https:\/\/doi.org\/10.1037\/0033-2909.86.3.638",
-        "Creators":"R.Rosenthal",
+        "Creators":[
+            "R.Rosenthal"
+        ],
         "Material_Type":[
             "Primary Source",
             "Reading",

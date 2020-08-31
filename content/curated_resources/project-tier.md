@@ -3,7 +3,9 @@
         "Timestamp":"2020-05-11T11:05:09.426Z",
         "Title":"Project TIER",
         "link_to_resource":"https:\/\/www.projecttier.org\/",
-        "Creators":"TIER Team",
+        "Creators":[
+            "TIER Team"
+        ],
         "Material_Type":[
             "Activity\/Lab",
             "Asssessment",

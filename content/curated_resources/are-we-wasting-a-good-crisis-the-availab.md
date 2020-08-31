@@ -3,7 +3,11 @@
         "Timestamp":"2020-06-05T18:23:03.111Z",
         "Title":"Are We Wasting a Good Crisis? The Availability of Psychological Research Data after the Storm",
         "link_to_resource":"https:\/\/doi.org\/http:\/\/doi.org\/10.1525\/collabra.13",
-        "Creators":"Wolf Vanpaemel , Maarten Vermorgen , Leen Deriemaecker  and Gert Storms",
+        "Creators":[
+            "Wolf Vanpaemel",
+            "Maarten Vermorgen",
+            "Leen Deriemaecker  and Gert Storms"
+        ],
         "Material_Type":[
             "Primary Source",
             "Reading",

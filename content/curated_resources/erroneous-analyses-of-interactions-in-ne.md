@@ -3,7 +3,14 @@
         "Timestamp":"2020-06-03T20:20:48.282Z",
         "Title":"Erroneous analyses of interactions in neuroscience: a problem of significance. ",
         "link_to_resource":"https:\/\/doi.org\/10.1038\/nn.2886",
-        "Creators":"Nieuwenhuis, S., Forstmann, B. U., & Wagenmakers, E. J. ",
+        "Creators":[
+            "Nieuwenhuis",
+            "S.",
+            "Forstmann",
+            "B. U.",
+            "& Wagenmakers",
+            "E. J."
+        ],
         "Material_Type":[
             "Primary Source",
             "Reading",

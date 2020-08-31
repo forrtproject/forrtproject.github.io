@@ -3,7 +3,9 @@
         "Timestamp":"2020-05-10T08:34:48.715Z",
         "Title":"Teaching reproducible science hack-a-thon from 2018 SIPS",
         "link_to_resource":"https:\/\/osf.io\/x7d45\/",
-        "Creators":"Lane et al.",
+        "Creators":[
+            "Lane et al."
+        ],
         "Material_Type":[
             "Lesson",
             "Teaching\/Learning Strategy"

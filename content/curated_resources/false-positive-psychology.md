@@ -3,7 +3,9 @@
         "Timestamp":"2020-05-11T11:01:00.922Z",
         "Title":"False Positive Psychology",
         "link_to_resource":"https:\/\/osf.io\/4sehf\/",
-        "Creators":"Dermot Lynott",
+        "Creators":[
+            "Dermot Lynott"
+        ],
         "Material_Type":[
             "Lecture",
             "Lecture Notes",

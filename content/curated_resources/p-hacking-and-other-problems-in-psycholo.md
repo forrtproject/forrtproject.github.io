@@ -3,7 +3,10 @@
         "Timestamp":"2020-05-16T12:08:21.186Z",
         "Title":"P-Hacking and Other Problems in Psychology Research",
         "link_to_resource":"http:\/\/rationallyspeakingpodcast.org\/show\/rs123-daniel-lakens-on-p-hacking-and-other-problems-in-psych.html",
-        "Creators":"Julia Galef, Massimo Pigliucci and Benny Pollak",
+        "Creators":[
+            "Julia Galef",
+            "Massimo Pigliucci and Benny Pollak"
+        ],
         "Material_Type":[
             "Student Guide",
             "Teaching\/Learning Strategy",

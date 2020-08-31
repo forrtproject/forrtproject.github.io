@@ -3,7 +3,9 @@
         "Timestamp":"2020-05-08T09:33:04.497Z",
         "Title":"Interpreting confidence intervals",
         "link_to_resource":"http:\/\/rpsychologist.com\/d3\/CI\/",
-        "Creators":"Kristoffer Magnusson ",
+        "Creators":[
+            "Kristoffer Magnusson"
+        ],
         "Material_Type":[
             "Interactive",
             "Simulation",

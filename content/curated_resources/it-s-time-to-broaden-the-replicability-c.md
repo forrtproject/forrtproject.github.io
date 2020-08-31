@@ -3,7 +3,9 @@
         "Timestamp":"2020-06-04T19:03:17.742Z",
         "Title":"It\u2019s Time to Broaden the Replicability Conversation: Thoughts for and From Clinical Psychological Science",
         "link_to_resource":"https:\/\/doi.org\/10.1177\/1745691617690042",
-        "Creators":"Jennifer L. Tackett et al. ",
+        "Creators":[
+            "Jennifer L. Tackett et al."
+        ],
         "Material_Type":[
             "Primary Source",
             "Reading",
