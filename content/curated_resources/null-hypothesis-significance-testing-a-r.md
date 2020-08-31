@@ -3,10 +3,7 @@
         "Timestamp":"2020-05-31T18:23:45.787Z",
         "Title":"Null hypothesis significance testing: a review of an old and continuing controversy. Psychological methods, 5(2), 241-301.",
         "link_to_resource":"https:\/\/doi.org\/10.1037\/1082-989x.5.2.241",
-        "Creators":[
-            "Nickerson",
-            "R. S. (2000)."
-        ],
+        "Creators":"Nickerson, R. S. (2000). ",
         "Material_Type":[
             "Primary Source",
             "Reading",

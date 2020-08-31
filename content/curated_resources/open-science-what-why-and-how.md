@@ -3,10 +3,7 @@
         "Timestamp":"2020-06-08T18:24:57.469Z",
         "Title":"Open Science: What, Why, and How",
         "link_to_resource":"https:\/\/psyarxiv.com\/ak6jr\/",
-        "Creators":[
-            "Bobbie Spellman",
-            "Elizabeth Gilbert and Katherine Corker"
-        ],
+        "Creators":"Bobbie Spellman, Elizabeth Gilbert and Katherine Corker",
         "Material_Type":[
             "Primary Source",
             "Reading",

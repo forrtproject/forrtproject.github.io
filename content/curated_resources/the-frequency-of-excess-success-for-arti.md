@@ -3,9 +3,7 @@
         "Timestamp":"2020-05-28T13:01:48.975Z",
         "Title":"The frequency of excess success for articles in Psychological Science.",
         "link_to_resource":"https:\/\/doi.org\/10.3758\/s13423-014-0601-x",
-        "Creators":[
-            "Gregory Francis"
-        ],
+        "Creators":"Gregory Francis",
         "Material_Type":[
             "Primary Source",
             "Reading",

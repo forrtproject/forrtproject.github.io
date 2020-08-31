@@ -3,9 +3,7 @@
         "Timestamp":"2020-05-08T09:49:58.156Z",
         "Title":"Distribution of p-values when comparing two groups",
         "link_to_resource":"http:\/\/rpsychologist.com\/d3\/pdist\/",
-        "Creators":[
-            "Kristoffer Magnusson"
-        ],
+        "Creators":"Kristoffer Magnusson",
         "Material_Type":[
             "Interactive",
             "Reading",

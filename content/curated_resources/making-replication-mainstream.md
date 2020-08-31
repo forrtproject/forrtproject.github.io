@@ -3,10 +3,7 @@
         "Timestamp":"2020-06-05T19:12:53.512Z",
         "Title":"Making replication mainstream",
         "link_to_resource":"https:\/\/doi.org\/10.1017\/S0140525X17001972",
-        "Creators":[
-            "Rolf A. Zwaan",
-            "Alexander Etz Richard E. Lucas and M. Brent Donnellan"
-        ],
+        "Creators":"Rolf A. Zwaan, Alexander Etz Richard E. Lucas and M. Brent Donnellan",
         "Material_Type":[
             "Primary Source",
             "Reading",

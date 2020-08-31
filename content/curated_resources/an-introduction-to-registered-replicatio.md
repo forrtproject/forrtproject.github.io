@@ -3,11 +3,7 @@
         "Timestamp":"2020-06-04T19:14:15.524Z",
         "Title":"An Introduction to Registered Replication Reports at Perspectives on Psychological Science",
         "link_to_resource":"https:\/\/doi.org\/10.1177\/1745691614543974",
-        "Creators":[
-            "Daniel J. Simons",
-            "Alex O. Holcombe",
-            "Barbara A. Spellman"
-        ],
+        "Creators":"Daniel J. Simons, Alex O. Holcombe, Barbara A. Spellman",
         "Material_Type":[
             "Primary Source",
             "Reading",

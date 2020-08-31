@@ -3,9 +3,7 @@
         "Timestamp":"2020-06-07T18:34:55.042Z",
         "Title":"Strong inference",
         "link_to_resource":"https:\/\/doi.org\/10.1126\/science.146.3642.347",
-        "Creators":[
-            "John R Platt"
-        ],
+        "Creators":"John R Platt",
         "Material_Type":[
             "Primary Source",
             "Reading",

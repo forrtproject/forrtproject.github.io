@@ -3,12 +3,7 @@
         "Timestamp":"2020-06-03T19:44:06.983Z",
         "Title":"The natural selection of bad science.",
         "link_to_resource":"https:\/\/doi.org\/10.1098\/rsos.160384",
-        "Creators":[
-            "Smaldino",
-            "P. E.",
-            "& McElreath",
-            "R."
-        ],
+        "Creators":"Smaldino, P. E., & McElreath, R.",
         "Material_Type":[
             "Primary Source",
             "Reading",

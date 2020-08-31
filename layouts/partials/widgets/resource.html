@@ -50,7 +50,7 @@
         <div class="project-toolbar">
           <div class="project-filters">
             <div class="btn-toolbar">
-              <div class="btn-group flex-wrap">
+              <div class="btn-group flex-wrap text-center">
                 {{ range $idx, $item := $st.Params.content.filter_button }}
                 {{/* Parse filter tag from front matter in the form of either tag name or CSS class name. */}}
                 {{ $data_filter := printf ".js-id-%s" (replace .FORRT_Clusters " " "-") }}
@@ -58,7 +58,7 @@
                 {{ $data_filter = .FORRT_Clusters }}
                 {{ end }}
                 <a href="#" data-filter="{{ $data_filter | safeHTMLAttr }}"
-                  class="btn btn-primary btn-lg{{ if eq $idx $filter_default }} active{{ end }}">{{ .name }}</a>
+                  class="btn btn-primary py-2 m-1 btn-lg{{ if eq $idx $filter_default }} active{{ end }}" style="line-height: 1; border-radius: 6px;">{{ .name }}</a>
                 {{ end }}
               </div>
             </div>
@@ -79,11 +79,11 @@
           {{ end }}
 
           {{ if eq $st.Params.design.view 1 }}
-          {{ partial "portfolio_li_list" (dict "item" $item) }}
+          {{ partial "resource_li_list" (dict "item" $item) }}
           {{ else if eq $st.Params.design.view 2 }}
           {{ partial "portfolio_li_compact" (dict "item" $item) }}
           {{ else if eq $st.Params.design.view 3 }}
-          {{ partial "portfolio_li_card" (dict "widget" $st "index" $idx "item" $item "link" $link "target" $target) }}
+          {{ partial "resource_li_card" (dict "widget" $st "index" $idx "item" $item "link" $link "target" $target) }}
           {{ else }}
           {{ partial "portfolio_li_showcase" (dict "widget" $st "index" $idx "item" $item "link" $link "target" $target) }}
           {{ end }}

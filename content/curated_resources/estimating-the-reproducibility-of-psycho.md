@@ -3,9 +3,7 @@
         "Timestamp":"2020-05-27T17:18:52.283Z",
         "Title":"Estimating the reproducibility of psychological science",
         "link_to_resource":"https:\/\/doi.org\/10.1126\/science.aac4716",
-        "Creators":[
-            "Open Science Collaboration."
-        ],
+        "Creators":"Open Science Collaboration. ",
         "Material_Type":[
             "Primary Source",
             "Reading",

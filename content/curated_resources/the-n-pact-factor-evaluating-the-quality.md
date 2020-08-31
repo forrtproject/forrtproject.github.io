@@ -3,10 +3,7 @@
         "Timestamp":"2020-06-03T20:31:44.017Z",
         "Title":"The N-Pact Factor: Evaluating the Quality of Empirical Journals with Respect to Sample Size and Statistical Power",
         "link_to_resource":"https:\/\/doi.org\/10.1371\/journal.pone.0109019",
-        "Creators":[
-            "R. Chris Fraley",
-            "Simine Vazire"
-        ],
+        "Creators":"R. Chris Fraley ,Simine Vazire ",
         "Material_Type":[
             "Primary Source",
             "Reading",

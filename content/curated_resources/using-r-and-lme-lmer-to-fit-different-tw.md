@@ -3,9 +3,7 @@
         "Timestamp":"2020-05-08T09:56:13.658Z",
         "Title":"Using R and lme\/lmer to fit different two- and three- level longitudinal models",
         "link_to_resource":"https:\/\/rpsychologist.com\/r-guide-longitudinal-lme-lmer",
-        "Creators":[
-            "Kristoffer Magnusson"
-        ],
+        "Creators":"Kristoffer Magnusson",
         "Material_Type":[
             "Reading",
             "R code"

@@ -3,9 +3,7 @@
         "Timestamp":"2020-06-06T19:16:27.806Z",
         "Title":"HARKing: How Badly Can Cherry-Picking and Question Trolling Produce Bias in Published Results?",
         "link_to_resource":"https:\/\/doi.org\/10.1007\/s10869-017-9524-7",
-        "Creators":[
-            "Kevin R. Murphy & Herman Aguinis"
-        ],
+        "Creators":"Kevin R. Murphy & Herman Aguinis ",
         "Material_Type":[
             "Primary Source",
             "Reading",

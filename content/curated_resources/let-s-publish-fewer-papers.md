@@ -3,10 +3,7 @@
         "Timestamp":"2020-06-03T20:50:36.149Z",
         "Title":"Let's Publish Fewer Papers",
         "link_to_resource":"https:\/\/doi.org\/10.1080\/1047840X.2012.705245",
-        "Creators":[
-            "Leif D. Nelson",
-            "Joseph P. Simmons & Uri Simonsohn"
-        ],
+        "Creators":"Leif D. Nelson , Joseph P. Simmons & Uri Simonsohn ",
         "Material_Type":[
             "Primary Source",
             "Reading",

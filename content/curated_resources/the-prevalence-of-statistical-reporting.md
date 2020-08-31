@@ -3,12 +3,7 @@
         "Timestamp":"2020-05-26T14:56:18.299Z",
         "Title":"The prevalence of statistical reporting errors in psychology (1985\u20132013)",
         "link_to_resource":"https:\/\/doi.org\/10.3758\/s13428-015-0664-2",
-        "Creators":[
-            "Mich\u00e8le B. Nuijten",
-            "Chris H. J. Hartgerink",
-            "Marcel A. L. M. van Assen",
-            "Sacha Epskamp & Jelte M. Wicherts"
-        ],
+        "Creators":"Mich\u00e8le B. Nuijten, Chris H. J. Hartgerink, Marcel A. L. M. van Assen, Sacha Epskamp & Jelte M. Wicherts ",
         "Material_Type":[
             "Primary Source",
             "Reading",

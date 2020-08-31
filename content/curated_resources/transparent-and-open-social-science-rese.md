@@ -3,9 +3,7 @@
         "Timestamp":"2020-05-15T13:07:53.560Z",
         "Title":"Transparent and Open Social Science Research  course",
         "link_to_resource":"https:\/\/www.bitss.org\/mooc-parent-page\/",
-        "Creators":[
-            "Berkeley Initiative for Transparency in the Social Sciences"
-        ],
+        "Creators":"Berkeley Initiative for Transparency in the Social Sciences",
         "Material_Type":[
             "Full Course",
             "Lecture",

@@ -3,11 +3,7 @@
         "Timestamp":"2020-06-06T19:18:18.085Z",
         "Title":"Better P-curves: Making P-curve Analysis More Robust to Errors, Fraud, and Ambitious P-hacking, a Reply to Ulrich and Miller (2015)",
         "link_to_resource":"https:\/\/doi.org\/10.1037\/xge0000104.",
-        "Creators":[
-            "Uri Simonsohn",
-            "Joseph P Simmons",
-            "Leif D Nelson"
-        ],
+        "Creators":"Uri Simonsohn, Joseph P Simmons, Leif D Nelson",
         "Material_Type":[
             "Primary Source",
             "Reading",

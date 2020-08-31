@@ -3,9 +3,7 @@
         "Timestamp":"2020-05-11T10:29:40.604Z",
         "Title":"The t-distritbution and its normal approximation",
         "link_to_resource":"http:\/\/rpsychologist.com\/new-d3-js-visualization-t-distribution",
-        "Creators":[
-            "Kristoffer Magnusson"
-        ],
+        "Creators":"Kristoffer Magnusson ",
         "Material_Type":[
             "Interactive",
             "Simulation",

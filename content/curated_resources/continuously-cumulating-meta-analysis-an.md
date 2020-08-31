@@ -3,11 +3,7 @@
         "Timestamp":"2020-06-08T18:39:01.563Z",
         "Title":"Continuously Cumulating Meta-Analysis and Replicability",
         "link_to_resource":"https:\/\/doi.org\/10.1177\/1745691614529796",
-        "Creators":[
-            "Sanford L. Braver",
-            "Felix J. Thoemmes",
-            "Robert Rosenthal"
-        ],
+        "Creators":"Sanford L. Braver, Felix J. Thoemmes, Robert Rosenthal",
         "Material_Type":[
             "Primary Source",
             "Reading",

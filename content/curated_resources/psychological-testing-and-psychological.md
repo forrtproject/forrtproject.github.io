@@ -3,9 +3,7 @@
         "Timestamp":"2020-05-22T19:16:27.793Z",
         "Title":"Psychological testing and psychological assessment: A review of evidence and issues.",
         "link_to_resource":"https:\/\/doi.org\/10.1037\/0003-066X.56.2.128",
-        "Creators":[
-            "Meyer et al."
-        ],
+        "Creators":"Meyer et al.",
         "Material_Type":[
             "Primary Source",
             "Reading"

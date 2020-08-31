@@ -3,9 +3,7 @@
         "Timestamp":"2020-05-28T13:13:41.155Z",
         "Title":"1,500 scientists lift the lid on reproducibility",
         "link_to_resource":"https:\/\/doi.org\/10.1038\/533452a",
-        "Creators":[
-            "Monya Baker"
-        ],
+        "Creators":"Monya Baker",
         "Material_Type":[
             "Primary Source",
             "Reading",

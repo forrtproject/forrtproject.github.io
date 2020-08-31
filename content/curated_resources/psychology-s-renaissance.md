@@ -3,11 +3,7 @@
         "Timestamp":"2020-05-27T16:22:44.790Z",
         "Title":"Psychology's renaissance",
         "link_to_resource":"https:\/\/doi.org\/10.1146\/annurev-psych-122216-011836",
-        "Creators":[
-            "Leif D. Nelson",
-            "Joseph Simmons",
-            "and Uri Simonsohn"
-        ],
+        "Creators":"Leif D. Nelson, Joseph Simmons, and Uri Simonsohn",
         "Material_Type":[
             "Primary Source",
             "Reading",

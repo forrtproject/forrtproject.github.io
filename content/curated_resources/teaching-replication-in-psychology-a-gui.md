@@ -3,9 +3,7 @@
         "Timestamp":"2020-05-11T10:45:22.707Z",
         "Title":"Teaching Replication in Psychology: A Guide for Teachers and Students",
         "link_to_resource":"https:\/\/osf.io\/28r6g\/",
-        "Creators":[
-            "Bradford Wiggins"
-        ],
+        "Creators":"Bradford Wiggins",
         "Material_Type":[
             "Lecture",
             "Lecture Notes",

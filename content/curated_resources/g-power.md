@@ -3,9 +3,7 @@
         "Timestamp":"2020-05-11T10:16:17.692Z",
         "Title":"G*Power",
         "link_to_resource":"http:\/\/www.gpower.hhu.de\/",
-        "Creators":[
-            "The G*Power Team"
-        ],
+        "Creators":"The G*Power Team",
         "Material_Type":[
             "Reading",
             "Simulation"

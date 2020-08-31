@@ -3,16 +3,7 @@
         "Timestamp":"2020-06-11T06:39:53.751Z",
         "Title":"Making Prospective Registration of Observational Research a Reality",
         "link_to_resource":"https:\/\/doi.org\/10.1126\/scitranslmed.3007513",
-        "Creators":[
-            "Rafael Dal-R\u00e9",
-            "John P. Ioannidis",
-            "Michael B. Bracken",
-            "Patricia A. Buffler",
-            "An-Wen Chan",
-            "Eduardo L. Franco",
-            "Carlo La Vecchia",
-            "ElisabeteWeiderpass"
-        ],
+        "Creators":"Rafael Dal-R\u00e9, John P. Ioannidis,  Michael B. Bracken, Patricia A. Buffler,  An-Wen Chan,  Eduardo L. Franco,  Carlo La Vecchia,  ElisabeteWeiderpass",
         "Material_Type":[
             "Primary Source",
             "Reading",

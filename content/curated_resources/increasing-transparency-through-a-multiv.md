@@ -3,16 +3,7 @@
         "Timestamp":"2020-05-27T16:10:49.878Z",
         "Title":"Increasing transparency through a multiverse analysis.",
         "link_to_resource":"https:\/\/doi.org\/10.1177\/1745691616658637",
-        "Creators":[
-            "Steegen",
-            "S.",
-            "Tuerlinckx",
-            "F.",
-            "Gelman",
-            "A.",
-            "& Vanpaemel",
-            "W."
-        ],
+        "Creators":"Steegen, S., Tuerlinckx, F., Gelman, A., & Vanpaemel, W.",
         "Material_Type":[
             "Primary Source",
             "Reading",

@@ -3,11 +3,7 @@
         "Timestamp":"2020-05-29T18:30:35.236Z",
         "Title":"Practical Solutions for Sharing Data and Materials From Psychological Research",
         "link_to_resource":"https:\/\/doi.org\/10.1177\/2515245917746500",
-        "Creators":[
-            "Rick O. Gilmore",
-            "Joy Lorenzo Kennedy",
-            "and Karen E. Adolph"
-        ],
+        "Creators":"Rick O. Gilmore, Joy Lorenzo Kennedy, and Karen E. Adolph",
         "Material_Type":[
             "Primary Source",
             "Reading",

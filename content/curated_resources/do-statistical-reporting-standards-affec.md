@@ -3,9 +3,7 @@
         "Timestamp":"2020-05-27T16:35:24.398Z",
         "Title":"Do Statistical Reporting Standards Affect What Is Published? Publication Bias in Two Leading Political Science Journals",
         "link_to_resource":"http:\/\/dx.doi.org\/10.1561\/100.00008024",
-        "Creators":[
-            "Alan Gerber and Neil Malhotra"
-        ],
+        "Creators":"Alan Gerber and Neil Malhotra",
         "Material_Type":[
             "Primary Source",
             "Reading"

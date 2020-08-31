@@ -3,9 +3,7 @@
         "Timestamp":"2020-05-11T11:49:03.272Z",
         "Title":"The Hardest Science",
         "link_to_resource":"https:\/\/hardsci.wordpress.com\/",
-        "Creators":[
-            "Sanjay Srivastava"
-        ],
+        "Creators":"Sanjay Srivastava",
         "Material_Type":[
             "Reading"
         ],

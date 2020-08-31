@@ -3,9 +3,7 @@
         "Timestamp":"2020-06-07T19:17:39.866Z",
         "Title":"Using prediction markets to estimate the reproducibility of scientific research",
         "link_to_resource":"https:\/\/doi.org\/10.1073\/pnas.1516179112",
-        "Creators":[
-            "Anna Drebner et al."
-        ],
+        "Creators":"Anna Drebner et al.",
         "Material_Type":[
             "Primary Source",
             "Reading",

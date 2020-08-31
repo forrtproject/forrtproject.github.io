@@ -3,9 +3,7 @@
         "Timestamp":"2020-06-09T16:25:58.562Z",
         "Title":"Quality Uncertainty Erodes Trust in Science",
         "link_to_resource":"http:\/\/doi.org\/10.1525\/collabra.74",
-        "Creators":[
-            "S. Vazire"
-        ],
+        "Creators":"S. Vazire",
         "Material_Type":[
             "Primary Source",
             "Reading",

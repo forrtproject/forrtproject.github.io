@@ -3,9 +3,7 @@
         "Timestamp":"2020-06-08T18:43:48.197Z",
         "Title":"Change starts with journal editors: In response to Makel (2014).",
         "link_to_resource":"https:\/\/doi.org\/10.1037\/a0035801",
-        "Creators":[
-            "Matthew T. McBee and Michael S. Matthews"
-        ],
+        "Creators":"Matthew T. McBee and Michael S. Matthews",
         "Material_Type":[
             "Primary Source",
             "Reading",

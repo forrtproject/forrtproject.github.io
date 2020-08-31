@@ -3,12 +3,7 @@
         "Timestamp":"2020-06-06T19:05:13.758Z",
         "Title":"Correcting for Bias in Psychology: A Comparison of Meta-Analytic Methods",
         "link_to_resource":"https:\/\/doi.org\/10.1177\/2515245919847196",
-        "Creators":[
-            "Evan C. Carter",
-            "Felix D. Sch\u00f6nbrodt",
-            "Will M. Gervais",
-            "and Joseph Hilgard"
-        ],
+        "Creators":"Evan C. Carter, Felix D. Sch\u00f6nbrodt, Will M. Gervais, and Joseph Hilgard",
         "Material_Type":[
             "Primary Source",
             "Reading",

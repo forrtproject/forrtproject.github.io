@@ -3,9 +3,7 @@
         "Timestamp":"2020-05-16T12:04:50.998Z",
         "Title":"Circle of Willis (episode with Sinime Vazire)",
         "link_to_resource":"http:\/\/circleofwillispodcast.com\/episode-8-simine-vazire",
-        "Creators":[
-            "Jim Coan"
-        ],
+        "Creators":"Jim Coan",
         "Material_Type":[
             "Student Guide",
             "Teaching\/Learning Strategy",

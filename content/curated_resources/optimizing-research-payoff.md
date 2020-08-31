@@ -3,9 +3,7 @@
         "Timestamp":"2020-06-07T18:37:56.242Z",
         "Title":"Optimizing Research Payoff",
         "link_to_resource":"https:\/\/doi.org\/10.1177\/1745691616649170",
-        "Creators":[
-            "Jeff Miller and Rolf Ulrich"
-        ],
+        "Creators":"Jeff Miller and Rolf Ulrich",
         "Material_Type":[
             "Primary Source",
             "Reading",

@@ -3,12 +3,7 @@
         "Timestamp":"2020-05-24T12:00:43.880Z",
         "Title":"A Unified Framework to Quantify the Credibility of Scientific Findings",
         "link_to_resource":"https:\/\/journals.sagepub.com\/doi\/10.1177\/2515245918787489",
-        "Creators":[
-            "Etienne P. LeBel",
-            "Randy J. McCarthy",
-            "Brian D. Earp",
-            "Malte Elson and Wolf Vanpaemel"
-        ],
+        "Creators":"Etienne P. LeBel, Randy J. McCarthy, Brian D. Earp, Malte Elson and Wolf Vanpaemel",
         "Material_Type":[
             "Primary Source",
             "Reading",

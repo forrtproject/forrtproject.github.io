@@ -3,18 +3,7 @@
         "Timestamp":"2020-06-03T20:23:31.650Z",
         "Title":"The Extent and Consequences of P-Hacking in Science. ",
         "link_to_resource":"http:\/\/doi.org\/10.1371\/journal.pbio.1002106",
-        "Creators":[
-            "Head",
-            "M. L.",
-            "Holman",
-            "L.",
-            "Lanfear",
-            "R.",
-            "Kahn",
-            "A. T.",
-            "& Jennions",
-            "M. D."
-        ],
+        "Creators":"Head, M. L., Holman, L., Lanfear, R., Kahn, A. T., & Jennions, M. D. ",
         "Material_Type":[
             "Primary Source",
             "Reading",

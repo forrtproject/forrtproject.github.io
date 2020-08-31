@@ -3,9 +3,7 @@
         "Timestamp":"2020-05-10T09:00:27.501Z",
         "Title":"The Bayesian Reproducibility Project",
         "link_to_resource":"https:\/\/alexanderetz.com\/2015\/08\/30\/the-bayesian-reproducibility-project\/",
-        "Creators":[
-            "Alexander Etz"
-        ],
+        "Creators":"Alexander Etz",
         "Material_Type":[
             "Data Set",
             "Reading",

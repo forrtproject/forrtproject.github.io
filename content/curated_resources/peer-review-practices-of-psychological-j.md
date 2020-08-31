@@ -3,12 +3,7 @@
         "Timestamp":"2020-06-06T19:14:34.538Z",
         "Title":"Peer-review practices of psychological journals: The fate of published articles, submitted again. ",
         "link_to_resource":"https:\/\/doi.org\/https:\/\/doi.org\/10.1017\/S0140525X00011183",
-        "Creators":[
-            "Peters",
-            "D. P.",
-            "& Ceci",
-            "S. J."
-        ],
+        "Creators":"Peters, D. P., & Ceci, S. J. ",
         "Material_Type":[
             "Primary Source",
             "Reading",

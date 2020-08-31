@@ -3,14 +3,7 @@
         "Timestamp":"2020-05-26T15:00:11.045Z",
         "Title":"Degrees of Freedom in Planning, Running, Analyzing, and Reporting Psychological Studies: A Checklist to Avoid p-Hacking",
         "link_to_resource":"https:\/\/doi.org\/10.3389\/fpsyg.2016.01832",
-        "Creators":[
-            "Jelte M. Wicherts",
-            "Coosje L. S. Veldkamp",
-            "Hilde E. M. Augusteijn",
-            "Marjan Bakker",
-            "Robbie C. M. van Aert",
-            "and Marcel A. L. M. van Assen"
-        ],
+        "Creators":"Jelte M. Wicherts, Coosje L. S. Veldkamp, Hilde E. M. Augusteijn, Marjan Bakker, Robbie C. M. van Aert, and Marcel A. L. M. van Assen",
         "Material_Type":[
             "Primary Source",
             "Reading",

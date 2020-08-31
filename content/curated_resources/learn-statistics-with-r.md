@@ -3,9 +3,7 @@
         "Timestamp":"2020-05-14T11:55:45.849Z",
         "Title":"Learn Statistics With R",
         "link_to_resource":"https:\/\/learningstatisticswithr.com\/",
-        "Creators":[
-            "Danielle Navarro"
-        ],
+        "Creators":"Danielle Navarro",
         "Material_Type":[
             "Textbook",
             "R Tutorial"

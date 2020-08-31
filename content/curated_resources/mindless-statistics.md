@@ -3,9 +3,7 @@
         "Timestamp":"2020-06-06T18:59:43.953Z",
         "Title":"Mindless statistics",
         "link_to_resource":"https:\/\/doi.org\/10.1016\/j.socec.2004.09.033",
-        "Creators":[
-            "Gerd Gigerenzer"
-        ],
+        "Creators":"Gerd Gigerenzer",
         "Material_Type":[
             "Primary Source",
             "Reading",

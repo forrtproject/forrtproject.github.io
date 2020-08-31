@@ -3,12 +3,7 @@
         "Timestamp":"2020-05-24T12:27:53.785Z",
         "Title":"Evolution of Reporting P Values in the Biomedical Literature, 1990-2015",
         "link_to_resource":"https:\/\/doi.org\/10.1001\/jama.2016.1952",
-        "Creators":[
-            "David Chavalarias",
-            "Joshua David Wallach",
-            "Alvin Ho Ting Li",
-            "John P A Ioannidis"
-        ],
+        "Creators":"David Chavalarias, Joshua David Wallach, Alvin Ho Ting Li, John P A Ioannidis ",
         "Material_Type":[
             "Primary Source",
             "Reading"

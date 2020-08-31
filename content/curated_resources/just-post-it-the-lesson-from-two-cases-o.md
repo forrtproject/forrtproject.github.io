@@ -3,9 +3,7 @@
         "Timestamp":"2020-05-28T13:42:57.798Z",
         "Title":"Just Post It: The Lesson From Two Cases of Fabricated Data Detected by Statistics Alone",
         "link_to_resource":"https:\/\/doi.org\/10.1177\/0956797613480366",
-        "Creators":[
-            "Uri Simonsohn"
-        ],
+        "Creators":"Uri Simonsohn",
         "Material_Type":[
             "Primary Source",
             "Reading",

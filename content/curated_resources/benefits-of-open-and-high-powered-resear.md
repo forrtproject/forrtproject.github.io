@@ -3,10 +3,7 @@
         "Timestamp":"2020-06-04T18:58:56.621Z",
         "Title":"Benefits of Open and High-Powered Research Outweigh Costs",
         "link_to_resource":"https:\/\/doi.org\/10.1037\/pspi0000049",
-        "Creators":[
-            "Etienne P. LeBel",
-            "Lorne Campbell and Timothy J. Loving"
-        ],
+        "Creators":"Etienne P. LeBel, Lorne Campbell and Timothy J. Loving",
         "Material_Type":[
             "Primary Source",
             "Reading"

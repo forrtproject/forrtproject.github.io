@@ -3,9 +3,7 @@
         "Timestamp":"2020-06-04T19:10:16.207Z",
         "Title":"Using science and psychology to improve the dissemination and evaluation of scientific work",
         "link_to_resource":"https:\/\/doi.org\/10.3389\/fncom.2014.00082",
-        "Creators":[
-            "Brett T. Buttliere"
-        ],
+        "Creators":"Brett T. Buttliere",
         "Material_Type":[
             "Primary Source",
             "Reading",

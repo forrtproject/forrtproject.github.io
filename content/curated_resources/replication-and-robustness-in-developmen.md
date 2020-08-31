@@ -3,12 +3,7 @@
         "Timestamp":"2020-05-24T12:06:33.029Z",
         "Title":"Replication and Robustness in Developmental Research",
         "link_to_resource":"https:\/\/doi.org\/10.1037\/a0037996",
-        "Creators":[
-            "Greg J Duncan",
-            "Mimi Engel",
-            "Amy Claessens",
-            "Chantelle J Dowsett"
-        ],
+        "Creators":"Greg J Duncan, Mimi Engel, Amy Claessens, Chantelle J Dowsett",
         "Material_Type":[
             "Primary Source",
             "Reading",

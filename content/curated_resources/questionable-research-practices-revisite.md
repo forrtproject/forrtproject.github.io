@@ -3,9 +3,7 @@
         "Timestamp":"2020-05-22T19:09:22.607Z",
         "Title":"Questionable Research Practices Revisited",
         "link_to_resource":"https:\/\/doi.org\/10.1177\/1948550615612150",
-        "Creators":[
-            "Klaus Fiedler and Norbert Schwarz"
-        ],
+        "Creators":"Klaus Fiedler and Norbert Schwarz",
         "Material_Type":[
             "Primary Source",
             "Reading",

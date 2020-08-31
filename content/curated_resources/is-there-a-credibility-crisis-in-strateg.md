@@ -3,11 +3,7 @@
         "Timestamp":"2020-05-28T13:10:35.558Z",
         "Title":"Is there a credibility crisis in strategic management research? Evidence on the reproducibility of study findings",
         "link_to_resource":"https:\/\/doi.org\/10.1177\/1476127017701076",
-        "Creators":[
-            "Donald D Bergh",
-            "Barton M Sharp",
-            "Herman Aguinis and Ming Li"
-        ],
+        "Creators":"Donald D Bergh, Barton M Sharp, Herman Aguinis and Ming Li",
         "Material_Type":[
             "Primary Source",
             "Reading",

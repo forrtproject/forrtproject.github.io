@@ -3,10 +3,7 @@
         "Timestamp":"2020-06-05T19:29:27.056Z",
         "Title":"Likelihood of Null Effects of Large NHLBI Clinical Trials Has Increased over Time",
         "link_to_resource":"https:\/\/doi.org\/10.1371\/journal.pone.0132382",
-        "Creators":[
-            "Kaplan RM",
-            "Irvin VL"
-        ],
+        "Creators":"Kaplan RM, Irvin VL ",
         "Material_Type":[
             "Primary Source",
             "Reading",

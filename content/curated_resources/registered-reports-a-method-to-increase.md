@@ -3,9 +3,7 @@
         "Timestamp":"2020-06-04T19:18:52.809Z",
         "Title":"Registered reports : a method to increase the credibility of published results",
         "link_to_resource":"https:\/\/doi.org\/10.1027\/1864-9335\/a000192",
-        "Creators":[
-            "Brian Nosek and Daniel Lakens"
-        ],
+        "Creators":"Brian Nosek and Daniel Lakens",
         "Material_Type":[
             "Primary Source",
             "Reading",

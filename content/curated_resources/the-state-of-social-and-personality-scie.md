@@ -3,9 +3,7 @@
         "Timestamp":"2020-06-04T19:05:26.743Z",
         "Title":"The State of Social and Personality Science: Rotten to the Core, Not So Bad, Getting Better, or Getting Worse?",
         "link_to_resource":"https:\/\/doi.org\/10.1037\/pspa0000084",
-        "Creators":[
-            "Motyl et al."
-        ],
+        "Creators":"Motyl et al.",
         "Material_Type":[
             "Primary Source",
             "Reading",

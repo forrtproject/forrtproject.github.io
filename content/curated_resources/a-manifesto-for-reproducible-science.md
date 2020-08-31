@@ -3,11 +3,7 @@
         "Timestamp":"2020-06-03T20:48:47.976Z",
         "Title":"A manifesto for reproducible science",
         "link_to_resource":"https:\/\/doi.org\/10.0138\/s41562-016-0021.",
-        "Creators":[
-            "Munafo",
-            "M. R.",
-            "et al."
-        ],
+        "Creators":"Munafo, M. R., et al. ",
         "Material_Type":[
             "Primary Source",
             "Reading",

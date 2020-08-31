@@ -3,10 +3,7 @@
         "Timestamp":"2020-06-07T19:33:16.857Z",
         "Title":"Fishing, Commitment, and Communication: A Proposal for Comprehensive Nonbinding Research Registration",
         "link_to_resource":"https:\/\/doi.org\/10.1093\/pan\/mps021",
-        "Creators":[
-            "Macartan Humphreys",
-            "Raul Sanchez de la Sierra  and Peter van der Windt"
-        ],
+        "Creators":"Macartan Humphreys, Raul Sanchez de la Sierra  and Peter van der Windt",
         "Material_Type":[
             "Primary Source",
             "Reading",

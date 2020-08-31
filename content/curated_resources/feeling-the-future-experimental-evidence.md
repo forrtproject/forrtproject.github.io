@@ -3,9 +3,7 @@
         "Timestamp":"2020-06-10T18:57:19.428Z",
         "Title":"Feeling the Future: Experimental Evidence for Anomalous Retroactive Influences on Cognition and Affect",
         "link_to_resource":"https:\/\/doi.org\/10.1037\/a0021524",
-        "Creators":[
-            "Daryl J Bem"
-        ],
+        "Creators":"Daryl J Bem",
         "Material_Type":[
             "Primary Source",
             "Reading",

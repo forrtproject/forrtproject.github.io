@@ -3,9 +3,7 @@
         "Timestamp":"2020-05-11T11:24:04.657Z",
         "Title":"Tutorial\/R code for creating scree\/parallel analysis plots",
         "link_to_resource":"https:\/\/sakaluk.wordpress.com\/2016\/05\/26\/11-make-it-pretty-scree-plots-and-parallel-analysis-using-psych-and-ggplot2\/",
-        "Creators":[
-            "John K Sakaluk"
-        ],
+        "Creators":"John K Sakaluk",
         "Material_Type":[
             "Reading",
             "R code"

@@ -3,9 +3,7 @@
         "Timestamp":"2020-05-15T14:20:16.230Z",
         "Title":"The New Statistics: Research Integrity & the New Statistics (Workshop Part 2)",
         "link_to_resource":"https:\/\/www.youtube.com\/watch?v=wb0rnZBlcRg",
-        "Creators":[
-            "Psychological Science\/Geoff Cumming"
-        ],
+        "Creators":"Psychological Science\/Geoff Cumming",
         "Material_Type":[
             "Student Guide",
             "Teaching\/Learning Strategy",

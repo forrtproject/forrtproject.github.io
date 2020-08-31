@@ -3,22 +3,7 @@
         "Timestamp":"2020-06-08T18:27:18.244Z",
         "Title":"Registered Replication Report: Rand, Greene, and Nowak (2012). ",
         "link_to_resource":"https:\/\/doi.org\/10.1177\/1745691617693624",
-        "Creators":[
-            "Bouwmeester",
-            "S.",
-            "Verkoeijen",
-            "P. P.",
-            "Aczel",
-            "B.",
-            "Barbosa",
-            "F.",
-            "B\u00e8gue",
-            "L.",
-            "Bra\u00f1as-Garza",
-            "P.",
-            "... & Evans",
-            "A. M."
-        ],
+        "Creators":"Bouwmeester, S., Verkoeijen, P. P., Aczel, B., Barbosa, F., B\u00e8gue, L., Bra\u00f1as-Garza, P., ... & Evans, A. M. ",
         "Material_Type":[
             "Primary Source",
             "Reading",

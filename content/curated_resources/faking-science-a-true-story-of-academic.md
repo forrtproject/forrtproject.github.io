@@ -3,9 +3,7 @@
         "Timestamp":"2020-05-16T06:36:40.345Z",
         "Title":"Faking Science: A True Story of Academic Fraud",
         "link_to_resource":"https:\/\/errorstatistics.files.wordpress.com\/2014\/12\/fakingscience-20141214.pdf",
-        "Creators":[
-            "Diederik Stapel\/Translated by Nicholas J. L. Brown"
-        ],
+        "Creators":"Diederik Stapel\/Translated by Nicholas J. L. Brown",
         "Material_Type":[
             "Primary Source"
         ],

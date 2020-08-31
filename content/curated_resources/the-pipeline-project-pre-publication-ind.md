@@ -3,9 +3,7 @@
         "Timestamp":"2020-06-03T20:46:54.231Z",
         "Title":"The pipeline project: Pre-publication independent replications of a single laboratory's research pipeline",
         "link_to_resource":"https:\/\/doi.org\/10.1016\/j.jesp.2015.10.001",
-        "Creators":[
-            "Martin Schweinsberg et al."
-        ],
+        "Creators":"Martin Schweinsberg et al.",
         "Material_Type":[
             "Primary Source",
             "Reading"

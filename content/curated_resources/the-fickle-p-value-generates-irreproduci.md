@@ -3,11 +3,7 @@
         "Timestamp":"2020-06-06T18:57:55.560Z",
         "Title":"The fickle P value generates irreproducible results",
         "link_to_resource":"https:\/\/doi.org\/10.1038\/nmeth.3288",
-        "Creators":[
-            "Lewis G Halsey",
-            "Douglas Curran-Everett",
-            "Sarah L Vowler & Gordon B Drummond"
-        ],
+        "Creators":"Lewis G Halsey, Douglas Curran-Everett, Sarah L Vowler & Gordon B Drummond",
         "Material_Type":[
             "Primary Source",
             "Reading",

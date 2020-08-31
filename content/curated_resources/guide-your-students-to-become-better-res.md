@@ -3,9 +3,7 @@
         "Timestamp":"2020-05-08T06:02:18.000Z",
         "Title":"Guide Your Students to Become Better Research Consumers",
         "link_to_resource":"https:\/\/www.psychologicalscience.org\/observer\/teach-your-students-to-be-better-consumers",
-        "Creators":[
-            "Beth Morling"
-        ],
+        "Creators":"Beth Morling",
         "Material_Type":[
             "Reading",
             "Teaching\/Learning Strategy"

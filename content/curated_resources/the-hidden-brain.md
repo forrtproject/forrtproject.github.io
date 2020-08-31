@@ -3,9 +3,7 @@
         "Timestamp":"2020-05-16T10:33:44.148Z",
         "Title":"The Hidden Brain",
         "link_to_resource":"https:\/\/www.npr.org\/2016\/05\/24\/477921050\/when-great-minds-think-unlike-inside-sciences-replication-crisis",
-        "Creators":[
-            "Shankar Vedantam and Maggie Penman"
-        ],
+        "Creators":"Shankar Vedantam and Maggie Penman",
         "Material_Type":[
             "Student Guide",
             "Teaching\/Learning Strategy",

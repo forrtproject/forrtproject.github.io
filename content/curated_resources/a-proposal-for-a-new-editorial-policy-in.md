@@ -3,9 +3,7 @@
         "Timestamp":"2020-06-11T07:01:18.532Z",
         "Title":"A proposal for a new editorial policy in the social sciences.",
         "link_to_resource":"https:\/\/www.tandfonline.com\/doi\/abs\/10.1080\/00031305.1970.10478884",
-        "Creators":[
-            "G. William Walster &T. Anne Cleary"
-        ],
+        "Creators":"G. William Walster &T. Anne Cleary",
         "Material_Type":[
             "Primary Source",
             "Reading",

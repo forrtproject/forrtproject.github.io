@@ -3,9 +3,7 @@
         "Timestamp":"2020-05-23T03:19:27.205Z",
         "Title":"Randomization Does Not Help Much, Comparability Does",
         "link_to_resource":"https:\/\/doi.org\/10.1371\/journal.pone.0132102",
-        "Creators":[
-            "Uwe Saint-Mont"
-        ],
+        "Creators":"Uwe Saint-Mont",
         "Material_Type":[
             "Primary Source",
             "Reading",

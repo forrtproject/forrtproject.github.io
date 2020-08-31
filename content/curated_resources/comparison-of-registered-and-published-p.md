@@ -3,13 +3,7 @@
         "Timestamp":"2020-06-03T20:03:57.599Z",
         "Title":"Comparison of Registered and Published Primary Outcomes in Randomized Controlled Trials",
         "link_to_resource":"https:\/\/doi.org\/10.1001\/jama.2009.1242",
-        "Creators":[
-            "Sylvain Mathieu",
-            "Isabelle Boutron",
-            "David Moher",
-            "Douglas G Altman",
-            "Philippe Ravaud"
-        ],
+        "Creators":"Sylvain Mathieu, Isabelle Boutron, David Moher, Douglas G Altman, Philippe Ravaud",
         "Material_Type":[
             "Primary Source",
             "Reading",

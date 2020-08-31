@@ -3,9 +3,7 @@
         "Timestamp":"2020-05-27T16:30:04.307Z",
         "Title":"Sailing From the Seas of Chaos Into the Corridor of Stability: Practical Recommendations to Increase the Informational Value of Studies",
         "link_to_resource":"https:\/\/doi.org\/10.1177\/1745691614528520",
-        "Creators":[
-            "Daniel Lakens and Ellen R K Evers"
-        ],
+        "Creators":"Daniel Lakens and Ellen R K Evers",
         "Material_Type":[
             "Primary Source",
             "Reading",

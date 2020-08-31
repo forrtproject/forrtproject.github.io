@@ -3,10 +3,7 @@
         "Timestamp":"2020-06-03T20:08:20.805Z",
         "Title":"A vast graveyard of undead theories publication bias and psychological science\u2019s aversion to the null. ",
         "link_to_resource":"https:\/\/doi.org\/10.1177\/1745691612459059",
-        "Creators":[
-            "Christopher J. Ferguson",
-            "Moritz Heene"
-        ],
+        "Creators":"Christopher J. Ferguson, Moritz Heene",
         "Material_Type":[
             "Primary Source",
             "Reading",

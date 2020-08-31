@@ -3,9 +3,7 @@
         "Timestamp":"2020-06-09T16:16:56.514Z",
         "Title":"Opening Science",
         "link_to_resource":"http:\/\/doi.org\/10.1007\/978-3-319-00026-8",
-        "Creators":[
-            "S\u00f6nke Bartling and Sascha Friesike"
-        ],
+        "Creators":"S\u00f6nke Bartling and Sascha Friesike",
         "Material_Type":[
             "Primary Source",
             "Reading"

@@ -3,9 +3,7 @@
         "Timestamp":"2020-05-11T10:13:17.293Z",
         "Title":"PANGEA",
         "link_to_resource":"https:\/\/jakewestfall.shinyapps.io\/pangea\/",
-        "Creators":[
-            "Jake Westfall"
-        ],
+        "Creators":"Jake Westfall",
         "Material_Type":[
             "Reading",
             "Simulation"

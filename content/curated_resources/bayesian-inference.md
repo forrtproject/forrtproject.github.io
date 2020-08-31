@@ -3,9 +3,7 @@
         "Timestamp":"2020-05-09T07:50:00.360Z",
         "Title":"Bayesian inference",
         "link_to_resource":"http:\/\/rpsychologist.com\/new-d3-js-visualization-bayes",
-        "Creators":[
-            "Kristoffer Magnusson"
-        ],
+        "Creators":"Kristoffer Magnusson",
         "Material_Type":[
             "Interactive",
             "Student Guide",

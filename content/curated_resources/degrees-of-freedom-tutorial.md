@@ -3,9 +3,7 @@
         "Timestamp":"2020-05-08T09:09:04.110Z",
         "Title":"Degrees of Freedom Tutorial",
         "link_to_resource":"http:\/\/ron.dotsch.org\/degrees-of-freedom\/",
-        "Creators":[
-            "Ron Dotsch"
-        ],
+        "Creators":"Ron Dotsch",
         "Material_Type":[
             "Reading",
             "Student Guide",

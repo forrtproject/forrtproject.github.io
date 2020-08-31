@@ -3,9 +3,7 @@
         "Timestamp":"2020-05-11T10:21:15.633Z",
         "Title":"Stat 545",
         "link_to_resource":"https:\/\/stat545.com\/",
-        "Creators":[
-            "Jenny Bryan"
-        ],
+        "Creators":"Jenny Bryan",
         "Material_Type":[
             "Reading",
             "Student Guide",

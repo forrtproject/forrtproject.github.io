@@ -3,9 +3,7 @@
         "Timestamp":"2020-05-08T06:11:30.000Z",
         "Title":"Data peeking without p-hacking",
         "link_to_resource":"http:\/\/daniellakens.blogspot.com\/2014\/06\/data-peeking-without-p-hacking.html",
-        "Creators":[
-            "Daniel Lakens"
-        ],
+        "Creators":"Daniel Lakens",
         "Material_Type":[
             "Reading",
             "R Code"

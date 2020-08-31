@@ -3,11 +3,7 @@
         "Timestamp":"2020-05-26T15:37:04.113Z",
         "Title":"Effect Size and Power in Assessing Moderating Effects of Categorical Variables Using Multiple Regression: A 30-Year Review",
         "link_to_resource":"https:\/\/doi.org\/10.1037\/0021-9010.90.1.94.",
-        "Creators":[
-            "Herman Aguinis",
-            "James C Beaty",
-            "Robert J Boik and Charles A Pierce"
-        ],
+        "Creators":"Herman Aguinis, James C Beaty, Robert J Boik and Charles A Pierce",
         "Material_Type":[
             "Primary Source",
             "Reading",

@@ -3,9 +3,7 @@
         "Timestamp":"2020-06-03T19:40:23.810Z",
         "Title":"Redefine statistical signifcance",
         "link_to_resource":"https:\/\/doi.org\/10.1038\/s41562-017-0189-z",
-        "Creators":[
-            "Daniel J. Benjamin"
-        ],
+        "Creators":"Daniel J. Benjamin",
         "Material_Type":[
             "Primary Source",
             "Reading",

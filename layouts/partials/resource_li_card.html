@@ -1,0 +1,51 @@
+{{ $item := .item }}
+{{ $widget := .widget }}
+
+{{ $link := .link }}
+{{ $target := .target }}
+
+{{/* Get summary. */}}
+{{ $summary := "" }}
+{{ if $item.Params.Abstract }}
+  {{ $summary = $item.Params.Abstract | markdownify | emojify | truncate (site.Params.abstract_length | default 135)}}
+{{ else if $item.Params.Abstract }}
+  {{ $summary = .Params.abstract | markdownify | emojify | truncate (site.Params.abstract_length | default 135) }}
+{{ else if $item.Summary }}
+  {{ $summary = $item.Summary }}
+{{ end }}
+
+{{/* Get metedata. */}}
+
+{{ $resource := ($item.Resources.ByType "image").GetMatch "*featured*" }}
+{{ $js_tag_classes := delimit (apply (apply $item.Params.FORRT_Clusters "replace" "." " " "-") "printf" "js-id-%s" ".") " " }}
+
+<div class="project-card project-item isotope-item py-1 {{ $js_tag_classes | safeHTMLAttr }}">
+  <div class="card">
+    {{ with $resource }}
+    {{ $image := .Resize (printf "550x q90 %s") }}
+    <a href="{{ $link }}" {{ $target | safeHTMLAttr }} class="card-image hover-overlay">
+      <img src="{{ $image.RelPermalink }}" alt="" class="img-responsive">
+    </a>
+    {{ end }}
+    <div class="card-text">
+      <h4 class="border-bottom border-warning pb-1"><a href="{{ $link }}" {{ $target | safeHTMLAttr }}>{{ $item.Title | markdownify | emojify }}</a></h4>
+      {{ with $summary }}
+      <div class="article-style">
+        <p>{{ . }}</p>
+        <p class="small mb-1"><strong>Author(s):</strong>{{with $item.Params.Creators }}  {{ . }}{{end}}</p>
+  
+        <p class="small mb-1 pr-2"><strong>Type of resources: </strong>{{delimit $item.Params.Material_Type ", " }}</p>
+        <p class="small mb-1 pr-2"><strong>Primary user(s): </strong>{{delimit $item.Params.Primary_User ", " }}</p>
+        <p class="small mb-1 pr-2"><strong>Subject area(s): </strong>{{delimit $item.Params.Subject_Areas ", " }}</p>
+        {{ with $item.Params.Tags }} <p class="small mb-1 pr-2 small"><strong>Tag(s): </strong>{{delimit . ", " }}</p>{{end}}
+        {{with $link }} <a href="{{ . }}">
+          <p class="btn btn-sm btn-outline-primary mb-1 pr-2 d-flex justify-content-around" style="line-height: 1;">Link to resource</p>
+        </a>{{end}}
+      </div>
+      {{ end }}
+    </div>
+  </div>
+</div>
+
+
+   

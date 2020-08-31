@@ -3,9 +3,7 @@
         "Timestamp":"2020-05-14T11:13:50.654Z",
         "Title":"Why an Entire Field of Psychology Is in Trouble",
         "link_to_resource":"https:\/\/www.youtube.com\/watch?v=2MDNvKXdLEM",
-        "Creators":[
-            "SciShow\/Michael Aranda"
-        ],
+        "Creators":"SciShow\/Michael Aranda",
         "Material_Type":[
             "Student Guide",
             "Teaching\/Learning Strategy",

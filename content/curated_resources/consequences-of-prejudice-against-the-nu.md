@@ -3,9 +3,7 @@
         "Timestamp":"2020-06-03T19:31:18.321Z",
         "Title":"Consequences of prejudice against the null hypothesis.",
         "link_to_resource":"https:\/\/doi.org\/10.1037\/h0076157",
-        "Creators":[
-            "Anthony G. Greenwald"
-        ],
+        "Creators":"Anthony G. Greenwald ",
         "Material_Type":[
             "Primary Source",
             "Reading",

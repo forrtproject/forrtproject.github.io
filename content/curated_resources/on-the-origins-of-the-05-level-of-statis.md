@@ -3,9 +3,7 @@
         "Timestamp":"2020-05-24T12:45:47.042Z",
         "Title":"On the origins of the .05 level of statistical significance",
         "link_to_resource":"https:\/\/doi.org\/10.1037\/0003-066X.37.5.553",
-        "Creators":[
-            "MICHAEL COWLES and CAROLINE DAVIS"
-        ],
+        "Creators":"MICHAEL COWLES and CAROLINE DAVIS",
         "Material_Type":[
             "Primary Source",
             "Reading"

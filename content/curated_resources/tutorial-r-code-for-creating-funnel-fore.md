@@ -3,9 +3,7 @@
         "Timestamp":"2020-05-11T11:26:11.166Z",
         "Title":"Tutorial\/R code for creating funnel\/forest plots",
         "link_to_resource":"https:\/\/sakaluk.wordpress.com\/2016\/02\/16\/7-make-it-pretty-plots-for-meta-analysis\/",
-        "Creators":[
-            "John K. Sakaluk"
-        ],
+        "Creators":"John K. Sakaluk",
         "Material_Type":[
             "Reading",
             "R code"

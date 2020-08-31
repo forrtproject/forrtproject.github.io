@@ -3,18 +3,7 @@
         "Timestamp":"2020-06-03T19:48:03.156Z",
         "Title":"Negativity towards negative results: a discussion of the disconnect between scientific worth and scientific culture.",
         "link_to_resource":"https:\/\/doi.org\/10.1242\/dmm.015123",
-        "Creators":[
-            "Matosin",
-            "N.",
-            "Frank",
-            "E.",
-            "Engel",
-            "M.",
-            "Lum",
-            "J. S.",
-            "& Newell",
-            "K. A."
-        ],
+        "Creators":"Matosin, N., Frank, E., Engel, M., Lum, J. S., & Newell, K. A.",
         "Material_Type":[
             "Primary Source",
             "Reading",

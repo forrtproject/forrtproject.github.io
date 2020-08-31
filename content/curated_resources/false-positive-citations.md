@@ -3,11 +3,7 @@
         "Timestamp":"2020-06-03T20:19:21.703Z",
         "Title":"False-Positive Citations",
         "link_to_resource":"https:\/\/doi.org\/10.1177\/1745691617698146",
-        "Creators":[
-            "Joseph P. Simmons",
-            "Leif D. Nelson",
-            "and Uri Simonsohn"
-        ],
+        "Creators":"Joseph P. Simmons, Leif D. Nelson, and Uri Simonsohn",
         "Material_Type":[
             "Primary Source",
             "Reading",

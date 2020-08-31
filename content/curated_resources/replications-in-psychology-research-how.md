@@ -3,11 +3,7 @@
         "Timestamp":"2020-05-31T18:31:35.747Z",
         "Title":"Replications in Psychology Research: How Often Do They Really Occur?",
         "link_to_resource":"https:\/\/doi.org\/10.1177\/1745691612460688",
-        "Creators":[
-            "Matthew C. Makel",
-            "Jonathan A. Plucker",
-            "and Boyd Hegarty"
-        ],
+        "Creators":"Matthew C. Makel, Jonathan A. Plucker, and Boyd Hegarty",
         "Material_Type":[
             "Primary Source",
             "Reading",

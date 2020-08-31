@@ -3,9 +3,7 @@
         "Timestamp":"2020-06-01T19:00:34.939Z",
         "Title":"The Replication Recipe: What makes for a convincing replication? ",
         "link_to_resource":"https:\/\/doi.org\/10.1016\/j.jesp.2013.10.005",
-        "Creators":[
-            "Brandt et al."
-        ],
+        "Creators":"Brandt et al.",
         "Material_Type":[
             "Primary Source",
             "Reading",

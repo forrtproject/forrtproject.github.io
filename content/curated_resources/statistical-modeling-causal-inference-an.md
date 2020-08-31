@@ -3,9 +3,7 @@
         "Timestamp":"2020-05-10T08:57:00.500Z",
         "Title":"Statistical Modeling, Causal Inference, and Social Science",
         "link_to_resource":"http:\/\/andrewgelman.com\/",
-        "Creators":[
-            "Andrew Gelman"
-        ],
+        "Creators":"Andrew Gelman",
         "Material_Type":[
             "Reading"
         ],

@@ -3,9 +3,7 @@
         "Timestamp":"2020-06-10T19:24:51.647Z",
         "Title":"Recommendations for increasing replicability in psychology",
         "link_to_resource":"https:\/\/doi.org\/10.1037\/14805-038",
-        "Creators":[
-            "Asendorpf et al."
-        ],
+        "Creators":"Asendorpf et al.",
         "Material_Type":[
             "Primary Source",
             "Reading",

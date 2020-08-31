@@ -3,9 +3,7 @@
         "Timestamp":"2020-05-08T07:17:17.000Z",
         "Title":"Good Science, Bad Science",
         "link_to_resource":"http:\/\/www.ejwagenmakers.com\/GSBS\/GSBS.html",
-        "Creators":[
-            "Eric-Jan Wagenmakers"
-        ],
+        "Creators":"Eric-Jan Wagenmakers",
         "Material_Type":[
             "Syllabus"
         ],

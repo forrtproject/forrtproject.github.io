@@ -3,9 +3,7 @@
         "Timestamp":"2020-05-14T10:39:09.822Z",
         "Title":"SPSP experts - open science",
         "link_to_resource":"http:\/\/spsp.org\/resources\/multimedia\/experts\/openscience",
-        "Creators":[
-            "Society for Social and Personality Psychology"
-        ],
+        "Creators":"Society for Social and Personality Psychology",
         "Material_Type":[
             "Teaching\/Learning Strategy",
             "Video"

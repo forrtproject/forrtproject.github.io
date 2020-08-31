@@ -3,18 +3,7 @@
         "Timestamp":"2020-06-05T18:16:31.342Z",
         "Title":"Correlational Effect Size Benchmarks",
         "link_to_resource":"https:\/\/doi.org\/10.1037\/a0038047",
-        "Creators":[
-            "Bosco",
-            "F. A.",
-            "Aguinis",
-            "H.",
-            "Singh",
-            "K.",
-            "Field",
-            "J. G.",
-            "& Pierce",
-            "C. A."
-        ],
+        "Creators":"Bosco, F. A., Aguinis, H., Singh, K., Field, J. G., & Pierce, C. A.",
         "Material_Type":[
             "Primary Source",
             "Reading",
