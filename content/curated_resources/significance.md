@@ -3,9 +3,7 @@
         "Timestamp":"2020-05-08T08:15:01.701Z",
         "Title":"Significance",
         "link_to_resource":"https:\/\/xkcd.com\/882\/",
-        "Creators":[
-            "Randall Munroe"
-        ],
+        "Creators":"Randall Munroe",
         "Material_Type":[
             "Diagram\/Illustration"
         ],

@@ -3,10 +3,7 @@
         "Timestamp":"2020-06-01T18:54:50.364Z",
         "Title":"Reconceptualizing replication as a sequence of different studies: A replication typology",
         "link_to_resource":"https:\/\/doi.org\/10.1016\/j.jesp.2015.09.009",
-        "Creators":[
-            "Joachim H\u00fcffmeier",
-            "Jens Mazei and  Thomas Schultze"
-        ],
+        "Creators":"Joachim H\u00fcffmeier, Jens Mazei and  Thomas Schultze",
         "Material_Type":[
             "Primary Source",
             "Reading"

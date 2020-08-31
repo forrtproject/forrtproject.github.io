@@ -3,16 +3,7 @@
         "Timestamp":"2020-05-28T13:24:20.399Z",
         "Title":"An assessment of the magnitude of effect sizes: Evidence from 30 years of meta-analysis in management. ",
         "link_to_resource":"https:\/\/doi.org\/10.1177\/1548051815614321",
-        "Creators":[
-            "Paterson",
-            "T. A.",
-            "Harms",
-            "P. D.",
-            "Steel",
-            "P.",
-            "& Cred\u00e9",
-            "M"
-        ],
+        "Creators":"Paterson, T. A., Harms, P. D., Steel, P., & Cred\u00e9, M",
         "Material_Type":[
             "Primary Source",
             "Reading",

@@ -3,7 +3,7 @@
 widget = "resource"  # See https://sourcethemes.com/academic/docs/page-builder/
 headless = true  # This file represents a page section.
 active = true  # Activate this widget? true/false
-weight = 65  # Order that this section will appear.
+weight = 10 # Order that this section will appear.
 
 title = "Curated resources"
 subtitle = ""
@@ -57,10 +57,10 @@ subtitle = ""
   #   2 = Compact
   #   3 = Card
   #   5 = Showcase
-  view = 1
+  view = 3
 
   # For Showcase view, flip alternate rows?
-  flip_alt_rows = false
+  flip_alt_rows = true
 
 [design.background]
   # Apply a background color, gradient, or image.
@@ -95,8 +95,6 @@ There are more than 700 resources submitted so far in our database. We are curre
 <br>
 
 If you notice there is an educational resource, research article or pedagocial tool missing in our databased, please consider adding it [here on FORRT's resource submission form](https://docs.google.com/forms/d/e/1FAIpQLSdvMWSxzw3sGTTY1eYIs-nRZoy3ogQ_3Diel-PUDw1Z3pen6w/viewform).
-
-<br>
 
 ***
 

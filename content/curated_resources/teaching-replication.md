@@ -3,9 +3,7 @@
         "Timestamp":"2020-05-22T18:43:10.415Z",
         "Title":"Teaching replication",
         "link_to_resource":"https:\/\/journals.sagepub.com\/doi\/10.1177\/1745691612460686",
-        "Creators":[
-            "Michael C. Frank and Rebecca Saxe"
-        ],
+        "Creators":"Michael C. Frank and Rebecca Saxe",
         "Material_Type":[
             "Primary Source",
             "Reading",

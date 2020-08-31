@@ -3,14 +3,7 @@
         "Timestamp":"2020-06-03T20:33:54.957Z",
         "Title":"A systematic review of statistical power in software engineering experiments. ",
         "link_to_resource":"https:\/\/doi.org\/10.1016\/j.infsof.2005.08.009",
-        "Creators":[
-            "Dyb\u00e5",
-            "T.",
-            "Kampenes",
-            "V. B.",
-            "& Sj\u00f8berg",
-            "D. I."
-        ],
+        "Creators":"Dyb\u00e5, T., Kampenes, V. B., & Sj\u00f8berg, D. I. ",
         "Material_Type":[
             "Primary Source",
             "Reading",

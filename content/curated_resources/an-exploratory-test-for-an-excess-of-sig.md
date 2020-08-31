@@ -3,9 +3,7 @@
         "Timestamp":"2020-05-22T19:01:39.952Z",
         "Title":"An exploratory test for an excess of significant findings",
         "link_to_resource":"https:\/\/journals.sagepub.com\/doi\/abs\/10.1177\/1740774507079441",
-        "Creators":[
-            "John PA Ioannidis and Thomas A Trikalinos"
-        ],
+        "Creators":"John PA Ioannidis and Thomas A Trikalinos",
         "Material_Type":[
             "Primary Source",
             "Reading",

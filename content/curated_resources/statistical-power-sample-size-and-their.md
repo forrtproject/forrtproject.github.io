@@ -3,13 +3,7 @@
         "Timestamp":"2020-06-06T19:22:48.150Z",
         "Title":"Statistical Power, Sample Size, and Their Reporting in Randomized Controlled Trials",
         "link_to_resource":"https:\/\/doi.org\/10.1001\/jama.1994.03520020048013",
-        "Creators":[
-            "David Moher",
-            "MSc; Corinne S. Dulberg",
-            "PhD",
-            "MPH; George A. Wells",
-            "PhD"
-        ],
+        "Creators":"David Moher, MSc; Corinne S. Dulberg, PhD, MPH; George A. Wells, PhD",
         "Material_Type":[
             "Primary Source",
             "Reading",

@@ -3,9 +3,7 @@
         "Timestamp":"2020-05-19T17:01:58.699Z",
         "Title":"Improving your statistical inferences",
         "link_to_resource":"https:\/\/www.coursera.org\/learn\/statistical-inferences",
-        "Creators":[
-            "Daniel Lakens"
-        ],
+        "Creators":"Daniel Lakens",
         "Material_Type":[
             "Full Course"
         ],

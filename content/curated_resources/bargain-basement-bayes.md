@@ -3,9 +3,7 @@
         "Timestamp":"2020-05-14T10:16:27.761Z",
         "Title":"Bargain Basement Bayes",
         "link_to_resource":"https:\/\/funderstorms.wordpress.com\/2015\/07\/22\/bargain-basement-bayes\/",
-        "Creators":[
-            "David Funder"
-        ],
+        "Creators":"David Funder",
         "Material_Type":[
             "Reading"
         ],

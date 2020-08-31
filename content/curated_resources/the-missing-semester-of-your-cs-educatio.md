@@ -3,9 +3,7 @@
         "Timestamp":"2020-05-15T05:01:55.362Z",
         "Title":"The Missing Semester of Your CS Education",
         "link_to_resource":"https:\/\/missing.csail.mit.edu\/",
-        "Creators":[
-            "MIT"
-        ],
+        "Creators":"MIT",
         "Material_Type":[
             "Full Course"
         ],

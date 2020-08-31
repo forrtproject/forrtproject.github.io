@@ -3,9 +3,7 @@
         "Timestamp":"2020-06-07T19:09:59.434Z",
         "Title":"The Peer Reviewers\u2019 Openness Initiative: incentivizing open research practices through peer review. ",
         "link_to_resource":"https:\/\/doi.org\/10.1098\/rsos.150547",
-        "Creators":[
-            "Richard Morey et al."
-        ],
+        "Creators":"Richard Morey et al. ",
         "Material_Type":[
             "Primary Source",
             "Reading",

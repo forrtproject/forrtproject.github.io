@@ -3,9 +3,7 @@
         "Timestamp":"2020-06-07T19:31:18.607Z",
         "Title":"Interpreting effect sizes: Toward a quantitative cumulative social psychology",
         "link_to_resource":"https:\/\/doi.org\/10.1002\/ejsp.2019",
-        "Creators":[
-            "ARTHUR A. STUKAS AND GEOFF CUMMING"
-        ],
+        "Creators":"ARTHUR A. STUKAS AND GEOFF CUMMING",
         "Material_Type":[
             "Primary Source",
             "Reading",

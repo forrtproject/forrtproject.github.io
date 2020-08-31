@@ -3,9 +3,7 @@
         "Timestamp":"2020-05-11T11:45:49.086Z",
         "Title":"Replication in Psychology: a historical perspective",
         "link_to_resource":"https:\/\/psyborgs.github.io\/projects\/replication-in-psychology\/",
-        "Creators":[
-            "Michael Pettit"
-        ],
+        "Creators":"Michael Pettit",
         "Material_Type":[
             "Interactive"
         ],

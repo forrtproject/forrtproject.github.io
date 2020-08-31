@@ -3,9 +3,7 @@
         "Timestamp":"2020-06-03T19:29:18.431Z",
         "Title":"Significance tests have their place",
         "link_to_resource":"https:\/\/doi.org\/10.1111\/j.1467-9280.1997.tb00535.x",
-        "Creators":[
-            "Richard J. Harris"
-        ],
+        "Creators":"Richard J. Harris",
         "Material_Type":[
             "Primary Source",
             "Reading",

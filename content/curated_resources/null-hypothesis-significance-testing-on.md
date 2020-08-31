@@ -3,9 +3,7 @@
         "Timestamp":"2020-05-24T12:32:09.741Z",
         "Title":"Null Hypothesis Significance Testing. On the Survival of a Flawed Method",
         "link_to_resource":"https:\/\/doi.org\/10.1037\/0003-066x.56.1.16",
-        "Creators":[
-            "J Krueger"
-        ],
+        "Creators":"J Krueger",
         "Material_Type":[
             "Primary Source",
             "Reading"

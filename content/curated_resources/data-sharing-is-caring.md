@@ -3,9 +3,7 @@
         "Timestamp":"2020-06-03T20:11:45.559Z",
         "Title":"Data: Sharing Is Caring",
         "link_to_resource":"https:\/\/doi.org\/10.1177\/2515245918758319",
-        "Creators":[
-            "Margaret C. Levenstein and Jared A. Lyle"
-        ],
+        "Creators":"Margaret C. Levenstein and Jared A. Lyle",
         "Material_Type":[
             "Primary Source",
             "Reading"

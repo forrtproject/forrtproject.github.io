@@ -3,9 +3,7 @@
         "Timestamp":"2020-05-14T10:17:42.725Z",
         "Title":"Understanding Bayes: A Look at the Likelihood",
         "link_to_resource":"http:\/\/alexanderetz.com\/2015\/04\/15\/understanding-bayes-a-look-at-the-likelihood\/",
-        "Creators":[
-            "Alexander Etz"
-        ],
+        "Creators":"Alexander Etz",
         "Material_Type":[
             "Reading"
         ],

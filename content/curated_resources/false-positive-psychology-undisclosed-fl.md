@@ -3,9 +3,7 @@
         "Timestamp":"2020-05-31T18:21:50.623Z",
         "Title":"False-Positive Psychology: Undisclosed Flexibility in Data Collection and Analysis Allows Presenting Anything as Significant",
         "link_to_resource":"https:\/\/doi.org\/10.1177\/0956797611417632",
-        "Creators":[
-            "Joseph P. Simmons"
-        ],
+        "Creators":"Joseph P. Simmons",
         "Material_Type":[
             "Primary Source",
             "Reading",

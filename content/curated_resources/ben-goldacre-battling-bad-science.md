@@ -3,9 +3,7 @@
         "Timestamp":"2020-05-14T12:30:42.070Z",
         "Title":"Ben Goldacre: Battling Bad Science",
         "link_to_resource":"https:\/\/www.youtube.com\/watch?v=h4MhbkWJzKk",
-        "Creators":[
-            "TED\/Ben Goldacre"
-        ],
+        "Creators":"TED\/Ben Goldacre",
         "Material_Type":[
             "Video"
         ],

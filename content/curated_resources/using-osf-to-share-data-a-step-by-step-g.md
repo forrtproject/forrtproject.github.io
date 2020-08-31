@@ -3,9 +3,7 @@
         "Timestamp":"2020-06-03T19:35:51.218Z",
         "Title":"Using OSF to Share Data: A Step-by-Step Guide",
         "link_to_resource":"https:\/\/doi.org\/10.1177\/2515245918757689",
-        "Creators":[
-            "Courtney K. Soderberg"
-        ],
+        "Creators":"Courtney K. Soderberg",
         "Material_Type":[
             "Primary Source",
             "Reading",

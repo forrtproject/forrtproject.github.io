@@ -3,10 +3,7 @@
         "Timestamp":"2020-06-03T20:22:21.975Z",
         "Title":"HARKing: Hypothesizing after the results are known. ",
         "link_to_resource":"https:\/\/doi.org\/10.1207\/s15327957pspr0203_4.",
-        "Creators":[
-            "Kerr",
-            "N. L."
-        ],
+        "Creators":"Kerr, N. L. ",
         "Material_Type":[
             "Primary Source",
             "Reading",

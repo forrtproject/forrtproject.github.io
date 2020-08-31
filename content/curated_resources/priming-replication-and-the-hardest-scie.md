@@ -3,9 +3,7 @@
         "Timestamp":"2020-06-09T16:56:53.673Z",
         "Title":"Priming, Replication, and the Hardest Science",
         "link_to_resource":"https:\/\/doi.org\/10.1177\/1745691613513470",
-        "Creators":[
-            "Joseph Cesairo"
-        ],
+        "Creators":"Joseph Cesairo",
         "Material_Type":[
             "Primary Source",
             "Reading",

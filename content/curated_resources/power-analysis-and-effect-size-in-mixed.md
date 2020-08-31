@@ -3,11 +3,7 @@
         "Timestamp":"2020-06-04T19:39:07.878Z",
         "Title":"Power Analysis and Effect Size in Mixed Effects Models: A Tutorial. ",
         "link_to_resource":"https:\/\/doi.org\/10.5334\/joc.10",
-        "Creators":[
-            "Brysbaert",
-            "M. and Stevens",
-            "M."
-        ],
+        "Creators":"Brysbaert, M. and Stevens, M.",
         "Material_Type":[
             "Primary Source",
             "Reading",

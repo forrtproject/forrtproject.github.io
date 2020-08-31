@@ -3,12 +3,7 @@
         "Timestamp":"2020-06-03T19:45:58.086Z",
         "Title":"The Chrysalis Effect: How Ugly Initial Results Metamorphosize Into Beautiful Articles",
         "link_to_resource":"http:\/\/doi.org\/10.1177\/0149206314527133",
-        "Creators":[
-            "Ernest Hugh O\u2019Boyle",
-            "Jr.",
-            "George Christopher Banks",
-            "Erik Gonzalez-Mul\u00e9"
-        ],
+        "Creators":"Ernest Hugh O\u2019Boyle, Jr., George Christopher Banks, Erik Gonzalez-Mul\u00e9",
         "Material_Type":[
             "Primary Source",
             "Reading",

@@ -3,9 +3,7 @@
         "Timestamp":"2020-05-08T06:25:26.000Z",
         "Title":"Always use Welch t-test",
         "link_to_resource":"http:\/\/daniellakens.blogspot.com\/2015\/01\/always-use-welchs-t-test-instead-of.html",
-        "Creators":[
-            "Daniel Lakens"
-        ],
+        "Creators":"Daniel Lakens",
         "Material_Type":[
             "Reading",
             "R Code"

@@ -3,12 +3,7 @@
         "Timestamp":"2020-06-08T18:32:27.348Z",
         "Title":"Reproducible research in sport and exercise psychology: The role of sample sizes.",
         "link_to_resource":"https:\/\/doi.org\/10.1016\/j.psychsport.2015.11.005",
-        "Creators":[
-            "Schweizer",
-            "G.",
-            "& Furley",
-            "P."
-        ],
+        "Creators":"Schweizer, G., & Furley, P.",
         "Material_Type":[
             "Primary Source",
             "Reading",

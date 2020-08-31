@@ -3,9 +3,7 @@
         "Timestamp":"2020-05-19T16:34:08.333Z",
         "Title":"Understanding psychology as a science: An introduction to scientific and statistical inference",
         "link_to_resource":"https:\/\/he.palgrave.com\/page\/detail\/?sf1=barcode&st1=9780230542303",
-        "Creators":[
-            "Zoltan Dienes"
-        ],
+        "Creators":"Zoltan Dienes",
         "Material_Type":[
             "Textbook"
         ],

@@ -3,9 +3,7 @@
         "Timestamp":"2020-05-27T16:32:51.626Z",
         "Title":"How to Make More Published Research True",
         "link_to_resource":"https:\/\/doi.org\/10.1371\/journal.pmed.1001747",
-        "Creators":[
-            "John Ioannidis"
-        ],
+        "Creators":"John Ioannidis",
         "Material_Type":[
             "Primary Source",
             "Reading",

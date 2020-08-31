@@ -3,10 +3,7 @@
         "Timestamp":"2020-06-10T19:17:21.953Z",
         "Title":"The Test of Insufficient Variance (TIVA): A New Tool for the Detection of Questionable Research Practices",
         "link_to_resource":"https:\/\/replicationindex.wordpress.com\/2014\/12\/30\/the-test-ofinsufficientvariance-tiva-a-new-tool-for-the-detection-ofquestionableresearch-practices\/",
-        "Creators":[
-            "Shimmack",
-            "U."
-        ],
+        "Creators":"Shimmack, U. ",
         "Material_Type":[
             "Blog"
         ],

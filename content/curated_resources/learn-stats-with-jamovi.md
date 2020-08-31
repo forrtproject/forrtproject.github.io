@@ -3,9 +3,7 @@
         "Timestamp":"2020-05-14T11:59:39.296Z",
         "Title":"Learn Stats with Jamovi",
         "link_to_resource":"https:\/\/www.learnstatswithjamovi.com\/",
-        "Creators":[
-            "Danielle Navarro and David R Foxcraft"
-        ],
+        "Creators":"Danielle Navarro and David R Foxcraft ",
         "Material_Type":[
             "Data Set",
             "Textbook",

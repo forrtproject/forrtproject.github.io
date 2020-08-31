@@ -3,9 +3,7 @@
         "Timestamp":"2020-06-10T19:23:20.801Z",
         "Title":"Maximizing the Reproducibility of Your Research",
         "link_to_resource":"https:\/\/onlinelibrary.wiley.com\/doi\/abs\/10.1002\/9781119095910.ch1",
-        "Creators":[
-            "Open Science Collaboration"
-        ],
+        "Creators":"Open Science Collaboration",
         "Material_Type":[
             "Primary Source",
             "Reading",

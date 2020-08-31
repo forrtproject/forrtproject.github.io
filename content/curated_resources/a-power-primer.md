@@ -3,9 +3,7 @@
         "Timestamp":"2020-06-04T19:40:47.120Z",
         "Title":"A Power Primer",
         "link_to_resource":"https:\/\/doi.org\/10.1037\/0033-2909.112.1.155",
-        "Creators":[
-            "Jacob Cohen"
-        ],
+        "Creators":"Jacob Cohen",
         "Material_Type":[
             "Primary Source",
             "Reading",

@@ -3,11 +3,7 @@
         "Timestamp":"2020-05-26T14:33:46.426Z",
         "Title":"Tijdink, J. K., Verbeke, R., & Smulders, Y. M. (2014). Publication pressure and scientific misconduct in medical scientists. Journal of Empirical Research on Human Research Ethics, 9(5), 64-71.",
         "link_to_resource":"https:\/\/doi.org\/10.1177\/1556264614552421",
-        "Creators":[
-            "Joeri K. Tijdink",
-            "Reinout Verbeke",
-            "Yvo M. Smulders"
-        ],
+        "Creators":" Joeri K. Tijdink, Reinout Verbeke, Yvo M. Smulders",
         "Material_Type":[
             "Primary Source",
             "Reading",

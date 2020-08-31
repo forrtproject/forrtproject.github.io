@@ -3,9 +3,7 @@
         "Timestamp":"2020-05-26T15:58:40.309Z",
         "Title":"Why most published research findings are false",
         "link_to_resource":"https:\/\/doi.org\/10.1371\/journal.pmed.0020124",
-        "Creators":[
-            "John Ioannidis"
-        ],
+        "Creators":"John Ioannidis",
         "Material_Type":[
             "Primary Source",
             "Reading",

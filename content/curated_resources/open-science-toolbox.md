@@ -3,9 +3,7 @@
         "Timestamp":"2020-05-10T08:27:51.326Z",
         "Title":"Open science toolbox",
         "link_to_resource":"https:\/\/www.osc.uni-muenchen.de\/toolbox\/index.html",
-        "Creators":[
-            "Lutz Heil"
-        ],
+        "Creators":"Lutz Heil",
         "Material_Type":[
             "Reading"
         ],

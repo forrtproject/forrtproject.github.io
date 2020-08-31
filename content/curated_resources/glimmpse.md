@@ -3,9 +3,7 @@
         "Timestamp":"2020-05-11T10:10:21.373Z",
         "Title":"GLIMMPSE",
         "link_to_resource":"https:\/\/glimmpse.samplesizeshop.org\/#\/",
-        "Creators":[
-            "Anon"
-        ],
+        "Creators":"Anon",
         "Material_Type":[
             "Reading",
             "Simulation"

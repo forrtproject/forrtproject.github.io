@@ -3,9 +3,7 @@
         "Timestamp":"2020-06-07T18:48:21.209Z",
         "Title":"Data Sharing in Psychology: A Survey on Barriers and Preconditions",
         "link_to_resource":"https:\/\/doi.org\/10.1177\/2515245917751886",
-        "Creators":[
-            "Houtkoop et al."
-        ],
+        "Creators":"Houtkoop et al.",
         "Material_Type":[
             "Primary Source",
             "Reading",

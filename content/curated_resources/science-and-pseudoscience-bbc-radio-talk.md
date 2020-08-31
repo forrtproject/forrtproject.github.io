@@ -3,9 +3,7 @@
         "Timestamp":"2020-05-16T07:21:04.327Z",
         "Title":"Science and Pseudoscience BBC Radio Talk",
         "link_to_resource":"http:\/\/www.lse.ac.uk\/philosophy\/department-history\/science-and-pseudoscience-overview-and-transcript\/",
-        "Creators":[
-            "London School of Economics and Political Science"
-        ],
+        "Creators":"London School of Economics and Political Science",
         "Material_Type":[
             "Student Guide",
             "Teaching\/Learning Strategy",

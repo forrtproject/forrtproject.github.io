@@ -3,9 +3,7 @@
         "Timestamp":"2020-05-23T02:54:57.533Z",
         "Title":"The (mis)reporting of statistical results in psychology journals",
         "link_to_resource":"https:\/\/doi.org\/10.3758\/s13428-011-0089-5",
-        "Creators":[
-            "Marjan Bakker & Jelte M. Wicherts"
-        ],
+        "Creators":"Marjan Bakker & Jelte M. Wicherts",
         "Material_Type":[
             "Primary Source",
             "Reading"

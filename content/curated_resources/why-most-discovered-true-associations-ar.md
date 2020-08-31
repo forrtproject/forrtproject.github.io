@@ -3,9 +3,7 @@
         "Timestamp":"2020-06-05T19:20:42.716Z",
         "Title":"Why Most Discovered True Associations Are Inflated",
         "link_to_resource":"https:\/\/doi.org\/10.1097\/EDE.0b013e31818131e7",
-        "Creators":[
-            "John P A Ioannidis"
-        ],
+        "Creators":"John P A Ioannidis",
         "Material_Type":[
             "Primary Source",
             "Reading",

@@ -3,9 +3,7 @@
         "Timestamp":"2020-05-09T07:14:14.675Z",
         "Title":"The default bayesian test is prejudiced against small effects",
         "link_to_resource":"http:\/\/datacolada.org\/2015\/04\/09\/35-the-default-bayesian-test-is-prejudiced-against-small-effects\/",
-        "Creators":[
-            "Uri Simonsohn"
-        ],
+        "Creators":"Uri Simonsohn",
         "Material_Type":[
             "Reading"
         ],

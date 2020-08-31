@@ -3,9 +3,7 @@
         "Timestamp":"2020-05-09T08:11:29.826Z",
         "Title":"A tale of two papers",
         "link_to_resource":"http:\/\/sometimesimwrong.typepad.com\/wrong\/2015\/11\/guest-post-a-tale-of-two-papers.html",
-        "Creators":[
-            "Michael Inzlicht"
-        ],
+        "Creators":"Michael Inzlicht",
         "Material_Type":[
             "Reading"
         ],

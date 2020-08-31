@@ -3,9 +3,7 @@
         "Timestamp":"2020-05-24T12:04:53.667Z",
         "Title":"Investigating Variation in Replicability: A \u201cMany Labs\u201d Replication Project",
         "link_to_resource":"https:\/\/psycnet.apa.org\/fulltext\/2014-20922-002.html",
-        "Creators":[
-            "Klein et al."
-        ],
+        "Creators":"Klein et al.",
         "Material_Type":[
             "Primary Source",
             "Reading",

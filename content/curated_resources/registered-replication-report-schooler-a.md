@@ -3,10 +3,7 @@
         "Timestamp":"2020-06-09T16:29:39.613Z",
         "Title":"Registered replication report: Schooler and engstler-schooler (1990). ",
         "link_to_resource":"https:\/\/doi.org\/10.1177\/1745691614545653",
-        "Creators":[
-            "Alogna",
-            "V. K et al."
-        ],
+        "Creators":"Alogna, V. K et al.",
         "Material_Type":[
             "Primary Source",
             "Reading",

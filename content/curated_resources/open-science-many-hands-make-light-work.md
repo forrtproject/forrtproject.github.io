@@ -3,9 +3,7 @@
         "Timestamp":"2020-05-16T11:34:46.639Z",
         "Title":"Open science: many hands make light work",
         "link_to_resource":"https:\/\/www.jisc.ac.uk\/podcasts\/open-science-many-hands-make-light-work-30-oct-2015",
-        "Creators":[
-            "Jisc"
-        ],
+        "Creators":"Jisc",
         "Material_Type":[
             "Student Guide",
             "Teaching\/Learning Strategy",

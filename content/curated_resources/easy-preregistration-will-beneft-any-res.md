@@ -3,9 +3,7 @@
         "Timestamp":"2020-06-04T19:29:29.055Z",
         "Title":"Easy preregistration will beneft any research",
         "link_to_resource":"https:\/\/doi.org\/10.1038\/s41562-018-0294-7",
-        "Creators":[
-            "David T. Mellor and Brian Nosek"
-        ],
+        "Creators":"David T. Mellor and Brian Nosek",
         "Material_Type":[
             "Primary Source",
             "Reading",

@@ -3,10 +3,7 @@
         "Timestamp":"2020-06-05T19:31:32.930Z",
         "Title":"Rewarding Replications: A Sure and Simple Way to Improve Psychological Science",
         "link_to_resource":"https:\/\/doi.org\/10.1177\/1745691612462586",
-        "Creators":[
-            "Sander L Koole",
-            "Dani\u00ebl Lakens"
-        ],
+        "Creators":"Sander L Koole, Dani\u00ebl Lakens",
         "Material_Type":[
             "Primary Source",
             "Reading",

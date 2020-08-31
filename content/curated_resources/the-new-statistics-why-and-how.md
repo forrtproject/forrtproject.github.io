@@ -3,9 +3,7 @@
         "Timestamp":"2020-05-26T15:52:37.569Z",
         "Title":"The new statistics: Why and how.",
         "link_to_resource":"https:\/\/doi.org\/10.1038\/s41562-017-0189-z",
-        "Creators":[
-            "Geoff Cumming"
-        ],
+        "Creators":"Geoff Cumming",
         "Material_Type":[
             "Primary Source",
             "Reading",

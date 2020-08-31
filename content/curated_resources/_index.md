@@ -14,4 +14,4 @@ header:
   image: "resources.jpg"
 ---
 
-We have an amazing team who curated many many resources for the community.
+We have an amazing team who curated many resources for the community.

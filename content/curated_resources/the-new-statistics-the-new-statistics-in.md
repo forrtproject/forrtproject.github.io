@@ -3,9 +3,7 @@
         "Timestamp":"2020-05-15T14:45:33.125Z",
         "Title":"The New Statistics: The New Statistics in Action (Workshop Part 4)",
         "link_to_resource":"https:\/\/www.youtube.com\/watch?v=QYNJMAqZvBQ",
-        "Creators":[
-            "Psychological Science\/Geoff Cumming"
-        ],
+        "Creators":"Psychological Science\/Geoff Cumming",
         "Material_Type":[
             "Student Guide",
             "Teaching\/Learning Strategy",

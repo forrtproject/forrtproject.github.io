@@ -3,9 +3,7 @@
         "Timestamp":"2020-06-09T16:21:23.599Z",
         "Title":"Trust your science? Open your data and code.",
         "link_to_resource":"https:\/\/web.stanford.edu\/~vcs\/papers\/TrustYourScience-STODDEN.pdf",
-        "Creators":[
-            "Victoria Stodden"
-        ],
+        "Creators":"Victoria Stodden",
         "Material_Type":[
             "Primary Source",
             "Reading"

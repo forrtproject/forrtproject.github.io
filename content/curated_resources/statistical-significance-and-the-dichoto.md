@@ -3,9 +3,7 @@
         "Timestamp":"2020-06-03T19:22:07.215Z",
         "Title":"Statistical Significance and the Dichotomization of Evidence",
         "link_to_resource":"https:\/\/doi.org\/10.1080\/01621459.2017.1289846",
-        "Creators":[
-            "Blakeley B. McShane & David Gal"
-        ],
+        "Creators":"Blakeley B. McShane & David Gal",
         "Material_Type":[
             "Primary Source",
             "Reading",

@@ -3,9 +3,7 @@
         "Timestamp":"2020-05-23T03:12:32.579Z",
         "Title":"Response to Comment on \u201cEstimating the reproducibility of psychological science\u201d",
         "link_to_resource":"https:\/\/doi.org\/10.1126\/science.aad9163",
-        "Creators":[
-            "Christopher J. Anderson et al."
-        ],
+        "Creators":"Christopher J. Anderson et al.",
         "Material_Type":[
             "Primary Source",
             "Reading",

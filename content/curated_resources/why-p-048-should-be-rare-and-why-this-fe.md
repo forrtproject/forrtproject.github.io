@@ -3,9 +3,7 @@
         "Timestamp":"2020-05-09T07:42:17.421Z",
         "Title":"why p = .048 should be rare (and why this feels counterintuitive)",
         "link_to_resource":"http:\/\/sometimesimwrong.typepad.com\/wrong\/2015\/06\/why-p-048-should-be-rare-and-why-this-feels-counterintuitive.html",
-        "Creators":[
-            "Simine Vazire"
-        ],
+        "Creators":"Simine Vazire",
         "Material_Type":[
             "Reading"
         ],

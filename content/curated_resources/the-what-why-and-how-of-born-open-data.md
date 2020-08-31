@@ -3,9 +3,7 @@
         "Timestamp":"2020-06-05T18:25:25.640Z",
         "Title":"The what, why, and how of born-open data",
         "link_to_resource":"https:\/\/doi.org\/10.3758\/s13428-015-0630-z",
-        "Creators":[
-            "Jeffrey N. Rouder"
-        ],
+        "Creators":"Jeffrey N. Rouder",
         "Material_Type":[
             "Primary Source",
             "Reading",

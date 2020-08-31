@@ -3,9 +3,7 @@
         "Timestamp":"2020-06-03T19:18:55.005Z",
         "Title":"Statistical significance testing and cumulative knowledge in psychology: implications for training researchers.",
         "link_to_resource":"https:\/\/doi.org\/10.1037\/14805-019",
-        "Creators":[
-            "F.L. Schmidt"
-        ],
+        "Creators":"F.L. Schmidt",
         "Material_Type":[
             "Primary Source",
             "Reading",

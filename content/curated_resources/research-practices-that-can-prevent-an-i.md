@@ -3,11 +3,7 @@
         "Timestamp":"2020-05-27T16:26:34.404Z",
         "Title":"Research Practices That Can Prevent an Inflation of False-Positive Rates",
         "link_to_resource":"https:\/\/doi.org\/10.1177\/1088868313496330",
-        "Creators":[
-            "Kou Murayama",
-            "Reinhard Pekrun",
-            "Klaus Fiedler"
-        ],
+        "Creators":"Kou Murayama, Reinhard Pekrun, Klaus Fiedler",
         "Material_Type":[
             "Primary Source",
             "Reading",

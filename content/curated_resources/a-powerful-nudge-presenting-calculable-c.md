@@ -3,12 +3,7 @@
         "Timestamp":"2020-06-04T19:42:36.518Z",
         "Title":"A Powerful Nudge? Presenting Calculable Consequences of Underpowered Research Shifts Incentives Toward Adequately Powered Designs",
         "link_to_resource":"https:\/\/doi.org\/10.1177\/1948550615584199",
-        "Creators":[
-            "Will M. Gervais",
-            "Jennifer A. Jewell",
-            "Maxine B. Najle",
-            "and Ben K. L. Ng"
-        ],
+        "Creators":"Will M. Gervais , Jennifer A. Jewell , Maxine B. Najle , and Ben K. L. Ng",
         "Material_Type":[
             "Primary Source",
             "Reading",

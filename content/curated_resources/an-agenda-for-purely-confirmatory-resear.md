@@ -3,18 +3,7 @@
         "Timestamp":"2020-05-29T18:26:21.205Z",
         "Title":"An agenda for purely confirmatory research. ",
         "link_to_resource":"https:\/\/doi.org\/10.1177\/1745691612463078",
-        "Creators":[
-            "Wagenmakers",
-            "E.-J.",
-            "Wetzels",
-            "R.",
-            "Borsboom",
-            "D.",
-            "van der Mass",
-            "H. L. J.",
-            "& Kievit",
-            "R. A."
-        ],
+        "Creators":"Wagenmakers, E.-J., Wetzels, R., Borsboom, D., van der Mass, H. L. J., & Kievit, R. A.",
         "Material_Type":[
             "Primary Source",
             "Reading",

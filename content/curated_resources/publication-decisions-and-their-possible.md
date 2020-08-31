@@ -3,9 +3,7 @@
         "Timestamp":"2020-05-26T15:44:20.900Z",
         "Title":"Publication Decisions and their Possible Effects on Inferences Drawn from Tests of Significance\u2014or Vice Versa",
         "link_to_resource":"http:\/\/dx.doi.org\/10.1080\/01621459.1959.10501497",
-        "Creators":[
-            "Theodore D. Sterling"
-        ],
+        "Creators":"Theodore D. Sterling",
         "Material_Type":[
             "Primary Source",
             "Reading",

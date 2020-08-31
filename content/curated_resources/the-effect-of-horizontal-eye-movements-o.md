@@ -3,9 +3,7 @@
         "Timestamp":"2020-06-10T19:29:31.811Z",
         "Title":"The effect of horizontal eye movements on free recall: A preregistered adversarial collaboration.",
         "link_to_resource":"https:\/\/doi.org\/10.1037\/xge0000038",
-        "Creators":[
-            "Matzke et al."
-        ],
+        "Creators":"Matzke et al.",
         "Material_Type":[
             "Primary Source",
             "Reading",

@@ -3,9 +3,7 @@
         "Timestamp":"2020-05-16T11:19:55.592Z",
         "Title":"You are not so smart",
         "link_to_resource":"https:\/\/youarenotsosmart.com\/2017\/07\/19\/yanss-100-the-replication-crisis\/",
-        "Creators":[
-            "David McRaney"
-        ],
+        "Creators":"David McRaney",
         "Material_Type":[
             "Student Guide",
             "Teaching\/Learning Strategy",

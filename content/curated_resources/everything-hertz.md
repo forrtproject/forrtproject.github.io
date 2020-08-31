@@ -3,9 +3,7 @@
         "Timestamp":"2020-05-16T11:07:57.302Z",
         "Title":"Everything Hertz",
         "link_to_resource":"https:\/\/soundcloud.com\/everything-hertz",
-        "Creators":[
-            "Sound Cloud"
-        ],
+        "Creators":"Sound Cloud",
         "Material_Type":[
             "Student Guide",
             "Teaching\/Learning Strategy",

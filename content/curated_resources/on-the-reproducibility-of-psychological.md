@@ -3,12 +3,7 @@
         "Timestamp":"2020-05-27T17:17:33.853Z",
         "Title":"On the reproducibility of psychological science",
         "link_to_resource":"https:\/\/doi.org\/10.1080\/01621459.2016.1240079",
-        "Creators":[
-            "Valen E. Johnson",
-            "Richard D. Payne",
-            "Tianying Wang",
-            "Alex Asher &Soutrik Mandal"
-        ],
+        "Creators":"Valen E. Johnson, Richard D. Payne,Tianying Wang,Alex Asher &Soutrik Mandal",
         "Material_Type":[
             "Primary Source",
             "Reading",

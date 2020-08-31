@@ -3,10 +3,7 @@
         "Timestamp":"2020-05-19T16:56:17.036Z",
         "Title":"Theory Construction and Model-Building Skills: A Practical Guide for Social Scientists",
         "link_to_resource":"https:\/\/www.amazon.com\/Theory-Construction-Model-Building-Skills-Methodology\/dp\/1606233394?ie=UTF8&psc=1&redirect=true&ref_=oh_aui_detailpage_o03_s00",
-        "Creators":[
-            "James Jaccard",
-            "Jacob Jacoby"
-        ],
+        "Creators":"James Jaccard, Jacob Jacoby",
         "Material_Type":[
             "Textbook"
         ],

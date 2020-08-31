@@ -3,10 +3,7 @@
         "Timestamp":"2020-06-09T16:14:25.870Z",
         "Title":"Constraints on generality statements are needed to define direct replication",
         "link_to_resource":"https:\/\/doi.org\/10.1017\/S0140525X18000845",
-        "Creators":[
-            "Daniel J. Simons",
-            "Yuichi Shoda and D. Stephen Lindsay"
-        ],
+        "Creators":"Daniel J. Simons, Yuichi Shoda and D. Stephen Lindsay",
         "Material_Type":[
             "Primary Source",
             "Reading",

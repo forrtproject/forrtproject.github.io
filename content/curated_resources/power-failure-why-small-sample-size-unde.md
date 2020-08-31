@@ -3,9 +3,7 @@
         "Timestamp":"2020-05-22T19:06:59.335Z",
         "Title":"Power failure: why small sample size undermines the reliability of neuroscience",
         "link_to_resource":"https:\/\/doi.org\/10.1038\/nrn3475",
-        "Creators":[
-            "Katherine Button et al."
-        ],
+        "Creators":"Katherine Button et al.",
         "Material_Type":[
             "Primary Source",
             "Reading",

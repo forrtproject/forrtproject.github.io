@@ -3,9 +3,7 @@
         "Timestamp":"2020-05-22T19:31:28.489Z",
         "Title":"The Empirical March: Making Science Better at Self-Correction",
         "link_to_resource":"https:\/\/doi.org\/10.1037\/a0035803",
-        "Creators":[
-            "Matthew Makel"
-        ],
+        "Creators":"Matthew Makel",
         "Material_Type":[
             "Primary Source",
             "Reading",

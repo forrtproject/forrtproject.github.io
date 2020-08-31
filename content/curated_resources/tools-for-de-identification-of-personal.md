@@ -3,9 +3,7 @@
         "Timestamp":"2020-06-08T18:19:24.175Z",
         "Title":"Tools for De-Identification of Personal Health Information ",
         "link_to_resource":"http:\/\/www.ehealthinformation.ca\/wp-content\/uploads\/2014\/08\/2009-Tools-for-De-Identification-of-Personal-Health.pdf",
-        "Creators":[
-            "Ross Fraser and Don Willison"
-        ],
+        "Creators":"Ross Fraser and Don Willison",
         "Material_Type":[
             "Reading"
         ],

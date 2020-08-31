@@ -3,12 +3,7 @@
         "Timestamp":"2020-05-28T14:48:51.882Z",
         "Title":"Accurary of effect size estimates from published psychological research ",
         "link_to_resource":"https:\/\/doi.org\/10.2466\/l'MS.106.2.645-649",
-        "Creators":[
-            "ANDREW BRAND",
-            "MICHAEL T. BRADLEY",
-            "LISA A. BEST",
-            "AND GEORGE STOICA"
-        ],
+        "Creators":"ANDREW BRAND,  MICHAEL T. BRADLEY, LISA A. BEST, AND GEORGE STOICA",
         "Material_Type":[
             "Primary Source",
             "Reading",

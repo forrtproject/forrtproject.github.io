@@ -3,9 +3,7 @@
         "Timestamp":"2020-05-14T11:23:51.707Z",
         "Title":"Resources (tutorials, papers, analysis scripts, utilities) for testing moderation and mediation",
         "link_to_resource":"http:\/\/quantpsy.org\/medn.htm",
-        "Creators":[
-            "Kristopher J. Preacher"
-        ],
+        "Creators":"Kristopher J. Preacher",
         "Material_Type":[
             "Lesson"
         ],

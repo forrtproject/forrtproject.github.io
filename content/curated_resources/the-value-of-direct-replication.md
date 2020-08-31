@@ -3,9 +3,7 @@
         "Timestamp":"2020-05-29T18:28:25.497Z",
         "Title":"The value of direct replication.",
         "link_to_resource":"https:\/\/doi.org\/10.1177\/1745691613514755",
-        "Creators":[
-            "Daniel Simons"
-        ],
+        "Creators":"Daniel Simons",
         "Material_Type":[
             "Primary Source",
             "Reading",

@@ -3,14 +3,7 @@
         "Timestamp":"2020-06-03T19:42:56.653Z",
         "Title":"Construct validation in social and personality research: Current practice and recommendations. ",
         "link_to_resource":"http:\/\/doi.org\/10.1177\/1948550617693063",
-        "Creators":[
-            "Flake",
-            "J. K.",
-            "Pek",
-            "J.",
-            "& Hehman",
-            "E."
-        ],
+        "Creators":"Flake, J. K., Pek, J., & Hehman, E. ",
         "Material_Type":[
             "Primary Source",
             "Reading",

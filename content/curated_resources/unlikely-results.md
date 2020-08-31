@@ -3,9 +3,7 @@
         "Timestamp":"2020-05-14T11:09:05.222Z",
         "Title":"Unlikely Results",
         "link_to_resource":"https:\/\/www.youtube.com\/watch?v=TosyACdsh-g",
-        "Creators":[
-            "The Economist"
-        ],
+        "Creators":"The Economist",
         "Material_Type":[
             "Student Guide",
             "Teaching\/Learning Strategy",

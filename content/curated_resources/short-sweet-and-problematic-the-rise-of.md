@@ -3,10 +3,7 @@
         "Timestamp":"2020-06-06T19:06:47.916Z",
         "Title":"Short, Sweet, and Problematic? The Rise of the Short Report in Psychological Science",
         "link_to_resource":"https:\/\/doi.org\/10.1177\/1745691611427304",
-        "Creators":[
-            "Alison Ledgerwood",
-            "Jeffrey W. Sherman"
-        ],
+        "Creators":"Alison Ledgerwood, Jeffrey W. Sherman",
         "Material_Type":[
             "Primary Source",
             "Reading",

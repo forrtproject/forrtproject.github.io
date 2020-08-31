@@ -3,10 +3,7 @@
         "Timestamp":"2020-06-04T19:27:40.678Z",
         "Title":"Detecting and avoiding likely false-positive findings: A practical guide",
         "link_to_resource":"https:\/\/doi.org\/10.1111\/brv.12315",
-        "Creators":[
-            "Wolfgang Forstmeier",
-            "Eric-Jan Wagenmakers and Timothy H. Parker"
-        ],
+        "Creators":"Wolfgang Forstmeier, Eric-Jan Wagenmakers and Timothy H. Parker",
         "Material_Type":[
             "Primary Source",
             "Reading",

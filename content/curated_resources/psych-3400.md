@@ -3,9 +3,7 @@
         "Timestamp":"2020-05-14T11:43:57.289Z",
         "Title":"Psych 3400",
         "link_to_resource":"https:\/\/crumplab.github.io\/psyc3400\/",
-        "Creators":[
-            "Dr Matt Crump"
-        ],
+        "Creators":"Dr Matt Crump",
         "Material_Type":[
             "Data Set",
             "Full Course",

@@ -3,9 +3,7 @@
         "Timestamp":"2020-06-06T19:36:22.578Z",
         "Title":"Psychology, Science, and Knowledge Construction: Broadening Perspectives from the Replication Crisis",
         "link_to_resource":"https:\/\/doi.org\/10.1146\/annurev-psych-122216-011845",
-        "Creators":[
-            "Patrick E. Shrout and Joseph L. Rodgers"
-        ],
+        "Creators":"Patrick E. Shrout and Joseph L. Rodgers",
         "Material_Type":[
             "Primary Source",
             "Reading",

@@ -3,18 +3,7 @@
         "Timestamp":"2020-06-09T16:35:33.549Z",
         "Title":"The meaning of \u201csignificance\u201d for different types of research",
         "link_to_resource":"https:\/\/doi.org\/10.1016\/j.actpsy.2014.02.001",
-        "Creators":[
-            "De Groot",
-            "A. D. translated and annotated by Eric-Jan Wagenmakers",
-            "Denny Borsboom",
-            "Josine Verhagen",
-            "Rogier Kievit",
-            "Marjan Bakker",
-            "Angelique Cramer",
-            "Dora Matzke",
-            "Don Mellenbergh",
-            "and Han LJ van der Maas"
-        ],
+        "Creators":"De Groot, A. D. translated and annotated by Eric-Jan Wagenmakers, Denny Borsboom, Josine Verhagen, Rogier Kievit, Marjan Bakker, Angelique Cramer, Dora Matzke, Don Mellenbergh, and Han LJ van der Maas",
         "Material_Type":[
             "Primary Source",
             "Reading",

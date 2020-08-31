@@ -3,9 +3,7 @@
         "Timestamp":"2020-06-07T19:25:08.972Z",
         "Title":"Beyond Power Calculations: Assessing Type S (Sign) and Type M (Magnitude) Errors",
         "link_to_resource":"https:\/\/doi.org\/10.1177\/1745691614551642",
-        "Creators":[
-            "Andrew Gelman1 and John Carlin"
-        ],
+        "Creators":"Andrew Gelman1 and John Carlin",
         "Material_Type":[
             "Primary Source",
             "Reading"

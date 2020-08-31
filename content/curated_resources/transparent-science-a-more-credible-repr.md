@@ -3,10 +3,7 @@
         "Timestamp":"2020-06-09T16:19:09.067Z",
         "Title":"Transparent science: A more credible, reproducible, and publishable way to do science",
         "link_to_resource":"https:\/\/psyarxiv.com\/7wkdn\/",
-        "Creators":[
-            "David Mellor",
-            "Simine Vazire and D. Lindsay"
-        ],
+        "Creators":"David Mellor, Simine Vazire and D. Lindsay",
         "Material_Type":[
             "Primary Source",
             "Reading",

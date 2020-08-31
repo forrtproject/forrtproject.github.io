@@ -3,20 +3,7 @@
         "Timestamp":"2020-06-03T19:26:53.204Z",
         "Title":"Enabling Open-Science Initiatives in Clinical Psychology and Psychiatry Without Sacrificing Patients\u2019 Privacy: Current Practices and Future Challenges",
         "link_to_resource":"https:\/\/doi.org\/10.1177\/2515245917749652",
-        "Creators":[
-            "Walsh",
-            "C.",
-            "Xia",
-            "W.",
-            "Li",
-            "M.",
-            "Denny",
-            "J.",
-            "Harris",
-            "P.",
-            "& Malin",
-            "B"
-        ],
+        "Creators":"Walsh, C., Xia, W., Li, M., Denny, J., Harris, P., & Malin, B",
         "Material_Type":[
             "Primary Source",
             "Reading",

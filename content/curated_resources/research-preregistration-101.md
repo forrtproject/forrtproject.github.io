@@ -3,14 +3,7 @@
         "Timestamp":"2020-06-11T06:44:55.555Z",
         "Title":"Research preregistration 101. ",
         "link_to_resource":"https:\/\/www.psychologicalscience.org\/observer\/research-preregistration-101",
-        "Creators":[
-            "Lindsay",
-            "D.S.",
-            "Simons",
-            "D.J.",
-            "Lilienfeld",
-            "S.O."
-        ],
+        "Creators":"Lindsay, D.S., Simons, D.J., Lilienfeld, S.O. ",
         "Material_Type":[
             "Blog"
         ],

@@ -3,9 +3,7 @@
         "Timestamp":"2020-05-24T12:26:19.575Z",
         "Title":"The case against statistical significance testing.",
         "link_to_resource":"https:\/\/www.hepgjournals.org\/doi\/abs\/10.17763\/haer.48.3.t490261645281841",
-        "Creators":[
-            "Ronald P Carver"
-        ],
+        "Creators":"Ronald P Carver",
         "Material_Type":[
             "Primary Source",
             "Reading"
