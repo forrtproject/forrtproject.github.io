@@ -3,14 +3,14 @@
 widget = "resource"  # See https://sourcethemes.com/academic/docs/page-builder/
 headless = true  # This file represents a page section.
 active = true  # Activate this widget? true/false
-weight = 10 # Order that this section will appear.
+weight = 65  # Order that this section will appear.
 
 title = "Curated resources"
 subtitle = ""
 
 [content]
   # Page type to display. E.g. project.
-  page_type = "csv"
+  page_type = "curated_resources"
   
   # Filter toolbar (optional).
   # Add or remove as many filters (`[[content.filter_button]]` instances) as you like.
@@ -20,49 +20,47 @@ subtitle = ""
   
   # Default filter index (e.g. 0 corresponds to the first `[[filter_button]]` instance below).
   filter_default = 0
-  filter_fromcsv = 1 # (1 = T, 0 = F), with list all unique tag identifier from CSV column.
-
-  ### If filter_fromcsv = 1, the tags below won't do anything!
   
   [[content.filter_button]]
     name = "All"
-    tag = "*"
+    FORRT_Clusters = "*"
+
+  [[content.filter_button]]
+    name = "Reproducible Analyses"
+    FORRT_Clusters = "Reproducible Analyses"
+
+  [[content.filter_button]]
+    name = "Open Data and Materials"
+    FORRT_Clusters = "Open Data and Materials"
+
+  [[content.filter_button]]
+    name = "Reproducibility and Replicability Knowledge"
+    FORRT_Clusters = "Reproducibility and Replicability Knowledge"
   
   [[content.filter_button]]
-    name = "Blog"
-    tag = "Blog"
+    name = "Replication Research"
+    FORRT_Clusters = "Replication Research"
 
   [[content.filter_button]]
-    name = "Book"
-    tag = "Books"  
-
+    name = "Conceptual and Statistical Knowledge"
+    FORRT_Clusters = "Conceptual and Statistical Knowledge"
   [[content.filter_button]]
-    name = "Paper"
-    tag = "Paper"
-
-  [[content.filter_button]]
-    name = "Podcast"
-    tag = "Podcast"
-
-  [[content.filter_button]]
-    name = "R Tutorial"
-    tag = "R Tutorial"
-
-  [[content.filter_button]]
-    name = "Software"
-    tag = "Software"
+    name = "Preregistration"
+    FORRT_Clusters = "Preregistration"
   
-  [[content.filter_button]]
-    name = "Video"
-    tag = "Video"
-
-  [[content.filter_button]]
-    name = "Website"
-    tag = "Website"
-
-
-
 [design]
+  # Choose how many columns the section has. Valid values: 1 or 2.
+  columns = "1"
+
+  # Toggle between the various page layout types.
+  #   1 = List
+  #   2 = Compact
+  #   3 = Card
+  #   5 = Showcase
+  view = 1
+
+  # For Showcase view, flip alternate rows?
+  flip_alt_rows = false
 
 [design.background]
   # Apply a background color, gradient, or image.
@@ -78,7 +76,7 @@ subtitle = ""
   # gradient_end = "SkyBlue"
   
   # Background image.
-  # image = "background.jpg"  # Name of image in `static/img/`.
+  # image = "background.jpg"  # Name of image in `static/media/`.
   # image_darken = 0.6  # Darken the image? Range 0-1 where 0 is transparent and 1 is opaque.
 
   # Text color (true=light or false=dark).
@@ -91,7 +89,6 @@ subtitle = ""
  # CSS class.
  css_class = ""
 +++
-
 There are more than 700 resources submitted so far in our database. We are currently curating a new and improved version that is compliant with OER Commons for greater findability, accessibility, interoperability, and reusability (FAIR) of these resources.
 
 
@@ -103,4 +100,4 @@ If you notice there is an educational resource, research article or pedagocial t
 
 ***
 
-<br>
+{{< staticsearch >}}

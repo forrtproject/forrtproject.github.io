@@ -1,0 +1,6 @@
+{{/* Get Publication Types */}}
+{{ $cluster_types := slice }}
+{{ range site.Data.clusters.types }}
+  {{ $cluster_types = $cluster_types | append (i18n . | default "Uncategorized") }}
+{{ end }}
+{{ return $cluster_types }}
