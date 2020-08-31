@@ -3,7 +3,9 @@
         "Timestamp":"2020-06-07T19:01:57.951Z",
         "Title":"Prediction Interval: What to Expect When You\u2019re Expecting \u2026 A Replication",
         "link_to_resource":"https:\/\/doi.org\/10.1371\/journal.pone.0162874",
-        "Creators":"Jeffrey R.Spence and David J. Stanley",
+        "Creators":[
+            "Jeffrey R.Spence and David J. Stanley"
+        ],
         "Material_Type":[
             "Primary Source",
             "Reading",

@@ -3,7 +3,9 @@
         "Timestamp":"2020-05-31T18:51:25.106Z",
         "Title":"A Bayesian Perspective on the Reproducibility Project: Psychology",
         "link_to_resource":"https:\/\/doi.org\/10.1371\/journal.pone.0149794",
-        "Creators":"Alexander Etz and Joachim Vandekerckhove",
+        "Creators":[
+            "Alexander Etz and Joachim Vandekerckhove"
+        ],
         "Material_Type":[
             "Primary Source",
             "Reading",

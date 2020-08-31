@@ -3,7 +3,9 @@
         "Timestamp":"2020-06-06T19:20:29.153Z",
         "Title":"Big Correlations in Little Studies: Inflated fMRI Correlations Reflect Low Statistical Power-Commentary on Vul Et Al. (2009)",
         "link_to_resource":"https:\/\/doi.org\/10.1111\/j.1745-6924.2009.01127.x",
-        "Creators":"Tal Yarkoni",
+        "Creators":[
+            "Tal Yarkoni"
+        ],
         "Material_Type":[
             "Primary Source",
             "Reading",

@@ -3,7 +3,11 @@
         "Timestamp":"2020-06-10T19:05:29.504Z",
         "Title":"Reviewer Bias Against Replication Research",
         "link_to_resource":"https:\/\/search.proquest.com\/docview\/1292304227?pq-origsite=gscholar&fromopenview=true&imgSeq=1",
-        "Creators":"Neuliep, J W; Crandall, R.",
+        "Creators":[
+            "Neuliep",
+            "J W; Crandall",
+            "R."
+        ],
         "Material_Type":[
             "Primary Source",
             "Reading"

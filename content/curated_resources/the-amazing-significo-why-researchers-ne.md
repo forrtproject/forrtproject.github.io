@@ -3,7 +3,9 @@
         "Timestamp":"2020-05-09T07:34:37.002Z",
         "Title":"The Amazing Significo: why researchers need to understand poker",
         "link_to_resource":"http:\/\/deevybee.blogspot.com\/2016\/01\/the-amazing-significo-why-researchers.html?m=1",
-        "Creators":"Dorothy Bishop",
+        "Creators":[
+            "Dorothy Bishop"
+        ],
         "Material_Type":[
             "Reading"
         ],

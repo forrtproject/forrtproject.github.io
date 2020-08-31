@@ -3,7 +3,9 @@
         "Timestamp":"2020-06-04T19:08:03.089Z",
         "Title":"A collaborative approach to infant research: Promoting reproducibility, best practices, and theory-building. ",
         "link_to_resource":"https:\/\/doi.org\/10.1111\/infa.12182",
-        "Creators":"Frank et al.",
+        "Creators":[
+            "Frank et al."
+        ],
         "Material_Type":[
             "Primary Source",
             "Reading",

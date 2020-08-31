@@ -3,7 +3,9 @@
         "Timestamp":"2020-06-07T18:36:25.638Z",
         "Title":"Best practices in data analysis and sharing in neuroimaging using MRI",
         "link_to_resource":"https:\/\/doi.org\/10.1038\/nn.4500",
-        "Creators":"Thomas E. Nichols et al.",
+        "Creators":[
+            "Thomas E. Nichols et al."
+        ],
         "Material_Type":[
             "Primary Source",
             "Reading",

@@ -3,7 +3,9 @@
         "Timestamp":"2020-06-10T19:13:18.266Z",
         "Title":"The Superego, the Ego, and the Id in Statistical Reasoning",
         "link_to_resource":"https:\/\/doi.org\/10.1093\/acprof:oso\/9780195153729.003.0013",
-        "Creators":"Gerd Gigerenzer",
+        "Creators":[
+            "Gerd Gigerenzer"
+        ],
         "Material_Type":[
             "Primary Source",
             "Reading"

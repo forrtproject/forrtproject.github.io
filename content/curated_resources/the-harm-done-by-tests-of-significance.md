@@ -3,7 +3,9 @@
         "Timestamp":"2020-05-24T12:34:37.031Z",
         "Title":"The harm done by tests of significance.",
         "link_to_resource":"https:\/\/doi.org\/10.1016\/S0001-4575(03)00036-8",
-        "Creators":"Ezra Hauer",
+        "Creators":[
+            "Ezra Hauer"
+        ],
         "Material_Type":[
             "Primary Source",
             "Reading"

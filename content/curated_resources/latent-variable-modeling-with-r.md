@@ -3,7 +3,10 @@
         "Timestamp":"2020-05-19T16:57:41.910Z",
         "Title":"Latent Variable Modeling with R",
         "link_to_resource":"https:\/\/www.amazon.ca\/gp\/product\/0415832446\/ref=oh_aui_detailpage_o01_s00?ie=UTF8&psc=1",
-        "Creators":"W. Holmes Finch, Brian F. French",
+        "Creators":[
+            "W. Holmes Finch",
+            "Brian F. French"
+        ],
         "Material_Type":[
             "Textbook"
         ],

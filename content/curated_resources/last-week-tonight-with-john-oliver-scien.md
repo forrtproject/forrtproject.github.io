@@ -3,7 +3,9 @@
         "Timestamp":"2020-05-15T12:44:08.383Z",
         "Title":"Last Week Tonight with John Oliver: Scientific Studies (HBO)",
         "link_to_resource":"https:\/\/www.youtube.com\/watch?v=0Rnq1NpHdmw",
-        "Creators":"Last Week Tonight\/John Oliver",
+        "Creators":[
+            "Last Week Tonight\/John Oliver"
+        ],
         "Material_Type":[
             "Student Guide",
             "Teaching\/Learning Strategy",

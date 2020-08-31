@@ -3,7 +3,9 @@
         "Timestamp":"2020-05-08T09:17:09.608Z",
         "Title":"Visualizing a One-Way ANOVA using D3.js",
         "link_to_resource":"http:\/\/rpsychologist.com\/d3-one-way-anova",
-        "Creators":"Kristoffer Magnusson ",
+        "Creators":[
+            "Kristoffer Magnusson"
+        ],
         "Material_Type":[
             "Interactive",
             "Reading",

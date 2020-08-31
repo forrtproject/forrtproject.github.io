@@ -3,7 +3,12 @@
         "Timestamp":"2020-05-26T15:30:33.536Z",
         "Title":"A survey of the statistical power of research in behavioral ecology and animal behavior.",
         "link_to_resource":"https:\/\/doi.org\/10.1093\/beheco\/14.3.438",
-        "Creators":"Jennions, M. D., & M\u00f8ller, A. P.",
+        "Creators":[
+            "Jennions",
+            "M. D.",
+            "& M\u00f8ller",
+            "A. P."
+        ],
         "Material_Type":[
             "Primary Source",
             "Reading",

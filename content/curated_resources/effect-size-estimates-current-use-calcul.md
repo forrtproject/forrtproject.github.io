@@ -3,7 +3,9 @@
         "Timestamp":"2020-05-31T18:19:30.056Z",
         "Title":"Effect Size Estimates: Current Use, Calculations, and Interpretation",
         "link_to_resource":"https:\/\/doi.org\/10.1037\/a0024338",
-        "Creators":"Catherine O. Fritz et al.",
+        "Creators":[
+            "Catherine O. Fritz et al."
+        ],
         "Material_Type":[
             "Primary Source",
             "Reading",

@@ -3,7 +3,9 @@
         "Timestamp":"2020-05-14T11:32:55.954Z",
         "Title":"open stats lab",
         "link_to_resource":"https:\/\/sites.trinity.edu\/osl\/",
-        "Creators":"Kevin P. McIntyre",
+        "Creators":[
+            "Kevin P. McIntyre"
+        ],
         "Material_Type":[
             "Activity\/Lab",
             "Data Set"

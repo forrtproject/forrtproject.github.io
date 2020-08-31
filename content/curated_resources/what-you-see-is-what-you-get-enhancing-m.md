@@ -3,7 +3,10 @@
         "Timestamp":"2020-06-04T19:12:25.920Z",
         "Title":"WHAT YOU SEE IS WHAT YOU GET? ENHANCING METHODOLOGICAL TRANSPARENCY IN MANAGEMENT RESEARCH",
         "link_to_resource":"https:\/\/doi.org\/10.5465\/annals.2016.0011",
-        "Creators":"Herman Aguinis, Ravi S. Ramani and Nawaf Alabduljader",
+        "Creators":[
+            "Herman Aguinis",
+            "Ravi S. Ramani and Nawaf Alabduljader"
+        ],
         "Material_Type":[
             "Primary Source",
             "Reading",

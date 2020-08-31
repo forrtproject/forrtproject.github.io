@@ -3,7 +3,9 @@
         "Timestamp":"2020-06-03T19:38:16.466Z",
         "Title":"P Values and Statistical Practice",
         "link_to_resource":"https:\/\/doi.org\/10.1097\/EDE.0b013e31827886f7",
-        "Creators":"Andrew Gelman",
+        "Creators":[
+            "Andrew Gelman"
+        ],
         "Material_Type":[
             "Primary Source",
             "Reading",

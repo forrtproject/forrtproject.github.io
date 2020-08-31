@@ -3,7 +3,9 @@
         "Timestamp":"2020-06-01T19:02:03.113Z",
         "Title":"One cheer for null hypothesis significance testing",
         "link_to_resource":"https:\/\/doi.org\/10.1037\/1082-989X.4.2.212",
-        "Creators":"H. Wainer",
+        "Creators":[
+            "H. Wainer"
+        ],
         "Material_Type":[
             "Primary Source",
             "Reading",

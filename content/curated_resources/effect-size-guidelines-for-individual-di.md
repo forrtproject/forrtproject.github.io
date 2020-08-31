@@ -3,7 +3,9 @@
         "Timestamp":"2020-05-28T13:17:09.858Z",
         "Title":"Effect size guidelines for individual differences researchers",
         "link_to_resource":"https:\/\/doi.org\/10.1016\/j.paid.2016.06.069",
-        "Creators":"Gilles E.Gignac and Eva T.Szodorai",
+        "Creators":[
+            "Gilles E.Gignac and Eva T.Szodorai"
+        ],
         "Material_Type":[
             "Primary Source",
             "Reading",

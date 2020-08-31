@@ -3,7 +3,11 @@
         "Timestamp":"2020-06-06T18:53:30.916Z",
         "Title":"Conservative tests under satisficing models of publication bias.",
         "link_to_resource":"https:\/\/doi.org\/10.1371\/journal.pone.0149590",
-        "Creators":"Justin McCrary ,Garret Christensen ,Daniele Fanelli",
+        "Creators":[
+            "Justin McCrary",
+            "Garret Christensen",
+            "Daniele Fanelli"
+        ],
         "Material_Type":[
             "Primary Source",
             "Reading",

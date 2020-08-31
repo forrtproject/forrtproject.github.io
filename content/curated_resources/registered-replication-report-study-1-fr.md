@@ -3,7 +3,22 @@
         "Timestamp":"2020-06-11T07:03:26.467Z",
         "Title":"Registered Replication Report: Study 1 From Finkel, Rusbult, Kumashiro, & Hannon (2002).",
         "link_to_resource":"http:\/\/journals.sagepub.com\/doi\/pdf\/10.1177\/1745691616664694",
-        "Creators":"Cheung, I., Campbell, L., LeBel, E. P., Ackerman, R. A., Aykuto\u011flu, B., Bahn\u00edk, \u0160., ... & Carcedo, R. J.",
+        "Creators":[
+            "Cheung",
+            "I.",
+            "Campbell",
+            "L.",
+            "LeBel",
+            "E. P.",
+            "Ackerman",
+            "R. A.",
+            "Aykuto\u011flu",
+            "B.",
+            "Bahn\u00edk",
+            "\u0160.",
+            "... & Carcedo",
+            "R. J."
+        ],
         "Material_Type":[
             "Primary Source",
             "Reading",

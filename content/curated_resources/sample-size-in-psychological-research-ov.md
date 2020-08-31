@@ -3,7 +3,12 @@
         "Timestamp":"2020-06-03T20:29:52.405Z",
         "Title":"Sample Size in Psychological Research Over the Past 30 Years",
         "link_to_resource":"https:\/\/doi.org\/10.2466\/03.11",
-        "Creators":"Jacob M Marszalek, Carolyn Barber, Julie Kohlhart, Cooper B Holmes",
+        "Creators":[
+            "Jacob M Marszalek",
+            "Carolyn Barber",
+            "Julie Kohlhart",
+            "Cooper B Holmes"
+        ],
         "Material_Type":[
             "Primary Source",
             "Reading",

@@ -3,7 +3,16 @@
         "Timestamp":"2020-06-10T19:01:00.577Z",
         "Title":"Introduction to Meta-Analysis",
         "link_to_resource":"http:\/\/www.wiley.com\/WileyCDA\/WileyTitle\/productCd-EHEP002313.html",
-        "Creators":"Borenstein, M., Hedges, L.V., Higgins, J. P. T., & Rothstein, H. R. (2009).",
+        "Creators":[
+            "Borenstein",
+            "M.",
+            "Hedges",
+            "L.V.",
+            "Higgins",
+            "J. P. T.",
+            "& Rothstein",
+            "H. R. (2009)."
+        ],
         "Material_Type":[
             "Reading"
         ],

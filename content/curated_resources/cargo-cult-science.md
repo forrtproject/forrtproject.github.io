@@ -3,7 +3,9 @@
         "Timestamp":"2020-05-27T16:03:47.989Z",
         "Title":"Cargo cult science. ",
         "link_to_resource":"http:\/\/www.sitpor.org\/wp-content\/uploads\/2016\/04\/CargoCult.pdf",
-        "Creators":"Richard Feynman",
+        "Creators":[
+            "Richard Feynman"
+        ],
         "Material_Type":[
             "Primary Source",
             "Reading",

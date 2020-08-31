@@ -3,7 +3,9 @@
         "Timestamp":"2020-05-16T10:37:17.656Z",
         "Title":"Detecting fraud in social science",
         "link_to_resource":"http:\/\/rationallyspeakingpodcast.org\/show\/rs-155-uri-simonsohn-on-detecting-fraud-in-social-science.html",
-        "Creators":"Julia Galef\/Uri Simonsohn",
+        "Creators":[
+            "Julia Galef\/Uri Simonsohn"
+        ],
         "Material_Type":[
             "Teaching\/Learning Strategy",
             "Unit of Study",

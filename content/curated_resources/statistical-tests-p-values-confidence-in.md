@@ -3,7 +3,22 @@
         "Timestamp":"2020-06-03T19:33:25.880Z",
         "Title":"Statistical tests, p values, confidence intervals, and power: a guide to misinterpretations. ",
         "link_to_resource":"http:\/\/doi.org\/10.1007\/s10654-016-0149-3",
-        "Creators":"Greenland, S., Senn, S. J., Rothman, K. J., Carlin, J. B., Poole, C., Goodman, S. N., & Altman, D. G.",
+        "Creators":[
+            "Greenland",
+            "S.",
+            "Senn",
+            "S. J.",
+            "Rothman",
+            "K. J.",
+            "Carlin",
+            "J. B.",
+            "Poole",
+            "C.",
+            "Goodman",
+            "S. N.",
+            "& Altman",
+            "D. G."
+        ],
         "Material_Type":[
             "Primary Source",
             "Reading",

@@ -3,7 +3,9 @@
         "Timestamp":"2020-05-15T17:50:57.842Z",
         "Title":"Philosophical Psychology 1989",
         "link_to_resource":"http:\/\/meehl.umn.edu\/video",
-        "Creators":"P. E. Meehl",
+        "Creators":[
+            "P. E. Meehl"
+        ],
         "Material_Type":[
             "Primary Source",
             "Student Guide",

@@ -3,7 +3,11 @@
         "Timestamp":"2020-06-04T19:31:13.021Z",
         "Title":"Statistical power and optimal design in experiments in which samples of participants respond to samples of stimuli",
         "link_to_resource":"https:\/\/doi.org\/10.1037\/xge0000014",
-        "Creators":"Jacob Westfall, David A Kenny, Charles M Judd",
+        "Creators":[
+            "Jacob Westfall",
+            "David A Kenny",
+            "Charles M Judd"
+        ],
         "Material_Type":[
             "Primary Source",
             "Reading",

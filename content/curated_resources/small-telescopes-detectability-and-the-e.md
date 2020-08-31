@@ -3,7 +3,9 @@
         "Timestamp":"2020-05-28T13:32:15.023Z",
         "Title":"Small telescopes Detectability and the evaluation of replication results. ",
         "link_to_resource":"https:\/\/doi.org\/10.1177\/0956797614567341",
-        "Creators":"Uri Simonsohn",
+        "Creators":[
+            "Uri Simonsohn"
+        ],
         "Material_Type":[
             "Primary Source",
             "Reading",

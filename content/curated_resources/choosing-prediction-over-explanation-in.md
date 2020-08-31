@@ -3,7 +3,12 @@
         "Timestamp":"2020-06-03T20:42:54.957Z",
         "Title":"Choosing prediction over explanation in psychology: Lessons from machine learning.",
         "link_to_resource":"http:\/\/doi.org\/10.1017\/CBO9781107415324.004",
-        "Creators":"Yarkoni, T., & Westfall, J. ",
+        "Creators":[
+            "Yarkoni",
+            "T.",
+            "& Westfall",
+            "J."
+        ],
         "Material_Type":[
             "Primary Source",
             "Reading"

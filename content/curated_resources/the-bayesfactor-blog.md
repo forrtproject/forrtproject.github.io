@@ -3,7 +3,9 @@
         "Timestamp":"2020-05-10T08:54:23.927Z",
         "Title":"The Bayesfactor blog",
         "link_to_resource":"http:\/\/bayesfactor.blogspot.com",
-        "Creators":"Richard Morey",
+        "Creators":[
+            "Richard Morey"
+        ],
         "Material_Type":[
             "Reading"
         ],

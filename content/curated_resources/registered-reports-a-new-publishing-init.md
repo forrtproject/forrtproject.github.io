@@ -3,7 +3,9 @@
         "Timestamp":"2020-05-27T17:14:57.354Z",
         "Title":"Registered Reports: A New Publishing Initiative at Cortex",
         "link_to_resource":"https:\/\/doi.org\/10.1016\/j.cortex.2012.12.016",
-        "Creators":"Christopher Chambers",
+        "Creators":[
+            "Christopher Chambers"
+        ],
         "Material_Type":[
             "Primary Source",
             "Reading",

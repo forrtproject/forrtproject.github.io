@@ -3,7 +3,14 @@
         "Timestamp":"2020-06-03T20:52:02.806Z",
         "Title":"Scientific utopia II. Restructuring incentives and practices to promote truth over publishability.",
         "link_to_resource":"https:\/\/doi.org\/10.1177\/1745691612459058",
-        "Creators":"Nosek, B. A., Spies, J. R., & Motyl, M. ",
+        "Creators":[
+            "Nosek",
+            "B. A.",
+            "Spies",
+            "J. R.",
+            "& Motyl",
+            "M."
+        ],
         "Material_Type":[
             "Primary Source",
             "Reading",

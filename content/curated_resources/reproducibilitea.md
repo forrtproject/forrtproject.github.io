@@ -3,7 +3,10 @@
         "Timestamp":"2020-05-16T12:11:05.263Z",
         "Title":"ReproducibiliTea",
         "link_to_resource":"https:\/\/soundcloud.com\/reproducibilitea",
-        "Creators":"Sophia Cruwell, Amy Orben and Sam Parsons",
+        "Creators":[
+            "Sophia Cruwell",
+            "Amy Orben and Sam Parsons"
+        ],
         "Material_Type":[
             "Student Guide",
             "Unit of Study"

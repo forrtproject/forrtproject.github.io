@@ -3,7 +3,10 @@
         "Timestamp":"2020-06-05T19:13:59.055Z",
         "Title":"Expectations for Replications: Are Yours Realistic?",
         "link_to_resource":"https:\/\/doi.org\/10.1177\/1745691614528518",
-        "Creators":"David J Stanley 1, Jeffrey R Spence",
+        "Creators":[
+            "David J Stanley 1",
+            "Jeffrey R Spence"
+        ],
         "Material_Type":[
             "Primary Source",
             "Reading",

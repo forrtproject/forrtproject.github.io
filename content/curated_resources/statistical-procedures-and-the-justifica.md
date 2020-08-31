@@ -3,7 +3,12 @@
         "Timestamp":"2020-06-05T19:23:03.318Z",
         "Title":"Statistical Procedures and the Justification of Knowledge in Psychological Science ",
         "link_to_resource":"https:\/\/doi.org\/10.1037\/0003-066X.44.10.1276",
-        "Creators":"Rosnow, R.L., & Rosenthal, R. ",
+        "Creators":[
+            "Rosnow",
+            "R.L.",
+            "& Rosenthal",
+            "R."
+        ],
         "Material_Type":[
             "Primary Source",
             "Reading",

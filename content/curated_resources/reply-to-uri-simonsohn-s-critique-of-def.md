@@ -3,7 +3,9 @@
         "Timestamp":"2020-05-08T09:00:52.928Z",
         "Title":"Reply to Uri Simonsohn's Critique of Default Bayesian Tests",
         "link_to_resource":"http:\/\/jeffrouder.blogspot.ca\/2015\/04\/reply-to-uri-simonsohns-critique-of.html",
-        "Creators":"Jeff Rouder",
+        "Creators":[
+            "Jeff Rouder"
+        ],
         "Material_Type":[
             "Reading"
         ],

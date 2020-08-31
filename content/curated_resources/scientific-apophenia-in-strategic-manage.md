@@ -3,7 +3,9 @@
         "Timestamp":"2020-05-28T13:04:25.650Z",
         "Title":"SCIENTIFIC APOPHENIA IN STRATEGIC MANAGEMENT RESEARCH: SIGNIFICANCE TESTS & MISTAKEN INFERENCE",
         "link_to_resource":"https:\/\/doi.org\/10.1002\/smj.2459",
-        "Creators":"BRENT GOLDFARB and ANDREW A. KING",
+        "Creators":[
+            "BRENT GOLDFARB and ANDREW A. KING"
+        ],
         "Material_Type":[
             "Primary Source",
             "Reading",

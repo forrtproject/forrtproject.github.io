@@ -3,7 +3,9 @@
         "Timestamp":"2020-05-23T03:17:01.140Z",
         "Title":"egative results are disappearing from most disciplines and countries",
         "link_to_resource":"https:\/\/doi.org\/10.1007\/s11192-011-0494-7",
-        "Creators":"Daniele Fanelli",
+        "Creators":[
+            "Daniele Fanelli"
+        ],
         "Material_Type":[
             "Primary Source",
             "Reading",

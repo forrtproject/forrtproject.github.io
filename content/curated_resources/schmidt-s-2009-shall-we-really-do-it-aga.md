@@ -3,7 +3,9 @@
         "Timestamp":"2020-05-23T03:21:37.817Z",
         "Title":"Schmidt, S. (2009). Shall we really do it again? The powerful concept of replication is neglected in the social sciences. Review of General Psychology, 13(2), 90\u2013100.",
         "link_to_resource":"https:\/\/doi.org\/10.1037\/a0015108",
-        "Creators":"Stefan Schmidt",
+        "Creators":[
+            "Stefan Schmidt"
+        ],
         "Material_Type":[
             "Primary Source",
             "Reading"

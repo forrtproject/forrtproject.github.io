@@ -3,7 +3,9 @@
         "Timestamp":"2020-06-09T16:40:23.897Z",
         "Title":"We Knew the Future All Along: Scientific Hypothesizing Is Much More Accurate Than Other Forms of Precognition-A Satire in One Part",
         "link_to_resource":"https:\/\/doi.org\/10.11772F1745691612441216",
-        "Creators":"Arina K Bones",
+        "Creators":[
+            "Arina K Bones"
+        ],
         "Material_Type":[
             "Primary Source",
             "Reading",

@@ -3,7 +3,11 @@
         "Timestamp":"2020-06-03T20:28:07.675Z",
         "Title":"Power-up: A reanalysis of \u2018power failure\u2019 in neuroscience using mixture modeling.",
         "link_to_resource":"https:\/\/doi.org\/10.1523\/JNEUROSCI.3592-16.2017",
-        "Creators":"Camilla L. Nord, Vincent Valton, John Wood and Jonathan P. Roiser",
+        "Creators":[
+            "Camilla L. Nord",
+            "Vincent Valton",
+            "John Wood and Jonathan P. Roiser"
+        ],
         "Material_Type":[
             "Primary Source",
             "Reading",

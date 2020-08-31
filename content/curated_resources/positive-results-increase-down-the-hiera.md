@@ -3,7 +3,9 @@
         "Timestamp":"2020-06-05T19:16:04.774Z",
         "Title":"\u2018\u2018Positive\u2019\u2019 Results Increase Down the Hierarchy of the Sciences",
         "link_to_resource":"https:\/\/doi.org\/10.1371\/journal.pone.0010068",
-        "Creators":"Daniele Fanelli",
+        "Creators":[
+            "Daniele Fanelli"
+        ],
         "Material_Type":[
             "Primary Source",
             "Reading",

@@ -3,7 +3,11 @@
         "Timestamp":"2020-06-07T19:08:02.926Z",
         "Title":"Privacy and Data-Based Research",
         "link_to_resource":"https:\/\/doi.org\/10.1257\/jep.28.2.75",
-        "Creators":"Heffetz, Ori, and Katrina Liggett.",
+        "Creators":[
+            "Heffetz",
+            "Ori",
+            "and Katrina Liggett."
+        ],
         "Material_Type":[
             "Primary Source",
             "Reading",

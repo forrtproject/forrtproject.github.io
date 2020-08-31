@@ -3,7 +3,9 @@
         "Timestamp":"2020-06-09T16:38:26.706Z",
         "Title":"What's wrong with Psychology, anyway?",
         "link_to_resource":"https:\/\/www.gwern.net\/docs\/psychology\/1991-lykken.pdf",
-        "Creators":"David T. Lykken",
+        "Creators":[
+            "David T. Lykken"
+        ],
         "Material_Type":[
             "Primary Source",
             "Reading"

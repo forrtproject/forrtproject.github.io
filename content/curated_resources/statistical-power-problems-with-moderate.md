@@ -3,7 +3,9 @@
         "Timestamp":"2020-06-03T20:37:47.649Z",
         "Title":"Statistical Power Problems with Moderated Multiple Regression in Management Research ",
         "link_to_resource":"https:\/\/doi.org\/10.1177\/014920639502100607",
-        "Creators":"Herman Aguinis ",
+        "Creators":[
+            "Herman Aguinis"
+        ],
         "Material_Type":[
             "Primary Source",
             "Reading",

@@ -3,7 +3,11 @@
         "Timestamp":"2020-05-29T18:19:49.274Z",
         "Title":"Ten Simple Rules for the Care and Feeding of Scientific Data",
         "link_to_resource":"https:\/\/doi.org\/10.1371\/journal.pcbi.1003542",
-        "Creators":"Goodman, Alyssa, et al.",
+        "Creators":[
+            "Goodman",
+            "Alyssa",
+            "et al."
+        ],
         "Material_Type":[
             "Primary Source",
             "Reading",

@@ -3,7 +3,9 @@
         "Timestamp":"2020-05-08T09:14:52.298Z",
         "Title":"Calculating the overlap of two normal distributions using monte carlo intergration",
         "link_to_resource":"http:\/\/rpsychologist.com\/calculating-the-overlap-of-two-normal-distributions-using-monte-carlo-integration",
-        "Creators":"Kristoffer Magnusson ",
+        "Creators":[
+            "Kristoffer Magnusson"
+        ],
         "Material_Type":[
             "Reading",
             "Student Guide",

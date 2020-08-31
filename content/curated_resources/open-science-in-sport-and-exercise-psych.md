@@ -3,7 +3,11 @@
         "Timestamp":"2020-06-08T18:20:48.021Z",
         "Title":"Open Science in Sport and Exercise Psychology: Review of Current Approaches and Considerations for Qualitative Inquiry",
         "link_to_resource":"https:\/\/doi.org\/10.1016\/j.psychsport.2017.12.010",
-        "Creators":"Tamminen, K.A. and Poucher, Z.A.",
+        "Creators":[
+            "Tamminen",
+            "K.A. and Poucher",
+            "Z.A."
+        ],
         "Material_Type":[
             "Primary Source",
             "Reading"

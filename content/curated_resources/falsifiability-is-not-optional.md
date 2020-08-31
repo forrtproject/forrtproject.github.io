@@ -3,7 +3,16 @@
         "Timestamp":"2020-05-31T18:59:38.336Z",
         "Title":"Falsifiability Is Not Optional",
         "link_to_resource":"https:\/\/doi.org\/10.1037\/pspi0000106",
-        "Creators":"LeBel, E. P., Berger, D., Campbell, L., & Loving, T. J. (2017). ",
+        "Creators":[
+            "LeBel",
+            "E. P.",
+            "Berger",
+            "D.",
+            "Campbell",
+            "L.",
+            "& Loving",
+            "T. J. (2017)."
+        ],
         "Material_Type":[
             "Primary Source",
             "Reading",

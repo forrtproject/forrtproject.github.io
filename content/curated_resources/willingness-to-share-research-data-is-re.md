@@ -3,7 +3,11 @@
         "Timestamp":"2020-05-23T02:57:51.044Z",
         "Title":"Willingness to share research data is related to the strength of the evidence and the quality of reporting of statistical results",
         "link_to_resource":"https:\/\/doi.org\/10.1371\/journal.pone.0026828",
-        "Creators":"Jelte M. Wicherts, Marjan Bakker, Dylan Molenaar",
+        "Creators":[
+            "Jelte M. Wicherts",
+            "Marjan Bakker",
+            "Dylan Molenaar"
+        ],
         "Material_Type":[
             "Primary Source",
             "Reading",

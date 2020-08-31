@@ -3,7 +3,9 @@
         "Timestamp":"2020-05-08T06:46:19.902Z",
         "Title":"Research method syllabi",
         "link_to_resource":"https:\/\/online225.psych.wisc.edu\/",
-        "Creators":"Morton-Ann  Gernsbacher",
+        "Creators":[
+            "Morton-Ann  Gernsbacher"
+        ],
         "Material_Type":[
             "Syllabus"
         ],

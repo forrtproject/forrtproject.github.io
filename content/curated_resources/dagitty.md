@@ -3,7 +3,10 @@
         "Timestamp":"2020-05-08T08:44:12.396Z",
         "Title":"DAGitty",
         "link_to_resource":"https:\/\/dagitty.net",
-        "Creators":"Johannes Texor, Maciej Li\u015bkiewicz and Benito van der Zander",
+        "Creators":[
+            "Johannes Texor",
+            "Maciej Li\u015bkiewicz and Benito van der Zander"
+        ],
         "Material_Type":[
             "Teaching\/Learning Strategy",
             "R code"

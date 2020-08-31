@@ -3,7 +3,11 @@
         "Timestamp":"2020-06-03T20:06:39.357Z",
         "Title":"Underreporting in Psychology Experiments: Evidence from a Study Registry. ",
         "link_to_resource":"https:\/\/doi.org\/10.1177\/1948550615598377",
-        "Creators":"Annie Franco , Neil Malhotra , and Gabor Simonovits",
+        "Creators":[
+            "Annie Franco",
+            "Neil Malhotra",
+            "and Gabor Simonovits"
+        ],
         "Material_Type":[
             "Primary Source",
             "Reading",

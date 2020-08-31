@@ -3,7 +3,9 @@
         "Timestamp":"2020-06-06T19:12:14.005Z",
         "Title":"Defining and distinguishing validity: Interpretations of score meaning and justifications of test use.",
         "link_to_resource":"https:\/\/doi.org\/10.1037\/a0026975",
-        "Creators":"G.J. Cizek",
+        "Creators":[
+            "G.J. Cizek"
+        ],
         "Material_Type":[
             "Primary Source",
             "Reading",

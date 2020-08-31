@@ -3,7 +3,14 @@
         "Timestamp":"2020-05-23T02:59:43.507Z",
         "Title":"Statistical Reporting Errors and Collaboration on Statistical Analyses in Psychological Science",
         "link_to_resource":"https:\/\/doi.org\/10.1371\/journal.pone.0114876",
-        "Creators":"Coosje L. S. Veldkamp, 1 , * Mich\u00e8le B. Nuijten,  Linda Dominguez-Alvarez,  Marcel A. L. M. van Assen, and Jelte M. Wicherts",
+        "Creators":[
+            "Coosje L. S. Veldkamp",
+            "1",
+            "* Mich\u00e8le B. Nuijten",
+            "Linda Dominguez-Alvarez",
+            "Marcel A. L. M. van Assen",
+            "and Jelte M. Wicherts"
+        ],
         "Material_Type":[
             "Primary Source",
             "Reading",

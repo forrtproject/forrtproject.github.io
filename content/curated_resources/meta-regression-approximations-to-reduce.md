@@ -3,7 +3,10 @@
         "Timestamp":"2020-06-03T20:16:57.085Z",
         "Title":"Meta\u2010regression approximations to reduce publication selection bias.",
         "link_to_resource":"https:\/\/doi.org\/10.1002\/jrsm.1095",
-        "Creators":"TD Stanley, H Doucouliagos",
+        "Creators":[
+            "TD Stanley",
+            "H Doucouliagos"
+        ],
         "Material_Type":[
             "Primary Source",
             "Reading",

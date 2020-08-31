@@ -3,7 +3,9 @@
         "Timestamp":"2020-06-05T18:18:35.045Z",
         "Title":"When power analyses based on pilot data are biased: Inaccurate effect size estimators and follow-up bias",
         "link_to_resource":"https:\/\/doi.org\/10.1016\/j.jesp.2017.09.004",
-        "Creators":"Casper Albers and Daniel Lakens",
+        "Creators":[
+            "Casper Albers and Daniel Lakens"
+        ],
         "Material_Type":[
             "Primary Source",
             "Reading",

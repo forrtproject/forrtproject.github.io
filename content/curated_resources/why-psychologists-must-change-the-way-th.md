@@ -3,7 +3,16 @@
         "Timestamp":"2020-05-31T18:27:55.576Z",
         "Title":"Why psychologists must change the way they analyze their data: The case of psi: Comment on Bem (2011).",
         "link_to_resource":"https:\/\/doi.org\/10.1037\/a0022790",
-        "Creators":"Wagenmakers, E.-J., Wetzels, R., Borsboom, D., & van der Maas, H. L. J.",
+        "Creators":[
+            "Wagenmakers",
+            "E.-J.",
+            "Wetzels",
+            "R.",
+            "Borsboom",
+            "D.",
+            "& van der Maas",
+            "H. L. J."
+        ],
         "Material_Type":[
             "Primary Source",
             "Reading",

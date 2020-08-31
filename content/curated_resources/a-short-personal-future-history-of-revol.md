@@ -3,7 +3,9 @@
         "Timestamp":"2020-05-31T18:40:20.303Z",
         "Title":"A Short (Personal) Future History of Revolution 2.0",
         "link_to_resource":"https:\/\/doi.org\/10.1177\/1745691615609918",
-        "Creators":"Barbara A. Spellman",
+        "Creators":[
+            "Barbara A. Spellman"
+        ],
         "Material_Type":[
             "Primary Source",
             "Reading",

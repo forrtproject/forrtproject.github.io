@@ -3,7 +3,9 @@
         "Timestamp":"2020-05-15T13:01:06.716Z",
         "Title":"The New Statistics: Meta-Analysis and Meta-Analytic Thinking (workshop Part 6)",
         "link_to_resource":"https:\/\/www.youtube.com\/watch?v=2CBIQDoHCKU",
-        "Creators":"Psychological Science\/Geoff Cumming",
+        "Creators":[
+            "Psychological Science\/Geoff Cumming"
+        ],
         "Material_Type":[
             "Student Guide",
             "Teaching\/Learning Strategy",

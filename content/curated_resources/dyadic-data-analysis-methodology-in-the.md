@@ -3,7 +3,11 @@
         "Timestamp":"2020-05-19T16:41:14.955Z",
         "Title":"Dyadic Data Analysis (Methodology in the Social Sciences)",
         "link_to_resource":"https:\/\/www.amazon.com\/Dyadic-Analysis-Methodology-Social-Sciences\/dp\/1572309865?ie=UTF8&psc=1&redirect=true&ref_=oh_aui_detailpage_o09_s00",
-        "Creators":"David A. Kenny, Deborah A. Kashy, William L. Cook",
+        "Creators":[
+            "David A. Kenny",
+            "Deborah A. Kashy",
+            "William L. Cook"
+        ],
         "Material_Type":[
             "Textbook"
         ],

@@ -3,7 +3,10 @@
         "Timestamp":"2020-05-28T13:37:27.140Z",
         "Title":"Effect Size Estimation in Neuroimaging. ",
         "link_to_resource":"https:\/\/doi.org\/10.1001\/jamapsychiatry.2016.3356",
-        "Creators":"Marianne C. Reddan, Martin A. Lindquist and Tor D. Wager",
+        "Creators":[
+            "Marianne C. Reddan",
+            "Martin A. Lindquist and Tor D. Wager"
+        ],
         "Material_Type":[
             "Primary Source",
             "Reading",

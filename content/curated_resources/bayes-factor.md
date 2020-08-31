@@ -3,7 +3,9 @@
         "Timestamp":"2020-05-22T18:55:08.142Z",
         "Title":"Bayes Factor",
         "link_to_resource":"https:\/\/rss.onlinelibrary.wiley.com\/doi\/epdf\/10.1111\/j.1740-9713.2006.00204.x",
-        "Creators":"O'Hagan",
+        "Creators":[
+            "O'Hagan"
+        ],
         "Material_Type":[
             "Primary Source",
             "Reading",
