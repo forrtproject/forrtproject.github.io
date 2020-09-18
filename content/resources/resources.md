@@ -3,7 +3,7 @@
 widget = "resource"  # See https://sourcethemes.com/academic/docs/page-builder/
 headless = true  # This file represents a page section.
 active = true  # Activate this widget? true/false
-weight = 10 # Order that this section will appear.
+weight = 20 # Order that this section will appear.
 
 title = "Curated resources"
 subtitle = ""
@@ -89,12 +89,12 @@ subtitle = ""
  # CSS class.
  css_class = ""
 +++
-There are more than 700 resources submitted so far in our database. We are currently curating a new and improved version that is compliant with OER Commons for greater findability, accessibility, interoperability, and reusability (FAIR) of these resources.
 
+There are more than 700 resources submitted so far in our database. We are currently curating a new and improved version that is compliant with OER Commons for greater findability, accessibility, interoperability, and reusability (FAIR) of these resources.
 
 <br>
 
-If you notice there is an educational resource, research article or pedagocial tool missing in our databased, please consider adding it [here on FORRT's resource submission form](https://docs.google.com/forms/d/e/1FAIpQLSdvMWSxzw3sGTTY1eYIs-nRZoy3ogQ_3Diel-PUDw1Z3pen6w/viewform).
+If you notice there is an educational resource, research article or pedagocial tool missing in our database, please consider adding it [here on FORRT's resource submission form](/resources/#form) or via [the direct link](https://docs.google.com/forms/d/e/1FAIpQLSfPceN5opEeauCBSvapoB-ADpH0IoT24XOLfQGaVEF0EJGFOA/viewform).
 
 ***
 
