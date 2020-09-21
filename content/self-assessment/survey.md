@@ -8,8 +8,8 @@ headless = true  # This file represents a page section.
 active = true  # Activate this widget? true/false
 weight = 20  # Order that this section will appear.
 
-title = "Missing a resource?"
-subtitle = "Fill out this survey to add it!"
+title = "Teaching and Mentoring Self-Assessment"
+subtitle = ""
 
 [design]
   # Choose how many columns the section has. Valid values: 1 or 2.
@@ -48,7 +48,11 @@ subtitle = "Fill out this survey to add it!"
  css_style = "font-size: 1.25rem;"
  
  # CSS class.
- css_class = "text-center"
+ css_class = ""
 +++
 
-{{< gform src="1FAIpQLSdvMWSxzw3sGTTY1eYIs-nRZoy3ogQ_3Diel-PUDw1Z3pen6w" width="100%" height="1600px" alt="Loading..." >}}
+{{% alert info %}} If the survey isn't rendered properly on this page, you can complete it on the [survey page on Qualtrics](https://maastrichtuniversity.eu.qualtrics.com/jfe/form/SV_9T7GA05HbqxiQTP). {{% /alert %}}
+
+<div class="embed-responsive embed-responsive-4by3">
+  <iframe class="embed-responsive-item" src="https://maastrichtuniversity.eu.qualtrics.com/jfe/form/SV_9T7GA05HbqxiQTP" allow="fullscreen"></iframe>
+</div>
