@@ -23,6 +23,8 @@ menu:
 
 **_130 Summaries+ of Open and Reproducible Literature_**
 
+[Download our PDF](OS_Literature_Summaries_by_FORRT.pdf)
+
 **Purpose**
 
 The purpose of these summaries is to reduce some of the burden on educators looking to incorporate open and reproducible research principles into their teaching. The below crowdsourced and community-curated resource aims to satisfy three of [FORRT’s Goals](https://forrt.org/about/mission/): 

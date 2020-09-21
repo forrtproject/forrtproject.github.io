@@ -19,10 +19,10 @@ weight: 2
 
 ---
 
-{{% alert info %}} 
+
 _The symbol_ ◈ _stands for non-peer-reviewed work._
 
 _The symbol_ ⌺ _stands for summaries on the topic of Diversity, Equity, and Inclusion._
-{{% /alert %}}
+
 
 {{< summaries >}}
