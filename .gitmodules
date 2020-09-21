@@ -1,6 +1,0 @@
-[submodule "themes/hugo-academic"]
-	path = themes/hugo-academic
-	url = https://github.com/gcushen/hugo-academic
-[submodule "themes/academic"]
-	path = themes/academic
-	url = https://github.com/gcushen/hugo-academic
