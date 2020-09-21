@@ -60,7 +60,7 @@ subtitle = """**Join the movement for better education**
 +++
 
 ## Contribute to the educational NEXUS
-We are asking for contributions to FORRT's educational NEXUS, an e-learning platform acting as a hub for community-driven initiatives and resources. As described in [FORRT's manuscript](/manuscript/), this platform - together with [FORRT Pedagogies](/pedagogies/) - will present the fullest opportunities FORRT has to offer. We welcome essential contributions such as sharing your course materials, volunteering for OS mentoring, taking part in [FORRT self-assessment](/survey/) educational tool, and submitting pedagogical reports of open and reproducible science courses.
+We are asking for contributions to FORRT's educational NEXUS, an e-learning platform acting as a hub for community-driven initiatives and resources. As described in [FORRT's manuscript](/manuscript/), this platform - together with [FORRT Pedagogies](/pedagogies/) - will present the fullest opportunities FORRT has to offer. We welcome essential contributions such as sharing your course materials, volunteering for OS mentoring, taking part in [FORRT self-assessment](/self-assessment/) educational tool, and submitting pedagogical reports of open and reproducible science courses.
 
 ## Contribute to the development of the website
 We will be particularly interested in contributions to this website, so if you (or your peers) are able to contribute to its development, you would be helping make FORRT a reality. See "Get in touch" below!
