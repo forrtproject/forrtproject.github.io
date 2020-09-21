@@ -101,8 +101,13 @@
   weight = 32
   parent = "nexus"
 [[main]]
+  name = "FORRT Summaries"
+  url = "/summaries"
+  weight = 33
+  parent = "nexus"
+[[main]]
   name = "Self-Assessment"
-  url = "/survey"
+  url = "/self-assessment"
   weight = 33
   parent = "nexus"
 
