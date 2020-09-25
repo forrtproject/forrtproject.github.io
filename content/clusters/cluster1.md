@@ -22,7 +22,7 @@ subtitle = ""
   #   Any HTML color name or Hex value is valid.
 
   # Background color.
-  color = "red"
+  # color = "red"
   # color = "#69b3a2" # greenish
   
   # Background gradient.
@@ -50,57 +50,179 @@ subtitle = ""
  # CSS class.
  css_class = ""
 +++
-Here is some text
+Select the cluster you're interested to read more about
 <ul class="nav nav-tabs" id="myTab" role="tablist">
   <li class="nav-item">
-    <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home"
-      aria-selected="true">Cluster 1</a>
+    <a class="nav-link active" id="cluster1-tab" data-toggle="tab" href="#cluster1" role="tab" aria-controls="home"
+      aria-selected="true">Reproducibility and replicability knowledge</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile"
-      aria-selected="false">Cluster 2</a>
+    <a class="nav-link" id="cluster2-tab" data-toggle="tab" href="#cluster2" role="tab" aria-controls="profile"
+      aria-selected="false">Conceptual and Statistical Knowledge</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact"
-      aria-selected="false">Cluster 3</a>
+    <a class="nav-link" id="cluster3-tab" data-toggle="tab" href="#cluster3" role="tab" aria-controls="contact"
+      aria-selected="false">Reproducible analyses</a>
   </li>
     <li class="nav-item">
-    <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact"
-      aria-selected="false">Cluster 4</a>
+    <a class="nav-link" id="cluster4-tab" data-toggle="tab" href="#cluster4" role="tab" aria-controls="contact"
+      aria-selected="false">Preregistration</a>
   </li>
     <li class="nav-item">
-    <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact"
-      aria-selected="false">Cluster 5</a>
+    <a class="nav-link" id="cluster5-tab" data-toggle="tab" href="#cluster5" role="tab" aria-controls="contact"
+      aria-selected="false">FAIR data and materials</a>
   </li>
     <li class="nav-item">
-    <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact"
-      aria-selected="false">Cluster 6</a>
+    <a class="nav-link" id="cluster6-tab" data-toggle="tab" href="#cluster6" role="tab" aria-controls="contact"
+      aria-selected="false">Replication research</a>
   </li>
     <li class="nav-item">
-    <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact"
-      aria-selected="false">Cluster 3</a>
+    <a class="nav-link" id="cluster7-tab" data-toggle="tab" href="#cluster7" role="tab" aria-controls="contact"
+      aria-selected="false">Academic Life and cluture</a>
   </li>
+
 </ul>
 <div class="tab-content" id="myTabContent">
-  <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">Raw denim you
-    probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth master
-    cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher retro
-    keffiyeh dreamcatcher synth. Cosby sweater eu banh mi, qui irure terry richardson ex squid. Aliquip
-    placeat salvia cillum iphone. Seitan aliquip quis cardigan american apparel, butcher voluptate nisi
-    qui.</div>
-  <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">Food truck fixie
-    locavore, accusamus mcsweeney's marfa nulla single-origin coffee squid. Exercitation +1 labore velit,
-    blog sartorial PBR leggings next level wes anderson artisan four loko farm-to-table craft beer twee.
-    Qui photo booth letterpress, commodo enim craft beer mlkshk aliquip jean shorts ullamco ad vinyl cillum
-    PBR. Homo nostrud organic, assumenda labore aesthetic magna delectus mollit. Keytar helvetica VHS
-    salvia yr, vero magna velit sapiente labore stumptown. Vegan fanny pack odio cillum wes anderson 8-bit,
-    sustainable jean shorts beard ut DIY ethical culpa terry richardson biodiesel. Art party scenester
-    stumptown, tumblr butcher vero sint qui sapiente accusamus tattooed echo park.</div>
-  <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">Etsy mixtape
-    wayfarers, ethical wes anderson tofu before they sold out mcsweeney's organic lomo retro fanny pack
-    lo-fi farm-to-table readymade. Messenger bag gentrify pitchfork tattooed craft beer, iphone skateboard
-    locavore carles etsy salvia banksy hoodie helvetica. DIY synth PBR banksy irony. Leggings gentrify
-    squid 8-bit cred pitchfork. Williamsburg banh mi whatever gluten-free, carles pitchfork biodiesel fixie
-    etsy retro mlkshk vice blog. Scenester cred you probably haven't heard of them, vinyl craft beer blog
-    stumptown. Pitchfork sustainable tofu synth chambray yr.</div>
+  
+  <div class="tab-pane fade show active" id="cluster1" role="tabpanel" aria-labelledby="cluster1-tab">
+  
+  <b>Reproducibility and replicability knowledge:</b> Attainment of a grounding in the motivations and theoretical underpinnings of reproducible and open research. Integration with field specific content (i.e., or grounded in the history of replicability).
+  
+  i. Reproducibility crisis and credibility revolution.
+  
+  ii. Exploratory and confirmatory analyses.
+  
+  iii. Questionable research practices (its ‘theory’), and prevalence.
+  
+  iv. Proposed improvement science initiatives on statistics, measurement, teaching, data sharing, code sharing, pre-registration, replication.
+  
+  v. Ongoing debates, (e.g. incentives for and against open science).
+  
+  vi. Ethical considerations for improved practices.
+
+For resources relating to Reproducibility and replicability knowledge, go to our [FORRT resources](/resources/)
+
+
+  </div>
+  
+  <div class="tab-pane fade" id="cluster2" role="tabpanel" aria-labelledby="cluster2-tab">
+  
+  <b>Conceptual and Statistical Knowledge:</b> Enacting this principle indicates that students attain a grounding in fundamental statistics, measurement, and its implications.
+  
+  i. The logic of null hypothesis testing, p-values, Type I and II errors (and when and why they might happen).
+
+  ii. Limitations and benefits of NHST, Bayesian and Likelihood approaches.
+  
+  iii. Effect sizes, Statistical power, Confidence Intervals.
+
+  iv. Research Design, Sample Methods, and its implications for inferences.
+
+  v. Questionable research (QRPs) & measurement practices (QMPs).
+
+  vi. Understand the relationship between all of the above.
+  
+  For resources relating to Conceptual and Statistical Knowledge, go to our [FORRT resources](/resources/)
+
+  </div>
+  
+  <div class="tab-pane fade" id="cluster3" role="tabpanel" aria-labelledby="cluster3-tab">
+  
+  <b>Reproducible analyses:</b> Reproducible analyses allow the checking of analytic pipelines and facilitate error correction. Enacting this principle requires students to move towards transparent and scripted analysis practices.
+  
+  i. Strengths of reproducible pipelines.
+  
+  ii. Scripted analyses compared with GUI.
+  
+  iii. Data wrangling
+  iv. Programming reproducible data analyses.
+  
+  v. Open source and free software.
+  
+  vi. Tools to check yourself and others; statcheck, GRIM, and SPRITE
+  
+  For resources relating to Reproducible analyses, go to our [FORRT resources](/resources/)
+
+  </div>
+  
+  <div class="tab-pane fade" id="cluster4" role="tabpanel" aria-labelledby="cluster4-tab">
+  
+  <b>Preregistration:</b> Preregistration entails laying out a complete methodology and analysis before a study has been undertaken. This facilitates transparency and removes several potential QRPs.
+  
+  i. Purpose of preregistration - distinguishing exploratory and confirmatory analyses, transparency measures
+  
+  ii. Preregistration and registered reports - strengths and differences
+  
+  iii. When can you preregister? Can you pre-register secondary data?
+
+  iv. Writing a preregistration.
+
+  v. Comparing a preregistration to a final study manuscript.
+
+  vi. Conducting a preregistered study.
+
+  For resources relating to Preregistration, go to our [FORRT resources](/resources/)
+  
+  </div>
+
+  <div class="tab-pane fade" id="cluster5" role="tabpanel" aria-labelledby="cluster5-tab">
+  
+  <b>FAIR data and materials:</b> Enacting this principle indicates that students have attained a grounding in open data and materials in both; using and sharing.
+  
+  i. Knowledge of traditional publication models. Open access publishing, preprints
+  
+  ii. Reasons to share; for science, and for one’s own practices
+
+  iii. Repositories; e.g. OSF, FigShare, GitHub
+
+  iv. Accessing/sharing others data, code, and materials
+
+  v. Ethical considerations
+
+  vi Examples and consequences of accessing un/open data
+
+  For resources relating to FAIR data and materials, go to our [FORRT resources](/resources/)
+
+  </div>
+
+  <div class="tab-pane fade" id="cluster6" role="tabpanel" aria-labelledby="cluster6-tab">
+  
+  <b>Replication research: </b> Replication research takes a variety of forms, each with a different purpose and contribution. Reproducible science requires replication research. 
+
+  i. Purposes of replication attempts - what is a ‘failed’ replication?
+
+  ii. Large scale replication attempts
+
+  iii. Distinguishing conceptual and direct replications
+
+  iv. Conducting replication studies; challenges, limitations, and comparisons with the original study
+
+  v. Registered Replication Reports
+
+  vi. The politics of replicating famous studies
+
+  For resources relating to Replication research, go to our [FORRT resources](/resources/)
+
+
+  </div>
+  
+  <div class="tab-pane fade" id="cluster7" role="tabpanel" aria-labelledby="cluster7-tab">
+  
+  <b>Academic life and culture: </b> how individuals, teams, institutions, and academic culture work together to promote or hinder openness and transparency. 
+
+  i. Citizen science
+
+  ii. Team Science
+
+  iii. Adversarial collaboration
+
+  iv. The structure of academia
+
+  v. Incentives in academia
+
+  vi. Types of academic, non-academic, and alt-academic positions
+  
+  For resources relating to Academic life and culture, go to our [FORRT resources](/resources/)
+
+  </div>
+
 </div>
