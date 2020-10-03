@@ -91,7 +91,7 @@
   weight = 30
   identifier = "nexus"
 [[main]]
-  name = "Clusters"
+  name = "FORRT Clusters"
   url = "/clusters"
   weight = 31
   parent = "nexus"
@@ -109,6 +109,11 @@
   name = "Self-Assessment"
   url = "/self-assessment"
   weight = 33
+  parent = "nexus"
+[[main]]
+  name = "Educators' Corner"
+  url = "/educators-corner"
+  weight = 35
   parent = "nexus"
 
 [[main]]
