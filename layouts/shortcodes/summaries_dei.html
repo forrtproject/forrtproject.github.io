@@ -1,0 +1,30 @@
+{{ $summaries := getJSON "data/summaries.json" }}
+{{ range $summaries}}
+{{ if in .Title "⌺" }}
+
+<h2 id="{{.Id}}">{{ .Title | markdownify }}</h2>
+<h3> Main Takeaways: </h3>
+<ul>
+    {{ range .Main_Takeaways }}
+    <li>{{.}}</li>
+    {{end}}
+</ul>
+
+{{ with .Quote }}
+<h3>Quote</h3>
+    <blockquote class="blockquote font-italic" style="font-size:1rem">{{ . }}</blockquote>
+{{ end }}
+<h3>Abstract</h3> {{ .Abstract }}
+<h3>APA Style Reference</h3>
+<p>{{ .Reference }}</p>
+<h3>You may also be interested in</h3>
+<ul>
+    {{ range .You_may_also_be_interested_in }}
+    <li><a href="{{.href}}" class="">{{.Relevant_ref}}</a>
+    {{end}}
+</ul>
+<br>
+<hr>
+<br>
+
+{{end}} {{end}}

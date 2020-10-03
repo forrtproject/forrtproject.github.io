@@ -101,7 +101,7 @@
   weight = 32
   parent = "nexus"
 [[main]]
-  name = "O&R Science Summaries"
+  name = "Open Science Summaries"
   url = "/summaries"
   weight = 33
   parent = "nexus"
