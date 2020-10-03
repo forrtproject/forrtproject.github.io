@@ -5,7 +5,7 @@
 
 widget = "blank"  # See https://sourcethemes.com/academic/docs/page-builder/
 headless = true  # This file represents a page section.
-active = false  # Activate this widget? true/false
+active = true  # Activate this widget? true/false
 weight = 10  # Order that this section will appear.
 
 title = "Clusters 2: dagdsgsdg"
@@ -50,44 +50,78 @@ subtitle = ""
  # CSS class.
  css_class = ""
 +++
-Here is some text
+
+### Spoilers
+
+Add a spoiler to a page to reveal text, such as an answer to a question, after a button is clicked.
+
+```markdown
+{{</* spoiler text="Click to view the spoiler" */>}}
+You found me!
+{{</* /spoiler */>}}
+```
+
+renders as
+
+{{< spoiler text="Click to view the spoiler" >}} You found me! {{< /spoiler >}}
+{{< spoiler text="oups" >}} You found me! {{< /spoiler >}}
+
+
+Attainment of foundational knowledge on the emergence of and importance of reproducible and open research. Integration with field specific content (i.e., grounded in the history of replicability)
+
 <ul class="nav nav-tabs" id="myTab" role="tablist">
   <li class="nav-item">
     <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home"
-      aria-selected="true">Cluster 1</a>
+      aria-selected="true">History</a>
   </li>
   <li class="nav-item">
     <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile"
-      aria-selected="false">Cluster 2</a>
+      aria-selected="false">Exploratory and confirmatory analyses</a>
   </li>
   <li class="nav-item">
     <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact"
-      aria-selected="false">Cluster 3</a>
+      aria-selected="false">Questionable research practices</a>
   </li>
     <li class="nav-item">
     <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact"
-      aria-selected="false">Cluster 4</a>
+      aria-selected="false">Proposed improvement science initiatives on statistics, measurement, teaching, data sharing, code sharing, pre-registration, replication</a>
   </li>
     <li class="nav-item">
     <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact"
-      aria-selected="false">Cluster 5</a>
+      aria-selected="false">Ongoing debates (e.g., incentives for and against open science)</a>
   </li>
     <li class="nav-item">
     <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact"
-      aria-selected="false">Cluster 6</a>
-  </li>
-    <li class="nav-item">
-    <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact"
-      aria-selected="false">Cluster 3</a>
+      aria-selected="false">Ethical considerations for improved practices</a>
   </li>
 </ul>
 <div class="tab-content" id="myTabContent">
-  <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">Raw denim you
-    probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth master
-    cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher retro
-    keffiyeh dreamcatcher synth. Cosby sweater eu banh mi, qui irure terry richardson ex squid. Aliquip
-    placeat salvia cillum iphone. Seitan aliquip quis cardigan american apparel, butcher voluptate nisi
-    qui.</div>
+  <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+
+## History of the reproducibility crisis & credibility revolution
+
+  * Baker, M. (2016). 1,500 scientists lift the lid on reproducibility. Nature News, 533(7604), 452. doi: https://doi.org/10.1038/533452a
+
+* Baker, M. (2016). Is there a reproducibility crisis? Nature, 533(7604), 3–5. doi: https://doi.org/10.1038/d41586-019-00067-3
+
+* Chambers, C. (2017). The seven deadly sins of psychology: A manifesto for reforming the culture of scientific practice. Princeton University Press.
+http://dx.doi.org/10.1515/9781400884940
+
+* Crüwell, S., van Doorn, J., Etz, A., Makel, M. C., Moshontz, H., Niebaum, J., … SchulteMecklenbeck, M. (2018, November 16). 7 easy steps to open science: An annotated reading list. https://doi.org/10.31234/osf.io/cfzyx
+
+* Edwards, M. A., & Roy, S. (2016). Academic research in the 21st century: Maintaining scientific integrity in a climate of perverse incentives and hypercompetition. Environmental Engineering Science, 34(1), 51-61. DOI: https://doi.org/10.1089/ees.2016.0223
+
+Merton, R., K. (1968). The Matthew effect in science. Science, 159(3810), 56-63.
+10.1126/science.159.3810.56
+
+Merton, R., K. (1988). The Matthew Effect in Science, II: Cumulative Advantage and the Symbolism of Intellectual Property. ISIS, 79(4), 606-623. 10.1086/354848
+
+Munafo, M. R., et al. (2017). A manifesto for reproducible science. Nature Human Behaviour, 1, 0021. DOI: 10.0138/s41562-016-0021
+
+Vazire, S. (2018). Implications of the Credibility Revolution for Productivity, Creativity, and Progress. Perspectives on Psychological Science, 13(4), 411-417.
+https://doi.org/10.1177/1745691617751884
+</div>
+
   <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">Food truck fixie
     locavore, accusamus mcsweeney's marfa nulla single-origin coffee squid. Exercitation +1 labore velit,
     blog sartorial PBR leggings next level wes anderson artisan four loko farm-to-table craft beer twee.
