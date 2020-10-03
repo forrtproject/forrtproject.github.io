@@ -5,16 +5,20 @@
     <div class="col-12 col-md-3 col-xl-2 docs-sidebar">
       {{ partial "docs_sidebar" . }}
     </div>
-
+    
     {{ if .Params.toc }}
     <div class="d-none d-xl-block col-xl-3 docs-toc">
       <ul class="nav toc-top">
         <li><a href="#" id="back_to_top" class="docs-toc-title">{{ i18n "on_this_page" }}</a></li>
       </ul>
-
-      {{ partial "toc" . }}
-
+      
+      {{ if eq .Title "Diversity, Equity, & Inclusion"}}
+      {{ partial "toc_dei" . }}
       {{ partial "docs_toc_foot" . }}
+      {{ else}}
+      {{ partial "toc" . }}
+      {{ partial "docs_toc_foot" . }}
+      {{end}}
     </div>
     {{ end }}
 
@@ -47,7 +51,6 @@
         </div>
 
       </article>
-
       {{ partial "site_footer" . }}
 
     </main>
