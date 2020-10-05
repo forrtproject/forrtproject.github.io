@@ -5,11 +5,11 @@
 
 widget = "blank"  # See https://sourcethemes.com/academic/docs/page-builder/
 headless = true  # This file represents a page section.
-active = false  # Activate this widget? true/false
+active = true  # Activate this widget? true/false
 weight = 20  # Order that this section will appear.
 
 title = "Missing a resource?"
-subtitle = "Fill out this survey to add it!"
+subtitle = "Fill out the form below or here is [the direct link](https://docs.google.com/forms/d/e/1FAIpQLSfPceN5opEeauCBSvapoB-ADpH0IoT24XOLfQGaVEF0EJGFOA/viewform) to open the Google form in a new window"
 
 [design]
   # Choose how many columns the section has. Valid values: 1 or 2.
@@ -51,4 +51,5 @@ subtitle = "Fill out this survey to add it!"
  css_class = "text-center"
 +++
 
-{{< gform src="1FAIpQLSeKGYgS6erRr41RZGx4VRiVuYdimWLPJmhguI3FrAHvOsLonQ" width="100%" height="1600px" alt="Loading..." >}}
+
+{{< gform src="1FAIpQLSfPceN5opEeauCBSvapoB-ADpH0IoT24XOLfQGaVEF0EJGFOA" width="100%" height="1600px" alt="Loading..." >}}
