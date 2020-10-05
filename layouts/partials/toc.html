@@ -1,0 +1,9 @@
+      {{ $summaries := getJSON "data/summaries.json" }}
+
+      <nav id="TableOfContents" class="nav flex-column">
+        <ul>
+          {{ range $summaries }}
+          <li class="nav-item"><a href="#{{.Id}}" class="nav-link">{{ .Title }}</a></li>
+          {{end}}
+        </ul>
+      </nav>

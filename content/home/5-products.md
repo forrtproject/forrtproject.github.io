@@ -17,29 +17,31 @@ subtitle = "---"
 # Refer to https://axesslab.com/alt-texts/ for stellar examples of alt texts.
 
 [[featurealt]]
-  # icon = "slack"
-  # icon_pack = "fab"
-  # iconalttext = "Slack"
-  img = "compose.png" #icon OR img
-  imgalttext = "Big pencil above a sheet. Illustration." 
-  imgside = "left"
-  buttonurl = "manuscript/"
-  buttondescr = "Read our manuscript"
-  name = "Manuscript"
-  description = "FORRT’s team wrote a manuscript explaining why open and reproducible tenets should be incorporated in the teaching and mentoring of prototypical subject matters.  In line with principles enshrined in FORRT, this manuscript is an open online contributorship project. The work of all contributors are valued and will be formally recognized. With this, we hope to expand the scope and diversity of FORRT’s mission and its team."
-  
-[[featurealt]]
   # icon = "users"
   # icon_pack = "fas"
   # iconalttext = "Users"
   img = "book_dipl.png"
   imgalttext = "A graduation hat next to a diploma on top of a thesis book. Illustration." 
-  imgside = "right"
-  buttonurl = "nexus/1/"
+  imgside = "left"
+  buttonurl = "nexus/"
   buttondescr = "View our educational nexus"
   name = "Educational Nexus"
-  description = "The educational NEXUS is a platform for teachers to Find, Access, Interoperate, and Reuse (FAIR) resources and teaching materials. The pedagogical content of all resources will be maximised to facilitate adaptation and reuse. We welcome new contributions to help build diversity in the collated resources. FORRT strongly advocates for these resources being used, cited and recognized."  
+  description = "The educational NEXUS is a e-learning platform for educators teachers to Find, Access, Interoperate, and Reuse (FAIR) resources, and teaching and mentoring materials. The pedagogical content of all resources will be maximised to facilitate adaptation and reuse. We welcome new contributions to help build diversity in the collated resources. FORRT strongly advocates for these resources being used, cited and recognized."  
   
+  
+  [[featurealt]]
+  # icon = "slack"
+  # icon_pack = "fab"
+  # iconalttext = "Slack"
+  img = "compose.png" #icon OR img
+  imgalttext = "Big pencil above a sheet of paper. Illustration." 
+  imgside = "right"
+  buttonurl = "manuscript/"
+  buttondescr = "Read our manuscript"
+  name = "Manuscript"
+  description = "FORRT’s team wrote a manuscript explaining why open and reproducible tenets should be incorporated in the teaching and mentoring of prototypical subject matters.  In line with principles enshrined in FORRT, this manuscript is an open online contributorship project. The work of all contributors are valued and will be formally recognized. With this, we hope to expand the scope and diversity of FORRT’s mission and its team."
+  
+
 [[featurealt]]
   # icon = "handshake"
   # icon_pack = "fas"

@@ -26,7 +26,7 @@
   url = "about/mission/"  # The URL of your page.
   weight = 11  # The position of your page in the menu.
   parent = "about"
-  
+
 [[main]]
   name = "Get Involved"  # A link title for your page.
   url = "/about/get-involved"  # The URL of your page.
@@ -87,23 +87,43 @@
 
 [[main]]
   name = "Educational NEXUS"
-  url = ""
+  url = "/nexus"
   weight = 30
   identifier = "nexus"
 [[main]]
-  name = "Clusters"
-  url = "/nexus/1/"
+  name = "About Nexus"
+  url = "/nexus"
   weight = 31
+  parent = "nexus"
+[[main]]
+  name = "FORRT Clusters"
+  url = "/clusters"
+  weight = 32
   parent = "nexus"
 [[main]]
   name = "Resources"
   url = "/resources"
-  weight = 32
+  weight = 33
+  parent = "nexus"
+[[main]]
+  name = "Open Science Summaries"
+  url = "/summaries"
+  weight = 34
   parent = "nexus"
 [[main]]
   name = "Self-Assessment"
-  url = "/survey"
-  weight = 33
+  url = "/self-assessment"
+  weight = 35
+  parent = "nexus"
+[[main]]
+  name = "Educators' Corner"
+  url = "/educators-corner"
+  weight = 36
+  parent = "nexus"
+[[main]]
+  name = "Towards Social Justice"
+  url = "/dei"
+  weight = 37
   parent = "nexus"
 
 [[main]]
@@ -115,14 +135,14 @@
 #   name = "Public"
 #   url = "/pedagogies/public/"
 #   weight = 41
-#   parent = "pedagogies"  
+#   parent = "pedagogies"
 # [[main]]
 #   name = "Undergraduate"
 #   url = "/pedagogies/undergraduate/"
 #   weight = 42
-#   parent = "pedagogies"  
+#   parent = "pedagogies"
 # [[main]]
 #   name = "Graduate"
 #   url = "/pedagogies/graduate"
 #   weight = 43
-#   parent = "pedagogies"  
+#   parent = "pedagogies"
