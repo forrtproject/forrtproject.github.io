@@ -21,7 +21,7 @@ menu:
     weight: 1
 ---
 
-**_130 Summaries+ of Open and Reproducible Literature_**
+**_130+ Summaries of Open and Reproducible Literature_**
 
 [Download our PDF](OS_Literature_Summaries_by_FORRT.pdf)
 

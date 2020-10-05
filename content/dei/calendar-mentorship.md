@@ -1,15 +1,15 @@
 +++
-# A Demo section created with the Blank widget.
 # Any elements can be added in the body: https://sourcethemes.com/academic/docs/writing-markdown-latex/
 # Add more sections by duplicating this file and customizing to your requirements.
 
 widget = "blank"  # See https://sourcethemes.com/academic/docs/page-builder/
 headless = true  # This file represents a page section.
 active = true  # Activate this widget? true/false
-weight = 20  # Order that this section will appear.
+weight = 90  # Order that this section will appear.
 
-title = "For mentees:"
-subtitle = "Fill out the form below or here is [the direct link](https://docs.google.com/forms/d/e/1FAIpQLSfPceN5opEeauCBSvapoB-ADpH0IoT24XOLfQGaVEF0EJGFOA/viewform) to open the Google form in a new window"
+title = "Community calendar<br><br>"
+subtitle = ""
+classtitle = "text-center"
 
 [design]
   # Choose how many columns the section has. Valid values: 1 or 2.
@@ -22,7 +22,8 @@ subtitle = "Fill out the form below or here is [the direct link](https://docs.go
   #   Any HTML color name or Hex value is valid.
 
   # Background color.
-  color = "#69b3a2" # greenish
+  # color = "#fefdf6"
+  # color = "#B3A269" # yellowish
   
   # Background gradient.
   # gradient_start = "DeepSkyBlue"
@@ -40,14 +41,19 @@ subtitle = "Fill out the form below or here is [the direct link](https://docs.go
 
 [design.spacing]
   # Customize the section spacing. Order is top, right, bottom, left.
-  padding = ["60px", "0", "60px", "0"]
+  padding = ["100px", "0", "60px", "0"]
+
 
 [advanced]
  # Custom CSS. 
- css_style = "font-size: 1.25rem;"
+ css_style = ""
  
  # CSS class.
- css_class = "text-center"
-+++
+ css_class = ""
 
-{{< gform src="1FAIpQLSfY6yQ2givfg1TBoCuh_55HrUE7YsEjKAIj0-4MidII_3LSEg" width="100%" height="500px" alt="Loading..." >}}
++++
+<br>
+
+Below you find FORRT's community calendar containing scheduled events.
+
+<iframe src="https://calendar.google.com/calendar/embed?src=forrtproject%40gmail.com&ctz=Europe%2FBerlin" style="border: 0" width="100%" height="600" frameborder="0" scrolling="no"></iframe>

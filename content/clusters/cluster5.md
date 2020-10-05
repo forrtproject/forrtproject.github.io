@@ -5,10 +5,10 @@
 
 widget = "blank"  # See https://sourcethemes.com/academic/docs/page-builder/
 headless = true  # This file represents a page section.
-active = false  # Activate this widget? true/false
+active = true  # Activate this widget? true/false
 weight = 10  # Order that this section will appear.
 
-title = "Clusters 2: dagdsgsdg"
+title = "Cluster 5: Preregistration"
 subtitle = ""
 
 [design]
@@ -22,9 +22,10 @@ subtitle = ""
   #   Any HTML color name or Hex value is valid.
 
   # Background color.
-  color = "Green"
-  # color = "#69b3a2" # greenish
-  
+  # color = "red"
+  # color = "#C4DCE1" 
+   color = "#b6cac8"
+
   # Background gradient.
   # gradient_start = "DeepSkyBlue"
   # gradient_end = "SkyBlue"
@@ -45,62 +46,136 @@ subtitle = ""
 
 [advanced]
  # Custom CSS. 
- css_style = "font-size: 1.25rem;"
+ css_style = "font-size: 1rem;"
  
  # CSS class.
  css_class = ""
 +++
-Here is some text
+
+### Description
+
+Preregistration entails laying out a complete methodology and analysis before a study has been undertaken. This facilitates transparency and removes several potential QRPs. When teaching, students should attain knowledge regarding what a pre-registration entails, why it is important to remove potential QRPs and how to address deviations from preregistered plans.
+There are 6 sub-clusters which aim to further parse the learning and teaching process:
+
+* Purpose of preregistration.
+* Preregistration and registered reports - strengths and differences.
+* When can you preregister? Can you pre-register secondary data?
+* Understanding the types of preregistration and writing one.
+* Comparing a preregistration to a final study manuscript.
+* Conducting a preregistered study.
+
+<br>
+
 <ul class="nav nav-tabs" id="myTab" role="tablist">
   <li class="nav-item">
-    <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home"
-      aria-selected="true">Cluster 1</a>
+    <a class="nav-link active" id="C5S1-tab" data-toggle="tab" href="#C5S1" role="tab" aria-controls="C5S1"
+      aria-selected="true">Purpose</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile"
-      aria-selected="false">Cluster 2</a>
+    <a class="nav-link" id="C5S2-tab" data-toggle="tab" href="#C5S2" role="tab" aria-controls="C5S2"
+      aria-selected="false">Registered Reports</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact"
-      aria-selected="false">Cluster 3</a>
+    <a class="nav-link" id="C5S3-tab" data-toggle="tab" href="#C5S3" role="tab" aria-controls="C5S3"
+      aria-selected="false">Secondary data</a>
   </li>
     <li class="nav-item">
-    <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact"
-      aria-selected="false">Cluster 4</a>
+    <a class="nav-link" id="C5S4-tab" data-toggle="tab" href="#C5S4" role="tab" aria-controls="C5S4"
+      aria-selected="false">Types & How-to</a>
   </li>
     <li class="nav-item">
-    <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact"
-      aria-selected="false">Cluster 5</a>
+    <a class="nav-link" id="C5S5-tab" data-toggle="tab" href="#C5S5" role="tab" aria-controls="C5S5"
+      aria-selected="false">Comparing</a>
   </li>
     <li class="nav-item">
-    <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact"
-      aria-selected="false">Cluster 6</a>
-  </li>
-    <li class="nav-item">
-    <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact"
-      aria-selected="false">Cluster 3</a>
+    <a class="nav-link" id="C5S6-tab" data-toggle="tab" href="#C5S6" role="tab" aria-controls="C5S6"
+      aria-selected="false">Conducting</a>
   </li>
 </ul>
+
 <div class="tab-content" id="myTabContent">
-  <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">Raw denim you
-    probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth master
-    cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher retro
-    keffiyeh dreamcatcher synth. Cosby sweater eu banh mi, qui irure terry richardson ex squid. Aliquip
-    placeat salvia cillum iphone. Seitan aliquip quis cardigan american apparel, butcher voluptate nisi
-    qui.</div>
-  <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">Food truck fixie
-    locavore, accusamus mcsweeney's marfa nulla single-origin coffee squid. Exercitation +1 labore velit,
-    blog sartorial PBR leggings next level wes anderson artisan four loko farm-to-table craft beer twee.
-    Qui photo booth letterpress, commodo enim craft beer mlkshk aliquip jean shorts ullamco ad vinyl cillum
-    PBR. Homo nostrud organic, assumenda labore aesthetic magna delectus mollit. Keytar helvetica VHS
-    salvia yr, vero magna velit sapiente labore stumptown. Vegan fanny pack odio cillum wes anderson 8-bit,
-    sustainable jean shorts beard ut DIY ethical culpa terry richardson biodiesel. Art party scenester
-    stumptown, tumblr butcher vero sint qui sapiente accusamus tattooed echo park.</div>
-  <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">Etsy mixtape
-    wayfarers, ethical wes anderson tofu before they sold out mcsweeney's organic lomo retro fanny pack
-    lo-fi farm-to-table readymade. Messenger bag gentrify pitchfork tattooed craft beer, iphone skateboard
-    locavore carles etsy salvia banksy hoodie helvetica. DIY synth PBR banksy irony. Leggings gentrify
-    squid 8-bit cred pitchfork. Williamsburg banh mi whatever gluten-free, carles pitchfork biodiesel fixie
-    etsy retro mlkshk vice blog. Scenester cred you probably haven't heard of them, vinyl craft beer blog
-    stumptown. Pitchfork sustainable tofu synth chambray yr.</div>
+  <div class="tab-pane fade show active" id="C5S1" role="tabpanel" aria-labelledby="C5S1-tab"><br>
+
+## Purpose of preregistration 
+
+***Distinguishing exploratory and confirmatory analyses, transparency measures.***
+
+* Dal-Ré, R., Ioannidis, J. P., Bracken, M. B., Buffler, P. A., Chan, A.-W., Franco, E. L., La Vecchia, C., Weiderpass, E. (2014). Making prospective registration of observational research a reality. Science translational medicine, 6(224), 224cm1.  DOI: https://doi.org/10.1126/scitranslmed.3007513
+
+* Nosek, B. A., & Lakens, D. (2014). Registered reports: A method to increase the credibility of published results. Social Psychology, 45, 137–141.
+
+* Lin, W., & Green, D. P. (2016). Standard operating procedures: A safety net for pre-analysis plans. PS: Political Science & Politics, 49(3), 495-500.
+
+* Nosek, B. A., Ebersole, C. R., DeHaven, A., & Mellor, D. (2018). The Preregistration Revolution. Proceedings of National Academy Sciences, 115(11), 2600-2606. https://doi.org/10.1073/pnas.1708274114 
+
+* Wicherts, J. M., Veldkamp, C. L., Augusteijn, H. E., Bakker, M., Van Aert, R., & Van Assen, M. A. (2016). Degrees of freedom in planning, running, analyzing, and reporting psychological studies: A checklist to avoid p-hacking. Frontiers in Psychology, 7, 1832.doi: 10.3389/fpsyg.2016.01832
+
+* Nuzzo, R. (2015). How scientists fool themselves — and how they can stop. Nature, 526, 182–185.
+
+* Wagenmakers, E. J., & Dutilh, G. (2016). Seven selfish reasons for preregistration. APS Observer, 29(9).
+
+<br>
+</div>
+  <div class="tab-pane fade" id="C5S2" role="tabpanel" aria-labelledby="C5S2-tab"><br>
+
+## Preregistration and registered reports - strengths and differences
+
+***OSC, CREP, ManyLabs, etc.**
+
+* Chambers, C. D. (2013). Registered reports: A new publishing initiative at Cortex. Cortex, 49(3), 609-610. https://doi.org/10.1016/j.cortex.2012.12.016
+
+* Chambers, C. D., Feredoes, E., Muthukumaraswamy, S. D., & Etchells, P. (2014). Instead of “playing the game” it is time to change the rules: Registered Reports at AIMS Neuroscience and beyond. AIMS Neuroscience, 1(1), 4–17. DOI: 10.3934/Neuroscience2014.1.4
+
+* Chambers, C.D., Dienes, Z., McIntosh, R.D., Rotshtein, P., & Willmes, K. (2015). Registered Reports: Realigning incentives in scientific publishing. Cortex, 66, A1-2. DOI: 10.1016/j.cortex.2015.03.022
+
+<br>
+</div>
+  <div class="tab-pane fade" id="C5S3" role="tabpanel" aria-labelledby="C5S3-tab"><br>
+
+## When can you preregister? Can you pre-register secondary data?
+
+* Chambers, C.D., Dienes, Z., McIntosh, R.D., Rotshtein, P., & Willmes, K. (2015). Registered Reports: Realigning incentives in scientific publishing. Cortex, 66, A1-2. DOI: https://doi.org/10.1016/j.cortex.2015.03.022
+
+* Haven, Tamarinde., L. & Van Grootel, Leonie. (2019). Preregistering qualitative research. Accountability in Research, 26(3), 229-244., DOI: https://doi.org/10.1080/08989621.2019.1580147
+
+* Kirtley, O. J., Lafit, G., Achterhof, R., Hiekkaranta, A. P., & Myin-Germeys, I. (2019, April 10). Making the black box transparent: A pre-registration template for studies using Experience Sampling Methods (ESM). https://doi.org/10.31234/osf.io/seyq7
+
+* Mertens, G., & Krypotos, A. (2019, February 20). Preregistration of secondary analyses. https://doi.org/10.31234/osf.io/ph4q7
+
+<br>
+</div>
+  <div class="tab-pane fade" id="C5S4" role="tabpanel" aria-labelledby="C5S4-tab"><br>
+
+## Understanding the types of preregistration and writing one.
+
+* Nosek, B. A., Ebersole, C. R., DeHaven, A. C., & Mellor, D. T. (2018). The preregistration revolution. Proceedings of the National Academy of Sciences, 115(11), 2600-2606. https://doi.org/10.1073/pnas.1708274114
+
+* Mertens, G., & Krypotos, A. (2019, February 20). Preregistration of secondary analyses. https://doi.org/10.31234/osf.io/ph4q7
+
+* COS: [What is Preregistration?](https://cos.io/prereg/)
+
+* COS: [10 Tips for Making a Great Preregistration](https://cos.io/blog/10-preregistration-tips/)
+
+* COS: [8 Answers About Registered Reports and Research Preregistration](https://www.wiley.com/network/researchers/being-a-peer-reviewer/8-answers-about-registered-reports-research-preregistration-and-why-both-are-important)
+
+<br>
+</div>
+  <div class="tab-pane fade" id="C5S5" role="tabpanel" aria-labelledby="C5S5-tab"><br>
+
+## Comparing a preregistration to a final study manuscript.
+
+* [Wiley's Reviewing Registered Reports](https://authorservices.wiley.com/Reviewers/journal-reviewers/how-to-perform-a-peer-review/reviewing-registered-reports.html)
+
+<br>
+</div>
+  <div class="tab-pane fade" id="C5S6" role="tabpanel" aria-labelledby="C5S6-tab"><br>
+
+## Conducting a preregistered study.
+
+* Nosek, B. A., Ebersole, C. R., DeHaven, A., & Mellor, D. (2018). The Preregistration Revolution. PNAS, 115(11), 2600-2606. https://doi.org/10.1073/pnas.1708274114
+
+* COS: [One Preregistration to Rule Them All?](https://www.cos.io/blog/one-preregistration-rule-them-all)
+
+<br>
+</div>
 </div>

@@ -9,7 +9,7 @@ active = true  # Activate this widget? true/false
 weight = 20  # Order that this section will appear.
 
 title = "For mentors"
-subtitle = "Fill out the form below or here is [the direct link](https://docs.google.com/forms/d/e/1FAIpQLSfPceN5opEeauCBSvapoB-ADpH0IoT24XOLfQGaVEF0EJGFOA/viewform) to open the Google form in a new window"
+subtitle = "Fill out the form below or here is ***[the direct link](https://docs.google.com/forms/d/e/1FAIpQLSfPceN5opEeauCBSvapoB-ADpH0IoT24XOLfQGaVEF0EJGFOA/viewform)*** to open the Google form in a new window"
 
 [design]
   # Choose how many columns the section has. Valid values: 1 or 2.
@@ -22,7 +22,7 @@ subtitle = "Fill out the form below or here is [the direct link](https://docs.go
   #   Any HTML color name or Hex value is valid.
 
   # Background color.
-  color = "#fff"
+  color = "#E1C4CD"
   # color = "#69b3a2" # greenish
   
   # Background gradient.
