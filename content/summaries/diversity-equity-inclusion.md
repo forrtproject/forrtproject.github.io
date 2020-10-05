@@ -4,7 +4,7 @@ linktitle: Diversity, Equity, & Inclusion
 toc: true
 type: docs
 date: "2019-05-05T00:00:00+01:00"
-draft: true
+draft: false
 menu:
   example:
     # parent: Diversity, Equity, & Inclusion
