@@ -1,5 +1,6 @@
 ---
 title: Educators' Corner
+subtitle: Offering a platform for educators of all stripes to share their stories, experiences, successes and hardships in teaching and mentoring.
 
 # View.
 #   1 = List
@@ -12,4 +13,5 @@ header:
   caption: ""
   image: ""
 ---
-You can write stuff to describe what is the educators' corner
+
+<br>

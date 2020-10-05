@@ -5,7 +5,7 @@ headless = true  # This file represents a page section.
 active = true  # Activate this widget? true/false
 weight = 1  # Order that this section will appear.
 
-title = "Remote mentorship for <br> unprivileged or <br>underrepresented <br> students"
+title = "Framework for <br>Open and <br>Reproducible <br>Research <br>Training"
 
 # Hero image (optional). Enter filename of an image in the `static/img/` folder.
 hero_media = "FORRT.svg"

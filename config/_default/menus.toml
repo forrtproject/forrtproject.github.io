@@ -87,33 +87,43 @@
 
 [[main]]
   name = "Educational NEXUS"
-  url = ""
+  url = "/nexus"
   weight = 30
   identifier = "nexus"
 [[main]]
+  name = "About Nexus"
+  url = "/nexus"
+  weight = 31
+  parent = "nexus"
+[[main]]
   name = "FORRT Clusters"
   url = "/clusters"
-  weight = 31
+  weight = 32
   parent = "nexus"
 [[main]]
   name = "Resources"
   url = "/resources"
-  weight = 32
+  weight = 33
   parent = "nexus"
 [[main]]
   name = "Open Science Summaries"
   url = "/summaries"
-  weight = 33
+  weight = 34
   parent = "nexus"
 [[main]]
   name = "Self-Assessment"
   url = "/self-assessment"
-  weight = 33
+  weight = 35
   parent = "nexus"
 [[main]]
   name = "Educators' Corner"
   url = "/educators-corner"
-  weight = 35
+  weight = 36
+  parent = "nexus"
+[[main]]
+  name = "Towards Social Justice"
+  url = "/dei"
+  weight = 37
   parent = "nexus"
 
 [[main]]

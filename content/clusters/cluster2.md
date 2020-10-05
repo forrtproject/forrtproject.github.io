@@ -8,7 +8,7 @@ headless = true  # This file represents a page section.
 active = true  # Activate this widget? true/false
 weight = 10  # Order that this section will appear.
 
-title = "Clusters 2: dagdsgsdg"
+title = "Cluster 2: Conceptual and Statistical Knowledge"
 subtitle = ""
 
 [design]
@@ -22,8 +22,8 @@ subtitle = ""
   #   Any HTML color name or Hex value is valid.
 
   # Background color.
-  color = "SkyBlue"
-  # color = "#69b3a2" # greenish
+  # color = "red"
+  color = "#eadce6" # greenish
   
   # Background gradient.
   # gradient_start = "DeepSkyBlue"
@@ -45,96 +45,118 @@ subtitle = ""
 
 [advanced]
  # Custom CSS. 
- css_style = "font-size: 1.25rem;"
+ css_style = "font-size: 1rem;"
  
  # CSS class.
  css_class = ""
 +++
 
-### Spoilers
+### Description
 
-Add a spoiler to a page to reveal text, such as an answer to a question, after a button is clicked.
+Attainment of a grounding in fundamental statistics, measurement, and its implications encompassing conceptual knowledge, application, interpretation and communication of statistical analyses. There are 5 sub-clusters which aim to further parse the learning and teaching process:
 
-```markdown
-{{</* spoiler text="Click to view the spoiler" */>}}
-You found me!
-{{</* /spoiler */>}}
-```
+* The logic of null hypothesis testing, p-values, Type I and II errors (and when and why they might happen).
+* Limitations and benefits of NHST, Bayesian and Likelihood approaches.
+* Effect sizes, Statistical power, Confidence Intervals.
+* Research Design, Sample Methods, and its implications for inferences.
+* Questionable measurement practices (QMPs), validity and reliability issues.
 
-renders as
-
-{{< spoiler text="Click to view the spoiler" >}} You found me! {{< /spoiler >}}
-{{< spoiler text="oups" >}} You found me! {{< /spoiler >}}
-
-
-Attainment of foundational knowledge on the emergence of and importance of reproducible and open research. Integration with field specific content (i.e., grounded in the history of replicability)
+<br>
 
 <ul class="nav nav-tabs" id="myTab" role="tablist">
   <li class="nav-item">
-    <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home"
-      aria-selected="true">History</a>
+    <a class="nav-link active" id="C2S1-tab" data-toggle="tab" href="#C2S1" role="tab" aria-controls="C2S1"
+      aria-selected="true">NHST</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile"
-      aria-selected="false">Exploratory and confirmatory analyses</a>
+    <a class="nav-link" id="C2S2-tab" data-toggle="tab" href="#C2S2" role="tab" aria-controls="C2S2"
+      aria-selected="false">Approaches</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact"
-      aria-selected="false">Questionable research practices</a>
+    <a class="nav-link" id="C2S3-tab" data-toggle="tab" href="#C2S3" role="tab" aria-controls="C2S3"
+      aria-selected="false">Effect-sizes & cia</a>
   </li>
     <li class="nav-item">
-    <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact"
-      aria-selected="false">Proposed improvement science initiatives on statistics, measurement, teaching, data sharing, code sharing, pre-registration, replication</a>
+    <a class="nav-link" id="C2S4-tab" data-toggle="tab" href="#C2S4" role="tab" aria-controls="C2S4"
+      aria-selected="false">Research Design</a>
   </li>
     <li class="nav-item">
-    <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact"
-      aria-selected="false">Ongoing debates (e.g., incentives for and against open science)</a>
-  </li>
-    <li class="nav-item">
-    <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact"
-      aria-selected="false">Ethical considerations for improved practices</a>
-  </li>
+    <a class="nav-link" id="C2S5-tab" data-toggle="tab" href="#C2S5" role="tab" aria-controls="C2S5"
+      aria-selected="false">QMPs</a>
 </ul>
+
 <div class="tab-content" id="myTabContent">
-  <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+  <div class="tab-pane fade show active" id="C2S1" role="tabpanel" aria-labelledby="C2S1-tab"><br>
 
-## History of the reproducibility crisis & credibility revolution
+## The logic of null hypothesis testing, p-values, Type I and II errors (and when and why they might happen).
 
-  * Baker, M. (2016). 1,500 scientists lift the lid on reproducibility. Nature News, 533(7604), 452. doi: https://doi.org/10.1038/533452a
+* Banerjee, A., Chitnis, UB., Jadhav, SL., Bhawalkar, JS., Chaudhury, S. (2009). Hypothesis testing, type I and type II errors. Industrial Psychiatry Journal, 18(2), 127-131. https://doi.org/10.1111/j.1740-9713.2015.00827.x
 
-* Baker, M. (2016). Is there a reproducibility crisis? Nature, 533(7604), 3–5. doi: https://doi.org/10.1038/d41586-019-00067-3
+* Gelman, A., & Carlin, J. (2014). Beyond power calculations: Assessing Type S (sign) and Type M (magnitude) errors. Perspectives on Psychological Science, 9(6), 641-651. doi: 10.1177/1745691614551642
 
-* Chambers, C. (2017). The seven deadly sins of psychology: A manifesto for reforming the culture of scientific practice. Princeton University Press.
-http://dx.doi.org/10.1515/9781400884940
+* Lakens, D. Improving your statistical inferences. Online course. https://www.coursera.org/learn/statistical-inferences
 
-* Crüwell, S., van Doorn, J., Etz, A., Makel, M. C., Moshontz, H., Niebaum, J., … SchulteMecklenbeck, M. (2018, November 16). 7 easy steps to open science: An annotated reading list. https://doi.org/10.31234/osf.io/cfzyx
 
-* Edwards, M. A., & Roy, S. (2016). Academic research in the 21st century: Maintaining scientific integrity in a climate of perverse incentives and hypercompetition. Environmental Engineering Science, 34(1), 51-61. DOI: https://doi.org/10.1089/ees.2016.0223
-
-Merton, R., K. (1968). The Matthew effect in science. Science, 159(3810), 56-63.
-10.1126/science.159.3810.56
-
-Merton, R., K. (1988). The Matthew Effect in Science, II: Cumulative Advantage and the Symbolism of Intellectual Property. ISIS, 79(4), 606-623. 10.1086/354848
-
-Munafo, M. R., et al. (2017). A manifesto for reproducible science. Nature Human Behaviour, 1, 0021. DOI: 10.0138/s41562-016-0021
-
-Vazire, S. (2018). Implications of the Credibility Revolution for Productivity, Creativity, and Progress. Perspectives on Psychological Science, 13(4), 411-417.
-https://doi.org/10.1177/1745691617751884
+<br>
 </div>
+  <div class="tab-pane fade" id="C2S2" role="tabpanel" aria-labelledby="C2S2-tab"><br>
 
-  <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">Food truck fixie
-    locavore, accusamus mcsweeney's marfa nulla single-origin coffee squid. Exercitation +1 labore velit,
-    blog sartorial PBR leggings next level wes anderson artisan four loko farm-to-table craft beer twee.
-    Qui photo booth letterpress, commodo enim craft beer mlkshk aliquip jean shorts ullamco ad vinyl cillum
-    PBR. Homo nostrud organic, assumenda labore aesthetic magna delectus mollit. Keytar helvetica VHS
-    salvia yr, vero magna velit sapiente labore stumptown. Vegan fanny pack odio cillum wes anderson 8-bit,
-    sustainable jean shorts beard ut DIY ethical culpa terry richardson biodiesel. Art party scenester
-    stumptown, tumblr butcher vero sint qui sapiente accusamus tattooed echo park.</div>
-  <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">Etsy mixtape
-    wayfarers, ethical wes anderson tofu before they sold out mcsweeney's organic lomo retro fanny pack
-    lo-fi farm-to-table readymade. Messenger bag gentrify pitchfork tattooed craft beer, iphone skateboard
-    locavore carles etsy salvia banksy hoodie helvetica. DIY synth PBR banksy irony. Leggings gentrify
-    squid 8-bit cred pitchfork. Williamsburg banh mi whatever gluten-free, carles pitchfork biodiesel fixie
-    etsy retro mlkshk vice blog. Scenester cred you probably haven't heard of them, vinyl craft beer blog
-    stumptown. Pitchfork sustainable tofu synth chambray yr.</div>
+## Limitations and benefits of NHST, Bayesian and Likelihood approaches.
+
+* Cumming, G. (2014). The new statistics: Why and how. Psychological Science, 25(1), 7-29. https://doi.org/10.1177/0956797613504966
+
+* Etz, A., Gronau, Q.F., Dablander, F. et al. (2018). How to become a Bayesian in eight easy steps: An annotated reading list. Psychonomic Bulletin Review, 25, 219–234. https://doi.org/10.3758/s13423-017-1317-5
+
+* Greenland, S., Senn, S. J., Rothman, K. J., Carlin, J. B., Poole, C., Goodman, S. N., & Altman, D. G. (2016). Statistical tests, p values, confidence intervals, and power: Aa guide to misinterpretations. European Journal of Epidemiology, 31(4), 337–50. http://doi.org/10.1007/s10654-016-0149-3
+
+* Nuzzo, R. (2014). Statistical errors: P values, the ‘gold standard’ of statistical validity, are not as reliable as many scientists assume. Nature, 506(7487), 150-152. doi:10.1038/506150a
+
+* Wagenmakers , E.-J., Dutilh, G., & Sarafoglou, A. (2018). The Creativity-Verification Cycle in Psychological Science: New Methods to Combat Old Idols. Perspectives on Psychological Science, 13(4), 418–427. https://doi.org/10.1177/1745691618771357
+
+<br>
+</div>
+  <div class="tab-pane fade" id="C2S3" role="tabpanel" aria-labelledby="C2S3-tab"><br>
+
+## Effect sizes, Statistical power, Confidence Intervals.
+
+* Brysbaert, M. and Stevens, M. (2018). Power analysis and effect size in mixed effects models: A Tutorial. Journal of Cognition, 1(1): 9, pp. 1–20, DOI: https://doi.org/10.5334/joc.10
+
+* Button, K. S., Ioannidis, J. P., Mokrysz, C., Nosek, B. A., Flint, J., Robinson, E. S., & Munafò, M. R. (2013). Power failure: why small sample size undermines the reliability of neuroscience. Nature Reviews Neuroscience, 14(5), 365-376. https://doi.org/10.1038/nrn3475
+
+* Greenland, S., Senn, S. J., Rothman, K. J., Carlin, J. B., Poole, C., Goodman, S. N., & Altman, D. G. (2016). Statistical tests, p values, confidence intervals, and power: A guide to misinterpretations. European Journal of Epidemiology, 31(4), 337–50. http://doi.org/10.1007/s10654-016-0149-3
+
+* Lakens, D. (2013). Calculating and reporting effect sizes to facilitate cumulative science: a practical primer for t-tests and ANOVAs. Frontiers in Psychology, 4, 863. 10.3389/fpsyg.2013.00863
+
+* Pek, J., & Flora, D. B. (2018). Reporting effect sizes in original psychological research: A discussion and tutorial. Psychological Methods, 23(2), 208-225. http://doi.org/10.1037/met0000126
+
+* Perugini, M., Gallucci, M., & Costantini, G. (2014). Safeguard power as a protection against imprecise power estimates. Perspectives on Psychological Science, 9, 319-332. 
+
+<br>
+</div>
+  <div class="tab-pane fade" id="C2S4" role="tabpanel" aria-labelledby="C2S4-tab"><br>
+
+## Research Design, Sample Methods, and its implications for inferences.
+
+* Gervais et al. (2015). A powerful nudge? Presenting calculable consequences of underpowered research shifts incentives towards adequately powered designs. Social Psychological and Personality Science, 6, 847-854. https://doi.org/10.1177/1948550615584199
+
+* Perugini, M., Gallucci, M., & Costantini, G. (2014). Safeguard power as a protection against imprecise power estimates. Perspectives on Psychological Science, 9, 319-332. 
+
+* Wicherts, J. M., Veldkamp, C. L., Augusteijn, H. E., Bakker, M., Van Aert, R., & Van Assen, M. A. (2016). Degrees of freedom in planning, running, analyzing, and reporting psychological studies: A checklist to avoid p-hacking. Frontiers in Psychology, 7, 1832.doi: 10.3389/fpsyg.2016.01832
+
+<br>
+</div>
+  <div class="tab-pane fade" id="C2S5" role="tabpanel" aria-labelledby="C2S5-tab"><br>
+
+## Questionable measurement practices (QMPs), validity and reliability issues.
+
+* Flake, J. K., & Fried, E. I. (2019, January 17). Measurement schmeasurement: Questionable measurement practices and how to avoid them. https://doi.org/10.31234/osf.io/hs7wm
+
+* Flake, J. K., Pek, J., & Hehman, E. (2017). Construct validation in social and personality research: Current practice and recommendations. Social Psychological and Personality Science, 8(4), 370–378. https://doi.org/10.1177/1948550617693063
+
+* Hussey, I., & Hughes, S. (2018, November 19). Hidden invalidity among fifteen commonly used measures in social and personality psychology. https://doi.org/10.31234/osf.io/7rbfp
+
+* Rodebaugh, T. L., Scullin, R. B., Langer, J. K., Dixon, D. J., Huppert, J. D., Bernstein, A., . . . Lenze, E. J. (2016). Unreliability as a threat to understanding psychopathology: The cautionary tale of attentional bias. Journal of Abnormal Psychology, 125(6), 840-851. http://dx.doi.org/10.1037/abn0000184
+
+<br>
+</div>
 </div>

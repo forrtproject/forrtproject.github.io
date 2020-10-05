@@ -5,10 +5,10 @@
 
 widget = "blank"  # See https://sourcethemes.com/academic/docs/page-builder/
 headless = true  # This file represents a page section.
-active = false  # Activate this widget? true/false
+active = true  # Activate this widget? true/false
 weight = 10  # Order that this section will appear.
 
-title = "Clusters"
+title = "Cluster 1: Reproducibility Crisis and Credibility Revolution"
 subtitle = ""
 
 [design]
@@ -23,7 +23,7 @@ subtitle = ""
 
   # Background color.
   # color = "red"
-  # color = "#69b3a2" # greenish
+  color = "#cacfdc" # greenish
   
   # Background gradient.
   # gradient_start = "DeepSkyBlue"
@@ -45,184 +45,168 @@ subtitle = ""
 
 [advanced]
  # Custom CSS. 
- css_style = "font-size: 1.25rem;"
+ css_style = "font-size: 1rem;"
  
  # CSS class.
  css_class = ""
 +++
-Select the cluster you're interested to read more about
+
+### Description
+
+Attainment of foundational knowledge on the emergence of, and importance of, reproducible and open research (i.e., grounding the motivations and theoretical underpinnings of Open and Reproducible Science). Integration with field specific content (i.e., grounded in the history of replicability). There are 6 sub-clusters which aim to further parse the learning and teaching process:
+
+* History of the reproducibility crisis & credibility revolution.
+* Exploratory and confirmatory analyses.
+* Questionable research practices and their prevalence.
+* Proposed improvement science initiatives on statistics, measurement, teaching, data sharing, code sharing, pre-registration, replication.
+* Ongoing debates (e.g., incentives for and against open science).
+* Ethical considerations for improved practices.
+
+<br>
+
 <ul class="nav nav-tabs" id="myTab" role="tablist">
   <li class="nav-item">
-    <a class="nav-link active" id="cluster1-tab" data-toggle="tab" href="#cluster1" role="tab" aria-controls="home"
-      aria-selected="true">Reproducibility and replicability knowledge</a>
+    <a class="nav-link active" id="C1S1-tab" data-toggle="tab" href="#C1S1" role="tab" aria-controls="C1S1"
+      aria-selected="true">History</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" id="cluster2-tab" data-toggle="tab" href="#cluster2" role="tab" aria-controls="profile"
-      aria-selected="false">Conceptual and Statistical Knowledge</a>
+    <a class="nav-link" id="C1S2-tab" data-toggle="tab" href="#C1S2" role="tab" aria-controls="C1S2"
+      aria-selected="false">Analyses</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" id="cluster3-tab" data-toggle="tab" href="#cluster3" role="tab" aria-controls="contact"
-      aria-selected="false">Reproducible analyses</a>
+    <a class="nav-link" id="C1S3-tab" data-toggle="tab" href="#C1S3" role="tab" aria-controls="C1S3"
+      aria-selected="false">QRPs</a>
   </li>
     <li class="nav-item">
-    <a class="nav-link" id="cluster4-tab" data-toggle="tab" href="#cluster4" role="tab" aria-controls="contact"
-      aria-selected="false">Preregistration</a>
+    <a class="nav-link" id="C1S4-tab" data-toggle="tab" href="#C1S4" role="tab" aria-controls="C1S4"
+      aria-selected="false">Improvements</a>
   </li>
     <li class="nav-item">
-    <a class="nav-link" id="cluster5-tab" data-toggle="tab" href="#cluster5" role="tab" aria-controls="contact"
-      aria-selected="false">FAIR data and materials</a>
+    <a class="nav-link" id="C1S5-tab" data-toggle="tab" href="#C1S5" role="tab" aria-controls="C1S5"
+      aria-selected="false">Ongoing debates</a>
   </li>
     <li class="nav-item">
-    <a class="nav-link" id="cluster6-tab" data-toggle="tab" href="#cluster6" role="tab" aria-controls="contact"
-      aria-selected="false">Replication research</a>
+    <a class="nav-link" id="C1S6-tab" data-toggle="tab" href="#C1S6" role="tab" aria-controls="C1S6"
+      aria-selected="false">Ethics</a>
   </li>
-    <li class="nav-item">
-    <a class="nav-link" id="cluster7-tab" data-toggle="tab" href="#cluster7" role="tab" aria-controls="contact"
-      aria-selected="false">Academic Life and cluture</a>
-  </li>
-
 </ul>
+
 <div class="tab-content" id="myTabContent">
-  
-  <div class="tab-pane fade show active" id="cluster1" role="tabpanel" aria-labelledby="cluster1-tab">
-  
-  <b>Reproducibility and replicability knowledge:</b> Attainment of a grounding in the motivations and theoretical underpinnings of reproducible and open research. Integration with field specific content (i.e., or grounded in the history of replicability).
-  
-  i. Reproducibility crisis and credibility revolution.
-  
-  ii. Exploratory and confirmatory analyses.
-  
-  iii. Questionable research practices (its ‘theory’), and prevalence.
-  
-  iv. Proposed improvement science initiatives on statistics, measurement, teaching, data sharing, code sharing, pre-registration, replication.
-  
-  v. Ongoing debates, (e.g. incentives for and against open science).
-  
-  vi. Ethical considerations for improved practices.
+  <div class="tab-pane fade show active" id="C1S1" role="tabpanel" aria-labelledby="C1S1-tab"><br>
 
-For resources relating to Reproducibility and replicability knowledge, go to our [FORRT resources](/resources/)
+## History of the reproducibility crisis & credibility revolution
 
+* Baker, M. (2016). 1,500 scientists lift the lid on reproducibility. Nature News, 533(7604), 452. doi: https://doi.org/10.1038/533452a
 
-  </div>
-  
-  <div class="tab-pane fade" id="cluster2" role="tabpanel" aria-labelledby="cluster2-tab">
-  
-  <b>Conceptual and Statistical Knowledge:</b> Enacting this principle indicates that students attain a grounding in fundamental statistics, measurement, and its implications.
-  
-  i. The logic of null hypothesis testing, p-values, Type I and II errors (and when and why they might happen).
+* Baker, M. (2016). Is there a reproducibility crisis? Nature, 533(7604), 3–5. doi: https://doi.org/10.1038/d41586-019-00067-3
 
-  ii. Limitations and benefits of NHST, Bayesian and Likelihood approaches.
-  
-  iii. Effect sizes, Statistical power, Confidence Intervals.
+* Chambers, C. (2017). The seven deadly sins of psychology: A manifesto for reforming the culture of scientific practice. Princeton University Press.
+http://dx.doi.org/10.1515/9781400884940
 
-  iv. Research Design, Sample Methods, and its implications for inferences.
+* Crüwell, S., van Doorn, J., Etz, A., Makel, M. C., Moshontz, H., Niebaum, J., … SchulteMecklenbeck, M. (2018, November 16). 7 easy steps to open science: An annotated reading list. https://doi.org/10.31234/osf.io/cfzyx
 
-  v. Questionable research (QRPs) & measurement practices (QMPs).
+* Edwards, M. A., & Roy, S. (2016). Academic research in the 21st century: Maintaining scientific integrity in a climate of perverse incentives and hypercompetition. Environmental Engineering Science, 34(1), 51-61. DOI: https://doi.org/10.1089/ees.2016.0223
 
-  vi. Understand the relationship between all of the above.
-  
-  For resources relating to Conceptual and Statistical Knowledge, go to our [FORRT resources](/resources/)
+* Merton, R., K. (1968). The Matthew effect in science. Science, 159(3810), 56-63.
+10.1126/science.159.3810.56
 
-  </div>
-  
-  <div class="tab-pane fade" id="cluster3" role="tabpanel" aria-labelledby="cluster3-tab">
-  
-  <b>Reproducible analyses:</b> Reproducible analyses allow the checking of analytic pipelines and facilitate error correction. Enacting this principle requires students to move towards transparent and scripted analysis practices.
-  
-  i. Strengths of reproducible pipelines.
-  
-  ii. Scripted analyses compared with GUI.
-  
-  iii. Data wrangling
-  iv. Programming reproducible data analyses.
-  
-  v. Open source and free software.
-  
-  vi. Tools to check yourself and others; statcheck, GRIM, and SPRITE
-  
-  For resources relating to Reproducible analyses, go to our [FORRT resources](/resources/)
+* Merton, R., K. (1988). The Matthew Effect in Science, II: Cumulative Advantage and the Symbolism of Intellectual Property. ISIS, 79(4), 606-623. 10.1086/354848
 
-  </div>
-  
-  <div class="tab-pane fade" id="cluster4" role="tabpanel" aria-labelledby="cluster4-tab">
-  
-  <b>Preregistration:</b> Preregistration entails laying out a complete methodology and analysis before a study has been undertaken. This facilitates transparency and removes several potential QRPs.
-  
-  i. Purpose of preregistration - distinguishing exploratory and confirmatory analyses, transparency measures
-  
-  ii. Preregistration and registered reports - strengths and differences
-  
-  iii. When can you preregister? Can you pre-register secondary data?
+* Munafo, M. R., et al. (2017). A manifesto for reproducible science. Nature Human Behaviour, 1, 0021. DOI: 10.0138/s41562-016-0021
 
-  iv. Writing a preregistration.
+* Vazire, S. (2018). Implications of the Credibility Revolution for Productivity, Creativity, and Progress. Perspectives on Psychological Science, 13(4), 411-417.
+https://doi.org/10.1177/1745691617751884
 
-  v. Comparing a preregistration to a final study manuscript.
+<br>
+</div>
+  <div class="tab-pane fade" id="C1S2" role="tabpanel" aria-labelledby="C1S2-tab"><br>
 
-  vi. Conducting a preregistered study.
+## Exploratory and confirmatory analyses
 
-  For resources relating to Preregistration, go to our [FORRT resources](/resources/)
-  
-  </div>
+***Confirmatory analyses refer to tests of hypotheses that are formulated prior to data collection. Exploratory analyses refer to everything else.***
 
-  <div class="tab-pane fade" id="cluster5" role="tabpanel" aria-labelledby="cluster5-tab">
-  
-  <b>FAIR data and materials:</b> Enacting this principle indicates that students have attained a grounding in open data and materials in both; using and sharing.
-  
-  i. Knowledge of traditional publication models. Open access publishing, preprints
-  
-  ii. Reasons to share; for science, and for one’s own practices
+* Chambers, C. (2017). The seven deadly sins of psychology: A manifesto for reforming the culture of scientific practice. Princeton University Press.
+http://dx.doi.org/10.1515/9781400884940
 
-  iii. Repositories; e.g. OSF, FigShare, GitHub
+* Lin, W., & Green, D. P. (2016). Standard operating procedures: A safety net for pre-analysis plans. PS: Political Science & Politics, 49(3), 495-500.
 
-  iv. Accessing/sharing others data, code, and materials
+* Wagenmakers, E.-J., Wetzels, R., Borsboom, D., van der Mass, H. L. J., & Kievit, R. A. (2012). An agenda for purely confirmatory research. Perspectives on Psychological Science, 7(6), 632–638. doi:10.1177/1745691612463078
 
-  v. Ethical considerations
+* Wagenmakers , E.-J., Dutilh, G., & Sarafoglou, A. (2018). The Creativity-Verification Cycle in Psychological Science: New Methods to Combat Old Idols. Perspectives on Psychological Science, 13(4), 418–427. https://doi.org/10.1177/1745691618771357
 
-  vi Examples and consequences of accessing un/open data
+<br>
+</div>
+  <div class="tab-pane fade" id="C1S3" role="tabpanel" aria-labelledby="C1S3-tab"><br>
 
-  For resources relating to FAIR data and materials, go to our [FORRT resources](/resources/)
+## Questionable research practices and their prevalence
 
-  </div>
+***The ways in which researchers engage in behaviors and decision-making that increase the probability of their (consciously or unconsciously) desired result.***
 
-  <div class="tab-pane fade" id="cluster6" role="tabpanel" aria-labelledby="cluster6-tab">
-  
-  <b>Replication research: </b> Replication research takes a variety of forms, each with a different purpose and contribution. Reproducible science requires replication research. 
+* Gelman, A., & Loken, E. (2013). The garden of forking paths: Why multiple comparisons can be a problem, even when there is no “fishing expedition” or “p-hacking” and the research hypothesis was posited ahead of time. Unpublished manuscript. http://www.stat.columbia.edu/~gelman/research/unpublished/p_hacking.pdf
 
-  i. Purposes of replication attempts - what is a ‘failed’ replication?
+* John, L. K., Loewenstein, G., & Prelec, D. (2012). Measuring the prevalence of questionable research practices with incentives for truth telling. Psychological Science, 23(5), 524-532. https://doi.org/10.1177/0956797611430953
+ 
+* Simmons, J. P., Nelson, L. D., & Simonsohn, U. (2011). False-Positive Psychology: Undisclosed Flexibility in Data Collection and Analysis Allows Presenting Anything as Significant. Psychological Science, 22(11), 1359–1366.https://doi.org/10.1177/0956797611417632
 
-  ii. Large scale replication attempts
+* Smaldino, P. E., & McElreath, R. (2016). The natural selection of bad science. Royal Society open science, 3(9), 160384.https://doi.org/10.1098/rsos.160384
 
-  iii. Distinguishing conceptual and direct replications
+* Wicherts, J. M., Veldkamp, C. L., Augusteijn, H. E., Bakker, M., Van Aert, R. C., & Van Assen, M. A. (2016). Degrees of freedom in planning, running, analyzing, and reporting psychological studies: A checklist to avoid p-hacking. Frontiers in psychology, 7. 
 
-  iv. Conducting replication studies; challenges, limitations, and comparisons with the original study
+<br>
+</div>
+  <div class="tab-pane fade" id="C1S4" role="tabpanel" aria-labelledby="C1S4-tab"><br>
 
-  v. Registered Replication Reports
+## Proposed improvement science initiatives on statistics, measurement, teaching, data sharing, code sharing, pre-registration, replication
 
-  vi. The politics of replicating famous studies
+***Published checklists and other resources that can be used to shift behavior more toward improved practices.***
 
-  For resources relating to Replication research, go to our [FORRT resources](/resources/)
+* Crüwell, S., van Doorn, J., Etz, A., Makel, M. C., Moshontz, H., Niebaum, J., … SchulteMecklenbeck, M. (2018, November 16). 7 easy steps to open science: An annotated reading list. https://doi.org/10.31234/osf.io/cfzyx
+
+* Ioannidis, J. P., Munafo, M. R., Fusar-Poli, P., Nosek, B. A., & David, S. P. (2014). Publication and other reporting biases in cognitive sciences: detection, prevalence, and prevention. Trends in cognitive sciences, 18(5), 235-241.
+
+* Klein, R. A., Vianello, M., Hasselman, F., Adams, B. G., Adams, R. B., Alper, S., … Nosek, B. A. (2018). Many Labs 2: Investigating Variation in Replicability Across Samples and Settings. Advances in Methods and Practices in Psychological Science, 1(4), 443–490. https://doi.org/10.1177/2515245918810225
+
+* Munafo, M. R., et al. (2017). A manifesto for reproducible science. Nature Human Behaviour, 1, 0021. DOI: 10.0138/s41562-016-0021
+
+* Peng, R. (2015). The reproducibility crisis in science: A statistical counterattack. Significance, 12(3). https://doi.org/10.1111/j.1740-9713.2015.00827.x
 
 
-  </div>
-  
-  <div class="tab-pane fade" id="cluster7" role="tabpanel" aria-labelledby="cluster7-tab">
-  
-  <b>Academic life and culture: </b> how individuals, teams, institutions, and academic culture work together to promote or hinder openness and transparency. 
+<br>
+</div>
+  <div class="tab-pane fade" id="C1S5" role="tabpanel" aria-labelledby="C1S5-tab"><br>
 
-  i. Citizen science
+## Ongoing debates (e.g., incentives for and against open science)
 
-  ii. Team Science
+* Bahlai et al. (2019). Open science isn't always open to all scientists. American Scientist, 107(2), 78. DOI: https://doi.org/10.1511/2019.107.2.78
 
-  iii. Adversarial collaboration
+* Chen, X., Dallmeier-Tiessen, S., Dasler, R., Feger, S., Fokianos, P., Gonzalez, J. B., ... & Rodriguez, D. R. et al. (2019). Open is not enough. Nature : Physics, 15 (2), 113-119. https://doi.org/10.1038/s41567-018-0342-2
 
-  iv. The structure of academia
+* Drummond, C. (2018).; Reproducible research: a minority opinion. Journal of Experimental & Theoretical Artificial Intelligence, 30(1), 1-11. https://doi.org/10.1080/0952813X.2017.1413140
 
-  v. Incentives in academia
+* Fanelli, D. (2018). Opinion: Is science really facing a reproducibility crisis, and do we need it to? Proceedings of the National Academy of Sciences, 115(11), 2628-2631. https://doi.org/10.1073/pnas.1708272114
 
-  vi. Types of academic, non-academic, and alt-academic positions
-  
-  For resources relating to Academic life and culture, go to our [FORRT resources](/resources/)
+* Fanelli, D., & Ioannidis, J. P. (2013). US studies may overestimate effect sizes in softer research. Proceedings of the National Academy of Sciences, 110(37), 15031-15036. https://doi.org/10.1073/pnas.1302997110
 
-  </div>
+* Fell, M. J. (2019). The economic impacts of open science: A rapid evidence assessment. Publications, 7(3), 46. https://doi.org/10.3390/publications7030046
 
+* Pashler, H., & Harris, C. R. (2012). Is the replicability crisis overblown? Three arguments examined. Perspectives on Psychological Science, 7, 531‑536. https://doi.org/10.1177/1745691612463401
+
+<br>
+</div>
+  <div class="tab-pane fade" id="C1S6" role="tabpanel" aria-labelledby="C1S6-tab"><br>
+
+## Ethical considerations for improved practices
+
+* Bol, T., de Vaan, M., & van de Rijt, A. (2018). The Matthew effect in science funding. Proceedings of the National Academy of Sciences, 115(19), 4887-4890. https://doi.org/10.1073/pnas.1719557115
+
+* Chopik, W. J., Bremner, R. H., Defever, A. M., & Keller, V. N. (2018). How (and whether) to teach undergraduates about the replication crisis in psychological science. Teaching of Psychology, 45(2), 158–163. https://doi.org/10.1177/0098628318762900
+
+* Edwards, M. A., & Roy, S. (2016). Academic research in the 21st century: Maintaining scientific integrity in a climate of perverse incentives and hypercompetition. Environmental Engineering Science, 34(1), 51-61. DOI: https://doi.org/10.1089/ees.2016.0223
+
+* Fell, M. J. (2019). The economic impacts of open science: A rapid evidence assessment. Publications, 7(3), 46. https://doi.org/10.3390/publications7030046
+
+* Jones, NL. (2007). A code of ethics for the life sciences. Science and Engineering Ethics, 13, 25-43. DOI:https://doi.org/ 0.1007/s11948-006-0007-x
+
+<br>
+</div>
 </div>

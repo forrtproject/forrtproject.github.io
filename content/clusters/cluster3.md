@@ -8,7 +8,7 @@ headless = true  # This file represents a page section.
 active = true  # Activate this widget? true/false
 weight = 10  # Order that this section will appear.
 
-title = "Clusters 2: dagdsgsdg"
+title = "Cluster 3: Reproducible analyses"
 subtitle = ""
 
 [design]
@@ -22,9 +22,9 @@ subtitle = ""
   #   Any HTML color name or Hex value is valid.
 
   # Background color.
-  color = "#69b3a2"
-  # color = "#69b3a2" # greenish
-  
+  # color = "red"
+  color = "#DAD5DD" 
+
   # Background gradient.
   # gradient_start = "DeepSkyBlue"
   # gradient_end = "SkyBlue"
@@ -45,62 +45,134 @@ subtitle = ""
 
 [advanced]
  # Custom CSS. 
- css_style = "font-size: 1.25rem;"
+ css_style = "font-size: 1rem;"
  
  # CSS class.
  css_class = ""
 +++
-Here is some text
+
+### Description
+
+Attainment of the *how-to* basics of reproducible reports and analyses. It requires students to move towards transparent and scripted analysis practices. There are 6 sub-clusters which aim to further parse the learning and teaching process:
+
+* Strengths of reproducible pipelines.
+* Scripted analyses compared with GUI.
+* Data wrangling.
+* Programming reproducible data analyses.
+* Open source and free software.
+* Tools to check yourself and others.
+
+<br>
+
 <ul class="nav nav-tabs" id="myTab" role="tablist">
   <li class="nav-item">
-    <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home"
-      aria-selected="true">Cluster 1</a>
+    <a class="nav-link active" id="C3S1-tab" data-toggle="tab" href="#C3S1" role="tab" aria-controls="C3S1"
+      aria-selected="true">Reproducible pipelines</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile"
-      aria-selected="false">Cluster 2</a>
+    <a class="nav-link" id="C3S2-tab" data-toggle="tab" href="#C3S2" role="tab" aria-controls="C3S2"
+      aria-selected="false">Scripted Analyses</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact"
-      aria-selected="false">Cluster 3</a>
+    <a class="nav-link" id="C3S3-tab" data-toggle="tab" href="#C3S3" role="tab" aria-controls="C3S3"
+      aria-selected="false">Data wrangling</a>
   </li>
     <li class="nav-item">
-    <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact"
-      aria-selected="false">Cluster 4</a>
+    <a class="nav-link" id="C3S4-tab" data-toggle="tab" href="#C3S4" role="tab" aria-controls="C3S4"
+      aria-selected="false">Reproducible Analyses</a>
   </li>
     <li class="nav-item">
-    <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact"
-      aria-selected="false">Cluster 5</a>
+    <a class="nav-link" id="C3S5-tab" data-toggle="tab" href="#C3S5" role="tab" aria-controls="C3S5"
+      aria-selected="false">Open source</a>
   </li>
     <li class="nav-item">
-    <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact"
-      aria-selected="false">Cluster 6</a>
-  </li>
-    <li class="nav-item">
-    <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact"
-      aria-selected="false">Cluster 3</a>
+    <a class="nav-link" id="C3S6-tab" data-toggle="tab" href="#C3S6" role="tab" aria-controls="C3S6"
+      aria-selected="false">Tools</a>
   </li>
 </ul>
+
 <div class="tab-content" id="myTabContent">
-  <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">Raw denim you
-    probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth master
-    cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher retro
-    keffiyeh dreamcatcher synth. Cosby sweater eu banh mi, qui irure terry richardson ex squid. Aliquip
-    placeat salvia cillum iphone. Seitan aliquip quis cardigan american apparel, butcher voluptate nisi
-    qui.</div>
-  <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">Food truck fixie
-    locavore, accusamus mcsweeney's marfa nulla single-origin coffee squid. Exercitation +1 labore velit,
-    blog sartorial PBR leggings next level wes anderson artisan four loko farm-to-table craft beer twee.
-    Qui photo booth letterpress, commodo enim craft beer mlkshk aliquip jean shorts ullamco ad vinyl cillum
-    PBR. Homo nostrud organic, assumenda labore aesthetic magna delectus mollit. Keytar helvetica VHS
-    salvia yr, vero magna velit sapiente labore stumptown. Vegan fanny pack odio cillum wes anderson 8-bit,
-    sustainable jean shorts beard ut DIY ethical culpa terry richardson biodiesel. Art party scenester
-    stumptown, tumblr butcher vero sint qui sapiente accusamus tattooed echo park.</div>
-  <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">Etsy mixtape
-    wayfarers, ethical wes anderson tofu before they sold out mcsweeney's organic lomo retro fanny pack
-    lo-fi farm-to-table readymade. Messenger bag gentrify pitchfork tattooed craft beer, iphone skateboard
-    locavore carles etsy salvia banksy hoodie helvetica. DIY synth PBR banksy irony. Leggings gentrify
-    squid 8-bit cred pitchfork. Williamsburg banh mi whatever gluten-free, carles pitchfork biodiesel fixie
-    etsy retro mlkshk vice blog. Scenester cred you probably haven't heard of them, vinyl craft beer blog
-    stumptown. Pitchfork sustainable tofu synth chambray yr.</div>
+  <div class="tab-pane fade show active" id="C3S1" role="tabpanel" aria-labelledby="C3S1-tab"><br>
+
+## Strengths of reproducible pipelines.
+
+***Automating data analysis to make the process easier***
+
+* Gandrud, C. (2016). Reproducible research with R and R Sstudio. New York; CRC Press 
+
+* Wilson G, Bryan J, Cranston K, Kitzes J, Nederbragt L, et al. (2017) Good enough practices in scientific computing. PLOS Computational Biology 13(6): e1005510. https://doi.org/10.1371/journal.pcbi.1005510
+
+* [Reproducible Research in R Workshop Overview](https://datacarpentry.org/rr-workshop/)
+
+* [Monash's](https://github.com/MonashDataFluency) Data Fluency [Reproducible Research in R (RRR)](https://monashdatafluency.github.io/r-rep-res/index.html)
+
+* [ProjectTier](https://www.projecttier.org) 
+
+<br>
+</div>
+  <div class="tab-pane fade" id="C3S2" role="tabpanel" aria-labelledby="C3S2-tab"><br>
+
+## Scripted analyses compared with GUI.
+
+***Writing analyses in programming language compared to performing them with a point-and-click menu.***
+
+* Gandrud, C. (2016). Reproducible research with R and R Sstudio. New York; CRC Press 
+
+<br>
+</div>
+  <div class="tab-pane fade" id="C3S3" role="tabpanel" aria-labelledby="C3S3-tab"><br>
+
+## Data wrangling
+
+***Processing and restructuring data so that it is more useful for analyse.***
+
+Nick Fox's [Writing Reproducible Scientific Papers in R](https://www.youtube.com/playlist?list=PLmvNihjFsoM5hpQdqoI7onL4oXDSQ0ym8)
+
+PsuTeachR's [Data Skills for Reproducible Science](https://psyteachr.github.io/msc-data-skills/)
+
+<br>
+</div>
+  <div class="tab-pane fade" id="C3S4" role="tabpanel" aria-labelledby="C3S4-tab"><br>
+
+## Programming reproducible data analyses
+
+***Making sure anyone can reproduce analyses through things like well-commented scripts, writing codebooks, etc.***
+
+* Gandrud, C. (2016). Reproducible research with R and R Sstudio. New York; CRC Press 
+
+* Wilson, G., Bryan, J., Cranston, K., Kitzes, J., Nederbragt, L., & Teal, T. K. (2017). Good enough practices in scientific computing. PLoS computational biology, 13(6). e1005510. https://doi.org/10.1371/journal.pcbi.1005510
+
+* [Open Stats Lab](https://sites.trinity.edu/osl/)
+
+* [Software Carpentry](https://software-carpentry.org/)
+
+* [Learning statistics with R: A tutorial for psychology students and other beginners](https://learningstatisticswithr.com/book/)
+
+<br>
+</div>
+  <div class="tab-pane fade" id="C3S5" role="tabpanel" aria-labelledby="C3S5-tab"><br>
+
+## Open source and free software.
+
+* Chao, L. (2009). Utilizing open source tools for online teaching and learning Information Science. Hershey, PA: Information Science Reference.
+
+<br>
+</div>
+  <div class="tab-pane fade" id="C3S6" role="tabpanel" aria-labelledby="C3S6-tab"><br>
+
+## Tools to check yourself and others
+
+***Includes tools such as statcheck.io, GRIM, and SPRITE***
+
+* Bol, T., de Vaan, M., & van de Rijt, A. (2018). The Matthew effect in science funding. Proceedings of the National Academy of Sciences, 115(19), 4887-4890. https://doi.org/10.1073/pnas.1719557115
+
+* Brown, N. J., & Heathers, J. A. (2016). The GRIM test: A simple technique detects numerous anomalies in the reporting of results in psychology. Social Psychological and Personality Science, 1948550616673876. http://journals.sagepub.com/doi/pdf/10.1177/1948550616673876
+
+* Nuijten, M. B., Van Assen, M. A. L. M., Hartgerink, C. H. J., Epskamp, S., & Wicherts, J. M. (2017). The validity of the tool “statcheck” in discovering statistical reporting inconsistencies. Preprint retrieved from https://psyarxiv.com/tcxaj/.
+
+* van der Zee, T., Anaya, J., & Brown, N. J. (2017). Statistical heartburn: An attempt to digest four pizza publications from the Cornell Food and Brand Lab. BMC Nutrition, 3(1), 54. DOI 10.1186/s40795-017-0167-x 
+
+
+<br>
+</div>
 </div>
