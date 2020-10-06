@@ -8,3 +8,5 @@ themes/hugo-academic/exampleSite/resources/
 conda-env/
 .env/
 *ipynb
+Pipfile
+Pipfile.lock
