@@ -6,10 +6,10 @@
 widget = "blank"  # See https://sourcethemes.com/academic/docs/page-builder/
 headless = true  # This file represents a page section.
 active = true  # Activate this widget? true/false
-weight = 10  # Order that this section will appear.
+weight = 1  # Order that this section will appear.
 
-title = ""
-subtitle = "*Implementing principled teaching and mentoring practices*"
+title = "Adopting Principled Education"
+subtitle = "*Implementing fairer teaching and mentoring practices*"
 classtitle = "text-center"
 
 [design]
@@ -54,33 +54,43 @@ classtitle = "text-center"
 
 +++
 
+<br>
+
+*In this page, we describe easy ways to adopt principled teaching and mentoring practices. That is, (a) integrating open and reproducible science tenets into your teaching workflow; (b) striving to teach science (or scholarship) as a process of knowledge acquisition rather than a collection of scientific evidence, as doing so does not yield scientific literacy; (c) share publically your teaching and mentoring (and Lab) materials so that other educators can make use of your excellent work, which also foster social justice through the democratization of scientific educational resources and pedagogies; (d) recognize that Higher Education is a profoundly unequal, non-inclusive and non-diverse environment due to a plethora of societal's constraints, which also shapes academia itself, and which we as educators should try to address in class (whatever the subject taught) by integrating couse content with topics of representation, diversity, equity, and inclusion. See below for FORRT tips.*
+
+<br>
+
 ### Evaluate your current teaching and mentorship practices
 
 A great first step is to reflect on your current teaching and mentoring practices, and the extent to which they communicate the basic tenets of open and reproducible science.
 
-**How?**
+#### <FONT COLOR="#A9A9A9">How?</FONT>
 
-*   To help you in this process, FORRT has developed a [self-assessment survey](https://forrt.org/survey/) that provides tailored feedback and resources for educators and mentors.
+*   To help you in this process, FORRT has developed a [***self-assessment survey***](/survey) that provides tailored feedback and resources for educators and mentors.
+
+<br>
 
 ### Add literature or assignments to your syllabus that teach open science concepts
 
 Including sources into your syllabus that discuss open and transparent research can enrich students’ education by helping them think about research more critically. This can be a great addition to research methods courses or any course that requires students to evaluate or synthesise knowledge.
 
-**How?**
+#### <FONT COLOR="#A9A9A9">How?</FONT>
 
-*   FORRT has created a curated summary of [100 papers on Open and Reproducible Literature](https://docs.google.com/document/d/1Li8Tss6WwWSFT9KSs1HnL_Dkg9muRJTA6EvFz6-bVec) that you can use to find suitable reading materials for your course syllabus.
+*   FORRT has created a curated summary of [***130+ Summaries of the Open and Reproducible Literature***](/summaries) that you can use to find suitable reading materials for your course syllabus.
 *   Add an activity or assignment where students can do things such as:
-*   write their own pre-registration or compare a pre-registration with the published manuscript.
-*   learn more more about the value of [pre-prints](https://journals.plos.org/plosbiology/article?id=10.1371/journal.pbio.3000151)
-*   learn about the importance of statistical power and how to find out [how many participants they need](https://www.journalofcognition.org/articles/10.5334/joc.72/) for their experiment
+     - write their own pre-registration or compare a pre-registration with the published manuscript.
+     - learn more more about the value of [pre-prints](https://journals.plos.org/plosbiology/article?id=10.1371/journal.pbio.3000151)
+     - learn about the importance of statistical power and how to find out [how many participants they need](https://www.journalofcognition.org/articles/10.5334/joc.72/) for their experiment
+
+<br>
 
 ### Make your teaching and mentoring materials open
 
 Open educational resources allow community members to make contributions and continuously improve the materials. For example, they can enhance their documentation, add media (transcripts, voice, video), translate materials, improve accessibility, and much more. Educators can then reuse and adapt these materials for their own courses, thus reducing the need to produce high-quality materials on their own.
 
-**How**?
+#### <FONT COLOR="#A9A9A9">How?</FONT>
 
-*   [FORRT](https://forrt.org/resources/) maintains a database of 700+ curated educational resources. Submit your own resources so that others can adopt them easily into their teaching.
+*   [FORRT](/resources) maintains a database of 700+ curated educational resources on Open and Reproducible topics. Submit your own resources so that others can adopt them easily into their teaching.
 *   The [Open Textbook Library](https://open.umn.edu/opentextbooks/) can be used to adopt existing open access textbooks into your own teaching as well as to submit open-access textbooks. 
 
 **How to make your teaching materials [FAIR](https://www.nature.com/articles/sdata201618)(Findable, Accessible, Interoperable, Reusable)?**
@@ -102,6 +112,9 @@ Open educational resources allow community members to make contributions and con
 ![](img\Garciaetal2020.png) 
 
 *Figure 1*: An illustration from the paper "Ten simple rules for making training materials FAIR" by [Garcia et al. (2020)](https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1007854). Credit: Luc Wiegers and Celia van Gelder ([2019](https://zenodo.org/record/3593258#.X3J4W2hKgUE)) under Creative Commons [CC-BY-4.0](https://creativecommons.org/licenses/by/4.0/) license. No modifications have been made to the original.
+
+<br>
+
 
 ### Help students and mentees learn more about open science practices
 

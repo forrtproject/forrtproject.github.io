@@ -1,10 +1,10 @@
 ---
 # Display name
-name: "Jacob Miranda"
+name: "Martin Vasilev"
 
 # Username (this should match the folder name and the name on publications)
 authors:
-- Name "Jacob Miranda"
+- Name "Martin Vasilev"
 
 # Is this the primary user of the site?
 superuser: false
