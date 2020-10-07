@@ -73,4 +73,4 @@ See below for each cluster, its description, sub-clusters, and associated works 
 
 ## FORRT's Syllabus
 
-Building on the clusters we produced a ***"Open and Reproducible Science" Syllabus***. We hope it can serve as starting point for your class. [.pdf download; editable G-doc version]
+Building on the clusters we produced a ***"Open and Reproducible Science" Syllabus***. We hope it can serve as starting point for your class. [.pdf download; editable G-doc version] ***Coming soon!***
