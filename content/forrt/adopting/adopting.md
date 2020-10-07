@@ -153,9 +153,8 @@ Getting your students involved in Open Science projects is a great way to help t
 
 #### <FONT COLOR="#A9A9A9">How?</FONT>
 
-*   _The [Collaborative Replications and Education Project in Psychol](https://osf.io/wfc6u/wiki)o[gy](https://osf.io/wfc6u/wiki) ([CREP](https://osf.io/wfc6u/wiki/home/))_ offers opportunities for students to conduct a replication experiment for their dissertation in collaboration with teams from other universities. The projects are strongly teaching- and student-experience orientated.
+*   _The [Collaborative Replications and Education Project in Psychology](https://osf.io/wfc6u/wiki)_ offers opportunities for students to conduct a replication experiment for their dissertation in collaboration with teams from other universities. The projects are strongly teaching- and student-experience orientated.
 *   _The Psychology Science Accelerator ([PSA](https://psysciacc.org/))_ Runs 1-3 multi-lab experiments per year that adopt many open science principles; projects can be incorporated into a student dissertation, internship, etc.
-*   _Create your own class replication project_: Why not teach students the value of replication by having them complete together a replication of a classical experiment in your field? For examples of in-class replication projects, see [Brian Dillon’s Linguistics class](https://people.umass.edu/bwdillon/project/linguist-609-2020/).
 *   _Create your own class replication project_: Why not teach students the value of replication by having them complete together a replication of a classical experiment in your field? For examples of in-class replication projects, see:
      - [A replication database for economics and social sciences: The ReplicationWiki](https://blog.repec.org/2020/08/04/a-replication-database-for-economics-and-social-sciences-the-replicationwiki/)
      - [Political Science Replication](https://politicalsciencereplication.wordpress.com/about/)
@@ -173,7 +172,7 @@ Increasingly, well-documented research repositories are used as educational reso
 
 *   [Open Science Framework](https://osf.io/): A popular platform where research data and materials can be easily shared and indexed.
 *   [Zenodo](http://zenodo.org/): Another platform where research materials are shared and indexed. 
-*   [https://www.re3data.org/](https://www.re3data.org/) : A directory of research repositories in many fields; useful for finding subject-specific repositories
+*   [re3data](https://www.re3data.org/) : A directory of research repositories in many fields; useful for finding subject-specific repositories
 
 <br>
 
