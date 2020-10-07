@@ -197,6 +197,8 @@ Henrich, J., Heine, S. & Norenzayan, A. (2010) Most people are not WEIRD. Nature
 
 ## Citizen science
 
+***Citizen science is scientific research conducted, in whole or in part, by amateur (or nonprofessional) scientists. Citizen science is sometimes described as "public participation in scientific research," participatory monitoring, and participatory action research whose outcomes are often advancements in scientific research by improving the scientific communities capacity, as well as an increasing the public's understanding of science.***
+
 * Hart, D. D., & Silka, L. (2020). Rebuilding the ivory tower: bottom-up experiment in aligning research with societal needs. Issues Sci Technol, 36(3), 64-70. https://issues.org/aligning-research-with-societal-needs/
 
 * Bonney, R., Cooper, C. B., Dickinson, J., Kelling, S., Phillips, T., Rosenberg, K. V., & Shirk, J. (2009). Citizen science: a developing tool for expanding science knowledge and scientific literacy. BioScience, 59(11), 977-984.
@@ -303,8 +305,6 @@ Silberzahn, R., & Uhlmann, E. L. (2015). Crowdsourced research: Many hands make 
   <div class="tab-pane fade" id="C7S8" role="tabpanel" aria-labelledby="C7S8-tab"><br>
 
 ## Types of academic, non-academic & alt-academic positions
-
-***Sometimes responses to replication research can be negative. Failed replications of famous work, most notably power posing, ego depletion, stereotype threat, and facial feedback, have received a lot of attention.***
 
 * Gomez, P., Anderson, A. R., & Baciero, A. (2017). Lessons for psychology laboratories from industrial laboratories. Research Ethics, 13(3-4), 155-160. https://doi.org/10.1177/1747016117693827
 

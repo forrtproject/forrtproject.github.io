@@ -162,6 +162,8 @@ http://dx.doi.org/10.1515/9781400884940
 
 * Crüwell, S., van Doorn, J., Etz, A., Makel, M. C., Moshontz, H., Niebaum, J., … SchulteMecklenbeck, M. (2018, November 16). 7 easy steps to open science: An annotated reading list. https://doi.org/10.31234/osf.io/cfzyx
 
+* Lindsay (2020) Seven steps toward transparency and replicability in psychological science. Canadian Psychology/Psychologie canadienne.
+
 * Ioannidis, J. P., Munafo, M. R., Fusar-Poli, P., Nosek, B. A., & David, S. P. (2014). Publication and other reporting biases in cognitive sciences: detection, prevalence, and prevention. Trends in cognitive sciences, 18(5), 235-241.
 
 * Klein, R. A., Vianello, M., Hasselman, F., Adams, B. G., Adams, R. B., Alper, S., … Nosek, B. A. (2018). Many Labs 2: Investigating Variation in Replicability Across Samples and Settings. Advances in Methods and Practices in Psychological Science, 1(4), 443–490. https://doi.org/10.1177/2515245918810225

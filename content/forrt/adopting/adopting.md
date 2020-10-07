@@ -56,15 +56,15 @@ classtitle = "text-center"
 
 <br>
 
-*In this page, we describe easy ways to adopt principled teaching and mentoring practices. That is, (a) integrating open and reproducible science tenets into your teaching workflow; (b) striving to teach science (or scholarship) as a process of knowledge acquisition rather than a collection of scientific evidence, as doing so does not yield scientific literacy; (c) share publically your teaching and mentoring (and Lab) materials so that other educators can make use of your excellent work, which also foster social justice through the democratization of scientific educational resources and pedagogies; (d) recognize that Higher Education is a profoundly unequal, non-inclusive and non-diverse environment due to a plethora of societal's constraints, which also shapes academia itself, and which we as educators should try to address in class (whatever the subject taught) by integrating couse content with topics of representation, diversity, equity, and inclusion. See below for 7 ways FORRT tips.*
+*In this page, we describe easy ways to adopt principled teaching and mentoring practices. That is, (a) integrating open and reproducible science tenets into your teaching workflow; (b) striving to teach science (or scholarship) as a process of knowledge acquisition rather than a collection of scientific evidence, as doing so does not yield scientific literacy; (c) share publically your teaching and mentoring (and Lab) materials so that other educators can make use of your excellent work, which also foster social justice through the democratization of scientific educational resources and pedagogies; (d) recognize that Higher Education is a profoundly unequal, non-inclusive and non-diverse environment due to a plethora of societal's constraints, which also shapes academia itself, and which we as educators should try to address in class (whatever the subject taught) by integrating course content with topics of representation, diversity, equity, and inclusion. See below for 7 ways FORRT tips.*
 
-1. Evaluate your current teaching and mentorship practices
-1. Add literature or assignments to your syllabus that teach open science concepts
-1. Make your teaching and mentoring materials open
-1. Help students and mentees learn more about open science practices
-1. Create opportunities for students to engage in Open Science projects
-1. Make your research open
-1. Become an advocate at your own institution/ professional society
+1. Evaluate your current teaching and mentorship practices.
+1. Add literature or assignments to your syllabus that teach open science concepts.
+1. Make your teaching and mentoring materials open.
+1. Help students and mentees learn more about open science practices.
+1. Create opportunities for students to engage in Open Science projects.
+1. Make your research open.
+1. Become an advocate at your own institution/ professional society.
 
 
 <br>
@@ -83,15 +83,15 @@ A great first step is to reflect on your current teaching and mentoring practice
 
 ### 2. Add literature or assignments to your syllabus that teach open science concepts
 
-Including sources into your syllabus that discuss open and transparent research can enrich students’ education by helping them think about research more critically. This can be a great addition to research methods courses or any course that requires students to evaluate or synthesise knowledge.
+Including sources into your syllabus that discuss open and transparent research can enrich students’ education by helping them think about research more critically. This can be a great addition to research methods courses or any course that requires students to evaluate or synthesize knowledge.
 
 #### <FONT COLOR="#A9A9A9">How?</FONT>
 
 *   FORRT has created a curated summary of [***130+ Summaries of the Open and Reproducible Literature***](/summaries) that you can use to find suitable reading materials for your course syllabus.
 *   Add an activity or assignment where students can do things such as:
      - write their own pre-registration or compare a pre-registration with the published manuscript.
-     - learn more more about the value of [pre-prints](https://journals.plos.org/plosbiology/article?id=10.1371/journal.pbio.3000151)
-     - learn about the importance of statistical power and how to find out [how many participants they need](https://www.journalofcognition.org/articles/10.5334/joc.72/) for their experiment
+     - learn more about the value of [pre-prints](https://journals.plos.org/plosbiology/article?id=10.1371/journal.pbio.3000151).
+     - learn about the importance of statistical power and how to find out [how many participants they need](https://www.journalofcognition.org/articles/10.5334/joc.72/) for their experiment.
 
 <br>
 
@@ -110,11 +110,11 @@ Open educational resources allow community members to make contributions and con
 
 * [Garcia et al. (2020)](https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1007854) recommend 10 simple rules for making materials easier to find, (re)use, and adapt (see Figure 1 below). Their key recommendations include:
 
-     - Properly describing materials by adding sufficient meta-data and explanations that are useful to trainees
-     - Giving materials an unique identifying number or URL and adding them to an audience-specific registry
-     - Defining rules for who can access the materials
-     - Creating materials in interoperable formats that allow (re)use in different software programmes and operating systems
-     - Keeping materials up-to-date and inviting contributions from others
+     - Properly describing materials by adding sufficient meta-data and explanations that are useful to trainees.
+     - Giving materials an unique identifying number or URL and adding them to an audience-specific registry.
+     - Defining rules for who can access the materials.
+     - Creating materials in interoperable formats that allow (re)use in different software programmes and operating systems.
+     - Keeping materials up-to-date and inviting contributions from others.
 
 <br>
 
@@ -140,25 +140,25 @@ The first step in learning about something is finding the right information. You
      - participating in the [***remote mentorship program***](/dei) which aims to facilitate and encourage adhesion to open and reproducible research practices in its earliest stages for (a) students from underprivileged and underrepresented backgrounds; (b) non-WEIRD; and (c) when there is no local OS-friendly institutions or personnel.     
      - supporting [***underprivileged and underrepresented early-career researchers***](/dei) by serving as a link between willing mentors and mentees in their engagement with academia, its several duties (e.g., application materials, grant/funding proposals, academic writing, research development, statistical analyses, etc.), as well as open and reproducible science practices. It is FORRT’s goal to chip away at the barriers that exist and to promote a more inclusive environment for all (Roberson, 2020).
 
-*   Encourage students to join a local [ReproducibiliTea](https://reproducibilitea.org/) chapter. _ReproducibiliTea _is a world-wide journal club initiative that encourages students and staff to read and discuss together journal articles related to open science. If one doesn’t exist in your university, you can start your own local chapter!
+*   Encourage students to join a local [ReproducibiliTea](https://reproducibilitea.org/) chapter. *ReproducibiliTea* is a world-wide journal club initiative that encourages students and staff to read and discuss together journal articles related to open science. If one doesn’t exist in your university, you can start your own local chapter!
 *   Read together [Seven Easy Steps to Open Science](https://psyarxiv.com/cfzyx): An introduction to open science using an annotated reading list of 7 key topics (e.g., pre-registration, open data, reproducible research).
 *   Or [Easing Into Open Science: A Tutorial for Graduate Students](https://psyarxiv.com/vzjdp/): simple steps for graduate students to start adopting open science practices, along with resources and advice.
-*   Encourage your mentees to look for further personal qualifications and follow courses or workshops related to open science research
+*   Encourage your mentees to look for further personal qualifications and follow courses or workshops related to open science research.
 
 <br>
 
 ### 5. Create opportunities for students to engage in Open Science projects
 
-Getting your students involved in Open Science projects is a great way to help them learn more about open and transparent practices. This will give them an opportunity to meet other like-minded researchers and learn from them about open research. This can be a great mentoring experience, particularly if they are just staring out to learn about these concepts.
+Getting your students involved in Open Science projects is a great way to help them learn more about open and transparent practices. This will give them an opportunity to meet other like-minded researchers and learn from them about open research. This can be a great mentoring experience, particularly if they are just starting out to learn about these concepts.
 
 #### <FONT COLOR="#A9A9A9">How?</FONT>
 
-*   _The [Collaborative Replications and Education Project in Psychology](https://osf.io/wfc6u/wiki)_ offers opportunities for students to conduct a replication experiment for their dissertation in collaboration with teams from other universities. The projects are strongly teaching- and student-experience orientated.
+*   _The [Collaborative Replications and Education Project in Psychology](https://osf.io/wfc6u/wiki)_ offers opportunities for students to conduct a replication experiment for their dissertation in collaboration with teams from other universities. The projects are strongly teaching- and student-experience oriented.
 *   _The Psychology Science Accelerator ([PSA](https://psysciacc.org/))_ Runs 1-3 multi-lab experiments per year that adopt many open science principles; projects can be incorporated into a student dissertation, internship, etc.
 *   _Create your own class replication project_: Why not teach students the value of replication by having them complete together a replication of a classical experiment in your field? For examples of in-class replication projects, see:
-     - [A replication database for economics and social sciences: The ReplicationWiki](https://blog.repec.org/2020/08/04/a-replication-database-for-economics-and-social-sciences-the-replicationwiki/)
-     - [Political Science Replication](https://politicalsciencereplication.wordpress.com/about/)
-     - [Project Tier's Learning Course Materials](https://www.projecttier.org/tier-classroom/course-materials/)
+     - [A replication database for economics and social sciences: The ReplicationWiki](https://blog.repec.org/2020/08/04/a-replication-database-for-economics-and-social-sciences-the-replicationwiki/).
+     - [Political Science Replication](https://politicalsciencereplication.wordpress.com/about/).
+     - [Project Tier's Learning Course Materials](https://www.projecttier.org/tier-classroom/course-materials/).
      - [Brian Dillon’s Linguistics class](https://people.umass.edu/bwdillon/project/linguist-609-2020/).
 
 
@@ -172,7 +172,7 @@ Increasingly, well-documented research repositories are used as educational reso
 
 *   [Open Science Framework](https://osf.io/): A popular platform where research data and materials can be easily shared and indexed.
 *   [Zenodo](http://zenodo.org/): Another platform where research materials are shared and indexed. 
-*   [re3data](https://www.re3data.org/) : A directory of research repositories in many fields; useful for finding subject-specific repositories
+*   [re3data](https://www.re3data.org/) : A directory of research repositories in many fields; useful for finding subject-specific repositories.
 
 <br>
 
@@ -182,9 +182,9 @@ A great way to adopt the values of FORRT is to advocate in your own institution 
 
 #### <FONT COLOR="#A9A9A9">How?</FONT>
 
-*   If you are a member of your Department’s teaching committee, you can try to encourage more educators to incorporate teaching these topics into their courses. It could mean as little as adding a slide to existing content or using a real-word example.
-*   Join networks or societies that endorse open and transparent research
-*   E.g., [UK Reproducibility network](https://www.ukrn.org/), [repliCATS](https://replicats.research.unimelb.edu.au/)
+*   If you are a member of your department’s teaching committee, you can try to encourage more educators to incorporate teaching these topics into their courses. It could mean as little as adding a slide to existing content or using a real-word example.
+*   Join networks or societies that endorse open and transparent research.
+*   E.g., [UK Reproducibility network](https://www.ukrn.org/), [repliCATS](https://replicats.research.unimelb.edu.au/).
 *   If you are a member of a professional society or a teaching union, advocate for the adoption of principles for openness, transparency, and equality in research and education.
 
 <br><br>
