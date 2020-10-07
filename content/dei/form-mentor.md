@@ -9,7 +9,7 @@ active = true  # Activate this widget? true/false
 weight = 20  # Order that this section will appear.
 
 title = "For mentors"
-subtitle = "Fill out the form below or here is ***[the direct link](https://docs.google.com/forms/d/e/1FAIpQLSfPceN5opEeauCBSvapoB-ADpH0IoT24XOLfQGaVEF0EJGFOA/viewform)*** to open the Google form in a new window"
+subtitle = "Fill out the form below or ***[open the Google form in a new window](https://docs.google.com/forms/d/e/1FAIpQLSfkbhb2qSxj_wj5qXYQAFZZ0WxkFyLChL0ZFYnWL0QVMaSw8w/viewform).***"
 
 [design]
   # Choose how many columns the section has. Valid values: 1 or 2.

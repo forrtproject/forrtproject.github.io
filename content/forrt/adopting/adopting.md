@@ -6,10 +6,10 @@
 widget = "blank"  # See https://sourcethemes.com/academic/docs/page-builder/
 headless = true  # This file represents a page section.
 active = true  # Activate this widget? true/false
-weight = 20  # Order that this section will appear.
+weight = 2  # Order that this section will appear.
 
-title = "Adopting FORRT"
-subtitle = "*Implementing principled teaching and mentoring practices*"
+title = "Adopting Principled Education"
+subtitle = "*Implementing fairer teaching and mentoring practices*"
 classtitle = "text-center"
 
 [design]
