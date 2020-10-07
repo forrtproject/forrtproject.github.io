@@ -164,8 +164,6 @@ PsuTeachR's [Data Skills for Reproducible Science](https://psyteachr.github.io/m
 
 ***Includes tools such as statcheck.io, GRIM, and SPRITE***
 
-* Bol, T., de Vaan, M., & van de Rijt, A. (2018). The Matthew effect in science funding. Proceedings of the National Academy of Sciences, 115(19), 4887-4890. https://doi.org/10.1073/pnas.1719557115
-
 * Brown, N. J., & Heathers, J. A. (2016). The GRIM test: A simple technique detects numerous anomalies in the reporting of results in psychology. Social Psychological and Personality Science, 1948550616673876. http://journals.sagepub.com/doi/pdf/10.1177/1948550616673876
 
 * Nuijten, M. B., Van Assen, M. A. L. M., Hartgerink, C. H. J., Epskamp, S., & Wicherts, J. M. (2017). The validity of the tool “statcheck” in discovering statistical reporting inconsistencies. Preprint retrieved from https://psyarxiv.com/tcxaj/.

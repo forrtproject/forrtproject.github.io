@@ -53,7 +53,7 @@ subtitle = ""
 
 ### Description
 
-Attainment of a grounding in open (FAIR) data and materials. It requires students to learn about FAIR data (and education materials) principles: findability, accessibility, interoperability, and reusability; as well as engage with reasons to share data, the initiatives designed to increase scientific openness, as well as ethical considerations and consequences of open (FAIR) data practices. There are 6 sub-clusters which aim to further parse the learning and teaching process:
+Attainment of a grounding in open (FAIR) data and materials. It requires students to learn about FAIR data (and education materials) principles: findability, accessibility, interoperability, and reusability; engage with reasons to share data, the initiatives designed to increase scientific openness; as well as ethical considerations and consequences of open (FAIR) data practices. There are 6 sub-clusters which aim to further parse the learning and teaching process:
 
 * Publication models.
 * Reasons to share; for science, and for one’s own practices.

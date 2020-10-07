@@ -21,42 +21,27 @@ menu:
     weight: 1
 ---
 
-**_130+ Summaries of Open and Reproducible Literature_**
+**_130+ Summaries of Open and Reproducible Science Literature_**
 
-[Download our PDF](OS_Literature_Summaries_by_FORRT.pdf)
+The FORRT community has prepared 130+ summaries of Open and Reproducible Science literature.
+
+[Download the .pdf version of these summaries](OS_Literature_Summaries_by_FORRT.pdf)
 
 **Purpose**
 
-The purpose of these summaries is to reduce some of the burden on educators looking to incorporate open and reproducible research principles into their teaching. The below crowdsourced and community-curated resource aims to satisfy three of [FORRT’s Goals](https://forrt.org/about/mission/): 
+The purpose of these summaries is to reduce some of the burden on educators looking to incorporate open and reproducible research principles into their teaching as well as facilitate the edification of anyone wishing to learn or disseminate open and reproducible science tenets.
 
-
-
+ The below crowdsourced and community-curated resource aims to satisfy three of [FORRT’s Goals](about/mission/): 
 *   Support scholars in their efforts to learn and stay up-to-date on best practices regarding open and reproducible research;
 *   Facilitating conversations about the ethics and social impact of teaching substantive topics with due regard to scientific openness, epistemic uncertainty and the credibility revolution;
 *   Foster social justice through the democratization of scientific educational resources and its pedagogies.
 
-and four of [FORRT’s Mission](https://forrt.org/about/mission/):
-
-
+and four of [FORRT’s Mission](/about/mission/):
 
 *   Dismantling hierarchies surrounding research, teaching, and service;
 *   Building community among educators and various non-academic communities working to improve scientific communication and literacy across academia and the general public;
 *   Building capacity for advocacy; and
 *   Advocacy for the creation and maintenance of educational resources.
-
-**What is FORRT?**
-
-FORRT stands for Framework for Open and Reproducible Research Training and is designed by, and envisioned for, educators who wish to integrate typical discipline content with open and reproducible science tenets. We are a community, 50 people strong and growing, that aims to provide a pedagogical infrastructure designed to recognize and support the teaching and mentoring of open and reproducible science. FORRT strives to be an effective, evolving, and community-driven organization raising awareness of the pedagogical implications of open and reproducible science and its associated challenges (i.e., curricular reform, epistemological uncertainty, methods of education). FORRT advocates for the opening of teaching and mentoring materials as a means to facilitate access, discovery, and learning to those who otherwise would be educationally disenfranchised. FORRT created a three-pronged approach to achieve its goals:
-
-
-
-1. Providing educators a comprehensive, straightforward, and accessible framework to qualify and quantify the degree of open and reproducible research practices in their teaching and mentoring (cf. FORRT’s Clusters at [FORRT’s Manuscript](https://forrt.org/manuscript/)). Also, through [FORRT’s self-assessment tool](https://forrt.org/self-assessment/), educators are supplied with a personalized pathway toward incremental integration of discipline content with open and reproducible science tenets. FORRT also curates and documents a collection of 700 resources on Open and Reproducible Science (_cf._ [FORRT database](https://forrt.org/resources/)).
-2. Equipping scholars with high quality pedagogical tools on open and reproducible research practices (e.g., this resource, but also other ongoing initiatives). Instructors can then adapt successful and implemented pedagogies to help ease the transition and reduce the instructor’s burden. \
-[FORRT’s Pedagogies](https://forrt.org/pedagogies/) (in development)
-3. Modifying the academic incentive structure regarding teaching and mentoring through recognition and commendations of excellent teaching and mentoring, which in turn are documentable and relevant to the researchers’ visibility, prestige, tenure and promotion reviews; foster social justice through the opening and democratization of scientific-educational resources to those who otherwise would be educationally disenfranchised; and building a community with existing educational initiatives and strengthening our missions, identify and reduce redundancies, and streamline the advancement of open educational practices. \
-[FORRT’s Manuscript](https://forrt.org/manuscript/) (awarded [SIPS Commendation](https://improvingpsych.org/mission/awards/)) \
-[FORRT’s Institutional Partnerships \
-](https://forrt.org/#6-partnerships)
 
 **Process & Credit**
 

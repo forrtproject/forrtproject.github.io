@@ -91,12 +91,12 @@
   weight = 30
   identifier = "nexus"
 [[main]]
-  name = "About Nexus"
+  name = "About Educational Nexus"
   url = "/nexus"
   weight = 31
   parent = "nexus"
 [[main]]
-  name = "FORRT Clusters"
+  name = "Clusters"
   url = "/clusters"
   weight = 32
   parent = "nexus"
@@ -106,7 +106,7 @@
   weight = 33
   parent = "nexus"
 [[main]]
-  name = "Open Science Summaries"
+  name = "Summaries"
   url = "/summaries"
   weight = 34
   parent = "nexus"
