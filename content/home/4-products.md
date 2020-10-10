@@ -3,7 +3,7 @@
 widget = "featurette_alternative"  # See https://sourcethemes.com/academic/docs/page-builder/
 headless = true  # This file represents a page section.
 active = true  # Activate this widget? true/false
-weight = 50  # Order that this section will appear.
+weight = 40  # Order that this section will appear.
 
 title = "The FORRT products"
 subtitle = "---"
@@ -52,7 +52,7 @@ subtitle = "---"
   buttonurl = "pedagogies/"
   buttondescr = "Discover our pedagogies"
   name = "Pedagogies"
-  description = "FORRT creates, collects and catalogues examples of successful pedagogical approaches in teaching and mentoring as well as the openness of these resources. Interested parties – i.e., scholars, instructors, and educational institutions – can use FORRT’s pedagogies as a template towards the creation of their own teaching strategies. FORRT pedagogies will strive to support teachers and mentors to integrate field-specific education with open and reproducible science tenets."
+  description = "FORRT creates, collects and catalogues examples of successful pedagogical approaches in teaching and mentoring as well as the openness of these resources. Interested parties – i.e., scholars, instructors, and educational institutions – can use FORRT’s pedagogies as a template towards the creation of their own teaching strategies. FORRT pedagogies will strive to support teachers and mentors to integrate field-specific education with open and reproducible science tenets. [*in construction*]"
   
 [design.spacing]
   # Customize the section spacing. Order is top, right, bottom, left.

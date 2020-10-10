@@ -9,7 +9,7 @@ active = true  # Activate this widget? true/false
 weight = 60  # Order that this section will appear.
 
 title = "Institutional Partnerships"
-subtitle = ""
+subtitle = "---"
 
 [design]
   # Choose how many columns the section has. Valid values: 1 or 2.
@@ -52,7 +52,7 @@ subtitle = ""
 
 <br>
 
-![V2](img/Partnerships_v2.png)
+![V2](img/Partnerships.png)
 
 __*Meta-psychology special issue*__
 
