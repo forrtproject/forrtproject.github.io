@@ -2,11 +2,11 @@
 name = "forrt"
 
 # Optional Google font URL
-google_fonts = "Montserrat:400,700|Montserrat:400,400italic,700|Montserrat"
+google_fonts = "Century Schoolbook:400,700|Century Schoolbook:400,400italic,700|Century Schoolbook"
 
 # Font families
-heading_font = "Montserrat"
-body_font = "Montserrat"
-nav_font = "Montserrat"
-mono_font = "Montserrat"
+heading_font = "Century Schoolbook"
+body_font = "Century Schoolbook"
+nav_font = "Century Schoolbook"
+mono_font = "Century Schoolbook"
 
