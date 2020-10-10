@@ -67,25 +67,31 @@ However, ongoing attempts have neglected an essential aspect of the academic mac
 
 ### The solution
 
-* In our view, a scientific utopia has a fourth pillar, whose principal goal is to familiarize students, who are future consumers of science and perhaps themselves knowledge producers, with the intricacies of the process of science. 
+* In our view, a scientific utopia has a fourth pillar, whose principal goal is to familiarize higher-ED students, who are future consumers of science and perhaps themselves knowledge producers, with the intricacies of the process of science. 
 * We believe the teaching and mentoring of reproducible and open research practices is the clearest indicator of the degree to which institutions and/or departments embody principles of credible science. 
-* This demonstration goes beyond paying lip service to best practices, and ensures that students are trained to engage in these practices.
+* This demonstration goes beyond paying lip service to best practices, and ensures that students are trained to engage in the best available scientific practices.
 
 FORRT is designed by, and envisioned for, educators who wish to integrate typical discipline content with open and reproducible science tenets. 
 
 FORRT supports this endeavor through a three-pronged approach:
 
-1. Providing to educators a comprehensive, straightforward, and accessible framework to qualify and quantify the degree of open and reproducible research practices in their teaching and mentoring. Through FORRT’s self-assessment tool, educators are supplied with a personalized pathway toward incremental integration of discipline content with open and reproducible science tenets.  
-   <i class="fas fa-arrow-alt-circle-right text-danger fa-1.5x"></i> [FORRT's clusters](/clusters/)  
-   <i class="fas fa-arrow-alt-circle-right text-danger fa-1.5x"></i> [FORRT’s self-assessment tool](/survey)
+1. Provide educators a comprehensive but straightforward framework to teach and mentor open and reproducible science as well as qualify and quantify the degree of open and reproducible research practices in their teaching and mentoring.
+  
+  <i class="fas fa-arrow-alt-circle-right text-danger fa-1.5x"></i> [FORRT's clusters](/clusters/)    
+  <i class="fas fa-arrow-alt-circle-right text-danger fa-1.5x"></i> [FORRT’s self-assessment tool](/survey)  
 
-2. Equipping scholars with high quality pedagogical tools on open and reproducible research practices. Instructors can then adapt successful and implemented pedagogies to help ease the transition and reduce the instructor’s burden.  
+2. Equipping scholars with high quality educational and pedagogical tools on open and reproducible science practices to facilitate its intregration into educators’ teaching and mentoring.
+  
   <i class="fas fa-arrow-alt-circle-right text-danger fa-1.5x"></i> [FORRT’s Educational Nexus](/resources/)  
-  <i class="fas fa-arrow-alt-circle-right text-danger fa-1.5x"></i> [FORRT’s Pedagogies](/pedagogies/)  
+  <i class="fas fa-arrow-alt-circle-right text-danger fa-1.5x"></i> [FORRT’s Open and Reproducible Science Summaries](/summaries/)  
+  <i class="fas fa-arrow-alt-circle-right text-danger fa-1.5x"></i> [FORRT’s Pedagogies](/pedagogies/) [*in construction*]   
 
-3. Modifying the academic incentive structure regarding teaching and mentoring through recognition and commendations of excellent teaching and mentoring, which in turn are documentable and relevant to the researchers’ visibility, prestige, tenure and promotion reviews; foster social justice through the opening and democratization of scientific-educational resources to those who otherwise would be educationally disenfranchised; and building a community with existing educational initiatives and strengthening our missions, identify and reduce redundancies, and streamline the advancement of open educational practices.  
+3. Modifying the academic incentive structure regarding teaching and mentoring through recognition and commendations of excellent teaching and mentoring; foster social justice through the opening and democratization of scientific-educational resources to those who otherwise would be educationally disenfranchised; and building a community with existing educational initiatives and strengthening our missions, identify and reduce redundancies, and streamline the advancement of open educational practices.  
+  
+  <i class="fas fa-arrow-alt-circle-right text-danger fa-1.5x"></i> [FORRT’s "Toward Social Justice in Academia" initiatives](/dei/)   
+  <i class="fas fa-arrow-alt-circle-right text-danger fa-1.5x"></i> [FORRT’s Educators' Corner](/educators-corner/)   
+  <i class="fas fa-arrow-alt-circle-right text-danger fa-1.5x"></i> [FORRT’s Manuscript](/manuscript/)   
   <i class="fas fa-arrow-alt-circle-right text-danger fa-1.5x"></i> [FORRT’s Institutional Partnerships](/#6-partnerships)  
-  <i class="fas fa-arrow-alt-circle-right text-danger fa-1.5x"></i> [FORRT’s Manuscript](/manuscript/)  
+
 
 {{< /expand >}}
-

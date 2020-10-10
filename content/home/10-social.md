@@ -54,7 +54,7 @@ subtitle = "#FORRTproject <br> <blockquote class='twitter-tweet' data-theme='lig
 
 <div class="col-md-10">
 
-<a class="twitter-timeline" data-height="490" data-dnt="true" data-theme="light" href="https://twitter.com/FORRTproject?ref_src=twsrc%5Etfw">Tweets by FORRTproject</a>  
+<a class="twitter-timeline" data-height="490" data-dnt="true" data-theme="light" href="https://twitter.com/FORRTproject">Tweets by FORRTproject</a>  
 
 </div>
 
