@@ -111,3 +111,8 @@ In line with principles enshrined in FORRT, this manuscript is an open online co
 
 <br>
 
+***Small note on FORRT's manuscript and authorship***
+
+After the 'official' launch of FORRT's website, the FORRT manuscript becomes FORRT's top priority (along with FORRT pedagogies). As per *FORRT's #3 Communiqué*, the FORRT manuscript goes from ‘FORRT’ as the sole author to the standard ‘normal’ authorship procedure, with a CrediT/Tenzing statement indicating each individual contribution, and now FORRT becomes the as the last 'senior' author of any/all FORRT manuscripts. This change is made so any/all work -and ensuing credit- is recognized, which is a demand given the current incentive structure of academia. So, despite the fact that FORRT had envisioned a different path (see current version of Live Manuscript), it was brought to our attention the need and importance to support those working in FORRT, above all because most of the work done in FORRT is done by ERCs and graduate students who wish to have a chance at becoming academics one day. We believe it makes sense to make this change as a means to (a) give those concerned with a participation incentive; (b) give ERCs and graduate students an academic publication with which they can leverage their chances in moving up the academic ladder; (c) be able to reciprocate in academia’s currency the labor and dedication of so many important actors that made FORRT possible; (d) incentivize adherence and participation in FORRT’s community and initiatives. We will recontact everyone who in some way or another has contributed to FORRT to renew their commitment, as well as contact folks whose contributions are valued by our community. 
+
+<br>

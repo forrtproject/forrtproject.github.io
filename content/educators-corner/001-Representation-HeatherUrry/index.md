@@ -89,3 +89,9 @@ I also feel sad. Students feel these things so hard, especially those we’ve ma
 I can’t change that. But I can keep it up in future semesters. Urry is ON.
 
 Meanwhile, [here are some of my slides minus film clips and the email](https://osf.io/597ut/). Maybe they’ll help you or someone you know address representation as a foundational idea of science at one of the earliest career stages. 
+
+---
+<br>
+
+*Editor's note: The present text is an adapted version of widely shared [Twitter thread](https://twitter.com/HeatherUrry/status/1312104732308115457?s=20) which resonated with so many of us. We thought it is of general interest and deserved to be immortalized, and hence we approached Heather to adapt the thread to post it here. Importantly, in addition to writing extremely current and relevant threads, Heather is also responsible for the creation of FORRT. Indeed, FORRT was initiated at the 2018 meeting of the [Society for the Improvement of Psychological Science (SIPS)](https://improvingpsych.org/) in Heather's [“Teaching replicable and reproducible science”](https://osf.io/x7d45/) hackathon with Kristen Lane.*  
+
