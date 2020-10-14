@@ -28,7 +28,7 @@ subtitle = "---"
   img = "teamwork.png"
   imgalttext = "Image of a megaphone"
   name = "Join Our Team"
-  description = "Everything we develop and produce is in the open. You can join our team by going through our [onboarding process](https://docs.google.com/document/d/1S5xkHgzSBrajF2tJMJ_7Fi4leOH-a4XKX3L71Ek0tNo/edit?usp=sharing) - there is something for everyone - or via [GitHub](https://github.com/forrtproject/) for those with expertise and willingness to work on website development. You can always [email us](mailto:FORRTproject@gmail.com)."
+  description = "Everything we develop and produce is in the open. You can join our team by going through our [onboarding process](https://docs.google.com/document/d/1S5xkHgzSBrajF2tJMJ_7Fi4leOH-a4XKX3L71Ek0tNo/edit?usp=sharing) - there is something for everyone - or via [GitHub](https://github.com/forrtproject/) for those with expertise and willingness to work on website development. And you can always [email us](mailto:FORRTproject@gmail.com)."
 
 [[feature]]
   # icon = "handshake"
