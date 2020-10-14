@@ -66,5 +66,5 @@ for item in trs.find_all_next():
                 break
 del d['summary_0']
 
-with open('data/summaries.json', 'w') as outfile:
+with open('../../data/summaries.json', 'w') as outfile:
     json.dump(d, outfile)
