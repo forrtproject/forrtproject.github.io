@@ -64,6 +64,8 @@ FORRT’s e-learning platform is a hub for community-driven initiatives and reso
 * [FORRT's Curated Resources](/resources)
 * [FORRT's Initiatives Towards Social Justice in Academia](/dei)
 * [FORRT's Open & Reproducible Science Summaries](/summaries)
+* [FORRT's 7 ways to adopt principled teaching and mentoring practices](/adopting/)
+* [FORRT's Open & Reproducible Science Syllabus](https://forrt.org/clusters/FORRT_O&R_101_Syllabus.pdf)
 * [FORRT's Self-Assessment Tool](/self-assessment)
 * [FORRT's Educational Corner](/educators-corner)
 
@@ -71,10 +73,10 @@ FORRT’s e-learning platform is a hub for community-driven initiatives and reso
 
 ### FORRT's Educational Nexus has five major goals: 
 
-* Provide educators a comprehensive but straightforward framework to teach and mentor open and reproducible science (i.e., FORRT Clusters), as well as qualify and quantify the degree of open and reproducible research practices in their teaching and mentoring (i.e., FORRT’s self-assessment tool), where educators are supplied with a personalized pathway toward incremental integration of discipline content with open and reproducible science tenets.
-* Curate and enrich available open educational resources and building an easy-to-use, searchable and FAIR platform to facilitate the intregration of open and reproducible science into educators' teaching and mentoring (i.e., FORRT's Curated Resources).
-* Offer a platform for educators of all stripes to share their stories, experiences, successes and hardships in teaching and mentoring (i.e., FORRT's Educational Corner).
-* Foster social justice through the opening and democratization of scientific-educational resources to those who otherwise would be educationally disenfranchised (i.e., FORRT's Initiatives Towards Social Justice in Academia, FORRT's Open Science Summaries & FORRT's Curated list of Resources)
-* Equipping scholars with high quality pedagogical tools on open and reproducible research practices - instructors can then adapt successful and implemented pedagogies to help ease the transition and reduce the instructor’s burden (FORRT’s Pedagogies - release data coming soon!).
+* Provide educators a comprehensive but straightforward framework to teach and mentor open and reproducible science (i.e., [FORRT Clusters]((/clusters))) as well as qualify and quantify the degree of open and reproducible research practices in their teaching and mentoring (i.e., [FORRT’s self-assessment tool](/self-assessment)), where educators are supplied with a personalized pathway toward incremental integration of discipline content with open and reproducible science tenets.
+* Curate and enrich available open educational resources and building an easy-to-use, searchable and FAIR platform to facilitate the intregration of open and reproducible science into educators' teaching and mentoring (i.e., [FORRT's Curated Resources](/resources)).
+* Offer a platform for educators of all stripes to share their stories, experiences, successes and hardships in teaching and mentoring (i.e., [FORRT's Educational Corner]((/educators-corner))).
+* Foster social justice through the opening and democratization of scientific-educational resources to those who otherwise would be educationally disenfranchised (i.e., [FORRT's Initiatives Towards Social Justice in Academia](/dei), [FORRT's Open Science Summaries](/summaries) & [FORRT's Curated list of Resources](/resources))
+* Equipping scholars with high quality pedagogical tools on open and reproducible research practices - instructors can then adapt successful and implemented pedagogies to help ease the transition and reduce the instructor’s burden (e.g., [FORRT's 7 ways to adopt principled teaching and mentoring practices](/adopting/), [FORRT's Open & Reproducible Science Syllabus](https://forrt.org/clusters/FORRT_O&R_101_Syllabus.pdf), and [FORRT’s Pedagogies](/pedagogies/) - release date coming soon!).
 
-FORRT's community conceptualized the Educational Nexus as integrating diverse components into one infrastructure serving those wishing to learn, adopt, and disseminate open and reproducible science tenets, as well as those the teaching and mentoring these concepts, and raising awareness of its pedagogical implications and its associated challenges (e.g., curricular reform, epistemological uncertainty, methods of education). 
+FORRT's community conceptualized the Educational Nexus as integrating diverse components into one infrastructure serving those wishing to learn, adopt, and disseminate open and reproducible science tenets, as well as those teaching and mentoring these concepts, and raising awareness of its pedagogical implications and its associated challenges (e.g., curricular reform, epistemological uncertainty, methods of education, academic *Mertonian* norms in the classroom). We hope it fulfils its mission but if you have thoughts, ideas, criticisms, please reach us at [forrtproject@gmail.com](mailto:forrtproject@gmail.com) or via [Twitter](https://twitter.com/FORRTproject), or [join our Slack community](https://join.slack.com/t/forrt/shared_invite/zt-alobr3z7-NOR0mTBfD1vKXn9qlOKqaQ).
