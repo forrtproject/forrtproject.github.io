@@ -65,12 +65,12 @@ In order to teach open and reproducible science effectively, educators need to m
 6. Replication research
 7. Academic life and culture
 
-We further breakdown each cluster into sub-categories to provide educators/scholars with useful information on the extant of open science scholarship, and how they are connected to one another. The idea behind specifying clusters and sub-clusters it to highlight we have drawn fuzzy boundaries between clusters while allowing for diversification and heterogeneity in how each educator integrates these cluster/sub-clusters with their respective field content. The breakdown of each cluster into sub-categories provides scholars with useful information on the extant of open science scholarship, and how they are connected to one another. To have a look at the subclusters within each cluster, please click on the clusters above.
+We further breakdown each cluster into sub-categories to provide educators/scholars with useful information on the extant of open science scholarship, and how they are connected to one another. The idea behind specifying clusters and sub-clusters it to highlight we have drawn fuzzy boundaries between clusters while allowing for diversification and heterogeneity in how each educator integrates these cluster/sub-clusters with their respective field content. The breakdown of each cluster into sub-categories provides scholars with useful information on the extant of open science scholarship, and how they are connected to one another. To have a look at the sub-clusters within each cluster, please click on the clusters above.
 
 See below for each cluster, its description, sub-clusters, and associated works geared for teaching.
 
 <br>
 
-## FORRT's Syllabus
+## FORRT's Syllabus {#Syllabus}
 
 Building on the clusters we produced a ***"Open and Reproducible Science" Syllabus***. We hope it can serve as starting point for your class. [[.pdf download](FORRT_O&R_101_Syllabus.pdf); [editable G-doc version](https://docs.google.com/document/d/1pfFro5MbwBHzzXTeM_lE1gjFuq7AnnKWSDWkVwOBAtE/edit#)]
