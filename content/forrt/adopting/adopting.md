@@ -145,6 +145,7 @@ The first step in learning about something is finding the right information. You
 *   Or [Easing Into Open Science: A Tutorial for Graduate Students](https://psyarxiv.com/vzjdp/): simple steps for graduate students to start adopting open science practices, along with resources and advice.
 *   Encourage your mentees to look for further personal qualifications and follow courses or workshops related to open science research ([see here for a variety of Open and Reproducible science resources](/resources/) but list of teaching specific resource is in production):
      - e.g., consider teaching an activity relating to p-hacking for students using [Schönbrodt's p-hacker](http://shinyapps.org/apps/p-hacker/) (Schönbrodt, F. D. (2016). p-hacker: Train your p-hacking skills! Retrieved from http://shinyapps.org/apps/p-hacker/).
+     - e.g., consider teaching an activity in which they are given purely random data (to which they are *a priori* blind) and are asked to find results. Tal Yarkoni is known to perform a similar exercise in academic conferences where he presents scholars with a scatter plot of random data (without saying so) and ask for attendees to identify 'outliers'.  
      - e.g., consider making an activity relating to forking paths ([follow this excellent tutorial](http://www.stat.columbia.edu/~gelman/research/published/multiverse_published.pdf), but also check out [FORRT Summaries](https://forrt.org/summaries/open-reproducible/#h.rc4vbzxkf0ax) on this topic.)
 
 <br>
