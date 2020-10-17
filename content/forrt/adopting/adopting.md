@@ -56,7 +56,7 @@ classtitle = "text-center"
 
 <br>
 
-*In this page, we describe easy ways to adopt principled teaching and mentoring practices. That is, (a) integrating open and reproducible science tenets into your teaching workflow; (b) striving to teach science (or scholarship) as a process of knowledge acquisition rather than a collection of scientific evidence, as doing so does not yield scientific literacy; (c) share publically your teaching and mentoring (and Lab) materials so that other educators can make use of your excellent work, which also foster social justice through the democratization of scientific educational resources and pedagogies; (d) recognize that Higher Education is a profoundly unequal, non-inclusive and non-diverse environment due to a plethora of societal's constraints, which also shapes academia itself, and which we as educators should try to address in class (whatever the subject taught) by integrating course content with topics of representation, diversity, equity, and inclusion. See below for 7 ways FORRT tips.*
+*In this page, we describe easy ways to adopt principled teaching and mentoring practices. That is, (a) integrating open and reproducible science tenets into your teaching workflow; (b) striving to teach science (or scholarship) as a process of knowledge acquisition rather than a collection of scientific evidence, as doing so does not yield scientific literacy; (c) share publicly your teaching and mentoring (and Lab) materials so that other educators can make use of your excellent work, which also foster social justice through the democratization of scientific educational resources and pedagogies; (d) recognize that Higher Education is a profoundly unequal, non-inclusive and non-diverse environment due to a plethora of societal constraints, which also shapes academia itself, and which we as educators should try to address in class (whatever the subject taught) by integrating course content with topics of representation, diversity, equity, and inclusion. See below for 7 ways FORRT tips.*
 
 1. Evaluate your current teaching and mentorship practices.
 1. Add literature or assignments to your syllabus that teach open science concepts.
@@ -64,7 +64,7 @@ classtitle = "text-center"
 1. Help students and mentees learn more about open science practices.
 1. Create opportunities for students to engage in Open Science projects.
 1. Make your research open.
-1. Become an advocate at your own institution/ professional society.
+1. Become an advocate at your own institution/professional society.
 
 
 <br>
@@ -87,7 +87,7 @@ Including sources into your syllabus that discuss open and transparent research 
 
 #### <FONT COLOR="#A9A9A9">How?</FONT>
 
-*   FORRT has created a curated summary of [***130+ Summaries of the Open and Reproducible Literature***](/summaries) that you can use to find suitable reading materials for your course syllabus.
+*   FORRT has created a curated summary of [***100+ Summaries of the Open and Reproducible Literature***](/summaries) that you can use to find suitable reading materials for your course syllabus.
 *   Add an activity or assignment where students can do things such as:
      - write their own pre-registration or compare a pre-registration with the published manuscript.
      - learn more about the value of [pre-prints](https://journals.plos.org/plosbiology/article?id=10.1371/journal.pbio.3000151).
@@ -143,7 +143,9 @@ The first step in learning about something is finding the right information. You
 *   Encourage students to join a local [ReproducibiliTea](https://reproducibilitea.org/) chapter. *ReproducibiliTea* is a world-wide journal club initiative that encourages students and staff to read and discuss together journal articles related to open science. If one doesn’t exist in your university, you can start your own local chapter!
 *   Read together [Seven Easy Steps to Open Science](https://psyarxiv.com/cfzyx): An introduction to open science using an annotated reading list of 7 key topics (e.g., pre-registration, open data, reproducible research).
 *   Or [Easing Into Open Science: A Tutorial for Graduate Students](https://psyarxiv.com/vzjdp/): simple steps for graduate students to start adopting open science practices, along with resources and advice.
-*   Encourage your mentees to look for further personal qualifications and follow courses or workshops related to open science research.
+*   Encourage your mentees to look for further personal qualifications and follow courses or workshops related to open science research (see here: but list of teaching specific resource in progress)
+     - e.g., consider teaching an activity relating to p-hacking for students using [Schönbrodt's p-hacker](http://shinyapps.org/apps/p-hacker/) (Schönbrodt, F. D. (2016). p-hacker: Train your p-hacking skills! Retrieved from http://shinyapps.org/apps/p-hacker/).
+     - e.g., consider making an activity relating to forking paths ([follow this excellent tutorial](http://www.stat.columbia.edu/~gelman/research/published/multiverse_published.pdf), but also check out [FORRT Summaries](https://forrt.org/summaries/open-reproducible/#h.rc4vbzxkf0ax) on this topic.)
 
 <br>
 
