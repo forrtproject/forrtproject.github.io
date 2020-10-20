@@ -65,9 +65,9 @@ FORRT's e-learning platform is a hub for community-driven initiatives and resour
 * [FORRT's Initiatives Towards Social Justice in Academia](/dei)
 * [FORRT's Open & Reproducible Science Summaries](/summaries)
 * [FORRT's 7 ways to adopt principled teaching and mentoring practices](/forrt/adopting/)
-* [FORRT's Open & Reproducible Science Syllabus](https://forrt.org/clusters/FORRT_O&R_101_Syllabus.pdf)
+* [FORRT's Open & Reproducible Science Syllabus](https://forrt.org/clusters/#Syllabus)
 * [FORRT's Self-Assessment Tool](/self-assessment)
-* [FORRT's Educational Corner](/educators-corner)
+* [FORRT's Educator's Corner](/educators-corner)
 
 <br>
 
