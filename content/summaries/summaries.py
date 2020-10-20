@@ -1,6 +1,6 @@
 import requests
-import lxml
 import bs4
+import lxml
 import re
 import json
 
