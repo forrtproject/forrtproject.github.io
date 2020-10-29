@@ -88,10 +88,12 @@ Including sources into your syllabus that discuss open and transparent research 
 #### <FONT COLOR="#A9A9A9">How?</FONT>
 
 *   FORRT has created a curated summary of [***100+ Summaries of the Open and Reproducible Literature***](/summaries) that you can use to find suitable reading materials for your course syllabus.
+*   FORRT has also created a [***Open & Reproducible Science Syllabus***](/clusters/#Syllabus) that you can adapt to your course syllabus.
 *   Add an activity or assignment where students can do things such as:
      - write their own pre-registration or compare a pre-registration with the published manuscript.
      - learn more about the value of [pre-prints](https://journals.plos.org/plosbiology/article?id=10.1371/journal.pbio.3000151).
      - learn about the importance of statistical power and how to find out [how many participants they need](https://www.journalofcognition.org/articles/10.5334/joc.72/) for their experiment.
+     - take the free online [Science Literacy course](https://www.coursera.org/learn/science-literacy) which aims at teaching about the process of science and how these are used to produce knowledge (by Dr. Claire Scavuzzo & Dr. Rachel Buertl at Alberta University).
 
 <br>
 
@@ -139,7 +141,6 @@ The first step in learning about something is finding the right information. You
      - attending, participating or hosting one [***"Open (and Reproducible) Office hours"***](/dei) where anyone in the world wishing to learn, adopt, teach/mentor and disseminate open and reproducible science tenets can attend.
      - participating in the [***remote mentorship program***](/dei) which aims to facilitate and encourage adhesion to open and reproducible research practices in its earliest stages for (a) students from underprivileged and underrepresented backgrounds; (b) non-WEIRD; and (c) when there is no local OS-friendly institutions or personnel.     
      - supporting [***underprivileged and underrepresented early-career researchers***](/dei) by serving as a link between willing mentors and mentees in their engagement with academia, its several duties (e.g., application materials, grant/funding proposals, academic writing, research development, statistical analyses, etc.), as well as open and reproducible science practices. It is FORRT’s goal to chip away at the barriers that exist and to promote a more inclusive environment for all (Roberson, 2020).
-
 *   Encourage students to join a local [ReproducibiliTea](https://reproducibilitea.org/) chapter. *ReproducibiliTea* is a world-wide journal club initiative that encourages students and staff to read and discuss together journal articles related to open science. If one doesn’t exist in your university, you can start your own local chapter!
 *   Read together [Seven Easy Steps to Open Science](https://psyarxiv.com/cfzyx): An introduction to open science using an annotated reading list of 7 key topics (e.g., pre-registration, open data, reproducible research).
 *   Or [Easing Into Open Science: A Tutorial for Graduate Students](https://psyarxiv.com/vzjdp/): simple steps for graduate students to start adopting open science practices, along with resources and advice.
@@ -147,6 +148,11 @@ The first step in learning about something is finding the right information. You
      - e.g., consider teaching an activity relating to p-hacking for students using [Schönbrodt's p-hacker](http://shinyapps.org/apps/p-hacker/) (Schönbrodt, F. D. (2016). p-hacker: Train your p-hacking skills! Retrieved from http://shinyapps.org/apps/p-hacker/).
      - e.g., consider teaching an activity in which they are given purely random data (to which they are *a priori* blind) and are asked to find results. Tal Yarkoni is known to perform a similar exercise in academic conferences where he presents scholars with a scatter plot of random data (without saying so) and ask for attendees to identify 'outliers'.  
      - e.g., consider making an activity relating to forking paths ([follow this excellent tutorial](http://www.stat.columbia.edu/~gelman/research/published/multiverse_published.pdf), but also check out [FORRT Summaries](https://forrt.org/summaries/open-reproducible/#h.rc4vbzxkf0ax) on this topic.)
+*   Conduct a class activity or course that uses the pedagogically nifty ['The 4-Step Robustness Check'](https://www.metascience2019.org/presentations/michele-nuijten/) which breaks down concepts of reproducibility and replicability exceedingly well:
+     1. Check the *internal consistency* of the statistical results
+     2. *Reanalyze the data* using the original analytical strategy
+     3. Check if the result is *robust to alternative analytical choices*
+     4. Perform a *replication* study in a new sample
 
 <br>
 
