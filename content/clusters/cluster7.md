@@ -58,7 +58,7 @@ Attainment of a grounding in topics related to academia and academics. Students 
 
 
 
-There are 6 sub-clusters which aim to further parse the learning and teaching process:
+There are 8 sub-clusters which aim to further parse the learning and teaching process:
 
 * Diversity
 * Equity
