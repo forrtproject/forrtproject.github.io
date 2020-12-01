@@ -94,11 +94,10 @@ Including sources into your syllabus that discuss open and transparent research 
      - learn more about the value of [pre-prints](https://journals.plos.org/plosbiology/article?id=10.1371/journal.pbio.3000151).
      - learn about the importance of statistical power and how to find out [how many participants they need](https://www.journalofcognition.org/articles/10.5334/joc.72/) for their experiment.
      - take the free online [Science Literacy course](https://www.coursera.org/learn/science-literacy) which aims at teaching about the process of science and how these are used to produce knowledge (by Dr. Claire Scavuzzo & Dr. Rachel Buertl at Alberta University).
-     - assign students to watch single (short) videos a variety of open and reproducible science and discuss it in class
+     - assign students to watch single (short) videos a variety of open and reproducible science topics, and discuss it in class
           - [The RIOT's Science Club](https://www.youtube.com/c/RIOTScienceClub/videos)
           - [Metascience presentations](https://www.metascience2019.org/presentations/)
           - [You Lied to Me: A Music Video About p-values](https://www.youtube.com/watch?v=E0JzVIjj5wI) or [Professor Writes a Scientific Paper in a Day](https://www.youtube.com/watch?v=1gg_eN_UV7k)
-](https://www.youtube.com/watch?v=1gg_eN_UV7k&ab_channel=QuantPsych)
      - assign students to listen to Podcasts on open and reproducible science (broadly construed) 
           - [ReproducibiliTea - A podcast highlighting the great work of early career researchers](https://soundcloud.com/reproducibilitea)
           - [Open Science Talk - A podcast about Open Science, Open Access, Open Education, Open Data, Open Software](https://septentrio.uit.no/index.php/OSTalk/issue/archive)
