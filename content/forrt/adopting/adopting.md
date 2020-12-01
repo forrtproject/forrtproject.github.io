@@ -94,6 +94,16 @@ Including sources into your syllabus that discuss open and transparent research 
      - learn more about the value of [pre-prints](https://journals.plos.org/plosbiology/article?id=10.1371/journal.pbio.3000151).
      - learn about the importance of statistical power and how to find out [how many participants they need](https://www.journalofcognition.org/articles/10.5334/joc.72/) for their experiment.
      - take the free online [Science Literacy course](https://www.coursera.org/learn/science-literacy) which aims at teaching about the process of science and how these are used to produce knowledge (by Dr. Claire Scavuzzo & Dr. Rachel Buertl at Alberta University).
+     - assign students to videos from watch a variety of open and reproducible science from [the RIOT's Science Club](https://www.youtube.com/c/RIOTScienceClub/videos)
+     - assign students to listen to Podcasts on open and reproducible science (broadly construed) 
+           - [ReproducibiliTea - A podcast highlighting the great work of early career researchers](https://soundcloud.com/reproducibilitea)
+           - [Open Science Talk - A podcast about Open Science, Open Access, Open Education, Open Data, Open Software](https://septentrio.uit.no/index.php/OSTalk/issue/archive)
+           - [The ORION Open Science Podcast](https://orionopenscience.podbean.com/)
+           - [Everything Hertz - A podcast by scientists, for scientists. Methodology, scientific life, and bad language](https://everythinghertz.com/)
+           - [The Black Goat – A podcast about doing science](https://www.theblackgoatpodcast.com/)
+           - [The juice and the squeeze - A zesty podcast by two academics about where, how, and why we focus our efforts](https://www.juiceandsqueeze.net/)
+           - [Quantitude - A podcast dedicated to all things quantitative](https://quantitudepod.org/)
+           - [Within & Between - A podcast about the methods and metascience of developmental science, cohosted by Jessica Logan and Sara Hart](https://podtail.com/en/podcast/within-between/)
 
 <br>
 
