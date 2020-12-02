@@ -64,7 +64,7 @@ FORRT's e-learning platform (or Nexus) is a hub for community-driven initiatives
 * [FORRT's Curated Resources](/resources)
 * [FORRT's Initiatives Towards Social Justice in Academia](/dei)
 * [FORRT's Open & Reproducible Science Summaries](/summaries)
-* [FORRT's 7 ways to adopt principled teaching and mentoring practices](/forrt/adopting/)
+* [FORRT's 7 ways to adopt principled teaching and mentoring practices](/forrt/adopting)
 * [FORRT's Open & Reproducible Science Syllabus](https://forrt.org/clusters/#Syllabus)
 * [FORRT's Self-Assessment Tool](/self-assessment)
 * [FORRT's Educator's Corner](/educators-corner)
