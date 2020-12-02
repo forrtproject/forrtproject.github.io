@@ -80,7 +80,7 @@ FORRT supports this endeavor through a three-pronged approach:
   <i class="fas fa-arrow-alt-circle-right text-danger fa-1.5x"></i> [FORRT's clusters](/clusters/)    
   <i class="fas fa-arrow-alt-circle-right text-danger fa-1.5x"></i> [FORRT’s self-assessment tool](/survey)  
 
-2. Equipping scholars with high quality educational and pedagogical tools on open and reproducible science practices to facilitate its intregration into educators’ teaching and mentoring.
+2. Equipping educators with high quality pedagogical tools on open and reproducible science practices to facilitate its integration into curricula and educators’ teaching mentoring, and research practices.
   
   <i class="fas fa-arrow-alt-circle-right text-danger fa-1.5x"></i> [FORRT’s Educational Nexus](/resources/)  
   <i class="fas fa-arrow-alt-circle-right text-danger fa-1.5x"></i> [FORRT’s Open and Reproducible Science Summaries](/summaries/)  
