@@ -143,23 +143,32 @@ There are 8 sub-clusters which aim to further parse the learning and teaching pr
 </div>
   <div class="tab-pane fade" id="C7S2" role="tabpanel" aria-labelledby="C7S2-tab"><br>
 
-## Large scale replication attempts
-
 ***Equity is that everyone has access to the same opportunities and that we all have privileges and barriers, thus we do not all start from the same starting position.***
 
-* Klein, R. A., Ratliff, K. A., Vianello, M., Adams, R. B., Bahník, Š., Bernstein, M. J., et al. (2014). Investigating variation in replicability: A “many labs” replication project. Social Psychology, 45, 142–152. https://doi.org/10.1027/1864-9335/a000178
+* APA (2010). Sexual Orientation, Gender identity & Socioeconomic Status [Blog post]. Retrieved fromhttps://www.apa.org/pi/ses/resources/publications/lgbt
 
-* Klein, R. A., Vianello, M., Hasselman, F., Adams, B. G., Adams, R. B., Alper, S., … Nosek, B. A. (2018). Many Labs 2: Investigating Variation in Replicability Across Samples and Settings. Advances in Methods and Practices in Psychological Science, 1(4), 443–490. https://doi.org/10.1177/2515245918810225
+* APA (2010). Disability & Socioeconomic Status [Blog post]. Retrieved from https://www.apa.org/pi/ses/resources/publications/disability
 
-* Open Science Collaboration (2012). An open, large-scale, collaborative effort to estimate the reproducibility of psychological science. Perspectives on Psychological Science, 7, 657–660. 
+* APA. (2017, July). Women & Socioeconomic Status [Blog post]. Retrieved from https://www.apa.org/pi/ses/resources/publications/women
+APA (2017, July). Ethnic and Racial Minorities & Socioeconomic Status [Blog post]. Retrieved from https://www.apa.org/pi/ses/resources/publications/minorities
 
-* Open Science Collaboration. (2015). Estimating the reproducibility of psychological science. Science, 349(6251), aaC7716. DOI: 10.1126/science.aaC7716
+* APA (2017, July). Education and Socioeconomic Status [Blog post]. Retrieved from https://www.apa.org/pi/ses/resources/publications/education
 
-* Van Bavel, J. J., Mende-Siedlecki, P., Brady, W. J., & Reinero, D. A. (2016). Contextual sensitivity in scientific reproducibility. Proceedings of the National Academy of Sciences, 113(23), 6454-6459. https://doi.org/10.1073/pnas.1521897113
+* Bahlai, C., Bartlett, L. J., Burgio, K. R., Fournier, A., Keiser, C. N., Poisot, T., & Whitney, K. S. (2019). Open science isn’t always open to all scientists. American Scientist, 107(2), 78-82. https://doi.org/10.1511/2019.107.2.78
 
-* [ManyPrimates](https://manyprimates.github.io/)
+* Cislak, A., Formanowicz, M., & Saguy, T. (2018). Bias against research on gender bias. Scientometrics, 115(1), 189-200. https://doi.org/10.1007/s11192-018-2667-0
 
-* [CREP](https://osf.io/wfC7u/)
+* Flaherty, C. (2020, August, 20). Something's Got to Give. Inside Higher Ed. Retrieved from https://www.insidehighered.com/news/2020/08/20/womens-journal-submission-rates-continue-fall
+
+* Kim, E., & Patterson, S. (2020). The Pandemic and Gender Inequality in Academia. Available at SSRN 3666587. http://dx.doi.org/10.2139/ssrn.3666587
+
+* Larivière, V., Ni, C., Gingras, Y., Cronin, B., & Sugimoto, C. R. (2013). Bibliometrics: Global gender disparities in science. Nature News, 504(7479), 211. https://doi.org/10.1038/504211a
+
+* Myers, K. R., Tham, W. Y., Yin, Y., Cohodes, N., Thursby, J. G., Thursby, M. C., ... & Wang, D. (2020). Unequal effects of the COVID-19 pandemic on scientists. Nature human behaviour, 4(9), 880-883.
+
+* Quagliata, T. (2008). Is there a positive correlation between socioeconomic status and academic achievement?. Paper: Education masters (p. 78). https://fisherpub.sjfc.edu/cgi/viewcontent.cgi?article=1077&context=education_ETD_masters
+
+* Roberson, M. L. (2020). On supporting early-career Black scholars. Nature Human Behaviour, 1-1. https://doi.org/10.1038/s41562-020-0926-6
 
 <br>
 </div>
