@@ -186,7 +186,7 @@ APA (2017, July). Ethnic and Racial Minorities & Socioeconomic Status [Blog post
 
 * Flaherty, C. (2020, August, 20). Something's Got to Give. Inside Higher Ed. Retrieved from https://www.insidehighered.com/news/2020/08/20/womens-journal-submission-rates-continue-fall
 
-Henrich, J., Heine, S. & Norenzayan, A. (2010) Most people are not WEIRD. Nature 466, 29. https://doi.org/10.1038/466029a
+* Henrich, J., Heine, S. & Norenzayan, A. (2010) Most people are not WEIRD. Nature 466, 29. https://doi.org/10.1038/466029a
 
 * Larivière, V., Ni, C., Gingras, Y., Cronin, B., & Sugimoto, C. R. (2013). Bibliometrics: Global gender disparities in science. Nature News, 504(7479), 211. https://doi.org/10.1038/504211a
 
