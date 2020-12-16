@@ -15,10 +15,10 @@ header:
 
 <br>
 
-
-
 FORRT pedagogies might encompass reflections on increasing the dissemination, recognition and re-purposefulness of teaching practices and materials; experiences of adapting courses to incorporate reproducibility and transparency; perspectives on the social and ethical responsibilities towards teaching these principles.
 
-It is our hope that scholars, instructors, educational institutions aiming to develop or reform degree programs and courses can use FORRT’s pedagogies as an initial template towards the creation of their personalized pedagogies. In this sense, the idea is to facilitate the initial costs of integrating field-specific education with open and reproducible scholarship tenets.
+It is our hope that scholars, instructors, educational institutions aiming to develop or reform degree programs and courses can use FORRT’s pedagogies as an initial template towards the creation of their personalized pedagogies. In this sense, the idea is to reduce the initial costs of integrating field-specific education with open and reproducible scholarship principles.
 
 We also hope that in the long term, this initiative can contribute to foster social justice through the opening and democratization of scientific educational resources and encourage changes in the academic incentive structures towards greater recognition of teaching and mentoring. 
+
+<br><br>
