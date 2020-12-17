@@ -21,4 +21,5 @@ It is our hope that scholars, instructors, educational institutions aiming to de
 
 We also hope that in the long term, this initiative can contribute to foster social justice through the opening and democratization of scientific educational resources and encourage changes in the academic incentive structures towards greater recognition of teaching and mentoring. 
 
-<br><br>
+<br>
+<br>
