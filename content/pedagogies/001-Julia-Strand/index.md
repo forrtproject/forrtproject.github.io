@@ -32,7 +32,7 @@ links:
 - name: Course Materials 
   url: https://osf.io/zpb8a/
 - name: Teaser Video
-  url: youtube.com/video/k4MJkLR-rvw
+  url: https://www.youtube.com/watch?v=k4MJkLR-rvw
 - name: Course technicals
   url: https://youtu.be/vi1BxZ1MIaE
 - name: Interview (pdf)
@@ -55,9 +55,9 @@ FORRT is delighted to partner up with [*Julia Strand*](https://apps.carleton.edu
 
 <br>
 
-Julia Strand is Associate Professor of Psychology at Carleton College and she teaches courses such as Introduction to Psychology, The Psychology of Spoken Words and Sensation and Perception. Julia has also recently prepared and taught a course on Psychology’s Credibility Revolution ([link](https://docs.google.com/presentation/d/e/2PACX-1vREwmeADm5WZCBfjAKyAkzYC_cQb7xtYv6C7e_wBJx0BUhJ3lFY0WABpIb0XotJake0Xrh-CC6g1Vwy/pub?start=false&amp;loop=false&amp;delayms=99999999&slide=id.g93d3e0908d_0_316)) which excels in all aspects (content, creativity, visuals, & functionality). 
+Julia Strand is Associate Professor of Psychology at Carleton College and she teaches courses such as Introduction to Psychology, The Psychology of Spoken Words and Sensation and Perception. Julia has also recently prepared and taught a course on Psychology’s Credibility Revolution  ([link](https://docs.google.com/presentation/d/e/2PACX-1vREwmeADm5WZCBfjAKyAkzYC_cQb7xtYv6C7e_wBJx0BUhJ3lFY0WABpIb0XotJake0Xrh-CC6g1Vwy/pub?start=false&amp;loop=false&amp;delayms=99999999&slide=id.g93d3e0908d_0_316)) which excels in all aspects (e.g., content, creativity, visuals, & functionality). 
 
-FORRT has reached out to the academic community on social media to ask which questions other scholars would like Julia to answer about her teaching materials on the Psychology’s Credibility Revolution course (on both technical and non-technical spheres). Below you can find Julia’s answers to these questions. And you can also find [in this OSF repository](https://osf.io/zpb8a/) Julia’s complete teaching materials, from which everyone can learn from.
+FORRT has reached out to the academic community on social media to ask which questions other scholars would like Julia to answer about her teaching materials on the Psychology’s Credibility Revolution course (on both technical and non-technical spheres). Below you can find Julia’s answers to these questions. And you can also find [in this OSF repository](https://osf.io/zpb8a/) Julia’s complete teaching materials, from which everyone can learn, adapt, or repurpose.
 
 Kudos to Julia for preparing such an amazing course and many thanks to her for being so open to partner up with FORRT to share her pedagogies with the wider community. We hope this can serve as an inspiration and help scholars, instructors and educational institutions interested in integrating open and reproducible scholarship tenets in their teaching and mentoring. ![](interview.jpg) 
 
@@ -132,6 +132,6 @@ See Julia’s response to all these technical questions in this great video she 
 * [Course Syllabus](https://docs.google.com/presentation/d/e/2PACX-1vREwmeADm5WZCBfjAKyAkzYC_cQb7xtYv6C7e_wBJx0BUhJ3lFY0WABpIb0XotJake0Xrh-CC6g1Vwy/pub?start=false&amp;loop=false&amp;delayms=99999999&slide=id.g93d3e0908d_0_316)
 * [OSF Component in Pedagogies with all Julia's course materials and assignments](https://osf.io/zpb8a/)
 * [YouTube video on technical details of her course](https://youtu.be/vi1BxZ1MIaE)
-* [Teaser for Julia’s Psychology course on “Psychology's credibility revolution](youtube.com/video/k4MJkLR-rvw)
+* [Teaser for Julia’s Psychology course on “Psychology's credibility revolution](https://www.youtube.com/watch?v=k4MJkLR-rvw)
 * [The .pdf version of this page, with Julia's answers from the community's question](JS-interview.pdf)
 
