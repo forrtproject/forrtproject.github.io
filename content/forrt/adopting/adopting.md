@@ -116,10 +116,10 @@ Open educational resources allow community members to make contributions and con
 
 #### <FONT COLOR="#A9A9A9">How?</FONT>
 
+*   [FORRT Pedagogies](/pedagogies) aims to collect and catalogue exemplary instances of principled education - i.e., successful pedagogies in teaching or mentoring of open and reproducible principles, and are detailed examples of the processes by which ideals in teaching, mentoring, and openness of these materials come to materialize.
 *   FORRT maintains [***700+ curated educational resources***](/resources) on Open and Reproducible topics. [***Submit your own resources***](https://docs.google.com/forms/d/e/1FAIpQLSfPceN5opEeauCBSvapoB-ADpH0IoT24XOLfQGaVEF0EJGFOA/viewform) so that others can adopt them easily into their teaching.
 *   The [Open Textbook Library](https://open.umn.edu/opentextbooks/) can be used to adopt existing open access textbooks into your own teaching as well as to submit open-access textbooks. 
 *   The [OSKB](https://www.oercommons.org/hubs/OSKB) can be used to discover open scholarship resources created and curated by the community.
-
 
 #### Consider making your teaching materials [FAIR](https://www.nature.com/articles/sdata201618) (Findable, Accessible, Interoperable, Reusable)
 
@@ -166,7 +166,10 @@ The first step in learning about something is finding the right information. You
      2. *Reanalyze the data* using the original analytical strategy
      3. Check if the result is *robust to alternative analytical choices*
      4. Perform a *replication* study in a new sample
-
+*   And check out these introductions to Open Science topics
+    - [UKRN: Open research primers](https://www.ukrn.org/primers/).
+    - [INOSC Starter Kit](https://inosc-starter-kit.netlify.app/) which provides an excellent starter kit for founding and building a local Open Science community
+    
 <br>
 
 ### 5. Create opportunities for students to engage in Open Science projects
