@@ -45,7 +45,7 @@ url_video: ""
 
 <br>
 
-Welcome to FORRT's first Pedagogy. And what better way to kickstart this initiative than hosting a researcher and educator who has been widely recognized by her peers for her outstanding course and materials on *Psychology’s Credibility Revolution*? 
+Welcome to FORRT's first Pedagogy. And what better way to kickstart this initiative than hosting a researcher and educator who has been widely recognized by her peers for her outstanding course and materials on theory of Open and Reproducible Science called *Psychology’s Credibility Revolution*? 
 
 FORRT is delighted to partner up with [*Julia Strand*](https://apps.carleton.edu/curricular/psyc/jstrand/) for its first Pedagogy! 
 
@@ -135,3 +135,8 @@ See Julia’s response to all these technical questions in this great video she 
 * [Teaser for Julia’s Psychology course on “Psychology's credibility revolution](https://www.youtube.com/watch?v=k4MJkLR-rvw)
 * [The .pdf version of this page, with Julia's answers from the community's question](JS-interview.pdf)
 
+<br>
+
+***Suggested Citation***
+
+Strand, J. (2020) Open and Reproducible Science walks into a classroom: Insights from teaching a course on Psychology’s Credibility Revolution. *FORRT Pedagogies*. https://doi.org/10.17605/OSF.IO/ZPB8A
