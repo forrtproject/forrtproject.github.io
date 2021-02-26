@@ -1,6 +1,6 @@
 ---
 title: Educators' Corner
-subtitle: Offering a platform for educators of all stripes to share their stories, experiences, successes and hardships in teaching and mentoring.
+subtitle: Offering a platform for educators of all stripes to share their stories, experiences, successes and hardships in teaching and mentoring, as well as for sharing educational practices and initiatives that are of interest to the O&R community.
 
 # View.
 #   1 = List
