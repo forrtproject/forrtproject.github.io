@@ -2,8 +2,8 @@
 # Documentation: https://sourcethemes.com/academic/docs/managing-content/
 
 title: "Teaching the why and how of replication studies"
-subtitle: "Beneficial consequences for student's engagement, satisfaction and feeling seen"
-summary: "Patrick S. Forscher  xxx xxx xxxxx  xxx xxx  xxxx xxxx xxxxx."
+subtitle: ""
+summary: "Patrick S. Forscher  walks us through his workshop on how and hy to conduct replication studies. He shares all his materials so you can become learn and teach these concepts."
 authors: ['Patrick Forscher']
 tags: []
 categories: []
