@@ -56,6 +56,8 @@ display_name: false
 ***
 In a nutshell, FORRT is a Framework for Open and Reproducible Research Training. It aims to provide a pedagogical infrastructure designed to recognize and support the teaching and mentoring of open and reproducible science tenets in tandem with prototypical subject matters in higher education. FORRT strives to be an effective, evolving, and community-driven organization raising awareness of the pedagogical implications of open and reproducible science and its associated challenges (i.e., curricular reform, epistemological uncertainty, methods of education). FORRT also advocates for the opening of teaching and mentoring materials as a means to facilitate access, discovery, and learning to those who otherwise would be educationally disenfranchised.
 
+{{< youtube of8ai1HhqK4&ab >}}
+
 {{< expand "Expand to learn more" >}}
 
 ### The problem
