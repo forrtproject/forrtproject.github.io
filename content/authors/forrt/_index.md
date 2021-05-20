@@ -58,6 +58,8 @@ In a nutshell, FORRT is a Framework for Open and Reproducible Research Training.
 
 {{< youtube of8ai1HhqK4&ab >}}
 
+<br>
+
 {{< expand "Expand to learn more" >}}
 
 ### The problem
