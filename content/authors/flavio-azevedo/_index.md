@@ -79,7 +79,8 @@ user_groups:
 - ""
 # - Code of Conduct Committee
 # - "FORRT Ambassadors" 
-
+# - "FORRT Ambassadors1" 
+# - "FORRT Ambassadors2" 
 ---
 
 Flavio Azevedo, a Fulbright fellow, is currently working as a research associate at the Institute for Communication Science (IfKW) at Friedrich Schiller University Jena, Germany. Recently, Flavio was named as one of the 100 most influential early career Portuguese via the “Global Shapers” initiative by the World Economic Forum.
