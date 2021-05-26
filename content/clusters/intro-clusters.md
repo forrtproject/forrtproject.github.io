@@ -67,7 +67,11 @@ In order to teach open and reproducible science effectively, educators need to m
 
 We further breakdown each cluster into sub-categories to provide educators/scholars with useful information on the extant of open science scholarship, and how they are connected to one another. The idea behind specifying clusters and sub-clusters it to highlight we have drawn fuzzy boundaries between clusters while allowing for diversification and heterogeneity in how each educator integrates these cluster/sub-clusters with their respective field content. The breakdown of each cluster into sub-categories provides scholars with useful information on the extant of open science scholarship, and how they are connected to one another. To have a look at the sub-clusters within each cluster, please click on the clusters above.
 
-See below for each cluster, its description, sub-clusters, and associated works geared for teaching.
+See below for each cluster, its description, sub-clusters, and associated works geared for teaching. And here's an attempt to visualize FORRT's clusters:
+
+<br>
+
+![FORRT's Clusters](FORRT_Clusters.jpg "FORRT's Clusters")
 
 <br>
 
