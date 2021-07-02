@@ -109,8 +109,6 @@ Including sources into your syllabus that discuss open and transparent research 
           - [Quantitude - A podcast dedicated to all things quantitative](https://quantitudepod.org/)
           - [Within & Between - A podcast about the methods and metascience of developmental science](https://podtail.com/en/podcast/within-between/)
           - [The Hitchhiker's Guide to Academic Publishing](https://www.youtube.com/watch?v=TgTsgbbdUog&t=6025s&ab_channel=CharlieBurlingham)
-          - 
-]
 
 <br>
 
