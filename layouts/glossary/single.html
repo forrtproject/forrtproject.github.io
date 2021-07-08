@@ -1,0 +1,40 @@
+{{- define "main" -}}
+
+<article class="article">
+
+    {{ partial "resource_page_header" . }}
+    
+    <div class="article-container">
+        <div class="article-container">
+            
+            {{/*  {{ partial "tags" . }}  */}}
+            {{ if .Params.definition }}
+            {{/*  <h3>Definition</h3>  */}}
+            <p class="pub-abstract border-bottom"><b>Definition: </b>{{ .Params.definition | markdownify }}</p>
+            {{ end }}
+            <div class="article-style">
+                {{ .Content }}
+            <p class=" mb-1 pr-2"><b>Reference(s): </b>{{delimit .Params.references ", " }}</p>
+            <p class=" mb-1 pr-2"><b>Related term(s): </b>{{delimit .Params.related_terms ", " }}</p>
+            <p class=" mb-1 pr-2"><b>Alternative definition: </b>{{ .Params.alt_definition }}</p>
+            <p class=" mb-1 pr-2"><b>Drafted by: </b>{{delimit .Params.drafted_by ", " }}</p>
+            <p class=" mb-1 pr-2"><b>Reviewed by: </b>{{delimit .Params.reviewed_by ", " }}</p>
+            </div>
+            
+            {{ partial "share" . }}
+            {{ partial "page_author" . }}
+            {{ partial "comments" . }}
+            
+            {{ if site.Params.section_pager }}
+            <div class="article-widget">
+                {{ partial "section_pager" . }}
+            </div>
+            {{ end }}
+            
+            {{ partial "page_related" . }}
+
+            
+        </div>
+</article>
+
+{{- end -}}
