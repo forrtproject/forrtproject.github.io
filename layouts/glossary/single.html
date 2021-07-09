@@ -5,35 +5,70 @@
     {{ partial "resource_page_header" . }}
     
     <div class="article-container">
-        <div class="article-container">
             
-            {{/*  {{ partial "tags" . }}  */}}
-            {{ if .Params.definition }}
-            {{/*  <h3>Definition</h3>  */}}
-            <p class="pub-abstract border-bottom"><b>Definition: </b>{{ .Params.definition | markdownify }}</p>
+            {{ with .Params.definition }}
+            <p class="pub-abstract border-bottom pb-1"><b>Definition: </b>{{ . | markdownify }}</p>
             {{ end }}
+            
             <div class="article-style">
-                {{ .Content }}
-            <p class=" mb-1 pr-2"><b>Reference(s): </b>{{delimit .Params.references ", " }}</p>
-            <p class=" mb-1 pr-2"><b>Related term(s): </b>{{delimit .Params.related_terms ", " }}</p>
-            <p class=" mb-1 pr-2"><b>Alternative definition: </b>{{ .Params.alt_definition }}</p>
-            <p class=" mb-1 pr-2"><b>Drafted by: </b>{{delimit .Params.drafted_by ", " }}</p>
-            <p class=" mb-1 pr-2"><b>Reviewed by: </b>{{delimit .Params.reviewed_by ", " }}</p>
+            {{ with .Params.alt_definition }}
+                <p class=" mb-1 pr-2"><b>Alternative definition: </b>{{ . }}</p>
+            {{end}}
+            
+
+                {{ with .Params.related_terms }}
+                {{ $term_urlized := "" }}
+                <p class=" mb-1 pr-2"><strong>Related term{{- if gt (len .) 1 }}s{{- end -}}: </strong>
+                    {{ delimit (apply (apply (sort .) "partial" "glossary_link" ".") "chomp" ".") ", " ", & " }}
+                    {{/* Old working code, now in the line above! keeping it for the archive :joy:)
+                    {{- range $key, $tmp_rel_terms := . -}}
+                    {{ if gt $key 0 }}, {{ end }}
+                    {{- $term_urlized = urlize $tmp_rel_terms | truncate 35 -}}
+                    {{- $term_page := site.GetPage (printf "/glossary/%s" $term_urlized) -}}
+                    {{- if $term_page -}}
+                    {{ $term_url := $term_page.RelPermalink }}
+                    <a href={{ $term_url }}>{{ $tmp_rel_terms }}</a>
+                    {{- else -}}
+                    {{ $tmp_rel_terms }}
+                    {{- end -}}
+                    {{- end -}}  */}}
+                </p>
+                {{- end -}}
+
+                {{/*  Hacky way to display the var only if the len of the string with all objects is longer than 0   */}}
+                {{ $alt_related_terms := delimit .Params.alt_related_terms ", " | len }}
+                {{ if ne $alt_related_terms 0 }}
+                    {{ with .Params.alt_related_terms }}
+                    {{ $term_urlized := "" }}
+                    <p class=" mb-1 pr-2"><strong>Related term{{ if gt (len .) 1 }}s{{ end }} to alternative definition: </strong>
+                        {{ delimit (apply (apply (sort .) "partial" "glossary_link" ".") "chomp" ".") ", " ", & " }}
+                    </p>
+                    {{- end -}}
+                {{end}}
+
+            {{/*  Hacky way to display the var only if the len of the string with all objects is longer than 0   */}}
+            {{ $references := delimit .Params.references ", " | len }}
+            {{ if ne $references 0 }}
+                <p class=" mb-1 pr-2"><b>Reference{{ if gt (len .Params.references) 1 }}s{{ end }}: </b>{{delimit .Params.references ", " ", & "}}</p>
+            {{end}}
+
+            {{ $drafted_by := delimit .Params.drafted_by ", " | len }}
+            {{ if ne $drafted_by 0 }}
+            <p class=" mb-1 pr-2"><b>Drafted by: </b>{{delimit .Params.drafted_by ", " }} </p>
+            {{end}}
+
+            {{ $reviewed_by := delimit .Params.reviewed_by ", " | len }}
+            {{ if ne $reviewed_by 0 }}
+            <p class=" mb-1 pr-2"><b>Reviewed by: </b>{{delimit .Params.reviewed_by ", " ", & " }}</p>
             </div>
-            
-            {{ partial "share" . }}
-            {{ partial "page_author" . }}
-            {{ partial "comments" . }}
-            
+            {{end}}
+
             {{ if site.Params.section_pager }}
             <div class="article-widget">
                 {{ partial "section_pager" . }}
             </div>
             {{ end }}
-            
-            {{ partial "page_related" . }}
 
-            
         </div>
 </article>
 
