@@ -12,7 +12,7 @@
             
             <div class="article-style">
             {{ with .Params.alt_definition }}
-                <p class=" mb-1 pr-2"><b>Alternative definition: </b>{{ . }}</p>
+                <p class=" mb-1 pr-2"><b>Alternative definition: </b>{{ . | markdownify }}</p>
             {{end}}
             
 
@@ -49,17 +49,17 @@
             {{/*  Hacky way to display the var only if the len of the string with all objects is longer than 0   */}}
             {{ $references := delimit .Params.references ", " | len }}
             {{ if ne $references 0 }}
-                <p class=" mb-1 pr-2"><b>Reference{{ if gt (len .Params.references) 1 }}s{{ end }}: </b>{{delimit .Params.references ", " ", & "}}</p>
+                <p class=" mb-1 pr-2"><b>Reference{{ if gt (len .Params.references) 1 }}s{{ end }}: </b>{{delimit .Params.references ", " ", & " | markdownify }}</p>
             {{end}}
 
             {{ $drafted_by := delimit .Params.drafted_by ", " | len }}
             {{ if ne $drafted_by 0 }}
-            <p class=" mb-1 pr-2"><b>Drafted by: </b>{{delimit .Params.drafted_by ", " }} </p>
+            <p class=" mb-1 pr-2"><b>Drafted by: </b>{{delimit .Params.drafted_by ", " ", & " | markdownify }} </p>
             {{end}}
 
             {{ $reviewed_by := delimit .Params.reviewed_by ", " | len }}
             {{ if ne $reviewed_by 0 }}
-            <p class=" mb-1 pr-2"><b>Reviewed by: </b>{{delimit .Params.reviewed_by ", " ", & " }}</p>
+            <p class=" mb-1 pr-2"><b>Reviewed by: </b>{{delimit .Params.reviewed_by ", " ", & " | markdownify }}</p>
             </div>
             {{end}}
 
