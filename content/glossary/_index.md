@@ -14,6 +14,10 @@ header:
   image: "resources.jpg"
 ---
 
+{{% alert note %}}
+This is a working in progress version of the Glossary which is (probably) filled with mistakes. This uses an older, non-reviewed version of the Glosssary. We are trying to see what is the best way to show information and terms.
+{{% /alert %}}
+
 We successfully arrived at the last stage of Phase 1 🎉🥳. This means we managed to go from an ambitious idea to a full blown crowdsourced project in which more than 110 collaborators defined and reviewed almost 300 Open Scholarship terms.
 
 The list of terms we have drafted and reviewed can be found on the left if you are viewing this page on a computer screen or bigger, otherwise they can be found at the bottom of the page. If you hover a word, you will be able to read the full description of the term. To know more about a term, including references, simply click on it and it will bring you to the term page.
@@ -35,5 +39,4 @@ Each term is based on a standard template. Here is an example:
 
 ## Feedback
 
-You would like to give feedback, help us review or even add terms? You can do so by commenting on our working document joining our Slack team...
-
+You would like to give feedback, help us review or even add terms? You can do so by commenting on our [working document](https://docs.google.com/document/d/1oNsHSRmgAsDGUKvq5joqBpvHeRmDJKldH2kSyJovHhk/edit#) or [getting in touch with us](/about/get-involved/#contact).
