@@ -12,7 +12,7 @@ address:
   region: 
   street: 
   
-all_day: false
+all_day: true
 authors: ["forrt", "Flavio Azevedo"]
 date: "2020-01-15T14:00:00Z"
 date_end: "2020-01-15T18:00:00Z"
