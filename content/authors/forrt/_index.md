@@ -1,4 +1,6 @@
 ---
+title: FORRT
+name: FORRT
 authors:
 - forrt
 bio:
