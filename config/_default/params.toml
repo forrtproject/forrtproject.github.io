@@ -16,7 +16,7 @@
 theme = "forrt"
 logo = "FORRT.svg"
 # Enable users to switch between day and night mode?
-day_night = false
+day_night = true
 
 # Override the theme's font set (optional).
 #   Latest font sets (may require updating): https://sourcethemes.com/academic/themes/
@@ -154,7 +154,7 @@ main_menu = {align = "c", show_logo = true, highlight_active_link = true, show_l
 reading_time = true
 
 # Display next/previous section pager? (true/false)
-section_pager = true
+section_pager = false
 docs_section_pager = true  # Display pager in Docs layout (e.g. tutorials)?
 
 # Enable in-built social sharing buttons? (true/false)
@@ -228,7 +228,7 @@ plugins_js  = []
   # Configuration of Disqus.
   [comments.disqus]
     shortname = ""  # Paste the shortname from your Disqus dashboard.
-    show_count = false  # Show comment count in page header? (true/false)
+    show_count = true  # Show comment count in page header? (true/false)
 
   # Configuration of Commento.
   [comments.commento]
