@@ -11,8 +11,8 @@
   {{if .PrevInSection}}
   {{ if in (slice "docs" "book") .Type }}{{ $str = "next" }}{{else}}{{ $str = "previous" }}{{end}}
   <div class="post-nav-item d-inline">
-    <div class="meta-nav">{{ i18n $str }}</div>
-    <a href="{{.PrevInSection.RelPermalink}}" rel="prev">{{.PrevInSection.Title}}</a>
+    <a href="{{.PrevInSection.RelPermalink}}" rel="prev"><div class="meta-nav">{{ i18n $str }}</div>
+    <p class="">{{.PrevInSection.Title}}</p></a>
   </div>
   {{end}}
 </div>
