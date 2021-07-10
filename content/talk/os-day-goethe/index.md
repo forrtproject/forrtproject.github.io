@@ -12,7 +12,7 @@ address:
   region: 
   street: 
   
-all_day: false
+all_day: true
 authors: ["forrt", "Flavio Azevedo"]
 date: "2020-01-15T14:00:00Z"
 date_end: "2020-01-15T18:00:00Z"
@@ -31,7 +31,6 @@ math: true
 projects:
 publishDate: "2017-01-01T00:00:00Z"
 slides: 
-summary: An example talk using Academic's Markdown slides feature.
 tags: []
 url_code: ""
 url_pdf: ""
@@ -45,6 +44,6 @@ FORRT was featured as one of the two main talks, and below you find the recordin
 
 <iframe src="https://video01.uni-frankfurt.de/Mediasite/Play/8fae430a4ee24d62a7f61985f74f27121d" width="100%" height="500" allowfullscreen="allowfullscreen"></iframe>
 
-For an aperçu of the whole event, see this [Twiter thead](https://twitter.com/OpenScienceFFM/status/1222523707870056450).
+For an overview of the whole event, see this [Twitter thead](https://twitter.com/OpenScienceFFM/status/1222523707870056450).
 
 {{< tweet 1222523707870056450 >}}
