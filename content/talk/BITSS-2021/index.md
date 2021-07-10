@@ -13,7 +13,7 @@ address:
   street:
 
 all_day: true
-authors: ["forrt", "Sam Parsons"]
+authors: ["forrt", "Sam Parsons", "Flavio Azevedo"]
 date: "2021-01-07T14:00:00Z"
 date_end: "2021-01-08T18:00:00Z"
 event: 9th BITSS Annual Meeting
