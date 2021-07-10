@@ -1,8 +1,0 @@
-{{- $term_urlized := urlize . | truncate 35 -}}
-{{- $term_page := site.GetPage (printf "/glossary/%s" $term_urlized) -}}
-{{- if $term_page -}}
-{{ $term_url := $term_page.RelPermalink }}
-<a href={{ $term_url }}>{{ . }}</a>
-{{ else }}
-{{ . }}
-{{ end }}

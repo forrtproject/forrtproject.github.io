@@ -202,8 +202,8 @@
 /* Docs TOC nav. */
 
 .docs-toc-title {
-  color: #000;
-  font-size: .95rem;
+  color: #b5b5b5;
+  font-size: .875rem;
   font-weight: 600;
   padding-left: calc(1.5rem + 1px);
 }
@@ -231,15 +231,14 @@ ul.toc-top {
 .toc-top li a {
   display: block;
   padding: .125rem 1.5rem;
-  color: #363636;
-  font-size: 0.8rem;
+  color: #99979c;
+  font-size: 0.7rem;
 }
 
 #TableOfContents li a:hover,
 .toc-top li a:hover {
   color: $sta-primary;
   text-decoration: none;
-  font-weight: bolder;
 }
 
 /* ScrollSpy active link style. */

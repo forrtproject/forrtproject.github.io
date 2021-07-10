@@ -106,11 +106,6 @@
   weight = 33
   parent = "nexus"
 [[main]]
-  name = "Glossary"
-  url = "/glossary"
-  weight = 34
-  parent = "nexus"
-[[main]]
   name = "Summaries"
   url = "/summaries"
   weight = 34
