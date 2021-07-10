@@ -1,75 +1,108 @@
 {{- define "main" -}}
 
-<article class="article">
+<div class="container-fluid docs">
+    <div class="row flex-xl-nowrap">
+      <div class="d-none d-xl-block col-xl-3 docs-toc" style="order: 1">
+        <ul class="nav toc-top">
+          <li><a href="#" id="back_to_top" class="docs-toc-title">List of terms</a></li>
+        </ul>
+
+        <nav id="TableOfContents" class="nav flex-column">
+            <ul>
+              {{ range where site.Pages "Params.definition" "!=" nil }}
+              <li class="nav-item" data-toggle="tooltip" data-placement="right" title="{{ .Params.definition }}"><a href="{{ .Permalink }}" class="nav-link" style="">{{ .Title }}</a></li>
+              {{end}}
+            </ul>
+          </nav>
+      </div>
+      <main class="col-12 col-xl-8  pl-md-5 docs-content" role="main">
+
+        <article class="article">
+
+          <div class="docs-article-container mx-auto">
 
     {{ partial "resource_page_header" . }}
-    
-    <div class="article-container">
-            
-            {{ with .Params.definition }}
-            <p class="pub-abstract border-bottom pb-1"><b>Definition: </b>{{ . | markdownify }}</p>
-            {{ end }}
-            
-            <div class="article-style">
-            {{ with .Params.alt_definition }}
-                <p class=" mb-1 pr-2"><b>Alternative definition: </b>{{ . | markdownify }}</p>
-            {{end}}
-            
 
-                {{ with .Params.related_terms }}
-                {{ $term_urlized := "" }}
-                <p class=" mb-1 pr-2"><strong>Related term{{- if gt (len .) 1 }}s{{- end -}}: </strong>
-                    {{ delimit (apply (apply (sort .) "partial" "glossary_link" ".") "chomp" ".") ", " ", & " }}
-                    {{/* Old working code, now in the line above! keeping it for the archive :joy:)
-                    {{- range $key, $tmp_rel_terms := . -}}
-                    {{ if gt $key 0 }}, {{ end }}
-                    {{- $term_urlized = urlize $tmp_rel_terms | truncate 35 -}}
-                    {{- $term_page := site.GetPage (printf "/glossary/%s" $term_urlized) -}}
-                    {{- if $term_page -}}
-                    {{ $term_url := $term_page.RelPermalink }}
-                    <a href={{ $term_url }}>{{ $tmp_rel_terms }}</a>
-                    {{- else -}}
-                    {{ $tmp_rel_terms }}
-                    {{- end -}}
-                    {{- end -}}  */}}
-                </p>
-                {{- end -}}
+    {{ with .Params.definition }}
+    <p class="pub-abstract border-bottom pb-1"><b>Definition: </b>{{ . | markdownify }}</p>
+    {{ end }}
 
-                {{/*  Hacky way to display the var only if the len of the string with all objects is longer than 0   */}}
-                {{ $alt_related_terms := delimit .Params.alt_related_terms ", " | len }}
-                {{ if ne $alt_related_terms 0 }}
-                    {{ with .Params.alt_related_terms }}
-                    {{ $term_urlized := "" }}
-                    <p class=" mb-1 pr-2"><strong>Related term{{ if gt (len .) 1 }}s{{ end }} to alternative definition: </strong>
-                        {{ delimit (apply (apply (sort .) "partial" "glossary_link" ".") "chomp" ".") ", " ", & " }}
-                    </p>
-                    {{- end -}}
-                {{end}}
+    <div class="article-style">
+    {{ with .Params.alt_definition }}
+        <p class=" mb-1 pr-2"><b>Alternative definition: </b>{{ . | markdownify }}</p>
+    {{end}}
 
-            {{/*  Hacky way to display the var only if the len of the string with all objects is longer than 0   */}}
-            {{ $references := delimit .Params.references ", " | len }}
-            {{ if ne $references 0 }}
-                <p class=" mb-1 pr-2"><b>Reference{{ if gt (len .Params.references) 1 }}s{{ end }}: </b>{{delimit .Params.references ", " ", & " | markdownify }}</p>
-            {{end}}
 
-            {{ $drafted_by := delimit .Params.drafted_by ", " | len }}
-            {{ if ne $drafted_by 0 }}
-            <p class=" mb-1 pr-2"><b>Drafted by: </b>{{delimit .Params.drafted_by ", " ", & " | markdownify }} </p>
-            {{end}}
+        {{ with .Params.related_terms }}
+        {{ $term_urlized := "" }}
+        <p class=" mb-1 pr-2"><strong>Related term{{- if gt (len .) 1 }}s{{- end -}}: </strong>
+            {{ delimit (apply (apply (sort .) "partial" "glossary_link" ".") "chomp" ".") ", " ", & " }}
+            {{/* Old working code, now in the line above! keeping it for the archive :joy:)
+            {{- range $key, $tmp_rel_terms := . -}}
+            {{ if gt $key 0 }}, {{ end }}
+            {{- $term_urlized = urlize $tmp_rel_terms | truncate 35 -}}
+            {{- $term_page := site.GetPage (printf "/glossary/%s" $term_urlized) -}}
+            {{- if $term_page -}}
+            {{ $term_url := $term_page.RelPermalink }}
+            <a href={{ $term_url }}>{{ $tmp_rel_terms }}</a>
+            {{- else -}}
+            {{ $tmp_rel_terms }}
+            {{- end -}}
+            {{- end -}}  */}}
+        </p>
+        {{- end -}}
 
-            {{ $reviewed_by := delimit .Params.reviewed_by ", " | len }}
-            {{ if ne $reviewed_by 0 }}
-            <p class=" mb-1 pr-2"><b>Reviewed by: </b>{{delimit .Params.reviewed_by ", " ", & " | markdownify }}</p>
-            </div>
-            {{end}}
+        {{/*  Hacky way to display the var only if the len of the string with all objects is longer than 0   */}}
+        {{ $alt_related_terms := delimit .Params.alt_related_terms ", " | len }}
+        {{ if ne $alt_related_terms 0 }}
+            {{ with .Params.alt_related_terms }}
+            {{ $term_urlized := "" }}
+            <p class=" mb-1 pr-2"><strong>Related term{{ if gt (len .) 1 }}s{{ end }} to alternative definition: </strong>
+                {{ delimit (apply (apply (sort .) "partial" "glossary_link" ".") "chomp" ".") ", " ", & " }}
+            </p>
+            {{- end -}}
+        {{end}}
 
-            {{ if site.Params.section_pager }}
-            <div class="article-widget">
-                {{ partial "section_pager" . }}
-            </div>
-            {{ end }}
+    {{/*  Hacky way to display the var only if the len of the string with all objects is longer than 0   */}}
+    {{ $references := delimit .Params.references ", " | len }}
+    {{ if ne $references 0 }}
+        <p class=" mb-1 pr-2"><b>Reference{{ if gt (len .Params.references) 1 }}s{{ end }}: </b>{{delimit .Params.references ", " ", & " | markdownify }}</p>
+    {{end}}
 
-        </div>
+    {{ $drafted_by := delimit .Params.drafted_by ", " | len }}
+    {{ if ne $drafted_by 0 }}
+    <p class=" mb-1 pr-2"><b>Drafted by: </b>{{delimit .Params.drafted_by ", " ", & " | markdownify }} </p>
+    {{end}}
+
+    {{ $reviewed_by := delimit .Params.reviewed_by ", " | len }}
+    {{ if ne $reviewed_by 0 }}
+    <p class=" mb-1 pr-2"><b>Reviewed by: </b>{{delimit .Params.reviewed_by ", " ", & " | markdownify }}</p>
+    </div>
+    {{end}}
+
+
+    {{ if site.Params.docs_section_pager }}
+    <div class="article-widget">
+      {{ partial "section_pager" . }}
+    </div>
+    {{ end }}
+  </div>
+
+
 </article>
+<div class="d-flex d-xl-none col-12 docs-toc" style="">
 
+    <nav id="TableOfContents" class="nav flex-column">
+        <ul>
+          {{ range where site.Pages "Params.definition" "!=" nil }}
+          <li class="nav-item" data-toggle="tooltip" data-placement="right" title="{{ .Params.definition }}"><a href="{{ .Permalink }}" class="nav-link" style="">{{ .Title }}</a></li>
+          {{end}}
+        </ul>
+      </nav>
+
+</div>
+
+        </main>
+    </div>
+</div>
 {{- end -}}
