@@ -4,7 +4,7 @@ title: FORRT presentation @ ORWG2020
 abstract: FORRT was introduced during the Open Session II during the Open Research Working Group (ORWG) virtual meeting 2020.
 
 featured: true
-location: Virtual
+location: Online
 address:
   city: 
   country: United Kingdom
@@ -12,7 +12,7 @@ address:
   region: 
   street: 
   
-all_day: false
+all_day: true
 authors: ["forrt", "Sam Parsons"]
 date: "2020-09-08T14:00:00Z"
 date_end: "2020-09-08T18:00:00Z"
@@ -35,7 +35,7 @@ summary: FORRT was present at the Open Research Working Group (ORWG) virtual mee
 tags: []
 url_code: ""
 url_pdf: ""
-url_slides: "https://osf.io/h7qdm/download"
+url_slides: "https://osf.io/h7qdm/"
 url_video: "https://youtu.be/JUnjW_Ycyk8"
 ---
 ## The recording: 
