@@ -13,7 +13,7 @@ address:
   street: 
   
 all_day: true
-authors: ["forrt", "Sam Parsons"]
+authors: ["forrt", "Sam Parsons", "Flavio Azevedo"]
 date: "2020-09-08T14:00:00Z"
 date_end: "2020-09-08T18:00:00Z"
 event: Open Research Working Group (ORWG) virtual meeting 2020
