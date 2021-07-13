@@ -5,5 +5,5 @@
     "references": ["Borenstein et al. (2009)", "Schmidt and Hunter (2014)"],
     "alt_related_terms": [null],
     "drafted_by": ["Adrien Fillon"],
-    "reviewed_by": ["Mahmoud Elsherif", "Eduardo Garcia-Garzon", "Helena Hartmann", "Catia M. Oliveira"]
+    "reviewed_by": ["Mahmoud Elsherif", "Eduardo Garcia-Garzon", "Helena Hartmann", "Catia M. Oliveira", "Flávio Azevedo"]
   }

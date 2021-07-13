@@ -5,5 +5,5 @@
     "references": ["Bourne et al. (2017)", "Elmore (2018)"],
     "alt_related_terms": [null],
     "drafted_by": ["Mariella Paul"],
-    "reviewed_by": ["Gisela H. Govaart", "Helena Hartmann", "Sam Parsons", "Tobias Wingen"]
+    "reviewed_by": ["Gisela H. Govaart", "Helena Hartmann", "Sam Parsons", "Tobias Wingen", "Flávio Azevedo"]
   }

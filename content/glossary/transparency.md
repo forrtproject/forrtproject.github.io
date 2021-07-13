@@ -5,5 +5,5 @@
     "references": ["Elliott and Resnik (2019)", "Lyon (2016)", "Syed (2019)"],
     "alt_related_terms": [null],
     "drafted_by": ["William Ngiam"],
-    "reviewed_by": ["Tamara Kalandadze", "Aoife O’Mahony", "Eike Mark Rinke"]
+    "reviewed_by": ["Tamara Kalandadze", "Aoife O’Mahony", "Eike Mark Rinke", "Flávio Azevedo"]
   }

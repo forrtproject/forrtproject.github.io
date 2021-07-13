@@ -5,5 +5,5 @@
     "references": ["Kerr (1998)", "Nosek and Lakens (2014)"],
     "alt_related_terms": [null],
     "drafted_by": ["Beatrix Arendt"],
-    "reviewed_by": ["Matt Jaquiery", "Charlotte R. Pennington", "Martin Vasilev"]
+    "reviewed_by": ["Matt Jaquiery", "Charlotte R. Pennington", "Martin Vasilev", "Flávio Azevedo"]
   }

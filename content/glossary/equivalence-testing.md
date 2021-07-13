@@ -5,5 +5,5 @@
     "references": ["Lakens et al. (2018)", "Lakens et al. (2020)", "Schuirmann (1987)"],
     "alt_related_terms": [null],
     "drafted_by": ["Charlotte R. Pennington"],
-    "reviewed_by": ["Bradley Baker", "James E. Bartlett", "Jamie P. Cockcroft", "Tobias Wingen"]
+    "reviewed_by": ["Bradley Baker", "James E. Bartlett", "Jamie P. Cockcroft", "Tobias Wingen", "Flávio Azevedo"]
   }

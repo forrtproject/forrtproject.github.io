@@ -5,5 +5,5 @@
     "references": ["Flake and Fried (2020)"],
     "alt_related_terms": [null],
     "drafted_by": ["Halil Emre Kocalar"],
-    "reviewed_by": ["Jamie P. Cockcroft", "Annalise A. LaPlume", "Sam Parsons", "Mirela Zaneva"]
+    "reviewed_by": ["Jamie P. Cockcroft", "Annalise A. LaPlume", "Sam Parsons", "Mirela Zaneva", "Flávio Azevedo"]
   }

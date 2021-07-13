@@ -5,5 +5,5 @@
     "references": ["Blohowiak et al. (2020)", "Kidwell et al. (2016)"],
     "alt_related_terms": [null],
     "drafted_by": ["Lisa Spitzer"],
-    "reviewed_by": ["Sam Parsons", "Charlotte R. Pennington", "Olly Robertson", "Emily A. Williams"]
+    "reviewed_by": ["Sam Parsons", "Charlotte R. Pennington", "Olly Robertson", "Emily A. Williams", "Flávio Azevedo"]
   }

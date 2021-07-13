@@ -5,5 +5,5 @@
     "references": ["Dienes (2008)", "Lakatos (1978)"],
     "alt_related_terms": [null],
     "drafted_by": ["Alaa Aldoh"],
-    "reviewed_by": ["Ali H. Al-Hoorie", "Nihan Albayrak-Aydemir", "Mahmoud Elsherif", "Bethan Iley", "Sam Parsons"]
+    "reviewed_by": ["Ali H. Al-Hoorie", "Nihan Albayrak-Aydemir", "Mahmoud Elsherif", "Bethan Iley", "Sam Parsons", "Flávio Azevedo"]
   }
