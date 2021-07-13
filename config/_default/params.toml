@@ -162,7 +162,7 @@ sharing = false
 
 # Show a copyright license from creativecommons.org in the site footer?
 # Page specific copyright licenses are also possible by adding this option to a page's front matter.
-copyright_license = {enable = true, allow_derivatives = true, share_alike = true, allow_commercial = true, notice = "Except where otherwise noted, content on this site is licensed under a {license} license"}
+copyright_license = {enable = true, allow_derivatives = true, share_alike = true, allow_commercial = false, notice = "Except where otherwise noted, content on this site is licensed under a {license} license"}
 
 # Highlight the site author (superuser) in author lists? (true/false)
 highlight_superuser = false
