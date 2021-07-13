@@ -9,7 +9,14 @@
         <li><a href="#" id="back_to_top" class="docs-toc-title">List of terms</a></li>
       </ul>
       
-      {{ partial "gloss_toc" . }}
+      <nav id="TableOfContents" class="nav flex-column">
+        <ul>
+          {{ range where site.Pages "Params.definition" "!=" nil }}
+          <li class="nav-item" data-toggle="tooltip" data-placement="right" title="{{ .Params.definition }}"><a href="{{ .Permalink }}" class="nav-link" style="">{{ .Title }}</a></li>
+          {{end}}
+        </ul>
+      </nav>
+
     </div>
     <main class="col-12 col-xl-8  pl-md-5 docs-content" role="main">
 
@@ -41,7 +48,13 @@
       </article>
       <div class="d-flex d-xl-none col-12 docs-toc" style="">
         
-        {{ partial "gloss_toc" . }}
+              <nav id="TableOfContents" class="nav flex-column">
+        <ul>
+          {{ range where site.Pages "Params.definition" "!=" nil }}
+          <li class="nav-item" data-toggle="tooltip" data-placement="right" title="{{ .Params.definition }}"><a href="{{ .Permalink }}" class="nav-link" style="">{{ .Title }}</a></li>
+          {{end}}
+        </ul>
+      </nav>
 
       </div>
 
