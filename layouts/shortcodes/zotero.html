@@ -1,0 +1,27 @@
+<div class="publication-list">
+  {{ $group_id := .Get "group_id" }}
+  {{ $collection := .Get "collection"}}
+  {{ $URL := printf "https://api.zotero.org/groups/%s/collections/%s/items/" $group_id $collection }}
+  {{ $URL }}
+  {{ $refs := getJSON $URL }}
+
+  <h3>References</h3>
+  <ul class="publication-section">
+    {{ $baseurl := .Site.BaseURL }}
+    {{range $refs}}
+      <li>
+        <div>
+          {{ .data }}
+          {{/*  <p>{{$publication.data.creator}}</p>  */}}
+          {{/*  <a href="http://doi.org/{{$publication.data.DOI}}">
+              {{$publication.data.title}}</a>  {{$publication.data.date}}
+              {{(index $publication.data.creators 0).firstName}}
+              {{(index $publication.data.creators 0).lastName}} et al.  */}}
+        </div>
+      </li>
+    {{end}}
+
+  </ul>
+</div>
+
+</main>
