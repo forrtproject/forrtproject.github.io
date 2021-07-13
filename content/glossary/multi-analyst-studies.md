@@ -5,5 +5,5 @@
     "references": ["Aczel et. al. (2021)", "Silberzahn et al. (2018)"],
     "alt_related_terms": [null],
     "drafted_by": ["Sam Parsons"],
-    "reviewed_by": ["Tsvetomira Dumbalska", "Mahmoud Elsherif", "William Ngiam", "Charlotte R. Pennington", "Graham Reid", "Barnabas Szaszi"]
+    "reviewed_by": ["Tsvetomira Dumbalska", "Mahmoud Elsherif", "William Ngiam", "Charlotte R. Pennington", "Graham Reid", "Barnabas Szaszi", "Flávio Azevedo"]
   }

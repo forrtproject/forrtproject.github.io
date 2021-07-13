@@ -5,5 +5,5 @@
     "references": ["FORRT - Framework for Open and Reproducible Research Training", ""],
     "alt_related_terms": [null],
     "drafted_by": ["Tamara Kalandadze"],
-    "reviewed_by": ["Mahmoud Elsherif", "Charlotte R. Pennington"]
+    "reviewed_by": ["Mahmoud Elsherif", "Charlotte R. Pennington", "Flávio Azevedo"]
   }

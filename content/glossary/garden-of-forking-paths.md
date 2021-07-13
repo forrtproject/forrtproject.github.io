@@ -1,9 +1,9 @@
 {
     "title": "Garden of forking paths",
-    "definition": "The typically-invisible decision tree traversed during statistical analysis. Where decisions are made during traversal and stops upon obtaining a significant result, the false-positive rate is inflated as a consequence of the potential paths which could have been taken (had other decisions been made).",
+    "definition": "The typically-invisible decision tree traversed during operationalization and statistical analysis given that ‘there is a one-to-many mapping from scientific to statistical hypotheses' (Gelman and Loken, 2013, p. 6). In other words, even in absence of p-hacking or fishing expeditions and when the research hypothesis was posited ahead of time, there can be a plethora of statistical results that can appear to be supported by theory given data. “The problem is there can be a large number of potential comparisons when the details of data analysis are highly contingent on data, without the researcher having to perform any conscious procedure of fishing or examining multiple p-values” (Gelman and Loken, 2013, p. 1). The term aims to highlight the uncertainty ensuing from idiosyncratic analytical and statistical choices in mapping theory-to-test, and contrasting intentional (and unethical) questionable research practices (e.g. p-hacking and fishing expeditions) versus non-intentional research practices that can, potentially, have the same effect despite not having intent to corrupt their results. The garden of forking paths refers to the decisions during the scientific process that inflate the false-positive rate as a consequence of the potential paths which could have been taken (had other decisions been made).",
     "related_terms": ["False-positive", "Familywise error", "Multiverse Analysis", "Preregistration", "Researcher’s Degrees of Freedom", "Specification Curve Analysis"],
     "references": ["Gelman and Loken (2013)"],
     "alt_related_terms": [null],
-    "drafted_by": ["Mahmoud Elsherif"],
+    "drafted_by": ["Flávio Azevedo", "Mahmoud Elsherif"],
     "reviewed_by": ["Gisela H. Govaart", "Matt Jaquiery", "Tamara Kalandadze", "Charlotte R. Pennington"]
   }

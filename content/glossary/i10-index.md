@@ -5,5 +5,5 @@
     "references": ["https://guides.library.cornell.edu/impact/author-impact-10"],
     "alt_related_terms": [null],
     "drafted_by": ["Emma Norris"],
-    "reviewed_by": ["Sam Parsons"]
+    "reviewed_by": ["Flávio Azevedo", "Sam Parsons"]
   }

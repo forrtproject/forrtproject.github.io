@@ -4,6 +4,6 @@
     "related_terms": ["Null hypothesis significance testing (NHST)", "statistical significance"],
     "references": ["https://psyteachr.github.io/glossary/p.html", "Lakens (2021b)", "Wasserstein and Lazar (2016)"],
     "alt_related_terms": [null],
-    "drafted_by": ["Alaa AlDoh"],
+    "drafted_by": ["Alaa AlDoh", "Flávio Azevedo"],
     "reviewed_by": ["Jamie P. Cockcroft", "Charlotte R. Pennington", "Suzanne L. K. Stewart", "Robbie C.M. van Aert", "Marcel A.L.M. van Assen", "Martin Vasilev"]
   }
