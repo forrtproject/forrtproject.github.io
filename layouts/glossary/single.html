@@ -69,6 +69,7 @@
         <p class=" mb-1 pr-2"><b>Reference{{ if gt (len .Params.references) 1 }}s{{ end }}: </b>{{delimit .Params.references ", " ", & " | markdownify }}</p>
     {{end}}
 
+    {{/* Legacy code to split drafted and reviewed by
     {{ $drafted_by := delimit .Params.drafted_by ", " | len }}
     {{ if ne $drafted_by 0 }}
     <p class=" mb-1 pr-2"><b>Drafted by: </b>{{delimit .Params.drafted_by ", " ", & " | markdownify }} </p>
@@ -78,8 +79,13 @@
     {{ if ne $reviewed_by 0 }}
     <p class=" mb-1 pr-2"><b>Reviewed by: </b>{{delimit .Params.reviewed_by ", " ", & " | markdownify }}</p>
     </div>
-    {{end}}
+    {{end}}  */}}
 
+    {{ $drafted_by := delimit .Params.drafted_by ", " | len }}
+    {{ if ne $drafted_by 0 }}
+    <p class=" mb-1 pr-2"><b>Drafted and Reviewed by: </b>{{ range .Params.drafted_by}}{{.}}, {{end}}{{delimit .Params.reviewed_by ", " ", & " | markdownify }}</p>
+    </div>
+    {{end}}
 
     {{ if site.Params.docs_section_pager }}
     <div class="article-widget">
