@@ -63,7 +63,10 @@ If you are a R user and like to work in RStudio (Best option for Windows user), 
 
 To edit it locally, you will need to:
 1. Clone/fork this GitHub repo: `git clone https://github.com/forrtproject/FORRT.git` in a terminal window 
-2. Make sure you're inside the **FORRT/** dir (`cd FORRT`), then **clone the submodule for the theme:** `git submodule update --init --recursive --remote`
-3. If [Hugo](https://gohugo.io/) is not installed, follow the steps in their documentation to install it on your machine: https://gohugo.io/getting-started/installing/
-4. To run the website locally, make sure you are still in `FORRT/` dir and type `hugo serve -D` in your terminal.
+2. If [Hugo](https://gohugo.io/) is not installed, follow the steps in their documentation to install it on your machine: https://gohugo.io/getting-started/installing/
+3. To run the website locally, make sure you are still in `FORRT/` dir and type `hugo serve -D` in your terminal.
    - The -D option is to serve the website including draft .md files.
+
+## License
+
+<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.
