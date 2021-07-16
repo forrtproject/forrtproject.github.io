@@ -101,7 +101,7 @@ We invite several specific contributions: _original draft preparation_, and _rev
 
 * Writing | Review & Editing: We consider this contribution as, for example, providing constructive comments, feedback, and approval, on more than 5 glossary entries (we acknowledge that towards the end of the project the main contribution will be checking definitions for agreement and so it may be difficult for some people to make large writing contributions. Please remember to add your name to the “Reviewed by” field and be sure to tick the “Review & Editing” checkbox in the contributors spreadsheet.
 
-4. Template & Example
+6. Template & Example
 
 **Term: XXX**
 
