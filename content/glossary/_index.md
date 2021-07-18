@@ -146,7 +146,7 @@ This was unplanned, we didn’t know G-docs had a limit.
 
 **Part C**
 
-We are now working on our [manuscript](https://docs.google.com/document/d/1N1xQzWxYVW1Nbdv4vG3T56xwoOJH1ZwMgvqr7Mlslyw) to be submitted to Nature as a Comment, as well as its implementation in [FORRT’s website](https://forrt.org/glossary).
+We are now working on our [manuscript](https://docs.google.com/document/d/1N1xQzWxYVW1Nbdv4vG3T56xwoOJH1ZwMgvqr7Mlslyw) as well as its implementation in [FORRT’s website](https://forrt.org/glossary).
 
 Editorial advice was given to us and it suggested us to choose 50 items to go into a 'box' (a sort of a table that doesn't have word limits). However, it is of fundamental importance to note that these 50 terms are not the community's conception —or leading authors'— of 'main' terms, or 'core' terms, or 'most important terms'. We tried as much as possible —and in line with FORRT's [mission](https://forrt.org/about/mission/), FORRT's [Code of Conduct](https://forrt.org/coc/), and FORRT's [Manuscript](https://forrt.org/manuscript/)— to choose items that give representation to a variety of past, present and future issue of Open Scholarship. The chosen 50 terms reflect the diversity and plurality of terms for the broader OS, not only for this or that discipline, or this or that view of what Open Scholarship is. Now, that's not to say these 50 comprise a perfect list. It is not, and we are bound to disagree on which terms should have made the list and which shouldn't have. And that's both normal and OK 😊
 
