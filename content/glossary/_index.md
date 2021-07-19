@@ -16,7 +16,7 @@ header:
 
 *Introduction*
 
-In the last decade, the Open Science movement has introduced and modified many research practices. The breadth of these initiatives can be overwhelming, and digestible introductions to these topics are valuable (e.g. Crüwell et al. 2019; Kathawalla, Silverstein, & Syed, 2020. Creating a shared understanding of the purposes of these initiatives facilitates discussions of the strengths and weaknesses of each practice, ultimately helping us work towards a research utopia (Nosek & Bar-Anan, 2012).
+In the last decade, the Open Science movement has introduced and modified many research practices. The breadth of these initiatives can be overwhelming, and digestible introductions to these topics are valuable (e.g. Crüwell et al. 2019; Kathawalla, Silverstein, & Syed, 2020). Creating a shared understanding of the purposes of these initiatives facilitates discussions of the strengths and weaknesses of each practice, ultimately helping us work towards a research utopia (Nosek & Bar-Anan, 2012).
 
 Accompanying this cultural shift towards increased transparency and rigour has been a wealth of terminology within the zeitgeist of research practice and culture. For those unfamiliar, the new nomenclature can be a barrier to follow and join the discussions; for those familiar, potentially vague or competing definitions can cause confusion and misunderstandings. For example, even the “classic” 2015 paper “Estimating the reproducibility of psychological science” (Open Science Collaboration, 2015) can be argued to assess the replicability of research findings. 
 
