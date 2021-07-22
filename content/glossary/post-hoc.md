@@ -5,5 +5,5 @@
     "references": ["Dienes (p.166, 2008)"],
     "alt_related_terms": [null],
     "drafted_by": ["Alaa Aldoh"],
-    "reviewed_by": ["Sam Parsons", "Jamie P. Cockcroft", "Bethan Iley", "Halil E. Kocalar", "Graham Reid"]
+    "reviewed_by": ["Sam Parsons", "Jamie P. Cockcroft", "Bethan Iley", "Halil E. Kocalar", "Graham Reid", "Flávio Azevedo"]
   }

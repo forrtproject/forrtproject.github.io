@@ -1,5 +1,5 @@
 {
-    "title": "Quantitative research",
+    "title": "Quantitative research ",
     "definition": "Quantitative research encompasses a diverse range of methods to systematically investigate a range of phenomena via the use of numerical data which can be analysed with statistics.",
     "related_terms": ["Measuring", "Qualitative research", "Sample size", "Statistical power", "Statistics"],
     "references": ["Goertzen (2017)"],

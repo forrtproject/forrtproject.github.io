@@ -5,5 +5,5 @@
     "references": ["https://improvingpsych.org/"],
     "alt_related_terms": [null],
     "drafted_by": ["Mahmoud Elsherif"],
-    "reviewed_by": ["Ashley Blake", "Jade Pickering", "Graham Reid"]
+    "reviewed_by": ["Ashley Blake", "Jade Pickering", "Graham Reid", "Flávio Azevedo"]
   }

@@ -5,5 +5,5 @@
     "references": ["https://www.ukrn.org/", "https://reproducibilitynetwork.de/", "https://www.swissrn.org/", "https://slovakrn.wixsite.com/skrn", "https://www.aus-rn.org/"],
     "alt_related_terms": [null],
     "drafted_by": ["Suzanne L. K. Stewart"],
-    "reviewed_by": ["Annalise A. LaPlume", "Sam Parsons"]
+    "reviewed_by": ["Annalise A. LaPlume", "Sam Parsons", "Flávio Azevedo"]
   }
