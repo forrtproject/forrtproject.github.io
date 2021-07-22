@@ -1,5 +1,3 @@
-[![Netlify Status](https://api.netlify.com/api/v1/badges/67303e41-faa8-4007-822d-dbcc84e6298f/deploy-status)](https://app.netlify.com/sites/priceless-boyd-4abbaf/deploys)
-
 # FORRT
 
 This is repository for the website of **FORRT - a Framework for Open and Reproducible Research Training**.
