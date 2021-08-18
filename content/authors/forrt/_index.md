@@ -84,13 +84,13 @@ FORRT supports this endeavor through a three-pronged approach:
 1. Provide educators a comprehensive but straightforward framework to teach and mentor open and reproducible science as well as qualify and quantify the degree of open and reproducible research practices in their teaching and mentoring.
   
   <i class="fas fa-arrow-alt-circle-right text-danger fa-1.5x"></i> [FORRT's clusters](/clusters/)    
-  <i class="fas fa-arrow-alt-circle-right text-danger fa-1.5x"></i> [FORRT’s self-assessment tool](/survey)  
+  <i class="fas fa-arrow-alt-circle-right text-danger fa-1.5x"></i> [FORRT’s self-assessment tool](/self-assessment)  
 
 2. Equipping educators with high quality pedagogical tools on open and reproducible science practices to facilitate its integration into curricula and educators’ teaching mentoring, and research practices.
   
   <i class="fas fa-arrow-alt-circle-right text-danger fa-1.5x"></i> [FORRT’s Educational Nexus](/resources/)  
   <i class="fas fa-arrow-alt-circle-right text-danger fa-1.5x"></i> [FORRT’s Open and Reproducible Science Summaries](/summaries/)  
-  <i class="fas fa-arrow-alt-circle-right text-danger fa-1.5x"></i> [FORRT’s Pedagogies](/pedagogies/) [*in construction*]   
+  <i class="fas fa-arrow-alt-circle-right text-danger fa-1.5x"></i> [FORRT’s Pedagogies](/pedagogies/)
 
 3. Modifying the academic incentive structure regarding teaching and mentoring through recognition and commendations of excellent teaching and mentoring; foster social justice through the opening and democratization of scientific-educational resources to those who otherwise would be educationally disenfranchised; and building a community with existing educational initiatives and strengthening our missions, identify and reduce redundancies, and streamline the advancement of open educational practices.  
   
