@@ -77,7 +77,7 @@ A great first step is to reflect on your current teaching and mentoring practice
 
 #### <FONT COLOR="#A9A9A9">How?</FONT>
 
-*   To help you in this process, FORRT has developed a [***self-assessment survey***](/survey) that provides tailored feedback and resources for educators and mentors.
+*   To help you in this process, FORRT has developed a [***self-assessment survey***](/self-assessment) that provides tailored feedback and resources for educators and mentors.
 
 <br>
 
