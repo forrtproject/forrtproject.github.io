@@ -152,6 +152,8 @@ The first step in learning about something is finding the right information. You
 
 #### <FONT COLOR="#A9A9A9">How?</FONT>
 
+
+*   Please consider using one of [FORRT's Lesson Plans](/lesson-plans).
 *   Please consider taking part on one of FORRT's [***Towards Social Justice in Academia Initiatives***](/dei) by: 
      - attending, participating or hosting one [***"Open (and Reproducible) Office hours"***](/dei) where anyone in the world wishing to learn, adopt, teach/mentor and disseminate open and reproducible science tenets can attend.
      - participating in the [***remote mentorship program***](/dei) which aims to facilitate and encourage adhesion to open and reproducible research practices in its earliest stages for (a) students from underprivileged and underrepresented backgrounds; (b) non-WEIRD; and (c) when there is no local OS-friendly institutions or personnel.     
