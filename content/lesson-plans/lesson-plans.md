@@ -105,8 +105,6 @@ Recently, there has been a growing emphasis on embedding open and reproducible a
 
 {{< /expand >}}
 
-<br>
-
 <center>
 
 <!-----
@@ -115,7 +113,6 @@ Recently, there has been a growing emphasis on embedding open and reproducible a
 
 </center>
 
-<br>
 
 ### Contribute
 ---------------------
