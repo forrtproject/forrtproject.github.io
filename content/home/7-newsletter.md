@@ -49,5 +49,12 @@ subtitle = "Subscribe to our newsletter from FORRT to get the latest news about 
  # CSS class.
  css_class = ""
 +++
-<div id="form" class=""><form netlify id="" method="post"><div class="col-lg-8" style="padding-top:15px"><div class="input-group"><label class="sr-only" for="inlineFormEmail">Email</label>
-<input name="email" type="email" class="form-control" id="inlineFormEmail" placeholder="Email"><div class="input-group-append"><button class="btn btn-outline-primary" type="submit">Subscribe</button></div></div></div></form></div>
+<div id="form" class="">
+<form action="https://formspree.io/f/mjvjpprl" method="POST"><div class="col-lg-8" style="padding-top:15px">
+<div class="input-group">
+<label class="sr-only" for="inlineFormEmail">Email</label>
+<input name="_replyto" type="email" class="form-control" id="inlineFormEmail" placeholder="Email"><div class="input-group-append"><button class="btn btn-outline-primary" type="submit">Subscribe</button></div></div>
+</div>
+</form>
+</div>
+
