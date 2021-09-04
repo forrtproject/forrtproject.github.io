@@ -22,9 +22,15 @@
   parent = "about"
 
 [[main]]
+  name = "Awards"  # A link title for your page.
+  url = "/awards"  # The URL of your page.
+  weight = 12  # The position of your page in the menu.
+  parent = "about"
+
+[[main]]
   name = "Code of Conduct"  # A link title for your page.
   url = "/coc"  # The URL of your page.
-  weight = 12  # The position of your page in the menu.
+  weight = 13  # The position of your page in the menu.
   parent = "about"
 
 [[main]]
