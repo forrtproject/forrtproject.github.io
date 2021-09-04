@@ -83,15 +83,15 @@ Thanks to our amazing community, FORRT has become an ***award-winning*** grassro
 
 <br>
 
-In 2021, FORRT has received a ***Commendation*** from [HiddenREF](https://hidden-ref.org/about/) for its initiatives advancing training materials and resources on open and reproducible science (see here the [recording of the award ceremony](https://youtu.be/btjRNG0NANg?t=1070)).
+In 2021, FORRT has received a ***Commendation*** from the [HiddenREF](https://hidden-ref.org/about/) for its initiatives advancing training materials and resources on open and reproducible science (see here for a [recording of the award ceremony](https://youtu.be/btjRNG0NANg?t=1070)).
 
 <br>
 
-In 2021, FORRT has received an ***Open Scholarship Award*** (2nd Place) from [Open Scholarship Community Galway](https://osc-galway.ie/competition/) for its overall initiatives. 
+In 2021, FORRT has received an ***Open Scholarship Award*** (2nd Place) from the [Open Scholarship Community Galway](https://osc-galway.ie/competition/) for its overall initiatives. 
 
 <br>
 
-In 2020, FORRT has received a ***Commendation*** from [Society for the Improvement of Psychological Science](http://improvingpsych.org/mission/awards/) for its manuscript ["Introducing a Framework for Open and Reproducible Research Training (FORRT)"](https://osf.io/bnh7p/). 
+In 2020, FORRT has received a ***Commendation*** from the [Society for the Improvement of Psychological Science](http://improvingpsych.org/mission/awards/) for its manuscript ["Introducing a Framework for Open and Reproducible Research Training (FORRT)"](https://osf.io/bnh7p/). 
 
 <br>
 
