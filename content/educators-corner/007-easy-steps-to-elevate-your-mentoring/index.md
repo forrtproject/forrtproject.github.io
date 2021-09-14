@@ -3,7 +3,7 @@
 
 title: "Innovative Mentoring"
 subtitle: "Easy steps you can take to elevate your mentoring."
-summary: "xxxxxxxxxxx xxxxxxxxxxxxx xxxxxxxx xxxxxxxxxxx xxxxx xxxxx xx xxxx xxxxx xxxxxxxxxxxxx xxxxxxxx xxxxxxxxxxx xxxxx  xxxxxx."
+summary: "Mentoring is an integral part of every academic's work, yet, we are still learning how we can be better towards our mentees. In this piece, Amanda walks us through what she learned works for both mentors and mentees."
 authors: ['Amanda Moehring']
 tags: []
 categories: []
