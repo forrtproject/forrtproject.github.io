@@ -1,7 +1,7 @@
 ---
 # Course title, summary, and position.
 linktitle: Overview
-summary: Learn how to use Academic's docs layout for publishing online courses, software documentation, and tutorials.
+summary: The FORRT community has prepared 100+ summaries of Open and Reproducible Science literature. The purpose of these summaries is to reduce some of the burden on educators looking to incorporate open and reproducible research principles into their teaching as well as facilitate the edification of anyone wishing to learn or disseminate open and reproducible science tenets.
 weight: 1
 
 # Page metadata.
