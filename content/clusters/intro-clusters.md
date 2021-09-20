@@ -71,7 +71,7 @@ See below for each cluster, its description, sub-clusters, and associated works 
 
 <br>
 
-![FORRT's Clusters](FORRT_Clusters.jpg "FORRT's Clusters")
+![FORRT's Clusters](FORRT_Clusters.png "FORRT's Clusters")
 
 <br>
 
