@@ -64,18 +64,18 @@ Importantly, this syllabus is not intended to be a “one size fits all” appro
 
 <br>
 
-***"Open and Reproducible Science" Syllabus***. 
+***FORRT's Open and Reproducible Science Syllabus***. 
 
 * [.pdf version direct download](FORRT_O&R_101_Syllabus.pdf)
 * [editable G-doc/Word version](https://docs.google.com/document/d/1pfFro5MbwBHzzXTeM_lE1gjFuq7AnnKWSDWkVwOBAtE/edit#)
 
 <br>
 
-### List of Open Science Syllabi
+### List of 'Open Science' Syllabi
 ---------------------
 
 To further facilitate the creation, the updating, improvement, and maintenance of Open Science syllabi, we also curate a list of (possibly) useful other syllabi.
 
 * [FORRT Open and Reproducible Science Syllabus](https://forrt.org/syllabus)
-* [Example one](link)
-* [Example two](link)
+* [Syllabus Collection](https://osf.io/vkhbt/)
+* [Overcoming the Knowledge Barrier in Open Science](https://osf.io/bk6r7/)

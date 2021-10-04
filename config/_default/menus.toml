@@ -143,9 +143,16 @@
   parent = "nexus"
 
 [[main]]
+  name = "Syllabus"
+  url = "/syllabus"
+  weight = 41
+  parent = "nexus"
+
+
+[[main]]
   name = "Pedagogies"
   url = "/pedagogies/"
-  weight = 40
+  weight = 50
   identifier = "pedagogies"
 # [[main]]
 #   name = "Public"
