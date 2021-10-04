@@ -88,7 +88,7 @@ Including sources into your syllabus that discuss open and transparent research 
 #### <FONT COLOR="#A9A9A9">How?</FONT>
 
 *   FORRT has created a curated summary of [***100+ Summaries of the Open and Reproducible Literature***](/summaries) that you can use to find suitable reading materials for your course syllabus.
-*   FORRT has also created a [***Open & Reproducible Science Syllabus***](/clusters/#Syllabus) that you can adapt to your course syllabus.
+*   FORRT has also created a [***Open & Reproducible Science Syllabus***](/syllabus) that you can adapt to your course syllabus.
 *   Add an activity or assignment where students can do things such as:
      - write their own pre-registration or compare a pre-registration with the published manuscript.
      - learn more about the value of [pre-prints](https://journals.plos.org/plosbiology/article?id=10.1371/journal.pbio.3000151).
