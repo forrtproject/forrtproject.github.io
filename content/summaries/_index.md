@@ -1,7 +1,7 @@
 ---
 # Course title, summary, and position.
 linktitle: Overview
-summary: Learn how to use Academic's docs layout for publishing online courses, software documentation, and tutorials.
+summary: The FORRT community has prepared 100+ summaries of Open and Reproducible Science literature. The purpose of these summaries is to reduce some of the burden on educators looking to incorporate open and reproducible research principles into their teaching as well as facilitate the edification of anyone wishing to learn or disseminate open and reproducible science tenets.
 weight: 1
 
 # Page metadata.
@@ -29,7 +29,7 @@ The FORRT community has prepared 100+ summaries of Open and Reproducible Science
 
 ***These summaries are very much a work in progress***. We would love to receive your [criticism, areas for improvement, ideas, and help](https://docs.google.com/spreadsheets/d/1W12WpzI70Ja1FiVeflXNW8VFPzqFFvu_mL2YkNQ_cHk/edit?usp=sharing). 
 
-You can find the summaries via the menu in the left. We made a distinction between "[Open and Reproducible Science](/summaries/open-reproducible/)" summaries and "[Diversity, Equity, & Inclusion](/diversity-equity-inclusion/)" summaries to highlight that the topics of social injustices and DEI (diversity, equity and inclusion) are often neglected in academia, and in open and reproducible science literature. We have also prepared a [.pdf version (coming soon!)](OS_Literature_Summaries_by_FORRT.pdf) in case you want to keep a copy for yourself. If you are an educator, you may also be interested in our [FORRT Syllabus on Open and Reproducible Science (.pdf & G-doc)](https://forrt.org/clusters/#Syllabus), which is based on [FORRT Clusters.](/clusters/)
+You can find the summaries via the menu in the left. We made a distinction between "[Open and Reproducible Science](/summaries/open-reproducible/)" summaries and "[Diversity, Equity, & Inclusion](/diversity-equity-inclusion/)" summaries to highlight that the topics of social injustices and DEI (diversity, equity and inclusion) are often neglected in academia, and in open and reproducible science literature. We have also prepared a [.pdf version (coming soon!)](OS_Literature_Summaries_by_FORRT.pdf) in case you want to keep a copy for yourself. If you are an educator, you may also be interested in our [FORRT Syllabus on Open and Reproducible Science (.pdf & G-doc)](https://forrt.org/syllabus), which is based on [FORRT Clusters.](/clusters/)
 
 ### Why make these summaries?
 

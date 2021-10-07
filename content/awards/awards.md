@@ -6,14 +6,14 @@
 widget = "blank"  # See https://sourcethemes.com/academic/docs/page-builder/
 headless = true  # This file represents a page section.
 active = true  # Activate this widget? true/false
-weight = 70  # Order that this section will appear.
+weight = 10  # Order that this section will appear.
 
-title = "Stay updated"
-subtitle = "Subscribe to our newsletter from FORRT to get the latest news about our initiatives."
+title = "Awards"
+subtitle = ""
 
 [design]
   # Choose how many columns the section has. Valid values: 1 or 2.
-  columns = "2"
+  columns = "1"
 
 [design.background]
   # Apply a background color, gradient, or image.
@@ -23,6 +23,7 @@ subtitle = "Subscribe to our newsletter from FORRT to get the latest news about 
 
   # Background color.
   # color = "#fefdf6"
+  # color = "#69b3a2" # greenish
   
   # Background gradient.
   # gradient_start = "DeepSkyBlue"
@@ -38,6 +39,9 @@ subtitle = "Subscribe to our newsletter from FORRT to get the latest news about 
   # Text color (true=light or false=dark).
   text_color_light = false
 
+  # Choose how many columns the section has. Valid values: '1' or '2'.
+# columns = '2'
+
 [design.spacing]
   # Customize the section spacing. Order is top, right, bottom, left.
   padding = ["60px", "0", "60px", "0"]
@@ -49,12 +53,67 @@ subtitle = "Subscribe to our newsletter from FORRT to get the latest news about 
  # CSS class.
  css_class = ""
 +++
-<div id="form" class="">
-<form action="https://formspree.io/f/mjvjpprl" method="POST"><div class="col-lg-8" style="padding-top:15px">
-<div class="input-group">
-<label class="sr-only" for="inlineFormEmail">Email</label>
-<input name="_replyto" type="email" class="form-control" id="inlineFormEmail" placeholder="Email"><div class="input-group-append"><button class="btn btn-outline-primary" type="submit">Subscribe</button></div></div>
-</div>
-</form>
+
+<style>
+
+.row {
+  display: flex;
+}
+
+/* Create two equal columns that sits next to each other */
+.column {
+  flex: 50%;
+  padding: 10px;
+}
+</style>
+
+------------
+<center>
+
+Thanks to our amazing community, FORRT has become an ***award-winning*** grassroots interdisciplinary international organization integrating open and reproducible research training into higher education.
+
+</center>
+
+------------
+
+<br>
+
+<div class="row">
+  <div class="column">
+
+<br>
+
+In 2021, FORRT has received a ***Commendation*** from the [HiddenREF](https://hidden-ref.org/about/) for its initiatives advancing training materials and resources on open and reproducible science (see here for a [recording of the award ceremony](https://youtu.be/btjRNG0NANg?t=1070)).
+
+<br>
+
+In 2021, FORRT has received an ***Open Scholarship Award*** (2nd Place) from the [Open Scholarship Community Galway](https://osc-galway.ie/competition/) for its overall initiatives. 
+
+<br>
+
+In 2020, FORRT has received a ***Commendation*** from the [Society for the Improvement of Psychological Science](http://improvingpsych.org/mission/awards/) for its manuscript ["Introducing a Framework for Open and Reproducible Research Training (FORRT)"](https://osf.io/bnh7p/). 
+
+<br>
+
+
+  </div>
+  <div class="column">
+
+<center>
+
+<div style="width:400px">
+
+<br>
+
+![FORRT Awards](Awards.png)
+
 </div>
 
+</center>
+
+
+  </div>
+</div>
+
+
+<br>

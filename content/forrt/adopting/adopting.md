@@ -77,7 +77,7 @@ A great first step is to reflect on your current teaching and mentoring practice
 
 #### <FONT COLOR="#A9A9A9">How?</FONT>
 
-*   To help you in this process, FORRT has developed a [***self-assessment survey***](/survey) that provides tailored feedback and resources for educators and mentors.
+*   To help you in this process, FORRT has developed a [***self-assessment survey***](/self-assessment) that provides tailored feedback and resources for educators and mentors.
 
 <br>
 
@@ -88,7 +88,7 @@ Including sources into your syllabus that discuss open and transparent research 
 #### <FONT COLOR="#A9A9A9">How?</FONT>
 
 *   FORRT has created a curated summary of [***100+ Summaries of the Open and Reproducible Literature***](/summaries) that you can use to find suitable reading materials for your course syllabus.
-*   FORRT has also created a [***Open & Reproducible Science Syllabus***](/clusters/#Syllabus) that you can adapt to your course syllabus.
+*   FORRT has also created a [***Open & Reproducible Science Syllabus***](/syllabus) that you can adapt to your course syllabus.
 *   Add an activity or assignment where students can do things such as:
      - write their own pre-registration or compare a pre-registration with the published manuscript.
      - learn more about the value of [pre-prints](https://journals.plos.org/plosbiology/article?id=10.1371/journal.pbio.3000151).
@@ -152,6 +152,8 @@ The first step in learning about something is finding the right information. You
 
 #### <FONT COLOR="#A9A9A9">How?</FONT>
 
+
+*   Please consider using one of [FORRT's Lesson Plans](/lesson-plans).
 *   Please consider taking part on one of FORRT's [***Towards Social Justice in Academia Initiatives***](/dei) by: 
      - attending, participating or hosting one [***"Open (and Reproducible) Office hours"***](/dei) where anyone in the world wishing to learn, adopt, teach/mentor and disseminate open and reproducible science tenets can attend.
      - participating in the [***remote mentorship program***](/dei) which aims to facilitate and encourage adhesion to open and reproducible research practices in its earliest stages for (a) students from underprivileged and underrepresented backgrounds; (b) non-WEIRD; and (c) when there is no local OS-friendly institutions or personnel.     
