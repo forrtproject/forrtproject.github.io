@@ -40,7 +40,7 @@ url_video: "https://www.youtube.com/watch?v=k-u0eITWMAI&ab_channel=FORRTproject"
 
 We presented FORRT at the Taiwanese Psychological Association (TPA) for the symposium ["International efforts to improve Psychological Science"](https://www.tpa-tw.org/2021agenda?lang=en), which was organized by [Sau-Chin Chen](mailto:csc2009@mail.tcu.edu.tw) at Tzu-Chi University. We all --ReproducibiliTea, COS's OSKB, Montilla et al., Alzahawi & Monin, and FORRT-- presented on open scholarship topics. Here's the symposium abstract:
 
-> Beyond the local psychological issues, the challenges for psychological science are changing the norms and values of psychological researches. In comprison with the sophistication and innoviation, many Western psycholgoical researchers appraise the transparency and rigor. The Society for the Improvement of Psychological Science (SIPS) have provided the platforms for the psychologists who are improving the research methods and practices. Since 2016, many proposals have turned to the global research projects or distributed networkings for divised pruposes. In this symposium five project leaders and representatives share the current situation and achivements. At Q&A section we will answer the questions and discuss the plans to manage these projects in Taiwan. This symposium introduce five projects by asynchronized talks:
+> Beyond the local psychological issues, the challenges for psychological science are changing the norms and values of psychological researches. In comparison with the sophistication and innovation, many Western psychological researchers appraise the transparency and rigor. The Society for the Improvement of Psychological Science (SIPS) have provided the platforms for the psychologists who are improving the research methods and practices. Since 2016, many proposals have turned to the global research projects or distributed networks for shared purposes. In this symposium five project leaders and representatives share the current situation and achievements. At Q&A section we will answer the questions and discuss the plans to manage these projects in Taiwan. This symposium introduce five projects:
 
 *	Open Scholarship Knowledge Base - “a community of volunteer advocates working with researchers, educators, and anyone interested in open scholarship to build a knowledge base so that researchers and users can discover and apply open practices. “
 *	ReproducibiliTea - “a grassroots journal club initiative that helps researchers create local Open Science journal clubs at their universities to discuss diverse issues, papers and ideas about improving science, reproducibility and the Open Science movement.”
@@ -48,9 +48,16 @@ We presented FORRT at the Taiwanese Psychological Association (TPA) for the symp
 *	Non-WIERD guidelines – “a project to aid academic members evaluate and increase diversity and inclusion in psychological research studies.”
 *	Crowd science – “a project aims to promote the diversity, rigor, and reliability of scientific research.”
 
+<br>
 
-<iframe src="https://www.youtube.com/watch?v=k-u0eITWMAI&ab_channel=FORRTproject" width="100%" height="500" allowfullscreen="allowfullscreen"></iframe>
+## The recording
+
+{{< youtube k-u0eITWMAI >}}
+
+<br>
 
 For an overview of the whole event, see the [conference program](https://www.tpa-tw.org/2021agenda?lang=en) and the OSF Repository [OSF Repository](https://osf.io/8z6w2/).
 
+## Presentation slides
 
+<style>.embed-responsive{position:relative;height:100%;}.embed-responsive iframe{position:absolute;height:100%;}</style><script>window.jQuery || document.write('<script src="//code.jquery.com/jquery-1.11.2.min.js">\x3C/script>') </script><link href="https://mfr.de-1.osf.io/static/css/mfr.css" media="all" rel="stylesheet"><div id="mfrIframe" class="mfr mfr-file"></div><script src="https://mfr.de-1.osf.io/static/js/mfr.js"></script> <script>var mfrRender = new mfr.Render("mfrIframe", "https://mfr.au-1.osf.io/render?url=https://osf.io/fm3p9/?direct%26mode=render%26action=download%26mode=render");</script>
