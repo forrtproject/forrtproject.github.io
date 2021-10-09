@@ -44,7 +44,7 @@ social:
   link: https://github.com/forrtproject
 - icon: envelope
   icon_pack: fas
-  link: 'mailto:FORRTproject@gmail.com' 
+  link: 'mailto:info@forrt.org' 
 superuser: true
 user_groups:
 - ""

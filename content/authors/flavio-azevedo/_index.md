@@ -45,24 +45,24 @@ social:
 - icon: twitter
   icon_pack: fab
   link: https://twitter.com/Flavio_Azevedo_
-- icon: google-scholar
+- icon: github
+  icon_pack: fab
+  link: https://github.com/flavioazevedo
+- icon: envelope
+  icon_pack: fas
+  link: 'mailto:info@forrt.org'  # For a direct email link, use "mailto:test@example.org".
+- icon: orcid
+  icon_pack: fab
+  link: https://orcid.org/0000-0001-9000-8513
+- icon: google-scholar-square
   icon_pack: ai
   link: https://scholar.google.com/citations?user=O2Mp3ygAAAAJ&hl
-- icon: orcid
-  icon_pack: ai
-  link: https://orcid.org/0000-0001-9000-8513
 - icon: publons
   icon_pack: ai
   link: https://publons.com/researcher/1551653/flavio-azevedo/
 - icon: osf
   icon_pack: ai
   link: https://osf.io/6ycwh/
-- icon: github
-  icon_pack: fab
-  link: https://github.com/flavioazevedo
-- icon: envelope
-  icon_pack: fas
-  link: 'mailto:FORRTproject@gmail.com'  # For a direct email link, use "mailto:test@example.org".
 
 # Link to a PDF of your resume/CV from the About widget.
 # To enable, copy your resume/CV to `static/files/cv.pdf` and uncomment the lines below.
