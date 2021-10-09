@@ -13,7 +13,7 @@ subtitle = "Whether you have questions getting started or you want to know how t
   icon_pack = "fas"
   #img = "megaphone.png"
   name = "Email"
-  description = " [forrtproject@gmail.com](mailto:FORRTproject@gmail.com)"
+  description = " [info@forrt.org](mailto:info@forrt.org)"
 
 [[feature]]
   icon = "twitter"

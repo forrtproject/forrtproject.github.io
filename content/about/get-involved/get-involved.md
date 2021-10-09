@@ -23,14 +23,14 @@ subtitle = """**Join the movement for better education**
 # #  icon_pack = "fas"
 #   img = "teamwork.png"
 #   name = "Join Our Team"
-#   description = "Everything we develop and produce is in the open. You can join our team [on GitHub](https://github.com/flavioazevedo/FORRT). If you # want to become an active contributors [email us](mailto:FORRTproject@gmail.com)."  
+#   description = "Everything we develop and produce is in the open. You can join our team [on GitHub](https://github.com/flavioazevedo/FORRT). If you # want to become an active contributors [email us](mailto:info@forrt.org)."  
 #   
 # [[feature]]
 #   # icon = "handshake"
 #   # icon_pack = "fas"
 #   img = "partner.png"
 #   name = "Become a Partner"
-#   description = "We have three different partner levels (Core, Strategic and Institutional) that help us to develop the principles enshrined in # FORRT. If you want to become a partner [email us](mailto:FORRTproject@gmail.com)."
+#   description = "We have three different partner levels (Core, Strategic and Institutional) that help us to develop the principles enshrined in # FORRT. If you want to become a partner [email us](mailto:info@forrt.orgm)."
 
 # Call to action links (optional).
 #   Display link(s) by specifying a URL and label below. Icon is optional for `[cta]`.

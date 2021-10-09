@@ -48,7 +48,7 @@ date_format = "Jan 02, 2006"
 #   date_endnow = "present"
 #   description = """Of course, the website is in its early stages. So, if you are interested in website development, get in touch!
 # 
-# FORRTproject@gmail.com"""
+# info@forrt.org"""
   
 [design.background]
   # Apply a background color, gradient, or image.

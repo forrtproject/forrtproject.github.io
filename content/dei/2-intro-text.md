@@ -61,7 +61,7 @@ Hence, we at FORRT, have devised at least 3 ways to be proactive in the outreach
 
 * FORRT's ***Open Office Hours***
    - Periodically, and at least once a month, the FORRT community will hold its Open and Reproducible Science *"office hours"* for anyone in the world wishing to learn, adopt, and disseminate open and reproducible science tenets, as well as those with interest or questions about teaching and mentoring these concepts, and/or raising awareness of its pedagogical implications and its associated challenges (e.g., curricular reform, epistemological uncertainty, methods of education).
-   - Please check the [calendar of meetings](#calendar-mentorship) down below. The first meeting will happen Friday, October 30th, 2020. All necessary information should be available in the Google calender, but also feel free to [email us.](mailto:forrtproject@gmail.com)
+   - Please check the [calendar of meetings](#calendar-mentorship) down below. The first meeting will happen Friday, October 30th, 2020. All necessary information should be available in the Google calender, but also feel free to [email us.](mailto:info@forrt.org)
 
 <br>
 

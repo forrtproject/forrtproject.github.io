@@ -59,7 +59,7 @@ Any and all contributions in FORRT are formally recognized. In large part, these
 
 ### Feedback
 
-Do you have feedback to give us? We would love to receive your [criticism, areas for improvement, ideas, and help](https://docs.google.com/spreadsheets/d/1W12WpzI70Ja1FiVeflXNW8VFPzqFFvu_mL2YkNQ_cHk/edit?usp=sharing). You can also write to us at [forrtproject@gmail.com](mailto:forrtproject@gmail.com) or at [Twitter](https://twitter.com/FORRTproject), or [join our community](https://join.slack.com/t/forrt/shared_invite/zt-alobr3z7-NOR0mTBfD1vKXn9qlOKqaQ).
+Do you have feedback to give us? We would love to receive your [criticism, areas for improvement, ideas, and help](https://docs.google.com/spreadsheets/d/1W12WpzI70Ja1FiVeflXNW8VFPzqFFvu_mL2YkNQ_cHk/edit?usp=sharing). You can also write to us at [info@forrt.org](mailto:info@forrt.org) or at [Twitter](https://twitter.com/FORRTproject), or [join our community](https://join.slack.com/t/forrt/shared_invite/zt-alobr3z7-NOR0mTBfD1vKXn9qlOKqaQ).
 
 ### Join and help us
 
