@@ -7332,7 +7332,7 @@
 &lt;p>As a community we welcome everyone, and encourage a friendly and positive environment.&lt;/p>
 &lt;p>This code of conduct outlines our expectations for participants, members, contributors, and leaders within the community, as well as steps to reporting unacceptable behaviour. We are committed to providing a welcoming and inspiring community for all and expect our code of conduct to be honored. Anyone who violates this code of conduct may be banned from the community.&lt;/p>
 &lt;h2 id="our-pledge">Our Pledge&lt;/h2>
-&lt;p>We pledge to make participation in our community a harassment-free experience for everyone, regardless of age, body size, visible or invisible disability, ethnicity, sex characteristics, gender identity and expression, level of experience, education, social and economic status, nationality, personal appearance, race, religion, or sexual identity and orientation.&lt;/p>
+&lt;p>We pledge to make participation in our community a harassment-free experience for everyone, regardless of age, body size, visible or invisible disability, ethnicity, sex characteristics, gender identity and expression, level of experience, education, social and economic status, nationality, personal appearance, race, religion, neurodiversity, or sexual identity and orientation.&lt;/p>
 &lt;p>We pledge to act and interact in ways that contribute to an open, welcoming, diverse, inclusive, and healthy community.&lt;/p>
 &lt;p>Our open community strives to:&lt;/p>
 &lt;ul>
@@ -7340,16 +7340,22 @@
 &lt;p>&lt;strong>Be friendly and patient.&lt;/strong>&lt;/p>
 &lt;/li>
 &lt;li>
-&lt;p>&lt;strong>Be welcoming&lt;/strong>: We strive to be a community that welcomes and supports people of all backgrounds and identities. This includes, but is not limited to members of any race, ethnicity, culture, national origin, colour, immigration status, social and economic class, educational level, sex, sexual orientation, gender identity and expression, age, size, family status, political belief, religion, and mental and physical ability.&lt;/p>
+&lt;p>&lt;strong>Be welcoming&lt;/strong>: We strive to be a community that welcomes and supports people of all backgrounds and identities. This includes, but is not limited to members of any race, ethnicity, culture, national origin, colour, immigration status, social and economic class, educational level, sex, sexual orientation, gender identity and expression, age, size, family status, abledness, political belief, religion, and mental and physical ability. We are welcoming of different communications, thinking styles and speeds (e.g. linear and non-linear communication, free thinking and written communication).&lt;/p>
 &lt;/li>
 &lt;li>
 &lt;p>&lt;strong>Be considerate&lt;/strong>: Your work may be used by other people, and you, in turn, may depend on the work of others. Any decision you take will affect users and colleagues, and you should take those consequences into account when making decisions. One should focus on what is best not just for them as individuals, but for the overall community. Remember that we’re an international community, so you might not be communicating in someone else’s primary language.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>Use preferred pronouns (e.g. she/her/hers, they/their/theirs, he/him/his).&lt;/strong>&lt;/p>
 &lt;/li>
 &lt;li>
 &lt;p>&lt;strong>Be respectful of differing opinions, viewpoints, and experiences&lt;/strong>: Not all of us will agree all the time, but disagreement is no excuse for poor behaviour and poor manners. We might all experience some frustration now and then, but we cannot allow that frustration to turn into a personal attack. It’s important to remember that a community where people feel uncomfortable or threatened is not a productive one. It is important to demonstrate empathy and kindness toward other people.&lt;/p>
 &lt;/li>
 &lt;li>
 &lt;p>&lt;strong>Try to understand why we disagree&lt;/strong>: Disagreements, both social and technical, happen all the time. It is important that we resolve disagreements and differing views constructively by giving and gracefully accepting constructive feedback. Remember that we’re different. Diversity contributes to the strength of our community, which is composed of people from a wide range of backgrounds. Different people have different perspectives on issues. Being unable to understand why someone holds a viewpoint doesn’t mean that they’re wrong. Don’t forget that it is human to err and blaming each other doesn’t get us anywhere. Instead, focus on helping to resolve issues and learning from mistakes.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>Open communication and mutual respect&lt;/strong>: Be generous about information and definition requests. Welcome neurodivergent people to make themselves comfortable – feel invited to tic, self-stimulate/stim, fidget, move around etc.&lt;/p>
 &lt;/li>
 &lt;li>
 &lt;p>&lt;strong>Be careful in the words that we choose&lt;/strong>: We are a community of professionals, and we conduct ourselves professionally. Be kind to others. Do not insult or put down other participants. Public or private harassment and other exclusionary behaviour aren’t acceptable. This includes, but is not limited to:&lt;/p>
@@ -7363,11 +7369,12 @@
 &lt;li>Violent threats or language directed against another person.&lt;/li>
 &lt;li>Trolling, insulting or derogatory comments, and personal or political attacks.&lt;/li>
 &lt;li>Discriminatory jokes and language.&lt;/li>
-&lt;li>The use of sexualized or violent language or imagery, and sexual attention or advances of any kind.&lt;/li>
+&lt;li>The use of ableist, sexualized or violent language or imagery, and sexual attention or advances of any kind.&lt;/li>
 &lt;li>Posting (or threatening to post) other people’s personally identifying information (“doxing”).&lt;/li>
-&lt;li>Personal insults, especially those using racist or sexist terms.&lt;/li>
+&lt;li>Personal insults, especially those using ableist, racist, xenophobic or sexist terms.&lt;/li>
 &lt;li>Repeated harassment of others. In general, if someone asks you to stop, then stop.&lt;/li>
 &lt;li>Retaliation against an individual for reporting harassment or other unacceptable behaviors or for participating in an investigation of such a claim.&lt;/li>
+&lt;li>Pass judgement about personal choices or force disclosure of one&amp;rsquo;s own experiences and identifications.&lt;/li>
 &lt;li>Other conduct which could reasonably be considered inappropriate in a professional setting.&lt;/li>
 &lt;li>Advocating for, or encouraging, any of the above behaviour.&lt;/li>
 &lt;/ul>
@@ -7376,7 +7383,7 @@
 &lt;br>
 &lt;h3 id="diversity-statement">Diversity Statement&lt;/h3>
 &lt;p>We encourage everyone to participate and are committed to building a community for all. Although we will fail at times, we seek to treat everyone both as fairly and equally as possible. Whenever a participant has made a mistake, we expect them to take responsibility for it. If someone has been harmed or offended, it is important to apologize to those affected by our mistakes. By listening carefully and respectfully, and doing our best to right the wrong, one is expected to learn from the experience.&lt;/p>
-&lt;p>Although this list cannot be exhaustive, we explicitly honor diversity in age, gender, gender identity or expression, culture, ethnicity, language, national origin, political beliefs, profession, race, religion, sexual orientation, socioeconomic status, and technical ability. We will not tolerate discrimination based on any of the protected characteristics above, including participants with disabilities.&lt;/p>
+&lt;p>Although this list cannot be exhaustive, we explicitly honor diversity in age, gender, gender identity or expression, culture, ethnicity, language, neurodiversity, national origin, political beliefs, profession, race, religion, sexual orientation, socioeconomic status, and technical ability. We will not tolerate discrimination based on any of the protected characteristics above, including participants with disabilities.&lt;/p>
 &lt;h2 id="enforcement-responsibilities">Enforcement Responsibilities&lt;/h2>
 &lt;p>Community leaders are responsible for clarifying and enforcing our standards of acceptable behaviour and will take appropriate and fair corrective action in response to any behaviour that they deem inappropriate, threatening, offensive, or harmful&lt;/p>
 &lt;h3 id="scope">Scope&lt;/h3>
