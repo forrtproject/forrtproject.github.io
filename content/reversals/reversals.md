@@ -306,7 +306,7 @@ most CIs overlapping 0
 ### Cognitive Psychology
 
 
----
+
 
 
 
@@ -402,7 +402,6 @@ n=8 judges with n=1100 cases.
 ### Developmental Psychology
 
 
----
 
 
 
@@ -428,7 +427,6 @@ Folioano: Literally zero, d=0.00 [-0.02; 0.02]
 
 ### Personality psychology
 
----
 
 
 
@@ -461,7 +459,6 @@ Folioano: Literally zero, d=0.00 [-0.02; 0.02]
 ### Marketing
 
 
----
 
 
 
@@ -472,8 +469,6 @@ Folioano: Literally zero, d=0.00 [-0.02; 0.02]
 
 ### Neuroscience
 
-
----
 
 
 
@@ -496,16 +491,11 @@ Folioano: Literally zero, d=0.00 [-0.02; 0.02]
 ### Psychiatry
 
 
----
-
-
 
 * At most [extremely weak evidence](https://www.nature.com/articles/d41586-019-03268-y) that psychiatric hospitals (of the 1970s) could not detect sane patients in the absence of deception.
 
 
 ### Parapsychology
-
----
 
 
 
@@ -521,8 +511,6 @@ Folioano: Literally zero, d=0.00 [-0.02; 0.02]
 
 
 ### Evolutionary psychology
-
----
 
 
 
@@ -565,7 +553,6 @@ the specific menstrual cycle research doesn't seem to replicate well. However, t
 
 ### Psychophysiology
 
----
 
 
 
@@ -582,8 +569,6 @@ the specific menstrual cycle research doesn't seem to replicate well. However, t
 
 ### **Behavioural genetics**
 
----
-
 
 
 
@@ -595,7 +580,6 @@ the specific menstrual cycle research doesn't seem to replicate well. However, t
 
 ### **Applied Linguistics** 
 
----
 
 
 
@@ -604,9 +588,6 @@ the specific menstrual cycle research doesn't seem to replicate well. However, t
 
 
 ### **Educational Psychology **
-
----
-
 
 
 
