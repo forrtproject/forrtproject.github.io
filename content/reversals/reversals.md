@@ -53,6 +53,16 @@ subtitle = ""
 
 <br>
 
+---
+title: "Reversals"
+output:
+  html_document:
+    toc: true
+    toc_depth: 3
+---
+
+<br>
+
 ## Overview
 
 <br>
@@ -130,11 +140,15 @@ No good evidence for [many forms of priming](https://replicationindex.com/2017/0
 
 
 * **Elderly priming**, that hearing about old age makes people walk slower. [The p-curve alone](https://psyarxiv.com/3m5y9) argues against the first 20 years of studies.
+
+{{< spoiler text="Statistics" >}}
     * Original paper: '[Automaticity of social behavior](https://scholar.google.com/scholar?cluster=3335859380278379099&hl=en&as_sdt=0,5&sciodt=0,5)', Bargh 1996; 2 experiments with n=30. (~5200 citations)
     * Critiques: [Doyen 2012](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0029081#s2) (n=120), [Pashler 2011](http://www.psychfiledrawer.org/replication.php?attempt=MTU%3D) (n=66). Meta-analysis: [Lakens 2017](https://psyarxiv.com/3m5y9). \
 Total citations: ~44
     * Original effect size: d=0.82 to d=1.08.
     * Replication effect size: Doyen: d= -0.07. Pashler: d= -0.22
+{{< /spoiler >}}
+
 * No good evidence for **Money priming**, that “images or phrases related to money cause increased faith in capitalism, and the belief that victims deserve their fate”.
     * Original paper: '[Mere exposure to money increases endorsement of free-market systems and social inequality](https://www.ncbi.nlm.nih.gov/pubmed/22774789)', Caruso 2013. n between 30 and 168 (~120 citations).
     * Critiques: [Rohrer 2015](http://uweb.cas.usf.edu/~drohrer/pdfs/Rohrer_et_al_2015JEPG.pdf), n=136. [Lodder 2019](https://osf.io/3sh5a/), a meta-analysis of 246 experiments. \
@@ -239,7 +253,7 @@ All such “generational” analyses are at best needlessly noisy approximations
     * Replication effect size: Roberts doesn't give a d but it's near 0. something like d=0.03 ((15.65 - 15.44) / 6.59 )
     * 
 
-![alt_text](images/image3.png "image_tooltip")
+![Figure 1](images/Fig1_Roberts_2017.png)
 
    * [Table 3](https://sci-hub.se/10.1177/1745691609356789) here shows a mix of effects in 30 related constructs between 1977 and 2006, up and down.
    * Wetzel: d = -0.27 (1990 - 2010)
@@ -326,7 +340,7 @@ most CIs overlapping 0
 
 
 
-![alt_text](images/image4.png "image_tooltip")
+![](images/Fig1_DKeffect.png)
   \
 Ignore the magnitudes, this is made-up data
 
@@ -340,7 +354,7 @@ Ignore the magnitudes, this is made-up data
 
 
 
-![alt_text](images/image5.png "image_tooltip")
+![](images/Fig2_DKeffect.png)
 
 
 
@@ -349,7 +363,7 @@ Ignore the magnitudes, this is made-up data
 
 
 
-![alt_text](images/image6.png "image_tooltip")
+![](images/Fig3_DKeffect.png)
 
         * 5) the authors' explanation: that (1) is caused by a lack of 'metacognitive' skills, being able to reflect on your ability at the task. That it's a cognitive bias suffered by the worst at a task. Incompetence, like anosognosia, not only causes poor performance but also the inability to recognize that one's performance is poor.
     * Original paper: '[Unskilled and unaware of it: how difficulties in recognizing one's own incompetence lead to inflated self-assessments.](https://sci-hub.se/10.1037/0022-3514.77.6.1121)', Dunning & Kruger 1999, n=334 undergrads. This contains claims (1), (2), and (5) but no hint of (3) or (4). (~5660 citations).
@@ -523,7 +537,7 @@ Folioano: Literally zero, d=0.00 [-0.02; 0.02]
 
 
 
-![alt_text](images/image7.png "image_tooltip")
+![](images/Fig1_Shanks_2015.png)
 
     * Original effect size: d=0.55 [-0.04, 1.13] for the difference between men and women. Meta-analytic d= 0.57 [0.49, 0.65] !
     * Replication effect size: 0.00 [-0.12, 0.11]
