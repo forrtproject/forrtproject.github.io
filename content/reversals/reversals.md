@@ -53,16 +53,6 @@ subtitle = ""
 
 <br>
 
----
-title: "Reversals"
-output:
-  html_document:
-    toc: true
-    toc_depth: 3
----
-
-<br>
-
 ## Overview
 
 <br>
@@ -142,11 +132,11 @@ No good evidence for [many forms of priming](https://replicationindex.com/2017/0
 * **Elderly priming**, that hearing about old age makes people walk slower. [The p-curve alone](https://psyarxiv.com/3m5y9) argues against the first 20 years of studies.
 
 {{< spoiler text="Statistics" >}}
-    * Original paper: '[Automaticity of social behavior](https://scholar.google.com/scholar?cluster=3335859380278379099&hl=en&as_sdt=0,5&sciodt=0,5)', Bargh 1996; 2 experiments with n=30. (~5200 citations)
-    * Critiques: [Doyen 2012](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0029081#s2) (n=120), [Pashler 2011](http://www.psychfiledrawer.org/replication.php?attempt=MTU%3D) (n=66). Meta-analysis: [Lakens 2017](https://psyarxiv.com/3m5y9). \
+* Original paper: '[Automaticity of social behavior](https://scholar.google.com/scholar?cluster=3335859380278379099&hl=en&as_sdt=0,5&sciodt=0,5)', Bargh 1996; 2 experiments with n=30. (~5200 citations)
+* Critiques: [Doyen 2012](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0029081#s2) (n=120), [Pashler 2011](http://www.psychfiledrawer.org/replication.php?attempt=MTU%3D) (n=66). Meta-analysis: [Lakens 2017](https://psyarxiv.com/3m5y9). \
 Total citations: ~44
-    * Original effect size: d=0.82 to d=1.08.
-    * Replication effect size: Doyen: d= -0.07. Pashler: d= -0.22
+* Original effect size: d=0.82 to d=1.08.
+* Replication effect size: Doyen: d= -0.07. Pashler: d= -0.22
 {{< /spoiler >}}
 
 * No good evidence for **Money priming**, that “images or phrases related to money cause increased faith in capitalism, and the belief that victims deserve their fate”.
