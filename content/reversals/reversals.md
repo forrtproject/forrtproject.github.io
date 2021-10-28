@@ -360,21 +360,18 @@ most CIs overlapping 0
 
 * [No good evidence](https://www.theguardian.com/science/brain-flapping/2013/jan/21/blue-monday-depressing-day-nonsense-science) for **Blue Monday**, that the third week in January is the peak of depression or low affect ‘as measured by a simple mathematical formula developed on behalf of Sky Travel’. You’d need a huge sample size, in the thousands, to detect the effect reliably and this has never been done.
 
+
+
+
+
 ### Cognitive Psychology
 
-
-
-
-
-
 * Good and robust evidence against **ego depletion**, that willpower is limited in a muscle-like fashion.
-    * Original paper: '[Ego Depletion: Is the Active Self a Limited Resource?](https://www.ncbi.nlm.nih.gov/pubmed/9599441)', Baumeister 1998, n=67 (~5700 citations).
-    * Critiques: [Hagger 2016](https://journals.sagepub.com/doi/pdf/10.1177/1745691616652873), 23 independent conceptual replications \
-(total citations: ~640)
-    * Critique: [Vohs et al.  2021](https://journals.sagepub.com/doi/full/10.1177/0956797621989733), multisite project, n = 3,531 over 36 sites. Altmetrics: 78. 
-    * Original effect size: something like d = -1.96 between control and worst condition. (I hope I'm [calculating](https://gist.github.com/g-leech/80a8b5917ae1fb8baf57c8805c72eee9) that wrong.)
-    * Replication effect size: d = 0.04 [−0.07, 0.14]. (NB: not testing the construct the same way.)
-    * Replication effect size ([Vohs et al.  2021](https://journals.sagepub.com/doi/full/10.1177/0956797621989733)) : d = 0.06. 
+{{< spoiler text="Statistics" >}}
+* Original paper: '[Ego Depletion: Is the Active Self a Limited Resource?](https://www.ncbi.nlm.nih.gov/pubmed/9599441)', Baumeister 1998, n=67 (~5700 citation* Critiques: [Hagger 2016](https://journals.sagepub.com/doi/pdf/10.1177/1745691616652873), 23 independent conceptual replications \
+(total citations: ~6* Critique: [Vohs et al.  2021](https://journals.sagepub.com/doi/full/10.1177/0956797621989733), multisite project, n = 3,531 over 36 sites. Altmetrics: * Original effect size: something like d = -1.96 between control and worst condition. (I hope I'm [calculating](https://gist.github.com/g-leech/80a8b5917ae1fb8baf57c8805c72eee9) that wron* Replication effect size: d = 0.04 [−0.07, 0.14]. (NB: not testing the construct the same wa* Replication effect size ([Vohs et al.  2021](https://journals.sagepub.com/doi/full/10.1177/0956797621989733)) : d = 0.06.
+{{< /spoiler >}}
+
 * Mixed evidence for the **Dunning-Kruger effect**. No evidence for the “Mount Stupid” misinterpretation.
     * First disambiguate the claim
         * 5 claims involved, three of which are just popular misunderstandings: \
@@ -409,49 +406,59 @@ Ignore the magnitudes, this is made-up data
 ![](images/Fig3_DKeffect.png)
 
         * 5) the authors' explanation: that (1) is caused by a lack of 'metacognitive' skills, being able to reflect on your ability at the task. That it's a cognitive bias suffered by the worst at a task. Incompetence, like anosognosia, not only causes poor performance but also the inability to recognize that one's performance is poor.
-    * Original paper: '[Unskilled and unaware of it: how difficulties in recognizing one's own incompetence lead to inflated self-assessments.](https://sci-hub.se/10.1037/0022-3514.77.6.1121)', Dunning & Kruger 1999, n=334 undergrads. This contains claims (1), (2), and (5) but no hint of (3) or (4). (~5660 citations).
-    * Critiques: [Gignac 2020](https://www.sciencedirect.com/science/article/abs/pii/S0160289620300271), n=929; [Nuhfer 2016](https://scholarcommons.usf.edu/cgi/viewcontent.cgi?article=1188&context=numeracy) and [Nuhfer 2017](https://scholarcommons.usf.edu/cgi/viewcontent.cgi?article=1215&context=numeracy), n=1154; [Luu 2015](https://danluu.com/dunning-kruger); [Greenberg 2018](https://www.facebook.com/spencer.greenberg/posts/10104093568422862), n=534; [Yarkoni 2010](https://www.talyarkoni.org/blog/2010/07/07/what-the-dunning-kruger-effect-is-and-isnt/). \
-(total citations: ~20)
-    * Original effect size: No sds reported so I don't know. 2 of the 4 experiments showed a positive relationship between score and perceived ability; 2 showed no strong relationship. And the best performers tended to underestimate their performance. [This replicates](https://www.sciencedirect.com/science/article/abs/pii/S0160289620300271): the correlation between your IQ and your assessment of it is around 
-    * r ≃ 0.3. (3) and (4) are not at all warranted. \
+{{< spoiler text="Statistics" >}}
+* Original paper: '[Unskilled and unaware of it: how difficulties in recognizing one's own incompetence lead to inflated self-assessments.](https://sci-hub.se/10.1037/0022-3514.77.6.1121)', Dunning & Kruger 1999, n=334 undergrads. This contains claims (1), (2), and (5) but no hint of (3) or (4). (~5660 citations)* Critiques: [Gignac 2020](https://www.sciencedirect.com/science/article/abs/pii/S0160289620300271), n=929; [Nuhfer 2016](https://scholarcommons.usf.edu/cgi/viewcontent.cgi?article=1188&context=numeracy) and [Nuhfer 2017](https://scholarcommons.usf.edu/cgi/viewcontent.cgi?article=1215&context=numeracy), n=1154; [Luu 2015](https://danluu.com/dunning-kruger); [Greenberg 2018](https://www.facebook.com/spencer.greenberg/posts/10104093568422862), n=534; [Yarkoni 2010](https://www.talyarkoni.org/blog/2010/07/07/what-the-dunning-kruger-effect-is-and-isnt/). \
+(total citations: ~20* Original effect size: No sds reported so I don't know. 2 of the 4 experiments showed a positive relationship between score and perceived ability; 2 showed no strong relationship. And the best performers tended to underestimate their performance. [This replicates](https://www.sciencedirect.com/science/article/abs/pii/S0160289620300271): the correlation between your IQ and your assessment of it is aroun* r ≃ 0.3. (3) and (4) are not at all warranted. \
 (5) is much shakier than (1). The original paper concedes that there's a [purely statistical](https://en.wikipedia.org/wiki/Dunning%E2%80%93Kruger_effect#Mathematical_critique) explanation for (1): just that it is much easier to overestimate a low number which has a lower bound! And the converse: if I am a perfect performer, I am unable to overestimate myself. D&K just think there's something notable left when you subtract this. \
-It's also confounded by (2).
-    * Replication effect size (for claim 1): 3 of the 4 original studies can be explained by noisy tests, bounded scales, and artefacts in the plotting procedure. ("the primary drivers of errors in judging relative standing are general inaccuracy and overall biases tied to task difficulty".) Only about 5% of low-performance people were very overconfident (more than 30% off) in the Nuhfer data.
-    * Gignac & Zajenkowski use IQ rather than task performance, and run two less-confounded tests, finding  r = −0.05  between P and errors, and r = 0.02  for a quadratic relationship between self-described performance and actual performance.
-    * [Jansen (2021)](https://www.nature.com/articles/s41562-021-01057-0) find independent support for claim 1 (n=3500) (the "performance-dependent estimation model") and also argue for (5), since they find less evidence for an alternative explanation, Bayesian reasoning towards a prior of "I am mediocre". (Fig 5b follows the original DK plot style, and is very unclear as a result.)
-    * [Muller (2020)](https://onlinelibrary.wiley.com/doi/10.1111/ejn.14935) replicate claim (1) and add some EEG stuff.
-    * Some suggestions that claim (2) is [WEIRD](https://www.apa.org/monitor/2010/05/weird) only.
+It's also confounded by (2)* Replication effect size (for claim 1): 3 of the 4 original studies can be explained by noisy tests, bounded scales, and artefacts in the plotting procedure. ("the primary drivers of errors in judging relative standing are general inaccuracy and overall biases tied to task difficulty".) Only about 5% of low-performance people were very overconfident (more than 30% off) in the Nuhfer data* Gignac & Zajenkowski use IQ rather than task performance, and run two less-confounded tests, finding  r = −0.05  between P and errors, and r = 0.02  for a quadratic relationship between self-described performance and actual performance* [Jansen (2021)](https://www.nature.com/articles/s41562-021-01057-0) find independent support for claim 1 (n=3500) (the "performance-dependent estimation model") and also argue for (5), since they find less evidence for an alternative explanation, Bayesian reasoning towards a prior of "I am mediocre". (Fig 5b follows the original DK plot style, and is very unclear as a result.* [Muller (2020)](https://onlinelibrary.wiley.com/doi/10.1111/ejn.14935) replicate claim (1) and add some EEG stuff* Some suggestions that claim (2) is [WEIRD](https://www.apa.org/monitor/2010/05/weird) only.
+{{< /spoiler >}}
+
+
 * Questionable evidence for a tiny **“depressive realism” effect**, of increased predictive accuracy or decreased cognitive bias among the clinically depressed.
-    * Original paper: '[Judgment of contingency in depressed and nondepressed students: sadder but wiser?](https://www.ncbi.nlm.nih.gov/pubmed/528910)', 1979 (2450 citations).
-    * Critiques: [Moore & Fresco 2012 \
+{{< spoiler text="Statistics" >}}
+* Original paper: '[Judgment of contingency in depressed and nondepressed students: sadder but wiser?](https://www.ncbi.nlm.nih.gov/pubmed/528910)', 1979 (2450 citations).
+* Critiques: [Moore & Fresco 2012 \
 ](https://www.ncbi.nlm.nih.gov/pubmed/22717337)(211 total citations)
-    * Original effect size: d= -0.32 for bias about 'contingency', how much the outcome actually depends on what you do, \
+* Original effect size: d= -0.32 for bias about 'contingency', how much the outcome actually depends on what you do, \
 n=96 students, needlessly binarised into depressed and nondepressed based on [Beck score](https://en.wikipedia.org/wiki/Beck_Depression_Inventory) > 9. (Why?)
-    * Replication effect size: d = -0.07 with massive sd=0.46, n=7305, includes a trim-and-fill correction for publication bias. "Overall, however, both dysphoric/depressed individuals (d= .14) and nondysphoric/nondepressed individuals evidenced a substantial positive bias (d= .29)"
+* Replication effect size: d = -0.07 with massive sd=0.46, n=7305, includes a trim-and-fill correction for publication bias. "Overall, however, both dysphoric/depressed individuals (d= .14) and nondysphoric/nondepressed individuals evidenced a substantial positive bias (d= .29)"
+{{< /spoiler >}}
+
 * Questionable evidence for the **“hungry judge” effect**, of massively reduced acquittals (d=2) just before lunch. Case order isn’t independent of acquittal probability (“unrepresented prisoners usually go last and are less likely to be granted parole”); favourable cases may take predictably longer and so are pushed until after recess; effect size is implausible on priors; explanation involved ego depletion.
-    * Original paper: '[Extraneous factors in judicial decisions](https://www.pnas.org/content/108/17/6889)', 2011 (1040 citations).
-    * Critiques: [Weinshall-Margel 2011](https://www.pnas.org/content/108/42/E833.long), [Glöckner 2016](http://journal.sjdm.org/16/16823/jdm16823.html), [Lakens 2017 \
+{{< spoiler text="Statistics" >}}
+* Original paper: '[Extraneous factors in judicial decisions](https://www.pnas.org/content/108/17/6889)', 2011 (1040 citations).
+* Critiques: [Weinshall-Margel 2011](https://www.pnas.org/content/108/42/E833.long), [Glöckner 2016](http://journal.sjdm.org/16/16823/jdm16823.html), [Lakens 2017 \
 ](http://nautil.us/blog/impossibly-hungry-judges)(77 total citations)
-    * Original effect size: d=1.96, "the probability of a favorable ruling steadily declines from ≈0.65 to [0.05] and jumps back up to ≈0.65 after a break for a meal", \
+* Original effect size: d=1.96, "the probability of a favorable ruling steadily declines from ≈0.65 to [0.05] and jumps back up to ≈0.65 after a break for a meal", \
 n=8 judges with n=1100 cases.
-    * Replication effect size: N/A.
-* [No good evidence](https://www.tandfonline.com/doi/abs/10.1207/s15326985ep4104_1) for **multiple intelligences** (in the sense of statistically independent components of cognition). [Gardner](https://www.cambridge.org/core/books/scientists-making-a-difference/multiple-intelligences-prelude-theory-and-aftermath/E12A49C8FF04E7474D8DEB1A573EABFC), the inventor: “Nor, indeed, have I carried out experiments designed to test the theory… I readily admit that the theory is no longer current. Several fields of knowledge have advanced significantly since the early 1980s. 
-    * Original paper: [Frames of Mind: The Theory of Multiple Intelligences](https://www.goodreads.com/book/show/294035.Frames_of_Mind), Gardner 1983 (37,229 citations).
+* Replication effect size: N/A.
+{{< /spoiler >}}
+
+* [No good evidence](https://www.tandfonline.com/doi/abs/10.1207/s15326985ep4104_1) for **multiple intelligences** (in the sense of statistically independent components of cognition). [Gardner](https://www.cambridge.org/core/books/scientists-making-a-difference/multiple-intelligences-prelude-theory-and-aftermath/E12A49C8FF04E7474D8DEB1A573EABFC), the inventor: “Nor, indeed, have I carried out experiments designed to test the theory… I readily admit that the theory is no longer current. Several fields of knowledge have advanced significantly since the early 1980s.
+{{< spoiler text="Statistics" >}}
+* Original paper: [Frames of Mind: The Theory of Multiple Intelligences](https://www.goodreads.com/book/show/294035.Frames_of_Mind), Gardner 1983 (37,229 citations).
+{{< /spoiler >}}
+
 * At most weak evidence for **brain training** (that is, “far transfer” from daily training games to fluid intelligence) in general, in particular from the Dual n-Back game.
-    * Original paper: '[Improving fluid intelligence with training on working memory](https://www.pnas.org/content/105/19/6829)', Jaeggi 2008, n=70. (2200 citations).
-    * Critiques: [Melby-Lervåg 2013](https://sci-hub.se/10.1037/a0028228), meta-analysis of 23 studies. \
+{{< spoiler text="Statistics" >}}
+* Original paper: '[Improving fluid intelligence with training on working memory](https://www.pnas.org/content/105/19/6829)', Jaeggi 2008, n=70. (2200 citations).
+* Critiques: [Melby-Lervåg 2013](https://sci-hub.se/10.1037/a0028228), meta-analysis of 23 studies. \
 [Gwern 2012](https://www.gwern.net/DNB-meta-analysis#moderators), meta-analysis of 45 studies.
-    * Original effect size: d=0.4 over control, 1-2 days after training
-    * Replication effect size: Melby: d=0.19 [0.03, 0.37] nonverbal; d=0.13 [-0.09, 0.34] verbal. Gwern: d=0.1397 [-0.0292, 0.3085], among studies using active controls.
-    * [Maybe](https://journals.plos.org/plosmedicine/article?id=10.1371/journal.pmed.1001756) some effect on non-Gf skills of the elderly. \
+* Original effect size: d=0.4 over control, 1-2 days after training
+* Replication effect size: Melby: d=0.19 [0.03, 0.37] nonverbal; d=0.13 [-0.09, 0.34] verbal. Gwern: d=0.1397 [-0.0292, 0.3085], among studies using active controls.
+* [Maybe](https://journals.plos.org/plosmedicine/article?id=10.1371/journal.pmed.1001756) some effect on non-Gf skills of the elderly. \
 [A 2020 RCT](https://openaccess.nhh.no/nhh-xmlui/bitstream/handle/11250/2657279/DP%2009.pdf?sequence=1&isAllowed=y) on 572 first-graders finds an effect (d=0.2 to 0.4), but many of the apparent far-transfer effects come only 6-12 months later, i.e. well past the end of most prior studies.
 * In general, be highly suspicious of anything that claims a positive permanent effect on adult IQ. Even in children the absolute maximum is [4](https://www.givewell.org/international/technical/programs/salt-iodization#Improvingmentalfunction)-[15 points](https://academic.oup.com/jeea/article-abstract/15/2/355/2691480) for a powerful single intervention (iodine supplementation during pregnancy in deficient populations). \
 
 * See also the hydrocephaly claim under “[Neuroscience](https://www.gleech.org/psych#neuro)”. \
 
 * Good [replication rate](https://digest.bps.org.uk/2017/06/05/these-nine-cognitive-psychology-findings-all-passed-a-stringent-test-of-their-replicability) elsewhere.
+{{< /spoiler >}}
+
 * Failed replications of **automatic imitation** claims
+
 * Weak or no evidence for cross-domain **congruency sequence effect**
+
 
 
 
