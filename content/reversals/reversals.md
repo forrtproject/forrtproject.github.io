@@ -85,9 +85,7 @@ The following are empirical findings about empirical findings; they’re all ope
 
 ### Selection Criteria
 
-Claims are included if there was at least one of: several failed replications, several good meta-analyses with notably smaller d, very strong publication bias, clear fatal errors in the analysis, a formal retraction, or clear fraud.
-
-Cases like [growth mindset](https://en.wikipedia.org/wiki/Mindset#Fixed_and_Growth_Mindset) are also included, where the eventual effect size, though positive, was a tiny fraction of the hyped original claim. To best interpret our list below, please compare it to the original paper's effect size. Here, we do not provide an averaging of high-quality supporting papers. This is because thousands of potentially non-replicable papers are published every year, and filtering, reading, and listing  them all would be a full-time job even if they were all included in systematic replication or reanalysis projects, ripe fruit. The rule is that if a spurious effect is discussed, or our community or contributors sees it in a book, or if it could hurt someone, it's noteworthy.
+Claims are included if there was at least one of: several failed replications, several good meta-analyses with notably smaller d, very strong publication bias, clear fatal errors in the analysis, a formal retraction, or clear fraud. Cases like [growth mindset](https://en.wikipedia.org/wiki/Mindset#Fixed_and_Growth_Mindset) are also included, where the eventual effect size, though positive, was a tiny fraction of the hyped original claim. To best interpret our list below, please compare it to the original paper's effect size. Here, we do not provide an averaging of high-quality supporting papers. This is because thousands of potentially non-replicable papers are published every year, and filtering, reading, and listing  them all would be a full-time job even if they were all included in systematic replication or reanalysis projects, ripe fruit. The rule is that if a spurious effect is discussed, or our community or contributors sees it in a book, or if it could hurt someone, it's noteworthy.
 
 
 ### Why trust replications more than originals?
@@ -114,11 +112,13 @@ and four of [FORRT’s Mission](https://forrt.org/about/mission/):
 * Building capacity for advocacy; and
 * Advocacy for the creation and maintenance of educational resources.
 
+## ***How to contribute?***
 
-<br>
-<br>
+Anyone can add reversals or replications [by joining our initiative](https://join.slack.com/t/forrt/shared_invite/enQtODMwODI0OTk4ODgzLTM0ZTQ3NDk5MzA1ZjBmNWJjYTVlN2Y2YTk0ZTJhYTY5NDliMDYzMjg2MWE0ZDRhOTY0ZDY3OTRlNDA4ODQ3NjQ) and then [following the instructions in our crowdsource g-doc](https://docs.google.com/document/d/1bdUHerakXgOl9keWGkz8pQOSpaLb9O8o4sI1e9X-RZc/edit?usp=sharing).  
 
-## Reversals organized per field
+<br><br><br>
+
+# **Reversals** (*organized per field*)
 ---------------
 
 <br>
@@ -466,7 +466,7 @@ Very weak evidence for the existence of high-functioning (IQ ~ 100) **hydrocepha
 * Alex Maier writes in with [a cool 2007 case study](https://www.thelancet.com/journals/lancet/article/PIIS0140-6736(07)61127-1/fulltext) of a man who got to 44 years old before anyone realised his severe hydrocephaly, through marriage and employment. IQ 75 (i.e. d=-1.7), which is higher than I expected, but still far short of the original claim, d=0.
 {{< /spoiler >}}
 
-**Readiness potentials** [seem to be actually causal](https://www.discovermagazine.com/mind/libet-and-free-will-revisited), not diagnostic. So Libet’s studies also do not show what they purport to. We still don’t have free will (since random circuit noise can tip us when the evidence is weak), but in a different way. \
+**Readiness potentials** [seem to be actually causal](https://www.discovermagazine.com/mind/libet-and-free-will-revisited), not diagnostic. So Libet’s studies also do not show what they purport to. We still don’t have free will (since random circuit noise can tip us when the evidence is weak), but in a different way.
 
 [No good evidence](https://www.npr.org/sections/13.7/2013/12/02/248089436/the-truth-about-the-left-brain-right-brain-relationship) for **left/right hemisphere dominance correlating with personality differences**. No clear hemisphere dominance at all in [this study](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0071275).
 {{< spoiler text="Statistics" >}}
