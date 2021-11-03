@@ -352,25 +352,7 @@ Good and robust evidence against **ego depletion**, that willpower is limited in
 {{< /spoiler >}}
 
 Mixed evidence for the **Dunning-Kruger effect**. No evidence for the “Mount Stupid” misinterpretation.
-* First disambiguate the claim
-* 5 claims involved, three of which are just popular misunderstandings: 1) the one the authors actually make: that poor performers (e.g. the bottom quartile) overestimate their performance more than good performers do: L > U
 
-![](images/Fig1_DKeffect.png)
-
-Ignore the magnitudes, this is made-up data
-
-    (Formally "the difference y "the difference is self-described performance and  actual performance has a negative slope over actual performance moderator.)
-
-      * 2) that people [in general](https://en.wikipedia.org/wiki/Illusory_superiority) overestimate their own ability  self-described performance and actual performance
-      * 3) the meme: that there's a [u-shaped relationship](https://www.google.com/search?q=mount+stupid+dunning&source=lnms&tbm=isch&sa=X&ved=2ahUKEwia5taF8LLoAhUdURUIHTtZC3EQ_AUoAXoECAwQAw&biw=1280&bih=654) between perceived and actual ability. "The less competent someone is, the more competent they think they are".
-
-![](images/Fig2_DKeffect.png)
-
-      * Alternatively, that poor performers think they're better than good performers: Self-described performance of poor performers think they are better than good performers.
-
-![](images/Fig3_DKeffect.png)
-
-      * 5) the authors' explanation: that (1) is caused by a lack of 'metacognitive' skills, being able to reflect on your ability at the task. That it's a cognitive bias suffered by the worst at a task. Incompetence, like anosognosia, not only causes poor performance but also the inability to recognize that one's performance is poor.
 {{< spoiler text="Statistics" >}}
 * Original paper: '[Unskilled and unaware of it: how difficulties in recognizing one's own incompetence lead to inflated self-assessments.](https://sci-hub.se/10.1037/0022-3514.77.6.1121)', Dunning & Kruger 1999, n=334 undergrads. This contains claims (1), (2), and (5) but no hint of (3) or (4). (~5660 citations)
 * Critiques: [Gignac 2020](https://www.sciencedirect.com/science/article/abs/pii/S0160289620300271), n=929; [Nuhfer 2016](https://scholarcommons.usf.edu/cgi/viewcontent.cgi?article=1188&context=numeracy) and [Nuhfer 2017](https://scholarcommons.usf.edu/cgi/viewcontent.cgi?article=1215&context=numeracy), n=1154; [Luu 2015](https://danluu.com/dunning-kruger); [Greenberg 2018](https://www.facebook.com/spencer.greenberg/posts/10104093568422862), n=534; [Yarkoni 2010](https://www.talyarkoni.org/blog/2010/07/07/what-the-dunning-kruger-effect-is-and-isnt/). \
