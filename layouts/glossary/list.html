@@ -11,7 +11,7 @@
       
       <nav id="TableOfContents" class="nav flex-column">
         <ul>
-          {{ range where site.Pages "Params.definition" "!=" nil }}
+          {{ range where .RegularPages "Params.definition" "!=" nil }}
           <li class="nav-item" data-toggle="tooltip" data-placement="right" title="{{ .Params.definition }}"><a href="{{ .Permalink }}" class="nav-link" style="">{{ .Title }}</a></li>
           {{end}}
         </ul>
@@ -50,9 +50,10 @@
         
               <nav id="TableOfContents" class="nav flex-column">
         <ul>
-          {{ range where site.Pages "Params.definition" "!=" nil }}
+          {{ range where .RegularPages "Params.definition" "!=" nil }}
           <li class="nav-item" data-toggle="tooltip" data-placement="right" title="{{ .Params.definition }}"><a href="{{ .Permalink }}" class="nav-link" style="">{{ .Title }}</a></li>
           {{end}}
+          
         </ul>
       </nav>
 
