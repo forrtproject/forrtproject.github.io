@@ -46,8 +46,16 @@ Link to the FORRT preprint explaining Phase 1
 <br>
 
 
-<br>
+### <p style="color:#380e0e">Glossary Versioning</p>
 
+We plan to continuously improve, extend, and update our items with community involvement. Versioning will allow the study of the evolution of the terminology. The version-controlled source code of the official releases of the complete Glossary is archived on FORRT’s [GitHub](https://github.com/forrtproject/forrtproject.github.io/tree/master/content/glossary), [OSF](https://osf.io/vdb8z/), and [Zenodo](https://zenodo.org/record/5643745). The present glossary is the Beta 0.1 version and can be accessed from within FORRT website (as will its updates) below:
+
+1. Current Version: [FORRT's Glossary | Phase 1 | Beta version 0.1](/glossary/vbeta)
+
+
+### Phase 1
+
+<br>
 
 {{< expand "Expand to learn more about details of the Phase 1" >}}
 
