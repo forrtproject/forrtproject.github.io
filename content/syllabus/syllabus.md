@@ -8,7 +8,7 @@ headless = true  # This file represents a page section.
 active = true  # Activate this widget? true/false
 weight = 10  # Order that this section will appear.
 
-title = "Syllabus"
+title = "Open and Reproducible Science Syllabus"
 subtitle = ""
 
 [design]
@@ -53,7 +53,7 @@ subtitle = ""
 
 <br>
 
-### Motivation
+## Motivation
 ---------------------
 
 To provide educators with an example of how they can draw resources from FORRT’s educational nexus to integrate open scholarship into their teaching, FORRT has developed an Open and Reproducible Science 101 syllabus. 
@@ -62,21 +62,18 @@ FORRT’s syllabus was developed as a seminar series covering 9 weeks of teachin
 
 Importantly, this syllabus is not intended to be a “one size fits all” approach. While educators are welcomed to use this syllabus in its current format, they can also adapt it to meet their current courses and needs. We hope it can serve as starting point for your class.
 
-<br>
+> ### ***FORRT's Open and Reproducible Science Syllabus***. 
+> * [editable G-doc/Word](https://docs.google.com/document/d/1pfFro5MbwBHzzXTeM_lE1gjFuq7AnnKWSDWkVwOBAtE/edit#)
 
-***FORRT's Open and Reproducible Science Syllabus***. 
-
-* [.pdf version direct download](FORRT_O&R_101_Syllabus.pdf)
-* [editable G-doc/Word version](https://docs.google.com/document/d/1pfFro5MbwBHzzXTeM_lE1gjFuq7AnnKWSDWkVwOBAtE/edit#)
 
 <br>
 
-### List of 'Open Science' Syllabi
+### List of Open Science Syllabi
 ---------------------
 
 To further facilitate the creation, the updating, improvement, and maintenance of Open Science syllabi, we also curate a list of (possibly) useful other syllabi.
 
-* [FORRT Open and Reproducible Science Syllabus](https://forrt.org/syllabus)
+* [FORRT's Open and Reproducible Science Syllabus](https://forrt.org/syllabus)
 * [Course Syllabi for Open and Reproducible Methods](https://osf.io/vkhbt/)
 * [Diversifying Research Methods Syllabi](https://osf.io/y5gr9/)
 * [Overcoming the Knowledge Barrier in Open Science](https://osf.io/bk6r7/)

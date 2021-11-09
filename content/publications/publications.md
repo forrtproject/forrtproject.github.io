@@ -121,7 +121,7 @@ We have written a manuscript entitled *Towards a culture of open scholarship: Th
 The **<font style="color:#0e2a38">preprint</font>** can [be found here](Azevedo_et.al._FORRT_Pedagogical_Communities.pdf).
 
 ***Status***: Our manuscript is currently under review. Cite as:
-> Azevedo, F.,  Meng, L., Pennington, C. R., Pownall, M., Evans, T. R., Parsons, S.,  Elsherif, M. M., Micheli, L., Westwood, S., & FORRT. (2021). Towards a culture of open scholarship: The role of pedagogical communities.
+> Azevedo, F.,  Liu, M., Pennington, C. R., Pownall, M., Evans, T. R., Parsons, S.,  Elsherif, M. M., Micheli, L., Westwood, S., & FORRT. (2021). Towards a culture of open scholarship: The role of pedagogical communities.
 
 <br>
 
@@ -139,7 +139,7 @@ FORRT responded to the the call from the UK House of Commons Science and Technol
 The **<font style="color:#0e2a38">submission</font>** can [be found here](Azevedo_et.al._FORRT_Science_Technology_Committee_UK_Inquiry.pdf).
 
 ***Status***: Our submission is currently being considered by the UK's Parliament Science and Technology Committee. Cite as:
-> Azevedo, F.,  Meng, L., Pennington, C. R., Pownall, M., Evans, T. R., Parsons, S.,  Elsherif, M. M., Micheli, D., Moreau, S., & FORRT. (2021). Towards a culture of open scholarship: The role of pedagogical communities.
+> Azevedo, F.,  Liu, M., Pennington, C. R., Pownall, M., Evans, T. R., Parsons, S.,  Elsherif, M. M., Micheli, D., Moreau, S., & FORRT. (2021). Towards a culture of open scholarship: The role of pedagogical communities.
 
 <br>
 
