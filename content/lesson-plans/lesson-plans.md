@@ -77,15 +77,15 @@ You can find all ready lesson plans [in this OSF repository](https://osf.io/th25
 
 Each has suitable context: (e.g., entry-level/undergraduate/postgraduate), total time: (e.g., 1 hour, 2 hours, 1 day, etc.), pre-requisites, related resources (e.g. slides, assignment materials, lecture recordings, etc), learning outcomes, brokendown per activity length (10min, 30min, etc.). Here's all the topics that we prepared Lesson Plans far:
 
-1. Interpreting effect sizes and confidence intervals
-1. Registered Replication Report
-1. How to be critical not cynical
-1. Intro to Open Science lesson plan
-1. Understanding the replication crisis with app activities
-1. Dodgy papers
-1. Research paradigms and open science
-1. Open Data and Qualitative Research
-1. Diversity and inclusion in (br)open science
+1. [Interpreting effect sizes and confidence intervals](https://osf.io/8jmbu/)
+1. [Registered Replication Report](https://osf.io/2znr4/)
+1. [How to be critical not cynical](https://osf.io/7qz38/)
+1. [Intro to Open Science lesson plan](https://osf.io/x3m9k/)
+1. [Understanding the replication crisis with app activities](https://osf.io/cwaqj/)
+1. [Dodgy papers](https://osf.io/hrzwj/)
+1. [Research paradigms and open science](https://osf.io/r8ymj/)
+1. [Open Data and Qualitative Research](https://osf.io/nyfqx/)
+1. [Diversity and inclusion in (br)open science](https://osf.io/r6qsw/)
 
 We hope to keep producing more Lesson Plans, so please check this space. Our community is working on this ["Table of Activities"](https://docs.google.com/spreadsheets/d/1LGdBFlOCFqyfV7NUx11oUjkqR-aVZpWVGCn8RTiQQuk/edit#gid=0) to which you can add your own ideas (see how to contribute below) and help us empower educators and stakeholders with high quality and accessible lesson plans (and educational materials) to accelerate institutional change towards the integration of open and reproducible science into Higher Education curricula!
 
