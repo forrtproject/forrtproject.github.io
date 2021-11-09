@@ -117,6 +117,13 @@
   weight = 36
   parent = "nexus"
 
+
+[[main]]
+  name = "Impact of O&R on students"
+  url = "/impact"
+  weight = 37
+  parent = "nexus"
+
 [[main]]
   name = "Initiatives Towards Social Justice"
   url = "/dei"

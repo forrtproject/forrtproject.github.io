@@ -51,7 +51,6 @@ subtitle = ""
  css_class = ""
 +++
 
-<br>
 
 ### Motivation
 ---------------------
