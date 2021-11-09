@@ -88,7 +88,7 @@
 
 [[main]]
   name = "Adopting Principled Education"  # A link title for your page.
-  url = "/forrt/adopting"  # The URL of your page.
+  url = "/adopting"  # The URL of your page.
   weight = 32  # The position of your page in the menu.
   parent = "nexus"
 
@@ -159,6 +159,16 @@
   url = "/pedagogies/"
   weight = 50
   identifier = "pedagogies"
+
+
+[[main]]
+  name = "Publications"
+  url = "/publications/"
+  weight = 70
+  identifier = "publications"
+
+  
+
 # [[main]]
 #   name = "Public"
 #   url = "/pedagogies/public/"
