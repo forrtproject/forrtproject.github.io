@@ -65,6 +65,7 @@ FORRT's e-learning platform (or Nexus) is a hub for community-driven initiatives
 * [FORRT's Curated Resources](/resources)
 * [FORRT's Educator's Corner](/educators-corner)
 * [FORRT's Glossary](/glossary)
+* [FORRT's Impact of Open & Reproducible Scholarship on Students](/impact)
 * [FORRT's Initiatives Towards Social Justice in Academia](/dei)
 * [FORRT's Lesson Plans](/lesson-plans)
 * [FORRT's Reversals](/reversals)
