@@ -99,7 +99,7 @@ The **<font style="color:#0e2a38">preprint</font>** can [be found here](Parsons_
 
 <br>
 
-Developing educational resources is essential to facilitate engagement with, adherence to, and learning of research transparency, replicability, openness, and reproducibility. Despite the growing awareness of the benefits of training reproducible methods within undergraduate and postgraduate curricula, there remains a lack of systematic incorporation of open scholarship practices in taught courses across Higher Education. Also, while many pedagogical resources are regularly developed for this purpose, they are not often openly and actively shared with the wider community. While the potential reasons for this are diverse, one reason may be the dearth of available ready-to-use educational resources. To support instructors aiming to bridge that gap, FORRT's community built open educational resources that can be integrated into taught courses ‘out of the box’. As creating or changing course content can be onerous and time-consuming, we aimed to make evidence-based, high-quality lesson plans and activities available to teaching faculty, thus reducing the labour required to develop and implement open scholarship content. We compiled lesson plans and activities, and categorized them based on their theme, learning outcome, and method of delivery, which are made publicly available here: [FORRT's Lesson Plans](/lesson-plans).
+Despite the growing awareness of the benefits of training reproducible methods within undergraduate and postgraduate curricula, there remains a lack of systematic incorporation of open scholarship practices in taught courses across Higher Education. While the potential reasons for this are diverse, one reason may be the dearth of available ready-to-use educational resources. To support instructors aiming to bridge that gap, FORRT's community built open educational resources that can be integrated into taught courses ‘out of the box’. As creating or changing course content can be onerous and time-consuming, we aimed to make evidence-based, high-quality lesson plans and activities available to teaching faculty, thus reducing the labour required to develop and implement open scholarship content. We compiled lesson plans and activities, and categorized them based on their theme, learning outcome, and method of delivery, which are made publicly available here: [FORRT's Lesson Plans](/lesson-plans).
 
 The **<font style="color:#0e2a38">preprint</font>** can [be found here (https://psyarxiv.com/fgv79/)](https://psyarxiv.com/fgv79/). 
 
@@ -121,7 +121,7 @@ We have written a manuscript entitled *Towards a culture of open scholarship: Th
 The **<font style="color:#0e2a38">preprint</font>** can [be found here](Azevedo_et.al._FORRT_Pedagogical_Communities.pdf).
 
 ***Status***: Our manuscript is currently under review. Cite as:
-> Azevedo, F.,  Liu, M., Pennington, C. R., Pownall, M., Evans, T. R., Parsons, S.,  Elsherif, M. M., Micheli, L., Westwood, S., & FORRT. (2021). Towards a culture of open scholarship: The role of pedagogical communities.
+> Azevedo, F.,  Liu, M., Pennington, C. R., Pownall, M., Evans, T. R., Parsons, S.,  Elsherif, M. M., Micheli, L., Westwood, S., & FORRT. (2021). *Towards a culture of open scholarship: The role of pedagogical communities*.
 
 <br>
 
@@ -139,7 +139,7 @@ FORRT responded to the the call from the UK House of Commons Science and Technol
 The **<font style="color:#0e2a38">submission</font>** can [be found here](Azevedo_et.al._FORRT_Science_Technology_Committee_UK_Inquiry.pdf).
 
 ***Status***: Our submission is currently being considered by the UK's Parliament Science and Technology Committee. Cite as:
-> Azevedo, F.,  Liu, M., Pennington, C. R., Pownall, M., Evans, T. R., Parsons, S.,  Elsherif, M. M., Micheli, D., Moreau, S., & FORRT. (2021). Towards a culture of open scholarship: The role of pedagogical communities.
+> Azevedo, F.,  Liu, M., Pennington, C. R., Pownall, M., Evans, T. R., Parsons, S.,  Elsherif, M. M., Micheli, L., Moreau, D., & FORRT. (2021). *Towards a culture of open scholarship: The role of pedagogical communities*. (Report No. RRE0080). Written evidence on reproducibility and research integrity. UK Parliament. [[UK Parliament](https://committees.parliament.uk/work/1433/reproducibility-and-research-integrity/publications/written-evidence/?SearchTerm=FORRT&DateFrom=&DateTo=&SessionId=), [PDF](https://committees.parliament.uk/writtenevidence/39751/pdf/), [html](https://committees.parliament.uk/writtenevidence/39751/html/)]
 
 <br>
 
@@ -159,10 +159,8 @@ We have written to UKRN (UK's Reproducibility Network) and the British Psycholog
 
 The **<font style="color:#0e2a38">briefing note</font>** can [be found here](Parsons_Azevedo_FORRT_UKRN_Briefing_note_for_degree_accrediting_societies.pdf).
 
-***Status***: Our briefing note was informative to UKRN & the British Psychological Society. 
-<!-----Cite as:
-> Parsons, S., Azevedo, F., & FORRT (2020). Briefing note for degree accrediting societies.
------->
+***Status***: Our briefing note was informative to UKRN & the British Psychological Society. Cite as:
+> Parsons, S., Azevedo, F., & FORRT (2020). *Briefing note for degree accrediting societies*. Framework for Open and Reproducible Research Training. https://forrt.org/publications
 
 <br>
 
