@@ -69,7 +69,7 @@ We have written a manuscript entitled *Introducing a Framework for Open and Repr
 The **<font style="color:#0e2a38">preprint</font>** can [be found here (osf.io/bnh7p)](https://osf.io/bnh7p). 
 
 ***Status***: Our manuscript is currently under review. Cite as:
-> Azevedo, F., Parsons, S., Micheli, L., Strand, J., Rinke, E., ... & FORRT (2021, December 9). Introducing a Framework for Open and Reproducible Research Training (FORRT). https://doi.org/10.31219/osf.io/bnh7p
+> Azevedo, F., Parsons, S., Micheli, L., Strand, J., Rinke, E., ... & FORRT (2019, December 13). Introducing a Framework for Open and Reproducible Research Training (FORRT). https://doi.org/10.31219/osf.io/bnh7p
 
 <br>
 
