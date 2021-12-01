@@ -18,12 +18,12 @@ abstract: A (medical) reversal is when an existing treatment is found to be inef
 
 # Talk start and end times.
 #   End time can optionally be hidden by prefixing the line with `#`.
-date: 2021-12-01T14:53:38-05:00
-date_end: 2021-12-01T14:54:38-05:00
+date: 2021-12-01T01:53:38-05:00
+date_end: 2021-12-01T01:54:38-05:00
 all_day: true
 
 # Schedule page publish date (NOT talk date).
-publishDate: 2021-12-01T14:54:38-05:00
+publishDate: 2021-12-01T01:54:38-05:00
 
 authors: ["forrt", "Helena Hartmann", "Shilaan Alzahawi", "Meng Liu", "Mahmoud Elsherif", "Alaa AlDoh", "Gavin Leech",  "Flavio Azevedo"]
 tags: []
