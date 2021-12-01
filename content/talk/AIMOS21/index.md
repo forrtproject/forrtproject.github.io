@@ -25,7 +25,7 @@ all_day: true
 # Schedule page publish date (NOT talk date).
 publishDate: 2021-12-01T14:54:38-05:00
 
-authors: ["forrt", "Helena Hartmann", "Shilaan Alzahawi", "Meng Liu", "Alaa AlDoh", "Gavin Leech",  "Flavio Azevedo"]
+authors: ["forrt", "Helena Hartmann", "Shilaan Alzahawi", "Meng Liu", "Mahmoud Elsherif", "Alaa AlDoh", "Gavin Leech",  "Flavio Azevedo"]
 tags: []
 
 # Is this a featured talk? (true/false)
