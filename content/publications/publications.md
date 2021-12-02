@@ -134,7 +134,7 @@ The **<font style="color:#0e2a38">preprint</font>** can [be found here](Azevedo_
 
 <br>
 
-FORRT responded to the the call from the UK House of Commons Science and Technology Committee on for [evidence on reproducibility and research integrity, and the roles different institutions play in this](https://committees.parliament.uk/call-for-evidence/562) arguing that one important component of research integrity that is often absent from discussion: the pedagogical consequences of how we teach, mentor, and supervise students through *open scholarship*. 
+FORRT responded to the the call from the UK House of Commons Science and Technology Committee on for [evidence on reproducibility and research integrity, and the roles different institutions play in this](https://committees.parliament.uk/call-for-evidence/562) arguing that one important component of research integrity that is often absent from discussion: the pedagogical consequences of how we teach, mentor, and supervise students through *open scholarship*. Our argument boils down to 'If you want to go fast, go alone. If you want to go far, go together.'
 
 The **<font style="color:#0e2a38">submission</font>** can [be found here](Azevedo_et.al._FORRT_Science_Technology_Committee_UK_Inquiry.pdf).
 
