@@ -4,7 +4,7 @@
 title: "The Open Research Toolkit"
 subtitle: "Learn about and implement open research principles with the Open Research Toolkit."
 summary: "Do you want to learn about open research and how you can implement open research principles in your work? The Open Research Toolkit is a series of educational modules designed to give you a basic understanding of the open research ecosystem."
-authors: ['FORRT']
+authors: ['Christopher Eaker']
 tags: []
 categories: []
 date: 2021-11-13T10:44:40-04:00
