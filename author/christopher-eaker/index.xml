@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Christopher Eaker | FORRT - Framework for Open and Reproducible Research Training</title><link>https://forrt.org/author/christopher-eaker/</link><atom:link href="https://forrt.org/author/christopher-eaker/index.xml" rel="self" type="application/rss+xml"/><description>Christopher Eaker</description><generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© 2021 - FORRT Framework for Open and Reproducible Research Training</copyright><lastBuildDate>Sat, 13 Nov 2021 10:44:40 -0400</lastBuildDate><image><url>https://forrt.org/media/FORRT_banner.svg</url><title>Christopher Eaker</title><link>https://forrt.org/author/christopher-eaker/</link></image><item><title>The Open Research Toolkit</title><link>https://forrt.org/educators-corner/008-open-research-toolkit/</link><pubDate>Sat, 13 Nov 2021 10:44:40 -0400</pubDate><guid>https://forrt.org/educators-corner/008-open-research-toolkit/</guid><description>&lt;p>Open research helps increase the visibility of important discoveries and extend them to new places. It also helps to increase participation in research by underrepresented and underfunded groups. The open research ecosystem extends beyond just open access to data and publications. The principles of openness in research should extend to the entire research lifecycle, including education. I have chosen the term ecosystem because open research is an interconnected system. This system consists of philosophies, concepts, principles, practices, tools, and resources which when taken together are intended to make the research process open, transparent, accessible, and reusable by anyone.&lt;/p>
+&lt;p>I have been the Data Curation Librarian at
+&lt;a href="https://www.lib.utk.edu/" target="_blank" rel="noopener">University of Tennessee, Knoxville, Libraries&lt;/a> since 2013. During this time, I have helped hundreds of researchers meet the requirements of research funders and publishers to make their research data openly accessible. I have taught countless webinars and workshops on data management best practices, FAIR data principles, and open data. While open data is a major pillar of open research, it is only one component of the broad landscape of open research. I felt it would be a disservice to the research community I served if I did not situate my work within the larger context of open research and embrace the principles and practices in my own work. This began my quest to learn more about the open research landscape. To have the focused time to learn and to develop a resource for others, I applied and was approved for faculty development leave to devote one full semester to developing a series of training modules on various topics within open research. They were partly for my own benefit to learn the landscape and partly for the benefit of others who I was sure would be interested in learning more about the topic. The resulting product is the
+&lt;a href="https://doi.org/10.17605/OSF.IO/A4FTW" target="_blank" rel="noopener">Open Research Toolkit&lt;/a> (ORT).&lt;/p>
+&lt;p>Feedback on the ORT has been positive. My primary goal in creating this was to help librarians skill up on open research principles and practices. The feedback from this audience has been especially positive and grateful. Colleagues have indicated that the ORT’s publication is timely as they are teaching a course on open research or are implementing internal training in their library next semester. I have also heard from domain specialist scientists who have noted it would be helpful as a first introduction to open research concepts for non-academic audiences or early career researchers. My hope for the ORT is that it could be used as a continuing education resource or supplemental materials in courses across a wide range of sciences and social sciences disciplines. To encourage adoption and reuse, I decided to assign it the least restrictive Creative Commons License (CC-By) to all original materials.&lt;/p>
+&lt;p>The process of creating the ORT spanned about a year. I initially began reading and collecting resources on myriad open research topics around January of 2021. All resources were added to an EndNote library organized by topic. I then methodically went through these resources and created a list of main topics I wanted to cover. Once my faculty development leave officially began, I actively created the modules on the identified topics. The first step was creating an outline for each module which pulled in content from all the resources gathered. Next, I created PowerPoint slides for each module. Then I created a script for the modules for someone to follow if they wanted to deliver the module. Then I created a narrated YouTube video of the content of each module to which I added subtitles for accessibility. Finally, I created Google Slides of each module and narration files in PDF and Word formats. All these materials are available on the Open Science Framework.&lt;/p>
+&lt;blockquote>
+&lt;p>Each module contains a slide deck in both PowerPoint and Google Slides, presentation notes in docx and pdf, a narrated video of the slides, and a bibliography of resources related to the topic.&lt;/p>
+&lt;/blockquote>
+&lt;p>All videos are publicly accessible on
+&lt;a href="http://doi.org/10.7290/ORT_Videos" target="_blank" rel="noopener">YouTube&lt;/a>, and the video files are available for download from the
+&lt;a href="https://doi.org/10.17605/OSF.IO/A4FTW" target="_blank" rel="noopener">Open Science Framework&lt;/a>. Videos on YouTube contain both English and Spanish subtitles. ORT has been assigned a Creative Commons 4.0 Attribution (
+&lt;a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener">CC-By&lt;/a>) license to all original work in the ORT, so anyone can use and adapt however they like with attribution to the author.&lt;/p>
+&lt;p>The modules in the Open Research Toolkit currently cover the following topics. Links to each module’s materials are provided.&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>Module 1: The Open Research Ecosystem [
+&lt;a href="https://youtu.be/XnI3HmiJ_TU" target="_blank" rel="noopener">YouTube&lt;/a>,
+&lt;a href="https://osf.io/cmh2r/" target="_blank" rel="noopener">PowerPoint&lt;/a>,
+&lt;a href="https://osf.io/gqwta/" target="_blank" rel="noopener">gSlides&lt;/a>,
+&lt;a href="https://osf.io/ahvxd/" target="_blank" rel="noopener">Notes&lt;/a>]&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Module 2: Principles &amp;amp; Practices of Open Research [
+&lt;a href="https://youtu.be/6eV6YHgvpSk" target="_blank" rel="noopener">YouTube&lt;/a>,
+&lt;a href="https://osf.io/q439h/" target="_blank" rel="noopener">PowerPoint&lt;/a>,
+&lt;a href="https://osf.io/v9g7q/" target="_blank" rel="noopener">gSlides&lt;/a>,
+&lt;a href="https://osf.io/qw5mk/" target="_blank" rel="noopener">Notes&lt;/a>]&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Module 3: The Philosophical Underpinning of Open Research [
+&lt;a href="https://youtu.be/i6_RRYBH7uc" target="_blank" rel="noopener">YouTube&lt;/a>,
+&lt;a href="https://osf.io/2mgkr/" target="_blank" rel="noopener">PowerPoint&lt;/a>,
+&lt;a href="https://osf.io/ak682/" target="_blank" rel="noopener">gSlides&lt;/a>,
+&lt;a href="https://osf.io/hp7n5/" target="_blank" rel="noopener">Notes&lt;/a>]&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Module 4: Open Access to Published Research [
+&lt;a href="https://youtu.be/9UUGv93-hTA" target="_blank" rel="noopener">YouTube&lt;/a>,
+&lt;a href="https://osf.io/vhmnz/" target="_blank" rel="noopener">PowerPoint&lt;/a>,
+&lt;a href="https://osf.io/prenk/" target="_blank" rel="noopener">gSlides&lt;/a>,
+&lt;a href="https://osf.io/pektx/" target="_blank" rel="noopener">Notes&lt;/a>]&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Module 5: Open Access to Research Data [
+&lt;a href="https://youtu.be/LW849Rqf8hg" target="_blank" rel="noopener">YouTube&lt;/a>,
+&lt;a href="https://osf.io/am49n/" target="_blank" rel="noopener">PowerPoint&lt;/a>,
+&lt;a href="https://osf.io/y754z/" target="_blank" rel="noopener">gSlides&lt;/a>,
+&lt;a href="https://osf.io/v6jk2/" target="_blank" rel="noopener">Notes&lt;/a>]&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Module 6: FAIR Data Principles [
+&lt;a href="https://youtu.be/XPhIgL5phFo" target="_blank" rel="noopener">YouTube&lt;/a>,
+&lt;a href="https://osf.io/xchjp/" target="_blank" rel="noopener">PowerPoint&lt;/a>,
+&lt;a href="https://osf.io/szxav/" target="_blank" rel="noopener">gSlides&lt;/a>,
+&lt;a href="https://osf.io/9un5c/" target="_blank" rel="noopener">Notes&lt;/a>]&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Module 7: Reproducibility of Research [
+&lt;a href="https://youtu.be/MyzQSe6KiLs" target="_blank" rel="noopener">YouTube&lt;/a>,
+&lt;a href="https://osf.io/9t8xm/" target="_blank" rel="noopener">PowerPoint&lt;/a>,
+&lt;a href="https://osf.io/xazqr/" target="_blank" rel="noopener">gSlides&lt;/a>,
+&lt;a href="https://osf.io/x65dh/" target="_blank" rel="noopener">Notes&lt;/a>]&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Module 8: The Five Rs of Open Research [
+&lt;a href="https://youtu.be/AcKBNPPNgp0" target="_blank" rel="noopener">YouTube&lt;/a>,
+&lt;a href="https://osf.io/kywpx/" target="_blank" rel="noopener">PowerPoint&lt;/a>,
+&lt;a href="https://osf.io/tcky6/" target="_blank" rel="noopener">gSlides&lt;/a>,
+&lt;a href="https://osf.io/84mex/" target="_blank" rel="noopener">Notes&lt;/a>]&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Module 9: Open Peer Review [
+&lt;a href="https://youtu.be/GHVoVHV1xyk" target="_blank" rel="noopener">YouTube&lt;/a>,
+&lt;a href="https://osf.io/q6bpz/" target="_blank" rel="noopener">PowerPoint&lt;/a>,
+&lt;a href="https://osf.io/68agv/" target="_blank" rel="noopener">gSlides&lt;/a>,
+&lt;a href="https://osf.io/tnjk8/" target="_blank" rel="noopener">Notes&lt;/a>]&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Module 10: Open Licensing of Data &amp;amp; Software [
+&lt;a href="https://youtu.be/_gnIAejr_js" target="_blank" rel="noopener">YouTube&lt;/a>,
+&lt;a href="https://osf.io/52nyk/" target="_blank" rel="noopener">PowerPoint&lt;/a>,
+&lt;a href="https://osf.io/avpme/" target="_blank" rel="noopener">gSlides&lt;/a>,
+&lt;a href="https://osf.io/ekygv/" target="_blank" rel="noopener">Notes&lt;/a>]&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Module 11: Open Advocacy [
+&lt;a href="https://youtu.be/pCxb2wgZZEI" target="_blank" rel="noopener">YouTube&lt;/a>,
+&lt;a href="https://osf.io/p798v/" target="_blank" rel="noopener">PowerPoint&lt;/a>,
+&lt;a href="https://osf.io/5d78q/" target="_blank" rel="noopener">gSlides&lt;/a>,
+&lt;a href="https://osf.io/zac8p/" target="_blank" rel="noopener">Notes&lt;/a>]&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Module 12: Citizen Science [
+&lt;a href="https://youtu.be/kj053ov8Qfg" target="_blank" rel="noopener">YouTube&lt;/a>,
+&lt;a href="https://osf.io/s8z5c/" target="_blank" rel="noopener">PowerPoint&lt;/a>,
+&lt;a href="https://osf.io/z26e3/" target="_blank" rel="noopener">gSlides&lt;/a>,
+&lt;a href="https://osf.io/kymwe/" target="_blank" rel="noopener">Notes&lt;/a>]&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Module 13: Open Policies [
+&lt;a href="https://youtu.be/pw6faLOdTdc" target="_blank" rel="noopener">YouTube&lt;/a>,
+&lt;a href="https://osf.io/zpje3/" target="_blank" rel="noopener">PowerPoint&lt;/a>,
+&lt;a href="https://osf.io/zqc3t/" target="_blank" rel="noopener">gSlides&lt;/a>,
+&lt;a href="https://osf.io/27xuv/" target="_blank" rel="noopener">Notes&lt;/a>]&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Module 14: Open Education Resources [
+&lt;a href="https://youtu.be/_BlrPmtM938" target="_blank" rel="noopener">YouTube&lt;/a>,
+&lt;a href="https://osf.io/v83rg/" target="_blank" rel="noopener">PowerPoint&lt;/a>,
+&lt;a href="https://osf.io/qm82w/" target="_blank" rel="noopener">gSlides&lt;/a>,
+&lt;a href="https://osf.io/5pv86/" target="_blank" rel="noopener">Notes&lt;/a>]&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;p>More resources and additional modules may be added over time. Future resources and modules may include topics such as open research ethics, open source software and collaborative platforms, and creating more detailed curricula for those interested in using the ORT for a course. Please let me know how you use the material so I can track its adoption and use.&lt;/p>
+&lt;p>In the spirit of openness, if you have ideas for additions or would like to collaborate on new modules, please contact me (info below).&lt;/p>
+&lt;p>All resources in the ORT can be found at the following DOI:
+&lt;a href="https://doi.org/10.17605/OSF.IO/A4FTW" target="_blank" rel="noopener">https://doi.org/10.17605/OSF.IO/A4FTW&lt;/a>.&lt;/p>
+&lt;p>All videos are on the ORT channel on YouTube at the following DOI:
+&lt;a href="http://doi.org/10.7290/ORT_Videos" target="_blank" rel="noopener">http://doi.org/10.7290/ORT_Videos&lt;/a>.&lt;/p>
+&lt;p>&lt;strong>Contact information&lt;/strong>:&lt;/p>
+&lt;hr>
+&lt;p>
+&lt;a href="mailto:OpenResearch@utk.edu">Open Research Toolkit&lt;/a>&lt;/p>
+&lt;p>
+&lt;a href="mailto:ceaker@utk.edu">Christopher Eaker&lt;/a>&lt;/p>
+&lt;p>Data Curation Librarian, University of Tennessee Libraries&lt;/p></description></item></channel></rss>
