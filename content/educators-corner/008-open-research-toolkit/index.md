@@ -83,6 +83,8 @@ All videos are on the ORT channel on YouTube at the following DOI: [http://doi.o
 **Contact information**:
 ________
 
+[Open Research Toolkit](mailto:OpenResearch@utk.edu)
+
 [Christopher Eaker](mailto:ceaker@utk.edu)
 
 Data Curation Librarian, University of Tennessee Libraries
