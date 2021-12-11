@@ -81,7 +81,7 @@ The **<font style="color:#0e2a38">preprint</font>** can [be found here (osf.io/b
 
 <br>
 
-We have conducted an open educational resource project [FORRT's Glossary](/glossary) in response to the varied and plural new terminology introduced by the *open scholarship* movement, which has transformed academia's lexicon, to facilitate education and effective communication between experts and newcomers. We have written a manuscript entitled *A Community-Sourced Glossary of Open Scholarship Terms* presenting the beta 0.1 version of our glossary of open scholarship terms to facilitate education and effective communication between experts and newcomers.
+We have conducted an open educational resource project [FORRT's Glossary](/glossary) in response to the varied and plural new terminology introduced by the *open scholarship* movement, which has transformed academia's lexicon, to facilitate education and effective communication between experts and newcomers. We have written a manuscript entitled *A Community-Sourced Glossary of Open Scholarship Terms* presenting the beta 0.1 version of our glossary of open scholarship terms.
 
 The **<font style="color:#0e2a38">preprint</font>** can [be found here](Parsons_Azevedo_Elsherif_FORRT_Glossary_Community_Sourced_Glossary_Open_Scholarship_Terms.pdf). 
 
