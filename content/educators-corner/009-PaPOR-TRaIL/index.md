@@ -41,12 +41,12 @@ PaPOR TRaIL is a freely available online course that was developed with students
 The course is comprised of an introductory module that introduces students to what open research is, why it is important, and how to do it. This introductory module can be completed by students as a standalone self-directed module that they complete in their own time. The introductory module is also designed so that it can be used as a Lecture that can be integrated into existing research courses by educators.  The introductory module sections are shown below
 
 
-<img src="Picture1.png" alt="The introductory module sections" width="700" >
+<img src="Picture1.jpg" alt="The introductory module sections" width="700" >
 
 
 Once students complete the introductory module they can complete any or all of the six practice-based modules that provide a more hands-on approach to _doing _open research Students do not need to complete all six modules, some modules may be more or less relevant to the stage of their research project and they can always come back to do other modules at a later date. When students complete the introductory and all practice modules, they receive a certificate of completion. The six practice-based modules are shown below:
 
-<img src="Picture2.png" alt="The six practice-based modules" width="700" >
+<img src="Picture2.jpg" alt="The six practice-based modules" width="700" >
 
 The course is openly available to anyone who is interested, and is open for free enrolment here: [PaPOR TRaIL](https://open.ucc.ie/browse/all/cpd/courses/papor-trail-principles-and-practices-of-open-research-003cpd)
 
