@@ -14,7 +14,7 @@ header:
   image: "resources.jpg"
 ---
 
-*Introduction*
+### Introduction
 
 In the last decade, the Open Science movement has introduced and modified many research practices. The breadth of these initiatives can be overwhelming, and digestible introductions to these topics are valuable (e.g. Crüwell et al. 2019; Kathawalla, Silverstein, & Syed, 2020). Creating a shared understanding of the purposes of these initiatives facilitates discussions of the strengths and weaknesses of each practice, ultimately helping us work towards a research utopia (Nosek & Bar-Anan, 2012).
 
@@ -26,15 +26,25 @@ The list of terms we have drafted and reviewed can be found on the left if you a
 
 ### Project Status
 
-We successfully arrived at the end of ***Phase 1*** 🎉🥳
+<br>
 
-This means we managed to go from an ambitious idea to a full blown crowd-sourced project in which more than ***110 collaborators*** defined via consensus after much discussion and reviewed upwards of ***250 Open Scholarship terms***.  We also prepared a manuscript which is currently submitted where all contributors are co-authors. 
+We successfully arrived at the end of ***Phase 1*** 🎉. This means we managed to go from an ambitious idea to a full blown crowd-sourced project in which more than ***110 collaborators*** defined via consensus after much discussion and reviewed upwards of ***250 Open Scholarship terms***.  We published our manuscript at [***Nature Human Behavior***](https://doi.org/10.1038/s41562-021-01269-4), where all contributors are co-authors. 🥳
 
-***Importantly, we are preparing for Phase 2*** where FORRT will again open every term for discussion, suggestions, and editing aiming at the improvement of existing definitions, extension the scope of terms, and translation to other languages to increase access. We are trying to set everything up as we already broke google-docs. So we are considering several options to maximize (and facilitate) discussion and exchanges. If you have ideas, please contact us. ***Instructions will follow soon in this page.***
+### Phase 2 
+
+<br>
+<center> <p style="color:#38673F"> 🚨 <strong>Phase 2 of the FORRT glossary project is now open</strong>! 🚨 </p>  </center>
+<br>
+
+Following the success of Phase 1, we invite you to help us continue to improve this resource. We are interested in a wide range of contributions to improve existing definitions, extend the scope of the terms, as well as translating terms to improve accessibility. We have opened four live working documents (see [the landing page](https://docs.google.com/document/d/1BKzztg7srUeC_2Yn0b7cMbxp_vYMDlOnEYpxg_S2hWs/edit?usp=sharing) for instructions and links to working documents). Please read the instructions for contributors. We have prepared these to help guide constructive feedback and facilitate a smooth editorial process.
+
+We aim to regularly implement suggested changes and improvements. If you believe an existing definition is incorrect please contact the project leads, we aim to correct any mistakes as quickly as possible. We see the glossary as a potential starting point for other projects and resources the community feels may be needed. Please contact us if you have suggestions for publications or have ideas for related projects that could use or adapt the glossary. 
 
 To receive updates please join [FORRT's Slack channel](https://join.slack.com/t/forrt/shared_invite/zt-alobr3z7-NOR0mTBfD1vKXn9qlOKqaQ). You can also contact [FORRT](info@forrt.org), and project leads [Sam Parsons](sam.parsons@psy.ox.ac.uk) and [Flávio Azevedo](mailto:flavio.azevedo@uni-jena.de). For information on Phase 1 of FORRT’s Glossary Project, see below.
 
+<!------
 <br>
+
 {{% alert note %}}
 Link to the FORRT preprint explaining Phase 1
 
@@ -45,8 +55,10 @@ Link to the FORRT preprint explaining Phase 1
 
 <br>
 
-
 ### <p style="color:#380e0e">Glossary Versioning</p>
+------>
+
+### Glossary Versioning
 
 We plan to continuously improve, extend, and update our items with community involvement. Versioning will allow the study of the evolution of the terminology. The version-controlled source code of the official releases of the complete Glossary is archived on FORRT’s [GitHub](https://github.com/forrtproject/forrtproject.github.io/tree/master/content/glossary), [OSF](https://osf.io/vdb8z/), and [Zenodo](https://zenodo.org/record/5643745). The present glossary is the Beta 0.1 version and can be accessed from within FORRT website (as will its updates) below:
 

@@ -5,9 +5,9 @@
 widget = "blank"  # See https://sourcethemes.com/academic/docs/page-builder/
 headless = true  # This file represents a page section.
 active = true  # Activate this widget? true/false
-weight = 10  # Order that this section will appear.
+weight = 30  # Order that this section will appear.
 
-title = "## FORRT for students"
+title = "FORRT for students"
 subtitle = ""
 classtitle = ""
 
@@ -52,5 +52,5 @@ classtitle = ""
  css_class = ""
 +++
 
-With FORRT, educators in higher-education have increased opportunities to shape the minds and future of the consumers of science and the next generation of academics. Numerous scholars consider as a significant part of their responsibilities to contribute to the next generations’ edification and professional development – i.e., broadening their horizons, imparting expertise into the acquisition of knowledge independently, fostering the conditions to discover connections of seemingly unrelated phenomena, helping develop the tools and self-confidence necessary to challenge outdated dogma and its roots on current societal and educational institutions. FORRT will help educators in accomplishing these downstream goals. In this sense, at its best, FORRT should be the answer to the question “what are the best conceivable educational practices in higher education and how to achieve it?” Unrelated, but equally important, FORRT hopes to contribute to the sustainability of the grassroots movement for the improvement of science and help foster social justice through the democratization of scientific educational resources and pedagogies.
+With FORRT, educators in higher-education have increased opportunities to shape the minds and future of the consumers of science and the next generation of academics. Numerous scholars consider as a significant part of their responsibilities to contribute to the next generations’ edification and professional development – i.e., broadening their horizons, imparting expertise into the acquisition of knowledge independently, fostering the conditions to discover connections of seemingly unrelated phenomena, helping develop the tools and self-confidence necessary to challenge outdated dogma and its roots on current societal and educational institutions. FORRT will help educators in accomplishing these downstream goals. At its best, FORRT should be the answer to the question “what are the best conceivable educational practices in higher education and how to achieve it in light of the Credibility Revolution and the rise of Open Scholarship movement?” Unrelated, but equally important, FORRT hopes to contribute to the sustainability of the grassroots movement for the improvement of science and help foster social justice through the democratization of scientific educational resources and pedagogies.
 

@@ -55,7 +55,4 @@ subtitle = ""
  # CSS class.
  css_class = ""
 +++
-
-<br>
-
-We are committed to a community that (a) includes all the peoples of the earth — where a person’s demographic characteristics do not determine their online access, opportunities, or quality of experience; (b) promotes civil discourse, human dignity, and individual expression; (c) elevates critical thinking, reasoned argument, shared knowledge, and verifiable facts; and that (d) catalyzes collaboration among diverse communities working together for the common good towards better educational practices in higher education. We are comprised of about 230 people (see our [Slack](https://join.slack.com/t/forrt/shared_invite/zt-alobr3z7-NOR0mTBfD1vKXn9qlOKqaQ), as per 2021-12), and below you find the profiles of a few of us.
+We are committed to a community that (a) includes all the peoples of the earth, where a person’s demographic characteristics do not determine their online access, opportunities, or quality of experience; (b) promotes civil discourse, human dignity, and individual expression; (c) elevates critical thinking, reasoned argument, shared knowledge, and verifiable facts; and that (d) catalyzes collaboration among diverse communities working together for the common good towards better educational practices in higher education. We are comprised of about 250 people (see our [Slack](https://join.slack.com/t/forrt/shared_invite/zt-alobr3z7-NOR0mTBfD1vKXn9qlOKqaQ), as per 2021-12), and below you find the profiles of a few of us.

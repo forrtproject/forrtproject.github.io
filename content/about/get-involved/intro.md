@@ -1,15 +1,15 @@
 +++
-# A Demo section created with the Blank widget.
 # Any elements can be added in the body: https://sourcethemes.com/academic/docs/writing-markdown-latex/
 # Add more sections by duplicating this file and customizing to your requirements.
 
 widget = "blank"  # See https://sourcethemes.com/academic/docs/page-builder/
 headless = true  # This file represents a page section.
 active = true  # Activate this widget? true/false
-weight = 20  # Order that this section will appear.
+weight = 2  # Order that this section will appear.
 
-title = "**Welcome to FORRT**<br>------<br>"
-subtitle = "*Integrating open and reproducible science into higher education*"
+title = "Get Involved Now"
+subtitle = "---"
+classtitle = ""
 
 [design]
   # Choose how many columns the section has. Valid values: 1 or 2.
@@ -41,12 +41,18 @@ subtitle = "*Integrating open and reproducible science into higher education*"
 
 [design.spacing]
   # Customize the section spacing. Order is top, right, bottom, left.
-  padding = ["0px", "0", "0px", "0"]
+  padding = ["60px", "0", "0", "0"]
+
 
 [advanced]
  # Custom CSS. 
- css_style = "font-size: 1.25rem;"
+ css_style = ""
  
  # CSS class.
- css_class = "text-center"
+ css_class = ""
+
 +++
+
+The majority for FORRT's operations are done via our [Slack channel](https://join.slack.com/t/forrt/shared_invite/zt-alobr3z7-NOR0mTBfD1vKXn9qlOKqaQ). We use Slack to keep everyone up-to-date, to share interesting resources, coordinate FORRT teams, announce FORRT projects, build community, and to provide a platform for ongoing discussions on our projects, organization, and mission. [***You can join FORRT's Slack here***.](https://join.slack.com/t/forrt/shared_invite/zt-alobr3z7-NOR0mTBfD1vKXn9qlOKqaQ)
+
+---

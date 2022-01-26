@@ -6,10 +6,12 @@
 widget = "blank"  # See https://sourcethemes.com/academic/docs/page-builder/
 headless = true  # This file represents a page section.
 active = true  # Activate this widget? true/false
-weight = 60  # Order that this section will appear.
+weight = 20  # Order that this section will appear.
 
 title = "Institutional Partnerships"
-subtitle = "<br>"
+subtitle = "<br>*FORRT is indebted to many organizations which lent their support to our organization. We list below our formal partners, which not only are sources of inspiration but share our mission to help promote systemic change towards integration open and reproducible science into higher education.*"
+
+classtitle = "text-center"
 
 [design]
   # Choose how many columns the section has. Valid values: 1 or 2.
@@ -49,13 +51,44 @@ subtitle = "<br>"
  # CSS class.
  css_class = ""
 +++
+
+
+## **Partners**
 ---
 
 <br>
 
+<img src="UKRN.png" align="right" /> [The UK Reproducibility Network (UKRN)](https://www.ukrn.org/) is a national peer-led consortium that aims to ensure the UK retains its place as a centre for world-leading research. We do this by investigating the factors that contribute to robust research, promoting training activities, and disseminating best practice. UKRN also works collaboratively with various external stakeholders to ensure coordination of efforts across the sector. UKRN seeks to understand the factors that contribute to poor research reproducibility and replicability, and develop approaches to counter these, in order to improve the trustworthiness and quality of research. These issues affect all disciplines, so we aim for broad disciplinary representation.
+
+<br>
+
+---
+
+<br>
+
+<img src="ProjectTier.png" align="right" /> [Project TIER](https://www.projecttier.org) promotes the integration of principles of transparency and reproducibility in the quantitative methods training of undergraduate and graduate students. Project TIER is guided by the vision that students should be taught to use reproducible methods whenever they work with statistical data.  Reproducibility should be integrated into introductory courses in statistics or data analysis, reinforced at all levels of the quantitative methods curriculum, and ultimately adopted by students when they conduct research for theses, dissertations, or other independent projects. To pursue this vision, Project TIER's strategy is to focus on supporting instructors who wish to incorporate transparency and reproducibility in their teaching and research supervision. The primary activities include developing standards and curriculum for reproducible research, and then disseminating those resources to instructors via the TIER website, conferences and symposia, and faculty development workshops.
+
+<br>
+
+---
+
+<br>
+
+<img src="RN_German.png" align="right" /> [The German Reproducibility Network (GRN)](https://reproducibilitynetwork.de/) is a cross-disciplinary consortium that aims to increase trustworthiness and transparency of scientific research by investigating and encouraging the factors that contribute to robust research. We promote training activities and disseminate best practices, conduct and support meta-scientific research, and work with stakeholders to ensure coordination of efforts. GRN’s activities span multiple levels, including researchers, institutions and other stakeholders (e.g., funders, publishers, and Academic Societies).
+
+<br>
+
+---
+
+<br>
+
+## **Cooperation & Collaborations**
+
+<br>
 
 ![V22](/img/Partnerships_v3.png)
 
+<br>
 
 __*Meta-psychology special issue*__
 

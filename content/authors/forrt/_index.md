@@ -88,16 +88,15 @@ FORRT supports this endeavor through a three-pronged approach:
 
 2. Equipping educators with high quality pedagogical tools on open and reproducible science practices to facilitate its integration into curricula and educators’ teaching mentoring, and research practices.
   
-  <i class="fas fa-arrow-alt-circle-right text-danger fa-1.5x"></i> [FORRT’s Educational Nexus](/resources/)  
-  <i class="fas fa-arrow-alt-circle-right text-danger fa-1.5x"></i> [FORRT’s Open and Reproducible Science Summaries](/summaries/)  
+  <i class="fas fa-arrow-alt-circle-right text-danger fa-1.5x"></i> [FORRT’s Educational Nexus](/nexus/)  
   <i class="fas fa-arrow-alt-circle-right text-danger fa-1.5x"></i> [FORRT’s Pedagogies](/pedagogies/)
 
 3. Modifying the academic incentive structure regarding teaching and mentoring through recognition and commendations of excellent teaching and mentoring; foster social justice through the opening and democratization of scientific-educational resources to those who otherwise would be educationally disenfranchised; and building a community with existing educational initiatives and strengthening our missions, identify and reduce redundancies, and streamline the advancement of open educational practices.  
   
-  <i class="fas fa-arrow-alt-circle-right text-danger fa-1.5x"></i> [FORRT’s "Toward Social Justice in Academia" initiatives](/dei/)   
+  <i class="fas fa-arrow-alt-circle-right text-danger fa-1.5x"></i> [FORRT’s Toward Social Justice in Academia initiatives](/dei/)   
   <i class="fas fa-arrow-alt-circle-right text-danger fa-1.5x"></i> [FORRT’s Educators' Corner](/educators-corner/)   
-  <i class="fas fa-arrow-alt-circle-right text-danger fa-1.5x"></i> [FORRT’s Manuscript](/manuscript/)   
-  <i class="fas fa-arrow-alt-circle-right text-danger fa-1.5x"></i> [FORRT’s Institutional Partnerships](/#6-partnerships)  
+  <i class="fas fa-arrow-alt-circle-right text-danger fa-1.5x"></i> [FORRT’s Publications](/publications/)   
+  <i class="fas fa-arrow-alt-circle-right text-danger fa-1.5x"></i> [FORRT’s Institutional Partnerships](/about/partnerships)  
 
 
 {{< /expand >}}
