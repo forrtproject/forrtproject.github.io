@@ -172,6 +172,8 @@ There are 6 sub-clusters which aim to further parse the learning and teaching pr
 
 ## Conducting a preregistered study.
 
+* L. Haven, T., & Van Grootel, D. L. (2019). Preregistering qualitative research. Accountability in Research, 26(3), 229-244. https://doi.org/10.1080/08989621.2019.1580147
+
 * Nosek, B. A., Ebersole, C. R., DeHaven, A., & Mellor, D. (2018). The Preregistration Revolution. PNAS, 115(11), 2600-2606. https://doi.org/10.1073/pnas.1708274114
 
 * COS: [One Preregistration to Rule Them All?](https://www.cos.io/blog/one-preregistration-rule-them-all)
