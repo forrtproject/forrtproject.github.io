@@ -199,6 +199,8 @@ http://dx.doi.org/10.1515/9781400884940
 
 ## Ethical considerations for improved practices
 
+* Brabeck, M. M. (2021). Open science and feminist ethics: Promises and challenges of open access. Psychology of Women Quarterly, 45(4), 457-474. https://doi.org/10.1177/03616843211030926
+
 * Bol, T., de Vaan, M., & van de Rijt, A. (2018). The Matthew effect in science funding. Proceedings of the National Academy of Sciences, 115(19), 4887-4890. https://doi.org/10.1073/pnas.1719557115
 
 * Chopik, W. J., Bremner, R. H., Defever, A. M., & Keller, V. N. (2018). How (and whether) to teach undergraduates about the replication crisis in psychological science. Teaching of Psychology, 45(2), 158–163. https://doi.org/10.1177/0098628318762900
