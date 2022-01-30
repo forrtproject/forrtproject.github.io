@@ -134,3 +134,19 @@ To further facilitate the creation, the updating, improvement, and maintenance o
 * [Teaching Replicable and Reproducible Science](https://osf.io/x7d45/)
 * [Syllabus Collection](https://osf.io/vkhbt/)
 * [Overcoming the Knowledge Barrier in Open Science](https://osf.io/bk6r7/)
+
+<br>
+
+----
+
+<br>
+
+{{% alert note %}}
+
+If you know of other syllabi not included in this collection, please consider adding it to our collections so that others can benefit from it too! 
+
+[***Add Open Scholarship Syllabi to FORRT's Collection***](https://forms.gle/bjt2hfSm55JxQU1z7)
+
+{{% /alert %}}
+
+<br>
