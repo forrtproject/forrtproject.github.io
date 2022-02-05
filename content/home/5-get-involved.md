@@ -55,7 +55,7 @@ subtitle = "---"
   img = "chat.png"
   imgalttext = "2 people discussing. Illustration."
   name = "Join the Discussion"
-  description = "The majority for FORRT's operations go through our Slack channel. We use Slack to keep everyone up-to-date, coordinate teams, and provide a platform for ongoing discussions on our projects. [You can join us here.](https://join.slack.com/t/forrt/shared_invite/zt-alobr3z7-NOR0mTBfD1vKXn9qlOKqaQ)"
+  description = "The majority of FORRT's operations go through our Slack channel. We use Slack to keep everyone up-to-date, coordinate teams, and provide a platform for ongoing discussions on our projects. [You can join us here.](https://join.slack.com/t/forrt/shared_invite/zt-alobr3z7-NOR0mTBfD1vKXn9qlOKqaQ)"
 
 # Call to action links (optional).
 #   Display link(s) by specifying a URL and label below. Icon is optional for `[cta]`.

@@ -80,6 +80,8 @@ To further facilitate the creation, the updating, improvement, and maintenance o
 * [Good Science, Bad Science](http://www.ejwagenmakers.com/GSBS/GSBS.html)
 * [Methods for Reliable, Transparent, and Open Science](https://github.com/rouderj/transparent-science-course)
 * [Teaching Replication in Psychology: A Guide for Teachers and Students](https://osf.io/28r6g/)
+* [Credible Science Course](https://osf.io/78bhv/)
+* [Teaching materials from the 4th Oxford|Berlin Summer School 2021](https://osf.io/8q59y)
 * [Psych 3400 at Crump's Lab](https://www.crumplab.com/psyc3400/Syllabus.html)
 * [Project Tier](https://www.projecttier.org/tier-classroom/course-materials/#modal354)
 * [Psychology as a Robust Science](https://osf.io/sxrkn/)
