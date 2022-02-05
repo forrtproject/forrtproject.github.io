@@ -351,6 +351,7 @@ Silberzahn, R., & Uhlmann, E. L. (2015). Crowdsourced research: Many hands make 
 
 * Marecek, J. (2016). Invited reflection: Intersectionality theory and feminist psychology. Psychology of Women Quarterly, 40(2), 177-181. https://doi.org/10.1177/0361684316641090
 
+* OpenSexism Archives on Open Science https://opensexism.wordpress.com/tag/open-science/
 
 <br>
 </div>
