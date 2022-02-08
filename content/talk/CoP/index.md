@@ -74,10 +74,11 @@ projects: []
 <br>
 
 
-## Manuscript
+## Slides Presentation
 
+<br>
 
-# {{< embed name="files/FORRT_CoP.pdf" height=800 >}}
+{{< embed name="FORRT_CoP.pdf" height=300 >}}
 
 
 <br>
