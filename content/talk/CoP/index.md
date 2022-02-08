@@ -77,7 +77,7 @@ projects: []
 ## Manuscript
 
 
-# {{< embed name="FORRT_CoP.pdf" height=400 >}}
+# {{< embed name="talk/cop/FORRT_CoP.pdf" height=800 >}}
 
 
 <br>
