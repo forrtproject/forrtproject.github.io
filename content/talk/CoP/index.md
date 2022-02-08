@@ -18,12 +18,13 @@ abstract: FORRT team presents an overview of FORRT Open Educational Resources to
 
 # Talk start and end times.
 #   End time can optionally be hidden by prefixing the line with `#`.
-date: 2022-02-08T01:00:00-00:00
-date_end: 2022-02-08T01:01:00-00:00
-all_day: true
+date: 2022-02-06T01:00:00-00:00
+date_end: 2022-02-06T01:01:00-00:00
+all_day: false
 
 # Schedule page publish date (NOT talk date).
-publishDate: date_end: 2022-02-08T01:01:00-00:00
+publishDate: 
+date_end: 2022-02-06T01:02:00-00:00
 
 
 authors: ["forrt", "Flavio Azevedo"]
@@ -70,13 +71,13 @@ slides: ""
 projects: []
 ---
 
-## Look at the presentation: 
+<br>
 
-{{< expand "Look at the presentation (.pdf)" >}}
+
+## Manuscript
+
 
 # {{< embed name="FORRT_CoP.pdf" height=400 >}}
 
-{{< /expand >}}
 
 <br>
-
