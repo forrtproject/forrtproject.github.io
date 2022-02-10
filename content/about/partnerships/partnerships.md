@@ -78,6 +78,20 @@ classtitle = "text-center"
 
 <br>
 
+
+<br>
+
+## **Project-specific Partners**
+---
+
+**Project Summaries** [(link)](/summaries/)
+
+<br>
+
+<img src="rtea_bordeaux.png" align="right" /> [The BordeauxTea](https://osf.io/jqxw6/) is a journal club organized in monthly sessions in which students and young researchers discuss various topics related to Open Science around a warm cup of tea. It is based in Bordeaux (France), and part of the Neurocampus Graduate Program PhD training (Université de Bordeaux). Moreover, the BordeauxTea stems from the ReproducibiliTea initiative—a worldwide Open Science initiative spread to more than 138 institutions in 26 countries.
+
+<br>
+
 ---
 
 <br>
