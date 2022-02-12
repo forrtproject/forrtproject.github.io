@@ -79,6 +79,14 @@ classtitle = "text-center"
 <br>
 
 
+---
+
+<br>
+
+<img src="ReplicationWiki.jpg" align="right" /> [The ReplicationWiki ](https://replication.uni-goettingen.de/wiki/index.php/Main_Page) serves as a database of empirical studies in the social sciences. It informs about the availability of replication material for them and categorizes them by keywords, methods used, sources, type and geographic origin of data used, and by software used. It lists replication studies and their types and results as well as corrections and retractions. More than 4,600 studies are already listed as well as over 700 replications. The database helps social scientists to see which results have already been tested independently and how replications are published. For instructors it helps to easily identify practical examples, e.g., that for which a method was used that they want to teach and for which data and code are available in a software they can use with their students. 
+
+<br>
+
 <br>
 
 ## **Project-specific Partners**
