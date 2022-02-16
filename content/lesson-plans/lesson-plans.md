@@ -88,7 +88,7 @@ Each has suitable context: (e.g., entry-level/undergraduate/postgraduate), total
 
 We hope to keep producing more Lesson Plans, so please check this space. Our community is working on this ["Table of Activities"](https://docs.google.com/spreadsheets/d/1LGdBFlOCFqyfV7NUx11oUjkqR-aVZpWVGCn8RTiQQuk/edit#gid=0) to which you can add your own ideas (see how to contribute below) and help us empower educators and stakeholders with high quality and accessible lesson plans (and educational materials) to accelerate institutional change towards the integration of open and reproducible science into Higher Education curricula!
 
-Lastly, accompanying the Lesson Plans, FORRT’s team wrote a short manuscript entitled ["Embedding open and reproducible teaching into undergraduate training"](https://psyarxiv.com/fgv79) which was submitted to APA's [Scholarship of Teaching and Learning in Psychology](https://www.apa.org/pubs/journals/stl), where we describe and openly share a bank of teaching resources and lesson plans on the broad topics of open scholarship, open science, replication, and reproducibility that can be readily integrated into taught courses. 
+Lastly, accompanying the Lesson Plans, FORRT’s team wrote a short manuscript entitled ["Embedding open and reproducible teaching into undergraduate training"](https://psyarxiv.com/fgv79) which is now published in the APA's [Scholarship of Teaching and Learning in Psychology](https://psycnet.apa.org/record/2022-15361-001), where we describe and openly share a bank of teaching resources and lesson plans on the broad topics of open scholarship, open science, replication, and reproducibility that can be readily integrated into taught courses. 
 
 <br>
 

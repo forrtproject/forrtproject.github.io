@@ -80,6 +80,8 @@ To further facilitate the creation, the updating, improvement, and maintenance o
 * [Good Science, Bad Science](http://www.ejwagenmakers.com/GSBS/GSBS.html)
 * [Methods for Reliable, Transparent, and Open Science](https://github.com/rouderj/transparent-science-course)
 * [Teaching Replication in Psychology: A Guide for Teachers and Students](https://osf.io/28r6g/)
+* [Credible Science Course](https://osf.io/78bhv/)
+* [Teaching materials from the 4th Oxford|Berlin Summer School 2021](https://osf.io/8q59y)
 * [Psych 3400 at Crump's Lab](https://www.crumplab.com/psyc3400/Syllabus.html)
 * [Project Tier](https://www.projecttier.org/tier-classroom/course-materials/#modal354)
 * [Psychology as a Robust Science](https://osf.io/sxrkn/)
@@ -134,3 +136,19 @@ To further facilitate the creation, the updating, improvement, and maintenance o
 * [Teaching Replicable and Reproducible Science](https://osf.io/x7d45/)
 * [Syllabus Collection](https://osf.io/vkhbt/)
 * [Overcoming the Knowledge Barrier in Open Science](https://osf.io/bk6r7/)
+
+<br>
+
+----
+
+<br>
+
+{{% alert note %}}
+
+If you know of other syllabi not included in this collection, please consider adding it to our collections so that others can benefit from it too! 
+
+[***Add Open Scholarship Syllabi to FORRT's Collection***](https://forms.gle/bjt2hfSm55JxQU1z7)
+
+{{% /alert %}}
+
+<br>
