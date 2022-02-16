@@ -53,51 +53,15 @@ subtitle = ""
 
 <br>
 
-## Overview
+## Summary
 
 <br>
 
-<p style="text-align: right">
-<em>[What I propose] is not a reform of significance testing as currently practiced in soft-psych. We are making a more heretical point… We are attacking the whole tradition of null-hypothesis refutation as a way of appraising theories… Most psychology uses conventional Ho refutation in appraising the weak theories of soft psychology… [is] living in a fantasy world of “testing” weak theories by feeble methods.</em></p>
-
-
-<p style="text-align: right">
-– <a href="https://www.tandfonline.com/doi/abs/10.1207/s15327965pli0102_1">Paul Meehl</a> (1990)</p>
-
-
-A [medical reversal](https://en.wikipedia.org/wiki/Medical_reversal) is when an existing treatment is found to be ineffective and harmful. Psychology, for example, has been racking up reversals. In recent years, scholarship showed only [40-65%](https://www.tandfonline.com/doi/full/10.1080/01973533.2019.1577736) of some classic results were replicated, in the weak sense of finding statistical significance for the same direction of effect (less than zero or greater than zero effect). Even in those that replicated, the average effect found was [half](https://etiennelebel.com/documents/osc(2015,science).pdf) the originally reported effect. We realise that replications of social sciences are themselves [intricate phenomena](https://osf.io/preprints/metaarxiv/cd5j9/) with analytical and [researcher dependencies](https://osf.io/preprints/socarxiv/j7qta/), but while such failures to replicate are far less costly to society than medical ones, it still pollutes science's goal of accumulating knowledge.
-
-Psychology is not alone: [medicine](https://journals.plos.org/plosmedicine/article?id=10.1371/journal.pmed.0020124), [cancer biology](https://www.nature.com/articles/483531a), and [economics](https://science.sciencemag.org/content/351/6280/1433) all have their share of irreplicable results. It’d be wrong to write off psychology, or any other discipline for that matter, as not only scientific subfields differ a lot with respect to replication rates and effect-size shrinkage, thereby rendering field-wide generalizations uninformative but also because [one reason](https://statmodeling.stat.columbia.edu/2016/09/22/why-is-the-scientific-replication-crisis-centered-on-psychology/) psychology reversals are so prominent has to do with it’s unusual ‘openness’ in terms of code and data sharing. A less scientific field would never have caught its own bullshit.
-
-<p style="text-align: right"> Box 1. Reversals in the context of COVID-19. </p>
-
-{{% alert note %}}
+Replications of previous scientific work are at the core of the Open Scholarship movement. However, as replication efforts become more widespread, it can be challenging to scholars and educators to keep themselves up to date with which effects in their field replicate and which do not. FORRT’s replications and reversals aims to collate replications and specifically so-called reversal effects in social science. Reversals are—in the context of a replication—effects that have their original direction flipped. The extent of such reversals and non-replicated effects is already apparent in the social science literature, with even replicated effects being only half of the originally reported effect (Ioannidis, 2005; Open Science Collaboration, 2015). Although such failures to replicate are far less costly to society than for example medical ones (Prasad & Cifu, 2011), they broadly hinder science's goal of accumulating knowledge and contribute to waste of scarce resources. This resource aims to be a “living”, freely available, crowd-sourced, and community-driven collection of effects that have either not been replicated or even reversed through empirical research across social sciences. Scholars from varied backgrounds and areas of social science are invited to contribute with prevalent effects in their respective fields.
 
 <br>
 
-A counterexample from the COVID-19 pandemic: the UK's March 2020 policy was based on the idea of [behavioural fatigue](https://www.theguardian.com/world/2020/mar/13/behavioural-scientists-form-new-front-in-battle-against-coronavirus) and [Western resentment of restrictions](https://www.thelancet.com/journals/lancet/article/PIIS0140-6736(20)30460-8/fulltext); that a costly prohibition would only last a few weeks before the population revolt against it, and so it had to be delayed until the epidemic's peak. Now, this policy was so politically toxic that we know it had to be based on some domain reasoning, and it is in a way heartening that the government tried to go beyond socially naive epidemiology. But it was [strongly criticised](https://sites.google.com/view/covidopenletter/home) by hundreds of other behavioural scientists, who noted that the evidence for these ideas was too weak to base policy on. [Here's](https://unherd.com/2020/03/dont-trust-the-psychologists-on-coronavirus/) a catalogue of bad psychological takes.
-
-{{% /alert %}}
-
-The following are empirical findings about empirical findings; they’re all open to re-reversal. Also it’s not that “we know these claims are false”: failed replications (or proofs of fraud) usually just challenge the evidence for a hypothesis, rather than affirm the opposite hypothesis. We’ve tried to ban ourselves from saying “successful” or “failed” replication, and to report the best-guess effect size rather than play the bad old Yes/No science game. Code for converting means to Cohen’s _d_ and Hedge’s _g_ [here](https://gist.github.com/g-leech/80a8b5917ae1fb8baf57c8805c72eee9).
-
-[Andrew Gelman and others](https://statmodeling.stat.columbia.edu/2014/02/24/edlins-rule-routinely-scaling-published-estimates/) suggest deflating all single-study effect sizes you encounter in the social sciences, without waiting for the subsequent shrinkage from publication bias, measurement error, data-analytic degrees of freedom, and so on. There is no uniform factor, but it seems sensible to divide novel effect sizes by a number between 2 and 100 (depending on its sample size, method, measurement noise, maybe its p-value if it’s really tiny).
-
-### Selection Criteria
-
-Claims are included if there was at least one of: several failed replications, several good meta-analyses with notably smaller d, very strong publication bias, clear fatal errors in the analysis, a formal retraction, or clear fraud. Cases like [growth mindset](https://en.wikipedia.org/wiki/Mindset#Fixed_and_Growth_Mindset) are also included, where the eventual effect size, though positive, was a tiny fraction of the hyped original claim. To best interpret our list below, please compare it to the original paper's effect size. Here, we do not provide an averaging of high-quality supporting papers. This is because thousands of potentially non-replicable papers are published every year, and filtering, reading, and listing  them all would be a full-time job even if they were all included in systematic replication or reanalysis projects, ripe fruit. The rule is that if a spurious effect is discussed, or our community or contributors sees it in a book, or if it could hurt someone, it's noteworthy.
-
-
-### Why trust replications more than originals?
-
-One systematic problem with older results is that they were not pre-registered; we have no assurance that the published analysis was the only one, and so that the inferences presented are in fact valid.
-
-Replication studies have very high rates of [pre-registration](https://en.wikipedia.org/wiki/Preregistration), and higher rates of code and data sharing. For "[direct](http://blog.dansimons.com/2013/06/direct-replication-and-conceptual.html)" replications, the original target study has in effect pre-registered their hypotheses, methods, and analysis plan.
-
-But don't trust any of them, in the sense of accepting them uncritically. Look for 3+ failed replications from different labs, just to save lots of rewriting, as the garden of forking paths and the mystery of the lefty p-curve unfold.
-
-
-### Project's Motivation
+## Motivation
 
 The purpose of collating these reversal effects in social science is to encourage educators to incorporate replications of these effects into their students' project (e.g., third-year, thesis, course work) to provide them the opportunity to experience the research process directly, assess their ability to perform and report scientific research, and to help evaluate the robustness of the original study, thereby also helping them become good consumers of research. The below crowdsourced and community-curated resource aims to satisfy three of [FORRT’s Goals](https://forrt.org/about/mission/):
 
@@ -112,72 +76,166 @@ and four of [FORRT’s Mission](https://forrt.org/about/mission/):
 * Building capacity for advocacy; and
 * Advocacy for the creation and maintenance of educational resources.
 
-## ***How to contribute?***
+<br>
 
-Anyone can add reversals or replications [by joining our initiative](https://join.slack.com/t/forrt/shared_invite/enQtODMwODI0OTk4ODgzLTM0ZTQ3NDk5MzA1ZjBmNWJjYTVlN2Y2YTk0ZTJhYTY5NDliMDYzMjg2MWE0ZDRhOTY0ZDY3OTRlNDA4ODQ3NjQ) and then [following the instructions in our crowdsource g-doc](https://docs.google.com/document/d/1bdUHerakXgOl9keWGkz8pQOSpaLb9O8o4sI1e9X-RZc/edit?usp=sharing).  
+## Current Status
+
+This is a dynamic project that is organized in four stages for its 1st Phase. Currently, we are in stage 2 of phase 1: 
+
+1. **~~Proof of Concept Phase (adaptation of original project into FORRT, inclusion of effects from social and cognitive psychology, using Gavin Leech’s collection as a basis) → ~150 entries finished in 2021.~~**
+
+1. **Team Science Expansion Phase Across Disciplines** (crowd-sourcing entries and refine existing entries), started at the end of 2021 and planned until the end of **June 2022.** Draft first ‘output’ piece.
+
+1. **Review Phase** (open review to identify inconsistencies, missing data, and errors), planned for the end of 2022. Finish first ‘output’ piece. End of Phase 1.
+
+1. Regular **Update Phases** (dynamically adding new effects), planned for 2023 and beyond.
+
+<br>
+
+## **How to contribute?**
+
+Anyone can add reversals or replications [by joining our initiative on Slack](https://join.slack.com/t/forrt/shared_invite/enQtODMwODI0OTk4ODgzLTM0ZTQ3NDk5MzA1ZjBmNWJjYTVlN2Y2YTk0ZTJhYTY5NDliMDYzMjg2MWE0ZDRhOTY0ZDY3OTRlNDA4ODQ3NjQ) and then [following the instructions in our reversals g-doc](https://docs.google.com/document/d/1bdUHerakXgOl9keWGkz8pQOSpaLb9O8o4sI1e9X-RZc/edit?usp=sharing).
 
 <br><br><br>
 
-# **Reversals** (*organized per field*)
+---------------
+# **All Effects** (*sorted by discipline*)
 ---------------
 
 <br>
 
-### Social Psychology
+## **Table of Contents**
 
-No good evidence for [many forms of priming](https://replicationindex.com/2017/02/02/reconstruction-of-a-train-wreck-how-priming-research-went-of-the-rails/), automatic behaviour change from ‘related’ (often only metaphorically related) stimuli. Semantic priming is still solid, but the [effect lasts only seconds](http://laplab.ucsd.edu/articles/RohrerPashlerHarris2015JEPG.pdf).
+<!-- MarkdownTOC depth=4 -->
 
-**Elderly priming**, that hearing about old age makes people walk slower. [The p-curve alone](https://psyarxiv.com/3m5y9) argues against the first 20 years of studies.
+- [Social Psychology](#social-psychology)
+- [Positive Psychology](#positive-psychology)
+- [Cognitive Psychology](#cognitive-psychology)
+- [Developmental Psychology](#developmental-psychology)
+- [Differential Psychology](#differential-psychology)
+- [Judgment and Decision Making / Behavioral Economics](#judgment-and-decision-making)
+- [Marketing](#marketing)
+- [Neuroscience](#neuroscience)
+- [Psychiatry / Mental Health](#psychiatry)
+- [Parapsychology](#parapsychology)
+- [Evolutionary Psychology](#evolutionary-psychology)
+- [Psychophysiology](#psychophysiology)
+- [Behavioral Genetics](#behavioral-genetics)
+- [Applied Linguistics](#applied-linguistics)
+- [Educational Psychology](#educational-psychology)
+- [Further Literature](#further-literature)
+
+<!-- /MarkdownTOC -->
+
+<br>
+
+## Social Psychology
+
+No good evidence for [many forms of priming](https://replicationindex.com/2017/02/02/reconstruction-of-a-train-wreck-how-priming-research-went-of-the-rails/), automatic behavior change from ‘related’ (often only metaphorically related) stimuli. Semantic priming is still solid, but the [effect lasts only seconds](http://laplab.ucsd.edu/articles/RohrerPashlerHarris2015JEPG.pdf).
+
+* **Elderly priming**. Hearing about old age makes people walk slower. [The p-curve alone](https://psyarxiv.com/3m5y9) argues against the first 20 years of studies.
 {{< spoiler text="Statistics" >}}
-* Original paper: '[Automaticity of social behavior](https://scholar.google.com/scholar?cluster=3335859380278379099&hl=en&as_sdt=0,5&sciodt=0,5)', Bargh 1996; 2 experiments with n=30. (~5200 citations)
-* Critiques: [Doyen 2012](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0029081#s2) (n=120), [Pashler 2011](http://www.psychfiledrawer.org/replication.php?attempt=MTU%3D) (n=66). Meta-analysis: [Lakens 2017](https://psyarxiv.com/3m5y9). \
-Total citations: ~44
-* Original effect size: d=0.82 to d=1.08.
-* Replication effect size: Doyen: d= -0.07. Pashler: d= -0.22
+* Status: reversed
+* Original paper: '[Automaticity of social behavior](https://scholar.google.com/scholar?cluster=3335859380278379099&hl=en&as_sdt=0,5&sciodt=0,5)', Bargh (1996); 2 experiments with n=30. [citations = 5938(GS, October 2021)]
+* Critiques: [Doyen (2012](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0029081#s2)) [n=120, citations=757(GS, October 2021)], [Pashler et al. (2011) ](https://web.archive.org/web/20170923093613/http://www.psychfiledrawer.org/replication.php?attempt=MTU%3D)[n=66, citations=XX(GS, October 2021)]. Meta-analysis: [Lakens (2017](https://psyarxiv.com/3m5y9)) [citations = 21(GS, October 2021)]
+* Original effect size: _d_=0.82 to _d_=1.08
+* Replication effect size: Doyen: _d_= -0.07. Pashler: _d_= -0.22
 {{< /spoiler >}}
 
-No good evidence for **Money priming**, that “images or phrases related to money cause increased faith in capitalism, and the belief that victims deserve their fate”.
+* **Distance priming**. Participants primed with distance compared to closeness produced greater enjoyment of media depicting embarrassment (Study 1), less emotional distress from violent media (Study 2), lower estimates of the number of calories in unhealthy food (Study 3), and weaker reports of emotional attachments to family members and hometowns (Study 4).
 {{< spoiler text="Statistics" >}}
-* Original paper: '[Mere exposure to money increases endorsement of free-market systems and social inequality](https://www.ncbi.nlm.nih.gov/pubmed/22774789)', Caruso 2013. n between 30 and 168 (~120 citations).
-* Critiques: [Rohrer 2015](http://uweb.cas.usf.edu/~drohrer/pdfs/Rohrer_et_al_2015JEPG.pdf), n=136. [Lodder 2019](https://osf.io/3sh5a/), a meta-analysis of 246 experiments. (total citations: ~70)
-* Original effect size: system justification d=0.8, just world d=0.44, dominance d=0.51
-* Replication effect size: For 47 preregistered experiments in Lodder:
-* g = 0.01 [-0.03, 0.05] for system justification, \
-g = 0.11 [-0.08, 0.3] for belief in a just world, \
-g = 0.07 [-0.02, 0.15] for fair market ideology.
+* Status: not replicated
+* Original paper: ‘[Keeping One's Distance: The Influence of Spatial Distance Cues on Affect and Evaluation](https://journals.sagepub.com/doi/10.1111/j.1467-9280.2008.02084.x)’, Williams and Bargh (2008); 4 studies with n’s = 73, 42, 59 and 84. [citation=581(GS, October 2021)]​
+* Critiques: [Pashler (2021](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0042510#references)) [n=92, citations=185(GS, October 2021)]
+* Original effect size: _η<sup>2</sup>_=.09​, _d_=0.76
+* Replication effect size: Pashler: _η<sub>p<sup>2</sup></sub>_=0.009
 {{< /spoiler >}}
 
-Questionable evidence for **Commitment priming (recall)**, participants exposed to a high-commitment prime would exhibit greater forgiveness.
+* **Flag priming**. Participants primed by a flag are more likely to be more in conservative positions than those in the control condition.
 {{< spoiler text="Statistics" >}}
-* Original paper: ‘[Dealing with betrayal in close relationships: Does commitment promote forgiveness?](https://faculty.wcas.northwestern.edu/eli-finkel/documents/Finkeletal_2002_000.pdf)’, Finkel et al. 2002; 3 experiments with (Study 1: n = 89; Study 2: n = 155; Study 3: n = 78). (~ 1104 citations).
-* Critiques: [Cheung et al. 2016](https://journals.sagepub.com/doi/pdf/10.1177/1745691616664694) (n = 2284) for Study 1) (~ 110 citations).
+* Status: mixed
+* Original paper: [A Single Exposure to the American Flag Shifts Support Toward Republicanism up to 8 Months Later ](https://journals.sagepub.com/doi/full/10.1177/0956797611414726)Carter et al. 2011; 2 studies with n = 191 completed three sessions and 71 completed the fourth session; Experiment 2: 70. [citations = 186 (GS, October 2021)]
+* Critique: [Klein et al. 2014](https://psycnet.apa.org/fulltext/2014-20922-002.html) [n=6,082 , citations = 957 (GS, October 2021)]).
+* Original effect size: _d_ = 0.50
+* Replication effect size: All effect sizes are located in ManyLabs: Adams and Nelson: _d_ = .02. Bernstein: _d_ = 0.07. Bocian and Frankowska: _d_ = .19 (Study 1). Bocian and Franowska: _d_ = -.22 (Study 2). Brandt et al.: _d_ = .21. Brumbaugh and Storbeck: _d_ = -.22 (Study 1). Brumbaugh and Storbeck: _d_ = .02 (Study 2). Cemalcilar: _d_ = .14. Cheong: _d_ = -.11. Davis and Hicks: _d_ = -.27 (Study 1). Davis and Hicks: _d_ =-.03 (Study 2). Devos: _d_ = -.11. Furrow and Thompson: _d_ = .09. Hovermale and Joy-Gaba: _d_ = -.07.  Hunt and Krueger: _d_ = .27.  Huntsinger and Mallett: _d_ = .06. John and Skorinko: _d_ = .08.  Kappes: _d_ = .04. Klein et al.: _d_ = -.11. Kurtz: _d_ =.04.  Levitan: _d_ = -.01. Morris: _d_ = .09 Nier: _d_ =  -.45. Packard: _d_ = .04. Pilati: _d_ = 0.00. Rutchick: _d_ = -.07. Schmidt and Nosek (PI): _d_ =.03.  Schmidt and Nosek (MTURK): _d_ = .09. Schmidt and Nosek (UVA): _d_ = -.15. Smith: _d_ = .27. Swol: _d_ =-.03.  Vaughn: _d_ = -.17. Vianello and Galliani: _d_ =.49.  Vranka: _d_ = -.03. Wichman: _d_ = .11. Woodzicska: _d_ =-.09. Average replication effect size: _d_ = 0.03
 {{< /spoiler >}}
 
-**Hostility priming (unscrambled sentences)**, exposing participants to more hostility-related stimuli caused them subsequently to interpret ambiguous behaviors as more hostile.
+* **Fluency priming**. Objects that are fluent (e.g., conceptually fluent, visually fluent) are perceived more concretely than objects that are disfluent (disfluent objects are perceived more abstractly).
 {{< spoiler text="Statistics" >}}
-* Original paper: [The role of category accessibility in the interpretation of information about persons: Some determinants and implications.](http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.335.4255&rep=rep1&type=pdf) Srull  and Wyer, Jr. 1979, 2 experiments with (Study 1:  n = 96; Study 2: n = 96). (~  2396 citations).
-* Critique: [McCarthy et al. 2018](https://journals.sagepub.com/doi/full/10.1177/2515245918777487#abstract) (n = 7,373) for Study 1) (~38 citations), [McCarthy et al. 2021](https://online.ucpress.edu/collabra/article/7/1/18738/116070/A-Multi-Site-Collaborative-Study-of-the-Hostile) (n = 1,402 for close replication; n = 1,641 for conceptual replication) (~ 2 citations)
+* Status: not replicated
+* Original paper: [Effects of Fluency on Psychological Distance and Mental Construal (or Why New York Is a Large City, but New York Is a Civilized Jungle)](https://journals.sagepub.com/doi/10.1111/j.1467-9280.2008.02062.x) Alter and Oppenheimer 2008; 3 studies, 2 of which are split into Part A and Part B with n’s = 1A: 40 and 1B: 196 ; 2A: 32 and 2B: 230; Experiment 3: 70 [citations = 304 (GS,  October 2021)]. 
+* Critique: [Klein et al. 2014](https://psycnet.apa.org/fulltext/2014-20922-002.html) [n=1146, citations = 957 (GS,October 2021)]
+* Original effect size: _r_ = 0.13.
+* Replication effect size: _r_ = 02.
 {{< /spoiler >}}
 
-**Intelligence priming (contemplation)**, participants primed with a category associated with intelligence (e.g. “professor”) performed 13% better on a trivia test than participants primed with a category associated with a lack of intelligence (“soccer hooligans”).
+* **Money priming**. “Images or phrases related to money cause increased faith in capitalism, and the belief that victims deserve their fate”.
 {{< spoiler text="Statistics" >}}
-* Original paper: [The relation between perception and behavior, or how to win a game of trivial pursuit](https://psycnet.apa.org/buy/1998-01060-003), Dijksterhuis  and van Knippenberg, 1998, experiments with (Study 1: n = 60; Study 2: n = 58; Study 3: n = 95; Study 4: n = 43). (~ 1116 citations).
-* Critiques:  [O’Donnell et al., 2018](https://journals.sagepub.com/doi/full/10.1177/1745691618755704),  n = 4,493 who met the inclusion criteria; n = 6,454 in supplementary materials;  for Study 4)
+* Status: not replicated
+* Original paper: '[Mere exposure to money increases endorsement of free-market systems and social inequality](https://www.ncbi.nlm.nih.gov/pubmed/22774789)', Caruso 2013; n between 30 and 168. (~161 citations [GS, November 2021)].
+* Critiques: [Rohrer 2015](http://uweb.cas.usf.edu/~drohrer/pdfs/Rohrer_et_al_2015JEPG.pdf) [_n_=136, citations = 82 (GS, November 2021)]. Meta-analysis: [Lodder 2019](https://osf.io/3sh5a/), ([citations = 64 (GS, November 2021]). \
+Original effect size: system justification d=0.8, just world d=0.44, dominance d=0.51
+* Replication effect size: Rohrer et al. (Experiment 1): d = 0.07 for system justification, d = 0.06 for belief in a just world, d  = -0.06 for social dominance, fair market ideology, d = 0.14.
+* For 47 preregistered experiments in Lodder:
+* g = 0.01 for system justification. g = 0.11 [-0.08, 0.3] for belief in a just world.g = 0.07 [-0.02, 0.15] for fair market ideology.
 {{< /spoiler >}}
 
-**Moral priming (contemplation)**, participants exposed to a moral-reminder prime would demonstrate reduced cheating.
+* **Commitment priming (recall)**. Participants exposed to a high-commitment prime would exhibit greater forgiveness.
 {{< spoiler text="Statistics" >}}
-* Original paper: [The Dishonesty of Honest People: A Theory of Self-Concept Maintenance](https://journals.sagepub.com/doi/10.1509/jmkr.45.6.633), Mazar et al. (2008); 6 experiments with (Study 1: n = 229; Study 2: n = 207;  Study 3: n = 450; Study 4: n = 44; Study 5: n = 108; Study 6: n =  326).
-* Critiques: [Verschuere et al.](https://journals.sagepub.com/doi/full/10.1177/2515245918781032) [2018](https://journals.sagepub.com/doi/pdf/10.1177/1745691616664694) (n = 5786) replication of Experiment 1 (~ 61 citations)
+* Status: not replicated
+* Original paper: ‘[Dealing with betrayal in close relationships: Does commitment promote forgiveness?](https://faculty.wcas.northwestern.edu/eli-finkel/documents/Finkeletal_2002_000.pdf)’, Finkel et al. 2002; 3 experiments with Study 1: n = 89; Study 2: n = 155; Study 3: n = 78. [citations = ~ 1108(GS, November 2021)].
+* Critiques: [Cheung et al. 2016](https://journals.sagepub.com/doi/pdf/10.1177/1745691616664694) [n = 2284, citations = 110(GS, November 2021)].
+* Original effect size: _d_ = -0.65.
+* Replication effect size: _d_ = -0.22.
 {{< /spoiler >}}
 
-**Death priming** (Mortality Salience/Terror Management Theory), participants not exposed to mortality primes would show higher fear of death.
+* **Hostility priming (unscrambled sentences)**. Exposing participants to more hostility-related stimuli caused them subsequently to interpret ambiguous behaviors as more hostile. 
 {{< spoiler text="Statistics" >}}
-* Original paper: [‘Role of Consciousness and Accessibility of Death-Related Thoughts in Mortality Salience Effects’](https://www.researchgate.net/profile/Tom-Pyszczynski/publication/15232849_Role_of_Consciousness_and_Accessibility_of_Death-Related_Thoughts_in_Mortality_Salience_Effects/links/5ad51396aca272fdaf7c08d0/Role-of-Consciousness-and-Accessibility-of-Death-Related-Thoughts-in-Mortality-Salience-Effects.pdf), Greenberg et al. 1994; 4 experiments with (Study 1: n = 58; Study 2: n = 87; Study 3: n = 59; Study 4:  n = 37).(~1230 citations).
-* Critiques: [Many Labs 4: Failure to Replicate Mortality Salience Effect With and Without Original Author Involvement](https://psyarxiv.com/vef2c), Klein et al. 2018; (n = 2281) for Experiment 1 (~70 citations).
+* Status: not replicated
+* Original paper: [The role of category accessibility in the interpretation of information about persons: Some determinants and implications.](http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.335.4255&rep=rep1&type=pdf) Srull  and Wyer, Jr. 1979, 2 experiments with Study 1:  n = 96; Study 2: n = 96 [  2409 citations (GS, November 2021)]. 
+* Critique: [McCarthy et al. 2018](https://journals.sagepub.com/doi/full/10.1177/2515245918777487#abstract) [n = 7,373 for Study 1, citations = 40(GS, November 2021)]. [McCarthy et al. 2021](https://online.ucpress.edu/collabra/article/7/1/18738/116070/A-Multi-Site-Collaborative-Study-of-the-Hostile) (see Figure) [n = 1,402 for close replication; n = 1,641 for conceptual replication,  citations = 2 citations(GS, November 2021)]
+* Original effect size: 2.99 (XX = 1.58%)
+* Replication effect size: All effect sizes are located in McCarthy et al. 2018: Acar: _XX_ = 0.16. Aczel: _XX _= 0. 12. Birt: _XX_ = -0.11. Evans: _XX_ = -.22. Ferreira-Santos.: _XX_ = 0.01. Gonzalez-Iraizoz: _XX_ = -.21. Holzmeister: _XX_ = .11. Klein Selfe and Rozmann: _XX_ = -0.51. Koppel: _XX_ = -.14. Laine: _XX_ = -.27. Loschelder: _XX_ =-.07. McCarthy: _XX_ = -.10. Meijer: _XX_ = .03. Ozdorgru: _XX_ = .22.  Pennington: _XX_ = -.52.  Roets: _XX_ = -.01. Suchotzki: _XX_ = .10.  Sutan: _XX_ = .49. Vanpaemel: _XX_ = .17. Verschuere: _XX_ = -.14.  Wick: _XX_ = .07. Wiggins: _XX_ = .01. Average replication effect size: _XX_ = -0.08:; McCarthy et al. 2021: XX = 0.06.
 {{< /spoiler >}}
 
-**Verbal framing (temporal tense)**, participants who read what a person was doing showed enhanced accessibility of intention-related concepts and attribute more intentionality to the person, relative to what they did.
+* **Intelligence priming (contemplation)**, alt term = **professor priming.** Participants primed with a category associated with intelligence (e.g. “professor”) performed 13% better on a trivia test than participants primed with a category associated with a lack of intelligence (“soccer hooligans”).
+{{< spoiler text="Statistics" >}}
+* Status: not replicated
+* Original paper: [The relation between perception and behavior, or how to win a game of trivial pursuit](https://psycnet.apa.org/buy/1998-01060-003), Dijksterhuis  and van Knippenberg, 1998, 4 experiments with Study 1: n = 60; Study 2: n = 58; Study 3: n = 95; Study 4: n = 43. [citations = 1124 (GS November 2021)].
+* Critiques: [O’Donnell et al., 2018](https://journals.sagepub.com/doi/full/10.1177/1745691618755704), [n = 4,493 who met the inclusion criteria; n = 6,454 in supplementary materials, citations = 71(GS November 2021)]).
+* Original effect size: PD = 13.20%.
+* Replication effect size: All effect sizes are located in O’Donnell et al. 2018: Aczel: PD = -1.35%; Aveyard: PD = -3.99%; Baskin.: PD =4.08%; Bialobrzeska: PD = -.12%; Boot: PD =-4.99%;  Braithwaite: PD = 4.01%; Chartier: PD = 3.23%; DiDonato: PD = 3.14%; Finnigan:  PD: 2.89%; Karpinski: PD = 1.38%; Keller: PD = .17%; Klein: PD =.88%;  Koppel: PD = -.20%; McLatchie: PD = -2.16%;  Newell: PD = 1.66%; O’Donnell: PD = 1.58%; Phillipp: PD = 43%; Ropovik: PD = -.48%; Saunders: PD = -1.87%; Schulte-Mecklenbeck: PD = 4.24%; Shanks: PD = .11%; Steele: PD = -.58%; Steffens: PD = -.84%; Susa: PD = -.63%; Tamayo: PD =1.41%;  Meta-analytic estimate: PD =  0.02%.
+{{< /spoiler >}}
+
+* **Moral priming (contemplation)**. Participants exposed to a moral-reminder prime would demonstrate reduced cheating. 
+{{< spoiler text="Statistics" >}}
+* Status: not replicated
+* Original paper: [The Dishonesty of Honest People: A Theory of Self-Concept Maintenance](https://journals.sagepub.com/doi/10.1509/jmkr.45.6.633), Mazar et al. 2008; 6 experiments with Study 1: n = 229; Study 2: n = 207;  Study 3: n = 450; Study 4: n = 44; Study 5: n = 108; Study 6: n =  326. [citations= 3072 (GS November 2021)]. 
+* Critiques: [Verschuere et al.](https://journals.sagepub.com/doi/full/10.1177/2515245918781032) [2018](https://journals.sagepub.com/doi/pdf/10.1177/1745691616664694) [n = 5786 replication of Experiment 1, citations = 65(GS November 2021)].
+* Original effect size: d = -1.45.
+* Replication effect size: _d_ = 0.18.
+* All effect sizes are located in Verschuere et al. 2018:  Aczel: _d_ = -0.26; Birt: _d_ = 0. 41; Evans: _d_ = 0.85; Ferreira-Santos: _d_  = -0.19; Gonzalez-Iraizoz: _d_ = 0.26; Holzmeister: _d_ = 1.11; klein Selle and Rozmann: _d_ = -0.27; Koppel: _d_ = 0.39;  Laine: _d_ = -0.37; Loschelder: _d_ = -0.11; McCarthy: _d_ = 0.57; Meijer: _d_ = -0.15; Ozdogru: _d_ = 1.19; Suchotzki: _d_ = 0.00; Sutan: _d_ = 0.02; Vanpaemel: _d_ = 0.17; Verschuere: _d_ = 0.18; Wick: _d_ = -0.09; Wiggins: _d_ = 0.19; Meta-analytic estimate: _d_ =  0.11. 
+{{< /spoiler >}}
+
+* **Moral priming (cleanliness)**. Participants exposed to physical cleanliness were shown to reduce the severity of their moral judgments. Direct, well-powered replications did not find evidence for the phenomenon.
+{{< spoiler text="Statistics" >}}
+* Status: not replicated
+* Original paper: [With a Clean Conscience: Cleanliness Reduces the Severity of Moral Judgments](https://journals.sagepub.com/doi/full/10.1111/j.1467-9280.2008.02227.x?casa_token=uRH1oAgdskoAAAAA%3Ahf7TyDhog_mLb75lVnxJOKHMb4NrxHwHqbwxFd0p76Cwwp492JBrXNPuadQB-9VxBm1SqLEJyPSv), Schnall, Benton, and  Harvey, 2008; 2 experiments with Study 1: n = 40, Study 2: n = 44. [citations=645 (GS November 2021)].
+* Critiques: [Johnson et al.](https://econtent.hogrefe.com/doi/full/10.1027/1864-9335/a000186)<span style="text-decoration:underline;"> </span> 2014, [Study 1: n = 208, Study 2: n = 126. citations=128(GS November 2021)].
+* Original effect size:  Study 1: d = -0.60, 95% CI [-1.23, 0.04]; Study 2: d = -0.85, 95% CI [-1.47, -0.22]
+* Replication effect size: Study 1: d = -0.01, 95% CI [-0.28, 0.26]; Study 2: d = 0.01, 95% CI [-0.34, 0.36]
+{{< /spoiler >}}
+
+* **Death priming**, alt term = **Mortality Salience/Terror Management Theory**. Participants not exposed to mortality primes would show higher fear of death.
+{{< spoiler text="Statistics" >}}
+* Status: not replicated
+* Original paper: [‘Role of Consciousness and Accessibility of Death-Related Thoughts in Mortality Salience Effects’](https://www.researchgate.net/profile/Tom-Pyszczynski/publication/15232849_Role_of_Consciousness_and_Accessibility_of_Death-Related_Thoughts_in_Mortality_Salience_Effects/links/5ad51396aca272fdaf7c08d0/Role-of-Consciousness-and-Accessibility-of-Death-Related-Thoughts-in-Mortality-Salience-Effects.pdf), Greenberg et al. 1994; 4 experiments with Study 1: n = 58; Study 2: n = 87; Study 3: n = 59; Study 4:  n = 37.(citations=1237(GS November 2021)].
+* Critiques: [Klein et al. 2018](https://psyarxiv.com/vef2c); [n = 2281 for Experiment 1, citations = 70(GS November 2021)].
+* Original effect size: d = XX.
+* Replication effect size: Exclusion Set 1: _Hedges’ g_ = 0.03, 95% CI = [-0.06, 0.12]; Exclusion Set 2: _Hedges’ g_ = 0.06, 95% CI = [-0.06, 0.17] Exclusion Set 3: _Hedges’ g_ = 0.04, 95% CI = [-0.07, 0.16].
+{{< /spoiler >}}
+
+**Verbal framing (temporal tense)**. participants who read what a person was doing showed enhanced accessibility of intention-related concepts and attribute more intentionality to the person, relative to what they did.
 {{< spoiler text="Statistics" >}}
 * Original paper: [Learning about what others were doing: Verb aspect and attributions of mundane and criminal intent for past actions](https://journals.sagepub.com/doi/full/10.1177/0956797610395393), Hart and Albarracin (2011), 3 experiments with (Study 1: n = 5458; Study 2: n = 37; Study 3: n = 48) (~ 37 citations).
 * Critique: [Registered Replication Report: Hart & Albarracín (2011)](https://journals.sagepub.com/doi/pdf/10.1177/1745691615605826), Eerland et al. 2016; (n= 685 for perfective aspect condition; n = 681 imperfective aspect condition) for Study 3 (~ 67 citations).
@@ -436,13 +494,13 @@ Folioano: Literally zero, d=0.00 [-0.02; 0.02]
 * Replication effect size: [??], n=???
 {{< /spoiler >}}
 
-### Personality psychology
+### Differential psychology
 
 Links Between **Personality Traits and Consequential Life Outcomes**. Pretty good? [One lab’s systematic replications](https://sci-hub.se/10.1177/0956797619831612) found that effect sizes shrank by 20% though (see [comments](#heading=h.9aledhi0y6bm) below by Oliver C. Schultheiss).  
 
 Anything by Hans Eysenck should be considered suspect, but in particular these [26 ‘unsafe’ papers](https://retractionwatch.com/wp-content/uploads/2019/10/HE-Enquiry.pdf) (including the one which says that reading prevents cancer).
 
-### Behavioural science
+### Judgment and Decision Making
 
 The effect of **“nudges”** (clever design of defaults) may be exaggerated in general. [One big review](https://www.nber.org/system/files/working_papers/w27594/w27594.pdf) found average effects were six times smaller than billed. (Not saying there are no big effects.). [Here are](https://www.vox.com/future-perfect/2020/2/26/21154466/research-education-behavior-psychology-nudging) [a few](https://jasoncollins.blog/2020-04-07-the-limits-of-behavioural-science-coronavirus-edition/) [cautionary](https://jasoncollins.blog/arent-we-smart-fellow-behavioural-scientists/) [pieces](https://unherd.com/2020/03/dont-trust-the-psychologists-on-coronavirus/) on whether, aside from the pure question of reproducibility, behavioural science is ready to steer policy.
 
@@ -541,7 +599,7 @@ At most weak evidence that **men’s strength in particular predicts opposition 
 * Replication effect size: [ ], n=
 {{< /spoiler >}}
 
-### Behavioural genetics
+### Behavioral Genetics
 
 [No good evidence](https://slatestarcodex.com/2019/05/07/5-httlpr-a-pointed-review/) that **5-HTTLPR** is strongly linked to depression, insomnia, PTSD, anxiety, and more. See also [COMT and APOE](https://pubmed.ncbi.nlm.nih.gov/23012269/) for intelligence, [BDNF](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4414705/pdf/nihms653267.pdf) for schizophrenia, [5-HT2a](https://www.eurekaselect.com/59624/article) for everything.
 
@@ -557,14 +615,18 @@ Findings regarding **mindsets** (aka implicit theories) have been mixed, with in
 
 ### Further literature
 
-[A review of 2500 social science papers](https://fantasticanachronism.com/2020/09/11/whats-wrong-with-social-science-and-how-to-fix-it/), showing the lack of correlation between citations and replicability, between journal status and replicability, and the apparent lack of improvement since 2009.
+* [Multi-Analyst Projects](https://docs.google.com/document/d/12XlCX0UWKLH1RJ9NsSciWxXn4DD0oh4slqd_TmKjp0A/edit#heading=h.3q5xge4hhnba) collated by Balazs Aczel
 
-Discussion on [Everything Hertz](https://everythinghertz.com/135), [Hacker News](https://news.ycombinator.com/item?id=27709266), [Andrew Gelman](https://statmodeling.stat.columbia.edu/2021/06/28/reversals-in-psychology/), [some star data thugs comment](https://twitter.com/jamesheathers/status/1409520677120405505).
+* [A review of 2500 social science papers](https://fantasticanachronism.com/2020/09/11/whats-wrong-with-social-science-and-how-to-fix-it/), showing the lack of correlation between citations and replicability, between journal status and replicability, and the apparent lack of improvement since 2009.
 
-See also the **popular literature** with uncritical treatments of the original studies: 
-* [Outliers: The Story of Success by Malcolm Gladwell ](https://www.goodreads.com/book/show/3228917-outliers)that is founded on the 10,000 hours for mastery claim.
-* [Behave: The Biology of Humans at Our Best and Worst ](https://www.goodreads.com/book/show/31170723-behave)by Robert Sapolsky which focuses on Himmicanes, power pose, facial feedback, ego depletion, Implicit Association, stereotype threat, broken windows theory, Macbeth effect.
-* [Thinking, Fast and Slow by Daniel Kahneman](https://www.goodreads.com/book/show/11468377-thinking-fast-and-slow) that has an Entire chapter on all kinds of priming. Facial-feedback, Effects of Head-Movements on Persuasion, Location as Prime, Money Priming, Death Priming, Lady Macbeth Effect. Cognitive disfluency. Ego depletion. Wansink. Hungry judges. Denies the "hot hand".
-* [Nudge: Improving Decisions about Health, Wealth, and Happiness](https://www.penguinrandomhouse.com/books/304634/nudge-by-richard-h-thaler-and-cass-r-sunstein/) by Thaler and Sunstein focusing on Wansink, Baumeister, Dweck.
-* [Smarter: The New Science of Building Brain Power ](https://www.goodreads.com/en/book/show/18079605-smarter)by Dan Hurley focusing on Dual n-Back and all manner of nonsense nootropics.
-* [Peter Watts Is An Angry Sentient Tumor: Revenge Fantasies and Essays ](https://www.goodreads.com/book/show/45729865-peter-watts-is-an-angry-sentient-tumor)by Peter Watts that provides a sadly muddled defence of Bem
+* Diederick Stapel: [58 retractions here](http://retractiondatabase.org/RetractionSearch.aspx?AspxAutoDetectCookieSupport=1#?auth%3dStapel%252c%2bDiederik%2bA).
+
+* Discussion on [Everything Hertz](https://everythinghertz.com/135), [Hacker News](https://news.ycombinator.com/item?id=27709266), [Andrew Gelman](https://statmodeling.stat.columbia.edu/2021/06/28/reversals-in-psychology/), [some star data thugs comment](https://twitter.com/jamesheathers/status/1409520677120405505).
+
+* See also the **popular literature** with uncritical treatments of the original studies: 
+    * [Outliers: The Story of Success by Malcolm Gladwell ](https://www.goodreads.com/book/show/3228917-outliers)that is founded on the 10,000 hours for mastery claim.
+    * [Behave: The Biology of Humans at Our Best and Worst ](https://www.goodreads.com/book/show/31170723-behave)by Robert Sapolsky which focuses on Himmicanes, power pose, facial feedback, ego depletion, Implicit Association, stereotype threat, broken windows theory, Macbeth effect.
+    * [Thinking, Fast and Slow by Daniel Kahneman](https://www.goodreads.com/book/show/11468377-thinking-fast-and-slow) that has an Entire chapter on all kinds of priming. Facial-feedback, Effects of Head-Movements on Persuasion, Location as Prime, Money Priming, Death Priming, Lady Macbeth Effect. Cognitive disfluency. Ego depletion. Wansink. Hungry judges. Denies the "hot hand".
+    * [Nudge: Improving Decisions about Health, Wealth, and Happiness](https://www.penguinrandomhouse.com/books/304634/nudge-by-richard-h-thaler-and-cass-r-sunstein/) by Thaler and Sunstein focusing on Wansink, Baumeister, Dweck.
+    * [Smarter: The New Science of Building Brain Power ](https://www.goodreads.com/en/book/show/18079605-smarter)by Dan Hurley focusing on Dual n-Back
+    * [Peter Watts Is An Angry Sentient Tumor: Revenge Fantasies and Essays ](https://www.goodreads.com/book/show/45729865-peter-watts-is-an-angry-sentient-tumor)by Peter Watts
