@@ -9,7 +9,7 @@ active = true  # Activate this widget? true/false
 weight = 20  # Order that this section will appear.
 
 title = "FORRT's principles"
-subtitle = ""
+subtitle = "*FORRT argues for principled teaching and mentoring. We describe both below.*"
 classtitle = "text-center"
 
 [design]
@@ -51,28 +51,34 @@ classtitle = "text-center"
  
  # CSS class.
  css_class = ""
-
 +++
+---
 
-# Principles
+<br>
 
 ## Principled Teaching 
 
 We believe it is of utmost importance to communicate the facts of science relative to the process by which it was acquired. Scientific claims should be taken in light of epistemic uncertainty – i.e., the intrinsic incertitude about the validity of truth claims (including scientific), to avoid teaching students a false sense of certainty about ‘the facts’ of science. This idea is enshrined at the core of the open science movement, the credibility revolution, open access, and better measurement practices.
 
-### Advantages of principled teaching:
+**Advantages of principled teaching**:
+
 * it exposes students to a more honest educational process, especially with respect to epistemic uncertainty and its consequences to the facts of science; 
-* it bequeaths first-hand practical experience in probing the production of knowledge which in turn trains students to be good consumers of science; 
+* it bequeaths first-hand practical experience in probing the production of knowledge which in turn trains students to be good consumers of science
+
 {{< expand "Expand to know more" >}}
-An increasing number of scholars have incorporated reproducible, transparent, and open principles to their research pipeline. However, the associated social and ethical responsibilities towards the teaching of these principles is yet to be realized. It is still common practice to teach subject matters, at undergraduate and graduate levels, for quantitative and qualitative science, without resolutely emphasizing that scientific claims should be taken in light of epistemic uncertainty – i.e., the intrinsic incertitude about the validity of truth claims (including scientific). This has the unfortunate consequence of teaching students a false sense of certainty about ‘the facts’ of science, which can be thought of as misleading, if not unethical.
+
+> An increasing number of scholars have incorporated reproducible, transparent, and open principles to their research pipeline. However, the associated social and ethical responsibilities towards the teaching of these principles is yet to be realized. It is still common practice to teach subject matters, at undergraduate and graduate levels, for quantitative and qualitative science, without resolutely emphasizing that scientific claims should be taken in light of epistemic uncertainty – i.e., the intrinsic incertitude about the validity of truth claims (including scientific). This has the unfortunate consequence of teaching students a false sense of certainty about ‘the facts’ of science, which can be thought of as misleading, if not unethical.
+
 {{< /expand >}}
 
+<br>
 
 ## Principled Mentoring
  
 Central to the academic ethos, the relationship between mentor and mentee is one of scientific genesis, incremental contributions, and personal and professional development. This academic experience is optimized when students feel they can contribute to the supervisor’s research and the product of this contribution is valued. One way to achieve this is to expose students to  the intricacies and procedures of science making, including the flaws and merits of any given research approach. Open and reproducible tenets serve an important role in mentorship pedagogy.
 
-### Advantages of principle mentoring:
+**Advantages of principle mentoring**:
+
 * it enables students to see their work and efforts serve a meaningful practical purpose: to aggregate and positively impact the scientific community
 * it breeds an atmosphere of constructive curiosity and problem-solving; 
 * it endows students with the ability to discover on their own the myriad of ways their skill set and ability can be integrated into the research * process. 

@@ -3,10 +3,10 @@
 widget = "blank"  # See https://sourcethemes.com/academic/docs/page-builder/
 headless = true  # This file represents a page section.
 active = true  # Activate this widget? true/false
-weight = 20  # Order that this section will appear.
+weight = 2  # Order that this section will appear.
 
-title = "Get involved"
-subtitle = """**Join the movement for better education**
+title = "Ongoing Projects"
+subtitle = """*Join the movement for better education*
 ---
 """
 
@@ -59,11 +59,12 @@ subtitle = """**Join the movement for better education**
   padding = ["60px", "0", "60px", "0"]
 +++
 
-## Contribute to the educational NEXUS
-We are asking for contributions to FORRT's educational NEXUS, an e-learning platform acting as a hub for community-driven initiatives and resources. As described in [FORRT's manuscript](/manuscript/), this platform - together with [FORRT Pedagogies](/pedagogies/) - will present the fullest opportunities FORRT has to offer. We welcome essential contributions such as sharing your course materials, volunteering for OS mentoring, taking part in [FORRT self-assessment](/self-assessment/) educational tool, and submitting pedagogical reports of open and reproducible science courses.
+* As part of [FORRT's ***Reversals & Replication*** initiative](/reversals), Helena Hartmann, Alaah Aldoh, Meng Liu, Shilaan Alzahawi, Mahmoud Elsherif, Gavin Leech, Flavio Azevedo and others, are in the initial stages of writing a manuscript on *Reversals in Social Sciences*. As an open, crowd-sourced project, we are actively seeking collaborators wishing to help us with manuscript writing and project management. If you want to contribute or learn more about the project, [join the project's Slack channel](https://join.slack.com/t/forrt/shared_invite/enQtODMwODI0OTk4ODgzLTM0ZTQ3NDk5MzA1ZjBmNWJjYTVlN2Y2YTk0ZTJhYTY5NDliMDYzMjg2MWE0ZDRhOTY0ZDY3OTRlNDA4ODQ3NjQ), or email us at [reversals@forrt.org](mailto:reversals@forrt.org).
 
-## Contribute to the development of the website
-We will be particularly interested in contributions to this website, so if you (or your peers) are able to contribute to its development, you would be helping make FORRT a reality. See "Get in touch" below!
+* As part of [FORRT's ***Impact on Students*** initiative](/impact), Madeleine Pownall and Flavio Azevedo, along with a team of 80+ authors from the community, are writing up a manuscript on *The impact of open and reproducible scholarship on students’ attitudes, outcomes, and engagement: A review and synthesis of the evidence*. If you want to learn more about the project, [see this announcement on social media](https://twitter.com/FORRTproject/status/1453325222367698947), [join the project's Slack channel](https://join.slack.com/t/forrt/shared_invite/enQtODMwODI0OTk4ODgzLTM0ZTQ3NDk5MzA1ZjBmNWJjYTVlN2Y2YTk0ZTJhYTY5NDliMDYzMjg2MWE0ZDRhOTY0ZDY3OTRlNDA4ODQ3NjQ), or email us at [impact@forrt.org](mailto:impact@forrt.org).
 
-## Comment on the manuscript
-We created a [live-version](https://tinyurl.com/FORRTworkingDOC) of the manuscript for community participation and feedback FORRT working Manuscript. FORRT is operated as an open contributorship - all are welcome to contribute, and we aim to recognise all contributions. See the manuscript for more information.
+* As part of [FORRT's ***Summaries*** initiative](/summaries), Tamara Kalandadze, Leticia Micheli, Mahmoud Elsherif, Flavio Azevedo and others are writing a manuscript on *Integrating Open Scholarship into Teaching and Mentoring: Introducing Community-Sourced Summaries of Open Scholarship literature*. As an open, crowd-sourced project, we are open to adding collaborators wishing to help us with manuscript writing and project management. If interested, please contact the authors via [the project's Slack channel](https://join.slack.com/t/forrt/shared_invite/enQtODMwODI0OTk4ODgzLTM0ZTQ3NDk5MzA1ZjBmNWJjYTVlN2Y2YTk0ZTJhYTY5NDliMDYzMjg2MWE0ZDRhOTY0ZDY3OTRlNDA4ODQ3NjQ), or email us at [summaries@forrt.org](mailto:summaries@forrt.org).
+
+* As part of [FORRT's ***Glossary*** initiative](/glossary), Sam Parsons, Flavio Azevedo, and others invite you to help us continue to improve this resource. We are interested in a wide range of contributions to improve existing definitions, extend the scope of the terms, as well as translating terms to improve accessibility. If interested, we have opened four live working documents (see [the landing page](https://docs.google.com/document/d/1BKzztg7srUeC_2Yn0b7cMbxp_vYMDlOnEYpxg_S2hWs/edit?usp=sharing) for instructions and links to working documents). Please read the instructions for contributors. We have prepared these to help guide constructive feedback and facilitate a smooth editorial process. You can also contact the authors via [the project's Slack channel](https://join.slack.com/t/forrt/shared_invite/enQtODMwODI0OTk4ODgzLTM0ZTQ3NDk5MzA1ZjBmNWJjYTVlN2Y2YTk0ZTJhYTY5NDliMDYzMjg2MWE0ZDRhOTY0ZDY3OTRlNDA4ODQ3NjQ), or email us at [glossary@forrt.org](mailto:glossary@forrt.org).
+
+<br>

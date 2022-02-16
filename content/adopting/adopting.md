@@ -99,6 +99,7 @@ Including sources into your syllabus that discuss open and transparent research 
           - [The RIOT's Science Club](https://www.youtube.com/c/RIOTScienceClub/videos)
           - [Metascience presentations](https://www.metascience2019.org/presentations/)
           - [You Lied to Me: A Music Video About p-values](https://www.youtube.com/watch?v=E0JzVIjj5wI) or [Professor Writes a Scientific Paper in a Day](https://www.youtube.com/watch?v=1gg_eN_UV7k)
+          - [Mini course on reproducibility & open research](https://www.youtube.com/playlist?list=PLo1sDp2zqD4Rl9AQblQBMQrVblZfEfHcJ)
      - assign students to listen to Podcasts on open and reproducible science (broadly construed) 
           - [ReproducibiliTea - A podcast highlighting the great work of early career researchers](https://soundcloud.com/reproducibilitea)
           - [Open Science Talk - A podcast about Open Science, Open Access, Open Education, Open Data, Open Software](https://septentrio.uit.no/index.php/OSTalk/issue/archive)

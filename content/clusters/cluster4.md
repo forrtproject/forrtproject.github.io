@@ -179,6 +179,8 @@ Attainment of a grounding in open (FAIR) data and materials. It requires student
 
 * Hand, D. J. (2018). Aspects of data ethics in a changing world: Where are we now? Big Data, 6(3), :176–190. doi: https://doi.org/10.1089/big.2018.0083
 
+* O’Callaghan, E., & Douglas, H. M. (2021). #MeToo Online Disclosures: A Survivor-Informed Approach to Open Science Practices and Ethical Use of Social Media Data. Psychology of Women Quarterly, 45(4), 505–525. https://doi.org/10.1177/03616843211039175
+
 * Ross, M. W., Iguchi, M. Y., & Panicker, S. (2018). Ethical aspects of data sharing and research participant protections. American Psychologist, 73(2), 138-145. http://dx.doi.org/10.1037/amp0000240
 
 * Siler, K., Haustein, S., Smith, E., Larivière, V., & Alperin, J. P. (2018). Authorial and institutional stratification in open access publishing: the case of global health research. PeerJ, 6, e4269. doi:10.7717/peerj.4269
