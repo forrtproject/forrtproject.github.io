@@ -12,3 +12,10 @@
 .body {
     background-color:#fefdf6 !important;
 }
+
+@media print {
+  .tab-content > .tab-pane {
+    display: block !important;
+    opacity: 1 !important;
+  }
+}
