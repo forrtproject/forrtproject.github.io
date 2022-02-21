@@ -104,6 +104,10 @@ There are 8 sub-clusters which aim to further parse the learning and teaching pr
     <a class="nav-link" id="C7S8-tab" data-toggle="tab" href="#C7S8" role="tab" aria-controls="C7S8"
       aria-selected="false">Positions</a>
   </li>
+    <li class="nav-item">
+    <a class="nav-link" id="C7S9-tab" data-toggle="tab" href="#C7S9" role="tab" aria-controls="C7S9"
+      aria-selected="false">Feminist Thought</a>
+  </li>
 </ul>
 
 <div class="tab-content" id="myTabContent">
@@ -179,6 +183,8 @@ APA (2017, July). Ethnic and Racial Minorities & Socioeconomic Status [Blog post
 ***Inclusion is that individuals with different representations, identities and feelings being respected, influenced, and welcomed in a specific environment.***
 
 * Bahlai, C., Bartlett, L. J., Burgio, K. R., Fournier, A., Keiser, C. N., Poisot, T., & Whitney, K. S. (2019). Open science isn’t always open to all scientists. American Scientist, 107(2), 78-82. https://doi.org/10.1511/2019.107.2.78
+
+* Carli, L. L., Alawa, L., Lee, Y., Zhao, B., & Kim, E. (2016). Stereotypes about gender and science: Women≠ scientists. Psychology of Women Quarterly, 40(2), 244-260 https://doi.org/10.1177/0361684315622645
 
 * Cislak, A., Formanowicz, M., & Saguy, T. (2018). Bias against research on gender bias. Scientometrics, 115(1), 189-200. https://doi.org/10.1007/s11192-018-2667-0
 
@@ -323,6 +329,29 @@ Silberzahn, R., & Uhlmann, E. L. (2015). Crowdsourced research: Many hands make 
 
 * Nature. (2020). Seeking an ‘exit plan’ for leaving academia amid coronavirus worries. Nature 583, 645-646. https://doi.org/10.1038/d41586-020-02029-6.
 
+
+<br>
+</div>
+
+  <div class="tab-pane fade" id="C7S9" role="tabpanel" aria-labelledby="C7S9-tab"><br>
+
+## Feminist Thought
+
+***It aims to understand the nature of gender inequality. Themes explored include discrimination, objectification, oppression, patriarchy, stereotyping, and aesthetics. It examines women's and men's social roles, experiences, interests, chores, and feminist politics in a variety of fields.***
+
+* Eagly, A. H., Eaton, A., Rose, S. M., Riger, S., & McHugh, M. C. (2012). Feminism and psychology: Analysis of a half-century of research on women and gender. American Psychologist, 67(3), 211-230, https://doi.org/10.1037/a0027260
+
+* Matsick, J. L., Kruk, M., Oswald, F., & Palmer, L. (2021). Bridging Feminist Psychology and Open Science: Feminist Tools and Shared Values Inform Best Practices for Science Reform. Psychology of Women Quarterly, https://doi.org/10.1177/03616843211026564
+
+* Lazard, L., & McAvoy, J. (2020). Doing reflexivity in psychological research: What’s the point? What’s the practice?. Qualitative research in psychology, 17(2), 159-177 https://doi.org/10.1080/14780887.2017.1400144
+
+* Macleod, C. I., Capdevila, R., Marecek, J., Braun, V., Gavey, N., & Wilkinson, S. (2021). Celebrating 30 years of Feminism & Psychology. Feminism & Psychology, 31(3), 313-325. https://doi.org/10.1177/09593535211027457
+
+* Crawford, M., & Marecek, J. (1989). Feminist theory, feminist psychology: A bibliography of epistemology, critical analysis, and applications. Psychology of Women Quarterly, 13(4), 477-491. https://doi.org/10.1111/j.1471-6402.1989.tb01015.x
+
+* Marecek, J. (2016). Invited reflection: Intersectionality theory and feminist psychology. Psychology of Women Quarterly, 40(2), 177-181. https://doi.org/10.1177/0361684316641090
+
+* OpenSexism Archives on Open Science https://opensexism.wordpress.com/tag/open-science/
 
 <br>
 </div>

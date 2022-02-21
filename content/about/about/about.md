@@ -55,10 +55,16 @@ classtitle = "text-center"
 
 ---
 
-The Framework for Open and Reproducible Research Training (FORRT) brings together educators and scholars working to improve teaching and mentoring practices in higher education.
+<br>
 
-For more information about our goals and values, read our [Mission Statement](/about/mission) and [Code of Conduct](/coc).
+The Framework for Open and Reproducible Research Training (FORRT) brings together educators and scholars working to improve teaching and mentoring practices in higher education. 
 
-If you’re looking for educational resources, please take a look at our [Educational Nexus](/nexus) and our [FORRT Pedagogies](/pedagogies).
+Together, we **published** meta-scientific papers and we also have some ongoing **manuscripts**. Please consider reading our [award-winning](/awards) scholarship at the FORRT's [Publications page](/publications).
 
-If you’re looking for information about who we are or our organizational structure, take a look at [our community](/about/community).
+If you’re looking for **educational resources**, please take a look at our [Educational Nexus](/nexus) and our [FORRT Pedagogies](/pedagogies).
+
+For more information about our **goals and values**, read our [Mission Statement](/about/mission), [Code of Conduct](/coc), and our quest towards [Principled Teaching and Mentoring](/about/principles).
+
+If you’re looking for information about who we are or our **organizational structure**, take a look the [teams that compose FORRT](/about/teams), the institutions and initiatives with which [we are partners](/about/partnerships), and [our community members](/about/community).
+
+Would you like to **get involved** more with FORRT? Check out our [getting involved page](/about/get-involved)!

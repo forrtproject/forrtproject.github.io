@@ -53,5 +53,5 @@ subtitle = ""
 
 <div class="alert alert-info alert-dismissible">
   <button type="button" class="close" data-dismiss="alert">&times;</button>
-  <strong>Hi!</strong> This popup is there to let you know that our website is currently in construction mode. It is totally normal if you encounter some bugs and find some pieces missing. Feel free to let us know how you would improve it by <a href="#8-contact" class="alert-link">contacting us</a>. 
+  <strong>Hi!</strong> If you encounter any bugs or find some pieces missing, please feel free to let us know by <a href="#8-contact" class="alert-link">contacting us</a>. 
 </div>
