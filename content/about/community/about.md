@@ -52,5 +52,3 @@ classtitle = "text-center"
  css_class = ""
 
 +++
-
----
