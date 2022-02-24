@@ -1,9 +1,9 @@
 ---
 # Documentation: https://sourcethemes.com/academic/docs/managing-content/
 
-title: "The PaPOR TRaIL Course"
-subtitle: "Principles and Practices in Open Research: Teaching, Research, Impact and Learning."
-summary: "PaPOR TRaIL is a freely available course on Open Research. The PaPOR TRaIL course is an open education resource, designed with input from students and research supervisors. The course provides a comprehensive introduction to the _what_ and the _how _of open research."
+title: "Navigating Open scholarship for neurodivergent researchers"
+subtitle: "Introducing the Neurodiversity group at FORRT."
+summary: ""
 authors: ['Mahmoud Elsherif', 'Flavio Azevedo', 'FORRT']
 tags: []
 categories: []
