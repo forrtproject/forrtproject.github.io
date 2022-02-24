@@ -162,11 +162,3 @@ Victor, S. E., Devendorf, A., Lewis, S., ROTTENBERG, J., Muehlenkamp, J. J., Sta
 
 <br>
 
-**Contact information**
-________
-
-
-[The PaPOR TRaIL Course](https://open.ucc.ie/browse/all/cpd/courses/papor-trail-principles-and-practices-of-open-research-003cpd)
-
-[Dr Karen Matvienko-Sikar](mailto:karen.msikar@ucc.ie), , School of Public Health, University College Cork, on behalf of the PaPOR TRaIL team.
-
