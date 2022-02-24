@@ -15,7 +15,7 @@ bio:
 #   - course: BSc in Artificial Intelligence
 #     institution: Massachusetts Institute of Technology
 #     year: 2008
-email: ""
+email: "info@forrt.org"
 # interests:
 # - Artificial Intelligence
 # - Computational Linguistics
