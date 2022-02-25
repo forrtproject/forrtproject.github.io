@@ -4,7 +4,7 @@
 title: "Navigating Open scholarship for neurodivergent researchers"
 subtitle: "Introducing the Neurodiversity group at FORRT."
 summary: ""
-authors: ['Mahmoud Elsherif', 'Amelie Gourdon', "Aoife OMahony", "Sara Middleton", 'Magdalena Grose', 'Flavio Azevedo', 'Siu Kit Yeung', "Samantha Tyler", 'FORRT']
+authors: ['Mahmoud Elsherif', 'Amelie Gourdon', "Aoife OMahony", "Sara Middleton", "John Shaw", 'Magdalena Grose', 'Flavio Azevedo', 'Siu Kit Yeung', "Samantha Tyler", 'FORRT']
 tags: []
 categories: []
 date: 2022-01-23T01:44:40-04:00

@@ -87,6 +87,16 @@ classtitle = "text-center"
 
 <br>
 
+---
+
+<br>
+
+<img src="PAPORTRAIL.png" align="right" /> [PaPOR TRaIL](https://open.ucc.ie/browse/all/cpd/courses/papor-trail-principles-and-practices-of-open-research-003cpd) is a free course on open research for undergraduate and postgraduate students. It is a self-paced online course that students can take independently and/or that can be embedded in exiting research curricula. Students can first complete an introductory module that providing a comprehensive understanding of the principles and practices of open research.  Following completion of this module, students can choose to complete any/all of six skill-based sections that demonstrate how to do the following open research practices. The six skills-based modules include: research integrity; pre-registration; research data management; reproducible practices; open reporting; open knowledge dissemination.
+
+<br>
+
+<br>
+
 <br>
 
 ## **Project-specific Partners**
