@@ -54,7 +54,7 @@ subtitle = ""
 
 FORRT is active in many spheres of open scholarships. Look at FORRT's CV to see all our accomplishments!
 
-# {{< embed name="FORRT_CV.pdf" height=1000 >}}
+# {{< embed name="FORRT_cv.pdf" height=1000 >}}
 
 
 
