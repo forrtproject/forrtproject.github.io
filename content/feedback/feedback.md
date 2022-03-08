@@ -8,7 +8,7 @@ headless = true  # This file represents a page section.
 active = true  # Activate this widget? true/false
 weight = 10  # Order that this section will appear.
 
-title = "Curriculum Vitae of FORRT"
+title = "Help Us Be Better"
 subtitle = ""
 
 [design]
@@ -53,11 +53,9 @@ subtitle = ""
 
 <br>
 
-What we have accomplished at FORRT is only possible because of the work of so many scholars who dedicate their time and effort on a voluntary basis. We created FORRT's CV as part of our effort towards sharing credit and elevating the members of this amazing community! With the CV we hope to highlight the individuals behind our initiatives. Moreover, we would like to help our members to take credit for their work at FORRT. Team-Science collaborations represent a new way to do science and often-times it is not clear (especially to ECRs) how to take credit for their contributions. With our CV, we hope to give examples to FORRT's members of how their contributions could be showcased in their personal CVs. The [LaTeX code](https://github.com/forrtproject/cv) is also open so that everyone can use it as a template for their own CVs as well.
+Anonymity is an effective way of gaining honest, uninhibited, and unbiased feedback. It is our hope that the anonymous form below allows us to address issues that we would otherwise be unaware of.
 
-<br>
-
-# {{< embed name="FORRT_cv.pdf" height=1000 >}}
+If you have any feedback concerning our community, our open educational materials, our website, our Slack, our Publications, ... we would be more than happy to hear from you!
 
 
 
