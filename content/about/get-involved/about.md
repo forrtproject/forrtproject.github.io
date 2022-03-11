@@ -65,7 +65,7 @@ Check it out!
 
 {{% alert note %}}
 
-[***"Getting Started with FORRT"***](https://docs.google.com/document/d/17ECRs6J8spO3CU6siheGL8weQ-TzdyAUpXIiIE8cUeI/edit?usp=sharing)
+[***"Getting Started with FORRT"***](https://docs.google.com/document/d/17ECRs6J8spO3CU6siheGL8weQ-TzdyAUpXIiIE8cUeI)
 
 {{% /alert %}}
 
