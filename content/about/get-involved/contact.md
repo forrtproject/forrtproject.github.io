@@ -3,7 +3,7 @@
 widget = "featurette_welcome"  # See https://sourcethemes.com/academic/docs/page-builder/
 headless = true  # This file represents a page section.
 active = true  # Activate this widget? true/false
-weight = 30  # Order that this section will appear.
+weight = 11  # Order that this section will appear.
 
 title = "Get in touch"
 subtitle = "Whether you have questions getting started or you want to know how to best integrate FORRT features into your workflow, we’re here to help you."
@@ -13,7 +13,7 @@ subtitle = "Whether you have questions getting started or you want to know how t
   icon_pack = "fas"
   #img = "megaphone.png"
   name = "Email"
-  description = " [forrtproject@gmail.com](mailto:FORRTproject@gmail.com)"
+  description = " [info@forrt.org](mailto:info@forrt.org)"
   
 [[feature]]
   icon = "slack"

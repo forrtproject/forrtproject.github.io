@@ -83,7 +83,7 @@ Thanks to our amazing community, FORRT has become an ***award-winning*** grassro
 
 <br>
 
-In 2021, FORRT has received a ***Commendation*** from the [HiddenREF](https://hidden-ref.org/about/) for its initiatives advancing training materials and resources on open and reproducible science (see here for a [recording of the award ceremony](https://youtu.be/btjRNG0NANg?t=1070)).
+In 2021, FORRT has received a ***Commendation*** from the [HiddenREF](https://hidden-ref.org/hidden-ref-award-ceremony/) for its initiatives advancing training materials and resources on open and reproducible science (see here for a [recording of the award ceremony](https://youtu.be/btjRNG0NANg?t=1070)).
 
 <br>
 

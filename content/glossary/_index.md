@@ -14,7 +14,7 @@ header:
   image: "resources.jpg"
 ---
 
-*Introduction*
+### Introduction
 
 In the last decade, the Open Science movement has introduced and modified many research practices. The breadth of these initiatives can be overwhelming, and digestible introductions to these topics are valuable (e.g. Crüwell et al. 2019; Kathawalla, Silverstein, & Syed, 2020). Creating a shared understanding of the purposes of these initiatives facilitates discussions of the strengths and weaknesses of each practice, ultimately helping us work towards a research utopia (Nosek & Bar-Anan, 2012).
 
@@ -22,19 +22,37 @@ Accompanying this cultural shift towards increased transparency and rigour has b
 
 In order to reduce barriers to entry and understanding, we present a Glossary of terms relating to open scholarship. We aim that the glossary will help clarify terminologies, including where terms are used differently/interchangeably or where terms are less known in some fields or among students. We also hope that this glossary will be a welcome resource for those new to these concepts, and that it helps grow their confidence in navigating discussions of open scholarship. We also hope that this glossary aids in mentoring and teaching, and allows newcomers and experts to communicate efficiently. 
 
+{{% alert note %}}
+
+If you use this glossary in any form, please cite the associated paper: Parsons, S., Azevedo, F., Elsherif, M. M., Guay, S., Shahim, O. N., Govaart, G. H., ... & Aczel, B. (2022). A Community-Sourced Glossary of Open Scholarship Terms. *Nature Human Behaviour*. [https://doi.org/10.1038/s41562-021-01269-4]([https://doi.org/10.1038/s41562-021-01269-4)
+
+{{% /alert %}}
+
+
 The list of terms we have drafted and reviewed can be found on the left if you are viewing this page on a computer screen or bigger, otherwise they can be found at the bottom of the page. If you hover a word, you will be able to read the full description of the term. To know more about a term, including references, simply click on it and it will bring you to the term page. 
+
 
 ### Project Status
 
-We successfully arrived at the end of ***Phase 1*** 🎉🥳
+<br>
 
-This means we managed to go from an ambitious idea to a full blown crowd-sourced project in which more than ***110 collaborators*** defined via consensus after much discussion and reviewed upwards of ***250 Open Scholarship terms***.  We also prepared a manuscript which is currently submitted where all contributors are co-authors. 
+We successfully arrived at the end of ***Phase 1*** 🎉. This means we managed to go from an ambitious idea to a full blown crowd-sourced project in which more than ***110 collaborators*** defined via consensus after much discussion and reviewed upwards of ***250 Open Scholarship terms***.  We published our manuscript at [***Nature Human Behavior***](https://doi.org/10.1038/s41562-021-01269-4), where all contributors are co-authors. 🥳
 
-***Importantly, we are preparing for Phase 2*** where FORRT will again open every term for discussion, suggestions, and editing aiming at the improvement of existing definitions, extension the scope of terms, and translation to other languages to increase access. We are trying to set everything up as we already broke google-docs. So we are considering several options to maximize (and facilitate) discussion and exchanges. If you have ideas, please contact us. ***Instructions will follow soon in this page.***
-
-To receive updates please join [FORRT's Slack channel](https://join.slack.com/t/forrt/shared_invite/zt-alobr3z7-NOR0mTBfD1vKXn9qlOKqaQ). You can also contact [FORRT](FORRTproject@gmail.com), and project leads [Sam Parsons](sam.parsons@psy.ox.ac.uk) and [Flávio Azevedo](mailto:flavio.azevedo@uni-jena.de). For information on Phase 1 of FORRT’s Glossary Project, see below.
+### Phase 2 
 
 <br>
+<center> <p style="color:#38673F"> 🚨 <strong>Phase 2 of the FORRT glossary project is now open</strong>! 🚨 </p>  </center>
+<br>
+
+Following the success of Phase 1, we invite you to help us continue to improve this resource. We are interested in a wide range of contributions to improve existing definitions, extend the scope of the terms, as well as translating terms to improve accessibility. We have opened four live working documents (see [the landing page](https://docs.google.com/document/d/1BKzztg7srUeC_2Yn0b7cMbxp_vYMDlOnEYpxg_S2hWs/edit?usp=sharing) for instructions and links to working documents). Please read the instructions for contributors. We have prepared these to help guide constructive feedback and facilitate a smooth editorial process.
+
+We aim to regularly implement suggested changes and improvements. If you believe an existing definition is incorrect please contact the project leads, we aim to correct any mistakes as quickly as possible. We see the glossary as a potential starting point for other projects and resources the community feels may be needed. Please contact us if you have suggestions for publications or have ideas for related projects that could use or adapt the glossary. 
+
+To receive updates please join [FORRT's Slack channel](https://join.slack.com/t/forrt/shared_invite/zt-alobr3z7-NOR0mTBfD1vKXn9qlOKqaQ). You can also contact [FORRT](info@forrt.org), and project leads [Sam Parsons](sam.parsons@psy.ox.ac.uk) and [Flávio Azevedo](mailto:flavio.azevedo@uni-jena.de). For information on Phase 1 of FORRT’s Glossary Project, see below.
+
+<!------
+<br>
+
 {{% alert note %}}
 Link to the FORRT preprint explaining Phase 1
 
@@ -45,9 +63,19 @@ Link to the FORRT preprint explaining Phase 1
 
 <br>
 
+### <p style="color:#380e0e">Glossary Versioning</p>
+------>
+
+### Glossary Versioning
+
+We plan to continuously improve, extend, and update our items with community involvement. Versioning will allow the study of the evolution of the terminology. The version-controlled source code of the official releases of the complete Glossary is archived on FORRT’s [GitHub](https://github.com/forrtproject/forrtproject.github.io/tree/master/content/glossary), [OSF](https://osf.io/vdb8z/), and [Zenodo](https://zenodo.org/record/5643745). The present glossary is the Beta 0.1 version and can be accessed from within FORRT website (as will its updates) below:
+
+1. Current Version: [FORRT's Glossary | Phase 1 | Beta version 0.1](/glossary/vbeta)
+
+
+### Phase 1
 
 <br>
-
 
 {{< expand "Expand to learn more about details of the Phase 1" >}}
 
@@ -154,6 +182,6 @@ After the manuscript's submission and the display of defined terms in FORRT's Gl
 
 #### Feedback
 
-Would you like to give feedback, help us review terms, or add terms? You can do so by watching this space, joining [FORRT's Slack channel](https://join.slack.com/t/forrt/shared_invite/zt-alobr3z7-NOR0mTBfD1vKXn9qlOKqaQ), contacting [FORRT](FORRTproject@gmail.com), or contacting project leads [Sam Parsons](sam.parsons@psy.ox.ac.uk) and [Flávio Azevedo](mailto:flavio.azevedo@uni-jena.de).
+Would you like to give feedback, help us review terms, or add terms? You can do so by watching this space, joining [FORRT's Slack channel](https://join.slack.com/t/forrt/shared_invite/zt-alobr3z7-NOR0mTBfD1vKXn9qlOKqaQ), contacting [FORRT](info@forrt.org), or contacting project leads [Sam Parsons](sam.parsons@psy.ox.ac.uk) and [Flávio Azevedo](mailto:flavio.azevedo@uni-jena.de).
 
 {{< /expand >}}

@@ -6,7 +6,7 @@
 widget = "blank"  # See https://sourcethemes.com/academic/docs/page-builder/
 headless = true  # This file represents a page section.
 active = true  # Activate this widget? true/false
-weight = 60  # Order that this section will appear.
+weight = 50  # Order that this section will appear.
 
 title = "Awards"
 subtitle = "---"
@@ -73,7 +73,7 @@ subtitle = "---"
 
 <br>
 
-In 2021, FORRT has received a ***Commendation*** from the [HiddenREF](https://hidden-ref.org/about/) for its initiatives advancing training materials and resources on open and reproducible science (see here for a [recording of the award ceremony](https://youtu.be/btjRNG0NANg?t=1070)).
+In 2021, FORRT has received a ***Commendation*** from the [HiddenREF](https://hidden-ref.org/hidden-ref-award-ceremony/) for its initiatives advancing training materials and resources on open and reproducible science (see here for a [recording of the award ceremony](https://youtu.be/btjRNG0NANg?t=1070)).
 
 <br>
 

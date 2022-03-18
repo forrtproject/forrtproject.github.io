@@ -45,24 +45,29 @@ social:
 - icon: twitter
   icon_pack: fab
   link: https://twitter.com/Flavio_Azevedo_
+- icon: github
+  icon_pack: fab
+  link: https://github.com/flavioazevedo
+- icon: envelope
+  icon_pack: fas
+  link: 'mailto:info@forrt.org' 
+- icon: orcid
+  icon_pack: fab
+  link: https://orcid.org/0000-0001-9000-8513
+- icon: cv
+  icon_pack: ai
+  link: https://static1.squarespace.com/static/54fac0c8e4b091c87ea1ebdc/t/613526800720e304de084c28/1630873216644/AzevedoAug21.pdf
 - icon: google-scholar
   icon_pack: ai
   link: https://scholar.google.com/citations?user=O2Mp3ygAAAAJ&hl
-- icon: orcid
-  icon_pack: ai
-  link: https://orcid.org/0000-0001-9000-8513
 - icon: publons
   icon_pack: ai
   link: https://publons.com/researcher/1551653/flavio-azevedo/
 - icon: osf
   icon_pack: ai
   link: https://osf.io/6ycwh/
-- icon: github
-  icon_pack: fab
-  link: https://github.com/flavioazevedo
-- icon: envelope
-  icon_pack: fas
-  link: 'mailto:FORRTproject@gmail.com'  # For a direct email link, use "mailto:test@example.org".
+
+# according to this https://iphysresearch.github.io/blog/post/writting-markdown/ ai should work
 
 # Link to a PDF of your resume/CV from the About widget.
 # To enable, copy your resume/CV to `static/files/cv.pdf` and uncomment the lines below.
