@@ -95,22 +95,23 @@ Community leaders are responsible for clarifying and enforcing our standards of 
 
 This Code of Conduct applies within all community spaces, physical and virtual, and also applies when an individual is officially representing the community in public spaces. Examples of representing our community include using an official email address, posting via an official social media account, or acting as an appointed representative at an online or offline event.
 
--   **Consequences of Unacceptable Behaviors**
+**Consequences of Unacceptable Behaviors**
  		-	Participants who are asked to stop any unacceptable behavior are expected to comply immediately.
- 		-	Potential consequences for violations of this code of conduct include, but are not limited to: warning the offender, expulsion from the conference with no refund, banning from future events, and denying or revoking membership with no refund.
+ 		-	Potential consequences for violations of this code of conduct include, but are not limited to: warning the offender, expulsion from the Slack Community and FORRT events, banning from future FORRT events, and denying or revoking FORRT membership.
 	 
 
--   **Reporting**
+**Reporting**
  		-	If you experience or witness unacceptable behaviour, or have any other concerns, please report it as indicated below. All complaints will be reviewed and investigated promptly and fairly. All community leaders are obligated to respect the privacy and security of the reporter of any incident. All reports will be handled with discretion.
 
 
--   **How to make a report**
- 		-	You can report a suspected code of conduct violation to any member of [FORRT's Code of Conduct Committee](https://forrt.org/about/community/#Code-of-Conduct-Committee): Kimberly Quinn; Monica Gonzales-Marquez; Sam Parsons; or Leticia Micheli.
+**How to make a report**
+ 		-	You can report a suspected code of conduct violation to any member of [FORRT's Code of Conduct Committee](https://forrt.org/about/community/#Code-of-Conduct-Committee): Kimberly Quinn; Sam Parsons; or Leticia Micheli.
  		-	If possible please report the following information Your contact information: Names (real, nicknames, or pseudonyms) of any individuals involved. If there are additional witnesses, please include them as well. Your account of what occurred, and if you believe the incident is ongoing. If there is a publicly available record (e.g. a mailing list archive), please include a link. Any additional information that may be helpful.
-		 -   You may also make a report anonymously through our online form here: https://forms.gle/YQu3FcDTaeLwxRbB6
+		-   You may also make a report anonymously through our online form here: https://forms.gle/YQu3FcDTaeLwxRbB6
  		-	All reports will be passed along to the Code of Conduct Committee, who will decide on appropriate action.
  		-	After filing a report, a representative (of your choice if indicated & from the Code of Conduct Committee) will contact you personally, review the incident, follow up with any additional questions, and make a decision as to how to respond. If the person who is harassing you is part of the response team, they will recuse themselves from handling your incident. If the complaint originates from a member of the response team, it will be handled by a different member of the response team. We will respect confidentiality requests for the purpose of protecting victims of abuse.
 		 -    **Recusal**: Code of Conduct Committee members and any others responsible for enacting or overseeing this policy will recuse themselves if they have a significant conflict of interest, such as being a specific target of harassment, an alleged harasser, or having a close personal or professional relationship with a target or alleged harasser.
+
 <br><br>
 
 ### Attribution & Acknowledgements
