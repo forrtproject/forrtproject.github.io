@@ -28,8 +28,6 @@ If you use this glossary in any form, please cite the associated paper: Parsons,
 
 👀 [The [Open Access link](https://rdcu.be/cHsqM) to the copy-edited version at the publisher's website, and here's the [postprint](https://doi.org/10.31222/osf.io/kdqcw) which is the same as the published version.] ⬅️
 
-👀 [[Open Access Link](rdcu.be/cHsqM) to copy-edited version at the publisher's website, and here's the [postprint](https://doi.org/10.31222/osf.io/kdqcw) which is the same as the published version.] ⬅️
-
 {{% /alert %}}
 
 The list of terms we have drafted and reviewed can be found on the left if you are viewing this page on a computer screen or bigger, otherwise they can be found at the bottom of the page. If you hover a word, you will be able to read the full description of the term. To know more about a term, including references, simply click on it and it will bring you to the term page. 
