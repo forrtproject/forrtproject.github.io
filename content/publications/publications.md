@@ -70,7 +70,6 @@ subtitle = ""
 In response to the varied and plural new terminology introduced by the *open scholarship* movement, which has transformed academia's lexicon, we have produced a community and consensus-based [Glossary](/glossary) to facilitate education and effective communication between experts and newcomers. FORRT members have written a manuscript entitled *A Community-Sourced Glossary of Open Scholarship Terms* presenting the beta 0.1 version of our glossary of open scholarship terms.
 
 
-
 ***Status***: Our paper is **published** 🎉🥳 in Nature Human Behaviour. Cite as:
 > Parsons, S., Azevedo, F.,  Elsherif, M. M., Guay, S., Shahim, O. N., Govaart, G. H.,  Norris, E.,  O’Mahony, A., Parker, A. J., Todorovic, A., Pennington, C. R.,  Garcia-Pelegrin, E.,  Lazić, A., Robertson, O. M., Middleton, S. L., Valentini, B., McCuaig, J., Baker, B. J., Collins, E., ... Aczel, B. (2022). A Community-Sourced Glossary of Open Scholarship Terms.  *Nature human behaviour, 6*(3), 312-318. [https://doi.org/10.1038/s41562-021-01269-4](https://doi.org/10.1038/s41562-021-01269-4). 
 
@@ -91,6 +90,23 @@ In response to the varied and plural new terminology introduced by the *open sch
 
 We have written a manuscript entitled *Towards a culture of open scholarship: The role of pedagogical communities* describing (a) the the need to integrate open scholarship principles into research training within higher education; (b) the benefit of pedagogical communities and the role they play in fostering an inclusive culture of open scholarship; and (c)  call for greater collaboration with pedagogical communities, paving the way for a much needed integration of top-down and grassroot open scholarship initiatives.
 <div class='altmetric-embed' data-badge-type='medium-donut' data-doi="https://doi.org/10.1186/s13104-022-05944-1"></div>
+
+***Status***: Our paper is **published** 🎉🥳 in BMC Research Notes. Cite as:
+> Azevedo, F.,  Liu, M., Pennington, C. R., Pownall, M., Evans, T. R., Parsons, S.,  Elsherif, M. M., Micheli, L., Westwood, S., & FORRT. (2021). Towards a culture of open scholarship: The role of pedagogical communities. *BMC Research Notes, 15*(1), 1-5. [https://doi.org/10.1186/s13104-022-05944-1](https://doi.org/10.1186/s13104-022-05944-1)
+
+<br>
+
+<center> ________________________________ </center>
+
+<br>
+
+<br>
+
+## **The Role of Pedagogical Communities**
+
+<br>
+
+We have written a manuscript entitled *Towards a culture of open scholarship: The role of pedagogical communities* describing (a) the the need to integrate open scholarship principles into research training within higher education; (b) the benefit of pedagogical communities and the role they play in fostering an inclusive culture of open scholarship; and (c)  call for greater collaboration with pedagogical communities, paving the way for a much needed integration of top-down and grassroot open scholarship initiatives.
 
 ***Status***: Our paper is **published** 🎉🥳 in BMC Research Notes. Cite as:
 > Azevedo, F.,  Liu, M., Pennington, C. R., Pownall, M., Evans, T. R., Parsons, S.,  Elsherif, M. M., Micheli, L., Westwood, S., & FORRT. (2021). Towards a culture of open scholarship: The role of pedagogical communities. *BMC Research Notes, 15*(1), 1-5. [https://doi.org/10.1186/s13104-022-05944-1](https://doi.org/10.1186/s13104-022-05944-1)
