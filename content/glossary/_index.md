@@ -28,7 +28,7 @@ If you use this glossary in any form, please cite the associated paper: Parsons,
 
 👀 [The [Open Access link](https://rdcu.be/cHsqM) to the copy-edited version at the publisher's website, and here's the [postprint](https://doi.org/10.31222/osf.io/kdqcw) which is the same as the published version.] ⬅️
 
-👀 [[Open Access Link](rdcu.be/cHsqM) to copy-edited version and here's the [postprint](https://doi.org/10.31222/osf.io/kdqcw)] ⬅️
+👀 [[Open Access Link](rdcu.be/cHsqM) to copy-edited version at the publisher's website, and here's the [postprint](https://doi.org/10.31222/osf.io/kdqcw)] which is the same as the published version. ⬅️
 
 {{% /alert %}}
 
