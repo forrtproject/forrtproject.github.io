@@ -26,7 +26,7 @@ In order to reduce barriers to entry and understanding, we present a Glossary of
 
 If you use this glossary in any form, please cite the associated paper: Parsons, S., Azevedo, F., Elsherif, M. M., Guay, S., Shahim, O. N., Govaart, G. H., ... & Aczel, B. (2022). A Community-Sourced Glossary of Open Scholarship Terms. *Nature Human Behaviour*. [https://doi.org/10.1038/s41562-021-01269-4](https://doi.org/10.1038/s41562-021-01269-4)
 
-👀 [[Open Access Link](rdcu.be/cHsqM) to copy-edited version at the publisher's website, and here's the [postprint](https://doi.org/10.31222/osf.io/kdqcw)] which is the same as the published version. ⬅️
+👀 [[Open Access Link](rdcu.be/cHsqM) to copy-edited version at the publisher's website, and here's the [postprint](https://doi.org/10.31222/osf.io/kdqcw) which is the same as the published version.] ⬅️
 
 {{% /alert %}}
 
