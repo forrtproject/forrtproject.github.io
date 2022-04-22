@@ -66,12 +66,34 @@ Our working title is *'The impact of open and reproducible scholarship on studen
 
 In the process of conducting the systematic(-ish) literature review, we will compose summaries of the literature for each article as an effort to creat an open educational resource to be displayed in this page, which will accompany our manuscript as (possibly) supplementary materials. 
 
+<br>
+
+### Manuscript
+
+<br>
+
+We have written a manuscript entitled *The impact of open and reproducible scholarship on students’ scientific literacy, engagement, and attitudes towards science: A review and synthesis of the evidence.* describing the available (empirical) evidence of the impact (and importance) of integrating open scholarship into higher education, its benefits and challenges on three specific areas: students’ (a) scientific literacy; (b) engagement with science; and (c) attitudes towards science.
+
+The **<font style="color:#0e2a38">preprint</font>** can [be found here (osf.io/9e526)](https://osf.io/preprints/metaarxiv/9e526/). 
+
+***Status***: Our manuscript is currently under review. Cite as:
+> Pownall, M., Azevedo, F., König, L. M., Slack, H. R., Evans, T. R., Flack, Z., ... F. (2022, April 8). The impact of open and reproducible scholarship on students’ scientific literacy, engagement, and attitudes towards science: A review and synthesis of the evidence. https://doi.org/10.31222/osf.io/9e526
+
+<br>
+
+***[Check out our other publications on Open Scholarship here](https://forrt.org/publications/)***
+
+<br>
+
 ### Get in touch
 
 If you know of relevant papers, please reach out by email at [impact@forrt.org](mailto:impact@forrt.org), or [join the project's Slack channel](https://join.slack.com/t/forrt/shared_invite/enQtODMwODI0OTk4ODgzLTM0ZTQ3NDk5MzA1ZjBmNWJjYTVlN2Y2YTk0ZTJhYTY5NDliMDYzMjg2MWE0ZDRhOTY0ZDY3OTRlNDA4ODQ3NjQ). If you want to learn more about the project, [see this announcement on social media](https://twitter.com/FORRTproject/status/1453325222367698947), [join the project's Slack channel](https://join.slack.com/t/forrt/shared_invite/enQtODMwODI0OTk4ODgzLTM0ZTQ3NDk5MzA1ZjBmNWJjYTVlN2Y2YTk0ZTJhYTY5NDliMDYzMjg2MWE0ZDRhOTY0ZDY3OTRlNDA4ODQ3NjQ), or email us at [impact@forrt.org](mailto:impact@forrt.org).
 
 
 <br>
+
+
+
 
 ### Literature Review
 
