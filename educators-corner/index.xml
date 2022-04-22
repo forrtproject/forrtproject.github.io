@@ -1,4 +1,66 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Educators' Corner | FORRT - Framework for Open and Reproducible Research Training</title><link>https://forrt.org/educators-corner/</link><atom:link href="https://forrt.org/educators-corner/index.xml" rel="self" type="application/rss+xml"/><description>Educators' Corner</description><generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© 2022 - FORRT Framework for Open and Reproducible Research Training</copyright><image><url>https://forrt.org/media/FORRT_banner.svg</url><title>Educators' Corner</title><link>https://forrt.org/educators-corner/</link></image><item><title>Navigating Open scholarship for neurodivergent researchers</title><link>https://forrt.org/educators-corner/010-neurodiversity/</link><pubDate>Sun, 23 Jan 2022 01:44:40 -0400</pubDate><guid>https://forrt.org/educators-corner/010-neurodiversity/</guid><description>&lt;br>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Educators' Corner | FORRT - Framework for Open and Reproducible Research Training</title><link>https://forrt.org/educators-corner/</link><atom:link href="https://forrt.org/educators-corner/index.xml" rel="self" type="application/rss+xml"/><description>Educators' Corner</description><generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© 2022 - FORRT Framework for Open and Reproducible Research Training</copyright><image><url>https://forrt.org/media/FORRT_banner.svg</url><title>Educators' Corner</title><link>https://forrt.org/educators-corner/</link></image><item><title>Addressing the grand challenges facing psychological science</title><link>https://forrt.org/educators-corner/011-intersectionality-open-science/</link><pubDate>Thu, 21 Apr 2022 01:44:40 -0400</pubDate><guid>https://forrt.org/educators-corner/011-intersectionality-open-science/</guid><description>&lt;br>
+&lt;h2 id="what-are-the-four-grand-challenges-identified-by-aps-members">What are the four grand challenges identified by APS members?&lt;/h2>
+&lt;h3 id="1-globalization-and-diversity">1. Globalization and diversity&lt;/h3>
+&lt;p>Psychological science has been repeatedly described as WEIRD, meaning Western, Educated, Industrial, Rich, and Democratic. In particular, the persistent use of predominately White and North American college students to study human behaviour has raised concerns about the generalizability of our findings, as well as our legitimacy as a science (Arnett, 2008; Henrich, Heine, &amp;amp; Norenzayan, 2010; IJzerman et al., 2021; Thalmayer et al., 2021; Tindle, 2021). Others argue that we should get rid of the dichotomy altogether (Ghai, 2021).&lt;/p>
+&lt;p>&lt;strong>Here’s what you can do to enhance globalization and diversity within psychological science:&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>Invite international speakers to participate in opportunities that historically privilege U.S. citizens (e.g., colloquium series, workshops, awards, fellowships)&lt;/li>
+&lt;li>Explicitly cite the achievements and ideas of Black, Indigenous, and People of Color within undergraduate and postgraduate courses, particularly Black women (e.g., see existing resources such as the
+&lt;a href="https://docs.google.com/spreadsheets/d/1i7Eacoyv9VVg2lBbCV-KJZg4nSGvR_VZFOysOyOGG8g/edit#gid=666010790" target="_blank" rel="noopener">BIPOC-authored Psychology Papers spreadsheet&lt;/a> for a detailed list of available scholarship; reference Smith, et al., 2021 for a description of the
+&lt;a href="https://www.citeblackwomencollective.org/" target="_blank" rel="noopener">Cite Black Women campaign&lt;/a>)&lt;/li>
+&lt;li>Encourage people to engage with marginalized groups, including Disabled people; reference Educator’s Corner on
+&lt;a href="https://forrt.org/educators-corner/010-neurodiversity/" target="_blank" rel="noopener">Navigating Open scholarship for neurodivergent researchers&lt;/a>&lt;/li>
+&lt;li>Acknowledge your positionality, meaning the social-historical-political aspects of a researcher that influence your orientations (see Bourke, 2014; Secules, et al., 2021) and include reflexive practice for all research pursuits, including quantitative research programmes (see Jamieson, Pownall, &amp;amp; Govaart, 2022)&lt;/li>
+&lt;li>Consider context and identity by reporting sample demographics (Sabik, et al., 2020), as well as incorporating informed frameworks (e.g., interpret results via critical race theory or open scholarship)&lt;/li>
+&lt;/ul>
+&lt;h3 id="2-research-integrity-and-applicability">2. Research integrity and applicability&lt;/h3>
+&lt;p>Many of us have been warned about the replication crisis in psychology (also commonly referred to as the replicability or reproducibility crisis, as well as the credibility revolution). Not unique to psychology, the crisis highlights that the results of many peer-reviewed scientific studies are either difficult or impossible to replicate (Open Science Collaboration, 2015). However, the legitimacy of the concern with regards to replication remains hotly contested (Feest, 2019; Maxwell, et al., 2015).&lt;/p>
+&lt;p>&lt;strong>Here’s what you can do to promote research integrity and applicability within psychological science:&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>Challenge bias against open science as valuable or legitimate; incentivize early career and contingent scientists to participate by reshaping institutional norms or program milestones (e.g., encouraging students to pre-register dissertation studies; Bahlai, et al., 2019)&lt;/li>
+&lt;li>Shift mentality to encourage collaboration rather than competition (e.g., scientists working across departments or multiple working groups rather than in a singular lab at a particular campus)&lt;/li>
+&lt;li>Raise awareness about the unique experiences of intersectionally invisible participants (e.g., people who share two or more marginalized identities such as Black women; Coles &amp;amp; Pasek, 2020; Purdie-Vaughns &amp;amp; Eibach, 2008)&lt;/li>
+&lt;li>Use existing resources, such as
+&lt;a href="https://osf.io/" target="_blank" rel="noopener">the Open Science Framework&lt;/a> or
+&lt;a href="http://aspredicted.org" target="_blank" rel="noopener">aspredicted.org&lt;/a> to collaborate, document, archive, share and register research projects, materials, code, and data; join the
+&lt;a href="https://psysciacc.org/" target="_blank" rel="noopener">Psychological Science Accelerator&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h3 id="3-collaboration-across-fields-and-disciplines">3. Collaboration across fields and disciplines&lt;/h3>
+&lt;p>As psychologists, we rarely cross borders, whether real or imagined (e.g., departments, universities, countries)! Collaboration across disciplines and fields, however, is extremely beneficial to psychological scientists seeking to identify connections between psychological processes, history, and broader context (2020). Take, for instance, work from Henderson and colleagues on Confederate monuments; they find that the number of lynching victims in a county is a positive and significant predictor of Confederate memorialization in that county (2021). An intersectional lens can be applied to their findings to illustrate how race and social forces such as the Civil War contributed to anti-Black racism in the U.S., particularly during Reconstruction in the South. Through this example, we can also see how the present work invites participation from other fields like American politics, history, and Africana studies.&lt;/p>
+&lt;p>&lt;strong>Here’s what you can do to collaborate across fields and disciplines within psychological science:&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>Participate in scholarly events outside of psychology, such as the
+&lt;a href="https://minoritypolitics.netlify.app/" target="_blank" rel="noopener">Minority Politics Online Seminar Series&lt;/a>&lt;/li>
+&lt;li>Invite speakers from other disciplines to department- or University-led symposiums or conferences; provide remote options for attendance and accessibility grants to stimulate broader participation (e.g., the
+&lt;a href="https://uva.theopenscholar.com/diversifyingscholarship/" target="_blank" rel="noopener">University of Virginia Diversifying Scholarship Conference&lt;/a>)&lt;/li>
+&lt;li>Initiate cross-discipline collaborations (e.g.,
+&lt;a href="https://www.mdpi.com/2076-0760/11/3/90" target="_blank" rel="noopener">Gaither &amp;amp; Sims, 2022&lt;/a>)&lt;/li>
+&lt;li>Leverage existing networks such as Academic Twitter to incorporate the views of people from relevant disciplines and achieve shared goals (e.g., a systematic co-creation of new knowledge on a specific topic)&lt;/li>
+&lt;/ul>
+&lt;h3 id="4-strengthening-theory">4. Strengthening theory&lt;/h3>
+&lt;p>In science, a theory is a well-supported explanation of natural phenomena, confirmed repeatedly through observation and experimentation. Theory changes, however, if and when evidence accumulates that the theory cannot explain. Adaptive research in psychology must therefore follow the assumption that our knowledge will expand along with our understanding of human diversity (and vice versa). Doing so will allow room for concepts such as intersectionality and open science to be integrated within psychological science. Take, for instance, Bronfenbrenner’s ecological systems theory. Frustrated with the centrality of white boys, Stern and colleagues developed a new version centered on Black girls (2021). You can see the model here:&lt;/p>
+&lt;p>&lt;img src="image.png" alt="Bronfenbrenner’s ecological systems theory" title="Bronfenbrenner’s ecological systems theory">&lt;/p>
+&lt;p>&lt;strong>Here’s what you can do to strengthen theory within psychological science:&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>Expand theory regarding the mind and behavior to represent human diversity; the development of reliable theories is essential to scientific progress (&lt;em>see&lt;/em> Eronen &amp;amp; Bringmann, 2021 for insights into developing good psychological theories)&lt;/li>
+&lt;li>Compile evidence to advance new theories if and when they are no longer applicable or outdated due to history or context (e.g., COVID-19); create theories that center marginalized people and the real-world scenarios they experience in day-to-day life, controlling for relevant covariates&lt;/li>
+&lt;/ul>
+&lt;p>&lt;strong>Join me!&lt;/strong>&lt;/p>
+&lt;p>It is possible that I am overoptimistic about the future of psychological science or naive to the systematic obstacles that must be overcome. Still, I would rather be naive than conform to a system that is stagnant to change. When we stand outside the Ivory Tower, aware that the system is corrupt but alone, helpless, and discouraged, we know that the master&amp;rsquo;s tools will never dismantle the master&amp;rsquo;s house (Lorde, 2018). We were meant to be kept out of the house. Ergo, the time has come to build a house of our own, a house founded on principles that reflect and affirm our identities as the marginalized, unconventional, and historically excluded. It is within our avant-garde that we will find our true power, and grapple with the many challenges requiring redress to create a stronger, more robust science.&lt;/p>
+&lt;p>&lt;strong>Here’s what you can do:&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>Strengthen our existing community by
+&lt;a href="https://t.co/iFqoW5tIRh" target="_blank" rel="noopener">joining our Slack group&lt;/a>&lt;/li>
+&lt;li>Seek collaborations to pursue broader work exploring intersectionality, open science, and related topics and crowdsource manuscripts&lt;/li>
+&lt;li>Identify funding opportunities to advance our goals: research transparency, reproducibility, rigor, and ethics (e.g.,
+&lt;a href="https://www.einsteinfoundation.de/en/award/" target="_blank" rel="noopener">Einstein Foundation Award for Promoting Quality in Research&lt;/a>)&lt;/li>
+&lt;li>Spearhead initiatives (e.g., write a post for the
+&lt;a href="https://forrt.org/educators-corner/" target="_blank" rel="noopener">Educators’ Corner&lt;/a>)&lt;/li>
+&lt;li>Spread the word about FORRT (e.g., share this post with your colleagues, tag us on Twitter)&lt;/li>
+&lt;/ul>
+&lt;p>&lt;strong>Contact information&lt;/strong>: Annalisa Myer (
+&lt;a href="mailto:amyer@gradcenter.cuny.edu">amyer@gradcenter.cuny.edu&lt;/a>), Twitter
+&lt;a href="https://twitter.com/MyerAnnalisa" target="_blank" rel="noopener">@MyerAnnalisa&lt;/a>.&lt;/p></description></item><item><title>Navigating Open scholarship for neurodivergent researchers</title><link>https://forrt.org/educators-corner/010-neurodiversity/</link><pubDate>Sun, 23 Jan 2022 01:44:40 -0400</pubDate><guid>https://forrt.org/educators-corner/010-neurodiversity/</guid><description>&lt;br>
 &lt;h2 id="navigating-open-scholarship-for-neurodivergent-researchers">Navigating Open scholarship for neurodivergent researchers&lt;/h2>
 &lt;h3 id="who-we-are-and-why-is-this-important">Who we are and why is this important?&lt;/h3>
 &lt;p>In academia, there has been much discussion about how open scholarship can benefit marginalised voices (e.g. Robertson, 2020; Pownall et al., 2020). However, neurodivergent individuals (e.g. dyslexic, autistic, ADHD) have received little attention. According to the
