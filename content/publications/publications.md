@@ -117,6 +117,23 @@ Here's the Open Access version at PsyArxiv [https://doi.org/10.31234/osf.io/fgv7
 
 <br>
 
+## **FORRT's Impact of Open Scholarship on Students (Systematic Review)**
+
+<br>
+
+We have written a manuscript entitled *The impact of open and reproducible scholarship on students’ scientific literacy, engagement, and attitudes towards science: A review and synthesis of the evidence.* describing the available (empirical) evidence of the impact (and importance) of integrating open scholarship into higher education, its benefits and challenges on three specific areas: students’ (a) scientific literacy; (b) engagement with science; and (c) attitudes towards science.
+
+The **<font style="color:#0e2a38">preprint</font>** can [be found here (osf.io/9e526)](https://osf.io/preprints/metaarxiv/9e526/). 
+
+***Status***: Our manuscript is currently under review. Cite as:
+> Pownall, M., Azevedo, F., König, L. M., Slack, H. R., Evans, T. R., Flack, Z., ... F. (2022, April 8). The impact of open and reproducible scholarship on students’ scientific literacy, engagement, and attitudes towards science: A review and synthesis of the evidence. https://doi.org/10.31222/osf.io/9e526
+<br>
+
+<center> ________________________________ </center>
+
+<br>
+
+<br>
 
 ## **FORRT's Manifesto**
 
