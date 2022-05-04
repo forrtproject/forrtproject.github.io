@@ -97,6 +97,16 @@ classtitle = "text-center"
 
 <br>
 
+---
+
+<br>
+
+<img src="Bits.png" align="right" /> [The Stanford Big Team Science (BiTS) Lab ](https://bigteamsciencelab.github.io/) was established in 2021 to facilitate conversations between members of large-scale collaborations (both at Stanford and beyond) and to advance the work done by these groups. Affiliate organizations are Affiliate organizations FORRT, Lookit, ManyBabies, ManyBirds, ManyDogs, ManyPrimates, Psychological Science Accelerator (PSA), and Strengthening Democracy Challenge. [Check out their events](https://bigteamsciencelab.github.io/events/) on Authorship in Big Team Science.
+
+<br>
+
+<br>
+
 <br>
 
 ## **Project-specific Partners**
