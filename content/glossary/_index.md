@@ -42,10 +42,12 @@ We successfully arrived at the end of ***Phase 1*** 🎉. This means we managed 
 ### Phase 2 
 
 <br>
-<center> <p style="color:#38673F"> 🚨 <strong>Phase 2 of the FORRT glossary project is now open</strong>! 🚨 </p>  </center>
+
+[ <center> <p style="color:#38673F"> 🚨 <strong> Phase 2 of the FORRT glossary project is now open </strong>! 🚨 </p>  </center>](https://docs.google.com/document/d/1BKzztg7srUeC_2Yn0b7cMbxp_vYMDlOnEYpxg_S2hWs/)
+
 <br>
 
-Following the success of Phase 1, we invite you to help us continue to improve this resource. We are interested in a wide range of contributions to improve existing definitions, extend the scope of the terms, as well as translating terms to improve accessibility. We have opened four live working documents (see [the landing page](https://docs.google.com/document/d/1BKzztg7srUeC_2Yn0b7cMbxp_vYMDlOnEYpxg_S2hWs/edit?usp=sharing) for instructions and links to working documents). Please read the instructions for contributors. We have prepared these to help guide constructive feedback and facilitate a smooth editorial process.
+Following the success of Phase 1, we invite you to help us continue to improve this resource. We are interested in a wide range of contributions to improve existing definitions, extend the scope of the terms, as well as translating terms to improve accessibility. We have opened four live working documents [(see the landing page](https://docs.google.com/document/d/1BKzztg7srUeC_2Yn0b7cMbxp_vYMDlOnEYpxg_S2hWs/edit?usp=sharing) for instructions and links to working documents). Please read the instructions for contributors. We have prepared these to help guide constructive feedback and facilitate a smooth editorial process.
 
 We aim to regularly implement suggested changes and improvements. If you believe an existing definition is incorrect please contact the project leads, we aim to correct any mistakes as quickly as possible. We see the glossary as a potential starting point for other projects and resources the community feels may be needed. Please contact us if you have suggestions for publications or have ideas for related projects that could use or adapt the glossary. 
 
