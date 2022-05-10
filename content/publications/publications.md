@@ -51,6 +51,8 @@ subtitle = ""
  css_class = ""
 +++
 
+ <script type='text/javascript' src='https://d1bxh8uas1mnw7.cloudfront.net/assets/embed.js'></script>
+
 <center>
 
 # Publications, Preprints & Policy
@@ -67,8 +69,12 @@ subtitle = ""
 
 In response to the varied and plural new terminology introduced by the *open scholarship* movement, which has transformed academia's lexicon, we have produced a community and consensus-based [Glossary](/glossary) to facilitate education and effective communication between experts and newcomers. FORRT members have written a manuscript entitled *A Community-Sourced Glossary of Open Scholarship Terms* presenting the beta 0.1 version of our glossary of open scholarship terms.
 
+
+
 ***Status***: Our paper is **published** 🎉🥳 in Nature Human Behaviour. Cite as:
 > Parsons, S., Azevedo, F.,  Elsherif, M. M., Guay, S., Shahim, O. N., Govaart, G. H.,  Norris, E.,  O’Mahony, A., Parker, A. J., Todorovic, A., Pennington, C. R.,  Garcia-Pelegrin, E.,  Lazić, A., Robertson, O. M., Middleton, S. L., Valentini, B., McCuaig, J., Baker, B. J., Collins, E., ... Aczel, B. (2022). A Community-Sourced Glossary of Open Scholarship Terms.  *Nature human behaviour, 6*(3), 312-318. [https://doi.org/10.1038/s41562-021-01269-4](https://doi.org/10.1038/s41562-021-01269-4). 
+
+<div class='altmetric-embed' data-badge-type='medium-donut' data-doi="https://doi.org/10.1038/s41562-021-01269-4"></div>
 
 [Here's the [Open Access link](https://rdcu.be/cHsqM) to the copy-edited version at the publisher's website, and here's the [postprint](https://doi.org/10.31222/osf.io/kdqcw) which is the same as the published version (but OA and not copy-edited).]
 
@@ -84,6 +90,7 @@ In response to the varied and plural new terminology introduced by the *open sch
 <br>
 
 We have written a manuscript entitled *Towards a culture of open scholarship: The role of pedagogical communities* describing (a) the the need to integrate open scholarship principles into research training within higher education; (b) the benefit of pedagogical communities and the role they play in fostering an inclusive culture of open scholarship; and (c)  call for greater collaboration with pedagogical communities, paving the way for a much needed integration of top-down and grassroot open scholarship initiatives.
+<div class='altmetric-embed' data-badge-type='medium-donut' data-doi="https://doi.org/10.1186/s13104-022-05944-1"></div>
 
 ***Status***: Our paper is **published** 🎉🥳 in BMC Research Notes. Cite as:
 > Azevedo, F.,  Liu, M., Pennington, C. R., Pownall, M., Evans, T. R., Parsons, S.,  Elsherif, M. M., Micheli, L., Westwood, S., & FORRT. (2021). Towards a culture of open scholarship: The role of pedagogical communities. *BMC Research Notes, 15*(1), 1-5. [https://doi.org/10.1186/s13104-022-05944-1](https://doi.org/10.1186/s13104-022-05944-1)
@@ -101,6 +108,9 @@ We have written a manuscript entitled *Towards a culture of open scholarship: Th
 <br>
 
 Despite the growing awareness of the benefits of training reproducible methods within undergraduate and postgraduate curricula, there remains a lack of systematic incorporation of open scholarship practices in taught courses across Higher Education. While the potential reasons for this are diverse, one reason may be the dearth of available ready-to-use educational resources. To support instructors aiming to bridge that gap, FORRT's community built open educational resources that can be integrated into taught courses ‘out of the box’. As creating or changing course content can be onerous and time-consuming, we aimed to make evidence-based, high-quality lesson plans and activities available to teaching faculty, thus reducing the labour required to develop and implement open scholarship content. We compiled lesson plans and activities, and categorized them based on their theme, learning outcome, and method of delivery, which are made publicly available here: [FORRT's Lesson Plans](/lesson-plans).
+
+<div class='altmetric-embed' data-badge-type='medium-donut' data-doi="https://doi.org/10.1037/stl0000307"></div>
+<div class='altmetric-embed' data-badge-type='medium-donut' data-doi="https://doi.org/10.31234/osf.io/fgv79"></div>
 
 The **<font style="color:#0e2a38">preprint</font>** can [be found here (https://psyarxiv.com/fgv79/)](https://psyarxiv.com/fgv79/). 
 
@@ -123,6 +133,8 @@ Here's the Open Access version at PsyArxiv [https://doi.org/10.31234/osf.io/fgv7
 
 We have written a manuscript entitled *The impact of open and reproducible scholarship on students’ scientific literacy, engagement, and attitudes towards science: A review and synthesis of the evidence.* describing the available (empirical) evidence of the impact (and importance) of integrating open scholarship into higher education, its benefits and challenges on three specific areas: students’ (a) scientific literacy; (b) engagement with science; and (c) attitudes towards science.
 
+<div class='altmetric-embed' data-badge-type='medium-donut' data-doi="https://doi.org/10.31222/osf.io/9e526"></div>
+
 The **<font style="color:#0e2a38">preprint</font>** can [be found here (osf.io/9e526)](https://osf.io/preprints/metaarxiv/9e526/). 
 
 ***Status***: Our manuscript is currently under review. Cite as:
@@ -140,6 +152,8 @@ The **<font style="color:#0e2a38">preprint</font>** can [be found here (osf.io/9
 <br>
 
 We have written a manuscript entitled *Introducing a Framework for Open and Reproducible Research Training (FORRT)* describing the importance of integrating open scholarship into higher education, its benefits and challenges, as well as about FORRT initiatives aiming to support educators in this endeavor. 
+
+<div class='altmetric-embed' data-badge-type='medium-donut' data-doi="https://doi.org/10.31219/osf.io/bnh7p"></div>
 
 The **<font style="color:#0e2a38">preprint</font>** can [be found here (osf.io/bnh7p)](https://osf.io/bnh7p). 
 
@@ -210,3 +224,5 @@ Currently, we are preparing three additional manuscripts.
 <br>
 
 <center> ________________________________ </center>
+
+
