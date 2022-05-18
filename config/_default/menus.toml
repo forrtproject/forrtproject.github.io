@@ -76,9 +76,15 @@
   parent = "about"
 
 [[main]]
+  name = "Talks"  # A link title for your page.
+  url = "talk/"  # The URL of your page.
+  weight = 21  # The position of your page in the menu.
+  parent = "about"
+
+[[main]]
   name = "Teams"  # A link title for your page.
   url = "about/teams/"  # The URL of your page.
-  weight = 21  # The position of your page in the menu.
+  weight = 22  # The position of your page in the menu.
   parent = "about"
 
 
