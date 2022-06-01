@@ -10,7 +10,7 @@ authors:
 superuser: false
 
 # Role/position (e.g., Professor of Artificial Intelligence)
-role:
+role: "Community Manager"
 
 # Organizations/Affiliations
 organizations:
