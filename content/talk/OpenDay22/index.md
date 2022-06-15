@@ -51,7 +51,7 @@ links:
   icon: twitter
 
 # Optional filename of your slides within your talk's folder or a URL.
-url_slides: 
+url_slides: https://osf.io/b7rvd/
 url_code:
 url_pdf:
 url_video: https://youtu.be/i8cL3Q6A3HE
