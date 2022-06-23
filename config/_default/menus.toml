@@ -169,7 +169,7 @@
   parent = "nexus"
 
 [[main]]
-  name = "Reversals & Replications"
+  name = "Replications & Reversals"
   url = "/reversals"
   weight = 39
   parent = "nexus"
