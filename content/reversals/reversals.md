@@ -94,7 +94,7 @@ This is a dynamic project that is organized in four stages for its 1st Phase. Cu
 
 ## **How to contribute?**
 
-Anyone can add reversals or replications [by joining our initiative on Slack](https://join.slack.com/t/forrt/shared_invite/enQtODMwODI0OTk4ODgzLTM0ZTQ3NDk5MzA1ZjBmNWJjYTVlN2Y2YTk0ZTJhYTY5NDliMDYzMjg2MWE0ZDRhOTY0ZDY3OTRlNDA4ODQ3NjQ) and then [following the instructions in our reversals g-doc](https://docs.google.com/document/d/1bdUHerakXgOl9keWGkz8pQOSpaLb9O8o4sI1e9X-RZc/edit?usp=sharing).
+Anyone can add reversals or replications [by joining our initiative on Slack](https://join.slack.com/t/forrt/shared_invite/enQtODMwODI0OTk4ODgzLTM0ZTQ3NDk5MzA1ZjBmNWJjYTVlN2Y2YTk0ZTJhYTY5NDliMDYzMjg2MWE0ZDRhOTY0ZDY3OTRlNDA4ODQ3NjQ) and then [following the instructions in our reversals g-doc](https://docs.google.com/document/d/1B14wGIemTP6OL5upjh93fCqjly5MNANHtXixSD_Yl18/edit?usp=sharing).
 
 <br><br><br>
 
@@ -140,13 +140,50 @@ To search whether an effect already exists in our collection, use Ctrl-F and a k
 
 No good evidence for [many forms of priming](https://replicationindex.com/2017/02/02/reconstruction-of-a-train-wreck-how-priming-research-went-of-the-rails/), automatic behavior change from ‘related’ (often only metaphorically related) stimuli. Semantic priming is still solid, but the [effect lasts only seconds](http://laplab.ucsd.edu/articles/RohrerPashlerHarris2015JEPG.pdf).
 
-* **Elderly priming**. Hearing about old age makes people walk slower. [The p-curve alone](https://psyarxiv.com/3m5y9) argues against the first 20 years of studies.
+* **Elderly priming**, that hearing about old age makes people walk slower.
 {{< spoiler text="Statistics" >}}
 * Status: reversed
-* Original paper: '[Automaticity of social behavior](https://scholar.google.com/scholar?cluster=3335859380278379099&hl=en&as_sdt=0,5&sciodt=0,5)', Bargh (1996); 2 experiments with n=30. [citations = 5938(GS, October 2021)]
-* Critiques: [Doyen (2012](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0029081#s2)) [n=120, citations=757(GS, October 2021)], [Pashler et al. (2011) ](https://web.archive.org/web/20170923093613/http://www.psychfiledrawer.org/replication.php?attempt=MTU%3D)[n=66, citations=XX(GS, October 2021)]. Meta-analysis: [Lakens (2017](https://psyarxiv.com/3m5y9)) [citations = 21(GS, October 2021)]
-* Original effect size: _d_=0.82 to _d_=1.08
-* Replication effect size: Doyen: _d_= -0.07. Pashler: _d_= -0.22
+* Original paper: '[Automaticity of social behavior](https://scholar.google.com/scholar?cluster=3335859380278379099&hl=en&as_sdt=0,5&sciodt=0,5)', Bargh (1996); 2 experiments with Study 2a: n = 30, Study 2b: n = 30[citations = 5938(GS, October 2021)]​
+* Critiques:[ Doyen (2012](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0029081#s2)) [experiment: n=120, citations=757(GS, October 2021)]; [Lakens (2017](https://psyarxiv.com/3m5y9)) [meta analysis: citations = 21(GS, October 2021)];  [Pashler et al. (2011)](https://web.archive.org/web/20170923093613/http://www.psychfiledrawer.org/replication.php?attempt=MTU%3D) [experiment: n=66, citations=21(GS, October 2021)]. 
+* Original effect size: not reported. ​
+* Replication effect size: Doyen: walking speed: _η<sup>2</sup>_= .01; Lakens (2017): _r_= .29/_d_= .61; Pashler: not reported.​
+{{< /spoiler >}}
+
+* **Hostility priming (unscrambled sentences)**. Exposing participants to more hostility-related stimuli caused them subsequently to interpret ambiguous behaviours as more hostile.
+{{< spoiler text="Statistics" >}} 
+* Status: not replicated
+* Original paper: [The role of category accessibility in the interpretation of information about persons: Some determinants and implications.](http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.335.4255&rep=rep1&type=pdf) Srull  and Wyer, Jr. (1979); 2 experiments with Study 1:  n = 96; Study 2: n = 96 [  2409 citations (GS, November 2021)]. 
+* Critique: [McCarthy et al. 2018](https://journals.sagepub.com/doi/full/10.1177/2515245918777487#abstract) [n = 7,373 for Study 1, citations = 40(GS, November 2021)]. [McCarthy et al. 2021](https://online.ucpress.edu/collabra/article/7/1/18738/116070/A-Multi-Site-Collaborative-Study-of-the-Hostile) (see Figure) [n = 1,402 for close replication; n = 1,641 for conceptual replication,  citations = 2(GS, November 2021)]
+* Original effect size: 2.99 (XX = 1.58%)
+* Replication effect size: All effect sizes are located in McCarthy et al. 2018: Acar: _XX_ = 0.16. Aczel: _XX _= 0.12. Birt: _XX_ = -0.11. Evans: _XX_ = -.22. Ferreira-Santos.: _XX_ = 0.01. Gonzalez-Iraizoz: _XX_ = -.21. Holzmeister: _XX_ = .11. Klein Selfe and Rozmann: _XX_ = -0.51. Koppel: _XX_ = -.14. Laine: _XX_ = -.27. Loschelder: _XX_ =-.07. McCarthy: _XX_ = -.10. Meijer: _XX_ = .03. Ozdorgru: _XX_ = .22.  Pennington: _XX_ = -.52.  Roets: _XX_ = -.01. Suchotzki: XX = .10.  Sutan: _XX_ = .49. Vanpaemel: _XX_ = .17. Verschuere: _XX_ = -.14.  Wick: _XX_ = .07. Wiggins: _XX_ = .01. Average replication effect size: _XX_ = -0.08:; McCarthy et al. 2021: XX = 0.06.
+{{< /spoiler >}}
+
+* **Intelligence priming (contemplation)**, alt term = **professor priming.** Participants primed with a category associated with intelligence (e.g. “professor”) performed 13% better on a trivia test than participants primed with a category associated with a lack of intelligence (“soccer hooligans”).
+{{< spoiler text="Statistics" >}} 
+* Status: not replicated
+* Original paper: [The relation between perception and behavior, or how to win a game of trivial pursuit](https://psycnet.apa.org/buy/1998-01060-003), Dijksterhuis  and van Knippenberg, 1998, 4 experiments with Study 1: n = 60; Study 2: n = 58; Study 3: n = 95; Study 4: n = 43. [citations = 1124 (GS November 2021)].
+* Critiques: [O’Donnell et al., 2018](https://journals.sagepub.com/doi/full/10.1177/1745691618755704), [n = 4,493 who met the inclusion criteria; n = 6,454 in supplementary materials, citations = 71(GS November 2021)]).
+* Original effect size: PD = 13.20%.
+* Replication effect size: All effect sizes are located in O’Donnell et al. 2018: Aczel: PD = -1.35%; Aveyard: PD = -3.99%; Baskin.: PD =4.08%; Bialobrzeska: PD = -.12%; Boot: PD =-4.99%;  Braithwaite: PD = 4.01%; Chartier: PD = 3.23%; DiDonato: PD = 3.14%; Finnigan:  PD: 2.89%; Karpinski: PD = 1.38%; Keller: PD = .17%; Klein: PD =.88%;  Koppel: PD = -.20%; McLatchie: PD = -2.16%;  Newell: PD = 1.66%; O’Donnell: PD = 1.58%; Phillipp: PD = 43%; Ropovik: PD = -.48%; Saunders: PD = -1.87%; Schulte-Mecklenbeck: PD = 4.24%; Shanks: PD = .11%; Steele: PD = -.58%; Steffens: PD = -.84%; Susa: PD = -.63%; Tamayo: PD =1.41%;  Meta-analytic estimate: PD = 0.02%.
+{{< /spoiler >}}
+
+* **Moral priming (contemplation)**. Participants exposed to a moral-reminder prime would demonstrate reduced cheating. 
+{{< spoiler text="Statistics" >}} 
+* Status: not replicated
+* Original paper: [The Dishonesty of Honest People: A Theory of Self-Concept Maintenance](https://journals.sagepub.com/doi/10.1509/jmkr.45.6.633), Mazar et al. 2008; 6 experiments with Study 1: n = 229; Study 2: n = 207;  Study 3: n = 450; Study 4: n = 44; Study 5: n = 108; Study 6: n =  326. [citations= 3072 (GS November 2021)]. 
+* Critiques: [Verschuere et al. 2018](https://journals.sagepub.com/doi/pdf/10.1177/2515245918781032) [n = 5786 replication of Experiment 1, citations = 65(GS November 2021)].
+* Original effect size: _d_ = -1.45.
+* Replication effect size: _d_ = 0.18.
+* All effect sizes are located in Verschuere et al. 2018:  Aczel: _d_ = -0.26; Birt: _d_ = 0. 41; Evans: _d_ = 0.85; Ferreira-Santos: _d_ = -0.19; Gonzalez-Iraizoz: _d_ = 0.26; Holzmeister: _d_ = 1.11; klein Selle and Rozmann: _d_ = -0.27; Koppel: _d_ = 0.39;  Laine: _d_ = -0.37; Loschelder: _d_ = -0.11; McCarthy: _d_ = 0.57; Meijer: _d_ = -0.15; Ozdogru: _d_ = 1.19; Suchotzki: _d_ = 0.00; Sutan: _d_ = 0.02; Vanpaemel: _d_ = 0.17; Verschuere: _d_ = 0.18; Wick: _d_ = -0.09; Wiggins: _d_ = 0.19; Meta-analytic estimate: _d_ =  0.11. 
+{{< /spoiler >}}
+
+* **Moral priming (cleanliness)**. Participants exposed to physical cleanliness were shown to reduce the severity of their moral judgments. Direct, well-powered replications did not find evidence for the phenomenon. 
+{{< spoiler text="Statistics" >}}
+* Status: not replicated
+* Original paper: [With a Clean Conscience: Cleanliness Reduces the Severity of Moral Judgments](https://journals.sagepub.com/doi/full/10.1111/j.1467-9280.2008.02227.x?casa_token=uRH1oAgdskoAAAAA%3Ahf7TyDhog_mLb75lVnxJOKHMb4NrxHwHqbwxFd0p76Cwwp492JBrXNPuadQB-9VxBm1SqLEJyPSv), Schnall, Benton, and  Harvey, 2008; 2 experiments with Study 1: n = 40, Study 2: n = 44. [citations=645 (GS November 2021)].
+* Critiques: [Johnson et al.](https://econtent.hogrefe.com/doi/full/10.1027/1864-9335/a000186)<span style="text-decoration:underline;"> </span> 2014, [Study 1: n = 208, Study 2: n = 126. citations=128(GS November 2021)].
+* Original effect size:  Study 1: d = -0.60, 95% CI [-1.23, 0.04]; Study 2: d = -0.85, 95% CI [-1.47, -0.22]
+* Replication effect size: Study 1: d = -0.01, 95% CI [-0.28, 0.26]; Study 2: d = 0.01, 95% CI [-0.34, 0.36]
 {{< /spoiler >}}
 
 * **Distance priming**. Participants primed with distance compared to closeness produced greater enjoyment of media depicting embarrassment (Study 1), less emotional distress from violent media (Study 2), lower estimates of the number of calories in unhealthy food (Study 3), and weaker reports of emotional attachments to family members and hometowns (Study 4).
@@ -162,7 +199,7 @@ No good evidence for [many forms of priming](https://replicationindex.com/2017/0
 {{< spoiler text="Statistics" >}}
 * Status: mixed
 * Original paper: [A Single Exposure to the American Flag Shifts Support Toward Republicanism up to 8 Months Later ](https://journals.sagepub.com/doi/full/10.1177/0956797611414726)Carter et al. 2011; 2 studies with n = 191 completed three sessions and 71 completed the fourth session; Experiment 2: 70. [citations = 186 (GS, October 2021)]
-* Critique: [Klein et al. 2014](https://psycnet.apa.org/fulltext/2014-20922-002.html) [n=6,082 , citations = 957 (GS, October 2021)]).
+* Critique: [Klein et al. 2014](https://psycnet.apa.org/fulltext/2014-20922-002.html) [n=6,082, citations = 957 (GS, October 2021)]).
 * Original effect size: _d_ = 0.50
 * Replication effect size: All effect sizes are located in ManyLabs: Adams and Nelson: _d_ = .02. Bernstein: _d_ = 0.07. Bocian and Frankowska: _d_ = .19 (Study 1). Bocian and Franowska: _d_ = -.22 (Study 2). Brandt et al.: _d_ = .21. Brumbaugh and Storbeck: _d_ = -.22 (Study 1). Brumbaugh and Storbeck: _d_ = .02 (Study 2). Cemalcilar: _d_ = .14. Cheong: _d_ = -.11. Davis and Hicks: _d_ = -.27 (Study 1). Davis and Hicks: _d_ =-.03 (Study 2). Devos: _d_ = -.11. Furrow and Thompson: _d_ = .09. Hovermale and Joy-Gaba: _d_ = -.07.  Hunt and Krueger: _d_ = .27.  Huntsinger and Mallett: _d_ = .06. John and Skorinko: _d_ = .08.  Kappes: _d_ = .04. Klein et al.: _d_ = -.11. Kurtz: _d_ =.04.  Levitan: _d_ = -.01. Morris: _d_ = .09 Nier: _d_ =  -.45. Packard: _d_ = .04. Pilati: _d_ = 0.00. Rutchick: _d_ = -.07. Schmidt and Nosek (PI): _d_ =.03.  Schmidt and Nosek (MTURK): _d_ = .09. Schmidt and Nosek (UVA): _d_ = -.15. Smith: _d_ = .27. Swol: _d_ =-.03.  Vaughn: _d_ = -.17. Vianello and Galliani: _d_ =.49.  Vranka: _d_ = -.03. Wichman: _d_ = .11. Woodzicska: _d_ =-.09. Average replication effect size: _d_ = 0.03
 {{< /spoiler >}}
@@ -173,7 +210,7 @@ No good evidence for [many forms of priming](https://replicationindex.com/2017/0
 * Original paper: [Effects of Fluency on Psychological Distance and Mental Construal (or Why New York Is a Large City, but New York Is a Civilized Jungle)](https://journals.sagepub.com/doi/10.1111/j.1467-9280.2008.02062.x) Alter and Oppenheimer 2008; 3 studies, 2 of which are split into Part A and Part B with n’s = 1A: 40 and 1B: 196 ; 2A: 32 and 2B: 230; Experiment 3: 70 [citations = 304 (GS,  October 2021)]. 
 * Critique: [Klein et al. 2014](https://psycnet.apa.org/fulltext/2014-20922-002.html) [n=1146, citations = 957 (GS,October 2021)]
 * Original effect size: _r_ = 0.13.
-* Replication effect size: _r_ = 02.
+* Replication effect size: _r_ = .02.
 {{< /spoiler >}}
 
 * **Money priming**. “Images or phrases related to money cause increased faith in capitalism, and the belief that victims deserve their fate”.
@@ -184,7 +221,7 @@ No good evidence for [many forms of priming](https://replicationindex.com/2017/0
 Original effect size: system justification d=0.8, just world d=0.44, dominance d=0.51
 * Replication effect size: Rohrer et al. (Experiment 1): d = 0.07 for system justification, d = 0.06 for belief in a just world, d  = -0.06 for social dominance, fair market ideology, d = 0.14.
 * For 47 preregistered experiments in Lodder:
-* g = 0.01 for system justification. g = 0.11 [-0.08, 0.3] for belief in a just world.g = 0.07 [-0.02, 0.15] for fair market ideology.
+* g = 0.01 for system justification. g = 0.11 [-0.08, 0.3] for belief in a just world. g = 0.07 [-0.02, 0.15] for fair market ideology.
 {{< /spoiler >}}
 
 * **Commitment priming (recall)**. Participants exposed to a high-commitment prime would exhibit greater forgiveness.
@@ -196,43 +233,6 @@ Original effect size: system justification d=0.8, just world d=0.44, dominance d
 * Replication effect size: _d_ = -0.22.
 {{< /spoiler >}}
 
-* **Hostility priming (unscrambled sentences)**. Exposing participants to more hostility-related stimuli caused them subsequently to interpret ambiguous behaviors as more hostile. 
-{{< spoiler text="Statistics" >}}
-* Status: not replicated
-* Original paper: [The role of category accessibility in the interpretation of information about persons: Some determinants and implications.](http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.335.4255&rep=rep1&type=pdf) Srull  and Wyer, Jr. 1979, 2 experiments with Study 1:  n = 96; Study 2: n = 96 [  2409 citations (GS, November 2021)]. 
-* Critique: [McCarthy et al. 2018](https://journals.sagepub.com/doi/full/10.1177/2515245918777487#abstract) [n = 7,373 for Study 1, citations = 40(GS, November 2021)]. [McCarthy et al. 2021](https://online.ucpress.edu/collabra/article/7/1/18738/116070/A-Multi-Site-Collaborative-Study-of-the-Hostile) (see Figure) [n = 1,402 for close replication; n = 1,641 for conceptual replication,  citations = 2 citations(GS, November 2021)]
-* Original effect size: 2.99 (XX = 1.58%)
-* Replication effect size: All effect sizes are located in McCarthy et al. 2018: Acar: _XX_ = 0.16. Aczel: _XX _= 0. 12. Birt: _XX_ = -0.11. Evans: _XX_ = -.22. Ferreira-Santos.: _XX_ = 0.01. Gonzalez-Iraizoz: _XX_ = -.21. Holzmeister: _XX_ = .11. Klein Selfe and Rozmann: _XX_ = -0.51. Koppel: _XX_ = -.14. Laine: _XX_ = -.27. Loschelder: _XX_ =-.07. McCarthy: _XX_ = -.10. Meijer: _XX_ = .03. Ozdorgru: _XX_ = .22.  Pennington: _XX_ = -.52.  Roets: _XX_ = -.01. Suchotzki: _XX_ = .10.  Sutan: _XX_ = .49. Vanpaemel: _XX_ = .17. Verschuere: _XX_ = -.14.  Wick: _XX_ = .07. Wiggins: _XX_ = .01. Average replication effect size: _XX_ = -0.08:; McCarthy et al. 2021: XX = 0.06.
-{{< /spoiler >}}
-
-* **Intelligence priming (contemplation)**, alt term = **professor priming.** Participants primed with a category associated with intelligence (e.g. “professor”) performed 13% better on a trivia test than participants primed with a category associated with a lack of intelligence (“soccer hooligans”).
-{{< spoiler text="Statistics" >}}
-* Status: not replicated
-* Original paper: [The relation between perception and behavior, or how to win a game of trivial pursuit](https://psycnet.apa.org/buy/1998-01060-003), Dijksterhuis  and van Knippenberg, 1998, 4 experiments with Study 1: n = 60; Study 2: n = 58; Study 3: n = 95; Study 4: n = 43. [citations = 1124 (GS November 2021)].
-* Critiques: [O’Donnell et al., 2018](https://journals.sagepub.com/doi/full/10.1177/1745691618755704), [n = 4,493 who met the inclusion criteria; n = 6,454 in supplementary materials, citations = 71(GS November 2021)]).
-* Original effect size: PD = 13.20%.
-* Replication effect size: All effect sizes are located in O’Donnell et al. 2018: Aczel: PD = -1.35%; Aveyard: PD = -3.99%; Baskin.: PD =4.08%; Bialobrzeska: PD = -.12%; Boot: PD =-4.99%;  Braithwaite: PD = 4.01%; Chartier: PD = 3.23%; DiDonato: PD = 3.14%; Finnigan:  PD: 2.89%; Karpinski: PD = 1.38%; Keller: PD = .17%; Klein: PD =.88%;  Koppel: PD = -.20%; McLatchie: PD = -2.16%;  Newell: PD = 1.66%; O’Donnell: PD = 1.58%; Phillipp: PD = 43%; Ropovik: PD = -.48%; Saunders: PD = -1.87%; Schulte-Mecklenbeck: PD = 4.24%; Shanks: PD = .11%; Steele: PD = -.58%; Steffens: PD = -.84%; Susa: PD = -.63%; Tamayo: PD =1.41%;  Meta-analytic estimate: PD =  0.02%.
-{{< /spoiler >}}
-
-* **Moral priming (contemplation)**. Participants exposed to a moral-reminder prime would demonstrate reduced cheating. 
-{{< spoiler text="Statistics" >}}
-* Status: not replicated
-* Original paper: [The Dishonesty of Honest People: A Theory of Self-Concept Maintenance](https://journals.sagepub.com/doi/10.1509/jmkr.45.6.633), Mazar et al. 2008; 6 experiments with Study 1: n = 229; Study 2: n = 207;  Study 3: n = 450; Study 4: n = 44; Study 5: n = 108; Study 6: n =  326. [citations= 3072 (GS November 2021)]. 
-* Critiques: [Verschuere et al.](https://journals.sagepub.com/doi/full/10.1177/2515245918781032) [2018](https://journals.sagepub.com/doi/pdf/10.1177/1745691616664694) [n = 5786 replication of Experiment 1, citations = 65(GS November 2021)].
-* Original effect size: d = -1.45.
-* Replication effect size: _d_ = 0.18.
-* All effect sizes are located in Verschuere et al. 2018:  Aczel: _d_ = -0.26; Birt: _d_ = 0. 41; Evans: _d_ = 0.85; Ferreira-Santos: _d_  = -0.19; Gonzalez-Iraizoz: _d_ = 0.26; Holzmeister: _d_ = 1.11; klein Selle and Rozmann: _d_ = -0.27; Koppel: _d_ = 0.39;  Laine: _d_ = -0.37; Loschelder: _d_ = -0.11; McCarthy: _d_ = 0.57; Meijer: _d_ = -0.15; Ozdogru: _d_ = 1.19; Suchotzki: _d_ = 0.00; Sutan: _d_ = 0.02; Vanpaemel: _d_ = 0.17; Verschuere: _d_ = 0.18; Wick: _d_ = -0.09; Wiggins: _d_ = 0.19; Meta-analytic estimate: _d_ =  0.11. 
-{{< /spoiler >}}
-
-* **Moral priming (cleanliness)**. Participants exposed to physical cleanliness were shown to reduce the severity of their moral judgments. Direct, well-powered replications did not find evidence for the phenomenon.
-{{< spoiler text="Statistics" >}}
-* Status: not replicated
-* Original paper: [With a Clean Conscience: Cleanliness Reduces the Severity of Moral Judgments](https://journals.sagepub.com/doi/full/10.1111/j.1467-9280.2008.02227.x?casa_token=uRH1oAgdskoAAAAA%3Ahf7TyDhog_mLb75lVnxJOKHMb4NrxHwHqbwxFd0p76Cwwp492JBrXNPuadQB-9VxBm1SqLEJyPSv), Schnall, Benton, and  Harvey, 2008; 2 experiments with Study 1: n = 40, Study 2: n = 44. [citations=645 (GS November 2021)].
-* Critiques: [Johnson et al.](https://econtent.hogrefe.com/doi/full/10.1027/1864-9335/a000186)<span style="text-decoration:underline;"> </span> 2014, [Study 1: n = 208, Study 2: n = 126. citations=128(GS November 2021)].
-* Original effect size:  Study 1: d = -0.60, 95% CI [-1.23, 0.04]; Study 2: d = -0.85, 95% CI [-1.47, -0.22]
-* Replication effect size: Study 1: d = -0.01, 95% CI [-0.28, 0.26]; Study 2: d = 0.01, 95% CI [-0.34, 0.36]
-{{< /spoiler >}}
-
 * **Death priming**, alt term = **Mortality Salience/Terror Management Theory**. Participants not exposed to mortality primes would show higher fear of death.
 {{< spoiler text="Statistics" >}}
 * Status: not replicated
@@ -242,81 +242,78 @@ Original effect size: system justification d=0.8, just world d=0.44, dominance d
 * Replication effect size: Exclusion Set 1: _Hedges’ g_ = 0.03, 95% CI = [-0.06, 0.12]; Exclusion Set 2: _Hedges’ g_ = 0.06, 95% CI = [-0.06, 0.17] Exclusion Set 3: _Hedges’ g_ = 0.04, 95% CI = [-0.07, 0.16].
 {{< /spoiler >}}
 
-* **Prime awareness**
-
 * **Spatial priming for emotional closeness**. Spatial distances cues were used as a prime for participants’ feelings regarding their emotional closeness to their families (Williams & Bargh, 2008). Participants were asked to plot points on a grid on a paper, either closer or further apart. Then they were asked to rate how emotionally close they feel towards their family members.
 {{< spoiler text="Statistics" >}}
 * Status: not replicated
 * Original paper: [Keeping One’s Distance: The effect of spatial distance cues on affect and emotion](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2394280/), Lawrence and Bargh (2008), 4 experiments with Study 1: n = 73; Study 2: n = 42; Study 3: n = 59; Study 4: n = 84. [citation= 583, (GS, January 2022)]. 
 * Critiques: [Pashler et al. 2012](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3430642/)[n = 92, citations = 188 (GS, January 2022)]. [Open Science Collaboration 2015](https://osf.io/7uh8g/) [total n=125, citations: 6148; GS, January 2022]
-* Original effect size: Study 1: *η*<sup>2</sup> = .09; Study 2: *η*<sup>2</sup> = .18; Study 3: *η*<sup>2</sup> = .10; Study 4: *η*<sup>2</sup> = .11
-* Replication effect size: Pashler et al.: *η*<sup>2</sup> = 0.01. Joy-Gaba et al.’s effect sizes are located in Open Science Collaboration 2015 for Study 4: *η*<sup>2</sup> = .00.
+* Original effect size: Study 1: _η_<sup>2</sup> = .09; Study 2: _η_<sup>2</sup> = .18; Study 3: _η_<sup>2</sup> = .10; Study 4: _η_<sup>2</sup> = .11
+* Replication effect size: Pashler et al.: _η_<sup>2</sup> = 0.01_. _Joy-Gaba et al.’s effect sizes are located in Open Science Collaboration 2015 for Study 4: _η_<sup>2</sup> = .00.
 {{< /spoiler >}}
 
-* **Verbal framing (temporal tense)**. Participants who read what a person was doing showed enhanced accessibility of intention-related concepts and attributed more intentionality to the person, relative to what they did.
+* **Verbal framing (temporal tense)**. Participants who read what a person **was doing** (relative to those who read what person **did**) showed enhanced accessibility of intention-related concepts and attributed more intentionality to the person.
 {{< spoiler text="Statistics" >}}
 * Status: mixed
 * Original paper: ‘[Learning about what others were doing: Verb aspect and attributions of mundane and criminal intent for past actions](https://journals.sagepub.com/doi/full/10.1177/0956797610395393)’, Hart and Albarracin (2011): 3 experiments with Study 1: n = 5458; Study 2: n = 37; Study 3: n = 48. [citations = 37, (GS, January 2022)]. 
-* Critiques: [Eerland et al. (2016) ](https://journals.sagepub.com/doi/pdf/10.1177/1745691615605826) [meta analysis: (total n= 685 for perfective-aspect condition; n = 681 imperfective-aspect condition) for Study 3 citations = 70, (GS, January, 2022)]
+* Critiques: [Eerland et al. (2016) ](https://journals.sagepub.com/doi/pdf/10.1177/1745691615605826) [meta analysis (total n= 685 for perfective-aspect condition; n = 681 imperfective-aspect condition) of Study 3 citations = 70, (GS, January, 2022)]
 * Original effect size: Study 1: _d_ = 1.00 for intentionality in imperfective-aspect condition;  Study 2: _d_ = 1.23 for imagery in imperfective-aspect condition; Study 3: d= 1.20 for intentionality,  _d_ = 0.92 for imagery and 0.55 for intention attribution in imperfective-aspect condition.
-* Replication effect size: All effect sizes are located in Eerland et al. 2016: intentionality: Arnal (lab): _d_ = -0.35; Berger (lab): d = -0.98; Birt and Aucoin (lab): _d_ = -0.38; Eerland et al. (lab): _d_ =0.16; Eerland et al.(online): _d_ = -0.33; Ferretti (lab): _d_ = -0.01; Knepp (lab): d = -0.95; Kurby and Kibbe (lab): d = -0.14; Melcher (lab): d = 0.65; Michael (lab): d = -0.41; Poirier et al. (lab): d = 0.32; Prenoveau and Carlucci (lab): d =  -0.38.  Meta-analytic estimate for laboratory replications only: _d_ =  -0.24. Imagery: Arnal (lab): _d_ = −0.01; Berger (lab): d = −0.45; Birt and Aucoin (lab): _d_ = −0.40; Eerland et al. (lab): _d_ =−0.01; Eerland et al.(online): _d_ = -−0.13; Ferretti (lab): _d_ = 0.33; Knepp (lab): d = 0.00; Kurby and Kibbe (lab): d =  0.02; Melcher (lab): d = −0.16; Michael (lab): d = -0.08; Poirier et al. (lab): d = -0.19; Prenoveau and Carlucci (lab): d =  -0.02.  Meta-analytic estimate for laboratory replications only: _d_ =  -0.08. Intention attribution: Arnal (lab): _d_ = -0.15; Berger (lab): d = -0.15; Birt and Aucoin (lab): _d_ = 0.08; Eerland et al. (lab): _d_ =-0.01; Eerland et al.(online): _d_ = 0.02; Ferretti (lab): _d_ = -0.19; Knepp (lab): d = -0.29; Kurby and Kibbe (lab): d = 0.00; Melcher (lab): d = 0.12; Michael (lab): d = 0.13; Poirier et al. (lab): d = 0.06; Prenoveau and Carlucci (lab): d =  0.03.  Meta-analytic estimate for laboratory replications only: _d_ =  0.00.
+* Replication effect size: All effect sizes are located in Eerland et al. 2016: intentionality: Arnal (lab): _d_ = -0.35; Berger (lab): _d_ = -0.98; Birt and Aucoin (lab): _d_ = -0.38; Eerland et al. (lab): _d_ =0.16; Eerland et al.(online): _d_ = -0.33; Ferretti (lab): _d_ = -0.01; Knepp (lab): d = -0.95; Kurby and Kibbe (lab): d = -0.14; Melcher (lab): _d_ = 0.65; Michael (lab): _d_ = -0.41; Poirier et al. (lab): _d_ = 0.32; Prenoveau and Carlucci (lab): d =  -0.38.  Meta-analytic estimate for laboratory replications only: _d_ =  -0.24. Imagery: Arnal (lab): _d_ = −0.01; Berger (lab): d = −0.45; Birt and Aucoin (lab): _d_ = −0.40; Eerland et al. (lab): _d_ =−0.01; Eerland et al.(online): _d_ = -−0.13; Ferretti (lab): _d_ = 0.33; Knepp (lab): _d_ = 0.00; Kurby and Kibbe (lab): d =  0.02; Melcher (lab): _d_ = −0.16; Michael (lab): d = -0.08; Poirier et al. (lab): _d_ = -0.19; Prenoveau and Carlucci (lab): d =  -0.02.  Meta-analytic estimate for laboratory replications only: _d_ =  -0.08. Intention attribution: Arnal (lab): _d_ = -0.15; Berger (lab): _d_ = -0.15; Birt and Aucoin (lab): _d_ = 0.08; Eerland et al. (lab): _d_ =-0.01; Eerland et al.(online): _d_ = 0.02; Ferretti (lab): _d_ = -0.19; Knepp (lab): _d_ = -0.29; Kurby and Kibbe (lab): _d_ = 0.00; Melcher (lab): _d_ = 0.12; Michael (lab): _d_ = 0.13; Poirier et al. (lab): _d_ = 0.06; Prenoveau and Carlucci (lab): _d_ =  0.03.  Meta-analytic estimate for laboratory replications: _d_ =  0.00.
 {{< /spoiler >}}
 
-* **Reference framing**
-
-* **Prosocial spending**. The effect that spending more money on other people leads to greater happiness (compared to spending on yourself)
+* **Prosocial spending**. Spending money on other people leads to greater happiness than spending money on oneself. 
 {{< spoiler text="Statistics" >}}
 * Status: replicated (on the basis of three studies, NB: effect sizes smaller than original)
-* Original paper: [Spending Money on Others Promotes Happiness](https://www.science.org/doi/epdf/10.1126/science.1150952) (Dunn, Akinn, Norton, 2008)
-* Critiques: [Akinn et al. (2020);](https://doi.apa.org/fulltext/2020-23349-001.pdf?auth_token=24a0cdbea49548a6e0de651a3de753b3d84652eb&returnUrl=https%3A%2F%2Fdoi.apa.org%2FdoiLanding%3Fdoi%3D10.1037%252Fpspa0000191) 3 Experiments
-* Original effect size: b=0.11, P &lt; 0.01
-* Replication effect size: Experiment 1: n=712, Cohen’s d = .36 and Cohen’s d = .32; Experiment 2: 1950, Cohen’s d= .03, Cohen’s d = .02; Experiment 3: 5,199, Cohen’s d = .06, .06, .17
+* Original paper: [Spending Money on Others Promotes Happiness](https://www.science.org/doi/epdf/10.1126/science.1150952) (Dunn, Akinn, Norton, 2008) [citations = 2008 (GS, March 2022)] ‘ 
+* Critiques: [Akinn et al., 2020;](https://doi.apa.org/fulltext/2020-23349-001.pdf?auth_token=24a0cdbea49548a6e0de651a3de753b3d84652eb&returnUrl=https%3A%2F%2Fdoi.apa.org%2FdoiLanding%3Fdoi%3D10.1037%252Fpspa0000191) 3 Experiments [citations = 51 (GS, March 2022)]
+* Original effect size: _b _= 0.11, _p_ &lt; 0.01
+* Replication effect size: Experiment 1: n = 712, Cohen’s _d_ = .36, .32; Experiment 2: n = 1950, Cohen’s _d_ = .03, .02; Experiment 3: n = 5,199, Cohen’s _d_ = .06, .06, .17.
 {{< /spoiler >}}
 
-* **Gustatory Disgust on Moral Judgment**. Gustatory disgust triggers a heightened sense of moral wrongness.
+* **Gustatory disgust on moral judgement**. Gustatory disgust triggers a heightened sense of moral wrongness.
 {{< spoiler text="Statistics" >}}
 * Status: not replicated
 * Original paper: [A Bad Taste in the Mouth: Gustatory Disgust Influences Moral Judgment](https://journals.sagepub.com/doi/full/10.1177/0956797611398497?casa_token=pdUGVH_hLT0AAAAA%3A7aEiTY9e2JbJX1tRFDgpo8y-x-ftNpNfV2r2bbY2tRqtgXij0O6PfM7mBzIvKjZg4dbvzLrbo2ACMw), Eskine et al. (2011); experiment, n = 57.[citation = 564 (GS, January 2022)].
-* Critiques: [Ghelfi et al. 2020](https://journals.sagepub.com/doi/10.1177/2515245919881152) [meta-analysis, total n = 1137, citations = 18 (GS, January 2022)]; [Johnson et al., 2016](https://journals.sagepub.com/doi/abs/10.1177/1948550616654211?journalCode=sppa) [Study 1: n = 478, Study 2: n = 934. citations=52 (GS January 2022)].
-* Original effect size:_ _Cohen’s _d _= 1.12 (comparison to control group) Cohen’s  _d _= 1.28 (comparison to sweet taste).
-* Replication effect size: Johnson et al.: Cohen’s  _d_ = 0.04 (Study 1 -  comparison to control group), Cohen’s  _d_ = 0.05 (Study 2 -  comparison to control group).  All effect sizes are located in Ghelfi et al. 2016: comparison to sweet group: Christopherson: Hedges _g_ = 0.53;  Christopherson: Hedges’ _g_ = 0.04; Fischer: Hedges’ _g_ = 0.25; Guberman: Hedges’ _g_ = -0.30; de Haan: Hedges’ _g_ = -0.13; Legate: Hedges’ _g_ = 0.99; Legate: Hedges’ _g _= -0.02; Lenne: Hedges’ _g_ = -0.19;  Urry: Hedges’ _g_ =  -0.13;  Wagemans: Hedges’ _g_ = 0.03; Weber: Hedges’ _g_ = -0.27.  Meta-analytic estimate: Hedges’ _g_ =  -0.05. Comparison to control group:  Christopherson: Hedges _g_ = 0.68;  Christopherson: Hedges’ _g_ = -0.19; Fischer: Hedges’ _g_ = -0.01; Guberman: Hedges’ _g_ = -0.12; de Haan: Hedges’ _g_ = -0.24; Legate: Hedges’ _g_ = 0.79; Legate: Hedges’ _g _= 0.37; Lenne: Hedges’ _g_ = -0.13;  Urry: Hedges’ _g_ =  0.08;  Wagemans: Hedges’ _g_ = -0.11; Weber: Hedges’ _g_ = -0.04.  Meta-analytic estimate: Hedges’ _g_ =  0.10.
+* Critiques: [Ghelfi et al., 2020](https://journals.sagepub.com/doi/10.1177/2515245919881152) [meta-analysis, total n = 1137, citations = 18 (GS, January 2022)]; [Johnson et al., 2016](https://journals.sagepub.com/doi/abs/10.1177/1948550616654211?journalCode=sppa) [Study 1: n = 478, Study 2: n = 934. citations = 52 (GS January 2022)].
+* Original effect size:_ _Cohen’s _d_= 1.12 (comparison to control group) Cohen’s _d_= 1.28 (comparison to sweet taste).
+* Replication effect size: Johnson et al.: Cohen’s  _d_ = 0.04 (Study 1 -  comparison to control group), Cohen’s  _d_ = 0.05 (Study 2 -  comparison to control group).  All effect sizes are located in Ghelfi et al. 2016: comparison to sweet group: Christopherson: Hedges _g_ = 0.53;  Christopherson: Hedges’ _g_ = 0.04; Fischer: Hedges’ _g_ = 0.25; Guberman: Hedges’ _g_ = -0.30; de Haan: Hedges’ _g_ = -0.13; Legate: Hedges’ _g_ = 0.99; Legate: Hedges’ _g_= -0.02; Lenne: Hedges’ _g_ = -0.19;  Urry: Hedges’ _g_ =  -0.13;  Wagemans: Hedges’ _g_ = 0.03; Weber: Hedges’ _g_ = -0.27.  Meta-analytic estimate: Hedges’ _g_ =  -0.05. Comparison to control group:  Christopherson: Hedges _g_ = 0.68;  Christopherson: Hedges’ _g_ = -0.19; Fischer: Hedges’ _g_ = -0.01; Guberman: Hedges’ _g_ = -0.12; de Haan: Hedges’ _g_ = -0.24; Legate: Hedges’ _g_ = 0.79; Legate: Hedges’ _g_= 0.37; Lenne: Hedges’ _g_ = -0.13;  Urry: Hedges’ _g_ =  0.08;  Wagemans: Hedges’ _g_ = -0.11; Weber: Hedges’ _g_ = -0.04.  Meta-analytic estimate: Hedges’ _g_ =  0.10.
 {{< /spoiler >}}
 
-* **Macbeth Effect**. Moral aspersions induce literal physical hygiene.
+* **Macbeth effect**. Moral aspersions induce literal physical hygiene.
 {{< spoiler text="Statistics" >}}
 * Status: mixed
-* Original paper: '[Washing away your sins: threatened morality and physical cleansing](https://www.ncbi.nlm.nih.gov/pubmed/16960010)', Zhong and Liljenquist (2006): 4 experiments with Study 1: n = 60; Study 2:  n = 27; Study 3: n = 32; Study 4: n = 45. [citation = 1407, (GS, January 2022)].  
-* Critiques: [Siev et al. 2018 ](https://curatescience.org/app/article/300)[meta-analysis: n = 1,746, citations = 17(GS, January 2022)]. Original effect size: Study 1: g = 0.53; Study 2:  g = 1.00; Study 3: g = 0.86; Study 4: g = XX.  [0.05, 1.68] for Study 3. \
+* Original paper: '[Washing away your sins: threatened morality and physical cleansing](https://www.ncbi.nlm.nih.gov/pubmed/16960010)', Zhong and Liljenquist (2006): 4 experiments with Study 1: n=60; Study 2:  n=27; Study 3: n=32; Study 4: n=45. [citation = 1407, (GS, January 2022)].  
+* Critiques: [Siev et al. 2018 ](https://curatescience.org/app/article/300)[meta-analysis: n=1,746, citations = 17(GS, January 2022)]. 
+* Original effect size: Study 1: g = 0.53; Study 2:  g = 1.00; Study 3: g = 0.86; Study 4: g = XX.  [0.05, 1.68] for Study 3. \
 Replication effect size: Siev et al. (2018):  g = 0.17, 95% CI [0.04 – 0.31].
 * All effect sizes are located in Siev et al. 2018: 
-* Earp et al. (2014): Study 1: g = 0.02 95% CI [-0.30 0.34], Study 2: g= 0.05 95% CI[-0.27, 0.37], Study 3: g = 0.13 95% CI[-0.11, 0.37]; Fayard et al. (2009): Study 1: g = 0.11[-0.20 0.43]; Gamez et al. (2011): Study 1: g = 0.02 95% CI [-0.54 0.56], Study 2: g= -0.01 95% CI[-0.64, 0.63], Study 3: g = 0.55 95% CI[-0.26, 1.37]; Lee and Schwarz (2010): Study 2: g = 0.22; 95% CI[-0.20 0.64]; Schaefer (2019): Study 2: g = 0.71 95% CI[0.18, 1.23];  Siev et al. (unpublished): Study 1: g = -0.06 95% CI [-0.27 0.15], Study 2: g= -0.18 95% CI[-0.56, 0.20]; Zhong (unpublished): Study 2: g = 0.28.
+* Earp et al. (2014): Study 1: g = 0.02 95% CI [-0.30 0.34], Study 2: g= 0.05 95% CI[-0.27, 0.37], Study 3: g = 0.13 95% CI[-0.11, 0.37]; Fayard et al. (2009): Study 1: g = 0.11[-0.20 0.43]; Gamez et al. (2011): Study 1: g = 0.02 95% CI [-0.54 0.56], Study 2: g = -0.01 95% CI[-0.64, 0.63], Study 3: g = 0.55 95% CI[-0.26, 1.37]; Lee and Schwarz (2010): Study 2: g = 0.22; 95% CI[-0.20 0.64]; Schaefer (2019): Study 2: g = 0.71 95% CI[0.18, 1.23]; Siev et al. (unpublished): Study 1: g = -0.06 95% CI [-0.27 0.15], Study 2: g = -0.18 95% CI[-0.56, 0.20]; Zhong (unpublished): Study 2: g = 0.28.
 {{< /spoiler >}}
 
-* **Signing at the beginning rather than end makes ethics salient**.
+* **Signing at the beginning rather than end makes ethics salient**. Signing a statement of honest intent before providing information rather than after can reduce dishonesty. 
 {{< spoiler text="Statistics" >}}
 * Status: not replicated/[retracted](https://www.buzzfeednews.com/article/stephaniemlee/dan-ariely-honesty-study-retraction)
-* Original paper: [Signing at the Beginning Makes Ethics Salient and Decreases Dishonest Self-reports in Comparison to Signing at the End](https://www.pnas.org/content/109/38/15197.short) (Shu et al., 2012); lab and field experiments, Study 1 n = 101, Study 2 n = 60. Study 3 , = 13.488. [citations=465(Google Scholar, Feb 2022)]​.
-* Critiques: Paper retracted due to evidence of fraud  by [Uri, Joe & Leif (2021)](http://datacolada.org/98).​
-* Original effect size: χ2 (2, n = 101) = 12.58, P = 0.002; χ2 (1, n = 60) = 4.27, P &lt; 0.04.; F(1, 13,485) = 128.63, P &lt; 0.001].
+* Original paper: [Signing at the Beginning Makes Ethics Salient and Decreases Dishonest Self-reports in Comparison to Signing at the End](https://www.pnas.org/content/109/38/15197.short) (Shu et al., 2012); lab and field experiments, Study 1: n = 101; Study 2: n = 60; Study 3: n = 13.488. [citations=465 (GS, February 2022)]​.
+* Critiques: Paper retracted due to evidence of fraud  by [Uri, Joe and Leif, 2021](http://datacolada.org/98).​
+* Original effect size: χ2 (2, n = 101) = 12.58, _p_ = 0.002; χ2 (1, n = 60) = 4.27, _p_ &lt; 0.04; _F_(1, 13,485) = 128.63, _p_ &lt; 0.001].
 * Replication effect size: NA.
 {{< /spoiler >}}
 
-* **Stanford Prison Experiment** (SFE) employed a simulation of a prison environment to  examine the psychological effects of coercive situations. Utilizing role-playing, labeling and social expectations it showed that one third of participants in the role of prison guards displayed aggressive and dehumanizing behavior.
+* **Stanford Prison Experiment** employed a simulation of a prison environment to  examine the psychological effects of coercive situations. Utilizing role-playing, labeling and social expectations it showed that one third of participants in the role of prison guards displayed aggressive and dehumanizing behaviour.
 {{< spoiler text="Statistics" >}}
 * Status: NA
-* Original paper: '[Interpersonal dynamics in a simulated prison](http://pdf.prisonexp.org/ijcp1973.pdf)', Haney, Banks, Zimbardo (1973)  [n= 24 citations (including highly referenced publications) = [2115](https://scholar.google.com/scholar?um=1&ie=UTF-8&lr&cites=9776461194085021745), (GS, January, 2022)].
-* Critiques: First, the study has been criticized for the lack of adherence to the experimental methodology. Although the study has been widely described as an ‘experiment’ it lacks many defining features: 1) it does not define the precise set of manipulated variables, 2) it manipulates multiple variables at time without the proper control over the effects of each one, 3) it does not define the dependent variable and how it will be measured, 4) it does not state any clear hypotheses. It is noteworthy that in the original paper, authors present their work as a “demonstration” not an experiment. Second group of serious issues is the degree of researchers’ ad-hoc interventions that were influencing the behavior of the participants. One of the leading researchers, Philip F. Zimbardo took part in the experimental procedure as the prisons’ “Superintendent”. Another close collaborator of the research team David Jaffe, who initially conceived the idea of the mock-prison study, was playing the role of the “Warden”. Considering that these people knew the goal of the study and were, as later admitted,  interested in the particular outcome (a call for reform of the prison system), the ad-hoc intervention, such as encouraging some of the guards to be more strict and ‘tough’, cast a reasonable doubt on the role of experimentator' expectations on the final results of the study. The third group of issues is sampling. Namely, the study has been conducted on a small (n=24, n per condition = 12) and largely unrepresentative sample (all males, all college students of similar age, all residents of the United States). Also, despite the screening procedures of the voluntarily applying candidates, it is still possible that a strong ‘demand characteristic’ and ‘self-selection bias’ may have affected the composition of the sample. All the participants have responded to the newspaper ad about wanting help in  “psychological study of prison life”. The last issue with the Stanford Prison Experiment is the interpretation of the results. Even if the discovered effect is trustworthy (and above mentioned issues put this into questions), there is no clear theoretical interpretation of what this finding actually proves. Some critics argue that violent behavior of the guards may be rooted in their following of a strong leadership, rather than from their immersion into attributed social role. Some specific works addressing criticism to the original study are listed as follows:  \
-[Le Texier](https://www.ncbi.nlm.nih.gov/pubmed/31380664) (2019) [commentary: (citations: 38), (GS, January, 2022)] \
-[Banuazizi, Mahavedi ](https://content.apa.org/record/1975-27442-001)(1975) [methodological analysis: (citations: 118), (GS, January 2022)] \
-[Festinger 1980](https://psycnet.apa.org/record/2003-00168-000) [book: (citations: 132), (GS, January 2022)] \
-[Haslam, Reicher, Van Bavel 2019](https://psycnet.apa.org/doiLanding?doi=10.1037%2Famp0000443)<span style="text-decoration:underline;"> </span>[methodological analysis: (citations: 37), (GS, January 2022)] \
-[Griggs, Whitehead 2014](https://journals.sagepub.com/doi/10.1177/0098628314549703) [textbook analysis: (citations: 37), (GS, January 2022)] \
-[Griggs 2014 ](https://journals.sagepub.com/doi/10.1177/0098628314537968)[textbook analysis: (citations: 48), (GS, January 2022)] \
-[Blum 2018 ](https://gen.medium.com/the-lifespan-of-a-lie-d869212b1f62)[media coverage: (citations: 31), (GS, January 2022)] \
-[LeTexier 2020 ](https://psyarxiv.com/9a2er/)[preprint: (citations: 0), (GS, January 2022)] \
-[Izydorczak, Wicher 2020 ](https://psyarxiv.com/bj6p5/)[preprint (citations: 0), (GS, January, 2022)] \
-[Reicher and Haslam](https://bpspsychub.onlinelibrary.wiley.com/doi/full/10.1348/014466605X48998) 2011  [experimental case study but not exact replication of SFE: n = 15, (citations: ~435)(GS, January 2022)] \
-[Lovibond, Adams, Adams 1979 ](https://www.tandfonline.com/doi/abs/10.1080/00050067908254355)[original research but not exact replication of SFE: n = 60, (citations: 55), (GS, January, 2022))
+* Original paper: '[Interpersonal dynamics in a simulated prison](http://pdf.prisonexp.org/ijcp1973.pdf)', Haney, Banks, Zimbardo (1973)  [n=24, citations: [2115](https://scholar.google.com/scholar?um=1&ie=UTF-8&lr&cites=9776461194085021745) (including highly referenced publications), (GS, January, 2022)].
+* Critiques: First, the study has been criticized for the lack of adherence to the experimental methodology. Although the study has been widely described as an ‘experiment’ it lacks many defining features: 1) it does not define the precise set of manipulated variables, 2) it manipulates multiple variables at time without the proper control over the effects of each one, 3) it does not define the dependent variable and how it will be measured, 4) it does not state any clear hypotheses. It is noteworthy that in the original paper, authors present their work as a “demonstration” not an experiment. Second group of serious issues is the degree of researchers’ ad-hoc interventions that were influencing the behaviour of the participants. One of the leading researchers, Philip F. Zimbardo took part in the experimental procedure as the prisons’ “Superintendent”. Another close collaborator of the research team David Jaffe, who initially conceived the idea of the mock-prison study, was playing the role of the “Warden”. Considering that these people knew the goal of the study and were, as later admitted,  interested in the particular outcome (a call for reform of the prison system), the ad-hoc intervention, such as encouraging some of the guards to be more strict and ‘tough’, cast a reasonable doubt on the role of experimentator' expectations on the final results of the study. The third group of issues is sampling. Namely, the study has been conducted on a small (n=24, n per condition = 12) and largely unrepresentative sample (all males, all college students of similar age, all residents of the United States). Also, despite the screening procedures of the voluntarily applying candidates, it is still possible that a strong ‘demand characteristic’ and ‘self-selection bias’ may have affected the composition of the sample. All the participants have responded to the newspaper ad about wanting help in  “psychological study of prison life”. The last issue with the Stanford Prison Experiment is the interpretation of the results. Even if the discovered effect is trustworthy (and above mentioned issues put this into questions), there is no clear theoretical interpretation of what this finding actually proves. Some critics argue that violent behaviour of the guards may be rooted in their following of a strong leadership, rather than from their immersion into attributed social role. Some specific works addressing criticism to the original study are listed as follows:  \
+[Le Texier](https://www.ncbi.nlm.nih.gov/pubmed/31380664) (2019) [commentary; citations: 38, (GS, January, 2022)]
+[Banuazizi, Mahavedi ](https://content.apa.org/record/1975-27442-001)(1975) [methodological analysis; citations: 118, (GS, January 2022)]
+[Festinger 1980](https://psycnet.apa.org/record/2003-00168-000) [book; citations: 132, (GS, January 2022)]
+[Haslam, Reicher, Van Bavel 2019](https://psycnet.apa.org/doiLanding?doi=10.1037%2Famp0000443)<span style="text-decoration:underline;"> </span>[methodological analysis; citations: 37, (GS, January 2022)]
+[Griggs, Whitehead 2014](https://journals.sagepub.com/doi/10.1177/0098628314549703) [textbook analysis; citations: 37, (GS, January 2022)]
+[Griggs 2014 ](https://journals.sagepub.com/doi/10.1177/0098628314537968)[textbook analysis; citations: 48, (GS, January 2022)]
+[Blum 2018 ](https://gen.medium.com/the-lifespan-of-a-lie-d869212b1f62)[media coverage; citations: 31, (GS, January 2022)]
+[LeTexier 2020 ](https://psyarxiv.com/9a2er/)[preprint; citations: 0, (GS, January 2022)]
+[Izydorczak, Wicher 2020 ](https://psyarxiv.com/bj6p5/)[preprint; citations: 0, (GS, January, 2022)]
+[Reicher and Haslam](https://bpspsychub.onlinelibrary.wiley.com/doi/full/10.1348/014466605X48998) 2011  [experimental case study but not exact replication of SFE; n = 15, citations: ~435, (GS, January 2022)]
+[Lovibond, Adams, Adams 1979 ](https://www.tandfonline.com/doi/abs/10.1080/00050067908254355)[original research but not exact replication of SFE; n = 60, citations: 55, (GS, January, 2022))
 * Original effect size: Key claims were insinuation plus a battery of difference in means tests at up to 20% significance(!). _n_ = 24, data analysis on 21.
 * Replication effect size: N/A
 {{< /spoiler >}}
@@ -332,72 +329,69 @@ Replication effect size: Siev et al. (2018):  g = 0.17, 95% CI [0.04 – 0.31].
 * Replication effect size: [Doliński 2017](https://journals.sagepub.com/doi/abs/10.1177/1948550617693060?journalCode=sppa) is relatively careful, n=80, and found comparable effects to Milgram. Burger (n=70) also finds similar levels of compliance to Milgram, but the level didn't scale with the strength of the experimenter prods (see Table 5: the only real order among the prompts led to universal disobedience), so whatever was going on, it's not obedience. [One selection of follow-up studies](http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.694.7724&rep=rep1&type=pdf) found average compliance of 63%, but suffer from the usual publication bias and tiny samples. (Selection was by a student of Milgram.) The most you can say is that there's weak evidence for compliance, rather than obedience. ("Milgram's interpretation of his findings has been largely rejected.")
 {{< /spoiler >}}
 
-* **Grouping on tribalism effect**. Demonstrates that tribalism between groups arises spontaneously following arbitrary groupings, and depending on the context, it can result in group competition (e.g., in case of scarce resources) or group cooperation (e.g., in case of common obstacles).
+* **Robbers Cave Study**. Utilized arbitrary groupings to demonstrate that tribalism between groups arises spontaneously, and depending on the context, it can result in group competition (e.g., in case of scarce resources) or group cooperation (e.g., in case of superordinate goals and common obstacles)**. **
 {{< spoiler text="Statistics" >}}
 * Status: NA
-* Original paper: '[Superordinate Goals in the Reduction of Intergroup Conflict](https://sci-hub.se/10.1086/222258)', Sherif (1958), [n=[1,010](https://scholar.google.com/scholar?cites=18260372544491880986&as_sdt=2005&sciodt=0,5&hl=en) citations (GS, February, 2022)]. In addition to the original paper, some related books from the author(s) are also highly cited including: '[Groups in harmony and tension](https://psycnet.apa.org/record/1954-02446-000)' by Sherif & Sherif (1958) [n=2,280 citations (GS, February, 2022)] and [Intergroup Conflict and Co-operation](https://books.google.co.uk/books?hl=en&lr=&id=24TwCQAAQBAJ&oi=fnd&pg=PP1&dq=Group+Conflict+and+Co-operation+&ots=ufwdngs5bi&sig=qxT2o26vEi7KdeJxWNqfSYHdaSM&redir_esc=y#v=onepage&q=Group%20Conflict%20and%20Co-operation&f=false)' by Sherif et al, (1961) [n=253 citations (GS, February, 2022)]. Overall, the effect accounts to more than 7000 total citations including the [SciAm puff piece](http://patrick-fournier.com/d/cours13-3140.pdf).
-* Critiques:  No good evidence that tribalism arises spontaneously following arbitrary groupings and scarcity, within weeks, and leads to inter-group violence. The “spontaneous” conflict among children at Robbers Cave was orchestrated by experimenters; tiny sample (maybe 70?); an exploratory study taken as inferential; no control group; there were really three experimental groups - that is, the experimenters had full power to set expectations and endorse deviance; results from their two other studies, with negative results, were not reported. Set aside the ethics: the total absence of consent - the boys and parents had no idea they were in an experiment - or the plan to set the forest on fire and leave the boys to it. Some specific works addressing criticism to the original study are listed as follows: [Billig](https://onlinelibrary.wiley.com/doi/10.1002/ejsp.2420100108) (1976) in passing [book: (808 citations), (GS, February, 2022), see media mention by [Haslam](https://www.nature.com/articles/d41586-018-04582-7) (2018)]; [Perry](https://www.amazon.com/Lost-Boys-Muzafer-Sherifs-experiment/dp/1947534602/ref=sr_1_6?crid=2AMX9Z8LJP4RO&keywords=the+lost+boys&qid=1645026882&s=books&sprefix=the+lost+boys%2Cstripbooks-intl-ship%2C183&sr=1-6) (2018)in passing [book: (citations: [25](https://scholar.google.com/scholar?cites=6737339376009123225&as_sdt=2005&sciodt=0,5&hl=en), (GS, February, 2022), see also media summary by [Shariatmadari](https://www.theguardian.com/science/2018/apr/16/a-real-life-lord-of-the-flies-the-troubling-legacy-of-the-robbers-cave-experiment) (2018) and [Haslam](https://www.nature.com/articles/d41586-018-04582-7) (2018)]. In addition, [Tavris](https://www.psychologicalscience.org/observer/teaching-contentious-classics/comment-page-1) claims that the underlying "realistic conflict theory" is otherwise confirmed. No definitive conclusion can be reached. 
+* Original paper: '[Superordinate Goals in the Reduction of Intergroup Conflict](https://sci-hub.se/10.1086/222258)', Sherif (1958), [n=22, citations: [1,010](https://scholar.google.com/scholar?cites=18260372544491880986&as_sdt=2005&sciodt=0,5&hl=en),(GS, February, 2022)]. In addition to the original paper, some related books from the author(s) are also highly cited including: '[Groups in harmony and tension](https://psycnet.apa.org/record/1954-02446-000)' by Sherif & Sherif (1958) [citations: 2,280 (GS, February, 2022)] and [Intergroup Conflict and Co-operation](https://books.google.co.uk/books?hl=en&lr=&id=24TwCQAAQBAJ&oi=fnd&pg=PP1&dq=Group+Conflict+and+Co-operation+&ots=ufwdngs5bi&sig=qxT2o26vEi7KdeJxWNqfSYHdaSM&redir_esc=y#v=onepage&q=Group%20Conflict%20and%20Co-operation&f=false)' by Sherif et al, (1961) [citations: 253, (GS, February, 2022)]. Overall, the effect accounts to more than 4000 total citations including the [SciAm piece](http://patrick-fournier.com/d/cours13-3140.pdf).
+* Critiques:  No good evidence that tribalism arises spontaneously following arbitrary groupings and scarcity, within weeks, and leads to inter-group violence. The “spontaneous” conflict among children at Robbers Cave was orchestrated by experimenters; tiny sample (maybe 70?); an exploratory study taken as inferential; no control group; there were really three experimental groups - that is, the experimenters had full power to set expectations and endorse deviance; results from their two other studies, with negative results, were not reported. Set aside the ethics: the total absence of consent - the boys and parents had no idea they were in an experiment - or the plan to set the forest on fire and leave the boys to it. Some specific works addressing criticism to the original study are listed as follows:
+  * [Billig](https://onlinelibrary.wiley.com/doi/10.1002/ejsp.2420100108) (1976) in passing [book; citations: 808, (GS, February, 2022), see media mention by [Haslam](https://www.nature.com/articles/d41586-018-04582-7) (2018)]; 
+  * [Perry](https://www.amazon.com/Lost-Boys-Muzafer-Sherifs-experiment/dp/1947534602/ref=sr_1_6?crid=2AMX9Z8LJP4RO&keywords=the+lost+boys&qid=1645026882&s=books&sprefix=the+lost+boys%2Cstripbooks-intl-ship%2C183&sr=1-6) (2018)in passing [book; citations: [25](https://scholar.google.com/scholar?cites=6737339376009123225&as_sdt=2005&sciodt=0,5&hl=en), (GS, February, 2022), see also media summary by [Shariatmadari](https://www.theguardian.com/science/2018/apr/16/a-real-life-lord-of-the-flies-the-troubling-legacy-of-the-robbers-cave-experiment) (2018) and [Haslam](https://www.nature.com/articles/d41586-018-04582-7) (2018)].
+  * [Tavris](https://www.psychologicalscience.org/observer/teaching-contentious-classics/comment-page-1) also claims that the underlying "realistic conflict theory" is otherwise confirmed. No definitive conclusion can be reached. 
 * Original effect size: N/A. Not reported in conventional format. (Rationale: "results obtained through observational methods were cross-checked with results obtained through sociometric technique, stereotype ratings of in-groups and outgroups, and through data obtained by techniques adapted from the laboratory. Unfortunately, these procedures cannot be elaborated here.")
 * Replication effect size: N/A
 {{< /spoiler >}}
 
-* **Screen time and wellbeing**. Lots of screen-time is [not strongly associated](http://www.ox.ac.uk/news/2019-01-15-technology-use-explains-most-04-adolescent-wellbeing) with low wellbeing; it explains about as much of teen sadness as eating potatoes, 0.35%.
+* **Digital technology use and adolescent wellbeing**. Adolescents who spent more time on new media (including social media and electronic devices such as smartphones) are more likely to report mental health issues.
 {{< spoiler text="Statistics" >}}
-* Original paper: Media speculation? (millions of 'citations').
-* Critiques: [Orben 2019](https://www.nature.com/articles/s41562-018-0506-1), n=355,358
-* Original effect size: N/A
+* Status: N/A
+* Original paper: [‘Increases in depressive symptoms, suicide-related outcomes, and suicide rates among U.S. adolescents after 2010 and links to increased new media screen-time](https://journals.sagepub.com/doi/abs/10.1177/2167702617723376)’ by Twenge et al (2010), [n=506,820, citations: [910](https://scholar.google.com/scholar?cites=12743676341485172872&as_sdt=2005&sciodt=0,5&hl=en), (GS, February, 2022)] .
+* Critiques: A large-scale analysis  on the association between adolescent well-being and digital technology use, demonstrates that screen time accounts for only 0.4 % of the variation in well-being of adolescents. Hence, the increased screen-time is [not strongly associated](http://www.ox.ac.uk/news/2019-01-15-technology-use-explains-most-04-adolescent-wellbeing) with a decreased wellbeing in adolescents.  [Orben & Przybylski](https://www.nature.com/articles/s41562-018-0506-1)  (2019), [n=355,358, citations=[621](https://scholar.google.com/scholar?cites=11290629220508260702&as_sdt=2005&sciodt=0,5&hl=en) (GS, February, 2022)]
+* Original effect size: d = .27 for the rise in the depressive symptoms among females (2010 through 2015) due to screen media use.
 * Replication effect size: median association of technology use with adolescent well-being was β=−0.035, s.e.=0.004
 {{< /spoiler >}}
 
-* **Anthropomorphism**. Individuals who are lonely are more likely than people who are not lonely to attribute humanlike traits (e.g., free will) to nonhuman agents (e.g., an alarm clock),to fulfill unmet needs for belongingness.
+* **Anthropomorphism**. Individuals who are lonely are more likely than people who are not lonely to attribute humanlike traits (e.g., free will) to nonhuman agents (e.g., an alarm clock),to fulfill unmet needs for belongingness. 
 {{< spoiler text="Statistics" >}}
 * Status: not replicated
-* Original paper: [Creating Social Connection Through Inferential Reproduction: Loneliness and Perceived Agency in Gadgets, Gods, and Greyhounds](https://journals.sagepub.com/doi/full/10.1111/j.1467-9280.2008.02056.x?casa_token=wB20P1GmttgAAAAA%3AxfhrS3yxTMyXdT6JCYs-dfwEmcJZ01bNYn_KP3PxW2a2YOQcIfqT6FSAItyLQEFUSBenEvvElA1n) Epley et al. 2008, n=20 for experiment 1, n=99 for experiment 2, n =57 for experiment 3. \
-(~687 citations: GS, October 2021)
-* Critiques: [Open Science Collaboration 2015](https://osf.io/m5a2c/) [total n=81, citations: 5895; GS] \
-[Bartz et al. 2016](https://journals.sagepub.com/doi/full/10.1177/0956797616668510?casa_token=qcDJNqQPntEAAAAA%3Aul4FzUrPqPGk0Y2lem5J4E6x2vl0HPz4WRILo-UTZtyf3eKUK7V8-eWpYsvDtf1x-R-qKXWzYPcd), [total n=178, citations: 52; GS]; [Sandstrom & Dunn, 2013](https://osf.io/m5a2c/) [total n=81, citations: 0?]
+* Original paper: [Creating Social Connection Through Inferential Reproduction: Loneliness and Perceived Agency in Gadgets, Gods, and Greyhounds](https://journals.sagepub.com/doi/full/10.1111/j.1467-9280.2008.02056.x?casa_token=wB20P1GmttgAAAAA%3AxfhrS3yxTMyXdT6JCYs-dfwEmcJZ01bNYn_KP3PxW2a2YOQcIfqT6FSAItyLQEFUSBenEvvElA1n) Epley et al. (2008), [n=20 for experiment 1, n=99 for experiment 2, n =57 for experiment 3; ~[722](https://scholar.google.com/scholar?cites=16612236606641696729&as_sdt=2005&sciodt=0,5&hl=en) citations, (GS, March 2022)]
+* Critiques: [Sandstrom & Dunn, Open Science Collaboration (2015](https://osf.io/m5a2c/)) [total n=81, citations: [6314](https://scholar.google.com/scholar?cites=10200793109432081889&as_sdt=2005&sciodt=0,5&hl=en); (GS, March 2022)] [Bartz et al. 2016](https://journals.sagepub.com/doi/full/10.1177/0956797616668510?casa_token=qcDJNqQPntEAAAAA%3Aul4FzUrPqPGk0Y2lem5J4E6x2vl0HPz4WRILo-UTZtyf3eKUK7V8-eWpYsvDtf1x-R-qKXWzYPcd), [total n=178, citations: 52; GS]; 
 * Original effect size: r=0.53
-* Replication effect size: Open Science Collaboration: Bartz et al.: r=0.17; Sandstrom & Dunn: ?
+* Replication effect size: Sandstrom & Dunn, Open Science Collaboration: Bartz et al.: r=0.17. 
 {{< /spoiler >}}
 
-* **Female-named hurricanes are [more deadly](https://www.sciencedirect.com/science/article/pii/S2212094715300517) than male-named ones**. Original effect size was a 176% increase in deaths, driven entirely by four outliers; reanalysis using a greatly expanded historical dataset found a nonsignificant decrease in deaths from female named storms.
+* **Female-named hurricanes are more deadly than male-named ones**. Original effect size was a 176% increase in deaths, driven entirely by four outliers; reanalysis using a greatly expanded historical dataset found a nonsignificant decrease in deaths from female named storms.
 {{< spoiler text="Statistics" >}}
-* Original paper: '[Female hurricanes are deadlier than male hurricanes](https://www.pnas.org/content/111/24/8782)', Jung 2014, n=92 hurricanes discarding two important outliers. \
-(~76 citations).
-* Critiques: [Christensen 2014](https://www.pnas.org/content/111/34/E3497). [Smith 2016](https://sci-hub.se/10.1016/j.wace.2015.11.006), n=420 large storms. \
-(total citations: ~15)
-* Original effect size: d=0.65: [176%](https://www.google.co.uk/search?source=hp&ei=HC1yXtKbBqeRlwTgzplw&q=41.84+%2F+15.15+&oq=41.84+%2F+15.15+&gs_l=psy-ab.3...606.10628..10753...0.0..0.91.412.5......3....1..gws-wiz.......0i7i30j0.raVAib7H4Jk&ved=0ahUKEwjSmciGm6ToAhWnyIUKHWBnBg4Q4dUDCAg&uact=5) increase in deaths from flipping names from relatively masculine to relatively feminine
-* Replication effect size: Smith: 264% decrease in deaths (Atlantic); 103% decrease (Pacific).
+* Status: reversed
+* Original paper: '[Female hurricanes are deadlier than male hurricanes](https://www.pnas.org/content/111/24/8782)', Jung 2014;observational study with n=92 hurricanes discarding two important outliers [citations = 113(GS, Mar 2022)].
+* Critiques: [Christensen 2014](https://www.pnas.org/content/111/34/E3497) [same data, citations = 114(GS, March 2022)]. [Smith 2016 ](https://sci-hub.se/10.1016/j.wace.2015.11.006)[same data, citations = 8(GS, March 2022)].Original effect size: d=0.65: [176%](https://www.google.co.uk/search?source=hp&ei=HC1yXtKbBqeRlwTgzplw&q=41.84+%2F+15.15+&oq=41.84+%2F+15.15+&gs_l=psy-ab.3...606.10628..10753...0.0..0.91.412.5......3....1..gws-wiz.......0i7i30j0.raVAib7H4Jk&ved=0ahUKEwjSmciGm6ToAhWnyIUKHWBnBg4Q4dUDCAg&uact=5) increase in deaths from flipping names from relatively masculine to relatively feminine
+* Replication effect size: Smith: 264% decrease in deaths (Atlantic); 103% decrease (Pacific)
 {{< /spoiler >}}
 
-* **Implicit bias testing for racism**. Implicit bias scores [poorly predict](https://sci-hub.se/10.1037/a0032734) actual bias, r = [0.15](https://lnu.se/globalassets/lmdswp201511.pdf). The operationalisations used to measure that predictive power are [often unrelated to actual discrimination](https://onlinelibrary.wiley.com/doi/abs/10.1111/sjop.12288) (e.g. ambiguous brain activations). Test-retest reliability of [0.44](https://www.researchgate.net/publication/309563293_Temporal_Stability_of_Implicit_and_Explicit_Measures_A_Longitudinal_Analysis/link/5c8a8f1d92851c1df94197eb/download) for race, which is usually classed as “unacceptable”. This isn’t news; the original study also found very low test-criterion correlations.
+* **Implicit bias testing for racism**. Implicit bias scores poorly predict actual bias, r = [0.15](https://lnu.se/globalassets/lmdswp201511.pdf). The operationalisations used to measure that predictive power are [often unrelated to actual discrimination](https://onlinelibrary.wiley.com/doi/abs/10.1111/sjop.12288) (e.g. ambiguous brain activations). Test-retest reliability of [0.44](https://www.researchgate.net/publication/309563293_Temporal_Stability_of_Implicit_and_Explicit_Measures_A_Longitudinal_Analysis/link/5c8a8f1d92851c1df94197eb/download) for race, which is usually classed as “unacceptable”. This isn’t news; the original study also found very low test-criterion correlations.
 {{< spoiler text="Statistics" >}}
-* Original paper: '[Measuring individual differences in implicit cognition: The implicit association test](https://psycnet.apa.org/doiLanding?doi=10.1037%2F0022-3514.74.6.1464)', Greenwald 1998, n=28 for Experiment 3 \
-(12,322 citations).
-* Critiques: [Oswald 2013](https://sci-hub.se/10.1037/a0032734), meta-analysis of 308 experiments. [Carlsson 2015](https://lnu.se/globalassets/lmdswp201511.pdf). (total citations: ~650)
+* Status: mixed
+* Original paper: '[Measuring individual differences in implicit cognition: The implicit association test](https://groups.psych.northwestern.edu/rosenfeld/documents/greenwald98IAT.pdf)', Greenwald 1998, n=28 for Experiment 3 (12,322 citations).
+* Critiques: [Oswald et al. 2013](http://bear.warrington.ufl.edu/brenner/mar7588/Papers/oswald-jpsp2013.pdf), meta-analysis of 308 experiments [citations= 900(GS, Dec 2021)]. [Carlsson and Agerström, 2015](https://lnu.se/globalassets/lmdswp201511.pdf) [citations= 84(GS, Dec 2021)]. [Schimmack 2021](https://doi.org/10.1177/1745691619863798) [citations= 101(GS, Dec 2021)]. [Schimmack 2019](https://journals.sagepub.com/doi/10.1177/1745691619863798) [citations= 113(GS, Jan 2022)] critical review of previous studies, [Forscher et al. 2019](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6687518/pdf/nihms-1017350.pdf)[citations= 459(GS, Jan 2022)], [Marchery 2021](https://wires.onlinelibrary.wiley.com/doi/full/10.1002/wcs.1569?casa_token=62xeAxMgE0wAAAAA%3AEiZuGpbw22N_fJ85Q7Ixjmqj2JH0X_jL086xHuM7h2d_oIdPdOeEeTRq3UQJUagIGzEGqn1aZe_G) [citations= 3(GS, Jan 2022)]
 * Original effect size: attitude d=0.58; r=0.12.
 * Replication effect size: Oswald: stereotype IAT r=0.03 [-0.08, 0.14], attitude IAT r=0.16 [0.11, 0.21]
 {{< /spoiler >}}
 
-* The **Pygmalion effect**, that a teacher’s expectations about a student affects their performance, is at most [small, temporary, and inconsistent](https://journals.sagepub.com/doi/abs/10.1207/s15327957pspr0902_3), r&lt;0.1 with a reset after weeks. Rosenthal’s original claims about massive IQ gains, persisting for years, are straightforwardly false (“The largest gain… 24.8 IQ points in excess of the gain shown by the controls.”), and used an invalid test battery. Jussim: “90%–95% of the time, students are unaffected by teacher expectations”.
+* The **Pygmalion effect**, the effect of a teacher’s expectations on a student’s performance, is at most [small, temporary, and inconsistent](https://journals.sagepub.com/doi/abs/10.1207/s15327957pspr0902_3), r&lt;0.1 with a reset after weeks. Rosenthal’s original claims about massive IQ gains, persisting for years, are straightforwardly false (“The largest gain… 24.8 IQ points in excess of the gain shown by the controls.”), and used an invalid test battery. Jussim: “90%–95% of the time, students are unaffected by teacher expectations”.
 {{< spoiler text="Statistics" >}}
-* Original paper: '[Teachers' expectancies: Determinants of pupils' IQ gains](https://journals.sagepub.com/doi/10.2466/pr0.1966.19.1.115)', Rosenthal 1966, n around 320. (700 citations, but the [popularisation](https://link.springer.com/article/10.1007/BF02322211) has 10,500).
-* Critiques: [Raudenbush 1984](https://psycnet.apa.org/record/1984-16218-001), [Thorndike 1986](https://journals.sagepub.com/doi/10.3102/00028312005004708), [Spitz 1999](https://www.sciencedirect.com/science/article/abs/pii/S0160289699000264), [Jussim 2005](https://journals.sagepub.com/doi/abs/10.1207/s15327957pspr0902_3) (total citations: ~2100)
+* Status: not replicated
+* Original paper: '[Teachers' expectancies: Determinants of pupils' IQ gains](https://journals.sagepub.com/doi/10.2466/pr0.1966.19.1.115)', Rosenthal and Jacobson, 1966, n around 320. (700 citations, but the [popularisation](https://link.springer.com/article/10.1007/BF02322211) has 10,500).
+* Critiques: [Raudenbush 1984](https://web.s.ebscohost.com/ehost/pdfviewer/pdfviewer?vid=0&sid=15780634-fea0-4165-bcfd-38a4665782e5%40redis), [Thorndike 1986](https://journals.sagepub.com/doi/10.3102/00028312005004708), [Spitz 1999](https://www.sciencedirect.com/science/article/abs/pii/S0160289699000264), [Jussim and Harber 2005](https://journals.sagepub.com/doi/abs/10.1207/s15327957pspr0902_3) (total citations: ~2100)
 * Original effect size: Average +3.8 IQ, d=0.25.
 * Replication effect size: Raudenbush: d=0.11 for students new to the teacher, tailing to d=0 otherwise. Snow: median effect d=0.035.
 {{< /spoiler >}}
 
-* **Stereotype threat suppressing girls’ maths scores**. i.e. the interaction between gender and stereotyping.
+* **Stereotype threat on Asian women’s mathematical performance**, i.e. the interaction between race, gender and stereotyping. This study found that Asian-American women performed better on a math test when their ethnic identity was activated, but worse when their gender identity was activated, compared with a control group who had neither identity activated.
 {{< spoiler text="Statistics" >}}
-* Status: mixed
-* Original paper: '[Stereotype Threat and Women’s Math Performance](https://www.sciencedirect.com/science/article/abs/pii/S0022103198913737)', Spencer 1999, n=30 women (~3900 citations).
-* Critiques: [Stoet & Geary 2012](https://journals.sagepub.com/doi/10.1037/a0026617), meta-analysis of 23 studies. [Ganley 2013](https://psycnet.apa.org/record/2013-02693-001), n=931. [Flore 2015](https://www.sciencedirect.com/science/article/pii/S0022440514000831), meta-analysis of 47 measurements. [Flore 2018](https://www.tandfonline.com/doi/full/10.1080/23743603.2018.1559647), n=2064. (total citations: ~500)
-* Original effect size: Not reported properly; Fig.2 looks like control-group-women-mean-score = 17 with sd=20, and experiment-group-women-score = 5 with sd=15. Which might mean roughly d= −0.7.
-* Replication effect size: \
-Stoet: d= −0.17 [−0.27, −0.07] for unadjusted scores. \
-Ganley: various groups, d= -0.27 to -0.17. \
-Flore 2015: g= −0.07 [−0.21; 0.06] after accounting for publication bias. \
-Flore 2018: d= −0.05 [−0.18, 0.07]
+* Status: Mixed
+* Original paper: [‘Domain-specific Effects of Stereotypes on Performance’](https://journals.sagepub.com/doi/10.1111/1467-9280.00111), Shih et al.1999
+* Critiques: [Gibson et al. 2014](http://dx.doi.org/10.1027/1864-9335/a000184); [Moon and Roeder 2014](https://doi.org/10.1027/1864-9335/a000193)
+* Original effect size: Asian-identity-salient > control > female-identity-salient, r=.27; Asian-identity-salient > female-identity-salient, r=.35. 
+* Replication effect size: Gibson et al. 2014: No group differences, η2=.01; Asian-primed vs. female-primed, p=.18, d=.27; Including only those who were aware of the stereotypes, group accuracy p=.02, η2=.04, and the means followed the predicted pattern, Asian (M=.63), Control (M=.55), and Female (M=.51); Likewise, female-primed participants performed worse than Asian-primed participants, p=.02, d=.53. Moon & Roeder (2014): Group accuracy, p=.44, g2=.004; female-primed and Asian-primed conditions, p=.43, d=.17; Analysing just those who were aware of the stereotype, p=.28,g2=.012; female-primed  participants  vs. Asian-primed  participants, p=.28, d=.27. 
 {{< /spoiler >}}
 
 * **Stereotype threat on gender differences in political knowledge**, the idea that making gender stereotypes about political knowledge salient decrease womens’ performance on political knowledge tests. The replication effort showed no significant effect of gender stereotype activation on womens’ performance on a political knowledge test. ​
@@ -409,13 +403,13 @@ Flore 2018: d= −0.05 [−0.18, 0.07]
 * Replication effect size: partial η<sup>2</sup> =0.00​. \
 {{< /spoiler >}}
 
-* **Increase in “narcissism”** (leadership, vanity, entitlement) in young people over the last thirty years. The basic counterargument is that they’re misidentifying an age effect as a cohort effect (The narcissism construct [apparently](https://journals.sagepub.com/doi/abs/10.1177/1745691609357019) decreases by about a standard deviation between adolescence and retirement.) “every generation is Generation Me” \
-All such “generational” analyses are at best needlessly noisy approximations of social change, since generations are not discrete natural kinds, and since people at the supposed boundaries are indistinguishable.
+* **Increase in narcissism** (leadership, vanity, entitlement) in young people over the last thirty years. It's [an ancient hypothesis.](https://quoteinvestigator.com/2010/05/01/misbehave) The basic counterargument is that they’re misidentifying an age effect as a cohort effect (The narcissism construct [apparently](https://journals.sagepub.com/doi/abs/10.1177/1745691609357019) decreases by about a standard deviation between adolescence and retirement.) “every generation is Generation Me”
 {{< spoiler text="Statistics" >}}
-* Original paper: [Twenge 2013](https://journals.sagepub.com/doi/full/10.1177/2167696812466548), 'Generation Me', but it's [an ancient hypothesis.](https://quoteinvestigator.com/2010/05/01/misbehave) Various studies, including national surveys (~2600 citations).
-* Critiques: [Five](https://www.sciencedirect.com/science/article/abs/pii/S0092656608001712) [studies](https://www.gleech.org/psych) [from](https://www.gleech.org/psych) [Donnellan](https://www.gleech.org/psych) [and Trzesniewski](https://journals.sagepub.com/doi/abs/10.1177/1745691609356789), n=477,380. [Arnett 2013](https://journals.sagepub.com/doi/full/10.1177/2167696812466842), [Roberts 2017](https://journals.sagepub.com/doi/abs/10.1177/1745691609357019), [Wetzel 2017](https://escholarship.org/uc/item/5zq0d131)(~660 total citations)
+* Status: not replicated
+* Original paper: 'The Evidence for Generation Me and Against Generation We',  [Twenge 2013](https://journals.sagepub.com/doi/full/10.1177/2167696812466548), review of  various studies, including national surveys [citations=251(GS, March 2022).
+* Critiques: [Donnellan](https://www.gleech.org/psych) [and Trzesniewski](https://journals.sagepub.com/doi/abs/10.1177/1745691609356789)  [k = 5, n=477,380, citations = 432(GS, March 2022)] . [Arnett 2013](https://journals.sagepub.com/doi/full/10.1177/2167696812466842) [unsystematic review, citations=171(GS, March 2022)], [Roberts 2017](https://journals.sagepub.com/doi/abs/10.1177/1745691609357019) [reanalysis of original data and analysis of new sample n = 476, citations=195(GS, March 2022)], [Wetzel 2017](https://escholarship.org/uc/item/5zq0d131)[1990s: n = 1,166; 2000s: n = 33,647; 2010s: n = 25,412, citations=101(GS, March 2022)].(~660 total citations), Meta-analysis: [Hamamura et al. 2020](https://www.sciencedirect.com/science/article/abs/pii/S0191886919306476?casa_token=qE5buOQueq8AAAAA:NCXuXV6p-fEPLlchdyGzpyeTF-ERyZSAv3atmS7MBKuMrkVPvNpmSMhRUhZoXRg0WKx151PCcQ) [total n =24990, citations = 5(GS, March 2022)].
 * Original effect size: [d=0.37](https://journals.sagepub.com/doi/abs/10.1177/1948550609355719) increase in NPI scores (1980-2010), n=49,000.
-* Replication effect size: Roberts doesn't give a d but it's near 0. something like d=0.03 ((15.65 - 15.44) / 6.59), Wetzel: d = -0.27 (1990 - 2010)
+* Replication effect size: Roberts doesn't give a d but it's near 0. something like d=0.03 ((15.65 - 15.44) / 6.59). Wetzel: d = -0.27 (1990 - 2010). Hamamura: d(leadership) = -0.26, d(vanity)=-0.39, d(entitlement) = -0.23. 
 {{< /spoiler >}}
 
 * **Minimal group effect** (MGE), alt-term = **Minimal group paradigm**. Ingroup bias (i.e., the tendency to prefer ingroup members) that appears when participants are assigned to previously unfamiliar, experimentally created and largely meaningless social identities.
@@ -426,49 +420,48 @@ All such “generational” analyses are at best needlessly noisy approximations
 * Critique: Studies by [Kerr, Ao, Hogg, & Zhang](https://www.sciencedirect.com/science/article/abs/pii/S0022103117306352?via%3Dihub), 2018 (comparing US and Australia), and [Falk, Heine, & Takemura](https://journals.sagepub.com/doi/abs/10.1177/0022022113492892), 2014, emphasized the cultural variation of MGE.​
 {{< /spoiler >}}
 
-* **Solomon Asch’s conformity study**. The original study is regarded as credible and the main effect has been confirmed multiple times in many cultural contexts (see: Bond & Smith, 1996 - [https://doi.org/10.1037/0033-2909.119.1.111](https://psycnet.apa.org/doi/10.1037/0033-2909.119.1.111)). Nevertheless, the main effect of an original study had been widely misinterpreted and incorrectly referred to in both academic and popular literature.​
+* **Solomon Asch’s conformity study**. The study investigated the degree to which a person's own opinions are influenced by those of a group. The original study is regarded as credible and the main effect has been confirmed multiple times in many cultural contexts (see, [Bond and Smith, 1996](https://doi.org/10.1037/0033-2909.119.1.111)). Nevertheless, the main effect of an original study had been widely misinterpreted and incorrectly referred to in both academic and popular literature.​
 {{< spoiler text="Statistics" >}}
 * Status: reversed
-* Original paper:[ Studies of independence and conformity: I. A minority of one against a unanimous majority.](https://psycnet.apa.org/record/2011-16966-001?doi=1)_ _Solomon E. Asch, 1956; experimental 		study, n = 123. [citations = 6558, google scholar, 10/2021]​.
-* Critiques: [Friend et al. (1990)](https://doi.org/10.1002/ejsp.2420200104), citations = 156, 11/2021; [Griggs (2015)](https://doi.org/10.1177/0098628315569939), citations = 12, google scholar, 11/2021.
-* Original effect size: 36.8% of the responses were incorrect (influenced by the majority). The effect has been interpreted by the author as evidence for the prevalence of independence (“_The preponderance of judgments was independent, evidence that under the present conditions the force of the perceived data far exceeded that of the majority._”, Asch, 1956, p.24). Nevertheless, the majority of academic textbooks present the study as evidence for overwhelming conformity, failing to report the evidence of independent tendencies among participants(see: Friend et al., 1990, Griggs, 2015). A common practice seen in many academic textbooks and popular writings is to report the value of “75%” or “76%” as the general indicator of conformity. In reality, this is the fraction of respondents who yielded to the majority in at least one of the twelve trials. The reversal of this value (rarely mentioned in the literature) would be 24% - a fraction of completely independent respondents or 95% - a fraction of respondents who remain independent in at least one of twelve trials. 
-* Replication effect size: [Bond & Smith](http://citeseerx.ist.psu.edu/viewdoc/download;jsessionid=EFB2A69D78906BDA9BC45EF5E41651C8?doi=10.1.1.370.6293&rep=rep1&type=pdf), 1996: d = .92, 95%CI[.89-.96], average rate of incorrect answers: 25%.​
+* Original paper: ‘[Studies of independence ity of one against a unanimous majority.’](https://eclass.uowm.gr/modules/document/file.php/NURED262/%CE%A0%CE%A1%CE%A9%CE%A4%CE%9F%CE%A4%CE%A5%CE%A0%CE%91%20%CE%91%CE%A1%CE%98%CE%A1%CE%91/Asch%20studies%20in%20independence%20and%20conformity%201956%20PM.pdf) Solomon, 1956; n = 123 [citations = 6558, GS, October 2021]​.
+* Critiques: [Friend et al., 1990](http://webpage.pace.edu/yrafferty/Yvonne/AschConformityStudy.pdf); [citations = 156, GS, November 2021]; [Griggs, 2015](https://www.researchgate.net/profile/Richard-Griggs-2/publication/272384315_The_Disappearance_of_Independence_in_Textbook_Coverage_of_Asch's_Social_Pressure_Experiments/links/59710f6da6fdcc64d065dce2/The-Disappearance-of-Independence-in-Textbook-Coverage-of-Aschs-Social-Pressure-Experiments.pdf), citations = 12, GS, November 2021.
+* Original effect size: 36.8% of the responses were incorrect (influenced by the majority). The effect has been interpreted by the author as evidence for the prevalence of independence (“_The preponderance of judgments was independent, evidence that under the present conditions the force of the perceived data far exceeded that of the majority._”, Asch, 1956, p.24). Nevertheless, the majority of academic textbooks present the study as evidence for overwhelming conformity, failing to report the evidence of independent tendencies among participants (see: Friend et al., 1990, Griggs, 2015). A common practice seen in many academic textbooks and popular writings is to report the value of “75%” or “76%” as the general indicator of conformity. In reality, this is the fraction of respondents who yielded to the majority in at least one of the twelve trials. The reversal of this value (rarely mentioned in the literature) would be 24% - a fraction of completely independent respondents or 95% - a fraction of respondents who remain independent in at least one of twelve trials. 
+* Replication effect size: [Bond and Smith, 1996](http://citeseerx.ist.psu.edu/viewdoc/download;jsessionid=EFB2A69D78906BDA9BC45EF5E41651C8?doi=10.1.1.370.6293&rep=rep1&type=pdf): _d_ = .92, 95%CI[.89-.96], average rate of incorrect answers: 25%.	
 {{< /spoiler >}}	
 
-* **Dynamic norms**, Information about increasing minority norms increasing interest/engagement in minority behaviour.​
+* **Dynamic norms**. Information about increasing minority norms increases interest/engagement in minority behaviour.​
 {{< spoiler text="Statistics" >}}
 * Status: mixed
-* Original paper: ‘[Dynamic Norms Promote Sustainable Behavior, Even if It Is Counternormative](https://journals.sagepub.com/doi/full/10.1177/0956797617719950)’, Sparkman & Walton (2017); experimental, _n_s = 122, 306. [citations = 126, altmetric = 367, Dec 2021)]​.
-* Critiques: [Aldoh et al., 2021](https://www.mdpi.com/2071-1050/13/15/8315) [n=846, citations=1, Dec 2021]. 
-* Original effect size: d = 0.31 to d = 0.41​.
-* Replication effect size: Aldoh et al., 2021: _d_ = −0.02.​
+* Original paper: ‘[Dynamic Norms Promote Sustainable Behavior, Even if It Is Counternormative](https://brooketully.com/wp-content/uploads/2020/04/DynamicNorms_Sparkman17.pdf)’, Sparkman and Walton, 2017; Study:  n = 122, 306. [citations = 126, altmetric = 367, December 2021)]​.
+* Critiques: [Aldoh et al., 2021](https://www.mdpi.com/2071-1050/13/15/8315) [n = 846, citations=1, GS, December 2021]. 
+* Original effect size: _d_ = 0.31 to _d_ = 0.41​.
+* Replication effect size: Aldoh et al., 2021: _d_ = −0.02.
 {{< /spoiler >}} 
 
-* **Social comparison**, no robust evidence for an interaction effect between body dissatisfaction and social comparison on fat talk.
+* **Social comparison**. No robust evidence for an interaction effect between body dissatisfaction and social comparison on fat talk.
 {{< spoiler text="Statistics" >}}
 * Status: Mixed
-* Original paper: ‘[Who is most likely to fat talk? A social comparison perspective’](https://doi.org/10.1016/j.bodyim.2012.05.004), Corning & Condoli (2012)author year; correlational, N = 143. [citation=61(Google Scholar, Feb 2022)]​.
-* Critiques: [Pollet et al. (2021)](https://doi.org/10.1016/j.bodyim.2021.05.005) [n=189 and n=371, citations=0(Google Scholar, Feb 2022)]. 
-* Original effect size: hedges g = 0.36.
-* Replication effect size: Pollet et al. (2021): hedges g (meta-analysis)=0.02. Hedges’ g = -0.13 to 0.18..​
+* Original paper: ‘[Who is most likely to fat talk? A social comparison perspective’](https://doi.org/10.1016/j.bodyim.2012.05.004), Corning and Condoli, 2012; n = 143. [citation=61(GS, February 2022)]​.
+* Critiques: [Pollet et al., 2021](https://doi.org/10.1016/j.bodyim.2021.05.005) [n = 189 and n = 371, citations=0(GS, February 2022)]. 
+* Original effect size: Hedges’ _g_ = 0.36.
+* Replication effect size: Pollet et al., 2021: Hedges’ _g_ (meta-analysis)=0.02. Hedges’ _g_ = -0.13 to 0.18.​
 {{< /spoiler >}}
 
-* **Bystander effect:** claims that the feeling of responsibility diffuses with an increasing number of other observers. Research about the bystander effect was sparked by the 1964 murder of Catherine “Kitty” Genovese. See this _[New York Times article](https://www.nytimes.com/1964/03/27/archives/37-who-saw-murder-didnt-call-the-police-apathy-at-stabbing-of.html)_ for details. Here’s a more detailed [resource](http://bps.stanford.edu/?page_id=3671). 
+* **Bystander effect**. Claims that the feeling of responsibility diffuses with an increasing number of other observers. Research about the bystander effect was sparked by the 1964 murder of Catherine “Kitty” Genovese. See this _[New York Times article](https://www.nytimes.com/1964/03/27/archives/37-who-saw-murder-didnt-call-the-police-apathy-at-stabbing-of.html)_ for details. Here’s a more detailed [resource](http://bps.stanford.edu/?page_id=3671).  
 {{< spoiler text="Statistics" >}} 
 * Status: reversed
-* Original paper(s): [Darley et al.  (1968)](https://psycnet.apa.org/record/1968-08862-001) experiment, n = 59 [citations = 4181, altmetrics = April 1968]. [Latané and Darley (1968)](https://psycnet.apa.org/record/1969-03938-001), experiment, n = NA [citations = 1869, altmetrics Nov 1968]; [Latané and Nida (1981)](https://psycnet-apa-org.proxy-ub.rug.nl/record/1981-12743-001), review
-* Critiques:[ Fischer et al. (2011)](https://psycnet.apa.org/buy/2011-08829-001), review, [n = 7700, citations = 858, altmetrics = Jul 2011]; [Manning et al. (2007)](https://psycnet.apa.org/buy/2007-13085-001), [citations = 351, altmetric = Sep 2007]
+* Original paper(s): [Darley et al.  (1968)](https://web.archive.org/web/20170808145205id_/http://faculty.uncfsu.edu/tvancantfort/syllabi/gresearch/readings/a_darley.pdf) experiment, n = 59 [citations = 4181, altmetrics = April 1968]. [Latané and Darley (1968)](https://web.archive.org/web/20190224040733id_/http://pdfs.semanticscholar.org/5248/f73d3cf3ce2696ccc241d89c9b2538fd1896.pdf), experiment, n = NA [citations = 1869, altmetrics Nov 1968]; [Latané and Nida (1981)](https://web.archive.org/web/20170809010454id_/http://www.uni-muenster.de/imperia/md/content/psyifp/aeechterhoff/sommersemester2012/schluesselstudiendersozialpsychologiea/latanenida_bystandereffgroupsize_psybull1981.pdf), review
+* Critiques: [Fischer et al. (2011)](https://web.archive.org/web/20170809011034id_/http://www.uni-muenster.de/imperia/md/content/psyifp/aeechterhoff/sommersemester2012/schluesselstudiendersozialpsychologiea/fischerkruegergreitem_bystandermetaana_psybull2011.pdf), review, [n = 7700, citations = 858, altmetrics = July 2011]; [Manning et al. (2007)](https://web.archive.org/web/20111129065740id_/http://www.psych.lancs.ac.uk/people/uploads/MarkLevine20070604T095238.pdf), [citations = 351, altmetric = September 2007]
 * Original effect size: NA
-* Replication effect size: Fischer et al. (2011) g = -0.35.​
+* Replication effect size: Fischer et al. (2011): Hedges’ _g_ = -0.35 
 {{< /spoiler >}}
 
-* **Color red on attractiveness**, one sentence definition. Summary of key conclusion (if applicable).​
-{{< spoiler text="Statistics" >}}
+* **Color red on attractiveness**. Viewing the color red enhances men's attraction to women. In a lingua franca this effect may reflect the amorous meaning in the human mating game. ​{{< spoiler text="Statistics" >}}
 * Status: Mixed
-* Original paper: ‘[Romantic red: Red enhances men’s attraction to women](https://doi.org/10.1016/j.jesp.2012.07.017).’, Elliot and Niesta (2008); experiment, N = 42. [citation=66(Google Scholar, Feb 2022)]​.
-* Critiques: [Peperkoorn et al. (2016)](https://doi.org/10.1177/1474704916673841) [n=830, citations=48(Google Scholar, Feb 2022)]. ​
-* Original effect size: d = .66 to ES=X​.
-* Replication effect size: Peperkoorn et al. (2016; study 1): partial η2 = .03 (in support of white more attractive than red). Peperkoorn et al. (2016; study 2): F = .07.​ Peperkoorn et al. (2016; study 3): d = −.12.​
+* Original paper: ‘['Romantic red: Red enhances men’s attraction to women'](https://web.archive.org/web/20090419084901id_/http://www.psych.rochester.edu:80/faculty/elliot/documents/ElliotNiesta_RomanticRed.2008.pdf), Elliot and Niesta (2008); experiment, N = 42 [citation=66 (GS, February 2022)]​.
+* Critiques: [Peperkoorn et al. (2016)](https://doi.org/10.1177/1474704916673841) [n=830, citations=48 (GS, February 2022)]. ​
+* Original effect size: Cohen’s _d_ = .66 to ES = X​.
+* Replication effect size: Peperkoorn et al. (2016; study 1): partial _η_2 = .03 (in support of white more attractive than red). Peperkoorn et al. (2016; study 2): _F_ = .07.​ Peperkoorn et al. (2016; study 3): _d_ = −.12.
 {{< /spoiler >}}
 
 * **Big brother effect**. An original study reported that being watched makes someone more likely to cooperate. People who viewed by a pair of eyes (even when a picture of eyes and not a real person) were three times more likely to contribute to an honesty box used to collect money for drinks (compared to participants who instead saw a picture of flowers), but later meta-analyses did not find this result using very large sample sizes.
@@ -506,2914 +499,2895 @@ All such “generational” analyses are at best needlessly noisy approximations
 
 ## **Positive Psychology**
 
-* No good evidence that taking a **“power pose”** lowers cortisol, raises testosterone, risk tolerance. That a person can, by assuming two simple 1-min poses, embody power and instantly become more powerful has real-world, actionable implications. After the initial backlash, it focussed on subjective effect, a claim about “[increased feelings of power](https://journals.sagepub.com/eprint/CzbNAn7Ch6ZZirK9yMGH/full)”. Even then: [weak evidence](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3198470) for decreased “feelings of power” from contractive posture only. My reanalysis is [here](https://github.com/g-leech/argmin-gravitas/blob/master/scripts/psych/cuddy2010.ipynb).
+* **Power pose.** Taking on a power pose lowers cortisol and risk tolerance, while it  raises testosterone and feelings of power.
 {{< spoiler text="Statistics" >}}
-* Original paper: '[Power Posing : Brief Nonverbal Displays Affect Neuroendocrine Levels and Risk Tolerance](https://www.ncbi.nlm.nih.gov/pubmed/20855902)', Cuddy, Carney & Yap 2010, n=42 mixed sexes.
-* [Many](https://dataverse.harvard.edu/file.xhtml?persistentId=doi:10.7910/DVN/FMEGS6/AYAZJ7&version=3.0), [many errors](https://statmodeling.stat.columbia.edu/2016/01/26/more-power-posing/). [Disowned](https://faculty.haas.berkeley.edu/dana_carney/pdf_My%20position%20on%20power%20poses.pdf) by one of its authors. Thanks to a reanalysis by someone else, [we actually have the data](https://dataverse.harvard.edu/file.xhtml?persistentId=doi:10.7910/DVN/FMEGS6/U2QT5N&version=3.0) (~1100 citations; 56m views on TED).
-* Critiques: [Ranehill 2015](https://journals.sagepub.com/doi/10.1177/0956797614553946), n=200 (not an exact replication); \
-[Garrison 2016](https://pdfs.semanticscholar.org/314f/2bb18c67a39791de8b4a799e01738a3d7a88.pdf), n=305; \
-[Simmons and Simonsohn 2016](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2791272), p-curve check of 33 studies; \
-[Ronay 2017](https://www.tandfonline.com/doi/full/10.1080/23743603.2016.1248081), n=108; \
-[Metzler 2019](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6585898/#!po=40.4762), n=82 men. \
-[Crede 2017](https://journals.sagepub.com/doi/abs/10.1177/1948550617714584?journalCode=sppa), [Crede 2018](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3198470): multiverse analysis shows that the original result is heavily dependent on posthoc analysis choices. \
-(total citations: ~400)
-* Original effect sizes: \
-h = 0.61 in risk-taking, \
-d = -0.30 for cortisol, \
-d=0.35 for testosterone \
-d=0.79 for feelings of power
-* Replication effect size: risk-taking d = [−0.176], \
-testosterone d = [−0.2, −0.19, 0.121], \
-cortisol d = [−0.157, 0.22, 0.028, 0.034] \
-most CIs overlapping 0
+* Status: not replicated
+* Original paper: '[Power Posing : Brief Nonverbal Displays Affect Neuroendocrine Levels and Risk Tolerance](https://journals.sagepub.com/doi/10.1177/0956797610383437?url_ver=Z39.88-2003&rfr_id=ori:rid:crossref.org&rfr_dat=cr_pub%20%200pubmed)', Carney et al. (2010), n=42 mixed sexes;  2010, [citations = citation = 1450 (GS, April, 2022)]
+* Critiques: [Garrison et al. (2016](https://journals.sagepub.com/doi/full/10.1177/1948550616652209)), [n=305, citations = 70 (GS, April 2022)]; [Metzler and Grezes (2019)](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6585898/#!po=40.4762), [n = 82 men, citations = 3 (GS, April 2022)]  [Ranehill (2015](https://journals.sagepub.com/doi/10.1177/0956797614553946)),[total n=200, citations = 291 (GS, April 2022)]; [Ronay 2017](https://www.tandfonline.com/doi/full/10.1080/23743603.2016.1248081) [n=108, citations = 38 (GS, April 2022)]; 
+* Original effect sizes: Φ = 0.30 in risk-taking from Carney et al. (2010), Sources unknown: _d_ = -0.30 for cortisol, _d_=0.35 for testosterone _d_=0.79 for feelings of power
+* Replication effect size: Garrison et al. (2016): feeling of power: _n<sub>p<sup>2</sup></sub>_ = .016; Metzler and Grezes (2019): cortisol: _n<sub>p<sup>2 </sup></sub>_= 0.02, testosterone: _n<sub>p<sup>2 </sup></sub>_= 0.01; Ranehill (2015): cortisol: _d_ = -0.157, feelings of power: _d_ = 0.34; risk taking: _d_ = -0.176, testosterone: _d_ = -0.200; Ronay (2017):  cortisol: _d_ = 0.034, feeling of power: _d_ = 0.226, testosterone: _d_ = 0.121.
 {{< /spoiler >}}
 
 * **Facial Feedback**. Smiling causes a good mood, while pouting produces a bad mood.
 {{< spoiler text="Statistics" >}}
 * Status: not replicated
-* Original paper: '[Inhibiting and Facilitating Conditions of the Human Smile: A Nonobtrusive Test of the Facial Feedback Hypothesis](https://jhrcook.github.io/wagenmaker-data-analysis/papers/Strack_1988_Inhibiting-and-facilitating-conditions-of-the-human-smile-a-nonobtrusive-test-of-the-facial-feedback-hypothesis.pdf)',  Strack et al. (1988); 2 studies with n’s =  92, 83. t[ citation=  \
-2577(GS, February, 2022)].
+* Original paper: '[Inhibiting and Facilitating Conditions of the Human Smile: A Nonobtrusive Test of the Facial Feedback Hypothesis](https://jhrcook.github.io/wagenmaker-data-analysis/papers/Strack_1988_Inhibiting-and-facilitating-conditions-of-the-human-smile-a-nonobtrusive-test-of-the-facial-feedback-hypothesis.pdf)',  Strack et al. (1988); 2 studies with n’s =  92, 83. [citation = 2577(GS, February, 2022)].
 * Critiques: [Coles et al. (2019)](https://psyarxiv.com/svjru/)[(meta-analysis k = 98, citation= 115, (GS, February, 2022)]; [Wagenmakers et al (2016](https://www.ejwagenmakers.com/2016/WagenmakersEtAl2016Strack.pdf))[meta-analysis n=1894, citation=349, (GS, February, 2022)];  [Schimmack (2017](https://replicationindex.com/2017/09/04/the-power-of-the-pen-paradigm-a-replicability-analysis/))
-* Original effect size: Study 1:  _d_ = 0.82 
-* Replication effect size: 
-  * Meta-analytic estimate: d= 0.2 [0.14, 0.26]. No evidence of publication bias but d = 0.2 and targeting 80% to detect a real phenomenon one needs more than 500 participants. All included studies have only less than 100.<span style="text-decoration:underline;"> [Schimmack](https://replicationindex.com/2017/09/04/the-power-of-the-pen-paradigm-a-replicability-analysis/)</span> finds strong evidence of publication bias on a subset of these papers, using a proper power analysis. 98 pieces of very weak evidence cannot sum to strong evidence, whatever the p-value says. ([The author agrees](https://twitter.com/coles_nicholas_/status/1116706173833576450).)
-  * All effect sizes are located in Wagenmakers et al. 2016: 
-  * Albohn: Study 1: d = 0.14[-0.40 0.67]; Allard: d = 0.16[-0.43 0.75]; Benning: d = -0.02 95% CI [-0.52 0.49]; Bulnes: d = 0.12[-0.43 0.67]; Capaldi: d = -0.11 95% CI[-0.69, 0.46];  Chasten: d = -0.05[-0.65 0.54], Holmes: d = 0.20[-0.35 0.75]; Koch: d = -0.19[0.73 0.35]; Korb: d = 0.02[-0.65 0.69]; Lynott: d = 0.37[0.19,0.92]; Oosterwijk: d = -0.24[-0.76 -0.28]; Ozdogru: d= -0.58[-1.41 0.26]; Pacheco-Unguetti: d = -0.13[-0.76 0.49] Talarico: d = 0.02[-0.51 0.56]; Wagenmakers: d = 0.15[-0.27 0.57]; Wayland: d = -0.20[-0.74 0.34] Zeelenberg: d = 0.35[-0.18 0.88]. Meta-analytic effect size: d = 0.03]-0.11, 0.16].
-  * All effect sizes are located in [Coles et al. (2019)](https://psyarxiv.com/svjru/):
-
-    <table>
-      <tr>
-      <td>
-    Study
-      </td>
-      <td>Publication status
-      </td>
-      <td>N
-      </td>
-      <td><em>d</em>
-      </td>
-      </tr>
-      <tr>
-      <td>Andréasson & Dimberg (2008)
-      </td>
-      <td>published
-      </td>
-      <td>112
-      </td>
-      <td>-0.22
-      </td>
-      </tr>
-      <tr>
-      <td>Andréasson (2010) Study 3
-      </td>
-      <td>unpublished
-      </td>
-      <td>48
-      </td>
-      <td>-0.05
-      </td>
-      </tr>
-      <tr>
-      <td> 	Andréasson (2010) Study 3
-      </td>
-      <td>unpublished
-      </td>
-      <td>48
-      </td>
-      <td>-0.35
-      </td>
-      </tr>
-      <tr>
-      <td>Andréasson (2010) Study 4
-      </td>
-      <td>unpublished
-      </td>
-      <td>44
-      </td>
-      <td>0.49
-      </td>
-      </tr>
-      <tr>
-      <td> 	Andréasson (2010) Study 4
-      </td>
-      <td>unpublished
-      </td>
-      <td>44
-      </td>
-      <td>0.31
-      </td>
-      </tr>
-      <tr>
-      <td>Baumeister et al. (2016)
-      </td>
-      <td>published
-      </td>
-      <td>10
-      </td>
-      <td>1.26
-      </td>
-      </tr>
-      <tr>
-      <td> 	Baumeister et al. (2016)
-      </td>
-      <td>published
-      </td>
-      <td>10
-      </td>
-      <td>0.63
-      </td>
-      </tr>
-      <tr>
-      <td>Bodenhausen et al. (1994)
-      </td>
-      <td>published
-      </td>
-      <td>51
-      </td>
-      <td>0.55
-      </td>
-      </tr>
-      <tr>
-      <td>Bush et al. (1989)
-      </td>
-      <td>published
-      </td>
-      <td>69
-      </td>
-      <td>0.16
-      </td>
-      </tr>
-      <tr>
-      <td>Butler et al. (2003) Study 1
-      </td>
-      <td>published
-      </td>
-      <td>24
-      </td>
-      <td>-0.1
-      </td>
-      </tr>
-      <tr>
-      <td>Butler et al. (2003) Study 2
-      </td>
-      <td>published
-      </td>
-      <td>42
-      </td>
-      <td>-0.83
-      </td>
-      </tr>
-      <tr>
-      <td>Butler et al. (2006)
-      </td>
-      <td>published
-      </td>
-      <td>69
-      </td>
-      <td>-0.03
-      </td>
-      </tr>
-      <tr>
-      <td>Cai et al. (2016)
-      </td>
-      <td>published
-      </td>
-      <td>68
-      </td>
-      <td>-0.08
-      </td>
-      </tr>
-      <tr>
-      <td>Ceschi & Scherer (2003)
-      </td>
-      <td>published
-      </td>
-      <td>64
-      </td>
-      <td>0.74
-      </td>
-      </tr>
-      <tr>
-      <td>Clapp (2012)
-      </td>
-      <td>unpublished
-      </td>
-      <td>99
-      </td>
-      <td>0.69
-      </td>
-      </tr>
-      <tr>
-      <td> 	Clapp (2012)
-      </td>
-      <td>unpublished
-      </td>
-      <td>93
-      </td>
-      <td>0.08
-      </td>
-      </tr>
-      <tr>
-      <td> 	Clapp (2012)
-      </td>
-      <td>unpublished
-      </td>
-      <td>93
-      </td>
-      <td>0.17
-      </td>
-      </tr>
-      <tr>
-      <td> 	Clapp (2012)
-      </td>
-      <td>unpublished
-      </td>
-      <td>99
-      </td>
-      <td>0.27
-      </td>
-      </tr>
-      <tr>
-      <td>Laird & Crosby (1974) Study 1
-      </td>
-      <td>published
-      </td>
-      <td>26
-      </td>
-      <td>-0.13
-      </td>
-      </tr>
-      <tr>
-      <td>Laird & Crosby (1974) Study 2
-      </td>
-      <td>published
-      </td>
-      <td>26
-      </td>
-      <td>0.35
-      </td>
-      </tr>
-      <tr>
-      <td>Davey et al. (2013) Study 1
-      </td>
-      <td>published
-      </td>
-      <td>28
-      </td>
-      <td>0.41
-      </td>
-      </tr>
-      <tr>
-      <td> 	Davey et al. (2013) Study 1
-      </td>
-      <td>published
-      </td>
-      <td>14
-      </td>
-      <td>0.62
-      </td>
-      </tr>
-      <tr>
-      <td> 	Davey et al. (2013) Study 1
-      </td>
-      <td>published
-      </td>
-      <td>28
-      </td>
-      <td>0.52
-      </td>
-      </tr>
-      <tr>
-      <td> 	Davey et al. (2013) Study 1
-      </td>
-      <td>published
-      </td>
-      <td>14
-      </td>
-      <td>0.13
-      </td>
-      </tr>
-      <tr>
-      <td> 	Davey et al. (2013) Study 1
-      </td>
-      <td>published
-      </td>
-      <td>28
-      </td>
-      <td>0.69
-      </td>
-      </tr>
-      <tr>
-      <td> 	Davey et al. (2013) Study 1
-      </td>
-      <td>published
-      </td>
-      <td>14
-      </td>
-      <td>0.42
-      </td>
-      </tr>
-      <tr>
-      <td> 	Davey et al. (2013) Study 1
-      </td>
-      <td>published
-      </td>
-      <td>28
-      </td>
-      <td>0.35
-      </td>
-      </tr>
-      <tr>
-      <td> 	Davey et al. (2013) Study 1
-      </td>
-      <td>published
-      </td>
-      <td>14
-      </td>
-      <td>0.14
-      </td>
-      </tr>
-      <tr>
-      <td>Davey et al. (2013) Study 2
-      </td>
-      <td>published
-      </td>
-      <td>29
-      </td>
-      <td>0.73
-      </td>
-      </tr>
-      <tr>
-      <td> 	Davey et al. (2013) Study 2
-      </td>
-      <td>published
-      </td>
-      <td>15
-      </td>
-      <td>0.63
-      </td>
-      </tr>
-      <tr>
-      <td> 	Davey et al. (2013) Study 2
-      </td>
-      <td>published
-      </td>
-      <td>29
-      </td>
-      <td>0.4
-      </td>
-      </tr>
-      <tr>
-      <td> 	Davey et al. (2013) Study 2
-      </td>
-      <td>published
-      </td>
-      <td>15
-      </td>
-      <td>0
-      </td>
-      </tr>
-      <tr>
-      <td> 	Davey et al. (2013) Study 2
-      </td>
-      <td>published
-      </td>
-      <td>29
-      </td>
-      <td>0.08
-      </td>
-      </tr>
-      <tr>
-      <td> 	Davey et al. (2013) Study 2
-      </td>
-      <td>published
-      </td>
-      <td>15
-      </td>
-      <td>-0.25
-      </td>
-      </tr>
-      <tr>
-      <td> 	Davey et al. (2013) Study 2
-      </td>
-      <td>published
-      </td>
-      <td>29
-      </td>
-      <td>0.03
-      </td>
-      </tr>
-      <tr>
-      <td> 	Davey et al. (2013) Study 2
-      </td>
-      <td>published
-      </td>
-      <td>15
-      </td>
-      <td>-0.06
-      </td>
-      </tr>
-      <tr>
-      <td>Davis (2008) Study 1
-      </td>
-      <td>unpublished
-      </td>
-      <td>28
-      </td>
-      <td>0.99
-      </td>
-      </tr>
-      <tr>
-      <td> 	Davis (2008) Study 1
-      </td>
-      <td>unpublished
-      </td>
-      <td>28
-      </td>
-      <td>0.87
-      </td>
-      </tr>
-      <tr>
-      <td>Davis (2008) Study 2
-      </td>
-      <td>unpublished
-      </td>
-      <td>31
-      </td>
-      <td>0.26
-      </td>
-      </tr>
-      <tr>
-      <td> 	Davis (2008) Study 2
-      </td>
-      <td>unpublished
-      </td>
-      <td>30
-      </td>
-      <td>-0.19
-      </td>
-      </tr>
-      <tr>
-      <td>Davis et al. (2009)
-      </td>
-      <td>published
-      </td>
-      <td>69
-      </td>
-      <td>0.07
-      </td>
-      </tr>
-      <tr>
-      <td> 	Davis et al. (2009)
-      </td>
-      <td>published
-      </td>
-      <td>69
-      </td>
-      <td>0.51
-      </td>
-      </tr>
-      <tr>
-      <td>Davis et al. (2010)
-      </td>
-      <td>published
-      </td>
-      <td>68
-      </td>
-      <td>0.1
-      </td>
-      </tr>
-      <tr>
-      <td> 	Davis et al. (2010)
-      </td>
-      <td>published
-      </td>
-      <td>68
-      </td>
-      <td>0.05
-      </td>
-      </tr>
-      <tr>
-      <td> 	Davis et al. (2010)
-      </td>
-      <td>published
-      </td>
-      <td>68
-      </td>
-      <td>-0.15
-      </td>
-      </tr>
-      <tr>
-      <td>Davis et al. (2015)
-      </td>
-      <td>published
-      </td>
-      <td>18
-      </td>
-      <td>-0.16
-      </td>
-      </tr>
-      <tr>
-      <td>Demaree et al. (2004)
-      </td>
-      <td>published
-      </td>
-      <td>53
-      </td>
-      <td>0.62
-      </td>
-      </tr>
-      <tr>
-      <td> 	Demaree et al. (2004)
-      </td>
-      <td>published
-      </td>
-      <td>50
-      </td>
-      <td>0.16
-      </td>
-      </tr>
-      <tr>
-      <td>Demaree et al. (2006)
-      </td>
-      <td>published
-      </td>
-      <td>32
-      </td>
-      <td>-0.64
-      </td>
-      </tr>
-      <tr>
-      <td> 	Demaree et al. (2006)
-      </td>
-      <td>published
-      </td>
-      <td>35
-      </td>
-      <td>0.06
-      </td>
-      </tr>
-      <tr>
-      <td> 	Demaree et al. (2006)
-      </td>
-      <td>published
-      </td>
-      <td>37
-      </td>
-      <td>-0.38
-      </td>
-      </tr>
-      <tr>
-      <td>Dillon et al. (2007)
-      </td>
-      <td>published
-      </td>
-      <td>36
-      </td>
-      <td>0.11
-      </td>
-      </tr>
-      <tr>
-      <td>Dimberg & Söderkvist (2011) Study 1
-      </td>
-      <td>published
-      </td>
-      <td>48
-      </td>
-      <td>0.51
-      </td>
-      </tr>
-      <tr>
-      <td>Dimberg & Söderkvist (2011) Study 2
-      </td>
-      <td>published
-      </td>
-      <td>96
-      </td>
-      <td>0.1
-      </td>
-      </tr>
-      <tr>
-      <td> 	Dimberg & Söderkvist (2011) Study 2
-      </td>
-      <td>published
-      </td>
-      <td>96
-      </td>
-      <td>0.32
-      </td>
-      </tr>
-      <tr>
-      <td>Dimberg & Söderkvist (2011) Study 3
-      </td>
-      <td>published
-      </td>
-      <td>61
-      </td>
-      <td>0.06
-      </td>
-      </tr>
-      <tr>
-      <td> 	Dimberg & Söderkvist (2011) Study 3
-      </td>
-      <td>published
-      </td>
-      <td>61
-      </td>
-      <td>0.31
-      </td>
-      </tr>
-      <tr>
-      <td> 	Dimberg & Söderkvist (2011) Study 3
-      </td>
-      <td>published
-      </td>
-      <td>61
-      </td>
-      <td>0.34
-      </td>
-      </tr>
-      <tr>
-      <td>Duncan & Laird (1977)
-      </td>
-      <td>published
-      </td>
-      <td>31
-      </td>
-      <td>0.44
-      </td>
-      </tr>
-      <tr>
-      <td> 	Duncan & Laird (1977)
-      </td>
-      <td>published
-      </td>
-      <td>31
-      </td>
-      <td>0.38
-      </td>
-      </tr>
-      <tr>
-      <td> 	Duncan & Laird (1977)
-      </td>
-      <td>published
-      </td>
-      <td>31
-      </td>
-      <td>0.51
-      </td>
-      </tr>
-      <tr>
-      <td>Duncan & Laird (1980)
-      </td>
-      <td>published
-      </td>
-      <td>60
-      </td>
-      <td>0.59
-      </td>
-      </tr>
-      <tr>
-      <td> 	Duncan & Laird (1980)
-      </td>
-      <td>published
-      </td>
-      <td>60
-      </td>
-      <td>0.44
-      </td>
-      </tr>
-      <tr>
-      <td>Dzokoto et al. (2014)
-      </td>
-      <td>published
-      </td>
-      <td>70
-      </td>
-      <td>1.02
-      </td>
-      </tr>
-      <tr>
-      <td> 	Dzokoto et al. (2014)
-      </td>
-      <td>published
-      </td>
-      <td>59
-      </td>
-      <td>0.07
-      </td>
-      </tr>
-      <tr>
-      <td> 	Dzokoto et al. (2014)
-      </td>
-      <td>published
-      </td>
-      <td>35
-      </td>
-      <td>1.07
-      </td>
-      </tr>
-      <tr>
-      <td> 	Dzokoto et al. (2014)
-      </td>
-      <td>published
-      </td>
-      <td>51
-      </td>
-      <td>0.2
-      </td>
-      </tr>
-      <tr>
-      <td>Flack, Laird & Cavallaro (1999b) Study 1
-      </td>
-      <td>published
-      </td>
-      <td>60
-      </td>
-      <td>1.2
-      </td>
-      </tr>
-      <tr>
-      <td> 	Flack, Laird & Cavallaro (1999b) Study 1
-      </td>
-      <td>published
-      </td>
-      <td>60
-      </td>
-      <td>0.7
-      </td>
-      </tr>
-      <tr>
-      <td> 	Flack, Laird & Cavallaro (1999b) Study 1
-      </td>
-      <td>published
-      </td>
-      <td>60
-      </td>
-      <td>0.31
-      </td>
-      </tr>
-      <tr>
-      <td> 	Flack, Laird & Cavallaro (1999b) Study 1
-      </td>
-      <td>published
-      </td>
-      <td>60
-      </td>
-      <td>0.86
-      </td>
-      </tr>
-      <tr>
-      <td> 	Flack, Laird & Cavallaro (1999b) Study 1
-      </td>
-      <td>published
-      </td>
-      <td>60
-      </td>
-      <td>1.31
-      </td>
-      </tr>
-      <tr>
-      <td>Flack, Laird & Cavallaro (1999b) Study 2
-      </td>
-      <td>published
-      </td>
-      <td>29
-      </td>
-      <td>0.39
-      </td>
-      </tr>
-      <tr>
-      <td> 	Flack, Laird & Cavallaro (1999b) Study 2
-      </td>
-      <td>published
-      </td>
-      <td>29
-      </td>
-      <td>0.23
-      </td>
-      </tr>
-      <tr>
-      <td> 	Flack, Laird & Cavallaro (1999b) Study 2
-      </td>
-      <td>published
-      </td>
-      <td>29
-      </td>
-      <td>-0.16
-      </td>
-      </tr>
-      <tr>
-      <td> 	Flack, Laird & Cavallaro (1999b) Study 2
-      </td>
-      <td>published
-      </td>
-      <td>29
-      </td>
-      <td>-0.49
-      </td>
-      </tr>
-      <tr>
-      <td> 	Flack, Laird & Cavallaro (1999b) Study 2
-      </td>
-      <td>published
-      </td>
-      <td>29
-      </td>
-      <td>0.25
-      </td>
-      </tr>
-      <tr>
-      <td>Flack, Laird & Cavallaro (1999a)
-      </td>
-      <td>published
-      </td>
-      <td>54
-      </td>
-      <td>1.41
-      </td>
-      </tr>
-      <tr>
-      <td> 	Flack, Laird & Cavallaro (1999a)
-      </td>
-      <td>published
-      </td>
-      <td>54
-      </td>
-      <td>0.29
-      </td>
-      </tr>
-      <tr>
-      <td> 	Flack, Laird & Cavallaro (1999a)
-      </td>
-      <td>published
-      </td>
-      <td>54
-      </td>
-      <td>1.18
-      </td>
-      </tr>
-      <tr>
-      <td> 	Flack, Laird & Cavallaro (1999a)
-      </td>
-      <td>published
-      </td>
-      <td>54
-      </td>
-      <td>1.21
-      </td>
-      </tr>
-      <tr>
-      <td>Flack (2006)
-      </td>
-      <td>published
-      </td>
-      <td>51
-      </td>
-      <td>0.72
-      </td>
-      </tr>
-      <tr>
-      <td> 	Flack (2006)
-      </td>
-      <td>published
-      </td>
-      <td>51
-      </td>
-      <td>0.35
-      </td>
-      </tr>
-      <tr>
-      <td> 	Flack (2006)
-      </td>
-      <td>published
-      </td>
-      <td>51
-      </td>
-      <td>0.59
-      </td>
-      </tr>
-      <tr>
-      <td> 	Flack (2006)
-      </td>
-      <td>published
-      </td>
-      <td>51
-      </td>
-      <td>0.68
-      </td>
-      </tr>
-      <tr>
-      <td>Gan et al. (2015)
-      </td>
-      <td>published
-      </td>
-      <td>34
-      </td>
-      <td>-0.11
-      </td>
-      </tr>
-      <tr>
-      <td>Goldin et al. (2008)
-      </td>
-      <td>published
-      </td>
-      <td>17
-      </td>
-      <td>0.8
-      </td>
-      </tr>
-      <tr>
-      <td>Gross & Levenson (1993)
-      </td>
-      <td>published
-      </td>
-      <td>85
-      </td>
-      <td>0.04
-      </td>
-      </tr>
-      <tr>
-      <td>Gross & Levenson (1997)
-      </td>
-      <td>published
-      </td>
-      <td>180
-      </td>
-      <td>0.37
-      </td>
-      </tr>
-      <tr>
-      <td> 	Gross & Levenson (1997)
-      </td>
-      <td>published
-      </td>
-      <td>180
-      </td>
-      <td>0.16
-      </td>
-      </tr>
-      <tr>
-      <td>Gross (1993)
-      </td>
-      <td>unpublished
-      </td>
-      <td>180
-      </td>
-      <td>0.37
-      </td>
-      </tr>
-      <tr>
-      <td> 	Gross (1993)
-      </td>
-      <td>unpublished
-      </td>
-      <td>180
-      </td>
-      <td>0.09
-      </td>
-      </tr>
-      <tr>
-      <td> 	Gross (1993)
-      </td>
-      <td>unpublished
-      </td>
-      <td>180
-      </td>
-      <td>0.2
-      </td>
-      </tr>
-      <tr>
-      <td> 	Gross (1993)
-      </td>
-      <td>unpublished
-      </td>
-      <td>180
-      </td>
-      <td>0.16
-      </td>
-      </tr>
-      <tr>
-      <td> 	Gross (1993)
-      </td>
-      <td>unpublished
-      </td>
-      <td>180
-      </td>
-      <td>-0.23
-      </td>
-      </tr>
-      <tr>
-      <td>Gross (1998)
-      </td>
-      <td>published
-      </td>
-      <td>80
-      </td>
-      <td>0.18
-      </td>
-      </tr>
-      <tr>
-      <td>Harris (2001)
-      </td>
-      <td>published
-      </td>
-      <td>36
-      </td>
-      <td>0.07
-      </td>
-      </tr>
-      <tr>
-      <td>Hawk et al. (2012)
-      </td>
-      <td>published
-      </td>
-      <td>41
-      </td>
-      <td>0.85
-      </td>
-      </tr>
-      <tr>
-      <td>Helt & Fein (2016)
-      </td>
-      <td>published
-      </td>
-      <td>43
-      </td>
-      <td>0.42
-      </td>
-      </tr>
-      <tr>
-      <td>Hendricks & Buchanan (2016)
-      </td>
-      <td>published
-      </td>
-      <td>79
-      </td>
-      <td>-0.08
-      </td>
-      </tr>
-      <tr>
-      <td>Hendricks (2013)
-      </td>
-      <td>unpublished
-      </td>
-      <td>79
-      </td>
-      <td>0.02
-      </td>
-      </tr>
-      <tr>
-      <td>Henry et al. (2007)
-      </td>
-      <td>published
-      </td>
-      <td>30
-      </td>
-      <td>-0.49
-      </td>
-      </tr>
-      <tr>
-      <td> 	Henry et al. (2007)
-      </td>
-      <td>published
-      </td>
-      <td>30
-      </td>
-      <td>0.25
-      </td>
-      </tr>
-      <tr>
-      <td>Henry et al. (2009)a
-      </td>
-      <td>published
-      </td>
-      <td>26
-      </td>
-      <td>-0.05
-      </td>
-      </tr>
-      <tr>
-      <td> 	Henry et al. (2009)a
-      </td>
-      <td>published
-      </td>
-      <td>26
-      </td>
-      <td>0.53
-      </td>
-      </tr>
-      <tr>
-      <td>Henry et al. (2009)b
-      </td>
-      <td>published
-      </td>
-      <td>20
-      </td>
-      <td>-0.05
-      </td>
-      </tr>
-      <tr>
-      <td> 	Henry et al. (2009)b
-      </td>
-      <td>published
-      </td>
-      <td>20
-      </td>
-      <td>0.48
-      </td>
-      </tr>
-      <tr>
-      <td>Hess et al. (1992)
-      </td>
-      <td>published
-      </td>
-      <td>28
-      </td>
-      <td>-0.28
-      </td>
-      </tr>
-      <tr>
-      <td> 	Hess et al. (1992)
-      </td>
-      <td>published
-      </td>
-      <td>28
-      </td>
-      <td>0.14
-      </td>
-      </tr>
-      <tr>
-      <td> 	Hess et al. (1992)
-      </td>
-      <td>published
-      </td>
-      <td>28
-      </td>
-      <td>-0.26
-      </td>
-      </tr>
-      <tr>
-      <td> 	Hess et al. (1992)
-      </td>
-      <td>published
-      </td>
-      <td>28
-      </td>
-      <td>-0.16
-      </td>
-      </tr>
-      <tr>
-      <td>Hofmann et al. (2009)
-      </td>
-      <td>published
-      </td>
-      <td>134
-      </td>
-      <td>-0.03
-      </td>
-      </tr>
-      <tr>
-      <td>Ito et al. (2006)
-      </td>
-      <td>published
-      </td>
-      <td>40
-      </td>
-      <td>-0.39
-      </td>
-      </tr>
-      <tr>
-      <td> 	Ito et al. (2006)
-      </td>
-      <td>published
-      </td>
-      <td>33
-      </td>
-      <td>-0.25
-      </td>
-      </tr>
-      <tr>
-      <td>Kalokerinos et al. (2015) Study 1
-      </td>
-      <td>published
-      </td>
-      <td>133.67<sup>b</sup>
-      </td>
-      <td>-0.06
-      </td>
-      </tr>
-      <tr>
-      <td> 	Kalokerinos et al. (2015) Study 1
-      </td>
-      <td>published
-      </td>
-      <td>133.67<sup>b</sup>
-      </td>
-      <td>-0.02
-      </td>
-      </tr>
-      <tr>
-      <td>Kalokerinos et al. (2015) Study 2
-      </td>
-      <td>published
-      </td>
-      <td>295
-      </td>
-      <td>1.32
-      </td>
-      </tr>
-      <tr>
-      <td> 	Kalokerinos et al. (2015) Study 2
-      </td>
-      <td>published
-      </td>
-      <td>295
-      </td>
-      <td>0.2
-      </td>
-      </tr>
-      <tr>
-      <td>Kao et al. (2017)
-      </td>
-      <td>published
-      </td>
-      <td>41
-      </td>
-      <td>0.09
-      </td>
-      </tr>
-      <tr>
-      <td> 	Kao et al. (2017)
-      </td>
-      <td>published
-      </td>
-      <td>41
-      </td>
-      <td>-0.39
-      </td>
-      </tr>
-      <tr>
-      <td> 	Kao et al. (2017)
-      </td>
-      <td>published
-      </td>
-      <td>41
-      </td>
-      <td>0.8
-      </td>
-      </tr>
-      <tr>
-      <td> 	Kao et al. (2017)
-      </td>
-      <td>published
-      </td>
-      <td>41
-      </td>
-      <td>-0.34
-      </td>
-      </tr>
-      <tr>
-      <td> 	Kao et al. (2017)
-      </td>
-      <td>published
-      </td>
-      <td>41
-      </td>
-      <td>0.98
-      </td>
-      </tr>
-      <tr>
-      <td> 	Kao et al. (2017)
-      </td>
-      <td>published
-      </td>
-      <td>41
-      </td>
-      <td>-0.67
-      </td>
-      </tr>
-      <tr>
-      <td>Kircher et al. (2012)
-      </td>
-      <td>published
-      </td>
-      <td>27
-      </td>
-      <td>1.89
-      </td>
-      </tr>
-      <tr>
-      <td> 	Kircher et al. (2012)
-      </td>
-      <td>published
-      </td>
-      <td>27
-      </td>
-      <td>1.14
-      </td>
-      </tr>
-      <tr>
-      <td>Korb et al. (2012)
-      </td>
-      <td>published
-      </td>
-      <td>22
-      </td>
-      <td>0.21
-      </td>
-      </tr>
-      <tr>
-      <td>Labott & Teleha (1996)
-      </td>
-      <td>published
-      </td>
-      <td>19
-      </td>
-      <td>0.04
-      </td>
-      </tr>
-      <tr>
-      <td> 	Labott & Teleha (1996)
-      </td>
-      <td>published
-      </td>
-      <td>16
-      </td>
-      <td>0.91
-      </td>
-      </tr>
-      <tr>
-      <td>Laird (1974) Study 1
-      </td>
-      <td>published
-      </td>
-      <td>38
-      </td>
-      <td>0.46
-      </td>
-      </tr>
-      <tr>
-      <td> 	Laird (1974) Study 1
-      </td>
-      <td>published
-      </td>
-      <td>38
-      </td>
-      <td>0.44
-      </td>
-      </tr>
-      <tr>
-      <td> 	Laird (1974) Study 1
-      </td>
-      <td>published
-      </td>
-      <td>38
-      </td>
-      <td>0.39
-      </td>
-      </tr>
-      <tr>
-      <td>Laird (1974) Study 2
-      </td>
-      <td>published
-      </td>
-      <td>26
-      </td>
-      <td>0.55
-      </td>
-      </tr>
-      <tr>
-      <td> 	Laird (1974) Study 2
-      </td>
-      <td>published
-      </td>
-      <td>26
-      </td>
-      <td>0.13
-      </td>
-      </tr>
-      <tr>
-      <td>Lalot et al. (2014)
-      </td>
-      <td>published
-      </td>
-      <td>45
-      </td>
-      <td>-0.17
-      </td>
-      </tr>
-      <tr>
-      <td>Larsen et al. (1992)
-      </td>
-      <td>published
-      </td>
-      <td>27
-      </td>
-      <td>0.43
-      </td>
-      </tr>
-      <tr>
-      <td>Lee (2011)
-      </td>
-      <td>unpublished
-      </td>
-      <td>52
-      </td>
-      <td>0.48
-      </td>
-      </tr>
-      <tr>
-      <td> 	Lee (2011)
-      </td>
-      <td>unpublished
-      </td>
-      <td>44
-      </td>
-      <td>0.17
-      </td>
-      </tr>
-      <tr>
-      <td> 	Lee (2011)
-      </td>
-      <td>unpublished
-      </td>
-      <td>52
-      </td>
-      <td>-0.27
-      </td>
-      </tr>
-      <tr>
-      <td> 	Lee (2011)
-      </td>
-      <td>unpublished
-      </td>
-      <td>44
-      </td>
-      <td>-0.26
-      </td>
-      </tr>
-      <tr>
-      <td>Lewis & Bowler (2009)
-      </td>
-      <td>published
-      </td>
-      <td>25
-      </td>
-      <td>1.35
-      </td>
-      </tr>
-      <tr>
-      <td>Lewis (2012)
-      </td>
-      <td>published
-      </td>
-      <td>24
-      </td>
-      <td>0.71
-      </td>
-      </tr>
-      <tr>
-      <td> 	Lewis (2012)
-      </td>
-      <td>published
-      </td>
-      <td>24
-      </td>
-      <td>0.56
-      </td>
-      </tr>
-      <tr>
-      <td>Ma (2011)
-      </td>
-      <td>unpublished
-      </td>
-      <td>42.67<sup>b</sup>
-      </td>
-      <td>-0.21
-      </td>
-      </tr>
-      <tr>
-      <td> 	Ma (2011)
-      </td>
-      <td>unpublished
-      </td>
-      <td>42.67<sup>b</sup>
-      </td>
-      <td>-0.21
-      </td>
-      </tr>
-      <tr>
-      <td> 	Ma (2011)
-      </td>
-      <td>unpublished
-      </td>
-      <td>42.67<sup>b</sup>
-      </td>
-      <td>-0.21
-      </td>
-      </tr>
-      <tr>
-      <td> 	Ma (2011)
-      </td>
-      <td>unpublished
-      </td>
-      <td>42.67<sup>b</sup>
-      </td>
-      <td>-0.21
-      </td>
-      </tr>
-      <tr>
-      <td>Maldonado et al. (2015)
-      </td>
-      <td>unpublished
-      </td>
-      <td>157.33<sup>b</sup>
-      </td>
-      <td>0.12
-      </td>
-      </tr>
-      <tr>
-      <td>Marmolejo-Ramos & Dunn (2013) Study 1
-      </td>
-      <td>published
-      </td>
-      <td>100
-      </td>
-      <td>-0.07
-      </td>
-      </tr>
-      <tr>
-      <td>Marmolejo-Ramos & Dunn (2013) Study 2
-      </td>
-      <td>published
-      </td>
-      <td>106
-      </td>
-      <td>-0.07
-      </td>
-      </tr>
-      <tr>
-      <td>Marmolejo-Ramos & Dunn (2013) Study 3
-      </td>
-      <td>published
-      </td>
-      <td>104
-      </td>
-      <td>-0.07
-      </td>
-      </tr>
-      <tr>
-      <td>Marmolejo-Ramos & Dunn (2013) Study 4
-      </td>
-      <td>published
-      </td>
-      <td>100
-      </td>
-      <td>-0.07
-      </td>
-      </tr>
-      <tr>
-      <td>Marmolejo-Ramos & Dunn (2013) Study 5
-      </td>
-      <td>published
-      </td>
-      <td>66
-      </td>
-      <td>0.27
-      </td>
-      </tr>
-      <tr>
-      <td>Marmolejo-Ramos & Dunn (2013) Study 6
-      </td>
-      <td>published
-      </td>
-      <td>67
-      </td>
-      <td>0.38
-      </td>
-      </tr>
-      <tr>
-      <td>Martijn et al. (2002)
-      </td>
-      <td>published
-      </td>
-      <td>33
-      </td>
-      <td>-0.24
-      </td>
-      </tr>
-      <tr>
-      <td>McCanne & Anderson (1987)
-      </td>
-      <td>published
-      </td>
-      <td>30
-      </td>
-      <td>-2.16
-      </td>
-      </tr>
-      <tr>
-      <td> 	McCanne & Anderson (1987)
-      </td>
-      <td>published
-      </td>
-      <td>30
-      </td>
-      <td>-2.07
-      </td>
-      </tr>
-      <tr>
-      <td> 	McCanne & Anderson (1987)
-      </td>
-      <td>published
-      </td>
-      <td>30
-      </td>
-      <td>4.73
-      </td>
-      </tr>
-      <tr>
-      <td> 	McCanne & Anderson (1987)
-      </td>
-      <td>published
-      </td>
-      <td>30
-      </td>
-      <td>1.67
-      </td>
-      </tr>
-      <tr>
-      <td> 	McCanne & Anderson (1987)
-      </td>
-      <td>published
-      </td>
-      <td>30
-      </td>
-      <td>2.48
-      </td>
-      </tr>
-      <tr>
-      <td> 	McCanne & Anderson (1987)
-      </td>
-      <td>published
-      </td>
-      <td>30
-      </td>
-      <td>-0.25
-      </td>
-      </tr>
-      <tr>
-      <td>McCaul et al. (1982)
-      </td>
-      <td>published
-      </td>
-      <td>27
-      </td>
-      <td>0.25
-      </td>
-      </tr>
-      <tr>
-      <td>McIntosh et al. (1997)
-      </td>
-      <td>published
-      </td>
-      <td>26
-      </td>
-      <td>0.54
-      </td>
-      </tr>
-      <tr>
-      <td>Meeten et al. (2015)
-      </td>
-      <td>published
-      </td>
-      <td>71
-      </td>
-      <td>0.49
-      </td>
-      </tr>
-      <tr>
-      <td>Miyamoto (2006) Study 1
-      </td>
-      <td>unpublished
-      </td>
-      <td>40
-      </td>
-      <td>0.17
-      </td>
-      </tr>
-      <tr>
-      <td> 	Miyamoto (2006) Study 1
-      </td>
-      <td>unpublished
-      </td>
-      <td>40
-      </td>
-      <td>0.53
-      </td>
-      </tr>
-      <tr>
-      <td>Miyamoto (2006) Study 2
-      </td>
-      <td>unpublished
-      </td>
-      <td>77
-      </td>
-      <td>0.49
-      </td>
-      </tr>
-      <tr>
-      <td>Moore & Zoellner(2012)
-      </td>
-      <td>published
-      </td>
-      <td>23.33<sup>b</sup>
-      </td>
-      <td>-0.87
-      </td>
-      </tr>
-      <tr>
-      <td>Kappas (1989)
-      </td>
-      <td>unpublished
-      </td>
-      <td>32
-      </td>
-      <td>0.08
-      </td>
-      </tr>
-      <tr>
-      <td> 	Kappas (1989)
-      </td>
-      <td>unpublished
-      </td>
-      <td>32
-      </td>
-      <td>0.26
-      </td>
-      </tr>
-      <tr>
-      <td> 	Kappas (1989)
-      </td>
-      <td>unpublished
-      </td>
-      <td>32
-      </td>
-      <td>0.27
-      </td>
-      </tr>
-      <tr>
-      <td> 	Kappas (1989)
-      </td>
-      <td>unpublished
-      </td>
-      <td>32
-      </td>
-      <td>0.1
-      </td>
-      </tr>
-      <tr>
-      <td> 	Kappas (1989)
-      </td>
-      <td>unpublished
-      </td>
-      <td>32
-      </td>
-      <td>0.17
-      </td>
-      </tr>
-      <tr>
-      <td> 	Kappas (1989)
-      </td>
-      <td>unpublished
-      </td>
-      <td>32
-      </td>
-      <td>0.52
-      </td>
-      </tr>
-      <tr>
-      <td> 	Kappas (1989)
-      </td>
-      <td>unpublished
-      </td>
-      <td>32
-      </td>
-      <td>0.62
-      </td>
-      </tr>
-      <tr>
-      <td> 	Kappas (1989)
-      </td>
-      <td>unpublished
-      </td>
-      <td>32
-      </td>
-      <td>0.74
-      </td>
-      </tr>
-      <tr>
-      <td> 	Kappas (1989)
-      </td>
-      <td>unpublished
-      </td>
-      <td>32
-      </td>
-      <td>0.18
-      </td>
-      </tr>
-      <tr>
-      <td> 	Kappas (1989)
-      </td>
-      <td>unpublished
-      </td>
-      <td>32
-      </td>
-      <td>0.42
-      </td>
-      </tr>
-      <tr>
-      <td>Ohira & Kurono (1993) Study 1
-      </td>
-      <td>published
-      </td>
-      <td>20
-      </td>
-      <td>1.23
-      </td>
-      </tr>
-      <tr>
-      <td> 	Ohira & Kurono (1993) Study 1
-      </td>
-      <td>published
-      </td>
-      <td>20
-      </td>
-      <td>0.31
-      </td>
-      </tr>
-      <tr>
-      <td>Ohira & Kurono (1993) Study 2
-      </td>
-      <td>published
-      </td>
-      <td>20
-      </td>
-      <td>1.61
-      </td>
-      </tr>
-      <tr>
-      <td> 	Ohira & Kurono (1993) Study 2
-      </td>
-      <td>published
-      </td>
-      <td>20
-      </td>
-      <td>-1.38
-      </td>
-      </tr>
-      <tr>
-      <td>Paredes et al. (2013)
-      </td>
-      <td>published
-      </td>
-      <td>31
-      </td>
-      <td>0.85
-      </td>
-      </tr>
-      <tr>
-      <td>Paul et al. (2013)
-      </td>
-      <td>published
-      </td>
-      <td>20
-      </td>
-      <td>0.91
-      </td>
-      </tr>
-      <tr>
-      <td>Pedder et al. (2016)
-      </td>
-      <td>published
-      </td>
-      <td>68
-      </td>
-      <td>0.7
-      </td>
-      </tr>
-      <tr>
-      <td> 	Pedder et al. (2016)
-      </td>
-      <td>published
-      </td>
-      <td>68
-      </td>
-      <td>0.22
-      </td>
-      </tr>
-      <tr>
-      <td>Phillips et al. (2008)
-      </td>
-      <td>published
-      </td>
-      <td>32
-      </td>
-      <td>0.18
-      </td>
-      </tr>
-      <tr>
-      <td> 	Phillips et al. (2008)
-      </td>
-      <td>published
-      </td>
-      <td>32
-      </td>
-      <td>0.08
-      </td>
-      </tr>
-      <tr>
-      <td>Reisenzein & Studtmann (2007) Study 1
-      </td>
-      <td>published
-      </td>
-      <td>53
-      </td>
-      <td>0.18
-      </td>
-      </tr>
-      <tr>
-      <td> 	Reisenzein & Studtmann (2007) Study 1
-      </td>
-      <td>published
-      </td>
-      <td>55
-      </td>
-      <td>0.34
-      </td>
-      </tr>
-      <tr>
-      <td> 	Reisenzein & Studtmann (2007) Study 1
-      </td>
-      <td>published
-      </td>
-      <td>55
-      </td>
-      <td>-0.08
-      </td>
-      </tr>
-      <tr>
-      <td> 	Reisenzein & Studtmann (2007) Study 1
-      </td>
-      <td>published
-      </td>
-      <td>55
-      </td>
-      <td>0.3
-      </td>
-      </tr>
-      <tr>
-      <td> 	Reisenzein & Studtmann (2007) Study 1
-      </td>
-      <td>published
-      </td>
-      <td>53
-      </td>
-      <td>-0.12
-      </td>
-      </tr>
-      <tr>
-      <td> 	Reisenzein & Studtmann (2007) Study 1
-      </td>
-      <td>published
-      </td>
-      <td>53
-      </td>
-      <td>0.22
-      </td>
-      </tr>
-      <tr>
-      <td> 	Reisenzein & Studtmann (2007) Study 1
-      </td>
-      <td>published
-      </td>
-      <td>52
-      </td>
-      <td>-0.04
-      </td>
-      </tr>
-      <tr>
-      <td> 	Reisenzein & Studtmann (2007) Study 1
-      </td>
-      <td>published
-      </td>
-      <td>52
-      </td>
-      <td>-0.09
-      </td>
-      </tr>
-      <tr>
-      <td>Reisenzein & Studtmann (2007) Study 3
-      </td>
-      <td>published
-      </td>
-      <td>40
-      </td>
-      <td>-0.74
-      </td>
-      </tr>
-      <tr>
-      <td>Richards, Butler & Gross (2003)
-      </td>
-      <td>published
-      </td>
-      <td>59
-      </td>
-      <td>0.19
-      </td>
-      </tr>
-      <tr>
-      <td> 	Richards, Butler & Gross (2003)
-      </td>
-      <td>published
-      </td>
-      <td>59
-      </td>
-      <td>-0.12
-      </td>
-      </tr>
-      <tr>
-      <td>Richards & Gross (1999) Study 1
-      </td>
-      <td>published
-      </td>
-      <td>58
-      </td>
-      <td>-0.1
-      </td>
-      </tr>
-      <tr>
-      <td> 	Richards & Gross (1999) Study 1
-      </td>
-      <td>published
-      </td>
-      <td>58
-      </td>
-      <td>0.25
-      </td>
-      </tr>
-      <tr>
-      <td> 	Richards & Gross (1999) Study 1
-      </td>
-      <td>published
-      </td>
-      <td>58
-      </td>
-      <td>0.36
-      </td>
-      </tr>
-      <tr>
-      <td>Richards & Gross (1999) Study 2
-      </td>
-      <td>published
-      </td>
-      <td>85
-      </td>
-      <td>0.13
-      </td>
-      </tr>
-      <tr>
-      <td> 	Richards & Gross (1999) Study 2
-      </td>
-      <td>published
-      </td>
-      <td>85
-      </td>
-      <td>0.24
-      </td>
-      </tr>
-      <tr>
-      <td> 	Richards & Gross (1999) Study 2
-      </td>
-      <td>published
-      </td>
-      <td>85
-      </td>
-      <td>0.06
-      </td>
-      </tr>
-      <tr>
-      <td>Richards & Gross (2000) Study 1
-      </td>
-      <td>published
-      </td>
-      <td>53
-      </td>
-      <td>-0.12
-      </td>
-      </tr>
-      <tr>
-      <td>Richards & Gross (2000) Study 2
-      </td>
-      <td>published
-      </td>
-      <td>61
-      </td>
-      <td>0.39
-      </td>
-      </tr>
-      <tr>
-      <td>Richards & Gross (2006)
-      </td>
-      <td>published
-      </td>
-      <td>131
-      </td>
-      <td>0.34
-      </td>
-      </tr>
-      <tr>
-      <td>Roberts et al. (2008)
-      </td>
-      <td>published
-      </td>
-      <td>160
-      </td>
-      <td>0.07
-      </td>
-      </tr>
-      <tr>
-      <td>Robinson & Demaree (2009)
-      </td>
-      <td>published
-      </td>
-      <td>102
-      </td>
-      <td>-0.04
-      </td>
-      </tr>
-      <tr>
-      <td> 	Robinson & Demaree (2009)
-      </td>
-      <td>published
-      </td>
-      <td>102
-      </td>
-      <td>0.03
-      </td>
-      </tr>
-      <tr>
-      <td> 	Robinson & Demaree (2009)
-      </td>
-      <td>published
-      </td>
-      <td>102
-      </td>
-      <td>0
-      </td>
-      </tr>
-      <tr>
-      <td> 	Robinson & Demaree (2009)
-      </td>
-      <td>published
-      </td>
-      <td>102
-      </td>
-      <td>0
-      </td>
-      </tr>
-      <tr>
-      <td>Roemer (2014)
-      </td>
-      <td>unpublished
-      </td>
-      <td>44
-      </td>
-      <td>0.58
-      </td>
-      </tr>
-      <tr>
-      <td> 	Roemer (2014)
-      </td>
-      <td>unpublished
-      </td>
-      <td>44
-      </td>
-      <td>0.29
-      </td>
-      </tr>
-      <tr>
-      <td>Rohrmann et al. (2009)
-      </td>
-      <td>published
-      </td>
-      <td>36
-      </td>
-      <td>0.16
-      </td>
-      </tr>
-      <tr>
-      <td> 	Rohrmann et al. (2009)
-      </td>
-      <td>published
-      </td>
-      <td>36
-      </td>
-      <td>0.13
-      </td>
-      </tr>
-      <tr>
-      <td>Rummer et al. (2014)
-      </td>
-      <td>published
-      </td>
-      <td>74
-      </td>
-      <td>0.57
-      </td>
-      </tr>
-      <tr>
-      <td> 	Rummer et al. (2014)
-      </td>
-      <td>published
-      </td>
-      <td>74
-      </td>
-      <td>0.46
-      </td>
-      </tr>
-      <tr>
-      <td>Schmeichel , Vohs, & Baumeister (2003)
-      </td>
-      <td>published
-      </td>
-      <td>37
-      </td>
-      <td>-0.23
-      </td>
-      </tr>
-      <tr>
-      <td>Schmeichel et al. (2008)
-      </td>
-      <td>published
-      </td>
-      <td>50
-      </td>
-      <td>0.1
-      </td>
-      </tr>
-      <tr>
-      <td>Söderkvist & Dimberg (unpublished)
-      </td>
-      <td>unpublished
-      </td>
-      <td>32
-      </td>
-      <td>0.36
-      </td>
-      </tr>
-      <tr>
-      <td>Söderkvist et al. (2018) Study 1<sup>a</sup>
-      </td>
-      <td>unpublished
-      </td>
-      <td>32
-      </td>
-      <td>0.34
-      </td>
-      </tr>
-      <tr>
-      <td>Söderkvist et al. (2018) Study 2<sup>a</sup>
-      </td>
-      <td>unpublished
-      </td>
-      <td>64
-      </td>
-      <td>0.17
-      </td>
-      </tr>
-      <tr>
-      <td>Soussignan (2002)
-      </td>
-      <td>published
-      </td>
-      <td>33
-      </td>
-      <td>-0.17
-      </td>
-      </tr>
-      <tr>
-      <td> 	Soussignan (2002)
-      </td>
-      <td>published
-      </td>
-      <td>33
-      </td>
-      <td>0.48
-      </td>
-      </tr>
-      <tr>
-      <td> 	Soussignan (2002)
-      </td>
-      <td>published
-      </td>
-      <td>33
-      </td>
-      <td>0.47
-      </td>
-      </tr>
-      <tr>
-      <td> 	Soussignan (2002)
-      </td>
-      <td>published
-      </td>
-      <td>33
-      </td>
-      <td>0.44
-      </td>
-      </tr>
-      <tr>
-      <td> 	Soussignan (2002)
-      </td>
-      <td>published
-      </td>
-      <td>32
-      </td>
-      <td>0.53
-      </td>
-      </tr>
-      <tr>
-      <td> 	Soussignan (2002)
-      </td>
-      <td>published
-      </td>
-      <td>32
-      </td>
-      <td>1.1
-      </td>
-      </tr>
-      <tr>
-      <td> 	Soussignan (2002)
-      </td>
-      <td>published
-      </td>
-      <td>32
-      </td>
-      <td>1.11
-      </td>
-      </tr>
-      <tr>
-      <td> 	Soussignan (2002)
-      </td>
-      <td>published
-      </td>
-      <td>32
-      </td>
-      <td>0.94
-      </td>
-      </tr>
-      <tr>
-      <td>Stel et al. (2008) Study 2
-      </td>
-      <td>published
-      </td>
-      <td>18.67<sup>b</sup>
-      </td>
-      <td>1.11
-      </td>
-      </tr>
-      <tr>
-      <td>Stel et al. (2008) Study 3
-      </td>
-      <td>published
-      </td>
-      <td>24
-      </td>
-      <td>1
-      </td>
-      </tr>
-      <tr>
-      <td>Strack et al. (1988) Study 1
-      </td>
-      <td>published
-      </td>
-      <td>76.67<sup>b</sup>
-      </td>
-      <td>0.43
-      </td>
-      </tr>
-      <tr>
-      <td>Strack et al. (1988) Study 2
-      </td>
-      <td>published
-      </td>
-      <td>83
-      </td>
-      <td>-0.15
-      </td>
-      </tr>
-      <tr>
-      <td> 	Strack et al. (1988) Study 2
-      </td>
-      <td>published
-      </td>
-      <td>41.5
-      </td>
-      <td>0.55
-      </td>
-      </tr>
-      <tr>
-      <td> 	Strack et al. (1988) Study 2
-      </td>
-      <td>published
-      </td>
-      <td>41.5
-      </td>
-      <td>-0.51
-      </td>
-      </tr>
-      <tr>
-      <td>Tamir et al. (2004)
-      </td>
-      <td>published
-      </td>
-      <td>72
-      </td>
-      <td>-0.16
-      </td>
-      </tr>
-      <tr>
-      <td>Tourangeau & Ellsworth (1979)
-      </td>
-      <td>published
-      </td>
-      <td>20.5<sup>b</sup>
-      </td>
-      <td>0.3
-      </td>
-      </tr>
-      <tr>
-      <td> 	Tourangeau & Ellsworth (1979)
-      </td>
-      <td>published
-      </td>
-      <td>20.5<sup>b</sup>
-      </td>
-      <td>0.3
-      </td>
-      </tr>
-      <tr>
-      <td> 	Tourangeau & Ellsworth (1979)
-      </td>
-      <td>published
-      </td>
-      <td>20.5<sup>b</sup>
-      </td>
-      <td>0.3
-      </td>
-      </tr>
-      <tr>
-      <td> 	Tourangeau & Ellsworth (1979)
-      </td>
-      <td>published
-      </td>
-      <td>20.5<sup>b</sup>
-      </td>
-      <td>0.3
-      </td>
-      </tr>
-      <tr>
-      <td>Trent (2010)
-      </td>
-      <td>unpublished
-      </td>
-      <td>107.33<sup>b</sup>
-      </td>
-      <td>-0.22
-      </td>
-      </tr>
-      <tr>
-      <td> 	Trent (2010)
-      </td>
-      <td>unpublished
-      </td>
-      <td>107.33<sup>b</sup>
-      </td>
-      <td>-0.22
-      </td>
-      </tr>
-      <tr>
-      <td> 	Trent (2010)
-      </td>
-      <td>unpublished
-      </td>
-      <td>107.33<sup>b</sup>
-      </td>
-      <td>-0.06
-      </td>
-      </tr>
-      <tr>
-      <td> 	Trent (2010)
-      </td>
-      <td>unpublished
-      </td>
-      <td>107.33<sup>b</sup>
-      </td>
-      <td>-0.06
-      </td>
-      </tr>
-      <tr>
-      <td>Vieillard et al. (2015)
-      </td>
-      <td>published
-      </td>
-      <td>31
-      </td>
-      <td>0.25
-      </td>
-      </tr>
-      <tr>
-      <td> 	Vieillard et al. (2015)
-      </td>
-      <td>published
-      </td>
-      <td>31
-      </td>
-      <td>0.66
-      </td>
-      </tr>
-      <tr>
-      <td> 	Vieillard et al. (2015)
-      </td>
-      <td>published
-      </td>
-      <td>30
-      </td>
-      <td>0.21
-      </td>
-      </tr>
-      <tr>
-      <td> 	Vieillard et al. (2015)
-      </td>
-      <td>published
-      </td>
-      <td>30
-      </td>
-      <td>0.14
-      </td>
-      </tr>
-      <tr>
-      <td> 	Vieillard et al. (2015)
-      </td>
-      <td>published
-      </td>
-      <td>31
-      </td>
-      <td>-0.05
-      </td>
-      </tr>
-      <tr>
-      <td> 	Vieillard et al. (2015)
-      </td>
-      <td>published
-      </td>
-      <td>31
-      </td>
-      <td>-0.5
-      </td>
-      </tr>
-      <tr>
-      <td> 	Vieillard et al. (2015)
-      </td>
-      <td>published
-      </td>
-      <td>30
-      </td>
-      <td>0.07
-      </td>
-      </tr>
-      <tr>
-      <td> 	Vieillard et al. (2015)
-      </td>
-      <td>published
-      </td>
-      <td>30
-      </td>
-      <td>-0.12
-      </td>
-      </tr>
-      <tr>
-      <td>Wagenmakers et al. (2016) Albohn site
-      </td>
-      <td>published
-      </td>
-      <td>139
-      </td>
-      <td>0.09
-      </td>
-      </tr>
-      <tr>
-      <td>Wagenmakers et al. (2016) Allard site
-      </td>
-      <td>published
-      </td>
-      <td>125
-      </td>
-      <td>0.09
-      </td>
-      </tr>
-      <tr>
-      <td>Wagenmakers et al. (2016) Benning site
-      </td>
-      <td>published
-      </td>
-      <td>115
-      </td>
-      <td>-0.01
-      </td>
-      </tr>
-      <tr>
-      <td>Wagenmakers et al. (2016) Bulnes site
-      </td>
-      <td>published
-      </td>
-      <td>101
-      </td>
-      <td>0.09
-      </td>
-      </tr>
-      <tr>
-      <td>Wagenmakers et al. (2016) Capaldi site
-      </td>
-      <td>published
-      </td>
-      <td>117
-      </td>
-      <td>-0.07
-      </td>
-      </tr>
-      <tr>
-      <td>Wagenmakers et al. (2016) Chasten site
-      </td>
-      <td>published
-      </td>
-      <td>94
-      </td>
-      <td>-0.04
-      </td>
-      </tr>
-      <tr>
-      <td>Wagenmakers et al. (2016) Holmes site
-      </td>
-      <td>published
-      </td>
-      <td>99
-      </td>
-      <td>0.15
-      </td>
-      </tr>
-      <tr>
-      <td>Wagenmakers et al. (2016) Koch site
-      </td>
-      <td>published
-      </td>
-      <td>100
-      </td>
-      <td>-0.14
-      </td>
-      </tr>
-      <tr>
-      <td>Wagenmakers et al. (2016) Korb site
-      </td>
-      <td>published
-      </td>
-      <td>101
-      </td>
-      <td>0.01
-      </td>
-      </tr>
-      <tr>
-      <td>Wagenmakers et al. (2016) Lynott site
-      </td>
-      <td>published
-      </td>
-      <td>126
-      </td>
-      <td>0.23
-      </td>
-      </tr>
-      <tr>
-      <td>Wagenmakers et al. (2016) Oosterwijk site
-      </td>
-      <td>published
-      </td>
-      <td>110
-      </td>
-      <td>-0.17
-      </td>
-      </tr>
-      <tr>
-      <td>Wagenmakers et al. (2016) Ozdogru site
-      </td>
-      <td>published
-      </td>
-      <td>87
-      </td>
-      <td>-0.3
-      </td>
-      </tr>
-      <tr>
-      <td>Wagenmakers et al. (2016) Pacheco-Unguetti site
-      </td>
-      <td>published
-      </td>
-      <td>120
-      </td>
-      <td>-0.08
-      </td>
-      </tr>
-      <tr>
-      <td>Wagenmakers et al. (2016) Talarico site
-      </td>
-      <td>published
-      </td>
-      <td>112
-      </td>
-      <td>0.02
-      </td>
-      </tr>
-      <tr>
-      <td>Wagenmakers et al. (2016) Wagenmakers site
-      </td>
-      <td>published
-      </td>
-      <td>130
-      </td>
-      <td>0.13
-      </td>
-      </tr>
-      <tr>
-      <td>Wagenmakers et al. (2016) Wayand site
-      </td>
-      <td>published
-      </td>
-      <td>110
-      </td>
-      <td>-0.14
-      </td>
-      </tr>
-      <tr>
-      <td>Wagenmakers et al. (2016) Zeelenberg site
-      </td>
-      <td>published
-      </td>
-      <td>108
-      </td>
-      <td>0.25
-      </td>
-      </tr>
-      <tr>
-      <td>Wittmer (1985)
-      </td>
-      <td>unpublished
-      </td>
-      <td>30
-      </td>
-      <td>-0.36
-      </td>
-      </tr>
-      <tr>
-      <td> 	Wittmer (1985)
-      </td>
-      <td>unpublished
-      </td>
-      <td>30
-      </td>
-      <td>-0.21
-      </td>
-      </tr>
-      <tr>
-      <td>Yartz (2004)
-      </td>
-      <td>unpublished
-      </td>
-      <td>28
-      </td>
-      <td>-0.05
-      </td>
-      </tr>
-      <tr>
-      <td> 	Yartz (2004)
-      </td>
-      <td>unpublished
-      </td>
-      <td>30
-      </td>
-      <td>-0.18
-      </td>
-      </tr>
-      <tr>
-      <td> 	Yartz (2004)
-      </td>
-      <td>unpublished
-      </td>
-      <td>28
-      </td>
-      <td>-0.08
-      </td>
-      </tr>
-      <tr>
-      <td> 	Yartz (2004)
-      </td>
-      <td>unpublished
-      </td>
-      <td>30
-      </td>
-      <td>-0.09
-      </td>
-      </tr>
-      <tr>
-      <td> 	Yartz (2004)
-      </td>
-      <td>unpublished
-      </td>
-      <td>28
-      </td>
-      <td>0.04
-      </td>
-      </tr>
-      <tr>
-      <td> 	Yartz (2004)
-      </td>
-      <td>unpublished
-      </td>
-      <td>30
-      </td>
-      <td>0.5
-      </td>
-      </tr>
-      <tr>
-      <td>Zajonc et al. (1989) Study 3
-      </td>
-      <td>published
-      </td>
-      <td>37
-      </td>
-      <td>1.27
-      </td>
-      </tr>
-      <tr>
-      <td>Zajonc et al. (1989) Study 4
-      </td>
-      <td>published
-      </td>
-      <td>26
-      </td>
-      <td>0.47
-      </td>
-      </tr>
-      <tr>
-      <td> 	Zajonc et al. (1989) Study 4
-      </td>
-      <td>published
-      </td>
-      <td>26
-      </td>
-      <td>0.31
-      </td>
-      </tr>
-      <tr>
-      <td>Zariffa et al. (2014)
-      </td>
-      <td>published
-      </td>
-      <td>24
-      </td>
-      <td>-0.57
-      </td>
-      </tr>
-      <tr>
-      <td> 	Zariffa et al. (2014)
-      </td>
-      <td>published
-      </td>
-      <td>24
-      </td>
-      <td>-0.14
-      </td>
-      </tr>
-      <tr>
-      <td>Zhu et al. (2015)
-      </td>
-      <td>published
-      </td>
-      <td>55
-      </td>
-      <td>1.74
-      </td>
-      </tr>
-    </table>
+* Original effect size: Study 1: _d_ = 0.82 
+* Replication effect size: d= 0.2 [0.14, 0.26]. No evidence of publication bias but d = 0.2 and targeting 80% to detect a real phenomenon one needs more than 500 participants. All included studies have only less than 100.<span style="text-decoration:underline;"> [Schimmack](https://replicationindex.com/2017/09/04/the-power-of-the-pen-paradigm-a-replicability-analysis/)</span> finds strong evidence of publication bias on a subset of these papers, using a proper power analysis. 98 pieces of very weak evidence cannot sum to strong evidence, whatever the p-value says. ([The author agrees](https://twitter.com/coles_nicholas_/status/1116706173833576450).).
+<table>
+  <tr>
+   <td>
+Study
+   </td>
+   <td>Publication status
+   </td>
+   <td>N
+   </td>
+   <td><em>d</em>
+   </td>
+  </tr>
+  <tr>
+   <td>Andréasson & Dimberg (2008)
+   </td>
+   <td>published
+   </td>
+   <td>112
+   </td>
+   <td>-0.22
+   </td>
+  </tr>
+  <tr>
+   <td>Andréasson (2010) Study 3
+   </td>
+   <td>unpublished
+   </td>
+   <td>48
+   </td>
+   <td>-0.05
+   </td>
+  </tr>
+  <tr>
+   <td> 	Andréasson (2010) Study 3
+   </td>
+   <td>unpublished
+   </td>
+   <td>48
+   </td>
+   <td>-0.35
+   </td>
+  </tr>
+  <tr>
+   <td>Andréasson (2010) Study 4
+   </td>
+   <td>unpublished
+   </td>
+   <td>44
+   </td>
+   <td>0.49
+   </td>
+  </tr>
+  <tr>
+   <td> 	Andréasson (2010) Study 4
+   </td>
+   <td>unpublished
+   </td>
+   <td>44
+   </td>
+   <td>0.31
+   </td>
+  </tr>
+  <tr>
+   <td>Baumeister et al. (2016)
+   </td>
+   <td>published
+   </td>
+   <td>10
+   </td>
+   <td>1.26
+   </td>
+  </tr>
+  <tr>
+   <td> 	Baumeister et al. (2016)
+   </td>
+   <td>published
+   </td>
+   <td>10
+   </td>
+   <td>0.63
+   </td>
+  </tr>
+  <tr>
+   <td>Bodenhausen et al. (1994)
+   </td>
+   <td>published
+   </td>
+   <td>51
+   </td>
+   <td>0.55
+   </td>
+  </tr>
+  <tr>
+   <td>Bush et al. (1989)
+   </td>
+   <td>published
+   </td>
+   <td>69
+   </td>
+   <td>0.16
+   </td>
+  </tr>
+  <tr>
+   <td>Butler et al. (2003) Study 1
+   </td>
+   <td>published
+   </td>
+   <td>24
+   </td>
+   <td>-0.1
+   </td>
+  </tr>
+  <tr>
+   <td>Butler et al. (2003) Study 2
+   </td>
+   <td>published
+   </td>
+   <td>42
+   </td>
+   <td>-0.83
+   </td>
+  </tr>
+  <tr>
+   <td>Butler et al. (2006)
+   </td>
+   <td>published
+   </td>
+   <td>69
+   </td>
+   <td>-0.03
+   </td>
+  </tr>
+  <tr>
+   <td>Cai et al. (2016)
+   </td>
+   <td>published
+   </td>
+   <td>68
+   </td>
+   <td>-0.08
+   </td>
+  </tr>
+  <tr>
+   <td>Ceschi & Scherer (2003)
+   </td>
+   <td>published
+   </td>
+   <td>64
+   </td>
+   <td>0.74
+   </td>
+  </tr>
+  <tr>
+   <td>Clapp (2012)
+   </td>
+   <td>unpublished
+   </td>
+   <td>99
+   </td>
+   <td>0.69
+   </td>
+  </tr>
+  <tr>
+   <td> 	Clapp (2012)
+   </td>
+   <td>unpublished
+   </td>
+   <td>93
+   </td>
+   <td>0.08
+   </td>
+  </tr>
+  <tr>
+   <td> 	Clapp (2012)
+   </td>
+   <td>unpublished
+   </td>
+   <td>93
+   </td>
+   <td>0.17
+   </td>
+  </tr>
+  <tr>
+   <td> 	Clapp (2012)
+   </td>
+   <td>unpublished
+   </td>
+   <td>99
+   </td>
+   <td>0.27
+   </td>
+  </tr>
+  <tr>
+   <td>Laird & Crosby (1974) Study 1
+   </td>
+   <td>published
+   </td>
+   <td>26
+   </td>
+   <td>-0.13
+   </td>
+  </tr>
+  <tr>
+   <td>Laird & Crosby (1974) Study 2
+   </td>
+   <td>published
+   </td>
+   <td>26
+   </td>
+   <td>0.35
+   </td>
+  </tr>
+  <tr>
+   <td>Davey et al. (2013) Study 1
+   </td>
+   <td>published
+   </td>
+   <td>28
+   </td>
+   <td>0.41
+   </td>
+  </tr>
+  <tr>
+   <td> 	Davey et al. (2013) Study 1
+   </td>
+   <td>published
+   </td>
+   <td>14
+   </td>
+   <td>0.62
+   </td>
+  </tr>
+  <tr>
+   <td> 	Davey et al. (2013) Study 1
+   </td>
+   <td>published
+   </td>
+   <td>28
+   </td>
+   <td>0.52
+   </td>
+  </tr>
+  <tr>
+   <td> 	Davey et al. (2013) Study 1
+   </td>
+   <td>published
+   </td>
+   <td>14
+   </td>
+   <td>0.13
+   </td>
+  </tr>
+  <tr>
+   <td> 	Davey et al. (2013) Study 1
+   </td>
+   <td>published
+   </td>
+   <td>28
+   </td>
+   <td>0.69
+   </td>
+  </tr>
+  <tr>
+   <td> 	Davey et al. (2013) Study 1
+   </td>
+   <td>published
+   </td>
+   <td>14
+   </td>
+   <td>0.42
+   </td>
+  </tr>
+  <tr>
+   <td> 	Davey et al. (2013) Study 1
+   </td>
+   <td>published
+   </td>
+   <td>28
+   </td>
+   <td>0.35
+   </td>
+  </tr>
+  <tr>
+   <td> 	Davey et al. (2013) Study 1
+   </td>
+   <td>published
+   </td>
+   <td>14
+   </td>
+   <td>0.14
+   </td>
+  </tr>
+  <tr>
+   <td>Davey et al. (2013) Study 2
+   </td>
+   <td>published
+   </td>
+   <td>29
+   </td>
+   <td>0.73
+   </td>
+  </tr>
+  <tr>
+   <td> 	Davey et al. (2013) Study 2
+   </td>
+   <td>published
+   </td>
+   <td>15
+   </td>
+   <td>0.63
+   </td>
+  </tr>
+  <tr>
+   <td> 	Davey et al. (2013) Study 2
+   </td>
+   <td>published
+   </td>
+   <td>29
+   </td>
+   <td>0.4
+   </td>
+  </tr>
+  <tr>
+   <td> 	Davey et al. (2013) Study 2
+   </td>
+   <td>published
+   </td>
+   <td>15
+   </td>
+   <td>0
+   </td>
+  </tr>
+  <tr>
+   <td> 	Davey et al. (2013) Study 2
+   </td>
+   <td>published
+   </td>
+   <td>29
+   </td>
+   <td>0.08
+   </td>
+  </tr>
+  <tr>
+   <td> 	Davey et al. (2013) Study 2
+   </td>
+   <td>published
+   </td>
+   <td>15
+   </td>
+   <td>-0.25
+   </td>
+  </tr>
+  <tr>
+   <td> 	Davey et al. (2013) Study 2
+   </td>
+   <td>published
+   </td>
+   <td>29
+   </td>
+   <td>0.03
+   </td>
+  </tr>
+  <tr>
+   <td> 	Davey et al. (2013) Study 2
+   </td>
+   <td>published
+   </td>
+   <td>15
+   </td>
+   <td>-0.06
+   </td>
+  </tr>
+  <tr>
+   <td>Davis (2008) Study 1
+   </td>
+   <td>unpublished
+   </td>
+   <td>28
+   </td>
+   <td>0.99
+   </td>
+  </tr>
+  <tr>
+   <td> 	Davis (2008) Study 1
+   </td>
+   <td>unpublished
+   </td>
+   <td>28
+   </td>
+   <td>0.87
+   </td>
+  </tr>
+  <tr>
+   <td>Davis (2008) Study 2
+   </td>
+   <td>unpublished
+   </td>
+   <td>31
+   </td>
+   <td>0.26
+   </td>
+  </tr>
+  <tr>
+   <td> 	Davis (2008) Study 2
+   </td>
+   <td>unpublished
+   </td>
+   <td>30
+   </td>
+   <td>-0.19
+   </td>
+  </tr>
+  <tr>
+   <td>Davis et al. (2009)
+   </td>
+   <td>published
+   </td>
+   <td>69
+   </td>
+   <td>0.07
+   </td>
+  </tr>
+  <tr>
+   <td> 	Davis et al. (2009)
+   </td>
+   <td>published
+   </td>
+   <td>69
+   </td>
+   <td>0.51
+   </td>
+  </tr>
+  <tr>
+   <td>Davis et al. (2010)
+   </td>
+   <td>published
+   </td>
+   <td>68
+   </td>
+   <td>0.1
+   </td>
+  </tr>
+  <tr>
+   <td> 	Davis et al. (2010)
+   </td>
+   <td>published
+   </td>
+   <td>68
+   </td>
+   <td>0.05
+   </td>
+  </tr>
+  <tr>
+   <td> 	Davis et al. (2010)
+   </td>
+   <td>published
+   </td>
+   <td>68
+   </td>
+   <td>-0.15
+   </td>
+  </tr>
+  <tr>
+   <td>Davis et al. (2015)
+   </td>
+   <td>published
+   </td>
+   <td>18
+   </td>
+   <td>-0.16
+   </td>
+  </tr>
+  <tr>
+   <td>Demaree et al. (2004)
+   </td>
+   <td>published
+   </td>
+   <td>53
+   </td>
+   <td>0.62
+   </td>
+  </tr>
+  <tr>
+   <td> 	Demaree et al. (2004)
+   </td>
+   <td>published
+   </td>
+   <td>50
+   </td>
+   <td>0.16
+   </td>
+  </tr>
+  <tr>
+   <td>Demaree et al. (2006)
+   </td>
+   <td>published
+   </td>
+   <td>32
+   </td>
+   <td>-0.64
+   </td>
+  </tr>
+  <tr>
+   <td> 	Demaree et al. (2006)
+   </td>
+   <td>published
+   </td>
+   <td>35
+   </td>
+   <td>0.06
+   </td>
+  </tr>
+  <tr>
+   <td> 	Demaree et al. (2006)
+   </td>
+   <td>published
+   </td>
+   <td>37
+   </td>
+   <td>-0.38
+   </td>
+  </tr>
+  <tr>
+   <td>Dillon et al. (2007)
+   </td>
+   <td>published
+   </td>
+   <td>36
+   </td>
+   <td>0.11
+   </td>
+  </tr>
+  <tr>
+   <td>Dimberg & Söderkvist (2011) Study 1
+   </td>
+   <td>published
+   </td>
+   <td>48
+   </td>
+   <td>0.51
+   </td>
+  </tr>
+  <tr>
+   <td>Dimberg & Söderkvist (2011) Study 2
+   </td>
+   <td>published
+   </td>
+   <td>96
+   </td>
+   <td>0.1
+   </td>
+  </tr>
+  <tr>
+   <td> 	Dimberg & Söderkvist (2011) Study 2
+   </td>
+   <td>published
+   </td>
+   <td>96
+   </td>
+   <td>0.32
+   </td>
+  </tr>
+  <tr>
+   <td>Dimberg & Söderkvist (2011) Study 3
+   </td>
+   <td>published
+   </td>
+   <td>61
+   </td>
+   <td>0.06
+   </td>
+  </tr>
+  <tr>
+   <td> 	Dimberg & Söderkvist (2011) Study 3
+   </td>
+   <td>published
+   </td>
+   <td>61
+   </td>
+   <td>0.31
+   </td>
+  </tr>
+  <tr>
+   <td> 	Dimberg & Söderkvist (2011) Study 3
+   </td>
+   <td>published
+   </td>
+   <td>61
+   </td>
+   <td>0.34
+   </td>
+  </tr>
+  <tr>
+   <td>Duncan & Laird (1977)
+   </td>
+   <td>published
+   </td>
+   <td>31
+   </td>
+   <td>0.44
+   </td>
+  </tr>
+  <tr>
+   <td> 	Duncan & Laird (1977)
+   </td>
+   <td>published
+   </td>
+   <td>31
+   </td>
+   <td>0.38
+   </td>
+  </tr>
+  <tr>
+   <td> 	Duncan & Laird (1977)
+   </td>
+   <td>published
+   </td>
+   <td>31
+   </td>
+   <td>0.51
+   </td>
+  </tr>
+  <tr>
+   <td>Duncan & Laird (1980)
+   </td>
+   <td>published
+   </td>
+   <td>60
+   </td>
+   <td>0.59
+   </td>
+  </tr>
+  <tr>
+   <td> 	Duncan & Laird (1980)
+   </td>
+   <td>published
+   </td>
+   <td>60
+   </td>
+   <td>0.44
+   </td>
+  </tr>
+  <tr>
+   <td>Dzokoto et al. (2014)
+   </td>
+   <td>published
+   </td>
+   <td>70
+   </td>
+   <td>1.02
+   </td>
+  </tr>
+  <tr>
+   <td> 	Dzokoto et al. (2014)
+   </td>
+   <td>published
+   </td>
+   <td>59
+   </td>
+   <td>0.07
+   </td>
+  </tr>
+  <tr>
+   <td> 	Dzokoto et al. (2014)
+   </td>
+   <td>published
+   </td>
+   <td>35
+   </td>
+   <td>1.07
+   </td>
+  </tr>
+  <tr>
+   <td> 	Dzokoto et al. (2014)
+   </td>
+   <td>published
+   </td>
+   <td>51
+   </td>
+   <td>0.2
+   </td>
+  </tr>
+  <tr>
+   <td>Flack, Laird & Cavallaro (1999b) Study 1
+   </td>
+   <td>published
+   </td>
+   <td>60
+   </td>
+   <td>1.2
+   </td>
+  </tr>
+  <tr>
+   <td> 	Flack, Laird & Cavallaro (1999b) Study 1
+   </td>
+   <td>published
+   </td>
+   <td>60
+   </td>
+   <td>0.7
+   </td>
+  </tr>
+  <tr>
+   <td> 	Flack, Laird & Cavallaro (1999b) Study 1
+   </td>
+   <td>published
+   </td>
+   <td>60
+   </td>
+   <td>0.31
+   </td>
+  </tr>
+  <tr>
+   <td> 	Flack, Laird & Cavallaro (1999b) Study 1
+   </td>
+   <td>published
+   </td>
+   <td>60
+   </td>
+   <td>0.86
+   </td>
+  </tr>
+  <tr>
+   <td> 	Flack, Laird & Cavallaro (1999b) Study 1
+   </td>
+   <td>published
+   </td>
+   <td>60
+   </td>
+   <td>1.31
+   </td>
+  </tr>
+  <tr>
+   <td>Flack, Laird & Cavallaro (1999b) Study 2
+   </td>
+   <td>published
+   </td>
+   <td>29
+   </td>
+   <td>0.39
+   </td>
+  </tr>
+  <tr>
+   <td> 	Flack, Laird & Cavallaro (1999b) Study 2
+   </td>
+   <td>published
+   </td>
+   <td>29
+   </td>
+   <td>0.23
+   </td>
+  </tr>
+  <tr>
+   <td> 	Flack, Laird & Cavallaro (1999b) Study 2
+   </td>
+   <td>published
+   </td>
+   <td>29
+   </td>
+   <td>-0.16
+   </td>
+  </tr>
+  <tr>
+   <td> 	Flack, Laird & Cavallaro (1999b) Study 2
+   </td>
+   <td>published
+   </td>
+   <td>29
+   </td>
+   <td>-0.49
+   </td>
+  </tr>
+  <tr>
+   <td> 	Flack, Laird & Cavallaro (1999b) Study 2
+   </td>
+   <td>published
+   </td>
+   <td>29
+   </td>
+   <td>0.25
+   </td>
+  </tr>
+  <tr>
+   <td>Flack, Laird & Cavallaro (1999a)
+   </td>
+   <td>published
+   </td>
+   <td>54
+   </td>
+   <td>1.41
+   </td>
+  </tr>
+  <tr>
+   <td> 	Flack, Laird & Cavallaro (1999a)
+   </td>
+   <td>published
+   </td>
+   <td>54
+   </td>
+   <td>0.29
+   </td>
+  </tr>
+  <tr>
+   <td> 	Flack, Laird & Cavallaro (1999a)
+   </td>
+   <td>published
+   </td>
+   <td>54
+   </td>
+   <td>1.18
+   </td>
+  </tr>
+  <tr>
+   <td> 	Flack, Laird & Cavallaro (1999a)
+   </td>
+   <td>published
+   </td>
+   <td>54
+   </td>
+   <td>1.21
+   </td>
+  </tr>
+  <tr>
+   <td>Flack (2006)
+   </td>
+   <td>published
+   </td>
+   <td>51
+   </td>
+   <td>0.72
+   </td>
+  </tr>
+  <tr>
+   <td> 	Flack (2006)
+   </td>
+   <td>published
+   </td>
+   <td>51
+   </td>
+   <td>0.35
+   </td>
+  </tr>
+  <tr>
+   <td> 	Flack (2006)
+   </td>
+   <td>published
+   </td>
+   <td>51
+   </td>
+   <td>0.59
+   </td>
+  </tr>
+  <tr>
+   <td> 	Flack (2006)
+   </td>
+   <td>published
+   </td>
+   <td>51
+   </td>
+   <td>0.68
+   </td>
+  </tr>
+  <tr>
+   <td>Gan et al. (2015)
+   </td>
+   <td>published
+   </td>
+   <td>34
+   </td>
+   <td>-0.11
+   </td>
+  </tr>
+  <tr>
+   <td>Goldin et al. (2008)
+   </td>
+   <td>published
+   </td>
+   <td>17
+   </td>
+   <td>0.8
+   </td>
+  </tr>
+  <tr>
+   <td>Gross & Levenson (1993)
+   </td>
+   <td>published
+   </td>
+   <td>85
+   </td>
+   <td>0.04
+   </td>
+  </tr>
+  <tr>
+   <td>Gross & Levenson (1997)
+   </td>
+   <td>published
+   </td>
+   <td>180
+   </td>
+   <td>0.37
+   </td>
+  </tr>
+  <tr>
+   <td> 	Gross & Levenson (1997)
+   </td>
+   <td>published
+   </td>
+   <td>180
+   </td>
+   <td>0.16
+   </td>
+  </tr>
+  <tr>
+   <td>Gross (1993)
+   </td>
+   <td>unpublished
+   </td>
+   <td>180
+   </td>
+   <td>0.37
+   </td>
+  </tr>
+  <tr>
+   <td> 	Gross (1993)
+   </td>
+   <td>unpublished
+   </td>
+   <td>180
+   </td>
+   <td>0.09
+   </td>
+  </tr>
+  <tr>
+   <td> 	Gross (1993)
+   </td>
+   <td>unpublished
+   </td>
+   <td>180
+   </td>
+   <td>0.2
+   </td>
+  </tr>
+  <tr>
+   <td> 	Gross (1993)
+   </td>
+   <td>unpublished
+   </td>
+   <td>180
+   </td>
+   <td>0.16
+   </td>
+  </tr>
+  <tr>
+   <td> 	Gross (1993)
+   </td>
+   <td>unpublished
+   </td>
+   <td>180
+   </td>
+   <td>-0.23
+   </td>
+  </tr>
+  <tr>
+   <td>Gross (1998)
+   </td>
+   <td>published
+   </td>
+   <td>80
+   </td>
+   <td>0.18
+   </td>
+  </tr>
+  <tr>
+   <td>Harris (2001)
+   </td>
+   <td>published
+   </td>
+   <td>36
+   </td>
+   <td>0.07
+   </td>
+  </tr>
+  <tr>
+   <td>Hawk et al. (2012)
+   </td>
+   <td>published
+   </td>
+   <td>41
+   </td>
+   <td>0.85
+   </td>
+  </tr>
+  <tr>
+   <td>Helt & Fein (2016)
+   </td>
+   <td>published
+   </td>
+   <td>43
+   </td>
+   <td>0.42
+   </td>
+  </tr>
+  <tr>
+   <td>Hendricks & Buchanan (2016)
+   </td>
+   <td>published
+   </td>
+   <td>79
+   </td>
+   <td>-0.08
+   </td>
+  </tr>
+  <tr>
+   <td>Hendricks (2013)
+   </td>
+   <td>unpublished
+   </td>
+   <td>79
+   </td>
+   <td>0.02
+   </td>
+  </tr>
+  <tr>
+   <td>Henry et al. (2007)
+   </td>
+   <td>published
+   </td>
+   <td>30
+   </td>
+   <td>-0.49
+   </td>
+  </tr>
+  <tr>
+   <td> 	Henry et al. (2007)
+   </td>
+   <td>published
+   </td>
+   <td>30
+   </td>
+   <td>0.25
+   </td>
+  </tr>
+  <tr>
+   <td>Henry et al. (2009)a
+   </td>
+   <td>published
+   </td>
+   <td>26
+   </td>
+   <td>-0.05
+   </td>
+  </tr>
+  <tr>
+   <td> 	Henry et al. (2009)a
+   </td>
+   <td>published
+   </td>
+   <td>26
+   </td>
+   <td>0.53
+   </td>
+  </tr>
+  <tr>
+   <td>Henry et al. (2009)b
+   </td>
+   <td>published
+   </td>
+   <td>20
+   </td>
+   <td>-0.05
+   </td>
+  </tr>
+  <tr>
+   <td> 	Henry et al. (2009)b
+   </td>
+   <td>published
+   </td>
+   <td>20
+   </td>
+   <td>0.48
+   </td>
+  </tr>
+  <tr>
+   <td>Hess et al. (1992)
+   </td>
+   <td>published
+   </td>
+   <td>28
+   </td>
+   <td>-0.28
+   </td>
+  </tr>
+  <tr>
+   <td> 	Hess et al. (1992)
+   </td>
+   <td>published
+   </td>
+   <td>28
+   </td>
+   <td>0.14
+   </td>
+  </tr>
+  <tr>
+   <td> 	Hess et al. (1992)
+   </td>
+   <td>published
+   </td>
+   <td>28
+   </td>
+   <td>-0.26
+   </td>
+  </tr>
+  <tr>
+   <td> 	Hess et al. (1992)
+   </td>
+   <td>published
+   </td>
+   <td>28
+   </td>
+   <td>-0.16
+   </td>
+  </tr>
+  <tr>
+   <td>Hofmann et al. (2009)
+   </td>
+   <td>published
+   </td>
+   <td>134
+   </td>
+   <td>-0.03
+   </td>
+  </tr>
+  <tr>
+   <td>Ito et al. (2006)
+   </td>
+   <td>published
+   </td>
+   <td>40
+   </td>
+   <td>-0.39
+   </td>
+  </tr>
+  <tr>
+   <td> 	Ito et al. (2006)
+   </td>
+   <td>published
+   </td>
+   <td>33
+   </td>
+   <td>-0.25
+   </td>
+  </tr>
+  <tr>
+   <td>Kalokerinos et al. (2015) Study 1
+   </td>
+   <td>published
+   </td>
+   <td>133.67<sup>b</sup>
+   </td>
+   <td>-0.06
+   </td>
+  </tr>
+  <tr>
+   <td> 	Kalokerinos et al. (2015) Study 1
+   </td>
+   <td>published
+   </td>
+   <td>133.67<sup>b</sup>
+   </td>
+   <td>-0.02
+   </td>
+  </tr>
+  <tr>
+   <td>Kalokerinos et al. (2015) Study 2
+   </td>
+   <td>published
+   </td>
+   <td>295
+   </td>
+   <td>1.32
+   </td>
+  </tr>
+  <tr>
+   <td> 	Kalokerinos et al. (2015) Study 2
+   </td>
+   <td>published
+   </td>
+   <td>295
+   </td>
+   <td>0.2
+   </td>
+  </tr>
+  <tr>
+   <td>Kao et al. (2017)
+   </td>
+   <td>published
+   </td>
+   <td>41
+   </td>
+   <td>0.09
+   </td>
+  </tr>
+  <tr>
+   <td> 	Kao et al. (2017)
+   </td>
+   <td>published
+   </td>
+   <td>41
+   </td>
+   <td>-0.39
+   </td>
+  </tr>
+  <tr>
+   <td> 	Kao et al. (2017)
+   </td>
+   <td>published
+   </td>
+   <td>41
+   </td>
+   <td>0.8
+   </td>
+  </tr>
+  <tr>
+   <td> 	Kao et al. (2017)
+   </td>
+   <td>published
+   </td>
+   <td>41
+   </td>
+   <td>-0.34
+   </td>
+  </tr>
+  <tr>
+   <td> 	Kao et al. (2017)
+   </td>
+   <td>published
+   </td>
+   <td>41
+   </td>
+   <td>0.98
+   </td>
+  </tr>
+  <tr>
+   <td> 	Kao et al. (2017)
+   </td>
+   <td>published
+   </td>
+   <td>41
+   </td>
+   <td>-0.67
+   </td>
+  </tr>
+  <tr>
+   <td>Kircher et al. (2012)
+   </td>
+   <td>published
+   </td>
+   <td>27
+   </td>
+   <td>1.89
+   </td>
+  </tr>
+  <tr>
+   <td> 	Kircher et al. (2012)
+   </td>
+   <td>published
+   </td>
+   <td>27
+   </td>
+   <td>1.14
+   </td>
+  </tr>
+  <tr>
+   <td>Korb et al. (2012)
+   </td>
+   <td>published
+   </td>
+   <td>22
+   </td>
+   <td>0.21
+   </td>
+  </tr>
+  <tr>
+   <td>Labott & Teleha (1996)
+   </td>
+   <td>published
+   </td>
+   <td>19
+   </td>
+   <td>0.04
+   </td>
+  </tr>
+  <tr>
+   <td> 	Labott & Teleha (1996)
+   </td>
+   <td>published
+   </td>
+   <td>16
+   </td>
+   <td>0.91
+   </td>
+  </tr>
+  <tr>
+   <td>Laird (1974) Study 1
+   </td>
+   <td>published
+   </td>
+   <td>38
+   </td>
+   <td>0.46
+   </td>
+  </tr>
+  <tr>
+   <td> 	Laird (1974) Study 1
+   </td>
+   <td>published
+   </td>
+   <td>38
+   </td>
+   <td>0.44
+   </td>
+  </tr>
+  <tr>
+   <td> 	Laird (1974) Study 1
+   </td>
+   <td>published
+   </td>
+   <td>38
+   </td>
+   <td>0.39
+   </td>
+  </tr>
+  <tr>
+   <td>Laird (1974) Study 2
+   </td>
+   <td>published
+   </td>
+   <td>26
+   </td>
+   <td>0.55
+   </td>
+  </tr>
+  <tr>
+   <td> 	Laird (1974) Study 2
+   </td>
+   <td>published
+   </td>
+   <td>26
+   </td>
+   <td>0.13
+   </td>
+  </tr>
+  <tr>
+   <td>Lalot et al. (2014)
+   </td>
+   <td>published
+   </td>
+   <td>45
+   </td>
+   <td>-0.17
+   </td>
+  </tr>
+  <tr>
+   <td>Larsen et al. (1992)
+   </td>
+   <td>published
+   </td>
+   <td>27
+   </td>
+   <td>0.43
+   </td>
+  </tr>
+  <tr>
+   <td>Lee (2011)
+   </td>
+   <td>unpublished
+   </td>
+   <td>52
+   </td>
+   <td>0.48
+   </td>
+  </tr>
+  <tr>
+   <td> 	Lee (2011)
+   </td>
+   <td>unpublished
+   </td>
+   <td>44
+   </td>
+   <td>0.17
+   </td>
+  </tr>
+  <tr>
+   <td> 	Lee (2011)
+   </td>
+   <td>unpublished
+   </td>
+   <td>52
+   </td>
+   <td>-0.27
+   </td>
+  </tr>
+  <tr>
+   <td> 	Lee (2011)
+   </td>
+   <td>unpublished
+   </td>
+   <td>44
+   </td>
+   <td>-0.26
+   </td>
+  </tr>
+  <tr>
+   <td>Lewis & Bowler (2009)
+   </td>
+   <td>published
+   </td>
+   <td>25
+   </td>
+   <td>1.35
+   </td>
+  </tr>
+  <tr>
+   <td>Lewis (2012)
+   </td>
+   <td>published
+   </td>
+   <td>24
+   </td>
+   <td>0.71
+   </td>
+  </tr>
+  <tr>
+   <td> 	Lewis (2012)
+   </td>
+   <td>published
+   </td>
+   <td>24
+   </td>
+   <td>0.56
+   </td>
+  </tr>
+  <tr>
+   <td>Ma (2011)
+   </td>
+   <td>unpublished
+   </td>
+   <td>42.67<sup>b</sup>
+   </td>
+   <td>-0.21
+   </td>
+  </tr>
+  <tr>
+   <td> 	Ma (2011)
+   </td>
+   <td>unpublished
+   </td>
+   <td>42.67<sup>b</sup>
+   </td>
+   <td>-0.21
+   </td>
+  </tr>
+  <tr>
+   <td> 	Ma (2011)
+   </td>
+   <td>unpublished
+   </td>
+   <td>42.67<sup>b</sup>
+   </td>
+   <td>-0.21
+   </td>
+  </tr>
+  <tr>
+   <td> 	Ma (2011)
+   </td>
+   <td>unpublished
+   </td>
+   <td>42.67<sup>b</sup>
+   </td>
+   <td>-0.21
+   </td>
+  </tr>
+  <tr>
+   <td>Maldonado et al. (2015)
+   </td>
+   <td>unpublished
+   </td>
+   <td>157.33<sup>b</sup>
+   </td>
+   <td>0.12
+   </td>
+  </tr>
+  <tr>
+   <td>Marmolejo-Ramos & Dunn (2013) Study 1
+   </td>
+   <td>published
+   </td>
+   <td>100
+   </td>
+   <td>-0.07
+   </td>
+  </tr>
+  <tr>
+   <td>Marmolejo-Ramos & Dunn (2013) Study 2
+   </td>
+   <td>published
+   </td>
+   <td>106
+   </td>
+   <td>-0.07
+   </td>
+  </tr>
+  <tr>
+   <td>Marmolejo-Ramos & Dunn (2013) Study 3
+   </td>
+   <td>published
+   </td>
+   <td>104
+   </td>
+   <td>-0.07
+   </td>
+  </tr>
+  <tr>
+   <td>Marmolejo-Ramos & Dunn (2013) Study 4
+   </td>
+   <td>published
+   </td>
+   <td>100
+   </td>
+   <td>-0.07
+   </td>
+  </tr>
+  <tr>
+   <td>Marmolejo-Ramos & Dunn (2013) Study 5
+   </td>
+   <td>published
+   </td>
+   <td>66
+   </td>
+   <td>0.27
+   </td>
+  </tr>
+  <tr>
+   <td>Marmolejo-Ramos & Dunn (2013) Study 6
+   </td>
+   <td>published
+   </td>
+   <td>67
+   </td>
+   <td>0.38
+   </td>
+  </tr>
+  <tr>
+   <td>Martijn et al. (2002)
+   </td>
+   <td>published
+   </td>
+   <td>33
+   </td>
+   <td>-0.24
+   </td>
+  </tr>
+  <tr>
+   <td>McCanne & Anderson (1987)
+   </td>
+   <td>published
+   </td>
+   <td>30
+   </td>
+   <td>-2.16
+   </td>
+  </tr>
+  <tr>
+   <td> 	McCanne & Anderson (1987)
+   </td>
+   <td>published
+   </td>
+   <td>30
+   </td>
+   <td>-2.07
+   </td>
+  </tr>
+  <tr>
+   <td> 	McCanne & Anderson (1987)
+   </td>
+   <td>published
+   </td>
+   <td>30
+   </td>
+   <td>4.73
+   </td>
+  </tr>
+  <tr>
+   <td> 	McCanne & Anderson (1987)
+   </td>
+   <td>published
+   </td>
+   <td>30
+   </td>
+   <td>1.67
+   </td>
+  </tr>
+  <tr>
+   <td> 	McCanne & Anderson (1987)
+   </td>
+   <td>published
+   </td>
+   <td>30
+   </td>
+   <td>2.48
+   </td>
+  </tr>
+  <tr>
+   <td> 	McCanne & Anderson (1987)
+   </td>
+   <td>published
+   </td>
+   <td>30
+   </td>
+   <td>-0.25
+   </td>
+  </tr>
+  <tr>
+   <td>McCaul et al. (1982)
+   </td>
+   <td>published
+   </td>
+   <td>27
+   </td>
+   <td>0.25
+   </td>
+  </tr>
+  <tr>
+   <td>McIntosh et al. (1997)
+   </td>
+   <td>published
+   </td>
+   <td>26
+   </td>
+   <td>0.54
+   </td>
+  </tr>
+  <tr>
+   <td>Meeten et al. (2015)
+   </td>
+   <td>published
+   </td>
+   <td>71
+   </td>
+   <td>0.49
+   </td>
+  </tr>
+  <tr>
+   <td>Miyamoto (2006) Study 1
+   </td>
+   <td>unpublished
+   </td>
+   <td>40
+   </td>
+   <td>0.17
+   </td>
+  </tr>
+  <tr>
+   <td> 	Miyamoto (2006) Study 1
+   </td>
+   <td>unpublished
+   </td>
+   <td>40
+   </td>
+   <td>0.53
+   </td>
+  </tr>
+  <tr>
+   <td>Miyamoto (2006) Study 2
+   </td>
+   <td>unpublished
+   </td>
+   <td>77
+   </td>
+   <td>0.49
+   </td>
+  </tr>
+  <tr>
+   <td>Moore & Zoellner(2012)
+   </td>
+   <td>published
+   </td>
+   <td>23.33<sup>b</sup>
+   </td>
+   <td>-0.87
+   </td>
+  </tr>
+  <tr>
+   <td>Kappas (1989)
+   </td>
+   <td>unpublished
+   </td>
+   <td>32
+   </td>
+   <td>0.08
+   </td>
+  </tr>
+  <tr>
+   <td> 	Kappas (1989)
+   </td>
+   <td>unpublished
+   </td>
+   <td>32
+   </td>
+   <td>0.26
+   </td>
+  </tr>
+  <tr>
+   <td> 	Kappas (1989)
+   </td>
+   <td>unpublished
+   </td>
+   <td>32
+   </td>
+   <td>0.27
+   </td>
+  </tr>
+  <tr>
+   <td> 	Kappas (1989)
+   </td>
+   <td>unpublished
+   </td>
+   <td>32
+   </td>
+   <td>0.1
+   </td>
+  </tr>
+  <tr>
+   <td> 	Kappas (1989)
+   </td>
+   <td>unpublished
+   </td>
+   <td>32
+   </td>
+   <td>0.17
+   </td>
+  </tr>
+  <tr>
+   <td> 	Kappas (1989)
+   </td>
+   <td>unpublished
+   </td>
+   <td>32
+   </td>
+   <td>0.52
+   </td>
+  </tr>
+  <tr>
+   <td> 	Kappas (1989)
+   </td>
+   <td>unpublished
+   </td>
+   <td>32
+   </td>
+   <td>0.62
+   </td>
+  </tr>
+  <tr>
+   <td> 	Kappas (1989)
+   </td>
+   <td>unpublished
+   </td>
+   <td>32
+   </td>
+   <td>0.74
+   </td>
+  </tr>
+  <tr>
+   <td> 	Kappas (1989)
+   </td>
+   <td>unpublished
+   </td>
+   <td>32
+   </td>
+   <td>0.18
+   </td>
+  </tr>
+  <tr>
+   <td> 	Kappas (1989)
+   </td>
+   <td>unpublished
+   </td>
+   <td>32
+   </td>
+   <td>0.42
+   </td>
+  </tr>
+  <tr>
+   <td>Ohira & Kurono (1993) Study 1
+   </td>
+   <td>published
+   </td>
+   <td>20
+   </td>
+   <td>1.23
+   </td>
+  </tr>
+  <tr>
+   <td> 	Ohira & Kurono (1993) Study 1
+   </td>
+   <td>published
+   </td>
+   <td>20
+   </td>
+   <td>0.31
+   </td>
+  </tr>
+  <tr>
+   <td>Ohira & Kurono (1993) Study 2
+   </td>
+   <td>published
+   </td>
+   <td>20
+   </td>
+   <td>1.61
+   </td>
+  </tr>
+  <tr>
+   <td> 	Ohira & Kurono (1993) Study 2
+   </td>
+   <td>published
+   </td>
+   <td>20
+   </td>
+   <td>-1.38
+   </td>
+  </tr>
+  <tr>
+   <td>Paredes et al. (2013)
+   </td>
+   <td>published
+   </td>
+   <td>31
+   </td>
+   <td>0.85
+   </td>
+  </tr>
+  <tr>
+   <td>Paul et al. (2013)
+   </td>
+   <td>published
+   </td>
+   <td>20
+   </td>
+   <td>0.91
+   </td>
+  </tr>
+  <tr>
+   <td>Pedder et al. (2016)
+   </td>
+   <td>published
+   </td>
+   <td>68
+   </td>
+   <td>0.7
+   </td>
+  </tr>
+  <tr>
+   <td> 	Pedder et al. (2016)
+   </td>
+   <td>published
+   </td>
+   <td>68
+   </td>
+   <td>0.22
+   </td>
+  </tr>
+  <tr>
+   <td>Phillips et al. (2008)
+   </td>
+   <td>published
+   </td>
+   <td>32
+   </td>
+   <td>0.18
+   </td>
+  </tr>
+  <tr>
+   <td> 	Phillips et al. (2008)
+   </td>
+   <td>published
+   </td>
+   <td>32
+   </td>
+   <td>0.08
+   </td>
+  </tr>
+  <tr>
+   <td>Reisenzein & Studtmann (2007) Study 1
+   </td>
+   <td>published
+   </td>
+   <td>53
+   </td>
+   <td>0.18
+   </td>
+  </tr>
+  <tr>
+   <td> 	Reisenzein & Studtmann (2007) Study 1
+   </td>
+   <td>published
+   </td>
+   <td>55
+   </td>
+   <td>0.34
+   </td>
+  </tr>
+  <tr>
+   <td> 	Reisenzein & Studtmann (2007) Study 1
+   </td>
+   <td>published
+   </td>
+   <td>55
+   </td>
+   <td>-0.08
+   </td>
+  </tr>
+  <tr>
+   <td> 	Reisenzein & Studtmann (2007) Study 1
+   </td>
+   <td>published
+   </td>
+   <td>55
+   </td>
+   <td>0.3
+   </td>
+  </tr>
+  <tr>
+   <td> 	Reisenzein & Studtmann (2007) Study 1
+   </td>
+   <td>published
+   </td>
+   <td>53
+   </td>
+   <td>-0.12
+   </td>
+  </tr>
+  <tr>
+   <td> 	Reisenzein & Studtmann (2007) Study 1
+   </td>
+   <td>published
+   </td>
+   <td>53
+   </td>
+   <td>0.22
+   </td>
+  </tr>
+  <tr>
+   <td> 	Reisenzein & Studtmann (2007) Study 1
+   </td>
+   <td>published
+   </td>
+   <td>52
+   </td>
+   <td>-0.04
+   </td>
+  </tr>
+  <tr>
+   <td> 	Reisenzein & Studtmann (2007) Study 1
+   </td>
+   <td>published
+   </td>
+   <td>52
+   </td>
+   <td>-0.09
+   </td>
+  </tr>
+  <tr>
+   <td>Reisenzein & Studtmann (2007) Study 3
+   </td>
+   <td>published
+   </td>
+   <td>40
+   </td>
+   <td>-0.74
+   </td>
+  </tr>
+  <tr>
+   <td>Richards, Butler & Gross (2003)
+   </td>
+   <td>published
+   </td>
+   <td>59
+   </td>
+   <td>0.19
+   </td>
+  </tr>
+  <tr>
+   <td> 	Richards, Butler & Gross (2003)
+   </td>
+   <td>published
+   </td>
+   <td>59
+   </td>
+   <td>-0.12
+   </td>
+  </tr>
+  <tr>
+   <td>Richards & Gross (1999) Study 1
+   </td>
+   <td>published
+   </td>
+   <td>58
+   </td>
+   <td>-0.1
+   </td>
+  </tr>
+  <tr>
+   <td> 	Richards & Gross (1999) Study 1
+   </td>
+   <td>published
+   </td>
+   <td>58
+   </td>
+   <td>0.25
+   </td>
+  </tr>
+  <tr>
+   <td> 	Richards & Gross (1999) Study 1
+   </td>
+   <td>published
+   </td>
+   <td>58
+   </td>
+   <td>0.36
+   </td>
+  </tr>
+  <tr>
+   <td>Richards & Gross (1999) Study 2
+   </td>
+   <td>published
+   </td>
+   <td>85
+   </td>
+   <td>0.13
+   </td>
+  </tr>
+  <tr>
+   <td> 	Richards & Gross (1999) Study 2
+   </td>
+   <td>published
+   </td>
+   <td>85
+   </td>
+   <td>0.24
+   </td>
+  </tr>
+  <tr>
+   <td> 	Richards & Gross (1999) Study 2
+   </td>
+   <td>published
+   </td>
+   <td>85
+   </td>
+   <td>0.06
+   </td>
+  </tr>
+  <tr>
+   <td>Richards & Gross (2000) Study 1
+   </td>
+   <td>published
+   </td>
+   <td>53
+   </td>
+   <td>-0.12
+   </td>
+  </tr>
+  <tr>
+   <td>Richards & Gross (2000) Study 2
+   </td>
+   <td>published
+   </td>
+   <td>61
+   </td>
+   <td>0.39
+   </td>
+  </tr>
+  <tr>
+   <td>Richards & Gross (2006)
+   </td>
+   <td>published
+   </td>
+   <td>131
+   </td>
+   <td>0.34
+   </td>
+  </tr>
+  <tr>
+   <td>Roberts et al. (2008)
+   </td>
+   <td>published
+   </td>
+   <td>160
+   </td>
+   <td>0.07
+   </td>
+  </tr>
+  <tr>
+   <td>Robinson & Demaree (2009)
+   </td>
+   <td>published
+   </td>
+   <td>102
+   </td>
+   <td>-0.04
+   </td>
+  </tr>
+  <tr>
+   <td> 	Robinson & Demaree (2009)
+   </td>
+   <td>published
+   </td>
+   <td>102
+   </td>
+   <td>0.03
+   </td>
+  </tr>
+  <tr>
+   <td> 	Robinson & Demaree (2009)
+   </td>
+   <td>published
+   </td>
+   <td>102
+   </td>
+   <td>0
+   </td>
+  </tr>
+  <tr>
+   <td> 	Robinson & Demaree (2009)
+   </td>
+   <td>published
+   </td>
+   <td>102
+   </td>
+   <td>0
+   </td>
+  </tr>
+  <tr>
+   <td>Roemer (2014)
+   </td>
+   <td>unpublished
+   </td>
+   <td>44
+   </td>
+   <td>0.58
+   </td>
+  </tr>
+  <tr>
+   <td> 	Roemer (2014)
+   </td>
+   <td>unpublished
+   </td>
+   <td>44
+   </td>
+   <td>0.29
+   </td>
+  </tr>
+  <tr>
+   <td>Rohrmann et al. (2009)
+   </td>
+   <td>published
+   </td>
+   <td>36
+   </td>
+   <td>0.16
+   </td>
+  </tr>
+  <tr>
+   <td> 	Rohrmann et al. (2009)
+   </td>
+   <td>published
+   </td>
+   <td>36
+   </td>
+   <td>0.13
+   </td>
+  </tr>
+  <tr>
+   <td>Rummer et al. (2014)
+   </td>
+   <td>published
+   </td>
+   <td>74
+   </td>
+   <td>0.57
+   </td>
+  </tr>
+  <tr>
+   <td> 	Rummer et al. (2014)
+   </td>
+   <td>published
+   </td>
+   <td>74
+   </td>
+   <td>0.46
+   </td>
+  </tr>
+  <tr>
+   <td>Schmeichel , Vohs, & Baumeister (2003)
+   </td>
+   <td>published
+   </td>
+   <td>37
+   </td>
+   <td>-0.23
+   </td>
+  </tr>
+  <tr>
+   <td>Schmeichel et al. (2008)
+   </td>
+   <td>published
+   </td>
+   <td>50
+   </td>
+   <td>0.1
+   </td>
+  </tr>
+  <tr>
+   <td>Söderkvist & Dimberg (unpublished)
+   </td>
+   <td>unpublished
+   </td>
+   <td>32
+   </td>
+   <td>0.36
+   </td>
+  </tr>
+  <tr>
+   <td>Söderkvist et al. (2018) Study 1<sup>a</sup>
+   </td>
+   <td>unpublished
+   </td>
+   <td>32
+   </td>
+   <td>0.34
+   </td>
+  </tr>
+  <tr>
+   <td>Söderkvist et al. (2018) Study 2<sup>a</sup>
+   </td>
+   <td>unpublished
+   </td>
+   <td>64
+   </td>
+   <td>0.17
+   </td>
+  </tr>
+  <tr>
+   <td>Soussignan (2002)
+   </td>
+   <td>published
+   </td>
+   <td>33
+   </td>
+   <td>-0.17
+   </td>
+  </tr>
+  <tr>
+   <td> 	Soussignan (2002)
+   </td>
+   <td>published
+   </td>
+   <td>33
+   </td>
+   <td>0.48
+   </td>
+  </tr>
+  <tr>
+   <td> 	Soussignan (2002)
+   </td>
+   <td>published
+   </td>
+   <td>33
+   </td>
+   <td>0.47
+   </td>
+  </tr>
+  <tr>
+   <td> 	Soussignan (2002)
+   </td>
+   <td>published
+   </td>
+   <td>33
+   </td>
+   <td>0.44
+   </td>
+  </tr>
+  <tr>
+   <td> 	Soussignan (2002)
+   </td>
+   <td>published
+   </td>
+   <td>32
+   </td>
+   <td>0.53
+   </td>
+  </tr>
+  <tr>
+   <td> 	Soussignan (2002)
+   </td>
+   <td>published
+   </td>
+   <td>32
+   </td>
+   <td>1.1
+   </td>
+  </tr>
+  <tr>
+   <td> 	Soussignan (2002)
+   </td>
+   <td>published
+   </td>
+   <td>32
+   </td>
+   <td>1.11
+   </td>
+  </tr>
+  <tr>
+   <td> 	Soussignan (2002)
+   </td>
+   <td>published
+   </td>
+   <td>32
+   </td>
+   <td>0.94
+   </td>
+  </tr>
+  <tr>
+   <td>Stel et al. (2008) Study 2
+   </td>
+   <td>published
+   </td>
+   <td>18.67<sup>b</sup>
+   </td>
+   <td>1.11
+   </td>
+  </tr>
+  <tr>
+   <td>Stel et al. (2008) Study 3
+   </td>
+   <td>published
+   </td>
+   <td>24
+   </td>
+   <td>1
+   </td>
+  </tr>
+  <tr>
+   <td>Strack et al. (1988) Study 1
+   </td>
+   <td>published
+   </td>
+   <td>76.67<sup>b</sup>
+   </td>
+   <td>0.43
+   </td>
+  </tr>
+  <tr>
+   <td>Strack et al. (1988) Study 2
+   </td>
+   <td>published
+   </td>
+   <td>83
+   </td>
+   <td>-0.15
+   </td>
+  </tr>
+  <tr>
+   <td> 	Strack et al. (1988) Study 2
+   </td>
+   <td>published
+   </td>
+   <td>41.5
+   </td>
+   <td>0.55
+   </td>
+  </tr>
+  <tr>
+   <td> 	Strack et al. (1988) Study 2
+   </td>
+   <td>published
+   </td>
+   <td>41.5
+   </td>
+   <td>-0.51
+   </td>
+  </tr>
+  <tr>
+   <td>Tamir et al. (2004)
+   </td>
+   <td>published
+   </td>
+   <td>72
+   </td>
+   <td>-0.16
+   </td>
+  </tr>
+  <tr>
+   <td>Tourangeau & Ellsworth (1979)
+   </td>
+   <td>published
+   </td>
+   <td>20.5<sup>b</sup>
+   </td>
+   <td>0.3
+   </td>
+  </tr>
+  <tr>
+   <td> 	Tourangeau & Ellsworth (1979)
+   </td>
+   <td>published
+   </td>
+   <td>20.5<sup>b</sup>
+   </td>
+   <td>0.3
+   </td>
+  </tr>
+  <tr>
+   <td> 	Tourangeau & Ellsworth (1979)
+   </td>
+   <td>published
+   </td>
+   <td>20.5<sup>b</sup>
+   </td>
+   <td>0.3
+   </td>
+  </tr>
+  <tr>
+   <td> 	Tourangeau & Ellsworth (1979)
+   </td>
+   <td>published
+   </td>
+   <td>20.5<sup>b</sup>
+   </td>
+   <td>0.3
+   </td>
+  </tr>
+  <tr>
+   <td>Trent (2010)
+   </td>
+   <td>unpublished
+   </td>
+   <td>107.33<sup>b</sup>
+   </td>
+   <td>-0.22
+   </td>
+  </tr>
+  <tr>
+   <td> 	Trent (2010)
+   </td>
+   <td>unpublished
+   </td>
+   <td>107.33<sup>b</sup>
+   </td>
+   <td>-0.22
+   </td>
+  </tr>
+  <tr>
+   <td> 	Trent (2010)
+   </td>
+   <td>unpublished
+   </td>
+   <td>107.33<sup>b</sup>
+   </td>
+   <td>-0.06
+   </td>
+  </tr>
+  <tr>
+   <td> 	Trent (2010)
+   </td>
+   <td>unpublished
+   </td>
+   <td>107.33<sup>b</sup>
+   </td>
+   <td>-0.06
+   </td>
+  </tr>
+  <tr>
+   <td>Vieillard et al. (2015)
+   </td>
+   <td>published
+   </td>
+   <td>31
+   </td>
+   <td>0.25
+   </td>
+  </tr>
+  <tr>
+   <td> 	Vieillard et al. (2015)
+   </td>
+   <td>published
+   </td>
+   <td>31
+   </td>
+   <td>0.66
+   </td>
+  </tr>
+  <tr>
+   <td> 	Vieillard et al. (2015)
+   </td>
+   <td>published
+   </td>
+   <td>30
+   </td>
+   <td>0.21
+   </td>
+  </tr>
+  <tr>
+   <td> 	Vieillard et al. (2015)
+   </td>
+   <td>published
+   </td>
+   <td>30
+   </td>
+   <td>0.14
+   </td>
+  </tr>
+  <tr>
+   <td> 	Vieillard et al. (2015)
+   </td>
+   <td>published
+   </td>
+   <td>31
+   </td>
+   <td>-0.05
+   </td>
+  </tr>
+  <tr>
+   <td> 	Vieillard et al. (2015)
+   </td>
+   <td>published
+   </td>
+   <td>31
+   </td>
+   <td>-0.5
+   </td>
+  </tr>
+  <tr>
+   <td> 	Vieillard et al. (2015)
+   </td>
+   <td>published
+   </td>
+   <td>30
+   </td>
+   <td>0.07
+   </td>
+  </tr>
+  <tr>
+   <td> 	Vieillard et al. (2015)
+   </td>
+   <td>published
+   </td>
+   <td>30
+   </td>
+   <td>-0.12
+   </td>
+  </tr>
+  <tr>
+   <td>Wagenmakers et al. (2016) Albohn site
+   </td>
+   <td>published
+   </td>
+   <td>139
+   </td>
+   <td>0.09
+   </td>
+  </tr>
+  <tr>
+   <td>Wagenmakers et al. (2016) Allard site
+   </td>
+   <td>published
+   </td>
+   <td>125
+   </td>
+   <td>0.09
+   </td>
+  </tr>
+  <tr>
+   <td>Wagenmakers et al. (2016) Benning site
+   </td>
+   <td>published
+   </td>
+   <td>115
+   </td>
+   <td>-0.01
+   </td>
+  </tr>
+  <tr>
+   <td>Wagenmakers et al. (2016) Bulnes site
+   </td>
+   <td>published
+   </td>
+   <td>101
+   </td>
+   <td>0.09
+   </td>
+  </tr>
+  <tr>
+   <td>Wagenmakers et al. (2016) Capaldi site
+   </td>
+   <td>published
+   </td>
+   <td>117
+   </td>
+   <td>-0.07
+   </td>
+  </tr>
+  <tr>
+   <td>Wagenmakers et al. (2016) Chasten site
+   </td>
+   <td>published
+   </td>
+   <td>94
+   </td>
+   <td>-0.04
+   </td>
+  </tr>
+  <tr>
+   <td>Wagenmakers et al. (2016) Holmes site
+   </td>
+   <td>published
+   </td>
+   <td>99
+   </td>
+   <td>0.15
+   </td>
+  </tr>
+  <tr>
+   <td>Wagenmakers et al. (2016) Koch site
+   </td>
+   <td>published
+   </td>
+   <td>100
+   </td>
+   <td>-0.14
+   </td>
+  </tr>
+  <tr>
+   <td>Wagenmakers et al. (2016) Korb site
+   </td>
+   <td>published
+   </td>
+   <td>101
+   </td>
+   <td>0.01
+   </td>
+  </tr>
+  <tr>
+   <td>Wagenmakers et al. (2016) Lynott site
+   </td>
+   <td>published
+   </td>
+   <td>126
+   </td>
+   <td>0.23
+   </td>
+  </tr>
+  <tr>
+   <td>Wagenmakers et al. (2016) Oosterwijk site
+   </td>
+   <td>published
+   </td>
+   <td>110
+   </td>
+   <td>-0.17
+   </td>
+  </tr>
+  <tr>
+   <td>Wagenmakers et al. (2016) Ozdogru site
+   </td>
+   <td>published
+   </td>
+   <td>87
+   </td>
+   <td>-0.3
+   </td>
+  </tr>
+  <tr>
+   <td>Wagenmakers et al. (2016) Pacheco-Unguetti site
+   </td>
+   <td>published
+   </td>
+   <td>120
+   </td>
+   <td>-0.08
+   </td>
+  </tr>
+  <tr>
+   <td>Wagenmakers et al. (2016) Talarico site
+   </td>
+   <td>published
+   </td>
+   <td>112
+   </td>
+   <td>0.02
+   </td>
+  </tr>
+  <tr>
+   <td>Wagenmakers et al. (2016) Wagenmakers site
+   </td>
+   <td>published
+   </td>
+   <td>130
+   </td>
+   <td>0.13
+   </td>
+  </tr>
+  <tr>
+   <td>Wagenmakers et al. (2016) Wayand site
+   </td>
+   <td>published
+   </td>
+   <td>110
+   </td>
+   <td>-0.14
+   </td>
+  </tr>
+  <tr>
+   <td>Wagenmakers et al. (2016) Zeelenberg site
+   </td>
+   <td>published
+   </td>
+   <td>108
+   </td>
+   <td>0.25
+   </td>
+  </tr>
+  <tr>
+   <td>Wittmer (1985)
+   </td>
+   <td>unpublished
+   </td>
+   <td>30
+   </td>
+   <td>-0.36
+   </td>
+  </tr>
+  <tr>
+   <td> 	Wittmer (1985)
+   </td>
+   <td>unpublished
+   </td>
+   <td>30
+   </td>
+   <td>-0.21
+   </td>
+  </tr>
+  <tr>
+   <td>Yartz (2004)
+   </td>
+   <td>unpublished
+   </td>
+   <td>28
+   </td>
+   <td>-0.05
+   </td>
+  </tr>
+  <tr>
+   <td> 	Yartz (2004)
+   </td>
+   <td>unpublished
+   </td>
+   <td>30
+   </td>
+   <td>-0.18
+   </td>
+  </tr>
+  <tr>
+   <td> 	Yartz (2004)
+   </td>
+   <td>unpublished
+   </td>
+   <td>28
+   </td>
+   <td>-0.08
+   </td>
+  </tr>
+  <tr>
+   <td> 	Yartz (2004)
+   </td>
+   <td>unpublished
+   </td>
+   <td>30
+   </td>
+   <td>-0.09
+   </td>
+  </tr>
+  <tr>
+   <td> 	Yartz (2004)
+   </td>
+   <td>unpublished
+   </td>
+   <td>28
+   </td>
+   <td>0.04
+   </td>
+  </tr>
+  <tr>
+   <td> 	Yartz (2004)
+   </td>
+   <td>unpublished
+   </td>
+   <td>30
+   </td>
+   <td>0.5
+   </td>
+  </tr>
+  <tr>
+   <td>Zajonc et al. (1989) Study 3
+   </td>
+   <td>published
+   </td>
+   <td>37
+   </td>
+   <td>1.27
+   </td>
+  </tr>
+  <tr>
+   <td>Zajonc et al. (1989) Study 4
+   </td>
+   <td>published
+   </td>
+   <td>26
+   </td>
+   <td>0.47
+   </td>
+  </tr>
+  <tr>
+   <td> 	Zajonc et al. (1989) Study 4
+   </td>
+   <td>published
+   </td>
+   <td>26
+   </td>
+   <td>0.31
+   </td>
+  </tr>
+  <tr>
+   <td>Zariffa et al. (2014)
+   </td>
+   <td>published
+   </td>
+   <td>24
+   </td>
+   <td>-0.57
+   </td>
+  </tr>
+  <tr>
+   <td> 	Zariffa et al. (2014)
+   </td>
+   <td>published
+   </td>
+   <td>24
+   </td>
+   <td>-0.14
+   </td>
+  </tr>
+  <tr>
+   <td>Zhu et al. (2015)
+   </td>
+   <td>published
+   </td>
+   <td>55
+   </td>
+   <td>1.74
+   </td>
+  </tr>
+</table>
 {{< /spoiler >}}
 
 * [No good evidence](https://www.theguardian.com/science/brain-flapping/2013/jan/21/blue-monday-depressing-day-nonsense-science) for **Blue Monday**, that the third week in January is the peak of depression or low affect ‘as measured by a simple mathematical formula developed on behalf of Sky Travel’. You’d need a huge sample size, in the thousands, to detect the effect reliably and this has never been done.
@@ -3577,104 +3551,117 @@ n=8 judges with n=1100 cases.
 * Replication effect size: Camerer et al. r= -.015; O’Donnell et al. r= -.039; Shah et al. η<sup>2</sup> = .004
 {{< /spoiler >}}
 
-* **Scarcity effect**, threats to an individual’s sense that they can afford things that they need, undermines perceptions of meaning in life.​
+* **Scarcity effect - _Meaning in life_**. Threats to people’s sense that they can afford things that they need in the present and foreseeable future, undermines perceptions of meaning in life.​
 {{< spoiler text="Statistics" >}}
 * Status: not replicated
-* Original paper: ‘[The existential cost of economic insecurity: Threatened financial security undercuts meaning](https://doi.org/10.1080/00224545.2016.1270892)’, Abeyta et al. 2017 Study 2; experiment with n=121. [citations=8(GS, November 2021)]​.
-* Critiques: O’Donnell et al. 2021 [n=304, citations=0(GS, November 2021)].
-* Original effect size: r= .180​.
-* Replication effect size: r= .055​
+* Original paper: ‘[The existential cost of economic insecurity: Threatened financial security undercuts meaning](https://doi.org/10.1080/00224545.2016.1270892)’, Abeyta et al. (2017) with n=121. [citations=8(GS, November 2021)]​.
+* Critiques: [O’Donnell et al. 2021](https://doi.org/10.1073/pnas.2103313118) [n=304, citations=0(GS, November 2021)].
+* Original effect size: _r_ = .180​.
+* Replication effect size: _r_ = .055​
 {{< /spoiler >}}
 
-* **Scarcity effect**, a negative income shock was associated with increased discounting rates.​
+* **Scarcity effect - _Discounting_**. A negative income shock was associated with increased discounting rates for gains and loses.​
 {{< spoiler text="Statistics" >}}
 * Status: replicated
-* Original paper: ‘[Stuck in time: Negative income shock constricts the temporal window of valuation spanning the future and the past](https://doi.org/10.1371/journal.pone.0163051)’, Bickel et al. 2016 Replication; experiment with n=401. [citation=51(GS, November 2021)]​.
-* Critiques: O’Donnell et al. 2021 [n=993, citations=0(GS, November 2021)] 
-* Original effect size: r= .480
-* Replication effect size: r= .104.​
+* Original paper: ‘[Stuck in time: Negative income shock constricts the temporal window of valuation spanning the future and the past](https://doi.org/10.1371/journal.pone.0163051)’, Bickel et al. (2016) with n=401. [citation=51(GS, November 2021)]​.
+* Critiques: [O’Donnell et al. 2021](https://doi.org/10.1073/pnas.2103313118) [n=993, citations=0(GS, November 2021)] 
+* Original effect size: _r_ = .480
+* Replication effect size: _r_ = .104.​
 {{< /spoiler >}}
 
-* **Scarcity effect**, there is a positive relationship between economic insecurity and physical pain.
+* **Scarcity effect - _Physical pain_**. The higher the economic insecurity is associated with the higher the physical pain.
 {{< spoiler text="Statistics" >}}
 * Status: replicated
-* Original paper: ‘[Economic insecurity increases physical pain](https://doi.org/10.1177/0956797615625640)’, Chou et al. 2016 Study 3; experiment with n=231. [citation=103(GS, November 2021)]​.
-* Critiques: O’Donnell et al. 2021 [n=603, citations=0(GS, November 2021)]
-* Original effect size: r= .155
-* Replication effect size: r= .209
+* Original paper: ‘[Economic insecurity increases physical pain](https://doi.org/10.1177/0956797615625640)’, Chou et al. (2016 ) Study 3, with n=231. [citation=103(GS, November 2021)]​.
+* Critiques: [O’Donnell et al. 2021](https://doi.org/10.1073/pnas.2103313118) [n=603, citations=0(GS, November 2021)]
+* Original effect size: _r _=  .155
+* Replication effect size: _r _= .209
 {{< /spoiler >}}
 
-* **Scarcity effect**, lower self-concept clarity (conceptualized as a finite resource) is associated with lower self-expansion.​
+* **Scarcity effect -** **_Self expansion. _**Lower self-concept clarity (conceptualized as a finite resource) is associated with lower self-expansion.​
 {{< spoiler text="Statistics" >}}
 * Status: not replicated
-* Original paper: ‘[Knowing who you are and adding to it: Reduced self-concept clarity predicts reduced self-expansion](https://doi.org/10.1177/1948550614555029)’, Emery et al. 2015 Study 3; experiment with n=152. [citation=54(GS, November 2021)]​.
-* Critiques: O’Donnell et al. 2021 [n=339, citations=0(GS, November 2021)]
-* Original effect size: r= .257
-* Replication effect size: r= -.004
+* Original paper: ‘[Knowing who you are and adding to it: Reduced self-concept clarity predicts reduced self-expansion](https://doi.org/10.1177/1948550614555029)’, Emery et al. (2015) Study 3 with n=152. [citation=54(GS, November 2021)]​.
+* Critiques: [O’Donnell et al. 2021](https://doi.org/10.1073/pnas.2103313118) [n=339, citations=0(GS, November 2021)]
+* Original effect size: _r_ =  .257
+* Replication effect size: _r_ =  -.004
 {{< /spoiler >}}
 
-* **Scarcity effect**, imagining having less time available in one’s current city is positively associated with well-being.​
+* **Scarcity effect** **-_ Wellbeing. _**Imagining having less time available in one’s current city is positively associated with well-being.​
 {{< spoiler text="Statistics" >}}
 * Status: not replicated
-* Original paper: ‘[Reframing the ordinary: Imagining time as scarce increases well-being](https://doi.org/10.1080/17439760.2017.1279210)’, Layous et al 2018; study experiment with n=111. [citation=22(GS, November 2021)]​.
-* Critiques: O’Donnell et al. 2021 [n=132, citations=0(GS, November 2021)]
-* Original effect size: r= .131
-* Replication effect size: r= -.110
+* Original paper: ‘[Reframing the ordinary: Imagining time as scarce increases well-being](https://doi.org/10.1080/17439760.2017.1279210)’, Layous et al. (2018) with n=111. [citation=22(GS, November 2021)]​.
+* Critiques: [O’Donnell et al. 2021](https://doi.org/10.1073/pnas.2103313118) [n=132, citations=0(GS, November 2021)]
+* Original effect size: _r_= .131
+* Replication effect size: _r_= -.110.
 {{< /spoiler >}}
 
-* **Scarcity effect**, lacking time or money can lead to making worse decisions.​
+* **Scarcity effect - _Decision making. _** Lacking time or money can lead to making worse decisions.​
 {{< spoiler text="Statistics" >}}
 * Status: not replicated
-* Original paper: ‘[Poverty impedes cognitive function’](https://doi.org/10.1126/science.1238041), Mani et al. 2013 Study 4; experiment with n=96. [citation=2332(GS, November 2021)]​.
-* Critiques: O’Donnell et al. 2021 [n=229, citations=0(GS, November 2021)]
-* Original effect size: r= .205
-* Replication effect size: r= .024
+* Original paper: ‘[Poverty impedes cognitive function’](https://doi.org/10.1126/science.1238041), Mani et al. (2013) Study 4,  with n=96. [citation=2332(GS, November 2021)]​.
+* Critiques: [O’Donnell et al. 2021](https://doi.org/10.1073/pnas.2103313118) [n=229, citations=0(GS, November 2021)]
+* Original effect size: _r_= .205
+* Replication effect size: _r_= .024.
 {{< /spoiler >}}
 
-* **Scarcity effect**, that poor people should be more likely to consider opportunity costs. Plantinga et al. find a lack of evidence for this hypothesis.​
+* **Scarcity effect** **- _Opportunity costs._** Poor people are more likely to consider opportunity costs spontaneously. 
 {{< spoiler text="Statistics" >}}
-* Status: replicated (NS)
-* Original paper: ‘[Evidence for opportunity cost neglect in the poor](https://doi.org/10.1002/bdm.2041)’, Plantinga et al 2019 Study 3; experiment with n=642. [citation=18(GS, November 2021)]​.
-* Critiques: O’Donnell et al. 2021 [n=1564, citations=0(GS, November 2021)]
-* Original effect size: r= -.03
-* Replication effect size: r= -.006
+* Status: replicated Original paper: ‘[Evidence for opportunity cost neglect in the poor](https://doi.org/10.1002/bdm.2041)’, Plantinga et al. (2019) with n=642. [citation=18(GS, November 2021)]​.
+* Critiques: [O’Donnell et al. 2021](https://doi.org/10.1073/pnas.2103313118) [n=1564, citations=0(GS, November 2021)]
+* Original effect size: _r_ = -.03
+* Replication effect size: _r _= -.006
 {{< /spoiler >}}
 
-* **Scarcity effect**, thoughts triggered by financial concerns intrude into consciousness more often for poorer individuals than for wealthier individuals.​
-{{< spoiler text="Statistics" >}}
-* Status: not replicated
-* Original paper: ‘[Money in the mental lives of the poor](https://doi.org/10.1521/soco.2018.36.1.4)’, Shah et al. 2018 Study 3; experiment with n=568. [citation=78(GS, November 2021)]​.
-* Critiques: O’Donnell et al. 2021 [n=1334, citations=0(GS, November 2021)]
-* Original effect size: r= .111
-* Replication effect size: r= .027
-{{< /spoiler >}}
-
- * **Scarcity effect**, poorer individuals view losses in more absolute, rather than relative, terms than do wealthier individuals.​
+* **Scarcity effect -_ Conscious thoughts._** Thoughts triggered by financial concerns intrude more often  into consciousness of poorer individuals than for wealthier individuals.​
 {{< spoiler text="Statistics" >}}
 * Status: not replicated
-* Original paper: ‘[Scarcity frames value](https://doi.org/10.1177/0956797614563958)’, Shah et al. 2015 Study 6; experiment with n=73. [citation=315(GS, November 2021)]​.
-* Critiques: O’Donnell et al. 2021 [n=209, citations=0(GS, November 2021)]
-* Original effect size: r= .264
-* Replication effect size: r= .090
+* Original paper: ‘[Money in the mental lives of the poor](https://doi.org/10.1521/soco.2018.36.1.4)’, Shah et al. (2018) with n=568. [citation=78(GS, November 2021)]​.
+* Critiques: [O’Donnell et al. 2021](https://doi.org/10.1073/pnas.2103313118) [n=1334, citations=0(GS, November 2021)]
+* Original effect size: _r_ = .111
+* Replication effect size: _r_ = .027
 {{< /spoiler >}}
 
-* **Bottomless soup bowl**, the original study aimed to assess whether visual cues related to portion size influence the intake volume of soup. In other words, the original study claimed to have used “bottomless” bowls to track how much soup participants would consume without seeing the portion size decrease. While the original study appears influential in this line of research, it has not been questioned whether it had been fabricated.
+* **Scarcity effect -_ Absoluteness of losses_.** Poorer individuals view losses in more absolute, rather than relative, terms than do wealthier individuals.​
 {{< spoiler text="Statistics" >}}
 * Status: not replicated
-* Original paper: [“Bottomless bowls: why visual cues of portion size may influence intake”](https://pubmed.ncbi.nlm.nih.gov/15761167/) , Warsink, Painter & North, 2005; experiment, n = 54. [citation=767(GS, Dez 2021)]​.
-* Critiques: blog post: [Andrew 2019](https://statmodeling.stat.columbia.edu/2019/08/20/did-that-bottomless-soup-bowl-experiment-ever-happen/). [James Heathers 2018](https://jamesheathers.medium.com/sprite-case-study-5-sunset-for-souper-man-ee898b6af9f5).
-* Original effect size: [14.7+/-8.4 vs. 8.5+/-6.1 oz; F(1,52)=8.99; p&lt;0.01].
-* Replication effect size: no replication as far as I could see but many other related works.
+* Original paper: ‘[Scarcity frames value](https://doi.org/10.1177/0956797614563958)’, Shah et al. (2015) with n=73. [citation=315(GS, November 2021)]​.
+* Critiques: [O’Donnell et al. 2021](https://doi.org/10.1073/pnas.2103313118) [n=209, citations=0(GS, November 2021)]
+* Original effect size: _r _= .264
+* Replication effect size: _r _= .090
 {{< /spoiler >}}
 
-* **Simon effect**
+* **Bottomless soup bowl**. Visual cues related to portion size increase intake volume of soup. 
+{{< spoiler text="Statistics" >}}
+* Status: not replicated
+* Original paper: [“Bottomless bowls: why visual cues of portion size may influence intake”](https://pubmed.ncbi.nlm.nih.gov/15761167/) , Warsink et al., 2005; experiment, n = 54 [citation=767(GS, December 2021)]​.
+* Critiques: [Andrew, 2019](https://statmodeling.stat.columbia.edu/2019/08/20/did-that-bottomless-soup-bowl-experiment-ever-happen/) [blog post]. [Heathers, 2018](https://jamesheathers.medium.com/sprite-case-study-5-sunset-for-souper-man-ee898b6af9f5) [blog post].
+* Original effect size: not reported but [calculated](https://effect-size-calculator.herokuapp.com/), η<sub>p</sub>2 = 0.147 using F(1,52)=8.99; p&lt;0.01.
+* Replication effect size: not reported. 
+{{< /spoiler >}}
+
+* **Simon effect**.  Faster responses are observed when the stimulus and response are on the same side than when the stimulus and response are on opposite sides. 
+{{< spoiler text="Statistics" >}}
+* Status: mixed
+* Original paper: ‘[Choice reaction time as a function of angular stimulus-response correspondence and age](https://www.tandfonline.com/doi/abs/10.1080/00140136308930679)’, Simon and Wolf  1963; with, n1 = 20, n2 = 20. [citation=289(GS, June 2022)]​.
+* Critiques: [Ehrenstein 1994](https://link.springer.com/article/10.1007/BF00419703) [n1=12, n2=14; citations=27(GS, June 2022)] ​ [Marble & Proctor 2000](https://psycnet.apa.org/doiLanding?doi=10.1037%2F0096-1523.26.5.1515) [n1=48; n2=20; n3=32, n4=80; citations=89(GS, June 2022)]; [Proctor et al. 2000](https://link.springer.com/article/10.1007/s004260000041) [n1=64, n2=64; citations=74(GS, June 2022)]; [Theeuwes et al. 2014](https://psycnet.apa.org/record/2014-22383-001) [n1=30, n2=30, n3=30, n4=30; citations=30(GS, June 2022)]. 
+* Original effect size: not reported but could be calculated.
+* Replication effect size: Ehrenstein: not reported but could be calculated; Marble and Proctor: not reported but could be calculated; Proctor et al.: not reported but could be calculated; Theeuwes et al.: ​η<sub>p</sub>²(the compatible S-R instructions condition vs. the incompatible S-R instructions condition)=.12; η<sub>p</sub>²(the compatible S-R instructions condition vs. the incompatible practiced S-R instructions condition)=.07; η<sub>p</sub>²(the incompatible S-R instructions condition  vs. the compatible S-R instructions condition)=.21; η<sub>p</sub>²(e incompatible practiced S-R instructions condition vs. the compatible S-R instructions condition)=.11.
+{{< /spoiler >}}
 
 * **ERP and lie detectors**
 
 * **Evaluative conditioning**
 
-* **Bilinguals have smaller vocabulary**
-​
+* **Bilingual deficit in lexical retrieval**. Compared to monolinguals, bilinguals have often been found to be slower or less accurate in accessing the meaning of a certain word or the word for a certain representation under certain conditions.
+{{< spoiler text="Statistics" >}}
+* Status: mixed
+* Original paper: [‘Memory in a monolingual mode: When are bilinguals at a disadvantage?’](https://www.sciencedirect.com/science/article/pii/0749596X87900982), Ransdell and Fischler, 1987; between-group multi-experiment study, with monolingual and bilingual young adults, n1 = 28, n2 = 28. [citations=216(GS, May 2022)]​.
+* Critiques: [Bialystok et al. 2007](https://www.sciencedirect.com/science/article/pii/S0911604407000449?via%3Dihub) [study 1: n1=24, n2 = 24; study 2: n1 = 50, n2 = 16, citations=338(GS, May 2022)]; [Gollan et al. 2002](https://psycnet.apa.org/record/2002-18399-011) [n1=30, n2=30; citations=584(GS, May 2022)]; [Gollan et al. 2005](https://link.springer.com/article/10.3758/BF03193224) [study 1: n1=31, n2=31; study 2: n1=36, n2=36; citations=665(GS, May 2022)]; [Rosselli et al. 2000](https://www.tandfonline.com/doi/abs/10.1207/S15324826AN0701_3?casa_token=pKsUPwFj5jcAAAAA:1wKzEhJtBNIjxZU2StJZ2IRtcmwx4NzYDUgBZmZNoTehmhnMkEev3a29OsObqYN5yHeQznJPsOiH0iw) [n1=45, n2=18, n3=19; citations=341(GS, May 2022)]. [Rosselli et al. 2002](https://www.tandfonline.com/doi/abs/10.1080/00207450290025752) [n= 45, n2=18, n3=19; citations=151(GS, May 2022)]. 
+* Original effect size: not reported but could be calculated.
+* Replication effect size: Bialystok et al.: not reported but could be calculated Rosselli et al. 2000: not reported but could be calculated; Rosselli et al. 2002: not reported but could be calculated; Gollan et al. 2002: not reported but could be calculated; ​Gollan et al. 2005: not reported but could be calculated.
+​{{< /spoiler >}}
+
 * **Visiting a place will cue memories**
 
 * **Spacing effect**
@@ -3746,13 +3733,13 @@ Folioano: Literally zero, d=0.00 [-0.02; 0.02]
 * Replication effect size:
 {{< /spoiler >}}
 
-* **Babies are born with the ability to imitate**. A study widely published in psychology textbooks suggests babies can imitate facial gestures soon after birth (12 -21 days old), suggesting imitation abilities are innate. However, a carefully controlled replication attempt did not find this after using a longitudinal design and multiple control conditions of gestures for babies to imitate.​
+* **Neonate imitation**. Babies are born with the ability to imitate. 
 {{< spoiler text="Statistics" >}}
-* Status: Not replicated 
-* Original paper: ‘Imitation of facial and manual gestures by human neonates’, [Meltzoff & Moore, 1977](https://pubmed.ncbi.nlm.nih.gov/897687/); experimental, _n_=6 (Study 1), _n_=12 (Study 2). [citation=5311 (Google Scholar, December 2021)]​.
-* Critiques: [Oostenbroek et al., 2016](https://doi.org/10.1016/j.cub.2016.03.047) [_n_=106, citations=259 (Google Scholar, December 2021)]. 
+* Status: NA
+* Original paper: ‘Imitation of facial and manual gestures by human neonates’, [Meltzoff and Moore, 1977](https://www.science.org/doi/pdf/10.1126/science.198.4312.75); 2 studies with: Study 1: _n_=6, Study 2: _n_=12.. [citation=5311 (GS, December 2021])​.
+* Critiques: [Oostenbroek et al., 2016](https://doi.org/10.1016/j.cub.2016.03.047) [_n_=106, citations=259 (GS, December 2021)]. 
 * Original effect size: Not reported​.
-* Replication effect size: author: Not reported.​
+* Replication effect size: Not reported.
 {{< /spoiler >}}
 
 * **Watching violence on aggression**
@@ -3872,9 +3859,16 @@ Zell et al. (2020): _dz_ = 0.78, 95% CI [0.71, 0.84] \
 Korbmacher et al. (2022): 
   * Correlations: Own ability & comparative ability _r = _.99_, _Domain difficulty and comparative ability_ r_= -.85
   * One sample t-tests: Easy domains: from _d_ = 0.54 to _d_ = 1.18, Difficult domains: from _d_ =0.11 (non-sig) to _d_ = -0.65).
-  {{< /spoiler >}}
+{{< /spoiler >}}
 
-* **Accuracy of information** (truth discernment)
+* **Accuracy of information (truth discernment)**, asking people to think about the accuracy of a single headline improves “truth discernment” of intentions to share news headlines about COVID-19.​
+{{< spoiler text="Statistics" >}}
+* Status: mixed 
+* Original paper: ‘[Fighting COVID-19 Misinformation on Social Media: Experimental Evidence for a Scalable Accuracy-Nudge Intervention](https://doi.org/10.1177/0956797620939054)’, Pennycook et al. (2021); 2 studies with n’s = 853;856 [citations=887(GS, March 2022)]​.
+* Critiques: [Roozenbeek et al. (2021](https://journals.sagepub.com/doi/full/10.1177/09567976211024535)) [n=1583, citations=22(GS, March 2022)]. 
+* Original effect size: Study 1: d = 0.657, 95% confidence interval (CI) = [0.477, 0.836] on accuracy judgment; d = 0.121, 95% CI = [0.030, 0.212] on sharing intention; Study 2: control condition:  d = 0.050, 95% CI = [−0.033, 0.133];  treatment condition:  d = 0.142, 95% CI = [0.049, 0.235].
+* Replication effect size: Roozenbeek et al. : Study 1: _F_ = 1.53; Study 2: treatment: _d_ = −0.14, 95% CI = [−0.17, −0.12], control: _d_ = −0.10, 95% CI = [−0.13, −0.078].
+{{< /spoiler >}}
 
 <br>
 
@@ -3906,103 +3900,103 @@ Korbmacher et al. (2022):
 * Replication effect size: Study 1 (d =0.13); Study 2 (d=-0.27).
 {{< /spoiler >}}
 
-* **Super size me**, the idea that larger food options are associated with higher status.
+* **Super size me**. Larger food options are associated with higher status.
 {{< spoiler text="Statistics" >}}
 * Status: Not replicated.
-* Original paper: [Super Size Me: Product Size as a Signal of Status](https://academic.oup.com/jcr/article/38/6/1047/1790951?login=true), Dubois, Rucker & Galinsky, 2012. 6 studies. Study 1: N= 183; 3 (size of observed choice: small, medium, large) × 3 (scenario: coffee, pizza, smoothie) × 2 (dimension: status, non status) mixed model design. Participants judged individuals who selected a larger food item (vs medium or small) to have more status. Study 2: N= 142; shows that individuals low in power desire larger food options. Study 3: N=89; replicates study 2 in the field. Study 4: N= 269; shows that preference for larger food options among individuals feeling powerless is enhanced when consumption is public vs. private. Study 5: N=134; shows that the effect is reversed when small food portions are manipulated to be associated with higher status. Study 6: N=104; replicates study 5 and shows mediation by need for status. [citation=325 (Google Scholar, January 2022)]​. 
-* Critiques: [Tunca, Ziano & Wenting (2021)](https://psyarxiv.com/fm7aj/) [Preprint] [direct replication of study 1 of Dubois, Rucker & Galinsky (2112); N= 415, citations=1 (GS, January 2022)]. Results of the replication effort showed a non-significant effect of choice size on status perceptions in the opposite direction of the original reported effect.  
-* Original effect size: Large vs. small  product size: d=1.10; large vs. medium product size: d=0.65; medium vs. small: d=0.46. (As reported in the original paper).
-* Replication effect size: Large vs. small product size: d=-0.1; large vs. medium: d=-0.1;  medium vs. small: d=0.01.
+* Original paper: [Super Size Me: Product Size as a Signal of Status](https://academic.oup.com/jcr/article/38/6/1047/1790951?login=true), Dubois et al. (2012); 6 studies with n’s =  183; 142; 89;  269; 134; 104 [citations = 325 (GS,  January 2022)]. 
+* Critiques: [Tunca et al. (2021)](https://psyarxiv.com/fm7aj/) [Preprint] [direct replication of study 1 of Dubois et al. (2012); N= 415, citations=1 (GS, January 2022)].
+* Original effect size: Study 1:  Large vs. small  product size: _d_=1.10; large vs. medium product size: _d_=0.65; medium vs. small: _d_=0.46. 
+* Replication effect size: Large vs. small product size: _d_=-0.1; 95%CI [-0.15, 0.33]; large vs. medium: _d_=-0.11 95%CI [-0.13, 0.34];  medium vs. small: _d_=-0.01 95%CI[-0.25, 0.23]).
 {{< /spoiler >}}
 
-* **Scarcity effect**, perceived financial scarcity causes consumers to overborrow.
+* **Scarcity effect - _Overborrowing_.** Perceived financial scarcity causes consumers to overborrow.
 {{< spoiler text="Statistics" >}}
 * Status: replicated
-* Original paper: ‘[Effects of perceived scarcity on financial decision making](https://doi.org/10.1509/jppm.16.157)’, Cook and Sadeghein 2018 Study 3; experiment with n=199. [citation=26(GS, November 2021)]​.
-* Critiques: O’Donnell et al. 2021 [n=507, citations=0(GS, November 2021)]
-* Original effect size: r= .125
-* Replication effect size: r= .139
+* Original paper: ‘[Effects of perceived scarcity on financial decision making](https://doi.org/10.1509/jppm.16.157)’, Cook and Sadeghein (2018); with n=199. [citation=26(GS, November 2021)]​.
+* Critiques:[ O’Donnell et al. (2021](https://doi.org/10.1073/pnas.2103313118)) [n=507, citations=0(GS, November 2021)]
+* Original effect size: _r_ = .125
+* Replication effect size: _r_ = .139
 {{< /spoiler >}}
 
-* **Scarcity effect**, poor economic conditions favor resource allocations to daughters over sons.
+* **Scarcity effect - _Resource allocation_.** Poor economic conditions favour resource allocations to daughters over sons.
 {{< spoiler text="Statistics" >}}
 * Status: reversed
-* Original paper: ‘[Spending on daughters versus sons in economic recessions](https://doi.org/10.1093/jcr/ucv023)’, Durante et al. 2015 Study 4; experiment with n=198. [citation=57(GS, November 2021)]​.
-* Critiques: O’Donnell et al. 2021 [n=573, citations=0(GS, November 2021)]
-* Original effect size: r= .179
-* Replication effect size: r= -.082
+* Original paper: ‘[Spending on daughters versus sons in economic recessions](https://doi.org/10.1093/jcr/ucv023)’, Durante et al. (2015) with n=198. [citation=57(GS, November 2021)]​.
+* Critiques: [O’Donnell et al. (2021)](https://doi.org/10.1073/pnas.2103313118) [n=573, citations=0(GS, November 2021)]
+* Original effect size: _r_ = .179
+* Replication effect size: _r_ = -.082
 {{< /spoiler >}}
 
-* **Scarcity effect**, consumers who feel resource constrained shift to engage in relatively more priority planning, rather than efficiency planning.
+* **Scarcity effect - _Planning_.** Consumers who feel resource constrained shift to engage in relatively more priority planning, rather than efficiency planning.
 {{< spoiler text="Statistics" >}}
 *  Status: not replicated
-* Original paper: ‘[Squeezed: Coping with constraint through efficiency and prioritization](https://doi.org/10.1086/679118)’, Fernbach et al. 2015 Study 2; experiment with n=102. [citation=114(GS, November 2021)]​.
-* Critiques: O’Donnell et al. 2021 [n=225, citations=0(GS, November 2021)]
-* Original effect size: r= .266
-* Replication effect size: r= .036
+* Original paper: ‘[Squeezed: Coping with constraint through efficiency and prioritization](https://doi.org/10.1086/679118)’, Fernbach et al. (2015) with n=102. [citation=114(GS, November 2021)]​.
+* Critiques: [O’Donnell et al. 2021](https://doi.org/10.1073/pnas.2103313118) [n=225, citations=0(GS, November 2021)]
+* Original effect size: _r_ = .266
+* Replication effect size: _r_ = .036
 {{< /spoiler >}}
 
-* **Scarcity effect**, exposure to limited-quantity promotion advertising prompts consumers to perceive other shoppers as competitive threats.
+* **Scarcity effect - _Competition/threat_.** Exposure to limited-quantity promotion advertising prompts consumers to perceive other shoppers as competitive threats.
 {{< spoiler text="Statistics" >}}
 * Status: not replicated
-* Original paper: ‘[The dark side of scarcity promotions: how exposure to limited-quantity promotions can induce aggression](https://doi.org/10.1093/jcr/ucw056)’, Kristofferson et al. 2017 Study 5; experiment with n=160. [citation=101(GS, November 2021)]​.
-* Critiques: O’Donnell et al. 2021 [n=389, citations=0(GS, November 2021)]
-* Original effect size: r= .157
-* Replication effect size: r= -.004
+* Original paper: ‘[The dark side of scarcity promotions: how exposure to limited-quantity promotions can induce aggression](https://doi.org/10.1093/jcr/ucw056)’, Kristofferson et al. (2017) with n=160. [citation=101(GS, November 2021)]​.
+* Critiques: [O’Donnell et al. 2021](https://doi.org/10.1073/pnas.2103313118) [n=389, citations=0(GS, November 2021)]
+* Original effect size: _r_ = .157
+* Replication effect size: _r_ = -.004
 {{< /spoiler >}}
 
-* **Scarcity effect**, observing luxury brand consumers whose consumption arises from unearned financial resources reduces observers’ brand attitudes when observers place a high value on fairness.​
+* **Scarcity effect - _Brand attitudes_**. Observing luxury brand consumers whose consumption arises from unearned financial resources reduces observers’ brand attitudes when observers place a high value on fairness.​
 {{< spoiler text="Statistics" >}}
 * Status: replicated (NS); reported effects were not replicated, while a non-reported effect remained non-significant
-* Original paper: ‘[Did they earn it? Observing unearned luxury consumption decreases brand attitude when observers value fairness](https://doi.org/10.1002/jcpy.1028)’, Lee et al. 2018 Study 4; experiment with n=164. [citation=23(GS, November 2021)]​.
-* Critiques: O’Donnell et al. 2021 [n=401, citations=0(GS, November 2021)]
-* Original effect size: r= .128
-* Replication effect size: r= .043
+* Original paper: ‘[Did they earn it? Observing unearned luxury consumption decreases brand attitude when observers value fairness](https://doi.org/10.1002/jcpy.1028)’, Lee et al. (2018) with n=164. [citation=23(GS, November 2021)]​.
+* Critiques: [O’Donnell et al. 2021](https://doi.org/10.1073/pnas.2103313118) [n=401, citations=0(GS, November 2021)]
+* Original effect size: _r_ = .128
+* Replication effect size: _r_ = .043
 {{< /spoiler >}}
 
-* **Scarcity effect**, scarcity salience is associated with greater creativity.​
+* **Scarcity effect - _Product use creativity_**. Scarcity salience is associated with greater creativity.​
 {{< spoiler text="Statistics" >}}
 * Status: not replicated
-* Original paper: ‘[Creating when you have less: The impact of resource scarcity on product use creativity](https://doi.org/10.1093/jcr/ucv051)’, Mehta and Zhu 2016 Study 2; experiment with n=88. [citation=135(GS, November 2021)]​.
-* Critiques: O’Donnell et al. 2021 [n=225, citations=0(GS, November 2021)]
-* Original effect size: r= .255
-* Replication effect size: r= -.092
+* Original paper: ‘[Creating when you have less: The impact of resource scarcity on product use creativity](https://doi.org/10.1093/jcr/ucv051)’, Mehta and Zhu (2016) with n=88. [citation=135(GS, November 2021)]​.
+* Critiques: [O’Donnell et al. 2021](https://doi.org/10.1073/pnas.2103313118) [n=225, citations=0(GS, November 2021)]
+* Original effect size: _r_ = .255
+* Replication effect size: _r_ = -.092
 {{< /spoiler >}}
 
-* **Scarcity effect**, the difference in implied wage rates based on a time elicitation versus a money elicitation procedure is reduced as the time horizon increases.​
+* **Scarcity effect - _Wage rates_**. The difference in implied wage rates based on a time elicitation versus a money elicitation procedure is reduced as the time horizon increases.​
 {{< spoiler text="Statistics" >}}
 * Status: not replicated
-* Original paper: ‘[Eliciting time versus money: time scarcity underlies asymmetric wage rates](https://doi.org/10.1093/jcr/ucx066)’, Monga et al 2017 Study 4; experiment with n=179. [citation=27(GS, November 2021)]​.
-* Critiques: O’Donnell et al. 2021 [n=467, citations=0(GS, November 2021)]
-* Original effect size: r= .216
-* Replication effect size: r= .017
+* Original paper: ‘[Eliciting time versus money: time scarcity underlies asymmetric wage rates](https://doi.org/10.1093/jcr/ucx066)’, Monga et al. (2017) with n=179. [citation=27(GS, November 2021)]​.
+* Critiques: [O’Donnell et al. 2021](https://doi.org/10.1073/pnas.2103313118) [n=467, citations=0(GS, November 2021)]
+* Original effect size: _r_ = .216
+* Replication effect size: _r_ = .017
 {{< /spoiler >}}
 
-* **Scarcity effect**, Reminders of scarcity causes selfish behavior to a greater extent in people with low social value orientation.
-{{< spoiler text="Statistics" >}}​
+* **Scarcity effect - _Selfishness_.** Reminders of scarcity causes selfish behaviour to a greater extent in people with low social value orientation.​
+{{< spoiler text="Statistics" >}}
 * Status: not replicated
-* Original paper: ‘[On the psychology of scarcity: When reminders of resource scarcity promote selfish (and generous) behavior](https://doi.org/10.1093/jcr/ucv048)’, Roux et al. 2015 Study 4; experiment with n=157. [citation=216(GS, November 2021)]​.
-* Critiques: O’Donnell et al. 2021 [n=414, citations=0(GS, November 2021)]
-* Original effect size: r= .168
-* Replication effect size: r= .008
+* Original paper: ‘[On the psychology of scarcity: When reminders of resource scarcity promote selfish (and generous) behavior](https://doi.org/10.1093/jcr/ucv048)’, Roux et al. (2015) with n=157. [citation=216(GS, November 2021)]​.
+* Critiques: [O’Donnell et al. 2021](https://doi.org/10.1073/pnas.2103313118) [n=414, citations=0(GS, November 2021)]
+* Original effect size: _r_ = .168
+* Replication effect size: _r_ = .008
 {{< /spoiler >}}
 
-* **Scarcity effect**, scarcity leads to a preference for material goods over experiential goods.
+* **Scarcity effect - _Preference for material goods_.** Scarcity leads to a preference for material goods over experiential goods.​
 {{< spoiler text="Statistics" >}}
 * Status: replicated
-* Original paper: ‘[Seeking lasting enjoyment with limited money: Financial constraints increase preference for material goods over experiences](https://doi.org/10.1093/jcr/ucv007)’, Tully et al. 2015 Study 5; experiment with n=377. [citation=116(GS, November 2021)].
-* Critiques: O’Donnell et al. 2021 [n=688, citations=0(GS, November 2021)]
-* Original effect size: r= .161
-* Replication effect size: r= .136
+* Original paper: ‘[Seeking lasting enjoyment with limited money: Financial constraints increase preference for material goods over experiences](https://doi.org/10.1093/jcr/ucv007)’, Tully et al. (2015) with n=377. [citation=116(GS, November 2021)].
+* Critiques: [O’Donnell et al. 2021](https://doi.org/10.1073/pnas.2103313118) [n=688, citations=0(GS, November 2021)]
+* Original effect size: _r_ = .161
+* Replication effect size: _r _= .136
 {{< /spoiler >}}
 
-* **Scarcity effect**, perceived scarcity leads to greater preference polarization and stronger preference for a preferred option over a less preferred option.​
+* **Scarcity effect - _Preference polarization_**. Perceived scarcity leads to greater preference polarization and stronger preference for a preferred option over a less preferred option.​
 {{< spoiler text="Statistics" >}}
 * Status: not replicated
-* Original paper: ‘[Scarcity polarizes preferences: The impact on choice among multiple items in a product class](https://doi.org/10.1509/jmr.13.0451)’, Zhu and Ratner 2015 Study 2; experiment with n=200. [citation=114(GS, November 2021)]​.
-* Critiques: O’Donnell et al. 2021 [n=595, citations=0(GS, November 2021)]
-* Original effect size: r= .138
-* Replication effect size: r= .002
+* Original paper: ‘[Scarcity polarizes preferences: The impact on choice among multiple items in a product class](https://doi.org/10.1509/jmr.13.0451)’, Zhu and Ratner (2015) with n=200. [citation=114(GS, November 2021)]​.
+* Critiques: [O’Donnell et al. 2021 ](https://doi.org/10.1073/pnas.2103313118)[n=595, citations=0(GS, November 2021)]
+* Original effect size: _r_ = .138
+* Replication effect size: _r_ = .002
 {{< /spoiler >}}
 
 <br>
@@ -4021,17 +4015,77 @@ Korbmacher et al. (2022):
 {{< /spoiler >}}
 
 * **Readiness potentials** [seem to be actually causal](https://www.discovermagazine.com/mind/libet-and-free-will-revisited), not diagnostic. So Libet’s studies also do not show what they purport to. We still don’t have free will (since random circuit noise can tip us when the evidence is weak), but in a different way.
-{{< spoiler text="Statistics" >}}
+
 * [No good evidence](https://www.npr.org/sections/13.7/2013/12/02/248089436/the-truth-about-the-left-brain-right-brain-relationship) for **left/right hemisphere dominance correlating with personality differences**. No clear hemisphere dominance at all in [this study](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0071275).
+
+* **Oxytocin on trust.** Intranasal administration of oxytocin increases trust in strangers in a laboratory setting. 
+{{< spoiler text="Statistics" >}}
+* Status: not replicated 
+* Original paper: [Oxytocin increases trust in humans](https://www.nature.com/articles/nature03701), Kosfeld et al. (2005); experiment, n = 128_. _[citations = 4800, April 2022]
+* Critiques: [Declerck et al. (2020)](https://pubmed.ncbi.nlm.nih.gov/32514040/)[_n_ = 677, citations =57, (GS, April 2022) ]. [Lane et al. (2015) ](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0137000)[_n_ = 95, citations =63, (GS, April 2022) ];.
+* Original effect size: Not reported but could be calculated: “In fact, our data show that oxytocin increases investors' trust considerably. Out of the 29 subjects, 13 (45%) in the oxytocin group showed the maximal trust level, whereas only 6 of the 29 subjects (21%) in the placebo group showed maximal trust (Fig. 2a). In contrast, only 21% of the subjects in the oxytocin group had a trust level below 8 monetary units (MU), but 45% of the subjects in the control group showed such low levels of trust.” Kosfeld et al. (2005)
+* Replication effect size: not reported
 {{< /spoiler >}}
 
-* Possibly [no effect](https://pubmed.ncbi.nlm.nih.gov/32514040/) of **oxytocin on trust. **The [original paper](https://www.nature.com/articles/nature03701), Kosfeld et al. (2005) suggested that intranasal administration of oxytocin increases trust in strangers in a laboratory setting.
-{{< spoiler text="Statistics" >}} 
-* Status: not replicated 
-* Original paper: [Oxytocin increases trust in humans](https://www.nature.com/articles/nature03701), Kosfeld et al. (2005); experiment, _n = 128. _[citations = 4694, altmetrics = June 2020]
-* Critiques: [Declerck et al. (2020)](https://pubmed.ncbi.nlm.nih.gov/32514040/)[_n_ = 677, citations =26]. [Lane et al. (2015) ](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0137000)[_n_ = 95, citations =63, altmetrics = September 2015 ]; total N = 772.
-* Original effect size: not reported but could be calculated: “In fact, our data show that oxytocin increases investors' trust considerably. Out of the 29 subjects, 13 (45%) in the oxytocin group showed the maximal trust level, whereas only 6 of the 29 subjects (21%) in the placebo group showed maximal trust (Fig. 2a). In contrast, only 21% of the subjects in the oxytocin group had a trust level below 8 monetary units (MU), but 45% of the subjects in the control group showed such low levels of trust.” Kosfeld et al. (2005)
-* Replication effect size: not reported
+* **Structural brain-behaviour correlations - the association between behavioural activation and white matter integrity.** Individual differences in the sensitivity to signals of reward as indexed by BAS-Total and in the tendency to seek out potentially rewarding experiences as measured by BAS-Fun are positively correlated with diffusion measures of several white matter pathways.
+{{< spoiler text="Statistics" >}}
+* Status: not replicated
+* Original paper: [Xu et al. (2012)](https://doi.org/10.1002/hbm.21275) [n = 51, citations = 29 (GS, May 2022)]​.
+* Critiques:[ ](https://doi.org/10.1016/j.cortex.2017.03.007)corrigendum of [Boekel et al. (2015)](https://doi.org/10.1016/j.cortex.2014.11.019) [citations = 196 (GS, May, 2022)]; [Keuken et al. (2017)](https://doi.org/10.1016/j.cortex.2017.03.007) [n = 34-35, citations = 1 (GS, May, 2022). 
+* Original effect size:
+  * BAS-Total correlation with parallel diffusivity in the left corona radiata (CR)/superior longitudinal fasciculus (SLF): _r_ = .51.
+  * BAS-Fun correlation with:
+    * fractional anisotropy in the left CR/SLF: _r_ = .52
+    * parallel diffusivity in the left CR/SLF: _r_ = .58
+    * mean diffusivity in the left SLF/inferior fronto-occipital fasciculus (IFOF): _r_ = .51
+* Replication effect size: [Keuken et al. (2017)](https://doi.org/10.1016/j.cortex.2017.03.007): 
+  * BAS-Total correlation with parallel diffusivity in the left CR/SLF: _r_ = -.15
+  * BAS-Fun correlation with: 
+    * fractional anisotropy in the left CR/SLF: _r_ = -.15
+    * parallel diffusivity in the left CR/SLF: _r_ = -.04
+    * mean diffusivity in the left SLF/inferior fronto-occipital fasciculus (IFOF): _r_ = .05
+{{< /spoiler >}}
+
+* **Structural brain behaviour correlations - _The association between social network size and grey matter volume_**. Individual differences in the number of Facebook friends (FBN) are positively correlated with grey matter volume in several brain areas: left middle temporal gyrus (MTG), right superior temporal sulcus (STS), rich entorhinal cortex (EC), left and right amygdala.
+{{< spoiler text="Statistics" >}}
+* Status: mixed
+* Original paper: [Kanai et al., (2012)](https://doi.org/10.1098/rspb.2011.1959) [n = 125, citations: 411 (GS, May, 2022)].
+* Critiques: [Boekel et al. (2015)](https://doi.org/10.1016/j.cortex.2014.11.019) [n = 34-35, citations = 196 (GS, May, 2022] ;[Kanai et al., (2012)](https://doi.org/10.1098/rspb.2011.1959) [n = 40, citations: 411 (GS, May, 2022)].
+* Original effect size: left MTG: _r_ =.35; right STS: _r_ = .35; right EC: _r_ = .35, left amygdala: _r_ = .30; right amygdala: _r_ = .32.
+*  Replication effect size:
+  * [Kanai et al., (2012)](https://doi.org/10.1098/rspb.2011.1959): left MTG: _r_ =.38; right STS: _r_ = .44; right EC: _r_ = .48; left amygdala: _r_ = .33; right amygdala: _r_ = .48.
+  * [Boekel et al. (2015)](https://doi.org/10.1016/j.cortex.2014.11.019): left MTG: r = .18; right STS: _r_ = .11; right EC: _r_ = .06; left amygdala: _r_ = -.14; right amygdala: _r_ = .02.
+{{< /spoiler >}}
+
+* **Structural brain-behaviour correlations - _the association between distractibility and grey matter volume_**. Variability in self-reported distractibility is positively correlated with grey matter volume in the left superior parietal lobule (SPL) and negatively correlated with grey matter volume in medial pre-frontal cortex (mPFC).
+{{< spoiler text="Statistics" >}}
+* Status: not replicated
+* Original paper: [Kanai et al., (2011)](https://doi.org/10.1523/JNEUROSCI.5864-10.2011) [n = 155, citations: 110 (GS, May, 2022)].
+* Critiques: [Boekel et al. (2015)](https://doi.org/10.1016/j.cortex.2014.11.019) [n = 36, citations = 196 (GS, May, 2022].  
+* Original effect size: left SPL: _r_ =.38; mPFC: _r_ = -.28.
+* Replication effect size: [Boekel et al. (2015)](https://doi.org/10.1016/j.cortex.2014.11.019): left SPL: _r_ =.22; mPFC: _r_ = -.19.
+{{< /spoiler >}}
+
+* **Structural brain-behaviour correlations - _the association between attention and cortical thickness_**. Individual differences in executive control are negatively correlated with cortical thickness in left anterior cingulate cortex (ACC), left superior temporal gyrus (STG), and right middle temporal gyrus (MTG), whereas variation in alerting scores is negatively correlated with cortical thickness in the left superior parietal lobule (SPL).
+{{< spoiler text="Statistics" >}}
+* Status: not replicated.
+* Original paper:[ Westlye et al., (2011)](https://doi.org/10.1093/cercor/bhq101) [n = 132; citations = 190 (GS, May 2022)]​.
+* Critiques:[ Boekel et al. (2015)](https://doi.org/10.1016/j.cortex.2014.11.019) [n = 35, citations = 196 (GS, May, 2022]. 
+* Original effect size:
+  * Executive control scores and cortical thickness in left ACC: _r_ = -.21; left STG: _r_ = -.15; right MTG: _r_ = -.13.
+  * Alerting scores and cortical thickness in left SPL: _r_ = -.26
+* Replication effect size: [Boekel et al. (2015)](https://doi.org/10.1016/j.cortex.2014.11.019):
+  * Executive control scores and cortical thickness in left ACC: _r_ = -.18; left STG: _r_ = -.14; right MTG _r_ = -.19.
+  * Alerting scores and cortical thickness in left SPL: _r_ = .16.
+{{< /spoiler >}}
+
+* **Structural brain-behaviour correlations - _the association between control over speed/accuracy of perceptual decisions and white matter tracts strength_**. Individual differences in control over speed and accuracy of perceptual decisions are positively correlated with the strength of white matter tracts between the right presupplementary motor area (pre-SMA) and the right striatum.
+{{< spoiler text="Statistics" >}}
+* Status: mixed
+* Original paper: [Forstmann et al. (2010) [](https://doi.org/10.1073/pnas.1004932107)n = 9, citations = 387 (GS, May 2022)]​.
+* Critiques: corrigendum of [Boekel et al. (2015)](https://doi.org/10.1016/j.cortex.2014.11.019) [citations = 196 (GS, May, 2022)]; <span style="text-decoration:underline;">​​[Forstmann et al. (2010) [](https://doi.org/10.1073/pnas.1004932107)</span>n = 12, citations = 387 (GS, May 2022)]; [Keuken et al. (2017)](https://doi.org/10.1016/j.cortex.2017.03.007) [n = 32, citations = 1 (GS, May, 2022), 
+* Original effect size: _r_ = .93.
+* Replication effect size: ​​Forstmann et al. (2010): _r_ = .76;  [Keuken et al. (2017)](https://doi.org/10.1016/j.cortex.2017.03.007): _r_ = -.08.
 {{< /spoiler >}}
 
 <br>
@@ -4063,26 +4117,26 @@ Korbmacher et al. (2022):
 * Replication effect size:
 {{< /spoiler >}}
 
-* **Lack of a Theory of Mind is a unique characteristic of autistic people**, the pervasive claim that autistic people lack a theory of mind—that they fail to understand that other people have a mind or that they themselves have a mind. The lack of a theory of mind is often assumed to be both  a unique characteristic of autistic people, and also a universal characteristic of all autistic people.
+* **Lack of a Theory of Mind is universal in autism**. All autistic people fail to understand that other people have a mind or that they themselves have a mind. 
 {{< spoiler text="Statistics" >}}
 * Status: not replicated
+* Original paper: [Mechanical, behavioural and Intentional understanding of picture stories in autistic children](https://psycnet.apa.org/record/1986-27265-001), Baron-Cohen et al. (1986), with _n_ = 21 autistic children, 5 Down's syndrome children, 27 neurotypical preschoolers. [n = 53;  citation=1163 (GS, April 2022)]​.
+* Critiques: [Gernsbacher and Yergeau (2019)](https://psycnet.apa.org/fulltext/2019-75285-001.html) [Review; citations=65 (GS, April 2022)]
+* Original effect size: _d_ = −1.714.
+* Replication effect size: pooled _d_ = −0.039. 
 {{< /spoiler >}}
-
-* **Lack of a Theory of Mind is a universal characteristic of autistic people**
 
 <br>
 
 ## **Parapsychology**
 
-* **Precognition**, undergraduates improving memory test performance by studying after the test. This one is fun because Bem’s statistical methods were “impeccable” in the sense that they were what everyone else was using. He is Patient Zero in the replication crisis, and has done us all a great service. (Heavily reliant on a flat / frequentist prior; evidence of optional stopping; forking paths analysis.)
+* **Precognition**, undergraduates improving memory test performance by studying after the test. 
 {{< spoiler text="Statistics" >}}
-* Original paper: '[Feeling the future: Experimental evidence for anomalous retroactive influences on cognition and affect](https://www.ncbi.nlm.nih.gov/pubmed/21280961)', Bem 2012, 9 experiments, n=1000 or so. \
-(~1000 citations, but mostly not laudatory).
-* Critiques: [Ritchie 2012](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0033423), n=150. On one of the nine. \
-[Gelman 2013](https://slate.com/technology/2013/07/statistics-and-psychology-multiple-comparisons-give-spurious-results.html); [Schimmack 2018](https://replicationindex.com/2017/09/04/the-power-of-the-pen-paradigm-a-replicability-analysis/), methodology. \
-(total citations: 200)
-* Original effect size: Various, mean d=0.22. For experiment 9, r= -0.10.
-* Replication effect size: Correlation between r= -0.02
+* Status: not replicated
+* Original paper: '[Feeling the future: Experimental evidence for anomalous retroactive influences on cognition and affect](https://d1wqtxts1xzle7.cloudfront.net/54466465/FeelingFuture-with-cover-page-v2.pdf?Expires=1646845611&Signature=T03V8UlaD4SRQU0d0kpoXfHxrNdvsmZoEnEStAvuy-dtlZorCmn~oJiuwDqbhQJ9BwMyEGniP6FSVxDHYur-5gVI9uddC82LJRsCiMUo6mhtMHd6b9WPzCWwr0ygN4kPnT2X2yAld5KvTUrcDsRYeP9PUXjUG9HJK4dTcINQMjccJQxldIjM9i7rmJvQYB2OKTxWw1pRdmjy-PQfNLcFNiKiHLVRKJKW6DEJvYFBRzBB5Cr0p7dV1c2fvWpdjnwm9i4sc1B1rMeak8RQ0QpQSZdTNyGNUNdHlZuuqvc2ysD3ZiqR4M86AaPbvHcD9p2baRIO1AGeV~cksUq23RuGIQ__&Key-Pair-Id=APKAJLOHF5GGSLRBV4ZA)', Bem 2012, 9 experiments with:  Study 1: _n_=100; Study 2: _n_= 150; Study 3: n = 100; Study 4: n = 100; Study 5: n = 100; Study 6: n = 150; Study 7: n = 200; Study 8: n = 100; Study 9: n = 50; [citation = 1216 (GS, March 2022]).
+* Critiques: [Ritchie et al. 2012, ](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0033423)3 replications: Replication 1: n = 50, Replication 2: n = 50; Replication 3: n = 50 [experiment; _n_=150, citations=235 (GS, December 2021)]; Gelman, 2013 [newspaper article] Schimmack, 2018 [[blog](https://replicationindex.com/2017/09/04/the-power-of-the-pen-paradigm-a-replicability-analysis/)]
+* Original effect size: Study 1: _d = _0.25; Study 2: d = 0.20; Study 3: d = 0.26; Study 4: d = 0.23; Study 5: d = 0.22; Study 6: negative trials: d = 0.15, erotic trials = d = 0. 14; Study 7: d = 0.09; Study 8: d = 0.19; Study 9: d = 0.42; mean effect size = 0.22. 
+* Replication effect size: All effect sizes are reported in Ritchie et al.  2012: Replication 1:  d = 0.30, Replication 2: d = -0.39, combined:  d = 0.04 (converted using [this](https://www.escal.site/)).
 {{< /spoiler >}}
 
 <br>
@@ -4103,7 +4157,7 @@ Korbmacher et al. (2022):
 * Original paper: ‘[God is watching you: Priming god concepts increases prosocial behavior in an anonymous economic game](https://journals.sagepub.com/doi/abs/10.1111/j.1467-9280.2007.01983.x)’, Shariff and Norenzayan (2007); 2 experiments, ns=50 in each experiment [citations=1473, GS, November 2021].
 * Critiques: [Gomes and McCullough (2015](https://psycnet.apa.org/doiLanding?doi=10.1037%2Fxge0000027)), [n=455 citations=86, (GS, November 2021)]; [Billingsley et al. (2018](https://royalsocietypublishing.org/doi/full/10.1098/rsos.170238)); 2 experiments, n=489 and n=511 [citations=22, (GS, November 2021)].
 * Original effect size: Study 1, _d_=1.07; Study 2, _d_=0.71.
-* Replication effect size: [Gomes and McCullough 2015](https://royalsocietypublishing.org/doi/full/10.1098/rsos.170238): _d_=-0.06; Billingsley et al. (2018) Study 1: _g_ = -0.05;  Billingsley et al. (2018) Study  2:  _g_= -0.09.
+* Replication effect size: [Gomes and McCullough 2015](https://royalsocietypublishing.org/doi/full/10.1098/rsos.170238): _d_=-0.06; Billingsley et al. (2018) Study 1: _g_ = -0.05;  Billingsley et al. (2018) Study 2: _g_= -0.09.
 {{< /spoiler >}}
 
 * **Implicit analytic priming**, that implicitly priming analytic thinking by seeing a photo of Auguste Rodin's The Thinker decreases belief in God.
@@ -4160,18 +4214,22 @@ Korbmacher et al. (2022):
 
 ## **Applied Linguistics**
 
-* **Critical period** **hypothesis**: Hartshorne, Tenenbaum and Pinker’s 2018 study on two-thirds of a million English speakers concluded one sharply defined critical age at 17.4 for all language learners. A reanalysis of the data showed that such a conclusion is based on artificial results ([van der Silk et al. 2021](https://onlinelibrary.wiley.com/doi/10.1111/lang.12470)). There was no evidence for any critical age for language learning.  
+* **Critical period hypothesis**. How grammar-learning ability changes with age, finding that it is intact to the crux of adulthood (17.4 years) and then declines steadily.
 {{< spoiler text="Statistics" >}}
 * Status: not replicated
+* Original paper: [A critical period for second language acquisition: Evidence from 2/3 million English speakers](https://www.sciencedirect.com/science/article/pii/S0010027718300994)**, **Hartshorne et al., 2018; n = 669,498 [citations = 313 (GS Feb 2022)]. 
+* Critique: van der Silk et al., (2021)[n = 547,250, citations = 1 (GS, Feb 2022)].
+* Original effect size: N/A
+* Replication effect size: N/A
 {{< /spoiler >}}
 
-* **Motivational role of L2 vision**, mental imagery of oneself as a successful language user in the future can enhance one’s motivation and performance. Measurement validity issues were raised regarding the discriminant validity of vision related variables.  
+* **Motivational role of L2 vision**. Mental imagery of oneself as a successful language user in the future can enhance one’s motivation and performance. 
 {{< spoiler text="Statistics" >}}
 * Status: not replicated
-* Original paper: ‘[Motivation, vision and gender](https://onlinelibrary.wiley.com/doi/full/10.1111/lang.12140?casa_token=Y-6oCs7H830AAAAA%3AvfdGjNvGbpzSA_V5S1lWrdvF5zcq21C-VGbyOfYKrBHDMcG1EyNPwX74RP3qOGCO5j4z6RmF0kiGFuI)’, You, Dornyei & Csizer 2016; large-scale stratified survey, n=10,569. [citation=158(GS, Oct 2021)]​.
-* Critiques: [Hiver & Al-Hoorie 2020](https://onlinelibrary.wiley.com/doi/full/10.1111/lang.12371?casa_token=4hWn0YZ4iY0AAAAA%3AMgGv_gnZp3nF2x--g-XUQUbKy5ZtFXDTnihF-_2aiBC4R7oBIyi7w4o8a8Iu5yPNPCjqgWnwyZtzMgI) [n=1297, citations=29(GS, Oct 2021)].
-* Original effect size: ES (with Ideal L2 self as mediator)=0.11 
-* Replication effect size: the model in You et al. did not hold up. 
+* Original paper: [Motivation, vision and gender](https://onlinelibrary.wiley.com/doi/full/10.1111/lang.12140?casa_token=Y-6oCs7H830AAAAA%3AvfdGjNvGbpzSA_V5S1lWrdvF5zcq21C-VGbyOfYKrBHDMcG1EyNPwX74RP3qOGCO5j4z6RmF0kiGFuI), You et al. (2016); n=10,569 [citation=172(GS, Oct 2022)]​.
+* Critiques: [Hiver and Al-Hoorie (2020](https://onlinelibrary.wiley.com/doi/full/10.1111/lang.12371?casa_token=4hWn0YZ4iY0AAAAA%3AMgGv_gnZp3nF2x--g-XUQUbKy5ZtFXDTnihF-_2aiBC4R7oBIyi7w4o8a8Iu5yPNPCjqgWnwyZtzMgI)) [n=1297, citations=36(GS, Oct 2022)].
+* Original effect size:η<sup>2</sup> =0.08
+* Replication effect size: N/A 
 {{< /spoiler >}}
 
 <br>
@@ -4219,13 +4277,14 @@ Korbmacher et al. (2022):
 
 ## **Political Psychology**
 
-* **Stereotype threat on gender differences in political knowledge**, the idea that making gender stereotypes about political knowledge salient decrease womens’ performance on political knowledge tests. The replication effort showed no significant effect of gender stereotype activation on womens’ performance on a political knowledge test.  
+* **Stereotype threat on gender differences in political knowledge**. Making gender stereotypes about political knowledge salient decreases womens’ performance on political knowledge tests.   
 {{< spoiler text="Statistics" >}}
-* Status: Not replicated
-* Original paper: [Gender Differences in Political Knowledge: Bringing Situation Back In](https://www.cambridge.org/core/journals/journal-of-experimental-political-science/article/gender-differences-in-political-knowledge-bringing-situation-back-in/4897AD1BEF5BC95E164F08BDFB5ED1AF), Ihme & Tausendpfund (2018). Study 1: N= 603, shows that women are rated as less politically knowledgeable than men. Study 2: N=377; Female and male participants are randomly assigned to one of three conditions (stereotype not activated - control, stereotype activated by asking participants to report their gender, stereotype activated by a statement that there are gender differences in performance on the test participants are about to take) and answer a questionnaire assessing political knowledge. [citation=17 (GS, January 2022)]​.
-* Critiques: [Azevedo, Micheli & Bolesta [Preprint] ](https://osf.io/8feku/)[n=1502, citations=NA]. Results showed a non-significant interaction between stereotype activation and gender on political knowledge scores.  
-* Original effect size: partial *η*<sup>2</sup> =0.33​.
-* Replication effect size: partial *η*<sup>2</sup> =0.00​.
+* Status: Not replicated.
+* Original paper: [Gender Differences in Political Knowledge: Bringing Situation Back In](https://www.cambridge.org/core/journals/journal-of-experimental-political-science/article/gender-differences-in-political-knowledge-bringing-situation-back-in/4897AD1BEF5BC95E164F08BDFB5ED1AF). Ihme and Tausendpfund 2018 2 experiments with Study 1: N= 603; Study 2: N=377  [citation=18 (GS, February2022)]​.
+* Critiques: Azevedo et al. [Preprint, not available] [n=1502, citations=NA]. 
+* [n=120, citations=757(GS, October 2021)], 
+* Original effect size: Study 1: partial _η<sup>2</sup>_ = 0.12; Study 2: partial _η<sup>2</sup>_ = 0.03 ​
+* Replication effect size: partial _η<sup>2</sup>_ = 0.00​.
 {{< /spoiler >}}
 
 * **Avoidance of dissonance-arousing situations**
@@ -4254,9 +4313,18 @@ Korbmacher et al. (2022):
 {{< spoiler text="Statistics" >}}
 * Status: NA 
 * Original paper: ‘[The effects of bilingualism on stuttering during late childhood](https://adc.bmj.com/content/94/1/42.long)’. Howell et al. (2009).  n= 317[citations = 122, (GS, February, 2022)].
-* Critiques: [Packman et al.](https://adc.bmj.com/content/94/3/248.1?casa_token=tWybp6zg6vYAAAAA%3AwcQ__U2i5AhHMBedCuvKE7eJxHyw8bO-S-Ff_iLmWstZmogE54bKixRqI_HuRCCOPo97g8NxfIZQ) 2009 [citations =23, (GS, February 2022)]
+* Critiques: [Packman et al.](https://adc.bmj.com/content/94/3/248.1?casa_token=tWybp6zg6vYAAAAA%3AwcQ__U2i5AhHMBedCuvKE7eJxHyw8bO-S-Ff_iLmWstZmogE54bKixRqI_HuRCCOPo97g8NxfIZQ) 2009 [citations =23, (GS, February 2022)].
 * Original effect size: Cramer’s _V_ = 0.34.  
 * Replication effect size: NA
+{{< /spoiler >}}
+
+* **Self esteem and stuttering.** Children who stutter have higher self-esteem than children who do not stutter. However, the self-esteem of children who stutter declines once they reach adolescence.
+{{< spoiler text="Statistics" >}}
+*  Status: NA
+* Original paper: [Selbstwert von stotternden Kindern und Jugendlichen](https://www.thieme-connect.com/products/ejournals/abstract/10.1055/s-0030-1280763) (in German). Zückner (2011). Case-control study - comparison against norm scores with n = 171[citations = 3, (GS, February 2022)].
+* Critiques: [Cook and Howell 2014](https://discovery.ucl.ac.uk/id/eprint/1508266/1/Cooketal(2014)Bullying%20in%20Children%20and%20Teenagers%20Who%20Stutter%20and%20the%20Relation%20to%20Self-Esteem,%20Social%20Acceptance,%20and%20Anxiety.pdf) [observational, n=59,  citations=16, (GS,  February 2022)]
+* Original effect size: M(SD)stuttering boys = 56.5 (25.9), M(SD)boys normgroup: 36.5(25.9); M(SD)stuttering girls = 43.1(35.8), M(SD)girls normgroup=27.7(25.7)
+* Replication effect size: Cook and Howell M(SD) = 2.9(0.49) (children: adolescent: r(bullying, self-esteem = .387)
 {{< /spoiler >}}
 
 <br>
