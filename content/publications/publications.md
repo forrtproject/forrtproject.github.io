@@ -102,14 +102,14 @@ We have written a manuscript entitled *Towards a culture of open scholarship: Th
 
 <br>
 
-## **The Role of Pedagogical Communities**
+## **Neurodiversity & Open Science in Academia**
 
 <br>
 
-We have written a manuscript entitled *Towards a culture of open scholarship: The role of pedagogical communities* describing (a) the the need to integrate open scholarship principles into research training within higher education; (b) the benefit of pedagogical communities and the role they play in fostering an inclusive culture of open scholarship; and (c)  call for greater collaboration with pedagogical communities, paving the way for a much needed integration of top-down and grassroot open scholarship initiatives.
+We have written a manuscript entitled *Bridging Neurodiversity and Open Scholarship: How Shared Values Can Guide Best Practices for Research Integrity, Social Justice, and Principled Education* explaining that Neurodiversity is fundamental to the understanding of human behaviour and cognition and that neurodivergent individuals are often stigmatised, devalued, and objectified. The authors describe systematic barriers, issue with disclosure, directions on prevalence and stigma, intersection of neurodiversity and open scholarship, and provide recommendations that can lead to personal and systematic changes to improve acceptance of neurodivergent individuals. We also present the perspectives of neurodivergent authors, the majority of whom have personal lived experiences of neurodivergence(s), and discusses how research and academia can and should be improved in terms of research integrity, inclusivity and diversity. 
 
-***Status***: Our paper is **published** 🎉🥳 in BMC Research Notes. Cite as:
-> Azevedo, F.,  Liu, M., Pennington, C. R., Pownall, M., Evans, T. R., Parsons, S.,  Elsherif, M. M., Micheli, L., Westwood, S., & FORRT. (2021). Towards a culture of open scholarship: The role of pedagogical communities. *BMC Research Notes, 15*(1), 1-5. [https://doi.org/10.1186/s13104-022-05944-1](https://doi.org/10.1186/s13104-022-05944-1)
+***Status***: Our paper is **preprinted** 🎉🥳 in MetaArxiv. Cite as:
+> Elsherif, M. M., Middleton, S. L., Phan, J. M., Azevedo, F., Iley, B. J., Grose-Hodge, M., … Dokovova, M. (2022, June 20). Bridging Neurodiversity and Open Scholarship: How Shared Values Can Guide Best Practices for Research Integrity, Social Justice, and Principled Education. https://doi.org/10.31222/osf.io/k7a9p. [https://doi.org/10.31222/osf.io/k7a9p](https://doi.org/10.31222/osf.io/k7a9p)
 
 <br>
 
