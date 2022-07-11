@@ -32,7 +32,7 @@ projects: []
 
 ## Five lessons from a non-academic job
 
-> One year after **leaving academia** and starting to work for a charity organisation. For a bit of context, I did my PhD in Psychology, after which I spent four years across two postdocs (one in France, one in England) and I got to the point where I could no longer see my career progress in academia. There are many reasons why I came to this crossroad, but above all, I realised that my passion is with research and data, and less so with the other aspects of academic life. **To my delight, my non-academic journey** so far has been full of development and challenges and here are some of the lessons I shared, with some additional thoughts. Here are five things I learnt:
+> It’s been one year after **leaving academia** and starting to work for a charity organisation. For a bit of context, I did my PhD in Psychology, after which I spent four years across two postdocs (one in France, one in England) and I got to the point where I could no longer see my career progress in academia. There are many reasons why I came to this crossroad, but above all, I realised that my passion is with research and data, and less so with the other aspects of academic life. **To my delight, my non-academic journey** so far has been full of development and challenges and here are some of the lessons I shared, with some additional thoughts. Here are five things I learnt:
 
 **The three *data* lessons**
 
