@@ -38,7 +38,7 @@
   {{ else }}
     {{ $desc = $superuser_role }}
   {{ end }}
-  <meta name="description" content="{{ printf '%.254s' $desc }}">
+  <meta name="description" content='{{ printf "%.254s"" $desc }}'>
 
   {{ range .Translations }}
   <link rel="alternate" hreflang="{{ .Lang }}" href="{{ .Permalink }}">
@@ -197,7 +197,7 @@
   <meta property="og:site_name" content="{{ site.Title }}">
   <meta property="og:url" content="{{ .Permalink }}">
   <meta property="og:title" content="{{ if not .IsHome }}{{ .Title }}{{ else }}{{ site.Title }}{{ end }}">
-  <meta property="og:description" content="{{ printf '%.254s' $desc }}">
+  <meta property="og:description" content='{{ printf "%.254s"" $desc }}'>
   {{- with $og_image -}}
   <meta property="og:image" content="{{.}}">
   <meta property="twitter:image" content="{{.}}">
