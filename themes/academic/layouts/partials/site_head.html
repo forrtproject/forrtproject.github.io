@@ -29,12 +29,17 @@
     {{ $desc = .Params.summary }}
   {{ else if .Params.abstract }}
     {{ $desc = .Params.abstract }}
+  {{ else if .Params.definition }}
+    {{ $desc = .Params.definition }}
   {{ else if .IsPage }}
     {{ $desc = .Summary }}
   {{ else if site.Params.description }}
     {{ $desc = site.Params.description }}
   {{ else }}
     {{ $desc = $superuser_role }}
+  {{ end }}
+  {{ if gt (len $desc) 254 }}
+    {{ $desc = slice $desc 0 254 }}
   {{ end }}
   <meta name="description" content="{{ $desc }}">
 
@@ -194,7 +199,7 @@
   {{ end }}
   <meta property="og:site_name" content="{{ site.Title }}">
   <meta property="og:url" content="{{ .Permalink }}">
-  <meta property="og:title" content="{{ if not .IsHome }}{{ .Title }} | {{ end }}{{ site.Title }}">
+  <meta property="og:title" content="{{ if not .IsHome }}{{ .Title }}{{ else }}{{ site.Title }}{{ end }}">
   <meta property="og:description" content="{{ $desc }}">
   {{- with $og_image -}}
   <meta property="og:image" content="{{.}}">
