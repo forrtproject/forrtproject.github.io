@@ -30,7 +30,7 @@
   {{ else if .Params.abstract }}
     {{ $desc = .Params.abstract }}
   {{ else if .Params.definition }}
-    {{ $desc = .Params.definition[0] }}
+    {{ $desc = .Params.definition }}
   {{ else if .IsPage }}
     {{ $desc = .Summary }}
   {{ else if site.Params.description }}
@@ -38,10 +38,7 @@
   {{ else }}
     {{ $desc = $superuser_role }}
   {{ end }}
-  {{ if gt (len $desc) 254 }}
-    {{ $desc = slice $desc 0 254 }}
-  {{ end }}
-  <meta name="description" content="{{ $desc }}">
+  <meta name="description" content="{{ printf '%.254s' $desc }}">
 
   {{ range .Translations }}
   <link rel="alternate" hreflang="{{ .Lang }}" href="{{ .Permalink }}">
@@ -200,7 +197,7 @@
   <meta property="og:site_name" content="{{ site.Title }}">
   <meta property="og:url" content="{{ .Permalink }}">
   <meta property="og:title" content="{{ if not .IsHome }}{{ .Title }}{{ else }}{{ site.Title }}{{ end }}">
-  <meta property="og:description" content="{{ $desc }}">
+  <meta property="og:description" content="{{ printf '%.254s' $desc }}">
   {{- with $og_image -}}
   <meta property="og:image" content="{{.}}">
   <meta property="twitter:image" content="{{.}}">
