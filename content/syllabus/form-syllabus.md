@@ -9,7 +9,7 @@ active = true  # Activate this widget? true/false
 weight = 60  # Order that this section will appear.
 
 title = "Add Open Scholarship Syllabi to FORRT's Collection"
-subtitle = "Fill out the form below or ***[open the Google form in a new window](https://forms.gle/bjt2hfSm55JxQU1z7).***"
+subtitle = "Fill out the form below or ***[open the Google form in a new window](https://docs.google.com/forms/d/e/1FAIpQLScEfLk9TWc_Wc8lQSuJcqWlmWVzLVmXzq8I2f2QTjhA3t12qw/viewform).***"
 
 [design]
   # Choose how many columns the section has. Valid values: 1 or 2.
