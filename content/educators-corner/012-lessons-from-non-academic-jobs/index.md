@@ -3,7 +3,7 @@
 
 title: "Research and data lessons from a non-academic job:"
 subtitle: "One year on."
-summary: "This piece summarises research and data lessons I learnt one year into my first non-academic job. After seven years in academia, I felt that my development had stalled, I was no longer feeling excited about continuing my career in academia, and I was keen to explore new pathways. One year on, I have so many reflections I want to share. Spoiler alert: My inner nerd is very happy. "
+summary: "This piece summarises research and data lessons I learnt one year into my first non-academic job. After seven years in academia, I felt that my development had stalled, I was no longer feeling excited about continuing my career in academia, and I was keen to explore new pathways. One year on, I have so many reflections I want to share. Spoiler alert: My inner nerd is very happy."
 authors: ['Karolina Urbanska', 'FORRT']
 tags: []
 categories: []

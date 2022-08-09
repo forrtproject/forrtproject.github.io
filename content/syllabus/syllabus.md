@@ -83,12 +83,16 @@ To further facilitate the creation, the updating, improvement, and maintenance o
 * [Credible Science Course](https://osf.io/78bhv/)
 * [Teaching materials from the 4th Oxford|Berlin Summer School 2021](https://osf.io/8q59y)
 * [Psych 3400 at Crump's Lab](https://www.crumplab.com/psyc3400/Syllabus.html)
+* [Open Science Teaching by Sanjay Srivastava](https://osf.io/er7xk/)
 * [Project Tier](https://www.projecttier.org/tier-classroom/course-materials/#modal354)
+* [Teaching Replication in Social Sciences](https://osf.io/g3k5t/)
 * [Psychology as a Robust Science](https://osf.io/sxrkn/)
 * [Data Management Syllabus](https://docs.google.com/document/d/1z15bL9cP84re6d4zdkO60q06lnknnN3xEktN7GnLFFQ/edit)
 * [Improving your statistical inference](https://www.coursera.org/learn/statistical-inferences#syllabus)
 * [SIPS Teaching and Mentoring Open Science Syllabus](https://osf.io/3dp52/)
 * [Campbell Open and Reproducible Science Syllabus](https://osf.io/qbm89/)
+* [Open Science & Inclusive Psychology by Benjamin Le](https://docs.google.com/document/d/1ChsXW5XM1ySU7gG0CBXmRUL-TosWEK_T74QhaTGEH_I/edit)
+* [Open Science Capstone: Advanced General by Katie Corker](https://osf.io/24ws6)
 * [Open Science Workshop Materials of the LMU Open Science Center](https://osf.io/zjrhu/)
 * [Open Science and Methodological Improvement](https://osf.io/jvsbg/)
 * [PSYC 5601:Contemporary Research in Personality](https://osf.io/3e2pg/)
@@ -111,7 +115,10 @@ To further facilitate the creation, the updating, improvement, and maintenance o
 * [Graduate Research Methods](https://osf.io/26c7f/)
 * [Improving (Our) Science](https://osf.io/rifzn/)
 * [Improving (Our) Science: Reproducibility, Reporting, and Openness](https://osf.io/bcdpv/)
+* [ReproducibiliTea 'Open Science' Introductory Reading List](https://osf.io/qxbcs)
 * [Economics 270D: Research Transparency Methods in the Social Sciences](https://osf.io/bt6j2/)
+* [ "Collaborative book: Taking stock of the credibility revolution: Scientific reform 2011-2019"](https://docs.google.com/document/d/1DU4S9tliDXMlonSWpm_wnssZR8lSNIabM01kfeQM98k/edit)
+* [Open Science Talks and Workshops by Gilad Feldman (for reuse of Slides/Materials)](https://osf.io/df9tj/)
 * [Topics in Social Psychology and Personality](https://osf.io/8ecbz/)
 * [History and Philosophy of Psychology](https://osf.io/73zyu/)
 * [Open Science & Inclusive Psychology](https://osf.io/sg9ej/)
@@ -136,6 +143,8 @@ To further facilitate the creation, the updating, improvement, and maintenance o
 * [Teaching Replicable and Reproducible Science](https://osf.io/x7d45/)
 * [Syllabus Collection](https://osf.io/vkhbt/)
 * [Overcoming the Knowledge Barrier in Open Science](https://osf.io/bk6r7/)
+* [A reading list for the Replicability Crisis](http://crystalprisonzone.blogspot.com/2016/03/a-reading-list-for-replicability-crisis.html)
+* [Special Issue: Replication of Crises: Interdisciplinary Reflections on the Phenomenon of the Replication Crisis in Psychology](https://journals.sagepub.com/toc/RGP/current)
 
 <br>
 
@@ -143,11 +152,12 @@ To further facilitate the creation, the updating, improvement, and maintenance o
 
 <br>
 
+
 {{% alert note %}}
 
 If you know of other syllabi not included in this collection, please consider adding it to our collections so that others can benefit from it too! 
 
-[***Add Open Scholarship Syllabi to FORRT's Collection***](https://forms.gle/bjt2hfSm55JxQU1z7)
+[***Add Open Scholarship Syllabi to FORRT's Collection***](https://forms.gle/BR9A4J4GhjPmXtq68)
 
 {{% /alert %}}
 
