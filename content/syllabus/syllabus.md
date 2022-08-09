@@ -157,7 +157,7 @@ To further facilitate the creation, the updating, improvement, and maintenance o
 
 If you know of other syllabi not included in this collection, please consider adding it to our collections so that others can benefit from it too! 
 
-[***Add Open Scholarship Syllabi to FORRT's Collection***](https://forms.gle/BR9A4J4GhjPmXtq68)
+[***Click here to add an Open Scholarship Syllabi to FORRT's Collection***](https://docs.google.com/forms/d/e/1FAIpQLScEfLk9TWc_Wc8lQSuJcqWlmWVzLVmXzq8I2f2QTjhA3t12qw/viewform)
 
 {{% /alert %}}
 
