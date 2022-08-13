@@ -59,7 +59,7 @@ classtitle = "text-center"
 
 In a nutshell, FORRT is a ***F***ramework for ***O***pen and ***R***eproducible ***R***esearch ***T***raining advancing research transparency, reproducibility, rigor, and ethics through pedagogical reform and meta-scientific research. 
 
-FORRT provides a pedagogical infrastructure and open educational resources designed to support the teaching and mentoring of open and reproducible science. FORRT strives to (a) raise awareness of the pedagogical implications of open and reproducible science and its associated challenges (i.e., curricular reform, epistemological uncertainty, methods of education); (c) respond to calls to consider open scholarship as inclusive scholarship; (c) advocate for the opening and formal recognition of teaching and mentoring materials to facilitate access, discovery, and learning to those who otherwise would be educationally disenfranchised.
+FORRT provides a pedagogical infrastructure and open educational resources designed to support the teaching and mentoring of open and reproducible science. FORRT strives to (a) raise awareness of the pedagogical implications of open and reproducible science and its associated challenges (i.e., curricular reform, epistemological uncertainty, methods of education); (b) respond to calls to consider open scholarship as inclusive scholarship; (c) advocate for the opening and formal recognition of teaching and mentoring materials to facilitate access, discovery, and learning to those who otherwise would be educationally disenfranchised.
 
 ***Here's a 5 minutes introduction to FORRT***
 
