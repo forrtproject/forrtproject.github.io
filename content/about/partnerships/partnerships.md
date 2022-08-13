@@ -101,7 +101,15 @@ classtitle = "text-center"
 
 <br>
 
-<img src="Bits.png" align="right" /> [The Stanford Big Team Science (BiTS) Lab ](https://bigteamsciencelab.github.io/) was established in 2021 to facilitate conversations between members of large-scale collaborations (both at Stanford and beyond) and to advance the work done by these groups. Affiliate organizations are Affiliate organizations FORRT, Lookit, ManyBabies, ManyBirds, ManyDogs, ManyPrimates, Psychological Science Accelerator (PSA), and Strengthening Democracy Challenge. [Check out their events](https://bigteamsciencelab.github.io/events/) on Authorship in Big Team Science.
+<img src="Bits.png" align="right" /> [The Stanford Big Team Science (BiTS) Lab](https://bigteamsciencelab.github.io/) was established in 2021 to facilitate conversations between members of large-scale collaborations (both at Stanford and beyond) and to advance the work done by these groups. Affiliate organizations are Affiliate organizations FORRT, Lookit, ManyBabies, ManyBirds, ManyDogs, ManyPrimates, Psychological Science Accelerator (PSA), and Strengthening Democracy Challenge. [Check out their events](https://bigteamsciencelab.github.io/events/) on Authorship in Big Team Science.
+
+<br>
+
+---
+
+<br>
+
+<img src="CREP.jpg" align="right" /> [The Collaborative Replications and Education Project (CREP)](http://www.crep-psych.org/) has as a mission to provide training, support, and professional growth opportunities for students and instructors completing replication projects, while also addressing the need for direct and direct+ replications of highly-cited studies in psychology (broadly). [Check out their OSF Repository to get started](https://osf.io/wfc6u/) or contact them at [CREP.Psych@gmail.com](mailto:CREP.Psych@gmail.com).
 
 <br>
 
