@@ -70,3 +70,12 @@ slides: ""
 #   Otherwise, set `projects = []`.
 projects: []
 ---
+
+## Watch the recording: 
+
+{{< youtube i8cL3Q6A3HE >}}
+
+## Look at the presentations slides:
+
+<style>.embed-responsive{position:relative;height:100%;}.embed-responsive iframe{position:absolute;height:100%;}</style><script>window.jQuery || document.write('<script src="//code.jquery.com/jquery-1.11.2.min.js">\x3C/script>') </script><link href="https://mfr.de-1.osf.io/static/css/mfr.css" media="all" rel="stylesheet"><div id="mfrIframe" class="mfr mfr-file"></div><script src="https://mfr.de-1.osf.io/static/js/mfr.js"></script> <script>var mfrRender = new mfr.Render("mfrIframe", "https://mfr.de-1.osf.io/render?url=https://osf.io/b7rvd/?direct%26mode=render%26action=download%26mode=render");</script>
+
