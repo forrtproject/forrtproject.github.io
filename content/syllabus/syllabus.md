@@ -134,6 +134,7 @@ To further facilitate the creation, the updating, improvement, and maintenance o
 * [Capstone: Advanced General](https://osf.io/24ws6/)
 * [Research Methods in Social Psychology Winter 2019](https://osf.io/uv9x6/)
 * [Open and Reproducible Science](https://osf.io/fuds5/)
+* [Open Source Research Methods for the Social Sciences](https://canvas.pitt.edu/courses/124970)
 * [Research Methods in Social Psychology Fall 2015](https://osf.io/nxytf/)
 * [Open and Reproducible Research in Psychology (PSYC 726)](https://osf.io/zvfu4/)
 * [Economic Statistics with Calculus](https://osf.io/hurgd/)
