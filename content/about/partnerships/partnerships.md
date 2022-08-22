@@ -120,6 +120,15 @@ classtitle = "text-center"
 
 <br>
 
+---
+
+<br>
+
+<img src="nowherelab.jpg" align="right" /> [The Nowhere Lab](http://nowherelab.com/) is an online community for people who would like the lab meeting experience but don’t currently have one. Nowhere Lab holds weekly meetings and has an active Slack. Nowhere Lab has members from across all populated continents and career stages: undergraduate students, master’s students, Ph.D. students, postdocs, faculty members, and people working outside academia.
+
+
+<br>
+
 <br>
 
 <br>
