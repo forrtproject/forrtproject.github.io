@@ -55,7 +55,7 @@ subtitle = ""
 ### Motivation
 ---------------------
 
-Developing educational resources is essential to facilitate engagement with, adherence to, and learning of research transparency, replicability, openness, and reproducibility. Despite the growing awareness of the benefits of training reproducible methods within undergraduate and postgraduate curricula, there remains a lack of systematic incorporation of open scholarship practices in taught courses across Higher Education. Also, while many pedagogical resources are regularly developed for this purpose, they are not often openly and actively shared with the wider community. While the potential reasons for this are diverse, one reason may be the dearth of available ready-to-use educational resources. 
+Developing educational resources is essential to facilitate engagement with, adherence to, and learning of research transparency, replicability, openness, and reproducibility. Despite the growing awareness of the benefits of training reproducible methods within undergraduate and postgraduate curricula, there remains a lack of systematic incorporation of open scholarship practices in taught courses across Higher Education. While many pedagogical resources are regularly developed for this purpose, they are not often openly and actively shared with the wider community. While the potential reasons for this are diverse, one reason may be the dearth of available ready-to-use educational resources. 
 
 To support instructors aiming to bridge that gap, FORRT's community built open educational resources that can be integrated into taught courses ‘out of the box’. As creating or changing course content can be onerous and time-consuming, we aimed to make evidence-based, high-quality lesson plans and activities available to teaching faculty, thus reducing the labour required to develop and implement open scholarship content.
 
@@ -71,8 +71,7 @@ We compiled lesson plans and activities, and categorized them based on their the
 ### Lesson Plans
 ---------------------
 
-You can find all ready lesson plans [in this OSF repository](https://osf.io/th254/), and here's one example about [Interpreting effect sizes and confidence intervals](LessonPlans1.pdf) and another on [Prediction Markets](LessonPlans2.pdf). 
-
+You can find *all lesson plans* [in this OSF repository](https://osf.io/th254/), and here's one example about [Interpreting effect sizes and confidence intervals](LessonPlans1.pdf) and another on [Prediction Markets](LessonPlans2.pdf). 
 
 Each has suitable context: (e.g., entry-level/undergraduate/postgraduate), total time: (e.g., 1 hour, 2 hours, 1 day, etc.), pre-requisites, related resources (e.g. slides, assignment materials, lecture recordings, etc), learning outcomes, brokendown per activity length (10min, 30min, etc.). Here's all the topics that we prepared Lesson Plans far:
 
@@ -85,10 +84,11 @@ Each has suitable context: (e.g., entry-level/undergraduate/postgraduate), total
 1. [Research paradigms and open science](https://osf.io/r8ymj/)
 1. [Open Data and Qualitative Research](https://osf.io/nyfqx/)
 1. [Diversity and inclusion in (br)open science](https://osf.io/r6qsw/)
+1. [Differentiating between correlation vs causation](https://osf.io/fvnj5)
 
 We hope to keep producing more Lesson Plans, so please check this space. Our community is working on this ["Table of Activities"](https://docs.google.com/spreadsheets/d/1LGdBFlOCFqyfV7NUx11oUjkqR-aVZpWVGCn8RTiQQuk/edit#gid=0) to which you can add your own ideas (see how to contribute below) and help us empower educators and stakeholders with high quality and accessible lesson plans (and educational materials) to accelerate institutional change towards the integration of open and reproducible science into Higher Education curricula!
 
-Lastly, accompanying the Lesson Plans, FORRT’s team wrote a short manuscript entitled ["Embedding open and reproducible teaching into undergraduate training"](https://psyarxiv.com/fgv79) which is now published in the APA's [Scholarship of Teaching and Learning in Psychology](https://psycnet.apa.org/record/2022-15361-001), where we describe and openly share a bank of teaching resources and lesson plans on the broad topics of open scholarship, open science, replication, and reproducibility that can be readily integrated into taught courses. 
+Lastly, accompanying the Lesson Plans, FORRT’s team wrote a short manuscript entitled ["Embedding open and reproducible teaching into undergraduate training"](https://psyarxiv.com/fgv79) [(OA Postprint)](https://doi.org/10.31234/osf.io/fgv79) which is now published in the APA's [Scholarship of Teaching and Learning in Psychology](https://psycnet.apa.org/record/2022-15361-001), where we describe and openly share a bank of teaching resources and lesson plans on the broad topics of open scholarship, open science, replication, and reproducibility that can be readily integrated into taught courses.
 
 <br>
 
