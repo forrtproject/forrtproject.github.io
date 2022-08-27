@@ -80,6 +80,7 @@ To further facilitate the creation, the updating, improvement, and maintenance o
 * [Methods for Reliable, Transparent, and Open Science](https://github.com/rouderj/transparent-science-course)
 * [Teaching Replication in Psychology: A Guide for Teachers and Students](https://osf.io/28r6g/)
 * [Credible Science Course](https://osf.io/78bhv/)
+* [Teaching and Mentoring Open Science Syllabus Module & Assignment Ideas](https://osf.io/3dp52) and [Mentoring Statement](https://osf.io/gqpc9)
 * [Teaching materials from the 4th Oxford|Berlin Summer School 2021](https://osf.io/8q59y)
 * [Statistical Methods in Psychological Research (PSYC 3400) at Crump's Lab](https://www.crumplab.com/psyc3400/Syllabus.html)
 * [Open Science Teaching by Sanjay Srivastava](https://osf.io/er7xk/)
