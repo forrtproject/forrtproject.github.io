@@ -2,8 +2,8 @@
 # Documentation: https://sourcethemes.com/academic/docs/managing-content/
 
 title: "Introducing Nowhere Lab"
-subtitle: "One year on."
-summary: "This piece summarises research and data lessons I learnt one year into my first non-academic job. After seven years in academia, I felt that my development had stalled, I was no longer feeling excited about continuing my career in academia, and I was keen to explore new pathways. One year on, I have so many reflections I want to share. Spoiler alert: My inner nerd is very happy."
+subtitle: "A Remote, Global Lab for Everyone."
+summary: "Nowhere Lab (http://nowherelab.com/) is an online community for people who would like the lab meeting experience but don’t currently have one. We hold weekly meetings and have an active Slack. We have members from across all populated continents and career stages: undergraduate students, master's students, Ph.D. students, postdocs, faculty members, and people working outside academia."
 authors: ['Priya Silverstein', 'FORRT']
 tags: []
 categories: []
@@ -31,9 +31,8 @@ projects: []
 <br>
 
 
-**Nowhere Lab & FORRT**
-
-Nowhere Lab has partnered with FORRT as part of FORRT’s efforts to promote social justice and enable equality of access to open scholarship training! Nowhere Lab members benefit from weekly meetings where they can bring any questions they have about adopting any open scholarship practices (or anything else related to science and/or academia). Dr. Priya Silverstein (Nowhere Lab founder) is also available to answer any questions about engaging in other FORRT initiatives either during the weekly meetings, by reaching out via the Nowhere Lab or FORRT Slack workspaces, or by email. Nowhere Lab also operates informal mentorship – rather than matching mentors and mentees, people with mutual interests and skills are able to be connected and there are several channels in our Slack for seeking help or support for a variety of issues.
+> **Nowhere Lab & FORRT**. 
+> Nowhere Lab has partnered with FORRT as part of FORRT’s efforts to promote social justice and enable equality of access to open scholarship training! Nowhere Lab members benefit from weekly meetings where they can bring any questions they have about adopting any open scholarship practices (or anything else related to science and/or academia). Dr. Priya Silverstein (Nowhere Lab founder) is also available to answer any questions about engaging in other FORRT initiatives either during the weekly meetings, by reaching out via the Nowhere Lab or FORRT Slack workspaces, or by email. Nowhere Lab also operates informal mentorship – rather than matching mentors and mentees, people with mutual interests and skills are able to be connected and there are several channels in our Slack for seeking help or support for a variety of issues.
 
 **Background**
 
