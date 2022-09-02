@@ -29,6 +29,8 @@
     {{ $desc = .Params.summary }}
   {{ else if .Params.abstract }}
     {{ $desc = .Params.abstract }}
+  {{ else if .Params.definition }}
+    {{ $desc = .Params.definition }}
   {{ else if .IsPage }}
     {{ $desc = .Summary }}
   {{ else if site.Params.description }}
@@ -36,7 +38,7 @@
   {{ else }}
     {{ $desc = $superuser_role }}
   {{ end }}
-  <meta name="description" content="{{ $desc }}">
+  <meta name="description" content='{{ printf "%.254s" $desc }}'>
 
   {{ range .Translations }}
   <link rel="alternate" hreflang="{{ .Lang }}" href="{{ .Permalink }}">
@@ -178,7 +180,7 @@
   {{ else if .Params.header.image }}
     {{ $og_image = printf "%s/%s" $media_dir .Params.header.image | absURL }}
   {{ else if site.Params.sharing_image }}
-    {{ $og_image = printf "%s/%s" $media_dir site.Params.sharing_image | absURL }}
+    {{ $og_image = site.Params.sharing_image | absURL }}
   {{ else if $has_logo }}
     {{ $og_image = (partial "functions/get_logo" (dict "constraint" "fit" "size" 300)).Permalink }}
     {{ $twitter_card = "summary" }}
@@ -194,8 +196,8 @@
   {{ end }}
   <meta property="og:site_name" content="{{ site.Title }}">
   <meta property="og:url" content="{{ .Permalink }}">
-  <meta property="og:title" content="{{ if not .IsHome }}{{ .Title }} | {{ end }}{{ site.Title }}">
-  <meta property="og:description" content="{{ $desc }}">
+  <meta property="og:title" content="{{ if not .IsHome }}{{ .Title }}{{ else }}{{ site.Title }}{{ end }}">
+  <meta property="og:description" content='{{ printf "%.254s" $desc }}'>
   {{- with $og_image -}}
   <meta property="og:image" content="{{.}}">
   <meta property="twitter:image" content="{{.}}">
