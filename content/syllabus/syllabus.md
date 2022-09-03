@@ -93,6 +93,7 @@ To further facilitate the creation, the updating, improvement, and maintenance o
 * [Campbell Open and Reproducible Science Syllabus](https://osf.io/qbm89/)
 * [Open Science & Inclusive Psychology by Benjamin Le](https://docs.google.com/document/d/1ChsXW5XM1ySU7gG0CBXmRUL-TosWEK_T74QhaTGEH_I/edit)
 * [Open Science Capstone: Advanced General by Katie Corker](https://osf.io/24ws6)
+* [History and Methods of Psychology (PSY 8960-003) by Moin Syed](https://docs.google.com/document/d/1wLClx6QHbzh4LCjxM4RRWhLQMbjEtyA7vbGCRPpFuQQ/edit)
 * [Open Science Workshop Materials of the LMU Open Science Center](https://osf.io/zjrhu/)
 * [Open Science and Methodological Improvement](https://osf.io/jvsbg/)
 * [Contemporary Research in Personality | PSYC 5601 (emphasis on OS)](https://osf.io/3e2pg/)
