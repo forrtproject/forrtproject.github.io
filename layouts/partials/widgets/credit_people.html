@@ -1,0 +1,91 @@
+{{/* CREDIT People Widget */}}
+
+{{/* Initialise */}}
+{{ $ := .root }}
+{{ $page := .page }}
+{{ $show_social := $page.Params.design.show_social | default false }}
+{{ $show_interests := $page.Params.design.show_interests | default true }}
+
+<div class="row justify-content-center people-widget">
+  {{ with $page.Title }}
+  <div class="col-md-12 section-heading">
+    <h1>{{ . | markdownify | emojify }}</h1>
+    {{ if $page.Params.subtitle }}<p>{{ $page.Params.subtitle | markdownify | emojify }}</p>{{ end }}
+  </div>
+  {{ end }}
+
+  {{ with $page.Content }}
+  <div class="col-md-12">
+    {{ . }}
+  </div>
+  {{ end }}
+
+
+  {{ range $page.Params.content.user_groups }}
+  {{ $query := $.Site.Data.tenzing_prototype }}
+  
+
+  {{if $query}}
+  <div class="col-md-12">
+    <h2 class="mb-4">{{ "CREDIT" | markdownify | emojify }}</h2>
+  </div>
+  {{end}}
+
+  {{ range $query }}
+  {{ $avatar := (.Resources.ByType "image").GetMatch "*avatar*" }}
+  {{/* Get link to user profile page. */}}
+  {{ $link := "" }}
+  <div class="col-12 col-sm-auto col-md-4 people-person py-3">
+
+    <div class="portrait-title">
+      <h2>{{ .firstname }} {{ .surname }}</h2>
+      <ul class="network-icon">
+        {{ with .orcid }}
+          <li>
+            <a href="https://orcid.org/{{.}}">
+              <i class="fab fa-orcid" aria-hidden="true"></i>
+            </a>
+          </li>
+        {{end}}
+        {{/*  {{ with .email }}
+        <li>
+          <a href="mailto:{{.}}">
+            <i class="fa-solid fa-envelope" aria-hidden="true"></i>
+          </a>
+        </li>
+      {{end}}  */}}
+      {{/*  Go inside projects find a twitter handle and bring it out
+        of the loop  */}}
+      {{ $twit := ""}}
+      {{ range .projects }}
+      {{ $twit = .twitter_handles }}
+      {{ end }}
+      {{ with $twit }}
+      <li>
+        <a href="https://twitter.com/{{.}}">
+          <i class="fab fa-twitter" aria-hidden="true"></i>
+        </a>
+      </li>
+      {{end}}
+      </ul>
+      <p>
+        <ul class="network-icon">
+          CREDIT:
+          {{ range .projects }}
+          <li>
+            <a title="{{.prj_name}}">
+              <i class="{{ .prj_icon }}" aria-hidden="true"></i><span> {{ .prj_name }} </span>
+            </a>
+          </li>
+          {{end}}
+        </ul>
+      </p>
+        
+        {{/*  {{ range .projects }}<p class="people-interests">{{ .Proj | markdownify | emojify }}</p>{{ end }}  */}}
+      </div>
+    </div>
+    {{ end }}
+  {{ end }}
+</div>
+
+
