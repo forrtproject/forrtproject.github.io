@@ -104,6 +104,13 @@ Recently, there has been a growing emphasis on embedding open and reproducible a
 
 {{< /expand >}}
 
+## Feedback
+---------------------
+
+Please consider [giving us your feedback (critical or otherwise) when using these materials so that we can learn how to improve these resources](https://docs.google.com/forms/d/e/1FAIpQLSckPkeCR6_hsmxqV9yQ66oLgLOhnnHBrk4ejgIBTsOQ0mZ6gg/viewform?usp=sf_link). 
+
+{{< gform src="1FAIpQLSckPkeCR6_hsmxqV9yQ66oLgLOhnnHBrk4ejgIBTsOQ0mZ6gg" width="100%" height="500px" alt="Loading..." >}}
+
 <center>
 
 <!-----
