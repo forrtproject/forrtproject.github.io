@@ -5,7 +5,7 @@ headless = true  # This file represents a page section.
 active = true  # Activate this widget? true/false
 weight = 40  # Order that this section will appear.
 
-title = "Open Educational Resources &<br>Meta-Scientific Works"
+title = "Open Educational Resources &<br>Metascientific Works"
 subtitle = "---"
 
 # Showcase personal skills or business features.
