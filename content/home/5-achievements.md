@@ -52,33 +52,9 @@ subtitle = "---"
 
 <br>
 
-
-<style>
-
-.row {
-  display: flex;
-}
-
-/* Create two equal columns that sits next to each other */
-.column {
-  flex: 50%;
-  padding: 10px;
-}
-</style>
-
-<br>
-
-<div class="row">
-  <div class="column">
-
-  </div>
-  <div class="column">
-
 <center>
 
 <div style="width:400px">
-
-<br>
 
 ![FORRT Awards](/img/Achievements.jpg)
 
@@ -86,6 +62,4 @@ subtitle = "---"
 
 </center>
 
-
-  </div>
-</div>
+<br>
