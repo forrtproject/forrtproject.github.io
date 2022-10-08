@@ -104,12 +104,12 @@ Recently, there has been a growing emphasis on embedding open and reproducible a
 
 {{< /expand >}}
 
-## Feedback
+### Feedback
 ---------------------
 
 Please consider [giving us your feedback (critical or otherwise) when using these materials so that we can learn how to improve these resources](https://docs.google.com/forms/d/e/1FAIpQLSckPkeCR6_hsmxqV9yQ66oLgLOhnnHBrk4ejgIBTsOQ0mZ6gg/viewform?usp=sf_link). 
 
-{{< gform src="1FAIpQLSckPkeCR6_hsmxqV9yQ66oLgLOhnnHBrk4ejgIBTsOQ0mZ6gg" width="100%" height="500px" alt="Loading..." >}}
+{{< gform src="1FAIpQLSckPkeCR6_hsmxqV9yQ66oLgLOhnnHBrk4ejgIBTsOQ0mZ6gg" width="100%" height="700px" alt="Loading..." >}}
 
 <center>
 
@@ -133,17 +133,12 @@ https://docs.google.com/spreadsheets/d/1LGdBFlOCFqyfV7NUx11oUjkqR-aVZpWVGCn8RTiQ
 
 These resources were created as part of the Society for Improving Psychological Science (SIPS) hackathon at the 2021 Annual Conference, and we detail this collaborative process in the article. 
 
-<ul>
-
 
 #### Contributorship 
 
 In line with principles enshrined in FORRT, this google-sheet is an open online contributorship project. The work of all contributors are valued and are formally recognized. With this, we hope to expand the scope and diversity of FORRT’s mission and its team.
 
-</ul>
 <br>
-
-{{< /expand >}}
 
 
 

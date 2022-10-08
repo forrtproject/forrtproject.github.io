@@ -64,6 +64,15 @@ In a nutshell, FORRT is a ***F***ramework for ***O***pen and ***R***eproducible 
 
 {{< expand "Expand to learn more" >}}
 
+
+### Presentation of FORRT projects
+
+<br>
+
+{{< youtube i8cL3Q6A3HE&ab >}}
+
+<br>
+
 ### The problem
 
 * Recently, the scientific community took steps to reflect a widespread awareness of, and call for, improved practices ushering in the “credibility revolution” including higher standards of evidence, preregistration, direct replication, transparency, and openness.
