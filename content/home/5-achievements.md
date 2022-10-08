@@ -8,7 +8,7 @@ headless = true  # This file represents a page section.
 active = true  # Activate this widget? true/false
 weight = 50  # Order that this section will appear.
 
-title = "Awards"
+title = "Achievements"
 subtitle = "---"
 
 [design]
@@ -71,33 +71,6 @@ subtitle = "---"
 <div class="row">
   <div class="column">
 
-<br>
-
-In 2022, FORRT has received a ***1st place*** award from the Atlantic Technological University and the Open Science Community Galway for its several initiative aiming to help researchers integrate Open Science into their educational pipeline, receiving €200/£189.
-
-<br>
-
-In 2022, FORRT has received a ***Grant-in-Aid award*** from the Society for the Improvement of Psychological Science for the FORRT's Neurodiversity initiative, receiving $1250.
-
-<br>
-
-In 2022, FORRT has received ***Open Scholarship Conference award*** from the Association for Learning Technology for its initiatives, receiving €200/£189.
-
-<br>
-
-In 2021, FORRT has received a ***Commendation*** from the [HiddenREF](https://hidden-ref.org/hidden-ref-award-ceremony/) for its initiatives advancing training materials and resources on open and reproducible science (see here for a [recording of the award ceremony](https://youtu.be/btjRNG0NANg?t=1070)).
-
-<br>
-
-In 2021, FORRT has received an ***Open Scholarship Award*** (2nd Place) from the [Open Scholarship Community Galway](https://osc-galway.ie/competition/) for its overall initiatives. 
-
-<br>
-
-In 2020, FORRT has received a ***Commendation*** from the [Society for the Improvement of Psychological Science](http://improvingpsych.org/mission/awards/) for its manuscript ["Introducing a Framework for Open and Reproducible Research Training (FORRT)"](https://osf.io/bnh7p/). 
-
-<br>
-
-
   </div>
   <div class="column">
 
@@ -107,7 +80,7 @@ In 2020, FORRT has received a ***Commendation*** from the [Society for the Impro
 
 <br>
 
-![FORRT Awards](/img/Awards.png)
+![FORRT Awards](/img/Achievements.jpg)
 
 </div>
 

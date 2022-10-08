@@ -68,6 +68,7 @@ subtitle = ""
 </style>
 
 ------------
+
 <center>
 
 Thanks to our amazing community, FORRT has become an ***award-winning*** grassroots interdisciplinary international organization integrating open and reproducible research training into higher education.
@@ -80,6 +81,18 @@ Thanks to our amazing community, FORRT has become an ***award-winning*** grassro
 
 <div class="row">
   <div class="column">
+
+<br>
+
+In 2022, FORRT has received a ***1st place*** award from the Atlantic Technological University and the Open Science Community Galway for its several initiative aiming to help researchers integrate Open Science into their educational pipeline, receiving €200/£189.
+
+<br>
+
+In 2022, FORRT has received a ***Grant-in-Aid award*** from the Society for the Improvement of Psychological Science for the FORRT's Neurodiversity initiative, receiving $1250.
+
+<br>
+
+In 2022, FORRT has received ***Open Scholarship Conference award*** from the Association for Learning Technology for its initiatives, receiving €200/£189.
 
 <br>
 
