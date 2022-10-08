@@ -69,7 +69,7 @@ In a nutshell, FORRT is a ***F***ramework for ***O***pen and ***R***eproducible 
 
 <br>
 
-{{< youtube i8cL3Q6A3HE&ab >}}
+{{< youtube i8cL3Q6A3HE >}}
 
 <br>
 
