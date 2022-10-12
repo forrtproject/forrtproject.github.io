@@ -90,6 +90,13 @@ This is a dynamic project that is organized in four stages for its 1st Phase. Cu
 
 1. Regular **Update Phases** (dynamically adding new effects), planned for 2023 and beyond.
 
+{{% callout note %}}
+
+For the ***latest updates***, sent in Octorber 2022 to every contributor, [please check this summarizing email](https://docs.google.com/document/d/1f_U3XSfkXaYoJg9ZxtUjmGLl1Gr_TeTzXQgeYbbTIbg)
+
+{{% /callout %}}
+
+
 <br>
 
 ## **How to contribute?**
