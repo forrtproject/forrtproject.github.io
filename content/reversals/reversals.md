@@ -446,6 +446,7 @@ Replication effect size: Siev et al. (2018):  g = 0.17, 95% CI [0.04 – 0.31].
 {{< /spoiler >}} 
 
 * **Social comparison**. No robust evidence for an interaction effect between body dissatisfaction and social comparison on fat talk.
+
 {{< spoiler text="Statistics" >}}
 * Status: Mixed
 * Original paper: ‘[Who is most likely to fat talk? A social comparison perspective’](https://doi.org/10.1016/j.bodyim.2012.05.004), Corning and Condoli, 2012; n = 143. [citation=61(GS, February 2022)]​.
@@ -455,6 +456,7 @@ Replication effect size: Siev et al. (2018):  g = 0.17, 95% CI [0.04 – 0.31].
 {{< /spoiler >}}
 
 * **Bystander effect**. Claims that the feeling of responsibility diffuses with an increasing number of other observers. Research about the bystander effect was sparked by the 1964 murder of Catherine “Kitty” Genovese. See this _[New York Times article](https://www.nytimes.com/1964/03/27/archives/37-who-saw-murder-didnt-call-the-police-apathy-at-stabbing-of.html)_ for details. Here’s a more detailed [resource](http://bps.stanford.edu/?page_id=3671).  
+
 {{< spoiler text="Statistics" >}} 
 * Status: reversed
 * Original paper(s): [Darley et al.  (1968)](https://web.archive.org/web/20170808145205id_/http://faculty.uncfsu.edu/tvancantfort/syllabi/gresearch/readings/a_darley.pdf) experiment, n = 59 [citations = 4181, altmetrics = April 1968]. [Latané and Darley (1968)](https://web.archive.org/web/20190224040733id_/http://pdfs.semanticscholar.org/5248/f73d3cf3ce2696ccc241d89c9b2538fd1896.pdf), experiment, n = NA [citations = 1869, altmetrics Nov 1968]; [Latané and Nida (1981)](https://web.archive.org/web/20170809010454id_/http://www.uni-muenster.de/imperia/md/content/psyifp/aeechterhoff/sommersemester2012/schluesselstudiendersozialpsychologiea/latanenida_bystandereffgroupsize_psybull1981.pdf), review
@@ -463,7 +465,8 @@ Replication effect size: Siev et al. (2018):  g = 0.17, 95% CI [0.04 – 0.31].
 * Replication effect size: Fischer et al. (2011): Hedges’ _g_ = -0.35 
 {{< /spoiler >}}
 
-* **Color red on attractiveness**. Viewing the color red enhances men's attraction to women. In a lingua franca this effect may reflect the amorous meaning in the human mating game. ​{{< spoiler text="Statistics" >}}
+* **Color red on attractiveness**. Viewing the color red enhances men's attraction to women. In a lingua franca this effect may reflect the amorous meaning in the human mating game.  
+{{< spoiler text="Statistics" >}} 
 * Status: Mixed
 * Original paper: ‘['Romantic red: Red enhances men’s attraction to women'](https://web.archive.org/web/20090419084901id_/http://www.psych.rochester.edu:80/faculty/elliot/documents/ElliotNiesta_RomanticRed.2008.pdf), Elliot and Niesta (2008); experiment, N = 42 [citation=66 (GS, February 2022)]​.
 * Critiques: [Peperkoorn et al. (2016)](https://doi.org/10.1177/1474704916673841) [n=830, citations=48 (GS, February 2022)]. ​
@@ -472,6 +475,7 @@ Replication effect size: Siev et al. (2018):  g = 0.17, 95% CI [0.04 – 0.31].
 {{< /spoiler >}}
 
 * **Big brother effect**. An original study reported that being watched makes someone more likely to cooperate. People who viewed by a pair of eyes (even when a picture of eyes and not a real person) were three times more likely to contribute to an honesty box used to collect money for drinks (compared to participants who instead saw a picture of flowers), but later meta-analyses did not find this result using very large sample sizes.
+
 {{< spoiler text="Statistics" >}}
 * Status: not replicated
 * Original paper: ‘[Cues of being watched enhance co-operation in a real-world setting](https://doi.org/10.1098/rsbl.2006.0509)’, Bateson et al, 2006; experimental design, _n_=48. [citations = 1604, Google Scholar, Dec 2021)]​.
