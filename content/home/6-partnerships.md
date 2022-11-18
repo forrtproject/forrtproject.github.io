@@ -61,3 +61,5 @@ __*Meta-psychology special issue*__
 __*Center for Open Science - OSKB & COSGN*__
 
 &nbsp;&nbsp;&nbsp;&nbsp; We are partnering up with [OSKB](https://cos.io/oskb) ([Open Science Knowledge Base](https://cos.io/oskb)) to coordinate the alignment of our meta-data on educational materials so that we share our resources and community. To that end, FORRT will have a community in OSKB’s home ([OER Commons](https://www.oercommons.org/)) and enrich data and reduced redundant work. FORRT also joined COS network-of-networks or [Community of Open Scholarship Grassroots Networks](https://groups.google.com/a/cos.io/forum/#!topic/network-of-open-science-grassroots-networks/1OWtx9VDSwo) ([COSGN](https://groups.google.com/a/cos.io/forum/#!topic/network-of-open-science-grassroots-networks/1OWtx9VDSwo)). These partnerships aim to help build a community of existing educational initiatives, strengthening our missions, and streamline the advancement of open and reproducible educational practices.  
+
+<a rel="me" href="https://mastodon.social/@FORRT">Mastodon</a>
