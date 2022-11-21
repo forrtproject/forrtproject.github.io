@@ -42,7 +42,7 @@ If you think you can help in any of the areas listed above (and we bet you can) 
 There, we can direct you towards relevant documents and tasks. 
 
 - But if you are interested in contributing to the **FORRT manuscript**, a google doc version can be found here: https://tinyurl.com/FORRTworkingDOC. 
-- If you are interested in contributing to the **Website**, see specific instructions below, and please check out FORRT’s Github (to-do)[https://github.com/forrtproject/forrt/projects/1] and [open issues](https://github.com/forrtproject/forrt). 
+- If you are interested in contributing to the **Website**, see specific instructions below, and please check out FORRT’s Github [to-do](https://github.com/forrtproject/forrt/projects/1) and [open issues](https://github.com/forrtproject/forrt). 
 
 Please note that it's very important to us that we maintain a positive and supportive environment for everyone who wants to participate. When you join us we ask that you follow our code of conduct in all interactions both on and offline.
 
