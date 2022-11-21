@@ -126,8 +126,18 @@ classtitle = "text-center"
 
 <img src="nowherelab.jpg" align="right" /> [The Nowhere Lab](http://nowherelab.com/) is an online community for people who would like the lab meeting experience but don’t currently have one. Nowhere Lab holds weekly meetings and has an active Slack. Nowhere Lab has members from across all populated continents and career stages: undergraduate students, master’s students, Ph.D. students, postdocs, faculty members, and people working outside academia.
 
+<br>
+
+---
 
 <br>
+
+<img src="ABRIR.jpg" align="right" /> [ABRIR](http://www.abrirpsy.org) (Advancing Big-team Reproducible science through Increased Representation) was established as a response to the global need of increasing representation in how we conduct open and big-team science, and as a necessity to promote equity, diversity and inclusion in psychological science. It was ‘born’ during the PSACON2021, when five psychological researchers from different parts of the world (Asia, East Europe and Latin America) gathered and discussed the position of researchers from low-to-middle-income countries (LMICs). They concluded that researchers from LMIC face unique challenges when fulfilling participatory or leadership roles in big-team and open science networks. Likewise, large psychology consortia struggle to recruit participants and researcher leadership beyond WEIRD (Western, Educated, Industrialist, Rich & Democratic) populations. 
+
+
+<br>
+
+---
 
 <br>
 
