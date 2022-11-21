@@ -13,6 +13,10 @@
     background-color:#fefdf6 !important;
 }
 
+.nav-btn {
+    line-height: initial;
+}
+
 @media print {
   .tab-content > .tab-pane {
     display: block !important;
