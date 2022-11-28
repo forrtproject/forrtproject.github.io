@@ -80,15 +80,15 @@ and four of [FORRT’s Mission](https://forrt.org/about/mission/):
 
 ## **Current Status**
 
-This is a dynamic project that is organized in four stages for its 1st Phase. Currently, we are in stage 2 of phase 1: 
+This is a dynamic project that is organized in four stages. Currently, we are in stage 2: 
 
 1. **~~Proof of Concept Phase (adaptation of original project into FORRT, inclusion of effects from social and cognitive psychology, using Gavin Leech’s collection as a basis) → ~150 entries finished in 2021.~~**
 
-1. **Team Science Expansion Phase Across Disciplines** (crowd-sourcing entries and refine existing entries), started at the end of 2021 and planned until the end of **June 2022.** Draft first ‘output’ piece.
+1. **Team Science Expansion Phase Across Disciplines** (crowd-sourcing entries and refine existing entries), started at the end of 2021 and planned until mid of 2023. Draft of first ‘output’ piece. Currently a total of 320+ effects documented, 220+ of those finished.
 
-1. **Review Phase** (open review to identify inconsistencies, missing data, and errors), planned for the end of 2022. Finish first ‘output’ piece. End of Phase 1.
+1. **Review Phase** (open review to identify inconsistencies, missing data, and errors), planned for the end of 2023. Finish first ‘output’ piece.
 
-1. Regular **Update Phases** (dynamically adding new effects), planned for 2023 and beyond.
+1. Regular **Update Phases** (dynamically adding new effects), planned for 2024 and beyond.
 
 
 {{% alert example %}}
@@ -101,15 +101,15 @@ This is a dynamic project that is organized in four stages for its 1st Phase. Cu
 
 ## **How to contribute?**
 
-Anyone can add reversals or replications [by joining our initiative on Slack](https://join.slack.com/t/forrt/shared_invite/enQtODMwODI0OTk4ODgzLTM0ZTQ3NDk5MzA1ZjBmNWJjYTVlN2Y2YTk0ZTJhYTY5NDliMDYzMjg2MWE0ZDRhOTY0ZDY3OTRlNDA4ODQ3NjQ) and then [following the instructions in our reversals g-doc](https://docs.google.com/document/d/1B14wGIemTP6OL5upjh93fCqjly5MNANHtXixSD_Yl18/edit?usp=sharing).
+Anyone can add new effects or edit existing effects [by joining our initiative on Slack](https://join.slack.com/t/forrt/shared_invite/enQtODMwODI0OTk4ODgzLTM0ZTQ3NDk5MzA1ZjBmNWJjYTVlN2Y2YTk0ZTJhYTY5NDliMDYzMjg2MWE0ZDRhOTY0ZDY3OTRlNDA4ODQ3NjQ) and then [following the instructions in our reversals g-doc](https://docs.google.com/document/d/1B14wGIemTP6OL5upjh93fCqjly5MNANHtXixSD_Yl18/edit?usp=sharing). Currently we are focusing on **finishing already existing effects**.
 
-<br><br><br>
+<br><br>
 
 ---------------
 # **All Effects** (*sorted by discipline*)
 ---------------
 
-To search whether an effect already exists in our collection, use Ctrl-F and a keyword in relation to the effect (e.g. "Macbeth" or "Priming"). Please note that not all effects contain all available information, as this is a work in progress.
+You can find a list of all effects we are working on [here](https://docs.google.com/spreadsheets/d/1IY56xdDmoU9VasdE0sry2xvsGFkWPrqbKXAs1Rw-9LA/edit#gid=0). To search whether an effect already exists in our collection, use Ctrl-F and a keyword in relation to the effect (e.g. "Macbeth" or "Priming"). Please note that not all effects are listed here or contain all available information, as this is a work in progress (last site update: 28th of November 2022)
 
 <br>
 
@@ -124,19 +124,18 @@ To search whether an effect already exists in our collection, use Ctrl-F and a k
 - [Differential Psychology](#differential-psychology)
 - [Judgment and Decision Making / Behavioral Economics](#judgment-and-decision-making)
 - [Marketing](#marketing)
-- [Neuroscience](#neuroscience)
+- [Neuroscience (humans)](#neuroscience-humans)
 - [Psychiatry / Mental Health](#psychiatry)
 - [Parapsychology](#parapsychology)
 - [Evolutionary Psychology](#evolutionary-psychology)
-- [Psychophysiology](#psychophysiology)
-- [Behavioral Genetics](#behavioral-genetics)
+- [Psychophysiology](#psychophysiology)<!-- - - [Behavioral Genetics](#behavioral-genetics)-->
 - [Applied Linguistics](#applied-linguistics)
 - [Educational Psychology](#educational-psychology)
 - [Health Psychology](#health-psychology)
-- [Political Psychology](#political-psychology)
-- [Comparative Psychology](#comparative-psychology)
+- [Political Psychology](#political-psychology) <!-- - [Comparative Psychology](#comparative-psychology)-->
 - [Evolutionary Linguistics](#evolutionary-linguistics)
 - [Speech Language Therapy](#speech-language-therapy)
+- [Experimental Philosophy](#experimental-philosophy)
 - [Further Literature](#further-literature)
 
 <!-- /MarkdownTOC -->
@@ -144,8 +143,6 @@ To search whether an effect already exists in our collection, use Ctrl-F and a k
 <br>
 
 ## **Social Psychology**
-
-No good evidence for [many forms of priming](https://replicationindex.com/2017/02/02/reconstruction-of-a-train-wreck-how-priming-research-went-of-the-rails/), automatic behavior change from ‘related’ (often only metaphorically related) stimuli. Semantic priming is still solid, but the [effect lasts only seconds](http://laplab.ucsd.edu/articles/RohrerPashlerHarris2015JEPG.pdf).
 
 * **Elderly priming**, that hearing about old age makes people walk slower.
 {{< spoiler text="Statistics" >}}
@@ -156,16 +153,16 @@ No good evidence for [many forms of priming](https://replicationindex.com/2017/0
 * Replication effect size: Doyen: walking speed: _η<sup>2</sup>_= .01; Lakens (2017): _r_= .29/_d_= .61; Pashler: not reported.​
 {{< /spoiler >}}
 
-* **Hostility priming (unscrambled sentences)**. Exposing participants to more hostility-related stimuli caused them subsequently to interpret ambiguous behaviours as more hostile.
+* **Hostility priming (unscrambled sentences)**. Exposing participants to more hostility-related stimuli caused them subsequently to interpret ambiguous behaviours as more hostile. 
 {{< spoiler text="Statistics" >}} 
 * Status: not replicated
 * Original paper: [The role of category accessibility in the interpretation of information about persons: Some determinants and implications.](http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.335.4255&rep=rep1&type=pdf) Srull  and Wyer, Jr. (1979); 2 experiments with Study 1:  n = 96; Study 2: n = 96 [  2409 citations (GS, November 2021)]. 
-* Critique: [McCarthy et al. 2018](https://journals.sagepub.com/doi/full/10.1177/2515245918777487#abstract) [n = 7,373 for Study 1, citations = 40(GS, November 2021)]. [McCarthy et al. 2021](https://online.ucpress.edu/collabra/article/7/1/18738/116070/A-Multi-Site-Collaborative-Study-of-the-Hostile) (see Figure) [n = 1,402 for close replication; n = 1,641 for conceptual replication,  citations = 2(GS, November 2021)]
+* Critique: [McCarthy et al. 2018](https://journals.sagepub.com/doi/full/10.1177/2515245918777487#abstract) [experiment: n = 7,373 for Study 1, citations = 40(GS, November 2021)]. [McCarthy et al. 2021](https://online.ucpress.edu/collabra/article/7/1/18738/116070/A-Multi-Site-Collaborative-Study-of-the-Hostile) (see Figure) [experiment: n = 1,402 for close replication; n = 1,641 for conceptual replication,  citations = 2(GS, November 2021)].
 * Original effect size: 2.99 (XX = 1.58%)
-* Replication effect size: All effect sizes are located in McCarthy et al. 2018: Acar: _XX_ = 0.16. Aczel: _XX _= 0.12. Birt: _XX_ = -0.11. Evans: _XX_ = -.22. Ferreira-Santos.: _XX_ = 0.01. Gonzalez-Iraizoz: _XX_ = -.21. Holzmeister: _XX_ = .11. Klein Selfe and Rozmann: _XX_ = -0.51. Koppel: _XX_ = -.14. Laine: _XX_ = -.27. Loschelder: _XX_ =-.07. McCarthy: _XX_ = -.10. Meijer: _XX_ = .03. Ozdorgru: _XX_ = .22.  Pennington: _XX_ = -.52.  Roets: _XX_ = -.01. Suchotzki: XX = .10.  Sutan: _XX_ = .49. Vanpaemel: _XX_ = .17. Verschuere: _XX_ = -.14.  Wick: _XX_ = .07. Wiggins: _XX_ = .01. Average replication effect size: _XX_ = -0.08:; McCarthy et al. 2021: XX = 0.06.
+* Replication effect size: All effect sizes are located in McCarthy et al. 2018: Acar: _d _= 0.16. Aczel: _d _= 0.12. Birt: _d_ = -0.11. Evans: _d_ = -.22. Ferreira-Santos: _d_ = 0.01. Gonzalez-Iraizoz: _d_ = -.21. Holzmeister: _d_ = .11. Klein Selfe and Rozmann: _d_ = -0.51. Koppel: _d_ = -.14. Laine: _d_ = -.27. Loschelder: _XX_ =-.07. McCarthy: _d_ = -.10. Meijer: _d_ = .03. Ozdorgru: _d_ = .22.  Pennington: _d_ = -.52.  Roets: _d_ = -.01. Suchotzki: _d_ = .10.  Sutan: _d_ = .49. Vanpaemel: _d_ = .17. Verschuere: _d_ = -.14.  Wick: _d_ = .07. Wiggins: _d_ = .01. Average replication effect size: _d_ = -0.08:; McCarthy et al. 2021: _d_ = 0.06.
 {{< /spoiler >}}
 
-* **Intelligence priming (contemplation)**, alt term = **professor priming.** Participants primed with a category associated with intelligence (e.g. “professor”) performed 13% better on a trivia test than participants primed with a category associated with a lack of intelligence (“soccer hooligans”).
+* **Intelligence priming (contemplation)**, alt term = professor priming. Participants primed with a category associated with intelligence (e.g. “professor”) performed 13% better on a trivia test than participants primed with a category associated with a lack of intelligence (“soccer hooligans”).
 {{< spoiler text="Statistics" >}} 
 * Status: not replicated
 * Original paper: [The relation between perception and behavior, or how to win a game of trivial pursuit](https://psycnet.apa.org/buy/1998-01060-003), Dijksterhuis  and van Knippenberg, 1998, 4 experiments with Study 1: n = 60; Study 2: n = 58; Study 3: n = 95; Study 4: n = 43. [citations = 1124 (GS November 2021)].
@@ -240,13 +237,13 @@ Original effect size: system justification d=0.8, just world d=0.44, dominance d
 * Replication effect size: _d_ = -0.22.
 {{< /spoiler >}}
 
-* **Death priming**, alt term = **Mortality Salience/Terror Management Theory**. Participants not exposed to mortality primes would show higher fear of death.
+* **Mortality Salience**, alt-terms = Death Priming/Terror Management Theory. Reminders of death lead to subconscious changes in attitudes and behaviour, for example in the form of increased in-group bias and behaviour that serves to defend an individual’s cultural worldview. 
 {{< spoiler text="Statistics" >}}
 * Status: not replicated
-* Original paper: [‘Role of Consciousness and Accessibility of Death-Related Thoughts in Mortality Salience Effects’](https://www.researchgate.net/profile/Tom-Pyszczynski/publication/15232849_Role_of_Consciousness_and_Accessibility_of_Death-Related_Thoughts_in_Mortality_Salience_Effects/links/5ad51396aca272fdaf7c08d0/Role-of-Consciousness-and-Accessibility-of-Death-Related-Thoughts-in-Mortality-Salience-Effects.pdf), Greenberg et al. 1994; 4 experiments with Study 1: n = 58; Study 2: n = 87; Study 3: n = 59; Study 4:  n = 37.(citations=1237(GS November 2021)].
-* Critiques: [Klein et al. 2018](https://psyarxiv.com/vef2c); [n = 2281 for Experiment 1, citations = 70(GS November 2021)].
-* Original effect size: d = XX.
-* Replication effect size: Exclusion Set 1: _Hedges’ g_ = 0.03, 95% CI = [-0.06, 0.12]; Exclusion Set 2: _Hedges’ g_ = 0.06, 95% CI = [-0.06, 0.17] Exclusion Set 3: _Hedges’ g_ = 0.04, 95% CI = [-0.07, 0.16].
+* Original paper: [‘Role of Consciousness and Accessibility of Death-Related Thoughts in Mortality Salience Effects’](https://www.researchgate.net/profile/Tom-Pyszczynski/publication/15232849_Role_of_Consciousness_and_Accessibility_of_Death-Related_Thoughts_in_Mortality_Salience_Effects/links/5ad51396aca272fdaf7c08d0/Role-of-Consciousness-and-Accessibility-of-Death-Related-Thoughts-in-Mortality-Salience-Effects.pdf), Greenberg et al. 1994; Experiment 1 found evidence that reminders of death induce worldview defense (citations=1294 (GS June 2022)]. A second original paper was by [Goldberg et al. (2001)](http://dx.doi.org/10.1037/0096-3445.130.3.427) who observed that participants primed with questions about their death provided more positive evaluations to an essay describing humans as distinct from animals than control participants presented with questions regarding another aversive situation (d = 1.13). 
+* Critiques: [Klein et al. 2018](https://psyarxiv.com/vef2c) [performed a replication of Greenberg et al. (1994) Experiment 1 with and without original author involvement; ](https://psyarxiv.com/vef2c)[n = 2281 for Experiment 1, citations = 99 (GS June 2022)]. [Sætrevik & Sjåstad 2019](https://psyarxiv.com/dkg53/); [n = 101 for Experiment 1, n = 784 for Experiment 2) failed to replicate the effect of death priming on national patriotism using both traditional and novel measures. A replication of [Goldberg et al. (2001)](http://dx.doi.org/10.1037/0096-3445.130.3.427) by [Rodríguez-Ferreiro et al. (2019, n = 128)](https://royalsocietypublishing.org/doi/full/10.1098/rsos.191114) also found no evidence for a mortality salience effect.
+* Original effect size: Meta-analytic effect of d = .82 for mortality salience ([Burke et al. 2010](https://journals.sagepub.com/doi/abs/10.1177/1088868309352321?casa_token=6qU7Bbt0sNcAAAAA:PLGOSUy673fGIk7ji8h0zex6uh35R7FPx8SE4sI4ADMwCU80b5BqrJGDBWmu8gFh-_JhufRz63ql_Q)).
+* Replication effect size: [Klein et al. (2018)](https://psyarxiv.com/vef2c): Regardless of which exclusion criteria were used, the predicted effect was not observed, and the confidence interval was quite narrow: Exclusion Set 1: _Hedges’ g_ = 0.03, 95% CI = [-0.06, 0.12]; Exclusion Set 2: _Hedges’ g_ = 0.06, 95% CI = [-0.06, 0.17] Exclusion Set 3: _Hedges’ g_ = 0.04, 95% CI = [-0.07, 0.16]; for this reason, they were unable to further assess if original author involvement influenced the replication results. [Sætrevik & Sjåstad 2019](https://psyarxiv.com/dkg53/): _d _= -0.08 – 0.35 for outcome effects related to theoretical predictions. The effect size found by [Rodríguez-Ferreiro et al. (2019)](https://royalsocietypublishing.org/doi/full/10.1098/rsos.191114) was d = 0.09 (95 CI [−0.26, 0.44]), which was significantly different from the effect size of the original study, d = 1.13, 95% CI [0.17, 2.07], z = 2.03, p = 0.043. 
 {{< /spoiler >}}
 
 * **Spatial priming for emotional closeness**. Spatial distances cues were used as a prime for participants’ feelings regarding their emotional closeness to their families (Williams & Bargh, 2008). Participants were asked to plot points on a grid on a paper, either closer or further apart. Then they were asked to rate how emotionally close they feel towards their family members.
@@ -258,7 +255,131 @@ Original effect size: system justification d=0.8, just world d=0.44, dominance d
 * Replication effect size: Pashler et al.: _η_<sup>2</sup> = 0.01_. _Joy-Gaba et al.’s effect sizes are located in Open Science Collaboration 2015 for Study 4: _η_<sup>2</sup> = .00.
 {{< /spoiler >}}
 
-* **Verbal framing (temporal tense)**. Participants who read what a person **was doing** (relative to those who read what person **did**) showed enhanced accessibility of intention-related concepts and attributed more intentionality to the person.
+* **Implicit God prime increases self-reported risky behaviour**. Implicitly priming God using the scrambled-sentence paradigm increases self-reported risk taking. 
+{{< spoiler text="Statistics" >}}
+* Status: not replicated
+* Original paper: ‘[Anticipating divine protection? Reminders of god can increase nonmoral risk taking](https://journals.sagepub.com/doi/abs/10.1177/0956797614563108)’, Kupor et al (2015); experiment 1a, n=61 and experiment 1b, n=202 [citations=76, GS, November 2022].
+* Critiques,[ Gervais et al (2020)](https://journals.sagepub.com/doi/full/10.1177/0956797620922477) [experiment 1a n=556, experiment 1b n=548 citations=9, (GS, November 2022)]
+* Original effect size: experiment 1a _d_=0.574 95% CI=[0.05, 1.09]; experiment 1b d=0.323 95% CI=[0.04,0.60]
+* Replication effect size:[ Gervais et al (2020)](https://journals.sagepub.com/doi/full/10.1177/0956797620922477): experiment 1a _d_=0.14 95% CI=[-0.07, 0.34]; experiment 1b, d=-0.11 95% CI=[-0.31, 0.09]
+{{< /spoiler >}}
+
+* **Implicit God prime increases actual risky behaviour**. Implicitly priming God using the scrambled-sentence paradigm increases willingness to engage in risky behaviour for financial reward. 
+{{< spoiler text="Statistics" >}}
+* Status: not replicated
+* Original paper: ‘[Anticipating divine protection? Reminders of god can increase nonmoral risk taking](https://journals.sagepub.com/doi/abs/10.1177/0956797614563108)’, Kupor et al (2015); experiment 3, n=101 [citations=76, GS, November 2022].
+* Critiques,[ Gruneau Brulin et al (2018) [](https://psycnet.apa.org/record/2018-36594-008)experiment 2b n=264, citations=19, (GS, November 2022)]
+* Original effect size: experiment 3 _beta_=0.61
+* Replication effect size:[ Gruneau Brulin et al (2018)](https://psycnet.apa.org/record/2018-36594-008): experiment 2b _b_=0.14 95% CI=[-0.07, 0.34]; experiment 1b, d=-0.11 95% CI=[-0.31, 0.09]
+{{< /spoiler >}}
+
+* **Implicit God prime increases prosocial behaviour**. Implicitly priming God using the scrambled-sentence paradigm increases prosocial behaviour in an anonymous economic game. 
+{{< spoiler text="Statistics" >}}
+* Status: not replicated
+* Original paper: ‘[God is watching you: Priming god concepts increases prosocial behavior in an anonymous economic game](https://journals.sagepub.com/doi/abs/10.1111/j.1467-9280.2007.01983.x)’, Shariff and Norenzayan (2007); 2 experiments, n=50 in each experiment [citations=1473, GS, November 2021].
+* Critiques:[ Gomes and McCullough (2015](https://psycnet.apa.org/doiLanding?doi=10.1037%2Fxge0000027)), [n=455 citations=86, (GS, November 2021)];[ Billingsley et al. (2018](https://royalsocietypublishing.org/doi/full/10.1098/rsos.170238)); 2 experiments, n=489 and n=511 [citations=22, (GS, November 2021)].
+* Original effect size: Study 1, _d_=1.07; Study 2, _d_=0.71.
+* Replication effect size:[ Gomes and McCullough 2015](https://royalsocietypublishing.org/doi/full/10.1098/rsos.170238): _d_=-0.06; Billingsley et al. (2018) Study 1: _g_=-0.05; Study 2: _g_=-0.09
+{{< /spoiler >}}
+
+* **Heat priming**. Exposure to words related to hot temperatures increases aggressive thoughts and hostile perceptions. This effect suggests that people mentally associate heat-related constructs with aggression-related constructs.
+{{< spoiler text="Statistics" >}}
+* Status: not replicated
+* Original paper: ‘[Hot under the collar in a lukewarm environment: Words associated with hot temperature increase aggressive thoughts and hostile perceptions](https://www.sciencedirect.com/science/article/abs/pii/S0022103109001152?via%3Dihub)’, DeWall & Bushman 2009; 2 experiments in which participants were first exposed to words related to either heat, cold, or neutral concepts and then completed a word stem completion task (Study 1; n=127) or had to rate person’s hostility basing on ambiguous description of this person (Study 2; n=72) [citation=76 (Google Scholar, June 2022)]​.
+* Critiques: [McCarthy 2014](https://www.sciencedirect.com/science/article/abs/pii/S0022103114000663?via%3Dihub) [n=182, citations=14 (Google Scholar, June 2022)]; including meta-analyses [n=499]​
+* Original effect size: Study 1: _d_ = 0.47 (hot vs. cold words), _d_ = 0.46 (hot vs. neutral words); Study 2: _d_ = 0.67 (hot vs. cold words), _d_ = 0.63 (hot vs. neutral words)
+* Replication effect size: McCarthy: Study 2A: _d_ = -0.12 (hot vs. cold words), _d_ = -0.02 (hot vs. neutral words); Study 2B: _d_ = -0.06 (hot vs. cold words), _d_ = 0.00 (hot vs. neutral words) (both experiments replicate procedure from Study 2); Meta-analysis: _d_ = 0.18.
+{{< /spoiler >}}
+
+* **​​Honesty priming**, alt-terms: goal-priming, social priming. An increased level of honesty to embarrassing behaviours after exposure to honesty-related words.
+{{< spoiler text="Statistics" >}}
+* Status: not replicated.
+* Original paper: ‘Using implicit goal priming to improve the quality of self-report data’,[ Rasinski et al. (2005)](https://doi.org/10.1016/j.jesp.2004.07.001), between-subjects, _n_ = 64 [citations = 111 (Google Scholar, October 2022)].
+* Critiques:
+    * [Pashler et al. (2013)](https://doi.org/10.1016/j.jesp.2013.05.011) [citations = 66 (Google Scholar, October 2022)].
+        * Experiment 1 (_n_ = 149, direct replication)
+        * Experiment 2 (_n_ = 152, direct replication)
+        * Experiment 3 (_n _= 151, conceptual replication)
+        * Experiment 4 (_n_ = 153, conceptual replication – supplementary experiment)
+    * [Dalal and Hakel (2016)](https://doi.org/10.1177/1094428116639131) [Experiment 1 (_n_ = 590), conceptual replication, citations = (Google Scholar, October 2022)].
+* Original effect size: _d_ = 1.21 (estimated from test-statistics in paper).
+* Replication effect size:
+    * [Pashler et al. (2013)](https://doi.org/10.1016/j.jesp.2013.05.011):
+        * Experiment 1: _d_ = 0.18 (non-significant; not replicated).
+        * Experiment 2: _d_ = -0.14 (non-significant; opposite direction).
+        * Experiment 3:
+            * Measure 1: _d _= -0.14 (non-significant; opposite direction; estimated from test statistics in paper).
+            * Measure 2: _d_ = -0.13 (non-significant; opposite direction; estimated from test statistics in paper).
+        * Experiment 4:
+            * Measure 1: _d_ = 0.04 (non-significant; not replicated; estimated from descriptive statistics)
+            * Measure 2: _d_ = -0.14 (non-significant; opposite direction; estimated from descriptive statistics)
+* [Dalal and Hakel (2016)](https://doi.org/10.1177/1094428116639131): _d _= -0.07 (non-significant; opposite direction; estimated from descriptive statistics in Table 2 (to get _N_ of groups) and 3 (to get the means and standard deviations).
+{{< /spoiler >}}
+
+* **Achievement priming** (alternative terms: goal priming, high-performance goal priming). Exposing individuals to words that are success oriented (e.g., win, strive) will increase their performance on a task compared to those exposed to neutral words (e.g., carpet, shampoo).​
+{{< spoiler text="Statistics" >}}
+* Status: mixed.
+* Original paper:[ ‘The Automated Will: Nonconscious Activation and Pursuit of Behavioral Goals’](https://doi.org/10.1037/0022-3514.81.6.1014), Bargh et al. (2001); between-subjects. [citation = 2,987 (Google Scholar, October 2022)]. Five experiments:
+    * Experiment 1: _n_ = 78.
+    * Experiment 2: _n_ = 60.
+    * Experiment 3: _n_ = 288.
+    * Experiment 4: _n_ = 76.
+    * Experiment 5: _n_ = 65.  
+* Critiques:
+    * [Shantz and Latham (2009)](https://doi.org/10.1016/j.obhdp.2009.01.001) [Pilot Study (_n_ = 52), Field Experiment (_n_ = 81), citations = 221 (Google Scholar, October 2022)].
+    * [Harris et al. (2013)](https://doi.org/10.1371/journal.pone.0072467) [Experiment 1 (_n _= 98), Experiment 2 (_n_ = 66), citations = 199 (Google Scholar, October 2022)].
+    * [Weingarten et al. (2016)](http://dx.doi.org/10.1037/bul0000030) [meta-analysis, (_n_ = NA, _k_ = 133 studies, citations = 333 (Google Scholar, October 2022)].
+* Original effect size (estimated from test-statistics reported):
+    * Experiment 1: _d _= 0.72 (priming of high-performance words led to more words being found).
+    * Experiment 2: _d_ = 0.53 (priming of cooperation words led to more cooperation between players).
+    * Experiment 3: _d_ = 0.52 (adding delay between word exposure and task increased performance in the high-performance words group).
+    * Experiment 4: _d_ = 0.76 (when given the stop signal, those in the high-performance word group continued to work on the task; Note: The statistics for this experiment suggest that they had more than 76 participants. Specifically, they fit a 2 x 2 ANOVA and have residual degrees of freedom of 75. If they had 76 participants, their residual degrees of freedom would be 72. For the purposes of estimating their effect sizes, I have used the corrected residual degrees of freedom value.).
+    * Experiment 5: ​_ d_ = 0.68 (when interrupted, the high-performance word group were more likely to return to their task than the neutral group).
+    * Replication effect size:
+        * [Shantz and Latham (2009)](https://doi.org/10.1016/j.obhdp.2009.01.001): Participants either shown a picture of a woman winning a race or not to prime achievement.
+            * Pilot Study: _d_ = 0.84 (replicated).
+            * Field Experiment: _d_ = 0.43 (replicated).
+        * [Harris et al. (2013)](https://doi.org/10.1371/journal.pone.0072467):
+            * Experiment 1 (direct replication of Experiment 1 in Bargh et al., 2001): _d_ = -0.24, 95% CI [0.15, -0.64]. (not replicated).
+            * Experiment 2 (direct replication of Experiment 3 in Bargh et al., 2001): _d_ = -0.03, 95% CI [0.45, -0.52]. (not replicated).
+        * [Weingarten et al. (2016)](http://dx.doi.org/10.1037/bul0000030): The meta-analysis looked at all priming experiments that examined behaviour (i.e., not just achievement priming). It found that there is a small effect of behavioural priming (_d_ = 0.35, 95% CI [0.29, 0.41]). Factors that affected the priming effects were:
+            * Publication status:
+                * Published (_n_ = 255 studies): _d_ = 0.39, 95% CI [0.33, 0.44],
+                * Unpublished (_n_ = 88 studies): _d_ = 0.10, 95% CI [0.01, 0.20].
+            * Liminality:
+                * Supraliminal (_n_ = 255 studies): _d_ = 0.30, 95% CI [0.24, 0.36; this is the method used in Bargh et al., 2001],
+                * Subliminal (_n_ = 88 studies): _d_ = 0.40, 95% CI [0.30, 0.51].
+            * Use of neutral control:
+                * No neutral control (_n_ = 38 studies): _d_ = 0.44, 95% CI [0.27, 0.60],
+                * With neutral control (_n_ = 307 studies): _d_ = 0.31, 95% CI [0.25, 0.37].
+{{< /spoiler >}}
+
+* **Weapons priming effect** (alternative term: weapons effect). Stimuli or cues associated with aggression, such as weapons, can elicit aggressive responses.
+{{< spoiler text="Statistics" >}}
+* Status: mixed (the effect is smaller than originally believed)
+* Original paper: ‘[Weapons as aggression-eliciting stimuli](https://doi.org/10.1037/h0025008)’, Berkowitz and LePage (1967); between-subjects design, _n_ = 100 (male university students) [citations = 1161 (Google Scholar, October 2022)].
+* Critiques: 
+    * [Turner and Simons (1974)](https://doi.org/10.1177/014616727400100164) [_n_ = 60, citations = 11 (Google Scholar, October 2022)]
+    * [Frodi (1975)](https://doi.org/10.1080/00207597508247340) [_n = _100, citations = 50 (Google Scholar, October 2022)]
+    * [Carlson et al. (1990](https://doi.org/10.1037/0022-3514.58.4.622)) [meta-analysis; _n_ = 628 (fail-safe), _k_ = 56 studies, citations = 339 (Google Scholar, October 2022)].
+    * [Benjamin et al., (2018](https://journals.sagepub.com/doi/full/10.1177/1088868317725419)) [meta-analysis; _n_ = 7,668 participants, _k_ = 78 studies, citations = 12 (Google Scholar, October 2022)]. . 
+    * [Ariel et al. (2019)](https://doi.org/10.1177/0093854818812918) [RCT of taser presence and the police force; _n_ = 678 officers, citations = 42 (Google Scholar, October 2022)].
+* Original effect size:  _d_ = 0.76 to 1.06 (taken from [Carlson et al., 1990](https://doi.org/10.1037/0022-3514.58.4.622)).
+* Replication effect size: 
+    * [Turner and Simons (1974)](https://doi.org/10.1177/014616727400100164): _d_ = -1.17 to 0.64 (taken from [Carlson et al., 1990](https://doi.org/10.1037/0022-3514.58.4.622)). The greater the evaluation apprehension, the less likely aggressive behaviour was observed. (mixed)
+    * [Frodi (1975)](https://doi.org/10.1080/00207597508247340): _d_ = 0.91 (taken from [Carlson et al., 1990](https://doi.org/10.1037/0022-3514.58.4.622)). (replicated)
+    * [Carlson et al. (1990](https://doi.org/10.1037/0022-3514.58.4.622)): _d_ = 0.38 (replicated)
+    * [Benjamin et al., (2018](https://journals.sagepub.com/doi/full/10.1177/1088868317725419)): _d_ = 0.29, 95% CI [0.21, 0.36] (replicated)
+        * The effect is moderated by several variables (some listed below):
+            * Smaller if looked at behaviour (_d_ = 0.25, 95% CI [0.07, 0.43])
+            * Reduced for “field” experiments (_d_ = 0.22, 95% CI [-0.07, 0.51])
+            * Larger when photos used (_d_ = 0.35, 95% CI [0.26, 0.44]) rather than actual weapons (_d_ = 0.12, 95% CI [-0.08, 0.31]).
+    * [Ariel et al. (2019)](https://doi.org/10.1177/0093854818812918): The presence of a taser on the officer led to:
+        * Increased use of force: IRR = 1.48, 95% CI [1.27, 1.72] (replicated).
+        * Increased injury to officers: IRR = 2.11, 95% CI [1.53, 2.91] (replicated).
+{{< /spoiler >}}
+
+* **Verbal framing (temporal tense)**. Participants who read what a person was doing (relative to those who read what person did) showed enhanced accessibility of intention-related concepts and attributed more intentionality to the person.
 {{< spoiler text="Statistics" >}}
 * Status: mixed
 * Original paper: ‘[Learning about what others were doing: Verb aspect and attributions of mundane and criminal intent for past actions](https://journals.sagepub.com/doi/full/10.1177/0956797610395393)’, Hart and Albarracin (2011): 3 experiments with Study 1: n = 5458; Study 2: n = 37; Study 3: n = 48. [citations = 37, (GS, January 2022)]. 
@@ -305,6 +426,23 @@ Replication effect size: Siev et al. (2018):  g = 0.17, 95% CI [0.04 – 0.31].
 * Replication effect size: NA.
 {{< /spoiler >}}
 
+* **Social class on prosocial behaviour**. Individuals from a high social class are more likely to exhibit prosocial behavior than those from a low social class, but there is a U-shaped curve between social class and prosocial behavior that sometimes appears. The final study in the critique section below reported two pre-registered replications of Piff et al., 2010 with different results. There are more studies than those described here, but these should provide a good sense of the current state of the science.
+{{< spoiler text="Statistics" >}}
+* Status: mixed
+* Original papers: 
+    * ‘[Volunteering in public health: An analysis of volunteers' characteristics and activities](https://www.ijova.org/docs/IJOVA_VOL24_NO2_Ramirez-Valles_VolunteeringinPublicHealth.pdf)’ Ramirez-Valles, 2006; random-digit dialing in Illinois, US (household income on past-12-month volunteering in public health OR = 1.22; education NS OR = 1.02): n = 609. [citations = 9 (GS, June 2022)].
+    * ‘[Charitable giving: Factors influencing giving in US states](https://journals.sagepub.com/doi/pdf/10.1177/0899764006289768)’ Gittell & Tebaldi, 2006; analysis by US state using public data for charitable giving from IRS 2000-2002, for volunteer rate from Points of Light Foundation, 2004/Current Population Survey 2002, for personal income from BEA 2001, and for MA or PhD education from U.S. Bureau of Census, 2000. Effect sizes unclear, “simple correlation” between income and volunteer rate (-.13), regression coefficients for personal income (769.1) and education (29.35) on average charitable contribution per tax filer. [citations = 161 (GS, June 2022)].
+    * ‘[The Nature and Causes of the U-Shaped Charitable Giving Profile](https://www.researchgate.net/profile/Deanna-Sharpe/publication/249677223_The_Nature_and_Causes_of_the_U-Shaped_Charitable_Giving_Profile/links/55e8472608ae3e1218422b3c/The-Nature-and-Causes-of-the-U-Shaped-Charitable-Giving-Profile.pdf)’ James III & Sharpe, 2007; n = 16,442 households [citations=171 (GS, June 2022)].
+    * ‘[Having Less, Giving More: The Influence of Social Class on Prosocial Behavior](https://www.uky.edu/AS/PoliSci/Peffley/pdf/Sniderman/Piff%20et%20al.2010.JPSP.Having%20Less,%20Giving%20More_The%20Influence%20of%20Social%20Class%20on%20Prosocial%20Behavior.pdf)’ Piff et al. 2010; 4 experiments with Study 1 (subjective SES on dictator game resource allocation beta = -.23): n = 115; Study 2 (self-reported family income beta = -.27 and manipulated social class beta = -.23 on attitudes toward charitable giving): n = 81; Study 3 (combined education and income on trust game with arbitrary points r = -.18): n = 155; Study 4 (combined past and current income on ambiguous task helping beta = -.43): n = 91. [citations=1572 (GS, June 2022)]. 
+    * ‘[Social status modulates prosocial behavior and egalitarianism in preschool children and adults](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4311842/)’ Guinote et al. 2015; 4 experiments with Study 1 (manipulated department rank on picking up pens for experimenter d = 1.16): n = 44; Study 2 (not prosocial behavior outcome); Study 3 (not prosocial behavior outcome); Study 4 (random winner on sticker donation T1 _calculated d _= 0.657_, _losing status η<sup>2<sub>p</sub></sup> = 0.34, gaining status η<sup>2<sub>p</sub></sup> = 0.38, NS differences at T2): n = 48 children mean age 4.7 years (SD = .56). [citations=185 (GS, June 2022)].
+    * ‘[Family Income Affects Children’s Altruistic Behavior in the Dictator Game](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0080419)’ Chen et al. 2013 (family income on sticker allocation in dictator game Spearman's _ρ_ = -.10; parents education/migrant status NS); n = 469 kindergarten children. [citations=110 (GS, June 2022)]. 
+* Critiques: 
+    * ‘[A Large Scale Test of the Effect of Social Class on Prosocial Behavior](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0133193)’ Korndörfer et al. 2015; 8 studies 8 studies with <span style="text-decoration:underline;">Study 1</span>* (objective social class for each household, standardized composite of three indicators: income, education, and occupational prestige on self-reported donation behavior for the previous year OR = 2.07, NS quadratic term, on relative amount of donation, both standardized score, _b_= .158 and its quadratic term, _b_= .073): n = 9260 German households; <span style="text-decoration:underline;">Study 2</span>* (objective social class for each household, standardized composite of two indicators: income, and education of the reference person if available on self-reported donation behavior for the previous year, OR = 1.99, NS quadratic term, on relative amount of donation, standardized score, _b_= .078, NS quadratic term): n = 32,090 US households; <span style="text-decoration:underline;">Study 3</span> (Model 1, objective social class for each person, standardized composite of three indicators: income, education, and occupational prestige on self-reported donation behavior for the previous year OR = 2.54, NS quadratic term and frequency _b_= .392, quadratic term _b_= -.064; Model 2, four-category subjective social class for each person on self-reported donation behavior for the previous year OR = 1.61, quadratic term OR = 0.90 and frequency _b_= .230, quadratic term _b_= -.039): n = 3975 (objective) & n = 3,857 (subjective) US persons; <span style="text-decoration:underline;">Study 4</span> (objective social class for each person, standardized composite of three indicators: income, education, and occupational prestige on self-reported volunteering OR = 2.03, quadratic term OR = 0.91 and frequency _b_= .336, quadratic term _b_= -0.48): n = 33,072 German persons asked about volunteering one to four times (82,966 observations); <span style="text-decoration:underline;">Study 5</span> (same models as study 3 but with a volunteering outcome: Model 1, OR = 1.64, NS quadratic term and frequency _b_= .248, NS quadratic term; Model 2, OR = 1.29, NS quadratic term, and frequency _b_= .135, NS quadratic term): n = 3,983 (objective) & n = 3,964 (subjective) US persons; <span style="text-decoration:underline;">Study 6</span> (Model 1, objective social class for each person, standardized composite of three indicators: income, education, and occupational prestige on past 12 month volunteering OR = 1.18, quadratic term OR = 0.97 and frequency _b_= 0.94, quadratic term _b_= -.012; Model 2, six-category subjective social class on volunteering OR = 1.15, NS quadratic term and frequency _b_= 0.76, NS quadratic term): n = 32,257 persons in 28 countries; <span style="text-decoration:underline;">Study 7</span> (same models as study 3 and 5 but with a single everyday helping outcome: Model 1, _b_= .397, NS quadratic term; Model 2, NS _b_and NS quadratic term ): n = 3,902 (objective) & n = 3,886 (subjective) US persons; <span style="text-decoration:underline;">Study 8</span> (objective social class for each person, standardized composite of three indicators: income, education, and occupational prestige on behavior in a trust game, player 1, _b_= .468, player 2, _b _= .421): n = 1,421 German persons. * Additional results are available for donor and non-donor households separately, as well as from tobit regressions.
+    * ‘[Having less, giving more? Two preregistered replications of the relationship between social class and prosocial behavior](https://www.sciencedirect.com/science/article/pii/S0092656619301230)’ Stamos et al., 2020; 2 experiments with Study 1 (subjective SES ladder on dictator game performance, NS _Beta_= 0.007, multiverse analysis available): n = 300; Study 2 (manipulated subjective SES on attitudes toward charitable donations, _d_= .36, direction opposite of Piff et al., 2010, measured family income added to model, NS _b_= -0.12): n = 200
+* Original effect size: outcome of attitudes toward charitable donation, d = .53 (manipulated subjective SES), partial r = -.23 (family income controlling for ethnicity) Piff et al., 2010.
+* Replication effect size: d = .36 (manipulated subjective SES), opposite direction, r = -.02 (family income) Stamos et al., 2020
+{{< /spoiler >}}
+
 * **Stanford Prison Experiment** employed a simulation of a prison environment to  examine the psychological effects of coercive situations. Utilizing role-playing, labeling and social expectations it showed that one third of participants in the role of prison guards displayed aggressive and dehumanizing behaviour.
 {{< spoiler text="Statistics" >}}
 * Status: NA
@@ -325,7 +463,7 @@ Replication effect size: Siev et al. (2018):  g = 0.17, 95% CI [0.04 – 0.31].
 * Replication effect size: N/A
 {{< /spoiler >}}
 
-* **Milgram experiment** was a study examining the influence of authority on the immoral behaviour. Participants were assigned the role of ‘teachers’ and they were instructed by the experimentator to administer electric shocks of 15-450 V voltage, whenever the ‘learner’  made a mistake. There were various variants of the study. In the most basic one, 100% of participants agree to administer a 300 V shock and 65% agreed to apply to maximum shock od 450 V.
+* **Milgram experiment** was a study examining the influence of authority on the immoral behaviour. Participants were assigned the role of ‘teachers’ and they were instructed by the experimentator to administer electric shocks of 15-450 V voltage, whenever the ‘learner’  made a mistake. There were various variants of the study. In the most basic one, 100% of participants agree to administer a 300 V shock and 65% agreed to apply to maximum shock of 450 V. 
 {{< spoiler text="Statistics" >}}
 * Status: mixed
 * Original paper: [Behavioral Study of obedience](https://psycnet.apa.org/record/1964-03472-001), Milgram 1963. n=40 \
@@ -333,7 +471,7 @@ Replication effect size: Siev et al. (2018):  g = 0.17, 95% CI [0.04 – 0.31].
 * Critiques: Experiment was riddled with** **researcher degrees of freedom, going off-script, implausible agreement between very different treatments, and “only half of the people who undertook the experiment fully believed it was real and of those, 66% disobeyed the experimenter.” Sources: [Burger 2011](https://journals.sagepub.com/doi/abs/10.1177/1948550610397632), [Perry 2012](https://thenewpress.com/books/behind-shock-machine), [Brannigan 2013](https://link.springer.com/article/10.1007/s12115-013-9724-3); [Griggs 2016 \
 ](https://journals.sagepub.com/doi/abs/10.1177/0098628316677644)(total citations: ~240), but see also [Caspar](https://www.sciencedirect.com/science/article/pii/S1053811920307370) 2020.
 * Original effect size: 65% of subjects said to administer maximum, dangerous voltage.
-* Replication effect size: [Doliński 2017](https://journals.sagepub.com/doi/abs/10.1177/1948550617693060?journalCode=sppa) is relatively careful, n=80, and found comparable effects to Milgram. Burger (n=70) also finds similar levels of compliance to Milgram, but the level didn't scale with the strength of the experimenter prods (see Table 5: the only real order among the prompts led to universal disobedience), so whatever was going on, it's not obedience. [One selection of follow-up studies](http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.694.7724&rep=rep1&type=pdf) found average compliance of 63%, but suffer from the usual publication bias and tiny samples. (Selection was by a student of Milgram.) The most you can say is that there's weak evidence for compliance, rather than obedience. ("Milgram's interpretation of his findings has been largely rejected.")
+* Replication effect size: [Doliński 2017](https://journals.sagepub.com/doi/abs/10.1177/1948550617693060?journalCode=sppa) is relatively careful, n=80, and found comparable effects to Milgram. Burger (n=70) also finds similar levels of compliance to Milgram, but the level didn't scale with the strength of the experimenter prods (see Table 5: the only real order among the prompts led to universal disobedience), so whatever was going on, it's not obedience. [One selection of follow-up studies](http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.694.7724&rep=rep1&type=pdf) found average compliance of 63%, but suffer from the usual publication bias and tiny samples. (Selection was by a student of Milgram.) The most you can say is that there's weak evidence for compliance, rather than obedience. ("Milgram's interpretation of his findings has been largely rejected.").
 {{< /spoiler >}}
 
 * **Robbers Cave Study**. Utilized arbitrary groupings to demonstrate that tribalism between groups arises spontaneously, and depending on the context, it can result in group competition (e.g., in case of scarce resources) or group cooperation (e.g., in case of superordinate goals and common obstacles)**. **
@@ -357,7 +495,7 @@ Replication effect size: Siev et al. (2018):  g = 0.17, 95% CI [0.04 – 0.31].
 * Replication effect size: median association of technology use with adolescent well-being was β=−0.035, s.e.=0.004
 {{< /spoiler >}}
 
-* **Anthropomorphism**. Individuals who are lonely are more likely than people who are not lonely to attribute humanlike traits (e.g., free will) to nonhuman agents (e.g., an alarm clock),to fulfill unmet needs for belongingness. 
+* **Anthropomorphism for inanimate objects**. Individuals who are lonely are more likely than people who are not lonely to attribute humanlike traits (e.g., free will) to nonhuman agents (e.g., an alarm clock),to fulfill unmet needs for belongingness. 
 {{< spoiler text="Statistics" >}}
 * Status: not replicated
 * Original paper: [Creating Social Connection Through Inferential Reproduction: Loneliness and Perceived Agency in Gadgets, Gods, and Greyhounds](https://journals.sagepub.com/doi/full/10.1111/j.1467-9280.2008.02056.x?casa_token=wB20P1GmttgAAAAA%3AxfhrS3yxTMyXdT6JCYs-dfwEmcJZ01bNYn_KP3PxW2a2YOQcIfqT6FSAItyLQEFUSBenEvvElA1n) Epley et al. (2008), [n=20 for experiment 1, n=99 for experiment 2, n =57 for experiment 3; ~[722](https://scholar.google.com/scholar?cites=16612236606641696729&as_sdt=2005&sciodt=0,5&hl=en) citations, (GS, March 2022)]
@@ -366,7 +504,7 @@ Replication effect size: Siev et al. (2018):  g = 0.17, 95% CI [0.04 – 0.31].
 * Replication effect size: Sandstrom & Dunn, Open Science Collaboration: Bartz et al.: r=0.17. 
 {{< /spoiler >}}
 
-* **Female-named hurricanes are more deadly than male-named ones**. Original effect size was a 176% increase in deaths, driven entirely by four outliers; reanalysis using a greatly expanded historical dataset found a nonsignificant decrease in deaths from female named storms.
+* **Hurricane names**. Female-named hurricanes are more deadly than male-named ones. Original effect size was a 176% increase in deaths, driven entirely by four outliers; reanalysis using a greatly expanded historical dataset found a nonsignificant decrease in deaths from female named storms.
 {{< spoiler text="Statistics" >}}
 * Status: reversed
 * Original paper: '[Female hurricanes are deadlier than male hurricanes](https://www.pnas.org/content/111/24/8782)', Jung 2014;observational study with n=92 hurricanes discarding two important outliers [citations = 113(GS, Mar 2022)].
@@ -374,7 +512,7 @@ Replication effect size: Siev et al. (2018):  g = 0.17, 95% CI [0.04 – 0.31].
 * Replication effect size: Smith: 264% decrease in deaths (Atlantic); 103% decrease (Pacific)
 {{< /spoiler >}}
 
-* **Implicit bias testing for racism**. Implicit bias scores poorly predict actual bias, r = [0.15](https://lnu.se/globalassets/lmdswp201511.pdf). The operationalisations used to measure that predictive power are [often unrelated to actual discrimination](https://onlinelibrary.wiley.com/doi/abs/10.1111/sjop.12288) (e.g. ambiguous brain activations). Test-retest reliability of [0.44](https://www.researchgate.net/publication/309563293_Temporal_Stability_of_Implicit_and_Explicit_Measures_A_Longitudinal_Analysis/link/5c8a8f1d92851c1df94197eb/download) for race, which is usually classed as “unacceptable”. This isn’t news; the original study also found very low test-criterion correlations.
+* **Implicit racism bias testing**. Implicit bias scores poorly predict actual bias, r = [0.15](https://lnu.se/globalassets/lmdswp201511.pdf). The operationalisations used to measure that predictive power are [often unrelated to actual discrimination](https://onlinelibrary.wiley.com/doi/abs/10.1111/sjop.12288) (e.g. ambiguous brain activations). Test-retest reliability of [0.44](https://www.researchgate.net/publication/309563293_Temporal_Stability_of_Implicit_and_Explicit_Measures_A_Longitudinal_Analysis/link/5c8a8f1d92851c1df94197eb/download) for race, which is usually classed as “unacceptable”. This isn’t news; the original study also found very low test-criterion correlations.
 {{< spoiler text="Statistics" >}}
 * Status: mixed
 * Original paper: '[Measuring individual differences in implicit cognition: The implicit association test](https://groups.psych.northwestern.edu/rosenfeld/documents/greenwald98IAT.pdf)', Greenwald 1998, n=28 for Experiment 3 (12,322 citations).
@@ -401,16 +539,16 @@ Replication effect size: Siev et al. (2018):  g = 0.17, 95% CI [0.04 – 0.31].
 * Replication effect size: Gibson et al. 2014: No group differences, η2=.01; Asian-primed vs. female-primed, p=.18, d=.27; Including only those who were aware of the stereotypes, group accuracy p=.02, η2=.04, and the means followed the predicted pattern, Asian (M=.63), Control (M=.55), and Female (M=.51); Likewise, female-primed participants performed worse than Asian-primed participants, p=.02, d=.53. Moon & Roeder (2014): Group accuracy, p=.44, g2=.004; female-primed and Asian-primed conditions, p=.43, d=.17; Analysing just those who were aware of the stereotype, p=.28,g2=.012; female-primed  participants  vs. Asian-primed  participants, p=.28, d=.27. 
 {{< /spoiler >}}
 
-* **Stereotype threat on gender differences in political knowledge**, the idea that making gender stereotypes about political knowledge salient decrease womens’ performance on political knowledge tests. The replication effort showed no significant effect of gender stereotype activation on womens’ performance on a political knowledge test. ​
+* **Stereotype threat on girls’ mathematical performance**. A situational phenomenon whereby priming a negative gender stereotype (e.g., “women are bad at math”) has a detrimental impact on mathematical performance. 
 {{< spoiler text="Statistics" >}}
-* Status: Not replicated.
-* Original paper: [Gender Differences in Political Knowledge: Bringing Situation Back In](https://www.cambridge.org/core/journals/journal-of-experimental-political-science/article/gender-differences-in-political-knowledge-bringing-situation-back-in/4897AD1BEF5BC95E164F08BDFB5ED1AF), Ihme & Tausendpfund (2018). Study 1: N= 603, shows that women are rated as less politically knowledgeable than men. Study 2: N=377; Female and male participants are randomly assigned to one of three conditions (stereotype not activated - control, stereotype activated by asking participants to report their gender, stereotype activated by a statement that there are gender differences in performance on the test participants are about to take) and answer a questionnaire assessing political knowledge. [citation=17 (GS, January 2022)]​.
-* Critiques: [Azevedo, Micheli & Bolesta [Preprint] ](https://osf.io/8feku/)[n=1502, citations=NA]. Results showed a non-significant interaction between stereotype activation and gender on political knowledge scores.  
-* Original effect size: partial η<sup>2</sup> =0.33​.
-* Replication effect size: partial η<sup>2</sup> =0.00​. \
+* Status: mixed
+* Original paper: '[Stereotype Threat and Women’s Math Performance](https://www.sciencedirect.com/science/article/abs/pii/S0022103198913737)', Spencer et al. 1999, Experiment 2, n=30 women (~5076 GS citations as of June 2022).
+* Critiques: [Stoet & Geary 2012](https://journals.sagepub.com/doi/10.1037/a0026617), meta-analysis of 23 studies. [Flore & Wicherts 2015](https://www.sciencedirect.com/science/article/pii/S0022440514000831), meta-analysis of 47 measurements. [Flore et al. 2018](https://www.tandfonline.com/doi/full/10.1080/23743603.2018.1559647) Registered Report n=2064 Dutch high school students; [Agnoli et al. 2021](https://psycnet.apa.org/fulltext/2021-77666-009.pdf?auth_token=28dfebe2d9950aa2d8ab814684048733c6b3f847), conceptual replication with n_ _= 164 ninth grade and n = 164 eleventh grade Italian high school students. Other reported null results in the literature but not explicit replications (e.g., [Ganley 2013](https://psycnet.apa.org/record/2013-02693-001), n=931 across three studies).
+* Original effect size: Exact statistics not reported; For Experiment 2, Fig. 2 does not report specific values but appears to be control-group-women (M = 17, SD = 20) compared to experiment-group-women (M = 5, SD = 15), which translates to approximately d= −0.7 (calculated). 
+* Replication effect size: Stoet & Geary 2012: d= −0.61 for adjusted and 0.17 [−0.27, −0.07] for unadjusted scores. Together, only the group of studies with adjusted scores confirmed a statistically significant effect of stereotype threat. Flore & Wicherts 2015: g= −0.22 [95 CI = −0.21; 0.06) and significantly different from zero, but g = −0.07 [−0.21; 0.06] and not statistically significant after accounting for publication bias. Flore et al. 2018: d= −0.05 [−0.18, 0.07]. Agnoli et al. 2021: Both estimated stereotype threat effects were nonsignificant (see also Table S22; https://osf.io/3u2jd), Z = 1.53, p = .25 for ninth grade female participants and Z =.70, p = .97 for eleventh grade female participants.
 {{< /spoiler >}}
 
-* **Increase in narcissism** (leadership, vanity, entitlement) in young people over the last thirty years. It's [an ancient hypothesis.](https://quoteinvestigator.com/2010/05/01/misbehave) The basic counterargument is that they’re misidentifying an age effect as a cohort effect (The narcissism construct [apparently](https://journals.sagepub.com/doi/abs/10.1177/1745691609357019) decreases by about a standard deviation between adolescence and retirement.) “every generation is Generation Me”
+* **Narcissism increase**. (Leadership, vanity, and entitlement increase in young people over the last thirty years. It's [an ancient hypothesis.](https://quoteinvestigator.com/2010/05/01/misbehave) The basic counterargument is that they’re misidentifying an age effect as a cohort effect (The narcissism construct [apparently](https://journals.sagepub.com/doi/abs/10.1177/1745691609357019) decreases by about a standard deviation between adolescence and retirement.) “every generation is Generation Me”
 {{< spoiler text="Statistics" >}}
 * Status: not replicated
 * Original paper: 'The Evidence for Generation Me and Against Generation We',  [Twenge 2013](https://journals.sagepub.com/doi/full/10.1177/2167696812466548), review of  various studies, including national surveys [citations=251(GS, March 2022).
@@ -419,12 +557,13 @@ Replication effect size: Siev et al. (2018):  g = 0.17, 95% CI [0.04 – 0.31].
 * Replication effect size: Roberts doesn't give a d but it's near 0. something like d=0.03 ((15.65 - 15.44) / 6.59). Wetzel: d = -0.27 (1990 - 2010). Hamamura: d(leadership) = -0.26, d(vanity)=-0.39, d(entitlement) = -0.23. 
 {{< /spoiler >}}
 
-* **Minimal group effect** (MGE), alt-term = **Minimal group paradigm**. Ingroup bias (i.e., the tendency to prefer ingroup members) that appears when participants are assigned to previously unfamiliar, experimentally created and largely meaningless social identities.
+* **Minimal group effect** (MGE), alt-term = Minimal group paradigm. An intergroup bias that manifests as ingroup favouritism (i.e., a tendency to prefer ingroup members) when participants are assigned to previously unfamiliar, experimentally created and largely meaningless social identities. 
 {{< spoiler text="Statistics" >}}
 * Status: replicated
-* Original paper: Experiments in intergroup discrimination by [Tajfel](http://web.mit.edu/curhan/www/docs/Articles/15341_Readings/Intergroup_Conflict/Tajfel_Experiments_in_Intergroup_Discrimination.PDF) (1970), postulated that… The finding was confirmed in several meta-analytic studies ([Mullen, Brown & Smith, 1992](https://onlinelibrary.wiley.com/doi/abs/10.1002/ejsp.2420220202)).
-* Critiques: Related to the cultural ubiquity of MGE
-* Critique: Studies by [Kerr, Ao, Hogg, & Zhang](https://www.sciencedirect.com/science/article/abs/pii/S0022103117306352?via%3Dihub), 2018 (comparing US and Australia), and [Falk, Heine, & Takemura](https://journals.sagepub.com/doi/abs/10.1177/0022022113492892), 2014, emphasized the cultural variation of MGE.​
+* Original papers: Experiments on ingroup favoritism (or a broader contruct of intergroup discrimination) by [Rabbie & Horwitz](https://psycnet.apa.org/record/1970-02282-001) (1969) [citations= 662 (GS, July 2022)], [Tajfel](http://web.mit.edu/curhan/www/docs/Articles/15341_Readings/Intergroup_Conflict/Tajfel_Experiments_in_Intergroup_Discrimination.PDF) (1970) [citations= 3920 (GS, July 2022)], Tajfel, Billig, Bundy, & Flament (1971) [citations=7766 (GS, July 2022)  and [Billig & Tajfel](https://onlinelibrary.wiley.com/doi/abs/10.1002/ejsp.2420030103) (1973) [citations=2134 (GS, July 2022) The finding was confirmed in several meta-analytic studies ([Mullen, Brown & Smith, 1992](https://onlinelibrary.wiley.com/doi/abs/10.1002/ejsp.2420220202)).
+* Critiques: Related to the cultural ubiquity of MGE. Studies by [Kerr, Ao, Hogg, & Zhang](https://www.sciencedirect.com/science/article/abs/pii/S0022103117306352?via%3Dihub) (2018) comparing US and Australian samples [citations=17 (GS, July 2022), and [Falk, Heine, & Takemura](https://journals.sagepub.com/doi/abs/10.1177/0022022113492892), 2014, emphasised the cultural variation of MGE
+* Original effect size: N/A
+* Replication effect size: 
 {{< /spoiler >}}
 
 * **Solomon Asch’s conformity study**. The study investigated the degree to which a person's own opinions are influenced by those of a group. The original study is regarded as credible and the main effect has been confirmed multiple times in many cultural contexts (see, [Bond and Smith, 1996](https://doi.org/10.1037/0033-2909.119.1.111)). Nevertheless, the main effect of an original study had been widely misinterpreted and incorrectly referred to in both academic and popular literature.​
@@ -471,7 +610,7 @@ Replication effect size: Siev et al. (2018):  g = 0.17, 95% CI [0.04 – 0.31].
 * Original paper: ‘['Romantic red: Red enhances men’s attraction to women'](https://web.archive.org/web/20090419084901id_/http://www.psych.rochester.edu:80/faculty/elliot/documents/ElliotNiesta_RomanticRed.2008.pdf), Elliot and Niesta (2008); experiment, N = 42 [citation=66 (GS, February 2022)]​.
 * Critiques: [Peperkoorn et al. (2016)](https://doi.org/10.1177/1474704916673841) [n=830, citations=48 (GS, February 2022)]. ​
 * Original effect size: Cohen’s _d_ = .66 to ES = X​.
-* Replication effect size: Peperkoorn et al. (2016; study 1): partial _η_2 = .03 (in support of white more attractive than red). Peperkoorn et al. (2016; study 2): _F_ = .07.​ Peperkoorn et al. (2016; study 3): _d_ = −.12.
+* Replication effect size: Peperkoorn et al. (2016; study 1): partial _η_<sup>2</sup> = .03 (in support of white more attractive than red). Peperkoorn et al. (2016; study 2): _F_ = .07.​ Peperkoorn et al. (2016; study 3): _d_ = −.12.
 {{< /spoiler >}}
 
 * **Big brother effect**. An original study reported that being watched makes someone more likely to cooperate. People who viewed by a pair of eyes (even when a picture of eyes and not a real person) were three times more likely to contribute to an honesty box used to collect money for drinks (compared to participants who instead saw a picture of flowers), but later meta-analyses did not find this result using very large sample sizes.
@@ -484,26 +623,176 @@ Replication effect size: Siev et al. (2018):  g = 0.17, 95% CI [0.04 – 0.31].
 * Replication effect size: Northover et al., 1st meta-analysis: g=03. Northover et al., 2nd meta-analysis: g=0.13..​
 {{< /spoiler >}}
 
-* **Decoy effect**
-
-* **Imagined Contact**: the claim that imagining contact (instead of having actual contact) with someone from an outgroup (based on e.g., ethnicity, sexuality, religion, age) can increase contact intention.
+* **Imagined Contact - _Bias_**, the claim that imagining social contact (instead of having actual contact) with someone from an outgroup (based on e.g., ethnicity, sexuality, religion, age) can reduce intergroup bias.
 {{< spoiler text="Statistics" >}}
 * Status: mixed
-* Original paper: [Turner, Crisp and Lambert, 2007](https://journals.sagepub.com/doi/10.1177/1368430207081533); three experiments experiments, n = [28, 24, 27]. [citations = 263, Web of Knowledge, 02/2022]  
-* Critiques: [Husnu & Crisp, 2010](https://www.sciencedirect.com/science/article/abs/pii/S0022103110001307#:~:text=In%20three%20experiments%20imagined%20contact,vividness%20of%20the%20imagined%20scenario.) [n = [study 1, 33; study 2, 60; study 3, different effect, not examined here], citations = 129, Web of Knowledge, 02/2022]; [Klein et al., 2014](https://econtent.hogrefe.com/doi/full/10.1027/1864-9335/a000178) [n = 6344[], citations = 540, Web of Knowledge, 02/2022]
-* Original effect size: [ηp² = 0.15, ηp² = 0.20, _d_= 0.86] (as calculated for this entry, using [Lakens’ tool](https://osf.io/vbdah/)).
-* Replication effect size: Husnur & Crisp, study 1, _d_= 0.86 (_CI_ = [0.14; 1.57] as per Klein et al.), study 2, _d_= 1.13; Klein et al., _d_= 0.13, _CI_ = [0.00;0.19].​
+* Original paper: ['Imagining intergroup contact can improve intergroup attitudes'](https://journals.sagepub.com/doi/10.1177/1368430207081533), Turner, Crisp, & Lambert (2007), three experiments, n = [28, 24, 27] [citations = 633, Google Scholar, 10/2022].
+* Critiques: [Hoffarth & Hodson (2016](https://psycnet.apa.org/record/2016-25375-005), Study 1: N = 261, Study 2: N = 320, GS: 36 citations, 10/2022), [Miles & Turner (2014](https://doi.org/10.1177/1368430213510573)), meta-analysis, k = 71, N = 5,770, GS: 450 citations, 10/2022), [Firat & Ataca (2020)](https://psycnet.apa.org/record/2020-30949-001), N = 335, GS: 9 citations, 102022.
+* Original effect size: Study 1, age: _d = _.42, Study 2, elderly, ηp² = 0.20, Study 3, _d _= 0.86 (as calculated for this entry, using [Lakens’ tool](https://osf.io/vbdah/)).
+* Replication effect size: 
+    * Hoffarth & Hodson (2016, Study 1, concerning gay people): many outcomes, all n.s., largest beta = .10, Hoffarth & Hodson (2016, Study 2, concerning Muslims): many outcomes, all n.s., largest beta = .095 
+    * Miles & Turner (2014): overall _d _= .35 (95% CI [0.26, 0.44])
+    * Firat & Ataca (2020): ηp<sup>2</sup> = .01 (n.s.)
 {{< /spoiler >}}
 
-* **Complementarity (opposites attract)**
+* **Imagined Contact - _Intentions_**, the claim that imagining social contact (instead of having actual contact) with someone from an outgroup (based on e.g., ethnicity, sexuality, religion, age) can increase contact intentions.
+{{< spoiler text="Statistics" >}}
+* Status: Mixed
+* Original paper: ['Elaboration enhances the imagined contact effect'](https://www.sciencedirect.com/science/article/abs/pii/S0022103110001307#:~:text=In%20three%20experiments%20imagined%20contact,vividness%20of%20the%20imagined%20scenario.), Husnu & Crisp, 2010, [Experiment 1, n= 33; Experiment  2, n = 60, citations = 278, GS, 10/2022]
+* Critiques: [Klein et al., 2014](https://econtent.hogrefe.com/doi/full/10.1027/1864-9335/a000178) Many Labs study [n = 6344, citations = 1082, GS, 06/2022]; [Crisp et al. (2014)](https://psycnet.apa.org/record/2014-38072-002) [citations = 16, GS, 10/2022] reply to Klein et al. stating that the effect size was significant and comparable to that obtained in the [Miles and Crisp (2014](https://journals.sagepub.com/doi/abs/10.1177/1368430213510573)) [citations = 450, GS, 10/2022] meta-analysis for the relevant outgroup, suggesting that the Many Labs project may provide stronger evidence than originally thought.
+* Original effect size: Husnu & Crisp, study 1, _d _= 0.86, study 2, _d _= 1.13;
+* Replication effect size: Klein et al., _d _= 0.13, _CI_ = [0.00;0.19] (NB: original study focused on ‘British Muslims’ - this on Muslims across cultures). Meta-analysis: Miles and Crisp (2014), _d _= 0.35 and estimate for religious groups, _d _= 0.22. Crisp et al. (2014) “the observed effect size of 0.13 in the Many Labs study is substantially different from the original Husnu and Crisp study, and from our overall estimate of 0.35, but not from the most appropriate comparison: The meta-analytic estimate for religious outgroups (0.22).
+{{< /spoiler >}}
 
 * **Stereotype susceptibility effects**, Awareness of stereotypes about a person’s in-group can affect a person’s behavior and performance when they complete a stereotype-relevant task.​
 {{< spoiler text="Statistics" >}}
 * Status: Mixed (replicated only after excluding participants unaware of gender/racial stereotypes)
 * Original paper: ‘[Stereotype Susceptibility: Identity Salience and Shifts in Quantitative Performance](https://doi.org/10.1111/1467-9280.00111)’, Shih et al. (1999); experiment, N = 46. [citation=1956(Google Scholar, Feb 2022)]​.
 * Critiques: [Gibson et al. (2014)](https://doi.org/10.1027/1864-9335/a000184) [n=156, citations=71(Google Scholar, Feb 2022)].​
-* Original effect size: _η_2 = .07​.
-* Replication effect size: Gibson et al. (2014): _η_ 2 = .01 to _η_ 2 = .04 (with exclusions).​
+* Original effect size: _η_<sup>2</sup> = .07​.
+* Replication effect size: Gibson et al. (2014): _η_<sup>2</sup> = .01 to _η_<sup>2</sup> = .04 (with exclusions).​
+{{< /spoiler >}}
+
+* **Positive mood-boost helping effect**. People are more likely to do good when feeling good.
+{{< spoiler text="Statistics" >}}
+* Status: mixed
+* Original paper: [Isen & Levin (1972)](https://psycnet.apa.org/record/1972-22883-001). [Experiment 1 n = 52 male undergraduates; Experiment 2 n = 41 adults.[citations=1,881 (GS, 10/2022)]​.
+* Critiques: 
+    * [Carlson et al. (1988),](https://pubmed.ncbi.nlm.nih.gov/3050025/) meta-analysis, k = 61 from 34 papers (N not reported)
+    * Successful replications:
+        * [Batson et al. (1979)](https://www.jstor.org/stable/pdf/3033698.pdf?casa_token=Qj4UpHd_VNsAAAAA:EH6YSv6XKfP8LqlfmJrp3oCgx1sJcoD9kv30iPOUI2GkVD4pDq8ZulHgFvKNiHXWsFhjwWstPQeSNCY5PG4RYMmHH42bwToP0EG1jc5ffV9G5LEqNuQ): n = 40,  132 citations (GS, June 2022)
+    * Failed replications: 
+        * [Blevins & Murphy (1974](https://journals.sagepub.com/doi/10.2466/pr0.1974.34.1.326): n = 51, 50 citations (GS, October 2022) 
+        * [Weyant & Clark](https://journals.sagepub.com/doi/10.1177/014616727600300119) (1977), Study 1 n = 64 , Study 2 n = 106, 39 citations (GS, October 2022)
+    * Critique: _negative _mood increases helping behaviour ([Job](https://doi.org/10.1080/00224545.1987.9713711), 198[7), so that control vs neutral might be insufficient](https://doi.org/10.2466/pr0.1974.34.1.326)
+* Original effect size, calculated: Study 1: OR = 2.25, Study 2: OR = 168 [no typo, both [calculated](https://www.medcalc.org/calc/odds_ratio.php)] 
+* Replication effect size: Batson et al. (1979): OR = 4.3 [calculated], Carlson et al. (1988): _d _= .54 [reported], Weyant & Clark (1977): Study 1: OR = 4.2 (calculated, between dime and no-dime, excl. 2 other conditions), Study 2: OR = 0.7 [calculated], Blevins & Murphy (1974): OR = 0.9 [calculated].
+{{< /spoiler >}}
+
+* **Superiority-of-unconscious decision-making effect** (alt-term = deliberation without attention effect). While conscious reflection produces better choices on simple tasks, complex choices “should be left to unconscious thought”.​
+{{< spoiler text="Statistics" >}}
+* Status: mixed. 
+* Original paper: ‘[On Making the Right Choice: The Deliberation-Without-Attention Effect](https://www.science.org/doi/abs/10.1126/science.1121629)’, Dijksterhuis et al., 2005; 2 experiments (Ns = 80 & 59, undergraduates) that show better choices (and two surveys that show greater satisfaction, not focus here) [citations = 1807 in GS; October 2022].
+* Critiques: [Acker 2008](http://sjdm.cybermango.org/journal/jdm71128.pdf) [n=78, citations=233(Google Scholar, November 2022)].​
+    * Meta-analysis:[ Acker 2008](http://sjdm.cybermango.org/journal/jdm71128.pdf) [n=888 across 17 studies, citations=233(Google Scholar, November 2022)]
+    * Meta-analysis:[ Nieuwenstein et al. 2015](https://pure.uvt.nl/ws/portalfiles/portal/7412223/supplement.pdf) [n=4518 across 67 studies, citations=103(Google Scholar, November 2022)]
+* Original effect size: _η<sub>p<sup>2 </sup></sub>_= 0.06 (Study 1) / _g_ = 0.434 [reported in Acker 2008] to 0.11 (Study 2) / _g_ = 0.242 [reported in Acker 2008] for interaction between choice complexity and deliberation. Main effects and descriptives not reported.
+* Replication effect size: All reported in [Acker 2008](http://sjdm.cybermango.org/journal/jdm71128.pdf): Acker: _g_ = 0.471. Ham et al.: _g_ = 0.883 to _g_ = 1.055. Lerouge: _g_ = -0.064 to _g_ = 1.116. Newell et al.: _g_ = -0.504 to _g_ = 0.722. Payne et al.: _g_ = -0.483 to _g_ = 0.722. Phillips et al.: _g_ = -0.251. The mean effect size was g = .251.​ All reported in[ Nieuwenstein et al. 2015](https://pure.uvt.nl/ws/portalfiles/portal/7412223/supplement.pdf): Abadie et al. _g_ = -0.62 to _g_ = 0.22. Aczel et al._ g_ = -0.35. Ashby et al. _g_ = -0.21 to _g_ = 1.00. Bos et al. _g_ = -0.10 to _g_ = 1.48. Calvillo & Penaloza _g_ = -0.29 to _g_ = -0.09. Dijksterhuis _g_ = 0.24 to _g_ = 0.42. Dijksterhuis et al. _g_ = 0.70 to _g_ = 0.86. González et al. _g_ = 0.00. Hasford _g_ = 0.43. Hess et al. _g_ = -0.14. Huizenga et al. _g_ = -0.50 to _g_ = -0.33. Lassiter et al. _g_ = 0.27 to _g_ = 0.51. Lerouge _g_ = 0.38 to _g_ = 0.47. McMahon et al. _g_ = 0.62 to _g_ = 0.67. Messner et al. _g_ = 0.63. Newell et al. _g_ = -0.50 to _g_ = 0.17. Newell and Rakow _g_ = -0.37 to _g_ = 0.31. Nieuwenstein 	and Van Rijn _g_ = -0.74 to _g_ = 0.87. Nieuwenstein et al. _g_ = -0.01. Nordgren et al. _g_ = 0.27 to _g_ = 0.36. Payne et al. _g_ = -0.10. Queen & Hess _g_ = -0.21. Rey et al. _g_ = 0.27. Smith et al. _g_ = 0.25 to _g_ = 0.32. Strick et al. _g_ = 0.58 to _g_ = 1.21. Thorsteinson & Withrow _g_ = 0.18 to _g_ = 0.34. Usher et al. _g_ = 0.78 to _g_ = 1.04. Waroquier et al. _g_ = -0.09 to _g_ = 0.35. Pooled effect size of _g_ = 0.15 [0.03; 0.26].
+{{< /spoiler >}}
+
+* **Behavioural-consequences-of automatic-evaluation**, alt-term = affective compatibility effect). Automatic classification of stimuli as either good or bad have direct behavioural consequences.​ Automatic evaluation results directly in behavioural predispositions toward the stimulus, such that positive evaluations produce immediate approach tendencies, and negative evaluations produce immediate avoidance tendencies.
+{{< spoiler text="Statistics" >}}
+* Status: mixed.
+* Original paper: ‘[Consequences of Automatic Evaluation: Immediate Behavioral Predispositions to Approach or Avoid the Stimulus](https://journals.sagepub.com/doi/10.1177/0146167299025002007)’, Chen & Bargh 1979; two mixed design experiments, study 1 n= 42, study 2 n = 50. [citations = 1943 (Google Scholar, October 2022)]​.
+* Critiques:
+    * [Rotteveel et al. 2015](https://www.frontiersin.org/articles/10.3389/fpsyg.2015.00335/full) [study 1 n=100, study 2 n=50, citations = 35(Google Scholar, October 2022)]. List total n for meta-analyses. Repeat this format for all studies you find and add “meta-analysis” or “review” for specific study types.​
+    * Meta-analysis:[ Phaf et al. 2014](https://www.frontiersin.org/articles/10.3389/fpsyg.2014.00378/full) [N=1538 across 29 studies, citations=271(Google Scholar, October 2022)].
+* Original effect size:
+    * study 1 (conscious evaluation) – congruence factor main effect _η<sub>p<sup>2  </sup></sub>_= 0.168 / _d_ = 0.44 [_η<sub>p<sup>2 </sup></sub>_calculated from reported F statistic and converted using this[ conversion](https://haiyangjin.github.io/2020/05/eta2d/#from-cohens-d-to-partial-eta-squared)]
+    * study 2 (automatic evaluation) – congruence factor main effect _η<sub>p<sup>2  </sup></sub>_= 0.078 / _d_ = 0.29 [_η<sub>p<sup>2 </sup></sub>_calculated from reported F statistic and converted using this[ conversion](https://haiyangjin.github.io/2020/05/eta2d/#from-cohens-d-to-partial-eta-squared)]
+* Replication effect size:
+    * [Rotteveel et al.](https://www.frontiersin.org/articles/10.3389/fpsyg.2015.00335/full):
+        * study 1 – Evaluative judgement × Lever movement interaction effect _η<sub>p<sup>2</sup></sub>_= 0.030 [reported, non-significant] / _d_ = 0.17 [converted using this[ conversion](https://haiyangjin.github.io/2020/05/eta2d/#from-cohens-d-to-partial-eta-squared)].
+        * study 2 – Affective valence × Lever movement interaction effect _η<sub>p<sup>2</sup></sub>_ = 0.057 [reported, marginally significant] / _d_ = 0.24 [converted using this[ conversion](https://haiyangjin.github.io/2020/05/eta2d/#from-cohens-d-to-partial-eta-squared)].
+    * [Phaf et al.](https://www.frontiersin.org/articles/10.3389/fpsyg.2014.00378/full):
+        * Positive emotions – The average effect size differed significantly from zero for explicit instructions to evaluate (_g_= 0.287; _p &lt; 0.0001; 95% CI = 0.204, 0.369) and for explicit-converted instructions (_g_= 0.287; _p_ = 0.0001; 95% CI = 0.146, 0.429), but not for implicit instructions (_g_= 0.028; _p_= 0_._572) [all reported].
+        * Negative emotions – Effect sizes differed significantly from zero for explicit-converted instructions (_g_= 0.389; _p_= 0_._001; 95% CI = 0.155, 0.624) and for explicit instructions (_g_= 0_._249; _p= 0_._0001; 95% CI = 0.159, 0.339), but not for implicit instructions (_g_= 0_._103; _p_= 0_._0959) [all reported].
+        * Both emotions – The average effect size differed significantly from zero for explicit-converted instructions (_g_= 0_._433; _p_= 0_._0001; 95% CI = 0.295, 0.571) and explicit instructions (_g_= 0_._403; _p_ = _0_._0001; 95% CI = 0.286, 0.521), but not for implicit instructions (_g_= 0_._076; _p_= 0_._148) [all reported].
+{{< /spoiler >}}
+
+* **Self-control relies on glucose effect**. Acts of self-control decrease blood glucose levels; low levels of blood glucose predict poor performance on self-control tasks; initial acts of self-control impair performance on subsequent self-control tasks, but consuming a glucose drink eliminates these impairments.
+{{< spoiler text="Statistics" >}}
+* Status: mixed
+* Original paper: [‘Self-control relies on glucose as a limited energy source: Willpower is more than a metaphor](https://psycnet.apa.org/record/2007-00654-010?casa_token=uHhPSwhkMtsAAAAA:eafeHREL_yQ7JDYcOianUpNX3EBgQ0DGcX4a5Eeew7Z8w-ZN7rKcQefGprxNHenNuEFULt161nV2QeECb-3i33dw)’, Gailliot et al. (2007); 9 experiments with: Study 1 (self-control decreases blood glucose) n= 103; Study 2 (self-control decreases blood glucose) n= 37; Study 3 (low levels of blood glucose predict poor performance on self-control tasks) n= 15; Study 4 (low levels of blood glucose predict poor performance on self-control tasks) n= 10; Study 5 (low levels of blood glucose predict poor performance on self-control tasks) n= 19; Study 6 (low levels of blood glucose predict poor performance on self-control tasks) n= 15; Study 7 (glucose consumption)  n= 61; Study 8 (glucose consumption) n= 72; Study 9 (glucose consumption) n= 17. [citations=1956(GS, June, 2022].
+* Critiques: Meta-analysis: [Hagger et al., 2010](https://psycnet.apa.org/doiLanding?doi=10.1037%2Fa0019486) [citations= 2638 (GS, June, 2022)]. [Lange & Egger, 2014](https://www.sciencedirect.com/science/article/pii/S0195666313005072?casa_token=Xnxtt10rqxoAAAAA:UJQbWrjcbb1JndJEUYTG4fysb5HzZDGFHNt5_TdsebqrynfxYHlwXosz64Ogu2R0GhED1DaWrf4) [n= 70, citations= 114 (GS, June 2022)]. Lange & Egger also points at statistical mistakes in the meta-analysis of Hagger et al.
+* Original effect size: Study 1 (self-control decreases blood glucose): η<sub>p<sup>2 </sup></sub>= 0.057 [calculated]. Study 3 (low levels of blood glucose predict poor performance on self-control tasks): r= -0.62. Studies 4-6 (low levels of blood glucose predict poor performance on self-control tasks): r= 0.56, r= 0.45, r= 0.43 respectively. Study 7, 8, 9 (glucose consumption): η<sub>p<sup>2</sup></sub> = 0.081, η<sub>p<sup>2</sup></sub> = 0.073, d= 1.518 respectively [all calculated].  
+* Replication effect size: Meta-analysis Hagger et al., 2010 for glucose consumption: d =  0.75 (includes the original study); for decrease of blood glucose levels: d= -0.87 (includes the original study). Lange & Egger 2014 for glucose consumption: η<sub>p<sup>2</sup></sub> = 0.02. 
+{{< /spoiler >}}
+
+* **Physical warmth promotes interpersonal warmth**. Exposure to physical warmth will lead to more positive judgments of strangers and an increase in prosocial behaviour (e.g., gift-giving).
+{{< spoiler text="Statistics" >}}
+* Status: not replicated. 
+* Original paper:[ ‘Experiencing physical warmth promotes interpersonal warmth’](https://www.science.org/doi/abs/10.1126/science.1162548), Williams and Bargh (2008); between-subjects [citations = 1,894 (Google Scholar, October 2022)].
+    * Experiment 1: _n_ = 41,
+    * Experiment 2: _n_ = 53,
+* Critiques:
+    * [Lynott et al. (2014)](https://doi.org/10.1027/1864-9335/a000187) [citations = 140 (Google Scholar, October 2022)]
+        * Sample 1: _n_ = 306 (Ohio, USA),
+        * Sample 2: _n_ = 250 (Michigan State University, USA),
+        * Sample 3: _n_ = 305 (University of Manchester, UK),
+            * Note: All samples attempted to replicate Experiment 2 of Williams and Bargh (2008).
+    * [Chabris et al. (2018)](https://doi.org/10.1027/1864-9335/a000361) [citations = 53 (Google Scholar, October 2022)]
+        * Experiment 1: _n_ = 128 (attempted to replicate Experiment 1 of Williams and Bargh, 2008).
+        * Experiment 2: _n_ = 177 (attempted to replicate Experiment 2 of Williams and Bargh, 2008)
+* Original effect size:
+    * Experiment 1 (estimated from test-statistic): _d_ = 0.65 (people tended to give more positive ratings after holding a warm drink).
+    * Experiment 2 (converted from[ Lynott et al. 2014](https://doi.org/10.1027/1864-9335/a000187)’s OR reported for this study): _d _= 0.65 (people were more likely to give a gift to a friend than themselves after holding a warming pad).
+* Replication effect size:
+    * [Lynott et al. (2014)](https://doi.org/10.1027/1864-9335/a000187):
+        * Sample 1: _d_ = -0.27 (opposite direction, converted from OR reported in paper)
+        * Sample 2: _d_ = -0.05 (not replicated, converted from OR reported in paper)
+        * Sample 3: _d_ = -0.14 (not replicated, converted from OR reported in paper)
+    * [Chabris et al. (2018)](https://doi.org/10.1027/1864-9335/a000361):
+        * Experiment 1: _d_ = -0.06 (not replicated, converted from _r_ statistic reported)
+        * Experiment 2: _d_ = 0.04 (not replicated, converted from _r_ statistic reported).
+{{< /spoiler >}}
+
+* **Power impairs perspective-taking effect**. Individuals made to feel high in power were more likely to inaccurately assume that others view the social world from the same perspective as they do. 
+{{< spoiler text="Statistics" >}}
+* Status: not replicated
+* Original paper: ‘[Power and Perspectives Not Taken](https://journals.sagepub.com/doi/full/10.1111/j.1467-9280.2006.01824.x)’, Galinsky et al. 2006; 3 between-subjects experiments, each with two conditions; Experiment 1: _n_ = 57, Experiment 2a: _n_ = 42, Experiment 2b: _n_ = 51, Experiment 3: _n_ = 70; [citations = 1550 (GS, June 2022)] 
+* Critiques: Experiment 2a: [Ebersole et al. (2016)  ](https://www.sciencedirect.com/science/article/pii/S0022103115300123)[_n_ = 2,969, citations = 438 (GS, June 2022)] 
+* Original effect size: _d_ = .77 [0.12 1.41] obtained from Ebersole et al. (2016)
+* Replication effect size: Ebersole et al. (2016): _d_ = .03 [− 0.04  0.10] obtained from Ebersole et al. (2016).
+{{< /spoiler >}}
+
+* **Status-legitimacy effect**. Members of low-status, disadvantaged, and marginalized groups are more likely to perceive their social systems as legitimate than their high-status and advantaged counterparts under certain circumstances People who are most disadvantaged by the status quo, due to the greatest psychological need to reduce ideological dissonance, are most likely to support, defend, and justify existing social systems, authorities, and outcomes.​
+{{< spoiler text="Statistics" >}}
+* Status: mixed. 
+* Original paper: ‘[Social inequality and the reduction of ideological dissonance on behalf of the system: evidence of enhanced system justification among the disadvantaged](https://onlinelibrary.wiley.com/doi/10.1002/ejsp.127)’, Jost et al. 2003; five cross-sectional / correlational studies, n1 = 1345, n2 = 2485, n3 = 1396, n4 = 2223, n5= 788. [citations =927(Google Scholar, October 2022)]​.
+* Critiques:[ Henry & Saul 2006](https://link.springer.com/article/10.1007/s11211-006-0012-x) [n=356, citations=156(Google Scholar, October 2022)]. ​[Brandt 2013](https://psycnet.apa.org/doiLanding?doi=10.1037%2Fa0031751) [n=151,794, citations=271(Google Scholar, October 2022)].[ Caricati 2017](https://www.tandfonline.com/doi/abs/10.1080/00224545.2016.1242472) [n=38,967, citations=50(Google Scholar, October 2022)]
+* Original effect size:
+    * Study 1 – effect of income, _B_ = -0.22, race (European Americans vs. African Americans), _B_ = -0.73, and education, _B_ = -0.30, on willingness to limit the press; effect of income, _B_ = -0.31, race (European Americans vs. African Americans),_ B_ = -1.01, and education,_ B_ = -0.38, on the attitudes of the rights of citizens.
+    * Study 2 – effect of income, _B_ = 0.06, and education,_ B_ = -0.08, on trust in government officials among Latinos.
+    * Study 3 – effect of income on belief that large income differences are necessary to get people to work hard, _B_ = 0.04, and as an incentive for individual effort, _B_ = 0.02.
+    * Study 4 – main effects of region (North vs. South), _η<sub>p<sup>2</sup></sub>_ = 0.128 / _d_ = 0.38, and income, _η<sub>p<sup>2</sup></sub>_ = 0.09 / _d_ = 0.31, on meritocratic beliefs among African Americans [_η<sub>p<sup>2 </sup></sub>_calculated from the reported F statistic and converted using this[ conversion](https://haiyangjin.github.io/2020/05/eta2d/#from-cohens-d-to-partial-eta-squared)].
+    * Study 5 – effect of socio-economic status, _B_ = -0.34, and race (White versus Black), _B_ = -0.25, on legitimation of income inequality.
+* Replication effect size:
+    * [Henry & Saul](https://link.springer.com/article/10.1007/s11211-006-0012-x): group status effects on the support for of the dissent, _η<sub>p<sup>2</sup></sub>_ = 0.019 / _d_ = 0.14, government approval, _η<sub>p<sup>2</sup></sub>_ = 0.024 / _d_ = 0.16, and alienation from government, _η<sub>p<sup>2</sup></sub>_ = 0.024 / _d_ = 0.16 [_η<sub>p<sup>2 </sup></sub>_calculated from the reported F statistic and converted using this[ conversion](https://haiyangjin.github.io/2020/05/eta2d/#from-cohens-d-to-partial-eta-squared)] (replicated).​
+    * [Caricati](https://www.tandfonline.com/doi/abs/10.1080/00224545.2016.1242472): effects of the top-bottom self-placement, _B_ = 0.117, social class, _B_ = 0.075, and personal income, _B_ = 0.022, on perceived fairness of income distribution [all significant, reversed].
+    * [Brandt](https://psycnet.apa.org/doiLanding?doi=10.1037%2Fa0031751):
+        * effects of income on trust in government and confidence in societal institutions in various multilevel regression models _b _= -0.014 to _b _= 0.005 [all non-significant, not replicated];
+        * effects of education on trust in government and confidence in societal institutions in various multilevel regression models _b _= -0.044 [significant, replicated] to _b _= 0.021 [significant, reversed];
+        * effects of social class on trust in government and confidence in societal institutions in various multilevel regression models _b _= 0.055 [significant, reversed) to _b _= 0.110 [significant, reversed];
+        * effects of race on trust in government and confidence in societal institutions in various multilevel regression models _b _= -0.019 [non-significant, not replicated] to _b _= 0.017 [significant, reversed];
+        * Overall, only one effect out of the 14 was supportive, six effects were significant and positive (reversed) and the remaining seven effects were not significantly different from zero.
+{{< /spoiler >}}
+
+* **Red impairs cognitive performance**. The color red impairs performance on achievement tasks, as red is associated with the danger of failure and evokes avoidance motivation.
+{{< spoiler text="Statistics" >}}
+* Status: mixed
+* Original paper: ‘[Color and psychological functioning: The effect of red on performance attainment](https://psycnet.apa.org/doi/10.1037/0096-3445.136.1.154)’, Elliot, Maier, Moller, Friedman, & Meinhardt (2007); 6 experiments, Total N=282. [citations=948(Google Scholar, October 2022)]​.
+* Critiques: [Gnambs (2020) meta-analysis](https://link.springer.com/article/10.3758/s13423-020-01772-1) of 67 effect sizes (22 studies, 38 samples) [Total N=282, citations=8(Google Scholar, October 2022)]. 
+* Original effect size: Cohen’s d = -0.51 to -1.14​.
+* Replication effect size: Gnambs: Cohen’s d = -0.06 to -0.04; Δ = -0.34. 
+{{< /spoiler >}}
+
+* **Reduced prosociality of high SES effect**. Higher socioeconomic status predict decreased prosocial behavior. Affluence may be linked with reduced empathy and poverty may be linked with increased empathy.
+{{< spoiler text="Statistics" >}}
+* Status: mixed
+* Original paper: ‘[Having less, giving more: the influence of social class on prosocial behavior](https://doi.org/10.1037/a0020092)’, Piff, Kraus, Côté, Cheng, & Keltner (2010); correlational and experimental design: self-report and behavioral measure of altruism, Total N = 394. [citations=1633(Google Scholar, October 2022)]​.
+* Critiques: [Stamos, Lange, Huang, & Dewitte (2020)](https://www.sciencedirect.com/science/article/pii/S0092656619301230), preregistered replications [Study 1 n=300, Study 2 n=200, citations=25(Google Scholar, October 2022)]. Andreoni, Nikiforakis, & Stoop (2021) field experiment [n=360, citations=27(Google Scholar, October 2022)].
+* Original effect size: mean _r _= −0.215
+* Replication effect size: Stamos et al. (2020): _r_=0.01 (non-significant). Andreoni et al. (2021): mean _r _=.37 (reversed).​
+{{< /spoiler >}}
+
+* **Moral licensing effect**, alt-terms = self-licensing, moral self-licensing, licensing effect) is the effect that acting in a moral way makes people more likely to excuse and perform subsequent immoral, unethical, or otherwise problematic behaviors. 
+{{< spoiler text="Statistics" >}}
+* Status: not replicated
+* Original paper:[ ‘Sinning Saints and Saintly Sinners’](https://journals.sagepub.com/doi/full/10.1111/j.1467-9280.2009.02326.x?casa_token=pKaB9TiHf7MAAAAA%3AhzX6UrXeTzfnjsLD_aSA1O9lttBra3SL6rlqK37SIT151l8I_BQlU9BkFKpOGXspGt2asdlWatg), Sachdeva et al. (2009); three experiments using a priming-task where participants write a story about themselves using neutral/negative/positive traits, US student sample, Study 1 & 3: n = 46. [citations=919 (Google Scholar, June 2022)]
+* Critiques: [Blanken et al, 2014 ](https://psycnet.apa.org/fulltext/2014-20922-014.html) (direct replication of 2 of the original studies, 3 replication studies with 2 different populations), [Study 1: n = 105, Study 2: n = 150, Study 3: n = 940, citations = 81(Google Scholar, June 2022)]; [Blanken et al, 2015](https://journals.sagepub.com/doi/full/10.1177/0146167215572134?casa_token=1IDy3O-LZ8oAAAAA%3A4XYJkfWDYJ2BtYxbX69KR6KHl4f_MyNuJxxW-aBCYG6jHsDYBrJnXAkhBYJBhZCWbLE6QKxReOg) [meta-analysis estimating a mean effect of d = 0.31, 95% CI = [0.23,0.38], total n = 7,397, citations = 470(Google Scholar, June 2022)]; [Simbrunner & Schlegelmilch 2015](https://link.springer.com/article/10.1007/s11301-017-0128-0) [meta-analysis estimating a mean effect of d = 0.319, 95% CI = [0.229,0.408], k = 106 (n data points not reported), citations = 37(Google Scholar, June 2022)]; [Kuper & Bott 2019](https://open.lnu.se/index.php/metapsychology/article/view/878) [re-analysis of the meta-analyses above, adjustment for publication bias, Adjusted effect sizes: d= -0.05 (PET-PEESE) and d= 0.18 (3-PSM), citations = 27(Google Scholar, June 2022)]; [Urban et al, 2019](https://www.sciencedirect.com/science/article/abs/pii/S0272494418304225?via%3Dihub) [failed conceptual replication of [Mazar & Zhong, 2010](https://journals.sagepub.com/doi/full/10.1177/0956797610363538?casa_token=J59_IJ6murwAAAAA%3Aps_4AI4lziKUPHgIKw_b1fLAXi4W6xYm3Cc0B5KfYW6ue3tEqOf4Iof38hsDu96NWjUl4KPjOXc), moral licensing in the domain of environmental behavior, 3 studies, total n  =  1274]; [Rotella & Barclay, 2020](https://www.sciencedirect.com/science/article/pii/S0191886920301562?via%3Dihub) [failed pre-registered conceptual replication of the effect, n = 562]
+* Original effect size: Study 1: Cohen’s d = 0.62, 95% CI = [-0.11,1.35]. Study 3: Cohen’s d = 0.59, 95% CI = [-0.12,1.30] _(effect sizes taken from replication paper by Blanken et al.)_
+* Replication effect size: Blanken et al, replication Study 1 (Dutch student sample): Cohen’s d = -0.03, 95% CI = [-0.51,0.45], replication Study 2 (Dutch student sample): Cohen’s d = -0.31, 95% CI = [-0.70,0.08], replication Study 1 & 3 ­­(US MTurk sample)­­: Cohen’s d = 0.05, 95% CI = [-0.15,0.25]. 
 {{< /spoiler >}}
 
 <br>
@@ -522,10 +811,11 @@ Replication effect size: Siev et al. (2018):  g = 0.17, 95% CI [0.04 – 0.31].
 * **Facial Feedback**. Smiling causes a good mood, while pouting produces a bad mood.
 {{< spoiler text="Statistics" >}}
 * Status: not replicated
-* Original paper: '[Inhibiting and Facilitating Conditions of the Human Smile: A Nonobtrusive Test of the Facial Feedback Hypothesis](https://jhrcook.github.io/wagenmaker-data-analysis/papers/Strack_1988_Inhibiting-and-facilitating-conditions-of-the-human-smile-a-nonobtrusive-test-of-the-facial-feedback-hypothesis.pdf)',  Strack et al. (1988); 2 studies with n’s =  92, 83. [citation = 2577(GS, February, 2022)].
+* Original paper: '[Inhibiting and Facilitating Conditions of the Human Smile: A Nonobtrusive Test of the Facial Feedback Hypothesis](https://jhrcook.github.io/wagenmaker-data-analysis/papers/Strack_1988_Inhibiting-and-facilitating-conditions-of-the-human-smile-a-nonobtrusive-test-of-the-facial-feedback-hypothesis.pdf)',  Strack et al. (1988); 2 studies with n’s =  92,83 [citation= 2577(GS, February, 2022)].
 * Critiques: [Coles et al. (2019)](https://psyarxiv.com/svjru/)[(meta-analysis k = 98, citation= 115, (GS, February, 2022)]; [Wagenmakers et al (2016](https://www.ejwagenmakers.com/2016/WagenmakersEtAl2016Strack.pdf))[meta-analysis n=1894, citation=349, (GS, February, 2022)];  [Schimmack (2017](https://replicationindex.com/2017/09/04/the-power-of-the-pen-paradigm-a-replicability-analysis/))
-* Original effect size: Study 1: _d_ = 0.82 
-* Replication effect size: d= 0.2 [0.14, 0.26]. No evidence of publication bias but d = 0.2 and targeting 80% to detect a real phenomenon one needs more than 500 participants. All included studies have only less than 100.<span style="text-decoration:underline;"> [Schimmack](https://replicationindex.com/2017/09/04/the-power-of-the-pen-paradigm-a-replicability-analysis/)</span> finds strong evidence of publication bias on a subset of these papers, using a proper power analysis. 98 pieces of very weak evidence cannot sum to strong evidence, whatever the p-value says. ([The author agrees](https://twitter.com/coles_nicholas_/status/1116706173833576450).).
+* Original effect size: Study 1:  _d_ = 0.82, d = 0.43 (0.82 out of 9)
+* Replication effect size: 0.03 out of 9, CI overlapping 0. [A meta-analysis of 98 studies](https://psyarxiv.com/svjru/) finds d= 0.2 [0.14, 0.26] with an absurdly low p value, and doesn't find publication bias. But this latter point simply can't be right. Given d = 0.2 and the convention of targeting 80% power to detect a real phenomenon, you would need very high sample sizes, n > 500. And almost all of the included studies are N &lt; 100. [Schimmack](https://replicationindex.com/2017/09/04/the-power-of-the-pen-paradigm-a-replicability-analysis/) finds strong evidence of publication bias on a subset of these papers, using a proper power analysis. Direct replications of the original pen-in-mouth protocol fail; but new conceptual replications appear to work. [Coles et al (2022)](https://www.nature.com/articles/s41562-022-01458-9), n=3878 participants, m=17 labs collaborating; effect is an absolute 5% increase in a happiness metric.
+
 <table>
   <tr>
    <td>
@@ -3401,112 +3691,72 @@ Study
 </table>
 {{< /spoiler >}}
 
-* [No good evidence](https://www.theguardian.com/science/brain-flapping/2013/jan/21/blue-monday-depressing-day-nonsense-science) for **Blue Monday**, that the third week in January is the peak of depression or low affect ‘as measured by a simple mathematical formula developed on behalf of Sky Travel’. You’d need a huge sample size, in the thousands, to detect the effect reliably and this has never been done.
-
-* [Reason to be cautious](https://forum.effectivealtruism.org/posts/eryaF6RPtepDs9KdP/is-mindfulness-good-for-you) about **mindfulness for mental health**. Most studies are low quality and use inconsistent designs, there’s higher heterogeneity than other mental health treatments, and there’s [strong reason](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0153220) to suspect reporting bias (see also [this relevant review](https://journals.sagepub.com/doi/full/10.1177/1745691617709589); Van Dam, 2017). None of the 36 meta-analyses before 2016 mentioned publication bias.
+* **Positive affirmation on mood**. Positive self-statements boost mood for people with high self-esteem and reduced mood for people with low self-esteem. 
 {{< spoiler text="Statistics" >}}
-* Status: NA
-* Critiques: [Coronado-Montoya 2016](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0153220); [Britton, 2019](https://www.sciencedirect.com/science/article/pii/S2352250X18301453); [Hsiao et al., 2020](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6435335/); 
-* Original effect size: prima facie, [d=0.3](https://jamanetwork.com/journals/jamainternalmedicine/article-abstract/1809754) for anxiety or depression
-* Replication effect size: NA.
+* Status: not replicated
+* Original paper: ‘[Positive Self-Statements: Power for Some, Peril for Others](https://journals.sagepub.com/doi/full/10.1111/j.1467-9280.2009.02370.x)’, Wood et al.'s  (2009): 3 experiments with Study 1: n = 249, Study 2: n = 68,  Study 3:n=116. [citation=294(GS, February 2022)]​.
+* Critiques: [Flynn and Bordieri (2020)](https://doi.org/10.1016/j.jcbs.2020.03.003) [experiment: n = 462 , citations=4(GS, February 2022)].
+* Original effect size: Study 1: not reported [g = 0.53 calculated]; Study 2:  not reported [g = 1.00 calculated]; Study 3: not reported [g = 0.86, d= -0.74, d= 2.13, d = -0.49 calculated]. A meta-analysis combining the studies suggested that participants with high self-esteem did receive some benefit, Z = 2.51, p &lt; .013, d = 0.66 (for participants with low self-esteem, Z = −3.21, p &lt; .002, d = 0.72).
+* Replication effect size: Flynn and Bordieri [2020](https://doi.org/10.1016/j.jcbs.2020.03.003):  Study 1: not reported [g = 0.53 calculated]; Study 2:  not reported [g = 1.00 calculated].
 {{< /spoiler >}}
-
-* Mindfulness for wellbeing - effectiveness of MBIs on wellbeing
-
-* Mindfulness and mental health - Correlates of mindfulness and mental health
-
-* Mindfulness and wellbeing - Correlates of mindfulness and well-being
 
 <br>
 
 ## **Cognitive Psychology**
 
-* **Ego depletion**, that willpower is limited in a muscle-like fashion.
+
+* **Ego depletion**. Self-control is a limited resource that can be depleted by efforts to inhibit a thought, emotion or behaviour.
 {{< spoiler text="Statistics" >}}
-* Original paper: '[Ego Depletion: Is the Active Self a Limited Resource?](https://www.ncbi.nlm.nih.gov/pubmed/9599441)', Baumeister 1998, n=67 (~5700 citation)
-* Critiques: [Hagger 2016](https://journals.sagepub.com/doi/pdf/10.1177/1745691616652873), 23 independent conceptual replications \
-(total citations: ~6
-* Critique: [Vohs et al.  2021](https://journals.sagepub.com/doi/full/10.1177/0956797621989733), multisite project, n = 3,531 over 36 sites. Altmetrics: * Original effect size: something like d = -1.96 between control and worst condition. (I hope I'm [calculating](https://gist.github.com/g-leech/80a8b5917ae1fb8baf57c8805c72eee9) that wrong Replication effect size: d = 0.04 [−0.07, 0.14]. (NB: not testing the construct the same wa* Replication effect size ([Vohs et al.  2021](https://journals.sagepub.com/doi/full/10.1177/0956797621989733)) : d = 0.06.
+* Status: not replicated
+* Original paper: '[Ego Depletion: Is the Active Self a Limited Resource?](https://www.ncbi.nlm.nih.gov/pubmed/9599441)', Baumeister 1998, n=67 [citations = 7141 (GS, September 2022)].
+* Critique: [Xu et al. 2014](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0109950), 4 conceptual replications with high-power to detect medium-large effects [citations = 7136 (GS, September 2022)]. [Hagger 2016](https://journals.sagepub.com/doi/pdf/10.1177/1745691616652873), 23 independent conceptual replications [citations = 1027 (GS, September 2022)]. [Vohs et al. 2021](https://journals.sagepub.com/doi/full/10.1177/0956797621989733), multisite project, n = 3,531 [citations = 63 (GS, September 2022)]. 
+* Original effect size: not reported (calculated d = -1.96 between control and worst condition).
+* Replication effect size: Xu et al. 2014: hand grip persistence, community adults _d_ = −0.30, young adults _d _=  −0.002, combined difference _d_ = −0.20; Stroop interference, community adults _d_ = −0.15, young adults _d_ = .21, combined difference _d_ = −0.06. Hagger 2016: _d_ = 0.04 [−0.07, 0.14] (NB: not testing the construct the same way). Vohs et al. 2021:_d_ = 0.06. 
 {{< /spoiler >}}
 
-* **Dunning-Kruger effect**. No evidence for the “Mount Stupid” misinterpretation.
+* **Dunning-Kruger effect**. A cognitive bias whereby people with limited knowledge or competence in a given intellectual or social domain greatly overestimate their own knowledge or competence in that domain relative to objective criteria or to the performance of their peers or of people in general.
 {{< spoiler text="Statistics" >}}
-* Original paper: '[Unskilled and unaware of it: how difficulties in recognizing one's own incompetence lead to inflated self-assessments.](https://sci-hub.se/10.1037/0022-3514.77.6.1121)', Dunning & Kruger 1999, n=334 undergrads. This contains claims (1), (2), and (5) but no hint of (3) or (4). (~5660 citations)
-* Critiques: [Gignac 2020](https://www.sciencedirect.com/science/article/abs/pii/S0160289620300271), n=929; [Nuhfer 2016](https://scholarcommons.usf.edu/cgi/viewcontent.cgi?article=1188&context=numeracy) and [Nuhfer 2017](https://scholarcommons.usf.edu/cgi/viewcontent.cgi?article=1215&context=numeracy), n=1154; [Luu 2015](https://danluu.com/dunning-kruger); [Greenberg 2018](https://www.facebook.com/spencer.greenberg/posts/10104093568422862), n=534; [Yarkoni 2010](https://www.talyarkoni.org/blog/2010/07/07/what-the-dunning-kruger-effect-is-and-isnt/). \
-(total citations: ~20)
-* Original effect size: No sds reported so I don't know. 2 of the 4 experiments showed a positive relationship between score and perceived ability; 2 showed no strong relationship. And the best performers tended to underestimate their performance. [This replicates](https://www.sciencedirect.com/science/article/abs/pii/S0160289620300271): the correlation between your IQ and your assessment of it is around r ≃ 0.3. (3) and (4) are not at all warranted. \
-(5) is much shakier than (1). The original paper concedes that there's a [purely statistical](https://en.wikipedia.org/wiki/Dunning%E2%80%93Kruger_effect#Mathematical_critique) explanation for (1): just that it is much easier to overestimate a low number which has a lower bound! And the converse: if I am a perfect performer, I am unable to overestimate myself. D&K just think there's something notable left when you subtract this. \
-It's also confounded by (2)
-* Replication effect size (for claim 1): 3 of the 4 original studies can be explained by noisy tests, bounded scales, and artefacts in the plotting procedure. ("the primary drivers of errors in judging relative standing are general inaccuracy and overall biases tied to task difficulty".) Only about 5% of low-performance people were very overconfident (more than 30% off) in the Nuhfer data
-* Gignac & Zajenkowski use IQ rather than task performance, and run two less-confounded tests, finding  r = −0.05  between P and errors, and r = 0.02  for a quadratic relationship between self-described performance and actual performance
-* [Jansen (2021)](https://www.nature.com/articles/s41562-021-01057-0) find independent support for claim 1 (n=3500) (the "performance-dependent estimation model") and also argue for (5), since they find less evidence for an alternative explanation, Bayesian reasoning towards a prior of "I am mediocre". (Fig 5b follows the original DK plot style, and is very unclear as a result.
-* [Muller (2020)](https://onlinelibrary.wiley.com/doi/10.1111/ejn.14935) replicate claim (1) and add some EEG stuff* Some suggestions that claim (2) is [WEIRD](https://www.apa.org/monitor/2010/05/weird) only.
+* Status: replicated
+* Original paper: '[Unskilled and unaware of it: how difficulties in recognizing one's own incompetence lead to inflated self-assessments](https://sci-hub.se/10.1037/0022-3514.77.6.1121)', Dunning & Kruger 1999. This contains claims (1), (2), and (5) but no hint of (3) or (4) [n=334 undergrads, citations = 8376 (GS, September, 2022)].
+* Critiques: [Gignac 2020](https://www.sciencedirect.com/science/article/abs/pii/S0160289620300271), [n=929,citations = 53 (GS, September, 2022)]; [Nuhfer 2016](https://scholarcommons.usf.edu/cgi/viewcontent.cgi?article=1188&context=numeracy) and [Nuhfer 2017](https://scholarcommons.usf.edu/cgi/viewcontent.cgi?article=1215&context=numeracy), [n=1154, citations = 34 (GS, September, 2022)]; [Luu 2015](https://danluu.com/dunning-kruger); [Greenberg 2018](https://www.facebook.com/spencer.greenberg/posts/10104093568422862), n=534; [Yarkoni 2010](https://www.talyarkoni.org/blog/2010/07/07/what-the-dunning-kruger-effect-is-and-isnt/), [Jansen 2021](https://www.nature.com/articles/s41562-021-01057-0) [2 studies, n=2000 each study, citations= 26 (GS, October2022)], [Muller 2020](https://onlinelibrary.wiley.com/doi/abs/10.1111/ejn.14935) [n= 56, citations= 20 (GS, October 2022)]
+* Original effect size: not reported. Study 1 on humor (n= 15): difference between the actual and estimated performance of “incompetent” (bottom quartile) participants _d_= 2.58 [calculated], while for “competent” (top quartile) participants _d_= -0.55 [calculated]. Study 2 on logical reasoning ( n= 45):  difference between the actual and estimated performance of “incompetent” (bottom quartile) participants _d_= 5.44 (percieved logical reasoning ability) [calculated], _d_= 3.48 (test performance) [calculated], while for “competent” (top quartile) participants _d_= -1.12 [calculated], _d_= -0.79 (percieved test performance) [calculated]. Study 3 on grammar (n= 84): difference between the actual and estimated performance of “incompetent” (percieved bottom quartile) participants _d_= 3.42 (percieved ability) [calculated], _d_= 3.94 (percieved test performance) [calculated], while for “competent” (top quartile) participants _d_= -1.18 (percieved ability) [calculated], _d_= -1.27 (perceived test performance) [calculated]. 
+* Replication effect size: Gignac 2020 (for IQ): when using statistical analysis as in Dunning & Kruger 1999 _η<sup>2</sup>_ = 0.20, but running two less-confounded tests, _r_= −0.05/d= -0.1 [[calculated](https://www.escal.site/)] between P and errors , and _r_= 0.02/_d_= 0.04 [[calculated](https://www.escal.site/)] for a quadratic relationship between self-described performance and actual performance. [Jansen 2021](https://www.nature.com/articles/s41562-021-01057-0) (for grammar and logical reasoning): not reported (Bayesian models support the existence of the effect in the data and replicate claim 1). [Muller 2020](https://onlinelibrary.wiley.com/doi/10.1111/ejn.14935) (for recognition memory): the difference between the actual and estimated performance of “incompetent” (bottom quartile) participants _d_= 4.73 [calculated], while for “competent” (top quartile) participants _d_= -0.88 [calculated].
 {{< /spoiler >}}
 
-* **Depressive realism effect**, of increased predictive accuracy or decreased cognitive bias among the clinically depressed.
+* **Depressive realism effect**. Increased predictive accuracy or decreased cognitive bias among the clinically depressed.
 {{< spoiler text="Statistics" >}}
-* Original paper: '[Judgment of contingency in depressed and nondepressed students: sadder but wiser?](https://www.ncbi.nlm.nih.gov/pubmed/528910)', 1979 (2450 citations).
-* Critiques: [Moore & Fresco 2012 \
-](https://www.ncbi.nlm.nih.gov/pubmed/22717337)(211 total citations)
-* Original effect size: d= -0.32 for bias about 'contingency', how much the outcome actually depends on what you do, \
-n=96 students, needlessly binarised into depressed and nondepressed based on [Beck score](https://en.wikipedia.org/wiki/Beck_Depression_Inventory) > 9. (Why?)
-* Replication effect size: d = -0.07 with massive sd=0.46, n=7305, includes a trim-and-fill correction for publication bias. "Overall, however, both dysphoric/depressed individuals (d= .14) and nondysphoric/nondepressed individuals evidenced a substantial positive bias (d= .29)"
+* Status: reversed
+* Original paper: '[Judgment of contingency in depressed and nondepressed students: sadder but wiser?](https://www.ncbi.nlm.nih.gov/pubmed/528910)', Alloy and Abramson (1979): 4 experiments with Study 1: n1 = 48, n2 = 48, Study 2: n1 = 32, n2 = 32; Study 3: n1 = 32, n2 = 32; Study 4: n1 = 32, n2 = 32 (citations = 2855 (GS, June 2022)].
+* Critiques: [Moore and Fresco 2012 ](https://www.ncbi.nlm.nih.gov/pubmed/22717337)[meta analysis, n = 7305, citations = 311 (GS, June 2022)] 
+* Original effect size: not reported. [d= -0.32 calculated for bias about 'contingency', how much the outcome actually depends on what you do]
+* Replication effect size: Moore and Fresco 2012: d = -0.07.
 {{< /spoiler >}}
 
-* **Hungry judge effect**, of massively reduced acquittals (d=2) just before lunch. Case order isn’t independent of acquittal probability (“unrepresented prisoners usually go last and are less likely to be granted parole”); favourable cases may take predictably longer and so are pushed until after recess; effect size is implausible on priors; explanation involved ego depletion.
+* **Hungry judge effect**, of massively reduced acquittals just before lunch. Case order isn’t independent of acquittal probability (“unrepresented prisoners usually go last and are less likely to be granted parole”); favourable cases may take predictably longer and so are pushed until after recess; effect size is implausible on priors; explanation involved ego depletion.
 {{< spoiler text="Statistics" >}}
-* Original paper: '[Extraneous factors in judicial decisions](https://www.pnas.org/content/108/17/6889)', 2011 (1040 citations).
-* Critiques: [Weinshall-Margel 2011](https://www.pnas.org/content/108/42/E833.long), [Glöckner 2016](http://journal.sjdm.org/16/16823/jdm16823.html), [Lakens 2017 \
-](http://nautil.us/blog/impossibly-hungry-judges)(77 total citations)
-* Original effect size: d=1.96, "the probability of a favorable ruling steadily declines from ≈0.65 to [0.05] and jumps back up to ≈0.65 after a break for a meal", \
-n=8 judges with n=1100 cases.
+* Status: NA
+* Original paper: '[Extraneous factors in judicial decisions](https://www.pnas.org/content/108/17/6889)', 2011 [n= 8 judges, 1122 judicial rulings, citations = 1626 (GS, October, 2022)].
+* Critiques: [Weinshall-Margel 2011](https://www.pnas.org/content/108/42/E833.long) [n= 227 decisions, citations= 79 (GS, October, 2022)], [Glöckner 2016](http://journal.sjdm.org/16/16823/jdm16823.html), [Lakens 2017](http://daniellakens.blogspot.com/2017/07/impossibly-hungry-judges.html).
+* Original effect size: _d_= 1.96, "the probability of a favorable ruling steadily declines from ≈0.65 to [0.05] and jumps back up to ≈0.65 after a break for a meal", n=8 judges with n=1122 cases.
 * Replication effect size: N/A.
 {{< /spoiler >}}
 
-* [No good evidence](https://www.tandfonline.com/doi/abs/10.1207/s15326985ep4104_1) for **multiple intelligences** (in the sense of statistically independent components of cognition). [Gardner](https://www.cambridge.org/core/books/scientists-making-a-difference/multiple-intelligences-prelude-theory-and-aftermath/E12A49C8FF04E7474D8DEB1A573EABFC), the inventor: “Nor, indeed, have I carried out experiments designed to test the theory… I readily admit that the theory is no longer current. Several fields of knowledge have advanced significantly since the early 1980s.
-{{< spoiler text="Statistics" >}}
-* Original paper: [Frames of Mind: The Theory of Multiple Intelligences](https://www.goodreads.com/book/show/294035.Frames_of_Mind), Gardner 1983 (37,229 citations).
-{{< /spoiler >}}
-
-* At most weak evidence for **brain training** (that is, “far transfer” from daily training games to fluid intelligence) in general, in particular from the Dual n-Back game.
-{{< spoiler text="Statistics" >}}
-* Original paper: '[Improving fluid intelligence with training on working memory](https://www.pnas.org/content/105/19/6829)', Jaeggi 2008, n=70. (2200 citations).
-* Critiques: [Melby-Lervåg 2013](https://sci-hub.se/10.1037/a0028228), meta-analysis of 23 studies. \
-[Gwern 2012](https://www.gwern.net/DNB-meta-analysis#moderators), meta-analysis of 45 studies.
-* Original effect size: d=0.4 over control, 1-2 days after training
-* Replication effect size: Melby: d=0.19 [0.03, 0.37] nonverbal; d=0.13 [-0.09, 0.34] verbal. Gwern: d=0.1397 [-0.0292, 0.3085], among studies using active controls.
-* [Maybe](https://journals.plos.org/plosmedicine/article?id=10.1371/journal.pmed.1001756) some effect on non-Gf skills of the elderly. \
-[A 2020 RCT](https://openaccess.nhh.no/nhh-xmlui/bitstream/handle/11250/2657279/DP%2009.pdf?sequence=1&isAllowed=y) on 572 first-graders finds an effect (d=0.2 to 0.4), but many of the apparent far-transfer effects come only 6-12 months later, i.e. well past the end of most prior studies.
-* In general, be highly suspicious of anything that claims a positive permanent effect on adult IQ. Even in children the absolute maximum is [4](https://www.givewell.org/international/technical/programs/salt-iodization#Improvingmentalfunction)-[15 points](https://academic.oup.com/jeea/article-abstract/15/2/355/2691480) for a powerful single intervention (iodine supplementation during pregnancy in deficient populations)
-{{< /spoiler >}}
-
-* **Generalized cognitive improvements following brief interventions**. Cognitive improvements elicited by many interventions are not reliable, and their ecological validity remains limited ([Moreau 2021)](https://psyarxiv.com/sxwah/download). In general, be highly suspicious of anything that claims a positive permanent effect on adult or children IQ. Even in children the absolute maximum is [4](https://www.givewell.org/international/technical/programs/salt-iodization#Improvingmentalfunction)-[15 points](https://academic.oup.com/jeea/article-abstract/15/2/355/2691480) for a powerful single intervention (iodine supplementation during pregnancy in deficient populations).
-
-* At most weak evidence for brain training, as in **“far transfer” from daily computer training games to fluid intelligence** in general, in particular from the Dual n-Back game.
+* **“Far transfer”**, transfer of knowledge and skills from daily computer training games to fluid intelligence in general, in particular from the Dual n-Back game.
 {{< spoiler text="Statistics" >}}
 * Status: mixed
-* Original paper: '[Improving fluid intelligence with training on working memory](https://www.pnas.org/content/105/19/6829)', Jaeggi 2008, n=70. (2200 citations).
-* Critiques: [Melby-Lervåg 2013](https://sci-hub.se/10.1037/a0028228) (meta-analysis of 23 studies), [Gwern 2012](https://www.gwern.net/DNB-meta-analysis#moderators) (meta-analysis of 45 studies).
-* Original effect size: d=0.4 over control, 1-2 days after training
-* Replication effect size: Melby: d=0.19 [0.03, 0.37] nonverbal; d=0.13 [-0.09, 0.34] verbal. Gwern: d=0.1397 [-0.0292, 0.3085], among studies using active controls. Reddick et al 2013 found “no positive transfer to any of the cognitive ability tests”.
-* [Maybe](https://journals.plos.org/plosmedicine/article?id=10.1371/journal.pmed.1001756) some effect on non-Gf skills of the elderly. \
-[A 2020 RCT](https://openaccess.nhh.no/nhh-xmlui/bitstream/handle/11250/2657279/DP%2009.pdf?sequence=1&isAllowed=y) on 572 first-graders finds an effect (d=0.2 to 0.4), but many of the apparent far-transfer effects come only 6-12 months later, i.e. well past the end of most prior studies. Also, see Simons et al 2016 ([https://journals.sagepub.com/doi/abs/10.1177/1529100616661983?journalCode=psia](https://journals.sagepub.com/doi/abs/10.1177/1529100616661983?journalCode=psia)) for a comprehensive, authoritative review. This sentence sums it up: “_Based on this examination, we find extensive evidence that brain-training interventions improve performance on the trained tasks, less evidence that such interventions improve performance on closely related tasks, and little evidence that training enhances performance on distantly related tasks or that training improves everyday cognitive performance_.”
+* Original paper: '[Improving fluid intelligence with training on working memory](https://www.pnas.org/content/105/19/6829)', Jaeggi 2008 [n=70, citations= 2840 (GS, October 2022)].
+* Critiques: [Melby-Lervåg 2013](https://sci-hub.se/10.1037/a0028228) [meta-analysis of 23 studies, citations= 2156 (GD, October 2022)], [Gwern 2012](https://www.gwern.net/DNB-meta-analysis#moderators) [meta-analysis of 45 studies], [Reddick 2013](https://pubmed.ncbi.nlm.nih.gov/22708717/) [n= 73, citations= 824 (GS, October 2022)], [Lampit 2014](https://journals.plos.org/plosmedicine/article?id=10.1371/journal.pmed.1001756) [meta-analysis of 52 studies, n= 4885, citations= 809 (GS, October 2022)], [Berger 2020](https://openaccess.nhh.no/nhh-xmlui/bitstream/handle/11250/2657279/DP%2009.pdf?sequence=1&isAllowed=y) [n= 572, citations= 22 (GS, October 2022)], [Simons 2016](https://journals.sagepub.com/doi/full/10.1177/1529100616661983?journalCode=psia) [comprehensive review of literature, citations= 1015 (GS, October 2022)].
+* Original effect size: _d_= 0.4 over control, 1-2 days after training
+* Replication effect size: Melby-Lervåg 2013: _d_= 0.19 [0.03, 0.37] nonverbal; _d_= 0.13 [-0.09, 0.34] verbal. Gwern 2012: _d_= 0.1397 [-0.0292, 0.3085], among studies using active controls. Reddick 2013: found “no positive transfer to any of the cognitive ability tests”, all n<sup>2<sub>p</sub></sup> &lt; 0.054. Lampit 2014 (meta-analysis on studies in eldery adults):  _g _=  0.24 (95% CI 0.09 to 0.38) nonverbal memory; _g _=  0.08 (95% CI 0.01 to 0.15) verbal memory;  _g_ =  0.22 (95% CI 0.09 to 0.35) working memory; _g_ = 0.31 (95% CI 0.11 to 0.50) processing speed; _g_ =  0.30 (95% CI 0.07 to 0.54) visuospatial skills. Berger 2020 (RCT in 6-7 year olds):  _d_= 0.2 to 0.4, but many of the apparent far-transfer effects come only 6-12 months later, i.e. well past the end of most prior studies.
 {{< /spoiler >}}
 
-* **Music lessons improve intelligence**. An original experimental study found an increase in IQ for children who received a year of music lessons, compared to children who were randomly assigned to drama lessons or no lessons. Later studies did not replicate this when comparing music lessons to other forms of training such as dance lessons. However, observational studies do suggest that adult musicians have enhanced cognitive abilities compared to non-musicians or even bilinguals ([D’Souza et al., 2018](https://doi.org/10.1186/s41235-018-0095-6)), but this work is correlational, and one possible reason of such positive effects is that the personality traits of people who self-select into long-term music training (e.g., conscientiousness) also drives them to success in other areas. ​ This finding is a good case study of the problem of miscommunication of scientific research in the press ([Mehr, 2015](https://www.frontiersin.org/articles/10.3389/fpsyg.2015.00988/full)), because the original study has not been replicated in over five attempts, yet it continues to be cited and used by the media and educators.
+* **Music lessons improve intelligence**. An original experimental study found an increase in IQ for children who received a year of music lessons, compared to children who were randomly assigned to drama lessons or no lessons. 
 {{< spoiler text="Statistics" >}}
 * Status: not replicated
-* Original paper: ‘Music lessons enhance IQ’, [Schellenberg, 2004](https://doi.org/10.1111/j.0956-7976.2004.00711.x Article information); randomized control trial, _n_=144. [citations = 1424, Google Scholar, Dec 2021)]​.
-* Critiques: [Mehr et al., 2013](https://doi.org/10.1371/journal.pone.0082007) [Study 1 _n_=29, Study 2 _n_=55, citations=52 (Google scholar, December 2021)], [D’Souza & Wiseheart, 2018](http://dx.doi.org/10.1037/arc0000048) [n=75, citations=20 (Google scholar, December 2021)]. 
-* Original effect size: d=1.948.
-* Replication effect size: Mehr et al., 2013: Wilks' λ = .851. D’Souza & Wiseheart: _d_=0.11 to _d_=0.55.
-{{< /spoiler >}}
-
-* Brain training, that **video gaming enhances cognitive ability.**
-{{< spoiler text="Statistics" >}}
-* Status: 
-* Original papers: Studies have reported enhanced performance in a range of abilities, including visual processing (Green & Bavelier, 2003, 2007), attention (Belchior et al., 2013), spatial ability (Goldstein et al., 1997; Okagaki & Frensch, 1994), and executive function (Basak, Boot, Voss, & Kramer, 2008; Green, Sugarman, Medford, Klobusicky, & Bavelier, 2012).
-* Critiques: [Sala et al., 2016](https://psycnet.apa.org/record/2017-56115-001): _“The first meta-analysis (k = 310) examined the correlation between video game skill and cognitive ability. The second meta-analysis (k = 315) dealt with the differences between video game players and nonplayers in cognitive ability. The third meta-analysis (k = 359) investigated the effects of video game training on participants’ cognitive ability. Small or null overall effect sizes were found in all three models.”_ _“Importantly, we found no evidence of a causal relationship between playing video games and enhanced cognitive ability.”_
+* Original paper: ‘Music lessons enhance IQ’, [Schellenberg, 2004](https://doi.org/10.1111/j.0956-7976.2004.00711.x Article information); randomised control trial, _n_=144. [citations = 1424, GS, Dec 2021)]​.
+* Critiques: [Mehr et al., 2013](https://doi.org/10.1371/journal.pone.0082007) [Study 1 n=29, Study 2 n=55, citations=52 (GS, December 2021)].  [D’Souza & Wiseheart, 2018](http://dx.doi.org/10.1037/arc0000048) [n=75, citations=20 (GS, December 2021)]. 
+* Original effect size: _d_= 1.948.
+* Replication effect size: Mehr et al., 2013: _Wilks' λ_ = .851/_η<sup>2<sub>p</sub></sup>_= 0.077 [calculated]. D’Souza & Wiseheart: for task switching: _Bayes Factor (BF) inclusion _= 1.964 (weak evidence); for .processing speed BF inclusion= 0.757 (box completion task), 0.243 (symbol copy task),  0.213 (symbol coding task) (weak evidence); for working memory: BF inclusion= 0.216 (digit span forward task), 0.138 (the digit span backward task), 0.004 (self-ordered pointing task) (weak evidence); for inference control: BF inclusion= 0.137 (flanker task), 0.007 (Stroop task) (weak evidence); for nonverbal intelligence: BF inclusion= 0.778 (Peabody Picture Vocabulary Test) (weak evidence). 
 {{< /spoiler >}}
 
 * **Bilingual advantages in executive control**. The popular hypothesis was that speaking two languages also improves general cognitive control processes (executive control). However, this was challenged by a growing body of systematic studies, which showed no bilingual advantage across different executive control tasks, or even a small bilingual disadvantage. The lack of an effect was even found in exact replications of the original tasks, especially as sample size increases ([Paap et al., 2015](https://doi.org/10.1016/j.cortex.2015.04.014)), and after accounting for the main moderators proposed by the bilingualism literature (Gunnerud et al., 2020).+
@@ -3528,10 +3778,6 @@ n=8 judges with n=1100 cases.
 * Replication effect size: Adlmann (2006): _d_ = 0.57 [0.25 0.89]; Carstens (1998) Study 1:  _d_ =  -0.22 [-0.89 0.45]; Carstens (1998) Study 2: _d_ =  0.47 [-0.23 1.17]; Cooper (2004): _d_ =  0.42 [-0.23 1.08]; Flohr (1995) Study 1: _d_ = 0.14[-0.35 0.63]; Flohr (1995) Study 2: _d_ = 0.16[-0.26 0.58]; Gileta (2003) Study 1: _d_ =0.13 [-0.26 0.51] ; Gileta (2003) Study 2: _d_ = -0.05[-0.43 0.34]; Ivanov (2003): _d_ = 0.77 [0.20 1.34];  Jones (2006): _d_ = 0.92 [0.27 1.56]; Jones (2007): _d_ = 0.54[0.11 0.97]; Kenealy (1994): _d_ = -0.22 [-1.08 0.64]; Knell (2006): _d_ = 0.45 [0.13 0.77]; Lints (2003): _d_ = -0.37 [0.75 0.02]  McClure (2004): _d_ = 0.46 [-0.02 0.95]; Nantals (1999) Study 1: d_ _= 0.77 [-0.07 1.61]; Nantals (1999) Study 2: _d_ = 0.06 [-0.72 0.84];  Rauscher and Hayes (1999): _d_ = 0.52 [0.18 0.86];  Rauscher and Ribar (1999) Study 1: _d_ = 1.81[1.24 2.37]; Rauscher and Ribar (1999) Study 2: _d_ = 0.93[0.46 1.39]; Rideout (1996): _d_ = 1.54 [-0.67 3.75]; Rideout (1997): _d_ = 1.01 [0.19 1.82];  Rideout (1998a): _d_ =1.01 [-0.21 2.23]; Rideout (1998b): _d_ = 0.28 [-1.04 1.60]; Siegel (1999): _d_ = 0.26 [-0.39 0.91]; Spitzer (2003): _d_ = 0.01 [-0.32 0.33]; Steele et al.: _d _= 0.85 [0.41 1.30]; Steele, Dalla Bella, et al. (1999a) Study 1: _d_ = 0.49 [-0.01 1.00]; Steele, Dalla Bella, et al. (1999a) Study 2:  _d_ = -0.41 [1.15 0.33]; Steele, Dalla Bella, et al. (1999b): _d_ = 0.85 [0.41 1.30]; Steele, Brown and Stoecker (1999): d=0.20 [-.08 0.48; Sweeny (2006) Study 1:  d =  -0.43 [-0.93 0.07]; Sweeny (2006) Study 2: d =  -0.06 [-0.56 0.42]; Sweeny (2006) Study 3:  d =  0.14 [-0.37 0.65]; Twomey (2002): d = 0.63 [-0.01 1.27]; Wells (1995): d = -0.18 [-0.83 0.47]; Wilson (1997): d =0.85 [-0.44 2.13]; Pietschnig et al.:  meta-analytic estimate: d = 0.37 [0.23, 0.52]
 {{< /spoiler >}}
 
-* **Enhancing effects on IQ**
-
-* **Automatic imitation**
-
 * **Congruence Sequence effect**
 {{< spoiler text="Statistics" >}}
 * Status: mixed
@@ -3539,11 +3785,13 @@ n=8 judges with n=1100 cases.
 * Critiques: [Balazs](https://royalsocietypublishing.org/doi/10.1098/rsos.191353) (2021) [n=103, 70 and 38 participants for Experiments 1, 2 and 3, citations=4(Google Scholar, Feb 2022)]. 
 {{< /spoiler >}}
 
-* **Action-sentence Compatibility Effect (ACE)**, participants’ movements are faster when the sentence meaning is consistent with their moving direction.
+* **Action-sentence Compatibility Effect (ACE)**. Participants’ movements are faster when the direction of the described action (e.g., Mark dealt the cards to you) matches the response direction (e.g., toward).
 {{< spoiler text="Statistics" >}}
 * Status: not replicated
-* Original paper: [Glenberg & Kaschak ](https://link.springer.com/article/10.3758/BF03196313)(2002)
-* Replication with null effect: [Morey et al.](https://osf.io/ka2ph/) (2021)
+* Original paper: [“Grounding language in action”](https://link.springer.com/article/10.3758/BF03196313), Glenberg & Kaschak (2002); Experiment 1: n= 44, Experiment 2A: n= 70, Experiment 2B: n= 72 [citations= 2870 (GS, October, 2022)].
+* Critiques: [Morey et al.](https://link.springer.com/article/10.3758/s13423-021-01927-8) (2022) [pre-registered multi-lab replication, 18 labs, n= 1278, citations= 30 (GS, October 2022)].
+* Original effect size:  Experiment 1: _η<sup>2<sub>p</sub></sup>_= 0.186 [calculated]. Experiment 2A: _η<sup>2<sub>p</sub></sup>_ = 0.051 [calculated].
+* Replication effect size: [Morey et al.](https://link.springer.com/article/10.3758/s13423-021-01927-8) (2022): for native English speakers _d_= 0.0036; for non-native English speakers _d_ = -0.019.
 {{< /spoiler >}}
 
 * The **attentional spatial-numerical association of response codes (Att-SNARC) effect** is the finding that participants had quicker detects to left-side targets preceded by small numbers and to the right-side targets preceded by large numbers. This finding triggered many assumptions about the number representations grounded in body experience.
@@ -3553,13 +3801,13 @@ n=8 judges with n=1100 cases.
 * Replication with null effect: [Colling et al.](https://journals.sagepub.com/doi/10.1177/2515245920903079) (2020)
 {{< /spoiler >}}
 
-* **Scarcity effect.** Having too little resources leads individuals to misallocate attention, leading to consequences such as overborrowing. Study 1 examined whether scarcity causes greater cognitive fatigue, measured by poorer performance on a cognitive ability task.​
+* **Scarcity effect - _Attention_**. Having too little resources leads individuals to misallocate attention, leading to consequences such as overborrowing. Study 1 examined whether scarcity causes greater cognitive fatigue, measured by poorer performance on a cognitive ability task.​
 {{< spoiler text="Statistics" >}}
-* Status: not replicated (reversal for the Shah et al. 2019 replication)
-* Original paper: ‘[Some consequences of having too little](https://doi.org/10.1126/science.1222426)’, Shah et al. 2012; 5 experiments with Study 1 n=60; Study 2 n=68; Study 3 n=143; Study 4 n=118; Study 5 n=137. Replication attempts on Study 1.
-* Critiques: Camerer et al. 2018 [n=619, citations=855(GS, November 2021)]; O’Donnell et al. 2021 [n=668, citations=0(GS, November 2021)]; Shah et al. 2019 [n=997, citations=19(GS, November 2021)]
-* Original effect size: r= .267
-* Replication effect size: Camerer et al. r= -.015; O’Donnell et al. r= -.039; Shah et al. η<sup>2</sup> = .004
+* Status: mixed
+* Original paper: ‘[Some consequences of having too little](https://doi.org/10.1126/science.1222426)’, Shah et al. (2012); 5 experiments with Study 1: n=60; Study 2: n=68; Study 3: n=143; Study 4: n=118; Study 5: n=137  [citations=1403 (GS, April 2022)]. 
+* Critiques: [Camerer et al. (2018](https://doi.org/10.1038/s41562-018-0399-z)) [n=619, citations=855(GS, November 2021)]; [O’Donnell et al. (2021](https://doi.org/10.1073/pnas.2103313118)) [n=668, citations=0(GS, November 2021)]; [Shah et al. (2019](https://doi.org/10.1016/j.joep.2018.12.001)) [n=997, citations=19(GS, November 2021)]
+* Original effect size: _r_ = .267
+* Replication effect size: Camerer et al.: _r_ = -.015; O’Donnell et al.: _r_=  -.039; Shah et al.: _η<sup>2</sup>_ = .004.
 {{< /spoiler >}}
 
 * **Scarcity effect - _Meaning in life_**. Threats to people’s sense that they can afford things that they need in the present and foreseeable future, undermines perceptions of meaning in life.​
@@ -3586,10 +3834,10 @@ n=8 judges with n=1100 cases.
 * Original paper: ‘[Economic insecurity increases physical pain](https://doi.org/10.1177/0956797615625640)’, Chou et al. (2016 ) Study 3, with n=231. [citation=103(GS, November 2021)]​.
 * Critiques: [O’Donnell et al. 2021](https://doi.org/10.1073/pnas.2103313118) [n=603, citations=0(GS, November 2021)]
 * Original effect size: _r _=  .155
-* Replication effect size: _r _= .209
+* Replication effect size: _r_ = .209
 {{< /spoiler >}}
 
-* **Scarcity effect -** **_Self expansion. _**Lower self-concept clarity (conceptualized as a finite resource) is associated with lower self-expansion.​
+* **Scarcity effect - _Self expansion_**. Lower self-concept clarity (conceptualized as a finite resource) is associated with lower self-expansion.​
 {{< spoiler text="Statistics" >}}
 * Status: not replicated
 * Original paper: ‘[Knowing who you are and adding to it: Reduced self-concept clarity predicts reduced self-expansion](https://doi.org/10.1177/1948550614555029)’, Emery et al. (2015) Study 3 with n=152. [citation=54(GS, November 2021)]​.
@@ -3598,16 +3846,16 @@ n=8 judges with n=1100 cases.
 * Replication effect size: _r_ =  -.004
 {{< /spoiler >}}
 
-* **Scarcity effect** **-_ Wellbeing. _**Imagining having less time available in one’s current city is positively associated with well-being.​
+* **Scarcity effect - _Wellbeing_**. Imagining having less time available in one’s current city is positively associated with well-being.​
 {{< spoiler text="Statistics" >}}
 * Status: not replicated
 * Original paper: ‘[Reframing the ordinary: Imagining time as scarce increases well-being](https://doi.org/10.1080/17439760.2017.1279210)’, Layous et al. (2018) with n=111. [citation=22(GS, November 2021)]​.
 * Critiques: [O’Donnell et al. 2021](https://doi.org/10.1073/pnas.2103313118) [n=132, citations=0(GS, November 2021)]
 * Original effect size: _r_= .131
-* Replication effect size: _r_= -.110.
+* Replication effect size: _r_ = -.110.
 {{< /spoiler >}}
 
-* **Scarcity effect - _Decision making. _** Lacking time or money can lead to making worse decisions.​
+* **Scarcity effect - _Decision making_**. Lacking time or money can lead to making worse decisions.​
 {{< spoiler text="Statistics" >}}
 * Status: not replicated
 * Original paper: ‘[Poverty impedes cognitive function’](https://doi.org/10.1126/science.1238041), Mani et al. (2013) Study 4,  with n=96. [citation=2332(GS, November 2021)]​.
@@ -3616,15 +3864,15 @@ n=8 judges with n=1100 cases.
 * Replication effect size: _r_= .024.
 {{< /spoiler >}}
 
-* **Scarcity effect** **- _Opportunity costs._** Poor people are more likely to consider opportunity costs spontaneously. 
+* **Scarcity effect - _Opportunity costs_**. Poor people are more likely to consider opportunity costs spontaneously. 
 {{< spoiler text="Statistics" >}}
 * Status: replicated Original paper: ‘[Evidence for opportunity cost neglect in the poor](https://doi.org/10.1002/bdm.2041)’, Plantinga et al. (2019) with n=642. [citation=18(GS, November 2021)]​.
 * Critiques: [O’Donnell et al. 2021](https://doi.org/10.1073/pnas.2103313118) [n=1564, citations=0(GS, November 2021)]
 * Original effect size: _r_ = -.03
-* Replication effect size: _r _= -.006
+* Replication effect size: _r_ = -.006
 {{< /spoiler >}}
 
-* **Scarcity effect -_ Conscious thoughts._** Thoughts triggered by financial concerns intrude more often  into consciousness of poorer individuals than for wealthier individuals.​
+* **Scarcity effect - _Conscious thoughts_**. Thoughts triggered by financial concerns intrude more often  into consciousness of poorer individuals than for wealthier individuals.​
 {{< spoiler text="Statistics" >}}
 * Status: not replicated
 * Original paper: ‘[Money in the mental lives of the poor](https://doi.org/10.1521/soco.2018.36.1.4)’, Shah et al. (2018) with n=568. [citation=78(GS, November 2021)]​.
@@ -3633,13 +3881,13 @@ n=8 judges with n=1100 cases.
 * Replication effect size: _r_ = .027
 {{< /spoiler >}}
 
-* **Scarcity effect -_ Absoluteness of losses_.** Poorer individuals view losses in more absolute, rather than relative, terms than do wealthier individuals.​
+* **Scarcity effect - _Absoluteness of losses_**. Poorer individuals view losses in more absolute, rather than relative, terms than do wealthier individuals.​
 {{< spoiler text="Statistics" >}}
 * Status: not replicated
 * Original paper: ‘[Scarcity frames value](https://doi.org/10.1177/0956797614563958)’, Shah et al. (2015) with n=73. [citation=315(GS, November 2021)]​.
 * Critiques: [O’Donnell et al. 2021](https://doi.org/10.1073/pnas.2103313118) [n=209, citations=0(GS, November 2021)]
-* Original effect size: _r _= .264
-* Replication effect size: _r _= .090
+* Original effect size: _r_ = .264
+* Replication effect size: _r_ = .090
 {{< /spoiler >}}
 
 * **Bottomless soup bowl**. Visual cues related to portion size increase intake volume of soup. 
@@ -3651,7 +3899,7 @@ n=8 judges with n=1100 cases.
 * Replication effect size: not reported. 
 {{< /spoiler >}}
 
-* **Simon effect**.  Faster responses are observed when the stimulus and response are on the same side than when the stimulus and response are on opposite sides. 
+* **Simon effect**. Faster responses are observed when the stimulus and response are on the same side than when the stimulus and response are on opposite sides. 
 {{< spoiler text="Statistics" >}}
 * Status: mixed
 * Original paper: ‘[Choice reaction time as a function of angular stimulus-response correspondence and age](https://www.tandfonline.com/doi/abs/10.1080/00140136308930679)’, Simon and Wolf  1963; with, n1 = 20, n2 = 20. [citation=289(GS, June 2022)]​.
@@ -3660,9 +3908,14 @@ n=8 judges with n=1100 cases.
 * Replication effect size: Ehrenstein: not reported but could be calculated; Marble and Proctor: not reported but could be calculated; Proctor et al.: not reported but could be calculated; Theeuwes et al.: ​η<sub>p</sub>²(the compatible S-R instructions condition vs. the incompatible S-R instructions condition)=.12; η<sub>p</sub>²(the compatible S-R instructions condition vs. the incompatible practiced S-R instructions condition)=.07; η<sub>p</sub>²(the incompatible S-R instructions condition  vs. the compatible S-R instructions condition)=.21; η<sub>p</sub>²(e incompatible practiced S-R instructions condition vs. the compatible S-R instructions condition)=.11.
 {{< /spoiler >}}
 
-* **ERP and lie detectors**
-
-* **Evaluative conditioning**
+* **ERPs in lie detection**. Particularly the P300 ERP component has been related in literature using Guilty Knowledge Tests to conscious recognition of crime-related targets as meaningful and salient stimuli, based on crime-related episodic memories.
+{{< spoiler text="Statistics" >}}
+* Status: mixed
+* Original paper: [Late Vertex Positivity in Event-Related Potentials as a Guilty Knowledge Indicator: A New Method of Lie Detection](https://www.tandfonline.com/doi/abs/10.3109/00207458708985947)’, Rosenfeld et al. (1987), with _n_1=10, _n_2=6. [citation=126(GS, May 2022)]​.
+* Critiques: [Abootalebi et al., 2006](https://www.sciencedirect.com/science/article/pii/S0167876006001425?via%3Dihub) [n=62, citations=159(GS, May 2022)]; [Bergström et al. (2013](https://www.sciencedirect.com/science/article/pii/S0301051113001154)<span style="text-decoration:underline;">)</span> [_n_1=24, _n_2=24; citations=61(GS, May 2022)].   [Mertens & Allen](https://onlinelibrary.wiley.com/doi/10.1111/j.1469-8986.2007.00615.x), 2008 [n=79, citations=187(GS, May 2022)]; [Rosenfeld et al., 2004](https://onlinelibrary.wiley.com/doi/10.1111/j.1469-8986.2004.00158.x) [_n_-ex1=33; _n_-ex2.1=12, _n_-ex2.2=10; citations=419(GS, May 2022)]; [Wang et al., (2016](https://www.sciencedirect.com/science/article/pii/S0957417416000348?via%3Dihub)) [n=28, citations=61(GS, May 2022)]
+* Original effect size: N/A
+* Replication effect size: Abootalebi et al.: not reported but could be calculated; Bergström et al.: _d_=2.89 (effort in uncooperative recall suppression); _d_=2.28 (success in uncooperative recall suppression); partial _η<sup>2</sup>_ = 0.20 (experiment 1 - voluntary modulations of P300); partial _η<sup>2 </sup>_= 0.31 (experiment 2 - voluntary modulations of P300); _d_ = 0.48 and _d_ = 0.31 (experiment 1 - cooperative phase); _d_ =0.03 ( experiment 1 - uncooperative phase); _d_ = 0.14 (experiment 1 - innocent phase); _d_ = 0.77 (experiment 1: targets vs. probes - innocent phase); _d_ = 0.71 (experiment 1: targets vs. probes - uncooperative phase); _d_ = 1.03 and _d_ = 0.48 (experiment 2 - cooperative phase); _d_ = 0.48 and _d_ = 0.99 (experiment 2 - uncooperative phase); _d_ = 1.81 (experiment 2 - innocent phase); _d_ = 0.50 (experiment 1: cooperative vs. uncooperative); _d_ = 0.52 (experiment 2: cooperative vs. uncooperative); _d_ = 0.07 ( experiment 1: uncooperative vs. innocent); _d_ = 0.57 (experiment 2: uncooperative vs. innocent); _d_ &lt; 0.17 (targets vs. irrelevants for experiment 1 and 2); Mertens and Allen: not reported but could be calculated; Rosenfeld et al.: not reported but could be calculated; Wang et al.: not reported but could be calculated. 
+{{< /spoiler >}}
 
 * **Bilingual deficit in lexical retrieval**. Compared to monolinguals, bilinguals have often been found to be slower or less accurate in accessing the meaning of a certain word or the word for a certain representation under certain conditions.
 {{< spoiler text="Statistics" >}}
@@ -3672,22 +3925,6 @@ n=8 judges with n=1100 cases.
 * Original effect size: not reported but could be calculated.
 * Replication effect size: Bialystok et al.: not reported but could be calculated Rosselli et al. 2000: not reported but could be calculated; Rosselli et al. 2002: not reported but could be calculated; Gollan et al. 2002: not reported but could be calculated; ​Gollan et al. 2005: not reported but could be calculated.
 ​{{< /spoiler >}}
-
-* **Visiting a place will cue memories**
-
-* **Spacing effect**
-
-* **False memories**
-​
-* **Motor priming**
-
-* **Associative priming**
-
-* **Repetition priming**
-
-* **Shape simulation**
-
-* **Flanker task**
 ​
 * **Mere Exposure Effect**, the mere exposure effect refers to the finding that participants who are repeatedly exposed to the same stimuli rate them more positively than stimuli that have not been presented before.
 {{< spoiler text="Statistics" >}}
@@ -3711,37 +3948,18 @@ n=8 judges with n=1100 cases.
 
 ## **Developmental Psychology**
 
-* Some evidence for a tiny effect of **growth mindset** (thinking that skill is improvable) on attainment. Really we should distinguish the correlation of the mindset with attainment vs. the effect of a 1-hour class about the importance of growth-mindset on attainment. I cover the latter but check out [Sisk](https://journals.sagepub.com/doi/abs/10.1177/0956797617739704?journalCode=pssa) for evidence against both.
+* **Growth mindset** (thinking that skill is improvable) on attainment.
 {{< spoiler text="Statistics" >}}
+* Status: mixed
 * Original paper: '[Implicit theories and their role in judgments and reactions: A word from two perspectives](https://www.tandfonline.com/doi/abs/10.1207/s15327965pli0604_1)', Dweck 1995 introduced the constructs.(~2200 citations).
 * Critiques: [Sisk 2018](https://journals.sagepub.com/doi/abs/10.1177/0956797617739704?journalCode=pssa), a pair of meta-analyses on both questions, n=365,915 ; \
 [Folioano 2019](https://www.niesr.ac.uk/sites/default/files/publications/Changing%20Mindsets_0.pdf), a big study of the intervention in English schools, n=4584. \
 (~180 total citations)
-* Original effect size: Hard to pin down, but up to [r = 0.54 / d=0.95](https://www.motsd.org/cmsAdmin/uploads/blackwell-theories-of-intelligence-child-dev-2007.pdf) in some papers.
+* Original effect size: Hard to establish, but reported up to [r = 0.54 / d=0.95](https://www.motsd.org/cmsAdmin/uploads/blackwell-theories-of-intelligence-child-dev-2007.pdf) in some papers.
 * Replication effect size: \
 Sisk: r = 0.10 [0.08, 0.13] for the (nonexperimental) correlation \
 Sisk: d = 0.08 [0.02, 0.14] \
-Folioano: Literally zero, d=0.00 [-0.02; 0.02]
-{{< /spoiler >}}
-
-* "**Expertise** attained after 10,000 hours practice” (Gladwell). [Disowned by the supposed proponents](https://bjsm.bmj.com/content/47/9/533).
-{{< spoiler text="Statistics" >}}
-* No good evidence that tailoring **teaching **to students’ preferred **learning styles** has any effect on objective measures of attainment. There are dozens of these inventories, and really you’d have to look at each. (I won’t.)
-* Original paper: Multiple origins. e.g. the '[Learning style inventory: technical manual](https://scholar.google.co.uk/scholar?cites=6850783624494276594&as_sdt=2005&sciodt=0,5&hl=en)' (Kolb), ~4200 citations. The VARK questionnaire (Fleming). But it is ubiquitous in Western educational practice.
-* Critiques: [Willingham 2015](https://journals.sagepub.com/doi/abs/10.1177/0098628315589505); [Pashler 2009](https://journals.sagepub.com/doi/full/10.1111/j.1539-6053.2009.01038.x); [Knoll 2017](https://www.ncbi.nlm.nih.gov/pubmed/27620075) (n=54); [Husmann 2019 \
-](https://anatomypubs.onlinelibrary.wiley.com/doi/10.1002/ase.1777)(total citations: ~2400 )
-* Original effect size:
-* Replication effect size:
-{{< /spoiler >}}
-
-* Tailoring teaching to students’ preferred **learning styles** has any effect on objective measures of attainment.
-{{< spoiler text="Statistics" >}}
-* Status: 
-* Original paper: Multiple origins. e.g. the '[Learning style inventory: technical manual](https://scholar.google.co.uk/scholar?cites=6850783624494276594&as_sdt=2005&sciodt=0,5&hl=en)' (Kolb), ~4200 citations. The VARK questionnaire (Fleming). But it is ubiquitous in Western educational practice.
-* Critiques: [Willingham 2015](https://journals.sagepub.com/doi/abs/10.1177/0098628315589505); [Pashler 2009](https://journals.sagepub.com/doi/full/10.1111/j.1539-6053.2009.01038.x); [Knoll 2017](https://www.ncbi.nlm.nih.gov/pubmed/27620075) (n=54); [Husmann 2019 \
-](https://anatomypubs.onlinelibrary.wiley.com/doi/10.1002/ase.1777)(total citations: ~2400 )
-* Original effect size: 
-* Replication effect size:
+Folioano: d = 0.00 [-0.02; 0.02]
 {{< /spoiler >}}
 
 * **Neonate imitation**. Babies are born with the ability to imitate. 
@@ -3750,10 +3968,17 @@ Folioano: Literally zero, d=0.00 [-0.02; 0.02]
 * Original paper: ‘Imitation of facial and manual gestures by human neonates’, [Meltzoff and Moore, 1977](https://www.science.org/doi/pdf/10.1126/science.198.4312.75); 2 studies with: Study 1: _n_=6, Study 2: _n_=12.. [citation=5311 (GS, December 2021])​.
 * Critiques: [Oostenbroek et al., 2016](https://doi.org/10.1016/j.cub.2016.03.047) [_n_=106, citations=259 (GS, December 2021)]. 
 * Original effect size: Not reported​.
-* Replication effect size: Not reported.
+* Replication effect size: NA.
 {{< /spoiler >}}
 
-* **Watching violence on aggression**
+* **Violent media content on aggression**, Violence content in media can affect people to be more aggressive. Notably, the studies of this effect differ by media (TV, games, etc.) and whether long, medium, or short-term effects have been investigated. The variety of methods/tests further complicates the literature. Distinct media types are marked for each reference below.
+{{< spoiler text="Statistics" >}}
+* Status: mixed
+* Original paper: [‘Transmission of aggression through imitation of aggressive models’](https://media.thuze.com/MediaService/MediaService.svc/constellation/book/AUPSY330.12.2/%7Bpdfs%7Dch_1_transmission_of_aggression_bandura.pdf), Bandura et al. 1961; [n = 72, citations = 4151 (GS, March, 2022)]
+* Critiques: [Elson & Ferguson 2014](https://psycnet.apa.org/buy/2013-43946-001) [_gaming_, citations = 266 (GS, June 2022)]; [Hilgard et al. 2016](https://doi.org/10.1037/bul0000074) [_gaming_, citations = 161 (GS, June 2022)]; [Drummond et al. 2020](https://doi.org/10.1098/rsos.200373); [_gaming_, n ≈ 21000, citations = 35 (GS, June 2022)], [Savage & Yancey 2008](https://doi.org/10.1177/0093854808316487) [_media_, citations = 255 (GS, June 2022)]
+* Original effect size: r2 = 8.96, p &lt; .02.
+* Replication effect size: [Anderson & Bushman 2001 ](https://doi.org/10.1111/1467-9280.00366)(_gaming_): r = 0.27; [Bushman 2016 ](https://doi.org/10.1002/ab.21655)(_media_): r = 0.20 [Drummond et al. 2020](https://doi.org/10.1098/rsos.200373) (_gaming_): r = 0.059; [Ferguson & Kilburn 2009 ](https://doi.org/10.1016/j.jpeds.2008.11.033)(_media_): r = 0.08; [Greitemeyer & Mügge 2014](https://doi.org/10.1177/0146167213520459) (_gaming_): r = 0.19; Martins & Weaver 2019 (_media_): r = 0.15; [Savage & Yancey 2008](https://doi.org/10.1177/0093854808316487) (media): r = 0.07 (nonsignificant); [Strasburger & Wilson 2014](https://psycnet.apa.org/record/2015-46439-005) (television) r = 0.3 (review outcome, not meta-analysis).
+{{< /spoiler >}}
 
 <br>
 
@@ -3779,28 +4004,46 @@ Folioano: Literally zero, d=0.00 [-0.02; 0.02]
 * Replication effect size: (all |r| &lt; .04); Manning & Fink’ ES (2020) r2 = .12-.40; no ES for (2021); Huh’ ES for females r = .50, Aspara et al. (2014) ES for males β = -.18; Smoliga et al. ES r = .28; Ferdenzi et al. (2011) ES r2 = [-.25 – -.43]; Longman et al. (2015) ES r = [.23 for females, .43 for males].   
 {{< /spoiler >}}
 
-* **Personality traits and consequential life outcomes**
+* **Personality traits and consequential life outcomes**, Personality traits (i.e., characteristic patterns of thinking, feeling, or behaving that tends to be consistent over time and across relevant situations), particularly the Big Five factors, are linked with consequential individual, interpersonal, and social-institutional outcomes.
 {{< spoiler text="Statistics" >}}
-* Status: not replicated
-* Original paper: 
-* Critiques: [Soto (2019)](https://sci-hub.se/10.1177/0956797619831612)
-* Original effect size: 
-* Replication effect size: Soto (2019): shrank by 20%
+* Status: mixed
+* Original paper: ‘Personality and the prediction of consequential outcomes’, Ozer & Benet-Martínez, 2006; review summarizes 86 associations between the Big Five traits and 49 life outcomes. [citation=2754(Google Scholar, August 2022)]. See also ‘[The Power of Personality](https://journals.sagepub.com/doi/10.1111/j.1745-6916.2007.00047.x)
+* [The Comparative Validity of Personality Traits, Socioeconomic Status, and Cognitive Ability for Predicting Important Life Outcomes](https://journals.sagepub.com/doi/10.1111/j.1745-6916.2007.00047.x)’, Roberts et al., 2007; review of prospective longitudinal studies, 34 studies (N=117713) that link personality traits to mortality/longevity [citation=2482(Google Scholar, August 2022)]​. 
+* Critiques: [Soto (2019)](https://sci-hub.se/10.1177/0956797619831612) [n=1504, citations=256(Google Scholar, August 2022)].
+* Original effect size: Roberts et al. (2017): _r_ = .10 to .40
+* Replication effect size: Soto (2019): Shrank by 20% (_r_ = .06 to .60).
 {{< /spoiler >}}
-
-* **Reading prevents cancer**
-
-* **Graphology**
 
 <br>
 
 ## **Judgment and Decision Making**
 
-In general, the replication success rate of Judgment and Decision Making (JDM) is decent, 68% according to [Collaborative Open-science Research (2022) led by Dr. Gilad Feldman](https://mgto.org/pre-registered-replications/), **a mass replication project**. That said, similar to other subfields in social sciences, many effects are overestimated and there are publication biases.
+* **Nudges.** Choice architecture interventions that promote beneficial decisions.
+{{< spoiler text="Statistics" >}}
+* Status: mixed 
+* Original paper: <span style="text-decoration:underline;">‘[Nudge: Improving Decisions about Health, Wealth, and](https://books.google.fr/books/about/Nudge.html?id=dSJQn8egXvUC&redir_esc=y)</span>
+* [Happiness](https://books.google.fr/books/about/Nudge.html?id=dSJQn8egXvUC&redir_esc=y)’, Thaler & Sunstein, 2008, Book [citations=23376 (Google Scholar, October 2022].
+* Critiques: [Mertens et al. (2021)](https://www.pnas.org/doi/full/10.1073/pnas.2204059119)[citations=55 (Google Scholar, October 2022] conducted a meta-analysis on nudges and found medium effect size across all types of nudges. They conducted several publication bias tests, the most severe indicated a very small but significant effect size. [Maier et al. (2022)](https://www.pnas.org/doi/pdf/10.1073/pnas.2200300119) [citations=15 (Google Scholar, October 2022] re-analysed the data reviewed by [Mertens et al. (2021)](https://www.pnas.org/doi/full/10.1073/pnas.2204059119) and found no nudging effect after adjusting for publication bias.
+* Original effect size: No effect sizes were provided in the original book.
+* Replication effect size: Mertens et al. 2021: _d _= 0.37 to _d _= 0.46. Maier et al., 2022: _d _= 0.00 to _d _= 0.14.
+{{< /spoiler >}}
 
-* The effect of **“nudges”** (choice architecture that promotes beneficial decisions) may be exaggerated in general. [One comprehensive review](https://www.nber.org/system/files/working_papers/w27594/w27594.pdf) by DellaVigna and Linos (2020) found average effects by Nudge Units were six times smaller than studies published in academic journals. (Not saying there are no big effects.), see another [systematic review](https://onlinelibrary.wiley.com/doi/full/10.1002/bdm.2035) by Szaszi et al. (2018) as well as [Hummel and Maedche (2019)](https://www.sciencedirect.com/science/article/abs/pii/S2214804318303999).
+* **Risky Choice Framing Effect** (term used by Levin et al., 1998), alt-term = framing effect in risky-decision making. Under loss-frame, people are risk-seeking, whereas under gain-frame, people are risk-averse. In framing studies, logically equivalent choice situations are differently described and the resulting preferences are studied ([Kühberger, 1998](https://doi.org/10.1006/obhd.1998.2781)). In risky choice problems, the way a choice is presented influences the decision. (e.g. saving 10 people out of 100 vs losing 90 people out of 100). 
+{{< spoiler text="Statistics" >}}
+* Status: replicated
+* Original paper: ‘[The framing of decisions and the psychology of choice](https://link.springer.com/chapter/10.1007/978-1-4613-2391-4_2)’, Tversky & Kahnemann, 1981; experimental design, P1: 152; P2: 155; P3: 150; P4: 86; P5: 77; P6: 85; P7: 81; P8: 183; P9: 200; P10.1: 93; P10.2: 88; Total = 1350* (unclear if those samples are different samples) [citations = 24617 (GS, October 2022)]​.
+* Critiques: Meta-analysis: [Kühberger, 1998](https://doi.org/10.1006/obhd.1998.2781). [Total studies reviewed=136, citations=1554 (GS, June 2022)] The author finds that certain characteristics of framing studies are crucial to getting a consistent framing effect, but that the closer a methodology is to the original methodology, the better chance to replicate the original effect. Large scale replication in Klein et al., 2014 [Total replication studies = 36, citations=1082 (GS, June 2022)]
+* Original effect size: Kahneman and Tversky (1982): _d_ = 1.13, 95% CI [0.89, 1.37] (based on Klein et al., 2014 calculation) Meta-analytical effect size (many close and conceptual replications): Steiger & Kühberger (2018): d = 0.52 to 0.56.
+* Replication effect size: Kühberger, 1998: d = .308.; Revised in Steiger & Kühberger, 2018 to d = .522 with only 81 of the 136 studies; Klein et al., 2014 : d=.60 (95% CI 0.53-0.67); Steiger & Kühberger, 2018 : d=.56.
+{{< /spoiler >}}
 
-* Identifiable **victim effect** is much weaker and less robust than previously thought, with lots of mixed findings, failed replications, null findings and numerous boundary conditions. See [Lee and Feeley (2016) meta-analysis](https://www.tandfonline.com/doi/pdf/10.1080/15534510.2016.1216891), with _r_ = .05.
+* **Risk and Goal Message Framing.** a) For illness detection behaviors, loss framing (presenting information of negative consequences with undesirable behaviors / without desirable behaviors) would be more effective than gain framing (presenting information of benefits through engaging in desirable behaviors) in encouraging healthy attitudes, intentions, and behaviors (perhaps because illness detection behaviors are riskier, Rothman & Salovey, 1997), whereas b) for health-affirming behaviors, gain framing would be more effective than loss framing in motivating healthy attitudes, intentions, behaviors (perhaps because health-affirming behaviors are less risky, Rothman & Salovey, 1997).
+{{< spoiler text="Statistics" >}}
+* Status: Mixed, depending on operationalizations, DVs, and method (meta-analysis vs empirical study). The conceptual replication failed to provide support for the interaction, but this may be due to limited power.
+* Original paper: [Rothman et al. (1999)](https://journals.sagepub.com/doi/10.1177/0146167299259003), between-subject design, sample size: 120 (Study 2) [citations=548(GS, October 2022)]​.
+* Critiques: [van Riet et al. (2016)](https://www.tandfonline.com/doi/pdf/10.1080/17437199.2016.1176865) criticized reasoning of applying Kahneman and Tversky (1981) Prospect Theory (which was more suitable and applicable for risky choice framing) to goal message framing. Van Riet et al. (2016) also reviewed direct empirical and meta-analytical evidence, and it appears the evidence of risk-framing hypothesis in message framing is not conclusive.Original effect size: Rothman et al. (1999): partial eta squared=0.03, [90% CI [0.00, 0.10], to partial eta squared=0.06, 90% CI [0.01, 0.14].
+* Replication effect size: Cox et al. (2006): author: partial eta squared =0.03, 90% CI [0.00, 0.12], non-significant, but may be due to limited power.
+{{< /spoiler >}}
 
 * **Psychophysical numbing**. People prefer to save lives if they are a higher proportion of the total (e.g. people prefer to save 4,500 lives out of 11,000 or 4,500 lives out of 250,000?).
 {{< spoiler text="Statistics" >}}
@@ -3810,10 +4053,6 @@ In general, the replication success rate of Judgment and Decision Making (JDM) i
 * Original Study 1 effect size: *η*<sup>2</sup><sub>p</sub>= 0.14
 * Replication effect size: Study 1a: *η*<sup>2</sup><sub>p</sub>= 0.06, Study 1b: *η*<sup>2</sup><sub>p</sub>= 0.21; Study 1c: *η*<sup>2</sup><sub>p</sub>= 0.13, all were reversals.
 {{< /spoiler >}}
-
-* [Here are](https://www.vox.com/future-perfect/2020/2/26/21154466/research-education-behavior-psychology-nudging) [a few](https://jasoncollins.blog/2020-04-07-the-limits-of-behavioural-science-coronavirus-edition/) [cautionary](https://jasoncollins.blog/arent-we-smart-fellow-behavioural-scientists/) [pieces](https://unherd.com/2020/03/dont-trust-the-psychologists-on-coronavirus/) on whether, aside from the pure question of reproducibility, behavioural science is ready to steer policy.
-
-* [Moving the signature box to the top of forms](https://www.pnas.org/content/pnas/117/13/7103.full.pdf) does not decrease dishonest reporting in the rest of the form.
 
 * **Loss aversion.** The subjective value of losses exceeds the subjective values of gains.
 {{< spoiler text="Statistics" >}}
@@ -3845,18 +4084,6 @@ Brown et al. 2021: λ = 1.955, 95% credible interval [1.824, 2.104]
 * Replication effect size: Overestimation of the importance of payment for blood donation in Study 1, _d_'s = 0.59 [95% CIs 0.51, 0.66], 0.57 [0.49, 0.64]; and of smoking status for smoking policy preferences in Study 4, _d_s = 0.75 [0.59, 0.90], 0.84 [0.73, 0.96].
 {{< /spoiler >}}
 
-* **Marshmallow experiment**
-
-* **Differential reinforcement**
-
-* **Extinction bursts**
-
-* **Functional communication training**
-
-* **Derived relational responding**
-
-* **Schedules of R+**
-
 * **Above- and Below Average Effect**. Above-and-below-average effects arise when comparing oneself to others, whereby people rate themselves as above average for easy abilities and below average for difficult abilities. All standardized beta-values from multiple regression predicting judgmental weight of own and others’ abilities from mean comparative ability estimates in different ability domains were consistent with the original. Additionally, different statistical tests resulted in slightly smaller effects in the same direction of the original.
 {{< spoiler text="Statistics" >}}
 * Status: replicated
@@ -3884,10 +4111,6 @@ Korbmacher et al. (2022):
 <br>
 
 ## **Marketing**
-
-[OpenMKTG.org](https://www.openmktg.org/research) records all retractions and replications in marketing. 
-
-* [Brian Wansink](https://web.archive.org/web/20180307074049/https://www.timvanderzee.com/the-wansink-dossier-an-overview/) [accidentally admitted](https://web.archive.org/web/20170312041524/http:/www.brianwansink.com/phd-advice/the-grad-student-who-never-said-no) gross malpractice; fatal errors were found in 50 of his lab’s papers. These include flashy results about increased portion size massively reducing satiety. 
 
 * **Choice overload**, the idea that giving people too many choices can lead to certain undesirable consequences such as reduced purchasing intentions, is in doubt, but most people don’t consider it to be discredited. 
 {{< spoiler text="Statistics" >}}
@@ -4012,9 +4235,7 @@ Korbmacher et al. (2022):
 
 <br>
 
-## **Neuroscience**
-
-* **One mind per hemisphere**. The corpus callosotomy studies which purported to show “two consciousnesses” inhabiting the same brain [were badly overinterpreted](https://www.cell.com/trends/cognitive-sciences/fulltext/S1364-6613(17)30190-0).
+## **Neuroscience (humans)**
 
 * Existence of high-functioning (IQ ~ 100) **hydrocephalic** people. The hypothesis begins from extreme prior improbability; the effect of massive volume loss is claimed to be on average positive for cognition; the case studies are often questionable and involve little detailed study of the brains (e.g. 1970 scanners were not capable of the precision claimed).
 {{< spoiler text="Statistics" >}}
@@ -4024,10 +4245,6 @@ Korbmacher et al. (2022):
 ](https://www.gwern.net/Hydrocephalus)(total citations: )
 * Alex Maier writes in with [a cool 2007 case study](https://www.thelancet.com/journals/lancet/article/PIIS0140-6736(07)61127-1/fulltext) of a man who got to 44 years old before anyone realized his severe hydrocephaly, through marriage and employment. IQ 75 (i.e. d=-1.7), which is higher than I expected, but still far short of the original claim, d=0.
 {{< /spoiler >}}
-
-* **Readiness potentials** [seem to be actually causal](https://www.discovermagazine.com/mind/libet-and-free-will-revisited), not diagnostic. So Libet’s studies also do not show what they purport to. We still don’t have free will (since random circuit noise can tip us when the evidence is weak), but in a different way.
-
-* [No good evidence](https://www.npr.org/sections/13.7/2013/12/02/248089436/the-truth-about-the-left-brain-right-brain-relationship) for **left/right hemisphere dominance correlating with personality differences**. No clear hemisphere dominance at all in [this study](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0071275).
 
 * **Oxytocin on trust.** Intranasal administration of oxytocin increases trust in strangers in a laboratory setting. 
 {{< spoiler text="Statistics" >}}
@@ -4102,8 +4319,6 @@ Korbmacher et al. (2022):
 <br>
 
 ## **Psychiatry**
-
-* At most [extremely weak evidence](https://www.nature.com/articles/d41586-019-03268-y) that psychiatric hospitals (of the 1970s) could not detect sane patients in the absence of deception.
 
 * **Low self-esteem on poor mental health/psychological outcomes**. Small amount of slightly mixed evidence for some outcomes but not supported for most outcomes e.g. alcohol/smoking/drug use etc.
 {{< spoiler text="Statistics" >}}
@@ -4189,10 +4404,6 @@ Korbmacher et al. (2022):
 * Note from a professor friend: the idea of a dual-mating hypothesis itself is not in trouble: the specific menstrual cycle research doesn't seem to replicate well. However, to my knowledge the basic pattern of short vs long term relationship goals predicting [women's] masculinity preferences is still robust.
 {{< /spoiler >}}
 
-* **Menstrual cycle and lunar influence**
-
-* **Large parents have more sons** (Kanazawa); original analysis makes several errors and [reanalysis shows near-zero effect](https://sci-hub.se/10.1016/j.jtbi.2007.11.004). (Original effect size: 8% more likely.)
-
 * **Men’s strength in particular predicts opposition to egalitarianism**.
 {{< spoiler text="Statistics" >}}
 * Original paper: [Petersen et al](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=1798773) (194 citations).
@@ -4212,14 +4423,6 @@ Korbmacher et al. (2022):
 * Original effect size:
 * Replication effect size:
 {{< /spoiler >}}
-
-<br>
-
-## **Behavioral Genetics**
-
-* [No good evidence](https://slatestarcodex.com/2019/05/07/5-httlpr-a-pointed-review/) that **5-HTTLPR** is strongly linked to depression, insomnia, PTSD, anxiety, and more. See also [COMT and APOE](https://pubmed.ncbi.nlm.nih.gov/23012269/) for intelligence, [BDNF](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4414705/pdf/nihms653267.pdf) for schizophrenia, [5-HT2a](https://www.eurekaselect.com/59624/article) for everything.
-
-* Be very suspicious of any such “**candidate gene**” finding (post-hoc data mining showing large >1% contributions from a single allele). [0/18](https://www.gwern.net/docs/genetics/heritable/2019-border.pdf) replications in candidate genes for depression. [73% of candidates](https://ajp.psychiatryonline.org/doi/full/10.1176/appi.ajp.2011.11020191) failed to replicate in psychiatry in general. [One big journal](https://sci-hub.se/10.1007/s10519-011-9504-z) won’t publish them anymore without several accompanying replications. [A huge GWAS](https://www.biorxiv.org/content/10.1101/261081v2.full), n=1 million: “We find no evidence of enrichment for genes previously hypothesized to relate to risk tolerance.”
 
 <br>
 
@@ -4264,14 +4467,6 @@ Korbmacher et al. (2022):
 * Replication effect size:
 {{< /spoiler >}}
 
-* **First instinct fallacy**
-
-* **Strephosymbolia/ mirror reading and writing in dyslexia**
-​
-* **Pen mightier than the screen**
-
-* **Sleep assisted learning**
-
 <br>
 
 ## **Health Psychology**
@@ -4288,33 +4483,27 @@ Korbmacher et al. (2022):
 
 ## **Political Psychology**
 
-* **Stereotype threat on gender differences in political knowledge**. Making gender stereotypes about political knowledge salient decreases womens’ performance on political knowledge tests.   
+* **Stereotype threat on gender differences in political knowledge**, the idea that making gender stereotypes about political knowledge salient decrease womens’ performance on political knowledge tests. The replication effort showed no significant effect of gender stereotype activation on womens’ performance on a political knowledge test. ​
 {{< spoiler text="Statistics" >}}
 * Status: Not replicated.
-* Original paper: [Gender Differences in Political Knowledge: Bringing Situation Back In](https://www.cambridge.org/core/journals/journal-of-experimental-political-science/article/gender-differences-in-political-knowledge-bringing-situation-back-in/4897AD1BEF5BC95E164F08BDFB5ED1AF). Ihme and Tausendpfund 2018 2 experiments with Study 1: N= 603; Study 2: N=377  [citation=18 (GS, February2022)]​.
-* Critiques: Azevedo et al. [Preprint, not available] [n=1502, citations=NA]. 
-* [n=120, citations=757(GS, October 2021)], 
-* Original effect size: Study 1: partial _η<sup>2</sup>_ = 0.12; Study 2: partial _η<sup>2</sup>_ = 0.03 ​
-* Replication effect size: partial _η<sup>2</sup>_ = 0.00​.
+* Original paper: [Gender Differences in Political Knowledge: Bringing Situation Back In](https://www.cambridge.org/core/journals/journal-of-experimental-political-science/article/gender-differences-in-political-knowledge-bringing-situation-back-in/4897AD1BEF5BC95E164F08BDFB5ED1AF), Ihme & Tausendpfund (2018). Study 1: N= 603, shows that women are rated as less politically knowledgeable than men. Study 2: N=377; Female and male participants are randomly assigned to one of three conditions (stereotype not activated - control, stereotype activated by asking participants to report their gender, stereotype activated by a statement that there are gender differences in performance on the test participants are about to take) and answer a questionnaire assessing political knowledge. [citation=17 (GS, January 2022)]​.
+* Critiques: [Azevedo, Micheli & Bolesta [Preprint] ](https://osf.io/8feku/)[n=1502, citations=NA]. Results showed a non-significant interaction between stereotype activation and gender on political knowledge scores.  
+* Original effect size: partial η<sup>2</sup> =0.33​.
+* Replication effect size: partial η<sup>2</sup> =0.00​.
 {{< /spoiler >}}
-
-* **Avoidance of dissonance-arousing situations**
-
-* **Depressed-entitlement effect among women**
-
-* **Moral foundations across political spectrum**
-
-<br>
-
-## **Comparative Psychology**
-
-* **Joint attention in non-human primates**, non-human primates fail to follow the gaze or pointing of another agent, using the object choice task.
 
 <br>
 
 ## **Evolutionary Linguistics**
 
-* **Learnability (reproduction)** of universal hierarchies of the grammatical systems of the world languages, one sentence definition.
+* **Typological Prevalence Hypothesis**. Claims that  cross-linguistically more prevalent distinctions are easier to learn, or the more common a certain distinction or way of categorizing across languages, the more cognitively natural (and easily learnable) for humans it should be. This effect is explored for the grammatical structure of evidentiality, or grammatical marking of information source in an utterance.
+{{< spoiler text="Statistics" >}}
+* Status: mixed
+* Original paper: [‘Are cross-linguistically frequent semantic systems easier to learn? The case of evidentiality’](https://par.nsf.gov/biblio/10147297), Saratsli et al.  2019; between-group study design, n1=34, n2=34, n3=33. [citation=1(GS, June 2022)]​.
+* Critiques: [Saratsli et al. 2020](https://www.sciencedirect.com/science/article/abs/pii/S0010027720300135?via%3Dihub) [n1=111, n2=101, n3=98; citations=13(GS, June 2022)]. [Saratsli & Papafragou 2021](https://escholarship.org/uc/item/5560w80r) [n=64, citation=0(GS, June 2022)]. [Ilchovska & Culbertson 2019](https://publikationen.uni-tuebingen.de/xmlui/handle/10900/91253) [n=36, citations=0(GS, June 2022)]. 
+* Original effect size: N/A
+* Replication effect size: Saratsli et al. (2020): NA. Saratsli & Papafragou: NA. Ilchovska & Culbertson: NA.
+{{< /spoiler >}}
 
 <br>
 
@@ -4336,6 +4525,18 @@ Korbmacher et al. (2022):
 * Critiques: [Cook and Howell 2014](https://discovery.ucl.ac.uk/id/eprint/1508266/1/Cooketal(2014)Bullying%20in%20Children%20and%20Teenagers%20Who%20Stutter%20and%20the%20Relation%20to%20Self-Esteem,%20Social%20Acceptance,%20and%20Anxiety.pdf) [observational, n=59,  citations=16, (GS,  February 2022)]
 * Original effect size: M(SD)stuttering boys = 56.5 (25.9), M(SD)boys normgroup: 36.5(25.9); M(SD)stuttering girls = 43.1(35.8), M(SD)girls normgroup=27.7(25.7)
 * Replication effect size: Cook and Howell M(SD) = 2.9(0.49) (children: adolescent: r(bullying, self-esteem = .387)
+{{< /spoiler >}}
+
+<br>
+
+## **Experimental Philosophy**
+
+* **Fake barn cases.** “Older participants are less likely than younger participants to attribute knowledge in fake-barn cases”
+{{< spoiler text="Statistics" >}}
+* Status: not replicated
+* Original paper: [Epistemic Intuitions in Fake-Barn Thought Experiments](https://www.cambridge.org/core/services/aop-cambridge-core/content/view/6AD2F86E89A10808217EB60D462BFFA0/S1742360014000070a.pdf/epistemic-intuitions-in-fake-barn-thought-experiments.pdf), Colaço et al. (2014) between subjects n=234 (n=85 in the relevant analysis) [citation=181 (GS, October 2022)] Critiques: [Bergenholtz et al. (2021)](https://www.cambridge.org/core/services/aop-cambridge-core/content/view/39273E8AAFAFC2FEA0AE25D627A860BD/S1742360021000125a.pdf/further_insights_on_fakebarn_cases_and_intuition_variation.pdf) [n=348, citations=0 (GS, October 2022)] 
+* Original effect size: r = −0.32 
+* Replication effect size: No effect size given (because of non-significant effect)
 {{< /spoiler >}}
 
 <br>
