@@ -77,6 +77,7 @@ To further facilitate the creation, the updating, improvement, and maintenance o
 * [Diversifying Research Methods Syllabi](https://osf.io/y5gr9/)
 * [Overcoming the Knowledge Barrier in Open Science](https://osf.io/bk6r7/)
 * [Error Tight: Exercises for Lab Groups to Prevent Research Mistakes (for labs but also applicable for teaching/mentoring)](https://www.carleton.edu/perception-lab/open-science/error-tight/)
+* [Research Integrity and Open Science I (PSYC123)](https://osf.io/km34v/wiki/PSYC123-Research%20Integrity%20and%20Open%20Science%201/)
 * [Good Science, Bad Science](http://www.ejwagenmakers.com/GSBS/GSBS.html)
 * [Methods for Reliable, Transparent, and Open Science](https://github.com/rouderj/transparent-science-course)
 * [Teaching Replication in Psychology: A Guide for Teachers and Students](https://osf.io/28r6g/)
