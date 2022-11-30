@@ -80,6 +80,7 @@ To further facilitate the creation, the updating, improvement, and maintenance o
 * [Research Integrity and Open Science I (PSYC123)](https://osf.io/km34v/wiki/PSYC123-Research%20Integrity%20and%20Open%20Science%201/)
 * [Good Science, Bad Science](http://www.ejwagenmakers.com/GSBS/GSBS.html)
 * [Methods for Reliable, Transparent, and Open Science](https://github.com/rouderj/transparent-science-course)
+* [Research Transparency and Reproducibility: A Complementary Module for All](https://osf.io/qw52b/)
 * [Teaching Replication in Psychology: A Guide for Teachers and Students](https://osf.io/28r6g/)
 * [Credible Science Course](https://osf.io/78bhv/)
 * [Teaching and Mentoring Open Science Syllabus Module & Assignment Ideas](https://osf.io/3dp52) and [Mentoring Statement](https://osf.io/gqpc9)
