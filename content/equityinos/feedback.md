@@ -73,5 +73,8 @@ We invited stakeholders to engage in an open scholarship activity via sharing th
 
 **We concluded** that Open Science practices can promote diversity, inclusion, and equity; however, equity and inclusion are not inherent outcomes of open science. *The also agreed that the goal of our group is to consider how open science practices can better consider the needs and concerns of historically excluded and otherwise marginalized scholars, educators, and consumers of research*. This is because while the adoption of open science practices is laudable and can eliminate some of the barriers to success that result from status (or resource-based gatekeeping), it does not obviate the need for careful consideration of equity and inclusion within these practices. Preregistration, making data and code open, and sharing preprints have hidden costs for many scholars—both where they require additional work from resource-strapped researchers, and where the academic system and practices present an unequal burden across different research institutions, methodologies, and contexts (e.g., [Nathan Matias et al., 2022](https://www.nature.com/articles/s41562-022-01495-4); [Zhang et al., 2022](https://www.science.org/doi/10.1126/sciadv.abq7056)). *Our priority is to eliminate those costs by removing barriers to entry and restructuring practices with equity at the center.* 
 
+<br>
+<br>
 
- 
+ -------------
+Organized by <a href="https://as.tufts.edu/psychology/people/faculty/ayanna-thomas">Ayanna Thomas</a>,  <a href="https://psych.uw.edu/people/2569">Yuichi Shoda</a>, <a href="https://eccl.mit.edu/team-profiles/melissa-kline-struhl">Melissa Kline Struhl</a>, & <a href="http://flavioazevedo.com/">Flavio Azevedo</a>. 
