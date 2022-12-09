@@ -51,6 +51,10 @@ subtitle = "Aligning social justice & representation with open scholarship, rigo
  css_class = ""
 +++
 
-<br>
+****
+
+<p style="text-align:right; color:#00203f;">
+<i>An initiative by the partnership between the <a href="https://www.sparksociety.org/">SPARK Society</a>, <a href="hhttps://improvingpsych.org/">SIPS</a>, & <a href="https://forrt.org">FORRT</a>.</i>
+</p>
 
 
