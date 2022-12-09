@@ -8,8 +8,8 @@ headless = true  # This file represents a page section.
 active = true  # Activate this widget? true/false
 weight = 10  # Order that this section will appear.
 
-title = "Aligning social justice & representation with open scholarship, rigor, & reproducible research"
-subtitle = ""
+title = "Equity in Open Scholarship"
+subtitle = "Aligning social justice & representation with open scholarship, rigor, & reproducible research"
 
 [design]
   # Choose how many columns the section has. Valid values: 1 or 2.
