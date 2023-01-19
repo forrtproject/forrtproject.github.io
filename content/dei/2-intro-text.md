@@ -53,11 +53,21 @@ subtitle = "Diversity, Equity and Inclusion"
 
 <br>
 
-The current model of scientific production and higher-education reproduces global inequalities. Indeed, perhaps the most overlooked aspect in higher education -and even in the tenets of modern scholarship like transparency and open practices- is that of social justice. Unfortunately, academia is still a privilege that few can afford. As Academia is built on the same foundations of society itself, it inherits many of society’s systematic barriers hindering the success of traditionally marginalized groups – whether based on gender, race, ethnicity, origin or social class. In science, wealthy and elite-educated individuals are over-represented, as are males, whites, and citizens of western, educated,  industrialized, rich and democratic (WEIRD) countries (Lee, 2016; Henrich, Heine & Norenzayan, 2010).
+The current model of scientific production and higher-education reproduces global inequalities. Indeed, perhaps the most overlooked aspect in higher education—and even in the tenets of modern scholarship like transparency and open practices—is that of social justice. Unfortunately, academia is still a privilege that few can afford. As Academia is built on the same foundations of society itself, it inherits many of society’s systematic barriers hindering the success of traditionally marginalized groups – whether based on gender, race, ethnicity, origin or social class. In science, wealthy and elite-educated individuals are over-represented, as are males, whites, and citizens of western, educated,  industrialized, rich and democratic (WEIRD) countries (Lee, 2016; Henrich, Heine & Norenzayan, 2010).
+
+In addition, as open science principles begin to be more commonly accepted and valued in our research communities, there is a risk that these scientists will face structural barriers to participating in the communities where these tools are developed and taught. While open science practices have enormous potential to benefit *some* researchers, it is likely that scholars from currently underrepresented groups may not benefit—at least to the same extent—from open science practices. In other words, equity and inclusion are not guaranteed by open science practices without an active effort to achieve them.
 
 To mitigate the detrimental effects on the access to, learning about, and production of scientific content, it is paramount to create conditions for knowledge to become a public good - accessible to all members of society (Steltenpohl, Anderson, & Daniels, 2019). One way to achieve this goal is to integrate the teaching and mentoring of subject matters with open and reproducible research practices. Higher education institutions, and scholars therein, can then maximize every student’s likelihood of present and future engagement with resources, facilitating the acquisition of knowledge and bolstering opportunities that would otherwise be inaccessible to disadvantaged individuals. In leveling the playing field, abiding scholars and institutions would contribute towards greater diversity and democratization of science, and improved scientific literacy, consumption, and participation.
 
-Hence, we at FORRT, have devised at least 3 ways to be proactive in the outreach to the community.
+Hence, we at FORRT, have devised ***4 ways*** to be proactive in the outreach to the community.
+
+<br>
+
+* FORRT's ***Equity in Open Scholarship***
+   - Together with the <a href="https://www.sparksociety.org/">SPARK Society</a> and <a href="hhttps://improvingpsych.org/">SIPS</a>, we are aligning social justice & representation with open scholarship, rigor, & reproducible research*, where our aim is to focus our discussion on the needs and concerns of researchers from historically marginalized groups.
+   - Please check our [web portal for advocacy, events, and collated resources](/equityinos).
+
+<br>
 
 * FORRT's ***Open Office Hours***
    - Periodically, and at least once a month, the FORRT community will hold its Open and Reproducible Science *"office hours"* for anyone in the world wishing to learn, adopt, and disseminate open and reproducible science tenets, as well as those with interest or questions about teaching and mentoring these concepts, and/or raising awareness of its pedagogical implications and its associated challenges (e.g., curricular reform, epistemological uncertainty, methods of education).

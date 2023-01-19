@@ -138,6 +138,12 @@
 
 
 [[main]]
+  name = "Equity in Open Science"
+  url = "/equityinos"
+  weight = 35
+  parent = "nexus"
+
+[[main]]
   name = "Educators' Corner"
   url = "/educators-corner"
   weight = 35
