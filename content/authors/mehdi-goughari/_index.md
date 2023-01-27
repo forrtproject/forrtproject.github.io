@@ -1,10 +1,10 @@
 ---
 # Display name
-name: "Alaa Aldoh"
+name: "Mehdi Shaahdadi Goughari"
 
 # Username (this should match the folder name and the name on publications)
 authors:
-- Name "Alaa Aldoh"
+- Name "Mehdi Shaahdadi Goughari"
 
 # Is this the primary user of the site?
 superuser: false
@@ -41,7 +41,7 @@ education:
 social:
 - icon: envelope
   icon_pack: fas
-  link: 'mailto: az.aldoh@gmail.com'  # For a direct email link, use "mailto:test@example.org".
+  link: 'mailto: Shaahdadimehdi@gmail.com'  # For a direct email link, use "mailto:test@example.org".
 # Link to a PDF of your resume/CV from the About widget.
 # To enable, copy your resume/CV to `static/files/cv.pdf` and uncomment the lines below.
 # - icon: cv
