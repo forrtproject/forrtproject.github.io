@@ -101,7 +101,7 @@ This is a dynamic project that is organized in four stages. Currently, we are in
 
 ## **How to contribute?**
 
-Anyone can add new effects or edit existing effects [by joining our initiative on Slack](https://join.slack.com/t/forrt/shared_invite/enQtODMwODI0OTk4ODgzLTM0ZTQ3NDk5MzA1ZjBmNWJjYTVlN2Y2YTk0ZTJhYTY5NDliMDYzMjg2MWE0ZDRhOTY0ZDY3OTRlNDA4ODQ3NjQ) and then [following the instructions in our reversals g-doc](https://docs.google.com/document/d/1B14wGIemTP6OL5upjh93fCqjly5MNANHtXixSD_Yl18/edit?usp=sharing). Currently we are focusing on **finishing already existing effects**.
+Anyone can add new effects or edit existing effects [by joining our initiative on Slack](https://join.slack.com/t/forrt/shared_invite/enQtODMwODI0OTk4ODgzLTM0ZTQ3NDk5MzA1ZjBmNWJjYTVlN2Y2YTk0ZTJhYTY5NDliMDYzMjg2MWE0ZDRhOTY0ZDY3OTRlNDA4ODQ3NjQ) and then [following the instructions in our reversals g-doc](https://docs.google.com/document/d/1niQvzB8tpkgXJ1ZbfuwqGRjmiMysu_3WIVe_SyQA0fc/edit?usp=sharing). Currently we are focusing on **finishing already existing effects**.
 
 <br><br>
 

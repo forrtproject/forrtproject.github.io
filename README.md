@@ -42,7 +42,7 @@ If you think you can help in any of the areas listed above (and we bet you can) 
 There, we can direct you towards relevant documents and tasks. 
 
 - But if you are interested in contributing to the **FORRT manuscript**, a google doc version can be found here: https://tinyurl.com/FORRTworkingDOC. 
-- If you are interested in contributing to the **Website**, see specific instructions below, and please check out FORRT’s Github (to-do)[https://github.com/forrtproject/forrt/projects/1] and [open issues](https://github.com/forrtproject/forrt). 
+- If you are interested in contributing to the **Website**, see specific instructions below, and please check out FORRT’s Github [to-do](https://github.com/forrtproject/forrt/projects/1) and [open issues](https://github.com/forrtproject/forrt). 
 
 Please note that it's very important to us that we maintain a positive and supportive environment for everyone who wants to participate. When you join us we ask that you follow our code of conduct in all interactions both on and offline.
 
@@ -53,7 +53,7 @@ This is the website for the **Framework for Open and Reproducible Research Train
 If you are a R user and like to work in RStudio (Best option for Windows user), you need to:
 1. Install R and R Studio + the [blogdown package](https://bookdown.org/yihui/blogdown/)
 2. Open R Studio, then go in the Menu > New Project... > Version Control > Git
-    * Repository URL: `git clone https://github.com/forrtproject/FORRT.git`
+    * Repository URL: `git clone https://github.com/forrtproject/forrtproject.github.io.git`
     * Project directory name: `FORRT` (or anything you want)
     * Create project as a subdirectory of: `click Browse and decide where you want put it`
 3. Before editing, try to run it locally using the blogdown Addins in RStudio.
@@ -61,7 +61,7 @@ If you are a R user and like to work in RStudio (Best option for Windows user), 
 
 To edit it locally, you will need to:
 1. Fork this GitHub repo (create a version of the FORRT repo on your own account).
-1. Clone this repo you just added in your own account: `git clone https://github.com/yourusername/forrt.github.io.git` in a terminal window 
+1. Clone this repo you just added in your own account: `git clone https://github.com/yourusername/forrtproject.github.io.git` in a terminal window 
 1. If [Hugo](https://gohugo.io/) is not installed, follow the steps in their documentation to install it on your machine: https://gohugo.io/getting-started/installing/
 1. To run the website locally, make sure you are still in `FORRT/` dir and type `hugo server -D` in your terminal.
    - The -D option is to serve the website including draft .md files.
