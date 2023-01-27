@@ -55,7 +55,7 @@ subtitle = ""
 
 <center>
 
-# Publications, Preprints & Policy
+# Publications, Preprints, Policy Briefs & op-eds
 
 </center>
 
@@ -63,7 +63,14 @@ subtitle = ""
 
 <br>
 
-## **FORRT's Glossary**
+<br>
+
+## Peer-reviewed publications 
+***
+
+<br>
+
+### **FORRT's Glossary**
 
 <br>
 
@@ -84,7 +91,7 @@ In response to the varied and plural new terminology introduced by the *open sch
 
 <br>
 
-## **The Role of Pedagogical Communities**
+### **The Role of Pedagogical Communities**
 
 <br>
 
@@ -102,24 +109,7 @@ We have written a manuscript entitled *Towards a culture of open scholarship: Th
 
 <br>
 
-## **Neurodiversity & Open Science in Academia**
-
-<br>
-
-We have written a manuscript entitled *Bridging Neurodiversity and Open Scholarship: How Shared Values Can Guide Best Practices for Research Integrity, Social Justice, and Principled Education* explaining that Neurodiversity is fundamental to the understanding of human behaviour and cognition and that neurodivergent individuals are often stigmatised, devalued, and objectified. The authors describe systematic barriers, issue with disclosure, directions on prevalence and stigma, intersection of neurodiversity and open scholarship, and provide recommendations that can lead to personal and systematic changes to improve acceptance of neurodivergent individuals. We also present the perspectives of neurodivergent authors, the majority of whom have personal lived experiences of neurodivergence(s), and discusses how research and academia can and should be improved in terms of research integrity, inclusivity and diversity. 
-
-***Status***: Our paper is **preprinted** 🎉🥳 in MetaArxiv. Cite as:
-> Elsherif, M. M., Middleton, S. L., Phan, J. M., Azevedo, F., Iley, B. J., Grose-Hodge, M., … Dokovova, M. (2022, June 20). Bridging Neurodiversity and Open Scholarship: How Shared Values Can Guide Best Practices for Research Integrity, Social Justice, and Principled Education. https://doi.org/10.31222/osf.io/k7a9p. [https://doi.org/10.31222/osf.io/k7a9p](https://doi.org/10.31222/osf.io/k7a9p)
-
-<br>
-
-<center> ________________________________ </center>
-
-<br>
-
-<br>
-
-## **FORRT's Lesson Plans**
+### **FORRT's Lesson Plans**
 
 <br>
 
@@ -143,7 +133,16 @@ Here's the Open Access version at PsyArxiv [https://doi.org/10.31234/osf.io/fgv7
 
 <br>
 
-## **FORRT's Impact of Open Scholarship on Students (Systematic Review)**
+
+<br>
+
+## Preprints 
+***
+
+<br>
+
+
+### **FORRT's Impact of Open Scholarship on Students (Scoping Review)**
 
 <br>
 
@@ -163,7 +162,24 @@ The **<font style="color:#0e2a38">preprint</font>** can [be found here (osf.io/9
 
 <br>
 
-## **FORRT's Manifesto**
+### **Neurodiversity & Open Scholarship in Academia**
+
+<br>
+
+We have written a manuscript entitled *Bridging Neurodiversity and Open Scholarship: How Shared Values Can Guide Best Practices for Research Integrity, Social Justice, and Principled Education* explaining that Neurodiversity is fundamental to the understanding of human behaviour and cognition and that neurodivergent individuals are often stigmatised, devalued, and objectified. The authors describe systematic barriers, issue with disclosure, directions on prevalence and stigma, intersection of neurodiversity and open scholarship, and provide recommendations that can lead to personal and systematic changes to improve acceptance of neurodivergent individuals. We also present the perspectives of neurodivergent authors, the majority of whom have personal lived experiences of neurodivergence(s), and discusses how research and academia can and should be improved in terms of research integrity, inclusivity and diversity. 
+
+***Status***: Our paper is **preprinted** 🎉🥳 in MetaArxiv. Cite as:
+> Elsherif, M. M., Middleton, S. L., Phan, J. M., Azevedo, F., Iley, B. J., Grose-Hodge, M., … Dokovova, M. (2022, June 20). Bridging Neurodiversity and Open Scholarship: How Shared Values Can Guide Best Practices for Research Integrity, Social Justice, and Principled Education. https://doi.org/10.31222/osf.io/k7a9p. [https://doi.org/10.31222/osf.io/k7a9p](https://doi.org/10.31222/osf.io/k7a9p)
+
+<br>
+
+<center> ________________________________ </center>
+
+<br>
+
+<br>
+
+### **FORRT's Manifesto**
 
 <br>
 
@@ -184,8 +200,53 @@ The **<font style="color:#0e2a38">preprint</font>** can [be found here (osf.io/b
 
 <br>
 
+<br>
 
-## **<font style="color:#4c1322">Policy</font>** | **Building Community**
+## op-ed*s* 
+***
+<br>
+
+📄 For the ***Observer***, of the Association for Psychological Science, on [Navigating Academia as Neurodivergent Researchers](https://www.psychologicalscience.org/observer/gs-navigating-academia-as-neurodivergent-researchers).
+
+{{< spoiler text= "Bibliographic Reference" >}} 
+
+Azevedo, F., Middleton, S., Mai Phan, J., Kapp, S., Gourdon-Kanhukamwe, A., Iley, B., Elsherif, M., & Shaw, J. J. (2022). Navigating Academia as Neurodivergent Researchers: Promoting Neurodiversity Within Open Scholarship. APS Observer.
+
+{{< /spoiler >}}
+
+<br>
+
+📃 For ***In-Mind Magazine***, on [What is Open Science and Why Does It Need a Glossary](https://de.in-mind.org/blog/post/was-ist-offene-wissenschaft-und-warum-braucht-sie-ein-woerterbuch).
+
+{{< spoiler text= "Bibliographic Reference" >}} 
+
+Azevedo, F., Baum, M., Hartmann, H., Micheli, L., Spitzer, L., & Wingen, T. (2022). What is "Open Science"? And why does it need a glossary? (Was ist „Offene Wissenschaft”? Und warum braucht sie ein Wörterbuch?). In-Mind Magazine.
+
+{{< /spoiler >}}
+
+<br>
+
+📜 For the ***Center of Open Science*** Blog, on [Integrating Open and Reproducible Science Principles into Higher Education](https://www.cos.io/blog/educating-in-the-open-scholarship-eara).
+
+{{< spoiler text= "Bibliographic Reference" >}} 
+
+Azevedo, F. (2022). Educating in the Open Scholarship Era: Integrating Open and Reproducible Science Principles into Higher Education. Center for Open Science (COS).
+
+{{< /spoiler >}}
+
+<br>
+
+<br>
+
+<br>
+
+## Policy Briefs 
+***
+
+<br>
+
+
+### **<font style="color:#4c1322">Policy</font>** | **Building Community**
 
 <br>
 
@@ -202,7 +263,7 @@ The **<font style="color:#0e2a38">submission</font>** can [be found here](Azeved
 
 <br>
 
-## **<font style="color:#4c1322">Policy</font>** | **Briefing Note for Degree Accrediting Societies**
+### **<font style="color:#4c1322">Policy</font>** | **Briefing Note for Degree Accrediting Societies**
 
 <br>
 

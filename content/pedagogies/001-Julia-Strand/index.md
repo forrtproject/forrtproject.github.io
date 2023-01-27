@@ -140,3 +140,10 @@ See Julia’s response to all these technical questions in this great video she 
 ***Suggested Citation***
 
 Strand, J. (2020) Open and Reproducible Science walks into a classroom: Insights from teaching a course on Psychology’s Credibility Revolution. *FORRT Pedagogies*. https://doi.org/10.17605/OSF.IO/ZPB8A
+
+**Team-Pedagogy Contributors**:
+________
+
+[Leticia Micheli](mailto:l.rettore.micheli@fsw.leidenuniv.nl), Leiden University, the Netherlands.
+
+[Flavio Azevedo](mailto:fa441@cam.ac.uk), Cambridge University, UK.
