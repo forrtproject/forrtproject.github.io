@@ -51,37 +51,13 @@ subtitle = "Integrating neurodiversity and open scholarship"
  css_class = ""
 +++
 
-# About the Team 
-
-## Our Goals
+# Our Goals
 
 This team is responsible for discussing how open scholarship can be used to support the neurodiversity movement and enhance connections between open scholarship and neurodiversity; and how neurodiversity and open scholarship can intersect to make higher education more inclusive and accessible.
 
 Although originally written about autistic people, we believe that this quote summarises our approach to all forms of neurodiversity:
 
 > ‘Their strengths and deficits do not deny them humanity but, rather, shape their humanity’ ([Grinker, 2010, p.173](https://anthrosource.onlinelibrary.wiley.com/doi/full/10.1111/j.1548-1352.2010.01087.x)).
-
-## History & Management
-
-Team Neurodiversity was founded in 2021 by Mahmoud Elsherif, Tamara Kalandaze and Amélie Gourdon-Kanhukamwe. Please see [our blog post for FORRT’s Educators’ Corner](https://forrt.org/educators-corner/010-neurodiversity/) for more information about how Team Neurodiversity was formed, why it is needed, and our plans for future work. At the moment, the group channel has over 70 members who come from Europe, North America and Asia.
-
-We have a rotating leadership team which changes every six months. To promote diverse and inclusive leadership, anyone can put themselves forward for this role, regardless of their experience.
-
-The current team leaders are Magdalena Grose-Hodge and Bethan Iley.
-
-Thank you to our previous team leaders: Amélie Gourdon-Kanhukamwe, Flávio Azevedo, and Mahmoud Elsherif.
-
-We’re always welcoming new members. You do not need to be neurodivergent to take part. [Find out more about getting involved with FORRT](https://forrt.org/about/get-involved/).
-
-## Team Neurodiversity’s Impact
-
-Our work has been featured in:
-
-- NASA’s Transformation To Open Science initiative, via an [interview with Team Neurodiversity member Flavio Azevedo](https://science.nasa.gov/open-science/transform-to-open-science/stories/dr-flavio-azevedo).
-- Stimpunks Foundation’s glossary of disability and neurodiversity terms, within the [entry for “neurodivergent”](https://stimpunks.org/glossary/neurodivergent/).
-- UNESCO’s Inclusive Policy Lab, in an [article by Team ND member Justin Sulik](https://en.unesco.org/inclusivepolicylab/analytics/trust-science-%E2%80%93-factor-culture-and-belief) about trust in science.
-- [Lancet correspondence](https://www.thelancet.com/journals/lancet/article/PIIS0140-6736(22)02486-2/fulltext?rss=yes) about internalised racism and medicine.
-- Multiple conferences, seminars and journal clubs (we’re available to talk - [get in contact](mailto:info@forrt.org) if you’re interested!).
 
 <br />
 
@@ -225,3 +201,29 @@ Team Neurodiversity member Jenny Mai Phan presented a talk titled “Neurodivers
 We recommend this talk for educators and researchers who wish to integrate intersectionality into their work. The talk outlined why neurodiversity and intersectionality should be embedded into open research teaching and mentorship. Jenny also provides useful strategies for achieving this.
 
 {{< youtube MKOhY381gxg >}}
+
+<br />
+
+# About the Team 
+
+## Team Neurodiversity’s Impact
+
+Our work has been featured in:
+
+- NASA’s Transformation To Open Science initiative, via an [interview with Team Neurodiversity member Flavio Azevedo](https://science.nasa.gov/open-science/transform-to-open-science/stories/dr-flavio-azevedo).
+- Stimpunks Foundation’s glossary of disability and neurodiversity terms, within the [entry for “neurodivergent”](https://stimpunks.org/glossary/neurodivergent/).
+- UNESCO’s Inclusive Policy Lab, in an [article by Team ND member Justin Sulik](https://en.unesco.org/inclusivepolicylab/analytics/trust-science-%E2%80%93-factor-culture-and-belief) about trust in science.
+- [Lancet correspondence](https://www.thelancet.com/journals/lancet/article/PIIS0140-6736(22)02486-2/fulltext?rss=yes) about internalised racism and medicine.
+- Multiple conferences, seminars and journal clubs (we’re available to talk - [get in contact](mailto:info@forrt.org) if you’re interested!).
+
+## History & Management
+
+Team Neurodiversity was founded in 2021 by Mahmoud Elsherif, Tamara Kalandaze and Amélie Gourdon-Kanhukamwe. Please see [our blog post for FORRT’s Educators’ Corner](https://forrt.org/educators-corner/010-neurodiversity/) for more information about how Team Neurodiversity was formed, why it is needed, and our plans for future work. At the moment, the group channel has over 70 members who come from Europe, North America and Asia.
+
+We have a rotating leadership team which changes every six months. To promote diverse and inclusive leadership, anyone can put themselves forward for this role, regardless of their experience.
+
+The current team leaders are Magdalena Grose-Hodge and Bethan Iley.
+
+Thank you to our previous team leaders: Amélie Gourdon-Kanhukamwe, Flávio Azevedo, and Mahmoud Elsherif.
+
+We’re always welcoming new members. You do not need to be neurodivergent to take part. [Find out more about getting involved with FORRT](https://forrt.org/about/get-involved/).
