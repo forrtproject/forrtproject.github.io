@@ -175,27 +175,33 @@
   parent = "nexus"
 
 [[main]]
+  name = "Neurodiversity"
+  url = "/neurodiversity"
+  weight = 39
+  parent = "nexus"
+
+[[main]]
   name = "Replications & Reversals"
   url = "/reversals"
-  weight = 39
+  weight = 40
   parent = "nexus"
 
 [[main]]
   name = "Self-Assessment"
   url = "/self-assessment"
-  weight = 40
+  weight = 41
   parent = "nexus"
 
 [[main]]
   name = "Summaries"
   url = "/summaries"
-  weight = 41
+  weight = 42
   parent = "nexus"
 
 [[main]]
   name = "Syllabus"
   url = "/syllabus"
-  weight = 42
+  weight = 43
   parent = "nexus"
 
 
