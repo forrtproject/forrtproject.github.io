@@ -84,7 +84,7 @@ This is a dynamic project that is organized in four stages. Currently, we are in
 
 1. **~~Proof of Concept Phase (adaptation of original project into FORRT, inclusion of effects from social and cognitive psychology, using Gavin Leech’s collection as a basis) → ~150 entries finished in 2021.~~**
 
-1. **Team Science Expansion Phase Across Disciplines** (crowd-sourcing entries and refine existing entries), started at the end of 2021 and planned until mid of 2023. Draft of first ‘output’ piece. Currently a total of 320+ effects documented, 220+ of those finished.
+1. **Team Science Expansion Phase Across Disciplines** (crowd-sourcing entries and refine existing entries), started at the end of 2021 and planned until mid of 2023. Draft of first ‘output’ piece. Currently a total of 435+ effects documented, 380+ of those finished.
 
 1. **Review Phase** (open review to identify inconsistencies, missing data, and errors), planned for the end of 2023. Finish first ‘output’ piece.
 
@@ -101,7 +101,9 @@ This is a dynamic project that is organized in four stages. Currently, we are in
 
 ## **How to contribute?**
 
-Anyone can add new effects or edit existing effects [by joining our initiative on Slack](https://join.slack.com/t/forrt/shared_invite/enQtODMwODI0OTk4ODgzLTM0ZTQ3NDk5MzA1ZjBmNWJjYTVlN2Y2YTk0ZTJhYTY5NDliMDYzMjg2MWE0ZDRhOTY0ZDY3OTRlNDA4ODQ3NjQ) and then [following the instructions in our reversals g-doc](https://docs.google.com/document/d/1niQvzB8tpkgXJ1ZbfuwqGRjmiMysu_3WIVe_SyQA0fc/edit?usp=sharing). Currently we are focusing on **finishing already existing effects**.
+Anyone can add new effects or edit existing effects [by joining our initiative on Slack](https://join.slack.com/t/forrt/shared_invite/enQtODMwODI0OTk4ODgzLTM0ZTQ3NDk5MzA1ZjBmNWJjYTVlN2Y2YTk0ZTJhYTY5NDliMDYzMjg2MWE0ZDRhOTY0ZDY3OTRlNDA4ODQ3NjQ) and then [following the instructions in our reversals g-doc](https://docs.google.com/document/d/1niQvzB8tpkgXJ1ZbfuwqGRjmiMysu_3WIVe_SyQA0fc/edit?usp=sharing). Currently we are focusing on **finishing already existing effects**. 
+
+All **past or current project contributors** are listed at the [bottom of this page](#contributors).
 
 <br><br>
 
@@ -4562,3 +4564,115 @@ Korbmacher et al. (2022):
     * [Nudge: Improving Decisions about Health, Wealth, and Happiness](https://www.penguinrandomhouse.com/books/304634/nudge-by-richard-h-thaler-and-cass-r-sunstein/) by Thaler and Sunstein focusing on Wansink, Baumeister, Dweck.
     * [Smarter: The New Science of Building Brain Power ](https://www.goodreads.com/en/book/show/18079605-smarter)by Dan Hurley focusing on Dual n-Back
     * [Peter Watts Is An Angry Sentient Tumor: Revenge Fantasies and Essays ](https://www.goodreads.com/book/show/45729865-peter-watts-is-an-angry-sentient-tumor)by Peter Watts
+
+<br>
+
+---------
+
+<br>
+
+## **Contributors**
+
+* Gavin Leech
+* Flavio Azevedo
+* Helena Hartmann
+* Mahmoud	M. Elsherif
+* Meng Liu
+* Alaa Aldoh
+* Aleksandrina Skvortsova
+* Charlotte R. Pennington
+* Shilaan Alzahawi
+* Siu Kit	Yeung
+* Samuel Guay
+* Leticia Micheli
+* Kamil Izydorczak
+* Balazs Aczel
+* Amélie Gourdon-Kanhukamwe
+* Biljana Gjoneska
+* Aoife O'Mahony
+* Chun-Yu Lin
+* Yvonne Oberholzer
+* Sau-Chin Chen
+* Robert M. Ross
+* Ekaterina Pronizius
+* Steven Verheyen
+* Merle-Marie Pittelkow
+* Tamara Kalandadze
+* Annalise LaPlume
+* Bradley J. Baker
+* Mirela Zaneva
+* Cameron Brick
+* Ali	H. Al-Hoorie
+* Oscar Lecuona
+* Arnon Weinberg
+* Maria Montefinese
+* Jan	P. Röer
+* Anya Butler
+* Max	Charles David Gattie
+* David Moreau
+* Patrícia Arriaga
+* Kathleen Schmidt
+* Nihan Albayrak-Aydemir
+* Veronica Diveica
+* Gerald H. Vineyard
+* Zlatomira G. Ilchovska
+* Gilad Feldman
+* Maximilian Maier
+* Hirotaka Imada
+* Julian Packheiser
+* Emir Efendic
+* Lina Koppel
+* Leigh Ann Vaughn
+* Nadia Adelina
+* Matthew C. Makel
+* Anabel Belaus
+* Elena Richert
+* Kai Li Chung
+* Anna Exner
+* Lukas Wallrich
+* Alina Herderich
+* Willem Plomp
+* Clove Haviva
+* Paul E. Plonski
+* David Zimmermann
+* David J. Bauer
+* Kimberly Lewis Meidenbauer
+* Aleksandra Tołopiło
+* Samuel Alarie
+* Veli-Matti Karhulahti
+* Malak El Halabi
+* Adrien Fillon
+* Subramanya Prasad Chandrashekar
+* Burak Tunca
+* Lukas Röseler
+* Niyatee Narkar
+* Jamie P. Cockcroft
+* Nuño Sempere
+* Zoran Pavlović
+* Sarah Jaubert
+* Wolf Vanpaemel
+* Marina Tiulpakova
+* Andis Draguns
+* Hilmar Brohmer
+* Farid Anvari
+* Felipe Fontana Vieira
+* Valeria Agostini
+* Alina Koppold
+* Christopher J. Graham
+* Alexandros Kastrinogiannis
+* Julia Wolska
+* Jason Hausenloy
+* Matthias F. J. Sperl
+* Maria Meier
+* Kevin Kamermans
+* Andrew Pua
+* Alma Jeftic
+* Jeffrey	R. Stevens
+* Thomas Rhys Evans
+* Ben	G. Farrar
+* Joris Frese
+* Kellen Mrkva
+* Jake Floyd
+* Alvin W. M. Tan
+* Sarah Jaubert
+* Halil Emre Kocalar
