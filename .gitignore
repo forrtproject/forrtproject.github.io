@@ -10,3 +10,4 @@ conda-env/
 *ipynb
 Pipfile
 Pipfile.lock
+/.vscode
