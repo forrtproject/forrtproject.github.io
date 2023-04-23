@@ -88,7 +88,7 @@ In 2022, FORRT has received a ***1st place*** award from the Atlantic Technologi
 
 <br>
 
-In 2022, FORRT has received a ***Grant-in-Aid award*** from the Society for the Improvement of Psychological Science for the FORRT's Neurodiversity initiative, receiving $1250.
+In 2022, FORRT has received a ***Grant-In-Aid to Reduce Barriers to Improving Psychological Science*** from the Society for the Improvement of Psychological Science for the FORRT's Neurodiversity initiative, receiving $1250.
 
 <br>
 
