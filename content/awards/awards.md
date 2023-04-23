@@ -93,7 +93,7 @@ Thanks to our amazing community, FORRT has become an ***award-winning*** grassro
 
 <br />
 
-<img src="sips.png" align="right" /> In 2022, FORRT received a ***Grant-in-Aid*** from the Society for the Improvement of Psychological Science for the FORRT's Neurodiversity initiative, receiving $1250.
+<img src="sips.png" align="right" /> In 2022, FORRT received a ***Grants-In-Aid to Reduce Barriers to Improving Psychological Science*** from the Society for the Improvement of Psychological Science for the FORRT's Neurodiversity initiative, receiving $1250.
 
 <br />
 
