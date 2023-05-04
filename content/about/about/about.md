@@ -128,6 +128,7 @@ FORRT supports this endeavor through a three-pronged approach:
 3. Modifying the academic incentive structure regarding teaching and mentoring through recognition and commendations of excellent teaching and mentoring; foster social justice through the opening and democratization of scientific-educational resources to those who otherwise would be educationally disenfranchised; and building a community with existing educational initiatives and strengthening our missions, identify and reduce redundancies, and streamline the advancement of open educational practices.  
   
   <i class="fas fa-arrow-alt-circle-right text-danger fa-1.5x"></i> [FORRT’s Toward Social Justice in Academia initiatives](/dei/)   
+  <i class="fas fa-arrow-alt-circle-right text-danger fa-1.5x"></i> [FORRT's Neurodiversity Team](/neurodiversity/)   
   <i class="fas fa-arrow-alt-circle-right text-danger fa-1.5x"></i> [FORRT’s Educators' Corner](/educators-corner/)   
   <i class="fas fa-arrow-alt-circle-right text-danger fa-1.5x"></i> [FORRT’s Publications](/publications/)   
   <i class="fas fa-arrow-alt-circle-right text-danger fa-1.5x"></i> [FORRT’s Institutional Partnerships](/about/partnerships)  
