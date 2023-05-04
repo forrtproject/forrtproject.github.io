@@ -71,29 +71,13 @@ subtitle = "---"
 <div class="row">
   <div class="column">
 
-<br>
+FORRT has won a series of awards and commendations for our work, including:
 
-In 2022, FORRT has received a ***1st place*** award from the Atlantic Technological University and the Open Science Community Galway for its several initiative aiming to help researchers integrate Open Science into their educational pipeline, receiving €200/£189.
+- The UK Reproducibility Network's Dorothy Bishop Prize
+- Open Science Community Amsterdam's OSC Award in the Open Educational Resources / Open Education / Open Online Courses category
+- An Open Scholarship Prize (1st Place) award from the Atlantic Technological University and the Open Science Community Galway
 
-<br>
-
-In 2022, FORRT has received a ***Grant-in-Aid award*** from the Society for the Improvement of Psychological Science for the FORRT's Neurodiversity initiative, receiving $1250.
-
-<br>
-
-In 2022, FORRT has received ***Open Scholarship Conference award*** from the Association for Learning Technology for its initiatives, receiving €200/£189.
-
-<br>
-
-In 2021, FORRT has received a ***Commendation*** from the [HiddenREF](https://hidden-ref.org/hidden-ref-award-ceremony/) for its initiatives advancing training materials and resources on open and reproducible science (see here for a [recording of the award ceremony](https://youtu.be/btjRNG0NANg?t=1070)).
-
-<br>
-
-In 2021, FORRT has received an ***Open Scholarship Award*** (2nd Place) from the [Open Scholarship Community Galway](https://osc-galway.ie/competition/) for its overall initiatives. 
-
-<br>
-
-In 2020, FORRT has received a ***Commendation*** from the [Society for the Improvement of Psychological Science](http://improvingpsych.org/mission/awards/) for its manuscript ["Introducing a Framework for Open and Reproducible Research Training (FORRT)"](https://osf.io/bnh7p/). 
+To find out more about these and more, read [FORRT's awards page](/awards).
 
 <br>
 
