@@ -299,11 +299,9 @@ The **<font style="color:#0e2a38">briefing note</font>** can [be found here](Par
 
 <br> 
 
-Currently, we are preparing three additional manuscripts. 
+Currently, we are preparing additional manuscripts. Some of these include:
 
 * As part of [FORRT's ***Reversals & Replication*** initiative](/reversals), Helena Hartmann, Alaah Aldoh, Meng Liu, Shilaan Alzahawi, Mahmoud Elsherif, Gavin Leech, Flavio Azevedo and others, are in the initial stages of writing a manuscript on *Reversals in Social Sciences*. As an open, crowd-sourced project, we are actively seeking collaborators wishing to help us with manuscript writing and project management. If you want to contribute or learn more about the project, [join the project's Slack channel](https://join.slack.com/t/forrt/shared_invite/enQtODMwODI0OTk4ODgzLTM0ZTQ3NDk5MzA1ZjBmNWJjYTVlN2Y2YTk0ZTJhYTY5NDliMDYzMjg2MWE0ZDRhOTY0ZDY3OTRlNDA4ODQ3NjQ), or email us at [reversals@forrt.org](mailto:reversals@forrt.org).
-
-* As part of [FORRT's ***Impact on Students*** initiative](/impact), Madeleine Pownall and Flavio Azevedo, along with a team of 80+ authors from the community, are writing up a manuscript on *The impact of open and reproducible scholarship on students’ attitudes, outcomes, and engagement: A review and synthesis of the evidence*. If you want to learn more about the project, [see this announcement on social media](https://twitter.com/FORRTproject/status/1453325222367698947), [join the project's Slack channel](https://join.slack.com/t/forrt/shared_invite/enQtODMwODI0OTk4ODgzLTM0ZTQ3NDk5MzA1ZjBmNWJjYTVlN2Y2YTk0ZTJhYTY5NDliMDYzMjg2MWE0ZDRhOTY0ZDY3OTRlNDA4ODQ3NjQ), or email us at [impact@forrt.org](mailto:impact@forrt.org).
 
 * As part of [FORRT's ***Summaries*** initiative](/summaries), Tamara Kalandadze, Leticia Micheli, Mahmoud Elsherif, Flavio Azevedo and others are writing a manuscript on *Integrating Open Scholarship into Teaching and Mentoring: Introducing Community-Sourced Summaries of Open Scholarship literature*. As an open, crowd-sourced project, we are open to adding collaborators wishing to help us with manuscript writing and project management. If interested, please contact the authors via [the project's Slack channel](https://join.slack.com/t/forrt/shared_invite/enQtODMwODI0OTk4ODgzLTM0ZTQ3NDk5MzA1ZjBmNWJjYTVlN2Y2YTk0ZTJhYTY5NDliMDYzMjg2MWE0ZDRhOTY0ZDY3OTRlNDA4ODQ3NjQ), or email us at [summaries@forrt.org](mailto:summaries@forrt.org).
 
