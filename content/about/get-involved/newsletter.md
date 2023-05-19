@@ -6,7 +6,7 @@
 widget = "blank"  # See https://sourcethemes.com/academic/docs/page-builder/
 headless = true  # This file represents a page section.
 active = true  # Activate this widget? true/false
-weight = 10  # Order that this section will appear.
+weight = 71  # Order that this section will appear.
 
 title = "Stay updated"
 subtitle = "Subscribe to our newsletter from FORRT to get the latest news about our initiatives."
