@@ -300,13 +300,7 @@ The **<font style="color:#0e2a38">briefing note</font>** can [be found here](Par
 
 <br> 
 
-Currently, we are preparing additional manuscripts. Some of these include:
-
-* As part of [FORRT's ***Reversals & Replication*** initiative](/reversals), Helena Hartmann, Alaah Aldoh, Meng Liu, Shilaan Alzahawi, Mahmoud Elsherif, Gavin Leech, Flavio Azevedo and others, are in the initial stages of writing a manuscript on *Reversals in Social Sciences*. As an open, crowd-sourced project, we are actively seeking collaborators wishing to help us with manuscript writing and project management. If you want to contribute or learn more about the project, [join the project's Slack channel](https://join.slack.com/t/forrt/shared_invite/enQtODMwODI0OTk4ODgzLTM0ZTQ3NDk5MzA1ZjBmNWJjYTVlN2Y2YTk0ZTJhYTY5NDliMDYzMjg2MWE0ZDRhOTY0ZDY3OTRlNDA4ODQ3NjQ), or email us at [reversals@forrt.org](mailto:reversals@forrt.org).
-
-* As part of [FORRT's ***Summaries*** initiative](/summaries), Tamara Kalandadze, Leticia Micheli, Mahmoud Elsherif, Flavio Azevedo and others are writing a manuscript on *Integrating Open Scholarship into Teaching and Mentoring: Introducing Community-Sourced Summaries of Open Scholarship literature*. As an open, crowd-sourced project, we are open to adding collaborators wishing to help us with manuscript writing and project management. If interested, please contact the authors via [the project's Slack channel](https://join.slack.com/t/forrt/shared_invite/enQtODMwODI0OTk4ODgzLTM0ZTQ3NDk5MzA1ZjBmNWJjYTVlN2Y2YTk0ZTJhYTY5NDliMDYzMjg2MWE0ZDRhOTY0ZDY3OTRlNDA4ODQ3NjQ), or email us at [summaries@forrt.org](mailto:summaries@forrt.org).
-
-* As part of [FORRT's ***Glossary*** initiative](/glossary), Sam Parsons, Flavio Azevedo, and others invite you to help us continue to improve this resource. We are interested in a wide range of contributions to improve existing definitions, extend the scope of the terms, as well as translating terms to improve accessibility. If interested, we have opened four live working documents (see [the landing page](https://docs.google.com/document/d/1BKzztg7srUeC_2Yn0b7cMbxp_vYMDlOnEYpxg_S2hWs/edit?usp=sharing) for instructions and links to working documents). Please read the instructions for contributors. We have prepared these to help guide constructive feedback and facilitate a smooth editorial process. You can also contact the authors via [the project's Slack channel](https://join.slack.com/t/forrt/shared_invite/enQtODMwODI0OTk4ODgzLTM0ZTQ3NDk5MzA1ZjBmNWJjYTVlN2Y2YTk0ZTJhYTY5NDliMDYzMjg2MWE0ZDRhOTY0ZDY3OTRlNDA4ODQ3NjQ), or email us at [glossary@forrt.org](mailto:glossary@forrt.org).
+We are currently preparing additional manuscripts on a range of topics. To find out more about what we're working on and how you can contribute, visit our [Get Involved page](/about/get-involved).
 
 <br>
 
