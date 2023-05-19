@@ -63,9 +63,9 @@ subtitle = "---"
   imgalttext = "Dynamic Projects" 
   imgside = "right"
   buttonurl = "about/get-involved"
-  buttondescr = "Read our publications"
+  buttondescr = "Get involved"
   name = "Ongoing Projects"
-  description = "FORRT has several ongoing dynamic projects. These team-science & citizen-science open contributorships are open to anyone willing to help. Read their [description here](about/get-involved/)."
+  description = "At any given time, FORRT has several ongoing, dynamic projects. These range from developing educational resources, to metascience research, to highlighting the perspectives of marginalized groups.  Our philosophy is rooted in community science and open contributorship: anyone willing to help can contribute to FORRT projects, including you!"
   
 [design.spacing]
   # Customize the section spacing. Order is top, right, bottom, left.
