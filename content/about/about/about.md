@@ -57,7 +57,7 @@ classtitle = "text-center"
 
 <br>
 
-In a nutshell, FORRT is a ***F***ramework for ***O***pen and ***R***eproducible ***R***esearch ***T***raining advancing research transparency, reproducibility, rigor, and ethics through pedagogical reform and meta-scientific research. 
+In a nutshell, FORRT is a ***F***ramework for ***O***pen and ***R***eproducible ***R***esearch ***T***raining which is advancing research transparency, reproducibility, rigor, and ethics through pedagogical reform and meta-scientific research. 
 
 FORRT provides a pedagogical infrastructure and open educational resources designed to support the teaching and mentoring of open and reproducible science. FORRT strives to (a) raise awareness of the pedagogical implications of open and reproducible science and its associated challenges (i.e., curricular reform, epistemological uncertainty, methods of education); (b) respond to calls to consider open scholarship as inclusive scholarship; (c) advocate for the opening and formal recognition of teaching and mentoring materials to facilitate access, discovery, and learning to those who otherwise would be educationally disenfranchised.
 
@@ -69,11 +69,11 @@ FORRT provides a pedagogical infrastructure and open educational resources desig
 
 <br>
 
-***What are FORRT goals?***
+***What are FORRT's goals?***
 
-1. Build together with educators a pathway towards the incremental adoption of open scholarship practices into higher education 
-1. Generate a conversation about the ethics and social impact of a higher-education pedagogy that emphasizes openness, epistemic uncertainty and research credibility
-1. Promote a reflection about the perceived importance of different academic activities and advocate for greater recognition of educational resources 
+1. Build, together with educators, a pathway towards the incremental adoption of open scholarship practices into higher education
+2. Generate a conversation about the ethics and social impact of a higher education pedagogy that emphasizes openness, epistemic uncertainty and research credibility
+3. Promote a reflection about the perceived importance of different academic activities and advocate for greater recognition of educational resources 
 
 <br>
 
@@ -103,11 +103,11 @@ Would you like to help us be or do better? Give us (anonymous) feedback in our [
 * Recently, the scientific community took steps to reflect a widespread awareness of, and call for, improved practices ushering in the “credibility revolution” including higher standards of evidence, preregistration, direct replication, transparency, and openness.
 * Structurally, three pillars were proposed to carry social sciences towards academic utopia:  opening scientific communication, restructuring incentives and practices, and collaborative and crowdsourced science. 
 
-However, ongoing attempts have neglected an essential aspect of the academic machinery: students. And indeed, current norms for the teaching and mentoring in higher-education are rooted in obsolete practices of bygone eras. Improving transparency and rigor of science is the responsibility of all who engage in it.
+However, ongoing attempts have neglected an essential aspect of the academic machinery: students. And indeed, current norms for the teaching and mentoring in higher education are rooted in the obsolete practices of bygone eras. Improving transparency and rigor of science is the responsibility of all who engage in it.
 
 ### The solution
 
-* In our view, a scientific utopia has a fourth pillar, whose principal goal is to familiarize higher-ED students, who are future consumers of science and perhaps themselves knowledge producers, with the intricacies of the process of science. 
+* In our view, a scientific utopia has a fourth pillar, whose principal goal is to familiarize higher education students, who are future consumers of science and may become knowledge producers, with the intricacies of the process of science. 
 * We believe the teaching and mentoring of reproducible and open research practices is the clearest indicator of the degree to which institutions and/or departments embody principles of credible science. 
 * This demonstration goes beyond paying lip service to best practices, and ensures that students are trained to engage in the best available scientific practices.
 

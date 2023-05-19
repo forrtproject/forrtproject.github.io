@@ -125,9 +125,10 @@ Mutual benefits include:
 - Abolishing barriers to education, facilitating career progression, and providing more opportunities for anyone to enter academia.
 - A move to emancipatory and participatory research methods, which centre on co-creation and include neurodivergent individuals in the whole research process (“nothing about us without us”, from conception to publication).
 
-A more in-depth discussion of the link between open scholarship and neurodiversity is available in [our position statement](https://osf.io/preprints/metaarxiv/k7a9p/). This is a longer document which outlines in-depth how neurodiversity links to open scholarship.
-
 {{< /expand >}}
+<br>
+
+A more in-depth discussion of the link between open scholarship and neurodiversity is available in [our position statement](https://osf.io/preprints/metaarxiv/k7a9p/). This is a longer document which explains how neurodiversity links to open scholarship.
 
 <br />
 
@@ -153,8 +154,6 @@ We celebrate neurodivergence, but also acknowledge that being a neurodivergent a
   * **[Autism Acceptance Week 2023](https://twitter.com/FORRTproject/status/1641097721745383424)**. Our autistic members shared what being autistic means to them, what they like about their autistic brains, what others can do to be more supportive.
 
 {{< /spoiler >}}
-
-
 
 ### Experience Survey (coming soon!)
 
