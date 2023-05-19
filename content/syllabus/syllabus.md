@@ -155,6 +155,7 @@ To further facilitate the creation, the updating, improvement, and maintenance o
 * [Open Science Education Syllabus by Neasa Boyle, Eduarda Centeno, Jens Dierkes, Rachel Heyard, Joyce Kao, Harini Lakshminarayanan, Franz Pöschel and Heidi Seibold](https://sites.google.com/openscienceeducation.org/ose)
 * [UNESCO Recommendation on Open Science Syllabus by Jennifer Miller](https://en.m.wikiversity.org/wiki/UNESCO_Recommendation_on_Open_Science)
 * [Evaluating What Works by Dorothy Bishop and Paul Thompson](https://bookdown.org/dorothy_bishop/Evaluating_What_Works/)
+* [Open Science and Reproducible Research (Karolinska Institutet) by Gustav Nilsonne](https://osf.io/6q3dz/)
 
 <br>
 

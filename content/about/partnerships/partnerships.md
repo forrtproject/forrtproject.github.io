@@ -57,7 +57,15 @@ classtitle = "text-center"
 
 <br>
 
-<img src="reproducibilitea.jpg" align="right" /> [The ReproducibiliTea (UKRN)](https://reproducibilitea.org/) is an ECR-led grassroots initiative that helps researchers create local Open Science journal clubs at their universities. Local journal clubs help build community for those interested in discussing diverse issues around open and reproducible research, improving research quality, research integrity, and more. Local members take ownership of how their journal club runs; whether they focus on reading and discussing papers (e.g. [using RTea's reading lists](https://rpt-rl.netlify.app/)), or holding workshops and tutorials, and even hosting guest speakers. Started in early 2018 at the University of Oxford, ReproducibiliTea has now spread to over 100 institutions in 25 different countries. ReproducibiliTea is completely volunteer run, and seeks to provide a unique and supportive community for members, who are predominantly Early Career Researchers.
+<img src="liberate-science.png" align="right" /> Many things about research can be improved, but too often we get stuck in preventing negative things from happening. [Liberate Science](https://libscie.org/) (est. 2019) is about growing positive alternatives to enable a better research environment. This is both for the research itself and the researcher, no matter the topic or where the researcher may be. Liberate Science's main project is [ResearchEquals](https://researchequals.com/?referrer=forrt), a modular publishing platform. This helps researchers document, communicate, and get credit for each step of the research process, not only the final report. [Join our Discord channel](https://discord.gg/SefsGJWWSw) if you'd like to talk with us!
+
+<br>
+
+---
+
+<br>
+
+<img src="reproducibilitea.png" align="right" /> [The ReproducibiliTea (UKRN)](https://reproducibilitea.org/) is an ECR-led grassroots initiative that helps researchers create local Open Science journal clubs at their universities. Local journal clubs help build community for those interested in discussing diverse issues around open and reproducible research, improving research quality, research integrity, and more. Local members take ownership of how their journal club runs; whether they focus on reading and discussing papers (e.g. [using RTea's reading lists](https://rpt-rl.netlify.app/)), or holding workshops and tutorials, and even hosting guest speakers. Started in early 2018 at the University of Oxford, ReproducibiliTea has now spread to over 100 institutions in 25 different countries. ReproducibiliTea is completely volunteer run, and seeks to provide a unique and supportive community for members, who are predominantly Early Career Researchers.
 
 <br>
 
@@ -116,7 +124,7 @@ classtitle = "text-center"
 
 <br>
 
-<img src="CREP.jpg" align="right" /> [The Collaborative Replications and Education Project (CREP)](http://www.crep-psych.org/) has as a mission to provide training, support, and professional growth opportunities for students and instructors completing replication projects, while also addressing the need for direct and direct+ replications of highly-cited studies in psychology (broadly). [Check out their OSF Repository to get started](https://osf.io/wfc6u/) or contact them at [CREP.Psych@gmail.com](mailto:CREP.Psych@gmail.com).
+<img src="CREP.png" align="right" /> [The Collaborative Replications and Education Project (CREP)](http://www.crep-psych.org/) has as a mission to provide training, support, and professional growth opportunities for students and instructors completing replication projects, while also addressing the need for direct and direct+ replications of highly-cited studies in psychology (broadly). [Check out their OSF Repository to get started](https://osf.io/wfc6u/) or contact them at [CREP.Psych@gmail.com](mailto:CREP.Psych@gmail.com).
 
 <br>
 
