@@ -76,7 +76,7 @@ We have written a manuscript entitled *Teaching open and reproducible scholarshi
 The **<font style="color:#0e2a38">preprint</font>** can [be found here (osf.io/9e526)](https://osf.io/preprints/metaarxiv/9e526/). 
 
 ***Status***: This paper is **published** 🎉🥳 in Royal Society Open Science. Cite as:
-> Pownall, M., Azevedo, F., König, L. M., Slack, H. R., Evans, T. R., Flack, Z., ... & FORRT (2023). Teaching open and reproducible scholarship: a critical review of the evidence base for current pedagogical methods and their outcomes. *Royal Society Open Science*. Advanced online publication. https://doi.org/10.1098/rsos.221255
+> Pownall, M., Azevedo, F., König, L. M., Slack, H. R., Evans, T. R., Flack, Z., ... & FORRT. (2023). Teaching open and reproducible scholarship: a critical review of the evidence base for current pedagogical methods and their outcomes. *Royal Society Open Science*, *10*(5), Article 221255. https://doi.org/10.1098/rsos.221255
 <br>
 
 <center> ________________________________ </center>
@@ -120,6 +120,7 @@ In response to the varied and plural new terminology introduced by the *open sch
 ***Status***: Our paper is **published** 🎉🥳 in Nature Human Behaviour. Cite as:
 > Parsons, S., Azevedo, F.,  Elsherif, M. M., Guay, S., Shahim, O. N., Govaart, G. H.,  Norris, E.,  O’Mahony, A., Parker, A. J., Todorovic, A., Pennington, C. R.,  Garcia-Pelegrin, E.,  Lazić, A., Robertson, O. M., Middleton, S. L., Valentini, B., McCuaig, J., Baker, B. J., Collins, E., ... Aczel, B. (2022). A Community-Sourced Glossary of Open Scholarship Terms.  *Nature Human Behaviour, 6*(3), 312-318. [https://doi.org/10.1038/s41562-021-01269-4](https://doi.org/10.1038/s41562-021-01269-4). 
 
+<div class='altmetric-embed' data-badge-type='medium-donut' data-doi="https://doi.org/10.31222/osf.io/kdqcw"></div>
 <div class='altmetric-embed' data-badge-type='medium-donut' data-doi="https://doi.org/10.1038/s41562-021-01269-4"></div>
 
 [Here's the [Open Access link](https://rdcu.be/cHsqM) to the copy-edited version at the publisher's website, and here's the [postprint](https://doi.org/10.31222/osf.io/kdqcw) which is the same as the published version (but OA and not copy-edited).]
