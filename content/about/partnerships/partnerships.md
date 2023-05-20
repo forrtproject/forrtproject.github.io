@@ -57,6 +57,12 @@ classtitle = "text-center"
 
 <br>
 
+<img src="cos.png" align="right" /> Founded in 2013, [COS](https://www.cos.io/) is a nonprofit organization with a mission to increase openness, integrity, and reproducibility of scientific research. COS pursues this mission by building communities around open science practices, supporting metascience research, and developing and maintaining free, open source software tools, including the [Open Science Framework (OSF)](https://osf.io/).
+
+<br>
+
+---
+
 <img src="liberate-science.png" align="right" /> Many things about research can be improved, but too often we get stuck in preventing negative things from happening. [Liberate Science](https://libscie.org/) (est. 2019) is about growing positive alternatives to enable a better research environment. This is both for the research itself and the researcher, no matter the topic or where the researcher may be. Liberate Science's main project is [ResearchEquals](https://researchequals.com/?referrer=forrt), a modular publishing platform. This helps researchers document, communicate, and get credit for each step of the research process, not only the final report. [Join our Discord channel](https://discord.gg/SefsGJWWSw) if you'd like to talk with us!
 
 <br>
@@ -98,7 +104,7 @@ classtitle = "text-center"
 
 <br>
 
-<img src="ReplicationWiki.jpg" align="right" /> [The ReplicationWiki ](https://replication.uni-goettingen.de/wiki/index.php/Main_Page) serves as a database of empirical studies in the social sciences. It informs about the availability of replication material for them and categorizes them by keywords, methods used, sources, type and geographic origin of data used, and by software used. It lists replication studies and their types and results as well as corrections and retractions. More than 4,600 studies are already listed as well as over 700 replications. The database helps social scientists to see which results have already been tested independently and how replications are published. For instructors it helps to easily identify practical examples, e.g., that for which a method was used that they want to teach and for which data and code are available in a software they can use with their students. 
+<img src="ReplicationWiki.png" align="right" /> [The ReplicationWiki ](https://replication.uni-goettingen.de/wiki/index.php/Main_Page) serves as a database of empirical studies in the social sciences. It informs about the availability of replication material for them and categorizes them by keywords, methods used, sources, type and geographic origin of data used, and by software used. It lists replication studies and their types and results as well as corrections and retractions. More than 4,600 studies are already listed as well as over 700 replications. The database helps social scientists to see which results have already been tested independently and how replications are published. For instructors it helps to easily identify practical examples, e.g., that for which a method was used that they want to teach and for which data and code are available in a software they can use with their students. 
 
 <br>
 
@@ -116,7 +122,7 @@ classtitle = "text-center"
 
 <br>
 
-<img src="Bits.png" align="right" /> [The Stanford Big Team Science (BiTS) Lab](https://bigteamsciencelab.github.io/) was established in 2021 to facilitate conversations between members of large-scale collaborations (both at Stanford and beyond) and to advance the work done by these groups. Affiliate organizations are Affiliate organizations FORRT, Lookit, ManyBabies, ManyBirds, ManyDogs, ManyPrimates, Psychological Science Accelerator (PSA), and Strengthening Democracy Challenge. [Check out their events](https://bigteamsciencelab.github.io/events/) on Authorship in Big Team Science.
+<img src="BITS.png" align="right" /> [The Stanford Big Team Science (BiTS) Lab](https://bigteamsciencelab.github.io/) was established in 2021 to facilitate conversations between members of large-scale collaborations (both at Stanford and beyond) and to advance the work done by these groups. Affiliate organizations are Affiliate organizations FORRT, Lookit, ManyBabies, ManyBirds, ManyDogs, ManyPrimates, Psychological Science Accelerator (PSA), and Strengthening Democracy Challenge. [Check out their events](https://bigteamsciencelab.github.io/events/) on Authorship in Big Team Science.
 
 <br>
 
@@ -140,7 +146,7 @@ classtitle = "text-center"
 
 <br>
 
-<img src="ABRIR.jpg" align="right" /> [ABRIR](http://www.abrirpsy.org) (Advancing Big-team Reproducible science through Increased Representation) was established as a response to the global need of increasing representation in how we conduct open and big-team science, and as a necessity to promote equity, diversity and inclusion in psychological science. It was ‘born’ during the PSACON2021, when five psychological researchers from different parts of the world (Asia, East Europe and Latin America) gathered and discussed the position of researchers from low-to-middle-income countries (LMICs). They concluded that researchers from LMIC face unique challenges when fulfilling participatory or leadership roles in big-team and open science networks. Likewise, large psychology consortia struggle to recruit participants and researcher leadership beyond WEIRD (Western, Educated, Industrialist, Rich & Democratic) populations. 
+<img src="ABRIR.png" align="right" /> [ABRIR](http://www.abrirpsy.org) (Advancing Big-team Reproducible science through Increased Representation) was established as a response to the global need of increasing representation in how we conduct open and big-team science, and as a necessity to promote equity, diversity and inclusion in psychological science. It was ‘born’ during the PSACON2021, when five psychological researchers from different parts of the world (Asia, East Europe and Latin America) gathered and discussed the position of researchers from low-to-middle-income countries (LMICs). They concluded that researchers from LMIC face unique challenges when fulfilling participatory or leadership roles in big-team and open science networks. Likewise, large psychology consortia struggle to recruit participants and researcher leadership beyond WEIRD (Western, Educated, Industrialist, Rich & Democratic) populations. 
 
 
 <br>
