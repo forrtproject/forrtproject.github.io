@@ -99,13 +99,13 @@ We have written a manuscript entitled *The replication crisis has led to positiv
 
 <br>
 
-> Korbmacher, M., Azevedo, F., Pennington, C. R., Hartmann, H., Pownall, M., Schmidt, K., Elsherif, M., Breznau, N., Robertson, O., Kalandadze, T., Yu, S., Baker, B. J., O'Mahony, A., Olsnes, J. Ø.-S., Shaw, J. J., Gjoneska, B., Yamada, Y., Röer, J. P., Murphy, J., Alzahawi, S., Grinschgl, S., Oliveira, C. M., Wingen, T., Yeung, S. K., Liu, M., König, L. M., Albayrak-Aydemir, N., Lecuona, O., Micheli, L., & Evans, T. (in press). The replication crisis has led to positive structural, procedural, and community changes. *Communications Psychology*.
+> Korbmacher, M., Azevedo, F., Pennington, C. R., Hartmann, H., Pownall, M., Schmidt, K., Elsherif, M., Breznau, N., Robertson, O., Kalandadze, T., Yu, S., Baker, B. J., O'Mahony, A., Olsnes, J. Ø.-S., Shaw, J. J., Gjoneska, B., Yamada, Y., Röer, J. P., Murphy, J., Alzahawi, S., Grinschgl, S., Oliveira, C. M., Wingen, T., Yeung, S. K., Liu, M., König, L. M., Albayrak-Aydemir, N., Lecuona, O., Micheli, L., & Evans, T. (in press). The replication crisis has led to positive structural, procedural, and community changes. *Communications Psychology*. https://doi.org/10.31222/osf.io/r6cvx.
 
 <br>
 
-The **<font style="color:#0e2a38">preprint</font>** can [be found here (osf.io/xxxx)](https://osf.io/preprints/metaarxiv/xxxxx). 
+The **<font style="color:#0e2a38">preprint</font>** can [be found here (osf.io/r6cvx)](https://doi.org/10.31222/osf.io/r6cvx).
 
-<div class='altmetric-embed' data-badge-type='medium-donut' data-doi="https://doi.org/10.31222/osf.io/xxxx"></div>
+<div class='altmetric-embed' data-badge-type='medium-donut' data-doi="https://doi.org/10.31222/osf.io/r6cvx"></div>
 
 
 <center> ________________________________ </center>
