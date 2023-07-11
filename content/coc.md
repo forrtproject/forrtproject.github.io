@@ -19,7 +19,7 @@ Our open community strives to:
 
 -   **Be friendly and patient.**
     
--   **Be welcoming**: We strive to be a community that welcomes and supports people of all backgrounds and identities. This includes, but is not limited to members of any race, ethnicity, culture, national origin, colour, immigration status, social and economic class, educational level, sex, sexual orientation, gender identity and expression, age, size, family status, abledness, political belief, religion, and mental and physical ability. We are welcoming of different communications, thinking styles and speeds (e.g. linear and non-linear communication, free thinking and written communication).
+-   **Be welcoming**: We strive to be a community that welcomes and supports people of all backgrounds and identities. This includes, but is not limited to members of any race, ethnicity, culture, national origin, colour, immigration status, social and economic class, educational level, sex, sexual orientation, gender identity and expression, age, size, family status, abledness, religion, and mental and physical ability. We are welcoming of different communications, thinking styles and speeds (e.g. linear and non-linear communication, free thinking and written communication).
 
     
 -   **Be considerate**: Your work may be used by other people, and you, in turn, may depend on the work of others. Any decision you take will affect users and colleagues, and you should take those consequences into account when making decisions. One should focus on what is best not just for them as individuals, but for the overall community. Remember that we’re an international community, so you might not be communicating in someone else’s primary language. 
@@ -40,7 +40,7 @@ Our open community strives to:
  		-	Any real or implied threat of physical harm.
  		-	Sustained disruption of speakers or events (verbally or physically)
  		-	Violent threats or language directed against another person.
- 		-	Trolling, insulting or derogatory comments, and personal or political attacks.
+ 		-	Trolling, insulting or derogatory comments, and personal attacks.
  		-	Discriminatory jokes and language.
  		-	The use of ableist, sexualized or violent language or imagery, and sexual attention or advances of any kind.
  		-	Posting (or threatening to post) other people’s personally identifying information (“doxing”).
