@@ -87,7 +87,7 @@ Secondly, FORRT defines misconduct in research as including acts of omission as 
 
 We encourage everyone to participate and are committed to building a community for all. Although we will fail at times, we seek to treat everyone both as fairly and equally as possible. Whenever a participant has made a mistake, we expect them to take responsibility for it. If someone has been harmed or offended, it is important to apologize to those affected by our mistakes. By listening carefully and respectfully, and doing our best to right the wrong, one is expected to learn from the experience.
 
-Although this list cannot be exhaustive, we explicitly honor diversity in age, gender, gender identity or expression, culture, ethnicity, language, neurodiversity, national origin, political beliefs, profession, race, religion, sexual orientation, socioeconomic status, and technical ability. We will not tolerate discrimination based on any of the protected characteristics above, including participants with disabilities.
+Although this list cannot be exhaustive, we explicitly honor diversity in age, gender, gender identity or expression, culture, ethnicity, language, neurodiversity, national origin, profession, race, religion, sexual orientation, socioeconomic status, and technical ability. We will not tolerate discrimination based on any of the protected characteristics above, including participants with disabilities.
 
 We also aim to foster a welcoming environment to several approaches to acquisition and accumulation of knowledge (i.e., epistemological pluralism) as a way to enrich perspectives raising awareness, addressing challenges, and implications of Open Scholarship to curricular reform, epistemological uncertainty, and methods of education.
 
