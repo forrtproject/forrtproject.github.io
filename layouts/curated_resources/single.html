@@ -18,11 +18,11 @@
                 {{with .Params.link_to_resource }} <a href="{{ . }}">
                     <p class="mb-1 pr-2 badge badge-light">Link to resource: {{.}}</p>
                 </a>{{end}}
-            <p class=" mb-1 pr-2"><strong>Type of resources: </strong>{{delimit .Params.Material_Type ", " }}</p>
-            <p class=" mb-1 pr-2"><strong>Education level(s): </strong>{{delimit .Params.Education_Level ", " }}</p>
-            <p class=" mb-1 pr-2"><strong>Primary user(s): </strong>{{delimit .Params.Primary_User ", " }}</p>
-            <p class=" mb-1 pr-2"><strong>Subject area(s): </strong>{{delimit .Params.Subject_Areas ", " }}</p>
-            <p class=" mb-1 pr-2"><strong>Language(s): </strong>{{ .Params.Language }}</p>
+            <p class=" mb-1 pr-2"><strong>Type of resources: </strong>{{delimit .Params.material_type ", " }}</p>
+            <p class=" mb-1 pr-2"><strong>Education level(s): </strong>{{delimit .Params.education_level ", " }}</p>
+            <p class=" mb-1 pr-2"><strong>Primary user(s): </strong>{{delimit .Params.primary_user ", " }}</p>
+            <p class=" mb-1 pr-2"><strong>Subject area(s): </strong>{{delimit .Params.subject_areas ", " }}</p>
+            <p class=" mb-1 pr-2"><strong>Language(s): </strong>{{delimit .Params.language ", " }}</p>
             </div>
             
             {{ partial "share" . }}
