@@ -93,7 +93,7 @@ This is a dynamic project that is organized in four stages. Currently, we are in
 
 {{% alert example %}}
 
- {{< hl >}}For the ***latest updates***, sent in October 2022 to every contributor, [please check this summarizing email](https://docs.google.com/document/d/1f_U3XSfkXaYoJg9ZxtUjmGLl1Gr_TeTzXQgeYbbTIbg) {{< \hl >}}
+ {{< hl >}}For the ***latest updates***, sent in October 2022 to every contributor, [please check this summarizing email](https://docs.google.com/document/d/1f_U3XSfkXaYoJg9ZxtUjmGLl1Gr_TeTzXQgeYbbTIbg) {{< /hl >}}
 
 {{% /alert %}}
 
