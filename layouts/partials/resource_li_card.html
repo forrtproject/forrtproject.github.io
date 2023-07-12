@@ -17,7 +17,7 @@
 {{/* Get metedata. */}}
 
 {{ $resource := ($item.Resources.ByType "image").GetMatch "*featured*" }}
-{{ $js_tag_classes := delimit (apply (apply $item.Params.FORRT_Clusters "replace" "." " " "-") "printf" "js-id-%s" ".") " " }}
+{{ $js_tag_classes := delimit (apply (apply $item.Params.FORRT_clusters "replace" "." " " "-") "printf" "js-id-%s" ".") " " }}
 
 <div class="project-card project-item isotope-item py-1 {{ $js_tag_classes | safeHTMLAttr }}">
   <div class="card">
