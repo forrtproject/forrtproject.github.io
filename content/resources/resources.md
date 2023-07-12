@@ -33,7 +33,7 @@ advanced:
   css_class: ""
 ---
 
-There are more than 700 resources submitted so far in our database. We are currently curating a new and improved version that is compliant with OER Commons for greater findability, accessibility, interoperability, and reusability (FAIR) of these resources.
+There are almost 900 resources submitted so far in our database. We are currently curating a new and improved version that is compliant with OER Commons for greater findability, accessibility, interoperability, and reusability (FAIR) of these resources.
 
 <br>
 
