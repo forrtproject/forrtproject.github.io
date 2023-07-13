@@ -59,125 +59,167 @@ subtitle = ""
 
 </center>
 
-<br>
+<br><br><br>
 
-<br>
 
-<br>
-
-## Peer-reviewed publications 
+## Academic peer-reviewed publications 
 ***
 
 <br>
+
+### **The Impact of Open Scholarship on Students' Learning Outcomes (Scoping Review)**
+
+<br>
+
+We have written a manuscript entitled *Teaching open and reproducible scholarship: a critical review of the evidence base for current pedagogical methods and their outcomes*. This manuscript describes the available (empirical) evidence of the impact (and importance) of integrating open scholarship into higher education, its benefits and challenges on three specific areas: students’ (a) scientific literacy; (b) engagement with science; and (c) attitudes towards science. This paper was borne out of colleagues reporting a need for something tangible to take to Heads of Departments to show pedagogical rationale for open scholarship (above and beyond the moral/'good for science' case that wasn't always being heard on the ground). Cite as:
+
+<br>
+
+> Pownall, M., Azevedo, F., König, L. M., Slack, H. R., Evans, T. R., Flack, Z., ... & FORRT. (2023). Teaching open and reproducible scholarship: a critical review of the evidence base for current pedagogical methods and their outcomes. *Royal Society Open Science*, *10*(5), Article 221255. https://doi.org/10.1098/rsos.221255
+
+<br>
+
+The **<font style="color:#0e2a38">preprint</font>** can [be found here (osf.io/9e526)](https://osf.io/preprints/metaarxiv/9e526/). 
+
+
+<div class='altmetric-embed' data-badge-type='medium-donut' data-doi="https://doi.org/10.31222/osf.io/9e526"></div>
+<div class='altmetric-embed' data-badge-type='medium-donut' data-doi="https://doi.org/10.1098/rsos.221255"></div>
+
+<center> ________________________________ </center>
+
+<br><br>
+<br><br>
+
+
+### Improvements since the Replication Crisis: The Structural, Procedural, and Community Changes
+
+<br>
+
+We have written a manuscript entitled *The replication crisis has led to positive structural, procedural, and community changes*. This manuscript reviews how research structures, procedures and communities have changed in response to the replication crisis, showing that the replication "crisis" has been a positive *credibility revolution*. We also outline how improvements can continue to be made by accounting for all three levels. This manuscript was born out of the fact that much of the literature on the Replication Crisis has focused on understanding the potential underlying causes of low replicability, and framing solutions as a matter of individual researcher reform, and our community wanted to provide a wider perspective on what has been learnt since the crisis by highlighting the role of structural, procedural factors, and evidencing the rapid progress made by social scientists as a response.  Cite as:
+
+<br>
+
+> Korbmacher, M., Azevedo, F., Pennington, C. R., Hartmann, H., Pownall, M., Schmidt, K., Elsherif, M., Breznau, N., Robertson, O., Kalandadze, T., Yu, S., Baker, B. J., O'Mahony, A., Olsnes, J. Ø.-S., Shaw, J. J., Gjoneska, B., Yamada, Y., Röer, J. P., Murphy, J., Alzahawi, S., Grinschgl, S., Oliveira, C. M., Wingen, T., Yeung, S. K., Liu, M., König, L. M., Albayrak-Aydemir, N., Lecuona, O., Micheli, L., & Evans, T. (in press). The replication crisis has led to positive structural, procedural, and community changes. *Communications Psychology*. https://doi.org/10.31222/osf.io/r6cvx.
+
+<br>
+
+The **<font style="color:#0e2a38">preprint</font>** can [be found here (osf.io/r6cvx)](https://doi.org/10.31222/osf.io/r6cvx).
+
+<div class='altmetric-embed' data-badge-type='medium-donut' data-doi="https://doi.org/10.31222/osf.io/r6cvx"></div>
+
+
+<center> ________________________________ </center>
+
+
+<br><br>
+<br><br>
+
+### Participatory Research Primer
+
+<br>
+
+We have written a manuscript entitled *Opening up understanding of neurodiversity: A call for applying participatory and open scholarship practices*. This manuscript gives a brief overview of what participatory research methods are and why they are important for promoting neurodiversity in academia. Cite as:
+
+<br>
+
+> Gourdon-Kanhukamwe, A., Kalandadze, T., Yeung, S., Azevedo, F., Iley, B. J., Phan, J. M., … Elsherif, M. M. (2023). Opening up understanding of neurodiversity: A call for applying participatory and open scholarship practices. *The Cognitive Psychology Bulletin*, *8*, 23-27. https://doi.org/10.53841/bpscog.2023.1.8.23
+
+<br>
+
+
+The **<font style="color:#0e2a38">preprint</font>** can [be found here (osf.io/jq23s)](https://osf.io/preprints/metaarxiv/jq23s/). 
+
+<div class='altmetric-embed' data-badge-type='medium-donut' data-doi="https://doi.org/10.53841/bpscog.2023.1.8.23"></div>
+
+
+<center> ________________________________ </center>
+
+<br><br>
+<br><br>
+
 
 ### **FORRT's Glossary**
 
 <br>
 
-In response to the varied and plural new terminology introduced by the *open scholarship* movement, which has transformed academia's lexicon, we have produced a community and consensus-based [Glossary](/glossary) to facilitate education and effective communication between experts and newcomers. FORRT members have written a manuscript entitled *A Community-Sourced Glossary of Open Scholarship Terms* presenting the beta 0.1 version of our glossary of open scholarship terms.
+In response to the varied and plural new terminology introduced by the *open scholarship* movement, which has transformed academia's lexicon, we have produced a community and consensus-based [Glossary](/glossary) to facilitate education and effective communication between experts and newcomers. FORRT members have written a manuscript entitled *A Community-Sourced Glossary of Open Scholarship Terms* presenting the beta 0.1 version of our glossary of open scholarship terms. Cite as:
+
+<br>
+
+> Parsons, S., Azevedo, F.,  Elsherif, M. M., Guay, S., Shahim, O. N., Govaart, G. H.,  Norris, E.,  O’Mahony, A., Parker, A. J., Todorovic, A., Pennington, C. R.,  Garcia-Pelegrin, E.,  Lazić, A., Robertson, O. M., Middleton, S. L., Valentini, B., McCuaig, J., Baker, B. J., Collins, E., ... Aczel, B. (2022). A Community-Sourced Glossary of Open Scholarship Terms.  *Nature Human Behaviour, 6*(3), 312-318. [https://doi.org/10.1038/s41562-021-01269-4](https://doi.org/10.1038/s41562-021-01269-4). 
+
+<br>
+
+The **<font style="color:#0e2a38">preprint</font>** can [be found here (osf.io/kdqcw)](https://doi.org/10.31222/osf.io/kdqcw) and here is the [copy-edited version at the publisher's website](https://rdcu.be/cHsqM).
 
 
-***Status***: Our paper is **published** 🎉🥳 in Nature Human Behaviour. Cite as:
-> Parsons, S., Azevedo, F.,  Elsherif, M. M., Guay, S., Shahim, O. N., Govaart, G. H.,  Norris, E.,  O’Mahony, A., Parker, A. J., Todorovic, A., Pennington, C. R.,  Garcia-Pelegrin, E.,  Lazić, A., Robertson, O. M., Middleton, S. L., Valentini, B., McCuaig, J., Baker, B. J., Collins, E., ... Aczel, B. (2022). A Community-Sourced Glossary of Open Scholarship Terms.  *Nature human behaviour, 6*(3), 312-318. [https://doi.org/10.1038/s41562-021-01269-4](https://doi.org/10.1038/s41562-021-01269-4). 
-
+<div class='altmetric-embed' data-badge-type='medium-donut' data-doi="https://doi.org/10.31222/osf.io/kdqcw"></div>
 <div class='altmetric-embed' data-badge-type='medium-donut' data-doi="https://doi.org/10.1038/s41562-021-01269-4"></div>
 
-[Here's the [Open Access link](https://rdcu.be/cHsqM) to the copy-edited version at the publisher's website, and here's the [postprint](https://doi.org/10.31222/osf.io/kdqcw) which is the same as the published version (but OA and not copy-edited).]
 
 
 <center> ________________________________ </center>
 
-<br>
 
-<br>
+<br><br>
+<br><br>
 
 ### **The Role of Pedagogical Communities**
 
 <br>
 
-We have written a manuscript entitled *Towards a culture of open scholarship: The role of pedagogical communities* describing (a) the the need to integrate open scholarship principles into research training within higher education; (b) the benefit of pedagogical communities and the role they play in fostering an inclusive culture of open scholarship; and (c)  call for greater collaboration with pedagogical communities, paving the way for a much needed integration of top-down and grassroot open scholarship initiatives.
-<div class='altmetric-embed' data-badge-type='medium-donut' data-doi="https://doi.org/10.1186/s13104-022-05944-1"></div>
+We have written a manuscript entitled *Towards a culture of open scholarship: The role of pedagogical communities* describing (a) the the need to integrate open scholarship principles into research training within higher education; (b) the benefit of pedagogical communities and the role they play in fostering an inclusive culture of open scholarship; and (c)  call for greater collaboration with pedagogical communities, paving the way for a much needed integration of top-down and grassroot open scholarship initiatives. Cite as:
 
-***Status***: Our paper is **published** 🎉🥳 in BMC Research Notes. Cite as:
+<br>
+
 > Azevedo, F.,  Liu, M., Pennington, C. R., Pownall, M., Evans, T. R., Parsons, S.,  Elsherif, M. M., Micheli, L., Westwood, S., & FORRT. (2021). Towards a culture of open scholarship: The role of pedagogical communities. *BMC Research Notes, 15*(1), 1-5. [https://doi.org/10.1186/s13104-022-05944-1](https://doi.org/10.1186/s13104-022-05944-1)
 
 <br>
 
+<div class='altmetric-embed' data-badge-type='medium-donut' data-doi="https://doi.org/10.1186/s13104-022-05944-1"></div>
+
 <center> ________________________________ </center>
 
-<br>
+<br><br>
+<br><br>
 
-<br>
 
 ### **FORRT's Lesson Plans**
 
 <br>
 
-Despite the growing awareness of the benefits of training reproducible methods within undergraduate and postgraduate curricula, there remains a lack of systematic incorporation of open scholarship practices in taught courses across Higher Education. While the potential reasons for this are diverse, one reason may be the dearth of available ready-to-use educational resources. To support instructors aiming to bridge that gap, FORRT's community built open educational resources that can be integrated into taught courses ‘out of the box’. As creating or changing course content can be onerous and time-consuming, we aimed to make evidence-based, high-quality lesson plans and activities available to teaching faculty, thus reducing the labour required to develop and implement open scholarship content. We compiled lesson plans and activities, and categorized them based on their theme, learning outcome, and method of delivery, which are made publicly available here: [FORRT's Lesson Plans](/lesson-plans).
+Despite the growing awareness of the benefits of training reproducible methods within undergraduate and postgraduate curricula, there remains a lack of systematic incorporation of open scholarship practices in taught courses across Higher Education. While the potential reasons for this are diverse, one reason may be the dearth of available ready-to-use educational resources. To support instructors aiming to bridge that gap, FORRT's community built open educational resources that can be integrated into taught courses ‘out of the box’. As creating or changing course content can be onerous and time-consuming, we aimed to make evidence-based, high-quality lesson plans and activities available to teaching faculty, thus reducing the labour required to develop and implement open scholarship content. We compiled lesson plans and activities, and categorized them based on their theme, learning outcome, and method of delivery, which are made publicly available here: [FORRT's Lesson Plans](/lesson-plans). Cite as:
+
+> Pownall, M., Azevedo, F., Aldoh, A., Elsherif, M. M., Vasilev, M. R., Pennington, C. R., … Parsons, S. (2021). Embedding open and reproducible science into teaching: A bank of lesson plans and resources. *Scholarship of Teaching and Learning in Psychology*. Advance online publication. [https://doi.org/10.1037/stl0000307](https://doi.org/10.1037/stl0000307). 
+
+The **<font style="color:#0e2a38">preprint</font>** can [be found here (osf.io/fgv79)](https://doi.org/10.31234/osf.io/fgv79). 
 
 <div class='altmetric-embed' data-badge-type='medium-donut' data-doi="https://doi.org/10.1037/stl0000307"></div>
 <div class='altmetric-embed' data-badge-type='medium-donut' data-doi="https://doi.org/10.31234/osf.io/fgv79"></div>
 
-The **<font style="color:#0e2a38">preprint</font>** can [be found here (https://psyarxiv.com/fgv79/)](https://psyarxiv.com/fgv79/). 
+<br><br>
+<br><br>
 
-***Status***: This paper is **published** 🎉🥳 in Scholarship of Teaching and Learning in Psychology. Cite as:
-
-> Pownall, M., Azevedo, F., Aldoh, A., Elsherif, M. M., Vasilev, M. R., Pennington, C. R., … Parsons, S. (*in press*). Embedding open and reproducible science into teaching: A bank of lesson plans and resources. *Scholarship of Teaching and Learning in Psychology*. [https://doi.org/10.1037/stl0000307](https://doi.org/10.1037/stl0000307). 
-
-Here's the Open Access version at PsyArxiv [https://doi.org/10.31234/osf.io/fgv79](https://doi.org/10.31234/osf.io/fgv79).
-
-
-<center> ________________________________ </center>
-
-<br>
-
-<br>
-
-
-<br>
 
 ## Preprints 
 ***
-
-<br>
-
-
-### **FORRT's Impact of Open Scholarship on Students (Scoping Review)**
-
-<br>
-
-We have written a manuscript entitled *The impact of open and reproducible scholarship on students’ scientific literacy, engagement, and attitudes towards science: A review and synthesis of the evidence.* describing the available (empirical) evidence of the impact (and importance) of integrating open scholarship into higher education, its benefits and challenges on three specific areas: students’ (a) scientific literacy; (b) engagement with science; and (c) attitudes towards science.
-
-<div class='altmetric-embed' data-badge-type='medium-donut' data-doi="https://doi.org/10.31222/osf.io/9e526"></div>
-
-The **<font style="color:#0e2a38">preprint</font>** can [be found here (osf.io/9e526)](https://osf.io/preprints/metaarxiv/9e526/). 
-
-***Status***: Our manuscript is currently under review. Cite as:
-> Pownall, M., Azevedo, F., König, L. M., Slack, H. R., Evans, T. R., Flack, Z., ... F. (2022, April 8). The impact of open and reproducible scholarship on students’ scientific literacy, engagement, and attitudes towards science: A review and synthesis of the evidence. https://doi.org/10.31222/osf.io/9e526
-<br>
-
-<center> ________________________________ </center>
-
-<br>
-
-<br>
 
 ### **Neurodiversity & Open Scholarship in Academia**
 
 <br>
 
-We have written a manuscript entitled *Bridging Neurodiversity and Open Scholarship: How Shared Values Can Guide Best Practices for Research Integrity, Social Justice, and Principled Education* explaining that Neurodiversity is fundamental to the understanding of human behaviour and cognition and that neurodivergent individuals are often stigmatised, devalued, and objectified. The authors describe systematic barriers, issue with disclosure, directions on prevalence and stigma, intersection of neurodiversity and open scholarship, and provide recommendations that can lead to personal and systematic changes to improve acceptance of neurodivergent individuals. We also present the perspectives of neurodivergent authors, the majority of whom have personal lived experiences of neurodivergence(s), and discusses how research and academia can and should be improved in terms of research integrity, inclusivity and diversity. 
+We have written a manuscript entitled *Bridging Neurodiversity and Open Scholarship: How Shared Values Can Guide Best Practices for Research Integrity, Social Justice, and Principled Education* explaining that Neurodiversity is fundamental to the understanding of human behaviour and cognition and that neurodivergent individuals are often stigmatised, devalued, and objectified. The authors describe systematic barriers, issue with disclosure, directions on prevalence and stigma, intersection of neurodiversity and open scholarship, and provide recommendations that can lead to personal and systematic changes to improve acceptance of neurodivergent individuals. We also present the perspectives of neurodivergent authors, the majority of whom have personal lived experiences of neurodivergence(s), and provide recommendations for how research and academia can and should be improved in terms of research integrity, inclusivity and diversity. We end with discussing systematic barriers, issue with disclosure, directions on prevalence and stigma, intersection of neurodiversity and open scholarship, and provide recommendations that can lead to personal and systematic changes to improve acceptance of neurodivergent individuals.
+
 
 ***Status***: Our paper is **preprinted** 🎉🥳 in MetaArxiv. Cite as:
-> Elsherif, M. M., Middleton, S. L., Phan, J. M., Azevedo, F., Iley, B. J., Grose-Hodge, M., … Dokovova, M. (2022, June 20). Bridging Neurodiversity and Open Scholarship: How Shared Values Can Guide Best Practices for Research Integrity, Social Justice, and Principled Education. https://doi.org/10.31222/osf.io/k7a9p. [https://doi.org/10.31222/osf.io/k7a9p](https://doi.org/10.31222/osf.io/k7a9p)
+> Elsherif, M. M., Middleton, S. L., Phan, J. M., Azevedo, F., Iley, B. J., Grose-Hodge, M., … Dokovova, M. (2022, June 20). Bridging Neurodiversity and Open Scholarship: How Shared Values Can Guide Best Practices for Research Integrity, Social Justice, and Principled Education. https://doi.org/10.31222/osf.io/k7a9p.
 
-<br>
+<div class='altmetric-embed' data-badge-type='medium-donut' data-doi="https://doi.org/10.31222/osf.io/k7a9p"></div>
 
 <center> ________________________________ </center>
 
-<br>
-
-<br>
+<br><br>
+<br><br>
 
 ### **FORRT's Manifesto**
 
@@ -192,15 +234,9 @@ The **<font style="color:#0e2a38">preprint</font>** can [be found here (osf.io/b
 ***Status***: Our manuscript is currently under review. Cite as:
 > Azevedo, F., Parsons, S., Micheli, L., Strand, J., Rinke, E., ... & FORRT (2019, December 13). Introducing a Framework for Open and Reproducible Research Training (FORRT). https://doi.org/10.31219/osf.io/bnh7p
 
-<br>
 
-<center> ________________________________ </center>
-
-<br>
-
-<br>
-
-<br>
+<br><br>
+<br><br>
 
 ## op-ed*s* 
 ***
@@ -243,8 +279,20 @@ Azevedo, F. (2022). Educating in the Open Scholarship Era: Integrating Open and 
 ## Policy Briefs 
 ***
 
+### **<font style="color:#4c1322">Policy</font>** | **Open Scholarship in QAA Briefing**
+
+<br> 
+
+FORRT was asked by the UK's Quality Assurance Agency for Higher Education (QAA) to produce a short briefing note in collaboration with the UK Reproducibility Network (UKRN) about the importance of embedding open scholarship into higher education. In the note, we argued that students need to understand and experience open and rigorous research processes to become effective and responsible consumers of evidence. We structured this around three themes (Thinking About Research, Doing Research, and Engaging With Research) and showed how this can be implemented across different fields. 
+
+The **<font style="color:#0e2a38">briefing note</font>** can [be found here](2023_QAA%20_%20FORRT_UKRN.pdf).
+
+***Status***: Our briefing note is being used for QAA's work around standards and quality in Higher Education. Cite as:
+> Azevedo, F., DeBruine, L., Evans, T. R. (2023). *Open Scholarship in QAA Briefing*. Framework for Open and Reproducible Research Training & UK Reproducibility Network. https://forrt.org/publications
+
 <br>
 
+<center> ________________________________ </center>
 
 ### **<font style="color:#4c1322">Policy</font>** | **Building Community**
 
@@ -288,15 +336,7 @@ The **<font style="color:#0e2a38">briefing note</font>** can [be found here](Par
 
 <br> 
 
-Currently, we are preparing three additional manuscripts. 
-
-* As part of [FORRT's ***Reversals & Replication*** initiative](/reversals), Helena Hartmann, Alaah Aldoh, Meng Liu, Shilaan Alzahawi, Mahmoud Elsherif, Gavin Leech, Flavio Azevedo and others, are in the initial stages of writing a manuscript on *Reversals in Social Sciences*. As an open, crowd-sourced project, we are actively seeking collaborators wishing to help us with manuscript writing and project management. If you want to contribute or learn more about the project, [join the project's Slack channel](https://join.slack.com/t/forrt/shared_invite/enQtODMwODI0OTk4ODgzLTM0ZTQ3NDk5MzA1ZjBmNWJjYTVlN2Y2YTk0ZTJhYTY5NDliMDYzMjg2MWE0ZDRhOTY0ZDY3OTRlNDA4ODQ3NjQ), or email us at [reversals@forrt.org](mailto:reversals@forrt.org).
-
-* As part of [FORRT's ***Impact on Students*** initiative](/impact), Madeleine Pownall and Flavio Azevedo, along with a team of 80+ authors from the community, are writing up a manuscript on *The impact of open and reproducible scholarship on students’ attitudes, outcomes, and engagement: A review and synthesis of the evidence*. If you want to learn more about the project, [see this announcement on social media](https://twitter.com/FORRTproject/status/1453325222367698947), [join the project's Slack channel](https://join.slack.com/t/forrt/shared_invite/enQtODMwODI0OTk4ODgzLTM0ZTQ3NDk5MzA1ZjBmNWJjYTVlN2Y2YTk0ZTJhYTY5NDliMDYzMjg2MWE0ZDRhOTY0ZDY3OTRlNDA4ODQ3NjQ), or email us at [impact@forrt.org](mailto:impact@forrt.org).
-
-* As part of [FORRT's ***Summaries*** initiative](/summaries), Tamara Kalandadze, Leticia Micheli, Mahmoud Elsherif, Flavio Azevedo and others are writing a manuscript on *Integrating Open Scholarship into Teaching and Mentoring: Introducing Community-Sourced Summaries of Open Scholarship literature*. As an open, crowd-sourced project, we are open to adding collaborators wishing to help us with manuscript writing and project management. If interested, please contact the authors via [the project's Slack channel](https://join.slack.com/t/forrt/shared_invite/enQtODMwODI0OTk4ODgzLTM0ZTQ3NDk5MzA1ZjBmNWJjYTVlN2Y2YTk0ZTJhYTY5NDliMDYzMjg2MWE0ZDRhOTY0ZDY3OTRlNDA4ODQ3NjQ), or email us at [summaries@forrt.org](mailto:summaries@forrt.org).
-
-* As part of [FORRT's ***Glossary*** initiative](/glossary), Sam Parsons, Flavio Azevedo, and others invite you to help us continue to improve this resource. We are interested in a wide range of contributions to improve existing definitions, extend the scope of the terms, as well as translating terms to improve accessibility. If interested, we have opened four live working documents (see [the landing page](https://docs.google.com/document/d/1BKzztg7srUeC_2Yn0b7cMbxp_vYMDlOnEYpxg_S2hWs/edit?usp=sharing) for instructions and links to working documents). Please read the instructions for contributors. We have prepared these to help guide constructive feedback and facilitate a smooth editorial process. You can also contact the authors via [the project's Slack channel](https://join.slack.com/t/forrt/shared_invite/enQtODMwODI0OTk4ODgzLTM0ZTQ3NDk5MzA1ZjBmNWJjYTVlN2Y2YTk0ZTJhYTY5NDliMDYzMjg2MWE0ZDRhOTY0ZDY3OTRlNDA4ODQ3NjQ), or email us at [glossary@forrt.org](mailto:glossary@forrt.org).
+We are currently preparing additional manuscripts on a range of topics. To find out more about what we're working on and how you can contribute, visit our [Get Involved page](/about/get-involved).
 
 <br>
 

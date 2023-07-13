@@ -1,5 +1,5 @@
 {{ $item := .item }}
-{{ $js_tag_classes := delimit (apply (apply $item.Params.FORRT_Clusters "replace" "." " " "-") "printf" "js-id-%s" ".") " " }}
+{{ $js_tag_classes := delimit (apply (apply $item.Params.FORRT_clusters "replace" "." " " "-") "printf" "js-id-%s" ".") " " }}
 
 <div class="col-12 isotope-item {{ $js_tag_classes | safeHTMLAttr }}">
   {{ partial "li_list" $item }}

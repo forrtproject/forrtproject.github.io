@@ -26,7 +26,7 @@ subtitle = "---"
   buttonurl = "nexus/"
   buttondescr = "View our educational nexus"
   name = "Educational Nexus"
-  description = "The educational NEXUS is a e-learning platform for educators teachers to Find, Access, Interoperate, and Reuse (FAIR) teaching and mentoring resources & materials. The pedagogical content of all resources is maximized to facilitate adaptation and reuse. We welcome new contributions to help build diversity in the collated resources (check out [how to get involved](/about/get-involved)). FORRT strongly advocates for these resources being used, cited and recognized. We have produced the following resources [Adopting Principled Teaching & Mentoring Practices](/adopting), [Pedagogical Clusters of OS literature](/clusters), [Curated OS Resources](/resources), [Equity in Open Science](/equityinos), [Educator's Corner](/educators-corner), [Glossary of OS terminology](/glossary), [Literature Review on the impact of Open Scholarship on students](/impact),  [Initiatives Towards Social Justice in Academia](/dei), [Lesson Plans](/lesson-plans), [Summaries of OS literature](/summaries), [OS Syllabus](https://forrt.org/syllabus), and a [Self-Assessment Tool](/self-assessment)."  
+  description = "The educational NEXUS is a e-learning platform for educators teachers to Find, Access, Interoperate, and Reuse (FAIR) teaching and mentoring resources & materials. The pedagogical content of all resources is maximized to facilitate adaptation and reuse. We welcome new contributions to help build diversity in the collated resources (check out [how to get involved](/about/get-involved)). FORRT strongly advocates for these resources being used, cited and recognized. We have produced the following resources [Adopting Principled Teaching & Mentoring Practices](/adopting), [Pedagogical Clusters of OS literature](/clusters), [Curated OS Resources](/resources), [Equity in Open Science](/equityinos), [Educator's Corner](/educators-corner), [Glossary of OS terminology](/glossary), [Literature Review on the impact of Open Scholarship on students](/impact),  [Initiatives Towards Social Justice in Academia](/dei), [Lesson Plans](/lesson-plans), [Neurodiversity resources](/neurodiversity/), [Summaries of OS literature](/summaries), [OS Syllabus](https://forrt.org/syllabus), and a [Self-Assessment Tool](/self-assessment)."  
   
   
   [[featurealt]]
@@ -63,9 +63,9 @@ subtitle = "---"
   imgalttext = "Dynamic Projects" 
   imgside = "right"
   buttonurl = "about/get-involved"
-  buttondescr = "Read our publications"
+  buttondescr = "Get involved"
   name = "Ongoing Projects"
-  description = "FORRT has several ongoing dynamic projects. These team-science & citizen-science open contributorships are open to anyone willing to help. Read their [description here](about/get-involved/)."
+  description = "At any given time, FORRT has several ongoing, dynamic projects. These range from developing educational resources, to metascience research, to highlighting the perspectives of marginalized groups.  Our philosophy is rooted in community science and open contributorship: anyone willing to help can contribute to FORRT projects, including you!"
   
 [design.spacing]
   # Customize the section spacing. Order is top, right, bottom, left.

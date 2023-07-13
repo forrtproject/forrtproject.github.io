@@ -19,14 +19,14 @@ Our open community strives to:
 
 -   **Be friendly and patient.**
     
--   **Be welcoming**: We strive to be a community that welcomes and supports people of all backgrounds and identities. This includes, but is not limited to members of any race, ethnicity, culture, national origin, colour, immigration status, social and economic class, educational level, sex, sexual orientation, gender identity and expression, age, size, family status, abledness, political belief, religion, and mental and physical ability. We are welcoming of different communications, thinking styles and speeds (e.g. linear and non-linear communication, free thinking and written communication).
+-   **Be welcoming**: We strive to be a community that welcomes and supports people of all backgrounds and identities. This includes, but is not limited to members of any race, ethnicity, culture, national origin, colour, immigration status, social and economic class, educational level, sex, sexual orientation, gender identity and expression, age, size, family status, abledness, religion, and mental and physical ability. We are welcoming of different communications, thinking styles and speeds (e.g. linear and non-linear communication, free thinking and written communication).
 
     
 -   **Be considerate**: Your work may be used by other people, and you, in turn, may depend on the work of others. Any decision you take will affect users and colleagues, and you should take those consequences into account when making decisions. One should focus on what is best not just for them as individuals, but for the overall community. Remember that we’re an international community, so you might not be communicating in someone else’s primary language. 
 
 -   **Use preferred pronouns (e.g. she/her/hers, they/their/theirs, he/him/his).**
 
--   **Be respectful of differing opinions, viewpoints, and experiences**: Not all of us will agree all the time, but disagreement is no excuse for poor behaviour and poor manners. We might all experience some frustration now and then, but we cannot allow that frustration to turn into a personal attack. It’s important to remember that a community where people feel uncomfortable or threatened is not a productive one. It is important to demonstrate empathy and kindness toward other people.
+-   **Be respectful of differing opinions, viewpoints, and experiences**: Not all of us will agree all the time, but disagreement is no excuse for poor behaviour and poor manners. We might all experience some frustration now and then, but we cannot allow that frustration to turn into a personal attack. It’s important to remember that a community where people feel uncomfortable or threatened is not a productive one. It is important to demonstrate empathy and kindness toward other people. Please keep in mind that viewpoints and opinions must not interfere with, hinder, or restrain our strongly-held community values on social justice, diversity, equity, inclusion and accessibilty.
 
 -   **Try to understand why we disagree**: Disagreements, both social and technical, happen all the time. It is important that we resolve disagreements and differing views constructively by giving and gracefully accepting constructive feedback. Remember that we’re different. Diversity contributes to the strength of our community, which is composed of people from a wide range of backgrounds. Different people have different perspectives on issues. Being unable to understand why someone holds a viewpoint doesn’t mean that they’re wrong. Don’t forget that it is human to err and blaming each other doesn’t get us anywhere. Instead, focus on helping to resolve issues and learning from mistakes.
 
@@ -40,7 +40,7 @@ Our open community strives to:
  		-	Any real or implied threat of physical harm.
  		-	Sustained disruption of speakers or events (verbally or physically)
  		-	Violent threats or language directed against another person.
- 		-	Trolling, insulting or derogatory comments, and personal or political attacks.
+ 		-	Trolling, insulting or derogatory comments, and personal attacks.
  		-	Discriminatory jokes and language.
  		-	The use of ableist, sexualized or violent language or imagery, and sexual attention or advances of any kind.
  		-	Posting (or threatening to post) other people’s personally identifying information (“doxing”).
@@ -87,7 +87,7 @@ Secondly, FORRT defines misconduct in research as including acts of omission as 
 
 We encourage everyone to participate and are committed to building a community for all. Although we will fail at times, we seek to treat everyone both as fairly and equally as possible. Whenever a participant has made a mistake, we expect them to take responsibility for it. If someone has been harmed or offended, it is important to apologize to those affected by our mistakes. By listening carefully and respectfully, and doing our best to right the wrong, one is expected to learn from the experience.
 
-Although this list cannot be exhaustive, we explicitly honor diversity in age, gender, gender identity or expression, culture, ethnicity, language, neurodiversity, national origin, political beliefs, profession, race, religion, sexual orientation, socioeconomic status, and technical ability. We will not tolerate discrimination based on any of the protected characteristics above, including participants with disabilities.
+Although this list cannot be exhaustive, we explicitly honor diversity in age, gender, gender identity or expression, culture, ethnicity, language, neurodiversity, national origin, profession, race, religion, sexual orientation, socioeconomic status, and technical ability. We will not tolerate discrimination based on any of the protected characteristics above, including participants with disabilities.
 
 We also aim to foster a welcoming environment to several approaches to acquisition and accumulation of knowledge (i.e., epistemological pluralism) as a way to enrich perspectives raising awareness, addressing challenges, and implications of Open Scholarship to curricular reform, epistemological uncertainty, and methods of education.
 

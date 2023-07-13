@@ -133,6 +133,7 @@ https://docs.google.com/spreadsheets/d/1LGdBFlOCFqyfV7NUx11oUjkqR-aVZpWVGCn8RTiQ
 
 These resources were created as part of the Society for Improving Psychological Science (SIPS) hackathon at the 2021 Annual Conference, and we detail this collaborative process in the article. 
 
+{{< /expand >}}
 
 #### Contributorship 
 
