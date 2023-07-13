@@ -56,15 +56,13 @@ subtitle = ""
 ## **Motivation**
 ---------------------
 
-Recently, the scientific community took steps to reflect a widespread awareness of, and call for, improved practices ushering in the “credibility revolution,” including higher standards of evidence, preregistration, direct replication, transparency, and openness. The accelerating adoption of open science practices has been perhaps the most significant change in how social scientists work in the last decade. However, while there are still issues standing in the way of widespread adoption by academics, the integration of these new and improved principles into researchers’ educational pipeline lags behind (to the detriment of students and the quality of higher education). In an effort to raise awareness of the educational benefits of open and reproducible scholarship to students, we review the extant literature on the topic, tease out why academics should integrate these principles in their teaching and mentoring, and provide recommendations.
+Recently, the scientific community took steps to reflect a widespread awareness of, and call for, improved practices ushering in the “credibility revolution,” including higher standards of evidence, preregistration, direct replication, transparency, and openness. The accelerating adoption of open science practices has been perhaps the most significant change in how social scientists work in the last decade. However, while there are still issues standing in the way of widespread adoption by academics, the integration of these new and improved principles into researchers’ educational pipeline lags behind (to the detriment of students and the quality of higher education). In an effort to raise awareness of the educational benefits of open and reproducible scholarship to students, we review the extant literature on the topic, to tease out why academics should integrate these principles in their teaching and mentoring, and provide recommendations.
 
 ### Project’s goal
 
 To review and synthesize the evidence that investigates whether embedding open and reproducible science into research training can confer benefits for students. This includes undergraduate and postgraduate students, in all areas (not limited to psychology), on an international level. 
 
-Our working title is *'The impact of open and reproducible scholarship on students’ attitudes, outcomes, and engagement: A review and synthesis of the evidence.'*
-
-In the process of conducting the systematic(-ish) literature review, we will compose summaries of the literature for each article as an effort to creat an open educational resource to be displayed in this page, which will accompany our manuscript as (possibly) supplementary materials. 
+In the process of conducting the systematic(-ish) literature review, we also composed summaries of the literature for each article as an effort to create an open educational resource. Please keep an eye out for these!
 
 <br>
 
@@ -72,12 +70,16 @@ In the process of conducting the systematic(-ish) literature review, we will com
 
 <br>
 
-We have written a manuscript entitled *The impact of open and reproducible scholarship on students’ scientific literacy, engagement, and attitudes towards science: A review and synthesis of the evidence.* describing the available (empirical) evidence of the impact (and importance) of integrating open scholarship into higher education, its benefits and challenges on three specific areas: students’ (a) scientific literacy; (b) engagement with science; and (c) attitudes towards science.
+Our review of the evidence is summarized in a manuscript entitled *Teaching open and reproducible scholarship: a critical review of the evidence base for current pedagogical methods and their outcomes*. This describes the available (empirical) evidence of the impact and importance of integrating open scholarship into higher education, its benefits and challenges within three areas: students’ (a) scientific literacy; (b) engagement with science; and (c) attitudes towards science.
 
-The **<font style="color:#0e2a38">preprint</font>** can [be found here (osf.io/9e526)](https://osf.io/preprints/metaarxiv/9e526/). 
+***Status***: Our manuscript has been **published**!. Cite as:
+> Pownall, M., Azevedo, F., König, L. M., Slack, H. R., Evans, T. R., Flack, Z., ... & FORRT. (2023). Teaching open and reproducible scholarship: a critical review of the evidence base for current pedagogical methods and their outcomes. *Royal Society Open Science*, *10*(5), Article 221255. https://doi.org/10.1098/rsos.221255
 
-***Status***: Our manuscript is currently under review. Cite as:
-> Pownall, M., Azevedo, F., König, L. M., Slack, H. R., Evans, T. R., Flack, Z., ... F. (2022, April 8). The impact of open and reproducible scholarship on students’ scientific literacy, engagement, and attitudes towards science: A review and synthesis of the evidence. https://doi.org/10.31222/osf.io/9e526
+An earlier version of the review can be found as a [preprint](https://osf.io/preprints/metaarxiv/9e526/). 
+
+The manuscript was an international effort! Contributors were located across multiple continents.
+
+![Map marking locations in North America, Europe, Asia, and Oceania](impacts-map.jpeg)
 
 <br>
 
@@ -95,7 +97,7 @@ If you know of relevant papers, please reach out by email at [impact@forrt.org](
 
 
 
-### Literature Review
+## Literature Review
 
 <br><br><br><br>
 
@@ -108,6 +110,3 @@ If you know of relevant papers, please reach out by email at [impact@forrt.org](
 </p>
 
 </center>
-
-<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-

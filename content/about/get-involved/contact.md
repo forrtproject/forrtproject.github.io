@@ -3,7 +3,7 @@
 widget = "featurette_welcome"  # See https://sourcethemes.com/academic/docs/page-builder/
 headless = true  # This file represents a page section.
 active = true  # Activate this widget? true/false
-weight = 11  # Order that this section will appear.
+weight = 70  # Order that this section will appear.
 
 title = "Get in touch"
 subtitle = "Whether you have questions getting started or you want to know how to best integrate FORRT features into your workflow, we’re here to help you."
@@ -27,7 +27,7 @@ subtitle = "Whether you have questions getting started or you want to know how t
   icon_pack = "fab"
   # img = "partner.png"
   name = "GitHub"
-  description = "[Join our team on GitHub](https://github.com/flavioazevedo/FORRT)"
+  description = "[Join our team on GitHub](https://github.com/forrtproject)"
 
 # Call to action links (optional).
 #   Display link(s) by specifying a URL and label below. Icon is optional for `[cta]`.

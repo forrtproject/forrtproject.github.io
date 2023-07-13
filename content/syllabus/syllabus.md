@@ -151,6 +151,11 @@ To further facilitate the creation, the updating, improvement, and maintenance o
 * [Overcoming the Knowledge Barrier in Open Science](https://osf.io/bk6r7/)
 * [A reading list for the Replicability Crisis](http://crystalprisonzone.blogspot.com/2016/03/a-reading-list-for-replicability-crisis.html)
 * [Special Issue: Replication of Crises: Interdisciplinary Reflections on the Phenomenon of the Replication Crisis in Psychology](https://journals.sagepub.com/toc/RGP/current)
+* [Critical Metascience Articles by Mark Rubin](https://sites.google.com/site/markrubinsocialpsychresearch/replication-crisis/list-of-critical-metascience-articles)
+* [Open Science Education Syllabus by Neasa Boyle, Eduarda Centeno, Jens Dierkes, Rachel Heyard, Joyce Kao, Harini Lakshminarayanan, Franz Pöschel and Heidi Seibold](https://sites.google.com/openscienceeducation.org/ose)
+* [UNESCO Recommendation on Open Science Syllabus by Jennifer Miller](https://en.m.wikiversity.org/wiki/UNESCO_Recommendation_on_Open_Science)
+* [Evaluating What Works by Dorothy Bishop and Paul Thompson](https://bookdown.org/dorothy_bishop/Evaluating_What_Works/)
+* [Open Science and Reproducible Research (Karolinska Institutet) by Gustav Nilsonne](https://osf.io/6q3dz/)
 
 <br>
 
