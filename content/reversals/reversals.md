@@ -93,7 +93,7 @@ This is a dynamic project that is organized in four stages. Currently, we are in
 
 {{% alert example %}}
 
- {{< hl >}}We have received the **Open Science Fund 2023** from the Dutch Research Foundation (NWO)! Check out our project "Tracking and Mainstreaming Replications across the Social, Behavioral and Cognitive Sciences" [here](https://www.nwo.nl/en/researchprogrammes/open-science-fund-2023-awarded-grants)!{{< \hl >}}
+ {{< hl >}}We have received the **Open Science Fund 2023** from the Dutch Research Foundation (NWO)! Check out our project "Tracking and Mainstreaming Replications across the Social, Behavioral and Cognitive Sciences" [here](https://www.nwo.nl/en/researchprogrammes/open-science-fund-2023-awarded-grants)!{{< /hl >}}
 
  {{% /alert %}}
 
