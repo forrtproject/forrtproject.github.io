@@ -1,10 +1,9 @@
 {
     "timestamp": "",
-    "title": "Deep Dive on Open Practices: Understanding Registered Reports in Education Research",
-    "link_to_resource": "https://www.youtube.com/watch?v=peh8oB_haYQ",
+    "title": "Deep Dive on Open Practices: Understanding Data Sharing with Sara Hart",
+    "link_to_resource": "https://www.youtube.com/watch?v=24LTVqHi7hw",
     "creators": [
-        "Amanda Montoya",
-        "Betsy McCoach"
+        "Sara Hart"
     ],
     "material_type": [
         "Lecture"
@@ -12,9 +11,9 @@
     "education_level": [
         "Graduate / Professional"
     ],
-    "abstract": "Deep Dive on Open Practices: Understanding Registered Reports in Education Research with Amanda Montoya and Betsy McCoach - Registered reports are a new publication mechanism where peer review and the decision to publish the results of a study occur prior to data collection and/or analysis. Registered reports share many characteristics with preregistration but are distinct by involving the journal prior to completing the study. Journals in the field of education are increasingly offering opportunities to publish registered reports. Registered reports offer a variety of benefits to both the researcher and to the research field. In this workshop, we will discuss the basics of registered reports, benefits and limitations of registered reports, and which journals in education accept registered reports. We provide some practical advice on deciding which projects are appropriate for registered reports, implementing registered reports, and time management throughout the process. We discuss how special cases can be implemented as registered reports, such as secondary data analysis, replications, meta-analyses, and longitudinal studies.",
+    "abstract": "As sharing data openly becomes more and more the norm, and not just because of mandates for federal funding, more researchers may become more interested in sharing data. Benefits of data sharing for educational research include increased collaboration, acceleration of knowledge through novel and creative research questions, and an increase in equitable opportunities for early career researchers and faculty at under-resourced institutions. In this session, Sara Hart covers the benefits of data sharing as well as the \u201chow to\u201d of how to prepare data for sharing. Participants are provided information about data sharing and resources to support their own data sharing.",
     "language": [
-        "en"
+        "English"
     ],
     "conditions_of_use": "public-domain",
     "primary_user": [
@@ -27,13 +26,10 @@
         ""
     ],
     "tags": [
-        "Amanda Montoya",
-        "Betsy McCoach",
         "Center for Open Science",
+        "Data Sharing",
         "Education",
-        "Open Science",
-        "Registered Reports",
-        "Registered Reports in Education Research",
+        "Sara Hart",
         "Unconference 2022"
     ]
 }

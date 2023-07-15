@@ -1,19 +1,20 @@
 {
     "timestamp": "",
-    "title": "Deep Dive on Open Practices: Understanding Replication in Education Research with Matt Makel",
-    "link_to_resource": "https://www.youtube.com/watch?v=m8TzBT19yfU",
+    "title": "Deep Dive on Open Practices: Understanding Preregistration with Scott Peters & Karen Rambo-Hernandez",
+    "link_to_resource": "https://www.youtube.com/watch?v=Noaux1daasg",
     "creators": [
-        "Matt Makel"
+        "Karen Rambo-Hernandez",
+        "Scott Peters"
     ],
     "material_type": [
-        "Lesson"
+        "Lecture"
     ],
     "education_level": [
         "Graduate / Professional"
     ],
-    "abstract": "Deep Dive on Open Practices: Understanding Replication in Education Research with Matt Makel - In this deep dive session, we introduce the purpose of replication, different conceptions of replication, and some models for implementation in education. Relevant terms, methods, publication possibilities, and existing funding mechanisms are reviewed. Frequently asked questions and potential answers are shared.",
+    "abstract": "In this deep dive session, we introduce the basics of pre-registration: a method for creating a permanent record of a research plan prior to conducting data collection and/or data analysis. We discuss the conceptual similarities and practical differences between pre-registration and registered reports and traditional approaches to educational research. We provide some practical advice from our own experiences using this practice in our own research and resources available for researchers interested in pre-registering their work. Finally, we end with questions and discussion about adopting pre-registration practices and unique considerations for implementing pre-registration in education research.",
     "language": [
-        "en"
+        "English"
     ],
     "conditions_of_use": "public-domain",
     "primary_user": [
@@ -28,9 +29,12 @@
     "tags": [
         "Center for Open Science",
         "Education",
-        "Matt Makel",
+        "Karen Rambo-Hernandez",
         "Open Science",
-        "Replication in Education Research",
+        "Preregistration",
+        "Pre-registration in Education Research",
+        "Pre-registration in Science",
+        "Scott Peters",
         "Unconference 2022"
     ]
 }
