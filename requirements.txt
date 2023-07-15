@@ -1,0 +1,4 @@
+numpy==1.25.1
+pandas==2.0.3
+pytz==2023.3
+tzdata==2023.3
