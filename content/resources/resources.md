@@ -33,7 +33,7 @@ advanced:
   css_class: ""
 ---
 
-There are almost 900 resources submitted so far in our database . If you notice there is an educational resource, research article or pedagogical tool missing in our database, please consider adding it [below in our on submission form](/resources/#form) or directly into [a separate g-forms](https://docs.google.com/forms/d/e/1FAIpQLSfPceN5opEeauCBSvapoB-ADpH0IoT24XOLfQGaVEF0EJGFOA/viewform). These resources were crowdsourced by our community and, more recently, we increased our databased in over 60% due to a partnership with the [Open Science Knowledge Base](https://www.cos.io/communities/stem-education-hub), a Center for Open Science educational initiative, who graciously chose FORRT to host their curated Open Science resources. Learn more about it FORRT's and OSKB's partnership [here](link COS blog).
+There are almost 900 resources submitted so far in our database . If you notice there is an educational resource, research article or pedagogical tool missing in our database, please consider adding it [below in our on submission form](/resources/#form) or directly into [a separate g-forms](https://docs.google.com/forms/d/e/1FAIpQLSfPceN5opEeauCBSvapoB-ADpH0IoT24XOLfQGaVEF0EJGFOA/viewform). These resources were crowdsourced by our community and, more recently, our database was increased by over 60% due to a partnership with the [Open Science Knowledge Base](https://www.cos.io/communities/stem-education-hub), a Center for Open Science educational initiative, who graciously chose FORRT to host their curated Open Science resources. Learn more about it FORRT's and OSKB's partnership [here](link COS blog).
 
 
 ***
