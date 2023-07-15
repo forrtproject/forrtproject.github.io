@@ -54,6 +54,7 @@ jobs:
       - name: Install dependencies and run resource.py
         run: |
           python3 -m pip install -r ./requirements.txt
+          rm content/curated_resources/[0-9]*.md
           python3 content/resources/resource.py
 
       - name: Build
