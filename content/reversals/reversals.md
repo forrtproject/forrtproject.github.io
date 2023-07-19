@@ -174,16 +174,6 @@ You can find a list of all effects we are working on [here](https://docs.google.
 * Replication effect size: All effect sizes are located in O’Donnell et al. 2018: Aczel: PD = -1.35%. Aveyard: PD = -3.99%. Baskin: PD = 4.08%. Bialobrzeska: PD = -.12%. Boot: PD = -4.99%.  Braithwaite: PD = 4.01%. Chartier: PD = 3.23%. DiDonato: PD = 3.14%. Finnigan: PD: 2.89%. Karpinski: PD = 1.38%. Keller: PD = .17%. Klein: PD =.88%.  Koppel: PD = -.20%. McLatchie: PD = -2.16%.  Newell: PD = 1.66%. O’Donnell: PD = 1.58%. Phillipp: PD = 43%. Ropovik: PD = -.48%. Saunders: PD = -1.87%. Schulte-Mecklenbeck: PD = 4.24%. Shanks: PD = .11%. Steele: PD = -.58%. Steffens: PD = -.84%. Susa: PD = -.63%. Tamayo: PD = 1.41%.  Meta-analytic estimate: PD = 0.02%. 
 {{< /spoiler >}}
 
-* **Moral priming (contemplation)**. Participants exposed to a moral-reminder prime would demonstrate reduced cheating. 
-{{< spoiler text="Statistics" >}} 
-* Status: not replicated
-* Original paper: [The Dishonesty of Honest People: A Theory of Self-Concept Maintenance](https://journals.sagepub.com/doi/10.1509/jmkr.45.6.633), Mazar et al. 2008; 6 experiments with Study 1: n = 229; Study 2: n = 207;  Study 3: n = 450; Study 4: n = 44; Study 5: n = 108; Study 6: n =  326. [citations= 3072 (GS November 2021)]. 
-* Critiques: [Verschuere et al. 2018](https://journals.sagepub.com/doi/pdf/10.1177/2515245918781032) [n = 5786 replication of Experiment 1, citations = 65(GS November 2021)].
-* Original effect size: _d_ = -1.45.
-* Replication effect size: _d_ = 0.18.
-* All effect sizes are located in Verschuere et al. 2018:  Aczel: _d_ = -0.26; Birt: _d_ = 0. 41; Evans: _d_ = 0.85; Ferreira-Santos: _d_ = -0.19; Gonzalez-Iraizoz: _d_ = 0.26; Holzmeister: _d_ = 1.11; klein Selle and Rozmann: _d_ = -0.27; Koppel: _d_ = 0.39;  Laine: _d_ = -0.37; Loschelder: _d_ = -0.11; McCarthy: _d_ = 0.57; Meijer: _d_ = -0.15; Ozdogru: _d_ = 1.19; Suchotzki: _d_ = 0.00; Sutan: _d_ = 0.02; Vanpaemel: _d_ = 0.17; Verschuere: _d_ = 0.18; Wick: _d_ = -0.09; Wiggins: _d_ = 0.19; Meta-analytic estimate: _d_ =  0.11. 
-{{< /spoiler >}}
-
 * **Moral priming (cleanliness)**. Participants exposed to physical cleanliness were shown to reduce the severity of their moral judgments. Direct, well-powered replications did not find evidence for the phenomenon. 
 {{< spoiler text="Statistics" >}}
 * Status: not replicated
@@ -191,6 +181,15 @@ You can find a list of all effects we are working on [here](https://docs.google.
 * Critiques: [Johnson et al.](https://econtent.hogrefe.com/doi/full/10.1027/1864-9335/a000186)<span style="text-decoration:underline;"> </span> 2014, [Study 1: n = 208, Study 2: n = 126. citations=128(GS November 2021)].
 * Original effect size:  Study 1: d = -0.60, 95% CI [-1.23, 0.04]; Study 2: d = -0.85, 95% CI [-1.47, -0.22]
 * Replication effect size: Study 1: d = -0.01, 95% CI [-0.28, 0.26]; Study 2: d = 0.01, 95% CI [-0.34, 0.36]
+{{< /spoiler >}}
+
+* **Moral priming (contemplation)**. Participants exposed to a moral-reminder prime would demonstrate reduced cheating. 
+{{< spoiler text="Statistics" >}}
+* Status: not replicated
+* Original paper: ‘[The Dishonesty of Honest People: A Theory of Self-Concept Maintenance](https://journals.sagepub.com/doi/10.1509/jmkr.45.6.633)’, Mazar et al. 2008; 6 experiments with Study 1: n = 229; Study 2: n = 207;  Study 3: n = 450; Study 4: n = 44; Study 5: n = 108; Study 6: n =  326. [citations= 3072 (GS November 2021)]. 
+* Critiques: [Verschuere et al. 2018](https://journals.sagepub.com/doi/pdf/10.1177/2515245918781032) [n = 5786 replication of Experiment 1, citations = 65(GS November 2021)].
+* Original effect size: not reported; commandants-cheat versus books-cheat: _d_ = -1.45[-2.61, -0.29] [obtained from the Verschuere et al.’s 2018 meta analysis Figure 2], commandants-cheat versus commandants-control: _d_ = -0.35 [–1.26, 0.57] [obtained from the Verschuere et al.’s 2018 meta analysis Figure 3].
+* Replication effect size: All effect sizes are located in Verschuere et al. 2018: Commandants-cheat versus books-cheat: Aczel: _d_ = -0.26 [-1.22, 0.69]. Birt: _d_ = 0.41 [-0.58, 1.39]. Evans: _d_ = 0.85 [-0.13, 1.83]. Ferreira-Santos: _d_ = -0.19 [-1.14, 0.77]. Gonzalez-Iraizoz: _d_ = 0.26[-0.77, 1.28]. Holzmeister: _d_ = 1.11[-0.30, 2.52]. Klein Selle and Rozmann: _d_ = -0.27 [-1.11, 0.58]. Koppel: _d_ = 0.39[-0.40, 1.17].  Laine: _d_ = -0.37 [-1.18, 0.44]. Loschelder: _d_ = -0.11[-0.86, 0.65]. McCarthy: _d_ = 0.57 [-0.87, 2.02]. Meijer: _d_ = -0.15 [-0.75, 0.44]. Ozdogru: _d_ = 1.19 [0.01, 2.37]. Suchotzki: _d_ = 0.00 [–0.93, 0.93]. Sutan: _d_ = 0.02[-0.79, 0.83]. Vanpaemel: _d_ = 0.17[-0.55, 0.88]. Verschuere: _d_ = 0.18 [-0.55, 0.91]. Wick: _d_ = -0.09 [-1.06, 0.87]. Wiggins: _d_ = 0.19 [-0.51, 0.90]. Meta-analytic estimate: _d_ =  0.11 [-0.09, 0.31]. Commandants-cheat versus commandants-control: Aczel: _d_ = 0.05 [-0.77, 0.88]. Birt: _d_ = 0.83 [-0.10, 1.75]. Evans: _d_ = 0.60 [-0.39, 1.59]. Ferreira-Santos: _d_ = -0.33 [-1.41, 0.74]. Gonzalez-Iraizoz: _d_ = 1.11 [0.14, 2.08]. Holzmeister: _d_ = 1.30 [-0.17, 2.78]. Klein Selle and Rozmann: _d_ = -0.15 [-0.79, 1.09]. Koppel: _d_ = 0.51 [-0.20, 1.22].  Laine: _d_ = 0.10 [-0.63, 0.83]. Loschelder: _d_ = -0.24 [-1.38, 0.90]. McCarthy: _d_ = 1.10 [-0.20, 2.41]. Meijer: _d_ = -0.31 [-0.89, 0.25]. Ozdogru: _d_ = 1.15 [-0.10, 2.41]. Suchotzki: _d_ = -0.05 [-0.86, 0.75]. Sutan: _d_ = 0.41 [-0.41, 1.23]. Vanpaemel: _d_ = 0.36 [-0.37, 1.09]. Verschuere: _d_ = 0.13 [-0.61, 0.87]. Wick: _d_ = -0.14 [-0.94, 0.67]. Wiggins: _d_ = -0.08 [-1.02, 0.87]. Meta-analytic estimate: _d_ =  0.24 [0.03, 0.44].
 {{< /spoiler >}}
 
 * **Distance priming**. Participants primed with distance compared to closeness produced greater enjoyment of media depicting embarrassment (Study 1), less emotional distress from violent media (Study 2), lower estimates of the number of calories in unhealthy food (Study 3), and weaker reports of emotional attachments to family members and hometowns (Study 4).
@@ -661,2915 +660,843 @@ You can find a list of all effects we are working on [here](https://docs.google.
 * Replication effect size: Blanken et al: replication Study 1 (Dutch student sample): _d_ = -0.03 [-0.51, 0.45]; replication Study 2 (Dutch student sample): _d_ = -0.31 [-0.70, 0.08]; replication Study 1 & 3 ­­(US MTurk sample)­­: _d_ = 0.05 [-0.15, 0.25]. Blanken et al.: meta-analysis, mean effect of _d_ = 0.31 [0.23, 0.38]. Kuper and Bott: adjusted effect sizes: _d_= -0.05 (PET-PEESE) and _d_= 0.18 (3-PSM). Simbrunner and Schlegelmilch: mean effect of _d_ = 0.319 [0.229, 0.408].
 {{< /spoiler >}}
 
+* **Colour on approach/avoidance**. Red (versus blue) colour induces primarily an avoidance (versus approach) motivation and enhances performance on a detail-oriented task, whereas blue enhances performance on a creative task.​
+{{< spoiler text="Statistics" >}}
+* Status: not replicated 
+* Original paper: ‘[Blue or Red? Exploring the Effect of Color on Cognitive Task Performances](https://www.science.org/doi/abs/10.1126/science.1169144)’, Mehta and Zhu 2009; six studies, studies 1-5 between-subject experiments, study 6 correlational, Study 1: n = 69, Study 2: n = 208, Study 3: n = 118, Study 4: n = 42, Study 5: n = 161, Study 6: n = 68. [citations=1003 (GS, November 2022)]​.
+* Critiques:[ Steele et al. 2010](http://www.appstate.edu/~steelekm/documents/Psychonomic2010Poster_Steele.pdf) direct replication of Mehta an d Zhu Study 1 [n=172, citations=2(GS, November 2022)].[ Steele et al. 2013](http://www.appstate.edu/~steelekm/documents/APS_Poster_2013_Steele.pdf) direct replication of Mehta andZhu Study 1 [n=263, citations=2(GS, November 2022)].[ Steele 2014](https://link.springer.com/article/10.3758/s13423-013-0548-3) direct replication of Mehta and Zhu Study 1 [n=263, citations=45(GS, November 2022)].​
+* Original effect size: Study 1 – blue versus red condition comparison for approach-related anagrams, _d_ = 0.81, and for avoidance-related anagrams _d_ = 0.96; Study 2 – blue versus red condition on detailed-oriented task, _d_ = 0.64, and on creative task, _d_ = 0.6; Study 3 - blue versus red condition on detailed-oriented task, _d_ = 1.05, and on creative task, _d_ = 0.69; Study 4 - blue versus red condition on the practicality of the designed toy, _d_ = 0.64, and on the originality/novelty of the designed toy, _d_ = 0.67; Study 5​ - blue versus red condition on detailed-oriented processing style, _d_ = 0.42, and creative thinking, _d_ = 0.56;
+* Replication effect size:​ Steele et al.: colour by word-type interaction _η<sub>p<sup>2</sup></sub>_ = 0.038 / _d_ = 0.20 [_η<sub>p<sup>2 </sup></sub>_calculated from the reported F statistics and converted using this[ conversion](https://haiyangjin.github.io/2020/05/eta2d/#from-cohens-d-to-partial-eta-squared)] (not replicated).​ Steele et al.: colour by word-type interaction _η<sub>p<sup>2</sup></sub>_ = 0.014 / _d_ = 0.12 [_η<sub>p<sup>2 </sup></sub>_calculated from the reported F statistics and converted using this[ conversion](https://haiyangjin.github.io/2020/05/eta2d/#from-cohens-d-to-partial-eta-squared)] (not replicated).​ Steele: The colour X word type interaction _η<sub>p<sup>2</sup></sub>_ = 0.007 [reported] / _d_ = 0.083 [converted using this[ conversion](https://haiyangjin.github.io/2020/05/eta2d/#from-cohens-d-to-partial-eta-squared)] (not replicated).
+{{< /spoiler >}}
+
+* **Playboy Effect.** Men exposed to erotic images of the opposite-sex will report lower ratings of love for their partner and lower ratings for their partners sexual attractiveness compared to men exposed to abstract art. This effect was not found in women in either the original or replication attempts.
+{{< spoiler text="Statistics" >}}
+* Status: not replicated 
+* Original paper:[ ‘Influence of Popular Erotica on Judgments of Strangers and Mates’](https://doi.org/10.1016/0022-1031(89)90010-3), Kenrick et al. 1989; between-subjects design, Experiment 2: n_ _= 30. [citations = 399 (GS, October 2022)].
+* Critiques: [Balzarini et al. 2017](http://dx.doi.org/10.1016/j.jesp.2016.11.003) [Experiment 1: n_ _= 124, Experiment 2: n = 170, Experiment 3: n_ _= 121, meta-analysis n = 445, citations = 37 (GS, October 2022)].
+* Original effect size: Reduced sexual attraction to partner (_d_= 1.05), reduced love for partner (_d_= 0.77). Effect sizes estimated from test-statistics reported in paper.
+* Replication effect size: Balzarini et al.: Sexual attraction to partner: Experiment 1: _d_= 0.07 [-0.29, 0.42] (not replicated); Experiment 2: _d_= -0.10 [-0.40, 0.20] (opposite direction, but non-significant); Experiment 3: _d_= -0.15 [-0.51, 0.21] (opposite direction, but non-significant); Meta-analysis: _d_= 0.02 [-0.21, 0.24] (not replicated); Love for partner: Experiment 1: _d_= -0.19 [-0.55, 0.16] (opposite direction, but non-significant); Experiment 2: _d_= -0.10 [-0.40, 0.20] (opposite direction, but non-significant); Experiment 3: _d_= 0.16 [-0.20, 0.52] (not replicated); Meta-analysis: _d_= 0.02 [-0.22, 0.26] (not replicated). (Note: For the effects reported, only male effects are considered given these were the only significant effects found. As such, the number of subjects reported for the studies and the effect sizes account for only the male participants.)
+{{< /spoiler >}}
+
+* **Self-protective subjective temporal distance effect**. Participants reported that negative events in their own lives felt farther away than positive events in their own lives, and this effect was stronger for participants higher in self-esteem.
+{{< spoiler text="Statistics" >}}
+* Status: not replicated
+* Original paper: ‘[It feels like yesterday: Self-esteem, valence of personal past experiences, and judgments of subjective distance](https://doi.org/10.1037/0022-3514.82.5.792)’, Ross and Wilson 2002; Three studies: Study 1: N = 557 was a correlational study; Study 2: N = 357 was an experiment with two main predictors: recalled grade condition (best vs. worst; between-subjects) and self-esteem (measured); Study 3: N = 107 was an experiment with three main predictors: agent (self vs. acquaintance; between-subjects), valence of recalled experience (positive vs. negative; between-subjects), and self-esteem (measured). [citations = 462 (GS, June 2022)]. Study 2 was the one Many Labs 3 replicated. 
+* Critiques: [Ebersole et al. 2016](https://www.sciencedirect.com/science/article/pii/S0022103115300123) [n = 3433, citations = 438 (GS, June 2022)].
+* Original effect size: _η<sub>p<sup>2</sup></sub>_ = .0185 (based on transforming from beta of -.136). 
+* Replication effect size: Ebersole et al.: _η<sub>p<sup>2</sup></sub>_ = .0001.
+{{< /spoiler >}}
+
+* **Trait loneliness hot shower effect**. People self-regulate their feelings of social warmth (connectedness to others) through applications of physical warmth of shower or bath, without explicit awareness of this substitution. Loneliness as a form of “social coldness” can be relieved by applying physical warmth.  
+{{< spoiler text="Statistics" >}}
+* Status: not replicated
+* Original paper: ‘[The substitutability of physical and social warmth in daily life’](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3406601/#:~:text=The%20results%20of%20Study%201,compared%20to%20less%20lonely%20individuals.), Bargh and Shalev 2012; 4 experiments, n=403 across 4 experiments. [citations=414(GS, October 2022)]​.
+* Critiques: [Donnellan et al. 2014](https://psycnet.apa.org/doi/10.1037/a0036079) replicated Study 1 [n=3073 across 9 studies, citations=104 (GS, October 2022)]. See also reply to Donnellan et al. 2014 by [Shalev and Bargh 2015](https://psycnet.apa.org/doiLanding?doi=10.1037%2Femo0000014) [n=555 across three samples, citations=6 (GS, October 2022). [Wortman et al. 2014](https://psycnet.apa.org/fulltext/2014-34343-001.html) replicated study 2 [n=260, citations=19(GS, October 2022)].
+* Original effect size: _r_ = .57 (Study 1a; n=51) and _r_ = .37 (Study 1b; n =41)
+* Replication effect size: Donnellan et al.: _r_ = -.01 to .10 (but statistically indistinguishable from zero). Shalev and Bargh: loneliness-warmth index correlation for showering _r_ = .143 and for baths _r_ = .093 (replicated). Wortman et al.: warm vs. cold condition _d_ = 0.02 [reported, non-significant].
+{{< /spoiler >}}
+
+* **American flag priming boosts Republican support**. Subtle exposure to the American flag causes people to report more conservative, Republican beliefs and attitudes.
+{{< spoiler text="Statistics" >}}
+* Status: not replicated
+* Original paper: ‘[A Single Exposure to the American Flag Shifts Support Toward Republicanism up to 8 Months Later](https://journals.sagepub.com/doi/full/10.1177/0956797611414726)’, Carter et al. 2011; two experiments; Experiment 1: N = 235 in Session 1 (exposure to prime), 197 in Session 2 (appx. two weeks later, right before the 2008 presidential election), 191 in Session 3 (the week after this election), 75 in Session 4 (eight months after this election); Experiment 2: N = 70. [citations = 197 (GS, June 2022)].
+* Critiques:​ [Klein et al. 2014 ](https://psycnet.apa.org/fulltext/2014-20922-002.html)[n = 6344, citations = 1082 (GS, June 2022)]
+* Original effect size: _d_= .50
+* Replication effect size: Klein et al.: median _d_ = .02.
+{{< /spoiler >}}
+
+* **Superstition boosts performance effect**. The irrational belief that certain objects (e.g., lucky charms) or beliefs (e.g., religion) will benefit performance in a task.​
+{{< spoiler text="Statistics" >}}
+* Status: not replicated 
+* Original paper: ‘[Keep Your Fingers Crossed!: How Superstition Improves Performance](https://doi.org/10.1177/0956797610372631)’, Damisch et al. 2010; between-subjects, Experiment 1: n = 28, Experiment 2: n = 51, Experiment 3: n = 41, Experiment 4: n = 31. [citations = 386 (GS, February 2023)].
+* Critiques: [Aruguete et al. 2012](https://www.researchgate.net/profile/Alan-Goodboy/publication/286162389_Does_religious_faith_improve_test_performance/links/56d75a8508aebabdb40306ea/Does-religious-faith-improve-test-performance.pdf) [Experiment 1: n = 141, Experiment 2: n = 139, citations = 12 (GS, October 2022)]. [Calin-Jageman and Caldwell 2014](https://doi.org/10.1027/1864-9335/a000190) [Experiment 1: n = 124, Experiment 2: n = 111, Meta-analysis: n = ~719 participants, _k_ = 11 studies, citations = 42 (GS, October 2022)]. [Dickhäuser et al. 2020](https://doi.org/10.1024/1010-0652/a000263) [Experiment 1:_ n_ = 101, Experiment 2: _n_ = 175, citations = 0 (GS, October 2022)]. [Lee et al. 2011](https://doi.org/10.1371/journal.pone.0026016) [n_ _= 40, citations = 78 (GS, October 2022)]. 
+* Original effect size: Experiment 1: _d_ = 0.83; Experiment 2: _d_ = 0.72 to _d_ = 0.98; Experiment 3: _d_ = 0.66; Experiment 4: _d_ = 0.77.
+* Replication effect size:​ Aruguete et al.: Experiment 1: _d_ = -0.07 (estimated from test-statistic regarding logical reasoning test) (not replicated); Experiment 2: _η<sub>p<sup>2</sup></sub>_ = 0.01 (estimated from test-statistic regarding logical reasoning test before exploratory analysis) (not replicated). Calin-Jageman and Caldwell: Experiment 1: _d_ = 0.05 (not replicated); Experiment 2: _d_ = 0.05 (not replicated); Meta-analysis: _d_ = 0.40 [0.14, 0.65] (notably, this is heavily biassed by the effect size estimates of Damisch et al., 2010). Dickhäuser et al.: ES = NA. Unable to access article, but Abstract suggests both studies failed to replicate the Damisch et al. (2010) effect (not replicated). Lee et al. (Supplementary Materials: _d_ = 0.74 (replicated). 
+{{< /spoiler >}}
+
+* **Unethicality darkens perception of light** (El Greco fallacy). Recalling abstract concepts such as evil (as exemplified by unethical deeds) and goodness (as exemplified by ethical deeds) can influence the sensory experience of the brightness of light. Recalling unethical behaviour led participants to see the room as darker and to desire more light-emitting products (e.g., a flashlight) compared to recalling ethical behaviour.
+{{< spoiler text="Statistics" >}}
+* Status: not replicated. 
+* Original paper: ‘[Is It Light or Dark? Recalling Moral Behavior Changes Perception of Brightness](https://journals.sagepub.com/doi/10.1177/0956797611432497)’, Banerjee et al. 2012; two between-subjects experiments, Experiment 1: n = 40, Experiment 2: n = 74. [Citations= 194 (GS, October 2022)]​.
+* Critiques:[ Brandt et al. 2014](https://psycnet.apa.org/fulltext/2014-20922-016.pdf) [online Study 1: n=475, online Study 2: n=482, lab Study 1: n=100, lab Study 2: n=121; meta-analysis: _k_=11, N not reported, citations=31(GS, October 2022)].[ Firestone & Scholl 2013](https://journals.sagepub.com/doi/10.1177/0956797613485092) [Experiment 4 n=89, Experiment 5 n=91, citations=266(GS, October 2022)]. 
+* Original effect size: perceived brightness – _d_= 0.65 [reported]​, _estimated watts d_= 0.64 [reported], lamp preference_ – d_= 1.23 [reported], candle preference – _d_= 0.79 [reported], flashlight preference _– d_= 1.33 [reported]
+* Replication effect size: All effect sizes reported in Brandt et al.: ​Brandt et al.: _d_= 0.12 [-0.46, 0.10] (non-significant, online study 1). Brandt et al.: _d_= -0.11 [-0.50, 0.28] (non-significant, lab study 1). _estimated watts_ –Brandt et al.​: _d_= 0.05 [-0.15, 0.25] (online study 2). Brandt et al.: _d_= 0.03 [-0.36, 0.42] (non-significant, lab study 2). _lamp preference_ – Brandt et al.​: _d_= -0.03 [-0.23, 0.17] (non-significant, online study 2). Brandt et al.: _d_= -0.11 [-0.35, 0.33] (non-significant, lab study 2). _candle preference_ –Brandt et al.: _d_= 0.03 [-0.31, 0.37] (non-significant, online study 1). Brandt et al.: _d_= 0.01 [-0.33, 0.35] (non-significant, lab study 2). _flashlight preference_ –Brandt et al.: _d_= -0.10 [-0.30, 0.10] (non-significant, online study 2). Brandt et al.: _d_= -0.09 [-0.25, 0.43] (non-significant, lab study 2). Meta-analytic estimate: effects on brightness judgements mean _d_ = 0.14 [0.002, 0.28], desirability of light-emitting products mean effect size of _d_ = 0.13 [-0.04, 0.29]. _perceived brightness_ – Firestone and Scholl: _d_= 0.38 [-0.06, 0.82] (non-significant, study 4)​. Firestone and Scholl: _d_= 0.46 [0.02, 0.90] (study 5). 
+{{< /spoiler >}}
+
+* **Fertility on voting** (Ovulation effect). Ovulatory (or high-fertility) phase of the menstrual cycle affects voting preferences and has different effects on women who are single then women who are in committed relationships. Single women were more likely to vote for Barack Obama (liberal/Democrat candidate) if they were ovulating then if they were not, while the opposite was true for women in committed relationship – ovulation led them more likely to vote for Mitt Romney (conservative/Republican candidate).​
+{{< spoiler text="Statistics" >}}
+* Status: mixed 
+* Original paper: <span style="text-decoration:underline;">‘[The fluctuating female vote: politics, religion, and the ovulatory cycle](https://doi.org/10.1177/0956797612466416)</span>’, Durante et al., 2013; between-subjects design, two studies, Study 1: n = 275 women, Study 2: n = 502 women. [Citations = 117 (GS, October 2022)]​.
+* Critiques:[ Harris et al. 2014](https://journals.sagepub.com/doi/10.1177/0956797613520236) [n = 1,206, citations=15 (GS, October 2022)].​
+* Original effect size: single women _d_ = 0.32 [reported], women in relationships _d_ = 0.37 [reported]​.
+* Replication effect size: Harris et al.: hypothetical voting preferences – single women _d_ = 0.01 [reported; non-significant], women in relationships _d_ = 0.37 [reported]​; actual voting behaviour - single women _d_ = 0.40 [reported], women in relationships _d_ = 0.02 [reported; non-significant]​.​
+{{< /spoiler >}}
+
+* **Modulation of 1/f noise on the weapon identification task**. Making an effort to modulate the use of racial information decreases the emission of 1/f noise.
+{{< spoiler text="Statistics" >}}
+* Status: not replicated 
+* Original paper: ‘[1/f noise and effort on implicit measures of bias](http://psych.colorado.edu/~jclab/pdfs/Correll%20(2008).pdf)’, Correll 2008; mixed-model design experiment, Study 2: n= 71. [citations=88 (GS, October 2022)].
+* Critiques: [Madurski and LeBel 2015](https://etiennelebel.com/documents/m&l(2015,pbr).pdf) [Sample 1: n=148, Sample 2: n=148, citations=6 (GS, October 2022)]. 
+* Original effect size: _d_=.59. 
+* Replication effect size: Madurski and LeBel: Sample 1: _d_=.16; Sample 2: _d_=-0.09.​
+{{< /spoiler >}}
+
+* **Time is money effect**. Putting a price on time can influence enjoyment of leisure activities as individuals get more impatient if they are compensated for engaging in these activities. ​
+{{< spoiler text="Statistics" >}}
+* Status: not replicated 
+* Original paper: [Time, money, and happiness: How does putting a price on time affect our ability to smell the roses?](https://doi.org/10.1016/j.jesp.2011.11.012) ’, DeVoe et al. 2012; 3 experimental studies, Study 1: N = 53; Study 2: N = 401; Study 3: N =205. [citations = 119 (GS, June, 2022)]​.
+* Critiques: [Connors et al. ](https://doi.org/10.1016/j.jesp.2015.08.005)2016 [replication attempt 1: N = 266; replication attempt 2: N = 254; citations = 29(GS, June, 2022)].​
+* Original effect size: Study 1: _η<sub>p<sup>2</sup></sub>_=.119; Study 2: _η<sub>p<sup>2</sup></sub>_ =.019; Study 3: _η<sub>p<sup>2</sup></sub>_ =.031.
+* Replication effect size: Replication of Study Connors et al.: Replication of Study 3, attempt 1 : _η<sub>p<sup>2</sup></sub>_ =.026; attempt 2: _η<sub>p<sup>2</sup></sub>_ =.010.​
+{{< /spoiler >}}
+
+* **Embodiment of secrets** (secrets-as-burdens). Secrets are experienced as physical burdens, influencing how people perceive and act in the world.​ People who recalled, were preoccupied with, or suppressed an important secret estimated hills to be steeper and perceived distances to be farther.
+{{< spoiler text="Statistics" >}}
+* Status: mixed.
+* Original paper: ‘[The Physical Burdens of Secrecy](https://psycnet.apa.org/record/2012-05413-001)’, Slepian et al. 2012; studies 1, 2 and 4 experimental mixed model design, study 3 correlational, study 1 n = 40, study 2 n = 36, study 3 n = 40, study 4 n = 30. [citations=113 (GS, November 2022)]​.
+* Critiques: [LeBel and Wilbur 2014](https://link.springer.com/article/10.3758/s13423-013-0549-2), direct Slepian et al. 2012 Study 1 replication [Study 1 n=240, Study 2 n = 90, citations=24(GS, November 2022)]. [Pecher et al. 2015](https://journals.sagepub.com/doi/abs/10.1177/1948550613498516), direct Slepian et al.2012 Study 1 and Study 2 replication [Study 1 n=100, Study 2 n = 100, Study 3 n = 118, citations=11(GS, November 2022)]. [Slepian et al. 2014](https://journals.sagepub.com/doi/abs/10.1177/1948550613498516) [Study 1 n=83, Study 2 n = 174, citations=51(GS, November 2022)]. ​[Slepian et al. 2015](https://psycnet.apa.org/buy/2015-05380-001), [Study 1 n = 100, Study 2 n = 100, Study 3 n = 100, Study 4 n = 352, citations=42(GS, November 2022)].
+* Original effect size: Study 1 – Big/meaningful vs. small/trivial secret hill steepness comparisons _d_ = 0.78 (calculated from M and SD data in the paper, also reported in[ LeBel and Wilbur 2014](https://link.springer.com/article/10.3758/s13423-013-0549-2)); Study 2 - Big/meaningful vs. small/trivial distant perception comparisons _d_ = 0.67 (calculated from M and SD data in the paper, also reported in[ Pecher et al. 2015](https://psycnet.apa.org/doiLanding?doi=10.1037%2Fxge0000090)); Study 3 – effects of the frequencies of thought of infidelity on estimated effort required by physical task _R<sup>2</sup> _= .21 / _d_ = 1.03 [converted using this[ conversion](https://www.escal.site/)]; Study 4 – more burdensome vs. less burdensome secret concealment effects on willingness to help others with physical task _r_ = .44 / _d_= 0.98 [converted using this[ conversion](https://www.escal.site/)].
+* Replication effect size: LeBel and Wilbur: Study 1 - ​ Big/meaningful vs. small/trivial secret hill steepness comparisons _d_ = 0.176 [-.08, .43] [reported] (not replicated); Study 2 - Big/meaningful vs. small/trivial secret hill steepness comparisons _d_ = -0.319 [-.73, .10] [reported] (not replicated). Pecher et al.: Study 1 - Big/meaningful vs. small/trivial secret hill steepness comparisons _d_ = 0.08 [-0.31, 0.47] [reported] (not replicated); Study 2 - Big/meaningful vs. small/trivial secret hill steepness comparisons _d_ = 0.21 [-0.18, 0.60] [reported] (not replicated); Study 3 - Big/meaningful vs. small/trivial secret perceived distance comparisons _d_ = 0.21 [-0.15, 0.57] [reported] (not replicated). Slepian et al. 2014: Study 1 - ​ Big/meaningful secret recollection condition effects on hill slant estimation in comparison to reveаling a secret, _r_ = .29 [reported] / _d_= 0.61, and control condition _r_ = .34 [reported] / _d_= 0.72 [_d_'s converted using this[ conversion](https://www.escal.site/)] (replicated); Study 2 - Big/meaningful secret recollection condition effects on distance estimation in comparison to revealing a secret, _r_ = .24 [reported] / _d_= 0.49, and control condition _r_ = .30 [reported] / _d_= 0.62 [_d_s converted using this[ conversion](https://www.escal.site/)] (replicated). Slepian et al. 2015: Study 1 - Big/meaningful vs. small/trivial secret hill steepness comparisons _d_ = 0.31 (calculated from M and SD data in the paper, non-significant) (not replicated); Study 2 - Big/meaningful vs. small/trivial secret hill steepness comparisons _r_ = .28 [reported] / _d_= 0.58 [converted using this[ conversion](https://www.escal.site/)] (replicated); Study 3 – Recalling preoccupying vs. non-preoccupying secret effects on hill slant judgements _r_ = .23 [reported] / _d_= 0.47 [converted using this[ conversion](https://www.escal.site/)] (replicated); Study 4 - Recalling preoccupying vs. non-preoccupying secret effects on hill slant judgements _r_ = .11 [reported] /_d_= 0.22 [converted using this[ conversion](https://www.escal.site/)] (replicated).
+{{< /spoiler >}}
+
+* **Warmer-hearts-warmer-room effect**. Priming “warm” communal traits (vs. other traits) led participants to report that the room in which they were taking the study was warmer.
+{{< spoiler text="Statistics" >}}
+* Status: not replicated
+* Original paper: ‘[Warmer hearts, warmer rooms: How positive communal traits increase estimates of ambient temperature](https://psycnet.apa.org/record/2013-08589-013)’, Szymkow et al. 2013; Experiment 1: N = 80, two between-subjects conditions; Experiment 2: N = 80, two between-subjects conditions; Experiment 3: N = 160, four between-subjects conditions. [citations = 66 (GS, June 2022)].
+* Critiques: [Ebersole et al. 2016](https://www.sciencedirect.com/science/article/pii/S0022103115300123) [n = 3,119, citations = 438 (GS, June 2022)].
+* Original effect size: _d_ = .86 [.40, 1.33] obtained from Ebersole et al. 2016.
+* Replication effect size: Ebersole et al.: _d_ = .06 [−.06, .08].
+{{< /spoiler >}}
+
+* **Treating-prejudice-with-imagery effect**. Imagining a positive encounter with a member of a stigmatised group promote positive perceptions when it was preceded by imagined negative encounter.​
+{{< spoiler text="Statistics" >}}
+* Status: not replicated. 
+* Original paper: ‘[Treating” Prejudice: An Exposure-Therapy Approach to Reducing Negative Reactions Toward Stigmatized Groups](https://journals.sagepub.com/doi/10.1177/0956797612443838)’, Birtel and Crisp 2012; three between-subjects experiments, Experiment 1: n = 29, Experiment 2a: n = 32, Experiment 2b: n = 30. [Citations = 100 (GS, October 2022)]​.
+* Critiques:[ McDonald et al. 2014](https://journals.sagepub.com/doi/10.1177/0956797613516010) [Study 1: n = 240, Study 2: n = 175, citations = 24 (GS, October 2022)]. 
+* Original effect size: All effect sizes reported in McDonald et al.: anxiety adult with schizophrenia _d_= 0.76, anxiety homosexual men _d_ = 1.08, contact homosexual men _d_ = -0.88.
+* Replication effect size: McDonald et al.: anxiety adult with schizophrenia _d_ = 0.10 (non-significant), anxiety homosexual men _d_ = -0.19 (non-significant), contact homosexual men _d_ = 0.01 (non-significant).​
+{{< /spoiler >}}
+
+* **Grammar influences perceived intentionality**. Describing a person's behaviours in terms of what the person _was doing _(rather than what the person _did_) enhances intentionality attributions in the context of both mundane and criminal behaviors.​ Participants judged actions described in the imperfective as being more intentional and they imagined these actions in more detail.
+{{< spoiler text="Statistics" >}}
+* Status: mixed. 
+* Original paper: ‘[Learning About What Others Were Doing: Verb Aspect and Attributions of Mundane and Criminal Intent for Past Actions](https://journals.sagepub.com/doi/abs/10.1177/0956797610395393)’, Hart and Albarracín 2011; three between-subject experiments, Experiment 1 n = 54, Experiment 2 n = 37, Experiment 3 n = 48. [citations=40(GS, October 2022)]​.
+* Critiques:[ Eerland et al. 2016](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0141181) Multilab direct replication of Study 3 [N=685 across 12 studies, citations=82(gs, October 2022)].​ [Sherrill et al. 2015](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0141181) [N=699 across 4 Experiments, citations=14(GS, October 2022)].[ ](https://journals.sagepub.com/doi/full/10.1177/1745691615605826)
+* Original effect size: Experiment 1 – accessibility to intention-relevant concepts _d_= 1.00 [reported]; Experiment 2 – attribution of intentionality _d_= 1.00 [reported], detailed segmentation of behaviour descriptions _d_= 1.23 [reported]; Experiment 3 – criminal intentionality _d_= 0.76 [reported], intention attributions _d_= 0.66 [reported], imagery _d_= 0.73 [reported].
+* Replication effect size: Eerland et al.: intentionality _d_= -0.98 to _d_= 0.65 [reported], Meta-analytic effect for laboratory replications _d_= -0.24 [-0.50, 0.02] [non-significant, reported]; imagery _d_= -0.45 to _d_= 0.33, Meta-analytic effect for laboratory replications _d_= -0.08 [-0.23, 0.07] [non-significant, reported]; intention attribution _d_= -0.29 to _d_= 0.19, Meta-analytic effect for laboratory replications _d_= 0.00 [-0.07, 0.08] [non-significant, reported]. Sherrill et al.: Experiment 2 – murder intentionality judgement in imperfective vs. perfective condition _η<sub>p<sup>2</sup></sub>_ = 0.036 [reported] / _d_ = 0.19 [converted using this[ conversion](https://haiyangjin.github.io/2020/05/eta2d/#from-cohens-d-to-partial-eta-squared)] (replicated); Experiment 3 – murder intentionality judgement in imperfective vs. perfective condition _η<sub>p<sup>2</sup></sub>_ = 0.040 [reported] / _d_ = 0.20 [converted using this[ conversion](https://haiyangjin.github.io/2020/05/eta2d/#from-cohens-d-to-partial-eta-squared)] (replicated); Experiment 4 – imperfective murder vs. perfective murder condition _d_= 0.15 [non-significant, reported]. 
+{{< /spoiler >}}
+
+* **Attachment-warmth embodiment effect** (anxious attachment warm food effect) Attachment anxiety positively predicts sensitivity to temperature cues.​ Individuals with high (but not low) attachment anxiety report higher desires for warm foods (but not neutral foods) when attachment is activated.
+{{< spoiler text="Statistics" >}}
+* Status: not replicated 
+* Original paper: ‘[Warm Thoughts: Attachment Anxiety and Sensitivity to Temperature Cues](https://journals.sagepub.com/doi/full/10.1177/0956797611435919)’, Vess 2012; between-subject experiment, Study 1: n = 56. [citations = 45 (GS, October 2022)]​.
+* Critiques: ​[LeBel and Campbell 2013](https://etiennelebel.com/documents/l&c(2013,psci).pdf) [Sample 1: n = 219, Sample 2: n=233, citations = 46 (GS, October 2022)].
+* Original effect size: _f<sup>2</sup>_ = .0734 ([Table 1](https://etiennelebel.com/documents/l&c(2013,psci).pdf)), _d_ = .60 (CurateScience), but [calculated](https://stats.oarc.ucla.edu/other/mult-pkg/faq/general/effect-size-power/faqhow-is-effect-size-used-in-power-analysis/): _d_ = .54
+* Replication effect size: LeBel and Campbell: Sample 1: _f<sup>2</sup>_ = .000228, _d_ = .03; Sample 2: _f<sup>2</sup>_ = .000563, _d_=.05.
+{{< /spoiler >}}
+
+* **Social and personal power**. Social power (power over other people) and personal power (freedom from other people) have opposite associations with independence and interdependence; they have opposite effects on stereotyping (social power decreases and personal power increases stereotyping), but parallel effects on behavioural approach (both types of power increase it).
+{{< spoiler text="Statistics" >}}
+* Status: mixed
+* Original paper: ‘[Differentiating Social and Personal Power Opposite Effects on Stereotyping, but Parallel Effects on Behavioral Approach Tendencies](https://journals.sagepub.com/doi/abs/10.1111/j.1467-9280.2009.02479.x)’, Lammers et al. 2009; Study 1 between-subject experiments, Study 2 field/correlational study, n1 = 113, n2 = 3,082. [citations=233(GS, December 2022)]​.
+* Critiques: [Mayiwar and Lai 2009](https://psycnet.apa.org/record/2019-48251-001) direct replication of the Lammers et al. Study 1 [n=295, citations=5(GS, December 2022)].​
+* Original effect size: Study 1 – effect of the power manipulations on participants’ stereotyping _η<sub>p<sup>2</sup></sub>_ = 0.23 [reported] / _d_ = 0.54 [converted using this[ conversion](https://haiyangjin.github.io/2020/05/eta2d/#from-cohens-d-to-partial-eta-squared)]; effect of the power manipulations on participants’ behavioural approach tendencies _η<sub>p<sup>2</sup></sub>_ = 0.13 [reported] / _d_ = 0.38 [converted using this[ conversion](https://haiyangjin.github.io/2020/05/eta2d/#from-cohens-d-to-partial-eta-squared)]; Study 2 – significant effects of personal, _b_ = 0.05 [0.01, 0.09], and social power, _b_ = -0.04 [0.08, 0.01] on stereotyping; significant effects of personal, _b_ = 0.22 [0.19, 0.26], and social power, _b_ = 0.18 [0.13, 0.24] on behavioural approach tendencies.
+* Replication effect size: Mayiwar and Lai: effect of the power manipulations on participants’ stereotyping _η<sub>p<sup>2</sup></sub>_ = 0.056 [reported] / _d_ = 0.24 [converted using this[ conversion](https://haiyangjin.github.io/2020/05/eta2d/#from-cohens-d-to-partial-eta-squared)] (replicated); effect of the power manipulations on participants’ behavioural approach tendencies _η<sub>p<sup>2</sup></sub>_ = 0.017 [reported, not significant] / _d_ = 0.13 [converted using this[ conversion](https://haiyangjin.github.io/2020/05/eta2d/#from-cohens-d-to-partial-eta-squared)] (not replicated).
+{{< /spoiler >}}
+
+* **Classical anchoring effect** (anchoring and adjustment). Assimilation of numeric estimates toward previously considered numeric values. ​
+{{< spoiler text="Statistics" >}}
+* Status: replicated 
+* Original paper: [‘Judgment under Uncertainty: Heuristics and Biases: Biases in judgments reveal some heuristics of thinking under uncertainty](https://www.science.org/doi/abs/10.1126/science.185.4157.1124)’, Kahneman & Tversky, 1974, p. 1128; between-subjects manipulation of anchor (high vs. low), sample size not reported. [citations=46154(GS, August 2022)]​.
+* Critiques: Narrative review: [Furnham and Boo, 2011](https://doi.org/10.1016/j.socec.2010.10.008) [citations=1030(GS, August 2022)]. Meta-analysis (negotiations): Meta-analysis (economics): [Li et al. 2021](https://doi.org/10.1016/j.socec.2020.101629) [n not reported, citations=15 (GS, August, 2022)]. [Orr and Guthrie, 2006](https://heinonline.org/HOL/LandingPage?handle=hein.journals/ohjdpr21&div=26&id=&page=) [n=1,259, citations=138 (GS, August, 2022)]. Dynamic meta-analysis (all fields of anchoring): [Röseler et al., 2022](https://metaanalyses.shinyapps.io/OpAQ/) [n=18,601, citations=0 (GS, March, 2023)].[Röseler and Schütz, 2022](https://doi.org/10.31234/osf.io/wf2tn) [n=17,708, citations=0 (GS, August, 2022)]. Meta-analysis (law context): [Townson, 2019](https://www.proquest.com/docview/2311653546?pq-origsite=gscholar&fromopenview=true) [n not available (no access to document), citations=4 (GS, August, 2022)].
+* Original effect size: Not reported.
+* Replication effect size: Röseler et al.: [as of August 2022]: _g_ = 0.683, _p_ &lt; .001, 95% CI [0.584, 0.782], 95% PI [-0.24, 1.606], σ² = 0.218, Ntotal = 18601, _k_ = 418.
+{{< /spoiler >}}
+
+* **Incidental environmental anchoring effect** (incidental anchoring [[Critcher & Gilovich, 2008]](https://doi.org/10.1002/bdm.586), basic anchoring [[Wilson, Houston, Etling, & Brekke, 1996]](https://doi.org/10.1037//0096-3445.125.4.387) “Anchor values that are incidentally present in the environment can affect a person’s numerical estimates (...) these effects were not qualified by participants’ expertise in the relevant domain (study 1) or by their ability to subsequently recall the anchor value (study 3).” (Critcher & Gilovich, 2008).
+{{< spoiler text="Statistics" >}}
+* Status: not replicated
+* Original paper: ‘[Incidental environmental anchors](https://doi.org/10.1002/bdm.586)’, Critcher and Gilovich, 2008; 3 studies w. Between-subjects manipulation of incidental anchors, n = 265 (Study 1) + 207 (Study 2) + 194 (Study 3) = 666. [citations=261(gs, August 2022)]​.
+* Critiques: [Shanks et al., 2020](https://doi.org/10.1525/collabra.310) [n(Restaurant item)= 69 (Study 1) + 125 (Study 2) + 422 (Study 3) = 616, citations=11(GS, August, 2022)]. 
+* Original effect size: _d_ = 0.49 [0.25, 0.72] according to [Shanks et al., 2020, p. 9](https://doi.org/10.1525/collabra.310).
+* Replication effect size: Shanks et al.: _d_ = -0.02 [-0.08, 0.05].
+{{< /spoiler >}}
+
+* **Subliminal anchoring effect** (subliminal anchoring). Numeric estimates are biassed toward previously, subliminally presented numbers that could not be perceived by respondents.​
+{{< spoiler text="Statistics" >}}
+* Status: not replicated
+* Original paper: ‘[Subliminal anchoring: Judgmental consequences and underlying mechanisms’](https://doi.org/10.1016/j.obhdp.2004.12.002), Mussweiler and Englich, 2005; between-subjects manipulation of subliminally presented anchor, n = 76. [citations=235(GS, August 2022)]​. 
+* Critiques: [Reitsma-van Rooijen and Daamen 2006 ](https://doi.org/10.1016/j.jesp.2005.05.001)[n=62, citations=6(GS, August 2022)]. ; [Röseler et al., 2021](https://doi.org/10.1016/j.jesp.2020.104066) [n=333, citations=6(GS, August 2022)]. 
+* Original effect size: _d_=0.690 to _d_=0.867 
+* Replication effect size: Reitsma-van Rooijen and Daamen 2006: not reported; Röseler et al.: _d_=-0.148 to _d_=0.104​.
+{{< /spoiler >}}
+
+* **Facial redness increased perceived anger.** When people rate faces and these are red, rated anger is positively associated with the faces’ redness.​
+{{< spoiler text="Statistics" >}}
+* Status: mixed
+* Original paper: <span style="text-decoration:underline;">‘[Facial redness, expression, and masculinity influence perceptions of anger and health](https://doi.org/10.1080/02699931.2016.1273201)</span>’, Young et al., 2018; full within-subjects design, 40 (Study 1) + 44 (Study 2). [citations=23(GS, October 2022)]​.
+* Critiques: Effect could not be replicated with natural shades of red: [Wolf et al., 2021](https://www.tandfonline.com/doi/abs/10.1080/02699931.2021.1979473) [n=609, citations=1(GSt, October 2022)]. Effect persisted only in a within-subjects design: [Wolf et al., 2022](https://psyarxiv.com/ntukz/) [n= 40 (Study 1) + 329 (Study 2), citations=0(GS, October 2022)]. ​
+* Original effect size: Cohen’s _f_ = .35.
+* Replication effect size: Wolf, et al.: η<sub>p<sup>2</sup></sub>=0.04 [0.01, 0.06].
+{{< /spoiler >}}
+
+* **Romeo and Juliet effect**. Greater love and commitment towards a romantic partner when others (e.g., parents, friends) are observed to interfere with, or disapprove of, the relationship.​
+{{< spoiler text="Statistics" >}}
+* Status: reversed
+* Original paper:[ ‘Parental interference and romantic love: The Romeo and Juliet effect’](https://doi.org/10.1037/h0033373), Driscoll et al. 1972; within-subjects, _n_ = 140 (couples). [citations = 490 (GS, October 2022)].
+* Critiques: [Parks et al. 1983](https://doi.org/10.2307/3033848) [_n_ = 193, citations = 260 (GS, February, 2023)]. [Sinclair et al. 2014](https://doi.org/10.1027/1864-9335/a000181) [Experiment: _n_ = 396 (direct replication), Meta-analysis: _n_ = NA, _k_ = 22 studies, citations = 56 (GS, October 2022)].
+* Original effect size: Romantic love and parental interference: _r_ = .34; Commitment and parental interference: _r_ = .30.
+* Replication effect size: Parks et al.: All effects correlated with romantic love: Own family approval: _r_ = .47 (opposite direction); Partners family approval: _r_ = .42 (opposite direction); Own friend approval:_ r_ = .51 (opposite direction); Partners friends’ approval: _r_ = .49 (opposite direction); Own network approval: _r_ = .63 (opposite direction). Sinclair et al.: Experiment: Romantic love - Parental interference: _r_ = -.05 (not replicated); Friend interference: _r_= -.07 (not replicated); Commitment - Parental interference: _r_ = -.09 (not replicated); Friend interference: _r_ = -.06 (not replicated). Meta-analysis: Romantic love and network approval (_k_ = 11 studies): _g_ = 0.49 [0.26,0.72] (opposite direction); Commitment and network approval (_k_ = 16 studies): _g_ = 0.62 [0.50,0.74] (opposite direction).
+{{< /spoiler >}}
+
+* **Stereotype activation effect**. Judgments of targets that follow gender-congruent primes are made faster than judgments of targets that follow gender-incongruent primes.​
+{{< spoiler text="Statistics" >}}
+* Status: not replicated
+* Original paper: <span style="text-decoration:underline;">‘[Automatic Stereotyping](https://journals.sagepub.com/doi/10.1111/j.1467-9280.1996.tb00346.x)’</span>, Banaji and Hardin 1996; method - the semantic priming procedure, sample size = 68. [citations=1060 (CS, November 2022)]​.
+* Critiques:<span style="text-decoration:underline;"> [Müller](https://econtent.hogrefe.com/doi/10.1027/1864-9335/a000183#) and [Rothermund](https://econtent.hogrefe.com/doi/10.1027/1864-9335/a000183#), 2014</span> [n=294, citations=32(GS, November 2022)]. 
+* Original effect size: Prime Gender x Target Gender: _F_(2, 144) = 15.28, _p_&lt;.001
+* Replication effect size: Müller and Rothermund: Prime Gender × Target Gender interaction: _F_(1, 293) = 39.68, _p_ = 1.09 × 10<sup>−9</sup>
+{{< /spoiler >}}
+
+* **Sex difference in distress to infidelity**. Men, compared to women, are more distressed by sexual than emotional infidelity, and this sex difference continued into older age.​
+{{< spoiler text="Statistics" >}}
+* Status: replicated
+* Original paper: <span style="text-decoration:underline;">‘[Jealousy and the nature of beliefs about infidelity: Tests of competing hypotheses about sex differences in the United States, Korea, and Japan](https://onlinelibrary.wiley.com/doi/10.1111/j.1475-6811.1999.tb00215.x)</span>’, David et al. 1999; study design = experimental (Questionnaire), sample 1 size = 405, sample 2 size = 626. [citations=552 (GS, November 2022)]​.
+* Critiques: [Shackelford and Voracek, 2004](https://link.springer.com/article/10.1007/s12110-004-1010-z) [n=234 citations=172 (GS, November 2022)].
+* Original effect size: _t_(494) = 6.09 for Sample 1 and _t_(624) = 6.82 for Sample 2, both _p_’s &lt; .001.
+* Replication effect size: _d_ = 1.29, _t_(232) = 9.89, _p_ &lt; .001;
+{{< /spoiler >}}
+
+* **Content effect for cheater detection**. There is a performance improvement on the Wason selection task if it involves cheater detection. College students were better able to complete the selection task for unfamiliar scenarios if it involved detecting a cheater instead of a descriptive scenario.
+{{< spoiler text="Statistics" >}}
+* Status: replicated
+* Original paper: <span style="text-decoration:underline;">‘[The logic of social exchange: Has natural selection shaped how humans reason? Studies with the Wason selection task](https://www.sciencedirect.com/science/article/abs/pii/0010027789900231)</span>’, Cosmides 1989; experiment, n=24. [citations=3720 (GS, November 2022)].
+* Critiques: [Van Lier et al.2013](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3547066/) [n=117, citations=46 (GS, November 2022)].
+* Original effect size: OR = 7.29 [calculated].
+* Replication effect size: Van Lier, Revlin and De Neys: _d_=0.77.
+{{< /spoiler >}}
+
+* **Dissenting deviant social rejection effect**. Groups reject opinion deviates from future interaction.
+{{< spoiler text="Statistics" >}}
+* Status: mixed
+* Original paper: ‘[Deviation, rejection, and communication](https://psycnet.apa.org/record/1951-08043-001)’, Schachter 1951; experiment, sample size = 198. [citations=2209 (GS, November 2022)]​.
+* Critiques: [Wesselmann 2014](https://psycnet.apa.org/fulltext/2014-20922-004.html) [n=80, citations=37 (GS, November 2022)].
+* Original effect size: _d_ = 1.84 (source: meta-analysis by [Tata et al. 1996)](https://econtent.hogrefe.com/doi/10.1027/1864-9335/a000180#c19)
+* Replication effect size: Wesselmann: replicated: Communication Pattern - effect for change over time in overall communication to the confederates _F_(5, 80) = 1.23, _p_ = 0.30, _n<sub>p<sup>2</sup></sub>_ = 0.07; effect for the groups’ differential communication between the confederates F(2, 32) = 20.83, _p_ &lt; 0.01, _n<sub>p<sup>2</sup></sub>_ = 0.57; interaction between communication to the different confederates and the point of the conversation _F_(10, 160) = 0.99, _p_ = 0.45, _n<sub>p<sup>2</sup></sub>_ = 0.06; not replicated: Committee Nomination Measure χ<sup>2</sup>(4) = 0.79, _p_ = 0.94; replicated: Sociometric Test χ<sup>2</sup>(2) = 14.74, _p_ &lt; .01.
+{{< /spoiler >}}
+
+* **Sex differences in implicit maths attitudes**. College students, especially women, demonstrated negativity toward maths and science relative to arts and language on implicit measures.​
+{{< spoiler text="Statistics" >}}
+* Status: replicated
+* Original paper: [Math = male, me = female, therefore math ≠ me](https://psycnet.apa.org/doiLanding?doi=10.1037%2F0022-3514.83.1.44), Nosek et al.2002; study design = experiment, n = 170. [citations=1428 (GS, November 2022)]​.
+* Critiques: [Klein et al. 2014](https://econtent.hogrefe.com/doi/full/10.1027/1864-9335/a000178) [n=5842, citations=1129 (GS, November 2022)]. 
+* Original effect size: _d_=1.01[.54, 1.48] (reported in Klein et al. 2014). 
+* Replication effect size: Klein et al.: _d_=0.56[0.45, 0.68]
+{{< /spoiler >}}
+
+* **Low versus high category scale effect on behaviour self-report**. Response scales serve informative functions. The response categories suggest a range of "usual" or "expected" behaviours, and this information affects respondents' behavioural reports as well as related judgments.
+{{< spoiler text="Statistics" >}}
+* Status: replicated
+* Original paper: ‘[Response Scales: Effects of Category Range on Reported Behavior and Comparative Judgments](https://academic.oup.com/poq/article-abstract/49/3/388/1879582?redirectedFrom=fulltext)’, Schwarz 1985; between-subjects design, sample size = 211. [citations=450(GS, November 2022)]​.
+* Critiques: [Klein et al. 2014](https://econtent.hogrefe.com/doi/full/10.1027/1864-9335/a000178) [n=5899, citations=1129 (GS, November 2022)]
+* Original effect size: _d_=0.50[0.15, 0.84].
+* Replication effect size: Klein et al.: _d_=0.51[0.42, 0.61].
+{{< /spoiler >}}
+
+* **Information source on attitudes effect**. The source of information has a major impact on how that information is perceived and evaluated.
+{{< spoiler text="Statistics" >}}
+* Status: replicated 
+* Original paper: ‘[Prestige, Suggestion, and Attitudes](https://www.tandfonline.com/doi/abs/10.1080/00224545.1936.9919891)’, Lorge and Curtiss 1936; experiment, sample size = 99. [citations=242(GS, November 2022)]​.
+* Critiques: [Klein et al. 2014](https://econtent.hogrefe.com/doi/full/10.1027/1864-9335/a000178) [n=6325, citations=1129 (GS, November 2022)].
+* Original effect size: NA.
+* Replication effect size: Klein et al.: _d_ = 0.31[0.19, 0.42].
+{{< /spoiler >}}
+
+* **Door-in-the-face effect.** The door-in-the-face effect occurs when making a larger initial request and then afterwards scaling back and asking a more moderate request increases compliance (with the moderate request) compared to either starting with the moderate request or starting with a small request.
+{{< spoiler text="Statistics" >}}
+* Status: replicated
+* Original paper:[ ‘Reciprocal concessions procedure for inducing compliance: The door-in-the-face technique](https://doi.org/10.1037/h0076284)’, Cialdini et al. 1975; Between-subjects manipulation of size of initial request, n=72. [citations=999(GS, January 2023)].
+* Critique: [Genschow et al. 2021](https://doi.org/10.1037/pspa0000261) [Between-subjects manipulation of size of initial request, n=391, citations=9(GS, January 2023)]
+* Original effect size: OR= 2.36 (_d_ = .47).
+* Replication effect size: Genschow et al.: OR= 2.082 (_d_ = .40).
+{{< /spoiler >}}
+
+* **Foot-in-the-door effect**. The foot-in-the-door effect occurs when getting people to comply with a very small initial request increases the likelihood that they will agree to a larger request (compared to starting with the larger request).
+{{< spoiler text="Statistics" >}}
+* Status: mixed
+* Original paper: ‘[Compliance without pressure: The foot-in-the-door technique](https://doi.org/10.1037/h0023552)’, Freedman and Fraser 1966; between-subjects manipulation of whether or not there is a very small initial request, n=156. [citations=2,667(GS, January 2023)].
+* Critique: [Gamian-Wilk and Dolinski 2019](http://doi.org/10.1177/0033294119872208) [Between-subjects manipulation of whether or not there is a very small initial request, n=60 in each of 4 replication studies; 240 total, citations=3(GS, January 2023)].
+* Original effect size: OR = 3.912; _d_ = 2.16.
+* Replication effect size: Out of 4 replication attempts, only 1 succeeded with _p_ &lt; .05, although most were directional and had small sample sizes. OR = 8.76, _d_ = 4.83 if aggregating across all 4 replications (which probably makes the most sense given small sample sizes); or in just the successful replication: OR = 33.14 in successful one (due to only 1 person complying with large request in the control condition).
+{{< /spoiler >}}
+
+* **Ingroup-outgroup norm of reciprocity effect**. “When confronted with a decision about allowing or denying the same behaviour to an ingroup and outgroup, people may feel an obligation to reciprocity, or consistency in their evaluation of the behaviours.”
+{{< spoiler text="Statistics" >}}
+* Status: replicated
+* Original paper: ‘The Current Status of American Public Opinion’, Hyman and Sheatsley, 1950; experiment, n = NA. [citations=161(GS, November 2022)]​. Was not able to find the online version of the original paper.
+* Critiques: [Klein et al. 2014](https://econtent.hogrefe.com/doi/full/10.1027/1864-9335/a000178) [n=6276, citations=1129 (GS, November 2022)].
+* Original effect size: _d_=0.16[0.06 0.27]. 
+* Replication effect size: _d_=0.27 [0.18, 0.36].
+{{< /spoiler >}}
+
+* **Social dominance-status** (verticality effects). Vertical dimension of human relations (such as dominance and submission) and nonverbal behaviour are intimately and fruitfully linked; nonverbal behaviour, such as gazing, smiling, touching, and various body positions can signal high and low verticality.
+{{< spoiler text="Statistics" >}}
+* Status: mixed
+* Original paper: ‘[Body Politics: Power, Sex, and Nonverbal Communication](https://archive.org/details/bodypoliticspowe00henl)’, Henley 1977; book/theoretical and anecdotal evidence, n=NA. [citations=2284(GS, May 2023)]​.
+* Critiques: [Hall et al. 2005](https://psycnet.apa.org/doiLanding?doi=10.1037%2F0033-2909.131.6.898) [meta-analysis, _k_=211, citations=1103(GS, May 2023)].
+* Original effect size: NA. 
+* Replication effect size: Hall et al.: beliefs (perceptions) about the relation of verticality to nonverbal behavior (average _r_, weighted by sample size) – smiling _r_=-.25 [-.29, -.21], gazing _r_=.10 [.06, .14], raised brows _r_=-.36 [-.41, -.31], nodding _r_=.12 [.00, .18], self touch _r_=-.09 [-.24, -.06], other touch _r_=.21 [.17, .29], hand/arm gestures _r_=.37 [.25, .49], postural relaxation _r_=-.09 [-.04, .24], body/leg shifting _r_=.10 [-.29, -.21], interpersonal distance _r_=-.34 [-.43, -.25], facing orentation _r_=.10 [-.01, .21], vocal variability _r_=.24 [.16, .32], loudness _r_=.47 [.39, .55], interruptions _r_=.61 [.52, .70], pausing/latency to speak _r_=-.78 [-.94, -.62], rate of speech _r_=.09 [.03, .15], pitch _r_=-.10 [-.19, -.01], vocal relaxation _r_=.33 [.18, .48]; actual relations between verticality and nonverbal behavior (average _r_, weighted by sample size) – smiling _r_=-.03 [-.09, .03], gazing _r_=-.01 [-.09, .07], raised brows _r_=-.06 [-.25, .18], nodding _r_=.03 [-.05, .17], self touch _r_=-.04 [-.10, .10], other touch _r_=-.02 [-.10, .16], hand/arm gestures _r_=.05 [-.06, .10], openess _r_=.13 [.03, .23], postural relaxation _r_=.02 [-.08, .12], interpersonal distance _r_=-.17 [-.24, -.20], loudness _r_=.24 [.16, .32], interruptions _r_=.04 [-.02, .10], overlaps _r_=.06 [-.06, .81], pausing/latency to speak _r_=-.06 [-.24, .12], back-channel responses _r_=.03 [-.07, .13], speech errors _r_=.02 [-.10, .14], rate of speach _r_=-.06 [-.15, .03].
+{{< /spoiler >}}
+
+* **Personal cognitive dissonance - free-choice paradigm**. Personal cognitive dissonance, from the cognitive dissonance theory (Festinger, 1957), suggests that an inconsistency between two cognitions (e.g., an attitude and a past behaviour) creates an unpleasant psychological state (i.e., personal dissonance) that the individual is motivated to reduce (e.g., by changing one of the elements to fit the other). This personal cognitive dissonance has been studied in the literature through different paradigms, including the following three main ones: free-choice, induced-compliance and induced-hypocrisy paradigm. The mere act of choosing equally desirable options can arouse dissonance in the individual, because choosing option A implies the rejection of option B (in other words, choosing option A means accepting its advantages but also its disadvantages, but also accepting to deprive oneself of the advantages of option B). In order to reduce dissonance, subjects will increase the perceived gap between options (i.e., spreading of alternatives) by overestimating the chosen option and/or underestimating the rejected option. ​
+{{< spoiler text="Statistics" >}}
+* Status: NA
+* Original paper: ‘[Postdecision changes in the desirability of alternatives](https://psycnet.apa.org/record/1957-04251-001?doi=1)’, Brehm, 1956); experimental design, _n_ =225.[citations= 1987 (GS, February 2023)]​​.
+* Critiques: [Enisman et al. 2021](https://doi.org/10.1037/pspa0000263) [meta-analyse; _n_= 43 studies, citations = 11 (GS, February 2023)]​.​ [Izuma and Murayama 2013](https://doi.org/10.3389/fpsyg.2013.00041) [meta-analysis, _k_= 3 studies, citations = 109(GS, February 2023)]. 
+* Original effect size: NA.
+* Replication effect size: Enisman et al: Effect of free-choice paradigm on spreading of alternatives: _d_= 0.40 [0.32, 0.49]​.​ ​
+{{< /spoiler >}}
+
+* **Personal cognitive dissonance - induced-compliance paradigm**. In this paradigm, subjects are led to perform, in a context of free choice, an inconsistent act with their own norms or social norms (e.g., agree to perform a counter-attitudinal act). Dissonance can be resolved through multiple modes of reduction (e.g., social support, trivialization, etv.), but attitude change remains the most studied mode of reduction.​
+{{< spoiler text="Statistics" >}}
+* Status: replicated
+* Original paper: ‘[Dissonance arousal: Physiological evidence](https://doi.org/10.1037/0022-3514.45.4.782)’, Croyle and Cooper 1983; between-subjects design, n1 = 30, n2=30. [citations= 447 (GS, February 2023)]​.
+* Critiques: [Kenworthy et al. 2011 ](https://doi.org/10.1080/10463283.2011.580155)[meta-analyse; _n_= 31 studies, citations = 71 (GS, February 2023)]. [Kim et al. 2014](https://doi.org/10.1080/01463373.2014.949385) [meta-analyse; _k_= 230 effects, citations = 11 (GS, February 2023)]. [Vaidis et al. 2018](https://osf.io/9xsmj/) [multi-Lab Replication; _in preparation_].​ Original effect size: Effect of induced-compliance on attitude change: _d_= 2.40 [1.40, 3.37]​.
+* Replication effect size: Kenworthy et al.: Effect of induced-compliance on dissonance effects: _d_= 0.81 [0.70, 0.91]​.​ Kim et al.: Effect of induced-compliance on attitude change: _r_= .22 [.21, .24]​.​
+{{< /spoiler >}}
+
+* **Personal cognitive dissonance - Induced-hypocrisy paradigm**. In this paradigm, dissonance is aroused by making individuals aware of the discrepancy between a socially desirable behaviour (e.g., not wasting water; stage 1: normative commitment phase) and their own past transgressive behaviours (e.g., remembering one's past water waste; stage 2: transgression salience phase). Most of the dissonance reduction work is done through behavioural means, and leads subjects to express behavioural intentions, and/or perform behaviours in the direction of the socially desirable behaviours expressed in step 1 (i.e., allowing for the reduction of the inconsistency between the norm, step 1, and the recall of transgressions, step 2).​
+{{< spoiler text="Statistics" >}}
+* Status: replicated
+* Original paper: ‘[Overcoming denial and increasing the intention to use condoms through the induction of hypocrisy](https://doi.org/10.2105/AJPH.81.12.1636)’, Aronson et al., 1991; between-subjects design, n = 80. [citations= 485 (GS, February 2023)]​.
+* Critiques: [Priolo et al. 2019](https://doi.org/10.1177/0146167219841621) [meta-analyse; _k_= 38 studies, citations = 38 (GS, February 2023)].​
+* Original effect size: Effect of induced-hypocrisy on behavioural intention: _r_= .58 [.32, .75]​.
+* Replication effect size: Priolo et al.: Effect of induced-hypocrisy on behavioural intention: _r_= .35 [.22, .46]​; Effect of induced-hypocrisy on behaviour: _r_= .30 [.10, .48]​.​
+{{< /spoiler >}}
+
+* **Vicarious cognitive dissonance - induced-compliance paradigm**. Vicarious cognitive dissonance, from the cognitive dissonance theory (Festinger, 1957; see “personal cognitive dissonance”), suggests that it would be possible for an individual to experience dissonance _vicariously_ when they witness the performance of inconsistent act (e.g., counter-attitudinal or counter-normative behaviour) on the part of an in-group member with whom they strongly identify. As a personal cognitive dissonance, the inconsistency between two cognitions (e.g., between attitude and observed behaviour) creates an unpleasant psychological state (i.e., vicarious dissonance) that the individual is motivated to reduce (e.g., by changing one of the elements to fit the other). This vicarious cognitive dissonance has been studied in the literature through different paradigms, including the following two main ones: induced-compliance and induced-hypocrisy paradigm. In this paradigm, subjects are led to observe the realisation, by a member of their in-group, of a counter-attitudinal act with their own norms or social norms (e.g., agree to perform a counter-attitudinal act), performed in a context of free choice. Dissonance can be resolved through multiple modes of reduction (e.g., social support, trivialization, etc.), but attitude change remains the most studied mode of reduction.​
+{{< spoiler text="Statistics" >}}
+* Status: mixed
+* Original paper: Vicarious dissonance: Attitude change from the inconsistency of others, Norton et al. 2003; experimental design, exp 1: n = 50, exp 2 : n = 43, exp 3: n = 108. [citations= 344 (GS, February 2023)]​.
+* Critiques: Jaubert 2022 [paper not found; n = 102, citations = NA]. [Jaubert et al. 2020](https://psyarxiv.com/hc2n3/) [meta-analyse _in submission_; _k_= 13 studies, citations = 0 (GS, 2023)].​
+* Original effect size: Effect of vicarious dissonance on attitude change: _d_= 0.70 [0.21, 1.26].
+* Replication effect size: Jaubert: Effect of vicarious dissonance on attitude change: _η<sup>2<sub>p</sub></sup>_= 0.07. Jaubert et al.: Effect of vicarious dissonance toward the induced-compliance paradigm: _d_= 0.35 [0.15, 0.54]. Global effect of vicarious dissonance: _d_= 0.41 [0.27, 0.54], lower estimated effects when correcting for publication bias (_d_= 0.22 [0.008, 0.43]).​
+{{< /spoiler >}}
+
+* **Vicarious cognitive dissonance - Induced-hypocrisy paradigm**. In this paradigm, subjects are made to observe a member of their group becoming aware of the discrepancy between a socially desirable behaviour (e.g., not wasting water; stage 1: normative commitment phase) and their own past transgressive behaviours (e.g., remembering one's past water waste; stage 2: transgression salience phase). Most of the dissonance reduction work is done through behavioural means, and leads subjects to express behavioural intentions, and/or perform behaviours in the direction of the socially desirable behaviours expressed in step 1 (i.e., allowing for the reduction of the inconsistency between the norm, step 1, and the recall of transgressions, step 2).​
+{{< spoiler text="Statistics" >}}
+* Status: mixed
+* Original paper: Vicarious hypocrisy: Bolstering attitudes and taking action after exposure to a hypocritical ingroup member, Focella et al., 2016; experimental design, exp 1: n = 161, exp 2 : n = 68, exp 3: n = 64, exp 4: n = 68. [citations= 34 (GS, February 2023)]​.
+* Critiques: [Gaffney et al. 2012](https://www.tandfonline.com/doi/full/10.1080/15534510.2012.663741) [n = 78, citations=17(GS, November 2022)]. Jaubert 2022 [n = 133, citations = NA]. [Jaubert et al. 2020](https://psyarxiv.com/hc2n3/) [meta-analyse _in submission_; _k _= 13 studies, citations = 0 (GS, March 2023)].​ [Monin et al. 2004](https://journals.sagepub.com/doi/abs/10.1177/1368430204046108) [study 1 n=57, study 2 n = 25, citations=97(GS, November 2022)].​ 
+* Original effect size: Effect of induced-hypocrisy on behavioural intention: _d_= 0.70 [0.12, 1.26]​.
+* Replication effect size: Gaffney et al.: group membership X response to the hypocrisy interaction effect on attitudes _η<sub>p<sup>2</sup></sub>_ =0.142 /_d_ = 0.40 [calculated from the F statistics and converted using this conversion] (replicated). Jaubert: Effect of vicarious dissonance on attitude change: _η<sup>2<sub>p</sub></sup>_= 0.03. Jaubert et al.: Effect of vicarious dissonance toward the induced-compliance paradigm: _d_= 0.46 [0.27, 0.64]. Monin et al.: study 1 disagree versus agree condition attitude change comparison _d_ = 0.30 [calculated from the t-test values using this[ conversion](https://haiyangjin.github.io/2020/05/eta2d/#from-cohens-d-to-partial-eta-squared)]; study 2 no consequence versus consequence condition attitude change comparison _d_= 0.46 [calculated from the t-test values using this[ conversion](https://haiyangjin.github.io/2020/05/eta2d/#from-cohens-d-to-partial-eta-squared)] (replicated). 
+{{< /spoiler >}}
+
+* **Imposter phenomenon**. People who perform outstandingly both academically and professionally believe that in fact, they are not really bright and that they have fooled anyone who thinks otherwise. This phenomenon might be especially persistent in women. Key conclusion: Therapeutic interventions might help to overcome imposter syndrome.
+{{< spoiler text="Statistics" >}}
+* Status: not replicated
+* Original paper: ‘[The imposter phenomenon in high achieving women: Dynamics and therapeutic intervention](https://psycnet.apa.org/doiLanding?doi=10.1037%2Fh0086006)’, Clance and Imes 1978; Therapeutic interventions (but not described in detail), n=178. [Citations = 2709 (GS, January 2023)]​.
+* Critiques: [Bravata et al. 2020](https://link.springer.com/article/10.1007/s11606-019-05364-1): [n= 62 studies - systematic review, citations= 272 (GS, January 23)].
+* Original effect size: NA; No effect sizes mentioned in original study since no statistical analyses were performed.
+* Replication effect size: Bravata et al.: NA, but imposter phenomenon both present in men and women, particularly high among ethnic minority groups (original study mentioned white middle class women).
+{{< /spoiler >}}
+
+* **Ability EI as a factor of intelligence**. Ability EI is a collection of cognitive abilities relating to the recognition, understanding and management of emotions. There have been many controversies in attempting to contextualise Ability EI within models of intelligence/cognitive ability. MacCann et al. (2014) empirically tested multiple models of how various cognitive abilities interact, including hierarchical and bi-factor models, and the data demonstrated closest fit to a hierarchical structure where Ability EI was contextualised as a second-stratum factor. A recent replication repeated this modelling process and drew the same conclusion.
+{{< spoiler text="Statistics" >}}
+* Status: replicated
+* Original paper: ‘[Emotional Intelligence is a second-stratum factor of intelligence: evidence from hierarchical and bifactor models](https://pubmed.ncbi.nlm.nih.gov/24341786/)’, MacCann et al. 2014; cross-sectional questionnaire; n = 688. [Citations=320 (GS, January 2023)]​.
+* Critiques: [Evans et al. 2020 ](https://pubmed.ncbi.nlm.nih.gov/30730169/)[N = 830, Citations = 32 (GS, January 2023)].
+* Original effect size: NA
+* Replication effect size: Evans et al.: NA, but [reproduced this modelling process with a new sample and drew the same conclusion](https://pubmed.ncbi.nlm.nih.gov/30730169/).
+{{< /spoiler >}}
+
+* **Matilda effect** (Matthew Matilda effect). Male scientists and masculine topics are frequently perceived as demonstrating higher scientific quality.
+{{< spoiler text="Statistics" >}}
+* Status: mixed
+* Original paper: The name of the effect shows up first in ‘[The Matthew Matilda Effect in Science](https://doi.org/10.1177/030631293023002004)’, Rossiter, 1993; theoretical paper, n=NA. [citations=114(GS, February 2023)]​. 
+* Critiques: Unpublished replication in [Feeley and Lee 2015](https://www.buffalo.edu/content/dam/cas/communication/documents/MatildaEffect.pdf) [n=1177 articles across 3 journals, citations=5 (GS, February 2023)]. Related article also in communication research is [Feeley and Yang 2022](https://doi.org/10.1080/08934215.2021.1974505) [n=3324 articles across 10 journals, citations=2(GS, February 2023)]. Knobloch-Westerwick and Glynn 2013; correlational design, n=1020 articles across 2 journals [citations=114 (GS, February 2023)]. [Rajko et al. 2023](https://journals.sagepub.com/doi/10.1177/00936502221124389) [n=5,500 communication scholars from 11 countries, citations=0 (GS, February 2023)].
+* Original effect size: NA.
+* Replication effect size: Knobloch-Westerwick and Glynn: Publications with female lead authors were cited 12.77 times on average (SD = 20.57), whereas publications with male lead authors were cited 17.73 times on average (SD = 35.34), _η_² = 0.006; Male-typed publications receiving significantly more citations (M = 21.04, SD = 38.63 vs. M = 14.44, SD = 28.08), _η_² = 0.006; Publications with at least one male author received significantly more citations with M = 17.11 (SD = 33.38), compared with M = 11.93 citations (SD = 19.84) for publications from female authors, _η_² = 0.006Feeley and Lee: Female lead authors were cited, on average, 19.34 times (SD = 30.22) compared to male lead authors (M = 18.05, SD = 25.98) (non-significant); Male-typed topics (M = 22.43, SD = 36.55) received more citations than female-typed topics (M= 17.87, SD = 25.80), _η_² = 0.003. Feeley and Yang: 2 out of the 8 journals examined exhibited Matilda effects. Rajko et al.: After controlling for country, the total number of papers, and the total number of views, female scholars have significantly lower levels of citations than male peers (β = −.05; p &lt; .001).
+{{< /spoiler >}}
+
+* **Being slightly behind increases the chance of winning**. The original study has found that being slightly behind at halftime increases the chance of winning significantly in professional Basketball.​
+{{< spoiler text="Statistics" >}}
+* Status: mixed
+* Original paper: ‘[Can Losing Lead to Winning?](https://www.jstor.org/stable/25835742#:~:text=Can%20Losing%20Lead%20to%20Winning%3F,-Jonah%20Berger&text=Individuals%2C%20groups%2C%20and%20teams%20who,behind%20can%20actually%20increase%20success.&text=losing%20can%20sometimes%20lead%20to%20winning.)’, Beger et al., Devin, 2011; natural experiment, N = 11968. [citations = 271 (GS, February 2023)].
+* Critiques: [Teeselink et al. 2022](https://pubsonline.informs.org/doi/epdf/10.1287/mnsc.2022.4372) [natural experiment, N = 17535, citations = 9 (GS, February 2023)].
+* Original effect size: Teams behind by one point at halftime win between 5.8 and 8 percentage points more often than expected in the NBA across four models (between 2.1 and 2.5 percentage points in the NCAA). The result is statistically significant in all specifications in the NBA and in 3 out of 4 specifications in the NCAA.
+* Replication effect size: Teeselink et at.: With a larger sample, teams behind by one point at halftime win 5 percentage points more often than expected in the NBA (0.8 percentage points in the NCAA). The result is statistically significant for the large NBA sample (95% CI: 0.007, 0.094), but not the large NCAA sample (95% CI: −0.025, 0.041). Additionally, the replication also tests the hypothesis in other leagues and sports. Out of 12 leagues, the effect is only significant in the NBA. 
+{{< /spoiler >}}
+
+* **Ethnoracial diversity and trust**. Ethnoracial diversity negatively affects trust and social capital.
+{{< spoiler text="Statistics" >}}
+* Status: mixed
+* Original paper: ‘[E Pluribus Unum: Diversity and Community in the Twenty-first Century The 2006 Johan Skytte Prize Lecture](https://onlinelibrary.wiley.com/doi/abs/10.1111/j.1467-9477.2007.00176.x)’, Putnam 2007; observational study, N = 23260. [citations = 6860 (GS, February 2023)].
+* Critiques: [Abascal et al. 2015](https://www.journals.uchicago.edu/doi/abs/10.1086/683144) [observational study, N = 29733, citations = 331 (GS, February 2023)].
+* Original effect size: Trust in Neighbors increases by 0,18 (on a 4-point scale) when switching from a maximally heterogeneous to a maximally homogeneous community in the USA. _t_= 5.1. (see table 3).
+* Replication effect size: On the full-sample of the US, the authors find a similar result: trust in neighbours decreases by 0,12 in heterogeneous compared to homogeneous communities, BUT when using random subsamples of the US population, they only find a significant effect in 4 out of 30 models (average _t_=: -0,76). 
+{{< /spoiler >}}
+
+* **Greed moderates the relationship between SES and unethical behaviour**. The original study found that people of higher socio-economic status are more likely to engage in unethical behaviour, but that this relationship is moderated by greed. When study participants were primed to think positively about greed, those of lower SES became more likely to engage in unethical behaviour than those of higher SES.
+{{< spoiler text="Statistics" >}}
+* Status: not replicated
+* Original paper: ‘[Higher social class predicts increased unethical behavior](https://www.pnas.org/doi/10.1073/pnas.1118373109)’, Piff et al. 2012; experiment, N = 90. [citations = 1273 (GS, February 2023)].
+* Critiques: [Balakrishnan et al. 2017](https://www.nature.com/articles/sdata2016120); [experiment/meta analysis, n1= 264, n2=257, n3=306, n4=114, citations = 18 (GS, February 2023)].
+* Original effect size: Interaction effect between greed and SES: _b_=−0.24 [−0.44 , −0.04].
+* Replication effect size: Interaction effect between greed and SES in replication 1: unstandardized _b_=0.11 [−0.02 , 0.24], in replication 2: _b_=−0.06 [−0.16 , 0.04], in replication 3: _b_=0.01 [−0.10 , 0.12], in replication 4: _b_=0.10 [−0.10 , 0.29]. I.e., the interaction effect was not replicated in any of the four studies. 
+{{< /spoiler >}}
+
+* **Women’s education increases domestic violence**. Women with more education report higher levels of psychological violence at home​.
+{{< spoiler text="Statistics" >}}
+* Status: not replicated
+* Original paper: ‘[For Better or for Worse?: Education and the Prevalence of Domestic Violence in Turkey](https://www.aeaweb.org/articles?id=10.1257/app.20160278)’, Erten and Keskin 2018; natural experiment (RDD/IV), N = 1462. [citations = 153 (GS, February 2023)].
+* Critiques: [Akyol et al. 2020](https://www.iza.org/publications/dp/14001/does-education-really-cause-domestic-violence-replication-and-reappraisal-of-for-better-or-for-worse-education-and-the-prevalence-of-domestic-violence-in-turkey) [natural experiment (RDD/IV), N = 1093, citations = 4 (GS, February 2023)].
+* Original effect size: With a regression continuity design, the authors determine that 1 more year of education leads to a 0,12 standard deviation increase in reported domestic psychological violence (SE: 0,057) for Turkish women living in rural areas, which is significant at the 5% level. 
+* Replication effect size: Akyol et al.: With the same design and sample, but a different definition of rural areas, the authors find only a 0.099 standard deviation increase in reported domestic violence (SE: 0,061), which is not significant at the 5 or 10% level.
+{{< /spoiler >}}
+
+* **Easterlin paradox** (national income associated with happiness). When comparing across countries, higher levels of income are associated with higher levels of subjective well-being, yet this association does not show up across time. 
+{{< spoiler text="Statistics" >}}
+* Status: mixed
+* Original paper:[’Does Economic Growth Improve the Human Lot? Some Empirical Evidence’](http://graphics8.nytimes.com/images/2008/04/16/business/Easterlin1974.pdf), [Easterlin 1974](http://graphics8.nytimes.com/images/2008/04/16/business/Easterlin1974.pdf) observational study, n=25 time series observations for the United States from 1946-1970. [citations=8686(GS, February 2023)]​.
+* Critiques: [Easterlin 2005](https://doi.org/10.1007/s11205-004-6170-z) [focused on descriptive statistics, citations=470(GS, February 2023)]. [Hagerty and Veenhoven 2003](https://doi.org/10.1023/A:1024790530822) [n=336 (21 countries including the United States from 1973-1996), citations=765(GS, February 2023)]. A more comprehensive analysis using a variety of analyses and datasets can be found in [Sacks et al. 2012](http://www.iea.org.uk/sites/default/files/publications/files/IEA%20Pursuit%20of%20Happiness%20web.pdf) [n=79 countries spanning 1980 to 2004, citations=525(GS, February 2023)]. Rand rejoinder in [Veenhoven and Hagerty 2006](https://doi.org/10.1007/s11205-005-5074-x) [focused on trends in the United States, Western Europe, and 8 developing nations, citations=470(GS, February 2023)].
+* Original effect size: No effect size explicitly reported, but Tables 8 to 10 of Easterlin 1974 contain time series patterns.
+* Replication effect size: Easterlin: No effect size reported, but refers to lack of association between subjective well-being and in Figure 1 for the United States. Hagerty and Veenhoven: regression coefficient _b_=1.26 [Z-statistic=2.67]. Sacks et al.: _β_=0.505, SE=0.109 for the World Values Survey, _β_=0.278, SE=0.164 for the Eurobarometer. Veenhoven and Hagerty: No effect size reported, but Tables 1 to 4 report trends. 
+{{< /spoiler >}}
+
+* **Humour style clusters**. A number of works have attempted to determine whether individuals can be categorised into different types of humour user. The first was by Galloway (2010) and suggested four types of humour user through use of cluster analysis: (1) above average on all of the styles, or (2) below average on all of the styles, or (3) above average on the positive styles (Affiliative and Self-enhancing), and below average on the negative styles (Aggressive and Self-defeating), or (4) above average on the negative styles and below average on the positive styles. 
+{{< spoiler text="Statistics" >}}
+* Status: mixed
+* Original paper: ‘[Individual differences in personal humor styles: Identification of prominent patterns and their associates](https://www.sciencedirect.com/science/article/abs/pii/S0191886909005133)’, Galloway, 2010; cross-sectional study, n=318. [Citations = 149 (GS, January 2023)].
+* Critiques: [Chang et al., 2015](https://psycnet.apa.org/doiLanding?doi=10.1037%2Fa0039527)[n=1252, citations = 47 (GS, March 2023)]. [Evans & Steptoe-Warren 2018](https://journals.sagepub.com/doi/10.1177/2329488415612478)[n=202, citations = 49 (GS, March 2023)]. [Evans et al. 2020](https://www.tandfonline.com/doi/full/10.1080/23743603.2020.1756239)[n=863, citations = 3 (GS, March 2023)]. [Fox et al. 2016](https://www.sciencedirect.com/science/article/pii/S0191886915006200?via%3Dihub)[n=1108, citations = 37 (GS, March 2023)]. [Leist and Muller 2013](https://link.springer.com/article/10.1007/s10902-012-9342-6)[n=305, citations = 119(GS, March 2023)]. [Sirigatti et al. 2016](https://www.sciencedirect.com/science/article/pii/S0191886915300325)[n=244, citations = 35 (GS, March 2023)]. 
+* Original effect size: NA.
+* Replication effect size: Chang et al.: NA, but the four-cluster solution described was replicated. Evans and Steptoe-Warren: three managerial humour clusters. Evans et al.: inconsistencies in the humour style profiles across countries tested and the extant literature, possibly indicative of cultural differences in the behavioural expression of trait humour. Fox et al.: NA, the presence of distinctive humour types in childhood. Leist and Muller: evidence for three humour types (endorsers, humour deniers, and self-enhancers). Sirigatti et al.: three humour styles identified. 
+{{< /spoiler >}}
+
+* **Social referencing effect**. Crosby et al. (2008) found that hearing an offensive remark caused subjects to look longer at a potentially offended person, but only if that person could hear the remark. On the basis of this result, they argued that people use social referencing to assess the offensiveness.
+{{< spoiler text="Statistics" >}}
+* Status: mixed
+* Original paper: ‘[Where do we look during potentially offensive behavior?](https://journals.sagepub.com/doi/abs/10.1111/j.1467-9280.2008.02072.x?journalCode=pssa)’, Crosby et al. 2008; experimental design, n=25. [Citations = 95 (GS, Jan 2023)].
+* Critiques: [Jonas and Skorinko 2015](https://osf.io/nkaw4) [n=58, Citations = 0 (GS, Jan 2023)]. [Rabagliati et al. 2020](https://journals.sagepub.com/doi/full/10.1177/2515245919870737) [n = 283, Citations = 2 (GS, Jan 2023)].
+* Original effect size: _F_(3,69)=5.15, _p_&lt;.005.
+* Replication effect size: Jonas and Skorinko: _F_(1.86, 101.7) = 0.07, _p_=0.917. Rabagliati et al: χ<sup>2</sup>(3) = 22.11, _p_ &lt; .001, pseudo-_R<sup>2</sup>_ = .85; χ<sup>2</sup>(3) = 22.11, _p_ &lt; .001, pseudo-_R<sup>2</sup>_ = .85.
+{{< /spoiler >}}
+
+* **Other-race effect** (cross-race effect, own-race bias). Humans are better at distinguishing between faces of two individuals of their own race than two faces of another race.
+{{< spoiler text="Statistics" >}}
+* Status: replicated
+* Original paper: [‘Recognition for faces of own and other race’](https://doi.org/10.1037/h0028434), Malpass and Kravitz 1969; forced-choice recognition task, n=40. [Citations=1036 (GS, Feb 2023)].
+* Critiques: [Lee and Penrod 2022](https://onlinelibrary.wiley.com/doi/10.1002/acp.3997) [various recognition tasks n=24937, Citations=1 (GS, Feb 2023)].
+* Original effect size: _η<sup>2<sub>p</sub></sup>_=0.291 to 0.350 (insufficient information for CI).
+* Replication effect size: Lee and Penrod: Hedge’s _g_=0.54.
+{{< /spoiler >}}
+
+* **Unethical amnesia**. Memories of unethical behaviour are less clear and vivid than memories of good deeds.​​
+{{< spoiler text="Statistics" >}}
+* Status: not replicated.
+* Original paper: ‘[Memories of unethical actions become obfuscated over time](https://www.pnas.org/doi/abs/10.1073/pnas.1523586113)’, Kouchaki and Gino 2016; nine studies, between-subjects (Study 1a, 1b, 3, 4, 5, 6, 7a, 7b) and correlational design (Study 2), total n = 2,109. [citations=177(GS, May 2023)]​.
+* Critiques: [Stanley et al. 2018](https://link.springer.com/article/10.3758/s13421-018-0803-y) replication of Kouchaki and Gino 2016 study 5 [n1=228, n2=232, n3=228, citations=22(GS, May 2023)].
+* Original effect size: Study 1a - _η<sub>p<sup>2</sup></sub>_= 0.06; Study 1b – in the “self” conditions, participants had less clear memory of their unethical actions, _η<sub>p<sup>2</sup></sub>_ = 0.06; Study 2 –cheaters reported lower clarity of memory, _η<sub>p<sup>2</sup></sub>_ = 0.04; Study 3 –participants in the self-unethical condition had a less clear recall of thoughts and feelings than did participants in the self-ethical condition, _η<sub>p<sup>2</sup></sub>_ = 0.05; Study 4 - participants who read that they had cheated indicated they had a less clear memory than those who did not cheat, _η<sub>p<sup>2</sup></sub>_ = 0.20; Study 5 – objective memory score was lower for those who read in the story that they had cheated than for those who read that they had behaved honestly, _d_ = 0.43; Study 6 - participants in the likely-cheating condition recalled the die-throwing task less precisely than those in the no-cheating condition, _d_ = 0.57; Study 7 - participants in the likely-cheating condition recalled the die-throwing task less precisely than those in the no-cheating condition, _d_ = 0.38 (Study 7a), _d_ = 0.33 (Study 7b).
+* Replication effect size: Stanley et al.: no significant differences in objective memory score between participants who read the vignette depicting the ethical behaviour versus the unethical cheating behaviour, Study 1 - _d_ = .26 (n.s.), Study 2 - _d_ = .04 (n.s.), Study 3 - _d_ = .17 (n.s.).
+{{< /spoiler >}}
+
+* **Feeling dirty after networking**. People feel uncomfortable networking because networking triggers a state of “moral impurity,” which translates into feelings of “dirtiness” and a heightened desire for “cleansing”.
+{{< spoiler text="Statistics" >}}
+* Status: not replicated
+* Original paper: ‘[The contaminating effects of building instrumental ties: How networking can make us feel dirty](https://journals.sagepub.com/doi/full/10.1177/0001839214554990)’, Casciaro et al. 2014; 4 studies, 1 survey and 3 laboratory experiments, experiment 1: n=306, experiment 2: n=149, survey 3: n=165, experiment 4: n=149. [citations=271(GS, June 2023)]​.
+* Critiques: [Ziani 2022](https://psyarxiv.com/ys9dh) [n=1069, citations=0(GS, June 2023)]. 
+* Original effect size: _d_=0.98.
+* Replication effect size: Ziani: _d_=0.02 to _d_=0.51.
+{{< /spoiler >}}
+
+* **Public exposure influences shame and guilt differently**. Public exposure (implicit and explicit) of transgression increases experienced shame more than guilt.
+{{< spoiler text="Statistics" >}}
+* Status: not replicated
+* Original paper: ‘[The role of public exposure in moral and nonmoral shame and guilt](https://psycnet.apa.org/doiLanding?doi=10.1037%2F0022-3514.83.1.138)’, Smith et al. 2002; 4 studies, between-subject design (Study 1 and 4), within-subject design (Study 2), content analysis (Study 3), Study 1: n=168, Study 2: n=56, Study 3: n=510 passages, Study 4: n=60.  [citations=690(GS, June 2023)]​.
+* Critiques: [Zhang et al. 2022](https://osf.io/jpx87) [n=1727, citations=0(GS, June 2023)]. 
+* Original effect size: Study 1: shame _f_ =.39 and guilt _f_ =.0.27.
+* Replication effect size: Zhang: Study 1 - shame _η<sub>p<sup>2</sup></sub>_=.14 [.11, .17] and guilt _η<sub>p<sup>2</sup></sub>_=.13 [.10, .16].
+{{< /spoiler >}}
+
 <br>
 
 ## **Positive Psychology**
 
-* **Power pose.** Taking on a power pose lowers cortisol and risk tolerance, while it  raises testosterone and feelings of power.
+* **Power pose.** Taking on a power pose lowers cortisol and risk tolerance, while it raises testosterone and feelings of power. 
 {{< spoiler text="Statistics" >}}
 * Status: not replicated
-* Original paper: '[Power Posing : Brief Nonverbal Displays Affect Neuroendocrine Levels and Risk Tolerance](https://journals.sagepub.com/doi/10.1177/0956797610383437?url_ver=Z39.88-2003&rfr_id=ori:rid:crossref.org&rfr_dat=cr_pub%20%200pubmed)', Carney et al. (2010), n=42 mixed sexes;  2010, [citations = citation = 1450 (GS, April, 2022)]
-* Critiques: [Garrison et al. (2016](https://journals.sagepub.com/doi/full/10.1177/1948550616652209)), [n=305, citations = 70 (GS, April 2022)]; [Metzler and Grezes (2019)](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6585898/#!po=40.4762), [n = 82 men, citations = 3 (GS, April 2022)]  [Ranehill (2015](https://journals.sagepub.com/doi/10.1177/0956797614553946)),[total n=200, citations = 291 (GS, April 2022)]; [Ronay 2017](https://www.tandfonline.com/doi/full/10.1080/23743603.2016.1248081) [n=108, citations = 38 (GS, April 2022)]; 
-* Original effect sizes: Φ = 0.30 in risk-taking from Carney et al. (2010), Sources unknown: _d_ = -0.30 for cortisol, _d_=0.35 for testosterone _d_=0.79 for feelings of power
-* Replication effect size: Garrison et al. (2016): feeling of power: _n<sub>p<sup>2</sup></sub>_ = .016; Metzler and Grezes (2019): cortisol: _n<sub>p<sup>2 </sup></sub>_= 0.02, testosterone: _n<sub>p<sup>2 </sup></sub>_= 0.01; Ranehill (2015): cortisol: _d_ = -0.157, feelings of power: _d_ = 0.34; risk taking: _d_ = -0.176, testosterone: _d_ = -0.200; Ronay (2017):  cortisol: _d_ = 0.034, feeling of power: _d_ = 0.226, testosterone: _d_ = 0.121.
+* Original paper: '[Power Posing: Brief Nonverbal Displays Affect Neuroendocrine Levels and Risk Tolerance](https://journals.sagepub.com/doi/10.1177/0956797610383437?url_ver=Z39.88-2003&rfr_id=ori:rid:crossref.org&rfr_dat=cr_pub%20%200pubmed)', Carney et al. 2010; between-subjects design, n=42 mixed sexes.[citations = 1450 (GS, April, 2022)].
+* Critiques: [Garrison et al. 2016](https://journals.sagepub.com/doi/full/10.1177/1948550616652209) [n=305, citations = 70 (GS, April 2022)]. [Metzler and Grezes 2019](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6585898/#!po=40.4762) [n = 82 men, citations = 3 (GS, April 2022)].  [Ranehill 2015](https://journals.sagepub.com/doi/10.1177/0956797614553946) [total n=200, citations = 291 (GS, April 2022)]. [Ronay 2017](https://www.tandfonline.com/doi/full/10.1080/23743603.2016.1248081) [n=108, citations = 38 (GS, April 2022)]. 
+* Original effect sizes: Φ = 0.30 in risk-taking from Carney et al. (2010), Sources unknown: _d_ = -0.30 for cortisol, _d_=0.35 for testosterone, _d_=0.79 for feelings of power.
+* Replication effect size: Garrison et al.: feeling of power: _η<sub>p<sup>2</sup></sub>_ = .016. Metzler and Grezes: cortisol: _η<sub>p<sup>2 </sup></sub>_= 0.02, testosterone: _η<sub>p<sup>2 </sup></sub>_= 0.01. Ranehill: cortisol: _d_ = -0.157, feelings of power: _d_ = 0.34; risk taking: _d_ = -0.176, testosterone: _d_ = -0.200. Ronay: cortisol: _d_ = 0.034, feeling of power: _d_ = 0.226, testosterone: _d_ = 0.121.
 {{< /spoiler >}}
 
-* **Facial Feedback**. Smiling causes a good mood, while pouting produces a bad mood.
+* **Facial Feedback.** Smiling causes a good mood, while pouting produces a bad mood.
 {{< spoiler text="Statistics" >}}
 * Status: not replicated
-* Original paper: '[Inhibiting and Facilitating Conditions of the Human Smile: A Nonobtrusive Test of the Facial Feedback Hypothesis](https://jhrcook.github.io/wagenmaker-data-analysis/papers/Strack_1988_Inhibiting-and-facilitating-conditions-of-the-human-smile-a-nonobtrusive-test-of-the-facial-feedback-hypothesis.pdf)',  Strack et al. (1988); 2 studies with n’s =  92,83 [citation= 2577(GS, February, 2022)].
-* Critiques: [Coles et al. (2019)](https://psyarxiv.com/svjru/)[(meta-analysis k = 98, citation= 115, (GS, February, 2022)]; [Wagenmakers et al (2016](https://www.ejwagenmakers.com/2016/WagenmakersEtAl2016Strack.pdf))[meta-analysis n=1894, citation=349, (GS, February, 2022)];  [Schimmack (2017](https://replicationindex.com/2017/09/04/the-power-of-the-pen-paradigm-a-replicability-analysis/))
-* Original effect size: Study 1:  _d_ = 0.82, d = 0.43 (0.82 out of 9)
-* Replication effect size: 0.03 out of 9, CI overlapping 0. [A meta-analysis of 98 studies](https://psyarxiv.com/svjru/) finds d= 0.2 [0.14, 0.26] with an absurdly low p value, and doesn't find publication bias. But this latter point simply can't be right. Given d = 0.2 and the convention of targeting 80% power to detect a real phenomenon, you would need very high sample sizes, n > 500. And almost all of the included studies are N &lt; 100. [Schimmack](https://replicationindex.com/2017/09/04/the-power-of-the-pen-paradigm-a-replicability-analysis/) finds strong evidence of publication bias on a subset of these papers, using a proper power analysis. Direct replications of the original pen-in-mouth protocol fail; but new conceptual replications appear to work. [Coles et al (2022)](https://www.nature.com/articles/s41562-022-01458-9), n=3878 participants, m=17 labs collaborating; effect is an absolute 5% increase in a happiness metric.
-
-<table>
-  <tr>
-   <td>
-Study
-   </td>
-   <td>Publication status
-   </td>
-   <td>N
-   </td>
-   <td><em>d</em>
-   </td>
-  </tr>
-  <tr>
-   <td>Andréasson & Dimberg (2008)
-   </td>
-   <td>published
-   </td>
-   <td>112
-   </td>
-   <td>-0.22
-   </td>
-  </tr>
-  <tr>
-   <td>Andréasson (2010) Study 3
-   </td>
-   <td>unpublished
-   </td>
-   <td>48
-   </td>
-   <td>-0.05
-   </td>
-  </tr>
-  <tr>
-   <td> 	Andréasson (2010) Study 3
-   </td>
-   <td>unpublished
-   </td>
-   <td>48
-   </td>
-   <td>-0.35
-   </td>
-  </tr>
-  <tr>
-   <td>Andréasson (2010) Study 4
-   </td>
-   <td>unpublished
-   </td>
-   <td>44
-   </td>
-   <td>0.49
-   </td>
-  </tr>
-  <tr>
-   <td> 	Andréasson (2010) Study 4
-   </td>
-   <td>unpublished
-   </td>
-   <td>44
-   </td>
-   <td>0.31
-   </td>
-  </tr>
-  <tr>
-   <td>Baumeister et al. (2016)
-   </td>
-   <td>published
-   </td>
-   <td>10
-   </td>
-   <td>1.26
-   </td>
-  </tr>
-  <tr>
-   <td> 	Baumeister et al. (2016)
-   </td>
-   <td>published
-   </td>
-   <td>10
-   </td>
-   <td>0.63
-   </td>
-  </tr>
-  <tr>
-   <td>Bodenhausen et al. (1994)
-   </td>
-   <td>published
-   </td>
-   <td>51
-   </td>
-   <td>0.55
-   </td>
-  </tr>
-  <tr>
-   <td>Bush et al. (1989)
-   </td>
-   <td>published
-   </td>
-   <td>69
-   </td>
-   <td>0.16
-   </td>
-  </tr>
-  <tr>
-   <td>Butler et al. (2003) Study 1
-   </td>
-   <td>published
-   </td>
-   <td>24
-   </td>
-   <td>-0.1
-   </td>
-  </tr>
-  <tr>
-   <td>Butler et al. (2003) Study 2
-   </td>
-   <td>published
-   </td>
-   <td>42
-   </td>
-   <td>-0.83
-   </td>
-  </tr>
-  <tr>
-   <td>Butler et al. (2006)
-   </td>
-   <td>published
-   </td>
-   <td>69
-   </td>
-   <td>-0.03
-   </td>
-  </tr>
-  <tr>
-   <td>Cai et al. (2016)
-   </td>
-   <td>published
-   </td>
-   <td>68
-   </td>
-   <td>-0.08
-   </td>
-  </tr>
-  <tr>
-   <td>Ceschi & Scherer (2003)
-   </td>
-   <td>published
-   </td>
-   <td>64
-   </td>
-   <td>0.74
-   </td>
-  </tr>
-  <tr>
-   <td>Clapp (2012)
-   </td>
-   <td>unpublished
-   </td>
-   <td>99
-   </td>
-   <td>0.69
-   </td>
-  </tr>
-  <tr>
-   <td> 	Clapp (2012)
-   </td>
-   <td>unpublished
-   </td>
-   <td>93
-   </td>
-   <td>0.08
-   </td>
-  </tr>
-  <tr>
-   <td> 	Clapp (2012)
-   </td>
-   <td>unpublished
-   </td>
-   <td>93
-   </td>
-   <td>0.17
-   </td>
-  </tr>
-  <tr>
-   <td> 	Clapp (2012)
-   </td>
-   <td>unpublished
-   </td>
-   <td>99
-   </td>
-   <td>0.27
-   </td>
-  </tr>
-  <tr>
-   <td>Laird & Crosby (1974) Study 1
-   </td>
-   <td>published
-   </td>
-   <td>26
-   </td>
-   <td>-0.13
-   </td>
-  </tr>
-  <tr>
-   <td>Laird & Crosby (1974) Study 2
-   </td>
-   <td>published
-   </td>
-   <td>26
-   </td>
-   <td>0.35
-   </td>
-  </tr>
-  <tr>
-   <td>Davey et al. (2013) Study 1
-   </td>
-   <td>published
-   </td>
-   <td>28
-   </td>
-   <td>0.41
-   </td>
-  </tr>
-  <tr>
-   <td> 	Davey et al. (2013) Study 1
-   </td>
-   <td>published
-   </td>
-   <td>14
-   </td>
-   <td>0.62
-   </td>
-  </tr>
-  <tr>
-   <td> 	Davey et al. (2013) Study 1
-   </td>
-   <td>published
-   </td>
-   <td>28
-   </td>
-   <td>0.52
-   </td>
-  </tr>
-  <tr>
-   <td> 	Davey et al. (2013) Study 1
-   </td>
-   <td>published
-   </td>
-   <td>14
-   </td>
-   <td>0.13
-   </td>
-  </tr>
-  <tr>
-   <td> 	Davey et al. (2013) Study 1
-   </td>
-   <td>published
-   </td>
-   <td>28
-   </td>
-   <td>0.69
-   </td>
-  </tr>
-  <tr>
-   <td> 	Davey et al. (2013) Study 1
-   </td>
-   <td>published
-   </td>
-   <td>14
-   </td>
-   <td>0.42
-   </td>
-  </tr>
-  <tr>
-   <td> 	Davey et al. (2013) Study 1
-   </td>
-   <td>published
-   </td>
-   <td>28
-   </td>
-   <td>0.35
-   </td>
-  </tr>
-  <tr>
-   <td> 	Davey et al. (2013) Study 1
-   </td>
-   <td>published
-   </td>
-   <td>14
-   </td>
-   <td>0.14
-   </td>
-  </tr>
-  <tr>
-   <td>Davey et al. (2013) Study 2
-   </td>
-   <td>published
-   </td>
-   <td>29
-   </td>
-   <td>0.73
-   </td>
-  </tr>
-  <tr>
-   <td> 	Davey et al. (2013) Study 2
-   </td>
-   <td>published
-   </td>
-   <td>15
-   </td>
-   <td>0.63
-   </td>
-  </tr>
-  <tr>
-   <td> 	Davey et al. (2013) Study 2
-   </td>
-   <td>published
-   </td>
-   <td>29
-   </td>
-   <td>0.4
-   </td>
-  </tr>
-  <tr>
-   <td> 	Davey et al. (2013) Study 2
-   </td>
-   <td>published
-   </td>
-   <td>15
-   </td>
-   <td>0
-   </td>
-  </tr>
-  <tr>
-   <td> 	Davey et al. (2013) Study 2
-   </td>
-   <td>published
-   </td>
-   <td>29
-   </td>
-   <td>0.08
-   </td>
-  </tr>
-  <tr>
-   <td> 	Davey et al. (2013) Study 2
-   </td>
-   <td>published
-   </td>
-   <td>15
-   </td>
-   <td>-0.25
-   </td>
-  </tr>
-  <tr>
-   <td> 	Davey et al. (2013) Study 2
-   </td>
-   <td>published
-   </td>
-   <td>29
-   </td>
-   <td>0.03
-   </td>
-  </tr>
-  <tr>
-   <td> 	Davey et al. (2013) Study 2
-   </td>
-   <td>published
-   </td>
-   <td>15
-   </td>
-   <td>-0.06
-   </td>
-  </tr>
-  <tr>
-   <td>Davis (2008) Study 1
-   </td>
-   <td>unpublished
-   </td>
-   <td>28
-   </td>
-   <td>0.99
-   </td>
-  </tr>
-  <tr>
-   <td> 	Davis (2008) Study 1
-   </td>
-   <td>unpublished
-   </td>
-   <td>28
-   </td>
-   <td>0.87
-   </td>
-  </tr>
-  <tr>
-   <td>Davis (2008) Study 2
-   </td>
-   <td>unpublished
-   </td>
-   <td>31
-   </td>
-   <td>0.26
-   </td>
-  </tr>
-  <tr>
-   <td> 	Davis (2008) Study 2
-   </td>
-   <td>unpublished
-   </td>
-   <td>30
-   </td>
-   <td>-0.19
-   </td>
-  </tr>
-  <tr>
-   <td>Davis et al. (2009)
-   </td>
-   <td>published
-   </td>
-   <td>69
-   </td>
-   <td>0.07
-   </td>
-  </tr>
-  <tr>
-   <td> 	Davis et al. (2009)
-   </td>
-   <td>published
-   </td>
-   <td>69
-   </td>
-   <td>0.51
-   </td>
-  </tr>
-  <tr>
-   <td>Davis et al. (2010)
-   </td>
-   <td>published
-   </td>
-   <td>68
-   </td>
-   <td>0.1
-   </td>
-  </tr>
-  <tr>
-   <td> 	Davis et al. (2010)
-   </td>
-   <td>published
-   </td>
-   <td>68
-   </td>
-   <td>0.05
-   </td>
-  </tr>
-  <tr>
-   <td> 	Davis et al. (2010)
-   </td>
-   <td>published
-   </td>
-   <td>68
-   </td>
-   <td>-0.15
-   </td>
-  </tr>
-  <tr>
-   <td>Davis et al. (2015)
-   </td>
-   <td>published
-   </td>
-   <td>18
-   </td>
-   <td>-0.16
-   </td>
-  </tr>
-  <tr>
-   <td>Demaree et al. (2004)
-   </td>
-   <td>published
-   </td>
-   <td>53
-   </td>
-   <td>0.62
-   </td>
-  </tr>
-  <tr>
-   <td> 	Demaree et al. (2004)
-   </td>
-   <td>published
-   </td>
-   <td>50
-   </td>
-   <td>0.16
-   </td>
-  </tr>
-  <tr>
-   <td>Demaree et al. (2006)
-   </td>
-   <td>published
-   </td>
-   <td>32
-   </td>
-   <td>-0.64
-   </td>
-  </tr>
-  <tr>
-   <td> 	Demaree et al. (2006)
-   </td>
-   <td>published
-   </td>
-   <td>35
-   </td>
-   <td>0.06
-   </td>
-  </tr>
-  <tr>
-   <td> 	Demaree et al. (2006)
-   </td>
-   <td>published
-   </td>
-   <td>37
-   </td>
-   <td>-0.38
-   </td>
-  </tr>
-  <tr>
-   <td>Dillon et al. (2007)
-   </td>
-   <td>published
-   </td>
-   <td>36
-   </td>
-   <td>0.11
-   </td>
-  </tr>
-  <tr>
-   <td>Dimberg & Söderkvist (2011) Study 1
-   </td>
-   <td>published
-   </td>
-   <td>48
-   </td>
-   <td>0.51
-   </td>
-  </tr>
-  <tr>
-   <td>Dimberg & Söderkvist (2011) Study 2
-   </td>
-   <td>published
-   </td>
-   <td>96
-   </td>
-   <td>0.1
-   </td>
-  </tr>
-  <tr>
-   <td> 	Dimberg & Söderkvist (2011) Study 2
-   </td>
-   <td>published
-   </td>
-   <td>96
-   </td>
-   <td>0.32
-   </td>
-  </tr>
-  <tr>
-   <td>Dimberg & Söderkvist (2011) Study 3
-   </td>
-   <td>published
-   </td>
-   <td>61
-   </td>
-   <td>0.06
-   </td>
-  </tr>
-  <tr>
-   <td> 	Dimberg & Söderkvist (2011) Study 3
-   </td>
-   <td>published
-   </td>
-   <td>61
-   </td>
-   <td>0.31
-   </td>
-  </tr>
-  <tr>
-   <td> 	Dimberg & Söderkvist (2011) Study 3
-   </td>
-   <td>published
-   </td>
-   <td>61
-   </td>
-   <td>0.34
-   </td>
-  </tr>
-  <tr>
-   <td>Duncan & Laird (1977)
-   </td>
-   <td>published
-   </td>
-   <td>31
-   </td>
-   <td>0.44
-   </td>
-  </tr>
-  <tr>
-   <td> 	Duncan & Laird (1977)
-   </td>
-   <td>published
-   </td>
-   <td>31
-   </td>
-   <td>0.38
-   </td>
-  </tr>
-  <tr>
-   <td> 	Duncan & Laird (1977)
-   </td>
-   <td>published
-   </td>
-   <td>31
-   </td>
-   <td>0.51
-   </td>
-  </tr>
-  <tr>
-   <td>Duncan & Laird (1980)
-   </td>
-   <td>published
-   </td>
-   <td>60
-   </td>
-   <td>0.59
-   </td>
-  </tr>
-  <tr>
-   <td> 	Duncan & Laird (1980)
-   </td>
-   <td>published
-   </td>
-   <td>60
-   </td>
-   <td>0.44
-   </td>
-  </tr>
-  <tr>
-   <td>Dzokoto et al. (2014)
-   </td>
-   <td>published
-   </td>
-   <td>70
-   </td>
-   <td>1.02
-   </td>
-  </tr>
-  <tr>
-   <td> 	Dzokoto et al. (2014)
-   </td>
-   <td>published
-   </td>
-   <td>59
-   </td>
-   <td>0.07
-   </td>
-  </tr>
-  <tr>
-   <td> 	Dzokoto et al. (2014)
-   </td>
-   <td>published
-   </td>
-   <td>35
-   </td>
-   <td>1.07
-   </td>
-  </tr>
-  <tr>
-   <td> 	Dzokoto et al. (2014)
-   </td>
-   <td>published
-   </td>
-   <td>51
-   </td>
-   <td>0.2
-   </td>
-  </tr>
-  <tr>
-   <td>Flack, Laird & Cavallaro (1999b) Study 1
-   </td>
-   <td>published
-   </td>
-   <td>60
-   </td>
-   <td>1.2
-   </td>
-  </tr>
-  <tr>
-   <td> 	Flack, Laird & Cavallaro (1999b) Study 1
-   </td>
-   <td>published
-   </td>
-   <td>60
-   </td>
-   <td>0.7
-   </td>
-  </tr>
-  <tr>
-   <td> 	Flack, Laird & Cavallaro (1999b) Study 1
-   </td>
-   <td>published
-   </td>
-   <td>60
-   </td>
-   <td>0.31
-   </td>
-  </tr>
-  <tr>
-   <td> 	Flack, Laird & Cavallaro (1999b) Study 1
-   </td>
-   <td>published
-   </td>
-   <td>60
-   </td>
-   <td>0.86
-   </td>
-  </tr>
-  <tr>
-   <td> 	Flack, Laird & Cavallaro (1999b) Study 1
-   </td>
-   <td>published
-   </td>
-   <td>60
-   </td>
-   <td>1.31
-   </td>
-  </tr>
-  <tr>
-   <td>Flack, Laird & Cavallaro (1999b) Study 2
-   </td>
-   <td>published
-   </td>
-   <td>29
-   </td>
-   <td>0.39
-   </td>
-  </tr>
-  <tr>
-   <td> 	Flack, Laird & Cavallaro (1999b) Study 2
-   </td>
-   <td>published
-   </td>
-   <td>29
-   </td>
-   <td>0.23
-   </td>
-  </tr>
-  <tr>
-   <td> 	Flack, Laird & Cavallaro (1999b) Study 2
-   </td>
-   <td>published
-   </td>
-   <td>29
-   </td>
-   <td>-0.16
-   </td>
-  </tr>
-  <tr>
-   <td> 	Flack, Laird & Cavallaro (1999b) Study 2
-   </td>
-   <td>published
-   </td>
-   <td>29
-   </td>
-   <td>-0.49
-   </td>
-  </tr>
-  <tr>
-   <td> 	Flack, Laird & Cavallaro (1999b) Study 2
-   </td>
-   <td>published
-   </td>
-   <td>29
-   </td>
-   <td>0.25
-   </td>
-  </tr>
-  <tr>
-   <td>Flack, Laird & Cavallaro (1999a)
-   </td>
-   <td>published
-   </td>
-   <td>54
-   </td>
-   <td>1.41
-   </td>
-  </tr>
-  <tr>
-   <td> 	Flack, Laird & Cavallaro (1999a)
-   </td>
-   <td>published
-   </td>
-   <td>54
-   </td>
-   <td>0.29
-   </td>
-  </tr>
-  <tr>
-   <td> 	Flack, Laird & Cavallaro (1999a)
-   </td>
-   <td>published
-   </td>
-   <td>54
-   </td>
-   <td>1.18
-   </td>
-  </tr>
-  <tr>
-   <td> 	Flack, Laird & Cavallaro (1999a)
-   </td>
-   <td>published
-   </td>
-   <td>54
-   </td>
-   <td>1.21
-   </td>
-  </tr>
-  <tr>
-   <td>Flack (2006)
-   </td>
-   <td>published
-   </td>
-   <td>51
-   </td>
-   <td>0.72
-   </td>
-  </tr>
-  <tr>
-   <td> 	Flack (2006)
-   </td>
-   <td>published
-   </td>
-   <td>51
-   </td>
-   <td>0.35
-   </td>
-  </tr>
-  <tr>
-   <td> 	Flack (2006)
-   </td>
-   <td>published
-   </td>
-   <td>51
-   </td>
-   <td>0.59
-   </td>
-  </tr>
-  <tr>
-   <td> 	Flack (2006)
-   </td>
-   <td>published
-   </td>
-   <td>51
-   </td>
-   <td>0.68
-   </td>
-  </tr>
-  <tr>
-   <td>Gan et al. (2015)
-   </td>
-   <td>published
-   </td>
-   <td>34
-   </td>
-   <td>-0.11
-   </td>
-  </tr>
-  <tr>
-   <td>Goldin et al. (2008)
-   </td>
-   <td>published
-   </td>
-   <td>17
-   </td>
-   <td>0.8
-   </td>
-  </tr>
-  <tr>
-   <td>Gross & Levenson (1993)
-   </td>
-   <td>published
-   </td>
-   <td>85
-   </td>
-   <td>0.04
-   </td>
-  </tr>
-  <tr>
-   <td>Gross & Levenson (1997)
-   </td>
-   <td>published
-   </td>
-   <td>180
-   </td>
-   <td>0.37
-   </td>
-  </tr>
-  <tr>
-   <td> 	Gross & Levenson (1997)
-   </td>
-   <td>published
-   </td>
-   <td>180
-   </td>
-   <td>0.16
-   </td>
-  </tr>
-  <tr>
-   <td>Gross (1993)
-   </td>
-   <td>unpublished
-   </td>
-   <td>180
-   </td>
-   <td>0.37
-   </td>
-  </tr>
-  <tr>
-   <td> 	Gross (1993)
-   </td>
-   <td>unpublished
-   </td>
-   <td>180
-   </td>
-   <td>0.09
-   </td>
-  </tr>
-  <tr>
-   <td> 	Gross (1993)
-   </td>
-   <td>unpublished
-   </td>
-   <td>180
-   </td>
-   <td>0.2
-   </td>
-  </tr>
-  <tr>
-   <td> 	Gross (1993)
-   </td>
-   <td>unpublished
-   </td>
-   <td>180
-   </td>
-   <td>0.16
-   </td>
-  </tr>
-  <tr>
-   <td> 	Gross (1993)
-   </td>
-   <td>unpublished
-   </td>
-   <td>180
-   </td>
-   <td>-0.23
-   </td>
-  </tr>
-  <tr>
-   <td>Gross (1998)
-   </td>
-   <td>published
-   </td>
-   <td>80
-   </td>
-   <td>0.18
-   </td>
-  </tr>
-  <tr>
-   <td>Harris (2001)
-   </td>
-   <td>published
-   </td>
-   <td>36
-   </td>
-   <td>0.07
-   </td>
-  </tr>
-  <tr>
-   <td>Hawk et al. (2012)
-   </td>
-   <td>published
-   </td>
-   <td>41
-   </td>
-   <td>0.85
-   </td>
-  </tr>
-  <tr>
-   <td>Helt & Fein (2016)
-   </td>
-   <td>published
-   </td>
-   <td>43
-   </td>
-   <td>0.42
-   </td>
-  </tr>
-  <tr>
-   <td>Hendricks & Buchanan (2016)
-   </td>
-   <td>published
-   </td>
-   <td>79
-   </td>
-   <td>-0.08
-   </td>
-  </tr>
-  <tr>
-   <td>Hendricks (2013)
-   </td>
-   <td>unpublished
-   </td>
-   <td>79
-   </td>
-   <td>0.02
-   </td>
-  </tr>
-  <tr>
-   <td>Henry et al. (2007)
-   </td>
-   <td>published
-   </td>
-   <td>30
-   </td>
-   <td>-0.49
-   </td>
-  </tr>
-  <tr>
-   <td> 	Henry et al. (2007)
-   </td>
-   <td>published
-   </td>
-   <td>30
-   </td>
-   <td>0.25
-   </td>
-  </tr>
-  <tr>
-   <td>Henry et al. (2009)a
-   </td>
-   <td>published
-   </td>
-   <td>26
-   </td>
-   <td>-0.05
-   </td>
-  </tr>
-  <tr>
-   <td> 	Henry et al. (2009)a
-   </td>
-   <td>published
-   </td>
-   <td>26
-   </td>
-   <td>0.53
-   </td>
-  </tr>
-  <tr>
-   <td>Henry et al. (2009)b
-   </td>
-   <td>published
-   </td>
-   <td>20
-   </td>
-   <td>-0.05
-   </td>
-  </tr>
-  <tr>
-   <td> 	Henry et al. (2009)b
-   </td>
-   <td>published
-   </td>
-   <td>20
-   </td>
-   <td>0.48
-   </td>
-  </tr>
-  <tr>
-   <td>Hess et al. (1992)
-   </td>
-   <td>published
-   </td>
-   <td>28
-   </td>
-   <td>-0.28
-   </td>
-  </tr>
-  <tr>
-   <td> 	Hess et al. (1992)
-   </td>
-   <td>published
-   </td>
-   <td>28
-   </td>
-   <td>0.14
-   </td>
-  </tr>
-  <tr>
-   <td> 	Hess et al. (1992)
-   </td>
-   <td>published
-   </td>
-   <td>28
-   </td>
-   <td>-0.26
-   </td>
-  </tr>
-  <tr>
-   <td> 	Hess et al. (1992)
-   </td>
-   <td>published
-   </td>
-   <td>28
-   </td>
-   <td>-0.16
-   </td>
-  </tr>
-  <tr>
-   <td>Hofmann et al. (2009)
-   </td>
-   <td>published
-   </td>
-   <td>134
-   </td>
-   <td>-0.03
-   </td>
-  </tr>
-  <tr>
-   <td>Ito et al. (2006)
-   </td>
-   <td>published
-   </td>
-   <td>40
-   </td>
-   <td>-0.39
-   </td>
-  </tr>
-  <tr>
-   <td> 	Ito et al. (2006)
-   </td>
-   <td>published
-   </td>
-   <td>33
-   </td>
-   <td>-0.25
-   </td>
-  </tr>
-  <tr>
-   <td>Kalokerinos et al. (2015) Study 1
-   </td>
-   <td>published
-   </td>
-   <td>133.67<sup>b</sup>
-   </td>
-   <td>-0.06
-   </td>
-  </tr>
-  <tr>
-   <td> 	Kalokerinos et al. (2015) Study 1
-   </td>
-   <td>published
-   </td>
-   <td>133.67<sup>b</sup>
-   </td>
-   <td>-0.02
-   </td>
-  </tr>
-  <tr>
-   <td>Kalokerinos et al. (2015) Study 2
-   </td>
-   <td>published
-   </td>
-   <td>295
-   </td>
-   <td>1.32
-   </td>
-  </tr>
-  <tr>
-   <td> 	Kalokerinos et al. (2015) Study 2
-   </td>
-   <td>published
-   </td>
-   <td>295
-   </td>
-   <td>0.2
-   </td>
-  </tr>
-  <tr>
-   <td>Kao et al. (2017)
-   </td>
-   <td>published
-   </td>
-   <td>41
-   </td>
-   <td>0.09
-   </td>
-  </tr>
-  <tr>
-   <td> 	Kao et al. (2017)
-   </td>
-   <td>published
-   </td>
-   <td>41
-   </td>
-   <td>-0.39
-   </td>
-  </tr>
-  <tr>
-   <td> 	Kao et al. (2017)
-   </td>
-   <td>published
-   </td>
-   <td>41
-   </td>
-   <td>0.8
-   </td>
-  </tr>
-  <tr>
-   <td> 	Kao et al. (2017)
-   </td>
-   <td>published
-   </td>
-   <td>41
-   </td>
-   <td>-0.34
-   </td>
-  </tr>
-  <tr>
-   <td> 	Kao et al. (2017)
-   </td>
-   <td>published
-   </td>
-   <td>41
-   </td>
-   <td>0.98
-   </td>
-  </tr>
-  <tr>
-   <td> 	Kao et al. (2017)
-   </td>
-   <td>published
-   </td>
-   <td>41
-   </td>
-   <td>-0.67
-   </td>
-  </tr>
-  <tr>
-   <td>Kircher et al. (2012)
-   </td>
-   <td>published
-   </td>
-   <td>27
-   </td>
-   <td>1.89
-   </td>
-  </tr>
-  <tr>
-   <td> 	Kircher et al. (2012)
-   </td>
-   <td>published
-   </td>
-   <td>27
-   </td>
-   <td>1.14
-   </td>
-  </tr>
-  <tr>
-   <td>Korb et al. (2012)
-   </td>
-   <td>published
-   </td>
-   <td>22
-   </td>
-   <td>0.21
-   </td>
-  </tr>
-  <tr>
-   <td>Labott & Teleha (1996)
-   </td>
-   <td>published
-   </td>
-   <td>19
-   </td>
-   <td>0.04
-   </td>
-  </tr>
-  <tr>
-   <td> 	Labott & Teleha (1996)
-   </td>
-   <td>published
-   </td>
-   <td>16
-   </td>
-   <td>0.91
-   </td>
-  </tr>
-  <tr>
-   <td>Laird (1974) Study 1
-   </td>
-   <td>published
-   </td>
-   <td>38
-   </td>
-   <td>0.46
-   </td>
-  </tr>
-  <tr>
-   <td> 	Laird (1974) Study 1
-   </td>
-   <td>published
-   </td>
-   <td>38
-   </td>
-   <td>0.44
-   </td>
-  </tr>
-  <tr>
-   <td> 	Laird (1974) Study 1
-   </td>
-   <td>published
-   </td>
-   <td>38
-   </td>
-   <td>0.39
-   </td>
-  </tr>
-  <tr>
-   <td>Laird (1974) Study 2
-   </td>
-   <td>published
-   </td>
-   <td>26
-   </td>
-   <td>0.55
-   </td>
-  </tr>
-  <tr>
-   <td> 	Laird (1974) Study 2
-   </td>
-   <td>published
-   </td>
-   <td>26
-   </td>
-   <td>0.13
-   </td>
-  </tr>
-  <tr>
-   <td>Lalot et al. (2014)
-   </td>
-   <td>published
-   </td>
-   <td>45
-   </td>
-   <td>-0.17
-   </td>
-  </tr>
-  <tr>
-   <td>Larsen et al. (1992)
-   </td>
-   <td>published
-   </td>
-   <td>27
-   </td>
-   <td>0.43
-   </td>
-  </tr>
-  <tr>
-   <td>Lee (2011)
-   </td>
-   <td>unpublished
-   </td>
-   <td>52
-   </td>
-   <td>0.48
-   </td>
-  </tr>
-  <tr>
-   <td> 	Lee (2011)
-   </td>
-   <td>unpublished
-   </td>
-   <td>44
-   </td>
-   <td>0.17
-   </td>
-  </tr>
-  <tr>
-   <td> 	Lee (2011)
-   </td>
-   <td>unpublished
-   </td>
-   <td>52
-   </td>
-   <td>-0.27
-   </td>
-  </tr>
-  <tr>
-   <td> 	Lee (2011)
-   </td>
-   <td>unpublished
-   </td>
-   <td>44
-   </td>
-   <td>-0.26
-   </td>
-  </tr>
-  <tr>
-   <td>Lewis & Bowler (2009)
-   </td>
-   <td>published
-   </td>
-   <td>25
-   </td>
-   <td>1.35
-   </td>
-  </tr>
-  <tr>
-   <td>Lewis (2012)
-   </td>
-   <td>published
-   </td>
-   <td>24
-   </td>
-   <td>0.71
-   </td>
-  </tr>
-  <tr>
-   <td> 	Lewis (2012)
-   </td>
-   <td>published
-   </td>
-   <td>24
-   </td>
-   <td>0.56
-   </td>
-  </tr>
-  <tr>
-   <td>Ma (2011)
-   </td>
-   <td>unpublished
-   </td>
-   <td>42.67<sup>b</sup>
-   </td>
-   <td>-0.21
-   </td>
-  </tr>
-  <tr>
-   <td> 	Ma (2011)
-   </td>
-   <td>unpublished
-   </td>
-   <td>42.67<sup>b</sup>
-   </td>
-   <td>-0.21
-   </td>
-  </tr>
-  <tr>
-   <td> 	Ma (2011)
-   </td>
-   <td>unpublished
-   </td>
-   <td>42.67<sup>b</sup>
-   </td>
-   <td>-0.21
-   </td>
-  </tr>
-  <tr>
-   <td> 	Ma (2011)
-   </td>
-   <td>unpublished
-   </td>
-   <td>42.67<sup>b</sup>
-   </td>
-   <td>-0.21
-   </td>
-  </tr>
-  <tr>
-   <td>Maldonado et al. (2015)
-   </td>
-   <td>unpublished
-   </td>
-   <td>157.33<sup>b</sup>
-   </td>
-   <td>0.12
-   </td>
-  </tr>
-  <tr>
-   <td>Marmolejo-Ramos & Dunn (2013) Study 1
-   </td>
-   <td>published
-   </td>
-   <td>100
-   </td>
-   <td>-0.07
-   </td>
-  </tr>
-  <tr>
-   <td>Marmolejo-Ramos & Dunn (2013) Study 2
-   </td>
-   <td>published
-   </td>
-   <td>106
-   </td>
-   <td>-0.07
-   </td>
-  </tr>
-  <tr>
-   <td>Marmolejo-Ramos & Dunn (2013) Study 3
-   </td>
-   <td>published
-   </td>
-   <td>104
-   </td>
-   <td>-0.07
-   </td>
-  </tr>
-  <tr>
-   <td>Marmolejo-Ramos & Dunn (2013) Study 4
-   </td>
-   <td>published
-   </td>
-   <td>100
-   </td>
-   <td>-0.07
-   </td>
-  </tr>
-  <tr>
-   <td>Marmolejo-Ramos & Dunn (2013) Study 5
-   </td>
-   <td>published
-   </td>
-   <td>66
-   </td>
-   <td>0.27
-   </td>
-  </tr>
-  <tr>
-   <td>Marmolejo-Ramos & Dunn (2013) Study 6
-   </td>
-   <td>published
-   </td>
-   <td>67
-   </td>
-   <td>0.38
-   </td>
-  </tr>
-  <tr>
-   <td>Martijn et al. (2002)
-   </td>
-   <td>published
-   </td>
-   <td>33
-   </td>
-   <td>-0.24
-   </td>
-  </tr>
-  <tr>
-   <td>McCanne & Anderson (1987)
-   </td>
-   <td>published
-   </td>
-   <td>30
-   </td>
-   <td>-2.16
-   </td>
-  </tr>
-  <tr>
-   <td> 	McCanne & Anderson (1987)
-   </td>
-   <td>published
-   </td>
-   <td>30
-   </td>
-   <td>-2.07
-   </td>
-  </tr>
-  <tr>
-   <td> 	McCanne & Anderson (1987)
-   </td>
-   <td>published
-   </td>
-   <td>30
-   </td>
-   <td>4.73
-   </td>
-  </tr>
-  <tr>
-   <td> 	McCanne & Anderson (1987)
-   </td>
-   <td>published
-   </td>
-   <td>30
-   </td>
-   <td>1.67
-   </td>
-  </tr>
-  <tr>
-   <td> 	McCanne & Anderson (1987)
-   </td>
-   <td>published
-   </td>
-   <td>30
-   </td>
-   <td>2.48
-   </td>
-  </tr>
-  <tr>
-   <td> 	McCanne & Anderson (1987)
-   </td>
-   <td>published
-   </td>
-   <td>30
-   </td>
-   <td>-0.25
-   </td>
-  </tr>
-  <tr>
-   <td>McCaul et al. (1982)
-   </td>
-   <td>published
-   </td>
-   <td>27
-   </td>
-   <td>0.25
-   </td>
-  </tr>
-  <tr>
-   <td>McIntosh et al. (1997)
-   </td>
-   <td>published
-   </td>
-   <td>26
-   </td>
-   <td>0.54
-   </td>
-  </tr>
-  <tr>
-   <td>Meeten et al. (2015)
-   </td>
-   <td>published
-   </td>
-   <td>71
-   </td>
-   <td>0.49
-   </td>
-  </tr>
-  <tr>
-   <td>Miyamoto (2006) Study 1
-   </td>
-   <td>unpublished
-   </td>
-   <td>40
-   </td>
-   <td>0.17
-   </td>
-  </tr>
-  <tr>
-   <td> 	Miyamoto (2006) Study 1
-   </td>
-   <td>unpublished
-   </td>
-   <td>40
-   </td>
-   <td>0.53
-   </td>
-  </tr>
-  <tr>
-   <td>Miyamoto (2006) Study 2
-   </td>
-   <td>unpublished
-   </td>
-   <td>77
-   </td>
-   <td>0.49
-   </td>
-  </tr>
-  <tr>
-   <td>Moore & Zoellner(2012)
-   </td>
-   <td>published
-   </td>
-   <td>23.33<sup>b</sup>
-   </td>
-   <td>-0.87
-   </td>
-  </tr>
-  <tr>
-   <td>Kappas (1989)
-   </td>
-   <td>unpublished
-   </td>
-   <td>32
-   </td>
-   <td>0.08
-   </td>
-  </tr>
-  <tr>
-   <td> 	Kappas (1989)
-   </td>
-   <td>unpublished
-   </td>
-   <td>32
-   </td>
-   <td>0.26
-   </td>
-  </tr>
-  <tr>
-   <td> 	Kappas (1989)
-   </td>
-   <td>unpublished
-   </td>
-   <td>32
-   </td>
-   <td>0.27
-   </td>
-  </tr>
-  <tr>
-   <td> 	Kappas (1989)
-   </td>
-   <td>unpublished
-   </td>
-   <td>32
-   </td>
-   <td>0.1
-   </td>
-  </tr>
-  <tr>
-   <td> 	Kappas (1989)
-   </td>
-   <td>unpublished
-   </td>
-   <td>32
-   </td>
-   <td>0.17
-   </td>
-  </tr>
-  <tr>
-   <td> 	Kappas (1989)
-   </td>
-   <td>unpublished
-   </td>
-   <td>32
-   </td>
-   <td>0.52
-   </td>
-  </tr>
-  <tr>
-   <td> 	Kappas (1989)
-   </td>
-   <td>unpublished
-   </td>
-   <td>32
-   </td>
-   <td>0.62
-   </td>
-  </tr>
-  <tr>
-   <td> 	Kappas (1989)
-   </td>
-   <td>unpublished
-   </td>
-   <td>32
-   </td>
-   <td>0.74
-   </td>
-  </tr>
-  <tr>
-   <td> 	Kappas (1989)
-   </td>
-   <td>unpublished
-   </td>
-   <td>32
-   </td>
-   <td>0.18
-   </td>
-  </tr>
-  <tr>
-   <td> 	Kappas (1989)
-   </td>
-   <td>unpublished
-   </td>
-   <td>32
-   </td>
-   <td>0.42
-   </td>
-  </tr>
-  <tr>
-   <td>Ohira & Kurono (1993) Study 1
-   </td>
-   <td>published
-   </td>
-   <td>20
-   </td>
-   <td>1.23
-   </td>
-  </tr>
-  <tr>
-   <td> 	Ohira & Kurono (1993) Study 1
-   </td>
-   <td>published
-   </td>
-   <td>20
-   </td>
-   <td>0.31
-   </td>
-  </tr>
-  <tr>
-   <td>Ohira & Kurono (1993) Study 2
-   </td>
-   <td>published
-   </td>
-   <td>20
-   </td>
-   <td>1.61
-   </td>
-  </tr>
-  <tr>
-   <td> 	Ohira & Kurono (1993) Study 2
-   </td>
-   <td>published
-   </td>
-   <td>20
-   </td>
-   <td>-1.38
-   </td>
-  </tr>
-  <tr>
-   <td>Paredes et al. (2013)
-   </td>
-   <td>published
-   </td>
-   <td>31
-   </td>
-   <td>0.85
-   </td>
-  </tr>
-  <tr>
-   <td>Paul et al. (2013)
-   </td>
-   <td>published
-   </td>
-   <td>20
-   </td>
-   <td>0.91
-   </td>
-  </tr>
-  <tr>
-   <td>Pedder et al. (2016)
-   </td>
-   <td>published
-   </td>
-   <td>68
-   </td>
-   <td>0.7
-   </td>
-  </tr>
-  <tr>
-   <td> 	Pedder et al. (2016)
-   </td>
-   <td>published
-   </td>
-   <td>68
-   </td>
-   <td>0.22
-   </td>
-  </tr>
-  <tr>
-   <td>Phillips et al. (2008)
-   </td>
-   <td>published
-   </td>
-   <td>32
-   </td>
-   <td>0.18
-   </td>
-  </tr>
-  <tr>
-   <td> 	Phillips et al. (2008)
-   </td>
-   <td>published
-   </td>
-   <td>32
-   </td>
-   <td>0.08
-   </td>
-  </tr>
-  <tr>
-   <td>Reisenzein & Studtmann (2007) Study 1
-   </td>
-   <td>published
-   </td>
-   <td>53
-   </td>
-   <td>0.18
-   </td>
-  </tr>
-  <tr>
-   <td> 	Reisenzein & Studtmann (2007) Study 1
-   </td>
-   <td>published
-   </td>
-   <td>55
-   </td>
-   <td>0.34
-   </td>
-  </tr>
-  <tr>
-   <td> 	Reisenzein & Studtmann (2007) Study 1
-   </td>
-   <td>published
-   </td>
-   <td>55
-   </td>
-   <td>-0.08
-   </td>
-  </tr>
-  <tr>
-   <td> 	Reisenzein & Studtmann (2007) Study 1
-   </td>
-   <td>published
-   </td>
-   <td>55
-   </td>
-   <td>0.3
-   </td>
-  </tr>
-  <tr>
-   <td> 	Reisenzein & Studtmann (2007) Study 1
-   </td>
-   <td>published
-   </td>
-   <td>53
-   </td>
-   <td>-0.12
-   </td>
-  </tr>
-  <tr>
-   <td> 	Reisenzein & Studtmann (2007) Study 1
-   </td>
-   <td>published
-   </td>
-   <td>53
-   </td>
-   <td>0.22
-   </td>
-  </tr>
-  <tr>
-   <td> 	Reisenzein & Studtmann (2007) Study 1
-   </td>
-   <td>published
-   </td>
-   <td>52
-   </td>
-   <td>-0.04
-   </td>
-  </tr>
-  <tr>
-   <td> 	Reisenzein & Studtmann (2007) Study 1
-   </td>
-   <td>published
-   </td>
-   <td>52
-   </td>
-   <td>-0.09
-   </td>
-  </tr>
-  <tr>
-   <td>Reisenzein & Studtmann (2007) Study 3
-   </td>
-   <td>published
-   </td>
-   <td>40
-   </td>
-   <td>-0.74
-   </td>
-  </tr>
-  <tr>
-   <td>Richards, Butler & Gross (2003)
-   </td>
-   <td>published
-   </td>
-   <td>59
-   </td>
-   <td>0.19
-   </td>
-  </tr>
-  <tr>
-   <td> 	Richards, Butler & Gross (2003)
-   </td>
-   <td>published
-   </td>
-   <td>59
-   </td>
-   <td>-0.12
-   </td>
-  </tr>
-  <tr>
-   <td>Richards & Gross (1999) Study 1
-   </td>
-   <td>published
-   </td>
-   <td>58
-   </td>
-   <td>-0.1
-   </td>
-  </tr>
-  <tr>
-   <td> 	Richards & Gross (1999) Study 1
-   </td>
-   <td>published
-   </td>
-   <td>58
-   </td>
-   <td>0.25
-   </td>
-  </tr>
-  <tr>
-   <td> 	Richards & Gross (1999) Study 1
-   </td>
-   <td>published
-   </td>
-   <td>58
-   </td>
-   <td>0.36
-   </td>
-  </tr>
-  <tr>
-   <td>Richards & Gross (1999) Study 2
-   </td>
-   <td>published
-   </td>
-   <td>85
-   </td>
-   <td>0.13
-   </td>
-  </tr>
-  <tr>
-   <td> 	Richards & Gross (1999) Study 2
-   </td>
-   <td>published
-   </td>
-   <td>85
-   </td>
-   <td>0.24
-   </td>
-  </tr>
-  <tr>
-   <td> 	Richards & Gross (1999) Study 2
-   </td>
-   <td>published
-   </td>
-   <td>85
-   </td>
-   <td>0.06
-   </td>
-  </tr>
-  <tr>
-   <td>Richards & Gross (2000) Study 1
-   </td>
-   <td>published
-   </td>
-   <td>53
-   </td>
-   <td>-0.12
-   </td>
-  </tr>
-  <tr>
-   <td>Richards & Gross (2000) Study 2
-   </td>
-   <td>published
-   </td>
-   <td>61
-   </td>
-   <td>0.39
-   </td>
-  </tr>
-  <tr>
-   <td>Richards & Gross (2006)
-   </td>
-   <td>published
-   </td>
-   <td>131
-   </td>
-   <td>0.34
-   </td>
-  </tr>
-  <tr>
-   <td>Roberts et al. (2008)
-   </td>
-   <td>published
-   </td>
-   <td>160
-   </td>
-   <td>0.07
-   </td>
-  </tr>
-  <tr>
-   <td>Robinson & Demaree (2009)
-   </td>
-   <td>published
-   </td>
-   <td>102
-   </td>
-   <td>-0.04
-   </td>
-  </tr>
-  <tr>
-   <td> 	Robinson & Demaree (2009)
-   </td>
-   <td>published
-   </td>
-   <td>102
-   </td>
-   <td>0.03
-   </td>
-  </tr>
-  <tr>
-   <td> 	Robinson & Demaree (2009)
-   </td>
-   <td>published
-   </td>
-   <td>102
-   </td>
-   <td>0
-   </td>
-  </tr>
-  <tr>
-   <td> 	Robinson & Demaree (2009)
-   </td>
-   <td>published
-   </td>
-   <td>102
-   </td>
-   <td>0
-   </td>
-  </tr>
-  <tr>
-   <td>Roemer (2014)
-   </td>
-   <td>unpublished
-   </td>
-   <td>44
-   </td>
-   <td>0.58
-   </td>
-  </tr>
-  <tr>
-   <td> 	Roemer (2014)
-   </td>
-   <td>unpublished
-   </td>
-   <td>44
-   </td>
-   <td>0.29
-   </td>
-  </tr>
-  <tr>
-   <td>Rohrmann et al. (2009)
-   </td>
-   <td>published
-   </td>
-   <td>36
-   </td>
-   <td>0.16
-   </td>
-  </tr>
-  <tr>
-   <td> 	Rohrmann et al. (2009)
-   </td>
-   <td>published
-   </td>
-   <td>36
-   </td>
-   <td>0.13
-   </td>
-  </tr>
-  <tr>
-   <td>Rummer et al. (2014)
-   </td>
-   <td>published
-   </td>
-   <td>74
-   </td>
-   <td>0.57
-   </td>
-  </tr>
-  <tr>
-   <td> 	Rummer et al. (2014)
-   </td>
-   <td>published
-   </td>
-   <td>74
-   </td>
-   <td>0.46
-   </td>
-  </tr>
-  <tr>
-   <td>Schmeichel , Vohs, & Baumeister (2003)
-   </td>
-   <td>published
-   </td>
-   <td>37
-   </td>
-   <td>-0.23
-   </td>
-  </tr>
-  <tr>
-   <td>Schmeichel et al. (2008)
-   </td>
-   <td>published
-   </td>
-   <td>50
-   </td>
-   <td>0.1
-   </td>
-  </tr>
-  <tr>
-   <td>Söderkvist & Dimberg (unpublished)
-   </td>
-   <td>unpublished
-   </td>
-   <td>32
-   </td>
-   <td>0.36
-   </td>
-  </tr>
-  <tr>
-   <td>Söderkvist et al. (2018) Study 1<sup>a</sup>
-   </td>
-   <td>unpublished
-   </td>
-   <td>32
-   </td>
-   <td>0.34
-   </td>
-  </tr>
-  <tr>
-   <td>Söderkvist et al. (2018) Study 2<sup>a</sup>
-   </td>
-   <td>unpublished
-   </td>
-   <td>64
-   </td>
-   <td>0.17
-   </td>
-  </tr>
-  <tr>
-   <td>Soussignan (2002)
-   </td>
-   <td>published
-   </td>
-   <td>33
-   </td>
-   <td>-0.17
-   </td>
-  </tr>
-  <tr>
-   <td> 	Soussignan (2002)
-   </td>
-   <td>published
-   </td>
-   <td>33
-   </td>
-   <td>0.48
-   </td>
-  </tr>
-  <tr>
-   <td> 	Soussignan (2002)
-   </td>
-   <td>published
-   </td>
-   <td>33
-   </td>
-   <td>0.47
-   </td>
-  </tr>
-  <tr>
-   <td> 	Soussignan (2002)
-   </td>
-   <td>published
-   </td>
-   <td>33
-   </td>
-   <td>0.44
-   </td>
-  </tr>
-  <tr>
-   <td> 	Soussignan (2002)
-   </td>
-   <td>published
-   </td>
-   <td>32
-   </td>
-   <td>0.53
-   </td>
-  </tr>
-  <tr>
-   <td> 	Soussignan (2002)
-   </td>
-   <td>published
-   </td>
-   <td>32
-   </td>
-   <td>1.1
-   </td>
-  </tr>
-  <tr>
-   <td> 	Soussignan (2002)
-   </td>
-   <td>published
-   </td>
-   <td>32
-   </td>
-   <td>1.11
-   </td>
-  </tr>
-  <tr>
-   <td> 	Soussignan (2002)
-   </td>
-   <td>published
-   </td>
-   <td>32
-   </td>
-   <td>0.94
-   </td>
-  </tr>
-  <tr>
-   <td>Stel et al. (2008) Study 2
-   </td>
-   <td>published
-   </td>
-   <td>18.67<sup>b</sup>
-   </td>
-   <td>1.11
-   </td>
-  </tr>
-  <tr>
-   <td>Stel et al. (2008) Study 3
-   </td>
-   <td>published
-   </td>
-   <td>24
-   </td>
-   <td>1
-   </td>
-  </tr>
-  <tr>
-   <td>Strack et al. (1988) Study 1
-   </td>
-   <td>published
-   </td>
-   <td>76.67<sup>b</sup>
-   </td>
-   <td>0.43
-   </td>
-  </tr>
-  <tr>
-   <td>Strack et al. (1988) Study 2
-   </td>
-   <td>published
-   </td>
-   <td>83
-   </td>
-   <td>-0.15
-   </td>
-  </tr>
-  <tr>
-   <td> 	Strack et al. (1988) Study 2
-   </td>
-   <td>published
-   </td>
-   <td>41.5
-   </td>
-   <td>0.55
-   </td>
-  </tr>
-  <tr>
-   <td> 	Strack et al. (1988) Study 2
-   </td>
-   <td>published
-   </td>
-   <td>41.5
-   </td>
-   <td>-0.51
-   </td>
-  </tr>
-  <tr>
-   <td>Tamir et al. (2004)
-   </td>
-   <td>published
-   </td>
-   <td>72
-   </td>
-   <td>-0.16
-   </td>
-  </tr>
-  <tr>
-   <td>Tourangeau & Ellsworth (1979)
-   </td>
-   <td>published
-   </td>
-   <td>20.5<sup>b</sup>
-   </td>
-   <td>0.3
-   </td>
-  </tr>
-  <tr>
-   <td> 	Tourangeau & Ellsworth (1979)
-   </td>
-   <td>published
-   </td>
-   <td>20.5<sup>b</sup>
-   </td>
-   <td>0.3
-   </td>
-  </tr>
-  <tr>
-   <td> 	Tourangeau & Ellsworth (1979)
-   </td>
-   <td>published
-   </td>
-   <td>20.5<sup>b</sup>
-   </td>
-   <td>0.3
-   </td>
-  </tr>
-  <tr>
-   <td> 	Tourangeau & Ellsworth (1979)
-   </td>
-   <td>published
-   </td>
-   <td>20.5<sup>b</sup>
-   </td>
-   <td>0.3
-   </td>
-  </tr>
-  <tr>
-   <td>Trent (2010)
-   </td>
-   <td>unpublished
-   </td>
-   <td>107.33<sup>b</sup>
-   </td>
-   <td>-0.22
-   </td>
-  </tr>
-  <tr>
-   <td> 	Trent (2010)
-   </td>
-   <td>unpublished
-   </td>
-   <td>107.33<sup>b</sup>
-   </td>
-   <td>-0.22
-   </td>
-  </tr>
-  <tr>
-   <td> 	Trent (2010)
-   </td>
-   <td>unpublished
-   </td>
-   <td>107.33<sup>b</sup>
-   </td>
-   <td>-0.06
-   </td>
-  </tr>
-  <tr>
-   <td> 	Trent (2010)
-   </td>
-   <td>unpublished
-   </td>
-   <td>107.33<sup>b</sup>
-   </td>
-   <td>-0.06
-   </td>
-  </tr>
-  <tr>
-   <td>Vieillard et al. (2015)
-   </td>
-   <td>published
-   </td>
-   <td>31
-   </td>
-   <td>0.25
-   </td>
-  </tr>
-  <tr>
-   <td> 	Vieillard et al. (2015)
-   </td>
-   <td>published
-   </td>
-   <td>31
-   </td>
-   <td>0.66
-   </td>
-  </tr>
-  <tr>
-   <td> 	Vieillard et al. (2015)
-   </td>
-   <td>published
-   </td>
-   <td>30
-   </td>
-   <td>0.21
-   </td>
-  </tr>
-  <tr>
-   <td> 	Vieillard et al. (2015)
-   </td>
-   <td>published
-   </td>
-   <td>30
-   </td>
-   <td>0.14
-   </td>
-  </tr>
-  <tr>
-   <td> 	Vieillard et al. (2015)
-   </td>
-   <td>published
-   </td>
-   <td>31
-   </td>
-   <td>-0.05
-   </td>
-  </tr>
-  <tr>
-   <td> 	Vieillard et al. (2015)
-   </td>
-   <td>published
-   </td>
-   <td>31
-   </td>
-   <td>-0.5
-   </td>
-  </tr>
-  <tr>
-   <td> 	Vieillard et al. (2015)
-   </td>
-   <td>published
-   </td>
-   <td>30
-   </td>
-   <td>0.07
-   </td>
-  </tr>
-  <tr>
-   <td> 	Vieillard et al. (2015)
-   </td>
-   <td>published
-   </td>
-   <td>30
-   </td>
-   <td>-0.12
-   </td>
-  </tr>
-  <tr>
-   <td>Wagenmakers et al. (2016) Albohn site
-   </td>
-   <td>published
-   </td>
-   <td>139
-   </td>
-   <td>0.09
-   </td>
-  </tr>
-  <tr>
-   <td>Wagenmakers et al. (2016) Allard site
-   </td>
-   <td>published
-   </td>
-   <td>125
-   </td>
-   <td>0.09
-   </td>
-  </tr>
-  <tr>
-   <td>Wagenmakers et al. (2016) Benning site
-   </td>
-   <td>published
-   </td>
-   <td>115
-   </td>
-   <td>-0.01
-   </td>
-  </tr>
-  <tr>
-   <td>Wagenmakers et al. (2016) Bulnes site
-   </td>
-   <td>published
-   </td>
-   <td>101
-   </td>
-   <td>0.09
-   </td>
-  </tr>
-  <tr>
-   <td>Wagenmakers et al. (2016) Capaldi site
-   </td>
-   <td>published
-   </td>
-   <td>117
-   </td>
-   <td>-0.07
-   </td>
-  </tr>
-  <tr>
-   <td>Wagenmakers et al. (2016) Chasten site
-   </td>
-   <td>published
-   </td>
-   <td>94
-   </td>
-   <td>-0.04
-   </td>
-  </tr>
-  <tr>
-   <td>Wagenmakers et al. (2016) Holmes site
-   </td>
-   <td>published
-   </td>
-   <td>99
-   </td>
-   <td>0.15
-   </td>
-  </tr>
-  <tr>
-   <td>Wagenmakers et al. (2016) Koch site
-   </td>
-   <td>published
-   </td>
-   <td>100
-   </td>
-   <td>-0.14
-   </td>
-  </tr>
-  <tr>
-   <td>Wagenmakers et al. (2016) Korb site
-   </td>
-   <td>published
-   </td>
-   <td>101
-   </td>
-   <td>0.01
-   </td>
-  </tr>
-  <tr>
-   <td>Wagenmakers et al. (2016) Lynott site
-   </td>
-   <td>published
-   </td>
-   <td>126
-   </td>
-   <td>0.23
-   </td>
-  </tr>
-  <tr>
-   <td>Wagenmakers et al. (2016) Oosterwijk site
-   </td>
-   <td>published
-   </td>
-   <td>110
-   </td>
-   <td>-0.17
-   </td>
-  </tr>
-  <tr>
-   <td>Wagenmakers et al. (2016) Ozdogru site
-   </td>
-   <td>published
-   </td>
-   <td>87
-   </td>
-   <td>-0.3
-   </td>
-  </tr>
-  <tr>
-   <td>Wagenmakers et al. (2016) Pacheco-Unguetti site
-   </td>
-   <td>published
-   </td>
-   <td>120
-   </td>
-   <td>-0.08
-   </td>
-  </tr>
-  <tr>
-   <td>Wagenmakers et al. (2016) Talarico site
-   </td>
-   <td>published
-   </td>
-   <td>112
-   </td>
-   <td>0.02
-   </td>
-  </tr>
-  <tr>
-   <td>Wagenmakers et al. (2016) Wagenmakers site
-   </td>
-   <td>published
-   </td>
-   <td>130
-   </td>
-   <td>0.13
-   </td>
-  </tr>
-  <tr>
-   <td>Wagenmakers et al. (2016) Wayand site
-   </td>
-   <td>published
-   </td>
-   <td>110
-   </td>
-   <td>-0.14
-   </td>
-  </tr>
-  <tr>
-   <td>Wagenmakers et al. (2016) Zeelenberg site
-   </td>
-   <td>published
-   </td>
-   <td>108
-   </td>
-   <td>0.25
-   </td>
-  </tr>
-  <tr>
-   <td>Wittmer (1985)
-   </td>
-   <td>unpublished
-   </td>
-   <td>30
-   </td>
-   <td>-0.36
-   </td>
-  </tr>
-  <tr>
-   <td> 	Wittmer (1985)
-   </td>
-   <td>unpublished
-   </td>
-   <td>30
-   </td>
-   <td>-0.21
-   </td>
-  </tr>
-  <tr>
-   <td>Yartz (2004)
-   </td>
-   <td>unpublished
-   </td>
-   <td>28
-   </td>
-   <td>-0.05
-   </td>
-  </tr>
-  <tr>
-   <td> 	Yartz (2004)
-   </td>
-   <td>unpublished
-   </td>
-   <td>30
-   </td>
-   <td>-0.18
-   </td>
-  </tr>
-  <tr>
-   <td> 	Yartz (2004)
-   </td>
-   <td>unpublished
-   </td>
-   <td>28
-   </td>
-   <td>-0.08
-   </td>
-  </tr>
-  <tr>
-   <td> 	Yartz (2004)
-   </td>
-   <td>unpublished
-   </td>
-   <td>30
-   </td>
-   <td>-0.09
-   </td>
-  </tr>
-  <tr>
-   <td> 	Yartz (2004)
-   </td>
-   <td>unpublished
-   </td>
-   <td>28
-   </td>
-   <td>0.04
-   </td>
-  </tr>
-  <tr>
-   <td> 	Yartz (2004)
-   </td>
-   <td>unpublished
-   </td>
-   <td>30
-   </td>
-   <td>0.5
-   </td>
-  </tr>
-  <tr>
-   <td>Zajonc et al. (1989) Study 3
-   </td>
-   <td>published
-   </td>
-   <td>37
-   </td>
-   <td>1.27
-   </td>
-  </tr>
-  <tr>
-   <td>Zajonc et al. (1989) Study 4
-   </td>
-   <td>published
-   </td>
-   <td>26
-   </td>
-   <td>0.47
-   </td>
-  </tr>
-  <tr>
-   <td> 	Zajonc et al. (1989) Study 4
-   </td>
-   <td>published
-   </td>
-   <td>26
-   </td>
-   <td>0.31
-   </td>
-  </tr>
-  <tr>
-   <td>Zariffa et al. (2014)
-   </td>
-   <td>published
-   </td>
-   <td>24
-   </td>
-   <td>-0.57
-   </td>
-  </tr>
-  <tr>
-   <td> 	Zariffa et al. (2014)
-   </td>
-   <td>published
-   </td>
-   <td>24
-   </td>
-   <td>-0.14
-   </td>
-  </tr>
-  <tr>
-   <td>Zhu et al. (2015)
-   </td>
-   <td>published
-   </td>
-   <td>55
-   </td>
-   <td>1.74
-   </td>
-  </tr>
-</table>
+* Original paper: '[Inhibiting and Facilitating Conditions of the Human Smile: A Nonobtrusive Test of the Facial Feedback Hypothesis](https://jhrcook.github.io/wagenmaker-data-analysis/papers/Strack_1988_Inhibiting-and-facilitating-conditions-of-the-human-smile-a-nonobtrusive-test-of-the-facial-feedback-hypothesis.pdf)', Strack et al. 1988; 2 experimental studies, n1= 92, n2=83. [citation= 2577(GS, February, 2022)].
+* Critiques: [Coles et al. 2019](https://psyarxiv.com/svjru/) [meta-analysis _k_ = 98, n=3878, citation= 115 (GS, February 2022)]. [Wagenmakers et al. 2016](https://www.ejwagenmakers.com/2016/WagenmakersEtAl2016Strack.pdf) [meta-analysis n=1894, citation=349 (GS, February 2022)]. [Schimmack 2017](https://replicationindex.com/2017/09/04/the-power-of-the-pen-paradigm-a-replicability-analysis/) [replicability analysis _k_=19, citation=0 (GS, March 2023)].
+* Original effect size: Study 1:  _d_ = 0.82, _d_ = 0.43 (0.82 out of 9).
+* Replication effect size: Wagenmakers et al.: 0.03 out of 9, CI overlapping 0. Coles et al.: [A meta-analysis of 98 studies](https://psyarxiv.com/svjru/) finds _d_= 0.2 [0.14, 0.26] with an absurdly low p value, and doesn't find publication bias. But this latter point simply can't be right. Given _d_ = 0.2 and the convention of targeting 80% power to detect a real phenomenon, you would need very high sample sizes, n > 500. And almost all of the included studies are N &lt; 100. All reported in Coles et al.: Andréasson & Dimberg: _d_=-0.22. Andréasson: _d_=-0.05 to _d_ =0.49. Baumeister et al.: _d_=0.63 to _d_ =1.26. Bodenhausen et al.: _d_ =0.55. Bush et al.: _d_ =0.16. Butler et al.: _d_ =-0.1 to _d_ =-0.83. Butler et al.: _d_ =-0.03. Cai et al.: _d_ =-0.08. Ceschi & Scherer: _d_ =0.74. Clapp: _d_ =0.08 to _d_ =0.69. Laird & Crosby: _d_ =-0.13 to _d_ =0.35. Davey et al.: _d_ =-0.25 to _d_ =0.73. Davis: _d_ =-0.19 to _d_ =0.99. Davis: _d_ =-0.19 to _d_ =0.87. Davis et al.: _d_ =0.07 to _d_ =0.51. Davis et al.: _d_ =-0.15 to _d_ =0.1. Davis et al.: _d_ =-0.16. Demaree et al.: _d_ =0.16 to _d_ =0.62. Demaree et al.: _d_ =-0.64 to _d_ =0.06. Dillon et al.: _d_ =0.11. Dimberg & Söderkvist: _d_ =0.1 to 0.51. Duncan & Laird:_ d_ =0.38 to _d_ =0.51. Duncan & Laird: _d_ =0.44 to _d_ =0.59. Dzokoto et al.: _d_ =0.2 to _d_ =1.07. Flack, Laird & Cavallaro: _d_ =-0.49 to _d_ =1.31. Flack, Laird & Cavallaro: _d_ =0.29 to _d_ =1.41. Flack: _d_ =0.35 to _d_ =0.72. Gan et al.: _d_ =-0.11. Goldin et al.: _d_ =0.8. Gross & Levenson: _d_ =0.04 to _d_ =0.37. Gross: _d_ =-0.23 to _d_ =0.37. Gross: _d_ =0.18. Harris: _d_ =0.07. Hawk et al.: _d_ =0.85. Helt & Fein: _d_ =0.42. Hendricks & Buchanan: _d_ =-0.08. Hendricks: _d_ =0.02. Henry et al.: _d_ =-0.49 to _d_ =0.25. Henry et al.: _d_ =-0.05 to d_ d_ 0.53. Hess et al.: _d_ =-0.28 to _d_ =0.14. Hofmann et al.: _d_ =-0.03. Ito et al.: _d_ =-0.39 to _d_ =-0.25. Kalokerinos et al.: _d_ =-0.06 to _d_ =1.32. Kao et al.: _d_ =-0.67 to _d_ =0.98. Kircher et al.: _d_ =1.14 to _d_ =1.89. Korb et al.: _d_ =0.21. Labott & Teleha: _d_ =0.04 to _d_ =0.91. Laird: _d_ =0.13 to _d_ =0.55. Lalot et al.: _d_ =-0.17. Larsen et al.: _d_ =0.43. Lee: _d_ =-0.27 to _d_ =0.48. Lewis & Bowler: _d_ =1.35. Lewis: _d_ =0.56 to _d_ =0.71. Ma: _d_ =-0.21. Maldonado et al.: _d_ =0.12. Marmolejo-Ramos & Dunn: _d_ =-0.07 to _d_ =0.38. Martijn et al.: _d_ =-0.24. McCanne & Anderson: _d_ =-2.16 to _d_ =4.73. McCaul et al.: _d_ =0.25. McIntosh et al.: _d_ =0.54. Meeten et al.: _d_ =0.49. Miyamoto: _d_ =0.49 to _d_ =0.17. Moore & Zoellner: _d_ =-0.87. Kappas: _d_ =0.08 to _d_ =0.74. Ohira & Kurono: _d_ =-1.38 to _d_ =1.23. Paredes et al.: _d_ =0.85. Paul et al.: _d_ =0.91. Pedder et al.: _d_ =0.07 to _d_ =0.22. Phillips et al.: _d_ =0.08 to _d_ =0.18. Reisenzein & Studtmann: _d_ =-0.08 to _d_ =0.034. Richards, Butler & Gross: _d_ =-0.12 to _d_ = 0.19. Richards & Gross: _d_ =-0.1 to d=0.36. Richards & Gross: _d_ =-0.12 to _d_ =0.39. Richards & Gross: _d_ =0.34. Roberts et al.: _d_ =0.07. Robinson & Demaree: _d_ =-0.04 to _d_ =0. Roemer: _d_ =0.29 to _d_ =0.58. Rohrmann et al.: _d_ =0.13 to _d_ =0.16. Rummer et al.: _d_ =0.46 to _d_ =0.57. Schmeichel , Vohs, & Baumeister: _d_ =-0.23. Schmeichel et al.: _d_ =0.1. Söderkvist & Dimberg (unpublished): _d_ =0.36. Söderkvist et al.: _d_ =0.17 to _d_ =0.34. Soussignan: _d_ =-0.17 to _d_ =1.11. Stel et al.: _d_ =1 to _d_ =1.11. Strack et al.: _d_ =-0.51 to _d_ =0.55. Tamir et al.: _d_ =-0.16. Tourangeau & Ellsworth: _d_ =0.3. Trent: _d_ =-0.22 to _d_ =-0.06. Vieillard et al.: _d_ =-0.12 to _d_ =0.66. Wagenmakers et al.: _d_ =-0.17 to _d_ =0.25. Wittmer: _d_ =-0.36 to _d_ =-0.21. Yartz: _d_ =-0.18 to _d_ =0.5. Zajonc et al.: _d_ =0.31 to _d_ =1.27. Zariffa et al.: _d_ =-0.57 to _d_ =-0.14. Zhu et al.: _d_ =1.74. [Schimmack](https://replicationindex.com/2017/09/04/the-power-of-the-pen-paradigm-a-replicability-analysis/): strong evidence of publication bias on a subset of these papers, using a proper power analysis. Direct replications of the original pen-in-mouth protocol fail; but new conceptual replications appear to work. [Coles et al.:](https://www.nature.com/articles/s41562-022-01458-9) effect is an absolute 5% increase in a happiness metric.
 {{< /spoiler >}}
 
-* **Positive affirmation on mood**. Positive self-statements boost mood for people with high self-esteem and reduced mood for people with low self-esteem. 
+* **Positive affirmation on mood**. Positive self-statements boost mood for people with high self-esteem and reduce mood for people with low self-esteem. 
 {{< spoiler text="Statistics" >}}
 * Status: not replicated
-* Original paper: ‘[Positive Self-Statements: Power for Some, Peril for Others](https://journals.sagepub.com/doi/full/10.1111/j.1467-9280.2009.02370.x)’, Wood et al.'s  (2009): 3 experiments with Study 1: n = 249, Study 2: n = 68,  Study 3:n=116. [citation=294(GS, February 2022)]​.
-* Critiques: [Flynn and Bordieri (2020)](https://doi.org/10.1016/j.jcbs.2020.03.003) [experiment: n = 462 , citations=4(GS, February 2022)].
-* Original effect size: Study 1: not reported [g = 0.53 calculated]; Study 2:  not reported [g = 1.00 calculated]; Study 3: not reported [g = 0.86, d= -0.74, d= 2.13, d = -0.49 calculated]. A meta-analysis combining the studies suggested that participants with high self-esteem did receive some benefit, Z = 2.51, p &lt; .013, d = 0.66 (for participants with low self-esteem, Z = −3.21, p &lt; .002, d = 0.72).
-* Replication effect size: Flynn and Bordieri [2020](https://doi.org/10.1016/j.jcbs.2020.03.003):  Study 1: not reported [g = 0.53 calculated]; Study 2:  not reported [g = 1.00 calculated].
+* Original paper: ‘[Positive Self-Statements: Power for Some, Peril for Others](https://journals.sagepub.com/doi/full/10.1111/j.1467-9280.2009.02370.x)’, Wood et al.  2009; 3 experiments with Study 1: n = 249, Study 2: n = 68, Study 3: n=116. [citation=294(GS, February 2022)]​.
+* Critiques: [Flynn and Bordieri 2020](https://doi.org/10.1016/j.jcbs.2020.03.003) [experiment: n = 462, citations=4(GS, February 2022)].
+* Original effect size: Study 1: not reported [_g_ = 0.53]; Study 2:  not reported [_g_ = 1.00 calculated]; Study 3: not reported [_g_ = 0.86, _d_= -0.74, _d_= 2.13, _d_ = -0.49 calculated]. A meta-analysis combining the studies suggested that participants with high self-esteem did receive some benefit, _Z_ = 2.51, _p_ &lt; .013, _d_ = 0.66 (for participants with low self-esteem, _Z_ = −3.21, _p_ &lt; .002, _d_ = 0.72).
+* Replication effect size: Flynn and Bordieri: Study 1: not reported [_g_ = 0.53 calculated]; Study 2: not reported [_g_ = 1.00 calculated].
+{{< /spoiler >}}
+
+* **Mindfulness for mental health**. Mindfulness, the practice of paying attention to the present moment in a non-judgemental way, is thought to have a beneficial effect on mental health outcomes, including but not limited to helping individuals reduce stress and anxiety and manage emotional states more effectively
+{{< spoiler text="Statistics" >}}
+* Status: mixed
+* Original paper: ‘[An Outpatient Program in Behavioral Medicine for Chronic Pain Patients Based on the Practice of Mindfulness Meditation](https://v-assets.cdnsw.com/fs/Articles_scientifiques_Mindfulness/6lwfg-Mindfulness_chronic_pains_kabatzinn_mbsr_1982.pdf)’, Kabat-Zinn, 1982; longitudinal study, n=51. [citations = 5726 (PubMed, January 2023)].
+* Critiques: Hoffmann & Witt 2010 [meta-analysis, k=39 studies, n=1,140, citations= 5337 (GS, May 2023)].  Khoury et al. 2013 [meta-analysis, k= 209 studies, n=12,145, citations= 2484 (GS, May 2023)]. Strauss et al., 2014 [meta-analysis, k= 19 studies, n=578, citations= 659 (GS, May 2023)]. [Fumero et al. 2020](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8314302/) [_n_= 91, citations= 30 (PubMed, March 2023)]. Tao et al. 2022 [meta-analysis, k=7 trials, n=502, citations= 2 (GS, May 2023)]. Chayadi et al., 2022 [meta-analysis, k=36, n=1677, citations= 8 (GS, May 2023)]. [Coronado-Montoya 2016](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0153220) [n=357, citations= 21 (GS, March 2023)]. [Britton 2019](https://www.sciencedirect.com/science/article/pii/S2352250X18301453) [_n_= NA, citations= 169 (GS, March 2023)]. [Hsiao et al. 2020](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6435335/) [_n_ = NA, citations= 17(GS, May 2023)]. [Kuyken et al. 2022](https://pubmed.ncbi.nlm.nih.gov/35820992/) [n=8376, citations= 21 (PubMed, March, 2023)]. [Sephton et al. 2007](https://link.springer.com/article/10.1007/s10880-009-9153-z) [_n_= 91, citations= 495 (PubMed, March, 2023)]. 
+* Original effect size: prima facie, [d = 0.3](https://jamanetwork.com/journals/jamainternalmedicine/article-abstract/1809754) for anxiety or depression.
+* Replication effect size: [Fumero et al:](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8314302/) 75% (9/12) of reviews revealed a positive effect of MBIs, comparing pre-post intervention anxiety scores and compared with a control group (SMD) = 0.57 [0.22, 0.89]; for those with negative results, SMD = -0.27 [-0.52, 0.02]. The range of effect size for studies that yielded positive results for mindfulness in comparison to control or other intervention groups was diverse. 20% of studies exhibited a large range of effect size, 50% displayed a moderate range, and 30% demonstrated a small range. Khoury et al.:meta-analysis on pre-post-comparisons revealed a mean effect size on anxiety for ten pre-post studies, Hedge's g = .89 [.71, 1.08], p &lt;.001. [Hoffmann & Witt](http://europepmc.org/article/MED/20350028): average pre-post effect size estimate (Hedges’ g) based on 10 studies was 0.67 [0.47, 0.87], p &lt; .01. Tao et al.: the effects of MBIs (MBSR: Mindfulness-based Stress Reduction, MBCT: Mindfulness-based Cognitive Therapy) on depressive poststroke patients has revealed a positive effect on depression in poststroke depression patients compared with the control group (MBSR: n= 196, Hedges' g = 0.49 [0.42, 0.56], p &lt; 0.01; MBCT: n= 301, Hedges' g = 0.85 [0.71, 1.00], p &lt; 0.01.). [Chayadi et al.:](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0269519) the medium effect sizes of MBIs on reducing anxiety (Hedges’ g = 0.56, S.E = 0.107 [0.35, 0.77], p &lt; 0.01) and depression (Hedges’ g = 0.43, S.E = 0.059 [0.32, 0.55], p &lt; 0.01) among cancer patients with fatigue. [Strauss et al.:](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0096110)the medium effect sizes of MBIs for depressive symptom severity (Hedges g = −0.73  [−0.09,  −1.36]) but not for anxiety symptom severity (Hedges g = −0.55 n[0.09 to −1.18]) among cancer patients. Coronado-Montoya: indications of possible reporting bias; 108 (87%) of 124 published trials reported ≥1 positive outcome in the abstract, and 109 (88%) concluded that mindfulness-based therapy was effective, 1.6 times greater than the expected number of positive trials based on effect size d = 0.55 (expected number positive trials = 65.7); of 21 trial registrations, 13 (62%) remained unpublished 30 months post-trial completion. Britton: ES=NA; a number of mindfulness-related processes—including, mindful attention (observing awareness, interoception), mindfulness qualities, mindful emotion regulation (prefrontal control, decentering, exposure, acceptance), and meditation practice—show signs of non-monotonicity, boundary conditions, or negative effects under certain conditions. Hsiao et al.: the effects of Mindfulness-Based Relapse Prevention for Substance Use Disorders were small-to-medium in Study 1 (d = .08 to .48) and were much smaller in Study 2 (d =.03 to .21). Kuyken et al.: no evidence of school-based mindfulness training being superior to teaching-as-usual at 1 year; standardised mean differences (intervention minus control) were: 0.005 [-0.05 to 0.06] for risk for depression; 0.02 [-0.02 to 0.07] for social-emotional-behavioural functioning; and 0.02 [-0.03 to 0.07] for well-being. Sephton et al.: The MBSR treatment significantly reduced basal electrodermal (skin conductance level; SCL) activity (t = 3.298, p = .005) and SCL activity during meditation (t = 4.389, p = .001), consistent with reduced basal sympathetic (SNS) activation among women with fibromyalgia. 
 {{< /spoiler >}}
 
 <br>
 
 ## **Cognitive Psychology**
 
+* **Verbal overshadowing effect**. In a series of six experiments, verbalising the appearance of previously seen visual stimuli impaired subsequent recognition performance.
+{{< spoiler text="Statistics" >}}
+* Status: replicated
+* Original paper: ['Verbal overshadowing of visual memories: Some things are better left unsaid'](https://www.sciencedirect.com/science/article/abs/pii/001002859090003M), [Schooler](https://scholar.google.com/citations?user=3UEI9NIAAAAJ&hl=ru&oi=sra) and Engstler-Schooler 1990; experiment, n = 117 (study 4), n = 88 (study 1), n = 104 (study 2).[citations=1218 (GS, November 2022)]​.
+* Critiques: Experiment 1 and 4: [Alogna 2014](https://journals.sagepub.com/doi/10.1177/1745691614545653) [n=1105 (experiment 1), n = 663(experiment 2), citations=192 (GS, November 2022)]. Мeta-analysis.
+* Original effect size: Experiment 1: -22%, Experiment 2: -25%.
+* Replication effect size: Alogna: Experiment 1: 4.01% [−7.15%, −0.87%]. Experiment 2: −16.31% [−20.47%, −12.14%].
+{{< /spoiler >}}
+
+* **Age of acquisition effects - influence on free recall (pure block)**. Early-acquired items are recalled more accurately than late-acquired items when early-acquired items are presented in a separate block and late-acquired items are presented in a separate block. 
+{{< spoiler text="Statistics" >}}
+* Status: replicated
+* Original paper: [‘Word imagery but not age of acquisition affects episodic memory](https://link.springer.com/article/10.3758/BF03198377)’, Coltheart and Winograd 1986; experiment, Experiment 1a: n = 42. [citations=44(GS, November 2022)]​.
+* Critiques: [Almond and Morrison 2014](https://www.tandfonline.com/doi/pdf/10.1080/13825585.2013.849653?casa_token=1mZ----fbTMAAAAA:mC66IZWTiiUfd5Tga5m683nbSPU8KkLfjIihbi0KvN3QivtJ95X1I8ACDyI3-8C6ExLd-gk1jy8Adw) [n =80, citations = 8(GS, November 2022)]. [Dewhurst et al. 1998](https://www.researchgate.net/profile/Christopher-Barry-6/publication/232448882_Separate_effects_of_word_frequency_and_age_of_acquisition_in_recognition_and_recall/links/5735b45708ae298602e08719/Separate-effects-of-word-frequency-and-age-of-acquisition-in-recognition-and-recall.pdf) [n=128, citations=117(GS, November 2022)]. [Macmillan et al. 2022](https://link.springer.com/article/10.3758/s13421-021-01137-6) [n = 44, citations = 9 (GS, November 2022)]. 
+* Original effect size: η<sub>p</sub>² = .05 [η<sub>p<sup>2</sup></sub> calculated from reported F statistic and converted using this [ conversion](https://haiyangjin.github.io/2020/05/eta2d/#from-cohens-d-to-partial-eta-squared)].
+* Replication effect size: Almond and Morrison: η² = .111. Dewhurst et al.: _F_ &lt; 1. Macmillan et al.: η<sub>p</sub>² = 0.008.
+{{< /spoiler >}}
+
+* **Age of acquisition effects - influence on free recall (mixed block)**. Early-acquired items are recalled more accurately than late-acquired items when early-acquired items are mixed with late-acquired items in a block.
+{{< spoiler text="Statistics" >}}
+* Status: mixed 
+* Original paper: ‘[Separate Effects of Word Frequency and Age of Acquisition in Recognition and Recall](https://www.researchgate.net/profile/Christopher-Barry-6/publication/232448882_Separate_effects_of_word_frequency_and_age_of_acquisition_in_recognition_and_recall/links/5735b45708ae298602e08719/Separate-effects-of-word-frequency-and-age-of-acquisition-in-recognition-and-recall.pdf)’, Dewhurst et al. 1998; experiment, n=80. [citations=117(GS, November 2022)].
+* Critiques: [Macmillan et al. 2022](https://link.springer.com/article/10.3758/s13421-021-01137-6) [n = 44, citations = 9 (GS, November 2022)]. 
+* Original effect size: η<sub>p</sub>² = 0.15 [n<sub>p<sup>2</sup></sub> calculated from reported F statistic and converted using this[ conversion](https://haiyangjin.github.io/2020/05/eta2d/#from-cohens-d-to-partial-eta-squared)].
+* Replication effect size: Macmillan et al.: η<sub>p</sub>² = 0.003.
+{{< /spoiler >}}
+
+* **Age of acquisition effects - influence on recognition (mixed block)**. Early-acquired items are recalled more accurately than late-acquired items.  
+{{< spoiler text="Statistics" >}}
+* Status: reversed
+* Original paper: [‘Word imagery but not age of acquisition affects episodic memory](https://link.springer.com/article/10.3758/BF03198377)’, Coltheart and Winograd 1986; experiment, Experiment 2: n = 102. [citations=44(GS, November 2022)]​.
+* Critiques: [Dewhurst et al. 1998](https://www.researchgate.net/profile/Christopher-Barry-6/publication/232448882_Separate_effects_of_word_frequency_and_age_of_acquisition_in_recognition_and_recall/links/5735b45708ae298602e08719/Separate-effects-of-word-frequency-and-age-of-acquisition-in-recognition-and-recall.pdf) [Experiment 1: n=30, Experiment 2: n = 30; citations=117(GS, November 2022)]. [Macmillan et al. 2022](https://link.springer.com/article/10.3758/s13421-021-01137-6) [n = 44, citations = 9 (GS, November 2022)].
+* Original effect size: η<sub>p</sub>² = .03 [η<sub>p<sup>2</sup></sub> calculated from reported F statistic and converted using this[ conversion](https://haiyangjin.github.io/2020/05/eta2d/#from-cohens-d-to-partial-eta-squared)].
+* Replication effect size: Dewhurst et al.: Experiment 1: Hits: η<sub>p</sub>² = 0.42 [η<sub>p<sup>2 </sup></sub> calculated from reported F statistic and converted using this[ conversion](https://haiyangjin.github.io/2020/05/eta2d/#from-cohens-d-to-partial-eta-squared)], False alarms: _F_ &lt; 1, d’: η<sub>p</sub>² = 0.31 [η<sub>p<sup>2</sup></sub> calculated from reported F statistic and converted using this[ conversion](https://haiyangjin.github.io/2020/05/eta2d/#from-cohens-d-to-partial-eta-squared)]; Experiment 2: Hits: _d_ = 0.74 [_d_ calculated from reported t statistic and converted using this[ conversion](https://haiyangjin.github.io/2020/05/eta2d/#from-cohens-d-to-partial-eta-squared)], False alarms: _d_= 0.57 [d_ _calculated from reported t statistic and converted using this[ conversion](https://haiyangjin.github.io/2020/05/eta2d/#from-cohens-d-to-partial-eta-squared)], d’: _d_ = 0.09 [_d_ calculated from reported t statistic and converted using this[ conversion](https://haiyangjin.github.io/2020/05/eta2d/#from-cohens-d-to-partial-eta-squared)]. Macmillan et al.: Hits: _d_  = 0.023, False alarms: _d_= 0.56, d’: _d_ = 0.44, C = 0.35, d<sub>a</sub> = 0.65, slope = 0.25.
+{{< /spoiler >}}
+
+* **Age of acquisition influences the pre-conceptual stages of lexical retrieval (progressive demasking)**. Early-acquired items are identified more accurately than late-acquired items, using a progressive demasking task. A progressive demasking task is a type of perceptual identification task where participants are presented with a series of words that are gradually revealed over time and their ability to identify words at each stage of the task is measured. Words learned at an earlier age are thought to be easier to demask than those learned later in life, perhaps because the individual has gained more experience and exposure to the word, which can make it easier to recognize.
+{{< spoiler text="Statistics" >}}
+* Status: not replicated
+* Original paper: [‘Word age-of-acquisition and visual recognition threshold](https://link.springer.com/article/10.3758/BF03198377)’, Gilhooly and Logie 1981a; experiments, Experiment 1: n = 36, Experiment 2: n =  18. [citations=32(GS, December 2022)]​.
+* Critiques: [Gilhooly and Logie 1981b](https://link.springer.com/article/10.1007/BF03186735) [n = 16, citations = 101(GS, December 2022)]​. [Ghyselinck et al. 2004](https://www.sciencedirect.com/science/article/abs/pii/S0001691803001070) [n = 21, citations = 192(GS, December 2022)].  [Chen et al. 2009](https://www.sciencedirect.com/science/article/pii/S000169180800156X#section.0015) [n = 30, citations = 28(GS, December 2022)]​. [Ploetz and Yates 2016 ](https://onlinelibrary.wiley.com/doi/pdf/10.1111/1467-9817.12040?casa_token=KVhDoVhN5sUAAAAA:uV5Dk3A-T5LjDGJy4S0FTeuJ0H_vRPRkVrwDyM9mv8xu70lIgL3kEKjwodT4zwXS2E0CqlfB-TTz)[n = 64, citations = 1(GS, December 2022)].
+* Original effect size: Experiment 1: Beta = 0.05; Experiment 2: Beta = 0.03. 
+* Replication effect size: author: Gilhooly and Logie: Beta = 0.09; Ghyselinck et al.: η<sub>p</sub>² = 0.58 [η<sub>p<sup>2</sup></sub> calculated from reported F statistic and converted using this[ conversion](https://haiyangjin.github.io/2020/05/eta2d/#from-cohens-d-to-partial-eta-squared)]. Chen et al.: η<sub>p</sub>² = 0.27 [η<sub>p<sup>2</sup></sub> calculated from reported F statistic and converted using this [conversion](https://haiyangjin.github.io/2020/05/eta2d/#from-cohens-d-to-partial-eta-squared)]. Ploetz and Yates: η<sub>p</sub>² = .124.
+{{< /spoiler >}}
+
+* **Age of acquisition influence on the pre-conceptual stages of lexical retrieval (object decision)**. The age at which one acquires the concept of  an object does not contribute to the speed and accuracy of recognising whether an object is a real object or not a real world object that has chimeric features.  
+{{< spoiler text="Statistics" >}}
+* Status: not replicated
+* Original paper: [‘Age of acquisition, not word frequency, affects object naming, not object recognition](https://link.springer.com/article/10.3758/BF03202720)’, Morrison et al. 1992; experiment, n = 20. [citations=495(GS, December 2022)]​.
+* Critiques: [Catling and Johnston 2009 ](https://journals.sagepub.com/doi/full/10.1080/17470210701814352?casa_token=cBjiHPY1S2EAAAAA%3A__YuabpjtelXo1DyH3PjTZxNcUxcI6UxH6dXF3PrNc4h4C75SIiNcMNzpY7dwPX1wNS27vFpNHg)[Experiment 2: n = 20; citations = 54 (GS, December 2022)]. [Holmes and Ellis 2006 ](https://www.tandfonline.com/doi/full/10.1080/13506280544000093?casa_token=hCSgWyLLg84AAAAA%3ACQ0TDFs4z0ap-tmKleeo9sCRNMHE9NBnAYSwxTaaBgWgnPWgY2MXZkT0QkTOdpeUeaWzdq-izU8)[Experiment 2: n = 20, Experiment 3: n = 20, Experiment 7: n = 46, citations = 87 (GS, December 2022)]. [Moore et al. 2004](https://www.tandfonline.com/doi/pdf/10.1080/09541440340000097?casa_token=q3lMfUyD3zMAAAAA:qHstbfceqQDXkxM0IZuAAYjqr2_A15dkjKhwjC3v3lzTI3zLQxEaIdUc0PhcZU_U16uuXZ3V7kM) [Experiment 1: n = 39, Experiment 2: n = 38, citations = 79 (GS, December 2022)]. [Vitkovitch and Tyrrell 1995 ](https://journals.sagepub.com/doi/abs/10.1080/14640749508401419)[n = 16, citations = 211 (GS, December 2022)].
+* Original effect size: Beta = .044.
+* Replication effect size: Catling and Johnston: _η<sub>p<sup>2</sup></sub>_ = 0.18 [_η<sub>p<sup>2</sup></sub>_ calculated from reported F statistic and converted using this[ conversion](https://haiyangjin.github.io/2020/05/eta2d/#from-cohens-d-to-partial-eta-squared)]. Holmes and Ellis: Experiment 2: _d_= 1.18 [_d_ calculated from _t_ statistic and converted using this[ conversion](https://haiyangjin.github.io/2020/05/eta2d/#from-cohens-d-to-partial-eta-squared)], Experiment 3: _d_= 1.44[_d_ calculated from _t_ statistic and converted using this[ conversion](https://haiyangjin.github.io/2020/05/eta2d/#from-cohens-d-to-partial-eta-squared)], Experiment 7: _η<sub>p<sup>2  </sup></sub>_= 0.38[_η<sub>p<sup>2</sup></sub>_ calculated from reported F statistic and converted using this[ conversion](https://haiyangjin.github.io/2020/05/eta2d/#from-cohens-d-to-partial-eta-squared)]. Moore et al.: _η<sub>p<sup>2  </sup></sub>_= 0.27 [_η<sub>p<sup>2</sup></sub>_ calculated from reported F statistic and converted using this[ conversion](https://haiyangjin.github.io/2020/05/eta2d/#from-cohens-d-to-partial-eta-squared)]. Vitkovitch and Tyrell: Beta = .426. 
+{{< /spoiler >}}
+
+* **Age of acquisition influence on the pre-conceptual stages of lexical retrieval (anagram solution)**. Age of acquisition is thought to affect lexical retrieval through its impact on anagram (word jumbles) solutions, such that words acquired at an earlier age tend to be solved more quickly and accurately in anagram tasks than those learned later in life. This may be because words learned earlier in life are more deeply encoded and may therefore be more easily accessed.
+{{< spoiler text="Statistics" >}}
+* Status: mixed
+* Original paper:[ ‘Age-of-acquisition, imagery, familiarity and meaningfulness norms for 543 words’](https://link.springer.com/article/10.3758/BF03201278), Stration et al. 1975; experiment, n = 879. [citations=46(GS, December 2022)]​.
+* Critiques:[ Gilhooly and Johnson 1978](https://journals.sagepub.com/doi/abs/10.1080/14640747808400654) [n = 45, citations = 78(GS, December 2022)].;[ Gilhooly and Gilhooly 1979](https://link.springer.com/article/10.3758/BF03197541) [n = 45, citations = 236(GS, December 2022)].
+* Original effect size: NA. 
+* Replication effect size: Gilhooly and Johnson: not reported.  Gilhooly and Gilhooly: beta = -.41.
+{{< /spoiler >}}
+
+* **Age of acquisition influence on the pre-conceptual stages of lexical retrieval (visual duration threshold)**. Early-acquired items are identified more accurately than late-acquired items, using visual duration threshold task. 
+{{< spoiler text="Statistics" >}}
+* Status:  replicated
+* Original paper: [‘Age of acquisition affects object recognition: Evidence from visual duration thresholds’](https://www.sciencedirect.com/science/article/pii/S0001691806001144#section.0025), Dent et al. 2008; experiments, experiment 1=16, experiment 2 = 16; experiment 3 = 16. [citations= 26(GS, December 2022)].
+* Critiques: [Chen et al. 2009](https://www.sciencedirect.com/science/article/pii/S000169180800156X#section.0015) [n = 31, citations = 28(GS, December 2022)].​
+* Original effect size: Experiment 1: η<sub>p</sub>² = 0.628; Experiment 2: η<sub>p</sub>² = 0.563; Experiment 3: η<sub>p</sub>² = 0.560.
+* Replication effect size: Chen et al.: η<sub>p</sub>² = 0.46 [η<sub>p<sup>2</sup></sub> calculated from reported F statistic and converted using this[ conversion](https://haiyangjin.github.io/2020/05/eta2d/#from-cohens-d-to-partial-eta-squared)].
+{{< /spoiler >}}
+
+* **Age of acquisition influence on the pre-conceptual stages of lexical retrieval (category verification)**. The age at which one acquires an object does not contribute to the speed and accuracy of category verification during a semantic categorisation task (where objects have to be decided whether they represent one group or another, e.g. tools vs. furniture). 
+{{< spoiler text="Statistics" >}}
+* Status: reversed
+* Original paper: ‘[Age-of-acquisition effects in picture naming: Are they structural and/or semantic in nature?](https://www.tandfonline.com/doi/pdf/10.1080/13506280544000084?casa_token=zlvQIG1j4LYAAAAA:_dCrMCTRb20l6LJANyECukcah1LJnKrKc3CGu4RGrENetJ_NAIxSj0kCoj5LMU_d77rH8JezPUk), Chalard and Bonin 2006; experiment, n = 27. [citations=36(GS, December 2022)]​.
+* Critiques:  [Catling and Elsherif 2020](https://www.sciencedirect.com/science/article/pii/S0001691820302158) [Experiment 1a: n = 48, Experiment 2a: n = 48, citations = 12(GS, December 2022)]. [Catling and Johnston 2006](https://bpspsychub.onlinelibrary.wiley.com/doi/pdf/10.1348/000712605X53515?casa_token=UGzPKL897K0AAAAA:1d36m-_51V8D7ssU_nJYJ_HFTQK3WqMQfhEgXosiAjDEbq73Bt9IqTfyJnlLCU8-OjMOPa1xfqUb) [Experiment 1: n = 15, citations = 17(GS, December 2022)]. [Catling and Johnston 2009 ](https://journals.sagepub.com/doi/full/10.1080/17470210701814352?casa_token=cBjiHPY1S2EAAAAA%3A__YuabpjtelXo1DyH3PjTZxNcUxcI6UxH6dXF3PrNc4h4C75SIiNcMNzpY7dwPX1wNS27vFpNHg)[Experiment 1: n = 24, citations = 54 (GS, December 2022)]. [Holmes and Ellis 2006 ](https://www.tandfonline.com/doi/full/10.1080/13506280544000093?casa_token=hCSgWyLLg84AAAAA%3ACQ0TDFs4z0ap-tmKleeo9sCRNMHE9NBnAYSwxTaaBgWgnPWgY2MXZkT0QkTOdpeUeaWzdq-izU8)[Experiment 4: n = 20, Experiment 7: n = 30, citations = 87 (GS, December 2022)]. [Räling et al. 2015](https://id.elsevier.com/as/authorization.oauth2?platSite=SD%2Fscience&scope=openid%20email%20profile%20els_auth_info%20els_idp_info%20els_idp_analytics_attrs%20urn%3Acom%3Aelsevier%3Aidp%3Apolicy%3Aproduct%3Ainst_assoc&response_type=code&redirect_uri=https%3A%2F%2Fwww.sciencedirect.com%2Fuser%2Fidentity%2Flanding&authType=SINGLE_SIGN_IN&prompt=none&client_id=SDFE-v3&state=retryCounter%3D0%26csrfToken%3D330d4c08-d9ee-4446-89c3-97cb2befb97a%26idpPolicy%3Durn%253Acom%253Aelsevier%253Aidp%253Apolicy%253Aproduct%253Ainst_assoc%26returnUrl%3D%252Fscience%252Farticle%252Fpii%252FS0028393215300464%26prompt%3Dnone%26cid%3Darp-88cf3d96-7497-41e6-8772-f6dc7deda875) [n = 36, citations = 24(GS, December 2022)]. [Stadthagen-Gonzalez et al. 2009 ](https://journals.sagepub.com/doi/full/10.1080/17470210802511139?casa_token=pDIGsm7dHd4AAAAA%3AGUSBA6-rY-HjKyIjQkD-OP6NGiga7W1aiHL5Zk5GmZEzUmxp3jMR081eB7pjPo_BMPH3VdbU3Ko)[n = 100, citations = 51 (GS, December 2022)]. 
+* Original effect size: NA.
+* Replication effect size: Catling and Elsherif: Experiment 1a: _d_ = 0.23, Experiment 2a: _d_ = 0.25. Catling and Johnston: _η<sub>p<sup>2</sup></sub>_ = 0.46. Catling and Johnston: _η<sub>p<sup>2</sup></sub>_ = 0.19[_η<sub>p<sup>2</sup></sub>_ calculated from reported F statistic and converted using this[ conversion](https://haiyangjin.github.io/2020/05/eta2d/#from-cohens-d-to-partial-eta-squared)]. Holmes and Ellis: Experiment 4: _d_ = 1.62 [_d_ calculated from reported t statistic in category verification and converted using this[ conversion](https://haiyangjin.github.io/2020/05/eta2d/#from-cohens-d-to-partial-eta-squared)]; Experiment 8: _t_ &lt; 1.  Räling et al.: _η<sub>p<sup>2</sup></sub>_ = 0.45[_η<sub>p<sup>2</sup></sub>_  calculated from reported F statistic and converted using this[ conversion](https://haiyangjin.github.io/2020/05/eta2d/#from-cohens-d-to-partial-eta-squared)]. Stadthagen-Gonzalez et al.: Beta = 2.43.
+{{< /spoiler >}}
+
+* **Age of acquisition influence on the pre-conceptual stages of lexical retrieval (category falsification)**. The age at which one acquires the name of an object object does not contribute to the speed and accuracy of category falsification (i.e. deciding that a different word and the picture of the acquired concept do not match; e.g. the picture of the acquired concept of a rabbit, paired with the non-matching word “mouse”). 
+{{< spoiler text="Statistics" >}}
+* Status: mixed
+* Original paper: ‘[Age of acquisition and typicality effects in three object processing tasks](https://www.tandfonline.com/doi/full/10.1080/13506280544000093?casa_token=hCSgWyLLg84AAAAA%3ACQ0TDFs4z0ap-tmKleeo9sCRNMHE9NBnAYSwxTaaBgWgnPWgY2MXZkT0QkTOdpeUeaWzdq-izU8)’, Holmes and Ellis 2006; experiment, n = 20. [citations=87(GS, December 2022)]​.
+* Critiques:  [Catling and Elsherif 2020](https://www.sciencedirect.com/science/article/pii/S0001691820302158) [Experiment 1a: n = 48, Experiment 2a:  n = 48, citations = 12(GS, December 2022)]. [Catling and Johnston 2006](https://bpspsychub.onlinelibrary.wiley.com/doi/pdf/10.1348/000712605X53515?casa_token=UGzPKL897K0AAAAA:1d36m-_51V8D7ssU_nJYJ_HFTQK3WqMQfhEgXosiAjDEbq73Bt9IqTfyJnlLCU8-OjMOPa1xfqUb) [Experiment 1: n = 15, citations = 17(GS, December 2022)]. [Stadthagen-Gonzalez et al. 2009 ](https://journals.sagepub.com/doi/full/10.1080/17470210802511139?casa_token=pDIGsm7dHd4AAAAA%3AGUSBA6-rY-HjKyIjQkD-OP6NGiga7W1aiHL5Zk5GmZEzUmxp3jMR081eB7pjPo_BMPH3VdbU3Ko)[n = 100, citations = 51 (GS, December 2022)]. 
+* Original effect size: _t_ &lt; 1. 
+* Replication effect size: Catling and Elsherif: Experiment 1a: _d_ = 0.14, Experiment 2a: _d_ = 0.16. Catling and Johnston: _η<sub>p<sup>2  </sup></sub>_= 0.297. Stadthagen-Gonzalez et al.: Beta = 0.43. 
+{{< /spoiler >}}
+
+* **Age of acquisition influence on face recognition**. Early-acquired faces are recognised more quickly and accurately than late-acquired faces. 
+{{< spoiler text="Statistics" >}}
+* Status:  replicated
+* Original paper:[ ‘Age of acquisition in face categorisation: Is there an instance-based account?’](https://www.sciencedirect.com/science/article/pii/S0010027799000207), Lewis 1999; correlational study, n = 9. [citations = 106(GS, December 2022)]​.
+* Critiques:[ Lima et al. 2022](https://link.springer.com/article/10.3758/s13428-021-01572-y) [n = 180, citations = 2 (GS, December 2022)].
+* Original effect size: _r_ = -0.50.
+* Replication effect size: Lima et al.: _r_ = -0.16.
+{{< /spoiler >}}
+
+* **Age of acquisition influence on face familiarity decision**. Early-acquired faces are recognised as familiar faces more quickly than late-acquired faces when the task is to discriminate between familiar and unfamiliar faces. 
+{{< spoiler text="Statistics" >}}
+* Status: replicated
+* Original paper:[ ‘Mechanisms of identity and gender decisions to faces:](https://www.sciencedirect.com/science/article/pii/S0010027799000207)
+* [Who rocked in 1986?’](https://www.sciencedirect.com/science/article/pii/S0010027799000207), Richards and Ellis 2008; experimental design, Experiment 1: n = 32. [citations = 13(GS, December 2022)]​.
+* Critiques:[ Richards and Ellis 2009](https://www.redalyc.org/pdf/169/16911991001.pdf) [n = 36, citations = 9 (GS, December 2022)].
+* Original effect size: _η<sub>p<sup>2</sup></sub>_ = 0.36 [_η<sub>p<sup>2</sup></sub>_ calculated from reported F statistic and converted using this [conversion](https://haiyangjin.github.io/2020/05/eta2d/#from-cohens-d-to-partial-eta-squared)].
+* Replication effect size: Richards and Ellis: _η<sub>p<sup>2</sup></sub>_ = 0.21 [_η<sub>p<sup>2</sup></sub>_ calculated from reported F statistic and converted using this [conversion](https://haiyangjin.github.io/2020/05/eta2d/#from-cohens-d-to-partial-eta-squared)].
+{{< /spoiler >}}
+
+* **Age of acquisition influence on face gender decision**. The age at which  a celebrity face is acquired does not affect the speed to recognise a celebrity’s face, using a gender decision task (is this face male or female?).
+{{< spoiler text="Statistics" >}}
+* Status: replicated
+* Original paper:[‘Mechanisms of identity and gender decisions to faces: Who rocked in 1986?’](https://journals.sagepub.com/doi/abs/10.1068/p6023), Richards and Ellis 2008; experimental design, Experiment 2: n = 32. [citations = 13(GS, December 2022)]​.
+* Critiques:[ Richards and Ellis 2009](https://www.redalyc.org/pdf/169/16911991001.pdf) [n = 36, citations = 9 (GS, December 2022)].
+* Original effect size: _η<sub>p<sup>2</sup></sub>_ = 0.12 [_η<sub>p<sup>2</sup></sub>_ calculated from reported F statistic and converted using this [conversion](https://haiyangjin.github.io/2020/05/eta2d/#from-cohens-d-to-partial-eta-squared)].
+* Replication effect size: Richards and Ellis: NA.
+{{< /spoiler >}}
+
+* **Age of acquisition influence on semantic decision**. Early-acquired semantic concepts are categorised more quickly and accurately than later acquired concepts.
+{{< spoiler text="Statistics" >}}
+* Status: replicated
+* Original paper: [‘Age-of-acquisition effects in semantic processing tasks’](https://www.sciencedirect.com/science/article/abs/pii/S0001691800000214), Brysbaert et al. 2000; experimental design, Experiment 2: n = 36. [citations = 307(GS, December 2022)]​.
+* Critiques:[ Bai et al. 2013](https://journals.sagepub.com/doi/full/10.1080/17470218.2012.719528?casa_token=TYjTUEFlwaYAAAAA%3AznG0ujwMs7wIFYqAoyATylPGOEfg1gliUN2BVkvRoXdanL7jjZUX7hDW_lgDWDS_cp6lU59E3LY) [Experiment 3: n = 32, citations = 6(GS, December 2022)].[ Chen et al. 2007](https://bpspsychub.onlinelibrary.wiley.com/doi/full/10.1348/000712606X165484?casa_token=zi8r1WVmVPQAAAAA%3AooKjFY9sLC6fWXbWhpA9cQ8hbFetgBo9jrAfcy9zsEhFFBHX9H-VOo8p-ZBCI4WMrtYibm5KxJVx) [Experiment 2: n = 28, citations = 43(GS, December 2022)].[De Deyne and Storms 2007](https://www.sciencedirect.com/science/article/pii/S0001691806000497)young adult: n = 21, older adult: n = 21, citations = 35 (GS, December 2022)].[ Ghyselinck et al. 2004](https://www.sciencedirect.com/science/article/pii/S0001691803001070) [n = 20, citations = 192 (GS, December 2022)].[ Izura and Hernandez-Munoz 2017](https://www.degruyter.com/document/doi/10.1515/opli-2017-0025/html) [first categorisation task n = 30, second categorisation task: n = 26, citations = 1 (GS, December 2022)].
+* Original effect size: Experiment 2: _η<sub>p<sup>2</sup></sub>_ = 0.75 [_η<sub>p<sup>2</sup></sub>_ calculated from reported F statistic and converted using this[ conversion](https://haiyangjin.github.io/2020/05/eta2d/#from-cohens-d-to-partial-eta-squared)].
+* Replication effect size: Bai et al.: _η<sub>p<sup>2</sup></sub>_ = 0.10 [_η<sub>p<sup>2</sup></sub>_ calculated from reported F statistic and converted using this[ conversion](https://haiyangjin.github.io/2020/05/eta2d/#from-cohens-d-to-partial-eta-squared)]. Chen et al.: _η<sub>p<sup>2</sup></sub>_ = 0.57 [_η<sub>p<sup>2</sup></sub>_ calculated from reported F statistic and converted using this[ conversion](https://haiyangjin.github.io/2020/05/eta2d/#from-cohens-d-to-partial-eta-squared)]. De Deyne and Storms: young adult: beta = 11.68, older adult: beta = 4.09. Ghyselinck et al.: _η<sub>p<sup>2</sup></sub>_ = 0.47[_η<sub>p<sup>2</sup></sub>_ calculated from reported F statistic and converted using this[ conversion](https://haiyangjin.github.io/2020/05/eta2d/#from-cohens-d-to-partial-eta-squared)]. Izura and Hernandez-Munoz: first categorisation task: Beta = .256, second categorisation task: Beta = -0.017.
+{{< /spoiler >}}
+
+* **Age of acquisition influence on the conceptual stages of lexical retrieval in opaque languages** (spoken picture naming in opaque language). Early-acquired objects are named more quickly and accurately than late-acquired objects in opaque languages or deep orthography (i.e. spelling-sound correspondence is not direct where one is able to pronounce the word correctly based on the spelling; e.g. English, French).
+{{< spoiler text="Statistics" >}}
+* Status: replicated
+* Original paper: ‘[Age-of-acquisition norms for 220 picturable nouns](https://www.sciencedirect.com/science/article/pii/S0022537173800362)’, Carroll and White 1973; experiment, n = 62. [citations=339(GS, January 2023)]​.
+* Critiques:[ Alario et al. 2004](https://link.springer.com/article/10.3758/BF03195559) [n = 46, citations = 372 (GS, January 2023)]. [Bonin et al. 2001](https://www.tandfonline.com/doi/abs/10.1080/713755968?casa_token=38y5RBQDY08AAAAA:maWDcXn1e9E-PqRxZ6pIZEkFXsFA9fZONJ2-Kl-ezanxfOdW9usuRxizz_YZDXtXRYBgGscaRsQ) [n = 30, citations=166(GS, December 2022)]​. [Bonin et al. 2003](https://link.springer.com/article/10.3758/BF03195507) [n = 30, citations = 381(GS, January 2023)].[ Catling and Elsherif 2020](https://www.sciencedirect.com/science/article/pii/S0001691820302158) [Experiment  1b: n = 48, citations = 12(GS, December 2022)].[ Catling and Johnston 2009](https://journals.sagepub.com/doi/full/10.1080/17470210701814352?casa_token=cBjiHPY1S2EAAAAA%3A__YuabpjtelXo1DyH3PjTZxNcUxcI6UxH6dXF3PrNc4h4C75SIiNcMNzpY7dwPX1wNS27vFpNHg) [Experiment 4: n = 24, citations = 54 (GS, December 2022)].[ Johnston et al. 2010](https://link.springer.com/article/10.3758/BRM.42.2.461) [n = 25, citations = 35(GS, January 2023)]. [Karimi and Diaz 2020 [](https://link.springer.com/article/10.3758/s13421-020-01042-4)n = 212, citations = 9(GS, January 2023)].[ Perret et al. 2014](https://www.sciencedirect.com/science/article/pii/S0093934X14000662) [n = 21, citations = 42(GS, December 2022)].[ Schwitter et al. 2004](https://link.springer.com/article/10.3758/BF03195603) [n = 31, citations =  52(GS, January 2023)].[ Snodgrass and Yuditsky 1996](https://link.springer.com/article/10.3758/BF03200540) [ n = 84, citations = 403(GS, January 2023)].
+* Original effect size: ratings: _r_ = -771, objective: _r_ = .773.
+* Replication effect size: Alario et al.: beta = 69.4. Bonin et al.: beta = .194. Bonin et al.: _η<sub>p<sup>2</sup></sub>_ = 0.81[_η<sub>p<sup>2</sup></sub>_ calculated from reported F statistic and converted using this[ conversion](https://haiyangjin.github.io/2020/05/eta2d/#from-cohens-d-to-partial-eta-squared)]. Catling and Elsherif: Experiment 2b: _d_ = 1.15 [_d_ calculated from reported t statistic and converted using this[ conversion](https://haiyangjin.github.io/2020/05/eta2d/#from-cohens-d-to-partial-eta-squared)]. Catling and Johnston: Experiment 4: _d_ =0.45. Johnston et al.:  beta = .341. Karimi and Diaz: beta = .072. Perret et al. : _d_ = 0.82  [_d<sup> </sup>_calculated from reported t statistic and converted using this[ conversion](https://haiyangjin.github.io/2020/05/eta2d/#from-cohens-d-to-partial-eta-squared)]; Schwitter et al.: beta = .222. Snodgrass and Yuditsky: beta = .30.
+{{< /spoiler >}}
+
+* **Age of acquisition influence on the conceptual stages of lexical retrieval in logographic languages** (spoken picture naming in logographic languages). Early-acquired names of objects are produced more quickly and accurately than late-acquired names in logographic languages such as Japanese and Chinese.
+{{< spoiler text="Statistics" >}}
+* Status: replicated
+* Original paper:  ‘[Predictors of timed picture naming in Chinese](https://link.springer.com/article/10.3758/BF03193165)’, Weekes et al. 2007; experiments, Experiment 1: n = 30, Experiment 2: n = 100. [citations=78(GS, December 2022)]​.
+* Critique:[ Liu et al. 2011](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0016505) [n = 30, citations = 84(GS, December 2022)].
+* Original effect size: Experiment 1: beta = .19, Experiment 2: beta = .24.
+* Replication effect size: Liu et al.: objective AoA: _r_ = .591, rated AoA: _r_ = .475.
+{{< /spoiler >}}
+
+* **Age of acquisition influence on the conceptual stages of lexical retrieval in transparent languages** (spoken picture naming in transparent language). Early-acquired objects are named more quickly and accurately than late-acquired objects in transparent languages or shallow orthography (i.e. spelling-sound correspondence is direct where one is able to pronounce the word correctly based on the spelling; e.g. Spanish, Turkish, Italian).
+{{< spoiler text="Statistics" >}}
+* Status: replicated
+* Original paper:[ ‘Naming times for the Snodgrass and Vanderwart pictures in Spanish](https://link.springer.com/article/10.3758/BF03200741)’, Cuetos et al. 1999; experiment, n = 64. [citations=301(GS, January 2023)]​.
+* Critiques: [Cuetos and Alija 2003](https://link.springer.com/article/10.3758/BF03195508) [n = 54, citations = 86(GS, January 2023)].[ Severens et al. 2005](https://www.sciencedirect.com/science/article/pii/S0001691805000120) [n = 40, citations = 192(GS, January 2023)]. [Shao et al. 2014](https://link.springer.com/article/10.3758/s13428-013-0358-6) [n = 117, citations = 44(GS, January 2023)].[ Wolna et al. 2022](https://link.springer.com/article/10.3758/s13428-022-01923-3) [n = 98, citations = 0 (GS, January 2023)].
+* Original effect size: beta = 39.16.
+* Replication effect size:  Cuetos and Alija: beta = 0.542. Severens et al.: beta = 0.24. Shao et al.: beta = 0.25. Wolna et al.: pictures of objects: _d_ = – 0.49, pictures of actions: _d_ = -0.29.
+{{< /spoiler >}}
+
+* **Age of acquisition influence on the conceptual stages of lexical retrieval** (written picture naming). Early-acquired object names are written more quickly and accurately than late-acquired names.
+{{< spoiler text="Statistics" >}}
+* Status: replicated
+* Original paper:  ‘[Age of Acquisition and Word Frequency in Written Picture Naming](https://www.tandfonline.com/doi/abs/10.1080/713755968?casa_token=38y5RBQDY08AAAAA:maWDcXn1e9E-PqRxZ6pIZEkFXsFA9fZONJ2-Kl-ezanxfOdW9usuRxizz_YZDXtXRYBgGscaRsQ)’, Bonin et al. 2001; experiment, n = 30. [citations=166(GS, December 2022)]​.
+* Critiques: [Bonin et al. 2002](https://bpspsychub.onlinelibrary.wiley.com/doi/pdfdirect/10.1348/000712602162463?casa_token=V8ZVhbmKBYoAAAAA:xMCsi_h91BzxdQL7Pn-xuHkWpwcQlL0kCQJoCvd5FaP58PoBIqmM0M1Z_llXAA4lvAa8bQ8eOXkI) [n = 72, citations = 257(GS, December 2022)]. [Catling and Elsherif 2020](https://www.sciencedirect.com/science/article/pii/S0001691820302158) [Experiment  2b: _n_ = 48, citations = 12(GS, December 2022)].[ Perret et al. 2014](https://www.sciencedirect.com/science/article/pii/S0093934X14000662) [n = 20, citations = 42(GS, December 2022)].
+* Original effect size: _η<sub>p<sup>2</sup></sub>_ = 0.68  [_η<sub>p<sup>2</sup></sub>_ calculated from reported F statistic and converted using this[ conversion](https://haiyangjin.github.io/2020/05/eta2d/#from-cohens-d-to-partial-eta-squared)].
+* Replication effect size: Bonin et al.: Beta = 0.341. Catling and Elsherif: Experiment 2b: _d_ = 0.80 [_d_ calculated from reported t statistic and converted using this[ conversion](https://haiyangjin.github.io/2020/05/eta2d/#from-cohens-d-to-partial-eta-squared)]. Perret et al.: _d_ = 0.79  [_d_ calculated from reported t statistic and converted using this[ conversion](https://haiyangjin.github.io/2020/05/eta2d/#from-cohens-d-to-partial-eta-squared)].
+{{< /spoiler >}}
+
+* **Age of acquisition influence on the conceptual stages of lexical retrieval** (typing). Early-acquired object names are typed more quickly than late-acquired object names. Typing allows more precise measure for the response execution, while written picture naming is a measure for lexical retrieval.
+{{< spoiler text="Statistics" >}}
+* Status: replicated
+* Original paper: ['Naming times for the Snodgrass and Vanderwart pictures’](https://link.springer.com/article/10.3758/BF03200540), Snodgrass and Yuditsky 1996; experiment, experiment 2, n = 96. [citations=403(GS, December 2022)]​.
+* Critiques: [Scaltritti et al. 2016 ](https://www.sciencedirect.com/science/article/pii/S0010027716301755)[n = 86, citations = 26(GS, December 2022)].
+* Original effect size: RT: beta = 0.19; accuracy: beta = -0.31.
+* Replication effect size: Scaltritti et al.: onset latency: _d_ = 0.66 [_d_ calculated from reported t statistic and converted using this[ conversion](https://haiyangjin.github.io/2020/05/eta2d/#from-cohens-d-to-partial-eta-squared)]; interkeystroke interval: not reported.
+{{< /spoiler >}}
+
+* **Age of acquisition influence on the post-lexical stages of lexical retrieval** (delayed spoken picture naming). Early-acquired words should not differ from late-acquired words in terms of accuracy and response speed of spoken naming, when using a delayed picture naming task that requires participants to name a picture a few seconds (e.g. 2-4 sec) after seeing the actual picture. This task enables researchers to assess if any possible delay of naming effects result at an articulatory level, as opposed to a conceptual level or lexical retrieval stage.
+{{< spoiler text="Statistics" >}}
+* Status: replicated
+* Original paper:  ‘[Real Age-of-Acquisition Effects in Lexical Retrieval](https://www.researchgate.net/profile/Andrew-Ellis-11/publication/51323282_Real_age-of-acquisition_effects_in_lexical_retrieval/links/5e60138a4585152ce808fead/Real-age-of-acquisition-effects-in-lexical-retrieval.pdf)<span style="text-decoration:underline;">’</span>, Ellis and Morrison 1998; experiment, n=40. [citations = 468(GS, December 2022)].
+* Critiques:[ Barry et al. 2001](https://www.sciencedirect.com/science/article/pii/S0749596X00927438) [n = 24, citations = 258 (GS, December 2022)].[ Catling and Johnston 2009](https://journals.sagepub.com/doi/full/10.1080/17470210701814352?casa_token=cBjiHPY1S2EAAAAA%3A__YuabpjtelXo1DyH3PjTZxNcUxcI6UxH6dXF3PrNc4h4C75SIiNcMNzpY7dwPX1wNS27vFpNHg) [Experiment 5: n = 24, citations = 54 (GS, December 2022)].[ Holmes and Ellis 2006](https://www.tandfonline.com/doi/full/10.1080/13506280544000093?casa_token=hCSgWyLLg84AAAAA%3ACQ0TDFs4z0ap-tmKleeo9sCRNMHE9NBnAYSwxTaaBgWgnPWgY2MXZkT0QkTOdpeUeaWzdq-izU8)<span style="text-decoration:underline;"> </span>[Experiment 6: n = 25, citations = 87 (GS, December 2022)].
+* Original effect size: _F_ &lt; 1.
+* Replication effect size: Barry et al.: _F_ &lt; 1. Catling and Johnston: _F_ &lt; 1. Holmes and Ellis: _η<sub>p<sup>2</sup></sub>_ = 0.13 [_η<sub>p<sup>2</sup></sub>_ calculated from reported F statistic and converted using this[ conversion](https://haiyangjin.github.io/2020/05/eta2d/#from-cohens-d-to-partial-eta-squared)].
+{{< /spoiler >}}
+
+* **Age of acquisition influence on the post-lexical stages of lexical/sublexical retrieval** (delayed spoken word naming). Early-acquired words should not differ from late-acquired words, when using delayed word naming. This enables researchers to assess if the lexical/sublexical effects result at an articulatory level.
+{{< spoiler text="Statistics" >}}
+*  Status: replicated
+*  Original paper:  ‘[Roles of Word Frequency and Age of Acquisition in Word Naming and Lexical Decision](https://psycnet.apa.org/record/1995-20072-001)<span style="text-decoration:underline;">’</span>, Morrison and Ellis 1995; experiment, n = 16. [citations = 599(GS, December 2022)].
+*  Critiques: [Brysbaert et al. 2000](https://www.tandfonline.com/doi/abs/10.1080/095414400382208?casa_token=Ho_hgRrJORMAAAAA:5dGdTjDLLPWBWeHaOHuHo5Y-wxEDT6-vi09vcsFNJ_CeO2KNTNhNM5fQdqYMyFPtQu8kvgqhF7M) [n = 20, citations = 227 (GS, December 2022)].[ Gerhand and Barry 1998 ](https://psycnet.apa.org/record/1998-00017-001)[n = 32, citations = 258(GS, December 2022)].[ Ghyselinck et al. 2004](https://www.sciencedirect.com/science/article/pii/S0001691803001070) [n = 17, citations = 192 (GS, December 2022)].
+* Original effect size: _F_ &lt; 1.
+* Replication effect size: Brysbaert et al.: _η<sub>p<sup>2</sup></sub>_ = 0.06 [_η<sub>p<sup>2</sup></sub>_ calculated from reported F statistic and converted using this[ conversion](https://haiyangjin.github.io/2020/05/eta2d/#from-cohens-d-to-partial-eta-squared)]. Gerhand and Barry : _F_ &lt; 1.5. Ghyselinck et al.: not reported.
+{{< /spoiler >}}
+
+* **Age of acquisition influence on lexical retrieval** (written word naming). Early-acquired words are written and spelled more quickly and accurately than late-acquired words. In contrast to written picture naming, written word naming involves access to the lexical and sublexical pathways that are not accessed in typing or written picture naming.
+{{< spoiler text="Statistics" >}}
+* Status: replicated
+* Original paper: ‘[Effects of consistency and age of acquisition on reading and spelling among developing readers](https://link.springer.com/article/10.1007/s11145-005-2032-6)’, Weekes et al. 2006; experiment, Experiment 2: n = 40. [citations=57(GS, December 2022)]​.
+* Critiques:  [Catling and Elsherif 2020](https://www.sciencedirect.com/science/article/pii/S0001691820302158) [Experiment 4b: n = 48, citations = 12(GS, December 2022)].[ Su et al. 2022](https://link.springer.com/article/10.3758/s13428-022-01928-y) [Experiment: n = 20, citations = 0(GS, December 2022)].
+* Original effect size: _d_ = 0.50 [_d_ calculated from reported t statistic and converted using this[ conversion](https://haiyangjin.github.io/2020/05/eta2d/#from-cohens-d-to-partial-eta-squared)]. 
+* Replication effect size: Catling and Elsherif: Experiment 4b: _d_ = 0.38 [_d_ calculated from reported t statistic and converted using this[ conversion](https://haiyangjin.github.io/2020/05/eta2d/#from-cohens-d-to-partial-eta-squared)]. Su et al.: accuracy: beta = -0.776.
+{{< /spoiler >}}
+
+* **Age of acquisition influence on lexical retrieval in opaque languages** (immediate spoken word naming in opaque language). Early-acquired words are named more quickly and accurately than late-acquired words in opaque languages or deep orthography (i.e. spelling-sound correspondence is not direct where one is able to pronounce the word correctly based on the spelling; e.g. English, French).
+{{< spoiler text="Statistics" >}}
+* Status: replicated
+* Original paper:  ‘[First in, first out: Word learning age and spoken word frequency as predictors of word familiarity and word naming latency](https://link.springer.com/article/10.3758/BF03197718)’, Brown and Watson 1987; experiment, n = 28. [citations=468(GS, January 2023)]​.
+* Critiques: [ Catling and Elsherif 2020](https://www.sciencedirect.com/science/article/abs/pii/S0001691820302158) [n = 48, citations = 12(GS, January 2023)].[ Cortese et al. 2018](https://www.researchgate.net/profile/Michael-Cortese/publication/322193550_Examining_word_processing_via_a_megastudy_of_conditional_reading_aloud/links/5ab2a703a6fdcc1bc0c1e68d/Examining-word-processing-via-a-megastudy-of-conditional-reading-aloud.pdf) [n = 25, citations = 24(GS, January 2023)].[ Dewhurst and Barry 2006](https://eprints.lancs.ac.uk/id/eprint/858/2/DewhurstBarry.pdf) [Experiment 1: n = 30, Experiment 2: n = 30, citations = 13(GS, January 2023)].[ Elsherif et al. 2020](https://link.springer.com/article/10.3758/s13421-019-00986-6) [n = 48, citations = 10(GS, January 2023)].[ Izura and Playfoot 2012](https://link.springer.com/article/10.3758/s13428-011-0175-8) [n = 120, citations = 35(GS, January 2023)].[ Morrison and Ellis 2000](https://bpspsychub.onlinelibrary.wiley.com/doi/abs/10.1348/000712600161763?casa_token=2Ha8ufqI3dkAAAAA:WZw5PGsGq4KDhJIjdw5V24x0dGET1j2wWI2pQ6pbftn9EO1r2UDrGAWn3excYD6fFxy7fPrkcyYz) [n = 27, citations = 293(GS, January 2023)].
+* Original effect size: _r_ = .30.
+* Replication effect size: Catling and Elsherif: Experiment 3b: beta = −0.01. Cortese et al.: beta = .132. Dewhurst and Barry: Experiment 1: _η<sub>p<sup>2</sup></sub>_ = 0.61 [_η<sub>p<sup>2</sup></sub>_ calculated from reported F statistic and converted using this[ conversion](https://haiyangjin.github.io/2020/05/eta2d/#from-cohens-d-to-partial-eta-squared)], Experiment 2: _d_= 1.22 [_d_ calculated from reported t statistic and converted using this[ conversion](https://haiyangjin.github.io/2020/05/eta2d/#from-cohens-d-to-partial-eta-squared)]. Elsherif et al.: beta = 0.141. Izura and Playfoot: _r_ = .249. Morrison and Ellis: _r_ = .244.
+{{< /spoiler >}}
+
+* **Age of acquisition influence on lexical retrieval** (immediate spoken word naming in transparent language). Early-acquired words are named more quickly and accurately than late-acquired words in transparent languages or shallow orthography (i.e. spelling-sound correspondence is direct where one is able to pronounce the word correctly based on the spelling; e.g. Italian, Spanish).
+{{< spoiler text="Statistics" >}}
+* Status: mixed
+* Original paper: ‘[Word Frequency Affects Naming Latency in Dutch when Age of Acquisition is Controlled](https://www.tandfonline.com/doi/abs/10.1080/095414496383149?casa_token=W2Qv5aejnNoAAAAA:V2K1TW7EjS2F5ovIDztJXN5S5C-7WxRJumCeCkSRiIiE8eVbJQcf2W6DqDpSY7W8WkcekzfNvLY)’, Brysbaert 1996; experiment, n = 22. [citations=73(GS, January 2023)]​.
+* Critiques: [Brysbaert et al. 2000](https://www.tandfonline.com/doi/abs/10.1080/095414400382208?casa_token=Ho_hgRrJORMAAAAA:5dGdTjDLLPWBWeHaOHuHo5Y-wxEDT6-vi09vcsFNJ_CeO2KNTNhNM5fQdqYMyFPtQu8kvgqhF7M) [n = 20, citations = 227 (GS, January 2023)].[ Cuetos and Barbon 2006](https://www.tandfonline.com/doi/full/10.1080/13594320500165896?casa_token=f-lrLArhEQQAAAAA%3A_knq7MTdGe0a5lj8Jzm3gndt7CprgHxeET-iIHS9MTMY2VWrzQVFNJvmMTQhqQJJ5H2M7RBpUss) [n = 53, citations = 96(GS, January 2023)].[ De Luca et al. 2008](https://journals.lww.com/cogbehavneurol/fulltext/2008/12000/the_effect_of_word_length_and_other_sublexical,.6.aspx?casa_token=-CFsW_Z-EvgAAAAA:ynRuugbMBXHxEcjiJ2S6HpKy9WU_NR1flVubnGnUOwMD49gKQBMIGi7LQLz2mVAxhPluq-JMyW0xW45qNbhVLo515Vs) [n = 51, citations = 55(GS, January 2023)].[  Ghyselinck et al. 2004](https://www.sciencedirect.com/science/article/pii/S0001691803001070) [n = 21, citations = 192(GS, January 2023)].[ Raman 2006](https://www.tandfonline.com/doi/full/10.1080/13506280500153200?casa_token=m3cwrkBm_xIAAAAA%3AxjWNY3ZfduDQlLC_OgkCj85iLnmyXXZaJpICa1MalzPnIiO58g7SrMmlb2Znw8141UuY1XDWNbs) [n = 28, citations = 69(GS, January 2023)].[ Wilson et al. 2012](https://www.sciencedirect.com/science/article/abs/pii/S0001691811002447) [Experiment 1: n = 40, Experiment 2: n = 32, citations = 25(GS, January 2023)].[ Wilson et al. 2013](https://d1wqtxts1xzle7.cloudfront.net/46016706/Revisiting_Age-of-Acquisition_Effects_in20160528-14011-1dann21-libre.pdf?1464437817=&response-content-disposition=inline%3B+filename%3DRevisiting_age_of_acquisition_effects_in.pdf&Expires=1673060714&Signature=Z2gFOXDcnKtUoB00Ib0OG5ky4lUmJLkjLLjJxh3PD7GP1aazhCC2KR0dVag46hw2fzlxqtCfpAA4qwyEb0VFEm9O3QXW5lz7n-ZcSS771SH4cf91QNICMaQVOLN2JubfONi-~MKjIqTwPKKZhLT7RPTGNzaEuEFFwxdyHtH~K-wblU5OYSgpzEe1Y1aqaQ7Fd8PgYnqx8RREP1qrbaJzZNRyQRyx70EXXWKvFTMNm4GyDIUto0U~B6ch6paZVvCyQUlBjKGX8iibzUojM9lXtzZZrXhYIaj0Eu-W7Ww8D7ELWD37pMUX5DHsMLQsZW8oA-c3xLSyoCRRv3IHRw32gg__&Key-Pair-Id=APKAJLOHF5GGSLRBV4ZA) [Experiment 1: n = 27, Experiment 4: n = 33, citations = 37(GS, January 2023)]. 
+* Original effect size: beta = -0.58.
+* Replication effect size: Brysbaert et al.: _η<sub>p<sup>2</sup></sub>_= 0.30 [_η<sub>p<sup>2</sup></sub>_ calculated from reported F statistic and converted using this[ conversion](https://haiyangjin.github.io/2020/05/eta2d/#from-cohens-d-to-partial-eta-squared)]. Cuetos and Barbon: objective AoA _r_ = .316, subjective AoA: _r_ = .384. De Luca et al.: not reported. Ghyselinck et al.: _η<sub>p<sup>2</sup></sub>_ = 0.24 [_η<sub>p<sup>2</sup></sub>_ calculated from reported F statistic and converted using this[ conversion](https://haiyangjin.github.io/2020/05/eta2d/#from-cohens-d-to-partial-eta-squared)]. Raman: _d_ = 0.48 [_d_ calculated from reported t statistic and converted using this[ conversion](https://haiyangjin.github.io/2020/05/eta2d/#from-cohens-d-to-partial-eta-squared)]. Wilson et al.: Experiment 1: _η<sub>p<sup>2</sup></sub>_ = 0.07 [_η<sub>p<sup>2</sup></sub>_ calculated from reported F statistic and converted using this[ conversion](https://haiyangjin.github.io/2020/05/eta2d/#from-cohens-d-to-partial-eta-squared)], Experiment 2: _η<sub>p<sup>2</sup></sub>_ = 0.33 [_η<sub>p<sup>2</sup></sub>_ calculated from reported F statistic and converted using this[ conversion](https://haiyangjin.github.io/2020/05/eta2d/#from-cohens-d-to-partial-eta-squared)]. Wilson et al.: Experiment 1: _η<sub>p<sup>2</sup></sub>_ = 0.21 [_η<sub>p<sup>2</sup></sub>_ calculated from reported F statistic and converted using this[ conversion](https://haiyangjin.github.io/2020/05/eta2d/#from-cohens-d-to-partial-eta-squared)], Experiment 4: _η<sub>p<sup>2</sup></sub>_ = 0.48 [_η<sub>p<sup>2</sup></sub>_ calculated from reported F statistic and converted using this[ conversion](https://haiyangjin.github.io/2020/05/eta2d/#from-cohens-d-to-partial-eta-squared)].
+{{< /spoiler >}}
+
+* **Age of acquisition influence on lexical retrieval in logographic languages** (spoken character naming in logographic languages). Early-acquired characters are named more quickly and accurately than late-acquired characters in logographic languages such as Japanese and Chinese.
+{{< spoiler text="Statistics" >}}
+* Status: replicated
+* Original paper: ‘[Two age of acquisition effects in the reading](https://bpspsychub.onlinelibrary.wiley.com/doi/abs/10.1111/j.2044-8295.1997.tb02648.x?casa_token=wEnO6Z6TLogAAAAA:JAKN5NUetsMvtqaTHEqFOOjxRvFgFb0kuLaJeVDIRpShddyLyr0tda2AtV5mQinsNxz98IGoU6Bo)
+* [of Japanese Kanji](https://bpspsychub.onlinelibrary.wiley.com/doi/abs/10.1111/j.2044-8295.1997.tb02648.x?casa_token=wEnO6Z6TLogAAAAA:JAKN5NUetsMvtqaTHEqFOOjxRvFgFb0kuLaJeVDIRpShddyLyr0tda2AtV5mQinsNxz98IGoU6Bo)’, Yamazaki et al. 1997; experiment, n = 26. [citations=107(GS, December 2022)]​.
+* Critique:[ Chen et al. 2007](https://bpspsychub.onlinelibrary.wiley.com/doi/full/10.1348/000712606X165484?casa_token=wv5E2voBq-MAAAAA%3AXgRfPuBzettc6T3qShrziQaw6zbbZDWKk7UT5f07QVxnI_7ynY2y9PA1F1YuMwQ8U783ODlQCN0W) [n = 26, citations = 43(GS, December 2022)].[ Havelka and Tomita 2006](https://www.tandfonline.com/doi/full/10.1080/13506280544000156?casa_token=AVDff8x397kAAAAA%3A_QndQRQMg8htyatAF9VR00JaLwko2R0YChq6ag7FbpFa6e3J4iGX8pOitIRj_xcKbUFLzu2W5mY) [n = 40, citations = 45(GS, December 2022)].[ Liu et al. 2007](https://link.springer.com/article/10.3758/BF03193147) [n = 480, citations = 161(GS, December 2022)].[ Liu et al. 2008](https://link.springer.com/article/10.3758/PBR.15.2.344) [n = 39, citations = 29(GS, December 2022)].
+* Original effect size: Spoken: beta = 0.236, Written, beta = 0.343.
+* Replication effect size: Chen et al.: Experiment 1: _η<sub>p<sup>2</sup></sub>_ = 0.41 [calculated using this conversion from F to](https://haiyangjin.github.io/2020/05/eta2d/#conversion-between-cohens-d-and-partial-eta-squared)_η<sub>p<sup>2</sup></sub>_. Havelka and Tomita: _η<sub>p<sup>2</sup></sub>_ = 0.51 [calculated using this conversion from F to](https://haiyangjin.github.io/2020/05/eta2d/#conversion-between-cohens-d-and-partial-eta-squared) _η<sub>p<sup>2</sup></sub>_]. Liu et al.: Beta = .670. Liu et al.: _η<sub>p<sup>2</sup></sub>_ = 0.53 [calculated using this conversion from F to](https://haiyangjin.github.io/2020/05/eta2d/#conversion-between-cohens-d-and-partial-eta-squared) _η<sub>p<sup>2</sup></sub>_].
+{{< /spoiler >}}
+
+* **Age of acquisition influence on speeded phonological retrieval** (transparent language). Early-acquired words are responded to more quickly and accurately than late-acquired words, using a speeded naming paradigm, where participants must name the items as quickly as possible within a short timeframe (e.g. 400 milliseconds). This effect is argued to reduce the influence of semantics on phonological activation, which is argued to accumulate over the word naming process. 
+{{< spoiler text="Statistics" >}}
+* Status: replicated
+* Original paper:  ‘[Age-of-acquisition and frequency effects in speeded word naming](https://www.sciencedirect.com/science/article/pii/S0010027799000529)’, Gerhand and Barry 1999; experiment, n = 30. [citations=118(GS, December 2022)]​.
+* Critiques: [Ghyselinck et al. 2004](https://www.sciencedirect.com/science/article/pii/S0001691803001070) [n = 23, citations = 192 (GS, December 2022)].[ Wilson et al. 2013](https://psycnet.apa.org/record/2013-19668-001) [Experiment 2: n = 35, citations = 37(GS, December 2022)].
+* Original effect size: _η<sub>p<sup>2</sup></sub>_ = 0.61[_η<sub>p<sup>2</sup></sub>_ calculated from reported F statistic and converted using this[ conversion](https://haiyangjin.github.io/2020/05/eta2d/#from-cohens-d-to-partial-eta-squared)].
+* Replication effect size: Ghyselinck et al.: _η<sub>p<sup>2</sup></sub>_= 0.25 [_η<sub>p<sup>2</sup></sub>_ calculated from reported F statistic and converted using this[ conversion](https://haiyangjin.github.io/2020/05/eta2d/#from-cohens-d-to-partial-eta-squared)]. Wilson et al.: _η<sub>p<sup>2</sup></sub>_= 0.09 [_η<sub>p<sup>2</sup></sub>_ calculated from reported F statistic and converted using this[ conversion](https://haiyangjin.github.io/2020/05/eta2d/#from-cohens-d-to-partial-eta-squared)].
+{{< /spoiler >}}
+
+* **Age of acquisition influence on lexical retrieval** (auditory lexical decision task). Early-acquired words are heard and responded to more quickly and accurately than late-acquired words, using auditory lexical decision tasks where participants have to judge whether they heard a real word or not.
+{{< spoiler text="Statistics" >}}
+* Status: replicated
+* Original paper: [‘Lexical Search Speed in Children and Adults’, ](https://www.sciencedirect.com/science/article/pii/002209658490064X)Cirrin 1984; experimental study, kindergarten children: n = 12; first grade children: n = 11; third grade children: n = 11; adults: n = 11. [citations = 50(GS, December 2022)].
+* Critiques: ​[Baumgaertner and Tompkins 1998](https://www.tandfonline.com/doi/abs/10.1080/02687039808249561?casa_token=Q0L4kDQexnYAAAAA:FsxlQX6kyvjwXyt2mex44B_s3jcMsazBqsXfxrW-a-TKEzfWx4Ze7Wif9uhmZnRMO-falpBVSDo) [n = 35, citations = 15(GS, December 2022)]. [Turner et al. 1998 ](https://link.springer.com/article/10.3758/BF03201200)[n = 20, citations = 161(GS, December 2022)].
+* Original effect size: kindergarten children: _r_ = .485, first grade children: _r_ = .172, third grade children: _r_ = .369, adults: _r_ = .379 
+* Replication effect size: Baumgaertner and Tompkins: _r_ = 0.66. Turner et al.: _d_ = 1.30 [_d_ calculated from reported t statistic and converted using this[ conversion](https://haiyangjin.github.io/2020/05/eta2d/#from-cohens-d-to-partial-eta-squared)].
+{{< /spoiler >}}
+
+* **Age of acquisition influence on lexical retrieval** (visual lexical decision in opaque languages). Early-acquired words are seen and responded more quickly and accurately than late-acquired words in  opaque languages or deep orthography (i.e. spelling-sound correspondence is not direct where one is able to pronounce the word correctly based on the spelling; e.g. English, French), using visual lexical decision task. Participants have to decide whether they saw a word or not. 
+{{< spoiler text="Statistics" >}}
+* Status: replicated
+* Original paper:[ ‘Word-nonword classification time'](https://www.sciencedirect.com/science/article/pii/S002253717890110X?via%3Dihub), Whaley 1978; experiment, n = 32. [citations= 579(GS, December 2022)].
+* Critiques:[ Boulenger et al. 2007](https://www.sciencedirect.com/science/article/pii/S0010027706000618) [n = 20, citations = 24(GS, December 2022)]​.[ Cortese et al. 2018](https://www.researchgate.net/profile/Michael-Cortese/publication/322193550_Examining_word_processing_via_a_megastudy_of_conditional_reading_aloud/links/5ab2a703a6fdcc1bc0c1e68d/Examining-word-processing-via-a-megastudy-of-conditional-reading-aloud.pdf) [n = 25, citations = 24(GS, December 2022)].[ Gerhand and Barry 1999](https://link.springer.com/article/10.3758/BF03211553) [Experiment 1: n = 30, Experiment 2: n = 30, Experiment 3: n = 30, Experiment 4: n = 30, Experiment 5: n = 30, citations = 185(GS, December 2022)]. [Morrison and Ellis 1995](https://psycnet.apa.org/record/1995-20072-001) [n = 16, citations = 599(GS, December 2022)].[ Morrison and Ellis 2000](https://bpspsychub.onlinelibrary.wiley.com/doi/abs/10.1348/000712600161763?casa_token=szbV_PCbclEAAAAA:kjQQcFRZ9-yOV54lkXE0fPyhOazsrLA_hOO18OpJ_Z8aFgBS8_SBmdsupORB9g-IygS_50bfhQTa) [n = 24, citations = 293(GS, December 2022)].[ Schwanenflugel et al. 1989](https://www.sciencedirect.com/science/article/pii/0749596X88900228) [experiment 2: n = 44, citations = 536(GS, December 2022)].[ Sereno and O’Donnell 2009](https://link.springer.com/article/10.1007/s11199-009-9649-x) [n = 97, citations = 12(GS, December 2022)].[ Turner et al. 1998](https://link.springer.com/article/10.3758/BF03201200)[n = 25, citations = 161(GS, December 2022)].
+* Original effect size: _r_ = 0.63.
+* Replication effect size: Boulenger et al.: slope for nouns = 24.17, slope for verbs = 15.39. Cortese et al.: beta = .340. Gerhand and Barry: Experiment 1: _η<sub>p<sup>2</sup></sub>_ = 0.40  [_η<sub>p<sup>2</sup></sub>_ calculated from reported F statistic and converted using this[ conversion](https://haiyangjin.github.io/2020/05/eta2d/#from-cohens-d-to-partial-eta-squared)], Experiment 2-5 (collapsed together): _η<sub>p<sup>2</sup></sub>_ = 0.33 [_η<sub>p<sup>2</sup></sub>_ calculated from reported F statistic and converted using this[ conversion](https://haiyangjin.github.io/2020/05/eta2d/#from-cohens-d-to-partial-eta-squared)]. Morrison and Ellis : _d_ = 3.00 [_d_ calculated from reported t statistic and converted using this[ conversion](https://haiyangjin.github.io/2020/05/eta2d/#from-cohens-d-to-partial-eta-squared)]. Morrison and Ellis: beta = 0.67. Schwanenflugel et al.: _r_ = .15. Sereno and O’Donnell: _η<sub>p<sup>2</sup></sub>_ = 0.53  [_η<sub>p<sup>2</sup></sub>_ calculated from reported F statistic and converted using this[ conversion](https://haiyangjin.github.io/2020/05/eta2d/#from-cohens-d-to-partial-eta-squared)]. Turner et al.: _d_ = 0.58 [_d_ calculated from reported t statistic and converted using this[ conversion]](https://haiyangjin.github.io/2020/05/eta2d/#from-cohens-d-to-partial-eta-squared).
+{{< /spoiler >}}
+
+* **Age of acquisition influence on lexical retrieval** (Visual lexical decision in transparent language). Early-acquired words are responded more quickly and accurately than late-acquired words in transparent languages or shallow orthography (i.e. spelling-sound correspondence is direct where one is able to pronounce the word correctly based on the spelling; e.g. Spanish, Turkish, Italian).
+{{< spoiler text="Statistics" >}}
+* Status: replicated
+* Original paper: ‘[The effects of age-of-acquisition and frequency-of-occurrence in visual word recognition: Further evidence from the Dutch language](https://www.tandfonline.com/doi/abs/10.1080/095414400382208?casa_token=Ho_hgRrJORMAAAAA:5dGdTjDLLPWBWeHaOHuHo5Y-wxEDT6-vi09vcsFNJ_CeO2KNTNhNM5fQdqYMyFPtQu8kvgqhF7M)’, Brysbaert et al. 2000; experiment, n = 20. [citations = 227 (GS, January 2023)].
+* Critiques: [Colombo and Burani 2002](https://www.sciencedirect.com/science/article/pii/S0093934X01925337) [Experiment 1: n = 20, citations = 82(GS, January 2023)].[ de Deyne and Storms 2007](https://www.sciencedirect.com/science/article/pii/S0001691806000497) [Young adult: n = 22, Older adults: n = 20, citations = 35(GS, January 2023)].[ Fiebach et al. 2003](https://www.sciencedirect.com/science/article/pii/S1053811903002271) [n = 12, citations = 117(GS, January 2023)].[ Gonzalez-Nosti et al. 2014](https://scholar.google.co.uk/scholar?hl=en&as_sdt=0%2C5&q=Effects+of+the+psycholinguistic+variables+on+the+lexical+decision+task+in+Spanish%3A+A+study+with+2%2C765+words&btnG=) [n = 58, citations = 58(GS, January 2023)]. [Izura and Hernandez-Munoz 2017](https://www.degruyter.com/document/doi/10.1515/opli-2017-0025/html) [n = 80, citations = 1(GS, January 2023)]. [Menenti and Burani 2007](https://journals.sagepub.com/doi/full/10.1080/17470210601100126) [Italian speakers n = 54, Dutch speakers: n = 50, citations = 51(GS, January 2023)].
+* Original effect size: _η<sub>p<sup>2</sup></sub>_ = 0.61 [_η<sub>p<sup>2</sup></sub>_ calculated from reported F statistic and converted using this[ conversion](https://haiyangjin.github.io/2020/05/eta2d/#from-cohens-d-to-partial-eta-squared)].
+* Replication effect size: Colombo and Burani Experiment 1: _r_ = .502. de Deynes and Storms: young adults: _r_ = .62, older adults: _r_ = .74. Fiebach et al.: _η<sub>p<sup>2</sup></sub>_ = 0.80 [_η<sub>p<sup>2</sup></sub>_ calculated from reported F statistic and converted using this[ conversion](https://haiyangjin.github.io/2020/05/eta2d/#from-cohens-d-to-partial-eta-squared)]. Gonzalez-Nosti et al.: _r_ = .602. Izura and Hernandez-Munoz: beta = .486. Meneti and Burani: Dutch: beta = .10, Italian: beta = .07.
+{{< /spoiler >}}
+
+* **Age of acquisition influence on lexical retrieval** (Visual lexical decision in logographic languages). Early-acquired logograms are responded more quickly and accurately than late-acquired logograms in logographic languages such as Chinese and Japanese, using a visual lexical decision task.
+{{< spoiler text="Statistics" >}}
+* Status: replicated
+* Original paper: ‘[Age of acquisition and typicality effects in three object processing tasks](https://www.sciencedirect.com/science/article/pii/S0028393208000572) Weekes et al. 2008; experiment, n = 12. [citations=22(GS, December 2022)]​.
+* Critiques: [Chang and Lee 2020](https://link.springer.com/article/10.3758/s13423-020-01787-8) [n = 180, citations = 11(GS, December 2022)].[ Chen et al. 2009](https://www.sciencedirect.com/science/article/pii/S000169180800156X#section.0015) [n = 32, citations = 28(GS, December 2022)]​.[ Xu et al. 2020](https://link.springer.com/article/10.3758/s13428-020-01455-8) [n = 1765, citations = 121(GS, December 2022)].
+* Original effect size: η<sub>p</sub>² = 0.66 [_η<sub>p<sup>2</sup></sub>_ calculated from reported F statistic and converted using this[ conversion](https://haiyangjin.github.io/2020/05/eta2d/#from-cohens-d-to-partial-eta-squared)].
+* Replication effect size: Chang and Lee: _d_ = 0.43 [_d_ calculated from reported t statistic and converted using this[ conversion](https://haiyangjin.github.io/2020/05/eta2d/#from-cohens-d-to-partial-eta-squared)]. Chen et al.: _η<sub>p<sup>2</sup></sub>_ = 0.15 [_η<sub>p<sup>2</sup></sub>_ calculated from reported F statistic and converted using this[ conversion](https://haiyangjin.github.io/2020/05/eta2d/#from-cohens-d-to-partial-eta-squared)]. Xu et al.: RT: _r_ = .409, accuracy: _r_ = .285. 
+{{< /spoiler >}}
+
+* **Age of acquisition influence on silent reading** (eye-tracking). Early-acquired words show shorter fixations, gaze and total reading times than late-acquired words in sentences and paragraphs, using eye-tracking. 
+{{< spoiler text="Statistics" >}}
+* Status: replicated
+* Original paper:[ ‘Investigating the effects of a set of intercorrelated variables on eye fixation durations in reading’](https://psycnet.apa.org/doiLanding?doi=10.1037%2F0278-7393.29.6.1312), Juhasz and Rayner 2003; experiment, n = 40. [citations=311(GS, December 2022)]​.
+* Critiques:[ Dirix and Duyck 2017](https://link.springer.com/article/10.3758/s13423-017-1233-8) [n = 14, citations = 17(GS, December 2022)].[ Juhasz 2018](https://journals.sagepub.com/doi/full/10.1080/17470218.2016.1253756?casa_token=WyN64EUvkKsAAAAA%3Au5fggG0Wh6G-ZnUuAk_Wrutlp3xGXl1LwClHngUXRZDcMtSBiqjYDggGLITJ6yJIwpRu5dkAw0s) [n = 45, citations = 24(GS, December 2022)]​.[ Juhasz and Rayner 2006](https://www.tandfonline.com/doi/abs/10.1080/13506280544000075?casa_token=gHwjHBSjY54AAAAA:lszMvULjctfQx2uHWlSmDHtUwIWVB3-eCMxl0R6jnWsS_R-AtIV6Nf9DpqXnjLBNO_byJMuDBM4) [Experiment 1: n = 32, Experiment 2: n = 40, citations = 185 (GS, December 2022)].[ Juhasz and Sheridan 2020 [](https://link.springer.com/article/10.3758/s13421-019-00963-z)n = 47, citations = 2(GS, December 2022)].
+* Original effect size: First fixation: beta = 4.01, Single fixation: beta = 6.55, Gaze duration: beta = 6.62, Total duration: beta = 7.00.
+* Replication effect size: Dirix and Duyck:  Single fixation: _d_ = 0.95 [_d_ calculated from reported t statistic and converted using this[ conversion](https://haiyangjin.github.io/2020/05/eta2d/#from-cohens-d-to-partial-eta-squared)], Gaze duration: _d_ = 0.81 [_d<sup> </sup>_ calculated from reported t statistic and converted using this[ conversion](https://haiyangjin.github.io/2020/05/eta2d/#from-cohens-d-to-partial-eta-squared)], total reading time: _d_ = 0.71 [_d<sup> </sup>_ calculated from reported t statistic and converted using this[ conversion](https://haiyangjin.github.io/2020/05/eta2d/#from-cohens-d-to-partial-eta-squared)]. Juhasz: First fixation: _d_ = 0.27 [_d<sup> </sup>_ calculated from reported t statistic and converted using this[ conversion](https://haiyangjin.github.io/2020/05/eta2d/#from-cohens-d-to-partial-eta-squared)], single fixation: _d_ = 0.29 [_d<sup> </sup>_ calculated from reported t statistic and converted using this[ conversion](https://haiyangjin.github.io/2020/05/eta2d/#from-cohens-d-to-partial-eta-squared)], gaze duration: _d_ = 0.34 [_d<sup> </sup>_ calculated from reported t statistic and converted using this[ conversion](https://haiyangjin.github.io/2020/05/eta2d/#from-cohens-d-to-partial-eta-squared)], total fixation: _d_ = 0.37 [_d<sup> </sup>_ calculated from reported t statistic and converted using this[ conversion](https://haiyangjin.github.io/2020/05/eta2d/#from-cohens-d-to-partial-eta-squared)]. Juhasz and Rayner: Experiment 1: First fixation: _η<sub>p<sup>2</sup></sub>_ = 0.29 [_η<sub>p<sup>2</sup></sub>_ calculated from reported F statistic and converted using this[ conversion](https://haiyangjin.github.io/2020/05/eta2d/#from-cohens-d-to-partial-eta-squared)], Single fixation: _η<sub>p<sup>2</sup></sub>_ = 0.23 [_η<sub>p<sup>2</sup></sub>_ calculated from reported F statistic and converted using this[ conversion](https://haiyangjin.github.io/2020/05/eta2d/#from-cohens-d-to-partial-eta-squared)], Gaze duration: _η<sub>p<sup>2</sup></sub>_ = 0.43 [_η<sub>p<sup>2</sup></sub>_ calculated from reported F statistic and converted using this[ conversion](https://haiyangjin.github.io/2020/05/eta2d/#from-cohens-d-to-partial-eta-squared)], Total duration: _η<sub>p<sup>2</sup></sub>_= 0.34 [_η<sub>p<sup>2</sup></sub>_ calculated from reported F statistic and converted using this[ conversion](https://haiyangjin.github.io/2020/05/eta2d/#from-cohens-d-to-partial-eta-squared)], Experiment 2: First fixation: d = 0.39 [_d <sup> </sup>_ calculated from reported t statistic and converted using this[ conversion](https://haiyangjin.github.io/2020/05/eta2d/#from-cohens-d-to-partial-eta-squared)], Single fixation: _d_ = 0.42 [_d <sup> </sup>_ calculated from reported t statistic and converted using this[ conversion](https://haiyangjin.github.io/2020/05/eta2d/#from-cohens-d-to-partial-eta-squared)], Gaze duration: _d_ = 0.35 [_d <sup> </sup>_ calculated from reported t statistic and converted using this[ conversion](https://haiyangjin.github.io/2020/05/eta2d/#from-cohens-d-to-partial-eta-squared)], Total duration: _d_ = 0.31 [_d <sup> </sup>_ calculated from reported t statistic and converted using this[ conversion](https://haiyangjin.github.io/2020/05/eta2d/#from-cohens-d-to-partial-eta-squared)]; Juhasz and Sheridan:  First fixation: _d_ = 0.22, single fixation: _d_ = 0.20, gaze duration: _d_ = 0.20, total fixation: _d_ = 0.27; skipping percentage: _d_ = .17.
+{{< /spoiler >}}
+
+* **Age of acquisition influence on name retrieval**. The earlier an individual learns a celebrity name and face, the more quickly and accurately the participant will name the celebrity.  
+{{< spoiler text="Statistics" >}}
+* Status: replicated
+* Original paper:[ ‘The Effect of Age of Acquisition on Speed and](https://www.tandfonline.com/doi/abs/10.1080/713755779?casa_token=uXrinWebRjoAAAAA:1BLgpya1JHG00uRr0IhoVhh88pgfIFJwwNdkb-jy38XJznJdwpL-H_Ptz_INkhv7CjT3H4PSD0A)
+* [Accuracy of Naming Famous Faces](https://www.tandfonline.com/doi/abs/10.1080/713755779?casa_token=uXrinWebRjoAAAAA:1BLgpya1JHG00uRr0IhoVhh88pgfIFJwwNdkb-jy38XJznJdwpL-H_Ptz_INkhv7CjT3H4PSD0A)’, Moore and Valentine 1998; experiments, experiment 1 n=30, experiment 2 n= 24, experiment 3 n= 24. [citations= 83(GS, December 2022)]​.
+* Critiques: [ Smith-Spark et al. 2012](https://www.sciencedirect.com/science/article/abs/pii/S0001691811001880) [Experiment: n = 72, citations = 3 (GS, December 2022)].
+* Original effect size: Experiment 1: RT _η<sub>p<sup>2</sup></sub>_= 0.37[_η<sub>p<sup>2</sup></sub>_ calculated from reported F statistic and converted using this[ conversion](https://haiyangjin.github.io/2020/05/eta2d/#from-cohens-d-to-partial-eta-squared)], accuracy: _η<sub>p<sup>2</sup></sub>_= 0.40[_η<sub>p<sup>2</sup></sub>_ calculated from reported F statistic and converted using this[ conversion](https://haiyangjin.github.io/2020/05/eta2d/#from-cohens-d-to-partial-eta-squared)],Experiment 2: RT: _η<sub>p<sup>2</sup></sub>_= 0.63[_η<sub>p<sup>2</sup></sub>_ calculated from reported F statistic and converted using this[ conversion](https://haiyangjin.github.io/2020/05/eta2d/#from-cohens-d-to-partial-eta-squared)]; accuracy: _η<sub>p<sup>2 </sup></sub>_= 0.27[_η<sub>p<sup>2</sup></sub>_ calculated from reported F statistic and converted using this[ conversion](https://haiyangjin.github.io/2020/05/eta2d/#from-cohens-d-to-partial-eta-squared)], Experiment 3: RT: _η<sub>p<sup>2</sup></sub>_= 0.38[_η<sub>p<sup>2</sup></sub>_ calculated from reported F statistic and converted using this[ conversion](https://haiyangjin.github.io/2020/05/eta2d/#from-cohens-d-to-partial-eta-squared)], accuracy: _η<sub>p<sup>2</sup></sub>_ = 0.24[_η<sub>p<sup>2</sup></sub>_ calculated from reported F statistic and converted using this[ conversion](https://haiyangjin.github.io/2020/05/eta2d/#from-cohens-d-to-partial-eta-squared)].
+* Replication effect size: Smith-Spark et al.: accuracy: _η<sub>p<sup>2</sup></sub>_= 0.13[_η<sub>p<sup>2</sup></sub>_ calculated from reported F statistic and converted using this[ conversion](https://haiyangjin.github.io/2020/05/eta2d/#from-cohens-d-to-partial-eta-squared)]; RT: _η<sub>p<sup>2</sup></sub>_= 0.43[_η<sub>p<sup>2</sup></sub>_ calculated from reported F statistic and converted using this[ conversion](https://haiyangjin.github.io/2020/05/eta2d/#from-cohens-d-to-partial-eta-squared)].
+{{< /spoiler >}}
+
+* **Age of acquisition on lexical-semantic processes** (translation task). Compared to late-acquired words, early-acquired words in a native or other language are translated more quickly to the other language or the native language, respectively. 
+{{< spoiler text="Statistics" >}}
+* Status: replicated
+* Original paper:[ 'Characteristics of words determining how easily they will be translated into a second language'](https://www.cambridge.org/core/journals/applied-psycholinguistics/article/abs/characteristics-of-words-determining-how-easily-they-will-be-translated-into-a-second-language/EF06A22DA83321363039FC0956307868), Murray 1986; experiment, n = 16 [citations= 12(GS, December 2022)].
+* Critiques:[ Izura and Ellis 2004](https://www.sciencedirect.com/science/article/pii/S0749596X03001165) [Experiment 1: n = 20, Experiment 3: n = 20, citations = 102(GS, December 2022)]​.[ Bowers and Kennison 2011](https://link.springer.com/article/10.1007/s10936-011-9169-z) [n = 36, citations = 19(GS, December 2022)]​.
+* Original effect size: L1 AoA and translate to L1: _r_ = .27, L1 AoA and translate to L2: _r_ = .19.
+* Replication effect size: Izura and Ellis: Experiment 1: η<sub>p</sub>² = 0.03 for L1 AoA  [_η<sub>p<sup>2</sup></sub>_ calculated from reported F statistic and converted using this[ conversion](https://haiyangjin.github.io/2020/05/eta2d/#from-cohens-d-to-partial-eta-squared)], η<sub>p</sub>² = 0.73 for L2 AoA  [_η<sub>p<sup>2</sup></sub>_ calculated from reported F statistic and converted using this[ conversion](https://haiyangjin.github.io/2020/05/eta2d/#from-cohens-d-to-partial-eta-squared)]; Experiment 3: η<sub>p</sub>² = 0.33 for L1 AoA  [_η<sub>p<sup>2</sup></sub>_ calculated from reported F statistic and converted using this[ conversion](https://haiyangjin.github.io/2020/05/eta2d/#from-cohens-d-to-partial-eta-squared)], η<sub>p</sub>² = 0.47 for L2 AoA  [_η<sub>p<sup>2</sup></sub>_ calculated from reported F statistic and converted using this[ conversion](https://haiyangjin.github.io/2020/05/eta2d/#from-cohens-d-to-partial-eta-squared)]. Bowers and Kennison: η<sub>p</sub>² = 0.90.
+{{< /spoiler >}}
+
+* **Age of acquisition influence on lexical-semantic processes (picture-word interference)**. The pictures of objects whose concept is acquired earlier show smaller semantic interference with simultaneously appearing semantically related words, compared to when the task is done using pictures of objects whose concept is acquired later. 
+{{< spoiler text="Statistics" >}}
+* Status: replicated
+* Original paper:[ ‘Age of Acquisition, Word Frequency, and Picture–Word Interference](https://journals.sagepub.com/doi/full/10.1080/17470210903380830?casa_token=smbRRIf0JfQAAAAA%3AQaJF0LIzLOru8gN6vX8zsT9BzvAGw_bIcAUE3H_-TLvKZIH9D3g3-JRsFPm9zxSlNoIVHLfuflA)’, Catling et al. 2010; experiment, n = 20.[citations=26(GS, December 2022)]​.
+* Critiques:[ de Zubicaray et al. 2012](https://direct.mit.edu/jocn/article/24/2/482/27734/Independent-Distractor-Frequency-and-Age-of) [n = 17, citations = 24(GS, December 2022)]​.
+* Original effect size: Experiment 2: η<sub>p</sub>² = 0.40. 
+* Replication effect size: de Zubicaray et al.: Experiment 2: η<sub>p</sub>² = 0.79 [_η<sub>p<sup>2</sup></sub>_ calculated from reported F statistic and converted using this[ conversion](https://haiyangjin.github.io/2020/05/eta2d/#from-cohens-d-to-partial-eta-squared)].
+{{< /spoiler >}}
+
+* **Age of acquisition influence on lexical change**. In contrast to the meaning of late-acquired words, the meaning of early-acquired words are less likely to change over time in the conceptual representation of the speaker and community.
+{{< spoiler text="Statistics" >}}
+* Status: mixed
+* Original paper: ‘[Age of acquisition predicts rate of lexical evolution’](https://www.sciencedirect.com/science/article/pii/S0010027714001644), Monaghan 2014; experiment, n = 200 words. [citations= 42(GS, December 2022)].
+* Critiques:[ Vejdemo and Hörberg 2016](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0147924) [n = 167 words, citations = 34(GS, December 2022)]​. [Monaghan and Roberts 2021](https://onlinelibrary.wiley.com/doi/full/10.1111/cogs.12968) [n = 784 words, citations = 7 (GS, December 2022)].
+* Original effect size: Beta = .120.
+* Replication effect size: Veidemo and Horberg: Beta = -0.35. Monaghan and Roberts: pseudo-R<sup>2</sup> = 1.7%.
+{{< /spoiler >}}
+
+* **Age of acquisition influence on learning (conceptual learning)**. The earlier a concept is learned, the more likely the concept will be more strongly consolidated and more likely to be recalled. 
+{{< spoiler text="Statistics" >}}
+* Status: replicated
+* Original paper: ‘[Order of acquisition in learning perceptual categories: A laboratory analogue of the age-of-acquisition effect?](https://link.springer.com/article/10.3758/PBR.15.1.70)’, Stewart and Ellis 2008; experiment, n = 27. [citations=35(GS, December 2022)]​.
+* Critiques: [Catling et al. 2013](https://journals.sagepub.com/doi/full/10.1080/17470218.2013.764903?casa_token=Q8LgtFU5PpIAAAAA%3AAadESz5Syen3WG-gR8GRomoKQ0qhloqYGFO0AGclrOeTgV2QR6snXRCtfdNDrtFZ_-y23Eq_j8c) [n = 16, citations = 19(GS, December 2022)].[ Izura et al. 2011](https://www.sciencedirect.com/science/article/pii/S0749596X1000077X?casa_token=rBdP4ap4vQYAAAAA:Iniu-jdyFiPiXq0tBs9I39mWlKRO7Mf9y85PWL6AFx0DeG6BOVkub8KyYj3MIj1OLxNxPNkw) [Experiment 1: n = 25, Experiment 2:  n = 26, Experiment 2:  n = 24, citations = 78(GS, December 2022)].
+* Original effect size: _η<sub>p<sup>2</sup></sub>_= 0.17 [_η<sub>p<sup>2</sup></sub>_ calculated from reported F statistic and converted using this [conversion](https://haiyangjin.github.io/2020/05/eta2d/#from-cohens-d-to-partial-eta-squared)].
+* Replication effect size: Catling et al.: naming: _η<sub>p<sup>2</sup></sub>_= 0.23 [_η<sub>p<sup>2</sup></sub>_ calculated from reported F statistic and converted using this [conversion](https://haiyangjin.github.io/2020/05/eta2d/#from-cohens-d-to-partial-eta-squared)], visual duration threshold  _η<sub>p<sup>2</sup></sub>_= 0.27 [_η<sub>p<sup>2</sup></sub>_ calculated from reported F statistic and converted using this [conversion](https://haiyangjin.github.io/2020/05/eta2d/#from-cohens-d-to-partial-eta-squared)]. Izura et al.: Experiment 1: _η<sub>p<sup>2</sup></sub>_= 0.49, Experiment 2: _η<sub>p<sup>2</sup></sub>_= 0.20, Experiment 3: delayed picture naming: _d_ = 0.36 [_d<sup> </sup>_ calculated from reported t statistic and converted using this [conversion](https://haiyangjin.github.io/2020/05/eta2d/#from-cohens-d-to-partial-eta-squared)]/ _η<sub>p<sup>2</sup></sub>_= 0.12 [ _η<sub>p<sup>2</sup>_ calculated from Cohen’s d and converted using this [conversion](https://haiyangjin.github.io/2020/05/eta2d/#from-cohens-d-to-partial-eta-squared)], immediate picture naming: _F_ &lt; 1, corrected latencies: _η<sub>p<sup>2</sup></sub>_= 0.15, lexical decision: _η<sub>p<sup>2</sup></sub>_= 0.32, semantic categorisation: _η<sub>p<sup>2</sup></sub>_= 0.20.
+{{< /spoiler >}}
+
+* **Age of acquisition influence on learning (procedural)**. The order of learning new actions of a procedures influences the speed and accuracy of recalling the correct position.
+{{< spoiler text="Statistics" >}}
+* Status: replicated
+* Original paper: [‘Acquisition and long-term retention of a simple serial perceptual-motor skill](https://psycnet.apa.org/record/1958-02615-001)’, Neumann and Amons 1956; experiment, n = 20. [citations=56(GS, December 2022)]​.
+* Critiques: [ Magil 1976](https://www.tandfonline.com/doi/abs/10.1080/10671315.1976.10615350?casa_token=Thd0gNVT7-IAAAAA:ZMNebGmnoMiaEatOEy__MJCy4dIi3b0DJNQUkrBa4FP7FTLYrc1Z2KnaeQ1XUPARwIehIpbaGac) [n = 105, citations = 13 (GS, December 2022)]. 
+* Original effect size: _η<sub>p<sup>2</sup></sub>_= 0.23[_η<sub>p<sup>2sup></sub>_ calculated from reported F statistic and converted using this[ conversion](https://haiyangjin.github.io/2020/05/eta2d/#from-cohens-d-to-partial-eta-squared)].
+* Replication effect size: Magil: _η<sub>p<sup>2</sup></sub>_= 0.06 for position 1 and 2 in block number 3 [_η<sub>p<sup>2</sup></sub>_ calculated from reported F statistic and converted using this[ conversion](https://haiyangjin.github.io/2020/05/eta2d/#from-cohens-d-to-partial-eta-squared)], _η<sub>p<sup>2</sup></sub>_= 0.06 for position 1 and 3 in block number 3 [_η<sub>p<sup>2 </sup></sub>_ calculated from reported F statistic and converted using this[ conversion](https://haiyangjin.github.io/2020/05/eta2d/#from-cohens-d-to-partial-eta-squared)], _F_ &lt; 1 for position 2 and 3 in block number 3, _η<sub>p<sup>2</sup></sub>_= 0.05 for position 1 and 2 in block number 4 [_η<sub>p<sup>2</sup></sub>_ calculated from reported F statistic and converted using this[ conversion](https://haiyangjin.github.io/2020/05/eta2d/#from-cohens-d-to-partial-eta-squared)], _η<sub>p<sup>2</sup></sub>_= 0.11 for position 1 and 3 in block number 3 [_η<sub>p<sup>2</sup></sub>_ calculated from reported F statistic and converted using this[ conversion](https://haiyangjin.github.io/2020/05/eta2d/#from-cohens-d-to-partial-eta-squared)], _η<sub>p<sup>2</sup></sub>_= 0.01 for position 2 and 3 in block number 4. 
+{{< /spoiler >}}
 
 * **Ego depletion**. Self-control is a limited resource that can be depleted by efforts to inhibit a thought, emotion or behaviour.
 {{< spoiler text="Statistics" >}}
@@ -3577,7 +1504,7 @@ Study
 * Original paper: '[Ego Depletion: Is the Active Self a Limited Resource?](https://www.ncbi.nlm.nih.gov/pubmed/9599441)', Baumeister 1998, n=67 [citations = 7141 (GS, September 2022)].
 * Critique: [Xu et al. 2014](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0109950), 4 conceptual replications with high-power to detect medium-large effects [citations = 7136 (GS, September 2022)]. [Hagger 2016](https://journals.sagepub.com/doi/pdf/10.1177/1745691616652873), 23 independent conceptual replications [citations = 1027 (GS, September 2022)]. [Vohs et al. 2021](https://journals.sagepub.com/doi/full/10.1177/0956797621989733), multisite project, n = 3,531 [citations = 63 (GS, September 2022)]. 
 * Original effect size: not reported (calculated d = -1.96 between control and worst condition).
-* Replication effect size: Xu et al. 2014: hand grip persistence, community adults _d_ = −0.30, young adults _d _=  −0.002, combined difference _d_ = −0.20; Stroop interference, community adults _d_ = −0.15, young adults _d_ = .21, combined difference _d_ = −0.06. Hagger 2016: _d_ = 0.04 [−0.07, 0.14] (NB: not testing the construct the same way). Vohs et al. 2021:_d_ = 0.06. 
+* Replication effect size: Xu et al. 2014: hand grip persistence, community adults _d_ = −0.30, young adults _d_=  −0.002, combined difference _d_ = −0.20; Stroop interference, community adults _d_ = −0.15, young adults _d_ = .21, combined difference _d_ = −0.06. Hagger 2016: _d_ = 0.04 [−0.07, 0.14] (NB: not testing the construct the same way). Vohs et al. 2021:_d_ = 0.06. 
 {{< /spoiler >}}
 
 * **Dunning-Kruger effect**. A cognitive bias whereby people with limited knowledge or competence in a given intellectual or social domain greatly overestimate their own knowledge or competence in that domain relative to objective criteria or to the performance of their peers or of people in general.
@@ -3592,7 +1519,7 @@ Study
 * **Depressive realism effect**. Increased predictive accuracy or decreased cognitive bias among the clinically depressed.
 {{< spoiler text="Statistics" >}}
 * Status: reversed
-* Original paper: '[Judgment of contingency in depressed and nondepressed students: sadder but wiser?](https://www.ncbi.nlm.nih.gov/pubmed/528910)', Alloy and Abramson (1979): 4 experiments with Study 1: n1 = 48, n2 = 48, Study 2: n1 = 32, n2 = 32; Study 3: n1 = 32, n2 = 32; Study 4: n1 = 32, n2 = 32 (citations = 2855 (GS, June 2022)].
+* Original paper: '[Judgment of contingency in depressed and nondepressed students: sadder but wiser?](https://www.ncbi.nlm.nih.gov/pubmed/528910)', Alloy and Abramson (1979): 4 experiments with Study 1: n1 = 48, n2 = 48, Study 2: n1 = 32, n2 = 32; Study 3: n1 = 32, n2 = 32; Study 4: n1 = 32, n2 = 32 [citations = 2855 (GS, June 2022)].
 * Critiques: [Moore and Fresco 2012 ](https://www.ncbi.nlm.nih.gov/pubmed/22717337)[meta analysis, n = 7305, citations = 311 (GS, June 2022)] 
 * Original effect size: not reported. [d= -0.32 calculated for bias about 'contingency', how much the outcome actually depends on what you do]
 * Replication effect size: Moore and Fresco 2012: d = -0.07.
@@ -3604,7 +1531,7 @@ Study
 * Original paper: '[Extraneous factors in judicial decisions](https://www.pnas.org/content/108/17/6889)', 2011 [n= 8 judges, 1122 judicial rulings, citations = 1626 (GS, October, 2022)].
 * Critiques: [Weinshall-Margel 2011](https://www.pnas.org/content/108/42/E833.long) [n= 227 decisions, citations= 79 (GS, October, 2022)], [Glöckner 2016](http://journal.sjdm.org/16/16823/jdm16823.html), [Lakens 2017](http://daniellakens.blogspot.com/2017/07/impossibly-hungry-judges.html).
 * Original effect size: _d_= 1.96, "the probability of a favorable ruling steadily declines from ≈0.65 to [0.05] and jumps back up to ≈0.65 after a break for a meal", n=8 judges with n=1122 cases.
-* Replication effect size: N/A.
+* Replication effect size: NA.
 {{< /spoiler >}}
 
 * **“Far transfer”**, transfer of knowledge and skills from daily computer training games to fluid intelligence in general, in particular from the Dual n-Back game.
