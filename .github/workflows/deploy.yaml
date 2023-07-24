@@ -55,12 +55,10 @@ jobs:
       - name: Install dependencies for resource.py
         run: |
           python3 -m pip install -r ./requirements.txt
-          
-      - name: Delete curated_resources
-        run: |
-          rm content/curated_resources/[0-9]*.md
-          ls
-          pwd
+
+      # - name: Delete curated_resources
+      #   run: |
+      #     rm content/curated_resources/[0-9]*.md
 
       - name: run and make curated_resources
         run: |
