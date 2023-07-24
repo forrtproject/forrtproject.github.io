@@ -13,6 +13,7 @@ on:
   pull_request:
     branches:
       - master # Test PR only if master is the target branch
+  workflow_dispatch:
 
 jobs:
   deploy:
@@ -58,6 +59,8 @@ jobs:
       - name: Delete curated_resources
         run: |
           rm content/curated_resources/[0-9]*.md
+          ls
+          pwd
 
       - name: run and make curated_resources
         run: |
@@ -67,7 +70,7 @@ jobs:
         run: hugo --gc --minify
 
       - name: Deploy website on push
-        if: ${{ success() && github.event_name == 'push' }}
+        if: ${{ success() }}
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
