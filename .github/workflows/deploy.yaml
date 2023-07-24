@@ -51,10 +51,16 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-pip-
 
-      - name: Install dependencies and run resource.py
+      - name: Install dependencies for resource.py
         run: |
           python3 -m pip install -r ./requirements.txt
+          
+      - name: Delete curated_resources
+        run: |
           rm content/curated_resources/[0-9]*.md
+
+      - name: run and make curated_resources
+        run: |
           python3 content/resources/resource.py
 
       - name: Build
