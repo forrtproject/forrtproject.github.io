@@ -57,6 +57,11 @@ classtitle = "text-center"
 
 <br>
 
+<img src="SIPS.png" align="right" /> The [Society for the Improvement of Psychological Science (SIPS)](https://improvingpsych.org) brings together scholars working to improve methods and practices in psychological science. Anyone interested in improving psychological research is welcome to join, regardless of experience. SIPS is a service organization aiming to make psychological science higher quality and more cumulative.
+
+<br>
+
+
 <img src="cos.png" align="right" /> Founded in 2013, [COS](https://www.cos.io/) is a nonprofit organization with a mission to increase openness, integrity, and reproducibility of scientific research. COS pursues this mission by building communities around open science practices, supporting metascience research, and developing and maintaining free, open source software tools, including the [Open Science Framework (OSF)](https://osf.io/).
 
 <br>
