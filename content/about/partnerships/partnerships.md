@@ -63,11 +63,15 @@ classtitle = "text-center"
 
 ---
 
+<br>
+
 <img src="cos.png" align="right" /> Founded in 2013, [COS](https://www.cos.io/) is a nonprofit organization with a mission to increase openness, integrity, and reproducibility of scientific research. COS pursues this mission by building communities around open science practices, supporting metascience research, and developing and maintaining free, open source software tools, including the [Open Science Framework (OSF)](https://osf.io/).
 
 <br>
 
 ---
+
+<br>
 
 <img src="liberate-science.png" align="right" /> Many things about research can be improved, but too often we get stuck in preventing negative things from happening. [Liberate Science](https://libscie.org/) (est. 2019) is about growing positive alternatives to enable a better research environment. This is both for the research itself and the researcher, no matter the topic or where the researcher may be. Liberate Science's main project is [ResearchEquals](https://researchequals.com/?referrer=forrt), a modular publishing platform. This helps researchers document, communicate, and get credit for each step of the research process, not only the final report. [Join our Discord channel](https://discord.gg/SefsGJWWSw) if you'd like to talk with us!
 
@@ -86,6 +90,14 @@ classtitle = "text-center"
 <br>
 
 <img src="UKRN.png" align="right" /> [The UK Reproducibility Network (UKRN)](https://www.ukrn.org/) is a national peer-led consortium that aims to ensure the UK retains its place as a centre for world-leading research. We do this by investigating the factors that contribute to robust research, promoting training activities, and disseminating best practice. UKRN also works collaboratively with various external stakeholders to ensure coordination of efforts across the sector. UKRN seeks to understand the factors that contribute to poor research reproducibility and replicability, and develop approaches to counter these, in order to improve the trustworthiness and quality of research. These issues affect all disciplines, so we aim for broad disciplinary representation.
+
+<br>
+
+---
+
+<br>
+
+<img src="A2P.png" align="right" /> As a scholarly training and consulting organization, [Access 2 Perspectives](https://access2perspectives.org) is providing novel insights into the globally inclusive management and communication of Research based on Open Science principles and established scholarly standards to uphold research integrity and good scientific practices across all research disciplines. We equip researchers around the world with the skills and enthusiasm they need to pursue a joyful career. Furthermore, we support scholarly stakeholders in facilitating multilingualism, global research equity and knowledge sharing for societal impact.
 
 <br>
 
@@ -119,8 +131,6 @@ classtitle = "text-center"
 <br>
 
 <img src="PAPORTRAIL.png" align="right" /> [PaPOR TRaIL](https://open.ucc.ie/browse/all/cpd/courses/papor-trail-principles-and-practices-of-open-research-003cpd) is a free course on open research for undergraduate and postgraduate students. It is a self-paced online course that students can take independently and/or that can be embedded in exiting research curricula. Students can first complete an introductory module that providing a comprehensive understanding of the principles and practices of open research.  Following completion of this module, students can choose to complete any/all of six skill-based sections that demonstrate how to do the following open research practices. The six skills-based modules include: research integrity; pre-registration; research data management; reproducible practices; open reporting; open knowledge dissemination.
-
-<br>
 
 <br>
 
