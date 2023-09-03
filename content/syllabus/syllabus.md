@@ -90,6 +90,7 @@ To further facilitate the creation, the updating, improvement, and maintenance o
 * [Project Tier](https://www.projecttier.org/tier-classroom/course-materials/#modal354)
 * [Teaching Replication in Social Sciences](https://osf.io/g3k5t/)
 * [Psychology as a Robust Science](https://osf.io/sxrkn/)
+* [Introduction to Open Science principles and practices (in Health Economics by Xavier Pouwels)](https://zenodo.org/record/8214973)
 * [Data Management Syllabus](https://docs.google.com/document/d/1z15bL9cP84re6d4zdkO60q06lnknnN3xEktN7GnLFFQ/edit)
 * [Improving your statistical inference](https://www.coursera.org/learn/statistical-inferences#syllabus)
 * [SIPS Teaching and Mentoring Open Science Syllabus](https://osf.io/3dp52/)
