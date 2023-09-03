@@ -61,6 +61,7 @@ classtitle = "text-center"
 
 <br>
 
+---
 
 <img src="cos.png" align="right" /> Founded in 2013, [COS](https://www.cos.io/) is a nonprofit organization with a mission to increase openness, integrity, and reproducibility of scientific research. COS pursues this mission by building communities around open science practices, supporting metascience research, and developing and maintaining free, open source software tools, including the [Open Science Framework (OSF)](https://osf.io/).
 
