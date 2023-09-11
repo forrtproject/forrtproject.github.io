@@ -171,6 +171,15 @@ classtitle = "text-center"
 
 <br>
 
+<img src="QualaLab.png" align="right" /> [Quala Lab](http://qualalab.org/) is a collaboratively-run working group that works to find ways to find connections between the open science movement and qualitative and mixed methods research. The group meets weekly to discuss ongoing projects, the philosophy of open science, and current events inside and outside of academia. 
+
+
+<br>
+
+---
+
+<br>
+
 <br>
 
 ## **Project-specific Partners**
