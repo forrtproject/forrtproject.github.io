@@ -180,6 +180,14 @@ classtitle = "text-center"
 
 <br>
 
+<img src="OLS.png" align="right" /> [OLS](https://openlifesci.org/)’s mission is to capacity build and diversify leadership in research worldwide. Long term, they want to see research that is accessible, inclusive, and equitable for everyone. Its 16-week “Open Seeds” mentoring and program is for people interested in applying open principles in their work and becoming Open Science ambassadors in their communities.
+
+
+<br>
+
+---
+<br>
+
 <br>
 
 ## **Project-specific Partners**
