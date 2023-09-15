@@ -96,20 +96,24 @@ Including sources into your syllabus that discuss open and transparent research 
      - take the free online [Science Literacy course](https://www.coursera.org/learn/science-literacy) which aims at teaching about the process of science and how these are used to produce knowledge (by Dr. Claire Scavuzzo & Dr. Rachel Buertl at Alberta University).
      - assign students to read (and watch explanatory videos of) [ReproducibiliTea's Reading List](https://rpt-rl.netlify.app/)
      - assign students to watch single (short) videos a variety of open and reproducible science topics, and discuss it in class
-          - [The RIOT's Science Club](https://www.youtube.com/c/RIOTScienceClub/videos)
-          - [Metascience presentations](https://www.metascience2019.org/presentations/)
-          - [You Lied to Me: A Music Video About p-values](https://www.youtube.com/watch?v=E0JzVIjj5wI) or [Professor Writes a Scientific Paper in a Day](https://www.youtube.com/watch?v=1gg_eN_UV7k)
-          - [Mini course on reproducibility & open research](https://www.youtube.com/playlist?list=PLo1sDp2zqD4Rl9AQblQBMQrVblZfEfHcJ)
-     - assign students to listen to Podcasts on open and reproducible science (broadly construed) 
-          - [ReproducibiliTea - A podcast highlighting the great work of early career researchers](https://soundcloud.com/reproducibilitea)
-          - [Open Science Talk - A podcast about Open Science, Open Access, Open Education, Open Data, Open Software](https://septentrio.uit.no/index.php/OSTalk/issue/archive)
-          - [The ORION Open Science Podcast](https://orionopenscience.podbean.com/)
-          - [Everything Hertz - A podcast by scientists, for scientists. Methodology, scientific life, and bad language](https://everythinghertz.com/)
-          - [The Black Goat – A podcast about doing science](https://www.theblackgoatpodcast.com/)
-          - [The juice and the squeeze - A zesty podcast by two academics about where, how, and why we focus our efforts](https://www.juiceandsqueeze.net/)
-          - [Quantitude - A podcast dedicated to all things quantitative](https://quantitudepod.org/)
-          - [Within & Between - A podcast about the methods and metascience of developmental science](https://podtail.com/en/podcast/within-between/)
-          - [The Hitchhiker's Guide to Academic Publishing](https://www.youtube.com/watch?v=TgTsgbbdUog&t=6025s&ab_channel=CharlieBurlingham)
+        -   [Center for Open Science](https://www.youtube.com/@CenterforOpenScience/videos)
+        -   [Metascience presentations](https://www.metascience2019.org/presentations/)
+        -   [Mini course on reproducibility & open research](https://www.youtube.com/playlist?list=PLo1sDp2zqD4Rl9AQblQBMQrVblZfEfHcJ)
+        -   [Professor Writes a Scientific Paper in a Day](https://www.youtube.com/watch?v=1gg_eN_UV7k)
+        -   [RIOT Science Club](https://www.youtube.com/@RIOTScienceClub/videos)
+        -   [You Lied to Me: A Music Video About p-values](https://www.youtube.com/watch?v=E0JzVIjj5wI)
+    -   assign students to listen to Podcasts on open and reproducible science (broadly construed)
+        -   [The Black Goat -- A podcast about doing science](https://www.theblackgoatpodcast.com/)
+        -   [Everything Hertz - A podcast by scientists, for scientists. Methodology, scientific life, and bad language](https://everythinghertz.com/)
+        -   [The Hitchhiker's Guide to Academic Publishing](https://www.youtube.com/watch?v=TgTsgbbdUog&t=6025s&ab_channel=CharlieBurlingham)
+        -   [The HPS Podcast](https://www.hpsunimelb.org/)
+        -   [The juice and the squeeze - A zesty podcast by two academics about where, how, and why we focus our efforts](https://www.juiceandsqueeze.net/)
+        -   [Open Update by Liberate Science](https://libscie.org/open-update)
+        -   [Open Science Talk - A podcast about Open Science, Open Access, Open Education, Open Data, Open Software](https://septentrio.uit.no/index.php/OSTalk/issue/archive)
+        -   [The ORION Open Science Podcast](https://orionopenscience.podbean.com/)
+        -   [Quantitude - A podcast dedicated to all things quantitative](https://quantitudepod.org/)
+        -   [ReproducibiliTea - A podcast highlighting the great work of early career researchers](https://soundcloud.com/reproducibilitea)
+        -   [Within & Between - A podcast about the methods and metascience of developmental science](https://podtail.com/en/podcast/within-between/)
 
 <br>
 
@@ -120,7 +124,7 @@ Open educational resources allow community members to make contributions and con
 #### <FONT COLOR="#A9A9A9">How?</FONT>
 
 *   [FORRT Pedagogies](/pedagogies) aims to collect and catalogue exemplary instances of principled education - i.e., successful pedagogies in teaching or mentoring of open and reproducible principles, and are detailed examples of the processes by which ideals in teaching, mentoring, and openness of these materials come to materialize.
-*   FORRT maintains [***700+ curated educational resources***](/resources) on Open and Reproducible topics. [***Submit your own resources***](https://docs.google.com/forms/d/e/1FAIpQLSfPceN5opEeauCBSvapoB-ADpH0IoT24XOLfQGaVEF0EJGFOA/viewform) so that others can adopt them easily into their teaching.
+*   FORRT maintains [***800+ curated educational resources***](/resources) on Open and Reproducible topics. [***Submit your own resources***](https://docs.google.com/forms/d/e/1FAIpQLSfPceN5opEeauCBSvapoB-ADpH0IoT24XOLfQGaVEF0EJGFOA/viewform) so that others can adopt them easily into their teaching.
 *   The [Open Textbook Library](https://open.umn.edu/opentextbooks/) can be used to adopt existing open access textbooks into your own teaching as well as to submit open-access textbooks. 
 *   The [OSKB](https://www.oercommons.org/hubs/OSKB) can be used to discover open scholarship resources created and curated by the community.
 
