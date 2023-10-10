@@ -84,7 +84,7 @@ This is a dynamic project that is organized in four stages. Currently, we are in
 
 1. **~~Proof of Concept Phase (adaptation of original project into FORRT, inclusion of effects from social and cognitive psychology, using Gavin Leech’s collection as a basis) → ~150 entries finished in 2021.~~**
 
-1. **Team Science Expansion Phase Across Disciplines** (crowd-sourcing entries and refine existing entries), started at the end of 2021 and planned until the end of 2023. Drafting of first ‘output’ piece. Currently including a total of 485+ effects spanning 22 disciplines.
+1. **Team Science Expansion Phase Across Disciplines** (crowd-sourcing entries and refine existing entries), started at the end of 2021 and planned until the end of 2023. Drafting of first ‘output’ piece. Currently including a total of 550+ effects spanning 22 disciplines.
 
 1. **Review Phase** (open review to identify inconsistencies, missing data, and errors), planned for 2024. Publishing of first ‘output’ piece.
 
@@ -107,7 +107,7 @@ This is a dynamic project that is organized in four stages. Currently, we are in
 
 ## **How to contribute?**
 
-Anyone can add new effects or edit existing effects [by joining our initiative on Slack](https://join.slack.com/t/forrt/shared_invite/enQtODMwODI0OTk4ODgzLTM0ZTQ3NDk5MzA1ZjBmNWJjYTVlN2Y2YTk0ZTJhYTY5NDliMDYzMjg2MWE0ZDRhOTY0ZDY3OTRlNDA4ODQ3NjQ) and then [following the instructions in our reversals g-doc](https://docs.google.com/document/d/1niQvzB8tpkgXJ1ZbfuwqGRjmiMysu_3WIVe_SyQA0fc/edit?usp=sharing).
+Anyone can add new effects or edit existing effects [by joining our initiative on Slack](https://join.slack.com/t/forrt/shared_invite/enQtODMwODI0OTk4ODgzLTM0ZTQ3NDk5MzA1ZjBmNWJjYTVlN2Y2YTk0ZTJhYTY5NDliMDYzMjg2MWE0ZDRhOTY0ZDY3OTRlNDA4ODQ3NjQ) and then [following the instructions in our reversals g-doc](https://docs.google.com/document/d/1kFHayPpdX8RwDSdFPjaz7pxwxTiomIdCozO3hUCSHvM/edit).
 
 All **past or current project contributors** are listed at the [bottom of this page](#contributors).
 
