@@ -43,7 +43,7 @@ url_video: ""
 
 <br>
 
-We are back with a very special Pedagogies, this time including also the perspectives of students on learning about Open Science! We have three amazing guests: Prof. Dr. Jordan Wagge and her two outstanding undergraduate students, Jasmine Beltran and Amy Hernandez. Over the past years, Jordan has led the way in developing CREP so that it can i) accomplish much needed replications, and ii) provide tools/structure for instructors who desire to train their students in OS. In this FORRT’s Pedagogies, Jordan and her students share their experiences with CREP and their thoughts about the trials and tribulations of involving students in the process of OS. We hope that this can inspire and help many scholars wishing to incorporate more OS into their teaching, mentoring and research. 
+We are back with a very special Pedagogies, this time including also the perspectives of students on learning about Open Science (OS)! We have three amazing guests: Prof. Dr. Jordan Wagge and her two outstanding undergraduate students, Jasmine Beltran and Amy Hernandez. Over the past years, Jordan has led the way in developing CREP so that it can i) accomplish much needed replications, and ii) provide tools/structure for instructors who desire to train their students in OS. In this FORRT’s Pedagogies, Jordan and her students share their experiences with CREP and their thoughts about the trials and tribulations of involving students in the process of OS. We hope that this can inspire and help many scholars wishing to incorporate more OS into their teaching, mentoring and research. 
 
 <br>
 
