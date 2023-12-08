@@ -1,0 +1,74 @@
+# Contributors  Data
+# 1
+- name: "Flavio Azevedo"
+  orcid: "https://orcid.example.com/0000-0001-2345-6789"
+  projects:
+    - name: "FORRT’s Glossary project"
+      contributions:
+        - type: "Conceptualization"
+        - type: "Software"
+        - type: "Visualization"
+    - name: "FORRT’s Reversals project"
+      contributions:
+        - type: "Conceptualization"
+        - type: "Resources"
+        - type: "Data Curation"
+    - name: "FORRT’s Positive Changes in Psychology"
+      contributions:
+        - type: "Conceptualization"
+
+# 2nd
+
+- name: "Biljana"
+  orcid: "https://orcid.example.com/0000-0001-2345-6789"
+  projects:
+    - name: "FORRT’s Gl project"
+      contributions:
+        - type: "Writing - Original Draft Preparation"
+        - type: "Software"
+        - type: "Visualization"
+
+    - name: "FORRT’s Positive Changes in Psychology"
+      contributions:
+        - type: "Conceptualization"
+
+# 3rd
+- name: "Sam"
+  orcid: "https://orcid.example.com/0000-0001-2345-6789"
+  projects:
+    - name: "FORRT’s Reversals project"
+      contributions:
+        - type: "Original Draft Preparation"
+        - type: "Resources"
+        - type: "Data Curation"
+
+# 4th
+- name: "Jenniffer "
+  orcid: "https://orcid.example.com/0000-0001-2345-6789"
+  projects:
+    - name: "FORRT’s PED project"
+      contributions:
+        - type: "Conceptualization"
+        - type: "Writing - Original Draft Preparation"
+        - type: "Visualization"
+    - name: "FORRT’s Reversals project"
+      contributions:
+        - type: "Writing "
+        - type: "Resources"
+        - type: "Data Curation"
+    - name: "FORRT’s Positive Changes in Psychology"
+      contributions:
+        - type: "Conceptualization"
+
+# 5th
+- name: "Yuki m "
+  orcid: "https://orcid.example.com/0000-0001-2345-6789"
+  projects:
+    - name: "FORRT’s Reversals project"
+      contributions:
+        - type: "Editing"
+        - type: "Resources"
+        - type: "Data Curation"
+    - name: "FORRT’s Positive Changes in Psychology"
+      contributions:
+        - type: "Conceptualization"

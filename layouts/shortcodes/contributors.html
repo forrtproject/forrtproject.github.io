@@ -1,0 +1,28 @@
+<div style="width:900px;" class="cont">
+
+{{ range .Site.Data.contributors }}
+
+<div class="card flex flex-wrap" style="width: 13rem;">
+  <div class="card-body">
+    <h3 style="padding:0px" class="font-bold mb-2">{{ .name }}</h3>
+      <a href="{{ with .orcid }}{{ . }}{{ end }}" class="text-blue-500 hover:text-blue-700" target="_blank" rel="noopener noreferrer">ORCID</a>
+
+    <p class="card-text">
+      {{ range .projects }}
+      <li>
+        <strong>{{ .name }}</strong> - Contributions:
+    <ul>
+      {{ range .contributions }}
+      <li>{{ .type }}</li>
+      {{ end }}
+    </ul>
+    </li>
+    {{ end }}
+    </p>
+    <a href="#" class="card-link">Github</a>
+    <a href="#" class="card-link">Twitter</a>
+  </div>
+</div>
+
+{{ end }}
+</div>

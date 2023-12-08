@@ -1,0 +1,37 @@
+body {
+    padding:1rem;
+    margin:auto;
+    flex-wrap: wrap;
+    font-size:15px;
+    display: block;
+
+}
+h3 {
+    color:blue;
+    font-weight:bold;
+}
+
+.cont {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem; // Adjust the gap as needed
+}
+
+.card {
+  width: calc(15% - 1rem); // 4 cards per row, subtracting the gap
+}
+.card-body {
+    padding-top: 0rem !important;
+}
+
+@media (max-width: 768px) {
+  .card {
+    width: calc(25% - 1rem); // 2 cards per row on smaller screens
+  }
+}
+
+@media (max-width: 640px) {
+  .card {
+    width: 50%; // 1 card per row on mobile screens
+  }
+}
