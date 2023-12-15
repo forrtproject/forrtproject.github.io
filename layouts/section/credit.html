@@ -1,0 +1,42 @@
+{{- define "main" -}}
+
+<article class="article">
+  <div class="credit-container">
+
+    <h1 style="text-align: center;">FORRT’s Credit</h1>
+    <p style="text-align: center;">A heartfelt Thank you to the Amazing Contributors!</p>
+
+    <div class="cont">
+      {{ range .Site.Data.contributors }}
+
+      {{ $contributor := . }}
+      {{ with $contributor.name }}
+      <div class="card flex flex-wrap" style="width: 13rem;">
+        <div class="card-body">
+          <h3 style="padding:0px" class="font-bold mb-2">{{ . }}</h3>
+          <a href="{{ with $contributor.orcid }}{{ . }}{{ end }}" class="text-blue-500 hover:text-blue-700" target="_blank" rel="noopener noreferrer">ORCID</a>
+
+          {{ with $contributor.projects }}
+          {{ $firstProject := index . 0 }}
+          <p style="margin-bottom: 0px; padding-bottom: 0px;" class="card-text">
+            <strong>{{ $firstProject.name }}</strong> - Contributions:
+            <ul>
+              {{ range $firstProject.contributions }}
+              <li>{{ .type }}</li>
+              {{ end }}
+            </ul>
+          </p>
+          <a href="/credit/{{ $contributor.name | urlize }}" class="card-link read-more-btn">Read More</a>
+          {{ end }}
+          
+        </div>
+      </div>
+      {{ end }}
+
+      {{ end }}
+    </div>
+
+  </div>
+</article>
+
+{{- end -}}

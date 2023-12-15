@@ -17,6 +17,41 @@
       contributions:
         - type: "Conceptualization"
 
+# 1
+- name: "Michael"
+  orcid: "https://orcid.example.com/0000-0001-2345-6789"
+  projects:
+    - name: "FORRT’s Glossary project"
+      contributions:
+        - type: "Conceptualization"
+        - type: "Software"
+        - type: "Visualization"
+    - name: "FORRT’s Reversals project"
+      contributions:
+        - type: "Conceptualization"
+        - type: "Resources"
+        - type: "Data Curation"
+    - name: "FORRT’s Positive Changes in Psychology"
+      contributions:
+        - type: "Conceptualization"
+
+# 1
+- name: "Benedict"
+  orcid: "https://orcid.example.com/0000-0001-2345-6789"
+  projects:
+    - name: "FORRT’s Glossary project"
+      contributions:
+        - type: "Conceptualization"
+        - type: "Software"
+        - type: "Visualization"
+    - name: "FORRT’s Reversals project"
+      contributions:
+        - type: "Conceptualization"
+        - type: "Resources"
+        - type: "Data Curation"
+    - name: "FORRT’s Positive Changes in Psychology"
+      contributions:
+        - type: "Conceptualization"
 # 2nd
 
 - name: "Biljana"

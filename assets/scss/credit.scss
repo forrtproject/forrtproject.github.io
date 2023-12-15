@@ -1,17 +1,12 @@
-body {
-    padding:1rem;
-    margin:auto;
-    flex-wrap: wrap;
-    font-size:15px;
-    display: block;
 
-}
-h3 {
-    color:blue;
-    font-weight:bold;
-}
+// .article-container {
+//   max-width: 1200px;
+//   padding: 0 20px 0 20px;
+//   margin: 0 auto 0 auto;
+// }
 
 .cont {
+  font-size:15px;
   display: flex;
   flex-wrap: wrap;
   gap: 1rem; // Adjust the gap as needed
@@ -31,7 +26,11 @@ h3 {
 }
 
 @media (max-width: 640px) {
+  .cont{
+    justify-items: center;
+  }
   .card {
-    width: 50%; // 1 card per row on mobile screens
+    width: 60%; // 1 card per row on mobile screens
   }
 }
+
