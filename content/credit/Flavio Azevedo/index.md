@@ -18,5 +18,18 @@ projects:
   - name: "FORRT’s Positive Changes in Psychology"
     contributions:
       - type: "Conceptualization"
+  - name: "FORRT’s Glossary project"
+    contributions:
+      - type: "Conceptualization"
+      - type: "Software"
+      - type: "Visualization"
+  - name: "FORRT’s Reversals project"
+    contributions:
+      - type: "Conceptualization"
+      - type: "Resources"
+      - type: "Data Curation"
+  - name: "FORRT’s Positive Changes in Psychology"
+    contributions:
+      - type: "Conceptualization"
 ---
 

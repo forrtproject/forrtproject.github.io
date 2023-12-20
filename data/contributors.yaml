@@ -13,6 +13,11 @@
         - type: "Conceptualization"
         - type: "Resources"
         - type: "Data Curation"
+    - name: "FORRT’s Reversals project"
+      contributions:
+        - type: "Conceptualization"
+        - type: "Resources"
+        - type: "Data Curation"
     - name: "FORRT’s Positive Changes in Psychology"
       contributions:
         - type: "Conceptualization"
