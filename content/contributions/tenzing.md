@@ -70,7 +70,7 @@ subtitle = ""
 ------------
 
 <center>
-
+ 
 Thanks to our amazing community, FORRT has become an ***award-winning*** grassroots interdisciplinary international organization integrating open and reproducible research training into higher education.
 
 </center>
