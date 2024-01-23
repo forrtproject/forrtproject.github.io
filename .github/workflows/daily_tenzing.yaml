@@ -1,0 +1,41 @@
+name: Daily Tenzing Update
+
+on:
+  schedule:
+    - cron: '0 0 * * *'  # Run daily at midnight
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    - name: Set up Python
+      uses: actions/setup-python@v3
+      with:
+        python-version: '3.9'  
+
+    - name: Install dependencies
+      run: |
+        pip install pandas
+      # This will install pandas if necessary
+
+    - name: Run tenzing.py
+      run: python /scripts/forrt_contribs/tenzing.py
+
+    - name: Move tenzing.md
+      run: mv /scripts/forrt_contribs/tenzing.md /content/contributions/tenzing.md
+
+    - name: Commit and push changes
+      run: |
+        git config --global user.email github-actions@github.com
+        git config --global user.name github-actions
+        git add /content/contributions/tenzing.md
+        git commit -m "Daily update"
+        git push
