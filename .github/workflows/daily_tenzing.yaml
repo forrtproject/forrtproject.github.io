@@ -27,15 +27,15 @@ jobs:
       # This will install pandas if necessary
 
     - name: Run tenzing.py
-      run: python /scripts/forrt_contribs/tenzing.py
+      run: python scripts/forrt_contribs/tenzing.py
 
     - name: Move tenzing.md
-      run: mv /scripts/forrt_contribs/tenzing.md /content/contributions/tenzing.md
+      run: mv scripts/forrt_contribs/tenzing.md content/contributions/tenzing.md
 
     - name: Commit and push changes
       run: |
         git config --global user.email github-actions@github.com
         git config --global user.name github-actions
-        git add /content/contributions/tenzing.md
+        git add content/contributions/tenzing.md
         git commit -m "Daily update"
         git push
