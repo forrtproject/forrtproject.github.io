@@ -14,6 +14,10 @@ on:
   pull_request:
     branches:
       - master # Test PR only if master is the target branch
+  workflow_run: 
+    workflows: ["Daily Tenzing Update"]
+    types:
+      - completed    
   workflow_dispatch:
 
 jobs:
@@ -24,6 +28,8 @@ jobs:
         with:
           submodules: false # Fetch Hugo themes (true/false OR recursive)
           fetch-depth: 0 # Fetch all history for .GitInfo and .Lastmod
+          ref: ${{ github.event.workflow_run ? 'Tenzing_temp' : 'master' }}
+
 
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v2
