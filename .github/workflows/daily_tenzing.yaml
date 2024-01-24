@@ -32,13 +32,17 @@ jobs:
     - name: Move tenzing.md
       run: mv scripts/forrt_contribs/tenzing.md content/contributions/tenzing.md
 
-    - name: Commit and push changes
+    - name: Commit changes
       run: |
         git config --global user.email "github-actions@github.com"
         git config --global user.name "GitHub Actions"
-        git fetch origin
         git add --all
         git commit -m "Daily update" -a || echo "No changes to commit"
-        git branch -D Tenzing_temp || echo "Branch Tenzing_temp not found"
-        git checkout -b Tenzing_temp
+
+    - name: Update Tenzing_temp branch
+      run: |
+        git fetch origin
+        git checkout Tenzing_temp || git checkout -b Tenzing_temp
+        git reset --hard origin/master
+        git merge master
         git push --force origin Tenzing_temp

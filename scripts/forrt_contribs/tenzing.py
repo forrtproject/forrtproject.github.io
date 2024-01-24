@@ -79,7 +79,7 @@ def concatenate_contributions(group):
         contributions = [f"{i+1}. {contribution}" for i, contribution in enumerate(contributions)]
 
     # Turn contributions into multiline list or single line
-    contributions_str = contributions[0] if len(contributions) == 1 else '\n    ' + '\n    '.join(contributions) + '\n' + '<br \> &nbsp; <br \>'
+    contributions_str = contributions[0] if len(contributions) == 1 else '\n    ' + '\n    '.join(contributions) + '\n' + '<br \>&nbsp;<br \>'
 
     orcid_id = group.iloc[0]['ORCID iD']
     if orcid_id:
