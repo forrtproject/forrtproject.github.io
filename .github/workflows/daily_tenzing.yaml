@@ -37,7 +37,8 @@ jobs:
         git config --global user.email "github-actions@github.com"
         git config --global user.name "GitHub Actions"
         git fetch origin
-        git checkout Tenzing_temp
         git add --all
         git commit -m "Daily update" -a || echo "No changes to commit"
-        git push origin Tenzing_temp
+        git branch -D Tenzing_temp || echo "Branch Tenzing_temp not found"
+        git checkout -b Tenzing_temp
+        git push --force origin Tenzing_temp
