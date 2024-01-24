@@ -71,7 +71,7 @@ subtitle = ""
 
 <center>
  
-Thanks to our amazing community, FORRT has become an ***award-winning*** grassroots interdisciplinary international organization integrating open and reproducible research training into higher education.
+FORRT is driven by a **large and diverse community of contributors** that shape one or more of our projects. Below you can see everyone's scientific contributions in detail. Note that many also contribute to maintaining our community - we are equally grateful for their efforts.
 
 </center>
 
