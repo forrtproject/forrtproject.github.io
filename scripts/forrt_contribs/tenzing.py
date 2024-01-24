@@ -65,6 +65,10 @@ def format_name(row):
 
 # Group by 'ORCID iD' and concatenate the contributions
 def concatenate_contributions(group):
+
+    # Find the minimum original order for the group
+    min_order = group['original_order'].min()
+
     # Format the full name once per group
     full_name = format_name(group.iloc[0])
     # Create the contributions string for each project
@@ -79,13 +83,13 @@ def concatenate_contributions(group):
         contributions = [f"{i+1}. {contribution}" for i, contribution in enumerate(contributions)]
 
     # Turn contributions into multiline list or single line
-    contributions_str = contributions[0] if len(contributions) == 1 else '\n    ' + '\n    '.join(contributions) + '\n' + '<br/>&nbsp;<br/>'
+    contributions_str = contributions[0] if len(contributions) == 1 else '\n    ' + '\n    '.join(contributions) + '\n' + '{{ space | safeHTML }}'
 
     orcid_id = group.iloc[0]['ORCID iD']
     if orcid_id:
-        return f"- **[{full_name}]({'https://orcid.org/' + orcid_id.strip()})** contributed to {contributions_str}"
+        return min_order, f"- **[{full_name}]({'https://orcid.org/' + orcid_id.strip()})** contributed to {contributions_str}"
     else:
-        return f"- **{full_name}** contributed to {contributions_str}"
+        return min_order, f"- **{full_name}** contributed to {contributions_str}"
 
 def extract_orcid_id(value):
     if not isinstance(value, str) or len(value) < 5:
@@ -103,8 +107,24 @@ merged_data['ORCID iD'] = merged_data['ORCID iD'].apply(extract_orcid_id)
 merged_data['Name'] = merged_data['First name'] + ' ' + merged_data['Surname']
 
 # Apply the function to each group and create a summary DataFrame
-summary = merged_data.groupby(merged_data['ORCID iD'].fillna(merged_data['Name']), sort=False).apply(concatenate_contributions).reset_index(name='Contributions')
+merged_data['original_order'] = range(len(merged_data))
 
+# Perform the groupby operation without sorting
+summary = (merged_data.groupby(merged_data['ORCID iD'].fillna(merged_data['Name']), sort=False)
+                    .apply(concatenate_contributions)
+                    .reset_index())
+
+# Separate the tuple into two columns
+summary[['original_order', 'Contributions']] = pd.DataFrame(summary[0].tolist(), index=summary.index)
+
+# Drop the old column
+summary.drop(columns=[0], inplace=True)
+
+# Sort by the original order and drop the helper column
+summary = summary.sort_values(by='original_order').drop(columns='original_order')
+
+# Reset the index if needed
+summary = summary.reset_index(drop=True)
 summary_string = '\n\n'.join(summary['Contributions'])
 
 # Get the directory of the current script
