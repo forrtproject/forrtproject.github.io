@@ -10,6 +10,7 @@ on:
   push:
     branches:
       - master # Branch to deploy
+      - Tenzing_temp # Also when Tenzing is updated by action
   pull_request:
     branches:
       - master # Test PR only if master is the target branch

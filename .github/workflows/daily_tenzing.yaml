@@ -34,8 +34,10 @@ jobs:
 
     - name: Commit and push changes
       run: |
-        git config --global user.email github-actions@github.com
-        git config --global user.name github-actions
-        git add content/contributions/tenzing.md
-        git commit -m "Daily update"
-        git push --force
+        git config --global user.email "github-actions@github.com"
+        git config --global user.name "GitHub Actions"
+        git fetch origin
+        git checkout Tenzing_temp
+        git add --all
+        git commit -m "Daily update" -a || echo "No changes to commit"
+        git push origin Tenzing_temp
