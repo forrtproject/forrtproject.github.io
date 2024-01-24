@@ -79,7 +79,7 @@ def concatenate_contributions(group):
         contributions = [f"{i+1}. {contribution}" for i, contribution in enumerate(contributions)]
 
     # Turn contributions into multiline list or single line
-    contributions_str = contributions[0] if len(contributions) == 1 else '\n    ' + '\n    '.join(contributions) + '\n' + '<br \>&nbsp;<br \>'
+    contributions_str = contributions[0] if len(contributions) == 1 else '\n    ' + '\n    '.join(contributions) + '\n' + '<br/>&nbsp;<br/>'
 
     orcid_id = group.iloc[0]['ORCID iD']
     if orcid_id:
@@ -103,7 +103,7 @@ merged_data['ORCID iD'] = merged_data['ORCID iD'].apply(extract_orcid_id)
 merged_data['Name'] = merged_data['First name'] + ' ' + merged_data['Surname']
 
 # Apply the function to each group and create a summary DataFrame
-summary = merged_data.groupby(merged_data['ORCID iD'].fillna(merged_data['Name'])).apply(concatenate_contributions).reset_index(name='Contributions')
+summary = merged_data.groupby(merged_data['ORCID iD'].fillna(merged_data['Name']), sort=False).apply(concatenate_contributions).reset_index(name='Contributions')
 
 summary_string = '\n\n'.join(summary['Contributions'])
 
