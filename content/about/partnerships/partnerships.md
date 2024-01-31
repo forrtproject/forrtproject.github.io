@@ -186,6 +186,17 @@ classtitle = "text-center"
 <br>
 
 ---
+
+<br>
+
+
+<img src="MD.png" align="right" /> [Metadocencia](https://www.metadocencia.org/) is an organization that works towards making the production, communication, and application of scientific and technical knowledge globally equitable. It aims to advance innovation with a local perspective that responsibly builds scientific and technical capacities through the co-creation of networks, learning spaces, and accessible resources for Spanish-speaking communities.
+
+
+<br>
+
+---
+
 <br>
 
 <br>
