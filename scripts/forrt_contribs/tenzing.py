@@ -28,9 +28,7 @@ def concatenate_true_columns(row, columns):
     # Filter the columns that have a TRUE value
     true_columns = [col for col in columns if row[col]]
     # Concatenate them with 'and' between the penultimate and last
-    return '*' + ', *'.join(true_columns[:-1]) + ('* and *' if len(true_columns) > 1 else '') + true_columns[-1] + '*'
-
-
+    return ', '.join(f'*{col}*' for col in true_columns[:-1]) + (' and ' if len(true_columns) > 1 else '') + f'*{true_columns[-1]}*'
 
 # List of column names to check for TRUE values
 fields_url = "https://docs.google.com/spreadsheets/d/e/2PACX-1vT_IaXiYtB3iAmtDZ_XiQKrToRkxOlkXNAeNU2SIT_J9PxvsQyptga6Gg9c8mSvDZpwY6d8skswIQYh/pub?output=csv&gid=277271370"
