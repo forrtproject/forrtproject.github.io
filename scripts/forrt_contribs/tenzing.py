@@ -24,13 +24,11 @@ for project_name, url, project_url in zip(df['Project Name'], df['CSV Link'], df
 # Concatenate all data frames
 merged_data = pd.concat(all_data_frames, ignore_index=True)
 
-# Need to filter for those willing to be published (Flavio?)
-
 def concatenate_true_columns(row, columns):
     # Filter the columns that have a TRUE value
     true_columns = [col for col in columns if row[col]]
     # Concatenate them with 'and' between the penultimate and last
-    return ', *'.join(true_columns[:-1]) + ('* and *' if len(true_columns) > 1 else '') + true_columns[-1] + '*'
+    return '*' + ', *'.join(true_columns[:-1]) + ('* and *' if len(true_columns) > 1 else '') + true_columns[-1] + '*'
 
 
 
