@@ -193,6 +193,12 @@
   parent = "nexus"
 
 [[main]]
+  name = "Replication Hub"
+  url = "/replication-hub"
+  weight = 40
+  parent = "nexus"
+
+[[main]]
   name = "Self-Assessment"
   url = "/self-assessment"
   weight = 41
