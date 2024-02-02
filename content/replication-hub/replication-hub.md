@@ -63,4 +63,4 @@ This is the beginning of the FORRT Replication Hub. You can explore the Replicat
 
 ## **Replication Database**
 
-{ {< shiny metaanalyses replicationdatabase 850 >} }
+{{< shiny metaanalyses replicationdatabase 850 >}}
