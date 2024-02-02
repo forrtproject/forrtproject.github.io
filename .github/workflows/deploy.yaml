@@ -27,16 +27,18 @@ jobs:
       BRANCH_TO_CHECKOUT: master # default branch
 
     steps:
-      - name: Set branch based on trigger
-        run: echo "BRANCH_TO_CHECKOUT=Tenzing_temp" >> $GITHUB_ENV
-        if: ${{ github.event.workflow_run != null }}
-
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
         with:
           submodules: false
           fetch-depth: 0
           ref: ${{ env.BRANCH_TO_CHECKOUT }}
+
+      # Always use Tenzing from Tenzing_temp branch, as that will be most recent
+      - name: Checkout specific file from Tenzing_temp
+        run: |
+          git fetch origin Tenzing_temp:content/contributions/tenzing.md --depth=1
+          git checkout FETCH_HEAD -- content/contributions/tenzing.md
 
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v2
@@ -45,7 +47,7 @@ jobs:
           extended: true
 
       - name: Set up Python
-        uses: actions/setup-python@v3
+        uses: actions/setup-python@v5
         with:
           python-version: "3.11"
 
@@ -59,7 +61,7 @@ jobs:
         run: echo "::set-output name=dir::$(pip cache dir)"
 
       - name: Cache dependencies
-        uses: actions/cache@v2
+        uses: actions/cache@v4
         with:
           path: ${{ steps.pip-cache.outputs.dir }}
           key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements-doc.txt') }}
