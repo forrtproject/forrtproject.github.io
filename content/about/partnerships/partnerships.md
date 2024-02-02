@@ -190,6 +190,16 @@ classtitle = "text-center"
 <br>
 
 
+<img src="bitss.png" align="right" /> [The Berkeley Initiative for Transparency in the Social Sciences (BITSS)](http://bitss.org/) was established in 2012 as part of the Center for [Effective Global Action (CEGA)](http://cega.berkeley.edu/), a UC Berkeley-based hub for research on global development. BITSS works to improve the credibility of science by advancing transparency, reproducibility, rigor, and ethics in research. We collaborate with researchers, students, faculty, publishers, and funders across disciplines to: 1. Generate evidence on problems and solutions in science through meta-research led by BITSS investigators and our broader community. 2. Increase access to open science education, building capacity to recognize and conduct transparent and reproducible science through training, access to curricula, financial support, and a growing network of advocates and allies. 3. Strengthen the scientific ecosystem, enabling researchers and institutions to effectively and equitably change norms at scale through open science policy and protocol development.
+
+
+<br>
+
+---
+
+<br>
+
+
 <img src="MD.png" align="right" /> [Metadocencia](https://www.metadocencia.org/) is an organization that works towards making the production, communication, and application of scientific and technical knowledge globally equitable. It aims to advance innovation with a local perspective that responsibly builds scientific and technical capacities through the co-creation of networks, learning spaces, and accessible resources for Spanish-speaking communities.
 
 
@@ -230,4 +240,8 @@ __*Meta-psychology special issue*__
 
 __*Center for Open Science - OSKB & COSGN*__
 
-&nbsp;&nbsp;&nbsp;&nbsp; We are partnering up with [OSKB](https://cos.io/oskb) ([Open Science Knowledge Base](https://cos.io/oskb)) to coordinate the alignment of our meta-data on educational materials so that we share our resources and community. To that end, FORRT will have a community in OSKB’s home ([OER Commons](https://www.oercommons.org/)) and enrich data and reduced redundant work. FORRT also joined COS network-of-networks or [Community of Open Scholarship Grassroots Networks](https://groups.google.com/a/cos.io/forum/#!topic/network-of-open-science-grassroots-networks/1OWtx9VDSwo) ([COSGN](https://groups.google.com/a/cos.io/forum/#!topic/network-of-open-science-grassroots-networks/1OWtx9VDSwo)). These partnerships aim to help build a community of existing educational initiatives, strengthening our missions, and streamline the advancement of open and reproducible educational practices.  
+&nbsp;&nbsp;&nbsp;&nbsp; We are partnering up with [OSKB](https://cos.io/oskb) ([Open Science Knowledge Base](https://cos.io/oskb)) to coordinate the alignment of our meta-data on educational materials so that we share our resources and community. To that end, FORRT will have a community in OSKB’s home ([OER Commons](https://www.oercommons.org/)) and enrich data and reduced redundant work. FORRT also joined COS network-of-networks or [Community of Open Scholarship Grassroots Networks](https://groups.google.com/a/cos.io/forum/#!topic/network-of-open-science-grassroots-networks/1OWtx9VDSwo) ([COSGN](https://groups.google.com/a/cos.io/forum/#!topic/network-of-open-science-grassroots-networks/1OWtx9VDSwo)). These partnerships aim to help build a community of existing educational initiatives, strengthening our missions, and streamline the advancement of open and reproducible educational practices.
+
+
+
+
