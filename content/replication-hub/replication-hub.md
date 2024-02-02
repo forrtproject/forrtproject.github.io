@@ -63,4 +63,7 @@ This is the beginning of the FORRT Replication Hub. You can explore the Replicat
 
 ## **Replication Database**
 
+({{<rawhtml>}}<em><a href="https://metaanalyses.shinyapps.io/replicationdatabase/" target="_blank">Click here to view the app a new window.</a></em>
+ {{</rawhtml>}})
+  
 {{< shiny metaanalyses replicationdatabase 850 >}}
