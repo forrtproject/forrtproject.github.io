@@ -2,7 +2,7 @@ import pandas as pd
 import os
 
 # Tenzing directory
-csv_export_url = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vT_IaXiYtB3iAmtDZ_XiQKrToRkxOlkXNAeNU2SIT_J9PxvsQyptga6Gg9c8mSvDZpwY6d8skswIQYh/pub?output=csv'
+csv_export_url = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vT_IaXiYtB3iAmtDZ_XiQKrToRkxOlkXNAeNU2SIT_J9PxvsQyptga6Gg9c8mSvDZpwY6d8skswIQYh/pub?output=csv&gid=0'
 
 # Use pandas to read the CSV
 df = pd.read_csv(csv_export_url)
@@ -30,17 +30,24 @@ def concatenate_true_columns(row, columns):
     # Filter the columns that have a TRUE value
     true_columns = [col for col in columns if row[col]]
     # Concatenate them with 'and' between the penultimate and last
-    return ', '.join(true_columns[:-1]) + (' and ' if len(true_columns) > 1 else '') + true_columns[-1]
+    return ', *'.join(true_columns[:-1]) + ('* and *' if len(true_columns) > 1 else '') + true_columns[-1] + '*'
+
+
 
 # List of column names to check for TRUE values
-columns_to_check = [
-    'Conceptualization', 'Data curation', 'Formal analysis',
-    'Funding acquisition', 'Investigation', 'Methodology',
-    'Project administration', 'Resources', 'Software',
-    'Supervision', 'Validation', 'Visualization',
-    'Writing - original draft', 'Writing - review & editing'
-]
+fields_url = "https://docs.google.com/spreadsheets/d/e/2PACX-1vT_IaXiYtB3iAmtDZ_XiQKrToRkxOlkXNAeNU2SIT_J9PxvsQyptga6Gg9c8mSvDZpwY6d8skswIQYh/pub?output=csv&gid=277271370"
+column_mappings = pd.read_csv(fields_url)
 
+# Extracting Column A (Fields) as columns_to_check
+columns_to_check = column_mappings['Fields'].tolist()
+
+# Renaming columns in the dataframe based on Column B (Rename)
+rename_dict = column_mappings.set_index('Fields')['Rename'].to_dict()
+merged_data.rename(columns=rename_dict, inplace=True)
+
+# Filtering rows based on the updated columns_to_check list
+# Note: columns_to_check needs to be updated to the renamed columns for the filter to work correctly
+columns_to_check = [rename_dict[col] for col in columns_to_check if col in rename_dict]
 merged_data = merged_data[merged_data[columns_to_check].any(axis=1)]
 
 # Apply the function to each row
