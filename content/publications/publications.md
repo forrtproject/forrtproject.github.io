@@ -241,11 +241,21 @@ The **<font style="color:#0e2a38">preprint</font>** can [be found here (osf.io/b
 ***
 <br>
 
+📄 For the Official PLoS Blog, on [creating a comprehensive, dynamic database cataloging scientific claims and subsequent replication attempts across various disciplines of social, cognitive, and behavioral sciences](https://theplosblog.plos.org/2024/02/unveiling-the-truth-in-science-the-quest-for-reliable-knowledge/).
+
+{{< spoiler text= "Bibliographic Reference" >}} 
+
+Azevedo, F., Hartmann, H., Röseler, L., Wallrich, L., & Micheli, L. (2024, February 15). Unveiling the Truth in Science: The Quest for Reliable Knowledge. The Official PLOS Blog. https://theplosblog.plos.org/2024/02/unveiling-the-truth-in-science-the-quest-for-reliable-knowledge/
+
+{{< /spoiler >}}
+
+<br>
+
 📄 For the ***Observer***, of the Association for Psychological Science, on [Navigating Academia as Neurodivergent Researchers](https://www.psychologicalscience.org/observer/gs-navigating-academia-as-neurodivergent-researchers).
 
 {{< spoiler text= "Bibliographic Reference" >}} 
 
-Azevedo, F., Middleton, S., Mai Phan, J., Kapp, S., Gourdon-Kanhukamwe, A., Iley, B., Elsherif, M., & Shaw, J. J. (2022). Navigating Academia as Neurodivergent Researchers: Promoting Neurodiversity Within Open Scholarship. APS Observer.
+Azevedo, F., Middleton, S., Mai Phan, J., Kapp, S., Gourdon-Kanhukamwe, A., Iley, B., Elsherif, M., & Shaw, J. J. (2022). Navigating Academia as Neurodivergent Researchers: Promoting Neurodiversity Within Open Scholarship. APS Observer. https://www.psychologicalscience.org/observer/gs-navigating-academia-as-neurodivergent-researchers
 
 {{< /spoiler >}}
 
@@ -255,17 +265,17 @@ Azevedo, F., Middleton, S., Mai Phan, J., Kapp, S., Gourdon-Kanhukamwe, A., Iley
 
 {{< spoiler text= "Bibliographic Reference" >}} 
 
-Azevedo, F., Baum, M., Hartmann, H., Micheli, L., Spitzer, L., & Wingen, T. (2022). What is "Open Science"? And why does it need a glossary? (Was ist „Offene Wissenschaft”? Und warum braucht sie ein Wörterbuch?). In-Mind Magazine.
+Azevedo, F., Baum, M., Hartmann, H., Micheli, L., Spitzer, L., & Wingen, T. (2022). What is "Open Science"? And why does it need a glossary? (Was ist „Offene Wissenschaft”? Und warum braucht sie ein Wörterbuch?). In-Mind Magazine. https://de.in-mind.org/blog/post/was-ist-offene-wissenschaft-und-warum-braucht-sie-ein-woerterbuch
 
 {{< /spoiler >}}
 
 <br>
 
-📜 For the ***Center of Open Science*** Blog, on [Integrating Open and Reproducible Science Principles into Higher Education](https://www.cos.io/blog/educating-in-the-open-scholarship-eara).
+📜 For the ***Center of Open Science Blog***, on [Integrating Open and Reproducible Science Principles into Higher Education](https://www.cos.io/blog/educating-in-the-open-scholarship-eara).
 
 {{< spoiler text= "Bibliographic Reference" >}} 
 
-Azevedo, F. (2022). Educating in the Open Scholarship Era: Integrating Open and Reproducible Science Principles into Higher Education. Center for Open Science (COS).
+Azevedo, F. (2022). Educating in the Open Scholarship Era: Integrating Open and Reproducible Science Principles into Higher Education. Center for Open Science (COS). https://www.cos.io/blog/educating-in-the-open-scholarship-eara
 
 {{< /spoiler >}}
 
