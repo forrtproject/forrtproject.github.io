@@ -85,6 +85,8 @@ Each has suitable context: (e.g., entry-level/undergraduate/postgraduate), total
 1. [Open Data and Qualitative Research](https://osf.io/nyfqx/)
 1. [Diversity and inclusion in (br)open science](https://osf.io/r6qsw/)
 1. [Differentiating between correlation vs causation](https://osf.io/fvnj5)
+1. [Implicit Bias and Normative Science](https://msgrose-hodge.github.io/ND/implicitbias.html)
+
 
 We hope to keep producing more Lesson Plans, so please check this space. Our community is working on this ["Table of Activities"](https://docs.google.com/spreadsheets/d/1LGdBFlOCFqyfV7NUx11oUjkqR-aVZpWVGCn8RTiQQuk/edit#gid=0) to which you can add your own ideas (see how to contribute below) and help us empower educators and stakeholders with high quality and accessible lesson plans (and educational materials) to accelerate institutional change towards the integration of open and reproducible science into Higher Education curricula!
 
