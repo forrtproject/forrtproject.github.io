@@ -46,8 +46,8 @@
   parent = "about"
 
 [[main]]
-  name = "Contributions"  # A link title for your page.
-  url = "/contributions"  # The URL of your page.
+  name = "Contributors"  # A link title for your page.
+  url = "/contributors"  # The URL of your page.
   weight = 15  # The position of your page in the menu.
   parent = "about"
 

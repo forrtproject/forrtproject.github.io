@@ -30,14 +30,14 @@ jobs:
       run: python scripts/forrt_contribs/tenzing.py
 
     - name: Move tenzing.md
-      run: mv scripts/forrt_contribs/tenzing.md content/contributions/tenzing.md
+      run: mv scripts/forrt_contribs/tenzing.md content/contributors/tenzing.md
 
     - name: Commit changes
       run: |
         git config --global user.email "github-actions@github.com"
         git config --global user.name "GitHub Actions"
         git add --all
-        git commit -m "Daily update" -a || echo "No changes to commit"
+        git commit -m "Daily contributors update" -a || echo "No changes to commit"
 
     - name: Update Tenzing_temp branch
       run: |
