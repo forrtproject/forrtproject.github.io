@@ -37,8 +37,8 @@ jobs:
       # Always use Tenzing from Tenzing_temp branch, as that will be most recent
       - name: Checkout specific file from Tenzing_temp
         run: |
-          git fetch origin Tenzing_temp:content/contributions/tenzing.md --depth=1
-          git checkout FETCH_HEAD -- content/contributions/tenzing.md
+          git fetch origin Tenzing_temp:content/contributors/tenzing.md --depth=1
+          git checkout FETCH_HEAD -- content/contributors/tenzing.md
 
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v2
