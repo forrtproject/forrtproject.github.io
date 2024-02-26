@@ -55,7 +55,7 @@ subtitle = ""
 
 <center>
 
-# Publications, Preprints, Policy Briefs & op-eds
+# Publications, Preprints, & Policy Briefs & Op-Eds
 
 </center>
 
@@ -237,11 +237,11 @@ The **<font style="color:#0e2a38">preprint</font>** can [be found here (osf.io/b
 <br><br>
 <br><br>
 
-## op-ed*s* 
+## Op-Eds and Other Media 
 ***
 <br>
 
-📄 For the Official PLoS Blog, on [creating a comprehensive, dynamic database cataloging scientific claims and subsequent replication attempts across various disciplines of social, cognitive, and behavioral sciences](https://theplosblog.plos.org/2024/02/unveiling-the-truth-in-science-the-quest-for-reliable-knowledge/).
+📄 For the ***Official PLoS Blog***, on [creating a comprehensive, dynamic database cataloging scientific claims and subsequent replication attempts across various disciplines of social, cognitive, and behavioral sciences](https://theplosblog.plos.org/2024/02/unveiling-the-truth-in-science-the-quest-for-reliable-knowledge/).
 
 {{< spoiler text= "Bibliographic Reference" >}} 
 
