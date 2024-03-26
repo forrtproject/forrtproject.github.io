@@ -1,0 +1,49 @@
+{{- define "main" -}}
+
+<article class="article">    
+<div class="credit-container">
+    {{ .Content }}
+</div>
+<!-- contributors layout -->
+  <article class="article">
+    <div class="credit-container">
+      <h1 class="mt-5">{{ .Title }}</h1>
+      
+      <section class="my-4">
+        <h2>Contributor Information</h2>
+        <ul class="list-group">
+          <li class="list-group-item"><strong>Name:</strong> {{ .Params.name }}</li>
+          <li class="list-group-item"><strong>ORCID:</strong> <a href="{{ .Params.orcid }}" target="_blank">{{ .Params.orcid }}</a></li>
+          <li class="list-group-item"><strong>Twitter:</strong> <a href="{{ .Params.twitter }}" target="_blank">{{ .Params.twitter }}</a></li>
+          <li class="list-group-item"><strong>Github:</strong> <a href="{{ .Params.github }}" target="_blank">{{ .Params.github }}</a></li>
+        </ul>
+      </section>
+      
+      <section class="my-4">
+        <h2>Projects and Contributions</h2>
+        <div class="row row-cols-1 row-cols-md-4">
+          {{ range .Params.projects }}
+            <div class="col mb-4">
+              <div class="card flex flex-wrap" style="width: 13rem;">
+                <div class="card-body">
+                  <h3 class="card-title">{{ .name }}</h3> - Contributions:
+                  <ul>
+                    {{ range .contributions }}
+                      <li>{{ .type }}</li>
+                    {{ end }}
+                  </ul>
+                </div>
+              </div>
+            </div>
+          {{ end }}
+        </div>
+      </section>
+      
+    </div>
+  </article>
+
+
+
+</article>
+
+{{- end -}}

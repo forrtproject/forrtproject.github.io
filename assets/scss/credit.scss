@@ -1,0 +1,36 @@
+
+// .article-container {
+//   max-width: 1200px;
+//   padding: 0 20px 0 20px;
+//   margin: 0 auto 0 auto;
+// }
+
+.cont {
+  font-size:15px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem; // Adjust the gap as needed
+}
+
+.card {
+  width: calc(15% - 1rem); // 4 cards per row, subtracting the gap
+}
+.card-body {
+    padding-top: 0rem !important;
+}
+
+@media (max-width: 768px) {
+  .card {
+    width: calc(25% - 1rem); // 2 cards per row on smaller screens
+  }
+}
+
+@media (max-width: 640px) {
+  .cont{
+    justify-items: center;
+  }
+  .card {
+    width: 60%; // 1 card per row on mobile screens
+  }
+}
+
