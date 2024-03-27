@@ -1,6 +1,7 @@
 ---
 title: COMMUNITY PSYCHOLOGY RESPECT FOR DIVERSITY
 subtitle: Diversity as one of the core values of Open Science
+url: forrt/nd/community_psychology-diversity/
 ---
 
 [LEAVE FEEDBACK AND LOOK AT THE LESSON PLAN HERE](https://docs.google.com/document/d/1UJYUTK_zbcoJTt6DjRQVrjvnfa6quCnqfYCEV2HtcDM/edit?usp=sharing)

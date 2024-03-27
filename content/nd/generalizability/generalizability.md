@@ -1,6 +1,7 @@
 ---
 title: The Generalizability Crisis
 subtitle: Research Methods
+url: forrt/nd/generalizability/
 ---
 
 **The Generalizability Crisis** 

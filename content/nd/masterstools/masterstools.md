@@ -1,8 +1,8 @@
 ---
 title: OPPRESSION AND POWER
 subtitle: Focus on critical reading skills and discussion
+url: forrt/nd/masterstools/
 ---
-
 
 #uniqueBody { margin: 40px; width: 100% line-height: 1.5em }
 
