@@ -1,6 +1,7 @@
 ---
 title: IMPLICIT BIAS AND NORMATIVE SCIENCE
 subtitle: Deficit approaches to left-handedness and neurodivergence in scientific papers
+url: /forrt/nd/implicit_bias/
 ---
 
 

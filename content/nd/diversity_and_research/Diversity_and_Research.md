@@ -1,6 +1,7 @@
 ---
 title: DIVERSITY IN RESEARCH AND OPEN SCIENCE
 subtitle: Diversity as one of the core values of Open Science
+url: forrt/nd/diversity_and_research.md/
 ---
 
 
