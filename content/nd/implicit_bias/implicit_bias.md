@@ -1,15 +1,9 @@
 ---
 title: IMPLICIT BIAS AND NORMATIVE SCIENCE
-subtitle: Deficit approaches to left-handedness and neurodivergence in scientific papers
 url: /forrt/nd/implicit_bias/
 ---
 
-
-#uniqueBody { margin: 40px; width: 100% line-height: 1.5em }
-
 [LEAVE FEEDBACK HERE](https://docs.google.com/document/d/1UJYUTK_zbcoJTt6DjRQVrjvnfa6quCnqfYCEV2HtcDM/edit?usp=sharing)
-
-**IMPLICIT BIAS AND NORMATIVE SCIENCE**  
 
 Deficit approaches to left-handedness and neurodivergence in scientific papers
 
@@ -17,11 +11,11 @@ Focus on critical reading skills
 
 **Objectives:**
 
-·      to recognise implicit bias in academic texts
+· to recognise implicit bias in academic texts
 
-·      to reflect on normative science and its impact
+· to reflect on normative science and its impact
 
-·      to discuss how OS values and participatory research could promote discussions on epistemological bias and influence existing narratives.
+· to discuss how OS values and participatory research could promote discussions on epistemological bias and influence existing narratives.
 
 [Click to see reading list](#reading-list)
 
@@ -33,12 +27,11 @@ _Are you familiar with the neurodiversity paradigm?_
 
 _What is a neurotype?_ 
 
-img { width: 300px; height: 200px; float: left; margin-right: 40px; } .clearfix { clear: both; } ![left hand holding a pen](lefthand.png) ![infinity symbol connected to the neurodiversity movement](neurodiversity.png)
+![left hand holding a pen](../images/lefthand.png)
+ ![infinity symbol connected to the neurodiversity movement](../images/neurodiversity.png)
 
 Did you know that the word "sinister" comes from Latin "left"? This is likely caused by the dominance of right-handedness in human population and bias against the left-handed minority in the past.
 
-  
-  
 
 **Activity 1 Critical reading - identifying implicit bias**
 
@@ -55,7 +48,6 @@ TIP: click on the question marks on both sides of the text to see hints or click
 Click on the button below to see statements about the text. Are they true or false? Click on each statement to reveal the answer.
 
   
-
 decide if the statements are true
 
 **Participatory research**
@@ -90,13 +82,8 @@ _What effect, do you think, this had on the public perceptions of left handednes
 
 _Can you think of other areas where implicit bias perpetuated in language (has) had a detrimental impact on public perceptions? What groups of people might have been affected?_
 
-  
-
-  
 
 **Activity 3 Neurodiversity paradigm: definition and introduction**
-
-  
 
 _Click on the link below, which will open the following publication: Azevedo, F., Middleton, S., Mai Phan, J., Kapp, S. K., Gourdon-Kanhukamwe, A., Iley, B., Elsherif, M. M., & Shaw, J. J. (2022). Navigating academia as neurodivergent researchers: promoting neurodiversity within open scholarship. Observer. Find a definition of neurodiversity and neurodivergence, then look at the tweet below and the following questions._
 
