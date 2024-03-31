@@ -22,7 +22,7 @@ on:
 
 jobs:
   deploy:
-    runs-on: ubuntu-22  .04
+    runs-on: ubuntu-22.04
     env:
       BRANCH_TO_CHECKOUT: master # default branch
 
