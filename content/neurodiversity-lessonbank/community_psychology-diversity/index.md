@@ -1,7 +1,19 @@
 ---
 title: COMMUNITY PSYCHOLOGY RESPECT FOR DIVERSITY
 subtitle: Diversity as one of the core values of Open Science
-url: forrt/nd/community_psychology-diversity/
+authors: ['By Magdalena Grose-Hodge']
+tags: [Lesson Bank]
+date: 2023-10-03
+# View.
+#   1 = List
+#   2 = Compact
+#   3 = Card
+view: 2
+
+# Optional header image (relative to `static/media/` folder).
+header:
+  caption: ""
+  image: ""
 ---
 
 [LEAVE FEEDBACK AND LOOK AT THE LESSON PLAN HERE](https://docs.google.com/document/d/1UJYUTK_zbcoJTt6DjRQVrjvnfa6quCnqfYCEV2HtcDM/edit?usp=sharing)
@@ -12,11 +24,9 @@ Diversity as one of the core values of Open Science
 
 **Objectives:**
 
-·      understand cultural humility as an approach to diversity
-
-·      define and discuss dimensions of diversity
-
-·      understand privilege and intersectionality and reflect on own privilege using the wheel of privilege
+- understand cultural humility as an approach to diversity
+- define and discuss dimensions of diversity
+- understand privilege and intersectionality and reflect on own privilege using the wheel of privilege
 
 [Click to see reading list and licenses](#reading-list)
 
@@ -28,12 +38,9 @@ _What do you understand by diversity in science?_ 
 
 _What controversies are presently discussed that relate to diversity and the field of psychology?_
 
-img { width: 400px; height: 400px; float: left; margin-right: 40px; } .clearfix { clear: both; } ![colourful handprints representing diversity](handprints-2754263_1280.png)
+![colourful handprints representing diversity](../images/handprints-2754263_1280.png)
 
 Focus on diversity in psychology can be traced back to the 1930s and Vygotsky, the pioneer of Sociocultural Approach
-
-  
-  
 
 **Activity 1 Respect for Diversity - Introduction**
 
@@ -43,31 +50,25 @@ Read the introduction to diversity below and see if you can answer the questions
 
 click to see the source
 
-a)     What do you know about Cultural Competence and Cultural Humility?
+a) What do you know about Cultural Competence and Cultural Humility?
 
-b)     What dimensions of diversity can you think of?
+b) What dimensions of diversity can you think of?
 
-c)     There are some more terms and concepts related to the topic of diversity within communities. Can you explain and discuss these with another student or write down your ideas in points?
+c) There are some more terms and concepts related to the topic of diversity within communities. Can you explain and discuss these with another student or write down your ideas in points?
 
-·      privilege
-
-·      white privilege
-
-·      intersectionality
-
-  
+- privilege
+- white privilege
+- intersectionality
 
 **Activity 2 Respect for Diversity: Jigsaw reading or poster**
 
 Now choose the task you prefer to get a better understanding of the concepts presented above. Bothe tasks will ask you to refer to the source introduced in the previous chapter. Read the instructions, decide on the task and click the button underneath the instructions to see the text.
 
-  
-
-JIGSAW READING (group activity)
+**JIGSAW READING (group activity)**
 
 a) In groups, decide who is going to focus on the points below while skimming through the text in order to summarise it to the rest of the group. Once you decide how to divide the sections, spend 10-15 minutes reading through the relevant parts and preparing to summarise the concepts to your students.
 
-CREATING A MIND MAP OR A POSTER
+**CREATING A MIND MAP OR A POSTER**
 
 b) Skim through the chapter and create a mind map or a poster with dimensions of diversity and quick explanations. Then add information about cultural humility, privilege and intersectionality. Share the results of your work with another student.
 
@@ -87,7 +88,6 @@ TEXT
 
 Reflect on how you see or identify yourself in relation to these dimensions. Which groups do you identify with? Have you heard the phrase "check your privilege"? Have you thought of intersectionality and privilege in relation to yourself? FORRT has developed a tool which allows everyone in academia to reflect on their privilege. Look at the video below, in which Bethan Iley, one of the members of FORRT explains the concept.
 
-  
 
 **Would you like to try the wheel?**
 
@@ -98,7 +98,6 @@ Reflect on how you see or identify yourself in relation to these dimensions. Whi
 
 **How to use the wheel:** Look at the dimensions of privilege on the outside of the circle and choose the option from the inner circle that describes your situation best. For every answer in the smallest circle (the closest to the middle of the wheel), give yourself 1 point, then 2 points for the option in a slightly bigger circle and finally 3 points of the option closest to the outside of the circle. Share your result with a friend or keep it to yourself. Do you think this tool is useful? Is it important to check our privilege? How can this make you more mindful of other’s experiences?
 
-  
 
 **Reading:**
 
@@ -110,4 +109,4 @@ Flavio Azevedo, Sara Middleton, Jenny Mai Phan, Steven Kapp, Amélie Gourdon-Kan
 
 Elsherif, M. M., Middleton, S. L., Phan, J. M., Azevedo, F., Iley, B. J., Grose-Hodge, M., … Dokovova, M. (2022, June 20). Bridging Neurodiversity and Open Scholarship: How Shared Values Can Guide Best Practices for Research Integrity, Social Justice, and Principled Education.
 
-Footer © Magdalena Grose-Hodge for FORRT (Framework of Open and Reproducible Research Training) About ND/Community Psychology - Diversity.html at main · MSGrose-Hodge/ND
+Footer © Magdalena Grose-Hodge for FORRT (Framework of Open and Reproducible Research Training) About ND/Community Psychology - Diversity at main · MSGrose-Hodge/ND

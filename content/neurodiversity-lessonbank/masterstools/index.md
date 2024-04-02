@@ -1,10 +1,20 @@
 ---
 title: OPPRESSION AND POWER
 subtitle: Focus on critical reading skills and discussion
-url: forrt/nd/masterstools/
----
+authors: ['By Magdalena Grose-Hodge']
+tags: [Lesson Bank]
+date: 2023-10-03
+# View.
+#   1 = List
+#   2 = Compact
+#   3 = Card
+view: 2
 
-#uniqueBody { margin: 40px; width: 100% line-height: 1.5em }
+# Optional header image (relative to `static/media/` folder).
+header:
+  caption: ""
+  image: ""
+---
 
 **OPPRESSION AND POWER**  
 
@@ -12,27 +22,24 @@ Focus on critical reading skills and discussion
 
 **Objectives:**
 
-·      to reflect on critical gender and neurodiversity theories
+- to reflect on critical gender and neurodiversity theories
 
-·      to read academic texts critically and synthesise information
+- to read academic texts critically and synthesise information
 
-·      to discuss issues related to gender and neuroptype discrimination
+- to discuss issues related to gender and neuroptype discrimination
 
-![hands breaking hancuffs](freedom-1886402_640.jpg)
+![hands breaking hancuffs](../images/freedom-1886402_640.jpg)
 
-**Introduction and background reading** 
+## **Introduction and background reading** 
 
 We strongly recommend reading chapter 9 on Oppression from the source below before engaging with this lesson.
 
 Jason, Leonard A.; Glantsman, Olya; O'Brien, Jack F.; and Ramian, Kaitlyn N., "Introduction to Community Psychology: Becoming an Agent of Change" (2019). _College of Science and Health Full Text Publications_. 1. https://via.library.depaul.edu/cshtextbooks/1Lesson  
 
-  
 
 **Activity 1** 
 
 Read and discuss the following citations:  
-
-  
 
 _1\. Psychology of oppression reveals that oppression is not always perceptible and repellant. It can be disguised and beguiling. People do not always know they are oppressed. Sometimes they have to be educated about their oppression. The reason is that oppression stunts people’s critical, rational, analytical, and probing capabilities. Normative oppression also becomes taken for granted and mundane and therefore imperceptible_ (Ratner, 2014).
 
@@ -45,8 +52,6 @@ _2\. People cannot reject the system of domination without rejecting \[part of\]
 _Now read the short essay written by Audre Lorde in 1984. What does she mean when she says that the master's tools will never dismantle the master's house?_
 
 [Lorde, Audre. “The Master’s Tools Will Never Dismantle the Master’s House.” 1984. Sister Outsider: Essays and Speeches. Ed. Berkeley, CA: Crossing Press. 110- 114. 2007. Print.](https://collectiveliberation.org/wp-content/uploads/2013/01/Lorde_The_Masters_Tools.pdf)  
-
-   
 
   You can listen to the essay here:
 
