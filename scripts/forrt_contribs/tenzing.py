@@ -52,7 +52,7 @@ if columns_dropped:
 merged_data = merged_data[merged_data[columns_present].any(axis=1)]
 
 # Apply the function to each row
-merged_data['Contributions'] = merged_data.apply(concatenate_true_columns, axis=1, columns=columns_to_check)
+merged_data['Contributions'] = merged_data.apply(concatenate_true_columns, axis=1, columns=columns_present)
 merged_data = merged_data.sort_values(by='Surname')
 
 # Function to format the full name
