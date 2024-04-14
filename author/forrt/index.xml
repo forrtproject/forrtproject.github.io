@@ -92,7 +92,39 @@
 &lt;p>Anna A. Meier (she/her/hers) is Assistant Professor in the School of Politics and International Relations at the University of Nottingham. She is a committed advocate for graduate students, solidarity-building, and collective care in higher education. Email:
 &lt;a href="mailto:anna.meier@nottingham.ac.uk">anna.meier@nottingham.ac.uk&lt;/a>; Twitter:
 &lt;a href="https://twitter.com/AnnaMeierPS" target="_blank" rel="noopener">@AnnaMeierPS&lt;/a>; website:
-&lt;a href="http://annameier.net/" target="_blank" rel="noopener">annameier.net&lt;/a>.&lt;/p></description></item><item><title>A Student’s Guide to Open Science: Using the Replication Crisis to Reform Psychology</title><link>https://forrt.org/educators-corner/014-students-guide-to-open-science/</link><pubDate>Thu, 09 Feb 2023 01:44:40 -0400</pubDate><guid>https://forrt.org/educators-corner/014-students-guide-to-open-science/</guid><description>&lt;br>
+&lt;a href="http://annameier.net/" target="_blank" rel="noopener">annameier.net&lt;/a>.&lt;/p></description></item><item><title>Workshop:Neurodiversify your Curriculum</title><link>https://forrt.org/talk/neurodiversify_your_curriculum/</link><pubDate>Fri, 10 Mar 2023 00:00:00 +0000</pubDate><guid>https://forrt.org/talk/neurodiversify_your_curriculum/</guid><description>&lt;h2 id="watch-the-recording">Watch the recording:&lt;/h2>
+&lt;div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+&lt;iframe src="https://www.youtube.com/embed/oMkF8DiAolQ" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video">&lt;/iframe>
+&lt;/div>
+&lt;h2 id="look-at-the-presentations-slides">Look at the presentations slides:&lt;/h2>
+&lt;style>
+.embed-responsive {
+position:relative;
+height:100%;
+}
+.embed-responsive iframe {
+position:absolute;
+height:100%;
+}
+&lt;/style>
+&lt;link href="https://mfr.osf.io/static/css/mfr.css" media="all" rel="stylesheet">
+&lt;div id="mfrIframe" class="mfr mfr-file">&lt;/div>
+&lt;script src="https://mfr.osf.io/static/js/mfr.js">&lt;/script>
+&lt;script>
+function renderMfr() {
+var mfrRender = new mfr.Render("mfrIframe", "https://mfr.osf.io/render?url=https://osf.io/download/yu6ch/?direct%26mode=render");
+}
+if (window.$) {
+renderMfr();
+} else {
+var jq = document.createElement('script');
+document.head.appendChild(jq);
+jq.onload = function() {
+renderMfr();
+}
+jq.src = 'http://code.jquery.com/jquery-1.11.2.min.js';
+}
+&lt;/script></description></item><item><title>A Student’s Guide to Open Science: Using the Replication Crisis to Reform Psychology</title><link>https://forrt.org/educators-corner/014-students-guide-to-open-science/</link><pubDate>Thu, 09 Feb 2023 01:44:40 -0400</pubDate><guid>https://forrt.org/educators-corner/014-students-guide-to-open-science/</guid><description>&lt;br>
 &lt;h2 id="a-child-of-the-replication-crisis">A child of the replication crisis&lt;/h2>
 &lt;p>When Open University Press approached me to write a book on the “replication crisis in psychology”, I was filled with excitement as I knew that discussion of replication issues is scarce within teaching and psychology textbooks. If they don’t teach it, then I could! But I also knew it had to be more than the so-called ‘crisis’; a term associated with pessimism. It had to be about how far the discipline of psychology has come, and the opportunities that open research can bring to reform research training and the wider culture.&lt;/p>
 &lt;p>I am a ‘child of the replication crisis’. I completed my PhD in 2016 on &amp;lsquo;stereotype threat&amp;rsquo;; an influential phenomenon that suggests negative societal stereotypes deplete performance. But I got stuck time and time again trying to replicate these classic effects. I felt like a failure. I wish I had known what I know now: that the experiences I was facing were more common than what was gleaned from the published literature. Science is not perfect and nor should it be, but this was not what I was taught through my undergraduate education. So I wrote a book – &lt;em>A Student’s Guide to Open Science&lt;/em> – for my younger self. In other words, for the talented and passionate students studying Psychology. By knowing our history – the good parts but also the messy parts – our students represent the grassroots that can make this discipline the best it can be!&lt;/p>

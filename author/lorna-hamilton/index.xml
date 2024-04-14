@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Lorna Hamilton | FORRT - Framework for Open and Reproducible Research Training</title><link>https://forrt.org/author/lorna-hamilton/</link><atom:link href="https://forrt.org/author/lorna-hamilton/index.xml" rel="self" type="application/rss+xml"/><description>Lorna Hamilton</description><generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© 2024 - FORRT > Framework for Open and Reproducible Research Training</copyright><lastBuildDate>Fri, 10 Mar 2023 00:00:00 +0000</lastBuildDate><image><url>https://forrt.org/img/FORRT_banner.svg</url><title>Lorna Hamilton</title><link>https://forrt.org/author/lorna-hamilton/</link></image><item><title>Workshop:Neurodiversify your Curriculum</title><link>https://forrt.org/talk/neurodiversify_your_curriculum/</link><pubDate>Fri, 10 Mar 2023 00:00:00 +0000</pubDate><guid>https://forrt.org/talk/neurodiversify_your_curriculum/</guid><description>&lt;h2 id="watch-the-recording">Watch the recording:&lt;/h2>
+&lt;div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+&lt;iframe src="https://www.youtube.com/embed/oMkF8DiAolQ" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video">&lt;/iframe>
+&lt;/div>
+&lt;h2 id="look-at-the-presentations-slides">Look at the presentations slides:&lt;/h2>
+&lt;style>
+.embed-responsive {
+position:relative;
+height:100%;
+}
+.embed-responsive iframe {
+position:absolute;
+height:100%;
+}
+&lt;/style>
+&lt;link href="https://mfr.osf.io/static/css/mfr.css" media="all" rel="stylesheet">
+&lt;div id="mfrIframe" class="mfr mfr-file">&lt;/div>
+&lt;script src="https://mfr.osf.io/static/js/mfr.js">&lt;/script>
+&lt;script>
+function renderMfr() {
+var mfrRender = new mfr.Render("mfrIframe", "https://mfr.osf.io/render?url=https://osf.io/download/yu6ch/?direct%26mode=render");
+}
+if (window.$) {
+renderMfr();
+} else {
+var jq = document.createElement('script');
+document.head.appendChild(jq);
+jq.onload = function() {
+renderMfr();
+}
+jq.src = 'http://code.jquery.com/jquery-1.11.2.min.js';
+}
+&lt;/script></description></item></channel></rss>
