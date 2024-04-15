@@ -1,0 +1,27 @@
+name: Deploy Preview
+
+on:
+  pull_request:
+    types: [opened, synchronize]
+
+jobs:
+  deploy-preview:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+
+      - name: Setup Hugo
+        uses: peaceiris/actions-hugo@v2
+        with:
+          hugo-version: '0.92.2'
+
+      - name: Build and Deploy
+        run: |
+          hugo --gc --minify -b $DEPLOY_PRIME_URL
+          curl -X POST -H "Content-Type: application/json" -d '{"context": "deploy-preview"}' "https://api.netlify.com/api/v1/sites/14b7d153-85d1-479d-b19f-1843019d0908/deploys"
+        env:
+          #DEPLOY_PRIME_URL: ${{ secrets.DEPLOY_PRIME_URL }}
+          NETLIFY_SITE_ID: ${{ secrets.14b7d153-85d1-479d-b19f-1843019d0908 }}
+          #NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
