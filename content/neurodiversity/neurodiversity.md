@@ -235,13 +235,13 @@ We recommend this talk for educators and researchers who wish to integrate inter
 
 {{< /spoiler >}}
 
-### Neurodiversify Your Curriculum
+### [ Neurodiversify Your Curriculum](../neurodiversity-lessonbank)
 
 In 2023, members of Team Neurodiversity created a series of lesson plans and educational resources to help educators embed neurodiversity into their curriculum. These resources cover a wide range of diversity and open science topics.
 
 {{< spoiler text= "Find out more" >}} 
 
-  The resources can be accessed via [their mini-website](https://msgrose-hodge.github.io/ND/).
+  The resources can be accessed via [Neurodiversify your Curriculum Page](../neurodiversity-lessonbank).
 
   The lessons cover the following topics:
   * Lesson 1 & 2: Implicit bias
