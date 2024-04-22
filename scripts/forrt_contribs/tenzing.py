@@ -44,10 +44,15 @@ merged_data.rename(columns=rename_dict, inplace=True)
 # Filtering rows based on the updated columns_to_check list
 # Note: columns_to_check needs to be updated to the renamed columns for the filter to work correctly
 columns_to_check = [rename_dict[col] for col in columns_to_check if col in rename_dict]
-merged_data = merged_data[merged_data[columns_to_check].any(axis=1)]
+# Remove columns not present
+columns_present = [col for col in columns_to_check if col in merged_data.columns]
+columns_dropped = set(columns_to_check) - set(columns_present)
+if columns_dropped:
+    print(f"Note: The following columns were not found and thus ignored: {', '.join(columns_dropped)}")
+merged_data = merged_data[merged_data[columns_present].any(axis=1)]
 
 # Apply the function to each row
-merged_data['Contributions'] = merged_data.apply(concatenate_true_columns, axis=1, columns=columns_to_check)
+merged_data['Contributions'] = merged_data.apply(concatenate_true_columns, axis=1, columns=columns_present)
 merged_data = merged_data.sort_values(by='Surname')
 
 # Function to format the full name
