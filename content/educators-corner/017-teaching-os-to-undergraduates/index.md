@@ -1,7 +1,7 @@
 ---
 # Documentation: https://sourcethemes.com/academic/docs/managing-content/
 
-title: "Open Science 101"
+title: "Course on Open Science 101"
 subtitle: "Introducing open science and research integrity to undergraduates"
 summary: "We present a set of 16 lectures and paired tutorials that introduce students to the concepts of open science. Starting from the basics of experimental psychology, we cover concepts of open research from study preregistration and open data to the darker side of research, such as questionable research practices and fraud. Students will learn how to apply open research practices in their own work, as well as learning to identify when research sometimes falls short of the standards we expect."
 authors: ['Dermot Lynott, FORRT']
@@ -51,6 +51,29 @@ Because the courses assume no knowledge of the research process, the course firs
 
 We then turn to some of the thornier questions science and scientists have been faced with: How do we determine what is true in science? How do we know which theories are well supported by evidence and which ones are not? How can we tell if researchers are trying to pull the wool over our eyes? To start to think about these questions we look at learning how to spot and avoid questionable research practices, in favour of practices that are open, transparent and reproducible. In this way, we think about some of the problems faced by researchers, such as cognitive biases, researcher flexibility in reporting outcomes, and even fraud. We ask how we can assess research findings in the face of such problems?
 
+-----------------------------------------------------------------------------------
+| PSYC123                                  | PSYC124                              |
+|------------------------------------------|--------------------------------------|
+| Introduction and Scientific Method       | Introduction to False positive psychology |
+| Measurement (Distribution/Reliability/Validity) | Questionable Research Practices      |
+| Experimental Designs                     | Biases and incentive structures      |
+| Confounds and Extraneous                 | Introduction to meta-analysis        |
+| Traditional vs Open Science              | Scientific Fraud                      |
+| Study Preregistration                    | Errors and error detection           |
+| Replication                              | Principles of Open Data Sharing      |
+| Sample Size                              | Spotlight on Developmental Science   |
+-----------------------------------------------------------------------------------
+
+These modules will show students how scientific practices in the field have changed rapidly in recent years, with renewed interest in openness and transparency. While we focus on a range of problems that impact our interpretation of research findings, students will also develop an understanding of tools that can help overcome and prevent these issues from arising (e.g., study preregistration, sharing of data, meta-analyses etc.).
+
+For tutors and instructors, lecture slides were designed to be covered in about 50 minutes, and the labs can also be completed in around 50 minutes, although some will take a little longer. It’s also worth noting that these modules don't involve any statistical programming, focussing more on open research concepts, but can (and are) taught alongside modules more focussed on learning statistics through R. There is also some flexibility in the order that topics can be delivered. For example, Meta-Analysis is a standalone topic that could be moved later in the course, or handled separately as part of a more advanced research methods module.
+
+The course content has an open licence (CC BY), so we encourage instructors to use and modify the content to meet their needs. For instructors, answer sheets are available for the majority of lab exercises, so please just email if you'd like a copy. If you do use any of the materials, we would love to hear about it! Indeed, we would be grateful for any feedback you have to offer. 
+
+Course content is available on the Open Science Framework, so to download everything go [here](https://osf.io/km34v/wiki/PSYC123-Research%20Integrity%20and%20Open%20Science%201/) for **PSYC123**, and [here](https://osf.io/km34v/wiki/PSYC124-Research%20Integrity%20and%20Open%20Science%202/) for **PSYC124**. 
 
 
 <br >
+
+#### Contact information: 
+Dr. Dermot Lynott, Department of Psychology, Maynooth University (Email: dermot.lynott@mu.ie; [Homepage](https://www.maynoothuniversity.ie/people/dermot-lynott).)
