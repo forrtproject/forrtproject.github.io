@@ -1,4 +1,4 @@
----
+<!-- ---
 # Documentation: https://sourcethemes.com/academic/docs/managing-content/
 
 title: "Course on Open Science 101"
@@ -7,8 +7,8 @@ summary: "We present a set of 16 lectures and paired tutorials that introduce st
 authors: ['Dermot Lynott, FORRT']
 tags: []
 categories: []
-date: 2024-05-09T01:44:40-04:00
-lastmod: 2024-05-09T01:45:40-04:00
+date: 2024-05-10T00:50:51-04:00
+lastmod: 2024-05-10T15:14:10-04:00
 featured: true
 draft: false
 
@@ -76,4 +76,4 @@ Course content is available on the Open Science Framework, so to download everyt
 <br >
 
 #### Contact information: 
-Dr. Dermot Lynott, Department of Psychology, Maynooth University (Email: dermot.lynott@mu.ie; [Homepage](https://www.maynoothuniversity.ie/people/dermot-lynott).)
+Dr. Dermot Lynott, Department of Psychology, Maynooth University (Email: dermot.lynott@mu.ie; [Homepage](https://www.maynoothuniversity.ie/people/dermot-lynott).) -->
