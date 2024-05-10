@@ -78,7 +78,7 @@ Each has suitable context: (e.g., entry-level/undergraduate/postgraduate), total
 1. [Interpreting effect sizes and confidence intervals](https://osf.io/8jmbu/)
 1. [Registered Replication Report](https://osf.io/2znr4/)
 1. [How to be critical not cynical](https://osf.io/7qz38/)
-1. [Intro to Open Science lesson plan](https://osf.io/x3m9k/)
+1. [Intro to Open Science lesson plan](https://osf.io/d8ctf)
 1. [Understanding the replication crisis with app activities](https://osf.io/cwaqj/)
 1. [Dodgy papers](https://osf.io/hrzwj/)
 1. [Research paradigms and open science](https://osf.io/r8ymj/)
