@@ -7,8 +7,8 @@ summary: "We present a set of 16 lectures and paired tutorials that introduce st
 authors: ['Dermot Lynott, FORRT']
 tags: []
 categories: []
-date: 2024-05-09T01:44:40-04:00
-lastmod: 2024-05-09T01:45:40-04:00
+date: 2024-05-10T00:50:51-04:00
+lastmod: 2024-05-10T15:14:10-04:00
 featured: true
 draft: false
 
