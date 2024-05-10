@@ -3,9 +3,11 @@ import os
 
 # Tenzing directory
 csv_export_url = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vT_IaXiYtB3iAmtDZ_XiQKrToRkxOlkXNAeNU2SIT_J9PxvsQyptga6Gg9c8mSvDZpwY6d8skswIQYh/pub?output=csv&gid=0'
+extra_roles_url = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vSCsxHTnSSjYqhQSR2kT3gIYg82HiODjPat9y2TFPrZESYWxz4k8CZsOesXPD3C5dngZEGujtKmNZsa/pub?output=csv'
 
 # Use pandas to read the CSV
 df = pd.read_csv(csv_export_url)
+df_roles = pd.read_csv(extra_roles_url)
 
 # Assuming 'df' contains the index data with Tenzing Links
 all_data_frames = []
@@ -53,6 +55,28 @@ merged_data = merged_data[merged_data[columns_present].any(axis=1)]
 
 # Apply the function to each row
 merged_data['Contributions'] = merged_data.apply(concatenate_true_columns, axis=1, columns=columns_present)
+
+# Merge contributions with extra roles
+# Mapping of column names to Tenzing sheets
+rename_columns = {
+    'First name': 'First name',
+    'Middle name': 'Middle name',
+    'Surname': 'Surname',
+    'FORRT project(s)': 'Project Name',
+    'Role': 'Contributions',
+    'ORCID': 'ORCID iD'
+}
+df_roles.rename(columns=rename_columns, inplace=True)
+df_roles['special_role'] = True
+
+# Select only the columns needed for the final output
+selected_columns = ['Contributions', 'First name', 'Middle name', 'Surname', 'Project Name', 'Project URL', 'ORCID iD']
+merged_data = merged_data[selected_columns]
+merged_data['special_role'] = False
+# Assuming df_roles and df_other have the same columns and you want to add rows
+merged_data = pd.concat([df_roles, merged_data], axis=0)
+merged_data.reset_index(drop=True, inplace=True)
+
 merged_data = merged_data.sort_values(by='Surname')
 
 # Function to format the full name
@@ -79,10 +103,12 @@ def concatenate_contributions(group):
 
     # Format the full name once per group
     full_name = format_name(group.iloc[0])
+    group = group.sort_values(by='special_role', ascending=False)
+
     # Create the contributions string for each project
     contributions = [
-        f"{row['Project Name']} with {row['Contributions']}" if pd.isna(row['Project URL']) or row['Project URL'] == ''
-        else f"[{row['Project Name']}]({row['Project URL']}) with {row['Contributions']}"
+        f"{row['Project Name']} {('as' if row['special_role'] else 'with')} {row['Contributions']}" if pd.isna(row['Project URL']) or row['Project URL'] == ''
+        else f"[{row['Project Name']}]({row['Project URL']}) {('as' if row['special_role'] else 'with')} {row['Contributions']}"
         for _, row in group.iterrows()
     ]
 
@@ -112,7 +138,7 @@ def extract_orcid_id(value):
 merged_data['ORCID iD'] = merged_data['ORCID iD'].apply(extract_orcid_id)
 
 # Creating a new column for the concatenated name
-merged_data['Name'] = merged_data['First name'] + ' ' + merged_data['Surname']
+merged_data['Name'] = merged_data.apply(format_name, axis=1)
 
 # Apply the function to each group and create a summary DataFrame
 merged_data['original_order'] = range(len(merged_data))
