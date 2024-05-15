@@ -26,10 +26,16 @@ for project_name, url, project_url in zip(df['Project Name'], df['CSV Link'], df
 # Concatenate all data frames
 merged_data = pd.concat(all_data_frames, ignore_index=True)
 
+import pandas as pd
+
 def concatenate_true_columns(row, columns):
     true_columns = [col for col in columns if pd.notna(row[col]) and row[col]]
-    if 'Project Manager' in true_columns:
-        return 'as Project Manager and with ' + ', '.join(f'*{col}*' for col in true_columns if col != 'Project Manager')
+    if 'Project Managers' in true_columns:
+        other_columns = [f'*{col}*' for col in true_columns if col != 'Project Managers']
+        if other_columns:
+            return 'as Project Manager and with ' + ', '.join(other_columns[:-1]) + (' and ' if len(other_columns) > 1 else '') + other_columns[-1]
+        else:
+            return 'as Project Manager'
     else:
         return 'with ' + ', '.join(f'*{col}*' for col in true_columns[:-1]) + (' and ' if len(true_columns) > 1 else '') + f'*{true_columns[-1]}*'
 
