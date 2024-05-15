@@ -27,10 +27,11 @@ for project_name, url, project_url in zip(df['Project Name'], df['CSV Link'], df
 merged_data = pd.concat(all_data_frames, ignore_index=True)
 
 def concatenate_true_columns(row, columns):
-    # Filter the columns that have a TRUE value
-    true_columns = [col for col in columns if row[col]]
-    # Concatenate them with 'and' between the penultimate and last
-    return ', '.join(f'*{col}*' for col in true_columns[:-1]) + (' and ' if len(true_columns) > 1 else '') + f'*{true_columns[-1]}*'
+    true_columns = [col for col in columns if pd.notna(row[col]) and row[col]]
+    if 'Project Manager' in true_columns:
+        return 'as Project Manager and with ' + ', '.join(f'*{col}*' for col in true_columns if col != 'Project Manager')
+    else:
+        return 'with ' + ', '.join(f'*{col}*' for col in true_columns[:-1]) + (' and ' if len(true_columns) > 1 else '') + f'*{true_columns[-1]}*'
 
 # List of column names to check for TRUE values
 fields_url = "https://docs.google.com/spreadsheets/d/e/2PACX-1vT_IaXiYtB3iAmtDZ_XiQKrToRkxOlkXNAeNU2SIT_J9PxvsQyptga6Gg9c8mSvDZpwY6d8skswIQYh/pub?output=csv&gid=277271370"
@@ -64,7 +65,8 @@ rename_columns = {
     'Surname': 'Surname',
     'FORRT project(s)': 'Project Name',
     'Role': 'Contributions',
-    'ORCID': 'ORCID iD'
+    'ORCID': 'ORCID iD',
+    'URL': 'Project URL'
 }
 df_roles.rename(columns=rename_columns, inplace=True)
 df_roles['special_role'] = True
@@ -73,7 +75,7 @@ df_roles['special_role'] = True
 selected_columns = ['Contributions', 'First name', 'Middle name', 'Surname', 'Project Name', 'Project URL', 'ORCID iD']
 merged_data = merged_data[selected_columns]
 merged_data['special_role'] = False
-# Assuming df_roles and df_other have the same columns and you want to add rows
+
 merged_data = pd.concat([df_roles, merged_data], axis=0)
 merged_data.reset_index(drop=True, inplace=True)
 
@@ -108,7 +110,7 @@ def concatenate_contributions(group):
     # Create the contributions string for each project
     contributions = [
         f"{row['Project Name']} {('as' if row['special_role'] else 'with')} {row['Contributions']}" if pd.isna(row['Project URL']) or row['Project URL'] == ''
-        else f"[{row['Project Name']}]({row['Project URL']}) {('as' if row['special_role'] else 'with')} {row['Contributions']}"
+        else f"[{row['Project Name']}]({row['Project URL']}) {('as' if row['special_role'] else '')}{row['Contributions']}"
         for _, row in group.iterrows()
     ]
 
