@@ -109,8 +109,8 @@ def concatenate_contributions(group):
 
     # Create the contributions string for each project
     contributions = [
-        f"{row['Project Name']} {('as' if row['special_role'] else 'with')} {row['Contributions']}" if pd.isna(row['Project URL']) or row['Project URL'] == ''
-        else f"[{row['Project Name']}]({row['Project URL']}) {('as' if row['special_role'] else '')}{row['Contributions']}"
+        f"{row['Project Name']} {('as' if row['special_role'] else '')} {row['Contributions']}" if pd.isna(row['Project URL']) or row['Project URL'] == ''
+        else f"[{row['Project Name']}]({row['Project URL']}) {('as' if row['special_role'] else '')} {row['Contributions']}"
         for _, row in group.iterrows()
     ]
 
