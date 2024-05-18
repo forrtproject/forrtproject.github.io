@@ -70,7 +70,7 @@ THIS IS A PAGE IN CONSTRUCTION. PLEASE COME BACK SOON!
 
 FORRT is excited to announce a collaboration with a new and significant project in our efforts to dismantle established hierarchies surrounding teaching, research, and service to foster a more inclusive academic environment through open science as well as foster principles of accessibility, diversity, equity, inclusion, belonging, and social justice in Open Science. 
 
-This collaborative paper together with [the Chinese Open Science Network](https://open-sci.cn/), led by [Dr. Hu Chuan-Peng](https://huchuanpeng.com/) and team [(list of collaborators)](), is to be published in [Advances in Methods and Practices in Psychological Science (AMPPS)](https://www.psychologicalscience.org/publications/ampps), and aims to provide practical guidance and examples to promote Open Science practices in the developing world. 
+This collaborative paper together with [the Chinese Open Science Network](https://open-sci.cn/), led by [Dr. Hu Chuan-Peng](https://huchuanpeng.com/) and team [(list of collaborators)](), is to be published in [Advances in Methods and Practices in Psychological Science (AMPPS)](https://www.psychologicalscience.org/publications/ampps) ([see announcement on Twitter](https://twitter.com/dsbarra/status/1643630387623612416)), and aims to provide practical guidance and examples to promote Open Science practices in the developing world. 
 
 Our FORRT community will support this initiative by leveraging and sharing our expertise in big-team science, community and project organization, and people-power.
 
@@ -81,7 +81,7 @@ Our FORRT community will support this initiative by leveraging and sharing our e
 
 Open Science has gained significant traction in developed countries and is endorsed by major organizations such as UNESCO, NASA, White House and other world players. However, the principles of Open Science—inclusing diversity, equity, inclusivity, and accessibility (DEIA)—are not fully realized in developing regions. Researchers in these countries face unique challenges, including limited resources, lack of infrastructure, and systemic barriers that hinder the adoption of Open Science practices. FORRT was established to empower early career scholars, particularly from low- and middle-income countries, by providing curated learning and teaching materials on Open Science. Since its inception, FORRT has advocated for integrating social justice principles in both research and teaching. This collaboration aligns with FORRT’s mission by addressing these challenges head-on, aiming to level the educational landscape and promote equity in scientific research globally.
 
-This joint initiative with [the Chinese Open Science Network](https://open-sci.cn/) is a step towards realizing FORRT’s vision of an inclusive and equitable Open Science community, reflecting our commitment to accessibility, diversity, equity, inclusion, belonging, and social justice. [See this page in the COSN's website here](https://opensci-cn.github.io/OS-developing-world/).
+This joint initiative with [the Chinese Open Science Network](https://open-sci.cn/) is a step towards realizing FORRT’s vision of an inclusive and equitable Open Science community, reflecting our commitment to accessibility, diversity, equity, inclusion, belonging, and social justice. [See this page in the COSN's website here](https://opensci-cn.github.io/OS-developing-world/) and their [GitHub repository](https://github.com/OpenSci-CN/OS-developing-world). 
 
 <br>
 
