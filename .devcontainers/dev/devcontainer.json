@@ -1,10 +1,10 @@
 {
-    "name": "Hugo (Community)",
+    "name": "Hugo Extended Dev",
     "build": {
         "dockerfile": "Dockerfile",
         "args": {
             "VARIANT": "hugo_extended",
-            "VERSION": "0.126.1",
+            "VERSION": "0.123.3",
             "NODE_VERSION": "18"
         }
     },
