@@ -189,7 +189,7 @@
 
 [[main]]
   name = "Pedagogies"
-  url = "/pedagogies/"
+  url = "/pedagogies"
   weight = 41
   identifier = "nexus"
 
