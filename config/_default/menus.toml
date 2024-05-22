@@ -145,7 +145,6 @@
   weight = 34
   parent = "nexus"
 
-
 [[main]]
   name = "Equity in Open Science"
   url = "/equityinos"
@@ -163,7 +162,6 @@
   url = "/glossary"
   weight = 36
   parent = "nexus"
-
 
 [[main]]
   name = "Impact of O&R on students"
@@ -192,26 +190,25 @@
 [[main]]
   name = "Pedagogies"
   url = "/pedagogies/"
-  weight = 40
+  weight = 41
   identifier = "pedagogies"
-
 
 [[main]]
   name = "Self-Assessment"
   url = "/self-assessment"
-  weight = 41
+  weight = 42
   parent = "nexus"
 
 [[main]]
   name = "Summaries"
   url = "/summaries"
-  weight = 42
+  weight = 43
   parent = "nexus"
 
 [[main]]
   name = "Syllabus"
   url = "/syllabus"
-  weight = 43
+  weight = 44
   parent = "nexus"
 
 
