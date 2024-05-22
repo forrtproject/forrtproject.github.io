@@ -58,7 +58,7 @@ subtitle = ""
 FORRT's e-learning platform (or Nexus) is a hub for community-driven initiatives and resources. Teachers’ and researchers’ time constraints are substantial, posing a challenge to developing course materials and integrating new research practices in teaching. This challenge motivated FORRT to develop strategies and propose solutions to mitigate time constraints and help scholars implement open and principled education in their workflows. The focus of FORRT's Educational Nexus lies not on simply aggregating resources but on making sense of existing materials and ideas, giving them context and continuity, as well as filling in the gap where no connections exist. 
 
 
-## Elements of the Nexus
+## Elements of the Nexus include
 
 * [FORRT's Adopting Principled Teaching & Mentoring Practices](/adopting)
 * [FORRT's Clusters](/clusters)
@@ -70,7 +70,7 @@ FORRT's e-learning platform (or Nexus) is a hub for community-driven initiatives
 * [FORRT's Initiatives Towards Social Justice in Academia](/dei)
 * [FORRT's Lesson Plans](/lesson-plans)
 * [FORRT's Neurodiversity Resources](/neurodiversity)
-* [FORRT's Reversals](/reversals)
+* [FORRT's Pedagogies](/pedagogies)
 * [FORRT's Summaries](/summaries)
 * [FORRT's Syllabus](https://forrt.org/syllabus)
 * [FORRT's Self-Assessment Tool](/self-assessment)
