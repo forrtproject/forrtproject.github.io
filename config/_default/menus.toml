@@ -115,7 +115,6 @@
 
 
 
-
 [[main]]
   name = "Educational NEXUS"
   url = "/nexus"
@@ -191,16 +190,11 @@
   parent = "nexus"
 
 [[main]]
-  name = "Replications & Reversals"
-  url = "/reversals"
+  name = "Pedagogies"
+  url = "/pedagogies/"
   weight = 40
-  parent = "nexus"
+  identifier = "pedagogies"
 
-[[main]]
-  name = "Replication Hub"
-  url = "/replication-hub"
-  weight = 40
-  parent = "nexus"
 
 [[main]]
   name = "Self-Assessment"
@@ -221,11 +215,30 @@
   parent = "nexus"
 
 
+
 [[main]]
-  name = "Pedagogies"
-  url = "/pedagogies/"
+  name = "Replication Hub"
+  url = "/replication-hub"
   weight = 50
-  identifier = "pedagogies"
+  parent = "nexus"
+
+[[main]]
+  name = "About Replication Hub"
+  url = "/replication-hub"
+  weight = 51
+  parent = "nexus"
+
+[[main]]
+  name = "Replications & Reversals"
+  url = "/reversals"
+  weight = 52
+  parent = "nexus"
+
+[[main]]
+  name = "Positive Changes from the Replication Crisis"
+  url = "/positive-changes-replication-crisis"
+  weight = 53
+  parent = "nexus"
 
 
 [[main]]
@@ -234,7 +247,7 @@
   weight = 70
   identifier = "publications"
 
-  
+
 
 # [[main]]
 #   name = "Public"
