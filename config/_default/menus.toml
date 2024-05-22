@@ -191,7 +191,7 @@
   name = "Pedagogies"
   url = "/pedagogies"
   weight = 41
-  identifier = "nexus"
+  parent = "nexus"
 
 [[main]]
   name = "Self-Assessment"
@@ -217,7 +217,7 @@
   name = "Replication Hub"
   url = "/replication-hub"
   weight = 50
-  parent = "replications"
+  identifier = "replications"
 
 [[main]]
   name = "About Replication Hub"
