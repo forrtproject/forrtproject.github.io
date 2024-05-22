@@ -191,7 +191,7 @@
   name = "Pedagogies"
   url = "/pedagogies/"
   weight = 41
-  identifier = "pedagogies"
+  identifier = "nexus"
 
 [[main]]
   name = "Self-Assessment"
@@ -217,25 +217,25 @@
   name = "Replication Hub"
   url = "/replication-hub"
   weight = 50
-  parent = "nexus"
+  parent = "replications"
 
 [[main]]
   name = "About Replication Hub"
   url = "/replication-hub"
   weight = 51
-  parent = "nexus"
+  parent = "replications"
 
 [[main]]
   name = "Replications & Reversals"
   url = "/reversals"
   weight = 52
-  parent = "nexus"
+  parent = "replications"
 
 [[main]]
   name = "Positive Changes from the Replication Crisis"
   url = "/positive-changes-replication-crisis"
   weight = 53
-  parent = "nexus"
+  parent = "replications"
 
 
 [[main]]
