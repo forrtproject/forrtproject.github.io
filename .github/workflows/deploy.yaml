@@ -10,28 +10,44 @@ on:
   push:
     branches:
       - master # Branch to deploy
+      - Tenzing_temp # Also when Tenzing is updated by action
   pull_request:
     branches:
       - master # Test PR only if master is the target branch
+  workflow_run: 
+    workflows: ["Daily Tenzing Update"]
+    types:
+      - completed    
   workflow_dispatch:
 
 jobs:
   deploy:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
+    env:
+      BRANCH_TO_CHECKOUT: master # default branch
+
     steps:
-      - uses: actions/checkout@v2
+      - name: Checkout
+        uses: actions/checkout@v4
         with:
-          submodules: false # Fetch Hugo themes (true/false OR recursive)
-          fetch-depth: 0 # Fetch all history for .GitInfo and .Lastmod
+          submodules: false
+          fetch-depth: 0
+          ref: ${{ env.BRANCH_TO_CHECKOUT }}
+
+      # Always use Tenzing from Tenzing_temp branch, as that will be most recent
+      - name: Checkout specific file from Tenzing_temp
+        run: |
+          git fetch origin Tenzing_temp:content/contributors/tenzing.md --depth=1
+          git checkout FETCH_HEAD -- content/contributors/tenzing.md
 
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v2
         with:
-          hugo-version: "0.85.0"
+          hugo-version: "0.123.3"
           extended: true
 
       - name: Set up Python
-        uses: actions/setup-python@v3
+        uses: actions/setup-python@v5
         with:
           python-version: "3.11"
 
@@ -45,7 +61,7 @@ jobs:
         run: echo "::set-output name=dir::$(pip cache dir)"
 
       - name: Cache dependencies
-        uses: actions/cache@v2
+        uses: actions/cache@v4
         with:
           path: ${{ steps.pip-cache.outputs.dir }}
           key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements-doc.txt') }}
