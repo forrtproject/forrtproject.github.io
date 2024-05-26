@@ -186,7 +186,34 @@ classtitle = "text-center"
 <br>
 
 ---
+
 <br>
+
+
+<img src="bitss.png" align="right" /> [The Berkeley Initiative for Transparency in the Social Sciences (BITSS)](http://bitss.org/) was established in 2012 as part of the Center for [Effective Global Action (CEGA)](http://cega.berkeley.edu/), a UC Berkeley-based hub for research on global development. BITSS works to improve the credibility of science by advancing transparency, reproducibility, rigor, and ethics in research. We collaborate with researchers, students, faculty, publishers, and funders across disciplines to: 1. Generate evidence on problems and solutions in science through meta-research led by BITSS investigators and our broader community. 2. Increase access to open science education, building capacity to recognize and conduct transparent and reproducible science through training, access to curricula, financial support, and a growing network of advocates and allies. 3. Strengthen the scientific ecosystem, enabling researchers and institutions to effectively and equitably change norms at scale through open science policy and protocol development.
+
+
+<br>
+
+---
+
+<br>
+
+
+<img src="MD.png" align="right" /> [Metadocencia](https://www.metadocencia.org/) is an organization that works towards making the production, communication, and application of scientific and technical knowledge globally equitable. It aims to advance innovation with a local perspective that responsibly builds scientific and technical capacities through the co-creation of networks, learning spaces, and accessible resources for Spanish-speaking communities.
+
+<br>
+
+---
+
+<br>
+
+
+<img src="AREN.png" align="right" /> [The African Reproducibility Network (AREN)](https://africanrn.org/) is a community-led grassroots initiative which seeks to bridge the gaps in open science (OS) across Africa. AREN’s mission is to furnish African researchers with the necessary support and resources through training and workshops tailored to the local context, ensuring they are well-equipped to meet the growing global demand for openness and reproducibility in research. We also seek to establish local networks at universities and research institutes across Africa that will serve as advocay hubs for collaboration and cooperation, providing research communities with the necessary support for adopting and practising OS principles while also ensuring institutions are better prepared to implement OS policies.
+
+<br>
+
+---
 
 <br>
 
@@ -198,6 +225,16 @@ classtitle = "text-center"
 <br>
 
 <img src="rtea_bordeaux.png" align="right" /> [The BordeauxTea](https://osf.io/jqxw6/) is a journal club organized in monthly sessions in which students and young researchers discuss various topics related to Open Science around a warm cup of tea. It is based in Bordeaux (France), and part of the Neurocampus Graduate Program PhD training (Université de Bordeaux). Moreover, the BordeauxTea stems from the ReproducibiliTea initiative—a worldwide Open Science initiative spread to more than 138 institutions in 26 countries.
+
+<br>
+
+---
+
+**Replication Hub & Database** [(link)](/replication-hub/)
+
+<br>
+
+<img src="mucos_logo.jpg" align="right" width = "100px" /> [The Münster Center for Open Science (MüCOS)](https://www.uni-muenster.de/MueCOS/en/forschung/index.html)  was established in 2024 to support researchers at the University of Münster in designing and conducting transparent and reliable research. It is the first center that was brought to life by the university management (in contrast to traditional grass-roots initiatives). As part of its research activities, the MüCOS collaborating closely with FORRT to maintain and expand the Replication Database and the Replication Hub.
 
 <br>
 
@@ -219,4 +256,8 @@ __*Meta-psychology special issue*__
 
 __*Center for Open Science - OSKB & COSGN*__
 
-&nbsp;&nbsp;&nbsp;&nbsp; We are partnering up with [OSKB](https://cos.io/oskb) ([Open Science Knowledge Base](https://cos.io/oskb)) to coordinate the alignment of our meta-data on educational materials so that we share our resources and community. To that end, FORRT will have a community in OSKB’s home ([OER Commons](https://www.oercommons.org/)) and enrich data and reduced redundant work. FORRT also joined COS network-of-networks or [Community of Open Scholarship Grassroots Networks](https://groups.google.com/a/cos.io/forum/#!topic/network-of-open-science-grassroots-networks/1OWtx9VDSwo) ([COSGN](https://groups.google.com/a/cos.io/forum/#!topic/network-of-open-science-grassroots-networks/1OWtx9VDSwo)). These partnerships aim to help build a community of existing educational initiatives, strengthening our missions, and streamline the advancement of open and reproducible educational practices.  
+&nbsp;&nbsp;&nbsp;&nbsp; We are partnering up with [OSKB](https://cos.io/oskb) ([Open Science Knowledge Base](https://cos.io/oskb)) to coordinate the alignment of our meta-data on educational materials so that we share our resources and community. To that end, FORRT will have a community in OSKB’s home ([OER Commons](https://www.oercommons.org/)) and enrich data and reduced redundant work. FORRT also joined COS network-of-networks or [Community of Open Scholarship Grassroots Networks](https://groups.google.com/a/cos.io/forum/#!topic/network-of-open-science-grassroots-networks/1OWtx9VDSwo) ([COSGN](https://groups.google.com/a/cos.io/forum/#!topic/network-of-open-science-grassroots-networks/1OWtx9VDSwo)). These partnerships aim to help build a community of existing educational initiatives, strengthening our missions, and streamline the advancement of open and reproducible educational practices.
+
+
+
+

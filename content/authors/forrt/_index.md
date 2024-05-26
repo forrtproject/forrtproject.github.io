@@ -20,7 +20,6 @@ email: "info@forrt.org"
 # - Artificial Intelligence
 # - Computational Linguistics
 # - Information Retrieval
-name: FORRT
 # organizations:
 # - name: Stanford University
 #   url: ""
