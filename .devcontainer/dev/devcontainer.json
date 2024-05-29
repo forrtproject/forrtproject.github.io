@@ -32,6 +32,13 @@
     "customizations": {
         "settings": {
             "remote.containers.copyGitConfig": true
+        },
+        "vscode": {
+            "extensions": [
+                "aaron-bond.better-comments",
+                "github.vscode-github-actions",
+                "redhat.vscode-yaml"
+            ]
         }
     },
 
