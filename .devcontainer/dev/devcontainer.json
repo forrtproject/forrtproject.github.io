@@ -15,6 +15,9 @@
         },
         "ghcr.io/devcontainers-contrib/features/k6:1": {
             "version": "latest"
+        },
+        "ghcr.io/devcontainers/features/go:1": {
+            "version": "latest"
         }
     },
 
