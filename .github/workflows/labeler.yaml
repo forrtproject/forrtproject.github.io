@@ -10,6 +10,7 @@ on:
       - closed
   schedule:
     - cron: "0 1 * * 1"
+  workflow_dispatch:
 
 jobs:
   labeler:
