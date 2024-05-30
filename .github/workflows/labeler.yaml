@@ -21,3 +21,6 @@ jobs:
     steps:
     - name: Label PRs
       uses: actions/labeler@v5
+      with:
+        sync-labels: true
+        repo-token: ${{ secrets.GITHUB_TOKEN }}
