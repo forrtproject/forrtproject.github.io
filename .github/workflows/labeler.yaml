@@ -19,5 +19,5 @@ jobs:
       pull-requests: write
     runs-on: ubuntu-latest
     steps:
-    - name: Laber PR
+    - name: Label PRs
       uses: actions/labeler@v5
