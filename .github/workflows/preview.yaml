@@ -1,8 +1,9 @@
+# Please note that this pipeline is currently not working as expected. This is being investigated.
 name: Deploy Preview
 
 on:
-  pull_request:
-    types: [opened, synchronize]
+  workflow_dispatch:
+  
 
 jobs:
   deploy-preview:
