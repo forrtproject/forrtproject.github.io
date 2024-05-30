@@ -1,19 +1,13 @@
-# This workflow makes sure the website builds without error on `pushes` to the
-# `main` branch and on `pull requests` that are opened to the `main` branch.
-# Automatically builds and deploys to the `gh-pages` branch only when PRs
-# are merged and pass all the checks.
-# A cname file is added to gh-pages branch to use a custom domain.
-
-name: Hugo test & deploy
+name: Hugo CICD
 
 on:
   push:
     branches:
-      - master # Branch to deploy
-      - Tenzing_temp # Also when Tenzing is updated by action
+      - master 
+      - Tenzing_temp
   pull_request:
     branches:
-      - master # Test PR only if master is the target branch
+      - master
   workflow_run: 
     workflows: ["Daily Tenzing Update"]
     types:
@@ -21,11 +15,13 @@ on:
   workflow_dispatch:
 
 jobs:
-  deploy:
+  build:
     runs-on: ubuntu-22.04
     env:
-      BRANCH_TO_CHECKOUT: master # default branch
-
+      BRANCH_TO_CHECKOUT: master
+      HUGO_VERSION: "0.123.3"
+      HUGO_EXTENDED: true
+      PYTHON_VERSION: "3.11"
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -35,32 +31,32 @@ jobs:
           ref: ${{ env.BRANCH_TO_CHECKOUT }}
 
       # Always use Tenzing from Tenzing_temp branch, as that will be most recent
-      - name: Checkout specific file from Tenzing_temp
+      - name: Script - Checkout specific file from Tenzing_temp
         run: |
           git fetch origin Tenzing_temp:content/contributors/tenzing.md --depth=1
           git checkout FETCH_HEAD -- content/contributors/tenzing.md
 
-      - name: Setup Hugo
-        uses: peaceiris/actions-hugo@v2
+      - name: Hugo - Setup
+        uses: peaceiris/actions-hugo@v3
         with:
-          hugo-version: "0.123.3"
-          extended: true
+          hugo-version: ${{ env.HUGO_VERSION }}
+          extended: ${{ env.HUGO_EXTENDED }}
 
-      - name: Set up Python
+      - name: Python - Setup
         uses: actions/setup-python@v5
         with:
-          python-version: "3.11"
+          python-version: ${{ env.PYTHON_VERSION }}
 
-      - name: Upgrade pip
+      - name: Python - Upgrade pip
         run: |
           # install pip=>20.1 to use "pip cache dir"
           python3 -m pip install --upgrade pip
 
-      - name: Get pip cache dir
+      - name: Script - Get pip cache dir
         id: pip-cache
         run: echo "::set-output name=dir::$(pip cache dir)"
 
-      - name: Cache dependencies
+      - name: Cache - Pip Dependencies
         uses: actions/cache@v4
         with:
           path: ${{ steps.pip-cache.outputs.dir }}
@@ -68,7 +64,7 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-pip-
 
-      - name: Install dependencies for resource.py
+      - name: Python - Install dependencies
         run: |
           python3 -m pip install -r ./requirements.txt
 
@@ -76,17 +72,36 @@ jobs:
       #   run: |
       #     rm content/curated_resources/[0-9]*.md
 
-      - name: run and make curated_resources
+      - name: Python - Run and create curated_resources
         run: |
           python3 content/resources/resource.py
 
-      - name: Build
-        run: hugo --gc --minify
+      - name: Hugo - Build
+        run: hugo --gc --minify --cleanDestinationDir --destination public
 
-      - name: Deploy website on push
-        if: ${{ success() }}
-        uses: peaceiris/actions-gh-pages@v3
+      - name: Upload Artifact - Website
+        uses: actions/upload-artifact@v4
+        with:
+          name: forrt-website-${{ github.run_number }}
+          path: public/
+          retention-days: 5
+
+  deploy-prod:
+    runs-on: ubuntu-22.04
+    needs: build
+    if: github.event_name == 'push' && (github.ref == 'refs/heads/main' || github.ref == 'refs/heads/Tenzing_temp') && github.event.repository.fork == false
+    env:
+      CNAME: forrt.org
+    steps:
+      - name: Download Arfifact - Website
+        uses: actions/download-artifact@v4
+        with:
+          name: forrt-website-${{ github.run_number }}
+          path: ${{ github.repository }}/forrt-website
+      - name: Deploy - GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./public
-          cname: forrt.org
+          publish_dir: ${{ github.repository }}/forrt-website
+          publish_branch: gh-pages
+          cname: ${{ env.CNAME }}
