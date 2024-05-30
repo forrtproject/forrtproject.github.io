@@ -1,0 +1,23 @@
+content-related:
+- changed-files:
+  - any-glob-to-any-file:
+    - content/**/*
+
+documentation:
+- changed-files:
+  - any-glob-to-any-file:
+    - README.md
+    - CONTRIBUTING.md
+    - LICENCE.md
+    - .github/ISSUE_TEMPLATE/*
+
+enhancement:
+ - head-branch: ['^feature', 'feature']
+
+bug:
+ - head-branch: ['^bug', 'bug']
+
+cicd:
+- changed-files:
+  - any-glob-to-any-file:
+    - .github/workflows/*
