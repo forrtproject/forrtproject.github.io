@@ -1,7 +1,7 @@
 # Contributing
 
-For FORRT contributors, you can clone this repository to your local machine and make changes on the feature branch. For now, we do not use a development branch, so you can propose changes to the master branch.
-For external contributions, this website operates on the fork and pull model, so you will need to fork this repository to your own account and then clone it to your local machine.
+* For FORRT contributors, you can clone this repository to your local machine and make changes on the feature branch. For now, we do not use a development branch, so you can propose changes to the master branch.
+* For external contributors, this website operates on the [fork and pull](https://reflectoring.io/github-fork-and-pull/) model, so you will need to fork this repository to your GitHub account of choice and then clone it to your local machine.
 
 ## Development - R-Studio
 
@@ -36,9 +36,9 @@ To edit it locally, you will then need to:
 8. Then you can push this branch to GitHub.
 9. Create a pull request to the original FORRT repo.
 
-## Development - Dev Containers and VSCode (Advanced)
+## Development - Dev Containers and VSCode
 
-Another way to run the project locally without installing Hugo on the host machine is via the use of Dev Containers. These are essentially disposable development environments that run in containers, which ensure all dependences are installed as required and that host dependencies do not impact the project (or vice versa). This ensures reproducibility and consistency across different hosts, but does require a container runtime (Dockerd, containerd etc.) to be installed on the host machine.
+Another way to run the project locally without installing Hugo on the host machine is via the use of Dev Containers. These are disposable development environments that run in containers, which ensure all dependences are installed as required and that host dependencies do not impact the project (or vice versa). This ensures reproducibility and consistency across different hosts, but does require a container runtime (Dockerd, containerd etc.) to be installed on the host machine.
 
 ### Prerequisites
 
@@ -51,6 +51,6 @@ Another way to run the project locally without installing Hugo on the host machi
 
 1. Open VSCode and ensure you have the [Remote - Containers](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers) extension installed in Visual Studio Code.
 2. Open `.devcontainer/devcontainer.json` in VSCode.
-3. In the context menu of VSCode (Crl + Shift + P), select `Dev Containers: Open Folder in Container`.
+3. In the context menu of VSCode (Crl + Shift + P), select `Dev Containers: Open Folder in Container`. Alternatively, a pop-up will appear in the bottom right corner of the window asking if you want to open the folder in a container. Click on `Reopen in Container`.
 4. Wait for the container to build. The context of VS Code will change. In the bottom left corner, you will see a green icon with the name of the container (Hugo Dev).
 5. Run `hugo server -D`. The container will foward port 1313 to the host machine, so you can access the website at `http://localhost:1313`.
