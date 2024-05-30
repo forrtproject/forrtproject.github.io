@@ -66,8 +66,7 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-pip-
 
-      - name: Python - Install dependencies if not cached
-        if: steps.pip-cache.outputs.cache-hit != 'true'
+      - name: Python - Install dependencies 
         run: |
           python3 -m pip install -r ./requirements.txt
 
@@ -101,7 +100,7 @@ jobs:
         with:
           name: forrt-website-${{ github.run_number }}
           path: ${{ github.repository }}/forrt-website
-          
+
       - name: Deploy - GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
         with:
