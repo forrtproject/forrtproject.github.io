@@ -52,9 +52,13 @@ jobs:
       #     # install pip=>20.1 to use "pip cache dir"
       #     python3 -m pip install --upgrade pip
 
+      # - name: Script - Get pip cache dir
+      #   id: pip-cache
+      #   run: echo "::set-output name=dir::$(pip cache dir)"
+
       - name: Script - Get pip cache dir
         id: pip-cache
-        run: echo "::set-output name=dir::$(pip cache dir)"
+        run: echo "dir=$(pip cache dir) >> $GITHUB_OUTPUT"
 
       - name: Cache - Pip Dependencies
         uses: actions/cache@v4
