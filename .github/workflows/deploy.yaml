@@ -47,10 +47,10 @@ jobs:
         with:
           python-version: ${{ env.PYTHON_VERSION }}
 
-      - name: Python - Upgrade pip
-        run: |
-          # install pip=>20.1 to use "pip cache dir"
-          python3 -m pip install --upgrade pip
+      # - name: Python - Upgrade pip
+      #   run: |
+      #     # install pip=>20.1 to use "pip cache dir"
+      #     python3 -m pip install --upgrade pip
 
       - name: Script - Get pip cache dir
         id: pip-cache
