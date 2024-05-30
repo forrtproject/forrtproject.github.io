@@ -1,4 +1,4 @@
-package main
+package image_enforcement
 
 import (
 	"fmt"
@@ -35,20 +35,4 @@ func find_images(repoPath string) {
 		fmt.Println(imageFile)
 	}
 	fmt.Printf("Total image files found: %d\n", counter)
-
-}
-
-func convert_image(imagePath string, format string) {
-
-	if _, err := os.Stat(imagePath); os.IsNotExist(err) {
-		fmt.Println("Error: The image file does not exist.")
-		return
-	}
-
-	// finish the implementation
-}
-
-func main() {
-	find_images("../../.") // Path to the repository root directory
-	convert_image('../../themes/academic/images/tn.png', "webp")
 }

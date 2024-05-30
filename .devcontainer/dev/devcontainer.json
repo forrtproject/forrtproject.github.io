@@ -17,7 +17,7 @@
             "version": "latest"
         },
         "ghcr.io/devcontainers/features/go:1": {
-            "version": "latest"
+            "version": "1.22.3"
         }
     },
 
@@ -47,7 +47,6 @@
     },
 
     // Extensions
-
 
     // Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
     // (Optional) Based on this https://code.visualstudio.com/remote/advancedcontainers/add-nonroot-user Windows hosts require root to run `hugo server -D`.
