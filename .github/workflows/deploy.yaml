@@ -5,13 +5,13 @@ on:
     branches:
       - master 
       - Tenzing_temp
-  pull_request:
+  pull_request_target:
     branches:
       - master
   workflow_run: 
     workflows: ["Daily Tenzing Update"]
     types:
-      - completed    
+      - completed
   workflow_dispatch:
 
 jobs:
@@ -37,7 +37,7 @@ jobs:
           git checkout FETCH_HEAD -- content/contributors/tenzing.md
 
       - name: Hugo - Setup
-        uses: peaceiris/actions-hugo@v3
+        uses: peaceiris/actions-hugo@75d2e84710de30f6ff7268e08f310b60ef14033f
         with:
           hugo-version: ${{ env.HUGO_VERSION }}
           extended: ${{ env.HUGO_EXTENDED }}
@@ -70,8 +70,10 @@ jobs:
 
       - name: Upload Artifact - Website
         uses: actions/upload-artifact@v4
+        env:
+          ARTIFACT_NAME: forrt-website-${{ github.run_number }}
         with:
-          name: forrt-website-${{ github.run_number }}
+          name: ${{ env.ARTIFACT_NAME }}
           path: public/
           retention-days: 1
 
@@ -89,7 +91,7 @@ jobs:
           path: ${{ github.repository }}/forrt-website
 
       - name: Deploy - GitHub Pages
-        uses: peaceiris/actions-gh-pages@v4
+        uses: peaceiris/actions-gh-pages@4f9cc6602d3f66b9c108549d475ec49e8ef4d45e
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ${{ github.repository }}/forrt-website
