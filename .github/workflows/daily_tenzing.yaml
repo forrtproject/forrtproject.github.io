@@ -1,9 +1,6 @@
 name: Daily Tenzing Update
 
 on:
-  pull_request_target:
-    branches:
-      - Tenzing_temp
   schedule:
     - cron: '0 0 * * *'  # Run daily at midnight
   workflow_dispatch:
