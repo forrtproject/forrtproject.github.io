@@ -84,7 +84,7 @@ jobs:
             fi
           done
 
-          $NUM_FILES = $(ls -1 content/curated_resources/*.md | wc -l)
+          $NUM_FILES=$(ls -1 content/curated_resources/*.md | wc -l)
           echo "Number of curated resources: $NUM_FILES"
     
       - name: Hugo - Build
