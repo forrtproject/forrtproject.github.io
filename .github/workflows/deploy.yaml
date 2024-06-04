@@ -74,6 +74,10 @@ jobs:
             echo "tenzing.md not found"
             exit 1
           fi
+
+      - name: Script - Print out curated resources
+        run: | 
+          ls -h content/resources/curated_resources
     
       - name: Hugo - Build
         run: | 
