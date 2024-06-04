@@ -7,14 +7,17 @@ name: Hugo CICD
 on:
   push:
     branches:
-      - master 
-      - Tenzing_temp
+      - master
   pull_request:
     branches:
       - master
   schedule:
   - cron: '0 0 * * *'  # Run daily at midnight
   workflow_dispatch:
+
+permissions:
+  contents: read
+  pull-requests: read
 
 jobs:
   build:
@@ -63,16 +66,15 @@ jobs:
         run: |
           python3 content/resources/resource.py
 
-      - name: Script - Run tenzing.md
-        run: mv scripts/forrt_contribs/tenzing.md content/contributors/tenzing.md
-      
-      - name: Script - Validate Presence of tenzing.md
-        run: |
+      - name: Script - Move tenzing.md
+        run: | 
+          mv scripts/forrt_contribs/tenzing.md content/contributors/tenzing.md
+
           if [ ! -f content/contributors/tenzing.md ]; then
             echo "tenzing.md not found"
             exit 1
           fi
-
+    
       - name: Hugo - Build
         run: | 
           hugo --gc --minify --cleanDestinationDir --destination public
@@ -89,7 +91,7 @@ jobs:
   deploy-prod:
     runs-on: ubuntu-22.04
     needs: build
-    if: github.event_name == 'push' && (github.ref == 'refs/heads/main' || github.ref == 'refs/heads/Tenzing_temp') && github.event.repository.fork == false
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main' && github.event.repository.fork == false
     env:
       CNAME: forrt.org
     steps:
