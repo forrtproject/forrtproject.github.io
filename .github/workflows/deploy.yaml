@@ -92,8 +92,6 @@ jobs:
     runs-on: ubuntu-22.04
     needs: build
     if: github.event_name == 'push' && github.ref == 'refs/heads/main' && github.event.repository.fork == false
-    env:
-      CNAME: forrt.org
     steps:
       - name: Download Arfifact - Website
         uses: actions/download-artifact@v4
@@ -107,4 +105,4 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ${{ github.repository }}/forrt-website
           publish_branch: gh-pages
-          cname: ${{ env.CNAME }}
+          cname: forrt.org
