@@ -75,16 +75,16 @@ jobs:
             exit 1
           fi
 
-      - name: Script - Validate out curated resources
+      - name: Script - Validate curated resources
         run: | 
           for file in content/curated_resources/*.md; do
             if [ ! -f "$file" ]; then
-              echo "There is a non-markdown file in the curated resources folder. Exiting."
+              echo "There is a non-markdown file ( $file ) in the curated resources folder. Exiting."
               exit 1
             fi
           done
 
-          $NUM_FILES = $(ls content/curated_resources | grep -c .md)
+          $NUM_FILES = $(ls -1 content/curated_resources/*.md | wc -l)
           echo "Number of curated resources: $NUM_FILES"
     
       - name: Hugo - Build
