@@ -77,7 +77,7 @@ jobs:
 
       - name: Script - Print out curated resources
         run: | 
-          ls -h content/resources/curated_resources
+          ls -h content/curated_resources
     
       - name: Hugo - Build
         run: | 
