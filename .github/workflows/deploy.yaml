@@ -1,5 +1,9 @@
 name: Hugo CICD
 
+# Build and deploy the website
+# Contains Tenzing's script to update the contributors list
+# Contains a script to update the curated resources list
+
 on:
   push:
     branches:
@@ -8,17 +12,14 @@ on:
   pull_request:
     branches:
       - master
-  workflow_run: 
-    workflows: ["Daily Tenzing Update"]
-    types:
-      - completed
+  schedule:
+  - cron: '0 0 * * *'  # Run daily at midnight
   workflow_dispatch:
 
 jobs:
   build:
     runs-on: ubuntu-22.04
     env:
-      BRANCH_TO_CHECKOUT: master
       HUGO_VERSION: "0.123.3"
       HUGO_EXTENDED: true
       PYTHON_VERSION: "3.11"
@@ -28,13 +29,6 @@ jobs:
         with:
           submodules: false
           fetch-depth: 0
-          ref: ${{ env.BRANCH_TO_CHECKOUT }}
-
-      # Always use Tenzing from Tenzing_temp branch, as that will be most recent
-      - name: Script - Checkout specific file from Tenzing_temp
-        run: |
-          git fetch origin Tenzing_temp:content/contributors/tenzing.md --depth=1
-          git checkout FETCH_HEAD -- content/contributors/tenzing.md
 
       - name: Hugo - Setup
         uses: peaceiris/actions-hugo@75d2e84710de30f6ff7268e08f310b60ef14033f
@@ -61,12 +55,27 @@ jobs:
         run: |
           python3 -m pip install -r ./requirements.txt
 
-      - name: Python - Run and create curated_resources
+      - name: Python - Tenzing
+        run: |
+          python3 scripts/forrt_contribs/tenzing.py
+
+      - name: Python - Curated Resources
         run: |
           python3 content/resources/resource.py
 
+      - name: Script - Run tenzing.md
+        run: mv scripts/forrt_contribs/tenzing.md content/contributors/tenzing.md
+      
+      - name: Script - Validate Presence of tenzing.md
+        run: |
+          if [ ! -f content/contributors/tenzing.md ]; then
+            echo "tenzing.md not found"
+            exit 1
+          fi
+
       - name: Hugo - Build
-        run: hugo --gc --minify --cleanDestinationDir --destination public
+        run: | 
+          hugo --gc --minify --cleanDestinationDir --destination public
 
       - name: Upload Artifact - Website
         uses: actions/upload-artifact@v4
