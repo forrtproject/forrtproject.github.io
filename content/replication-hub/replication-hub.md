@@ -8,7 +8,7 @@ headless = true  # This file represents a page section.
 active = true  # Activate this widget? true/false
 weight = 2  # Order that this section will appear.
 
-title = "Replication Hub"
+title = "About Replication Hub"
 subtitle = ""
 
 [design]
@@ -59,10 +59,9 @@ THIS IS A PAGE IN CONSTRUCTION. PLEASE COME BACK SOON!
 
 {{% /alert %}}
 
-## Replication Hub   
 
 
-# **About Replication Hub**
+
 
 Welcome to the FORRT Replication Hub! This is a collection of research projects, services, and resources surrounding replication research maintained by FORRT and the [Münster Center for Open Science](https://www.uni-muenster.de/MueCOS/index.html).
 
