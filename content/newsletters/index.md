@@ -3,7 +3,9 @@ title: Newsletter Archive
 ---
  :calendar: 2024
  
- [| April 2024](https://eepurl.com/iNOpHc)
+[| May 2024](https://mailchi.mp/forrt/forrt-newsletter-10322031?e=b822aa3541)
+ 
+[| April 2024](https://eepurl.com/iNOpHc)
 
 [| March 2024](https://eepurl.com/iMC_ws)
 
