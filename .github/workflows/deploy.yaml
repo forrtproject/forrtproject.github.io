@@ -99,7 +99,7 @@ jobs:
   deploy-prod:
     runs-on: ubuntu-22.04
     needs: build
-    if: github.event_name == 'push' && github.ref == 'refs/heads/main' && github.event.repository.fork == false
+    if: (github.event_name == 'push' || github.event_name == 'schedule') && github.ref == 'refs/heads/main' && github.event.repository.fork == false
     steps:
       - name: Download Arfifact - Website
         uses: actions/download-artifact@v4
