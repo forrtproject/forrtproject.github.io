@@ -18,6 +18,9 @@ on:
 jobs:
   build:
     runs-on: ubuntu-22.04
+    permissions:
+      contents: read
+      pull-requests: read
     env:
       HUGO_VERSION: "0.123.3"
       HUGO_EXTENDED: true
@@ -98,6 +101,9 @@ jobs:
 
   deploy-prod:
     runs-on: ubuntu-22.04
+    permissions:
+      contents: write
+      packages: read
     needs: build
     if: (github.event_name == 'push' || github.event_name == 'schedule') && github.ref == 'refs/heads/main' && github.event.repository.fork == false
     steps:
