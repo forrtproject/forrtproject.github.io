@@ -62,7 +62,7 @@ jobs:
         run: |
           python3 content/resources/resource.py
 
-      - name: Script - Move tenzing.md
+      - name: Script - Move Tenzing's output and validate
         run: | 
           mv scripts/forrt_contribs/tenzing.md content/contributors/tenzing.md
 
