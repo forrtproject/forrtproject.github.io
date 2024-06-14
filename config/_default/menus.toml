@@ -115,7 +115,6 @@
 
 
 
-
 [[main]]
   name = "Educational NEXUS"
   url = "/nexus"
@@ -146,7 +145,6 @@
   weight = 34
   parent = "nexus"
 
-
 [[main]]
   name = "Equity in Open Science"
   url = "/equityinos"
@@ -164,7 +162,6 @@
   url = "/glossary"
   weight = 36
   parent = "nexus"
-
 
 [[main]]
   name = "Impact of O&R on students"
@@ -191,41 +188,54 @@
   parent = "nexus"
 
 [[main]]
-  name = "Replications & Reversals"
-  url = "/reversals"
-  weight = 40
-  parent = "nexus"
-
-[[main]]
-  name = "Replication Hub"
-  url = "/replication-hub"
-  weight = 40
+  name = "Pedagogies"
+  url = "/pedagogies"
+  weight = 41
   parent = "nexus"
 
 [[main]]
   name = "Self-Assessment"
   url = "/self-assessment"
-  weight = 41
+  weight = 42
   parent = "nexus"
 
 [[main]]
   name = "Summaries"
   url = "/summaries"
-  weight = 42
+  weight = 43
   parent = "nexus"
 
 [[main]]
   name = "Syllabus"
   url = "/syllabus"
-  weight = 43
+  weight = 44
   parent = "nexus"
 
 
+
 [[main]]
-  name = "Pedagogies"
-  url = "/pedagogies/"
+  name = "Replication Hub"
+  url = "/replication-hub"
   weight = 50
-  identifier = "pedagogies"
+  identifier = "replications"
+
+[[main]]
+  name = "About Replication Hub"
+  url = "/replication-hub"
+  weight = 51
+  parent = "replications"
+
+[[main]]
+  name = "Replications & Reversals"
+  url = "/reversals"
+  weight = 52
+  parent = "replications"
+
+[[main]]
+  name = "Positive Changes from the Replication Crisis"
+  url = "/positive-changes-replication-crisis"
+  weight = 53
+  parent = "replications"
 
 
 [[main]]
@@ -234,7 +244,7 @@
   weight = 70
   identifier = "publications"
 
-  
+
 
 # [[main]]
 #   name = "Public"
