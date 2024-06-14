@@ -81,7 +81,7 @@ If you are a R user and would prefer to work in RStudio, you need to:
 To edit it locally, you will then need to:
 
 1. Fork this GitHub repo (create a version of the FORRT repo on your own account).
-2. Clone this repo you just added in your own account: `git clone https://github.com/yourusername/forrtproject.github.io.git` in a terminal window 
+2. Clone this repo you just added in your own account: `git clone https://github.com/yourusername/forrtproject.github.io.git` in a terminal window. If you are on a Windows host, go to `.devcontainer\dev\devcontainer.json` and uncomment the line `"remoteUser": "root"`.
 3. To run the website locally, make sure you are still in `FORRT/` dir and type `hugo server -D` in your terminal.
    - The -D option is to serve the website including draft .md files.
 4.  Create a new branch with your name or the feature you would like to add (e.g. outreach). Depending on your code editor, the way to do this will vary (e.g. in Visual Studio Code you can click on "master" in the bottom left and select "new branch").
