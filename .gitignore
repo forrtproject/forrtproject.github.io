@@ -258,3 +258,4 @@ conda-env/
 Pipfile
 Pipfile.lock
 /.vscode
+.hugo_build.lock
