@@ -119,7 +119,7 @@ Our educational toolkit is designed to support educators, researchers, and stude
 
 <div style="width:900px">
 
-![Vizualization](Viz_FORRT.png)
+![Vizualization - AI generated](Viz_FORRT.png)
 
 </div>
 
