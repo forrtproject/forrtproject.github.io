@@ -53,7 +53,7 @@ A way to run the project locally without installing Hugo on the host machine is 
 #### Steps
 
 1. Open VSCode and ensure you have the [Remote - Containers](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers) extension installed in Visual Studio Code.
-2. Open `.devcontainer/devcontainer.json` in VSCode.
+2. Open `.devcontainer/devcontainer.json` in VSCode. If you are on a Windows host, go to `.devcontainer\dev\devcontainer.json` and uncomment the line `"remoteUser": "root"` before continuing.
 3. In the context menu of VSCode (Crl + Shift + P), select `Dev Containers: Open Folder in Container`. Alternatively, a pop-up will appear in the bottom right corner of the window asking if you want to open the folder in a container. Click on `Reopen in Container`.
 4. Wait for the container to build. The context of VS Code will change. In the bottom left corner, you will see a green icon with the name of the container (Hugo Dev).
 5. Run `hugo server -D`. The container will foward port 1313 to the host machine, so you can access the website at `http://localhost:1313`.
@@ -81,7 +81,7 @@ If you are a R user and would prefer to work in RStudio, you need to:
 To edit it locally, you will then need to:
 
 1. Fork this GitHub repo (create a version of the FORRT repo on your own account).
-2. Clone this repo you just added in your own account: `git clone https://github.com/yourusername/forrtproject.github.io.git` in a terminal window. If you are on a Windows host, go to `.devcontainer\dev\devcontainer.json` and uncomment the line `"remoteUser": "root"`.
+2. Clone this repo you just added in your own account: `git clone https://github.com/yourusername/forrtproject.github.io.git` in a terminal window.
 3. To run the website locally, make sure you are still in `FORRT/` dir and type `hugo server -D` in your terminal.
    - The -D option is to serve the website including draft .md files.
 4.  Create a new branch with your name or the feature you would like to add (e.g. outreach). Depending on your code editor, the way to do this will vary (e.g. in Visual Studio Code you can click on "master" in the bottom left and select "new branch").
