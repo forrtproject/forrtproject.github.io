@@ -1,11 +1,46 @@
 # Contributing
 
-* For FORRT contributors, you can clone this repository to your local machine and make changes on the feature branch. For now, we do not use a development branch, so you can propose changes to the master branch.
+First off, thanks for taking the time to contribute! ❤️
+
+All types of contributions are encouraged and valued. See the [Table of Contents](#table-of-contents) for different ways to help and details about how this project handles them. Please make sure to read the relevant section before making your contribution. It will make it a lot easier for us maintainers and smooth out the experience for all involved. The community looks forward to your contributions. 🎉
+
+> And if you like the project, but just don't have time to contribute, that's fine. There are other easy ways to support the project and show your appreciation, which we would also be very happy about:
+>
+> - Star the project
+> - Tweet about it
+> - Refer this project in your project's readme
+> - Mention the project at local meetups and tell your friends/colleagues
+
+## Table of Contents
+
+- [I Have a Question](#i-have-a-question)
+- [I Want To Contribute](#i-want-to-contribute)
+
+## I Have a Question
+
+Before you ask a question, it is best to search for existing [Issues](/issues) that might help you. In case you have found a suitable issue and still need clarification, you can write your question in this issue. It is also advisable to search the internet for answers first.
+
+If you then still feel the need to ask a question and need clarification, we recommend the following:
+
+- Open an [Issue](/issues/new).
+- Provide as much context as you can about what you're running into.
+- Provide project and platform versions (Hugo, Operating System etc.), depending on what seems relevant.
+
+We will then take care of the issue as soon as possible.
+
+## I Want To Contribute
+
+> ### Legal Notice
+> When contributing to this project, you must agree that you have authored 100% of the content, that you have the necessary rights to the content and that the content you contribute may be provided under the project license.
+
+### Cloning the Repository
+
+* For FORRT contributors, you can clone this repository to your local machine and make changes on the feature branch. For now, we do not use a separate development branch, so you can propose changes to the master branch.
 * For external contributors, this website operates on the [fork and pull](https://reflectoring.io/github-fork-and-pull/) model, so you will need to fork this repository to your GitHub account of choice and then clone it to your local machine.
 
-## Development - R-Studio
+### Development - R-Studio
 
-### Prerequisites
+#### Prerequisites
 
 * [Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
 * [Hugo](https://gohugo.io/getting-started/installing/)
@@ -13,7 +48,7 @@
 * [RStudio](https://www.rstudio.com/products/rstudio/download/)
 * [blogdown](https://bookdown.org/yihui/blogdown/)
 
-### R-Studio
+#### Steps
 
 If you are a R user and like to work in RStudio, you need to:
 
@@ -36,18 +71,18 @@ To edit it locally, you will then need to:
 8. Then you can push this branch to GitHub.
 9. Create a pull request to the original FORRT repo.
 
-## Development - Dev Containers and VSCode
+### Development - Dev Containers and VSCode
 
 Another way to run the project locally without installing Hugo on the host machine is via the use of Dev Containers. These are disposable development environments that run in containers, which ensure all dependences are installed as required and that host dependencies do not impact the project (or vice versa). This ensures reproducibility and consistency across different hosts, but does require a container runtime (Dockerd, containerd etc.) to be installed on the host machine.
 
-### Prerequisites
+#### Prerequisites
 
 * [Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
 * [Docker](https://docs.docker.com/get-docker/)
    * For Windows, make sure to install [WSL2](https://learn.microsoft.com/en-us/windows/wsl/install)
 * [Visual Studio Code](https://code.visualstudio.com/)
 
-### Steps
+#### Steps
 
 1. Open VSCode and ensure you have the [Remote - Containers](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers) extension installed in Visual Studio Code.
 2. Open `.devcontainer/devcontainer.json` in VSCode.
