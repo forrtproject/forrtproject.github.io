@@ -44,5 +44,5 @@
 
     // Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
     // (Optional) Based on this https://code.visualstudio.com/remote/advancedcontainers/add-nonroot-user Windows hosts require root to run `hugo server -D`.
-    "remoteUser": "root"
+    // "remoteUser": "root"
 }
