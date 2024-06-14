@@ -52,7 +52,7 @@ Please note that it's very important to us that we maintain a positive and suppo
 
 #### FORRT Website on Github
 
-This is the website for the **Framework for Open and Reproducible Research Training (FORRT)**, built with [hugo](https://gohugo.io/), and deployed with [netlify](https://www.netlify.com/). You can find the website at [forrt.org](https://forrt.org/). See CONTRIBUTING.md for more information on how to contribute.
+This is the website for the **Framework for Open and Reproducible Research Training (FORRT)**, built with [hugo](https://gohugo.io/), and deployed with [Github Actions](https://docs.github.com/en/actions). You can find the website at [forrt.org](https://forrt.org/). See CONTRIBUTING.md for more information on how to contribute.
 
 ## License
 
