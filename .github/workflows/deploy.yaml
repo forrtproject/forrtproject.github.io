@@ -76,7 +76,7 @@ jobs:
 
       - name: Script - Validate curated resources
         run: | 
-          for file in content/curated_resources/*.md; do
+          for file in content/curated_resources/*; do
             if [ ! -f "$file" ]; then
               echo "There is a non-markdown file ( $file ) in the curated resources folder. Exiting."
               exit 1
@@ -104,7 +104,7 @@ jobs:
     permissions:
       contents: write
     needs: build
-    if: (github.event_name == 'push' || github.event_name == 'schedule') && github.ref == 'refs/heads/main' && github.event.repository.fork == false
+    if: (github.event_name == 'push' || github.event_name == 'schedule') && github.ref == 'refs/heads/master' && github.event.repository.fork == false
     steps:
       - name: Download Arfifact - Website
         uses: actions/download-artifact@v4
