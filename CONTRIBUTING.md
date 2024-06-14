@@ -6,10 +6,10 @@ All types of contributions are encouraged and valued. See the [Table of Contents
 
 > And if you like the project, but just don't have time to contribute, that's fine. There are other easy ways to support the project and show your appreciation, which we would also be very happy about:
 >
-> - Star the project
-> - Tweet about it
-> - Refer this project in your project's readme
-> - Mention the project at local meetups and tell your friends/colleagues
+> - Star the repository
+> - Share FORRT on your social media
+> - Reference FORRT in your project's readme
+> - Mention FORRT at local meetups and tell your friends/colleagues
 
 ## Table of Contents
 
@@ -23,10 +23,10 @@ Before you ask a question, it is best to search for existing [Issues](/issues) t
 If you then still feel the need to ask a question and need clarification, we recommend the following:
 
 - Open an [Issue](/issues/new).
-- Provide as much context as you can about what you're running into.
+- Provide as much context as you can about the problem you're having.
 - Provide project and platform versions (Hugo, Operating System etc.), depending on what seems relevant.
 
-We will then take care of the issue as soon as possible.
+We will take care of the issue as soon as possible. Right now we run on volunteer time, so please be patient!
 
 ## I Want To Contribute
 
@@ -35,8 +35,28 @@ We will then take care of the issue as soon as possible.
 
 ### Cloning the Repository
 
-* For FORRT contributors, you can clone this repository to your local machine and make changes on the feature branch. For now, we do not use a separate development branch, so you can propose changes to the master branch.
-* For external contributors, this website operates on the [fork and pull](https://reflectoring.io/github-fork-and-pull/) model, so you will need to fork this repository to your GitHub account of choice and then clone it to your local machine.
+For FORRT contributors, you can clone this repository to your local machine and make changes on the feature branch. For now, we do not use a separate development branch. Proposed changes must be made in a feature branch. Please then create a pull request into the master branch.
+
+For external contributors, this website operates on the [fork and pull](https://reflectoring.io/github-fork-and-pull/) model, so you will need to fork this repository to your GitHub account of choice and then clone it to your local machine.
+
+### Development - Dev Containers and VSCode
+
+A way to run the project locally without installing Hugo on the host machine is via the use of Dev Containers. These are disposable development environments that run in containers, which ensure all dependences are installed as required and that host dependencies do not impact the project (or vice versa). This ensures reproducibility and consistency across different hosts, but does require a container runtime (Dockerd, containerd etc.) to be installed on the host machine.
+
+#### Prerequisites
+
+- [Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
+- [Docker](https://docs.docker.com/get-docker/)
+  - For Windows, make sure to install [WSL2](https://learn.microsoft.com/en-us/windows/wsl/install)
+- [Visual Studio Code](https://code.visualstudio.com/)
+
+#### Steps
+
+1. Open VSCode and ensure you have the [Remote - Containers](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers) extension installed in Visual Studio Code.
+2. Open `.devcontainer/devcontainer.json` in VSCode.
+3. In the context menu of VSCode (Crl + Shift + P), select `Dev Containers: Open Folder in Container`. Alternatively, a pop-up will appear in the bottom right corner of the window asking if you want to open the folder in a container. Click on `Reopen in Container`.
+4. Wait for the container to build. The context of VS Code will change. In the bottom left corner, you will see a green icon with the name of the container (Hugo Dev).
+5. Run `hugo server -D`. The container will foward port 1313 to the host machine, so you can access the website at `http://localhost:1313`.
 
 ### Development - R-Studio
 
@@ -50,7 +70,7 @@ We will then take care of the issue as soon as possible.
 
 #### Steps
 
-If you are a R user and like to work in RStudio, you need to:
+If you are a R user and would prefer to work in RStudio, you need to:
 
 1. Open R Studio, then go in the Menu > New Project... > Version Control > Git
     * Repository URL: `git clone https://github.com/forrtproject/forrtproject.github.io.git`
@@ -71,21 +91,4 @@ To edit it locally, you will then need to:
 8. Then you can push this branch to GitHub.
 9. Create a pull request to the original FORRT repo.
 
-### Development - Dev Containers and VSCode
-
-Another way to run the project locally without installing Hugo on the host machine is via the use of Dev Containers. These are disposable development environments that run in containers, which ensure all dependences are installed as required and that host dependencies do not impact the project (or vice versa). This ensures reproducibility and consistency across different hosts, but does require a container runtime (Dockerd, containerd etc.) to be installed on the host machine.
-
-#### Prerequisites
-
-* [Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
-* [Docker](https://docs.docker.com/get-docker/)
-   * For Windows, make sure to install [WSL2](https://learn.microsoft.com/en-us/windows/wsl/install)
-* [Visual Studio Code](https://code.visualstudio.com/)
-
-#### Steps
-
-1. Open VSCode and ensure you have the [Remote - Containers](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers) extension installed in Visual Studio Code.
-2. Open `.devcontainer/devcontainer.json` in VSCode.
-3. In the context menu of VSCode (Crl + Shift + P), select `Dev Containers: Open Folder in Container`. Alternatively, a pop-up will appear in the bottom right corner of the window asking if you want to open the folder in a container. Click on `Reopen in Container`.
-4. Wait for the container to build. The context of VS Code will change. In the bottom left corner, you will see a green icon with the name of the container (Hugo Dev).
-5. Run `hugo server -D`. The container will foward port 1313 to the host machine, so you can access the website at `http://localhost:1313`.
+Please note that RStudio is not designed for website development, so you may find it easier to use the Dev Containers method described above.
