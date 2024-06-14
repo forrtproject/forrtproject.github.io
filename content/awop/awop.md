@@ -83,7 +83,7 @@ We provide a comprehensive suite of resources within the AWoP toolkit:
 
 * **Shiny App**: [Access the AWoP Shiny App](https://forrt.shinyapps.io/awop) 
 
-    * The Shiny App is a dynamic tool that allows users to generate customized weighted indicators of privilege across key socio-economic and cultural identity categories. It helps users actively identify and consider privilege in authorship decisions, facilitating equitable and transparent authorship order determination. 
+    * The Academic Wheel of Privilege Shiny App is a dynamic tool that allows users to generate customized weighted indicators of privilege across key socio-economic and cultural identity categories. It helps users actively identify and consider privilege in authorship decisions, facilitating equitable and transparent authorship order determination. 
 
 
 * **Supplemental Materials**:  
