@@ -1,4 +1,4 @@
-<!-- ---
+---
 # Documentation: https://sourcethemes.com/academic/docs/managing-content/
 
 title: "Course on Open Science 101"
@@ -7,8 +7,8 @@ summary: "We present a set of 16 lectures and paired tutorials that introduce st
 authors: ['Dermot Lynott, FORRT']
 tags: []
 categories: []
-date: 2024-05-10T00:50:51-04:00
-lastmod: 2024-05-10T15:14:10-04:00
+date: 2024-06-10T00:50:51-04:00
+lastmod: 2024-06-10T15:14:10-04:00
 featured: true
 draft: false
 
@@ -38,7 +38,7 @@ For those involved in teaching science, it is therefore not possible to simply c
 
 ### Introducing Students to Open Science
 
-These lectures and tutorials introduce students to the scientific process and open research practices, in order to ensure that psychological research is as rigorous, transparent and, ultimately, as reproducible as possible. We also consider problematic practices that have frequently occurred in psychological research, and discuss the impact they have had on psychological knowledge, as well as learning how to avoid such problematic practices in the future. The module content was designed to be delivered at a first-year undergraduate level, and also can be delivered in a pretty modular fashion, allowing the tutor to pick and choose which sessions best suits their programme or student needs. 
+These lectures and tutorials introduce students to the scientific process and open research practices, in order to ensure that psychological research is as rigorous, transparent and, ultimately, as reproducible as possible. We also consider problematic practices that have frequently occurred in psychological research, and discuss the impact they have had on psychological knowledge, as well as learning how to avoid such problematic practices in the future. The module content was designed to be delivered at a first-year undergraduate level, and can also be delivered in a pretty modular fashion, allowing the tutor to pick and choose which sessions best suit their programme or student needs. 
 
 Some might wonder if the first year of a degree programme is too early to be learning about open science. Shouldn’t we be teaching them the traditional approach first and then, once they have this grounding, get into open science practices later in their degree? I would strongly disagree with such an approach. There are several reasons why it’s important to teach open science to undergraduate students, and at the earliest possible opportunity. First, open science promotes transparency and reproducibility in research, which are essential principles of scientific inquiry. By teaching students about open science, we can help ensure that they are conducting research in a responsible and ethical manner.  Why would we first teach them an approach to research that doesn’t integrate these ideals? It makes no sense to me. 
 
@@ -76,4 +76,4 @@ Course content is available on the Open Science Framework, so to download everyt
 <br >
 
 #### Contact information: 
-Dr. Dermot Lynott, Department of Psychology, Maynooth University (Email: dermot.lynott@mu.ie; [Homepage](https://www.maynoothuniversity.ie/people/dermot-lynott).) -->
+Dr. Dermot Lynott, Department of Psychology, Maynooth University (Email: dermot.lynott@mu.ie; [Homepage](https://www.maynoothuniversity.ie/people/dermot-lynott).)
