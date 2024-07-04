@@ -8,10 +8,11 @@
       <ul class="nav toc-top">
         <li><a href="#" id="back_to_top" class="docs-toc-title">List of terms</a></li>
       </ul>
-      
+
       <nav id="TableOfContents" class="nav flex-column">
         <ul>
-          {{ range where .RegularPages "Params.definition" "!=" nil }}
+          {{ $currentDir := .File.Dir }}
+          {{ range where .Site.RegularPages "Params.definition" "!=" nil | where ".File.Dir" "==" $currentDir }}
           <li class="nav-item" data-toggle="tooltip" data-placement="right" title="{{ .Params.definition }}"><a href="{{ .Permalink }}" class="nav-link" style="">{{ .Title }}</a></li>
           {{end}}
         </ul>
@@ -47,13 +48,14 @@
 
       </article>
       <div class="d-flex d-xl-none col-12 docs-toc" style="">
-        
+
               <nav id="TableOfContents" class="nav flex-column">
         <ul>
-          {{ range where .RegularPages "Params.definition" "!=" nil }}
+          {{ $currentDir := .File.Dir }}
+          {{ range where .Site.RegularPages "Params.definition" "!=" nil | where ".File.Dir" "==" $currentDir }}
           <li class="nav-item" data-toggle="tooltip" data-placement="right" title="{{ .Params.definition }}"><a href="{{ .Permalink }}" class="nav-link" style="">{{ .Title }}</a></li>
           {{end}}
-          
+
         </ul>
       </nav>
 
