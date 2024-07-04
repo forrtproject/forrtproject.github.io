@@ -55,17 +55,18 @@
         {{ with .Params.related_terms }}
           {{ $related_links := slice }}
           {{ range $index, $term := . }}
-              {{ $term_urlized := urlize $term | truncate 35 }}
-              {{ $term_page := site.GetPage (printf "/glossary/german/%s" $term_urlized) }}
+              {{ $term_normalized := replace (replace $term " " "_") "\u00a0" "_" | lower | urlize }}
+              {{ $term_page := site.GetPage (printf "/glossary/german/%s" $term_normalized) }}
               {{ if $term_page }}
                   {{ $term_url := $term_page.RelPermalink }}
-                  {{ $related_links = $related_links | append (printf "<a href='%s'>%s</a>" $term_url $term) | safeHTML }}
+                  {{ $related_links = $related_links | append (printf "<a href='%s'>%s</a>" $term_url $term) }}
               {{ else }}
                   {{ $related_links = $related_links | append $term }}
               {{ end }}
           {{ end }}
-          <p class="mb-1 pr-2"><strong>Siehe auch: </strong>{{ delimit $related_links ", " }}</p>
+          <p class="mb-1 pr-2"><strong>Related term{{ if gt (len $related_links) 1 }}s{{ end }}: </strong>{{ delimit ($related_links | htmlUnescape) ", " | safeHTML }}</p>
         {{ end }}
+
 
 
         {{/*  Hacky way to display the var only if the len of the string with all objects is longer than 0   */}}
