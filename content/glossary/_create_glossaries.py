@@ -123,7 +123,8 @@ for language_data in merged_data:
                 "references": [entry.get("Reference", entry.get("Reference(s)", ""))],
                 "alt_related_terms": [None],
                 "drafted_by": [entry.get("Originally drafted by", entry.get("Drafted by", ""))],
-                "reviewed_by": entry.get("Reviewed (or Edited) by", "").replace("Reviewed (or Edited) by : ", "").split("; ")
+                "reviewed_by": entry.get("Reviewed (or Edited) by", "").replace("Reviewed (or Edited) by : ", "").split("; "),
+                "language": language
             }
             
             # Generate the file name using only the English title (without anything in brackets)
