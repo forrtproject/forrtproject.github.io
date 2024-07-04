@@ -64,7 +64,8 @@
                   {{ $related_links = $related_links | append $term }}
               {{ end }}
           {{ end }}
-          <p class="mb-1 pr-2"><strong>Related term{{ if gt (len $related_links) 1 }}s{{ end }}: </strong>{{ delimit ($related_links | htmlUnescape) ", " | safeHTML }}</p>
+          {{ $related_links_string := delimit $related_links ", " | safeHTML }}
+          <p class="mb-1 pr-2"><strong>Related term{{ if gt (len $related_links) 1 }}s{{ end }}: </strong>{{ $related_links_string }}</p>
         {{ end }}
 
 
