@@ -46,8 +46,8 @@
   parent = "about"
 
 [[main]]
-  name = "Contributions"  # A link title for your page.
-  url = "/contributions"  # The URL of your page.
+  name = "Contributors"  # A link title for your page.
+  url = "/contributors"  # The URL of your page.
   weight = 15  # The position of your page in the menu.
   parent = "about"
 
@@ -105,8 +105,11 @@
   weight = 22  # The position of your page in the menu.
   parent = "about"
 
-
-
+[[main]]
+  name = "Newsletters"  # A link title for your page.
+  url = "/newsletters"  # The URL of your page.
+  weight = 23  # The position of your page in the menu.
+  parent = "about"
 
 
 
@@ -142,7 +145,6 @@
   weight = 34
   parent = "nexus"
 
-
 [[main]]
   name = "Equity in Open Science"
   url = "/equityinos"
@@ -160,7 +162,6 @@
   url = "/glossary"
   weight = 36
   parent = "nexus"
-
 
 [[main]]
   name = "Impact of O&R on students"
@@ -187,41 +188,66 @@
   parent = "nexus"
 
 [[main]]
-  name = "Replications & Reversals"
-  url = "/reversals"
-  weight = 40
-  parent = "nexus"
-
-[[main]]
-  name = "Replication Hub"
-  url = "/replication-hub"
-  weight = 40
+  name = "Pedagogies"
+  url = "/pedagogies"
+  weight = 41
   parent = "nexus"
 
 [[main]]
   name = "Self-Assessment"
   url = "/self-assessment"
-  weight = 41
+  weight = 42
   parent = "nexus"
 
 [[main]]
   name = "Summaries"
   url = "/summaries"
-  weight = 42
+  weight = 43
   parent = "nexus"
 
 [[main]]
   name = "Syllabus"
   url = "/syllabus"
-  weight = 43
+  weight = 44
   parent = "nexus"
 
 
+
 [[main]]
-  name = "Pedagogies"
-  url = "/pedagogies/"
+  name = "Replication Hub"
+  url = "/replication-hub"
   weight = 50
-  identifier = "pedagogies"
+  identifier = "replications"
+
+[[main]]
+  name = "About Replication Hub"
+  url = "/replication-hub"
+  weight = 51
+  parent = "replications"
+
+[[main]]
+  name = "FReD Explorer"
+  url = "https://forrt-replications.shinyapps.io/fred_explorer/"
+  weight = 52
+  parent = "replications"
+
+[[main]]
+  name = "FReD Annotator"
+  url = "https://forrt-replications.shinyapps.io/fred_annotator/"
+  weight = 53
+  parent = "replications"  
+
+[[main]]
+  name = "Replications & Reversals"
+  url = "/reversals"
+  weight = 55
+  parent = "replications"
+
+[[main]]
+  name = "Positive Changes from the Replication Crisis"
+  url = "/positive-changes-replication-crisis"
+  weight = 56
+  parent = "replications"
 
 
 [[main]]
@@ -230,7 +256,7 @@
   weight = 70
   identifier = "publications"
 
-  
+
 
 # [[main]]
 #   name = "Public"
