@@ -25,7 +25,7 @@
     {{ with .Params.definition }}
     <p class="pub-abstract border-bottom pb-1"><b>Definition: </b>{{ . | markdownify }}</p>
     {{ end }}
-    
+
     <div class="article-style">
       {{ .Content }}
     {{ with .Params.alt_definition }}
@@ -59,7 +59,7 @@
               {{ $term_page := site.GetPage (printf "/glossary/%s" $term_urlized) }}
               {{ if $term_page }}
                   {{ $term_url := $term_page.RelPermalink }}
-                  {{ $related_links = $related_links | append (printf "<a href='%s'>%s</a>" $term_url $term) }}
+                  {{ $related_links = $related_links | append (printf "<a href='%s'>%s</a>" $term_url $term) | safeHTML }}
               {{ else }}
                   {{ $related_links = $related_links | append $term }}
               {{ end }}
@@ -109,7 +109,7 @@
 
     <div class="alert alert-info mt-5">
       <div>Note that we are currently working on an automated mechanism to link references cited above with their full-length version that can be found at https://forrt.org/glossary/references with all references used so far.
-  
+
       </div>
     </div>
 
@@ -121,7 +121,7 @@
     {{ end }}
     {{end}}
   </div>
-  
+
 
 </article>
 <div class="d-flex d-xl-none col-12 docs-toc" style="">
