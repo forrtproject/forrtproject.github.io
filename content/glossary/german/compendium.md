@@ -26,5 +26,6 @@
     "reviewed_by": [
         "Ali H. Al-Hoorie",
         "Charlotte R. Pennington"
-    ]
+    ],
+    "language": "german"
 }

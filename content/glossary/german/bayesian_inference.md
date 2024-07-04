@@ -22,5 +22,6 @@
         "Markus Weinmann",
         "Tobias Wingen ",
         "Steven Verheyen"
-    ]
+    ],
+    "language": "german"
 }

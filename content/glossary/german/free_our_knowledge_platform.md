@@ -20,5 +20,6 @@
         "Mahmoud Elsherif",
         "Sam Parsons",
         "Flávio Azevedo"
-    ]
+    ],
+    "language": "german"
 }

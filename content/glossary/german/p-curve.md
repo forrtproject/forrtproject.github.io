@@ -26,5 +26,6 @@
         "Charlotte R. Pennington",
         "Robert M. Ross",
         "Olmo van den Akker"
-    ]
+    ],
+    "language": "german"
 }

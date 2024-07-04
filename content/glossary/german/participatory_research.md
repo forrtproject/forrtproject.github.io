@@ -22,5 +22,6 @@
         "Bethan Iley ",
         "Halil E. Kocalar",
         "Michele C. Lim"
-    ]
+    ],
+    "language": "german"
 }

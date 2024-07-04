@@ -20,5 +20,6 @@
         "Adrien Fillon",
         "Alexander Hart",
         "Charlotte R. Pennington"
-    ]
+    ],
+    "language": "german"
 }

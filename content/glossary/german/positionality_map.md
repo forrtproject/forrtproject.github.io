@@ -21,5 +21,6 @@
         "Michele C. Lim",
         "Charlotte R. Pennington",
         "Graham Reid"
-    ]
+    ],
+    "language": "german"
 }

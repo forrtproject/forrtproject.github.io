@@ -19,5 +19,6 @@
         "Mahmoud Elsherif",
         "Christopher Graham",
         "Charlotte R. Pennington"
-    ]
+    ],
+    "language": "german"
 }

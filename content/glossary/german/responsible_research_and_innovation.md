@@ -20,5 +20,6 @@
         "Joanne McCuaig",
         "Sam Parsons",
         "Graham Reid"
-    ]
+    ],
+    "language": "german"
 }

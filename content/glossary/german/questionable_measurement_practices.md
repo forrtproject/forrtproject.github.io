@@ -24,5 +24,6 @@
         "Sam Parsons",
         "Mirela Zaneva",
         "F lávio Azevedo"
-    ]
+    ],
+    "language": "german"
 }

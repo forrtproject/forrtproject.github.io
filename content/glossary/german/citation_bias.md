@@ -22,5 +22,6 @@
         "Charlotte R. Pennington",
         "Timo Roettger",
         "Tobias Wingen"
-    ]
+    ],
+    "language": "german"
 }

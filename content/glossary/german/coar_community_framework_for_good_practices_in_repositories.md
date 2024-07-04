@@ -23,5 +23,6 @@
         "Jamie P. Cockcroft",
         "Bethan Iley",
         "Sam Parsons"
-    ]
+    ],
+    "language": "german"
 }

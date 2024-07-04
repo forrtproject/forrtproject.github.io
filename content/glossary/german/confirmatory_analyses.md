@@ -22,5 +22,6 @@
         "Charlotte R. Pennington ",
         "Timo Roettger",
         "Lisa Spitzer"
-    ]
+    ],
+    "language": "german"
 }

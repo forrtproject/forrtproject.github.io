@@ -17,5 +17,6 @@
     "reviewed_by": [
         "Bethan Iley",
         "Sara Middleton"
-    ]
+    ],
+    "language": "german"
 }

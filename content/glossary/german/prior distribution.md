@@ -20,5 +20,6 @@
     "reviewed_by": [
         "Charlotte R. Pennington",
         "Martin Vasilev"
-    ]
+    ],
+    "language": "german"
 }

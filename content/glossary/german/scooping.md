@@ -23,5 +23,6 @@
         "Timo Roettger",
         "Robert M. Ross ",
         "Flávio Azevedo"
-    ]
+    ],
+    "language": "german"
 }

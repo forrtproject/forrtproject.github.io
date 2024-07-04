@@ -24,5 +24,6 @@
         "Charlotte R. Pennington",
         "Graham Reid",
         "Suzanne L. K. Stewart"
-    ]
+    ],
+    "language": "german"
 }

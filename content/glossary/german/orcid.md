@@ -22,5 +22,6 @@
         "Charlotte R. Pennington",
         "Emily A. Williams",
         "F lávio Azevedo"
-    ]
+    ],
+    "language": "german"
 }

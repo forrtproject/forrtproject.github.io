@@ -32,5 +32,6 @@
         "Graham Reid",
         "Olly Robertson",
         "Mirela Zaneva"
-    ]
+    ],
+    "language": "german"
 }

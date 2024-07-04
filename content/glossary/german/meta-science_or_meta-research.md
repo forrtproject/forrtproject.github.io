@@ -17,5 +17,6 @@
         "Tamara Kalandadze",
         "Lisa Spitzer",
         "Olmo van den Akker"
-    ]
+    ],
+    "language": "german"
 }

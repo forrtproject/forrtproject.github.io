@@ -20,5 +20,6 @@
         "Aoife O’Mahony",
         "Madeleine Pownall",
         "Graham Reid"
-    ]
+    ],
+    "language": "german"
 }

@@ -25,5 +25,6 @@
         "Sam Parsons",
         "Martin Vasilev",
         "Julia Wolska"
-    ]
+    ],
+    "language": "german"
 }

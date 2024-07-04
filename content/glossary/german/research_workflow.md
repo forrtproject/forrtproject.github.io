@@ -23,5 +23,6 @@
         "Timo Roettger",
         "Sam Parsons",
         "Steven Verheyen"
-    ]
+    ],
+    "language": "german"
 }

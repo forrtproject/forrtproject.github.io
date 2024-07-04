@@ -30,5 +30,6 @@
         "Charlotte R. Pennington ",
         "Graham Reid",
         "Olly Robertso n"
-    ]
+    ],
+    "language": "german"
 }

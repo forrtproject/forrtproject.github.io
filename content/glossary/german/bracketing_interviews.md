@@ -22,5 +22,6 @@
         "Charlotte R. Pennington",
         " Graham Reid",
         "Marta Topor"
-    ]
+    ],
+    "language": "german"
 }

@@ -27,5 +27,6 @@
         "Sam Parsons",
         "Charlotte R. Pennington",
         "Timo Roettger"
-    ]
+    ],
+    "language": "german"
 }

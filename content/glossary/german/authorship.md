@@ -27,5 +27,6 @@
         "Flávio Azevedo",
         "Birgit Schmidt",
         "Yuki Yamada"
-    ]
+    ],
+    "language": "german"
 }

@@ -26,5 +26,6 @@
         "Jamie P. Cockcroft",
         "Mahmoud Elsherif ",
         "Helena Hartmann"
-    ]
+    ],
+    "language": "german"
 }

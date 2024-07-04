@@ -23,5 +23,6 @@
         "Tina B. Lonsdorf",
         "Catia M. Oliveira",
         "Julia Wolska"
-    ]
+    ],
+    "language": "german"
 }

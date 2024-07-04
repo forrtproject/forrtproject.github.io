@@ -19,5 +19,6 @@
         "Bethan  Iley",
         "Madeleine Ingham",
         "Graham Reid"
-    ]
+    ],
+    "language": "german"
 }

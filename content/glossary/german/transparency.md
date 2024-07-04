@@ -22,5 +22,6 @@
         "Aoife O’Mahony",
         "Eike Mark Rinke ",
         "Flávio Azevedo"
-    ]
+    ],
+    "language": "german"
 }

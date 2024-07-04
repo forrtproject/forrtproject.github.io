@@ -23,5 +23,6 @@
         "Bethan Iley",
         "Sam Parsons",
         "Flávio Azevedo"
-    ]
+    ],
+    "language": "german"
 }

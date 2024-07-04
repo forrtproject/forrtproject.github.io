@@ -22,5 +22,6 @@
         "Ashley Blake",
         "Adrien Fillon",
         "Charlotte R. Pennington"
-    ]
+    ],
+    "language": "german"
 }

@@ -20,5 +20,6 @@
         "Helena Hartmann",
         "Emma Henderson",
         "Graham Reid"
-    ]
+    ],
+    "language": "german"
 }

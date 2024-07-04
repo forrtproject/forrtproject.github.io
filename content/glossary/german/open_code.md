@@ -25,5 +25,6 @@
         "Mahmoud Elsherif",
         "Christopher Graham",
         "Emma Henderson"
-    ]
+    ],
+    "language": "german"
 }

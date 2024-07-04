@@ -19,5 +19,6 @@
         "Bethan Iley",
         "Annalise A. LaPlume ",
         "Charlotte Pennington"
-    ]
+    ],
+    "language": "german"
 }

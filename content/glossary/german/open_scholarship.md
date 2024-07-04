@@ -22,5 +22,6 @@
         " Zoe Flack",
         " Sam Parsons",
         "Charlotte R. Pennington"
-    ]
+    ],
+    "language": "german"
 }

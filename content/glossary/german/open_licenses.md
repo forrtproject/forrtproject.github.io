@@ -23,5 +23,6 @@
         "Sam Parsons",
         "Graham Reid",
         "Steven Verheyen"
-    ]
+    ],
+    "language": "german"
 }

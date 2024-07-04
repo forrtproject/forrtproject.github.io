@@ -21,5 +21,6 @@
         "Aleksandra Lazić",
         "Charlotte R. Pennington",
         "Sam Parsons, Elif Bastan"
-    ]
+    ],
+    "language": "german"
 }

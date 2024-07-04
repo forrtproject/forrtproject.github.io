@@ -19,5 +19,6 @@
         "Matt Jaquiery",
         "Emma Norris",
         "Charlotte R. Pennington"
-    ]
+    ],
+    "language": "german"
 }

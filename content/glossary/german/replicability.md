@@ -27,5 +27,6 @@
         "Sam Parsons",
         "Eike Mark Rinke",
         "Tobias Wingen"
-    ]
+    ],
+    "language": "german"
 }

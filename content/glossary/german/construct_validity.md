@@ -23,5 +23,6 @@
         "Mahmoud Elsherif",
         "Zoltan Kekecs",
         "Charlotte R. Pennington"
-    ]
+    ],
+    "language": "german"
 }

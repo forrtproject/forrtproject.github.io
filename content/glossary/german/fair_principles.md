@@ -22,5 +22,6 @@
         "Mahmoud Elsherif",
         "S am Parsons",
         "Charlotte R. Pennington"
-    ]
+    ],
+    "language": "german"
 }

@@ -18,5 +18,6 @@
         "Jade Pickering",
         "Graham Reid ",
         "Flávio Azevedo"
-    ]
+    ],
+    "language": "german"
 }

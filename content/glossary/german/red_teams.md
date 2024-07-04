@@ -19,5 +19,6 @@
         "Thomas Rhys Evans ",
         "Helena Hartmann",
         "Timo Roettger"
-    ]
+    ],
+    "language": "german"
 }

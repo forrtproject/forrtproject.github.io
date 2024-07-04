@@ -23,5 +23,6 @@
         "Flávio Azevedo",
         "Meng Liu",
         "Charlotte R. Pennington"
-    ]
+    ],
+    "language": "german"
 }

@@ -22,5 +22,6 @@
         "Oscar Lecuona",
         "Claire Melia",
         "F lávio Azevedo"
-    ]
+    ],
+    "language": "german"
 }

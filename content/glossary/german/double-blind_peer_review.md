@@ -26,5 +26,6 @@
         "Helena Hartmann",
         "Meng Liu",
         "Emma Norris"
-    ]
+    ],
+    "language": "german"
 }

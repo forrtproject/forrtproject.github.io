@@ -25,5 +25,6 @@
         "Tamara Kalandadze",
         "Adam Parker",
         "Charlotte R. Pennington"
-    ]
+    ],
+    "language": "german"
 }

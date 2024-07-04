@@ -18,5 +18,6 @@
     "reviewed_by": [
         "Connor Keating",
         "Charlotte R. Pennington"
-    ]
+    ],
+    "language": "german"
 }

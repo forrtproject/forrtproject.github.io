@@ -25,5 +25,6 @@
         "Sam Parsons",
         "Timo Roettger",
         "Olmo van den Akker"
-    ]
+    ],
+    "language": "german"
 }

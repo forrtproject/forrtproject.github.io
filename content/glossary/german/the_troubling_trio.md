@@ -22,5 +22,6 @@
         "Catia M. Oliveira",
         "Adam Parker",
         "Sam Parsons;Charlotte R. Pennington"
-    ]
+    ],
+    "language": "german"
 }

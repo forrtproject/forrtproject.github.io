@@ -22,5 +22,6 @@
         " Sam Parsons",
         "Charlotte R. Pennington",
         "Helena Hartmann"
-    ]
+    ],
+    "language": "german"
 }

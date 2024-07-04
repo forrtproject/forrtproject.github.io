@@ -30,5 +30,6 @@
         "Madeleine Pownall",
         "Robert M. Ross",
         "Flávio Azevedo"
-    ]
+    ],
+    "language": "german"
 }

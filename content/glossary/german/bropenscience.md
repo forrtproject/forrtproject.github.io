@@ -30,5 +30,6 @@
         "Flávio Azevedo",
         "Bradley Baker",
         "Mahmoud Elsherif"
-    ]
+    ],
+    "language": "german"
 }

@@ -26,5 +26,6 @@
         "Graham Reid",
         "Timo Roettger",
         "Suzanne L. K. Stewart"
-    ]
+    ],
+    "language": "german"
 }

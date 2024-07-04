@@ -24,5 +24,6 @@
         "Helena Hartmann",
         "Catia M. Oliveira",
         "F lávio Azevedo"
-    ]
+    ],
+    "language": "german"
 }

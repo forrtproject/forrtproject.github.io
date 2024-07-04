@@ -21,5 +21,6 @@
         "Wanyin Li",
         "Sonia Rishi",
         "Flávio Azevedo"
-    ]
+    ],
+    "language": "german"
 }

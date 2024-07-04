@@ -18,5 +18,6 @@
     "reviewed_by": [
         "Zoe Flack",
         "Charlotte R. Pennington"
-    ]
+    ],
+    "language": "german"
 }

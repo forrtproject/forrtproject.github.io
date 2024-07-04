@@ -22,5 +22,6 @@
         "Graham Reid",
         "Mirela Zaneva ",
         "Flávio Azevedo"
-    ]
+    ],
+    "language": "german"
 }

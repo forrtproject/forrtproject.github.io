@@ -23,5 +23,6 @@
         "Christopher Graham",
         "Helena Hartmann",
         "Graham Reid"
-    ]
+    ],
+    "language": "german"
 }

@@ -23,5 +23,6 @@
         "Sam Parsons Charlotte R. Pennington",
         "Robert M Ross",
         "Timo Roettger"
-    ]
+    ],
+    "language": "german"
 }

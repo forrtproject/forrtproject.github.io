@@ -22,5 +22,6 @@
         "Mahmoud Elsherif",
         "Charlotte R. Pennington",
         "Lisa Spitzer"
-    ]
+    ],
+    "language": "german"
 }

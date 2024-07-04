@@ -28,5 +28,6 @@
         "Robert Ross",
         "Tobias Wingen",
         "Flávio Azevedo"
-    ]
+    ],
+    "language": "german"
 }

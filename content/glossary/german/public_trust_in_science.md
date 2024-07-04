@@ -19,5 +19,6 @@
         "Helena Hartmann",
         "Catia M. Oliveira ",
         "Olmo van den Akker"
-    ]
+    ],
+    "language": "german"
 }

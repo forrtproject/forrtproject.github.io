@@ -21,5 +21,6 @@
         "Wanyin Li",
         "Adam Parker",
         "Emily A. Williams"
-    ]
+    ],
+    "language": "german"
 }

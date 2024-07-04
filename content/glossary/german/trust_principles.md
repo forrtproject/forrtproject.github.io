@@ -23,5 +23,6 @@
         "Mahmoud Elsherif",
         "Helena Hartmann",
         "Sam Parsons"
-    ]
+    ],
+    "language": "german"
 }

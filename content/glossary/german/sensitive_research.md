@@ -18,5 +18,6 @@
         "Mahmoud Elsherif ",
         "Helena Hartmann",
         "Graham Reid"
-    ]
+    ],
+    "language": "german"
 }

@@ -24,5 +24,6 @@
         "Elizabeth Collins",
         "Mahmoud Elsherif",
         "Charlotte R. Pennington"
-    ]
+    ],
+    "language": "german"
 }

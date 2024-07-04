@@ -17,5 +17,6 @@
     ],
     "reviewed_by": [
         "Charlotte R. Pennington"
-    ]
+    ],
+    "language": "german"
 }

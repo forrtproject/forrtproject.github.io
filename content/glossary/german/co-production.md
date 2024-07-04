@@ -27,5 +27,6 @@
         "Helena Hartmann;Charlotte R. Pennington",
         "Sonia Rishi",
         "Emily A. Williams"
-    ]
+    ],
+    "language": "german"
 }

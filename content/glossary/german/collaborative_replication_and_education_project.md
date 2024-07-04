@@ -19,5 +19,6 @@
         "Mahmoud Elsherif",
         "Zoe Flack",
         " Charlotte R. Pennington"
-    ]
+    ],
+    "language": "german"
 }

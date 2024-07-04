@@ -23,5 +23,6 @@
         "Eduardo Garcia-Garzon",
         "Kai Krautter",
         "Olmo van den Akker"
-    ]
+    ],
+    "language": "german"
 }

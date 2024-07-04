@@ -25,5 +25,6 @@
         "Mahmoud Elsherif",
         "Eliza Woodward",
         "Gerald Vineyard;"
-    ]
+    ],
+    "language": "german"
 }

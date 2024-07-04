@@ -24,5 +24,6 @@
         "Charlotte R. Pennington",
         "Beatrice Valentini",
         "Flávio Azevedo"
-    ]
+    ],
+    "language": "german"
 }

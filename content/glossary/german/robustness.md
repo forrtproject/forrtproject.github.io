@@ -21,5 +21,6 @@
         "Adrien Fillon",
         "Helena Hartmann",
         "Timo Roettger"
-    ]
+    ],
+    "language": "german"
 }

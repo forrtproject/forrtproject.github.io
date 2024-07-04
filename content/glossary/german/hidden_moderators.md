@@ -16,5 +16,6 @@
     "reviewed_by": [
         "Mahmoud Elsherif",
         " Sam Parsons"
-    ]
+    ],
+    "language": "german"
 }

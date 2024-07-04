@@ -20,5 +20,6 @@
         "Magdalena Grose-Hodge",
         "Sam Parsons",
         "Timo Roettger"
-    ]
+    ],
+    "language": "german"
 }

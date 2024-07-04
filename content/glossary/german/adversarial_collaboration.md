@@ -24,5 +24,6 @@
         "Flávio Azevedo",
         "Madeleine Pownall ",
         " Martin Vasilev"
-    ]
+    ],
+    "language": "german"
 }

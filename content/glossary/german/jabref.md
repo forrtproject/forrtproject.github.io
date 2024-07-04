@@ -18,5 +18,6 @@
         "Michele C. Lim",
         "Sam Parsons",
         "Steven Verheyen"
-    ]
+    ],
+    "language": "german"
 }

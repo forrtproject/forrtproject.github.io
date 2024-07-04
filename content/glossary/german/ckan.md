@@ -18,5 +18,6 @@
         "Ali H. Al-Hoorie",
         "Kai Krautter",
         "Charlotte R. Pennington"
-    ]
+    ],
+    "language": "german"
 }

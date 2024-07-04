@@ -21,5 +21,6 @@
         "Mahmoud Elsherif",
         "Elias Garcia-Pelegrin",
         "Annalise A. LaPlume"
-    ]
+    ],
+    "language": "german"
 }

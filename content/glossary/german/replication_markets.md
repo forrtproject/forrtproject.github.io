@@ -20,5 +20,6 @@
         "Mahmoud Elsherif",
         "Leticia Micheli",
         "Sam Parsons"
-    ]
+    ],
+    "language": "german"
 }

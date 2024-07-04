@@ -18,5 +18,6 @@
         "Helena Hartmann",
         "Adam Parker",
         "Sam Parsons"
-    ]
+    ],
+    "language": "german"
 }

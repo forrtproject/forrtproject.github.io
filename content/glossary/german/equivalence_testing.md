@@ -26,5 +26,6 @@
         "Jamie P. Cockcroft",
         "Tobias Wingen",
         "Flávio Azevedo"
-    ]
+    ],
+    "language": "german"
 }

@@ -22,5 +22,6 @@
         "Helena Hartmann",
         "Wanyin Li",
         "Charlotte R. Pennington"
-    ]
+    ],
+    "language": "german"
 }

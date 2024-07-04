@@ -35,5 +35,6 @@
         "Martin Vasilev",
         "Qinyu Xiao ",
         "Flávio Azevedo"
-    ]
+    ],
+    "language": "german"
 }

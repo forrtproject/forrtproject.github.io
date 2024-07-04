@@ -21,5 +21,6 @@
     ],
     "reviewed_by": [
         "Shijun Yu"
-    ]
+    ],
+    "language": "german"
 }

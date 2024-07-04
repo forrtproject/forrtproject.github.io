@@ -21,5 +21,6 @@
         "Mahmoud Elsherif",
         "Helena Hartmann",
         "Charlotte R. Pennington"
-    ]
+    ],
+    "language": "german"
 }

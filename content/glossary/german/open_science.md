@@ -28,5 +28,6 @@
         " Tamara Kalandadze",
         "Charlotte R. Pennington",
         "Qinyu Xiao"
-    ]
+    ],
+    "language": "german"
 }

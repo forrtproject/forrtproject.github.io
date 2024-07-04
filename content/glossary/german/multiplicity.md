@@ -22,5 +22,6 @@
         "Mahmoud Elsherif",
         "Meng Liu",
         "Charlotte R. Pennington"
-    ]
+    ],
+    "language": "german"
 }

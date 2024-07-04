@@ -20,5 +20,6 @@
         "Bettina M.J. Kern",
         "Dominik Kiersz",
         "Robert M. Ross"
-    ]
+    ],
+    "language": "german"
 }

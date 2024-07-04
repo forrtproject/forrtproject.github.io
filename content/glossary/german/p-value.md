@@ -21,5 +21,6 @@
         "Robbie C.M. van Aert",
         "Marcel A.L.M. van Assen",
         "Martin Vasilev"
-    ]
+    ],
+    "language": "german"
 }

@@ -18,5 +18,6 @@
         "Aleksandra Lazić",
         "Graham Reid",
         "Beatrice Valentini"
-    ]
+    ],
+    "language": "german"
 }

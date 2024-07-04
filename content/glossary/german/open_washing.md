@@ -21,5 +21,6 @@
         "Sam Parsons",
         "Charlotte R. Pennington",
         "Beatrice Valentini"
-    ]
+    ],
+    "language": "german"
 }

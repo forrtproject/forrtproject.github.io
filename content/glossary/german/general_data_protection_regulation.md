@@ -23,5 +23,6 @@
         "Mahmoud Elsherif",
         "Christopher Graham",
         "Sam Parsons"
-    ]
+    ],
+    "language": "german"
 }

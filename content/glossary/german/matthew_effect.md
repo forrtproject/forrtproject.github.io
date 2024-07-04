@@ -20,5 +20,6 @@
         "Mahmoud Elsherif",
         "Matt Jaquiery",
         "Charlotte R. Pennington"
-    ]
+    ],
+    "language": "german"
 }

@@ -20,5 +20,6 @@
         "Gerald Vineyard",
         " Yu-Fang Yang ",
         "Flávio Azevedo"
-    ]
+    ],
+    "language": "german"
 }

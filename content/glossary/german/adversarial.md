@@ -20,5 +20,6 @@
         "Emma Henderson",
         "Michele C. Lim",
         "Flávio Azevedo"
-    ]
+    ],
+    "language": "german"
 }

@@ -20,5 +20,6 @@
         "Madeleine Ingham",
         "Sam Parsons",
         "Graham Reid"
-    ]
+    ],
+    "language": "german"
 }

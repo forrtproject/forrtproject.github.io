@@ -21,5 +21,6 @@
         "Mahmoud Elsherif",
         "Helena Hartmann",
         "Steven Verheyen"
-    ]
+    ],
+    "language": "german"
 }

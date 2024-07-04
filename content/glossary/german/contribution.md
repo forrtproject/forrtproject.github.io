@@ -22,5 +22,6 @@
         "Leticia Micheli",
         "Sam Parsons",
         "Gerald Vineyard"
-    ]
+    ],
+    "language": "german"
 }

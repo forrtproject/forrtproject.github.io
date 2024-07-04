@@ -22,5 +22,6 @@
         "Sam Parsons",
         "Suzanne L. K. Stewart",
         "Marta Topor"
-    ]
+    ],
+    "language": "german"
 }

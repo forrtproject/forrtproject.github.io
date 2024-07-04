@@ -18,5 +18,6 @@
     "reviewed_by": [
         "Jamie P. Cockcroft, Zoltan Kekecs",
         "Graham Reid"
-    ]
+    ],
+    "language": "german"
 }

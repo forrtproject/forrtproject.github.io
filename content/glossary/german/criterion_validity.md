@@ -19,5 +19,6 @@
         "Kai Krautter",
         "Sam Parsons ",
         "Eike Mark Rinke"
-    ]
+    ],
+    "language": "german"
 }

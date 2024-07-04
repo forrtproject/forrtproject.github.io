@@ -22,5 +22,6 @@
         "Halil E. Kocalar",
         "Graham Reid",
         "F lávio Azevedo"
-    ]
+    ],
+    "language": "german"
 }

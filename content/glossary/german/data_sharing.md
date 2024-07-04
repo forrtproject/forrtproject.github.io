@@ -20,5 +20,6 @@
         "Charlotte R. Pennington",
         "Timo Roettger ",
         "Flávio Azevedo"
-    ]
+    ],
+    "language": "german"
 }

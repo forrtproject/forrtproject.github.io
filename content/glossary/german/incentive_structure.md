@@ -27,5 +27,6 @@
         "Robert M. Ross",
         "Graham Reid",
         "Suzanne L. K. Stewart"
-    ]
+    ],
+    "language": "german"
 }

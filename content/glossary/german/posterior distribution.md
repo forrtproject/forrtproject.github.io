@@ -23,5 +23,6 @@
         "Julia Wolska",
         "Yu-Fang Yang",
         "Charlotte R. Pennington"
-    ]
+    ],
+    "language": "german"
 }

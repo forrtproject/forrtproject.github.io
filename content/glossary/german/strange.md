@@ -23,5 +23,6 @@
         "Elias Garcia-Pelegrin",
         "Charlotte R. Pennington",
         "Graham Reid"
-    ]
+    ],
+    "language": "german"
 }

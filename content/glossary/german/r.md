@@ -19,5 +19,6 @@
         "Alexander Hart",
         "Joanne McCuaig",
         "Andrew J. Stewart"
-    ]
+    ],
+    "language": "german"
 }

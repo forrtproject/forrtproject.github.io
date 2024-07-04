@@ -20,5 +20,6 @@
         "Helena Hartmann",
         "Halil E. Kocalar",
         "Birgit Schmidt"
-    ]
+    ],
+    "language": "german"
 }

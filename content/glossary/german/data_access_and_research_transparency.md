@@ -20,5 +20,6 @@
         "Filip Dechterenko",
         "Kai Krautter",
         "Flávio Azevedo"
-    ]
+    ],
+    "language": "german"
 }

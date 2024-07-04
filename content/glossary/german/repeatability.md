@@ -18,5 +18,6 @@
         "Helena Hartmann",
         "Joanne McCuaig",
         "Sam Parsons"
-    ]
+    ],
+    "language": "german"
 }

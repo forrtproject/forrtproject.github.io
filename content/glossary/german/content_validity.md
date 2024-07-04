@@ -21,5 +21,6 @@
         "Eike Mark Rinke",
         "Sam Parsons",
         "Graham Reid"
-    ]
+    ],
+    "language": "german"
 }

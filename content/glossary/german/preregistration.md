@@ -30,5 +30,6 @@
         "Lisa Spitzer",
         "Olmo van den Akker",
         "F lávio Azevedo"
-    ]
+    ],
+    "language": "german"
 }

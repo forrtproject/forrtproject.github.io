@@ -19,5 +19,6 @@
         "Mahmoud Elsherif",
         "Samuel Guay",
         "Tamara Kalandadze"
-    ]
+    ],
+    "language": "german"
 }

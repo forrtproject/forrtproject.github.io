@@ -19,5 +19,6 @@
         "Sam Parsons",
         "Charlotte R. Pennington",
         "Julia Wolska"
-    ]
+    ],
+    "language": "german"
 }

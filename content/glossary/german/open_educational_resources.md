@@ -19,5 +19,6 @@
     ],
     "reviewed_by": [
         "Mahmoud Elsherif, Gisela H. Govaart"
-    ]
+    ],
+    "language": "german"
 }

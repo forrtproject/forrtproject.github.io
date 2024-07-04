@@ -17,5 +17,6 @@
         "Annalise A. LaPlume",
         "Sam Parsons ",
         "Flávio Azevedo"
-    ]
+    ],
+    "language": "german"
 }

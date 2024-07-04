@@ -24,5 +24,6 @@
         "Ross Mounce",
         "Mariella Paul",
         "Charlotte R. Pennington"
-    ]
+    ],
+    "language": "german"
 }

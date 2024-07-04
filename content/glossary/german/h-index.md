@@ -21,5 +21,6 @@
         "Mahmoud M. Elsherif",
         "Brett J. Gall",
         "Charlotte R. Pennington"
-    ]
+    ],
+    "language": "german"
 }

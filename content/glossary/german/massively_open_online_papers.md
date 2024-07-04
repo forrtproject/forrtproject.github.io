@@ -19,5 +19,6 @@
     ],
     "reviewed_by": [
         ""
-    ]
+    ],
+    "language": "german"
 }

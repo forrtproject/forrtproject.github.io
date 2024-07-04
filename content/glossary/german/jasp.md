@@ -17,5 +17,6 @@
     "reviewed_by": [
         "Adrien Fillon, Adam Parker",
         "Sam Parsons"
-    ]
+    ],
+    "language": "german"
 }

@@ -23,5 +23,6 @@
         "Alexander Hart",
         "Sam Parsons",
         "Timo Roettger"
-    ]
+    ],
+    "language": "german"
 }

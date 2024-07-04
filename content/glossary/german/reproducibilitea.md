@@ -23,5 +23,6 @@
         "Charlotte R. Pennington",
         "Sam Parsons ",
         "Flávio Azevedo"
-    ]
+    ],
+    "language": "german"
 }

@@ -17,5 +17,6 @@
         "Mahmoud Elsherif",
         "Charlotte R. Pennington",
         "Flávio Azevedo"
-    ]
+    ],
+    "language": "german"
 }

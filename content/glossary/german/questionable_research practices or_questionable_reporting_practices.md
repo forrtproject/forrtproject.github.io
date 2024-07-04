@@ -35,5 +35,6 @@
         "Eike Mark Rinke",
         "Timo Roettger",
         "F lávio Azevedo"
-    ]
+    ],
+    "language": "german"
 }

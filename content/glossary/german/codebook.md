@@ -19,5 +19,6 @@
         "Ashley Blake, Kai Krautter",
         "Charlotte R. Pennington",
         "Flávio Azevedo"
-    ]
+    ],
+    "language": "german"
 }

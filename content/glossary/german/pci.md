@@ -24,5 +24,6 @@
         "Bethan Iley",
         "Aleksandra Lazić",
         "Charlotte R. Pennington"
-    ]
+    ],
+    "language": "german"
 }

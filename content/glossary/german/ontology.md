@@ -18,5 +18,6 @@
     "reviewed_by": [
         "Charlotte R. Pennington",
         "Graham Reid"
-    ]
+    ],
+    "language": "german"
 }

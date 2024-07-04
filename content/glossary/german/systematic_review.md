@@ -24,5 +24,6 @@
         "Marta Topor",
         "Emily A. Williams ",
         "Flávio Azevedo"
-    ]
+    ],
+    "language": "german"
 }

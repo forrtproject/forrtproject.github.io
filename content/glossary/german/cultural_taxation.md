@@ -21,5 +21,6 @@
         "Aoife O’Mahony",
         "Charlotte R. Pennington",
         "Flávio Azevedo"
-    ]
+    ],
+    "language": "german"
 }

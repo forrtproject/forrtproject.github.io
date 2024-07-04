@@ -23,5 +23,6 @@
         "Tina Lonsdorf",
         "Sam Parsons",
         "Julia Wolska"
-    ]
+    ],
+    "language": "german"
 }

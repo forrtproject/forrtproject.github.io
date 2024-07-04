@@ -25,5 +25,6 @@
         "Helena Hartmann",
         "Charlotte R. Pennington",
         "Andrew J. Stewart"
-    ]
+    ],
+    "language": "german"
 }

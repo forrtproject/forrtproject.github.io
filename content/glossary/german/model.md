@@ -18,5 +18,6 @@
     "reviewed_by": [
         "Charlotte R. Pennington",
         "Michele C. Lim"
-    ]
+    ],
+    "language": "german"
 }

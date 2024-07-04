@@ -23,5 +23,6 @@
         "Mahmoud Elsherif",
         "Kai Krautter",
         "Gerald Vineyard"
-    ]
+    ],
+    "language": "german"
 }

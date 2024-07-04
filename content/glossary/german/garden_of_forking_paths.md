@@ -23,5 +23,6 @@
         "Matt Jaquiery",
         "Tamara Kalandadze",
         "Charlotte R. Pennington"
-    ]
+    ],
+    "language": "german"
 }

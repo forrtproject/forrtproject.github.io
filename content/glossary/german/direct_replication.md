@@ -25,5 +25,6 @@
         "Lisa Spitzer",
         "Tobias Wingen",
         "Flávio Azevedo"
-    ]
+    ],
+    "language": "german"
 }

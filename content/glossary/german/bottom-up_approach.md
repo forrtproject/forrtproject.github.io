@@ -22,5 +22,6 @@
         "Birgit Schmidt",
         "Marta Topor",
         "Flávio Azevedo"
-    ]
+    ],
+    "language": "german"
 }

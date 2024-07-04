@@ -22,5 +22,6 @@
         "Mahmoud Elsherif",
         "Kai Krautter",
         "Sam Parsons"
-    ]
+    ],
+    "language": "german"
 }

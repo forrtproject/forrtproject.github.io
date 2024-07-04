@@ -25,5 +25,6 @@
         "Ryan Millager",
         "Charlotte R. Pennington",
         "Flávio Azevedo"
-    ]
+    ],
+    "language": "german"
 }

@@ -20,5 +20,6 @@
         "Helena Hartmann",
         "Catia M. Oliveira",
         "Sam Parsons"
-    ]
+    ],
+    "language": "german"
 }

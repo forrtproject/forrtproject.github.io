@@ -21,5 +21,6 @@
         "Valeria Agostini",
         "Tamara Kalandadze",
         "Adam Parker"
-    ]
+    ],
+    "language": "german"
 }

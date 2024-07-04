@@ -21,5 +21,6 @@
         "Sam Parsons",
         "Graham Reid",
         "Mirela Zaneva"
-    ]
+    ],
+    "language": "german"
 }

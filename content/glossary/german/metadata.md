@@ -19,5 +19,6 @@
         "Tina Lonsdorf",
         "Charlotte R. Pennington ",
         "Mirela Zaneva"
-    ]
+    ],
+    "language": "german"
 }

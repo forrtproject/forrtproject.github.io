@@ -19,5 +19,6 @@
     ],
     "reviewed_by": [
         "Sara Middleton"
-    ]
+    ],
+    "language": "german"
 }

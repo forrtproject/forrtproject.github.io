@@ -22,5 +22,6 @@
         "Christopher Graham",
         "Sam Parsons",
         "Martin Vasilev"
-    ]
+    ],
+    "language": "german"
 }

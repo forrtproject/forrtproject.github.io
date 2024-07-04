@@ -20,5 +20,6 @@
         "Dominik Kiersz",
         "Charlotte R. Pennington",
         "Robert M. Ross"
-    ]
+    ],
+    "language": "german"
 }

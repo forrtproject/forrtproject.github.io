@@ -21,5 +21,6 @@
         "Tina B. Lonsdorf",
         "Sam Parsons",
         "Charlotte R. Penningto n"
-    ]
+    ],
+    "language": "german"
 }

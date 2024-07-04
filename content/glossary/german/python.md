@@ -25,5 +25,6 @@
         "Dominik Kiersz",
         "Graham Reid",
         "Andrew J. Stewart"
-    ]
+    ],
+    "language": "german"
 }

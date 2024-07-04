@@ -23,5 +23,6 @@
         "Charlotte R. Pennington",
         "Lisa Spitzer",
         "Suzanne L. K. Stewart"
-    ]
+    ],
+    "language": "german"
 }

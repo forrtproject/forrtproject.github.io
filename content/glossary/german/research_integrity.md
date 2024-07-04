@@ -27,5 +27,6 @@
         " Gilad Feldman",
         "Tamara Kalandadze",
         "Charlotte R. Pennington"
-    ]
+    ],
+    "language": "german"
 }

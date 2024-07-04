@@ -20,5 +20,6 @@
         "Helena Hartmann",
         "Kai Krautter",
         "Graham Reid"
-    ]
+    ],
+    "language": "german"
 }

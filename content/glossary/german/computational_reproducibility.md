@@ -22,5 +22,6 @@
         "Adam Parker",
         "Charlotte R. Pennington",
         "Eike Mark Rinke"
-    ]
+    ],
+    "language": "german"
 }

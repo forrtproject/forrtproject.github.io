@@ -17,5 +17,6 @@
         "Helena Hartmann",
         "Aoife O’Mahony",
         "Charlotte R. Pennington"
-    ]
+    ],
+    "language": "german"
 }

@@ -17,5 +17,6 @@
     ],
     "reviewed_by": [
         "Leticia Micheli, Gisela H. Govaart"
-    ]
+    ],
+    "language": "german"
 }

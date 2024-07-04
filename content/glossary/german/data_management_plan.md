@@ -22,5 +22,6 @@
         "Sam Parsons",
         "Birgit Schmidt",
         "Flávio Azevedo"
-    ]
+    ],
+    "language": "german"
 }

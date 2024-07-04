@@ -23,5 +23,6 @@
         "Sam Parsons",
         "Charlotte R. Pennington",
         "Mirela Zaneva"
-    ]
+    ],
+    "language": "german"
 }

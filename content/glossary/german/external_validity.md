@@ -23,5 +23,6 @@
         "Kai Krautter",
         "Oscar Lecuona",
         "Flávio Azevedo"
-    ]
+    ],
+    "language": "german"
 }

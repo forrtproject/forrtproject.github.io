@@ -18,5 +18,6 @@
         "Jamie P. Cockcroft",
         "Micah Vandegrift",
         "Dominik Kiersz"
-    ]
+    ],
+    "language": "german"
 }

@@ -22,5 +22,6 @@
         "Kai Krautter",
         "Adam Parker",
         "Sam Parsons"
-    ]
+    ],
+    "language": "german"
 }

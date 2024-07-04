@@ -20,5 +20,6 @@
         "Gilad Feldman",
         "Helena Hartmann",
         "Charlotte R. Penningto n"
-    ]
+    ],
+    "language": "german"
 }

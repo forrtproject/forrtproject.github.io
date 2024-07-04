@@ -20,5 +20,6 @@
         "Flávio Azevedo",
         "Robert Ros s",
         "Tobias Wingen"
-    ]
+    ],
+    "language": "german"
 }

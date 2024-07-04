@@ -28,5 +28,6 @@
         "Flávio Azevedo",
         "Madeleine Pownall",
         "Birgit Schmidt"
-    ]
+    ],
+    "language": "german"
 }

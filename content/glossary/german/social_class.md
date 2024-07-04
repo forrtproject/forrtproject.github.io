@@ -19,5 +19,6 @@
         " Julika Wolska",
         "Gerald Vineyard ",
         "Yu-Fang Yang"
-    ]
+    ],
+    "language": "german"
 }

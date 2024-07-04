@@ -20,5 +20,6 @@
         "Magdalena Grose-Hodge",
         "Bethan Iley",
         "Charlotte R. Pennington"
-    ]
+    ],
+    "language": "german"
 }

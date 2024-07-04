@@ -26,5 +26,6 @@
         "Lisa Spitzer",
         "Suzanne L. K. Stewart",
         "Flávio Azevedo"
-    ]
+    ],
+    "language": "german"
 }

@@ -20,5 +20,6 @@
         "Thomas Rhys Evans",
         "Kai Krautter",
         "Charlotte R. Pennington"
-    ]
+    ],
+    "language": "german"
 }

@@ -23,5 +23,6 @@
         "Charlotte R. Pennington",
         "Birgit Schmidt",
         "Flávio Azevedo"
-    ]
+    ],
+    "language": "german"
 }

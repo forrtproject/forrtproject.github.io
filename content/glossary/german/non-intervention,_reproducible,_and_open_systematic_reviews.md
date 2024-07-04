@@ -21,5 +21,6 @@
         "Tamara Kalandadze",
         "Jade Pickering",
         "Mirela Zaneva"
-    ]
+    ],
+    "language": "german"
 }

@@ -26,5 +26,6 @@
         "Tamara Kalandadze",
         "Charlotte R. Pennington",
         "Mirela Zaneva"
-    ]
+    ],
+    "language": "german"
 }

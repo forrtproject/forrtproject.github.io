@@ -22,5 +22,6 @@
         "Sam Parsons",
         "Tobias Wingen",
         "F lávio Azevedo"
-    ]
+    ],
+    "language": "german"
 }

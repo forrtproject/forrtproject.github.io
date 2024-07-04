@@ -22,5 +22,6 @@
         "Bethan Iley",
         "Adam Parker",
         "Charlotte R. Pennington, Mirela Zaneva"
-    ]
+    ],
+    "language": "german"
 }

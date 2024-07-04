@@ -19,5 +19,6 @@
     "reviewed_by": [
         "Flávio Azevedo",
         "Sam Parsons"
-    ]
+    ],
+    "language": "german"
 }

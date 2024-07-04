@@ -17,5 +17,6 @@
     "reviewed_by": [
         "Tsvetomira Dumbalska",
         "Adam Parker"
-    ]
+    ],
+    "language": "german"
 }

@@ -20,5 +20,6 @@
         "Tamara Kalandadze",
         "Sam Parsons",
         "Charlotte R. Pennington"
-    ]
+    ],
+    "language": "german"
 }

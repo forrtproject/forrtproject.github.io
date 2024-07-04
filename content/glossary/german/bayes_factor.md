@@ -25,5 +25,6 @@
         "Michele C. Lim",
         "Suzanne L. K. Stewart",
         "Ana Todorovic"
-    ]
+    ],
+    "language": "german"
 }

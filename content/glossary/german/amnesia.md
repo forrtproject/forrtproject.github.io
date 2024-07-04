@@ -19,5 +19,6 @@
         "Ali H. Al-Hoorie",
         "Myriam A. Baum",
         "Charlotte R. Pennington"
-    ]
+    ],
+    "language": "german"
 }

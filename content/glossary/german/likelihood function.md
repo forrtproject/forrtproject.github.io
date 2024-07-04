@@ -22,5 +22,6 @@
         "Graham Reid",
         "Sam Parsons",
         "Flávio Azevedo"
-    ]
+    ],
+    "language": "german"
 }

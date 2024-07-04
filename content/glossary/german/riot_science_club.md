@@ -22,5 +22,6 @@
         "Emma Henderson",
         "Joanne McCuaig ",
         "Flávio Azevedo"
-    ]
+    ],
+    "language": "german"
 }

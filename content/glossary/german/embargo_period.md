@@ -21,5 +21,6 @@
         "Sam Parsons",
         "Steven Verheyen",
         "Flávio Azevedo"
-    ]
+    ],
+    "language": "german"
 }

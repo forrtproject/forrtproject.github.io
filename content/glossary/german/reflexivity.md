@@ -17,5 +17,6 @@
     "reviewed_by": [
         "Gilad Feldman",
         "Annalise A. LaPlume"
-    ]
+    ],
+    "language": "german"
 }

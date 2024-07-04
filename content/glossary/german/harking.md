@@ -27,5 +27,6 @@
         "Charlotte R. Pennington",
         "Martin Vasilev",
         "Flávio Azevedo"
-    ]
+    ],
+    "language": "german"
 }

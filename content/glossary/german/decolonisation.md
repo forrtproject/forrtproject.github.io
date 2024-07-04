@@ -21,5 +21,6 @@
         "Michele C. Lim",
         "Emma Norris ",
         "Flávio Azevedo"
-    ]
+    ],
+    "language": "german"
 }

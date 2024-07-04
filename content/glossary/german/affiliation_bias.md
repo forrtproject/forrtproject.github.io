@@ -18,5 +18,6 @@
         "Madeleine Ingham",
         "Adam Parker",
         "Graham Reid"
-    ]
+    ],
+    "language": "german"
 }

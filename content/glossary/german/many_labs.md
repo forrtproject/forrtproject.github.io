@@ -22,5 +22,6 @@
         "Helena Hartmann",
         "Charlotte R. Pennington ",
         "Mirela Zaneva"
-    ]
+    ],
+    "language": "german"
 }

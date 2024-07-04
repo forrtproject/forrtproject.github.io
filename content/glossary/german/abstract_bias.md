@@ -22,5 +22,6 @@
         "Gerald Vineyard",
         "Eliza Woodward",
         "Flávio Azevedo"
-    ]
+    ],
+    "language": "german"
 }

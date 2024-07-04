@@ -23,5 +23,6 @@
         "Mariella Paul",
         "Sonia Rishi",
         "Lisa Spitzer"
-    ]
+    ],
+    "language": "german"
 }

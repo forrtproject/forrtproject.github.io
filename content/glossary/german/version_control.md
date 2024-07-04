@@ -27,5 +27,6 @@
         "Robert M. Ross",
         "Timo Roettger",
         "Andrew J. Stewart"
-    ]
+    ],
+    "language": "german"
 }

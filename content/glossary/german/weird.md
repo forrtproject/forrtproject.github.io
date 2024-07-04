@@ -27,5 +27,6 @@
         "Charlotte R. Pennington",
         "Robert M. Ross",
         "Suzanne L. K. Stewart"
-    ]
+    ],
+    "language": "german"
 }

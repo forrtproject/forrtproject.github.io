@@ -19,5 +19,6 @@
         "Mahmoud Elsherif",
         " Gilad Feldman",
         "Elias Garcia -Pelegrin"
-    ]
+    ],
+    "language": "german"
 }

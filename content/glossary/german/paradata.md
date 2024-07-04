@@ -22,5 +22,6 @@
         "Charlotte R. Pennington",
         "Marta Topor",
         "F lávio Azevedo"
-    ]
+    ],
+    "language": "german"
 }

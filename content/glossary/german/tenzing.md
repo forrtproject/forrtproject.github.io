@@ -23,5 +23,6 @@
         "Charlotte R. Pennington",
         "Graham Reid ",
         "Flávio Azeved o"
-    ]
+    ],
+    "language": "german"
 }

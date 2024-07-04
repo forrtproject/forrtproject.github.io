@@ -18,5 +18,6 @@
         " Mahmoud Elsherif",
         " Charlotte R. Pennington",
         "Graham Reid"
-    ]
+    ],
+    "language": "german"
 }

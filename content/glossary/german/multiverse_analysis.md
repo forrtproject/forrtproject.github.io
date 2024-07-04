@@ -21,5 +21,6 @@
         " Adrien Fillon",
         "William Ngiam",
         "Sam Parsons"
-    ]
+    ],
+    "language": "german"
 }

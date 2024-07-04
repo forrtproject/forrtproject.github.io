@@ -17,5 +17,6 @@
     "reviewed_by": [
         "Sam Parsons",
         "Charlotte R. Pennington"
-    ]
+    ],
+    "language": "german"
 }

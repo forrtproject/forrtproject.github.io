@@ -21,5 +21,6 @@
         "Kai Krautter",
         "Suzanne L. K. Stewart",
         "Flávio Azevedo"
-    ]
+    ],
+    "language": "german"
 }

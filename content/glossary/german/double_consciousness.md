@@ -19,5 +19,6 @@
         "Wanyin Li",
         "Michele C. Lim",
         "Adam Parker"
-    ]
+    ],
+    "language": "german"
 }

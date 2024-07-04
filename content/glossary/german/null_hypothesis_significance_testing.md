@@ -21,5 +21,6 @@
         "Annalise A. LaPlume",
         "Charlotte R. Pennington ",
         "Sonia Rishi"
-    ]
+    ],
+    "language": "german"
 }

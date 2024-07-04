@@ -15,5 +15,6 @@
     ],
     "reviewed_by": [
         "Mahmoud ELsherif"
-    ]
+    ],
+    "language": "german"
 }

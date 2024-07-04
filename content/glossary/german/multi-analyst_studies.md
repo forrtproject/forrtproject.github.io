@@ -27,5 +27,6 @@
         "Graham Reid",
         "Barnabas Szaszi ",
         "F lávio Azevedo"
-    ]
+    ],
+    "language": "german"
 }

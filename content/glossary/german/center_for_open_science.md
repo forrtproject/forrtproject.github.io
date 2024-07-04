@@ -26,5 +26,6 @@
         "Mariella Paul",
         "Charlotte R. Pennington",
         "Lisa Spitzer"
-    ]
+    ],
+    "language": "german"
 }

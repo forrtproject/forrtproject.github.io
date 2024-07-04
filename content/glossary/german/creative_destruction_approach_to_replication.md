@@ -23,5 +23,6 @@
         "Charlotte R. Pennington",
         "Sonia Rishi",
         "Beatrice Valentini"
-    ]
+    ],
+    "language": "german"
 }

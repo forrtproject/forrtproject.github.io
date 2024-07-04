@@ -18,5 +18,6 @@
         "Mahmoud Elsherif",
         "Sam Parsons",
         "Catia M. Oliveira"
-    ]
+    ],
+    "language": "german"
 }

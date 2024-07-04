@@ -21,5 +21,6 @@
         "Helena Hartmann",
         "Sam Parsons",
         "Yuki Yamada"
-    ]
+    ],
+    "language": "german"
 }

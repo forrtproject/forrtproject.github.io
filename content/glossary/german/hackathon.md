@@ -18,5 +18,6 @@
         "Tsvetomira Dumbalska",
         "Brett J. Gall",
         "Emma Norris"
-    ]
+    ],
+    "language": "german"
 }

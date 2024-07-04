@@ -22,5 +22,6 @@
         "Charlotte R. Pennington",
         "Yuki Yamada",
         "F lávio Azevedo"
-    ]
+    ],
+    "language": "german"
 }

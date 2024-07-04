@@ -25,5 +25,6 @@
         "Charlotte R. Pennington",
         "Birgit Schmidt",
         "Beatrice Valentini"
-    ]
+    ],
+    "language": "german"
 }

@@ -29,5 +29,6 @@
         "Olmo van den Akker",
         "Yuki Yamada ",
         "Flávio Azevedo"
-    ]
+    ],
+    "language": "german"
 }

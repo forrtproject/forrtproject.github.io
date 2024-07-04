@@ -23,5 +23,6 @@
     "reviewed_by": [
         "Mahmoud Elsherif",
         "Charlotte R. Pennington"
-    ]
+    ],
+    "language": "german"
 }

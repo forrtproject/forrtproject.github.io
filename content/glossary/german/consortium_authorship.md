@@ -20,5 +20,6 @@
         "Beatrice Valentini",
         "Qinyu Xiao",
         "Flávio Azevedo"
-    ]
+    ],
+    "language": "german"
 }

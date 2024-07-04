@@ -30,5 +30,6 @@
         "Charlotte R. Pennington",
         "Olly Robertson",
         "Flávio Azevedo"
-    ]
+    ],
+    "language": "german"
 }

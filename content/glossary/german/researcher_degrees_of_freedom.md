@@ -25,5 +25,6 @@
         "Timo Roettger",
         "Robbie C.M. van Aert ",
         "Flávio Azevedo"
-    ]
+    ],
+    "language": "german"
 }

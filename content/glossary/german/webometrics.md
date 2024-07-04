@@ -17,5 +17,6 @@
     "reviewed_by": [
         "Christopher Graham",
         "Mirela Zaneva"
-    ]
+    ],
+    "language": "german"
 }

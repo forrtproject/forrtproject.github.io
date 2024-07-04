@@ -29,5 +29,6 @@
         "Ross Mounce",
         "Charlotte R. Pennington",
         "Steven Verheyen"
-    ]
+    ],
+    "language": "german"
 }

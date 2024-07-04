@@ -17,5 +17,6 @@
         "Jamie P. Cockcroft",
         "Mahmoud Elsherif",
         "Aleksandra Lazić, Steven Verheye n"
-    ]
+    ],
+    "language": "german"
 }

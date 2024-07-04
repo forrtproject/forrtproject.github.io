@@ -21,5 +21,6 @@
         "Adam Parker",
         "Charlotte R. Pennington",
         "Flávio Azevedo"
-    ]
+    ],
+    "language": "german"
 }

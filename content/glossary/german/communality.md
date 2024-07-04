@@ -19,5 +19,6 @@
         "Mahmoud Elsherif",
         "Charlotte R. Pennington",
         "Beatrice Valentini"
-    ]
+    ],
+    "language": "german"
 }

@@ -18,5 +18,6 @@
         "David Moreau",
         "Mariella Paul",
         "Charlotte R. Pennington"
-    ]
+    ],
+    "language": "german"
 }

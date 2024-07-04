@@ -24,5 +24,6 @@
         "Beatrice Valentini",
         "Christopher Graham",
         "F lávio Azevedo"
-    ]
+    ],
+    "language": "german"
 }

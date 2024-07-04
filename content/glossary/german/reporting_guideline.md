@@ -20,5 +20,6 @@
         "Gilad Feldman",
         "Helena Hartmann",
         "Joanne McCuaig"
-    ]
+    ],
+    "language": "german"
 }

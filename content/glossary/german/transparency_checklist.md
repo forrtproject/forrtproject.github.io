@@ -23,5 +23,6 @@
         "Helena Hartmann",
         "Graham Reid ",
         "Flávio Azevedo"
-    ]
+    ],
+    "language": "german"
 }

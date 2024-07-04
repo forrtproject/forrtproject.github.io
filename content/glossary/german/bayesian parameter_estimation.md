@@ -23,5 +23,6 @@
         "Meng Liu",
         "Ana Todorovic",
         "Markus Weinmann"
-    ]
+    ],
+    "language": "german"
 }

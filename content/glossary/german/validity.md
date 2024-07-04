@@ -33,5 +33,6 @@
         "Joanne McCuaig",
         "Adam Parker",
         "Charlotte R. Pennington"
-    ]
+    ],
+    "language": "german"
 }

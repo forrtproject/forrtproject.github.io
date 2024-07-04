@@ -21,5 +21,6 @@
         "Helena Hartmann",
         "Graham Reid",
         "Mirela Zaneva"
-    ]
+    ],
+    "language": "german"
 }

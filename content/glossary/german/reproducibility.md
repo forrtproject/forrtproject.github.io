@@ -22,5 +22,6 @@
         "Sam Parsons",
         "Charlotte R. Pennington",
         "Suzanne L. K. Stewart"
-    ]
+    ],
+    "language": "german"
 }

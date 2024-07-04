@@ -20,5 +20,6 @@
         "Helena Hartmann",
         "Charlotte R. Pennington",
         "Christopher Graham"
-    ]
+    ],
+    "language": "german"
 }

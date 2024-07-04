@@ -19,5 +19,6 @@
         "Adam Parker",
         "Robert M Ross",
         "Steven Verheyen"
-    ]
+    ],
+    "language": "german"
 }

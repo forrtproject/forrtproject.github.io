@@ -23,5 +23,6 @@
         "William Ngiam",
         "Sam Parsons",
         "Martin Vasilev"
-    ]
+    ],
+    "language": "german"
 }

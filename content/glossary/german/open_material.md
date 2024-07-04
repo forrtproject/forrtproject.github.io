@@ -26,5 +26,6 @@
         "Olly Robertson",
         "Emily A. Williams",
         "F lávio Azevedo"
-    ]
+    ],
+    "language": "german"
 }
