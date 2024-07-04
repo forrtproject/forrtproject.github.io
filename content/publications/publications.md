@@ -259,6 +259,9 @@ The **<font style="color:#0e2a38">preprint</font>** can [be found here (osf.io/b
 
 Azevedo, F., Hartmann, H., Röseler, L., Wallrich, L., & Micheli, L. (2024, February 15). Unveiling the Truth in Science: The Quest for Reliable Knowledge. The Official PLOS Blog. https://theplosblog.plos.org/2024/02/unveiling-the-truth-in-science-the-quest-for-reliable-knowledge/
 
+{{< /spoiler >}}
+
+
 📜 For ***The Psychologist***, on [open scholarship pedagogical communities](https://www.bps.org.uk/psychologist/open-scholarship-pedagogical-communities).
 
 {{< spoiler text= "Bibliographic Reference" >}} 
