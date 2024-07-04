@@ -74,7 +74,7 @@
       {{ $related_links := slice }}
       {{ range $index, $term := . }}
           {{ $term_urlized := urlize $term | truncate 35 }}
-          {{ $term_page := site.GetPage (printf "/glossary/%s" $term_urlized) }}
+          {{ $term_page := site.GetPage (printf "/glossary/%s/%s" $lang $term_urlized) }}
           {{ if $term_page }}
               {{ $term_url := $term_page.RelPermalink }}
               {{ $related_links = $related_links | append (printf "<a href='%s'>%s</a>" $term_url $term) }}
