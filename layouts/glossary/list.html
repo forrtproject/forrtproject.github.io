@@ -11,12 +11,9 @@
 
       <nav id="TableOfContents" class="nav flex-column">
         <ul>
-          {{ $currentPage := . }}
-          {{ range where .Site.RegularPages "Params.definition" "!=" nil }}
-            {{ if eq (path.Dir .File.Path) (path.Dir $currentPage.File.Path) }}
-              <li class="nav-item" data-toggle="tooltip" data-placement="right" title="{{ .Params.definition }}"><a href="{{ .Permalink }}" class="nav-link" style="">{{ .Title }}</a></li>
-            {{ end }}
-          {{ end }}
+          {{ range where .RegularPages "Params.definition" "!=" nil }}
+          <li class="nav-item" data-toggle="tooltip" data-placement="right" title="{{ .Params.definition }}"><a href="{{ .Permalink }}" class="nav-link" style="">{{ .Title }}</a></li>
+          {{end}}
         </ul>
       </nav>
 
@@ -51,16 +48,14 @@
       </article>
       <div class="d-flex d-xl-none col-12 docs-toc" style="">
 
-        <nav id="TableOfContents" class="nav flex-column">
-          <ul>
-            {{ $currentPage := . }}
-            {{ range where .Site.RegularPages "Params.definition" "!=" nil }}
-              {{ if eq (path.Dir .File.Path) (path.Dir $currentPage.File.Path) }}
-                <li class="nav-item" data-toggle="tooltip" data-placement="right" title="{{ .Params.definition }}"><a href="{{ .Permalink }}" class="nav-link" style="">{{ .Title }}</a></li>
-              {{ end }}
-            {{ end }}
-          </ul>
-        </nav>
+              <nav id="TableOfContents" class="nav flex-column">
+        <ul>
+          {{ range where .RegularPages "Params.definition" "!=" nil }}
+          <li class="nav-item" data-toggle="tooltip" data-placement="right" title="{{ .Params.definition }}"><a href="{{ .Permalink }}" class="nav-link" style="">{{ .Title }}</a></li>
+          {{end}}
+
+        </ul>
+      </nav>
 
       </div>
 
