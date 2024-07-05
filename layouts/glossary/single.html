@@ -73,9 +73,9 @@
     {{ with .Params.related_terms }}
       {{ $related_links := slice }}
       {{ range $index, $term := . }}
-          {{ $term_clean := splitList "\u00a0(" $term | index 0 }}
-          {{ $term_clean := splitList " (" $term_clean | index 0 }}
-          {{ $term_clean := replace (replace (lower $term_clean) " " "_") "\u00a0" "" }}
+          {{ $term_clean := split $term "\u00a0(" | index 0 }}
+          {{ $term_clean = split $term_clean " (" | index 0 }}
+          {{ $term_clean = replace (replace (lower $term_clean) " " "_") "\u00a0" "" }}
           {{ $term_urlized := trim $term_clean }}
           {{ $term_page := site.GetPage (printf "/glossary/%s/%s" $lang $term_urlized) }}
           {{ if $term_page }}
