@@ -77,7 +77,7 @@
           {{ $term_clean = replaceRE "\\s*\\(.*\\)" "" $term_clean }}
           {{ $term_clean = replace $term_clean " " "_" }}
           {{ $term_clean = lower $term_clean }}
-          {{ $term_clean = trim $term_clean }}
+          {{ $term_clean = trim $term_clean " " }}
           {{ $term_page := site.GetPage (printf "/glossary/%s/%s" $lang $term_clean) }}
           {{ if $term_page }}
               {{ $term_url := $term_page.RelPermalink }}
