@@ -70,14 +70,15 @@
         <p class=" mb-1 pr-2"><b>{{ index (index $dictionary $lang) "alt_definition" }}: </b>{{ . | markdownify }}</p>
     {{end}}
 
-    {{ with .Params.related_terms }}
+     {{ with .Params.related_terms }}
       {{ $related_links := slice }}
       {{ range $index, $term := . }}
-          {{ $term_clean := split $term "\u00a0(" | index 0 }}
-          {{ $term_clean = split $term_clean " (" | index 0 }}
-          {{ $term_clean = replace (replace (lower $term_clean) " " "_") "\u00a0" "" }}
-          {{ $term_urlized := trim $term_clean }}
-          {{ $term_page := site.GetPage (printf "/glossary/%s/%s" $lang $term_urlized) }}
+          {{ $term_clean := replace $term "\u00a0" " " }} <!-- Replace non-breaking space with space -->
+          {{ $term_clean = replaceRE "\\s*\\(.*\\)" "" $term_clean }}
+          {{ $term_clean = replace $term_clean " " "_" }}
+          {{ $term_clean = lower $term_clean }}
+          {{ $term_clean = trim $term_clean }}
+          {{ $term_page := site.GetPage (printf "/glossary/%s/%s" $lang $term_clean) }}
           {{ if $term_page }}
               {{ $term_url := $term_page.RelPermalink }}
               {{ $related_links = $related_links | append (printf "<a href='%s'>%s</a>" $term_url $term) }}
@@ -88,6 +89,7 @@
       {{ $related_links_string := delimit $related_links ", " | safeHTML }}
       <p class="mb-1 pr-2"><strong>{{ if gt (len $related_links) 1 }}{{ index (index $dictionary $lang) "related_terms" }}{{ else }}{{ index (index $dictionary $lang) "related_term" }}{{ end }}: </strong>{{ $related_links_string }}</p>
     {{ end }}
+
 
     {{ if .Params.alt_related_terms }}
     {{ $alt_related_terms := delimit .Params.alt_related_terms ", " | len }}
