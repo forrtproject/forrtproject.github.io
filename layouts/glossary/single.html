@@ -73,6 +73,7 @@
      {{ with .Params.related_terms }}
       {{ $related_links := slice }}
       {{ range $index, $term := . }}
+          {{ $term_str := printf "%s" $term }} <!-- Ensure $term is treated as a string -->
           {{ $term_clean := replace $term "\u00a0" " " }} <!-- Replace non-breaking space with space -->
           {{ $term_clean = replaceRE "\\s*\\(.*\\)" "" $term_clean }}
           {{ $term_clean = replace $term_clean " " "_" }}
