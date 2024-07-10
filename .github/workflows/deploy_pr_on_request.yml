@@ -5,7 +5,7 @@ on:
     types: [created]
 
 jobs:
-  deploy-test:
+  deploy-pr:
     if: startsWith(github.event.comment.body, '/deploy')
     runs-on: ubuntu-22.04
     steps:
