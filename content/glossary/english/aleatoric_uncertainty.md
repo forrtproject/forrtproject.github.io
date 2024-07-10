@@ -1,0 +1,25 @@
+{
+    "title": "Aleatoric uncertainty",
+    "definition": "",
+    "related_terms": [
+        "Epistemic uncertainty",
+        "Knightian uncertainty"
+    ],
+    "references": [
+        "Der Kiureghian and Ditlevsen (2009)"
+    ],
+    "alt_related_terms": [
+        null
+    ],
+    "drafted_by": [
+        "Bradley Baker"
+    ],
+    "reviewed_by": [
+        "Nihan Albayrak-Aydemir ",
+        "Brett Gall",
+        "Magdalena Grose-Hodge",
+        "Bethan Iley",
+        "Charlotte R. Pennington"
+    ],
+    "language": "english"
+}

@@ -6,6 +6,9 @@ import pandas as pd
 import os
 import shutil
 
+script_dir = os.path.dirname(os.path.abspath(__file__))
+print(script_dir)
+
 file_links = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQpQJ-9pY0Bq7u2pm464pJpUCOMI4biMnqCHgYZuMETcRNBbHLPYT55jhDXGRx68qYhn3_z6PO90gQl/pub?gid=1617993088&single=true&output=csv'
 
 # Read the CSV file into a pandas DataFrame
@@ -19,6 +22,7 @@ formatted_data = {}
 
 # Iterate over each language group
 for language, group in grouped:
+    print(f"Processing {language}")
     formatted_data[language] = []
 
     for idx, row in group.iterrows():
@@ -55,7 +59,8 @@ for language, group in grouped:
 
         # Split the Definition into Definition and German_Translation
         for glossary in d.values():
-            glossary['Title'] = re.sub(r'\[.*\]', '', glossary['Title']).strip() # Remove status from title
+            pattern = r'\[.*?\]|\*\*\s*almost\s*(done|complete)\s*\*\*|#+\s*review needed\s*#+' # Remove status from title
+            glossary['Title'] = re.sub(pattern, '', glossary['Title']).strip()
             if 'Definition' in glossary:
                 definitions = re.split(rf'\[\s*{language.upper()}|\[{language.capitalize()}\]', glossary['Definition']) # Split by the language, accepting the various formats
                 glossary['Definition'] = definitions[0].strip().replace('Definition:', '').strip()
@@ -99,7 +104,7 @@ for language, entries in formatted_data.items():
     merged_data.append({language: entries})
 
 # Export the merged list to a JSON file
-output_file = '_glossaries.json'
+output_file = os.path.join(script_dir, '_glossaries.json')
 with open(output_file, 'w') as outfile:
     json.dump(merged_data, outfile)
 
@@ -110,9 +115,11 @@ print("Data successfully parsed.")
 for language_data in merged_data:
     for language, entries in language_data.items():
         # Create directory for each language
-        if os.path.exists(language):
-            shutil.rmtree(language)
-        os.makedirs(language, exist_ok=True)
+        if os.path.exists(os.path.join(script_dir, language)):
+            shutil.rmtree(os.path.join(script_dir, language))
+        os.makedirs(os.path.join(script_dir, language), exist_ok=True)
+        
+        print(f"Generating {len(entries)} markdown files for {language}")
         
         for entry in entries:
             # Prepare the data for the .md file
@@ -128,8 +135,9 @@ for language_data in merged_data:
             }
             
             # Generate the file name using only the English title (without anything in brackets)
-            file_name = entry.get("Title", "").split("\u00a0(")[0].split(" (")[0].replace(" ", "_").lower().strip() + ".md"
-            file_path = os.path.join(language, file_name)
+            file_name = entry.get("Title", "").split("\u00a0(")[0].split(" (")[0]
+            file_name = re.sub(r'[^\w\s]', '_', file_name.replace(" ", "_")).lower().strip() + ".md"
+            file_path = os.path.join(script_dir, language, file_name)
             
             # Write the .md file
             with open(file_path, 'w', encoding='utf-8') as md_file:

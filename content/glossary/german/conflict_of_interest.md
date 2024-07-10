@@ -1,5 +1,5 @@
 {
-    "title": "Conflict of interest (Interessenkonflikt)",
+    "title": "Conflict of interest (Interessenkonflikt) ]",
     "definition": "",
     "related_terms": [
         "Objectivity",
