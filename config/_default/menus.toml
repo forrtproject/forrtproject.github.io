@@ -159,7 +159,7 @@
 
 [[main]]
   name = "Glossary"
-  url = "/glossary"
+  url = "/glossary/english"
   weight = 36
   parent = "nexus"
 
@@ -235,7 +235,7 @@
   name = "FReD Annotator"
   url = "https://forrt-replications.shinyapps.io/fred_annotator/"
   weight = 53
-  parent = "replications"  
+  parent = "replications"
 
 [[main]]
   name = "Replications & Reversals"
