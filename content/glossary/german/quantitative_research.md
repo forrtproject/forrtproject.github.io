@@ -1,5 +1,5 @@
 {
-    "title": "Quantitative research (Quantitative Forschung) #review needed# (translated, reviewed)",
+    "title": "Quantitative research (Quantitative Forschung)  (translated, reviewed)",
     "definition": "Quantitative Forschung umfasst ein breites Spektrum von Methoden zur systematischen Untersuchung einer Reihe von Phänomenen mit Hilfe von numerischen Daten, die mit Hilfe von Statistik analysiert werden können.",
     "related_terms": [
         "Measuring",

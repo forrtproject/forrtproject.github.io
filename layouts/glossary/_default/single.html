@@ -75,10 +75,11 @@
       {{ range $index, $term := . }}
           {{ $term_str := printf "%s" $term }} <!-- Ensure $term is treated as a string -->
           {{ $term_clean := replace $term_str "\u00a0" " " }} <!-- Replace non-breaking space with space -->
-          {{ $term_clean = replaceRE "\\s*\\(.*\\)" "" $term_clean }}
-          {{ $term_clean = replace $term_clean " " "_" }}
-          {{ $term_clean = lower $term_clean }}
-          {{ $term_clean = trim $term_clean " " }}
+          {{ $term_clean = replaceRE "\\s*\\(.*\\)" "" $term_clean }} <!-- Remove text in parentheses -->
+          {{ $term_clean = replace $term_clean " " "_" }} <!-- Replace spaces with underscores -->
+          {{ $term_clean = replaceRE "[^a-zA-Z0-9_]" "_" $term_clean }} <!-- Replace all non-alphanumeric characters with underscores -->
+          {{ $term_clean = lower $term_clean }} <!-- Convert to lowercase -->
+          {{ $term_clean = trim $term_clean "_" }} <!-- Trim leading and trailing underscores -->
           {{ $term_page := site.GetPage (printf "/glossary/%s/%s" $lang $term_clean) }}
           {{ if $term_page }}
               {{ $term_url := $term_page.RelPermalink }}
