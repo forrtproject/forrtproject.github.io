@@ -1,4 +1,12 @@
-content-related:
+bug:
+ - head-branch: ['^bug', 'bug', '^hotfix', 'hotfix']
+
+cicd:
+- changed-files:
+  - any-glob-to-any-file:
+    - .github/workflows/*
+
+content related:
 - changed-files:
   - any-glob-to-any-file:
     - content/**/*
@@ -10,14 +18,7 @@ documentation:
     - CONTRIBUTING.md
     - LICENCE.md
     - .github/ISSUE_TEMPLATE/*
+    - .github/CODEOWNERS
 
 enhancement:
  - head-branch: ['^feature', 'feature']
-
-bug:
- - head-branch: ['^bug', 'bug']
-
-cicd:
-- changed-files:
-  - any-glob-to-any-file:
-    - .github/workflows/*
