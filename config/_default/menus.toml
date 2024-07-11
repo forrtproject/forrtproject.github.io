@@ -159,7 +159,7 @@
 
 [[main]]
   name = "Glossary"
-  url = "/glossary"
+  url = "/glossary/english"
   weight = 36
   parent = "nexus"
 
@@ -226,15 +226,27 @@
   parent = "replications"
 
 [[main]]
+  name = "FReD Explorer"
+  url = "https://forrt-replications.shinyapps.io/fred_explorer/"
+  weight = 52
+  parent = "replications"
+
+[[main]]
+  name = "FReD Annotator"
+  url = "https://forrt-replications.shinyapps.io/fred_annotator/"
+  weight = 53
+  parent = "replications"
+
+[[main]]
   name = "Replications & Reversals"
   url = "/reversals"
-  weight = 52
+  weight = 55
   parent = "replications"
 
 [[main]]
   name = "Positive Changes from the Replication Crisis"
   url = "/positive-changes-replication-crisis"
-  weight = 53
+  weight = 56
   parent = "replications"
 
 
