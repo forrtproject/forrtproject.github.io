@@ -54,15 +54,6 @@ subtitle = "Structural, Procedural, and Community Changes in Psychological Scien
 <br>
 
 
-
-{{% alert note %}}
-
-THIS IS A PAGE IN CONSTRUCTION. PLEASE COME BACK SOON!
-
-{{% /alert %}}
-
-<br>
-
 ## Overview
 ---------------------
 
