@@ -54,15 +54,6 @@ subtitle = "Structural, Procedural, and Community Changes in Psychological Scien
 <br>
 
 
-
-{{% alert note %}}
-
-THIS IS A PAGE IN CONSTRUCTION. PLEASE COME BACK SOON!
-
-{{% /alert %}}
-
-<br>
-
 ## Overview
 ---------------------
 
@@ -119,7 +110,7 @@ Our educational toolkit is designed to support educators, researchers, and stude
 
 <div style="width:900px">
 
-![Vizualization](Viz_FORRT.png)
+![Vizualization - AI generated](Viz_FORRT.png)
 
 </div>
 
