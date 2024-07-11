@@ -1,4 +1,5 @@
 {
+    "type": "glossary",
     "title": "AMNESIA",
     "definition": "AMNESIA ist ein kostenloses Anonymisierungswerkzeug zum Entfernen von persönlich identifizierenden Informationen aus Daten. Nach dem Hochladen eines Datensatzes, der personenbezogene Daten enthält, wird der ursprüngliche Datensatz mithilfe von AMNESIA umgewandelt. Dies führt zu einem Datensatz, der hinsichtlich personenbezogener und sensibler Daten anonymisiert ist.",
     "related_terms": [

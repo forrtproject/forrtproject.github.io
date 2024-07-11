@@ -1,4 +1,5 @@
 {
+    "type": "glossary",
     "title": "Contribution",
     "definition": "",
     "related_terms": [

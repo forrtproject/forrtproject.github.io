@@ -1,6 +1,7 @@
 {
+    "type": "glossary",
     "title": "Cumulative science",
-    "definition": "",
+    "definition": "Definition : Goal of any empirical science, it is the pursuit of “the construction of a cumulative base of knowledge upon which the future of the science may be built” (Curran, 2009, p. 1). The idea that science will create more complete and accurate theories as a function of the amount of evidence and data that has been collected. Cumulative science develops in gradual and incremental steps, as opposed to one abrupt discovery. While revolutionary science occurs scarcely, cumulative science is the most common form of science.",
     "related_terms": [
         "Slow Science"
     ],

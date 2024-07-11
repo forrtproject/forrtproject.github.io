@@ -1,4 +1,5 @@
 {
+    "type": "glossary",
     "title": "Direct replication (direkte Replikation)",
     "definition": "Da der Begriff \"direkte Replikation\" keine allgemein anerkannte technische Bedeutung hat und es keine eindeutige Unterscheidung zwischen einer direkten und einer konzeptionellen Replikation gibt, werden im Folgenden einige Beiträge zur Erzielung eines Konsenses aufgeführt. Anstatt über die \"Genauigkeit\" einer Replikation zu debattieren, ist es hilfreicher, die relevanten Unterschiede zwischen einer Replikation und der zu replizierenden Arbeit, sowie deren Auswirkungen auf die Zuverlässigkeit und Generalisierbarkeit der Ergebnisse der ursprünglichen Arbeit zu diskutieren.",
     "related_terms": [

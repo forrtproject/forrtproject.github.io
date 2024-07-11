@@ -1,0 +1,75 @@
+{{- define "main" -}}
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    const tocLinks = document.querySelectorAll(".docs-toc .nav-link");
+
+    tocLinks.forEach(link => {
+      link.addEventListener("click", function(event) {
+        sessionStorage.setItem("activeLinkHref", this.href);
+      });
+    });
+  });
+</script>
+
+
+<div class="container-fluid docs">
+  <div class="row flex-xl-nowrap">
+    <div class="d-none d-xl-block col-xl-3 docs-toc" style="order: 1">
+      <ul class="nav toc-top">
+        <li><a href="#" id="back_to_top" class="docs-toc-title">List of terms</a></li>
+      </ul>
+
+      <nav id="TableOfContents" class="nav flex-column">
+        <ul>
+          {{ $currentSection := .File.Dir }}
+          {{ $glossaryPages := where .Site.RegularPages "Type" "glossary" }}
+          {{ $filteredPages := where $glossaryPages "File.Dir" $currentSection }}
+          {{ range $index, $page := $filteredPages }}
+          <li class="nav-item" data-toggle="tooltip" data-placement="right" title="{{ .Params.definition }}">
+            <a href="{{ .Permalink }}" class="nav-link" id="toc-link-desktop-{{ $index }}">{{ .Title }}</a>
+          </li>
+          {{ end }}
+        </ul>
+      </nav>
+    </div>
+
+    <main class="col-12 col-xl-8 pl-md-5 docs-content" role="main">
+      <article class="article">
+        <div class="docs-article-container mx-auto">
+          <h1>{{ .Title }}</h1>
+          <div class="article-style">
+            {{ .Content }}
+          </div>
+          {{ partial "tags.html" . }}
+          {{ if site.Params.docs_section_pager }}
+          <div class="article-widget">
+            {{ partial "section_pager" . }}
+          </div>
+          {{ end }}
+        </div>
+        <div class="body-footer">
+          <p>{{ i18n "last_updated" }} {{ $.Lastmod.Format site.Params.date_format }}</p>
+          {{ partial "page_edit" . }}
+        </div>
+      </article>
+
+      <div class="d-flex d-xl-none col-12 docs-toc" style="">
+        <nav id="TableOfContentsMobile" class="nav flex-column">
+          <ul>
+            {{ $currentSection := .File.Dir }}
+            {{ $glossaryPages := where .Site.RegularPages "Type" "glossary" }}
+            {{ $filteredPages := where $glossaryPages "File.Dir" $currentSection }}
+            {{ range $index, $page := $filteredPages }}
+            <li class="nav-item" data-toggle="tooltip" data-placement="right" title="{{ .Params.definition }}">
+              <a href="{{ .Permalink }}" class="nav-link" id="toc-link-mobile-{{ $index }}">{{ .Title }}</a>
+            </li>
+            {{ end }}
+          </ul>
+        </nav>
+      </div>
+    </main>
+  </div>
+</div>
+
+{{- end -}}

@@ -1,6 +1,7 @@
 {
+    "type": "glossary",
     "title": "Research Cycle",
-    "definition": "",
+    "definition": "De scribes the circular process of conducting scientific research, with “researchers working at various stages of inquiry, from more tentative and exploratory investigations to the testing of more definitive and well-supported claims” (Lieberman, 2020, p. 42). The cycle includes literature research and hypothesis generation, data collection and analysis, as well as dissemination of results (e.g. through publication in peer-reviewed journals), which again informs theory and new hypotheses/research.",
     "related_terms": [
         "Research process"
     ],

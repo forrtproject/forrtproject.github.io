@@ -1,6 +1,7 @@
 {
+    "type": "glossary",
     "title": "Git",
-    "definition": "",
+    "definition": "A software package for tracking changes in a local set of files (local version control), initially developed by Linus Torvalds. In general, it is used by programmers to track and develop computer source code within a set directory, folder or a file system. Git can access remote repository hosting services (e.g. GitHub) for remote version control that enables collaborative software development by uploading contributions from a local system. This process found its way into the scientific process to enable open data, open code and reproducible analyses.",
     "related_terms": [
         "GitHub ",
         "R epository",
