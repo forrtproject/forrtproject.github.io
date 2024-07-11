@@ -49,69 +49,23 @@
   document.addEventListener("DOMContentLoaded", function() {
     const tocLinksDesktop = document.querySelectorAll("#TableOfContents .nav-link");
     const tocLinksMobile = document.querySelectorAll("#TableOfContentsMobile .nav-link");
+    const currentUrl = window.location.href;
 
-    // Function to add 'active' class to the current link and its counterpart
-    const setActiveLink = (link) => {
-      tocLinksDesktop.forEach(link => link.classList.remove("active"));
-      tocLinksMobile.forEach(link => link.classList.remove("active"));
-      link.classList.add("active");
-
-      // Find and activate the corresponding link in the other navigation set
-      const correspondingLinkDesktop = document.querySelector(`#toc-link-desktop-${link.id.split('-').pop()}`);
-      const correspondingLinkMobile = document.querySelector(`#toc-link-mobile-${link.id.split('-').pop()}`);
-
-      if (correspondingLinkDesktop) {
-        correspondingLinkDesktop.classList.add("active");
-        correspondingLinkDesktop.scrollIntoView({ behavior: 'auto', block: 'start' });
+    tocLinksDesktop.forEach(link => {
+      if (link.href === currentUrl) {
+        link.classList.add("active");
+        link.scrollIntoView({ behavior: 'auto', block: 'start' });
         window.scrollBy(0, -document.querySelector('.docs-toc').offsetHeight);
-
       }
-      if (correspondingLinkMobile) correspondingLinkMobile.classList.add("active");
+    });
 
-      sessionStorage.setItem("activeLinkHref", link.href);
-    };
-
-    // Check sessionStorage for the active link href
-    const activeLinkHref = sessionStorage.getItem("activeLinkHref");
-    if (activeLinkHref) {
-      tocLinksDesktop.forEach(link => {
-        if (link.href === activeLinkHref) {
-          setActiveLink(link);
-        }
-      });
-      tocLinksMobile.forEach(link => {
-        if (link.href === activeLinkHref) {
-          setActiveLink(link);
-        }
-      });
-    } else {
-      const currentUrl = window.location.href;
-      tocLinksDesktop.forEach(link => {
-        if (link.href === currentUrl) {
-          setActiveLink(link);
-        }
-      });
-      tocLinksMobile.forEach(link => {
-        if (link.href === currentUrl) {
-          setActiveLink(link);
-        }
-      });
-    }
-
-    // Add event listeners to each link
-    const addEventListeners = (links) => {
-      links.forEach(link => {
-        link.addEventListener("click", function(event) {
-          setActiveLink(this);
-        });
-      });
-    };
-
-    addEventListeners(tocLinksDesktop);
-    addEventListeners(tocLinksMobile);
+    tocLinksMobile.forEach(link => {
+      if (link.href === currentUrl) {
+        link.classList.add("active");
+      }
+    });
   });
 </script>
-
 
 
 <div class="container-fluid docs">
@@ -128,7 +82,7 @@
           {{ $filteredPages := where $glossaryPages "File.Dir" $currentSection }}
           {{ range $index, $page := where $filteredPages "Params.definition" "!=" nil }}
           <li class="nav-item" data-toggle="tooltip" data-placement="right" title="{{ .Params.definition }}">
-            <a href="{{ .Permalink }}" class="nav-link" id="toc-link-desktop-{{ $index }}">{{ .Title }}</a>
+            <a href="{{ .Permalink }}" class="nav-link">{{ .Title }}</a>
           </li>
           {{ end }}
         </ul>
@@ -219,7 +173,7 @@
             {{ $filteredPages := where $glossaryPages "File.Dir" $currentSection }}
             {{ range $index, $page := where $filteredPages "Params.definition" "!=" nil }}
             <li class="nav-item" data-toggle="tooltip" data-placement="right" title="{{ .Params.definition }}">
-              <a href="{{ .Permalink }}" class="nav-link" id="toc-link-mobile-{{ $index }}">{{ .Title }}</a>
+              <a href="{{ .Permalink }}" class="nav-link">{{ .Title }}</a>
             </li>
             {{ end }}
           </ul>

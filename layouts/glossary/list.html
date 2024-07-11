@@ -1,18 +1,5 @@
 {{- define "main" -}}
 
-<script>
-  document.addEventListener("DOMContentLoaded", function() {
-    const tocLinks = document.querySelectorAll(".docs-toc .nav-link");
-
-    tocLinks.forEach(link => {
-      link.addEventListener("click", function(event) {
-        sessionStorage.setItem("activeLinkHref", this.href);
-      });
-    });
-  });
-</script>
-
-
 <div class="container-fluid docs">
   <div class="row flex-xl-nowrap">
     <div class="d-none d-xl-block col-xl-3 docs-toc" style="order: 1">
@@ -27,7 +14,7 @@
           {{ $filteredPages := where $glossaryPages "File.Dir" $currentSection }}
           {{ range $index, $page := $filteredPages }}
           <li class="nav-item" data-toggle="tooltip" data-placement="right" title="{{ .Params.definition }}">
-            <a href="{{ .Permalink }}" class="nav-link" id="toc-link-desktop-{{ $index }}">{{ .Title }}</a>
+            <a href="{{ .Permalink }}" class="nav-link">{{ .Title }}</a>
           </li>
           {{ end }}
         </ul>
@@ -62,7 +49,7 @@
             {{ $filteredPages := where $glossaryPages "File.Dir" $currentSection }}
             {{ range $index, $page := $filteredPages }}
             <li class="nav-item" data-toggle="tooltip" data-placement="right" title="{{ .Params.definition }}">
-              <a href="{{ .Permalink }}" class="nav-link" id="toc-link-mobile-{{ $index }}">{{ .Title }}</a>
+              <a href="{{ .Permalink }}" class="nav-link">{{ .Title }}</a>
             </li>
             {{ end }}
           </ul>
