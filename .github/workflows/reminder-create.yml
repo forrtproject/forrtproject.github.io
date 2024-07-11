@@ -1,0 +1,17 @@
+name: reminder-create
+
+permissions:
+  issues: write
+  pull-requests: write
+
+on:
+  issue_comment:
+    types: [created, edited]
+
+jobs:
+  reminder-create:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Reminder Action - Create  
+        uses: agrc/create-reminder-action@ffa4363460fe5fff73b2b58e66fa7eb01f7465a0
