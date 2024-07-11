@@ -1,4 +1,4 @@
-name: "Pull Request Labeler"
+name: labeler
 on:
   pull_request_target:
     types:
@@ -9,7 +9,7 @@ on:
       - unlabeled
       - closed
   schedule:
-    - cron: "0 1 * * 1"
+    - cron: "0 3 * * 1"
   workflow_dispatch:
 
 jobs:
@@ -17,10 +17,10 @@ jobs:
     permissions:
       contents: read
       pull-requests: write
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     steps:
-    - name: Label PRs
-      uses: actions/labeler@v5
+    - name: Labeler
+      uses: actions/labeler@8558fd74291d67161a8a78ce36a881fa63b766a9
       with:
         sync-labels: true
         repo-token: ${{ secrets.GITHUB_TOKEN }}
