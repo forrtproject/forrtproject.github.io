@@ -109,7 +109,7 @@ jobs:
     name: Deploy - Test
     runs-on: ubuntu-22.04
     concurrency:
-      group: ${{ github.workflow }}-${{ github.ref }}
+      group: staging
     permissions:
       contents: write
     needs: build
