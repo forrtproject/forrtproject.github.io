@@ -88,7 +88,13 @@ jobs:
 
       - name: Hugo - Build 
         run: |
-          hugo --gc --minify --cleanDestinationDir --destination public
+          if [ "$BRANCH" != 'refs/heads/master' ]; then
+            hugo --gc --minify --cleanDestinationDir --destination public --baseURL https://staging.forrt.org
+          else
+            hugo --gc --minify --cleanDestinationDir --destination public --baseURL https://forrt.org
+          fi
+        env:
+          BRANCH: ${{ github.ref }}
 
       - name: Upload Artifact - Website
         uses: actions/upload-artifact@v4
@@ -102,6 +108,8 @@ jobs:
   deploy-test:
     name: Deploy - Test
     runs-on: ubuntu-22.04
+    concurrency:
+      group: ${{ github.workflow }}-${{ github.ref }}
     permissions:
       contents: write
     needs: build
