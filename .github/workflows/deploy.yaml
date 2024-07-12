@@ -125,7 +125,7 @@ jobs:
           personal_token: ${{ secrets.STAGING_GITHUB_TOKEN }}
           publish_dir: ${{ github.repository }}/forrt-website
           external_repository: forrtproject/webpage-staging
-          publish_branch: main
+          publish_branch: staging
           destination_dir: pr-${{ github.event.inputs.pr_number }}
           cname: staging.forrt.org
 
