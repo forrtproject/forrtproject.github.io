@@ -134,7 +134,8 @@ jobs:
     runs-on: ubuntu-22.04
     permissions:
       contents: write
-    needs: build
+    needs: 
+      - deploy-test
     if: (github.event_name == 'push' || github.event_name == 'schedule') && github.ref == 'refs/heads/master' && github.event.repository.fork == false
     steps:
       - name: Download Arfifact - Website
