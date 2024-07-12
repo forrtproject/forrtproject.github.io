@@ -13,12 +13,6 @@ on:
       - master
   schedule:
   - cron: '0 0 * * *'  # Run daily at midnight
-  workflow_dispatch:
-    inputs:
-      pr-number:
-        description: 'PR Number'
-        required: false
-        type: number
 
 jobs:
   build:
@@ -31,12 +25,11 @@ jobs:
       HUGO_VERSION: "0.123.3"
       HUGO_EXTENDED: true
       PYTHON_VERSION: "3.11"
-      PR_NUMBER: ${{ github.event.inputs.pr-number || github.event.number }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4
         with:
-          ref: ${{ format('refs/pull/{0}/merge', env.PR_NUMBER) || github.ref }}
+          ref: ${{ github.ref }}
           fetch-depth: 0
 
       - name: Hugo - Setup
@@ -93,7 +86,7 @@ jobs:
           NUM_FILES=$(ls -1 content/curated_resources/*.md | wc -l)
           echo "Number of curated resources: $NUM_FILES"
 
-      - name: Hugo - Build
+      - name: Hugo - Build 
         run: |
           hugo --gc --minify --cleanDestinationDir --destination public
 
@@ -113,8 +106,6 @@ jobs:
       contents: write
     needs: build
     if: github.event_name == 'pull_request'
-    env:
-      PR_NUMBER: ${{ github.event.inputs.pr-number || github.event.number }}
     steps:
       - name: Download Artifact - Website
         uses: actions/download-artifact@v4
@@ -129,7 +120,6 @@ jobs:
           publish_dir: ${{ github.repository }}/forrt-website
           external_repository: forrtproject/webpage-staging
           publish_branch: staging
-          destination_dir: pr-${{ env.PR_NUMBER }}
           cname: staging.forrt.org
 
   deploy-prod:
