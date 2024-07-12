@@ -112,7 +112,7 @@ jobs:
     permissions:
       contents: write
     needs: build
-    if: github.event_name == 'pull_request' && (github.event.inputs.pr-number || github.event.number) && github.event.repository.fork == false
+    if: github.event_name == 'pull_request'
     env:
       PR_NUMBER: ${{ github.event.inputs.pr-number || github.event.number }}
     steps:
