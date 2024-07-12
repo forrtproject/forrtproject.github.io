@@ -22,6 +22,7 @@ on:
 
 jobs:
   build:
+    name: Build
     runs-on: ubuntu-22.04
     permissions:
       contents: read
@@ -104,7 +105,32 @@ jobs:
           path: public/
           retention-days: 1
 
+  deploy-test:
+    name: Deploy - Test
+    runs-on: ubuntu-22.04
+    permissions:
+      contents: write
+    needs: build
+    if: github.event.inputs.pr_number
+    steps:
+      - name: Download Artifact - Website
+        uses: actions/download-artifact@v4
+        with:
+          name: forrt-website-${{ github.run_number }}
+          path: ${{ github.repository }}/forrt-website
+
+      - name: Deploy - GitHub Pages 
+        uses: peaceiris/actions-gh-pages@4f9cc6602d3f66b9c108549d475ec49e8ef4d45e
+        with:
+          personal_token: ${{ secrets.STAGING_GITHUB_TOKEN }}
+          publish_dir: ${{ github.repository }}/forrt-website
+          external_repository: forrtproject/webpage-staging
+          publish_branch: main
+          destination_dir: pr-${{ github.event.inputs.pr_number }}
+          cname: staging.forrt.org
+
   deploy-prod:
+    name: Deploy - Production
     runs-on: ubuntu-22.04
     permissions:
       contents: write
@@ -125,24 +151,3 @@ jobs:
           publish_branch: gh-pages
           cname: forrt.org
 
-  deploy-test:
-    runs-on: ubuntu-22.04
-    permissions:
-      contents: write
-    needs: build
-    if: github.event.inputs.pr_number
-    steps:
-      - name: Download Artifact - Website
-        uses: actions/download-artifact@v4
-        with:
-          name: forrt-website-${{ github.run_number }}
-          path: ${{ github.repository }}/forrt-website
-
-      - name: Deploy - GitHub Pages (Test)
-        uses: peaceiris/actions-gh-pages@4f9cc6602d3f66b9c108549d475ec49e8ef4d45e
-        with:
-          personal_token: ${{ secrets.STAGING_GITHUB_TOKEN }}
-          publish_dir: ${{ github.repository }}/forrt-website
-          external_repository: forrtproject/webpage-staging
-          publish_branch: gh-pages
-          destination_dir: pr-${{ github.event.inputs.pr_number }}
