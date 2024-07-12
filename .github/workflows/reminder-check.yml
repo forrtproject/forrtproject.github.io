@@ -1,0 +1,17 @@
+name: reminder-check
+
+permissions:
+  issues: write
+  pull-requests: write
+
+on:
+  schedule:
+    - cron: '0 1 * * *'
+
+jobs:
+  reminder-check:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Reminder Action - Check  
+        uses: agrc/reminder-action@b5cc06580b6a711baddf6a947131f85a422fa263

@@ -1,4 +1,4 @@
-name: Hugo CICD
+name: deploy
 
 # Build and deploy the website
 # Contains Tenzing's script to update the contributors list
