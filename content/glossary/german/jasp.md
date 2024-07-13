@@ -1,4 +1,5 @@
 {
+    "type": "glossary",
     "title": "JASP",
     "definition": "JASP steht für “Jeffrey's Amazing Statistics Program” und ist nach Sir Harold Jeffreys benannt. Es handelt sich um eine freie und quelloffene Software für Datenanalyse. JASP stützt sich auf eine graphische Benutzeroberfläche und bietet sowohl Nullhypothesentests als auch deren Bayes’sche Gegenstücke. JASP unterstützt die Reproduzierbarkeit von Forschungsergebnissen, indem es die Daten, den Code, die Analysen und die Ergebnisse in einer einzigen Datei speichert.",
     "related_terms": [

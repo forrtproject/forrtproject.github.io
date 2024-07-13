@@ -1,6 +1,7 @@
 {
+    "type": "glossary",
     "title": "Posterior distribution",
-    "definition": "",
+    "definition": "A way to summarize one’s updated knowledge in Bayesian inference, balancing prior knowledge with observed data. In statistical terms, posterior distributions are proportional to the product of the likelihood function and the prior. A posterior probability distribution captures (un)certainty about a given parameter value.",
     "related_terms": [
         "Bayes Factor",
         "Bayesian inference",

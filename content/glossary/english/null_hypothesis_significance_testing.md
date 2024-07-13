@@ -1,6 +1,7 @@
 {
+    "type": "glossary",
     "title": "Null Hypothesis Significance Testing (NHST)",
-    "definition": "",
+    "definition": "A frequentist approach to inference used to test the probability of an observed effect against the null hypothesis of no effect/relationship (Pernet, 2015). Such a conclusion is arrived at through use of an index called the p -value. Specifically, researchers will conclude an effect is present when an a priori alpha threshold, set by the researchers, is satisfied; this determines the acceptable level of uncertainty and is closely related to Type I error .",
     "related_terms": [
         "Inference",
         "P-value",

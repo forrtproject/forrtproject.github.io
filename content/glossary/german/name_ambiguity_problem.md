@@ -1,4 +1,5 @@
 {
+    "type": "glossary",
     "title": "Name Ambiguity Problem (Problem mehrdeutiger Namen)",
     "definition": "Ein Zuordnungsproblem, das sich aus zwei miteinander zusammenhängenden Problemen ergibt: Autor:innen können mehrere Namen oder Pseudonyme verwenden, um ihre Arbeiten zu veröffentlichen, und mehrere Autor:innen eines Fachgebiets können denselben vollständigen Namen haben. Dies macht die genaue Identifizierung von Autor:innen allein anhand von Namen und Fachgebieten zu einer schwierigen Aufgabe. Dieses Problem kann durch die Schaffung und Verwendung eindeutiger digitaler Identifikatoren gelöst werden, die wie digitale Fingerabdrücke funktionieren, wie z. B. ORCID.",
     "related_terms": [

@@ -1,6 +1,7 @@
 {
+    "type": "glossary",
     "title": "Inclusion",
-    "definition": "",
+    "definition": "Inclusion, or inclusivity, refers to a sense of welcome and respect within a given collaborative project or environment (such as academia) where diversity simply indicates a wide range of backgrounds, perspectives, an d experiences, efforts to increase inclusion go further to promote engagement and equal valuation among diverse indi viduals, who might otherwise be marginalized. Increasing inclusivity often involves minimising the impact of, or even removing, systemic barriers to accessibility and engagement.",
     "related_terms": [
         "Diversity",
         "Equity",

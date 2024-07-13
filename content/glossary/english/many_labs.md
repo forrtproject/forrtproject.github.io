@@ -1,6 +1,7 @@
 {
+    "type": "glossary",
     "title": "Many Labs",
-    "definition": "",
+    "definition": "A crowdsourcing initiative led by the Open Science Collaboration (2015) whereby several hundred separate research groups from various universities run replication studies of published effects. This initiative is also known as “Many Labs I” and was subsequently followed by a “Many Labs II” project that assessed variation in replication results across samples and settings. Similar projects include ManyBabies, EEGManyLabs, and the Psychological Science Accelerator.",
     "related_terms": [
         "Collaboration",
         "Many analysts",

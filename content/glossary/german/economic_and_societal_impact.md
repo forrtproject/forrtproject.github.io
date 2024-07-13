@@ -1,4 +1,5 @@
 {
+    "type": "glossary",
     "title": "Economic and societal impact (wirtschaftliche und gesellschaftliche Auswirkungen",
     "definition": "Der Beitrag, den ein Forschungsgegenstand für die Wirtschaft und Gesellschaft im weiteren Sinne leistet. Erfasst wird auch der Nutzen der Forschung für Einzelpersonen, Organisationen und/oder Nationen.",
     "related_terms": [

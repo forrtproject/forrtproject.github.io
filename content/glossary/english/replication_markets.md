@@ -1,6 +1,7 @@
 {
+    "type": "glossary",
     "title": "Replication Markets",
-    "definition": "",
+    "definition": "A replication market is an environment where users bet on the replicability of certain effects. Forecasters are incentivized to make accurate predictions and the top successful forecasters receive monetary compensation or contributorship for their bets. The rationale behind a replication market is that it leverages the collective wisdom of the scientific community to predict which effect will most likely replicate, thus encouraging researchers to channel their limited resources to replicating these effects.",
     "related_terms": [
         "Citizen science",
         "Crowdsourcing",

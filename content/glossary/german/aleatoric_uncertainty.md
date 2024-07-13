@@ -1,4 +1,5 @@
 {
+    "type": "glossary",
     "title": "Aleatoric uncertainty (Aleatorische Unsicherheit)",
     "definition": "Die Variabilität von Ergebnissen aufgrund von unbekannten oder inhärent zufälligen Faktoren. Die stochastische Komponente der Ergebnisunsicherheit, die nicht durch zusätzliche Informationsquellen reduziert werden kann. Ein Beispiel: Beim Werfen einer Münze ist ungewiss, ob sie auf Kopf oder Zahl fällt.",
     "related_terms": [

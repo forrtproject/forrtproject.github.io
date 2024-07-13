@@ -1,4 +1,5 @@
 {
+    "type": "glossary",
     "title": "ReproducibiliTea",
     "definition": "",
     "related_terms": [

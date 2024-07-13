@@ -1,6 +1,7 @@
 {
+    "type": "glossary",
     "title": "Communality",
-    "definition": "",
+    "definition": "The common ownership of scientific results and methods and the consequent imperative to share both freely. Communality is based on the fact that every scientific finding is seen as a product of the effort of a number of agents. This norm is followed when scientists openly share their new findings with colleagues.",
     "related_terms": [
         "Mertonian norms",
         "Objectivity Alternative definition: Communism (in Merton, 1942) Alternative definition: Communism (in Merton, 1942) Related terms to alternative definition (if applicable) Related terms to alternative definition (if applicable)"

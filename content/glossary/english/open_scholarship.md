@@ -1,6 +1,7 @@
 {
+    "type": "glossary",
     "title": "Open Scholarship",
-    "definition": "",
+    "definition": "Open scholarship’ is often used synonymously with ‘open science’, but extends to all disciplines, drawing in those which might not traditionally identify as science-based. It reflects the idea that knowledge of all kinds should be openly shared, transparent, rigorous, reproducible, replicable, accumulative, and inclusive (allowing for all knowledge systems). Open scholarship includes all scholarly activities that are not solely limited to research such as teaching and pedagogy.",
     "related_terms": [
         "Bropenscience",
         "Decolonisation",

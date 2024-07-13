@@ -1,6 +1,7 @@
 {
+    "type": "glossary",
     "title": "COAR Community Framework for Good Practices in Repositories",
-    "definition": "",
+    "definition": "Definition : A framework which identifies best practices for scientific repositories and evaluation criteria for these practices. Its flexible and multidimensional approach means that it can be applied to different types of repositories, including those which host publications or data, across geographical and thematic contexts.",
     "related_terms": [
         "Metadata",
         "Open Access",

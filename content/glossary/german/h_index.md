@@ -1,4 +1,5 @@
 {
+    "type": "glossary",
     "title": "H-index (H-Index, Hirsch Index)",
     "definition": "Der Hirsch-Index, abgekürzt als H-Index, soll die Produktivität sowie den Einfluss einer Forschungsarbeit messen, indem er die Anzahl der Veröffentlichungen und die Anzahl der Zitierungen dieser Veröffentlichungen in Relation setzt. Hirsch (2005) definiert den Index als “the number of papers with citation number ≥ h” (dt. die Anzahl der Veröffentlichungen mit einer Zitationszahl ≥ h; S. 16569). Eine forschende Person hat einen Hirsch-Index h, wenn h von ihren insgesamt N Publikationen mindestens h-mal und die restlichen (N-h) Publikationen höchstens h-mal zitiert wurden.",
     "related_terms": [

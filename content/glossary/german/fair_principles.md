@@ -1,4 +1,5 @@
 {
+    "type": "glossary",
     "title": "FAIR principles (FAIR Prinzipien)",
     "definition": "Beschreibt das Prinzip, wissenschaftliche Materialien Findable (auffindbar), Accessible (zugänglich), Interoperable (interoperabel) und Reusable (wiederverwendbar) zu machen (FAIR). Auffindbar und Zugänglich beziehen sich darauf, wo die Materialien gespeichert sind (z. B. in Datenarchiven), während Interoperabel und Wiederverwendbar sich auf die Bedeutung von Datenformaten und deren mögliche künftige Veränderung konzentrieren.",
     "related_terms": [

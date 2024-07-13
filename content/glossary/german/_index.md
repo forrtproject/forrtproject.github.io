@@ -12,6 +12,7 @@ view: 1
 header:
   caption: ""
   image: "resources.jpg"
+type: "glossary"
 ---
 
 ### Einführung

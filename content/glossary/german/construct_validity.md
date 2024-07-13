@@ -1,4 +1,5 @@
 {
+    "type": "glossary",
     "title": "Construct validity (Konstruktvalidität)",
     "definition": "Im Zusammenhang mit Messungen und Tests bezieht sich die Konstruktvalidität auf den Grad, in dem ein Test das misst, was er zu messen vorgibt. In Bereichen, in denen hypothetische, nicht beobachtbare Entitäten untersucht werden, ist die Konstruktvalidierung im Wesentlichen ein Theorietest, da es darum geht, festzustellen, ob eine Messung (ein Fragebogen, eine Laboraufgabe usw.) eine gültige Repräsentation eines hypothetischen Konstrukts ist (d. h. einer Theorie entspricht).",
     "related_terms": [

@@ -1,6 +1,7 @@
 {
+    "type": "glossary",
     "title": "Hidden Moderators",
-    "definition": "",
+    "definition": "Contextual conditions that can, unbeknownst to researchers, make the results of a replication attempt deviate from those of the original study. Hidden moderators are sometimes invoked to explain (away) failed replications. Also called hidden assumptions.",
     "related_terms": [
         "Auxiliary Hypothesis"
     ],

@@ -1,4 +1,5 @@
 {
+    "type": "glossary",
     "title": "Publish or Perish (Publizieren oder untergehen)",
     "definition": "Ein Aphorismus, der den Druck beschreibt, unter dem Forschende stehen, akademische Manuskripte zu veröffentlichen, oft in hoch angesehenen akademischen Zeitschriften, um eine erfolgreiche akademische Karriere zu haben. Dieser Druck, eine große Anzahl von Manuskripten zu veröffentlichen, kann auf Kosten der Qualität der Manuskripte gehen. Dieser institutionelle Druck wird durch Einstellungs- und Berufungsverfahren und Finanzierungsentscheidungen verschärft, die sich stark an der Anzahl und dem Einfluss der Veröffentlichungen orientieren.",
     "related_terms": [

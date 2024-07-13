@@ -1,6 +1,7 @@
 {
+    "type": "glossary",
     "title": "Robustness (analyses)",
-    "definition": "",
+    "definition": "The persistence of support for a hypothesis under perturbations of the methodological/analytical pipeline In other words, a pplying different methods/analysis pipelines t o examine if the same conclusion is supported under analytical different conditions.",
     "related_terms": [
         "Many Labs",
         "Multiverse analysis",

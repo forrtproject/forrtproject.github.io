@@ -1,6 +1,7 @@
 {
+    "type": "glossary",
     "title": "Likelihood function (Likelihood-Funktion)",
-    "definition": "",
+    "definition": "x und des Parameters theta vertauscht werden, so dass die Wahrscheinlichkeit als eine Funktion von theta für spezifische Daten x betrachtet werden kann. In diesem Fall würde die Likelihood-Funktion eine Kurve oder Hyperfläche beschreiben, deren Spitze, falls vorhanden, die Kombination von Modellparameterwerten darstellt, die die Wahrscheinlichkeit der Ziehung der erhaltenen Stichprobe maximiert.",
     "related_terms": [
         "Bayes factor",
         "Bayesian inference",

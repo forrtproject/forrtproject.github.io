@@ -1,4 +1,5 @@
 {
+    "type": "glossary",
     "title": "Semantometrics (Semantometrie)",
     "definition": "Eine Klasse von Metriken zur Bewertung von Forschung unter Verwendung des vollständigen Veröffentlichungstextes zur Messung der semantischen Ähnlichkeit von Veröffentlichungen und zur Hervorhebung des Beitrags eines Artikels zum Fortschritt der wissenschaftlichen Diskussion. Sie ist eine Erweiterung von Instrumenten wie Bibliometrie, Webometrie und Altmetrik.",
     "related_terms": [

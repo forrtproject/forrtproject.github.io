@@ -1,6 +1,7 @@
 {
+    "type": "glossary",
     "title": "G*Power",
-    "definition": "",
+    "definition": "Free to use statistical software for performing power analyses. T he user specifies the desired statistical test (e.g. t-test, regression, ANOVA), and three of the following: the number of groups/observations, effect size, significance level, or power, in order to calculate the unspecified aspect.",
     "related_terms": [
         "Power analysis",
         "Sample size justification",

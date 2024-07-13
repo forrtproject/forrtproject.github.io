@@ -1,6 +1,7 @@
 {
+    "type": "glossary",
     "title": "The Troubling Trio",
-    "definition": "",
+    "definition": "Described as a combination of low statistical power, a surprising result, and a p -value only slightly lower than .05.",
     "related_terms": [
         "Replication",
         "Reproducibility",

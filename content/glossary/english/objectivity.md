@@ -1,6 +1,7 @@
 {
+    "type": "glossary",
     "title": "Objectivity",
-    "definition": "",
+    "definition": "The idea that scientific claims, methods, results and scientists themselves should remain value-free and unbiased, and thus not be affected by cultural, political, racial or religious bias as well as any personal interests (Merton, 1942 ).",
     "related_terms": [
         "Communality",
         "Mertonian norms",

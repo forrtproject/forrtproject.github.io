@@ -1,6 +1,7 @@
 {
+    "type": "glossary",
     "title": "Likelihood function",
-    "definition": "",
+    "definition": "A statistical model of the data used in frequentist and Bayesian analyses , defined up to a constant of proportionality. A likelihood function represents the likeliness of different parameters for your distribution given the data. Given that probability distributions have unknown population parameters, the likelihood function indicates how well the sample data summarise these parameters. As such, the likelihood function gives an idea of the goodness of fit of a model to the sample data for a given set of values of the unknown population parameters.",
     "related_terms": [
         "Bayes factor",
         "Bayesian inference",

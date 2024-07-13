@@ -1,4 +1,5 @@
 {
+    "type": "glossary",
     "title": "Constraints on Generality (COG, Beschränkungen der Generalisierbarkeit)",
     "definition": "Eine Erklärung, in der die Zielpopulation und die Bedingungen für die berichteten Ergebnisse ausdrücklich genannt und begründet werden. Forschende sollten explizit auf mögliche Randbedingungen für ihre Verallgemeinerungen eingehen (Simons et al., 2017). Forschende sollten detaillierte Beschreibungen der Population aus der die Stichprobe stammte und/oder kontextbezogene Faktoren liefern, die die Ergebnisse beeinflusst haben könnten, damit künftige Replikationsversuche diese Faktoren berücksichtigen können (Brandt et al., 2014). Bei nicht explizit aufgeführten Bedingungen wird davon ausgegangen, dass sie keine theoretische Relevanz für die Replizierbarkeit des Effekts haben.",
     "related_terms": [

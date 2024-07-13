@@ -1,4 +1,5 @@
 {
+    "type": "glossary",
     "title": "Altmetrics",
     "definition": "Ausgehend von traditionellen Zitationsmetriken bieten Altmetrics (kurz für den englischen Ausdruck \"alternative metrics\") eine Bewertung der Aufmerksamkeit und der breiteren Bedeutung von Forschungsarbeiten auf der Grundlage verschiedener Quellen. Diese Quellen können soziale Medien umfassen (z. B.  Twitter /X ) , digitale Nachrichtenkanäle, die Anzahl der Downloads von Preprints usw. Altmetrics sind dafür kritisiert worden, dass sensationelle Behauptungen in der Regel mehr Aufmerksamkeit erhalten als seriöse Forschung (Ali, 2021).",
     "related_terms": [

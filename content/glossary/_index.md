@@ -12,6 +12,7 @@ view: 1
 header:
   caption: ""
   image: "resources.jpg"
+layout: index
 ---
 
 ## Choose your language

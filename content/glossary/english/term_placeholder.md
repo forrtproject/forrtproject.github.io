@@ -1,6 +1,7 @@
 {
+    "type": "glossary",
     "title": "Term placeholder",
-    "definition": "",
+    "definition": "[fill here]",
     "related_terms": [
         "[fill here]"
     ],

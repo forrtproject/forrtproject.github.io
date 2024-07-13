@@ -1,4 +1,5 @@
 {
+    "type": "glossary",
     "title": "Registry of Research Data Repositories",
     "definition": "Ein globales Register von Forschungsdaten-Repositorien aus verschiedenen akademischen Disziplinen. Es umfasst Repositorien, die Forschenden, Fördereinrichtungen, Verlagen und wissenschaftlichen Einrichtungen die dauerhafte Speicherung von Datensätzen, deren Beschreibung durch Metadaten und den Zugriff darauf ermöglichen.",
     "related_terms": [

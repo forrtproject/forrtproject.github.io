@@ -1,4 +1,5 @@
 {
+    "type": "glossary",
     "title": "Overlay Journal (Overlay Zeitschrift)",
     "definition": "Elektronische Open-Access-Zeitschriften, die Artikel aus anderen Quellen (in der Regel Preprint-Server wie arXiv) sammeln und kuratieren. Die Kuratierung der Artikel kann eine (nach der Veröffentlichung erfolgende) Peer-Review-Begutachtung oder redaktionelle Auswahl beinhalten. Overlay-Zeitschriften veröffentlichen kein neues Material, sondern organisieren und sammeln Artikel, die in bestehenden Repositories verfügbar sind.",
     "related_terms": [

@@ -1,4 +1,5 @@
 {
+    "type": "glossary",
     "title": "Conflict of interest (Interessenkonflikt) ]",
     "definition": "",
     "related_terms": [
