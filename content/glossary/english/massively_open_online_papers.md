@@ -1,6 +1,7 @@
 {
+    "type": "glossary",
     "title": "Massively Open Online Papers (MOOPs)",
-    "definition": "",
+    "definition": "Unlike the traditional collaborative article, a MOOP follows an open participatory and dynamic model that is not restricted by a predetermined list of contributors.",
     "related_terms": [
         "Citizen science",
         "Collaboration",

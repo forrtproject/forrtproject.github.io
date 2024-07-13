@@ -1,6 +1,7 @@
 {
+    "type": "glossary",
     "title": "Python",
-    "definition": "",
+    "definition": "A n interpreted general-purpose programming language, intended to be user-friendly and easily readable, originally created by Guido van Rossum in 1991. Python has an extensive library of additional features with accessible documentation for tasks ranging from data analysis to experiment creation. It is a popular programming language in data science, machine learning and web development. Similar to R Markdown, Python can be presented in an interactive online format called a Jupyter notebook, combining code, data, and text.",
     "related_terms": [
         "Jupyter",
         "Matplotlib",

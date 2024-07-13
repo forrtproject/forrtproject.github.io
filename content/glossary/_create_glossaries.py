@@ -58,6 +58,7 @@ for language, group in grouped:
                     entry[current_field] += ' ' + sibling.text.strip()
 
         # Split the Definition into Definition and German_Translation
+        
         for glossary in d.values():
             pattern = r'\[.*?\]|\*\*\s*almost\s*(done|complete)\s*\*\*|#+\s*review needed\s*#+' # Remove status from title
             glossary['Title'] = re.sub(pattern, '', glossary['Title']).strip()
@@ -66,7 +67,9 @@ for language, group in grouped:
                 glossary['Definition'] = definitions[0].strip().replace('Definition:', '').strip()
                 if len(definitions) > 1:
                     glossary['Translation'] = re.sub(r'^[^\w]+', '', definitions[1]).strip()
-
+                else:
+                    glossary['Translation'] = glossary['Definition']
+                    
         for glossary in d.values():
             for key in list(glossary.keys()):
                 glossary[key] = glossary[key].strip()
@@ -114,16 +117,24 @@ print("Data successfully parsed.")
 # Generate the md files
 for language_data in merged_data:
     for language, entries in language_data.items():
-        # Create directory for each language
+        # Create directory for each language, or empty it except for the _index.md file
         if os.path.exists(os.path.join(script_dir, language)):
-            shutil.rmtree(os.path.join(script_dir, language))
+          for item in os.listdir(os.path.join(script_dir, language)):
+              item_path = os.path.join(os.path.join(script_dir, language), item)
+              if item != '_index.md':
+                  if os.path.isdir(item_path):
+                      shutil.rmtree(item_path)
+                  else:
+                      os.remove(item_path)
+                      
         os.makedirs(os.path.join(script_dir, language), exist_ok=True)
         
         print(f"Generating {len(entries)} markdown files for {language}")
         
         for entry in entries:
             # Prepare the data for the .md file
-            md_data = {
+            json_data = {
+                "type": "glossary",
                 "title": entry.get("Title", ""),
                 "definition": entry.get("Translation", ""),
                 "related_terms": entry.get("Related_terms", "").split("; "),
@@ -139,9 +150,15 @@ for language_data in merged_data:
             file_name = re.sub(r'[^\w\s]', '_', file_name.replace(" ", "_")).lower().strip() + ".md"
             file_path = os.path.join(script_dir, language, file_name)
             
-            # Write the .md file
-            with open(file_path, 'w', encoding='utf-8') as md_file:
-                json.dump(md_data, md_file, ensure_ascii=False, indent=4)
-
+            with open(file_path, 'w', encoding='utf-8') as json_file:
+              json.dump(json_data, json_file, ensure_ascii=False, indent=4)
+              
+              
+        index_file_path = os.path.join(script_dir, language, "_index.md")
+            
+        if os.path.exists(index_file_path):
+            print(f"Index for {language} found")
+        else:
+            print(f"BEWARE: index for {language} missing")
 
 print("Markdown files successfully generated.")

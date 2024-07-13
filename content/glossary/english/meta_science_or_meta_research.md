@@ -1,6 +1,7 @@
 {
+    "type": "glossary",
     "title": "Meta-science or Meta-research",
-    "definition": "",
+    "definition": "The scientific study of science itself with the aim to describe, explain, evaluate and/or improve scientific practices. Meta-science typically investigates scientific methods, analyses, the reporting and evaluation of data, the reproducibility and replicability of research results, and research incentives.",
     "related_terms": [
         ""
     ],

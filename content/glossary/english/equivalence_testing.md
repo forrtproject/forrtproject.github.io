@@ -1,6 +1,7 @@
 {
+    "type": "glossary",
     "title": "Equivalence Testing",
-    "definition": "",
+    "definition": "Definition : Equivalence tests statistically assess the null hypothesis that a given effect exceeds a minimum criterion to be considered meaningful. Thus, rejection of the null hypothesis provides evidence of a lack of (meaningful) effect. Based upon frequentist statistics, equivalence tests work by specifying equivalence bounds: a lower and upper value that reflect the smallest effect size of interest. Two one-sided t -tests are then conducted against each of these equivalence bounds to assess whether effects that are deemed meaningful can be rejected (see Schuirmann, 1972; Lakens et al., 2018; 2020).",
     "related_terms": [
         "Equivalence bounds",
         "Falsification",

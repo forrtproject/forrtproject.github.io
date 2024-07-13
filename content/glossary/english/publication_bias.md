@@ -1,6 +1,7 @@
 {
+    "type": "glossary",
     "title": "Publication bias (File Drawer Problem)",
-    "definition": "",
+    "definition": "Definition : The failure to publish results based on the \"direction or strength of the study findings\" (Dickersin & Min, 1993, p. 135). The bias arises when the evaluation of a study’s publishability disproportionately hinges on the outcome of the study, often with the inclination that novel and significant results are worth publishing more than replications and null results. This bias typically materializes through a disproportionate number of significant findings and inflated effect sizes. This process leads to the published scientific literature not being representative of the full extent of all research, and specifically underrepresents null finding. Such findings, in turn, land in the so called “file drawer”, where they are never published and have no findable documentation.",
     "related_terms": [
         "Dissemination bias",
         "P-curve",
