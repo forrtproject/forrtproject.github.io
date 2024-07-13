@@ -1,6 +1,7 @@
 {
+    "type": "glossary",
     "title": "Analytic Flexibility",
-    "definition": "",
+    "definition": "Definition :  Analytic flexibility is a type of researcher degrees of freedom (Simmons, Nelson, & Simonsohn, 2011) that refers specifically to the large number of choices made during data preprocessing and statistical analysis.  “[T]he range of analysis outcomes across different acceptable analysis methods” (Carp, 2012, p. 1). Analytic flexibility can be problematic, as this variability in analytic strategies can translate into variability in research outcomes, particularly when several strategies are applied, but not transparently reported (Masur, 2021).",
     "related_terms": [
         "Garden of forking paths",
         "Multiverse analysis",

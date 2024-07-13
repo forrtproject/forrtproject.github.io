@@ -1,6 +1,7 @@
 {
+    "type": "glossary",
     "title": "Authorship",
-    "definition": "",
+    "definition": "Authorship assigns credit for research outputs (e.g. manuscripts, data, and software) and accountability for content (McNutt et al. 2018; Patience et al. 2019 ). C onventions differ across disciplines, cultures, and even research groups, in their expectations of what efforts earn authorship, what the order of authorship signifies (if anything), how much accountability for the research the corresponding author assumes , and the extent to which authors are accountable for aspects of the work that they did not personally conduct .",
     "related_terms": [
         "Co-authorship",
         "Consortium authorship",

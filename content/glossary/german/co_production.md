@@ -1,4 +1,5 @@
 {
+    "type": "glossary",
     "title": "Co-production (Ko-Produktion)",
     "definition": "Bei diesem Forschungsansatz werden Beteiligte, die traditionell nicht in den Forschungsprozess eingebunden sind, zu Beginn des Projekts oder während des gesamten Forschungsprozesses in die Zusammenarbeit eingebunden. So können beispielsweise an der ko-produzierten Gesundheitsforschung Angehörige von Gesundheitsberufen und Patient:innen beteiligt sein. An der ko-produzierten Bildungsforschung beispielsweise können Lehrkräfte und Schüler:innen/Studierende beteiligt sein. Dahinter stehen Grundsätze wie die Achtung und Wertschätzung der Erfahrungen von Nicht-Forschenden, der bewusste Umgang mit Machtdynamiken und der Aufbau von Beziehungen..",
     "related_terms": [

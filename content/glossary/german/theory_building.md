@@ -1,4 +1,5 @@
 {
+    "type": "glossary",
     "title": "Theory building (Theoriebildung)",
     "definition": "Der Prozess der Erstellung und Entwicklung einer Erklärung von Konzepten und deren Zusammenhängen, um zu zeigen, wie und/oder warum ein Phänomen auftritt. Die Theoriebildung ermöglicht dann die Überprüfung der Theorie.",
     "related_terms": [

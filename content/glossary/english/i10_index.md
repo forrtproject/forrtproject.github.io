@@ -1,6 +1,7 @@
 {
+    "type": "glossary",
     "title": "i10-index",
-    "definition": "",
+    "definition": "A research metric created by Google Scholar that represents the number of publications a researcher has with at least 10 citations.",
     "related_terms": [
         "Citation",
         "DORA",

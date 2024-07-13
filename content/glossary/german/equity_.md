@@ -1,4 +1,5 @@
 {
+    "type": "glossary",
     "title": "Equity  (Gleichstellung)",
     "definition": "Verschiedene Personen haben unterschiedliche Ausgangspositionen (vgl. \"Chancenlücken\") und Bedürfnisse. Während sich die Gleichbehandlung (\"equal treatment\") darauf konzentriert, alle Personen gleich zu behandeln, zielt die Gleichstellung darauf ab, die Chancengleichheit zu erhöhen, indem mehr Chancen für unterrepräsentierte Minderheiten hergestellt werden. Die Gleichstellung soll durch Fairness erreicht werden, d. h. durch die Berücksichtigung der unterschiedlichen Unterstützungsbedürfnisse der einzelnen Personen, anstatt sich nur auf die Bedürfnisse der Mehrheit zu konzentrieren.",
     "related_terms": [
