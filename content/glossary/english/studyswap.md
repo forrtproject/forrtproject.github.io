@@ -1,6 +1,7 @@
 {
+    "type": "glossary",
     "title": "StudySwap",
-    "definition": "",
+    "definition": "A free online platform through which researchers post brief descriptions of research projects or resources that are ava ilable for use (“haves”) or that they require and another researcher may have (“needs”). StudySwap is a crowdsourcing approach to research which can ensure that fewer research resources go unused and more researchers have access to the resources they need.",
     "related_terms": [
         "Collaboration",
         "Crowdsourcing",

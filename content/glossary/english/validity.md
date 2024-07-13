@@ -1,6 +1,7 @@
 {
+    "type": "glossary",
     "title": "Validity",
-    "definition": "",
+    "definition": "Validity refers to the application of statistical principles to arrive at well-founded —i.e., likely corresponding accurately to the real world — concepts, conclusions or measurement. In psychometrics, v alidity refers to the extent to which something measures what it intends to or claims to measure. Under this generic term, there are different types of validity (e.g., internal validity, construct validity , face validity , criterion validity , diagnostic validity, discriminant validity, concurrent validity, convergent validity, predictive validity, external validity).",
     "related_terms": [
         "Causality",
         "Construct validity",

@@ -1,4 +1,5 @@
 {
+    "type": "glossary",
     "title": "The Troubling Trio (Die dreisten Drei)",
     "definition": "Beschrieben als eine Kombination aus geringer statistischer Teststärke (Power), einem überraschenden Ergebnis und einem p-Wert, der nur geringfügig niedriger als .05 ist.",
     "related_terms": [

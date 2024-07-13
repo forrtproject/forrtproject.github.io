@@ -1,4 +1,5 @@
 {
+    "type": "glossary",
     "title": "Confirmation bias (Bestätigungsverzerrung)",
     "definition": "Die Tendenz, Informationen in einer Weise zu suchen, zu interpretieren, zu bevorzugen und abzurufen, die die eigenen früheren Werte, Überzeugungen, Erwartungen oder Hypothesen beschäftigt und unterstützt.",
     "related_terms": [

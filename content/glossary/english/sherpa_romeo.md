@@ -1,6 +1,7 @@
 {
+    "type": "glossary",
     "title": "Sherpa Romeo",
-    "definition": "",
+    "definition": "An online resource that collects and presents open access policies from publishers, from across the world, providing summaries of individual journal's copyright and open access archiving policies.",
     "related_terms": [
         "Embargo period",
         "Open access",

@@ -1,4 +1,5 @@
 {
+    "type": "glossary",
     "title": "Repository (Repositorium)",
     "definition": "Ein Online-Archiv für die Speicherung digitaler Objekte wie Forschungsergebnisse, Manuskripte, Analysecodes und/oder Daten.",
     "related_terms": [
