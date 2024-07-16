@@ -261,6 +261,7 @@ Azevedo, F., Hartmann, H., Röseler, L., Wallrich, L., & Micheli, L. (2024, Febr
 
 {{< /spoiler >}}
 
+<br>
 
 📜 For ***The Psychologist***, on [open scholarship pedagogical communities](https://www.bps.org.uk/psychologist/open-scholarship-pedagogical-communities).
 
