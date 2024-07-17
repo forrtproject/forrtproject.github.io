@@ -22,5 +22,8 @@
         "Charlotte R. Pennington",
         "Robert M. Ross"
     ],
-    "language": "english"
+    "language": "english",
+    "aliases": [
+        "/glossary/citizen_science"
+    ]
 }

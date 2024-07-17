@@ -21,5 +21,8 @@
         "Annalise A. LaPlume ",
         "Charlotte Pennington"
     ],
-    "language": "english"
+    "language": "english",
+    "aliases": [
+        "/glossary/research_protocol"
+    ]
 }

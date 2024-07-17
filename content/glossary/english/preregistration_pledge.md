@@ -19,5 +19,8 @@
         "Mahmoud Elsherif",
         "Aleksandra Lazić, Steven Verheye n"
     ],
-    "language": "english"
+    "language": "english",
+    "aliases": [
+        "/glossary/preregistration_pledge"
+    ]
 }

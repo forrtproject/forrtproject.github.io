@@ -24,5 +24,8 @@
         "Charlotte R. Pennington",
         "Eike Mark Rinke"
     ],
-    "language": "english"
+    "language": "english",
+    "aliases": [
+        "/glossary/computational_reproducibility"
+    ]
 }

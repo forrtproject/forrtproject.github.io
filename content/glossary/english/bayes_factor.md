@@ -27,5 +27,8 @@
         "Suzanne L. K. Stewart",
         "Ana Todorovic"
     ],
-    "language": "english"
+    "language": "english",
+    "aliases": [
+        "/glossary/bayes_factor"
+    ]
 }

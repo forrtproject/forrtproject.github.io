@@ -22,5 +22,8 @@
         "Kai Krautter",
         "Graham Reid"
     ],
-    "language": "english"
+    "language": "english",
+    "aliases": [
+        "/glossary/knowledge_acquisition"
+    ]
 }

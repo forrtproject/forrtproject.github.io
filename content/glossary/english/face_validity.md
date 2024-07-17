@@ -24,5 +24,8 @@
         "Adam Parker",
         "Sam Parsons"
     ],
-    "language": "english"
+    "language": "english",
+    "aliases": [
+        "/glossary/face_validity"
+    ]
 }

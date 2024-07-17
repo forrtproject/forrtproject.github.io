@@ -27,5 +27,8 @@
         "Christopher Graham",
         "Emma Henderson"
     ],
-    "language": "english"
+    "language": "english",
+    "aliases": [
+        "/glossary/open_code"
+    ]
 }

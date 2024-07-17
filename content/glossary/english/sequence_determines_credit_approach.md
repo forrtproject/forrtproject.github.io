@@ -19,5 +19,8 @@
         "Sam Parsons",
         "Charlotte R. Pennington"
     ],
-    "language": "english"
+    "language": "english",
+    "aliases": [
+        "/glossary/sequence_determines_credit_approach"
+    ]
 }

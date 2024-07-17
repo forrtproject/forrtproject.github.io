@@ -24,5 +24,8 @@
         "Wanyin Li",
         "Charlotte R. Pennington"
     ],
-    "language": "english"
+    "language": "english",
+    "aliases": [
+        "/glossary/arrive_guidelines"
+    ]
 }

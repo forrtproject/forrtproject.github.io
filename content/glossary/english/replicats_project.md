@@ -22,5 +22,8 @@
         "Helena Hartmann",
         "Charlotte R. Penningto n"
     ],
-    "language": "english"
+    "language": "english",
+    "aliases": [
+        "/glossary/replicats_project"
+    ]
 }

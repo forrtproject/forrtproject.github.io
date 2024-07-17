@@ -19,5 +19,8 @@
         "Bethan Iley",
         "Sara Middleton"
     ],
-    "language": "english"
+    "language": "english",
+    "aliases": [
+        "/glossary/demarcation_criterion"
+    ]
 }

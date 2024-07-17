@@ -25,5 +25,8 @@
         "Sonia Rishi",
         "Lisa Spitzer"
     ],
-    "language": "english"
+    "language": "english",
+    "aliases": [
+        "/glossary/reproducibility_crisis"
+    ]
 }
