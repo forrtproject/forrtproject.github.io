@@ -55,7 +55,7 @@ subtitle = ""
 
 <center>
 
-# Publications, Preprints, Policy Briefs & op-eds
+# Publications, Preprints, & Policy Briefs & Op-Eds
 
 </center>
 
@@ -203,12 +203,23 @@ The **<font style="color:#0e2a38">preprint</font>** can [be found here (osf.io/f
 ## Preprints 
 ***
 
+### **The Replication Database: Documenting the Replicability of Psychological Science**
+
+<br>
+
+We have written a manuscript about documenting and tracking replication efforts. In psychological science, replicability — repeating a study with a new sample achieving consistent results — is critical for affirming the validity of scientific findings. Despite its importance, replication efforts are few and far between in psychological science with many attempts failing to corroborate past findings. This scarcity, compounded by the difficulty in accessing replication data, jeopardizes the efficient allocation of research resources and impedes scientific advancement. Addressing this crucial gap, we present the [Replication Database](https://forrt.org/replication-hub/), a novel platform hosting >1,200 original findings paired with replication findings. The infrastructure of this database allows researchers to submit, access, and engage with replication findings. The database makes replications visible, easily findable via a graphical user interface, and tracks replication rates across various factors, such as publication year or journal. This will facilitate future efforts to evaluate the robustness of psychological research. More info about the project and other FORRT replication efforts can be found on the [Replication Hub](https://forrt.org/replication-hub/#). This effort was also highlighted by the journal _Science_ in their [news at a glance](https://www.science.org/content/article/news-glance-planning-mentoring-tracking-replications-and-deracializing-lung-tests)!
+
+
+***Status***: Our paper is **preprinted** in MetaArxiv. Cite as:
+> Röseler, L., Kaiser, L., Doetsch, C. A., Klett, N., Seida, C., Schütz, A., … Zhang, Y., Mr. (2024, April 11). The Replication Database: Documenting the Replicability of Psychological Science. https://doi.org/10.31222/osf.io/me2ub
+
+<center> ________________________________ </center>
+
 ### **Neurodiversity & Open Scholarship in Academia**
 
 <br>
 
 We have written a manuscript entitled *Bridging Neurodiversity and Open Scholarship: How Shared Values Can Guide Best Practices for Research Integrity, Social Justice, and Principled Education* explaining that Neurodiversity is fundamental to the understanding of human behaviour and cognition and that neurodivergent individuals are often stigmatised, devalued, and objectified. The authors describe systematic barriers, issue with disclosure, directions on prevalence and stigma, intersection of neurodiversity and open scholarship, and provide recommendations that can lead to personal and systematic changes to improve acceptance of neurodivergent individuals. We also present the perspectives of neurodivergent authors, the majority of whom have personal lived experiences of neurodivergence(s), and provide recommendations for how research and academia can and should be improved in terms of research integrity, inclusivity and diversity. We end with discussing systematic barriers, issue with disclosure, directions on prevalence and stigma, intersection of neurodiversity and open scholarship, and provide recommendations that can lead to personal and systematic changes to improve acceptance of neurodivergent individuals.
-
 
 ***Status***: Our paper is **preprinted** 🎉🥳 in MetaArxiv. Cite as:
 > Elsherif, M. M., Middleton, S. L., Phan, J. M., Azevedo, F., Iley, B. J., Grose-Hodge, M., … Dokovova, M. (2022, June 20). Bridging Neurodiversity and Open Scholarship: How Shared Values Can Guide Best Practices for Research Integrity, Social Justice, and Principled Education. https://doi.org/10.31222/osf.io/k7a9p.
@@ -237,15 +248,37 @@ The **<font style="color:#0e2a38">preprint</font>** can [be found here (osf.io/b
 <br><br>
 <br><br>
 
-## op-ed*s* 
+## Op-Eds and Other Media 
 ***
+<br>
+
+
+📄 For the ***Official PLoS Blog***, on [creating a comprehensive, dynamic database cataloging scientific claims and subsequent replication attempts across various disciplines of social, cognitive, and behavioral sciences](https://theplosblog.plos.org/2024/02/unveiling-the-truth-in-science-the-quest-for-reliable-knowledge/).
+
+{{< spoiler text= "Bibliographic Reference" >}} 
+
+Azevedo, F., Hartmann, H., Röseler, L., Wallrich, L., & Micheli, L. (2024, February 15). Unveiling the Truth in Science: The Quest for Reliable Knowledge. The Official PLOS Blog. https://theplosblog.plos.org/2024/02/unveiling-the-truth-in-science-the-quest-for-reliable-knowledge/
+
+{{< /spoiler >}}
+
+<br>
+
+📜 For ***The Psychologist***, on [open scholarship pedagogical communities](https://www.bps.org.uk/psychologist/open-scholarship-pedagogical-communities).
+
+{{< spoiler text= "Bibliographic Reference" >}} 
+
+Azevedo, F. (2023). Open scholarship pedagogical communities. The Psychologist, British Psychological Society.
+
+
+{{< /spoiler >}}
+
 <br>
 
 📄 For the ***Observer***, of the Association for Psychological Science, on [Navigating Academia as Neurodivergent Researchers](https://www.psychologicalscience.org/observer/gs-navigating-academia-as-neurodivergent-researchers).
 
 {{< spoiler text= "Bibliographic Reference" >}} 
 
-Azevedo, F., Middleton, S., Mai Phan, J., Kapp, S., Gourdon-Kanhukamwe, A., Iley, B., Elsherif, M., & Shaw, J. J. (2022). Navigating Academia as Neurodivergent Researchers: Promoting Neurodiversity Within Open Scholarship. APS Observer.
+Azevedo, F., Middleton, S., Mai Phan, J., Kapp, S., Gourdon-Kanhukamwe, A., Iley, B., Elsherif, M., & Shaw, J. J. (2022). Navigating Academia as Neurodivergent Researchers: Promoting Neurodiversity Within Open Scholarship. APS Observer. https://www.psychologicalscience.org/observer/gs-navigating-academia-as-neurodivergent-researchers
 
 {{< /spoiler >}}
 
@@ -255,17 +288,17 @@ Azevedo, F., Middleton, S., Mai Phan, J., Kapp, S., Gourdon-Kanhukamwe, A., Iley
 
 {{< spoiler text= "Bibliographic Reference" >}} 
 
-Azevedo, F., Baum, M., Hartmann, H., Micheli, L., Spitzer, L., & Wingen, T. (2022). What is "Open Science"? And why does it need a glossary? (Was ist „Offene Wissenschaft”? Und warum braucht sie ein Wörterbuch?). In-Mind Magazine.
+Azevedo, F., Baum, M., Hartmann, H., Micheli, L., Spitzer, L., & Wingen, T. (2022). What is "Open Science"? And why does it need a glossary? (Was ist „Offene Wissenschaft”? Und warum braucht sie ein Wörterbuch?). In-Mind Magazine. https://de.in-mind.org/blog/post/was-ist-offene-wissenschaft-und-warum-braucht-sie-ein-woerterbuch
 
 {{< /spoiler >}}
 
 <br>
 
-📜 For the ***Center of Open Science*** Blog, on [Integrating Open and Reproducible Science Principles into Higher Education](https://www.cos.io/blog/educating-in-the-open-scholarship-eara).
+📜 For the ***Center of Open Science Blog***, on [Integrating Open and Reproducible Science Principles into Higher Education](https://www.cos.io/blog/educating-in-the-open-scholarship-eara).
 
 {{< spoiler text= "Bibliographic Reference" >}} 
 
-Azevedo, F. (2022). Educating in the Open Scholarship Era: Integrating Open and Reproducible Science Principles into Higher Education. Center for Open Science (COS).
+Azevedo, F. (2022). Educating in the Open Scholarship Era: Integrating Open and Reproducible Science Principles into Higher Education. Center for Open Science (COS). https://www.cos.io/blog/educating-in-the-open-scholarship-eara
 
 {{< /spoiler >}}
 

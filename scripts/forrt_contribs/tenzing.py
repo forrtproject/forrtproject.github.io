@@ -26,8 +26,6 @@ for project_name, url, project_url in zip(df['Project Name'], df['CSV Link'], df
 # Concatenate all data frames
 merged_data = pd.concat(all_data_frames, ignore_index=True)
 
-import pandas as pd
-
 def concatenate_true_columns(row, columns):
     true_columns = [col for col in columns if pd.notna(row[col]) and row[col]]
     if 'Project Managers' in true_columns:
