@@ -24,5 +24,8 @@
         "Tobias Wingen",
         "F lávio Azevedo"
     ],
-    "language": "english"
+    "language": "english",
+    "aliases": [
+        "/glossary/preprint"
+    ]
 }

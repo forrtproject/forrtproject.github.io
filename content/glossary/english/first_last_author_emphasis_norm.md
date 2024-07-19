@@ -19,5 +19,8 @@
     "reviewed_by": [
         "Charlotte R. Pennington"
     ],
-    "language": "english"
+    "language": "english",
+    "aliases": [
+        "/glossary/first_last_author_emphasis_norm"
+    ]
 }

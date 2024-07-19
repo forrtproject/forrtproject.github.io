@@ -27,5 +27,8 @@
         "Birgit Schmidt",
         "Beatrice Valentini"
     ],
-    "language": "english"
+    "language": "english",
+    "aliases": [
+        "/glossary/many_authors"
+    ]
 }

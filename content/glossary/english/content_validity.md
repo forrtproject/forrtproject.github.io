@@ -23,5 +23,8 @@
         "Sam Parsons",
         "Graham Reid"
     ],
-    "language": "english"
+    "language": "english",
+    "aliases": [
+        "/glossary/content_validity"
+    ]
 }

@@ -21,5 +21,8 @@
         "Christopher Graham",
         "Charlotte R. Pennington"
     ],
-    "language": "english"
+    "language": "english",
+    "aliases": [
+        "/glossary/semantometrics"
+    ]
 }

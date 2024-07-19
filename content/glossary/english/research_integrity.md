@@ -29,5 +29,8 @@
         "Tamara Kalandadze",
         "Charlotte R. Pennington"
     ],
-    "language": "english"
+    "language": "english",
+    "aliases": [
+        "/glossary/research_integrity"
+    ]
 }

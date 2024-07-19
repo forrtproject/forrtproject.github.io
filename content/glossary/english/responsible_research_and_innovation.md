@@ -22,5 +22,8 @@
         "Sam Parsons",
         "Graham Reid"
     ],
-    "language": "english"
+    "language": "english",
+    "aliases": [
+        "/glossary/responsible_research_and_innovation"
+    ]
 }

@@ -29,5 +29,8 @@
         "Sonia Rishi",
         "Emily A. Williams"
     ],
-    "language": "english"
+    "language": "english",
+    "aliases": [
+        "/glossary/co_production"
+    ]
 }

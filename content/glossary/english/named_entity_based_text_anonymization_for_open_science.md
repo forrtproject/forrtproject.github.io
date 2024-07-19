@@ -23,5 +23,8 @@
         "Charlotte R. Pennington",
         "Sam Parsons"
     ],
-    "language": "english"
+    "language": "english",
+    "aliases": [
+        "/glossary/named_entity_based_text_anonymization_for_open_science"
+    ]
 }

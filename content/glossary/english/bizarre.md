@@ -20,5 +20,8 @@
         "Zoe Flack",
         "Charlotte R. Pennington"
     ],
-    "language": "english"
+    "language": "english",
+    "aliases": [
+        "/glossary/bizarre"
+    ]
 }

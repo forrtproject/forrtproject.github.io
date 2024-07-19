@@ -21,5 +21,8 @@
         "Charlotte R. Pennington",
         "Julia Wolska"
     ],
-    "language": "english"
+    "language": "english",
+    "aliases": [
+        "/glossary/paywall"
+    ]
 }

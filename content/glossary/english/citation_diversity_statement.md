@@ -22,5 +22,8 @@
         "Sam Parsons",
         "Timo Roettger"
     ],
-    "language": "english"
+    "language": "english",
+    "aliases": [
+        "/glossary/citation_diversity_statement"
+    ]
 }
