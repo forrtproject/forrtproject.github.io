@@ -17,5 +17,8 @@
     "reviewed_by": [
         "[fill here]       The Glossary The Glossary"
     ],
-    "language": "english"
+    "language": "english",
+    "aliases": [
+        "/glossary/term_placeholder"
+    ]
 }

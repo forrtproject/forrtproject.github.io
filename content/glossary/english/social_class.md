@@ -21,5 +21,8 @@
         "Gerald Vineyard ",
         "Yu-Fang Yang"
     ],
-    "language": "english"
+    "language": "english",
+    "aliases": [
+        "/glossary/social_class"
+    ]
 }

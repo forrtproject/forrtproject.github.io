@@ -22,5 +22,8 @@
         "Kai Krautter",
         "Charlotte R. Pennington"
     ],
-    "language": "english"
+    "language": "english",
+    "aliases": [
+        "/glossary/g_power"
+    ]
 }

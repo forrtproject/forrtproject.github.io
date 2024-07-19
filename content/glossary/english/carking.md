@@ -22,5 +22,8 @@
         "Adrien Fillon",
         "Charlotte R. Pennington"
     ],
-    "language": "english"
+    "language": "english",
+    "aliases": [
+        "/glossary/carking"
+    ]
 }

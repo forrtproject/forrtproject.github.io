@@ -25,5 +25,8 @@
         "Tamara Kalandadze",
         "Charlotte R. Pennington"
     ],
-    "language": "english"
+    "language": "english",
+    "aliases": [
+        "/glossary/garden_of_forking_paths"
+    ]
 }

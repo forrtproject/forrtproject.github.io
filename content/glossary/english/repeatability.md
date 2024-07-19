@@ -20,5 +20,8 @@
         "Joanne McCuaig",
         "Sam Parsons"
     ],
-    "language": "english"
+    "language": "english",
+    "aliases": [
+        "/glossary/repeatability"
+    ]
 }

@@ -26,5 +26,8 @@
         "Mariella Paul",
         "Charlotte R. Pennington"
     ],
-    "language": "english"
+    "language": "english",
+    "aliases": [
+        "/glossary/open_access"
+    ]
 }

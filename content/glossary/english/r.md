@@ -21,5 +21,8 @@
         "Joanne McCuaig",
         "Andrew J. Stewart"
     ],
-    "language": "english"
+    "language": "english",
+    "aliases": [
+        "/glossary/r"
+    ]
 }

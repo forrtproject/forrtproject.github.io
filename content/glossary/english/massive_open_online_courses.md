@@ -24,5 +24,8 @@
         "Sam Parsons",
         "Charlotte R. Pennington"
     ],
-    "language": "english"
+    "language": "english",
+    "aliases": [
+        "/glossary/massive_open_online_courses"
+    ]
 }

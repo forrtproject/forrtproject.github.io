@@ -21,5 +21,8 @@
         "Emma Norris",
         "Charlotte R. Pennington"
     ],
-    "language": "english"
+    "language": "english",
+    "aliases": [
+        "/glossary/json_file"
+    ]
 }
