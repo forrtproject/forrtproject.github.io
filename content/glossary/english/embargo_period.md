@@ -23,5 +23,8 @@
         "Steven Verheyen",
         "Flávio Azevedo"
     ],
-    "language": "english"
+    "language": "english",
+    "aliases": [
+        "/glossary/embargo_period"
+    ]
 }

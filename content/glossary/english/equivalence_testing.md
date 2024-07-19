@@ -28,5 +28,8 @@
         "Tobias Wingen",
         "Flávio Azevedo"
     ],
-    "language": "english"
+    "language": "english",
+    "aliases": [
+        "/glossary/equivalence_testing"
+    ]
 }

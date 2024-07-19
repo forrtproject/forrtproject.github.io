@@ -20,5 +20,8 @@
         "Mahmoud Elsherif",
         "Sam Parsons"
     ],
-    "language": "english"
+    "language": "english",
+    "aliases": [
+        "/glossary/post_publication_peer_review"
+    ]
 }

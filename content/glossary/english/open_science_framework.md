@@ -24,5 +24,8 @@
         "Charlotte R. Pennington",
         "Lisa Spitzer"
     ],
-    "language": "english"
+    "language": "english",
+    "aliases": [
+        "/glossary/open_science_framework"
+    ]
 }

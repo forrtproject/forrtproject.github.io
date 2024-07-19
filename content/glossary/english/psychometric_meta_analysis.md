@@ -26,5 +26,8 @@
         "Catia M. Oliveira",
         "F lávio Azevedo"
     ],
-    "language": "english"
+    "language": "english",
+    "aliases": [
+        "/glossary/psychometric_meta_analysis"
+    ]
 }

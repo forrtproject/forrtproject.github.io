@@ -27,5 +27,8 @@
         "Charlotte R. Pennington",
         "Andrew J. Stewart"
     ],
-    "language": "english"
+    "language": "english",
+    "aliases": [
+        "/glossary/open_source_software"
+    ]
 }

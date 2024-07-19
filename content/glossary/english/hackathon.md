@@ -20,5 +20,8 @@
         "Brett J. Gall",
         "Emma Norris"
     ],
-    "language": "english"
+    "language": "english",
+    "aliases": [
+        "/glossary/hackathon"
+    ]
 }

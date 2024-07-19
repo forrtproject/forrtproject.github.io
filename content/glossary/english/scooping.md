@@ -25,5 +25,8 @@
         "Robert M. Ross ",
         "Flávio Azevedo"
     ],
-    "language": "english"
+    "language": "english",
+    "aliases": [
+        "/glossary/scooping"
+    ]
 }

@@ -24,5 +24,8 @@
         "Mirela Zaneva ",
         "Flávio Azevedo"
     ],
-    "language": "english"
+    "language": "english",
+    "aliases": [
+        "/glossary/universal_design_for_learning"
+    ]
 }

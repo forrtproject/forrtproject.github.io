@@ -17,5 +17,8 @@
     "reviewed_by": [
         ""
     ],
-    "language": "english"
+    "language": "english",
+    "aliases": [
+        "/glossary/induction"
+    ]
 }

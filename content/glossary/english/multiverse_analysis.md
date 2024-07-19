@@ -23,5 +23,8 @@
         "William Ngiam",
         "Sam Parsons"
     ],
-    "language": "english"
+    "language": "english",
+    "aliases": [
+        "/glossary/multiverse_analysis"
+    ]
 }

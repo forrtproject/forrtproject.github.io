@@ -24,5 +24,8 @@
         "Marta Topor",
         "Flávio Azevedo"
     ],
-    "language": "english"
+    "language": "english",
+    "aliases": [
+        "/glossary/bottom_up_approach"
+    ]
 }

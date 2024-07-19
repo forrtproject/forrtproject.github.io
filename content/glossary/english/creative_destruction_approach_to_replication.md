@@ -25,5 +25,8 @@
         "Sonia Rishi",
         "Beatrice Valentini"
     ],
-    "language": "english"
+    "language": "english",
+    "aliases": [
+        "/glossary/creative_destruction_approach_to_replication"
+    ]
 }

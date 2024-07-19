@@ -24,5 +24,8 @@
         "Yuki Yamada",
         "Flávio Azevedo"
     ],
-    "language": "english"
+    "language": "english",
+    "aliases": [
+        "/glossary/credit"
+    ]
 }

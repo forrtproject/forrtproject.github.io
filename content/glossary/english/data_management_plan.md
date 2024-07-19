@@ -24,5 +24,8 @@
         "Birgit Schmidt",
         "Flávio Azevedo"
     ],
-    "language": "english"
+    "language": "english",
+    "aliases": [
+        "/glossary/data_management_plan"
+    ]
 }

@@ -24,5 +24,8 @@
         "Suzanne L. K. Stewart",
         "Marta Topor"
     ],
-    "language": "english"
+    "language": "english",
+    "aliases": [
+        "/glossary/error_detection"
+    ]
 }

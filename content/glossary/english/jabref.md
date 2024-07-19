@@ -20,5 +20,8 @@
         "Sam Parsons",
         "Steven Verheyen"
     ],
-    "language": "english"
+    "language": "english",
+    "aliases": [
+        "/glossary/jabref"
+    ]
 }

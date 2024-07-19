@@ -24,5 +24,8 @@
         "Sam Parsons",
         "Gerald Vineyard"
     ],
-    "language": "english"
+    "language": "english",
+    "aliases": [
+        "/glossary/contribution"
+    ]
 }

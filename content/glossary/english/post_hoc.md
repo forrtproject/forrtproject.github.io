@@ -24,5 +24,8 @@
         "Graham Reid",
         "F lávio Azevedo"
     ],
-    "language": "english"
+    "language": "english",
+    "aliases": [
+        "/glossary/post_hoc"
+    ]
 }

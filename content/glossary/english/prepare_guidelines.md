@@ -21,5 +21,8 @@
         " Gilad Feldman",
         "Elias Garcia -Pelegrin"
     ],
-    "language": "english"
+    "language": "english",
+    "aliases": [
+        "/glossary/prepare_guidelines"
+    ]
 }

@@ -28,5 +28,8 @@
         "Ali H. Al-Hoorie",
         "Charlotte R. Pennington"
     ],
-    "language": "english"
+    "language": "english",
+    "aliases": [
+        "/glossary/compendium"
+    ]
 }

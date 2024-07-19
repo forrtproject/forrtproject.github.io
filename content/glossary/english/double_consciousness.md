@@ -21,5 +21,8 @@
         "Michele C. Lim",
         "Adam Parker"
     ],
-    "language": "english"
+    "language": "english",
+    "aliases": [
+        "/glossary/double_consciousness"
+    ]
 }

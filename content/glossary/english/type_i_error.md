@@ -34,5 +34,8 @@
         "Olly Robertson",
         "Mirela Zaneva"
     ],
-    "language": "english"
+    "language": "english",
+    "aliases": [
+        "/glossary/type_i_error"
+    ]
 }

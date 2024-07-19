@@ -24,5 +24,8 @@
         "Suzanne L. K. Stewart",
         "Flávio Azevedo"
     ],
-    "language": "english"
+    "language": "english",
+    "aliases": [
+        "/glossary/crowdsourced_research"
+    ]
 }

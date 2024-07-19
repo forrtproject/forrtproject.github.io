@@ -23,5 +23,8 @@
         "Graham Reid",
         "Mirela Zaneva"
     ],
-    "language": "english"
+    "language": "english",
+    "aliases": [
+        "/glossary/type_m_error"
+    ]
 }

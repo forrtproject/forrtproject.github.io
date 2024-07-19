@@ -19,5 +19,8 @@
         "Tsvetomira Dumbalska",
         "Adam Parker"
     ],
-    "language": "english"
+    "language": "english",
+    "aliases": [
+        "/glossary/journal_impact_factor_"
+    ]
 }

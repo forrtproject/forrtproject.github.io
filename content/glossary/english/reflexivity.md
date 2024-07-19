@@ -19,5 +19,8 @@
         "Gilad Feldman",
         "Annalise A. LaPlume"
     ],
-    "language": "english"
+    "language": "english",
+    "aliases": [
+        "/glossary/reflexivity"
+    ]
 }

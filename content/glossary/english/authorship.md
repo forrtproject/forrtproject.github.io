@@ -29,5 +29,8 @@
         "Birgit Schmidt",
         "Yuki Yamada"
     ],
-    "language": "english"
+    "language": "english",
+    "aliases": [
+        "/glossary/authorship"
+    ]
 }

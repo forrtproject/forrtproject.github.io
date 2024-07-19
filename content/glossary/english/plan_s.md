@@ -22,5 +22,8 @@
         "Halil E. Kocalar",
         "Birgit Schmidt"
     ],
-    "language": "english"
+    "language": "english",
+    "aliases": [
+        "/glossary/plan_s"
+    ]
 }

@@ -21,5 +21,8 @@
         "Helena Hartmann",
         "Timo Roettger"
     ],
-    "language": "english"
+    "language": "english",
+    "aliases": [
+        "/glossary/red_teams"
+    ]
 }

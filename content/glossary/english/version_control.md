@@ -29,5 +29,8 @@
         "Timo Roettger",
         "Andrew J. Stewart"
     ],
-    "language": "english"
+    "language": "english",
+    "aliases": [
+        "/glossary/version_control"
+    ]
 }

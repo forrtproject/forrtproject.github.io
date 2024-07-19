@@ -23,5 +23,8 @@
         "Sonia Rishi",
         "Flávio Azevedo"
     ],
-    "language": "english"
+    "language": "english",
+    "aliases": [
+        "/glossary/cumulative_science"
+    ]
 }

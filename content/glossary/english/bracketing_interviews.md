@@ -24,5 +24,8 @@
         " Graham Reid",
         "Marta Topor"
     ],
-    "language": "english"
+    "language": "english",
+    "aliases": [
+        "/glossary/bracketing_interviews"
+    ]
 }

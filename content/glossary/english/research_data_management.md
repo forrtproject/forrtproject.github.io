@@ -25,5 +25,8 @@
         "Catia M. Oliveira",
         "Julia Wolska"
     ],
-    "language": "english"
+    "language": "english",
+    "aliases": [
+        "/glossary/research_data_management"
+    ]
 }

@@ -25,5 +25,8 @@
         "Robert M Ross",
         "Timo Roettger"
     ],
-    "language": "english"
+    "language": "english",
+    "aliases": [
+        "/glossary/slow_science"
+    ]
 }

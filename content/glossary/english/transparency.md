@@ -24,5 +24,8 @@
         "Eike Mark Rinke ",
         "Flávio Azevedo"
     ],
-    "language": "english"
+    "language": "english",
+    "aliases": [
+        "/glossary/transparency"
+    ]
 }

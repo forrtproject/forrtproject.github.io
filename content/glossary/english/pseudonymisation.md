@@ -25,5 +25,8 @@
         "Charlotte R. Pennington",
         "Birgit Schmidt"
     ],
-    "language": "english"
+    "language": "english",
+    "aliases": [
+        "/glossary/pseudonymisation"
+    ]
 }

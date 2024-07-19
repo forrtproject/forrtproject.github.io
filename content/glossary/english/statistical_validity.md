@@ -20,5 +20,8 @@
         "Jamie P. Cockcroft, Zoltan Kekecs",
         "Graham Reid"
     ],
-    "language": "english"
+    "language": "english",
+    "aliases": [
+        "/glossary/statistical_validity"
+    ]
 }

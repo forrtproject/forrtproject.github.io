@@ -25,5 +25,8 @@
         "Helena Hartmann",
         "Graham Reid"
     ],
-    "language": "english"
+    "language": "english",
+    "aliases": [
+        "/glossary/single_blind_peer_review"
+    ]
 }

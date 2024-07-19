@@ -22,5 +22,8 @@
         "Charlotte R. Pennington",
         "Christopher Graham"
     ],
-    "language": "english"
+    "language": "english",
+    "aliases": [
+        "/glossary/triple_blind_peer_review"
+    ]
 }

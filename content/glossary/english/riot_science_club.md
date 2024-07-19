@@ -24,5 +24,8 @@
         "Joanne McCuaig ",
         "Flávio Azevedo"
     ],
-    "language": "english"
+    "language": "english",
+    "aliases": [
+        "/glossary/riot_science_club"
+    ]
 }

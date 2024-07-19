@@ -25,5 +25,8 @@
         "Mahmoud Elsherif",
         "Charlotte R. Pennington"
     ],
-    "language": "english"
+    "language": "english",
+    "aliases": [
+        "/glossary/type_ii_error"
+    ]
 }

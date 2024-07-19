@@ -21,5 +21,8 @@
         "Samuel Guay",
         "Tamara Kalandadze"
     ],
-    "language": "english"
+    "language": "english",
+    "aliases": [
+        "/glossary/open_scholarship_knowledge_base"
+    ]
 }

@@ -23,5 +23,8 @@
         "Charlotte R. Pennington ",
         "Sonia Rishi"
     ],
-    "language": "english"
+    "language": "english",
+    "aliases": [
+        "/glossary/null_hypothesis_significance_testing"
+    ]
 }

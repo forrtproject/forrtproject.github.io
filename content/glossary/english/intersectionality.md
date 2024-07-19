@@ -27,5 +27,8 @@
         "Charlotte R. Pennington",
         "Flávio Azevedo"
     ],
-    "language": "english"
+    "language": "english",
+    "aliases": [
+        "/glossary/intersectionality"
+    ]
 }

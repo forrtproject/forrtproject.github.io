@@ -28,5 +28,8 @@
         "Meng Liu",
         "Emma Norris"
     ],
-    "language": "english"
+    "language": "english",
+    "aliases": [
+        "/glossary/double_blind_peer_review"
+    ]
 }

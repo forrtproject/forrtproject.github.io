@@ -24,5 +24,8 @@
         "Halil E. Kocalar",
         "Michele C. Lim"
     ],
-    "language": "english"
+    "language": "english",
+    "aliases": [
+        "/glossary/participatory_research"
+    ]
 }

@@ -28,5 +28,8 @@
         "Robert M. Ross",
         "Olmo van den Akker"
     ],
-    "language": "english"
+    "language": "english",
+    "aliases": [
+        "/glossary/p_curve"
+    ]
 }

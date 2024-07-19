@@ -18,5 +18,8 @@
         "Mahmoud Elsherif",
         " Sam Parsons"
     ],
-    "language": "english"
+    "language": "english",
+    "aliases": [
+        "/glossary/hidden_moderators"
+    ]
 }

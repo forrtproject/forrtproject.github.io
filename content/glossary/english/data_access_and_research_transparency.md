@@ -22,5 +22,8 @@
         "Kai Krautter",
         "Flávio Azevedo"
     ],
-    "language": "english"
+    "language": "english",
+    "aliases": [
+        "/glossary/data_access_and_research_transparency"
+    ]
 }

@@ -21,5 +21,8 @@
         "Flávio Azevedo",
         "Sam Parsons"
     ],
-    "language": "english"
+    "language": "english",
+    "aliases": [
+        "/glossary/i10_index"
+    ]
 }

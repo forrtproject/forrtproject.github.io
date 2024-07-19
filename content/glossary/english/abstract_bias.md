@@ -24,5 +24,8 @@
         "Eliza Woodward",
         "Flávio Azevedo"
     ],
-    "language": "english"
+    "language": "english",
+    "aliases": [
+        "/glossary/abstract_bias"
+    ]
 }

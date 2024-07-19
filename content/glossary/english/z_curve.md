@@ -25,5 +25,8 @@
         "Charlotte R. Pennington",
         "Mirela Zaneva"
     ],
-    "language": "english"
+    "language": "english",
+    "aliases": [
+        "/glossary/z_curve"
+    ]
 }

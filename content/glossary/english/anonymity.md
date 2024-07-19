@@ -30,5 +30,8 @@
         "Madeleine Pownall",
         "Birgit Schmidt"
     ],
-    "language": "english"
+    "language": "english",
+    "aliases": [
+        "/glossary/anonymity"
+    ]
 }

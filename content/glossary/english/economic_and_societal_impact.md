@@ -19,5 +19,8 @@
         "Aoife O’Mahony",
         "Charlotte R. Pennington"
     ],
-    "language": "english"
+    "language": "english",
+    "aliases": [
+        "/glossary/economic_and_societal_impact"
+    ]
 }

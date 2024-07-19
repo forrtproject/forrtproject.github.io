@@ -25,5 +25,8 @@
         "Kai Krautter",
         "Olmo van den Akker"
     ],
-    "language": "english"
+    "language": "english",
+    "aliases": [
+        "/glossary/reliability"
+    ]
 }

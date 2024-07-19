@@ -21,5 +21,8 @@
         "Madeleine Ingham",
         "Graham Reid"
     ],
-    "language": "english"
+    "language": "english",
+    "aliases": [
+        "/glossary/ad_hominem_bias"
+    ]
 }

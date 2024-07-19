@@ -25,5 +25,8 @@
         "Zoltan Kekecs",
         "Charlotte R. Pennington"
     ],
-    "language": "english"
+    "language": "english",
+    "aliases": [
+        "/glossary/construct_validity"
+    ]
 }

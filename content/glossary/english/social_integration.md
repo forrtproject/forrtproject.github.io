@@ -22,5 +22,8 @@
         " Yu-Fang Yang ",
         "Flávio Azevedo"
     ],
-    "language": "english"
+    "language": "english",
+    "aliases": [
+        "/glossary/social_integration"
+    ]
 }

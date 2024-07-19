@@ -24,5 +24,8 @@
         "Sam Parsons",
         "Martin Vasilev"
     ],
-    "language": "english"
+    "language": "english",
+    "aliases": [
+        "/glossary/sherpa_romeo"
+    ]
 }

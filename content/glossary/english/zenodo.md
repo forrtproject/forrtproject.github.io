@@ -21,5 +21,8 @@
     "reviewed_by": [
         "Sara Middleton"
     ],
-    "language": "english"
+    "language": "english",
+    "aliases": [
+        "/glossary/zenodo"
+    ]
 }

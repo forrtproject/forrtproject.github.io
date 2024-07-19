@@ -22,5 +22,8 @@
         "Leticia Micheli",
         "Sam Parsons"
     ],
-    "language": "english"
+    "language": "english",
+    "aliases": [
+        "/glossary/replication_markets"
+    ]
 }

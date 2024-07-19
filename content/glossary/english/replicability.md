@@ -29,5 +29,8 @@
         "Eike Mark Rinke",
         "Tobias Wingen"
     ],
-    "language": "english"
+    "language": "english",
+    "aliases": [
+        "/glossary/replicability"
+    ]
 }

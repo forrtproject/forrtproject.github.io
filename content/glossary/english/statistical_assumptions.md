@@ -27,5 +27,8 @@
         "Martin Vasilev",
         "Julia Wolska"
     ],
-    "language": "english"
+    "language": "english",
+    "aliases": [
+        "/glossary/statistical_assumptions"
+    ]
 }

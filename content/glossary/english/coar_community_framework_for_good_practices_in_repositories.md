@@ -25,5 +25,8 @@
         "Bethan Iley",
         "Sam Parsons"
     ],
-    "language": "english"
+    "language": "english",
+    "aliases": [
+        "/glossary/coar_community_framework_for_good_practices_in_repositories"
+    ]
 }

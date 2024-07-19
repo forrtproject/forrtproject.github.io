@@ -24,5 +24,8 @@
         "Tobias Wingen ",
         "Steven Verheyen"
     ],
-    "language": "english"
+    "language": "english",
+    "aliases": [
+        "/glossary/bayesian_inference"
+    ]
 }

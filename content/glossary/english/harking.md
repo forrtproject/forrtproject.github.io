@@ -26,5 +26,8 @@
         "Martin Vasilev",
         "Flávio Azevedo"
     ],
-    "language": "english"
+    "language": "english",
+    "aliases": [
+        "/glossary/harking"
+    ]
 }

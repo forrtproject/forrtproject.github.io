@@ -21,5 +21,8 @@
     "reviewed_by": [
         ""
     ],
-    "language": "english"
+    "language": "english",
+    "aliases": [
+        "/glossary/massively_open_online_papers"
+    ]
 }

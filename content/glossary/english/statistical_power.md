@@ -37,5 +37,8 @@
         "Qinyu Xiao ",
         "Flávio Azevedo"
     ],
-    "language": "english"
+    "language": "english",
+    "aliases": [
+        "/glossary/statistical_power"
+    ]
 }

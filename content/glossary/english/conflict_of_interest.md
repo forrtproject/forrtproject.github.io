@@ -21,5 +21,8 @@
     "reviewed_by": [
         "Flávio Azevedo"
     ],
-    "language": "english"
+    "language": "english",
+    "aliases": [
+        "/glossary/conflict_of_interest"
+    ]
 }

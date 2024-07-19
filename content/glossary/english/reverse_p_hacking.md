@@ -25,5 +25,8 @@
         "Sam Parsons",
         "Timo Roettger"
     ],
-    "language": "english"
+    "language": "english",
+    "aliases": [
+        "/glossary/reverse_p_hacking"
+    ]
 }

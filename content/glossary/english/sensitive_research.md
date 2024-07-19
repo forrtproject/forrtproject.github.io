@@ -20,5 +20,8 @@
         "Helena Hartmann",
         "Graham Reid"
     ],
-    "language": "english"
+    "language": "english",
+    "aliases": [
+        "/glossary/sensitive_research"
+    ]
 }

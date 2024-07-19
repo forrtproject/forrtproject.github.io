@@ -20,5 +20,8 @@
         "Charlotte R. Pennington",
         "Michele C. Lim"
     ],
-    "language": "english"
+    "language": "english",
+    "aliases": [
+        "/glossary/model"
+    ]
 }

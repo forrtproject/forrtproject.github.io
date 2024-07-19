@@ -25,5 +25,8 @@
         "Ana Todorovic",
         "Markus Weinmann"
     ],
-    "language": "english"
+    "language": "english",
+    "aliases": [
+        "/glossary/bayesian parameter_estimation"
+    ]
 }

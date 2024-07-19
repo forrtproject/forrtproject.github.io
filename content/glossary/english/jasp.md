@@ -19,5 +19,8 @@
         "Adrien Fillon, Adam Parker",
         "Sam Parsons"
     ],
-    "language": "english"
+    "language": "english",
+    "aliases": [
+        "/glossary/jasp"
+    ]
 }

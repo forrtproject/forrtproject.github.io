@@ -19,5 +19,8 @@
     "reviewed_by": [
         "Leticia Micheli, Gisela H. Govaart"
     ],
-    "language": "english"
+    "language": "english",
+    "aliases": [
+        "/glossary/openneuro"
+    ]
 }

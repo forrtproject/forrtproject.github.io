@@ -23,5 +23,8 @@
         "Sam Parsons",
         "Charlotte R. Penningto n"
     ],
-    "language": "english"
+    "language": "english",
+    "aliases": [
+        "/glossary/specification_curve_analysis"
+    ]
 }

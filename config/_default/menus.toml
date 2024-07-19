@@ -159,7 +159,7 @@
 
 [[main]]
   name = "Glossary"
-  url = "/glossary/english"
+  url = "/glossary"
   weight = 36
   parent = "nexus"
 

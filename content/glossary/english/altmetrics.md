@@ -25,5 +25,8 @@
         "Birgit Schmidt",
         "Flávio Azevedo"
     ],
-    "language": "english"
+    "language": "english",
+    "aliases": [
+        "/glossary/altmetrics"
+    ]
 }

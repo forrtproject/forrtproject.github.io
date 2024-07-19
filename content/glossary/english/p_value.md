@@ -23,5 +23,8 @@
         "Marcel A.L.M. van Assen",
         "Martin Vasilev"
     ],
-    "language": "english"
+    "language": "english",
+    "aliases": [
+        "/glossary/p_value"
+    ]
 }

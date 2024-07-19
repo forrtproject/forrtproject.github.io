@@ -20,5 +20,8 @@
         "Graham Reid ",
         "Flávio Azevedo"
     ],
-    "language": "english"
+    "language": "english",
+    "aliases": [
+        "/glossary/society_for_the_improvement_of_psychological_science"
+    ]
 }

@@ -23,5 +23,8 @@
         "Graham Reid",
         "Flávio Azevedo"
     ],
-    "language": "english"
+    "language": "english",
+    "aliases": [
+        "/glossary/internal_validity"
+    ]
 }

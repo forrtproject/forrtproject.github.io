@@ -24,5 +24,8 @@
         "Sam Parsons",
         "Flávio Azevedo"
     ],
-    "language": "english"
+    "language": "english",
+    "aliases": [
+        "/glossary/likelihood function"
+    ]
 }

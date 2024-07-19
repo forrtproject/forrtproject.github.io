@@ -25,5 +25,8 @@
         "Sam Parsons",
         "Martin Vasilev"
     ],
-    "language": "english"
+    "language": "english",
+    "aliases": [
+        "/glossary/p_hacking"
+    ]
 }

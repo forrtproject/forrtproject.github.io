@@ -22,5 +22,8 @@
         "Michele C. Lim",
         "Flávio Azevedo"
     ],
-    "language": "english"
+    "language": "english",
+    "aliases": [
+        "/glossary/adversarial"
+    ]
 }

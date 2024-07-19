@@ -20,5 +20,8 @@
         "Graham Reid",
         "Beatrice Valentini"
     ],
-    "language": "english"
+    "language": "english",
+    "aliases": [
+        "/glossary/research_cycle"
+    ]
 }

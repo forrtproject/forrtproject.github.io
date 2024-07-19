@@ -24,5 +24,8 @@
         "Yuki Yamada",
         "F lávio Azevedo"
     ],
-    "language": "english"
+    "language": "english",
+    "aliases": [
+        "/glossary/open_peer_review"
+    ]
 }

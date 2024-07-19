@@ -21,5 +21,8 @@
     "reviewed_by": [
         "Mahmoud Elsherif, Gisela H. Govaart"
     ],
-    "language": "english"
+    "language": "english",
+    "aliases": [
+        "/glossary/open_educational_resources"
+    ]
 }

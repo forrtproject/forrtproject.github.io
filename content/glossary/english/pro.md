@@ -23,5 +23,8 @@
         "Helena Hartmann",
         "Steven Verheyen"
     ],
-    "language": "english"
+    "language": "english",
+    "aliases": [
+        "/glossary/pro"
+    ]
 }

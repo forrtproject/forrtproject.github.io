@@ -25,5 +25,8 @@
         "Oscar Lecuona",
         "Flávio Azevedo"
     ],
-    "language": "english"
+    "language": "english",
+    "aliases": [
+        "/glossary/external_validity"
+    ]
 }

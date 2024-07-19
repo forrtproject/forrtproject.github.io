@@ -22,5 +22,8 @@
         "Emma Henderson",
         "Graham Reid"
     ],
-    "language": "english"
+    "language": "english",
+    "aliases": [
+        "/glossary/studyswap"
+    ]
 }

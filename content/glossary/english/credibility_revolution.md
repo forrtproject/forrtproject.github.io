@@ -30,5 +30,8 @@
         "Tobias Wingen",
         "Flávio Azevedo"
     ],
-    "language": "english"
+    "language": "english",
+    "aliases": [
+        "/glossary/credibility_revolution"
+    ]
 }

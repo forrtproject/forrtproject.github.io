@@ -23,5 +23,8 @@
         "Helena Hartmann",
         "Charlotte R. Pennington"
     ],
-    "language": "english"
+    "language": "english",
+    "aliases": [
+        "/glossary/theory_building"
+    ]
 }

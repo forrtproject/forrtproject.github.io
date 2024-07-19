@@ -28,5 +28,8 @@
         "Suzanne L. K. Stewart",
         "Flávio Azevedo"
     ],
-    "language": "english"
+    "language": "english",
+    "aliases": [
+        "/glossary/conceptual_replication"
+    ]
 }

@@ -31,5 +31,8 @@
         "Charlotte R. Pennington",
         "Steven Verheyen"
     ],
-    "language": "english"
+    "language": "english",
+    "aliases": [
+        "/glossary/open_data"
+    ]
 }

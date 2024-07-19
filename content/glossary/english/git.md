@@ -22,5 +22,8 @@
         "Dominik Kiersz",
         "Robert M. Ross"
     ],
-    "language": "english"
+    "language": "english",
+    "aliases": [
+        "/glossary/git"
+    ]
 }

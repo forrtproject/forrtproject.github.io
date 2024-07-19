@@ -24,5 +24,8 @@
         "Kai Krautter",
         "Charlotte R. Pennington"
     ],
-    "language": "english"
+    "language": "english",
+    "aliases": [
+        "/glossary/feminist_psychology"
+    ]
 }

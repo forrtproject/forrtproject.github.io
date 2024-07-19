@@ -26,5 +26,8 @@
         "Aleksandra Lazić",
         "Charlotte R. Pennington"
     ],
-    "language": "english"
+    "language": "english",
+    "aliases": [
+        "/glossary/pci"
+    ]
 }

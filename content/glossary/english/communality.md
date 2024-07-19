@@ -21,5 +21,8 @@
         "Charlotte R. Pennington",
         "Beatrice Valentini"
     ],
-    "language": "english"
+    "language": "english",
+    "aliases": [
+        "/glossary/communality"
+    ]
 }

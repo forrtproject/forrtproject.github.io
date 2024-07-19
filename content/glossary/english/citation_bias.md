@@ -24,5 +24,8 @@
         "Timo Roettger",
         "Tobias Wingen"
     ],
-    "language": "english"
+    "language": "english",
+    "aliases": [
+        "/glossary/citation_bias"
+    ]
 }

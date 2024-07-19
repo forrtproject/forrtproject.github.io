@@ -25,5 +25,8 @@
         "Helena Hartmann",
         "Sam Parsons"
     ],
-    "language": "english"
+    "language": "english",
+    "aliases": [
+        "/glossary/trust_principles"
+    ]
 }

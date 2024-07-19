@@ -20,5 +20,8 @@
         "Micah Vandegrift",
         "Dominik Kiersz"
     ],
-    "language": "english"
+    "language": "english",
+    "aliases": [
+        "/glossary/research_contribution_metric"
+    ]
 }

@@ -24,5 +24,8 @@
         "Timo Roettger",
         "Lisa Spitzer"
     ],
-    "language": "english"
+    "language": "english",
+    "aliases": [
+        "/glossary/confirmatory_analyses"
+    ]
 }

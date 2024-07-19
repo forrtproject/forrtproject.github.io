@@ -20,5 +20,8 @@
         " Charlotte R. Pennington",
         "Graham Reid"
     ],
-    "language": "english"
+    "language": "english",
+    "aliases": [
+        "/glossary/society_for_open__reliable__and_transparent_ecology_and_evolutionary_biology"
+    ]
 }

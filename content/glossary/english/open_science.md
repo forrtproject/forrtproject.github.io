@@ -30,5 +30,8 @@
         "Charlotte R. Pennington",
         "Qinyu Xiao"
     ],
-    "language": "english"
+    "language": "english",
+    "aliases": [
+        "/glossary/open_science"
+    ]
 }

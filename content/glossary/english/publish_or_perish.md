@@ -27,5 +27,8 @@
         "Timo Roettger",
         "Olmo van den Akker"
     ],
-    "language": "english"
+    "language": "english",
+    "aliases": [
+        "/glossary/publish_or_perish"
+    ]
 }

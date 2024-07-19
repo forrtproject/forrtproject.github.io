@@ -20,5 +20,8 @@
         "Sam Parsons",
         "Catia M. Oliveira"
     ],
-    "language": "english"
+    "language": "english",
+    "aliases": [
+        "/glossary/patient_and_public_involvement"
+    ]
 }

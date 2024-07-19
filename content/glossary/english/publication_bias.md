@@ -30,5 +30,8 @@
         "Olmo van den Akker",
         "F lávio Azevedo"
     ],
-    "language": "english"
+    "language": "english",
+    "aliases": [
+        "/glossary/publication_bias"
+    ]
 }

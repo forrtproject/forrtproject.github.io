@@ -145,11 +145,16 @@ for language_data in merged_data:
                 "language": language
             }
             
+
             # Generate the file name using only the English title (without anything in brackets)
             file_name = entry.get("Title", "").split("\u00a0(")[0].split(" (")[0]
-            file_name = re.sub(r'[^\w\s]', '_', file_name.replace(" ", "_")).lower().strip() + ".md"
-            file_path = os.path.join(script_dir, language, file_name)
+            file_name = re.sub(r'[^\w\s]', '_', file_name.replace(" ", "_")).lower().strip() 
+            file_path = os.path.join(script_dir, language, file_name + ".md")
             
+            
+            if language == "english":
+              json_data["aliases"] = ["/glossary/" + file_name]
+                        
             with open(file_path, 'w', encoding='utf-8') as json_file:
               json.dump(json_data, json_file, ensure_ascii=False, indent=4)
               
