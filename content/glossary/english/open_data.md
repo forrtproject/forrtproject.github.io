@@ -1,6 +1,7 @@
 {
+    "type": "glossary",
     "title": "Open Data",
-    "definition": "",
+    "definition": "Open data refers to data that is freely available and readily accessible for use by others without restriction, “Open data and content can be freely used, modified, and shared by anyone for any purpose” ( https://opendefinition.org/ https://opendefinition.org/ ). Open data are subject to the requirement to attribute and share alike, thus it is important to consider appropriate Open Licenses. Sensitive or time-sensitive datasets can be embargoed or shared with more selective access options to ensure data integrity is upheld.",
     "related_terms": [
         "Badges (Open Science) ",
         "Data availability",
@@ -30,5 +31,8 @@
         "Charlotte R. Pennington",
         "Steven Verheyen"
     ],
-    "language": "english"
+    "language": "english",
+    "aliases": [
+        "/glossary/open_data"
+    ]
 }

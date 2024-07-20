@@ -1,4 +1,5 @@
 {
+    "type": "glossary",
     "title": "Hypothesis (Hypothese)",
     "definition": "Eine Hypothese ist eine unbewiesene Aussage über den Zusammenhang zwischen Variablen (Glass & Hall, 2008) und kann auf früheren Erfahrungen, wissenschaftlichen Erkenntnissen, vorläufigen Beobachtungen, Theorie und/oder Logik beruhen. Bei wissenschaftlichen Tests kann eine Hypothese gerichtet (z. B. eine positive Korrelation) oder ungerichtet (z. B. es wird eine Korrelation geben, aber unklar, ob positiv oder negativ) formuliert werden.",
     "related_terms": [

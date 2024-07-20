@@ -1,6 +1,7 @@
 {
+    "type": "glossary",
     "title": "Type M error",
-    "definition": "",
+    "definition": "A Type M error occurs when a researcher concludes that an effect was observed with magnitude lower or higher than the real one. For example, a type M error occurs when a researcher claims that an effect of small magnitude was observed when it is large in truth or vice versa.",
     "related_terms": [
         "Statistical power",
         "Type S error",
@@ -22,5 +23,8 @@
         "Graham Reid",
         "Mirela Zaneva"
     ],
-    "language": "english"
+    "language": "english",
+    "aliases": [
+        "/glossary/type_m_error"
+    ]
 }

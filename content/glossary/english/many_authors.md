@@ -1,6 +1,7 @@
 {
+    "type": "glossary",
     "title": "Many authors",
-    "definition": "",
+    "definition": "Large-scale collaborative projects involving tens or hundreds of authors from different institutions. This kind of approach has become increasingly common in psychology and other sciences in recent years as opposed to research carried out by small teams of authors, following earlier trends which have been observed e.g. for high-energy physics or biomedical research in the 1990s . These large international scientific consortia work on a research project to bring together a broader range of expertise and work collaboratively to produce manuscripts.",
     "related_terms": [
         "Related terms : Collaboration",
         "Consortia",
@@ -26,5 +27,8 @@
         "Birgit Schmidt",
         "Beatrice Valentini"
     ],
-    "language": "english"
+    "language": "english",
+    "aliases": [
+        "/glossary/many_authors"
+    ]
 }

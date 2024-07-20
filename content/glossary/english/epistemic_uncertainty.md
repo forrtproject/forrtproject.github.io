@@ -1,6 +1,7 @@
 {
+    "type": "glossary",
     "title": "Epistemic uncertainty",
-    "definition": "",
+    "definition": "Systematic uncertainty due to limited data, measurement precision, model or process specification, or lack of knowledge. That is, uncertainty due to lack of knowledge that could, in theory, be reduced through conducting additional research to increase understanding. Such uncertainty is said to be personal, since knowledge differs across scientists, and temporary since it can change as new data become available.",
     "related_terms": [
         "Aleatoric uncertainty",
         "Knightian uncertainty"
@@ -20,5 +21,8 @@
         "Charlotte R. Pennington",
         "Graham Reid"
     ],
-    "language": "english"
+    "language": "english",
+    "aliases": [
+        "/glossary/epistemic_uncertainty"
+    ]
 }

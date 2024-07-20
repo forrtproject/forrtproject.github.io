@@ -1,6 +1,7 @@
 {
+    "type": "glossary",
     "title": "Statistical validity",
-    "definition": "",
+    "definition": "Definition : The extent to which conclusions from a statistical test are accurate and reflective of the true effect found in nature. In other words, whether or not a relationship exists between two variables and can be accurately detected with the conducted analyses. Threats to statistical validity include low power, violation of assumptions, reliability of measures, etc, affecting the reliability and generality of the conclusions.",
     "related_terms": [
         "Power",
         "Validity",
@@ -19,5 +20,8 @@
         "Jamie P. Cockcroft, Zoltan Kekecs",
         "Graham Reid"
     ],
-    "language": "english"
+    "language": "english",
+    "aliases": [
+        "/glossary/statistical_validity"
+    ]
 }

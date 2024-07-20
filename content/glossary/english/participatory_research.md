@@ -1,6 +1,7 @@
 {
+    "type": "glossary",
     "title": "Participatory Research",
-    "definition": "",
+    "definition": "Participatory research refers to incorporating the views of people from relevant communities in the entire research process to achieve shared goals between researchers and the communities. This approach takes a collaborative stance that seeks to reduce the power imbalance between the researcher and those researched through a “systematic cocreation of new knowledge” (Andersson, 2018).",
     "related_terms": [
         "C ollaborative research",
         "Inclusion",
@@ -23,5 +24,8 @@
         "Halil E. Kocalar",
         "Michele C. Lim"
     ],
-    "language": "english"
+    "language": "english",
+    "aliases": [
+        "/glossary/participatory_research"
+    ]
 }

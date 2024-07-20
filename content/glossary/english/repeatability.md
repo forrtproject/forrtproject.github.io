@@ -1,6 +1,7 @@
 {
+    "type": "glossary",
     "title": "Repeatability",
-    "definition": "",
+    "definition": "Synonymous with test-retest  reliability . It refers to the agreement between the results of successive measurements of the same measure. Repeatability requires the same experimental tools, the same observer, the same measuring instrument administered under the same conditions, the same location, repetition over a short period of time, and the same objectives (Joint Committee for Guidelines in Metrology, 2008)",
     "related_terms": [
         "Reliability"
     ],
@@ -19,5 +20,8 @@
         "Joanne McCuaig",
         "Sam Parsons"
     ],
-    "language": "english"
+    "language": "english",
+    "aliases": [
+        "/glossary/repeatability"
+    ]
 }

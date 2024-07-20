@@ -1,6 +1,7 @@
 {
+    "type": "glossary",
     "title": "Psychometric meta-analysis",
-    "definition": "",
+    "definition": "Psychometric meta-analyses aim to correct for attenuation of the effect sizes of interest due to measurement error and other artifacts by using procedures based on psychometric principles, e.g. reliability of the measures. These procedures should be implemented before using the synthesised effect sizes in correlational or experimental meta-analysis, as making these corrections tends to lead to larger and less variable effect sizes.",
     "related_terms": [
         "Correlational meta-analysis",
         "Hunter-Schmidt meta-analysis",
@@ -25,5 +26,8 @@
         "Catia M. Oliveira",
         "F lávio Azevedo"
     ],
-    "language": "english"
+    "language": "english",
+    "aliases": [
+        "/glossary/psychometric_meta_analysis"
+    ]
 }

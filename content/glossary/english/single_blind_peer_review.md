@@ -1,6 +1,7 @@
 {
+    "type": "glossary",
     "title": "Single-blind peer review",
-    "definition": "",
+    "definition": "Evaluation of research products by qualified experts where the reviewer (s) knows the identity of the author(s), but the reviewer(s) remains anonymous to the author(s).",
     "related_terms": [
         "Anonymous review",
         "Double-blind peer review",
@@ -24,5 +25,8 @@
         "Helena Hartmann",
         "Graham Reid"
     ],
-    "language": "english"
+    "language": "english",
+    "aliases": [
+        "/glossary/single_blind_peer_review"
+    ]
 }

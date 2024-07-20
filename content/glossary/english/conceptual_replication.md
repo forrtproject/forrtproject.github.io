@@ -1,6 +1,7 @@
 {
+    "type": "glossary",
     "title": "Conceptual replication",
-    "definition": "",
+    "definition": "A replication attempt whereby the primary effect of interest is the same but tested in a different sample and captured in a different way to that originally reported (i.e., using different operationalisations, data processing and statistical approaches and/or different constructs; LeBel et al., 2018). The purpose of a conceptual replication is often to explore what conditions limit the extent to which an effect can be obser ved and generalised (e.g., only within certain contexts, with certain samples, using certain measurement approaches) towards evaluating and advancing theory (Hüffmeier et al., 2016).",
     "related_terms": [
         "Direct replication",
         "Generalizability"
@@ -27,5 +28,8 @@
         "Suzanne L. K. Stewart",
         "Flávio Azevedo"
     ],
-    "language": "english"
+    "language": "english",
+    "aliases": [
+        "/glossary/conceptual_replication"
+    ]
 }

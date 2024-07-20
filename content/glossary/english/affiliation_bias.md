@@ -1,6 +1,7 @@
 {
+    "type": "glossary",
     "title": "Affiliation bias",
-    "definition": "",
+    "definition": "This bias occurs when one’s o pinions or judgements about the quality of research are influenced by the affiliation of the author(s) . When publishing manuscripts, a potential example of an affiliation bias could be when editors prefer to publish work from prestigious institutions (Tvina et al., 2019).",
     "related_terms": [
         "Peer review"
     ],
@@ -19,5 +20,8 @@
         "Adam Parker",
         "Graham Reid"
     ],
-    "language": "english"
+    "language": "english",
+    "aliases": [
+        "/glossary/affiliation_bias"
+    ]
 }

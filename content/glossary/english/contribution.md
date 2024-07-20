@@ -1,4 +1,5 @@
 {
+    "type": "glossary",
     "title": "Contribution",
     "definition": "",
     "related_terms": [
@@ -23,5 +24,8 @@
         "Sam Parsons",
         "Gerald Vineyard"
     ],
-    "language": "english"
+    "language": "english",
+    "aliases": [
+        "/glossary/contribution"
+    ]
 }

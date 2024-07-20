@@ -1,6 +1,7 @@
 {
+    "type": "glossary",
     "title": "Ontology (Artificial Intelligence)",
-    "definition": "",
+    "definition": "A set of axioms in a subject area that help classify and explain the nature of the entities under study and the relationships between them.",
     "related_terms": [
         "Axiology",
         "Epistemology",
@@ -19,5 +20,8 @@
         "Charlotte R. Pennington",
         "Graham Reid"
     ],
-    "language": "english"
+    "language": "english",
+    "aliases": [
+        "/glossary/ontology"
+    ]
 }

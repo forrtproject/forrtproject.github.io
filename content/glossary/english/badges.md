@@ -1,6 +1,7 @@
 {
+    "type": "glossary",
     "title": "Badges (Open Science)",
-    "definition": "",
+    "definition": "Badges are symbols that editorial teams add to published manuscripts to acknowledge open science practices and act as incentives for researchers to share data, materials, or to embed study preregistration. As clearly-visible symbols, they are intended to signal to the reader that content has met the standard of open research required to receive the badge (typically from that journal). Different badges may be assigned for different practices, such as research having been made available and accessible in a persistent location (“open material badge” and “open data badge”), or study preregistration (“preregistration badge”).",
     "related_terms": [
         "Incentives",
         "Open Data badge",
@@ -24,5 +25,8 @@
         "Lisa Spitzer",
         "Suzanne L. K. Stewart"
     ],
-    "language": "english"
+    "language": "english",
+    "aliases": [
+        "/glossary/badges"
+    ]
 }

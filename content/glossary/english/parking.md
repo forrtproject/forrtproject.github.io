@@ -1,6 +1,7 @@
 {
+    "type": "glossary",
     "title": "PARKing",
-    "definition": "",
+    "definition": "PARKing (preregistering after results are known) is defined as the practice where researchers complete an experiment (possibly with infinite re-experimentation) before preregistering. This practice invalidates the purpose of preregistration, and is one of the QRPs ( or, even scientific misconduct) that try to gain only \"credibility that it has been preregistered.\"",
     "related_terms": [
         "HARKing",
         "Preregistration",
@@ -20,5 +21,8 @@
         "Sam Parsons",
         "Yuki Yamada"
     ],
-    "language": "english"
+    "language": "english",
+    "aliases": [
+        "/glossary/parking"
+    ]
 }

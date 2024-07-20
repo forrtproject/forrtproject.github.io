@@ -1,6 +1,7 @@
 {
+    "type": "glossary",
     "title": "Content validity",
-    "definition": "",
+    "definition": "The degree to which a measurement includes all aspects of the concept that the researcher claims to measure; “A qualitative type of validity where the domain of the concept is made clear and the analyst judges whether the measures fully represent the domain” (Bollen, 1989, p.185). It is a component of construct validity and can be established using both quantitative and qualitative methods, often involving expert assessment.",
     "related_terms": [
         "Construct validity",
         "Validity"
@@ -22,5 +23,8 @@
         "Sam Parsons",
         "Graham Reid"
     ],
-    "language": "english"
+    "language": "english",
+    "aliases": [
+        "/glossary/content_validity"
+    ]
 }

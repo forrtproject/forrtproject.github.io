@@ -1,6 +1,7 @@
 {
+    "type": "glossary",
     "title": "i10-index",
-    "definition": "",
+    "definition": "A research metric created by Google Scholar that represents the number of publications a researcher has with at least 10 citations.",
     "related_terms": [
         "Citation",
         "DORA",
@@ -20,5 +21,8 @@
         "Flávio Azevedo",
         "Sam Parsons"
     ],
-    "language": "english"
+    "language": "english",
+    "aliases": [
+        "/glossary/i10_index"
+    ]
 }

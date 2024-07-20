@@ -1,6 +1,7 @@
 {
+    "type": "glossary",
     "title": "Confirmation bias",
-    "definition": "",
+    "definition": "The tendency to seek out, interpret, favor and recall information in a way that supports one’s prior values, beliefs, expectations, or hypothesis.",
     "related_terms": [
         "Confirmatory bias",
         "Congeniality bias",
@@ -21,5 +22,8 @@
         "Sam Parsons",
         "Charlotte R. Pennington"
     ],
-    "language": "english"
+    "language": "english",
+    "aliases": [
+        "/glossary/confirmation_bias"
+    ]
 }

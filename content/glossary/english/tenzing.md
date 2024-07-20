@@ -1,6 +1,7 @@
 {
+    "type": "glossary",
     "title": "Tenzing",
-    "definition": "",
+    "definition": "tenzing is an online webapp and R package that helps researchers to track and report the contributions of each team member using the CRediT taxonomy in an efficient way. Team members of a research project can indicate their contributions to each CRediT role using an online spreadsheet template, and provide any additional authors' information (e.g., name, affiliation, order in publication, email address, and ORCID iD). Upon writing the manuscript, tenzi ng can automatically create a list of contributors belonging to each CRediT role to be included in the contributions section and create the manuscript’s title page.",
     "related_terms": [
         "Authorship",
         "Consortium authorship",
@@ -24,5 +25,8 @@
         "Graham Reid ",
         "Flávio Azevedo"
     ],
-    "language": "english"
+    "language": "english",
+    "aliases": [
+        "/glossary/tenzing"
+    ]
 }

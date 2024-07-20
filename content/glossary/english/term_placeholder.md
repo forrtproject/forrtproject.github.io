@@ -1,6 +1,7 @@
 {
+    "type": "glossary",
     "title": "Term placeholder",
-    "definition": "",
+    "definition": "[fill here]",
     "related_terms": [
         "[fill here]"
     ],
@@ -16,5 +17,8 @@
     "reviewed_by": [
         "[fill here]       The Glossary The Glossary"
     ],
-    "language": "english"
+    "language": "english",
+    "aliases": [
+        "/glossary/term_placeholder"
+    ]
 }

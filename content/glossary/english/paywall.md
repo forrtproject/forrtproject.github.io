@@ -1,6 +1,7 @@
 {
+    "type": "glossary",
     "title": "Paywall",
-    "definition": "",
+    "definition": "A technological barrier that permits access to information only to individuals who have paid - either personally, or via an organisation - a designated fee or subscription .",
     "related_terms": [
         "Accessibility",
         "Open Access"
@@ -20,5 +21,8 @@
         "Charlotte R. Pennington",
         "Julia Wolska"
     ],
-    "language": "english"
+    "language": "english",
+    "aliases": [
+        "/glossary/paywall"
+    ]
 }

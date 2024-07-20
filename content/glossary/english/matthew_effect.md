@@ -1,6 +1,7 @@
 {
+    "type": "glossary",
     "title": "Matthew effect (in science)",
-    "definition": "",
+    "definition": "Named for the ‘rich get richer; poor get poorer’ paraphrase of the Gospel of Matthew. Eminent scientists and early-career researchers with a prestigious fellowship are disproportionately attributed greater levels of credit and funding for their contributions to science while relatively unknown or early-career researchers without a prestigious fellowship tend to get disproportionately little credit for comparable contributions. The impact is a substantial cumulative advantage that results from modest initial comparative advantages (and vice versa).",
     "related_terms": [
         "Matthew effect in education",
         "Stigler’s law of eponymy"
@@ -21,5 +22,8 @@
         "Matt Jaquiery",
         "Charlotte R. Pennington"
     ],
-    "language": "english"
+    "language": "english",
+    "aliases": [
+        "/glossary/matthew_effect"
+    ]
 }

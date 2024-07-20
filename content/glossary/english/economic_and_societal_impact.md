@@ -1,6 +1,7 @@
 {
+    "type": "glossary",
     "title": "Economic and societal impact",
-    "definition": "",
+    "definition": "The contribution a research item makes to the broader economy and society. It also captures the benefits of research to individuals, organisations, and/or nations .",
     "related_terms": [
         "Academic Impact"
     ],
@@ -18,5 +19,8 @@
         "Aoife O’Mahony",
         "Charlotte R. Pennington"
     ],
-    "language": "english"
+    "language": "english",
+    "aliases": [
+        "/glossary/economic_and_societal_impact"
+    ]
 }

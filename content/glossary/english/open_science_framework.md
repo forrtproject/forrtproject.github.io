@@ -1,6 +1,7 @@
 {
+    "type": "glossary",
     "title": "Open Science Framework",
-    "definition": "",
+    "definition": "A free and open source platform for researchers to organize and share their research project and to encourage collaboration. Often used as an open repository for research code, data and materials, preprints and preregistrations, while managing a more efficient workflow. Created and maintained by the Center for Open Science.",
     "related_terms": [
         "Archive",
         "Center for Open Science (COS)",
@@ -23,5 +24,8 @@
         "Charlotte R. Pennington",
         "Lisa Spitzer"
     ],
-    "language": "english"
+    "language": "english",
+    "aliases": [
+        "/glossary/open_science_framework"
+    ]
 }

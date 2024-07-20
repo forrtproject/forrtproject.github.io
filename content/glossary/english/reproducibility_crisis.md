@@ -1,6 +1,7 @@
 {
+    "type": "glossary",
     "title": "Reproducibility crisis (aka Replicability or replication crisis)",
-    "definition": "",
+    "definition": "The finding, and related shift in academic culture and thinking, that a large proportion of scientific studies published across disciplines do not replicate (e.g. Open Science Collaboration, 2015). This is considered to be due to a lack of quality and integrity of research and publication practices, such as publication bias, QRPs and a lack of transparency, leading to an inflated rate of false positive results. Others have described this process as a ‘Credibility revolution’ towards improving these practices.",
     "related_terms": [
         "Credibility crisis",
         "Publication bias (File Drawer Problem)",
@@ -24,5 +25,8 @@
         "Sonia Rishi",
         "Lisa Spitzer"
     ],
-    "language": "english"
+    "language": "english",
+    "aliases": [
+        "/glossary/reproducibility_crisis"
+    ]
 }

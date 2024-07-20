@@ -1,6 +1,7 @@
 {
+    "type": "glossary",
     "title": "Data visualisation",
-    "definition": "",
+    "definition": "Graphical representation of data or information. Data visualisation takes advantage of humans’ well-developed visual processing capacity to convey insight and communicate key information. Data visualisations often display the raw data, descriptive statistics, and/or inferential statistics.",
     "related_terms": [
         "Figure",
         "Graph",
@@ -20,5 +21,8 @@
         " Charlotte R. Pennington",
         "Suzanne L. K. Stewart;"
     ],
-    "language": "english"
+    "language": "english",
+    "aliases": [
+        "/glossary/data_visualisation"
+    ]
 }

@@ -1,6 +1,7 @@
 {
+    "type": "glossary",
     "title": "Replicability",
-    "definition": "",
+    "definition": "An umbrella term, used differently across fields, covering concepts of: direct and conceptual replication, computational reproducibility/replicability, generalizability analysis and robustness analyses. Some of the definitions used previously include: a different team arriving at the same results using the original author's artifacts (Barba 2018); a study arriving at the same conclusion after collecting new data (Claerbout and Karrenbach, 1992); as well as studies for which any outcome would be considered diagnostic evidence about a claim from prior research (Nosek & Errington, 2020) .",
     "related_terms": [
         "Conceptual replication",
         "Direct Replication",
@@ -28,5 +29,8 @@
         "Eike Mark Rinke",
         "Tobias Wingen"
     ],
-    "language": "english"
+    "language": "english",
+    "aliases": [
+        "/glossary/replicability"
+    ]
 }

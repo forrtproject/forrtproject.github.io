@@ -1,6 +1,7 @@
 {
+    "type": "glossary",
     "title": "Scooping",
-    "definition": "",
+    "definition": "The act of reporting or publishing a novel finding prior to another researcher/team. Survey-based research indicates that fear of being scooped is an important fear-related barrier for data sharing in psychology, and agent-based models suggest that competition for priority harms scientific reliability ( Tiokhin et al. 2021) .",
     "related_terms": [
         "Novelty",
         "Open data",
@@ -24,5 +25,8 @@
         "Robert M. Ross ",
         "Flávio Azevedo"
     ],
-    "language": "english"
+    "language": "english",
+    "aliases": [
+        "/glossary/scooping"
+    ]
 }

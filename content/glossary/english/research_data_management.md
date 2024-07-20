@@ -1,6 +1,7 @@
 {
+    "type": "glossary",
     "title": "Research Data Management",
-    "definition": "",
+    "definition": "Research Data Management (RDM) is a broad concept that includes processes undertaken to create organized, documented, accessible, and reusable quality research data. Adequate research data management provides many benefits including, but not limited to, reduced likelihood of data loss, greater visibility and collaborations due to data sharing, demonstration of research integrity and accountability.",
     "related_terms": [
         "Data curation",
         "Data documentation",
@@ -24,5 +25,8 @@
         "Catia M. Oliveira",
         "Julia Wolska"
     ],
-    "language": "english"
+    "language": "english",
+    "aliases": [
+        "/glossary/research_data_management"
+    ]
 }

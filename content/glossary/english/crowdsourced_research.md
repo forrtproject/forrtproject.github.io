@@ -1,6 +1,7 @@
 {
+    "type": "glossary",
     "title": "Crowdsourced Research",
-    "definition": "",
+    "definition": "Crowdsourced research is a model of the social organisation of research as a large-scale collaboration in which one or more research projects are conducted by multiple teams in an independent yet coordinated manner. Crowdsourced research aims at achieving efficiency and scalability gains by pooling resources, promoting transparency and social inclusion, as well as increasing the rigor, reliability, and trustworthiness by enhancing statistical power and mutual social vetting. It stands in contrast to the traditional model of academic research production, which is dominated by the independent work of individual or small groups of researchers (‘small science’). Examples of crowdsourced research include so-called ‘many labs replication’ studies (Klein et al., 2018), ‘many analysts, one dataset’ studies (Silberzahn et al., 2018), distributive collaborative networks (Moshontz et al., 2018) and open collaborative writing projects such as Massively Open Online Papers (MOOPs) (Himmelstein et al., 2019; Tennant et al., 2019). Alternatively, crowdsourced research can refer to the use of a large number of research “crowdworkers” in data collection hired through online labor markets like Amazon Mechanical Turk or Prolific, for example in content analysis (Benoit et al., 2016; Lind et al., 2017) or experimental research (Peer et al., 2017). Crowdsourced research that is both open for participation and open through shared intermediate outputs has been referred to as crowd science (Franzoni & Sauermann, 2014).",
     "related_terms": [
         "Citizen science",
         "Collaboration",
@@ -23,5 +24,8 @@
         "Suzanne L. K. Stewart",
         "Flávio Azevedo"
     ],
-    "language": "english"
+    "language": "english",
+    "aliases": [
+        "/glossary/crowdsourced_research"
+    ]
 }

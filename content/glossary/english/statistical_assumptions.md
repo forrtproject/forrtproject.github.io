@@ -1,6 +1,7 @@
 {
+    "type": "glossary",
     "title": "Statistical Assumptions",
-    "definition": "",
+    "definition": "Analytical approaches and models assume certain characteristics of one’s data (e.g., statistical independence, random samples, normality, equal variance,...). Before running an analysis, thes e assumptions should be checked since their violation can change the results and conclusion of a study. Good practice in open and reproducible science is to report ass umption testing in terms of the assumptions verified and the results of such checks or corrections applied.",
     "related_terms": [
         "Null Hypothesis Significance Testing (NHST)",
         "Statistical Significance",
@@ -26,5 +27,8 @@
         "Martin Vasilev",
         "Julia Wolska"
     ],
-    "language": "english"
+    "language": "english",
+    "aliases": [
+        "/glossary/statistical_assumptions"
+    ]
 }

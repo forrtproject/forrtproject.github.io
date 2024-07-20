@@ -1,6 +1,7 @@
 {
+    "type": "glossary",
     "title": "Non-Intervention, Reproducible, and Open Systematic Reviews (NIRO-SR)",
-    "definition": "",
+    "definition": "A comprehensive set of tools to facilitate the development, preregistration and dissemination of systematic literature reviews for non-intervention research. Part A represents d etailed guidelines for creating and preregistering a systematic review protocol in the context of non-intervention research whilst preparing for transparency. Part B represents guidelines for writing up the completed systematic review, with a focus on enhancing reproducibility.",
     "related_terms": [
         "Knowledge accumulation",
         "Systematic review",
@@ -22,5 +23,8 @@
         "Jade Pickering",
         "Mirela Zaneva"
     ],
-    "language": "english"
+    "language": "english",
+    "aliases": [
+        "/glossary/non_intervention__reproducible__and_open_systematic_reviews"
+    ]
 }

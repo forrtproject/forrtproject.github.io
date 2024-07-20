@@ -1,6 +1,7 @@
 {
+    "type": "glossary",
     "title": "Reporting Guideline",
-    "definition": "",
+    "definition": "A reporting guideline is a “checklist, flow diagram, or structured text to guide authors in reporting a specific type of research, developed using explicit methodology.” (EQUATOR Network, n.d.). Reporting guidelines provide the minimum guidance required to ensure that research findings can be appropriately interpreted, appraised, synthesized and replicated. Their use often differs per scientific journal or publisher.",
     "related_terms": [
         "Related terms :  CONSORT",
         "Non-Intervention, Reproducible, and Open Systematic Reviews (NIRO-SR)",
@@ -21,5 +22,8 @@
         "Helena Hartmann",
         "Joanne McCuaig"
     ],
-    "language": "english"
+    "language": "english",
+    "aliases": [
+        "/glossary/reporting_guideline"
+    ]
 }

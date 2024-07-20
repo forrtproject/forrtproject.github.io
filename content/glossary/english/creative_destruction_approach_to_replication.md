@@ -1,6 +1,7 @@
 {
+    "type": "glossary",
     "title": "Creative destruction approach to replication",
-    "definition": "",
+    "definition": "Replication efforts should seek not just to support or question the original findings, but also to replace them with revised, stronger theories with greater explanatory power. This approach therefore involves ‘pruning’ existing theories, comparing all the alternative theories, and making replication efforts more generative and engaged in theory-building (Tierney et al. 2020, 2021).",
     "related_terms": [
         "Crowdsourced research",
         "Falsification",
@@ -24,5 +25,8 @@
         "Sonia Rishi",
         "Beatrice Valentini"
     ],
-    "language": "english"
+    "language": "english",
+    "aliases": [
+        "/glossary/creative_destruction_approach_to_replication"
+    ]
 }

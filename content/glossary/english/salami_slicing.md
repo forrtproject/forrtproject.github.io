@@ -1,6 +1,7 @@
 {
+    "type": "glossary",
     "title": "Salami slicing",
-    "definition": "",
+    "definition": "A questionable research/reporting practice strategy, often done post hoc ,  to increase the number of publishable manuscripts by ‘slicing’ up the data from a single study - one example of a method of ‘gaming the system’ of academic incentives. For instance, this may involve publishing multiple studies based on a single dataset, or publishing multiple studies from different data collection sites without transparently stating where the data originally derives from. Such practices distort the literature, and particularly meta-analyses, because it is unclear that the findings were obtained from the same dataset, thereby concealing the dependencies across the separately published papers.",
     "related_terms": [
         "Gaming (the system)",
         "Questionable Research Practices or Questionable Reporting Practices (QRPs)",
@@ -25,5 +26,8 @@
         "Graham Reid",
         "Suzanne L. K. Stewart"
     ],
-    "language": "english"
+    "language": "english",
+    "aliases": [
+        "/glossary/salami_slicing"
+    ]
 }

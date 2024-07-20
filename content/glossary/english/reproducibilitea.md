@@ -1,4 +1,5 @@
 {
+    "type": "glossary",
     "title": "ReproducibiliTea",
     "definition": "",
     "related_terms": [
@@ -24,5 +25,8 @@
         "Sam Parsons ",
         "Flávio Azevedo"
     ],
-    "language": "english"
+    "language": "english",
+    "aliases": [
+        "/glossary/reproducibilitea"
+    ]
 }

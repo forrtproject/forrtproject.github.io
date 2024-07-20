@@ -1,4 +1,5 @@
 {
+    "type": "glossary",
     "title": "P-hacking",
     "definition": "Nutzung von Techniken, die die Wahrscheinlichkeit eines statistisch signifikanten Ergebnisses künstlich erhöhen können, indem sie das statistische Standard-Signifikanzkriterium (in der Regel α = .05) erfüllen. Zum Beispiel die Durchführung mehrerer Analysen und die Angabe nur derjenigen mit  p < .05, das selektive Entfernen von Daten bis p < .05, die Auswahl von Variablen für die Verwendung in Analysen auf der Grundlage, ob diese Parameter statistisch signifikant sind.",
     "related_terms": [

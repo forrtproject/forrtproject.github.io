@@ -1,6 +1,7 @@
 {
+    "type": "glossary",
     "title": "Reverse p-hacking",
-    "definition": "",
+    "definition": "Exploiting researcher degrees of freedom during statistical analysis in order to increase the likelihood of accepting the null hypothesis (for instance, p > .05).",
     "related_terms": [
         "Analytic flexibility",
         "HARKing",
@@ -24,5 +25,8 @@
         "Sam Parsons",
         "Timo Roettger"
     ],
-    "language": "english"
+    "language": "english",
+    "aliases": [
+        "/glossary/reverse_p_hacking"
+    ]
 }

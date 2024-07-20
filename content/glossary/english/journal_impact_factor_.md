@@ -1,6 +1,7 @@
 {
+    "type": "glossary",
     "title": "Journal Impact Factor™",
-    "definition": "",
+    "definition": "The mean number of citations to research articles in that journal over the preceding two years. It is a proprietary and opaque calculation marketed by Clarivate ™ . Journal Impact Factors are not associated with the content quality or the peer review process.",
     "related_terms": [
         "DORA",
         "H-index"
@@ -18,5 +19,8 @@
         "Tsvetomira Dumbalska",
         "Adam Parker"
     ],
-    "language": "english"
+    "language": "english",
+    "aliases": [
+        "/glossary/journal_impact_factor_"
+    ]
 }

@@ -1,6 +1,7 @@
 {
+    "type": "glossary",
     "title": "Diversity",
-    "definition": "",
+    "definition": "Diversity refers to between-person (i.e., interindividual) variation in humans, e.g. ability, age, beliefs, cognition, country, disability, ethnicity, gender, language, race, religion or sexual orientation. Diversity can refer to diversity of researchers (who do the research), the diversity of participant samples (who is included in the study), and diversity of perspectives (the views and beliefs researchers bring into their work; Syed & Kathawalla, 2020).",
     "related_terms": [
         "Bropenscience",
         "BIZARRE",
@@ -31,5 +32,8 @@
         "Olly Robertson",
         "Flávio Azevedo"
     ],
-    "language": "english"
+    "language": "english",
+    "aliases": [
+        "/glossary/diversity"
+    ]
 }

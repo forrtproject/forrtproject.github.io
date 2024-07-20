@@ -1,6 +1,7 @@
 {
+    "type": "glossary",
     "title": "Public Trust in Science",
-    "definition": "",
+    "definition": "Trust in the knowledge, guidelines and recommendations that has been produced or provided by scientists to the benefit of civil society (Hendriks et al., 2016). These may also refer to trust in scientific-based recommendations on public health (e.g., universal health-care, stem cell research, federal funds for women’s reproductive rights, preventive measures of contagious diseases, and vaccination), climate change, economic policies (e.g., welfare, inequality- and poverty-control) and their intersections. The trust a member of the public has in science has been shown to be influenced by a vast number of factors such as age (Anderson et al., 2012), gender (Von Roten, 2004), rejection of scientific norms ( Lewandowsky & Oberauer, 2021 ), political ideology (Azevedo & Jost, 2021 ; Brewer & Ley, 2012; Leiserowitz et al., 2010),         right-wing authoritarianism and social dominance ( Kerr & Wilson, 2021 ), education (Bak, 2001; Hayes & Tariq, 2000), income (Anderson et al., 2012), science knowledge (Evans & Durant, 1995; Nisbet et al., 2002), social media use (Huber et al., 2019), and religiosity ( Azevedo, 2021 ; Brewer & Ley, 2013; Liu & Priest, 2009).",
     "related_terms": [
         "Credibility of scientific claims",
         "Epistemic Trust"
@@ -20,5 +21,8 @@
         "Catia M. Oliveira ",
         "Olmo van den Akker"
     ],
-    "language": "english"
+    "language": "english",
+    "aliases": [
+        "/glossary/public_trust_in_science"
+    ]
 }

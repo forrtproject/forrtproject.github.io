@@ -1,6 +1,7 @@
 {
+    "type": "glossary",
     "title": "Paradata",
-    "definition": "",
+    "definition": "Definition : Data that are captured about the characteristics and context of primary data collected from an individual - distinct from metadata . Paradata can be used to investigate a respondent’s int eraction with a survey or an experiment on a micro-level. They can be most easily collected during computer mediated surveys but are not limited to them. Examples include response times to survey questions, repeated patterns of responses such as choosing the same answer for all questions, contextual characteristics of the participant such as injuries that prevent good performance on tasks, the number of premature responses to stimuli in an experiment. Paradata have been used for the investigation and adjustment of measurement and sampling errors.",
     "related_terms": [
         "Auxiliary data",
         "Data collection",
@@ -23,5 +24,8 @@
         "Marta Topor",
         "F lávio Azevedo"
     ],
-    "language": "english"
+    "language": "english",
+    "aliases": [
+        "/glossary/paradata"
+    ]
 }

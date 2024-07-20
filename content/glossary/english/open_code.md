@@ -1,6 +1,7 @@
 {
+    "type": "glossary",
     "title": "Open Code",
-    "definition": "",
+    "definition": "Making computer code (e.g., programming, analysis code, stimuli generation) freely and publicly available in order to make research methodology and analysis transparent and allow for reproducibility and collaboration . Code can be made available via open code websites, such as GitHub, the Open Science Framework, and Codeshare (to name a few), enabling others to evaluate and correct errors and re-use and modify the code for subsequent research.",
     "related_terms": [
         "Computational Reproducibility",
         "Open Access",
@@ -26,5 +27,8 @@
         "Christopher Graham",
         "Emma Henderson"
     ],
-    "language": "english"
+    "language": "english",
+    "aliases": [
+        "/glossary/open_code"
+    ]
 }

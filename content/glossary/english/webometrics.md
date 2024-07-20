@@ -1,6 +1,7 @@
 {
+    "type": "glossary",
     "title": "Webometrics",
-    "definition": "",
+    "definition": "Webometrics involves the study of online content. Webometrics focuses on the numbers and types of hyperlinks between different online sites. Such approaches have been considered as a type of altmetrics. “ The study of the quantitative aspects of the construction and use of information resources, structures and technologies on the Web drawing on bibliometric bibliometric and informetric informetric approaches” (Björneborn & Ingwersen, 2004).",
     "related_terms": [
         "Altmetrics",
         "Bibliometrics"
@@ -18,5 +19,8 @@
         "Christopher Graham",
         "Mirela Zaneva"
     ],
-    "language": "english"
+    "language": "english",
+    "aliases": [
+        "/glossary/webometrics"
+    ]
 }
