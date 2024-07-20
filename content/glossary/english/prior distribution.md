@@ -22,5 +22,8 @@
         "Charlotte R. Pennington",
         "Martin Vasilev"
     ],
-    "language": "english"
+    "language": "english",
+    "aliases": [
+        "/glossary/prior distribution"
+    ]
 }

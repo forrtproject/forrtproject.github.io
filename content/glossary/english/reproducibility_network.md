@@ -19,5 +19,8 @@
         "Sam Parsons ",
         "Flávio Azevedo"
     ],
-    "language": "english"
+    "language": "english",
+    "aliases": [
+        "/glossary/reproducibility_network"
+    ]
 }

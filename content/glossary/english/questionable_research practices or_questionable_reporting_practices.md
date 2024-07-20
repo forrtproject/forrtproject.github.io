@@ -37,5 +37,8 @@
         "Timo Roettger",
         "F lávio Azevedo"
     ],
-    "language": "english"
+    "language": "english",
+    "aliases": [
+        "/glossary/questionable_research practices or_questionable_reporting_practices"
+    ]
 }

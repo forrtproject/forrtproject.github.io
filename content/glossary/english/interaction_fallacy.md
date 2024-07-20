@@ -24,5 +24,8 @@
         "Kai Krautter",
         "Sam Parsons"
     ],
-    "language": "english"
+    "language": "english",
+    "aliases": [
+        "/glossary/interaction_fallacy"
+    ]
 }

@@ -25,5 +25,8 @@
         "Graham Reid",
         "Steven Verheyen"
     ],
-    "language": "english"
+    "language": "english",
+    "aliases": [
+        "/glossary/open_licenses"
+    ]
 }

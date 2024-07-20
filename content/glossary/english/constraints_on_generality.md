@@ -29,5 +29,8 @@
         "Charlotte R. Pennington",
         "Timo Roettger"
     ],
-    "language": "english"
+    "language": "english",
+    "aliases": [
+        "/glossary/constraints_on_generality"
+    ]
 }

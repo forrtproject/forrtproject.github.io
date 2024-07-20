@@ -25,5 +25,8 @@
         "Christopher Graham",
         "Sam Parsons"
     ],
-    "language": "english"
+    "language": "english",
+    "aliases": [
+        "/glossary/general_data_protection_regulation"
+    ]
 }

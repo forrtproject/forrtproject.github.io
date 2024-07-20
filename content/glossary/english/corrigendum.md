@@ -23,5 +23,8 @@
         "Adam Parker",
         "Emily A. Williams"
     ],
-    "language": "english"
+    "language": "english",
+    "aliases": [
+        "/glossary/corrigendum"
+    ]
 }

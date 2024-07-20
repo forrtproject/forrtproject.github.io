@@ -21,5 +21,8 @@
         "Sam Parsons ",
         "Eike Mark Rinke"
     ],
-    "language": "english"
+    "language": "english",
+    "aliases": [
+        "/glossary/criterion_validity"
+    ]
 }

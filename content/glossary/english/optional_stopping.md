@@ -22,5 +22,8 @@
         "Catia M. Oliveira",
         "Sam Parsons"
     ],
-    "language": "english"
+    "language": "english",
+    "aliases": [
+        "/glossary/optional_stopping"
+    ]
 }

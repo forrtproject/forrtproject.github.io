@@ -25,5 +25,8 @@
         "Yu-Fang Yang",
         "Charlotte R. Pennington"
     ],
-    "language": "english"
+    "language": "english",
+    "aliases": [
+        "/glossary/posterior distribution"
+    ]
 }

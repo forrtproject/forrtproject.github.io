@@ -19,5 +19,8 @@
         "Christopher Graham",
         "Mirela Zaneva"
     ],
-    "language": "english"
+    "language": "english",
+    "aliases": [
+        "/glossary/webometrics"
+    ]
 }

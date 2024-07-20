@@ -25,5 +25,8 @@
         "Meng Liu",
         "Charlotte R. Pennington"
     ],
-    "language": "english"
+    "language": "english",
+    "aliases": [
+        "/glossary/literature_review"
+    ]
 }

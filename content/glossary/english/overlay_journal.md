@@ -21,5 +21,8 @@
         " Sam Parsons",
         "Charlotte R. Pennington"
     ],
-    "language": "english"
+    "language": "english",
+    "aliases": [
+        "/glossary/overlay_journal"
+    ]
 }
