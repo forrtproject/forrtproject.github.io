@@ -1,0 +1,28 @@
+name: labeler
+on:
+  pull_request_target:
+    types:
+      - opened
+      - synchronize
+      - reopened
+      - labeled
+      - unlabeled
+      - closed
+  schedule:
+    - cron: "0 3 * * 1"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pull-requests: write
+
+jobs:
+  labeler:
+    runs-on: ubuntu-24.04
+    steps:
+    - name: Labeler
+      uses: actions/labeler@8558fd74291d67161a8a78ce36a881fa63b766a9
+      with:
+        sync-labels: true
+        repo-token: ${{ secrets.GITHUB_TOKEN }}
+        configuration-path: .github/labeler.yaml
