@@ -24,5 +24,8 @@
         "Charlotte R. Pennington",
         "Suzanne L. K. Stewart"
     ],
-    "language": "english"
+    "language": "english",
+    "aliases": [
+        "/glossary/reproducibility"
+    ]
 }

@@ -22,5 +22,8 @@
         "Charlotte R. Pennington",
         "Graham Reid"
     ],
-    "language": "english"
+    "language": "english",
+    "aliases": [
+        "/glossary/theory"
+    ]
 }

@@ -20,5 +20,8 @@
         "Mariella Paul",
         "Charlotte R. Pennington"
     ],
-    "language": "english"
+    "language": "english",
+    "aliases": [
+        "/glossary/bids_data_structure"
+    ]
 }

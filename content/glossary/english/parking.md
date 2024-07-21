@@ -21,5 +21,8 @@
         "Sam Parsons",
         "Yuki Yamada"
     ],
-    "language": "english"
+    "language": "english",
+    "aliases": [
+        "/glossary/parking"
+    ]
 }

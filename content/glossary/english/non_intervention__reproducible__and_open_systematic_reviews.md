@@ -23,5 +23,8 @@
         "Jade Pickering",
         "Mirela Zaneva"
     ],
-    "language": "english"
+    "language": "english",
+    "aliases": [
+        "/glossary/non_intervention__reproducible__and_open_systematic_reviews"
+    ]
 }

@@ -27,5 +27,8 @@
         "Graham Reid",
         "Andrew J. Stewart"
     ],
-    "language": "english"
+    "language": "english",
+    "aliases": [
+        "/glossary/python"
+    ]
 }

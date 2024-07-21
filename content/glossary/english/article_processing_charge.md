@@ -22,5 +22,8 @@
         "Robert Ros s",
         "Tobias Wingen __________________________________________________________ __________________________________________________________"
     ],
-    "language": "english"
+    "language": "english",
+    "aliases": [
+        "/glossary/article_processing_charge"
+    ]
 }

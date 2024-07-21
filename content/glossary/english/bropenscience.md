@@ -32,5 +32,8 @@
         "Bradley Baker",
         "Mahmoud Elsherif"
     ],
-    "language": "english"
+    "language": "english",
+    "aliases": [
+        "/glossary/bropenscience"
+    ]
 }

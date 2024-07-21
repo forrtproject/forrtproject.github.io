@@ -26,5 +26,8 @@
         "Madeleine Pownall ",
         " Martin Vasilev"
     ],
-    "language": "english"
+    "language": "english",
+    "aliases": [
+        "/glossary/adversarial_collaboration"
+    ]
 }

@@ -35,5 +35,8 @@
         "Adam Parker",
         "Charlotte R. Pennington"
     ],
-    "language": "english"
+    "language": "english",
+    "aliases": [
+        "/glossary/validity"
+    ]
 }

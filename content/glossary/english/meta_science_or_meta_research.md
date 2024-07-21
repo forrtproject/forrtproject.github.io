@@ -19,5 +19,8 @@
         "Lisa Spitzer",
         "Olmo van den Akker"
     ],
-    "language": "english"
+    "language": "english",
+    "aliases": [
+        "/glossary/meta_science_or_meta_research"
+    ]
 }

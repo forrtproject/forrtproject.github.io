@@ -29,5 +29,8 @@
         "Barnabas Szaszi ",
         "F lávio Azevedo"
     ],
-    "language": "english"
+    "language": "english",
+    "aliases": [
+        "/glossary/multi_analyst_studies"
+    ]
 }

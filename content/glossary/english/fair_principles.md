@@ -24,5 +24,8 @@
         "S am Parsons",
         "Charlotte R. Pennington"
     ],
-    "language": "english"
+    "language": "english",
+    "aliases": [
+        "/glossary/fair_principles"
+    ]
 }

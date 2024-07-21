@@ -22,5 +22,8 @@
         "Helena Hartmann",
         "Joanne McCuaig"
     ],
-    "language": "english"
+    "language": "english",
+    "aliases": [
+        "/glossary/reporting_guideline"
+    ]
 }

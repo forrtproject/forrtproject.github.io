@@ -23,5 +23,8 @@
         "Helena Hartmann",
         "Timo Roettger"
     ],
-    "language": "english"
+    "language": "english",
+    "aliases": [
+        "/glossary/robustness"
+    ]
 }
