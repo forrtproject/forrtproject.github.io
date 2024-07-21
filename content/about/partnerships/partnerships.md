@@ -65,7 +65,7 @@ classtitle = "text-center"
 
 <br>
 
-<img src="cos.png" align="right" /> Founded in 2013, [COS](https://www.cos.io/) is a nonprofit organization with a mission to increase openness, integrity, and reproducibility of scientific research. COS pursues this mission by building communities around open science practices, supporting metascience research, and developing and maintaining free, open source software tools, including the [Open Science Framework (OSF)](https://osf.io/).
+<img src="cos.png" align="left" /> Founded in 2013, [COS](https://www.cos.io/) is a nonprofit organization with a mission to increase openness, integrity, and reproducibility of scientific research. COS pursues this mission by building communities around open science practices, supporting metascience research, and developing and maintaining free, open source software tools, including the [Open Science Framework (OSF)](https://osf.io/).
 
 <br>
 
@@ -81,7 +81,7 @@ classtitle = "text-center"
 
 <br>
 
-<img src="reproducibilitea.png" align="right" /> [The ReproducibiliTea (UKRN)](https://reproducibilitea.org/) is an ECR-led grassroots initiative that helps researchers create local Open Science journal clubs at their universities. Local journal clubs help build community for those interested in discussing diverse issues around open and reproducible research, improving research quality, research integrity, and more. Local members take ownership of how their journal club runs; whether they focus on reading and discussing papers (e.g. [using RTea's reading lists](https://rpt-rl.netlify.app/)), or holding workshops and tutorials, and even hosting guest speakers. Started in early 2018 at the University of Oxford, ReproducibiliTea has now spread to over 100 institutions in 25 different countries. ReproducibiliTea is completely volunteer run, and seeks to provide a unique and supportive community for members, who are predominantly Early Career Researchers.
+<img src="reproducibilitea.png" align="left" /> [The ReproducibiliTea (UKRN)](https://reproducibilitea.org/) is an ECR-led grassroots initiative that helps researchers create local Open Science journal clubs at their universities. Local journal clubs help build community for those interested in discussing diverse issues around open and reproducible research, improving research quality, research integrity, and more. Local members take ownership of how their journal club runs; whether they focus on reading and discussing papers (e.g. [using RTea's reading lists](https://rpt-rl.netlify.app/)), or holding workshops and tutorials, and even hosting guest speakers. Started in early 2018 at the University of Oxford, ReproducibiliTea has now spread to over 100 institutions in 25 different countries. ReproducibiliTea is completely volunteer run, and seeks to provide a unique and supportive community for members, who are predominantly Early Career Researchers.
 
 <br>
 
@@ -97,7 +97,7 @@ classtitle = "text-center"
 
 <br>
 
-<img src="A2P.png" align="right" /> As a scholarly training and consulting organization, [Access 2 Perspectives](https://access2perspectives.org) is providing novel insights into the globally inclusive management and communication of Research based on Open Science principles and established scholarly standards to uphold research integrity and good scientific practices across all research disciplines. We equip researchers around the world with the skills and enthusiasm they need to pursue a joyful career. Furthermore, we support scholarly stakeholders in facilitating multilingualism, global research equity and knowledge sharing for societal impact.
+<img src="A2P.png" align="left" /> As a scholarly training and consulting organization, [Access 2 Perspectives](https://access2perspectives.org) is providing novel insights into the globally inclusive management and communication of Research based on Open Science principles and established scholarly standards to uphold research integrity and good scientific practices across all research disciplines. We equip researchers around the world with the skills and enthusiasm they need to pursue a joyful career. Furthermore, we support scholarly stakeholders in facilitating multilingualism, global research equity and knowledge sharing for societal impact.
 
 <br>
 
@@ -113,7 +113,7 @@ classtitle = "text-center"
 
 <br>
 
-<img src="RN_German.png" align="right" /> [The German Reproducibility Network (GRN)](https://reproducibilitynetwork.de/) is a cross-disciplinary consortium that aims to increase trustworthiness and transparency of scientific research by investigating and encouraging the factors that contribute to robust research. We promote training activities and disseminate best practices, conduct and support meta-scientific research, and work with stakeholders to ensure coordination of efforts. GRN’s activities span multiple levels, including researchers, institutions and other stakeholders (e.g., funders, publishers, and Academic Societies).
+<img src="RN_German.png" align="left" /> [The German Reproducibility Network (GRN)](https://reproducibilitynetwork.de/) is a cross-disciplinary consortium that aims to increase trustworthiness and transparency of scientific research by investigating and encouraging the factors that contribute to robust research. We promote training activities and disseminate best practices, conduct and support meta-scientific research, and work with stakeholders to ensure coordination of efforts. GRN’s activities span multiple levels, including researchers, institutions and other stakeholders (e.g., funders, publishers, and Academic Societies).
 
 <br>
 
@@ -130,7 +130,7 @@ classtitle = "text-center"
 
 <br>
 
-<img src="PAPORTRAIL.png" align="right" /> [PaPOR TRaIL](https://open.ucc.ie/browse/all/cpd/courses/papor-trail-principles-and-practices-of-open-research-003cpd) is a free course on open research for undergraduate and postgraduate students. It is a self-paced online course that students can take independently and/or that can be embedded in exiting research curricula. Students can first complete an introductory module that providing a comprehensive understanding of the principles and practices of open research.  Following completion of this module, students can choose to complete any/all of six skill-based sections that demonstrate how to do the following open research practices. The six skills-based modules include: research integrity; pre-registration; research data management; reproducible practices; open reporting; open knowledge dissemination.
+<img src="PAPORTRAIL.png" align="left" /> [PaPOR TRaIL](https://open.ucc.ie/browse/all/cpd/courses/papor-trail-principles-and-practices-of-open-research-003cpd) is a free course on open research for undergraduate and postgraduate students. It is a self-paced online course that students can take independently and/or that can be embedded in exiting research curricula. Students can first complete an introductory module that providing a comprehensive understanding of the principles and practices of open research.  Following completion of this module, students can choose to complete any/all of six skill-based sections that demonstrate how to do the following open research practices. The six skills-based modules include: research integrity; pre-registration; research data management; reproducible practices; open reporting; open knowledge dissemination.
 
 <br>
 
@@ -146,7 +146,7 @@ classtitle = "text-center"
 
 <br>
 
-<img src="CREP.png" align="right" /> [The Collaborative Replications and Education Project (CREP)](http://www.crep-psych.org/) has as a mission to provide training, support, and professional growth opportunities for students and instructors completing replication projects, while also addressing the need for direct and direct+ replications of highly-cited studies in psychology (broadly). [Check out their OSF Repository to get started](https://osf.io/wfc6u/) or contact them at [CREP.Psych@gmail.com](mailto:CREP.Psych@gmail.com).
+<img src="CREP.png" align="left" /> [The Collaborative Replications and Education Project (CREP)](http://www.crep-psych.org/) has as a mission to provide training, support, and professional growth opportunities for students and instructors completing replication projects, while also addressing the need for direct and direct+ replications of highly-cited studies in psychology (broadly). [Check out their OSF Repository to get started](https://osf.io/wfc6u/) or contact them at [CREP.Psych@gmail.com](mailto:CREP.Psych@gmail.com).
 
 <br>
 
@@ -162,7 +162,7 @@ classtitle = "text-center"
 
 <br>
 
-<img src="ABRIR.png" align="right" /> [ABRIR](http://www.abrirpsy.org) (Advancing Big-team Reproducible science through Increased Representation) was established as a response to the global need of increasing representation in how we conduct open and big-team science, and as a necessity to promote equity, diversity and inclusion in psychological science. It was ‘born’ during the PSACON2021, when five psychological researchers from different parts of the world (Asia, East Europe and Latin America) gathered and discussed the position of researchers from low-to-middle-income countries (LMICs). They concluded that researchers from LMIC face unique challenges when fulfilling participatory or leadership roles in big-team and open science networks. Likewise, large psychology consortia struggle to recruit participants and researcher leadership beyond WEIRD (Western, Educated, Industrialist, Rich & Democratic) populations. 
+<img src="ABRIR.png" align="left" /> [ABRIR](http://www.abrirpsy.org) (Advancing Big-team Reproducible science through Increased Representation) was established as a response to the global need of increasing representation in how we conduct open and big-team science, and as a necessity to promote equity, diversity and inclusion in psychological science. It was ‘born’ during the PSACON2021, when five psychological researchers from different parts of the world (Asia, East Europe and Latin America) gathered and discussed the position of researchers from low-to-middle-income countries (LMICs). They concluded that researchers from LMIC face unique challenges when fulfilling participatory or leadership roles in big-team and open science networks. Likewise, large psychology consortia struggle to recruit participants and researcher leadership beyond WEIRD (Western, Educated, Industrialist, Rich & Democratic) populations.
 
 
 <br>
@@ -180,7 +180,7 @@ classtitle = "text-center"
 
 <br>
 
-<img src="OLS.png" align="right" /> [OLS](https://openlifesci.org/)’s mission is to capacity build and diversify leadership in research worldwide. Long term, they want to see research that is accessible, inclusive, and equitable for everyone. Its 16-week “Open Seeds” mentoring and program is for people interested in applying open principles in their work and becoming Open Science ambassadors in their communities.
+<img src="OLS.png" align="left" /> [OLS](https://openlifesci.org/)’s mission is to capacity build and diversify leadership in research worldwide. Long term, they want to see research that is accessible, inclusive, and equitable for everyone. Its 16-week “Open Seeds” mentoring and program is for people interested in applying open principles in their work and becoming Open Science ambassadors in their communities.
 
 
 <br>
@@ -200,14 +200,20 @@ classtitle = "text-center"
 <br>
 
 
-<img src="MD.png" align="right" /> [Metadocencia](https://www.metadocencia.org/) is an organization that works towards making the production, communication, and application of scientific and technical knowledge globally equitable. It aims to advance innovation with a local perspective that responsibly builds scientific and technical capacities through the co-creation of networks, learning spaces, and accessible resources for Spanish-speaking communities.
-
+<img src="MD.png" align="left" /> [Metadocencia](https://www.metadocencia.org/) is an organization that works towards making the production, communication, and application of scientific and technical knowledge globally equitable. It aims to advance innovation with a local perspective that responsibly builds scientific and technical capacities through the co-creation of networks, learning spaces, and accessible resources for Spanish-speaking communities.
 
 <br>
 
 ---
 
 <br>
+
+
+<img src="AREN.png" align="right" /> [The African Reproducibility Network (AREN)](https://africanrn.org/) is a community-led grassroots initiative which seeks to bridge the gaps in open science (OS) across Africa. AREN’s mission is to furnish African researchers with the necessary support and resources through training and workshops tailored to the local context, ensuring they are well-equipped to meet the growing global demand for openness and reproducibility in research. We also seek to establish local networks at universities and research institutes across Africa that will serve as advocay hubs for collaboration and cooperation, providing research communities with the necessary support for adopting and practising OS principles while also ensuring institutions are better prepared to implement OS policies.
+
+<br>
+
+---
 
 <br>
 
@@ -219,6 +225,17 @@ classtitle = "text-center"
 <br>
 
 <img src="rtea_bordeaux.png" align="right" /> [The BordeauxTea](https://osf.io/jqxw6/) is a journal club organized in monthly sessions in which students and young researchers discuss various topics related to Open Science around a warm cup of tea. It is based in Bordeaux (France), and part of the Neurocampus Graduate Program PhD training (Université de Bordeaux). Moreover, the BordeauxTea stems from the ReproducibiliTea initiative—a worldwide Open Science initiative spread to more than 138 institutions in 26 countries.
+
+<br>
+
+---
+
+**Replication Hub & Database** [(link)](/replication-hub/)
+
+<br>
+
+<img src="mucos_logo.jpg" align="left" width = "400px" /> [The Münster Center for Open Science (MüCOS)](https://www.uni-muenster.de/MueCOS/en/forschung/index.html)  was established in 2024 to support researchers at the University of Münster in designing and conducting transparent and reliable research. It is the first center that was brought to life by the university management (in contrast to traditional grass-roots initiatives).
+As part of its research activities, the MüCOS collaborating closely with FORRT to maintain and expand the Replication Database and the Replication Hub.
 
 <br>
 
