@@ -235,11 +235,17 @@ We recommend this talk for educators and researchers who wish to integrate inter
 
 {{< /spoiler >}}
 
-### [ Neurodiversify Your Curriculum](../neurodiversity-lessonbank)
+### [Neurodiversify Your Curriculum](../neurodiversity-lessonbank)
 
 In 2023, members of Team Neurodiversity created a series of lesson plans and educational resources to help educators embed neurodiversity into their curriculum. These resources cover a wide range of diversity and open science topics.
 
-{{< spoiler text= "Find out more" >}} 
+{{< spoiler text= "Watch the video" >}}
+
+  {{< youtube oMkF8DiAolQ >}}
+
+{{< /spoiler >}}
+
+{{< spoiler text= "Find out more" >}}
 
   The resources can be accessed via [Neurodiversify your Curriculum Page](../neurodiversity-lessonbank).
 
