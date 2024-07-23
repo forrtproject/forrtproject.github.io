@@ -13,10 +13,10 @@ on:
       - master
   schedule:
   - cron: '0 0 * * *'  # Run daily at midnight
-  workflow_dispatch:
 
 jobs:
   build:
+    name: Build
     runs-on: ubuntu-22.04
     permissions:
       contents: read
@@ -53,7 +53,7 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-pip-
 
-      - name: Python - Install dependencies 
+      - name: Python - Install dependencies
         run: |
           python3 -m pip install -r ./requirements.txt
 
@@ -66,7 +66,7 @@ jobs:
           python3 content/resources/resource.py
 
       - name: Script - Move Tenzing's output and validate
-        run: | 
+        run: |
           mv scripts/forrt_contribs/tenzing.md content/contributors/tenzing.md
 
           if [ ! -f content/contributors/tenzing.md ]; then
@@ -75,7 +75,7 @@ jobs:
           fi
 
       - name: Script - Validate curated resources
-        run: | 
+        run: |
           for file in content/curated_resources/*; do
             if [ ! -f "$file" ]; then
               echo "There is a non-markdown file ( $file ) in the curated resources folder. Exiting."
@@ -85,10 +85,16 @@ jobs:
 
           NUM_FILES=$(ls -1 content/curated_resources/*.md | wc -l)
           echo "Number of curated resources: $NUM_FILES"
-    
-      - name: Hugo - Build
-        run: | 
-          hugo --gc --minify --cleanDestinationDir --destination public
+
+      - name: Hugo - Build 
+        run: |
+          if [ "$BRANCH" != 'refs/heads/master' ]; then
+            hugo --gc --minify --cleanDestinationDir --destination public --baseURL https://staging.forrt.org
+          else
+            hugo --gc --minify --cleanDestinationDir --destination public
+          fi
+        env:
+          BRANCH: ${{ github.ref }}
 
       - name: Upload Artifact - Website
         uses: actions/upload-artifact@v4
@@ -99,11 +105,37 @@ jobs:
           path: public/
           retention-days: 1
 
-  deploy-prod:
+  deploy-test:
+    name: Deploy - Test
     runs-on: ubuntu-22.04
+    concurrency:
+      group: staging
     permissions:
       contents: write
     needs: build
+    steps:
+      - name: Download Artifact - Website
+        uses: actions/download-artifact@v4
+        with:
+          name: forrt-website-${{ github.run_number }}
+          path: ${{ github.repository }}/forrt-website
+
+      - name: Deploy - GitHub Pages
+        uses: peaceiris/actions-gh-pages@4f9cc6602d3f66b9c108549d475ec49e8ef4d45e
+        with:
+          personal_token: ${{ secrets.STAGING_GITHUB_TOKEN }}
+          publish_dir: ${{ github.repository }}/forrt-website
+          external_repository: forrtproject/webpage-staging
+          publish_branch: staging
+          cname: staging.forrt.org
+
+  deploy-prod:
+    name: Deploy - Production
+    runs-on: ubuntu-22.04
+    permissions:
+      contents: write
+    needs: 
+      - deploy-test
     if: (github.event_name == 'push' || github.event_name == 'schedule') && github.ref == 'refs/heads/master' && github.event.repository.fork == false
     steps:
       - name: Download Arfifact - Website
@@ -119,3 +151,4 @@ jobs:
           publish_dir: ${{ github.repository }}/forrt-website
           publish_branch: gh-pages
           cname: forrt.org
+
