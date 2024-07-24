@@ -111,6 +111,12 @@
   weight = 23  # The position of your page in the menu.
   parent = "about"
 
+[[main]]
+  name = "Forrt Mapping"  # A link title for your page.
+  url = "https://forrttest.shinyapps.io/Forrt-Mapping/"  # The URL of your page.
+  weight = 24  # The position of your page in the menu.
+  parent = "about"
+
 
 
 
