@@ -20,5 +20,8 @@
         "Adam Parker",
         "Graham Reid"
     ],
-    "language": "english"
+    "language": "english",
+    "aliases": [
+        "/glossary/affiliation_bias"
+    ]
 }

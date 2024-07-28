@@ -21,5 +21,8 @@
         "Zoe Flack",
         " Charlotte R. Pennington"
     ],
-    "language": "english"
+    "language": "english",
+    "aliases": [
+        "/glossary/collaborative_replication_and_education_project"
+    ]
 }

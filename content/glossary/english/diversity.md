@@ -32,5 +32,8 @@
         "Olly Robertson",
         "Flávio Azevedo"
     ],
-    "language": "english"
+    "language": "english",
+    "aliases": [
+        "/glossary/diversity"
+    ]
 }

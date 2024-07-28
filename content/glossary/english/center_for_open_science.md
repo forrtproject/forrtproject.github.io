@@ -28,5 +28,8 @@
         "Charlotte R. Pennington",
         "Lisa Spitzer"
     ],
-    "language": "english"
+    "language": "english",
+    "aliases": [
+        "/glossary/center_for_open_science"
+    ]
 }

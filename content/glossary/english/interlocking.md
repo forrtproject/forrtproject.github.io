@@ -27,5 +27,8 @@
         "Eliza Woodward",
         "Gerald Vineyard;"
     ],
-    "language": "english"
+    "language": "english",
+    "aliases": [
+        "/glossary/interlocking"
+    ]
 }

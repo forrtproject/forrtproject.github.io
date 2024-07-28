@@ -21,5 +21,8 @@
         "Catia M. Oliveira ",
         "Olmo van den Akker"
     ],
-    "language": "english"
+    "language": "english",
+    "aliases": [
+        "/glossary/public_trust_in_science"
+    ]
 }

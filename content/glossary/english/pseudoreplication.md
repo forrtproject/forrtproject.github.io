@@ -23,5 +23,8 @@
         "Elias Garcia-Pelegrin",
         "Annalise A. LaPlume"
     ],
-    "language": "english"
+    "language": "english",
+    "aliases": [
+        "/glossary/pseudoreplication"
+    ]
 }

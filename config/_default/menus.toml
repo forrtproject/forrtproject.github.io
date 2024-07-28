@@ -178,55 +178,55 @@
 [[main]]
   name = "Impact of OS on students"
   url = "/impact"
-  weight = 38
+  weight = 39
   parent = "nexus"
 
 [[main]]
   name = "Lesson Plans"
   url = "/lesson-plans"
-  weight = 39
+  weight = 40
   parent = "nexus"
 
 [[main]]
   name = "Neurodiversity Team"
   url = "/neurodiversity"
-  weight = 40
+  weight = 41
   parent = "nexus"
 
 [[main]]
   name = "Pedagogies"
   url = "/pedagogies"
-  weight = 41
+  weight = 42
   parent = "nexus"
 
 [[main]]
   name = "Self-Assessment"
   url = "/self-assessment"
-  weight = 42
+  weight = 43
   parent = "nexus"
 
 [[main]]
   name = "Social Justice Initiatives"
   url = "/dei"
-  weight = 43
+  weight = 44
   parent = "nexus"
 
 [[main]]
   name = "Summaries"
   url = "/summaries"
-  weight = 44
+  weight = 45
   parent = "nexus"
 
 [[main]]
   name = "Syllabi"
   url = "/syllabus"
-  weight = 45
+  weight = 46
   parent = "nexus"
 
 [[main]]
   name = "Wheel of Privilege"
   url = "/awop"
-  weight = 46
+  weight = 47
   parent = "nexus"
 
 
@@ -270,6 +270,13 @@
   url = "/positive-changes-replication-crisis"
   weight = 56
   parent = "replications"
+
+
+
+
+
+
+
 
 
 [[main]]

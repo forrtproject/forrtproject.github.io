@@ -32,5 +32,8 @@
         "Graham Reid",
         "Olly Robertso n"
     ],
-    "language": "english"
+    "language": "english",
+    "aliases": [
+        "/glossary/hypothesis"
+    ]
 }

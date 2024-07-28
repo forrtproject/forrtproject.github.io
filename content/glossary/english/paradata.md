@@ -24,5 +24,8 @@
         "Marta Topor",
         "F lávio Azevedo"
     ],
-    "language": "english"
+    "language": "english",
+    "aliases": [
+        "/glossary/paradata"
+    ]
 }

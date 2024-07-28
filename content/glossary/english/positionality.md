@@ -22,5 +22,8 @@
         "Madeleine Pownall",
         "Graham Reid"
     ],
-    "language": "english"
+    "language": "english",
+    "aliases": [
+        "/glossary/positionality"
+    ]
 }
