@@ -3,7 +3,7 @@
 # See https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners
 
 # Global CODEOWNERS
-@forrtproject/forrt-engineering @forrtproject/team-website
+* @forrtproject/forrt-engineering @forrtproject/team-website
 
 # If only .md are modified, only team-website team is responsible.
 *.md @forrtproject/team-website
