@@ -9,7 +9,7 @@
 *.md @forrtproject/team-website
 /docs/ @forrtproject/team-website
 
-# If technical content is modified, the forrt-engineering team is also involved.
+# If technical content is modified, the forrt-engineering team is involved.
 *.py @forrtproject/forrt-engineering
 *.sh @forrtproject/forrt-engineering
 *.yaml @forrtproject/forrt-engineering
