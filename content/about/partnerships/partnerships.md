@@ -211,6 +211,15 @@ classtitle = "text-center"
 
 <img src="AREN.png" align="right" /> [The African Reproducibility Network (AREN)](https://africanrn.org/) is a community-led grassroots initiative which seeks to bridge the gaps in open science (OS) across Africa. AREN’s mission is to furnish African researchers with the necessary support and resources through training and workshops tailored to the local context, ensuring they are well-equipped to meet the growing global demand for openness and reproducibility in research. We also seek to establish local networks at universities and research institutes across Africa that will serve as advocay hubs for collaboration and cooperation, providing research communities with the necessary support for adopting and practising OS principles while also ensuring institutions are better prepared to implement OS policies.
 
+
+<br>
+
+---
+
+<br>
+
+<img src="CollectiveLibrary.png" align="left" /> Together with universities, professional organisations and charities [The Collaborative Library](https://thecollaborativelibrary.com/) team are building a repository of lay summaries of peer reviewed articles and materials to help everyone understand research quality standards. The platform is grounded in the principles of open access to enhance access and accessibility of research- trying to break down barriers to understanding science and collaboration.
+
 <br>
 
 ---
