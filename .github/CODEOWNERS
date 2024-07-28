@@ -2,4 +2,18 @@
 
 # See https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners
 
-* @forrtproject/team-website
+# Global CODEOWNERS
+@forrtproject/forrt-engineering @forrtproject/team-website
+
+# If only .md are modified, only team-website team is responsible.
+*.md @forrtproject/team-website
+/docs/ @forrtproject/team-website
+
+# If technical content is modified, the forrt-engineering team is also involved.
+*.py @forrtproject/forrt-engineering
+*.sh @forrtproject/forrt-engineering
+*.yaml @forrtproject/forrt-engineering
+*.toml @forrtproject/forrt-engineering
+
+/.devcontainer/ @forrtproject/forrt-engineering
+/.github/ @forrtproject/forrt-engineering
