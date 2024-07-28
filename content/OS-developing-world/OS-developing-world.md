@@ -91,7 +91,7 @@ This project will collect practical experiences and guidelines related to Open S
 
 <div style="width:600px">
 
-![Placeholder map](LMIC.png)
+![Placeholder map](LMIC.jpg)
 
 ***[insert collaboration map here (in-progress)]***
 
