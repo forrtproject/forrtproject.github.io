@@ -2,7 +2,9 @@
 title: Newsletter Archive
 ---
  :calendar: 2024
- 
+
+[| June 2024](https://us14.campaign-archive.com/?u=64c29a25a0ca81454399d522e&id=8794516653)
+
 [| May 2024](https://mailchi.mp/forrt/forrt-newsletter-10322031?e=b822aa3541)
  
 [| April 2024](https://eepurl.com/iNOpHc)
