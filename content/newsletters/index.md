@@ -1,7 +1,12 @@
 ---
 title: Newsletter Archive
 ---
- :calendar: 2024
+_______________________________________________
+
+{{< subscribe >}}
+_______________________________________________
+
+Archives :calendar: 2024
 
 [| June 2024](https://us14.campaign-archive.com/?u=64c29a25a0ca81454399d522e&id=8794516653)
 
@@ -31,4 +36,4 @@ title: Newsletter Archive
 
 [| April 20th 2022](https://eepurl.com/hZ06Bb)
 
-________________________
+_______________________________________________
