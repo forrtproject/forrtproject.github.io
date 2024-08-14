@@ -116,7 +116,7 @@ This is a dynamic project that is organized in five stages. Currently, we are in
 
 <!-- Anyone can add new effects or edit existing effects [by joining our initiative on Slack](https://join.slack.com/t/forrt/shared_invite/enQtODMwODI0OTk4ODgzLTM0ZTQ3NDk5MzA1ZjBmNWJjYTVlN2Y2YTk0ZTJhYTY5NDliMDYzMjg2MWE0ZDRhOTY0ZDY3OTRlNDA4ODQ3NjQ) and then [following the instructions in our reversals g-doc](https://docs.google.com/document/d/1kFHayPpdX8RwDSdFPjaz7pxwxTiomIdCozO3hUCSHvM/edit).-->
 
-Currently the project is closed for submissions, as we database'ify and merge our resource with other replication databases. In the meantime, please contribute new entries to the [Replication Database (ReD)](https://www.soscisurvey.de/replicate/) and contact Lukas Röseler at lukas.roeseler@uni-muenster.de for any questions.
+Currently the project is closed for submissions, as we database'ify and merge our resource with other replication databases. In the meantime, please contribute new entries to the [FORRT Replication Database (ReD)](https://www.soscisurvey.de/replicate/) and contact Lukas Röseler at lukas.roeseler@uni-muenster.de for any questions.
 
 All **past or current project contributors** are listed at the [bottom of this page](#contributors).
 
