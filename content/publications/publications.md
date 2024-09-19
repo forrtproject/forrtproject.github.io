@@ -67,6 +67,24 @@ subtitle = ""
 
 <br>
 
+### **The Replication Database: Documenting the Replicability of Psychological Science**
+
+<br>
+
+We have written a manuscript about documenting and tracking replication efforts. In psychological science, replicability — repeating a study with a new sample achieving consistent results — is critical for affirming the validity of scientific findings. Despite its importance, replication efforts are few and far between in psychological science with many attempts failing to corroborate past findings. This scarcity, compounded by the difficulty in accessing replication data, jeopardizes the efficient allocation of research resources and impedes scientific advancement. Addressing this crucial gap, we present the [Replication Database](https://forrt.org/replication-hub/), a novel platform hosting >1,200 original findings paired with replication findings. The infrastructure of this database allows researchers to submit, access, and engage with replication findings. The database makes replications visible, easily findable via a graphical user interface, and tracks replication rates across various factors, such as publication year or journal. This will facilitate future efforts to evaluate the robustness of psychological research. More info about the project and other FORRT replication efforts can be found on the [Replication Hub](https://forrt.org/replication-hub/#). This effort was also highlighted by the journal _Science_ in their [news at a glance](https://www.science.org/content/article/news-glance-planning-mentoring-tracking-replications-and-deracializing-lung-tests)!
+
+<br>
+
+> Röseler, L., Kaiser, L., Doetsch, C., Klett, N., Seida, C., Schütz, A., Aczel, B., Adelina, N., Agostini, V., Alarie, S., Albayrak-Aydemir, N., Aldoh, A., Al-Hoorie, A. H., Azevedo, F., Baker, B. J., Barth, C. L., Beitner, J., Brick, C., Brohmer, H., Chandrashekar, S. P., Chung, K. L., Cockcroft, J. P., Cummins, J., Diveica, V., Dumbalska, T., Efendic, E., Elsherif, M., Evans, T., Feldman, G., Fillon, A., Förster, N., Frese, J., Genschow, O., Giannouli, V., Gjoneska, B., Gnambs, T., Gourdon-Kanhukamwe, A., Graham, C. J., Hartmann, H., Haviva, C., Herderich, A., Hilbert, L. P., Holgado, D., Hussey, I., Ilchovska, Z. G., Kalandadze, T., Karhulahti, V.-M., Kasseckert, L., Klingelhöfer-Jens, M., Koppold, A., Korbmacher, M., Kulke, L., Kuper, N., LaPlume, A., Leech, G., Lohkamp, F., Lou, N. M., Lynott, D., Maier, M., Meier, M., Montefinese, M., Moreau, D., Mrkva, K., Nemcova, M., Oomen, D., Packheiser, J., Pandey, S., Papenmeier, F., Paruzel-Czachura, M., Pavlov, Y. G., Pavlović, Z., Pennington, C. R., Pittelkow, M.-M., Plomp, W., Plonski, P. E., Pronizius, E., Pua, A. A., Pypno-Blajda, K., Rausch, M., Rebholz, T. R., Richert, E., Röer, J. P., Ross, R., Schmidt, K., Skvortsova, A., Sperl, M. F. J., Tan, A. W. M., Thürmer, J. L., Tołopiło, A., Vanpaemel, W., Vaughn, L. A., Verheyen, S., Wallrich, L., Weber, L., Wolska, J. K., Zaneva, M., & Zhang, Y. (2024). The Replication Database: Documenting the Replicability of Psychological Science.
+Journal of Open Psychology Data, 12: 8, pp. 1–23. DOI: https://doi.org/10.5334/jopd.101
+
+<br>
+
+The **<font style="color:#0e2a38">preprint</font>** can [be found here (osf.io/me2ub)](https://osf.io/preprints/metaarxiv/me2ub). 
+
+<div class='altmetric-embed' data-badge-type='medium-donut' data-doi="https://doi.org/10.31222/osf.io/me2ub"></div>
+<div class='altmetric-embed' data-badge-type='medium-donut' data-doi="https://doi.org/10.1098/rsos.221255"></div>
+
 ### **The Impact of Open Scholarship on Students' Learning Outcomes (Scoping Review)**
 
 <br>
@@ -203,17 +221,6 @@ The **<font style="color:#0e2a38">preprint</font>** can [be found here (osf.io/f
 ## Preprints 
 ***
 
-### **The Replication Database: Documenting the Replicability of Psychological Science**
-
-<br>
-
-We have written a manuscript about documenting and tracking replication efforts. In psychological science, replicability — repeating a study with a new sample achieving consistent results — is critical for affirming the validity of scientific findings. Despite its importance, replication efforts are few and far between in psychological science with many attempts failing to corroborate past findings. This scarcity, compounded by the difficulty in accessing replication data, jeopardizes the efficient allocation of research resources and impedes scientific advancement. Addressing this crucial gap, we present the [Replication Database](https://forrt.org/replication-hub/), a novel platform hosting >1,200 original findings paired with replication findings. The infrastructure of this database allows researchers to submit, access, and engage with replication findings. The database makes replications visible, easily findable via a graphical user interface, and tracks replication rates across various factors, such as publication year or journal. This will facilitate future efforts to evaluate the robustness of psychological research. More info about the project and other FORRT replication efforts can be found on the [Replication Hub](https://forrt.org/replication-hub/#). This effort was also highlighted by the journal _Science_ in their [news at a glance](https://www.science.org/content/article/news-glance-planning-mentoring-tracking-replications-and-deracializing-lung-tests)!
-
-
-***Status***: Our paper is **preprinted** in MetaArxiv. Cite as:
-> Röseler, L., Kaiser, L., Doetsch, C. A., Klett, N., Seida, C., Schütz, A., … Zhang, Y., Mr. (2024, April 11). The Replication Database: Documenting the Replicability of Psychological Science. https://doi.org/10.31222/osf.io/me2ub
-
-<center> ________________________________ </center>
 
 ### **Neurodiversity & Open Scholarship in Academia**
 
