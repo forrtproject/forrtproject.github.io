@@ -111,3 +111,9 @@ Aly, M., Ansari, S., Colunga, E., Crockett, M. J., Diekman, A. B., Goldrick, M.,
 ### Author Biography
 
 Reviewer Zero [Organizing Committee](https://www.reviewerzero.net/team). Contact information: admin@reviewerzero.net.
+
+<br >
+
+### Funding
+
+This material is based upon work supported by the National Science Foundation under Grant No. 2224777. Any opinions, findings, and conclusions or recommendations expressed in this material are those of the author(s) and do not necessarily reflect the views of the National Science Foundation.

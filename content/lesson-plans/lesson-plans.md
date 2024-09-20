@@ -119,6 +119,11 @@ Please consider [giving us your feedback (critical or otherwise) when using thes
 
 </center>
 
+### Relevant External Lesson Plans
+---------------------
+
+* United Nations' Sustainable Development Goals (SDG) [Open Pedagogy](https://tru.arcabc.ca/islandora/object/unsdg%3Aroot) has several lesson plans on how to teach about the UN's SDGs (e.g., SDG 04: Quality Education, SDG 05: Gender Equality, SDG 08: Decent Work and Economic Growth, SDG 10: Reduced Inequalities, SDG 16: Peace, Justice, and Strong Institutions and more.)
+
 
 ### Contribute
 ---------------------
