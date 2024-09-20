@@ -2,7 +2,7 @@
 title: Newsletter Archive
 ---
 _______________________________________________
-### Stay updated by Subscribing to FORRT Newsletter 
+### Stay updated by subscribing to the FORRT Newsletter 
 {{< subscribe >}}
 _______________________________________________
 
