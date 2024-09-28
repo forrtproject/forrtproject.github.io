@@ -77,12 +77,14 @@ In the social, cognitive, and behavioral sciences, replication studies, that is,
 
 * Korbmacher, M., Azevedo, F., Pennington, C. R., Hartmann, H., Pownall, M., Schmidt, K., ... & Evans, T. (2023). The replication crisis has led to positive structural, procedural, and community changes. Communications Psychology, 1(1), 3. [https://doi.org/10.1038/s44271-023-00003-2](https://doi.org/10.1038/s44271-023-00003-2) 
 
+* Röseler, L., Kaiser, L., Doetsch, C., Klett, N., Seida, C., Schütz, A., Aczel, B., Adelina, N., Agostini, V., Alarie, S., Albayrak-Aydemir, N., Aldoh, A., Al-Hoorie, A. H., Azevedo, F., Baker, B. J., Barth, C. L., Beitner, J., Brick, C., Brohmer, H., Chandrashekar, S. P., Chung, K. L., Cockcroft, J. P., Cummins, J., Diveica, V., Dumbalska, T., Efendic, E., Elsherif, M., Evans, T., Feldman, G., Fillon, A., Förster, N., Frese, J., Genschow, O., Giannouli, V., Gjoneska, B., Gnambs, T., Gourdon-Kanhukamwe, A., Graham, C. J., Hartmann, H., Haviva, C., Herderich, A., Hilbert, L. P., Holgado, D., Hussey, I., Ilchovska, Z. G., Kalandadze, T., Karhulahti, V.-M., Kasseckert, L., Klingelhöfer-Jens, M., Koppold, A., Korbmacher, M., Kulke, L., Kuper, N., LaPlume, A., Leech, G., Lohkamp, F., Lou, N. M., Lynott, D., Maier, M., Meier, M., Montefinese, M., Moreau, D., Mrkva, K., Nemcova, M., Oomen, D., Packheiser, J., Pandey, S., Papenmeier, F., Paruzel-Czachura, M., Pavlov, Y. G., Pavlović, Z., Pennington, C. R., Pittelkow, M.-M., Plomp, W., Plonski, P. E., Pronizius, E., Pua, A. A., Pypno-Blajda, K., Rausch, M., Rebholz, T. R., Richert, E., Röer, J. P., Ross, R., Schmidt, K., Skvortsova, A., Sperl, M. F. J., Tan, A. W. M., Thürmer, J. L., Tołopiło, A., Vanpaemel, W., Vaughn, L. A., Verheyen, S., Wallrich, L., Weber, L., Wolska, J. K., Zaneva, M., & Zhang, Y. (2024). The Replication Database: Documenting the Replicability of Psychological Science.
+Journal of Open Psychology Data, 12(8), 1–23. [https://doi.org/10.5334/jopd.101](https://doi.org/10.5334/jopd.101)
 
 ### Pre-Prints
 
 
 
-* Röseler, L., Kaiser, L., Doetsch, C. A., Klett, N., Seida, C., Schütz, A., … Zhang, Y., Mr. (2024, April 11). The Replication Database: Documenting the Replicability of Psychological Science. [https://doi.org/10.31222/osf.io/me2ub](https://doi.org/10.31222/osf.io/me2ub) 
+
 * Röseler, L., Gendlina, T., Krapp, J., Labusch, N., & Schütz, A. (2022). Successes and Failures of Replications: A Meta-Analysis of Independent Replication Studies Based on the OSF Registries. [https://dx.doi.org/10.31219/osf.io/8psw2](https://dx.doi.org/10.31219/osf.io/8psw2) 
 
 
