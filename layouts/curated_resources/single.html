@@ -3,11 +3,11 @@
 <article class="article">
 
     {{ partial "resource_page_header" . }}
-    
+
     <div class="article-container">
         <div class="article-container">
-            
-            {{ partial "page_edit" . }}
+
+            <!-- {{ partial "page_edit" . }} (not meaningful as mds are auto-generated)-->
             {{ partial "tags" . }}
             {{ if .Params.abstract }}
             <h3>{{ i18n "abstract" }}</h3>
@@ -24,20 +24,20 @@
             <p class=" mb-1 pr-2"><strong>Subject area(s): </strong>{{delimit .Params.subject_areas ", " }}</p>
             <p class=" mb-1 pr-2"><strong>Language(s): </strong>{{delimit .Params.language ", " }}</p>
             </div>
-            
+
             {{ partial "share" . }}
             {{/*  {{ partial "page_author" . }}  */}}
             {{ partial "comments" . }}
-            
+
             {{ if site.Params.section_pager }}
             <div class="article-widget">
                 {{ partial "section_pager" . }}
             </div>
             {{ end }}
-            
+
             {{ partial "page_related" . }}
 
-            
+
         </div>
 </article>
 
