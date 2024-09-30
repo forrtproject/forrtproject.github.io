@@ -23,7 +23,9 @@
           {{ i18n "last_updated" }}
       {{ end }}
     {{ end }}
-    {{ $date }}
+    {{ if ne $date "Jan 1, 0001" }}
+      {{ $date }}
+    {{ end }}
   </span>
   {{ end }}
 
