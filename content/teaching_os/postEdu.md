@@ -12,7 +12,7 @@ title = "POSTEdu: Promoting Open Science Teaching: A Positive, Inclusive and Par
 
 [design.spacing]
   # Customize the section spacing. Order is top, right, bottom, left.
-  padding = ["10px", "200px", "10px", "200px"]
+  padding = ["10px", "0", "10px", "0"]
 
 [advanced]
  # Custom CSS. 
@@ -31,7 +31,7 @@ title = "POSTEdu: Promoting Open Science Teaching: A Positive, Inclusive and Par
   <img src="PostEdu1.png" alt="PostEdu Logo" style="margin:auto; padding: auto;">
 </div>
 
-## Summary
+### Summary
 
 The next generation of researchers and consumers of science must be equipped with knowledge of open and reproducible research to maintain and further scientific standards. Thus, educators and mentors must be able to provide a strong foundation in Open Science training. However, there is a lack of training and support available for educators in Open Science, including Continuing Professional Development (CPD) opportunities. In this project, [funded by the Dutch Research Council (NWO)](https://www.nwo.nl/en/researchprogrammes/open-science/open-science-fund/open-science-fund-2023-awarded-grants), we aim to design and develop a pedagogically-informed, evidence-based, self-guided program for supporting the teaching of Open Science. We will produce three modules for educators interested in teaching Open Science through a 1) positive, 2) participatory, and 3) inclusive lens. The materials will be developed and evaluated in consultation with educators, and will be disseminated as an open-access course.
 
