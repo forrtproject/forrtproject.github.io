@@ -229,7 +229,11 @@
   weight = 47
   parent = "nexus"
 
-
+[[main]]
+  name = "Teaching OS"
+  url = "/teaching_os"
+  weight = 48
+  parent = "nexus"
 
 
 
