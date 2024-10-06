@@ -222,6 +222,24 @@ The **<font style="color:#0e2a38">preprint</font>** can [be found here (osf.io/f
 ***
 
 
+### **Mapping Open Science Communities in Psychology: A Systematic Narrative Review**
+
+<br>
+
+We have written a manuscript, entitled *International Initiatives to Enhance Awareness and Uptake of Open Research in Psychology: A Systematic Narrative Review,* which outlines the global landscape of Open Science initiatives within psychology. This preprint provides a systematic review of *187 initiatives*, categorized into procedural, structural, and community-based changes, highlighting the roles they play in advancing transparency, replicability, and collaboration in research practices. The review aims to increase awareness, adoption, and coordination of these initiatives across psychology and beyond, serving as a roadmap for disciplines experiencing similar challenges.
+
+
+***Status***: Our paper is **preprinted** 🎉🥳 in PsyArxiv. Cite as:
+> Skubera, M., Korbmacher, M., Evans, T.R., Azevedo, F., Pennington, C.R. (2024). International Initiatives to Enhance Awareness and Uptake of Open Research in Psychology: A Systematic Narrative Review. https://doi.org/10.31234/osf.io/rakmb.
+
+<div class='altmetric-embed' data-badge-type='medium-donut' data-doi="https://doi.org/10.31234/osf.io/rakmb"></div>
+
+<center> ________________________________ </center>
+
+<br><br>
+<br><br>
+
+
 ### **Neurodiversity & Open Scholarship in Academia**
 
 <br>

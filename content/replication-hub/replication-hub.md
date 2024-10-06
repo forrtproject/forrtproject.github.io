@@ -55,7 +55,7 @@ subtitle = ""
 
 {{% alert note %}}
 
-THIS IS A PAGE IN CONSTRUCTION. PLEASE COME BACK SOON!
+THIS PAGE IS IN CONSTRUCTION.
 
 {{% /alert %}}
 
