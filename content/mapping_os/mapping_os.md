@@ -46,9 +46,10 @@ THIS PAGE IS IN CONSTRUCTION. PLEASE COME BACK SOON!
 
 Welcome to the FORRT Open Science Communities Mapping Initiative, a global effort to systematically identify, map, and connect Open Science (OS) organizations across disciplines and regions. 
 
-> Our goal is to build an interactive, living map of grassroots and institutional Open Science networks, providing researchers, educators, and policy-makers with a detailed landscape of resources, collaborations, and community efforts.
+> Our goal is to build an interactive, crowdsourced, and living map of grassroots Open Science networks, providing researchers, educators, and policy-makers with a detailed landscape of the resources, opportunities, collaborations, and initiatives within these communities.
 
-This initiative builds upon the successful mapping of Open Science initiatives in psychology and aims to extend this work across multiple disciplines. With the support of key partners like Metadocencia, Access 2 Perspectives (A2P), and the Center for Open Science (COS), this project will foster collaboration, transparency, and innovation in scientific research globally.
+
+This initiative builds upon the successful mapping of Open Science initiatives in the field of Psychology [Skubera et al., 2024](https://doi.org/10.31234/osf.io/rakmb) (*International Initiatives to Enhance Awareness and Uptake of Open Research in Psychology: A Systematic Narrative Review*), and aims to extend this work across multiple disciplines. With the support of key partners, this project will foster collaboration, transparency, and innovation in scientific research globally.
 
 <br>
 
@@ -136,6 +137,7 @@ This initiative is supported by a consortium of organizations dedicated to advan
 ***Datasets Considered for Integration***:
 * FORRT’s Curated Resources: Over 1,000 resources on Open Science, already categorized for accessibility.
 * Metadocencia’s Mapped Communities: Interactive maps focused on Latin America, which will be integrated into the global map.
+* Access2Perspectives Network of OS Communities: [Kumo Map](https://kumu.io/access2perspectives/open-science#disciplines/) 
 * COSGN Database: A database of over 120 grassroots networks promoting open scholarship worldwide.
 
 <br>
