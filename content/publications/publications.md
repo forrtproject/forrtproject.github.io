@@ -82,8 +82,8 @@ Journal of Open Psychology Data, 12: 8, pp. 1–23. DOI: https://doi.org/10.5334
 
 The **<font style="color:#0e2a38">preprint</font>** can [be found here (osf.io/me2ub)](https://osf.io/preprints/metaarxiv/me2ub). 
 
-<div class='altmetric-embed' data-badge-type='medium-donut' data-doi="https://doi.org/10.31222/osf.io/me2ub"></div>
-<div class='altmetric-embed' data-badge-type='medium-donut' data-doi="https://doi.org/10.1098/rsos.221255"></div>
+<div class='altmetric-embed' data-badge-type='medium-donut' data-doi="10.31222/osf.io/me2ub"></div>
+<div class='altmetric-embed' data-badge-type='medium-donut' data-doi="https://doi.org/10.5334/jopd.101"></div>
 
 ### **The Impact of Open Scholarship on Students' Learning Outcomes (Scoping Review)**
 
