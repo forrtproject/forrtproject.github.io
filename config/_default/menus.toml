@@ -272,6 +272,12 @@
   parent = "replications"
 
 [[main]]
+  name = "FReD R-Package"
+  url = "https://forrt.org/FReD/index.html"
+  weight = 54
+  parent = "replications"
+
+[[main]]
   name = "Replications & Reversals"
   url = "/reversals"
   weight = 55
