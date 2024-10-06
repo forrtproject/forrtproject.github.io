@@ -137,7 +137,7 @@ This initiative is supported by a consortium of organizations dedicated to advan
 ***Datasets Considered for Integration***:
 * FORRT’s Curated Resources: Over 1,000 resources on Open Science, already categorized for accessibility.
 * Metadocencia’s Mapped Communities: Interactive maps focused on Latin America, which will be integrated into the global map.
-* Access2Perspectives Network of OS Communities: [Kumo Map](https://kumu.io/access2perspectives/open-science#disciplines/) 
+* Access2Perspectives Network of OS Communities: [Kumo Network](https://kumu.io/access2perspectives/open-science#disciplines/).
 * COSGN Database: A database of over 120 grassroots networks promoting open scholarship worldwide.
 
 <br>
