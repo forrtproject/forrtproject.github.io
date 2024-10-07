@@ -52,7 +52,7 @@
 
         {{ if .HasChildren }}
         <li class="nav-item dropdown px-2">
-          <a href="#" class="nav-link dropdown-toggle" data-hover="dropdown" aria-haspopup="true">
+          <a href="javascript:void(0)" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             {{- .Pre -}}<span>{{ .Name | safeHTML }}</span>{{- .Post -}}
             <span class="caret"></span>
           </a>
