@@ -251,13 +251,13 @@
 
 [[main]]
   name = "FReD Explorer"
-  url = "/apps/fred_explorer.html"
+  url = "https://forrt.org/apps/fred_explorer.html"
   weight = 52
   parent = "replications"
 
 [[main]]
   name = "FReD Annotator"
-  url = "/apps/fred_annotator.html"
+  url = "https://forrt.org/apps/fred_annotator.html"
   weight = 53
   parent = "replications"
 
