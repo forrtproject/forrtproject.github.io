@@ -69,8 +69,10 @@
 
         {{/* Check if link should open in new tab */}}
         {{ $target := "" }}
-        {{ if and (gt (len .URL) 3) (eq (slicestr .URL 0 4) "http") }}
+        {{ if or (and (gt (len .URL) 3) (eq (slicestr .URL 0 4) "http")) (findRE "/apps/" .URL) }}
           {{ $target = " target=\"_blank\" rel=\"noopener\"" }}
+        {{ else }}
+          {{ warnf "Did not match URL in main menu: %s" .URL }}
         {{ end }}
 
         {{/* Get active page and other attributes. */}}
@@ -105,8 +107,10 @@
 
         {{/* Check if link should open in new tab */}}
         {{ $target := "" }}
-        {{ if and (gt (len .URL) 3) (eq (slicestr .URL 0 4) "http") }}
+        {{ if or (and (gt (len .URL) 3) (eq (slicestr .URL 0 4) "http")) (findRE "/apps/" .URL) }}
           {{ $target = " target=\"_blank\" rel=\"noopener\"" }}
+        {{ else }}
+          {{ warnf "Did not match URL in right menu: %s" .URL }}
         {{ end }}
 
         <li class="nav-item">
