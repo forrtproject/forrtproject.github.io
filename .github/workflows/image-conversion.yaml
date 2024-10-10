@@ -12,12 +12,9 @@ jobs:
   build:
     name: Build
     runs-on: ubuntu-22.04
-    concurrency:
-      group: ${{ github.ref }}-pr_validation
-      cancel-in-progress: true
     permissions:
       contents: write
-      pull-requests: read
+      pull-requests: write
 
     steps:
       - name: Checkout
@@ -66,7 +63,7 @@ jobs:
       - name: Configure Git User
         if: github.event_name == 'pull_request'
         run: |
-          git config --global user.name "github-actions[bot]"
+          git config --global user.name "webp-conversion-bot"
           git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
       - name: Commit Changes to Repository
@@ -75,3 +72,10 @@ jobs:
           git add -A
           git commit -m "Convert images to WebP, update references, and archive originals" || echo "No changes to commit"
           git push origin HEAD:${{ github.head_ref }}
+
+      - uses: mshick/add-pr-comment@v2
+        with:
+          message: |
+            **Converted some images or references to webp**.
+            Before you can merge the PR, you will need to manually trigger the deploy,
+            best by just adding a comment with the /deploy command (i.e. only saying /deploy)
