@@ -1,0 +1,77 @@
+name: convert webp
+
+# Converts all images to webp, and changes links
+
+on:
+  pull_request:
+    branches:
+      - '**'
+  workflow_dispatch:
+
+jobs:
+  build:
+    name: Build
+    runs-on: ubuntu-22.04
+    concurrency:
+      group: ${{ github.ref }}-pr_validation
+      cancel-in-progress: true
+    permissions:
+      contents: write
+      pull-requests: read
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event_name == 'pull_request' && github.head_ref || github.ref }}
+          fetch-depth: 0
+
+      - name: Convert Images to WebP and Update References
+        if: github.event_name == 'pull_request'
+        run: |
+          sudo apt-get update && sudo apt-get install -y webp
+
+          mkdir -p picture_archive
+
+          INITIAL_COUNT=$(find picture_archive -type f | wc -l)
+
+          # Find and convert all png, jpg, and jpeg images to webp format, excluding the 'picture_archive' folder
+          find . -type f \( -iname "*.png" -o -iname "*.jpg" -o -iname "*.jpeg" \) ! -path "./picture_archive/*" -print0 | while IFS= read -r -d '' file; do
+            extension="${file##*.}"
+            if [[ "$extension" == "png" || "$extension" == "PNG" ]]; then
+              cwebp -lossless -q 100 "$file" -o "${file%.*}.webp" && mv "$file" picture_archive/
+            else
+              cwebp -q 95 "$file" -o "${file%.*}.webp" && mv "$file" picture_archive/
+            fi
+          done
+
+          # Update references in all YAML, markdown and HTML files (excluding external URLs) - except for GH actions
+          find . -type f \( -iname "*.md" -o -iname "*.html" -o -iname "*.txt" -o -iname "*.toml" -o -iname "*.yaml" \) ! -path "./picture_archive/*" ! -path "./.github/*" -print0 | while IFS= read -r -d '' file; do
+            awk '
+              {
+                while (match($0, /[^http]([^" ]+)\.(png|jpg|jpeg)/)) {
+                  prefix = substr($0, RSTART, RLENGTH);
+                  new_prefix = gensub(/\.(png|jpg|jpeg)$/, ".webp", "g", prefix);
+                  $0 = substr($0, 1, RSTART - 1) new_prefix substr($0, RSTART + RLENGTH);
+                }
+                print
+              }
+            ' "$file" > tmp && mv tmp "$file"
+          done
+
+          FINAL_COUNT=$(find picture_archive -type f | wc -l)
+          NEW_FILES=$((FINAL_COUNT - INITIAL_COUNT))
+          echo "Number of new images converted to WebP format: $NEW_FILES"
+
+      - name: Configure Git User
+        if: github.event_name == 'pull_request'
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+      - name: Commit Changes to Repository
+        if: github.event_name == 'pull_request'
+        run: |
+          git add -A
+          git commit -m "Convert images to WebP, update references, and archive originals" || echo "No changes to commit"
+          git push origin HEAD:${{ github.head_ref }}
