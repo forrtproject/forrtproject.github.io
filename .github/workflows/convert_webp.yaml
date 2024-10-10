@@ -1,4 +1,4 @@
-name: convert webp
+name: image-conversion
 
 # Converts all images to webp, and changes links
 
