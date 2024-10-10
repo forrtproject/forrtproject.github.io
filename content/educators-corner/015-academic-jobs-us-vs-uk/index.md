@@ -12,10 +12,10 @@ featured: true
 draft: false
 
 # Featured image
-# To use, add an image named `featured.jpg/png` to your page's folder.
+# To use, add an image named `featured.webp/png` to your page's folder.
 # Focal points: Smart, Center, TopLeft, Top, TopRight, Left, Right, BottomLeft, Bottom, BottomRight.
 image:
-  caption: "Flags of the United Kingdom and United States of America, by [Tvabutzku1234](https://commons.wikimedia.org/wiki/File:Flags_of_UK_and_USA.jpg)"
+  caption: "Flags of the United Kingdom and United States of America, by [Tvabutzku1234](https://commons.wikimedia.org/wiki/File:Flags_of_UK_and_USA.webp)"
   focal_point: "Center"
   preview_only: false
 

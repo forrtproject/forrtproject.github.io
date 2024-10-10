@@ -13,7 +13,7 @@ featured: true
 draft: false
 
 # Featured image
-# To use, add an image named `featured.jpg/png` to your page's folder.
+# To use, add an image named `featured.webp/png` to your page's folder.
 # Focal points: Smart, Center, TopLeft, Top, TopRight, Left, Right, BottomLeft, Bottom, BottomRight.
 image:
   #caption: "Photo by Andrea Piacquadio from [Pexels](https://www.pexels.com/photo/happy-ethnic-woman-sitting-at-table-with-laptop-3769021/)"
@@ -70,7 +70,7 @@ We talked about the loss to science, especially when innovative ideas put forwar
 
 I showed them powerful clips of one woman of color’s experience as a scientist, professor of chemistry, Raychelle Burks ([@DrRubidium](https://twitter.com/DrRubidium)). Dr. Burks captured so perfectly the importance of representation.
 
-![](her1.png) ![](her2.webp) 
+![](her1.webp) ![](her2.webp) 
 
 I talked about how these problems are not limited to male-dominated sciences but that these issues pervade psychological science too. 
 
