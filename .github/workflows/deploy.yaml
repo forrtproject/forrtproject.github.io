@@ -65,22 +65,21 @@ jobs:
 
           mkdir -p picture_archive
 
-          find picture_archive -type f > before_conversion.txt
+          INITIAL_COUNT=$(find picture_archive -type f | wc -l)
 
           # Find and convert all png, jpg, and jpeg images to webp format, excluding the 'picture_archive' folder
-          find . -type f \( -iname "*.png" -o -iname "*.jpg" -o -iname "*.jpeg" \) ! -path "./picture_archive/*" -exec sh -c 'cwebp "$1" -o "${1%.*}.webp"' _ {} \;
-          find . -type f \( -iname "*.png" -o -iname "*.jpg" -o -iname "*.jpeg" \) ! -path "./picture_archive/*" -exec mv {} picture_archive/ \;
+          find . -type f \( -iname "*.png" -o -iname "*.jpg" -o -iname "*.jpeg" \) ! -path "./picture_archive/*" -print0 | while IFS= read -r -d '' file; do
+            cwebp "$file" -o "${file%.*}.webp" && mv "$file" picture_archive/
+          done
 
           # Update references in all markdown and HTML files (excluding external URLs)
-          find . -type f \( -iname "*.md" -o -iname "*.html" \) ! -path "./picture_archive/*" -exec sed -i 's/\(src\|href\|!\[.*\](\)\([^)]*\)\(\.png\|\.jpg\|\.jpeg\)/\1\2.webp/g' {} \;
+          find . -type f \( -iname "*.md" -o -iname "*.html" -o -iname "*.txt" -o -iname "*.toml" -o -iname "*.yaml" \) ! -path "./picture_archive/*" -print0 | xargs -0 sed -i -E 's/([ "\'(])((?!http)[^ "\'()]+)\.(png|jpg|jpeg)([ "\')])/\1\2.webp\4/g'
 
           find picture_archive -type f > after_conversion.txt
 
-          # Calculate the number of newly added files by comparing the lists
-          NEW_FILES=$(comm -13 before_conversion.txt after_conversion.txt | wc -l)
+          FINAL_COUNT=$(find picture_archive -type f | wc -l)
+          NEW_FILES=$((FINAL_COUNT - INITIAL_COUNT))
           echo "Number of new images converted to WebP format: $NEW_FILES"
-
-          rm before_conversion.txt after_conversion.txt
 
       - name: Configure Git User
         if: github.event_name == 'pull_request'
