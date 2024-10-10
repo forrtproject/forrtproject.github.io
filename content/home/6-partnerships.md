@@ -52,7 +52,7 @@ subtitle = "---"
 
 <br>
 
-![V2](img/Partnerships.png)
+![V2](img/Partnerships.webp)
 
 __*Meta-psychology special issue*__
 

@@ -110,7 +110,7 @@ Our educational toolkit is designed to support educators, researchers, and stude
 
 <div style="width:900px">
 
-![Vizualization - AI generated](Viz_FORRT.png)
+![Vizualization - AI generated](Viz_FORRT.webp)
 
 </div>
 
@@ -149,7 +149,7 @@ Our educational toolkit is designed to support educators, researchers, and stude
 
 <div style="width:900px">
 
-![Modes of Change - FORRT's Reframing of the Replication Crisis for Psychological Science](modes-of-change.png)
+![Modes of Change - FORRT's Reframing of the Replication Crisis for Psychological Science](modes-of-change.webp)
 
 </div>
 

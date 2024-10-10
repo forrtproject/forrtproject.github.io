@@ -91,7 +91,7 @@ To find out more about these and more, read [FORRT's awards page](/awards).
 
 <br>
 
-![FORRT Awards](/img/Awards.png)
+![FORRT Awards](/img/Awards.webp)
 
 </div>
 

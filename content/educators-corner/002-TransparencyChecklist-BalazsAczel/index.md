@@ -36,7 +36,7 @@ As an educational tool, the Checklist can be used to teach and improve the stand
 
 [See here for an adapted version of the original checklist for educational purposes.](https://docs.google.com/spreadsheets/d/1NxJG5ccRAhvLKngosRVjT8IO2OZ0UDZMN86FW5qGf0Q/edit?usp=sharing)
 
-![](Checklist_v2.png) 
+![](Checklist_v2.webp) 
 
 ## How to use it?
 

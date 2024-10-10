@@ -70,7 +70,7 @@ As psychologists, we rarely cross borders, whether real or imagined (e.g., depar
 
 In science, a theory is a well-supported explanation of natural phenomena, confirmed repeatedly through observation and experimentation. Theory changes, however, if and when evidence accumulates that the theory cannot explain. Adaptive research in psychology must therefore follow the assumption that our knowledge will expand along with our understanding of human diversity (and vice versa). Doing so will allow room for concepts such as intersectionality and open science to be integrated within psychological science. Take, for instance, Bronfenbrenner’s ecological systems theory. Frustrated with the centrality of white boys, Stern and colleagues developed a new version centered on Black girls (2021). You can see the model here: 
 
-![Bronfenbrenner’s ecological systems theory](image.png "Bronfenbrenner’s ecological systems theory")
+![Bronfenbrenner’s ecological systems theory](image.webp "Bronfenbrenner’s ecological systems theory")
 
 **Here’s what you can do to strengthen theory within psychological science:**
 

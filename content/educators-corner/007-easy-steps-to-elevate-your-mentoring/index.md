@@ -38,7 +38,7 @@ Slide improv gives experience thinking on the fly. One of the greatest fears stu
 
 Fact or fiction gives experience in critical thinking. A student gives (brief) details and results for three papers. But one of them is completely fabricated. As a group, we try to figure out which is the fake one. This is fun, and seeing the gears turn as people sort things out is great.
 
-![](fig1.png) 
+![](fig1.webp) 
 
 To get a handle on how my students are doing, and if there are issues in the lab that need addressing, I do an anonymous poll once per year. The poll covers a range of topics on the quality of life, what is working, and what isn’t. This has been VERY HELPFUL in identifying things that need fixing (and some surprises of things that I thought were issues but are fine). I use a variation of this:
 

@@ -87,7 +87,7 @@ An earlier version of the review can be found as a [preprint](https://osf.io/pre
 
 The manuscript was an international effort! Contributors were located across multiple continents.
 
-![Map marking locations in North America, Europe, Asia, and Oceania](impacts-map.jpeg)
+![Map marking locations in North America, Europe, Asia, and Oceania](impacts-map.webp)
 
 ***[Check out our other FORRT publications on Open Scholarship here](https://forrt.org/publications/)***
 
