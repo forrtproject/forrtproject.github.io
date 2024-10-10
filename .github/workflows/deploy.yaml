@@ -20,7 +20,7 @@ jobs:
     name: Build
     runs-on: ubuntu-22.04
     permissions:
-      contents: read
+      contents: write
       pull-requests: read
     env:
       HUGO_VERSION: "0.123.3"
@@ -58,36 +58,40 @@ jobs:
         run: |
           python3 -m pip install -r ./requirements.txt
 
-      - name: Convert Images to WebP and Update References
+       - name: Convert Images to WebP and Update References
+        if: github.event_name == 'pull_request'
         run: |
-          # Install necessary tools
           sudo apt-get update && sudo apt-get install -y webp
 
-          # Create archive folder for original images
           mkdir -p picture_archive
 
-          # Find and convert all png, jpg, and jpeg images to webp format
-          find . -type f \( -iname "*.png" -o -iname "*.jpg" -o -iname "*.jpeg" \) -exec sh -c 'cwebp "$1" -o "${1%.*}.webp"' _ {} \;
+          find picture_archive -type f > before_conversion.txt
 
-          # Move original images to the archive folder
-          find . -type f \( -iname "*.png" -o -iname "*.jpg" -o -iname "*.jpeg" \) -exec mv {} picture_archive/ \;
+          # Find and convert all png, jpg, and jpeg images to webp format, excluding the 'picture_archive' folder
+          find . -type f \( -iname "*.png" -o -iname "*.jpg" -o -iname "*.jpeg" \) ! -path "./picture_archive/*" -exec sh -c 'cwebp "$1" -o "${1%.*}.webp"' _ {} \;
+          find . -type f \( -iname "*.png" -o -iname "*.jpg" -o -iname "*.jpeg" \) ! -path "./picture_archive/*" -exec mv {} picture_archive/ \;
 
           # Update references in all markdown and HTML files (excluding external URLs)
-          find . -type f \( -iname "*.md" -o -iname "*.html" \) -exec sed -i 's/\(src\|href\|!\[.*\](\)\([^)]*\)\(\.png\|\.jpg\|\.jpeg\)/\1\2.webp/g' {} \;
+          find . -type f \( -iname "*.md" -o -iname "*.html" \) ! -path "./picture_archive/*" -exec sed -i 's/\(src\|href\|!\[.*\](\)\([^)]*\)\(\.png\|\.jpg\|\.jpeg\)/\1\2.webp/g' {} \;
 
-      - name: Commit Changes to Repository
+          find picture_archive -type f > after_conversion.txt
+
+          # Calculate the number of newly added files by comparing the lists
+          NEW_FILES=$(comm -13 before_conversion.txt after_conversion.txt | wc -l)
+          echo "Number of new images converted to WebP format: $NEW_FILES"
+
+          # Remove temporary files
+          rm before_conversion.txt after_conversion.txt
+
+      - name: Commit picture conversion
+        if: github.event_name == 'pull_request'
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
-
-          # Stage all changes
+          git checkout ${{ github.ref_name }}
           git add -A
-
-          # Commit changes
-          git commit -m "Convert images to WebP, update references, and archive originals"
-
-          # Push changes
-          git push origin ${{ github.ref }}
+          git commit -m "Convert images to WebP, update references, and archive originals" || echo "No changes to commit"
+          git push origin ${{ github.ref_name }}
 
       - name: Python - Tenzing
         run: |
