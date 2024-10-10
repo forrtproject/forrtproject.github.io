@@ -44,20 +44,20 @@ If you are teaching a remote course in the next few months, we highly encourage 
 To participate, visit the website [https://remotestudentexchange.org/](https://remotestudentexchange.org/). In the home page (see figure below) you can sign up as a professor.  
 
 
-![Remote Student Exchange](Fig1.png "Remote Student Exchange")
+![Remote Student Exchange](Fig1.webp "Remote Student Exchange")
 
 
 After confirming your email account, you will be able to set up the details of the course you want to offer. As shown in the figure below, you will be asked to indicate the subject area, the level of the course (e.g., bachelor, master, Ph.D. level), and any prerequisites for attending the course (e.g., specific courses and areas of knowledge). You should also provide the link to where the classes take place (e.g., Zoom). 
 
 
-![Remote Student Exchange: New Course](Fig2.png "Remote Student Exchange: New Course")
+![Remote Student Exchange: New Course](Fig2.webp "Remote Student Exchange: New Course")
 
 
 
 Importantly, you are flexible to decide how many students you can host and how they can participate (see the figure below showing the settings for course availability). You can accept students to actively participate with questions, discussions, and assignments, and/or you can accept students to audit silently only. You can also decide to review applications to your course and choose which students to accept or to admit enrolled students on a first-come-first-served basis. 
 
 
-![Remote Student Exchange: Availability](Fig3.png "Remote Student Exchange: Availability")
+![Remote Student Exchange: Availability](Fig3.webp "Remote Student Exchange: Availability")
 
 
 

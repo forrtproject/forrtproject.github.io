@@ -108,7 +108,7 @@ We provide a comprehensive suite of resources within the AWoP toolkit:
 
 <div style="width:600px">
 
-![FORRT AWoP](AWoP_prelim.jpg)
+![FORRT AWoP](AWoP_prelim.webp)
 
 </div>
 

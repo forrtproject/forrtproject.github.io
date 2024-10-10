@@ -56,7 +56,7 @@ subtitle = "---"
 
 <div style="width:400px">
 
-![FORRT Awards](/img/Achievements.jpg)
+![FORRT Awards](/img/Achievements.webp)
 
 </div>
 

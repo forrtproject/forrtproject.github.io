@@ -38,7 +38,7 @@ _What do you understand by diversity in science?_ 
 
 _What controversies are presently discussed that relate to diversity and the field of psychology?_
 
-![colourful handprints representing diversity](../images/handprints-2754263_1280.png)
+![colourful handprints representing diversity](../images/handprints-2754263_1280.webp)
 
 Focus on diversity in psychology can be traced back to the 1930s and Vygotsky, the pioneer of Sociocultural Approach
 
