@@ -17,7 +17,7 @@ featured: false
 draft: false
 
 # Featured image
-# To use, add an image named `featured.jpg/png` to your page's folder.
+# To use, add an image named `featured.webp/png` to your page's folder.
 # Placement options: 1 = Full column width, 2 = Out-set, 3 = Screen-width
 # Focal point options: Smart, Center, TopLeft, Top, TopRight, Left, Right, BottomLeft, Bottom, BottomRight
 image:
@@ -52,7 +52,7 @@ projects: []
   - 👕 [Wear the **T-shirt**](https://academic.threadless.com/)
   - :woman_technologist: [**Contribute**](https://sourcethemes.com/academic/docs/contribute/)
 
-{{< figure src="https://raw.githubusercontent.com/gcushen/hugo-academic/master/academic.png" title="Academic is mobile first with a responsive design to ensure that your site looks stunning on every device." >}}
+{{< figure src="https://raw.githubusercontent.com/gcushen/hugo-academic/master/academic.webp" title="Academic is mobile first with a responsive design to ensure that your site looks stunning on every device." >}}
 
 **Key features:**
 
