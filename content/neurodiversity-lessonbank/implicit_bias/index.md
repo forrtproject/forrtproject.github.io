@@ -40,8 +40,8 @@ _Are you familiar with the neurodiversity paradigm?_
 
 _What is a neurotype?_ 
 
-![left hand holding a pen](../images/lefthand.png)
- ![infinity symbol connected to the neurodiversity movement](../images/neurodiversity.png)
+![left hand holding a pen](../images/lefthand.webp)
+ ![infinity symbol connected to the neurodiversity movement](../images/neurodiversity.webp)
 
 Did you know that the word "sinister" comes from Latin "left"? This is likely caused by the dominance of right-handedness in human population and bias against the left-handed minority in the past.
 

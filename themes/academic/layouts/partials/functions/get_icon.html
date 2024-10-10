@@ -2,6 +2,6 @@
 {{/* Input: size (int) */}}
 {{/* Output: resource (obj) */}}
 
-{{ $icon := resources.GetMatch "images/icon.png" }}
+{{ $icon := resources.GetMatch "images/icon.webp" }}
 {{ $icon_resized := $icon.Fill (printf "%sx%s Center" (string .) (string .)) }}
 {{ return $icon_resized }}

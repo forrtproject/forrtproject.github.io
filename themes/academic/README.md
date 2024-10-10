@@ -1,4 +1,4 @@
-<p align="center"><a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener"><img src="https://sourcethemes.com/academic/img/logo_200px.png" alt="Academic logo"></a></p>
+<p align="center"><a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener"><img src="https://sourcethemes.com/academic/img/logo_200px.webp" alt="Academic logo"></a></p>
 
 # [Academic](https://sourcethemes.com/academic/): the website builder for [Hugo](https://gohugo.io)
 
@@ -19,7 +19,7 @@
 - 💡 [Request a **feature** or report a **bug**](https://github.com/gcushen/hugo-academic/issues)
 - ⬆️ **Updating?** View the [Update Guide](https://sourcethemes.com/academic/docs/update/) and [Release Notes](https://sourcethemes.com/academic/updates/)
 
-[![Screenshot](https://raw.githubusercontent.com/gcushen/hugo-academic/master/academic.png)](https://github.com/gcushen/hugo-academic/)
+[![Screenshot](https://raw.githubusercontent.com/gcushen/hugo-academic/master/academic.webp)](https://github.com/gcushen/hugo-academic/)
 
 **Key features:**
 
@@ -45,7 +45,7 @@ Academic comes with **automatic day (light) and night (dark) mode** built-in. Al
 
 Choose a stunning theme for your site and [customize it](https://sourcethemes.com/academic/docs/customization/#custom-theme) to your liking:
 
-[![Themes](https://raw.githubusercontent.com/gcushen/hugo-academic/master/images/themes.png)](https://sourcethemes.com/academic/themes/)
+[![Themes](https://raw.githubusercontent.com/gcushen/hugo-academic/master/images/themes.webp)](https://sourcethemes.com/academic/themes/)
 
 [Browse more themes...](https://sourcethemes.com/academic/themes/)
 

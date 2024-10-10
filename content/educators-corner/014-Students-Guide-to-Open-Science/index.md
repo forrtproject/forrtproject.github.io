@@ -13,7 +13,7 @@ featured: true
 draft: false
 
 # Featured image
-# To use, add an image named `featured.jpg/png` to your page's folder.
+# To use, add an image named `featured.webp/png` to your page's folder.
 # Focal points: Smart, Center, TopLeft, Top, TopRight, Left, Right, BottomLeft, Bottom, BottomRight.
 image:
   caption: "A Student's Guide to Open Science"
@@ -45,13 +45,13 @@ This book is primarily aimed at students studying psychology at both undergradua
 
 **Box 1. The seat of a replicator. An example pedagogic activity from “A Student’s Guide to Open Science”.**
 
-![The seat of a replicator is a pedagogic activity which asks students to plan an exact replication of their favourite journal article. It set out a number of questions they need to ask about the study, such as "what is the sample size? Are there any inclusion or exclusion criteria?" The learning outcomes of this activity are: To know the difference between an exact and conceptual replication. To understand how to conduct an independent replication. To identify challenges when replicating published research. To understand the importance of transparent reporting to aid replications.](seat-of-a-replicator.png)
+![The seat of a replicator is a pedagogic activity which asks students to plan an exact replication of their favourite journal article. It set out a number of questions they need to ask about the study, such as "what is the sample size? Are there any inclusion or exclusion criteria?" The learning outcomes of this activity are: To know the difference between an exact and conceptual replication. To understand how to conduct an independent replication. To identify challenges when replicating published research. To understand the importance of transparent reporting to aid replications.](seat-of-a-replicator.webp)
 
 This same pedagogic activity can then be expanded to teach about open science reform. Specifically, using the notes that students have taken from their “seat of a replicator activity”, they can then have a go at preregistering their replication using a template from a verified repository (e.g., AsPredicted.org/Open Science Framework). These templates can be downloaded from each repository and students can either complete these as a formative (e.g., seminar activity) or summative assessment (e.g., written report; see Box 2). 
 
 **Box 2. Pedagogic activity: preregistering a replication study.**
 
-![This activity asks students to write a preregistration for a replication study, using the As Predicted dot org template. The learning outcomes for this are: To understand how to transparently plan a study. To demonstrate understanding of how open science practices can aid transparency, replication, and reproducibility. To interpret research articles and apply this learning to conducting independent research studies.](aspredicted-template.png)
+![This activity asks students to write a preregistration for a replication study, using the As Predicted dot org template. The learning outcomes for this are: To understand how to transparently plan a study. To demonstrate understanding of how open science practices can aid transparency, replication, and reproducibility. To interpret research articles and apply this learning to conducting independent research studies.](aspredicted-template.webp)
 
 In addition to these pedagogic resources, the book also contains top tips for implementing open science practices into student’s research training, including for preprints, preregistration, Registered Reports, and open materials, data, and code. Whilst the focus is mainly on quantitative research, it also provides links and resources to qualitative research. In addition, throughout it discusses the many different organisations and initiatives that have shaped my own learning of open science (see Box 3), thus providing a detailed overview of everything we have learnt so far from the advent of the replication crisis through to current open science reform.
 

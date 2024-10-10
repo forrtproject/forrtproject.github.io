@@ -31,7 +31,7 @@ classtitle = "text-center"
   # gradient_end = "SkyBlue"
   
   # Background image.
-  # image = "headers/bubbles-wide.jpg"  # Name of image in `static/img/`.
+  # image = "headers/bubbles-wide.webp"  # Name of image in `static/img/`.
   # image_darken = 0.6  # Darken the image? Range 0-1 where 0 is transparent and 1 is opaque.
   # image_size = "cover"  #  Options are `cover` (default), `contain`, or `actual` size.
   # image_position = "center"  # Options include `left`, `center` (default), or `right`.
@@ -142,7 +142,7 @@ Open educational resources allow community members to make contributions and con
 
 <center>
 
-![Garcia et al. (2020) Figure 1](/img/Garciaetal2020.png) 
+![Garcia et al. (2020) Figure 1](/img/Garciaetal2020.webp) 
 
 *Figure 1*: An illustration from the paper "Ten simple rules for making training materials FAIR" by [Garcia et al. (2020)](https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1007854). Credit: Luc Wiegers and Celia van Gelder ([2019](https://zenodo.org/record/3593258#.X3J4W2hKgUE)) under Creative Commons [CC-BY-4.0](https://creativecommons.org/licenses/by/4.0/) license. No modifications have been made to the original.
 

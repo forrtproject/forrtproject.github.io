@@ -14,21 +14,21 @@ subtitle = """*Join the movement for better education*
 # [[feature]]
 #   #icon = "slack"
 #   #icon_pack = "fab"
-#   img = "megaphone.png"
+#   img = "megaphone.webp"
 #   name = "Spread the Word"
 #   description = "Better Education is for everyone. Help us spread the word by joining our [open Slack channel](https://join.slack.com/t/forrt/# shared_invite/enQtODMwODI0OTk4ODgzLTM0ZTQ3NDk5MzA1ZjBmNWJjYTVlN2Y2YTk0ZTJhYTY5NDliMDYzMjg2MWE0ZDRhOTY0ZDY3OTRlNDA4ODQ3NjQ) and invite your friends # and colleagues to be part of our community."
 #   
 # [[feature]]
 # #  icon = "users"
 # #  icon_pack = "fas"
-#   img = "teamwork.png"
+#   img = "teamwork.webp"
 #   name = "Join Our Team"
 #   description = "Everything we develop and produce is in the open. You can join our team [on GitHub](https://github.com/flavioazevedo/FORRT). If you # want to become an active contributors [email us](mailto:info@forrt.org)."  
 #   
 # [[feature]]
 #   # icon = "handshake"
 #   # icon_pack = "fas"
-#   img = "partner.png"
+#   img = "partner.webp"
 #   name = "Become a Partner"
 #   description = "We have three different partner levels (Core, Strategic and Institutional) that help us to develop the principles enshrined in # FORRT. If you want to become a partner [email us](mailto:info@forrt.orgm)."
 
