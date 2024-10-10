@@ -72,8 +72,8 @@ jobs:
             cwebp "$file" -o "${file%.*}.webp" && mv "$file" picture_archive/
           done
 
-          # Update references in all markdown and HTML files (excluding external URLs)
-          find . -type f \( -iname "*.md" -o -iname "*.html" -o -iname "*.txt" -o -iname "*.toml" -o -iname "*.yaml" \) ! -path "./picture_archive/*" -print0 | while IFS= read -r -d '' file; do
+          # Update references in all YAML, markdown and HTML files (excluding external URLs) - except for GH actions
+          find . -type f \( -iname "*.md" -o -iname "*.html" -o -iname "*.txt" -o -iname "*.toml" -o -iname "*.yaml" \) ! -path "./picture_archive/*" ! -path "./.github/*" -print0 | while IFS= read -r -d '' file; do
             awk '
               {
                 while (match($0, /[^http]([^" ]+)\.(png|jpg|jpeg)/)) {
