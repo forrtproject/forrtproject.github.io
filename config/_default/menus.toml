@@ -111,16 +111,6 @@
   weight = 26  # The position of your page in the menu.
   parent = "about"
 
-
-
-
-
-
-
-
-
-
-
 [[main]]
   name = "Educational NEXUS"
   url = "/nexus"
@@ -162,7 +152,7 @@
   url = "/educators-corner"
   weight = 36
   parent = "nexus"
-  
+
 [[main]]
   name = "Equity in Open Science"
   url = "/equityinos"
@@ -261,13 +251,13 @@
 
 [[main]]
   name = "FReD Explorer"
-  url = "https://forrt-replications.shinyapps.io/fred_explorer/"
+  url = "https://forrt.org/apps/fred_explorer.html"
   weight = 52
   parent = "replications"
 
 [[main]]
   name = "FReD Annotator"
-  url = "https://forrt-replications.shinyapps.io/fred_annotator/"
+  url = "https://forrt.org/apps/fred_annotator.html"
   weight = 53
   parent = "replications"
 
@@ -291,8 +281,11 @@
 
 
 
-
-
+[[main]]
+  name = "Submit a replication to FReD"
+  url = "/replication-hub/submit"
+  weight = 57
+  parent = "replications"
 
 
 

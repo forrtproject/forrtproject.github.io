@@ -1,55 +1,8 @@
-+++
-# A Demo section created with the Blank widget.
-# Any elements can be added in the body: https://sourcethemes.com/academic/docs/writing-markdown-latex/
-# Add more sections by duplicating this file and customizing to your requirements.
+---
+title: "FORRT Replication Hub"
+url: "/replication-hub"
+---
 
-widget = "blank"  # See https://sourcethemes.com/academic/docs/page-builder/
-headless = true  # This file represents a page section.
-active = true  # Activate this widget? true/false
-weight = 2  # Order that this section will appear.
-
-title = "About Replication Hub"
-subtitle = ""
-
-[design]
-  # Choose how many columns the section has. Valid values: 1 or 2.
-  columns = "1"
-
-[design.background]
-  # Apply a background color, gradient, or image.
-  #   Uncomment (by removing `#`) an option to apply it.
-  #   Choose a light or dark text color by setting `text_color_light`.
-  #   Any HTML color name or Hex value is valid.
-
-  # Background color.
-  # color = "#fefdf6"
-  # color = "#69b3a2" # greenish
-
-  # Background gradient.
-  # gradient_start = "DeepSkyBlue"
-  # gradient_end = "SkyBlue"
-
-  # Background image.
-  # image = "headers/bubbles-wide.jpg"  # Name of image in `static/img/`.
-  # image_darken = 0.6  # Darken the image? Range 0-1 where 0 is transparent and 1 is opaque.
-  # image_size = "cover"  #  Options are `cover` (default), `contain`, or `actual` size.
-  # image_position = "center"  # Options include `left`, `center` (default), or `right`.
-  # image_parallax = true  # Use a fun parallax-like fixed background effect? true/false
-
-  # Text color (true=light or false=dark).
-  text_color_light = false
-
-[design.spacing]
-  # Customize the section spacing. Order is top, right, bottom, left.
-  padding = ["60px", "0", "60px", "0"]
-
-[advanced]
- # Custom CSS.
- css_style = ""
-
- # CSS class.
- css_class = ""
-+++
 
 <br>
 
@@ -117,13 +70,13 @@ Journal of Open Psychology Data, 12(8), 1–23. [https://doi.org/10.5334/jopd.10
 
 ### FORRT Replication Database (FReD)
 
-FORRT's [Replication Database](https://forrt-replications.shinyapps.io/fred_explorer/) is a community-augmented, quantitative, meta-analytical interface of one of the most comprehensive collections of original and replication findings, including FORRT’s original Replications and Reversals project, the Replication Database, and large scale projects such as Many Labs or Registered Replication Reports. Via FReD, students, researchers, educators, and practitioners can create summaries of replication findings, search replications, investigate correlates of replicability, and automatically check for replications in uploadable reference lists. \
+FORRT's [Replication Database](/apps/fred_explorer.html) is a community-augmented, quantitative, meta-analytical interface of one of the most comprehensive collections of original and replication findings, including FORRT’s original Replications and Reversals project, the Replication Database, and large scale projects such as Many Labs or Registered Replication Reports. Via FReD, students, researchers, educators, and practitioners can create summaries of replication findings, search replications, investigate correlates of replicability, and automatically check for replications in uploadable reference lists.
 
 
 
 ### References Annotator
 
-Do you have a list of references and want to check, which of them have been subject to replication attempts? We have you covered: Copy your list into the FReD [References Annotator](https://forrt-replications.shinyapps.io/fred_annotator/). The algorithm will search for each entry in the FORRT Replication Database and return all linked replication findings. Of course it could be that some replication findings are not yet listed in our database. If you notice that is the case, please add it [here](https://docs.google.com/spreadsheets/d/1x68oW2H_Xrdv44fIeycl4fegsmQgCa60GxeZZ_hAR90/edit?pli=1#gid=305460056) [go to the tab listed at the bottom called "Additional Studies to be added", scroll down, and copy the link to the first column "Link/Reference for the replication study"].
+Do you have a list of references and want to check, which of them have been subject to replication attempts? We have you covered: Copy your list into the FReD [References Annotator](/apps/fred_annotator.html). The algorithm will search for each entry in the FORRT Replication Database and return all linked replication findings. Of course it could be that some replication findings are not yet listed in our database. If you notice that is the case, please [submit that study to the database](/replication-hub/submit).
 
 
 ### Replications and Reversals (legacy)
