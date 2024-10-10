@@ -58,7 +58,7 @@ jobs:
         run: |
           python3 -m pip install -r ./requirements.txt
 
-       - name: Convert Images to WebP and Update References
+      - name: Convert Images to WebP and Update References
         if: github.event_name == 'pull_request'
         run: |
           sudo apt-get update && sudo apt-get install -y webp
