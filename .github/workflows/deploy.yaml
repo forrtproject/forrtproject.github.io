@@ -30,7 +30,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
         with:
-          ref: ${{ github.ref }}
+          ref: ${{ github.event_name == 'pull_request' && github.head_ref || github.ref }}
           fetch-depth: 0
 
       - name: Hugo - Setup
@@ -80,18 +80,20 @@ jobs:
           NEW_FILES=$(comm -13 before_conversion.txt after_conversion.txt | wc -l)
           echo "Number of new images converted to WebP format: $NEW_FILES"
 
-          # Remove temporary files
           rm before_conversion.txt after_conversion.txt
 
-      - name: Commit picture conversion
+      - name: Configure Git User
         if: github.event_name == 'pull_request'
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git checkout ${{ github.ref_name }}
+
+      - name: Commit Changes to Repository
+        if: github.event_name == 'pull_request'
+        run: |
           git add -A
           git commit -m "Convert images to WebP, update references, and archive originals" || echo "No changes to commit"
-          git push origin ${{ github.ref_name }}
+          git push origin HEAD:${{ github.head_ref }}
 
       - name: Python - Tenzing
         run: |
@@ -140,6 +142,7 @@ jobs:
           name: ${{ env.ARTIFACT_NAME }}
           path: public/
           retention-days: 1
+
 
   deploy-test:
     name: Deploy - Test
