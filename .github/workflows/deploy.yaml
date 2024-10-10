@@ -10,7 +10,7 @@ on:
       - master
   pull_request:
     branches:
-      - master
+      - '**'
   schedule:
   - cron: '0 0 * * *'  # Run daily at midnight
   workflow_dispatch:
@@ -28,6 +28,7 @@ jobs:
     permissions:
       contents: read
       pull-requests: read
+      actions: read
     env:
       HUGO_VERSION: "0.123.3"
       HUGO_EXTENDED: true
