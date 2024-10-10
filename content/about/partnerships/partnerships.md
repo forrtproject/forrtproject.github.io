@@ -73,7 +73,7 @@ classtitle = "text-center"
 
 <br>
 
-<img src="liberate-science.webp" align="right" /> Many things about research can be improved, but too often we get stuck in preventing negative things from happening. [Liberate Science](https://libscie.org/) (est. 2019) is about growing positive alternatives to enable a better research environment. This is both for the research itself and the researcher, no matter the topic or where the researcher may be. Liberate Science's main project is [ResearchEquals](https://researchequals.com/?referrer=forrt), a modular publishing platform. This helps researchers document, communicate, and get credit for each step of the research process, not only the final report. [Join our Discord channel](https://discord.gg/SefsGJWWSw) if you'd like to talk with us!
+<img src="liberate-science.png" align="right" /> Many things about research can be improved, but too often we get stuck in preventing negative things from happening. [Liberate Science](https://libscie.org/) (est. 2019) is about growing positive alternatives to enable a better research environment. This is both for the research itself and the researcher, no matter the topic or where the researcher may be. Liberate Science's main project is [ResearchEquals](https://researchequals.com/?referrer=forrt), a modular publishing platform. This helps researchers document, communicate, and get credit for each step of the research process, not only the final report. [Join our Discord channel](https://discord.gg/SefsGJWWSw) if you'd like to talk with us!
 
 <br>
 
