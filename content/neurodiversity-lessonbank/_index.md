@@ -4,7 +4,7 @@ title: FORRT Neurodiversity and Open Scholarship Lesson Bank
 
 <br>
 
-![FORRT logo](./images/logo.png)
+![FORRT logo](./images/logo.webp)
 
 \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
 

@@ -30,7 +30,7 @@ subtitle = "A Collection of Practical Guides"
   # gradient_end = "SkyBlue"
   
   # Background image.
-  # image = "headers/bubbles-wide.jpg"  # Name of image in `static/img/`.
+  # image = "headers/bubbles-wide.webp"  # Name of image in `static/img/`.
   # image_darken = 0.6  # Darken the image? Range 0-1 where 0 is transparent and 1 is opaque.
   # image_size = "cover"  #  Options are `cover` (default), `contain`, or `actual` size.
   # image_position = "center"  # Options include `left`, `center` (default), or `right`.
@@ -91,7 +91,7 @@ This project will collect practical experiences and guidelines related to Open S
 
 <div style="width:600px">
 
-![Placeholder map](LMIC.jpg)
+![Placeholder map](LMIC.webp)
 
 ***[insert collaboration map here (in-progress)]***
 
