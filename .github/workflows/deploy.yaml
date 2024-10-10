@@ -58,6 +58,37 @@ jobs:
         run: |
           python3 -m pip install -r ./requirements.txt
 
+      - name: Convert Images to WebP and Update References
+        run: |
+          # Install necessary tools
+          sudo apt-get update && sudo apt-get install -y webp
+
+          # Create archive folder for original images
+          mkdir -p picture_archive
+
+          # Find and convert all png, jpg, and jpeg images to webp format
+          find . -type f \( -iname "*.png" -o -iname "*.jpg" -o -iname "*.jpeg" \) -exec sh -c 'cwebp "$1" -o "${1%.*}.webp"' _ {} \;
+
+          # Move original images to the archive folder
+          find . -type f \( -iname "*.png" -o -iname "*.jpg" -o -iname "*.jpeg" \) -exec mv {} picture_archive/ \;
+
+          # Update references in all markdown and HTML files (excluding external URLs)
+          find . -type f \( -iname "*.md" -o -iname "*.html" \) -exec sed -i 's/\(src\|href\|!\[.*\](\)\([^)]*\)\(\.png\|\.jpg\|\.jpeg\)/\1\2.webp/g' {} \;
+
+      - name: Commit Changes to Repository
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          # Stage all changes
+          git add -A
+
+          # Commit changes
+          git commit -m "Convert images to WebP, update references, and archive originals"
+
+          # Push changes
+          git push origin ${{ github.ref }}
+
       - name: Python - Tenzing
         run: |
           python3 scripts/forrt_contribs/tenzing.py
@@ -87,7 +118,7 @@ jobs:
           NUM_FILES=$(ls -1 content/curated_resources/*.md | wc -l)
           echo "Number of curated resources: $NUM_FILES"
 
-      - name: Hugo - Build 
+      - name: Hugo - Build
         run: |
           if [ "$BRANCH" != 'refs/heads/master' ]; then
             hugo --gc --minify --cleanDestinationDir --destination public --baseURL https://staging.forrt.org
@@ -135,7 +166,7 @@ jobs:
     runs-on: ubuntu-22.04
     permissions:
       contents: write
-    needs: 
+    needs:
       - deploy-test
     if: (github.event_name == 'push' || github.event_name == 'schedule') && github.ref == 'refs/heads/master' && github.event.repository.fork == false
     steps:
