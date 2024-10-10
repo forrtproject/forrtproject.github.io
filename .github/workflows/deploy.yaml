@@ -73,9 +73,18 @@ jobs:
           done
 
           # Update references in all markdown and HTML files (excluding external URLs)
-          find . -type f \( -iname "*.md" -o -iname "*.html" -o -iname "*.txt" -o -iname "*.toml" -o -iname "*.yaml" \) ! -path "./picture_archive/*" -print0 | xargs -0 sed -i -E "s/([ \"'\\(])((?!http)[^ \"'\\(\\)]+)\\.(png|jpg|jpeg)([ \"'\\)])/\\1\\2.webp\\4/g"
-
-          find picture_archive -type f > after_conversion.txt
+          find . -type f \( -iname "*.md" -o -iname "*.html" -o -iname "*.txt" -o -iname "*.toml" -o -iname "*.yaml" \) ! -path "./picture_archive/*" -print0 | while IFS= read -r -d '' file; do
+            awk '
+              {
+                while (match($0, /[^http]([^" ]+)\.(png|jpg|jpeg)/)) {
+                  prefix = substr($0, RSTART, RLENGTH);
+                  new_prefix = gensub(/\.(png|jpg|jpeg)$/, ".webp", "g", prefix);
+                  $0 = substr($0, 1, RSTART - 1) new_prefix substr($0, RSTART + RLENGTH);
+                }
+                print
+              }
+            ' "$file" > tmp && mv tmp "$file"
+          done
 
           FINAL_COUNT=$(find picture_archive -type f | wc -l)
           NEW_FILES=$((FINAL_COUNT - INITIAL_COUNT))
