@@ -25,10 +25,10 @@ title = "POSTEdu: Promoting Open Science Teaching: A Positive, Inclusive and Par
 ****
 
 
-<!-- ![PostEdu Logo](PostEdu1.png) -->
+<!-- ![PostEdu Logo](PostEdu1.webp) -->
 
 <div style="display: flex; align-items: center;">
-  <img src="PostEdu1.png" alt="PostEdu Logo" style="margin:auto; padding: auto;">
+  <img src="PostEdu1.webp" alt="PostEdu Logo" style="margin:auto; padding: auto;">
 </div>
 
 ### Summary
