@@ -5,7 +5,7 @@ title: "From mental-health breakfast interventions to evidence-based practice"
 subtitle: "Teaching students how to critically engage with science."
 summary: "In this Pedagogies, Dr. Thomas Rhys Evan discusses how he developed and taught a 12-week module about evidence-based practice, focusing on incorporating Open Science principles with an eye on critical thinking skills and professional experience."
 authors: ['Dr. Thomas Rhys Evans']
-tags: ['Dr. Thomas Rhys Evans','FORRT Pedagogies','Mental-health' ]
+tags: ['Dr. Thomas Rhys Evans','FORRT Pedagogies','Evidence-based practice ',' Teaching Open Science' ]
 categories: []
 date: 2024-09-03T15:30:59-04:00
 lastmod: 2024-09-03T15:14:10-04:00
@@ -34,7 +34,7 @@ url_video: ""
 
 We are thrilled to present our new Pedagogies, which features Dr. Thomas Rhys Evans. Thomas is Associate Professor of Occupational Psychology (from September 2024 he’ll be Professor in Organizational Psychology and Open Scholarship) at the University of Greenwich and a very active member of FORRT! His research focuses, among other things, on using meta-psychology and Open Science practices to understand the quality of evidence in Psychology. In this FORRT’s Pedagogies, Thomas shares insights on the 12-week module on evidence-based practice he developed and taught for the first time in 2023. We discussed the philosophy behind the course, how it relates to Open Science, his students’ reactions, and so much more.  You can watch the interview in [the video](https://www.youtube.com/playlist?list=PLGy3sNZ2XOSCADrBzG93-1pV1-1L1Pp5C) or read a summary of their main points below.  Make sure to also check the 12-week module, which is fully available (including teaching materials, students’ reports etc) on the Open Science Framework (link below).  
 
-[![FORRT Team Pedagogy](featured.png)](https://www.youtube.com/playlist?list=PLGy3sNZ2XOSCADrBzG93-1pV1-1L1Pp5C) 
+[![FORRT Team Pedagogy](featured-old.png)](https://www.youtube.com/playlist?list=PLGy3sNZ2XOSCADrBzG93-1pV1-1L1Pp5C) 
 
 1. ### How did you come up with the idea and identified the need for this course?
 
