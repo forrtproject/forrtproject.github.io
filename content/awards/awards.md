@@ -81,7 +81,7 @@ Thanks to our amazing community, FORRT has become an ***award-winning*** grassro
 
 <br>
 
-<img src="ukrn.webp" align="right" /> In 2023, FORRT was awarded the ***[Dorothy Bishop Prize](https://www.ukrn.org/2023/03/21/db-prize-winners-mar2023/)*** from the UK Reproducibility Network, for its work towards integrating open science principles into higher education and advancing research transparency, reproducibility, rigor, and ethics through pedagogical reform.
+<img src="ukrn.png" align="right" /> In 2023, FORRT was awarded the ***[Dorothy Bishop Prize](https://www.ukrn.org/2023/03/21/db-prize-winners-mar2023/)*** from the UK Reproducibility Network, for its work towards integrating open science principles into higher education and advancing research transparency, reproducibility, rigor, and ethics through pedagogical reform.
 
 <br />
 
