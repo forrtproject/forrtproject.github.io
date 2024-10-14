@@ -19,6 +19,8 @@ on:
       - image-conversion
     types:
       - completed
+    branches:
+      - '**'
 
 jobs:
   build:
