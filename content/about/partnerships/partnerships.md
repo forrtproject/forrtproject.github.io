@@ -97,7 +97,7 @@ classtitle = "text-center"
 
 <br>
 
-<img src="A2P.png" align="left" /> As a scholarly training and consulting organization, [Access 2 Perspectives](https://access2perspectives.org) is providing novel insights into the globally inclusive management and communication of Research based on Open Science principles and established scholarly standards to uphold research integrity and good scientific practices across all research disciplines. We equip researchers around the world with the skills and enthusiasm they need to pursue a joyful career. Furthermore, we support scholarly stakeholders in facilitating multilingualism, global research equity and knowledge sharing for societal impact.
+<img src="A2P.webp" align="left" /> As a scholarly training and consulting organization, [Access 2 Perspectives](https://access2perspectives.org) is providing novel insights into the globally inclusive management and communication of Research based on Open Science principles and established scholarly standards to uphold research integrity and good scientific practices across all research disciplines. We equip researchers around the world with the skills and enthusiasm they need to pursue a joyful career. Furthermore, we support scholarly stakeholders in facilitating multilingualism, global research equity and knowledge sharing for societal impact.
 
 <br>
 
