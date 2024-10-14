@@ -14,6 +14,11 @@ on:
   schedule:
   - cron: '0 0 * * *'  # Run daily at midnight
   workflow_dispatch:
+  workflow_run:
+    workflows:
+      - image-conversion
+    types:
+      - completed
 
 jobs:
   build:
