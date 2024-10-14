@@ -8,10 +8,6 @@ on:
       - '**'
   workflow_dispatch:
 
-concurrency:
-  group: ${{ github.event.pull_request.number || github.ref }}
-  cancel-in-progress: true
-
 jobs:
   build:
     name: Build
