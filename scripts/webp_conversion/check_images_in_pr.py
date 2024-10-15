@@ -77,13 +77,13 @@ for file in changed_files:
 
 # Prepare the comment if any images or references are found
 if images_found or references_found:
-    comment_body = "### :warning: Image Files/References Detected\n\n"
+    comment_body = "### :warning: Image files/references in png/jpg format detected\n\nNote that we generally rely on webp format for this webpage."
     if images_found:
-        comment_body += "**Image Files not in ignore list:**\n"
+        comment_body += "**Image files:**\n"
         for img in images_found:
             comment_body += f"- {img}\n"
     if references_found:
-        comment_body += "\n**Image References not in ignore list:**\n"
+        comment_body += "\n**References to image files:**\n"
         for ref in references_found:
             comment_body += f"- {ref}\n"
     comment_body += "\nPlease consider converting these images to WebP format and updating references accordingly."
