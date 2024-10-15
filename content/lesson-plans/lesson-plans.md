@@ -30,7 +30,7 @@ subtitle = ""
   # gradient_end = "SkyBlue"
   
   # Background image.
-  # image = "headers/bubbles-wide.jpg"  # Name of image in `static/img/`.
+  # image = "headers/bubbles-wide.webp"  # Name of image in `static/img/`.
   # image_darken = 0.6  # Darken the image? Range 0-1 where 0 is transparent and 1 is opaque.
   # image_size = "cover"  #  Options are `cover` (default), `contain`, or `actual` size.
   # image_position = "center"  # Options include `left`, `center` (default), or `right`.
@@ -63,7 +63,7 @@ We compiled lesson plans and activities, and categorized them based on their the
 
 <center>
 <!-----
-![Lesson Plans](LessonPlansTemplate.PNG "Lesson Plans") 
+![Lesson Plans](LessonPlansTemplate.webp "Lesson Plans") 
 ------>
 </center>
 
@@ -114,7 +114,7 @@ Please consider [giving us your feedback (critical or otherwise) when using thes
 <center>
 
 <!-----
-![Lesson Plans](LessonPlan.PNG "Lesson Plans") 
+![Lesson Plans](LessonPlan.webp "Lesson Plans") 
 ------>
 
 </center>
