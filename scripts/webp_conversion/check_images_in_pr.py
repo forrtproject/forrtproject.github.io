@@ -30,7 +30,11 @@ if os.path.exists(IGNORE_LIST_FILE):
 # Patterns to detect image files and references
 IMAGE_EXTENSIONS = ('.png', '.jpg', '.jpeg')
 TEXT_EXTENSIONS = ('.md', '.html', '.txt', '.toml', '.yaml')
-reference_pattern = re.compile(r'(?<!http[s]?://)([^\s"\'<>]+\.(png|jpg|jpeg))', re.IGNORECASE)
+reference_pattern = re.compile(r'([^\s"\'<>]+\.(png|jpg|jpeg))', re.IGNORECASE)
+
+# Function to check if a reference contains a URL
+def is_url(image_ref):
+    return 'http://' in image_ref or 'https://' in image_ref
 
 # Collect files changed in the PR
 changed_files = pr.get_files()
@@ -50,7 +54,7 @@ for file in changed_files:
         matches = reference_pattern.findall(file_content)
         for match in matches:
             image_ref = match
-            if image_ref not in ignore_list:
+            if image_ref not in ignore_list and not is_url(image_ref):
                 references_found.append(f"{filename}: {image_ref}")
 
 # Prepare the comment if any images or references are found
