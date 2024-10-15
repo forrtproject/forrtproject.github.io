@@ -98,4 +98,4 @@ else:
     github_output = os.getenv('GITHUB_OUTPUT')
     if github_output:
         with open(github_output, 'a') as f:
-            f.write("comment<<EOF\n\nEOF\n")
+            f.write("comment<<EOF\n:thumbsup: All image files/references (if any) are in webp format, in line with our policy.\nEOF\n")
