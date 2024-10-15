@@ -2,26 +2,43 @@ name: Check Images in PR
 
 on:
   pull_request:
-    types: [opened, synchronize]
+    types: [opened, synchronize, reopened]
+
+permissions:
+  contents: read
+  issues: write
 
 jobs:
   check-images:
     runs-on: ubuntu-latest
+
     steps:
-      - name: Checkout Code
-        uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
+      - name: Checkout repository
+        uses: actions/checkout@v3
 
       - name: Set up Python
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@v5
         with:
           python-version: '3.x'
 
-      - name: Install Dependencies
-        run: pip install PyGithub
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install PyGithub
 
-      - name: Run Image Checker Script
-        run: python scripts/webp_conversion/check_images_in_pr.py
+      - name: Run Image Check Script
+        id: image_check
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_REPOSITORY: ${{ github.repository }}
+          GITHUB_REF: ${{ github.ref }}
+        run: |
+          python scripts/webp_conversion/check_images_in_pr.py
+
+      - name: Add PR Comment
+        if: steps.image_check.outputs.comment != ''
+        uses: mshick/add-pr-comment@v1
+        with:
+          message: ${{ steps.image_check.outputs.comment }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

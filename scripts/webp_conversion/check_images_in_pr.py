@@ -9,7 +9,7 @@ from github.GithubException import GithubException
 # Get GitHub token from environment variable
 token = os.environ.get('GITHUB_TOKEN')
 if not token:
-    print("Error: GITHUB_TOKEN is not set.")
+    print("Error: GITHUB_TOKEN is not set.", file=sys.stderr)
     sys.exit(1)
 
 # Initialize GitHub API client
@@ -18,7 +18,17 @@ repo_name = os.environ['GITHUB_REPOSITORY']
 repo = g.get_repo(repo_name)
 
 # Get the PR number from the GitHub event
-pr_number = int(os.environ['GITHUB_REF'].split('/')[-2])
+pr_ref = os.environ.get('GITHUB_REF')
+if not pr_ref:
+    print("Error: GITHUB_REF is not set.", file=sys.stderr)
+    sys.exit(1)
+
+try:
+    pr_number = int(pr_ref.split('/')[-2])
+except (IndexError, ValueError):
+    print("Error: Could not parse PR number from GITHUB_REF.", file=sys.stderr)
+    sys.exit(1)
+
 pr = repo.get_pull(pr_number)
 
 # Load ignore list
@@ -35,7 +45,7 @@ reference_pattern = re.compile(r'([^\s"\'<>]+\.(png|jpg|jpeg))', re.IGNORECASE)
 
 # Function to check if a reference contains a URL
 def is_url(image_ref):
-    return 'http://' in image_ref or 'https://' in image_ref
+    return image_ref.startswith('http://') or image_ref.startswith('https://')
 
 # Collect files changed in the PR
 changed_files = pr.get_files()
@@ -56,7 +66,7 @@ for file in changed_files:
             contents = repo.get_contents(filename, ref=pr.head.sha)
             file_content = contents.decoded_content.decode('utf-8', errors='ignore')
         except GithubException as e:
-            print(f"Warning: Could not fetch content for {filename}. Skipping. Error: {e}")
+            print(f"Warning: Could not fetch content for {filename}. Skipping. Error: {e}", file=sys.stderr)
             continue
 
         matches = reference_pattern.findall(file_content)
@@ -78,7 +88,14 @@ if images_found or references_found:
             comment_body += f"- {ref}\n"
     comment_body += "\nPlease consider converting these images to WebP format and updating references accordingly."
 
-    # Post the comment on the PR
-    pr.create_issue_comment(comment_body)
+    # Write to GITHUB_OUTPUT
+    github_output = os.getenv('GITHUB_OUTPUT')
+    if github_output:
+        with open(github_output, 'a') as f:
+            f.write(f"comment<<EOF\n{comment_body}\nEOF\n")
 else:
-    print("No image files or references needing attention were found.")
+    # No comment needed; write empty comment
+    github_output = os.getenv('GITHUB_OUTPUT')
+    if github_output:
+        with open(github_output, 'a') as f:
+            f.write("comment<<EOF\n\nEOF\n")
