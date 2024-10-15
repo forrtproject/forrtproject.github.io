@@ -1,0 +1,27 @@
+name: Check Images in PR
+
+on:
+  pull_request:
+    types: [opened, synchronize]
+
+jobs:
+  check-images:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
+
+      - name: Install Dependencies
+        run: pip install PyGithub
+
+      - name: Run Image Checker Script
+        run: python scripts/webp_conversion/check_images_in_pr.py
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
