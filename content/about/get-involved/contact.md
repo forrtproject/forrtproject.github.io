@@ -11,21 +11,21 @@ subtitle = "Whether you have questions getting started or you want to know how t
 [[feature]]
   icon = "envelope"
   icon_pack = "fas"
-  #img = "megaphone.png"
+  #img = "megaphone.webp"
   name = "Email"
   description = " [info@forrt.org](mailto:info@forrt.org)"
   
 [[feature]]
   icon = "slack"
   icon_pack = "fab"
-  # img = "teamwork.png"
+  # img = "teamwork.webp"
   name = "Slack"
   description = "[Join our open Slack channel](https://join.slack.com/t/forrt/shared_invite/enQtODMwODI0OTk4ODgzLTM0ZTQ3NDk5MzA1ZjBmNWJjYTVlN2Y2YTk0ZTJhYTY5NDliMDYzMjg2MWE0ZDRhOTY0ZDY3OTRlNDA4ODQ3NjQ)" 
   
 [[feature]]
   icon = "github"
   icon_pack = "fab"
-  # img = "partner.png"
+  # img = "partner.webp"
   name = "GitHub"
   description = "[Join our team on GitHub](https://github.com/forrtproject)"
 

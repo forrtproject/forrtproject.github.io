@@ -28,7 +28,7 @@ Focus on critical reading skills and discussion
 
 - to discuss issues related to gender and neuroptype discrimination
 
-![hands breaking hancuffs](../images/freedom-1886402_640.jpg)
+![hands breaking hancuffs](../images/freedom-1886402_640.webp)
 
 ## **Introduction and background reading** 
 

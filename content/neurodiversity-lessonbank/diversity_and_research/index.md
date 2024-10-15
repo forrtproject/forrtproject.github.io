@@ -23,7 +23,7 @@ header:
 *   Reflect on the importance of participatory research and cultural humility in relation to diversity in science
 *   Understand how Open Scholarship promotes diversity in research
 
-![a picture illustrating collaborative approach to research](../images/research.jpg)
+![a picture illustrating collaborative approach to research](../images/research.webp)
 
 
 **Activity 1**
@@ -48,7 +48,7 @@ _How much do you know about Open Science and its values? Watch a presentation on
 
 _**Click**_ **[_here_](https://www.youtube.com/watch?v=axiZhCkMiDc)** _**to watch the presentation**_
 
-![an umbrella with core values of OS underneath. These involve: equity, diversity and inclusion. For more explanations, watch the presentation above. ](SAM OS.png)
+![an umbrella with core values of OS underneath. These involve: equity, diversity and inclusion. For more explanations, watch the presentation above. ](SAM OS.webp)
 
 
 **Activity 3**

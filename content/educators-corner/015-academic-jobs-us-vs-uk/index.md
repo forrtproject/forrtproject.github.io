@@ -12,7 +12,7 @@ featured: true
 draft: false
 
 # Featured image
-# To use, add an image named `featured.jpg/png` to your page's folder.
+# To use, add an image named `featured.webp/png` to your page's folder.
 # Focal points: Smart, Center, TopLeft, Top, TopRight, Left, Right, BottomLeft, Bottom, BottomRight.
 image:
   caption: "Flags of the United Kingdom and United States of America, by [Tvabutzku1234](https://commons.wikimedia.org/wiki/File:Flags_of_UK_and_USA.jpg)"
@@ -43,7 +43,7 @@ Let me start with a timely example. In mid-April, faculty (teaching staff in UK 
 
 There are echoes in this struggle of the dispute UCU has waged since before the pandemic. Wages for UK university staff [have fallen some 25%](https://www.theguardian.com/education/2022/aug/22/universities-surplus-ucu-union-staff-pay-strikes) in real terms since 2009; the [race and gender pay gaps](https://www.ucu.org.uk/media/975/The-diverse-academy---pay-and-employment-of-academic-and-professional-staff-in-UK-HE-by-gender-and-ethnicity-AUT-Oct-05/pdf/diverseacademy_oct05.pdf) remain unacceptable for universities who claim commitment to equality, diversity, and inclusion (EDI, the UK twist on the US’s DEI: diversity, equity and inclusion). Equally troubling are the echoes in both disputes’ resolutions. The deal at Rutgers, agreed to after a week of action, [has been criticized](https://twitter.com/jjjjjjjjohannah/status/1647625266854780928?s=20) for [marginalizing graduate workers’ voices](https://twitter.com/CliffConnolly/status/1647285805658898432?s=20), just as the current proposal under consideration by UCU provides [no concrete improvements for PhD students](https://docs.google.com/document/d/e/2PACX-1vRQJ-7uKjBazxCnxy-tjfXaFExSR779WTIszmXppAivDuoOkYezg7SKZ_jrOrmBT07Dt15n6lvBDSA0/pub) on casualized contracts. Solidarity at Rutgers, as in the UK, has been strongest among the most financially secure staff, with some of the least powerful university employees being left behind. Depending on the discipline, US PhDs will graduate into an academic job market where [around 70 percent of jobs](https://www.aaup.org/issues/contingency/background-facts) are temporary or contingent—a [similar landscape](https://www.ucu.org.uk/stampout) to that facing UK PhDs.
 
-![A UCU picket line at the University of Nottingham](ucu-strike.jpeg)
+![A UCU picket line at the University of Nottingham](ucu-strike.webp)
 
 ## Features, Not Bugs
 
@@ -51,7 +51,7 @@ Where do these analogous structural failings come from? The answer to this start
 
 Others have written [far more comprehensively](https://journals.sagepub.com/doi/full/10.1177/1478210317719792) about how these features of higher education (not bugs) [have become ever more present](https://www.boldtypebooks.com/titles/davarian-l-baldwin/in-the-shadow-of-the-ivory-tower/9781568588919/) in the past few decades. My point is simply that they are unavoidable, regardless of country of residence. Some might claim that coming to the UK will bring reduced research pressures compared to US research-intensive universities, which may be true in terms of the number of publications required but overlooks how the UK’s massive (and growing) [grant-grubbing apparatus](https://annameier.substack.com/p/grant-culture) saps staff time and discourages counterhegemonic work. Others might note that US academic salaries are generally higher than in the UK, which may be true even at poorer institutions but masks the [massive (and growing) disparities](https://www.nature.com/articles/d41586-021-01183-9) across and within US institutions. Regardless, the “it’s better over there” narrative sidesteps the reality of the academic job market for many: that, if they are able, they will go wherever hires them. 
 
-![Differences between the UK and US labour situation include differences in pay, job expectations, benefits and industrial relations. The webinar recording provides more information.](labour-situation.jpg)
+![Differences between the UK and US labour situation include differences in pay, job expectations, benefits and industrial relations. The webinar recording provides more information.](labour-situation.webp)
 
 ## Trans-National Sharing
 

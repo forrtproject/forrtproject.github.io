@@ -13,7 +13,7 @@ featured: true
 draft: false
 
 # Featured image
-# To use, add an image named `featured.jpg/png` to your page's folder.
+# To use, add an image named `featured.webp/png` to your page's folder.
 # Focal points: Smart, Center, TopLeft, Top, TopRight, Left, Right, BottomLeft, Bottom, BottomRight.
 image:
   #caption: "Photo by Andrea Piacquadio from [Pexels](https://www.pexels.com/photo/happy-ethnic-woman-sitting-at-table-with-laptop-3769021/)"
@@ -36,7 +36,7 @@ As an educational tool, the Checklist can be used to teach and improve the stand
 
 [See here for an adapted version of the original checklist for educational purposes.](https://docs.google.com/spreadsheets/d/1NxJG5ccRAhvLKngosRVjT8IO2OZ0UDZMN86FW5qGf0Q/edit?usp=sharing)
 
-![](Checklist_v2.png) 
+![](Checklist_v2.webp) 
 
 ## How to use it?
 

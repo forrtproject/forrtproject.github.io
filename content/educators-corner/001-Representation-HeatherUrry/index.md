@@ -13,7 +13,7 @@ featured: true
 draft: false
 
 # Featured image
-# To use, add an image named `featured.jpg/png` to your page's folder.
+# To use, add an image named `featured.webp/png` to your page's folder.
 # Focal points: Smart, Center, TopLeft, Top, TopRight, Left, Right, BottomLeft, Bottom, BottomRight.
 image:
   #caption: "Photo by Andrea Piacquadio from [Pexels](https://www.pexels.com/photo/happy-ethnic-woman-sitting-at-table-with-laptop-3769021/)"
@@ -62,7 +62,7 @@ It’s also marred by the fact that scientists are humans with standpoints that 
 
 I showed them clips from [Picture a Scientist](https://www.pictureascientist.com/) so they could appreciate what it’s like to be a woman in science, and the progress that’s been made to remediate gender bias (e.g., [the MIT report from 1999](http://web.mit.edu/fnl/women/women.html)).
  
-![](iceberg.png) 
+![](iceberg.webp) 
 
 We also talked about the idea that some seem to have been left out, women of color, in particular, but also disabled, LGBTQ, first generation, indigenous people, and all their intersections. 
 
@@ -70,7 +70,7 @@ We talked about the loss to science, especially when innovative ideas put forwar
 
 I showed them powerful clips of one woman of color’s experience as a scientist, professor of chemistry, Raychelle Burks ([@DrRubidium](https://twitter.com/DrRubidium)). Dr. Burks captured so perfectly the importance of representation.
 
-![](her1.png) ![](her2.png) 
+![](her1.webp) ![](her2.webp) 
 
 I talked about how these problems are not limited to male-dominated sciences but that these issues pervade psychological science too. 
 

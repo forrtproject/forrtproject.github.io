@@ -13,7 +13,7 @@ featured: true
 draft: false
 
 # Featured image
-# To use, add an image named `featured.jpg/png` to your page's folder.
+# To use, add an image named `featured.webp/png` to your page's folder.
 # Focal points: Smart, Center, TopLeft, Top, TopRight, Left, Right, BottomLeft, Bottom, BottomRight.
 image:
   #caption: "Photo by Andrea Piacquadio from [Pexels](https://www.pexels.com/photo/happy-ethnic-woman-sitting-at-table-with-laptop-3769021/)"
@@ -59,7 +59,7 @@ Julia Strand is Associate Professor of Psychology at Carleton College and she te
 
 FORRT has reached out to the academic community on social media to ask which questions other scholars would like Julia to answer about her teaching materials on the Psychology’s Credibility Revolution course (on both technical and non-technical spheres). Below you can find Julia’s answers to these questions. And you can also find [in this OSF repository](https://osf.io/zpb8a/) Julia’s complete teaching materials, from which everyone can learn, adapt, or repurpose.
 
-Kudos to Julia for preparing such an amazing course and many thanks to her for being so open to partner up with FORRT to share her pedagogies with the wider community. We hope this can serve as an inspiration and help scholars, instructors and educational institutions interested in integrating open and reproducible scholarship tenets in their teaching and mentoring. ![](interview.jpg) 
+Kudos to Julia for preparing such an amazing course and many thanks to her for being so open to partner up with FORRT to share her pedagogies with the wider community. We hope this can serve as an inspiration and help scholars, instructors and educational institutions interested in integrating open and reproducible scholarship tenets in their teaching and mentoring. ![](interview.webp) 
 
 <br>
 

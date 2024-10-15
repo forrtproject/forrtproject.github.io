@@ -28,7 +28,7 @@ Learning Objectives:
 *   Recognize the factors that contribute to the generalizability crisis
 *   Discuss the implications of the generalizability crisis in various fields
 
-![puzzle](../images/puzzle-2500333_640.jpg)
+![puzzle](../images/puzzle-2500333_640.webp)
 
 
 ## **Introduction**
