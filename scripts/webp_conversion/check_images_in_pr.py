@@ -4,6 +4,7 @@ import os
 import re
 import sys
 from github import Github
+from github.GithubException import GithubException
 
 # Get GitHub token from environment variable
 token = os.environ.get('GITHUB_TOKEN')
@@ -50,10 +51,17 @@ for file in changed_files:
             images_found.append(filename)
     # Check for references in text files
     elif filename.lower().endswith(TEXT_EXTENSIONS) and status in ('added', 'modified'):
-        file_content = file.decoded_content.decode('utf-8', errors='ignore')
+        try:
+            # Fetch the file content from the PR's head SHA
+            contents = repo.get_contents(filename, ref=pr.head.sha)
+            file_content = contents.decoded_content.decode('utf-8', errors='ignore')
+        except GithubException as e:
+            print(f"Warning: Could not fetch content for {filename}. Skipping. Error: {e}")
+            continue
+
         matches = reference_pattern.findall(file_content)
         for match in matches:
-            image_ref = match
+            image_ref = match[0]  # match is a tuple; the first element is the full match
             if image_ref not in ignore_list and not is_url(image_ref):
                 references_found.append(f"{filename}: {image_ref}")
 
