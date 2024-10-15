@@ -97,7 +97,12 @@ def convert_images():
                 original_content = content
 
                 # Check each reference to ensure it's not part of an external URL
-                content = reference_pattern.sub(lambda m: m.group(0).rsplit('.', 1)[0] + '.webp' if m.group(0) not in ignore_list and not m.group(0).startswith('http') else m.group(0), content)
+                content = reference_pattern.sub(
+                    lambda m: m.group(0).rsplit('.', 1)[0] + '.webp' 
+                    if 'http://' not in m.group(0) and 'https://' not in m.group(0) and m.group(0) not in ignore_list 
+                    else m.group(0),
+                    content
+                )
 
                 if content != original_content:
                     with open(file_path, 'w', encoding='utf-8') as f:

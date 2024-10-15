@@ -30,7 +30,7 @@ subtitle = ""
   # gradient_end = "SkyBlue"
   
   # Background image.
-  # image = "headers/bubbles-wide.jpg"  # Name of image in `static/img/`.
+  # image = "headers/bubbles-wide.webp"  # Name of image in `static/img/`.
   # image_darken = 0.6  # Darken the image? Range 0-1 where 0 is transparent and 1 is opaque.
   # image_size = "cover"  #  Options are `cover` (default), `contain`, or `actual` size.
   # image_position = "center"  # Options include `left`, `center` (default), or `right`.
@@ -87,7 +87,7 @@ An earlier version of the review can be found as a [preprint](https://osf.io/pre
 
 The manuscript was an international effort! Contributors were located across multiple continents.
 
-![Map marking locations in North America, Europe, Asia, and Oceania](impacts-map.jpeg)
+![Map marking locations in North America, Europe, Asia, and Oceania](impacts-map.webp)
 
 ***[Check out our other FORRT publications on Open Scholarship here](https://forrt.org/publications/)***
 

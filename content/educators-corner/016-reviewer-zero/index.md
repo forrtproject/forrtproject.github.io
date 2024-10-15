@@ -13,7 +13,7 @@ featured: true
 draft: false
 
 # Featured image
-# To use, add an image named `featured.jpg/png` to your page's folder.
+# To use, add an image named `featured.webp/png` to your page's folder.
 # Focal points: Smart, Center, TopLeft, Top, TopRight, Left, Right, BottomLeft, Bottom, BottomRight.
 image:
   caption: "Reviewer Zero"
@@ -33,7 +33,7 @@ projects: []
 
 ### Background of Reviewer Zero
 
-![Reviewer Zero](./rz.png)
+![Reviewer Zero](./rz.webp)
 
 Any writer who puts their work into the world knows it can be a humbling and harsh experience. Negative experiences with peer review, as depicted in the picture below, are all too common. Comments like those illustrated – and others that are unduly harsh, belittling, racist, sexist, or otherwise inappropriate – have been received by scholars at all career stages during peer review. These experiences provide a starting point to question normative practices in scientific peer review, and identify the hidden and blatant consequences for early career scholars, particularly those from underserved groups. Most importantly, we can ask what each of us might do to shift this culture.
 
@@ -44,7 +44,7 @@ Like readers of this blog, Reviewer Zero members know that science can be better
 To understand peer review from the perspective of early career researchers who are underserved by the status quo, Reviewer Zero conducted a survey in 2020 of early career researchers in psychology / neuroscience. [Our results](https://osf.io/jqy4k) are not surprising: We found that cis-men of color reported less helpful feedback compared to White cis-men, and women/nonbinary respondents were more likely than cis-men to report that their peer review experience reduced their belonging in science. Qualitative results from a free-response question about the most memorable experiences with peer review were eye-opening, and heartbreaking. Respondents reported receiving harsh feedback, racist comments, and feeling so demotivated that they left those research topics behind. But there is also opportunity for change: This survey also showed that authors can feel motivated when the process is perceived as fair or when reviews note strengths of the work.
 
 
-![Picture showing harsh reviewer comments](pic_rz.jpg "Picture showing harsh reviewer comments")
+![Picture showing harsh reviewer comments](pic_rz.webp "Picture showing harsh reviewer comments")
 
 Harsh reviewer comments can have disparate impacts, demotivating early career researchers and driving them away from the field. 
 
@@ -63,7 +63,7 @@ Given that hostile or unprofessional reviews can be common, individuals from his
 
 
     
-![Tweet about misogynistic peer-review](tweet_rz.png "Tweet about misogynistic peer-review")
+![Tweet about misogynistic peer-review](tweet_rz.webp "Tweet about misogynistic peer-review")
 
 
 The inequities present in peer review need to be addressed before there is any possibility of open review serving a wide range of scholars. Without a deliberate effort to change the existing culture in a way that advances diversity, equity, and inclusion, other efforts might perpetuate or exacerbate these inequities. 

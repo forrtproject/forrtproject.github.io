@@ -13,7 +13,7 @@ featured: true
 draft: false
 
 # Featured image
-# To use, add an image named `featured.jpg/png` to your page's folder.
+# To use, add an image named `featured.webp/png` to your page's folder.
 # Focal points: Smart, Center, TopLeft, Top, TopRight, Left, Right, BottomLeft, Bottom, BottomRight.
 image:
   #caption: "Photo by Andrea Piacquadio from [Pexels](https://www.pexels.com/photo/happy-ethnic-woman-sitting-at-table-with-laptop-3769021/)"
@@ -34,7 +34,7 @@ url_video: ""
 
 We are thrilled to present our new Pedagogies, which features Dr. Thomas Rhys Evans. Thomas is Associate Professor of Occupational Psychology (from September 2024 he’ll be Professor in Organizational Psychology and Open Scholarship) at the University of Greenwich and a very active member of FORRT! His research focuses, among other things, on using meta-psychology and Open Science practices to understand the quality of evidence in Psychology. In this FORRT’s Pedagogies, Thomas shares insights on the 12-week module on evidence-based practice he developed and taught for the first time in 2023. We discussed the philosophy behind the course, how it relates to Open Science, his students’ reactions, and so much more.  You can watch the interview in [the video](https://www.youtube.com/playlist?list=PLGy3sNZ2XOSCADrBzG93-1pV1-1L1Pp5C) or read a summary of their main points below.  Make sure to also check the 12-week module, which is fully available (including teaching materials, students’ reports etc) on the Open Science Framework (link below).  
 
-[![FORRT Team Pedagogy](featured.png)](https://www.youtube.com/playlist?list=PLGy3sNZ2XOSCADrBzG93-1pV1-1L1Pp5C) 
+[![FORRT Team Pedagogy](featured.webp)](https://www.youtube.com/playlist?list=PLGy3sNZ2XOSCADrBzG93-1pV1-1L1Pp5C) 
 
 1. ### How did you come up with the idea and identified the need for this course?
 
