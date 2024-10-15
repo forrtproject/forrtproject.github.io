@@ -45,7 +45,7 @@ reference_pattern = re.compile(r'([^\s"\'<>]+\.(png|jpg|jpeg))', re.IGNORECASE)
 
 # Function to check if a reference contains a URL
 def is_url(image_ref):
-    return image_ref.startswith('http://') or image_ref.startswith('https://')
+    return 'http://' in image_ref or 'https://' in image_ref 
 
 # Collect files changed in the PR
 changed_files = pr.get_files()
