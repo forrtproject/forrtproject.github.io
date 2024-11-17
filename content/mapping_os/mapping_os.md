@@ -35,11 +35,13 @@ title = "Systematically Mapping Open Science Communities across Disciplines"
 
 <br>
 
+<!-- 
+
 {{% alert note %}}
-
 THIS PAGE IS IN CONSTRUCTION. PLEASE COME BACK SOON!
-
 {{% /alert %}}
+
+-->
 
 <br>
 <br>
