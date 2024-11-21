@@ -38,7 +38,7 @@ _What do you understand by diversity in science?_ 
 
 _What controversies are presently discussed that relate to diversity and the field of psychology?_
 
-![colourful handprints representing diversity](../images/handprints-2754263_1280.png)
+![colourful handprints representing diversity](../images/handprints-2754263_1280.webp)
 
 Focus on diversity in psychology can be traced back to the 1930s and Vygotsky, the pioneer of Sociocultural Approach
 
@@ -82,12 +82,9 @@ b) Skim through the chapter and create a mind map or a poster with dimensions of
 
 *   Privilege and intersectionality
 
-TEXT
-
 **Activity 4 The Academic Wheel of Privilege**
 
 Reflect on how you see or identify yourself in relation to these dimensions. Which groups do you identify with? Have you heard the phrase "check your privilege"? Have you thought of intersectionality and privilege in relation to yourself? FORRT has developed a tool which allows everyone in academia to reflect on their privilege. Look at the video below, in which Bethan Iley, one of the members of FORRT explains the concept.
-
 
 **Would you like to try the wheel?**
 
@@ -98,7 +95,6 @@ Reflect on how you see or identify yourself in relation to these dimensions. Whi
 
 **How to use the wheel:** Look at the dimensions of privilege on the outside of the circle and choose the option from the inner circle that describes your situation best. For every answer in the smallest circle (the closest to the middle of the wheel), give yourself 1 point, then 2 points for the option in a slightly bigger circle and finally 3 points of the option closest to the outside of the circle. Share your result with a friend or keep it to yourself. Do you think this tool is useful? Is it important to check our privilege? How can this make you more mindful of other’s experiences?
 
-
 **Reading:**
 
 (to be be done before or after the lesson)
@@ -108,5 +104,3 @@ Jason, Leonard A.; Glantsman, Olya; O'Brien, Jack F.; and Ramian, Kaitlyn N., "I
 Flavio Azevedo, Sara Middleton, Jenny Mai Phan, Steven Kapp, Amélie Gourdon-Kanhukamwe, Bethan Iley, Mahmoud Elsherif, & John J. Shaw. Navigating Academia as Neurodivergent Researchers: Promoting Neurodiversity Within Open Scholarship. APS Observer October 2022
 
 Elsherif, M. M., Middleton, S. L., Phan, J. M., Azevedo, F., Iley, B. J., Grose-Hodge, M., … Dokovova, M. (2022, June 20). Bridging Neurodiversity and Open Scholarship: How Shared Values Can Guide Best Practices for Research Integrity, Social Justice, and Principled Education.
-
-Footer © Magdalena Grose-Hodge for FORRT (Framework of Open and Reproducible Research Training) About ND/Community Psychology - Diversity at main · MSGrose-Hodge/ND

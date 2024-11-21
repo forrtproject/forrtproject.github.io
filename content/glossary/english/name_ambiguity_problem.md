@@ -23,5 +23,8 @@
         "Wanyin Li",
         "Charlotte R. Pennington"
     ],
-    "language": "english"
+    "language": "english",
+    "aliases": [
+        "/glossary/name_ambiguity_problem"
+    ]
 }

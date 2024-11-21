@@ -24,5 +24,8 @@
         "Adam Parker",
         "Charlotte R. Pennington, Mirela Zaneva"
     ],
-    "language": "english"
+    "language": "english",
+    "aliases": [
+        "/glossary/under_representation"
+    ]
 }

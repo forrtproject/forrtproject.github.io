@@ -30,7 +30,7 @@ subtitle = ""
   # gradient_end = "SkyBlue"
   
   # Background image.
-  # image = "headers/bubbles-wide.jpg"  # Name of image in `static/img/`.
+  # image = "headers/bubbles-wide.webp"  # Name of image in `static/img/`.
   # image_darken = 0.6  # Darken the image? Range 0-1 where 0 is transparent and 1 is opaque.
   # image_size = "cover"  #  Options are `cover` (default), `contain`, or `actual` size.
   # image_position = "center"  # Options include `left`, `center` (default), or `right`.
@@ -87,7 +87,7 @@ An earlier version of the review can be found as a [preprint](https://osf.io/pre
 
 The manuscript was an international effort! Contributors were located across multiple continents.
 
-![Map marking locations in North America, Europe, Asia, and Oceania](impacts-map.jpeg)
+![Map marking locations in North America, Europe, Asia, and Oceania](impacts-map.webp)
 
 ***[Check out our other FORRT publications on Open Scholarship here](https://forrt.org/publications/)***
 
@@ -107,21 +107,3 @@ Dr. Madeleine Pownall presents a summary of the article in this lecture. You can
 ### Get in touch
 
 If you know of relevant papers, please reach out by email at [info@forrt.org](mailto:info@forrt.org), or [join the project's Slack channel](https://join.slack.com/t/forrt/shared_invite/enQtODMwODI0OTk4ODgzLTM0ZTQ3NDk5MzA1ZjBmNWJjYTVlN2Y2YTk0ZTJhYTY5NDliMDYzMjg2MWE0ZDRhOTY0ZDY3OTRlNDA4ODQ3NjQ). If you want to learn more about the project, [see this announcement on social media](https://twitter.com/FORRTproject/status/1453325222367698947), [join the project's Slack channel](https://join.slack.com/t/forrt/shared_invite/enQtODMwODI0OTk4ODgzLTM0ZTQ3NDk5MzA1ZjBmNWJjYTVlN2Y2YTk0ZTJhYTY5NDliMDYzMjg2MWE0ZDRhOTY0ZDY3OTRlNDA4ODQ3NjQ).
-
-
-<br>
-
-
-## Literature Review
-
-<br><br><br><br>
-
-<center> 
-
-<p style="color:#6e6a6b">    
-
-### ***Coming Soon***  
-
-</p>
-
-</center>

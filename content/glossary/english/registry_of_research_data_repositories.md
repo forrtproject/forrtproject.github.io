@@ -24,5 +24,8 @@
         "Charlotte R. Pennington",
         "Helena Hartmann"
     ],
-    "language": "english"
+    "language": "english",
+    "aliases": [
+        "/glossary/registry_of_research_data_repositories"
+    ]
 }

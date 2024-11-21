@@ -28,5 +28,8 @@
         "Mahmoud Elsherif ",
         "Helena Hartmann"
     ],
-    "language": "english"
+    "language": "english",
+    "aliases": [
+        "/glossary/pci_registered_reports"
+    ]
 }

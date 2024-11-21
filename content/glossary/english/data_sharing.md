@@ -22,5 +22,8 @@
         "Timo Roettger ",
         "Flávio Azevedo"
     ],
-    "language": "english"
+    "language": "english",
+    "aliases": [
+        "/glossary/data_sharing"
+    ]
 }

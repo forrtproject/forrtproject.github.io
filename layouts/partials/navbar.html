@@ -2,7 +2,7 @@
 
 {{/* Get site logo. */}}
 {{ $show_logo := site.Params.main_menu.show_logo | default true }}
-{{ $has_logo := fileExists "assets/images/logo.png" | or (fileExists "assets/images/logo.svg") }}
+{{ $has_logo := fileExists "assets/images/logo.webp" | or (fileExists "assets/images/logo.svg") }}
 {{ $logo := "" }}
 {{ if $has_logo }}
   {{ $logo = (partial "functions/get_logo" (dict "constraint" "max_height" "size" 70)) }}
@@ -52,13 +52,13 @@
 
         {{ if .HasChildren }}
         <li class="nav-item dropdown px-2">
-          <a href="#" class="nav-link dropdown-toggle" data-hover="dropdown" aria-haspopup="true">
+          <a href="javascript:void(0)" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             {{- .Pre -}}<span>{{ .Name | safeHTML }}</span>{{- .Post -}}
             <span class="caret"></span>
           </a>
           <div class="dropdown-menu">
             {{ range .Children }}
-              <a class="dropdown-item" href="{{ .URL | relLangURL }}"{{ if $.IsHome }} data-target="{{ .URL }}"{{ end }}>
+              <a class="dropdown-item" href="{{ .URL | relLangURL }}"{{ if and (gt (len .URL) 3) (eq (slicestr .URL 0 4) "http") }} target="_blank" rel="noopener"{{ end }}>
                 {{- .Pre -}}<span>{{ .Name | safeHTML }}</span>{{- .Post -}}
               </a>
             {{ end }}
@@ -67,15 +67,13 @@
 
         {{ else }}
 
-        {{/* Set target for link. */}}
-        {{ $.Scratch.Set "target" "" }}
-        {{ if gt (len .URL) 4 }}
-          {{ if eq "http" (slicestr .URL 0 4) }}
-            {{ $.Scratch.Set "target" " target=\"_blank\" rel=\"noopener\"" }}
-          {{ end }}
+        {{/* Check if link should open in new tab */}}
+        {{ $target := "" }}
+        {{ if and (gt (len .URL) 3) (eq (slicestr .URL 0 4) "http") }}
+          {{ $target = " target=\"_blank\" rel=\"noopener\"" }}
         {{ end }}
 
-        {{/* Get active page. */}}
+        {{/* Get active page and other attributes. */}}
         {{ $is_link_in_current_path := in $current_page.RelPermalink .URL }}
         {{ $is_widget_page := or $current_page.IsHome (eq $current_page.Type "widget_page") }}
         {{ $hash := findRE "#(.+)" .URL }}
@@ -90,7 +88,7 @@
         {{ end }}
 
         <li class="nav-item px-2">
-          <a class="nav-link {{if $is_link_in_current_path }} active{{end}}" href="{{.URL | relLangURL}}"{{ if and $is_widget_page $is_same_page }} data-target="{{$hash}}"{{ end }}{{ ($.Scratch.Get "target") | safeHTMLAttr }}>
+          <a class="nav-link {{if $is_link_in_current_path }} active{{end}}" href="{{.URL | relLangURL}}"{{ if and $is_widget_page $is_same_page }} data-target="{{$hash}}"{{ end }}{{ $target | safeHTMLAttr }}>
             {{- .Pre -}}<span>{{ .Name | safeHTML }}</span>{{- .Post -}}
           </a>
         </li>
@@ -105,16 +103,14 @@
 
         {{ range site.Menus.main_right }}
 
-        {{/* Set target for link. */}}
-        {{ $.Scratch.Set "target" "" }}
-        {{ if gt (len .URL) 4 }}
-        {{ if eq "http" (slicestr .URL 0 4) }}
-        {{ $.Scratch.Set "target" " target=\"_blank\" rel=\"noopener\"" }}
-        {{ end }}
+        {{/* Check if link should open in new tab */}}
+        {{ $target := "" }}
+        {{ if and (gt (len .URL) 3) (eq (slicestr .URL 0 4) "http") }}
+          {{ $target = " target=\"_blank\" rel=\"noopener\"" }}
         {{ end }}
 
         <li class="nav-item">
-          <a class="nav-link" href="{{ .URL | relLangURL }}"{{ if $.IsHome }} data-target="{{ .URL }}"{{ end }}{{ ($.Scratch.Get "target") | safeHTMLAttr }}>
+          <a class="nav-link" href="{{ .URL | relLangURL }}"{{ $target | safeHTMLAttr }}>
             {{- .Pre -}}<span>{{ .Name | safeHTML }}</span>{{- .Post -}}
           </a>
         </li>
@@ -152,7 +148,7 @@
             <span>{{ index site.Data.i18n.languages .Lang }}</span>
           </div>
           {{ range .Translations }}
-          <a class="dropdown-item" href="{{ .Permalink }}"{{ if $.IsHome }} data-target="{{ .RelPermalink }}"{{ end }}>
+          <a class="dropdown-item" href="{{ .Permalink }}">
             <span>{{ index site.Data.i18n.languages .Lang }}</span>
           </a>
           {{ end }}

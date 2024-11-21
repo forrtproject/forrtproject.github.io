@@ -30,7 +30,7 @@ subtitle = "An equity-based tool for authorship order"
   # gradient_end = "SkyBlue"
   
   # Background image.
-  # image = "headers/bubbles-wide.jpg"  # Name of image in `static/img/`.
+  # image = "headers/bubbles-wide.webp"  # Name of image in `static/img/`.
   # image_darken = 0.6  # Darken the image? Range 0-1 where 0 is transparent and 1 is opaque.
   # image_size = "cover"  #  Options are `cover` (default), `contain`, or `actual` size.
   # image_position = "center"  # Options include `left`, `center` (default), or `right`.
@@ -53,14 +53,6 @@ subtitle = "An equity-based tool for authorship order"
 
 <br>
 
-
-
-{{% alert note %}}
-
-THIS IS A PAGE IN CONSTRUCTION. PLEASE COME BACK SOON!
-
-{{% /alert %}}
-
 <br>
 
 ## Overview
@@ -81,27 +73,33 @@ We provide a comprehensive suite of resources within the AWoP toolkit:
 
 <br>
 
-* **Shiny App**: [Access the AWoP Shiny App](https://forrt.shinyapps.io/awop) 
+**Manuscript**: [come back soon!]() 
 
-    * The Shiny App is a dynamic tool that allows users to generate customized weighted indicators of privilege across key socio-economic and cultural identity categories. It helps users actively identify and consider privilege in authorship decisions, facilitating equitable and transparent authorship order determination. 
+**Shiny App**: [Access the AWoP Shiny App](https://forrt.shinyapps.io/awop) 
+
+ * The Shiny App is a dynamic tool that allows users to generate customized weighted indicators of privilege across key socio-economic and cultural identity categories. It helps users actively identify and consider privilege in authorship decisions, facilitating equitable and transparent authorship order determination. 
 
 
-* **Supplemental Materials**:  
-      
-     * **Reflection Questions (S3)**: These questions are designed to guide both individual and collective introspection within authorship teams. They help users recognize and understand the dynamics of privilege and how these might influence authorship decisions. The questions can be used as a starting point for discussions about fairness and equity in academic contributions.
-          * Example Question: "Do the people I collaborate with hold similar levels of privilege to me?"
-      
-     * **Case Study on First-Generation Academics (S4)**: This case study explores how specific aspects of academic privilege or its absence can shape individual academic trajectories. It provides a nuanced understanding of how socio-economic background influences opportunities and challenges in academia. 
-          * Example Insight: "First-generation students often work more hours outside of academia to support their studies and have fewer interactions with faculty or mentors.
-      
-     * **Illustrated Examples of Academic Privilege/Disadvantage (S5)**: These visual representations depict the varied experiences of individuals within academic spaces. They serve as a relatable and engaging means to comprehend complex concepts of privilege and disadvantage. 
-          * Example Scenario: "A scholar from a less privileged background might face significant barriers in networking and accessing funding compared to their more privileged counterparts. 
-      
-     * **Detailed Bibliography on Socio-Cultural Identities (S6)**: This extensive resource provides in-depth understanding and research on the diverse identity categories within academia. It supports users in exploring the intersectionality of different identities and their impact on academic careers. 
-          * Example Topic: "The impact of race and gender on citation practices in academic publishing. 
-      
-     * **Syllabus for Learning on Equity, Justice, and Accessibility (S7)**: This curated syllabus is designed to support users at different stages of their journey towards equity and justice in academia. It includes structured learning paths and resources tailored to varying levels of familiarity and expertise. 
-          * Example Module: "Understanding the principles of social justice and how they apply to academic authorship.
+**Supplemental Materials**:  
+     
+  * **Reflection Questions (S3)**: These questions are designed to guide both individual and collective introspection within authorship teams. They help users recognize and understand the dynamics of privilege and how these might influence authorship decisions. The questions can be used as a starting point for discussions about fairness and equity in academic contributions.
+    * Example Question: "Do the people I collaborate with hold similar levels of privilege to me?"
+<br>
+  
+  * **Case Study on First-Generation Academics (S4)**: This case study explores how specific aspects of academic privilege or its absence can shape individual academic trajectories. It provides a nuanced understanding of how socio-economic background influences opportunities and challenges in academia. 
+    * Example Insight: "First-generation students often work more hours outside of academia to support their studies and have fewer interactions with faculty or mentors."
+<br>      
+
+  * **Illustrated Examples of Academic Privilege/Disadvantage (S5)**: These visual representations depict the varied experiences of individuals within academic spaces. They serve as a relatable and engaging means to comprehend complex concepts of privilege and disadvantage. 
+    * Example Scenario: "A scholar from a less privileged background might face significant barriers in networking and accessing funding compared to their more privileged counterparts." 
+<br>      
+
+  * **Detailed Bibliography on Socio-Cultural Identities (S6)**: This extensive resource provides in-depth understanding and research on the diverse identity categories within academia. It supports users in exploring the intersectionality of different identities and their impact on academic careers. 
+    * Example Topic: "The impact of race and gender on citation practices in academic publishing." 
+<br>      
+
+  * **Syllabus for Learning on Equity, Justice, and Accessibility (S7)**: This curated syllabus is designed to support users at different stages of their journey towards equity and justice in academia. It includes structured learning paths and resources tailored to varying levels of familiarity and expertise. 
+    * Example Module: "Understanding the principles of social justice and how they apply to academic authorship."
 
 
 
@@ -110,18 +108,22 @@ We provide a comprehensive suite of resources within the AWoP toolkit:
 
 <div style="width:600px">
 
-![FORRT AWoP](AWoP_prelim.jpg)
+![FORRT AWoP](AWoP_prelim.webp)
 
 </div>
 
 </center>
+
+<br>
+
+<br>
 
 ## AWoP in Use 
 -----------
 
 The AWoP is already being recognized and implemented in various settings, including: 
 
-* [UK Research Integrity Office (UKRIO)](https://ukrio.org/) 
+* [UK Research Integrity Office (UKRIO)](https://ukrio.org/ukrio-resources/equality-diversity-and-inclusion/academic-wheel-of-privilege/) 
 * Other publications and web pages (add more links as they become available)
 
 

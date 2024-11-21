@@ -20,5 +20,8 @@
         "Connor Keating",
         "Charlotte R. Pennington"
     ],
-    "language": "english"
+    "language": "english",
+    "aliases": [
+        "/glossary/dora"
+    ]
 }

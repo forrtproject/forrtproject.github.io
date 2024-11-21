@@ -27,5 +27,8 @@
         "Robbie C.M. van Aert ",
         "Flávio Azevedo"
     ],
-    "language": "english"
+    "language": "english",
+    "aliases": [
+        "/glossary/researcher_degrees_of_freedom"
+    ]
 }

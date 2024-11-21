@@ -20,5 +20,8 @@
         "Adam Parker",
         "Sam Parsons"
     ],
-    "language": "english"
+    "language": "english",
+    "aliases": [
+        "/glossary/committee_on_best_practices_in_data_analysis_and_sharing"
+    ]
 }

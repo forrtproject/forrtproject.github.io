@@ -41,13 +41,26 @@ def split_cells(df):
 
 def convert_row_to_file(df, fpath):
     """
-    expects a pandas df with a 'title' column to name the file.
+    Expects a pandas DataFrame with a 'title' column to name the file.
+    If there are duplicates, an index is appended to the filename.
     """
+    
+    # Track filenames to handle duplicates
+    filename_counts = {}
+
     for index, row in df.iterrows():
         filename = re.sub('[\W_]+', '-', row["title"].lower())
         filename = re.sub('^-', '', filename)
         filename = re.sub('-$', '', filename[:40])
-        filename_md = fpath / f"{index}_{filename}.md"
+
+        # Check if filename exists, if so, add a counter
+        if filename in filename_counts:
+            filename_counts[filename] += 1
+            filename_md = fpath / f"{filename}_{filename_counts[filename]}.md"
+        else:
+            filename_counts[filename] = 1
+            filename_md = fpath / f"{filename}.md"
+        
         filename_md.write_text(json.dumps(row.to_dict(), indent=4))
 
 

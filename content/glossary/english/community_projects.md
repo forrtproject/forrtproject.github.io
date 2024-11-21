@@ -25,5 +25,8 @@
         "Kai Krautter",
         "Gerald Vineyard"
     ],
-    "language": "english"
+    "language": "english",
+    "aliases": [
+        "/glossary/community_projects"
+    ]
 }

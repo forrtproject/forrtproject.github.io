@@ -17,5 +17,8 @@
     "reviewed_by": [
         "Mahmoud ELsherif"
     ],
-    "language": "english"
+    "language": "english",
+    "aliases": [
+        "/glossary/pubpeer"
+    ]
 }

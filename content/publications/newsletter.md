@@ -29,7 +29,7 @@ subtitle = "Subscribe to our newsletter from FORRT to get the latest news about 
   # gradient_end = "SkyBlue"
   
   # Background image.
-  # image = "headers/bubbles-wide.jpg"  # Name of image in `static/img/`.
+  # image = "headers/bubbles-wide.webp"  # Name of image in `static/img/`.
   # image_darken = 0.6  # Darken the image? Range 0-1 where 0 is transparent and 1 is opaque.
   # image_size = "cover"  #  Options are `cover` (default), `contain`, or `actual` size.
   # image_position = "center"  # Options include `left`, `center` (default), or `right`.
@@ -49,12 +49,7 @@ subtitle = "Subscribe to our newsletter from FORRT to get the latest news about 
  # CSS class.
  css_class = ""
 +++
-<div id="form" class="">
-<form action="https://formspree.io/f/mjvjpprl" method="POST"><div class="col-lg-8" style="padding-top:15px">
-<div class="input-group">
-<label class="sr-only" for="inlineFormEmail">Email</label>
-<input name="_replyto" type="email" class="form-control" id="inlineFormEmail" placeholder="Email"><div class="input-group-append"><button class="btn btn-outline-primary" type="submit">Subscribe</button></div></div>
-</div>
-</form>
-</div>
+
+{{< subscribe >}}
+
 

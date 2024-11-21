@@ -21,5 +21,8 @@
         "Robert M Ross",
         "Steven Verheyen"
     ],
-    "language": "english"
+    "language": "english",
+    "aliases": [
+        "/glossary/epistemology"
+    ]
 }

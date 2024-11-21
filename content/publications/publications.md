@@ -30,7 +30,7 @@ subtitle = ""
   # gradient_end = "SkyBlue"
   
   # Background image.
-  # image = "headers/bubbles-wide.jpg"  # Name of image in `static/img/`.
+  # image = "headers/bubbles-wide.webp"  # Name of image in `static/img/`.
   # image_darken = 0.6  # Darken the image? Range 0-1 where 0 is transparent and 1 is opaque.
   # image_size = "cover"  #  Options are `cover` (default), `contain`, or `actual` size.
   # image_position = "center"  # Options include `left`, `center` (default), or `right`.
@@ -55,7 +55,7 @@ subtitle = ""
 
 <center>
 
-# Publications, Preprints, Policy Briefs & op-eds
+# Publications, Preprints, & Policy Briefs & Op-Eds
 
 </center>
 
@@ -66,6 +66,24 @@ subtitle = ""
 ***
 
 <br>
+
+### **The Replication Database: Documenting the Replicability of Psychological Science**
+
+<br>
+
+We have written a manuscript about documenting and tracking replication efforts. In psychological science, replicability — repeating a study with a new sample achieving consistent results — is critical for affirming the validity of scientific findings. Despite its importance, replication efforts are few and far between in psychological science with many attempts failing to corroborate past findings. This scarcity, compounded by the difficulty in accessing replication data, jeopardizes the efficient allocation of research resources and impedes scientific advancement. Addressing this crucial gap, we present the [Replication Database](https://forrt.org/replication-hub/), a novel platform hosting >1,200 original findings paired with replication findings. The infrastructure of this database allows researchers to submit, access, and engage with replication findings. The database makes replications visible, easily findable via a graphical user interface, and tracks replication rates across various factors, such as publication year or journal. This will facilitate future efforts to evaluate the robustness of psychological research. More info about the project and other FORRT replication efforts can be found on the [Replication Hub](https://forrt.org/replication-hub/#). This effort was also highlighted by the journal _Science_ in their [news at a glance](https://www.science.org/content/article/news-glance-planning-mentoring-tracking-replications-and-deracializing-lung-tests)!
+
+<br>
+
+> Röseler, L., Kaiser, L., Doetsch, C., Klett, N., Seida, C., Schütz, A., Aczel, B., Adelina, N., Agostini, V., Alarie, S., Albayrak-Aydemir, N., Aldoh, A., Al-Hoorie, A. H., Azevedo, F., Baker, B. J., Barth, C. L., Beitner, J., Brick, C., Brohmer, H., Chandrashekar, S. P., Chung, K. L., Cockcroft, J. P., Cummins, J., Diveica, V., Dumbalska, T., Efendic, E., Elsherif, M., Evans, T., Feldman, G., Fillon, A., Förster, N., Frese, J., Genschow, O., Giannouli, V., Gjoneska, B., Gnambs, T., Gourdon-Kanhukamwe, A., Graham, C. J., Hartmann, H., Haviva, C., Herderich, A., Hilbert, L. P., Holgado, D., Hussey, I., Ilchovska, Z. G., Kalandadze, T., Karhulahti, V.-M., Kasseckert, L., Klingelhöfer-Jens, M., Koppold, A., Korbmacher, M., Kulke, L., Kuper, N., LaPlume, A., Leech, G., Lohkamp, F., Lou, N. M., Lynott, D., Maier, M., Meier, M., Montefinese, M., Moreau, D., Mrkva, K., Nemcova, M., Oomen, D., Packheiser, J., Pandey, S., Papenmeier, F., Paruzel-Czachura, M., Pavlov, Y. G., Pavlović, Z., Pennington, C. R., Pittelkow, M.-M., Plomp, W., Plonski, P. E., Pronizius, E., Pua, A. A., Pypno-Blajda, K., Rausch, M., Rebholz, T. R., Richert, E., Röer, J. P., Ross, R., Schmidt, K., Skvortsova, A., Sperl, M. F. J., Tan, A. W. M., Thürmer, J. L., Tołopiło, A., Vanpaemel, W., Vaughn, L. A., Verheyen, S., Wallrich, L., Weber, L., Wolska, J. K., Zaneva, M., & Zhang, Y. (2024). The Replication Database: Documenting the Replicability of Psychological Science.
+Journal of Open Psychology Data, 12: 8, pp. 1–23. DOI: https://doi.org/10.5334/jopd.101
+
+<br>
+
+The **<font style="color:#0e2a38">preprint</font>** can [be found here (osf.io/me2ub)](https://osf.io/preprints/metaarxiv/me2ub). 
+
+<div class='altmetric-embed' data-badge-type='medium-donut' data-doi="10.31222/osf.io/me2ub"></div>
+<div class='altmetric-embed' data-badge-type='medium-donut' data-doi="https://doi.org/10.5334/jopd.101"></div>
 
 ### **The Impact of Open Scholarship on Students' Learning Outcomes (Scoping Review)**
 
@@ -203,17 +221,24 @@ The **<font style="color:#0e2a38">preprint</font>** can [be found here (osf.io/f
 ## Preprints 
 ***
 
-### **The Replication Database: Documenting the Replicability of Psychological Science**
+
+### **Mapping Open Science Communities in Psychology: A Systematic Narrative Review**
 
 <br>
 
-We have written a manuscript about documenting and tracking replication efforts. In psychological science, replicability — repeating a study with a new sample achieving consistent results — is critical for affirming the validity of scientific findings. Despite its importance, replication efforts are few and far between in psychological science with many attempts failing to corroborate past findings. This scarcity, compounded by the difficulty in accessing replication data, jeopardizes the efficient allocation of research resources and impedes scientific advancement. Addressing this crucial gap, we present the [Replication Database](https://forrt.org/replication-hub/), a novel platform hosting >1,200 original findings paired with replication findings. The infrastructure of this database allows researchers to submit, access, and engage with replication findings. The database makes replications visible, easily findable via a graphical user interface, and tracks replication rates across various factors, such as publication year or journal. This will facilitate future efforts to evaluate the robustness of psychological research. More info about the project and other FORRT replication efforts can be found on the [Replication Hub](https://forrt.org/replication-hub/#). This effort was also highlighted by the journal _Science_ in their [news at a glance](https://www.science.org/content/article/news-glance-planning-mentoring-tracking-replications-and-deracializing-lung-tests)!
+We have written a manuscript, entitled *International Initiatives to Enhance Awareness and Uptake of Open Research in Psychology: A Systematic Narrative Review,* which outlines the global landscape of Open Science initiatives within psychology. This preprint provides a systematic review of *187 initiatives*, categorized into procedural, structural, and community-based changes, highlighting the roles they play in advancing transparency, replicability, and collaboration in research practices. The review aims to increase awareness, adoption, and coordination of these initiatives across psychology and beyond, serving as a roadmap for disciplines experiencing similar challenges.
 
 
-***Status***: Our paper is **preprinted** in MetaArxiv. Cite as:
-> Röseler, L., Kaiser, L., Doetsch, C. A., Klett, N., Seida, C., Schütz, A., … Zhang, Y., Mr. (2024, April 11). The Replication Database: Documenting the Replicability of Psychological Science. https://doi.org/10.31222/osf.io/me2ub
+***Status***: Our paper is **preprinted** 🎉🥳 in PsyArxiv. Cite as:
+> Skubera, M., Korbmacher, M., Evans, T.R., Azevedo, F., Pennington, C.R. (2024). International Initiatives to Enhance Awareness and Uptake of Open Research in Psychology: A Systematic Narrative Review. https://doi.org/10.31234/osf.io/rakmb.
+
+<div class='altmetric-embed' data-badge-type='medium-donut' data-doi="https://doi.org/10.31234/osf.io/rakmb"></div>
 
 <center> ________________________________ </center>
+
+<br><br>
+<br><br>
+
 
 ### **Neurodiversity & Open Scholarship in Academia**
 
@@ -248,8 +273,19 @@ The **<font style="color:#0e2a38">preprint</font>** can [be found here (osf.io/b
 <br><br>
 <br><br>
 
-## op-ed*s* 
+## Op-Eds and Other Media 
 ***
+<br>
+
+
+📄 For the ***Official PLoS Blog***, on [creating a comprehensive, dynamic database cataloging scientific claims and subsequent replication attempts across various disciplines of social, cognitive, and behavioral sciences](https://theplosblog.plos.org/2024/02/unveiling-the-truth-in-science-the-quest-for-reliable-knowledge/).
+
+{{< spoiler text= "Bibliographic Reference" >}} 
+
+Azevedo, F., Hartmann, H., Röseler, L., Wallrich, L., & Micheli, L. (2024, February 15). Unveiling the Truth in Science: The Quest for Reliable Knowledge. The Official PLOS Blog. https://theplosblog.plos.org/2024/02/unveiling-the-truth-in-science-the-quest-for-reliable-knowledge/
+
+{{< /spoiler >}}
+
 <br>
 
 📜 For ***The Psychologist***, on [open scholarship pedagogical communities](https://www.bps.org.uk/psychologist/open-scholarship-pedagogical-communities).
@@ -257,6 +293,7 @@ The **<font style="color:#0e2a38">preprint</font>** can [be found here (osf.io/b
 {{< spoiler text= "Bibliographic Reference" >}} 
 
 Azevedo, F. (2023). Open scholarship pedagogical communities. The Psychologist, British Psychological Society.
+
 
 {{< /spoiler >}}
 
@@ -266,7 +303,7 @@ Azevedo, F. (2023). Open scholarship pedagogical communities. The Psychologist, 
 
 {{< spoiler text= "Bibliographic Reference" >}} 
 
-Azevedo, F., Middleton, S., Mai Phan, J., Kapp, S., Gourdon-Kanhukamwe, A., Iley, B., Elsherif, M., & Shaw, J. J. (2022). Navigating Academia as Neurodivergent Researchers: Promoting Neurodiversity Within Open Scholarship. APS Observer.
+Azevedo, F., Middleton, S., Mai Phan, J., Kapp, S., Gourdon-Kanhukamwe, A., Iley, B., Elsherif, M., & Shaw, J. J. (2022). Navigating Academia as Neurodivergent Researchers: Promoting Neurodiversity Within Open Scholarship. APS Observer. https://www.psychologicalscience.org/observer/gs-navigating-academia-as-neurodivergent-researchers
 
 {{< /spoiler >}}
 
@@ -276,17 +313,17 @@ Azevedo, F., Middleton, S., Mai Phan, J., Kapp, S., Gourdon-Kanhukamwe, A., Iley
 
 {{< spoiler text= "Bibliographic Reference" >}} 
 
-Azevedo, F., Baum, M., Hartmann, H., Micheli, L., Spitzer, L., & Wingen, T. (2022). What is "Open Science"? And why does it need a glossary? (Was ist „Offene Wissenschaft”? Und warum braucht sie ein Wörterbuch?). In-Mind Magazine.
+Azevedo, F., Baum, M., Hartmann, H., Micheli, L., Spitzer, L., & Wingen, T. (2022). What is "Open Science"? And why does it need a glossary? (Was ist „Offene Wissenschaft”? Und warum braucht sie ein Wörterbuch?). In-Mind Magazine. https://de.in-mind.org/blog/post/was-ist-offene-wissenschaft-und-warum-braucht-sie-ein-woerterbuch
 
 {{< /spoiler >}}
 
 <br>
 
-📜 For the ***Center of Open Science*** Blog, on [Integrating Open and Reproducible Science Principles into Higher Education](https://www.cos.io/blog/educating-in-the-open-scholarship-eara).
+📜 For the ***Center of Open Science Blog***, on [Integrating Open and Reproducible Science Principles into Higher Education](https://www.cos.io/blog/educating-in-the-open-scholarship-eara).
 
 {{< spoiler text= "Bibliographic Reference" >}} 
 
-Azevedo, F. (2022). Educating in the Open Scholarship Era: Integrating Open and Reproducible Science Principles into Higher Education. Center for Open Science (COS).
+Azevedo, F. (2022). Educating in the Open Scholarship Era: Integrating Open and Reproducible Science Principles into Higher Education. Center for Open Science (COS). https://www.cos.io/blog/educating-in-the-open-scholarship-eara
 
 {{< /spoiler >}}
 

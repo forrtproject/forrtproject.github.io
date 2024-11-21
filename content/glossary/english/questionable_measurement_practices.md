@@ -26,5 +26,8 @@
         "Mirela Zaneva",
         "F lávio Azevedo"
     ],
-    "language": "english"
+    "language": "english",
+    "aliases": [
+        "/glossary/questionable_measurement_practices"
+    ]
 }

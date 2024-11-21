@@ -23,5 +23,8 @@
         "Tamara Kalandadze",
         "Adam Parker"
     ],
-    "language": "english"
+    "language": "english",
+    "aliases": [
+        "/glossary/quantitative_research"
+    ]
 }

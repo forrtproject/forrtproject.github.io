@@ -22,5 +22,8 @@
         "Sam Parsons",
         "Flávio Azevedo"
     ],
-    "language": "english"
+    "language": "english",
+    "aliases": [
+        "/glossary/free_our_knowledge_platform"
+    ]
 }
