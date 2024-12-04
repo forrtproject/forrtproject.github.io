@@ -8,6 +8,8 @@ _______________________________________________
 
 Archives :calendar: 2024
 
+[| November 2024](https://mailchi.mp/forrt/forrt-newsletter-10331615?e=626cf66991)
+
 [| October 2024](https://us14.campaign-archive.com/?u=64c29a25a0ca81454399d522e&id=7373fd5817)
 
 [| September 2024](https://us14.campaign-archive.com/?u=64c29a25a0ca81454399d522e&id=aa76d449b1)
