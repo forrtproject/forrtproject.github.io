@@ -1,0 +1,29 @@
+{
+    "type": "glossary",
+    "title": "P-hacking (قرصنة القيمة الاحتماليَّة)",
+    "definition": "Exploiting techniques that may artificially increase the likelihood of obtaining a statistically significant result by meeting the standard statistical significance criterion (typically α = .05) . For example, performing multiple analyses and reporting only those at p < .05, selectively removing data until p < .05, selecting variables for use in analyses based on whether those parameters are statistically significant. [:ARABIC] التَّعريف:  هو أسلوب استغلالي قد يزيد بنحو غير طبيعي من احتماليَّة  الحصول على نتيجة ذات دلالة إحصائيَّة من خلال تحقيق معيار درجة الدلالة الإحصائيَّة اللَّازمة (عادة α = .05). مثال ذلك، القيام بعدة تحليلات، ونشر تلك التي تكون فيها القيمة الاحتماليَّة أقل من 0.05 فقط، أو إزالة بعض البيانات بشكل انتقائي حتى تكون القيمة الاحتماليَّة أقل من 0.05، أو اختيار بعض العوامل للتَّحليل بناء على ما إذا كانت المؤشِّرات ذات دلالة إحصائيَّة. [:ARABIC] التَّعريف: هو أسلوب استغلالي قد يزيد بنحو غير طبيعي من احتماليَّة  الحصول على نتيجة ذات دلالة إحصائيَّة من خلال تحقيق معيار درجة الدلالة الإحصائيَّة اللَّازمة (عادة α = .05). مثال ذلك، القيام بعدة تحليلات، ونشر تلك التي تكون فيها القيمة الاحتماليَّة أقل من 0.05 فقط، أو إزالة بعض البيانات بشكل انتقائي حتى تكون القيمة الاحتماليَّة أقل من 0.05، أو اختيار بعض العوامل للتَّحليل بناء على ما إذا كانت المؤشِّرات ذات دلالة إحصائيَّة. المصطلحات ذات الصِّلة:  المرونة التَّحليلية ، التَّصيد ، حديقة المسارات المتشعِّبة ، الافتراض بعد معرفة النَّتائج، ممارسات البحث المشكوك فيها أو ممارسات إعداد التَّقارير المشكوك فيها ، تقرير انتقائي المصطلحات ذات الصِّلة: المرونة التَّحليلية ، التَّصيد ، حديقة المسارات المتشعِّبة ، الافتراض بعد معرفة النَّتائج، ممارسات البحث المشكوك فيها أو ممارسات إعداد التَّقارير المشكوك فيها ، تقرير انتقائي",
+    "related_terms": [
+        "Analytic flexibility",
+        "Fishing",
+        "Garden of forking paths",
+        "HARKing",
+        "Questionable Research Practices or Questionable Reporting Practices (QRPs) ",
+        "Selective reporting"
+    ],
+    "references": [
+        "Hardwicke et al. (2014); Neuroskeptic (2012)"
+    ],
+    "alt_related_terms": [
+        null
+    ],
+    "drafted_by": [
+        "Mahmoud Elsherif"
+    ],
+    "reviewed_by": [
+        "Tamara Kalandadze",
+        "William Ngiam",
+        "Sam Parsons",
+        "Martin Vasilev"
+    ],
+    "language": "arabic"
+}
