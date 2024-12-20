@@ -57,7 +57,7 @@ for language, group in grouped:
                 elif current_field:
                     entry[current_field] += ' ' + sibling.text.strip()
 
-        # Split the Definition into Definition and German_Translation
+        # Split the Definition into Definition and Translation
         
         for glossary in d.values():
             pattern = r'\[.*?\]|\*\*\s*almost\s*(done|complete)\s*\*\*|#+\s*review needed\s*#+' # Remove status from title

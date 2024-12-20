@@ -1,0 +1,23 @@
+{
+    "type": "glossary",
+    "title": "Meta-science or Meta-research (العلوم البعديَّة/التَّلوية أو البحث البعدي/التَّلوي)",
+    "definition": "The scientific study of science itself with the aim to describe, explain, evaluate and/or improve scientific practices. Meta-science typically investigates scientific methods, analyses, the reporting and evaluation of data, the reproducibility and replicability of research results, and research incentives. [:ARABIC] التَّعريف: [:ARABIC] التَّعريف: يشير المصطلح إلى الدِّراسة العلميَّة للعلم نفسه بهدف وصف وشرح وتقييم، وتطوير الممارسات العلميَّة. يبحث علم \"ماوراء العلوم \" عادة في الأساليب العلميَّة والتَّحليل وإعداد التَّقارير عن البيانات وتقييمها وإعادة إنتاج، أو تكرار نتائج البحث، وكذلك في حوافز البحث. يشير المصطلح إلى الدِّراسة العلميَّة للعلم نفسه بهدف وصف وشرح وتقييم، وتطوير الممارسات العلميَّة. يبحث علم \"ماوراء العلوم \" عادة في الأساليب العلميَّة والتَّحليل وإعداد التَّقارير عن البيانات وتقييمها وإعادة إنتاج، أو تكرار نتائج البحث، وكذلك في حوافز البحث. المصطلحات ذات الصِّلة: المصطلحات ذات الصِّلة:",
+    "related_terms": [
+        ""
+    ],
+    "references": [
+        "Ioannidis et al. (2015); Peterson and Panofsky (2020)"
+    ],
+    "alt_related_terms": [
+        null
+    ],
+    "drafted_by": [
+        "Elizabeth Collins"
+    ],
+    "reviewed_by": [
+        "Tamara Kalandadze",
+        "Lisa Spitzer",
+        "Olmo van den Akker"
+    ],
+    "language": "arabic"
+}

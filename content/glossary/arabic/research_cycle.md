@@ -1,0 +1,24 @@
+{
+    "type": "glossary",
+    "title": "Research Cycle (دورة البحث)",
+    "definition": "De scribes the circular process of conducting scientific research, with “researchers working at various stages of inquiry, from more tentative and exploratory investigations to the testing of more definitive and well-supported claims” (Lieberman, 2020, p. 42). The cycle includes literature research and hypothesis generation, data collection and analysis, as well as dissemination of results (e.g. through publication in peer-reviewed journals), which again informs theory and new hypotheses/research. [:ARABIC] التَّعريف: هي العمليَّة الدَّائريَّة لإجراء البحث العلمي حيث يعمل \"الباحثون في مراحل مختلفة في البحث، ابتداءً بالبحوث الأوليَّة، والاستكشافيَّة إلى اختبار الادِّعاءات الأكثر تحديدًا والمدعومة جيدًا\" (Lieberman, 2020, p. 42). وتشمل الدَّورة: البحث في الأدبيَّات، وتوليد الفرضيَّات، وجمع البيانات وتحليلها، بالإضافة إلى نشر النَّتائج (على سبيل المثال من خلال النَّشر في المجلَّات المحكّمة)، والتي بدورها تغذي النَّظريَّة والفرضيَّات والبحوث الجديدة. [:ARABIC] التَّعريف: هي العمليَّة الدَّائريَّة لإجراء البحث العلمي حيث يعمل \"الباحثون في مراحل مختلفة في البحث، ابتداءً بالبحوث الأوليَّة، والاستكشافيَّة إلى اختبار الادِّعاءات الأكثر تحديدًا والمدعومة جيدًا\" (Lieberman, 2020, p. 42). وتشمل الدَّورة: البحث في الأدبيَّات، وتوليد الفرضيَّات، وجمع البيانات وتحليلها، بالإضافة إلى نشر النَّتائج (على سبيل المثال من خلال النَّشر في المجلَّات المحكّمة)، والتي بدورها تغذي النَّظريَّة والفرضيَّات والبحوث الجديدة. المصطلحات ذات الصِّلة: عمليَّة البحث المصطلحات ذات الصِّلة: عمليَّة البحث",
+    "related_terms": [
+        "Research process"
+    ],
+    "references": [
+        "Bramoullé and Saint Paul (2010); Lieberman (2020)"
+    ],
+    "alt_related_terms": [
+        null
+    ],
+    "drafted_by": [
+        "Helena Hartmann"
+    ],
+    "reviewed_by": [
+        "Jamie P. Cockcroft",
+        "Aleksandra Lazić",
+        "Graham Reid",
+        "Beatrice Valentini"
+    ],
+    "language": "arabic"
+}
