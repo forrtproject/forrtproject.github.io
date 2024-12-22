@@ -98,9 +98,8 @@ def parse_md_terms(md_text, language):
         glossary['Title'] = re.sub("\\\\\*", '', glossary['Title'])
         glossary['Title'] = re.sub("\\\\", '', glossary['Title'])
         
-
         if 'Definition' in glossary:
-            definitions = re.split(rf'\[\s*:?{language.upper()}|\[{language.capitalize()}:?\s*\]', glossary['Definition'])
+            definitions = re.split(rf'(?:\\?\[\s*:?{language.upper()}:?\\?\]|\\?\[\s*:?{language.capitalize()}:?\\?\])', glossary['Definition'])
             glossary['Definition'] = definitions[0].replace('Definition:', '').strip()
             if len(definitions) > 1:
                 glossary['Translation'] = re.sub(r'^[^\w]+', '', definitions[1]).strip()
@@ -224,3 +223,31 @@ for language_data in merged_data:
             print(f"BEWARE: index for {language} missing")
 
 print("Markdown files successfully generated.")
+
+# Update available languages for selection
+
+language_list = grouped.groups.keys()  
+languages_as_string = " ".join([f'"{lang}"' for lang in language_list])  
+language_slice = "{{ $allLanguages := slice " + languages_as_string + " }}"
+
+partials_file_path = os.path.join(script_dir, "../../layouts/glossary/single.html")
+
+if os.path.exists(partials_file_path):
+    with open(partials_file_path, 'r', encoding='utf-8') as file:
+        content = file.readlines()
+    
+    # Look for the line defining $allLanguages and replace it
+    updated_content = []
+    for line in content:
+        if line.strip().startswith('{{ $allLanguages := slice'):
+            updated_content.append(language_slice + '\n')  # Replace with the new slice
+        else:
+            updated_content.append(line)
+
+    # Write back the updated file
+    with open(partials_file_path, 'w', encoding='utf-8') as file:
+        file.writelines(updated_content)
+
+    print(f"Updated {partials_file_path} with languages: {', '.join(language_list)}")
+else:
+    print(f"File not found: {partials_file_path}")

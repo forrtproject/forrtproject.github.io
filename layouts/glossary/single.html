@@ -45,7 +45,6 @@
 
   .language-switcher {
     margin-top: 20px;
-    font-family: Arial, sans-serif;
   }
 
   .language-switcher ul {
@@ -124,7 +123,7 @@
 <div class="language-switcher">
   {{ $currentLang := .Params.language | default "english" }}
   {{ $currentPath := .File.Path }}
-  {{ $allLanguages := slice "english" "german" "arabic" }}
+{{ $allLanguages := slice "arabic" "english" "german" }}
   {{ $availableLanguages := slice }}
 
   {{ range $lang := $allLanguages }}

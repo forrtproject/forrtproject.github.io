@@ -15,6 +15,10 @@ header:
 type: "glossary"
 ---
 
+<div class="btn-group flex-wrap text-center"><a href="/glossary/english" class="btn btn-primary py-2 m-1 btn-lg active" style="line-height:1;border-radius:6px">English</a>
+<a href="/glossary/german" class="btn btn-primary py-2 m-1 btn-lg" style="line-height:1;border-radius:6px">Deutsch (German)</a>
+<a href="/glossary/arabic" class="btn btn-primary py-2 m-1 btn-lg" style="line-height:1;border-radius:6px"> عربي (Arabic)</a></div>
+
 ### لمحة عامّة
  
 في العقد الأخير، قدَّمت حركة العلم المفتوح (Open Science) العديد من الممارسات البحثيّة الجديدة وقامت بتطوير ممارسات أخرى قائمة. ويمكن أن يبدو اتّساع نطاق هذه المبادرات أمرا مربكاً، ممّا يجعل المقدمات السَّهلة الفهم لهذه الموضوعات أمرا مهماً (على سبيل المثال، Cruwell et al., 2019 ; Kathawalla, Silverstein, & Syed, 2020). إنّ إنشاء فهم مشترك لأهداف هذه المبادرات يُسهَل مناقشة نقاط القوة والضّعف لكلّ ممارسة، ممّا يساعدنا في النّهاية على العمل نحو تحقيق يوتوبيا للبحث العلمي (Nosek & Bar-Anan, 2012).
