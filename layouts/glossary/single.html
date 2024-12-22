@@ -42,6 +42,33 @@
     font-weight: bold;
     color: #007bff;
   }
+
+  .language-switcher {
+    margin-top: 20px;
+    font-family: Arial, sans-serif;
+  }
+
+  .language-switcher ul {
+    list-style: disc;
+    margin-left: 20px;
+    padding-left: 0;
+  }
+
+  .language-switcher li {
+    margin-bottom: 5px;
+  }
+
+  .language-switcher a {
+    text-decoration: none;
+    color: #007bff;
+    font-weight: bold;
+  }
+
+  .language-switcher a:hover {
+    text-decoration: underline;
+  }
+
+
 </style>
 
 
@@ -93,6 +120,35 @@
       <article class="article">
         <div class="docs-article-container mx-auto">
           {{ partial "resource_page_header" . }}
+
+<div class="language-switcher">
+  {{ $currentLang := .Params.language | default "english" }}
+  {{ $currentPath := .File.Path }}
+  {{ $allLanguages := slice "english" "german" "arabic" }}
+  {{ $availableLanguages := slice }}
+
+  {{ range $lang := $allLanguages }}
+    {{ if ne $lang $currentLang }}
+      {{ $langPath := replace $currentPath (printf "/%s/" $currentLang) (printf "/%s/" $lang) }}
+      {{ $langPage := site.GetPage $langPath }}
+      {{ if $langPage }}
+        {{ $availableLanguages = $availableLanguages | append $lang }}
+      {{ end }}
+    {{ end }}
+  {{ end }}
+
+  {{ if gt (len $availableLanguages) 0 }}
+    <strong>Also available in: </strong>
+    {{ range $lang := $availableLanguages }}
+      {{ $langPath := replace $currentPath (printf "/%s/" $currentLang) (printf "/%s/" $lang) }}
+      {{ $langPage := site.GetPage $langPath }}
+      <a href="{{ $langPage.RelPermalink }}">{{ $lang | title }}</a>{{ if not (eq (add 1 (index $availableLanguages | len)) $lang) }} | {{ end }}
+    {{ end }}
+    <br /> &nbsp;
+  {{ end }}
+</div>
+
+
           {{ with .Params.definition }}
           <p class="pub-abstract border-bottom pb-1"><b>{{ index (index $dictionary $lang) "definition" }}: </b>{{ . | markdownify }}</p>
           {{ end }}
