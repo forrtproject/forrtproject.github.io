@@ -22,7 +22,7 @@
         "Connor Keating",
         "Graham Reid",
         "Timo Roettger",
-        "Robert M. Ross ",
+        "Robert M. Ross",
         "Flávio Azevedo"
     ],
     "language": "german"

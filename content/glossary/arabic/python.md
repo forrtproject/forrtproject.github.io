@@ -1,7 +1,7 @@
 {
     "type": "glossary",
-    "title": "Python (بايثون)",
-    "definition": "A n interpreted general-purpose programming language, intended to be user-friendly and easily readable, originally created by Guido van Rossum in 1991. Python has an extensive library of additional features with accessible documentation for tasks ranging from data analysis to experiment creation. It is a popular programming language in data science, machine learning and web development. Similar to R Markdown, Python can be presented in an interactive online format called a Jupyter notebook, combining code, data, and text. [:ARABIC] التَّعريف: لغة برمجة عامَّة الغرض، تهدف إلى أن تكون سهلة الاستخدام وسهلة القراءة.  تم إنشاؤها في الأصل بواسطة غويدو فإنَّ روسوم في عام 1991. و تمتلك بايثون مكتبة واسعة من المميّزات الإضافيَّة مع وثائق يمكن الوصول إليها للمهام التي تتراوح من تحليل البيانات إلى إنشاء التَّجارب. تعد بايثون لغة برمجة شائعة في علوم البيانات، والتَّعلُّم الآلي وتطوير الشبكة. على غرار موقع آر مارك داون (R Markdown)، يمكن تقديم بايثون بتنسيق تفاعلي عبر الإنترنت يسمى مشروع جوبتر نوت بوك (Jupyter notebook)، والذي يجمع بين التَّعليمات البرمجيَّة، والبيانات والنُّصوص. [:ARABIC] التَّعريف: لغة برمجة عامَّة الغرض، تهدف إلى أن تكون سهلة الاستخدام وسهلة القراءة.  تم إنشاؤها في الأصل بواسطة غويدو فإنَّ روسوم في عام 1991. و تمتلك بايثون مكتبة واسعة من المميّزات الإضافيَّة مع وثائق يمكن الوصول إليها للمهام التي تتراوح من تحليل البيانات إلى إنشاء التَّجارب. تعد بايثون لغة برمجة شائعة في علوم البيانات، والتَّعلُّم الآلي وتطوير الشبكة. على غرار موقع آر مارك داون (R Markdown)، يمكن تقديم بايثون بتنسيق تفاعلي عبر الإنترنت يسمى مشروع جوبتر نوت بوك (Jupyter notebook)، والذي يجمع بين التَّعليمات البرمجيَّة، والبيانات والنُّصوص. المصطلحات ذات الصِّلة: جوبترJupyter، مات بلوت ليب (Matplotlib)،  نمباي (NumPy، اوبن سيسمي (OpenSesame)، بيسكو بي (PsychoPy)، لغة الآر المصطلحات ذات الصِّلة: جوبترJupyter، مات بلوت ليب (Matplotlib) ، نمباي (NumPy، اوبن سيسمي (OpenSesame)، بيسكو بي (PsychoPy) ، لغة الآر",
+    "title": "Python (بايثون)",
+    "definition": "التَّعريف: لغة برمجة عامَّة الغرض، تهدف إلى أن تكون سهلة الاستخدام وسهلة القراءة.  تم إنشاؤها في الأصل بواسطة غويدو فإنَّ روسوم في عام 1991\\. و تمتلك بايثون مكتبة واسعة من المميّزات الإضافيَّة مع وثائق يمكن الوصول إليها للمهام التي تتراوح من تحليل البيانات إلى إنشاء التَّجارب. تعد بايثون لغة برمجة شائعة في علوم البيانات، والتَّعلُّم الآلي وتطوير الشبكة. على غرار موقع آر مارك داون (R Markdown)، يمكن تقديم بايثون بتنسيق تفاعلي عبر الإنترنت يسمى مشروع جوبتر نوت بوك (Jupyter notebook)، والذي يجمع بين التَّعليمات البرمجيَّة، والبيانات والنُّصوص.  المصطلحات ذات الصِّلة: جوبترJupyter، مات بلوت ليب (Matplotlib)،  نمباي (NumPy، اوبن سيسمي (OpenSesame)، بيسكو بي (PsychoPy)، لغة الآر",
     "related_terms": [
         "Jupyter",
         "Matplotlib",
@@ -21,7 +21,7 @@
     ],
     "reviewed_by": [
         "James E. Bartlett",
-        "Alexander Hart ",
+        "Alexander Hart",
         "Helena Hartmann",
         "Dominik Kiersz",
         "Graham Reid",

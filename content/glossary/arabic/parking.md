@@ -1,7 +1,7 @@
 {
     "type": "glossary",
-    "title": "PARKing (التَّسجيل بعد معرفة النَّتائج)",
-    "definition": "PARKing (preregistering after results are known) is defined as the practice where researchers complete an experiment (possibly with infinite re-experimentation) before preregistering. This practice invalidates the purpose of preregistration, and is one of the QRPs ( or, even scientific misconduct) that try to gain only \"credibility that it has been preregistered.\" [:ARABIC] التَّعريف: ممارسة يكمل فيها الباحثون تجربة، وربَّما عدد غير محدود من التَّجارب قبل التَّسجيل المسبق. [:ARABIC] التَّعريف: ممارسة يكمل فيها الباحثون تجربة، وربَّما عدد غير محدود من التَّجارب قبل التَّسجيل المسبق. وهذه الممارسة تبطل الغرض من التَّسجيل المسبق، وهي واحدة من ممارسات إعداد التَّقارير المشكوك (أو حتى سوء السُّلوك العلمي) الذي يحاول اكتساب مصداقيَّة التَّسجيل المسبق. وهذه الممارسة تبطل الغرض من التَّسجيل المسبق، وهي واحدة من ممارسات إعداد التَّقارير المشكوك (أو حتى سوء السُّلوك العلمي) الذي يحاول اكتساب مصداقيَّة التَّسجيل المسبق. المصطلحات ذات الصِّلة: النَّقد بعد معرفة النَّتائج، ممارسات البحث المشكوك فيها، أو ممارسات إعداد التَّقارير المشكوك فيها ، سباركنغ المصطلحات ذات الصِّلة: النَّقد بعد معرفة النَّتائج، ممارسات البحث المشكوك فيها، أو ممارسات إعداد التَّقارير المشكوك فيها ، سباركنغ",
+    "title": "PARKing (التَّسجيل بعد معرفة النَّتائج)",
+    "definition": "التَّعريف: ممارسة يكمل فيها الباحثون تجربة، وربَّما عدد غير محدود من التَّجارب قبل التَّسجيل المسبق.  وهذه الممارسة تبطل الغرض من التَّسجيل المسبق، وهي واحدة من ممارسات إعداد التَّقارير المشكوك (أو حتى سوء السُّلوك العلمي) الذي يحاول اكتساب مصداقيَّة التَّسجيل المسبق.  المصطلحات ذات الصِّلة: النَّقد بعد معرفة النَّتائج، ممارسات البحث المشكوك فيها، أو ممارسات إعداد التَّقارير المشكوك فيها ، سباركنغ",
     "related_terms": [
         "CARKing",
         "HARKing",
@@ -10,7 +10,7 @@
         "SPARKing"
     ],
     "references": [
-        "Ikeda et al. (2019) Ikeda et al. (2019) ; Yamada (2018) Yamada (2018)"
+        "[Ikeda et al. (2019)](https://www.jstage.jst.go.jp/article/sjpr/62/3/62_281/_pdf/-char/ja); [Yamada (2018)](https://www.frontiersin.org/articles/10.3389/fpsyg.2018.01831/full)"
     ],
     "alt_related_terms": [
         null

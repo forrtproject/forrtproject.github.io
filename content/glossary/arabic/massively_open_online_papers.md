@@ -1,10 +1,10 @@
 {
     "type": "glossary",
-    "title": "Massively Open Online Papers (MOOPs) (الأوراق الضخمة والمفتوحة على الإنترنت)",
-    "definition": "Unlike the traditional collaborative article, a MOOP follows an open participatory and dynamic model that is not restricted by a predetermined list of contributors. [:ARABIC] التَّعريف: تتبع الأوراق الضَّخمة المفتوحة على الإنترنت نموذجًا مفتوحًا تشاركيًا يمتاز بالمرونة، ولا تحكمه قائمة محدَّدة من المشاركين، على عكس المقال التَّقليدي المشترك. [:ARABIC] التَّعريف: تتبع الأوراق الضَّخمة المفتوحة على الإنترنت نموذجًا مفتوحًا تشاركيًا يمتاز بالمرونة، ولا تحكمه قائمة محدَّدة من المشاركين، على عكس المقال التَّقليدي المشترك. المصطلحات ذات الصِّلة: علم المواطن، البحث الجماعي، العديد من المؤلِّفين. المصطلحات ذات الصِّلة: علم المواطن، البحث الجماعي، العديد من المؤلِّفين.",
+    "title": "Massively Open Online Papers (MOOPs) (الأوراق الضخمة والمفتوحة على الإنترنت)",
+    "definition": "التَّعريف: تتبع الأوراق الضَّخمة المفتوحة على الإنترنت نموذجًا مفتوحًا تشاركيًا يمتاز بالمرونة، ولا تحكمه قائمة محدَّدة من المشاركين، على عكس المقال التَّقليدي المشترك.  المصطلحات ذات الصِّلة: علم المواطن، البحث الجماعي، العديد من المؤلِّفين.",
     "related_terms": [
         "Citizen science",
-        "C ollaboration ",
+        "Collaboration",
         "Crowdsourced Research",
         "Many authors",
         "Team science"

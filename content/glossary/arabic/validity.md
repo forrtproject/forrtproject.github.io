@@ -1,33 +1,39 @@
 {
     "type": "glossary",
-    "title": "Validity (الصِّدق)",
-    "definition": "The practice of managing and recording changes to digital resources (e.g. files, websites, programmes, etc.) over time so that you can recall specific versions later. Version control systems are designed to record the history of changes (who, what and when), and help to avoid human errors (e.g. working on the wrong version). For example, the Git version control system is a widely used software tool that originally helped software developers to version control shared code and is now used across many scientific disciplines to manage and share files. [:ARABIC] التَّعريف: ممارسة إدارة وتسجيل التَّغيُّرات التي تطرأ على الموارد الرَّقميَّة،مثل: الملفَّات، والمواقع الإلكترونيَّة، والبرامج وما إلى ذلك… [:ARABIC] التَّعريف: ممارسة إدارة وتسجيل التَّغيُّرات التي تطرأ على الموارد الرَّقميَّة،مثل: الملفَّات، والمواقع الإلكترونيَّة، والبرامج وما إلى ذلك… بمرور الوقت بحيث يمكن مراجعة إصدارات معيَّنة لاحقًا. تم تصميم أنظمة التَّحكم في الإصدار لتسجيل محفوظات التَّغييرات (من، وماذا، ومتى)، والمساعدة على تجنُّب الأخطاء البشريَّة، مثل العمل على إصدار خاطئ، على سبيل المثال: يعد نظام التَّحكم في إصدار Git أداة برمجيَّة مستخدمة على نطاق واسع حيث ساعدت مطوري البرامج في الأصل على التَّحكُّم في إصدار التَّعليمات البرمجيَّة المشتركة، ويستخدم الآن في العديد من التَّخصُّصات العلميَّة لإدارة الملفات ومشاركتها. بمرور الوقت بحيث يمكن مراجعة إصدارات معيَّنة لاحقًا. تم تصميم أنظمة التَّحكم في الإصدار لتسجيل محفوظات التَّغييرات (من، وماذا، ومتى)، والمساعدة على تجنُّب الأخطاء البشريَّة، مثل العمل على إصدار خاطئ، على سبيل المثال: يعد نظام التَّحكم في إصدار Git أداة برمجيَّة مستخدمة على نطاق واسع حيث ساعدت مطوري البرامج في الأصل على التَّحكُّم في إصدار التَّعليمات البرمجيَّة المشتركة، ويستخدم الآن في العديد من التَّخصُّصات العلميَّة لإدارة الملفات ومشاركتها. المصطلحات ذات الصِّلة: المتتبِّع الدُّولي العالمي، قابليَّة إعادة الإنتاج، إدارة تكوين البرامج، إدارة شفرة المصدر، التَّحكم في المصدر. المصطلحات ذات الصِّلة: ا لمتتبِّع الدُّولي العالمي ، قابليَّة إعادة الإنتاج، إدارة تكوين البرامج، إدارة شفرة المصدر، التَّحكم في المصدر.",
+    "title": "Validity (الصِّدق)",
+    "definition": "التَّعريف: يشير الصِّدق إلى تطبيق المبادئ الإحصائيَّة للوصول إلى مفاهيم، أو استنتاجات، أو مقاييس ذات أساس جيد؛ أي من المحتمل أن تتطابق بدقَّة مع الواقع.  وفي القياس النَّفسي، يشير الصِّدق إلى المدى الذي يقيس فيه شيء ما، و يهدف أو يدّّعي قياسه. يشمل هذا المصطلح العام عدَّة أنواع مختلفة من الصِّدق، منها على سبيل المثال: الصِّدق الدَّاخلي، صدق البناء، الصِّدق الظَّاهري، صدق المحك، الصِّدق التَّشخيصي، الصِّدق التَّمييزي، الصِّدق التَّلازمي، الصِّدق التَّقاربي، الصِّدق التَّنبؤي، الصِّدق الخارجي.  المصطلحات ذات الصِّلة: السَّببية، الصِّدق البنائي، صدق المحتوى، صدق المحك، الصِّدق الخارجي، الصِّدق الظَّاهري، الصِّدق الدَّاخلي، القياس، ممارسات القياس المشكوك فيها، القياس النَّفسي، الثَّبات، القوة الإحصائيَّة، الصِّدق الإحصائي، الاختبار.",
     "related_terms": [
-        "Git",
-        "Reproducibility",
-        "Software configuration management",
-        "Source code management",
-        "Source control"
+        "Causality",
+        "Construct validity",
+        "Content validity",
+        "Criterion validity",
+        "External validity",
+        "Face validity",
+        "Internal validity",
+        "Measurement",
+        "Questionable Measurement Practices (QMP)",
+        "Psychometry",
+        "Reliability",
+        "Statistical power",
+        "Statistical validity",
+        "Test"
     ],
     "references": [
-        "https://git-scm.com/book/en/v2/Getting-Started-About-Version-Control https://git-scm.com/book/en/v2/Getting-Started-About-Version-Control"
+        "Campbell (1957); Boorsboom et al. (2004); Kelley (1927)"
     ],
     "alt_related_terms": [
         null
     ],
     "drafted_by": [
-        "Mahmoud Elsherif"
+        "Tamara Kalandadze; Madeleine Pownall; Flávio Azevedo"
     ],
     "reviewed_by": [
-        "Sarah Ashcroft-Jones",
-        "Thomas Rhys Evans",
-        "Helena Hartmann",
-        "Matt Jaquiery",
+        "Eduardo Garcia-Garzon",
+        "Halil E. Kocalar",
+        "Annalise A. LaPlume",
+        "Joanne McCuaig",
         "Adam Parker",
-        "Charlotte R. Pennington",
-        "Robert M. Ross",
-        "Timo Roettger",
-        "Andrew J. Stewart"
+        "Charlotte R. Pennington"
     ],
     "language": "arabic"
 }

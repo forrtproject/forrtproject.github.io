@@ -16,8 +16,8 @@
     ],
     "reviewed_by": [
         "Sarah Ashcroft-Jones",
-        " Mahmoud Elsherif",
-        " Charlotte R. Pennington",
+        "Mahmoud Elsherif",
+        "Charlotte R. Pennington",
         "Graham Reid"
     ],
     "language": "german"

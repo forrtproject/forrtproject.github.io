@@ -1,11 +1,11 @@
 {
     "type": "glossary",
-    "title": "Gaming (the system) (التَّلاعب بالنِّظام)",
-    "definition": "Adopting questionable research practices (QRPs, e.g., salami slicing of an academic paper) that would align with academic incentive structures that benefit the academic (e.g. in prestige, hiring, or promotion) regardless of whether they support the process of scholarship. If systems rely on metrics to determine an outcome (e.g. academic credit) those metrics can be subject to intentional manipulation (Naudet et al., 2018) or “gamed”. Where promotions, hiring, and tenure are based on flawed metrics they may disfavor openness, rigor, and transparent work (Naudet et al., 2018) - for example favoring “quantity over quality” - and exacerbate existing inequalities.",
+    "title": "Gaming (the system) (التَّلاعب بالنِّظام)",
+    "definition": "Adopting questionable research practices (QRPs, e.g., salami slicing of an academic paper) that would align with academic incentive structures that benefit the academic (e.g. in prestige, hiring, or promotion) regardless of whether they support the process of scholarship. If systems rely on metrics to determine an outcome (e.g. academic credit) those metrics can be subject to intentional manipulation (Naudet et al., 2018\\) or “gamed”. Where promotions, hiring, and tenure are based on flawed metrics they may disfavor openness, rigor, and transparent work (Naudet et al., 2018\\) \\- for example favoring “quantity over quality” \\- and exacerbate existing inequalities.",
     "related_terms": [
         "Incentive structure",
         "Journal Impact Factor",
-        "P -hacking"
+        "P*\\-hacking"
     ],
     "references": [
         "Moher et al. (2018); Naudet et al. (2018)"
@@ -20,7 +20,7 @@
         "Sarah Ashcroft-Jones",
         "Helena Hartmann",
         "Sam Parsons",
-        "Charlotte R. Pennington [:ARABIC] التَّعريف: اتباع ممارسات بحثيَّة مشبوهة كالتَّجزئة غير المبررة لورقة أكاديميَّة) والتي من شأنها أن تتماشى مع  أنظمة الحوافز الأكاديميَّة التي تفيد الباحث، مثلًا: في المكانة، أو التَّوظيف، أو التَّرقية، بغض النَّظر عمَّا إذا كانت تدعم المعرفة. [:ARABIC] التَّعريف: اتباع ممارسات بحثيَّة مشبوهة كالتَّجزئة غير المبررة لورقة أكاديميَّة) والتي من شأنها أن تتماشى مع  أنظمة الحوافز الأكاديميَّة التي تفيد الباحث، مثلًا: في المكانة، أو التَّوظيف، أو التَّرقية، بغض النَّظر عمَّا إذا كانت تدعم المعرفة. إذا كانت الأنظمة تعتمد على المقاييس لتحديد نتيجة ما (مثل السُّمعة الأكاديميَّة)، فقد تتعرَّض هذه المقاييس للتَّلاعب المتعمَّد (Naudet et al., 2018). وعندما تستند التَّرقيات، والتَّوظيف، والتَّثبيت الوظيفي إلى مقاييس معيبة، فقد لا يحبذ البعض الانفتاح، والصَّرامة، والعمل الشَّفاف (Naudet et al., 2018) - وذلك كتفضيل \"البحوث الكميَّة على النوعية\" - وتؤدي إلى تفاقم أوجه عدم المساواة القائمة. إذا كانت الأنظمة تعتمد على المقاييس لتحديد نتيجة ما (مثل السُّمعة الأكاديميَّة)، فقد تتعرَّض هذه المقاييس للتَّلاعب المتعمَّد (Naudet et al., 2018). وعندما تستند التَّرقيات، والتَّوظيف، والتَّثبيت الوظيفي إلى مقاييس معيبة، فقد لا يحبذ البعض الانفتاح، والصَّرامة، والعمل الشَّفاف (Naudet et al., 2018) - وذلك كتفضيل \"البحوث الكميَّة على النوعية\" - وتؤدي إلى تفاقم أوجه عدم المساواة القائمة. المصطلحات ذات الصِّلة: هيكل الحوافز، معامل تأثير المجلَّة، قرصنة القيمة الاحتماليَّة. المصطلحات ذات الصِّلة : هيكل الحوافز، معامل تأثير المجلَّة، قرصنة القيمة الاحتماليَّة."
+        "Charlotte R. Pennington  \\[:ARABIC\\] التَّعريف: اتباع ممارسات بحثيَّة مشبوهة كالتَّجزئة غير المبررة لورقة أكاديميَّة) والتي من شأنها أن تتماشى مع  أنظمة الحوافز الأكاديميَّة التي تفيد الباحث، مثلًا: في المكانة، أو التَّوظيف، أو التَّرقية، بغض النَّظر عمَّا إذا كانت تدعم المعرفة.  إذا كانت الأنظمة تعتمد على المقاييس لتحديد نتيجة ما (مثل السُّمعة الأكاديميَّة)، فقد تتعرَّض هذه المقاييس للتَّلاعب المتعمَّد (Naudet et al., 2018). وعندما تستند التَّرقيات، والتَّوظيف، والتَّثبيت الوظيفي إلى مقاييس معيبة، فقد لا يحبذ البعض الانفتاح، والصَّرامة، والعمل الشَّفاف (Naudet et al., 2018\\) \\- وذلك كتفضيل \"البحوث الكميَّة على النوعية\" \\- وتؤدي إلى تفاقم أوجه عدم المساواة القائمة.  المصطلحات ذات الصِّلة: هيكل الحوافز، معامل تأثير المجلَّة، قرصنة القيمة الاحتماليَّة."
     ],
     "language": "arabic"
 }

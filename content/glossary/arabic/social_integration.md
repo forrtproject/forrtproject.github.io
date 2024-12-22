@@ -1,7 +1,7 @@
 {
     "type": "glossary",
-    "title": "Social integration (الاندماج الاجتماعيّ)",
-    "definition": "Social integration is a multi-dimensional construct. In an academic context, social integration is related to the quantity and quality of the social interactions with staff and students, as well as the sense of connection and belonging to the university and the people within the institute. To be more specific, social support, trust, and connectedness are all variables that contribute to social integration. Social integration has important implications for academic outcomes and mental wellbeing (Evans & Rubin, 2021) . Working class students are less likely to integrate with other students, since they have differing social and economic backgrounds and less disposable income. Thus they are not able to experience as many educational and fiscal opportunities than others. In turn, this can lead to poor mental health and feelings of ostracism (Rubin, 2021). [:ARABIC] التَّعريف: الاندماج الاجتماعي هو مفهوم متعدِّد الأبعاد. في السِّياق الأكاديمي، يرتبط الاندماج الاجتماعي بكميَّة ونوعيَّة التَّفاعلات الاجتماعيَّة مع الموظفين والطُّلاب، إضافة إلى الشُّعور بالارتباط والانتماء إلى الجامعة والأفراد فيها. ولكي نكون أكثر تحديدًا ، فإنَّ الدَّعم الاجتماعي والثِّقة والتَّرابط كلها متغيرات تساهم في الاندماج الاجتماعي. للاندماج الاجتماعي آثار مهمة على النَّتائج الأكاديميَّة والصِّحة العقليَّة (Evans & Rubin, 2021)؛ فيقل احتمال اندماج طلاب الطَّبقة العاملة مع الطُّلاب الآخرين؛ نظرًا لأنَّ لديهم خلفيَّات اجتماعيَّة واقتصاديَّة مختلفة ودخلًا أقل، وبالتَّالي فإنَّهم غير قادرين على تجربة عدد مماثل من الفرص التَّعليميَّة والماليَّة. وهذا بدوره يمكن أن يؤدي إلى تدهور الصِّحة العقليَّة والشُّعور بالنبذ ​​(Rubin, 2021). [:ARABIC] التَّعريف: الاندماج الاجتماعي هو مفهوم متعدِّد الأبعاد. في السِّياق الأكاديمي، يرتبط الاندماج الاجتماعي بكميَّة ونوعيَّة التَّفاعلات الاجتماعيَّة مع الموظفين والطُّلاب، إضافة إلى الشُّعور بالارتباط والانتماء إلى الجامعة والأفراد فيها. ولكي نكون أكثر تحديدًا ، فإنَّ الدَّعم الاجتماعي والثِّقة والتَّرابط كلها متغيرات تساهم في الاندماج الاجتماعي. للاندماج الاجتماعي آثار مهمة على النَّتائج الأكاديميَّة والصِّحة العقليَّة ( Evans & Rubin, 2021 )؛ فيقل احتمال اندماج طلاب الطَّبقة العاملة مع الطُّلاب الآخرين؛ نظرًا لأنَّ لديهم خلفيَّات اجتماعيَّة واقتصاديَّة مختلفة ودخلًا أقل، وبالتَّالي فإنَّهم غير قادرين على تجربة عدد مماثل من الفرص التَّعليميَّة والماليَّة. وهذا بدوره يمكن أن يؤدي إلى تدهور الصِّحة العقليَّة والشُّعور بالنبذ ​​( Rubin, 2021 ). المصطلحات ذات الصِّلة: الطَّبقة الاجتماعيَّة المصطلحات ذات الصِّلة: الطَّبقة الاجتماعيَّة",
+    "title": "Social integration (الاندماج الاجتماعيّ)",
+    "definition": "التَّعريف: الاندماج الاجتماعي هو مفهوم متعدِّد الأبعاد. في السِّياق الأكاديمي، يرتبط الاندماج الاجتماعي بكميَّة ونوعيَّة التَّفاعلات الاجتماعيَّة مع الموظفين والطُّلاب، إضافة إلى الشُّعور بالارتباط والانتماء إلى الجامعة والأفراد فيها. ولكي نكون أكثر تحديدًا ، فإنَّ الدَّعم الاجتماعي والثِّقة والتَّرابط كلها متغيرات تساهم في الاندماج الاجتماعي. للاندماج الاجتماعي آثار مهمة على النَّتائج الأكاديميَّة والصِّحة العقليَّة (Evans & Rubin, 2021)؛ فيقل احتمال اندماج طلاب الطَّبقة العاملة مع الطُّلاب الآخرين؛ نظرًا لأنَّ لديهم خلفيَّات اجتماعيَّة واقتصاديَّة مختلفة ودخلًا أقل، وبالتَّالي فإنَّهم غير قادرين على تجربة عدد مماثل من الفرص التَّعليميَّة والماليَّة. وهذا بدوره يمكن أن يؤدي إلى تدهور الصِّحة العقليَّة والشُّعور بالنبذ ​​(Rubin, 2021).  المصطلحات ذات الصِّلة: الطَّبقة الاجتماعيَّة",
     "related_terms": [
         "Social class"
     ],
@@ -17,9 +17,8 @@
     "reviewed_by": [
         "Leticia Micheli",
         "Eliza Woodward",
-        " Julika Wolska ",
-        "Gerald Vineyard",
-        " Yu-Fang Yang ",
+        "Julika Wolska; Gerald Vineyard",
+        "Yu-Fang Yang",
         "Flávio Azevedo"
     ],
     "language": "arabic"

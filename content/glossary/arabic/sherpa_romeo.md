@@ -1,7 +1,7 @@
 {
     "type": "glossary",
-    "title": "Sherpa Romeo (شيربا روميو)",
-    "definition": "An online resource that collects and presents open access policies from publishers, from across the world, providing summaries of individual journal's copyright and open access archiving policies. [:ARABIC] التَّعريف: مصدر عبر الإنترنت يجمع، ويعرض سياسات الوصول المفتوح للنَّاشرين من جميع أنحاء العالم، ويقدِّم ملخَّصات لحقوق الطَّبع، والنَّشر، والأرشفة الخاصّة بكلِّ المجلَّة. [:ARABIC] التَّعريف: مصدر عبر الإنترنت يجمع، ويعرض سياسات الوصول المفتوح للنَّاشرين من جميع أنحاء العالم، ويقدِّم ملخَّصات لحقوق الطَّبع، والنَّشر، والأرشفة الخاصّة بكلِّ المجلَّة. المصطلحات ذات الصِّلة: فترة الحظر، الوصول المفتوح، حاجز مالي، الطّباعة الأوليَّة، مستودع  البيانات. المصطلحات ذات الصِّلة : فترة الحظر، الوصول المفتوح، حاجز مالي، الطّباعة الأوليَّة، مستودع  البيانات.",
+    "title": "Sherpa Romeo (شيربا روميو)",
+    "definition": "التَّعريف: مصدر عبر الإنترنت يجمع، ويعرض سياسات الوصول المفتوح للنَّاشرين من جميع أنحاء العالم، ويقدِّم ملخَّصات لحقوق الطَّبع، والنَّشر، والأرشفة الخاصّة بكلِّ المجلَّة.  المصطلحات ذات الصِّلة: فترة الحظر، الوصول المفتوح، حاجز مالي، الطّباعة الأوليَّة، مستودع  البيانات.",
     "related_terms": [
         "Embargo period",
         "Open access",
@@ -10,7 +10,7 @@
         "Repository"
     ],
     "references": [
-        "https://v2.sherpa.ac.uk/romeo/ https://v2.sherpa.ac.uk/romeo/"
+        "[https://v2.sherpa.ac.uk/romeo/](https://v2.sherpa.ac.uk/romeo/)"
     ],
     "alt_related_terms": [
         null

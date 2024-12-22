@@ -1,22 +1,22 @@
 {
     "type": "glossary",
-    "title": "Questionable Research Practices or Questionable Reporting Practices (QRPs) (Fragwürdige Forschungs- oder Veröffentlichungspraktiken)",
-    "definition": "Eine Reihe von Aktivitäten, die absichtlich oder unabsichtlich Daten zugunsten der eigenen Hypothesen eines Forschenden verzerren - oder Auslassungen bei der Berichterstattung über solche Praktiken - einschließlich selektiver Einbeziehung von Daten, Hypothesenbildung nach Bekanntwerden der Ergebnisse (HARKing) und p-hacking. Verbreitet von John et al. (2012).",
+    "title": "Questionable Research Practices or Questionable Reporting Practices (QRPs) (Fragwürdige Forschungs- oder Veröffentlichungspraktiken)",
+    "definition": "Eine Reihe von Aktivitäten, die absichtlich oder unabsichtlich Daten zugunsten der eigenen Hypothesen eines Forschenden verzerren \\- oder Auslassungen bei der Berichterstattung über solche Praktiken \\- einschließlich selektiver Einbeziehung von Daten, Hypothesenbildung nach Bekanntwerden der Ergebnisse (HARKing) und p-hacking. Verbreitet von John et al. (2012).",
     "related_terms": [
-        "C reative use of outliers",
+        "Creative use of outliers",
         "Fabrication",
         "File-drawer",
         "Garden of forking paths",
         "HARKing",
         "Nonpublication of data",
-        "P -hacking",
-        "P -value fishing",
+        "P*\\-hacking",
+        "P*\\-value fishing",
         "Partial publication of data",
         "Post-hoc storytelling",
         "Preregistration",
         "Questionable Measurement Practices (QMP)",
         "Researcher degrees of freedom",
-        "Reverse p -hacking",
+        "Reverse *p*\\-hacking",
         "Salami slicing"
     ],
     "references": [
@@ -35,7 +35,7 @@
         "Mariella Paul",
         "Eike Mark Rinke",
         "Timo Roettger",
-        "F lávio Azevedo"
+        "Flávio Azevedo"
     ],
     "language": "german"
 }

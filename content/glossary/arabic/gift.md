@@ -1,26 +1,26 @@
 {
     "type": "glossary",
     "title": "Gift (or Guest) Authorship (التَّأليف المُهدى (أو المؤلف الضّيف) )",
-    "definition": "The inclusion in an article’s author list of individuals who do not meet the criteria for authorship. As authorship is associated with benefits including peer recognition and financial rewards, there are incentives for inclusion as an author on published research. Gifting authorship, or extending authorship credit to an individual who does not merit such recognition, can be intended to help the gift recipient, repay favors (including reciprocal gift authorship), maintain personal and professional relationships, and enhance chances of publication. Gift authorship is widely considered an unethical practice. [:ARABIC] التَّعريف: إضافة أفراد كمؤلفين لمقالة وهم لا يستوفون معايير التَّأليف؛ نظرًا لأنَّ التَّأليف يرتبط بمزايا كتقدير الأقران، ومكافآت ماليَّة، فهناك حوافز للإدراج كمؤلف في البحوث المنشورة. [:ARABIC] التَّعريف: إضافة أفراد كمؤلفين لمقالة وهم لا يستوفون معايير التَّأليف؛ نظرًا لأنَّ التَّأليف يرتبط بمزايا كتقدير الأقران، ومكافآت ماليَّة، فهناك حوافز للإدراج كمؤلف في البحوث المنشورة. قد يهدف إهداء التَّأليف إلى فرد لا يستحق هذا الاعتراف لمساعدة متلقي الهديّة، أو رد لجميل (بما في ذلك الإهداء المتبادل للتَّأليف)، أو الحفاظ على العلاقات الشَّخصيَّة، والمهنيَّة، أو تعزيز فرص النَّشر. قد يهدف إهداء التَّأليف إلى فرد لا يستحق هذا الاعتراف لمساعدة متلقي الهديّة، أو رد لجميل (بما في ذلك الإهداء المتبادل للتَّأليف)، أو الحفاظ على العلاقات الشَّخصيَّة، والمهنيَّة، أو تعزيز فرص النَّشر. يعد إهداء التَّأليف ممارسة غير أخلاقيَّة على نطاق واسع.  يعد إهداء التَّأليف ممارسة غير أخلاقيَّة على نطاق واسع. المصطلحات ذات الصِّلة: التَّأليف، تصنيف أدوار المؤلفين. المصطلحات ذات الصِّلة: التَّأليف، تصنيف أدوار المؤلفين.",
+    "definition": "التَّعريف: هي حزمة برامج لتتبع التَّغييرات في مجموعة محليَّة من الملفات (التَّحكُّم في الإصدار المحليّ)، طورها في البداية لينوس تورفالدس. وبشكل عام يستخدمه المبرمجون لتتبع وتطوير النُّصوص البرمجيَّة داخل دليل، أو مجلَّد، أو نظام ملفات.  يمكن للمتتبِّع الدُّولي العالميّ الوصول (Git) إلى خدمات استضافة المستودعات عن بُعد (مثل GitHub) للتّحكم في الإصدار عن بُعد الذي يتيح تطوير البرامج التَّعاونيَّة عن طريق تحميل المساهمات من نظام محلي. وجدت هذه العمليَّة طريقها إلى العمليَّة العلميَّة لتمكين البيانات المفتوحة، والنُّصوص البرمجيَّة المفتوحة، والتَّحليلات القابلة للتِّكرار. المصطلحات ذات الصِّلة:  Github،مستودع البيانات، التحكم في الإصدار.",
     "related_terms": [
-        "Authorship",
-        "CRediT"
+        "GitHub",
+        "Repository",
+        "Version control"
     ],
     "references": [
-        "Bhopal et al. (1997); ICMJE (2019)"
+        "Kalliamvakov et al. (2014); Scopatz and Huff (2015); Vuorre and Curley (2018); [https://github.com/git/git/commit/e83c5163316f89bfbde7d9ab23ca2e25604af290](https://github.com/git/git/commit/e83c5163316f89bfbde7d9ab23ca2e25604af290)"
     ],
     "alt_related_terms": [
         null
     ],
     "drafted_by": [
-        "Bradley Baker"
+        "Emma Norris"
     ],
     "reviewed_by": [
-        "Helena Hartmann",
-        "Aoife O’Mahony",
-        "Sam Parsons",
-        "Charlotte R. Pennington",
-        "Flávio Azevedo"
+        "Adrien Fillon",
+        "Bettina M.J. Kern",
+        "Dominik Kiersz",
+        "Robert M. Ross"
     ],
     "language": "arabic"
 }

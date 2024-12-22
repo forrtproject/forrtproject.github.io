@@ -1,7 +1,7 @@
 {
     "type": "glossary",
-    "title": "G*Power",
-    "definition": "Kostenlose Statistiksoftware zur Durchführung von Power-Analysen. Man gibt den gewünschten statistischen Test (z. B. t-Test, Regression, ANOVA) und drei der folgenden Punkte an: die Anzahl der Gruppen/Beobachtungen, die Effektgröße, das Signifikanzniveau oder die Power. Aus den drei ausgewählten Parametern wird dann der vierte Parameter, der nicht ausgewählt wurde, bestimmt.",
+    "title": "GPower",
+    "definition": "Free to use statistical software for performing power analyses. The user specifies the desired statistical test (e.g. t-test, regression, ANOVA), and three of the following: the number of groups/observations, effect size, significance level, or power, in order to calculate the unspecified aspect.",
     "related_terms": [
         "Power analysis",
         "Sample size justification",
@@ -22,5 +22,8 @@
         "Kai Krautter",
         "Charlotte R. Pennington"
     ],
-    "language": "german"
+    "language": "english",
+    "aliases": [
+        "/glossary/gpower"
+    ]
 }

@@ -1,7 +1,7 @@
 {
     "type": "glossary",
-    "title": "Publish or Perish (النَّشر أو  الفناء )",
-    "definition": "Definition : An aphorism describing the pressure researchers feel to publish academic manuscripts, often in high prestige academic journals, in order to have a successful academic career. This pressure to publish a high quantity of manuscripts can go at the expense of the quality of the manuscripts. This institutional pressure is exacerbated by hiring procedures and funding decisions strongly focusing on the number and impact of publications. [:ARABIC] التَّعريف: قول مأثور يصف الضَّغط الذي يتعرَّض له الباحثون لنشر عدد كبير من الأبحاث في مجلات أكاديميَّة مرموقة بغرض النَّجاح في مهنهم الأكاديميَّة، يؤثِّر هذا الضَّغط على جودة البحوث لتركيزه على كمية عوضاً عن جودتها، كما يتفاقم هذا الضَّغط المؤسَّسي باعتماد إجراءات التَّوظيف، وقرارات التَّمويل المؤسَّسيَّة على عدد البحوث المنشورة ومعامل تأثيرها. [:ARABIC] التَّعريف: قول مأثور يصف الضَّغط الذي يتعرَّض له الباحثون لنشر عدد كبير من الأبحاث في مجلات أكاديميَّة مرموقة بغرض النَّجاح في مهنهم الأكاديميَّة، يؤثِّر هذا الضَّغط على جودة البحوث لتركيزه على كمية عوضاً عن جودتها، كما يتفاقم هذا الضَّغط المؤسَّسي باعتماد إجراءات التَّوظيف، وقرارات التَّمويل المؤسَّسيَّة على عدد البحوث المنشورة ومعامل تأثيرها. المصطلحات ذات الصِّلة: هيكل الحوافز، معامل تأثير المجلَّة، أزمة إعادة الإنتاج (أو أزمة التِّكرار)، التَّقطيع غير المبرَّر، العلم البطيء. المصطلحات ذات الصِّلة: هيكل الحوافز، معامل تأثير المجلَّة، أزمة إعادة الإنتاج (أو أزمة التِّكرار)، التَّقطيع غير المبرَّر، العلم البطيء.",
+    "title": "Publish or Perish (النَّشر أو  الفناء )",
+    "definition": "التَّعريف: قول مأثور يصف الضَّغط الذي يتعرَّض له الباحثون لنشر عدد كبير من الأبحاث في مجلات أكاديميَّة مرموقة بغرض النَّجاح في مهنهم الأكاديميَّة، يؤثِّر هذا الضَّغط على جودة البحوث لتركيزه على كمية عوضاً عن جودتها، كما يتفاقم هذا الضَّغط المؤسَّسي باعتماد إجراءات التَّوظيف، وقرارات التَّمويل المؤسَّسيَّة على عدد البحوث المنشورة ومعامل تأثيرها.  المصطلحات ذات الصِّلة: هيكل الحوافز، معامل تأثير المجلَّة، أزمة إعادة الإنتاج (أو أزمة التِّكرار)، التَّقطيع غير المبرَّر، العلم البطيء.",
     "related_terms": [
         "Incentive structure",
         "Journal Impact Factor",
@@ -20,8 +20,8 @@
     ],
     "reviewed_by": [
         "Nick Ballou",
-        " Mahmoud Elsherif",
-        " Helena Hartmann",
+        "Mahmoud Elsherif",
+        "Helena Hartmann",
         "Annalise A. LaPlume",
         "Sam Parsons",
         "Timo Roettger",

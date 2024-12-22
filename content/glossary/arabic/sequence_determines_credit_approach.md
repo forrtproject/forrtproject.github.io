@@ -1,7 +1,7 @@
 {
     "type": "glossary",
-    "title": "Sequence-determines-credit approach (SDC) (نهج التَّسلسل الذي يحدِّد المساهمة )",
-    "definition": "An authorship system that assigns authorship order based on the contribution of each author. The names of the authors are listed according to their contribution in descending order with the most contributing author first and the least contributing author last. [:ARABIC] التَّعريف: نظام تأليف يحدِّد ترتيب التَّأليف بناءً على مساهمة كلِّ مؤلِّف. ويتمّ سرد أسماء المؤلِّفين وفقًا لمساهمتهم بترتيب تنازلي  بدءًا بالمؤلِّف الأكثر مساهمةً وانتهاءً بالمؤلِّف الأقل مساهمة. [:ARABIC] التَّعريف: نظام تأليف يحدِّد ترتيب التَّأليف بناءً على مساهمة كلِّ مؤلِّف. ويتمّ سرد أسماء المؤلِّفين وفقًا لمساهمتهم بترتيب تنازلي  بدءًا بالمؤلِّف الأكثر مساهمةً وانتهاءً بالمؤلِّف الأقل مساهمة. المصطلحات ذات الصِّلة: التَّأليف، مبدأ التَّأكيد على  المؤلِّفين الأول والأخير المصطلحات ذات الصِّلة: التَّأليف، مبدأ التَّأكيد على  المؤلِّفين الأول والأخير",
+    "title": "Sequence-determines-credit approach (SDC) (نهج التَّسلسل الذي يحدِّد المساهمة )",
+    "definition": "التَّعريف: نظام تأليف يحدِّد ترتيب التَّأليف بناءً على مساهمة كلِّ مؤلِّف. ويتمّ سرد أسماء المؤلِّفين وفقًا لمساهمتهم بترتيب تنازلي  بدءًا بالمؤلِّف الأكثر مساهمةً وانتهاءً بالمؤلِّف الأقل مساهمة.  المصطلحات ذات الصِّلة: التَّأليف، مبدأ التَّأكيد على  المؤلِّفين الأول والأخير",
     "related_terms": [
         "Authorship",
         "First-last-author-emphasis norm (FLAE)"

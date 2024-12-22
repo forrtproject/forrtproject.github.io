@@ -1,7 +1,7 @@
 {
     "type": "glossary",
-    "title": "Economic and societal impact (الأثر الاقتصادي والاجتماعي)",
-    "definition": "The contribution a research item makes to the broader economy and society. It also captures the benefits of research to individuals, organisations, and/or nations . [:ARABIC] التَّعريف: المساهمة التي يقدمها بحث ما للاقتصاد، والمجتمع بشكل عام. [:ARABIC] التَّعريف : المساهمة التي يقدمها بحث ما للاقتصاد، والمجتمع بشكل عام. كما يُجسد هذا المصطلح فوائد البحث عن الأفراد والمؤسسات و الدُّول. كما يُجسد هذا المصطلح فوائد البحث عن الأفراد والمؤسسات و الدُّول. المصطلحات ذات الصِّلة: التَّأثير الأكاديمي. المصطلحات ذات الصِّلة : التَّأثير الأكاديمي.",
+    "title": "Economic and societal impact (الأثر الاقتصادي والاجتماعي)",
+    "definition": "التَّعريف: المساهمة التي يقدمها بحث ما للاقتصاد، والمجتمع بشكل عام.  كما يُجسد هذا المصطلح فوائد البحث عن الأفراد والمؤسسات و الدُّول. المصطلحات ذات الصِّلة: التَّأثير الأكاديمي.",
     "related_terms": [
         "Academic Impact"
     ],
