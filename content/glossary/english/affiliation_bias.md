@@ -1,12 +1,12 @@
 {
     "type": "glossary",
     "title": "Affiliation bias",
-    "definition": "This bias occurs when one’s o pinions or judgements about the quality of research are influenced by the affiliation of the author(s) . When publishing manuscripts, a potential example of an affiliation bias could be when editors prefer to publish work from prestigious institutions (Tvina et al., 2019).",
+    "definition": "This bias occurs when one’s opinions or judgements about the quality of research are influenced by the affiliation of the author(s). When publishing manuscripts, a potential example of an affiliation bias could be when editors prefer to publish work from prestigious institutions (Tvina et al., 2019).",
     "related_terms": [
         "Peer review"
     ],
     "references": [
-        "Tvina et al. (2019 )"
+        "Tvina et al. (2019)"
     ],
     "alt_related_terms": [
         null

@@ -18,7 +18,7 @@
         "Eduardo Garcia-Garzon"
     ],
     "reviewed_by": [
-        "Mahmoud Elsherif ",
+        "Mahmoud Elsherif",
         "Helena Hartmann",
         "Graham Reid",
         "Mirela Zaneva"

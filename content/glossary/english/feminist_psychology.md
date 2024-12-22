@@ -20,7 +20,7 @@
     ],
     "reviewed_by": [
         "Mahmoud Elsherif",
-        " Helena Hartmann",
+        "Helena Hartmann",
         "Kai Krautter",
         "Charlotte R. Pennington"
     ],

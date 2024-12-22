@@ -22,7 +22,7 @@
         "Sarah Ashcroft-Jones",
         "Mahmoud Elsherif",
         "Helena Hartmann",
-        "Graham Reid ",
+        "Graham Reid",
         "Flávio Azevedo"
     ],
     "language": "german"

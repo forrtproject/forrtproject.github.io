@@ -1,7 +1,7 @@
 {
     "type": "glossary",
-    "title": "Research Contribution Metric (p)",
-    "definition": "Type of semantometric measure assessing similarity of publications connected in a citation network. This method uses a simple formula to assess authors’ contributions. Publication p can be estimated based on the semantic distance from the publications cited by p to publications citing p .",
+    "title": "Research Contribution Metric (*p*)",
+    "definition": "Type of semantometric measure assessing similarity of publications connected in a citation network. This method uses a simple formula to assess authors’ contributions. Publication *p* can be estimated based on the semantic distance from the publications cited by *p* to publications citing *p*.",
     "related_terms": [
         "Semantometrics"
     ],
@@ -18,7 +18,7 @@
         "Michele C. Lim",
         "Jamie P. Cockcroft",
         "Micah Vandegrift",
-        "Dominik Kiersz"
+        "Dominik Kiersz  ### ---  ####"
     ],
     "language": "english",
     "aliases": [

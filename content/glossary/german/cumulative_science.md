@@ -6,7 +6,7 @@
         "Slow Science"
     ],
     "references": [
-        "Curran (2009) ; d’Espagnat (2008); Kuhn (1962); Mischel (2008)"
+        "Curran (2009); d’Espagnat (2008); Kuhn (1962); Mischel (2008)"
     ],
     "alt_related_terms": [
         null

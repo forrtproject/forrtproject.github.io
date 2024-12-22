@@ -5,7 +5,7 @@
     "related_terms": [
         "Data curation",
         "Data documentation",
-        "D ata management plan (DMP) ",
+        "Data management plan (DMP)",
         "Data sharing",
         "Metadata",
         "Research data management"

@@ -1,7 +1,7 @@
 {
     "type": "glossary",
     "title": "Exploratory data analysis",
-    "definition": "Exploratory D ata Analysis (EDA) is a well-established statistical tradition that provides conceptual and computational tools for discovering patterns in data to foster hypothesis development and refinement. These tools and attitudes complement the use of hypothesis tests used in confirmatory data analysis (CDA). Even when well-specified theories are held, EDA helps one interpret the results of CDA and may reveal unexpected or misleading patterns in the data.",
+    "definition": "Exploratory Data Analysis (EDA) is a well-established statistical tradition that provides conceptual and computational tools for discovering patterns in data to foster hypothesis development and refinement. These tools and attitudes complement the use of hypothesis tests used in confirmatory data analysis (CDA). Even when well-specified theories are held, EDA helps one interpret the results of CDA and may reveal unexpected or misleading patterns in the data.",
     "related_terms": [
         "Confirmatory analyses",
         "Data-driven research",

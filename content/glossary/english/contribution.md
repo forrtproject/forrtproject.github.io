@@ -17,8 +17,8 @@
         "Micah Vandegrift"
     ],
     "reviewed_by": [
-        "Jamie P. Cockcroft ",
-        "Dominik Kiersz ",
+        "Jamie P. Cockcroft",
+        "Dominik Kiersz",
         "Michele C. Lim",
         "Leticia Micheli",
         "Sam Parsons",

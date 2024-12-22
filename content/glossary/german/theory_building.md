@@ -10,7 +10,7 @@
         "Theoretical model"
     ],
     "references": [
-        "Borsboom et al. (2020) ; Corley and Gioia (2011); Gioia and Pitrie (1990); Wacker (1998) ( 1990 ); Wacker (1998)"
+        "Borsboom et al. (2020); Corley and Gioia (2011); Gioia and Pitrie (1990); Wacker (1998)"
     ],
     "alt_related_terms": [
         null

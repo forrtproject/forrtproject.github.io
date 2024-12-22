@@ -11,7 +11,7 @@
         "Repository"
     ],
     "references": [
-        "Crüwell et al. (2019); Wilkinson et al. (2016); https://www.go-fair.org/fair-principles/ https://www.go-fair.org/fair-principles/"
+        "Crüwell et al. (2019); Wilkinson et al. (2016); [https://www.go-fair.org/fair-principles/](https://www.go-fair.org/fair-principles/)"
     ],
     "alt_related_terms": [
         null
@@ -21,7 +21,7 @@
     ],
     "reviewed_by": [
         "Mahmoud Elsherif",
-        "S am Parsons",
+        "Sam Parsons",
         "Charlotte R. Pennington"
     ],
     "language": "german"

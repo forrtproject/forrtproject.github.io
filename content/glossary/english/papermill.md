@@ -7,7 +7,7 @@
         "Data falsification",
         "Fraud",
         "Plagiarism",
-        "Questionable Research Practices or Questionable Reporting Practices (QRPs) ",
+        "Questionable Research Practices or Questionable Reporting Practices (QRPs)",
         "Scientific misconduct",
         "Scientific publishing"
     ],

@@ -5,7 +5,7 @@
     "related_terms": [
         "Equal opportunities",
         "Inclusivity",
-        "P edagogy",
+        "Pedagogy",
         "Teaching practice"
     ],
     "references": [
@@ -19,9 +19,9 @@
     ],
     "reviewed_by": [
         "Valeria Agostini",
-        " Mahmoud Elsherif",
+        "Mahmoud Elsherif",
         "Graham Reid",
-        "Mirela Zaneva ",
+        "Mirela Zaneva",
         "Flávio Azevedo"
     ],
     "language": "german"

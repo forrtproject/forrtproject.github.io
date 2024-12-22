@@ -10,7 +10,7 @@
         "Validity"
     ],
     "references": [
-        "Reference :  Holden (2010)"
+        "Holden (2010)"
     ],
     "alt_related_terms": [
         null

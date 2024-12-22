@@ -20,8 +20,8 @@
     ],
     "reviewed_by": [
         "Nick Ballou",
-        " Mahmoud Elsherif",
-        " Helena Hartmann",
+        "Mahmoud Elsherif",
+        "Helena Hartmann",
         "Annalise A. LaPlume",
         "Sam Parsons",
         "Timo Roettger",

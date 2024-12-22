@@ -5,11 +5,11 @@
     "related_terms": [
         "Badges (Open Science)",
         "Credibility of scientific claims",
-        "FAIR principles ",
+        "FAIR principles",
         "Open Access",
         "Open Code",
-        "O pen Dat a",
-        "R eproducibility ",
+        "Open Data",
+        "Reproducibility",
         "Transparency"
     ],
     "references": [
@@ -26,7 +26,7 @@
         "Charlotte R. Pennington",
         "Olly Robertson",
         "Emily A. Williams",
-        "F lávio Azevedo"
+        "Flávio Azevedo"
     ],
     "language": "german"
 }

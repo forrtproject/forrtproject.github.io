@@ -1,12 +1,12 @@
 {
     "type": "glossary",
     "title": "The Troubling Trio",
-    "definition": "Described as a combination of low statistical power, a surprising result, and a p -value only slightly lower than .05.",
+    "definition": "Described as a combination of low statistical power, a surprising result, and a *p*\\-value only slightly lower than .05.",
     "related_terms": [
         "Replication",
         "Reproducibility",
         "Null Hypothesis Significance Testing (NHST)",
-        "P -hacking",
+        "P*\\-hacking",
         "Questionable Research Practices or Questionable Reporting Practices (QRPs)"
     ],
     "references": [

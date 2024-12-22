@@ -30,7 +30,7 @@
         "Eike Mark Rinke",
         "Lisa Spitzer",
         "Olmo van den Akker",
-        "F lávio Azevedo"
+        "Flávio Azevedo"
     ],
     "language": "german"
 }

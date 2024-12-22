@@ -4,12 +4,12 @@
     "definition": "The set of evaluation and reward mechanisms (explicit and implicit) for scientists and their work. Incentivised areas within the broader structure include hiring and promotion practices, track record for awarding funding, and prestige indicators such as publication in journals with high impact factors, invited presentations, editorships, and awards. It is commonly believed that these criteria are often misaligned with the telos of science, and therefore do not promote rigorous scientific output. Initiatives like DORA aim to reduce the field’s dependency on evaluation criteria such as journal impact factors in favor of assessments based on the intrinsic quality of research outputs.",
     "related_terms": [
         "DORA",
-        "M etrics",
-        "P ressure",
+        "Metrics",
+        "Pressure",
         "Publish or perish",
         "Quantity",
         "Reward structure",
-        "S cientific publications",
+        "Scientific publications",
         "Slow science",
         "Structural factors"
     ],
@@ -24,7 +24,7 @@
     ],
     "reviewed_by": [
         "Helena Hartmann",
-        " Flávio Azevedo",
+        "Flávio Azevedo",
         "Robert M. Ross",
         "Graham Reid",
         "Suzanne L. K. Stewart"

@@ -7,7 +7,7 @@
         "Preregistration"
     ],
     "references": [
-        "Box (1976); Oberauer and Lewandowsky (2019); Szollosi and Donkin (2019); Tukey (1977) ; Wagenmakers et al. (2012)"
+        "Box (1976); Oberauer and Lewandowsky (2019); Szollosi and Donkin (2019); Tukey (1977); Wagenmakers et al. (2012)"
     ],
     "alt_related_terms": [
         null
@@ -17,10 +17,10 @@
     ],
     "reviewed_by": [
         "Mahmoud Elsherif",
-        " Eduardo Garcia-Garzon",
+        "Eduardo Garcia-Garzon",
         "Helena Hartmann",
         "Mariella Paul",
-        "Charlotte R. Pennington ",
+        "Charlotte R. Pennington",
         "Timo Roettger",
         "Lisa Spitzer"
     ],

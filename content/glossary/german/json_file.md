@@ -1,7 +1,7 @@
 {
     "type": "glossary",
     "title": "JSON file",
-    "definition": "JavaScript Object Notation (JSON) ist ein Datenformat für strukturierte Daten, das zur Darstellung von Attribut-Wert-Paaren verwendet werden kann. Die Werte können dabei weitere JSON-Notationen (d. h. verschachtelte Informationen) enthalten. JSON-Dateien können formal als Textketten kodiert werden und sind daher für Menschen lesbar. Neben der Speicherung von Informationen eignet sich diese Eigenschaft auch für die Kommentierung anderer Inhalte. Beispielsweise werden JSON-Dateien in der Brain Imaging Data Structure (BIDS) zur Beschreibung des Metadatensatzes verwendet, wobei ein standardisiertes Format (dataset_description.json) verwendet wird.",
+    "definition": "JavaScript Object Notation (JSON) ist ein Datenformat für strukturierte Daten, das zur Darstellung von Attribut-Wert-Paaren verwendet werden kann. Die Werte können dabei weitere JSON-Notationen (d. h. verschachtelte Informationen) enthalten. JSON-Dateien können formal als Textketten kodiert werden und sind daher für Menschen lesbar. Neben der Speicherung von Informationen eignet sich diese Eigenschaft auch für die Kommentierung anderer Inhalte. Beispielsweise werden JSON-Dateien in der Brain Imaging Data Structure (BIDS) zur Beschreibung des Metadatensatzes verwendet, wobei ein standardisiertes Format (dataset\\_description.json) verwendet wird.",
     "related_terms": [
         "BIDS data structure",
         "Metadata"

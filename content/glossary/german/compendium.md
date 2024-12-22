@@ -7,11 +7,8 @@
         "Replication",
         "Reproducibility",
         "Research compendium",
-        "References: Claerbout and Karrenfach (1992)",
+        "References: Claerbout and Karrenfach (1992)",
         "Gentleman (2005)",
-        "Marwick et al. (2018)",
-        "Nüst et al. (2018) References: Claerbout and Karrenfach (1992)",
-        "Gentleman (2005) ",
         "Marwick et al. (2018)",
         "Nüst et al. (2018)"
     ],
