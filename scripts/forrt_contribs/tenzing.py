@@ -91,7 +91,7 @@ merged_data['ORCID iD'] = merged_data['ORCID iD'].str.strip()
 # Function to format the full name
 def format_name(row):
     # Extract the first name, middle name initial, and surname
-    first_name = row['First name']].strip() if pd.notna(row['First name']) else ""
+    first_name = row['First name'].strip() if pd.notna(row['First name']) else ""
     middle_name = row['Middle name']
     surname = row['Surname'].strip() if pd.notna(row['Surname']) else ""
 
