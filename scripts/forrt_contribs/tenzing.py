@@ -85,12 +85,15 @@ merged_data.reset_index(drop=True, inplace=True)
 
 merged_data = merged_data.sort_values(by='Surname')
 
+# Strip spaces from 'ORCID iD' in merged data
+merged_data['ORCID iD'] = merged_data['ORCID iD'].str.strip()
+
 # Function to format the full name
 def format_name(row):
     # Extract the first name, middle name initial, and surname
-    first_name = row['First name']
-    middle_name = row['Middle name']
-    surname = row['Surname']
+    first_name = row['First name'].strip() if pd.notna(row['First name']) else ""
+    middle_name = row['Middle name'].strip() if pd.notna(row['First name']) else ""
+    surname = row['Surname'].strip() if pd.notna(row['First name']) else ""
 
     # Check if the middle name is not NaN and not an empty string
     if pd.notna(middle_name) and middle_name != '':
