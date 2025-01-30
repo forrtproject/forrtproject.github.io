@@ -112,6 +112,12 @@
   parent = "about"
 
 [[main]]
+  name = "Charity"  # A link title for your page.
+  url = "about/charity/"  # The URL of your page.
+  weight = 27  # The position of your page in the menu.
+  parent = "about"
+
+[[main]]
   name = "Educational NEXUS"
   url = "/nexus"
   weight = 30
