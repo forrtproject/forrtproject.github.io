@@ -104,24 +104,20 @@ def format_name(row):
 
     return full_name
 
-# Group by 'ORCID iD' and concatenate the contributions
+# Group by ORCID iD or Name and concatenate contributions
 def concatenate_contributions(group):
-
-    # Find the minimum original order for the group
     min_order = group['original_order'].min()
-
-    # Format the full name once per group
     full_name = format_name(group.iloc[0])
     group = group.sort_values(by='special_role', ascending=False)
 
-    # Create the contributions string for each project
     contributions = [
-        f"{row['Project Name']} {('as' if row['special_role'] else '')} {row['Contributions']}" if pd.isna(row['Project URL']) or row['Project URL'] == ''
-        else f"[{row['Project Name']}]({row['Project URL']}) {('as' if row['special_role'] else '')} {row['Contributions']}"
+        f"[{row['Project Name']}]({row['Project URL']}) {'as' if row['special_role'] else ''} {row['Contributions']}"
+        if pd.notna(row['Project URL']) and row['Project URL'] != ''
+        else f"{row['Project Name']} {'as' if row['special_role'] else ''} {row['Contributions']}"
         for _, row in group.iterrows()
     ]
-
-    # Add numbering only if there are more than 1 contributions
+    
+    # Add numbering only if there are more than 1 contribution
     if len(contributions) > 1:
         contributions = [f"{i+1}. {contribution}" for i, contribution in enumerate(contributions)]
 
@@ -149,15 +145,22 @@ merged_data['ORCID iD'] = merged_data['ORCID iD'].apply(extract_orcid_id)
 # Creating a new column for the concatenated name
 merged_data['Name'] = merged_data.apply(format_name, axis=1)
 
-# Create a column that combines both ORCID iD and Name to handle cases where ORCID is missing
-merged_data['group_key'] = merged_data['ORCID iD'].fillna(merged_data['Name'])
+# Create a unique identifier for grouping
+merged_data['Grouping Key'] = merged_data['ORCID iD'].replace('', None).fillna(merged_data['Name'])
 
-# Group by this new key
-summary = (merged_data.groupby('group_key', sort=False)
-                    .apply(lambda group: concatenate_contributions(group.drop(columns=['group_key'])))
-                    .reset_index(name='Contributions'))
+merged_data['Grouping Key'] = merged_data['ORCID iD'].replace('', None).fillna(merged_data['Name'])
+summary = (merged_data.groupby('Grouping Key', sort=False)
 
-# Reset index and create the final summary string
+# Separate the tuple into two columns
+summary[['original_order', 'Contributions']] = pd.DataFrame(summary[0].tolist(), index=summary.index)
+
+# Drop the old column
+summary.drop(columns=[0], inplace=True)
+
+# Sort by the original order and drop the helper column
+summary = summary.sort_values(by='original_order').drop(columns='original_order')
+
+# Reset the index if needed
 summary = summary.reset_index(drop=True)
 summary_string = '\n\n'.join(summary['Contributions'])
 
