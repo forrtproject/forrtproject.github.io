@@ -1,5 +1,5 @@
 ---
-title: Forrt community Map
+title: FORRT community Map
 subtitle: The FORRT Mapping Project visualizes our global community.
 ---
 Note: This data is a snapshot of FORRT community members as of 2024.
