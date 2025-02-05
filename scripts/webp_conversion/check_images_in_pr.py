@@ -62,9 +62,12 @@ for file in changed_files:
     # Check for references in text files
     elif filename.lower().endswith(TEXT_EXTENSIONS) and status in ('added', 'modified'):
         try:
-            # Fetch the file content from the PR's head SHA
             contents = repo.get_contents(filename, ref=pr.head.sha)
-            file_content = contents.decoded_content.decode('utf-8', errors='ignore')
+            if contents.encoding == "base64":
+                file_content = contents.decoded_content.decode('utf-8', errors='ignore')
+            else:
+                print(f"Warning: Unsupported encoding '{contents.encoding}' for {filename}. Skipping.", file=sys.stderr)
+                continue
         except GithubException as e:
             print(f"Warning: Could not fetch content for {filename}. Skipping. Error: {e}", file=sys.stderr)
             continue
