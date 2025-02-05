@@ -1,12 +1,16 @@
 ---
-title: Newsletter Archive
+title: Newsletter Archives
 ---
 _______________________________________________
 ### Stay updated by subscribing to the FORRT Newsletter 
 {{< subscribe >}}
 _______________________________________________
 
-Archives :calendar: 2024
+**Archive :calendar: 2025**
+
+[| January 2025](https://mailchi.mp/forrt/forrt-newsletter-10332513?e=626cf66991)
+
+**Archive :calendar: 2024**
 
 [| November 2024](https://mailchi.mp/forrt/forrt-newsletter-10331615?e=626cf66991)
 
@@ -26,7 +30,7 @@ Archives :calendar: 2024
 
 [| January 2024](http://eepurl.com/iF50HU)
 
- :calendar: 2023
+**Archive :calendar: 2023**
 
 [| November 2023](https://eepurl.com/iDsmPs)
 
@@ -36,7 +40,7 @@ Archives :calendar: 2024
 
 [| January 13th 2023](https://eepurl.com/ieYWrv)
 
-:calendar: 2022
+**Archive :calendar: 2022**
 
 [| August 19th 2022](https://eepurl.com/h5Y7xb)
 
