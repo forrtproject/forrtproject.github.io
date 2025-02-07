@@ -7,7 +7,7 @@
         "Preprint"
     ],
     "references": [
-        "Reference :  Ginsparg (1997, 2001); https://discovery.ucl.ac.uk/id/eprint/19081/ https://discovery.ucl.ac.uk/id/eprint/19081/"
+        "Ginsparg (1997, 2001); [https://discovery.ucl.ac.uk/id/eprint/19081/](https://discovery.ucl.ac.uk/id/eprint/19081/)"
     ],
     "alt_related_terms": [
         null
@@ -18,7 +18,7 @@
     "reviewed_by": [
         "Christopher Graham",
         "Helena Hartmann",
-        " Sam Parsons",
+        "Sam Parsons",
         "Charlotte R. Pennington"
     ],
     "language": "german"

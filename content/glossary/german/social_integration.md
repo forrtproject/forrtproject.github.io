@@ -17,9 +17,8 @@
     "reviewed_by": [
         "Leticia Micheli",
         "Eliza Woodward",
-        " Julika Wolska ",
-        "Gerald Vineyard",
-        " Yu-Fang Yang ",
+        "Julika Wolska; Gerald Vineyard",
+        "Yu-Fang Yang",
         "Flávio Azevedo"
     ],
     "language": "german"

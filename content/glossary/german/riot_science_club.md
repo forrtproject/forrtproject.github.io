@@ -10,7 +10,7 @@
         "Transparency"
     ],
     "references": [
-        "http://riotscience.co.uk/ http://riotscience.co.uk/"
+        "[http://riotscience.co.uk/](http://riotscience.co.uk/)"
     ],
     "alt_related_terms": [
         null
@@ -21,7 +21,7 @@
     "reviewed_by": [
         "Helena Hartmann",
         "Emma Henderson",
-        "Joanne McCuaig ",
+        "Joanne McCuaig",
         "Flávio Azevedo"
     ],
     "language": "german"
