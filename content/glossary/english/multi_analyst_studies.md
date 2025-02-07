@@ -24,10 +24,10 @@
         "Tsvetomira Dumbalska",
         "Mahmoud Elsherif",
         "William Ngiam",
-        "Charlotte R. Pennington ",
+        "Charlotte R. Pennington",
         "Graham Reid",
-        "Barnabas Szaszi ",
-        "F lávio Azevedo"
+        "Barnabas Szaszi",
+        "Flávio Azevedo"
     ],
     "language": "english",
     "aliases": [
