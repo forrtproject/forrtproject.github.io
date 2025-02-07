@@ -10,7 +10,7 @@
         "Trustworthiness"
     ],
     "references": [
-        "Elliott and Resnik (2019); Lyon (2016); Syed (2019) Syed (2019)"
+        "Elliott and Resnik (2019); Lyon (2016); [Syed (2019)](https://psyarxiv.com/cteyb/)"
     ],
     "alt_related_terms": [
         null
@@ -21,7 +21,7 @@
     "reviewed_by": [
         "Tamara Kalandadze",
         "Aoife O’Mahony",
-        "Eike Mark Rinke ",
+        "Eike Mark Rinke",
         "Flávio Azevedo"
     ],
     "language": "english",

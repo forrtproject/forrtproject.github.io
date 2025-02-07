@@ -5,8 +5,8 @@
     "related_terms": [
         "Bracketing Interviews",
         "Positionality",
-        "Quantitative research ",
-        "Reflexivity Alternative definition: (if applicable) In Psychology, the epistemology of qualitative research is typically concerned with understanding people’s perspectives. Such epistemology proposes assuming the equity of researchers and participants as human beings, and in consequence, the need of sympathetic human understanding instead of data-driven conclusions. Alternative definition: (if applicable) In Psychology, the epistemology of qualitative research is typically concerned with understanding people’s perspectives. Such epistemology proposes assuming the equity of researchers and participants as human beings, and in consequence, the need of sympathetic human understanding instead of data-driven conclusions. [GERMAN:] In der Psychologie befasst sich die Erkenntnistheorie der qualitativen Forschung in der Regel mit dem Verständnis der Perspektive der Menschen. Eine solche Erkenntnistheorie geht davon aus, dass Forschende und Teilnehmende gleichwertige menschliche Wesen sind und folglich ein mitfühlendes menschliches Verständnis anstelle von datengesteuerten Schlussfolgerungen erforderlich ist. [GERMAN:] In der Psychologie befasst sich die Erkenntnistheorie der qualitativen Forschung in der Regel mit dem Verständnis der Perspektive der Menschen. Eine solche Erkenntnistheorie geht davon aus, dass Forschende und Teilnehmende gleichwertige menschliche Wesen sind und folglich ein mitfühlendes menschliches Verständnis anstelle von datengesteuerten Schlussfolgerungen erforderlich ist."
+        "Quantitative research",
+        "Reflexivity Alternative definition: (if applicable) In Psychology, the epistemology of qualitative research is typically concerned with understanding people’s perspectives. Such epistemology proposes assuming the equity of researchers and participants as human beings, and in consequence, the need of sympathetic human understanding instead of data-driven conclusions. \\[GERMAN:\\] In der Psychologie befasst sich die Erkenntnistheorie der qualitativen Forschung in der Regel mit dem Verständnis der Perspektive der Menschen. Eine solche Erkenntnistheorie geht davon aus, dass Forschende und Teilnehmende gleichwertige menschliche Wesen sind und folglich ein mitfühlendes menschliches Verständnis anstelle von datengesteuerten Schlussfolgerungen erforderlich ist."
     ],
     "references": [
         "Aspers and Corte (2019); Levitt et al. (2017)"
@@ -19,10 +19,10 @@
     ],
     "reviewed_by": [
         "Mahmoud Elsherif",
-        " Helena Hartmann",
+        "Helena Hartmann",
         "Oscar Lecuona",
         "Claire Melia",
-        "F lávio Azevedo"
+        "Flávio Azevedo"
     ],
     "language": "german"
 }

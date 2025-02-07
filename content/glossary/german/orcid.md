@@ -8,7 +8,7 @@
         "Name Ambiguity Problem"
     ],
     "references": [
-        "Haak et al. (2012); https://orcid.org/ https://orcid.org/"
+        "Haak et al. (2012); [https://orcid.org/](https://orcid.org/)"
     ],
     "alt_related_terms": [
         null
@@ -22,7 +22,7 @@
         "Shannon Francis",
         "Charlotte R. Pennington",
         "Emily A. Williams",
-        "F lávio Azevedo"
+        "Flávio Azevedo"
     ],
     "language": "german"
 }

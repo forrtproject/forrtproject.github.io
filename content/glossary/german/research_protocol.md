@@ -18,7 +18,7 @@
     "reviewed_by": [
         "Helena Hartmann",
         "Bethan Iley",
-        "Annalise A. LaPlume ",
+        "Annalise A. LaPlume",
         "Charlotte Pennington"
     ],
     "language": "german"

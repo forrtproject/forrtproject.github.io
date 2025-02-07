@@ -14,7 +14,7 @@
         "Patient and Public Involvement (PPI)"
     ],
     "references": [
-        "Reference : Filipe et al. (2017); Graham et al. (2019); NIHR (2021); Co-production Collective (2021)"
+        "Filipe et al. (2017); Graham et al. (2019); NIHR (2021); Co-production Collective (2021)"
     ],
     "alt_related_terms": [
         null
@@ -23,7 +23,7 @@
         "Emma Norris"
     ],
     "reviewed_by": [
-        "Gisela H. Govaart ",
+        "Gisela H. Govaart",
         "Magdalena Grose-Hodge",
         "Helena Hartmann;Charlotte R. Pennington",
         "Sonia Rishi",

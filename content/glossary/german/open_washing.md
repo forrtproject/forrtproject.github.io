@@ -8,7 +8,7 @@
         "Open Source"
     ],
     "references": [
-        "Farrow (2017); Moretti (2020); Villum ( 2016 ); Vlaeminck and Podkrajac (2017)"
+        "Farrow (2017); Moretti (2020); Villum (2016); Vlaeminck and Podkrajac (2017)"
     ],
     "alt_related_terms": [
         null

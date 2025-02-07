@@ -15,6 +15,10 @@ header:
 type: "glossary"
 ---
 
+<div class="btn-group flex-wrap text-center"><a href="/glossary/english" class="btn btn-primary py-2 m-1 btn-lg active" style="line-height:1;border-radius:6px">English</a>
+<a href="/glossary/german" class="btn btn-primary py-2 m-1 btn-lg" style="line-height:1;border-radius:6px">Deutsch (German)</a>
+<a href="/glossary/arabic" class="btn btn-primary py-2 m-1 btn-lg" style="line-height:1;border-radius:6px"> عربي (Arabic)</a></div>
+
 ### Einführung
 
 In den letzten zehn Jahren hat die Open-Science-Bewegung viele Forschungspraktiken eingeführt und modifiziert. Die Vielzahl dieser Initiativen kann überwältigend sein, und verständliche Einführungen zu diesen Themen sind wertvoll (z.B. Crüwell et al. 2019; Kathawalla, Silverstein & Syed, 2020). Ein gemeinsames Verständnis der Ziele dieser Initiativen erleichtert die Diskussion der Stärken und Schwächen jeder Praxis und hilft uns letztendlich, Forschung nachhaltig zu verbessern (Nosek & Bar-Anan, 2012).

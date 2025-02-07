@@ -17,7 +17,7 @@
     "reviewed_by": [
         "Ashley Blake",
         "Jade Pickering",
-        "Graham Reid ",
+        "Graham Reid",
         "Flávio Azevedo"
     ],
     "language": "english",

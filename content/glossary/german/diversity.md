@@ -23,7 +23,7 @@
     ],
     "reviewed_by": [
         "Nihan Albayrak-Aydemir",
-        " Mahmoud Elsherif",
+        "Mahmoud Elsherif",
         "Helena Hartmann",
         "Madeleine Ingham",
         "Annalise A. LaPlume",

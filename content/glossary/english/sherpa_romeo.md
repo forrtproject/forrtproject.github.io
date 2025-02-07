@@ -10,7 +10,7 @@
         "Repository"
     ],
     "references": [
-        "https://v2.sherpa.ac.uk/romeo/ https://v2.sherpa.ac.uk/romeo/"
+        "[https://v2.sherpa.ac.uk/romeo/](https://v2.sherpa.ac.uk/romeo/)"
     ],
     "alt_related_terms": [
         null

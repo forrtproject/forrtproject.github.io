@@ -7,7 +7,7 @@
         "Validity"
     ],
     "references": [
-        "Campbell and Stanley (1966) Alternative definition: In Psychometrics, the degree of evidence that confirms the internal structure of a psychometric test as compatible with the structure of a psychological construct. Alternative definition: In Psychometrics, the degree of evidence that confirms the internal structure of a psychometric test as compatible with the structure of a psychological construct. Related terms to alternative definition: Construct validity Related terms to alternative definition: Construct validity"
+        "Campbell and Stanley (1966) Alternative definition: In Psychometrics, the degree of evidence that confirms the internal structure of a psychometric test as compatible with the structure of a psychological construct. Related terms to alternative definition: Construct validity"
     ],
     "alt_related_terms": [
         null

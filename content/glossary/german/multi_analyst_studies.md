@@ -1,6 +1,6 @@
 {
     "type": "glossary",
-    "title": "Multi-Analyst Studies (Multi-Analytiker:innen-Studien)",
+    "title": "Multi-Analyst Studies (Multi-Analytiker:innen-Studien)",
     "definition": "In typischen empirischen Studien führt ein:e einzige:r Forschende:r oder ein Forschungsteam die Analyse durch, was zu Unsicherheit darüber führt, inwieweit die Wahl der Analyse die Ergebnisse beeinflusst. Bei Studien mit mehreren Analytiker:innen analysieren zwei oder mehr Forschende unabhängig voneinander dieselbe Forschungsfrage oder Hypothese anhand desselben Datensatzes. Laut Aczel und Kollegen (2021) kann ein Multi-Analytiker:innen-Ansatz vorteilhaft sein, um das Vertrauen in ein bestimmtes Ergebnis zu erhöhen, die Auswirkungen der analytischen Präferenzen verschiedener Forschungsteams aufzudecken und die Variabilität solcher analytischen Ansätze hervorzuheben.",
     "related_terms": [
         "Analytic flexibility",
@@ -24,10 +24,10 @@
         "Tsvetomira Dumbalska",
         "Mahmoud Elsherif",
         "William Ngiam",
-        "Charlotte R. Pennington ",
+        "Charlotte R. Pennington",
         "Graham Reid",
-        "Barnabas Szaszi ",
-        "F lávio Azevedo"
+        "Barnabas Szaszi",
+        "Flávio Azevedo"
     ],
     "language": "german"
 }

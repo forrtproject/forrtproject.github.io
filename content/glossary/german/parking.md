@@ -10,7 +10,7 @@
         "SPARKing"
     ],
     "references": [
-        "Ikeda et al. (2019) Ikeda et al. (2019) ; Yamada (2018) Yamada (2018)"
+        "[Ikeda et al. (2019)](https://www.jstage.jst.go.jp/article/sjpr/62/3/62_281/_pdf/-char/ja); [Yamada (2018)](https://www.frontiersin.org/articles/10.3389/fpsyg.2018.01831/full)"
     ],
     "alt_related_terms": [
         null

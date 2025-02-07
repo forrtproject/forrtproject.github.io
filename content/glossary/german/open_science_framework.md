@@ -1,7 +1,7 @@
 {
     "type": "glossary",
     "title": "Open Science Framework",
-    "definition": "Eine kostenlose open-source Plattform für Forschende zur Organisation und gemeinsamen Nutzung ihrer Forschungsprojekte und zur Förderung der Zusammenarbeit. Sie wird häufig als offenes Repositorium für Forschungscode, Daten und Materialien, Preprints und Präregistrierungen verwendet und ermöglicht gleichzeitig einen effizienteren Arbeitsablauf. Erstellt und gepflegt durch das Center for Open Science.",
+    "definition": "Eine kostenlose open-source Plattform für Forschende zur Organisation und gemeinsamen Nutzung ihrer Forschungsprojekte und zur Förderung der Zusammenarbeit. Sie wird häufig als offenes Repositorium für Forschungscode, Daten und Materialien, Preprints und Präregistrierungen verwendet und ermöglicht gleichzeitig einen effizienteren Arbeitsablauf. Erstellt und gepflegt durch das Center for Open Science.",
     "related_terms": [
         "Archive",
         "Center for Open Science (COS)",
