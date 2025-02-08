@@ -1,7 +1,7 @@
 {
     "type": "glossary",
     "title": "ReproducibiliTea",
-    "definition": "",
+    "definition": "A grassroots initiative that helps researchers create local journal clubs at their universities to discuss a range of topics relating to open research and scholarship. Each meeting usually centres around a specific paper that discusses, for example, reproducibility, research practice, research quality, social justice and inclusion, and ideas for improving science.",
     "related_terms": [
         "Grassroots initiative",
         "Journal club",
@@ -9,7 +9,7 @@
         "Reproducibility"
     ],
     "references": [
-        "https://reproducibilitea.org/ https://reproducibilitea.org/ ; Orben (2019)"
+        "[https://reproducibilitea.org/](https://reproducibilitea.org/); Orben (2019)"
     ],
     "alt_related_terms": [
         null
@@ -22,7 +22,7 @@
         "Gilad Feldman",
         "Connor Keating",
         "Charlotte R. Pennington",
-        "Sam Parsons ",
+        "Sam Parsons",
         "Flávio Azevedo"
     ],
     "language": "english",

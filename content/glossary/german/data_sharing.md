@@ -7,7 +7,7 @@
         "Open data"
     ],
     "references": [
-        "Abele-Brehm et al. (2019); Gollwitzer  et al. (2020); https://eudatasharing.eu/what-data-sharing"
+        "Abele-Brehm et al. (2019); Gollwitzer et al. (2020); https://eudatasharing.eu/what-data-sharing"
     ],
     "alt_related_terms": [
         null
@@ -19,7 +19,7 @@
         "Helena Hartmann",
         "Tina Lonsdorf",
         "Charlotte R. Pennington",
-        "Timo Roettger ",
+        "Timo Roettger",
         "Flávio Azevedo"
     ],
     "language": "german"

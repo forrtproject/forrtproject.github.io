@@ -8,7 +8,7 @@
         "Preprint"
     ],
     "references": [
-        "Reference : Klein et al. (2018), Laakso and Björk (2013); https://en.wikipedia.org/wiki/Embargo_(academic_publishing) https://en.wikipedia.org/wiki/Embargo_(academic_publishing)"
+        "Klein et al. (2018), Laakso and Björk (2013); [https://en.wikipedia.org/wiki/Embargo\\_(academic\\_publishing)](https://en.wikipedia.org/wiki/Embargo_\\(academic_publishing\\))"
     ],
     "alt_related_terms": [
         null

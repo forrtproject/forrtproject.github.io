@@ -18,7 +18,7 @@
     ],
     "reviewed_by": [
         "Mahmoud Elsherif",
-        " Charlotte R. Pennington",
+        "Charlotte R. Pennington",
         "Suzanne L. K. Stewart"
     ],
     "language": "german"
