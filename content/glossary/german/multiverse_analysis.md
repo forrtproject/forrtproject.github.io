@@ -15,11 +15,11 @@
         null
     ],
     "drafted_by": [
-        "Tina Lonsdorf ; F lávio Azevedo"
+        "Tina Lonsdorf; Flávio Azevedo"
     ],
     "reviewed_by": [
         "Mahmoud Elsherif",
-        " Adrien Fillon",
+        "Adrien Fillon",
         "William Ngiam",
         "Sam Parsons"
     ],

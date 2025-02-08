@@ -21,7 +21,7 @@
     ],
     "reviewed_by": [
         "Helena Hartmann",
-        "Charlotte R. Pennington ",
+        "Charlotte R. Pennington",
         "Mirela Zaneva"
     ],
     "language": "german"

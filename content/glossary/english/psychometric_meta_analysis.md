@@ -24,7 +24,7 @@
         "Eduardo Garcia-Garzon",
         "Helena Hartmann",
         "Catia M. Oliveira",
-        "F lávio Azevedo"
+        "Flávio Azevedo"
     ],
     "language": "english",
     "aliases": [

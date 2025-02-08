@@ -3,7 +3,7 @@
     "title": "Open Data (Offene Daten)",
     "definition": "Offene Daten sind frei verfügbare und direkt zugängliche Daten, die von anderen uneingeschränkt genutzt werden können. \"Open data and content can be freely used, modified, and shared by anyone for any purpose” (dt. Offene Daten und Inhalte können von jeder:m zu jedem Zweck frei verwendet, verändert und weitergegeben werden\"; https://opendefinition.org/). Offene Daten unterliegen sowohl dem Erfordernis der Kennzeichnung als auch des Teilens, daher ist es wichtig, geeignete Lizenzen (Open Licenses) in Betracht zu ziehen. Sensible oder zeitkritische Datensätze können mit einer Sperrfrist (embargo) belegt oder mit selektiveren Zugriffsoptionen freigegeben werden, um die Integrität der Daten zu gewährleisten.",
     "related_terms": [
-        "Badges (Open Science) ",
+        "Badges (Open Science)",
         "Data availability",
         "FAIR principles",
         "Metadata",
@@ -13,7 +13,7 @@
         "Secondary data analysis"
     ],
     "references": [
-        "Reference :  https://opendefinition.org/ https://opendefinition.org/ (version 2.1); https://opendatahandbook.org/guide/en/what-is-open-data/ https://opendatahandbook.org/guide/en/what-is-open-data/"
+        "[https://opendefinition.org/](https://opendefinition.org/) (version 2.1); [https://opendatahandbook.org/guide/en/what-is-open-data/](https://opendatahandbook.org/guide/en/what-is-open-data/)"
     ],
     "alt_related_terms": [
         null

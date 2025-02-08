@@ -1,7 +1,7 @@
 {
     "type": "glossary",
     "title": "Named entity-based Text Anonymization for Open Science (NETANOS)",
-    "definition": "A free, open-source anonymisation software that identifies and modifies named entities (e.g. persons, locations, times, dates) . Its key feature is that it preserves critical context needed for secondary analyses. The aim is to assist researchers in sharing their raw text data, while adhering to research ethics.",
+    "definition": "A free, open-source anonymisation software that identifies and modifies named entities (e.g. persons, locations, times, dates). Its key feature is that it preserves critical context needed for secondary analyses. The aim is to assist researchers in sharing their raw text data, while adhering to research ethics.",
     "related_terms": [
         "Anonymity",
         "Confidentiality",
