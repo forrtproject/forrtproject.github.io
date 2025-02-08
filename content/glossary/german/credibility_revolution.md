@@ -1,10 +1,10 @@
 {
     "type": "glossary",
     "title": "Credibility revolution (Glaubhaftigkeitsrevolution)",
-    "definition": "Der Begriff wurde als Alternative zum Begriff “Replikationskrise” vorgeschlagen und umfasst die vielen Lösungen zur Verbesserung der Glaubwürdigkeit der Forschung, wie Präregistrierung, Transparenz und Replikation.",
+    "definition": "Der Begriff wurde als Alternative zum Begriff “Replikationskrise” vorgeschlagen und umfasst die vielen Lösungen zur Verbesserung der Glaubwürdigkeit der Forschung, wie Präregistrierung, Transparenz und Replikation.",
     "related_terms": [
         "Credibility of scientific claims",
-        "High standards of evidence ",
+        "High standards of evidence",
         "Openness",
         "Open Science;Reproducibility crisis (aka Replicability or replication crisis)",
         "Transparency"

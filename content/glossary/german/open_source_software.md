@@ -9,11 +9,11 @@
         "Open Data",
         "Open Licenses",
         "Python",
-        "R ",
+        "R",
         "Repository"
     ],
     "references": [
-        "https://opensource.org/osd https://opensource.org/osd ; https://www.fosteropenscience.eu/foster-taxonomy/open-source-open-science https://www.fosteropenscience.eu/foster-taxonomy/open-source-open-science"
+        "[https://opensource.org/osd](https://opensource.org/osd); [https://www.fosteropenscience.eu/foster-taxonomy/open-source-open-science](https://www.fosteropenscience.eu/foster-taxonomy/open-source-open-science)"
     ],
     "alt_related_terms": [
         null

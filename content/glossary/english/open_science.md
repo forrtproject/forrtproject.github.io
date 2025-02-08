@@ -16,7 +16,7 @@
         "Transparency"
     ],
     "references": [
-        "Abele-Brehm et al. (2019); Cr ü well et al. (2019); Kathawalla et al. ( 2020 ); Syed (2019) ; Woelfe et al. (2011)"
+        "Abele-Brehm et al. (2019); Crüwell et al. (2019); Kathawalla et al. (2020); Syed (2019); Woelfe et al. (2011)"
     ],
     "alt_related_terms": [
         null
@@ -26,7 +26,7 @@
     ],
     "reviewed_by": [
         "Zoe Flack",
-        " Tamara Kalandadze",
+        "Tamara Kalandadze",
         "Charlotte R. Pennington",
         "Qinyu Xiao"
     ],

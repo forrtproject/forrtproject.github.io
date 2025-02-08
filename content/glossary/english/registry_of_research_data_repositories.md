@@ -10,7 +10,7 @@
         "Repository"
     ],
     "references": [
-        "https://www.re3data.org/ https://www.re3data.org/ - Registry of Research Data Repositories."
+        "[https://www.re3data.org/](https://www.re3data.org/) \\- Registry of Research Data Repositories."
     ],
     "alt_related_terms": [
         null
@@ -20,7 +20,7 @@
     ],
     "reviewed_by": [
         "Mahmoud Elsherif",
-        " Sam Parsons",
+        "Sam Parsons",
         "Charlotte R. Pennington",
         "Helena Hartmann"
     ],
