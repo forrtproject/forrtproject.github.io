@@ -7,7 +7,7 @@
         "Trustworthiness"
     ],
     "references": [
-        "Fraser et al.(2021); https://replicats.research.unimelb.edu.au/ https://replicats.research.unimelb.edu.au/"
+        "Fraser et al.(2021); [https://replicats.research.unimelb.edu.au/](https://replicats.research.unimelb.edu.au/)"
     ],
     "alt_related_terms": [
         null
@@ -20,7 +20,7 @@
         "Mahmoud Elsherif",
         "Gilad Feldman",
         "Helena Hartmann",
-        "Charlotte R. Penningto n"
+        "Charlotte R. Pennington"
     ],
     "language": "german"
 }

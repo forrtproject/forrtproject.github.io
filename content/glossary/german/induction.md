@@ -6,7 +6,7 @@
         "Hypothesis"
     ],
     "references": [
-        "Reference : Dienes (2008)"
+        "Dienes (2008)"
     ],
     "alt_related_terms": [
         null

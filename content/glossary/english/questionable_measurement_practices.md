@@ -5,7 +5,7 @@
     "related_terms": [
         "Construct validity",
         "Measurement schmeasurement",
-        "P -hacking",
+        "P*\\-hacking",
         "Psychometrics",
         "Questionable Research Practices or Questionable Reporting Practices (QRPs)",
         "Validity"
@@ -24,7 +24,7 @@
         "Annalise A. LaPlume",
         "Sam Parsons",
         "Mirela Zaneva",
-        "F lávio Azevedo"
+        "Flávio Azevedo   ###  ### R {#r}"
     ],
     "language": "english",
     "aliases": [

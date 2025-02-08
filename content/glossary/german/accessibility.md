@@ -21,7 +21,7 @@
     ],
     "reviewed_by": [
         "Valeria Agostini",
-        " Myriam A. Baum",
+        "Myriam A. Baum",
         "Mahmoud Elsherif",
         "Bethan Iley",
         "Tamara Kalandadze",

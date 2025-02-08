@@ -3,11 +3,11 @@
     "title": "Epistemology (Epistemiologie / Erkenntnistheorie)",
     "definition": "Neben der Ethik, der Logik und der Metaphysik ist die Erkenntnistheorie einer der vier Hauptzweige der Philosophie. Die Erkenntnistheorie befasst sich weitgehend mit der Natur, dem Ursprung und dem Umfang des Wissens sowie mit der Rationalität von Überzeugungen.",
     "related_terms": [
-        "Meta-science or Meta-research ",
+        "Meta-science or Meta-research",
         "Ontology (Artificial Intelligence)"
     ],
     "references": [
-        "Reference :  Steup et al. (2020)"
+        "Steup et al. (2020)"
     ],
     "alt_related_terms": [
         null

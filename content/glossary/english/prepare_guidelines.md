@@ -18,8 +18,8 @@
     ],
     "reviewed_by": [
         "Mahmoud Elsherif",
-        " Gilad Feldman",
-        "Elias Garcia -Pelegrin"
+        "Gilad Feldman",
+        "Elias Garcia-Pelegrin"
     ],
     "language": "english",
     "aliases": [

@@ -15,6 +15,10 @@ header:
 type: "glossary"
 ---
 
+<div class="btn-group flex-wrap text-center"><a href="/glossary/english" class="btn btn-primary py-2 m-1 btn-lg active" style="line-height:1;border-radius:6px">English</a>
+<a href="/glossary/german" class="btn btn-primary py-2 m-1 btn-lg" style="line-height:1;border-radius:6px">Deutsch (German)</a>
+<a href="/glossary/arabic" class="btn btn-primary py-2 m-1 btn-lg" style="line-height:1;border-radius:6px"> عربي (Arabic)</a></div>
+
 ### Introduction
 
 In the last decade, the Open Science movement has introduced and modified many research practices. The breadth of these initiatives can be overwhelming, and digestible introductions to these topics are valuable (e.g. Crüwell et al. 2019; Kathawalla, Silverstein, & Syed, 2020). Creating a shared understanding of the purposes of these initiatives facilitates discussions of the strengths and weaknesses of each practice, ultimately helping us work towards a research utopia (Nosek & Bar-Anan, 2012).

@@ -9,7 +9,7 @@
         "Impact"
     ],
     "references": [
-        "https://guides.library.cornell.edu/impact/author-impact-10 https://guides.library.cornell.edu/impact/author-impact-10"
+        "[https://guides.library.cornell.edu/impact/author-impact-10](https://guides.library.cornell.edu/impact/author-impact-10)"
     ],
     "alt_related_terms": [
         null

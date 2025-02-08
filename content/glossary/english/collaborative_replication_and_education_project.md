@@ -19,7 +19,7 @@
         "Bradley Baker",
         "Mahmoud Elsherif",
         "Zoe Flack",
-        " Charlotte R. Pennington"
+        "Charlotte R. Pennington"
     ],
     "language": "english",
     "aliases": [
