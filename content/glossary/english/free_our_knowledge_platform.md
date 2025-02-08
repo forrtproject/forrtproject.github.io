@@ -7,7 +7,7 @@
         "Preregistration Pledge"
     ],
     "references": [
-        "https://freeourknowledge.org/about/ https://freeourknowledge.org/about/"
+        "[https://freeourknowledge.org/about/](https://freeourknowledge.org/about/)"
     ],
     "alt_related_terms": [
         null
@@ -20,7 +20,7 @@
         "Elizabeth Collins",
         "Mahmoud Elsherif",
         "Sam Parsons",
-        "Flávio Azevedo"
+        "Flávio Azevedo   ###  ### G {#g}"
     ],
     "language": "english",
     "aliases": [

@@ -23,14 +23,14 @@
     ],
     "reviewed_by": [
         "Nihan Albayrak-Aydemir",
-        " Mahmoud Elsherif",
+        "Mahmoud Elsherif",
         "Helena Hartmann",
         "Madeleine Ingham",
         "Annalise A. LaPlume",
         "Wanyin Li",
         "Charlotte R. Pennington",
         "Olly Robertson",
-        "Flávio Azevedo"
+        "Flávio Azevedo  ### E {#e}"
     ],
     "language": "english",
     "aliases": [

@@ -21,7 +21,7 @@
     "reviewed_by": [
         "Tina B. Lonsdorf",
         "Sam Parsons",
-        "Charlotte R. Penningto n"
+        "Charlotte R. Pennington"
     ],
     "language": "german"
 }

@@ -10,7 +10,7 @@
         "Research Protocol"
     ],
     "references": [
-        "Chambers (2013); Chambers et al. (2015); Chambers and Tzavella (2020); Findley et al. (2016); https://www.cos.io/initiatives/registered-reports https://www.cos.io/initiatives/registered-reports"
+        "Chambers (2013); Chambers et al. (2015); Chambers and Tzavella (2020); Findley et al. (2016); [https://www.cos.io/initiatives/registered-reports](https://www.cos.io/initiatives/registered-reports)"
     ],
     "alt_related_terms": [
         null
@@ -28,7 +28,7 @@
         "Eike Mark Rinke",
         "Timo Roettger",
         "Olmo van den Akker",
-        "Yuki Yamada ",
+        "Yuki Yamada",
         "Flávio Azevedo"
     ],
     "language": "german"

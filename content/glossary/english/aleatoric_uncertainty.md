@@ -16,8 +16,7 @@
         "Bradley Baker"
     ],
     "reviewed_by": [
-        "Nihan Albayrak-Aydemir ",
-        "Brett Gall",
+        "Nihan Albayrak-Aydemir; Brett Gall",
         "Magdalena Grose-Hodge",
         "Bethan Iley",
         "Charlotte R. Pennington"

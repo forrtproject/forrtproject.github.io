@@ -21,7 +21,7 @@
         "Helena Hartmann",
         "Sam Parsons",
         "Graham Reid",
-        "Mirela Zaneva"
+        "Mirela Zaneva   ### U {#u}"
     ],
     "language": "english",
     "aliases": [
