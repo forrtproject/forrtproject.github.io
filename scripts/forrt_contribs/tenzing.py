@@ -104,6 +104,12 @@ def format_name(row):
 
     return full_name
 
+# Apply name formatting
+merged_data['full_name'] = merged_data.apply(format_name, axis=1)
+
+# Propagate ORCID iD within each contributor's grouping
+merged_data['ORCID iD'] = merged_data.groupby('full_name')['ORCID iD'].transform(lambda x: x.ffill().bfill())
+
 # Group by 'ORCID iD' and concatenate the contributions
 def concatenate_contributions(group):
 
