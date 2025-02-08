@@ -8,7 +8,7 @@
         "Learning"
     ],
     "references": [
-        "Reference( s ):  Brule and Blount (1989)"
+        "Brule and Blount (1989)"
     ],
     "alt_related_terms": [
         null
@@ -17,10 +17,10 @@
         "Oscar Lecuona"
     ],
     "reviewed_by": [
-        "Bradley Baker ",
+        "Bradley Baker",
         "Helena Hartmann",
         "Kai Krautter",
-        "Graham Reid"
+        "Graham Reid  ###  ### L {#l}"
     ],
     "language": "english",
     "aliases": [

@@ -8,7 +8,7 @@
         "Reproducibility"
     ],
     "references": [
-        "Committee on Reproducibility and Replicability in Science et al. (2019); Kitzes et al (2017, p. xxii ); LeBel et al. (2018) ; Nosek and Errington (2020); Obels et al. (2020)"
+        "Committee on Reproducibility and Replicability in Science et al. (2019); Kitzes et al (2017, p. xxii); LeBel et al. (2018); Nosek and Errington (2020); Obels et al. (2020)"
     ],
     "alt_related_terms": [
         null

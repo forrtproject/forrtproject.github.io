@@ -1,7 +1,7 @@
 {
     "type": "glossary",
     "title": "Model (philosophy)",
-    "definition": "The process by which a verbal description is formalised to remove ambiguity, while also constraining the dimensions a theory can span. The model is thus data derived. “Many scientific models are representational models: they represent a selected part or aspect of the world, which is the model’s target system ” (Frigg & Hartman, 2020).",
+    "definition": "The process by which a verbal description is formalised to remove ambiguity, while also constraining the dimensions a theory can span. The model is thus data derived. “Many scientific models are representational models: they represent a selected part or aspect of the world, which is the model’s target system” (Frigg & Hartman, 2020).",
     "related_terms": [
         "Hypothesis",
         "Theory",

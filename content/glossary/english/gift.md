@@ -1,7 +1,7 @@
 {
     "type": "glossary",
     "title": "Gift (or Guest) Authorship",
-    "definition": "Definition : The inclusion in an article’s author list of individuals who do not meet the criteria for authorship. As authorship is associated with benefits including peer recognition and financial rewards, there are incentives for inclusion as an author on published research. Gifting authorship, or extending authorship credit to an individual who does not merit such recognition, can be intended to help the gift recipient, repay favors (including reciprocal gift authorship), maintain personal and professional relationships, and enhance chances of publication. Gift authorship is widely considered an unethical practice.",
+    "definition": "The inclusion in an article’s author list of individuals who do not meet the criteria for authorship. As authorship is associated with benefits including peer recognition and financial rewards, there are incentives for inclusion as an author on published research. Gifting authorship, or extending authorship credit to an individual who does not merit such recognition, can be intended to help the gift recipient, repay favors (including reciprocal gift authorship), maintain personal and professional relationships, and enhance chances of publication. Gift authorship is widely considered an unethical practice.",
     "related_terms": [
         "Authorship",
         "CRediT"
