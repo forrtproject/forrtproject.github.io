@@ -9,7 +9,7 @@
         "Reproducibility"
     ],
     "references": [
-        "https://reproducibilitea.org/ https://reproducibilitea.org/ ; Orben (2019)"
+        "[https://reproducibilitea.org/](https://reproducibilitea.org/); Orben (2019)"
     ],
     "alt_related_terms": [
         null
@@ -22,7 +22,7 @@
         "Gilad Feldman",
         "Connor Keating",
         "Charlotte R. Pennington",
-        "Sam Parsons ",
+        "Sam Parsons",
         "Flávio Azevedo"
     ],
     "language": "german"

@@ -20,7 +20,7 @@
         "Helena Hartmann",
         "Aleksandra Lazić",
         "Graham Reid",
-        "F lávio Azevedo"
+        "Flávio Azevedo"
     ],
     "language": "german"
 }

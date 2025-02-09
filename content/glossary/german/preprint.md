@@ -22,7 +22,7 @@
         "Helena Hartmann",
         "Sam Parsons",
         "Tobias Wingen",
-        "F lávio Azevedo"
+        "Flávio Azevedo"
     ],
     "language": "german"
 }

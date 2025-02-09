@@ -14,7 +14,7 @@
         "Preprint"
     ],
     "references": [
-        "https://www.nature.com/sdata/policies/ https://www.nature.com/sdata/policies/ repositories repositories"
+        "[https://www.nature.com/sdata/policies/repositories](https://www.nature.com/sdata/policies/repositories)"
     ],
     "alt_related_terms": [
         null
@@ -26,7 +26,7 @@
         "Gilad Feldman",
         "Connor Keating",
         "Mariella Paul",
-        "Charlotte R. Pennington ",
+        "Charlotte R. Pennington",
         "Flávio Azevedo"
     ],
     "language": "english",
