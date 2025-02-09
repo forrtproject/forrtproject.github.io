@@ -118,6 +118,12 @@
   parent = "about"
 
 [[main]]
+  name = "Community Map"  # A link title for your page.
+  url = "/community-map"  # The URL of your page.
+  weight = 28  # The position of your page in the menu.
+  parent = "about"
+
+[[main]]
   name = "Educational NEXUS"
   url = "/nexus"
   weight = 30
