@@ -4206,7 +4206,7 @@ Critiques: [Gelman and Loken 2013](http://www.stat.columbia.edu/~gelman/research
     * [Outliers: The Story of Success by Malcolm Gladwell ](https://www.goodreads.com/book/show/3228917-outliers)that is founded on the 10,000 hours for mastery claim.
     * [Behave: The Biology of Humans at Our Best and Worst ](https://www.goodreads.com/book/show/31170723-behave)by Robert Sapolsky which focuses on Himmicanes, power pose, facial feedback, ego depletion, Implicit Association, stereotype threat, broken windows theory, Macbeth effect.
     * [Thinking, Fast and Slow by Daniel Kahneman](https://www.goodreads.com/book/show/11468377-thinking-fast-and-slow) that has an Entire chapter on all kinds of priming. Facial-feedback, Effects of Head-Movements on Persuasion, Location as Prime, Money Priming, Death Priming, Lady Macbeth Effect. Cognitive disfluency. Ego depletion. Wansink. Hungry judges. Denies the "hot hand".
-    * [Nudge: Improving Decisions about Health, Wealth, and Happiness](https://myparenting.org/nudge-improving-decisions-about-health-wealth-and-happiness/) by Thaler and Sunstein focusing on Wansink, Baumeister, Dweck.
+    * [Nudge: Improving Decisions about Health, Wealth, and Happiness](https://books.google.fr/books/about/Nudge.html?id=dSJQn8egXvUC&redir_esc=y) by Thaler and Sunstein focusing on Wansink, Baumeister, Dweck.
     * [Smarter: The New Science of Building Brain Power ](https://www.goodreads.com/en/book/show/18079605-smarter)by Dan Hurley focusing on Dual n-Back
     * [Peter Watts Is An Angry Sentient Tumor: Revenge Fantasies and Essays ](https://www.goodreads.com/book/show/45729865-peter-watts-is-an-angry-sentient-tumor)by Peter Watts
 
