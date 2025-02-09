@@ -1,0 +1,13 @@
+{{ define "main" }}
+
+<article class="article container py-4">
+  {{ partial "page_header" . }}
+
+  <div class="content">
+    <div class="map-description p-3 bg-light rounded shadow-sm">
+      {{ .Content }}
+    </div>
+  </div>
+</article>
+
+{{ end }}
