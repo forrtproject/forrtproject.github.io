@@ -53,7 +53,7 @@ subtitle = ""
 
 <br>
 
-What we have accomplished at FORRT is only possible because of the work of so many scholars who dedicate their time and effort on a voluntary basis. We would like to help our members take credit for their work at FORRT. Team-science collaborations represent a new way to do science and often it is not clear (especially to ECRs) how to take credit for their contributions. With the CV provided below, we hope to give an example to FORRT’s members of how their contributions could be showcased in their personal CVs. The [LaTeX code](https://github.com/forrtproject/cv) is also open so that everyone can use it as a template for their own CVs as well.
+What we have accomplished at FORRT is only possible because of the work of so many scholars who dedicate their time and effort on a voluntary basis. We would like to help our members take credit for their work at FORRT. Team-science collaborations represent a new way to do science and often it is not clear (especially to ECRs) how to take credit for their contributions. With the CV provided below, we hope to give an example to FORRT’s members of how their contributions could be showcased in their personal CVs. The [LaTeX code](https://github.com/forrtproject/cv) is also open so that everyone can use it as a template for their own CVs as well. 
 
 <br>
 
