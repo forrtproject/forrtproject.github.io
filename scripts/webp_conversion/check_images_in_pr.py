@@ -18,15 +18,9 @@ repo_name = os.environ['GITHUB_REPOSITORY']
 repo = g.get_repo(repo_name)
 
 # Get the PR number from the GitHub event
-pr_ref = os.environ.get('GITHUB_REF')
-if not pr_ref:
-    print("Error: GITHUB_REF is not set.", file=sys.stderr)
-    sys.exit(1)
-
-try:
-    pr_number = int(pr_ref.split('/')[-2])
-except (IndexError, ValueError):
-    print("Error: Could not parse PR number from GITHUB_REF.", file=sys.stderr)
+pr_number = os.environ.get('GITHUB_PR_NO')
+if not pr_number:
+    print("Error: GITHUB_PR_NO is not set.", file=sys.stderr)
     sys.exit(1)
 
 pr = repo.get_pull(pr_number)
