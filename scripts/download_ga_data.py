@@ -10,7 +10,7 @@ credentials_json = os.getenv("GA_API_CREDENTIALS")
 property_id = os.getenv("GA_PROPERTY_ID")
 
 # Ensure the environment variables are set
-if not credentials_path or not property_id:
+if not credentials_json or not property_id:
     raise ValueError("Environment variables GA_API_CREDENTIALS and GA_PROPERTY_ID must be set.")
 
 credentials_info = json.loads(credentials_json)
