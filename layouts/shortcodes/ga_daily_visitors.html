@@ -1,0 +1,41 @@
+<!-- layouts/shortcodes/daily_visitors.html -->
+<canvas id="visitorsChart" width="400" height="200"></canvas>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  var dailyData = {{ .Site.Data.ga_data.daily_visitors | jsonify | safeJS }};
+  if (dailyData && dailyData.length) {
+    dailyData.sort((a, b) => new Date(a.date) - new Date(b.date));
+    dailyData.pop();
+    var labels = dailyData.map(function(entry) { return entry.date; });
+    var dataPoints = dailyData.map(function(entry) { return entry.users; });
+    var ctx = document.getElementById('visitorsChart').getContext('2d');
+    new Chart(ctx, {
+      type: 'line',
+      data: {
+        labels: labels,
+        datasets: [{
+          label: 'Daily Visitors',
+          data: dataPoints,
+          borderColor: 'rgba(75, 192, 192, 1)',
+          backgroundColor: 'rgba(75, 192, 192, 0.2)',
+          fill: true
+        }]
+      },
+      options: {
+        responsive: true,
+        scales: {
+          x: {
+            title: { display: true, text: 'Date' }
+          },
+          y: {
+            title: { display: true, text: 'Users' }
+          }
+        }
+      }
+    });
+  } else {
+    console.warn('No daily visitor data available.');
+  }
+});
+</script>
