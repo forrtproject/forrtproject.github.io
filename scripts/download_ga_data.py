@@ -6,15 +6,15 @@ from google.analytics.data_v1beta.types import RunReportRequest, DateRange, Dime
 from google.oauth2 import service_account
 
 # Retrieve values from environment variables
-credentials_path = os.getenv("GA_API_CREDENTIALS")
+credentials_json = os.getenv("GA_API_CREDENTIALS")
 property_id = os.getenv("GA_PROPERTY_ID")
 
 # Ensure the environment variables are set
 if not credentials_path or not property_id:
     raise ValueError("Environment variables GA_API_CREDENTIALS and GA_PROPERTY_ID must be set.")
 
-with open(credentials_path, "r") as f:
-    credentials_info = json.load(f)
+credentials_info = json.loads(credentials_json)
+
 credentials = service_account.Credentials.from_service_account_info(credentials_info)
 client = BetaAnalyticsDataClient(credentials=credentials)
 
