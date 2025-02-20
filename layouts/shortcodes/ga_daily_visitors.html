@@ -6,6 +6,7 @@ document.addEventListener('DOMContentLoaded', function() {
   var dailyData = {{ .Site.Data.ga_data.daily_visitors | jsonify | safeJS }};
   if (dailyData && dailyData.length) {
     dailyData.sort((a, b) => new Date(a.date) - new Date(b.date));
+    dailyData.pop();
     var labels = dailyData.map(function(entry) { return entry.date; });
     var dataPoints = dailyData.map(function(entry) { return entry.users; });
     var ctx = document.getElementById('visitorsChart').getContext('2d');
