@@ -32,7 +32,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GITHUB_REPOSITORY: ${{ github.repository }}
-          GITHUB_REF: ${{ github.ref }}
+          GITHUB_PR_NO: ${{ github.event.pull_request.number }}
         run: |
           python scripts/webp_conversion/check_images_in_pr.py
 
