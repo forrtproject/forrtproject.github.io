@@ -87,7 +87,14 @@ jobs:
           NUM_FILES=$(ls -1 content/curated_resources/*.md | wc -l)
           echo "Number of curated resources: $NUM_FILES"
 
-      - name: Hugo - Build 
+
+      - name: Download GA Data
+        env:
+          GA_API_CREDENTIALS: ${{ secrets.GA_API_CREDENTIALS }}
+          GA_PROPERTY_ID: ${{ secrets.GA_PROPERTY_ID }}
+        run: python scripts/download_ga_data.py
+
+      - name: Hugo - Build
         run: |
           if [ "$BRANCH" != 'refs/heads/master' ]; then
             hugo --gc --minify --cleanDestinationDir --destination public --baseURL https://staging.forrt.org
@@ -135,7 +142,7 @@ jobs:
     runs-on: ubuntu-22.04
     permissions:
       contents: write
-    needs: 
+    needs:
       - deploy-test
     if: (github.event_name == 'push' || github.event_name == 'schedule') && github.ref == 'refs/heads/master' && github.event.repository.fork == false
     steps:

@@ -1,0 +1,27 @@
+<!-- layouts/shortcodes/top_pages.html -->
+<table>
+  <thead>
+    <tr>
+      <th>Page</th>
+      <th>Views</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{ range .Site.Data.ga_data.top_pages }}
+    <tr>
+      <td>
+        {{ with .Site.GetPage .page }}
+          {{ if ne .Title "" }}
+            <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+          {{ else }}
+            <a href="{{ .RelPermalink }}">{{ .RelPermalink }}</a>
+          {{ end }}
+        {{ else }}
+          <a href="https://forrt.org{{ .page }}">https://forrt.org{{ .page }}</a>
+        {{ end }}
+      </td>
+      <td>{{ .views }}</td>
+    </tr>
+    {{ end }}
+  </tbody>
+</table>
