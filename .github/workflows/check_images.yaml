@@ -1,7 +1,7 @@
 name: Check Images in PR
 
 on:
-  pull_request_target:
+  pull_request:
     types: [opened, synchronize, reopened]
 
 permissions:
@@ -32,7 +32,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GITHUB_REPOSITORY: ${{ github.repository }}
-          GITHUB_PR_NO: ${{ github.event.pull_request.number }}
+          GITHUB_REF: ${{ github.ref }}
         run: |
           python scripts/webp_conversion/check_images_in_pr.py
 
