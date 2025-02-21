@@ -3,7 +3,7 @@ title: "Visitors"
 type: "page"
 ---
 
-We are excited to see that our webpage is useful for people from all over the world. Here are some statistics to show who has been here over the past 30 days.
+We are excited to see that our resources are useful for people from all over the world. Here are some statistics to show who has been here over the past 30 days.
 
 ## ... by country
 
