@@ -1,0 +1,83 @@
+<div id="ga_map" style="height: 400px; background: #b3d9ff;"></div> <!-- ✅ Light blue ocean background -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  console.log("Initializing map...");
+
+  // Remove existing Leaflet instance if it exists
+  if (window.myLeafletMap) {
+    console.warn("Map already exists! Removing it first...");
+    window.myLeafletMap.remove();
+    delete window.myLeafletMap;
+  }
+
+  console.log("Creating new Leaflet map...");
+  window.myLeafletMap = L.map('ga_map', {
+    zoomControl: false,
+    scrollWheelZoom: false,
+    dragging: true,
+    doubleClickZoom: false,
+    touchZoom: false,
+    maxBoundsViscosity: 1.0
+  }).setView([40, 0], 1.25); // ✅ Adjust as needed
+
+  // ✅ Define visitor data from Hugo
+  var gaRegionsData = {{ .Site.Data.ga_data.regions | jsonify | safeJS }};
+  var gaRegions = {};
+  gaRegionsData.forEach(function(entry) {
+    gaRegions[entry.country] = entry.users;
+  });
+
+  // ✅ Function to color countries based on visitor data
+  function getColor(d) {
+    return d > 1000 ? '#004529' :
+           d > 500  ? '#005824' :
+           d > 200  ? '#006837' :
+           d > 100  ? '#238443' :
+           d > 50   ? '#41ab5d' :
+           d > 20   ? '#78c679' :
+           d > 10   ? '#addd8e' :
+           d > 1    ? '#d9f0a3' :
+           d === 1  ? '#ffffcc' : '#f0f0f0';
+  }
+
+  // ✅ Style function for country polygons
+  function style(feature) {
+    var countryName = feature.properties.name;
+    var users = gaRegions[countryName] || 0;
+    return {
+      fillColor: getColor(users),
+      weight: 1,
+      opacity: 1,
+      color: 'white',
+      dashArray: '3',
+      fillOpacity: 0.7
+    };
+  }
+
+  // ✅ Load and render GeoJSON file with country borders
+  fetch('/countries.geojson')
+    .then(response => response.json())
+    .then(geojsonData => {
+      console.log("GeoJSON Loaded, adding to map...");
+
+      L.geoJson(geojsonData, {
+        style: style,
+        onEachFeature: function(feature, layer) {
+          var countryName = feature.properties.name;
+          var users = gaRegions[countryName] || 0;
+          layer.bindPopup(countryName + ": " + users + " users");
+        }
+      }).addTo(window.myLeafletMap);
+
+      console.log("GeoJSON correctly added to the map.");
+
+      // ✅ Ensure the map properly updates after the GeoJSON is added
+      setTimeout(() => {
+        window.myLeafletMap.invalidateSize();
+      }, 500);
+    })
+    .catch(error => {
+      console.error("Error loading GeoJSON:", error);
+    });
+});
+</script>
