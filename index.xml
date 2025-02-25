@@ -11085,7 +11085,7 @@ doubleClickZoom: false,
 touchZoom: false,
 maxBoundsViscosity: 1.0
 }).setView([40, 0], 1.25);
-var gaRegionsData = [{"country":"Germany","users":660},{"country":"United States of America","users":610},{"country":"United Kingdom","users":433},{"country":"Netherlands","users":235},{"country":"Ireland","users":142},{"country":"Canada","users":100},{"country":"Austria","users":70},{"country":"India","users":68},{"country":"Finland","users":52},{"country":"Switzerland","users":48},{"country":"China","users":39},{"country":"France","users":38},{"country":"Australia","users":32},{"country":"Italy","users":32},{"country":"Brazil","users":29},{"country":"Poland","users":27},{"country":"Norway","users":25},{"country":"Egypt","users":22},{"country":"Spain","users":21},{"country":"Belgium","users":19},{"country":"Philippines","users":19},{"country":"Sweden","users":19},{"country":"Japan","users":16},{"country":"Mexico","users":15},{"country":"Saudi Arabia","users":15},{"country":"Kenya","users":14},{"country":"Algeria","users":13},{"country":"Indonesia","users":13},{"country":"Denmark","users":12},{"country":"Russia","users":12},{"country":"United Arab Emirates","users":12},{"country":"Greece","users":11},{"country":"Czechia","users":10},{"country":"Israel","users":10},{"country":"Singapore","users":10},{"country":"Serbia","users":9},{"country":"Morocco","users":8},{"country":"Thailand","users":8},{"country":"Ghana","users":7},{"country":"South Africa","users":7},{"country":"Romania","users":6},{"country":"(not set)","users":5},{"country":"Faroe Islands","users":5},{"country":"Iraq","users":5},{"country":"New Zealand","users":5},{"country":"Pakistan","users":5},{"country":"Portugal","users":5},{"country":"Türkiye","users":5},{"country":"Colombia","users":4},{"country":"Iran","users":4},{"country":"Jordan","users":4},{"country":"Latvia","users":4},{"country":"Nigeria","users":4},{"country":"Syria","users":4},{"country":"Ukraine","users":4},{"country":"Vietnam","users":4},{"country":"Argentina","users":3},{"country":"Bangladesh","users":3},{"country":"Croatia","users":3},{"country":"Ethiopia","users":3},{"country":"Hong Kong","users":3},{"country":"Iceland","users":3},{"country":"Slovenia","users":3},{"country":"Taiwan","users":3},{"country":"Tanzania","users":3},{"country":"Tunisia","users":3},{"country":"Uganda","users":3},{"country":"Yemen","users":3},{"country":"Azerbaijan","users":2},{"country":"Chile","users":2},{"country":"Estonia","users":2},{"country":"Georgia","users":2},{"country":"Kazakhstan","users":2},{"country":"Malaysia","users":2},{"country":"Nepal","users":2},{"country":"Palestine","users":2},{"country":"Puerto Rico","users":2},{"country":"Qatar","users":2},{"country":"Somalia","users":2},{"country":"Zimbabwe","users":2},{"country":"Bahrain","users":1},{"country":"Belarus","users":1},{"country":"Bosnia \u0026 Herzegovina","users":1},{"country":"Bulgaria","users":1},{"country":"Cyprus","users":1},{"country":"Guernsey","users":1},{"country":"Hungary","users":1},{"country":"Lebanon","users":1},{"country":"Liberia","users":1},{"country":"Libya","users":1},{"country":"Lithuania","users":1},{"country":"Mauritania","users":1},{"country":"Myanmar (Burma)","users":1},{"country":"Panama","users":1},{"country":"Peru","users":1},{"country":"South Korea","users":1},{"country":"Timor-Leste","users":1},{"country":"Togo","users":1},{"country":"U.S. Virgin Islands","users":1},{"country":"Uruguay","users":1},{"country":"Venezuela","users":1}];
+var gaRegionsData = [{"country":"Germany","users":666},{"country":"United States of America","users":620},{"country":"United Kingdom","users":443},{"country":"Netherlands","users":240},{"country":"Ireland","users":140},{"country":"Canada","users":101},{"country":"Austria","users":71},{"country":"India","users":68},{"country":"Finland","users":52},{"country":"Switzerland","users":48},{"country":"China","users":39},{"country":"France","users":38},{"country":"Australia","users":33},{"country":"Italy","users":32},{"country":"Brazil","users":28},{"country":"Norway","users":27},{"country":"Poland","users":27},{"country":"Spain","users":24},{"country":"Egypt","users":23},{"country":"Sweden","users":22},{"country":"Philippines","users":21},{"country":"Belgium","users":19},{"country":"Japan","users":19},{"country":"Mexico","users":15},{"country":"Saudi Arabia","users":15},{"country":"Indonesia","users":14},{"country":"Kenya","users":14},{"country":"Algeria","users":13},{"country":"Denmark","users":12},{"country":"Russia","users":12},{"country":"United Arab Emirates","users":12},{"country":"Greece","users":11},{"country":"Czechia","users":10},{"country":"Israel","users":10},{"country":"Singapore","users":10},{"country":"Serbia","users":9},{"country":"Morocco","users":8},{"country":"Thailand","users":8},{"country":"Ghana","users":7},{"country":"South Africa","users":7},{"country":"(not set)","users":5},{"country":"Faroe Islands","users":5},{"country":"Iraq","users":5},{"country":"New Zealand","users":5},{"country":"Pakistan","users":5},{"country":"Portugal","users":5},{"country":"Romania","users":5},{"country":"Tanzania","users":5},{"country":"Türkiye","users":5},{"country":"Yemen","users":5},{"country":"Colombia","users":4},{"country":"Iran","users":4},{"country":"Jordan","users":4},{"country":"Latvia","users":4},{"country":"Nigeria","users":4},{"country":"Syria","users":4},{"country":"Ukraine","users":4},{"country":"Vietnam","users":4},{"country":"Argentina","users":3},{"country":"Bangladesh","users":3},{"country":"Croatia","users":3},{"country":"Ethiopia","users":3},{"country":"Hong Kong","users":3},{"country":"Iceland","users":3},{"country":"Slovenia","users":3},{"country":"Taiwan","users":3},{"country":"Tunisia","users":3},{"country":"Uganda","users":3},{"country":"Azerbaijan","users":2},{"country":"Chile","users":2},{"country":"Estonia","users":2},{"country":"Georgia","users":2},{"country":"Kazakhstan","users":2},{"country":"Malaysia","users":2},{"country":"Nepal","users":2},{"country":"Palestine","users":2},{"country":"Puerto Rico","users":2},{"country":"Qatar","users":2},{"country":"Somalia","users":2},{"country":"Togo","users":2},{"country":"Zimbabwe","users":2},{"country":"Bahrain","users":1},{"country":"Belarus","users":1},{"country":"Bosnia \u0026 Herzegovina","users":1},{"country":"Bulgaria","users":1},{"country":"Cyprus","users":1},{"country":"Guernsey","users":1},{"country":"Hungary","users":1},{"country":"Lebanon","users":1},{"country":"Liberia","users":1},{"country":"Libya","users":1},{"country":"Lithuania","users":1},{"country":"Mauritania","users":1},{"country":"Myanmar (Burma)","users":1},{"country":"Panama","users":1},{"country":"Peru","users":1},{"country":"South Korea","users":1},{"country":"Timor-Leste","users":1},{"country":"U.S. Virgin Islands","users":1},{"country":"Uruguay","users":1},{"country":"Venezuela","users":1}];
 var gaRegions = {};
 gaRegionsData.forEach(function(entry) {
 gaRegions[entry.country] = entry.users;
@@ -11148,31 +11148,31 @@ console.error("Error loading GeoJSON:", error);
 &lt;td>
 &lt;a href="https://forrt.org/">https://forrt.org/&lt;/a>
 &lt;/td>
-&lt;td>1064&lt;/td>
+&lt;td>1079&lt;/td>
 &lt;/tr>
 &lt;tr>
 &lt;td>
 &lt;a href="https://forrt.org/reversals/">https://forrt.org/reversals/&lt;/a>
 &lt;/td>
-&lt;td>525&lt;/td>
+&lt;td>520&lt;/td>
 &lt;/tr>
 &lt;tr>
 &lt;td>
 &lt;a href="https://forrt.org/resources/">https://forrt.org/resources/&lt;/a>
 &lt;/td>
-&lt;td>304&lt;/td>
+&lt;td>306&lt;/td>
 &lt;/tr>
 &lt;tr>
 &lt;td>
 &lt;a href="https://forrt.org/awop/">https://forrt.org/awop/&lt;/a>
 &lt;/td>
-&lt;td>249&lt;/td>
+&lt;td>254&lt;/td>
 &lt;/tr>
 &lt;tr>
 &lt;td>
 &lt;a href="https://forrt.org/replication-hub/">https://forrt.org/replication-hub/&lt;/a>
 &lt;/td>
-&lt;td>165&lt;/td>
+&lt;td>168&lt;/td>
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>
@@ -11181,7 +11181,7 @@ console.error("Error loading GeoJSON:", error);
 &lt;script src="https://cdn.jsdelivr.net/npm/chart.js">&lt;/script>
 &lt;script>
 document.addEventListener('DOMContentLoaded', function() {
-var dailyData = [{"date":"2025-02-17","users":213},{"date":"2025-02-04","users":202},{"date":"2025-02-12","users":201},{"date":"2025-01-29","users":181},{"date":"2025-01-30","users":167},{"date":"2025-02-19","users":149},{"date":"2025-02-05","users":147},{"date":"2025-02-03","users":146},{"date":"2025-02-18","users":143},{"date":"2025-02-13","users":142},{"date":"2025-02-21","users":134},{"date":"2025-02-11","users":124},{"date":"2025-02-14","users":123},{"date":"2025-01-27","users":115},{"date":"2025-02-06","users":112},{"date":"2025-02-20","users":112},{"date":"2025-01-28","users":101},{"date":"2025-02-07","users":101},{"date":"2025-02-10","users":101},{"date":"2025-02-16","users":89},{"date":"2025-01-31","users":83},{"date":"2025-02-15","users":79},{"date":"2025-01-26","users":71},{"date":"2025-02-01","users":67},{"date":"2025-02-22","users":64},{"date":"2025-02-09","users":59},{"date":"2025-02-02","users":52},{"date":"2025-01-25","users":38},{"date":"2025-02-08","users":38},{"date":"2025-02-23","users":37}];
+var dailyData = [{"date":"2025-02-17","users":213},{"date":"2025-02-04","users":202},{"date":"2025-02-12","users":201},{"date":"2025-01-29","users":181},{"date":"2025-01-30","users":167},{"date":"2025-02-19","users":149},{"date":"2025-02-05","users":147},{"date":"2025-02-03","users":146},{"date":"2025-02-18","users":143},{"date":"2025-02-13","users":142},{"date":"2025-02-21","users":134},{"date":"2025-02-11","users":124},{"date":"2025-02-14","users":123},{"date":"2025-01-27","users":115},{"date":"2025-02-06","users":112},{"date":"2025-02-20","users":112},{"date":"2025-01-28","users":101},{"date":"2025-02-07","users":101},{"date":"2025-02-10","users":101},{"date":"2025-02-16","users":89},{"date":"2025-01-31","users":83},{"date":"2025-02-15","users":79},{"date":"2025-01-26","users":71},{"date":"2025-02-23","users":69},{"date":"2025-02-01","users":67},{"date":"2025-02-22","users":64},{"date":"2025-02-24","users":62},{"date":"2025-02-09","users":59},{"date":"2025-02-02","users":52},{"date":"2025-02-08","users":38}];
 if (dailyData &amp;&amp; dailyData.length) {
 dailyData.sort((a, b) => new Date(a.date) - new Date(b.date));
 dailyData.pop();
