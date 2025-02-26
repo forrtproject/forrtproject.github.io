@@ -73,6 +73,7 @@ Email: [verein@forrt.org](mailto:verein@forrt.org)
 - Lukas Röseler
 - Lukas Wallrich
 - Flávio Azevedo
+- Helena Hartmann
 - Malte Elson
 - Justin Sulik
 - Leticia Micheli
