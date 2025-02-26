@@ -89,6 +89,7 @@ jobs:
 
 
       - name: Download GA Data
+        if: ${{ github.event_name != 'pull_request' || secrets.GA_API_CREDENTIALS != '' }}
         env:
           GA_API_CREDENTIALS: ${{ secrets.GA_API_CREDENTIALS }}
           GA_PROPERTY_ID: ${{ secrets.GA_PROPERTY_ID }}
