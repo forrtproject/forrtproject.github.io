@@ -34,6 +34,12 @@
   parent = "about"
 
 [[main]]
+  name = "Charity"  # A link title for your page.
+  url = "about/charity/"  # The URL of your page.
+  weight = 13  # The position of your page in the menu.
+  parent = "about"
+
+[[main]]
   name = "Code of Conduct"  # A link title for your page.
   url = "/coc"  # The URL of your page.
   weight = 14  # The position of your page in the menu.
@@ -44,7 +50,13 @@
   url = "/about/community"  # The URL of your page.
   weight = 15  # The position of your page in the menu.
   parent = "about"
-
+  
+[[main]]
+  name = "Community Map"  # A link title for your page.
+  url = "/community-map"  # The URL of your page.
+  weight = 15  # The position of your page in the menu.
+  parent = "about"
+  
 [[main]]
   name = "Contributors"  # A link title for your page.
   url = "/contributors"  # The URL of your page.
@@ -82,22 +94,17 @@
   parent = "about"
 
 [[main]]
-  name = "Principles"  # A link title for your page.
-  url = "/about/principles/"  # The URL of your page.
+  name = "Partners"  # A link title for your page.
+  url = "about/partnerships/"  # The URL of your page.
   weight = 22  # The position of your page in the menu.
   parent = "about"
 
 [[main]]
-  name = "Partners"  # A link title for your page.
-  url = "about/partnerships/"  # The URL of your page.
+  name = "Principles"  # A link title for your page.
+  url = "/about/principles/"  # The URL of your page.
   weight = 23  # The position of your page in the menu.
   parent = "about"
 
-[[main]]
-  name = "Principles"  # A link title for your page.
-  url = "/about/principles/"  # The URL of your page.
-  weight = 24  # The position of your page in the menu.
-  parent = "about"
 
 [[main]]
   name = "Talks"  # A link title for your page.
@@ -112,14 +119,8 @@
   parent = "about"
 
 [[main]]
-  name = "Charity"  # A link title for your page.
-  url = "about/charity/"  # The URL of your page.
-  weight = 27  # The position of your page in the menu.
-  parent = "about"
-
-[[main]]
-  name = "Community Map"  # A link title for your page.
-  url = "/community-map"  # The URL of your page.
+  name = "Visitors"  # A link title for your page.
+  url = "/about/visitors"  # The URL of your page.
   weight = 28  # The position of your page in the menu.
   parent = "about"
 
@@ -292,14 +293,11 @@
   parent = "replications"
 
 
-
 [[main]]
   name = "Submit a replication to FReD"
   url = "/replication-hub/submit"
   weight = 57
   parent = "replications"
-
-
 
 
 [[main]]
