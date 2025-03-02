@@ -153,8 +153,6 @@ jobs:
           path: ${{ github.repository }}/forrt-website
 
       - name: Deploy - GitHub Pages
-        env:
-            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         uses: peaceiris/actions-gh-pages@4f9cc6602d3f66b9c108549d475ec49e8ef4d45e
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
