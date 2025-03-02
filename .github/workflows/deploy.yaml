@@ -87,7 +87,6 @@ jobs:
           NUM_FILES=$(ls -1 content/curated_resources/*.md | wc -l)
           echo "Number of curated resources: $NUM_FILES"
 
-
       - name: Download GA Data
         if: ${{ github.event_name != 'pull_request' || github.event.inputs.GA_API_CREDENTIALS != '' }}
         env:
@@ -159,5 +158,4 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ${{ github.repository }}/forrt-website
           publish_branch: gh-pages
-          cname: forrt.org
-
+          cname: forrt.org          
