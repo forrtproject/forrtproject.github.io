@@ -87,6 +87,10 @@ jobs:
           NUM_FILES=$(ls -1 content/curated_resources/*.md | wc -l)
           echo "Number of curated resources: $NUM_FILES"
 
+      - name: Setup auth token
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: echo "Token is set"
 
       - name: Download GA Data
         if: ${{ github.event_name != 'pull_request' || github.event.inputs.GA_API_CREDENTIALS != '' }}
