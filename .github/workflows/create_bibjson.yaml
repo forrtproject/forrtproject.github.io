@@ -1,0 +1,84 @@
+name: Convert Bib to CSL JSON
+
+on:
+  push:
+  paths:
+  - '**/*.bib'
+pull_request:
+  paths:
+  - '**/*.bib'
+workflow_dispatch:
+
+jobs:
+  convert_bib_to_csljson:
+  runs-on: ubuntu-22.04
+steps:
+  - name: Checkout repository
+uses: actions/checkout@v4
+with:
+  fetch-depth: 0
+
+- name: Download Google Sheet as CSV
+run: |
+  curl -L -o google_sheet.csv "https://docs.google.com/spreadsheets/d/1Px_HAdkRP7z_AyuQCBzuTAolVm5npUFZbbH92o7CsZ4/export?format=csv"
+
+- name: Extract BibTeX from CSV
+id: extract_bibtex
+run: |
+  if [ -f google_sheet.csv ]; then
+bibtex_entries=$(awk -F',' 'NR>1 {print $2}' google_sheet.csv) # Assumes BibTeX is in the SECOND column
+if [ -n "$bibtex_entries" ]; then
+echo "$bibtex_entries" > google_sheet_bibtex.bib
+echo "google_bib=google_sheet_bibtex.bib" >> $GITHUB_OUTPUT
+else
+  echo "No BibTeX entries found in the CSV."
+echo "google_bib=" >> $GITHUB_OUTPUT
+fi
+else
+  echo "google_sheet.csv not found."
+echo "google_bib=" >> $GITHUB_OUTPUT
+fi
+
+- name: Find .bib files
+id: find_bib_files
+run: |
+  bib_files=$(find content data static -name "*.bib" | tr '\n' ' ')
+if [[ -n "${{ steps.extract_bibtex.outputs.google_bib }}" ]]; then
+if [[ -n "$bib_files" ]]; then
+bib_files="$bib_files ${{ steps.extract_bibtex.outputs.google_bib }}"
+else
+  bib_files="${{ steps.extract_bibtex.outputs.google_bib }}"
+fi
+fi
+if [[ -z "$bib_files" ]]; then
+echo "No .bib files found."
+echo "bib_files=" >> $GITHUB_OUTPUT
+exit 0
+fi
+echo "Found .bib files: $bib_files"
+echo "bib_files=$bib_files" >> $GITHUB_OUTPUT
+
+- name: Combine .bib files
+if: steps.find_bib_files.outputs.bib_files
+id: combine_bib
+run: |
+  if [[ -z "${{ steps.find_bib_files.outputs.bib_files }}" ]]; then
+exit 0
+fi
+combined_bib="combined.bib"
+cat ${{ steps.find_bib_files.outputs.bib_files }} > $combined_bib
+echo "Combined .bib files into $combined_bib"
+echo "combined_bib=$combined_bib" >> $GITHUB_OUTPUT
+
+- name: Convert to CSL JSON
+if: steps.find_bib_files.outputs.bib_files
+uses: docker://pandoc/latex:3.5
+with:
+  args: ${{ steps.combine_bib.outputs.combined_bib }} -t csljson -o data/bib.json
+
+- name: Upload CSL JSON Artifact
+if: steps.find_bib_files.outputs.bib_files
+uses: actions/upload-artifact@v4
+with:
+  name: csl-json
+path: data/bib.json

@@ -1,0 +1,161 @@
+[
+  {
+    "DOI": "10.1027/2151-2604/a000387",
+    "ISSN": "2151-2604",
+    "URL": "http://dx.doi.org/10.1027/2151-2604/a000387",
+    "author": [
+      {
+        "family": "Crüwell",
+        "given": "Sophia"
+      },
+      {
+        "dropping-particle": "van",
+        "family": "Doorn",
+        "given": "Johnny"
+      },
+      {
+        "family": "Etz",
+        "given": "Alexander"
+      },
+      {
+        "family": "Makel",
+        "given": "Matthew C."
+      },
+      {
+        "family": "Moshontz",
+        "given": "Hannah"
+      },
+      {
+        "family": "Niebaum",
+        "given": "Jesse C."
+      },
+      {
+        "family": "Orben",
+        "given": "Amy"
+      },
+      {
+        "family": "Parsons",
+        "given": "Sam"
+      },
+      {
+        "family": "Schulte-Mecklenbeck",
+        "given": "Michael"
+      }
+    ],
+    "container-title": "Zeitschrift für Psychologie",
+    "id": "Cr_well_2019",
+    "issue": "4",
+    "issued": {
+      "date-parts": [
+        [
+          2019,
+          10
+        ]
+      ]
+    },
+    "page": "237-248",
+    "publisher": "Hogrefe Publishing Group",
+    "title": "Seven easy steps to open science: An annotated reading list",
+    "title-short": "Seven easy steps to open science",
+    "type": "article-journal",
+    "volume": "227"
+  },
+  {
+    "DOI": "10.1080/1047840x.2012.692215",
+    "ISSN": "1532-7965",
+    "URL": "http://dx.doi.org/10.1080/1047840x.2012.692215",
+    "author": [
+      {
+        "family": "Nosek",
+        "given": "Brian A."
+      },
+      {
+        "family": "Bar-Anan",
+        "given": "Yoav"
+      }
+    ],
+    "container-title": "Psychological Inquiry",
+    "id": "Nosek_2012",
+    "issue": "3",
+    "issued": {
+      "date-parts": [
+        [
+          2012,
+          7
+        ]
+      ]
+    },
+    "page": "217-243",
+    "publisher": "Informa UK Limited",
+    "title": "Scientific utopia: I. Opening scientific communication",
+    "title-short": "Scientific utopia",
+    "type": "article-journal",
+    "volume": "23"
+  },
+  {
+    "DOI": "10.1525/collabra.18684",
+    "ISSN": "2474-7394",
+    "URL": "http://dx.doi.org/10.1525/collabra.18684",
+    "author": [
+      {
+        "family": "Kathawalla",
+        "given": "Ummul-Kiram"
+      },
+      {
+        "family": "Silverstein",
+        "given": "Priya"
+      },
+      {
+        "family": "Syed",
+        "given": "Moin"
+      }
+    ],
+    "container-title": "Collabra: Psychology",
+    "editor": [
+      {
+        "family": "Wetzel",
+        "given": "Eunike"
+      }
+    ],
+    "id": "Kathawalla_2021",
+    "issue": "1",
+    "issued": {
+      "date-parts": [
+        [
+          2021
+        ]
+      ]
+    },
+    "publisher": "University of California Press",
+    "title": "Easing into open science: A guide for graduate students and their advisors",
+    "title-short": "Easing into open science",
+    "type": "article-journal",
+    "volume": "7"
+  },
+  {
+    "DOI": "10.1126/science.aac4716",
+    "ISSN": "1095-9203",
+    "URL": "http://dx.doi.org/10.1126/science.aac4716",
+    "author": [
+      {
+        "family": "Collaboration",
+        "given": "Open Science"
+      }
+    ],
+    "container-title": "Science",
+    "id": "OSC2015",
+    "issue": "6251",
+    "issued": {
+      "date-parts": [
+        [
+          2015,
+          8
+        ]
+      ]
+    },
+    "publisher": "American Association for the Advancement of Science (AAAS)",
+    "title": "Estimating the reproducibility of psychological science",
+    "type": "article-journal",
+    "volume": "349"
+  }
+]
