@@ -199,4 +199,7 @@ Would you like to give feedback, help us review terms, or add terms? You can do 
 
 {{< /expand >}}
 
+
+#### References
+
 {{< bibliography cited >}}
