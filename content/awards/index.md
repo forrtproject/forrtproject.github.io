@@ -2,7 +2,7 @@
 # FORRT page
 type = "widget_page"
 headless = false  # Homepage is headless, other widget pages are not.
-title = "Manuscript"
+title = "Awards"
 # url = "/forrt/manuscript"
 +++
 
