@@ -32,6 +32,8 @@ jobs:
         with:
           ref: ${{ github.ref }}
           fetch-depth: 0
+          submodules: recursive
+
 
       - name: Hugo - Setup
         uses: peaceiris/actions-hugo@75d2e84710de30f6ff7268e08f310b60ef14033f
@@ -158,4 +160,4 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ${{ github.repository }}/forrt-website
           publish_branch: gh-pages
-          cname: forrt.org          
+          cname: forrt.org
