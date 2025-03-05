@@ -1,0 +1,133 @@
+{{- $errorMissingValue := "1 or 2 values must be supplied with this shortcode. You provided %d params. The first is required and should match an ID in the CSL-JSON bibliography file, the second is optional, and should be a page number or range of page numbers. Example: {{< cite \"Faure 1909\" \"304\" >}}" -}}
+{{- $errorMissingNamedParams := "You must at least provide a citation key. It is required and should match an ID in the CSL-JSON bibliography file. Example: {{< cite key=\"Faure 1909\" >}}" -}}
+
+{{- $defaultErrString := "No matching key was found for `%s` in the references. Please make sure to provide an available ID in your `bib.json` file." -}}
+
+{{- /* Set variables */ -}}
+{{- $key := "" -}}
+{{- $keys := slice -}}
+{{- $pages := slice "" ";" -}}
+{{- $suppressAuthor := false -}}
+{{- $keySeparator := ";" -}}
+{{- $prefix := "" -}}
+
+{{- /* -------------------- Named/Positional Params -------------------- */ -}}
+{{- if .IsNamedParams }}
+  {{- if not (.Get "key") -}}
+    {{- errorf $errorMissingNamedParams -}}
+  {{- else -}}
+    {{- $key = .Get "key" -}}
+    {{- $keys = split $key $keySeparator -}}
+    {{- $pages = split (.Get "pages" | string) ";" -}}
+    {{- if .Get "suppressAuthor" }}
+      {{- $suppressAuthor = true -}}
+    {{- end -}}
+    {{- if .Get "prefix" }}
+      {{- $prefix = .Get "prefix" -}}
+    {{- end -}}
+  {{- end -}}
+{{- else -}}
+  {{- if lt (len .Params) 1 -}}
+    {{- errorf $errorMissingValue (len .Params) -}}
+  {{- else -}}
+    {{- $key = (.Get 0) | replaceRE "^-(.+)" "$1" -}}
+    {{- $keys = split $key $keySeparator -}}
+    {{- $pages = string (.Get 1) -}}
+    {{- if $pages -}}
+      {{- $pages = split $pages ";" -}}
+    {{- end -}}
+    {{- if (findRE "^-(.+)" (.Get 0) 1) -}}
+      {{- $suppressAuthor = true -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
+
+{{- $totalRefs := len $keys -}}
+
+{{- $citationStyle := "apa" -}}
+{{- if $.Site.Params.citationStyle }}
+  {{- if templates.Exists (printf "partials/bibliography/%s-style.html" $.Site.Params.citationStyle) }}
+    {{- $citationStyle = $.Site.Params.citationStyle }}
+  {{- end }}
+{{- end -}}
+{{- $partialPath := printf "bibliography/%s-style.html" $citationStyle -}}
+
+{{- $bibliographyPath := "" -}}
+{{- $pageResource := $.Page.Resources.GetMatch "*bib*.json" -}}
+{{- if $pageResource }}
+  {{- $constructedBibResource := printf "content/%s%s" $.Page.File.Dir $pageResource.Name -}}
+  {{- $bibliographyPath = $constructedBibResource -}}
+{{- end -}}
+{{- if $.Page.Params.bibFile }}
+  {{- $bibliographyPath = $.Page.Params.bibFile -}}
+{{- end -}}
+
+{{- if gt (len $bibliographyPath) 0 -}}
+  {{- $bibliography := getJSON $bibliographyPath -}}
+  <span class="hugo-cite-intext" itemprop="citation">
+    {{- "(" -}}{{- if $prefix }}{{ $prefix }}{{- end }}
+    {{- range $keyIndex, $key := $keys -}}
+      {{- range where $bibliography "id" "eq" $key -}}
+        {{- $currentRef := . -}}
+        <span class="hugo-cite-group">
+          {{- $.Page.Scratch.SetInMap "citedBib" $key $currentRef -}}
+          <a href="#{{- $key | urlize -}}">
+            <span class="visually-hidden">Citation: </span>
+            {{- $reference := . -}}
+            {{- if not $suppressAuthor -}}
+              {{- $displayAuthors := $reference.author -}}
+              {{- if not $reference.author -}}
+                {{- $displayAuthors = $reference.editor -}}
+              {{- end -}}
+              {{- if not $displayAuthors -}}
+                <span rel="noauthor">
+                  {{- i18n "apa_no_author_abbr" | default "n.a." | upper -}}
+                </span>
+              {{- else -}}
+                {{- range $authorIndex, $author := $displayAuthors | first 2 -}}
+                  <span itemprop="author" itemscope itemtype="https://schema.org/Person">
+                    {{- with $author.given -}}
+                      <meta itemprop="givenName" content="{{ . }}">
+                    {{- end -}}
+                    {{- with $author.family -}}
+                      <span itemprop="familyName">{{ . | markdownify }}</span>
+                    {{- end -}}
+                  </span>
+                  {{- if and (eq $authorIndex 0) (gt (len $displayAuthors) 2) -}}
+                  ,&#32;
+                  {{- end -}}
+                  {{- if and (eq (len $displayAuthors) 2) (eq $authorIndex 0) -}}&#32;&amp;&#32;
+                  {{- end -}}
+                {{- end -}}
+                {{ if gt (len $displayAuthors) 2 }}
+                  <em>&amp; al.</em>
+                {{- end -}}
+              {{- end -}},&#32;
+            {{- end -}}
+            {{- if and (isset $reference "issued") (isset $reference.issued "date-parts") -}}
+              {{- range $index, $dateParts := (index .issued "date-parts") -}}
+                {{- range first 1 $dateParts -}}
+                <span itemprop="datePublished">
+                  {{- . -}}
+                </span>
+                {{- end -}}
+              {{- end -}}
+            {{- end -}}
+            {{- $currentPages := index $pages $keyIndex -}}
+            {{- with $currentPages -}},&#32;
+            {{- $formatedPages := (printf "p.&nbsp;%s" $currentPages) | safeHTML -}}
+            {{- if gt (findRE "-" $currentPages) 0 -}}
+            {{- $formatedPages = (printf "pp.&nbsp;%s" $currentPages) | safeHTML -}}
+            {{- end -}}
+            {{- $formatedPages }}{{- end -}}
+          </a>
+          <span class="hugo-cite-citation"> {{ partial $partialPath $reference }}</span>
+        </span>
+        {{- if lt (add 1 $keyIndex) $totalRefs -}};&#32;{{- end -}}
+      {{- else -}}
+        {{- $particularKeyErr := printf $defaultErrString $key -}}
+        <span style="background-color: #f00; color: #fff;">{{- $particularKeyErr -}}</span>
+      {{- end -}}
+    {{- end }}
+{{- ")" -}}</span>
+{{- end -}}

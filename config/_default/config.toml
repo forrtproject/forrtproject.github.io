@@ -21,7 +21,7 @@ copyright = "&copy; {year} - FORRT > Framework for Open and Reproducible Researc
 ############################
 
 # Name of Academic theme folder in `themes/`.
-theme = "academic"
+theme = ["academic", "hugo-cite"]
 
 # Get last modified date for content from Git?
 enableGitInfo = true

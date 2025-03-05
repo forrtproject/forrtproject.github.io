@@ -13,6 +13,7 @@ header:
   caption: ""
   image: "resources.webp"
 layout: index
+bibFile: data/bib.json
 ---
 
 ## Choose your language
@@ -25,9 +26,9 @@ Click one of the buttons to open the Glossary. Further translations are already 
 
 ## Background
 
-In the last decade, the Open Science movement has introduced and modified many research practices. The breadth of these initiatives can be overwhelming, and digestible introductions to these topics are valuable (e.g. Crüwell et al. 2019; Kathawalla, Silverstein, & Syed, 2020). Creating a shared understanding of the purposes of these initiatives facilitates discussions of the strengths and weaknesses of each practice, ultimately helping us work towards a research utopia (Nosek & Bar-Anan, 2012).
+In the last decade, the Open Science movement has introduced and modified many research practices. The breadth of these initiatives can be overwhelming, and digestible introductions to these topics are valuable {{< cite key="Cr_well_2019;Kathawalla_2021" prefix="e.g., ">}}. Creating a shared understanding of the purposes of these initiatives facilitates discussions of the strengths and weaknesses of each practice, ultimately helping us work towards a research utopia {{< cite "Nosek_2012" >}}.
 
-Accompanying this cultural shift towards increased transparency and rigour has been a wealth of terminology within the zeitgeist of research practice and culture. For those unfamiliar, the new nomenclature can be a barrier to follow and join the discussions; for those familiar, potentially vague or competing definitions can cause confusion and misunderstandings. For example, even the “classic” 2015 paper “Estimating the reproducibility of psychological science” (Open Science Collaboration, 2015) can be argued to assess the replicability of research findings. 
+Accompanying this cultural shift towards increased transparency and rigour has been a wealth of terminology within the zeitgeist of research practice and culture. For those unfamiliar, the new nomenclature can be a barrier to follow and join the discussions; for those familiar, potentially vague or competing definitions can cause confusion and misunderstandings. For example, even the “classic” 2015 paper “Estimating the reproducibility of psychological science” {{< cite "OSC2015" >}} can be argued to assess the replicability of research findings. 
 
 In order to reduce barriers to entry and understanding, we present a Glossary of terms relating to open scholarship. We aim that the glossary will help clarify terminologies, including where terms are used differently/interchangeably or where terms are less known in some fields or among students. We also hope that this glossary will be a welcome resource for those new to these concepts, and that it helps grow their confidence in navigating discussions of open scholarship. We also hope that this glossary aids in mentoring and teaching, and allows newcomers and experts to communicate efficiently. 
 
@@ -197,3 +198,5 @@ After the manuscript's submission and the display of defined terms in FORRT's Gl
 Would you like to give feedback, help us review terms, or add terms? You can do so by watching this space, joining [FORRT's Slack channel](https://join.slack.com/t/forrt/shared_invite/zt-alobr3z7-NOR0mTBfD1vKXn9qlOKqaQ), contacting [FORRT](info@forrt.org), or contacting project leads [Sam Parsons](sam.parsons@psy.ox.ac.uk) and [Flávio Azevedo](mailto:flavio.azevedo@uni-jena.de).
 
 {{< /expand >}}
+
+{{< bibliography cited >}}
