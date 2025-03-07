@@ -271,6 +271,24 @@ The **<font style="color:#0e2a38">preprint</font>** can [be found here (osf.io/b
 
 
 <br><br>
+
+### **Point of View: An annotated introductory reading list for neurodiversity**
+
+<br>
+
+Since its inception, the concept of neurodiversity has been defined in a number of different ways, which can cause confusion among those hoping to educate themselves about the topic. Learning about neurodiversity can also be challenging because there is a lack of well-curated, appropriately contextualized information on the topic. To address such barriers, we present an annotated reading list that was developed collaboratively by a neurodiverse group of researchers. The nine themes covered in the reading list are: the history of neurodiversity; ways of thinking about neurodiversity; the importance of lived experience; a neurodiversity paradigm for autism science; beyond deficit views of ADHD; expanding the scope of neurodiversity; anti-ableism; the need for robust theory and methods; and integration with open and participatory work. We hope this resource can support readers in understanding some of the key ideas and topics within neurodiversity, and that it can further orient researchers towards more rigorous, destigmatizing, accessible, and inclusive scientific practices.
+
+<div class='altmetric-embed' data-badge-type='medium-donut' data-doi="https://doi.org/10.7554/eLife.102467"></div>
+
+The **<font style="color:#0e2a38">preprint</font>** can [be found here (eLife 13:e102467)](https://doi.org/10.7554/eLife.102467). 
+
+
+> Mirela Zaneva, Tao Coll-Martín, Yseult Héjja-Brichard, Tamara Kalandadze, Andrea Kis, Alicja Koperska, Marie Adrienne Robles Manalili, Adrien Mathy, Christopher J Graham, Anna Hollis, Robert M Ross, Siu Kit Yeung, Veronica Allen, Flavio Azevedo, Emily Friedel, Stephanie Fuller, Vaitsa Giannouli, Biljana Gjoneska, Helena Hartmann, Max Korbmacher, Mahmoud M Elsherif, Alyssa Hillary Zisk (2024) Point of View: An annotated introductory reading list for neurodiversity eLife 13:e102467
+https://doi.org/10.7554/eLife.102467
+    
+
+
+<br><br>
 <br><br>
 
 ## Op-Eds and Other Media 
