@@ -81,8 +81,8 @@
 # CSS
 
 [css.fontAwesome]
-  version = "5.14.0"
-  sri = "sha256-FMvZuGapsJLjouA6k7Eo2lusoAX9i0ShlWFG6qt7SLc="
+  version = "6.7.2"
+  sri = "sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
   url = "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/%s/css/all.min.css"
 [css.academicons]
   version = "1.8.6"
