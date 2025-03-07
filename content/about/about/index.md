@@ -2,6 +2,6 @@
 # FORRT page
 type = "widget_page"
 headless = false  # Homepage is headless, other widget pages are not.
-title = "about us"
+title = "About us"
 url = "/about/us"
 +++
