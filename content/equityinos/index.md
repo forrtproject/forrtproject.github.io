@@ -3,7 +3,6 @@
 type = "widget_page"
 headless = false  # Homepage is headless, other widget pages are not.
 title = "Equity in Open Science"
-# url = "/feedback"
 +++
 
 ****
