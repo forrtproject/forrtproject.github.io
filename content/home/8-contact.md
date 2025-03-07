@@ -29,6 +29,48 @@ subtitle = "Whether you have questions getting started or you want to know how t
   name = "Slack"
   description = "[Join our open Slack channel](https://join.slack.com/t/forrt/shared_invite/enQtODMwODI0OTk4ODgzLTM0ZTQ3NDk5MzA1ZjBmNWJjYTVlN2Y2YTk0ZTJhYTY5NDliMDYzMjg2MWE0ZDRhOTY0ZDY3OTRlNDA4ODQ3NjQ)" 
   
+  [[feature]]
+  icon = "bluesky"
+  icon_pack = "fab"
+  name = "Bluesky"
+  description = "[Connect with us on Bluesky](https://bsky.app/profile/forrt.bsky.social)"
+
+[[feature]]
+  icon = "mastodon"
+  icon_pack = "fab"
+  name = "Mastodon"
+  description = "[Follow us on Mastodon](https://mastodon.social/@FORRT)"
+
+[[feature]]
+  icon = "instagram"
+  icon_pack = "fab"
+  name = "Instagram"
+  description = "[Check out our Instagram](https://www.instagram.com/forrtproject/#)"
+
+[[feature]]
+  icon = "facebook"
+  icon_pack = "fab"
+  name = "Facebook"
+  description = "[Find us on Facebook](https://www.facebook.com/profile.php?id=100079008639536)"
+
+[[feature]]
+  icon = "osf"
+  icon_pack = "ai"
+  name = "OSF"
+  description = "[Visit our OSF page](https://osf.io/mb46h/)"
+
+[[feature]]
+  icon = "linkedin"
+  icon_pack = "fab"
+  name = "LinkedIn"
+  description = "[Follow us on LinkedIn](https://uk.linkedin.com/company/forrt)"
+
+[[feature]]
+  icon = "youtube"
+  icon_pack = "fab"
+  name = "YouTube"
+  description = "[Subscribe to our YouTube channel](https://www.youtube.com/@forrtproject9995)"
+  
 # [[feature]]
 #   icon = "github"
 #   icon_pack = "fab"
