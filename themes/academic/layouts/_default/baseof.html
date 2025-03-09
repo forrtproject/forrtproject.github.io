@@ -24,6 +24,8 @@
   {{ partial "search" . }}
 
   {{ partial "navbar" . }}
+  
+  {{ partial "survey-btn.html" . }}
 
   {{ block "main" . }}{{ end }}
 
@@ -37,6 +39,9 @@
   {{ end }}
 
   {{ partial "citation" . }}
+
+  {{ partial "survey-popup.html" . }}
+
 
 </body>
 </html>

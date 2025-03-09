@@ -1,0 +1,113 @@
+<div class="survey-popup" id="surveyPopup">
+    <div class="survey-content">
+      <button class="close-btn" onclick="closeSurvey()">&times;</button>
+      <h2>FORRT Website User Experience Survey</h2>
+      <p>Hello! Thank you for your time and availability to complete this questionnaire. Your feedback will directly inform improvements to navigation, accessibility, and content structure.</p>
+      <p>All answers are anonymous and will help us make the website better for everyone!</p>
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLSeeopWpzqf0IEk8rAvxu8Pv5DoGRGK3aDvql1a3VapQ5_5bVg/viewform" 
+         target="_blank" 
+         rel="noopener"
+         class="survey-button"
+         id="surveyLink">
+         Take the Survey
+      </a>
+    </div>
+  </div>
+  
+  <style>
+  .survey-popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+  
+  .survey-content {
+    background: white;
+    padding: 2rem;
+    border-radius: 15px;
+    max-width: 800px;
+    position: relative;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+  
+  .close-btn {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #666;
+  }
+  
+  .survey-button {
+    display: inline-block;
+    background: #4CAF50;
+    color: white;
+    padding: 12px 24px;
+    border-radius: 25px;
+    text-decoration: none;
+    margin-top: 1rem;
+    transition: transform 0.2s, background 0.2s;
+  }
+  
+  .survey-button:hover {
+    background: #45a049;
+    transform: translateY(-2px);
+  }
+  a.survey-button:hover {
+    color: white;
+  }
+  
+  h2 {
+    color: #2c3e50;
+    margin-bottom: 1rem;
+  }
+  
+  p {
+    color: #666;
+    line-height: 1.6;
+    margin: 1rem 0;
+  }
+  
+  @media (max-width: 600px) {
+    .survey-content {
+      width: 90%;
+      padding: 1.5rem;
+    }
+  }
+  </style>
+  
+  
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Only show popup if user hasn't completed survey
+      if (!localStorage.getItem('surveyCompleted')) {
+        document.getElementById('surveyPopup').style.display = 'flex';
+      }
+    
+      // Add click tracker to survey link
+      document.getElementById('surveyLink').addEventListener('click', function() {
+        localStorage.setItem('surveyCompleted', 'true');
+        closeSurvey();
+      });
+    });
+    
+    function closeSurvey() {
+      document.getElementById('surveyPopup').style.display = 'none';
+    }
+    
+    {{/*  // Close when clicking outside content
+    document.getElementById('surveyPopup').addEventListener('click', function(e) {
+      if (e.target === this) closeSurvey();
+    });  */}}
+    </script>
