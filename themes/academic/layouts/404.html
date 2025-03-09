@@ -1,8 +1,11 @@
 {{- define "main" -}}
 
+{{ $css := resources.Get "css/404.css" | minify | fingerprint }}
+<link rel="stylesheet" href="{{ $css.RelPermalink }}" integrity="{{ $css.Data.Integrity }}">
+
 <div class="universal-wrapper pt-3">
 
-  <h1>{{ i18n "page_not_found" }}</h1>
+  <h1>Whoops! Page not found</h1>
 
   {{/* Show search box if Academic's search engine is enabled. */}}
   {{ if eq site.Params.search.engine 1 }}
@@ -11,21 +14,23 @@
   </form>
   {{ end }}
 
-  {{/* Suggest recently published pages to the user. */}}
+  <div class="not-found-content">
+    <p>That page can't be found. <strong>Please help us improve!</strong> If you reached this page through a broken link, let us know at <a href="mailto:info@forrt.org">info@forrt.org</a> or contact Lukas Wallrich on the <a href="https://forrt.slack.com/" target="_blank" rel="noopener">FORRT Slack</a>.</p>
 
-  <p>{{ i18n "404_recommendations" }}</p>
+    <div class="not-found-links">
+      <h3>Here are some useful links:</h3>
+      <ul>
+        <li><a href="{{ .Site.BaseURL }}about/us">About FORRT</a></li>
+        <li><a href="{{ .Site.BaseURL }}about/get-involved/">Get Involved</a></li>
+        <li><a href="{{ .Site.BaseURL }}glossary/">Glossary</a></li>
+        <li><a href="{{ .Site.BaseURL }}replication-hub/">Replication Hub</a></li>
+        <li><a href="{{ .Site.BaseURL }}lesson-plans/">Lesson Plans</a></li>
+        <li><a href="{{ .Site.BaseURL }}publications/">Publications</a></li>
+      </ul>
+    </div>
 
-  {{ $query := site.RegularPages }}
-  {{ $count := len $query }}
-  {{ if gt $count 0 }}
-  <h2>{{ i18n "user_profile_latest" }}</h2>
-  <ul>
-    {{ range first 10 $query }}
-      <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
-    {{ end }}
-  </ul>
-  {{ end }}
+    <p>Return <a href="{{ .Site.BaseURL }}">Home</a>.</p>
+  </div>
 
 </div>
-
 {{- end -}}
