@@ -1,9 +1,5 @@
 name: deploy
 
-# Build and deploy the website
-# Contains Tenzing's script to update the contributors list
-# Contains a script to update the curated resources list
-
 on:
   push:
     branches:
@@ -12,7 +8,7 @@ on:
     branches:
       - master
   schedule:
-  - cron: '0 0 * * *'  # Run daily at midnight
+    - cron: '0 0 * * *'  # Daily at midnight (after data processing)
   workflow_dispatch:
 
 jobs:
@@ -21,80 +17,31 @@ jobs:
     runs-on: ubuntu-22.04
     permissions:
       contents: read
-      pull-requests: read
     env:
       HUGO_VERSION: "0.123.3"
       HUGO_EXTENDED: true
-      PYTHON_VERSION: "3.11"
     steps:
-      - name: Checkout
+      - name: Checkout repository
         uses: actions/checkout@v4
         with:
           ref: ${{ github.ref }}
           fetch-depth: 0
 
-      - name: Hugo - Setup
+      - name: Download data artifact
+        uses: dawidd6/action-download-artifact@v2
+        with:
+          workflow: data-processing.yml
+          name: data-artifact
+          path: .
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Setup Hugo
         uses: peaceiris/actions-hugo@75d2e84710de30f6ff7268e08f310b60ef14033f
         with:
           hugo-version: ${{ env.HUGO_VERSION }}
           extended: ${{ env.HUGO_EXTENDED }}
 
-      - name: Python - Setup
-        uses: actions/setup-python@v5
-        with:
-          python-version: ${{ env.PYTHON_VERSION }}
-          cache: 'pip'
-
-      - name: Cache - Pip Dependencies
-        id: pip-cache
-        uses: actions/cache@v4
-        with:
-          path: ~/.cache/pip
-          key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements.txt') }}
-          restore-keys: |
-            ${{ runner.os }}-pip-
-
-      - name: Python - Install dependencies
-        run: |
-          python3 -m pip install -r ./requirements.txt
-
-      - name: Python - Tenzing
-        run: |
-          python3 scripts/forrt_contribs/tenzing.py
-
-      - name: Python - Curated Resources
-        run: |
-          python3 content/resources/resource.py
-
-      - name: Script - Move Tenzing's output and validate
-        run: |
-          mv scripts/forrt_contribs/tenzing.md content/contributors/tenzing.md
-
-          if [ ! -f content/contributors/tenzing.md ]; then
-            echo "tenzing.md not found"
-            exit 1
-          fi
-
-      - name: Script - Validate curated resources
-        run: |
-          for file in content/curated_resources/*; do
-            if [ ! -f "$file" ]; then
-              echo "There is a non-markdown file ( $file ) in the curated resources folder. Exiting."
-              exit 1
-            fi
-          done
-
-          NUM_FILES=$(ls -1 content/curated_resources/*.md | wc -l)
-          echo "Number of curated resources: $NUM_FILES"
-
-      - name: Download GA Data
-        if: ${{ github.event_name != 'pull_request' || github.event.inputs.GA_API_CREDENTIALS != '' }}
-        env:
-          GA_API_CREDENTIALS: ${{ secrets.GA_API_CREDENTIALS }}
-          GA_PROPERTY_ID: ${{ secrets.GA_PROPERTY_ID }}
-        run: python scripts/download_ga_data.py
-
-      - name: Hugo - Build
+      - name: Build site
         run: |
           if [ "$BRANCH" != 'refs/heads/master' ]; then
             hugo --gc --minify --cleanDestinationDir --destination public --baseURL https://staging.forrt.org
@@ -104,15 +51,13 @@ jobs:
         env:
           BRANCH: ${{ github.ref }}
 
-      - name: Upload Artifact - Website
+      - name: Upload site artifact
         uses: actions/upload-artifact@v4
-        env:
-          ARTIFACT_NAME: forrt-website-${{ github.run_number }}
         with:
-          name: ${{ env.ARTIFACT_NAME }}
+          name: forrt-website-${{ github.run_number }}
           path: public/
           retention-days: 1
-
+          
   deploy-test:
     name: Deploy - Test
     runs-on: ubuntu-22.04

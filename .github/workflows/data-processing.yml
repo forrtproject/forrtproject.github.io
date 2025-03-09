@@ -1,0 +1,66 @@
+name: Data Processing
+
+on:
+  schedule:
+    - cron: '0 0 * * *'  # Daily at midnight
+  workflow_dispatch:
+
+jobs:
+  process-data:
+    name: Process Data
+    runs-on: ubuntu-22.04
+    permissions:
+      contents: read
+    env:
+      PYTHON_VERSION: "3.11"
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ env.PYTHON_VERSION }}
+          cache: 'pip'
+
+      - name: Install Python dependencies
+        run: python3 -m pip install -r ./requirements.txt
+
+      - name: Run Tenzing script
+        run: python3 scripts/forrt_contribs/tenzing.py
+
+      - name: Run Curated Resources script
+        run: python3 content/resources/resource.py
+
+      - name: Move and validate Tenzing output
+        run: |
+          mv scripts/forrt_contribs/tenzing.md content/contributors/tenzing.md
+          if [ ! -f content/contributors/tenzing.md ]; then
+            echo "tenzing.md not found"
+            exit 1
+          fi
+
+      - name: Validate curated resources
+        run: |
+          for file in content/curated_resources/*; do
+            if [ ! -f "$file" ]; then
+              echo "Non-markdown file found: $file"
+              exit 1
+            fi
+          done
+
+      - name: Download GA Data
+        env:
+          GA_API_CREDENTIALS: ${{ secrets.GA_API_CREDENTIALS }}
+          GA_PROPERTY_ID: ${{ secrets.GA_PROPERTY_ID }}
+        run: python scripts/download_ga_data.py
+
+      - name: Upload data artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: data-artifact
+          path: |
+            content/contributors/tenzing.md
+            content/curated_resources/
+            data/ # GA data
+          retention-days: 1
