@@ -1,0 +1,75 @@
+<div class="survey-float-container" id="surveyFloat">
+    <div class="survey-float-content">
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLSeeopWpzqf0IEk8rAvxu8Pv5DoGRGK3aDvql1a3VapQ5_5bVg/viewform"
+         target="_blank"
+         rel="noopener noreferrer"
+         class="survey-float-button"
+         id="surveyFloatButton">
+        Click here to help us with this survey
+      </a>
+    </div>
+  </div>
+  
+  <style>
+  .survey-float-container {
+    position: fixed;
+    top: 70px; /* Adjust based on your navbar height */
+    right: 20px;
+    z-index: 999;
+    animation: floatBubble 2s infinite;
+  }
+  
+  .survey-float-button {
+    display: inline-block;
+    background: #4CAF50;
+    color: white !important;
+    padding: 12px 25px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 500;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+    transform-origin: center;
+    font-size: 0.9rem;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .survey-float-button:hover {
+    background: #45a049;
+    transform: scale(1.05);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+  }
+  
+  @keyframes floatBubble {
+    0% { transform: translateY(0px) translateX(0px); }
+    50% { transform: translateY(-5px) translateX(3px); }
+    100% { transform: translateY(0px) translateX(0px); }
+  }
+  
+  @media (max-width: 768px) {
+    .survey-float-container {
+      top: 60px;
+      right: 10px;
+    }
+    .survey-float-button {
+      padding: 10px 20px;
+      font-size: 0.8rem;
+    }
+  }
+  </style>
+  
+  <script>
+  document.addEventListener('DOMContentLoaded', function() {
+    // Check if user has completed survey
+    if (!localStorage.getItem('surveyCompleted')) {
+      document.getElementById('surveyFloat').style.display = 'block';
+    }
+  
+    // Track survey button click
+    document.getElementById('surveyFloatButton').addEventListener('click', function() {
+      localStorage.setItem('surveyCompleted', 'true');
+      document.getElementById('surveyFloat').style.display = 'none';
+    });
+  });
+  </script>
