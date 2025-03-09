@@ -8,7 +8,7 @@ on:
     branches:
       - master
   schedule:
-    - cron: '0 0 * * *'  # Daily at midnight (after data processing)
+    - cron: '0 1 * * *'  # 1 AM UTC (1 hour after data processing)
   workflow_dispatch:
 
 jobs:
@@ -17,6 +17,7 @@ jobs:
     runs-on: ubuntu-22.04
     permissions:
       contents: read
+      actions: read  # Needed for artifact access
     env:
       HUGO_VERSION: "0.123.3"
       HUGO_EXTENDED: true
@@ -27,13 +28,33 @@ jobs:
           ref: ${{ github.ref }}
           fetch-depth: 0
 
-      - name: Download data artifact
+      - name: Try to download data artifact
+        id: download-artifact
         uses: dawidd6/action-download-artifact@v2
+        continue-on-error: true
         with:
           workflow: data-processing.yml
           name: data-artifact
           path: .
           github_token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Run data processing if needed
+        if: steps.download-artifact.outcome == 'failure'
+        env:
+          PYTHON_VERSION: "3.11"
+        run: |
+          # Install Python dependencies
+          python3 -m pip install -r ./requirements.txt
+          
+          # Generate data files
+          python3 scripts/forrt_contribs/tenzing.py
+          python3 content/resources/resource.py
+          mv scripts/forrt_contribs/tenzing.md content/contributors/tenzing.md
+          
+          # Download GA data if possible
+          if [ "${{ github.event_name }}" != 'pull_request' ]; then
+            python scripts/download_ga_data.py
+          fi
 
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@75d2e84710de30f6ff7268e08f310b60ef14033f
@@ -57,7 +78,7 @@ jobs:
           name: forrt-website-${{ github.run_number }}
           path: public/
           retention-days: 1
-          
+    
   deploy-test:
     name: Deploy - Test
     runs-on: ubuntu-22.04
