@@ -185,7 +185,7 @@ We are developing a new, equity-based framework tailored to systemic biases and 
 
 The Academic Wheel of Privilege has been featured in:
 
-- NASA’s Transformation To Open Science initiative, via an [interview with Flavio Azevedo](https://science.nasa.gov/open-science/transform-to-open-science/stories/dr-flavio-azevedo).
+- NASA’s Transformation To Open Science initiative, via an [interview with Flavio Azevedo](https://web.archive.org/web/20220919002540/https://science.nasa.gov/open-science/transform-to-open-science/stories/dr-flavio-azevedo?s=09).
 - The UK Research Integrity Office’s [list of equality, diversity and inclusion resources](https://ukrio.org/research-integrity-resources/equality-diversity-and-inclusion/).
 - The [diversity statement](https://gep.psychopen.eu/index.php/gep/diversity) for the journal Global Environmental Psychology.
 
@@ -270,7 +270,7 @@ In 2023, members of Team Neurodiversity created a series of lesson plans and edu
 
 Our work has been featured in:
 
-- NASA’s Transformation To Open Science initiative, via an [interview with Team Neurodiversity member Flavio Azevedo](https://science.nasa.gov/open-science/transform-to-open-science/stories/dr-flavio-azevedo).
+- NASA’s Transformation To Open Science initiative, via an [interview with Team Neurodiversity member Flavio Azevedo](https://web.archive.org/web/20220919002540/https://science.nasa.gov/open-science/transform-to-open-science/stories/dr-flavio-azevedo?s=09).
 - Stimpunks Foundation’s glossary of disability and neurodiversity terms, within the [entry for “neurodivergent”](https://stimpunks.org/glossary/neurodivergent/).
 - UNESCO’s Inclusive Policy Lab, in an [article by Team ND member Justin Sulik](https://en.unesco.org/inclusivepolicylab/analytics/trust-science-%E2%80%93-factor-culture-and-belief) about trust in science.
 - [Lancet correspondence](https://www.thelancet.com/journals/lancet/article/PIIS0140-6736(22)02486-2/fulltext?rss=yes) about internalized racism and medicine.
