@@ -276,7 +276,7 @@ Here you can find a list of completed and ongoing projects that summarize replic
    </td>
    <td>Political Sciences
    </td>
-   <td><a href="https://i4replication.org/">https://i4replication.org/</a> 
+   <td><a href="https://i4replication.org/discussion_paper.html">https://i4replication.org/discussion_paper.html</a> 
    </td>
    <td>No
    </td>
