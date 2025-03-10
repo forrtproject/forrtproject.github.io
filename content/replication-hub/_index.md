@@ -39,7 +39,7 @@ Journal of Open Psychology Data, 12(8), 1–23. [https://doi.org/10.5334/jopd.10
 
 
 
-* Röseler, L., Gendlina, T., Krapp, J., Labusch, N., & Schütz, A. (2022). Successes and Failures of Replications: A Meta-Analysis of Independent Replication Studies Based on the OSF Registries. [https://dx.doi.org/10.31219/osf.io/8psw2](https://dx.doi.org/10.31219/osf.io/8psw2) 
+* Röseler, L., Gendlina, T., Krapp, J., Labusch, N., & Schütz, A. (2022). Successes and Failures of Replications: A Meta-Analysis of Independent Replication Studies Based on the OSF Registries. [https://doi.org/10.31222/osf.io/8psw2](https://doi.org/10.31222/osf.io/8psw2) 
 
 
 ### Projects
