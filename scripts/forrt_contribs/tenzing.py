@@ -67,9 +67,9 @@ rename_columns = {
     'First name': 'First name',
     'Middle name': 'Middle name',
     'Surname': 'Surname',
-    'FORRT project(s)': 'Project Name',
+    'Project Name': 'Project Name',
     'Role': 'Contributions',
-    'ORCID': 'ORCID iD',
+    'ORCID iD': 'ORCID iD',
     'URL': 'Project URL'
 }
 df_roles.rename(columns=rename_columns, inplace=True)
