@@ -2,6 +2,6 @@
 # FORRT page
 type = "widget_page"
 headless = false  # Homepage is headless, other widget pages are not.
-title="About Charity"
+title="FORRT Germany e.V."
 url = "/about/charity"
 +++
