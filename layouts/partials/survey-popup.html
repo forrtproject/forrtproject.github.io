@@ -1,20 +1,21 @@
 <div class="survey-popup" id="surveyPopup">
-    <div class="survey-content">
-      <button class="close-btn" onclick="closeSurvey()">&times;</button>
-      <h2>FORRT Website User Experience Survey</h2>
-      <p>Hello! Thank you for your time and availability to complete this questionnaire. Your feedback will directly inform improvements to navigation, accessibility, and content structure.</p>
-      <p>All answers are anonymous and will help us make the website better for everyone!</p>
-      <a href="https://docs.google.com/forms/d/e/1FAIpQLSeeopWpzqf0IEk8rAvxu8Pv5DoGRGK3aDvql1a3VapQ5_5bVg/viewform" 
-         target="_blank" 
-         rel="noopener"
-         class="survey-button"
-         id="surveyLink">
-         Take the Survey
-      </a>
-    </div>
+  <div class="survey-content">
+    <button class="close-btn">&times;</button>
+    <h2>Help us improve the FORRT website</h2>
+    <p>We would be grateful if you could complete this survey. 
+      Your feedback will directly inform improvements to navigation, accessibility, and content structure.<br>
+    <strong>Note:</strong>All answers are anonymous and will help us make the website better for everyone!</p>
+    <a href="https://docs.google.com/forms/d/e/1FAIpQLSeeopWpzqf0IEk8rAvxu8Pv5DoGRGK3aDvql1a3VapQ5_5bVg/viewform" 
+       target="_blank" 
+       rel="noopener"
+       class="survey-button"
+       id="surveyLink">
+       Take the Survey
+    </a>
   </div>
-  
-  <style>
+</div>
+
+<style>
   .survey-popup {
     position: fixed;
     top: 0;
@@ -85,29 +86,42 @@
       padding: 1.5rem;
     }
   }
-  </style>
-  
-  
+</style>
+
 <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      // Only show popup if user hasn't completed survey
-      if (!localStorage.getItem('surveyCompleted')) {
-        document.getElementById('surveyPopup').style.display = 'flex';
-      }
-    
-      // Add click tracker to survey link
-      document.getElementById('surveyLink').addEventListener('click', function() {
-        localStorage.setItem('surveyCompleted', 'true');
-        closeSurvey();
-      });
-    });
-    
-    function closeSurvey() {
-      document.getElementById('surveyPopup').style.display = 'none';
+  document.addEventListener('DOMContentLoaded', function() {
+    // Popup display logic
+    const hasCompleted = localStorage.getItem('surveyCompleted') === 'true';
+    const lastShow = localStorage.getItem('lastPopupShow');
+    const oneWeek = 7 * 24 * 60 * 60 * 1000; // 7 days in milliseconds
+
+    if (!hasCompleted && (!lastShow || Date.now() - parseInt(lastShow) > oneWeek)) {
+      document.getElementById('surveyPopup').style.display = 'flex';
     }
-    
-    {{/*  // Close when clicking outside content
-    document.getElementById('surveyPopup').addEventListener('click', function(e) {
-      if (e.target === this) closeSurvey();
+
+    // Close button handler
+    document.querySelector('.close-btn').addEventListener('click', function() {
+      closeSurvey();
+      localStorage.setItem('lastPopupShow', Date.now().toString());
+    });
+
+    // Outside click handler
+    {{/*  document.getElementById('surveyPopup').addEventListener('click', function(e) {
+      if (e.target === this) {
+        closeSurvey();
+        localStorage.setItem('lastPopupShow', Date.now().toString());
+      }
     });  */}}
-    </script>
+
+    // Survey link handler
+    document.getElementById('surveyLink').addEventListener('click', function() {
+      localStorage.setItem('surveyCompleted', 'true');
+      closeSurvey();
+    });
+  });
+
+  function closeSurvey() {
+    document.getElementById('surveyPopup').style.display = 'none';
+  }
+</script>
+  
