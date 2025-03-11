@@ -8,22 +8,36 @@ Fixes # (issue)
 
 <!-- Please delete options that are not relevant. -->
 
-- [ ] Bug fix (non-breaking change which fixes an issue)
+- [ ] Documentation/Contents/grammar update
 - [ ] New feature (non-breaking change which adds functionality)
 - [ ] Breaking change (fix or feature that would cause existing functionality to not work as expected)
-- [ ] Documentation update
+- [ ] Bug fix (non-breaking change which fixes an issue)
 
 ## How Has This Been Tested?
 
 <!-- Describe the tests that you ran to verify your changes. Provide instructions so we can reproduce. Include any relevant details for your test configuration. -->
 
 - [ ] Tested Locally
+- [ ] Manual review / previewed on [staging.forrt.org](https://staging.forrt.org/)  content/webpage changes
 - [ ] Not Tested yet
 
-## Checklist:
+## Checklist for Content Editors and Non-Developers
+
+<!-- This section applies to content, grammar and webpage updates changes: -->
+
+- [ ] The content is clear, accurate, and follows community guidelines.
+- [ ] All updated content has been previewed on the [staging site](https://staging.forrt.org/).
+- [ ] All links, references, and formatting have been checked for correctness.
+- [ ] The change aligns with the overall style and communication goals.
+- [ ] No broken links in text/content
+
+## Checklist for Developers:
 
 - [ ] My code follows the style guidelines of this project.
 - [ ] I have performed a self-review of my own code.
 - [ ] I have commented my code, particularly in hard-to-understand areas.
 - [ ] I have made corresponding changes to the documentation.
 - [ ] My changes generate no new warnings.
+
+## Additional Notes
+<!-- Add any other context or screenshots here -->
