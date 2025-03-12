@@ -30,7 +30,7 @@ jobs:
 
       - name: Try to download data artifact
         id: download-artifact
-        uses: dawidd6/action-download-artifact@v6
+        uses: dawidd6/action-download-artifact@v9
         continue-on-error: true
         with:
           workflow: data-processing.yml
