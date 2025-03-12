@@ -1,0 +1,19 @@
+on:
+    pull_request:
+        branches:
+            - master
+
+name: Check typos
+jobs:
+    codespell:
+        name: Discover typos with codespell
+        runs-on: ubuntu-latest
+        strategy:
+            fail-fast: false
+        steps:
+          - uses: actions/checkout@v3
+          - uses: codespell-project/actions-codespell@master
+            with:
+              skip: "*.yml,*.py,*.toml,*.css"
+              ignore_words_file: .codespellignore
+              only_warn: 1
