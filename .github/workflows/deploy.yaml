@@ -30,7 +30,7 @@ jobs:
 
       - name: Try to download data artifact
         id: download-artifact
-        uses: dawidd6/action-download-artifact@v2
+        uses: dawidd6/action-download-artifact@07ab29fd4a977ae4d2b275087cf67563dfdf0295
         continue-on-error: true
         with:
           workflow: data-processing.yml
@@ -124,4 +124,4 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ${{ github.repository }}/forrt-website
           publish_branch: gh-pages
-          cname: forrt.org          
+          cname: forrt.org
