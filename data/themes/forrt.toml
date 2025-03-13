@@ -22,5 +22,5 @@ home_section_odd = "#fefdf6"
 home_section_even = "#fefdf6"
 background = "#fefdf6"
 
-link = "#004055"
+link = "#8e0000"
 link_hover = "#ff6bbc"
