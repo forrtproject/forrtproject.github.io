@@ -1,0 +1,26 @@
+name: Link Checker
+
+on:
+  workflow_dispatch:
+  schedule:
+    # Runs at 01:30 UTC every Monday
+    - cron: '30 1 * * 1'
+
+jobs:
+  link_check:
+    name: check
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check links
+        id: linkcheck
+        uses: filiph/linkcheck@3.0.0
+        with:
+          arguments: https://www.forrt.org
+
+      - name: Notify failed check
+        if: failure()
+        uses: jayqi/failed-build-issue-action@v1.2
+        with:
+          github-token: ${{ secrets.GH_TOKEN }}
+          label-name: "link-check"
+
