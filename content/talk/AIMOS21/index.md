@@ -3,7 +3,7 @@
 
 title: FORRT's Presentation on Replications and Reversals
 event: 3rd Annual AIMOS Conference (Association for Interdisciplinary Metaresearch and Open Science)
-event_url: https://www.aimosconference.com/schedule.html
+event_url: https://aimos.community/aimos2021
 location: 
 address:
   street:
