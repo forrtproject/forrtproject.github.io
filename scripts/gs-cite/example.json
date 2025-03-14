@@ -1,0 +1,480 @@
+{
+  "search_metadata": {
+    "id": "67d463fdba33972b33fee1a0",
+    "status": "Success",
+    "json_endpoint": "https://serpapi.com/searches/9ae6a9ec42a2fb45/67d463fdba33972b33fee1a0.json",
+    "created_at": "2025-03-14 17:14:37 UTC",
+    "processed_at": "2025-03-14 17:14:37 UTC",
+    "google_scholar_author_url": "https://scholar.google.com/citations?user=JrBcgGMAAAAJ&hl=en",
+    "raw_html_file": "https://serpapi.com/searches/9ae6a9ec42a2fb45/67d463fdba33972b33fee1a0.html",
+    "total_time_taken": 0.84
+  },
+  "search_parameters": {
+    "engine": "google_scholar_author",
+    "author_id": "JrBcgGMAAAAJ",
+    "hl": "en"
+  },
+  "author": {
+    "name": "FORRT",
+    "affiliations": "Framework for Open and Reproducible Research Training",
+    "email": "Verified email at forrt.org",
+    "website": "http://forrt.org/",
+    "interests": [
+      {
+        "title": "Open Scholarship",
+        "link": "https://scholar.google.com/citations?view_op=search_authors&hl=en&mauthors=label:open_scholarship",
+        "serpapi_link": "https://serpapi.com/search.json?engine=google_scholar_profiles&hl=en&mauthors=label%3Aopen_scholarship"
+      },
+      {
+        "title": "Open Educational Resources",
+        "link": "https://scholar.google.com/citations?view_op=search_authors&hl=en&mauthors=label:open_educational_resources",
+        "serpapi_link": "https://serpapi.com/search.json?engine=google_scholar_profiles&hl=en&mauthors=label%3Aopen_educational_resources"
+      },
+      {
+        "title": "Education",
+        "link": "https://scholar.google.com/citations?view_op=search_authors&hl=en&mauthors=label:education",
+        "serpapi_link": "https://serpapi.com/search.json?engine=google_scholar_profiles&hl=en&mauthors=label%3Aeducation"
+      },
+      {
+        "title": "Open Science",
+        "link": "https://scholar.google.com/citations?view_op=search_authors&hl=en&mauthors=label:open_science",
+        "serpapi_link": "https://serpapi.com/search.json?engine=google_scholar_profiles&hl=en&mauthors=label%3Aopen_science"
+      },
+      {
+        "title": "Metascience",
+        "link": "https://scholar.google.com/citations?view_op=search_authors&hl=en&mauthors=label:metascience",
+        "serpapi_link": "https://serpapi.com/search.json?engine=google_scholar_profiles&hl=en&mauthors=label%3Ametascience"
+      }
+    ],
+    "thumbnail": "https://scholar.googleusercontent.com/citations?view_op=view_photo&user=JrBcgGMAAAAJ&citpid=1"
+  },
+  "articles": [
+    {
+      "title": "A community-sourced glossary of open scholarship terms",
+      "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=JrBcgGMAAAAJ&citation_for_view=JrBcgGMAAAAJ:_FxGoFyzp5QC",
+      "citation_id": "JrBcgGMAAAAJ:_FxGoFyzp5QC",
+      "authors": "S Parsons, F Azevedo, MM Elsherif, S Guay, ON Shahim, GH Govaart, ...",
+      "publication": "Nature human behaviour 6 (3), 312-318, 2022",
+      "cited_by": {
+        "value": 120,
+        "link": "https://scholar.google.com/scholar?oi=bibs&hl=en&cites=7310588168682277781,3666624296906228312",
+        "serpapi_link": "https://serpapi.com/search.json?cites=7310588168682277781%2C3666624296906228312&engine=google_scholar&hl=en",
+        "cites_id": "7310588168682277781,3666624296906228312"
+      },
+      "year": "2022"
+    },
+    {
+      "title": "The replication crisis has led to positive structural, procedural, and community changes",
+      "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=JrBcgGMAAAAJ&citation_for_view=JrBcgGMAAAAJ:hC7cP41nSMkC",
+      "citation_id": "JrBcgGMAAAAJ:hC7cP41nSMkC",
+      "authors": "M Korbmacher, F Azevedo, CR Pennington, H Hartmann, M Pownall, ...",
+      "publication": "Communications Psychology 1 (1), 3, 2023",
+      "cited_by": {
+        "value": 67,
+        "link": "https://scholar.google.com/scholar?oi=bibs&hl=en&cites=8587748360992982680",
+        "serpapi_link": "https://serpapi.com/search.json?cites=8587748360992982680&engine=google_scholar&hl=en",
+        "cites_id": "8587748360992982680"
+      },
+      "year": "2023"
+    },
+    {
+      "title": "Towards a culture of open scholarship: the role of pedagogical communities",
+      "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=JrBcgGMAAAAJ&citation_for_view=JrBcgGMAAAAJ:hqOjcs7Dif8C",
+      "citation_id": "JrBcgGMAAAAJ:hqOjcs7Dif8C",
+      "authors": "F Azevedo, M Liu, CR Pennington, M Pownall, TR Evans, S Parsons, ...",
+      "publication": "BMC Research Notes 15 (1), 75, 2022",
+      "cited_by": {
+        "value": 53,
+        "link": "https://scholar.google.com/scholar?oi=bibs&hl=en&cites=1999678439216019034,17001303332275793516",
+        "serpapi_link": "https://serpapi.com/search.json?cites=1999678439216019034%2C17001303332275793516&engine=google_scholar&hl=en",
+        "cites_id": "1999678439216019034,17001303332275793516"
+      },
+      "year": "2022"
+    },
+    {
+      "title": "Bridging neurodiversity and open scholarship: How shared values can guide best practices for research integrity, social justice, and principled education",
+      "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=JrBcgGMAAAAJ&citation_for_view=JrBcgGMAAAAJ:UebtZRa9Y70C",
+      "citation_id": "JrBcgGMAAAAJ:UebtZRa9Y70C",
+      "authors": "MM Elsherif, SL Middleton, JM Phan, F Azevedo, B Iley, M Grose-Hodge, ...",
+      "cited_by": {
+        "value": 45,
+        "link": "https://scholar.google.com/scholar?oi=bibs&hl=en&cites=8227617241227901587",
+        "serpapi_link": "https://serpapi.com/search.json?cites=8227617241227901587&engine=google_scholar&hl=en",
+        "cites_id": "8227617241227901587"
+      },
+      "year": "2022"
+    },
+    {
+      "title": "Teaching open and reproducible scholarship: a critical review of the evidence base for current pedagogical methods and their outcomes",
+      "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=JrBcgGMAAAAJ&citation_for_view=JrBcgGMAAAAJ:0EnyYjriUFMC",
+      "citation_id": "JrBcgGMAAAAJ:0EnyYjriUFMC",
+      "authors": "M Pownall, F Azevedo, LM König, HR Slack, T Evans, Z Flack, S Grinschgl, ...",
+      "publication": "Royal Society of Open Science, 2023",
+      "cited_by": {
+        "value": 42,
+        "link": "https://scholar.google.com/scholar?oi=bibs&hl=en&cites=2044811884596235812,1817440213411554966",
+        "serpapi_link": "https://serpapi.com/search.json?cites=2044811884596235812%2C1817440213411554966&engine=google_scholar&hl=en",
+        "cites_id": "2044811884596235812,1817440213411554966"
+      },
+      "year": "2023"
+    },
+    {
+      "title": "Introducing a Framework for Open and Reproducible Research Training (FORRT)",
+      "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=JrBcgGMAAAAJ&citation_for_view=JrBcgGMAAAAJ:eQOLeE2rZwMC",
+      "citation_id": "JrBcgGMAAAAJ:eQOLeE2rZwMC",
+      "authors": "F Azevedo, F., Parsons, S., Micheli, L., Strand, J. F., Rinke, E., Guay, S.",
+      "publication": "10.31219/osf.io/bnh7p, 0",
+      "cited_by": {
+        "value": 41,
+        "link": "https://scholar.google.com/scholar?oi=bibs&hl=en&cites=1105493914464467341,16723126108010342374,4445446011165502671,7815246190317576390,14723068716313335216,17666438651439772618,3881419966182405782",
+        "serpapi_link": "https://serpapi.com/search.json?cites=1105493914464467341%2C16723126108010342374%2C4445446011165502671%2C7815246190317576390%2C14723068716313335216%2C17666438651439772618%2C3881419966182405782&engine=google_scholar&hl=en",
+        "cites_id": "1105493914464467341,16723126108010342374,4445446011165502671,7815246190317576390,14723068716313335216,17666438651439772618,3881419966182405782"
+      },
+      "year": ""
+    },
+    {
+      "title": "Embedding open and reproducible science into teaching: A bank of lesson plans and resources.",
+      "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=JrBcgGMAAAAJ&citation_for_view=JrBcgGMAAAAJ:Y0pCki6q_DkC",
+      "citation_id": "JrBcgGMAAAAJ:Y0pCki6q_DkC",
+      "authors": "M Pownall, F Azevedo, A Aldoh, M Elsherif, M Vasilev, CR Pennington, ...",
+      "publication": "Scholarship of teaching and learning in psychology, 2021",
+      "cited_by": {
+        "value": 37,
+        "link": "https://scholar.google.com/scholar?oi=bibs&hl=en&cites=12349156678244344460,680876134769846028",
+        "serpapi_link": "https://serpapi.com/search.json?cites=12349156678244344460%2C680876134769846028&engine=google_scholar&hl=en",
+        "cites_id": "12349156678244344460,680876134769846028"
+      },
+      "year": "2021"
+    },
+    {
+      "title": "Opening up understanding of neurodiversity: a call for applying participatory and open scholarship practices",
+      "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=JrBcgGMAAAAJ&citation_for_view=JrBcgGMAAAAJ:8k81kl-MbHgC",
+      "citation_id": "JrBcgGMAAAAJ:8k81kl-MbHgC",
+      "authors": "A Gourdon-Kanhukamwe, T Kalandadze, SK Yeung, F Azevedo, B Iley, ...",
+      "publication": "The Cognitive Psychology Bulletin, 23-27, 2023",
+      "cited_by": {
+        "value": 13,
+        "link": "https://scholar.google.com/scholar?oi=bibs&hl=en&cites=4724438476849485953,8260828765202325298",
+        "serpapi_link": "https://serpapi.com/search.json?cites=4724438476849485953%2C8260828765202325298&engine=google_scholar&hl=en",
+        "cites_id": "4724438476849485953,8260828765202325298"
+      },
+      "year": "2023"
+    },
+    {
+      "title": "Navigating academia as neurodivergent researchers: promoting neurodiversity within Open Scholarship",
+      "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=JrBcgGMAAAAJ&citation_for_view=JrBcgGMAAAAJ:_kc_bZDykSQC",
+      "citation_id": "JrBcgGMAAAAJ:_kc_bZDykSQC",
+      "authors": "F Azevedo, SL Middleton, JM Phan, SK Kapp, A Gourdon-Kanhukamwe, ...",
+      "publication": "APS Observer 35, 2022",
+      "cited_by": {
+        "value": 12,
+        "link": "https://scholar.google.com/scholar?oi=bibs&hl=en&cites=15705548233482135880",
+        "serpapi_link": "https://serpapi.com/search.json?cites=15705548233482135880&engine=google_scholar&hl=en",
+        "cites_id": "15705548233482135880"
+      },
+      "year": "2022"
+    },
+    {
+      "title": "The replication database: documenting the replicability of psychological science",
+      "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=JrBcgGMAAAAJ&citation_for_view=JrBcgGMAAAAJ:qUcmZB5y_30C",
+      "citation_id": "JrBcgGMAAAAJ:qUcmZB5y_30C",
+      "authors": "L Röseler, L Kaiser, C Doetsch, N Klett, C Seida, A Schütz, B Aczel, ...",
+      "publication": "Journal of Open Psychology Data 12 (8), 1-23, 2024",
+      "cited_by": {
+        "value": 8,
+        "link": "https://scholar.google.com/scholar?oi=bibs&hl=en&cites=14489451834332848823,13670207242966813705",
+        "serpapi_link": "https://serpapi.com/search.json?cites=14489451834332848823%2C13670207242966813705&engine=google_scholar&hl=en",
+        "cites_id": "14489451834332848823,13670207242966813705"
+      },
+      "year": "2024"
+    },
+    {
+      "title": "An annotated introductory reading list for neurodiversity",
+      "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=JrBcgGMAAAAJ&citation_for_view=JrBcgGMAAAAJ:HDshCWvjkbEC",
+      "citation_id": "JrBcgGMAAAAJ:HDshCWvjkbEC",
+      "authors": "M Zaneva, T Coll-Martín, Y Héjja-Brichard, T Kalandadze, A Kis, ...",
+      "publication": "Elife 13, e102467, 2024",
+      "cited_by": {
+        "value": 6,
+        "link": "https://scholar.google.com/scholar?oi=bibs&hl=en&cites=3361995989150059880,11259473890723970967",
+        "serpapi_link": "https://serpapi.com/search.json?cites=3361995989150059880%2C11259473890723970967&engine=google_scholar&hl=en",
+        "cites_id": "3361995989150059880,11259473890723970967"
+      },
+      "year": "2024"
+    },
+    {
+      "title": "Latin American psychological science: Will the global north make room",
+      "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=JrBcgGMAAAAJ&citation_for_view=JrBcgGMAAAAJ:4TOpqqG69KYC",
+      "citation_id": "JrBcgGMAAAAJ:4TOpqqG69KYC",
+      "authors": "NS Corral-Frías, EL Castillo, MY Lucas, MF Armenta, YV Rodriguez, ...",
+      "publication": "APS Observer 36, 2023",
+      "cited_by": {
+        "value": 6,
+        "link": "https://scholar.google.com/scholar?oi=bibs&hl=en&cites=7206428305680754444",
+        "serpapi_link": "https://serpapi.com/search.json?cites=7206428305680754444&engine=google_scholar&hl=en",
+        "cites_id": "7206428305680754444"
+      },
+      "year": "2023"
+    },
+    {
+      "title": "Bridging the majority and minority worlds: Liminal researchers as catalysts for inclusive open and big-team science",
+      "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=JrBcgGMAAAAJ&citation_for_view=JrBcgGMAAAAJ:R3hNpaxXUhUC",
+      "citation_id": "JrBcgGMAAAAJ:R3hNpaxXUhUC",
+      "authors": "A Jeftic, MY Lucas, N Corral-Frias, F Azevedo",
+      "publication": "A better how: Notes on developmental meta-research. https://doi. org/10 …, 2024",
+      "cited_by": {
+        "value": 4,
+        "link": "https://scholar.google.com/scholar?oi=bibs&hl=en&cites=18315271574226515277",
+        "serpapi_link": "https://serpapi.com/search.json?cites=18315271574226515277&engine=google_scholar&hl=en",
+        "cites_id": "18315271574226515277"
+      },
+      "year": "2024"
+    },
+    {
+      "title": "International initiatives to enhance awareness and uptake of Open Research in psychology: a systematic narrative review",
+      "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=JrBcgGMAAAAJ&citation_for_view=JrBcgGMAAAAJ:-f6ydRqryjwC",
+      "citation_id": "JrBcgGMAAAAJ:-f6ydRqryjwC",
+      "authors": "M Skubera, M Korbmacher, T Evans, F Azevedo, C Pennington",
+      "publication": "Royal Society Open Science, 2025",
+      "cited_by": {
+        "value": null
+      },
+      "year": "2025"
+    },
+    {
+      "title": "Open Scholarship in QAA Briefing",
+      "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=JrBcgGMAAAAJ&citation_for_view=JrBcgGMAAAAJ:hFOr9nPyWt4C",
+      "citation_id": "JrBcgGMAAAAJ:hFOr9nPyWt4C",
+      "authors": "TR Azevedo, F., DeBruine, L., Evans",
+      "publication": "https://forrt.org/publications, 2023",
+      "cited_by": {
+        "value": null
+      },
+      "year": "2023"
+    },
+    {
+      "title": "Briefing note for degree accrediting societies.",
+      "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=JrBcgGMAAAAJ&citation_for_view=JrBcgGMAAAAJ:mB3voiENLucC",
+      "citation_id": "JrBcgGMAAAAJ:mB3voiENLucC",
+      "authors": "F Parsons, S., Azevedo, F.",
+      "publication": "https://forrt.org/publications, 2020",
+      "cited_by": {
+        "value": null
+      },
+      "year": "2020"
+    },
+    {
+      "title": "Open Science terminologies across language borders",
+      "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=JrBcgGMAAAAJ&citation_for_view=JrBcgGMAAAAJ:mVmsd5A6BfQC",
+      "citation_id": "JrBcgGMAAAAJ:mVmsd5A6BfQC",
+      "authors": "F Azevedo, S Parsons, L Micheli, H Hartmann, B Iley",
+      "publication": "Open Infrastructure Fund/Fondo de Infraestructura Abierta, 0",
+      "cited_by": {
+        "value": null
+      },
+      "year": ""
+    },
+    {
+      "title": "Improving accessibility and usability of FORRT’s Open Educational Resources",
+      "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=JrBcgGMAAAAJ&citation_for_view=JrBcgGMAAAAJ:Wp0gIr-vW9MC",
+      "citation_id": "JrBcgGMAAAAJ:Wp0gIr-vW9MC",
+      "authors": "B Iley, H Hartmann, F Azevedo",
+      "publication": "Open Infrastructure Fund/Fondo de Infraestructura Abierta, 0",
+      "cited_by": {
+        "value": null
+      },
+      "year": ""
+    },
+    {
+      "title": "Tracking and Mainstreaming Replications across the Social, Behavioral and Cognitive Sciences",
+      "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=JrBcgGMAAAAJ&citation_for_view=JrBcgGMAAAAJ:M3ejUd6NZC8C",
+      "citation_id": "JrBcgGMAAAAJ:M3ejUd6NZC8C",
+      "authors": "H Hartmann, L Micheli, F Azevedo",
+      "publication": "Open Infrastructure Fund/Fondo de Infraestructura Abierta, 0",
+      "cited_by": {
+        "value": null
+      },
+      "year": ""
+    }
+  ],
+  "cited_by": {
+    "table": [
+      {
+        "citations": {
+          "all": 454,
+          "since_2020": 449
+        }
+      },
+      {
+        "h_index": {
+          "all": 9,
+          "since_2020": 9
+        }
+      },
+      {
+        "i10_index": {
+          "all": 9,
+          "since_2020": 9
+        }
+      }
+    ],
+    "graph": [
+      {
+        "year": 2021,
+        "citations": 3
+      },
+      {
+        "year": 2022,
+        "citations": 48
+      },
+      {
+        "year": 2023,
+        "citations": 125
+      },
+      {
+        "year": 2024,
+        "citations": 207
+      },
+      {
+        "year": 2025,
+        "citations": 56
+      }
+    ]
+  },
+  "co_authors": [
+    {
+      "name": "Flávio Azevedo",
+      "link": "https://scholar.google.com/citations?user=O2Mp3ygAAAAJ&hl=en",
+      "serpapi_link": "https://serpapi.com/search.json?author_id=O2Mp3ygAAAAJ&engine=google_scholar_author&hl=en",
+      "author_id": "O2Mp3ygAAAAJ",
+      "affiliations": "Assistant Professor at the University of Utrecht",
+      "email": "Verified email at uu.nl",
+      "thumbnail": "https://scholar.googleusercontent.com/citations?view_op=small_photo&user=O2Mp3ygAAAAJ&citpid=2"
+    },
+    {
+      "name": "Leticia R. Micheli",
+      "link": "https://scholar.google.com/citations?user=PRZirZoAAAAJ&hl=en",
+      "serpapi_link": "https://serpapi.com/search.json?author_id=PRZirZoAAAAJ&engine=google_scholar_author&hl=en",
+      "author_id": "PRZirZoAAAAJ",
+      "affiliations": "Leiden University",
+      "email": "Verified email at fsw.leidenuniv.nl",
+      "thumbnail": "https://scholar.googleusercontent.com/citations?view_op=small_photo&user=PRZirZoAAAAJ&citpid=9"
+    },
+    {
+      "name": "John J Shaw",
+      "link": "https://scholar.google.com/citations?user=f_2QvOIAAAAJ&hl=en",
+      "serpapi_link": "https://serpapi.com/search.json?author_id=f_2QvOIAAAAJ&engine=google_scholar_author&hl=en",
+      "author_id": "f_2QvOIAAAAJ",
+      "affiliations": "Edge Hill University",
+      "email": "Verified email at edgehill.ac.uk",
+      "thumbnail": "https://scholar.googleusercontent.com/citations?view_op=small_photo&user=f_2QvOIAAAAJ&citpid=2"
+    },
+    {
+      "name": "Charlotte R. Pennington",
+      "link": "https://scholar.google.com/citations?user=DZxzBO8AAAAJ&hl=en",
+      "serpapi_link": "https://serpapi.com/search.json?author_id=DZxzBO8AAAAJ&engine=google_scholar_author&hl=en",
+      "author_id": "DZxzBO8AAAAJ",
+      "affiliations": "Aston University",
+      "email": "Verified email at aston.ac.uk",
+      "thumbnail": "https://scholar.googleusercontent.com/citations?view_op=small_photo&user=DZxzBO8AAAAJ&citpid=4"
+    },
+    {
+      "name": "Madeleine Pownall",
+      "link": "https://scholar.google.com/citations?user=FIDlSecAAAAJ&hl=en",
+      "serpapi_link": "https://serpapi.com/search.json?author_id=FIDlSecAAAAJ&engine=google_scholar_author&hl=en",
+      "author_id": "FIDlSecAAAAJ",
+      "affiliations": "University of Leeds",
+      "email": "Verified email at leeds.ac.uk",
+      "thumbnail": "https://scholar.googleusercontent.com/citations?view_op=small_photo&user=FIDlSecAAAAJ&citpid=4"
+    },
+    {
+      "name": "Helena Hartmann",
+      "link": "https://scholar.google.com/citations?user=5dOX2KAAAAAJ&hl=en",
+      "serpapi_link": "https://serpapi.com/search.json?author_id=5dOX2KAAAAAJ&engine=google_scholar_author&hl=en",
+      "author_id": "5dOX2KAAAAAJ",
+      "affiliations": "Postdoc & Science Communicator in the Bingellab (University Hospital Essen)",
+      "email": "Verified email at uk-essen.de",
+      "thumbnail": "https://scholar.googleusercontent.com/citations?view_op=small_photo&user=5dOX2KAAAAAJ&citpid=17"
+    },
+    {
+      "name": "Sam Parsons",
+      "link": "https://scholar.google.com/citations?user=kE37Xy4AAAAJ&hl=en",
+      "serpapi_link": "https://serpapi.com/search.json?author_id=kE37Xy4AAAAJ&engine=google_scholar_author&hl=en",
+      "author_id": "kE37Xy4AAAAJ",
+      "affiliations": "Radboud University Medical Center",
+      "email": "Verified email at psy.ox.ac.uk",
+      "thumbnail": "https://scholar.googleusercontent.com/citations?view_op=small_photo&user=kE37Xy4AAAAJ&citpid=3"
+    },
+    {
+      "name": "Sara Lil Middleton",
+      "link": "https://scholar.google.com/citations?user=a5FsrO0AAAAJ&hl=en",
+      "serpapi_link": "https://serpapi.com/search.json?author_id=a5FsrO0AAAAJ&engine=google_scholar_author&hl=en",
+      "author_id": "a5FsrO0AAAAJ",
+      "affiliations": "PhD Student University of Oxford",
+      "email": "Verified email at stx.ox.ac.uk",
+      "thumbnail": "https://scholar.googleusercontent.com/citations?view_op=small_photo&user=a5FsrO0AAAAJ&citpid=6"
+    },
+    {
+      "name": "Julia Strand",
+      "link": "https://scholar.google.com/citations?user=Q72Aa-EAAAAJ&hl=en",
+      "serpapi_link": "https://serpapi.com/search.json?author_id=Q72Aa-EAAAAJ&engine=google_scholar_author&hl=en",
+      "author_id": "Q72Aa-EAAAAJ",
+      "affiliations": "Associate Professor of Psychology, Carleton College",
+      "email": "Verified email at carleton.edu",
+      "thumbnail": "https://scholar.googleusercontent.com/citations?view_op=small_photo&user=Q72Aa-EAAAAJ&citpid=1"
+    },
+    {
+      "name": "Thomas Rhys Evans",
+      "link": "https://scholar.google.com/citations?user=NjpeSqMAAAAJ&hl=en",
+      "serpapi_link": "https://serpapi.com/search.json?author_id=NjpeSqMAAAAJ&engine=google_scholar_author&hl=en",
+      "author_id": "NjpeSqMAAAAJ",
+      "affiliations": "University of Greenwich",
+      "email": "Verified email at gre.ac.uk",
+      "thumbnail": "https://scholar.googleusercontent.com/citations?view_op=small_photo&user=NjpeSqMAAAAJ&citpid=1"
+    },
+    {
+      "name": "Nadia Saraí Corral Frías",
+      "link": "https://scholar.google.com/citations?user=pygBxfQAAAAJ&hl=en",
+      "serpapi_link": "https://serpapi.com/search.json?author_id=pygBxfQAAAAJ&engine=google_scholar_author&hl=en",
+      "author_id": "pygBxfQAAAAJ",
+      "affiliations": "Profesora departamento Psicología, Universidad de Sonora",
+      "email": "Verified email at unison.mx",
+      "thumbnail": "https://scholar.google.com/citations/images/avatar_scholar_56.png"
+    },
+    {
+      "name": "Samuel Guay",
+      "link": "https://scholar.google.com/citations?user=ruExfe4AAAAJ&hl=en",
+      "serpapi_link": "https://serpapi.com/search.json?author_id=ruExfe4AAAAJ&engine=google_scholar_author&hl=en",
+      "author_id": "ruExfe4AAAAJ",
+      "affiliations": "University of Montreal",
+      "email": "Verified email at umontreal.ca",
+      "thumbnail": "https://scholar.googleusercontent.com/citations?view_op=small_photo&user=ruExfe4AAAAJ&citpid=4"
+    },
+    {
+      "name": "Mahmoud Elsherif",
+      "link": "https://scholar.google.com/citations?user=d1aZL7IAAAAJ&hl=en",
+      "serpapi_link": "https://serpapi.com/search.json?author_id=d1aZL7IAAAAJ&engine=google_scholar_author&hl=en",
+      "author_id": "d1aZL7IAAAAJ",
+      "affiliations": "Post-doctoral researcher",
+      "thumbnail": "https://scholar.googleusercontent.com/citations?view_op=small_photo&user=d1aZL7IAAAAJ&citpid=1"
+    },
+    {
+      "name": "Kimberly Quinn",
+      "link": "https://scholar.google.com/citations?user=puLZtigAAAAJ&hl=en",
+      "serpapi_link": "https://serpapi.com/search.json?author_id=puLZtigAAAAJ&engine=google_scholar_author&hl=en",
+      "author_id": "puLZtigAAAAJ",
+      "affiliations": "Professor of Psychological Science, DePaul University",
+      "email": "Verified email at depaul.edu",
+      "thumbnail": "https://scholar.googleusercontent.com/citations?view_op=small_photo&user=puLZtigAAAAJ&citpid=5"
+    },
+    {
+      "name": "Kelly E Lloyd",
+      "link": "https://scholar.google.com/citations?user=xK1DPZgAAAAJ&hl=en",
+      "serpapi_link": "https://serpapi.com/search.json?author_id=xK1DPZgAAAAJ&engine=google_scholar_author&hl=en",
+      "author_id": "xK1DPZgAAAAJ",
+      "affiliations": "Research Fellow",
+      "email": "Verified email at leeds.ac.uk",
+      "thumbnail": "https://scholar.googleusercontent.com/citations?view_op=small_photo&user=xK1DPZgAAAAJ&citpid=4"
+    }
+  ]
+}
