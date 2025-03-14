@@ -27,7 +27,7 @@ publishDate:
 date_end: 2022-02-06T01:02:00-00:00
 
 
-authors: ["forrt", "Flavio Azevedo"]
+authors: ["forrt", "Flávio Azevedo"]
 tags: []
 
 # Is this a featured talk? (true/false)

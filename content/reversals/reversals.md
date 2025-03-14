@@ -94,13 +94,13 @@ This is a dynamic project that is organized in five stages. Currently, we are in
 
 {{% alert example %}}
 
- {{< hl >}}We were shortlisted for the **Einstein Foundations Award or Promoting Quality in Research 2023** in the category Early Career Award! Check out our project "Tracking and Mainstreaming Replications across the Social, Behavioral and Cognitive Sciences" [here](https://www.einsteinfoundation.de/en/award/events/meet-the-finalists/)!{{< /hl >}}
+ {{< hl >}}We were shortlisted for the **Einstein Foundations Award or Promoting Quality in Research 2023** in the category Early Career Award! Check out our project "Tracking and Mainstreaming Replications across the Social, Behavioral and Cognitive Sciences" [here](https://web.archive.org/web/20231204000615/https://www.einsteinfoundation.de/en/award/events/meet-the-finalists/)!{{< /hl >}}
 
  {{% /alert %}}
 
 {{% alert example %}}
 
- {{< hl >}}We received the **Open Science Fund 2023** from the Dutch Research Foundation (NWO)! Check out our project "Tracking and Mainstreaming Replications across the Social, Behavioral and Cognitive Sciences" [here](https://www.nwo.nl/en/researchprogrammes/open-science-fund-2023-awarded-grants)!{{< /hl >}}
+ {{< hl >}}We received the **Open Science Fund 2023** from the Dutch Research Foundation (NWO)! Check out our project "Tracking and Mainstreaming Replications across the Social, Behavioral and Cognitive Sciences" [here](https://www.nwo.nl/en/researchprogrammes/open-science/open-science-fund/open-science-fund-2023-awarded-grants)!{{< /hl >}}
 
  {{% /alert %}}
 

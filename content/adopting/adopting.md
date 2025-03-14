@@ -108,7 +108,7 @@ Including sources into your syllabus that discuss open and transparent research 
         -   [The Hitchhiker's Guide to Academic Publishing](https://www.youtube.com/watch?v=TgTsgbbdUog&t=6025s&ab_channel=CharlieBurlingham)
         -   [The HPS Podcast](https://www.hpsunimelb.org/)
         -   [The juice and the squeeze - A zesty podcast by two academics about where, how, and why we focus our efforts](https://www.juiceandsqueeze.net/)
-        -   [Open Update by Liberate Science](https://libscie.org/open-update)
+        -   [Open Update by Liberate Science](https://creators.spotify.com/pod/show/open-update?ref=libscie.org)
         -   [Open Science Talk - A podcast about Open Science, Open Access, Open Education, Open Data, Open Software](https://septentrio.uit.no/index.php/OSTalk/issue/archive)
         -   [The ORION Open Science Podcast](https://orionopenscience.podbean.com/)
         -   [Quantitude - A podcast dedicated to all things quantitative](https://quantitudepod.org/)

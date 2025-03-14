@@ -125,4 +125,4 @@ Our work is sharing open scholarship with a wide audience. Our highlights includ
 * FORRT has broken **two** Google Docs by exceeding their 1.02 *million* character limit!
 * Our work is cited in **two** Wikipedia pages.
 * The FORRT Glossary has been featured on television **once**, [in a segment on Al Ekhbariya](https://twitter.com/Ali_AlHoorie/status/1497622163788115981).
-* Our work has been [highlighted by NASA](https://science.nasa.gov/open-science/transform-to-open-science/stories/dr-flavio-azevedo) **once**.
+* Our work has been [highlighted by NASA](https://web.archive.org/web/20220919002540/https://science.nasa.gov/open-science/transform-to-open-science/stories/dr-flavio-azevedo?s=09) **once**.
