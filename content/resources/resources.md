@@ -33,12 +33,11 @@ advanced:
   css_class: ""
 ---
 
+FORRT's curated resources database now hosts over ***1,400*** open science materials below, thanks to key partnerships. Initially boosted by over 60% by the [Open Science Knowledge Base](https://www.cos.io/communities/stem-education-hub) ([see also OSKB's OER commons page](https://oercommons.org/hubs/OSKB))—[a Center for Open Science (COS)](http://cos.io/) initiative. Recently, our collection recently grew by 30% through contributions from [JUST-OS](https://www.just-os.org), increasing resources from 1,140 to 1,402. OSKB's work involved almost 300 hours (valued at €10,000) and JUST-OS’s work involved 150 hours (valued around €5,000), reflecting significant effort and dedication. COS, OSKB, JUST-OS and FORRT forged partnerships to promote open and reproducible research practices, enabling the scientific community to build upon each other’s work and advance knowledge collaboratively. Learn more about it FORRT’s and OSKB’s partnership [in the COS’s announcement](https://www.cos.io/blog/forrt-and-cos-join-forces-to-foster-open-and-reproducible-research-training).
 
-There are more than 1000 curated resources in our database. These resources were crowdsourced by our community and, more recently, our database was increased by over 60% thanks to the [Open Science Knowledge Base](https://www.cos.io/communities/stem-education-hub)([see also link to the OER commons page](https://oercommons.org/hubs/OSKB)), a Center for Open Science educational initiative, which graciously chose FORRT to host their curated Open Science resources. COS, OSKB, and FORRT forged a partnership to promote open and reproducible research practices, enabling the scientific community to build upon each other's work and advance knowledge collaboratively. Learn more about it FORRT's and OSKB's partnership [in the COS's announcement](https://www.cos.io/blog/forrt-and-cos-join-forces-to-foster-open-and-reproducible-research-training).
+### ***Contribute***
 
-#### Contribute
-
-If you notice there is an educational resource, research article or pedagogical tool missing in our database, please consider adding it [below in our on submission form](/resources/#form) or directly into [a separate g-forms](https://docs.google.com/forms/d/e/1FAIpQLSfPceN5opEeauCBSvapoB-ADpH0IoT24XOLfQGaVEF0EJGFOA/viewform). 
+If you notice there is an educational resource, research article or pedagogical tool missing in our database, please consider adding it [below in our on submission form](https://forrt.org/resources/#form) or directly into [a separate g-forms](https://docs.google.com/forms/d/e/1FAIpQLSfPceN5opEeauCBSvapoB-ADpH0IoT24XOLfQGaVEF0EJGFOA/viewform).
 
 ## FORRT's Curated Resources 
 
