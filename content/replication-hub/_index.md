@@ -39,7 +39,7 @@ Journal of Open Psychology Data, 12(8), 1–23. [https://doi.org/10.5334/jopd.10
 
 
 
-* Röseler, L., Gendlina, T., Krapp, J., Labusch, N., & Schütz, A. (2022). Successes and Failures of Replications: A Meta-Analysis of Independent Replication Studies Based on the OSF Registries. [https://dx.doi.org/10.31219/osf.io/8psw2](https://dx.doi.org/10.31219/osf.io/8psw2) 
+* Röseler, L., Gendlina, T., Krapp, J., Labusch, N., & Schütz, A. (2022). Successes and Failures of Replications: A Meta-Analysis of Independent Replication Studies Based on the OSF Registries. [https://doi.org/10.31222/osf.io/8psw2](https://doi.org/10.31222/osf.io/8psw2) 
 
 
 ### Projects
@@ -54,7 +54,7 @@ Journal of Open Psychology Data, 12(8), 1–23. [https://doi.org/10.5334/jopd.10
 
 
 
-* The [Collaborative Replication and Education Project (CREP)](https://forrt.org/glossary/collaborative-replication-and-educa/) is an initiative designed to organize and structure replication efforts of highly-cited empirical studies in psychology to satisfy the dual needs for more high-quality direct replications and more training in empirical research techniques for psychology students. CREP aims to address the need for replications of highly cited studies, and to provide training, support and professional growth opportunities for academics completing replication projects.
+* The [Collaborative Replication and Education Project (CREP)](https://forrt.org/glossary/vbeta/collaborative-replication-and-educa/) is an initiative designed to organize and structure replication efforts of highly-cited empirical studies in psychology to satisfy the dual needs for more high-quality direct replications and more training in empirical research techniques for psychology students. CREP aims to address the need for replications of highly cited studies, and to provide training, support and professional growth opportunities for academics completing replication projects.
 * The [Institute for Replication (I4R)](i4replication.org) organizes replication games to conduct replications and reproductions. It provides replication and teaching resources and helps researchers disseminate and publish replications and reproductions.
 * The Center for Open Science’s projects to [Systematizing Confidence in Open Research and Evidence (SCORE)](https://www.cos.io/score) include prediction markets, machine-learning, and replication efforts.
 * The project [Improving Reproducibility in Science (iRise)](https://camarades.shinyapps.io/dev-irise-soles/) identifies, tracks, and evaluates discipline-wide open science interventions and develops tools to improve reproducibility.
@@ -276,7 +276,7 @@ Here you can find a list of completed and ongoing projects that summarize replic
    </td>
    <td>Political Sciences
    </td>
-   <td><a href="https://i4replication.org/reports.html">https://i4replication.org/reports.html</a> 
+   <td><a href="https://i4replication.org/discussion_paper.html">https://i4replication.org/discussion_paper.html</a> 
    </td>
    <td>No
    </td>
