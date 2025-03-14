@@ -29,6 +29,9 @@ jobs:
       - name: Run Tenzing script
         run: python3 scripts/forrt_contribs/tenzing.py
 
+      - name: Run Google Scholar script
+        run: python3 scripts/gs-cite/google_scholar.py
+
       - name: Run Curated Resources script
         run: python3 content/resources/resource.py
 
