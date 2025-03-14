@@ -53,19 +53,39 @@ subtitle = ""
 
  <script type='text/javascript' src='https://d1bxh8uas1mnw7.cloudfront.net/assets/embed.js'></script>
 
+
+<style>
+    .citation-container {
+        float: right;
+        margin: 0 0 10px 20px; /* Adds space on the left, so text doesn't touch */
+        text-align: center;
+        display: inline-block; /* Ensures proper floating */
+        max-width: 350px;
+    }
+    .citation-image {
+        max-width: 100%;
+        height: auto;
+        display: block;
+    }
+   
+</style>
+    
+  <div class="citation-container">
+        <img src="citation_chart.webp" alt="Citation Chart" class="citation-image">
+        <a href="https://scholar.google.com/citations?user=JrBcgGMAAAAJ&hl=en" target="_blank">Details on Google Scholar</a>
+    </div>
+    
+<br>
+
 <center>
 
 # Publications, Preprints, & Policy Briefs & Op-Eds
 
 </center>
-
-<br><br><br>
-
+<br>&nbsp;<br>
 
 ## Academic peer-reviewed publications 
 ***
-
-<br>
 
 ### **The Replication Database: Documenting the Replicability of Psychological Science**
 
