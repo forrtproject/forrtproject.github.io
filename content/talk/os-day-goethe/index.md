@@ -37,7 +37,7 @@ url_slides: ""
 url_video: "https://video01.uni-frankfurt.de/Mediasite/Play/8fae430a4ee24d62a7f61985f74f27121d"
 ---
 
-The [Frankfurt Open Science Initiative](https://frankfurt-osi.netlify.com/) organized an Open Science Day in Frankfurt at Goethe University whose theme revolved around Open Science and Teaching.
+The [Frankfurt Open Science Initiative](https://frankfurt-osi.netlify.app/) organized an Open Science Day in Frankfurt at Goethe University whose theme revolved around Open Science and Teaching.
 
 FORRT was featured as one of the two main talks, and below you find the recording of FORRT’s presentation. 
 
