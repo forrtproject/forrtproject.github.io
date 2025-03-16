@@ -1,20 +1,11 @@
----
-title: IMPLICIT BIAS AND NORMATIVE SCIENCE
-authors: ['By Magdalena Grose-Hodge']
-tags: [Lesson Bank]
-date: 2023-10-03
-# lastmod: 2024-10-03
-# View.
-#   1 = List
-#   2 = Compact
-#   3 = Card
-view: 2
-url: /forrt/lesson-plans/implicit_bias/
-# Optional header image (relative to `static/media/` folder).
-header:
-  caption: ""
-  image: ""
----
++++
+title = "IMPLICIT BIAS AND NORMATIVE SCIENCE"
+authors = ["By Magdalena Grose-Hodge"]
+tags = ["Lesson Bank"]
+date = "2023-10-03"
+lastmod = "2024-10-03"
+url = "/forrt/lesson-plans/implicit_bias/"
++++
 
 [LEAVE FEEDBACK HERE](https://docs.google.com/document/d/1UJYUTK_zbcoJTt6DjRQVrjvnfa6quCnqfYCEV2HtcDM/edit?usp=sharing)
 

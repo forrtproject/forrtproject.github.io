@@ -85,7 +85,7 @@ Each has suitable context: (e.g., entry-level/undergraduate/postgraduate), total
 1. [Open Data and Qualitative Research](https://osf.io/nyfqx/)
 1. [Diversity and inclusion in (br)open science](https://osf.io/r6qsw/)
 1. [Differentiating between correlation vs causation](https://osf.io/fvnj5)
-1. [Implicit bias](implicit_bias/) 2 Lessons Plans [Implicit bias - Lesson Plan part 1](./Lesson_Plans/implicit_bias_lesson_plan.pdf)and [Implicit bias - Lesson Plan part 2](./Lesson_Plans/Implicit_Bias_part_2.pdf)
+1. [Implicit bias](./implicit_bias/) 2 Lessons Plans [Implicit bias - Lesson Plan part 1](./Lesson_Plans/implicit_bias_lesson_plan.pdf)and [Implicit bias - Lesson Plan part 2](./Lesson_Plans/Implicit_Bias_part_2.pdf)
 1. [Diversity as one of the core values of Open Science](community_psychology-diversity/) Lesson Plan PDF [Diversity as one of the core values of Open Science](./Lesson_Plans/Diversity_as_a_corevalue_of_Open%20Science.pdf)
 1. [Diversity and research](diversity_and_research/)Lesson Plan Pdf [Diversity and research](./Lesson_Plans/Diversity_and_Research.pdf)
 1.  [Oppression and Power](masterstools/)Lesson Plan Pdf[Oppression and Power - Lesson Plan](./masterstools/)
