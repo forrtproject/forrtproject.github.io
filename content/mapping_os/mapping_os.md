@@ -33,7 +33,7 @@ title = "Systematically Mapping Open Science Communities across Disciplines"
 </div>
 -->
 
-<br>
+<!-- <br> -->
 
 <!-- 
 
@@ -43,8 +43,8 @@ THIS PAGE IS IN CONSTRUCTION. PLEASE COME BACK SOON!
 
 -->
 
-<br>
-<br>
+<!-- <br> -->
+<!-- <br> -->
 
 Welcome to the FORRT Open Science Communities Mapping Initiative, a global effort to systematically identify, map, and connect Open Science (OS) organizations across disciplines and regions.
 
@@ -143,6 +143,8 @@ This initiative is supported by a consortium of organizations dedicated to advan
 * [COSGN Database](https://docs.google.com/spreadsheets/d/1LNF5_bOkRV-RLIF4HYmu-gOemIa4IdfXEer89fM-Vy8/edit?gid=0#gid=0): A database of over 120 grassroots networks promoting open scholarship worldwide.
 * [ICOR's Project Library](https://incentivizingopen.org/project-library): A comprehensive collection of real-world solutions aimed at incentivizing open and collaborative research practices across various disciplines.
 * [IOI's Infra Finder](https://infrafinder.investinopen.org/solutions): A tool designed to facilitate the discovery and evaluation of open infrastructure services, aiding users in finding solutions that meet their specific needs. 
+* [Open Science Learning Gate](https://www.opensciencegate.com/): The gate tries to collect resources for stakeholders in OS.
+* [Embassy of Good Science](https://embassy.science/): The Embassy is a community platform offering support in handling day-to-day research practices and dilemmas. The platform is a wiki - allowing users to contribute their knowledge and expertise.
 
 <br>
 
@@ -158,4 +160,4 @@ Explore the Map: [Interactive Map Link]
 
 Submit Your Resources: [Google Form Link]
 
-Contact Us: Flavio Azevedo (via FORRT's Slack)
+Contact Us: Flavio Azevedo (via [FORRT's Slack](https://join.slack.com/t/forrt/shared_invite/zt-alobr3z7-NOR0mTBfD1vKXn9qlOKqaQ))
