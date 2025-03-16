@@ -223,6 +223,11 @@ classtitle = "text-center"
 <br>
 
 ---
+<img src="icor.webp" align="right" /> [Incentivising Collaborative and Open Research (ICOR)](https://incentivizingopen.org/) Enables and incentivizes an open and collaborative research culture by strategizing, connecting and implementing projects that seek to change the status quo of competition throughout the research cycle. ICOR is also building a body of evidence and case studies on the impact of projects that facilitate collaborative open research, and to demonstrate how these practices, tools, metrics and incentives address the larger objective of finding innovative solutions to real-world problems.
+
+<br>
+
+---
 
 <br>
 
