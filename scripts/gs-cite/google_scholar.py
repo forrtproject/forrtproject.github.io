@@ -17,10 +17,7 @@ params = {
 
 # Fetch data from SerpAPI
 response = requests.get(url, params=params)
-
-with open(file_path, "r", encoding="utf-8") as file:
-    data = json.load(file)
-
+data = response.json()
 
 # Extract total citations, h-index, and i10-index
 cited_by_info = data["cited_by"]["table"]
