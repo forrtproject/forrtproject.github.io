@@ -3,6 +3,6 @@
 type = "widget_page"
 headless = false  # Homepage is headless, other widget pages are not.
 title = "Lesson Plans"
-# url = "/forrt/lesson-plans"
+url = "/forrt/lesson-plans"
 +++
 
