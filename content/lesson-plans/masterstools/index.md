@@ -9,6 +9,7 @@ date: 2023-10-03
 #   2 = Compact
 #   3 = Card
 view: 2
+url: /forrt/lesson-plans/masterstools/
 
 # Optional header image (relative to `static/media/` folder).
 header:

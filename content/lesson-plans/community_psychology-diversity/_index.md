@@ -9,6 +9,7 @@ date: 2023-10-03
 #   2 = Compact
 #   3 = Card
 view: 2
+url: /forrt/lesson-plans/community_psychology-diversity/
 
 # Optional header image (relative to `static/media/` folder).
 header:
