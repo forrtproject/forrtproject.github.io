@@ -85,7 +85,24 @@ Thanks to our amazing community, FORRT has become an ***award-winning*** grassro
 
 <br />
 
+<img src="Einstein Foundation Award.webp" align="right" /> In 2023, FORRT was a *finalist* for the ***[Early Career Award](https://award.einsteinfoundation.de/award-winners-finalists/recipients-2023/early-career-researcher-award-2023-finalists)*** for Promoting Quality in Research from the Einstein Foundation for its [Replications](https://forrt.org/replication-hub/) initiative. 
+
+<br />
+
 <img src="inosc.webp" align="right" /> In 2023, FORRT received an ***[OSC Award](https://osc-international.com/osc-amsterdam/looking-back-oscawards/)*** in the Open Educational Resources / Open Education / Open Online Courses category from Open Science Community Amsterdam, receiving €200. This was for our paper, *[The role of pedagogical communities](https://doi.org/10.1186/s13104-022-05944-1)*. [Watch our successful pitch on YouTube](https://youtu.be/7wYW7xpqbUY).
+
+<br />
+
+<img src="sips.webp" align="right" /> In 2023, FORRT received the ***[Mission Award](https://improvingpsych.org/mission/awards/)*** from the Society for the Improvement of Psychological Science for its overall initiatives.
+
+<br />
+
+<img src="jisc.webp" align="right" /> In 2023, FORRT was named a ***[Community Champion for UK education and research communities](https://www.jisc.ac.uk/news/all/jisc-announces-2023-community-champions)*** by JISC.
+
+<br />
+
+<img src="sips.webp" align="right" /> In 2023, FORRT a ***[Commendation](https://improvingpsych.org/2023/08/22/sips-2023-awards-announced/
+)*** from the Society for the Improvement of Psychological Science for its [Replications & Reversals](https://forrt.org/reversals/) project.
 
 <br />
 
@@ -101,11 +118,20 @@ Thanks to our amazing community, FORRT has become an ***award-winning*** grassro
 
 <br />
 
+<img src="sips.webp" align="right" /> In 2022, FORRT received a ***[Commendation](https://improvingpsych.org/mission/awards/)*** from the Society for the Improvement of Psychological Science for its [Summaries of Open Science](https://forrt.org/summaries/) project.
+
+<br />
+
 <img src="hiddenref.webp" align="right" /> In 2021, FORRT has received a ***Commendation*** from the [HiddenREF](https://hidden-ref.org/hidden-ref-award-ceremony/) for its initiatives advancing training materials and resources on open and reproducible science. You can [watch a recording of the award ceremony on YouTube](https://youtu.be/btjRNG0NANg?t=1070).
 
 <br />
 
 <img src="osc-galway.webp" align="right" /> In 2021, FORRT has received an ***Open Scholarship Award (2nd Place)*** from the [Open Scholarship Community Galway](https://osc-galway.ie/competition/) for its overall initiatives. 
+
+<br />
+
+In 2021, FORRT has received a ***Kellogg School of Management Consultancy on “Leading & Managing Teams”***.
+
 
 <br />
 
