@@ -85,7 +85,7 @@ Thanks to our amazing community, FORRT has become an ***award-winning*** grassro
 
 <br />
 
-<img src="Einstein Foundation Award.webp" align="right" /> In 2023, FORRT was a *finalist* for the ***[Early Career Award](https://award.einsteinfoundation.de/award-winners-finalists/recipients-2023/early-career-researcher-award-2023-finalists)*** for Promoting Quality in Research from the Einstein Foundation for its [Replications](https://forrt.org/replication-hub/) initiative. 
+<img src="" align="right" /> In 2023, FORRT was a *finalist* for the ***[Early Career Award](https://award.einsteinfoundation.de/award-winners-finalists/recipients-2023/early-career-researcher-award-2023-finalists)*** for Promoting Quality in Research from the Einstein Foundation for its [Replications](https://forrt.org/replication-hub/) initiative. 
 
 <br />
 
@@ -97,7 +97,7 @@ Thanks to our amazing community, FORRT has become an ***award-winning*** grassro
 
 <br />
 
-<img src="jisc.webp" align="right" /> In 2023, FORRT was named a ***[Community Champion for UK education and research communities](https://www.jisc.ac.uk/news/all/jisc-announces-2023-community-champions)*** by JISC.
+<img src="" align="right" /> In 2023, FORRT was named a ***[Community Champion for UK education and research communities](https://www.jisc.ac.uk/news/all/jisc-announces-2023-community-champions)*** by JISC.
 
 <br />
 
