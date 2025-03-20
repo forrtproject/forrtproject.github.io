@@ -132,7 +132,6 @@ In 2023, FORRT was named a ***[Community Champion for UK education and research 
 
 In 2021, FORRT has received a ***Kellogg School of Management Consultancy on “Leading & Managing Teams”***.
 
-
 <br />
 
 <img src="sips.webp" align="right" /> In 2020, FORRT has received a ***Commendation*** from the [Society for the Improvement of Psychological Science](http://improvingpsych.org/mission/awards/) for its manuscript ["Introducing a Framework for Open and Reproducible Research Training (FORRT)"](https://osf.io/bnh7p/). 
