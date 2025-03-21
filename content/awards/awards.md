@@ -97,7 +97,7 @@ Thanks to our amazing community, FORRT has become an ***award-winning*** grassro
 
 <br />
 
-In 2023, FORRT was named a ***[Community Champion for UK education and research communities](https://www.jisc.ac.uk/news/all/jisc-announces-2023-community-champions)*** by JISC.
+<img src="Jisc.webp" align="right" /> In 2023, FORRT was named a ***[Community Champion for UK education and research communities](https://www.jisc.ac.uk/news/all/jisc-announces-2023-community-champions)*** by JISC.
 
 <br />
 
