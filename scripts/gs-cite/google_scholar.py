@@ -6,6 +6,9 @@ import requests
 # Load API key from environment variable
 api_key = os.getenv("SERPAPI")
 
+if api_key is None:
+    raise ValueError("API key is missing. Please set the SERPAPI environment variable.")
+
 # Define the request URL
 url = "https://serpapi.com/search.json"
 params = {
@@ -17,10 +20,7 @@ params = {
 
 # Fetch data from SerpAPI
 response = requests.get(url, params=params)
-
-with open(file_path, "r", encoding="utf-8") as file:
-    data = json.load(file)
-
+data = response.json()
 
 # Extract total citations, h-index, and i10-index
 cited_by_info = data["cited_by"]["table"]

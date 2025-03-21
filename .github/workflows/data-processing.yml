@@ -30,6 +30,8 @@ jobs:
         run: python3 scripts/forrt_contribs/tenzing.py
 
       - name: Run Google Scholar script
+        env:
+          SERPAPI: ${{ secrets.SERPAPI }}
         run: python3 scripts/gs-cite/google_scholar.py
 
       - name: Run Curated Resources script
