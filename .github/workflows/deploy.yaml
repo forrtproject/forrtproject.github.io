@@ -42,15 +42,17 @@ jobs:
         if: steps.download-artifact.outcome == 'failure'
         env:
           PYTHON_VERSION: "3.11"
+          GA_API_CREDENTIALS: ${{ secrets.GA_API_CREDENTIALS }}
+          GA_PROPERTY_ID: ${{ secrets.GA_PROPERTY_ID }}
         run: |
           # Install Python dependencies
           python3 -m pip install -r ./requirements.txt
-          
+
           # Generate data files
           python3 scripts/forrt_contribs/tenzing.py
           python3 content/resources/resource.py
           mv scripts/forrt_contribs/tenzing.md content/contributors/tenzing.md
-          
+
           # Download GA data if possible
           if [ "${{ github.event_name }}" != 'pull_request' ]; then
             python scripts/download_ga_data.py
@@ -78,7 +80,7 @@ jobs:
           name: forrt-website-${{ github.run_number }}
           path: public/
           retention-days: 1
-    
+
   deploy-test:
     name: Deploy - Test
     runs-on: ubuntu-22.04
