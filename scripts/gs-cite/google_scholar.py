@@ -6,7 +6,7 @@ import requests
 # Load API key from environment variable
 api_key = os.getenv("SERPAPI")
 
-if api_key is None:
+if not api_key:
     raise ValueError("API key is missing. Please set the SERPAPI environment variable.")
 
 # Define the request URL
