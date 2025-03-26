@@ -5,8 +5,6 @@ import requests
 
 # Load API key from environment variable
 api_key = os.getenv("SERPAPI")
-print("hello")
-print(api_key)
 
 if not api_key:
     raise ValueError("API key is missing. Please set the SERPAPI environment variable.")
