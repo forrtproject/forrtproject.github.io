@@ -68,7 +68,7 @@ jobs:
         continue-on-error: true  # Continue even if this step fails
         run: python3 scripts/gs-cite/google_scholar.py
         env:
-          SERPAI: ${{ secrets.SERPAPI }}
+          SERPAPI: ${{ secrets.SERPAPI }}
           
       - name: Upload data artifact
         uses: actions/upload-artifact@v4
