@@ -1,10 +1,7 @@
 ---
 title: "List of large-scale replication projects"
-url: "/replication-hub/large_scale_projects"
+url: "/replication-hub/large-scale-replication-projects"
 ---
-
-### List of Large-Scale Replication Projects
-
 
 Here you can find a list of completed and ongoing projects that summarize replication efforts throughout sciences and humanities.
 
