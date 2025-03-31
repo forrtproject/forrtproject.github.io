@@ -2,10 +2,6 @@
 # Section metadata
 title: "FORRT Replication Hub"
 date: 2023-09-09
-menu:
-  main:
-    name: "Replication Hub"
-    weight: 50
 ---
 
 <br>
