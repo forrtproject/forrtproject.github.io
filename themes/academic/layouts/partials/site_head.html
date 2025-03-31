@@ -23,6 +23,11 @@
 
   {{ with $superuser_name }}<meta name="author" content="{{ . }}">{{ end }}
 
+  {{/* Noindex for staging environment */}}
+  {{ if eq (getenv "HUGO_ENV") "staging" }}
+  <meta name="robots" content="noindex, nofollow">
+  {{ end }}
+
   {{/* Generate page description. */}}
   {{ $desc := "" }}
   {{ if .Params.summary }}
