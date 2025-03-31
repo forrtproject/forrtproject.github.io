@@ -9,10 +9,6 @@ tags:
   - "Research Crisis"
 date: 2023-10-03
 url: "/lesson-plans/generalizability/"
-menu:
-  main:
-    parent: "Lesson Plans"
-    weight: 35
 ---
 
 **The Generalizability Crisis** 

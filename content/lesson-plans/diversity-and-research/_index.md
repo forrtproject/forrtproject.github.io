@@ -9,10 +9,6 @@ tags:
   - "Open Scholarship"
 date: 2023-10-03
 url: "/lesson-plans/diversity-research/"
-menu:
-  main:
-    parent: "Lesson Plans"
-    weight: 30
 ---
 
 **DIVERSITY IN RESEARCH AND OPEN SCIENCE**

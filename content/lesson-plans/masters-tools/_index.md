@@ -9,10 +9,6 @@ tags:
   - "Critical Theory"
 date: 2023-10-03
 url: "/lesson-plans/masters-tools/"
-menu:
-  main:
-    parent: "Lesson Plans"
-    weight: 40
 ---
 
 **OPPRESSION AND POWER**  
