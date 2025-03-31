@@ -1,5 +1,9 @@
 name: Data Processing
 
+# This workflow is triggered daily at midnight and can also be manually triggered.
+# It processes data from various scripts and uploads the processed data as an artifact.
+# The data is used to update the website's content.
+
 on:
   schedule:
     - cron: '0 0 * * *'  # Daily at midnight
@@ -27,17 +31,15 @@ jobs:
         run: python3 -m pip install -r ./requirements.txt
 
       - name: Run Tenzing script
+        continue-on-error: true  # Continue even if this step fails
         run: python3 scripts/forrt_contribs/tenzing.py
 
-      - name: Run Google Scholar script
-        run: python3 scripts/gs-cite/google_scholar.py
-        env:
-          SERPAI: ${{ secrets.SERPAPI }}
-
       - name: Run Curated Resources script
+        continue-on-error: true  # Continue even if this step fails
         run: python3 content/resources/resource.py
 
       - name: Move and validate Tenzing output
+        continue-on-error: true  # Continue even if this step fails
         run: |
           mv scripts/forrt_contribs/tenzing.md content/contributors/tenzing.md
           if [ ! -f content/contributors/tenzing.md ]; then
@@ -46,6 +48,7 @@ jobs:
           fi
 
       - name: Validate curated resources
+        continue-on-error: true  # Continue even if this step fails
         run: |
           for file in content/curated_resources/*; do
             if [ ! -f "$file" ]; then
@@ -55,11 +58,18 @@ jobs:
           done
 
       - name: Download GA Data
+        continue-on-error: true  # Continue even if this step fails
         env:
           GA_API_CREDENTIALS: ${{ secrets.GA_API_CREDENTIALS }}
           GA_PROPERTY_ID: ${{ secrets.GA_PROPERTY_ID }}
         run: python scripts/download_ga_data.py
 
+      - name: Run Google Scholar script
+        continue-on-error: true  # Continue even if this step fails
+        run: python3 scripts/gs-cite/google_scholar.py
+        env:
+          SERPAPI: ${{ secrets.SERPAPI }}
+          
       - name: Upload data artifact
         uses: actions/upload-artifact@v4
         with:
