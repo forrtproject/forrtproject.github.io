@@ -10,7 +10,6 @@ weight = 10  # Order that this section will appear.
 
 title = "Lesson Plans"
 subtitle = ""
-url = "/lesson-plans/"
 
 [design]
   # Choose how many columns the section has. Valid values: 1 or 2.
@@ -88,8 +87,8 @@ Each has suitable context: (e.g., entry-level/undergraduate/postgraduate), total
 1. [Differentiating between correlation vs causation](https://osf.io/fvnj5)
 1. [Implicit Bias](/lesson-plans/implicit-bias/) 2 Lessons Plans [Implicit bias - Lesson Plan part 1](./Lesson_Plans/implicit_bias_lesson_plan.pdf)and [Implicit bias - Lesson Plan part 2](./Lesson_Plans/Implicit_Bias_part_2.pdf)
 1. [Diversity as one of the core values of Open Science](/lesson-plans/community-psychology-diversity/) Lesson Plan PDF [Diversity as one of the core values of Open Science](./Lesson_Plans/Diversity_as_a_corevalue_of_Open%20Science.pdf)
-1. [Diversity and research](/lesson-plans/diversity-research/)Lesson Plan Pdf [Diversity and research](./Lesson_Plans/Diversity_and_Research.pdf)
-1.  [Oppression and Power](/lesson-plans/masters-tools/)Lesson Plan Pdf[Oppression and Power - Lesson Plan](/lesson-plans/masters-tools/)
+1. [Diversity and research](/lesson-plans/diversity-and-research/)Lesson Plan Pdf [Diversity and research](./Lesson_Plans/Diversity_and_Research.pdf)
+1.  [Oppression and Power](/lesson-plans/masterstools/)Lesson Plan Pdf[Oppression and Power - Lesson Plan](/lesson-plans/masterstools/)
 1.  [Generalizability Crisis](/lesson-plans/generalizability/)Lesson Plan Pdf[Generalizability Crisis - Lesson Plan](./Lesson_Plans/generalizability.pdf)
 1.  The myth of the normality How neurodiversity dismantles the generalisability crisis[Text 1](https://journalofethics.ama-assn.org/article/myth-normal-brain-embracing-neurodiversity/2015-04) [Text 2](https://www.cambridge.org/core/journals/behavioral-and-brain-sciences/article/abs/generalizability-crisis/AD386115BA539A759ACB3093760F4824)
 1.  [The myth of the normality How neurodiversity dismantles the generalisability crisis - Lesson Plan](./Lesson_Plans/The_myth_of_the_normality_How_neurodiversity_dismantles_the_generalisability_crisis.pdf)

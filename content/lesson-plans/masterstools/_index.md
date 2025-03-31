@@ -8,7 +8,7 @@ tags:
   - "Power Structures"
   - "Critical Theory"
 date: 2023-10-03
-url: "/lesson-plans/masters-tools/"
+url: "/lesson-plans/masterstools/"
 ---
 
 **OPPRESSION AND POWER**  

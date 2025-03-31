@@ -8,7 +8,7 @@ tags:
   - "Inclusivity"
   - "Open Scholarship"
 date: 2023-10-03
-url: "/lesson-plans/diversity-research/"
+url: "/lesson-plans/diversity-and-research/"
 ---
 
 **DIVERSITY IN RESEARCH AND OPEN SCIENCE**
