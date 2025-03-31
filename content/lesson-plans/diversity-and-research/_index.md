@@ -1,22 +1,19 @@
 ---
-title: DIVERSITY IN RESEARCH AND OPEN SCIENCE
-subtitle: Diversity as one of the core values of Open Science
-authors: ['By Magdalena Grose-Hodge']
-tags: [Lesson Bank]
+title: "Diversity in Research and Open Science"
+subtitle: "Integrating Inclusive Practices"
+authors:
+  - "Magdalena Grose-Hodge"
+tags:
+  - "Research Methods"
+  - "Inclusivity"
+  - "Open Scholarship"
 date: 2023-10-03
-# View.
-#   1 = List
-#   2 = Compact
-#   3 = Card
-view: 2
-url: /forrt/lesson-plans/diversity_and_research/
-
-# Optional header image (relative to `static/media/` folder).
-header:
-  caption: ""
-  image: ""
+url: "/lesson-plans/diversity-research/"
+menu:
+  main:
+    parent: "Lesson Plans"
+    weight: 30
 ---
-
 
 **DIVERSITY IN RESEARCH AND OPEN SCIENCE**
 

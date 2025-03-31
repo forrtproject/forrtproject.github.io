@@ -1,19 +1,18 @@
 ---
-title: The Generalizability Crisis
-subtitle: Research Methods
-authors: ['By Magdalena Grose-Hodge']
-tags: [Lesson Bank]
+title: "The Generalizability Crisis"
+subtitle: "Challenges in Research Replication"
+authors:
+  - "Magdalena Grose-Hodge"
+tags:
+  - "Methodology"
+  - "Replication"
+  - "Research Crisis"
 date: 2023-10-03
-# View.
-#   1 = List
-#   2 = Compact
-#   3 = Card
-view: 2
-
-# Optional header image (relative to `static/media/` folder).
-header:
-  caption: ""
-  image: ""
+url: "/lesson-plans/generalizability/"
+menu:
+  main:
+    parent: "Lesson Plans"
+    weight: 35
 ---
 
 **The Generalizability Crisis** 

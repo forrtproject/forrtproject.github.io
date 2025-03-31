@@ -1,20 +1,18 @@
 ---
-title: OPPRESSION AND POWER
-subtitle: Focus on critical reading skills and discussion
-authors: ['By Magdalena Grose-Hodge']
-tags: [Lesson Bank]
+title: "Oppression and Power Dynamics"
+subtitle: "Critical Analysis in Academic Contexts"
+authors:
+  - "Magdalena Grose-Hodge"
+tags:
+  - "Social Justice"
+  - "Power Structures"
+  - "Critical Theory"
 date: 2023-10-03
-# View.
-#   1 = List
-#   2 = Compact
-#   3 = Card
-view: 2
-url: /forrt/lesson-plans/masterstools/
-
-# Optional header image (relative to `static/media/` folder).
-header:
-  caption: ""
-  image: ""
+url: "/lesson-plans/masters-tools/"
+menu:
+  main:
+    parent: "Lesson Plans"
+    weight: 40
 ---
 
 **OPPRESSION AND POWER**  

@@ -1,22 +1,20 @@
 ---
-title: COMMUNITY PSYCHOLOGY RESPECT FOR DIVERSITY
-subtitle: Diversity as one of the core values of Open Science
-authors: ['By Magdalena Grose-Hodge']
-tags: [Lesson Bank]
+title: "Community Psychology Respect for Diversity"
+subtitle: "Diversity as a Core Value of Open Science"
+authors:
+  - "Magdalena Grose-Hodge"
+tags:
+  - "Diversity"
+  - "Open Science"
+  - "Community Psychology"
 date: 2023-10-03
-# View.
-#   1 = List
-#   2 = Compact
-#   3 = Card
-view: 2
-url: /forrt/lesson-plans/community_psychology-diversity/
-
-# Optional header image (relative to `static/media/` folder).
-header:
-  caption: ""
-  image: ""
+lastmod: 2023-10-03
+url: "/lesson-plans/community-psychology-diversity/"
+menu:
+  main:
+    parent: "Lesson Plans"
+    weight: 25
 ---
-
 [LEAVE FEEDBACK AND LOOK AT THE LESSON PLAN HERE](https://docs.google.com/document/d/1UJYUTK_zbcoJTt6DjRQVrjvnfa6quCnqfYCEV2HtcDM/edit?usp=sharing)
 
 **COMMUNITY PSYCHOLOGY: RESPECT FOR DIVERSITY**  
