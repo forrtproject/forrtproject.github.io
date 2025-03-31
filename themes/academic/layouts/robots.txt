@@ -1,0 +1,7 @@
+{{ if eq hugo.Environment "staging" }}
+User-agent: *
+Disallow: /
+{{ else }}
+User-agent: *
+Allow: /
+{{ end }}
