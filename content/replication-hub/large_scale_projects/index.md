@@ -4,8 +4,6 @@ url: "/replication-hub/large-scale-projects/"
 date: 2023-09-09
 ---
 
-### List of Large-Scale Replication Projects
-
 Here you can find a list of completed and ongoing projects that summarize replication efforts throughout sciences and humanities.
 
 <table>
