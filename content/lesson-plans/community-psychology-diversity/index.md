@@ -11,6 +11,7 @@ date: 2023-10-03
 lastmod: 2023-10-03
 url: "/lesson-plans/community-psychology-diversity/"
 ---
+
 [LEAVE FEEDBACK AND LOOK AT THE LESSON PLAN HERE](https://docs.google.com/document/d/1UJYUTK_zbcoJTt6DjRQVrjvnfa6quCnqfYCEV2HtcDM/edit?usp=sharing)
 
 **COMMUNITY PSYCHOLOGY: RESPECT FOR DIVERSITY**  
