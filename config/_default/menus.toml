@@ -186,7 +186,7 @@
 
 [[main]]
   name = "Lesson Plans"
-  url = "/lesson-plans"
+  url = "/lesson-plans/"
   weight = 40
   parent = "nexus"
 
