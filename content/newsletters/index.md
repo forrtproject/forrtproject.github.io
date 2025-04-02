@@ -8,6 +8,8 @@ _______________________________________________
 
 **Archive :calendar: 2025**
 
+[| March 2025](https://mailchi.mp/forrt/forrt-newsletter-10335133?e=626cf66991)
+
 [| February 2025](https://us14.campaign-archive.com/?u=64c29a25a0ca81454399d522e&id=ee4ccbd93a)
 
 [| January 2025](https://mailchi.mp/forrt/forrt-newsletter-10332513?e=626cf66991)
