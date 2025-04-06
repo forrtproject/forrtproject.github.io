@@ -1,0 +1,298 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>FORRT Replication Hub | FORRT - Framework for Open and Reproducible Research Training</title><link>https://forrt.org/replication-hub/</link><atom:link href="https://forrt.org/replication-hub/index.xml" rel="self" type="application/rss+xml"/><description>FORRT Replication Hub</description><generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© 2025 - FORRT > Framework for Open and Reproducible Research Training</copyright><lastBuildDate>Sat, 09 Sep 2023 00:00:00 +0000</lastBuildDate><image><url>https://forrt.org/img/FORRT_banner.svg</url><title>FORRT Replication Hub</title><link>https://forrt.org/replication-hub/</link></image><item><title>List of Large-Scale Replication Projects</title><link>https://forrt.org/replication-hub/large-scale-replication-projects/</link><pubDate>Sat, 09 Sep 2023 00:00:00 +0000</pubDate><guid>https://forrt.org/replication-hub/large-scale-replication-projects/</guid><description>&lt;p>Here you can find a list of completed and ongoing projects that summarize replication efforts throughout sciences and humanities.&lt;/p>
+&lt;table>
+&lt;tr>
+&lt;td>&lt;strong>Project Name&lt;/strong>
+&lt;/td>
+&lt;td>&lt;strong>Topic&lt;/strong>
+&lt;/td>
+&lt;td>&lt;strong>Link&lt;/strong>
+&lt;/td>
+&lt;td>&lt;strong>Included in FReD?&lt;/strong>
+&lt;/td>
+&lt;td>&lt;strong>Ongoing as of June 2024?&lt;/strong>
+&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Reproducibility Project: Psychology
+&lt;/td>
+&lt;td>Psychology
+&lt;/td>
+&lt;td>&lt;a href="https://osf.io/ezcuj/">https://osf.io/ezcuj/&lt;/a>
+&lt;/td>
+&lt;td>Yes
+&lt;/td>
+&lt;td>No
+&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>CORE
+&lt;/td>
+&lt;td>Judgment and Decision Making (JDM)
+&lt;/td>
+&lt;td>&lt;a href="https://osf.io/5z4a8/">https://osf.io/5z4a8/&lt;/a>
+&lt;/td>
+&lt;td>Yes
+&lt;/td>
+&lt;td>Yes
+&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Data Replicada
+&lt;/td>
+&lt;td>Consumer Psychology and JDM
+&lt;/td>
+&lt;td>&lt;a href="https://datacolada.org/archives/category/replication">https://datacolada.org/archives/category/replication&lt;/a>
+&lt;/td>
+&lt;td>Yes
+&lt;/td>
+&lt;td>No
+&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Many Labs 1
+&lt;/td>
+&lt;td>Psychology
+&lt;/td>
+&lt;td>&lt;a href="https://osf.io/wx7ck/">https://osf.io/wx7ck/&lt;/a>
+&lt;/td>
+&lt;td>Yes
+&lt;/td>
+&lt;td>No
+&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Many Labs 2
+&lt;/td>
+&lt;td>Psychology
+&lt;/td>
+&lt;td>&lt;a href="https://osf.io/8cd4r/">https://osf.io/8cd4r/&lt;/a>
+&lt;/td>
+&lt;td>Yes
+&lt;/td>
+&lt;td>No
+&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Many Labs 3
+&lt;/td>
+&lt;td>Psychology
+&lt;/td>
+&lt;td>&lt;a href="https://osf.io/ct89g/">https://osf.io/ct89g/&lt;/a>
+&lt;/td>
+&lt;td>Yes
+&lt;/td>
+&lt;td>No
+&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Many Labs 4
+&lt;/td>
+&lt;td>Psychology
+&lt;/td>
+&lt;td>&lt;a href="https://osf.io/8ccnw/">https://osf.io/8ccnw/&lt;/a>
+&lt;/td>
+&lt;td>No
+&lt;/td>
+&lt;td>No
+&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Many Labs 5
+&lt;/td>
+&lt;td>Psychology
+&lt;/td>
+&lt;td>&lt;a href="https://osf.io/7a6rd/">https://osf.io/7a6rd/&lt;/a>
+&lt;/td>
+&lt;td>No
+&lt;/td>
+&lt;td>No
+&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Soto
+&lt;/td>
+&lt;td>Personality Psychology
+&lt;/td>
+&lt;td>&lt;a href="https://doi.org/10.1177/0956797619831612">https://doi.org/10.1177/0956797619831612&lt;/a>
+&lt;/td>
+&lt;td>Yes
+&lt;/td>
+&lt;td>No
+&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Social Sciences Replication Project
+&lt;/td>
+&lt;td>Studies on Human Behavior from Nature and Science
+&lt;/td>
+&lt;td>&lt;a href="http://www.socialsciencesreplicationproject.com">http://www.socialsciencesreplicationproject.com&lt;/a>
+&lt;/td>
+&lt;td>Yes
+&lt;/td>
+&lt;td>No
+&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Registered Replication Reports
+&lt;/td>
+&lt;td>Various
+&lt;/td>
+&lt;td>–
+&lt;/td>
+&lt;td>Results from 10 RRRs are included
+&lt;/td>
+&lt;td>Yes
+&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Many Babies 1
+&lt;/td>
+&lt;td>Developmental Psychology
+&lt;/td>
+&lt;td>&lt;a href="https://manybabies.org">https://manybabies.org&lt;/a>
+&lt;/td>
+&lt;td>No
+&lt;/td>
+&lt;td>Yes
+&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Sports Sciences Replications
+&lt;/td>
+&lt;td>Sports Sciences
+&lt;/td>
+&lt;td>&lt;a href="https://ssreplicationcentre.com">https://ssreplicationcentre.com&lt;/a>
+&lt;/td>
+&lt;td>No
+&lt;/td>
+&lt;td>Yes
+&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Hagen Cumulative Science Project
+&lt;/td>
+&lt;td>Psychology
+&lt;/td>
+&lt;td>&lt;a href="https://osf.io/d7za8/">https://osf.io/d7za8/&lt;/a>
+&lt;/td>
+&lt;td>No
+&lt;/td>
+&lt;td>No
+&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>I4R Replications
+&lt;/td>
+&lt;td>Political Sciences
+&lt;/td>
+&lt;td>&lt;a href="https://i4replication.org/discussion_paper.html">https://i4replication.org/discussion_paper.html&lt;/a>
+&lt;/td>
+&lt;td>No
+&lt;/td>
+&lt;td>Yes
+&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Experimental Philosophy
+&lt;/td>
+&lt;td>Philosophy
+&lt;/td>
+&lt;td>&lt;span style="text-decoration:underline;">h&lt;a href="https://doi.org/10.1007/s13164-018-0400-9">ttps://doi.org/10.1007/s13164-018-0400-9&lt;/a> &lt;/span>
+&lt;/td>
+&lt;td>Partly
+&lt;/td>
+&lt;td>No
+&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Reproducibility Project: Cancer
+&lt;/td>
+&lt;td>Medicine
+&lt;/td>
+&lt;td>&lt;a href="https://www.cos.io/rpcb">https://www.cos.io/rpcb&lt;/a>
+&lt;/td>
+&lt;td>No
+&lt;/td>
+&lt;td>No
+&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>SCORE
+&lt;/td>
+&lt;td>Social Sciences
+&lt;/td>
+&lt;td>&lt;a href="https://www.cos.io/score">https://www.cos.io/score&lt;/a>
+&lt;/td>
+&lt;td>No
+&lt;/td>
+&lt;td>Yes
+&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>REPEAT
+&lt;/td>
+&lt;td>Healthcare
+&lt;/td>
+&lt;td>&lt;a href="https://www.repeatinitiative.org">https://www.repeatinitiative.org&lt;/a>
+&lt;/td>
+&lt;td>No
+&lt;/td>
+&lt;td>No
+&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>CREP
+&lt;/td>
+&lt;td>Psychology
+&lt;/td>
+&lt;td>&lt;a href="https://www.crep-psych.org">https://www.crep-psych.org&lt;/a>
+&lt;/td>
+&lt;td>No
+&lt;/td>
+&lt;td>Yes
+&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Boyce et al., 2023
+&lt;/td>
+&lt;td>Psychology
+&lt;/td>
+&lt;td>&lt;a href="https://doi.org/10.1098/rsos.231240">https://doi.org/10.1098/rsos.231240&lt;/a>
+&lt;/td>
+&lt;td>Yes (validation pending)
+&lt;/td>
+&lt;td>No
+&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>ReproSci
+&lt;/td>
+&lt;td>Biology
+&lt;/td>
+&lt;td>&lt;a href="https://reprosci.epfl.ch">https://reprosci.epfl.ch&lt;/a>
+&lt;/td>
+&lt;td>No
+&lt;/td>
+&lt;td>Yes
+&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Boyce et al. 2024
+&lt;/td>
+&lt;td>Psychology
+&lt;/td>
+&lt;td>&lt;a href="https://doi.org/10.31234/osf.io/an3yb">https://doi.org/10.31234/osf.io/an3yb&lt;/a>
+&lt;/td>
+&lt;td>No
+&lt;/td>
+&lt;td>No
+&lt;/td>
+&lt;/tr>
+&lt;/table></description></item><item><title>Submit a Replication to FReD</title><link>https://forrt.org/replication-hub/submit/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://forrt.org/replication-hub/submit/</guid><description>&lt;br>
+&lt;p>We aim to build a comprehensive database of replication studies across all disciplines.
+If you have conducted a replication study that we have not yet included, or just seen one,
+please submit it using the form below.&lt;/p>
+&lt;p>If you want to check if a replication study is already included in the database,
+the easiest way is to use the
+&lt;a href="https://forrt.org/apps/fred_annotator.html" target="_blank">References Annotator&lt;/a>&lt;/p>
+&lt;iframe src="https://www.soscisurvey.de/replicate", width = "100%", height="800px">&lt;/iframe></description></item></channel></rss>
