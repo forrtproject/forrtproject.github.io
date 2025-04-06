@@ -227,7 +227,10 @@ classtitle = "text-center"
 
 <br>
 
----
+<img src="logos/jrp.webp" align="left" /> [The Junior Researcher Programme (JRP)](https://jrp.pscholars.org/) is a global initiative for students and early career researchers in psychology and behavioural sciences. We generate diverse research experiences and training, as well as opportunities for personal and professional development of young researchers.
+The JRP supports an average of six research projects each year, providing a framework (e.g., summer school, meet-ups, and conferences), leadership, and scientific support. We adhere to the principles of Open Science and aim to build research competencies in line with these values in our students and scientific research. By offering support, training, and engagement opportunities to the community, we hope to make the hidden curriculum of academia more transparent and equip the next generation of scholars with both the how and why of Open Science.
+To find out more please visit our [website](https://jrp.pscholars.org/) or email us at [jrp@pscholars.org](jrp@pscholars.org) with any questions about involvement for you or your students!
+
 
 <br>
 
