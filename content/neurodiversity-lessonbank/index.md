@@ -1,6 +1,5 @@
 ---
 title: FORRT Neurodiversity and Open Scholarship Lesson Bank
-url: "/neurodiversity-lessonbank"
 ---
 
 <br>
