@@ -87,7 +87,7 @@ Each has suitable context: (e.g., entry-level/undergraduate/postgraduate), total
 1. [Differentiating between correlation vs causation](https://osf.io/fvnj5)
 1. [Implicit Bias](../neurodiversity-lessonbank/implicit_bias/)
 1. [Diversity as one of the core values of Open Science](../neurodiversity-lessonbank/community-psychology-diversity/)
-1. [Diversity and research](../neurodiversity-lessonbank/diversity-and=research/)
+1. [Diversity and research](../neurodiversity-lessonbank/diversity-and-research/)
 1. [Oppression and Power](../neurodiversity-lessonbank/masterstools/)
 1. [Generalizability Crisis](../neurodiversity-lessonbank/generalizability/)
 1. The myth of the normality How neurodiversity dismantles the generalisability crisis[Text 1](https://journalofethics.ama-assn.org/article/myth-normal-brain-embracing-neurodiversity/2015-04) [Text 2](https://www.cambridge.org/core/journals/behavioral-and-brain-sciences/article/abs/generalizability-crisis/AD386115BA539A759ACB3093760F4824)

@@ -20,17 +20,17 @@ If you would like to provide feedback, please contact Magdalena Grose-Hodge (m.s
 
 ## Resources:
 
-Lesson 1&2: [Implicit bias](../neurodiversity-lessonbank/implicit_bias/)
+Lesson 1&2: [Implicit bias](./implicit_bias/)
 
    [Implicit bias - Lesson Plan part 1](./Lesson_Plans/implicit_bias_lesson_plan.pdf)
 
    [Implicit bias - Lesson Plan part 2](./Lesson_Plans/Implicit_Bias_part_2.pdf)
 
-Lesson 3: [Diversity as one of the core values of Open Science](../neurodiversity-lessonbank/community-psychology-diversity/)
+Lesson 3: [Diversity as one of the core values of Open Science](./community-psychology-diversity/)
 
    [Diversity as one of the core values of Open Science - Lesson Plan](./Lesson_Plans/Diversity_as_a_corevalue_of_Open%20Science.pdf)
 
-Lesson 4: [Diversity and research](../neurodiversity-lessonbank/diversity-and-research/)
+Lesson 4: [Diversity and research](./diversity-and-research/)
 
    [Diversity and research - Lesson Plan](./Lesson_Plans/Diversity_and_Research.pdf)
 
