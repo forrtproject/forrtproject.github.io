@@ -2,6 +2,7 @@
 # Section metadata
 title: "FORRT Replication Hub"
 date: 2023-09-09
+type: plain_page
 ---
 
 <br>
