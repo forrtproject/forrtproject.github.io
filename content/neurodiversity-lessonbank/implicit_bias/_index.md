@@ -3,6 +3,7 @@ title: IMPLICIT BIAS AND NORMATIVE SCIENCE
 authors: ['By Magdalena Grose-Hodge']
 tags: [Lesson Bank]
 date: 2023-10-03
+url: "/neurodiversity-lessonbank/implicit_bias/"
 # lastmod: 2024-10-03
 # View.
 #   1 = List

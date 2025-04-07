@@ -1,5 +1,6 @@
 ---
 title: FORRT Neurodiversity and Open Scholarship Lesson Bank
+url: "/neurodiversity-lessonbank"
 ---
 
 <br>
@@ -26,11 +27,11 @@ Lesson 1&2: [Implicit bias](./implicit_bias/)
 
    [Implicit bias - Lesson Plan part 2](./Lesson_Plans/Implicit_Bias_part_2.pdf)
 
-Lesson 3: [Diversity as one of the core values of Open Science](./community_psychology-diversity/)
+Lesson 3: [Diversity as one of the core values of Open Science](./community-psychology-diversity/)
 
    [Diversity as one of the core values of Open Science - Lesson Plan](./Lesson_Plans/Diversity_as_a_corevalue_of_Open%20Science.pdf)
 
-Lesson 4: [Diversity and research](./diversity_and_research/)
+Lesson 4: [Diversity and research](./diversity-and-research/)
 
    [Diversity and research - Lesson Plan](./Lesson_Plans/Diversity_and_Research.pdf)
 
