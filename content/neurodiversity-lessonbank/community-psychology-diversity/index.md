@@ -4,16 +4,6 @@ subtitle: Diversity as one of the core values of Open Science
 authors: ['By Magdalena Grose-Hodge']
 tags: [Lesson Bank]
 date: 2023-10-03
-# View.
-#   1 = List
-#   2 = Compact
-#   3 = Card
-view: 2
-
-# Optional header image (relative to `static/media/` folder).
-header:
-  caption: ""
-  image: ""
 ---
 
 [LEAVE FEEDBACK AND LOOK AT THE LESSON PLAN HERE](https://docs.google.com/document/d/1UJYUTK_zbcoJTt6DjRQVrjvnfa6quCnqfYCEV2HtcDM/edit?usp=sharing)
