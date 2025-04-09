@@ -11,9 +11,13 @@ view: 1
 # Optional header image (relative to `static/media/` folder).
 header:
   caption: ""
-  image: "resources.jpg"
+  image: "resources.webp"
 type: "glossary"
 ---
+
+<div class="btn-group flex-wrap text-center"><a href="/glossary/english" class="btn btn-primary py-2 m-1 btn-lg active" style="line-height:1;border-radius:6px">English</a>
+<a href="/glossary/german" class="btn btn-primary py-2 m-1 btn-lg" style="line-height:1;border-radius:6px">Deutsch (German)</a>
+<a href="/glossary/arabic" class="btn btn-primary py-2 m-1 btn-lg" style="line-height:1;border-radius:6px"> عربي (Arabic)</a></div>
 
 ### Introduction
 

@@ -13,7 +13,7 @@ featured: true
 draft: false
 
 # Featured image
-# To use, add an image named `featured.jpg/png` to your page's folder.
+# To use, add an image named `featured.webp/png` to your page's folder.
 # Focal points: Smart, Center, TopLeft, Top, TopRight, Left, Right, BottomLeft, Bottom, BottomRight.
 image:
   caption: "Reviewer Zero"
@@ -33,7 +33,7 @@ projects: []
 
 ### Background of Reviewer Zero
 
-![Reviewer Zero](./rz.png)
+![Reviewer Zero](./rz.webp)
 
 Any writer who puts their work into the world knows it can be a humbling and harsh experience. Negative experiences with peer review, as depicted in the picture below, are all too common. Comments like those illustrated – and others that are unduly harsh, belittling, racist, sexist, or otherwise inappropriate – have been received by scholars at all career stages during peer review. These experiences provide a starting point to question normative practices in scientific peer review, and identify the hidden and blatant consequences for early career scholars, particularly those from underserved groups. Most importantly, we can ask what each of us might do to shift this culture.
 
@@ -44,7 +44,7 @@ Like readers of this blog, Reviewer Zero members know that science can be better
 To understand peer review from the perspective of early career researchers who are underserved by the status quo, Reviewer Zero conducted a survey in 2020 of early career researchers in psychology / neuroscience. [Our results](https://osf.io/jqy4k) are not surprising: We found that cis-men of color reported less helpful feedback compared to White cis-men, and women/nonbinary respondents were more likely than cis-men to report that their peer review experience reduced their belonging in science. Qualitative results from a free-response question about the most memorable experiences with peer review were eye-opening, and heartbreaking. Respondents reported receiving harsh feedback, racist comments, and feeling so demotivated that they left those research topics behind. But there is also opportunity for change: This survey also showed that authors can feel motivated when the process is perceived as fair or when reviews note strengths of the work.
 
 
-![Picture showing harsh reviewer comments](pic_rz.jpg "Picture showing harsh reviewer comments")
+![Picture showing harsh reviewer comments](pic_rz.webp "Picture showing harsh reviewer comments")
 
 Harsh reviewer comments can have disparate impacts, demotivating early career researchers and driving them away from the field. 
 
@@ -55,7 +55,7 @@ Photo by [KOBU Agency](https://unsplash.com/@kobuagency?utm_source=unsplash&utm_
 
 As efforts to improve scientific practice and policy toward more openness and transparency take shape, it is essential to consider who is designing these systems and what perspectives they reflect. To build systems that are truly open and accessible for a global psychological science, we must take proactive steps to include different perspectives, identities, and voices in creating and changing systems. Here, we walk through examples of two kinds of openness that can have implications for minoritized or underserved groups. The essential questions are who is being asked to be “open,” and at what cost?
 
-One innovation in peer review is [open peer review](https://forrt.org/glossary/open-peer-review/), which includes disclosure of author and reviewer identities and reviews. Open peer review can include different levels of disclosure: For example, greater transparency without identification can occur if reviews are public but reviewers are not identified.  Although identified peer review can have some advantages in that reviewers are clearly accountable to what they write in a review, this system may not be equitably open to all. Individuals who occupy less powerful positions, whether due to their career stage or underrepresented group identities, may experience more backlash or more negative consequences in offering critique – or their perspectives may simply be dismissed in favor of reviews from people who hold more power or come from majority groups. Transparent peer review, where reviews are public but reviewer identities are not, might offer greater security to reviewers. From an author perspective, though, individuals who are contending with identity threat may be unwilling (for good reason) to have critiques of their work openly aired (for further discussion, Aly et al., 2023). The very ability to engage in different aspects of open peer review can vary across individuals with different levels of power in a system.
+One innovation in peer review is [open peer review](https://forrt.org/glossary/english/open_peer_review/), which includes disclosure of author and reviewer identities and reviews. Open peer review can include different levels of disclosure: For example, greater transparency without identification can occur if reviews are public but reviewers are not identified.  Although identified peer review can have some advantages in that reviewers are clearly accountable to what they write in a review, this system may not be equitably open to all. Individuals who occupy less powerful positions, whether due to their career stage or underrepresented group identities, may experience more backlash or more negative consequences in offering critique – or their perspectives may simply be dismissed in favor of reviews from people who hold more power or come from majority groups. Transparent peer review, where reviews are public but reviewer identities are not, might offer greater security to reviewers. From an author perspective, though, individuals who are contending with identity threat may be unwilling (for good reason) to have critiques of their work openly aired (for further discussion, Aly et al., 2023). The very ability to engage in different aspects of open peer review can vary across individuals with different levels of power in a system.
 
 Would greater openness in peer review make hostile and unprofessional reviews less likely, or would greater openness in peer review exacerbate negative consequences for members of historically excluded groups? We don’t know the answer to these questions, but we need to ask them.
 
@@ -63,7 +63,7 @@ Given that hostile or unprofessional reviews can be common, individuals from his
 
 
     
-![Tweet about misogynistic peer-review](tweet_rz.png "Tweet about misogynistic peer-review")
+![Tweet about misogynistic peer-review](tweet_rz.webp "Tweet about misogynistic peer-review")
 
 
 The inequities present in peer review need to be addressed before there is any possibility of open review serving a wide range of scholars. Without a deliberate effort to change the existing culture in a way that advances diversity, equity, and inclusion, other efforts might perpetuate or exacerbate these inequities. 

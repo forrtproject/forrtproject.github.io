@@ -30,7 +30,7 @@ subtitle = ""
   # gradient_end = "SkyBlue"
   
   # Background image.
-  # image = "headers/bubbles-wide.jpg"  # Name of image in `static/img/`.
+  # image = "headers/bubbles-wide.webp"  # Name of image in `static/img/`.
   # image_darken = 0.6  # Darken the image? Range 0-1 where 0 is transparent and 1 is opaque.
   # image_size = "cover"  #  Options are `cover` (default), `contain`, or `actual` size.
   # image_position = "center"  # Options include `left`, `center` (default), or `right`.
@@ -55,28 +55,32 @@ subtitle = ""
 
 <br>
 
-In order to teach open and reproducible science effectively, educators need to make sense of almost a decade of literature, across several fields, and be informed about ongoing (and often dynamic) debates. This is a tall ask for most educators. So FORRT sought to develop strategies and propose solutions to mitigate the effects of competing academic interests and help scholars implement open and reproducible science tenets in their teaching and mentoring workflow. In an effort to reduce some of the burden on educators wishing to learn or teach these concepts, FORRT has draw on the expertise of more than 50 experts from its community to provide educators with a comprehensive but straightforward accessible didactic framework. FORRT clusters is a result of a comprehensive literature review guided by ***educational, pedagogical and didactic considerations*** aiming at providing a pathway towards the incremental adoption of Open and Reproducible Science tenets into educators/scholars teaching and mentoring. The focus lies not on simply aggregating the literature into bins, but on making sense of existing works, weaving connections where none exist, and providing a sensible learning-oriented Open and Reproducible Science taxonomy. FORRT taxonomy is composed of 7 clusters:
+In order to teach Open and Reproducible Science effectively, educators need to make sense of almost a decade of literature, across several fields, and be informed about ongoing (and often dynamic) debates. This is a tall ask for most educators. So FORRT sought to develop strategies and propose solutions to mitigate the effects of competing academic interests and help scholars implement open and reproducible science tenets in their teaching and mentoring workflow. In an effort to reduce some of the burden on educators wishing to learn or teach these concepts, FORRT has drawn on the expertise of more than 50 experts from its community to provide educators with a comprehensive but straightforward accessible didactic framework. FORRT clusters is a result of a comprehensive literature review guided by educational, pedagogical, and didactic considerations aiming at providing a pathway towards the incremental adoption of Open and Reproducible Science tenets into educators/scholars' teaching and mentoring. The focus lies not on simply aggregating the literature into bins, but on making sense of existing works, weaving connections where none exist, and providing a sensible learning-oriented Open and Reproducible Science taxonomy. FORRT taxonomy is composed of 9 clusters:
 
-1. Reproducibility and replicability knowledge
+1. Replicability crisis and credibility revolution knowledge
 2. Conceptual and statistical knowledge
-3. Reproducible analyses
-4. Preregistration
-5. FAIR data and materials
-6. Replication research
-7. Academic life and culture
+3. Ways of working
+4. Pre-analysis planning
+5. Transparency and reproducibility in computation and analysis
+6. FAIR data and materials
+7. Publication sharing
+8. Replication and meta-research
+9. Academic structures and institutions
 
-We further breakdown each cluster into sub-categories to provide educators/scholars with useful information on the extant of open science scholarship, and how they are connected to one another. The idea behind specifying clusters and sub-clusters it to highlight we have drawn fuzzy boundaries between clusters while allowing for diversification and heterogeneity in how each educator integrates these cluster/sub-clusters with their respective field content. The breakdown of each cluster into sub-categories provides scholars with useful information on the extant of open science scholarship, and how they are connected to one another. To have a look at the sub-clusters within each cluster, please click on the clusters above.
+These clusters contain information for quantitative and qualitative researchers. There is additionally an addendum which groups together the information provided for qualitative research.
+
+We further break down each cluster into sub-categories to provide educators/scholars with useful information on the extent of open scholarship, and how they are connected to one another. The idea behind specifying clusters and sub-clusters is to highlight that we have drawn fuzzy boundaries between clusters, while allowing for diversification and heterogeneity in how each educator integrates these clusters/sub-clusters with their respective field content. The breakdown of each cluster into sub-categories provides scholars with useful information on the extent of open science scholarship, and how they are connected to one another. To have a look at the sub-clusters within each cluster, please click on the clusters above.
+
 
 See below for each cluster, its description, sub-clusters, and associated works geared for teaching. And here's an attempt to visualize FORRT's clusters:
-
 <br>
 
-![FORRT's Clusters](FORRT_Clusters.png "FORRT's Clusters")
+![FORRT's Clusters](FORRT_Clusters.webp "FORRT's Clusters")
 
 <br>
 
 ## FORRT's Syllabus {#Syllabus}
 
-Building on the clusters we created a ***"Open and Reproducible Science" Syllabus***. We hope it can serve as starting point for your class. [.pdf download](FORRT_O&R_101_Syllabus.pdf) or [editable G-doc version](https://docs.google.com/document/d/1pfFro5MbwBHzzXTeM_lE1gjFuq7AnnKWSDWkVwOBAtE/edit#). Check out the [FORRT's syllabus page](/syllabus/).
+Building on the clusters we created a ***"Open and Reproducible Science" Syllabus***. We hope it can serve as a starting point for your class. [.pdf download](FORRT_O&R_101_Syllabus.pdf) or [editable G-doc version](https://docs.google.com/document/d/1pfFro5MbwBHzzXTeM_lE1gjFuq7AnnKWSDWkVwOBAtE/edit#). Check out the [FORRT's syllabus page](/syllabus/).
 
 <br>

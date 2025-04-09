@@ -85,12 +85,15 @@ merged_data.reset_index(drop=True, inplace=True)
 
 merged_data = merged_data.sort_values(by='Surname')
 
+# Strip spaces from 'ORCID iD' in merged data
+merged_data['ORCID iD'] = merged_data['ORCID iD'].str.strip()
+
 # Function to format the full name
 def format_name(row):
     # Extract the first name, middle name initial, and surname
-    first_name = row['First name']
+    first_name = row['First name'].strip() if pd.notna(row['First name']) else ""
     middle_name = row['Middle name']
-    surname = row['Surname']
+    surname = row['Surname'].strip() if pd.notna(row['Surname']) else ""
 
     # Check if the middle name is not NaN and not an empty string
     if pd.notna(middle_name) and middle_name != '':
@@ -100,6 +103,12 @@ def format_name(row):
         full_name = f"{first_name} {surname}"
 
     return full_name
+
+# Apply name formatting
+merged_data['full_name'] = merged_data.apply(format_name, axis=1)
+
+# Propagate ORCID iD within each contributor's grouping
+merged_data['ORCID iD'] = merged_data.groupby('full_name')['ORCID iD'].transform(lambda x: x.ffill().bfill())
 
 # Group by 'ORCID iD' and concatenate the contributions
 def concatenate_contributions(group):

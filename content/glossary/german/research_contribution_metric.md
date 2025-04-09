@@ -1,7 +1,7 @@
 {
     "type": "glossary",
-    "title": "Research Contribution Metric (p)",
-    "definition": "Eine Art semantometrisches Maß zur Bewertung der Ähnlichkeit von Veröffentlichungen, die in einem Zitationsnetzwerk miteinander verbunden sind. Diese Methode verwendet eine einfache Formel, um die Beiträge der Autor:innen zu bewerten. Die Publikation p kann auf der Grundlage der semantischen Distanz zwischen den von p zitierten Publikationen und den Publikationen, die p zitieren, geschätzt werden.",
+    "title": "Research Contribution Metric (*p*)",
+    "definition": "Eine Art semantometrisches Maß zur Bewertung der Ähnlichkeit von Veröffentlichungen, die in einem Zitationsnetzwerk miteinander verbunden sind. Diese Methode verwendet eine einfache Formel, um die Beiträge der Autor:innen zu bewerten. Die Publikation *p* kann auf der Grundlage der semantischen Distanz zwischen den von p zitierten Publikationen und den Publikationen, die *p* zitieren, geschätzt werden.",
     "related_terms": [
         "Semantometrics"
     ],

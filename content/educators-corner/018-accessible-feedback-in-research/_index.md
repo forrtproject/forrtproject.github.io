@@ -4,7 +4,7 @@
 title: "Accessible Feedback in Research"
 subtitle: "Can you help us transform research with more inclusive feedback practices?"
 summary: "Systemic underrepresentation of marginalised groups plagues academia, with existing feedback mechanisms often reinforcing these disparities. Our Leverhulme Trust-funded project aims to tackle this issue by mapping out inclusive feedback opportunities at each stage of the research cycle. Partnering with FORRT, we hope to evaluate the emerging opportunities for feedback, including those driven by the open scholarship movement, and create a community-maintained e-book to help researchers identify opportunities to receive better feedback."
-authors: ['Dr Thomas Evans, thomas.evans@greenwich.ac.uk, Roksana Sobolak, r.a.sobolak@greenwich.ac.uk , Magda Skubera, m.skubera@greenwich.ac.uk , FORRT']
+authors: ['Dr Thomas Evans, Roksana Sobolak, Magda Skubera, FORRT']
 tags: []
 categories: []
 date: 2024-09-03T15:30:59-04:00
@@ -13,7 +13,7 @@ featured: true
 draft: false
 
 # Featured image
-# To use, add an image named `featured.jpg/png` to your page's folder.
+# To use, add an image named `featured.webp/png` to your page's folder.
 # Focal points: Smart, Center, TopLeft, Top, TopRight, Left, Right, BottomLeft, Bottom, BottomRight.
 image:
   caption: "Accessible Feedback in Research"
@@ -30,7 +30,7 @@ projects: []
 
 <br>
 
-## Background 
+### Background 
 
 Did you know that only 27% of UK Professors are women, and less than 1% of UK Professors are black (HESA, 2020)? This significant underrepresentation highlights a problematic “leaky pipeline” in academia that affects various disciplines worldwide (Dubois-Shaik & Fesulier, 2015). Marginalised groups, including women and minorities, encounter systemic barriers that hinder their professional advancement, leading to fewer individuals in higher academic positions and reinforcing a cycle of inequality. Marginalised researchers consider work environment as the most common barrier to professional progression, yet perceive the support and guidance of others to be the most influential facilitator (Gregor et al., 2023).
 
@@ -38,19 +38,19 @@ Feedback has the potential to evaluate and promote research quality, helping aca
 
 To drive this change, we are undertaking an international multi-disciplinary survey to comprehensively map out and evaluate diverse opportunities for researchers to gather feedback throughout the research cycle.  Our survey aims to uncover cross-disciplinary feedback practices that can foster more timely and inclusive feedback. We hope that this will enable early-career and marginalised researchers to refine their work iteratively and efficiently, supporting their professional development. 
 
-## Our mission and how it is working to contribute to the open scholarship community
+### Our mission and how it is working to contribute to the open scholarship community
 
 Our mission is to foster a more inclusive and diverse research environment by addressing systemic barriers involved with feedback mechanisms and supporting the professional development of marginalised researchers. This initiative not only enhances individual professional growth but also contributes to the broader open scholarship community by promoting transparency, inclusivity, and collaboration in academic research. 
 
 Many advancements within the open scholarship movement are rooted in feedback-based practices, such as pre-printing, conducting premortems to identify methodological concerns, and performing code reviews to evaluate accessibility and processing quality (Evans, 2022). Although these practices are gradually reshaping norms around transparency and data sharing, the full scope of emerging feedback mechanisms within the open scholarship movement is not yet fully known or widely disseminated. For instance, many newer feedback initiatives, such as Registered Reports, which aim to improve the reproducibility and transparency of research by peer reviewing study proposals before data collection, remain underutilised and have only slowly expanded beyond the psychological and social sciences (Chambers & Tzavella, 2021). Our project seeks to uncover and promote these diverse feedback opportunities, ensuring they are more widely understood and adopted across various disciplines. 
 
-## How our project and FORRT reinforce one another 
+### How our project and FORRT reinforce one another 
 
 Our project and FORRT reinforce each other by promoting a culture of transparency, inclusivity, and continuous improvement in academia. Both initiatives focus on breaking down systemic barriers and supporting the professional development of marginalised researchers, ultimately contributing to a more inclusive and diverse research environment.
 
 By leveraging our strengths, we can accelerate the adoption of open scholarship principles and foster a research environment that values diversity, inclusivity, and high-quality research practices. This complementary approach ensures that researchers have the tools, knowledge, and support needed to navigate the challenges of research and thrive in an open and inclusive scholarly community.
 
-## Call to action
+### Call to action
 
 Now, we need your help. 
 
@@ -62,13 +62,15 @@ We invite you to join us on this journey to help drive positive societal change 
 
 Want to get started? The easiest first step is to take part in our survey: [Online Survey Software | Qualtrics Survey Solutions](https://greenwichuniversity.eu.qualtrics.com/jfe/form/SV_9SwlPSLrgHg9dyu)
 
-## Contact information:
+### Contact information:
 
 Project Lead: Dr Thomas Evans, thomas.evans@greenwich.ac.uk 
-Research Fellow: Roksana Sobolak, r.a.sobolak@greenwich.ac.uk  
+
+Research Fellow: Roksana Sobolak, r.a.sobolak@greenwich.ac.uk 
+
 Research Fellow: Magda Skubera, m.skubera@greenwich.ac.uk 
 
-## References
+### References
 
 - Chambers, C. D., & Tzavella, L. (2021). The past, present and future of Registered Reports. *Nature Human Behaviour*, 6, 29-42.
 

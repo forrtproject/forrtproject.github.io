@@ -30,7 +30,7 @@ subtitle = ""
   # gradient_end = "SkyBlue"
   
   # Background image.
-  # image = "headers/bubbles-wide.jpg"  # Name of image in `static/img/`.
+  # image = "headers/bubbles-wide.webp"  # Name of image in `static/img/`.
   # image_darken = 0.6  # Darken the image? Range 0-1 where 0 is transparent and 1 is opaque.
   # image_size = "cover"  #  Options are `cover` (default), `contain`, or `actual` size.
   # image_position = "center"  # Options include `left`, `center` (default), or `right`.
@@ -53,8 +53,7 @@ subtitle = ""
 
 <br>
 
-What we have accomplished at FORRT is only possible because of the work of so many scholars who dedicate their time and effort on a voluntary basis. We created FORRT's CV as part of our effort towards sharing credit and elevating the members of this amazing community! With the CV we hope to highlight the individuals behind our initiatives. Moreover, we would like to help our members to take credit for their work at FORRT. Team-Science collaborations represent a new way to do science and often-times it is not clear (especially to ECRs) how to take credit for their contributions. With our CV, we hope to give examples to FORRT's members of how their contributions could be showcased in their personal CVs. The [LaTeX code](https://github.com/forrtproject/cv) is also open so that everyone can use it as a template for their own CVs as well.
-
+What we have accomplished at FORRT is only possible because of the work of so many scholars who dedicate their time and effort on a voluntary basis. We would like to help our members take credit for their work at FORRT. Team-science collaborations represent a new way to do science and often it is not clear (especially to ECRs) how to take credit for their contributions. With the CV provided below, we hope to give an example to FORRT’s members of how their contributions could be showcased in their personal CVs. The [LaTeX code](https://github.com/forrtproject/cv) is also open so that everyone can use it as a template for their own CVs as well. 
 <br>
 
 # {{< embed name="FORRT_cv.pdf" height=1000 >}}

@@ -23,6 +23,11 @@
 
   {{ with $superuser_name }}<meta name="author" content="{{ . }}">{{ end }}
 
+  {{/* Noindex for staging environment */}}
+  {{ if eq (getenv "HUGO_ENV") "staging" }}
+  <meta name="robots" content="noindex, nofollow">
+  {{ end }}
+
   {{/* Generate page description. */}}
   {{ $desc := "" }}
   {{ if .Params.summary }}
@@ -169,7 +174,7 @@
   {{/* Get page image for sharing. */}}
   {{ $featured_image := (.Resources.ByType "image").GetMatch "*featured*" }}
   {{ $avatar_image := (.Resources.ByType "image").GetMatch "avatar*" }}
-  {{ $has_logo := fileExists "assets/images/logo.png" | or (fileExists "assets/images/logo.svg") }}
+  {{ $has_logo := fileExists "assets/images/logo.webp" | or (fileExists "assets/images/logo.svg") }}
   {{ $og_image := "" }}
   {{ $twitter_card := "summary_large_image" }}
   {{ if (and (eq .Kind "taxonomy") $avatar_image) }}

@@ -25,29 +25,30 @@ title = "Systematically Mapping Open Science Communities across Disciplines"
 ****
 
 
-<!-- ![PostEdu Logo](PostEdu1.png) -->
+<!-- ![PostEdu Logo](PostEdu1.webp) -->
 
 <!-- 
 <div style="display: flex; align-items: center;">
-  <img src="PostEdu1.png" alt="PostEdu Logo" style="margin:auto; padding: auto;">
+  <img src="PostEdu1.webp" alt="PostEdu Logo" style="margin:auto; padding: auto;">
 </div>
 -->
 
-<br>
+<!-- <br> -->
+
+<!-- 
 
 {{% alert note %}}
-
 THIS PAGE IS IN CONSTRUCTION. PLEASE COME BACK SOON!
-
 {{% /alert %}}
 
-<br>
-<br>
+-->
 
-Welcome to the FORRT Open Science Communities Mapping Initiative, a global effort to systematically identify, map, and connect Open Science (OS) organizations across disciplines and regions. 
+<!-- <br> -->
+<!-- <br> -->
 
-> Our goal is to build an interactive, crowdsourced, and living map of grassroots Open Science networks, providing researchers, educators, and policy-makers with a detailed landscape of the resources, opportunities, collaborations, and initiatives within these communities.
+Welcome to the FORRT Open Science Communities Mapping Initiative, a global effort to systematically identify, map, and connect Open Science (OS) organizations across disciplines and regions.
 
+> Our goal is to build an interactive, crowdsourced, and living map of grassroots Open Science networks, along with their procedural tools and structural changes, providing researchers, educators, and policymakers with a detailed landscape of the resources, opportunities, collaborations, and initiatives within these communities.
 
 This initiative builds upon the successful mapping of Open Science initiatives in the field of Psychology [Skubera et al., 2024](https://doi.org/10.31234/osf.io/rakmb) (*International Initiatives to Enhance Awareness and Uptake of Open Research in Psychology: A Systematic Narrative Review*), and aims to extend this work across multiple disciplines. With the support of key partners, this project will foster collaboration, transparency, and innovation in scientific research globally.
 
@@ -135,10 +136,15 @@ This initiative is supported by a consortium of organizations dedicated to advan
 ***Access 2 Perspectives (A2P)***: A consulting and training organization that promotes inclusive, multilingual, and equitable research practices. Their resources on Open Science in underserved regions play a critical role in expanding the geographic reach of this initiative.
 
 ***Datasets Considered for Integration***:
-* FORRT’s Curated Resources: Over 1,000 resources on Open Science, already categorized for accessibility.
-* Metadocencia’s Mapped Communities: Interactive maps focused on Latin America, which will be integrated into the global map.
+* [Skubera et al.’s Literature Search Database](https://doi.org/10.31234/osf.io/rakmb): A comprehensive dataset that originally identified initiatives across disciplines via web scraping in Stage 1. Many initiatives excluded for not focusing on psychology can now be reconsidered for inclusion in this mapping exercise.
+* [FORRT’s Curated Resources](https://forrt.org/resources/): Over 1,000 resources on Open Science, already categorized for accessibility.
+* [Metadocencia’s Mapped Communities](https://www.metadocencia.org/proyecto/mapeo-comunidades/): Interactive maps focused on Latin America, which will be integrated into the global map.
 * Access2Perspectives Network of OS Communities: [Kumo Network](https://kumu.io/access2perspectives/open-science#disciplines/).
-* COSGN Database: A database of over 120 grassroots networks promoting open scholarship worldwide.
+* [COSGN Database](https://docs.google.com/spreadsheets/d/1LNF5_bOkRV-RLIF4HYmu-gOemIa4IdfXEer89fM-Vy8/edit?gid=0#gid=0): A database of over 120 grassroots networks promoting open scholarship worldwide.
+* [ICOR's Project Library](https://incentivizingopen.org/project-library): A comprehensive collection of real-world solutions aimed at incentivizing open and collaborative research practices across various disciplines.
+* [IOI's Infra Finder](https://infrafinder.investinopen.org/solutions): A tool designed to facilitate the discovery and evaluation of open infrastructure services, aiding users in finding solutions that meet their specific needs. 
+* [Open Science Learning Gate](https://www.opensciencegate.com/): The gate tries to collect resources for stakeholders in OS.
+* [Embassy of Good Science](https://embassy.science/): The Embassy is a community platform offering support in handling day-to-day research practices and dilemmas. The platform is a wiki - allowing users to contribute their knowledge and expertise.
 
 <br>
 
@@ -154,4 +160,4 @@ Explore the Map: [Interactive Map Link]
 
 Submit Your Resources: [Google Form Link]
 
-Contact Us: Flavio Azevedo (via FORRT's Slack)
+Contact Us: Flavio Azevedo (via [FORRT's Slack](https://join.slack.com/t/forrt/shared_invite/zt-alobr3z7-NOR0mTBfD1vKXn9qlOKqaQ))

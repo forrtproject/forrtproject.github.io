@@ -27,14 +27,14 @@ publishDate:
 date_end: 2022-02-06T01:02:00-00:00
 
 
-authors: ["forrt", "Flavio Azevedo"]
+authors: ["forrt", "Flávio Azevedo"]
 tags: []
 
 # Is this a featured talk? (true/false)
 featured: true
 
 # Featured image
-# To use, add an image named `featured.jpg/png` to your page's folder. 
+# To use, add an image named `featured.webp/png` to your page's folder. 
 # Focal points: Smart, Center, TopLeft, Top, TopRight, Left, Right, BottomLeft, Bottom, BottomRight.
 image:
   caption: ""

@@ -3,7 +3,7 @@
 
 title: FORRT's Presentation on Replications and Reversals
 event: 3rd Annual AIMOS Conference (Association for Interdisciplinary Metaresearch and Open Science)
-event_url: https://www.aimosconference.com/schedule.html
+event_url: https://aimos.community/aimos2021
 location: 
 address:
   street:
@@ -32,7 +32,7 @@ tags: []
 featured: true
 
 # Featured image
-# To use, add an image named `featured.jpg/png` to your page's folder. 
+# To use, add an image named `featured.webp/png` to your page's folder. 
 # Focal points: Smart, Center, TopLeft, Top, TopRight, Left, Right, BottomLeft, Bottom, BottomRight.
 image:
   caption: ""

@@ -8,7 +8,7 @@
         "P-hacking"
     ],
     "references": [
-        "Dienes (p.166, 2008)"
+        "Dienes (p.166, 2008\\)"
     ],
     "alt_related_terms": [
         null
@@ -22,7 +22,7 @@
         "Bethan Iley",
         "Halil E. Kocalar",
         "Graham Reid",
-        "F lávio Azevedo"
+        "Flávio Azevedo"
     ],
     "language": "german"
 }

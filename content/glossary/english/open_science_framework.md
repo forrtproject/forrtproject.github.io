@@ -22,7 +22,7 @@
     "reviewed_by": [
         "Mahmoud Elsherif",
         "Charlotte R. Pennington",
-        "Lisa Spitzer"
+        "Lisa Spitzer  ### ---"
     ],
     "language": "english",
     "aliases": [

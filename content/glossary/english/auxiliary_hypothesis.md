@@ -23,7 +23,7 @@
         "Mahmoud Elsherif",
         "Bethan Iley",
         "Sam Parsons",
-        "Flávio Azevedo"
+        "Flávio Azevedo  ### B {#b}"
     ],
     "language": "english",
     "aliases": [

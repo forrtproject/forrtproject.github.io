@@ -21,7 +21,7 @@
     ],
     "reviewed_by": [
         "James E. Bartlett",
-        "Alexander Hart ",
+        "Alexander Hart",
         "Helena Hartmann",
         "Dominik Kiersz",
         "Graham Reid",

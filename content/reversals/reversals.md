@@ -8,7 +8,7 @@ headless = true  # This file represents a page section.
 active = true  # Activate this widget? true/false
 weight = 2  # Order that this section will appear.
 
-title = "Replications & Reversals"
+title = "Reversals & Replications"
 subtitle = ""
 
 [design]
@@ -30,7 +30,7 @@ subtitle = ""
   # gradient_end = "SkyBlue"
 
   # Background image.
-  # image = "headers/bubbles-wide.jpg"  # Name of image in `static/img/`.
+  # image = "headers/bubbles-wide.webp"  # Name of image in `static/img/`.
   # image_darken = 0.6  # Darken the image? Range 0-1 where 0 is transparent and 1 is opaque.
   # image_size = "cover"  #  Options are `cover` (default), `contain`, or `actual` size.
   # image_position = "center"  # Options include `left`, `center` (default), or `right`.
@@ -94,13 +94,13 @@ This is a dynamic project that is organized in five stages. Currently, we are in
 
 {{% alert example %}}
 
- {{< hl >}}We were shortlisted for the **Einstein Foundations Award or Promoting Quality in Research 2023** in the category Early Career Award! Check out our project "Tracking and Mainstreaming Replications across the Social, Behavioral and Cognitive Sciences" [here](https://www.einsteinfoundation.de/en/award/events/meet-the-finalists/)!{{< /hl >}}
+ {{< hl >}}We were shortlisted for the **Einstein Foundations Award or Promoting Quality in Research 2023** in the category Early Career Award! Check out our project "Tracking and Mainstreaming Replications across the Social, Behavioral and Cognitive Sciences" [here](https://web.archive.org/web/20231204000615/https://www.einsteinfoundation.de/en/award/events/meet-the-finalists/)!{{< /hl >}}
 
  {{% /alert %}}
 
 {{% alert example %}}
 
- {{< hl >}}We received the **Open Science Fund 2023** from the Dutch Research Foundation (NWO)! Check out our project "Tracking and Mainstreaming Replications across the Social, Behavioral and Cognitive Sciences" [here](https://www.nwo.nl/en/researchprogrammes/open-science-fund-2023-awarded-grants)!{{< /hl >}}
+ {{< hl >}}We received the **Open Science Fund 2023** from the Dutch Research Foundation (NWO)! Check out our project "Tracking and Mainstreaming Replications across the Social, Behavioral and Cognitive Sciences" [here](https://www.nwo.nl/en/researchprogrammes/open-science/open-science-fund/open-science-fund-2023-awarded-grants)!{{< /hl >}}
 
  {{% /alert %}}
 
@@ -4206,7 +4206,7 @@ Critiques: [Gelman and Loken 2013](http://www.stat.columbia.edu/~gelman/research
     * [Outliers: The Story of Success by Malcolm Gladwell ](https://www.goodreads.com/book/show/3228917-outliers)that is founded on the 10,000 hours for mastery claim.
     * [Behave: The Biology of Humans at Our Best and Worst ](https://www.goodreads.com/book/show/31170723-behave)by Robert Sapolsky which focuses on Himmicanes, power pose, facial feedback, ego depletion, Implicit Association, stereotype threat, broken windows theory, Macbeth effect.
     * [Thinking, Fast and Slow by Daniel Kahneman](https://www.goodreads.com/book/show/11468377-thinking-fast-and-slow) that has an Entire chapter on all kinds of priming. Facial-feedback, Effects of Head-Movements on Persuasion, Location as Prime, Money Priming, Death Priming, Lady Macbeth Effect. Cognitive disfluency. Ego depletion. Wansink. Hungry judges. Denies the "hot hand".
-    * [Nudge: Improving Decisions about Health, Wealth, and Happiness](https://www.penguinrandomhouse.com/books/304634/nudge-by-richard-h-thaler-and-cass-r-sunstein/) by Thaler and Sunstein focusing on Wansink, Baumeister, Dweck.
+    * [Nudge: Improving Decisions about Health, Wealth, and Happiness](https://books.google.fr/books/about/Nudge.html?id=dSJQn8egXvUC&redir_esc=y) by Thaler and Sunstein focusing on Wansink, Baumeister, Dweck.
     * [Smarter: The New Science of Building Brain Power ](https://www.goodreads.com/en/book/show/18079605-smarter)by Dan Hurley focusing on Dual n-Back
     * [Peter Watts Is An Angry Sentient Tumor: Revenge Fantasies and Essays ](https://www.goodreads.com/book/show/45729865-peter-watts-is-an-angry-sentient-tumor)by Peter Watts
 

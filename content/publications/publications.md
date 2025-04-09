@@ -30,7 +30,7 @@ subtitle = ""
   # gradient_end = "SkyBlue"
   
   # Background image.
-  # image = "headers/bubbles-wide.jpg"  # Name of image in `static/img/`.
+  # image = "headers/bubbles-wide.webp"  # Name of image in `static/img/`.
   # image_darken = 0.6  # Darken the image? Range 0-1 where 0 is transparent and 1 is opaque.
   # image_size = "cover"  #  Options are `cover` (default), `contain`, or `actual` size.
   # image_position = "center"  # Options include `left`, `center` (default), or `right`.
@@ -53,19 +53,39 @@ subtitle = ""
 
  <script type='text/javascript' src='https://d1bxh8uas1mnw7.cloudfront.net/assets/embed.js'></script>
 
+
+<style>
+    .citation-container {
+        float: right;
+        margin: 0 0 10px 20px; /* Adds space on the left, so text doesn't touch */
+        text-align: center;
+        display: inline-block; /* Ensures proper floating */
+        max-width: 350px;
+    }
+    .citation-image {
+        max-width: 100%;
+        height: auto;
+        display: block;
+    }
+   
+</style>
+    
+  <div class="citation-container">
+        <img src="citation_chart.webp" alt="Citation Chart" class="citation-image">
+        <a href="https://scholar.google.com/citations?user=JrBcgGMAAAAJ&hl=en" target="_blank">Details on Google Scholar</a>
+    </div>
+    
+<br>
+
 <center>
 
 # Publications, Preprints, & Policy Briefs & Op-Eds
 
 </center>
-
-<br><br><br>
-
+<br>&nbsp;<br>
 
 ## Academic peer-reviewed publications 
 ***
-
-<br>
 
 ### **The Replication Database: Documenting the Replicability of Psychological Science**
 
@@ -268,6 +288,24 @@ The **<font style="color:#0e2a38">preprint</font>** can [be found here (osf.io/b
 
 ***Status***: Our manuscript is currently under review. Cite as:
 > Azevedo, F., Parsons, S., Micheli, L., Strand, J., Rinke, E., ... & FORRT (2019, December 13). Introducing a Framework for Open and Reproducible Research Training (FORRT). https://doi.org/10.31219/osf.io/bnh7p
+
+
+<br><br>
+
+### **Point of View: An annotated introductory reading list for neurodiversity**
+
+<br>
+
+Since its inception, the concept of neurodiversity has been defined in a number of different ways, which can cause confusion among those hoping to educate themselves about the topic. Learning about neurodiversity can also be challenging because there is a lack of well-curated, appropriately contextualized information on the topic. To address such barriers, we present an annotated reading list that was developed collaboratively by a neurodiverse group of researchers. The nine themes covered in the reading list are: the history of neurodiversity; ways of thinking about neurodiversity; the importance of lived experience; a neurodiversity paradigm for autism science; beyond deficit views of ADHD; expanding the scope of neurodiversity; anti-ableism; the need for robust theory and methods; and integration with open and participatory work. We hope this resource can support readers in understanding some of the key ideas and topics within neurodiversity, and that it can further orient researchers towards more rigorous, destigmatizing, accessible, and inclusive scientific practices.
+
+<div class='altmetric-embed' data-badge-type='medium-donut' data-doi="https://doi.org/10.7554/eLife.102467"></div>
+
+The **<font style="color:#0e2a38">preprint</font>** can [be found here (eLife 13:e102467)](https://doi.org/10.7554/eLife.102467). 
+
+
+> Mirela Zaneva, Tao Coll-Martín, Yseult Héjja-Brichard, Tamara Kalandadze, Andrea Kis, Alicja Koperska, Marie Adrienne Robles Manalili, Adrien Mathy, Christopher J Graham, Anna Hollis, Robert M Ross, Siu Kit Yeung, Veronica Allen, Flavio Azevedo, Emily Friedel, Stephanie Fuller, Vaitsa Giannouli, Biljana Gjoneska, Helena Hartmann, Max Korbmacher, Mahmoud M Elsherif, Alyssa Hillary Zisk (2024) Point of View: An annotated introductory reading list for neurodiversity eLife 13:e102467
+https://doi.org/10.7554/eLife.102467
+    
 
 
 <br><br>

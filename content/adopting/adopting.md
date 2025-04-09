@@ -31,7 +31,7 @@ classtitle = "text-center"
   # gradient_end = "SkyBlue"
   
   # Background image.
-  # image = "headers/bubbles-wide.jpg"  # Name of image in `static/img/`.
+  # image = "headers/bubbles-wide.webp"  # Name of image in `static/img/`.
   # image_darken = 0.6  # Darken the image? Range 0-1 where 0 is transparent and 1 is opaque.
   # image_size = "cover"  #  Options are `cover` (default), `contain`, or `actual` size.
   # image_position = "center"  # Options include `left`, `center` (default), or `right`.
@@ -108,7 +108,7 @@ Including sources into your syllabus that discuss open and transparent research 
         -   [The Hitchhiker's Guide to Academic Publishing](https://www.youtube.com/watch?v=TgTsgbbdUog&t=6025s&ab_channel=CharlieBurlingham)
         -   [The HPS Podcast](https://www.hpsunimelb.org/)
         -   [The juice and the squeeze - A zesty podcast by two academics about where, how, and why we focus our efforts](https://www.juiceandsqueeze.net/)
-        -   [Open Update by Liberate Science](https://libscie.org/open-update)
+        -   [Open Update by Liberate Science](https://creators.spotify.com/pod/show/open-update?ref=libscie.org)
         -   [Open Science Talk - A podcast about Open Science, Open Access, Open Education, Open Data, Open Software](https://septentrio.uit.no/index.php/OSTalk/issue/archive)
         -   [The ORION Open Science Podcast](https://orionopenscience.podbean.com/)
         -   [Quantitude - A podcast dedicated to all things quantitative](https://quantitudepod.org/)
@@ -142,7 +142,7 @@ Open educational resources allow community members to make contributions and con
 
 <center>
 
-![Garcia et al. (2020) Figure 1](/img/Garciaetal2020.png) 
+![Garcia et al. (2020) Figure 1](/img/Garciaetal2020.webp) 
 
 *Figure 1*: An illustration from the paper "Ten simple rules for making training materials FAIR" by [Garcia et al. (2020)](https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1007854). Credit: Luc Wiegers and Celia van Gelder ([2019](https://zenodo.org/record/3593258#.X3J4W2hKgUE)) under Creative Commons [CC-BY-4.0](https://creativecommons.org/licenses/by/4.0/) license. No modifications have been made to the original.
 

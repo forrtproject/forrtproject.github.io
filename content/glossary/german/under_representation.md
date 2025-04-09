@@ -5,7 +5,7 @@
     "related_terms": [
         "Equity",
         "Fairness",
-        "I nequalit y",
+        "Inequality",
         "WEIRD"
     ],
     "references": [
@@ -19,7 +19,7 @@
     ],
     "reviewed_by": [
         "Mahmoud Elsherif",
-        " Helena Hartmann",
+        "Helena Hartmann",
         "Bethan Iley",
         "Adam Parker",
         "Charlotte R. Pennington, Mirela Zaneva"
