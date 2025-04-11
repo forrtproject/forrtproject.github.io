@@ -1,6 +1,8 @@
 ---
+# Section metadata
 title: "FORRT Replication Hub"
-url: "/replication-hub"
+date: 2023-09-09
+type: plain_page
 ---
 
 <br>
@@ -35,7 +37,7 @@ The FORRT Replication Hub provides a comprehensive collection of resources and t
 * The project [Improving Reproducibility in Science (iRise)](https://camarades.shinyapps.io/dev-irise-soles/) identifies, tracks, and evaluates discipline-wide open science interventions and develops tools to improve reproducibility.  
 * The [Replication Wiki](https://replication.uni-goettingen.de/wiki/index.php/Main_Page) provides teaching resources for replication research and a database with reproductions and replications from the social sciences (particularly economics).  
 * The [Journal of Comments and Replications in Economics](http://jcr-econ.org) is the go-to outlet for reproductions and replications from the field of economics.
-* We are also very grateful to everyone who contributed to the many large-scale replication efforts in recent years that we drew on in compiling our data. A list of large replication projects can be found [here](../replication-hub/large-scale-replication-projects/).
+* We are also very grateful to everyone who contributed to the many large-scale replication efforts in recent years that we drew on in compiling our data. A list of large replication projects can be found [here](/replication-hub/large-scale-replication-projects/).
 
 **Publications and Pre-prints** 
 
