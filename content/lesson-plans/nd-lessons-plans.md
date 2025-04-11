@@ -142,22 +142,18 @@ Please consider [giving us your feedback (critical or otherwise) when using thes
 
 You can still contribute to the collection of Lesson Plans by adding your ideas in the Google sheet below. Furthemore, if you would like your lesson plans to be included among the several others [in this OSF repository](https://osf.io/th254/), please use the [Lesson Plan's template](https://docs.google.com/document/d/1OMyhKBUUceJHvZRJ0lNSclDXBcoYpQQDCn-zJ_2teXI/edit) and contact Madeleine Pownall or Flavio Azevedo at FORRT's slack channel. Or feel free to email [lessonplans@forrt.org](mailto:lessonplans@forrt.org). 
 
-{{< expand "Contribute to FORRT's Lesson Plans (Google sheets)" >}}
+### Pedagogical Activities
+
+<iframe style="border:0px; width:100%; height:100%;" allowfullscreen="true" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRxqwa1rfgn-mB2hdCd3DzQHYMV7bOpQw6hRwXQodSnKjL1QvV4r5Aaf0kr-AVKc9zk60ejgDhZ-FLV/pubhtml?widget=true&amp;headers=false"></iframe>
 
 <br>
 
-https://docs.google.com/spreadsheets/d/1LGdBFlOCFqyfV7NUx11oUjkqR-aVZpWVGCn8RTiQQuk
+Contribute to [FORRT's Lesson Plans (Google sheets)](https://docs.google.com/spreadsheets/d/1LGdBFlOCFqyfV7NUx11oUjkqR-aVZpWVGCn8RTiQQuk)
 
 These resources were created as part of the Society for Improving Psychological Science (SIPS) hackathon at the 2021 Annual Conference, and we detail this collaborative process in the article. 
-
-{{< /expand >}}
 
 #### Contributorship 
 
 In line with principles enshrined in FORRT, this google-sheet is an open online contributorship project. The work of all contributors are valued and are formally recognized. With this, we hope to expand the scope and diversity of FORRT’s mission and its team.
 
 <br>
-
-
-
-
