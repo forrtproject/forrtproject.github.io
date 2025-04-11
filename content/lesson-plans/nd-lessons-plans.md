@@ -140,7 +140,7 @@ Please consider [giving us your feedback (critical or otherwise) when using thes
 ### Contribute
 ---------------------
 
-You can still contribute to the collection of Lesson Plans by adding your ideas in the Google sheet below. Furthemore, if you would like your lesson plans to be included among the several others [in this OSF repository](https://osf.io/th254/), please use the [Lesson Plan's template](https://docs.google.com/document/d/1OMyhKBUUceJHvZRJ0lNSclDXBcoYpQQDCn-zJ_2teXI/edit) and contact Madeleine Pownall or Flavio Azevedo at FORRT's slack channel. Or feel free to email [lessonplans@forrt.org](mailto:lessonplans@forrt.org). 
+You can still contribute to the collection of Lesson Plans by adding your ideas in the Google sheet below. Furthemore, if you would like your lesson plans to be included among the several others [in this OSF repository](https://osf.io/th254/), please use the [Lesson Plan's template](https://docs.google.com/document/d/1OMyhKBUUceJHvZRJ0lNSclDXBcoYpQQDCn-zJ_2teXI/edit) and contact Madeleine Pownall or Flavio Azevedo at FORRT's slack channel. Or feel free to email [info@forrt.org](mailto:info@forrt.org). 
 
 ### Pedagogical Activities
 
