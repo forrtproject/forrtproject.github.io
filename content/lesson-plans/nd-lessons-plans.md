@@ -150,7 +150,7 @@ You can still contribute to the collection of Lesson Plans by adding your ideas 
 
 Contribute to [FORRT's Lesson Plans (Google sheets)](https://docs.google.com/spreadsheets/d/1LGdBFlOCFqyfV7NUx11oUjkqR-aVZpWVGCn8RTiQQuk)
 
-These resources were created as part of the Society for Improving Psychological Science (SIPS) hackathon at the 2021 Annual Conference, and we detail this collaborative process in the article. 
+These resources were created as part of the Society for Improving Psychological Science (SIPS) hackathon at the 2021 Annual Conference, and we detail this collaborative process in the [article](https://doi.org/10.1037/stl0000307). 
 
 #### Contributorship 
 
