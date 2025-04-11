@@ -1,5 +1,6 @@
 ---
 title: FORRT Neurodiversity and Open Scholarship Lesson Bank
+type: plain_page
 ---	
 
 ![FORRT logo](./images/logo.webp)
@@ -10,10 +11,7 @@ This lesson bank has been developed by FORRT (Framework for Open and Reproducibl
 
 ---
 
-{{< youtube oMkF8DiAolQ >}}
-
-
-Resources presented at a workshop titled "Neurodiversify your curriculum delivered by Lorna Hamilton, Magdalena Grose-Hodge, Mahmoud Elsherif & the FORRT group at the Unconference 2023: Open Scholarship Practices in Education Research. If you would like to provide feedback, please contact Magdalena Grose-Hodge (m.s.grose-hodge@bham.ac.uk)
+Resources presented at a workshop titled "**Neurodiversify your curriculum** delivered by Lorna Hamilton, Magdalena Grose-Hodge, Mahmoud Elsherif & the FORRT group at the Unconference 2023: Open Scholarship Practices in Education Research. If you would like to provide feedback, please contact Magdalena Grose-Hodge (m.s.grose-hodge@bham.ac.uk)
 
 <a href="https://ray.yorksj.ac.uk/id/eprint/7606/" target="_blank">Read about the project</a>
 
@@ -58,6 +56,8 @@ Lesson 10: How can Open Scholarship address structural ableism and racism?
    <a href="https://www.apa.org/science/about/psa/2019/02/open-science" target="_blank"><u>Text 1</u></a>  
    <a href="https://www.tandfonline.com/doi/abs/10.1080/09638288.2023.2173315?journalCode=idre20" target="_blank"><u>Text 2</u></a>  
    <a href="./Lesson_Plans/How_can_we_Open%20Scholarship_to_address_the%20structural_ableism_and_racism_in_our_society.pdf" target="_blank"><u>Lesson Plan</u></a>
+
+{{< youtube oMkF8DiAolQ >}}
 
 <a href="https://msgrose-hodge.github.io/ND/h5p-standalone-1.3.x/demo/lhquestions.html" target="_blank">admin</a>
 
