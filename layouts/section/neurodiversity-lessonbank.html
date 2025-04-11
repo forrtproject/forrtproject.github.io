@@ -1,11 +1,12 @@
-{{- define "main" -}}
+{{ define "main" }}
 
-{{ partial "page_header.html" . }}
+  <div class="article-container">
+  {{ partial "page_header" . }}
 
-<div class="universal-wrapper">
-  {{ with .Content }}
-  <div class="article-style">{{ . }}</div>
-  {{ end }}
-</div>
+    <div class="article-style">
+      {{ .Content }}
+    </div>
 
-{{- end -}}
+  </div>
+
+{{ end }}
