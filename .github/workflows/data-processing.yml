@@ -30,12 +30,18 @@ jobs:
       - uses: r-lib/actions/setup-r@v2
       - uses: r-lib/actions/setup-pandoc@v2
       - name: Install tenzing R dependencies
-        run: Rscript -e 'install.packages(c("rmarkdown","ggplot2", "readxl", "dplyr", "googlesheets4", "stringr", "gridExtra", "glue", "tidygraph", "ggraph", "igraph"'
+        run: Rscript -e 'install.packages(c("rmarkdown","ggplot2", "readxl", "dplyr", "googlesheets4", "stringr", "gridExtra", "glue", "tidygraph", "ggraph", "igraph"))'
 
       - name: Run Tenzing analysis
         continue-on-error: true  # Continue even if this step fails
         run: |
-          Rscript -e "rmarkdown::render('my_file.Rmd', output_format = 'md_document')"
+          Rscript -e "rmarkdown::render('scripts/contributor-analysis/contributor_analysis.rmd', output_format = 'md_document')"
+
+      - name: Move Tenzing analysis
+        continue-on-error: true  # Continue even if this step fails
+        run: |
+          mv scripts/contributor-analysis/contributor_analysis.md content/contributor-analysis/_index.md
+          mv scripts/contributor-analysis/*.png content/contributor-analysis/
 
       - name: Install Python dependencies
         run: python3 -m pip install -r ./requirements.txt
@@ -88,4 +94,5 @@ jobs:
             content/contributors/tenzing.md
             content/curated_resources/
             data/ # GA data
+            content/contributor-analysis/
           retention-days: 1
