@@ -58,6 +58,23 @@ jobs:
             python scripts/download_ga_data.py
           fi
 
+      # Contributor analysis if needed
+      - name: Setup r2u
+        uses: eddelbuettel/github-actions/r2u-setup@master
+        if: steps.download-artifact.outcome == 'failure'
+      - uses: r-lib/actions/setup-pandoc@v2
+        if: steps.download-artifact.outcome == 'failure'
+      - name: Contributor analysis if needed
+        if: steps.download-artifact.outcome == 'failure'
+        continue-on-error: true
+        run: |
+          Rscript -e 'install.packages(c("rmarkdown", "ggplot2", "readxl", "dplyr", "googlesheets4", "stringr", "gridExtra", "glue", "tidygraph", "ggraph", "igraph"))'
+          Rscript -e "rmarkdown::render('scripts/tenzing_analysis/contributor_analysis.rmd', output_format = 'md_document')"
+          mv scripts/tenzing_analysis/contributor_analysis.md content/contributor-analysis/_index.md
+          mv scripts/tenzing_analysis/*.png content/contributor-analysis/
+
+
+
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@75d2e84710de30f6ff7268e08f310b60ef14033f
         with:
@@ -112,7 +129,7 @@ jobs:
       contents: write
     needs:
       - deploy-test
-    if: (github.event_name == 'push' || github.event_name == 'schedule') && github.ref == 'refs/heads/master' && github.event.repository.fork == false
+    if: (github.event_name == 'push' || github.event_name == 'schedule' || github.event_name == 'workflow_dispatch') && github.ref == 'refs/heads/master' && github.event.repository.fork == false
     steps:
       - name: Download Arfifact - Website
         uses: actions/download-artifact@v4

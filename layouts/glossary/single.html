@@ -116,7 +116,7 @@
     </div>
 
     <main class="col-12 col-xl-8 pl-md-5 docs-content" role="main">
-      <article class="article">
+      <article class="article"{{ if eq $lang "arabic" }} dir="rtl" style="text-align: right;"{{ end }}>
         <div class="docs-article-container mx-auto">
           {{ partial "resource_page_header" . }}
 
