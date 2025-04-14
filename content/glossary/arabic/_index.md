@@ -15,7 +15,7 @@ header:
 type: "glossary"
 ---
 
-<div dir="ltr" style="text-align: right;">
+<div dir="rtl" style="text-align: right;">
 
 
 <div class="btn-group flex-wrap text-center"><a href="/glossary/english" class="btn btn-primary py-2 m-1 btn-lg active" style="line-height:1;border-radius:6px">English</a>
