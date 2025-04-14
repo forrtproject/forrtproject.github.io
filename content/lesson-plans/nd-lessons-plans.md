@@ -6,7 +6,7 @@
 widget = "blank"  # See https://sourcethemes.com/academic/docs/page-builder/
 headless = true  # This file represents a page section.
 active = true  # Activate this widget? true/false
-weight = 10  # Order that this section will appear.
+weight = 2  # Order that this section will appear.
 
 title = "Lesson Plans"
 subtitle = ""
@@ -85,6 +85,18 @@ Each has suitable context: (e.g., entry-level/undergraduate/postgraduate), total
 1. [Open Data and Qualitative Research](https://osf.io/nyfqx/)
 1. [Diversity and inclusion in (br)open science](https://osf.io/r6qsw/)
 1. [Differentiating between correlation vs causation](https://osf.io/fvnj5)
+1. [Implicit Bias](../neurodiversity-lessonbank/implicit_bias/)
+1. [Diversity as one of the core values of Open Science](../neurodiversity-lessonbank/community-psychology-diversity/)
+1. [Diversity and research](../neurodiversity-lessonbank/diversity-and-research/)
+1. [Oppression and Power](../neurodiversity-lessonbank/masterstools/)
+1. [Generalizability Crisis](../neurodiversity-lessonbank/generalizability/)
+1. The myth of the normality How neurodiversity dismantles the generalisability crisis[Text 1](https://journalofethics.ama-assn.org/article/myth-normal-brain-embracing-neurodiversity/2015-04) [Text 2](https://www.cambridge.org/core/journals/behavioral-and-brain-sciences/article/abs/generalizability-crisis/AD386115BA539A759ACB3093760F4824)
+1. [The myth of the normality How neurodiversity dismantles the generalisability crisis - Lesson Plan](../neurodiversity-lessonbank/Lesson_Plans/The_myth_of_the_normality_How_neurodiversity_dismantles_the_generalisability_crisis.pdf)
+1. [Neurodiversity Culture and Teaching - text](http://rapidintellect.com/AEQweb/ed-5971.pdf) Lesson Plan Pdf[Neurodiversity Culture and Teaching - Lesson Plan](../neurodiversity-lessonbank/Lesson_Plans/Neuro_para.pdf)
+1. [Avoiding ableist language to diversify OS - text](https://www.liebertpub.com/doi/10.1089/aut.2020.0014)Lesson Plan pdf[Avoiding ableist language to diversify OS](../neurodiversity-lessonbank/Lesson_Plans/Avoiding_ableist%20language_to_diversify_open_scholarship.pdf)
+1. How can Open Scholarship address structural ableism and racism? [Text 1](https://www.apa.org/science/about/psa/2019/02/open-science) [Text 2](https://www.tandfonline.com/doi/abs/10.1080/09638288.2023.2173315?journalCode=idre20) LessonPlan Pdf[How can Open Scholarship address structural ableism and racism?](../neurodiversity-lessonbank/Lesson_Plans/How_can_we_Open%20Scholarship_to_address_the%20structural_ableism_and_racism_in_our_society.pdf)
+
+---
 
 We hope to keep producing more Lesson Plans, so please check this space. Our community is working on this ["Table of Activities"](https://docs.google.com/spreadsheets/d/1LGdBFlOCFqyfV7NUx11oUjkqR-aVZpWVGCn8RTiQQuk/edit#gid=0) to which you can add your own ideas (see how to contribute below) and help us empower educators and stakeholders with high quality and accessible lesson plans (and educational materials) to accelerate institutional change towards the integration of open and reproducible science into Higher Education curricula!
 
@@ -128,24 +140,20 @@ Please consider [giving us your feedback (critical or otherwise) when using thes
 ### Contribute
 ---------------------
 
-You can still contribute to the collection of Lesson Plans by adding your ideas in the Google sheet below. Furthemore, if you would like your lesson plans to be included among the several others [in this OSF repository](https://osf.io/th254/), please use the [Lesson Plan's template](https://docs.google.com/document/d/1OMyhKBUUceJHvZRJ0lNSclDXBcoYpQQDCn-zJ_2teXI/edit) and contact Madeleine Pownall or Flavio Azevedo at FORRT's slack channel. Or feel free to email [lessonplans@forrt.org](mailto:lessonplans@forrt.org). 
+You can still contribute to the collection of Lesson Plans by adding your ideas in the Google sheet below. Furthemore, if you would like your lesson plans to be included among the several others [in this OSF repository](https://osf.io/th254/), please use the [Lesson Plan's template](https://docs.google.com/document/d/1OMyhKBUUceJHvZRJ0lNSclDXBcoYpQQDCn-zJ_2teXI/edit) and contact Madeleine Pownall or Flavio Azevedo at FORRT's slack channel. Or feel free to email [info@forrt.org](mailto:info@forrt.org). 
 
-{{< expand "Contribute to FORRT's Lesson Plans (Google sheets)" >}}
+### Pedagogical Activities
+
+<iframe style="border:0px; width:100%; height:100%;" allowfullscreen="true" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRxqwa1rfgn-mB2hdCd3DzQHYMV7bOpQw6hRwXQodSnKjL1QvV4r5Aaf0kr-AVKc9zk60ejgDhZ-FLV/pubhtml?widget=true&amp;headers=false"></iframe>
 
 <br>
 
-https://docs.google.com/spreadsheets/d/1LGdBFlOCFqyfV7NUx11oUjkqR-aVZpWVGCn8RTiQQuk
+Contribute to [FORRT's Lesson Plans (Google sheets)](https://docs.google.com/spreadsheets/d/1LGdBFlOCFqyfV7NUx11oUjkqR-aVZpWVGCn8RTiQQuk)
 
-These resources were created as part of the Society for Improving Psychological Science (SIPS) hackathon at the 2021 Annual Conference, and we detail this collaborative process in the article. 
-
-{{< /expand >}}
+These resources were created as part of the Society for Improving Psychological Science (SIPS) hackathon at the 2021 Annual Conference, and we detail this collaborative process in the [article](https://doi.org/10.1037/stl0000307). 
 
 #### Contributorship 
 
 In line with principles enshrined in FORRT, this google-sheet is an open online contributorship project. The work of all contributors are valued and are formally recognized. With this, we hope to expand the scope and diversity of FORRT’s mission and its team.
 
 <br>
-
-
-
-
