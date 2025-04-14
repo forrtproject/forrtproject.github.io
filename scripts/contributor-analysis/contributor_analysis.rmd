@@ -187,7 +187,7 @@ mean_project_contributors <- mean(project_contributors$Unique_Contributors)
 
 ```{r Summary for Website}
 out <- glue("
-As of {format(Sys.time(), '%d %B, %Y')}, FORRT has {sprintf('%d', count_projects)} completed and ongoing projects with a total of {format(unique_contributors, big.mark = ',')} contributors across these projects.  
+As of {format(Sys.time(), '%d %B, %Y')}, FORRT has {sprintf('%d', count_projects)} completed and ongoing projects/teams with a total of {format(unique_contributors, big.mark = ',')} contributors across these projects.  
 There is an average (mean) of {sprintf('%.2f', mean_contributions_per_person)} contributions per person across all FORRT projects, and the average number of contributors per project is {sprintf('%.2f', mean_project_contributors)}. Team CRediT is actively working on formalizing and updating contributorship information.   
 ")
 ```
@@ -203,7 +203,7 @@ project_contributors <- project_contributors %>%
   slice_head(n = 10)
 
 # Get the first three project names from the sorted order
-top_projects <- project_contributors$`Project Name`[1:6]
+top_projects <- project_contributors$`Project Name`[1:5]
 
 # Add labels only for these projects
 project_contributors <- project_contributors %>%
@@ -249,62 +249,7 @@ projects_plot
 roles_plot
 ```
 
-```{r}
-# STEP 1: Create contributor–project pairs (like before)
-contributors_df <- dt_long %>%
-  mutate(Contributor = str_trim(paste(`First name`, `Surname`))) %>% 
-  distinct(`Project Name`, Contributor)
-
-# STEP 2: Count unique contributors per project
-project_contributors <- contributors_df %>%
-  group_by(`Project Name`) %>%
-  summarise(Unique_Contributors = n(), .groups = 'drop') %>%
-  arrange(desc(Unique_Contributors))
-
-# STEP 3: Select top 10 projects
-top_projects <- project_contributors %>%
-  slice_head(n = 10) %>%
-  pull(`Project Name`)
-
-# STEP 4: Get project-role pairs from original dataset
-project_roles <- dt_long %>%
-  filter(`Project Name` %in% top_projects) %>%
-  distinct(`Project Name`, `Role`)  # assuming 'Role' is the contribution type column
-
-# STEP 5: Create node list (Projects + Roles)
-nodes <- tibble(
-  name = unique(c(project_roles$`Project Name`, project_roles$`Role`)),
-  type = ifelse(name %in% project_roles$`Project Name`, "Project", "Role")
-)
-
-# STEP 6: Create edge list
-edges <- project_roles %>%
-  rename(from = Role, to = `Project Name`)
-
-# STEP 7: Build graph
-graph_data <- tbl_graph(nodes = nodes, edges = edges, directed = FALSE)
-
-# STEP 8: Plot
-ggraph(graph_data, layout = "fr") +
-  geom_edge_link(alpha = 0.3, color = "gray60") +
-  geom_node_point(aes(color = type, size = type == "Project"), show.legend = FALSE) +
-  geom_node_text(
-    aes(label = name, filter = type == "Project"),
-    repel = TRUE, fontface = "bold", size = 4, max.overlaps = Inf
-  ) +
-  geom_node_text(
-    aes(label = name, filter = type == "Role"),
-    repel = TRUE, size = 3, alpha = 0.6, max.overlaps = Inf
-  ) +
-  scale_color_manual(values = c("Project" = "#0077b6", "Role" = "#ffb703")) +
-  scale_size_manual(values = c("TRUE" = 6, "FALSE" = 3)) +
-  theme_void() +
-  labs(title = "Roles Across FORRT’s Top 10 Projects")
-
-
-```
-
-```{r}
+```{r network graph}
 # STEP 1: Build contributor–project pairs
 dt_long <- dt_long %>%
   mutate(Contributor = str_trim(paste(`First name`, `Surname`)))
@@ -375,106 +320,6 @@ scale_size_continuous(range = c(2, 10)) +  # Circle sizes in plot
 guides(
   color = guide_legend(override.aes = list(size = 4))  # Optional: bigger color key dots too
 ) +
-  theme_void() +
-  labs(
-    title = "Contributor Volume by Role and Project (Top 10 FORRT Projects)",
-    size = "Unique Contributors"
-  )
-
-```
-
-```{r}
-# STEP 1: Build contributor–project pairs
-dt_long <- dt_long %>%
-  mutate(Contributor = str_trim(paste(`First name`, `Surname`)))
-
-contributors_df <- dt_long %>%
-  distinct(`Project Name`, Contributor)
-
-# STEP 2: Count contributors per project
-project_contributors <- contributors_df %>%
-  group_by(`Project Name`) %>%
-  summarise(n_contributors = n(), .groups = 'drop') %>%
-  arrange(desc(n_contributors))
-
-# STEP 3: Select top 10 projects
-top_projects <- project_contributors %>%
-  slice_head(n = 10) %>%
-  pull(`Project Name`)
-
-# STEP 4: Filter data to top 10 projects
-dt_top <- dt_long %>%
-  filter(`Project Name` %in% top_projects)
-
-# STEP 5: Count contributors per role (in top 10 projects only)
-role_contributors <- dt_top %>%
-  distinct(Role, Contributor) %>%
-  group_by(Role) %>%
-  summarise(n_contributors = n(), .groups = 'drop')
-
-# STEP 6: Create edge list between Role → Project and Contributor → Role
-edges_role_project <- dt_top %>%
-  distinct(Role, `Project Name`) %>%
-  rename(from = Role, to = `Project Name`)
-
-edges_contributor_role <- dt_top %>%
-  distinct(Contributor, Role) %>%
-  rename(from = Contributor, to = Role)
-
-# Combine edges
-edges <- bind_rows(edges_role_project, edges_contributor_role)
-
-# STEP 7: Create node list with contributor counts
-project_nodes <- project_contributors %>%
-  filter(`Project Name` %in% top_projects) %>%
-  rename(name = `Project Name`)
-
-role_nodes <- role_contributors %>%
-  rename(name = Role)
-
-contributor_nodes <- contributors_df %>%
-  distinct(Contributor) %>%
-  rename(name = Contributor)
-
-# Combine nodes into one list
-nodes <- bind_rows(project_nodes, role_nodes, contributor_nodes) %>%
-  mutate(
-    type = case_when(
-      name %in% top_projects ~ "Project",
-      name %in% role_contributors$Role ~ "Role",
-      TRUE ~ "Contributor"
-    )
-  )
-
-# STEP 8: Ensure all nodes in edges are included
-nodes <- nodes %>%
-  filter(name %in% unique(c(edges$from, edges$to)))
-
-# STEP 9: Build graph
-graph_data <- tbl_graph(nodes = nodes, edges = edges, directed = FALSE)
-
-# STEP 10: Plot with contributor nodes added
-ggraph(graph_data, layout = "fr") +
-  geom_edge_link(alpha = 0.3, color = "gray60") +
-  geom_node_point(aes(color = type, size = ifelse(type == "Contributor", 2, n_contributors)), 
-                  show.legend = TRUE, alpha = 0.85) + 
-  geom_node_text(
-    aes(label = name, filter = type == "Project"),
-    repel = TRUE, fontface = "bold", size = 4, max.overlaps = Inf
-  ) +
-  geom_node_text(
-    aes(label = name, filter = type == "Role"),
-    repel = TRUE, size = 3, alpha = 0.6, max.overlaps = Inf
-  ) +
-  geom_node_text(
-    aes(label = name, filter = type == "Contributor"),
-    repel = TRUE, size = 1, alpha = 0.5, max.overlaps = Inf
-  ) +
-  scale_color_manual(values = c("Project" = "#0077b6", "Role" = "#ffb703", "Contributor" = "#ff6f61")) +
-  scale_size_continuous(range = c(2, 10)) +  # Circle sizes in plot
-  guides(
-    color = guide_legend(override.aes = list(size = 1.5))  # Optional: bigger color key dots too
-  ) +
   theme_void() +
   labs(
     title = "Contributor Volume by Role and Project (Top 10 FORRT Projects)",
