@@ -1,5 +1,5 @@
 ---
-title: Glossar
+title: Glossary
 toc: true
 # View.
 #   1 = List
