@@ -27,6 +27,23 @@ jobs:
           python-version: ${{ env.PYTHON_VERSION }}
           cache: 'pip'
 
+      - name: Setup r2u
+        uses: eddelbuettel/github-actions/r2u-setup@master
+      - uses: r-lib/actions/setup-pandoc@v2
+      - name: Install tenzing R dependencies
+        run: Rscript -e 'install.packages(c("rmarkdown","ggplot2", "readxl", "dplyr", "googlesheets4", "stringr", "gridExtra", "glue", "tidygraph", "ggraph", "igrasph"))'
+
+      - name: Run Tenzing analysis
+        continue-on-error: true  # Continue even if this step fails
+        run: |
+          Rscript -e "rmarkdown::render('scripts/contributor-analysis/contributor_analysis.rmd', output_format = 'md_document')"
+
+      - name: Move Tenzing analysis
+        continue-on-error: true  # Continue even if this step fails
+        run: |
+          mv scripts/contributor-analysis/contributor_analysis.md content/contributor-analysis/_index.md
+          mv scripts/contributor-analysis/*.png content/contributor-analysis/
+
       - name: Install Python dependencies
         run: python3 -m pip install -r ./requirements.txt
 
@@ -69,7 +86,7 @@ jobs:
         run: python3 scripts/gs-cite/google_scholar.py
         env:
           SERPAPI: ${{ secrets.SERPAPI }}
-          
+
       - name: Upload data artifact
         uses: actions/upload-artifact@v4
         with:
@@ -78,4 +95,5 @@ jobs:
             content/contributors/tenzing.md
             content/curated_resources/
             data/ # GA data
+            content/contributor-analysis/
           retention-days: 1
