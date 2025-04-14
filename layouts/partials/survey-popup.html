@@ -88,33 +88,42 @@
   }
 </style>
 
-<script>
-  document.addEventListener('DOMContentLoaded', function() {
-    // Popup display logic
-    const hasCompleted = localStorage.getItem('surveyCompleted') === 'true';
-    const lastShow = localStorage.getItem('lastPopupShow');
-    const oneWeek = 7 * 24 * 60 * 60 * 1000; // 7 days in milliseconds
+<!-- The below Cookie functions manage visit counts by retrieving and updating a cookie,
+while the survey shows only on the 5th visit if it hasn't been completed.
+Once the survey is completed, its state is saved in localStorage, 
+preventing further popups on subsequent visits. -->
 
-    if (!hasCompleted && (!lastShow || Date.now() - parseInt(lastShow) > oneWeek)) {
+<script>
+  // Helper function to get a cookie value
+  function getCookie(name) {
+    const match = document.cookie.match(new RegExp('(^| )' + name + '=([^;]+)'));
+    return match ? match[2] : null;
+  }
+
+  // Helper function to set a cookie
+  function setCookie(name, value, days = 365) {
+    const expires = new Date(Date.now() + days * 864e5).toUTCString();
+    document.cookie = `${name}=${value}; expires=${expires}; path=/`;
+  }
+
+  document.addEventListener('DOMContentLoaded', function () {
+    const hasCompleted = localStorage.getItem('surveyCompleted') === 'true';
+
+    let visitCount = parseInt(getCookie('visitCount')) || 0;
+    visitCount++;
+    setCookie('visitCount', visitCount);
+
+    if (!hasCompleted && visitCount >= 5) {
       document.getElementById('surveyPopup').style.display = 'flex';
     }
 
     // Close button handler
-    document.querySelector('.close-btn').addEventListener('click', function() {
+    document.querySelector('.close-btn').addEventListener('click', function () {
       closeSurvey();
-      localStorage.setItem('lastPopupShow', Date.now().toString());
     });
 
-    // Outside click handler
-    {{/*  document.getElementById('surveyPopup').addEventListener('click', function(e) {
-      if (e.target === this) {
-        closeSurvey();
-        localStorage.setItem('lastPopupShow', Date.now().toString());
-      }
-    });  */}}
-
     // Survey link handler
-    document.getElementById('surveyLink').addEventListener('click', function() {
+    document.getElementById('surveyLink').addEventListener('click', function () {
       localStorage.setItem('surveyCompleted', 'true');
       closeSurvey();
     });
@@ -124,4 +133,3 @@
     document.getElementById('surveyPopup').style.display = 'none';
   }
 </script>
-  
