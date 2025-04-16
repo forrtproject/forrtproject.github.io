@@ -15,7 +15,8 @@ params = {
     "engine": "google_scholar_author",
     "author_id": "JrBcgGMAAAAJ",
     "hl": "en",
-    "api_key": api_key
+    "api_key": api_key,
+    "no_cache": "true"
 }
 
 # Fetch data from SerpAPI
