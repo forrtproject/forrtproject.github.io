@@ -96,4 +96,5 @@ jobs:
             content/curated_resources/
             data/ # GA data
             content/contributor-analysis/
+            content/publications/citation_chart.webp
           retention-days: 1

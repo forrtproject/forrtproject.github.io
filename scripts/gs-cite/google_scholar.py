@@ -16,7 +16,7 @@ params = {
     "author_id": "JrBcgGMAAAAJ",
     "hl": "en",
     "api_key": api_key,
-    "no_cache": "true"
+    "no_cache": "false"
 }
 
 # Fetch data from SerpAPI
