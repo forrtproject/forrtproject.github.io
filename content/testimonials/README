@@ -9,6 +9,7 @@ This testimonials lives in `content/widgets/testimonialN.md` (where `N` is the t
 2. **Add your content**:
    - Create a title in the first row
    - Add the body
+   - Update ORCiD and email address - or delete those sections
 3. **Save your picture**:
    - Ensure that it can be shown in a circle - i.e. that the face is close to the center, with some space around
    - Convert to WebP (e.g. `https://image.online-convert.com/convert-to-webp`).
