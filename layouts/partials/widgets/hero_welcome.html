@@ -1,8 +1,6 @@
 {{ $ := .root }}
-{{ $root := .root }}
 {{ $page := .page }}
 
-{{ if $root.IsHome }}
 
 {{ $bg := $page.Params.design.background }}
 
@@ -66,6 +64,5 @@
     <img width="100%" src="{{ printf "img/%s" $page.Params.hero_media | relURL }}" alt="{{ $page.Params.hero_media_alttext }}">
   </div>
 </div>
-{{ end }}
 {{ end }}
 
