@@ -1,5 +1,9 @@
 {{ $ := .root }}
+{{ $root := .root }}
 {{ $page := .page }}
+
+{{ if $root.IsHome }}
+
 {{ $bg := $page.Params.design.background }}
 
 {{ if $page.Params.hero_media }}
@@ -63,3 +67,5 @@
   </div>
 </div>
 {{ end }}
+{{ end }}
+
