@@ -37,9 +37,24 @@ subtitle = ""
 
 # Roksana Sobolak's Experience with FORRT
 
-<div style="float: right; width: 250px; height: 250px; margin: 0 1rem 1rem 0; border-radius: 50%; overflow: hidden; shape-outside: circle();">
-  <img src="testimonial1.webp" alt="Portrait of Roksana Sobolak" style="width: 100%; height: 100%; object-fit: cover;">
+<div style="float: right; margin: 0 1rem 1rem 0; text-align: center;">
+  <div style="width: 250px; height: 250px; border-radius: 50%; overflow: hidden;">
+    <img
+      src="cluster1.webp"
+      alt="Portrait"
+      style="width: 100%; height: 100%; object-fit: cover;"
+    >
+  </div>
+  <div style="margin-top: 0.5rem;">
+    <a href="mailto:roksanasobolak@hotmail.com" title="Email" style="margin-right: 0.5rem;">
+      <i class="fas fa-envelope fa-2x" aria-hidden="true"></i>
+    </a>
+    <a href="https://orcid.org/0009-0001-9534-6439" title="ORCiD">
+      <i class="ai ai-orcid fa-2x" aria-hidden="true"></i>
+    </a>
+  </div>
 </div>
+
 
 Joining FORRT has been one of the most transformative experiences of my academic journey so far. I was lucky enough to become part of this incredible, supportive community through my very first academic role—a project in collaboration with FORRT. Through working with FORRT, I saw what true collaboration looks like: a global network of researchers who are not only pushing the boundaries of open science but also lifting each other up along the way. The sense of community is unmatched—people are kind, generous with their time, and deeply dedicated to meaningful change.
 
