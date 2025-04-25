@@ -1,17 +1,11 @@
 ---
-title: "FORRT Contributor Analyses"
-date: "`r format(Sys.time(), '%d %B, %Y')`"
-type: plain_page
-output: 
-  md_document:
-    preserve_yaml: true
+format: html
+execute:
+  echo: false
+  warning: false
+  message: false
+editor: source
 ---
-
-```{r, setup, include=FALSE}
-knitr::opts_chunk$set(
-  echo = FALSE, warning = FALSE, message = FALSE, fig.path = ""
-)
-```
 
 
 ```{r Load Libraries}
@@ -26,8 +20,9 @@ library(glue) # For printing text
 library(tidygraph) # 
 library(ggraph)
 library(igraph)
+library(visNetwork)
+library(Matrix)
 ```
-
 
 ```{r Read sheets from automation source}
 
@@ -35,7 +30,6 @@ library(igraph)
 google_sheet_url_automation <- "https://docs.google.com/spreadsheets/d/1MUD54FQUhfcBKrvr5gCYoh2wgbJ6Lf7oAJRAqsQ-Nag/edit"
 
 # Get sheet names
-gs4_deauth()
 sheets <- sheet_names(google_sheet_url_automation)
 
 # Exclude the first four Automation Source sheets
@@ -71,7 +65,7 @@ dt <- bind_rows(data_list, .id = "Source_Sheet")
 dt <- dt %>%
   select(`Project Name`, everything())
 
-# Remove PM column as it is uncessary and might cause problems with binding
+# Remove PM column as it is unncessary and might cause problems with binding
 dt <- dt %>%
   select(-`Project Managers`)
 ```
@@ -133,14 +127,14 @@ dt$Conceptualization <- as.logical(dt$Conceptualization)
 ```
 
 ```{r Metrics}
-# Count unique contributors
+# Count unique contributors (only use surname and first name at the moment, middle name causes problems)
 unique_contributors <- dt %>% 
-  distinct(`Surname`, `First name`, `Middle name`) %>%
+  distinct(`Surname`, `First name`) %>%
   nrow()
 
 # Contributions per person
 contributions_per_person <- dt %>% 
-  group_by(`Surname`, `First name`, `Middle name`) %>% 
+  group_by(`Surname`, `First name`,) %>% 
   summarise(Contributions = n(), .groups = 'drop')
 
 # Mean contributions per person
@@ -186,15 +180,94 @@ mean_project_contributors <- mean(project_contributors$Unique_Contributors)
 ```
 
 ```{r Summary for Website}
-out <- glue("
-As of {format(Sys.time(), '%d %B, %Y')}, FORRT has {sprintf('%d', count_projects)} completed and ongoing projects/teams with a total of {format(unique_contributors, big.mark = ',')} contributors across these projects.  
-There is an average (mean) of {sprintf('%.2f', mean_contributions_per_person)} contributions per person across all FORRT projects, and the average number of contributors per project is {sprintf('%.2f', mean_project_contributors)}. Team CRediT is actively working on formalizing and updating contributorship information.   
-")
+glue("
+Currently, FORRT has a total of {sprintf('%d', count_projects)} completed or ongoing projects and support teams, with a total of {format(unique_contributors, big.mark = ',')} contributors. There is an average (mean) of {sprintf('%.2f', mean_contributions_per_person)} contributions per person across all FORRT projects, and the average number of contributors per project is {sprintf('%.2f', mean_project_contributors)}.")
 ```
 
-`r out`
 
-```{r Visualizations}
+
+```{r dt long}
+dt_long <- dt_long %>% 
+  rowwise() %>% 
+  mutate(Contributor = paste(na.omit(c(`Surname`, `First name`)), collapse = " ")) %>% 
+  mutate(Lead = if_else(Role %in% c("lead", "co-lead"), Role, "other"))
+```
+
+## Network of contributors 
+
+```{r network contributors}
+# get co-occurences
+Contributor_Project <- xtabs(~ `Project Name` + Contributor, 
+                                data=dt_long %>% 
+                               select(`Project Name`, Contributor) %>% 
+                               unique(), 
+                                sparse = TRUE)
+
+Contributor_occur <- crossprod(Contributor_Project, Contributor_Project)
+```
+
+```{r network contributors nodes}
+Contributor_nodes_n <- dt_long %>%
+  group_by(Contributor) %>% 
+  count(Contributor)
+
+colnames(Contributor_nodes_n) <- c("id", "value")
+
+ContributorGroups_nodes <- dt_long %>% 
+  select(Contributor, `Project Name`) %>% 
+  unique() %>% 
+  group_by(Contributor) %>% 
+  mutate(Projects = paste0(`Project Name`, collapse = ",")) %>% 
+  select(Contributor, Projects) %>% 
+  unique()
+
+colnames(ContributorGroups_nodes) <- c("id", "groups")
+
+Contributor_nodes <- left_join(Contributor_nodes_n,
+                               ContributorGroups_nodes)
+Contributor_nodes$title <- paste0(Contributor_nodes$id,"<br>", gsub(patter = ",", replacement = "<br>", x = Contributor_nodes$groups))
+
+Contributor_edges <- which(upper.tri(Contributor_occur), arr.ind = TRUE) %>%
+  as.data.frame() %>%
+  mutate(
+    from = rownames((Contributor_occur))[row],
+    to   = colnames((Contributor_occur))[col],
+    width_n = (Contributor_occur)[cbind(row, col)]
+  ) %>%
+  filter(width_n > 0) %>%  # Optional: remove 0s
+  mutate(width = (width_n/10)^(3)) %>% 
+  select(from, to, width)
+
+visNetwork(Contributor_nodes, 
+               Contributor_edges) %>%
+      visIgraphLayout(layout = "layout_with_fr",
+                      randomSeed = 1001) %>% 
+      visEdges(color = list(opacity = 0.1)
+      ) %>%
+      visNodes(
+        borderWidth = 0,
+        color = list(background = "black",
+                     highlight = list(background = "red")) 
+      ) %>% 
+  visGroups(useDefaultGroups = F) %>% 
+      visInteraction(
+        dragNodes = TRUE,
+        dragView = TRUE,
+        hover = FALSE,
+        hoverConnectedEdges = FALSE,
+        selectable = TRUE,
+        multiselect = TRUE
+      ) %>%
+      visOptions(
+        highlightNearest = list(enabled = TRUE,
+                                degree = 1),
+        nodesIdSelection = list(enabled = TRUE),
+        selectedBy = list(variable = "groups", multiple = T, hideColor = "darkgrey")
+      ) 
+```
+
+
+```{r Basic visualizations}
 # Contributors per project
 
 # Keep only the top 10 projects based on Unique_Contributors
@@ -211,7 +284,7 @@ project_contributors <- project_contributors %>%
 
 # Plot
 projects_plot <- ggplot(project_contributors, aes(x = `Project Name`, y = Unique_Contributors)) +
-  geom_bar(stat = "identity", fill = "lightblue", color = "#323232", alpha = 0.8) +  
+  geom_bar(stat = "identity", fill = "#A52828", color = "#323232", alpha = 0.8) +  
   geom_text(aes(label = label), hjust = 0, nudge_x = -0.3, vjust = 1.0, nudge_y = 9, size = 3, na.rm = TRUE) +  # Adjusted vjust and nudge_y
   labs(title = "Contributors for FORRT's 10 Biggest Projects", 
        x = "Projects",  
@@ -227,7 +300,7 @@ projects_plot <- ggplot(project_contributors, aes(x = `Project Name`, y = Unique
 
 # Roles in projects
 roles_plot <- ggplot(role_distribution, aes(x = reorder(Role, n), y = n)) +
-  geom_bar(stat = "identity", fill = "lightblue", color = "#323232", alpha = 0.8) +
+  geom_bar(stat = "identity", fill = "#A52828", color = "#323232", alpha = 0.8) +
   coord_flip() +
   labs(title = "Distribution of Contributions Across Roles", 
        x = "Role", 
@@ -241,89 +314,10 @@ roles_plot <- ggplot(role_distribution, aes(x = reorder(Role, n), y = n)) +
         panel.border = element_blank())
 ```
 
-```{r Projects-Plot-Figure}
+```{r Projects Plot Figure}
 projects_plot
 ```
 
-```{r Role-Plot-Figure}
+```{r Role Plot Figure}
 roles_plot
-```
-
-```{r network graph}
-# STEP 1: Build contributor–project pairs
-dt_long <- dt_long %>%
-  mutate(Contributor = str_trim(paste(`First name`, `Surname`)))
-
-contributors_df <- dt_long %>%
-  distinct(`Project Name`, Contributor)
-
-# STEP 2: Count contributors per project
-project_contributors <- contributors_df %>%
-  group_by(`Project Name`) %>%
-  summarise(n_contributors = n(), .groups = 'drop') %>%
-  arrange(desc(n_contributors))
-
-# STEP 3: Select top 10 projects
-top_projects <- project_contributors %>%
-  slice_head(n = 10) %>%
-  pull(`Project Name`)
-
-# STEP 4: Filter data to top 10 projects
-dt_top <- dt_long %>%
-  filter(`Project Name` %in% top_projects)
-
-# STEP 5: Count contributors per role (in top 10 projects only)
-role_contributors <- dt_top %>%
-  distinct(Role, Contributor) %>%
-  group_by(Role) %>%
-  summarise(n_contributors = n(), .groups = 'drop')
-
-# STEP 6: Create edge list Role → Project
-edges <- dt_top %>%
-  distinct(Role, `Project Name`) %>%
-  rename(from = Role, to = `Project Name`)
-
-# STEP 7: Create node list with contributor counts
-project_nodes <- project_contributors %>%
-  filter(`Project Name` %in% top_projects) %>%
-  rename(name = `Project Name`)
-
-role_nodes <- role_contributors %>%
-  rename(name = Role)
-
-nodes <- bind_rows(project_nodes, role_nodes) %>%
-  mutate(
-    type = ifelse(name %in% top_projects, "Project", "Role")
-  )
-
-# STEP 8: Ensure all nodes in edges are included
-nodes <- nodes %>%
-  filter(name %in% unique(c(edges$from, edges$to)))
-
-# STEP 9: Build graph
-graph_data <- tbl_graph(nodes = nodes, edges = edges, directed = FALSE)
-
-# STEP 10: Plot 
-ggraph(graph_data, layout = "fr") +
-  geom_edge_link(alpha = 0.3, color = "gray60") +
-  geom_node_point(aes(color = type, size = n_contributors), show.legend = TRUE, alpha = 0.85) +
-  geom_node_text(
-    aes(label = name, filter = type == "Project"),
-    repel = TRUE, fontface = "bold", size = 4, max.overlaps = Inf
-  ) +
-  geom_node_text(
-    aes(label = name, filter = type == "Role"),
-    repel = TRUE, size = 3, alpha = 0.6, max.overlaps = Inf
-  ) +
-  scale_color_manual(values = c("Project" = "#0077b6", "Role" = "#ffb703")) +
-scale_size_continuous(range = c(2, 10)) +  # Circle sizes in plot
-guides(
-  color = guide_legend(override.aes = list(size = 4))  # Optional: bigger color key dots too
-) +
-  theme_void() +
-  labs(
-    title = "Contributor Volume by Role and Project (Top 10 FORRT Projects)",
-    size = "Unique Contributors"
-  )
-
 ```
