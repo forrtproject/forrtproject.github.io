@@ -295,8 +295,10 @@ projects_plot <- ggplot(project_contributors, aes(x = `Project Name`, y = Unique
         axis.ticks.x = element_blank(), 
         axis.text.y = element_text(size = 12),
         axis.title = element_text(size = 14),
-        panel.background = element_rect(fill = "#fefdf6"),
-        plot.background = element_rect(fill = "#fefdf6"))
+        panel.background = element_rect(fill = "#fefdf6", color = NA),  # No panel border
+        plot.background = element_rect(fill = "#fefdf6", color = NA), 
+        panel.border = element_blank(),                                
+        panel.spacing = unit(0, "lines"))
 
 # Roles in projects
 roles_plot <- ggplot(role_distribution, aes(x = reorder(Role, n), y = n)) +
@@ -309,9 +311,10 @@ roles_plot <- ggplot(role_distribution, aes(x = reorder(Role, n), y = n)) +
   theme(plot.title = element_text(hjust = 0.5, face = "bold", size = 16),  # Set title size to 16
         axis.text = element_text(size = 12),
         axis.title = element_text(size = 14),
-        panel.background = element_rect(fill = "#fefdf6"),  # Bone-colored background
-        plot.background = element_rect(fill = "#fefdf6"),   # Bone-colored background
-        panel.border = element_blank())
+        panel.background = element_rect(fill = "#fefdf6", color = NA),  # No panel border
+        plot.background = element_rect(fill = "#fefdf6", color = NA),   # No plot border
+        panel.border = element_blank(), # Explicitly blank
+        panel.spacing = unit(0, "lines"))
 ```
 
 ```{r Projects Plot Figure}
