@@ -185,11 +185,11 @@ mean_project_contributors <- mean(project_contributors$Unique_Contributors)
 ```
 
 ```{r Summary for Website}
-glue("
-Currently, FORRT has a total of {sprintf('%d', count_projects)} completed or ongoing projects and support teams, with a total of {format(unique_contributors, big.mark = ',')} contributors. There is an average (mean) of {sprintf('%.2f', mean_contributions_per_person)} contributions per person across all FORRT projects, and the average number of contributors per project is {sprintf('%.2f', mean_project_contributors)}.")
+output <- glue("
+As of {Sys.Date()}, FORRT has a total of {sprintf('%d', count_projects)} completed or ongoing projects and support teams, with a total of {format(unique_contributors, big.mark = ',')} contributors. There is an average (mean) of {sprintf('%.2f', mean_contributions_per_person)} contributions per person across all FORRT projects, and the average number of contributors per project is {sprintf('%.2f', mean_project_contributors)}. See below for our interactive network of contributors.")
 ```
 
-
+`r output`
 
 ```{r dt long}
 dt_long <- dt_long %>% 
@@ -211,7 +211,9 @@ Contributor_Project <- xtabs(~ `Project Name` + Contributor,
 Contributor_occur <- crossprod(Contributor_Project, Contributor_Project)
 ```
 
-```{r}
+<h3>Contributor Network Graph</h3>
+
+```{r Contributor-Network-Graph-Figure}
 Contributor_nodes_n <- dt_long %>%
   group_by(Contributor) %>% 
   count(Contributor)
@@ -273,7 +275,6 @@ visNetwork(Contributor_nodes,
   ) 
 ```
 
-
 ```{r Basic visualizations}
 # Contributors per project
 
@@ -324,6 +325,9 @@ roles_plot <- ggplot(role_distribution, aes(x = reorder(Role, n), y = n)) +
         panel.spacing = unit(0, "lines"))
 ```
 
-```{r Projects Plot Figure}
+```{r Projects-Plot-Figure}
 projects_plot
+```
+```{r Roles-Plot-Figure}
+roles_plot
 ```
