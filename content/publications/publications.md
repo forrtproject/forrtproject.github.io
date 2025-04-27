@@ -368,6 +368,13 @@ Azevedo, F. (2022). Educating in the Open Scholarship Era: Integrating Open and 
 
 <br>
 
+📃 [The Letter to UNESCO’s Principles of Open Science Monitoring](./Letter_to_UNESCO’s_Principles_of_Open_Science_Monitoring.pdf).
+
+<details>
+  <summary>PDF Preview here</summary>
+  <embed src="./Letter_to_UNESCO’s_Principles_of_Open_Science_Monitoring.pdf" type="application/pdf" width="100%" height="600px" />
+</details>
+
 <br>
 
 <br>
