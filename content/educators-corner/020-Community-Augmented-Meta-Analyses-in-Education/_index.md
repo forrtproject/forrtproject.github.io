@@ -83,7 +83,9 @@ Box 2.
 
 > "... our commitment to open science practices means that this next generation of CAMA platforms can further develop in new areas in the spirit of open, transparent, and community-driven research."
 
-Kalmendal, A., Batinović, L., Claesson, F. & Carlsson, R. (2025, March 25). *Living Review Platform for Educational Interventions: The Evidence in Learning Community Augmented Meta-analysis*. https://doi.org/10.31234/osf.io/hjku5_v1
+Kalmendal, A., Batinović, L., Claesson, F. & Carlsson, R. (2025, March 25). *Living Review Platform for Educational Interventions: The Evidence in Learning Community Augmented Meta-analysis*. https://doi.org/10.31234/osf.io/hjku5_v1 
+
+The development of ELD CAMA was made possible through the support of a grant from the Swedish Research Council. We thank all contributors throughout the development of the project, and are particularly grateful for Dr. Christina Bergmann’s help with the initiation of the ELD CAMA.
 
 ---
 
