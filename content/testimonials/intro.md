@@ -6,9 +6,9 @@
 widget = "blank"  # See https://sourcethemes.com/academic/docs/page-builder/
 headless = true  # This file represents a page section.
 active = true  # Activate this widget? true/false
-weight = 10  # Order that this section will appear.
+weight = 5  # Order that this section will appear.
 
-title = "Curriculum Vitae of FORRT"
+title = ""
 subtitle = ""
 
 [design]
@@ -22,7 +22,7 @@ subtitle = ""
   #   Any HTML color name or Hex value is valid.
 
   # Background color.
-  # color = "#fefdf6"
+  # color = "Green"
   # color = "#69b3a2" # greenish
   
   # Background gradient.
@@ -45,19 +45,12 @@ subtitle = ""
 
 [advanced]
  # Custom CSS. 
- css_style = ""
+ css_style = "font-size: 1.25rem;"
  
  # CSS class.
  css_class = ""
 +++
 
-<br>
+# Testimonials
 
-What we have accomplished at FORRT is only possible because of the work of so many scholars who dedicate their time and effort on a voluntary basis. We would like to help our members take credit for their work at FORRT. Team-science collaborations represent a new way to do science and often it is not clear (especially to ECRs) how to take credit for their contributions. With the CV provided below, we hope to give an example to FORRT’s members of how their contributions could be showcased in their personal CVs. The [LaTeX code](https://github.com/forrtproject/cv) is also open so that everyone can use it as a template for their own CVs as well. 
-<br>
-
-# {{< embed name="FORRT_cv_v2.pdf" height=1000 >}}
-
-
-
-
+FORRT aims to support members in their personal and professional growth, and we love to hear from people about their experiences. Below, we share a few such stories. If you want to contribute your own, [email us](info@forrt.org).
