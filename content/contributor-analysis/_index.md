@@ -14,12 +14,9 @@ FORRT projects, and the average number of contributors per project is
 16.00. Team CRediT is actively working on formalizing and updating
 contributorship information.
 
+![](Contributor-Network-Graph-Figure1-1.png)
+
 ![](Projects-Plot-Figure-1.png)
 
 ![](Role-Plot-Figure-1.png)
 
-![](unnamed-chunk-1-1.png)
-
-![](unnamed-chunk-2-1.png)
-
-![](unnamed-chunk-3-1.png)
