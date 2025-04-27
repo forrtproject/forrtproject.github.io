@@ -41,6 +41,7 @@ For researchers, practitioners, and policymakers alike, ELD CAMA turns the ideal
 ---
 
 Box 1.
+
 ***Platform – and a template.***
 
 The community-augmented approach therefore extends beyond the content development. Like existing [CAMAs](https://github.com/metahag/ELD-CAMA_source) that encourage ***forking*** and reusing established code, we aim to help meta-researchers with similar needs in developing their own database and platform with the template code we share. The beauty of it lies in the flexibility of the components. Users can take some components (e.g., only the SQL database) and build upon them to add new variables, improve the entire platform (e.g., add additional features or dynamic markdowns), or simply reuse it as is to build a platform in a different scientific filed (e.g., medicine). This flexibility facilitates incremental knowledge and collaboration, which is what ELD CAMA and FORRT both strive for. Repository: https://github.com/metahag/ELD-CAMA_source.
@@ -77,6 +78,7 @@ If you found the presented concept interesting, then we need your help! As the n
 ---
 
 Box 2.
+
 **Featured Publication**
 
 > "... our commitment to open science practices means that this next generation of CAMA platforms can further develop in new areas in the spirit of open, transparent, and community-driven research."
