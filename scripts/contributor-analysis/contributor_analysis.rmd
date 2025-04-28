@@ -200,7 +200,9 @@ dt_long <- dt_long %>%
 
 ## Network of contributors 
 
-```{r}
+Create a network of contributors (i.e., who is working with whom on which projects?)
+
+```{r contributor co-occurrences}
 # get co-occurences
 Contributor_Project <- xtabs(~ `Project Name` + Contributor, 
                                 data=dt_long %>% 
@@ -211,9 +213,7 @@ Contributor_Project <- xtabs(~ `Project Name` + Contributor,
 Contributor_occur <- crossprod(Contributor_Project, Contributor_Project)
 ```
 
-<h3>Contributor Network Graph</h3>
-
-```{r Contributor-Network-Graph-Figure}
+```{r Contributor Network Graph}
 Contributor_nodes_n <- dt_long %>%
   group_by(Contributor) %>% 
   count(Contributor)
@@ -243,12 +243,21 @@ Contributor_edges <- which(upper.tri(Contributor_occur), arr.ind = TRUE) %>%
   ) %>%
   filter(width_n > 0) %>%  # Optional: remove 0s
   mutate(width = (width_n/10)^(3)) %>% 
-  select(from, to, width)
+  select(from, to, width) 
+
+## add one hidden edge that will move the Chinese translator team closer to the center
+additional_hidden_edge <- data.frame(from = c("Fang Cathy", "Chen Liangjie", "Jin Shuxian", "Yang Jinbiao", "Liu Ruoting", "Wang Xinyu", "Xu Yu", "Ji Xuejun", "Wang Zixi"), 
+                                     to = c("Azevedo Flavio"), 
+                                     width = 0.0,
+                                     hidden = TRUE)
+
+Contributor_edges_plot <- rbind(Contributor_edges %>% 
+  mutate(hidden = F), additional_hidden_edge)
 
 visNetwork(Contributor_nodes, 
-           Contributor_edges) %>%
+           Contributor_edges_plot) %>%
   visIgraphLayout(layout = "layout_nicely",
-                  randomSeed = 1001) %>% 
+                  randomSeed = 1001)  %>%
   visEdges(color = list(opacity = 0.1)
   ) %>%
   visNodes(font = list(size = 5,
@@ -274,6 +283,7 @@ visNetwork(Contributor_nodes,
     selectedBy = list(variable = "groups", multiple = T, hideColor = "darkgrey")
   ) 
 ```
+
 
 ```{r Basic visualizations}
 # Contributors per project
