@@ -83,7 +83,10 @@ merged_data['special_role'] = False
 merged_data = pd.concat([df_roles, merged_data], axis=0)
 merged_data.reset_index(drop=True, inplace=True)
 
-merged_data = merged_data.sort_values(by='Surname')
+# Sort by surname, placing 'Azevedo' last because he is a massive pain in the backside
+merged_data['sort_order'] = merged_data['Surname'].apply(lambda x: 'ZZZZZZZZ' if str(x).strip() == 'Azevedo' else str(x).strip())
+merged_data = merged_data.sort_values(by='sort_order')
+merged_data = merged_data.drop(columns='sort_order')
 
 # Strip spaces from 'ORCID iD' in merged data
 merged_data['ORCID iD'] = merged_data['ORCID iD'].str.strip()
