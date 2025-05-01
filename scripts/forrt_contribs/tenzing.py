@@ -83,8 +83,15 @@ merged_data['special_role'] = False
 merged_data = pd.concat([df_roles, merged_data], axis=0)
 merged_data.reset_index(drop=True, inplace=True)
 
-# Sort by surname, placing 'Azevedo' last because he is a massive pain in the backside
-merged_data['sort_order'] = merged_data['Surname'].apply(lambda x: 'ZZZZZZZZ' if str(x).strip() == 'Azevedo' else str(x).strip())
+# Replace 'Azevedo*' with 'Azevedo', leave all other names unchanged
+merged_data['Surname'] = merged_data['Surname'].apply(
+    lambda x: 'Azevedo' if str(x).strip() == 'Azevedo*' else x
+)
+
+# Sort based on surname, placing Azevedo last because he is a massive pain in the backside
+merged_data['sort_order'] = merged_data['Surname'].apply(
+    lambda x: 'ZZZZZZZZ' if str(x).strip() == 'Azevedo' else str(x).strip()
+)
 merged_data = merged_data.sort_values(by='sort_order')
 merged_data = merged_data.drop(columns='sort_order')
 
