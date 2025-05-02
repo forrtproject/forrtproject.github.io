@@ -2,6 +2,7 @@
 title: "FORRT Contributor Analyses"
 date: "`r format(Sys.time(), '%d %B, %Y')`"
 type: plain_page
+always_allow_html: true
 output: 
   md_document:
     preserve_yaml: true
@@ -35,6 +36,7 @@ library(Matrix)
 google_sheet_url_automation <- "https://docs.google.com/spreadsheets/d/1MUD54FQUhfcBKrvr5gCYoh2wgbJ6Lf7oAJRAqsQ-Nag/edit"
 
 # Get sheet names
+gs4_deauth()
 sheets <- sheet_names(google_sheet_url_automation)
 
 # Exclude the first four Automation Source sheets
@@ -213,7 +215,7 @@ Contributor_Project <- xtabs(~ `Project Name` + Contributor,
 Contributor_occur <- crossprod(Contributor_Project, Contributor_Project)
 ```
 
-```{r Contributor Network Graph}
+```{r contributor-network, fig.alt = "Network chart of FORRT contributors"}
 Contributor_nodes_n <- dt_long %>%
   group_by(Contributor) %>% 
   count(Contributor)
@@ -335,9 +337,10 @@ roles_plot <- ggplot(role_distribution, aes(x = reorder(Role, n), y = n)) +
         panel.spacing = unit(0, "lines"))
 ```
 
-```{r Projects-Plot-Figure}
+```{r projects-plot, fig.alt = "Bar chart of contributors per project"}
 projects_plot
 ```
-```{r Roles-Plot-Figure}
+
+```{r roles-plot, fig.alt = "Bar chart of contributions by Tenzing role"}
 roles_plot
 ```
