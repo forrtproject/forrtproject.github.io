@@ -31,7 +31,7 @@ jobs:
         uses: eddelbuettel/github-actions/r2u-setup@master
       - uses: r-lib/actions/setup-pandoc@v2
       - name: Install tenzing R dependencies
-        run: Rscript -e 'install.packages(c("rmarkdown","ggplot2", "readxl", "dplyr", "googlesheets4", "stringr", "gridExtra", "glue", "tidygraph", "ggraph", "igrasph"))'
+        run: Rscript -e 'install.packages(c("rmarkdown","ggplot2", "readxl", "dplyr", "googlesheets4", "stringr", "gridExtra", "glue", "tidygraph", "ggraph", "igraph", "visNetwork"))'
 
       - name: Run Tenzing analysis
         continue-on-error: true  # Continue even if this step fails
