@@ -16,5 +16,5 @@ contributorship information.
 
 ![Projects Plot Figure](Projects-Plot-Figure-1.png)
 
-![Roles Plot Figure](Roles-Plot-Figure-1.png)
+![Roles Plot Figure](Role-Plot-Figure-1.png)
 
