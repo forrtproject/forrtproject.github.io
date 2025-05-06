@@ -188,7 +188,7 @@ mean_project_contributors <- mean(project_contributors$Unique_Contributors)
 
 ```{r Summary for Website}
 output <- glue("
-As of {Sys.Date()}, FORRT has a total of {sprintf('%d', count_projects)} completed or ongoing projects and support teams, with a total of {format(unique_contributors, big.mark = ',')} contributors. There is an average (mean) of {sprintf('%.2f', mean_contributions_per_person)} contributions per person across all FORRT projects, and the average number of contributors per project is {sprintf('%.2f', mean_project_contributors)}. See below for our interactive network of contributors.")
+As of {format(Sys.Date(), '%d %B %Y')}, FORRT has a total of {sprintf('%d', count_projects)} completed or ongoing projects and support teams, with a total of {format(unique_contributors, big.mark = ',')} contributors. There is an average (mean) of {sprintf('%.2f', mean_contributions_per_person)} contributions per person across all FORRT projects, and the average number of contributors per project is {sprintf('%.2f', mean_project_contributors)}.")
 ```
 
 `r output`
@@ -199,10 +199,7 @@ dt_long <- dt_long %>%
   mutate(Contributor = paste(na.omit(c(`Surname`, `First name`)), collapse = " ")) %>% 
   mutate(Lead = if_else(Role %in% c("lead", "co-lead"), Role, "other"))
 ```
-
-## Network of contributors 
-
-Create a network of contributors (i.e., who is working with whom on which projects?)
+## Network of Contributors
 
 ```{r contributor co-occurrences}
 # get co-occurences
