@@ -14,4 +14,4 @@ If you want to check if a replication study is already included in the database,
 the easiest way is to use the 
 <a href="/apps/fred_annotator.html" target="_blank">References Annotator</a>
 
-<iframe src="https://www.soscisurvey.de/replicate", width = "100%", height="800px"></iframe>
+<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeMCwdtP0TPgL55stniuyyTxnNwyC34mO4VUuLcQwYrLI89sQ/viewform", width = "100%", height="800px"></iframe>
