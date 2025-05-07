@@ -48,7 +48,7 @@ Ideal candidates for this role will:
 
 ## Application Process
 
-Please complete the tasks below and fill out the<span style="text-decoration:underline;"> application form</span>. 
+Please complete the tasks below and fill out [the application form](https://docs.google.com/forms/d/1WHUwV3DD653gzfqL1VkRJCQHc92-4RPp7QiTOpARp0Y/edit). 
 
 ● Submit a brief CV and the latest academic transcript (if available). 
 
