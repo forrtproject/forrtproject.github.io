@@ -25,7 +25,7 @@ The FORRT Replication Hub provides a comprehensive collection of resources and t
 
 3. [Replication Research](http://replicationresearch.org) is a diamond open access journal for reproductions, replications, and conceptual articles from multiple fields. It is being developed by FORRT and the Münster Center for Open Science and will be launched in fall 2025\.  
 
-   <a href="http://replicationresearch.org">
+   <a href="http://replicationresearch.org" target="_blank">
       <img src="rep_research.webp" alt="Replication Research">
    </a>
 
