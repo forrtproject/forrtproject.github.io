@@ -24,7 +24,10 @@ The FORRT Replication Hub provides a comprehensive collection of resources and t
 2. [FReD Annotator](/apps/fred_annotator.html) is a tool aimed at enhancing the quality and accessibility of data within the FORRT Replication Database. It allows users to check a list of references for potential replication attempts and returns a reading list that includes replication attempts and outcomes of the replication studies.
 
 3. [Replication Research](http://replicationresearch.org) is a diamond open access journal for reproductions, replications, and conceptual articles from multiple fields. It is being developed by FORRT and the Münster Center for Open Science and will be launched in fall 2025\.  
-   <img src="rep_research.webp" /> 
+
+   <a href="http://replicationresearch.org">
+      <img src="rep_research.webp" alt="Replication Research">
+   </a>
 
 4. [FORRT’s Replications and Reversals](/reversals/) is a crowdsourced list of studies that have been replicated, not replicated, or reversed (i.e., replication results were the opposite of original results) for pedagogical purposes. It stopped updating in late 2023 as we are merging it into FReD. An updated version of the list will be available shortly.
 
