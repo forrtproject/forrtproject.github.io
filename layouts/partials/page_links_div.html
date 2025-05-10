@@ -1,0 +1,28 @@
+{{/* Div wrapper around page links. */}}
+
+{{ $page := . }}
+
+{{/* Skip on pages without a .File (e.g. taxonomy-term pages) */}}
+{{ if $page.File }}
+  {{ $pdf_link := false }}
+  {{ $cite_link := false }}
+  {{ $slug := $page.File.ContentBaseName }}
+  {{ $resource := $page.Resources.GetMatch (printf "%s.pdf" $slug) }}
+  {{ with $resource }}
+    {{ $pdf_link = true }}
+  {{ end }}
+
+  {{ $resource := $page.Resources.GetMatch "cite.bib" }}
+  {{ with $resource }}
+    {{ $cite_link = true }}
+  {{ end }}
+
+  {{ if or $cite_link $pdf_link .Params.external_link .Params.url_preprint .Params.url_pdf .Params.url_slides .Params.url_video .Params.url_source .Params.url_code .Params.url_dataset .Params.url_poster .Params.url_project .Params.doi .Params.links .Params.projects .Params.slides }}
+  <div class="btn-links mb-3">
+    {{ with .Params.external_link }}
+      <a class="btn btn-outline-primary my-1" href="{{ . }}" target="_blank" rel="noopener">{{ i18n "open_project_site" }}</a>
+    {{ end }}
+    {{ partial "page_links" (dict "page" $page "is_list" 0) }}
+  </div>
+  {{ end }}
+{{ end }}

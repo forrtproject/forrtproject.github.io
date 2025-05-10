@@ -3,9 +3,11 @@ title: "FORRT Contributor Analyses"
 date: "`r format(Sys.time(), '%d %B, %Y')`"
 type: plain_page
 always_allow_html: true
-output: 
-  md_document:
-    preserve_yaml: true
+output:
+  html_document:
+    self_contained: false       # don’t inline – write out .js/.css
+    keep_md:     true           # keep the .md
+    lib_dir:     "htmlwidgets_libs"  # where to drop htmlwidgets.js & visNetwork deps
 ---
 
 ```{r, setup, include=FALSE}
