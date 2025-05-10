@@ -5,6 +5,13 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="generator" content="Source Themes Academic {{ site.Data.academic.version }}">
 
+  {{ range .Resources.Match "htmlwidgets_libs/**/*.js" }}
+  <script src="{{ .RelPermalink }}"></script>
+{{ end }}
+{{ range .Resources.Match "htmlwidgets_libs/**/*.css" }}
+  <link rel="stylesheet" href="{{ .RelPermalink }}">
+{{ end }}
+
   <link rel="stylesheet" href="/academicons/css/academicons.min.css"/>
 
 
@@ -25,7 +32,7 @@
   {{ $scr.Set "superuser_username" $superuser_username }}{{/* Set superuser globally for page_author.html. */}}
 
   {{ with $superuser_name }}<meta name="author" content="{{ . }}">{{ end }}
-  
+
   {{/* Noindex for staging environment */}}
   {{ if eq (getenv "HUGO_ENV") "staging" }}
   <meta name="robots" content="noindex, nofollow">
