@@ -36,7 +36,7 @@ jobs:
       - name: Run Tenzing analysis
         continue-on-error: true  # Continue even if this step fails
         run: |
-          Rscript -e "rmarkdown::render('scripts/contributor-analysis/contributor_analysis.rmd', output_format = 'md_document')"
+          Rscript -e "rmarkdown::render('scripts/contributor-analysis/contributor_analysis.rmd')"
 
       - name: Move Tenzing analysis
         continue-on-error: true  # Continue even if this step fails
