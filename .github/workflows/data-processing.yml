@@ -43,7 +43,9 @@ jobs:
         run: |
           mv scripts/contributor-analysis/contributor_analysis.md content/contributor-analysis/index.md
           mv scripts/contributor-analysis/*.png content/contributor-analysis/
+          rm -rf content/contributor-analysis/htmlwidgets_libs
           mv scripts/contributor-analysis/htmlwidgets_libs content/contributor-analysis/
+          sed -i.bak -e '/^```{=html}$/d' -e '/^```$/d' content/contributor-analysis/index.md && rm content/contributor-analysis/index.md.bak
 
       - name: Install Python dependencies
         run: python3 -m pip install -r ./requirements.txt
