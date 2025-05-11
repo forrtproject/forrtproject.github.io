@@ -8,7 +8,7 @@ headless = true  # This file represents a page section.
 active = true  # Activate this widget? true/false
 weight = 5  # Order that this section will appear.
 
-title = ""
+title = "Publications, Preprints, Policy Briefs, Op-Eds, Shiny Apps, Data & R-packages"
 subtitle = ""
 
 [design]
@@ -69,25 +69,25 @@ subtitle = ""
   text-align: center;
   margin-top: .5em;
 }
+
 </style>
-    
-
-# Publications, Preprints, & Policy Briefs & Op-Eds
-
-    
-<br>
-
-## Academic peer-reviewed publications 
-
-
-<figure class="citation-container">
-  <img src="citation_chart.webp" alt="Citation Chart">
-  <figcaption><a href="https://scholar.google.com/…" target="_blank">Details on Google Scholar</a></figcaption>
-</figure>
 
 ---
 
+### **Academic peer-reviewed publications**
+
+---
+
+<figure class="citation-container">
+  <img src="citation_chart.webp" alt="Citation Chart">
+  <figcaption><a href="https://scholar.google.com/citations?user=JrBcgGMAAAAJ&hl=en&authuser=1" target="_blank">Details on Google Scholar</a></figcaption>
+</figure>
+
+This page showcases the diverse scholarly and public-facing outputs produced by FORRT and its community—including peer-reviewed publications, preprints, policy briefs, opinion pieces, interactive apps, datasets, and open-source tools. It reflects our ongoing efforts to contribute to scientific discourse, inform policy, and promote open, inclusive, and transparent research practices. Whether you're a researcher, educator, or policymaker, this hub provides access to FORRT’s evolving body of work. Dive in to discover, cite, or collaborate.
+
 <br>
+
+---
 
 ### **The Replication Database: Documenting the Replicability of Psychological Science**
 
