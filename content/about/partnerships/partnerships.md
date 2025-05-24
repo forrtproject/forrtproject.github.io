@@ -261,6 +261,18 @@ More information at [www.openscienceGATE.com](https://opensciencegate.com/)
 
 ---
 
+## FORRT membership in the UNESCO Global Open Science Partnership
+
+<a href="logos/2025_04_09_FORRT_Flavio_Azevedo_.pdf" target="_blank">
+  <img src="logos/UNESCO.webp" alt="UNESCO Logo">
+</a>
+
+Read more [here](logos/2025_04_09_FORRT_Flavio_Azevedo_.pdf)
+
+<br>
+
+---
+
 ## **Project-specific Partners**
 ---
 
