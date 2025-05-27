@@ -257,6 +257,16 @@ To find out more please visit our [website](https://jrp.pscholars.org/) or email
 
 More information at [www.openscienceGATE.com](https://opensciencegate.com/)
 
+---
+
+<a href="https://www.reprodutibilidade.org/en" target="_blank" >
+  <img src="logos/LOGO-BRRN.webp" alt="The Brazilian Reproducibility Network (BrRN)" align="left" width= 200px />
+</a> 
+
+<br>
+
+[The Brazilian Reproducibility Network (BrRN)](https://www.reprodutibilidade.org/en) is a multidisciplinary and multi-institutional initiative aimed at promoting transparent and reliable research practices within the Brazilian scientific community.
+
 <br>
 
 ---
