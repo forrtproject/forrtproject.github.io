@@ -263,6 +263,12 @@
   parent = "replications"
 
 [[main]]
+  name = "Replication Research Journal"
+  url = "https://replicationresearch.org"
+  weight = 51
+  parent = "replications"
+
+[[main]]
   name = "FReD Explorer"
   url = "https://forrt.org/apps/fred_explorer.html"
   weight = 52
