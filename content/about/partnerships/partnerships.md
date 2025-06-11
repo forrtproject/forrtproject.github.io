@@ -223,7 +223,14 @@ classtitle = "text-center"
 <br>
 
 ---
+
+<br>
+
 <img src="icor.webp" align="right" /> [Incentivising Collaborative and Open Research (ICOR)](https://incentivizingopen.org/) Enables and incentivizes an open and collaborative research culture by strategizing, connecting and implementing projects that seek to change the status quo of competition throughout the research cycle. ICOR is also building a body of evidence and case studies on the impact of projects that facilitate collaborative open research, and to demonstrate how these practices, tools, metrics and incentives address the larger objective of finding innovative solutions to real-world problems.
+
+<br>
+
+---
 
 <br>
 
@@ -231,8 +238,50 @@ classtitle = "text-center"
 The JRP supports an average of six research projects each year, providing a framework (e.g., summer school, meet-ups, and conferences), leadership, and scientific support. We adhere to the principles of Open Science and aim to build research competencies in line with these values in our students and scientific research. By offering support, training, and engagement opportunities to the community, we hope to make the hidden curriculum of academia more transparent and equip the next generation of scholars with both the how and why of Open Science.
 To find out more please visit our [website](https://jrp.pscholars.org/) or email us at [jrp@pscholars.org](jrp@pscholars.org) with any questions about involvement for you or your students!
 
+<br>
+
+---
 
 <br>
+
+<img src="logos/FeministWonderLabCollective_Logo.webp" align="right" width=350px /> We are an [international group of early career researchers (ECRs)](https://feministwonderlabcoll.github.io/feministwonderlab/index.html), working in the social and life sciences, who passionately believe in making academia a better place for underrepresented people. We ourselves are of diverse cultural, national, linguistic, gender, and neural ability as well as social backgrounds. The Collective meets online at least once a month to work on projects related to feminist perspectives on science, teaching, and academia. Our mission is to promote equity and justice for all people in the academy.
+
+<br>
+<br>
+
+---
+
+<br>
+
+<img src="logos/gate_logo.webp" align="left" /> [The Open Science Learning GATE](https://opensciencegate.com/) initiative supports the continual improvement of Open Science practices by sharing knowledge that aligns with the ever-evolving research field. Through connecting Open Science trainers, communities, catalogues and repositories, complementing existing initiatives and promoting Open Science education the GATE supports the advancement of innovation and progress through trustworthy research. Its broad data collection, in-depth analysis and indicative dissemination of the current state of the art in Open Science offers guidance for Open Science communities in education, infrastructure and policy making. GATE has its origins in NERQ <img src="logos/NERQ.webp" align="right"  width=200px />
+
+More information at [www.openscienceGATE.com](https://opensciencegate.com/)
+
+---
+
+<a href="https://www.reprodutibilidade.org/en" target="_blank" >
+  <img src="logos/LOGO-BRRN.webp" alt="The Brazilian Reproducibility Network (BrRN)" align="left" width= 200px />
+</a> 
+
+<br>
+
+[The Brazilian Reproducibility Network (BrRN)](https://www.reprodutibilidade.org/en) is a multidisciplinary and multi-institutional initiative aimed at promoting transparent and reliable research practices within the Brazilian scientific community.
+
+<br>
+
+---
+
+## FORRT membership in the UNESCO Global Open Science Partnership
+
+<a href="logos/2025_04_09_FORRT_Flavio_Azevedo_.pdf" target="_blank">
+  <img src="logos/UNESCO.webp" alt="UNESCO Logo">
+</a>
+
+Read more [here](logos/2025_04_09_FORRT_Flavio_Azevedo_.pdf)
+
+<br>
+
+---
 
 ## **Project-specific Partners**
 ---

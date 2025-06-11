@@ -1,5 +1,5 @@
 ---
-title: Glossar
+title: Glossary
 toc: true
 # View.
 #   1 = List
@@ -14,6 +14,9 @@ header:
   image: "resources.webp"
 type: "glossary"
 ---
+
+<div dir="rtl" style="text-align: right;">
+
 
 <div class="btn-group flex-wrap text-center"><a href="/glossary/english" class="btn btn-primary py-2 m-1 btn-lg active" style="line-height:1;border-radius:6px">English</a>
 <a href="/glossary/german" class="btn btn-primary py-2 m-1 btn-lg" style="line-height:1;border-radius:6px">Deutsch (German)</a>
@@ -45,3 +48,4 @@ type: "glossary"
 
 بعد النّجاح الذي حقّقته المرحلة الأولى، ندعوكم للمساهمة في تحسين هذا المرجع. نحن نسعى للحصول على مساهمات متنوّعة تشمل تحسين التّعريفات الحاليّة، وتوسيع نطاق المصطلحات، بالإضافة إلى ترجمة المصطلحات لتعزيز سهولة الوصول.
 
+</div>
