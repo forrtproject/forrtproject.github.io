@@ -307,6 +307,13 @@
 
 
 [[main]]
+  name = "Large-Scale Replication Projects"
+  url = "/replication-hub/large-scale-replication-projects"
+  weight = 58
+  parent = "replications"
+
+
+[[main]]
   name = "Publications"
   url = "/publications/"
   weight = 70
