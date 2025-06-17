@@ -168,7 +168,7 @@ Here you can find a list of completed and ongoing projects that summarize replic
    </td>
    <td>Sports Sciences
    </td>
-   <td><a href="https://ssreplicationcentre.com">https://ssreplicationcentre.com</a> 
+   <td><a href="https://ssreplicationcentre.com">https://ssreplicationcentre.com</a>, <a href= "https://doi.org/10.1007/s40279-025-02201-w">https://doi.org/10.1007/s40279-025-02201-w</a>
    </td>
    <td>No
    </td>
