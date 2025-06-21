@@ -31,18 +31,21 @@ jobs:
         uses: eddelbuettel/github-actions/r2u-setup@master
       - uses: r-lib/actions/setup-pandoc@v2
       - name: Install tenzing R dependencies
-        run: Rscript -e 'install.packages(c("rmarkdown","ggplot2", "readxl", "dplyr", "googlesheets4", "stringr", "gridExtra", "glue", "tidygraph", "ggraph", "igrasph"))'
+        run: Rscript -e 'install.packages(c("rmarkdown","ggplot2", "readxl", "dplyr", "googlesheets4", "stringr", "gridExtra", "glue", "tidygraph", "ggraph", "igraph", "visNetwork"))'
 
       - name: Run Tenzing analysis
         continue-on-error: true  # Continue even if this step fails
         run: |
-          Rscript -e "rmarkdown::render('scripts/contributor-analysis/contributor_analysis.rmd', output_format = 'md_document')"
+          Rscript -e "rmarkdown::render('scripts/contributor-analysis/contributor_analysis.rmd')"
 
       - name: Move Tenzing analysis
         continue-on-error: true  # Continue even if this step fails
         run: |
-          mv scripts/contributor-analysis/contributor_analysis.md content/contributor-analysis/_index.md
+          mv scripts/contributor-analysis/contributor_analysis.md content/contributor-analysis/index.md
           mv scripts/contributor-analysis/*.png content/contributor-analysis/
+          rm -rf content/contributor-analysis/htmlwidgets_libs
+          mv scripts/contributor-analysis/htmlwidgets_libs content/contributor-analysis/
+          sed -i.bak -e '/^```{=html}$/d' -e '/^```$/d' content/contributor-analysis/index.md && rm content/contributor-analysis/index.md.bak
 
       - name: Install Python dependencies
         run: python3 -m pip install -r ./requirements.txt
@@ -96,4 +99,5 @@ jobs:
             content/curated_resources/
             data/ # GA data
             content/contributor-analysis/
+            content/publications/citation_chart.webp
           retention-days: 1
