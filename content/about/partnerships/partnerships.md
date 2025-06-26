@@ -271,6 +271,14 @@ More information at [www.openscienceGATE.com](https://opensciencegate.com/)
 
 ---
 
+<br>
+
+<img src="logos/OSC_Logo.webp" align="right" width=500px alt="LMU Open Science Center logo" /> [The LMU Open Science Center (OSC)](https://www.osc.uni-muenchen.de/index.html) has the mission to promote and foster open research practices at LMU Munich. It is led by Prof. Dr. Felix Schönbrodt. As a central knowledge hub, the OSC provides support for researchers on various aspects of open science, including research data management, FAIR data sharing, licensing, data privacy, and reproducible workflows. The OSC offers a range of services to researchers as well as students and research support staff, such as training programs, workshops, public talks, and the development of core curricula on open research practices. Additionally, the center is involved in original research on meta-science and reproducibility, contributing to the broader scientific community.
+
+<br>
+
+---
+
 ## FORRT membership in the UNESCO Global Open Science Partnership
 
 <a href="logos/2025_04_09_FORRT_Flavio_Azevedo_.pdf" target="_blank">
