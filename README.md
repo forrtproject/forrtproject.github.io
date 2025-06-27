@@ -4,7 +4,7 @@
 [![pages-build-deployment](https://github.com/forrtproject/forrtproject.github.io/actions/workflows/pages/pages-build-deployment/badge.svg)](https://github.com/forrtproject/forrtproject.github.io/actions/workflows/pages/pages-build-deployment)
 [![Website](https://img.shields.io/website?down_color=red&down_message=offline&label=forrt.org&up_color=blue&up_message=online&url=https%3A%2F%2Fforrt.org%2F)](https://forrt.org)
 
-This is repository for the website of **FORRT - a Framework for Open and Reproducible Research Training**.
+This is repository for the website of **FORRT - the Framework for Open and Reproducible Research Training**.
 
 ## Welcome!
 
