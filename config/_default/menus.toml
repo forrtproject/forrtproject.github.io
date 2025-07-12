@@ -245,11 +245,6 @@
   parent = "nexus"
 
 
-
-
-
-
-
 [[main]]
   name = "Replication Hub"
   url = "/replication-hub"
@@ -263,14 +258,14 @@
   parent = "replications"
 
 [[main]]
-  name = "FReD Explorer"
-  url = "https://forrt.org/apps/fred_explorer.html"
+  name = "FReD Annotator"
+  url = "https://forrt.org/apps/fred_annotator.html"
   weight = 52
   parent = "replications"
 
 [[main]]
-  name = "FReD Annotator"
-  url = "https://forrt.org/apps/fred_annotator.html"
+  name = "FReD Explorer"
+  url = "https://forrt.org/apps/fred_explorer.html"
   weight = 53
   parent = "replications"
 
@@ -281,8 +276,8 @@
   parent = "replications"
 
 [[main]]
-  name = "Replications & Reversals"
-  url = "/reversals"
+  name = "Large-Scale Replication Projects"
+  url = "/replication-hub/large-scale-replication-projects"
   weight = 55
   parent = "replications"
 
@@ -292,11 +287,22 @@
   weight = 56
   parent = "replications"
 
+[[main]]
+  name = "Replications & Reversals"
+  url = "/reversals"
+  weight = 57
+  parent = "replications"
+
+[[main]]
+  name = "Replication Research Journal"
+  url = "https://replicationresearch.org"
+  weight = 58
+  parent = "replications"
 
 [[main]]
   name = "Submit a replication to FReD"
   url = "/replication-hub/submit"
-  weight = 57
+  weight = 59
   parent = "replications"
 
 
