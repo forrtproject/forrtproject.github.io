@@ -1,6 +1,5 @@
 ---
 title: "FORRT Contributor Analyses"
-date: "`r format(Sys.time(), '%d %B, %Y')`"
 type: plain_page
 always_allow_html: true
 output:
@@ -190,7 +189,7 @@ mean_project_contributors <- mean(project_contributors$Unique_Contributors)
 
 ```{r Summary for Website}
 output <- glue("
-As of {format(Sys.Date(), '%d %B %Y')}, FORRT has a total of {sprintf('%d', count_projects)} completed or ongoing projects and support teams, with a total of {format(unique_contributors, big.mark = ',')} contributors. There is an average (mean) of {sprintf('%.2f', mean_contributions_per_person)} contributions per person across all FORRT projects, and the average number of contributors per project is {sprintf('%.2f', mean_project_contributors)}. You can see the full list of FORRT contributors and their indivudual contributions [here](https://forrt.org/contributors/).")
+As of {format(Sys.Date(), '%d %B %Y')}, FORRT has a total of {sprintf('%d', count_projects)} completed or ongoing projects and support teams, with a total of {format(unique_contributors, big.mark = ',')} contributors. There is an average (mean) of {sprintf('%.2f', mean_contributions_per_person)} contributions per person across all FORRT projects, and the average number of contributors per project is {sprintf('%.2f', mean_project_contributors)}. You can see the full list of FORRT contributors and their individual contributions [here](https://forrt.org/contributors/).")
 ```
 
 `r output`
