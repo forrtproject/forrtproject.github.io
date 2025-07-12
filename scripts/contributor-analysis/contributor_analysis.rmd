@@ -1,6 +1,5 @@
 ---
 title: "FORRT Contributor Analyses"
-date: "`r format(Sys.time(), '%d %B, %Y')`"
 type: plain_page
 always_allow_html: true
 output:
