@@ -49,7 +49,7 @@ We provide a suite of resources to support the use and implementation of the Cit
 
 ## Toolkit Website
 
-<a href="../citation-politics/toolkit/" class="btn btn-primary py-2 m-1 btn-lg" style="line-height:1;border-radius:6px">Toolkit Website</a>
+<a href="/citation-politics/toolkit/" class="btn btn-primary py-2 m-1 btn-lg" style="line-height:1;border-radius:6px">Toolkit Website</a>
 
 
 **Citation Self-Audit**: [to be created through Sarah’s BA/Leverhulme grant] This guide walks you through using the Citational Justice Toolkit to conduct an audit on your own work and more importantly - how to pinpoint tools and practices to help you make targeted changes.
