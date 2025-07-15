@@ -15,10 +15,10 @@ draft: false
 # Featured image
 # To use, add an image named `featured.webp/png` to your page's folder.
 # Focal points: Smart, Center, TopLeft, Top, TopRight, Left, Right, BottomLeft, Bottom, BottomRight.
-image:
-  caption: "A toolkit to encourage thoughtful citation"
-  focal_point: "Center"
-  preview_only: false
+# image:
+#   caption: "A toolkit to encourage thoughtful citation"
+#   focal_point: "Center"
+#   preview_only: false
 
 # Projects (optional).
 #   Associate this post with one or more of your projects.
@@ -29,7 +29,7 @@ projects: []
 type: plain_page
 ---
 
-{{< citation-politics-toolkit >}}
+<!-- {{< citation-politics-toolkit >}} -->
 
 ## Overview
 
@@ -45,11 +45,11 @@ We provide a suite of resources to support the use and implementation of the Cit
 
 ## Manuscript: 
 
-**Loading Soon**
+**coming Soon**
 
 ## Toolkit Website
 
-<a href="/citation-politics/toolkit/" class="btn btn-primary py-2 m-1 btn-lg" style="line-height:1;border-radius:6px">Toolkit Website</a>
+<a href="./toolkit/" class="btn btn-primary py-2 m-1 btn-lg" style="line-height:1;border-radius:6px">Toolkit Website</a>
 
 
 **Citation Self-Audit**: [to be created through Sarah’s BA/Leverhulme grant] This guide walks you through using the Citational Justice Toolkit to conduct an audit on your own work and more importantly - how to pinpoint tools and practices to help you make targeted changes.
