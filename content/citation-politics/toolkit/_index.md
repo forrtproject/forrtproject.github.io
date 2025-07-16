@@ -17,7 +17,6 @@ image:
   preview_only: false
 
 projects: []
-slug: "/citations-politics/toolkit/"
 ---
 
 <img src="featured.webp" width=700px align="center"  alt="Citation Politics Toolkit" />
