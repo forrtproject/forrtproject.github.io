@@ -1,5 +1,9 @@
 name: Data Processing
 
+# This workflow is triggered daily at midnight and can also be manually triggered.
+# It processes data from various scripts and uploads the processed data as an artifact.
+# The data is used to update the website's content.
+
 on:
   schedule:
     - cron: '0 0 * * *'  # Daily at midnight
@@ -23,16 +27,39 @@ jobs:
           python-version: ${{ env.PYTHON_VERSION }}
           cache: 'pip'
 
+      - name: Setup r2u
+        uses: eddelbuettel/github-actions/r2u-setup@master
+      - uses: r-lib/actions/setup-pandoc@v2
+      - name: Install tenzing R dependencies
+        run: Rscript -e 'install.packages(c("rmarkdown","ggplot2", "readxl", "dplyr", "googlesheets4", "stringr", "gridExtra", "glue", "tidygraph", "ggraph", "igraph", "visNetwork"))'
+
+      - name: Run Tenzing analysis
+        continue-on-error: true  # Continue even if this step fails
+        run: |
+          Rscript -e "rmarkdown::render('scripts/contributor-analysis/contributor_analysis.rmd')"
+
+      - name: Move Tenzing analysis
+        continue-on-error: true  # Continue even if this step fails
+        run: |
+          mv scripts/contributor-analysis/contributor_analysis.md content/contributor-analysis/index.md
+          mv scripts/contributor-analysis/*.png content/contributor-analysis/
+          rm -rf content/contributor-analysis/htmlwidgets_libs
+          mv scripts/contributor-analysis/htmlwidgets_libs content/contributor-analysis/
+          sed -i.bak -e '/^```{=html}$/d' -e '/^```$/d' content/contributor-analysis/index.md && rm content/contributor-analysis/index.md.bak
+
       - name: Install Python dependencies
         run: python3 -m pip install -r ./requirements.txt
 
       - name: Run Tenzing script
+        continue-on-error: true  # Continue even if this step fails
         run: python3 scripts/forrt_contribs/tenzing.py
 
       - name: Run Curated Resources script
+        continue-on-error: true  # Continue even if this step fails
         run: python3 content/resources/resource.py
 
       - name: Move and validate Tenzing output
+        continue-on-error: true  # Continue even if this step fails
         run: |
           mv scripts/forrt_contribs/tenzing.md content/contributors/tenzing.md
           if [ ! -f content/contributors/tenzing.md ]; then
@@ -41,6 +68,7 @@ jobs:
           fi
 
       - name: Validate curated resources
+        continue-on-error: true  # Continue even if this step fails
         run: |
           for file in content/curated_resources/*; do
             if [ ! -f "$file" ]; then
@@ -50,10 +78,17 @@ jobs:
           done
 
       - name: Download GA Data
+        continue-on-error: true  # Continue even if this step fails
         env:
           GA_API_CREDENTIALS: ${{ secrets.GA_API_CREDENTIALS }}
           GA_PROPERTY_ID: ${{ secrets.GA_PROPERTY_ID }}
         run: python scripts/download_ga_data.py
+
+      - name: Run Google Scholar script
+        continue-on-error: true  # Continue even if this step fails
+        run: python3 scripts/gs-cite/google_scholar.py
+        env:
+          SERPAPI: ${{ secrets.SERPAPI }}
 
       - name: Upload data artifact
         uses: actions/upload-artifact@v4
@@ -63,4 +98,6 @@ jobs:
             content/contributors/tenzing.md
             content/curated_resources/
             data/ # GA data
+            content/contributor-analysis/
+            content/publications/citation_chart.webp
           retention-days: 1

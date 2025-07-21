@@ -1,12 +1,12 @@
 # Font style metadata
 name = "forrt"
 
-# Optional Google font URL
-google_fonts = "Century Schoolbook:400,700|Century Schoolbook:400,400italic,700|Century Schoolbook"
+# Load Domine (regular, italic, bold)
+# Usual FORRT font is Century Schoolbook - but not available on Google Fonts
+google_fonts = "Domine:400,400italic,700"
 
-# Font families
-heading_font = "Century Schoolbook"
-body_font = "Century Schoolbook"
-nav_font = "Century Schoolbook"
-mono_font = "Century Schoolbook"
-
+# Use Domine everywhere
+heading_font = "Domine"
+body_font    = "Domine"
+nav_font     = "Domine"
+mono_font    = "Domine"
