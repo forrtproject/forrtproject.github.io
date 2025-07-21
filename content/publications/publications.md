@@ -87,6 +87,22 @@ This page showcases the diverse scholarly and public-facing outputs produced by 
 
 <br>
 
+## **Mapping Open Science Communities in Psychology: A Systematic Narrative Review**
+
+---
+
+We have written a manuscript, entitled *International Initiatives to Enhance Awareness and Uptake of Open Research in Psychology: A Systematic Narrative Review,* which outlines the global landscape of Open Science initiatives within psychology. This preprint provides a systematic review of *187 initiatives*, categorized into procedural, structural, and community-based changes, highlighting the roles they play in advancing transparency, replicability, and collaboration in research practices. The review aims to increase awareness, adoption, and coordination of these initiatives across psychology and beyond, serving as a roadmap for disciplines experiencing similar challenges.
+
+
+***Status***: Our paper is Published by:**Royal Society** 🎉🥳. Cite as:
+> Skubera Magda, Korbmacher Max, Evans Thomas Rhys, Azevedo Flavio and Pennington Charlotte R. 2025International initiatives to enhance awareness and uptake of open research in psychology: a systematic mapping reviewR. Soc. Open Sci.12241726. https://doi.org/10.1098/rsos.241726 
+
+<div class='altmetric-embed' data-badge-type='medium-donut' data-doi="https://doi.org/10.1098/rsos.241726"></div>
+
+---
+
+<br>
+
 ---
 
 ### **The Replication Database: Documenting the Replicability of Psychological Science**
@@ -233,22 +249,6 @@ The **<font style="color:#0e2a38">preprint</font>** can [be found here (osf.io/f
   <h1> Preprints </h1>
   <hr>
 </div>
-
-## **Mapping Open Science Communities in Psychology: A Systematic Narrative Review**
-
----
-
-We have written a manuscript, entitled *International Initiatives to Enhance Awareness and Uptake of Open Research in Psychology: A Systematic Narrative Review,* which outlines the global landscape of Open Science initiatives within psychology. This preprint provides a systematic review of *187 initiatives*, categorized into procedural, structural, and community-based changes, highlighting the roles they play in advancing transparency, replicability, and collaboration in research practices. The review aims to increase awareness, adoption, and coordination of these initiatives across psychology and beyond, serving as a roadmap for disciplines experiencing similar challenges.
-
-
-***Status***: Our paper is **preprinted** 🎉🥳 in PsyArxiv. Cite as:
-> Skubera, M., Korbmacher, M., Evans, T.R., Azevedo, F., Pennington, C.R. (2024). International Initiatives to Enhance Awareness and Uptake of Open Research in Psychology: A Systematic Narrative Review. https://doi.org/10.31234/osf.io/rakmb.
-
-<div class='altmetric-embed' data-badge-type='medium-donut' data-doi="https://doi.org/10.31234/osf.io/rakmb"></div>
-
----
-
-<br>
 
 ## **Neurodiversity & Open Scholarship in Academia**
 
@@ -413,9 +413,41 @@ The **<font style="color:#0e2a38">briefing note</font>** can [be found here](Par
 ***Status***: Our briefing note was informative to UKRN & the British Psychological Society. Cite as:
 > Parsons, S., Azevedo, F., & FORRT (2020). *Briefing note for degree accrediting societies*. Framework for Open and Reproducible Research Training. https://forrt.org/publications
 
-<br>
 
 ---
+
+<br>
+
+<div align="center">
+  <h1> FORRT affiliated projects </h1>
+  <hr>
+</div>
+
+## **A scoping review on metrics to quantify reproducibility: a multitude of questions leads to a multitude of metrics**
+
+---
+
+Reproducibility is recognized as essential to scientific progress and integrity. Replication studies and large-scale replication projects, aiming to quantify different aspects of reproducibility, have become more common. Since no standardized approach to measuring reproducibility exists, a diverse set of metrics has emerged and a comprehensive overview is needed. We conducted a scoping review to identify large-scale replication projects that used metrics and methodological papers that proposed or discussed metrics. The project list was compiled by the authors. For the methodological papers, we searched Scopus, MedLine, PsycINFO and EconLit. Records were screened in duplicate against pre-defined inclusion criteria. Demographic information on included records and information on reproducibility metrics used, suggested or discussed was extracted. We identified 49 large-scale projects and 97 methodological papers and extracted 50 metrics. The metrics were characterized based on type (formulas and/or statistical models, frameworks, graphical representations, studies and questionnaires, algorithms), input required and appropriate application scenarios. Each metric addresses a distinct question. Our review provides a comprehensive resource in the form of a ‘live’, interactive table for future replication teams and meta-researchers, offering support in how to select the most appropriate metrics that are aligned with research questions and project goals.
+
+
+<div class='altmetric-embed' data-badge-type='medium-donut' data-doi="https://doi.org/10.1098/rsos.242076"></div>
+
+---
+
+<br>
+
+## **The Potential of Preregistration in Psychology: Assessing Preregistration Producibility and Preregistration-Study Consistency**
+
+---
+
+Study preregistration has become increasingly popular in psychology, but its potential to restrict researcher degrees of freedom has not yet been empirically verified. We used an extensive protocol to assess the producibility (i.e., the degree to which a study can be properly conducted based on the available information) of preregistrations and the consistency between preregistrations and their corresponding papers for 300 psychology studies. We found that preregistrations often lack methodological details and that undisclosed deviations from preregistered plans are frequent. These results highlight that biases due to researcher degrees of freedom remain possible in many preregistered studies. More comprehensive registration templates typically yielded more producible preregistrations. We did not find that the producibility and consistency of preregistrations differed over time or between original and replication studies. Furthermore, we found that operationalizations of variables were generally preregistered more producible and consistently than other study parts. Inconsistencies between preregistrations and published studies were mainly encountered for data collection procedures, statistical models, and exclusion criteria. Our results indicate that, to unlock the full potential of preregistration, researchers in psychology should aim to write more producible preregistrations, adhere to these preregistrations more faithfully, and more transparently report any deviations from their preregistrations. This could be facilitated by training and education to improve preregistration skills, as well as the development of more comprehensive templates.
+
+
+<div class='altmetric-embed' data-badge-type='medium-donut' data-doi="https://doi.org/10.1037/met0000687"></div>
+
+---
+
+<br>
 
 # **<font style="color:#4c1322">Ongoing Projects</font>**
 
