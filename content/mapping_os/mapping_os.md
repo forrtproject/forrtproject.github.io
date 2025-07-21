@@ -50,7 +50,7 @@ Welcome to the FORRT Open Science Communities Mapping Initiative, a global effor
 
 > Our goal is to build an interactive, crowdsourced, and living map of grassroots Open Science networks, along with their procedural tools and structural changes, providing researchers, educators, and policymakers with a detailed landscape of the resources, opportunities, collaborations, and initiatives within these communities.
 
-This initiative builds upon the successful mapping of Open Science initiatives in the field of Psychology [Skubera et al., 2024](https://doi.org/10.1098/rsos.241726) (*International Initiatives to Enhance Awareness and Uptake of Open Research in Psychology: A Systematic Narrative Review*), and aims to extend this work across multiple disciplines. With the support of key partners, this project will foster collaboration, transparency, and innovation in scientific research globally.
+This initiative builds upon the successful mapping of Open Science initiatives in the field of Psychology [Skubera et al., 2024](https://doi.org/10.1098/rsos.241726) (*International Initiatives to Enhance Awareness and Uptake of Open Research in Psychology: A Systematic Mapping  Review*), and aims to extend this work across multiple disciplines. With the support of key partners, this project will foster collaboration, transparency, and innovation in scientific research globally.
 
 <br>
 
