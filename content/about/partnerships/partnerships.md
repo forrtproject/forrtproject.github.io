@@ -279,6 +279,14 @@ More information at [www.openscienceGATE.com](https://opensciencegate.com/)
 
 ---
 
+<br>
+
+<img src="logos/dra.webp" align="left" width=200px alt="Digital Research Academy logo" /> [The Digital Research Academy](https://digital-research.academy/) is a community-driven network of expert trainers dedicated to improving the quality of research. They offer tailored training experiences in open science, data literacy, and research software engineering, equipping researchers with both digital and collaborative skills. By fostering a culture of openness, DRA's mission is to bridge knowledge gaps, cultivate innovation, and drive positive change through continuous learning and re-adapting.
+
+<br>
+
+---
+
 ## FORRT membership in the UNESCO Global Open Science Partnership
 
 <a href="logos/2025_04_09_FORRT_Flavio_Azevedo_.pdf" target="_blank">
