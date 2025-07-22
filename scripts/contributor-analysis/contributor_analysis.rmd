@@ -1,13 +1,12 @@
 ---
 title: "FORRT Contributor Analyses"
-date: "10 May, 2025"
+type: plain_page
 always_allow_html: true
 output:
   html_document:
-    self_contained: false
-    keep_md:     true
-    lib_dir:     "htmlwidgets_libs"
-type: contributors_analysis
+    self_contained: false       # don’t inline – write out .js/.css
+    keep_md:     true           # keep the .md
+    lib_dir:     "htmlwidgets_libs"  # where to drop htmlwidgets.js & visNetwork deps
 ---
 
 ```{r, setup, include=FALSE}
@@ -195,67 +194,6 @@ As of {format(Sys.Date(), '%d %B %Y')}, FORRT has a total of {sprintf('%d', coun
 
 `r output`
 
-
-```{r Basic visualizations}
-# Contributors per project
-
-# Keep only the top 10 projects based on Unique_Contributors
-project_contributors <- project_contributors %>%
-  arrange(desc(Unique_Contributors)) %>%
-  slice_head(n = 10)
-
-# Get the first three project names from the sorted order
-top_projects <- project_contributors$`Project Name`[1:5]
-
-# Add labels only for these projects
-project_contributors <- project_contributors %>%
-  mutate(label = ifelse(`Project Name` %in% top_projects, as.character(`Project Name`), NA))
-
-# Plot
-projects_plot <- ggplot(project_contributors, aes(x = `Project Name`, y = Unique_Contributors)) +
-  geom_bar(stat = "identity", fill = "#A52828", color = "#323232", alpha = 0.8) +  
-  geom_text(aes(label = label), hjust = 0, nudge_x = -0.3, vjust = 1.0, nudge_y = 9, size = 3, na.rm = TRUE) +  # Adjusted vjust and nudge_y
-  labs(title = "Contributors for FORRT's 10 Biggest Projects", 
-       x = "Projects",  
-       y = "Number of Contributors") +
-  theme_minimal(base_size = 18) +
-  theme(plot.title = element_text(hjust = 0.5, face = "bold", size = 16),
-        axis.text.x = element_blank(),  
-        axis.ticks.x = element_blank(), 
-        axis.text.y = element_text(size = 12),
-        axis.title = element_text(size = 14),
-        panel.background = element_rect(fill = "#fefdf6", color = NA),  # No panel border
-        plot.background = element_rect(fill = "#fefdf6", color = NA), 
-        panel.border = element_blank(),                                
-        panel.spacing = unit(0, "lines"))
-
-# Roles in projects
-roles_plot <- ggplot(role_distribution, aes(x = reorder(Role, n), y = n)) +
-  geom_bar(stat = "identity", fill = "#A52828", color = "#323232", alpha = 0.8) +
-  coord_flip() +
-  labs(title = "Distribution of Contributions Across Roles", 
-       x = "Role", 
-       y = "Number of People") +
-  theme_minimal(base_size = 14) +
-  theme(plot.title = element_text(hjust = 0.5, face = "bold", size = 16),  # Set title size to 16
-        axis.text = element_text(size = 12),
-        axis.title = element_text(size = 14),
-        panel.background = element_rect(fill = "#fefdf6", color = NA),  # No panel border
-        plot.background = element_rect(fill = "#fefdf6", color = NA),   # No plot border
-        panel.border = element_blank(), # Explicitly blank
-        panel.spacing = unit(0, "lines"))
-```
-
-
-```{r projects-plot, fig.alt = "Bar chart of contributors per project"}
-projects_plot
-```
-
-```{r roles-plot, fig.alt = "Bar chart of contributions by Tenzing role"}
-roles_plot
-```
-
-
 ```{r dt long}
 dt_long <- dt_long %>% 
   rowwise() %>% 
@@ -316,101 +254,91 @@ additional_hidden_edge <- data.frame(from = c("Fang Cathy", "Chen Liangjie", "Ji
 Contributor_edges_plot <- rbind(Contributor_edges %>% 
   mutate(hidden = F), additional_hidden_edge)
 
-visNetwork(Contributor_nodes,
-           Contributor_edges_plot,
-           width = "100%",
-           height = "600px"
-) %>%
+visNetwork(Contributor_nodes, 
+           Contributor_edges_plot) %>%
   visIgraphLayout(layout = "layout_nicely",
                   randomSeed = 1001)  %>%
-  visPhysics(
-    enabled = TRUE,
-    stabilization = list(
-      enabled = TRUE,
-      iterations = 100,
-      fit = FALSE
-    ),
-    solver = "forceAtlas2Based",
-    forceAtlas2Based = list(
-      gravitationalConstant = -200,
-      centralGravity = 0.05,         
-      springLength = 50,
-      springConstant = 0.005,        
-      damping = 0.4,
-      avoidOverlap = 0.8 
-    )
+  visEdges(color = list(opacity = 0.1)
   ) %>%
-  visEdges(color = list(opacity = 0.1)) %>%
-  visNodes(
-    font = list(
-      size = 5,
-      strokeWidth = 1,
-      strokeColor = "white"
-    ),
-    size = 7,
+  visNodes(font = list(size = 5,
+                       strokeWidth = 0.1,
+                       strokeColor = "white"),
     borderWidth = 0,
-    color = list(
-      background = "#353839",
-      highlight = list(
-        background = "#A52828",
-        border = "darkred"
-      )
-    ),
-    scaling = list(
-      min = 5,
-      max = 25
-    )
+    color = list(background = "black",
+                 highlight = list(background = "red")) 
   ) %>% 
-  visGroups(useDefaultGroups = FALSE) %>% 
-  # Combined interaction settings
+  visGroups(useDefaultGroups = F) %>% 
   visInteraction(
-    zoomView = 0.2,
-    zoom = TRUE,
     dragNodes = TRUE,
     dragView = TRUE,
-    hover = TRUE,
-    hoverConnectedEdges = TRUE,
+    hover = FALSE,
+    hoverConnectedEdges = FALSE,
     selectable = TRUE,
-    multiselect = TRUE,
-    navigationButtons = TRUE
+    multiselect = TRUE
   ) %>%
   visOptions(
-    highlightNearest = list(
-      enabled = TRUE, 
-      degree = 1, 
-      hover = TRUE,
-      algorithm = "hierarchical"
-    ),
-    nodesIdSelection = list(enabled = TRUE, style = "width: 200px;"),
-    selectedBy = list(variable = "projects", multiple = TRUE, 
-                     style = "width: 200px; background: #f8f8f8;")
-  ) %>%
-  htmlwidgets::onRender("
-    function(el, x) {
-      var network = this;
-      network.on('stabilized', function(params) {
-        network.fit({nodes: [], animation: {duration: 100}});
-      });
-      network.on('click', function(params) {
-        if (params.nodes.length === 0) {
-          network.body.data.nodes.update(
-            network.body.data.nodes.getIds().map(function(id) {
-              return {id: id, color: {background: '#353839'}};
-            })
-          );
-        }
-      });
-      network.on('selectNode', function(params) {
-        network.body.data.nodes.update(
-          network.body.data.nodes.getIds().map(function(id) {
-            return {id: id, color: {background: '#353839'}};
-          })
-        );
-        network.body.data.nodes.update({
-          id: params.nodes[0],
-          color: {background: '#A52828'}
-        });
-      });
-    }
-  ")  
+    highlightNearest = list(enabled = TRUE,
+                            degree = 1),
+    nodesIdSelection = list(enabled = TRUE),
+    selectedBy = list(variable = "projects", multiple = T, hideColor = "darkgrey")
+  ) 
+```
+
+
+```{r Basic visualizations}
+# Contributors per project
+
+# Keep only the top 10 projects based on Unique_Contributors
+project_contributors <- project_contributors %>%
+  arrange(desc(Unique_Contributors)) %>%
+  slice_head(n = 10)
+
+# Get the first three project names from the sorted order
+top_projects <- project_contributors$`Project Name`[1:5]
+
+# Add labels only for these projects
+project_contributors <- project_contributors %>%
+  mutate(label = ifelse(`Project Name` %in% top_projects, as.character(`Project Name`), NA))
+
+# Plot
+projects_plot <- ggplot(project_contributors, aes(x = `Project Name`, y = Unique_Contributors)) +
+  geom_bar(stat = "identity", fill = "#A52828", color = "#323232", alpha = 0.8) +  
+  geom_text(aes(label = label), hjust = 0, nudge_x = -0.3, vjust = 1.0, nudge_y = 9, size = 3, na.rm = TRUE) +  # Adjusted vjust and nudge_y
+  labs(title = "Contributors for FORRT's 10 Biggest Projects", 
+       x = "Projects",  
+       y = "Number of Contributors") +
+  theme_minimal(base_size = 18) +
+  theme(plot.title = element_text(hjust = 0.5, face = "bold", size = 16),
+        axis.text.x = element_blank(),  
+        axis.ticks.x = element_blank(), 
+        axis.text.y = element_text(size = 12),
+        axis.title = element_text(size = 14),
+        panel.background = element_rect(fill = "#fefdf6", color = NA),  # No panel border
+        plot.background = element_rect(fill = "#fefdf6", color = NA), 
+        panel.border = element_blank(),                                
+        panel.spacing = unit(0, "lines"))
+
+# Roles in projects
+roles_plot <- ggplot(role_distribution, aes(x = reorder(Role, n), y = n)) +
+  geom_bar(stat = "identity", fill = "#A52828", color = "#323232", alpha = 0.8) +
+  coord_flip() +
+  labs(title = "Distribution of Contributions Across Roles", 
+       x = "Role", 
+       y = "Number of People") +
+  theme_minimal(base_size = 14) +
+  theme(plot.title = element_text(hjust = 0.5, face = "bold", size = 16),  # Set title size to 16
+        axis.text = element_text(size = 12),
+        axis.title = element_text(size = 14),
+        panel.background = element_rect(fill = "#fefdf6", color = NA),  # No panel border
+        plot.background = element_rect(fill = "#fefdf6", color = NA),   # No plot border
+        panel.border = element_blank(), # Explicitly blank
+        panel.spacing = unit(0, "lines"))
+```
+
+```{r projects-plot, fig.alt = "Bar chart of contributors per project"}
+projects_plot
+```
+
+```{r roles-plot, fig.alt = "Bar chart of contributions by Tenzing role"}
+roles_plot
 ```
