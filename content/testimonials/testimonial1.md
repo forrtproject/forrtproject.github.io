@@ -40,7 +40,7 @@ subtitle = ""
 <div style="float: right; margin: 0 1rem 1rem 0; text-align: center;">
   <div style="width: 250px; height: 250px; border-radius: 50%; overflow: hidden;">
     <img
-      src="cluster1.webp"
+      src="testimonials/Roksana.webp"
       alt="Portrait"
       style="width: 100%; height: 100%; object-fit: cover;"
     >
@@ -60,4 +60,4 @@ Joining FORRT has been one of the most transformative experiences of my academic
 One of the standout moments for me has been contributing to the FReD replication database, where I helped map and code effect sizes in replication studies. This experience gave me invaluable exposure to a wide range of research methods, designs, and statistical approaches. However, even more than the task itself, what stood out was the unimaginable support we received along the way. The guidance provided for tasks was clear, detailed, and thoughtful. Any queries were met with prompt, helpful, and genuinely encouraging responses. Group meetings were offered, and we were never made to feel like we were alone in the process. What truly sets FORRT apart is the care they put into everything they do. They’re not just focused on the outcome—they’re deeply invested in the process. They’re open, reflective, and constantly striving to improve how they work so that our experience as contributors is not only meaningful but also joyful. They care about the people behind the work, and that care shines through in every interaction.
 I’ve already recommended FORRT to many other early career researchers because of the countless opportunities it provides to get involved in impactful projects around the world. I’m thrilled to share that I recently accepted a PhD offer at King’s College London to research ADHD and menopause. This milestone wasn’t just a career step—it was a dream come true. And I can say with full confidence that my time with FORRT played a central role in making it possible. Through FORRT, I was able to build real, tangible skills—from statistical analyses to collaborative communication to open scholarship practices. But more than that, I developed a deep sense of self-belief and belonging in academia, which is often hard to come by as an early career researcher. FORRT gave me the space to explore new challenges, take intellectual risks, and grow not only as a researcher, but as a person.
 
-Thank you FORRT, I am excited to see what the future holds!
+**Thank you FORRT, I am excited to see what the future holds!**
