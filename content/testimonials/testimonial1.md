@@ -35,7 +35,7 @@ subtitle = ""
  css_class = ""
 +++
 
-# Roksana Sobolak's Experience with FORRT
+# “Finding Belonging in Open Science – Roksana”
 
 <div style="float: left; margin: 0 1rem 1rem 0; text-align: center;">
   <div style="width: 320px; height: 320px; border-radius: 50%; overflow: hidden;">

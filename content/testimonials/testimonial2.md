@@ -35,7 +35,7 @@ subtitle = ""
  css_class = ""
 +++
 
-# Max Korbmacher's Experience with FORRT
+# “Max’s Journey into Replications, Reproducibility, and Community”
 
 <div style="float: right; margin: 0 1rem 1rem 0; text-align: center;">
   <div style="width: 320px; height: 320px; border-radius: 50%; overflow: hidden;">

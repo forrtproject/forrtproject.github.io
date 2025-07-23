@@ -35,7 +35,7 @@ subtitle = ""
  css_class = ""
 +++
 
-# Richard Dushime's Experience with FORRT
+# “From Tech to Trust: Richard’s FORRT Journey”
 
 <div style="float: right; margin: 0 1rem 1rem 0; text-align: center;">
   <div style="width: 320px; height: 320px; border-radius: 50%; overflow: hidden;">

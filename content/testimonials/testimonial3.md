@@ -35,7 +35,7 @@ subtitle = ""
  css_class = ""
 +++
 
-# Leonie's Experience with FORRT
+# “Leonie on Supportive Mentorship and Growth”
 
 <div style="float: left; margin: 0 1rem 1rem 0; text-align: center;">
   <div style="width: 320px; height: 320px; border-radius: 50%; overflow: hidden;">
