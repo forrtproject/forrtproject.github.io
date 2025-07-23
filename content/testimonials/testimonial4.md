@@ -35,13 +35,13 @@ subtitle = ""
  css_class = ""
 +++
 
-# Max Korbmacher's Experience with FORRT
+# Richard Dushime's Experience with FORRT
 
 <div style="float: right; margin: 0 1rem 1rem 0; text-align: center;">
   <div style="width: 250px; height: 250px; border-radius: 50%; overflow: hidden;">
     <img
       src="testimonials/RichardDushime.webp"
-      alt="MaxKorbmacher Portrait"
+      alt="Richard Dushime Portrait"
       style="width: 100%; height: 100%; object-fit: cover;"
     >
   </div>
