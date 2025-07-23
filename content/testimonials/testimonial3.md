@@ -55,6 +55,8 @@ subtitle = ""
   </div>
 </div>
 
+<br>
+
 I got to know FORRT through my supervisor who encouraged me to join. We scheduled a meeting with Flavio, who gave me a warm welcome and introduced me to the different structures. We talked about my strengths and what kind of work I enjoy doing and I eventually ended up in the Glossary lead team with Flavio, Max and Mahmoud.
 
 They made me feel very welcome from the start and I was positively surprised that there was room to find tasks that would fit my strengths and personality.

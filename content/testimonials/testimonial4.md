@@ -58,6 +58,8 @@ subtitle = ""
   </div>
 </div>
 
+<br>
+
 When I first joined FORRT, I was new to the open-source world and hungry to dive into open science. Yo Yehudi from Open Life Science (OLS) connected me with Flavio and invited me into the FORRT Slack channel and from that very first welcome (emojis and all!), I felt right at home.
 
 As I explored the FORRT materials, I discovered the incredible work that FORRT is doing to advance transparency and ethics in research. With my technical background, I began contributing to the website adding content and implementing some improvements and quickly found myself immersed in a vibrant, supportive community.

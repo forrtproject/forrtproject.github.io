@@ -58,6 +58,8 @@ subtitle = ""
   </div>
 </div>
 
+<br>
+
 I stumbled into FORRT somewhat by accident during my master’s studies, while working on a review paper about the replication crisis. At the time, I was looking for collaborators and, without knowing much about the community or its norms, I just dropped my Google Doc into the Slack channel—completely ignoring any guidelines or structure that were probably there for good reason!
 To my surprise, the response was overwhelming. I received hundreds of thoughtful comments and a flood of interest from people who wanted to collaborate. It was incredibly exciting, but also completely chaotic—and I quickly realized I was in over my head. Thankfully, several experienced FORRTers stepped in and helped me navigate the process. Instead of being frustrated by my obliviousness or the disruption I’d unintentionally caused, everyone was kind, patient, and encouraging.
 That openness and generosity left a lasting impression. What began as a spontaneous post turned into multiple fruitful collaborations, real friendships, and a deep connection to the FORRT community. Eventually, I even found myself in a leadership role within the Glossary project—something I never would have imagined when I first joined.
