@@ -6,9 +6,9 @@
 widget = "blank"  # See https://sourcethemes.com/academic/docs/page-builder/
 headless = true  # This file represents a page section.
 active = true  # Activate this widget? true/false
-weight = 10  # Order that this section will appear.
+weight = 20  # Order that this section will appear.
 
-title = "Contributors"
+title = ""
 subtitle = ""
 
 [design]
@@ -22,7 +22,7 @@ subtitle = ""
   #   Any HTML color name or Hex value is valid.
 
   # Background color.
-  # color = "#fefdf6"
+  # color = "Green"
   # color = "#69b3a2" # greenish
   
   # Background gradient.
@@ -39,43 +39,16 @@ subtitle = ""
   # Text color (true=light or false=dark).
   text_color_light = false
 
-  # Choose how many columns the section has. Valid values: '1' or '2'.
-# columns = '2'
-
 [design.spacing]
   # Customize the section spacing. Order is top, right, bottom, left.
-  padding = ["60px", "0", "60px", "0"]
+  padding = ["20px", "0", "20px", "0"]
 
 [advanced]
  # Custom CSS. 
- css_style = ""
+ css_style = "font-size: 1.25rem;"
  
  # CSS class.
  css_class = ""
 +++
 
-<style>
-
-.row {
-  display: flex;
-}
-
-/* Create two equal columns that sits next to each other */
-.column {
-  flex: 50%;
-  padding: 10px;
-}
-</style>
-
-------------
-
-<center>
- 
-FORRT is driven by a **large and diverse community of contributors** that shape one or more of our projects. Below you can see everyone's scientific contributions in detail. Note that many also contribute to maintaining our community - we are equally grateful for their efforts. You can find out more about the scale of contributions at FORRT, including an interactive network graph, on our contributor analysis page <a href="https://forrt.org/contributor-analysis">https://forrt.org/contributor-analysis</a>.
-
-</center>
-
-------------
-
-## **Contributions**
-
+FORRT aims to support members in their personal and professional growth, and we love to hear from people about their experiences. Below, we share a few such stories. If you want to contribute your own, email us at info@forrt.org 
