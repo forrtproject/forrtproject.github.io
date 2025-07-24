@@ -2,14 +2,14 @@
 <div class="post-nav d-sm-flex justify-content-around">
   {{if .NextInSection}}
   {{/* For the Book layout, prev/next labels are reversed. */}}
-  {{ if in (slice "docs" "book" "glossary") .Type }}{{ $str = "previous" }}{{else}}{{ $str = "next" }}{{end}}
+  {{ if in (slice "docs" "book" "glossary" "educators-corner") .Type }}{{ $str = "previous" }}{{else}}{{ $str = "next" }}{{end}}
   <div class="post-nav-item d-inline ">
     <a href="{{.NextInSection.RelPermalink}}" rel="next"><div class="meta-nav">{{ i18n $str }}</div>
     <p class=""> {{.NextInSection.Title}}</p></a>
   </div>
   {{end}}
   {{if .PrevInSection}}
-  {{ if in (slice "docs" "book" "glossary") .Type }}{{ $str = "next" }}{{else}}{{ $str = "previous" }}{{end}}
+  {{ if in (slice "docs" "book" "glossary" "educators-corner") .Type }}{{ $str = "next" }}{{else}}{{ $str = "previous" }}{{end}}
   <div class="post-nav-item d-inline order-2 text-sm-right">
     <a href="{{.PrevInSection.RelPermalink}}" rel="prev"><div class="meta-nav">{{ i18n $str }}</div>
     <p class="">{{.PrevInSection.Title}}</p></a>
