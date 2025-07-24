@@ -35,7 +35,7 @@ subtitle = ""
  css_class = ""
 +++
 
-# “From Tech to Trust: Richard’s FORRT Journey”
+# Learning, Contributing, Belonging: My Experience with FORRT
 
 <div style="float: right; margin: 0 1rem 1rem 0; text-align: center;">
   <div style="width: 320px; height: 320px; border-radius: 50%; overflow: hidden;">
@@ -69,3 +69,5 @@ But FORRT has offered me so much more than just web-development experience. Thro
 FORRT’s commitment to pedagogical reform and inclusive open scholarship is truly inspiring. I’m grateful for the amazing people behind this initiative and for every opportunity to grow alongside them.
 
 **To anyone considering joining FORRT: jump in! You’ll learn more, contribute more, and have far more fun than you ever imagined. Cheers!”**
+
+### ***---Richard Dushime---***

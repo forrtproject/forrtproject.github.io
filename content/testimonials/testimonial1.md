@@ -35,7 +35,7 @@ subtitle = ""
  css_class = ""
 +++
 
-# “Finding Belonging in Open Science – Roksana”
+# Finding Belonging in Open Science
 
 <div style="float: left; margin: 0 1rem 1rem 0; text-align: center;">
   <div style="width: 320px; height: 320px; border-radius: 50%; overflow: hidden;">
@@ -63,3 +63,5 @@ One of the standout moments for me has been contributing to the FReD replication
 I’ve already recommended FORRT to many other early career researchers because of the countless opportunities it provides to get involved in impactful projects around the world. I’m thrilled to share that I recently accepted a PhD offer at King’s College London to research ADHD and menopause. This milestone wasn’t just a career step—it was a dream come true. And I can say with full confidence that my time with FORRT played a central role in making it possible. Through FORRT, I was able to build real, tangible skills—from statistical analyses to collaborative communication to open scholarship practices. But more than that, I developed a deep sense of self-belief and belonging in academia, which is often hard to come by as an early career researcher. FORRT gave me the space to explore new challenges, take intellectual risks, and grow not only as a researcher, but as a person.
 
 **Thank you FORRT, I am excited to see what the future holds!**
+
+### ***---Roksana Sobolak---***

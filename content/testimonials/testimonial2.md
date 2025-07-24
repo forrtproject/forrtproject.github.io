@@ -35,7 +35,7 @@ subtitle = ""
  css_class = ""
 +++
 
-# “Max’s Journey into Replications, Reproducibility, and Community”
+# My Journey into Replications, Reproducibility, and Community
 
 <div style="float: right; margin: 0 1rem 1rem 0; text-align: center;">
   <div style="width: 320px; height: 320px; border-radius: 50%; overflow: hidden;">
@@ -65,3 +65,5 @@ To my surprise, the response was overwhelming. I received hundreds of thoughtful
 That openness and generosity left a lasting impression. What began as a spontaneous post turned into multiple fruitful collaborations, real friendships, and a deep connection to the FORRT community. Eventually, I even found myself in a leadership role within the Glossary project—something I never would have imagined when I first joined.
 
 **I’m incredibly grateful for the welcoming and collaborative spirit of FORRT, and I’m looking forward to many more exciting adventures with this wonderful community!**
+
+### ***---Max Korbmacher---***

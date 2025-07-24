@@ -35,7 +35,7 @@ subtitle = ""
  css_class = ""
 +++
 
-# “Leonie on Supportive Mentorship and Growth”
+# On Supportive Mentorship and Personal and Professional Growth
 
 <div style="float: left; margin: 0 1rem 1rem 0; text-align: center;">
   <div style="width: 320px; height: 320px; border-radius: 50%; overflow: hidden;">
@@ -63,3 +63,5 @@ They made me feel very welcome from the start and I was positively surprised tha
 They helped me get familiar with everything, and gave me the feeling that they genuinely care about me as a person. 
 
 **What I appreciate a lot is the warm working atmosphere. I always feel like my work is highly appreciated and that there is room for suggestions and ideas. I am very thankful for this welcoming and caring atmosphere of FORRT, and I am looking forward to all future collaborations with this community.**
+
+### ***---Leonie---***
