@@ -306,9 +306,15 @@
   parent = "replications"
 
 [[main]]
+  name = "Replication Manuscript Templates"
+  url = "https://osf.io/brxtd/"
+  weight = 59
+  parent = "replications"
+
+[[main]]
   name = "Submit a replication to FReD"
   url = "/replication-hub/submit"
-  weight = 59
+  weight = 60
   parent = "replications"
 
 
