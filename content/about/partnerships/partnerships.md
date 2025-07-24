@@ -279,6 +279,14 @@ More information at [www.openscienceGATE.com](https://opensciencegate.com/)
 
 ---
 
+<br>
+
+<img src="logos/dra.webp" align="left" width=200px alt="Digital Research Academy logo" /> [The Digital Research Academy](https://digital-research.academy/) is a community-driven network of expert trainers dedicated to improving the quality of research. They offer tailored training experiences in open science, data literacy, and research software engineering, equipping researchers with both digital and collaborative skills. By fostering a culture of openness, DRA's mission is to bridge knowledge gaps, cultivate innovation, and drive positive change through continuous learning and re-adapting.
+
+<br>
+
+---
+
 ## FORRT membership in the UNESCO Global Open Science Partnership
 
 <a href="logos/2025_04_09_FORRT_Flavio_Azevedo_.pdf" target="_blank">
@@ -333,5 +341,8 @@ __*Center for Open Science - OSKB & COSGN*__
 
 &nbsp;&nbsp;&nbsp;&nbsp; We are partnering up with [OSKB](https://cos.io/oskb) ([Open Science Knowledge Base](https://cos.io/oskb)) to coordinate the alignment of our meta-data on educational materials so that we share our resources and community. To that end, FORRT will have a community in OSKB’s home ([OER Commons](https://www.oercommons.org/)) and enrich data and reduced redundant work. FORRT also joined COS network-of-networks or [Community of Open Scholarship Grassroots Networks](https://groups.google.com/a/cos.io/forum/#!topic/network-of-open-science-grassroots-networks/1OWtx9VDSwo) ([COSGN](https://groups.google.com/a/cos.io/forum/#!topic/network-of-open-science-grassroots-networks/1OWtx9VDSwo)). These partnerships aim to help build a community of existing educational initiatives, strengthening our missions, and streamline the advancement of open and reproducible educational practices.
 
+---
 
+<br>
 
+<img src="logos/Utrecht-University.webp" align="left" /> In 2024, FORRT entered a long-term framework agreement with [Utrecht University’s Department of Interdisciplinary Social Sciences](https://www.uu.nl/en/organisation/interdisciplinary-social-science)  to formalize and expand our shared commitment to advancing open and reproducible research. This partnership enables co-created research, joint initiatives, and mutual support through a structured governance model and Implementation Agreements. FORRT and UU collaborate on multiple fronts, including pedagogy, metascience, and community-driven academic reform.
