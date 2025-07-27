@@ -259,5 +259,4 @@ Pipfile
 Pipfile.lock
 /.vscode
 .hugo_build.lock
-# Local configuration files
 *.DS_Store
