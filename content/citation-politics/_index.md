@@ -13,6 +13,8 @@ url: "/citation-politics/"
   </p>
 </div>
 
+<img src="./toolkit/v7final.webp" width=700px align="center"  alt="Citation Politics Toolkit" />
+
 ## Overview
 
 Citations can be thought of as a currency in the academy, where more citations equals more prestige. While the system assumes a meritocracy—where higher citation counts supposedly indicate higher quality because a work is deemed valuable and legitimate by peers—this perspective ignores inherent biases and systemic inequalities. In reality, citation practices often function as mechanisms of exclusion, gatekeeping, and reproduction of existing power structures, reinforcing the dominance of certain groups over others. These issues span from individual choices in citation to structural issues with search engines; here we introduce a toolkit that individuals can use to encourage a conscientious, and more just, citation practice.
