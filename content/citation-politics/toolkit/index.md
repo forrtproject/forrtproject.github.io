@@ -18,6 +18,7 @@ image:
 
 projects: []
 type: plain_page
+url: "/citation-politics/toolkit/"
 ---
 
 <img src="featured.webp" width=700px align="center"  alt="Citation Politics Toolkit" />
