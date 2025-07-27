@@ -1,4 +1,4 @@
-<!-- ---
+---
 title: "Towards Citational Justice"
 subtitle: "A toolkit to encourage thoughtful citation"
 summary: "Citations can be thought of as a currency in the academy, where more citations equals more prestige. While the system assumes a meritocracy—where higher citation counts supposedly indicate higher quality because a work is deemed valuable and legitimate by peers—this perspective ignores inherent biases and systemic inequalities."
@@ -25,7 +25,7 @@ draft: false
 #   Otherwise, set `projects = []`.
 projects: []
 type: plain_page
-url: "/citation-politics/intro/"
+url: "/citation-politics/"
 ---
 
 ## Overview
@@ -60,4 +60,4 @@ We provide a suite of resources to support the use and implementation of the Cit
 
 ## Get involved!
 
-This toolkit and accompanying manuscript are only the first piece of work produced by the FORRT Citational Politics Working Group. If you have any other ideas or suggestions for development of the toolkit, or other ways of engaging with citational practice or patterns (especially as it relates to open research), get in touch with Sarah Sauve or Helena Gellersen on FORRT’s Slack. -->
+This toolkit and accompanying manuscript are only the first piece of work produced by the FORRT Citational Politics Working Group. If you have any other ideas or suggestions for development of the toolkit, or other ways of engaging with citational practice or patterns (especially as it relates to open research), get in touch with Sarah Sauve or Helena Gellersen on FORRT’s Slack.
