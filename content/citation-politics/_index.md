@@ -1,32 +1,17 @@
 ---
-title: "Towards Citational Justice"
-subtitle: "A toolkit to encourage thoughtful citation"
+title: ""
+subtitle: ""
 summary: "Citations can be thought of as a currency in the academy, where more citations equals more prestige. While the system assumes a meritocracy—where higher citation counts supposedly indicate higher quality because a work is deemed valuable and legitimate by peers—this perspective ignores inherent biases and systemic inequalities."
-authors: ['Sarah Sauve (SSauve@lincoln.ac.uk)']
-tags: []
-categories: []
-date: 2025-07-03T15:30:39-03:00
-lastmod: 2025-07-07T15:14:10-04:00
-featured: true
-draft: false
-
-# Featured image
-# To use, add an image named `featured.webp/png` to your page's folder.
-# Focal points: Smart, Center, TopLeft, Top, TopRight, Left, Right, BottomLeft, Bottom, BottomRight.
-# image:
-#   caption: "A toolkit to encourage thoughtful citation"
-#   focal_point: "Center"
-#   preview_only: false
-
-# Projects (optional).
-#   Associate this post with one or more of your projects.
-#   Simply enter your project's folder or file name without extension.
-#   E.g. `projects = ["internal-project"]` references `content/project/deep-learning/index.md`.
-#   Otherwise, set `projects = []`.
-projects: []
 type: plain_page
 url: "/citation-politics/"
 ---
+
+<div style="text-align: center; margin: 2rem 0;">
+  <h1>Towards Citational Justice</h1>
+  <p style="font-size: 1.25rem; color: #6c757d; margin-top: 0.5rem;">
+    A toolkit to encourage thoughtful citation
+  </p>
+</div>
 
 ## Overview
 
