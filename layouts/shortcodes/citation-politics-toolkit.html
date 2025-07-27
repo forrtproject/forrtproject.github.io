@@ -1,0 +1,130 @@
+
+{{ $css := resources.Get "css/citations.css" }}
+{{ if $css }}
+  {{ $style := $css | minify | fingerprint }}
+  <link rel="stylesheet" href="{{ $style.RelPermalink }}">
+{{ else }}
+  {{ warnf "CSS not found: css/citations.css. Using static version" }}
+  <link rel="stylesheet" href="{{ "css/citations.css" | relURL }}">
+{{ end }}
+
+<body>
+    <div class="container">
+        <div class="citation-grid">
+            <!-- Planning Box -->
+            <div class="stage-box planning">
+                <h3>Planning</h3>
+                <div class="box-content">
+                    <div class="content-group">
+                        <h4>Primary Activities</h4>
+                        <div class="hexagon-grid">
+                            <div class="hexagon primary"><a href="#">Ideas</a></div>
+                            <div class="hexagon primary"><a href="#">Funding</a></div>
+                        </div>
+                    </div>
+                    <div class="content-group">
+                        <h4>Tools & Practices</h4>
+                        <div class="hexagon-grid">
+                            <div class="hexagon tool"><a href="https://chromewebstore.google.com/detail/citation-transparency/cepnbdbhabaljgecaddglhhcgajphbcf?hl=en&pli=1">Citation Transparency browser extension</a></div>
+                            <div class="hexagon tool"><a href="#">FORRT citational justice module</a></div>
+                            <div class="hexagon tool"><a href="https://civiclaboratory.nl/2023/08/08/citational-politics-training-module/">Citational politics training module - CLEAR - Civic Laboratory for Environmental Action Research</a></div>
+                            <div class="hexagon practice"><a href="https://forrt.org/awop/">Academic Wheel of Priviledge (AWoP)</a></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project Box -->
+            <div class="stage-box project">
+                <h3>Project</h3>
+                <div class="box-content">
+                    <div class="content-group">
+                        <h4>Primary Activities</h4>
+                        <div class="hexagon-grid">
+                            <div class="hexagon primary"><a href="#">Research</a></div>
+                            <div class="hexagon primary"><a href="#">Journal Selection</a></div>
+                        </div>
+                    </div>
+                    <div class="content-group">
+                        <h4>Tools & Practices</h4>
+                        <div class="hexagon-grid">
+                            <div class="hexagon practice"><a href="#">Diversify your reading</a></div>
+                            <div class="hexagon practice"><a href="#">Critical Ethnic Studies</a></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Paper Box -->
+            <div class="stage-box paper">
+                <h3>Paper</h3>
+                <div class="box-content">
+                    <div class="content-group">
+                        <h4>Primary Activities</h4>
+                        <div class="hexagon-grid">
+                            <div class="hexagon primary"><a href="#">Paper Writing</a></div>
+                            <div class="hexagon primary"><a href="#">Submission</a></div>
+                        </div>
+                    </div>
+                    <div class="content-group">
+                        <h4>Tools & Practices</h4>
+                        <div class="hexagon-grid">
+                            <div class="hexagon practice"><a href="#">Mirya Holman's checklist</a></div>
+                            <div class="hexagon tool"><a href="#">GBAT</a></div>
+                            <div class="hexagon tool"><a href="#">Citation audit survey</a></div>
+                            <div class="hexagon tool"><a href="#">Gray test</a></div>
+                            <div class="hexagon tool"><a href="#">Genderize</a></div>
+                            <div class="hexagon tool"><a href="#">Indigenous citation template</a></div>
+                            <div class="hexagon tool"><a href="#">Inwardness metric</a></div>
+                            <div class="hexagon tool"><a href="#">Citing R packages</a></div>
+                            <div class="hexagon practice"><a href="#">Citational diversity statement</a></div>
+                            <div class="hexagon tool"><a href="#">Diversity codebook</a></div>
+                            <div class="hexagon tool"><a href="#">GCBI-alyzer</a></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Publication Box -->
+            <div class="stage-box publication">
+                <h3>Publication</h3>
+                <div class="box-content">
+                    <div class="content-group">
+                        <h4>Primary Activities</h4>
+                        <div class="hexagon-grid">
+                            <div class="hexagon primary"><a href="#">Peer Review</a></div>
+                            <div class="hexagon primary"><a href="#">Publication</a></div>
+                        </div>
+                    </div>
+                    <div class="content-group">
+                        <h4>Tools & Practices</h4>
+                        <div class="hexagon-grid">
+                            <div class="hexagon practice"><a href="#">Academic Wheel of Privilege</a></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Legend -->
+        <div class="legend">
+            <div class="legend-item primary"><a href="#">Primary Activities</a></div>
+            <div class="legend-item practice"><a href="#">Key Practices</a></div>
+            <div class="legend-item tool"><a href="#">Tools</a></div>
+        </div>
+    </div>
+
+    <script>
+        // Add hover effects for hexagons
+        document.querySelectorAll('.hexagon').forEach(hex => {
+            hex.addEventListener('mouseenter', function() {
+                this.style.transition = 'all 0.3s ease';
+            });
+            
+            hex.addEventListener('click', function(e) {
+                e.preventDefault();
+                alert('Explore more about: ' + this.querySelector('a').textContent);
+            });
+        });
+    </script>
+</body>
