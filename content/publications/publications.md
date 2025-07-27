@@ -74,7 +74,7 @@ subtitle = ""
 
 ---
 
-### **Academic peer-reviewed publications**
+# **Academic peer-reviewed publications**
 
 ---
 
@@ -84,6 +84,20 @@ subtitle = ""
 </figure>
 
 This page showcases the diverse scholarly and public-facing outputs produced by FORRT and its community—including peer-reviewed publications, preprints, policy briefs, opinion pieces, interactive apps, datasets, and open-source tools. It reflects our ongoing efforts to contribute to scientific discourse, inform policy, and promote open, inclusive, and transparent research practices. Whether you're a researcher, educator, or policymaker, this hub provides access to FORRT’s evolving body of work. Dive in to discover, cite, or collaborate.
+
+<br>
+
+## **Mapping Open Science Communities in Psychology: A Systematic Narrative Review**
+
+---
+
+We have written a manuscript, entitled *International Initiatives to Enhance Awareness and Uptake of Open Research in Psychology: A Systematic Mapping Review,* which outlines the global landscape of Open Science initiatives within psychology. This postprint provides a systematic review of *187 initiatives*, categorized into procedural, structural, and community-based changes, highlighting the roles they play in advancing transparency, replicability, and collaboration in research practices. The review aims to increase awareness, adoption, and coordination of these initiatives across psychology and beyond, serving as a roadmap for disciplines experiencing similar challenges.
+
+
+***Status***: Our paper is Published by **Royal Society** 🎉🥳. Cite as:
+> Skubera Magda, Korbmacher Max, Evans Thomas Rhys, Azevedo Flavio and Pennington Charlotte R. 2025International initiatives to enhance awareness and uptake of open research in psychology: a systematic mapping reviewR. Soc. Open Sci.12241726. https://doi.org/10.1098/rsos.241726 
+
+<div class='altmetric-embed' data-badge-type='medium-donut' data-doi="https://doi.org/10.1098/rsos.241726"></div>
 
 <br>
 
@@ -102,7 +116,7 @@ Journal of Open Psychology Data, 12: 8, pp. 1–23. DOI: https://doi.org/10.5334
 
 <br>
 
-The **<font style="color:#0e2a38">preprint</font>** can [be found here (osf.io/me2ub)](https://osf.io/preprints/metaarxiv/me2ub). 
+The **<font style="color:#0e2a38">postprint</font>** can [be found here (osf.io/me2ub)](https://osf.io/preprints/metaarxiv/me2ub). 
 
 <div class='altmetric-embed' data-badge-type='medium-donut' data-doi="10.31222/osf.io/me2ub"></div>
 <div class='altmetric-embed' data-badge-type='medium-donut' data-doi="https://doi.org/10.5334/jopd.101"></div>
@@ -123,7 +137,7 @@ We have written a manuscript entitled *Teaching open and reproducible scholarshi
 
 <br>
 
-The **<font style="color:#0e2a38">preprint</font>** can [be found here (osf.io/9e526)](https://osf.io/preprints/metaarxiv/9e526/). 
+The **<font style="color:#0e2a38">postprint</font>** can [be found here (osf.io/9e526)](https://osf.io/preprints/metaarxiv/9e526/). 
 
 
 <div class='altmetric-embed' data-badge-type='medium-donut' data-doi="https://doi.org/10.31222/osf.io/9e526"></div>
@@ -133,7 +147,7 @@ The **<font style="color:#0e2a38">preprint</font>** can [be found here (osf.io/9
 
 <br>
 
-## Improvements since the Replication Crisis: The Structural, Procedural, and Community Changes
+## **Improvements since the Replication Crisis: The Structural, Procedural, and Community Changes**
 
 ---
 
@@ -144,7 +158,7 @@ We have written a manuscript entitled *The replication crisis has led to positiv
 > Korbmacher, M., Azevedo, F., Pennington, C. R., Hartmann, H., Pownall, M., Schmidt, K., Elsherif, M., Breznau, N., Robertson, O., Kalandadze, T., Yu, S., Baker, B. J., O'Mahony, A., Olsnes, J. Ø.-S., Shaw, J. J., Gjoneska, B., Yamada, Y., Röer, J. P., Murphy, J., Alzahawi, S., Grinschgl, S., Oliveira, C. M., Wingen, T., Yeung, S. K., Liu, M., König, L. M., Albayrak-Aydemir, N., Lecuona, O., Micheli, L., & Evans, T. (2023). The replication crisis has led to positive structural, procedural, and community changes. *Communications Psychology*, *1*, 3. https://doi.org/10.1038/s44271-023-00003-2.
 <br>
 
-The **<font style="color:#0e2a38">preprint</font>** can [be found here (osf.io/r6cvx)](https://doi.org/10.31222/osf.io/r6cvx).
+The **<font style="color:#0e2a38">postprint</font>** can [be found here (osf.io/r6cvx)](https://doi.org/10.31222/osf.io/r6cvx).
 
 <div class='altmetric-embed' data-badge-type='medium-donut' data-doi="https://doi.org/10.31222/osf.io/r6cvx"></div>
 
@@ -164,7 +178,7 @@ We have written a manuscript entitled *Opening up understanding of neurodiversit
 
 <br>
 
-The **<font style="color:#0e2a38">preprint</font>** can [be found here (osf.io/jq23s)](https://osf.io/preprints/metaarxiv/jq23s/). 
+The **<font style="color:#0e2a38">postprint</font>** can [be found here (osf.io/jq23s)](https://osf.io/preprints/metaarxiv/jq23s/). 
 
 <div class='altmetric-embed' data-badge-type='medium-donut' data-doi="https://doi.org/10.53841/bpscog.2023.1.8.23"></div>
 
@@ -184,7 +198,7 @@ In response to the varied and plural new terminology introduced by the *open sch
 
 <br>
 
-The **<font style="color:#0e2a38">preprint</font>** can [be found here (osf.io/kdqcw)](https://doi.org/10.31222/osf.io/kdqcw) and here is the [copy-edited version at the publisher's website](https://rdcu.be/cHsqM).
+The **<font style="color:#0e2a38">postprint</font>** can [be found here (osf.io/kdqcw)](https://doi.org/10.31222/osf.io/kdqcw) and here is the [copy-edited version at the publisher's website](https://rdcu.be/cHsqM).
 
 
 <div class='altmetric-embed' data-badge-type='medium-donut' data-doi="https://doi.org/10.31222/osf.io/kdqcw"></div>
@@ -220,7 +234,7 @@ Despite the growing awareness of the benefits of training reproducible methods w
 
 > Pownall, M., Azevedo, F., Aldoh, A., Elsherif, M. M., Vasilev, M. R., Pennington, C. R., … Parsons, S. (2021). Embedding open and reproducible science into teaching: A bank of lesson plans and resources. *Scholarship of Teaching and Learning in Psychology*. Advance online publication. [https://doi.org/10.1037/stl0000307](https://doi.org/10.1037/stl0000307). 
 
-The **<font style="color:#0e2a38">preprint</font>** can [be found here (osf.io/fgv79)](https://doi.org/10.31234/osf.io/fgv79). 
+The **<font style="color:#0e2a38">postprint</font>** can [be found here (osf.io/fgv79)](https://doi.org/10.31234/osf.io/fgv79). 
 
 <div class='altmetric-embed' data-badge-type='medium-donut' data-doi="https://doi.org/10.1037/stl0000307"></div>
 <div class='altmetric-embed' data-badge-type='medium-donut' data-doi="https://doi.org/10.31234/osf.io/fgv79"></div>
@@ -233,22 +247,6 @@ The **<font style="color:#0e2a38">preprint</font>** can [be found here (osf.io/f
   <h1> Preprints </h1>
   <hr>
 </div>
-
-## **Mapping Open Science Communities in Psychology: A Systematic Narrative Review**
-
----
-
-We have written a manuscript, entitled *International Initiatives to Enhance Awareness and Uptake of Open Research in Psychology: A Systematic Narrative Review,* which outlines the global landscape of Open Science initiatives within psychology. This preprint provides a systematic review of *187 initiatives*, categorized into procedural, structural, and community-based changes, highlighting the roles they play in advancing transparency, replicability, and collaboration in research practices. The review aims to increase awareness, adoption, and coordination of these initiatives across psychology and beyond, serving as a roadmap for disciplines experiencing similar challenges.
-
-
-***Status***: Our paper is **preprinted** 🎉🥳 in PsyArxiv. Cite as:
-> Skubera, M., Korbmacher, M., Evans, T.R., Azevedo, F., Pennington, C.R. (2024). International Initiatives to Enhance Awareness and Uptake of Open Research in Psychology: A Systematic Narrative Review. https://doi.org/10.31234/osf.io/rakmb.
-
-<div class='altmetric-embed' data-badge-type='medium-donut' data-doi="https://doi.org/10.31234/osf.io/rakmb"></div>
-
----
-
-<br>
 
 ## **Neurodiversity & Open Scholarship in Academia**
 
@@ -299,6 +297,22 @@ https://doi.org/10.7554/eLife.102467
 ---
 
 <br>
+
+## **Towards Citational Justice**
+> A toolkit to encourage thoughtful citation
+
+---
+
+Citations can be thought of as a currency in the academy, where more citations equals more prestige. While the system assumes a meritocracy—where higher citation counts supposedly indicate higher quality because a work is deemed valuable and legitimate by peers—this perspective ignores inherent biases and systemic inequalities. In reality, citation practices often function as mechanisms of exclusion, gatekeeping, and reproduction of existing power structures, reinforcing the dominance of certain groups over others. These issues span from individual choices in citation to structural issues with search engines; here we introduce a toolkit that individuals can use to encourage a conscientious, and more just, citation practice.
+
+The Citational Justice Toolkit organizes a collection of tools and practices by their application to four stages of the research cycle: planning, project, paper and publication. Researchers are encouraged to apply any tool or practice, or as many as they wish, at any point in the research cycle. Many of these tools and practices can become integrated into regular research workflow, ultimately leading to more just citational practices as a matter of course.
+
+The aim of this toolkit is to encourage individual researchers to become conscientious in their citation practices, using their citation choices to distribute power more equitably in the academy. We invite you to explore the Citational Justice Toolkit and join us in promoting equity and justice in academia.
+ 
+
+<br>
+
+---
 
 # Op-Eds and Other Media 
 
@@ -413,9 +427,41 @@ The **<font style="color:#0e2a38">briefing note</font>** can [be found here](Par
 ***Status***: Our briefing note was informative to UKRN & the British Psychological Society. Cite as:
 > Parsons, S., Azevedo, F., & FORRT (2020). *Briefing note for degree accrediting societies*. Framework for Open and Reproducible Research Training. https://forrt.org/publications
 
-<br>
 
 ---
+
+<br>
+
+<div align="center">
+  <h1> FORRT affiliated projects </h1>
+  <hr>
+</div>
+
+## **A scoping review on metrics to quantify reproducibility: a multitude of questions leads to a multitude of metrics**
+
+---
+
+Reproducibility is recognized as essential to scientific progress and integrity. Replication studies and large-scale replication projects, aiming to quantify different aspects of reproducibility, have become more common. Since no standardized approach to measuring reproducibility exists, a diverse set of metrics has emerged and a comprehensive overview is needed. We conducted a scoping review to identify large-scale replication projects that used metrics and methodological papers that proposed or discussed metrics. The project list was compiled by the authors. For the methodological papers, we searched Scopus, MedLine, PsycINFO and EconLit. Records were screened in duplicate against pre-defined inclusion criteria. Demographic information on included records and information on reproducibility metrics used, suggested or discussed was extracted. We identified 49 large-scale projects and 97 methodological papers and extracted 50 metrics. The metrics were characterized based on type (formulas and/or statistical models, frameworks, graphical representations, studies and questionnaires, algorithms), input required and appropriate application scenarios. Each metric addresses a distinct question. Our review provides a comprehensive resource in the form of a ‘live’, interactive table for future replication teams and meta-researchers, offering support in how to select the most appropriate metrics that are aligned with research questions and project goals.
+
+
+<div class='altmetric-embed' data-badge-type='medium-donut' data-doi="https://doi.org/10.1098/rsos.242076"></div>
+
+---
+
+<br>
+
+## **The Potential of Preregistration in Psychology: Assessing Preregistration Producibility and Preregistration-Study Consistency**
+
+---
+
+Study preregistration has become increasingly popular in psychology, but its potential to restrict researcher degrees of freedom has not yet been empirically verified. We used an extensive protocol to assess the producibility (i.e., the degree to which a study can be properly conducted based on the available information) of preregistrations and the consistency between preregistrations and their corresponding papers for 300 psychology studies. We found that preregistrations often lack methodological details and that undisclosed deviations from preregistered plans are frequent. These results highlight that biases due to researcher degrees of freedom remain possible in many preregistered studies. More comprehensive registration templates typically yielded more producible preregistrations. We did not find that the producibility and consistency of preregistrations differed over time or between original and replication studies. Furthermore, we found that operationalizations of variables were generally preregistered more producible and consistently than other study parts. Inconsistencies between preregistrations and published studies were mainly encountered for data collection procedures, statistical models, and exclusion criteria. Our results indicate that, to unlock the full potential of preregistration, researchers in psychology should aim to write more producible preregistrations, adhere to these preregistrations more faithfully, and more transparently report any deviations from their preregistrations. This could be facilitated by training and education to improve preregistration skills, as well as the development of more comprehensive templates.
+
+
+<div class='altmetric-embed' data-badge-type='medium-donut' data-doi="https://doi.org/10.1037/met0000687"></div>
+
+---
+
+<br>
 
 # **<font style="color:#4c1322">Ongoing Projects</font>**
 
