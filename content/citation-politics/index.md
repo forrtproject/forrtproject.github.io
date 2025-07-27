@@ -1,6 +1,4 @@
 ---
-# Documentation: https://sourcethemes.com/academic/docs/managing-content/
-
 title: "Towards Citational Justice"
 subtitle: "A toolkit to encourage thoughtful citation"
 summary: "Citations can be thought of as a currency in the academy, where more citations equals more prestige. While the system assumes a meritocracy—where higher citation counts supposedly indicate higher quality because a work is deemed valuable and legitimate by peers—this perspective ignores inherent biases and systemic inequalities."
@@ -48,7 +46,7 @@ We provide a suite of resources to support the use and implementation of the Cit
 
 ## Toolkit Website
 
-{{< button url="/citation-politics/toolkit/" >}}Toolkit Website{{< /button >}}ß
+{{< btn >}}
 
 **Citation Self-Audit**: [to be created through Sarah’s BA/Leverhulme grant] This guide walks you through using the Citational Justice Toolkit to conduct an audit on your own work and more importantly - how to pinpoint tools and practices to help you make targeted changes.
 
