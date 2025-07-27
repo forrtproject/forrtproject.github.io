@@ -96,7 +96,7 @@ This page showcases the diverse scholarly and public-facing outputs produced by 
 We have written a manuscript, entitled *International Initiatives to Enhance Awareness and Uptake of Open Research in Psychology: A Systematic Mapping Review,* which outlines the global landscape of Open Science initiatives within psychology. This postprint provides a systematic review of *187 initiatives*, categorized into procedural, structural, and community-based changes, highlighting the roles they play in advancing transparency, replicability, and collaboration in research practices. The review aims to increase awareness, adoption, and coordination of these initiatives across psychology and beyond, serving as a roadmap for disciplines experiencing similar challenges.
 
 
-***Status***: Our paper is Published by **Royal Society** 🎉🥳. Cite as:
+***Status***: Published by **Royal Society** 🎉🥳. Cite as:
 > Skubera Magda, Korbmacher Max, Evans Thomas Rhys, Azevedo Flavio and Pennington Charlotte R. 2025International initiatives to enhance awareness and uptake of open research in psychology: a systematic mapping reviewR. Soc. Open Sci.12241726. https://doi.org/10.1098/rsos.241726 
 
 <div class='altmetric-embed' data-badge-type='medium-donut' data-doi="https://doi.org/10.1098/rsos.241726"></div>
