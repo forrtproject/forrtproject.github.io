@@ -46,8 +46,6 @@ We provide a suite of resources to support the use and implementation of the Cit
 
 ## Toolkit Website
 
-{{< btn >}}
-
 <a href="/citation-politics/toolkit/" class="btn btn-primary py-2 m-1 btn-lg" style="line-height:1;border-radius:6px">
   Toolkit Website
 </a>
