@@ -27,6 +27,7 @@ draft: false
 #   Otherwise, set `projects = []`.
 projects: []
 type: plain_page
+url: "/citation-politics/"
 ---
 
 ## Overview
