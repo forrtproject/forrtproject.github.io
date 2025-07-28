@@ -1,9 +1,8 @@
 +++
 # A Demo section created with the Blank widget.
-# Any elements can be added in the body: https://sourcethemes.com/academic/docs/writing-markdown-latex/
 # Add more sections by duplicating this file and customizing to your requirements.
 
-widget = "blank"  # See https://sourcethemes.com/academic/docs/page-builder/
+widget = "blank"  #
 headless = true  # This file represents a page section.
 active = true  # Activate this widget? true/false
 weight = 5  # Order that this section will appear.
@@ -87,6 +86,8 @@ This page showcases the diverse scholarly and public-facing outputs produced by 
 
 <br>
 
+---
+
 ## **Mapping Open Science Communities in Psychology: A Systematic Narrative Review**
 
 ---
@@ -94,10 +95,29 @@ This page showcases the diverse scholarly and public-facing outputs produced by 
 We have written a manuscript, entitled *International Initiatives to Enhance Awareness and Uptake of Open Research in Psychology: A Systematic Mapping Review,* which outlines the global landscape of Open Science initiatives within psychology. This postprint provides a systematic review of *187 initiatives*, categorized into procedural, structural, and community-based changes, highlighting the roles they play in advancing transparency, replicability, and collaboration in research practices. The review aims to increase awareness, adoption, and coordination of these initiatives across psychology and beyond, serving as a roadmap for disciplines experiencing similar challenges.
 
 
-***Status***: Our paper is Published by **Royal Society** 🎉🥳. Cite as:
+***Status***: Published by **Royal Society** 🎉🥳. Cite as:
 > Skubera Magda, Korbmacher Max, Evans Thomas Rhys, Azevedo Flavio and Pennington Charlotte R. 2025International initiatives to enhance awareness and uptake of open research in psychology: a systematic mapping reviewR. Soc. Open Sci.12241726. https://doi.org/10.1098/rsos.241726 
 
 <div class='altmetric-embed' data-badge-type='medium-donut' data-doi="https://doi.org/10.1098/rsos.241726"></div>
+
+<br>
+
+---
+
+## **An annotated introductory reading list for neurodiversity**
+
+---
+
+Since its inception, the concept of neurodiversity has been defined in a number of different ways, which can cause confusion among those hoping to educate themselves about the topic. Learning about neurodiversity can also be challenging because there is a lack of well-curated, appropriately contextualized information on the topic. To address such barriers, we present an annotated reading list that was developed collaboratively by a neurodiverse group of researchers. The nine themes covered in the reading list are: the history of neurodiversity; ways of thinking about neurodiversity; the importance of lived experience; a neurodiversity paradigm for autism science; beyond deficit views of ADHD; expanding the scope of neurodiversity; anti-ableism; the need for robust theory and methods; and integration with open and participatory work. We hope this resource can support readers in understanding some of the key ideas and topics within neurodiversity, and that it can further orient researchers towards more rigorous, destigmatizing, accessible, and inclusive scientific practices.
+
+<div class='altmetric-embed' data-badge-type='medium-donut' data-doi="https://doi.org/10.7554/eLife.102467"></div>
+
+The **<font style="color:#0e2a38">postprint</font>** can [be found here (eLife 13:e102467)](https://doi.org/10.7554/eLife.102467). 
+
+
+> Mirela Zaneva, Tao Coll-Martín, Yseult Héjja-Brichard, Tamara Kalandadze, Andrea Kis, Alicja Koperska, Marie Adrienne Robles Manalili, Adrien Mathy, Christopher J Graham, Anna Hollis, Robert M Ross, Siu Kit Yeung, Veronica Allen, Flavio Azevedo, Emily Friedel, Stephanie Fuller, Vaitsa Giannouli, Biljana Gjoneska, Helena Hartmann, Max Korbmacher, Mahmoud M Elsherif, Alyssa Hillary Zisk (2024) Point of View: An annotated introductory reading list for neurodiversity eLife 13:e102467
+https://doi.org/10.7554/eLife.102467
+
 
 <br>
 
@@ -166,7 +186,7 @@ The **<font style="color:#0e2a38">postprint</font>** can [be found here (osf.io/
 
 <br>
 
-## Participatory Research Primer
+## **Participatory Research Primer**
 
 ---
 
@@ -275,24 +295,6 @@ The **<font style="color:#0e2a38">preprint</font>** can [be found here (osf.io/b
 
 ***Status***: Our manuscript is currently under review. Cite as:
 > Azevedo, F., Parsons, S., Micheli, L., Strand, J., Rinke, E., ... & FORRT (2019, December 13). Introducing a Framework for Open and Reproducible Research Training (FORRT). https://doi.org/10.31219/osf.io/bnh7p
-
----
-
-<br>
-
-## **Point of View: An annotated introductory reading list for neurodiversity**
-
----
-
-Since its inception, the concept of neurodiversity has been defined in a number of different ways, which can cause confusion among those hoping to educate themselves about the topic. Learning about neurodiversity can also be challenging because there is a lack of well-curated, appropriately contextualized information on the topic. To address such barriers, we present an annotated reading list that was developed collaboratively by a neurodiverse group of researchers. The nine themes covered in the reading list are: the history of neurodiversity; ways of thinking about neurodiversity; the importance of lived experience; a neurodiversity paradigm for autism science; beyond deficit views of ADHD; expanding the scope of neurodiversity; anti-ableism; the need for robust theory and methods; and integration with open and participatory work. We hope this resource can support readers in understanding some of the key ideas and topics within neurodiversity, and that it can further orient researchers towards more rigorous, destigmatizing, accessible, and inclusive scientific practices.
-
-<div class='altmetric-embed' data-badge-type='medium-donut' data-doi="https://doi.org/10.7554/eLife.102467"></div>
-
-The **<font style="color:#0e2a38">preprint</font>** can [be found here (eLife 13:e102467)](https://doi.org/10.7554/eLife.102467). 
-
-
-> Mirela Zaneva, Tao Coll-Martín, Yseult Héjja-Brichard, Tamara Kalandadze, Andrea Kis, Alicja Koperska, Marie Adrienne Robles Manalili, Adrien Mathy, Christopher J Graham, Anna Hollis, Robert M Ross, Siu Kit Yeung, Veronica Allen, Flavio Azevedo, Emily Friedel, Stephanie Fuller, Vaitsa Giannouli, Biljana Gjoneska, Helena Hartmann, Max Korbmacher, Mahmoud M Elsherif, Alyssa Hillary Zisk (2024) Point of View: An annotated introductory reading list for neurodiversity eLife 13:e102467
-https://doi.org/10.7554/eLife.102467
 
 ---
 
@@ -446,6 +448,12 @@ Reproducibility is recognized as essential to scientific progress and integrity.
 
 <div class='altmetric-embed' data-badge-type='medium-donut' data-doi="https://doi.org/10.1098/rsos.242076"></div>
 
+The **<font style="color:#0e2a38">postprint</font>** can [be found here](https://doi.org/10.1098/rsos.242076). 
+
+***Cite as:***
+
+> Heyard Rachel, Pawel Samuel, Frese Joris, Voelkl Bernhard, Würbel Hanno, McCann Sarah, Held Leonhard, Wever Kimberley E., Hartmann Helena, Townsin Louise and Zellers Stephanie 2025A scoping review on metrics to quantify reproducibility: a multitude of questions leads to a multitude of metricsR. Soc. Open Sci.12242076. https://doi.org/10.1098/rsos.242076
+
 ---
 
 <br>
@@ -458,6 +466,12 @@ Study preregistration has become increasingly popular in psychology, but its pot
 
 
 <div class='altmetric-embed' data-badge-type='medium-donut' data-doi="https://doi.org/10.1037/met0000687"></div>
+
+The **<font style="color:#0e2a38">postprint</font>** can [be found here](https://doi.org/10.1037/met0000687). 
+
+***Cite as:***
+
+> van den Akker, O. R., Bakker, M., van Assen, M. A. L. M., Pennington, C. R., Verweij, L., Elsherif, M. M., Claesen, A., Gaillard, S. D. M., Yeung, S. K., Frankenberger, J.-L., Krautter, K., Cockcroft, J. P., Kreuer, K. S., Evans, T. R., Heppel, F. M., Schoch, S. F., Korbmacher, M., Yamada, Y., Albayrak-Aydemir, N., . . . Wicherts, J. M. (2024). The potential of preregistration in psychology: Assessing preregistration producibility and preregistration-study consistency.Psychological Methods. Advance online publication. https://doi.org/10.1037/met0000687
 
 ---
 
