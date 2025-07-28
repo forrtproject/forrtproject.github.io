@@ -17,6 +17,7 @@ url: "/citation-politics/"
 
 <img src="./toolkit/v7final.webp" width=700px align="center"  alt="Citation Politics Toolkit" />
 
+
 # Overview
 
 ---
@@ -51,7 +52,6 @@ We provide a suite of resources to support the use and implementation of the Cit
 
 
 ## Citation Self-Audit
-
 > [to be created through Sarah’s BA/Leverhulme grant] 
 
 ---
