@@ -34,39 +34,39 @@ The aim of this toolkit is to encourage individual researchers to become conscie
 
 We provide a suite of resources to support the use and implementation of the Citational Justice Toolkit:
 
-# Manuscript: 
+## Manuscript:
 
----
+Decades of empirical research across disciplines reveal the pervasiveness of citation biases along axes of gender, race, geography, and epistemology. Who we cite reflects and reinforces both the boundaries and hierarchies of academic knowledge, covertly shaping not only whose research is legitimized and valued but also whose careers are advanced. Citations, the currency of the academy with power to reinforce or dismantle hierarchies that privilege dominant knowledge systems cannot thus be a neutral, apolitical act. This paper unpacks the concept of citation politics and its role in sustaining epistemic hierarchies within scholarly communities. Rather than framing citation bias as a matter of individual oversight, we position it as a systemic issue tied to academic structures, norms, and incentive systems. We introduce a comprehensive and openly accessible Citational Justice Toolkit, developed by the FORRT community, which curates actionable resources, tools, and practices helping scholars and institutions to audit, diversify, and reflect on their citation practices across the research cycle. Our aim is to support a shift from tokenistic inclusion toward epistemically accountable, socially responsible, and structurally aware scholarship. We argue that reimagining citation as an ethical and epistemic practice is foundational to building a just and inclusive academic ecosystem, fostering pluralism, transparency, and integrity in knowledge production.
 
-**coming Soon**
 
 <br>
 
-# Toolkit
+## Toolkit Website
 
----
 
 <a href="/citation-politics/toolkit/" class="btn btn-primary py-2 m-1 btn-lg" style="line-height:1;border-radius:6px">
   Toolkit Website
 </a>
 
 
-## Citation Self-Audit
-> [to be created through Sarah’s BA/Leverhulme grant] 
+## Citation Self-Audit 
 
----
+***<p style="color:red">COMING SOON.</p>***
 
 This guide walks you through using the Citational Justice Toolkit to conduct an audit on your own work and more importantly - how to pinpoint tools and practices to help you make targeted changes.
 
 
 ## FORRT citational justice module
 
----
+#### Diversify Your Content Workshop: 
 
-**Diversify Your Content Workshop**: [to be created through Sarah’s BA/Leverhulme grant] This workshop guides you through applying the Citational Justice Workshop to teaching content using focused questions to target changes.
+***<p style="color:red">COMING SOON.</p>***
 
-## Get involved!
+This workshop guides you through applying the Citational Justice Workshop to teaching content using focused questions to target changes.
+
+# Get involved!
 
 --- 
 
-This toolkit and accompanying manuscript are only the first piece of work produced by the FORRT Citational Politics Working Group. If you have any other ideas or suggestions for development of the toolkit, or other ways of engaging with citational practice or patterns (especially as it relates to open research), get in touch with Sarah Sauve (SSauve@lincoln.ac.uk) or Helena Gellersen on [FORRT’s Slack](https://join.slack.com/t/forrt/shared_invite/enQtODMwODI0OTk4ODgzLTM0ZTQ3NDk5MzA1ZjBmNWJjYTVlN2Y2YTk0ZTJhYTY5NDliMDYzMjg2MWE0ZDRhOTY0ZDY3OTRlNDA4ODQ3NjQ).
+This toolkit and accompanying manuscript are only the first piece of work produced by the FORRT Citational Politics Working Group. If you have any other ideas or suggestions for development of the toolkit, or other ways of engaging with citational practice or patterns (especially as it relates to open research), get in touch with Sarah Sauve or Helena Gellersen on  [FORRT’s Slack](https://join.slack.com/t/forrt/shared_invite/enQtODMwODI0OTk4ODgzLTM0ZTQ3NDk5MzA1ZjBmNWJjYTVlN2Y2YTk0ZTJhYTY5NDliMDYzMjg2MWE0ZDRhOTY0ZDY3OTRlNDA4ODQ3NjQ).
+ or email the team at citation-politics@forrt.org.

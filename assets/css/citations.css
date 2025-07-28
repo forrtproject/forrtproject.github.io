@@ -1,9 +1,9 @@
 /** styles for citations shortcode **/
 
 .container {
-    max-width: 1500px;
+    max-width: 1600px;
     margin: 0 auto;
-    padding: 20px;
+    padding: 10px;
 }
 
 header {
@@ -35,8 +35,8 @@ h1 {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: auto auto;
-    gap: 30px;
-    margin-bottom: 50px;
+    gap: 15px;
+    margin-bottom: 30px;
 }
 
 /* Stage Boxes */
@@ -44,7 +44,7 @@ h1 {
     background: white;
     border-radius: 15px;
     box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-    padding: 30px;
+    padding: 10px;
     display: flex;
     flex-direction: column;
     height: 100%;
@@ -109,10 +109,10 @@ h1 {
 }
 
 .content-group h4 {
-    margin: 0 0 15px 0;
+    margin: 0 0 10px 0;
     font-size: 1rem;
     color: #2c3e50;
-    padding-bottom: 10px;
+    padding-bottom: 7px;
     border-bottom: 2px dashed #ecf0f1;
     font-weight: 600;
 }
@@ -121,14 +121,14 @@ h1 {
 .hexagon-grid {
     display: flex;
     flex-wrap: wrap;
-    gap: 15px;
+    gap: 10px;
     justify-content: center;
 }
 
 .hexagon {
     position: relative;
-    width: 100px;
-    height: 90px;
+    width: 130px;
+    height: 100px;
     background-color: white;
     display: flex;
     align-items: center;
@@ -142,7 +142,7 @@ h1 {
 
 .hexagon a {
     font-size: 0.6rem;
-    padding: 12px;
+    padding: 5px;
     color: #2c3e50;
     text-decoration: none;
     display: flex;
@@ -173,6 +173,8 @@ h1 {
 .hexagon.primary {
     background: rgba(155, 89, 182, 0.15);
     border-color: #8e44ad;
+    width: 80px;
+    height: 60px;
 }
 
 /* Legend */
