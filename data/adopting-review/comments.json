@@ -1,0 +1,47 @@
+{
+  "page": "adopting-review",
+  "lastUpdated": "2024-01-15T10:00:00.000Z",
+  "commentCount": 4,
+  "comments": [
+    {
+      "id": 1705312200000,
+      "author": "Sarah Johnson",
+      "email": "sarah@example.com",
+      "content": "This is such a comprehensive guide! I adopted my dog Luna from a local shelter last year and it was the best decision ever. The process was smooth and the staff was incredibly helpful.",
+      "timestamp": "2 days ago",
+      "date": "2024-01-13T08:30:00.000Z",
+      "commentNumber": 1,
+      "avatar": "https://ui-avatars.com/api/?name=Sarah%20Johnson&background=3B82F6&color=fff&size=40&rounded=true"
+    },
+    {
+      "id": 1705315800000,
+      "author": "Mike Chen",
+      "email": "mike@example.com",
+      "content": "Great article! One thing I'd add is to consider fostering first if you're unsure. We fostered our cat Whiskers for a month before officially adopting him. It really helped us make sure we were a good match.",
+      "timestamp": "1 day ago",
+      "date": "2024-01-14T09:30:00.000Z",
+      "commentNumber": 2,
+      "avatar": "https://ui-avatars.com/api/?name=Mike%20Chen&background=3B82F6&color=fff&size=40&rounded=true"
+    },
+    {
+      "id": 1705319400000,
+      "author": "Emma Rodriguez",
+      "email": "emma@example.com",
+      "content": "The preparation checklist is spot on! I wish I had seen this before adopting my first pet. Definitely saving this for anyone I know who's considering adoption.",
+      "timestamp": "18 hours ago",
+      "date": "2024-01-14T15:45:00.000Z",
+      "commentNumber": 3,
+      "avatar": "https://ui-avatars.com/api/?name=Emma%20Rodriguez&background=3B82F6&color=fff&size=40&rounded=true"
+    },
+    {
+      "id": 1705323000000,
+      "author": "David Park",
+      "email": "david@example.com",
+      "content": "Thank you for mentioning the ongoing support from adoption centers. Our rescue organization has been amazing - they even helped us with training resources when we had some behavioral challenges initially.",
+      "timestamp": "12 hours ago",
+      "date": "2024-01-14T21:30:00.000Z",
+      "commentNumber": 4,
+      "avatar": "https://ui-avatars.com/api/?name=David%20Park&background=3B82F6&color=fff&size=40&rounded=true"
+    }
+  ]
+}

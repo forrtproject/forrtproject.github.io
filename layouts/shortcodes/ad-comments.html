@@ -1,0 +1,311 @@
+<div class="comment-section-container">
+  <div class="comment-section">
+    <div class="comments-list" id="commentsList">
+      <!-- Comments will be populated by JavaScript -->
+    </div>
+    
+    <!-- Comment Form -->
+    <div class="comment-card add-comment-form">
+      <div class="comment-content">
+        <div class="comment-avatar">
+          <img src="/img/chat.webp" alt="Your avatar" class="avatar">
+        </div>
+        <div class="comment-body">
+          <div class="user-info-form" id="userInfoForm">
+            <div class="user-inputs">
+              <input type="text" id="userName" placeholder="Your name" class="user-input" required>
+              <input type="email" id="userEmail" placeholder="Your email" class="user-input" required>
+            </div>
+          </div>
+          <textarea 
+            id="newCommentText" 
+            placeholder="Add a comment..." 
+            class="comment-input"
+            rows="3"
+          ></textarea>
+          <div class="comment-actions">
+            <div class="status-container" id="statusContainer"></div>
+            <button id="sendComment" class="send-button">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="22" y1="2" x2="11" y2="13"></line>
+                <polygon points="22,2 15,22 11,13 2,9"></polygon>
+              </svg>
+              SEND
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+.comment-section-container {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 24px;
+}
+
+.comment-section {
+  background: linear-gradient(135deg, #8B4513 0%, #A0522D 100%);
+  padding: 24px;
+  border-radius: 12px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+.comments-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.comment-card {
+  background: white;
+  border-radius: 8px;
+  padding: 16px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.comment-content {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+}
+
+.comment-number {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 40px;
+  margin-right: 8px;
+}
+
+.comment-number span {
+  color: #3B82F6;
+  font-weight: 600;
+  font-size: 18px;
+}
+
+.comment-avatar {
+  flex-shrink: 0;
+}
+
+.avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  background: #E5E7EB;
+}
+
+.comment-body {
+  flex: 1;
+  min-width: 0;
+}
+
+.comment-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.comment-meta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.comment-author {
+  font-weight: 600;
+  color: #111827;
+}
+
+.comment-timestamp {
+  color: #6B7280;
+  font-size: 14px;
+}
+
+.reply-button {
+  background: none;
+  border: none;
+  color: #3B82F6;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 14px;
+  transition: all 0.2s;
+}
+
+.reply-button:hover {
+  background: #EFF6FF;
+  color: #2563EB;
+}
+
+.comment-text {
+  color: #374151;
+  line-height: 1.6;
+  margin: 0;
+  white-space: pre-wrap;
+}
+
+.user-info-form {
+  margin-bottom: 12px;
+}
+
+.user-inputs {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.user-input {
+  padding: 8px 12px;
+  border: 2px solid #E5E7EB;
+  border-radius: 6px;
+  font-family: inherit;
+  font-size: 14px;
+  transition: border-color 0.2s;
+}
+
+.user-input:focus {
+  outline: none;
+  border-color: #3B82F6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.comment-input {
+  width: 100%;
+  min-height: 80px;
+  padding: 12px;
+  border: 2px solid #E5E7EB;
+  border-radius: 6px;
+  font-family: inherit;
+  font-size: 14px;
+  resize: vertical;
+  transition: border-color 0.2s;
+}
+
+.comment-input:focus {
+  outline: none;
+  border-color: #3B82F6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.comment-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 12px;
+  gap: 12px;
+}
+
+.status-container {
+  flex: 1;
+}
+
+.send-button {
+  background: #3B82F6;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 500;
+  transition: background-color 0.2s;
+}
+
+.send-button:hover {
+  background: #2563EB;
+}
+
+.send-button:disabled {
+  background: #9CA3AF;
+  cursor: not-allowed;
+}
+
+.status-message {
+  padding: 8px 12px;
+  border-radius: 6px;
+  font-size: 14px;
+  text-align: center;
+  margin-bottom: 8px;
+}
+
+.status-success {
+  background: #D1FAE5;
+  color: #065F46;
+  border: 1px solid #A7F3D0;
+}
+
+.status-error {
+  background: #FEE2E2;
+  color: #991B1B;
+  border: 1px solid #FECACA;
+}
+
+.loading {
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+.no-comments {
+  text-align: center;
+  color: #6B7280;
+  font-style: italic;
+  padding: 2rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .comment-section-container {
+    padding: 16px;
+  }
+  
+  .comment-section {
+    padding: 16px;
+  }
+  
+  .comment-content {
+    gap: 8px;
+  }
+  
+  .comment-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .user-inputs {
+    grid-template-columns: 1fr;
+  }
+  
+  .comment-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .status-container {
+    order: 2;
+  }
+}
+</style>
+
+<script src="/js/comments-backend.js"></script>
+<script>
+// Initialize the comment system when DOM is ready
+document.addEventListener('DOMContentLoaded', function() {
+  if (typeof AdCommentSystem !== 'undefined') {
+    window.adComments = new AdCommentSystem();
+    window.adComments.init();
+  }
+});
+</script>
