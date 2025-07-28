@@ -1,9 +1,8 @@
 /** styles for citations shortcode **/
-
 .container {
-    max-width: 1600px;
+    max-width: 1500px;
     margin: 0 auto;
-    padding: 10px;
+    padding: 20px;
 }
 
 header {
@@ -24,9 +23,9 @@ h1 {
 }
 
 .subtitle {
-    font-size: 1.4rem;
+    font-size: 1rem;
     color: #5a6268;
-    max-width: 800px;
+    max-width: 700px;
     margin: 0 auto;
 }
 
@@ -35,14 +34,15 @@ h1 {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: auto auto;
-    gap: 15px;
+    gap: 10px;
     margin-bottom: 30px;
+    width: auto;
 }
 
 /* Stage Boxes */
 .stage-box {
     background: white;
-    border-radius: 15px;
+    border-radius: 10px;
     box-shadow: 0 10px 30px rgba(0,0,0,0.08);
     padding: 10px;
     display: flex;
@@ -60,9 +60,9 @@ h1 {
 .stage-box h3 {
     margin: 0 0 25px 0;
     text-align: center;
-    font-size: 1.5rem;
-    padding: 12px;
-    border-radius: 8px;
+    font-size: 1rem;
+    padding: 6px;
+    border-radius: 4px;
     color: white;
     position: relative;
     z-index: 1;
@@ -105,86 +105,118 @@ h1 {
 .box-content {
     display: flex;
     flex-direction: column;
-    gap: 25px;
+    gap: 10px;
 }
 
 .content-group h4 {
-    margin: 0 0 10px 0;
-    font-size: 1rem;
+    margin: 0 0 15px 0;
+    font-size: 0.8rem;
     color: #2c3e50;
-    padding-bottom: 7px;
+    padding-bottom: 5px;
     border-bottom: 2px dashed #ecf0f1;
-    font-weight: 600;
+    font-weight: 500;
 }
 
-/* Hexagon Styling */
-.hexagon-grid {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    justify-content: center;
+/* ====== UPDATED BOX GRID STYLES ====== */
+
+.box-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 15px;
+    margin-bottom: 10px;
+    width: 100%;
 }
 
-.hexagon {
-    position: relative;
-    width: 130px;
-    height: 100px;
-    background-color: white;
+.box {
+    background: white;
+    border-radius: 5px;
+    padding: 5px;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
-    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
     transition: all 0.3s ease;
-    border: 1px solid #bdc3c7;
-    cursor: pointer;
+    border: 1px solid #e0e7ff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    min-height: 50px;
+    position: relative;
+    overflow: hidden;
 }
 
-.hexagon a {
-    font-size: 0.6rem;
-    padding: 5px;
-    color: #2c3e50;
+.box a {
     text-decoration: none;
+    color: #2c3e50;
+    font-weight: 500;
+    font-size: 0.7rem;
+    width: 100%;
+    height: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 100%;
-    width: 100%;
-    font-weight: 500;
+    padding: 5px;
 }
 
-.hexagon:hover {
-    transform: scale(1.1);
-    z-index: 20;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.18);
+.box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(52, 152, 219, 0.2);
+    border-color: #3498db;
 }
 
-/* Color Coding */
-.hexagon.practice {
-    background: rgba(46, 204, 113, 0.15);
-    border-color: #27ae60;
+/* Category colors */
+.box.primary {
+    border-top: 4px solid #9b59b6;
+    background: linear-gradient(to bottom, #ffffff, #f8f0ff);
 }
 
-.hexagon.tool {
-    background: rgba(231, 76, 60, 0.15);
-    border-color: #c0392b;
+.box.tool {
+    border-top: 4px solid #e74c3c;
+    background: linear-gradient(to bottom, #ffffff, #fff0f0);
 }
 
-.hexagon.primary {
+.box.practice {
+    border-top: 4px solid #2ecc71;
+    background: linear-gradient(to bottom, #ffffff, #f0fff8);
+}
+
+/* Category badges */
+.box::before {
+    content: attr(data-category);
+    position: absolute;
+    top: 3px;
+    right: 3px;
+    font-size: 0.3rem;
+    font-weight: 400;
+    padding: 1px 2px;
+    border-radius: 4px;
+    text-transform: uppercase;
+}
+
+.box.primary::before {
+    content: "Primary";
     background: rgba(155, 89, 182, 0.15);
-    border-color: #8e44ad;
-    width: 80px;
-    height: 60px;
+    color: #8e44ad;
 }
 
-/* Legend */
+.box.tool::before {
+    content: "Tool";
+    background: rgba(231, 76, 60, 0.15);
+    color: #c0392b;
+}
+
+.box.practice::before {
+    content: "Practice";
+    background: rgba(46, 204, 113, 0.15);
+    color: #27ae60;
+}
+
+/* ====== UPDATED LEGEND STYLES ====== */
 .legend {
     display: flex;
     justify-content: center;
-    gap: 30px;
+    gap: 15px;
     background: rgb(255, 255, 255);
-    padding: 18px 35px;
-    border-radius: 50px;
+    padding: 15px 30px;
+    border-radius: 40px;
     box-shadow: 0 8px 25px rgba(0,0,0,0.1);
     max-width: 800px;
     margin: 0 auto;
@@ -211,7 +243,7 @@ h1 {
     height: 25px;
     background: rgba(46, 204, 113, 0.3);
     border: 1px solid #27ae60;
-    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+    border-radius: 5px;
 }
 
 .legend-item.tool::before {
@@ -221,7 +253,7 @@ h1 {
     height: 25px;
     background: rgba(231, 76, 60, 0.3);
     border: 1px solid #c0392b;
-    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+    border-radius: 5px;
 }
 
 .legend-item.primary::before {
@@ -231,7 +263,7 @@ h1 {
     height: 25px;
     background: rgba(155, 89, 182, 0.3);
     border: 1px solid #8e44ad;
-    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+    border-radius: 5px;
 }
 
 /* Responsive Design */
@@ -240,9 +272,8 @@ h1 {
         gap: 20px;
     }
     
-    .hexagon {
-        width: 100px;
-        height: 86px;
+    .box {
+        padding: 15px;
     }
 }
 
@@ -267,20 +298,20 @@ h1 {
     .subtitle {
         font-size: 1.2rem;
     }
+    
+    .box-grid {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    }
 }
 
 @media (max-width: 600px) {
-    .hexagon-grid {
+    .box-grid {
+        grid-template-columns: 1fr;
         gap: 12px;
     }
     
-    .hexagon {
-        width: 90px;
-        height: 78px;
-    }
-    
-    .hexagon a {
-        font-size: 0.75rem;
+    .box {
+        padding: 15px;
     }
     
     .legend {
@@ -305,11 +336,6 @@ h1 {
 }
 
 @media (max-width: 480px) {
-    .hexagon {
-        width: 80px;
-        height: 69px;
-    }
-    
     .content-group h4 {
         font-size: 1.2rem;
     }
@@ -335,3 +361,5 @@ h1 {
 .citation-grid .stage-box:nth-child(4) { animation-delay: 0.4s; }
 .center-core { animation: fadeIn 0.6s ease-out 0.5s forwards; opacity: 0; }
 .legend { animation: fadeIn 0.6s ease-out 0.6s forwards; opacity: 0; }
+/* End of styles for citations shortcode */
+/* End of citations.css */
