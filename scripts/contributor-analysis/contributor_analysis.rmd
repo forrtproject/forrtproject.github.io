@@ -316,56 +316,36 @@ additional_hidden_edge <- data.frame(from = c("Fang Cathy", "Chen Liangjie", "Ji
 Contributor_edges_plot <- rbind(Contributor_edges %>% 
   mutate(hidden = F), additional_hidden_edge)
 
-visNetwork(Contributor_nodes,
-           Contributor_edges_plot,
-           width = "100%",
-           height = "600px"
-) %>%
-  visIgraphLayout(layout = "layout_nicely",
-                  randomSeed = 1001)  %>%
+## Network of Contributors
+
+visNetwork(Contributor_nodes, Contributor_edges_plot, width = "100%", height = "800px") %>%
+  visIgraphLayout(layout = "layout_nicely", randomSeed = 1001) %>%
   visPhysics(
     enabled = TRUE,
     stabilization = list(
       enabled = TRUE,
-      iterations = 100,
-      fit = FALSE
+      iterations = 1000,
+      fit = TRUE
     ),
     solver = "forceAtlas2Based",
     forceAtlas2Based = list(
-      gravitationalConstant = -200,
-      centralGravity = 0.05,         
-      springLength = 50,
-      springConstant = 0.005,        
+      gravitationalConstant = -500,  # Stronger repulsion
+      centralGravity = 0.01,         # Weaker central pull
+      springLength = 100,            # Longer springs
+      springConstant = 0.005,
       damping = 0.4,
-      avoidOverlap = 0.8 
+      avoidOverlap = 0.8
     )
   ) %>%
   visEdges(color = list(opacity = 0.1)) %>%
   visNodes(
-    font = list(
-      size = 5,
-      strokeWidth = 1,
-      strokeColor = "white"
-    ),
+    font = list(size = 5, strokeWidth = 1, strokeColor = "white"),
     size = 7,
     borderWidth = 0,
-    color = list(
-      background = "#353839",
-      highlight = list(
-        background = "#A52828",
-        border = "darkred"
-      )
-    ),
-    scaling = list(
-      min = 5,
-      max = 25
-    )
-  ) %>% 
-  visGroups(useDefaultGroups = FALSE) %>% 
-  # Combined interaction settings
+    color = list(background = "#353839", highlight = list(background = "#A52828", border = "darkred")),
+    scaling = list(min = 5, max = 25)
+  ) %>%
   visInteraction(
-    zoomView = 0.2,
-    zoom = TRUE,
     dragNodes = TRUE,
     dragView = TRUE,
     hover = TRUE,
@@ -375,22 +355,28 @@ visNetwork(Contributor_nodes,
     navigationButtons = TRUE
   ) %>%
   visOptions(
-    highlightNearest = list(
-      enabled = TRUE, 
-      degree = 1, 
-      hover = TRUE,
-      algorithm = "hierarchical"
-    ),
+    highlightNearest = list(enabled = TRUE, degree = 1, hover = TRUE, algorithm = "hierarchical"),
     nodesIdSelection = list(enabled = TRUE, style = "width: 200px;"),
-    selectedBy = list(variable = "projects", multiple = TRUE, 
-                     style = "width: 200px; background: #f8f8f8;")
+    selectedBy = list(variable = "projects", multiple = TRUE, style = "width: 200px; background: #f8f8f8;")
   ) %>%
   htmlwidgets::onRender("
     function(el, x) {
       var network = this;
-      network.on('stabilized', function(params) {
-        network.fit({nodes: [], animation: {duration: 100}});
+      // Add this to set initial scale
+      network.on('initRedraw', function() {
+        network.moveTo({
+          scale: 0.1,  // initial zoom level
+          position: {x:0, y:0}  // Center position
+        });
       });
+      // Add this to maintain scale after stabilization
+      network.on('stabilized', function() {
+        network.moveTo({
+          scale: 0.1,
+          animation: false  // Disable animation for instant repositioning
+        });
+      });
+      // Keep your existing functionality
       network.on('click', function(params) {
         if (params.nodes.length === 0) {
           network.body.data.nodes.update(
@@ -412,5 +398,4 @@ visNetwork(Contributor_nodes,
         });
       });
     }
-  ")  
-```
+  ")
