@@ -119,16 +119,17 @@
   parent = "about"
 
 [[main]]
+  name = "Testimonials"  # A link title for your page.
+  url = "/testimonials/"  # The URL of your page.
+  weight = 27  # The position of your page in the menu.
+  parent = "about"
+
+[[main]]
   name = "Visitors"  # A link title for your page.
   url = "/about/visitors"  # The URL of your page.
   weight = 28  # The position of your page in the menu.
   parent = "about"
 
-[[main]]
-  name = "Testimonials"  # A link title for your page.
-  url = "/testimonials/"  # The URL of your page.
-  weight = 29  # The position of your page in the menu.
-  parent = "about"
 
 [[main]]
   name = "Educational NEXUS"
