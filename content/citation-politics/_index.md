@@ -1,15 +1,13 @@
 ---
-title: ""
-subtitle: ""
 summary: "Citations can be thought of as a currency in the academy, where more citations equals more prestige. While the system assumes a meritocracy—where higher citation counts supposedly indicate higher quality because a work is deemed valuable and legitimate by peers—this perspective ignores inherent biases and systemic inequalities."
-type: plain_page
+type: citation_politics
 url: "/citation-politics/"
 ---
 
-<div style="text-align: center; margin: 1.5rem 0;">
+<div style="text-align: center; margin: 1rem 0;">
   <h1>Towards Citational Justice</h1>
   <p style="font-size: 1.25rem; color: #6c757d; margin-top: 0.5rem;">
-    A toolkit to encourage thoughtful citation
+    Across the Whole Research Cycle
   </p>
 </div>
 
@@ -29,7 +27,7 @@ The aim of this toolkit is to encourage individual researchers to become conscie
 
 We provide a suite of resources to support the use and implementation of the Citational Justice Toolkit:
 
-<a href="/citation-politics/toolkit/" class="btn btn-primary btn-lg btn-block" style="line-height:1;border-radius:6px">
+<a href="/citation-politics/toolkit/" class="btn btn-primary btn-lg btn-block" style="line-height:1;border-radius:6px; font-size:1.5rem;">
   Toolkit Website
 </a>
 

@@ -1,0 +1,25 @@
+{{- define "main" -}}
+<style>
+      /* Full-width toolkit container */
+    .toolkit-full-width {
+      max-width: 100% !important;
+      padding: 15px !important;
+      margin: 15px !important;
+    }
+
+    /* Remove container constraints */
+    .toolkit-full-width .container {
+      max-width: 100% !important;
+      padding: 15px !important;
+      margin: 15px !important;
+    }
+</style>
+<div class="universal-wrapper">
+  {{ with .Content }}
+  <div class="article-style">{{ . }}</div>
+  {{ end }}
+</div>
+
+{{ partial "pagination" . }}
+
+{{- end -}}

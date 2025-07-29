@@ -8,59 +8,152 @@
   <link rel="stylesheet" href="{{ "css/citations.css" | relURL }}">
 {{ end }}
 
+
 <body>
     <div class="container">
-        <div class="citation-grid">
-            <!-- Planning Box -->
-            <div class="stage-box planning">
-                <h3>Planning</h3>
-                <div class="box-content">
-                    <div class="content-group">
-                        <h4>Tools & Practices</h4>
-                        <div class="box-grid">
-                            <div class="box tool"><a href="https://chromewebstore.google.com/detail/citation-transparency/cepnbdbhabaljgecaddglhhcgajphbcf?hl=en&pli=1" target="_blank">Citation Transparency browser extension</a></div>
-                            <div class="box tool"><a href="#">FORRT citational justice module(coming soon)</a></div>
-                            <div class="box tool"><a href="https://civiclaboratory.nl/2023/08/08/citational-politics-training-module/" target="_blank">Citational politics training module - CLEAR - Civic Laboratory for Environmental Action Research</a></div>
-                            <div class="box practice"><a href="https://forrt.org/awop/" target="_blank">Academic Wheel of Priviledge (AWoP)</a></div>
+        <!-- Header -->
+        <header class="header">
+            <h1 class="main-title">Citation Politics Toolkit</h1>
+            <p class="subtitle">A toolkit to encourage thoughtful citation</p>
+        </header>
+
+        <!-- Main Layout -->
+        <div class="main-layout">
+            <!-- Mobile Image (shown only on small screens) -->
+            <div class="mobile-image">
+                <img src="/img/citation-politics-toolkit.webp" 
+                     alt="Citational Justice Toolkit"
+                     class="toolkit-image">
+            </div>
+
+            <!-- Left Column - Paper Box -->
+            <div class="column left-column">
+                <div class="stage-box paper">
+                    <h3 class="stage-title">Paper</h3>
+                    <div class="box-content">
+                        <div class="content-group">
+                            <h4 class="section-title">Tools & Practices</h4>
+                            <div class="tools-grid">
+                                <div class="tool-box tool" data-category="tool">
+                                    <a href="https://docs.google.com/document/d/1JwwmOgRhd2p-Bl_RFEMnp04P0I2nNhOHW7JHdaLcyGs/edit?tab=t.0" target="_blank">
+                                        Mirya Holman's pre-submission checklist
+                                    </a>
+                                </div>
+                                <div class="tool-box tool" data-category="tool">
+                                    <a href="https://jlsumner.shinyapps.io/syllabustool/" target="_blank">
+                                        Gender Balance Assessment Tool (GBAT)
+                                    </a>
+                                </div>
+                                <div class="tool-box tool" data-category="tool">
+                                    <a href="https://doi.org/10.31234/osf.io/rfkyu" target="_blank">
+                                        Citation audit survey (Darda et al., 2023)
+                                    </a>
+                                </div>
+                                <div class="tool-box tool" data-category="tool">
+                                    <a href="https://scholar.google.com/scholar_lookup?title=Writing+your+journal+article+in+twelve+weeks%3A+A+guide+to+academic+publishing+success&author=W.+L.+Belcher&publication_year=2019&doi=10.7208%2Fchicago%2F9780226500089.001.0001" target="_blank">
+                                        Gray test (Belcher, 2019)
+                                    </a>
+                                </div>
+                                <div class="tool-box tool" data-category="tool">
+                                    <a href="https://docs.google.com/spreadsheets/d/1HHM6i1WDaAVzSJxgZG8UtNWP3aRcFprsdVpLZJEWxOQ/edit#gid=759055580" target="_blank">
+                                        SIBL Citation Audit Template
+                                    </a>
+                                </div>
+                                <div class="tool-box tool" data-category="tool">
+                                    <a href="http://github.com/dalejn/cleanBib" target="_blank">
+                                        Citational diversity codebook
+                                    </a>
+                                </div>
+                                <div class="tool-box tool" data-category="tool">
+                                    <a href="https://genderize.io/" target="_blank">
+                                        Genderize
+                                    </a>
+                                </div>
+                                <div class="tool-box practice" data-category="practice">
+                                    <a href="https://doi.org/10.1016/j.tics.2020.06.009" target="_blank">
+                                        Citational diversity statement (Zurn et al., 2020)
+                                    </a>
+                                </div>
+                                <div class="tool-box tool" data-category="tool">
+                                    <a href="https://doi.org/10.18357/kula.135" target="_blank">
+                                        Template for citing Indigenous peoples (MacLeod, 2021)
+                                    </a>
+                                </div>
+                                <div class="tool-box tool" data-category="tool">
+                                    <a href="https://psych.wisc.edu/gcbialyzer/" target="_blank">
+                                        GCBI-alyzer
+                                    </a>
+                                </div>
+                                <div class="tool-box tool" data-category="tool">
+                                    <a href="https://doi.org/10.31234/osf.io/6kvqg" target="_blank">
+                                        Annotated reference list (Lawson et al., 2025)
+                                    </a>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- Project Box -->
-            <div class="stage-box project">
-                <h3>Project</h3>
-                <div class="box-content">
-                    <div class="content-group">
-                        <h4>Tools & Practices</h4>
-                        <div class="box-grid">
-                            <div class="box practice"><a href="http://www.criticalethnicstudiesjournal.org/citation-practices/" target="_blank">Citational Practices: Critical Ethnic Studies</a></div>
-                            <div class="box practice"><a href="#" target="_blank">Diversity reading - see Table below (collapsible table)</a></div>
+            <!-- Center Column - Image (Large Screens Only) -->
+            <div class="column center-column">
+                <img src="/img/citation-politics-toolkit.webp" 
+                     alt="Citational Justice Toolkit"
+                     class="toolkit-image">
+            </div>
+
+            <!-- Right Column - Planning and Project Boxes -->
+            <div class="column right-column">
+                <!-- Planning Box -->
+                <div class="stage-box planning">
+                    <h3 class="stage-title">Planning</h3>
+                    <div class="box-content">
+                        <div class="content-group">
+                            <h4 class="section-title">Tools & Practices</h4>
+                            <div class="tools-grid">
+                                <div class="tool-box tool" data-category="tool">
+                                    <a href="https://chromewebstore.google.com/detail/citation-transparency/cepnbdbhabaljgecaddglhhcgajphbcf?hl=en&pli=1" target="_blank">
+                                        Citation Transparency browser extension
+                                    </a>
+                                </div>
+                                <div class="tool-box tool" data-category="tool">
+                                    <a href="#">
+                                        FORRT citational justice module (coming soon)
+                                    </a>
+                                </div>
+                                <div class="tool-box tool" data-category="tool">
+                                    <a href="https://civiclaboratory.nl/2023/08/08/citational-politics-training-module/" target="_blank">
+                                        Citational politics training module - CLEAR
+                                    </a>
+                                </div>
+                                <div class="tool-box practice" data-category="practice">
+                                    <a href="https://forrt.org/awop/" target="_blank">
+                                        Academic Wheel of Privilege (AWoP)
+                                    </a>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
 
-            <!-- Paper Box -->
-            <div class="stage-box paper">
-                <h3>Paper</h3>
-                <div class="box-content">
-                    <div class="content-group">
-                        <h4>Tools & Practices</h4>
-                        <div class="box-grid">
-                            <div class="box practice"><a href="https://docs.google.com/document/d/1JwwmOgRhd2p-Bl_RFEMnp04P0I2nNhOHW7JHdaLcyGs/edit?tab=t.0" target="_blank"> Mirya Holman’s pre-submission checklist</a></div>
-                            <div class="box tool"><a href="https://jlsumner.shinyapps.io/syllabustool/" target="_blank"> Gender Balance Assessment Tool (GBAT)</a></div>
-                            <div class="box tool"><a href="https://doi.org/10.31234/osf.io/rfkyu" target="_blank">Citation audit survey (Darda et al., 2023)</a></div>
-                            <div class="box tool"><a href="https://scholar.google.com/scholar_lookup?title=Writing+your+journal+article+in+twelve+weeks%3A+A+guide+to+academic+publishing+success&author=W.+L.+Belcher&publication_year=2019&doi=10.7208%2Fchicago%2F9780226500089.001.0001" target="_blank">Gray test (Belcher, 2019)</a></div>
-                            <div class="box tool"><a href="https://docs.google.com/spreadsheets/d/1HHM6i1WDaAVzSJxgZG8UtNWP3aRcFprsdVpLZJEWxOQ/edit#gid=759055580" target="_blank">SIBL Citation Audit Template</a></div>
-                            <div class="box tool"><a href="http://github.com/dalejn/cleanBib" target="_blank">Citational diversity codebook</a></div>
-                            <div class="box tool"><a href="https://genderize.io/" target="_blank">Genderize</a></div>
-                            <div class="box tool"><a href="https://doi.org/10.18357/kula.135" target="_blank">Template for citing Indigenous peoples (MacLeod, 2021)</a></div>
-                            <div class="box tool"><a href="https://doi.org/10.1371/journal.pone.0221212" target="_blank">Inwardness metric (Baccini et al., 2019)</a></div>
-                            <div class="box practice"><a href="https://doi.org/10.1016/j.tics.2020.06.009" target="_blank">Citational diversity statement (Zurn et al., 2020)</a></div>
-                            <div class="box tool"><a href="https://psych.wisc.edu/gcbialyzer/" target="_blank">GCBI-alyzer</a></div>
-                            <div class="box tool"><a href="https://doi.org/10.31234/osf.io/6kvqg" target="_blank">Annotated reference list (Lawson et al., 2025)</a></div>
-                            <div class="box tool"><a href="#" target="_blank">Citing R packages (and other tools)</a></div>
+                <!-- Project Box -->
+                <div class="stage-box project">
+                    <h3 class="stage-title">Project</h3>
+                    <div class="box-content">
+                        <div class="content-group">
+                            <h4 class="section-title">Tools & Practices</h4>
+                            <div class="tools-grid">
+                                <div class="tool-box practice" data-category="practice">
+                                    <a href="http://www.criticalethnicstudiesjournal.org/citation-practices/" target="_blank">
+                                        Citational Practices: Critical Ethnic Studies
+                                    </a>
+                                </div>
+                                <div class="tool-box practice" data-category="practice">
+                                    <a href="#">
+                                        Diversity reading - see Table below
+                                    </a>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -69,17 +162,192 @@
 
         <!-- Legend -->
         <div class="legend">
-            <div class="legend-item practice"><a href="#" >Key Practices</a></div>
-            <div class="legend-item tool"><a href="#" >Tools</a></div>
+            <div class="legend-item practice">
+                <div class="legend-color"></div>
+                <span>Key Practices</span>
+            </div>
+            <div class="legend-item tool">
+                <div class="legend-color"></div>
+                <span>Tools</span>
+            </div>
         </div>
     </div>
 
     <script>
-        // hover effects for boxs
-        document.querySelectorAll('.box').forEach(hex => {
-            hex.addEventListener('mouseenter', function() {
-                this.style.transition = 'all 0.3s ease';
+                    // Enhanced hover effects and interactions
+        document.addEventListener('DOMContentLoaded', function() {
+            // Add hover effects to tool boxes
+            const toolBoxes = document.querySelectorAll('.tool-box');
+            
+            toolBoxes.forEach(box => {
+                box.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-3px)';
+                    this.style.boxShadow = '0 6px 20px rgba(52, 152, 219, 0.25)';
+                });
+                
+                box.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(0)';
+                    this.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.1)';
+                });
             });
+
+            // Add click tracking for analytics (optional)
+            const links = document.querySelectorAll('.tool-box a');
+            
+            links.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    const toolName = this.textContent.trim();
+                    const category = this.parentElement.dataset.category;
+                    
+                    // Log click for analytics (you can replace this with your analytics code)
+                    console.log(`Clicked: ${toolName} (${category})`);
+                    
+                    // Optional: Add a brief visual feedback
+                    this.parentElement.style.backgroundColor = '#e3f2fd';
+                    setTimeout(() => {
+                        this.parentElement.style.backgroundColor = '';
+                    }, 200);
+                });
+            });
+
+            // Smooth scroll behavior for any internal links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+
+            // Add loading state for external links
+            const externalLinks = document.querySelectorAll('a[target="_blank"]');
+            
+            externalLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    const originalText = this.textContent;
+                    this.textContent = 'Opening...';
+                    
+                    setTimeout(() => {
+                        this.textContent = originalText;
+                    }, 1000);
+                });
+            });
+
+            // Intersection Observer for fade-in animations
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, observerOptions);
+
+            // Observe all stage boxes for animation
+            document.querySelectorAll('.stage-box').forEach(box => {
+                observer.observe(box);
+            });
+
+            // Add keyboard navigation support
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Tab') {
+                    // Ensure focus is visible
+                    document.body.classList.add('keyboard-navigation');
+                }
+            });
+
+            document.addEventListener('mousedown', function() {
+                document.body.classList.remove('keyboard-navigation');
+            });
+
+            // Add search functionality (basic implementation)
+            function addSearchFunctionality() {
+                // Create search input
+                const searchContainer = document.createElement('div');
+                searchContainer.className = 'search-container';
+                searchContainer.innerHTML = `
+                    <input type="text" id="toolkit-search" placeholder="Search tools and practices..." 
+                        style="width: 100%; max-width: 400px; padding: 0.75rem; border: 2px solid #e5e7eb; 
+                                border-radius: 8px; font-size: 1rem; margin-bottom: 2rem;">
+                `;
+                
+                const header = document.querySelector('.header');
+                header.appendChild(searchContainer);
+
+                const searchInput = document.getElementById('toolkit-search');
+                
+                searchInput.addEventListener('input', function() {
+                    const searchTerm = this.value.toLowerCase();
+                    const toolBoxes = document.querySelectorAll('.tool-box');
+                    
+                    toolBoxes.forEach(box => {
+                        const text = box.textContent.toLowerCase();
+                        const shouldShow = text.includes(searchTerm);
+                        
+                        box.style.display = shouldShow ? 'flex' : 'none';
+                        
+                        // Add highlight effect
+                        if (searchTerm && shouldShow && searchTerm.length > 2) {
+                            box.style.backgroundColor = '#fff3cd';
+                            box.style.borderColor = '#ffc107';
+                        } else {
+                            box.style.backgroundColor = '';
+                            box.style.borderColor = '';
+                        }
+                    });
+                });
+            }
+
+            // Uncomment the line below to enable search functionality
+            // addSearchFunctionality();
+        });
+
+        // Utility function to copy link to clipboard
+        function copyLinkToClipboard(url) {
+            navigator.clipboard.writeText(url).then(() => {
+                // Show temporary success message
+                const message = document.createElement('div');
+                message.textContent = 'Link copied to clipboard!';
+                message.style.cssText = `
+                    position: fixed;
+                    top: 20px;
+                    right: 20px;
+                    background: #10b981;
+                    color: white;
+                    padding: 0.75rem 1rem;
+                    border-radius: 8px;
+                    z-index: 1000;
+                    font-weight: 500;
+                `;
+                
+                document.body.appendChild(message);
+                
+                setTimeout(() => {
+                    message.remove();
+                }, 2000);
+            });
+        }
+
+        // Add copy functionality to tool boxes (right-click context)
+        document.addEventListener('contextmenu', function(e) {
+            const toolBox = e.target.closest('.tool-box');
+            if (toolBox) {
+                const link = toolBox.querySelector('a');
+                if (link && link.href !== '#') {
+                    e.preventDefault();
+                    copyLinkToClipboard(link.href);
+                }
+            }
         });
     </script>
 </body>
