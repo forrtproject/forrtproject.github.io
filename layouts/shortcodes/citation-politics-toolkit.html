@@ -69,11 +69,6 @@
                                         Genderize
                                     </a>
                                 </div>
-                                <div class="tool-box practice" data-category="practice">
-                                    <a href="https://doi.org/10.1016/j.tics.2020.06.009" target="_blank">
-                                        Citational diversity statement (Zurn et al., 2020)
-                                    </a>
-                                </div>
                                 <div class="tool-box tool" data-category="tool">
                                     <a href="https://doi.org/10.18357/kula.135" target="_blank">
                                         Template for citing Indigenous peoples (MacLeod, 2021)
@@ -85,8 +80,23 @@
                                     </a>
                                 </div>
                                 <div class="tool-box tool" data-category="tool">
+                                    <a href="https://doi.org/10.1371/journal.pone.0221212" target="_blank">
+                                        Inwardness metric (Baccini et al., 2019)
+                                    </a>
+                                </div>
+                                <div class="tool-box practice" data-category="practice">
                                     <a href="https://doi.org/10.31234/osf.io/6kvqg" target="_blank">
                                         Annotated reference list (Lawson et al., 2025)
+                                    </a>
+                                </div>
+                                <div class="tool-box practice" data-category="practice">
+                                    <a href="https://doi.org/10.1016/j.tics.2020.06.009" target="_blank">
+                                        Citational diversity statement (Zurn et al., 2020)
+                                    </a>
+                                </div>
+                                <div class="tool-box practice" data-category="practice">
+                                    <a href="https://doi.org/10.31234/osf.io/6kvqg" target="_blank">
+                                        Citing R packages (and other tools)
                                     </a>
                                 </div>
                             </div>
@@ -123,12 +133,12 @@
                                 </div>
                                 <div class="tool-box tool" data-category="tool">
                                     <a href="https://civiclaboratory.nl/2023/08/08/citational-politics-training-module/" target="_blank">
-                                        Citational politics training module - CLEAR
+                                        Citational politics training module - CLEAR - Civic Laboratory for Environmental Action Research
                                     </a>
                                 </div>
                                 <div class="tool-box practice" data-category="practice">
                                     <a href="https://forrt.org/awop/" target="_blank">
-                                        Academic Wheel of Privilege (AWoP)
+                                        Academic Wheel of Privilege (AWoP) | FORRT - Framework for Open and Reproducible Research Training
                                     </a>
                                 </div>
                             </div>
@@ -143,7 +153,7 @@
                         <div class="content-group">
                             <h4 class="section-title">Tools & Practices</h4>
                             <div class="tools-grid">
-                                <div class="tool-box practice" data-category="practice">
+                                <div class="tool-box tool" data-category="tool">
                                     <a href="http://www.criticalethnicstudiesjournal.org/citation-practices/" target="_blank">
                                         Citational Practices: Critical Ethnic Studies
                                     </a>
@@ -164,7 +174,7 @@
         <div class="legend">
             <div class="legend-item practice">
                 <div class="legend-color"></div>
-                <span>Key Practices</span>
+                <span>Practices</span>
             </div>
             <div class="legend-item tool">
                 <div class="legend-color"></div>
@@ -176,7 +186,7 @@
     <script>
                     // Enhanced hover effects and interactions
         document.addEventListener('DOMContentLoaded', function() {
-            // Add hover effects to tool boxes
+            // hover effects to tool boxes
             const toolBoxes = document.querySelectorAll('.tool-box');
             
             toolBoxes.forEach(box => {
@@ -191,7 +201,7 @@
                 });
             });
 
-            // Add click tracking for analytics (optional)
+            // click tracking for analytics
             const links = document.querySelectorAll('.tool-box a');
             
             links.forEach(link => {
@@ -199,7 +209,7 @@
                     const toolName = this.textContent.trim();
                     const category = this.parentElement.dataset.category;
                     
-                    // Log click for analytics (you can replace this with your analytics code)
+                    // Log click for analytics (you can replace this with a analytics code)
                     console.log(`Clicked: ${toolName} (${category})`);
                     
                     // Optional: Add a brief visual feedback
@@ -224,7 +234,7 @@
                 });
             });
 
-            // Add loading state for external links
+            // loading state for external links
             const externalLinks = document.querySelectorAll('a[target="_blank"]');
             
             externalLinks.forEach(link => {
@@ -258,7 +268,7 @@
                 observer.observe(box);
             });
 
-            // Add keyboard navigation support
+            // keyboard navigation support
             document.addEventListener('keydown', function(e) {
                 if (e.key === 'Tab') {
                     // Ensure focus is visible
@@ -270,7 +280,7 @@
                 document.body.classList.remove('keyboard-navigation');
             });
 
-            // Add search functionality (basic implementation)
+            // search functionality (basic implementation)
             function addSearchFunctionality() {
                 // Create search input
                 const searchContainer = document.createElement('div');
@@ -278,7 +288,7 @@
                 searchContainer.innerHTML = `
                     <input type="text" id="toolkit-search" placeholder="Search tools and practices..." 
                         style="width: 100%; max-width: 400px; padding: 0.75rem; border: 2px solid #e5e7eb; 
-                                border-radius: 8px; font-size: 1rem; margin-bottom: 2rem;">
+                                border-radius: 8px; font-size: 1rem; margin-bottom: 0.5rem;">
                 `;
                 
                 const header = document.querySelector('.header');
@@ -309,7 +319,7 @@
             }
 
             // Uncomment the line below to enable search functionality
-            // addSearchFunctionality();
+            addSearchFunctionality();
         });
 
         // Utility function to copy link to clipboard
@@ -338,7 +348,7 @@
             });
         }
 
-        // Add copy functionality to tool boxes (right-click context)
+        // copy functionality to tool boxes (right-click context)
         document.addEventListener('contextmenu', function(e) {
             const toolBox = e.target.closest('.tool-box');
             if (toolBox) {
