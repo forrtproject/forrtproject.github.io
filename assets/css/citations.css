@@ -93,13 +93,6 @@ h1 {
     background: linear-gradient(to right, #e74c3c, #c0392b);
 }
 
-.stage-box.publication {
-    border-top-color: #2ecc71;
-}
-
-.stage-box.publication h3 {
-    background: linear-gradient(to right, #2ecc71, #27ae60);
-}
 
 /* Content Styling */
 .box-content {
@@ -117,7 +110,7 @@ h1 {
     font-weight: 500;
 }
 
-/* ====== UPDATED BOX GRID STYLES ====== */
+/* ======  BOX GRID STYLES ====== */
 
 .box-grid {
     display: grid;
@@ -163,10 +156,6 @@ h1 {
 }
 
 /* Category colors */
-.box.primary {
-    border-top: 4px solid #9b59b6;
-    background: linear-gradient(to bottom, #ffffff, #f8f0ff);
-}
 
 .box.tool {
     border-top: 4px solid #e74c3c;
@@ -191,12 +180,6 @@ h1 {
     text-transform: uppercase;
 }
 
-.box.primary::before {
-    content: "Primary";
-    background: rgba(155, 89, 182, 0.15);
-    color: #8e44ad;
-}
-
 .box.tool::before {
     content: "Tool";
     background: rgba(231, 76, 60, 0.15);
@@ -209,7 +192,7 @@ h1 {
     color: #27ae60;
 }
 
-/* ====== UPDATED LEGEND STYLES ====== */
+/* ======  LEGEND STYLES ====== */
 .legend {
     display: flex;
     justify-content: center;
@@ -256,15 +239,6 @@ h1 {
     border-radius: 5px;
 }
 
-.legend-item.primary::before {
-    content: "";
-    display: block;
-    width: 25px;
-    height: 25px;
-    background: rgba(155, 89, 182, 0.3);
-    border: 1px solid #8e44ad;
-    border-radius: 5px;
-}
 
 /* Responsive Design */
 @media (max-width: 1100px) {
