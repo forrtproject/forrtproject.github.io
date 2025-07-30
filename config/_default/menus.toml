@@ -150,7 +150,7 @@
   parent = "nexus"
 
 [[main]]
-  name = "Citation Politics Toolkit"
+  name = "Citation Politics"
   url = "/citation-politics"
   weight = 33
   parent = "nexus"
