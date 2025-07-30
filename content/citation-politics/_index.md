@@ -7,7 +7,7 @@ url: "/citation-politics/"
 <div style="text-align: center; margin: 1rem 0;">
   <h1>Towards Citational Justice</h1>
   <p style="font-size: 1.25rem; color: #6c757d; margin-top: 0.5rem;">
-    Across the Whole Research Cycle
+    A toolkit to encourage thoughtful citation
   </p>
 </div>
 
@@ -98,4 +98,4 @@ For **FORRT’s Citation Politics Team** [(#citation-politics)](https://forrt.sl
 
 <br>
 
-If you see yourself in any of these plans or have any other ideas or suggestions for development of the toolkit, or other ways of engaging with citational practice or patterns (especially as it relates to open research), get in touch FORRT’s Slack [channel #citation-politics ](https://forrt.slack.com/archives/C074E9LDES2), email the team at citation-politics@forrt.org, or DM Team Lead **Sarah Sauvé** on [FORRT’s Slack](https://join.slack.com/t/forrt/shared_invite/enQtODMwODI0OTk4ODgzLTM0ZTQ3NDk5MzA1ZjBmNWJjYTVlN2Y2YTk0ZTJhYTY5NDliMDYzMjg2MWE0ZDRhOTY0ZDY3OTRlNDA4ODQ3NjQ). 
+If you see yourself in any of these plans or have any other ideas or suggestions for development of the toolkit, or other ways of engaging with citational practice or patterns (especially as it relates to open research), get in touch FORRT’s Slack[channel #citation-politics](https://forrt.slack.com/archives/C074E9LDES2), email the team at citation-politics@forrt.org, or DM either Team Co- Lead **Sarah Sauvé** or **Helena Gellersen** on [FORRT’s Slack](https://join.slack.com/t/forrt/shared_invite/enQtODMwODI0OTk4ODgzLTM0ZTQ3NDk5MzA1ZjBmNWJjYTVlN2Y2YTk0ZTJhYTY5NDliMDYzMjg2MWE0ZDRhOTY0ZDY3OTRlNDA4ODQ3NjQ). 

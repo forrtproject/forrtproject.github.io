@@ -97,11 +97,11 @@ body {
 }
 
 .stage-box.planning {
-    border-top-color: #3498db;
+    border-top-color: #ffc107;
 }
 
 .stage-box.project {
-    border-top-color: #9b59b6;
+    border-top-color: #019e74;
 }
 
 /* Stage Title Styles */
@@ -167,13 +167,13 @@ h3 {
 }
 
 .tool-box.tool {
-    border-top-color: #e74c3c;
-    background: linear-gradient(to bottom, #ffffff, #fff5f5);
+    border-top-color: #F9F4CB;
+    background: linear-gradient(to bottom,  #ffffff, #F9F4CB );
 }
 
 .tool-box.practice {
-    border-top-color: #2ecc71;
-    background: linear-gradient(to bottom, #ffffff, #f0fff4);
+    border-top-color: #E7E5E4;
+    background: linear-gradient(to bottom, #ffffff,  #E7E5E4);
 }
 
 .tool-box a {
@@ -193,25 +193,25 @@ h3 {
 .tool-box::after {
     content: attr(data-category);
     position: absolute;
-    top: 4px;
-    right: 4px;
+    top: 1px;
+    right: 1px;
     font-size: 0.5rem;
     font-weight: 600;
-    padding: 2px 6px;
+    padding: 1px 3px;
     border-radius: 4px;
     text-transform: uppercase;
 }
 
 .tool-box.tool::after {
     content: "TOOL";
-    background: rgba(231, 76, 60, 0.15);
-    color: #c0392b;
+    background-color: #f9f4cb;
+    color: #3e3e3e;
 }
 
 .tool-box.practice::after {
     content: "PRACTICE";
-    background: rgba(46, 204, 113, 0.15);
-    color: #27ae60;
+    background-color: #E7E5E4;
+    color: #3e3e3e;
 }
 
 /* Legend Styles */
@@ -246,13 +246,13 @@ h3 {
 }
 
 .legend-item.practice .legend-color {
-    background: rgba(46, 204, 113, 0.3);
-    border-color: #27ae60;
+    background-color: #E7E5E4;
+    border-color: #E7E5E4;
 }
 
 .legend-item.tool .legend-color {
-    background: rgba(231, 76, 60, 0.3);
-    border-color: #c0392b;
+    background-color: #f9f4cb;
+    border-color: #FEFDF6;
 }
 
 /* Large Screen Styles */
@@ -276,7 +276,7 @@ h3 {
     }
 
     .center-column .toolkit-image {
-        max-width: 400px;
+        max-width: 500px;
         width: 100%;
     }
 
