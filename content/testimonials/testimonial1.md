@@ -46,10 +46,10 @@ subtitle = ""
     >
   </div>
   <div style="margin-top: 0.5rem;">
-    <a href="mailto:roksanasobolak@hotmail.com" title="Email" style="margin-right: 0.5rem;">
+    <a href="mailto:roksanasobolak@hotmail.com" target="_blank" title="Email" style="margin-right: 0.5rem;">
       <i class="fas fa-envelope fa-2x" aria-hidden="true"></i>
     </a>
-    <a href="https://orcid.org/0009-0001-9534-6439" title="ORCiD">
+    <a href="https://orcid.org/0009-0001-9534-6439" target="_blank" title="ORCiD">
       <i class="ai ai-orcid fa-2x" aria-hidden="true"></i>
     </a>
   </div>

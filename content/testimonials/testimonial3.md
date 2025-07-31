@@ -46,10 +46,10 @@ subtitle = ""
     >
   </div>
   <div style="margin-top: 0.5rem;">
-    <a href="mailto:dudda@essb.eur.nl" title="Email" style="margin-right: 0.5rem;">
+    <a href="mailto:dudda@essb.eur.nl" target="_blank" title="Email" style="margin-right: 0.5rem;">
       <i class="fas fa-envelope fa-2x" aria-hidden="true"></i>
     </a>
-    <a href="https://orcid.org/0009-0000-0759-7354" title="ORCiD">
+    <a href="https://orcid.org/0009-0000-0759-7354" target="_blank" title="ORCiD">
       <i class="ai ai-orcid fa-2x" aria-hidden="true"></i>
     </a>
   </div>
@@ -64,4 +64,4 @@ They helped me get familiar with everything, and gave me the feeling that they g
 
 **What I appreciate a lot is the warm working atmosphere. I always feel like my work is highly appreciated and that there is room for suggestions and ideas. I am very thankful for this welcoming and caring atmosphere of FORRT, and I am looking forward to all future collaborations with this community.**
 
-### **---Leonie**
+### **---Leonie A. Dudda**
