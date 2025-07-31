@@ -1,5 +1,5 @@
 +++
-widget = "blank"  # See https://sourcethemes.com/academic/docs/page-builder/
+widget = "blank"
 headless = true  # This file represents a page section.
 active = true  # Activate this widget? true/false
 weight = 10  # Order that this section will appear.
@@ -70,4 +70,4 @@ FORRT’s commitment to pedagogical reform and inclusive open scholarship is tru
 
 **To anyone considering joining FORRT: jump in! You’ll learn more, contribute more, and have far more fun than you ever imagined. Cheers!”**
 
-### ***---Richard Dushime---***
+### **---Richard Dushime**

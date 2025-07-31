@@ -1,5 +1,5 @@
 +++
-widget = "blank"  # See https://sourcethemes.com/academic/docs/page-builder/
+widget = "blank"
 headless = true  # This file represents a page section.
 active = true  # Activate this widget? true/false
 weight = 10  # Order that this section will appear.
@@ -66,4 +66,4 @@ That openness and generosity left a lasting impression. What began as a spontane
 
 **I’m incredibly grateful for the welcoming and collaborative spirit of FORRT, and I’m looking forward to many more exciting adventures with this wonderful community!**
 
-### ***---Max Korbmacher---***
+### **---Max Korbmacher**

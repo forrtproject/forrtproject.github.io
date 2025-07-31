@@ -1,5 +1,5 @@
 +++
-widget = "blank"  # See https://sourcethemes.com/academic/docs/page-builder/
+widget = "blank"
 headless = true  # This file represents a page section.
 active = true  # Activate this widget? true/false
 weight = 10  # Order that this section will appear.
@@ -64,4 +64,4 @@ I’ve already recommended FORRT to many other early career researchers because 
 
 **Thank you FORRT, I am excited to see what the future holds!**
 
-### ***---Roksana Sobolak---***
+### **---Roksana Sobolak**

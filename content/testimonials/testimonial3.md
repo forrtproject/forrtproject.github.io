@@ -1,5 +1,5 @@
 +++
-widget = "blank"  # See https://sourcethemes.com/academic/docs/page-builder/
+widget = "blank"
 headless = true  # This file represents a page section.
 active = true  # Activate this widget? true/false
 weight = 10  # Order that this section will appear.
@@ -64,4 +64,4 @@ They helped me get familiar with everything, and gave me the feeling that they g
 
 **What I appreciate a lot is the warm working atmosphere. I always feel like my work is highly appreciated and that there is room for suggestions and ideas. I am very thankful for this welcoming and caring atmosphere of FORRT, and I am looking forward to all future collaborations with this community.**
 
-### ***---Leonie---***
+### **---Leonie**
