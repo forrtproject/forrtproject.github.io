@@ -39,6 +39,9 @@ Decades of empirical research across disciplines reveal the pervasiveness of cit
 ### Video guide
 You’ve read our manuscript and now you’re wondering how to get started? This video will walk you through the first steps you can take on your journey towards citational justice, featuring several tools and practices from our toolkit.
 
+{{< youtube EzWT5tnhvaM >}}
+
+
 # Coming Up
 
 ---
