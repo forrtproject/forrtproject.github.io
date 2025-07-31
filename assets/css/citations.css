@@ -1,0 +1,357 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    /* font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif; */
+    line-height: 1.6;
+    color: #333;
+    background-color: #f8fafc;
+}
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 1rem 1rem;
+}
+
+/* Header Styles */
+.header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.main-title {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    background: linear-gradient(135deg, #3498db, #2c3e50);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.subtitle {
+    font-size: 1.1rem;
+    color: #6b7280;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Main Layout */
+.main-layout {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.mobile-image {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1rem;
+}
+
+.center-column {
+    display: none;
+}
+
+.toolkit-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* Column Styles */
+.column {
+    flex: 1;
+}
+
+.right-column {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+/* Stage Box Styles */
+.stage-box {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    padding: 0.7rem;
+    transition: all 0.3s ease;
+    border-top: 4px solid;
+    height: fit-content;
+}
+
+.stage-box:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+}
+
+.stage-box.paper {
+    border-top-color: #e74c3c;
+}
+
+.stage-box.planning {
+    border-top-color: #ffc107;
+}
+
+.stage-box.project {
+    border-top-color: #019e74;
+}
+
+/* Stage Title Styles */
+h3 {
+    margin: 0.1rem;
+}
+.stage-title {
+    text-align: center;
+    color: white;
+    padding: 0.5rem 0.5rem;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.paper .stage-title {
+    background: linear-gradient(135deg, #d55e00, #d55e00);
+}
+
+.planning .stage-title {
+    background: linear-gradient(135deg, #ffc107, #ffc107);
+}
+
+.project .stage-title {
+    background: linear-gradient(135deg, #019e74, #019e74);
+}
+
+/* Content Styles */
+.section-title {
+    font-size: 0.9rem;
+    color: #2c3e50;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px dashed #ecf0f1;
+    font-weight: 500;
+}
+
+.tools-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+}
+
+/* Tool Box Styles */
+.tool-box {
+    background: white;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    padding: 0.5rem;
+    transition: all 0.3s ease;
+    position: relative;
+    border-top: 3px solid;
+    min-height: 60px;
+    display: flex;
+    align-items: center;
+}
+
+.tool-box:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(160, 34, 69, 0.2);
+}
+
+.tool-box.tool {
+    border-top-color: #F9F4CB;
+    background: linear-gradient(to bottom,  #ffffff, #F9F4CB );
+}
+
+.tool-box.practice {
+    border-top-color: #E7E5E4;
+    background: linear-gradient(to bottom, #ffffff,  #E7E5E4);
+}
+
+.tool-box a {
+    text-decoration: none;
+    color: #374151;
+    font-weight: 500;
+    font-size: 0.85rem;
+    display: block;
+    width: 100%;
+}
+
+.tool-box a:hover {
+    color: #b3005a;
+}
+
+/* Category Badges */
+.tool-box::after {
+    content: attr(data-category);
+    position: absolute;
+    top: 1px;
+    right: 1px;
+    font-size: 0.5rem;
+    font-weight: 600;
+    padding: 1px 3px;
+    border-radius: 4px;
+    text-transform: uppercase;
+}
+
+.tool-box.tool::after {
+    content: "TOOL";
+    background-color: #f9f4cb;
+    color: #3e3e3e;
+}
+
+.tool-box.practice::after {
+    content: "PRACTICE";
+    background-color: #E7E5E4;
+    color: #3e3e3e;
+}
+
+/* Legend Styles */
+.legend {
+    margin-top: 3rem;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    background: white;
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+    flex-wrap: wrap;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: 500;
+    font-size: 0.9rem;
+}
+
+.legend-color {
+    width: 20px;
+    height: 20px;
+    border-radius: 4px;
+    border: 1px solid;
+}
+
+.legend-item.practice .legend-color {
+    background-color: #E7E5E4;
+    border-color: #E7E5E4;
+}
+
+.legend-item.tool .legend-color {
+    background-color: #f9f4cb;
+    border-color: #FEFDF6;
+}
+
+/* Large Screen Styles */
+@media (min-width: 1024px) {
+    .main-layout {
+        display: grid;
+        grid-template-columns: 1fr auto 1fr;
+        gap: 2rem;
+        align-items: start;
+    }
+
+    .mobile-image {
+        display: none;
+    }
+
+    .center-column {
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        padding: 0 1rem;
+    }
+
+    .center-column .toolkit-image {
+        max-width: 500px;
+        width: 100%;
+    }
+
+    .tools-grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+
+    .main-title {
+        font-size: 4rem;
+    }
+}
+
+/* Medium Screen Styles */
+@media (min-width: 768px) and (max-width: 1023px) {
+    .tools-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .main-title {
+        font-size: 3.5rem;
+    }
+}
+
+/* Small Screen Styles */
+@media (max-width: 767px) {
+    .container {
+        padding: 1rem;
+    }
+
+    .main-title {
+        font-size: 2.5rem;
+    }
+
+    .subtitle {
+        font-size: 1rem;
+    }
+
+    .legend {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+        border-radius: 20px;
+        padding: 1.5rem;
+    }
+
+    .stage-box {
+        padding: 1.25rem;
+    }
+
+    .mobile-image .toolkit-image {
+        max-width: 350px;
+    }
+}
+
+/* Animation */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.stage-box {
+    animation: fadeInUp 0.6s ease-out forwards;
+}
+
+.stage-box:nth-child(1) { animation-delay: 0.1s; }
+.stage-box:nth-child(2) { animation-delay: 0.2s; }
+.stage-box:nth-child(3) { animation-delay: 0.3s; }
+
+.legend {
+    animation: fadeInUp 0.6s ease-out 0.4s forwards;
+    opacity: 0;
+}
