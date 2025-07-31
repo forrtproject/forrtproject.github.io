@@ -1,0 +1,524 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>FORRT - Framework for Open and Reproducible Research Training</title><link>https://forrt.org/citation-politics/</link><atom:link href="https://forrt.org/citation-politics/index.xml" rel="self" type="application/rss+xml"/><description>FORRT - Framework for Open and Reproducible Research Training</description><generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© 2025 - FORRT > Framework for Open and Reproducible Research Training</copyright><image><url>https://forrt.org/img/FORRT_banner.svg</url><title>FORRT - Framework for Open and Reproducible Research Training</title><link>https://forrt.org/citation-politics/</link></image><item><title/><link>https://forrt.org/citation-politics/toolkit/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://forrt.org/citation-politics/toolkit/</guid><description>
+&lt;link rel="stylesheet" href="https://forrt.org/css/citations.min.862057d6986116214989cc791f467d10b18920e22addab632087059c6f2a4276.css">
+&lt;body>
+&lt;div class="container">
+&lt;header class="header">
+&lt;h1 class="main-title">Citation Politics Toolkit&lt;/h1>
+&lt;p class="subtitle">A toolkit to encourage thoughtful citation&lt;/p>
+&lt;/header>
+&lt;div class="main-layout">
+&lt;div class="mobile-image">
+&lt;img src="https://forrt.org/img/citation-politics-toolkit.webp"
+alt="Citational Justice Toolkit"
+class="toolkit-image">
+&lt;/div>
+&lt;div class="column left-column">
+&lt;div class="stage-box paper">
+&lt;h3 class="stage-title">Paper&lt;/h3>
+&lt;div class="box-content">
+&lt;div class="content-group">
+&lt;h4 class="section-title">Tools &amp; Practices&lt;/h4>
+&lt;div class="tools-grid">
+&lt;div class="tool-box tool" data-category="tool">
+&lt;a href="https://docs.google.com/document/d/1JwwmOgRhd2p-Bl_RFEMnp04P0I2nNhOHW7JHdaLcyGs/edit?tab=t.0" target="_blank">
+Mirya Holman's pre-submission checklist
+&lt;/a>
+&lt;/div>
+&lt;div class="tool-box tool" data-category="tool">
+&lt;a href="https://jlsumner.shinyapps.io/syllabustool/" target="_blank">
+Gender Balance Assessment Tool (GBAT)
+&lt;/a>
+&lt;/div>
+&lt;div class="tool-box tool" data-category="tool">
+&lt;a href="https://doi.org/10.31234/osf.io/rfkyu" target="_blank">
+Citation audit survey (Darda et al., 2023)
+&lt;/a>
+&lt;/div>
+&lt;div class="tool-box tool" data-category="tool">
+&lt;a href="https://scholar.google.com/scholar_lookup?title=Writing+your+journal+article+in+twelve+weeks%3A+A+guide+to+academic+publishing+success&amp;author=W.+L.+Belcher&amp;publication_year=2019&amp;doi=10.7208%2Fchicago%2F9780226500089.001.0001" target="_blank">
+Gray test (Belcher, 2019)
+&lt;/a>
+&lt;/div>
+&lt;div class="tool-box tool" data-category="tool">
+&lt;a href="https://docs.google.com/spreadsheets/d/1HHM6i1WDaAVzSJxgZG8UtNWP3aRcFprsdVpLZJEWxOQ/edit#gid=759055580" target="_blank">
+SIBL Citation Audit Template
+&lt;/a>
+&lt;/div>
+&lt;div class="tool-box tool" data-category="tool">
+&lt;a href="http://github.com/dalejn/cleanBib" target="_blank">
+Citational diversity codebook
+&lt;/a>
+&lt;/div>
+&lt;div class="tool-box tool" data-category="tool">
+&lt;a href="https://genderize.io/" target="_blank">
+Genderize
+&lt;/a>
+&lt;/div>
+&lt;div class="tool-box tool" data-category="tool">
+&lt;a href="https://doi.org/10.18357/kula.135" target="_blank">
+Template for citing Indigenous peoples (MacLeod, 2021)
+&lt;/a>
+&lt;/div>
+&lt;div class="tool-box tool" data-category="tool">
+&lt;a href="https://psych.wisc.edu/gcbialyzer/" target="_blank">
+GCBI-alyzer
+&lt;/a>
+&lt;/div>
+&lt;div class="tool-box tool" data-category="tool">
+&lt;a href="https://doi.org/10.1371/journal.pone.0221212" target="_blank">
+Inwardness metric (Baccini et al., 2019)
+&lt;/a>
+&lt;/div>
+&lt;div class="tool-box practice" data-category="practice">
+&lt;a href="https://doi.org/10.31234/osf.io/6kvqg" target="_blank">
+Annotated reference list &lt;br> (Lawson et al., 2025)
+&lt;/a>
+&lt;/div>
+&lt;div class="tool-box practice" data-category="practice">
+&lt;a href="https://doi.org/10.1016/j.tics.2020.06.009" target="_blank">
+Citational diversity statement &lt;br>
+(Zurn et al., 2020)
+&lt;/a>
+&lt;/div>
+&lt;div class="tool-box practice" data-category="practice">
+&lt;a href="https://doi.org/10.31234/osf.io/6kvqg" target="_blank">
+Citing R packages &lt;br> (and other tools)
+&lt;/a>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="column center-column">
+&lt;img src="https://forrt.org/img/citation-politics-toolkit.webp"
+alt="Citational Justice Toolkit"
+class="toolkit-image">
+&lt;/div>
+&lt;div class="column right-column">
+&lt;div class="stage-box planning">
+&lt;h3 class="stage-title">Planning&lt;/h3>
+&lt;div class="box-content">
+&lt;div class="content-group">
+&lt;h4 class="section-title">Tools &amp; Practices&lt;/h4>
+&lt;div class="tools-grid">
+&lt;div class="tool-box tool" data-category="tool">
+&lt;a href="https://chromewebstore.google.com/detail/citation-transparency/cepnbdbhabaljgecaddglhhcgajphbcf?hl=en&amp;pli=1" target="_blank">
+Citation Transparency browser extension
+&lt;/a>
+&lt;/div>
+&lt;div class="tool-box tool" data-category="tool">
+&lt;a href="#">
+FORRT citational justice module (coming soon)
+&lt;/a>
+&lt;/div>
+&lt;div class="tool-box tool" data-category="tool">
+&lt;a href="https://civiclaboratory.nl/2023/08/08/citational-politics-training-module/" target="_blank">
+Citational politics training module - CLEAR - Civic Laboratory for Environmental Action Research
+&lt;/a>
+&lt;/div>
+&lt;div class="tool-box practice" data-category="practice">
+&lt;a href="https://forrt.org/awop/" target="_blank">
+Academic Wheel of Privilege &lt;br> (AWoP)
+&lt;/a>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="stage-box project">
+&lt;h3 class="stage-title">Project&lt;/h3>
+&lt;div class="box-content">
+&lt;div class="content-group">
+&lt;h4 class="section-title">Tools &amp; Practices&lt;/h4>
+&lt;div class="tools-grid">
+&lt;div class="tool-box tool" data-category="tool">
+&lt;a href="http://www.criticalethnicstudiesjournal.org/citation-practices/" target="_blank">
+Citational Practices: Critical Ethnic Studies
+&lt;/a>
+&lt;/div>
+&lt;div class="tool-box practice" data-category="practice">
+&lt;a href="#">
+Diversity reading - see Table below
+&lt;/a>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="legend">
+&lt;div class="legend-item tool">
+&lt;div class="legend-color">&lt;/div>
+&lt;span>Tools&lt;/span>
+&lt;/div>
+&lt;div class="legend-item practice">
+&lt;div class="legend-color">&lt;/div>
+&lt;span>Practices&lt;/span>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;script>
+document.addEventListener('DOMContentLoaded', function() {
+const toolBoxes = document.querySelectorAll('.tool-box');
+toolBoxes.forEach(box => {
+box.addEventListener('mouseenter', function() {
+this.style.transform = 'translateY(-3px)';
+this.style.boxShadow = '0 6px 20px rgba(52, 152, 219, 0.25)';
+});
+box.addEventListener('mouseleave', function() {
+this.style.transform = 'translateY(0)';
+this.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.1)';
+});
+});
+const links = document.querySelectorAll('.tool-box a');
+links.forEach(link => {
+link.addEventListener('click', function(e) {
+const toolName = this.textContent.trim();
+const category = this.parentElement.dataset.category;
+console.log(`Clicked: ${toolName} (${category})`);
+this.parentElement.style.backgroundColor = '#e3f2fd';
+setTimeout(() => {
+this.parentElement.style.backgroundColor = '';
+}, 200);
+});
+});
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+anchor.addEventListener('click', function (e) {
+e.preventDefault();
+const target = document.querySelector(this.getAttribute('href'));
+if (target) {
+target.scrollIntoView({
+behavior: 'smooth',
+block: 'start'
+});
+}
+});
+});
+const externalLinks = document.querySelectorAll('a[target="_blank"]');
+externalLinks.forEach(link => {
+link.addEventListener('click', function() {
+const originalText = this.textContent;
+this.textContent = 'Opening...';
+setTimeout(() => {
+this.textContent = originalText;
+}, 1000);
+});
+});
+const observerOptions = {
+threshold: 0.1,
+rootMargin: '0px 0px -50px 0px'
+};
+const observer = new IntersectionObserver((entries) => {
+entries.forEach(entry => {
+if (entry.isIntersecting) {
+entry.target.style.opacity = '1';
+entry.target.style.transform = 'translateY(0)';
+}
+});
+}, observerOptions);
+document.querySelectorAll('.stage-box').forEach(box => {
+observer.observe(box);
+});
+document.addEventListener('keydown', function(e) {
+if (e.key === 'Tab') {
+document.body.classList.add('keyboard-navigation');
+}
+});
+document.addEventListener('mousedown', function() {
+document.body.classList.remove('keyboard-navigation');
+});
+function addSearchFunctionality() {
+const searchContainer = document.createElement('div');
+searchContainer.className = 'search-container';
+searchContainer.innerHTML = `
+&lt;input type="text" id="toolkit-search" placeholder="Search tools and practices..."
+style="width: 100%; max-width: 400px; padding: 0.75rem; border: 2px solid #e5e7eb;
+border-radius: 8px; font-size: 1rem; margin-bottom: 0.5rem;">
+`;
+const header = document.querySelector('.header');
+header.appendChild(searchContainer);
+const searchInput = document.getElementById('toolkit-search');
+searchInput.addEventListener('input', function() {
+const searchTerm = this.value.toLowerCase();
+const toolBoxes = document.querySelectorAll('.tool-box');
+toolBoxes.forEach(box => {
+const text = box.textContent.toLowerCase();
+const shouldShow = text.includes(searchTerm);
+box.style.display = shouldShow ? 'flex' : 'none';
+if (searchTerm &amp;&amp; shouldShow &amp;&amp; searchTerm.length > 2) {
+box.style.backgroundColor = '#fff3cd';
+box.style.borderColor = '#ffc107';
+} else {
+box.style.backgroundColor = '';
+box.style.borderColor = '';
+}
+});
+});
+}
+addSearchFunctionality();
+});
+function copyLinkToClipboard(url) {
+navigator.clipboard.writeText(url).then(() => {
+const message = document.createElement('div');
+message.textContent = 'Link copied to clipboard!';
+message.style.cssText = `
+position: fixed;
+top: 20px;
+right: 20px;
+background: #10b981;
+color: white;
+padding: 0.75rem 1rem;
+border-radius: 8px;
+z-index: 1000;
+font-weight: 500;
+`;
+document.body.appendChild(message);
+setTimeout(() => {
+message.remove();
+}, 2000);
+});
+}
+document.addEventListener('contextmenu', function(e) {
+const toolBox = e.target.closest('.tool-box');
+if (toolBox) {
+const link = toolBox.querySelector('a');
+if (link &amp;&amp; link.href !== '#') {
+e.preventDefault();
+copyLinkToClipboard(link.href);
+}
+}
+});
+&lt;/script>
+&lt;/body>
+&lt;style>
+.citation-toolkit {
+margin: 1.5rem 0;
+border: 1px solid #2769bf;
+border-radius: 8px;
+padding: 0;
+}
+.citation-toolkit summary {
+cursor: pointer;
+font-weight: 600;
+padding: 1rem 1.5rem;
+background-color: #f6f8fa;
+border-radius: 8px 8px 0 0;
+list-style: none;
+}
+.citation-toolkit summary::marker,
+.citation-toolkit summary::-webkit-details-marker {
+display: none;
+}
+.citation-toolkit summary:after {
+content: "▼";
+float: right;
+transition: transform 0.2s;
+}
+.citation-toolkit[open] summary:after {
+transform: rotate(180deg);
+}
+.table-wrapper {
+overflow-x: auto;
+padding: 1rem;
+}
+.citation-toolkit table {
+width: 100%;
+border-collapse: collapse;
+margin-top: 0.5rem;
+}
+.citation-toolkit th {
+background-color: #f0f4f8;
+text-align: left;
+padding: 0.75rem 1rem;
+border-bottom: 2px solid #d0d7de;
+}
+.citation-toolkit td {
+padding: 0.75rem 1rem;
+border-bottom: 1px solid #eaecef;
+vertical-align: top;
+}
+.citation-toolkit tr:hover td {
+background-color: #f8f9fa;
+}
+.citation-toolkit a {
+color: #8e0000;
+text-decoration: none;
+}
+.citation-toolkit a:hover {
+text-decoration: underline;
+color: #b3005a;
+}
+&lt;/style>
+&lt;details class="citation-toolkit">
+&lt;summary>📚 click here to View Diversity Reading Tools table 🔍📊 &lt;/summary>
+&lt;div class="table-wrapper">
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Tool&lt;/th>
+&lt;th>Description&lt;/th>
+&lt;th>Source&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>Diverse speakers in STEM&lt;/td>
+&lt;td>Database of databases of diverse speakers in STEM (includes some of the tools in this table, and much more)&lt;/td>
+&lt;td>&lt;a href="https://docs.google.com/document/u/1/d/e/2PACX-1vSlvHTZtOc6wG5C9xEc-bAIYofpeDHVjrrVc7Q_5IQdmXcLeaYd27nhoJD9jub_q-qAILxHknMGbggb/pub" target="_blank">Diverse speakers in STEM lists&lt;/a>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>CiteBetter&lt;/td>
+&lt;td>A community-driven pledge to promote equitable and inclusive citation practices, especially for scholars of color and non-cis-male voices. Offers minimum standards across roles (students, teachers, researchers, department chairs) to actively address citation bias.&lt;/td>
+&lt;td>“Our Pledge” and “Statement of Purpose” of &lt;a href="http://citebetter.com" target="_blank">citebetter.com&lt;/a>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Citation justice in STEMM&lt;/td>
+&lt;td>McGill library list of tools and resources to help diversity reading and perform citation audits&lt;/td>
+&lt;td>&lt;a href="https://libraryguides.mcgill.ca/citation_justice/how_to" target="_blank">How to diversify your citations - Citation Justice in STEMM - Guides at McGill Library&lt;/a>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Citation Practice Self-Audits&lt;/td>
+&lt;td>Faculty-led assessments of syllabi and reading lists to identify underrepresentation of women and scholars of color; encourages more inclusive citation practices across teaching and publishing. Promotes critical reflection and gradual change.&lt;/td>
+&lt;td>&lt;a href="https://research.ubc.ca/sites/default/files/vpri/Promising%20Practices.pdf" target="_blank">Promising Practices for Addressing the Underrepresentation of Women in Science, Engineering, and Medicine.&lt;/a>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Equity-Informed Editorial and Review Guidelines&lt;/td>
+&lt;td>Proposes journals adopt guidelines that encourage authors, editors, and reviewers to consider gender and racial balance in citations. Promotes institutional accountability in publishing.&lt;/td>
+&lt;td>&lt;a href="https://research.ubc.ca/sites/default/files/vpri/Promising%20Practices.pdf" target="_blank">Promising Practices for Addressing the Underrepresentation of Women in Science, Engineering, and Medicine.&lt;/a>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Diverse Sources&lt;/td>
+&lt;td>Database of experts to include more underrepresented voices and perspectives in science, health and environment work&lt;/td>
+&lt;td>&lt;a href="https://diversesources.org/" target="_blank">Diverse Sources&lt;/a>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Women in Neuroscience&lt;/td>
+&lt;td>Women in neuroscience&lt;/td>
+&lt;td>&lt;a href="https://www.winrepo.org/repo/" target="_blank">Women in Neuroscience Repo - Repository (winrepo.org)&lt;/a>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>500 Women Scientists&lt;/td>
+&lt;td>Women scientists across disciplines&lt;/td>
+&lt;td>&lt;a href="https://500womenscientists.org/" target="_blank">https://500womenscientists.org/&lt;/a>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Anne's List&lt;/td>
+&lt;td>Women systems neuroscientists&lt;/td>
+&lt;td>&lt;a href="https://anneslist.net/" target="_blank">AnnesList&lt;/a>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Women in Coastal Geoscience and Engineering&lt;/td>
+&lt;td>Aims to inspire, support, and encourage women at all career stages through networking and mentoring&lt;/td>
+&lt;td>&lt;a href="https://womenincoastal.org/" target="_blank">WICGE&lt;/a>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Women in Earth and Environmental Sciences in Australasia&lt;/td>
+&lt;td>Creating a unified Australasian network of women working in Earth and Environmental Sciences in academia, industry and government&lt;/td>
+&lt;td> &lt;a href="https://www.womeesa.net/" target="_blank">WOMEESA&lt;/a>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Global South Climate Database&lt;/td>
+&lt;td>The Global South Climate Database is a publicly available, searchable database of scientists and experts in the fields of climate science, policy and energy.&lt;/td>
+&lt;td>&lt;a href="https://www.carbonbrief.org/global-south-climate-database/" target="_blank">Global South Climate Database - Carbon Brief&lt;/a>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>BIPOC-authored psychology papers&lt;/td>
+&lt;td>A moderated database of papers to help course instructors diversify their syllabi.&lt;/td>
+&lt;td>&lt;a href="https://docs.google.com/spreadsheets/d/1i7Eacoyv9VVg2lBbCV-KJZg4nSGvR_VZFOysOyOGG8g/edit?gid=666010790#gid=666010790" target="_blank">BIPOC-authored Psychology Papers - Google Sheets&lt;/a>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Black in Neuro&lt;/td>
+&lt;td>Black neuroscientists&lt;/td>
+&lt;td>&lt;a href="https://blackinneuro.com/" target="_blank">Black In Neuro&lt;/a>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Cite Black authors&lt;/td>
+&lt;td>Black authors across disciplines&lt;/td>
+&lt;td>&lt;a href="https://citeblackauthors.com/" target="_blank">Cite Black Authors – A database for academic research by Black authors&lt;/a>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>BlackComputerHer&lt;/td>
+&lt;td>Black women and girls in computing and tech&lt;/td>
+&lt;td>&lt;a href="https://blackcomputeher.org/citeher-bibliography/" target="_blank">citeHER Bibliography (blackcomputeher.org)&lt;/a>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Cite Black Women Collective&lt;/td>
+&lt;td>A movement that engages with social media and aesthetic representation (t-shirts) in order to push people to critically rethink the politics of knowledge production by engaging in a radical praxis of citation that acknowledges and honors Black women’s transnational intellectual production. &lt;/td>
+&lt;td>&lt;a href="https://www.citeblackwomencollective.org/" target="_blank">Cite Black Women. - HOME (citeblackwomencollective.org)&lt;/a>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Canadian Black Scientists Network&lt;/td>
+&lt;td>The Canadian Black Scientists Network (CBSN) exists to Elevate, make Visible, Celebrate and Connect Black Canadians in Science, Technology, Engineering, Mathematics &amp; Medicine (STEMM) across sectors.&lt;/td>
+&lt;td>&lt;a href="https://blackscientists.ca/" target="_blank">Canadian Black Scientists&lt;/a>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>BiasWatchNeuro&lt;/td>
+&lt;td>A website that tracks the women:men ratio of invited speakers at neuroscience conferences, workshops, and courses, as well as authors in neuroscience journals and recipients of neuroscience awards.&lt;/td>
+&lt;td>&lt;a href="https://biaswatchneuro.com/" target="_blank">biaswatchneuro&lt;/a>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>500 Queer Scientists&lt;/td>
+&lt;td>Queer scientists&lt;/td>
+&lt;td>&lt;a href="https://500queerscientists.com/" target="_blank">https://500queerscientists.com/&lt;/a>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>The Bee&lt;/td>
+&lt;td>Literary magazine, online platform, podcast, and the heart of a writing community. Our mission is to nurture, publish and promote the best new working-class writing by new and established working-class writers and visual artists.&lt;/td>
+&lt;td>&lt;a href="https://thebeemagazine.com/" target="_blank">The Bee - A home for working-class readers and writers&lt;/a> &lt;br> &lt;a href="https://newwritingnorth.com/">Home - New Writing North&lt;/a>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>marginalia&lt;/td>
+&lt;td>Marginalia are committed to […] promoting female, non-gender conforming, POC, LGBTQIA+, differently abled or in any other way not promoted by the status quo in academia.&lt;/td>
+&lt;td>&lt;a href="https://www.marginaliascience.com/" target="_blank">https://www.marginaliascience.com/&lt;/a>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Reviewer Zero&lt;/td>
+&lt;td>Reviewer Zero aims to transform peer review in psychology and related fields to be more formative and constructive, reducing bias and promoting equity, especially for underserved groups. They provide training for reviewers, develop supportive review practices, and promote diverse research perspectives. &lt;/td>
+&lt;td>&lt;a href="https://www.reviewerzero.net/about" target="_blank">Reviewer Zero - https://www.reviewerzero.net&lt;/a>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>JANE (Journal/Author Name Estimator)&lt;/td>
+&lt;td>Find papers, journals or authors based on your manuscript title, abstract or keywords. Can be used to find peer reviewers or additional literature to cite.&lt;/td>
+&lt;td>&lt;a href="https://jane.biosemantics.org/" target="_blank">JANE: journal/author name estimator - https://jane.biosemantics.org/&lt;/a>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Diversity Reading List in Philosophy&lt;/td>
+&lt;td>Diversity in philosophy&lt;/td>
+&lt;td>&lt;a href="https://diversityreadinglist.org/" target="_blank">Diversity Reading List – Helping you include authors from under-represented groups in your teaching&lt;/a>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Advancing big-team reproducible science through increased representation (ABRIR)&lt;/td>
+&lt;td>ABRIR is a working group that aims to diagnose the unique barriers to leadership &amp; participation in Big-team/Open Science faced by researchers from LMICs (low-to-middle income countries).&lt;/td>
+&lt;td>&lt;a href="https://abrirpsy.org/about/abrir-hubs/" target="_blank">https://abrirpsy.org/about/abrir-hubs/&lt;/a>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Framework for Open and Reproducible Research Training (FORRT) - Neurodiversity&lt;/td>
+&lt;td>Supporting the messages of both open scholarship and neurodiversity will ensure that the goals of diversity, equity, and inclusion reach across populations and explicitly include neurodivergent people.&lt;/td>
+&lt;td>&lt;a href="https://forrt.org/neurodiversity/" target="_blank">https://forrt.org/neurodiversity/&lt;/a> &lt;br>Database of neurodivergent authors &lt;br> To submit to the database: &lt;a href="https://qualtrics.kcl.ac.uk/jfe/form/SV_eLoQdOyAZTDGT7E">Qualtrics Survey | Qualtrics Experience Management&lt;/a>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Indigenous Science Network&lt;/td>
+&lt;td>A network promoting First Nation/Indigenous science. Regular newsletters and resources for educators.&lt;/td>
+&lt;td>&lt;a href="https://research.acer.edu.au/isn/about.html" target="_blank">https://research.acer.edu.au/isn/about.html&lt;/a>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>City University of Seattle guide to Finding Indigenous Voices&lt;/td>
+&lt;td>Tips for how to search for Indigenous voices in research&lt;/td>
+&lt;td>&lt;a href="https://library.cityu.edu/researchguides/indigenousresources/indigenousvoices" target="_blank">Finding Indigenous Voices - Indigenous Research and Ethics - City University of Seattle Library at City University of Seattle&lt;/a>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Advancing Indigenous People in STEM (AISES)&lt;/td>
+&lt;td>AISES is a national nonprofit organization focused on substantially increasing the representation of Indigenous peoples of North America and the Pacific Islands in science, technology, engineering, and math (STEM) studies and careers.&lt;/td>
+&lt;td>&lt;a href="https://www.aises.org/" target="_blank">AISES | Advancing Indigenous People in STEM&lt;/a>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Anti-colonial research library (ACRL)&lt;/td>
+&lt;td>This Library holds a collection of open-access articles and books, websites, and YouTube videos on Indigenous and anti-colonial research methodologies.&lt;/td>
+&lt;td>&lt;a href="https://www.anticolonialresearchlibrary.org/" target="_blank">Anti-Colonial Research Library&lt;/a>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;/div>
+&lt;/details></description></item></channel></rss>
