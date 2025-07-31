@@ -1,5 +1,5 @@
 +++
-widget = "blank"  # See https://sourcethemes.com/academic/docs/page-builder/
+widget = "blank"
 headless = true  # This file represents a page section.
 active = true  # Activate this widget? true/false
 weight = 10  # Order that this section will appear.
@@ -46,13 +46,13 @@ subtitle = ""
     >
   </div>
   <div style="margin-top: 0.5rem;">
-    <a href="mailto:mudaherarich@gmail.com" title="Email" style="margin-right: 0.5rem;">
+    <a href="mailto:mudaherarich@gmail.com" target="_blank" title="Email" style="margin-right: 0.5rem;">
       <i class="fas fa-envelope fa-2x" aria-hidden="true"></i>
     </a>
-    <a href="https://orcid.org/0000-0002-1281-9895" title="ORCiD">
+    <a href="https://orcid.org/0000-0002-1281-9895" target="_blank" title="ORCiD">
       <i class="ai ai-orcid fa-2x" aria-hidden="true"></i>
     </a>
-    <a href="https://richarddushime.netlify.app/" title="Personal Website">
+    <a href="https://richarddushime.netlify.app/" target="_blank" title="Personal Website">
       <i class="fas fa-globe fa-2x" aria-hidden="true"></i>
     </a>
   </div>
@@ -70,4 +70,4 @@ FORRT’s commitment to pedagogical reform and inclusive open scholarship is tru
 
 **To anyone considering joining FORRT: jump in! You’ll learn more, contribute more, and have far more fun than you ever imagined. Cheers!”**
 
-### ***---Richard Dushime---***
+### **---Richard Dushime**

@@ -1,5 +1,5 @@
 +++
-widget = "blank"  # See https://sourcethemes.com/academic/docs/page-builder/
+widget = "blank"
 headless = true  # This file represents a page section.
 active = true  # Activate this widget? true/false
 weight = 10  # Order that this section will appear.
@@ -46,10 +46,10 @@ subtitle = ""
     >
   </div>
   <div style="margin-top: 0.5rem;">
-    <a href="mailto:roksanasobolak@hotmail.com" title="Email" style="margin-right: 0.5rem;">
+    <a href="mailto:roksanasobolak@hotmail.com" target="_blank" title="Email" style="margin-right: 0.5rem;">
       <i class="fas fa-envelope fa-2x" aria-hidden="true"></i>
     </a>
-    <a href="https://orcid.org/0009-0001-9534-6439" title="ORCiD">
+    <a href="https://orcid.org/0009-0001-9534-6439" target="_blank" title="ORCiD">
       <i class="ai ai-orcid fa-2x" aria-hidden="true"></i>
     </a>
   </div>
@@ -64,4 +64,4 @@ I’ve already recommended FORRT to many other early career researchers because 
 
 **Thank you FORRT, I am excited to see what the future holds!**
 
-### ***---Roksana Sobolak---***
+### **---Roksana Sobolak**
