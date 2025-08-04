@@ -300,20 +300,6 @@ The **<font style="color:#0e2a38">preprint</font>** can [be found here (osf.io/b
 
 <br>
 
-## **Towards Citational Justice**
-> A toolkit to encourage thoughtful citation
-
----
-
-Citations can be thought of as a currency in the academy, where more citations equals more prestige. While the system assumes a meritocracy—where higher citation counts supposedly indicate higher quality because a work is deemed valuable and legitimate by peers—this perspective ignores inherent biases and systemic inequalities. In reality, citation practices often function as mechanisms of exclusion, gatekeeping, and reproduction of existing power structures, reinforcing the dominance of certain groups over others. These issues span from individual choices in citation to structural issues with search engines; here we introduce a toolkit that individuals can use to encourage a conscientious, and more just, citation practice.
-
-The Citational Justice Toolkit organizes a collection of tools and practices by their application to four stages of the research cycle: planning, project, paper and publication. Researchers are encouraged to apply any tool or practice, or as many as they wish, at any point in the research cycle. Many of these tools and practices can become integrated into regular research workflow, ultimately leading to more just citational practices as a matter of course.
-
-The aim of this toolkit is to encourage individual researchers to become conscientious in their citation practices, using their citation choices to distribute power more equitably in the academy. We invite you to explore the Citational Justice Toolkit and join us in promoting equity and justice in academia.
-
-<br>
-
----
 
 ## **In Pursuit of Citational Justice: A Toolkit for Equitable Scholarship**
 
@@ -329,9 +315,10 @@ The **<font style="color:#0e2a38">preprint</font>** can [be found here (osf.io/q
 ***Cite as:***
 > Sauvé, S. A., Middleton, S. L., Gellersen, H., & Azevedo, F. (2025, July 31). In Pursuit of Citational Justice: A Toolkit for Equitable Scholarship. https://doi.org/10.31222/osf.io/qjecy_v2
 
-<br>
 
 ---
+
+<br>
 
 # Op-Eds and Other Media 
 
