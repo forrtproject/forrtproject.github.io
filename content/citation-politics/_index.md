@@ -102,3 +102,6 @@ For **FORRT’s Citation Politics Team** [(#citation-politics)](https://forrt.sl
 <br>
 
 If you see yourself in any of these plans or have any other ideas or suggestions for development of the toolkit, or other ways of engaging with citational practice or patterns (especially as it relates to open research), get in touch FORRT’s Slack[channel #citation-politics](https://forrt.slack.com/archives/C074E9LDES2), email the team at citation-politics@forrt.org, or DM either Team Co- Lead **Sarah Sauvé** or **Helena Gellersen** on [FORRT’s Slack](https://join.slack.com/t/forrt/shared_invite/enQtODMwODI0OTk4ODgzLTM0ZTQ3NDk5MzA1ZjBmNWJjYTVlN2Y2YTk0ZTJhYTY5NDliMDYzMjg2MWE0ZDRhOTY0ZDY3OTRlNDA4ODQ3NjQ). 
+
+***Cite as:***
+> Sauvé, S. A., Middleton, S. L., Gellersen, H., & Azevedo, F. (2025, July 31). In Pursuit of Citational Justice: A Toolkit for Equitable Scholarship. https://doi.org/10.31222/osf.io/qjecy_v2
