@@ -156,7 +156,7 @@ This initiative is supported by a consortium of organizations dedicated to advan
 
 We invite you to explore the map and contribute your own resources to this growing community. Together, we can create a more transparent, inclusive, and collaborative future for scientific research.
 
-Explore the Map: [Interactive Map Link]
+Explore the Map <a href="https://forrt.org/apps/os_map.html" target="_blank">here</a>
 
 Submit Your Resources: [Google Form Link]
 
