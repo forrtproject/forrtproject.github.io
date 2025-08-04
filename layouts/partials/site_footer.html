@@ -1,3 +1,13 @@
+<style>
+  /* Styles for the site footer */
+  footer {
+    margin: 1rem;
+    padding: 1rem;
+    float: left;
+  }
+  
+</style>
+
 <footer class="site-footer">
   {{ if or (site.GetPage "terms.md") (site.GetPage "privacy.md") }}
   <p class="powered-by">
@@ -10,6 +20,8 @@
     {{ end }}
   </p>
   {{ end }}
+
+<a class="btn btn-primary" href="/about/cite_us/" role="button">Cite FORRT</a>
 
   <p class="powered-by">
     {{ with site.Copyright }}{{ replace . "{year}" now.Year | markdownify}}{{ end }}

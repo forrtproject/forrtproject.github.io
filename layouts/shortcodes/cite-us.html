@@ -1,0 +1,98 @@
+
+{{ $css := resources.Get "css/cite_us.css" }}
+{{ if $css }}
+  {{ $style := $css | minify | fingerprint }}
+  <link rel="stylesheet" href="{{ $style.RelPermalink }}">
+{{ else }}
+  {{ warnf "CSS not found: css/cite_us.css. Using static version" }}
+  <link rel="stylesheet" href="{{ "css/cite_us.css" | relURL }}">
+{{ end }}
+
+<div class="cite-us-section">
+    <h4 class="section-title">If you want to cite FORRT, in general, cite:</h4>
+    
+    <div class="cite-us-item">
+        <div class="cite-us-text">
+            Azevedo, F., Parsons, S., Micheli, L., Strand, J., Rinke, E., … & FORRT (2019, December 13). Introducing a Framework for Open and Reproducible Research Training (FORRT).
+             <a href="https://doi.org/10.31219/osf.io/bnh7p" class="doi-link">DOI: https://doi.org/10.31219/osf.io/bnh7p </a>
+        </div>
+        <button class="copy-button" onclick="copyText(this, 'forrt1')">
+            <svg class="copy-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
+            </svg>
+            Copy
+        </button>
+    </div>
+    
+    <div class="cite-us-item">
+        <div class="cite-us-text">
+            Azevedo, F., Liu, M., Pennington, C. R., Pownall, M., Evans, T. R., Parsons, S., Elsherif, M. M., Micheli, L., Westwood, S., & FORRT. (2021). Towards a culture of open scholarship: The role of pedagogical communities. BMC Research Notes, 15(1), 1-5.
+            <a href="https://doi.org/10.1186/s13104-022-05944-1" class="doi-link">DOI: https://doi.org/10.1186/s13104-022-05944-1 </a>
+        </div>
+        <button class="copy-button" onclick="copyText(this, 'forrt2')">
+            <svg class="copy-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
+            </svg>
+            Copy
+        </button>
+    </div>
+</div>
+
+<div class="cite-us-section">
+    <h4 class="section-title">If you want to cite FReD, cite:</h4>
+    
+    <div class="cite-us-item">
+        <div class="cite-us-text">
+            Röseler, L., Kaiser, L., Doetsch, C., Klett, N., Seida, C., Schütz, A., Aczel, B., Adelina, N., Agostini, V., Alarie, S., ... , Zaneva, M., & Zhang, Y. (2024). The Replication Database: Documenting the Replicability of Psychological Science. Journal of Open Psychology Data, 12: 8, pp. 1–23.
+            <a href="https://doi.org/10.5334/jopd.101" class="doi-link">DOI: https://doi.org/10.5334/jopd.101</a>
+        </div>
+        <button class="copy-button" onclick="copyText(this, 'fred')">
+            <svg class="copy-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
+            </svg>
+            Copy
+        </button>
+    </div>
+</div>
+
+<script>
+    const citations = {
+        forrt1: "Azevedo, F., Parsons, S., Micheli, L., Strand, J., Rinke, E., … & FORRT (2019, December 13). Introducing a Framework for Open and Reproducible Research Training (FORRT). https://doi.org/10.31219/osf.io/bnh7p",
+        forrt2: "Azevedo, F., Liu, M., Pennington, C. R., Pownall, M., Evans, T. R., Parsons, S., Elsherif, M. M., Micheli, L., Westwood, S., & FORRT. (2021). Towards a culture of open scholarship: The role of pedagogical communities. BMC Research Notes, 15(1), 1-5. https://doi.org/10.1186/s13104-022-05944-1",
+        fred: "Röseler, L., Kaiser, L., Doetsch, C., Klett, N., Seida, C., Schütz, A., Aczel, B., Adelina, N., Agostini, V., Alarie, S., ... , Zaneva, M., & Zhang, Y. (2024). The Replication Database: Documenting the Replicability of Psychological Science. Journal of Open Psychology Data, 12: 8, pp. 1–23. DOI: https://doi.org/10.5334/jopd.101"
+    };
+
+    const copyIcon = `<svg class="copy-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
+    </svg>Copy`;
+
+    const checkIcon = `<svg class="copy-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+    </svg>Copied!`;
+
+    async function copyText(button, key) {
+        const text = citations[key];
+        
+        try {
+            await navigator.clipboard.writeText(text);
+        } catch (err) {
+            // Fallback for older browsers
+            const textarea = document.createElement('textarea');
+            textarea.value = text;
+            document.body.appendChild(textarea);
+            textarea.select();
+            document.execCommand('copy');
+            document.body.removeChild(textarea);
+        }
+        
+        // Show feedback
+        button.innerHTML = checkIcon;
+        button.classList.add('copied');
+        
+        // Reset after 2 seconds
+        setTimeout(() => {
+            button.innerHTML = copyIcon;
+            button.classList.remove('copied');
+        }, 2000);
+    }
+</script>
