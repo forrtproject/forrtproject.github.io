@@ -1,9 +1,8 @@
 +++
 # A Demo section created with the Blank widget.
-# Any elements can be added in the body: https://sourcethemes.com/academic/docs/writing-markdown-latex/
 # Add more sections by duplicating this file and customizing to your requirements.
 
-widget = "blank"  # See https://sourcethemes.com/academic/docs/page-builder/
+widget = "blank"  #
 headless = true  # This file represents a page section.
 active = true  # Activate this widget? true/false
 weight = 5  # Order that this section will appear.
@@ -87,6 +86,8 @@ This page showcases the diverse scholarly and public-facing outputs produced by 
 
 <br>
 
+---
+
 ## **Mapping Open Science Communities in Psychology: A Systematic Narrative Review**
 
 ---
@@ -94,10 +95,29 @@ This page showcases the diverse scholarly and public-facing outputs produced by 
 We have written a manuscript, entitled *International Initiatives to Enhance Awareness and Uptake of Open Research in Psychology: A Systematic Mapping Review,* which outlines the global landscape of Open Science initiatives within psychology. This postprint provides a systematic review of *187 initiatives*, categorized into procedural, structural, and community-based changes, highlighting the roles they play in advancing transparency, replicability, and collaboration in research practices. The review aims to increase awareness, adoption, and coordination of these initiatives across psychology and beyond, serving as a roadmap for disciplines experiencing similar challenges.
 
 
-***Status***: Our paper is Published by **Royal Society** 🎉🥳. Cite as:
+***Status***: Published by **Royal Society** 🎉🥳. Cite as:
 > Skubera Magda, Korbmacher Max, Evans Thomas Rhys, Azevedo Flavio and Pennington Charlotte R. 2025International initiatives to enhance awareness and uptake of open research in psychology: a systematic mapping reviewR. Soc. Open Sci.12241726. https://doi.org/10.1098/rsos.241726 
 
 <div class='altmetric-embed' data-badge-type='medium-donut' data-doi="https://doi.org/10.1098/rsos.241726"></div>
+
+<br>
+
+---
+
+## **An annotated introductory reading list for neurodiversity**
+
+---
+
+Since its inception, the concept of neurodiversity has been defined in a number of different ways, which can cause confusion among those hoping to educate themselves about the topic. Learning about neurodiversity can also be challenging because there is a lack of well-curated, appropriately contextualized information on the topic. To address such barriers, we present an annotated reading list that was developed collaboratively by a neurodiverse group of researchers. The nine themes covered in the reading list are: the history of neurodiversity; ways of thinking about neurodiversity; the importance of lived experience; a neurodiversity paradigm for autism science; beyond deficit views of ADHD; expanding the scope of neurodiversity; anti-ableism; the need for robust theory and methods; and integration with open and participatory work. We hope this resource can support readers in understanding some of the key ideas and topics within neurodiversity, and that it can further orient researchers towards more rigorous, destigmatizing, accessible, and inclusive scientific practices.
+
+<div class='altmetric-embed' data-badge-type='medium-donut' data-doi="https://doi.org/10.7554/eLife.102467"></div>
+
+The **<font style="color:#0e2a38">postprint</font>** can [be found here (eLife 13:e102467)](https://doi.org/10.7554/eLife.102467). 
+
+
+> Mirela Zaneva, Tao Coll-Martín, Yseult Héjja-Brichard, Tamara Kalandadze, Andrea Kis, Alicja Koperska, Marie Adrienne Robles Manalili, Adrien Mathy, Christopher J Graham, Anna Hollis, Robert M Ross, Siu Kit Yeung, Veronica Allen, Flavio Azevedo, Emily Friedel, Stephanie Fuller, Vaitsa Giannouli, Biljana Gjoneska, Helena Hartmann, Max Korbmacher, Mahmoud M Elsherif, Alyssa Hillary Zisk (2024) Point of View: An annotated introductory reading list for neurodiversity eLife 13:e102467
+https://doi.org/10.7554/eLife.102467
+
 
 <br>
 
@@ -166,7 +186,7 @@ The **<font style="color:#0e2a38">postprint</font>** can [be found here (osf.io/
 
 <br>
 
-## Participatory Research Primer
+## **Participatory Research Primer**
 
 ---
 
@@ -280,39 +300,25 @@ The **<font style="color:#0e2a38">preprint</font>** can [be found here (osf.io/b
 
 <br>
 
-## **Point of View: An annotated introductory reading list for neurodiversity**
+
+## **In Pursuit of Citational Justice: A Toolkit for Equitable Scholarship**
 
 ---
 
-Since its inception, the concept of neurodiversity has been defined in a number of different ways, which can cause confusion among those hoping to educate themselves about the topic. Learning about neurodiversity can also be challenging because there is a lack of well-curated, appropriately contextualized information on the topic. To address such barriers, we present an annotated reading list that was developed collaboratively by a neurodiverse group of researchers. The nine themes covered in the reading list are: the history of neurodiversity; ways of thinking about neurodiversity; the importance of lived experience; a neurodiversity paradigm for autism science; beyond deficit views of ADHD; expanding the scope of neurodiversity; anti-ableism; the need for robust theory and methods; and integration with open and participatory work. We hope this resource can support readers in understanding some of the key ideas and topics within neurodiversity, and that it can further orient researchers towards more rigorous, destigmatizing, accessible, and inclusive scientific practices.
+Decades of empirical research across disciplines reveal the pervasiveness of citation biases along axes of gender, race, geography, and epistemology. Who we cite reflects and reinforces both the boundaries and hierarchies of academic knowledge, covertly shaping not only whose research is legitimized and valued but also whose careers are advanced.Citations, the currency of the academy with power to reinforce or dismantle hierarchies that privilege dominant knowledge systems cannot thus be a neutral, a political act. This paper unpacks the concept of  citation politics  and its role in sustaining epistemic hierarchies within scholarly communities. Rather than framing citation bias as a matter of individual oversight, we position it as a systemic issue tied to academic structures,norms, and incentive systems. We introduce a comprehensive and openly accessible Citational Justice Toolkit, developed by the FORRT community, which curates actionable resources, tools, and practices helping scholars and institutions to audit,diversify, and reflect on their citation practices across the research cycle. Our aim is to support a shift from tokenistic inclusion toward epistemically accountable, socially responsible, and structurally aware scholarship. We argue that reimagining citation as an ethical and epistemic practice is foundational to building a just and inclusive academic ecosystem, fostering pluralism, transparency, and integrity in knowledge production.
 
-<div class='altmetric-embed' data-badge-type='medium-donut' data-doi="https://doi.org/10.7554/eLife.102467"></div>
-
-The **<font style="color:#0e2a38">preprint</font>** can [be found here (eLife 13:e102467)](https://doi.org/10.7554/eLife.102467). 
-
-
-> Mirela Zaneva, Tao Coll-Martín, Yseult Héjja-Brichard, Tamara Kalandadze, Andrea Kis, Alicja Koperska, Marie Adrienne Robles Manalili, Adrien Mathy, Christopher J Graham, Anna Hollis, Robert M Ross, Siu Kit Yeung, Veronica Allen, Flavio Azevedo, Emily Friedel, Stephanie Fuller, Vaitsa Giannouli, Biljana Gjoneska, Helena Hartmann, Max Korbmacher, Mahmoud M Elsherif, Alyssa Hillary Zisk (2024) Point of View: An annotated introductory reading list for neurodiversity eLife 13:e102467
-https://doi.org/10.7554/eLife.102467
-
----
-
-<br>
-
-## **Towards Citational Justice**
-> A toolkit to encourage thoughtful citation
-
----
-
-Citations can be thought of as a currency in the academy, where more citations equals more prestige. While the system assumes a meritocracy—where higher citation counts supposedly indicate higher quality because a work is deemed valuable and legitimate by peers—this perspective ignores inherent biases and systemic inequalities. In reality, citation practices often function as mechanisms of exclusion, gatekeeping, and reproduction of existing power structures, reinforcing the dominance of certain groups over others. These issues span from individual choices in citation to structural issues with search engines; here we introduce a toolkit that individuals can use to encourage a conscientious, and more just, citation practice.
-
-The Citational Justice Toolkit organizes a collection of tools and practices by their application to four stages of the research cycle: planning, project, paper and publication. Researchers are encouraged to apply any tool or practice, or as many as they wish, at any point in the research cycle. Many of these tools and practices can become integrated into regular research workflow, ultimately leading to more just citational practices as a matter of course.
-
-The aim of this toolkit is to encourage individual researchers to become conscientious in their citation practices, using their citation choices to distribute power more equitably in the academy. We invite you to explore the Citational Justice Toolkit and join us in promoting equity and justice in academia.
  
+<div class='altmetric-embed' data-badge-type='medium-donut' data-doi="https://doi.org/10.31222/osf.io/qjecy_v2"></div>
 
-<br>
+The **<font style="color:#0e2a38">preprint</font>** can [be found here (osf.io/qjecy_v2)](https://osf.io/preprints/metaarxiv/qjecy_v2). 
+
+***Cite as:***
+> Sauvé, S. A., Middleton, S. L., Gellersen, H., & Azevedo, F. (2025, July 31). In Pursuit of Citational Justice: A Toolkit for Equitable Scholarship. https://doi.org/10.31222/osf.io/qjecy_v2
+
 
 ---
+
+<br>
 
 # Op-Eds and Other Media 
 
@@ -446,6 +452,12 @@ Reproducibility is recognized as essential to scientific progress and integrity.
 
 <div class='altmetric-embed' data-badge-type='medium-donut' data-doi="https://doi.org/10.1098/rsos.242076"></div>
 
+The **<font style="color:#0e2a38">postprint</font>** can [be found here](https://doi.org/10.1098/rsos.242076). 
+
+***Cite as:***
+
+> Heyard Rachel, Pawel Samuel, Frese Joris, Voelkl Bernhard, Würbel Hanno, McCann Sarah, Held Leonhard, Wever Kimberley E., Hartmann Helena, Townsin Louise and Zellers Stephanie 2025A scoping review on metrics to quantify reproducibility: a multitude of questions leads to a multitude of metricsR. Soc. Open Sci.12242076. https://doi.org/10.1098/rsos.242076
+
 ---
 
 <br>
@@ -458,6 +470,12 @@ Study preregistration has become increasingly popular in psychology, but its pot
 
 
 <div class='altmetric-embed' data-badge-type='medium-donut' data-doi="https://doi.org/10.1037/met0000687"></div>
+
+The **<font style="color:#0e2a38">postprint</font>** can [be found here](https://doi.org/10.1037/met0000687). 
+
+***Cite as:***
+
+> van den Akker, O. R., Bakker, M., van Assen, M. A. L. M., Pennington, C. R., Verweij, L., Elsherif, M. M., Claesen, A., Gaillard, S. D. M., Yeung, S. K., Frankenberger, J.-L., Krautter, K., Cockcroft, J. P., Kreuer, K. S., Evans, T. R., Heppel, F. M., Schoch, S. F., Korbmacher, M., Yamada, Y., Albayrak-Aydemir, N., . . . Wicherts, J. M. (2024). The potential of preregistration in psychology: Assessing preregistration producibility and preregistration-study consistency.Psychological Methods. Advance online publication. https://doi.org/10.1037/met0000687
 
 ---
 

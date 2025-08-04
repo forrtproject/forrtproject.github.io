@@ -12,11 +12,16 @@ df_roles = pd.read_csv(extra_roles_url)
 # Assuming 'df' contains the index data with Tenzing Links
 all_data_frames = []
 
+print("--- Reading Contributor Data ---")
 # Loop over both the Project Names and the Tenzing Links
 for project_name, url, project_url in zip(df['Project Name'], df['CSV Link'], df['Project URL']):
     # Make sure each URL is transformed into a CSV export URL as shown above
     data_frame = pd.read_csv(url)
     
+    # --- LOGGING ADDED HERE ---
+    # Log the number of contributors read from the current project
+    print(f"Read {len(data_frame)} contributors from '{project_name}'.")
+
     # Add a new column with the project name
     data_frame['Project Name'] = project_name
     data_frame['Project URL'] = project_url
@@ -163,8 +168,8 @@ merged_data['original_order'] = range(len(merged_data))
 
 # Perform the groupby operation without sorting
 summary = (merged_data.groupby(merged_data['ORCID iD'].fillna(merged_data['Name']), sort=False)
-                    .apply(concatenate_contributions)
-                    .reset_index())
+                       .apply(concatenate_contributions)
+                       .reset_index())
 
 # Separate the tuple into two columns
 summary[['original_order', 'Contributions']] = pd.DataFrame(summary[0].tolist(), index=summary.index)
@@ -179,8 +184,17 @@ summary = summary.sort_values(by='original_order').drop(columns='original_order'
 summary = summary.reset_index(drop=True)
 summary_string = '\n\n'.join(summary['Contributions'])
 
+# --- LOGGING ADDED HERE ---
+# Log the final deduplicated number of contributors
+print("\n--- Processing Complete ---")
+print(f"Total number of unique contributors after deduplication: {len(summary)}")
+
 # Get the directory of the current script
-script_dir = os.path.dirname(os.path.abspath(__file__))
+# Using a try-except block in case __file__ is not defined (e.g., in a notebook)
+try:
+    script_dir = os.path.dirname(os.path.abspath(__file__))
+except NameError:
+    script_dir = '.' # Default to the current directory
 
 # Construct the paths for the template and output files
 template_path = os.path.join(script_dir, 'tenzing_template.md')
@@ -196,3 +210,5 @@ combined_content = template_content + summary_string
 # Save the combined content to 'tenzing.md'
 with open(output_path, 'w') as file:
     file.write(combined_content)
+
+print(f"\nSuccessfully generated the file at: {output_path}")
