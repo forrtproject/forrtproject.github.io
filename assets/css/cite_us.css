@@ -1,0 +1,64 @@
+/* styles for the cite us  */
+    .cite-us-section {
+        margin-bottom: 1rem;
+    }
+
+    .section-title {
+        font-size: 1rem;
+        padding: 0.5rem;
+    }
+
+    .cite-us-item {
+        background: #f9fafb;
+        border: 1px solid #e5e7eb;
+        border-radius: 8px;
+        padding: 1rem;
+        margin-bottom: 1rem;
+        position: relative;
+    }
+
+    .cite-us-text {
+        font-family: Georgia, serif;
+        font-size: 0.95rem;
+        line-height: 1.7;
+        color: #374151;
+        margin-bottom: 1rem;
+    }
+
+    .copy-button {
+        position: absolute;
+        bottom: 0.5rem;
+        right: 0.5rem;
+        background: linear-gradient(to bottom,  #ffffff, #F9F4CB );
+        color: #374151;
+        border: none;
+        border-radius: 6px;
+        padding: 0.2rem 0.5rem;
+        font-size: 0.875rem;
+        font-weight: 500;
+        cursor: pointer;
+        transition: all 0.2s ease;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+    }
+
+    .copy-button:hover {
+        background: linear-gradient(to bottom, #ffffff,  #E7E5E4);
+        color:  #b3005a;
+        transform: translateY(-1px);
+    }
+
+    .copy-button.copied {
+        background: linear-gradient(to bottom,  #ffffff, #F9F4CB );
+    }
+
+    .copy-icon {
+        width: 16px;
+        height: 16px;
+    }
+
+    @media (max-width: 640px) {
+        .cite-us-text { padding-right: 0; margin-bottom: 3rem; }
+        .copy-button { position: static; margin-top: 1rem; width: 100%; justify-content: center; }
+    }
