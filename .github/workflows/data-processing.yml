@@ -93,6 +93,29 @@ jobs:
             exit 1
           fi
           echo "✅ Credentials are set, running script..."
+          
+          # Delete old GA data file before creating new one
+          echo "=== Cleaning up old GA data file ==="
+          if [ -f "data/ga_data.json" ]; then
+            echo "Found old file: data/ga_data.json"
+            echo "Old file size: $(wc -c < data/ga_data.json) bytes"
+            echo "Old file modified: $(stat -c %y data/ga_data.json)"
+            echo "Removing old file..."
+            rm -f data/ga_data.json
+            echo "✅ Old file removed"
+          else
+            echo "No old file found at data/ga_data.json"
+          fi
+          
+          # Also clean up any nested files
+          if [ -d "data/ga_data" ]; then
+            echo "Found old nested directory: data/ga_data/"
+            echo "Removing nested directory..."
+            rm -rf data/ga_data/
+            echo "✅ Nested directory removed"
+          fi
+          
+          echo "=== Running GA data download script ==="
           python scripts/download_ga_data.py
           echo "✅ GA data download completed"
           
@@ -111,6 +134,30 @@ jobs:
         env:
           SERPAPI: ${{ secrets.SERPAPI }}
 
+      - name: Verify GA data file exists
+        run: |
+          echo "=== Verifying GA data file ==="
+          
+          # Clean up any old nested files
+          if [ -f "data/ga_data/ga_data.json" ]; then
+            echo "Found old nested file, removing..."
+            rm -rf data/ga_data/
+          fi
+          
+          # Check for the correct file
+          if [ -f "data/ga_data.json" ]; then
+            echo "✅ GA data file exists in data/ga_data.json"
+            echo "File size: $(wc -c < data/ga_data.json) bytes"
+            echo "File modified: $(stat -c %y data/ga_data.json)"
+            echo "File contents preview:"
+            head -3 data/ga_data.json
+          else
+            echo "❌ GA data file missing from data/ga_data.json"
+            echo "Available files in data/:"
+            ls -la data/ || echo "data/ directory does not exist"
+            exit 1
+          fi
+
       - name: Commit and push GA data to ga branch
         if: github.event_name != 'pull_request'
         run: |
@@ -123,26 +170,14 @@ jobs:
           # Checkout master branch
           git checkout ga
           
-          # Remove old GA data file if it exists (force removal)
-          if [ -f "data/ga_data.json" ]; then
-            echo "Removing old GA data file..."
-            git rm -f data/ga_data.json || rm -f data/ga_data.json
-          fi
-          
-          # Copy the new GA data file from the working directory
-          echo "Adding new GA data file..."
-          cp data/ga_data.json data/ga_data.json.new
-          mv data/ga_data.json.new data/ga_data.json
-          
-          # Add and commit the file
+          # Add and commit the GA data file directly (no removal needed)
+          echo "Adding GA data file..."
           git add data/ga_data.json
           git commit -m "Update GA data - $(date -u +'%Y-%m-%d %H:%M:%S UTC')"
           
           # Push to master
           git push origin ga
           echo "✅ GA data committed and pushed to master branch"
-
-      - name: Verify GA data file exists
         run: |
           echo "=== Verifying GA data file ==="
           
