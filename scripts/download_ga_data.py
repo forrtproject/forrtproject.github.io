@@ -86,8 +86,8 @@ data = {
     "daily_visitors": daily_visitors
 }
 
-os.makedirs("data", exist_ok=True)
-with open("data/ga_data.json", "w") as f:
+os.makedirs("data/ga_data", exist_ok=True)
+with open("data/ga_data/ga_data.json", "w") as f:
     json.dump(data, f, indent=2)
 
 print("Google Analytics data downloaded and saved to data/ga_data.json")

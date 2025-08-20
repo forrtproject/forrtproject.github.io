@@ -93,14 +93,47 @@ jobs:
             exit 1
           fi
           echo "✅ Credentials are set, running script..."
+          
+          # Ensure data/ga_data directory exists
+          mkdir -p data/ga_data
+          echo "✅ data/ga_data directory created/verified"
+          
+          # Run the script (it will create data/ga_data.json)
           python scripts/download_ga_data.py
           echo "✅ GA data download completed"
+          
+          # Verify the file was created in the new location
+          if [ -f "data/ga_data/ga_data.json" ]; then
+            echo "✅ GA data file exists in data/ga_data/"
+            echo "File size: $(wc -c < data/ga_data/ga_data.json) bytes"
+            echo "File contents preview:"
+            head -5 data/ga_data/ga_data.json
+          else
+            echo "❌ GA data file was not created in data/ga_data/"
+            exit 1
+          fi
 
       - name: Run Google Scholar script
         continue-on-error: true  # Continue even if this step fails
         run: python3 scripts/gs-cite/google_scholar.py
         env:
           SERPAPI: ${{ secrets.SERPAPI }}
+
+      - name: Verify data before upload
+        run: |
+          echo "=== Verifying data before upload ==="
+          echo "Current directory: $(pwd)"
+          echo "Data directory contents:"
+          ls -la data/ || echo "Data directory does not exist"
+          echo "GA data directory contents:"
+          ls -la data/ga_data/ || echo "GA data directory does not exist"
+          if [ -f "data/ga_data/ga_data.json" ]; then
+            echo "✅ GA data file exists in data/ga_data/"
+            echo "File size: $(wc -c < data/ga_data/ga_data.json) bytes"
+            echo "File modified: $(stat -c %y data/ga_data/ga_data.json)"
+          else
+            echo "❌ GA data file missing from data/ga_data/"
+          fi
 
       - name: Upload data artifact
         uses: actions/upload-artifact@v4
@@ -109,7 +142,8 @@ jobs:
           path: |
             content/contributors/tenzing.md
             content/curated_resources/
-            data/ # GA data
+            data/ga_data/ga_data.json # GA data
+            data/ # other
             content/contributor-analysis/
             content/publications/citation_chart.webp
           retention-days: 1

@@ -55,6 +55,7 @@ jobs:
 
           # Download GA data if possible
           if [ "${{ github.event_name }}" != 'pull_request' ]; then
+            mkdir -p data/ga_data
             python scripts/download_ga_data.py
           fi
 

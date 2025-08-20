@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', function() {
   }).setView([40, 0], 1.25); // ✅ Adjust as needed
 
   // ✅ Define visitor data from Hugo
-  var gaRegionsData = {{ .Site.Data.ga_data.regions | jsonify | safeJS }};
+  var gaRegionsData = {{ .Site.Data.ga_data.ga_data.regions | jsonify | safeJS }};
   var gaRegions = {};
   gaRegionsData.forEach(function(entry) {
     gaRegions[entry.country] = entry.users;

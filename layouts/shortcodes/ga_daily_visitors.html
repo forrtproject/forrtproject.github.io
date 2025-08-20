@@ -3,7 +3,7 @@
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script>
 document.addEventListener('DOMContentLoaded', function() {
-  var dailyData = {{ .Site.Data.ga_data.daily_visitors | jsonify | safeJS }};
+  var dailyData = {{ .Site.Data.ga_data.ga_data.daily_visitors | jsonify | safeJS }};
   if (dailyData && dailyData.length) {
     dailyData.sort((a, b) => new Date(a.date) - new Date(b.date));
     dailyData.pop();
