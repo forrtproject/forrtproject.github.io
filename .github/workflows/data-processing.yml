@@ -178,28 +178,6 @@ jobs:
           # Push to master
           git push origin ga
           echo "✅ GA data committed and pushed to master branch"
-        run: |
-          echo "=== Verifying GA data file ==="
-          
-          # Clean up any old nested files
-          if [ -f "data/ga_data/ga_data.json" ]; then
-            echo "Found old nested file, removing..."
-            rm -rf data/ga_data/
-          fi
-          
-          # Check for the correct file
-          if [ -f "data/ga_data.json" ]; then
-            echo "✅ GA data file exists in data/ga_data.json"
-            echo "File size: $(wc -c < data/ga_data.json) bytes"
-            echo "File modified: $(stat -c %y data/ga_data.json)"
-            echo "File contents preview:"
-            head -3 data/ga_data.json
-          else
-            echo "❌ GA data file missing from data/ga_data.json"
-            echo "Available files in data/:"
-            ls -la data/ || echo "data/ directory does not exist"
-            exit 1
-          fi
 
       - name: Debug before artifact upload
         run: |
