@@ -33,49 +33,49 @@ jobs:
       - name: Install tenzing R dependencies
         run: Rscript -e 'install.packages(c("rmarkdown","ggplot2", "readxl", "dplyr", "googlesheets4", "stringr", "gridExtra", "glue", "tidygraph", "ggraph", "igraph", "visNetwork"))'
 
-      # - name: Run Tenzing analysis
-      #   continue-on-error: true  # Continue even if this step fails
-      #   run: |
-      #     Rscript -e "rmarkdown::render('scripts/contributor-analysis/contributor_analysis.rmd')"
+      - name: Run Tenzing analysis
+        continue-on-error: true  # Continue even if this step fails
+        run: |
+          Rscript -e "rmarkdown::render('scripts/contributor-analysis/contributor_analysis.rmd')"
 
-      # - name: Move Tenzing analysis
-      #   continue-on-error: true  # Continue even if this step fails
-      #   run: |
-      #     mv scripts/contributor-analysis/contributor_analysis.md content/contributor-analysis/index.md
-      #     mv scripts/contributor-analysis/*.png content/contributor-analysis/
-      #     rm -rf content/contributor-analysis/htmlwidgets_libs
-      #     mv scripts/contributor-analysis/htmlwidgets_libs content/contributor-analysis/
-      #     sed -i.bak -e '/^```{=html}$/d' -e '/^```$/d' content/contributor-analysis/index.md && rm content/contributor-analysis/index.md.bak
+      - name: Move Tenzing analysis
+        continue-on-error: true  # Continue even if this step fails
+        run: |
+          mv scripts/contributor-analysis/contributor_analysis.md content/contributor-analysis/index.md
+          mv scripts/contributor-analysis/*.png content/contributor-analysis/
+          rm -rf content/contributor-analysis/htmlwidgets_libs
+          mv scripts/contributor-analysis/htmlwidgets_libs content/contributor-analysis/
+          sed -i.bak -e '/^```{=html}$/d' -e '/^```$/d' content/contributor-analysis/index.md && rm content/contributor-analysis/index.md.bak
 
       - name: Install Python dependencies
         run: python3 -m pip install -r ./requirements.txt
 
-      # - name: Run Tenzing script
-      #   continue-on-error: true  # Continue even if this step fails
-      #   run: python3 scripts/forrt_contribs/tenzing.py
+      - name: Run Tenzing script
+        continue-on-error: true  # Continue even if this step fails
+        run: python3 scripts/forrt_contribs/tenzing.py
 
-      # - name: Run Curated Resources script
-      #   continue-on-error: true  # Continue even if this step fails
-      #   run: python3 content/resources/resource.py
+      - name: Run Curated Resources script
+        continue-on-error: true  # Continue even if this step fails
+        run: python3 content/resources/resource.py
 
-      # - name: Move and validate Tenzing output
-      #   continue-on-error: true  # Continue even if this step fails
-      #   run: |
-      #     mv scripts/forrt_contribs/tenzing.md content/contributors/tenzing.md
-      #     if [ ! -f content/contributors/tenzing.md ]; then
-      #       echo "tenzing.md not found"
-      #       exit 1
-      #     fi
+      - name: Move and validate Tenzing output
+        continue-on-error: true  # Continue even if this step fails
+        run: |
+          mv scripts/forrt_contribs/tenzing.md content/contributors/tenzing.md
+          if [ ! -f content/contributors/tenzing.md ]; then
+            echo "tenzing.md not found"
+            exit 1
+          fi
 
-      # - name: Validate curated resources
-      #   continue-on-error: true  # Continue even if this step fails
-      #   run: |
-      #     for file in content/curated_resources/*; do
-      #       if [ ! -f "$file" ]; then
-      #         echo "Non-markdown file found: $file"
-      #         exit 1
-      #       fi
-      #     done
+      - name: Validate curated resources
+        continue-on-error: true  # Continue even if this step fails
+        run: |
+          for file in content/curated_resources/*; do
+            if [ ! -f "$file" ]; then
+              echo "Non-markdown file found: $file"
+              exit 1
+            fi
+          done
 
       - name: Download GA Data
         continue-on-error: true  # Continue even if this step fails
@@ -134,66 +134,26 @@ jobs:
         env:
           SERPAPI: ${{ secrets.SERPAPI }}
 
-      - name: Verify GA data file exists
+      - name: Commit and push GA data to ga branch
+        if: github.event_name != 'pull_request'
         run: |
-          echo "=== Verifying GA data file ==="
+          echo "=== Committing GA data to master branch ==="
           
-          # Clean up any old nested files
-          if [ -f "data/ga_data/ga_data.json" ]; then
-            echo "Found old nested file, removing..."
-            rm -rf data/ga_data/
-          fi
+          # Configure git
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
           
-          # Check for the correct file
-          if [ -f "data/ga_data.json" ]; then
-            echo "✅ GA data file exists in data/ga_data.json"
-            echo "File size: $(wc -c < data/ga_data.json) bytes"
-            echo "File modified: $(stat -c %y data/ga_data.json)"
-            echo "File contents preview:"
-            head -3 data/ga_data.json
-          else
-            echo "❌ GA data file missing from data/ga_data.json"
-            echo "Available files in data/:"
-            ls -la data/ || echo "data/ directory does not exist"
-            exit 1
-          fi
-
-      # - name: Commit and push GA data to ga branch
-      #   if: github.event_name != 'pull_request'
-      #   run: |
-      #     echo "=== Committing GA data to master branch ==="
+          # Checkout master branch
+          git checkout master
           
-      #     # Configure git
-      #     git config --local user.email "action@github.com"
-      #     git config --local user.name "GitHub Action"
+          # Add and commit the GA data file directly (no removal needed)
+          echo "Adding GA data file..."
+          git add data/ga_data.json
+          git commit -m "Update GA data - $(date -u +'%Y-%m-%d %H:%M:%S UTC')"
           
-      #     # Checkout master branch
-      #     git checkout ga
-          
-      #     # Add and commit the GA data file directly (no removal needed)
-      #     echo "Adding GA data file..."
-      #     git add data/ga_data.json
-      #     git commit -m "Update GA data - $(date -u +'%Y-%m-%d %H:%M:%S UTC')"
-          
-      #     # Push to master
-      #     git push origin ga
-      #     echo "✅ GA data committed and pushed to master branch"
-
-      - name: Debug before artifact upload
-        run: |
-          echo "=== Debug before artifact upload ==="
-          echo "Current directory: $(pwd)"
-          echo "Files to be uploaded:"
-          echo "1. content/contributors/tenzing.md"
-          ls -la content/contributors/tenzing.md 2>/dev/null || echo "❌ tenzing.md not found"
-          echo "2. data/ directory:"
-          ls -la data/ 2>/dev/null || echo "❌ data/ directory not found"
-          echo "3. content/curated_resources/ directory:"
-          ls -la content/curated_resources/ 2>/dev/null || echo "❌ curated_resources/ directory not found"
-          echo "4. content/contributor-analysis/ directory:"
-          ls -la content/contributor-analysis/ 2>/dev/null || echo "❌ contributor-analysis/ directory not found"
-          echo "5. content/publications/citation_chart.webp"
-          ls -la content/publications/citation_chart.webp 2>/dev/null || echo "❌ citation_chart.webp not found"
+          # Push to master
+          git push origin master
+          echo "✅ GA data committed and pushed to master branch"
 
       - name: Upload data artifact
         id: upload-artifact
