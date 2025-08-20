@@ -300,21 +300,25 @@ The **<font style="color:#0e2a38">preprint</font>** can [be found here (osf.io/b
 
 <br>
 
-## **Towards Citational Justice**
-> A toolkit to encourage thoughtful citation
+
+## **In Pursuit of Citational Justice: A Toolkit for Equitable Scholarship**
 
 ---
 
-Citations can be thought of as a currency in the academy, where more citations equals more prestige. While the system assumes a meritocracy—where higher citation counts supposedly indicate higher quality because a work is deemed valuable and legitimate by peers—this perspective ignores inherent biases and systemic inequalities. In reality, citation practices often function as mechanisms of exclusion, gatekeeping, and reproduction of existing power structures, reinforcing the dominance of certain groups over others. These issues span from individual choices in citation to structural issues with search engines; here we introduce a toolkit that individuals can use to encourage a conscientious, and more just, citation practice.
+Decades of empirical research across disciplines reveal the pervasiveness of citation biases along axes of gender, race, geography, and epistemology. Who we cite reflects and reinforces both the boundaries and hierarchies of academic knowledge, covertly shaping not only whose research is legitimized and valued but also whose careers are advanced.Citations, the currency of the academy with power to reinforce or dismantle hierarchies that privilege dominant knowledge systems cannot thus be a neutral, a political act. This paper unpacks the concept of  citation politics  and its role in sustaining epistemic hierarchies within scholarly communities. Rather than framing citation bias as a matter of individual oversight, we position it as a systemic issue tied to academic structures,norms, and incentive systems. We introduce a comprehensive and openly accessible Citational Justice Toolkit, developed by the FORRT community, which curates actionable resources, tools, and practices helping scholars and institutions to audit,diversify, and reflect on their citation practices across the research cycle. Our aim is to support a shift from tokenistic inclusion toward epistemically accountable, socially responsible, and structurally aware scholarship. We argue that reimagining citation as an ethical and epistemic practice is foundational to building a just and inclusive academic ecosystem, fostering pluralism, transparency, and integrity in knowledge production.
 
-The Citational Justice Toolkit organizes a collection of tools and practices by their application to four stages of the research cycle: planning, project, paper and publication. Researchers are encouraged to apply any tool or practice, or as many as they wish, at any point in the research cycle. Many of these tools and practices can become integrated into regular research workflow, ultimately leading to more just citational practices as a matter of course.
-
-The aim of this toolkit is to encourage individual researchers to become conscientious in their citation practices, using their citation choices to distribute power more equitably in the academy. We invite you to explore the Citational Justice Toolkit and join us in promoting equity and justice in academia.
  
+<div class='altmetric-embed' data-badge-type='medium-donut' data-doi="https://doi.org/10.31222/osf.io/qjecy_v2"></div>
+
+The **<font style="color:#0e2a38">preprint</font>** can [be found here (osf.io/qjecy_v2)](https://osf.io/preprints/metaarxiv/qjecy_v2). 
+
+***Cite as:***
+> Sauvé, S. A., Middleton, S. L., Gellersen, H., & Azevedo, F. (2025, July 31). In Pursuit of Citational Justice: A Toolkit for Equitable Scholarship. https://doi.org/10.31222/osf.io/qjecy_v2
+
+
+---
 
 <br>
-
----
 
 # Op-Eds and Other Media 
 
