@@ -82,7 +82,19 @@ jobs:
         env:
           GA_API_CREDENTIALS: ${{ secrets.GA_API_CREDENTIALS }}
           GA_PROPERTY_ID: ${{ secrets.GA_PROPERTY_ID }}
-        run: python scripts/download_ga_data.py
+        run: |
+          echo "Starting GA data download..."
+          if [ -z "$GA_API_CREDENTIALS" ]; then
+            echo "❌ GA_API_CREDENTIALS is not set"
+            exit 1
+          fi
+          if [ -z "$GA_PROPERTY_ID" ]; then
+            echo "❌ GA_PROPERTY_ID is not set"
+            exit 1
+          fi
+          echo "✅ Credentials are set, running script..."
+          python scripts/download_ga_data.py
+          echo "✅ GA data download completed"
 
       - name: Run Google Scholar script
         continue-on-error: true  # Continue even if this step fails
