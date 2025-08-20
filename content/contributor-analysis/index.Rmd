@@ -1,12 +1,11 @@
 ---
 title: "FORRT Contributor Analyses"
-date: "10 May, 2025"
 always_allow_html: true
 output:
   html_document:
     self_contained: false
-    keep_md:     true
-    lib_dir:     "htmlwidgets_libs"
+    keep_md: true
+    lib_dir: htmlwidgets_libs
 type: contributors_analysis
 ---
 
@@ -319,31 +318,31 @@ Contributor_edges_plot <- rbind(Contributor_edges %>%
 ## Network of Contributors
 
 visNetwork(Contributor_nodes, Contributor_edges_plot, width = "100%", height = "800px") %>%
-  visIgraphLayout(layout = "layout_nicely", randomSeed = 1001) %>%
+  visIgraphLayout(layout = "layout_with_fr", randomSeed = 1001) %>%
   visPhysics(
     enabled = TRUE,
     stabilization = list(
       enabled = TRUE,
-      iterations = 1000,
-      fit = TRUE
+      iterations = 2000,
+      fit = FALSE
     ),
     solver = "forceAtlas2Based",
     forceAtlas2Based = list(
-      gravitationalConstant = -500,  # Stronger repulsion
-      centralGravity = 0.01,         # Weaker central pull
-      springLength = 100,            # Longer springs
-      springConstant = 0.005,
-      damping = 0.4,
-      avoidOverlap = 0.8
+      gravitationalConstant = -80,   # Light repulsion to preserve central clusters
+      centralGravity = 0.4,          # Moderate central pull for distant nodes
+      springLength = 150,            # Medium springs - shorter for distant nodes
+      springConstant = 0.003,        # Moderate spring strength
+      damping = 0.4,                 # Balanced damping
+      avoidOverlap = 0.2             # Light overlap avoidance to preserve density
     )
   ) %>%
-  visEdges(color = list(opacity = 0.1)) %>%
+  visEdges(color = list(color = "#87CEEB", opacity = 0.3)) %>%
   visNodes(
-    font = list(size = 5, strokeWidth = 1, strokeColor = "white"),
+    font = list(size = 4, strokeWidth = 1, strokeColor = "white"),
     size = 7,
     borderWidth = 0,
-    color = list(background = "#353839", highlight = list(background = "#A52828", border = "darkred")),
-    scaling = list(min = 5, max = 25)
+    color = list(background = "#000000", highlight = list(background = "#A52828", border = "darkred")),
+    scaling = list(min = 3, max = 15)
   ) %>%
   visInteraction(
     dragNodes = TRUE,
@@ -362,21 +361,23 @@ visNetwork(Contributor_nodes, Contributor_edges_plot, width = "100%", height = "
   htmlwidgets::onRender("
     function(el, x) {
       var network = this;
-      // Add this to set initial scale
+      
+            // Set initial zoom level immediately
       network.on('initRedraw', function() {
         network.moveTo({
-          scale: 0.1,  // initial zoom level
-          position: {x:0, y:0}  // Center position
+          scale: 0.003,
+          animation: false
         });
       });
-      // Add this to maintain scale after stabilization
+      
+      // Maintain zoom after stabilization
       network.on('stabilized', function() {
         network.moveTo({
-          scale: 0.1,
-          animation: false  // Disable animation for instant repositioning
+          scale: 0.003,
+          animation: false
         });
       });
-      // Keep your existing functionality
+      
       network.on('click', function(params) {
         if (params.nodes.length === 0) {
           network.body.data.nodes.update(
@@ -386,6 +387,7 @@ visNetwork(Contributor_nodes, Contributor_edges_plot, width = "100%", height = "
           );
         }
       });
+      
       network.on('selectNode', function(params) {
         network.body.data.nodes.update(
           network.body.data.nodes.getIds().map(function(id) {
