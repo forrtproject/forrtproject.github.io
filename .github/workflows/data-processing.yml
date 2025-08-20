@@ -128,13 +128,7 @@ jobs:
             exit 1
           fi
 
-      - name: Run Google Scholar script
-        continue-on-error: true  # Continue even if this step fails
-        run: python3 scripts/gs-cite/google_scholar.py
-        env:
-          SERPAPI: ${{ secrets.SERPAPI }}
-
-      - name: Commit and push GA data to ga branch
+      - name: Commit and push GA data to master
         if: github.event_name != 'pull_request'
         run: |
           echo "=== Committing GA data to master branch ==="
@@ -154,6 +148,12 @@ jobs:
           # Push to master
           git push origin master
           echo "✅ GA data committed and pushed to master branch"
+
+      - name: Run Google Scholar script
+        continue-on-error: true  # Continue even if this step fails
+        run: python3 scripts/gs-cite/google_scholar.py
+        env:
+          SERPAPI: ${{ secrets.SERPAPI }}
 
       - name: Upload data artifact
         id: upload-artifact
