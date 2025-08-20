@@ -33,49 +33,49 @@ jobs:
       - name: Install tenzing R dependencies
         run: Rscript -e 'install.packages(c("rmarkdown","ggplot2", "readxl", "dplyr", "googlesheets4", "stringr", "gridExtra", "glue", "tidygraph", "ggraph", "igraph", "visNetwork"))'
 
-      # - name: Run Tenzing analysis
-      #   continue-on-error: true  # Continue even if this step fails
-      #   run: |
-      #     Rscript -e "rmarkdown::render('scripts/contributor-analysis/contributor_analysis.rmd')"
+      - name: Run Tenzing analysis
+        continue-on-error: true  # Continue even if this step fails
+        run: |
+          Rscript -e "rmarkdown::render('scripts/contributor-analysis/contributor_analysis.rmd')"
 
-      # - name: Move Tenzing analysis
-      #   continue-on-error: true  # Continue even if this step fails
-      #   run: |
-      #     mv scripts/contributor-analysis/contributor_analysis.md content/contributor-analysis/index.md
-      #     mv scripts/contributor-analysis/*.png content/contributor-analysis/
-      #     rm -rf content/contributor-analysis/htmlwidgets_libs
-      #     mv scripts/contributor-analysis/htmlwidgets_libs content/contributor-analysis/
-      #     sed -i.bak -e '/^```{=html}$/d' -e '/^```$/d' content/contributor-analysis/index.md && rm content/contributor-analysis/index.md.bak
+      - name: Move Tenzing analysis
+        continue-on-error: true  # Continue even if this step fails
+        run: |
+          mv scripts/contributor-analysis/contributor_analysis.md content/contributor-analysis/index.md
+          mv scripts/contributor-analysis/*.png content/contributor-analysis/
+          rm -rf content/contributor-analysis/htmlwidgets_libs
+          mv scripts/contributor-analysis/htmlwidgets_libs content/contributor-analysis/
+          sed -i.bak -e '/^```{=html}$/d' -e '/^```$/d' content/contributor-analysis/index.md && rm content/contributor-analysis/index.md.bak
 
-      # - name: Install Python dependencies
-      #   run: python3 -m pip install -r ./requirements.txt
+      - name: Install Python dependencies
+        run: python3 -m pip install -r ./requirements.txt
 
-      # - name: Run Tenzing script
-      #   continue-on-error: true  # Continue even if this step fails
-      #   run: python3 scripts/forrt_contribs/tenzing.py
+      - name: Run Tenzing script
+        continue-on-error: true  # Continue even if this step fails
+        run: python3 scripts/forrt_contribs/tenzing.py
 
-      # - name: Run Curated Resources script
-      #   continue-on-error: true  # Continue even if this step fails
-      #   run: python3 content/resources/resource.py
+      - name: Run Curated Resources script
+        continue-on-error: true  # Continue even if this step fails
+        run: python3 content/resources/resource.py
 
-      # - name: Move and validate Tenzing output
-      #   continue-on-error: true  # Continue even if this step fails
-      #   run: |
-      #     mv scripts/forrt_contribs/tenzing.md content/contributors/tenzing.md
-      #     if [ ! -f content/contributors/tenzing.md ]; then
-      #       echo "tenzing.md not found"
-      #       exit 1
-      #     fi
+      - name: Move and validate Tenzing output
+        continue-on-error: true  # Continue even if this step fails
+        run: |
+          mv scripts/forrt_contribs/tenzing.md content/contributors/tenzing.md
+          if [ ! -f content/contributors/tenzing.md ]; then
+            echo "tenzing.md not found"
+            exit 1
+          fi
 
-      # - name: Validate curated resources
-      #   continue-on-error: true  # Continue even if this step fails
-      #   run: |
-      #     for file in content/curated_resources/*; do
-      #       if [ ! -f "$file" ]; then
-      #         echo "Non-markdown file found: $file"
-      #         exit 1
-      #       fi
-      #     done
+      - name: Validate curated resources
+        continue-on-error: true  # Continue even if this step fails
+        run: |
+          for file in content/curated_resources/*; do
+            if [ ! -f "$file" ]; then
+              echo "Non-markdown file found: $file"
+              exit 1
+            fi
+          done
 
       - name: Download GA Data
         continue-on-error: true  # Continue even if this step fails
@@ -149,11 +149,11 @@ jobs:
       #     git push origin ga
       #     echo "✅ GA data committed and pushed to ga branch"
 
-      # - name: Run Google Scholar script
-      #   continue-on-error: true  # Continue even if this step fails
-      #   run: python3 scripts/gs-cite/google_scholar.py
-      #   env:
-      #     SERPAPI: ${{ secrets.SERPAPI }}
+      - name: Run Google Scholar script
+        continue-on-error: true  # Continue even if this step fails
+        run: python3 scripts/gs-cite/google_scholar.py
+        env:
+          SERPAPI: ${{ secrets.SERPAPI }}
 
       - name: Upload data artifact
         id: upload-artifact
