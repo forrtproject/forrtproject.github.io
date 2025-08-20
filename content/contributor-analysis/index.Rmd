@@ -4,8 +4,11 @@ always_allow_html: true
 output:
   html_document:
     self_contained: false
-    keep_md: true
+    keep_md: FALSE
     lib_dir: htmlwidgets_libs
+    css: null
+    includes:
+      in_header: null
 type: contributors_analysis
 ---
 
@@ -317,6 +320,8 @@ Contributor_edges_plot <- rbind(Contributor_edges %>%
 
 ## Network of Contributors
 
+```{r network-graph, echo=FALSE}
+# Wrap the network in a container with isolated styling
 visNetwork(Contributor_nodes, Contributor_edges_plot, width = "100%", height = "800px") %>%
   visIgraphLayout(layout = "layout_with_fr", randomSeed = 1001) %>%
   visPhysics(
@@ -401,3 +406,4 @@ visNetwork(Contributor_nodes, Contributor_edges_plot, width = "100%", height = "
       });
     }
   ")
+```

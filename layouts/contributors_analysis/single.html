@@ -3,50 +3,100 @@
 {{ partial "page_header" . }}
 
 <style>
+/* AGGRESSIVE FONT RESET - Override all R Markdown font styles */
+.contributors_analysis,
+.contributors_analysis *,
+.contributors_analysis h1,
+.contributors_analysis h2,
+.contributors_analysis h3,
+.contributors_analysis h4,
+.contributors_analysis h5,
+.contributors_analysis h6,
+.contributors_analysis p,
+.contributors_analysis div,
+.contributors_analysis span,
+.contributors_analysis body,
+.contributors_analysis html {
+  font-family: inherit !important;
+  font-size: inherit !important;
+  line-height: inherit !important;
+  color: inherit !important;
+}
 
-  article.contributors_analysis {
+/* Override the specific font sizes from the HTML file */
+.contributors_analysis h1 { font-size: inherit !important; }
+.contributors_analysis h1.title { font-size: inherit !important; }
+.contributors_analysis h2 { font-size: inherit !important; }
+.contributors_analysis h3 { font-size: inherit !important; }
+.contributors_analysis h4 { font-size: inherit !important; }
+.contributors_analysis h5 { font-size: inherit !important; }
+.contributors_analysis h6 { font-size: inherit !important; }
+
+/* Reset any R Markdown specific styling */
+.contributors_analysis .rmarkdown-content,
+.contributors_analysis .rmarkdown-content * {
+  font-family: inherit !important;
+  font-size: inherit !important;
+  line-height: inherit !important;
+}
+
+/* Only allow network graph to have custom fonts */
+.contributors_analysis .vis-network {
+  font-family: Arial, sans-serif !important;
+  font-size: 14px !important;
+}
+
+/* Override any inline styles that might be in the HTML */
+.contributors_analysis [style*="font-size"] {
+  font-size: inherit !important;
+}
+
+.contributors_analysis [style*="font-family"] {
+  font-family: inherit !important;
+}
+
+/* Force all text elements to inherit website styles */
+.contributors_analysis *:not(.vis-network):not(.vis-network *) {
+  font-family: inherit !important;
+  font-size: inherit !important;
+  line-height: inherit !important;
+}
+
+/* Hide footer for this page */
+footer,
+.site-footer,
+.container footer {
+  display: none !important;
+  visibility: hidden !important;
+  height: 0 !important;
+  overflow: hidden !important;
+}
+
+/* Ensure full height */
+body {
+  min-height: 100vh !important;
+}
+
+article.contributors_analysis {
   width: 100%;
-  box-sizing: border-box;
   padding: 20px 0;
   margin: 0 auto;
+  height: 100vh;
 }
 
 .ca-container {
-  width: 92%;
+  width: 100%;
   max-width: 1200px;
   margin: 0 auto;
   padding: 20px 0;
+  height: 100%;
 }
 
 .ca-style {
   width: 100%;
   line-height: 1.6;
+  height: 100%;
 }
-
-/* Responsive adjustments */
-@media (max-width: 768px) {
-  .ca-container {
-    width: 90%;
-    padding: 15px 0;
-  }
-}
-
-@media (max-width: 480px) {
-  article.contributors_analysis {
-    padding: 15px 0;
-  }
-  
-  .ca-container {
-    width: 88%;
-    padding: 10px 0;
-  }
-  
-  .ca-style {
-    font-size: 0.95rem;
-    line-height: 1.5;
-  }
-}
-
 </style>
 
 <article class="contributors_analysis">
@@ -54,10 +104,12 @@
   <div class="ca-container">
 
     <div class="ca-style">
-      {{ .Content }}
+      {{ if eq .File.Ext "html" }}
+        {{ .Content | safeHTML }}
+      {{ else }}
+        {{ .Content }}
+      {{ end }}
     </div>
-
-
   </div>
 </article>
 
