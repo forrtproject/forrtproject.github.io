@@ -14,7 +14,7 @@ jobs:
     name: Process Data
     runs-on: ubuntu-22.04
     permissions:
-      contents: read
+      contents: write
     env:
       PYTHON_VERSION: "3.11"
     steps:
@@ -95,12 +95,52 @@ jobs:
           echo "✅ Credentials are set, running script..."
           python scripts/download_ga_data.py
           echo "✅ GA data download completed"
+          
+          # Verify the file was created
+          if [ -f "data/ga_data.json" ]; then
+            echo "✅ GA data file created successfully"
+            echo "File size: $(wc -c < data/ga_data.json) bytes"
+          else
+            echo "❌ GA data file was not created"
+            exit 1
+          fi
 
       - name: Run Google Scholar script
         continue-on-error: true  # Continue even if this step fails
         run: python3 scripts/gs-cite/google_scholar.py
         env:
           SERPAPI: ${{ secrets.SERPAPI }}
+
+      - name: Commit and push GA data to ga branch
+        if: github.event_name != 'pull_request'
+        run: |
+          echo "=== Committing GA data to master branch ==="
+          
+          # Configure git
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          
+          # Checkout master branch
+          git checkout ga
+          
+          # Remove old GA data file if it exists
+          if [ -f "data/ga_data.json" ]; then
+            echo "Removing old GA data file..."
+            git rm data/ga_data.json
+          fi
+          
+          # Copy the new GA data file from the working directory
+          echo "Adding new GA data file..."
+          cp data/ga_data.json data/ga_data.json.new
+          mv data/ga_data.json.new data/ga_data.json
+          
+          # Add and commit the file
+          git add data/ga_data.json
+          git commit -m "Update GA data - $(date -u +'%Y-%m-%d %H:%M:%S UTC')"
+          
+          # Push to master
+          git push origin ga
+          echo "✅ GA data committed and pushed to master branch"
 
       - name: Verify GA data file exists
         run: |
