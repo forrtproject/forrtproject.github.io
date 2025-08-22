@@ -175,7 +175,7 @@ We are writing a manuscript which aims to promote Open Scholarship to academics 
 
 Our database collects together the details of neurodivergent researchers, papers authored by neurodivergent scholars, and other resources about neurodiversity. We hope that this will enable educators to create a more diverse curriculum. 
 
-#### As agreed with authors who shared their data with us, this database had now been unpublished as we cannot maintain it anymore.
+**As agreed with authors who shared their data with us, this database had now been unpublished as we cannot maintain it anymore.**
 
 _This work was in part supported by a Grant-In-Aid to Reduce Barriers to Improving Psychological Science, awarded by the Society for the Improvement of Psychological Science (SIPS) to Team Neurodiversity._
 
