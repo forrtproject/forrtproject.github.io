@@ -175,9 +175,9 @@ We are writing a manuscript which aims to promote Open Scholarship to academics 
 
 Our database collects together the details of neurodivergent researchers, papers authored by neurodivergent scholars, and other resources about neurodiversity. We hope that this will enable educators to create a more diverse curriculum. 
 
-At present, you can [access the database](https://docs.google.com/spreadsheets/d/1OnfQB1OqC00OflwTuRPBhG5NfX-_oLxxoTM_F_J5t5c/edit?usp=sharing) and [express interest in being added](https://forms.gle/tmDW5LA4Sbx8Z25KA).
+#### As agreed with authors who shared their data with us, this database had now been unpublished as we cannot maintain it anymore.
 
-This work is supported by a Grant-In-Aid to Reduce Barriers to Improving Psychological Science, awarded by the Society for the Improvement of Psychological Science (SIPS).
+_This work was in part supported by a Grant-In-Aid to Reduce Barriers to Improving Psychological Science, awarded by the Society for the Improvement of Psychological Science (SIPS) to Team Neurodiversity._
 
 ### Academic Wheel of Privilege (coming soon!)
 
