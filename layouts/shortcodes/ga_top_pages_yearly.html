@@ -1,4 +1,6 @@
-<!-- layouts/shortcodes/top_pages.html -->
+<!-- layouts/shortcodes/ga_top_pages_yearly.html -->
+{{ if .Site.Data.ga_data.top_pages_yearly }}
+<h3 id="-by-destination-1">&hellip; by destination</h3>
 {{ $limit := 10 }}
 {{ if .Get "limit" }}
   {{ $limit = .Get "limit" }}
@@ -7,11 +9,11 @@
   <thead>
     <tr>
       <th>Page</th>
-      <th>Views</th>
+      <th>Views (Last Year)</th>
     </tr>
   </thead>
   <tbody>
-    {{ range first $limit .Site.Data.ga_data.top_pages }}
+    {{ range first $limit .Site.Data.ga_data.top_pages_yearly }}
     <tr>
       <td>
         {{ with .Site.GetPage .page }}
@@ -29,3 +31,4 @@
     {{ end }}
   </tbody>
 </table>
+{{ end }}

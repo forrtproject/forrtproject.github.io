@@ -59,6 +59,11 @@ jobs:
           # Download GA data if possible
           if [ "${{ github.event_name }}" != 'pull_request' ]; then
             python scripts/download_ga_data.py
+            
+            # Quick validation of GA data structure
+            if [ -f "data/ga_data.json" ]; then
+              python3 -c "import json; data = json.load(open('data/ga_data.json')); print('✅ GA data:', len(data.get('regions', [])), 'countries,', len(data.get('top_pages', [])), 'pages')"
+            fi
           fi
 
       # Contributor analysis if needed

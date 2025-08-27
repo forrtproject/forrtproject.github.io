@@ -1,0 +1,92 @@
+{{ if .Site.Data.ga_data.regions_yearly }}
+<h2 id="last-year">Last Year</h2>
+<h3 id="-by-country-1">&hellip; by country</h3>
+<div id="ga_map_yearly" style="height: 400px; background: #b3d9ff;"></div>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  console.log("Initializing yearly map...");
+
+  // Remove existing Leaflet instance if it exists
+  if (window.myLeafletMapYearly) {
+    console.warn("Yearly map already exists! Removing it first...");
+    window.myLeafletMapYearly.remove();
+    delete window.myLeafletMapYearly;
+  }
+
+  console.log("Creating new Leaflet yearly map...");
+  window.myLeafletMapYearly = L.map('ga_map_yearly', {
+    zoomControl: false,
+    scrollWheelZoom: false,
+    dragging: true,
+    doubleClickZoom: false,
+    touchZoom: false,
+    maxBoundsViscosity: 1.0
+  }).setView([40, 0], 1.25);
+
+  // Define visitor data from Hugo
+  var gaRegionsData = {{ .Site.Data.ga_data.regions_yearly | jsonify | safeJS }};
+  if (!gaRegionsData) {
+    document.getElementById('ga_map_yearly').innerHTML = '<div style="display: flex; align-items: center; justify-content: center; height: 100%; color: #666;">Yearly data not available yet</div>';
+    return;
+  }
+  
+  var gaRegions = {};
+  gaRegionsData.forEach(function(entry) {
+    gaRegions[entry.country] = entry.users;
+  });
+
+  // Function to color countries based on visitor data
+  function getColor(d) {
+    return d > 1000 ? '#004529' :
+           d > 500  ? '#005824' :
+           d > 200  ? '#006837' :
+           d > 100  ? '#238443' :
+           d > 50   ? '#41ab5d' :
+           d > 20   ? '#78c679' :
+           d > 10   ? '#addd8e' :
+           d > 1    ? '#d9f0a3' :
+           d === 1  ? '#ffffcc' : '#f0f0f0';
+  }
+
+  // Style function for country polygons
+  function style(feature) {
+    var countryName = feature.properties.name;
+    var users = gaRegions[countryName] || 0;
+    return {
+      fillColor: getColor(users),
+      weight: 1,
+      opacity: 1,
+      color: 'white',
+      dashArray: '3',
+      fillOpacity: 0.7
+    };
+  }
+
+  // Load and render GeoJSON file with country borders
+  fetch('/countries.geojson')
+    .then(response => response.json())
+    .then(geojsonData => {
+      console.log("GeoJSON Loaded, adding to yearly map...");
+
+      L.geoJson(geojsonData, {
+        style: style,
+        onEachFeature: function(feature, layer) {
+          var countryName = feature.properties.name;
+          var users = gaRegions[countryName] || 0;
+          layer.bindPopup(countryName + ": " + users + " users (last year)");
+        }
+      }).addTo(window.myLeafletMapYearly);
+
+      console.log("GeoJSON correctly added to the yearly map.");
+
+      // Ensure the map properly updates after the GeoJSON is added
+      setTimeout(() => {
+        window.myLeafletMapYearly.invalidateSize();
+      }, 500);
+    })
+    .catch(error => {
+      console.error("Error loading GeoJSON:", error);
+    });
+});
+</script>
+{{ end }}
