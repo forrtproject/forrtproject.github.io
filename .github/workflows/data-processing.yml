@@ -140,17 +140,17 @@ jobs:
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
           
-          # Checkout ga branch
-          git checkout ga
+          # Checkout master branch
+          git checkout master
           
-          # Add and commit the GA data file directly (no removal needed)
+          # Add and commit the GA data file directly
           echo "Adding GA data file..."
           git add data/ga_data.json
           git commit -m "Update GA data - $(date -u +'%Y-%m-%d %H:%M:%S UTC')"
           
-          # Push to ga branch
-          git push origin ga
-          echo "✅ GA data committed and pushed to ga branch"
+          # Push to master branch
+          git push origin master
+          echo "✅ GA data committed and pushed to master branch"
 
       - name: Run Google Scholar script
         continue-on-error: true  # Continue even if this step fails
