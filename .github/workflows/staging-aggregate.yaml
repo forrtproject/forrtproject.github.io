@@ -60,10 +60,16 @@ jobs:
           for pr in $PRS; do
             echo "Attempting to merge PR #$pr"
             
+            # Skip if this is the current PR (to avoid self-reference issues)
+            if [ "${{ github.event.pull_request.number }}" = "$pr" ]; then
+              echo "⚠️ Skipping current PR #$pr to avoid self-reference"
+              continue
+            fi
+            
             # Get PR details
             PR_DATA=$(gh pr view $pr --json headRefName,headRepositoryOwner,title)
             HEAD_REF=$(echo "$PR_DATA" | jq -r '.headRefName')
-            HEAD_OWNER=$(echo "$PR_DATA" | jq -r '.headRepositoryOwner')
+            HEAD_OWNER=$(echo "$PR_DATA" | jq -r '.headRepositoryOwner.login')
             TITLE=$(echo "$PR_DATA" | jq -r '.title')
             
             echo "Processing PR #$pr: $TITLE"
