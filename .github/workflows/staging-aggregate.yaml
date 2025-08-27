@@ -267,7 +267,15 @@ jobs:
         run: |
           IFS=',' read -ra PR_ARRAY <<< "${{ needs.aggregate-prs.outputs.included-prs }}"
           for pr in "${PR_ARRAY[@]}"; do
-            gh pr comment $pr --body "✅ This PR has been deployed to staging as part of an aggregated deployment. View at: https://staging.forrt.org"
+            # Check if we already commented on this PR with our specific message
+            EXISTING_COMMENT=$(gh pr view $pr --json comments --jq '(.comments[] | select(.author.login == "github-actions[bot]" and (.body | contains("deployed to staging as part of an aggregated deployment")))) | .id' 2>/dev/null || echo "")
+            
+            if [ -z "$EXISTING_COMMENT" ]; then
+              echo "💬 Commenting on PR #$pr (no existing staging comment found)"
+              gh pr comment $pr --body "✅ This PR has been deployed to staging as part of an aggregated deployment. View at: https://staging.forrt.org"
+            else
+              echo "ℹ️ Skipping comment on PR #$pr (already has staging comment)"
+            fi
           done
         env:
           GH_TOKEN: ${{ secrets.STAGING_GITHUB_TOKEN }}
