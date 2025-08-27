@@ -34,7 +34,7 @@ jobs:
         id: aggregate
         run: |
           # Get all open, non-draft PRs targeting master (regardless of CI status)
-          PRS=$(gh pr list --base master --state open --json number,title,headRefName,draft --jq '.[] | select(.draft == false) | .number')
+          PRS=$(gh pr list --base master --state open --json number,title,headRefName,isDraft --jq '.[] | select(.isDraft == false) | .number')
           
           if [ -z "$PRS" ]; then
             echo "No open non-draft PRs found"
@@ -61,9 +61,12 @@ jobs:
             echo "Attempting to merge PR #$pr"
             
             # Get PR details
-            PR_DATA=$(gh pr view $pr --json headRefName,headRepositoryOwner)
+            PR_DATA=$(gh pr view $pr --json headRefName,headRepositoryOwner,title)
             HEAD_REF=$(echo "$PR_DATA" | jq -r '.headRefName')
             HEAD_OWNER=$(echo "$PR_DATA" | jq -r '.headRepositoryOwner')
+            TITLE=$(echo "$PR_DATA" | jq -r '.title')
+            
+            echo "Processing PR #$pr: $TITLE"
             
             # Add remote if it's a fork
             if [ "$HEAD_OWNER" != "forrtproject" ]; then
