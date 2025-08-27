@@ -1,9 +1,9 @@
 +++
 # A Demo section created with the Blank widget.
-# Any elements can be added in the body: https://sourcethemes.com/academic/docs/writing-markdown-latex/
+# Any elements can be added in the body
 # Add more sections by duplicating this file and customizing to your requirements.
 
-widget = "blank"  # See https://sourcethemes.com/academic/docs/page-builder/
+widget = "blank"
 headless = true  # This file represents a page section.
 active = true  # Activate this widget? true/false
 weight = 5  # Order that this section will appear.
@@ -51,6 +51,6 @@ subtitle = ""
  css_class = ""
 +++
 
-# Testimonials
+# FORRT Community Stories & Testimonials
 
-FORRT aims to support members in their personal and professional growth, and we love to hear from people about their experiences. Below, we share a few such stories. If you want to contribute your own, [email us](info@forrt.org).
+FORRT is an inclusive community in Open Research built on care, equity, and collaboration—shaping the future of inclusive open scholarship, one story at a time. FORRT's mission is explicit about empowering early-career scholars, educators, and changemakers around the world. Our members have found mentorship, purpose, and belonging while contributing to a more inclusive and just vision of open scholarship. These stories remind us that behind every organization, infrastructure, educational material, or publication are people—people learning, growing, and reshaping the future of science, together. On this page, we share their journeys and first-hand reflections on growth, belonging, and transformation through FORRT.

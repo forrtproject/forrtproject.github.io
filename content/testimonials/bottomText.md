@@ -3,17 +3,17 @@
 # Any elements can be added in the body
 # Add more sections by duplicating this file and customizing to your requirements.
 
-widget = "blank"  # See https://sourcethemes.com/academic/docs/page-builder/
+widget = "blank"
 headless = true  # This file represents a page section.
 active = true  # Activate this widget? true/false
-weight = 10  # Order that this section will appear.
+weight = 20  # Order that this section will appear.
 
-title = "Stay updated"
-subtitle = "Subscribe to our newsletter from FORRT to get the latest news about our initiatives."
+title = ""
+subtitle = ""
 
 [design]
   # Choose how many columns the section has. Valid values: 1 or 2.
-  columns = "2"
+  columns = "1"
 
 [design.background]
   # Apply a background color, gradient, or image.
@@ -22,7 +22,8 @@ subtitle = "Subscribe to our newsletter from FORRT to get the latest news about 
   #   Any HTML color name or Hex value is valid.
 
   # Background color.
-  # color = "#fefdf6"
+  # color = "Green"
+  # color = "#69b3a2" # greenish
   
   # Background gradient.
   # gradient_start = "DeepSkyBlue"
@@ -40,16 +41,14 @@ subtitle = "Subscribe to our newsletter from FORRT to get the latest news about 
 
 [design.spacing]
   # Customize the section spacing. Order is top, right, bottom, left.
-  padding = ["60px", "0", "60px", "0"]
+  padding = ["20px", "0", "20px", "0"]
 
 [advanced]
  # Custom CSS. 
- css_style = ""
+ css_style = "font-size: 1.25rem;"
  
  # CSS class.
  css_class = ""
 +++
 
-{{< subscribe >}}
-
-
+FORRT aims to support members in their personal and professional growth, and we love to hear from people about their experiences. Below, we share a few such stories. If you want to contribute your own, email us at info@forrt.org 
