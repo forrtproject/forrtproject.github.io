@@ -5,14 +5,30 @@ type: "page"
 
 We are excited to see that our resources are useful for people from all over the world. Here are some statistics to show who has been here over the past 30 days.
 
-## ... by country
+## Last 30 Days
+
+### ... by country
 
 {{< ga_map >}}
 
-## ... by destination
+### ... by destination
 
-{{< ga_top_pages >}}
+{{< ga_top_pages limit="10" >}}
 
-## ... by day
+### ... by day
 
 {{< ga_daily_visitors >}}
+
+## Last Year
+
+### ... by country
+
+{{< ga_map_yearly >}}
+
+### ... by destination
+
+{{< ga_top_pages_yearly limit="10" >}}
+
+### ... by day
+
+{{< ga_daily_visitors_yearly >}}

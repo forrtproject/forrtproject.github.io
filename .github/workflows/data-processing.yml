@@ -123,6 +123,9 @@ jobs:
           if [ -f "data/ga_data.json" ]; then
             echo "✅ GA data file created successfully"
             echo "File size: $(wc -c < data/ga_data.json) bytes"
+            
+            # Quick validation of data structure
+            python3 -c "import json; data = json.load(open('data/ga_data.json')); print('✅ GA data:', len(data.get('regions', [])), 'countries,', len(data.get('top_pages', [])), 'pages')"
           else
             echo "❌ GA data file was not created"
             exit 1

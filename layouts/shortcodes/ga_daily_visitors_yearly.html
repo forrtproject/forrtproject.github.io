@@ -1,0 +1,41 @@
+<!-- layouts/shortcodes/ga_daily_visitors_yearly.html -->
+<canvas id="visitorsChartYearly" width="400" height="200"></canvas>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  var dailyData = {{ .Site.Data.ga_data.daily_visitors_yearly | jsonify | safeJS }};
+  if (dailyData && dailyData.length) {
+    dailyData.sort((a, b) => new Date(a.date) - new Date(b.date));
+    dailyData.pop();
+    var labels = dailyData.map(function(entry) { return entry.date; });
+    var dataPoints = dailyData.map(function(entry) { return entry.users; });
+    var ctx = document.getElementById('visitorsChartYearly').getContext('2d');
+    new Chart(ctx, {
+      type: 'line',
+      data: {
+        labels: labels,
+        datasets: [{
+          label: 'Daily Visitors (Last Year)',
+          data: dataPoints,
+          borderColor: 'rgba(75, 192, 192, 1)',
+          backgroundColor: 'rgba(75, 192, 192, 0.2)',
+          fill: true
+        }]
+      },
+      options: {
+        responsive: true,
+        scales: {
+          x: {
+            title: { display: true, text: 'Date' }
+          },
+          y: {
+            title: { display: true, text: 'Users' }
+          }
+        }
+      }
+    });
+  } else {
+    document.getElementById('visitorsChartYearly').parentNode.innerHTML = '<div style="text-align: center; color: #666; padding: 20px;">Yearly data not available yet</div>';
+  }
+});
+</script>
