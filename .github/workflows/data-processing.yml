@@ -93,8 +93,61 @@ jobs:
             exit 1
           fi
           echo "✅ Credentials are set, running script..."
+          
+          # Delete old GA data file before creating new one
+          echo "=== Cleaning up old GA data file ==="
+          if [ -f "data/ga_data.json" ]; then
+            echo "Found old file: data/ga_data.json"
+            echo "Old file size: $(wc -c < data/ga_data.json) bytes"
+            echo "Old file modified: $(stat -c %y data/ga_data.json)"
+            echo "Removing old file..."
+            rm -f data/ga_data.json
+            echo "✅ Old file removed"
+          else
+            echo "No old file found at data/ga_data.json"
+          fi
+          
+          # Also clean up any nested files
+          if [ -d "data/ga_data" ]; then
+            echo "Found old nested directory: data/ga_data/"
+            echo "Removing nested directory..."
+            rm -rf data/ga_data/
+            echo "✅ Nested directory removed"
+          fi
+          
+          echo "=== Running GA data download script ==="
           python scripts/download_ga_data.py
           echo "✅ GA data download completed"
+          
+          # Verify the file was created
+          if [ -f "data/ga_data.json" ]; then
+            echo "✅ GA data file created successfully"
+            echo "File size: $(wc -c < data/ga_data.json) bytes"
+          else
+            echo "❌ GA data file was not created"
+            exit 1
+          fi
+
+      # - name: Commit and push GA data to master
+      #   if: github.event_name != 'pull_request'
+      #   run: |
+      #     echo "=== Committing GA data to master branch ==="
+          
+      #     # Configure git
+      #     git config --local user.email "action@github.com"
+      #     git config --local user.name "GitHub Action"
+          
+      #     # Checkout ga branch
+      #     git checkout ga
+          
+      #     # Add and commit the GA data file directly (no removal needed)
+      #     echo "Adding GA data file..."
+      #     git add data/ga_data.json
+      #     git commit -m "Update GA data - $(date -u +'%Y-%m-%d %H:%M:%S UTC')"
+          
+      #     # Push to ga branch
+      #     git push origin ga
+      #     echo "✅ GA data committed and pushed to ga branch"
 
       - name: Run Google Scholar script
         continue-on-error: true  # Continue even if this step fails
@@ -103,13 +156,14 @@ jobs:
           SERPAPI: ${{ secrets.SERPAPI }}
 
       - name: Upload data artifact
+        id: upload-artifact
         uses: actions/upload-artifact@v4
         with:
           name: data-artifact
           path: |
             content/contributors/tenzing.md
             content/curated_resources/
-            data/ # GA data
+            data/
             content/contributor-analysis/
             content/publications/citation_chart.webp
           retention-days: 1
