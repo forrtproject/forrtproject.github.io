@@ -5,7 +5,7 @@ on:
     branches:
       - master
   schedule:
-    - cron: '0 1 * * *'  # 1 AM UTC (1 hour after data processing)
+    - cron: '0 1 1 * *'  # 1 AM UTC on the 1st of each month
   workflow_dispatch:
     inputs:
       force_deploy:
@@ -272,12 +272,20 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.STAGING_GITHUB_TOKEN }}
 
-      - name: Create deployment issue
-        if: needs.aggregate-prs.outputs.included-prs != ''
+      - name: Create monthly deployment report
+        if: needs.aggregate-prs.outputs.included-prs != '' && github.event_name == 'schedule'
         run: |
-          gh issue create \
-            --title "🚀 Staging Deployment - $(date +%Y-%m-%d)" \
-            --body-file deployment-summary.md \
-            --label "deployment,staging"
+          # Only create monthly report on scheduled runs (1st of month)
+          CURRENT_DAY=$(date +%d)
+          if [ "$CURRENT_DAY" = "01" ]; then
+            MONTH=$(date +%B %Y)
+            gh issue create \
+              --title "📊 Monthly Staging Deployment Report - $MONTH" \
+              --body-file deployment-summary.md \
+              --label "deployment,staging,monthly-report"
+            echo "✅ Monthly deployment report created for $MONTH"
+          else
+            echo "ℹ️ Skipping issue creation (not 1st of month)"
+          fi
         env:
           GH_TOKEN: ${{ secrets.STAGING_GITHUB_TOKEN }}
