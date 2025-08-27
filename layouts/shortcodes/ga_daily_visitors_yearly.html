@@ -1,4 +1,5 @@
 <!-- layouts/shortcodes/ga_daily_visitors_yearly.html -->
+{{ if .Site.Data.ga_data.daily_visitors_yearly }}
 <canvas id="visitorsChartYearly" width="400" height="200"></canvas>
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script>
@@ -39,3 +40,4 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 });
 </script>
+{{ end }}

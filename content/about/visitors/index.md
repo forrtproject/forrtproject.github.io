@@ -19,16 +19,8 @@ We are excited to see that our resources are useful for people from all over the
 
 {{< ga_daily_visitors >}}
 
-## Last Year
-
-### ... by country
-
 {{< ga_map_yearly >}}
 
-### ... by destination
-
 {{< ga_top_pages_yearly limit="10" >}}
-
-### ... by day
 
 {{< ga_daily_visitors_yearly >}}

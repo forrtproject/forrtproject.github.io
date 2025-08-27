@@ -1,3 +1,6 @@
+{{ if .Site.Data.ga_data.regions_yearly }}
+<h2 id="last-year">Last Year</h2>
+<h3 id="-by-country-1">&hellip; by country</h3>
 <div id="ga_map_yearly" style="height: 400px; background: #b3d9ff;"></div>
 <script>
 document.addEventListener('DOMContentLoaded', function() {
@@ -86,3 +89,4 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 </script>
+{{ end }}
