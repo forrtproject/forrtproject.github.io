@@ -18,6 +18,9 @@ jobs:
   aggregate-prs:
     name: Aggregate PRs for Staging
     runs-on: ubuntu-22.04
+    permissions:
+      contents: write
+      pull-requests: read
     outputs:
       aggregated-branch: ${{ steps.aggregate.outputs.branch }}
       included-prs: ${{ steps.aggregate.outputs.included_prs }}
