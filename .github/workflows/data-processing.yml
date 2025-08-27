@@ -33,19 +33,12 @@ jobs:
       - name: Install tenzing R dependencies
         run: Rscript -e 'install.packages(c("rmarkdown","ggplot2", "readxl", "dplyr", "googlesheets4", "stringr", "gridExtra", "glue", "tidygraph", "ggraph", "igraph", "visNetwork"))'
 
-      - name: Run Tenzing analysis
+      - name: Run Contributor Analysis
         continue-on-error: true  # Continue even if this step fails
         run: |
-          Rscript -e "rmarkdown::render('scripts/contributor-analysis/contributor_analysis.rmd')"
-
-      - name: Move Tenzing analysis
-        continue-on-error: true  # Continue even if this step fails
-        run: |
-          mv scripts/contributor-analysis/contributor_analysis.md content/contributor-analysis/index.md
-          mv scripts/contributor-analysis/*.png content/contributor-analysis/
-          rm -rf content/contributor-analysis/htmlwidgets_libs
-          mv scripts/contributor-analysis/htmlwidgets_libs content/contributor-analysis/
-          sed -i.bak -e '/^```{=html}$/d' -e '/^```$/d' content/contributor-analysis/index.md && rm content/contributor-analysis/index.md.bak
+          echo "🚀 Rendering R Markdown..."
+          Rscript -e "rmarkdown::render('content/contributor-analysis/index.Rmd')"
+          echo "✅ Done"
 
       - name: Install Python dependencies
         run: python3 -m pip install -r ./requirements.txt
