@@ -128,26 +128,26 @@ jobs:
             exit 1
           fi
 
-      # - name: Commit and push GA data to master
-      #   if: github.event_name != 'pull_request'
-      #   run: |
-      #     echo "=== Committing GA data to master branch ==="
+      - name: Commit and push GA data to master
+        if: github.event_name != 'pull_request'
+        run: |
+          echo "=== Committing GA data to master branch ==="
           
-      #     # Configure git
-      #     git config --local user.email "action@github.com"
-      #     git config --local user.name "GitHub Action"
+          # Configure git
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
           
-      #     # Checkout ga branch
-      #     git checkout ga
+          # Checkout ga branch
+          git checkout ga
           
-      #     # Add and commit the GA data file directly (no removal needed)
-      #     echo "Adding GA data file..."
-      #     git add data/ga_data.json
-      #     git commit -m "Update GA data - $(date -u +'%Y-%m-%d %H:%M:%S UTC')"
+          # Add and commit the GA data file directly (no removal needed)
+          echo "Adding GA data file..."
+          git add data/ga_data.json
+          git commit -m "Update GA data - $(date -u +'%Y-%m-%d %H:%M:%S UTC')"
           
-      #     # Push to ga branch
-      #     git push origin ga
-      #     echo "✅ GA data committed and pushed to ga branch"
+          # Push to ga branch
+          git push origin ga
+          echo "✅ GA data committed and pushed to ga branch"
 
       - name: Run Google Scholar script
         continue-on-error: true  # Continue even if this step fails
