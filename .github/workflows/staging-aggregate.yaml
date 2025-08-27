@@ -24,6 +24,7 @@ jobs:
     outputs:
       aggregated-branch: ${{ steps.aggregate.outputs.branch }}
       included-prs: ${{ steps.aggregate.outputs.included_prs }}
+      attempted-prs: ${{ steps.aggregate.outputs.attempted_prs }}
       total-prs: ${{ steps.aggregate.outputs.total_prs }}
       has-prs: ${{ steps.aggregate.outputs.has_prs }}
     steps:
@@ -41,6 +42,12 @@ jobs:
       - name: Aggregate PRs
         id: aggregate
         run: |
+          # Debug: Show trigger information
+          echo "🔍 Workflow triggered by: ${{ github.event_name }}"
+          if [ "${{ github.event_name }}" = "pull_request" ]; then
+            echo "🔍 Triggering PR: #${{ github.event.pull_request.number }}"
+          fi
+          
           # Get all open, non-draft PRs targeting master (regardless of CI status)
           PRS=$(gh pr list --base master --state open --json number,title,headRefName,isDraft --jq '.[] | select(.isDraft == false) | .number')
           
@@ -48,6 +55,7 @@ jobs:
             echo "No open non-draft PRs found"
             echo "branch=master" >> $GITHUB_OUTPUT
             echo "included_prs=" >> $GITHUB_OUTPUT
+            echo "attempted_prs=" >> $GITHUB_OUTPUT
             echo "total_prs=0" >> $GITHUB_OUTPUT
             echo "has_prs=false" >> $GITHUB_OUTPUT
             exit 0
@@ -63,16 +71,21 @@ jobs:
           git checkout -b "$AGGREGATE_BRANCH"
           
           INCLUDED_PRS=""
+          ATTEMPTED_PRS=""
           
           # Try to merge each PR in order
           for pr in $PRS; do
             echo "Attempting to merge PR #$pr"
             
-            # Skip if this is the current PR (to avoid self-reference issues)
-            if [ "${{ github.event.pull_request.number }}" = "$pr" ]; then
-              echo "⚠️ Skipping current PR #$pr to avoid self-reference"
-              continue
+            # Track all attempted PRs (including current PR)
+            if [ -z "$ATTEMPTED_PRS" ]; then
+              ATTEMPTED_PRS="$pr"
+            else
+              ATTEMPTED_PRS="$ATTEMPTED_PRS,$pr"
             fi
+            
+            # Note: We no longer skip the triggering PR - all PRs should be included
+            # The "self-reference" issue was preventing the latest PR from being included
             
             # Get PR details
             PR_DATA=$(gh pr view $pr --json headRefName,headRepositoryOwner,title)
@@ -115,8 +128,17 @@ jobs:
           
           echo "branch=$AGGREGATE_BRANCH" >> $GITHUB_OUTPUT
           echo "included_prs=$INCLUDED_PRS" >> $GITHUB_OUTPUT
+          echo "attempted_prs=$ATTEMPTED_PRS" >> $GITHUB_OUTPUT
           
-          echo "✅ Aggregation completed - all compatible PRs merged"
+          echo "✅ Aggregation completed"
+          echo "📊 Summary:"
+          echo "   - Total PRs found: $(echo "$PRS" | wc -l)"
+          echo "   - PRs attempted: $ATTEMPTED_PRS"
+          echo "   - PRs successfully merged: $INCLUDED_PRS"
+          echo "   - Workflow trigger: ${{ github.event_name }}"
+          if [ "${{ github.event_name }}" = "pull_request" ]; then
+            echo "   - Triggering PR: #${{ github.event.pull_request.number }}"
+          fi
         env:
           GH_TOKEN: ${{ secrets.STAGING_GITHUB_TOKEN }}
 
@@ -242,19 +264,43 @@ jobs:
           echo "**Aggregated Branch:** ${{ needs.aggregate-prs.outputs.aggregated-branch }}" >> deployment-summary.md
           echo "" >> deployment-summary.md
           echo "**Total PRs Found:** ${{ needs.aggregate-prs.outputs.total-prs }}" >> deployment-summary.md
+          echo "**PRs Attempted:** ${{ needs.aggregate-prs.outputs.attempted-prs }}" >> deployment-summary.md
+          echo "" >> deployment-summary.md
+          
           if [ "${{ needs.aggregate-prs.outputs.included-prs }}" != "" ]; then
-            echo "" >> deployment-summary.md
-            echo "### PRs Successfully Merged:" >> deployment-summary.md
+            echo "### ✅ PRs Successfully Merged:" >> deployment-summary.md
             IFS=',' read -ra PR_ARRAY <<< "${{ needs.aggregate-prs.outputs.included-prs }}"
             for pr in "${PR_ARRAY[@]}"; do
               echo "- PR #$pr" >> deployment-summary.md
             done
+            echo "" >> deployment-summary.md
           fi
-          echo "" >> deployment-summary.md
+          
+          # Show PRs that were attempted but not successfully merged
+          if [ "${{ needs.aggregate-prs.outputs.attempted-prs }}" != "" ] && [ "${{ needs.aggregate-prs.outputs.included-prs }}" != "" ]; then
+            echo "### ⚠️ PRs Attempted but Skipped (Conflicts):" >> deployment-summary.md
+            IFS=',' read -ra ATTEMPTED_ARRAY <<< "${{ needs.aggregate-prs.outputs.attempted-prs }}"
+            IFS=',' read -ra SUCCESSFUL_ARRAY <<< "${{ needs.aggregate-prs.outputs.included-prs }}"
+            
+            for attempted_pr in "${ATTEMPTED_ARRAY[@]}"; do
+              SKIPPED=true
+              for successful_pr in "${SUCCESSFUL_ARRAY[@]}"; do
+                if [ "$attempted_pr" = "$successful_pr" ]; then
+                  SKIPPED=false
+                  break
+                fi
+              done
+              if [ "$SKIPPED" = true ]; then
+                echo "- PR #$attempted_pr (merge conflicts)" >> deployment-summary.md
+              fi
+            done
+            echo "" >> deployment-summary.md
+          fi
+          
           echo "**Staging URL:** https://staging.forrt.org" >> deployment-summary.md
           echo "" >> deployment-summary.md
           echo "### Aggregation Strategy:" >> deployment-summary.md
-          echo "- ✅ All open PRs attempted " >> deployment-summary.md
+          echo "- ✅ All open PRs attempted" >> deployment-summary.md
           echo "- ✅ Conflicting PRs skipped" >> deployment-summary.md
           echo "- ✅ Shows combined state of all compatible PRs" >> deployment-summary.md
 
@@ -268,16 +314,33 @@ jobs:
           cname: staging.forrt.org
 
       - name: Comment on PRs
-        if: needs.aggregate-prs.outputs.included-prs != ''
+        if: needs.aggregate-prs.outputs.attempted-prs != ''
         run: |
-          IFS=',' read -ra PR_ARRAY <<< "${{ needs.aggregate-prs.outputs.included-prs }}"
+          IFS=',' read -ra PR_ARRAY <<< "${{ needs.aggregate-prs.outputs.attempted-prs }}"
           for pr in "${PR_ARRAY[@]}"; do
+            # Check if this PR was successfully merged
+            SUCCESSFUL_MERGE=false
+            if [ "${{ needs.aggregate-prs.outputs.included-prs }}" != "" ]; then
+              IFS=',' read -ra SUCCESSFUL_ARRAY <<< "${{ needs.aggregate-prs.outputs.included-prs }}"
+              for successful_pr in "${SUCCESSFUL_ARRAY[@]}"; do
+                if [ "$successful_pr" = "$pr" ]; then
+                  SUCCESSFUL_MERGE=true
+                  break
+                fi
+              done
+            fi
+            
             # Check if we already commented on this PR with our specific message
             EXISTING_COMMENT=$(gh pr view $pr --json comments --jq '(.comments[] | select(.author.login == "github-actions[bot]" and (.body | contains("deployed to staging as part of an aggregated deployment")))) | .id' 2>/dev/null || echo "")
             
             if [ -z "$EXISTING_COMMENT" ]; then
-              echo "💬 Commenting on PR #$pr (no existing staging comment found)"
-              gh pr comment $pr --body "✅ This PR has been deployed to staging as part of an aggregated deployment. View at: https://staging.forrt.org"
+              if [ "$SUCCESSFUL_MERGE" = true ]; then
+                echo "💬 Commenting on PR #$pr (successfully merged)"
+                gh pr comment $pr --body "✅ This PR has been deployed to staging as part of an aggregated deployment. View at: https://staging.forrt.org"
+              else
+                echo "💬 Commenting on PR #$pr (attempted but had conflicts)"
+                gh pr comment $pr --body "⚠️ This PR was attempted to be deployed to staging as part of an aggregated deployment, but had merge conflicts and was skipped. Please resolve conflicts and try again. View staging at: https://staging.forrt.org"
+              fi
             else
               echo "ℹ️ Skipping comment on PR #$pr (already has staging comment)"
             fi
@@ -286,7 +349,7 @@ jobs:
           GH_TOKEN: ${{ secrets.STAGING_GITHUB_TOKEN }}
 
       - name: Create monthly deployment report
-        if: needs.aggregate-prs.outputs.included-prs != '' && github.event_name == 'schedule'
+        if: needs.aggregate-prs.outputs.attempted-prs != '' && github.event_name == 'schedule'
         run: |
           # Only create monthly report on scheduled runs (1st of month)
           CURRENT_DAY=$(date +%d)
