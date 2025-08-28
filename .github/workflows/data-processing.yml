@@ -149,14 +149,7 @@ jobs:
             echo "✅ GA data updated but no PR created (will create PR on 1st of month or manual trigger)"
             exit 0
           fi
-          
-          # Check if there's already an open PR for GA data update today
-          EXISTING_PR=$(gh pr list --base master --state open --search "GA Data Update" --json number --jq '.[0].number' 2>/dev/null || echo "")
-          if [ -n "$EXISTING_PR" ]; then
-            echo "⚠️ Found existing open PR #$EXISTING_PR for GA data update, skipping PR creation"
-            echo "✅ GA data updated but no new PR created (existing PR found)"
-            exit 0
-          fi
+
           
           if [ "$CURRENT_DAY" = "01" ]; then
             echo "📅 First day of month detected, creating PR for GA data update"
