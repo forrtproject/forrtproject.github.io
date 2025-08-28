@@ -15,6 +15,7 @@ jobs:
     runs-on: ubuntu-22.04
     permissions:
       contents: read
+      pull-requests: write
     env:
       PYTHON_VERSION: "3.11"
     steps:
@@ -131,26 +132,56 @@ jobs:
             exit 1
           fi
 
-      - name: Commit and push GA data to master
+      - name: Create PR for GA data update
         if: github.event_name != 'pull_request'
         run: |
-          echo "=== Committing GA data to master branch ==="
+          echo "=== Creating PR for GA data update ==="
+          
+          # Check if it's the first day of the month OR manually triggered
+          CURRENT_DAY=$(date +%d)
+          if [ "$CURRENT_DAY" != "01" ] && [ "${{ github.event_name }}" != "workflow_dispatch" ]; then
+            echo "ℹ️ Not the first day of the month ($CURRENT_DAY) and not manually triggered, skipping PR creation"
+            echo "✅ GA data updated but no PR created (will create PR on 1st of month or manual trigger)"
+            exit 0
+          fi
+          
+          if [ "$CURRENT_DAY" = "01" ]; then
+            echo "📅 First day of month detected, creating PR for GA data update"
+          else
+            echo "🔧 Manual trigger detected, creating PR for GA data update"
+          fi
           
           # Configure git
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
           
-          # Checkout master branch
-          git checkout master
+          # Create a new branch for the GA data update
+          BRANCH_NAME="ga-data-update-$(date +%Y%m%d)"
+          echo "Creating branch: $BRANCH_NAME"
           
-          # Add and commit the GA data file directly
+          # Checkout master and create new branch
+          git checkout master
+          git checkout -b "$BRANCH_NAME"
+          
+          # Add and commit the GA data file
           echo "Adding GA data file..."
           git add data/ga_data.json
           git commit -m "Update GA data - $(date -u +'%Y-%m-%d %H:%M:%S UTC')"
           
-          # Push to master branch using personal access token
-          git push origin master
-          echo "✅ GA data committed and pushed to master branch"
+          # Push the branch
+          git push origin "$BRANCH_NAME"
+          echo "✅ Branch pushed: $BRANCH_NAME"
+          
+          # Create a PR
+          echo "Creating pull request..."
+          gh pr create \
+            --title "📊 Monthly GA Data Update - $(date +%B %Y)" \
+            --body "Automated monthly Google Analytics data update. Generated on $(date -u +'%Y-%m-%d %H:%M:%S UTC'). Files changed: data/ga_data.json" \
+            --base master \
+            --head "$BRANCH_NAME" \
+            --label "automated,ga-data,monthly-update"
+          
+          echo "✅ PR created for GA data update"
         env:
           GITHUB_TOKEN: ${{ secrets.STAGING_GITHUB_TOKEN }}
           GH_TOKEN: ${{ secrets.STAGING_GITHUB_TOKEN }}
