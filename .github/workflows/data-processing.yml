@@ -180,8 +180,7 @@ jobs:
             --body "Automated monthly Google Analytics data update. Generated on $(date -u +'%Y-%m-%d %H:%M:%S UTC'). Files changed: data/ga_data.json" \
             --base master \
             --head "$BRANCH_NAME" \
-            --label "ga-data,monthly-update" || echo "⚠️ Labels not found, PR created without labels"
-          
+            --label "ga-data,monthly-update"
           echo "✅ PR created for GA data update"
         env:
           GITHUB_TOKEN: ${{ github.token }}
