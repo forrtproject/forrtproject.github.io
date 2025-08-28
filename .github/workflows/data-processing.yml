@@ -14,13 +14,18 @@ jobs:
     name: Process Data
     runs-on: ubuntu-22.04
     permissions:
-      contents: read
+      contents: write
       pull-requests: write
     env:
       PYTHON_VERSION: "3.11"
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+
+      - name: Configure Git
+        run: |
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git config --global user.name "github-actions[bot]"
 
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -151,10 +156,6 @@ jobs:
             echo "🔧 Manual trigger detected, creating PR for GA data update"
           fi
           
-          # Configure git
-          git config --local user.email "action@github.com"
-          git config --local user.name "GitHub Action"
-          
           # Create a new branch for the GA data update
           BRANCH_NAME="ga-data-update-$(date +%Y%m%d)"
           echo "Creating branch: $BRANCH_NAME"
@@ -183,8 +184,8 @@ jobs:
           
           echo "✅ PR created for GA data update"
         env:
-          GITHUB_TOKEN: ${{ secrets.STAGING_GITHUB_TOKEN }}
-          GH_TOKEN: ${{ secrets.STAGING_GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ github.token }}
+          GH_TOKEN: ${{ github.token }}
 
       - name: Run Google Scholar script
         continue-on-error: true  # Continue even if this step fails
