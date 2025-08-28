@@ -176,11 +176,11 @@ jobs:
           # Create a PR
           echo "Creating pull request..."
           gh pr create \
-            --title "📊 Monthly GA Data Update - $(date +%B %Y)" \
+            --title "📊 Monthly GA Data Update - $(date '+%B %Y')" \
             --body "Automated monthly Google Analytics data update. Generated on $(date -u +'%Y-%m-%d %H:%M:%S UTC'). Files changed: data/ga_data.json" \
             --base master \
             --head "$BRANCH_NAME" \
-            --label "automated,ga-data,monthly-update"
+            --label "ga-data,monthly-update" || echo "⚠️ Labels not found, PR created without labels"
           
           echo "✅ PR created for GA data update"
         env:
