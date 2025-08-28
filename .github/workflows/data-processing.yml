@@ -150,6 +150,14 @@ jobs:
             exit 0
           fi
           
+          # Check if there's already an open PR for GA data update today
+          EXISTING_PR=$(gh pr list --base master --state open --search "GA Data Update" --json number --jq '.[0].number' 2>/dev/null || echo "")
+          if [ -n "$EXISTING_PR" ]; then
+            echo "⚠️ Found existing open PR #$EXISTING_PR for GA data update, skipping PR creation"
+            echo "✅ GA data updated but no new PR created (existing PR found)"
+            exit 0
+          fi
+          
           if [ "$CURRENT_DAY" = "01" ]; then
             echo "📅 First day of month detected, creating PR for GA data update"
           else
@@ -166,14 +174,31 @@ jobs:
           git branch -D "$BRANCH_NAME" 2>/dev/null || true
           git checkout -b "$BRANCH_NAME"
           
+          # Verify we're on the correct branch
+          CURRENT_BRANCH=$(git branch --show-current)
+          if [ "$CURRENT_BRANCH" != "$BRANCH_NAME" ]; then
+            echo "❌ Failed to create branch $BRANCH_NAME, currently on $CURRENT_BRANCH"
+            exit 1
+          fi
+          echo "✅ Created and switched to branch: $BRANCH_NAME"
+          
           # Add and commit the GA data file
           echo "Adding GA data file..."
           git add data/ga_data.json
           git commit -m "Update GA data - $(date -u +'%Y-%m-%d %H:%M:%S UTC')"
           
           # Push the branch (force push to handle any conflicts)
-          git push origin "$BRANCH_NAME" --force-with-lease
-          echo "✅ Branch pushed: $BRANCH_NAME"
+          if git push origin "$BRANCH_NAME" --force-with-lease; then
+            echo "✅ Branch pushed: $BRANCH_NAME"
+          else
+            echo "⚠️ Push failed, trying regular push..."
+            if git push origin "$BRANCH_NAME"; then
+              echo "✅ Branch pushed: $BRANCH_NAME"
+            else
+              echo "❌ Failed to push branch, aborting PR creation"
+              exit 1
+            fi
+          fi
           
           # Create a PR
           echo "Creating pull request..."
