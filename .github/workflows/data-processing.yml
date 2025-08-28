@@ -139,6 +139,7 @@ jobs:
 
       - name: Create PR for GA data update
         if: github.event_name != 'pull_request'
+        continue-on-error: true  # Continue even if this step fails
         run: |
           echo "=== Creating PR for GA data update ==="
           
