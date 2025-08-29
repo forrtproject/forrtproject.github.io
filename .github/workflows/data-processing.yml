@@ -203,6 +203,29 @@ jobs:
             --head "$BRANCH_NAME" \
             --label "ga-data,monthly-update"
           echo "✅ PR created for GA data update"
+          
+          # Get the PR number to trigger the workflow properly
+          PR_NUMBER=$(gh pr list --head "$BRANCH_NAME" --json number --jq '.[0].number')
+          echo "PR number: $PR_NUMBER"
+          
+          # Trigger all necessary workflows for the PR
+          if [ -n "$PR_NUMBER" ]; then
+            echo "🔧 Triggering all workflows for PR #$PR_NUMBER..."
+            
+            # Trigger deploy workflow (CI/build)
+            echo "  - Triggering deploy workflow..."
+            gh workflow run deploy.yaml --field pr_number="$PR_NUMBER"
+            
+            # Trigger staging-aggregate workflow
+            echo "  - Triggering staging-aggregate workflow..."
+            gh workflow run staging-aggregate.yaml
+            
+            # Note: check_images and labeler should trigger automatically on PR creation
+            # but we can trigger them manually if needed
+            echo "  - check_images and labeler workflows should trigger automatically"
+            
+            echo "✅ All workflows triggered for PR #$PR_NUMBER"
+          fi
         env:
           GITHUB_TOKEN: ${{ github.token }}
           GH_TOKEN: ${{ github.token }}
