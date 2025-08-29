@@ -1,0 +1,22 @@
+{{- define "main" -}}
+
+{{ partial "page_header" . }}
+
+<article class="article">
+
+
+  <div class="article-container">
+
+        {{ .Content }}
+    
+  </div>
+</article>
+
+{{ partial "network-graph.html" . }}
+
+
+{{- end -}}
+
+      
+
+
