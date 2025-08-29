@@ -2,15 +2,15 @@
   "regions": [
     {
       "country": "China",
-      "users": 1023
+      "users": 1042
     },
     {
       "country": "United States of America",
-      "users": 807
+      "users": 816
     },
     {
       "country": "Germany",
-      "users": 356
+      "users": 357
     },
     {
       "country": "United Kingdom",
@@ -34,7 +34,7 @@
     },
     {
       "country": "Australia",
-      "users": 58
+      "users": 61
     },
     {
       "country": "India",
@@ -114,7 +114,7 @@
     },
     {
       "country": "Sweden",
-      "users": 15
+      "users": 16
     },
     {
       "country": "Greece",
@@ -178,14 +178,14 @@
     },
     {
       "country": "Kenya",
-      "users": 6
-    },
-    {
-      "country": "Libya",
-      "users": 6
+      "users": 7
     },
     {
       "country": "New Zealand",
+      "users": 7
+    },
+    {
+      "country": "Libya",
       "users": 6
     },
     {
@@ -269,6 +269,10 @@
       "users": 4
     },
     {
+      "country": "Vietnam",
+      "users": 4
+    },
+    {
       "country": "Croatia",
       "users": 3
     },
@@ -286,10 +290,6 @@
     },
     {
       "country": "Mauritius",
-      "users": 3
-    },
-    {
-      "country": "Vietnam",
       "users": 3
     },
     {
@@ -381,6 +381,10 @@
       "users": 1
     },
     {
+      "country": "Guatemala",
+      "users": 1
+    },
+    {
       "country": "Luxembourg",
       "users": 1
     },
@@ -440,19 +444,19 @@
   "top_pages": [
     {
       "page": "/",
-      "views": 937
+      "views": 948
     },
     {
       "page": "/reversals/",
-      "views": 249
+      "views": 257
     },
     {
       "page": "/awop/",
-      "views": 211
+      "views": 213
     },
     {
       "page": "/replication-hub/",
-      "views": 168
+      "views": 169
     },
     {
       "page": "/glossary/",
@@ -464,15 +468,15 @@
     },
     {
       "page": "/about/us/",
-      "views": 132
+      "views": 134
     },
     {
       "page": "/publications/",
-      "views": 116
+      "views": 117
     },
     {
       "page": "/about/get-involved/",
-      "views": 105
+      "views": 106
     },
     {
       "page": "/lesson-plans/",
@@ -514,7 +518,7 @@
     },
     {
       "date": "2025-08-28",
-      "users": 126
+      "users": 133
     },
     {
       "date": "2025-08-24",
@@ -599,16 +603,20 @@
     {
       "date": "2025-08-16",
       "users": 47
+    },
+    {
+      "date": "2025-08-29",
+      "users": 34
     }
   ],
   "regions_yearly": [
     {
       "country": "United States of America",
-      "users": 8435
+      "users": 8442
     },
     {
       "country": "Germany",
-      "users": 4346
+      "users": 4347
     },
     {
       "country": "United Kingdom",
@@ -620,7 +628,7 @@
     },
     {
       "country": "China",
-      "users": 1609
+      "users": 1628
     },
     {
       "country": "Ireland",
@@ -632,7 +640,7 @@
     },
     {
       "country": "Australia",
-      "users": 710
+      "users": 713
     },
     {
       "country": "India",
@@ -692,7 +700,7 @@
     },
     {
       "country": "Sweden",
-      "users": 218
+      "users": 219
     },
     {
       "country": "Japan",
@@ -776,15 +784,15 @@
     },
     {
       "country": "Kenya",
+      "users": 77
+    },
+    {
+      "country": "New Zealand",
       "users": 76
     },
     {
       "country": "Serbia",
       "users": 76
-    },
-    {
-      "country": "New Zealand",
-      "users": 75
     },
     {
       "country": "Croatia",
@@ -816,7 +824,7 @@
     },
     {
       "country": "Vietnam",
-      "users": 53
+      "users": 54
     },
     {
       "country": "Jordan",
@@ -1147,6 +1155,10 @@
       "users": 2
     },
     {
+      "country": "Guatemala",
+      "users": 2
+    },
+    {
       "country": "Kyrgyzstan",
       "users": 2
     },
@@ -1180,10 +1192,6 @@
     },
     {
       "country": "El Salvador",
-      "users": 1
-    },
-    {
-      "country": "Guatemala",
       "users": 1
     },
     {
@@ -1270,19 +1278,19 @@
   "top_pages_yearly": [
     {
       "page": "/",
-      "views": 12951
+      "views": 12962
     },
     {
       "page": "/reversals/",
-      "views": 4198
+      "views": 4206
     },
     {
       "page": "/awop/",
-      "views": 3685
+      "views": 3687
     },
     {
       "page": "/replication-hub/",
-      "views": 2075
+      "views": 2076
     },
     {
       "page": "/glossary/",
@@ -1290,15 +1298,15 @@
     },
     {
       "page": "/about/get-involved/",
-      "views": 1809
+      "views": 1810
     },
     {
       "page": "/publications/",
-      "views": 1647
+      "views": 1648
     },
     {
       "page": "/about/us/",
-      "views": 1590
+      "views": 1592
     },
     {
       "page": "/resources/",
@@ -1603,6 +1611,10 @@
       "users": 133
     },
     {
+      "date": "2025-08-28",
+      "users": 133
+    },
+    {
       "date": "2024-12-03",
       "users": 132
     },
@@ -1660,10 +1672,6 @@
     },
     {
       "date": "2025-07-11",
-      "users": 126
-    },
-    {
-      "date": "2025-08-28",
       "users": 126
     },
     {
@@ -2712,6 +2720,10 @@
     },
     {
       "date": "2024-12-14",
+      "users": 34
+    },
+    {
+      "date": "2025-08-29",
       "users": 34
     },
     {
