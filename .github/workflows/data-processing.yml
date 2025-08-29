@@ -155,8 +155,8 @@ jobs:
           echo "✅ PR created for GA data update"
           
         env:
-          GITHUB_TOKEN: ${{ secrets.STAGING_GITHUB_TOKEN }}
-          GH_TOKEN: ${{ secrets.STAGING_GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.FORRT_PAT }}
+          GH_TOKEN: ${{ secrets.FORRT_PAT }}
 
       - name: Run Google Scholar script
         continue-on-error: true
