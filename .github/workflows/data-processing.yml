@@ -24,8 +24,8 @@ jobs:
 
       - name: Configure Git
         run: |
-          git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git config --global user.name "github-actions[bot]"
+          git config --global user.email "mudaherarich@gmail.com"
+          git config --global user.name "richarddushime"
 
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -89,43 +89,16 @@ jobs:
           GA_API_CREDENTIALS: ${{ secrets.GA_API_CREDENTIALS }}
           GA_PROPERTY_ID: ${{ secrets.GA_PROPERTY_ID }}
         run: |
-          echo "Starting GA data download..."
-          if [ -z "$GA_API_CREDENTIALS" ]; then
-            echo "❌ GA_API_CREDENTIALS is not set"
+          if [ -z "$GA_API_CREDENTIALS" ] || [ -z "$GA_PROPERTY_ID" ]; then
+            echo "❌ GA credentials not set"
             exit 1
           fi
-          if [ -z "$GA_PROPERTY_ID" ]; then
-            echo "❌ GA_PROPERTY_ID is not set"
-            exit 1
-          fi
-          echo "✅ Credentials are set, running script..."
           
-          # Delete old GA data file before creating new one
-          echo "=== Cleaning up old GA data file ==="
-          if [ -f "data/ga_data.json" ]; then
-            echo "Found old file: data/ga_data.json"
-            echo "Old file size: $(wc -c < data/ga_data.json) bytes"
-            echo "Old file modified: $(stat -c %y data/ga_data.json)"
-            echo "Removing old file..."
-            rm -f data/ga_data.json
-            echo "✅ Old file removed"
-          else
-            echo "No old file found at data/ga_data.json"
-          fi
+          rm -f data/ga_data.json
+          rm -rf data/ga_data/
           
-          # Also clean up any nested files
-          if [ -d "data/ga_data" ]; then
-            echo "Found old nested directory: data/ga_data/"
-            echo "Removing nested directory..."
-            rm -rf data/ga_data/
-            echo "✅ Nested directory removed"
-          fi
-          
-          echo "=== Running GA data download script ==="
           python scripts/download_ga_data.py
-          echo "✅ GA data download completed"
           
-          # Verify the file was created
           if [ -f "data/ga_data.json" ]; then
             echo "✅ GA data file created successfully"
             echo "File size: $(wc -c < data/ga_data.json) bytes"
@@ -146,23 +119,11 @@ jobs:
           # Check if it's the first day of the month OR manually triggered
           CURRENT_DAY=$(date +%d)
           if [ "$CURRENT_DAY" != "01" ] && [ "${{ github.event_name }}" != "workflow_dispatch" ]; then
-            echo "ℹ️ Not the first day of the month ($CURRENT_DAY) and not manually triggered, skipping PR creation"
-            echo "✅ GA data updated but no PR created (will create PR on 1st of month or manual trigger)"
+            echo "ℹ️ Skipping PR creation (not 1st of month and not manual trigger)"
             exit 0
           fi
-
           
-          if [ "$CURRENT_DAY" = "01" ]; then
-            echo "📅 First day of month detected, creating PR for GA data update"
-          else
-            echo "🔧 Manual trigger detected, creating PR for GA data update"
-          fi
-          
-          # Create a new branch for the GA data update
           BRANCH_NAME="ga-data-update-$(date +%Y%m%d-%H%M%S)"
-          echo "Creating branch: $BRANCH_NAME"
-          
-          # Checkout master and create new branch
           git checkout master
           # Delete local branch if it exists
           git branch -D "$BRANCH_NAME" 2>/dev/null || true
@@ -181,21 +142,10 @@ jobs:
           git add data/ga_data.json
           git commit -m "Update GA data - $(date -u +'%Y-%m-%d %H:%M:%S UTC')"
           
-          # Push the branch (force push to handle any conflicts)
-          if git push origin "$BRANCH_NAME" --force-with-lease; then
-            echo "✅ Branch pushed: $BRANCH_NAME"
-          else
-            echo "⚠️ Push failed, trying regular push..."
-            if git push origin "$BRANCH_NAME"; then
-              echo "✅ Branch pushed: $BRANCH_NAME"
-            else
-              echo "❌ Failed to push branch, aborting PR creation"
-              exit 1
-            fi
+          if ! git push origin "$BRANCH_NAME" --force-with-lease; then
+            git push origin "$BRANCH_NAME"
           fi
           
-          # Create a PR
-          echo "Creating pull request..."
           gh pr create \
             --title "📊 Monthly GA Data Update - $(date '+%B %Y')" \
             --body "Automated monthly Google Analytics data update. Generated on $(date -u +'%Y-%m-%d %H:%M:%S UTC'). Files changed: data/ga_data.json" \
@@ -204,34 +154,12 @@ jobs:
             --label "ga-data,monthly-update"
           echo "✅ PR created for GA data update"
           
-          # Get the PR number to trigger the workflow properly
-          PR_NUMBER=$(gh pr list --head "$BRANCH_NAME" --json number --jq '.[0].number')
-          echo "PR number: $PR_NUMBER"
-          
-          # Trigger all necessary workflows for the PR
-          if [ -n "$PR_NUMBER" ]; then
-            echo "🔧 Triggering all workflows for PR #$PR_NUMBER..."
-            
-            # Trigger deploy workflow (CI/build)
-            echo "  - Triggering deploy workflow..."
-            gh workflow run deploy.yaml --field pr_number="$PR_NUMBER"
-            
-            # Trigger staging-aggregate workflow
-            echo "  - Triggering staging-aggregate workflow..."
-            gh workflow run staging-aggregate.yaml
-            
-            # Note: check_images and labeler should trigger automatically on PR creation
-            # but we can trigger them manually if needed
-            echo "  - check_images and labeler workflows should trigger automatically"
-            
-            echo "✅ All workflows triggered for PR #$PR_NUMBER"
-          fi
         env:
-          GITHUB_TOKEN: ${{ github.token }}
-          GH_TOKEN: ${{ github.token }}
+          GITHUB_TOKEN: ${{ secrets.STAGING_GITHUB_TOKEN }}
+          GH_TOKEN: ${{ secrets.STAGING_GITHUB_TOKEN }}
 
       - name: Run Google Scholar script
-        continue-on-error: true  # Continue even if this step fails
+        continue-on-error: true
         run: python3 scripts/gs-cite/google_scholar.py
         env:
           SERPAPI: ${{ secrets.SERPAPI }}
