@@ -2,15 +2,15 @@
   "regions": [
     {
       "country": "China",
-      "users": 1023
+      "users": 1028
     },
     {
       "country": "United States of America",
-      "users": 807
+      "users": 810
     },
     {
       "country": "Germany",
-      "users": 356
+      "users": 357
     },
     {
       "country": "United Kingdom",
@@ -440,15 +440,15 @@
   "top_pages": [
     {
       "page": "/",
-      "views": 937
+      "views": 945
     },
     {
       "page": "/reversals/",
-      "views": 249
+      "views": 252
     },
     {
       "page": "/awop/",
-      "views": 211
+      "views": 212
     },
     {
       "page": "/replication-hub/",
@@ -464,15 +464,15 @@
     },
     {
       "page": "/about/us/",
-      "views": 132
+      "views": 133
     },
     {
       "page": "/publications/",
-      "views": 116
+      "views": 117
     },
     {
       "page": "/about/get-involved/",
-      "views": 105
+      "views": 106
     },
     {
       "page": "/lesson-plans/",
@@ -514,7 +514,7 @@
     },
     {
       "date": "2025-08-28",
-      "users": 126
+      "users": 132
     },
     {
       "date": "2025-08-24",
@@ -599,16 +599,20 @@
     {
       "date": "2025-08-16",
       "users": 47
+    },
+    {
+      "date": "2025-08-29",
+      "users": 6
     }
   ],
   "regions_yearly": [
     {
       "country": "United States of America",
-      "users": 8435
+      "users": 8439
     },
     {
       "country": "Germany",
-      "users": 4346
+      "users": 4347
     },
     {
       "country": "United Kingdom",
@@ -620,7 +624,7 @@
     },
     {
       "country": "China",
-      "users": 1609
+      "users": 1614
     },
     {
       "country": "Ireland",
@@ -1270,15 +1274,15 @@
   "top_pages_yearly": [
     {
       "page": "/",
-      "views": 12951
+      "views": 12959
     },
     {
       "page": "/reversals/",
-      "views": 4198
+      "views": 4201
     },
     {
       "page": "/awop/",
-      "views": 3685
+      "views": 3686
     },
     {
       "page": "/replication-hub/",
@@ -1290,15 +1294,15 @@
     },
     {
       "page": "/about/get-involved/",
-      "views": 1809
+      "views": 1810
     },
     {
       "page": "/publications/",
-      "views": 1647
+      "views": 1648
     },
     {
       "page": "/about/us/",
-      "views": 1590
+      "views": 1591
     },
     {
       "page": "/resources/",
@@ -1607,6 +1611,10 @@
       "users": 132
     },
     {
+      "date": "2025-08-28",
+      "users": 132
+    },
+    {
       "date": "2024-10-11",
       "users": 131
     },
@@ -1660,10 +1668,6 @@
     },
     {
       "date": "2025-07-11",
-      "users": 126
-    },
-    {
-      "date": "2025-08-28",
       "users": 126
     },
     {
@@ -2769,6 +2773,10 @@
     {
       "date": "2024-12-25",
       "users": 18
+    },
+    {
+      "date": "2025-08-29",
+      "users": 6
     }
   ]
 }
