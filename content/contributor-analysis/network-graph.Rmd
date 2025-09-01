@@ -1,0 +1,287 @@
+---
+title: "Network of Contributors"
+output:
+  html_document:
+    self_contained: TRUE
+    keep_md: FALSE
+---
+
+The interactive network visualization below shows the connections between FORRT contributors based on their collaborative work across different projects. Each node represents a contributor, and the connections (edges) represent shared project participation.
+
+<style>
+.network-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  margin: 0 auto;
+}
+
+.vis-network {
+  margin: 0 auto;
+  display: block;
+}
+</style>
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(
+  echo = FALSE, 
+  warning = FALSE, 
+  message = FALSE, 
+  fig.path = ""
+)
+```
+
+```{r load-libraries}
+library(visNetwork)
+library(dplyr)
+library(tidyr)
+library(igraph)
+library(googlesheets4)
+library(stringr)
+```
+
+```{r data-processing}
+# Google Sheet URLs
+google_sheet_url_automation <- "https://docs.google.com/spreadsheets/d/1MUD54FQUhfcBKrvr5gCYoh2wgbJ6Lf7oAJRAqsQ-Nag/edit"
+google_sheet_url_leads <- "https://docs.google.com/spreadsheets/d/1roy-sZTxyXENA5c5IIV7IIemYvzbzs7zojUN2yIpi58/edit?gid=0#gid=0"
+
+# Get sheet names
+gs4_deauth()
+sheets <- sheet_names(google_sheet_url_automation)
+
+# Exclude the first four Automation Source sheets
+relevant_sheets <- sheets[-c(1,2,3,4)]
+
+# Exclude 'full' sheets
+relevant_sheets <- relevant_sheets[!grepl(" - full$", relevant_sheets)]
+
+# Read all relevant sheets into a list and remove rows without last names
+internal_links <- read_sheet(google_sheet_url_automation, sheet = "INTERNAL LINKS") %>% 
+  select(`Project Name`) # Extract project names
+
+data_list <- lapply(relevant_sheets, function(sheet) {
+  # Read the content of the current sheet
+  df <- read_sheet(google_sheet_url_automation, sheet = sheet)
+  # Remove rows where the `Surname` is missing or empty
+  df <- df %>% filter(!is.na(`Surname`) & `Surname` != "")
+  # Match the `Project Name` using the sheet name (assuming sheet name is the identifier)
+  project_name <- internal_links$`Project Name`[internal_links$`Project Name` == sheet]
+  # If a match is found, assign the `Project Name`, else set to NA
+  if (length(project_name) > 0) {
+    df <- df %>% mutate(`Project Name` = project_name)
+  } else {
+    df <- df %>% mutate(`Project Name` = NA)
+  }
+  df
+})
+
+# Combine all sheets into one dataframe
+dt <- bind_rows(data_list, .id = "Source_Sheet")
+
+# Move project name column to first position 
+dt <- dt %>%
+  select(`Project Name`, everything())
+
+# Remove PM column as it is unncessary and might cause problems with binding
+dt <- dt %>%
+  select(-`Project Managers`)
+```
+
+```{r leads-data}
+# Read Leads Tenzing data
+leads_sheets <- sheet_names(google_sheet_url_leads)
+relevant_leads_sheets <- leads_sheets[-c(2)]
+leads_df <- read_sheet(google_sheet_url_leads)
+
+# Rename columns and select relevant ones
+leads_df <- leads_df %>%
+  rename(
+    `Project Name` = `FORRT project(s)`,
+    `ORCID iD` = `ORCID`
+  ) %>%
+  select(`First name`, `Middle name`, `Surname`, `Project Name`, `Role`, `ORCID iD`)
+
+# Create a column to mark the presence of a role and group by individual
+leads_df <- leads_df %>%
+  mutate(has_role = TRUE) %>%
+  distinct(`First name`, `Middle name`, `Surname`, `Project Name`, `ORCID iD`, `Role`, .keep_all = TRUE)
+
+# Pivot the data to create a column for each leadership role type, removing director
+leads_df <- leads_df %>%
+  pivot_wider(names_from = `Role`, values_from = `has_role`, values_fill = list(has_role = FALSE)) %>%
+  select(-Director, -`Operations Coordinator`)
+
+# Combine leads tenzing rows with automation source
+dt <- bind_rows(dt, leads_df)
+```
+
+```{r data-cleaning}
+# Trim names and ORCIDs to ensure inconsistent Tenzing entries are not counted separately 
+dt <- dt %>%
+  mutate(
+    `First name` = str_trim(str_replace_all(`First name`, "\\*", "")),
+    `Middle name` = str_trim(str_replace_all(`Middle name`, "\\*", "")) %>% str_sub(1, 1),
+    `Surname` = str_trim(str_replace_all(`Surname`, "\\*", "")),
+    `ORCID iD` = str_trim(str_remove(`ORCID iD`, "https://orcid.org/"))
+  )
+
+# Ensure Conceptualization is logical
+dt$Conceptualization <- as.logical(dt$Conceptualization)
+```
+
+```{r network-data-preparation}
+# Process data for network
+dt_long <- dt %>%
+  pivot_longer(cols = c("Conceptualization", "Data curation", "Formal analysis", "Funding acquisition", "Investigation", "Methodology", "Project administration", "Resources", "Software", "Supervision", "Validation", "Visualization", "Writing - original draft", "Writing - review & editing"), 
+              names_to = "Role", 
+              values_to = "has_role") %>%
+  filter(has_role == TRUE) %>%
+  rowwise() %>% 
+  mutate(Contributor = paste(na.omit(c(`Surname`, `First name`)), collapse = " ")) %>% 
+  mutate(Lead = if_else(Role %in% c("lead", "co-lead"), Role, "other"))
+
+# Get co-occurences
+Contributor_Project <- xtabs(~ `Project Name` + Contributor, 
+                            data=dt_long %>% 
+                              select(`Project Name`, Contributor) %>% 
+                              unique(), 
+                            sparse = TRUE)
+
+Contributor_occur <- crossprod(Contributor_Project, Contributor_Project)
+```
+
+```{r create-nodes}
+# Create nodes
+Contributor_nodes_n <- dt_long %>%
+  group_by(Contributor) %>% 
+  count(Contributor)
+
+colnames(Contributor_nodes_n) <- c("id", "value")
+
+ContributorGroups_nodes <- dt_long %>% 
+  select(Contributor, `Project Name`) %>% 
+  unique() %>% 
+  group_by(Contributor) %>% 
+  mutate(Projects = paste0(`Project Name`, collapse = ",")) %>% 
+  select(Contributor, Projects) %>% 
+  unique()
+
+colnames(ContributorGroups_nodes) <- c("id", "projects")
+
+Contributor_nodes <- left_join(Contributor_nodes_n, ContributorGroups_nodes)
+Contributor_nodes$title <- paste0(Contributor_nodes$id,"<br>", gsub(patter = ",", replacement = "<br>", x = Contributor_nodes$projects))
+```
+
+```{r create-edges}
+# Create edges
+Contributor_edges <- which(upper.tri(Contributor_occur), arr.ind = TRUE) %>%
+  as.data.frame() %>%
+  mutate(
+    from = rownames((Contributor_occur))[row],
+    to   = colnames((Contributor_occur))[col],
+    width_n = (Contributor_occur)[cbind(row, col)]
+  ) %>%
+  filter(width_n > 0) %>%
+  mutate(width = (width_n/10)^(3)) %>% 
+  select(from, to, width) 
+
+# Add one hidden edge that will move the Chinese translator team closer to the center
+additional_hidden_edge <- data.frame(from = c("Fang Cathy", "Chen Liangjie", "Jin Shuxian", "Yang Jinbiao", "Liu Ruoting", "Wang Xinyu", "Xu Yu", "Ji Xuejun", "Wang Zixi"), 
+                                     to = c("Azevedo Flavio"), 
+                                     width = 0.0,
+                                     hidden = TRUE)
+
+Contributor_edges_plot <- rbind(Contributor_edges %>% 
+                                 mutate(hidden = F), additional_hidden_edge)
+```
+
+```{r network-visualization, echo=FALSE}
+# Create the network visualization
+visNetwork(Contributor_nodes, Contributor_edges_plot, width = "100%", height = "800px") %>%
+  visLayout(randomSeed = 1001) %>%
+  visIgraphLayout(layout = "layout_with_fr", randomSeed = 1001) %>%
+  visPhysics(
+    enabled = TRUE,
+    stabilization = list(
+      enabled = TRUE,
+      iterations = 2000,
+      fit = FALSE
+    ),
+    solver = "forceAtlas2Based",
+    forceAtlas2Based = list(
+      gravitationalConstant = -80,   # Light repulsion to preserve central clusters
+      centralGravity = 0.4,          # Moderate central pull for distant nodes
+      springLength = 150,            # Medium springs - shorter for distant nodes
+      springConstant = 0.003,        # Moderate spring strength
+      damping = 0.4,                 # Balanced damping
+      avoidOverlap = 0.2             # Light overlap avoidance to preserve density
+    )
+  ) %>%
+  visEdges(color = list(color = "#87CEEB", opacity = 0.3)) %>%
+  visNodes(
+    font = list(size = 4, strokeWidth = 1, strokeColor = "white"),
+    size = 7,
+    borderWidth = 0,
+    color = list(background = "#000000", highlight = list(background = "#A52828", border = "darkred")),
+    scaling = list(min = 3, max = 15)
+  ) %>%
+  visInteraction(
+    dragNodes = TRUE,
+    dragView = TRUE,
+    hover = TRUE,
+    hoverConnectedEdges = TRUE,
+    selectable = TRUE,
+    multiselect = TRUE,
+    navigationButtons = TRUE
+  ) %>%
+  visOptions(
+    highlightNearest = list(enabled = TRUE, degree = 1, hover = TRUE, algorithm = "hierarchical"),
+    nodesIdSelection = list(enabled = TRUE, style = "width: 200px;"),
+    selectedBy = list(variable = "projects", multiple = TRUE, style = "width: 200px; background: #f8f8f8;")
+  ) %>%
+  htmlwidgets::onRender("
+    function(el, x) {
+      var network = this;
+      
+      // Set initial zoom level immediately
+      network.on('initRedraw', function() {
+        network.moveTo({
+          scale: 0.012,
+          animation: false
+        });
+      });
+      
+      // Maintain zoom after stabilization
+      network.on('stabilized', function() {
+        network.moveTo({
+          scale: 0.012,
+          animation: false
+        });
+      });
+      
+      network.on('click', function(params) {
+        if (params.nodes.length === 0) {
+          network.body.data.nodes.update(
+            network.body.data.nodes.getIds().map(function(id) {
+              return {id: id, color: {background: '#353839'}};
+            })
+          );
+        }
+      });
+      
+      network.on('selectNode', function(params) {
+        network.body.data.nodes.update(
+          network.body.data.nodes.getIds().map(function(id) {
+            return {id: id, color: {background: '#353839'}};
+          })
+        );
+        network.body.data.nodes.update({
+          id: params.nodes[0],
+          color: {background: '#A52828'}
+        });
+      });
+    }
+  ")
+```
