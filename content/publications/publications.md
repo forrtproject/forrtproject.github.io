@@ -493,15 +493,13 @@ Social psychology is built on a strong set of classical research paradigms and f
 Because it tends to be difficult to keep teaching and study materials up to date with emerging trends and debates, we see this study book as an addition to traditional educational resources in social psychology. It is published as an Open Educational Resource to aid the accessibility of this knowledge for all, and to be adapted to teachers’ and learners’ needs as they dive into what social psychology has to offer.
 
 
-**<font style="color:#0e2a38">Read More</font>** [here](https://forrt.org/open-social-psychology/). 
+[ Read More here](https://forrt.org/open-social-psychology/). 
 
 ***Cite as:***
 
 > Rahal, R.-M. (in preparation). Open Social Psychology. https://forrt.org/open-social-psychology/ 
 
 ---
-
-<br>
 
 # **<font style="color:#4c1322">Ongoing Projects</font>**
 
