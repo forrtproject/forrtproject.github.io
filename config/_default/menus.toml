@@ -301,7 +301,7 @@
   parent = "replications"
 
 [[main]]
-  name = "Open Social Psychology Book"
+  name = "Open Social Psychology by Rima-Maria Rahal"
   url = "https://forrt.org/open-social-psychology/"
   weight = 66
   parent = "replications"
