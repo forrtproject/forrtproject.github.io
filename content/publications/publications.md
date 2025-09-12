@@ -477,9 +477,29 @@ The **<font style="color:#0e2a38">postprint</font>** can [be found here](https:/
 
 > van den Akker, O. R., Bakker, M., van Assen, M. A. L. M., Pennington, C. R., Verweij, L., Elsherif, M. M., Claesen, A., Gaillard, S. D. M., Yeung, S. K., Frankenberger, J.-L., Krautter, K., Cockcroft, J. P., Kreuer, K. S., Evans, T. R., Heppel, F. M., Schoch, S. F., Korbmacher, M., Yamada, Y., Albayrak-Aydemir, N., . . . Wicherts, J. M. (2024). The potential of preregistration in psychology: Assessing preregistration producibility and preregistration-study consistency.Psychological Methods. Advance online publication. https://doi.org/10.1037/met0000687
 
----
 
 <br>
+
+<div align="center">
+  <h1> Work in Progress </h1>
+  <hr>
+</div>
+
+
+# **Open Social Psychology**
+
+Social psychology is built on a strong set of classical research paradigms and findings, featured in many of the textbooks, syllabi, online courses and teacRima-hing guides that aspiring psychologists study with and established psychologists use as teaching resources. However, the common body of knowledge that social psychology relies on is undergoing change. Modern research methods and changing attitudes towards permissible research practices bring about social psychological research that looks different today than it used. This book is dedicated to tracing some of these changes, and to offering a version of record of the changing perceptions and interpretations of classic social psychology in the light of it’s contemporary counterpart. As such, this study book is a snapshot of how we see social psychology today.
+
+Because it tends to be difficult to keep teaching and study materials up to date with emerging trends and debates, we see this study book as an addition to traditional educational resources in social psychology. It is published as an Open Educational Resource to aid the accessibility of this knowledge for all, and to be adapted to teachers’ and learners’ needs as they dive into what social psychology has to offer.
+
+
+[ Read More here](https://forrt.org/open-social-psychology/). 
+
+***Cite as:***
+
+> Rahal, R.-M. (in preparation). Open Social Psychology. https://forrt.org/open-social-psychology/ 
+
+---
 
 # **<font style="color:#4c1322">Ongoing Projects</font>**
 
