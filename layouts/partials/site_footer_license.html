@@ -12,12 +12,12 @@
 {{ $cc_code := "by" }}
 {{ if not $allow_commercial }}
 {{ $cc_code = printf "%s-nc" $cc_code }}
-{{end}}
+{{ end }}
 {{ if and $allow_derivatives $share_alike }}
 {{ $cc_code = printf "%s-sa" $cc_code }}
 {{ else if not $allow_derivatives }}
 {{ $cc_code = printf "%s-nd" $cc_code }}
-{{end}}
+{{ end }}
 
 {{ $license_url := printf "https://creativecommons.org/licenses/%s/4.0" ($cc_code | urlize) }}
 
