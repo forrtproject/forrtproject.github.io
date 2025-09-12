@@ -80,4 +80,6 @@ Email: [verein@forrt.org](mailto:verein@forrt.org)
 
 ## Learn more
 
-For details on FORRT Germany e.V., you can check out our Satzung (constitution) in the [official German version](/files/Satzung_FORRT_Germany.pdf) or an [unofficial English translation](/files/Satzung_FORRT_Germany_translated.pdf). If you have any questions, or want to get involved, please [let us know](mailto:verein@forrt.org).
+For details on FORRT Germany e.V., you can check out their Satzung (constitution) in the [official German version](/files/Satzung_FORRT_Germany.pdf) or an [unofficial English translation](/files/Satzung_FORRT_Germany_translated.pdf). If you have any questions, or want to get involved, please [let us know](mailto:verein@forrt.org).
+
+As part of FORRT's commitment to diversity, equity and inclusion, FORRT Germany e.V. has adopted a [Gender Equality Plan](forrt-gep.pdf).
