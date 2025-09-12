@@ -1,0 +1,44 @@
+{{- define "main" -}}
+
+<!-- Include Font Awesome for icons -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+
+<div class="welcome-page">
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="hero-container">
+      <div class="hero-content">
+        <h1 class="hero-title">{{ .Title }}</h1>
+        <p class="hero-description">
+          Welcome to FORRT - your gateway to open and reproducible research practices in education. 
+          Whether you're new to open science or looking to deepen your knowledge, we have resources to support your journey.
+        </p>
+        <div class="hero-buttons">
+          <a href="/" class="hero-btn hero-btn-primary">Get Started</a>
+          <a href="/curated_resources" class="hero-btn hero-btn-secondary">Explore Resources</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Content Section with Shortcodes -->
+  <div class="welcome-content">
+    {{ .Content }}
+  </div>
+
+  <!-- Community & Support -->
+  <section class="community-section">
+    <div class="community-container">
+      <h2 class="community-title">Join Our Community</h2>
+      <p class="community-description">
+        Connect with educators, researchers, and students passionate about open and reproducible science.
+      </p>
+      <div class="community-buttons">
+        <a href="/about/get-involved" class="community-btn">Get Involved</a>
+        <a href="/about/community" class="community-btn">Community</a>
+      </div>
+    </div>
+  </section>
+</div>
+
+{{- end -}}
