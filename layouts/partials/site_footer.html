@@ -12,7 +12,7 @@
   {{ if or (site.GetPage "terms.md") (site.GetPage "privacy.md") }}
   <p class="powered-by">
     {{ with site.GetPage "privacy.md" }}
-      {{ printf "<a href=\" %s \">%s</a>" .RelPermalink .Title | safeHTML }}
+      {{ printf "<a href=\"%s\">%s</a>" .RelPermalink .Title | safeHTML }}
     {{ end }}
     {{ with site.GetPage "terms.md" }}
       {{ if site.GetPage "privacy.md" }} &middot; {{ end }}
