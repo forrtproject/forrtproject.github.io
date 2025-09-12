@@ -16,7 +16,7 @@
     {{ end }}
     {{ with site.GetPage "terms.md" }}
       {{ if site.GetPage "privacy.md" }} &middot; {{ end }}
-      {{ printf "<a href=\" %s \">%s</a>" .RelPermalink .Title | safeHTML }}
+      {{ printf "<a href=\"%s\">%s</a>" .RelPermalink .Title | safeHTML }}
     {{ end }}
     {{ with site.GetPage "imprint" }}
       {{ if or (site.GetPage "privacy.md") (site.GetPage "terms.md") }} &middot; {{ end }}
