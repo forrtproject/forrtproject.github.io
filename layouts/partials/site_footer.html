@@ -5,10 +5,11 @@
     padding: 1rem;
     float: left;
   }
-  
+
 </style>
 
 <footer class="site-footer">
+  {{ with site.GetPage "/imprint" }}
   {{ if or (site.GetPage "terms.md") (site.GetPage "privacy.md") }}
   <p class="powered-by">
     {{ with site.GetPage "privacy.md" }}
@@ -32,7 +33,7 @@
 
   <p class="powered-by">
     {{ if not site.Params.i_am_a_sponsor }}
-    This website is published using two great open source tools: 
+    This website is published using two great open source tools:
     <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a> & the
     <a href="https://hugoblox.com/" target="_blank" rel="noopener">Academic theme.</a>
     {{ end }}
