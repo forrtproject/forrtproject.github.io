@@ -260,3 +260,8 @@ Pipfile.lock
 /.vscode
 .hugo_build.lock
 *.DS_Store
+# gemini-cli settings
+.gemini/
+
+# GitHub App credentials
+gha-creds-*.json
