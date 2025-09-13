@@ -1,0 +1,64 @@
+{{ $css := resources.Get "css/welcome.css" }}
+{{ if $css }}
+  {{ $style := $css | minify | fingerprint }}
+  <link rel="stylesheet" href="{{ $style.RelPermalink }}">
+{{ else }}
+  {{ warnf "CSS not found: css/welcome.css. Using static version" }}
+  <link rel="stylesheet" href="{{ "css/welcome.css" | relURL }}">
+{{ end }}
+
+{{/* Getting Started Step Shortcode */}}
+{{ if and (.Get "title") (.Get "step") }}
+<div class="card step-card">
+  <div class="step-badge">{{ .Get "step" }}</div>
+  <div class="step-title">{{ .Get "title" }}</div>
+  <div class="step-description">{{ .Get "description" }}</div>
+  {{ if .Get "url" }}
+  <div style="display: inline-block;">
+    <a href="{{ .Get "url" }}" class="step-button">
+      Get Started <i class="fas fa-arrow-right"></i>
+    </a>
+  </div>
+  {{ end }}
+</div>
+{{ end }}
+
+{{/* Resource Category Shortcode */}}
+{{ if and (.Get "title") (not (.Get "step")) }}
+<div class="card resource-card" {{ if hasPrefix (.Get "count") "team-" }}data-team="true"{{ end }}>
+  <div class="resource-content">
+    <div class="resource-header">
+      <div style="display: flex; align-items: center;">
+        <div class="resource-icon">
+          <i class="{{ .Get "icon" | default "fas fa-folder" }}"></i>
+        </div>
+        <div class="resource-title">{{ .Get "title" }}</div>
+      </div>
+      {{ if .Get "count" }}
+      <div class="resource-count">
+        {{ if hasPrefix (.Get "count") "team-" }}
+        <i class="fas fa-users"></i>
+        {{ .Get "count" }}
+        {{ else if eq (.Get "count") "15 teams" }}
+        <i class="fas fa-users"></i>
+        {{ .Get "count" }}
+        {{ else }}
+        <i class="fas fa-layer-group"></i>
+        {{ .Get "count" }} resources
+        {{ end }}
+      </div>
+      {{ end }}
+    </div>
+    <div class="resource-description">{{ .Get "description" }}</div>
+    <a href="{{ .Get "url" }}" class="resource-button">
+      {{ if hasPrefix (.Get "count") "team-" }}
+      Explore Teams <i class="fas fa-arrow-right"></i>
+      {{ else if eq (.Get "count") "15 teams" }}
+      Explore Teams <i class="fas fa-arrow-right"></i>
+      {{ else }}
+      Explore Category <i class="fas fa-arrow-right"></i>
+      {{ end }}
+    </a>
+  </div>
+</div>
+{{ end }}
