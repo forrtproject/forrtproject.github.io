@@ -7,9 +7,12 @@ on:
   pull_request:
     branches:
       - master
-  schedule:
-    - cron: '0 1 * * *'  # 1 AM UTC (1 hour after data processing)
   workflow_dispatch:
+    inputs:
+      pr_number:
+        description: 'PR number to deploy (optional)'
+        required: false
+        type: string
 
 jobs:
   build:
@@ -25,7 +28,7 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
-          ref: ${{ github.ref }}
+          ref: ${{ github.event.inputs.pr_number || github.ref }}
           fetch-depth: 0
 
       - name: Try to download data artifact
@@ -56,6 +59,11 @@ jobs:
           # Download GA data if possible
           if [ "${{ github.event_name }}" != 'pull_request' ]; then
             python scripts/download_ga_data.py
+            
+            # Quick validation of GA data structure
+            if [ -f "data/ga_data.json" ]; then
+              python3 -c "import json; data = json.load(open('data/ga_data.json')); print('✅ GA data:', len(data.get('regions', [])), 'countries,', len(data.get('top_pages', [])), 'pages')"
+            fi
           fi
 
       # Contributor analysis if needed
@@ -130,7 +138,7 @@ jobs:
       contents: write
     needs:
       - deploy-test
-    if: (github.event_name == 'push' || github.event_name == 'schedule' || github.event_name == 'workflow_dispatch') && github.ref == 'refs/heads/master' && github.event.repository.fork == false
+    if: (github.event_name == 'push' || github.event_name == 'workflow_dispatch') && github.ref == 'refs/heads/master' && github.event.repository.fork == false
     steps:
       - name: Download Arfifact - Website
         uses: actions/download-artifact@v4
