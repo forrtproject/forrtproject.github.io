@@ -221,4 +221,6 @@ A great way to adopt the values of FORRT is to advocate in your own institution 
 *   E.g., [UK Reproducibility network](https://www.ukrn.org/), [repliCATS](https://replicats.research.unimelb.edu.au/).
 *   If you are a member of a professional society or a teaching union, advocate for the adoption of principles for openness, transparency, and equality in research and education.
 
-<br><br><br><br>
+<br>
+
+{{< ad-comments >}}
