@@ -50,7 +50,7 @@ Welcome to the FORRT Open Science Communities Mapping Initiative, a global effor
 
 > Our goal is to build an interactive, crowdsourced, and living map of grassroots Open Science networks, along with their procedural tools and structural changes, providing researchers, educators, and policymakers with a detailed landscape of the resources, opportunities, collaborations, and initiatives within these communities.
 
-This initiative builds upon the successful mapping of Open Science initiatives in the field of Psychology [Skubera et al., 2024](https://doi.org/10.31234/osf.io/rakmb) (*International Initiatives to Enhance Awareness and Uptake of Open Research in Psychology: A Systematic Narrative Review*), and aims to extend this work across multiple disciplines. With the support of key partners, this project will foster collaboration, transparency, and innovation in scientific research globally.
+This initiative builds upon the successful mapping of Open Science initiatives in the field of Psychology [Skubera et al., 2024](https://doi.org/10.1098/rsos.241726) (*International Initiatives to Enhance Awareness and Uptake of Open Research in Psychology: A Systematic Mapping  Review*), and aims to extend this work across multiple disciplines. With the support of key partners, this project will foster collaboration, transparency, and innovation in scientific research globally.
 
 <br>
 
@@ -136,7 +136,7 @@ This initiative is supported by a consortium of organizations dedicated to advan
 ***Access 2 Perspectives (A2P)***: A consulting and training organization that promotes inclusive, multilingual, and equitable research practices. Their resources on Open Science in underserved regions play a critical role in expanding the geographic reach of this initiative.
 
 ***Datasets Considered for Integration***:
-* [Skubera et al.’s Literature Search Database](https://doi.org/10.31234/osf.io/rakmb): A comprehensive dataset that originally identified initiatives across disciplines via web scraping in Stage 1. Many initiatives excluded for not focusing on psychology can now be reconsidered for inclusion in this mapping exercise.
+* [Skubera et al.’s Literature Search Database](https://doi.org/10.1098/rsos.241726): A comprehensive dataset that originally identified initiatives across disciplines via web scraping in Stage 1. Many initiatives excluded for not focusing on psychology can now be reconsidered for inclusion in this mapping exercise.
 * [FORRT’s Curated Resources](https://forrt.org/resources/): Over 1,000 resources on Open Science, already categorized for accessibility.
 * [Metadocencia’s Mapped Communities](https://www.metadocencia.org/proyecto/mapeo-comunidades/): Interactive maps focused on Latin America, which will be integrated into the global map.
 * Access2Perspectives Network of OS Communities: [Kumo Network](https://kumu.io/access2perspectives/open-science#disciplines/).
@@ -156,7 +156,7 @@ This initiative is supported by a consortium of organizations dedicated to advan
 
 We invite you to explore the map and contribute your own resources to this growing community. Together, we can create a more transparent, inclusive, and collaborative future for scientific research.
 
-Explore the Map: [Interactive Map Link]
+Explore the Map <a href="https://forrt.org/apps/os_map.html" target="_blank">here</a>
 
 Submit Your Resources: [Google Form Link]
 

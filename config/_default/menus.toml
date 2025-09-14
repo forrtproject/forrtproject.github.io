@@ -34,95 +34,108 @@
   parent = "about"
 
 [[main]]
+  name = "Cite us"  # A link title for your page.
+  url = "about/cite_us/"  # The URL of your page.
+  weight = 14  # The position of your page in the menu.
+  parent = "about"
+
+[[main]]
   name = "Charity"  # A link title for your page.
   url = "about/charity/"  # The URL of your page.
-  weight = 13  # The position of your page in the menu.
+  weight = 15  # The position of your page in the menu.
   parent = "about"
 
 [[main]]
   name = "Code of Conduct"  # A link title for your page.
   url = "/coc"  # The URL of your page.
-  weight = 14  # The position of your page in the menu.
+  weight = 16  # The position of your page in the menu.
   parent = "about"
 
 [[main]]
   name = "Community"  # A link title for your page.
   url = "/about/community"  # The URL of your page.
-  weight = 15  # The position of your page in the menu.
+  weight = 17  # The position of your page in the menu.
   parent = "about"
   
 [[main]]
   name = "Community Map"  # A link title for your page.
   url = "/community-map"  # The URL of your page.
-  weight = 15  # The position of your page in the menu.
+  weight = 18  # The position of your page in the menu.
   parent = "about"
   
 [[main]]
   name = "Contributors"  # A link title for your page.
   url = "/contributors"  # The URL of your page.
-  weight = 16  # The position of your page in the menu.
+  weight = 19  # The position of your page in the menu.
   parent = "about"
 
 [[main]]
   name = "Curriculum Vitae"  # A link title for your page.
   url = "/cv"  # The URL of your page.
-  weight = 17  # The position of your page in the menu.
+  weight = 20  # The position of your page in the menu.
   parent = "about"
 
 [[main]]
   name = "Feedback"  # A link title for your page.
   url = "/feedback"  # The URL of your page.
-  weight = 18  # The position of your page in the menu.
+  weight = 21  # The position of your page in the menu.
   parent = "about"
 
 [[main]]
   name = "Get Involved"  # A link title for your page.
   url = "/about/get-involved"  # The URL of your page.
-  weight = 19  # The position of your page in the menu.
+  weight = 22  # The position of your page in the menu.
   parent = "about"
 
 [[main]]
   name = "Mission & Advocacy"  # A link title for your page.
   url = "about/mission/"  # The URL of your page.
-  weight = 20  # The position of your page in the menu.
+  weight = 23  # The position of your page in the menu.
   parent = "about"
 
 [[main]]
   name = "Newsletters"  # A link title for your page.
   url = "/newsletters"  # The URL of your page.
-  weight = 21  # The position of your page in the menu.
+  weight = 24  # The position of your page in the menu.
   parent = "about"
 
 [[main]]
   name = "Partners"  # A link title for your page.
   url = "about/partnerships/"  # The URL of your page.
-  weight = 22  # The position of your page in the menu.
+  weight = 25  # The position of your page in the menu.
   parent = "about"
 
 [[main]]
   name = "Principles"  # A link title for your page.
   url = "/about/principles/"  # The URL of your page.
-  weight = 23  # The position of your page in the menu.
+  weight = 26  # The position of your page in the menu.
   parent = "about"
 
 
 [[main]]
   name = "Talks"  # A link title for your page.
   url = "talk/"  # The URL of your page.
-  weight = 25  # The position of your page in the menu.
+  weight = 27  # The position of your page in the menu.
   parent = "about"
 
 [[main]]
   name = "Teams"  # A link title for your page.
   url = "about/teams/"  # The URL of your page.
-  weight = 26  # The position of your page in the menu.
+  weight = 28  # The position of your page in the menu.
+  parent = "about"
+
+[[main]]
+  name = "Testimonials"  # A link title for your page.
+  url = "/testimonials/"  # The URL of your page.
+  weight = 29  # The position of your page in the menu.
   parent = "about"
 
 [[main]]
   name = "Visitors"  # A link title for your page.
   url = "/about/visitors"  # The URL of your page.
-  weight = 28  # The position of your page in the menu.
+  weight = 29  # The position of your page in the menu.
   parent = "about"
+
 
 [[main]]
   name = "Educational NEXUS"
@@ -143,171 +156,189 @@
   parent = "nexus"
 
 [[main]]
+  name = "Citation Politics"
+  url = "/citation-politics"
+  weight = 33
+  parent = "nexus"
+
+[[main]]
   name = "Clusters"
   url = "/clusters"
-  weight = 33
+  weight = 39
   parent = "nexus"
 
 [[main]]
   name = "Curated Resources"
   url = "/resources"
-  weight = 34
+  weight = 35
   parent = "nexus"
 
 [[main]]
   name = "Developing Countries & OS"
   url = "/os-developing-world"
-  weight = 35
+  weight = 36
   parent = "nexus"
 
 [[main]]
   name = "Educators' Corner"
   url = "/educators-corner"
-  weight = 36
+  weight = 37
   parent = "nexus"
 
 [[main]]
   name = "Equity in Open Science"
   url = "/equityinos"
-  weight = 37
+  weight = 38
   parent = "nexus"
 
 [[main]]
   name = "Glossary"
   url = "/glossary"
-  weight = 38
+  weight = 39
   parent = "nexus"
 
 [[main]]
   name = "Impact of OS on students"
   url = "/impact"
-  weight = 39
+  weight = 40
   parent = "nexus"
 
 [[main]]
   name = "Lesson Plans"
   url = "/lesson-plans/"
-  weight = 40
+  weight = 41
   parent = "nexus"
 
 [[main]]
   name = "Mapping OS Communities"
   url = "/mapping_os"
-  weight = 41
+  weight = 42
   parent = "nexus"
 
 [[main]]
   name = "Neurodiversity Team"
   url = "/neurodiversity"
-  weight = 42
+  weight = 43
   parent = "nexus"
 
 [[main]]
   name = "Pedagogies"
   url = "/pedagogies"
-  weight = 43
+  weight = 44
   parent = "nexus"
 
 [[main]]
   name = "Self-Assessment"
   url = "/self-assessment"
-  weight = 44
+  weight = 45
   parent = "nexus"
 
 [[main]]
   name = "Social Justice Initiatives"
   url = "/dei"
-  weight = 45
+  weight = 46
   parent = "nexus"
 
 [[main]]
   name = "Summaries"
   url = "/summaries"
-  weight = 46
+  weight = 47
   parent = "nexus"
 
 [[main]]
   name = "Syllabi"
   url = "/syllabus"
-  weight = 47
+  weight = 48
   parent = "nexus"
 
 [[main]]
   name = "Teaching OS"
   url = "/teaching_os"
-  weight = 48
+  weight = 49
   parent = "nexus"
 
 [[main]]
   name = "Wheel of Privilege"
   url = "/awop"
-  weight = 49
+  weight = 50
   parent = "nexus"
 
 
 [[main]]
   name = "Replication Hub"
   url = "/replication-hub"
-  weight = 50
+  weight = 60
   identifier = "replications"
 
 [[main]]
   name = "About Replication Hub"
   url = "/replication-hub"
-  weight = 51
+  weight = 61
   parent = "replications"
 
 [[main]]
   name = "FReD Annotator"
   url = "https://forrt.org/apps/fred_annotator.html"
-  weight = 52
+  weight = 62
   parent = "replications"
 
 [[main]]
   name = "FReD Explorer"
   url = "https://forrt.org/apps/fred_explorer.html"
-  weight = 53
+  weight = 63
   parent = "replications"
 
 [[main]]
   name = "FReD R-Package"
   url = "https://forrt.org/FReD/index.html"
-  weight = 54
+  weight = 64
   parent = "replications"
 
 [[main]]
   name = "Large-Scale Replication Projects"
   url = "/replication-hub/large-scale-replication-projects"
-  weight = 55
+  weight = 65
+  parent = "replications"
+
+[[main]]
+  name = "Open Social Psychology by Rima-Maria Rahal"
+  url = "https://forrt.org/open-social-psychology/"
+  weight = 66
   parent = "replications"
 
 [[main]]
   name = "Positive Changes from the Replication Crisis"
   url = "/positive-changes-replication-crisis"
-  weight = 56
+  weight = 67
   parent = "replications"
 
 [[main]]
   name = "Replications & Reversals"
   url = "/reversals"
-  weight = 57
+  weight = 68
   parent = "replications"
 
 [[main]]
   name = "Replication Research Journal"
   url = "https://replicationresearch.org"
-  weight = 58
+  weight = 69
+  parent = "replications"
+
+[[main]]
+  name = "Replication Manuscript Templates"
+  url = "https://osf.io/brxtd/"
+  weight = 70
   parent = "replications"
 
 [[main]]
   name = "Submit a replication to FReD"
   url = "/replication-hub/submit"
-  weight = 59
+  weight = 71
   parent = "replications"
 
 
 [[main]]
   name = "Publications"
   url = "/publications/"
-  weight = 70
+  weight = 80
   identifier = "publications"
