@@ -3,7 +3,7 @@ title: "FORRT Contributor Analyses"
 always_allow_html: true
 output:
   md_document:
-    variant: markdown_github
+    variant: gfm
     preserve_yaml: true
     toc: false
 type: contributors_analysis

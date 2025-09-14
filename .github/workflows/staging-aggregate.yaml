@@ -197,23 +197,6 @@ jobs:
             python3 -c "import json; data = json.load(open('data/ga_data.json')); print('✅ GA data:', len(data.get('regions', [])), 'countries,', len(data.get('top_pages', [])), 'pages')"
           fi
 
-      # Contributor analysis if needed
-      - name: Setup r2u
-        uses: eddelbuettel/github-actions/r2u-setup@master
-        if: steps.download-artifact.outcome == 'failure'
-      - uses: r-lib/actions/setup-pandoc@v2
-        if: steps.download-artifact.outcome == 'failure'
-      - name: Contributor analysis if needed
-        if: steps.download-artifact.outcome == 'failure'
-        continue-on-error: true
-        run: |
-          Rscript -e 'install.packages(c("rmarkdown","ggplot2", "readxl", "dplyr", "googlesheets4", "stringr", "gridExtra", "glue", "tidygraph", "ggraph", "igraph", "visNetwork"))'
-          Rscript -e "rmarkdown::render('scripts/contributor-analysis/contributor_analysis.rmd')"
-          mv scripts/contributor-analysis/contributor_analysis.md content/contributor-analysis/index.md
-          mv scripts/contributor-analysis/*.png content/contributor-analysis/
-          rm -rf content/contributor-analysis/htmlwidgets_libs
-          mv scripts/contributor-analysis/htmlwidgets_libs content/contributor-analysis/
-          sed -i.bak -e '/^```{=html}$/d' -e '/^```$/d' content/contributor-analysis/index.md  && rm content/contributor-analysis/index.md.bak
 
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@75d2e84710de30f6ff7268e08f310b60ef14033f
@@ -349,19 +332,33 @@ jobs:
           GH_TOKEN: ${{ secrets.STAGING_GITHUB_TOKEN }}
 
       - name: Create monthly deployment report
-        if: needs.aggregate-prs.outputs.attempted-prs != '' && github.event_name == 'schedule'
+        if: github.event_name == 'schedule'
         run: |
           # Only create monthly report on scheduled runs (1st of month)
           CURRENT_DAY=$(date +%d)
+          echo "🔍 Current day: $CURRENT_DAY, Event: ${{ github.event_name }}"
+          
           if [ "$CURRENT_DAY" = "01" ]; then
             MONTH=$(date +%B %Y)
-            gh issue create \
-              --title "📊 Monthly Staging Deployment Report - $MONTH" \
-              --body-file deployment-summary.md \
-              --label "deployment,staging,monthly-report"
-            echo "✅ Monthly deployment report created for $MONTH"
+            echo "📊 Creating monthly deployment report for $MONTH"
+            
+            # Check if deployment summary file exists
+            if [ -f "deployment-summary.md" ]; then
+              gh issue create \
+                --title "📊 Monthly Staging Deployment Report - $MONTH" \
+                --body-file deployment-summary.md \
+                --label "deployment,staging,monthly-report"
+              echo "✅ Monthly deployment report created for $MONTH"
+            else
+              echo "⚠️ deployment-summary.md not found, creating basic report"
+              gh issue create \
+                --title "📊 Monthly Staging Deployment Report - $MONTH" \
+                --body "Monthly staging deployment report for $MONTH. No PRs were processed this month." \
+                --label "deployment,staging,monthly-report"
+              echo "✅ Basic monthly deployment report created for $MONTH"
+            fi
           else
-            echo "ℹ️ Skipping issue creation (not 1st of month)"
+            echo "ℹ️ Skipping issue creation (not 1st of month, current day: $CURRENT_DAY)"
           fi
         env:
           GH_TOKEN: ${{ secrets.STAGING_GITHUB_TOKEN }}
