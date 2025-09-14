@@ -1,27 +1,26 @@
 <style>
   /* Styles for the site footer */
   footer {
-    margin: 1rem;
-    padding: 1rem;
+    margin: 0.5rem;
+    padding: 0.5rem;
     float: left;
   }
 </style>
 
 <footer class="site-footer">
   {{ with site.GetPage "/imprint" }}
-  {{ if or (site.GetPage "terms.md") (site.GetPage "privacy.md") }}
   <p class="powered-by">
+    <a class="btn btn-primary" href="/about/cite_us/" role="button">Cite FORRT</a>
+    <span style="margin-left: 2rem;"></span>
+    <a href="{{ .RelPermalink }}">{{ .Title }}</a>
     {{ with site.GetPage "privacy.md" }}
-      {{ printf "<a href=\"%s\">%s</a>" .RelPermalink .Title | safeHTML }}
+      &middot; {{ printf "<a href=\"%s\">%s</a>" .RelPermalink .Title | safeHTML }}
     {{ end }}
     {{ with site.GetPage "terms.md" }}
-      {{ if site.GetPage "privacy.md" }} &middot; {{ end }}
-      {{ printf "<a href=\"%s\">%s</a>" .RelPermalink .Title | safeHTML }}
+      &middot; {{ printf "<a href=\"%s\">%s</a>" .RelPermalink .Title | safeHTML }}
     {{ end }}
   </p>
   {{ end }}
-
-<a class="btn btn-primary" href="/about/cite_us/" role="button">Cite FORRT</a>
 
   <p class="powered-by">
     {{ with site.Copyright }}{{ replace . "{year}" now.Year | markdownify}}{{ end }}
@@ -47,5 +46,4 @@
     </span>
     {{ end }}
   </p>
-  {{ end }}
 </footer>
