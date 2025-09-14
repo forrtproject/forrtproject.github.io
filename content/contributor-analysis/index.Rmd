@@ -1,13 +1,15 @@
 ---
 title: "FORRT Contributor Analyses"
-type: plain_page
 always_allow_html: true
 output:
-  html_document:
-    self_contained: false       # don’t inline – write out .js/.css
-    keep_md:     true           # keep the .md
-    lib_dir:     "htmlwidgets_libs"  # where to drop htmlwidgets.js & visNetwork deps
+  md_document:
+    variant: markdown_github
+    preserve_yaml: true
+    toc: false
+type: contributors_analysis
 ---
+
+
 
 ```{r, setup, include=FALSE}
 knitr::opts_chunk$set(
@@ -16,7 +18,6 @@ knitr::opts_chunk$set(
 ```
 
 ```{r Load Libraries}
-library(readxl)  # For reading Excel files
 library(dplyr)   # For data manipulation
 library(ggplot2) # For visualization
 library(tidyr)   # For reshaping data
@@ -194,96 +195,6 @@ As of {format(Sys.Date(), '%d %B %Y')}, FORRT has a total of {sprintf('%d', coun
 
 `r output`
 
-```{r dt long}
-dt_long <- dt_long %>% 
-  rowwise() %>% 
-  mutate(Contributor = paste(na.omit(c(`Surname`, `First name`)), collapse = " ")) %>% 
-  mutate(Lead = if_else(Role %in% c("lead", "co-lead"), Role, "other"))
-```
-## Network of Contributors
-
-```{r contributor co-occurrences}
-# get co-occurences
-Contributor_Project <- xtabs(~ `Project Name` + Contributor, 
-                                data=dt_long %>% 
-                               select(`Project Name`, Contributor) %>% 
-                               unique(), 
-                                sparse = TRUE)
-
-Contributor_occur <- crossprod(Contributor_Project, Contributor_Project)
-```
-
-```{r contributor-network, fig.alt = "Network chart of FORRT contributors"}
-Contributor_nodes_n <- dt_long %>%
-  group_by(Contributor) %>% 
-  count(Contributor)
-
-colnames(Contributor_nodes_n) <- c("id", "value")
-
-ContributorGroups_nodes <- dt_long %>% 
-  select(Contributor, `Project Name`) %>% 
-  unique() %>% 
-  group_by(Contributor) %>% 
-  mutate(Projects = paste0(`Project Name`, collapse = ",")) %>% 
-  select(Contributor, Projects) %>% 
-  unique()
-
-colnames(ContributorGroups_nodes) <- c("id", "projects")
-
-Contributor_nodes <- left_join(Contributor_nodes_n,
-                               ContributorGroups_nodes)
-Contributor_nodes$title <- paste0(Contributor_nodes$id,"<br>", gsub(patter = ",", replacement = "<br>", x = Contributor_nodes$projects))
-
-Contributor_edges <- which(upper.tri(Contributor_occur), arr.ind = TRUE) %>%
-  as.data.frame() %>%
-  mutate(
-    from = rownames((Contributor_occur))[row],
-    to   = colnames((Contributor_occur))[col],
-    width_n = (Contributor_occur)[cbind(row, col)]
-  ) %>%
-  filter(width_n > 0) %>%  # Optional: remove 0s
-  mutate(width = (width_n/10)^(3)) %>% 
-  select(from, to, width) 
-
-## add one hidden edge that will move the Chinese translator team closer to the center
-additional_hidden_edge <- data.frame(from = c("Fang Cathy", "Chen Liangjie", "Jin Shuxian", "Yang Jinbiao", "Liu Ruoting", "Wang Xinyu", "Xu Yu", "Ji Xuejun", "Wang Zixi"), 
-                                     to = c("Azevedo Flavio"), 
-                                     width = 0.0,
-                                     hidden = TRUE)
-
-Contributor_edges_plot <- rbind(Contributor_edges %>% 
-  mutate(hidden = F), additional_hidden_edge)
-
-visNetwork(Contributor_nodes, 
-           Contributor_edges_plot) %>%
-  visIgraphLayout(layout = "layout_nicely",
-                  randomSeed = 1001)  %>%
-  visEdges(color = list(opacity = 0.1)
-  ) %>%
-  visNodes(font = list(size = 5,
-                       strokeWidth = 0.1,
-                       strokeColor = "white"),
-    borderWidth = 0,
-    color = list(background = "black",
-                 highlight = list(background = "red")) 
-  ) %>% 
-  visGroups(useDefaultGroups = F) %>% 
-  visInteraction(
-    dragNodes = TRUE,
-    dragView = TRUE,
-    hover = FALSE,
-    hoverConnectedEdges = FALSE,
-    selectable = TRUE,
-    multiselect = TRUE
-  ) %>%
-  visOptions(
-    highlightNearest = list(enabled = TRUE,
-                            degree = 1),
-    nodesIdSelection = list(enabled = TRUE),
-    selectedBy = list(variable = "projects", multiple = T, hideColor = "darkgrey")
-  ) 
-```
-
 
 ```{r Basic visualizations}
 # Contributors per project
@@ -335,10 +246,19 @@ roles_plot <- ggplot(role_distribution, aes(x = reorder(Role, n), y = n)) +
         panel.spacing = unit(0, "lines"))
 ```
 
+
 ```{r projects-plot, fig.alt = "Bar chart of contributors per project"}
 projects_plot
 ```
 
 ```{r roles-plot, fig.alt = "Bar chart of contributions by Tenzing role"}
 roles_plot
+```
+
+
+```{r dt long}
+dt_long <- dt_long %>% 
+  rowwise() %>% 
+  mutate(Contributor = paste(na.omit(c(`Surname`, `First name`)), collapse = " ")) %>% 
+  mutate(Lead = if_else(Role %in% c("lead", "co-lead"), Role, "other"))
 ```
