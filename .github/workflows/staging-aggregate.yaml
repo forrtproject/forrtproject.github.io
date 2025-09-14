@@ -1,0 +1,367 @@
+name: Staging Aggregate Deployment
+
+on:
+  pull_request:
+    branches:
+      - master
+  schedule:
+    - cron: '0 1 1 * *'  # 1 AM UTC on the 1st of each month
+  workflow_dispatch:
+    inputs:
+      force_deploy:
+        description: 'Force deployment even if no PRs found'
+        required: false
+        type: boolean
+        default: false
+
+jobs:
+  aggregate-prs:
+    name: Aggregate PRs for Staging
+    runs-on: ubuntu-22.04
+    permissions:
+      contents: write
+      pull-requests: read
+    outputs:
+      aggregated-branch: ${{ steps.aggregate.outputs.branch }}
+      included-prs: ${{ steps.aggregate.outputs.included_prs }}
+      attempted-prs: ${{ steps.aggregate.outputs.attempted_prs }}
+      total-prs: ${{ steps.aggregate.outputs.total_prs }}
+      has-prs: ${{ steps.aggregate.outputs.has_prs }}
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.STAGING_GITHUB_TOKEN }}
+
+      - name: Configure Git
+        run: |
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git config --global user.name "github-actions[bot]"
+
+      - name: Aggregate PRs
+        id: aggregate
+        run: |
+          # Debug: Show trigger information
+          echo "🔍 Workflow triggered by: ${{ github.event_name }}"
+          if [ "${{ github.event_name }}" = "pull_request" ]; then
+            echo "🔍 Triggering PR: #${{ github.event.pull_request.number }}"
+          fi
+          
+          # Get all open, non-draft PRs targeting master (regardless of CI status)
+          PRS=$(gh pr list --base master --state open --json number,title,headRefName,isDraft --jq '.[] | select(.isDraft == false) | .number')
+          
+          if [ -z "$PRS" ]; then
+            echo "No open non-draft PRs found"
+            echo "branch=master" >> $GITHUB_OUTPUT
+            echo "included_prs=" >> $GITHUB_OUTPUT
+            echo "attempted_prs=" >> $GITHUB_OUTPUT
+            echo "total_prs=0" >> $GITHUB_OUTPUT
+            echo "has_prs=false" >> $GITHUB_OUTPUT
+            exit 0
+          fi
+          
+          echo "Found PRs: $PRS"
+          echo "total_prs=$(echo "$PRS" | wc -l)" >> $GITHUB_OUTPUT
+          echo "has_prs=true" >> $GITHUB_OUTPUT
+          
+          # Create a new branch for aggregation starting from master
+          AGGREGATE_BRANCH="staging-aggregate-$(date +%Y%m%d-%H%M%S)"
+          git checkout master
+          git checkout -b "$AGGREGATE_BRANCH"
+          
+          INCLUDED_PRS=""
+          ATTEMPTED_PRS=""
+          
+          # Try to merge each PR in order
+          for pr in $PRS; do
+            echo "Attempting to merge PR #$pr"
+            
+            # Track all attempted PRs (including current PR)
+            if [ -z "$ATTEMPTED_PRS" ]; then
+              ATTEMPTED_PRS="$pr"
+            else
+              ATTEMPTED_PRS="$ATTEMPTED_PRS,$pr"
+            fi
+            
+            # Note: We no longer skip the triggering PR - all PRs should be included
+            # The "self-reference" issue was preventing the latest PR from being included
+            
+            # Get PR details
+            PR_DATA=$(gh pr view $pr --json headRefName,headRepositoryOwner,title)
+            HEAD_REF=$(echo "$PR_DATA" | jq -r '.headRefName')
+            HEAD_OWNER=$(echo "$PR_DATA" | jq -r '.headRepositoryOwner.login')
+            TITLE=$(echo "$PR_DATA" | jq -r '.title')
+            
+            echo "Processing PR #$pr: $TITLE"
+            
+            # Add remote if it's a fork
+            if [ "$HEAD_OWNER" != "forrtproject" ]; then
+              git remote add "pr-$pr" "https://github.com/$HEAD_OWNER/forrtproject.github.io.git"
+              git fetch "pr-$pr" "$HEAD_REF"
+              MERGE_REF="pr-$pr/$HEAD_REF"
+            else
+              git fetch origin "$HEAD_REF"
+              MERGE_REF="origin/$HEAD_REF"
+            fi
+            
+            # Try to merge into our aggregate branch
+            if git merge "$MERGE_REF" --no-edit; then
+              echo "✅ Successfully merged PR #$pr"
+              if [ -z "$INCLUDED_PRS" ]; then
+                INCLUDED_PRS="$pr"
+              else
+                INCLUDED_PRS="$INCLUDED_PRS,$pr"
+              fi
+            else
+              echo "⚠️ Merge conflict with PR #$pr - skipping and continuing with next PR"
+              # Only abort if there's an active merge
+              if [ -f .git/MERGE_HEAD ]; then
+                git merge --abort
+              fi
+              # Continue with next PR instead of stopping
+            fi
+          done
+          
+          # Push the aggregate branch
+          git push origin "$AGGREGATE_BRANCH"
+          
+          echo "branch=$AGGREGATE_BRANCH" >> $GITHUB_OUTPUT
+          echo "included_prs=$INCLUDED_PRS" >> $GITHUB_OUTPUT
+          echo "attempted_prs=$ATTEMPTED_PRS" >> $GITHUB_OUTPUT
+          
+          echo "✅ Aggregation completed"
+          echo "📊 Summary:"
+          echo "   - Total PRs found: $(echo "$PRS" | wc -l)"
+          echo "   - PRs attempted: $ATTEMPTED_PRS"
+          echo "   - PRs successfully merged: $INCLUDED_PRS"
+          echo "   - Workflow trigger: ${{ github.event_name }}"
+          if [ "${{ github.event_name }}" = "pull_request" ]; then
+            echo "   - Triggering PR: #${{ github.event.pull_request.number }}"
+          fi
+        env:
+          GH_TOKEN: ${{ secrets.STAGING_GITHUB_TOKEN }}
+
+  build:
+    name: Build
+    runs-on: ubuntu-22.04
+    needs: [aggregate-prs]
+    if: always() && (needs.aggregate-prs.outputs.has-prs == 'true' || github.event.inputs.force_deploy == 'true')
+    permissions:
+      contents: read
+      actions: read  # Needed for artifact access
+    env:
+      HUGO_VERSION: "0.123.3"
+      HUGO_EXTENDED: true
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ needs.aggregate-prs.outputs.aggregated-branch || 'master' }}
+
+      - name: Configure Git
+        run: |
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git config --global user.name "github-actions[bot]"
+
+      - name: Try to download data artifact
+        id: download-artifact
+        uses: dawidd6/action-download-artifact@07ab29fd4a977ae4d2b275087cf67563dfdf0295
+        continue-on-error: true
+        with:
+          workflow: data-processing.yml
+          name: data-artifact
+          path: .
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Run data processing if needed
+        if: steps.download-artifact.outcome == 'failure'
+        env:
+          PYTHON_VERSION: "3.11"
+          GA_API_CREDENTIALS: ${{ secrets.GA_API_CREDENTIALS }}
+          GA_PROPERTY_ID: ${{ secrets.GA_PROPERTY_ID }}
+        run: |
+          # Install Python dependencies
+          python3 -m pip install -r ./requirements.txt
+
+          # Generate data files
+          python3 scripts/forrt_contribs/tenzing.py
+          python3 content/resources/resource.py
+          mv scripts/forrt_contribs/tenzing.md content/contributors/tenzing.md
+
+          # Download GA data if possible
+          python scripts/download_ga_data.py
+          
+          # Quick validation of GA data structure
+          if [ -f "data/ga_data.json" ]; then
+            python3 -c "import json; data = json.load(open('data/ga_data.json')); print('✅ GA data:', len(data.get('regions', [])), 'countries,', len(data.get('top_pages', [])), 'pages')"
+          fi
+
+      # Contributor analysis if needed
+      - name: Setup r2u
+        uses: eddelbuettel/github-actions/r2u-setup@master
+        if: steps.download-artifact.outcome == 'failure'
+      - uses: r-lib/actions/setup-pandoc@v2
+        if: steps.download-artifact.outcome == 'failure'
+      - name: Contributor analysis if needed
+        if: steps.download-artifact.outcome == 'failure'
+        continue-on-error: true
+        run: |
+          Rscript -e 'install.packages(c("rmarkdown","ggplot2", "readxl", "dplyr", "googlesheets4", "stringr", "gridExtra", "glue", "tidygraph", "ggraph", "igraph", "visNetwork"))'
+          Rscript -e "rmarkdown::render('scripts/contributor-analysis/contributor_analysis.rmd')"
+          mv scripts/contributor-analysis/contributor_analysis.md content/contributor-analysis/index.md
+          mv scripts/contributor-analysis/*.png content/contributor-analysis/
+          rm -rf content/contributor-analysis/htmlwidgets_libs
+          mv scripts/contributor-analysis/htmlwidgets_libs content/contributor-analysis/
+          sed -i.bak -e '/^```{=html}$/d' -e '/^```$/d' content/contributor-analysis/index.md  && rm content/contributor-analysis/index.md.bak
+
+      - name: Setup Hugo
+        uses: peaceiris/actions-hugo@75d2e84710de30f6ff7268e08f310b60ef14033f
+        with:
+          hugo-version: ${{ env.HUGO_VERSION }}
+          extended: ${{ env.HUGO_EXTENDED }}
+
+      - name: Build site
+        run: |
+          hugo --gc --minify --cleanDestinationDir --destination public --baseURL https://staging.forrt.org
+
+      - name: Upload site artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: forrt-website-aggregate-${{ github.run_number }}
+          path: public/
+          retention-days: 1
+
+  deploy-staging:
+    name: Deploy - Staging
+    runs-on: ubuntu-22.04
+    concurrency:
+      group: staging
+    permissions:
+      contents: write
+      pull-requests: write
+      issues: write
+    needs: [build, aggregate-prs]
+    if: always() && needs.build.result == 'success'
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.STAGING_GITHUB_TOKEN }}
+
+      - name: Download Artifact - Website
+        uses: actions/download-artifact@v4
+        with:
+          name: forrt-website-aggregate-${{ github.run_number }}
+          path: ${{ github.repository }}/forrt-website
+
+      - name: Create deployment summary
+        run: |
+          echo "## 🚀 Staging Deployment Summary" > deployment-summary.md
+          echo "" >> deployment-summary.md
+          echo "**Deployment Time:** $(date -u '+%Y-%m-%d %H:%M:%S UTC')" >> deployment-summary.md
+          echo "" >> deployment-summary.md
+          echo "**Aggregated Branch:** ${{ needs.aggregate-prs.outputs.aggregated-branch }}" >> deployment-summary.md
+          echo "" >> deployment-summary.md
+          echo "**Total PRs Found:** ${{ needs.aggregate-prs.outputs.total-prs }}" >> deployment-summary.md
+          echo "**PRs Attempted:** ${{ needs.aggregate-prs.outputs.attempted-prs }}" >> deployment-summary.md
+          echo "" >> deployment-summary.md
+          
+          if [ "${{ needs.aggregate-prs.outputs.included-prs }}" != "" ]; then
+            echo "### ✅ PRs Successfully Merged:" >> deployment-summary.md
+            IFS=',' read -ra PR_ARRAY <<< "${{ needs.aggregate-prs.outputs.included-prs }}"
+            for pr in "${PR_ARRAY[@]}"; do
+              echo "- PR #$pr" >> deployment-summary.md
+            done
+            echo "" >> deployment-summary.md
+          fi
+          
+          # Show PRs that were attempted but not successfully merged
+          if [ "${{ needs.aggregate-prs.outputs.attempted-prs }}" != "" ] && [ "${{ needs.aggregate-prs.outputs.included-prs }}" != "" ]; then
+            echo "### ⚠️ PRs Attempted but Skipped (Conflicts):" >> deployment-summary.md
+            IFS=',' read -ra ATTEMPTED_ARRAY <<< "${{ needs.aggregate-prs.outputs.attempted-prs }}"
+            IFS=',' read -ra SUCCESSFUL_ARRAY <<< "${{ needs.aggregate-prs.outputs.included-prs }}"
+            
+            for attempted_pr in "${ATTEMPTED_ARRAY[@]}"; do
+              SKIPPED=true
+              for successful_pr in "${SUCCESSFUL_ARRAY[@]}"; do
+                if [ "$attempted_pr" = "$successful_pr" ]; then
+                  SKIPPED=false
+                  break
+                fi
+              done
+              if [ "$SKIPPED" = true ]; then
+                echo "- PR #$attempted_pr (merge conflicts)" >> deployment-summary.md
+              fi
+            done
+            echo "" >> deployment-summary.md
+          fi
+          
+          echo "**Staging URL:** https://staging.forrt.org" >> deployment-summary.md
+          echo "" >> deployment-summary.md
+          echo "### Aggregation Strategy:" >> deployment-summary.md
+          echo "- ✅ All open PRs attempted" >> deployment-summary.md
+          echo "- ✅ Conflicting PRs skipped" >> deployment-summary.md
+          echo "- ✅ Shows combined state of all compatible PRs" >> deployment-summary.md
+
+      - name: Deploy - GitHub Pages
+        uses: peaceiris/actions-gh-pages@4f9cc6602d3f66b9c108549d475ec49e8ef4d45e
+        with:
+          personal_token: ${{ secrets.STAGING_GITHUB_TOKEN }}
+          publish_dir: ${{ github.repository }}/forrt-website
+          external_repository: forrtproject/webpage-staging
+          publish_branch: staging
+          cname: staging.forrt.org
+
+      - name: Comment on PRs
+        if: needs.aggregate-prs.outputs.attempted-prs != ''
+        run: |
+          IFS=',' read -ra PR_ARRAY <<< "${{ needs.aggregate-prs.outputs.attempted-prs }}"
+          for pr in "${PR_ARRAY[@]}"; do
+            # Check if this PR was successfully merged
+            SUCCESSFUL_MERGE=false
+            if [ "${{ needs.aggregate-prs.outputs.included-prs }}" != "" ]; then
+              IFS=',' read -ra SUCCESSFUL_ARRAY <<< "${{ needs.aggregate-prs.outputs.included-prs }}"
+              for successful_pr in "${SUCCESSFUL_ARRAY[@]}"; do
+                if [ "$successful_pr" = "$pr" ]; then
+                  SUCCESSFUL_MERGE=true
+                  break
+                fi
+              done
+            fi
+            
+            # Check if we already commented on this PR with our specific message
+            EXISTING_COMMENT=$(gh pr view $pr --json comments --jq '(.comments[] | select(.author.login == "github-actions[bot]" and (.body | contains("deployed to staging as part of an aggregated deployment")))) | .id' 2>/dev/null || echo "")
+            
+            if [ -z "$EXISTING_COMMENT" ]; then
+              if [ "$SUCCESSFUL_MERGE" = true ]; then
+                echo "💬 Commenting on PR #$pr (successfully merged)"
+                gh pr comment $pr --body "✅ This PR has been deployed to staging as part of an aggregated deployment. View at: https://staging.forrt.org"
+              else
+                echo "💬 Commenting on PR #$pr (attempted but had conflicts)"
+                gh pr comment $pr --body "⚠️ This PR was attempted to be deployed to staging as part of an aggregated deployment, but had merge conflicts and was skipped. Please resolve conflicts and try again. View staging at: https://staging.forrt.org"
+              fi
+            else
+              echo "ℹ️ Skipping comment on PR #$pr (already has staging comment)"
+            fi
+          done
+        env:
+          GH_TOKEN: ${{ secrets.STAGING_GITHUB_TOKEN }}
+
+      - name: Create monthly deployment report
+        if: needs.aggregate-prs.outputs.attempted-prs != '' && github.event_name == 'schedule'
+        run: |
+          # Only create monthly report on scheduled runs (1st of month)
+          CURRENT_DAY=$(date +%d)
+          if [ "$CURRENT_DAY" = "01" ]; then
+            MONTH=$(date +%B %Y)
+            gh issue create \
+              --title "📊 Monthly Staging Deployment Report - $MONTH" \
+              --body-file deployment-summary.md \
+              --label "deployment,staging,monthly-report"
+            echo "✅ Monthly deployment report created for $MONTH"
+          else
+            echo "ℹ️ Skipping issue creation (not 1st of month)"
+          fi
+        env:
+          GH_TOKEN: ${{ secrets.STAGING_GITHUB_TOKEN }}
