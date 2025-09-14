@@ -1,27 +1,26 @@
 <style>
   /* Styles for the site footer */
   footer {
-    margin: 1rem;
-    padding: 1rem;
+    margin: 0.5rem;
+    padding: 0.5rem;
     float: left;
   }
-  
 </style>
 
 <footer class="site-footer">
-  {{ if or (site.GetPage "terms.md") (site.GetPage "privacy.md") }}
+  {{ with site.GetPage "/imprint" }}
   <p class="powered-by">
+    <a class="btn btn-primary" href="/about/cite_us/" role="button">Cite FORRT</a>
+    <span style="margin-left: 2rem;"></span>
+    <a href="{{ .RelPermalink }}">{{ .Title }}</a>
     {{ with site.GetPage "privacy.md" }}
-      {{ printf "<a href=\"%s\">%s</a>" .RelPermalink .Title | safeHTML }}
+      &middot; {{ printf "<a href=\"%s\">%s</a>" .RelPermalink .Title | safeHTML }}
     {{ end }}
     {{ with site.GetPage "terms.md" }}
-      {{ if site.GetPage "privacy.md" }} &middot; {{ end }}
-      {{ printf "<a href=\"%s\">%s</a>" .RelPermalink .Title | safeHTML }}
+      &middot; {{ printf "<a href=\"%s\">%s</a>" .RelPermalink .Title | safeHTML }}
     {{ end }}
   </p>
   {{ end }}
-
-<a class="btn btn-primary" href="/about/cite_us/" role="button">Cite FORRT</a>
 
   <p class="powered-by">
     {{ with site.Copyright }}{{ replace . "{year}" now.Year | markdownify}}{{ end }}
@@ -32,7 +31,7 @@
 
   <p class="powered-by">
     {{ if not site.Params.i_am_a_sponsor }}
-    This website is published using two great open source tools: 
+    This website is published using two great open source tools:
     <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a> & the
     <a href="https://hugoblox.com/" target="_blank" rel="noopener">Academic theme.</a>
     {{ end }}
