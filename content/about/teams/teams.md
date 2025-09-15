@@ -33,6 +33,58 @@ subtitle = "---"
   # icon = "slack"
   # icon_pack = "fab"
   # iconalttext = "Slack"
+  img = "team/ethics.svg" #icon OR img that you should put in 
+  imgalttext = "" # Describe the image in words for screen-reader users. 
+  imgside = "right" # image will appear left or right
+  buttonurl = "https://join.slack.com/t/forrt/shared_invite/zt-alobr3z7-NOR0mTBfD1vKXn9qlOKqaQ"
+  buttondescr = "Join Us"
+  name = "Team Citation Politics" # Title
+  description = "Engages with citation practice and aims to encourage authors to consider who they cite and why through the development of practical tools."
+  color = "#395855" # Background color under the image
+
+[[featurealt]]
+  # icon = "slack"
+  # icon_pack = "fab"
+  # iconalttext = "Slack"
+  img = "team/team-ideas.svg" #icon OR img that you should put in 
+  imgalttext = "" # Describe the image in words for screen-reader users. 
+  imgside = "left" # image will appear left or right
+  buttonurl = "https://join.slack.com/t/forrt/shared_invite/zt-alobr3z7-NOR0mTBfD1vKXn9qlOKqaQ"
+  buttondescr = "Join Us"
+  name = "Team Credit" # Title
+  description = "Aims to ensure all contributions are accurately and appropriately recognised at FORRT."
+  color = "#395855" # Background color under the image
+
+[[featurealt]]
+  # icon = "slack"
+  # icon_pack = "fab"
+  # iconalttext = "Slack"
+  img = "team/database.svg" #icon OR img that you should put in 
+  imgalttext = "" # Describe the image in words for screen-reader users. 
+  imgside = "right" # image will appear left or right
+  buttonurl = "https://forrt.slack.com/archives/C0190S42M1N"
+  buttondescr = "Join Us"
+  name = "Team Curations" # Title
+  description = "Responsible for curating FORRT resources, enriching its quality and metadata, interconnecting FORRT initiatives, and gathering and collecting resources, all focusing on teaching materials and informing curriculum."
+  color = "#395855" # Background color under the image
+
+[[featurealt]]
+  # icon = "slack"
+  # icon_pack = "fab"
+  # iconalttext = "Slack"
+  img = "team/team-summaries.svg" #icon OR img that you should put in 
+  imgalttext = "" # Describe the image in words for screen-reader users. 
+  imgside = "left" # image will appear left or right
+  buttonurl = "https://join.slack.com/t/forrt/shared_invite/zt-alobr3z7-NOR0mTBfD1vKXn9qlOKqaQ"
+  buttondescr = "Join Us"
+  name = "Team Feedback" # Title
+  description = "Primary goal is to develop a community-maintained e-book that maps and critically evaluates a diverse range of feedback mechanisms from across disciplines and regions."
+  color = "#395855" # Background color under the image
+
+[[featurealt]]
+  # icon = "slack"
+  # icon_pack = "fab"
+  # iconalttext = "Slack"
   img = "team/cohesion.svg" #icon OR img that you should put in 
   imgalttext = "" # Describe the image in words for screen-reader users. 
   imgside = "right" # image will appear left or right
@@ -85,6 +137,45 @@ subtitle = "---"
   # icon = "slack"
   # icon_pack = "fab"
   # iconalttext = "Slack"
+  img = "team/team-summaries.svg" #icon OR img that you should put in 
+  imgalttext = "" # Describe the image in words for screen-reader users. 
+  imgside = "left" # image will appear left or right
+  buttonurl = "https://join.slack.com/t/forrt/shared_invite/zt-alobr3z7-NOR0mTBfD1vKXn9qlOKqaQ"
+  buttondescr = "Join Us"
+  name = "Team Glossary | Phase 2 | Translation" # Title
+  description = "Aims to translate the glossary project which contains terms from the open science literature."
+  color = "#395855" # Background color under the image
+
+[[featurealt]]
+  # icon = "slack"
+  # icon_pack = "fab"
+  # iconalttext = "Slack"
+  img = "team/team-ideas.svg" #icon OR img that you should put in 
+  imgalttext = "" # Describe the image in words for screen-reader users. 
+  imgside = "right" # image will appear left or right
+  buttonurl = "https://join.slack.com/t/forrt/shared_invite/zt-alobr3z7-NOR0mTBfD1vKXn9qlOKqaQ"
+  buttondescr = "Join Us"
+  name = "Team JUST-OS" # Title
+  description = "Aims to develop an AI-based chatbot to help researchers navigate Open Science resources more efficiently, and is a collaboration between researchers at the University of Groningen and FORRT."
+  color = "#395855" # Background color under the image
+
+[[featurealt]]
+  # icon = "slack"
+  # icon_pack = "fab"
+  # iconalttext = "Slack"
+  img = "team/database.svg" #icon OR img that you should put in 
+  imgalttext = "" # Describe the image in words for screen-reader users. 
+  imgside = "left" # image will appear left or right
+  buttonurl = "https://join.slack.com/t/forrt/shared_invite/zt-alobr3z7-NOR0mTBfD1vKXn9qlOKqaQ"
+  buttondescr = "Join Us"
+  name = "Team Landscape" # Title
+  description = "Aims to map the open science literature, and anticipated outputs include an open science literature database and systematic/qualitative reviews."
+  color = "#395855" # Background color under the image
+
+[[featurealt]]
+  # icon = "slack"
+  # icon_pack = "fab"
+  # iconalttext = "Slack"
   img = "team/manuscript.svg" #icon OR img that you should put in 
   imgalttext = "" # Describe the image in words for screen-reader users. 
   imgside = "right" # image will appear left or right
@@ -93,6 +184,45 @@ subtitle = "---"
   name = "Team Lesson Plans" # Title
   description = "Team enriching the FORRT summaries with pedagogical and didactic teaching materials so teachers can readily use them in their classes."
   color = "#395875" # Background color under the image
+
+[[featurealt]]
+  # icon = "slack"
+  # icon_pack = "fab"
+  # iconalttext = "Slack"
+  img = "team/pedagogies.svg" #icon OR img that you should put in 
+  imgalttext = "" # Describe the image in words for screen-reader users. 
+  imgside = "right" # image will appear left or right
+  buttonurl = "https://join.slack.com/t/forrt/shared_invite/zt-alobr3z7-NOR0mTBfD1vKXn9qlOKqaQ"
+  buttondescr = "Join Us"
+  name = "Team Lesson Plans | Phase 2 | Expansion" # Title
+  description = "Aims to build upon the original lesson plans project, which was developed to enrich the FORRT summaries with pedagogical and didactic teaching materials so teachers can readily use them in their classes."
+  color = "#395855" # Background color under the image
+
+[[featurealt]]
+  # icon = "slack"
+  # icon_pack = "fab"
+  # iconalttext = "Slack"
+  img = "team/database.svg" #icon OR img that you should put in 
+  imgalttext = "" # Describe the image in words for screen-reader users. 
+  imgside = "left" # image will appear left or right
+  buttonurl = "https://join.slack.com/t/forrt/shared_invite/zt-alobr3z7-NOR0mTBfD1vKXn9qlOKqaQ"
+  buttondescr = "Join Us"
+  name = "Team Mapping Open Science Organizations" # Title
+  description = "Aims to systematically identify, map, and connect Open Science (OS) organizations across disciplines and regions."
+  color = "#395855" # Background color under the image
+
+[[featurealt]]
+  # icon = "slack"
+  # icon_pack = "fab"
+  # iconalttext = "Slack"
+  img = "team/outreach.svg" #icon OR img that you should put in 
+  imgalttext = "" # Describe the image in words for screen-reader users. 
+  imgside = "right" # image will appear left or right
+  buttonurl = "https://join.slack.com/t/forrt/shared_invite/zt-alobr3z7-NOR0mTBfD1vKXn9qlOKqaQ"
+  buttondescr = "Join Us"
+  name = "Team Open Science in Developing Countries" # Title
+  description = "Will develop a paper that discusses the practical and methodological barriers, opportunities, and potential pitfalls of Open Science in developing countries."
+  color = "#395855" # Background color under the image
 
 
 [[featurealt]]
@@ -144,7 +274,7 @@ subtitle = "---"
   img = "team/brain-puzzle.svg" #icon OR img that you should put in 
   imgalttext = "" # Describe the image in words for screen-reader users. 
   imgside = "right" # image will appear left or right
-  buttonurl = "https://forrt.slack.com/archives/C02KYC2ANE4"
+  buttonurl = "https://join.slack.com/t/forrt/shared_invite/zt-alobr3z7-NOR0mTBfD1vKXn9qlOKqaQ"
   buttondescr = "Join Us"
   name = "Team Neurodiversity" # Title
   description = "Focuses on how open scholarship intersects and supports the neurodiversity movement to make OS and higher education inclusive, diverse and accessible for neurodivergent researchers."
@@ -186,8 +316,8 @@ subtitle = "---"
   img = "team/selfassessment.svg" #icon OR img that you should put in 
   imgalttext = "" # Describe the image in words for screen-reader users. 
   imgside = "left" # image will appear left or right
-#  buttonurl = "" # leave empty/commentout if you don't want a button or comment it out
-#  buttondescr = "" # leave empty if you don't want a button
+  buttonurl = "https://join.slack.com/t/forrt/shared_invite/zt-alobr3z7-NOR0mTBfD1vKXn9qlOKqaQ"
+  buttondescr = "Join"
   name = "Team Self-Assessment" # Title
   description = "Team aiming at improving the user experience of the self-assessment tool, as well as coordinating with other teams (e.g., team summaries, database, and website to update its recommendations)."
   color = "#395855" # Background color under the image
@@ -218,6 +348,45 @@ subtitle = "---"
   buttondescr = "Join Us"
   name = "Team Website" # Title
   description = "Team responsible for any and all issues related to the website (e.g., maintenance, add/change content, ideas about pages or blogs, inclusion of recently produced content, correction of typos, etc.)."
+  color = "#395855" # Background color under the image
+
+[[featurealt]]
+  # icon = "slack"
+  # icon_pack = "fab"
+  # iconalttext = "Slack"
+  img = "team/database.svg" #icon OR img that you should put in 
+  imgalttext = "" # Describe the image in words for screen-reader users. 
+  imgside = "right" # image will appear left or right
+  buttonurl = "https://join.slack.com/t/forrt/shared_invite/zt-alobr3z7-NOR0mTBfD1vKXn9qlOKqaQ"
+  buttondescr = "Join Us"
+  name = "Team Replication Hub" # Title
+  description = "A collection of research projects, services, and resources surrounding replication research maintained by FORRT and the Münster Center for Open Science."
+  color = "#395855" # Background color under the image
+
+[[featurealt]]
+  # icon = "slack"
+  # icon_pack = "fab"
+  # iconalttext = "Slack"
+  img = "team/team-summaries.svg" #icon OR img that you should put in 
+  imgalttext = "" # Describe the image in words for screen-reader users. 
+  imgside = "left" # image will appear left or right
+  buttonurl = "https://join.slack.com/t/forrt/shared_invite/zt-alobr3z7-NOR0mTBfD1vKXn9qlOKqaQ"
+  buttondescr = "Join Us"
+  name = "Team Reversals and Replication" # Title
+  description = "Aims to compile a comprehensive, community-driven collection of studies in the social sciences that were subjected to replication claims."
+  color = "#395855" # Background color under the image
+
+[[featurealt]]
+  # icon = "slack"
+  # icon_pack = "fab"
+  # iconalttext = "Slack"
+  img = "team/ethics.svg" #icon OR img that you should put in 
+  imgalttext = "" # Describe the image in words for screen-reader users. 
+  imgside = "right" # image will appear left or right
+  buttonurl = "https://join.slack.com/t/forrt/shared_invite/zt-alobr3z7-NOR0mTBfD1vKXn9qlOKqaQ"
+  buttondescr = "Join Us"
+  name = "Team Wheel of Privilege" # Title
+  description = "Seeks to build a framework and comprehensive toolkit to better understand how our identities impact how we show up and progress in academia. The current focus is on authorship decisions."
   color = "#395855" # Background color under the image
 
 
