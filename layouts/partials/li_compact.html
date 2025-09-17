@@ -12,6 +12,9 @@
 {{ if eq $item.Type "talk" }}
   {{ $show_authors_only = true }}
   {{ $show_buttons = true }}
+{{ else if eq $item.Type "events" }}
+  {{ $show_authors_only = true }}
+  {{ $show_buttons = true }}
 {{ else if eq $item.Type "publication" }}
   {{ $show_authors_only = true }}
   {{ $show_buttons = true }}
@@ -45,7 +48,7 @@
 
     <div class="stream-meta article-metadata">
 
-      {{ if eq $item.Type "talk" }}
+      {{ if or (eq $item.Type "talk") (eq $item.Type "events") }}
       <div>
         <span>
           {{ partial "functions/get_event_dates" $item }}

@@ -5,6 +5,8 @@
 {{ $show_buttons := false }}
 {{ if eq $item.Type "talk" }}
   {{ $show_buttons = true }}
+{{ else if eq $item.Type "events" }}
+  {{ $show_buttons = true }}
 {{ else if eq $item.Type "publication" }}
   {{ $show_buttons = true }}
 {{ end }}
@@ -23,7 +25,7 @@
 
 <div class="card-simple">
 
-  {{ if eq $item.Type "talk" }}
+  {{ if or (eq $item.Type "talk") (eq $item.Type "events") }}
   <div class="article-metadata">
     {{ if $item.Params.authors }}
     <div>

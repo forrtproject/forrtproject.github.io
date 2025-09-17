@@ -1,0 +1,100 @@
+{{- define "main" -}}
+
+{{ partial "page_header.html" . }}
+
+<div class="universal-wrapper">
+  <div class="row">
+    <div class="col-lg-12">
+
+      {{ with .Content }}
+      <div class="article-style">{{ . }}</div>
+      {{ end }}
+
+      {{/* Separate upcoming and past events */}}
+      {{ $now := now }}
+      {{ $upcoming := where .Data.Pages "Date" "ge" $now }}
+      {{ $past := where .Data.Pages "Date" "lt" $now }}
+
+      {{/* Show upcoming events first */}}
+      {{ if $upcoming }}
+      <div class="row" id="upcoming_events">
+        <div class="col-lg-2">
+          <h3 class="text-success">
+            <i class="fas fa-calendar-plus"></i> Upcoming
+          </h3>
+        </div>
+        <div class="col-lg-10">
+          {{ range $upcoming.ByDate }}
+            <div class="event-item mb-3">
+              {{/* Add event type badge if available */}}
+              {{ if .Params.event_type }}
+                <div class="event-badges mb-2">
+                  <span class="badge badge-success">{{ .Params.event_type }}</span>
+                  {{ if .Params.event_format }}
+                    <span class="badge badge-info ml-1">{{ .Params.event_format }}</span>
+                  {{ end }}
+                  {{ if .Params.event_status }}
+                    <span class="badge badge-warning ml-1">{{ .Params.event_status }}</span>
+                  {{ end }}
+                </div>
+              {{ end }}
+              {{ if eq $.Params.view 1 }}
+                {{ partial "li_list" . }}
+              {{ else if eq $.Params.view 3 }}
+                {{ partial "li_card" . }}
+              {{ else }}
+                {{ partial "li_compact" . }}
+              {{ end }}
+            </div>
+          {{ end }}
+        </div>
+      </div>
+      <hr>
+      {{ end }}
+
+      {{/* Show past events grouped by year */}}
+      {{ if $past }}
+      {{ range $past.GroupByDate "2006" }}
+      <div class="row" id="events_list">
+        <div class="col-lg-2">
+          <h3 class="text-muted">
+            <i class="fas fa-calendar-check"></i> {{ .Key }}
+          </h3>
+        </div>
+        <div class="col-lg-10">
+
+          {{ range .Pages }}
+            <div class="event-item mb-3">
+              {{/* Add event type badge if available */}}
+              {{ if .Params.event_type }}
+                <div class="event-badges mb-2">
+                  <span class="badge badge-secondary">{{ .Params.event_type }}</span>
+                  {{ if .Params.event_format }}
+                    <span class="badge badge-info ml-1">{{ .Params.event_format }}</span>
+                  {{ end }}
+                  {{ if .Params.event_status }}
+                    <span class="badge badge-light ml-1">{{ .Params.event_status }}</span>
+                  {{ end }}
+                </div>
+              {{ end }}
+              {{ if eq $.Params.view 1 }}
+                {{ partial "li_list" . }}
+              {{ else if eq $.Params.view 3 }}
+                {{ partial "li_card" . }}
+              {{ else }}
+                {{ partial "li_compact" . }}
+              {{ end }}
+            </div>
+          {{ end }}
+
+        </div>
+      </div>
+      {{ end }}
+      {{ end }}
+
+    </div>
+  </div>
+
+</div>
+
+{{- end -}}

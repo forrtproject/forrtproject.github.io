@@ -1,0 +1,43 @@
+# Event types and categories for FORRT events
+# This file helps categorize and structure events
+
+# Event types
+event_types = [
+  "Conference Presentation",
+  "Workshop",
+  "Hackathon",
+  "Community Event",
+  "Open Day",
+  "Webinar",
+  "Training Session",
+  "Panel Discussion"
+]
+
+# Event status
+event_status = [
+  "Upcoming",
+  "Ongoing",
+  "Completed",
+  "Cancelled"
+]
+
+# Event formats
+event_formats = [
+  "In-person",
+  "Virtual",
+  "Hybrid"
+]
+
+# Common event tags
+common_tags = [
+  "open-science",
+  "education",
+  "reproducibility",
+  "community",
+  "training",
+  "research",
+  "pedagogy",
+  "replication",
+  "diversity",
+  "inclusion"
+]
