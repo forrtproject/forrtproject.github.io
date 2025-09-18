@@ -1,12 +1,13 @@
 name: Data Processing
 
 # This workflow is triggered daily at midnight and can also be manually triggered.
+# Contributor analysis and GA PR creation only run on the 1st of the month.
 # It processes data from various scripts and uploads the processed data as an artifact.
 # The data is used to update the website's content.
 
 on:
   schedule:
-    - cron: '0 0 * * *'  # Daily at midnight
+    - cron: '0 0 * * *'  # Daily at Midnight
   workflow_dispatch:
 
 jobs:
@@ -21,6 +22,18 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+
+      - name: Check if monthly run
+        id: monthly-run
+        run: |
+          CURRENT_DAY=$(date +%d)
+          if [ "$CURRENT_DAY" != "01" ] && [ "${{ github.event_name }}" != "workflow_dispatch" ]; then
+            echo "is_monthly=false" >> $GITHUB_OUTPUT
+            echo "ℹ️ Skipping contributor analysis (not 1st of month and not manual trigger)"
+          else
+            echo "is_monthly=true" >> $GITHUB_OUTPUT
+            echo "🔄 Monthly run detected - will run contributor analysis"
+          fi
 
       - name: Configure Git
         run: |
@@ -40,11 +53,31 @@ jobs:
         run: Rscript -e 'install.packages(c("rmarkdown","ggplot2", "readxl", "dplyr", "googlesheets4", "stringr", "gridExtra", "glue", "tidygraph", "ggraph", "igraph", "visNetwork"))'
 
       - name: Run Contributor Analysis
+        if: steps.monthly-run.outputs.is_monthly == 'true'
         continue-on-error: true  # Continue even if this step fails
         run: |
-          echo "🚀 Rendering R Markdown..."
+          echo "🚀 Running Contributor Analysis..."
+          
+          # Clean old files from content/contributor-analysis and partials
+          rm -rf content/contributor-analysis/*.png content/contributor-analysis/*.html content/contributor-analysis/htmlwidgets_libs
+          rm -f layouts/partials/network-graph.html
+          
+          # Run index.Rmd to generate contributor analysis content and plots
+          echo "📊 Rendering contributor analysis..."
           Rscript -e "rmarkdown::render('content/contributor-analysis/index.Rmd')"
-          echo "✅ Done"
+          
+          # Run network-graph.Rmd to generate interactive network visualization
+          echo "🕸️ Rendering network visualization..."
+          Rscript -e "rmarkdown::render('content/contributor-analysis/network-graph.Rmd')"
+          
+          # Move generated HTML file to layouts/partials
+          echo "📁 Moving network graph to partials..."
+          mv content/contributor-analysis/network-graph.html layouts/partials/
+          
+          # Clean up HTML artifacts from index.md if any
+          sed -i.bak -e '/^```{=html}$/d' -e '/^```$/d' content/contributor-analysis/index.md && rm content/contributor-analysis/index.md.bak
+          
+          echo "✅ Contributor analysis complete"
 
       - name: Install Python dependencies
         run: python3 -m pip install -r ./requirements.txt
