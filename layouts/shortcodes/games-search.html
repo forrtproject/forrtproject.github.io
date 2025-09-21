@@ -39,7 +39,7 @@ var gamesSearchFn = function () {
             var result = results[i].item;
             var resultHTML = '<div class="search-result-item border rounded p-3 mb-2">' +
                 '<h6 class="mb-1">' +
-                '<a href="/open-research-games-portal/game-details/?game=' + result.slug + '" class="btn btn-link p-0 text-left" style="text-decoration: none; color: #007bff;">' +
+                '<a href="/open-research-games-portal/open-research-games/' + result.slug + '/" class="btn btn-link p-0 text-left" style="text-decoration: none; color: #007bff;">' +
                 result.showTitle + '</a>' +
                 '</h6>' +
                 '<p class="small text-muted mb-1">' + (result.showDescription ? result.showDescription.substring(0, 100) + '...' : '') + '</p>' +

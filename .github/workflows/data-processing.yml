@@ -146,9 +146,16 @@ jobs:
       - name: Process Open Research Games Portal data
         continue-on-error: true
         run: |
+          # Process games data from Google Sheets with duplicate merging
           Rscript scripts/open_research_games_portal/Open-Research-Games-Portal.R
           if [ -f "data/open_research_games.json" ]; then
+            # Copy JSON to static directory for client-side access
             cp data/open_research_games.json static/data/ 2>/dev/null || true
+            # Generate individual static game pages for SEO and direct linking
+            python3 scripts/open_research_games_portal/generate-game-pages.py
+            echo "✅ Generated individual pages for $(jq length data/open_research_games.json) games"
+          else
+            echo "❌ No games data file found - skipping page generation"
           fi
 
       # =======================

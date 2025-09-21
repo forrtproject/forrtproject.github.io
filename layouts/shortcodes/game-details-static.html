@@ -1,0 +1,169 @@
+{{/*
+  Static Game Details Shortcode - Pure Hugo Server-Side Rendering
+  
+  Displays game details using Hugo's data functions - no JavaScript required.
+  Gets game data from .Site.Data.open_research_games using the slug parameter.
+*/}}
+
+{{ $gameSlug := .Get "slug" }}
+{{ $gamesData := .Site.Data.open_research_games }}
+{{ $game := index $gamesData $gameSlug }}
+
+{{ if $game }}
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="bg-white border border-gray-300 rounded-lg my-4 overflow-hidden shadow-sm">
+      <!-- Game header -->
+      <div class="bg-gray-50 p-4 md:p-6 border-b border-gray-200">
+        <h2 class="text-lg md:text-xl lg:text-2xl font-bold text-gray-800 mb-4 pb-2 border-b border-gray-200 text-center">
+          {{ $game.title | default "Open Research Games Portal" }}
+        </h2>
+        
+        <div class="text-center">
+          <div class="d-flex flex-column flex-sm-row justify-content-center align-items-center" style="gap: 1rem;">
+            {{ if $game.access }}
+            <a href="{{ $game.access }}" target="_blank" rel="noopener" class="btn btn-success btn-lg">
+              <i class="fas fa-play mr-2"></i>Play This Game
+            </a>
+            {{ end }}
+            <a href="/open-research-games-portal/" class="btn btn-outline-primary">
+              <i class="fas fa-arrow-left mr-2"></i>Back to Portal
+            </a>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Game content -->
+      <div class="p-4 md:p-6">
+        <table class="w-full">
+          {{ if $game.unique_id }}
+          <tr class="border-b border-gray-100">
+            <th class="text-left py-3 pr-4 font-medium text-gray-700 align-top w-1/4">Unique ID</th>
+            <td class="py-3 text-gray-900 align-top">{{ $game.unique_id }}</td>
+          </tr>
+          {{ end }}
+          
+          {{ if $game.creators }}
+          <tr class="border-b border-gray-100">
+            <th class="text-left py-3 pr-4 font-medium text-gray-700 align-top w-1/4">Creators</th>
+            <td class="py-3 text-gray-900 align-top">
+              {{ if reflect.IsSlice $game.creators }}
+                {{ delimit $game.creators ", " }}
+              {{ else }}
+                {{ $game.creators }}
+              {{ end }}
+            </td>
+          </tr>
+          {{ end }}
+          
+          {{ if $game.description }}
+          <tr class="border-b border-gray-100">
+            <th class="text-left py-3 pr-4 font-medium text-gray-700 align-top w-1/4">Description</th>
+            <td class="py-3 text-gray-900 align-top">{{ $game.description }}</td>
+          </tr>
+          {{ end }}
+          
+          {{ if $game.access }}
+          <tr class="border-b border-gray-100">
+            <th class="text-left py-3 pr-4 font-medium text-gray-700 align-top w-1/4">Access URL</th>
+            <td class="py-3 text-gray-900 align-top">
+              <a href="{{ $game.access }}" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800 underline break-all">
+                {{ $game.access }}
+              </a>
+            </td>
+          </tr>
+          {{ end }}
+          
+          {{ if $game.delivery_format }}
+          <tr class="border-b border-gray-100">
+            <th class="text-left py-3 pr-4 font-medium text-gray-700 align-top w-1/4">Delivery Format</th>
+            <td class="py-3 text-gray-900 align-top">{{ $game.delivery_format }}</td>
+          </tr>
+          {{ end }}
+          
+          {{ if $game.game_type }}
+          <tr class="border-b border-gray-100">
+            <th class="text-left py-3 pr-4 font-medium text-gray-700 align-top w-1/4">Game Type</th>
+            <td class="py-3 text-gray-900 align-top">{{ $game.game_type }}</td>
+          </tr>
+          {{ end }}
+          
+          {{ if $game.gameplay_style }}
+          <tr class="border-b border-gray-100">
+            <th class="text-left py-3 pr-4 font-medium text-gray-700 align-top w-1/4">Gameplay Style</th>
+            <td class="py-3 text-gray-900 align-top">{{ $game.gameplay_style }}</td>
+          </tr>
+          {{ end }}
+          
+          {{ if $game.number_of_players }}
+          <tr class="border-b border-gray-100">
+            <th class="text-left py-3 pr-4 font-medium text-gray-700 align-top w-1/4">Number of Players</th>
+            <td class="py-3 text-gray-900 align-top">{{ $game.number_of_players }}</td>
+          </tr>
+          {{ end }}
+          
+          {{ if $game.target_audience }}
+          <tr class="border-b border-gray-100">
+            <th class="text-left py-3 pr-4 font-medium text-gray-700 align-top w-1/4">Target Audience</th>
+            <td class="py-3 text-gray-900 align-top">{{ $game.target_audience }}</td>
+          </tr>
+          {{ end }}
+          
+          {{ if $game.playtime }}
+          <tr class="border-b border-gray-100">
+            <th class="text-left py-3 pr-4 font-medium text-gray-700 align-top w-1/4">Playtime</th>
+            <td class="py-3 text-gray-900 align-top">{{ $game.playtime }}</td>
+          </tr>
+          {{ end }}
+          
+          {{ if $game.language }}
+          <tr class="border-b border-gray-100">
+            <th class="text-left py-3 pr-4 font-medium text-gray-700 align-top w-1/4">Language</th>
+            <td class="py-3 text-gray-900 align-top">
+              {{ if reflect.IsSlice $game.language }}
+                {{ range $game.language }}
+                  <span class="inline-block bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded-full mr-1 mb-1">{{ . }}</span>
+                {{ end }}
+              {{ else }}
+                {{ $game.language }}
+              {{ end }}
+            </td>
+          </tr>
+          {{ end }}
+          
+          {{ if $game.topic_area }}
+          <tr class="border-b border-gray-100">
+            <th class="text-left py-3 pr-4 font-medium text-gray-700 align-top w-1/4">Topic Area</th>
+            <td class="py-3 text-gray-900 align-top">
+              {{ if reflect.IsSlice $game.topic_area }}
+                {{ range $game.topic_area }}
+                  <span class="inline-block bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded-full mr-1 mb-1">{{ . }}</span>
+                {{ end }}
+              {{ else }}
+                {{ $game.topic_area }}
+              {{ end }}
+            </td>
+          </tr>
+          {{ end }}
+          
+        </table>
+        
+        {{ if $game.access }}
+        <div class="text-center mt-6">
+          <a href="{{ $game.access }}" target="_blank" rel="noopener" class="btn btn-success btn-lg" style="display: block; margin: 0 auto; max-width: 300px;">
+            <i class="fas fa-play mr-2"></i>Play This Game
+          </a>
+        </div>
+        {{ end }}
+      </div>
+    </div>
+  </div>
+
+{{ else }}
+  <div class="text-center py-8">
+    <h2 class="text-xl md:text-2xl font-bold text-red-600 mb-4">Game Not Found</h2>
+    <p class="text-sm md:text-base text-gray-600 mb-6">The game "{{ $gameSlug }}" could not be found.</p>
+    <a href="/open-research-games-portal/" class="btn btn-primary">
+      <i class="fas fa-arrow-left mr-2"></i>Back to Portal
+    </a>
+  </div>
+{{ end }}
