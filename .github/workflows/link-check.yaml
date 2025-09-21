@@ -1,5 +1,12 @@
 name: Link Checker
 
+# =======================
+# Website Link Validation
+# =======================
+# Purpose: Checks for broken links across the FORRT website
+# Triggers: Weekly on Mondays at 01:30 UTC or manual dispatch
+# Validates: Internal and external links, reports issues
+
 on:
   workflow_dispatch:
   schedule:
