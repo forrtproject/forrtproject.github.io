@@ -25,3 +25,136 @@
     opacity: 1 !important;
   }
 }
+
+/* Open Research Games Portal Styles */
+
+/* Game Cards */
+.game-card {
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    border: 1px solid #e9ecef;
+    border-radius: 0.5rem;
+    height: 100%;
+}
+
+.game-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    border-color: #007bff;
+}
+
+.game-card .card-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #495057;
+    margin-bottom: 1rem;
+}
+
+.game-card .card-text {
+    color: #6c757d;
+    font-size: 0.9rem;
+    line-height: 1.4;
+}
+
+/* Simple Game Modal Styling */
+.game-modal-content {
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+.game-section {
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+}
+
+.section-title {
+    color: #333;
+    font-weight: bold;
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.section-content {
+    color: #666;
+    margin-bottom: 0;
+}
+
+.game-info-section {
+    margin-bottom: 1rem;
+}
+
+.info-item {
+    margin-bottom: 0.5rem;
+    padding: 0.25rem 0;
+    border-bottom: 1px solid #eee;
+}
+
+.info-item:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+}
+
+.info-item strong {
+    color: #333;
+    font-weight: bold;
+}
+
+.topic-tags .badge, .cluster-tags .badge {
+    font-size: 0.8rem;
+    margin: 0.1rem;
+}
+
+/*  Modal */
+#gameModal .modal-header {
+    background-color: #f8f9fa;
+    border-bottom: 1px solid #dee2e6;
+}
+
+#gameModal .modal-title {
+    font-weight: bold;
+    font-size: 1.1rem;
+    color: #333;
+}
+
+#gameModal .modal-body {
+    max-height: 70vh;
+    overflow-y: scroll;
+    padding: 0.5rem;
+}
+
+#gameModal .modal-dialog {
+    max-width: 800px;
+    margin: 2rem auto;
+}
+
+#gameModal .modal-footer {
+    border-top: 1px solid #dee2e6;
+    padding: 1rem;
+}
+
+@media (max-width: 768px) {
+    #gameModal .modal-dialog {
+        max-width: 95%;
+        margin: 1rem auto;
+    }
+    
+    #gameModal .modal-body {
+        padding: 0.75rem;
+        max-height: 50vh;
+    }
+}
+
+/* Play Now Button */
+.btn-play-now {
+    background: linear-gradient(45deg, #28a745, #20c997);
+    border: none;
+    color: white;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.btn-play-now:hover {
+    background: linear-gradient(45deg, #218838, #1ea085);
+    color: white;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(40, 167, 69, 0.3);
+}

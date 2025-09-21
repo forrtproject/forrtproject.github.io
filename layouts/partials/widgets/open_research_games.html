@@ -1,0 +1,281 @@
+{{/* Open Research Games Portal Widget */}}
+
+{{/* Initialise */}}
+{{ $ := .root }}
+{{ $st := .page }}
+{{ $columns := $st.Params.design.columns | default "2" }}
+
+{{ if ne $columns "1" }}
+{{/* Standard dual-column layout. */}}
+
+<div class="row">
+  <div class="col-12 col-lg-4 section-heading">
+
+    {{ with $st.Title }}<h1>{{ . | markdownify | emojify }}</h1>{{ end }}
+    {{ with $st.Params.subtitle }}<p>{{ . | markdownify | emojify }}</p>{{ end }}
+
+  </div>
+  <div class="col-12 col-lg-8">
+
+    {{ else }}
+    {{/* Single column layout. */}}
+
+    <div class="margin-auto">
+
+      <div class="center-text">
+        {{ with $st.Title }}<h1 class="mt-0">{{ . | markdownify | emojify }}</h1>{{ end }}
+        {{ with $st.Params.subtitle }}<p>{{ . | markdownify | emojify }}</p>{{ end }}
+      </div>
+      <div>
+        {{ end }}
+
+        {{ with $st.Content }}{{ . }}{{ end }}
+
+        {{ if $st.Params.content.filter_button }}
+
+        {{ $filter_default := default (int $st.Params.content.filter_default) 0 }}
+
+        {{/* Parse default filter tag from front matter in the form of either tag name or CSS class name. */}}
+        {{ $default_filter_tag_raw := (index $st.Params.content.filter_button ($filter_default)).forrt_clusters }}
+        {{ $default_filter_tag := printf ".js-id-%s" (replace $default_filter_tag_raw " " "-") }}
+        {{ if or (eq (substr $default_filter_tag_raw 0 1) "*") (eq (substr $default_filter_tag_raw 0 1) ".") }}
+        {{ $default_filter_tag = $default_filter_tag_raw }}
+        {{ end }}
+
+        <span class="d-none default-project-filter">{{ $default_filter_tag }}</span>
+
+        {{/* Only show filter buttons if there are multiple filters. */}}
+        {{ if gt (len $st.Params.content.filter_button) 1 }}
+        <div class="project-toolbar">
+          <div class="project-filters">
+            <div class="btn-toolbar">
+              <div class="btn-group flex-wrap text-center">
+                {{ range $idx, $item := $st.Params.content.filter_button }}
+                {{/* Parse filter tag from front matter in the form of either tag name or CSS class name. */}}
+                {{ $data_filter := printf ".js-id-%s" (replace .forrt_clusters " " "-") }}
+                {{ if or (eq (substr .forrt_clusters 0 1) "*") (eq (substr .forrt_clusters 0 1) ".") }}
+                {{ $data_filter = .forrt_clusters }}
+                {{ end }}
+                <a href="#" data-filter="{{ $data_filter | safeHTMLAttr }}"
+                  class="btn btn-primary py-2 m-1 btn-lg{{ if eq $idx $filter_default }} active{{ end }}" style="line-height: 1; border-radius: 6px;">{{ .name }}</a>
+                {{ end }}
+              </div>
+            </div>
+          </div>
+        </div>
+        {{ end }}
+        {{ end }}
+
+        <div class="isotope projects-container js-layout-masonry" id="games-container">
+          {{ range $slug, $item := site.Data.open_research_games }}
+
+          {{/* Create filter classes from FORRT clusters */}}
+          {{ $js_tag_classes := "js-id-all" }}
+          {{ if $item.forrt_clusters }}
+            {{ $clusters := $item.forrt_clusters }}
+            {{ if reflect.IsSlice $clusters }}
+              {{ $cluster_classes := slice }}
+              {{ range $clusters }}
+                {{ if strings.Contains . "Cluster 1" }}{{ $cluster_classes = $cluster_classes | append "js-id-cluster-1" }}{{ end }}
+                {{ if strings.Contains . "Cluster 2" }}{{ $cluster_classes = $cluster_classes | append "js-id-cluster-2" }}{{ end }}
+                {{ if strings.Contains . "Cluster 3" }}{{ $cluster_classes = $cluster_classes | append "js-id-cluster-3" }}{{ end }}
+                {{ if strings.Contains . "Cluster 4" }}{{ $cluster_classes = $cluster_classes | append "js-id-cluster-4" }}{{ end }}
+                {{ if strings.Contains . "Cluster 5" }}{{ $cluster_classes = $cluster_classes | append "js-id-cluster-5" }}{{ end }}
+                {{ if strings.Contains . "Cluster 6" }}{{ $cluster_classes = $cluster_classes | append "js-id-cluster-6" }}{{ end }}
+                {{ if strings.Contains . "Cluster 7" }}{{ $cluster_classes = $cluster_classes | append "js-id-cluster-7" }}{{ end }}
+                {{ if strings.Contains . "Cluster 8" }}{{ $cluster_classes = $cluster_classes | append "js-id-cluster-8" }}{{ end }}
+              {{ end }}
+              {{ $js_tag_classes = delimit $cluster_classes " " }}
+            {{ end }}
+          {{ end }}
+
+          <div class="project-card project-item isotope-item py-1 {{ $js_tag_classes | safeHTMLAttr }}">
+            <div class="card game-card">
+              <div class="card-body">
+                <h5 class="card-title border-bottom border-warning pb-2">
+                  {{ $item.title }}
+                </h5>
+                
+                {{ with $item.description }}
+                <p class="card-text">{{ . | truncate 200 }}</p>
+                {{ end }}
+                
+                <div class="game-metadata">
+                  {{ with $item.gameplay_style }}
+                  <p class="small mb-1"><strong>Gameplay:</strong> {{ . }}</p>
+                  {{ end }}
+                  
+                  {{ with $item.language }}
+                  <p class="small mb-1">
+                    <strong>Language:</strong> 
+                    {{ if reflect.IsSlice . }}{{ delimit . ", " }}{{ else }}{{ . }}{{ end }}
+                  </p>
+                  {{ end }}
+                  
+                  {{ with $item.playtime }}
+                  <p class="small mb-1"><strong>Playtime:</strong> {{ . }}</p>
+                  {{ end }}
+                  
+                  {{ with $item.topic_area }}
+                  <p class="small mb-1">
+                    <strong>Topics:</strong> 
+                    {{ if reflect.IsSlice . }}{{ delimit . ", " }}{{ else }}{{ . }}{{ end }}
+                  </p>
+                  {{ end }}
+                </div>
+                
+                <div class="mt-3 d-flex justify-content-between align-items-center">
+                  {{ if $item.access }}
+                  <a href="{{ $item.access }}" target="_blank" rel="noopener" class="btn btn-success btn-sm btn-play-now">
+                    <i class="fas fa-play mr-1"></i>Play Now
+                  </a>
+                  {{ end }}
+                  
+                  <button class="btn btn-outline-info btn-sm" onclick="showGameDetails('{{ $slug }}')">
+                    <i class="fas fa-info-circle mr-1"></i>Details
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+          {{ end }}
+        </div>
+
+        <div class="mt-4">
+          <p class="text-center text-muted">
+            <strong>{{ len site.Data.open_research_games }}</strong> games available in the portal
+          </p>
+        </div>
+
+      </div>
+    </div>
+
+<!-- Game Details Modal -->
+<div class="modal fade" id="gameModal" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="modalGameTitle">Game Details</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close" onclick="$('#gameModal').modal('hide')">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body" id="modalGameContent">
+        Loading...
+      </div>
+      <div class="modal-footer">
+        <a id="modalPlayButton" href="#" target="_blank" class="btn btn-success" style="display: none;">
+          <i class="fas fa-play mr-1"></i>Play Now
+        </a>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal" onclick="$('#gameModal').modal('hide')">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+// Load games data once
+let gamesData = null;
+
+fetch('/data/open_research_games.json')
+  .then(response => response.json())
+  .then(data => {
+    gamesData = data;
+  })
+  .catch(error => console.error('Error loading games data:', error));
+
+function showGameDetails(gameSlug) {
+  if (!gamesData) {
+    alert('Games data not loaded yet. Please try again.');
+    return;
+  }
+  
+  const game = gamesData[gameSlug];
+  if (!game) {
+    alert('Game not found: ' + gameSlug);
+    return;
+  }
+  
+  // Set modal title
+  document.getElementById('modalGameTitle').textContent = game.title;
+  
+  // Set play button
+  const playButton = document.getElementById('modalPlayButton');
+  if (game.access) {
+    playButton.href = game.access;
+    playButton.style.display = 'inline-block';
+  } else {
+    playButton.style.display = 'none';
+  }
+  
+  // Create simple modal content
+  let content = '<div class="game-modal-content">';
+  
+  // Description
+  if (game.description) {
+    content += `<div class="mb-3"><h6>Description</h6><p>${game.description}</p></div>`;
+  }
+  
+  // Basic Game Info
+  content += '<div class="row">';
+  content += '<div class="col-md-6">';
+  if (game.creators) {
+    const creators = Array.isArray(game.creators) ? game.creators.join(', ') : game.creators;
+    content += `<p><strong>Creator(s):</strong> ${creators}</p>`;
+  }
+  if (game.gameplay_style) content += `<p><strong>Gameplay:</strong> ${game.gameplay_style}</p>`;
+  if (game.game_type) content += `<p><strong>Game Type:</strong> ${game.game_type}</p>`;
+  if (game.playtime) content += `<p><strong>Playtime:</strong> ${game.playtime}</p>`;
+  if (game.language) {
+    const language = Array.isArray(game.language) ? game.language.join(', ') : game.language;
+    content += `<p><strong>Language:</strong> ${language}</p>`;
+  }
+  content += '</div>';
+  
+  content += '<div class="col-md-6">';
+  if (game.target_audience) content += `<p><strong>Target Audience:</strong> ${game.target_audience}</p>`;
+  if (game.delivery_format) content += `<p><strong>Format:</strong> ${game.delivery_format}</p>`;
+  if (game.number_of_players) content += `<p><strong>Players:</strong> ${game.number_of_players}</p>`;
+  if (game.licence) content += `<p><strong>License:</strong> ${game.licence}</p>`;
+  if (game.prior_knowledge) content += `<p><strong>Prerequisites:</strong> ${game.prior_knowledge}</p>`;
+  content += '</div>';
+  content += '</div>';
+  
+  // Topic Areas
+  if (game.topic_area) {
+    const topics = Array.isArray(game.topic_area) ? game.topic_area.join(', ') : game.topic_area;
+    content += `<div class="mb-3"><h6>Topic Areas</h6><p>${topics}</p></div>`;
+  }
+  
+  // Learning Objectives
+  if (game.learning_objectives) {
+    content += `<div class="mb-3"><h6>Learning Objectives</h6>`;
+    if (Array.isArray(game.learning_objectives)) {
+      content += '<ul>' + game.learning_objectives.map(obj => `<li>${obj}</li>`).join('') + '</ul>';
+    } else {
+      content += `<p>${game.learning_objectives}</p>`;
+    }
+    content += '</div>';
+  }
+  
+  // Teaching Integration
+  if (game.teaching_integration) {
+    content += `<div class="mb-3"><h6>Teaching Integration</h6><p>${game.teaching_integration}</p></div>`;
+  }
+  
+  // Testimonials
+  if (game.testimonials) {
+    content += `<div class="mb-3"><h6>Testimonials</h6><p><em>${game.testimonials}</em></p></div>`;
+  }
+  
+  content += '</div>'; // End game-modal-content
+  
+  document.getElementById('modalGameContent').innerHTML = content;
+  
+  // Show modal with default Bootstrap settings
+  $('#gameModal').modal();
+}
+</script>
+

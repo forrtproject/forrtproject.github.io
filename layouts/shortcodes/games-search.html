@@ -1,0 +1,206 @@
+{{/* Games Search - Custom search for games data */}}
+<p id="gamesLoading">Loading search data...</p>
+<label for="gamesSearchBox">Enter keywords to find relevant games:</label>
+<input disabled placeholder="Search games by title, gameplay, topics, or FORRT clusters" type="text" name="gamesSearchBox" id="gamesSearchBox" class="w-100" />
+<div id="gamesResults"></div>
+
+<script>
+var gamesSearchFn = function () {
+    var lastTerm = "";
+    var stopwords = ["i", "me", "my", "we", "our", "you", "it", "its", "this", "that", "am", "is", "are", "was", "be", "has", "had", "do", "a", "an", "the", "but", "if", "or", "as", "of", "at", "by", "for", "with", "to", "then", "no", "not", "so", "too", "can", "and", "but"];
+    var normalizer = document.createElement("textarea");
+    var normalize = function (input) {
+        normalizer.innerHTML = input;
+        var inputDecoded = normalizer.value;
+        return " " + inputDecoded.trim().toLowerCase().replace(/[^0-9a-z ]/gi, " ").replace(/\s+/g, " ") + " ";
+    }
+    var limit = 20;
+    var minChars = 2;
+    var searching = false;
+    var gamesIndex = [];
+
+    var render = function (results) {
+        results.sort(function (a, b) { return b.weight - a.weight; });
+        for (var i = 0; i < results.length && i < limit; i += 1) {
+            var result = results[i].item;
+            var resultHTML = '<div class="search-result-item border rounded p-3 mb-2">' +
+                '<h6 class="mb-1">' +
+                '<button class="btn btn-link p-0 text-left" onclick="showGameDetails(\'' + result.slug + '\')" style="text-decoration: none; color: #007bff;">' +
+                result.showTitle + '</button>' +
+                '</h6>' +
+                '<p class="small text-muted mb-1">' + (result.showDescription ? result.showDescription.substring(0, 100) + '...' : '') + '</p>' +
+                '<div class="d-flex justify-content-between align-items-center">' +
+                '<small class="text-muted">' + (result.showGameplay || '') + '</small>' +
+                (result.access ? '<a href="' + result.access + '" target="_blank" class="btn btn-sm btn-success">Play Now</a>' : '') +
+                '</div>' +
+                '</div>';
+            $("#gamesResults").append(resultHTML);
+        }
+    };
+
+    var checkTerms = function (terms, weight, target) {
+        var weightResult = 0;
+        terms.forEach(function (term) {
+            var searchTerm = term.term.trim();
+            if (searchTerm.length >= 1) {
+                // Check for exact matches (highest weight)
+                if (~target.indexOf(searchTerm)) {
+                    var idx = target.indexOf(searchTerm);
+                    while (~idx) {
+                        weightResult += term.weight * weight;
+                        idx = target.indexOf(searchTerm, idx + 1);
+                    }
+                }
+                
+                // Check for partial matches (lower weight) - split target into words
+                var targetWords = target.split(' ');
+                targetWords.forEach(function(word) {
+                    if (word.length >= 3 && searchTerm.length >= 2) {
+                        // Partial match at beginning of word
+                        if (word.indexOf(searchTerm) === 0) {
+                            weightResult += (term.weight * weight * 0.7);
+                        }
+                        // Partial match anywhere in word
+                        else if (~word.indexOf(searchTerm)) {
+                            weightResult += (term.weight * weight * 0.5);
+                        }
+                    }
+                });
+            }
+        });
+        return weightResult;
+    };
+
+    var search = function (terms) {
+        var results = [];
+        gamesIndex.forEach(function (item) {
+            var weight = 0;
+            
+            // Title has highest weight
+            weight += checkTerms(terms, 16, item.title);
+            
+            // Gameplay style
+            weight += checkTerms(terms, 8, item.gameplay_style);
+            
+            // Topic areas
+            weight += checkTerms(terms, 6, item.topic_area);
+            
+            // FORRT clusters
+            weight += checkTerms(terms, 6, item.forrt_clusters);
+            
+            // Description
+            weight += checkTerms(terms, 2, item.description);
+            
+            if (weight) {
+                results.push({
+                    weight: weight,
+                    item: item
+                });
+            }
+        });
+        
+        if (results.length) {
+            var resultsMessage = results.length + " games found.";
+            if (results.length > limit) {
+                resultsMessage += " Showing first " + limit + " results.";
+            }
+            $("#gamesResults").html("<p class='text-muted'>" + resultsMessage + "</p>");
+            render(results);
+        } else {
+            $("#gamesResults").html('<p class="text-muted">No games found.</p>');
+        }
+    };
+
+    var runSearch = function () {
+        if (searching) return;
+        
+        var term = normalize($("#gamesSearchBox").val()).trim();
+        if (term === lastTerm) return;
+        
+        lastTerm = term;
+        if (term.length < 1) {
+            $("#gamesResults").html('<p class="text-muted">Enter at least 1 character to search.</p>');
+            return;
+        }
+        
+        searching = true;
+        var startSearch = new Date();
+        $("#gamesResults").html('<p class="text-muted">Searching...</p>');
+        
+        var terms = term.split(" ");
+        var termsTree = [];
+        
+        // Add individual terms (for partial matching)
+        terms.forEach(function(singleTerm) {
+            if (singleTerm.length >= 1 && stopwords.indexOf(singleTerm) < 0) {
+                termsTree.push({
+                    weight: 2,
+                    term: " " + singleTerm + " "
+                });
+            }
+        });
+        
+        // Add phrase combinations (for exact matching)
+        for (var i = 0; i < terms.length; i += 1) {
+            for (var j = i; j < terms.length; j += 1) {
+                var weight = Math.pow(2, j - i);
+                var str = "";
+                for (var k = i; k <= j; k += 1) {
+                    str += (terms[k] + " ");
+                }
+                var newTerm = str.trim();
+                if (newTerm.length >= minChars && stopwords.indexOf(newTerm) < 0) {
+                    termsTree.push({
+                        weight: weight,
+                        term: " " + str.trim() + " "
+                    });
+                }
+            }
+        }
+        search(termsTree);
+        searching = false;
+        var endSearch = new Date();
+        $("#gamesResults").append("<p class='small text-muted'>Search took " + (endSearch - startSearch) + "ms.</p>");
+    };
+
+    var initSearch = function () {
+        $("#gamesSearchBox").keyup(function () {
+            runSearch();
+        });
+        runSearch();
+    };
+
+    // Hide search box initially
+    $("#gamesSearchBox").hide();
+    
+    // Load games data using jQuery like the main search
+    $.getJSON("/data/open_research_games.json", function (games) {
+        Object.keys(games).forEach(function(slug) {
+            var game = games[slug];
+            var searchItem = {
+                slug: slug,
+                title: normalize(game.title || ""),
+                description: normalize(game.description || ""),
+                gameplay_style: normalize(game.gameplay_style || ""),
+                topic_area: normalize(Array.isArray(game.topic_area) ? game.topic_area.join(" ") : (game.topic_area || "")),
+                forrt_clusters: normalize(Array.isArray(game.forrt_clusters) ? game.forrt_clusters.join(" ") : (game.forrt_clusters || "")),
+                // Keep original data for display
+                showTitle: game.title,
+                showDescription: game.description,
+                showGameplay: game.gameplay_style,
+                access: game.access
+            };
+            gamesIndex.push(searchItem);
+        });
+        
+        // Show search box and hide loading
+        $("#gamesLoading").hide();
+        $("#gamesSearchBox").show().removeAttr("disabled").focus();
+        initSearch();
+    }).fail(function() {
+        $("#gamesLoading").text("Error loading search data.");
+    });
+};
+
+window.addEventListener("DOMContentLoaded", gamesSearchFn);
+</script>
