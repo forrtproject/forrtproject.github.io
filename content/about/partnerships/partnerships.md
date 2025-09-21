@@ -287,6 +287,16 @@ More information at [www.openscienceGATE.com](https://opensciencegate.com/)
 
 ---
 
+<img src="logos/rose_logo.webp" align="right" width=200px alt="Researchers of Statistics Education (RoSE) Network logo" /> 
+
+<br>
+
+[The Researchers of Statistics Education (RoSE)](https://www.rose-network.org/home) Network proactively creates an open and inclusive space for multidisciplinary researchers and practitioners of statistics education globally to connect, learn, and collaborate, toward advancing statistics education research and evidence-based practice.
+
+<br>
+
+---
+
 ## FORRT membership in the UNESCO Global Open Science Partnership
 
 <a href="logos/2025_04_09_FORRT_Flavio_Azevedo_.pdf" target="_blank">
