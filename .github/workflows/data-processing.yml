@@ -20,9 +20,15 @@ jobs:
     env:
       PYTHON_VERSION: "3.11"
     steps:
+      # =======================
+      # Repository Setup
+      # =======================
       - name: Checkout repository
         uses: actions/checkout@v4
 
+      # =======================
+      # Workflow Configuration
+      # =======================
       - name: Check if monthly run
         id: monthly-run
         run: |
@@ -35,6 +41,9 @@ jobs:
             echo "🔄 Monthly run detected - will run contributor analysis"
           fi
 
+      # =======================
+      # Environment Setup
+      # =======================
       - name: Configure Git
         run: |
           git config --global user.email "mudaherarich@gmail.com"
@@ -52,6 +61,9 @@ jobs:
       - name: Install tenzing R dependencies
         run: Rscript -e 'install.packages(c("rmarkdown","ggplot2", "readxl", "dplyr", "googlesheets4", "stringr", "gridExtra", "glue", "tidygraph", "ggraph", "igraph", "visNetwork"))'
 
+      # =======================
+      # Contributor Analysis (Monthly)
+      # =======================
       - name: Run Contributor Analysis
         if: steps.monthly-run.outputs.is_monthly == 'true'
         continue-on-error: true  # Continue even if this step fails
@@ -79,6 +91,9 @@ jobs:
           
           echo "✅ Contributor analysis complete"
 
+      # =======================
+      # Tenzing Data Processing
+      # =======================
       - name: Install Python dependencies
         run: python3 -m pip install -r ./requirements.txt
 
@@ -109,6 +124,9 @@ jobs:
             fi
           done
 
+      # =======================
+      # Google Analytics Data
+      # =======================
       - name: Download GA Data
         continue-on-error: true  # Continue even if this step fails
         env:
@@ -185,12 +203,18 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.FORRT_PAT }}
           GH_TOKEN: ${{ secrets.FORRT_PAT }}
 
+      # =======================
+      # Google Scholar Citations
+      # =======================
       - name: Run Google Scholar script
         continue-on-error: true
         run: python3 scripts/gs-cite/google_scholar.py
         env:
           SERPAPI: ${{ secrets.SERPAPI }}
 
+      # =======================
+      # Artifact Upload
+      # =======================
       - name: Upload data artifact
         id: upload-artifact
         uses: actions/upload-artifact@v4
