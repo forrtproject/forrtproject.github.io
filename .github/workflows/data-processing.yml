@@ -220,6 +220,14 @@ jobs:
       #========================================
       # Download Google Analytics data and validate
       #========================================
+      # Open Research Games Portal
+      - name: Process Open Research Games Portal data
+        continue-on-error: true
+        run: |
+          Rscript scripts/open_research_games_portal/Open-Research-Games-Portal.R
+          mkdir -p static/data
+          cp data/open_research_games.json static/data/ 2>/dev/null || true
+
       - name: Download GA Data
         continue-on-error: true  # Continue even if this step fails
         env:
