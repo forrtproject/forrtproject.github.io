@@ -149,6 +149,8 @@ jobs:
           Rscript scripts/open_research_games_portal/Open-Research-Games-Portal.R
           if [ -f "data/open_research_games.json" ]; then
             cp data/open_research_games.json static/data/ 2>/dev/null || true
+            # Generate individual game pages for better SEO and URL structure
+            Rscript scripts/open_research_games_portal/generate_game_pages.R
           fi
 
       # =======================

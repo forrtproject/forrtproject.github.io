@@ -1,0 +1,222 @@
+{{/*
+  Single Game Details Shortcode
+  
+  Purpose: Displays detailed information for a specific game based on page's game_slug
+  Usage: single-game-details shortcode in individual game pages
+  Data Source: /data/open_research_games.json
+  
+  Features:
+  - Gets game slug from page frontmatter instead of URL parameters
+  - Same styling and functionality as game-details shortcode
+  - Better SEO and direct linking support
+*/}}
+
+<!-- Loading container with responsive layout -->
+<div id="single-game-container" class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- Loading spinner shown while fetching game data -->
+    <div class="text-center py-8" id="loading-spinner">
+        <div class="inline-block animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600"></div>
+        <p class="mt-4 text-sm md:text-base text-gray-600">Loading game information...</p>
+    </div>
+</div>
+
+<style>
+/* Reuse the same styles as game-details shortcode */
+.game-details-card {
+    @apply bg-white border border-gray-300 rounded-lg my-4 overflow-hidden shadow-sm;
+}
+
+.game-header {
+    @apply bg-gray-50 p-4 md:p-6 border-b border-gray-200;
+}
+
+.game-content {
+    @apply p-4 md:p-6;
+}
+
+.game-info-table {
+    @apply w-full;
+}
+
+.game-info-table tr {
+    @apply border-b border-gray-100 last:border-b-0;
+}
+
+.game-info-table th {
+    @apply text-left py-3 pr-4 font-medium text-gray-700 align-top w-1/4;
+}
+
+.game-info-table td {
+    @apply py-3 text-gray-900 align-top;
+}
+
+.game-tag {
+    @apply inline-block bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded-full mr-1 mb-1;
+}
+
+.game-link {
+    @apply text-blue-600 hover:text-blue-800 underline break-all;
+}
+
+.back-button {
+    @apply bg-gray-500 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded mr-2 mb-2 inline-block text-center no-underline transition-colors duration-200;
+}
+
+.visit-game-button {
+    @apply bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded mb-2 inline-block text-center no-underline transition-colors duration-200;
+}
+
+@media (max-width: 768px) {
+    .game-info-table th,
+    .game-info-table td {
+        @apply block w-full py-2;
+    }
+    
+    .game-info-table th {
+        @apply font-bold text-gray-800 border-b-0;
+    }
+    
+    .game-info-table td {
+        @apply mb-4 pb-4 border-b border-gray-200;
+    }
+}
+</style>
+
+<script>
+// Get game slug from page frontmatter (passed via Hugo)
+const gameSlug = '{{ .Page.Params.game_slug }}';
+
+// Handle case when no game slug is specified
+if (!gameSlug) {
+    document.getElementById('single-game-container').innerHTML = `
+        <div class="text-center py-8">
+            <h2 class="text-xl md:text-2xl font-bold text-red-600 mb-4">Error: Game Not Found</h2>
+            <p class="text-sm md:text-base text-gray-600 mb-6">No game slug specified for this page.</p>
+            <a href="/open-research-games-portal/" class="back-button">← Back to Games Portal</a>
+        </div>
+    `;
+} else {
+    // Load and display the game data
+    loadGameData(gameSlug);
+}
+
+async function loadGameData(slug) {
+    try {
+        const response = await fetch('/data/open_research_games.json');
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        
+        const gamesData = await response.json();
+        const game = gamesData[slug];
+        
+        if (!game) {
+            displayGameNotFound(slug);
+            return;
+        }
+        
+        displayGameDetails(game, slug);
+        
+    } catch (error) {
+        console.error('Error loading games data:', error);
+        displayLoadError();
+    }
+}
+
+function displayGameDetails(game, slug) {
+    // Create the game details HTML (same as original game-details shortcode)
+    const gameTitle = game.title || 'Untitled Game';
+    const gameAccess = game.access || '';
+    
+    const gameDetailsHTML = `
+        <div class="game-details-card">
+            <div class="game-header">
+                <h1 class="text-xl md:text-3xl font-bold text-gray-800 mb-4">${gameTitle}</h1>
+                <div class="flex flex-wrap gap-2">
+                    <a href="/open-research-games-portal/" class="back-button">← Back to Games Portal</a>
+                    ${gameAccess ? `<a href="${gameAccess}" target="_blank" rel="noopener noreferrer" class="visit-game-button">Visit Game →</a>` : ''}
+                </div>
+            </div>
+            
+            <div class="game-content">
+                <table class="game-info-table">
+                    ${generateGameInfoRows(game)}
+                </table>
+            </div>
+        </div>
+    `;
+    
+    document.getElementById('single-game-container').innerHTML = gameDetailsHTML;
+}
+
+function generateGameInfoRows(game) {
+    const fields = [
+        { key: 'unique_id', label: 'Unique ID' },
+        { key: 'title', label: 'Title' },
+        { key: 'creators', label: 'Creators' },
+        { key: 'description', label: 'Description' },
+        { key: 'access', label: 'Access URL', isLink: true },
+        { key: 'delivery_format', label: 'Delivery Format' },
+        { key: 'game_type', label: 'Game Type' },
+        { key: 'gameplay_style', label: 'Gameplay Style' },
+        { key: 'number_of_players', label: 'Number of Players' },
+        { key: 'target_audience', label: 'Target Audience' },
+        { key: 'last_updated', label: 'Last Updated' },
+        { key: 'language', label: 'Language', isArray: true },
+        { key: 'licence', label: 'License' },
+        { key: 'topic_area', label: 'Topic Area', isArray: true },
+        { key: 'forrt_clusters', label: 'FORRT Clusters', isArray: true },
+        { key: 'learning_objectives', label: 'Learning Objectives', isArray: true },
+        { key: 'formal_evaluation', label: 'Formal Evaluation' },
+        { key: 'suggested_audience', label: 'Suggested Audience' },
+        { key: 'prior_knowledge', label: 'Prior Knowledge' },
+        { key: 'playtime', label: 'Playtime' },
+        { key: 'scalability', label: 'Scalability' },
+        { key: 'teaching_integration', label: 'Teaching Integration' },
+        { key: 'context_specific_elements', label: 'Context Specific Elements' },
+        { key: 'preparation', label: 'Preparation' },
+        { key: 'testimonials', label: 'Testimonials' }
+    ];
+    
+    return fields.map(field => {
+        const value = game[field.key];
+        if (!value || value === '') return '';
+        
+        let displayValue;
+        if (field.isArray && Array.isArray(value)) {
+            displayValue = value.map(item => `<span class="game-tag">${item}</span>`).join('');
+        } else if (field.isLink) {
+            displayValue = `<a href="${value}" target="_blank" rel="noopener noreferrer" class="game-link">${value}</a>`;
+        } else {
+            displayValue = value;
+        }
+        
+        return `
+            <tr>
+                <th>${field.label}</th>
+                <td>${displayValue}</td>
+            </tr>
+        `;
+    }).filter(row => row !== '').join('');
+}
+
+function displayGameNotFound(slug) {
+    document.getElementById('single-game-container').innerHTML = `
+        <div class="text-center py-8">
+            <h2 class="text-xl md:text-2xl font-bold text-red-600 mb-4">Game Not Found</h2>
+            <p class="text-sm md:text-base text-gray-600 mb-6">The game "${slug}" could not be found in our database.</p>
+            <a href="/open-research-games-portal/" class="back-button">← Back to Games Portal</a>
+        </div>
+    `;
+}
+
+function displayLoadError() {
+    document.getElementById('single-game-container').innerHTML = `
+        <div class="text-center py-8">
+            <h2 class="text-xl md:text-2xl font-bold text-red-600 mb-4">Loading Error</h2>
+            <p class="text-sm md:text-base text-gray-600 mb-6">There was an error loading the game data. Please try again later.</p>
+            <a href="/open-research-games-portal/" class="back-button">← Back to Games Portal</a>
+        </div>
+    `;
+}
+</script>
