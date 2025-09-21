@@ -1,14 +1,19 @@
 ---
-widget: open_research_games
-headless: true
-active: true
-weight: 20
-title: Open Research Games Portal
-subtitle: ""
+# Open Research Games Portal Widget Configuration
+# 
+# This file configures the main games display widget with filtering capabilities
+# The widget displays game cards and provides filtering by FORRT clusters
+
+widget: open_research_games        # Custom widget type
+headless: true                     # Don't generate individual page
+active: true                       # Widget is active
+weight: 20                         # Display order on page
+title: Open Research Games Portal  # Widget title
+subtitle: ""                       # No subtitle
 content:
-  page_type: open_research_games
-  filter_default: 0
-  filter_button:
+  page_type: open_research_games   # Page type for filtering
+  filter_default: 0                # Default filter (All)
+  filter_button:                   # Filter button definitions
     - name: All
       forrt_clusters: "*"
     - name: Replication Crisis

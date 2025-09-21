@@ -1,11 +1,33 @@
-library(readxl)
-library(dplyr)  
-library(tidyr) 
-library(googlesheets4)
-library(stringr)
-library(jsonlite)
+#===============================================================================
+# Open Research Games Portal - Data Processing Script
+#===============================================================================
+#
+# Purpose: Fetches educational game data from Google Sheets and processes it
+#          for use in the FORRT Open Research Games Portal
+#
+# Input: Google Sheets with 25 columns of game information
+# Output: data/open_research_games.json (for Hugo site consumption)
+#
+# Features:
+# - Robust Google Sheets API access with fallback to CSV export
+# - Data cleaning and slug generation  
+# - JSON output optimized for Hugo site.Data
+# - Error handling for authentication issues
+# - Backup Google Sheet creation with processed data
+#
+# Usage: Rscript scripts/open_research_games_portal/Open-Research-Games-Portal.R
+#
+#===============================================================================
 
-# Disable authentication for public sheets
+# Required libraries
+library(readxl)        # Excel file reading
+library(dplyr)         # Data manipulation
+library(tidyr)         # Data tidying
+library(googlesheets4) # Google Sheets API
+library(stringr)       # String manipulation
+library(jsonlite)      # JSON output
+
+# Disable authentication for public sheets access
 gs4_deauth()
 
 # Google Sheets URLs

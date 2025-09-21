@@ -1,0 +1,250 @@
+{{/*
+  Open Research Games Portal - Game Details Shortcode
+  
+  Purpose: Displays detailed information for a specific game based on URL parameter
+  Usage: game-details shortcode
+  URL Format: /open-research-games-portal/game-details/?game=game-slug-id
+  Data Source: /data/open_research_games.json
+  
+  Features:
+  - Responsive design with Tailwind CSS
+  - Dynamic content loading from JSON
+  - Error handling for missing games
+  - All 25 game data fields displayed in table format
+  - Bootstrap buttons for consistent styling
+  - Mobile-first responsive design
+*/}}
+
+<!-- Loading container with responsive layout -->
+<div id="game-details-container" class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- Loading spinner shown while fetching game data -->
+    <div class="text-center py-8" id="loading-spinner">
+        <div class="inline-block animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600"></div>
+        <p class="mt-4 text-sm md:text-base text-gray-600">Loading game information...</p>
+    </div>
+</div>
+
+<style>
+/* Game Details Card - Main container for game information */
+.game-details-card {
+    @apply bg-white border border-gray-300 rounded-lg my-4 overflow-hidden shadow-sm;
+}
+
+/* Game Header - Contains title and action buttons */
+.game-header {
+    @apply bg-gray-50 p-4 md:p-6 border-b border-gray-200;
+}
+
+/* Game Content - Contains the information table */
+.game-content {
+    @apply p-4 md:p-6;
+}
+
+/* Game Information Table - Displays all game fields */
+.game-info-table {
+    @apply w-full;
+}
+
+/* Table rows with subtle borders */
+.game-info-table tr {
+    @apply border-b border-gray-100 last:border-b-0;
+}
+
+/* Table cells with proper spacing */
+.game-info-table td {
+    @apply py-3 align-top;
+}
+
+/* Field labels - Left column with field names */
+.game-info-table .field-label {
+    @apply font-semibold text-gray-600 pr-4 w-32 sm:w-40 md:w-48 text-sm md:text-base;
+}
+
+/* Field values - Right column with game data */
+.game-info-table .field-value {
+    @apply text-gray-800 text-sm md:text-base break-words;
+}
+
+/* Bottom buttons section */
+.game-buttons {
+    @apply text-center p-4 md:p-6 bg-gray-50 border-t border-gray-200;
+}
+
+/* Error state styling */
+.game-error {
+    @apply text-red-600 text-center p-6 md:p-8 bg-gray-50 rounded-lg my-8;
+}
+
+/* Mobile-specific adjustments */
+@media (max-width: 640px) {
+    .game-info-table {
+        @apply text-sm;
+    }
+    
+    .game-info-table .field-label {
+        @apply w-24 pr-2;
+    }
+}
+</style>
+
+<script>
+// Extract game slug from URL parameter (?game=slug)
+const urlParams = new URLSearchParams(window.location.search);
+const gameSlug = urlParams.get('game');
+
+// Handle case when no game is specified in URL
+if (!gameSlug) {
+    document.getElementById('game-details-container').innerHTML = `
+        <div class="game-error">
+            <h2 class="text-xl md:text-2xl font-bold mb-4">No Game Specified</h2>
+            <p class="mb-6 text-sm md:text-base">Please select a game from the portal to view its details.</p>
+            <a href="/open-research-games-portal/" class="btn btn-primary">
+                <i class="fas fa-arrow-left mr-2"></i>Back to Portal
+            </a>
+        </div>
+    `;
+} else {
+    // Fetch game data from JSON file and display game details
+    fetch('/data/open_research_games.json')
+        .then(response => response.json())
+        .then(data => {
+            const game = data[gameSlug];
+            
+            // Handle case when game slug doesn't exist in data
+            if (!game) {
+                document.getElementById('game-details-container').innerHTML = `
+                    <div class="game-error">
+                        <h2 class="text-xl md:text-2xl font-bold mb-4">Game Not Found</h2>
+                        <p class="mb-6 text-sm md:text-base">The requested game "<strong class="font-semibold">${gameSlug}</strong>" could not be found.</p>
+                        <a href="/open-research-games-portal/" class="btn btn-primary">
+                            <i class="fas fa-arrow-left mr-2"></i>Back to Portal
+                        </a>
+                    </div>
+                `;
+                return;
+            }
+
+            // Helper function to format field values for display
+            function formatValue(value) {
+                if (!value) return '<em class="text-gray-400 text-sm">Not specified</em>';
+                if (Array.isArray(value)) return value.join(', ');
+                return value;
+            }
+
+            // Complete list of all 25 game data fields from Google Sheets
+            const gameFields = [
+                { key: 'unique_id', label: 'Unique ID' },
+                { key: 'title', label: 'Title' },
+                { key: 'creators', label: 'Creators' },
+                { key: 'description', label: 'Description' },
+                { key: 'access', label: 'Access', isLink: true },
+                { key: 'delivery_format', label: 'Delivery Format' },
+                { key: 'game_type', label: 'Game Type' },
+                { key: 'gameplay_style', label: 'Gameplay Style' },
+                { key: 'number_of_players', label: 'Number of Players' },
+                { key: 'target_audience', label: 'Target Audience' },
+                { key: 'last_updated', label: 'Last Updated' },
+                { key: 'language', label: 'Language' },
+                { key: 'licence', label: 'Licence' },
+                { key: 'topic_area', label: 'Topic Area' },
+                { key: 'forrt_clusters', label: 'FORRT Clusters' },
+                { key: 'learning_objectives', label: 'Learning Objectives' },
+                { key: 'formal_evaluation', label: 'Formal Evaluation' },
+                { key: 'suggested_audience', label: 'Suggested Audience' },
+                { key: 'prior_knowledge', label: 'Prior Knowledge' },
+                { key: 'playtime', label: 'Playtime' },
+                { key: 'scalability', label: 'Scalability' },
+                { key: 'teaching_integration', label: 'Teaching Integration' },
+                { key: 'context_specific_elements', label: 'Context-Specific Elements' },
+                { key: 'preparation', label: 'Preparation' },
+                { key: 'testimonials', label: 'Testimonials' }
+            ];
+
+            // Build the complete game details HTML structure
+            let gameHTML = `
+                <div class="game-details-card">
+                    <!-- Game header with title and action buttons -->
+                    <div class="game-header">
+                        <!-- Centered game title with responsive sizing and bottom border -->
+                        <h2 class="text-lg md:text-xl lg:text-2xl font-bold text-gray-800 mb-4 pb-2 border-b border-gray-200 text-center">${game.title}</h2>
+                        
+                        <!-- Action buttons: Play Now and Back to Portal -->
+                        <div class="text-center">
+                            <div class="d-flex flex-column flex-sm-row justify-content-center align-items-center" style="gap: 1rem;">
+                                ${game.access ? `
+                                <!-- Play Now button (only shown if game has access URL) -->
+                                <a href="${game.access}" target="_blank" rel="noopener" class="btn btn-success btn-lg" style="min-width: 150px;">
+                                    <i class="fas fa-play mr-2"></i>Play Now
+                                </a>
+                                ` : ''}
+                                <!-- Back to Portal navigation button -->
+                                <a href="/open-research-games-portal/" class="btn btn-outline-secondary btn-lg" style="min-width: 150px;">
+                                    <i class="fas fa-arrow-left mr-2"></i>Back to Portal
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Game content section with information table -->
+                    <div class="game-content">
+                        <table class="game-info-table">
+            `;
+
+            // Iterate through all game fields and add populated ones to table
+            gameFields.forEach(field => {
+                const value = game[field.key];
+                // Only display fields that have data
+                if (value !== undefined && value !== null && value !== '') {
+                    let formattedValue = formatValue(value);
+                    
+                    // Special handling for access URLs to make them clickable
+                    if (field.isLink && value) {
+                        formattedValue = `<a href="${value}" target="_blank" rel="noopener">${value}</a>`;
+                    }
+                    
+                    // Add table row with field label and value
+                    gameHTML += `
+                        <tr>
+                            <td class="field-label">${field.label}:</td>
+                            <td class="field-value">${formattedValue}</td>
+                        </tr>
+                    `;
+                }
+            });
+
+            // Close table and add bottom action button
+            gameHTML += `
+                        </table>
+                    </div>
+
+                    <!-- Bottom section with large Play This Game button -->
+                    <div class="game-buttons">
+                        ${game.access ? `
+                        <!-- Large, centered Play This Game button -->
+                        <a href="${game.access}" target="_blank" rel="noopener" class="btn btn-success btn-lg" style="display: block; margin: 0 auto; max-width: 300px;">
+                            <i class="fas fa-play mr-2"></i>Play This Game
+                        </a>
+                        ` : ''}
+                    </div>
+                </div>
+            `;
+
+            // Update DOM with generated HTML and set page title
+            document.getElementById('game-details-container').innerHTML = gameHTML;
+            document.title = `${game.title} - FORRT`;
+        })
+        .catch(error => {
+            console.error('Error loading game data:', error);
+            document.getElementById('game-details-container').innerHTML = `
+                <div class="game-error">
+                    <h2 class="text-xl md:text-2xl font-bold mb-4">Error Loading Game</h2>
+                    <p class="mb-4 text-sm md:text-base">There was an error loading the game information. Please try again later.</p>
+                    <p class="text-xs text-gray-500 mb-6">Error: ${error.message}</p>
+                    <a href="/open-research-games-portal/" class="btn btn-primary">
+                        <i class="fas fa-arrow-left mr-2"></i>Back to Portal
+                    </a>
+                </div>
+            `;
+        });
+}
+</script>

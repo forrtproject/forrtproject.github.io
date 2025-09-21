@@ -1,13 +1,29 @@
 name: Data Processing
 
-# This workflow is triggered daily at midnight and can also be manually triggered.
-# Contributor analysis and GA PR creation only run on the 1st of the month.
-# It processes data from various scripts and uploads the processed data as an artifact.
-# The data is used to update the website's content.
+# FORRT Data Processing Workflow
+# 
+# Purpose: Automated data fetching and processing for FORRT website content
+# 
+# Triggers:
+# - Weekly on Sundays at midnight UTC (scheduled)
+# - Manual trigger via GitHub Actions UI (workflow_dispatch)
+# 
+# Data Sources Processed:
+# 1. Curated Resources (Python script)
+# 2. Open Research Games Portal (R script) - NEW
+# 3. Google Analytics data (Python script)
+# 4. Contributor analysis (R script) - Monthly only
+# 
+# Outputs:
+# - Updated JSON data files in data/ directory
+# - Static copies in static/data/ for client-side access
+# - Automated PRs for contributor analysis (monthly)
+# 
+# The processed data is used throughout the Hugo website for dynamic content.
 
 on:
   schedule:
-    - cron: '0 0 * * *'  # Daily at Midnight
+    - cron: '0 0 * * 0'  # Weekly on Sundays at Midnight UTC
   workflow_dispatch:
 
 jobs:
@@ -108,6 +124,14 @@ jobs:
               exit 1
             fi
           done
+
+      # Open Research Games Portal
+      - name: Process Open Research Games Portal data
+        continue-on-error: true
+        run: |
+          Rscript scripts/open_research_games_portal/Open-Research-Games-Portal.R
+          mkdir -p static/data
+          cp data/open_research_games.json static/data/ 2>/dev/null || true
 
       - name: Download GA Data
         continue-on-error: true  # Continue even if this step fails

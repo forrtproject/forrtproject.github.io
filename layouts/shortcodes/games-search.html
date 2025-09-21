@@ -1,4 +1,18 @@
-{{/* Games Search - Custom search for games data */}}
+{{/*
+  Open Research Games Portal - Search Shortcode
+  
+  Purpose: Provides client-side search functionality for games
+  Usage: {{< games-search >}}
+  Data Source: /data/open_research_games.json (loaded via jQuery)
+  
+  
+  Implementation:
+  - Uses jQuery for JSON loading (matches site pattern)
+  - Custom search algorithm with stopword filtering
+  - Responsive result cards with game preview
+  - Integrated with existing site styling
+*/}}
+
 <p id="gamesLoading">Loading search data...</p>
 <label for="gamesSearchBox">Enter keywords to find relevant games:</label>
 <input disabled placeholder="Search games by title, gameplay, topics, or FORRT clusters" type="text" name="gamesSearchBox" id="gamesSearchBox" class="w-100" />
@@ -25,8 +39,8 @@ var gamesSearchFn = function () {
             var result = results[i].item;
             var resultHTML = '<div class="search-result-item border rounded p-3 mb-2">' +
                 '<h6 class="mb-1">' +
-                '<button class="btn btn-link p-0 text-left" onclick="showGameDetails(\'' + result.slug + '\')" style="text-decoration: none; color: #007bff;">' +
-                result.showTitle + '</button>' +
+                '<a href="/open-research-games-portal/game-details/?game=' + result.slug + '" class="btn btn-link p-0 text-left" style="text-decoration: none; color: #007bff;">' +
+                result.showTitle + '</a>' +
                 '</h6>' +
                 '<p class="small text-muted mb-1">' + (result.showDescription ? result.showDescription.substring(0, 100) + '...' : '') + '</p>' +
                 '<div class="d-flex justify-content-between align-items-center">' +

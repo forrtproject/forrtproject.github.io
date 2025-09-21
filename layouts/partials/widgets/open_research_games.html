@@ -1,4 +1,22 @@
-{{/* Open Research Games Portal Widget */}}
+{{/*
+  Open Research Games Portal Widget
+  
+  Purpose: Main widget for displaying game cards with filtering and search functionality
+  Data Source: site.Data.open_research_games (from data/open_research_games.json)
+  
+  
+  Card Information Displayed:
+  - Game title
+  - Description (truncated)
+  - Gameplay style
+  - FORRT clusters (for filtering)
+  - Play Now and Details buttons
+  
+  Filtering System:
+  - Uses CSS classes: js-id-all, js-id-cluster-1, js-id-cluster-2, etc.
+  - Isotope.js handles dynamic filtering
+  - Filter buttons defined in content/open-research-games-portal/games.md
+*/}}
 
 {{/* Initialise */}}
 {{ $ := .root }}
@@ -131,9 +149,9 @@
                   </a>
                   {{ end }}
                   
-                  <button class="btn btn-outline-info btn-sm" onclick="showGameDetails('{{ $slug }}')">
+                  <a href="/open-research-games-portal/game-details/?game={{ $slug }}" class="btn btn-outline-info btn-sm">
                     <i class="fas fa-info-circle mr-1"></i>Details
-                  </button>
+                  </a>
                 </div>
               </div>
             </div>
@@ -152,130 +170,4 @@
       </div>
     </div>
 
-<!-- Game Details Modal -->
-<div class="modal fade" id="gameModal" tabindex="-1" role="dialog" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="modalGameTitle">Game Details</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close" onclick="$('#gameModal').modal('hide')">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body" id="modalGameContent">
-        Loading...
-      </div>
-      <div class="modal-footer">
-        <a id="modalPlayButton" href="#" target="_blank" class="btn btn-success" style="display: none;">
-          <i class="fas fa-play mr-1"></i>Play Now
-        </a>
-        <button type="button" class="btn btn-secondary" data-dismiss="modal" onclick="$('#gameModal').modal('hide')">Close</button>
-      </div>
-    </div>
-  </div>
-</div>
-
-<script>
-// Load games data once
-let gamesData = null;
-
-fetch('/data/open_research_games.json')
-  .then(response => response.json())
-  .then(data => {
-    gamesData = data;
-  })
-  .catch(error => console.error('Error loading games data:', error));
-
-function showGameDetails(gameSlug) {
-  if (!gamesData) {
-    alert('Games data not loaded yet. Please try again.');
-    return;
-  }
-  
-  const game = gamesData[gameSlug];
-  if (!game) {
-    alert('Game not found: ' + gameSlug);
-    return;
-  }
-  
-  // Set modal title
-  document.getElementById('modalGameTitle').textContent = game.title;
-  
-  // Set play button
-  const playButton = document.getElementById('modalPlayButton');
-  if (game.access) {
-    playButton.href = game.access;
-    playButton.style.display = 'inline-block';
-  } else {
-    playButton.style.display = 'none';
-  }
-  
-  // Create simple modal content
-  let content = '<div class="game-modal-content">';
-  
-  // Description
-  if (game.description) {
-    content += `<div class="mb-3"><h6>Description</h6><p>${game.description}</p></div>`;
-  }
-  
-  // Basic Game Info
-  content += '<div class="row">';
-  content += '<div class="col-md-6">';
-  if (game.creators) {
-    const creators = Array.isArray(game.creators) ? game.creators.join(', ') : game.creators;
-    content += `<p><strong>Creator(s):</strong> ${creators}</p>`;
-  }
-  if (game.gameplay_style) content += `<p><strong>Gameplay:</strong> ${game.gameplay_style}</p>`;
-  if (game.game_type) content += `<p><strong>Game Type:</strong> ${game.game_type}</p>`;
-  if (game.playtime) content += `<p><strong>Playtime:</strong> ${game.playtime}</p>`;
-  if (game.language) {
-    const language = Array.isArray(game.language) ? game.language.join(', ') : game.language;
-    content += `<p><strong>Language:</strong> ${language}</p>`;
-  }
-  content += '</div>';
-  
-  content += '<div class="col-md-6">';
-  if (game.target_audience) content += `<p><strong>Target Audience:</strong> ${game.target_audience}</p>`;
-  if (game.delivery_format) content += `<p><strong>Format:</strong> ${game.delivery_format}</p>`;
-  if (game.number_of_players) content += `<p><strong>Players:</strong> ${game.number_of_players}</p>`;
-  if (game.licence) content += `<p><strong>License:</strong> ${game.licence}</p>`;
-  if (game.prior_knowledge) content += `<p><strong>Prerequisites:</strong> ${game.prior_knowledge}</p>`;
-  content += '</div>';
-  content += '</div>';
-  
-  // Topic Areas
-  if (game.topic_area) {
-    const topics = Array.isArray(game.topic_area) ? game.topic_area.join(', ') : game.topic_area;
-    content += `<div class="mb-3"><h6>Topic Areas</h6><p>${topics}</p></div>`;
-  }
-  
-  // Learning Objectives
-  if (game.learning_objectives) {
-    content += `<div class="mb-3"><h6>Learning Objectives</h6>`;
-    if (Array.isArray(game.learning_objectives)) {
-      content += '<ul>' + game.learning_objectives.map(obj => `<li>${obj}</li>`).join('') + '</ul>';
-    } else {
-      content += `<p>${game.learning_objectives}</p>`;
-    }
-    content += '</div>';
-  }
-  
-  // Teaching Integration
-  if (game.teaching_integration) {
-    content += `<div class="mb-3"><h6>Teaching Integration</h6><p>${game.teaching_integration}</p></div>`;
-  }
-  
-  // Testimonials
-  if (game.testimonials) {
-    content += `<div class="mb-3"><h6>Testimonials</h6><p><em>${game.testimonials}</em></p></div>`;
-  }
-  
-  content += '</div>'; // End game-modal-content
-  
-  document.getElementById('modalGameContent').innerHTML = content;
-  
-  // Show modal with default Bootstrap settings
-  $('#gameModal').modal();
-}
-</script>
 
