@@ -1,5 +1,12 @@
 name: '🔀 Gemini Dispatch'
 
+# =======================
+# AI Assistant Dispatch
+# =======================
+# Purpose: Dispatches AI assistant requests from PR comments and reviews
+# Triggers: PR review comments, PR reviews, and PR events
+# Features: AI command parsing and workflow triggering
+
 on:
   pull_request_review_comment:
     types:

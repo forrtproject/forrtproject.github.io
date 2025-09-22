@@ -1,5 +1,12 @@
 name: Check Images in PR
 
+# =======================
+# Image Validation Workflow
+# =======================
+# Purpose: Validates image files and references in pull requests
+# Triggers: PR opened, synchronized, or reopened
+# Checks: Image format, size, accessibility, and broken references
+
 on:
   pull_request:
     types: [opened, synchronize, reopened]
