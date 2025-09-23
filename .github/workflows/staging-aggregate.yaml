@@ -1,5 +1,12 @@
 name: Staging Aggregate Deployment
 
+# =======================
+# Staging Deployment Workflow
+# =======================
+# Purpose: Aggregates and deploys staging changes to production
+# Triggers: PRs to master, monthly schedule, or manual dispatch
+# Features: Multi-PR aggregation, staging deployment, and force deploy option
+
 on:
   pull_request:
     branches:
