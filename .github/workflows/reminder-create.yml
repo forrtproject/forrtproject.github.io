@@ -1,5 +1,12 @@
 name: reminder-create
 
+# =======================
+# Reminder Creation Workflow
+# =======================
+# Purpose: Creates reminders based on issue comments
+# Triggers: When comments are created or edited on issues
+# Features: Automated reminder parsing and scheduling
+
 permissions:
   issues: write
   pull-requests: write

@@ -1,4 +1,12 @@
 name: labeler
+
+# =======================
+# Automatic PR Labeling
+# =======================
+# Purpose: Automatically labels pull requests and issues
+# Triggers: PR events, weekly schedule, or manual dispatch
+# Labels: Adds relevant labels based on content and activity
+
 on:
   pull_request_target:
     types:

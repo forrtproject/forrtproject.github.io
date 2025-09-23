@@ -1,5 +1,12 @@
 name: deploy
 
+# =======================
+# FORRT Website Deployment
+# =======================
+# Purpose: Build and deploy the FORRT Hugo website
+# Triggers: Push to master, PRs, or manual dispatch
+# Target: Production deployment
+
 on:
   push:
     branches:
@@ -25,12 +32,18 @@ jobs:
       HUGO_VERSION: "0.123.3"
       HUGO_EXTENDED: true
     steps:
+      # =======================
+      # Repository Setup
+      # =======================
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
           ref: ${{ github.event.inputs.pr_number || github.ref }}
           fetch-depth: 0
 
+      # =======================
+      # Data Artifact Retrieval
+      # =======================
       - name: Try to download data artifact
         id: download-artifact
         uses: dawidd6/action-download-artifact@07ab29fd4a977ae4d2b275087cf67563dfdf0295
@@ -41,6 +54,9 @@ jobs:
           path: .
           github_token: ${{ secrets.GITHUB_TOKEN }}
 
+      # =======================
+      # Fallback Data Processing
+      # =======================
       - name: Run data processing if needed
         if: steps.download-artifact.outcome == 'failure'
         env:
@@ -67,12 +83,18 @@ jobs:
           fi
 
 
+      # =======================
+      # Hugo Build Environment
+      # =======================
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@75d2e84710de30f6ff7268e08f310b60ef14033f
         with:
           hugo-version: ${{ env.HUGO_VERSION }}
           extended: ${{ env.HUGO_EXTENDED }}
 
+      # =======================
+      # Website Build
+      # =======================
       - name: Build site
         run: |
           if [ "$BRANCH" != 'refs/heads/master' ]; then
@@ -83,6 +105,9 @@ jobs:
         env:
           BRANCH: ${{ github.ref }}
 
+      # =======================
+      # Deployment Artifact
+      # =======================
       - name: Upload site artifact
         uses: actions/upload-artifact@v4
         with:

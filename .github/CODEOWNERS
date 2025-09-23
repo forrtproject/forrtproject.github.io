@@ -1,5 +1,9 @@
-# You can use this CODEOWNERS file to define individuals or teams that are responsible for code in a repository.
+# =======================
+# FORRT CODEOWNERS Configuration
+# =======================
+# Purpose: Defines code ownership and review requirements
+# Documentation: https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners
+# Used by: GitHub for automatic review assignment
 
-# See https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners
-
+# Global rule: All files require review from the website team
 * @forrtproject/team-website
