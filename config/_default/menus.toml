@@ -295,45 +295,51 @@
   parent = "replications"
 
 [[main]]
+  name = "Handbook for Reproductions and Replications"
+  url = "https://forrt.org/replication_handbook/"
+  weight = 65
+  parent = "replications"
+
+[[main]]
   name = "Large-Scale Replication Projects"
   url = "/replication-hub/large-scale-replication-projects"
-  weight = 65
+  weight = 66
   parent = "replications"
 
 [[main]]
   name = "Open Social Psychology by Rima-Maria Rahal"
   url = "https://forrt.org/open-social-psychology/"
-  weight = 66
+  weight = 67
   parent = "replications"
 
 [[main]]
   name = "Positive Changes from the Replication Crisis"
   url = "/positive-changes-replication-crisis"
-  weight = 67
+  weight = 68
   parent = "replications"
 
 [[main]]
   name = "Replications & Reversals"
   url = "/reversals"
-  weight = 68
+  weight = 69
   parent = "replications"
 
 [[main]]
   name = "Replication Research Journal"
   url = "https://replicationresearch.org"
-  weight = 69
+  weight = 70
   parent = "replications"
 
 [[main]]
   name = "Replication Manuscript Templates"
   url = "https://osf.io/brxtd/"
-  weight = 70
+  weight = 71
   parent = "replications"
 
 [[main]]
   name = "Submit a replication to FReD"
   url = "/replication-hub/submit"
-  weight = 71
+  weight = 72
   parent = "replications"
 
 
