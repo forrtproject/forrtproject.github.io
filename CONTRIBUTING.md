@@ -56,7 +56,7 @@ A way to run the project locally without installing Hugo on the host machine is 
 2. Open `.devcontainer/devcontainer.json` in VSCode. If you are on a Windows host, go to `.devcontainer\dev\devcontainer.json` and uncomment the line `"remoteUser": "root"` before continuing.
 3. In the context menu of VSCode (Crl + Shift + P), select `Dev Containers: Open Folder in Container`. Alternatively, a pop-up will appear in the bottom right corner of the window asking if you want to open the folder in a container. Click on `Reopen in Container`.
 4. Wait for the container to build. The context of VS Code will change. In the bottom left corner, you will see a green icon with the name of the container (Hugo Dev).
-5. Run `hugo server -D`. The container will foward port 1313 to the host machine, so you can access the website at `http://localhost:1313`.
+5. Run `hugo server -D`. The container will forward port 1313 to the host machine, so you can access the website at `http://localhost:1313`.
 
 ### Development - R-Studio
 
