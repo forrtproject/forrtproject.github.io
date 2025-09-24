@@ -108,6 +108,9 @@ jobs:
       # =======================
       # Deployment Artifact
       # =======================
+      #========================================
+      # Upload built website as artifact for deployment
+      #========================================
       - name: Upload site artifact
         uses: actions/upload-artifact@v4
         with:
@@ -115,6 +118,9 @@ jobs:
           path: public/
           retention-days: 1
 
+  #========================================
+  # Deploy website to staging GitHub Pages
+  #========================================
   deploy-test:
     name: Deploy - Test
     runs-on: ubuntu-22.04
@@ -124,12 +130,18 @@ jobs:
       contents: write
     needs: build
     steps:
+      #========================================
+      # Download website artifact for staging deployment
+      #========================================
       - name: Download Artifact - Website
         uses: actions/download-artifact@v4
         with:
           name: forrt-website-${{ github.run_number }}
           path: ${{ github.repository }}/forrt-website
 
+      #========================================
+      # Deploy website to staging GitHub Pages
+      #========================================
       - name: Deploy - GitHub Pages
         uses: peaceiris/actions-gh-pages@4f9cc6602d3f66b9c108549d475ec49e8ef4d45e
         with:
@@ -139,6 +151,9 @@ jobs:
           publish_branch: staging
           cname: staging.forrt.org
 
+  #========================================
+  # Deploy website to production GitHub Pages
+  #========================================
   deploy-prod:
     name: Deploy - Production
     runs-on: ubuntu-22.04
@@ -148,12 +163,18 @@ jobs:
       - deploy-test
     if: (github.event_name == 'push' || github.event_name == 'workflow_dispatch') && github.ref == 'refs/heads/master' && github.event.repository.fork == false
     steps:
-      - name: Download Arfifact - Website
+      #========================================
+      # Download website artifact for production deployment
+      #========================================
+      - name: Download Artifact - Website
         uses: actions/download-artifact@v4
         with:
           name: forrt-website-${{ github.run_number }}
           path: ${{ github.repository }}/forrt-website
 
+      #========================================
+      # Deploy website to production GitHub Pages
+      #========================================
       - name: Deploy - GitHub Pages
         uses: peaceiris/actions-gh-pages@4f9cc6602d3f66b9c108549d475ec49e8ef4d45e
         with:
