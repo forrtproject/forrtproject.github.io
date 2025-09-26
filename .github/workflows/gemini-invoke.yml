@@ -1,5 +1,12 @@
 name: '▶️ Gemini Invoke'
 
+# =======================
+# AI Assistant Invocation
+# =======================
+# Purpose: Invokes AI assistant for code analysis and suggestions
+# Triggers: Called by other workflows (workflow_call)
+# Features: AI-powered code review and automated feedback
+
 on:
   workflow_call:
     inputs:
