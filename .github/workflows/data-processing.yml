@@ -20,9 +20,18 @@ jobs:
     env:
       PYTHON_VERSION: "3.11"
     steps:
+      #================
+      # Repository Setup
+      #================
       - name: Checkout repository
         uses: actions/checkout@v4
+        # Checkout the repository code to the runner environment
 
+      #======================
+      # Workflow Configuration
+      #======================
+      # Check if this is a monthly run (1st of month or manual trigger)
+      #==========================================================
       - name: Check if monthly run
         id: monthly-run
         run: |
@@ -35,23 +44,50 @@ jobs:
             echo "🔄 Monthly run detected - will run contributor analysis"
           fi
 
+      #=================
+      # Environment Setup
+      #=================
+      #========================================
+      # Configure Git with identity for commits
+      #========================================
       - name: Configure Git
         run: |
           git config --global user.email "mudaherarich@gmail.com"
           git config --global user.name "richarddushime"
+        # Configure Git with the identity that will be used for commits for the monthly run
 
+      #========================================
+      # Install Python 3.11 for running scripts
+      #========================================
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
           python-version: ${{ env.PYTHON_VERSION }}
           cache: 'pip'
 
+      #========================================
+      # Setup r2u for fast R package installation
+      #========================================
       - name: Setup r2u
         uses: eddelbuettel/github-actions/r2u-setup@master
+
+      #========================================
+      # Install Pandoc for rendering R Markdown documents
+      #========================================
       - uses: r-lib/actions/setup-pandoc@v2
+
+      #========================================
+      # Install R packages for contributor analysis and visualization
+      #========================================
       - name: Install tenzing R dependencies
         run: Rscript -e 'install.packages(c("rmarkdown","ggplot2", "readxl", "dplyr", "googlesheets4", "stringr", "gridExtra", "glue", "tidygraph", "ggraph", "igraph", "visNetwork"))'
 
+      #==============================
+      # Contributor Analysis (Monthly)
+      #==============================
+      #========================================
+      # Generate contributor analysis reports and network visualizations
+      #========================================
       - name: Run Contributor Analysis
         if: steps.monthly-run.outputs.is_monthly == 'true'
         continue-on-error: true  # Continue even if this step fails
@@ -79,17 +115,34 @@ jobs:
           
           echo "✅ Contributor analysis complete"
 
+      #=======================
+      # Tenzing Data Processing
+      #=======================
+      #========================================
+      # Install Python packages for data processing scripts
+      #========================================
       - name: Install Python dependencies
         run: python3 -m pip install -r ./requirements.txt
 
+        
+      #========================================
+      # Process contributor data using Tenzing script
+      #========================================
       - name: Run Tenzing script
         continue-on-error: true  # Continue even if this step fails
         run: python3 scripts/forrt_contribs/tenzing.py
 
+      #========================================
+      # Process and organize curated resources data
+      #========================================
       - name: Run Curated Resources script
         continue-on-error: true  # Continue even if this step fails
         run: python3 content/resources/resource.py
+        # Execute the curated resources script that processes and organizes resource data
 
+      #========================================
+      # Move Tenzing output to content directory and validate
+      #========================================
       - name: Move and validate Tenzing output
         continue-on-error: true  # Continue even if this step fails
         run: |
@@ -99,6 +152,9 @@ jobs:
             exit 1
           fi
 
+      #========================================
+      # Validate that curated resources files available under content/curated_resources
+      #========================================
       - name: Validate curated resources
         continue-on-error: true  # Continue even if this step fails
         run: |
@@ -109,6 +165,12 @@ jobs:
             fi
           done
 
+      #====================
+      # Google Analytics Data
+      #====================
+      #========================================
+      # Download Google Analytics data and validate
+      #========================================
       - name: Download GA Data
         continue-on-error: true  # Continue even if this step fails
         env:
@@ -136,6 +198,9 @@ jobs:
             exit 1
           fi
 
+      #=======================================================
+      # Create a pull request for GA data updates on monthly runs
+      #=======================================================
       - name: Create PR for GA data update
         if: github.event_name != 'pull_request'
         continue-on-error: true  # Continue even if this step fails
@@ -185,12 +250,23 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.FORRT_PAT }}
           GH_TOKEN: ${{ secrets.FORRT_PAT }}
 
+      #=======================
+      # Google Scholar Citations
+      #========================================
+      # Execute Google Scholar citation tracking script
+      #========================================
       - name: Run Google Scholar script
         continue-on-error: true
         run: python3 scripts/gs-cite/google_scholar.py
         env:
           SERPAPI: ${{ secrets.SERPAPI }}
 
+      #==============
+      # Artifact Upload
+      #==============
+      #========================================
+      # Upload all processed data files as artifact
+      #========================================
       - name: Upload data artifact
         id: upload-artifact
         uses: actions/upload-artifact@v4

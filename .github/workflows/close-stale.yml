@@ -1,5 +1,12 @@
 name: close-stale
 
+# =======================
+# Stale Issue Management
+# =======================
+# Purpose: Automatically closes stale issues and pull requests
+# Triggers: Daily at 2 AM UTC or manual dispatch
+# Features: Marks inactive items as stale, then closes them after 7 days
+
 on:
   schedule:
   - cron: '0 2 * * *'
