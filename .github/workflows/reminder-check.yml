@@ -1,5 +1,12 @@
 name: reminder-check
 
+# =======================
+# Daily Reminder Check
+# =======================
+# Purpose: Checks for and processes reminder tasks
+# Triggers: Daily at 1 AM UTC
+# Features: Automated reminder notifications and task tracking
+
 permissions:
   issues: write
   pull-requests: write
