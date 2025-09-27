@@ -56,13 +56,13 @@
   url = "/about/community"  # The URL of your page.
   weight = 17  # The position of your page in the menu.
   parent = "about"
-  
+
 [[main]]
   name = "Community Map"  # A link title for your page.
   url = "/community-map"  # The URL of your page.
   weight = 18  # The position of your page in the menu.
   parent = "about"
-  
+
 [[main]]
   name = "Contributors"  # A link title for your page.
   url = "/contributors"  # The URL of your page.
@@ -312,11 +312,11 @@
   weight = 66
   parent = "replications"
 
-[[main]]
-  name = "Open Social Psychology by Rima-Maria Rahal"
-  url = "https://forrt.org/open-social-psychology/"
-  weight = 67
-  parent = "replications"
+#[[main]]
+#  name = "Open Social Psychology by Rima-Maria Rahal"
+#  url = "https://forrt.org/open-social-psychology/"
+#  weight = 67
+#  parent = "replications"
 
 [[main]]
   name = "Positive Changes from the Replication Crisis"
