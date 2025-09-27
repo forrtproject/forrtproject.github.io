@@ -1,5 +1,6 @@
 [build]
   command = "hugo --gc --minify -b $URL"
+  functions = "netlify/functions"
   publish = "public"
 
 [build.environment]
@@ -24,3 +25,9 @@
   for = "index.xml"
   [headers.values]
     Content-Type = "application/rss+xml"
+
+# API redirects for comment system
+[[redirects]]
+  from = "/api/*"
+  to = "/.netlify/functions/:splat"
+  status = 200
