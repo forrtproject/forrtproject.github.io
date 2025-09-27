@@ -1,16 +1,27 @@
+# =======================
+# GitHub Labeler Configuration
+# =======================
+# Purpose: Defines automatic labeling rules for PRs and issues
+# Used by: labeler.yaml workflow
+# Rules: Based on branch names and changed file paths
+
+# Bug-related branches
 bug:
  - head-branch: ['^bug', 'bug', '^hotfix', 'hotfix']
 
+# CI/CD workflow changes
 cicd:
 - changed-files:
   - any-glob-to-any-file:
     - .github/workflows/*
 
+# Content and documentation changes
 content related:
 - changed-files:
   - any-glob-to-any-file:
     - content/**/*
 
+# Documentation files
 documentation:
 - changed-files:
   - any-glob-to-any-file:
@@ -20,5 +31,6 @@ documentation:
     - .github/ISSUE_TEMPLATE/*
     - .github/CODEOWNERS
 
+# Feature enhancement branches
 enhancement:
  - head-branch: ['^feature', 'feature']

@@ -1,5 +1,12 @@
 name: '🔎 Gemini Review'
 
+# =======================
+# AI-Powered Code Review
+# =======================
+# Purpose: Provides automated code review using Google Gemini AI
+# Triggers: Called by other workflows (workflow_call)
+# Features: Code analysis, suggestions, and automated feedback
+
 on:
   workflow_call:
     inputs:

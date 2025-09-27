@@ -1,5 +1,12 @@
 name: '🔀 Gemini Triage'
 
+# =======================
+# AI-Powered Issue Triage
+# =======================
+# Purpose: Automatically triages issues and PRs using AI
+# Triggers: Called by other workflows (workflow_call)
+# Features: AI-powered categorization, labeling, and routing
+
 on:
   workflow_call:
     inputs:
