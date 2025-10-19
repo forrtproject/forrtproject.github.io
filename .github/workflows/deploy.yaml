@@ -20,6 +20,8 @@ on:
         description: 'PR number to deploy (optional)'
         required: false
         type: string
+  repository_dispatch:
+    types: [data-update]
 
 jobs:
   build:
