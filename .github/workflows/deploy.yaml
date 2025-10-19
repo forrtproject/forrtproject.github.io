@@ -4,7 +4,7 @@ name: deploy
 # FORRT Website Deployment
 # =======================
 # Purpose: Build and deploy the FORRT Hugo website
-# Triggers: Push to master, PRs, or manual dispatch
+# Triggers: Push to master, PRs, manual dispatch, or data updates
 # Target: Production deployment
 
 on:
@@ -163,7 +163,7 @@ jobs:
       contents: write
     needs:
       - deploy-test
-    if: (github.event_name == 'push' || github.event_name == 'workflow_dispatch') && github.ref == 'refs/heads/master' && github.event.repository.fork == false
+    if: (github.event_name == 'push' || github.event_name == 'workflow_dispatch' || github.event_name == 'repository_dispatch') && github.ref == 'refs/heads/master' && github.event.repository.fork == false
     steps:
       #========================================
       # Download website artifact for production deployment
