@@ -279,3 +279,20 @@ jobs:
             content/contributor-analysis/
             content/publications/citation_chart.webp
           retention-days: 1
+
+      #====================
+      # Trigger Deployment
+      #====================
+      #========================================
+      # Trigger the deploy workflow to publish updated data
+      #========================================
+      - name: Trigger deployment
+        if: github.event_name != 'pull_request'
+        run: |
+          echo "🚀 Triggering deployment workflow..."
+          gh api repos/${{ github.repository }}/dispatches \
+            -f event_type=data-update \
+            -F client_payload[data_update]=true
+          echo "✅ Deployment triggered successfully"
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
