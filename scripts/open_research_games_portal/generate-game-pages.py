@@ -37,7 +37,7 @@ title: "{clean_for_yaml(title)}"
 type: "open-research-games-portal"
 layout: "single"
 description: "{clean_for_yaml(description)}"
-url: "/open-research-games-portal/open-research-games/{game_slug}/"
+url: "/games/{game_slug}/"
 date: "2025-01-01"
 draft: false
 ---
@@ -58,7 +58,7 @@ def main():
         games_data = json.load(f)
     
     # Create output directory
-    output_dir = Path('content/open-research-games')
+    output_dir = Path('content/games_details')
     if output_dir.exists():
         shutil.rmtree(output_dir)
     output_dir.mkdir(parents=True, exist_ok=True)
@@ -68,7 +68,7 @@ def main():
         create_game_page(game_slug, game_data, output_dir)
     
     print(f"✅ Created {len(games_data)} individual game pages")
-    print(f"URLs like: /open-research-games-portal/open-research-games/copyright-the-card-game-id-034/")
+    print(f"URLs like: /games/copyright-the-card-game-id-034/")
 
 if __name__ == "__main__":
     main()
