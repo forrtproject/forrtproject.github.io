@@ -2,5 +2,5 @@
 # FORRT page
 type = "widget_page"
 headless = false
-title = "Open Research Games Portal"
+title = "FORRT’s Open Science Games Hub"
 +++
