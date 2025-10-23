@@ -1,5 +1,5 @@
 ---
-# Open Research Games Portal Widget Configuration
+# FORRT Open Science Games Portal Widget Configuration
 # 
 # This file configures the main games display widget with filtering capabilities
 # The widget displays game cards and provides filtering by FORRT clusters
