@@ -133,6 +133,26 @@ jobs:
           # Push the aggregate branch
           git push origin "$AGGREGATE_BRANCH"
           
+          # Clean up old staging branches, keeping only the 5 most recent
+          echo "🧹 Cleaning up old staging branches..."
+          # Get all staging-aggregate branches sorted by name (which includes timestamp)
+          OLD_BRANCHES=$(git ls-remote --heads origin 'refs/heads/staging-aggregate-*' | \
+            awk '{print $2}' | \
+            sed 's|refs/heads/||' | \
+            sort -r | \
+            tail -n +6)
+          
+          if [ -n "$OLD_BRANCHES" ]; then
+            echo "Found $(echo "$OLD_BRANCHES" | wc -l) old staging branches to delete"
+            echo "$OLD_BRANCHES" | while read branch; do
+              echo "  Deleting: $branch"
+              git push origin --delete "$branch" || echo "  ⚠️ Failed to delete $branch (may already be deleted)"
+            done
+            echo "✅ Cleanup completed"
+          else
+            echo "No old staging branches to delete (keeping 5 most recent)"
+          fi
+          
           echo "branch=$AGGREGATE_BRANCH" >> $GITHUB_OUTPUT
           echo "included_prs=$INCLUDED_PRS" >> $GITHUB_OUTPUT
           echo "attempted_prs=$ATTEMPTED_PRS" >> $GITHUB_OUTPUT
