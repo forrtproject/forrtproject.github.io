@@ -298,6 +298,10 @@ jobs:
         run: |
           echo "📝 Committing generated files to build-resources branch..."
           
+          # Store current branch name
+          ORIGINAL_BRANCH=$(git branch --show-current)
+          echo "Original branch: $ORIGINAL_BRANCH"
+          
           # Store generated files in temp location
           mkdir -p /tmp/generated-resources
           cp -r content/curated_resources /tmp/generated-resources/
@@ -312,7 +316,7 @@ jobs:
             git checkout build-resources
             git pull origin build-resources
           else
-            echo "✓ Creating new build-resources branch from master"
+            echo "✓ Creating new build-resources branch from current branch"
             git checkout -b build-resources
           fi
           
@@ -337,15 +341,29 @@ jobs:
             git add content/curated_resources/ content/contributors/tenzing.md content/glossary/
             git commit -m "Update generated resources - $(date -u +'%Y-%m-%d %H:%M:%S UTC')" || echo "Nothing to commit"
             
-            # Push to build-resources branch
-            if ! git push origin build-resources --force-with-lease; then
-              git push origin build-resources
-            fi
-            echo "✅ Successfully committed to build-resources branch"
+            # Push to build-resources branch with retry logic
+            MAX_RETRIES=3
+            RETRY_COUNT=0
+            while [ $RETRY_COUNT -lt $MAX_RETRIES ]; do
+              if git push origin build-resources --force-with-lease; then
+                echo "✅ Successfully pushed to build-resources branch"
+                break
+              else
+                RETRY_COUNT=$((RETRY_COUNT + 1))
+                if [ $RETRY_COUNT -lt $MAX_RETRIES ]; then
+                  echo "⚠️ Push failed, retrying ($RETRY_COUNT/$MAX_RETRIES)..."
+                  sleep 2
+                  git pull origin build-resources --rebase
+                else
+                  echo "❌ Push failed after $MAX_RETRIES attempts"
+                  exit 1
+                fi
+              fi
+            done
           fi
           
-          # Switch back to master
-          git checkout -
+          # Switch back to original branch
+          git checkout "$ORIGINAL_BRANCH"
         env:
           GITHUB_TOKEN: ${{ secrets.FORRT_PAT }}
 
