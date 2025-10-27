@@ -135,7 +135,8 @@ jobs:
           
           # Clean up old staging branches, keeping only the 5 most recent
           echo "🧹 Cleaning up old staging branches..."
-          # Get all staging-aggregate branches sorted by name (which includes timestamp)
+          # Get all staging-aggregate branches sorted by name (which includes timestamp YYYYMMDD-HHMMSS)
+          # Lexicographic sorting works correctly because the timestamp format naturally sorts chronologically
           OLD_BRANCHES=$(git ls-remote --heads origin 'refs/heads/staging-aggregate-*' | \
             awk '{print $2}' | \
             sed 's|refs/heads/||' | \
@@ -144,7 +145,7 @@ jobs:
           
           if [ -n "$OLD_BRANCHES" ]; then
             echo "Found $(echo "$OLD_BRANCHES" | wc -l) old staging branches to delete"
-            echo "$OLD_BRANCHES" | while read branch; do
+            for branch in $OLD_BRANCHES; do
               echo "  Deleting: $branch"
               git push origin --delete "$branch" || echo "  ⚠️ Failed to delete $branch (may already be deleted)"
             done
