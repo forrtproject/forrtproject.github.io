@@ -16,7 +16,6 @@ reprohack
 preregistrations
 replicability
 reproducibility
-openess
 
 # Names and organizations
 Kathawalla
