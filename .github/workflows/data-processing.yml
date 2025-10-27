@@ -165,6 +165,14 @@ jobs:
             fi
           done
 
+      #========================================
+      # Process and generate glossary files
+      #========================================
+      - name: Run Glossary Generation script
+        continue-on-error: true  # Continue even if this step fails
+        run: python3 content/glossary/_create_glossaries.py
+        # Execute the glossary script that generates glossary markdown files
+
       #====================
       # Google Analytics Data
       #====================
@@ -275,10 +283,71 @@ jobs:
           path: |
             content/contributors/tenzing.md
             content/curated_resources/
+            content/glossary/
             data/
             content/contributor-analysis/
             content/publications/citation_chart.webp
           retention-days: 1
+
+      #========================================
+      # Commit generated files to build-resources branch
+      #========================================
+      - name: Commit to build-resources branch
+        if: github.event_name != 'pull_request'
+        continue-on-error: true
+        run: |
+          echo "📝 Committing generated files to build-resources branch..."
+          
+          # Store generated files in temp location
+          mkdir -p /tmp/generated-resources
+          cp -r content/curated_resources /tmp/generated-resources/
+          cp -r content/glossary /tmp/generated-resources/
+          cp content/contributors/tenzing.md /tmp/generated-resources/
+          
+          # Fetch build-resources branch (create if doesn't exist)
+          git fetch origin build-resources || echo "build-resources branch doesn't exist yet"
+          
+          if git rev-parse --verify origin/build-resources >/dev/null 2>&1; then
+            echo "✓ build-resources branch exists, checking it out"
+            git checkout build-resources
+            git pull origin build-resources
+          else
+            echo "✓ Creating new build-resources branch from master"
+            git checkout -b build-resources
+          fi
+          
+          # Remove old generated resource files (but keep _index.md)
+          find content/curated_resources -type f ! -name '_index.md' -delete 2>/dev/null || true
+          
+          # Remove old glossary files (but keep _index.md files)
+          find content/glossary -type f ! -name '_index.md' ! -name '_create_glossaries.py' -delete 2>/dev/null || true
+          
+          # Copy newly generated files
+          cp -r /tmp/generated-resources/curated_resources/* content/curated_resources/
+          cp /tmp/generated-resources/tenzing.md content/contributors/
+          
+          # Copy glossary files (preserving directory structure)
+          rsync -av --exclude='_index.md' --exclude='_create_glossaries.py' /tmp/generated-resources/glossary/ content/glossary/
+          
+          # Check if there are any changes to commit
+          if git diff --quiet && git diff --cached --quiet; then
+            echo "ℹ️ No changes to commit"
+          else
+            echo "✓ Changes detected, committing..."
+            git add content/curated_resources/ content/contributors/tenzing.md content/glossary/
+            git commit -m "Update generated resources - $(date -u +'%Y-%m-%d %H:%M:%S UTC')" || echo "Nothing to commit"
+            
+            # Push to build-resources branch
+            if ! git push origin build-resources --force-with-lease; then
+              git push origin build-resources
+            fi
+            echo "✅ Successfully committed to build-resources branch"
+          fi
+          
+          # Switch back to master
+          git checkout -
+        env:
+          GITHUB_TOKEN: ${{ secrets.FORRT_PAT }}
 
       #====================
       # Trigger Deployment
