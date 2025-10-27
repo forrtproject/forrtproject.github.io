@@ -25,8 +25,8 @@ jobs:
       uses: actions/stale@28ca1036281a5e5922ead5184a1bbf96e5fc984e
       with:
         repo-token: ${{ secrets.GITHUB_TOKEN }}
-        stale-issue-message: 'This issue has been inactive for more than 60 days and has been marked as stale. It will not be automatically closed, but please consider whether it is still relevant.'
-        stale-pr-message: 'This pull request has been inactive for more than 60 days and has been marked as stale. It will not be automatically closed, but please consider whether it is still relevant.'
+        stale-issue-message: 'This issue has been inactive for an extended period and has been marked as stale. It will not be automatically closed, but please consider whether it is still relevant.'
+        stale-pr-message: 'This pull request has been inactive for an extended period and has been marked as stale. It will not be automatically closed, but please consider whether it is still relevant.'
         stale-issue-label: stale
         stale-pr-label: stale
         days-before-stale: 60
