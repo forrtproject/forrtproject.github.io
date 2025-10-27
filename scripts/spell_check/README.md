@@ -23,7 +23,7 @@ List of words to ignore during spell checking:
 - Project-specific terms (FORRT, preregistration, etc.)
 - Proper names (authors, organizations)
 - Technical terms
-- Acceptable spelling variations (British vs American English)
+- Acceptable spelling variations (e.g., British English "behaviour", "colour" are acceptable alongside American English variants)
 
 ## Usage
 
