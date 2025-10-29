@@ -174,8 +174,9 @@
   parent = "nexus"
 
 [[main]]
-  name = "FORRT’s Open Science Games Hub"
+  name = "Open Research Games Portal"
   url = "/games"
+# url = "https://forrt.org/apps/open_research_games_portal.html"
   weight = 36
   parent = "nexus"
 
