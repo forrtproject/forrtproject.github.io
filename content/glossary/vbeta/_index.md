@@ -11,7 +11,7 @@ view: 1
 # Optional header image (relative to `static/media/` folder).
 header:
   caption: ""
-  image: "resources.webp"
+  image: ""
 ---
 
 *Introduction*
