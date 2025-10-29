@@ -15,7 +15,7 @@ Fixes # (issue)
 
 ## Before You Submit
 
-- [ ] I have read and followed the [CONTRIBUTING.md](../CONTRIBUTING.md) guidelines
+- [ ] I have read and followed the [CONTRIBUTING.md](/CONTRIBUTING.md) guidelines
 
 ## How Has This Been Tested?
 
