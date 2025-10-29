@@ -126,15 +126,31 @@ Mutual benefits include:
 - A move to emancipatory and participatory research methods, which centre on co-creation and include neurodivergent individuals in the whole research process (“nothing about us without us”, from conception to publication).
 
 {{< /expand >}}
-<br>
 
-A more in-depth discussion of the link between open scholarship and neurodiversity is available in [our position statement](https://osf.io/preprints/metaarxiv/k7a9p/). This is a longer document which explains how neurodiversity links to open scholarship.
+<br>
 
 <br />
 
 # Our Resources
 
 Our work falls into several general areas. Here, you can find resources related to each.
+
+## Published Articles
+
+### [Bridging Neurodiversity and Open Scholarship: How Shared Values Can Guide Best Practices for Research Integrity, Social Justice, and Principled Education](https://doi.org/10.1111/josi.70035).
+{{<expand "Abstract" >}}
+
+Not all people conform to socially constructed norms, nor should they have to. Neurodiversity, the natural variation in human brains and cognition, is fundamental to understanding human behavior, yet neurodivergent individuals in academia are often stigmatized, undervalued, or pressured to mask their differences. This position statement, authored predominantly by neurodivergent scholars, explores how aligning the values of the neurodiversity movement with practices of Open Scholarship (OSch) can foster greater research integrity, rigor, social responsibility and justice, diversity, equity, inclusivity, and accessibility in academia. We review systemic barriers faced by neurodivergent researchers—from disclosure dilemmas and hidden curriculum expectations to intersectional disadvantages—and identify how OSch principles (transparency, accessibility, collaboration) can help mitigate these challenges. Drawing on lived experiences and current research, we propose concrete reforms, including adopting universal design in scholarly communication, promoting participatory research methods, and enacting supportive policies (e.g., flexible work arrangements, inclusive codes of conduct). By leveraging shared values of openness and neuro-inclusion, academia can become more just and epistemically equitable. Our recommendations chart a path toward an academic culture where neurodivergent scholars can thrive openly, to the benefit of scientific rigor and social justice alike.
+
+{{< /expand >}}
+
+{{< spoiler text= "Bibliographic Reference" >}} 
+
+Phan, J.M., Middleton, S.L., Azevedo, F., Iley, B.J., Grose‐Hodge, M., Tyler, S.L., Kapp, S.K., Yeung, S.K., Shaw, J.J., Hartmann, H. and FORRT, 2025. Bridging Neurodiversity and Open Scholarship: How Shared Values Can Guide Best Practices for Research Integrity, Social Justice, and Principled Education. *Journal of Social Issues*, *81*(4), p.e70035.
+
+{{< /spoiler >}}
+
+
 
 ## Awareness & Acceptance
 
