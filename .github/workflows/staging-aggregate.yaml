@@ -235,6 +235,8 @@ jobs:
       - name: Build site
         run: |
           hugo --gc --minify --cleanDestinationDir --destination public --baseURL https://staging.forrt.org
+        env:
+          HUGO_ENV: staging
 
       - name: Upload site artifact
         uses: actions/upload-artifact@v4
