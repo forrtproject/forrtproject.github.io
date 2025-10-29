@@ -155,29 +155,9 @@ We celebrate neurodivergence, but also acknowledge that being a neurodivergent a
 
 {{< /spoiler >}}
 
-### Experience Survey (coming soon!)
-
-We are currently developing a survey which will research the experiences of neurodivergent scholars in academia. We hope that this will generate valuable data for understanding neurodivergent academics’ lives and careers.
-
-### ADHDers in Academia (coming soon!)
-
-We are developing a qualitative research project investigating the potentially unique ways that ADHDers do research or contribute to science, and the institutional and sociocultural barriers to inclusion and career progression for ADHDer academics. We hope that this will provide in-depth information about the experiences of people whose voices are rarely heard.
-
-### Open Scholarship & Autism Research (coming soon!)
-
-We are writing a manuscript which aims to promote Open Scholarship to academics and clinicians who research autism. In this, we will address criticisms of autism research and provide concrete suggestions for improved practices.
-
 <br />
 
-## DEI&A Tools for Academia
-
-### Neurodivergent Authors Database
-
-Our database collects together the details of neurodivergent researchers, papers authored by neurodivergent scholars, and other resources about neurodiversity. We hope that this will enable educators to create a more diverse curriculum. 
-
-**As agreed with authors who shared their data with us, this database had now been unpublished as we cannot maintain it anymore.**
-
-_This work was in part supported by a Grant-In-Aid to Reduce Barriers to Improving Psychological Science, awarded by the Society for the Improvement of Psychological Science (SIPS) to Team Neurodiversity._
+## DEIA Tools for Academia
 
 ### Academic Wheel of Privilege (coming soon!)
 
@@ -202,22 +182,6 @@ Our article in the BPS Cognitive Psychology Bulletin discusses how participatory
  Gourdon-Kanhukamwe, A., Kalandadze, T., Yeung, S.K., Azevedo, F., Iley, B., Phan, J.M., Ramji, A.V., Shaw, J.J., Zaneva, M., Dokovova, M., Hartmann, H., Kapp, S.K., Warrington, K.L., Elsherif, M.M. (2023). Opening up understanding of neurodiversity: A call for applying participatory and open scholarship practices. *The Cognitive Psychology Bulletin*, *8*, 23-27. https://doi.org/10.53841/bpscog.2023.1.8.23
 
 {{< /spoiler >}}
-
-### Participatory Approaches to Big Team Science (coming soon!)
-
-We are currently writing a manuscript which aims to reconcile Big Team Science with participatory research approaches. Big Team Science projects rarely include participants in the development of research questions and methodology. We argue that participatory approaches can improve Big Team Science by ensuring that large-scale research projects listen to and serve the communities they are researching.
-
-<br />
-
-## Rethinking Education Practices
-
-### Assessment in Academia (coming soon!)
-
-We are currently working on a manuscript which aims to encourage educators to rethink discriminatory practices embedded in academia, and to embrace Universal Design for Learning.
-
-### Open Scholarship & Autism Education (coming soon!)
-
-We are writing a manuscript which aims to promote Open Scholarship to academics and clinicians who educate about autism. In this, we will address criticisms of autism education and provide concrete suggestions for improved practices.
 
 <br />
 
@@ -278,12 +242,9 @@ Our work has been featured in:
 
 ## History & Management
 
-Team Neurodiversity was founded in 2021 by Mahmoud Elsherif, Tamara Kalandaze and Amélie Gourdon-Kanhukamwe. Please see [our blog post for FORRT’s Educators’ Corner](https://forrt.org/educators-corner/010-neurodiversity/) for more information about how Team Neurodiversity was formed, why it is needed, and our plans for future work. At the moment, the group channel has over 70 members who come from Europe, North America and Asia.
+Team Neurodiversity was founded in 2021 by Mahmoud Elsherif, Tamara Kalandaze and Amélie Gourdon-Kanhukamwe. Please see [our blog post for FORRT’s Educators’ Corner](https://forrt.org/educators-corner/010-neurodiversity/) for more information about how Team Neurodiversity was formed, why it is needed, and our plans for future work. At the moment, the group channel has over 100 members who come from Europe, North America and Asia.
 
 We have a rotating leadership team which changes every six months. To promote diverse and inclusive leadership, anyone can put themselves forward for this role, regardless of their experience.
 
-The current team leaders are Magdalena Grose-Hodge and Bethan Iley.
-
-Thank you to our previous team leaders: Amélie Gourdon-Kanhukamwe, Flávio Azevedo, and Mahmoud Elsherif.
 
 We’re always welcoming new members. You do not need to be neurodivergent to take part. [Find out more about getting involved with FORRT](https://forrt.org/about/get-involved/).
