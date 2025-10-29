@@ -13,6 +13,10 @@ Fixes # (issue)
 - [ ] Breaking change (fix or feature that would cause existing functionality to not work as expected)
 - [ ] Bug fix (non-breaking change which fixes an issue)
 
+## Before You Submit
+
+- [ ] I have read and followed the [CONTRIBUTING.md](../CONTRIBUTING.md) guidelines
+
 ## How Has This Been Tested?
 
 <!-- Describe the tests that you ran to verify your changes. Provide instructions so we can reproduce. Include any relevant details for your test configuration. -->
