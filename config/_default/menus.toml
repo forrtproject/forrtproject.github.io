@@ -175,7 +175,7 @@
 
 [[main]]
   name = "Open Research Games Portal"
-  url = "/game"
+  url = "/games"
 # url = "https://forrt.org/apps/open_research_games_portal.html"
   weight = 36
   parent = "nexus"
