@@ -1,0 +1,101 @@
+{
+    "timestamp": "01/01/2020",
+    "title": "Plotting and Programming in Python",
+    "link_to_resource": "http://swcarpentry.github.io/python-novice-gapminder/",
+    "creators": [
+        "Adam Steer",
+        "Allen Lee",
+        "Andreas Hilboll",
+        "Ashley Champagne",
+        "Benjamin",
+        "Benjamin Roberts",
+        "CanWood",
+        "Carlos Henrique Brandt",
+        "Carlos M Ortiz Marrero",
+        "Cephalopd",
+        "Cian Wilson",
+        "Daniel W Kerchner",
+        "Dan M\u00f8nster",
+        "Daria Orlowska",
+        "Dave Lampert",
+        "David Matten",
+        "Erin Alison Becker",
+        "Florian Goth",
+        "Francisco J. Mart\u00ednez",
+        "Greg Wilson",
+        "ian",
+        "Jacob Deppen",
+        "Jarno Rantaharju",
+        "Jeremy Zucker",
+        "Jonah Duckles",
+        "Kees den Heijer",
+        "Keith Gilbertson",
+        "Kyle E Niemeyer",
+        "Lex Nederbragt",
+        "Logan Cox",
+        "Louis Vernon",
+        "Lucy Dorothy Whalley",
+        "Madeleine Bonsma-Fisher",
+        "Mark Phillips",
+        "Mark Slater",
+        "Maxim Belkin",
+        "Michael Beyeler",
+        "Mike Henry",
+        "mzc9",
+        "Narayanan Raghupathy",
+        "Nigel Bosch",
+        "Olav Vahtras",
+        "Pablo Hernandez-Cerdan",
+        "Paul Anzel",
+        "Phil Tooley",
+        "Raniere Silva",
+        "Robert Woodward",
+        "Ryan Avery",
+        "Ryan Gregory James",
+        "Sarah M Brown",
+        "SBolo",
+        "Shyam Dwaraknath",
+        "Sourav Singh",
+        "St\u00e9phane Guillou",
+        "Steven Koenig",
+        "Taylor Smith",
+        "Thor Wikfeldt",
+        "Timothy Warren",
+        "Tyler Martin",
+        "Vasu Venkateshwaran",
+        "Vikas Pejaver"
+    ],
+    "material_type": [
+        "Module"
+    ],
+    "education_level": [
+        "Graduate / Professional"
+    ],
+    "abstract": "This lesson is part of Software Carpentry workshops and teach an introduction to plotting and programming using python. This lesson is an introduction to programming in Python for people with little or no previous programming experience. It uses plotting as its motivating example, and is designed to be used in both Data Carpentry and Software Carpentry workshops. This lesson references JupyterLab, but can be taught using a regular Python interpreter as well. Please note that this lesson uses Python 3 rather than Python 2.",
+    "language": [
+        "English"
+    ],
+    "conditions_of_use": "Creative Commons Attribution 4.0 International",
+    "primary_user": [
+        "student",
+        "teacher"
+    ],
+    "subject_areas": [
+        "Computer Science",
+        "Information Science",
+        "Measurement and Data"
+    ],
+    "FORRT_clusters": [
+        ""
+    ],
+    "tags": [
+        "Analysis",
+        "Data",
+        "Education",
+        "Open Scholarship Tools and Technologies",
+        "Python",
+        "Reproducibility",
+        "Research Data Management Tools",
+        "Researchers"
+    ]
+}
