@@ -56,6 +56,30 @@ Tags associated with only a single page were generating indexed Google pages tha
 4. **Consider alternatives**: For single-page metadata, use categories or custom taxonomies that don't generate public index pages
 5. **Documentation**: Add guidelines to the contribution docs about when to add new tags
 
+## What to Do with the "Lesson Bank" Tag
+
+The "Lesson Bank" tag should be **kept and potentially expanded**:
+
+### Current State
+- Used on 5 neurodiversity lesson plan pages
+- Creates a useful tag page at https://forrt.org/tag/lesson-bank/
+- Provides meaningful grouping for lesson discovery
+
+### Recommendations
+1. **Expand the collection**: Add more lesson plans over time to strengthen this grouping
+2. **Consider similar tags**: Create other multi-page tags for common content types:
+   - "Pedagogies" (if multiple pedagogy-related pages exist or are planned)
+   - "Research Methods" (for methodology content)
+   - "Open Science Practices" (for practical how-to guides)
+3. **Maintain consistency**: Ensure all neurodiversity lesson bank pages continue using this tag
+4. **Monitor usage**: If the collection grows significantly (15+ pages), consider whether sub-tags or a different organization method would be more helpful
+
+### Alternative Approaches (for consideration)
+If tags become difficult to manage, consider:
+- Using Hugo's built-in categories instead of tags
+- Creating a custom taxonomy specifically for lesson plans
+- Implementing a section-based navigation instead of tag-based discovery
+
 ## Related Hugo Configuration
 The site uses Hugo's built-in taxonomy system with the following configuration in `config/_default/config.toml`:
 ```toml
