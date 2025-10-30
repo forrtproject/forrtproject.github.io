@@ -57,7 +57,7 @@ classtitle = "text-center"
 
 <br>
 
-FORRT Germany e.V. is a registered charity in Germany (*tax-deductibility assessment pending*) that is closely affiliated with FORRT. They administer some of our high-value funded work, such as [the collaboration with the Center for Open Science (COS)](https://www.cos.io/blog/cos-and-forrt-partner-to-increase-discoverability-and-usability-of-replication-evidence) to build out the [FORRT Replication Database](https://forrt.org/replication-hub/#:~:text=FORRT%20Replication%20Database%20(FReD)).
+FORRT Germany e.V. is a registered charity in Germany that is closely affiliated with FORRT. They administer some of our high-value funded work, such as [the collaboration with the Center for Open Science (COS)](https://www.cos.io/blog/cos-and-forrt-partner-to-increase-discoverability-and-usability-of-replication-evidence) to build out the [FORRT Replication Database](https://forrt.org/replication-hub/#:~:text=FORRT%20Replication%20Database%20(FReD)).
 
 ## Contact
 
