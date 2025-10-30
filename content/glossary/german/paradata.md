@@ -16,7 +16,8 @@
         null
     ],
     "drafted_by": [
-        "Alexander Hart; Graham Reid"
+        "Alexander Hart",
+        "Graham Reid"
     ],
     "reviewed_by": [
         "Helena Hartmann",
@@ -24,5 +25,12 @@
         "Marta Topor",
         "Flávio Azevedo"
     ],
-    "language": "german"
+    "language": "german",
+    "translated_by": [
+        "Helena Hartmann"
+    ],
+    "translation_reviewed_by": [
+        "Susanne Vogel",
+        "Jennifer Mattschey"
+    ]
 }

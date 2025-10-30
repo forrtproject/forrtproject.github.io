@@ -7,7 +7,8 @@
         "Qualitative Research"
     ],
     "references": [
-        "Braun and Clarke (2013); Finlay and Gough (2008)"
+        "Braun and Clarke (2013)",
+        "Finlay and Gough (2008)"
     ],
     "alt_related_terms": [
         null
@@ -19,5 +20,12 @@
         "Gilad Feldman",
         "Annalise A. LaPlume"
     ],
-    "language": "german"
+    "language": "german",
+    "translated_by": [
+        "Helena Hartmann"
+    ],
+    "translation_reviewed_by": [
+        "Susanne Vogel",
+        "Jennifer Mattschey"
+    ]
 }

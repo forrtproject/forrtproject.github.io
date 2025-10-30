@@ -9,13 +9,18 @@
         "hidden moderators"
     ],
     "references": [
-        "Crüwell et al. (2019); Hüffmeier et al. (2016); LeBel et al. (2019); Schwarz and Strack (2014)"
+        "Cruwell2019",
+        "Huffmeier2016",
+        "LeBel2017",
+        "SchwarzStrack2014"
     ],
     "alt_related_terms": [
         null
     ],
     "drafted_by": [
-        "Mahmoud Elsherif (original); Thomas Rhys Evans (alternative); Tina Lonsdorf (alternative)"
+        "Mahmoud Elsherif (original)",
+        "Thomas Rhys Evans (alternative)",
+        "Tina Lonsdorf (alternative)"
     ],
     "reviewed_by": [
         "Beatrix Arendt",
@@ -27,5 +32,12 @@
         "Tobias Wingen",
         "Flávio Azevedo"
     ],
-    "language": "german"
+    "language": "german",
+    "translated_by": [
+        "Susanne Vogel"
+    ],
+    "translation_reviewed_by": [
+        "Helena Hartmann",
+        "Jennifer Mattschey"
+    ]
 }

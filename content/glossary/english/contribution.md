@@ -8,7 +8,9 @@
         "Semantometrics"
     ],
     "references": [
-        "Knoth and Herrmannova (2014); Larivière et al. (2016); Holcombe (2019)"
+        "Knoth2014",
+        "Lariviere2016",
+        "Holcombe2019"
     ],
     "alt_related_terms": [
         null

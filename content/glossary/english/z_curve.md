@@ -11,7 +11,8 @@
         "Statistical power"
     ],
     "references": [
-        "Bartoš and Schimmack (2020); Brunner and Schimmack (2020)"
+        "Bartoš and Schimmack (2020)",
+        "Brunner and Schimmack (2020)"
     ],
     "alt_related_terms": [
         null

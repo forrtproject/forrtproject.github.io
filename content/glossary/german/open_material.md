@@ -13,7 +13,8 @@
         "Transparency"
     ],
     "references": [
-        "Blohowiak et al. (2020); Kidwell et al. (2016)"
+        "Blohowiak et al. (2020)",
+        "Kidwell et al. (2016)"
     ],
     "alt_related_terms": [
         null
@@ -28,5 +29,12 @@
         "Emily A. Williams",
         "Flávio Azevedo"
     ],
-    "language": "german"
+    "language": "german",
+    "translated_by": [
+        "Helena Hartmann"
+    ],
+    "translation_reviewed_by": [
+        "Susanne Vogel",
+        "Jennifer Mattschey"
+    ]
 }

@@ -8,7 +8,8 @@
         "Perspective"
     ],
     "references": [
-        "Jafar (2018); Oxford Dictionaries (2017)"
+        "Jafar (2018)",
+        "Oxford Dictionaries (2017) , \\_Reference2017"
     ],
     "alt_related_terms": [
         null

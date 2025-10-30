@@ -10,7 +10,8 @@
         "p*\\-value"
     ],
     "references": [
-        "Hoijtink et al. (2019) Makowski et al. (2019)"
+        "Hoijtink2019",
+        "Makowski2019"
     ],
     "alt_related_terms": [
         null
@@ -27,5 +28,12 @@
         "Suzanne L. K. Stewart",
         "Ana Todorovic"
     ],
-    "language": "german"
+    "language": "german",
+    "translated_by": [
+        "Helena Hartmann"
+    ],
+    "translation_reviewed_by": [
+        "Susanne Vogel",
+        "Jennifer Mattschey"
+    ]
 }

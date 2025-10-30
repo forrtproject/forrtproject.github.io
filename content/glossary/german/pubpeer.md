@@ -6,7 +6,7 @@
         "Open Peer Review"
     ],
     "references": [
-        "www.pubpeer.com"
+        "[www.pubpeer.com](http://www.pubpeer.com)"
     ],
     "alt_related_terms": [
         null
@@ -17,5 +17,12 @@
     "reviewed_by": [
         "Mahmoud ELsherif"
     ],
-    "language": "german"
+    "language": "german",
+    "translated_by": [
+        "Helena Hartmann"
+    ],
+    "translation_reviewed_by": [
+        "Susanne Vogel",
+        "Jennifer Mattschey"
+    ]
 }

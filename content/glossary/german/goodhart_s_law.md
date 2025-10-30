@@ -5,12 +5,9 @@
     "related_terms": [
         "Campbell's law",
         "DORA",
-        "Reification (fallacy) Reference (s): Muller (2019)",
-        "Strathern (1997)"
+        "Reification (fallacy) Reference (s): \\[@Muller2018\\], \\[@Strathern1997\\]"
     ],
-    "references": [
-        ""
-    ],
+    "references": [],
     "alt_related_terms": [
         null
     ],
@@ -21,5 +18,12 @@
         "Sam Parsons",
         "Flávio Azevedo"
     ],
-    "language": "german"
+    "language": "german",
+    "translated_by": [
+        "Bettina MJ Kern"
+    ],
+    "translation_reviewed_by": [
+        "Birgit Schmidt",
+        "Susanne Vogel"
+    ]
 }

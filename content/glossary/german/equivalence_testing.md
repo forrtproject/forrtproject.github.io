@@ -13,7 +13,9 @@
         "TOST procedure."
     ],
     "references": [
-        "Lakens et al. (2018); Lakens et al. (2020); Schuirmann (1987)"
+        "Lakens2018",
+        "LakensEtAl2020",
+        "Schuirmann1987"
     ],
     "alt_related_terms": [
         null
@@ -28,5 +30,12 @@
         "Tobias Wingen",
         "Flávio Azevedo"
     ],
-    "language": "german"
+    "language": "german",
+    "translated_by": [
+        "Susanne Vogel"
+    ],
+    "translation_reviewed_by": [
+        "Helena Hartmann",
+        "Jennifer Mattschey"
+    ]
 }

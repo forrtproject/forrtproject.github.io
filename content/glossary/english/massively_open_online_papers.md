@@ -10,7 +10,8 @@
         "Team science"
     ],
     "references": [
-        "Himmelstein et al. (2019); Tennant et al. (2019)"
+        "Himmelstein et al. (2019)",
+        "Tennant et al. (2019)"
     ],
     "alt_related_terms": [
         null
@@ -18,9 +19,7 @@
     "drafted_by": [
         "Ali H. Al-Hoorie"
     ],
-    "reviewed_by": [
-        ""
-    ],
+    "reviewed_by": [],
     "language": "english",
     "aliases": [
         "/glossary/massively_open_online_papers"

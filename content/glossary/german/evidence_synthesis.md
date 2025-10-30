@@ -13,7 +13,9 @@
         "Systematic review"
     ],
     "references": [
-        "Centre for Evaluation (n.d.); James et al., (2016); Siddaway et al. (2019)"
+        "CentreForEvaluationND",
+        "James2016",
+        "Siddaway2019"
     ],
     "alt_related_terms": [
         null
@@ -27,5 +29,12 @@
         "Adam Parker",
         "Charlotte R. Pennington"
     ],
-    "language": "german"
+    "language": "german",
+    "translated_by": [
+        "Susanne Vogel"
+    ],
+    "translation_reviewed_by": [
+        "Helena Hartmann",
+        "Jennifer Mattschey"
+    ]
 }

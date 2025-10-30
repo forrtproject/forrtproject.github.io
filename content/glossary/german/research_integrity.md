@@ -14,13 +14,16 @@
         "Trustworthy research"
     ],
     "references": [
-        "ALLEA (2017); Medin (2012); Moher et al. (2020)"
+        "ALLEA (2017)",
+        "Medin (2012)",
+        "Moher et al. (2020)"
     ],
     "alt_related_terms": [
         null
     ],
     "drafted_by": [
-        "Ana Barbosa Mendes; Flávio Azevedo"
+        "Ana Barbosa Mendes",
+        "Flávio Azevedo"
     ],
     "reviewed_by": [
         "Valeria Agostini",
@@ -29,5 +32,12 @@
         "Tamara Kalandadze",
         "Charlotte R. Pennington"
     ],
-    "language": "german"
+    "language": "german",
+    "translated_by": [
+        "Helena Hartmann"
+    ],
+    "translation_reviewed_by": [
+        "Susanne Vogel",
+        "Jennifer Mattschey"
+    ]
 }

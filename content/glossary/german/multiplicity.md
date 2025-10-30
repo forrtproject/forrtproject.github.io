@@ -10,7 +10,8 @@
         "Null Hypothesis Significance Testing (NHST)"
     ],
     "references": [
-        "Sato (1996); Schultz and Grimes (2005)"
+        "Sato (1996)",
+        "Schultz and Grimes (2005)"
     ],
     "alt_related_terms": [
         null
@@ -24,5 +25,12 @@
         "Meng Liu",
         "Charlotte R. Pennington"
     ],
-    "language": "german"
+    "language": "german",
+    "translated_by": [
+        "Susanne Vogel"
+    ],
+    "translation_reviewed_by": [
+        "Helena Hartmann",
+        "Jennifer Mattschey"
+    ]
 }

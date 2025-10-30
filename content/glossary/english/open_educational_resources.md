@@ -10,7 +10,7 @@
         "Open Science Framework"
     ],
     "references": [
-        "www.oercommons.org"
+        "[www.oercommons.org](http://www.oercommons.org)"
     ],
     "alt_related_terms": [
         null
@@ -19,7 +19,8 @@
         "Ali H. Al-Hoorie"
     ],
     "reviewed_by": [
-        "Mahmoud Elsherif, Gisela H. Govaart"
+        "Mahmoud Elsherif",
+        "Gisela H. Govaart"
     ],
     "language": "english",
     "aliases": [

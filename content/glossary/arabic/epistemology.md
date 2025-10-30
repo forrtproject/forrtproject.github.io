@@ -1,13 +1,13 @@
 {
     "type": "glossary",
     "title": "Epistemology (نظريَّة المعرفة)",
-    "definition": "التَّعريف: تعدُّ نظريَّة المعرفة أحد الفروع الأربعة الرَّئيسيَّة للفلسفة، إلى جانب أخلاقيات البحث والمنطق والميتافيزيا. تهتم نظرية المعرفة إلى حد كبير بطبيعة المعرفة، وأصلها، ونطاقها، إضافة إلى عقلانيَّة المعتقدات.  المصطلحات ذات الصِّلة: العلوم البعدية/التلوية أو البحث البعدي/التلوي، علم الوجود (الذَّكاء الاصطناعي)",
+    "definition": "تعدُّ نظريَّة المعرفة أحد الفروع الأربعة الرَّئيسيَّة للفلسفة، إلى جانب أخلاقيات البحث والمنطق والميتافيزيا. تهتم نظرية المعرفة إلى حد كبير بطبيعة المعرفة، وأصلها، ونطاقها، إضافة إلى عقلانيَّة المعتقدات.  المصطلحات ذات الصِّلة: العلوم البعدية/التلوية أو البحث البعدي/التلوي، علم الوجود (الذَّكاء الاصطناعي)",
     "related_terms": [
         "Meta-science or Meta-research",
         "Ontology (Artificial Intelligence)"
     ],
     "references": [
-        "Steup et al. (2020)"
+        "SteupNeta2020"
     ],
     "alt_related_terms": [
         null
@@ -21,5 +21,15 @@
         "Robert M Ross",
         "Steven Verheyen"
     ],
-    "language": "arabic"
+    "language": "arabic",
+    "translated_by": [
+        "Mahdi Aben Ahmed"
+    ],
+    "translation_reviewed_by": [
+        "Amani Aloufi",
+        "Ali H. Al-Hoorie",
+        "Hiba Alomary",
+        "Asma Alzahrani",
+        "Mohammed Mohsen"
+    ]
 }

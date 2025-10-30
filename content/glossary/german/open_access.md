@@ -10,7 +10,8 @@
         "Repository"
     ],
     "references": [
-        "[Budapest Open Access Initiative (2002)](https://www.budapestopenaccessinitiative.org/read); Suber (2015)"
+        "[Budapest Open Access Initiative (2002)](https://www.budapestopenaccessinitiative.org/read)",
+        "Suber (2015)"
     ],
     "alt_related_terms": [
         null
@@ -26,5 +27,12 @@
         "Mariella Paul",
         "Charlotte R. Pennington"
     ],
-    "language": "german"
+    "language": "german",
+    "translated_by": [
+        "Helena Hartmann"
+    ],
+    "translation_reviewed_by": [
+        "Susanne Vogel",
+        "Jennifer Mattschey"
+    ]
 }

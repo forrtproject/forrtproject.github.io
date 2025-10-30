@@ -11,7 +11,7 @@
         "TRUST principles"
     ],
     "references": [
-        "Confederation of Open Access Repositories (2020, October 8\\)"
+        "COAR2020"
     ],
     "alt_related_terms": [
         null
@@ -25,5 +25,12 @@
         "Bethan Iley",
         "Sam Parsons"
     ],
-    "language": "german"
+    "language": "german",
+    "translated_by": [
+        "Helena Hartmann"
+    ],
+    "translation_reviewed_by": [
+        "Susanne Vogel",
+        "Jennifer Mattschey"
+    ]
 }

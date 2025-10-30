@@ -8,7 +8,10 @@
         "Open Source"
     ],
     "references": [
-        "Farrow (2017); Moretti (2020); Villum (2016); Vlaeminck and Podkrajac (2017)"
+        "Farrow (2017)",
+        "Moretti (2020)",
+        "Villum (2016)",
+        "Vlaeminck and Podkrajac (2017)"
     ],
     "alt_related_terms": [
         null
@@ -23,5 +26,12 @@
         "Charlotte R. Pennington",
         "Beatrice Valentini"
     ],
-    "language": "german"
+    "language": "german",
+    "translated_by": [
+        "Helena Hartmann"
+    ],
+    "translation_reviewed_by": [
+        "Susanne Vogel",
+        "Jennifer Mattschey"
+    ]
 }

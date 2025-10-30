@@ -8,7 +8,13 @@
         "Bayesian Parameter Estimation"
     ],
     "references": [
-        "Dienes (2011; 2014; 2016); Etz et al. (2018); Kruschke (2015); McElreath (2020); Wagenmakers et al. (2018)"
+        "Dienes (2011",
+        "2014",
+        "2016)",
+        "Etz et al. (2018)",
+        "Kruschke (2015)",
+        "McElreath (2020)",
+        "Wagenmakers et al. (2018)"
     ],
     "alt_related_terms": [
         null

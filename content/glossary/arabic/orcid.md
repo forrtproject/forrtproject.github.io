@@ -1,14 +1,15 @@
 {
     "type": "glossary",
-    "title": "ORCID (Open Researcher and Contributor ID) (الأوركيد)",
-    "definition": "التَّعريف: هي منظمة توفِّر سجل ثابت لمعرِّفات فريدة للباحثين، والعلماء بما يسمح لهم بربط وثائق بحوثهم الرَّقميَّة، ومساهماتهم الأخرى بسجل الأوركيد.  يساعد هذا الإجراء في تجنُّب التباس الأسماء في مجال الاتِّصال العلمي. مُعرِّفات الأوركيد توفِّر معرِّفًا فريدًا ثابتًا دائمًا؛ لربط الباحثين بأعمالهم. يمكن الاشتراك مجانًا عن طريق : [https://orcid.org/register](https://orcid.org/register) المصطلحات ذات الصِّلة:  التَّأليف، معرِّف الكائن الرَّقميَّ، مشكلة ازدواجيَّة الاسم.",
+    "title": "ORCID (Open Researcher and Contributor ID) (Open Researcher and Contributor ID الأوركيد)",
+    "definition": "هي منظمة توفِّر سجل ثابت لمعرِّفات فريدة للباحثين، والعلماء بما يسمح لهم بربط وثائق بحوثهم الرَّقميَّة، ومساهماتهم الأخرى بسجل الأوركيد.  يساعد هذا الإجراء في تجنُّب التباس الأسماء في مجال الاتِّصال العلمي. مُعرِّفات الأوركيد توفِّر معرِّفًا فريدًا ثابتًا دائمًا؛ لربط الباحثين بأعمالهم. يمكن الاشتراك مجانًا عن طريق : [https://orcid.org/register](https://orcid.org/register) المصطلحات ذات الصِّلة:  التَّأليف، معرِّف الكائن الرَّقميَّ، مشكلة ازدواجيَّة الاسم.",
     "related_terms": [
         "Authorship",
         "DOI (digital object identifier)",
         "Name Ambiguity Problem"
     ],
     "references": [
-        "Haak et al. (2012); [https://orcid.org/](https://orcid.org/)"
+        "Haak et al. (2012)",
+        "[https://orcid.org/](https://orcid.org/) , @*ORCID"
     ],
     "alt_related_terms": [
         null
@@ -24,5 +25,14 @@
         "Emily A. Williams",
         "Flávio Azevedo"
     ],
-    "language": "arabic"
+    "language": "arabic",
+    "translated_by": [
+        "Awatif Alruwaili"
+    ],
+    "translation_reviewed_by": [
+        "Ahlam Ahmed",
+        "Ali H. Al-Hoorie",
+        "Asma Alzahrani",
+        "Mohammed Mohsen"
+    ]
 }

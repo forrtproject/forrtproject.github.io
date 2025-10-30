@@ -6,7 +6,7 @@
         "Peer review"
     ],
     "references": [
-        "Tvina et al. (2019)"
+        "Tvina2019"
     ],
     "alt_related_terms": [
         null
@@ -20,5 +20,12 @@
         "Adam Parker",
         "Graham Reid"
     ],
-    "language": "german"
+    "language": "german",
+    "translated_by": [
+        "Susanne Vogel"
+    ],
+    "translation_reviewed_by": [
+        "Helena Hartmann",
+        "Jennifer Mattschey"
+    ]
 }

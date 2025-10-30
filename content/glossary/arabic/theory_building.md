@@ -1,7 +1,7 @@
 {
     "type": "glossary",
     "title": "Theory building (بناء النَّظريَّة)",
-    "definition": "التَّعريف: هي عمليَّة إنشاء وتطوير بيان للمفاهيم وعلاقاتها المتبادلة؛ لإظهار كيف أو لماذا تحدث ظاهرةٌ ما، فبناء الَّنظريَّة يقودنا إلى اختبارها.  المصطلحات ذات الصِّلة: الفرضيَّة، النَّموذج الفلسفي، النَّظريَّة، المساهمة النَّظريَّة، النَّموذج النَّظري.",
+    "definition": "هي عمليَّة إنشاء وتطوير بيان للمفاهيم وعلاقاتها المتبادلة؛ لإظهار كيف أو لماذا تحدث ظاهرةٌ ما، فبناء الَّنظريَّة يقودنا إلى اختبارها.  المصطلحات ذات الصِّلة: الفرضيَّة، النَّموذج الفلسفي، النَّظريَّة، المساهمة النَّظريَّة، النَّموذج النَّظري.",
     "related_terms": [
         "Hypothesis",
         "Model (philosophy)",
@@ -10,7 +10,10 @@
         "Theoretical model"
     ],
     "references": [
-        "Borsboom et al. (2020); Corley and Gioia (2011); Gioia and Pitrie (1990); Wacker (1998)"
+        "Borsboom et al. (2020)",
+        "Corley and Gioia (2011)",
+        "Gioia and Pitrie (1990)",
+        "Wacker (1998)"
     ],
     "alt_related_terms": [
         null
@@ -23,5 +26,14 @@
         "Helena Hartmann",
         "Charlotte R. Pennington"
     ],
-    "language": "arabic"
+    "language": "arabic",
+    "translated_by": [
+        "Mahdi Aben Ahmed"
+    ],
+    "translation_reviewed_by": [
+        "Ali H. Al-Hoorie",
+        "Ahlam Ahmed",
+        "Asma Alzahrani",
+        "Mohammed Mohsen"
+    ]
 }

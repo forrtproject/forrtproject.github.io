@@ -7,7 +7,8 @@
         "Gaming (the system)"
     ],
     "references": [
-        "Crosetto (2021); Xia et al. (2015)"
+        "Crosetto (2021)",
+        "Xia et al. (2015)"
     ],
     "alt_related_terms": [
         null
@@ -22,5 +23,12 @@
         "Graham Reid",
         "Flávio Azevedo"
     ],
-    "language": "german"
+    "language": "german",
+    "translated_by": [
+        "Helena Hartmann"
+    ],
+    "translation_reviewed_by": [
+        "Susanne Vogel",
+        "Jennifer Mattschey"
+    ]
 }

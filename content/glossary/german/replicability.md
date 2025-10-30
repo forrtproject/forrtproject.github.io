@@ -11,7 +11,11 @@
         "Robustness (analyses)"
     ],
     "references": [
-        "Barba (2018); Crüwell et al. (2019); King (1996); National Academies of Sciences et al. (2011); Nosek and Errington (2020)"
+        "Barba (2018)",
+        "Crüwell et al. (2019)",
+        "King (1996)",
+        "National Academies of Sciences et al. (2011)",
+        "Nosek and Errington (2020) , , , \\_Academies\\_2019"
     ],
     "alt_related_terms": [
         null
@@ -29,5 +33,12 @@
         "Eike Mark Rinke",
         "Tobias Wingen"
     ],
-    "language": "german"
+    "language": "german",
+    "translated_by": [
+        "Susanne Vogel"
+    ],
+    "translation_reviewed_by": [
+        "Helena Hartmann",
+        "Jennifer Mattschey"
+    ]
 }

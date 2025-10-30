@@ -11,13 +11,14 @@
         "Specification Curve Analysis"
     ],
     "references": [
-        "Gelman and Loken (2013)"
+        "GelmanLoken2013"
     ],
     "alt_related_terms": [
         null
     ],
     "drafted_by": [
-        "Flávio Azevedo; Mahmoud Elsherif"
+        "Flávio Azevedo",
+        "Mahmoud Elsherif"
     ],
     "reviewed_by": [
         "Gisela H. Govaart",
@@ -25,5 +26,12 @@
         "Tamara Kalandadze",
         "Charlotte R. Pennington"
     ],
-    "language": "german"
+    "language": "german",
+    "translated_by": [
+        "Bettina MJ Kern"
+    ],
+    "translation_reviewed_by": [
+        "Helena Hartmann",
+        "Jennifer Mattschey"
+    ]
 }

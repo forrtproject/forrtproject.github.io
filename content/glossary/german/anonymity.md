@@ -11,7 +11,7 @@
         "Vulnerable population"
     ],
     "references": [
-        "Braun and Clarke (2013)"
+        "BraunClarke2013"
     ],
     "alt_related_terms": [
         null
@@ -30,5 +30,12 @@
         "Madeleine Pownall",
         "Birgit Schmidt"
     ],
-    "language": "german"
+    "language": "german",
+    "translated_by": [
+        "Susanne Vogel"
+    ],
+    "translation_reviewed_by": [
+        "Helena Hartmann",
+        "Jennifer Mattschey"
+    ]
 }

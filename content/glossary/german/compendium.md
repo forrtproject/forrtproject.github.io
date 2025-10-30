@@ -7,14 +7,9 @@
         "Replication",
         "Reproducibility",
         "Research compendium",
-        "References: Claerbout and Karrenfach (1992)",
-        "Gentleman (2005)",
-        "Marwick et al. (2018)",
-        "Nüst et al. (2018)"
+        "References: \\[@Claerbout1992\\], \\[@Gentleman2005\\], \\[@Marwick2018\\], \\[@Nust2018\\]"
     ],
-    "references": [
-        ""
-    ],
+    "references": [],
     "alt_related_terms": [
         null
     ],
@@ -25,5 +20,12 @@
         "Ali H. Al-Hoorie",
         "Charlotte R. Pennington"
     ],
-    "language": "german"
+    "language": "german",
+    "translated_by": [
+        "Susanne Vogel"
+    ],
+    "translation_reviewed_by": [
+        "Helena Hartmann",
+        "Jennifer Mattschey"
+    ]
 }

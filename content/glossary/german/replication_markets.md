@@ -9,7 +9,10 @@
         "Reproducibility"
     ],
     "references": [
-        "Liu et al. (2020); Tierney et al. (2020); Tierney et al. (2021); www.replicationmarkets.com"
+        "Liu et al. (2020)",
+        "Tierney et al. (2020)",
+        "Tierney et al. (2021)",
+        "[www.replicationmarkets.com](http://www.replicationmarkets.com)"
     ],
     "alt_related_terms": [
         null
@@ -22,5 +25,12 @@
         "Leticia Micheli",
         "Sam Parsons"
     ],
-    "language": "german"
+    "language": "german",
+    "translated_by": [
+        "Helena Hartmann"
+    ],
+    "translation_reviewed_by": [
+        "Susanne Vogel",
+        "Jennifer Mattschey"
+    ]
 }

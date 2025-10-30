@@ -7,7 +7,9 @@
         "Social integration"
     ],
     "references": [
-        "Albayrak and Okoroji (2019); Du Bois (1968); Gilroy (1993)"
+        "AlbayrakOkoroji2019",
+        "DuBois1968",
+        "Gilroy1993"
     ],
     "alt_related_terms": [
         null
@@ -21,5 +23,12 @@
         "Michele C. Lim",
         "Adam Parker"
     ],
-    "language": "german"
+    "language": "german",
+    "translated_by": [
+        "Helena Hartmann"
+    ],
+    "translation_reviewed_by": [
+        "Susanne Vogel",
+        "Jennifer Mattschey"
+    ]
 }

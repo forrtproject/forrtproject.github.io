@@ -6,10 +6,11 @@
         "Bracketing Interviews",
         "Positionality",
         "Quantitative research",
-        "Reflexivity Alternative definition: (if applicable) In Psychology, the epistemology of qualitative research is typically concerned with understanding people’s perspectives. Such epistemology proposes assuming the equity of researchers and participants as human beings, and in consequence, the need of sympathetic human understanding instead of data-driven conclusions. \\[GERMAN:\\] In der Psychologie befasst sich die Erkenntnistheorie der qualitativen Forschung in der Regel mit dem Verständnis der Perspektive der Menschen. Eine solche Erkenntnistheorie geht davon aus, dass Forschende und Teilnehmende gleichwertige menschliche Wesen sind und folglich ein mitfühlendes menschliches Verständnis anstelle von datengesteuerten Schlussfolgerungen erforderlich ist."
+        "Reflexivity Alternative definition: (if applicable) In Psychology, the epistemology of qualitative research is typically concerned with understanding people’s perspectives. Such epistemology proposes assuming the equity of researchers and participants as human beings, and in consequence, the need of sympathetic human understanding instead of data-driven conclusions"
     ],
     "references": [
-        "Aspers and Corte (2019); Levitt et al. (2017)"
+        "Aspers and Corte (2019)",
+        "Levitt et al. (2017)"
     ],
     "alt_related_terms": [
         null
@@ -24,5 +25,12 @@
         "Claire Melia",
         "Flávio Azevedo"
     ],
-    "language": "german"
+    "language": "german",
+    "translated_by": [
+        "Helena Hartmann"
+    ],
+    "translation_reviewed_by": [
+        "Susanne Vogel",
+        "Jennifer Mattschey"
+    ]
 }

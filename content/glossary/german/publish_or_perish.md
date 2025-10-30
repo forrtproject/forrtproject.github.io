@@ -10,7 +10,8 @@
         "Slow Science"
     ],
     "references": [
-        "Case (1928); Fanelli (2010)"
+        "Case (1928)",
+        "Fanelli (2010)"
     ],
     "alt_related_terms": [
         null
@@ -27,5 +28,12 @@
         "Timo Roettger",
         "Olmo van den Akker"
     ],
-    "language": "german"
+    "language": "german",
+    "translated_by": [
+        "Susanne Vogel"
+    ],
+    "translation_reviewed_by": [
+        "Helena Hartmann",
+        "Jennifer Mattschey"
+    ]
 }

@@ -1,7 +1,7 @@
 {
     "type": "glossary",
     "title": "Quantitative research (البحث الكميّ)",
-    "definition": "التَّعريف: يشمل البحث الكمي مجموعة متنوِّعة من الأساليب للبحث بشكل منهجي في مجموعة من الظَّواهر من خلال استخدام البيانات الرَّقمية التي يمكن تحليلها إحصائيًا.  المصطلحات ذات الصِّلة: القياس، البحث النَّوعي، حجم العيّنة، القوة الإحصائيَّة، إحصائيّات.",
+    "definition": "يشمل البحث الكمي مجموعة متنوِّعة من الأساليب للبحث بشكل منهجي في مجموعة من الظَّواهر من خلال استخدام البيانات الرَّقمية التي يمكن تحليلها إحصائيًا.  المصطلحات ذات الصِّلة: القياس، البحث النَّوعي، حجم العيّنة، القوة الإحصائيَّة، إحصائيّات.",
     "related_terms": [
         "Measuring",
         "Qualitative research",
@@ -21,7 +21,16 @@
     "reviewed_by": [
         "Valeria Agostini",
         "Tamara Kalandadze",
-        "Adam Parker."
+        "Adam Parker"
     ],
-    "language": "arabic"
+    "language": "arabic",
+    "translated_by": [
+        "Ahlam Ahmed"
+    ],
+    "translation_reviewed_by": [
+        "Ali H. Al-Hoorie",
+        "Hala Alghamdi",
+        "Asma Alzahrani",
+        "Mohammed Mohsen"
+    ]
 }

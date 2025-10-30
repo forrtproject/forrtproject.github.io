@@ -10,7 +10,9 @@
         "Equity"
     ],
     "references": [
-        "Eagly and Riger (2014); Grzanka (2020); Pownall et al (2021)"
+        "EaglyRiger2014",
+        "Grzanka2020",
+        "Pownall20210"
     ],
     "alt_related_terms": [
         null
@@ -24,5 +26,14 @@
         "Kai Krautter",
         "Charlotte R. Pennington"
     ],
-    "language": "arabic"
+    "language": "arabic",
+    "translated_by": [
+        "Hiba Alomary"
+    ],
+    "translation_reviewed_by": [
+        "Mahdi Aben Ahmed",
+        "Ahlam Ahmed",
+        "Ali H. Al-Hoorie",
+        "Mohammed Mohsen"
+    ]
 }

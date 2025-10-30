@@ -9,7 +9,9 @@
         "Type I error"
     ],
     "references": [
-        "Lakens et al. (2018); Pernet (2015); Spence and Stanley (2018)"
+        "Lakens et al. (2018)",
+        "Pernet (2015)",
+        "Spence and Stanley (2018)"
     ],
     "alt_related_terms": [
         null
@@ -21,7 +23,7 @@
         "Jamie P. Cockcroft",
         "Annalise A. LaPlume",
         "Charlotte R. Pennington",
-        "Sonia Rishi  ### O {#o}"
+        "Sonia Rishi"
     ],
     "language": "english",
     "aliases": [

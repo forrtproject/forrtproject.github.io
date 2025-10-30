@@ -7,7 +7,8 @@
         "Preregistration"
     ],
     "references": [
-        "BMJ (2015); Nosek et al. (2018)"
+        "BMJ (2015)",
+        "Nosek et al. (2018)"
     ],
     "alt_related_terms": [
         null
@@ -21,5 +22,12 @@
         "Annalise A. LaPlume",
         "Charlotte Pennington"
     ],
-    "language": "german"
+    "language": "german",
+    "translated_by": [
+        "Susanne Vogel"
+    ],
+    "translation_reviewed_by": [
+        "Helena Hartmann",
+        "Jennifer Mattschey"
+    ]
 }

@@ -14,7 +14,7 @@
         "Transparency"
     ],
     "references": [
-        "[https://rr.peercommunityin.org/about/about](https://rr.peercommunityin.org/about/about)"
+        "[https://rr.peercommunityin.org/about/about](https://rr.peercommunityin.org/about/about) \\_rr"
     ],
     "alt_related_terms": [
         null
@@ -28,5 +28,12 @@
         "Mahmoud Elsherif",
         "Helena Hartmann"
     ],
-    "language": "german"
+    "language": "german",
+    "translated_by": [
+        "Helena Hartmann"
+    ],
+    "translation_reviewed_by": [
+        "Jennifer Mattschey",
+        "Susanne Vogel"
+    ]
 }

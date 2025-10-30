@@ -9,13 +9,15 @@
         "Vibration of effects"
     ],
     "references": [
-        "Del Giudice and Gangestad (2021); Steegen et al. (2016)"
+        "Del Giudice and Gangestad (2021)",
+        "Steegen et al. (2016)"
     ],
     "alt_related_terms": [
         null
     ],
     "drafted_by": [
-        "Tina Lonsdorf; Flávio Azevedo"
+        "Tina Lonsdorf",
+        "Flávio Azevedo"
     ],
     "reviewed_by": [
         "Mahmoud Elsherif",
@@ -23,5 +25,12 @@
         "William Ngiam",
         "Sam Parsons"
     ],
-    "language": "german"
+    "language": "german",
+    "translated_by": [
+        "Susanne Vogel"
+    ],
+    "translation_reviewed_by": [
+        "Helena Hartmann",
+        "Jennifer Mattschey"
+    ]
 }

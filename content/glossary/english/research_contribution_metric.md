@@ -6,7 +6,9 @@
         "Semantometrics"
     ],
     "references": [
-        "Knoth and Herrmannova (2014); Holcombe (2019); Larivière et al. (2016)"
+        "Knoth and Herrmannova (2014)",
+        "Holcombe (2019)",
+        "Larivière et al. (2016)"
     ],
     "alt_related_terms": [
         null
@@ -18,7 +20,7 @@
         "Michele C. Lim",
         "Jamie P. Cockcroft",
         "Micah Vandegrift",
-        "Dominik Kiersz  ### ---  ####"
+        "Dominik Kiersz    ####"
     ],
     "language": "english",
     "aliases": [

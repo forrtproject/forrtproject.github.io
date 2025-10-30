@@ -11,7 +11,13 @@
         "Replication"
     ],
     "references": [
-        "Ebersole et al. (2016); Frank et al. (2017); Klein et al. (2014); Klein et al. (2018); Moshontz et al. (2018); Open Science Collaboration (2015); Pavlov et al. (2020)"
+        "Ebersole et al. (2016)",
+        "Frank et al. (2017)",
+        "Klein et al. (2014)",
+        "Klein et al. (2018)",
+        "Moshontz et al. (2018)",
+        "Open Science Collaboration (2015)",
+        "Pavlov et al. (2020) , , , , , \\_Science\\_Collaboration2015"
     ],
     "alt_related_terms": [
         null
@@ -24,5 +30,12 @@
         "Charlotte R. Pennington",
         "Mirela Zaneva"
     ],
-    "language": "german"
+    "language": "german",
+    "translated_by": [
+        "Susanne Vogel"
+    ],
+    "translation_reviewed_by": [
+        "Helena Hartmann",
+        "Jennifer Mattschey"
+    ]
 }

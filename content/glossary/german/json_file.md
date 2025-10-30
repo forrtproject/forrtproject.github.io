@@ -7,7 +7,7 @@
         "Metadata"
     ],
     "references": [
-        "https://bids-specification.readthedocs.io/en/stable/03-modality-agnostic-files.html"
+        "BIDSModalityND"
     ],
     "alt_related_terms": [
         null
@@ -21,5 +21,12 @@
         "Emma Norris",
         "Charlotte R. Pennington"
     ],
-    "language": "german"
+    "language": "german",
+    "translated_by": [
+        "Bettina MJ Kern"
+    ],
+    "translation_reviewed_by": [
+        "Susanne Vogel",
+        "Jennifer Mattschey"
+    ]
 }

@@ -9,7 +9,20 @@
         "Team science"
     ],
     "references": [
-        "Benoit et al. (2016); Breznau (2021); Franzoni and Sauermann (2014); Himmelstein et al. (2019); Klein et al. (2018); Lind et al. (2017); Moshontz et al. (2018); Peer et al. (2017); Silberzahn et al. (2018); Stewart et al. (2017); Tennant et al. (2019); Uhlmann et al. (2019); [https://psysciacc.org/](https://psysciacc.org/); [https://crowdsourcingweek.com/what-is-crowdsourcing/](https://crowdsourcingweek.com/what-is-crowdsourcing/#:~:text=Crowdsourcing%20is%20the%20practice%20of,levels%20and%20across%20various%20industries)"
+        "Benoit et al. (2016)",
+        "Breznau (2021)",
+        "Franzoni and Sauermann (2014)",
+        "Himmelstein et al. (2019)",
+        "Klein et al. (2018)",
+        "Lind et al. (2017)",
+        "Moshontz et al. (2018)",
+        "Peer et al. (2017)",
+        "Silberzahn et al. (2018)",
+        "Stewart et al. (2017)",
+        "Tennant et al. (2019)",
+        "Uhlmann et al. (2019)",
+        "[https://psysciacc.org/](https://psysciacc.org/)",
+        "[https://crowdsourcingweek.com/what-is-crowdsourcing/](https://crowdsourcingweek.com/what-is-crowdsourcing/#:~:text=Crowdsourcing%20is%20the%20practice%20of,levels%20and%20across%20various%20industries) , , , , , , , , , , , , \\_Science\\_Accelerator\\_n\\_d"
     ],
     "alt_related_terms": [
         null
@@ -24,5 +37,12 @@
         "Suzanne L. K. Stewart",
         "Flávio Azevedo"
     ],
-    "language": "arabic"
+    "language": "arabic",
+    "translated_by": [
+        "Naif Masrahi"
+    ],
+    "translation_reviewed_by": [
+        "Asma Alzahrani",
+        "Awatif Alruwaili, Ali H. Al-Hoorie, Mohammed Mohsen"
+    ]
 }

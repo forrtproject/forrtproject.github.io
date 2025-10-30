@@ -7,13 +7,16 @@
         "Generalizability"
     ],
     "references": [
-        "Crüwell et al. (2019); Hüffmeier et al. (2016); LeBel et al. (2018)"
+        "Cruwell2019",
+        "Huffmeier2016",
+        "LeBel2018"
     ],
     "alt_related_terms": [
         null
     ],
     "drafted_by": [
-        "Mahmoud Elsherif; Thomas Rhys Evans"
+        "Mahmoud Elsherif",
+        "Thomas Rhys Evans"
     ],
     "reviewed_by": [
         "Adrien Fillon",
@@ -28,5 +31,12 @@
         "Suzanne L. K. Stewart",
         "Flávio Azevedo"
     ],
-    "language": "german"
+    "language": "german",
+    "translated_by": [
+        "Susanne Vogel"
+    ],
+    "translation_reviewed_by": [
+        "Helena Hartmann",
+        "Jennifer Mattschey"
+    ]
 }

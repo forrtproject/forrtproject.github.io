@@ -8,7 +8,7 @@
         "Inclusion"
     ],
     "references": [
-        "Albayrak (2018)"
+        "Albayrak2018a"
     ],
     "alt_related_terms": [
         null
@@ -23,5 +23,12 @@
         "Emma Norris",
         "Flávio Azevedo"
     ],
-    "language": "german"
+    "language": "german",
+    "translated_by": [
+        "Helena Hartmann"
+    ],
+    "translation_reviewed_by": [
+        "Susanne Vogel",
+        "Jennifer Mattschey"
+    ]
 }

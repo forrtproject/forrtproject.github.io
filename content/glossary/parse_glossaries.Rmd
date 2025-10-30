@@ -1,0 +1,43 @@
+---
+title: "Untitled"
+author: "Lukas Wallrich"
+date: "2025-04-14"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(jsonlite)
+library(tidyverse)
+```
+
+## R Markdown
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+```{r cars}
+glossaries <- read_json("_glossaries.json") 
+# Convert to data frame
+map_dfr((glossaries[[1]][[1]]), as_tibble) %>% mutate(Reference = coalesce(Reference, `Reference(s)`)) %>% 
+  mutate(across(everything(), str_trim)) %>% 
+  mutate(across(everything(), ~str_remove(.x, "^\\*+|\\*+$"))) %>% 
+    mutate(across(everything(), str_trim)) %>% 
+  mutate(trans_title = str_extract(Title, "\\(.*\\)") %>% str_remove_all("\\(|\\)")) %>% 
+  select(-`Reference(s)`) %>% write_csv("glossaries_arabic.csv")
+
+eng_gloss %>% mutate(str_len = str_length(Definition)) %>% arrange(desc(str_len))
+
+eng_gloss %>% write_csv("glossaries_english.csv")
+```
+
+## Including Plots
+
+You can also embed plots, for example:
+
+```{r pressure, echo=FALSE}
+plot(pressure)
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.

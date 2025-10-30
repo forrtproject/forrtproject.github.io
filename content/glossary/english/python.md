@@ -25,7 +25,7 @@
         "Helena Hartmann",
         "Dominik Kiersz",
         "Graham Reid",
-        "Andrew J. Stewart  ### Q {#q}"
+        "Andrew J. Stewart"
     ],
     "language": "english",
     "aliases": [

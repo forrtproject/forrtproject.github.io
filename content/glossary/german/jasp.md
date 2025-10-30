@@ -7,7 +7,7 @@
         "Open source"
     ],
     "references": [
-        "JASP Team (2020)"
+        "JASP2020"
     ],
     "alt_related_terms": [
         null
@@ -19,5 +19,12 @@
         "Adrien Fillon, Adam Parker",
         "Sam Parsons"
     ],
-    "language": "german"
+    "language": "german",
+    "translated_by": [
+        "Bettina MJ Kern"
+    ],
+    "translation_reviewed_by": [
+        "Susanne Vogel",
+        "Jennifer Mattschey"
+    ]
 }

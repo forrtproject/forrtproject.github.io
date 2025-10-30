@@ -9,7 +9,8 @@
         "Hidden moderators"
     ],
     "references": [
-        "Dienes (2008); Lakatos (1978)"
+        "Dienes2008",
+        "Lakatos1978"
     ],
     "alt_related_terms": [
         null
@@ -25,5 +26,14 @@
         "Sam Parsons",
         "Flávio Azevedo"
     ],
-    "language": "arabic"
+    "language": "arabic",
+    "translated_by": [
+        "Asma Alzahrani"
+    ],
+    "translation_reviewed_by": [
+        "Ali H. Al-Hoorie",
+        "Hala Alghamdi",
+        "Ahlam Ahmed",
+        "Mohammed Mohsen"
+    ]
 }

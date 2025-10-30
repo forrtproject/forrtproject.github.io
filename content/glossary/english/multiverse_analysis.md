@@ -9,19 +9,21 @@
         "Vibration of effects"
     ],
     "references": [
-        "Del Giudice and Gangestad (2021); Steegen et al. (2016)"
+        "Del Giudice and Gangestad (2021)",
+        "Steegen et al. (2016)"
     ],
     "alt_related_terms": [
         null
     ],
     "drafted_by": [
-        "Tina Lonsdorf; Flávio Azevedo"
+        "Tina Lonsdorf",
+        "Flávio Azevedo"
     ],
     "reviewed_by": [
         "Mahmoud Elsherif",
         "Adrien Fillon",
         "William Ngiam",
-        "Sam Parsons  ###  ### N {#n}"
+        "Sam Parsons"
     ],
     "language": "english",
     "aliases": [

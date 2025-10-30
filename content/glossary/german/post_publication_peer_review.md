@@ -7,9 +7,7 @@
         "PeerPub",
         "Peer review"
     ],
-    "references": [
-        ""
-    ],
+    "references": [],
     "alt_related_terms": [
         null
     ],
@@ -20,5 +18,12 @@
         "Mahmoud Elsherif",
         "Sam Parsons"
     ],
-    "language": "german"
+    "language": "german",
+    "translated_by": [
+        "Helena Hartmann"
+    ],
+    "translation_reviewed_by": [
+        "Susanne Vogel",
+        "Jennifer Mattschey"
+    ]
 }

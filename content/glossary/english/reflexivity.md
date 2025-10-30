@@ -7,7 +7,8 @@
         "Qualitative Research"
     ],
     "references": [
-        "Braun and Clarke (2013); Finlay and Gough (2008)"
+        "Braun and Clarke (2013)",
+        "Finlay and Gough (2008)"
     ],
     "alt_related_terms": [
         null

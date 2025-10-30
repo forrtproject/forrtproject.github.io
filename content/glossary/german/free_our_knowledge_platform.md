@@ -7,7 +7,7 @@
         "Preregistration Pledge"
     ],
     "references": [
-        "[https://freeourknowledge.org/about/](https://freeourknowledge.org/about/)"
+        "FreeOurKnowledgeND"
     ],
     "alt_related_terms": [
         null
@@ -22,5 +22,12 @@
         "Sam Parsons",
         "Flávio Azevedo"
     ],
-    "language": "german"
+    "language": "german",
+    "translated_by": [
+        "Helena Hartmann"
+    ],
+    "translation_reviewed_by": [
+        "Susanne Vogel",
+        "Jennifer Mattschey"
+    ]
 }

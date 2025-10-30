@@ -9,7 +9,8 @@
         "Impact"
     ],
     "references": [
-        "Hirsch (2005); Wendl (2007)"
+        "Hirsch2005",
+        "Wendl2007"
     ],
     "alt_related_terms": [
         null
@@ -23,5 +24,12 @@
         "Brett J. Gall",
         "Charlotte R. Pennington"
     ],
-    "language": "german"
+    "language": "german",
+    "translated_by": [
+        "Bettina MJ Kern"
+    ],
+    "translation_reviewed_by": [
+        "Helena Hartmann",
+        "Jennifer Mattschey"
+    ]
 }

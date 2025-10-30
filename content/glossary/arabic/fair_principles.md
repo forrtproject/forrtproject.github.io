@@ -11,7 +11,7 @@
         "Repository"
     ],
     "references": [
-        "Crüwell et al. (2019); Wilkinson et al. (2016); [https://www.go-fair.org/fair-principles/](https://www.go-fair.org/fair-principles/)"
+        "\\_fair\\_principles"
     ],
     "alt_related_terms": [
         null
@@ -24,5 +24,15 @@
         "Sam Parsons",
         "Charlotte R. Pennington"
     ],
-    "language": "arabic"
+    "language": "arabic",
+    "translated_by": [
+        "Sarah Almutairi"
+    ],
+    "translation_reviewed_by": [
+        "Amani Aloufi",
+        "Hiba Alomary",
+        "Ali H. Al-Hoorie",
+        "Asma Alzahrani",
+        "Mohammed Mohsen"
+    ]
 }

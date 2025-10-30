@@ -10,7 +10,7 @@
         "Transparency"
     ],
     "references": [
-        "[http://riotscience.co.uk/](http://riotscience.co.uk/)"
+        "[http://riotscience.co.uk/](http://riotscience.co.uk/) \\_Science\\_Club2021"
     ],
     "alt_related_terms": [
         null
@@ -24,5 +24,12 @@
         "Joanne McCuaig",
         "Flávio Azevedo"
     ],
-    "language": "german"
+    "language": "german",
+    "translated_by": [
+        "Helena Hartmann"
+    ],
+    "translation_reviewed_by": [
+        "Susanne Vogel",
+        "Jennifer Mattschey"
+    ]
 }

@@ -9,7 +9,8 @@
         "Theory"
     ],
     "references": [
-        "Tierney et al. (2020, 2021\\)"
+        "Tierney2020",
+        "Tierney2021"
     ],
     "alt_related_terms": [
         null
@@ -25,5 +26,12 @@
         "Sonia Rishi",
         "Beatrice Valentini"
     ],
-    "language": "german"
+    "language": "german",
+    "translated_by": [
+        "Helena Hartmann"
+    ],
+    "translation_reviewed_by": [
+        "Susanne Vogel",
+        "Jennifer Mattschey"
+    ]
 }

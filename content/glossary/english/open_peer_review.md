@@ -9,7 +9,7 @@
         "Transparent peer review"
     ],
     "references": [
-        "Ross-Hellauer (2017)"
+        "Ross-Hellauer (2017) \\_Hellauer2017"
     ],
     "alt_related_terms": [
         null

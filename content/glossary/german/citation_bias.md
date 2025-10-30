@@ -7,7 +7,10 @@
         "Reporting bias"
     ],
     "references": [
-        "Brooks (1985); Jannot et al. (2013); Thombs et al. (2015); Zurn et al. (2020)"
+        "Brooks1985",
+        "Jannot2013",
+        "Thombs2015",
+        "Zurn2020"
     ],
     "alt_related_terms": [
         null
@@ -24,5 +27,12 @@
         "Timo Roettger",
         "Tobias Wingen"
     ],
-    "language": "german"
+    "language": "german",
+    "translated_by": [
+        "Helena Hartmann"
+    ],
+    "translation_reviewed_by": [
+        "Susanne Vogel",
+        "Jennifer Mattschey"
+    ]
 }

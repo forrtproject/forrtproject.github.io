@@ -1,12 +1,12 @@
 {
     "type": "glossary",
-    "title": "PubPeer (منصة بابّير (PubPeer))",
-    "definition": "التَّعريف: موقع ويب يسمح للمستخدمين بنشر مراجعات أقران مجهولة المصدر للبحوث ا المنشورة (أي مراجعة الأقران بعد النَّشر).  المصطلحات ذات الصِّلة: التّحكيم المفتوح.",
+    "title": "PubPeer (منصة بابّير PubPeer)",
+    "definition": "موقع ويب يسمح للمستخدمين بنشر مراجعات أقران مجهولة المصدر للبحوث ا المنشورة (أي مراجعة الأقران بعد النَّشر).  المصطلحات ذات الصِّلة: التّحكيم المفتوح.",
     "related_terms": [
         "Open Peer Review"
     ],
     "references": [
-        "www.pubpeer.com"
+        "[www.pubpeer.com](http://www.pubpeer.com)"
     ],
     "alt_related_terms": [
         null
@@ -17,5 +17,14 @@
     "reviewed_by": [
         "Mahmoud ELsherif"
     ],
-    "language": "arabic"
+    "language": "arabic",
+    "translated_by": [
+        "Mai Helmy."
+    ],
+    "translation_reviewed_by": [
+        "Ahlam Ahmed",
+        "Ali H. Al-Hoorie",
+        "Asma Alzahrani",
+        "Mohammed Mohsen"
+    ]
 }

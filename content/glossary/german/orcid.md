@@ -1,6 +1,6 @@
 {
     "type": "glossary",
-    "title": "ORCID (Open Researcher and Contributor ID)",
+    "title": "ORCID (Open Researcher and Contributor ID) (Open Researcher and Contributor ID)",
     "definition": "Eine Organisation, die ein Register mit dauerhaften eindeutigen Identifikatoren (ORCID iDs) für Forscher:innen und Akademiker:innen bereitstellt, so dass diese Nutzer:innen ihre digitalen Forschungsdokumente und andere Beiträge mit ihrem ORCID-Eintrag verknüpfen können. Die Registrierung für eine ORCID iD ist kostenlos aufhttps://orcid.org/register.",
     "related_terms": [
         "Authorship",
@@ -8,7 +8,8 @@
         "Name Ambiguity Problem"
     ],
     "references": [
-        "Haak et al. (2012); [https://orcid.org/](https://orcid.org/)"
+        "Haak et al. (2012)",
+        "[https://orcid.org/](https://orcid.org/) , @*ORCID"
     ],
     "alt_related_terms": [
         null
@@ -24,5 +25,12 @@
         "Emily A. Williams",
         "Flávio Azevedo"
     ],
-    "language": "german"
+    "language": "german",
+    "translated_by": [
+        "Helena Hartmann"
+    ],
+    "translation_reviewed_by": [
+        "Susanne Vogel",
+        "Jennifer Mattschey"
+    ]
 }

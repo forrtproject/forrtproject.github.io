@@ -8,7 +8,7 @@
         "Research ethics"
     ],
     "references": [
-        "[https://amnesia.openaire.eu/](https://amnesia.openaire.eu/)"
+        "\\_Amnesia"
     ],
     "alt_related_terms": [
         null
@@ -21,5 +21,12 @@
         "Myriam A. Baum",
         "Charlotte R. Pennington"
     ],
-    "language": "german"
+    "language": "german",
+    "translated_by": [
+        "Helena Hartmann"
+    ],
+    "translation_reviewed_by": [
+        "Susanne Vogel",
+        "Jennifer Mattschey"
+    ]
 }

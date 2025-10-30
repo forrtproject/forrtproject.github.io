@@ -13,7 +13,9 @@
         "Systematic review"
     ],
     "references": [
-        "Centre for Evaluation (n.d.); James et al., (2016); Siddaway et al. (2019)"
+        "CentreForEvaluationND",
+        "James2016",
+        "Siddaway2019"
     ],
     "alt_related_terms": [
         null
@@ -27,5 +29,15 @@
         "Adam Parker",
         "Charlotte R. Pennington"
     ],
-    "language": "arabic"
+    "language": "arabic",
+    "translated_by": [
+        "Naif Masrahi"
+    ],
+    "translation_reviewed_by": [
+        "Hiba Alomary",
+        "Ali H. Al-Hoorie",
+        "Hala Alghamdi",
+        "Asma Alzahrani",
+        "Mohammed Mohsen"
+    ]
 }

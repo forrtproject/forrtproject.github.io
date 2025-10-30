@@ -2,11 +2,10 @@
     "type": "glossary",
     "title": "Meta-science or Meta-research (Meta-Wissenschaft oder Meta-Forschung)",
     "definition": "Die wissenschaftliche Untersuchung der Wissenschaft selbst mit dem Ziel, wissenschaftliche Praktiken zu beschreiben, zu erklären, zu bewerten und/oder zu verbessern. Meta-Wissenschaft untersucht typischerweise wissenschaftliche Methoden, Analysen, die Berichterstattung und Auswertung von Daten, die Reproduzierbarkeit und Replizierbarkeit von Forschungsergebnissen sowie Anreize in der Wissenschaft.",
-    "related_terms": [
-        ""
-    ],
+    "related_terms": [],
     "references": [
-        "Ioannidis et al. (2015); Peterson and Panofsky (2020)"
+        "Ioannidis et al. (2015)",
+        "Peterson and Panofsky (2020)"
     ],
     "alt_related_terms": [
         null
@@ -19,5 +18,12 @@
         "Lisa Spitzer",
         "Olmo van den Akker"
     ],
-    "language": "german"
+    "language": "german",
+    "translated_by": [
+        "Susanne Vogel"
+    ],
+    "translation_reviewed_by": [
+        "Helena Hartmann",
+        "Jennifer Mattschey"
+    ]
 }

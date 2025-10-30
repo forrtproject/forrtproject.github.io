@@ -8,7 +8,8 @@
         "Neutrality"
     ],
     "references": [
-        "Macfarlane and Cheng (2008); Merton (1942)"
+        "Macfarlane and Cheng (2008)",
+        "Merton (1942)"
     ],
     "alt_related_terms": [
         null
@@ -23,5 +24,12 @@
         "Sam Parsons",
         "Charlotte R. Pennington"
     ],
-    "language": "german"
+    "language": "german",
+    "translated_by": [
+        "Helena Hartmann"
+    ],
+    "translation_reviewed_by": [
+        "Susanne Vogel",
+        "Jennifer Mattschey"
+    ]
 }

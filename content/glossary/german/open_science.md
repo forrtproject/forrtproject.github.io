@@ -16,7 +16,11 @@
         "Transparency"
     ],
     "references": [
-        "Abele-Brehm et al. (2019); Crüwell et al. (2019); Kathawalla et al. (2020); Syed (2019); Woelfe et al. (2011)"
+        "Abele-Brehm et al. (2019)",
+        "Crüwell et al. (2019)",
+        "Kathawalla et al. (2020)",
+        "Syed (2019)",
+        "Woelfe et al. (2011)"
     ],
     "alt_related_terms": [
         null
@@ -30,5 +34,12 @@
         "Charlotte R. Pennington",
         "Qinyu Xiao"
     ],
-    "language": "german"
+    "language": "german",
+    "translated_by": [
+        "Helena Hartmann"
+    ],
+    "translation_reviewed_by": [
+        "Susanne Vogel",
+        "Jennifer Mattschey"
+    ]
 }

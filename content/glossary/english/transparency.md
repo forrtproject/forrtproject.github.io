@@ -10,7 +10,9 @@
         "Trustworthiness"
     ],
     "references": [
-        "Elliott and Resnik (2019); Lyon (2016); [Syed (2019)](https://psyarxiv.com/cteyb/)"
+        "Elliott and Resnik (2019)",
+        "Lyon (2016)",
+        "[Syed (2019)](https://psyarxiv.com/cteyb/)"
     ],
     "alt_related_terms": [
         null

@@ -13,13 +13,14 @@
         "WEIRD"
     ],
     "references": [
-        "Syed and Kathawalla (2020)"
+        "SyedKathawalla2020"
     ],
     "alt_related_terms": [
         null
     ],
     "drafted_by": [
-        "Ryan Millager; Mariella Paul"
+        "Ryan Millager",
+        "Mariella Paul"
     ],
     "reviewed_by": [
         "Nihan Albayrak-Aydemir",
@@ -32,5 +33,12 @@
         "Olly Robertson",
         "Flávio Azevedo"
     ],
-    "language": "german"
+    "language": "german",
+    "translated_by": [
+        "Helena Hartmann"
+    ],
+    "translation_reviewed_by": [
+        "Susanne Vogel",
+        "Jennifer Mattschey"
+    ]
 }

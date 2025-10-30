@@ -8,7 +8,8 @@
         "WEIRD"
     ],
     "references": [
-        "Clark et al. (2019); Leavens et al. (2010)"
+        "Clark et al. (2019)",
+        "Leavens et al. (2010)"
     ],
     "alt_related_terms": [
         null
@@ -20,5 +21,12 @@
         "Zoe Flack",
         "Charlotte R. Pennington"
     ],
-    "language": "german"
+    "language": "german",
+    "translated_by": [
+        "Susanne Vogel"
+    ],
+    "translation_reviewed_by": [
+        "Helena Hartmann",
+        "Jennifer Mattschey"
+    ]
 }

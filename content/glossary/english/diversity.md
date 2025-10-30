@@ -13,13 +13,14 @@
         "WEIRD"
     ],
     "references": [
-        "Syed and Kathawalla (2020)"
+        "SyedKathawalla2020"
     ],
     "alt_related_terms": [
         null
     ],
     "drafted_by": [
-        "Ryan Millager; Mariella Paul"
+        "Ryan Millager",
+        "Mariella Paul"
     ],
     "reviewed_by": [
         "Nihan Albayrak-Aydemir",
@@ -30,7 +31,7 @@
         "Wanyin Li",
         "Charlotte R. Pennington",
         "Olly Robertson",
-        "Flávio Azevedo  ### E {#e}"
+        "Flávio Azevedo"
     ],
     "language": "english",
     "aliases": [

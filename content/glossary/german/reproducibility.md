@@ -8,7 +8,11 @@
         "repeatability"
     ],
     "references": [
-        "Barba (2018); Cruwell et al. (2019); Peng (2011), Stodden (2011); Syed (2019); National Academies of Sciences, Engineering, and Medicine (2019)"
+        "Barba (2018)",
+        "Cruwell et al. (2019)",
+        "Peng (2011), Stodden (2011)",
+        "Syed (2019)",
+        "National Academies of Sciences, Engineering, and Medicine (2019) , , , , , \\_Academies\\_2019"
     ],
     "alt_related_terms": [
         null
@@ -24,5 +28,12 @@
         "Charlotte R. Pennington",
         "Suzanne L. K. Stewart"
     ],
-    "language": "german"
+    "language": "german",
+    "translated_by": [
+        "Susanne Vogel"
+    ],
+    "translation_reviewed_by": [
+        "Helena Hartmann",
+        "Jennifer Mattschey"
+    ]
 }

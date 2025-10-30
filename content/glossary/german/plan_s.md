@@ -8,7 +8,7 @@
         "Repository"
     ],
     "references": [
-        "[https://www.coalition-s.org](https://www.coalition-s.org/)"
+        "[https://www.coalition-s.org](https://www.coalition-s.org/)\\_s"
     ],
     "alt_related_terms": [
         null
@@ -22,5 +22,12 @@
         "Halil E. Kocalar",
         "Birgit Schmidt"
     ],
-    "language": "german"
+    "language": "german",
+    "translated_by": [
+        "Helena Hartmann"
+    ],
+    "translation_reviewed_by": [
+        "Jennifer Mattschey",
+        "Susanne Vogel"
+    ]
 }

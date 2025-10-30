@@ -1,7 +1,7 @@
 {
     "type": "glossary",
-    "title": "Open Educational Resources (OER) Commons (مصادر التعَّلُّم المفتوحة العامّة)",
-    "definition": "التَّعريف: مصادر التَّعلُّم المفتوحة هي مكتبة مجانيَّة على الإنترنت تُمكِّن المعلِّمين من إنشاء، ومشاركة ودمج المصادر التَّعليميَّة.  تهدف حركة مصادر التَّعلُّم المفتوح إلى تحفيز\"التعليم والتَّعلُّم التَّعاوني\" ([https://www.oercommons.org/about](https://www.oercommons.org/about)) كما تقدِّم موارد تعليميَّة ذات جودة عالية متاحة للجميع. المصطلحات ذات الصِّلة: العدالة، فورت، الشمول، قاعدة المعرفة  للمنح الدِّراسية المفتوحة، إطار العلوم المفتوحة.",
+    "title": "Open Educational Resources (OER) Commons (OER Commons مصادر التعَّلُّم المفتوحة العامّة)",
+    "definition": "مصادر التَّعلُّم المفتوحة هي مكتبة مجانيَّة على الإنترنت تُمكِّن المعلِّمين من إنشاء، ومشاركة ودمج المصادر التَّعليميَّة.  تهدف حركة مصادر التَّعلُّم المفتوح إلى تحفيز\"التعليم والتَّعلُّم التَّعاوني\" ([https://www.oercommons.org/about](https://www.oercommons.org/about)) كما تقدِّم موارد تعليميَّة ذات جودة عالية متاحة للجميع. المصطلحات ذات الصِّلة: العدالة، فورت، الشمول، قاعدة المعرفة  للمنح الدِّراسية المفتوحة، إطار العلوم المفتوحة.",
     "related_terms": [
         "Equity",
         "FORRT",
@@ -10,7 +10,7 @@
         "Open Science Framework"
     ],
     "references": [
-        "www.oercommons.org"
+        "[www.oercommons.org](http://www.oercommons.org)"
     ],
     "alt_related_terms": [
         null
@@ -19,7 +19,17 @@
         "Ali H. Al-Hoorie"
     ],
     "reviewed_by": [
-        "Mahmoud Elsherif, Gisela H. Govaart"
+        "Mahmoud Elsherif",
+        "Gisela H. Govaart"
     ],
-    "language": "arabic"
+    "language": "arabic",
+    "translated_by": [
+        "Asma Alzahrani"
+    ],
+    "translation_reviewed_by": [
+        "Mahdi Aben Ahmed",
+        "Alaa M. Saleh",
+        "Ali H. Al-Hoorie",
+        "Mohammed Mohsen"
+    ]
 }

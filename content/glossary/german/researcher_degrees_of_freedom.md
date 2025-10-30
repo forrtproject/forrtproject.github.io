@@ -12,7 +12,9 @@
         "Specification curve analysis"
     ],
     "references": [
-        "Gelman and Loken (2013); Simmons et al. (2011); Wicherts et al. (2016)"
+        "Gelman and Loken (2013)",
+        "Simmons et al. (2011)",
+        "Wicherts et al. (2016)"
     ],
     "alt_related_terms": [
         null
@@ -27,5 +29,12 @@
         "Robbie C.M. van Aert",
         "Flávio Azevedo"
     ],
-    "language": "german"
+    "language": "german",
+    "translated_by": [
+        "Helena Hartmann"
+    ],
+    "translation_reviewed_by": [
+        "Susanne Vogel",
+        "Jennifer Mattschey"
+    ]
 }

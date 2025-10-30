@@ -8,7 +8,11 @@
         "Researcher degrees of freedom"
     ],
     "references": [
-        "Breznau et al. (2021); Carp (2012); Jones et al. (2020); Masur (2021); Simmons et al. (2011)"
+        "Breznau2021",
+        "Carp2021",
+        "Jones2020",
+        "Masur2020",
+        "Simmons2011"
     ],
     "alt_related_terms": [
         null
@@ -23,5 +27,16 @@
         "Charlotte R. Pennington",
         "Flávio Azevedo"
     ],
-    "language": "arabic"
+    "language": "arabic",
+    "translated_by": [
+        "Naif Masrahi"
+    ],
+    "translation_reviewed_by": [
+        "Ahlam Ahmed",
+        "Ali H. Al-Hoorie",
+        "Asma Alzahrani",
+        "Hiba Alomary",
+        "Hala Alghamdi",
+        "Mohammed Mohsen"
+    ]
 }

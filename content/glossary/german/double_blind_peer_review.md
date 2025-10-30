@@ -14,7 +14,8 @@
         "Triple-Blind peer review"
     ],
     "references": [
-        "Largent and Snodgrass (2016); Tvina et al. (2019)"
+        "Largent2016",
+        "Tvina2019"
     ],
     "alt_related_terms": [
         null
@@ -28,5 +29,12 @@
         "Meng Liu",
         "Emma Norris"
     ],
-    "language": "german"
+    "language": "german",
+    "translated_by": [
+        "Susanne Vogel"
+    ],
+    "translation_reviewed_by": [
+        "Helena Hartmann",
+        "Jennifer Mattschey"
+    ]
 }

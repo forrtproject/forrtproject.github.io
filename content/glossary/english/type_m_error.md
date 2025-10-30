@@ -9,7 +9,8 @@
         "Type II error"
     ],
     "references": [
-        "Gelman and Carlin (2014); Lu et al.(2018)"
+        "Gelman and Carlin (2014)",
+        "Lu et al.(2018)"
     ],
     "alt_related_terms": [
         null
@@ -21,7 +22,7 @@
         "Mahmoud Elsherif",
         "Helena Hartmann",
         "Graham Reid",
-        "Mirela Zaneva  ### ---"
+        "Mirela Zaneva"
     ],
     "language": "english",
     "aliases": [

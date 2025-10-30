@@ -7,7 +7,8 @@
         "Version control"
     ],
     "references": [
-        "Petre and Wilson (2014); Scopatz and Huff (2015)"
+        "PetreWilson2014",
+        "ScopatzHuff2015"
     ],
     "alt_related_terms": [
         null
@@ -21,5 +22,12 @@
         "Sam Parsons",
         "Charlotte R. Pennington"
     ],
-    "language": "german"
+    "language": "german",
+    "translated_by": [
+        "Susanne Vogel"
+    ],
+    "translation_reviewed_by": [
+        "Helena Hartmann",
+        "Jennifer Mattschey"
+    ]
 }

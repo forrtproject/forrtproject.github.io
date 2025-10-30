@@ -10,7 +10,7 @@
         "Validity"
     ],
     "references": [
-        "Holden (2010)"
+        "Holden2010"
     ],
     "alt_related_terms": [
         null
@@ -24,5 +24,12 @@
         "Adam Parker",
         "Sam Parsons"
     ],
-    "language": "german"
+    "language": "german",
+    "translated_by": [
+        "Susanne Vogel"
+    ],
+    "translation_reviewed_by": [
+        "Helena Hartmann",
+        "Jennifer Mattschey"
+    ]
 }

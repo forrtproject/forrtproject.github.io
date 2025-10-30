@@ -8,7 +8,7 @@
         "Learning"
     ],
     "references": [
-        "Brule and Blount (1989)"
+        "BruleBlount1989"
     ],
     "alt_related_terms": [
         null
@@ -20,7 +20,7 @@
         "Bradley Baker",
         "Helena Hartmann",
         "Kai Krautter",
-        "Graham Reid  ###  ### L {#l}"
+        "Graham Reid"
     ],
     "language": "english",
     "aliases": [

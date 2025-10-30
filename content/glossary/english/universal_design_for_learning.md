@@ -9,7 +9,9 @@
         "Teaching practice"
     ],
     "references": [
-        "Hitchcock et al. (2002); Rose (2000); Rose and Meyer (2002)"
+        "Hitchcock et al. (2002)",
+        "Rose (2000)",
+        "Rose and Meyer (2002)"
     ],
     "alt_related_terms": [
         null
@@ -22,7 +24,7 @@
         "Mahmoud Elsherif",
         "Graham Reid",
         "Mirela Zaneva",
-        "Flávio Azevedo  ### ---  ### V {#v}"
+        "Flávio Azevedo"
     ],
     "language": "english",
     "aliases": [

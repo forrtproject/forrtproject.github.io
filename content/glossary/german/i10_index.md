@@ -1,6 +1,6 @@
 {
     "type": "glossary",
-    "title": "I10-index (i10-Index)",
+    "title": "i10-index (i10-Index)",
     "definition": "Eine von Google Scholar erstellte Forschungsmetrik. Sie gibt für eine/n Forschenden die Anzahl der Publikationen mit mindestens 10 Zitationen an.",
     "related_terms": [
         "Citation",
@@ -21,5 +21,12 @@
         "Flávio Azevedo",
         "Sam Parsons"
     ],
-    "language": "german"
+    "language": "german",
+    "translated_by": [
+        "Bettina MJ Kern"
+    ],
+    "translation_reviewed_by": [
+        "Helena Hartmann",
+        "Jennifer Mattschey"
+    ]
 }

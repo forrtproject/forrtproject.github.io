@@ -5,12 +5,9 @@
     "related_terms": [
         "Campbell's law",
         "DORA",
-        "Reification (fallacy) Reference (s): Muller (2019)",
-        "Strathern (1997)"
+        "Reification (fallacy) Reference (s): \\[@Muller2018\\], \\[@Strathern1997\\]"
     ],
-    "references": [
-        ""
-    ],
+    "references": [],
     "alt_related_terms": [
         null
     ],
@@ -19,7 +16,7 @@
     ],
     "reviewed_by": [
         "Sam Parsons",
-        "Flávio Azevedo  ### ---  ### H {#h}"
+        "Flávio Azevedo"
     ],
     "language": "english",
     "aliases": [

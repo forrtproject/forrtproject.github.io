@@ -8,13 +8,17 @@
         "Myside bias"
     ],
     "references": [
-        "Bishop (2020); Nickerson (1998); Spencer and Heneghan (2018); Wason (1960)"
+        "Bishop2020",
+        "Nickerson1998",
+        "Spencer2018",
+        "Wason1960"
     ],
     "alt_related_terms": [
         null
     ],
     "drafted_by": [
-        "Barnabas Szaszi; Jenny Terry"
+        "Barnabas Szaszi",
+        "Jenny Terry"
     ],
     "reviewed_by": [
         "Mahmoud Elsherif",

@@ -7,7 +7,7 @@
         "Ontology (Artificial Intelligence)"
     ],
     "references": [
-        "Steup et al. (2020)"
+        "SteupNeta2020"
     ],
     "alt_related_terms": [
         null
@@ -21,5 +21,12 @@
         "Robert M Ross",
         "Steven Verheyen"
     ],
-    "language": "german"
+    "language": "german",
+    "translated_by": [
+        "Helena Hartmann"
+    ],
+    "translation_reviewed_by": [
+        "Susanne Vogel",
+        "Jennifer Mattschey"
+    ]
 }

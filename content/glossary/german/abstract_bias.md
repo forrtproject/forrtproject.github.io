@@ -8,7 +8,7 @@
         "Selective reporting"
     ],
     "references": [
-        "Duyx et al. (2019)"
+        "DuyxEtAl2019"
     ],
     "alt_related_terms": [
         null
@@ -24,5 +24,12 @@
         "Eliza Woodward",
         "Flávio Azevedo"
     ],
-    "language": "german"
+    "language": "german",
+    "translated_by": [
+        "Susanne Vogel"
+    ],
+    "translation_reviewed_by": [
+        "Helena Hartmann",
+        "Jennifer Mattschey"
+    ]
 }

@@ -13,7 +13,10 @@
         "Z-curve"
     ],
     "references": [
-        "Bruns and Ioannidis (2016); Simonsohn et al. (2014a); Simonsohn et al.(2014b); Simonsohn et al. (2019)"
+        "Bruns and Ioannidis (2016)",
+        "Simonsohn et al. (2014a)",
+        "Simonsohn et al.(2014b)",
+        "Simonsohn et al. (2019)"
     ],
     "alt_related_terms": [
         null
@@ -28,5 +31,12 @@
         "Robert M. Ross",
         "Olmo van den Akker"
     ],
-    "language": "german"
+    "language": "german",
+    "translated_by": [
+        "Helena Hartmann"
+    ],
+    "translation_reviewed_by": [
+        "Susanne Vogel",
+        "Jennifer Mattschey"
+    ]
 }

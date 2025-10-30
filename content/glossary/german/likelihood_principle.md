@@ -7,7 +7,9 @@
         "Likelihood Function"
     ],
     "references": [
-        "Dienes (2008); Geyer (2003; 2007);"
+        "Dienes2008",
+        "Geyer2003",
+        "Geyer2007"
     ],
     "alt_related_terms": [
         null
@@ -19,5 +21,12 @@
         "Sam Parsons",
         "Flávio Azevedo"
     ],
-    "language": "german"
+    "language": "german",
+    "translated_by": [
+        "Helena Hartmann"
+    ],
+    "translation_reviewed_by": [
+        "Susanne Vogel",
+        "Jennifer Mattschey"
+    ]
 }

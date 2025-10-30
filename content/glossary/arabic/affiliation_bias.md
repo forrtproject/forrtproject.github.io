@@ -1,12 +1,12 @@
 {
     "type": "glossary",
     "title": "Affiliation bias (تحيُّز الانتماء)",
-    "definition": "التَّعريف: يحدث هذا النُّوع من التَّحيُّز عندما يتأثر حكم أو وجهة نظر الفرد حول جودة البحوث بالمؤسسة التي ينتمي إليها الباحث. ومثال هذا النُّوع من التَّحيُّز هو عندما يفضل محررو المجلات العلميَّة نشر بحوث قادمة من مؤسسات مرموقة. المصطلحات ذات الصِّلة: تحكيم الأقران.",
+    "definition": "يحدث هذا النُّوع من التَّحيُّز عندما يتأثر حكم أو وجهة نظر الفرد حول جودة البحوث بالمؤسسة التي ينتمي إليها الباحث. ومثال هذا النُّوع من التَّحيُّز هو عندما يفضل محررو المجلات العلميَّة نشر بحوث قادمة من مؤسسات مرموقة. المصطلحات ذات الصِّلة: تحكيم الأقران.",
     "related_terms": [
         "Peer review"
     ],
     "references": [
-        "Tvina et al. (2019)"
+        "Tvina2019"
     ],
     "alt_related_terms": [
         null
@@ -20,5 +20,15 @@
         "Adam Parker",
         "Graham Reid"
     ],
-    "language": "arabic"
+    "language": "arabic",
+    "translated_by": [
+        "Abdulsamad Humaidan"
+    ],
+    "translation_reviewed_by": [
+        "Amani Aloufi",
+        "Ali H. Al-Hoorie",
+        "Ahlam Ahmed",
+        "Hiba Alomary",
+        "Hala Alghamdi"
+    ]
 }

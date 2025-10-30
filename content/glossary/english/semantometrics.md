@@ -7,7 +7,8 @@
         "Contribution(p)"
     ],
     "references": [
-        "Herrmannova and Knoth (2016); Knoth and Herrmannova (2014)"
+        "Herrmannova and Knoth (2016)",
+        "Knoth and Herrmannova (2014)"
     ],
     "alt_related_terms": [
         null

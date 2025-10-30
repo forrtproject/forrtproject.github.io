@@ -1,6 +1,6 @@
 {
     "type": "glossary",
-    "title": "Ontology (Artificial Intelligence) (Ontologie in der Künstlichen Intelligenz)",
+    "title": "Ontology (Artificial Intelligence) (Artificial Intelligence Ontologie in der Künstlichen Intelligenz)",
     "definition": "Eine Sammlung von Grundregeln (axioms) in einem Fachgebiet, die zur Klassifizierung und Erklärung der Art der untersuchten Einheiten und der Beziehungen zwischen ihnen beitragen.",
     "related_terms": [
         "Axiology",
@@ -20,5 +20,12 @@
         "Charlotte R. Pennington",
         "Graham Reid"
     ],
-    "language": "german"
+    "language": "german",
+    "translated_by": [
+        "Susanne Vogel"
+    ],
+    "translation_reviewed_by": [
+        "Helena Hartmann",
+        "Jennifer Mattschey"
+    ]
 }

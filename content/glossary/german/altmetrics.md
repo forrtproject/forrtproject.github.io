@@ -11,7 +11,8 @@
         "Journal impact factor"
     ],
     "references": [
-        "Ali (2021); Galligan and Dyas-Correia (2013)"
+        "Ali2021",
+        "GalliganDyasCorreia2013"
     ],
     "alt_related_terms": [
         null
@@ -25,5 +26,12 @@
         "Birgit Schmidt",
         "Flávio Azevedo"
     ],
-    "language": "german"
+    "language": "german",
+    "translated_by": [
+        "Susanne Vogel"
+    ],
+    "translation_reviewed_by": [
+        "Helena Hartmann",
+        "Jennifer Mattschey"
+    ]
 }

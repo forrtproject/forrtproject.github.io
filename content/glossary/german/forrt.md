@@ -6,7 +6,8 @@
         "Integrating open and reproducible science tenets into higher education"
     ],
     "references": [
-        "[FORRT \\- Framework for Open and Reproducible Research Training](https://forrt.org/); F (2019)"
+        "[FORRT \\- Framework for Open and Reproducible Research Training](https://forrt.org/)",
+        "F (2019)"
     ],
     "alt_related_terms": [
         null
@@ -19,5 +20,12 @@
         "Charlotte R. Pennington",
         "Flávio Azevedo"
     ],
-    "language": "german"
+    "language": "german",
+    "translated_by": [
+        "Susanne Vogel"
+    ],
+    "translation_reviewed_by": [
+        "Helena Hartmann",
+        "Jennifer Mattschey"
+    ]
 }

@@ -8,7 +8,7 @@
         "Open Science"
     ],
     "references": [
-        "www.oercommons.org/hubs/OSKB"
+        "[www.oercommons.org/hubs/OSKB](http://www.oercommons.org/hubs/OSKB) \\_OSKB"
     ],
     "alt_related_terms": [
         null
@@ -21,5 +21,11 @@
         "Samuel Guay",
         "Tamara Kalandadze"
     ],
-    "language": "german"
+    "language": "german",
+    "translated_by": [
+        "Susanne Vogel"
+    ],
+    "translation_reviewed_by": [
+        "Helena Hartmann"
+    ]
 }

@@ -7,7 +7,7 @@
         "Peer review"
     ],
     "references": [
-        "Tvina et al. (2019)"
+        "Tvina2019"
     ],
     "alt_related_terms": [
         null
@@ -22,5 +22,12 @@
         "Sam Parsons",
         "Graham Reid"
     ],
-    "language": "german"
+    "language": "german",
+    "translated_by": [
+        "Bettina MJ Kern"
+    ],
+    "translation_reviewed_by": [
+        "Helena Hartmann",
+        "Jennifer Mattschey"
+    ]
 }

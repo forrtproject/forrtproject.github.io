@@ -8,7 +8,9 @@
         "Preregistration"
     ],
     "references": [
-        "Houtkoop et al. (2018); Laine (2017); Tiokhin et al. (2021)"
+        "Houtkoop et al. (2018)",
+        "Laine (2017)",
+        "Tiokhin et al. (2021)"
     ],
     "alt_related_terms": [
         null

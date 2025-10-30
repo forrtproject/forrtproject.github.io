@@ -23,7 +23,7 @@
         "Zoe Flack",
         "Elias Garcia-Pelegrin",
         "Charlotte R. Pennington",
-        "Graham Reid  ### ---"
+        "Graham Reid"
     ],
     "language": "english",
     "aliases": [

@@ -8,7 +8,10 @@
         "Exploratory research"
     ],
     "references": [
-        "Behrens (1997); Box (1976); Tukey (1977); Wagenmakers (2012)"
+        "Behrens1997",
+        "Box1976",
+        "Tukey1977",
+        "Wagenmakers2012"
     ],
     "alt_related_terms": [
         null
@@ -22,5 +25,12 @@
         "Charlotte R. Pennington",
         "Flávio Azevedo"
     ],
-    "language": "german"
+    "language": "german",
+    "translated_by": [
+        "Helena Hartmann"
+    ],
+    "translation_reviewed_by": [
+        "Susanne Vogel",
+        "Jennifer Mattschey"
+    ]
 }

@@ -6,7 +6,10 @@
         "Slow Science"
     ],
     "references": [
-        "Curran (2009); d’Espagnat (2008); Kuhn (1962); Mischel (2008)"
+        "Curran2009",
+        "Despagnat2008",
+        "Kuhn1962",
+        "Mischel2009"
     ],
     "alt_related_terms": [
         null
@@ -23,5 +26,12 @@
         "Sonia Rishi",
         "Flávio Azevedo"
     ],
-    "language": "german"
+    "language": "german",
+    "translated_by": [
+        "Susanne Vogel"
+    ],
+    "translation_reviewed_by": [
+        "Helena Hartmann",
+        "Jennifer Mattschey"
+    ]
 }

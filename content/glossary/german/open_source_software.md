@@ -13,7 +13,8 @@
         "Repository"
     ],
     "references": [
-        "[https://opensource.org/osd](https://opensource.org/osd); [https://www.fosteropenscience.eu/foster-taxonomy/open-source-open-science](https://www.fosteropenscience.eu/foster-taxonomy/open-source-open-science)"
+        "[https://opensource.org/osd](https://opensource.org/osd)",
+        "[https://www.fosteropenscience.eu/foster-taxonomy/open-source-open-science](https://www.fosteropenscience.eu/foster-taxonomy/open-source-open-science) \\_Source\\_Initiative\\_n\\_d"
     ],
     "alt_related_terms": [
         null
@@ -27,5 +28,12 @@
         "Charlotte R. Pennington",
         "Andrew J. Stewart"
     ],
-    "language": "german"
+    "language": "german",
+    "translated_by": [
+        "Helena Hartmann"
+    ],
+    "translation_reviewed_by": [
+        "Susanne Vogel",
+        "Jennifer Mattschey"
+    ]
 }

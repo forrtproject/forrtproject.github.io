@@ -7,7 +7,8 @@
         "Statistical analysis"
     ],
     "references": [
-        "[https://www.r-project.org/](https://www.r-project.org/); R Core Team (2020)"
+        "[https://www.r-project.org/](https://www.r-project.org/)",
+        "R Core Team (2020) , \\_Core\\_Team2020"
     ],
     "alt_related_terms": [
         null
@@ -21,5 +22,12 @@
         "Joanne McCuaig",
         "Andrew J. Stewart"
     ],
-    "language": "german"
+    "language": "german",
+    "translated_by": [
+        "Helena Hartmann"
+    ],
+    "translation_reviewed_by": [
+        "Susanne Vogel",
+        "Jennifer Mattschey"
+    ]
 }

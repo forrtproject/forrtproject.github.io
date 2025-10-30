@@ -8,7 +8,7 @@
         "Retraction"
     ],
     "references": [
-        "Correction or retraction? (2006)"
+        "Anon2006"
     ],
     "alt_related_terms": [
         null
@@ -23,5 +23,12 @@
         "Adam Parker",
         "Emily A. Williams"
     ],
-    "language": "german"
+    "language": "german",
+    "translated_by": [
+        "Susanne Vogel"
+    ],
+    "translation_reviewed_by": [
+        "Helena Hartmann",
+        "Jennifer Mattschey"
+    ]
 }

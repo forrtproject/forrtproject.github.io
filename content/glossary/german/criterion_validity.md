@@ -7,7 +7,8 @@
         "Validity"
     ],
     "references": [
-        "DeVellis (2017); Drost (2011)"
+        "DeVellis2017",
+        "Drost2011"
     ],
     "alt_related_terms": [
         null
@@ -21,5 +22,12 @@
         "Sam Parsons",
         "Eike Mark Rinke"
     ],
-    "language": "german"
+    "language": "german",
+    "translated_by": [
+        "Helena Hartmann"
+    ],
+    "translation_reviewed_by": [
+        "Susanne Vogel",
+        "Jennifer Mattschey"
+    ]
 }

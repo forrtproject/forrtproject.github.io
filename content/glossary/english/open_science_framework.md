@@ -11,7 +11,8 @@
         "Preregistration"
     ],
     "references": [
-        "Foster and Deardorff (2017); https://osf.io/"
+        "Foster and Deardorff (2017)",
+        "[https://osf.io/](https://osf.io/)"
     ],
     "alt_related_terms": [
         null
@@ -22,7 +23,7 @@
     "reviewed_by": [
         "Mahmoud Elsherif",
         "Charlotte R. Pennington",
-        "Lisa Spitzer  ### ---"
+        "Lisa Spitzer"
     ],
     "language": "english",
     "aliases": [

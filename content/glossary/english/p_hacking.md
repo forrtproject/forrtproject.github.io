@@ -11,7 +11,8 @@
         "Selective reporting"
     ],
     "references": [
-        "Hardwicke et al. (2014); Neuroskeptic (2012)"
+        "Hardwicke et al. (2014)",
+        "Neuroskeptic (2012)"
     ],
     "alt_related_terms": [
         null

@@ -7,7 +7,7 @@
         "Knightian uncertainty"
     ],
     "references": [
-        "Der Kiureghian and Ditlevsen (2009); Ferson et al., (2004) Alternative terms: Epistemic uncertainty is also known as knowledge uncertainty, subjective uncertainty, or type B uncertainty."
+        "Alternative terms: Epistemic uncertainty is also known as knowledge uncertainty, subjective uncertainty, or type B uncertainty."
     ],
     "alt_related_terms": [
         null
@@ -21,5 +21,12 @@
         "Charlotte R. Pennington",
         "Graham Reid"
     ],
-    "language": "german"
+    "language": "german",
+    "translated_by": [
+        "Susanne Vogel"
+    ],
+    "translation_reviewed_by": [
+        "Helena Hartmann",
+        "Jennifer Mattschey"
+    ]
 }

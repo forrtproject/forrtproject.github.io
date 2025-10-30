@@ -12,7 +12,8 @@
         "Scientific publishing"
     ],
     "references": [
-        "Byrne and Christopher (2020); Hackett and Kelly (2020)"
+        "Byrne and Christopher (2020)",
+        "Hackett and Kelly (2020)"
     ],
     "alt_related_terms": [
         null
@@ -26,5 +27,12 @@
         "Mahmoud Elsherif",
         "Charlotte R. Pennington"
     ],
-    "language": "german"
+    "language": "german",
+    "translated_by": [
+        "Helena Hartmann"
+    ],
+    "translation_reviewed_by": [
+        "Susanne Vogel",
+        "Jennifer Mattschey"
+    ]
 }

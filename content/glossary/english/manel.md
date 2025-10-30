@@ -11,7 +11,10 @@
         "Under-representation"
     ],
     "references": [
-        "Bouvy and Mujoomdar (2019); Goodman and Pepinsky (2019); Nittrouer et al. (2018); Rodriguez and Günther (2020)"
+        "Bouvy and Mujoomdar (2019)",
+        "Goodman and Pepinsky (2019)",
+        "Nittrouer et al. (2018)",
+        "Rodriguez and Günther (2020)"
     ],
     "alt_related_terms": [
         null

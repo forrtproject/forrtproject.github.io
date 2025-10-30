@@ -11,7 +11,8 @@
         "Research ethics"
     ],
     "references": [
-        "Mourby et al. (2018); UKRI ([https://mrc.ukri.org/documents/pdf/gdpr-guidance-note-5-identifiability-anonymisation-and-pseudonymisation/](https://mrc.ukri.org/documents/pdf/gdpr-guidance-note-5-identifiability-anonymisation-and-pseudonymisation/))"
+        "Mourby et al. (2018)",
+        "UKRI ([https://mrc.ukri.org/documents/pdf/gdpr-guidance-note-5-identifiability-anonymisation-and-pseudonymisation/](https://mrc.ukri.org/documents/pdf/gdpr-guidance-note-5-identifiability-anonymisation-and-pseudonymisation/))"
     ],
     "alt_related_terms": [
         null
@@ -25,5 +26,12 @@
         "Charlotte R. Pennington",
         "Birgit Schmidt"
     ],
-    "language": "german"
+    "language": "german",
+    "translated_by": [
+        "Helena Hartmann"
+    ],
+    "translation_reviewed_by": [
+        "Susanne Vogel",
+        "Jennifer Mattschey"
+    ]
 }

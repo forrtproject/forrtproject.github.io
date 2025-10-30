@@ -11,7 +11,7 @@
         "Universal design for learning (UDL)"
     ],
     "references": [
-        "Brown et al. (2018); Pollet and Bond (2021); Pownall et al. (2021); Suber (2004); World Wide Web Consortium (2021)"
+        "Pownall et al. (2021), , \\_Wide\\_Web\\_Consortium2021"
     ],
     "alt_related_terms": [
         null
@@ -32,5 +32,15 @@
         "Robert M. Ross",
         "Flávio Azevedo"
     ],
-    "language": "arabic"
+    "language": "arabic",
+    "translated_by": [
+        "Hala Alghamdi"
+    ],
+    "translation_reviewed_by": [
+        "Amani Aloufi",
+        "Ahlam Ahmed",
+        "Hiba Alomary",
+        "Asma Alzahrani",
+        "Mohammed Mohsen"
+    ]
 }

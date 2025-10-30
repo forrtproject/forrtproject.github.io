@@ -11,7 +11,8 @@
         "Research data management"
     ],
     "references": [
-        "CESSDA; Corti et al. (2019)"
+        "CESSDA",
+        "Corti et al. (2019) \\_DataManagement"
     ],
     "alt_related_terms": [
         null

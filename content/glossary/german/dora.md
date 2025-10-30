@@ -8,7 +8,8 @@
         "Open Science"
     ],
     "references": [
-        "Health Research Board (n.d.); [https://sfdora.org/](https://sfdora.org/)"
+        "Health Research Board (n.d.)",
+        "[https://sfdora.org/](https://sfdora.org/) , \\_San\\_Francisco"
     ],
     "alt_related_terms": [
         null
@@ -20,5 +21,12 @@
         "Connor Keating",
         "Charlotte R. Pennington"
     ],
-    "language": "german"
+    "language": "german",
+    "translated_by": [
+        "Helena Hartmann"
+    ],
+    "translation_reviewed_by": [
+        "Susanne Vogel",
+        "Jennifer Mattschey"
+    ]
 }

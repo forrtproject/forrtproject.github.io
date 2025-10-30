@@ -23,5 +23,12 @@
         "Charlotte R. Pennington",
         "Graham Reid"
     ],
-    "language": "german"
+    "language": "german",
+    "translated_by": [
+        "Helena Hartmann"
+    ],
+    "translation_reviewed_by": [
+        "Jennifer Mattschey",
+        "Susanne Vogel"
+    ]
 }

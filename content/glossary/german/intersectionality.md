@@ -10,7 +10,9 @@
         "Open Science"
     ],
     "references": [
-        "Crenshaw (1989); Grzanka (2020); Ledgerwood et al. (2021)"
+        "Crenshaw1989",
+        "Grzanka2020",
+        "Ledgerwood2021"
     ],
     "alt_related_terms": [
         null
@@ -27,5 +29,12 @@
         "Charlotte R. Pennington",
         "Flávio Azevedo"
     ],
-    "language": "german"
+    "language": "german",
+    "translated_by": [
+        "Bettina MJ Kern"
+    ],
+    "translation_reviewed_by": [
+        "Helena Hartmann",
+        "Jennifer Mattschey"
+    ]
 }

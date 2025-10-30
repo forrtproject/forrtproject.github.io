@@ -8,7 +8,7 @@
         "Transdisciplinary Research"
     ],
     "references": [
-        "European Commission (2021)"
+        "European Commission (2021) \\_DataProtection"
     ],
     "alt_related_terms": [
         null
@@ -22,5 +22,12 @@
         "Sam Parsons",
         "Graham Reid"
     ],
-    "language": "german"
+    "language": "german",
+    "translated_by": [
+        "Susanne Vogel"
+    ],
+    "translation_reviewed_by": [
+        "Helena Hartmann",
+        "Jennifer Mattschey"
+    ]
 }

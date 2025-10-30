@@ -6,7 +6,8 @@
         "Open Data"
     ],
     "references": [
-        "Gorgolewski et al. (2016); [https://bids.neuroimaging.io/](https://bids.neuroimaging.io/)"
+        "GorgolewskiEtAl2016",
+        "BIDSAbout2020"
     ],
     "alt_related_terms": [
         null
@@ -20,5 +21,12 @@
         "Mariella Paul",
         "Charlotte R. Pennington"
     ],
-    "language": "german"
+    "language": "german",
+    "translated_by": [
+        "Helena Hartmann"
+    ],
+    "translation_reviewed_by": [
+        "Susanne Vogel",
+        "Jennifer Mattschey"
+    ]
 }

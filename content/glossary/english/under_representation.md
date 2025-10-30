@@ -8,9 +8,7 @@
         "Inequality",
         "WEIRD"
     ],
-    "references": [
-        ""
-    ],
+    "references": [],
     "alt_related_terms": [
         null
     ],

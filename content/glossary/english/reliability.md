@@ -11,7 +11,8 @@
         "Validity"
     ],
     "references": [
-        "Bollen (1989); Drost (2011)"
+        "Bollen (1989)",
+        "Drost (2011)"
     ],
     "alt_related_terms": [
         null
@@ -20,7 +21,8 @@
         "Annalise A. LaPlume"
     ],
     "reviewed_by": [
-        "Mahmoud Elsherif; Eduardo Garcia-Garzon",
+        "Mahmoud Elsherif",
+        "Eduardo Garcia-Garzon",
         "Kai Krautter",
         "Olmo van den Akker"
     ],

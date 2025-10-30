@@ -1,12 +1,12 @@
 {
     "type": "glossary",
-    "title": "Economic and societal impact (wirtschaftliche und gesellschaftliche Auswirkungen",
+    "title": "Economic and societal impact",
     "definition": "Der Beitrag, den ein Forschungsgegenstand für die Wirtschaft und Gesellschaft im weiteren Sinne leistet. Erfasst wird auch der Nutzen der Forschung für Einzelpersonen, Organisationen und/oder Nationen.",
     "related_terms": [
         "Academic Impact"
     ],
     "references": [
-        "https://esrc.ukri.org/research/impact-toolkit/what-is-impact/"
+        "ESRC2021"
     ],
     "alt_related_terms": [
         null
@@ -19,5 +19,12 @@
         "Aoife O’Mahony",
         "Charlotte R. Pennington"
     ],
-    "language": "german"
+    "language": "german",
+    "translated_by": [
+        "Helena Hartmann"
+    ],
+    "translation_reviewed_by": [
+        "Susanne Vogel",
+        "Jennifer Mattschey"
+    ]
 }

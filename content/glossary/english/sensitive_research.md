@@ -6,7 +6,8 @@
         "Anonymity"
     ],
     "references": [
-        "Lee (1993); Albayrak-Aydemir (2019)"
+        "Lee (1993)",
+        "Albayrak-Aydemir (2019)"
     ],
     "alt_related_terms": [
         null

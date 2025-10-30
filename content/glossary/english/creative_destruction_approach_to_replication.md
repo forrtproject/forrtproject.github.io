@@ -9,7 +9,8 @@
         "Theory"
     ],
     "references": [
-        "Tierney et al. (2020, 2021\\)"
+        "Tierney2020",
+        "Tierney2021"
     ],
     "alt_related_terms": [
         null

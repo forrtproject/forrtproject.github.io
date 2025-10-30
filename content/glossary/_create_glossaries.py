@@ -1,222 +1,228 @@
-import requests
-import re
+import csv
 import json
-import pandas as pd
 import os
+import re
 import shutil
+from io import StringIO
+from urllib.error import HTTPError, URLError
+from urllib.request import urlopen
+
+CSV_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vRKXOzAaBg19k2mjs6EIwY3la7DjX1XXDB2Wzkos4y3r7MS0f1g8bGskSEoQWkaAv4unczvpeGAQFwv/pub?gid=955789150&single=true&output=csv"
+
+LANGUAGE_PREFIXES = {
+    "EN": "english",
+    "AR": "arabic",
+    "DE": "german",
+}
 
 script_dir = os.path.dirname(os.path.abspath(__file__))
-print(script_dir)
+print(f"Writing glossaries into {script_dir}")
 
-file_links = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQpQJ-9pY0Bq7u2pm464pJpUCOMI4biMnqCHgYZuMETcRNBbHLPYT55jhDXGRx68qYhn3_z6PO90gQl/pub?gid=1617993088&single=true&output=csv'
 
-df = pd.read_csv(file_links)
-print("file links read")
-grouped = df.groupby('Language')
-formatted_data = {}
+def clean_value(value: str) -> str:
+    if value is None:
+        return ""
+    value = str(value).strip()
+    if not value:
+        return ""
+    lowered = value.lower()
+    if lowered in {"na", "n/a", "none", "null"}:
+        return ""
+    return value
 
-def parse_md_terms(md_text, language):
-    
-    # Preprocess to clean malformed section titles
-    md_text = re.sub(r'^####\s*---\s*\n+', '#### ', md_text, flags=re.MULTILINE)
-    
-    # Only start parsing after we find the 'Term placeholder' heading
-    start_index = None
-    lines = md_text.split('\n')
-    for idx, line in enumerate(lines):
-        if re.search(r'^####\s+\*\*Term placeholder', line.strip(), flags=re.IGNORECASE):
-            start_index = idx
-            break
-    if start_index is None:
-        return {}
 
-    d = {}
-    i = 0
-    current_key = None
-    current_field = None
-    found_header = False
+def clean_reference(value: str) -> str:
+    value = clean_value(value)
+    if not value:
+        return ""
+    value = value.replace("\\[", "").replace("\\]", "")
+    citation_ids = re.findall(r"@([\w:-]+)", value)
+    value_without_citations = re.sub(r"@([\w:-]+)", "", value).strip(" ,;")
+    if value_without_citations:
+        return value_without_citations
+    if citation_ids:
+        return ", ".join(citation_ids)
+    return value
 
-    # Parse from the next line after we find 'Term placeholder'
-    idx = start_index + 1
-    while idx < len(lines):
-        line = lines[idx].rstrip()
 
-        # Detect a new term heading (#### **Term** ...)
-        if re.match(r'^####\s+\*\*', line):
-            found_header = True
-            i += 1
-            current_key = f"glossary_{i}"
-            d[current_key] = {}
-            d[current_key]['Title'] = re.sub(r'####\s+\*\*|\*\*\s*$', '', line).strip()
-            # Remove anchors for internal fields
-            d[current_key]['Title'] = re.sub(r'\s*\{#[^}]*\}', '', d[current_key]['Title']).strip()
-            current_field = None
-            idx += 1
+def split_values(value: str) -> list:
+    value = clean_value(value)
+    if not value:
+        return []
+    items = [item.strip() for item in value.split(";")]
+    return [item for item in items if item]
+
+
+print("Downloading glossary data from spreadsheet...")
+try:
+    with urlopen(CSV_URL, timeout=60) as response:
+        csv_text = response.read().decode("utf-8-sig")
+except (HTTPError, URLError) as exc:
+    raise RuntimeError(f"Unable to download glossary data: {exc}") from exc
+
+rows = list(csv.DictReader(StringIO(csv_text)))
+print(f"Fetched {len(rows)} rows from glossary spreadsheet.")
+
+formatted_data = {language: [] for language in LANGUAGE_PREFIXES.values()}
+
+for row in rows:
+    english_title = clean_value(row.get("EN_title"))
+    english_definition = clean_value(row.get("EN_definition"))
+    if not english_title:
+        continue
+
+    related_terms = clean_value(row.get("Related_terms"))
+    base_reference = clean_reference(row.get("Reference"))
+    original_author = clean_value(row.get("Originally drafted by")) or clean_value(row.get("Drafted by"))
+    reviewed_by = clean_value(row.get("Reviewed (or Edited) by"))
+
+    for prefix, language in LANGUAGE_PREFIXES.items():
+        local_title = clean_value(row.get(f"{prefix}_title"))
+        definition_key = "EN_definition" if prefix == "EN" else f"{prefix}_def"
+        local_definition = clean_value(row.get(definition_key))
+
+        if prefix == "EN" and not english_definition:
+            english_definition = local_definition
+
+        if prefix != "EN" and not local_title and not local_definition:
             continue
 
-        # Skip until we see the first heading after the placeholder
-        if not found_header:
-            idx += 1
-            continue
-
-        # Stop at next heading or "----" separator
-        if re.match(r'^####\s+', line) or re.match(r'^---+', line):
-            idx += 1
-            continue
-
-        # Match fields like **Definition:** or Definition: or **Reference(s):**
-        field_match = re.search(
-            r'^\**(Definition|Related terms|Reference(\(s\))?|Drafted by|Originally drafted by|Reviewed \(or Edited\) by|Translated by|Translation reviewed by)\**:\s*(.*)', 
-            line.strip(), 
-            flags=re.IGNORECASE
-        )
-        if field_match and current_key:
-            # Group(1) is the field name, group(3) is the text after the colon
-            current_field = field_match.group(1).replace(':', '')
-            # Initialize or append the field
-            d[current_key][current_field] = field_match.group(3).strip()
-        elif current_field and current_key:
-            # Continue appending lines to the current field
-            d[current_key][current_field] += ' ' + line.strip()
-        idx += 1
-
-    # Clean up dictionary: split definition vs. translation, rename keys, etc.
-    for glossary in d.values():
-
-        # Define the pattern using a raw string to handle backslashes correctly
-        pattern = r"""
-            \[.*?\] |                                 # Matches any text within square brackets
-            \\\\*\*almost\s+done\\\\*\* |             # Matches '\*\*almost done\*\*'
-            \\\\*\*almost\s+complete\\\\*\* |         # Matches '\*\*almost complete\*\*'
-            \\\\*\#review\s+needed\\\\*\# |             #  Matches headers like '## review needed ##'
-            \\\\+                                     # Matches one or more backslashes
-        """
-
-        # Compile the pattern with verbose flag for better readability
-        regex = re.compile(pattern, re.IGNORECASE | re.VERBOSE)
-        glossary['Title'] = regex.sub('', glossary['Title']).strip()
-        glossary['Title'] = re.sub("\\\\\*", '', glossary['Title'])
-        glossary['Title'] = re.sub("\\\\", '', glossary['Title'])
-        
-        if 'Definition' in glossary:
-            definitions = re.split(rf'(?:\\?\[\s*:?{language.upper()}:?\\?\]|\\?\[\s*:?{language.capitalize()}:?\\?\])', glossary['Definition'])
-            glossary['Definition'] = definitions[0].replace('Definition:', '').strip()
-            if len(definitions) > 1:
-                glossary['Translation'] = re.sub(r'^[^\w]+', '', definitions[1]).strip()
+        if prefix == "EN":
+            title = english_title
+        else:
+            if english_title and local_title:
+                title = f"{english_title} ({local_title})"
             else:
-                glossary['Translation'] = glossary['Definition']
+                title = local_title or english_title
 
-    # Further tidying
-    for glossary in d.values():
-        for key in list(glossary.keys()):
-            glossary[key] = glossary[key].strip()
-            if key in ['Drafted by', 'Reviewed (or Edited) by', 'Translated by', 'Translation reviewed by']:
-                # Remove trailing " by:" from these fields
-                glossary[key] = re.sub(r'\b[\w\s]+(?:\(or Edited\))?\s*by\s*:', '', glossary[key]).strip()
-            new_key = key.replace(':', '')
-            if new_key != key:
-                glossary[new_key] = glossary.pop(key)
+        entry = {
+            "Title": title,
+            "Definition": english_definition,
+            "Translation": local_definition or english_definition,
+            "Related_terms": related_terms,
+            "Reference": base_reference,
+            "Originally drafted by": original_author,
+            "Reviewed (or Edited) by": reviewed_by,
+        }
 
-        if 'References' in glossary:
-            glossary['References'] = re.sub(r'Reference(\(s\))?:', '', glossary['References']).strip()
+        localized_related = clean_value(row.get(f"{prefix}_rel"))
+        localized_reference = clean_reference(row.get(f"{prefix}_refs"))
+        translators = clean_value(row.get(f"{prefix}_transl"))
+        translation_review = clean_value(row.get(f"{prefix}_review"))
 
-        if 'Related terms' in glossary:
-            glossary['Related_terms'] = re.sub(r'Related terms:', '', glossary['Related terms']).strip()
-            glossary.pop('Related terms', None)
+        if localized_related:
+            entry["Related_terms"] = localized_related
+        if localized_reference:
+            entry["Reference"] = localized_reference
+        if translators:
+            entry["Translated by"] = translators
+        if translation_review:
+            entry["Translation reviewed by"] = translation_review
 
-        if 'Definition' in glossary:
-            glossary['Definition'] = glossary['Definition'].replace('Definition:', '').strip()
+        formatted_data[language].append(entry)
 
-    return d
-
-for language, group in grouped:
-    print(f"Processing {language}")
-    formatted_data[language] = []
-    for _, row in group.iterrows():
-        # Truncate at /edit if present
-        current_link = row['Link'].split('/edit')[0].strip() + '/export?format=md'
-        source = requests.get(current_link).text
-        d = parse_md_terms(source, language)
-
-        if language not in formatted_data:
-            formatted_data[language] = []
-        for glossary in d.values():
-            formatted_data[language].append(glossary)
-
-merged_data = []
 for language, entries in formatted_data.items():
-    merged_data.append({language: entries})
+    print(f"Prepared {len(entries)} entries for {language}")
 
-output_file = os.path.join(script_dir, '_glossaries.json')
-with open(output_file, 'w') as outfile:
+merged_data = [{language: entries} for language, entries in formatted_data.items() if entries]
+
+output_file = os.path.join(script_dir, "_glossaries.json")
+with open(output_file, "w", encoding="utf-8") as outfile:
     json.dump(merged_data, outfile, ensure_ascii=False, indent=4)
 
-print("Data successfully parsed.")
+print("Data successfully parsed and serialized.")
 
-# Generate the md files
+def remove_double_and_outer_asterisks(data):
+    if isinstance(data, str):
+        cleaned = data.replace("**", "").strip()
+        if cleaned.startswith("*") and cleaned.endswith("*"):
+            return cleaned[1:-1].strip()
+        if cleaned.startswith("*"):
+            return cleaned[1:].strip()
+        if cleaned.endswith("*"):
+            return cleaned[:-1].strip()
+        return cleaned
+    if isinstance(data, list):
+        return [remove_double_and_outer_asterisks(item) for item in data]
+    if isinstance(data, dict):
+        return {key: remove_double_and_outer_asterisks(value) for key, value in data.items()}
+    return data
+
+
+def build_people_list(value: str) -> list:
+    raw_value = clean_value(value)
+    if not raw_value:
+        return []
+    if ";" in raw_value:
+        parts = [item.strip() for item in raw_value.split(";")]
+    else:
+        parts = [item.strip() for item in raw_value.split(",")]
+    return [item for item in parts if item]
+
+
+def build_reference_list(value: str) -> list:
+    refs = split_values(value)
+    if not refs:
+        return []
+    cleaned_refs = []
+    for ref in refs:
+        cleaned = clean_reference(ref)
+        if re.fullmatch(r"[\w:-]+(?:,\s*[\w:-]+)+", cleaned):
+            cleaned_refs.extend([token.strip() for token in cleaned.split(",") if token.strip()])
+        else:
+            cleaned_refs.append(cleaned)
+    return cleaned_refs
+
+
 for language_data in merged_data:
     for language, entries in language_data.items():
-        if os.path.exists(os.path.join(script_dir, language)):
-            for item in os.listdir(os.path.join(script_dir, language)):
-                item_path = os.path.join(script_dir, language, item)
-                if item != '_index.md':
+        language_dir = os.path.join(script_dir, language)
+        if os.path.exists(language_dir):
+            for item in os.listdir(language_dir):
+                item_path = os.path.join(language_dir, item)
+                if item != "_index.md":
                     if os.path.isdir(item_path):
                         shutil.rmtree(item_path)
                     else:
                         os.remove(item_path)
-        os.makedirs(os.path.join(script_dir, language), exist_ok=True)
-        
+        os.makedirs(language_dir, exist_ok=True)
+
         print(f"Generating {len(entries)} markdown files for {language}")
-        
+
         for entry in entries:
             json_data = {
                 "type": "glossary",
                 "title": entry.get("Title", ""),
                 "definition": entry.get("Translation", ""),
-                "related_terms": entry.get("Related_terms", "").split("; "),
-                "references": [entry.get("Reference", entry.get("Reference(s)", ""))],
+                "related_terms": split_values(entry.get("Related_terms", "")),
+                "references": build_reference_list(entry.get("Reference", entry.get("Reference(s)", ""))),
                 "alt_related_terms": [None],
-                "drafted_by": [entry.get("Originally drafted by", entry.get("Drafted by", ""))],
-                "reviewed_by": entry.get("Reviewed (or Edited) by", "").replace("Reviewed (or Edited) by : ", "").split("; "),
-                "language": language
+                "drafted_by": build_people_list(entry.get("Originally drafted by", entry.get("Drafted by", ""))),
+                "reviewed_by": build_people_list(entry.get("Reviewed (or Edited) by", "")),
+                "language": language,
             }
-            
-            def remove_double_and_outer_asterisks(data):
-                if isinstance(data, str):
-                    # Remove double asterisks
-                    cleaned = data.replace("**", "").strip()
-                    # Remove single asterisks at the start and end of the string
-                    if cleaned.startswith("*") and cleaned.endswith("*"):
-                        return cleaned[1:-1].strip()
-                    elif cleaned.startswith("*"):
-                        return cleaned[1:].strip()
-                    elif cleaned.endswith("*"):
-                        return cleaned[:-1].strip()
-                    return cleaned
-                elif isinstance(data, list):
-                    return [remove_double_and_outer_asterisks(item) for item in data]  
-                elif isinstance(data, dict):
-                    return {key: remove_double_and_outer_asterisks(value) for key, value in data.items()}  
-                return data            
-            
+
+            translators = build_people_list(entry.get("Translated by", ""))
+            translation_reviewers = build_people_list(entry.get("Translation reviewed by", ""))
+            if translators:
+                json_data["translated_by"] = translators
+            if translation_reviewers:
+                json_data["translation_reviewed_by"] = translation_reviewers
+
             json_data = remove_double_and_outer_asterisks(json_data)
 
-            # Clean filename
-            file_name = json_data['title'].split(" (")[0].strip()
-            file_name = re.sub(r'[^\w\s]', '_', file_name.replace(" ", "_")).lower().strip().replace("__", "_")
-            file_path = os.path.join(script_dir, language, file_name + ".md")
-            
-            if file_name.endswith("__"):
-                print("Title:", json_data['title'])
-                print("Filename:", file_name)
+            file_name = json_data["title"].split(" (")[0].strip()
+            file_name = re.sub(r"[^\w\s]", "_", file_name.replace(" ", "_")).lower().strip()
+            file_name = re.sub(r"_+", "_", file_name).strip("_")
+            file_path = os.path.join(language_dir, f"{file_name}.md")
 
             if language == "english":
-                json_data["aliases"] = ["/glossary/" + file_name]
+                json_data["aliases"] = [f"/glossary/{file_name}"]
 
-            with open(file_path, 'w', encoding='utf-8') as json_file:
+            with open(file_path, "w", encoding="utf-8") as json_file:
                 json.dump(json_data, json_file, ensure_ascii=False, indent=4)
-              
-        index_file_path = os.path.join(script_dir, language, "_index.md")
+
+        index_file_path = os.path.join(language_dir, "_index.md")
         if os.path.exists(index_file_path):
             print(f"Index for {language} found")
         else:
@@ -224,28 +230,23 @@ for language_data in merged_data:
 
 print("Markdown files successfully generated.")
 
-# Update available languages for selection
-
-language_list = grouped.groups.keys()  
-languages_as_string = " ".join([f'"{lang}"' for lang in language_list])  
-language_slice = "{{ $allLanguages := slice " + languages_as_string + " }}"
+language_list = [lang for lang, entries in formatted_data.items() if entries]
+language_slice = "{{ $allLanguages := slice " + " ".join([f'\"{lang}\"' for lang in language_list]) + " }}"
 
 partials_file_path = os.path.join(script_dir, "../../layouts/glossary/single.html")
 
 if os.path.exists(partials_file_path):
-    with open(partials_file_path, 'r', encoding='utf-8') as file:
+    with open(partials_file_path, "r", encoding="utf-8") as file:
         content = file.readlines()
-    
-    # Look for the line defining $allLanguages and replace it
+
     updated_content = []
     for line in content:
-        if line.strip().startswith('{{ $allLanguages := slice'):
-            updated_content.append(language_slice + '\n')  # Replace with the new slice
+        if line.strip().startswith("{{ $allLanguages := slice"):
+            updated_content.append(language_slice + "\n")
         else:
             updated_content.append(line)
 
-    # Write back the updated file
-    with open(partials_file_path, 'w', encoding='utf-8') as file:
+    with open(partials_file_path, "w", encoding="utf-8") as file:
         file.writelines(updated_content)
 
     print(f"Updated {partials_file_path} with languages: {', '.join(language_list)}")

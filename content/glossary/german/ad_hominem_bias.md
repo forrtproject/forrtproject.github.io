@@ -6,7 +6,8 @@
         "Peer review"
     ],
     "references": [
-        "Barnes et al. (2018); Tvina et al. (2019)"
+        "BarnesEtAl2018",
+        "Tvina2019"
     ],
     "alt_related_terms": [
         null
@@ -21,5 +22,12 @@
         "Madeleine Ingham",
         "Graham Reid"
     ],
-    "language": "german"
+    "language": "german",
+    "translated_by": [
+        "Susanne Vogel"
+    ],
+    "translation_reviewed_by": [
+        "Helena Hartmann",
+        "Jennifer Mattschey"
+    ]
 }

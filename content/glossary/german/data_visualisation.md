@@ -8,7 +8,8 @@
         "Plot"
     ],
     "references": [
-        "Healy (2018); Tufte (1983)"
+        "Healy2018",
+        "Tufte1983"
     ],
     "alt_related_terms": [
         null
@@ -21,5 +22,12 @@
         "Charlotte R. Pennington",
         "Suzanne L. K. Stewart"
     ],
-    "language": "german"
+    "language": "german",
+    "translated_by": [
+        "Helena Hartmann"
+    ],
+    "translation_reviewed_by": [
+        "Susanne Vogel",
+        "Jennifer Mattschey"
+    ]
 }

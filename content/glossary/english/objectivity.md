@@ -8,7 +8,8 @@
         "Neutrality"
     ],
     "references": [
-        "Macfarlane and Cheng (2008); Merton (1942)"
+        "Macfarlane and Cheng (2008)",
+        "Merton (1942)"
     ],
     "alt_related_terms": [
         null

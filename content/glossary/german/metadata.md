@@ -7,7 +7,8 @@
         "Open Data Alternative definition: (if applicable) Data about data"
     ],
     "references": [
-        "Gollwitzer et al. (2020); [https://schema.datacite.org/](https://schema.datacite.org/)"
+        "Gollwitzer et al. (2020)",
+        "[https://schema.datacite.org/](https://schema.datacite.org/) , DataCite\\_MetadataSchema"
     ],
     "alt_related_terms": [
         null
@@ -21,5 +22,12 @@
         "Charlotte R. Pennington",
         "Mirela Zaneva"
     ],
-    "language": "german"
+    "language": "german",
+    "translated_by": [
+        "Susanne Vogel"
+    ],
+    "translation_reviewed_by": [
+        "Helena Hartmann",
+        "Jennifer Mattschey"
+    ]
 }

@@ -9,7 +9,7 @@
         "Transparent peer review"
     ],
     "references": [
-        "Ross-Hellauer (2017)"
+        "Ross-Hellauer (2017) \\_Hellauer2017"
     ],
     "alt_related_terms": [
         null
@@ -24,5 +24,12 @@
         "Yuki Yamada",
         "Flávio Azevedo"
     ],
-    "language": "german"
+    "language": "german",
+    "translated_by": [
+        "Susanne Vogel"
+    ],
+    "translation_reviewed_by": [
+        "Helena Hartmann",
+        "Jennifer Mattschey"
+    ]
 }

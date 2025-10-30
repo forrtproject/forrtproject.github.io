@@ -9,7 +9,9 @@
         "Validity"
     ],
     "references": [
-        "Davies and Gray (2015); Hurlbert (1984); Lazic (2019)"
+        "Davies and Gray (2015)",
+        "Hurlbert (1984)",
+        "Lazic (2019)"
     ],
     "alt_related_terms": [
         null
@@ -23,5 +25,12 @@
         "Elias Garcia-Pelegrin",
         "Annalise A. LaPlume"
     ],
-    "language": "german"
+    "language": "german",
+    "translated_by": [
+        "Susanne Vogel"
+    ],
+    "translation_reviewed_by": [
+        "Helena Hartmann",
+        "Jennifer Mattschey"
+    ]
 }

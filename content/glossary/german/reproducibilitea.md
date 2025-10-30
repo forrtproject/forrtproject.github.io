@@ -9,7 +9,8 @@
         "Reproducibility"
     ],
     "references": [
-        "[https://reproducibilitea.org/](https://reproducibilitea.org/); Orben (2019)"
+        "[https://reproducibilitea.org/](https://reproducibilitea.org/)",
+        "Orben (2019) \\_n\\_d"
     ],
     "alt_related_terms": [
         null
@@ -25,5 +26,12 @@
         "Sam Parsons",
         "Flávio Azevedo"
     ],
-    "language": "german"
+    "language": "german",
+    "translated_by": [
+        "Helena Hartmann"
+    ],
+    "translation_reviewed_by": [
+        "Susanne Vogel",
+        "Jennifer Mattschey"
+    ]
 }

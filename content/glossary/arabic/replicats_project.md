@@ -1,13 +1,14 @@
 {
     "type": "glossary",
     "title": "RepliCATs project (مشروع التِّكرار)",
-    "definition": "التَّعريف: يشير إلى مشروع \"التَّقييم التَّعاوني للعلوم الجديرة بالثقة\". ويهدف المشروع إلى جمع التنبؤات حول موثوقيَّة البحوث المنشورة، وإمكانيَّة تكرارها في ثمانية مجالات من مجالات العلوم الاجتماعيَّة وهي: بحوث الأعمال، وعلم الجريمة، والاقتصاد، والتَّعليم، والعلوم السِّياسيَّة، وعلم النَّفس، والإدارة العامّة، وعلم الاجتماع.  المصطلحات ذات الصِّلة: قابليَّة التِّكرار ، الجدارة بالثِّقة.",
+    "definition": "يشير إلى مشروع \"التَّقييم التَّعاوني للعلوم الجديرة بالثقة\". ويهدف المشروع إلى جمع التنبؤات حول موثوقيَّة البحوث المنشورة، وإمكانيَّة تكرارها في ثمانية مجالات من مجالات العلوم الاجتماعيَّة وهي: بحوث الأعمال، وعلم الجريمة، والاقتصاد، والتَّعليم، والعلوم السِّياسيَّة، وعلم النَّفس، والإدارة العامّة، وعلم الاجتماع.  المصطلحات ذات الصِّلة: قابليَّة التِّكرار ، الجدارة بالثِّقة.",
     "related_terms": [
         "Replicability",
         "Trustworthiness"
     ],
     "references": [
-        "Fraser et al.(2021); [https://replicats.research.unimelb.edu.au/](https://replicats.research.unimelb.edu.au/)"
+        "Fraser et al.(2021)",
+        "[https://replicats.research.unimelb.edu.au/](https://replicats.research.unimelb.edu.au/) , \\_project2020"
     ],
     "alt_related_terms": [
         null
@@ -22,5 +23,13 @@
         "Helena Hartmann",
         "Charlotte R. Pennington"
     ],
-    "language": "arabic"
+    "language": "arabic",
+    "translated_by": [
+        "Mai Helmy."
+    ],
+    "translation_reviewed_by": [
+        "Ahlam Ahmed",
+        "Ali H. Al-Hoorie",
+        "Mohammed Mohsen"
+    ]
 }

@@ -10,7 +10,9 @@
         "ReproducibiliTea"
     ],
     "references": [
-        "Ellemers (2021); Orben (2019); Shepard (2015)"
+        "Ellemers2021",
+        "Orben2019",
+        "Shepard2015"
     ],
     "alt_related_terms": [
         null
@@ -25,5 +27,12 @@
         "Kai Krautter",
         "Gerald Vineyard"
     ],
-    "language": "german"
+    "language": "german",
+    "translated_by": [
+        "Helena Hartmann"
+    ],
+    "translation_reviewed_by": [
+        "Susanne Vogel",
+        "Jennifer Mattschey"
+    ]
 }

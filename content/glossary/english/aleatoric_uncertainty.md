@@ -7,7 +7,7 @@
         "Knightian uncertainty"
     ],
     "references": [
-        "Der Kiureghian and Ditlevsen (2009)"
+        "DerKiureghianDitlevsen2009"
     ],
     "alt_related_terms": [
         null
@@ -16,7 +16,8 @@
         "Bradley Baker"
     ],
     "reviewed_by": [
-        "Nihan Albayrak-Aydemir; Brett Gall",
+        "Nihan Albayrak-Aydemir",
+        "Brett Gall",
         "Magdalena Grose-Hodge",
         "Bethan Iley",
         "Charlotte R. Pennington"

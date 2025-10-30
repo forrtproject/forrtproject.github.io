@@ -6,7 +6,8 @@
         "Adversarial collaboration"
     ],
     "references": [
-        "Coles et al. (2020); Lakens (2020)"
+        "Coles et al. (2020)",
+        "Lakens (2020)"
     ],
     "alt_related_terms": [
         null
@@ -16,7 +17,8 @@
     ],
     "reviewed_by": [
         "Nick Ballou",
-        "Mahmoud Elsherif; Thomas Rhys Evans",
+        "Mahmoud Elsherif",
+        "Thomas Rhys Evans",
         "Helena Hartmann",
         "Timo Roettger"
     ],

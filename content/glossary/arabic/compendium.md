@@ -1,20 +1,15 @@
 {
     "type": "glossary",
     "title": "Compendium (خلاصة وافية)",
-    "definition": "التَّعريف: هي مجموعة من الملفّات التي يعدها الباحث؛ لدعم تقرير، أو بحث منشور. تتضمَّن البيانات الأصليَّة، والبيانات الوصفيَّة، والنَّص البرمجي، والبرامج التَّابعة، والتَّراخيص، والتَّعليمات الأخرى اللّازمة لباحث آخر؛ لإعادة إنتاج النَّتائج المذكورة في التَّقرير، أو البحث بشكل مستقل.  المصطلحات ذات الصلة: موسوعات؛ تكرار؛ قابلية إعادة الإنتاج، خلاصة البحوث",
+    "definition": "هي مجموعة من الملفّات التي يعدها الباحث؛ لدعم تقرير، أو بحث منشور. تتضمَّن البيانات الأصليَّة، والبيانات الوصفيَّة، والنَّص البرمجي، والبرامج التَّابعة، والتَّراخيص، والتَّعليمات الأخرى اللّازمة لباحث آخر؛ لإعادة إنتاج النَّتائج المذكورة في التَّقرير، أو البحث بشكل مستقل.  المصطلحات ذات الصلة: موسوعات؛ تكرار؛ قابلية إعادة الإنتاج، خلاصة البحوث",
     "related_terms": [
         "Compendia",
         "Replication",
         "Reproducibility",
         "Research compendium",
-        "References: Claerbout and Karrenfach (1992)",
-        "Gentleman (2005)",
-        "Marwick et al. (2018)",
-        "Nüst et al. (2018)"
+        "References: \\[@Claerbout1992\\], \\[@Gentleman2005\\], \\[@Marwick2018\\], \\[@Nust2018\\]"
     ],
-    "references": [
-        ""
-    ],
+    "references": [],
     "alt_related_terms": [
         null
     ],
@@ -25,5 +20,12 @@
         "Ali H. Al-Hoorie",
         "Charlotte R. Pennington"
     ],
-    "language": "arabic"
+    "language": "arabic",
+    "translated_by": [
+        "Asma Alzahrani"
+    ],
+    "translation_reviewed_by": [
+        "Awatif Alruwaili",
+        "Ahlam Ahmed, Hala Alghamdi, Ali H. Al-Hoorie, Mohammed Mohsen"
+    ]
 }

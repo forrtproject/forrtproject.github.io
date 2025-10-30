@@ -8,7 +8,9 @@
         "Preprint"
     ],
     "references": [
-        "Klein et al. (2018), Laakso and Björk (2013); [https://en.wikipedia.org/wiki/Embargo\\_(academic\\_publishing)](https://en.wikipedia.org/wiki/Embargo_\\(academic_publishing\\))"
+        "Klein2018Transparency",
+        "Laakso2013",
+        "Embargo2021"
     ],
     "alt_related_terms": [
         null
@@ -23,5 +25,12 @@
         "Steven Verheyen",
         "Flávio Azevedo"
     ],
-    "language": "german"
+    "language": "german",
+    "translated_by": [
+        "Helena Hartmann"
+    ],
+    "translation_reviewed_by": [
+        "Susanne Vogel",
+        "Jennifer Mattschey"
+    ]
 }

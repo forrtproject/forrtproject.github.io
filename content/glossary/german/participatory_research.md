@@ -10,7 +10,12 @@
         "Transformative paradigm"
     ],
     "references": [
-        "Cornwall and Jewkes (1995); Fletcher-Watson et al. (2019); Kiernan (1999); Leavy (2017); Ottmann et al. (2011); Rose (2018)"
+        "Cornwall and Jewkes (1995)",
+        "Fletcher-Watson et al. (2019)",
+        "Kiernan (1999)",
+        "Leavy (2017)",
+        "Ottmann et al. (2011)",
+        "Rose (2018)"
     ],
     "alt_related_terms": [
         null
@@ -24,5 +29,12 @@
         "Halil E. Kocalar",
         "Michele C. Lim"
     ],
-    "language": "german"
+    "language": "german",
+    "translated_by": [
+        "Helena Hartmann"
+    ],
+    "translation_reviewed_by": [
+        "Susanne Vogel",
+        "Jennifer Mattschey"
+    ]
 }

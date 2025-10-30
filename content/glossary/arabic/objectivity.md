@@ -1,14 +1,15 @@
 {
     "type": "glossary",
     "title": "Objectivity (الموضوعيَّة)",
-    "definition": "التَّعريف: تشير الموضوعيَّة إلى أنَّه يجب أنْ تكون الادِّعاءات، والطُّرق، والنَّتائج العلميَّة غير منحازة، وذلك يشمل عدم انحياز العلماء أنفسهم، وبالتَّالي عدم تأثرهم بالتَّحيُّز الثَّقافي، أو السِّياسي، أو العرقي، أو الدِّيني وكذلك أي مصالح شخصيَّة (ميرتون ، 1942).  المصطلحات ذات الصِّة: التَّشاركيَّة، قواعد ميرتون، الحياديَّة",
+    "definition": "تشير الموضوعيَّة إلى أنَّه يجب أنْ تكون الادِّعاءات، والطُّرق، والنَّتائج العلميَّة غير منحازة، وذلك يشمل عدم انحياز العلماء أنفسهم، وبالتَّالي عدم تأثرهم بالتَّحيُّز الثَّقافي، أو السِّياسي، أو العرقي، أو الدِّيني وكذلك أي مصالح شخصيَّة (ميرتون ، 1942).  المصطلحات ذات الصِّة: التَّشاركيَّة، قواعد ميرتون، الحياديَّة",
     "related_terms": [
         "Communality",
         "Mertonian norms",
         "Neutrality"
     ],
     "references": [
-        "Macfarlane and Cheng (2008); Merton (1942)"
+        "Macfarlane and Cheng (2008)",
+        "Merton (1942)"
     ],
     "alt_related_terms": [
         null
@@ -23,5 +24,14 @@
         "Sam Parsons",
         "Charlotte R. Pennington"
     ],
-    "language": "arabic"
+    "language": "arabic",
+    "translated_by": [
+        "Zainab Alsuhaibani"
+    ],
+    "translation_reviewed_by": [
+        "Awatif Alruwaili",
+        "Alaa M. Saleh",
+        "Ali H. Al-Hoorie",
+        "Mohammed Mohsen"
+    ]
 }

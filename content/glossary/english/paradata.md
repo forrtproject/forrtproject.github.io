@@ -16,7 +16,8 @@
         null
     ],
     "drafted_by": [
-        "Alexander Hart; Graham Reid"
+        "Alexander Hart",
+        "Graham Reid"
     ],
     "reviewed_by": [
         "Helena Hartmann",

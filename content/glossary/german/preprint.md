@@ -9,7 +9,8 @@
         "Working Paper"
     ],
     "references": [
-        "Bourne et al. (2017); Elmore (2018)"
+        "Bourne et al. (2017)",
+        "Elmore (2018)"
     ],
     "alt_related_terms": [
         null
@@ -24,5 +25,12 @@
         "Tobias Wingen",
         "Flávio Azevedo"
     ],
-    "language": "german"
+    "language": "german",
+    "translated_by": [
+        "Helena Hartmann"
+    ],
+    "translation_reviewed_by": [
+        "Susanne Vogel",
+        "Jennifer Mattschey"
+    ]
 }

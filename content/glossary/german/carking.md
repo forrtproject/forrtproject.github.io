@@ -4,13 +4,12 @@
     "definition": "Critiquing After the Results are Known (CARKing; Kritik nach Wissen der Ergebnisse) bedeutet, eine Kritik an einem Studiendesign so zu formulieren, als hätte man sie vor dem Vorliegen der Ergebnisse geäußert. Dies ist in der Regel eine Reaktion auf oder Kritik bezüglich unerwünschter oder ungünstiger Ergebnisse, unabhängig davon, ob sich der/die Kritiker:in dieser Tatsache bewusst ist oder nicht.",
     "related_terms": [
         "HARKing",
-        "PARKing",
         "Preregistration",
-        "Registered Report",
-        "SPARKing"
+        "Registered Report"
     ],
     "references": [
-        "Bardsley (2018); Nosek and Lakens (2014)"
+        "Bardsley2018",
+        "Nosek2014"
     ],
     "alt_related_terms": [
         null
@@ -24,5 +23,12 @@
         "Adrien Fillon",
         "Charlotte R. Pennington"
     ],
-    "language": "german"
+    "language": "german",
+    "translated_by": [
+        "Helena Hartmann"
+    ],
+    "translation_reviewed_by": [
+        "Susanne Vogel",
+        "Jennifer Mattschey"
+    ]
 }

@@ -1,7 +1,7 @@
 {
     "type": "glossary",
     "title": "The Troubling Trio (الثّلاثي المقلق)",
-    "definition": "التَّعريف: يوصف بأنَّه مزيج من القوة الإحصائيَّة المنخفضة، والنَّتيجة المفاجئة، والقيمة الاحتماليَّة التي تقل عن 0.05 بقليل فقط.  المصطلحات ذات الصِّلة: التِّكرار، قابليَّة إعادة الإنتاج، اختبار دلالة الفرضيَّة الصِّفرية، قرصنة القيمة الاحتماليَّة، ممارسات البحث المشكوك فيها أو ممارسات إعداد التَّقارير المشكوك فيها.",
+    "definition": "يوصف بأنَّه مزيج من القوة الإحصائيَّة المنخفضة، والنَّتيجة المفاجئة، والقيمة الاحتماليَّة التي تقل عن 0.05 بقليل فقط.  المصطلحات ذات الصِّلة: التِّكرار، قابليَّة إعادة الإنتاج، اختبار دلالة الفرضيَّة الصِّفرية، قرصنة القيمة الاحتماليَّة، ممارسات البحث المشكوك فيها أو ممارسات إعداد التَّقارير المشكوك فيها.",
     "related_terms": [
         "Replication",
         "Reproducibility",
@@ -19,10 +19,19 @@
         "Halil Emre Kocalar"
     ],
     "reviewed_by": [
-        "",
         "Catia M. Oliveira",
         "Adam Parker",
-        "Sam Parsons;Charlotte R. Pennington"
+        "Sam Parsons",
+        "Charlotte R. Pennington"
     ],
-    "language": "arabic"
+    "language": "arabic",
+    "translated_by": [
+        "Hala Alghamdi"
+    ],
+    "translation_reviewed_by": [
+        "Ali H. Al-Hoorie",
+        "Ahlam Ahmed",
+        "Asma Alzahrani",
+        "Mohammed Mohsen"
+    ]
 }

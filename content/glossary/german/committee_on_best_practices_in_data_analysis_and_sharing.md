@@ -1,12 +1,11 @@
 {
     "type": "glossary",
-    "title": "Committee on Best Practices in Data Analysis and Sharing (COBIDAS)",
+    "title": "Committee on Best Practices in Data Analysis and Sharing (COBIDAS) (COBIDAS)",
     "definition": "Die Organization for Human Brain Mapping (OHBM; dt. Organisation für menschliche Hirnbildgebung) hat einen Leitfaden für optimale Verfahren (best practices) bei der Erhebung und Analyse von Bildgebungsdaten, der Veröffentlichung und der gemeinsamen Nutzung von Daten und Analysecodes entwickelt. Er enthält acht Elemente, die beim Verfassen oder Einreichen eines Manuskripts berücksichtigt werden sollten, um die Veröffentlichung der Methodik und die daraus resultierenden Bildgebungsdaten zu verbessern und so die Transparenz und Reproduzierbarkeit zu optimieren. Alternative definition: (if applicable) Checklist for data analysis and sharing",
-    "related_terms": [
-        ""
-    ],
+    "related_terms": [],
     "references": [
-        "Nichols et al. (2017); Pernet et al. (2020)"
+        "Nichols2017",
+        "Pernet2020"
     ],
     "alt_related_terms": [
         null
@@ -20,5 +19,12 @@
         "Adam Parker",
         "Sam Parsons"
     ],
-    "language": "german"
+    "language": "german",
+    "translated_by": [
+        "Susanne Vogel"
+    ],
+    "translation_reviewed_by": [
+        "Helena Hartmann",
+        "Jennifer Mattschey"
+    ]
 }

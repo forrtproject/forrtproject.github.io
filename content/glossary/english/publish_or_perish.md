@@ -10,7 +10,8 @@
         "Slow Science"
     ],
     "references": [
-        "Case (1928); Fanelli (2010)"
+        "Case (1928)",
+        "Fanelli (2010)"
     ],
     "alt_related_terms": [
         null

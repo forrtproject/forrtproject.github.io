@@ -16,7 +16,11 @@
         "Type II error"
     ],
     "references": [
-        "Beller and Bender (2017); Glass and Hall (2008); Longino (1990, 1992); Popper (1959)"
+        "BellerBender2017",
+        "GlassHall2008",
+        "Longino1990",
+        "Longino1992",
+        "Popper1959"
     ],
     "alt_related_terms": [
         null
@@ -28,8 +32,9 @@
         "Ali H. Al-Hoorie",
         "Mahmoud Elsherif",
         "Helena Hartmann",
-        "Charlotte R. Pennington; Graham Reid",
-        "Olly Robertson   ### I {#i}"
+        "Charlotte R. Pennington",
+        "Graham Reid",
+        "Olly Robertson"
     ],
     "language": "english",
     "aliases": [

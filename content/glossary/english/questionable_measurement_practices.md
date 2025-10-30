@@ -24,7 +24,7 @@
         "Annalise A. LaPlume",
         "Sam Parsons",
         "Mirela Zaneva",
-        "Flávio Azevedo   ###  ### R {#r}"
+        "Flávio Azevedo"
     ],
     "language": "english",
     "aliases": [

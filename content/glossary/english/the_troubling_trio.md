@@ -19,10 +19,10 @@
         "Halil Emre Kocalar"
     ],
     "reviewed_by": [
-        "",
         "Catia M. Oliveira",
         "Adam Parker",
-        "Sam Parsons;Charlotte R. Pennington"
+        "Sam Parsons",
+        "Charlotte R. Pennington"
     ],
     "language": "english",
     "aliases": [

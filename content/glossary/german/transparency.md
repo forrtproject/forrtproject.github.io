@@ -3,14 +3,12 @@
     "title": "Transparency (Transparenz)",
     "definition": "Transparenz bedeutet, das eigene Handeln offen und zugänglich für eine externe Bewertung zu machen. Transparent zu forschen bedeutet, dass Forschende sämtliche theoretischen, methodischen und analytischen Entscheidungen nachvollziehbar offenlegen, die sie im Laufe des Forschungsprozesses getroffen haben. Transparenz kann in \"wissenschaftlich relevante Transparenz\" und \"gesellschaftlich relevante Transparenz\" unterschieden werden. Während erstere im Mittelpunkt der frühen Open-Science Diskurse stand, ist letztere erforderlich, um wissenschaftliche Informationen in einer Weise bereitzustellen, die für Entscheidungsträger und die Öffentlichkeit relevant ist",
     "related_terms": [
-        "Credibility of scientific claims",
-        "Open science",
-        "Preregistration",
-        "Reproducibility",
-        "Trustworthiness"
+        "Transparency (الشَّفافيَّة)"
     ],
     "references": [
-        "Elliott and Resnik (2019); Lyon (2016); [Syed (2019)](https://psyarxiv.com/cteyb/)"
+        "Elliott and Resnik (2019)",
+        "Lyon (2016)",
+        "[Syed (2019)](https://psyarxiv.com/cteyb/)"
     ],
     "alt_related_terms": [
         null
@@ -24,5 +22,12 @@
         "Eike Mark Rinke",
         "Flávio Azevedo"
     ],
-    "language": "german"
+    "language": "german",
+    "translated_by": [
+        "Bettina M. J. Kern"
+    ],
+    "translation_reviewed_by": [
+        "Helena Hartmann, Susanne Vogel",
+        "Joris Frese"
+    ]
 }

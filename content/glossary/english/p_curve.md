@@ -13,7 +13,10 @@
         "Z-curve"
     ],
     "references": [
-        "Bruns and Ioannidis (2016); Simonsohn et al. (2014a); Simonsohn et al.(2014b); Simonsohn et al. (2019)"
+        "Bruns and Ioannidis (2016)",
+        "Simonsohn et al. (2014a)",
+        "Simonsohn et al.(2014b)",
+        "Simonsohn et al. (2019)"
     ],
     "alt_related_terms": [
         null

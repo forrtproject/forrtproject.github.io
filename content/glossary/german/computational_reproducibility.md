@@ -8,7 +8,11 @@
         "Reproducibility"
     ],
     "references": [
-        "Committee on Reproducibility and Replicability in Science et al. (2019); Kitzes et al (2017, p. xxii); LeBel et al. (2018); Nosek and Errington (2020); Obels et al. (2020)"
+        "Committee2019",
+        "Kitzes2017",
+        "LeBel2018",
+        "Nosek2020",
+        "Obels2020"
     ],
     "alt_related_terms": [
         null
@@ -24,5 +28,12 @@
         "Charlotte R. Pennington",
         "Eike Mark Rinke"
     ],
-    "language": "german"
+    "language": "german",
+    "translated_by": [
+        "Helena Hartmann"
+    ],
+    "translation_reviewed_by": [
+        "Susanne Vogel",
+        "Jennifer Mattschey"
+    ]
 }

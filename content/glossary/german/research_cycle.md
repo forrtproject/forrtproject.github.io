@@ -6,7 +6,8 @@
         "Research process"
     ],
     "references": [
-        "Bramoullé and Saint Paul (2010); Lieberman (2020)"
+        "Bramoullé and Saint Paul (2010)",
+        "Lieberman (2020)"
     ],
     "alt_related_terms": [
         null
@@ -20,5 +21,12 @@
         "Graham Reid",
         "Beatrice Valentini"
     ],
-    "language": "german"
+    "language": "german",
+    "translated_by": [
+        "Helena Hartmann"
+    ],
+    "translation_reviewed_by": [
+        "Susanne Vogel",
+        "Jennifer Mattschey"
+    ]
 }

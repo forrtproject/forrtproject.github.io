@@ -9,7 +9,10 @@
         "PRISMA"
     ],
     "references": [
-        "Higgins et al. (2019); Moher et al. (2009); Page et al. (2021); Topor et al. (2021)"
+        "Higgins et al. (2019)",
+        "Moher et al. (2009)",
+        "Page et al. (2021)",
+        "Topor et al. (2021)"
     ],
     "alt_related_terms": [
         null
@@ -24,7 +27,7 @@
         "Timo Roettger",
         "Marta Topor",
         "Emily A. Williams",
-        "Flávio Azevedo  ### ---  ###  ###  ### T {#t}"
+        "Flávio Azevedo    ###"
     ],
     "language": "english",
     "aliases": [

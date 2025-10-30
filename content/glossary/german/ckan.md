@@ -7,7 +7,7 @@
         "Data sharing"
     ],
     "references": [
-        "https://ckan.org/"
+        "AnonCkanND"
     ],
     "alt_related_terms": [
         null
@@ -20,5 +20,12 @@
         "Kai Krautter",
         "Charlotte R. Pennington"
     ],
-    "language": "german"
+    "language": "german",
+    "translated_by": [
+        "Helena Hartmann"
+    ],
+    "translation_reviewed_by": [
+        "Susanne Vogel",
+        "Jennifer Mattschey"
+    ]
 }

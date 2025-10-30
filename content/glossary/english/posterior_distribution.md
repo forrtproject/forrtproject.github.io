@@ -10,7 +10,9 @@
         "Prior distribution"
     ],
     "references": [
-        "Dienes (2014); Lüdtke et al. (2020); van de Schoot et al. (2021)"
+        "Dienes (2014)",
+        "Lüdtke et al. (2020)",
+        "van de Schoot et al. (2021) , , \\_de\\_Schoot2021"
     ],
     "alt_related_terms": [
         null

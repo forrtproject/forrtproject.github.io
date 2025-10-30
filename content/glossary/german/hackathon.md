@@ -7,7 +7,7 @@
         "Edithaton"
     ],
     "references": [
-        "Kienzler and Fontanesi (2017)"
+        "Kienzler2017"
     ],
     "alt_related_terms": [
         null
@@ -20,5 +20,12 @@
         "Brett J. Gall",
         "Emma Norris"
     ],
-    "language": "german"
+    "language": "german",
+    "translated_by": [
+        "Bettina MJ Kern"
+    ],
+    "translation_reviewed_by": [
+        "Helena Hartmann",
+        "Jennifer Mattschey"
+    ]
 }

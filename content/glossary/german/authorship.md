@@ -12,7 +12,10 @@
         "Sequence-determines-credit approach (SDC)"
     ],
     "references": [
-        "ALLEA (2017); German Research Foundation (2019); McNutt et al. (2018); Patience et al. (2019)"
+        "ALLEA2017",
+        "GermanResearchFoundation2019",
+        "McNutt2018",
+        "Patience2019"
     ],
     "alt_related_terms": [
         null
@@ -29,5 +32,12 @@
         "Birgit Schmidt",
         "Yuki Yamada"
     ],
-    "language": "german"
+    "language": "german",
+    "translated_by": [
+        "Helena Hartmann"
+    ],
+    "translation_reviewed_by": [
+        "Susanne Vogel",
+        "Jennifer Mattschey"
+    ]
 }

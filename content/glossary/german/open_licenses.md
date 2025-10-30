@@ -11,7 +11,7 @@
         "Open Source"
     ],
     "references": [
-        "[https://opensource.org/licenses](https://opensource.org/licenses)"
+        "[https://opensource.org/licenses](https://opensource.org/licenses) \\_ND"
     ],
     "alt_related_terms": [
         null
@@ -25,5 +25,12 @@
         "Graham Reid",
         "Steven Verheyen"
     ],
-    "language": "german"
+    "language": "german",
+    "translated_by": [
+        "Susanne Vogel"
+    ],
+    "translation_reviewed_by": [
+        "Helena Hartmann",
+        "Jennifer Mattschey"
+    ]
 }

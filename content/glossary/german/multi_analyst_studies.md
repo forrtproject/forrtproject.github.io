@@ -12,7 +12,8 @@
         "Scientific Transparency"
     ],
     "references": [
-        "Aczel et. al. (2021); Silberzahn et al. (2018)"
+        "Aczel et. al. (2021)",
+        "Silberzahn et al. (2018)"
     ],
     "alt_related_terms": [
         null
@@ -29,5 +30,12 @@
         "Barnabas Szaszi",
         "Flávio Azevedo"
     ],
-    "language": "german"
+    "language": "german",
+    "translated_by": [
+        "Susanne Vogel"
+    ],
+    "translation_reviewed_by": [
+        "Helena Hartmann",
+        "Jennifer Mattschey"
+    ]
 }

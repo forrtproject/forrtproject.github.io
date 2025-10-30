@@ -11,7 +11,8 @@
         "Validity generalization"
     ],
     "references": [
-        "Borenstein et al. (2009); Schmidt and Hunter (2014)"
+        "Borenstein et al. (2009)",
+        "Schmidt and Hunter (2014)"
     ],
     "alt_related_terms": [
         null

@@ -14,7 +14,12 @@
         "Transparency"
     ],
     "references": [
-        "Haven and van Grootel (2019); Lewandowsky and Bishop (2016); Merten and Krypotos (2019); Navarro (2020); Nosek et al. (2018); Simmons et al. (2021)"
+        "Haven and van Grootel (2019)",
+        "Lewandowsky and Bishop (2016)",
+        "Merten and Krypotos (2019)",
+        "Navarro (2020)",
+        "Nosek et al. (2018)",
+        "Simmons et al. (2021)"
     ],
     "alt_related_terms": [
         null

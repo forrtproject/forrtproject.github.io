@@ -10,7 +10,7 @@
         "Open Science"
     ],
     "references": [
-        "Tennant et al. (2019) Foundations for Open Scholarship Strategy Development https://www.researchgate.net/publication/330742805\\_Foundations\\_for\\_Open\\_Scholarship\\_Strategy\\_Development"
+        "Tennant et al. (2019) Foundations for Open Scholarship Strategy Development [https://www.researchgate.net/publication/330742805\\_Foundations\\_for\\_Open\\_Scholarship\\_Strategy\\_Development](https://www.researchgate.net/publication/330742805_Foundations_for_Open_Scholarship_Strategy_Development)"
     ],
     "alt_related_terms": [
         null
@@ -24,5 +24,12 @@
         "Sam Parsons",
         "Charlotte R. Pennington"
     ],
-    "language": "german"
+    "language": "german",
+    "translated_by": [
+        "Helena Hartmann"
+    ],
+    "translation_reviewed_by": [
+        "Susanne Vogel",
+        "Jennifer Mattschey"
+    ]
 }

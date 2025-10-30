@@ -7,7 +7,7 @@
         "Metadata"
     ],
     "references": [
-        "https://bids-specification.readthedocs.io/en/stable/03-modality-agnostic-files.html"
+        "BIDSModalityND"
     ],
     "alt_related_terms": [
         null
@@ -19,7 +19,7 @@
         "Alexander Hart",
         "Matt Jaquiery",
         "Emma Norris",
-        "Charlotte R. Pennington  ###  ### K {#k}"
+        "Charlotte R. Pennington"
     ],
     "language": "english",
     "aliases": [

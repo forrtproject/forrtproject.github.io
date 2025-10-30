@@ -11,7 +11,9 @@
         "Validation"
     ],
     "references": [
-        "Cronbach and Meehl (1955); Shadish et al. (2002); Smith (2005)"
+        "Cronbach1955",
+        "Shadish2002",
+        "Smith2005"
     ],
     "alt_related_terms": [
         null
@@ -25,5 +27,12 @@
         "Zoltan Kekecs",
         "Charlotte R. Pennington"
     ],
-    "language": "german"
+    "language": "german",
+    "translated_by": [
+        "Susanne Vogel"
+    ],
+    "translation_reviewed_by": [
+        "Helena Hartmann",
+        "Jennifer Mattschey"
+    ]
 }

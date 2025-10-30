@@ -8,7 +8,8 @@
         "Perspective"
     ],
     "references": [
-        "Jafar (2018); Oxford Dictionaries (2017)"
+        "Jafar (2018)",
+        "Oxford Dictionaries (2017) , \\_Reference2017"
     ],
     "alt_related_terms": [
         null
@@ -22,5 +23,12 @@
         "Madeleine Pownall",
         "Graham Reid"
     ],
-    "language": "german"
+    "language": "german",
+    "translated_by": [
+        "Susanne Vogel"
+    ],
+    "translation_reviewed_by": [
+        "Jennifer Mattschey",
+        "Helena Hartmann"
+    ]
 }

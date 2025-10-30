@@ -7,7 +7,7 @@
         "CRediT"
     ],
     "references": [
-        "Open Science Collaboration (2015); Tierney et al. (2020, 2021\\)"
+        "\\_Science\\_Collaboration2015"
     ],
     "alt_related_terms": [
         null
@@ -22,5 +22,12 @@
         "Qinyu Xiao",
         "Flávio Azevedo"
     ],
-    "language": "german"
+    "language": "german",
+    "translated_by": [
+        "Bettina MJ Kern"
+    ],
+    "translation_reviewed_by": [
+        "Helena Hartmann",
+        "Jennifer Mattschey"
+    ]
 }

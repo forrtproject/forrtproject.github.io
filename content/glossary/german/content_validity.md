@@ -7,7 +7,10 @@
         "Validity"
     ],
     "references": [
-        "Bollen (1989); Brod et al. (2009); Drost (2011); Haynes et al. (1995)"
+        "Bollen1989",
+        "BrodEtAl2009",
+        "Drost2011",
+        "HaynesRichardKubany1995"
     ],
     "alt_related_terms": [
         null
@@ -23,5 +26,12 @@
         "Sam Parsons",
         "Graham Reid"
     ],
-    "language": "german"
+    "language": "german",
+    "translated_by": [
+        "Helena Hartmann"
+    ],
+    "translation_reviewed_by": [
+        "Susanne Vogel",
+        "Jennifer Mattschey"
+    ]
 }

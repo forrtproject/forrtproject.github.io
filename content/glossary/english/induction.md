@@ -6,7 +6,7 @@
         "Hypothesis"
     ],
     "references": [
-        "Dienes (2008)"
+        "Dienes2008"
     ],
     "alt_related_terms": [
         null
@@ -14,9 +14,7 @@
     "drafted_by": [
         "Alaa Aldoh"
     ],
-    "reviewed_by": [
-        ""
-    ],
+    "reviewed_by": [],
     "language": "english",
     "aliases": [
         "/glossary/induction"

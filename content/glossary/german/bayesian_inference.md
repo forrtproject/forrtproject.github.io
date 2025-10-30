@@ -8,7 +8,13 @@
         "Bayesian Parameter Estimation"
     ],
     "references": [
-        "Dienes (2011; 2014; 2016); Etz et al. (2018); Kruschke (2015); McElreath (2020); Wagenmakers et al. (2018)"
+        "Dienes (2011",
+        "2014",
+        "2016)",
+        "Etz et al. (2018)",
+        "Kruschke (2015)",
+        "McElreath (2020)",
+        "Wagenmakers et al. (2018)"
     ],
     "alt_related_terms": [
         null
@@ -17,12 +23,19 @@
         "Charlotte R. Pennington"
     ],
     "reviewed_by": [
-        "Alaa Aldoh",
+        "Alaa AlDoh",
         "Bradley Baker",
         "Robert Ross",
         "Markus Weinmann",
         "Tobias Wingen",
         "Steven Verheyen"
     ],
-    "language": "german"
+    "language": "german",
+    "translated_by": [
+        "Susanne Vogel"
+    ],
+    "translation_reviewed_by": [
+        "Helena Hartmann",
+        "Jennifer Mattschey"
+    ]
 }

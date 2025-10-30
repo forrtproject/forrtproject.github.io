@@ -6,7 +6,10 @@
         "Social integration"
     ],
     "references": [
-        "Evans and Rubin (2021); Rubin et al. (2019); Rubin (2021); Saegert et al. (2007)"
+        "Evans and Rubin (2021)",
+        "Rubin et al. (2019)",
+        "Rubin (2021)",
+        "Saegert et al. (2007)"
     ],
     "alt_related_terms": [
         null
@@ -18,7 +21,8 @@
         "Leticia Micheli",
         "Eliza Woodward",
         "Julika Wolska",
-        "Gerald Vineyard; Yu-Fang Yang"
+        "Gerald Vineyard",
+        "Yu-Fang Yang"
     ],
     "language": "english",
     "aliases": [

@@ -8,7 +8,9 @@
         "Power relations"
     ],
     "references": [
-        "Joseph and Hirschfeld (2011); Ledgerwood et al. (2021); Padilla (1994)"
+        "Joseph2011",
+        "Ledgerwood2021",
+        "Padilla1994"
     ],
     "alt_related_terms": [
         null
@@ -23,5 +25,12 @@
         "Charlotte R. Pennington",
         "Flávio Azevedo"
     ],
-    "language": "german"
+    "language": "german",
+    "translated_by": [
+        "Susanne Vogel"
+    ],
+    "translation_reviewed_by": [
+        "Helena Hartmann",
+        "Jennifer Mattschey"
+    ]
 }

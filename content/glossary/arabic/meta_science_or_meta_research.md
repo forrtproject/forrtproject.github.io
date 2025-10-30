@@ -1,12 +1,11 @@
 {
     "type": "glossary",
     "title": "Meta-science or Meta-research (العلوم البعديَّة/التَّلوية أو البحث البعدي/التَّلوي)",
-    "definition": "التَّعريف:  يشير المصطلح إلى الدِّراسة العلميَّة للعلم نفسه بهدف وصف وشرح وتقييم، وتطوير الممارسات العلميَّة. يبحث علم \"ماوراء العلوم \" عادة في الأساليب العلميَّة والتَّحليل وإعداد التَّقارير عن البيانات وتقييمها وإعادة إنتاج، أو تكرار نتائج البحث، وكذلك في حوافز البحث. المصطلحات ذات الصِّلة:",
-    "related_terms": [
-        ""
-    ],
+    "definition": "يشير المصطلح إلى الدِّراسة العلميَّة للعلم نفسه بهدف وصف وشرح وتقييم، وتطوير الممارسات العلميَّة. يبحث علم \"ماوراء العلوم \" عادة في الأساليب العلميَّة والتَّحليل وإعداد التَّقارير عن البيانات وتقييمها وإعادة إنتاج، أو تكرار نتائج البحث، وكذلك في حوافز البحث. المصطلحات ذات الصِّلة:",
+    "related_terms": [],
     "references": [
-        "Ioannidis et al. (2015); Peterson and Panofsky (2020)"
+        "Ioannidis et al. (2015)",
+        "Peterson and Panofsky (2020)"
     ],
     "alt_related_terms": [
         null
@@ -19,5 +18,14 @@
         "Lisa Spitzer",
         "Olmo van den Akker"
     ],
-    "language": "arabic"
+    "language": "arabic",
+    "translated_by": [
+        "Ruwayshid"
+    ],
+    "translation_reviewed_by": [
+        "Ahlam Ahmed",
+        "Alaa M. Saleh",
+        "Ali H. Al-Hoorie",
+        "Mohammed Mohsen"
+    ]
 }

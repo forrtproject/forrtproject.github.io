@@ -7,9 +7,7 @@
         "PeerPub",
         "Peer review"
     ],
-    "references": [
-        ""
-    ],
+    "references": [],
     "alt_related_terms": [
         null
     ],

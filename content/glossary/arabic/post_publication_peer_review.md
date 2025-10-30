@@ -1,15 +1,13 @@
 {
     "type": "glossary",
-    "title": "Post Publication Peer Review (مراجعة الأقران بعد النَّشر) ##",
-    "definition": "التَّعريف: مراجعة تتم بعد نشر البحث وعادةً ما يتم نشرها على منصَّة مخصَّصة (مثل منصة PubPeer). وهو يختلف عن التَّعليق التَّقليدي الذي ينشر في نفس المجلَّة، والذي عادة ما يخضع لتحكيم الأقران.  المصطلحات ذات الصِّلة: التّحكيم المفتوح، منصة بابّير (PubPeer)، تحكيم الأقران",
+    "title": "Post Publication Peer Review (مراجعة الأقران بعد النَّشر)",
+    "definition": "مراجعة تتم بعد نشر البحث وعادةً ما يتم نشرها على منصَّة مخصَّصة (مثل منصة PubPeer). وهو يختلف عن التَّعليق التَّقليدي الذي ينشر في نفس المجلَّة، والذي عادة ما يخضع لتحكيم الأقران.  المصطلحات ذات الصِّلة: التّحكيم المفتوح، منصة بابّير (PubPeer)، تحكيم الأقران",
     "related_terms": [
         "Open Peer Review",
         "PeerPub",
         "Peer review"
     ],
-    "references": [
-        ""
-    ],
+    "references": [],
     "alt_related_terms": [
         null
     ],
@@ -20,5 +18,14 @@
         "Mahmoud Elsherif",
         "Sam Parsons"
     ],
-    "language": "arabic"
+    "language": "arabic",
+    "translated_by": [
+        "Mai Helmy."
+    ],
+    "translation_reviewed_by": [
+        "Awatif Alruwaili",
+        "Ali H. Al-Hoorie",
+        "Asma Alzahrani",
+        "Mohammed Mohsen"
+    ]
 }

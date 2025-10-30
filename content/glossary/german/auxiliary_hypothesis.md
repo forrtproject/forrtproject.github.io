@@ -9,7 +9,8 @@
         "Hidden moderators"
     ],
     "references": [
-        "Dienes (2008); Lakatos (1978)"
+        "Dienes2008",
+        "Lakatos1978"
     ],
     "alt_related_terms": [
         null
@@ -25,5 +26,12 @@
         "Sam Parsons",
         "Flávio Azevedo"
     ],
-    "language": "german"
+    "language": "german",
+    "translated_by": [
+        "Helena Hartmann"
+    ],
+    "translation_reviewed_by": [
+        "Susanne Vogel",
+        "Jennifer Mattschey"
+    ]
 }

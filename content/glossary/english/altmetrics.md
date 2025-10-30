@@ -11,7 +11,8 @@
         "Journal impact factor"
     ],
     "references": [
-        "Ali (2021); Galligan and Dyas-Correia (2013)"
+        "Ali2021",
+        "GalliganDyasCorreia2013"
     ],
     "alt_related_terms": [
         null
@@ -23,7 +24,7 @@
         "Ali H. Al-Hoorie",
         "Charlotte R. Pennington",
         "Birgit Schmidt",
-        "Flávio Azevedo  ### ---"
+        "Flávio Azevedo"
     ],
     "language": "english",
     "aliases": [

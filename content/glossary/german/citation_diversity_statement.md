@@ -8,7 +8,7 @@
         "Under-representation"
     ],
     "references": [
-        "Zurn et al. (2020)"
+        "Zurn2020"
     ],
     "alt_related_terms": [
         null
@@ -22,5 +22,12 @@
         "Sam Parsons",
         "Timo Roettger"
     ],
-    "language": "german"
+    "language": "german",
+    "translated_by": [
+        "Susanne Vogel"
+    ],
+    "translation_reviewed_by": [
+        "Helena Hartmann",
+        "Jennifer Mattschey"
+    ]
 }

@@ -27,7 +27,7 @@
         "Charlotte R. Pennington",
         "Robert M. Ross",
         "Timo Roettger",
-        "Andrew J. Stewart  ###  ### W {#w}"
+        "Andrew J. Stewart"
     ],
     "language": "english",
     "aliases": [

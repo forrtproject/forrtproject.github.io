@@ -8,7 +8,8 @@
         "Plot"
     ],
     "references": [
-        "Healy (2018); Tufte (1983)"
+        "Healy2018",
+        "Tufte1983"
     ],
     "alt_related_terms": [
         null
@@ -19,7 +20,7 @@
     "reviewed_by": [
         "Mahmoud Elsherif",
         "Charlotte R. Pennington",
-        "Suzanne L. K. Stewart;"
+        "Suzanne L. K. Stewart"
     ],
     "language": "english",
     "aliases": [
