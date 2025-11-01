@@ -297,6 +297,14 @@ More information at [www.openscienceGATE.com](https://opensciencegate.com/)
 
 ---
 
+<br>
+
+<img src="logos/iRISE.webp" align="left" width=370px alt="iRISE logo" /> [iRISE — improving Reproducibility In SciencE](https://irise-project.eu/) is a Horizon Europe–funded research initiative dedicated to understanding, investigating and guiding strategies to address irreproducibility across the sciences. iRISE engages diverse stakeholders to understand the theoretical basis of reproducibility, conduct evidence syntheses, test interventions to strengthen reproducibility in research, and develop integrative evidence frameworks. Central to its approach is the embedding of equity, diversity, and inclusion (EDI) principles, ensuring that recommended practices are effective, fair, and accessible across different researcher communities. Through its collaborative ethos and alignment with open science and integrity values, iRISE is dedicated to advancing shared goals around reproducible scholarship and evidence-based reform.
+
+<br>
+
+---
+
 ## FORRT membership in the UNESCO Global Open Science Partnership
 
 <a href="logos/2025_04_09_FORRT_Flavio_Azevedo_.pdf" target="_blank">
