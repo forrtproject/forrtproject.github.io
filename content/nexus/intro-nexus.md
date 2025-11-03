@@ -60,22 +60,29 @@ FORRT's e-learning platform (or Nexus) is a hub for community-driven initiatives
 
 ## Elements of the Nexus include
 
-* [FORRT's Adopting Principled Teaching & Mentoring Practices](/adopting)
-* [FORRT's Clusters](/clusters)
-* [FORRT's Curated Resources](/resources)
-* [FORRT's Educator's Corner](/educators-corner)
-* [FORRT's Equity in Open Scholarship](/equityinos)
-* [FORRT's Glossary](/glossary)
-* [FORRT's Impact of Open & Reproducible Scholarship on Students](/impact)
-* [FORRT's Initiatives Towards Social Justice in Academia](/dei)
-* [FORRT's Lesson Plans](/lesson-plans)
-* [FORRT's Neurodiversity Resources](/neurodiversity)
-* [FORRT's Pedagogies](/pedagogies)
-* [FORRT's Summaries](/summaries)
-* [FORRT's Syllabus](https://forrt.org/syllabus)
-* [FORRT's Self-Assessment Tool](/self-assessment)
+* [About Educational Nexus](/nexus)
+* [Adopting Principled Education](/adopting)
+* [Citation Politics](/citation-politics)
+* [Clusters](/clusters)
+* [Curated Resources](/resources)
+* [Developing Countries & OS](/os-developing-world)
+* [Educational NEXUS](/nexus)
+* [Educators' Corner](/educators-corner)
+* [Equity in Open Science](/equityinos)
+* [Games Portal](/games)
+* [Glossary](/glossary)
+* [Impact of OS on students](/impact)
+* [Lesson Plans](/lesson-plans/)
+* [Mapping OS Communities](/mapping_os)
+* [Neurodiversity Team](/neurodiversity)
+* [Pedagogies](/pedagogies)
+* [Self-Assessment](/self-assessment)
+* [Social Justice Initiatives](/dei)
+* [Summaries](/summaries)
+* [Syllabi Collection](/syllabus)
+* [Teaching OS](/teaching_os)
+* [Academic Wheel of Privilege (AWoP)](/awop)
 
-<br>
 
 ### FORRT's Educational Nexus has five major goals: 
 
