@@ -7,7 +7,8 @@ type: plain_page
 
 <br>
 
-<img src="rep_hub_framework.webp" /> 
+<img src="https://github.com/user-attachments/assets/f09dbbc0-9fe1-4261-aaa4-4df948ad9be0" />
+
 
 ### **Transforming Research: Support for Every Level of Replication and Reproduction**
 
