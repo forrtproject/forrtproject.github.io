@@ -332,21 +332,27 @@
   parent = "replications"
 
 [[main]]
+  name = "Replication Network Blog"
+  url = "/replication-hub/blog"
+  weight = 70
+  parent = "replications"
+
+[[main]]
   name = "Replication Research Journal"
   url = "https://replicationresearch.org"
-  weight = 70
+  weight = 71
   parent = "replications"
 
 [[main]]
   name = "Replication Manuscript Templates"
   url = "https://osf.io/brxtd/"
-  weight = 71
+  weight = 72
   parent = "replications"
 
 [[main]]
   name = "Submit a replication to FReD"
   url = "/replication-hub/submit"
-  weight = 72
+  weight = 73
   parent = "replications"
 
 
