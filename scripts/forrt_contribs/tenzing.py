@@ -1,6 +1,7 @@
 import pandas as pd
 import os
 import re
+import html
 
 # Tenzing directory
 csv_export_url = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vT_IaXiYtB3iAmtDZ_XiQKrToRkxOlkXNAeNU2SIT_J9PxvsQyptga6Gg9c8mSvDZpwY6d8skswIQYh/pub?output=csv&gid=0'
@@ -184,7 +185,6 @@ def concatenate_contributions(group):
     roles_attr = ','.join(roles) if roles else ''
     
     # Escape attribute values to prevent HTML injection
-    import html
     projects_attr_escaped = html.escape(projects_attr, quote=True)
     roles_attr_escaped = html.escape(roles_attr, quote=True)
     

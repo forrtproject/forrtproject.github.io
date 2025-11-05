@@ -115,11 +115,9 @@
             ul.style.cssText = 'list-style-type: none; padding-left: 0;';
             
             matchedContributors.forEach(c => {
-                const li = document.createElement('li');
-                li.style.cssText = 'margin-bottom: 1em;';
-                // Append the cloned node (which came from trusted server-rendered HTML)
-                li.appendChild(c.item);
-                ul.appendChild(li);
+                // Apply styling to the cloned item and append directly to ul
+                c.item.style.cssText = 'margin-bottom: 1em;';
+                ul.appendChild(c.item);
             });
             
             filteredView.appendChild(ul);
