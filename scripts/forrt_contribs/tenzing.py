@@ -1,5 +1,6 @@
 import pandas as pd
 import os
+import re
 
 # Tenzing directory
 csv_export_url = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vT_IaXiYtB3iAmtDZ_XiQKrToRkxOlkXNAeNU2SIT_J9PxvsQyptga6Gg9c8mSvDZpwY6d8skswIQYh/pub?output=csv&gid=0'
@@ -118,6 +119,13 @@ merged_data['full_name'] = merged_data.apply(format_name, axis=1)
 # Propagate ORCID iD within each contributor's grouping
 merged_data['ORCID iD'] = merged_data.groupby('full_name')['ORCID iD'].transform(lambda x: x.ffill().bfill())
 
+# Helper function to normalize project/role names for data attributes
+def normalize_for_attribute(text):
+    """Convert text to lowercase and replace spaces with hyphens for HTML attributes"""
+    if pd.isna(text) or text == '':
+        return ''
+    return text.lower().replace(' ', '-').replace('&', 'and')
+
 # Group by 'ORCID iD' and concatenate the contributions
 def concatenate_contributions(group):
 
@@ -127,6 +135,34 @@ def concatenate_contributions(group):
     # Format the full name once per group
     full_name = format_name(group.iloc[0])
     group = group.sort_values(by='special_role', ascending=False)
+
+    # Collect all projects and roles for data attributes
+    projects = []
+    roles = []
+    
+    for _, row in group.iterrows():
+        # Normalize project name
+        project_name = row['Project Name']
+        if pd.notna(project_name) and project_name != '':
+            normalized_project = normalize_for_attribute(project_name)
+            if normalized_project not in projects:
+                projects.append(normalized_project)
+        
+        # Parse and normalize roles from Contributions
+        contributions_text = row['Contributions']
+        if pd.notna(contributions_text):
+            # Check if it contains 'as Project Manager' (special role)
+            if row['special_role'] and 'Project Manager' in contributions_text:
+                if 'project-manager' not in roles:
+                    roles.append('project-manager')
+            
+            # Extract roles from the contributions text
+            # Roles are marked with asterisks like *Writing - original draft*
+            role_matches = re.findall(r'\*([^*]+)\*', contributions_text)
+            for role_match in role_matches:
+                normalized_role = normalize_for_attribute(role_match)
+                if normalized_role not in roles:
+                    roles.append(normalized_role)
 
     # Create the contributions string for each project
     contributions = [
@@ -142,11 +178,19 @@ def concatenate_contributions(group):
     # Turn contributions into multiline list or single line
     contributions_str = contributions[0] if len(contributions) == 1 else '\n    ' + '\n    '.join(contributions) + '\n' + '{{<rawhtml>}}<br/>&nbsp;<br/> {{</rawhtml>}}'
 
+    # Create data attributes
+    projects_attr = ','.join(projects) if projects else ''
+    roles_attr = ','.join(roles) if roles else ''
+    
     orcid_id = group.iloc[0]['ORCID iD']
+    
+    # Build the list item with data attributes
+    data_attrs = f'data-projects="{projects_attr}" data-roles="{roles_attr}"'
+    
     if orcid_id:
-        return min_order, f"- **[{full_name}]({'https://orcid.org/' + orcid_id.strip()})** contributed to {contributions_str}"
+        return min_order, f"- {{{{<rawhtml>}}}}<li {data_attrs}><strong><a href=\"https://orcid.org/{orcid_id.strip()}\">{full_name}</a></strong> contributed to {contributions_str}</li>{{{{</rawhtml>}}}}"
     else:
-        return min_order, f"- **{full_name}** contributed to {contributions_str}"
+        return min_order, f"- {{{{<rawhtml>}}}}<li {data_attrs}><strong>{full_name}</strong> contributed to {contributions_str}</li>{{{{</rawhtml>}}}}"
 
 def extract_orcid_id(value):
     if not isinstance(value, str) or len(value) < 5:
@@ -184,6 +228,13 @@ summary = summary.sort_values(by='original_order').drop(columns='original_order'
 summary = summary.reset_index(drop=True)
 summary_string = '\n\n'.join(summary['Contributions'])
 
+# Add closing tags and JavaScript include
+footer_content = """
+</ul>
+<script src="/js/contributor-filter.js"></script>
+{{</rawhtml>}}
+"""
+
 # --- LOGGING ADDED HERE ---
 # Log the final deduplicated number of contributors
 print("\n--- Processing Complete ---")
@@ -204,8 +255,8 @@ output_path = os.path.join(script_dir, 'tenzing.md')
 with open(template_path, 'r') as file:
     template_content = file.read()
 
-# Combine the template content with the new summary string
-combined_content = template_content + summary_string
+# Combine the template content with the new summary string and footer
+combined_content = template_content + summary_string + footer_content
 
 # Save the combined content to 'tenzing.md'
 with open(output_path, 'w') as file:

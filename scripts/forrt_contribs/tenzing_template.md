@@ -79,3 +79,13 @@ FORRT is driven by a **large and diverse community of contributors** that shape 
 
 ## **Contributions**
 
+{{<rawhtml>}}
+<div id="filter-controls" style="margin-bottom: 20px; display: none;">
+  <p><strong>Filtered View:</strong></p>
+  <div id="filter-info"></div>
+  <button id="clear-filters" style="margin-top: 10px; padding: 8px 16px; cursor: pointer;">Show All Contributors</button>
+</div>
+
+<div id="filtered-view" style="display: none;"></div>
+
+<ul id="contributor-list">
