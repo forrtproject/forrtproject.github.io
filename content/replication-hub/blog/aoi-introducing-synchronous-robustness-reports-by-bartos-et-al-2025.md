@@ -25,7 +25,7 @@ NOTE: The article is behind a firewall.
 
 “To integrate SRRs seamlessly into the publication process, we suggest the framework outlined as a flowchart in Fig. 2. As the flowchart shows, the SRRs form a natural extension to the standard review process.”
 
-[![](/replication-network-blog/image.png)](https://replicationnetwork.com/wp-content/uploads/2025/03/image.png)
+[![](/replication-network-blog/image.webp)](https://replicationnetwork.com/wp-content/uploads/2025/03/image.webp)
 
 **REFERENCE**
 

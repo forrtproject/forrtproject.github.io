@@ -34,13 +34,13 @@ Reasonable people can disagree about the “best” definition of replication. I
 
 FIGURE 1 shows the growth in replications in economics over time. The graph is somewhat misleading because 2019 was an exceptional year, driven by special replication issues at the *Journal of Development Studies*, the *Journal of Development Effectiveness*, and, especially, *Energy Economics*. In contrast, 2020 will likely end up having closer to 20 replications. Even ignoring the big blip in 2019, it is clear that there has been a general upwards creep in the number of replications published in economics over time. It is, however, a creep, and not a leap. Given that there are ***[approximately 40,000 articles published annually in Web of Science economics journals](https://www.aeaweb.org/articles?id=10.1257/jel.51.1.144)***, the increase over time does not indicate a major shift in how the economics discipline values replications.
 
-[![](/replication-network-blog/trn120210106.png)](https://replicationnetwork.com/wp-content/uploads/2021/01/trn120210106.png)
+[![](/replication-network-blog/trn120210106.webp)](https://replicationnetwork.com/wp-content/uploads/2021/01/trn120210106.webp)
 
 **Which journals publish replications?**
 
 TABLE 1 reports the top 10 economics journals in terms of total number of replications published in their journal lifetimes. Over the years, a consistent leader in the publishing of replications has been the *Journal of Applied Econometrics*. In second place is the *American Economic Review*. However, an important distinction between these two journals is that *JAE* publishes both positive and negative replications; that is, replications that both confirm and refute the original studies. In contrast, the *AER* only very rarely publishes a positive replication.
 
-[![](/replication-network-blog/trn220210106.jpg)](https://replicationnetwork.com/wp-content/uploads/2021/01/trn220210106.jpg)
+[![](/replication-network-blog/trn220210106.webp)](https://replicationnetwork.com/wp-content/uploads/2021/01/trn220210106.webp)
 
 There have been several new initiatives by journals to publish replications. Notably, the [***International Journal for Re-Views of Empirical Economics (IREE)***](https://www.iree.eu/) was started in 2017 and is solely dedicated to the publishing of replications. It is an open access journal with no author processing charges (APCs), supported by a consortium of private and public funders. As of January 2021, it had published 10 replication studies.
 

@@ -30,7 +30,7 @@ Their final analysis produced a false negative error rate (the rate at which rep
 
 To give a better feel for what these numbers means, consider a scenario where the replication rate is 1%. Suppose we have a sample of 10,000 papers, of which 100 are replications. Applying the false negative and positive rates above produces the numbers in TABLE 1.
 
-[![](/replication-network-blog/trn120210107.png)](https://replicationnetwork.com/wp-content/uploads/2021/01/trn120210107.png)
+[![](/replication-network-blog/trn120210107.webp)](https://replicationnetwork.com/wp-content/uploads/2021/01/trn120210107.webp)
 
 Given this sample, a researcher would identify 578 replications, of which 83 would be true replications, and 495 would be “false replications”, that is, non-replication studies falsely categorized as replication studies. One would have to get a false positive rate below 1% before even half of the identified “replications” were true replications. Given a relatively low replication rate (here 1%), it is obvious that it is highly unlikely that machine learning will ever be accurate enough to produce reliable estimates of the overall replication rate in the discipline.
 
@@ -44,11 +44,11 @@ I now move on to assessing what we have learned from the replications that have 
 
 The last decade has seen increasing concern that science has a ***[reproducibility problem](https://en.wikipedia.org/wiki/Replication_crisis)***. So it is fair to ask, is there a replication crisis in economics? Probably the most famous study of replication rates is the study by [***Brian Nosek and the Open Science Collaboration (Science, 2015)***](https://science.sciencemag.org/content/349/6251/aac4716) that assessed the replication rate of 100 experiments in psychology. They reported an overall “successful replication rate” of 39%. Similar studies focused more on economics report higher rates (see TABLE 2).
 
-[![](/replication-network-blog/trn220210107.png)](https://replicationnetwork.com/wp-content/uploads/2021/01/trn220210107.png)
+[![](/replication-network-blog/trn220210107.webp)](https://replicationnetwork.com/wp-content/uploads/2021/01/trn220210107.webp)
 
 The next section will delve a little more into the meaning of “replication success”. For now, let’s first ask, what rate of success should we expect to see if science is performing as it is supposed to? In a blog for TRN (“***[The Statistical Fundamentals of (Non-)Replicability](https://replicationnetwork.com/2019/01/15/miller-the-statistical-fundamentals-of-non-replicability/)***”), Jeff Miller considers the case where a replication is defined to be “successful” when it reproduces a statistically significant estimate reported in a previous study (see FIGURE 1 below).
 
-[![](/replication-network-blog/trn320210107.png)](https://replicationnetwork.com/wp-content/uploads/2021/01/trn320210107.png)
+[![](/replication-network-blog/trn320210107.webp)](https://replicationnetwork.com/wp-content/uploads/2021/01/trn320210107.webp)
 
 FIGURE 1 assumes 1000 studies each assess a different treatment. 10% of the treatments are effective. 90% have no effect. Statistical significance is set at 5% and all studies have statistical power of 60%. The latter implies that 60 of the 100 studies with effective treatments produce significant estimates.  The Type I error rate implies that 45 of the remaining 900 studies with ineffectual treatments also generate significant estimates. As a result, 105 significant estimates are produced from the initial set of 1000 studies.
 

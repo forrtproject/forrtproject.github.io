@@ -61,7 +61,7 @@ type: blog
 
 ###### We then went through 15 of each journal’s most recently published empirical articles. If at least half (8) had both data and code, we classified it as satisfying the journal’s requirement. 23 of the 41 (56%) met this criterion. These are listed in the left hand side of the table below.
 
-![Data and Code](/replication-network-blog/data-and-code.gif)
+![Data and Code](/replication-network-blog/data-and-code.webp)
 
 ###### If less than half of the articles were accompanied by data and code, or if only data and not code were provided, or code and not data, we judged it to have not satisfied the criteria. In this manner, 18 of the 41 journals (44%) were determined to not be in compliance with their stated data and code policy. These are listed on the right hand side of the table.
 

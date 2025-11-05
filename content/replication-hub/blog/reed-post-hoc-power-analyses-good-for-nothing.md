@@ -24,7 +24,7 @@ type: blog
 
 ###### The second researcher estimates the treatment effect for his sample, and obtains the following results:
 
-![Equation2.jpg](/replication-network-blog/equation2.jpg)
+![Equation2.jpg](/replication-network-blog/equation2.webp)
 
 ###### The estimated treatment effect is relatively large and statistically significant with a p-value below 1%.  Further, despite having the same number of observations as the first researcher, there is apparently no problem with power here, because the post-hoc power associated with these results is 91.8%.
 
@@ -40,7 +40,7 @@ type: blog
 
 ###### Define “underpowered” as having a post-hoc power less than 80%, with studies having post-hoc power greater than or equal to 80% deemed to be “sufficiently powered.”  The table below reports the results of a simulation exercise where “*Beta*” values are substituted into the DGP,   *Y = Beta* *× T  + e, e ~* N(0, 5), such that true power values range from 10% to 90%.  A 1000 simulations for each *Beta* value were run and the percent of times recorded that the estimated effects were calculated to be “underpowered.”
 
-![Table](/replication-network-blog/table.jpg)
+![Table](/replication-network-blog/table.webp)
 
 ###### 
 

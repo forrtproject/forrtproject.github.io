@@ -29,7 +29,7 @@ type: blog
 
 ###### Er, ok, so not 60% then. To be fair to my naive 2015 self: this number refers to *all* hypothesis tests that were conducted, including p-hacking. That includes the one ANOVA main effect, the other main effect, the interaction effect, the same three tests without outliers, the same six tests with age as covariate, … and so on.
 
-![Table1_PPV-NPV-FDR-FOR_table](/replication-network-blog/table1_ppv-npv-fdr-for_table.png)
+![Table1_PPV-NPV-FDR-FOR_table](/replication-network-blog/table1_ppv-npv-fdr-for_table.webp)
 
 ###### Let’s see what these numbers mean for the rates of true and false findings. For this we will need the *positive predictive value* (PPV) and the *negative predictive value* (NPV). I tend to forget what exactly they and their two siblings, FDR and FOR, stand for and how they are calculated, so added the table above as a cheat sheet.
 
@@ -37,11 +37,11 @@ type: blog
 
 ###### But I want to draw your attention to the *negative* predictive value. The chance that a non-significant finding is true is 98%! Isn’t that amazing and heartening? In this scenario, null results are vastly more informative than significant results.
 
-![Figure1_PPV_NPV](/replication-network-blog/figure1_ppv_npv.png)
+![Figure1_PPV_NPV](/replication-network-blog/figure1_ppv_npv.webp)
 
 ###### I know what you’re thinking: 7% is ridiculously low. Who knows what those statisticians put into their Club Mate when they calculated this? For those of you who are more like 2015 me and think psychologists are really smart, I plotted the PPV and NPV for different levels of power across the whole range of the true hypothesis rate, so you can pick your favourite one. I chose five levels of power: 21% (estimate for neuroscience by ***[Button et al., 2013](http://www.nature.com/nrn/journal/v14/n5/full/nrn3475.html)***), 75% (Johnson et al. estimate), 80% and 95% (common conventions), and 99% (upper bound of what we can reach).
 
-![Figure2_PVplot](/replication-network-blog/figure2_pvplot.png)
+![Figure2_PVplot](/replication-network-blog/figure2_pvplot.webp)
 
 ###### The not very pretty but adaptive (you can chose different values for alpha and power) code is available ***[here](https://github.com/amscheel/PPV-NPV-FDR-FOR_plot/blob/master/PPV_NPV_FDR_FOR_looped.R)***.
 

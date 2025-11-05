@@ -54,7 +54,7 @@ type: blog
 
 ###### What does this have to do with replication? Oftentimes treatments are administered over time in panel datasets (say microcredit loans). Fixed effects estimates may be used to identify causal estimates of the treatment. Sample statistics, when they are reported, typically only report the percent of observations receiving treatment. Consider the two samples below.
 
-![TRN6(20200425)](/replication-network-blog/trn620200425-1.png)
+![TRN6(20200425)](/replication-network-blog/trn620200425-1.webp)
 
 ###### In both samples, 30% of the observations are treatment observations. Thus a table of sample statistics would show identical means for the treatment variable in the two samples.
 

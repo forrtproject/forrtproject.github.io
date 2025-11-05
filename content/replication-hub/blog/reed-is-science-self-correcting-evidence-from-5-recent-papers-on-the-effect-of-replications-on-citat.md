@@ -35,7 +35,7 @@ Serra-Garcia & Gneezy (2021). Serra-Garcia & Gneezy draw replications from three
 
 The vertical lines in the three panels of their Figure 3 indicate the year the respective replication results were published. The height of the lines represents the yearly citations for original studies that were successfully replicated (blue) and unsuccessfully replicated (black). If science were self-replicating, one would hope to see that citations for studies that failed to replicate would take a hit and decrease after the failure to replicate became known. Nothing of that sort is obvious from the graphs.
 
-[![](/replication-network-blog/image.png)](https://replicationnetwork.com/wp-content/uploads/2023/04/image.png)
+[![](/replication-network-blog/image.webp)](https://replicationnetwork.com/wp-content/uploads/2023/04/image.webp)
 
 To obtain a quantitative estimate of the treatment effect (=”successful replication”), Serra-Garcia & Gneezy estimate the following specification:
 
@@ -55,7 +55,7 @@ Control group = No
 
 Their Table 1 reports the results of a difference-in-difference (DID) analysis (see below). The treatment variable is “Replicated x After publication of replication”. The estimated effect says that original studies that are successfully replicated receive approximately 1.2 more citations per year than those that are not. However, the effect is not statistically significant.
 
-[![](/replication-network-blog/image-1.png)](https://replicationnetwork.com/wp-content/uploads/2023/04/image-1.png)
+[![](/replication-network-blog/image-1.webp)](https://replicationnetwork.com/wp-content/uploads/2023/04/image-1.webp)
 
 It is the random assignment of “successful replication” and “unsuccessful replication” that allow Serra-Garcia & Gneezy (2021) to claim they identify a causal effect. The other two psychology studies follow a similar identification strategy.
 
@@ -81,11 +81,11 @@ Control group = Yes
 
 Schafmeister’s Table 2 reports the results (see below). Focusing on the baseline results, studies that successfully replicate receive approximately 9% more citations per year (=0.037+0.051) than studies whose replications failed. Unfortunately, Schafmeister did not test whether this difference was statistically significant.
 
-[![](/replication-network-blog/image-2.png)](https://replicationnetwork.com/wp-content/uploads/2023/04/image-2.png)
+[![](/replication-network-blog/image-2.webp)](https://replicationnetwork.com/wp-content/uploads/2023/04/image-2.webp)
 
 Von Hippel (2022). Similar to Schafmeister, von Hippel draws his replication entirely from RP:P, albeit with a slightly different sample of 98 studies. His Figure 2 provides a look at his main results. There is some evidence that successful replications gain citations relative to unsuccessful replications.
 
-[![](/replication-network-blog/image-3.png)](https://replicationnetwork.com/wp-content/uploads/2023/04/image-3.png)
+[![](/replication-network-blog/image-3.webp)](https://replicationnetwork.com/wp-content/uploads/2023/04/image-3.webp)
 
 To obtain quantitative estimates of the treatment effect (“unsuccessful replication), von Hippel estimates the following DID specification:
 
@@ -121,7 +121,7 @@ A second disadvantage is the relatively small number of studies in their sample.
 
 Their main finding is represented by their FIGURE 6 below.
 
-[![](/replication-network-blog/image-4.png)](https://replicationnetwork.com/wp-content/uploads/2023/04/image-4.png)
+[![](/replication-network-blog/image-4.webp)](https://replicationnetwork.com/wp-content/uploads/2023/04/image-4.webp)
 
 Ankel-Peters, Fiala, & Neubauer do not attempt to estimate the causal effect of an unsuccessful replication. Recognizing the difficulty of using their data to do that, they state, “…*we do not strive for making a precise causal statement of how much a comment affects the [original paper’s] citation trend. The qualitative assessment of an absence of a strong effect is sufficient for our case*” (page 15). That leaves us with Coupé & Reed (2023).
 
@@ -143,7 +143,7 @@ In the second stage, they matched these potential controls with the replicated s
 
 If the original study was published 3 years before the replication study was published, they match on the intervening two years (Panel A). If the original study was published 4 years before the replication study was published, they match on the intervening 3 years (Panel B). And so on.
 
-[![](/replication-network-blog/image-5.png)](https://replicationnetwork.com/wp-content/uploads/2023/04/image-5.png)
+[![](/replication-network-blog/image-5.webp)](https://replicationnetwork.com/wp-content/uploads/2023/04/image-5.webp)
 
 They don’t just match on the total number of citations in the pre-treatment period, but on the year-by-year history. The logic is that non-random assignment is better captured by finding other articles with identical citation histories than by adjusting regressions with control variables.
 
@@ -161,7 +161,7 @@ They then estimate separate regressions for each year t = -3, -2, -1, 0, 1, 2, 3
 
 β1 then provides an estimate of the difference in the citation effect from a negative replication compared to a positive or mixed replication. Their preferred results are based on quantile regression to address outliers and are reported in their Table 10 (see below).
 
-[![](/replication-network-blog/image-6.png)](https://replicationnetwork.com/wp-content/uploads/2023/04/image-6.png)
+[![](/replication-network-blog/image-6.webp)](https://replicationnetwork.com/wp-content/uploads/2023/04/image-6.webp)
 
 They generally find a small, positive effect associated with negative replications of less than 2 citations/year. In all but one case (PCT=0%, t=2), the estimates are statistically insignificant. In no case do they find a negative and significant effect on citations and thus, they find no evidence of a citation penalty for failed replications.
 

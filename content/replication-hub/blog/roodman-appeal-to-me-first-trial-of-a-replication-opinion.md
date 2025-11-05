@@ -32,7 +32,7 @@ Seeing the ivory tower as a bastion of truth-seeking, I used to be surprised. I 
 
 Last fall I read a tiny illustration of the second problem, and it inspired me to try something new. Dartmouth economist Paul Novosad tweeted his pique with economics journals over how they handle challenges to published papers:
 
-[![](/replication-network-blog/image.png)](https://replicationnetwork.com/wp-content/uploads/2025/05/image.png)
+[![](/replication-network-blog/image.webp)](https://replicationnetwork.com/wp-content/uploads/2025/05/image.webp)
 
 As you might glean from the truncated screenshots, the starting point for debate is a [***paper published in 2019***](https://doi.org/10.1257/app.20170223). It finds that U.S. immigration judges were less likely to grant asylum on warmer days. For each 10°F the temperature went up, the chance of winning asylum went down 1 percentage point.
 

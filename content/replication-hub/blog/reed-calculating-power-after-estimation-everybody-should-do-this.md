@@ -91,7 +91,7 @@ print(power)
 
 In this case, post hoc power is calculated to be 74.3% (see screen shot below).
 
-[![](/replication-network-blog/image-2.png)](https://replicationnetwork.com/wp-content/uploads/2024/07/image-2.png)
+[![](/replication-network-blog/image-2.webp)](https://replicationnetwork.com/wp-content/uploads/2024/07/image-2.webp)
 
 Alternatively, rather than calculating a single power value, one might find it more useful to generate a power curve. To do that, you would first run the following program defining two functions: (i) the power\_function (same as above), and (ii) the power\_curve\_function.
 
@@ -175,7 +175,7 @@ View(power_data)
 
 The power curve is given below.
 
-[![](/replication-network-blog/image-4.png)](https://replicationnetwork.com/wp-content/uploads/2024/07/image-4.png)
+[![](/replication-network-blog/image-4.webp)](https://replicationnetwork.com/wp-content/uploads/2024/07/image-4.webp)
 
 The last line of the chunk produces a dataframe that lists all the effect size-power value pairs. From there one can see that given a standard error of 1.5, the associated regression equation has an 80% probability of producing a statistically significant estimate when the effect size = 4.3.
 

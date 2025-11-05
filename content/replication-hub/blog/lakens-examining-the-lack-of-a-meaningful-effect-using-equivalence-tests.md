@@ -24,7 +24,7 @@ type: blog
 
 ###### You can use equivalence tests in addition to null-hypothesis significance tests. This means there are now four possible outcomes of your data analysis, and these four cases are illustrated in the figure below (adapted from Lakens, 2017). A mean difference of Cohen’s d = 0.5 (either positive or negative) is specified as a smallest effect size of interest in an independent t-test (see the vertical dashed lines at -0.5 and 0.5). Data is collected, and one of four possible outcomes is observed (squares are the observed effect size, thick lines the 90% CI, and thin lines the 95% CI).
 
-![lakens](/replication-network-blog/lakens.png)
+![lakens](/replication-network-blog/lakens.webp)
 
 ###### We can conclude statistical equivalence if we find the pattern indicated by A: The *p*-value from the traditional NHST is not significant (p > 0.05), and the p-value for the equivalence test is significant (p ≤ 0.05). However, if the p-value for the equivalence test is also > 0.05, the outcome matches pattern D, and we can not reject an effect of 0, nor an effect that is large enough to care about. We thus remain undecided. Using equivalence tests, we can also observe pattern C: An effect is statistically significant, but also smaller than anything we care about, or equivalent to null (indicating the effect lacks practical significance). We can also conclude the effect is significant, and that the possibility that the effect is large enough to matter can not be rejected, under pattern B, which means we can reject the null, and the effect might be large enough to care about.
 

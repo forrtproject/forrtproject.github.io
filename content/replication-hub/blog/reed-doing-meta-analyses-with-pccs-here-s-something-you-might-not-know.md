@@ -25,7 +25,7 @@ While TRN is primarily dedicated to replications in economics, I also do researc
 
 In 2022, the colloquium was held in Kyoto, Japan. That year I went with an especially large number of questions that I was hoping to have answered.  In fact, I used my presentation at the colloquium as an opportunity to take my questions to the MAER-Net “brain trust”. Below is a slide from the presentation I gave in Kyoto:
 
-[![](/replication-network-blog/image.png)](https://replicationnetwork.com/wp-content/uploads/2023/12/image.png)
+[![](/replication-network-blog/image.webp)](https://replicationnetwork.com/wp-content/uploads/2023/12/image.webp)
 
 Here is the background: My presentation was on “The Relationship Between Social Capital and Economic Growth: A Meta-Analysis.” Because measures of social capital and economic growth vary widely across studies, we transformed the estimates from the original studies into partial correlation coefficients (PCCs).
 
@@ -43,13 +43,13 @@ This was pretty shocking to me, as I had published several meta-analyses with PC
 
 Indeed, Robbie was right. Economists were using the wrong sampling variance! As a result of this experience, he published a note in *Research Synthesis Methods* (see below).
 
-[![](/replication-network-blog/image-1.png)](https://replicationnetwork.com/wp-content/uploads/2023/12/image-1.png)
+[![](/replication-network-blog/image-1.webp)](https://replicationnetwork.com/wp-content/uploads/2023/12/image-1.webp)
 
 Unfortunately, I wasn’t able to get much of a response from those attending MAER-Net in Kyoto so I left confused about what I should do in my research.
 
 However, the answer to my question was not long in coming. In March of this year I learned of an article by Tom Stanley and Chris Doucouliagos that addressed the issue of the “correct” sampling variance of PCC (see below).
 
-[![](/replication-network-blog/image-2.png)](https://replicationnetwork.com/wp-content/uploads/2023/12/image-2.png)
+[![](/replication-network-blog/image-2.webp)](https://replicationnetwork.com/wp-content/uploads/2023/12/image-2.webp)
 
 To cut to the chase, the answer to my question if economists were using the wrong s.e.(PCC) is twofold:
 
@@ -69,7 +69,7 @@ Doesn’t the “wrong” sampling variance also have a bias problem (cf. Equati
 
 Stanley and Doucouliagos demonstrate this in a series of simulations reported in their paper. In the table below, S1^2 is the “correct” sampling variance, and S2^2 is the “wrong” sampling variance commonly used by economists. In every case, bias is less using S2^2.
 
-[![](/replication-network-blog/image-3.png)](https://replicationnetwork.com/wp-content/uploads/2023/12/image-3.png)
+[![](/replication-network-blog/image-3.webp)](https://replicationnetwork.com/wp-content/uploads/2023/12/image-3.webp)
 
 Does that mean that somehow WLS isn’t relevant for PCCs? Not at all. It is still the case that inverse weighting with the “correct” sampling variance produces estimates with smaller variance.
 

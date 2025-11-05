@@ -21,7 +21,7 @@ type: blog
 
 ###### The angle of the Nature story is that preregistration cuts publication bias by increasing the proportion of null results that are published. The reporter drives the point home with a graphic (reproduced below) that vividly shows the increase in null findings in bright red: 55-66% with pre-registration vs. 5-20% without. Sounds convincing.
 
-![trn(goodman, 20190119)](/replication-network-blog/trngoodman-20190119.png)
+![trn(goodman, 20190119)](/replication-network-blog/trngoodman-20190119.webp)
 
 ###### 
 

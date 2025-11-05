@@ -35,7 +35,7 @@ The rest of this blog summarizes the key points in their paper and uses it as a 
 
 DG&G’s focus their analysis on a hypothetical example: a study of the effect of inflammation on depression. Accordingly, they present the DAG below to represent the causal model relating inflammation (the treatment variable) to depression (the outcome variable).
 
-[![](/replication-network-blog/image-57.png)](https://replicationnetwork.com/wp-content/uploads/2024/11/image-57.png)
+[![](/replication-network-blog/image-57.webp)](https://replicationnetwork.com/wp-content/uploads/2024/11/image-57.webp)
 
 **The Variables**
 
@@ -101,7 +101,7 @@ In the end, DG&G cut down the number of specifications in the SCA from 1,216 to 
 
 The observant reader might note that we did not make use of the third category of specifications, Type U for “Uncertainty”. DG&G give the following DAG as an example.
 
-[![](/replication-network-blog/image-58.png)](https://replicationnetwork.com/wp-content/uploads/2024/11/image-58.png)
+[![](/replication-network-blog/image-58.webp)](https://replicationnetwork.com/wp-content/uploads/2024/11/image-58.webp)
 
 In Figure 2b, “Fatigue” is no longer a collider variable. Instead, it is a mediator variable like “Pain”. Accordingly, DG&G identify six specifications for this DAG, with two alternative composite measures of “Inflammation”, three ways of addressing outliers, and all specifications including (and only including), the control variables, “Pain”, “Fatigue”, and “Age”.
 

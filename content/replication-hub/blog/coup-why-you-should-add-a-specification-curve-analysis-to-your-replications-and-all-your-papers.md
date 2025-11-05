@@ -22,19 +22,19 @@ Interestingly, we can replicate the findings of these three papers so these diff
 
 To illustrate the impact of specification choices on outcomes we use the [s](https://github.com/masurp/specr)***[pecr R-package](https://github.com/masurp/specr)***.  To use specr, you indicate what are reasonable choices for your dependent variable, for your independent variable of interest, for your control variables, for your estimation model and for your sample restrictions.  The general format is given below.
 
-[![](/replication-network-blog/image-2.png)](https://replicationnetwork.com/wp-content/uploads/2024/05/image-2.png)
+[![](/replication-network-blog/image-2.webp)](https://replicationnetwork.com/wp-content/uploads/2024/05/image-2.webp)
 
 After specifying this snippet of code, specr will run all possible combinations and present them in two easy-to-understand graphs. For example, in our paper, we used 2 dependent variables (life satisfaction on a scale from 1-10 and life satisfaction on a scale from 1 to 5),  one main variable of interest (injured or having relatives injured or killed during World War II), 5 models (based on how fixed effects and clusters were defined in 5 different published papers), 8 sets of controls (basic controls, additional war variables, income variables, other additional controls, etc.) and 4 datasets (the full dataset, respondents under 65 years old, those living in countries heavily affected by World War II, and under 65s living in heavily affected countries). This gave a total of 320 regression specifications.
 
 The first graph produced by specr plots the specification curve, a curve showing all estimates of impact of the variable-of-interest on the outcome, and the standard errors, ordered from smallest to largest, giving an idea of the extent to which model uncertainty affects outcomes.
 
-[![](/replication-network-blog/image-1.png)](https://replicationnetwork.com/wp-content/uploads/2024/05/image-1.png)
+[![](/replication-network-blog/image-1.webp)](https://replicationnetwork.com/wp-content/uploads/2024/05/image-1.webp)
 
 In the case of our paper, the specification curve showed a wide range of estimates of the impact of experiencing war on life satisfaction (from -0.5 to +0.25 on a scale of 1 to 5/10), with negative estimates often being significant (significant estimates are in red, grey is insignificant).
 
 The second graph shows estimates by each specification-choice, illustrating what drives the heterogeneity in outcomes. In the case of our paper, we found that from the moment we controlled for a measure of income the estimate of war on life satisfaction became less negative and insignificant!
 
-[![](/replication-network-blog/image-3.png)](https://replicationnetwork.com/wp-content/uploads/2024/05/image-3.png)
+[![](/replication-network-blog/image-3.webp)](https://replicationnetwork.com/wp-content/uploads/2024/05/image-3.webp)
 
 Given the potential importance of choices the researchers make on outcomes, it makes sense, when replicating a paper, to not just exactly replicating the authors specifications. Robustness checks in papers typically check how changing the specification in one dimension affects the outcome. A specification curve, however, allows to illustrate what happens if we look at all possible combinations of the robustness checks done in a paper.  Moreover, programs like specr allow to easily check what happens if one adds other variables, include fixed effects or clusters at different level of aggregation, or restricts the sample in this or that way. In other words, you can illustrate the effects of model uncertainty in a much more comprehensive way than is typically done in a paper.
 

@@ -55,15 +55,15 @@ What you should see: the Observed Power histogram tracks the significance test�
 
 To use the app, ***[click here](https://w87avq-bob-reed.shinyapps.io/retrospective_power_app/)***. Input the respective values in the Shiny app’s sidebar panel. The panel below provides an example with sample size set equal to 100; true power equal to 80% (for two-sided significance), alpha equal to 5%, and sets the number of simulations = 1000 and the random seed equal to 123.
 
-[![](/replication-network-blog/image-1.png)](https://replicationnetwork.com/wp-content/uploads/2025/08/image-1.png)
+[![](/replication-network-blog/image-1.webp)](https://replicationnetwork.com/wp-content/uploads/2025/08/image-1.webp)
 
 Once you have entered your input values, click “Run simulation”. Two histograms will appear. The histogram to the left reports the distribution of estimated power values using the SE-ES method. The histogram to the right reports the same using Observed Power. The vertical dotted line indicates true power.
 
-[![](/replication-network-blog/image-2.png)](https://replicationnetwork.com/wp-content/uploads/2025/08/image-2.png)
+[![](/replication-network-blog/image-2.webp)](https://replicationnetwork.com/wp-content/uploads/2025/08/image-2.webp)
 
 Immediately below this figure, the Shiny app produces a table that reports the mean and 95% estimation interval of estimated powers for the SE-ES and Observed Power methods. For this example, with the true power = 80%, the Observed Power distribution is left skewed, biased downwards (mean = 73.4%) with a 95% estimation interval of (14.5%, 99.8%). In contrast, the SE-ES distribution is approximately symmetric, approximately centered around the true of 80%, with a 95% estimation interval of (68.5%, 89.9%).
 
-[![](/replication-network-blog/image-3.png)](https://replicationnetwork.com/wp-content/uploads/2025/08/image-3.png)
+[![](/replication-network-blog/image-3.webp)](https://replicationnetwork.com/wp-content/uploads/2025/08/image-3.webp)
 
 The reader is encouraged to try out different target power values and, most importantly, sample sizes. What you should see is that the SE-ES method works well at every true power value, but, in this context, it becomes less serviceable for sample sizes below 30.
 

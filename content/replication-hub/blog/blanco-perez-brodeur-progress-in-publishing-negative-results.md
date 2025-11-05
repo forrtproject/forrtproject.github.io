@@ -29,7 +29,7 @@ type: blog
 
 ###### We collect z -statistics from two of the eight health economics journals that sent out the editorial statement and compare the distribution of tests before and after the editorial statement. We find that test statistics in papers submitted and published after the editors sent out the editorial statement are less likely to be statistically significant. The figure below illustrates our results.
 
-![brodeur](/replication-network-blog/brodeur.jpg)
+![brodeur](/replication-network-blog/brodeur.webp)
 
 ###### About 56%, 49% and 41% of z -statistics, respectively, are statistically significant at the 10%, 5% and 1% levels after the editorial in comparison with 61%, 55% and 49% of z -statistics before the editorial statement. Of note, we document that the impact of the statement intensifies over the time period studied.
 

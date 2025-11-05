@@ -20,7 +20,7 @@ type: blog
 
 ###### I used Google search to find citations of Katz (2001) and Coupé (2005) and then eliminated the citations coming from multiple versions of the same papers. The table below gives the results.
 
-![coupetable](/replication-network-blog/coupetable.jpg)
+![coupetable](/replication-network-blog/coupetable.webp)
 
 ###### The table shows that even after publication of the correction, more than 70% of citing papers only cite the Katz study. This remains true even if one restricts the sample to citations from more than 5 years after the publication of the correction.
 

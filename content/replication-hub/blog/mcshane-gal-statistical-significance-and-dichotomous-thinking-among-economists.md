@@ -34,7 +34,7 @@ type: blog
 
 ###### In our first series of studies, the hypothetical study summary described a clinical trial of two treatments where the outcome of interest was the number of months lived by the patients (average of 8.2 and 7.5 months for treatments A and B respectively). Our subjects were asked a multiple choice question about whether the number of months lived by those who received treatment A was greater, less, or no different than the number of months lived by those who received treatment B or whether it could not be determined.
 
-![FIGURE1](/replication-network-blog/figure1.jpg)
+![FIGURE1](/replication-network-blog/figure1.webp)
 
 ###### The correct answer is, of course, that the average number of post-diagnosis months lived by the patients who received treatment A was greater than that lived by the patients who received treatment B (i.e., 8.2 > 7.5) regardless of the p-value. However, as illustrated in Figure 1, subjects were much more likely to answer the question correctly when the p-value in the question was set to 0.01 than to 0.27. Similar results held for researchers in psychology, business, and, to a lesser extent, statistics.
 

@@ -17,7 +17,7 @@ type: blog
 
 ###### The platform facilitates **replicability** by enabling users to link replications directly to their original studies, with corresponding real-time updating of meta-analytic effect size estimates and forest plots of replications (see Figure below).[[1]](#_ftn1) The platform aims to incentivize verification in terms of replicability by easily allowing users to invite others to replicate one’s work and also by providing a professional credit system that explicitly acknowledges replicators’ hard work commensurate to the “expensiveness” of the executed replication.
 
-###### [row-based-meta](https://replicationnetwork.com/wp-content/uploads/2015/10/row-based-meta.png)
+###### [row-based-meta](https://replicationnetwork.com/wp-content/uploads/2015/10/row-based-meta.webp)
 
 ###### The platform facilitates **reproducibility** by enabling researchers to check and endorse the analytic reproducibility of each other’s empirical results via data analyses executed within their web browser for studies with open data. The platform will visually acknowledge the endorser via a professional credit system to incentivize researchers to verify the reproducibility of each other’s results, when direct replications are not feasible or too expensive to execute.
 

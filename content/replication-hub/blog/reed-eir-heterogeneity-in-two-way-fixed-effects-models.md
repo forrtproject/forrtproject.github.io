@@ -150,7 +150,7 @@ type: blog
 
 ###### C&D estimates of the effect of newspapers on Presidential turnout are given below. They estimate an additional newspaper increases turnout by 0.43 percentage points (compared to 0.26 and -0.09 for the first-difference and fixed-effects estimators). Their placebo test produces an insignificant estimate, suggesting that the assumptions of the Wald-TC estimator are valid. Finally, as the placebo estimate uses a somewhat restricted sample, they reestimate the treatment effect on the restricted sample and obtain an estimate very close to what they obtain using the larger sample (0.0045 versus 0.0043).
 
-![TRN9(20190524)](/replication-network-blog/trn920190524.png)
+![TRN9(20190524)](/replication-network-blog/trn920190524.webp)
 
 ###### **Conclusion**
 

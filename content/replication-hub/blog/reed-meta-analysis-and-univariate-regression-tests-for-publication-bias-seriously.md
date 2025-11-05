@@ -58,7 +58,7 @@ Things were no better when I substituted sample size for SE. The respective R-sq
 
 Two examples from my sample of 20 are Churchill et al. (2022) and Georgia et al. (2022). The respective FAT coefficients are reported in the table below, with standard errors in parentheses. In both cases, the univariate FAT estimates indicated the existence of publication bias, while the multivariate estimates did not.
 
-[![](/replication-network-blog/image.png)](https://replicationnetwork.com/wp-content/uploads/2023/10/image.png)
+[![](/replication-network-blog/image.webp)](https://replicationnetwork.com/wp-content/uploads/2023/10/image.webp)
 
 In fact, the record regarding good practice is not as good as it seems. It is true that most meta-analyses in my sample estimated a meta-regression including both the SE variable and other study characteristics. However, not all used the multivariate meta-regression to test for publication bias. There are studies in my sample that estimate a univariate FAT-PET, conclude there is evidence of publication bias, later report a multivariate meta-regression with an insignificant SE variable, but never acknowledge this as evidence against publication bias.  
   

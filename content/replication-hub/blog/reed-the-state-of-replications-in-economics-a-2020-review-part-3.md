@@ -38,7 +38,7 @@ In a blog I wrote for *TRN* entitled “[***The Replication Crisis – A Single 
 
 Define “Prior Odds” as the Prob(*Treatment is effective*):Prob(*Treatment is ineffective*). Define the “False Positive Rate” (FPR) as the percent of statistically significant estimates in published studies for which the true underlying effect is zero; i.e, the treatment has no effect. If the prior odds of a treatment being effective are relatively low, Type I error will generate a large number of “false” significant estimates that can overwhelm the significant estimates associated with effective treatments, causing the FPR to be high. TABLE 1 below illustrates this.
 
-[![](/replication-network-blog/trn120210108.png)](https://replicationnetwork.com/wp-content/uploads/2021/01/trn120210108.png)
+[![](/replication-network-blog/trn120210108.webp)](https://replicationnetwork.com/wp-content/uploads/2021/01/trn120210108.webp)
 
 The FPR values in the table range from 0.24 to 0.91. For example, given 1:10 odds that a randomly chosen treatment is effective, and assuming studies have Power equal to 0.50, the probability that a statistically significant estimate is a false positive is 50%. Alternatively, if we take a Power value of 0.20, which is approximately equal to the value that ***[Ioannidis et al. (2017)](https://onlinelibrary.wiley.com/doi/full/10.1111/ecoj.12461)*** report as the median value for empirical research in economics, the FPR rises to 71%.
 
@@ -46,7 +46,7 @@ It needs to be emphasized that these high FPRs have nothing to do with publicati
 
 TABLE 2 reports what happens when a researcher in this environment replicates a randomly selected significant estimate. The left column reports the researcher’s initial assessment that the finding is a false positive (as per TABLE 1). The table shows how that probability changes as a result of a successful replication.
 
-[![](/replication-network-blog/image.png)](https://replicationnetwork.com/wp-content/uploads/2021/01/image.png)
+[![](/replication-network-blog/image.webp)](https://replicationnetwork.com/wp-content/uploads/2021/01/image.webp)
 
 For example, suppose the researcher thinks there is a 50% chance that a given empirical claim is a false positive (Initial FPR = 50%). The researcher then performs a replication and obtains a significant estimate. If the replication study had 50% Power, the updated FPR would fall from 50% to 9%.
 

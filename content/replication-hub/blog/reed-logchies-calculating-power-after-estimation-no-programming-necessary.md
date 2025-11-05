@@ -25,17 +25,17 @@ type: blog
 
 The input window comes pre-filled with four values to guide how researchers should enter their information. (The numbers in the table are taken from an example featured in the previous TRN blog). Once the respective information is entered, one presses the “Submit” button.
 
-[![](/replication-network-blog/image.png)](https://w87avq-bob-reed.shinyapps.io/post_hoc_power_app/)
+[![](/replication-network-blog/image.webp)](https://w87avq-bob-reed.shinyapps.io/post_hoc_power_app/)
 
 The app produces two outputs. The first is an estimate of statistical power that corresponds to the “Effect size” entered by the researcher. For example, for the numbers in the input window above, the app reports the following result: “Post hoc power corresponding to an effect size of 4, a standard error of 1.5, and df of 50 = 74.3%” (see below).
 
-[![](/replication-network-blog/image-1.png)](https://w87avq-bob-reed.shinyapps.io/post_hoc_power_app/)
+[![](/replication-network-blog/image-1.webp)](https://w87avq-bob-reed.shinyapps.io/post_hoc_power_app/)
 
 In words, this regression had a 74.3% probability of producing a statistically significant (5%, two-tailed) coefficient estimate if the true effect size was 4.
 
 The second output is a power curve (see below).
 
-[![](/replication-network-blog/image-2.png)](https://w87avq-bob-reed.shinyapps.io/post_hoc_power_app/)
+[![](/replication-network-blog/image-2.webp)](https://w87avq-bob-reed.shinyapps.io/post_hoc_power_app/)
 
 The power curve illustrates how power changes with effect size. When the effect size is close to zero, it is unlikely that the regression will produce a statistically significant estimate. When the effect size becomes large, the probability increases, eventually asymptoting to 100%.
 
@@ -47,15 +47,15 @@ The power curve plot also includes two vertical lines: “Effect size” and “
 
 We can illustrate this case in our online app. First, we enter the respective information in the input window:
 
-[![](/replication-network-blog/image-3.png)](https://w87avq-bob-reed.shinyapps.io/post_hoc_power_app/)
+[![](/replication-network-blog/image-3.webp)](https://w87avq-bob-reed.shinyapps.io/post_hoc_power_app/)
 
 This produces the following “Calculation Result”,
 
-[![](/replication-network-blog/image-4.png)](https://w87avq-bob-reed.shinyapps.io/post_hoc_power_app/)
+[![](/replication-network-blog/image-4.webp)](https://w87avq-bob-reed.shinyapps.io/post_hoc_power_app/)
 
 and associated Power Curve:
 
-[![](/replication-network-blog/image-5.png)](https://w87avq-bob-reed.shinyapps.io/post_hoc_power_app/)
+[![](/replication-network-blog/image-5.webp)](https://w87avq-bob-reed.shinyapps.io/post_hoc_power_app/)
 
 As it was implemented, the estimated regression model only had a 20.7% probability of producing a statistically significant estimate for an effect size (0.060) that was economically meaningful. Clearly, it would be wrong to interpret statistical insignificance in this case as indicating that the true effect was negligible.
 
@@ -63,20 +63,20 @@ As it was implemented, the estimated regression model only had a 20.7% probabili
 
 *PCCs* are commonly used in meta-analyses to convert regression coefficients to a common effect size. All one needs is the estimated *t*-statistic and the regression equation’s degrees of freedom (*df*):
 
-[![](/replication-network-blog/image-6.png)](https://replicationnetwork.com/wp-content/uploads/2024/08/image-6.png)
-[![](/replication-network-blog/image-15.png)](https://replicationnetwork.com/wp-content/uploads/2024/08/image-15.png)
+[![](/replication-network-blog/image-6.webp)](https://replicationnetwork.com/wp-content/uploads/2024/08/image-6.webp)
+[![](/replication-network-blog/image-15.webp)](https://replicationnetwork.com/wp-content/uploads/2024/08/image-15.webp)
 
 The advantage of converting regression coefficients to *PCCs* is that there exist guidelines for interpreting the associated economic sizes of the effects. First, though, we demonstrate how converting the previous example to a *PCC* leads to a very similar result.
 
 To get the *t*-statistics for the previous example, we divide the estimated effect (0.077) by its standard error (0.051) to obtain *t* = 1.176. Given *df* = 62, we obtain *PCC* = 0.148 and *se(PCC)* = 0.124. We input these parameter values into the input window (see below).
 
-[![](/replication-network-blog/image-9.png)](https://w87avq-bob-reed.shinyapps.io/post_hoc_power_app/)
+[![](/replication-network-blog/image-9.webp)](https://w87avq-bob-reed.shinyapps.io/post_hoc_power_app/)
 
 The output follows below:
 
-[![](/replication-network-blog/image-10.png)](https://w87avq-bob-reed.shinyapps.io/post_hoc_power_app/)
+[![](/replication-network-blog/image-10.webp)](https://w87avq-bob-reed.shinyapps.io/post_hoc_power_app/)
 
-[![](/replication-network-blog/image-11.png)](https://w87avq-bob-reed.shinyapps.io/post_hoc_power_app/)
+[![](/replication-network-blog/image-11.webp)](https://w87avq-bob-reed.shinyapps.io/post_hoc_power_app/)
 
 A comparison of FIGURES 3B and 2B and FIGURES 3C and 2C confirms that the conversion to *PCC* has produced very similar power calculations.
 
@@ -90,7 +90,7 @@ To select the effect sizes, we turned to a very useful paper by Chris Doucouliag
 
 Our power analysis will calculate statistical power for these three effect sizes. Specifically, we want to know how much statistical power each of the studies in the most recent issue of the *AEJ: Applied Economics* had to produce significant estimates for effect sizes corresponding to “small”, “medium”, and “large”. The results are reported in the table below.
 
-[![](/replication-network-blog/image-13.png)](https://replicationnetwork.com/wp-content/uploads/2024/08/image-13.png)
+[![](/replication-network-blog/image-13.webp)](https://replicationnetwork.com/wp-content/uploads/2024/08/image-13.webp)
 
 We can use this table to answer the question: Are studies in the most recent issue of the  *AEJ: Applied Economics* underpowered? Based on a very limited sample, our answer would be some are, but most are not. The median power of the 11 studies we investigated was 81.8% for a “small” effect. These results differ substantially from what Ioannidis et al. (2017) found. Why the different conclusions? We have some ideas, but they will have to wait for a more comprehensive analysis. However the point of this example was not to challenge Ioannidis et al.’s conclusion. It is merely to show how useful, and easy, calculating post hoc power can be. Everybody should do it!
 

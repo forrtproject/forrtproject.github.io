@@ -33,7 +33,7 @@ type: blog
 
 ###### This situation is illustrated in Figure 1, where the black curve plots the central *t*-distribution; and red and blue curves show non-central distributions respectively for *λ=0.316* and *λ=7.07*. The blue curve is an essentially a normal distribution, but for the purpose of illustration, we maintain it as a *t*-distribution with *λ > 0*. The point-null hypothesis fixes the sampling distribution at the black curve which is *t*(*n-1; λ=0*), so the 5% critical value does not change (no more than 1.645) regardless of sample size.
 
-![TRN1(20190607)](/replication-network-blog/trn120190607.png)
+![TRN1(20190607)](/replication-network-blog/trn120190607.webp)
 
 ###### The consequence is that, when the value of  *λ* is as large as *7.07* with a large sample size, the null hypothesis is almost always rejected with the *p*-value virtually 0, even though *θ=0.1* is economically negligible. The problem may not be serious when the sample size is small, but it is when the sample size is large. We now show how adopting an interval hypothesis allows one to overcome this problem.
 
@@ -61,7 +61,7 @@ type: blog
 
 ###### In Figure 2, we present the Box-Whisker plot of the daily returns against *D*. It appears that there are a lot more outliers during the non-Halloween period, but the median and the quartile values are nearly identical for the two periods.
 
-![TRN2(20190607)](/replication-network-blog/trn220190607.png)
+![TRN2(20190607)](/replication-network-blog/trn220190607.webp)
 
 ###### This plot provides further evidence that the Halloween effect is negligible, apart from these outliers. It is likely that the effect size estimates of the above Halloween regressions are over-stated by ignoring these outliers. This application highlights the problems of the point-null hypothesis and demonstrates how interval hypothesis testing can overcome them.
 

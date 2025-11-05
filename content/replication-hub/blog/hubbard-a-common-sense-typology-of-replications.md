@@ -19,7 +19,7 @@ type: blog
 
 ###### Based on the two dimensions of (1) data sources and (2) research methods, the table below lists six different kinds of replications, each with its own part to play.
 
-![Hubbard](/replication-network-blog/hubbard.jpg)
+![Hubbard](/replication-network-blog/hubbard.webp)
 
 ###### (1)   *Checking of Analysis: Determining the Accuracy of Results*
 

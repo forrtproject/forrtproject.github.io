@@ -35,7 +35,7 @@ We summarize the results of individual studies into a single per-study *Z*-score
 
 ***Gold Rush world***
 
-[![](/replication-network-blog/image-17.png)](https://replicationnetwork.com/wp-content/uploads/2020/12/image-17.png)
+[![](/replication-network-blog/image-17.webp)](https://replicationnetwork.com/wp-content/uploads/2020/12/image-17.webp)
 
 Here *A*(*t*) denotes whether we accumulate *and* analyze the *t* studies: It can be that *A*(2) = 0 and *A*(3) = 0 because we are stuck at one study, but also *A*(1) = 0 because we don’t “meta-analyze” that single study. It can only be that *A*(2) = 1 if we accumulate *and* meta-analyze a two-study series and *A*(3) = 1 if we accumulate *and* meta-analyze a three-study series. In our *Gold Rush* world a very specific subset of studies accumulate into a three-study series such that they are meta-analyzed (*A*(3) = 1).
 
@@ -47,7 +47,7 @@ We observe in our *Gold Rush* world above that the study series that are eventua
 
 Assume that we are in the scenario that only true null effects are studied in our *Gold Rush* world, such that any new study builds on a false-positive result. How large would the bias be if the three-study series are simply analyzed by standard meta-analysis? We illustrate this by simulating this *Gold Rush* world using the R code below.
 
-[![](/replication-network-blog/trn220201204-1.png)](https://replicationnetwork.com/wp-content/uploads/2020/12/trn220201204-1.png)
+[![](/replication-network-blog/trn220201204-1.webp)](https://replicationnetwork.com/wp-content/uploads/2020/12/trn220201204-1.webp)
 
 **Theoretical sampling process:** A fixed-effects meta-analysis assumes that if three studies *z*1*, z*2*, z*3 are each sampled under the null hypothesis, each has a standard normal with mean zero and the standard normal sampling distribution also applies for the combined *z*(3) score. The R code in Figure 1illustrates this sampling process: First, a large population is simulated of possible first (Z1), second (Z2) and third (Z3) studies from a standard normal distribution. Then in Zmeta3 each index i represents a possible study series, such that c(Z1[i], Z2[i], Z3[i]) samples an unbiased study series and calcZmeta calculates its fixed-effects meta- analysis *Z*-score *z*(3). So the large number of *Z*-scores in Zmeta3 capture the unbiased sampling distribution that is assumed for fixed-effects meta-analysis *z*(3)-scores.
 
@@ -55,13 +55,13 @@ Assume that we are in the scenario that only true null effects are studied in ou
 
 **Meta-analysis under *Gold Rush* accumulation bias:** The final lines of code in Figure 1plot two histograms of *z*(3) samples, one with and one without the *Gold Rush A*(*t*) accumulation bias process, based on Zmeta3.A3 and Zmeta3 respectively. Figure 2gives the result.
 
-[![](/replication-network-blog/image.png)](https://replicationnetwork.com/wp-content/uploads/2020/12/image.png)
+[![](/replication-network-blog/image.webp)](https://replicationnetwork.com/wp-content/uploads/2020/12/image.webp)
 
 We observe in Figure 2that the theoretical sampling process, resulting in the pink histogram, gives a distribution for the three-study meta-analysis *z*(3)-scores that is centered around zero. Under the *Gold Rush* sampling process, however, our three-study *z*(3)-scores do not behave like this theoretical distribution at all. The blue histogram has a smaller variance and is shifted to the right – representing the bias.
 
 We conclude that we should not use conventional meta-analysis techniques to analyze our study series under *Gold Rush* accumulation bias: Conventional fixed-effects meta-analysis assumes that any three-study summary statistic *Z*(3) is sampled from the pink distribution in Figure 2under the null hypothesis, such that the meta- analysis is significant for *Z*(3)-scores larger than *zα* = 1*.*96 for a right-sided test with type-I error control  *α* = 2*.*5%. Yet the actual blue sampling distribution under this accumulation bias process shows that a much larger fraction of series that accumulate three studies will have *Z*(3)-scores larger than 1.96 than is assumed by the theory of random sampling. This (extremely) inflated proportion of type-I errors is 88% instead of 2.5% in our extreme *Gold Rush*, and can be obtained from our simulation by the code in Figure 3.
 
-[![](/replication-network-blog/trn320201204.png)](https://replicationnetwork.com/wp-content/uploads/2020/12/trn320201204.png)
+[![](/replication-network-blog/trn320201204.webp)](https://replicationnetwork.com/wp-content/uploads/2020/12/trn320201204.webp)
 
 **Accumulation bias can be efficient**
 
@@ -75,7 +75,7 @@ We first adapt our *Gold Rush* accumulation bias world a bit, and not only meta-
 
 **Gold Rush world; all-series-size**
 
-[![](/replication-network-blog/image-18.png)](https://replicationnetwork.com/wp-content/uploads/2020/12/image-18.png)
+[![](/replication-network-blog/image-18.webp)](https://replicationnetwork.com/wp-content/uploads/2020/12/image-18.webp)
 
 The R code in Figure 4calculates the fixed-effects meta-analysis *z*(1), *z*(2) and *z*(3) scores, conditional on meta- analyzing a one-study, two-study, or three-study series in this adjusted *Gold Rush* accumulation bias scenario. The histograms of these conditional *z*(*t*) scores are shown in Figure 5, including the theoretical unbiased *z*(3) histogram that was also shown in Figure 2 and largely overlaps with the “*A*(1) = 1*, A*(2) = 0”-scenario. The difference between these two sampling distributions is only visible in their right tail, with the green histogram excluding values larger than *zα*= 1*.*96 and redistributing their mass over other values.
 
@@ -83,15 +83,15 @@ Figure 5 clarifies that single studies are hardly biased in this extreme *Gold R
 
 However, what this plot does not show us is how often we are in the one-study, two-study and three-study case.
 
-[![](/replication-network-blog/image-1.png)](https://replicationnetwork.com/wp-content/uploads/2020/12/image-1.png)
-[![](/replication-network-blog/image-2.png)](https://replicationnetwork.com/wp-content/uploads/2020/12/image-2.png)
+[![](/replication-network-blog/image-1.webp)](https://replicationnetwork.com/wp-content/uploads/2020/12/image-1.webp)
+[![](/replication-network-blog/image-2.webp)](https://replicationnetwork.com/wp-content/uploads/2020/12/image-2.webp)
 
 To illustrate the relative frequencies of one-study, two-study and three-study meta-analyses, the code in Figure 6 samples the series in their respective numbers, instead of in equal numbers (which happens in the size = numSim.3series statement in Figure 4, part of creating the data frame). Plotting the total number of sampled *Z*-scores is dangerous for the single study *z*(1)-scores, however, since there are so many of them (it can crash your R studio). So before plotting the histogram, a smaller sample (of size = 3\*numSim.3series in total) is drawn that keeps the ratios between *z*(1)s, *z*(2)s and *z*(3)s intact.
 
 The histogram in Figure 7illustrates an unconditional distribution by the raw counts of the *z*(*t*)-scores: many result from a single study, very few from a two-study series and almost none from a three-study series. In fact, this unconditional sampling distribution is hardly biased, as we will illustrate with our table further below.
 
-[![](/replication-network-blog/image-3.png)](https://replicationnetwork.com/wp-content/uploads/2020/12/image-3.png)
-[![](/replication-network-blog/image-4.png)](https://replicationnetwork.com/wp-content/uploads/2020/12/image-4.png)
+[![](/replication-network-blog/image-3.webp)](https://replicationnetwork.com/wp-content/uploads/2020/12/image-3.webp)
+[![](/replication-network-blog/image-4.webp)](https://replicationnetwork.com/wp-content/uploads/2020/12/image-4.webp)
 
 We first introduce an example of an ALL-IN meta-analysis to argue that such an unconditional approach can in fact be very efficient.
 
@@ -101,7 +101,7 @@ Figure 8shows an example of an ALL-IN meta-analysis. Each of the red/orange/yell
 
 To interpret Figure 8, we observe that initially only the Dutch (NL) study contributes to the meta-analysis and the blue line completely overlaps with the light yellow one. Very quickly, the Australian (AU) study also starts contributing and the blue meta-analysis line captures a synthesis of the evidence in two studies. Later on, also the study in the US, France (FR) and Uruguay (UY) start contributing and the meta-analysis becomes a three-study, four-study and five-study meta-analysis. How many studies contribute to the analysis, however, does not matter for its evidential value.
 
-[![](/replication-network-blog/image-5.png)](https://replicationnetwork.com/wp-content/uploads/2020/12/image-5.png)
+[![](/replication-network-blog/image-5.webp)](https://replicationnetwork.com/wp-content/uploads/2020/12/image-5.webp)
 
 Some studies (like the Australian one) are much larger than others, such that under a lucky scenario this study could reach the evidential threshold even before other studies start observing data.  This threshold (indicated at 400) controls type-I errors at a rate of *α*= 1*/*400 = 0*.*0025 (details in the final section). So in repeated sampling under the null, the combined studies will only have a probability to cross this threshold that is smaller than 0*.*25%. In this repeated sampling the size of the study series is essentially random: we can be lucky and observe very convincing data in the early studies, making more studies superfluous, or we can be unlucky and in need of more studies. The threshold can be reached with a single study, with a two-study meta-analysis, with a three-study,.. etc, and the repeated sampling properties, like type-I error control, hold on average over all those sampling scenarios (so unconditional on the series size).
 
@@ -117,13 +117,13 @@ Accumulation bias can already result from simply excluding results of significan
 
 Table 1 is inspired by Senn (2014) (different question, similar answer) and represents our extreme *Gold Rush* world of study series.  It takes the same approach as Figure 7 and indicates the probability to meta-analyze   a one-study, two-study or three-study series of each possible form under the null hypothesis. The three study series are very biased, with two or even three out of three studies showing a positive significant effect. But the P0 column shows that the probability of being in this scenario is very small under the null hypothesis, as was also apparent from Figure 7. In fact, most analysis will be of the one-study kind, that hardly have any bias, and are even slightly to the left of the theoretic standard null distribution. Exactly this phenomenon balances the biased samples of series of larger size.
 
-[![](/replication-network-blog/image-7.png)](https://replicationnetwork.com/wp-content/uploads/2020/12/image-7.png)
+[![](/replication-network-blog/image-7.webp)](https://replicationnetwork.com/wp-content/uploads/2020/12/image-7.webp)
 
 A Z-score is marked by a \* and color orange (e.g.  z1\*)  in  case  the individual  study  result  is  significant  and  positive  (z1 ≥ zα  (one-sided test)) and  by  a (e.g.   z1−)  otherwise.   The  column  t  indicates  the number of  studies  and  the  column counts the number of significant studies. The fifth and sixth column multiply P0 with the column and t column to arrive at an expected value E0[\*] and E0[t] respectively in the bottom row.
 
 The bottom row of Table 1gives the expected values for the number of significant studies per series in the \*P0 column, and the expected value for the total number of studies per series in the *t* P0 column. If we use these expressions to obtain the proportion of expected number of significant to expected total number of studies, we get the following:
 
-[![](/replication-network-blog/image-8.png)](https://replicationnetwork.com/wp-content/uploads/2020/12/image-8.png)
+[![](/replication-network-blog/image-8.webp)](https://replicationnetwork.com/wp-content/uploads/2020/12/image-8.webp)
 
 The proportion of expected significant effects to expected series size is still *α* in Table 1 under extreme *Gold Rush* accumulation bias, as it would also be without accumulation bias.
 
@@ -137,22 +137,22 @@ Just having the expectation of some statistics not affected by stopping rules is
 
 ALL-IN meta-analysis takes an approach that is different from its predecessors and is part of an upcoming field of sequential analysis for continuous monitoring with an unlimited horizon. These approaches are called *Safe* for optional stopping and/or continuation (Grünwald et al., 2019) *any-time valid* (Ramdas et al., 2020). Their methods rely on nonnegative martingales (Ramdas et al., 2020); with its most well-known and useful martingale: the likelihood ratio. For a meta-analysis *Z*-score, a martingale process of likelihood ratios could look as follows:
 
-[![](/replication-network-blog/image-10.png)](https://replicationnetwork.com/wp-content/uploads/2020/12/image-10.png)
+[![](/replication-network-blog/image-10.webp)](https://replicationnetwork.com/wp-content/uploads/2020/12/image-10.webp)
 
 The subscript 10 indicates that the denominator of the likelihood ratio is the likelihood of the *Z*-scores under the null hypothesis of mean zero, and in the numerator is some alternative mean normal likelihood. The likelihood ratio becomes smaller when the data are more likely under the null hypothesis, but the likelihood ratio can never become smaller than 0 (hence the “nonnegative” martingale). This is crucial, because a nonnegative martingale allows us to use Ville’s inequality (Ville, 1939), also called the universal bound by Royall (1997). For likelihood ratios, this means that we can set a threshold that guarantees type-I error control under any accumulation bias process and at any time, as follows:
 
-[![](/replication-network-blog/image-11.png)](https://replicationnetwork.com/wp-content/uploads/2020/12/image-11.png)
+[![](/replication-network-blog/image-11.webp)](https://replicationnetwork.com/wp-content/uploads/2020/12/image-11.webp)
 
 The ALL-IN meta-analysis in Figure 8 in fact is based on likelihood ratios like this, and controls the type-I error by the threshold 400 at level 1*/*400 = 0*.*25%.
 
 The code below illustrates that likelihood ratios can also control type-I error rates under continuous monitoring when extreme *Gold Rush* accumulation bias is at play. Within our previous simulation, we again assume a *Gold Rush* world with only true null studies and very biased two-study and three-study series. The code in Figure 11 calculates likelihood ratios for the growing study series under accumulation bias. Figure 11illustrates that still very few likelihood ratios ever grow very large.
 
-[![](/replication-network-blog/image-12.png)](https://replicationnetwork.com/wp-content/uploads/2020/12/image-12.png)
-[![](/replication-network-blog/image-13.png)](https://replicationnetwork.com/wp-content/uploads/2020/12/image-13.png)
+[![](/replication-network-blog/image-12.webp)](https://replicationnetwork.com/wp-content/uploads/2020/12/image-12.webp)
+[![](/replication-network-blog/image-13.webp)](https://replicationnetwork.com/wp-content/uploads/2020/12/image-13.webp)
 
 If we set our type-I error rate *α* to 5%, and compare our likelihood ratios to 1*/α* = 20 we observe that less than  1*/*20 = 5% of  the  study  series  *ever* achieves  a  value  of  LR10   larger  than  20 (Figure 12).  The  simulated type-I error is even much smaller than 5% since in our *Gold Rush* world series stop growing at three studies, yet this procedure controls type-I error also in the case none of these series stops growing at three studies, but all continue to grow forever.
 
-[![](/replication-network-blog/image-14.png)](https://replicationnetwork.com/wp-content/uploads/2020/12/image-14.png)
+[![](/replication-network-blog/image-14.webp)](https://replicationnetwork.com/wp-content/uploads/2020/12/image-14.webp)
 
 The type-I error control is thus conservative, and we pay a small price in terms of power. That price is quite manageable, however, and can be tuned by setting the mean value of the alternative likelihood (arbitrarily set to mean = 1 in the code for calcLR of Figure 10). More on that in Grünwald et al. (2019) and the forthcoming preprint paper on ALL-IN meta-analysis that will appear on **<https://projects.cwi.nl/safestats/>.**
 

@@ -32,11 +32,11 @@ In this blog, we illustrate how to apply both ML and MI to a [***well-cited stud
 
 The problem is highlighted in TABLE 1, which uses a reconstruction of L&J’s original dataset. The full dataset has 540 observations. The dependent variable, “Life expectancy”, has approximately 11 percent missing values. The focal variable, “Income share of the richest 10%”, has approximately 24 percent missing values. The remaining control variables vary widely in their missingness. Real GDP has no missing values. Education has the most missing values, with fully 80% of the variable’s values missing. This is driven by the fact that the Barro and Lee data used to measure education only reports values at five-year intervals.
 
-[![](/replication-network-blog/image.png)](https://replicationnetwork.com/wp-content/uploads/2022/01/image.png)
+[![](/replication-network-blog/image.webp)](https://replicationnetwork.com/wp-content/uploads/2022/01/image.webp)
 
 In fact, the problem is more serious than TABLE 1 indicates. If we run the regression using L&J’s specification (cf. Column 7, Table 4 in their study), we obtain the results in Column (1) of TABLE 2. The estimates indicate that a one-percentage point increase in the income share of the richest 10% is associated with an increase in life expectancy of 0.003 years, a negligible effect in terms of economic significance, and statistically insignificant. Notably, this estimate is based on a mere 64 observations (out of 540).
 
-[![](/replication-network-blog/image-1.png)](https://replicationnetwork.com/wp-content/uploads/2022/01/image-1.png)
+[![](/replication-network-blog/image-1.webp)](https://replicationnetwork.com/wp-content/uploads/2022/01/image-1.webp)
 
 In fact, these are not the results that L&J reported in their study. No doubt because of the small number of observations, they used linear interpolation on some (but not all) of their data to fill in missing values. Applying their approach to our data yields the results in Column (2) of Table 2 below. There are two problems with using their approach.
 
@@ -84,7 +84,7 @@ The next set of key commands are given below.
 
 The “tsline” command produces a “time series” graph of the “worst linear function” where “time” is measured by number of simulated datasets. We are looking for trends in the data. That is, do the estimated parameters (which includes elements in the variance-covariance matrix) tend to systematically depart from the overall mean.
 
-[![](/replication-network-blog/image-2.png)](https://replicationnetwork.com/wp-content/uploads/2022/01/image-2.png)
+[![](/replication-network-blog/image-2.webp)](https://replicationnetwork.com/wp-content/uploads/2022/01/image-2.webp)
 
 The graph above is somewhat concerning because it appears to first trend up and then trend down. As a result, we increase the “burnin” value to 500 from its default value of 100 with the following command. Why 500? We somewhat arbitrarily choose a number that is substantially larger than the previous “burnin” value.
 
@@ -100,13 +100,13 @@ The graph above is somewhat concerning because it appears to first trend up and 
 
 **ac wlf, title(Worst linear function) ytitle(Autocorrelations) note(“”) name(ac2,replace)**
 
-[![](/replication-network-blog/image-3.png)](https://replicationnetwork.com/wp-content/uploads/2022/01/image-3.png)
+[![](/replication-network-blog/image-3.webp)](https://replicationnetwork.com/wp-content/uploads/2022/01/image-3.webp)
 
 This looks a lot better. The trending that is apparent in the first half of the graph is greatly reduced in the second half. We subjectively determine that this demonstrates sufficient “stationarity” to proceed. Note that there is no formal test to determine stationarity.
 
 The next thing is to check for independence. The posterior distributions used to impute the missing values rely on Bayesian updating. While our use of the Jeffrys prior reduces the degree to which contiguous imputed datasets are related, there is still the opportunity for correlations across datasets. The “ac” command produces a correlogram of the “worst linear function” that allows us to assess independence. This is produced below.
 
-[![](/replication-network-blog/image-4.png)](https://replicationnetwork.com/wp-content/uploads/2022/01/image-4.png)
+[![](/replication-network-blog/image-4.webp)](https://replicationnetwork.com/wp-content/uploads/2022/01/image-4.webp)
 
 This correlogram indicates that as long as we retain imputed datasets that are at least “10 datasets apart”, we should be fine. The default value of 100 for “burnbetween” is thus more than sufficient.
 
@@ -128,7 +128,7 @@ We then estimate a fixed effects regression for each of the 10 datasets. Note th
 
 The command “how\_many\_imputations” determines the number of imputed datasets calculated to produce standard errors with a coefficient of variation for the standard errors equal to 5%. In this particular case, the output is given by:
 
-[![](/replication-network-blog/image-5.png)](https://replicationnetwork.com/wp-content/uploads/2022/01/image-5.png)
+[![](/replication-network-blog/image-5.webp)](https://replicationnetwork.com/wp-content/uploads/2022/01/image-5.webp)
 
 The output says to create 182 more imputed datasets.
 

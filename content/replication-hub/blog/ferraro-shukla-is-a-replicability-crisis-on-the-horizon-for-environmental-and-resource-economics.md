@@ -20,7 +20,7 @@ As has been observed in other fields, the empirical designs used by environmenta
 
 Researchers face strong professional incentives to report statistically significant results, which may lead them to selectively report results from their analyses. One indicator of selective reporting is an unusual pattern in the distribution of test statistics; specifically, a double-humped distribution around conventionally accepted values of statistical significance. In the figure below, we present the distribution of test statistics for the estimates in our sample, where 1.96 is the conventional value for statistical significance (p<0.05). ***The unusual dip just before 1.96, is consistent with selective reporting of results*** that are above the conventionally accepted level of statistical significance.
 
-![](/replication-network-blog/capture-2.png)
+![](/replication-network-blog/capture-2.webp)
 
 **3. Multiple Comparisons and False Discoveries**
 

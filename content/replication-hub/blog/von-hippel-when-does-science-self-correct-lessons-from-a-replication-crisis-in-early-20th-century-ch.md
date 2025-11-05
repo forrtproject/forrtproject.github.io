@@ -18,7 +18,7 @@ Science is self-correcting—or so we are told. But in truth it can be very hard
 
 You might also imagine that the credibility of the non-replicable findings took a hit. But it didn’t—not really. In 2022—seven years after the poor replicability of many findings was revealed, the findings that had failed to replicate were still getting cited just as much as the findings that had replicated successfully. And when they were cited, the fact that they had failed to replicate was rarely mentioned.
 
-[![](/replication-network-blog/image-1.png)](https://replicationnetwork.com/wp-content/uploads/2023/11/image-1.png)
+[![](/replication-network-blog/image-1.webp)](https://replicationnetwork.com/wp-content/uploads/2023/11/image-1.webp)
 
 This pattern has been [***demonstrated several times in psychology and economics***](https://replicationnetwork.com/2023/04/05/reed-is-science-self-correcting-evidence-from-5-recent-papers-on-the-effect-of-replications-on-citations/). Once a finding gains hinfluence, it continues to have influence even after it fails to replicate. The original finding keeps getting cited, and the replication study is all but ignored. The finding that replications don’t correct the record is unfortunately a finding that replicates pretty well.
 
@@ -26,7 +26,7 @@ Social scientists facing systemic problems in their home fields sometimes look l
 
 One of the best-known examples is Fleischmann and Pons’ claim to have achieved “cold fusion” in 1989. Although the cold fusion episode is often viewed as an embarrassment in physics, it is actually [***a great example***](https://www.goodreads.com/book/show/1528050.Bad_Science) of a community correcting the scientific record quickly. Within 6 months of Fleischmann and Pons’ announcement, suspicious inconsistencies had been pointed out in their findings, and several other labs had reported failures to replicate. Finally, the Department of Energy announced that it would not support further work on cold fusion, and except for a handful of true believers the field turned its attention elsewhere.
 
-[![](/replication-network-blog/image-2.png)](https://replicationnetwork.com/wp-content/uploads/2023/11/image-2.png)
+[![](/replication-network-blog/image-2.webp)](https://replicationnetwork.com/wp-content/uploads/2023/11/image-2.webp)
 
 I recently came across a similar episode from more than 100 years ago. The characters are of course different, but the first chapters are very much like those of the cold fusion episode. The later chapters, though, go in an unexpected direction, and show a Nobel laureate spending years pursuing nonreplicable results.
 

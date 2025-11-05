@@ -70,7 +70,7 @@ type: blog
 
 ###### Fig1
 
-![Fig2](/replication-network-blog/fig21.jpg)
+![Fig2](/replication-network-blog/fig21.webp)
 
 ###### For this ideal case, replication works exactly as intuition predicts. FPR is the significance level divided by 2 (the factor of 2 because the effect sizes must have the same direction). Theory tell us that *FNR* = 1 – *power* and though not obvious from the graph, the simulated data agrees well.
 

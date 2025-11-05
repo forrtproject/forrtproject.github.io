@@ -24,7 +24,7 @@ type: blog
 
 ###### TRN1(20191202)
 
-![TRN2(20191202)](/replication-network-blog/trn220191202-1.png)
+![TRN2(20191202)](/replication-network-blog/trn220191202-1.webp)
 
 ###### Figure 1b shows sampling distributions for *n=40* and several values of *dpop*. The coloring, analogous to Figure 1a, indicates how plausible we deem *dobs* given *n* and *dpop*. The definition of “plausibility value” (*plaus*) is the same as p-value but for arbitrary *dpop*. *dobs=0.5* is in the red for the outer values of *dpop* but in the blue for the inner ones. This means we deem *dobs=0.5* implausible for the outer values of *dpop* but plausible for the inner ones. The transition from implausible to plausible happens somewhere between *dpop=0* and *0.1*; the transition back happens between *0.9* and *1*.
 
@@ -34,7 +34,7 @@ type: blog
 
 ###### TRN3(20191202)
 
-![TRN4(20191202)](/replication-network-blog/trn420191202-1.png)
+![TRN4(20191202)](/replication-network-blog/trn420191202-1.webp)
 
 ###### The plausibility limits in Figure 2a are consistent with Figure 1b. Both figures say that with *n=40* and *dobs=0.5*, *dpop* must be a little more than *0* and a little less than *1* to deem the solution plausible.
 

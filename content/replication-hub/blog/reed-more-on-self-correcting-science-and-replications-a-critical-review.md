@@ -29,7 +29,7 @@ The three psychology papers — [***Serra-Garcia & Gneezy (2021)***](https://www
 
 FIGURE 1 below shows trends in citations for studies that had failed replications (black line) and studies that had successful replications (blue line). The treatment is revelation of the outcome of the respective replications (failed replication, successful replication), and the start time of the treatment is the date that the replication was published, T\*.
 
-[![](/replication-network-blog/image-9.png)](https://replicationnetwork.com/wp-content/uploads/2023/04/image-9.png)
+[![](/replication-network-blog/image-9.webp)](https://replicationnetwork.com/wp-content/uploads/2023/04/image-9.webp)
 
 A researcher wants to estimate the citation effect of failed versus successful replications. The solid lines represent the observed citation trends of the original studies before and after the treatment. For the counterfactuals, the researcher assumes that the pre-treatment trends would have continued had the studies not been replicated. This is represented by the black and blue dotted lines, respectively.
 
@@ -41,17 +41,17 @@ The estimate of the total citation effect of a failed replication versus a succe
 
 The importance of the PT assumption is illustrated in FIGURE 2. Here, originals with failed replications have a steeper trend in the pre-treatment period than originals with successful replications.
 
-[![](/replication-network-blog/image-10.png)](https://replicationnetwork.com/wp-content/uploads/2023/04/image-10.png)
+[![](/replication-network-blog/image-10.webp)](https://replicationnetwork.com/wp-content/uploads/2023/04/image-10.webp)
 
 If the researcher were to mistakenly assume that they had the same trend, say use the average of the pre-treatment trends, they would underestimate both A and B, and thus underestimate the effect of a failed replication versus a successful replication.
 
 This is illustrated below. The red line averages the pre-treatment trends of studies with failed replications and studies with successful replications.
 
-[![](/replication-network-blog/image-11.png)](https://replicationnetwork.com/wp-content/uploads/2023/04/image-11.png)
+[![](/replication-network-blog/image-11.webp)](https://replicationnetwork.com/wp-content/uploads/2023/04/image-11.webp)
 
 When the averaged, common trend is used to establish the respective counterfactuals, both |A| and |B| are underestimated, so that the total citation effect of a failed replication versus a successful replication is underestimated. This is illustrated by the dotted red lines below.
 
-[![](/replication-network-blog/image-12.png)](https://replicationnetwork.com/wp-content/uploads/2023/04/image-12.png)
+[![](/replication-network-blog/image-12.webp)](https://replicationnetwork.com/wp-content/uploads/2023/04/image-12.webp)
 
 **How the PT Assumption is Incorporated in Regression Specifications**
 
@@ -87,7 +87,7 @@ Serra-Garcia & Gneezy have an explanation for this: “*Existing evidence … sh
 
 FIGURE 3 from their paper (reproduced below) supports scepticism about the PT assumption. It shows pre-treatment citation trends for three sets of replicated studies. For two of them “Nature/Science” and “Psychology in rep. markets” (which corresponds to the RPP), the citation trends for original studies with failed replications show substantially higher rates of citation before treatment than those with successful replications. This is a direct violation of the PT assumption.
 
-[![](/replication-network-blog/image-13.png)](https://replicationnetwork.com/wp-content/uploads/2023/04/image-13.png)
+[![](/replication-network-blog/image-13.webp)](https://replicationnetwork.com/wp-content/uploads/2023/04/image-13.webp)
 
 In personal correspondence about my paper with Tom Coupé (discussed below), one researcher wrote me, “*I would be worried about selection bias—which papers were chosen (by others) for replication? [A] ‘trick’ to avoid selection [is] to base [your] study on papers that were replicated systematically (‘ALL experimental papers in journal X for the year Y’)*.” As should be clear from the above, studies that rely on replications from RPP and the Camerer et al. studies are not beyond criticism on this regard.
 
@@ -103,7 +103,7 @@ Even assuming that one identified which studies failed replication, there is the
 
 Before moving on to strategies that do not rely on the PT assumption, it is helpful to place [***Ankel-Peters, Fiala, and Neubauer (2023)***](https://www.rwi-essen.de/fileadmin/user_upload/RWI/Publikationen/Ruhr_Economic_Papers/REP_23_1005.pdf) in the context of the analysis above. Their main argument is represented by FIGURE 6 from their paper, reproduced below. The black line is the citations trend of original papers whose replications failed.
 
-[![](/replication-network-blog/image-14.png)](https://replicationnetwork.com/wp-content/uploads/2023/04/image-14.png)
+[![](/replication-network-blog/image-14.webp)](https://replicationnetwork.com/wp-content/uploads/2023/04/image-14.webp)
 
 While they do not report this in their paper, my own analysis of AER “Comments” is that the AER rarely, very rarely, publishes successful replications. Given that almost all the replications in their dataset are failed replication, their paper can be understood as estimating the treatment effect exclusively from the solid black line in FIGURES 1 and 2; i.e., no dotted lines, no blue lines.
 

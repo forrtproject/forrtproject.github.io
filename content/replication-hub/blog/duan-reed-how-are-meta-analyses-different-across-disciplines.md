@@ -39,7 +39,7 @@ Unfortunately, given the large number of meta-analyses, and large number of disc
 
 To conduct our search, we utilized the library search engine at our university, the University of Canterbury. This search engine, while proprietary to our university, allowed us to simultaneously search multiple databases by discipline (see below).
 
-[![](/replication-network-blog/trn120210518.png)](https://replicationnetwork.com/wp-content/uploads/2021/05/trn120210518.png)
+[![](/replication-network-blog/trn120210518.webp)](https://replicationnetwork.com/wp-content/uploads/2021/05/trn120210518.webp)
 
 We conducted our search in January 2021. We used the keyword “meta-analysis”, filtering on “Peer-reviewed” and “Journal article”, and restricted our search depending on publication date. A total of 58 disciplines were individually searchable, including Agriculture, Biology, Business, Economics, Education, Engineering, Forestry, Medicine, Nursing, Physics, Political Science, Psychology, Public Health, Sociology, Social Welfare & Social Work, and Zoology.
 
@@ -53,7 +53,7 @@ The numbers indicate wide differences across disciplines in the number of studie
 
 On the other side, disciplines in the health sciences (Dentistry, Diet & Clinical Nutrition, Medicine, Nursing, and Pharmacy, Therapeutics & Pharma) include relatively few studies. The mean and median number of studies included in meta-analyses in Diet & Clinical Nutrition are 13.9 and 11; and 14.8 and 10 for Nursing, respectively. We even found a meta-analysis in Dentistry that only included [***2 studies***](https://onlinelibrary.wiley.com/doi/full/10.1111/idh.12477).
 
-[![](/replication-network-blog/table120210518.png)](https://replicationnetwork.com/wp-content/uploads/2021/05/table120210518.png)
+[![](/replication-network-blog/table120210518.webp)](https://replicationnetwork.com/wp-content/uploads/2021/05/table120210518.webp)
 
 **NUMBER OF EFFECTS**
 
@@ -61,7 +61,7 @@ Meta-analyses differ not only in number of studies, but the total number of obse
 
 Measured by number of estimated effects, Agriculture has the largest meta-analyses with mean and median sample sizes of 934 and 283. Not too far behind are Economics and Business. These three disciplines are characterized by substantially larger samples than other disciplines. As with number of studies, the disciplines with the smallest number of effects per study are health-related fields such as Dentistry, Diet & Clinical Nutrition, Medicine, Nursing, Pharmacy, Therapeutics & Pharma, and Public Health.
 
-[![](/replication-network-blog/table220210518.png)](https://replicationnetwork.com/wp-content/uploads/2021/05/table220210518.png)
+[![](/replication-network-blog/table220210518.webp)](https://replicationnetwork.com/wp-content/uploads/2021/05/table220210518.webp)
 
 **MEASURES OF EFFECT SIZE**
 
@@ -69,7 +69,7 @@ Disciplines also differ in the effects they measure. We identified four main typ
 
 We differentiate correlations from partial correlations because the latter primarily appear in Economics. Likewise, Economics is somewhat unique because the range of estimated effects vary widely across primary studies, with studies focusing on things like elasticities, various treatment effects, and other effects like fiscal multipliers or model parameters. The table below lists the most common and second most common effect sizes investigated by meta-analyses across the different disciplines.
 
-[![](/replication-network-blog/table320210518.png)](https://replicationnetwork.com/wp-content/uploads/2021/05/table320210518.png)
+[![](/replication-network-blog/table320210518.webp)](https://replicationnetwork.com/wp-content/uploads/2021/05/table320210518.webp)
 
 We might ask why does it matter that meta-analyses differ in their sizes and estimated effects? In a recent study, ***[Hong and Reed (2021)](https://onlinelibrary.wiley.com/doi/full/10.1002/jrsm.1467)*** present evidence that the performance of various estimators depends on the size of the meta-analyst’s sample. They provide an ***[interactive ShinyApp](https://hong-reed.shinyapps.io/HongReedInteractiveTables/)*** that allows one to filter performance measures by various study characteristics in order to identify the best estimator for the specific research situation. Performance may also depend on the type of effect being estimated (***[see here](https://ideas.repec.org/p/cbt/econwp/20-08.html)*** for some tentative experimental evidence on partial correlations).
 
@@ -79,7 +79,7 @@ One way in which disciplines are very similar is on their reliance on the same e
 
 The second most common estimator is the Fixed Effects estimator, which is built on the assumption of a single population effect, whereby studies produce different estimated effects due only to sampling error. A close relative of the Fixed Effects estimator common in Economics is the ***[Weighted Least Squares estimator](https://onlinelibrary.wiley.com/doi/full/10.1002/sim.6481?casa_token=K9xDceRWgAUAAAAA%3ARlsUBjb13M-vT99SEw8MnHtgbc3_QJjIrQetu9xJbfiHbi2wz5TPGsSoK0R_uLgkiidZ5P4_RhumbeEf)*** of Stanley and Doucouliagos. This estimator produces coefficient estimates identical to the Fixed Effects estimator, but with different standard errors. Despite being the most common estimator, ***[Hong and Reed (2021)](https://onlinelibrary.wiley.com/doi/full/10.1002/jrsm.1467)*** show that Random Effects frequently underperforms relative to other meta-analytic estimators.
 
-[![](/replication-network-blog/table420210518.png)](https://replicationnetwork.com/wp-content/uploads/2021/05/table420210518.png)
+[![](/replication-network-blog/table420210518.webp)](https://replicationnetwork.com/wp-content/uploads/2021/05/table420210518.webp)
 
 **SOFTWARE PACKAGES**
 
@@ -89,7 +89,7 @@ A frequently used R package is ***[metafor](https://www.metafor-project.org/doku
 
 TABLE 5 reports the most common software packages used by the studies in our sample. It is clear that R and Stata are the packages of choice for most researchers when estimating effect sizes.
 
-[![](/replication-network-blog/image.png)](https://replicationnetwork.com/wp-content/uploads/2021/05/image.png)
+[![](/replication-network-blog/image.webp)](https://replicationnetwork.com/wp-content/uploads/2021/05/image.webp)
 
 **ESTIMATION – Tests for Publication Bias**
 
@@ -99,7 +99,7 @@ Egger’s test is the most common statistical test for publication bias. It cons
 
 The rank correlation test, also known as Begg’s test or the Begg and Mazumdar rank correlation test, works very similarly except rather than a regression, it rank correlates the estimated effect size with its variance. Other tests, such as Trim and fill, Fail-safe N, and tests based on selection models, are less common.
 
-[![](/replication-network-blog/table620210518.png)](https://replicationnetwork.com/wp-content/uploads/2021/05/table620210518.png)
+[![](/replication-network-blog/table620210518.webp)](https://replicationnetwork.com/wp-content/uploads/2021/05/table620210518.webp)
 
 **OTHER META-ANALYSIS FEATURES**
 
@@ -115,7 +115,7 @@ Meta-regressions are very common in Economics, with almost 9 out of 10 meta-anal
 
 Nevertheless, there are other ways that meta-analyses can explore systematic differences in effect sizes. Many studies perform subgroup analyses. For example, a study of the effect of a certain reading program may break out the full sample according to the predominant racial or ethnic characteristics of the school jurisdiction to determine whether there these characteristics are related to the effectiveness of the program.
 
-[![](/replication-network-blog/table720210518.png)](https://replicationnetwork.com/wp-content/uploads/2021/05/table720210518.png)
+[![](/replication-network-blog/table720210518.webp)](https://replicationnetwork.com/wp-content/uploads/2021/05/table720210518.webp)
 
 **CONCLUSION**
 
