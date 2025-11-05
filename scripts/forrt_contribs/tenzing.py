@@ -1,214 +1,213 @@
 import pandas as pd
 import os
+import re
 
-# Tenzing directory
+# --- Configuration ---
+
 csv_export_url = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vT_IaXiYtB3iAmtDZ_XiQKrToRkxOlkXNAeNU2SIT_J9PxvsQyptga6Gg9c8mSvDZpwY6d8skswIQYh/pub?output=csv&gid=0'
 extra_roles_url = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vSCsxHTnSSjYqhQSR2kT3gIYg82HiODjPat9y2TFPrZESYWxz4k8CZsOesXPD3C5dngZEGujtKmNZsa/pub?output=csv'
+fields_url = "https://docs.google.com/spreadsheets/d/e/2PACX-1vT_IaXiYtB3iAmtDZ_XiQKrToRkxOlkXNAeNU2SIT_J9PxvsQyptga6Gg9c8mSvDZpwY6d8skswIQYh/pub?output=csv&gid=277271370"
 
-# Use pandas to read the CSV
-df = pd.read_csv(csv_export_url)
-df_roles = pd.read_csv(extra_roles_url)
 
-# Assuming 'df' contains the index data with Tenzing Links
-all_data_frames = []
+# --- Utility Functions ---
 
-print("--- Reading Contributor Data ---")
-# Loop over both the Project Names and the Tenzing Links
-for project_name, url, project_url in zip(df['Project Name'], df['CSV Link'], df['Project URL']):
-    # Make sure each URL is transformed into a CSV export URL as shown above
-    data_frame = pd.read_csv(url)
-    
-    # --- LOGGING ADDED HERE ---
-    # Log the number of contributors read from the current project
-    print(f"Read {len(data_frame)} contributors from '{project_name}'.")
+def normalize_string(text):
+    """
+    Normalizes a string by converting it to lowercase, replacing spaces with hyphens,
+    and removing special characters.
+    """
+    if pd.isna(text):
+        return ""
+    normalized = re.sub(r'[^\w\s-]', '', str(text)).strip().lower()
+    return re.sub(r'\s+', '-', normalized)
 
-    # Add a new column with the project name
-    data_frame['Project Name'] = project_name
-    data_frame['Project URL'] = project_url
-    
-    all_data_frames.append(data_frame)
-
-# Concatenate all data frames
-merged_data = pd.concat(all_data_frames, ignore_index=True)
+def get_raw_roles_from_row(row, columns):
+    """
+    Extracts a list of raw role names (strings) from boolean columns in a DataFrame row.
+    """
+    return [col for col in columns if pd.notna(row[col]) and row[col]]
 
 def concatenate_true_columns(row, columns):
-    true_columns = [col for col in columns if pd.notna(row[col]) and row[col]]
-    if 'Project Managers' in true_columns:
-        other_columns = [f'*{col}*' for col in true_columns if col != 'Project Managers']
-        if other_columns:
-            return 'as Project Manager and with ' + ', '.join(other_columns[:-1]) + (' and ' if len(other_columns) > 1 else '') + other_columns[-1]
+    """
+    Generates a formatted string for contributions based on boolean columns.
+    Example: "as Project Manager and with *Developer* and *Reviewer*"
+    """
+    true_columns = get_raw_roles_from_row(row, columns)
+    if not true_columns:
+        return ""
+
+    is_project_manager = 'Project Managers' in true_columns
+    other_roles = [f'*{col}*' for col in true_columns if col != 'Project Managers']
+    
+    parts = []
+    if is_project_manager:
+        parts.append('as Project Manager')
+    
+    if other_roles:
+        if len(other_roles) == 1:
+            with_part = f"with {other_roles[0]}"
         else:
-            return 'as Project Manager'
-    else:
-        return 'with ' + ', '.join(f'*{col}*' for col in true_columns[:-1]) + (' and ' if len(true_columns) > 1 else '') + f'*{true_columns[-1]}*'
+            with_part = 'with ' + ', '.join(other_roles[:-1]) + f' and {other_roles[-1]}'
+        
+        if is_project_manager:
+            # Prepend 'and' if it follows 'as Project Manager'
+            parts.append(f"and {with_part}")
+        else:
+            parts.append(with_part)
 
-# List of column names to check for TRUE values
-fields_url = "https://docs.google.com/spreadsheets/d/e/2PACX-1vT_IaXiYtB3iAmtDZ_XiQKrToRkxOlkXNAeNU2SIT_J9PxvsQyptga6Gg9c8mSvDZpwY6d8skswIQYh/pub?output=csv&gid=277271370"
-column_mappings = pd.read_csv(fields_url)
+    return ' '.join(parts)
 
-# Extracting Column A (Fields) as columns_to_check
-columns_to_check = column_mappings['Fields'].tolist()
-
-# Renaming columns in the dataframe based on Column B (Rename)
-rename_dict = column_mappings.set_index('Fields')['Rename'].to_dict()
-merged_data.rename(columns=rename_dict, inplace=True)
-
-# Filtering rows based on the updated columns_to_check list
-# Note: columns_to_check needs to be updated to the renamed columns for the filter to work correctly
-columns_to_check = [rename_dict[col] for col in columns_to_check if col in rename_dict]
-# Remove columns not present
-columns_present = [col for col in columns_to_check if col in merged_data.columns]
-columns_dropped = set(columns_to_check) - set(columns_present)
-if columns_dropped:
-    print(f"Note: The following columns were not found and thus ignored: {', '.join(columns_dropped)}")
-merged_data = merged_data[merged_data[columns_present].any(axis=1)]
-
-# Apply the function to each row
-merged_data['Contributions'] = merged_data.apply(concatenate_true_columns, axis=1, columns=columns_present)
-
-# Merge contributions with extra roles
-# Mapping of column names to Tenzing sheets
-rename_columns = {
-    'First name': 'First name',
-    'Middle name': 'Middle name',
-    'Surname': 'Surname',
-    'FORRT project(s)': 'Project Name',
-    'Role': 'Contributions',
-    'ORCID': 'ORCID iD',
-    'URL': 'Project URL'
-}
-df_roles.rename(columns=rename_columns, inplace=True)
-df_roles['special_role'] = True
-
-# Select only the columns needed for the final output
-selected_columns = ['Contributions', 'First name', 'Middle name', 'Surname', 'Project Name', 'Project URL', 'ORCID iD']
-merged_data = merged_data[selected_columns]
-merged_data['special_role'] = False
-
-merged_data = pd.concat([df_roles, merged_data], axis=0)
-merged_data.reset_index(drop=True, inplace=True)
-
-# Sort based on surname
-merged_data['sort_order'] = merged_data['Surname']
-merged_data = merged_data.sort_values(by='sort_order')
-merged_data = merged_data.drop(columns='sort_order')
-
-# Strip spaces from 'ORCID iD' in merged data
-merged_data['ORCID iD'] = merged_data['ORCID iD'].str.strip()
-
-# Function to format the full name
 def format_name(row):
-    # Extract the first name, middle name initial, and surname
+    """Formats a full name from first, middle, and surname parts."""
     first_name = row['First name'].strip() if pd.notna(row['First name']) else ""
     middle_name = row['Middle name']
     surname = row['Surname'].strip() if pd.notna(row['Surname']) else ""
 
-    # Check if the middle name is not NaN and not an empty string
-    if pd.notna(middle_name) and middle_name != '':
-        middle_initial = f"{middle_name[0]}."
-        full_name = f"{first_name} {middle_initial} {surname}"
+    if pd.notna(middle_name) and middle_name.strip() != '':
+        middle_initial = f"{middle_name.strip()[0]}."
+        return f"{first_name} {middle_initial} {surname}"
     else:
-        full_name = f"{first_name} {surname}"
-
-    return full_name
-
-# Apply name formatting
-merged_data['full_name'] = merged_data.apply(format_name, axis=1)
-
-# Propagate ORCID iD within each contributor's grouping
-merged_data['ORCID iD'] = merged_data.groupby('full_name')['ORCID iD'].transform(lambda x: x.ffill().bfill())
-
-# Group by 'ORCID iD' and concatenate the contributions
-def concatenate_contributions(group):
-
-    # Find the minimum original order for the group
-    min_order = group['original_order'].min()
-
-    # Format the full name once per group
-    full_name = format_name(group.iloc[0])
-    group = group.sort_values(by='special_role', ascending=False)
-
-    # Create the contributions string for each project
-    contributions = [
-        f"{row['Project Name']} {('as' if row['special_role'] else '')} {row['Contributions']}" if pd.isna(row['Project URL']) or row['Project URL'] == ''
-        else f"[{row['Project Name']}]({row['Project URL']}) {('as' if row['special_role'] else '')} {row['Contributions']}"
-        for _, row in group.iterrows()
-    ]
-
-    # Add numbering only if there are more than 1 contributions
-    if len(contributions) > 1:
-        contributions = [f"{i+1}. {contribution}" for i, contribution in enumerate(contributions)]
-
-    # Turn contributions into multiline list or single line
-    contributions_str = contributions[0] if len(contributions) == 1 else '\n    ' + '\n    '.join(contributions) + '\n' + '{{<rawhtml>}}<br/>&nbsp;<br/> {{</rawhtml>}}'
-
-    orcid_id = group.iloc[0]['ORCID iD']
-    if orcid_id:
-        return min_order, f"- **[{full_name}]({'https://orcid.org/' + orcid_id.strip()})** contributed to {contributions_str}"
-    else:
-        return min_order, f"- **{full_name}** contributed to {contributions_str}"
+        return f"{first_name} {surname}"
 
 def extract_orcid_id(value):
-    if not isinstance(value, str) or len(value) < 5:
+    """Extracts ORCID iD from a string, handling URLs or direct IDs."""
+    if not isinstance(value, str):
         return None
-
-    if value.startswith('http'):
-        return value.split('/')[-1]
     
-    return value
+    value = value.strip()
+    match = re.search(r'(\d{4}-){3}\d{3}[\dX]', value)
+    if match:
+        return match.group(0)
+    return None
 
-# Assuming 'data' is your DataFrame
-merged_data['ORCID iD'] = merged_data['ORCID iD'].apply(extract_orcid_id)
 
-# Creating a new column for the concatenated name
-merged_data['Name'] = merged_data.apply(format_name, axis=1)
+# --- 1. Load Source Data ---
 
-# Apply the function to each group and create a summary DataFrame
-merged_data['original_order'] = range(len(merged_data))
+print("--- Reading Source Data ---")
+df_projects = pd.read_csv(csv_export_url)
+df_roles = pd.read_csv(extra_roles_url)
+column_mappings = pd.read_csv(fields_url)
 
-# Perform the groupby operation without sorting
-summary = (merged_data.groupby(merged_data['ORCID iD'].fillna(merged_data['Name']), sort=False)
-                       .apply(concatenate_contributions)
-                       .reset_index())
 
-# Separate the tuple into two columns
-summary[['original_order', 'Contributions']] = pd.DataFrame(summary[0].tolist(), index=summary.index)
+# --- 2. Process Project-Specific Contributor Sheets ---
 
-# Drop the old column
-summary.drop(columns=[0], inplace=True)
+all_data_frames = []
+print("--- Reading Project Contributor Data ---")
+for _, project in df_projects.iterrows():
+    project_name, url, project_url = project['Project Name'], project['CSV Link'], project['Project URL']
+    try:
+        data_frame = pd.read_csv(url)
+        print(f"Read {len(data_frame)} contributors from '{project_name}'.")
+        data_frame['Project Name'] = project_name
+        data_frame['Project URL'] = project_url
+        all_data_frames.append(data_frame)
+    except Exception as e:
+        print(f"Could not read or process URL for '{project_name}': {e}")
 
-# Sort by the original order and drop the helper column
-summary = summary.sort_values(by='original_order').drop(columns='original_order')
+# Concatenate all project data frames
+merged_data = pd.concat(all_data_frames, ignore_index=True)
 
-# Reset the index if needed
-summary = summary.reset_index(drop=True)
-summary_string = '\n\n'.join(summary['Contributions'])
+# Rename role columns based on mappings
+rename_dict = column_mappings.set_index('Fields')['Rename'].to_dict()
+merged_data.rename(columns=rename_dict, inplace=True)
 
-# --- LOGGING ADDED HERE ---
-# Log the final deduplicated number of contributors
-print("\n--- Processing Complete ---")
-print(f"Total number of unique contributors after deduplication: {len(summary)}")
+# Get list of valid, renamed role columns that are present in the data
+columns_to_check_renamed = [name for name in rename_dict.values() if pd.notna(name)]
+columns_present = [col for col in columns_to_check_renamed if col in merged_data.columns]
 
-# Get the directory of the current script
-# Using a try-except block in case __file__ is not defined (e.g., in a notebook)
-try:
-    script_dir = os.path.dirname(os.path.abspath(__file__))
-except NameError:
-    script_dir = '.' # Default to the current directory
+# Generate contribution strings and raw role lists
+merged_data['Contributions'] = merged_data.apply(concatenate_true_columns, axis=1, columns=columns_present)
+merged_data['raw_roles'] = merged_data.apply(get_raw_roles_from_row, axis=1, columns=columns_present)
+merged_data['special_role'] = False
 
-# Construct the paths for the template and output files
-template_path = os.path.join(script_dir, 'tenzing_template.md')
-output_path = os.path.join(script_dir, 'tenzing.md')
+# Filter out rows with no contributions
+merged_data = merged_data[merged_data['Contributions'] != ""].copy()
 
-# Open the template file and read its contents
-with open(template_path, 'r') as file:
-    template_content = file.read()
 
-# Combine the template content with the new summary string
-combined_content = template_content + summary_string
+# --- 3. Process Extra Roles Sheet ---
 
-# Save the combined content to 'tenzing.md'
-with open(output_path, 'w') as file:
-    file.write(combined_content)
+rename_columns_df_roles = {
+    'FORRT project(s)': 'Project Name',
+    'Role': 'Contributions', # This is the raw role name
+    'ORCID': 'ORCID iD',
+    'URL': 'Project URL'
+}
+df_roles.rename(columns=rename_columns_df_roles, inplace=True)
+df_roles['special_role'] = True
+df_roles['raw_roles'] = df_roles['Contributions'].apply(lambda x: [x] if pd.notna(x) else [])
 
-print(f"\nSuccessfully generated the file at: {output_path}")
+
+# --- 4. Combine and Clean Data ---
+
+# Ensure both dataframes have the same essential columns before combining
+required_cols = ['First name', 'Middle name', 'Surname', 'Project Name', 'Project URL', 'ORCID iD', 'Contributions', 'raw_roles', 'special_role']
+
+# Combine data from project sheets and extra roles sheet
+combined_data = pd.concat(
+    [merged_data[required_cols], df_roles[required_cols]],
+    ignore_index=True
+)
+
+# Clean and format data
+combined_data['full_name'] = combined_data.apply(format_name, axis=1)
+combined_data['ORCID iD'] = combined_data['ORCID iD'].apply(extract_orcid_id)
+
+# Propagate ORCID iD within each contributor's grouping
+combined_data['ORCID iD'] = combined_data.groupby('full_name')['ORCID iD'].transform(lambda x: x.ffill().bfill())
+
+
+# --- 5. Aggregate by Contributor for Final Output ---
+
+def aggregate_contributor_info(group):
+    first_row = group.iloc[0]
+
+    # Aggregate unique projects and roles
+    all_projects = sorted(list(group['Project Name'].dropna().unique()))
+    all_roles = sorted(list(set(role for roles_list in group['raw_roles'].dropna() for role in roles_list)))
+
+    # Create normalized, comma-separated strings for data attributes
+    normalized_projects = ",".join(normalize_string(p) for p in all_projects)
+    normalized_roles = ",".join(normalize_string(r) for r in all_roles)
+
+    # Recreate the detailed contribution string for display
+    contribution_lines = []
+    # Sort by special_role to have them appear first, then by project name
+    for _, row in group.sort_values(by=['special_role', 'Project Name'], ascending=[False, True]).iterrows():
+        if pd.isna(row['Project Name']) or pd.isna(row['Contributions']):
+            continue
+        
+        prefix = 'as ' if row['special_role'] else ''
+        linked_project = f"[{row['Project Name']}]({row['Project URL']})" if pd.notna(row['Project URL']) and row['Project URL'].strip() != '' else row['Project Name']
+        line = f"{linked_project} {prefix}{row['Contributions']}"
+        contribution_lines.append(line)
+
+    return pd.Series({
+        'full_name': first_row['full_name'],
+        'surname': first_row['Surname'],
+        'orcid': first_row['ORCID iD'] if pd.notna(first_row['ORCID iD']) else '',
+        'contributions_html': '<br>'.join(contribution_lines),
+        'normalized_projects': normalized_projects,
+        'normalized_roles': normalized_roles
+    })
+
+print("--- Aggregating Contributor Data ---")
+final_contributors_df = combined_data.groupby('full_name').apply(aggregate_contributor_info).reset_index(drop=True)
+
+# Final sort by surname
+final_contributors_df = final_contributors_df.sort_values(by='surname', key=lambda col: col.str.lower())
+
+# Convert to list of dicts for template
+contributors = final_contributors_df.to_dict(orient='records')
+
+print(f"--- Processed {len(contributors)} unique contributors. ---")
+
+# The 'contributors' list is now ready to be passed to a template engine.
+# Example of what the data structure looks like for one contributor:
+# {
+#   'full_name': 'Jane A. Doe',
+#   'surname': 'Doe',
+#   'orcid': '0000-0001-2345-6789',
+#   'contributions_html': '[Glossary] with *Editor*<br>[Turing Way] as Steering Committee',
+#   'normalized_projects': 'glossary,turing-way',
+#   'normalized_roles': 'editor,steering-committee'
+# }
