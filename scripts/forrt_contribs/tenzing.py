@@ -124,7 +124,8 @@ def normalize_for_attribute(text):
     """Convert text to lowercase and replace spaces with hyphens for HTML attributes"""
     if pd.isna(text) or text == '':
         return ''
-    return text.lower().replace(' ', '-').replace('&', 'and')
+    # Collapse multiple spaces into single hyphens and replace & with 'and'
+    return re.sub(r'\s+', '-', text.lower().strip()).replace('&', 'and')
 
 # Group by 'ORCID iD' and concatenate the contributions
 def concatenate_contributions(group):
@@ -178,14 +179,19 @@ def concatenate_contributions(group):
     # Turn contributions into multiline list or single line
     contributions_str = contributions[0] if len(contributions) == 1 else '\n    ' + '\n    '.join(contributions) + '\n' + '{{<rawhtml>}}<br/>&nbsp;<br/> {{</rawhtml>}}'
 
-    # Create data attributes
+    # Create data attributes with proper escaping
     projects_attr = ','.join(projects) if projects else ''
     roles_attr = ','.join(roles) if roles else ''
+    
+    # Escape attribute values to prevent HTML injection
+    import html
+    projects_attr_escaped = html.escape(projects_attr, quote=True)
+    roles_attr_escaped = html.escape(roles_attr, quote=True)
     
     orcid_id = group.iloc[0]['ORCID iD']
     
     # Build the list item with data attributes
-    data_attrs = f'data-projects="{projects_attr}" data-roles="{roles_attr}"'
+    data_attrs = f'data-projects="{projects_attr_escaped}" data-roles="{roles_attr_escaped}"'
     
     if orcid_id:
         return min_order, f"- {{{{<rawhtml>}}}}<li {data_attrs}><strong><a href=\"https://orcid.org/{orcid_id.strip()}\">{full_name}</a></strong> contributed to {contributions_str}</li>{{{{</rawhtml>}}}}"

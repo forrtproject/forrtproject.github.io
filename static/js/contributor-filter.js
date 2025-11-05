@@ -26,6 +26,13 @@
             .replace(/\band\b/i, '&');
     }
 
+    // Escape HTML to prevent XSS
+    function escapeHtml(text) {
+        const div = document.createElement('div');
+        div.textContent = text;
+        return div.innerHTML;
+    }
+
     // Filter contributors based on URL parameters
     function filterContributors() {
         const params = getURLParams();
@@ -47,13 +54,13 @@
         filterControls.style.display = 'block';
         filteredView.style.display = 'block';
 
-        // Build filter info text
+        // Build filter info text with escaped values
         let filterText = [];
         if (params.project) {
-            filterText.push(`<strong>Project:</strong> ${formatForDisplay(params.project)}`);
+            filterText.push(`<strong>Project:</strong> ${escapeHtml(formatForDisplay(params.project))}`);
         }
         if (params.role) {
-            filterText.push(`<strong>Role:</strong> ${formatForDisplay(params.role)}`);
+            filterText.push(`<strong>Role:</strong> ${escapeHtml(formatForDisplay(params.role))}`);
         }
         filterInfo.innerHTML = filterText.join('<br>');
 
@@ -62,8 +69,11 @@
         const matchedContributors = [];
 
         allItems.forEach(item => {
-            const projects = item.getAttribute('data-projects').split(',').map(p => p.trim());
-            const roles = item.getAttribute('data-roles').split(',').map(r => r.trim());
+            // Safely get and parse data attributes with null checks
+            const projectsAttr = item.getAttribute('data-projects') || '';
+            const rolesAttr = item.getAttribute('data-roles') || '';
+            const projects = projectsAttr.split(',').filter(p => p.trim()).map(p => p.trim());
+            const roles = rolesAttr.split(',').filter(r => r.trim()).map(r => r.trim());
             
             let matches = true;
 
@@ -85,8 +95,7 @@
 
             if (matches) {
                 matchedContributors.push({
-                    item: item.cloneNode(true),
-                    html: item.innerHTML
+                    item: item.cloneNode(true)
                 });
             }
         });
@@ -95,14 +104,25 @@
         if (matchedContributors.length === 0) {
             filteredView.innerHTML = '<p><em>No contributors found matching the specified filters.</em></p>';
         } else {
-            // Create a formatted list
-            const resultHTML = `
-                <h3>Matching Contributors (${matchedContributors.length})</h3>
-                <ul style="list-style-type: none; padding-left: 0;">
-                    ${matchedContributors.map(c => `<li style="margin-bottom: 1em;">${c.html}</li>`).join('')}
-                </ul>
-            `;
-            filteredView.innerHTML = resultHTML;
+            // Create a formatted list using DOM manipulation for safety
+            filteredView.innerHTML = '';
+            
+            const heading = document.createElement('h3');
+            heading.textContent = `Matching Contributors (${matchedContributors.length})`;
+            filteredView.appendChild(heading);
+            
+            const ul = document.createElement('ul');
+            ul.style.cssText = 'list-style-type: none; padding-left: 0;';
+            
+            matchedContributors.forEach(c => {
+                const li = document.createElement('li');
+                li.style.cssText = 'margin-bottom: 1em;';
+                // Append the cloned node (which came from trusted server-rendered HTML)
+                li.appendChild(c.item);
+                ul.appendChild(li);
+            });
+            
+            filteredView.appendChild(ul);
         }
     }
 
