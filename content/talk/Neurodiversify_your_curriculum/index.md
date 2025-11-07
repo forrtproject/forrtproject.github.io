@@ -19,12 +19,11 @@ abstract: This workshop is accompanied by a Lesson Bank developed by FORRT (Fram
 # Talk start and end times.
 #   End time can optionally be hidden by prefixing the line with `#`.
 date: 2023-03-10
-date_end:
+date_end: 2023-03-10
 all_day: false
 
 # Schedule page publish date (NOT talk date).
-publishDate: 2023-02-23
-date_end: 
+publishDate: 2023-02-23 
 
 authors: ["forrt", "Magdalena Grose-Hodge", "Lorna Hamilton"]
 tags: []

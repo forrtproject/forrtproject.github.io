@@ -23,8 +23,7 @@ date_end: 2022-02-16T01:01:00-00:00
 all_day: false
 
 # Schedule page publish date (NOT talk date).
-publishDate: 
-date_end: 2022-02-16T01:02:00-00:00
+publishDate: 2022-02-16T01:02:00-00:00
 
 
 authors: ["forrt", "Flavio Azevedo"]

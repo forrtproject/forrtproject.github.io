@@ -23,8 +23,7 @@ date_end: 2022-05-04T01:18:30-00:00
 all_day: false
 
 # Schedule page publish date (NOT talk date).
-publishDate: 
-date_end: 2022-05-04T18:30:00-00:00
+publishDate: 2022-05-04T18:30:00-00:00
 
 
 authors: ["forrt", "Kelly Lloyd", "Helena Hartmann", "Sam Parsons", "Maddi Pownall", "Leticia Micheli", "Thomas Rhys Evans", "Amélie Gourdon-Kanhukamwe", "Meng Liu", "Flavio Azevedo"]
