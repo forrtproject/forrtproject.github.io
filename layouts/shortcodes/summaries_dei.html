@@ -1,4 +1,5 @@
-{{ $summaries := getJSON "data/summaries.json" }}
+{{ $data := resources.Get "data/summaries.json" }}
+{{ $summaries := $data | transform.Unmarshal }}
 {{ range $summaries}}
 {{ if in .Title "⌺" }}
 
