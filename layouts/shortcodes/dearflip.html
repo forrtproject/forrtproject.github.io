@@ -1,0 +1,38 @@
+<!-- DearFlip PDF Viewer -->
+<div id="dearflip-container-{{ .Get "id" | default "default" }}" style="width: 100%; height: 800px;"></div>
+
+<script>
+// Ensure DearFlip script is loaded
+if (typeof DearFlip === 'undefined') {
+  var script = document.createElement('script');
+  script.src = 'https://dearflip.com/script/dearflip.js';
+  script.onload = function() {
+    initializeDearFlip();
+  };
+  document.head.appendChild(script);
+} else {
+  initializeDearFlip();
+}
+
+function initializeDearFlip() {
+  // Wait a moment to ensure DearFlip is fully initialized
+  setTimeout(function() {
+    new DearFlip({
+      containerId: 'dearflip-container-{{ .Get "id" | default "default" }}',
+      fileName: '{{ .Get "file" }}',
+      {{ if .Get "width" -}}
+      width: {{ .Get "width" }},
+      {{ end }}
+      {{ if .Get "height" -}}
+      height: {{ .Get "height" }},
+      {{ end }}
+      {{ if .Get "pages" -}}
+      pages: {{ .Get "pages" }},
+      {{ end }}
+      {{ if .Get "autoplay" -}}
+      autoplay: {{ .Get "autoplay" }},
+      {{ end }}
+    });
+  }, 100);
+}
+</script>
