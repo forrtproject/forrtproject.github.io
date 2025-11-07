@@ -51,9 +51,6 @@ ignoreFiles = ["\\.ipynb$", ".ipynb_checkpoints$", "\\.Rmd$", "\\.Rmarkdown$", "
   home = [ "HTML", "RSS", "JSON"]
   section = [ "HTML", "RSS" ]
 
-[mediaTypes."text/css"]
-  suffixes = ["css"]
-
 ## Remove Web App Manifest output to avoid manifest generation and 404s
 # [mediaTypes."application/manifest+json"]
 #   suffixes = ["webmanifest"]

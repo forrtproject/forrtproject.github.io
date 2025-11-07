@@ -5,9 +5,7 @@ headless = false
 url = "/about/booklet"
 +++
 
-## FORRT Booklet
-
-Explore our comprehensive FORRT booklet with an interactive flipbook experience below:
+Learn more about FORRT in the interactive flipbook below:
 
 {{< dearflip id="forrt-booklet" pdf="/files/FORRT_booklet.pdf" height="800px" >}}
 

@@ -1,1 +1,0 @@
-Put this files on a web-server and open in a browser.

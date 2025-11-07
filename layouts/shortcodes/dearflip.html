@@ -1,95 +1,81 @@
-<!-- Flipbook using 3D FlipBook with local files -->
-<div id="flipbook-{{ .Get "id" | default "default" }}" style="width: 100%; height: {{ if .Get "height" }}{{ .Get "height" }}{{ else }}800px{{ end }}; margin: 20px 0;"></div>
+<!-- DearFlip Flipbook using dearflip-js-flipbook library -->
 
-<script src="/lib/3d-flipbook/js/jquery.min.js"></script>
-<script src="/lib/3d-flipbook/js/html2canvas.min.js"></script>
-<script src="/lib/3d-flipbook/js/three.min.js"></script>
-<script src="/lib/3d-flipbook/js/pdf.min.js"></script>
+<!-- Required CSS -->
+<link href="/lib/dflip/css/dflip.min.css" rel="stylesheet" type="text/css">
 
+{{ with .Get "id" }}
+<!-- Container for the flipbook -->
+<div class="_df_book" id="flipbook-{{ . }}"
+     source="{{ $.Get "pdf" | default "/files/FORRT_booklet.pdf" }}"
+     style="height: {{ $.Get "height" | default "800px" }}; margin: 20px 0;">
+</div>
+{{ else }}
+<!-- Container for the flipbook -->
+<div class="_df_book" id="flipbook-default"
+     source="{{ .Get "pdf" | default "/files/FORRT_booklet.pdf" }}"
+     style="height: {{ .Get "height" | default "800px" }}; margin: 20px 0;">
+</div>
+{{ end }}
+
+<!-- Initialize DearFlip once jQuery and DearFlip library are available -->
 <script>
-// Configure PDF.js worker and API
-if (typeof window.pdfjsDistBuildPdf !== 'undefined') {
-  console.log("✓ PDF.js loaded");
-  window.pdfjsLib = window.pdfjsDistBuildPdf;
-  if (window.pdfjsLib && window.pdfjsLib.GlobalWorkerOptions) {
-    window.pdfjsLib.GlobalWorkerOptions.workerSrc = '/lib/3d-flipbook/js/pdf.worker.js';
-    console.log("✓ PDF.js worker configured");
-  }
-} else {
-  console.warn("⚠ PDF.js not found at window.pdfjsDistBuildPdf");
-}
-</script>
+  (function() {
+    function initializeDFlip() {
+      // Check if jQuery is available (from theme or loaded separately)
+      var $ = window.jQuery;
+      if (!$) {
+        // jQuery not yet available, try again in a moment
+        setTimeout(initializeDFlip, 100);
+        return;
+      }
 
-<script>
-// Test: Log when each library loads
-window._libsLoaded = {
-  jquery: false,
-  three: false,
-  pdf: false,
-  canvas: false,
-  flipbook: false
-};
+      // Check if DearFlip is available
+      if (!$.fn.dFlip) {
+        // DearFlip not yet available, try again in a moment
+        setTimeout(initializeDFlip, 100);
+        return;
+      }
 
-var originalLog = console.log;
-var libLoaded = false;
-console.log = function() {
-  originalLog.apply(console, arguments);
-};
-
-// Check library availability immediately
-setTimeout(function() {
-  window._libsLoaded.jquery = typeof jQuery !== 'undefined';
-  window._libsLoaded.three = typeof THREE !== 'undefined';
-  window._libsLoaded.pdf = typeof pdfjsLib !== 'undefined';
-  window._libsLoaded.canvas = typeof html2canvas !== 'undefined';
-  window._libsLoaded.flipbook = typeof jQuery !== 'undefined' && jQuery.fn && jQuery.fn.FlipBook;
-
-  console.log("📖 Libraries loaded:", window._libsLoaded);
-  console.log("📖 window.pdfjsDistBuildPdf =", typeof window.pdfjsDistBuildPdf);
-  console.log("📖 jQuery.fn.FlipBook =", typeof (jQuery && jQuery.fn && jQuery.fn.FlipBook));
-}, 1000);
-</script>
-
-<script src="/lib/3d-flipbook/js/3dflipbook.min.js"></script>
-
-<script>
-(function() {
-  function attemptInit() {
-    if (typeof jQuery === 'undefined') {
-      console.log("⏳ Waiting for jQuery...");
-      setTimeout(attemptInit, 1000);
-      return;
+      try {
+        // Initialize all DearFlip books on the page
+        $('._df_book').dFlip();
+      } catch (err) {
+        console && console.error && console.error('DearFlip initialization failed:', err);
+      }
     }
 
-    if (!jQuery.fn.FlipBook) {
-      console.log("⏳ Waiting for jQuery.fn.FlipBook... Available at window:", Object.keys(window).filter(k => k.includes('flip') || k.includes('Flip')).slice(0, 5));
-      setTimeout(attemptInit, 1000);
-      return;
-    }
-
-    const containerId = "flipbook-{{ .Get "id" | default "default" }}";
-    const pdfUrl = "{{ .Get "pdf" | default "/files/FORRT_booklet.pdf" }}";
-
-    console.log("✓ FlipBook plugin ready, initializing with PDF:", pdfUrl);
-
-    try {
-      jQuery('#' + containerId).FlipBook({
-        pdf: pdfUrl,
-        template: {
-          html: '/lib/3d-flipbook/templates/default-book-view.html',
-          styles: ['/lib/3d-flipbook/css/short-black-book-view.css'],
-          links: [{rel: 'stylesheet', href: '/lib/3d-flipbook/css/font-awesome.min.css'}],
-          script: '/lib/3d-flipbook/js/default-book-view.js'
+    // Load jQuery if not already available
+    if (typeof jQuery === 'undefined' && typeof $ === 'undefined') {
+      var jqueryScript = document.createElement('script');
+      jqueryScript.src = '/lib/dflip/js/libs/jquery.min.js';
+      jqueryScript.onload = function() {
+        // After jQuery loads, load DearFlip
+        var dflipScript = document.createElement('script');
+        dflipScript.src = '/lib/dflip/js/dflip.min.js';
+        dflipScript.onload = function() {
+          // After DearFlip loads, initialize
+          if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', initializeDFlip);
+          } else {
+            initializeDFlip();
+          }
+        };
+        document.head.appendChild(dflipScript);
+      };
+      document.head.appendChild(jqueryScript);
+    } else {
+      // jQuery already available, just load DearFlip
+      var dflipScript = document.createElement('script');
+      dflipScript.src = '/lib/dflip/js/dflip.min.js';
+      dflipScript.onload = function() {
+        // After DearFlip loads, initialize
+        if (document.readyState === 'loading') {
+          document.addEventListener('DOMContentLoaded', initializeDFlip);
+        } else {
+          initializeDFlip();
         }
-      });
-      console.log("✓ 3D FlipBook initialized!");
-    } catch (e) {
-      console.error("❌ Error:", e.message);
-      document.getElementById(containerId).innerHTML = '<p>Error: ' + e.message + '</p>';
+      };
+      document.head.appendChild(dflipScript);
     }
-  }
-
-  console.log("📖 Starting FlipBook init routine...");
-  setTimeout(attemptInit, 500);
-})();
+  })();
 </script>
