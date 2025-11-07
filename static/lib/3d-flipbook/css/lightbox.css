@@ -1,0 +1,103 @@
+/*Lightbox Effect*/
+
+.fb3d-modal-shadow {
+
+}
+
+body::before {
+  position: fixed;
+  content: ' ';
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+
+  z-index: -10;
+  opacity: 0;
+  transition: opacity 0.5s, z-index 0.5s step-end;
+}
+
+.fb3d-modal-shadow::before {
+  z-index: 10;
+  opacity: 0.5;
+  transition: opacity 0.5s;
+}
+
+.fb3d-modal {
+  position: fixed;
+  width: 95%;
+  height: 95%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 0 5px #fff;
+
+  z-index: -9;
+  opacity: 0;
+  transition: opacity 0.5s, z-index 0.5s step-end;
+}
+
+.fb3d-modal.visible {
+  z-index: 11;
+  opacity: 1;
+  transition: opacity 0.5s;
+}
+
+.fb3d-modal::before {
+  position: absolute;
+  content: ' ';
+  width: 100%;
+  height: 100%;
+  opacity: 0.5;
+  z-index: -1;
+}
+
+.fb3d-modal.light::before {
+  background-color: #fff;
+}
+
+.fb3d-modal.dark::before {
+  background-color: #000;
+}
+
+.fb3d-modal .cmd-close {
+  font-size: 16pt;
+  color: #ccc;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  z-index: 1;
+}
+
+.fb3d-modal.light .cmd-close {
+  color: #555;
+}
+
+.fb3d-modal .mount-container {
+  width: 100%;
+  height: 100%;
+}
+
+.fb3d-modal .cmd-close:hover {
+  font-size: 16pt;
+  color: #eee;
+}
+
+.fb3d-modal.light .cmd-close:hover {
+  color: #111;
+}
+
+.fb3d-modal .cmd-close:active {
+  font-size: 14pt;
+  padding-top: 2px;
+  padding-right: 2px;
+}
+
+.light .mount-container.fullscreen {
+  background-image: url('../images/inverse-texture.jpg');
+}
+
+.dark .mount-container.fullscreen {
+  background-image: url('../images/texture.jpg');
+}

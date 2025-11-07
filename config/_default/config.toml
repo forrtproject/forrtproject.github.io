@@ -51,6 +51,9 @@ ignoreFiles = ["\\.ipynb$", ".ipynb_checkpoints$", "\\.Rmd$", "\\.Rmarkdown$", "
   home = [ "HTML", "RSS", "JSON", "WebAppManifest" ]
   section = [ "HTML", "RSS" ]
 
+[mediaTypes."text/css"]
+  suffixes = ["css"]
+
 [mediaTypes."application/manifest+json"]
   suffixes = ["webmanifest"]
 
