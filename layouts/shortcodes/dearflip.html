@@ -1,38 +1,66 @@
 <!-- DearFlip PDF Viewer -->
-<div id="dearflip-container-{{ .Get "id" | default "default" }}" style="width: 100%; height: 800px;"></div>
+<div id="dearflip-container-{{ .Get "id" | default "default" }}" style="width: 100%; height: 800px; background: #f0f0f0; display: flex; align-items: center; justify-content: center; color: #666;">
+  <p>Loading PDF viewer...</p>
+</div>
 
 <script>
-// Ensure DearFlip script is loaded
-if (typeof DearFlip === 'undefined') {
-  var script = document.createElement('script');
-  script.src = 'https://dearflip.com/script/dearflip.js';
-  script.onload = function() {
-    initializeDearFlip();
+(function() {
+  var containerId = 'dearflip-container-{{ .Get "id" | default "default" }}';
+  var fileName = '{{ .Get "file" }}';
+  var config = {
+    containerId: containerId,
+    fileName: fileName,
+    {{ if .Get "width" -}}
+    width: {{ .Get "width" }},
+    {{ end }}
+    {{ if .Get "height" -}}
+    height: {{ .Get "height" }},
+    {{ end }}
+    {{ if .Get "pages" -}}
+    pages: {{ .Get "pages" }},
+    {{ end }}
+    {{ if .Get "autoplay" -}}
+    autoplay: {{ .Get "autoplay" }},
+    {{ end }}
   };
-  document.head.appendChild(script);
-} else {
-  initializeDearFlip();
-}
 
-function initializeDearFlip() {
-  // Wait a moment to ensure DearFlip is fully initialized
-  setTimeout(function() {
-    new DearFlip({
-      containerId: 'dearflip-container-{{ .Get "id" | default "default" }}',
-      fileName: '{{ .Get "file" }}',
-      {{ if .Get "width" -}}
-      width: {{ .Get "width" }},
-      {{ end }}
-      {{ if .Get "height" -}}
-      height: {{ .Get "height" }},
-      {{ end }}
-      {{ if .Get "pages" -}}
-      pages: {{ .Get "pages" }},
-      {{ end }}
-      {{ if .Get "autoplay" -}}
-      autoplay: {{ .Get "autoplay" }},
-      {{ end }}
-    });
-  }, 100);
-}
+  function initializeViewer() {
+    if (typeof DearFlip !== 'undefined' && window.DearFlip) {
+      try {
+        new DearFlip(config);
+        console.log('DearFlip initialized successfully');
+      } catch (e) {
+        console.error('Error initializing DearFlip:', e);
+        fallbackToPDF();
+      }
+    } else {
+      fallbackToPDF();
+    }
+  }
+
+  function fallbackToPDF() {
+    // Fallback to simple PDF embed
+    var container = document.getElementById(containerId);
+    if (container) {
+      container.innerHTML = '<iframe src="' + fileName + '" style="width: 100%; height: 100%; border: none;"></iframe>';
+      container.style.background = 'transparent';
+    }
+  }
+
+  // Load DearFlip script if not already loaded
+  if (typeof DearFlip === 'undefined') {
+    var script = document.createElement('script');
+    script.src = 'https://dearflip.com/script/dearflip.js';
+    script.onload = function() {
+      setTimeout(initializeViewer, 500);
+    };
+    script.onerror = function() {
+      console.warn('Failed to load DearFlip, using fallback');
+      setTimeout(fallbackToPDF, 100);
+    };
+    document.head.appendChild(script);
+  } else {
+    setTimeout(initializeViewer, 100);
+  }
+})();
 </script>
