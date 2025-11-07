@@ -19,6 +19,11 @@
 
 <!-- Initialize DearFlip once jQuery and DearFlip library are available -->
 <script>
+  // Configure PDF.js worker before loading dflip
+  if (typeof window !== 'undefined' && !window.pdfjsWorkerSrc) {
+    window.pdfjsWorkerSrc = '/lib/dflip/js/libs/pdf.worker.min.js';
+  }
+
   (function() {
     function initializeDFlip() {
       // Check if jQuery is available (from theme or loaded separately)
