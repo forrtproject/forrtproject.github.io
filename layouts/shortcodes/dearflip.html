@@ -1,0 +1,81 @@
+<!-- DearFlip Flipbook using dearflip-js-flipbook library -->
+
+<!-- Required CSS -->
+<link href="/lib/dflip/css/dflip.min.css" rel="stylesheet" type="text/css">
+
+{{ with .Get "id" }}
+<!-- Container for the flipbook -->
+<div class="_df_book" id="flipbook-{{ . }}"
+     source="{{ $.Get "pdf" | default "/files/FORRT_booklet.pdf" }}"
+     style="height: {{ $.Get "height" | default "800px" }}; margin: 20px 0;">
+</div>
+{{ else }}
+<!-- Container for the flipbook -->
+<div class="_df_book" id="flipbook-default"
+     source="{{ .Get "pdf" | default "/files/FORRT_booklet.pdf" }}"
+     style="height: {{ .Get "height" | default "800px" }}; margin: 20px 0;">
+</div>
+{{ end }}
+
+<!-- Initialize DearFlip once jQuery and DearFlip library are available -->
+<script>
+  (function() {
+    function initializeDFlip() {
+      // Check if jQuery is available (from theme or loaded separately)
+      var $ = window.jQuery;
+      if (!$) {
+        // jQuery not yet available, try again in a moment
+        setTimeout(initializeDFlip, 100);
+        return;
+      }
+
+      // Check if DearFlip is available
+      if (!$.fn.dFlip) {
+        // DearFlip not yet available, try again in a moment
+        setTimeout(initializeDFlip, 100);
+        return;
+      }
+
+      try {
+        // Initialize all DearFlip books on the page
+        $('._df_book').dFlip();
+      } catch (err) {
+        console && console.error && console.error('DearFlip initialization failed:', err);
+      }
+    }
+
+    // Load jQuery if not already available
+    if (typeof jQuery === 'undefined' && typeof $ === 'undefined') {
+      var jqueryScript = document.createElement('script');
+      jqueryScript.src = '/lib/dflip/js/libs/jquery.min.js';
+      jqueryScript.onload = function() {
+        // After jQuery loads, load DearFlip
+        var dflipScript = document.createElement('script');
+        dflipScript.src = '/lib/dflip/js/dflip.min.js';
+        dflipScript.onload = function() {
+          // After DearFlip loads, initialize
+          if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', initializeDFlip);
+          } else {
+            initializeDFlip();
+          }
+        };
+        document.head.appendChild(dflipScript);
+      };
+      document.head.appendChild(jqueryScript);
+    } else {
+      // jQuery already available, just load DearFlip
+      var dflipScript = document.createElement('script');
+      dflipScript.src = '/lib/dflip/js/dflip.min.js';
+      dflipScript.onload = function() {
+        // After DearFlip loads, initialize
+        if (document.readyState === 'loading') {
+          document.addEventListener('DOMContentLoaded', initializeDFlip);
+        } else {
+          initializeDFlip();
+        }
+      };
+      document.head.appendChild(dflipScript);
+    }
+  })();
+</script>
