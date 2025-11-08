@@ -2,7 +2,7 @@
 title = "FORRT Booklet"
 type = "widget_page"
 headless = false
-url = "/about/booklet"
+url = "/booklet"
 +++
 
 Learn more about FORRT in the interactive flipbook below:
