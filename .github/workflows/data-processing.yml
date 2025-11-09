@@ -307,7 +307,7 @@ jobs:
             data/
             content/contributor-analysis/
             content/publications/citation_chart.webp
-          retention-days: 1
+          retention-days: 7
 
       #========================================
       # Commit generated files to build-resources branch
