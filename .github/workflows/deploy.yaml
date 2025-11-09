@@ -59,30 +59,64 @@ jobs:
       # =======================
       # Fallback Data Processing
       # =======================
-      - name: Run data processing if needed
+      - name: Trigger data processing if artifact missing
         if: steps.download-artifact.outcome == 'failure'
-        env:
-          PYTHON_VERSION: "3.11"
-          GA_API_CREDENTIALS: ${{ secrets.GA_API_CREDENTIALS }}
-          GA_PROPERTY_ID: ${{ secrets.GA_PROPERTY_ID }}
         run: |
-          # Install Python dependencies
-          python3 -m pip install -r ./requirements.txt
+          echo "⚠️ Data artifact not found, triggering data-processing workflow..."
+          gh workflow run data-processing.yml --ref master
+          echo "✅ Data processing workflow triggered"
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-          # Generate data files
-          python3 scripts/forrt_contribs/tenzing.py
-          python3 content/resources/resource.py
-          mv scripts/forrt_contribs/tenzing.md content/contributors/tenzing.md
-
-          # Download GA data if possible
-          if [ "${{ github.event_name }}" != 'pull_request' ]; then
-            python scripts/download_ga_data.py
+      - name: Wait for data processing to complete
+        if: steps.download-artifact.outcome == 'failure'
+        run: |
+          echo "⏳ Waiting for data processing workflow to complete..."
+          
+          # Wait up to 15 minutes for the workflow to complete
+          MAX_WAIT_TIME=900  # 15 minutes in seconds
+          POLL_INTERVAL=30    # Check every 30 seconds
+          ELAPSED=0
+          
+          while [ $ELAPSED -lt $MAX_WAIT_TIME ]; do
+            # Get the most recent data-processing workflow run
+            RUN_STATUS=$(gh run list --workflow=data-processing.yml --limit=1 --json status --jq '.[0].status')
             
-            # Quick validation of GA data structure
-            if [ -f "data/ga_data.json" ]; then
-              python3 -c "import json; data = json.load(open('data/ga_data.json')); print('✅ GA data:', len(data.get('regions', [])), 'countries,', len(data.get('top_pages', [])), 'pages')"
+            if [ "$RUN_STATUS" = "completed" ]; then
+              echo "✅ Data processing workflow completed"
+              break
             fi
+            
+            echo "⏳ Still processing... (${ELAPSED}s elapsed)"
+            sleep $POLL_INTERVAL
+            ELAPSED=$((ELAPSED + POLL_INTERVAL))
+          done
+          
+          if [ $ELAPSED -ge $MAX_WAIT_TIME ]; then
+            echo "⚠️ Data processing workflow did not complete within timeout"
           fi
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Retry downloading data artifact
+        if: steps.download-artifact.outcome == 'failure'
+        id: retry-download-artifact
+        uses: dawidd6/action-download-artifact@07ab29fd4a977ae4d2b275087cf67563dfdf0295
+        with:
+          workflow: data-processing.yml
+          name: data-artifact
+          path: .
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Verify artifact availability
+        if: steps.download-artifact.outcome == 'failure'
+        run: |
+          if [ "${{ steps.retry-download-artifact.outcome }}" = "failure" ]; then
+            echo "❌ Failed to download data artifact even after triggering data processing"
+            echo "This indicates a critical issue with the data-processing workflow"
+            exit 1
+          fi
+          echo "✅ Data artifact successfully downloaded after retry"
 
 
       # =======================
