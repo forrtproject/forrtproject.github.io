@@ -13,7 +13,7 @@
         "Type I error"
     ],
     "references": [
-        "Fiedler et al. (2012); Hartgerink et al. (2017)"
+        "Fiedler et al. (2012); Hartgerink et al. (2017)  \\[@FiedlerKutznerKrueger2012\\], \\[@HartgerinkEtAl2017\\]"
     ],
     "alt_related_terms": [
         null

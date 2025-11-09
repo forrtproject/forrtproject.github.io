@@ -11,7 +11,7 @@
         "Preprints"
     ],
     "references": [
-        "https://peercommunityin.org/"
+        "[https://peercommunityin.org/](https://peercommunityin.org/) \\[@PCI\\_n\\_d\\]"
     ],
     "alt_related_terms": [
         null

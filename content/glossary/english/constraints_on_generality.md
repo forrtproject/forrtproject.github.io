@@ -14,7 +14,7 @@
         "WEIRD"
     ],
     "references": [
-        "Busse et al. (2017); Brandt et al. (2014); Simons et al. (2017); Yarkoni (2020)"
+        "\\[@Busse2017\\], \\[@BrandtEtAl2014\\], \\[@Simons2017\\], \\[@Yarkoni2020\\]"
     ],
     "alt_related_terms": [
         null

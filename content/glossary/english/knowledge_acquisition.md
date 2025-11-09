@@ -8,7 +8,7 @@
         "Learning"
     ],
     "references": [
-        "Brule and Blount (1989)"
+        "\\[@BruleBlount1989\\]"
     ],
     "alt_related_terms": [
         null

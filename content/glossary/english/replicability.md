@@ -11,7 +11,7 @@
         "Robustness (analyses)"
     ],
     "references": [
-        "Barba (2018); Crüwell et al. (2019); King (1996); National Academies of Sciences et al. (2011); Nosek and Errington (2020)"
+        "Barba (2018); Crüwell et al. (2019); King (1996); National Academies of Sciences et al. (2011); Nosek and Errington (2020) \\[@Barba2018\\], \\[@Cruwell2019\\], \\[@King1995\\], \\[@National\\_Academies\\_2019\\], \\[@Nosek2020\\]"
     ],
     "alt_related_terms": [
         null

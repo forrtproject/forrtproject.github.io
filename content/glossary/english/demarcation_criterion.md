@@ -7,7 +7,7 @@
         "Falsification"
     ],
     "references": [
-        "Dienes (2008)"
+        "\\[@Dienes2008\\]"
     ],
     "alt_related_terms": [
         null

@@ -7,7 +7,7 @@
         "Reporting bias"
     ],
     "references": [
-        "Brooks (1985); Jannot et al. (2013); Thombs et al. (2015); Zurn et al. (2020)"
+        "\\[@Brooks1985\\], \\[@Jannot2013\\], \\[@Thombs2015\\], \\[@Zurn2020\\]"
     ],
     "alt_related_terms": [
         null

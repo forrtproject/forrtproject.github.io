@@ -11,7 +11,7 @@
         "Validity"
     ],
     "references": [
-        "Flake and Fried (2020)"
+        "Flake and Fried (2020) \\[@Flake2020\\]"
     ],
     "alt_related_terms": [
         null

@@ -7,7 +7,7 @@
         "Preprint"
     ],
     "references": [
-        "Ginsparg (1997, 2001); [https://discovery.ucl.ac.uk/id/eprint/19081/](https://discovery.ucl.ac.uk/id/eprint/19081/)"
+        "Ginsparg (1997, 2001); [https://discovery.ucl.ac.uk/id/eprint/19081/](https://discovery.ucl.ac.uk/id/eprint/19081/) \\[@Ginsparg1997\\], \\[@Ginsparg2001\\], \\[@brown2010introduction\\]"
     ],
     "alt_related_terms": [
         null

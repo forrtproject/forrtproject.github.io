@@ -6,7 +6,7 @@
         "Auxiliary Hypothesis"
     ],
     "references": [
-        "Zwaan et al. (2018)"
+        "\\[@Zwaan2018\\]"
     ],
     "alt_related_terms": [
         null

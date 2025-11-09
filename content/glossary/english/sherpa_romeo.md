@@ -1,6 +1,6 @@
 {
     "type": "glossary",
-    "title": "JISC Open Policy Finder (formerly Sherpa services)",
+    "title": "Sherpa Romeo",
     "definition": "An online resource that collects and presents open access policies from publishers, from across the world, providing summaries of individual journal's copyright and open access archiving policies.",
     "related_terms": [
         "Embargo period",
@@ -10,7 +10,7 @@
         "Repository"
     ],
     "references": [
-        "https://openpolicyfinder.jisc.ac.uk/"
+        "[https://v2.sherpa.ac.uk/romeo/](https://v2.sherpa.ac.uk/romeo/) \\[@AnonSherpaRomeoND\\]"
     ],
     "alt_related_terms": [
         null

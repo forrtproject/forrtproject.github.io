@@ -8,7 +8,7 @@
         "Transdisciplinary Research"
     ],
     "references": [
-        "European Commission (2021)"
+        "European Commission (2021) \\[@EU\\_DataProtection\\]"
     ],
     "alt_related_terms": [
         null

@@ -14,7 +14,7 @@
         "Trustworthy research"
     ],
     "references": [
-        "ALLEA (2017); Medin (2012); Moher et al. (2020)"
+        "ALLEA (2017); Medin (2012); Moher et al. (2020) \\[@ALLEA2017\\], \\[@Medin2012\\], \\[@Moher2020\\]"
     ],
     "alt_related_terms": [
         null

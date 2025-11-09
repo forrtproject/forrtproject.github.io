@@ -9,7 +9,7 @@
         "Transparent peer review"
     ],
     "references": [
-        "Morey et al. (2016)"
+        "Morey et al. (2016) \\[@Morey2016\\]"
     ],
     "alt_related_terms": [
         null

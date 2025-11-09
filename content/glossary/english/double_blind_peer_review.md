@@ -14,7 +14,7 @@
         "Triple-Blind peer review"
     ],
     "references": [
-        "Largent and Snodgrass (2016); Tvina et al. (2019)"
+        "\\[@Largent2016\\], \\[@Tvina2019\\]"
     ],
     "alt_related_terms": [
         null

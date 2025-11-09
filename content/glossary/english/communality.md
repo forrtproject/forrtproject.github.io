@@ -7,7 +7,7 @@
         "Objectivity Alternative definition: Communism (in Merton, 1942\\) Related terms to alternative definition (if applicable)"
     ],
     "references": [
-        "Anderson et al. (2010); Hardwicke (2014); Merton (1938, 1942\\)"
+        "\\[@Anderson2010\\], \\[@HardwickeEtAl2014\\], \\[@Merton1938\\], \\[@Merton1942\\]"
     ],
     "alt_related_terms": [
         null

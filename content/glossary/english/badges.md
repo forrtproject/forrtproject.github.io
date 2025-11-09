@@ -9,7 +9,7 @@
         "Triple badge"
     ],
     "references": [
-        "Hardwicke et al. (2020); Kidwell et al. (2016); Rowhani-Farid et al. (2020); Science (n.d.)"
+        "Hardwicke et al. (2020); Kidwell et al. (2016); Rowhani-Farid et al. (2020); Science (n.d.) \\[@HardwickeEtAl2020\\], \\[@Kidwell2016\\], \\[@Rowhani\\_Farid2020\\], \\[@Science\\_C\\_n\\_d\\]"
     ],
     "alt_related_terms": [
         null

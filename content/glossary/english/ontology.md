@@ -8,7 +8,7 @@
         "Taxonomy"
     ],
     "references": [
-        "Noy and McGuinness (2001)"
+        "Noy and McGuinness (2001) \\[@NoyMcGuinness2001\\]"
     ],
     "alt_related_terms": [
         null

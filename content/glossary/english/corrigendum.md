@@ -8,7 +8,7 @@
         "Retraction"
     ],
     "references": [
-        "Correction or retraction? (2006)"
+        "\\[@Anon2006\\]"
     ],
     "alt_related_terms": [
         null

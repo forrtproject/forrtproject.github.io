@@ -6,7 +6,7 @@
         "Reliability"
     ],
     "references": [
-        "ISO (1993); Stodden (2011)"
+        "ISO (1993); Stodden (2011) \\[@ISO1993\\], \\[@Stodden2011\\]"
     ],
     "alt_related_terms": [
         null

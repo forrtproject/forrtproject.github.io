@@ -13,7 +13,7 @@
         "Transparency"
     ],
     "references": [
-        "Blohowiak et al. (2020); Kidwell et al. (2016)"
+        "Blohowiak et al. (2020); Kidwell et al. (2016) \\[@BlohowiakEtAl2020\\], \\[@Kidwell2016\\]"
     ],
     "alt_related_terms": [
         null

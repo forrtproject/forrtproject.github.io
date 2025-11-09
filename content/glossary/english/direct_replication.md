@@ -9,7 +9,7 @@
         "hidden moderators"
     ],
     "references": [
-        "Crüwell et al. (2019); Hüffmeier et al. (2016); LeBel et al. (2019); Schwarz and Strack (2014)"
+        "\\[@Cruwell2019,\\], \\[@Huffmeier2016\\], \\[@LeBel2017\\], \\[@SchwarzStrack2014\\]"
     ],
     "alt_related_terms": [
         null

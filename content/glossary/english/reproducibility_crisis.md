@@ -10,7 +10,7 @@
         "Reproducibility"
     ],
     "references": [
-        "Fanelli (2018); Open Science Collaboration (2015)"
+        "Fanelli (2018); Open Science Collaboration (2015) \\[@Fanelli2018\\], \\[@Open\\_Science\\_Collaboration2015\\]"
     ],
     "alt_related_terms": [
         null
