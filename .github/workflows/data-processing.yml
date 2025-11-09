@@ -324,16 +324,15 @@ jobs:
           
           # Store generated files in temp location
           mkdir -p /tmp/generated-resources
-          cp -r content/curated_resources /tmp/generated-resources/
-          cp content/contributors/tenzing.md /tmp/generated-resources/
           
-          # Only copy glossary if it was regenerated
-          if [ "${{ github.event.inputs.regenerate_glossary }}" = "true" ]; then
-            echo "✓ Glossary regeneration enabled, including glossary files"
-            cp -r content/glossary /tmp/generated-resources/
-          else
-            echo "ℹ️ Glossary regeneration skipped (use workflow_dispatch with regenerate_glossary=true to update)"
-          fi
+          # Copy all files that are part of the artifact
+          cp -r content/curated_resources /tmp/generated-resources/ 2>/dev/null || true
+          cp content/contributors/tenzing.md /tmp/generated-resources/ 2>/dev/null || true
+          cp -r content/glossary /tmp/generated-resources/ 2>/dev/null || true
+          cp -r data /tmp/generated-resources/ 2>/dev/null || true
+          cp -r content/contributor-analysis /tmp/generated-resources/ 2>/dev/null || true
+          mkdir -p /tmp/generated-resources/content/publications 2>/dev/null || true
+          cp content/publications/citation_chart.webp /tmp/generated-resources/content/publications/ 2>/dev/null || true
           
           # Fetch build-resources branch (create if doesn't exist)
           git fetch origin build-resources || echo "build-resources branch doesn't exist yet"
@@ -347,20 +346,51 @@ jobs:
             git checkout -b build-resources
           fi
           
-          # Remove old generated resource files (but keep _index.md)
+          # Remove old generated resource files (but keep _index.md and other important files)
           find content/curated_resources -type f ! -name '_index.md' -delete 2>/dev/null || true
+          find content/glossary -type f ! -name '_index.md' ! -name '_create_glossaries.py' -delete 2>/dev/null || true
           
-          # Copy newly generated files
-          cp -r /tmp/generated-resources/curated_resources/* content/curated_resources/
-          cp /tmp/generated-resources/tenzing.md content/contributors/
-          
-          # Copy glossary files only if regenerated (preserving directory structure)
-          if [ "${{ github.event.inputs.regenerate_glossary }}" = "true" ]; then
-            echo "✓ Updating glossary files in build-resources"
-            # Remove old glossary files (but keep _index.md files)
-            find content/glossary -type f ! -name '_index.md' ! -name '_create_glossaries.py' -delete 2>/dev/null || true
-            rsync -av --exclude='_index.md' --exclude='_create_glossaries.py' /tmp/generated-resources/glossary/ content/glossary/
+          # Copy newly generated files from temp location
+          # Curated resources
+          if [ -d /tmp/generated-resources/curated_resources ]; then
+            cp -r /tmp/generated-resources/curated_resources/* content/curated_resources/ 2>/dev/null || true
           fi
+          
+          # Tenzing contributor data
+          if [ -f /tmp/generated-resources/tenzing.md ]; then
+            cp /tmp/generated-resources/tenzing.md content/contributors/
+          fi
+          
+          # Glossary files (always copy if they exist in temp)
+          if [ -d /tmp/generated-resources/glossary ]; then
+            rsync -av --exclude='_index.md' --exclude='_create_glossaries.py' /tmp/generated-resources/glossary/ content/glossary/ 2>/dev/null || true
+          fi
+          
+          # Data directory (GA data, etc.)
+          if [ -d /tmp/generated-resources/data ]; then
+            mkdir -p data
+            cp -r /tmp/generated-resources/data/* data/ 2>/dev/null || true
+          fi
+          
+          # Contributor analysis
+          if [ -d /tmp/generated-resources/contributor-analysis ]; then
+            mkdir -p content/contributor-analysis
+            cp -r /tmp/generated-resources/contributor-analysis/* content/contributor-analysis/ 2>/dev/null || true
+          fi
+          
+          # Citation chart
+          if [ -f /tmp/generated-resources/content/publications/citation_chart.webp ]; then
+            mkdir -p content/publications
+            cp /tmp/generated-resources/content/publications/citation_chart.webp content/publications/
+          fi
+          
+          # Add all changes (including untracked files)
+          git add -A content/curated_resources/ 2>/dev/null || true
+          git add -A content/contributors/tenzing.md 2>/dev/null || true
+          git add -A content/glossary/ 2>/dev/null || true
+          git add -A data/ 2>/dev/null || true
+          git add -A content/contributor-analysis/ 2>/dev/null || true
+          git add -A content/publications/citation_chart.webp 2>/dev/null || true
           
           # Check if there are any changes to commit
           if git diff --quiet && git diff --cached --quiet; then
@@ -368,34 +398,26 @@ jobs:
           else
             echo "✓ Changes detected, committing..."
             
-            # Add files based on what was regenerated
-            git add content/curated_resources/ content/contributors/tenzing.md
+            # Show what will be committed
+            echo "Files to be committed:"
+            git diff --cached --name-only
+            
+            # Commit with appropriate message
             if [ "${{ github.event.inputs.regenerate_glossary }}" = "true" ]; then
-              git add content/glossary/
               git commit -m "Update generated resources and glossary - $(date -u +'%Y-%m-%d %H:%M:%S UTC')" || echo "Nothing to commit"
             else
               git commit -m "Update generated resources - $(date -u +'%Y-%m-%d %H:%M:%S UTC')" || echo "Nothing to commit"
             fi
             
-            # Push to build-resources branch with retry logic
-            MAX_RETRIES=3
-            RETRY_COUNT=0
-            while [ $RETRY_COUNT -lt $MAX_RETRIES ]; do
-              if git push origin build-resources --force-with-lease; then
-                echo "✅ Successfully pushed to build-resources branch"
-                break
-              else
-                RETRY_COUNT=$((RETRY_COUNT + 1))
-                if [ $RETRY_COUNT -lt $MAX_RETRIES ]; then
-                  echo "⚠️ Push failed, retrying ($RETRY_COUNT/$MAX_RETRIES)..."
-                  sleep 2
-                  git pull origin build-resources --rebase
-                else
-                  echo "❌ Push failed after $MAX_RETRIES attempts"
-                  exit 1
-                fi
-              fi
-            done
+            # Force push to build-resources branch
+            # Using --force instead of --force-with-lease because we want to ensure
+            # all artifact files are pushed regardless of remote state
+            if git push origin build-resources --force; then
+              echo "✅ Successfully force-pushed to build-resources branch"
+            else
+              echo "❌ Failed to push to build-resources branch"
+              exit 1
+            fi
           fi
           
           # Switch back to original branch
