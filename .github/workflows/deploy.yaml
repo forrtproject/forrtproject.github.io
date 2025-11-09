@@ -73,21 +73,28 @@ jobs:
         run: |
           echo "⏳ Waiting for data processing workflow to complete..."
           
+          # Small delay to ensure the workflow appears in the list
+          sleep 10
+          
           # Wait up to 15 minutes for the workflow to complete
           MAX_WAIT_TIME=900  # 15 minutes in seconds
           POLL_INTERVAL=30    # Check every 30 seconds
           ELAPSED=0
           
           while [ $ELAPSED -lt $MAX_WAIT_TIME ]; do
-            # Get the most recent data-processing workflow run
-            RUN_STATUS=$(gh run list --workflow=data-processing.yml --limit=1 --json status --jq '.[0].status')
+            # Get the most recent data-processing workflow run status
+            # We check the most recent run - if it's queued or in_progress, we wait
+            # If it's completed, we're done
+            RUN_INFO=$(gh run list --workflow=data-processing.yml --limit=1 --json status,conclusion)
+            RUN_STATUS=$(echo "$RUN_INFO" | jq -r '.[0].status')
             
             if [ "$RUN_STATUS" = "completed" ]; then
-              echo "✅ Data processing workflow completed"
+              RUN_CONCLUSION=$(echo "$RUN_INFO" | jq -r '.[0].conclusion')
+              echo "✅ Data processing workflow completed with conclusion: $RUN_CONCLUSION"
               break
             fi
             
-            echo "⏳ Still processing... (${ELAPSED}s elapsed)"
+            echo "⏳ Still processing (status: $RUN_STATUS)... (${ELAPSED}s elapsed)"
             sleep $POLL_INTERVAL
             ELAPSED=$((ELAPSED + POLL_INTERVAL))
           done
