@@ -49,13 +49,14 @@ jobs:
       - name: Run data processing on every deployment
         id: data-processing
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.FORRT_PAT }}
         run: |
           set -e
 
           # If this is a pull request, skip triggering the external data-processing workflow
           if [ "${{ github.event_name }}" = "pull_request" ]; then
             echo "⏭️ Skipping external data-processing workflow for pull request"
+            echo "data_processing_success=false" >> $GITHUB_OUTPUT
             exit 0
           fi
 
@@ -71,14 +72,12 @@ jobs:
             -H "Accept: application/vnd.github+json" \
             "https://api.github.com/repos/${{ github.repository }}/actions/workflows/data-processing.yml/dispatches" \
             -d "{\"ref\":\"$REF\"}" \
-            || { echo "::error::Failed to dispatch data-processing workflow"; exit 1; }
+            || { echo "::error::Failed to dispatch data-processing workflow"; echo "data_processing_success=false" >> $GITHUB_OUTPUT; exit 1; }
 
           echo "⏳ Waiting for data-processing workflow run to start and complete..."
 
-          # Poll for the workflow run for the dispatched workflow on the same branch
-          # Requires `jq` (available on GitHub runners). Adjust timeout/interval as needed.
           attempts=0
-          max_attempts=180    # ~30 minutes if interval ~10s
+          max_attempts=90
           interval=10
 
           while [ $attempts -lt $max_attempts ]; do
@@ -89,24 +88,24 @@ jobs:
 
             if [ -n "$run_id" ] && [ "$run_id" != "null" ]; then
               echo "Found data-processing run: $run_id"
-              # Wait for run to complete
               while true; do
-          run_json=$(curl -s -H "Authorization: Bearer $GITHUB_TOKEN" -H "Accept: application/vnd.github+json" \
-            "https://api.github.com/repos/${{ github.repository }}/actions/runs/$run_id")
-          status=$(echo "$run_json" | jq -r '.status')
-          conclusion=$(echo "$run_json" | jq -r '.conclusion')
-          echo "Status: $status, Conclusion: $conclusion"
-          if [ "$status" = "completed" ]; then
-            if [ "$conclusion" = "success" ]; then
-              echo "✅ data-processing workflow completed successfully"
-              exit 0
-            else
-              echo "::warning::data-processing workflow completed with conclusion: $conclusion"
-              # Continue the deployment even if data-processing failed, per original behavior
-              exit 0
-            fi
-          fi
-          sleep $interval
+                run_json=$(curl -s -H "Authorization: Bearer $GITHUB_TOKEN" -H "Accept: application/vnd.github+json" \
+                  "https://api.github.com/repos/${{ github.repository }}/actions/runs/$run_id")
+                status=$(echo "$run_json" | jq -r '.status')
+                conclusion=$(echo "$run_json" | jq -r '.conclusion')
+                echo "Status: $status, Conclusion: $conclusion"
+                if [ "$status" = "completed" ]; then
+                  if [ "$conclusion" = "success" ]; then
+                    echo "✅ data-processing workflow completed successfully"
+                    echo "data_processing_success=true" >> $GITHUB_OUTPUT
+                    exit 0
+                  else
+                    echo "::warning::data-processing workflow completed with conclusion: $conclusion"
+                    echo "data_processing_success=false" >> $GITHUB_OUTPUT
+                    exit 0
+                  fi
+                fi
+                sleep $interval
               done
             fi
 
@@ -115,17 +114,14 @@ jobs:
           done
 
           echo "::warning::Timed out waiting for data-processing workflow to start/complete"
-          else
-            echo "⏭️ Skipping GA data download for pull request"
-          fi
-
-          echo "::notice::✅ Data processing completed successfully"
+          echo "data_processing_success=false" >> $GITHUB_OUTPUT
         
       # =======================
       # Data Artifact Retrieval
       # =======================
       - name: Try to download data artifact
         id: download-artifact
+        if: steps.data-processing.outputs.data_processing_success == 'true'
         uses: dawidd6/action-download-artifact@07ab29fd4a977ae4d2b275087cf67563dfdf0295
         continue-on-error: true
         with:
