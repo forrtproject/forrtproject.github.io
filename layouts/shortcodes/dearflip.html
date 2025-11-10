@@ -142,13 +142,13 @@
 {{ with .Get "id" }}
 <!-- Container for the flipbook -->
 <div class="_df_book" id="flipbook-{{ . }}"
-     source="{{ $.Get "pdf" | default "/files/FORRT_Booklet.pdf" }}"
+     source="{{ $.Get "pdf" | default "/files/FORRT_booklet.pdf" }}"
      style="height: {{ $.Get "height" | default "800px" }}; margin: 20px 0;">
 </div>
 {{ else }}
 <!-- Container for the flipbook -->
 <div class="_df_book" id="flipbook-default"
-     source="{{ .Get "pdf" | default "/files/FORRT_Booklet.pdf" }}"
+     source="{{ .Get "pdf" | default "/files/FORRT_booklet.pdf" }}"
      style="height: {{ .Get "height" | default "800px" }}; margin: 20px 0;">
 </div>
 {{ end }}
