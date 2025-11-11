@@ -15,6 +15,9 @@ All types of contributions are encouraged and valued. See the [Table of Contents
 
 - [I Have a Question](#i-have-a-question)
 - [I Want To Contribute](#i-want-to-contribute)
+  - [Quick Content Edits on GitHub](#quick-content-edits-on-github)
+  - [Content Contributions](#content-contributions)
+  - [Technical Contributions](#technical-contributions)
 
 ## I Have a Question
 
@@ -32,6 +35,49 @@ We will take care of the issue as soon as possible. Right now we run on voluntee
 
 > ### Legal Notice
 > When contributing to this project, you must agree that you have authored 100% of the content, that you have the necessary rights to the content and that the content you contribute may be provided under the project license.
+
+### Quick Content Edits on GitHub
+
+**This is the easiest way to contribute for content changes!** You don't need to install anything or run the website locally.
+
+If you want to fix a typo, update documentation, or make small content changes:
+
+1. Navigate to the file you want to edit on GitHub (e.g., browse the repository at https://github.com/forrtproject/forrtproject.github.io)
+2. Click the **pencil icon** (✏️) in the top right corner of the file view
+3. Make your changes directly in the GitHub editor
+4. Scroll down and add a commit message describing your changes
+5. Select **"Create a new branch for this commit and start a pull request"**
+6. Click **"Propose changes"** and then **"Create pull request"**
+
+GitHub will automatically fork the repository for you and create a pull request. No need to worry about branches, cloning, or local setup!
+
+### Content Contributions
+
+**For content contributors who want to preview their changes locally** (but don't need to work on technical features):
+
+Content contributions include:
+- Adding or editing educational resources
+- Updating documentation
+- Fixing typos or improving clarity
+- Adding glossary entries
+- Updating project content
+
+**Note:** As a content contributor, you **do not need to run local tests or builds** if you don't want to learn about the technical setup. The maintainers will review your content changes and ensure they work correctly on the staging site.
+
+However, if you'd like to preview your changes locally before submitting, you can follow the development setup instructions below.
+
+### Technical Contributions
+
+**For developers working on features, bug fixes, or infrastructure:**
+
+Technical contributions include:
+- Adding new features to the website
+- Fixing bugs
+- Updating dependencies
+- Working on CI/CD pipelines
+- Improving build processes
+
+If you're making technical contributions, please follow the local development setup and test your changes thoroughly before submitting.
 
 ### Cloning the Repository
 
@@ -70,6 +116,29 @@ A way to run the project locally without installing Hugo on the host machine is 
 
 #### Steps
 
+**Option 1: Using the usethis Package (Recommended for R Users)**
+
+The `usethis` package provides a streamlined workflow for creating pull requests without manually managing branches or navigating GitHub's interface. This is especially helpful if you're already familiar with R but new to Git/GitHub workflows.
+
+**Setup (one time):**
+
+1. Install the usethis package: `install.packages("usethis")`
+2. Configure Git with your credentials: `usethis::use_git_config(user.name = "Your Name", user.email = "your.email@example.com")`
+3. Set up a GitHub personal access token: `usethis::create_github_token()` and then `gitcreds::gitcreds_set()`
+
+**For each contribution:**
+
+1. **Fork and clone:** If you haven't already, fork the repository on GitHub, then: `usethis::create_from_github("forrtproject/forrtproject.github.io", fork = TRUE)`
+2. **Start your work:** `usethis::pr_init("brief-description-of-change")` - This creates and switches to a new branch
+3. **Make your changes** to the relevant files
+4. **Preview locally** using `blogdown::serve_site()` or `hugo server -D`
+5. **Push your changes:** `usethis::pr_push()` - This pushes your branch and opens the PR creation page on GitHub
+6. Fill out the PR template and submit your pull request
+
+For more details, see the [usethis PR functions documentation](https://usethis.r-lib.org/articles/pr-functions.html).
+
+**Option 2: Manual Git Workflow**
+
 If you are a R user and would prefer to work in RStudio, you need to:
 
 1. Open R Studio, then go in the Menu > New Project... > Version Control > Git
@@ -92,3 +161,28 @@ To edit it locally, you will then need to:
 9. Create a pull request to the original FORRT repo.
 
 Please note that RStudio is not designed for website development, so you may find it easier to use the Dev Containers method described above.
+
+### Pull Request Best Practices
+
+When creating a pull request:
+
+1. **Use clear, descriptive titles** - e.g., "Fix typo in glossary entry for 'preregistration'" or "Add new educational resource about open data"
+2. **Fill out the PR template completely** - This helps reviewers understand your changes
+3. **Confirm you've read CONTRIBUTING.md** - Check the box in the PR template to confirm
+4. **Keep changes focused** - One PR should address one issue or feature
+5. **Test your changes** (for technical contributions) - Ensure the website builds and runs locally
+6. **Preview on staging** - After your PR is created, check the staging site link in the PR comments
+7. **Be patient** - Maintainers are volunteers and will review your PR as soon as possible
+8. **Respond to feedback** - Address any comments or requested changes promptly
+
+### Understanding the Glossary Guidelines
+
+When contributing to the glossary or other structured content, please pay special attention to:
+
+- **Formatting consistency** - Follow the existing format for entries
+- **Citation requirements** - Include proper references where needed
+- **Alphabetical ordering** - Maintain the sort order
+- **Link validation** - Ensure all links work correctly
+- **Terminology accuracy** - Use precise, accepted terminology in the field
+
+These guidelines help maintain the quality and usability of FORRT's resources. If you're unsure about any of these, ask in your PR or check existing entries for examples.
