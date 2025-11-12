@@ -7,13 +7,6 @@
 {{ $show_interests := $page.Params.design.show_interests | default true }}
 
 <div class="row justify-content-center people-widget">
-  {{ with $page.Title }}
-  <div class="col-md-12 section-heading">
-    <h1>{{ . | markdownify | emojify }}</h1>
-    {{ if $page.Params.subtitle }}<p>{{ $page.Params.subtitle | markdownify | emojify }}</p>{{ end }}
-  </div>
-  {{ end }}
-
   {{ with $page.Content }}
   <div class="col-md-12">
     {{ . }}
@@ -52,7 +45,68 @@
     <div class="portrait-title">
       <h2>{{ .Params.name }}</h2>
       {{ with .Params.role }}<h3>{{ . | markdownify | emojify }}</h3>{{ end }}
-      {{ if $show_social }}{{ partial "social_links" . }}{{ end }}
+
+      {{/* Build social links including bio button */}}
+      {{ $content := trim .Content " \n\t\r" }}
+      {{ $has_bio := and $content (ne $content "") (ne $content "Coming soon.") (not (in $content "<p>Coming soon")) }}
+      {{ if or $show_social $has_bio }}
+      <ul class="network-icon">
+        {{ if $show_social }}
+          {{ range .Params.social }}
+            {{ $pack := or .icon_pack "fas" }}
+            {{ $pack_prefix := $pack }}
+            {{ if in (slice "fab" "fas" "far" "fal") $pack }}
+              {{ $pack_prefix = "fa" }}
+            {{ end }}
+            {{ $link := .link }}
+            {{ $scheme := (urls.Parse $link).Scheme }}
+            {{ $target := "" }}
+            {{ if not $scheme }}
+              {{ $link = .link | relLangURL }}
+            {{ else if in (slice "http" "https") $scheme }}
+              {{ $target = "target=\"_blank\" rel=\"noopener\"" }}
+            {{ end }}
+            <li>
+              <a href="{{ $link | safeURL }}" {{ $target | safeHTMLAttr }}>
+                <i class="{{ $pack }} {{ $pack_prefix }}-{{ .icon }}" aria-hidden="true"></i>
+              </a>
+            </li>
+          {{end}}
+        {{ end }}
+        {{/* Add bio button if content exists and is not "Coming soon" */}}
+        {{ if $has_bio }}
+        <li>
+          <a href="javascript:void(0)" data-toggle="modal" data-target="#bioModal{{ .File.UniqueID }}" title="Read full bio">
+            <i class="fas fa-info-circle" aria-hidden="true"></i>
+          </a>
+        </li>
+        {{ end }}
+      </ul>
+      {{ end }}
+
+      <!-- Bio Modal -->
+      {{ if $has_bio }}
+      <div class="modal fade bio-modal" id="bioModal{{ .File.UniqueID }}" tabindex="-1" role="dialog" aria-labelledby="bioModalLabel{{ .File.UniqueID }}" aria-hidden="true" data-backdrop="false">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="bioModalLabel{{ .File.UniqueID }}">{{ .Params.name }}</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              {{ with .Params.role }}<p><strong>{{ . | markdownify | emojify }}</strong></p>{{ end }}
+              <p class="mb-0">{{ .Content | markdownify }}</p>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      {{ end }}
+
       {{ if and $show_interests .Params.interests }}<p class="people-interests">{{ delimit .Params.interests ", " | markdownify | emojify }}</p>{{ end }}
     </div>
   </div>

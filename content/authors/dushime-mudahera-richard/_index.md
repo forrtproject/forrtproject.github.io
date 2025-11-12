@@ -1,16 +1,16 @@
 ---
 # Display name
-name: "Kelly Lloyd"
+name: "Dushime Mudahera Richard"
 
 # Username (this should match the folder name)
 authors:
-- Name "Kelly Lloyd"
+- Name "Dushime Mudahera Richard"
 
 # Is this the primary user of the site?
 superuser: false
 
 # Role/position
-role: "Community Cohesion-Liaison "
+role: "Website Lead"
 
 # Organizations/Affiliations
 organizations: []
@@ -24,7 +24,12 @@ user_groups:
 
 # Social/Academic Networking
 social:
-# No social links
+- icon: envelope
+  icon_pack: fas
+  link: 'mailto:mudaherarich@gmail.com'
+- icon: globe
+  icon_pack: fas
+  link: https://richarddushime.netlify.app/
 ---
 
-Coming soon.
+nan
