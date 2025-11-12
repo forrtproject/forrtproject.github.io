@@ -1,0 +1,40 @@
+{{- define "main" -}}
+
+{{ partial "page_header.html" . }}
+
+<div class="universal-wrapper">
+  {{ with .Content }}
+  <div class="article-style">{{ . }}</div>
+  {{ end }}
+
+  <div class="blog-posts-list">
+    {{ $paginator := .Paginate (where .Pages "Type" "blog") }}
+    {{ range $paginator.Pages }}
+      <article class="blog-post-item">
+        <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+        <div class="blog-post-meta">
+          <span class="blog-date">{{ .Date.Format "January 2, 2006" }}</span>
+          {{ with .Params.author }}
+          <span class="blog-author"> | By {{ . }}</span>
+          {{ end }}
+        </div>
+        {{ with .Params.tags }}
+        <div class="blog-tags">
+          Tags: 
+          {{ range . }}
+            <span class="blog-tag">{{ . }}</span>
+          {{ end }}
+        </div>
+        {{ end }}
+        {{ with .Summary }}
+        <div class="blog-summary">{{ . }}</div>
+        {{ end }}
+      </article>
+      <hr>
+    {{ end }}
+  </div>
+
+  {{ partial "pagination" . }}
+</div>
+
+{{- end -}}
