@@ -143,13 +143,13 @@
 <!-- Container for the flipbook -->
 <div class="_df_book" id="flipbook-{{ . }}"
      source="{{ $.Get "pdf" | default "/files/FORRT_Booklet(A5).pdf" }}"
-     style="height: {{ $.Get "height" | default "800px" }}; margin: 20px 0;">
+     style="height: {{ $.Get "height" | default "80vh" }}; margin: 20px 0; min-height: 500px; max-height: 1200px;">
 </div>
 {{ else }}
 <!-- Container for the flipbook -->
 <div class="_df_book" id="flipbook-default"
      source="{{ .Get "pdf" | default "/files/FORRT_Booklet(A5).pdf" }}"
-     style="height: {{ .Get "height" | default "800px" }}; margin: 20px 0;">
+     style="height: {{ .Get "height" | default "80vh" }}; margin: 20px 0; min-height: 500px; max-height: 1200px;">
 </div>
 {{ end }}
 
@@ -239,5 +239,32 @@
       });
       if (need) remapFlipbookIcons();
     }).observe(book,{childList:true,subtree:true});
+  });
+
+  /* Dynamic booklet sizing: adjust height based on viewport */
+  function updateBookletHeight() {
+    var books = document.querySelectorAll('._df_book');
+    books.forEach(function(book){
+      // Calculate optimal height: 80% of viewport height
+      // Ensuring minimum of 500px and maximum of 1200px
+      var viewportHeight = window.innerHeight || document.documentElement.clientHeight;
+      var targetHeight = Math.floor(viewportHeight * 0.8);
+      targetHeight = Math.max(500, Math.min(1200, targetHeight));
+      book.style.height = targetHeight + 'px';
+    });
+  }
+
+  /* Update on window resize with debouncing */
+  var resizeTimer;
+  window.addEventListener('resize', function() {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(function() {
+      updateBookletHeight();
+    }, 250);
+  });
+
+  /* Initial height update after DearFlip is loaded */
+  window.addEventListener('load', function() {
+    setTimeout(updateBookletHeight, 500);
   });
 </script>
