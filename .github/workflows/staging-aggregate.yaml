@@ -368,15 +368,19 @@ jobs:
           Please resolve conflicts with the base branch and the deployment will be retried automatically."
             fi
             
-            # Find existing staging deployment comment
-            EXISTING_COMMENT_ID=$(gh api "repos/${{ github.repository }}/issues/${pr}/comments" \
+            # Find existing staging deployment comment (limit to 100 most recent comments for performance)
+            EXISTING_COMMENT_ID=$(gh api "repos/${{ github.repository }}/issues/${pr}/comments?per_page=100" \
               --jq '.[] | select(.user.login == "github-actions[bot]" and (.body | contains("<!-- staging-deployment-comment -->"))) | .id' 2>/dev/null | head -1)
             
             if [ -n "$EXISTING_COMMENT_ID" ]; then
               echo "💬 Updating existing comment on PR #$pr (comment ID: $EXISTING_COMMENT_ID)"
-              gh api "repos/${{ github.repository }}/issues/comments/${EXISTING_COMMENT_ID}" \
+              # Try to update the comment, fall back to creating a new one if update fails
+              if ! gh api "repos/${{ github.repository }}/issues/comments/${EXISTING_COMMENT_ID}" \
                 -X PATCH \
-                -f body="$COMMENT_BODY"
+                -f body="$COMMENT_BODY" 2>/dev/null; then
+                echo "⚠️ Failed to update comment, creating a new one instead"
+                gh pr comment $pr --body "$COMMENT_BODY"
+              fi
             else
               echo "💬 Creating new comment on PR #$pr"
               gh pr comment $pr --body "$COMMENT_BODY"
