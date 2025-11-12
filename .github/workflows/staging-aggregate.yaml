@@ -369,12 +369,12 @@ jobs:
             fi
             
             # Find existing staging deployment comment
-            EXISTING_COMMENT_ID=$(gh api "repos/{owner}/{repo}/issues/${pr}/comments" \
+            EXISTING_COMMENT_ID=$(gh api "repos/${{ github.repository }}/issues/${pr}/comments" \
               --jq '.[] | select(.user.login == "github-actions[bot]" and (.body | contains("<!-- staging-deployment-comment -->"))) | .id' 2>/dev/null | head -1)
             
             if [ -n "$EXISTING_COMMENT_ID" ]; then
               echo "💬 Updating existing comment on PR #$pr (comment ID: $EXISTING_COMMENT_ID)"
-              gh api "repos/{owner}/{repo}/issues/comments/${EXISTING_COMMENT_ID}" \
+              gh api "repos/${{ github.repository }}/issues/comments/${EXISTING_COMMENT_ID}" \
                 -X PATCH \
                 -f body="$COMMENT_BODY"
             else
