@@ -7,7 +7,7 @@ url = "/booklet"
 
 Learn more about FORRT in the interactive flipbook below:
 
-{{< dearflip id="forrt-booklet" pdf="/files/FORRT_Booklet(A5).pdf" height="800px" >}}
+{{< dearflip id="forrt-booklet" pdf="/files/FORRT_Booklet(A5).pdf" >}}
 
 If you prefer, you can also [download the PDF directly](/files/FORRT_Booklet(A5).pdf).
 
