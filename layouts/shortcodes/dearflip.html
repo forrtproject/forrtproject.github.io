@@ -166,6 +166,10 @@
       try {
         $('._df_book').dFlip();
         remapFlipbookIcons(); // run after init
+        // Apply dynamic height after DearFlip initialization
+        setTimeout(function() {
+          updateBookletHeight();
+        }, 100);
       } catch(e){ console.error('DearFlip init failed:', e); }
     }
     function loadDFlip() {
@@ -187,6 +191,21 @@
       loadDFlip();
     }
   })();
+
+  /* Dynamic booklet sizing: adjust height based on viewport */
+  function updateBookletHeight() {
+    var books = document.querySelectorAll('._df_book');
+    books.forEach(function(book){
+      // Calculate optimal height: 80% of viewport height
+      // Ensuring minimum of 500px and maximum of 1200px
+      var viewportHeight = window.innerHeight || document.documentElement.clientHeight;
+      var targetHeight = Math.floor(viewportHeight * 0.8);
+      targetHeight = Math.max(500, Math.min(1200, targetHeight));
+      book.style.height = targetHeight + 'px';
+      // Also set inline style with !important to override any library styles
+      book.style.setProperty('height', targetHeight + 'px', 'important');
+    });
+  }
 
   /* Remap ti-* classes to df-icon-* so glyphs display */
   function remapFlipbookIcons() {
@@ -241,19 +260,6 @@
     }).observe(book,{childList:true,subtree:true});
   });
 
-  /* Dynamic booklet sizing: adjust height based on viewport */
-  function updateBookletHeight() {
-    var books = document.querySelectorAll('._df_book');
-    books.forEach(function(book){
-      // Calculate optimal height: 80% of viewport height
-      // Ensuring minimum of 500px and maximum of 1200px
-      var viewportHeight = window.innerHeight || document.documentElement.clientHeight;
-      var targetHeight = Math.floor(viewportHeight * 0.8);
-      targetHeight = Math.max(500, Math.min(1200, targetHeight));
-      book.style.height = targetHeight + 'px';
-    });
-  }
-
   /* Update on window resize with debouncing */
   var resizeTimer;
   window.addEventListener('resize', function() {
@@ -263,7 +269,7 @@
     }, 250);
   });
 
-  /* Initial height update after DearFlip is loaded */
+  /* Initial height update after page fully loads */
   window.addEventListener('load', function() {
     setTimeout(updateBookletHeight, 500);
   });
