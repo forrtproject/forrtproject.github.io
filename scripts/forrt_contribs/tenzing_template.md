@@ -65,6 +65,15 @@ subtitle = ""
   flex: 50%;
   padding: 10px;
 }
+
+/* Style for individual contributor list item, making it display as a block */
+.contributor {
+  list-style: none; /* Remove default bullet point */
+  margin-bottom: 20px; /* Spacing between contributors */
+  border: 1px solid #eee; /* Optional border for visual separation */
+  padding: 15px;
+  background-color: #f9f9f9;
+}
 </style>
 
 ------------
@@ -79,3 +88,36 @@ FORRT is driven by a **large and diverse community of contributors** that shape 
 
 ## **Contributions**
 
+<h2 id='filter-header' style='display:none;'></h2>
+<div id='contributors-list-container'>
+  <ul>
+    {% for contributor in contributors %}
+    <li class='contributor' 
+        data-projects='{{ contributor.normalized_projects | join(",") }}' 
+        data-roles='{{ contributor.normalized_roles | join(",") }}'>
+      <div class="row">
+        <div class="column">
+            <h3>{{ contributor.name }}</h3>
+            {% if contributor.projects %}
+                <p><strong>Projects:</strong> {{ contributor.projects | join(", ") }}</p>
+            {% endif %}
+            {% if contributor.roles %}
+                <p><strong>Roles:</strong> {{ contributor.roles | join(", ") }}</p>
+            {% endif %}
+            {% if contributor.notes %}
+                <p>Notes: {{ contributor.notes }}</p>
+            {% endif %}
+        </div>
+        <div class="column">
+            {% if contributor.contributions_md %}
+                <h4>Individual Contributions:</h4>
+                {{ contributor.contributions_md | safe }}
+            {% else %}
+                <p>No specific contributions listed.</p>
+            {% endif %}
+        </div>
+      </div>
+    </li>
+    {% endfor %}
+  </ul>
+</div>
