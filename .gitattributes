@@ -5,7 +5,8 @@
 # Git LFS tracking for large binary files
 # PDF files
 *.pdf filter=lfs diff=lfs merge=lfs -text
-# Image files
+
+# Image files - exclude small icons/logos needed for Hugo build process
 *.webp filter=lfs diff=lfs merge=lfs -text
 *.png filter=lfs diff=lfs merge=lfs -text
 *.jpg filter=lfs diff=lfs merge=lfs -text
@@ -13,9 +14,17 @@
 *.JPG filter=lfs diff=lfs merge=lfs -text
 *.JPEG filter=lfs diff=lfs merge=lfs -text
 *.PNG filter=lfs diff=lfs merge=lfs -text
+
+# Exclude small icon/logo files from LFS (needed for Hugo image processing)
+assets/images/icon.webp !filter !diff !merge text
+assets/images/logo.webp !filter !diff !merge text
+assets/images/logo.svg !filter !diff !merge text
+archetypes/authors/avatar.webp !filter !diff !merge text
+
 # Document files
 *.docx filter=lfs diff=lfs merge=lfs -text
 *.doc filter=lfs diff=lfs merge=lfs -text
+
 # Other binary assets
 *.zip filter=lfs diff=lfs merge=lfs -text
 *.tar.gz filter=lfs diff=lfs merge=lfs -text
