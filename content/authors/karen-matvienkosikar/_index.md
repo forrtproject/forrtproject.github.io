@@ -1,16 +1,16 @@
 ---
 # Display name
-name: "Kelly Lloyd"
+name: "Karen Matvienko-Sikar"
 
 # Username (this should match the folder name)
 authors:
-- Name "Kelly Lloyd"
+- Name "Karen Matvienko-Sikar"
 
 # Is this the primary user of the site?
 superuser: false
 
 # Role/position
-role: "Community Cohesion-Liaison "
+role: "Co-Director (Fundraising)"
 
 # Organizations/Affiliations
 organizations: []

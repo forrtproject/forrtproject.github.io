@@ -1,16 +1,16 @@
 ---
 # Display name
-name: "Kelly Lloyd"
+name: "Sara Lil Middleton"
 
 # Username (this should match the folder name)
 authors:
-- Name "Kelly Lloyd"
+- Name "Sara Lil Middleton"
 
 # Is this the primary user of the site?
 superuser: false
 
 # Role/position
-role: "Community Cohesion-Liaison "
+role: "Knowledge Manager (Sustainability & Strategy)"
 
 # Organizations/Affiliations
 organizations: []

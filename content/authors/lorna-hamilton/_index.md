@@ -1,16 +1,16 @@
 ---
 # Display name
-name: "Kelly Lloyd"
+name: "Lorna Hamilton"
 
 # Username (this should match the folder name)
 authors:
-- Name "Kelly Lloyd"
+- Name "Lorna Hamilton"
 
 # Is this the primary user of the site?
 superuser: false
 
 # Role/position
-role: "Community Cohesion-Liaison "
+role: "Deputy-Director (Education & Pedagogy)"
 
 # Organizations/Affiliations
 organizations: []
@@ -20,7 +20,7 @@ bio: ""
 
 # Organizational groups that you belong to (for People widget)
 user_groups:
-- "Operations"
+- "Focus Areas"
 
 # Social/Academic Networking
 social:

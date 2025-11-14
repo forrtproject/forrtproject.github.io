@@ -58,7 +58,8 @@
           </a>
           <div class="dropdown-menu">
             {{ range .Children }}
-              <a class="dropdown-item" href="{{ .URL | relLangURL }}"{{ if and (gt (len .URL) 3) (eq (slicestr .URL 0 4) "http") }} target="_blank" rel="noopener"{{ end }}>
+              {{ $is_external := or (strings.HasPrefix .URL "http://") (strings.HasPrefix .URL "https://") }}
+              <a class="dropdown-item" href="{{ .URL | relLangURL }}"{{ if $is_external }} target="_blank" rel="noopener"{{ end }}>
                 {{- .Pre -}}<span>{{ .Name | safeHTML }}</span>{{- .Post -}}
               </a>
             {{ end }}
@@ -69,7 +70,7 @@
 
         {{/* Check if link should open in new tab */}}
         {{ $target := "" }}
-        {{ if and (gt (len .URL) 3) (eq (slicestr .URL 0 4) "http") }}
+        {{ if or (strings.HasPrefix .URL "http://") (strings.HasPrefix .URL "https://") }}
           {{ $target = " target=\"_blank\" rel=\"noopener\"" }}
         {{ end }}
 
@@ -105,7 +106,7 @@
 
         {{/* Check if link should open in new tab */}}
         {{ $target := "" }}
-        {{ if and (gt (len .URL) 3) (eq (slicestr .URL 0 4) "http") }}
+        {{ if or (strings.HasPrefix .URL "http://") (strings.HasPrefix .URL "https://") }}
           {{ $target = " target=\"_blank\" rel=\"noopener\"" }}
         {{ end }}
 

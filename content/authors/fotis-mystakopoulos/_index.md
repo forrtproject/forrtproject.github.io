@@ -1,16 +1,16 @@
 ---
 # Display name
-name: "Kelly Lloyd"
+name: "Fotis Mystakopoulos"
 
 # Username (this should match the folder name)
 authors:
-- Name "Kelly Lloyd"
+- Name "Fotis Mystakopoulos"
 
 # Is this the primary user of the site?
 superuser: false
 
 # Role/position
-role: "Community Cohesion-Liaison "
+role: "Officer (Fundraising)"
 
 # Organizations/Affiliations
 organizations: []
