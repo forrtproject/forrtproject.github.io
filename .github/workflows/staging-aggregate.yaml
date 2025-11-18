@@ -329,6 +329,7 @@ jobs:
       - name: Comment on PRs
         if: needs.aggregate-prs.outputs.attempted-prs != ''
         run: |
+          DEPLOYMENT_TIME=$(date -u '+%Y-%m-%d %H:%M:%S UTC')
           IFS=',' read -ra PR_ARRAY <<< "${{ needs.aggregate-prs.outputs.attempted-prs }}"
           for pr in "${PR_ARRAY[@]}"; do
             # Check if this PR was successfully merged
@@ -343,19 +344,47 @@ jobs:
               done
             fi
             
-            # Check if we already commented on this PR with our specific message
-            EXISTING_COMMENT=$(gh pr view $pr --json comments --jq '(.comments[] | select(.author.login == "github-actions[bot]" and (.body | contains("deployed to staging as part of an aggregated deployment")))) | .id' 2>/dev/null || echo "")
+            # Create the comment body with a unique identifier
+            COMMENT_IDENTIFIER="<!-- staging-deployment-comment -->"
+            if [ "$SUCCESSFUL_MERGE" = true ]; then
+              COMMENT_BODY="${COMMENT_IDENTIFIER}
+          ✅ **Staging Deployment Status**
+          
+          This PR has been successfully deployed to staging as part of an aggregated deployment.
+          
+          **Deployed at:** ${DEPLOYMENT_TIME}
+          **Staging URL:** https://staging.forrt.org
+          
+          The staging site shows the combined state of all compatible open PRs."
+            else
+              COMMENT_BODY="${COMMENT_IDENTIFIER}
+          ⚠️ **Staging Deployment Status**
+          
+          This PR was attempted for staging deployment but had merge conflicts and was skipped.
+          
+          **Attempted at:** ${DEPLOYMENT_TIME}
+          **Staging URL:** https://staging.forrt.org
+          
+          Please resolve conflicts with the base branch and the deployment will be retried automatically."
+            fi
             
-            if [ -z "$EXISTING_COMMENT" ]; then
-              if [ "$SUCCESSFUL_MERGE" = true ]; then
-                echo "💬 Commenting on PR #$pr (successfully merged)"
-                gh pr comment $pr --body "✅ This PR has been deployed to staging as part of an aggregated deployment. View at: https://staging.forrt.org"
-              else
-                echo "💬 Commenting on PR #$pr (attempted but had conflicts)"
-                gh pr comment $pr --body "⚠️ This PR was attempted to be deployed to staging as part of an aggregated deployment, but had merge conflicts and was skipped. Please resolve conflicts and try again. View staging at: https://staging.forrt.org"
+            # Find existing staging deployment comment (limit to 100 most recent comments )
+            EXISTING_COMMENT_ID=$(gh api "repos/${{ github.repository }}/issues/${pr}/comments?per_page=100" \
+              --jq '.[] | select(.user.login == "github-actions[bot]" and (.body | contains("<!-- staging-deployment-comment -->"))) | .id' 2>/dev/null | head -1)
+            
+            if [ -n "$EXISTING_COMMENT_ID" ]; then
+              echo "💬 Updating existing comment on PR #$pr (comment ID: $EXISTING_COMMENT_ID)"
+              # Try to update the comment, fall back to creating a new one if update fails
+              if ! UPDATE_OUTPUT=$(gh api "repos/${{ github.repository }}/issues/comments/${EXISTING_COMMENT_ID}" \
+                -X PATCH \
+                -f body="$COMMENT_BODY" 2>&1); then
+                echo "⚠️ Failed to update comment: $UPDATE_OUTPUT"
+                echo "⚠️ Creating a new comment instead"
+                gh pr comment $pr --body "$COMMENT_BODY"
               fi
             else
-              echo "ℹ️ Skipping comment on PR #$pr (already has staging comment)"
+              echo "💬 Creating new comment on PR #$pr"
+              gh pr comment $pr --body "$COMMENT_BODY"
             fi
           done
         env:
