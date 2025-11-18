@@ -368,8 +368,8 @@ jobs:
           Please resolve conflicts with the base branch and the deployment will be retried automatically."
             fi
             
-            # Find existing staging deployment comment (limit to 100 most recent comments for performance)
-            EXISTING_COMMENT_ID=$(gh api "repos/${{ github.repository }}/issues/${pr}/comments?per_page=100" \
+            # Find existing staging deployment comment (limit to 2 most recent comments)
+            EXISTING_COMMENT_ID=$(gh api "repos/${{ github.repository }}/issues/${pr}/comments?per_page=2" \
               --jq '.[] | select(.user.login == "github-actions[bot]" and (.body | contains("<!-- staging-deployment-comment -->"))) | .id' 2>/dev/null | head -1)
             
             if [ -n "$EXISTING_COMMENT_ID" ]; then
