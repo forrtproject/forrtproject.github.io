@@ -58,7 +58,13 @@
           </a>
           <div class="dropdown-menu">
             {{ range .Children }}
-              <a class="dropdown-item" href="{{ .URL | relLangURL }}"{{ if and (gt (len .URL) 3) (eq (slicestr .URL 0 4) "http") }} target="_blank" rel="noopener"{{ end }}>
+              {{ $isExternal := false }}
+              {{ if ge (len .URL) 4 }}
+                {{ if eq (slicestr .URL 0 4) "http" }}
+                  {{ $isExternal = true }}
+                {{ end }}
+              {{ end }}
+              <a class="dropdown-item" href="{{ .URL | relLangURL }}"{{ if $isExternal }} target="_blank" rel="noopener"{{ end }}>
                 {{- .Pre -}}<span>{{ .Name | safeHTML }}</span>{{- .Post -}}
               </a>
             {{ end }}
@@ -69,8 +75,10 @@
 
         {{/* Check if link should open in new tab */}}
         {{ $target := "" }}
-        {{ if and (gt (len .URL) 3) (eq (slicestr .URL 0 4) "http") }}
-          {{ $target = " target=\"_blank\" rel=\"noopener\"" }}
+        {{ if ge (len .URL) 4 }}
+          {{ if eq (slicestr .URL 0 4) "http" }}
+            {{ $target = " target=\"_blank\" rel=\"noopener\"" }}
+          {{ end }}
         {{ end }}
 
         {{/* Get active page and other attributes. */}}
@@ -105,8 +113,10 @@
 
         {{/* Check if link should open in new tab */}}
         {{ $target := "" }}
-        {{ if and (gt (len .URL) 3) (eq (slicestr .URL 0 4) "http") }}
-          {{ $target = " target=\"_blank\" rel=\"noopener\"" }}
+        {{ if ge (len .URL) 4 }}
+          {{ if eq (slicestr .URL 0 4) "http" }}
+            {{ $target = " target=\"_blank\" rel=\"noopener\"" }}
+          {{ end }}
         {{ end }}
 
         <li class="nav-item">

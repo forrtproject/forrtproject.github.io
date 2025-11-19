@@ -1,0 +1,61 @@
+---
+title: "FINDLEY, JENSEN, MALESKY, & PEPINSKY: Nothing Up with Acai Berries: Some Reflections On Null Results from a Results-Free Peer Review Process"
+date: 2016-09-18
+author: "The Replication Network"
+tags:
+  - "GUEST BLOGS"
+  - "Comparative Political Studies"
+  - "Edmund Malesky"
+  - "Michael Findley"
+  - "Nathan Jensen"
+  - "Results-Free"
+  - "Results-Free Peer Review process"
+  - "Thomas Pepinsky"
+draft: false
+type: blog
+---
+
+###### In the academy and well beyond, the problem of null results has become quite significant. Indeed, discussions of null results have made their way as far as TV commentator John Oliver’s ***[recent discussion of science](https://www.youtube.com/watch?v=0Rnq1NpHdmw)*** in which he poignantly notes that people generally do not like to hear about null results. And yet, maybe we would all be better off – with more money in the bank – if his headline “Nothing Up With Acai Berries” actually made it to the general public and we embraced it ***[(see NIH)](https://nccih.nih.gov/health/acai/ataglance.htm)***.
+
+###### This is not just a problem in health, the sciences in general struggle with how to engage null results. Social scientists are no exception. Our interest in the topic led to a special issue of *Comparative Political Studies,* a leading political science journal, in which we solicited results free submissions and conducted the entire review process with all decisions made in the absence of results. (See our original ***[call for papers](https://www.washingtonpost.com/blogs/monkey-cage/wp/2014/09/24/can-greater-transparency-lead-to-better-social-science/?tid=a_inl)***).  This meant that reviewers and editors could not condition their decisions on significant results, thereby allowing a greater opportunity for null results to end up in published manuscripts. This special issue has been accepted and three results free papers will be published along with our ***[introduction](http://cps.sagepub.com/content/early/2016/07/01/0010414016655539.abstract)***.
+
+###### The exercise demonstrated in practice that papers with developed theories and designs, but that ultimately ended up with null results, could make it through review and into print.  One of the three published papers documented statistically insignificant treatment effects in its main experimental interventions. This in itself was a huge success of the special issue—revealing that research may find null results, and allowing readers to learn from them. But the process was also quite instructive on the challenges of evaluating work where null results have a greater probability of being published. We found the authors’, and especially the reviewers’, comments on this process illuminating.
+
+###### We offer two interrelated suggestions from our pilot to help make null results more prominent in peer-reviewed publications. The first has to do with acclimating reviewers to a new way of thinking about null findings—that they may be meaningful theoretically. The second has to do with helping authors frame their prospective work, so that null results can be read as meaningful contributions.
+
+###### The first problem unveiled by our pilot was that reviewers have become conditioned to view null results as empirically suspect. It seemed especially difficult for referees to accept that potential null findings might mean that a theory fails to explain the phenomenon being investigated. Rather, it seemed that reviewers feel more comfortable when they can simply interpret null results as evidence of mechanical problems with how the hypothesis was tested (low power, poor measures, etc.). Tellingly, many reviewers described null results as “non-findings,” suggesting that one learns nothing from results that are not consistent with a directional hypothesis. Making this distinction, of course, is one of the main benefits of results free peer review.
+
+###### Perhaps the single most compelling argument in favor of results-free peer review is that it allows for findings that a hypothesized relationship is not found in the data. Yet, our reviewers pushed back against making such calls. They appeared reluctant to endorse manuscripts in which null findings were possible, or if so, to believe those potential null results might be interpreted as evidence against the existence of a hypothesized relationship. For some reviewers, this was a source of some consternation: Reviewing manuscripts without results made them aware of how they were making decisions based on the strength of findings, and also how much easier it was to feel “excited” by strong findings.
+
+###### The second problem that our pilot revealed has to do with how authors discuss their contributions. The main reason for rejection in our results free review process was that authors failed to explain their projects in ways that made a potential null result theoretically compelling.
+
+###### Again and again, reviewers posed some version of the question: If the tested hypotheses proved insignificant, would that move debates in this sub-literature forward in any way? In many of the rejected papers and even one of the accepted papers, the answer was no. There were three reasons that reviewers reached this conclusion. First, a null finding would not be interesting because the reviewer found the theory to be implausible in the first place. Proving that the implausible was in fact implausible is not a recipe for scintillating scholarship.
+
+###### The second was a variant of Occam’s razor. Reviewers did not believe that the author had adequately accounted for the simpler, alternative theory to explain the underlying puzzle that motivated their research. In this instance, a null result would only reinforce the notion that the more parsimonious theory was superior, or that a natural experiment was confounded by unobservable selection.
+
+###### Third, there was too much distance between the articulated theory and the abstract field, lab-in-field, or survey experiment articulated in the paper. The theory invoked a compelling concept, but the proposed research design failed to adequately capture it or stretched the meaning of the concept to the point of unrecognizability. In this case, a null result would only prove the empirical test was inadequate for the bigger question.
+
+###### None of these dismissals of proposed research plans are new problems or unique to results-free review. They are a standard part of the way scholars evaluate research. The interesting implications for results-free review manifest themselves in how strategic authors may alter their research agenda to survive the review process. Introducing a laundry list of hypotheses and potential heterogeneous effects will not suffice. Our reviewers were quick to spot and reject this type of “hypothesis trolling.”
+
+###### Three author strategies would seem most plausible for articulating work that makes null results compelling. First, authors might place themselves between two competing theories with contrasting observable implications, posing their research design as the distinguishing test. For example, does fiscal decentralization decrease or increase corruption? Here, a null finding might rule out one of the competing hypotheses (although concerns about statistical power might still appear). Second, authors may offer their research design as the first or a better test of prevailing theory or logic that has been inadequately tested in the literature. The theory of deliberative democracy, for instance, offers a number of very clear implications about how deliberation should affect the thinking and behavior of citizens, yet, most of these have been subjected to only limited empirical testing. If designed properly, this would be interesting purely because the potential target would be well known. Again, however, reviewers reacted quite negatively to this type of approach. Most referees wanted authors to build on the existing literature in important ways or to thoroughly explain why the observational work of previous generations was flawed. Finally, authors might offer a test of a hypothesis that is the next logical step within a prevailing and well-traveled research paradigm.
+
+###### There is a clear drawback to the way results review prioritizes this type moderate theoretical progress and testing — what Kuhn referred to as normal science. Knowing that they have to convince a skeptical reviewer that a null finding is interesting, scholars may choose to abjure big questions and paradigmatic shifting scholarship for incremental research designs.  There is a reasonable debate to be had about the proper balance between normal science and big questions, and certainly outlets need to be available for the next big breakthrough.
+
+###### Outside the academy, these problems may be magnified. For economists or political scientists working in the Bureau of Labor Statistics or the World Bank, for examples, authors may face an explicit peer review process or perhaps even simply face scrutiny from policymakers or funders who carry their own mental theoretical models within which they adjudicate the (likely) results from researchers. If such researchers see the possibility for null results, they may similarly attempt to strategize about the types of phenomena they track, the sorts of programs they endorse or evaluate, or more basically avoid potentially innovative policy approaches in favor of incremental programming and evaluation.
+
+###### In our view, the more immediate problem, however, is that publication bias in the social sciences is impeding both normal science *and* the next big thing. We can’t even make incremental progress on the critical questions of our day without a clear documentation of all the research paths that did not prove fruitful.  Knowing about the failed tests is just as valuable as learning about successes when we envision new research projects.  Worse, the proliferation of successful tests means it is hard to identify the truly path-breaking findings, and, even more importantly, to trust that we can build upon them.
+
+###### These observations point to an important conclusion for an exercise: scientists engaged in null-significance hypothesis testing lack a coherent framework for thinking about what null results actually mean, and how to build them into a cumulative scientific enterprise. Bayesians have long criticized null-significance hypothesis testing for this very reason. Our exercise proved useful in unexpected ways for bringing this problem to light, and point to the need for a more robust and honest discussion about why scientists are so eager to dismiss null findings as “non-results,” and the implications for collective efforts across the disciplines.
+
+###### There is room for disagreement about the best approach. Indeed, there will be a variety of benefits and costs to admitting null results more equally into scholarly and policy debates. We endorse practices that will allow for null results to become more central in and out of the academy, but we suspect that a robust discussion lies ahead regarding the complexities of author, reviewer, and editor incentives for producing and evaluating them.
+
+###### *Michael Findley is associate professor in the Department of Government and the LBJ School of Public Affairs (courtesy) at the University of Texas at Austin.**Nathan Jensen is professor in the Department of Government at the University of Texas at Austin.**Edmund Malesky is professor in the Department of Political Science at Duke University.**Thomas Pepinsky is associate professor in the Department of Government at Cornell University.*
+
+### Share this:
+
+* [Click to share on X (Opens in new window)
+  X](https://replicationnetwork.com/2016/09/18/findley-nothing-up-with-acai-berries-some-reflections-on-null-results-from-a-results-free-peer-review-process/?share=twitter)
+* [Click to share on Facebook (Opens in new window)
+  Facebook](https://replicationnetwork.com/2016/09/18/findley-nothing-up-with-acai-berries-some-reflections-on-null-results-from-a-results-free-peer-review-process/?share=facebook)
+
+Like Loading...
