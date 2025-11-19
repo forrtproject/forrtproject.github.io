@@ -13,4 +13,5 @@ subtitle = ""
 [design]
   show_social = true
   show_interests = false
+  enable_subsections = true
 +++
