@@ -12,6 +12,9 @@ superuser: false
 # Role/position
 role: "Website Lead"
 
+# Team/Subsection (for steering committee subsection grouping)
+team: "Digital Infrastructure Team"
+
 # Organizations/Affiliations
 organizations: []
 

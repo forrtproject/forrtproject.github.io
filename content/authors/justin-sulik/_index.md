@@ -1,19 +1,19 @@
 ---
 # Display name
-name: "Lorna Hamilton"
+name: "Justin Sulik"
 
 # Username (this should match the folder name)
 authors:
-- Name "Lorna Hamilton"
+- Name "Justin Sulik"
 
 # Is this the primary user of the site?
 superuser: false
 
 # Role/position
-role: "Deputy-Director (Education & Pedagogy)"
+role: "Director (Digital Infrastructure Team)"
 
 # Team/Subsection (for steering committee subsection grouping)
-team: "Education & Pedagogy"
+team: "Digital Infrastructure Team"
 
 # Organizations/Affiliations
 organizations: []
@@ -23,7 +23,7 @@ bio: ""
 
 # Organizational groups that you belong to (for People widget)
 user_groups:
-- "Focus Areas"
+- "Operations"
 
 # Social/Academic Networking
 social:

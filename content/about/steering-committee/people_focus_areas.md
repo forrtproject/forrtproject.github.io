@@ -5,7 +5,7 @@ active = true  # Activate this widget? true/false
 weight = 10  # Order that this section will appear.
 
 title = "Focus Areas"
-subtitle = "Research, Scholarship & Infrastructure"
+subtitle = ""
 
 [content]
   user_groups = ["Focus Areas"]

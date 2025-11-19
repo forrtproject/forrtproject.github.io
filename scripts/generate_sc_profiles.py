@@ -154,6 +154,7 @@ def generate_author_frontmatter(member_data):
     weblink = member_data.get('Weblink', '')
     role_title = member_data.get('Role Title', '')
     section = member_data.get('Section', '')
+    team = member_data.get('Team', '')
 
     # Build social links
     social_links = []
@@ -197,6 +198,9 @@ superuser: false
 
 # Role/position
 role: "{role_title}"
+
+# Team/Subsection (for steering committee subsection grouping)
+team: "{team if team and pd.notna(team) else ''}"
 
 # Organizations/Affiliations
 organizations: []
@@ -318,7 +322,7 @@ def main():
             'Role Title': role_title if role_title and pd.notna(role_title) else (role if role else ""),
             'Role': role,
             'Section': section,
-            'Team': team,
+            'Team': team if team and pd.notna(team) else '',
             'Email': personal_data.get('Email', '') if personal_data else '',
             'ORCiD': personal_data.get('ORCiD', '') if personal_data else '',
             'Weblink': personal_data.get('Weblink', '') if personal_data else '',

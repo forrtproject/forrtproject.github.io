@@ -12,6 +12,9 @@ superuser: false
 # Role/position
 role: "Director (Education & Pedagogy)"
 
+# Team/Subsection (for steering committee subsection grouping)
+team: "Education & Pedagogy"
+
 # Organizations/Affiliations
 organizations: []
 

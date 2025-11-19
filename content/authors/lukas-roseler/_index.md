@@ -12,6 +12,9 @@ superuser: false
 # Role/position
 role: "Community Engagement Infrastructure"
 
+# Team/Subsection (for steering committee subsection grouping)
+team: "Community Engagement"
+
 # Organizations/Affiliations
 organizations: []
 

@@ -12,6 +12,9 @@ superuser: false
 # Role/position
 role: "Director (Partnerships)"
 
+# Team/Subsection (for steering committee subsection grouping)
+team: "Partnerships"
+
 # Organizations/Affiliations
 organizations: []
 

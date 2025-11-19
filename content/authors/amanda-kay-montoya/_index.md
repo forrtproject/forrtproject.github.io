@@ -12,6 +12,9 @@ superuser: false
 # Role/position
 role: "Director (Community Management)"
 
+# Team/Subsection (for steering committee subsection grouping)
+team: "Community Management [internal governance]"
+
 # Organizations/Affiliations
 organizations: []
 

@@ -12,6 +12,9 @@ superuser: false
 # Role/position
 role: "Knowledge Manager (Sustainability & Strategy)"
 
+# Team/Subsection (for steering committee subsection grouping)
+team: "Sustainability & Strategy"
+
 # Organizations/Affiliations
 organizations: []
 

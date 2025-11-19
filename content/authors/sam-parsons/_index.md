@@ -12,6 +12,9 @@ superuser: false
 # Role/position
 role: "Stewardship Council Chair"
 
+# Team/Subsection (for steering committee subsection grouping)
+team: "Chair"
+
 # Organizations/Affiliations
 organizations: []
 

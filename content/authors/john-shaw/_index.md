@@ -12,6 +12,9 @@ superuser: false
 # Role/position
 role: "Director (Ethics and Inclusion)"
 
+# Team/Subsection (for steering committee subsection grouping)
+team: "Ethics and Inclusion"
+
 # Organizations/Affiliations
 organizations: []
 

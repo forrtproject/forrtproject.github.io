@@ -12,6 +12,9 @@ superuser: false
 # Role/position
 role: "Director (Meta-science & Research)"
 
+# Team/Subsection (for steering committee subsection grouping)
+team: "Meta-science & Research"
+
 # Organizations/Affiliations
 organizations: []
 

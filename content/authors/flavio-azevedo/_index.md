@@ -12,6 +12,9 @@ superuser: false
 # Role/position
 role: "Director of FORRT"
 
+# Team/Subsection (for steering committee subsection grouping)
+team: "Director of FORRT"
+
 # Organizations/Affiliations
 organizations: []
 

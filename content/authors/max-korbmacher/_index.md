@@ -12,6 +12,9 @@ superuser: false
 # Role/position
 role: "Director (Fundraising)"
 
+# Team/Subsection (for steering committee subsection grouping)
+team: "Fundraising"
+
 # Organizations/Affiliations
 organizations: []
 

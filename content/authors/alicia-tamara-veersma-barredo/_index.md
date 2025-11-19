@@ -12,6 +12,9 @@ superuser: false
 # Role/position
 role: "Officer (Financial Transparency)"
 
+# Team/Subsection (for steering committee subsection grouping)
+team: "Financial Transparency"
+
 # Organizations/Affiliations
 organizations: []
 

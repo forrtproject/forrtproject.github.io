@@ -12,6 +12,9 @@ superuser: false
 # Role/position
 role: "Director (Social Justice & DEIA)"
 
+# Team/Subsection (for steering committee subsection grouping)
+team: "Social Justice & DEIA"
+
 # Organizations/Affiliations
 organizations: []
 

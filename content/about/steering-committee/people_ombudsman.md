@@ -2,13 +2,13 @@
 widget = "people"
 headless = true  # This file represents a page section.
 active = true  # Activate this widget? true/false
-weight = 40  # Order that this section will appear.
+weight = 20  # Order that this section will appear.
 
-title = "FORRT Stewards"
+title = "Ombudsman"
 subtitle = ""
 
 [content]
-  user_groups = ["FORRT Stewards"]
+  user_groups = ["Ombudsman"]
 
 [design]
   show_social = true

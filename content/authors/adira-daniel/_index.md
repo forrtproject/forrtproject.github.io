@@ -12,6 +12,9 @@ superuser: false
 # Role/position
 role: "FORRT Steward"
 
+# Team/Subsection (for steering committee subsection grouping)
+team: "FORRT Steward"
+
 # Organizations/Affiliations
 organizations: []
 
