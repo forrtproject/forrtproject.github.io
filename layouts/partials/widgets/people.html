@@ -5,6 +5,7 @@
 {{ $page := .page }}
 {{ $show_social := $page.Params.design.show_social | default false }}
 {{ $show_interests := $page.Params.design.show_interests | default true }}
+{{ $enable_subsections := $page.Params.design.enable_subsections | default false }}
 
 <div class="row justify-content-center people-widget">
   {{ with $page.Content }}
@@ -19,40 +20,101 @@
   {{if $query}}
   <div class="col-md-12">
     <h2 class="mb-4">{{ . | markdownify | emojify }}</h2>
+    {{ with $page.Params.subtitle }}<p class="section-subtitle" style="margin: -1rem 0 1.5rem 0; font-size: 1rem; color: #666;">{{ . | markdownify | emojify }}</p>{{ end }}
   </div>
   {{end}}
 
-  {{ range $query }}
-  {{ $avatar := (.Resources.ByType "image").GetMatch "*avatar*" }}
+  {{/* If subsections are enabled, group people by category extracted from role */}}
+  {{ if $enable_subsections }}
+    {{/* Build a map of categories and their members */}}
+    {{ $categories := dict }}
+    {{ $uncategorized := slice }}
+
+    {{ range $query }}
+      {{ $role := .Params.role | default "" }}
+      {{ $category := "" }}
+
+      {{/* Extract category from role (e.g., "Director (Community & Sustainability)" -> "Community & Sustainability") */}}
+      {{ if and $role (in $role "(") }}
+        {{ $parts := split $role "(" }}
+        {{ if gt (len $parts) 1 }}
+          {{ $category = trim (index $parts 1) ")}" }}
+        {{ end }}
+      {{ end }}
+
+      {{ if $category }}
+        {{ $members := (index $categories $category) | default slice }}
+        {{ $members = $members | append . }}
+        {{ $categories = merge $categories (dict $category $members) }}
+      {{ else }}
+        {{ $uncategorized = $uncategorized | append . }}
+      {{ end }}
+    {{ end }}
+
+    {{/* Render categorized members */}}
+    {{ range $category, $members := $categories }}
+    <div class="col-md-12 people-subsection">
+      <h3 class="subsection-heading">{{ $category | markdownify }}</h3>
+    </div>
+
+    {{ range $members }}
+      {{ template "person_card" (dict "person" . "show_social" $show_social "show_interests" $show_interests) }}
+    {{ end }}
+    {{ end }}
+
+    {{/* Render uncategorized members */}}
+    {{ if $uncategorized }}
+      {{ range $uncategorized }}
+        {{ template "person_card" (dict "person" . "show_social" $show_social "show_interests" $show_interests) }}
+      {{ end }}
+    {{ end }}
+
+  {{ else }}
+    {{/* Original layout without subsections */}}
+    {{ range $query }}
+      {{ template "person_card" (dict "person" . "show_social" $show_social "show_interests" $show_interests) }}
+    {{ end }}
+  {{ end }}
+  {{ end }}
+</div>
+
+{{/* Person Card Template */}}
+{{ define "person_card" }}
+  {{ $person := .person }}
+  {{ $show_social := .show_social }}
+  {{ $show_interests := .show_interests }}
+
+  {{ $avatar := ($person.Resources.ByType "image").GetMatch "*avatar*" }}
   {{/* Get link to user's profile page. */}}
   {{ $link := "" }}
-  {{ with site.GetPage (printf "/authors/%s" (path.Base (path.Split .Path).Dir)) }}
+  {{ with site.GetPage (printf "/authors/%s" (path.Base (path.Split $person.Path).Dir)) }}
     {{ $link = .RelPermalink }}
   {{ end }}
+
   <div class="col-12 col-sm-auto col-md-4 people-person py-3">
     {{ $src := "" }}
     {{ if site.Params.avatar.gravatar }}
-      {{ $src = printf "https://s.gravatar.com/avatar/%s?s=150" (md5 .Params.email) }}
+      {{ $src = printf "https://s.gravatar.com/avatar/%s?s=150" (md5 $person.Params.email) }}
     {{ else if $avatar }}
       {{ $avatar_image := $avatar.Fill "270x270 Center" }}
       {{ $src = $avatar_image.RelPermalink }}
     {{ end }}
     {{ if $src }}
       {{ $avatar_shape := site.Params.avatar.shape | default "circle" }}
-      <img class="avatar {{if eq $avatar_shape "square"}}avatar-square{{else}}avatar-circle{{end}}" src="{{ $src }}" alt="Avatar of {{ $query }}">
+      <img class="avatar {{if eq $avatar_shape "square"}}avatar-square{{else}}avatar-circle{{end}}" src="{{ $src }}" alt="Avatar of {{ $person.Params.name }}">
     {{ end }}
 
     <div class="portrait-title">
-      <h2>{{ .Params.name }}</h2>
-      {{ with .Params.role }}<h3>{{ . | markdownify | emojify }}</h3>{{ end }}
+      <h2>{{ $person.Params.name }}</h2>
+      {{ with $person.Params.role }}<h3>{{ . | markdownify | emojify }}</h3>{{ end }}
 
       {{/* Build social links including bio button */}}
-      {{ $content := trim .Content " \n\t\r" }}
+      {{ $content := trim $person.Content " \n\t\r" }}
       {{ $has_bio := and $content (ne $content "") (ne $content "Coming soon.") (not (in $content "<p>Coming soon")) }}
       {{ if or $show_social $has_bio }}
       <ul class="network-icon">
         {{ if $show_social }}
-          {{ range .Params.social }}
+          {{ range $person.Params.social }}
             {{ $pack := or .icon_pack "fas" }}
             {{ $pack_prefix := $pack }}
             {{ if in (slice "fab" "fas" "far" "fal") $pack }}
@@ -76,7 +138,7 @@
         {{/* Add bio button if content exists and is not "Coming soon" */}}
         {{ if $has_bio }}
         <li>
-          <a href="javascript:void(0)" data-toggle="modal" data-target="#bioModal{{ .File.UniqueID }}" title="Read full bio">
+          <a href="javascript:void(0)" data-toggle="modal" data-target="#bioModal{{ $person.File.UniqueID }}" title="Read full bio">
             <i class="fas fa-info-circle" aria-hidden="true"></i>
           </a>
         </li>
@@ -86,18 +148,18 @@
 
       <!-- Bio Modal -->
       {{ if $has_bio }}
-      <div class="modal fade bio-modal" id="bioModal{{ .File.UniqueID }}" tabindex="-1" role="dialog" aria-labelledby="bioModalLabel{{ .File.UniqueID }}" aria-hidden="true" data-backdrop="false">
+      <div class="modal fade bio-modal" id="bioModal{{ $person.File.UniqueID }}" tabindex="-1" role="dialog" aria-labelledby="bioModalLabel{{ $person.File.UniqueID }}" aria-hidden="true" data-backdrop="false">
         <div class="modal-dialog modal-dialog-centered" role="document">
           <div class="modal-content">
             <div class="modal-header">
-              <h5 class="modal-title" id="bioModalLabel{{ .File.UniqueID }}">{{ .Params.name }}</h5>
+              <h5 class="modal-title" id="bioModalLabel{{ $person.File.UniqueID }}">{{ $person.Params.name }}</h5>
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
               </button>
             </div>
             <div class="modal-body">
-              {{ with .Params.role }}<p><strong>{{ . | markdownify | emojify }}</strong></p>{{ end }}
-              <p class="mb-0">{{ .Content | markdownify }}</p>
+              {{ with $person.Params.role }}<p><strong>{{ . | markdownify | emojify }}</strong></p>{{ end }}
+              <p class="mb-0">{{ $person.Content | markdownify }}</p>
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -107,9 +169,7 @@
       </div>
       {{ end }}
 
-      {{ if and $show_interests .Params.interests }}<p class="people-interests">{{ delimit .Params.interests ", " | markdownify | emojify }}</p>{{ end }}
+      {{ if and $show_interests $person.Params.interests }}<p class="people-interests">{{ delimit $person.Params.interests ", " | markdownify | emojify }}</p>{{ end }}
     </div>
   </div>
-  {{ end }}
-  {{ end }}
-</div>
+{{ end }}
