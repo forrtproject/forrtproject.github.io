@@ -370,7 +370,7 @@ jobs:
             
             # Find existing staging deployment comment (limit to 100 most recent comments )
             EXISTING_COMMENT_ID=$(gh api "repos/${{ github.repository }}/issues/${pr}/comments?per_page=100" \
-              --jq '.[] | select(.user.login == "github-actions[bot]" and (.body | contains("<!-- staging-deployment-comment -->"))) | .id' 2>/dev/null | head -1)
+              --jq '.[] | select(.user.login == "github-actions[bot]" and (.body | contains("<!-- staging-deployment-comment -->"))) | .id' 2>/dev/null | tail -1)
             
             if [ -n "$EXISTING_COMMENT_ID" ]; then
               echo "💬 Updating existing comment on PR #$pr (comment ID: $EXISTING_COMMENT_ID)"
