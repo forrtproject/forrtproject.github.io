@@ -44,7 +44,8 @@ CATEGORY_MAPPING = {
     "Operations & Stewardship": "operations",
     "Ombudsman": "operations",
     "FORRT Stewards": "operations",
-    "Steering Committee": "steering"
+    "Steering Committee": "steering",
+    "Governance": "steering"
 }
 
 CATEGORY_DETAILS = {
@@ -55,12 +56,12 @@ CATEGORY_DETAILS = {
     },
     "operations": {
         "title": "Operations & Stewardship",
-        "description": "Infrastructure, ethical oversight, and support systems powering FORRT.",
+        "description": "Infrastructure, community management, ethical oversight, and support systems powering FORRT.",
         "icon": '<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.1a2 2 0 0 1-1-1.74v-.47a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"/><circle cx="12" cy="12" r="3"/></svg>'
     },
     "steering": {
-        "title": "Steering Committee",
-        "description": "High-level guidance, governance, and strategic oversight.",
+        "title": "Organisational Leadership",
+        "description": "Coordination and strategic direction for FORRT's mission and vision.",
         "icon": '<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="5" r="3"/><line x1="12" x2="12" y1="22" y2="8"/><path d="M5 12H2a10 10 0 0 0 20 0h-3"/></svg>'
     }
 }
@@ -72,7 +73,7 @@ PAGE_TEMPLATE = """
 <!-- External CSS -->
 <link rel="stylesheet" href="/css/steering-committee.css">
 
-<div id="sc-container">
+<div id="sc-container" class="col-lg-12">
     <nav class="sc-nav">
         <a href="#strategic">Strategic Focus Areas</a>
         <a href="#operations">Operations & Stewardship</a>
@@ -104,7 +105,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     };
 
-    // Close on backdrop click
     document.querySelectorAll('.sc-modal-backdrop').forEach(backdrop => {
         backdrop.addEventListener('click', (e) => {
             if (e.target === backdrop) {
@@ -123,6 +123,223 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }
     });
+
+    /* --- Team linking + ordering based on source CSV --- */
+    const SC_ORDER_CSV = "https://docs.google.com/spreadsheets/d/e/2PACX-1vRCHSY7WBvzDSSWyUyOVPRbsf5QxO7Mc40hGB7yanfT-rjbcNthMbHvUxT0NJ3AAfLKfx4YiOghByZT/pub?output=csv";
+    const TEAM_COLORS = ["#2563eb","#c026d3","#ea580c","#22c55e","#0ea5e9","#f59e0b","#ef4444","#8b5cf6","#14b8a6","#f97316"];
+    const BACKGROUND_COLORS = ["#0f766e", "#475569"];
+    const honorifics = /^(dr|dr\.|prof|prof\.|mr|mrs|ms|miss)\s+/i;
+    const normalizeBase = (str = "") => str.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+    const normalizeText = (str = "") => normalizeBase(str.replace(/&amp;/gi, "&").trim().toLowerCase());
+    const normalizeTeam = (str = "") => normalizeText(str).replace(/\s+/g, " ");
+    const nameTokens = (str = "") =>
+        normalizeText(str.replace(honorifics, ""))
+            .replace(/[^a-z0-9\s]/g, " ")
+            .split(/\s+/)
+            .filter(Boolean);
+
+    const tokenSimilarity = (aTokens, bTokens) => {
+        if (!aTokens.length || !bTokens.length) return 0;
+        const aSet = new Set(aTokens);
+        const bSet = new Set(bTokens);
+        let intersect = 0;
+        bSet.forEach((t) => {
+            if (aSet.has(t)) intersect += 1;
+        });
+        return intersect / Math.max(aSet.size, bSet.size, 1);
+    };
+
+    const charDice = (aStr, bStr) => {
+        const a = aStr.replace(/\s+/g, "");
+        const b = bStr.replace(/\s+/g, "");
+        if (!a.length || !b.length) return 0;
+        const count = (s) => {
+            const m = {};
+            for (const ch of s) m[ch] = (m[ch] || 0) + 1;
+            return m;
+        };
+        const aCount = count(a);
+        const bCount = count(b);
+        let overlap = 0;
+        Object.keys(aCount).forEach((ch) => {
+            if (bCount[ch]) overlap += Math.min(aCount[ch], bCount[ch]);
+        });
+        return (2 * overlap) / (a.length + b.length);
+    };
+
+    const parseCSV = (text) =>
+        text
+            .trim()
+            .split(/\\r?\\n/)
+            .map((line) => line.split(",").map((cell) => cell.replace(/^"+|"+$/g, "").trim()));
+
+    const buildOrders = (rows) => {
+        const sectionMap = {};
+        document.querySelectorAll(".sc-section").forEach((sec) => {
+            const title = sec.querySelector(".sc-section-title span")?.textContent || sec.id;
+            sectionMap[normalizeTeam(title)] = sec.id;
+        });
+
+        const findSection = (raw) => {
+            const key = normalizeTeam(raw);
+            if (sectionMap[key]) return sectionMap[key];
+
+            const operationsId = Object.entries(sectionMap).find(([k]) => k.includes('operation'))?.[1];
+            if (operationsId && (key.includes('ombudsman') || key.includes('steward'))) {
+                return operationsId;
+            }
+
+            let best = null;
+            let bestScore = -1;
+            Object.entries(sectionMap).forEach(([k, id]) => {
+                const score = charDice(k, key);
+                if (score > bestScore) {
+                    bestScore = score;
+                    best = id;
+                }
+            });
+            return best || Object.values(sectionMap)[0] || null;
+        };
+
+        const orders = {};
+        rows.slice(1).forEach((row) => {
+            const sectionRaw = row[1];
+            const teamRaw = row[3];
+            const nameRaw = row[5];
+            if (!sectionRaw || !teamRaw || !nameRaw) return;
+            const secKey = findSection(sectionRaw);
+            if (!secKey) return;
+            if (!orders[secKey]) orders[secKey] = [];
+            let group = orders[secKey].find((g) => normalizeTeam(g.team) === normalizeTeam(teamRaw));
+            if (!group) {
+                group = { team: teamRaw, members: [] };
+                orders[secKey].push(group);
+            }
+            group.members.push(nameRaw);
+        });
+        return orders;
+    };
+
+    const reorderAndLink = (sectionId, teams) => {
+        const grid = document.querySelector(`#${sectionId} .sc-grid`);
+        if (!grid || !teams || !teams.length) return;
+
+        const titleCards = Array.from(grid.querySelectorAll('.sc-title-card'));
+        const memberCards = Array.from(grid.querySelectorAll('.sc-card'));
+
+        [...titleCards, ...memberCards].forEach((el) => {
+            el.classList.remove('sc-team-linked', 'sc-team-title');
+            el.style.removeProperty('--team-color');
+        });
+
+        const titleMap = new Map();
+        titleCards.forEach((card) => {
+            const text = card.querySelector('.sc-title-text')?.textContent || "";
+            titleMap.set(normalizeTeam(text), card);
+        });
+
+        const memberMap = [];
+        memberCards.forEach((card) => {
+            const name = card.querySelector('.sc-card-name')?.textContent || "";
+            const tokens = nameTokens(name);
+            if (!tokens.length) return;
+            memberMap.push({ tokens, card });
+        });
+
+        const takeMember = (rawName) => {
+            const targetTokens = nameTokens(rawName);
+            if (!targetTokens.length) return null;
+            const targetJoined = targetTokens.join("");
+
+            let best = null;
+            let bestScore = 0.45;
+
+            memberMap.forEach((entry, idx) => {
+                const tokenScore = tokenSimilarity(entry.tokens, targetTokens);
+                const joined = entry.tokens.join("");
+                const charScore = charDice(joined, targetJoined);
+                const score = Math.max(tokenScore, charScore);
+                if (score > bestScore) {
+                    bestScore = score;
+                    best = { idx, card: entry.card };
+                }
+            });
+
+            if (best) {
+                memberMap.splice(best.idx, 1);
+                return best.card;
+            }
+            return null;
+        };
+
+        let colorIndex = 0;
+        const parseColor = (hex) => {
+            const h = hex.replace("#", "");
+            const r = parseInt(h.substring(0, 2), 16) / 255;
+            const g = parseInt(h.substring(2, 4), 16) / 255;
+            const b = parseInt(h.substring(4, 6), 16) / 255;
+            const toLin = (c) => (c <= 0.03928 ? c / 12.92 : Math.pow((c + 0.055) / 1.055, 2.4));
+            return { r: toLin(r), g: toLin(g), b: toLin(b) };
+        };
+        const contrast = (hex1, hex2) => {
+            const a = parseColor(hex1);
+            const b = parseColor(hex2);
+            const lum = ({ r, g, b }) => 0.2126 * r + 0.7152 * g + 0.0722 * b;
+            const l1 = lum(a) + 0.05;
+            const l2 = lum(b) + 0.05;
+            return l1 > l2 ? l1 / l2 : l2 / l1;
+        };
+        const nextColor = () => {
+            let attempts = 0;
+            while (attempts < TEAM_COLORS.length * 2) {
+                const color = TEAM_COLORS[colorIndex % TEAM_COLORS.length];
+                colorIndex += 1;
+                const ok = BACKGROUND_COLORS.every((bg) => contrast(color, bg) > 4);
+                if (ok) return color;
+                attempts += 1;
+            }
+            return TEAM_COLORS[(colorIndex++) % TEAM_COLORS.length];
+        };
+
+        const newChildren = [];
+
+        teams.forEach((team) => {
+            const color = nextColor();
+            const teamKey = normalizeTeam(team.team);
+            const titleCard = titleMap.get(teamKey);
+            if (titleCard) {
+                titleCard.style.setProperty('--team-color', color);
+                titleCard.classList.add('sc-team-title');
+                titleMap.delete(teamKey);
+                newChildren.push(titleCard);
+            }
+
+            team.members.forEach((memberName) => {
+                const card = takeMember(memberName);
+                if (card) {
+                    card.style.setProperty('--team-color', color);
+                    card.classList.add('sc-team-linked');
+                    newChildren.push(card);
+                }
+            });
+        });
+
+        const leftovers = [];
+        titleMap.forEach((card) => leftovers.push(card));
+        memberMap.forEach((entry) => leftovers.push(entry.card));
+
+        grid.innerHTML = '';
+        [...newChildren, ...leftovers].forEach((el) => grid.appendChild(el));
+    };
+
+    fetch(SC_ORDER_CSV)
+        .then((res) => res.text())
+        .then((text) => {
+            const rows = parseCSV(text);
+            const orders = buildOrders(rows);
+            Object.entries(orders).forEach(([sectionId, teams]) => reorderAndLink(sectionId, teams));
+        })
+        .catch((err) => console.warn('SC team linking failed', err));
 });
 </script>
 """
@@ -331,9 +548,9 @@ def main():
 
     # Initialize data structure for the three main categories
     categories = {
-        "strategic": {"teams": {}},
-        "operations": {"teams": {}},
-        "steering": {"teams": {}}
+        "strategic": {"teams": {}, "order": []},
+        "operations": {"teams": {}, "order": []},
+        "steering": {"teams": {}, "order": []}
     }
 
     for idx, row in sc_df.iterrows():
@@ -390,7 +607,8 @@ def main():
         member_obj = {
             "id": sanitized_name,
             "name": personal_name,
-            "role": role_title if role_title and pd.notna(role_title) else (role if role else ""),
+            "role": role if pd.notna(role) else "",
+            "role_title": role_title if pd.notna(role_title) else (role if pd.notna(role) else ""),
             "imgUrl": img_url,
             "initials": get_initials(personal_name),
             "bio": bio_text,
@@ -403,6 +621,7 @@ def main():
         # Add to appropriate category and team
         if team_name not in categories[main_category_key]["teams"]:
              categories[main_category_key]["teams"][team_name] = []
+             categories[main_category_key]["order"].append(team_name)
         
         categories[main_category_key]["teams"][team_name].append(member_obj)
 
@@ -423,10 +642,8 @@ def main():
         
         cards_html = ""
         
-        # Sort teams alphabetically
-        sorted_teams = sorted(cat_data["teams"].keys())
-        
-        for team_name in sorted_teams:
+        # Keep teams in CSV order (insertion order)
+        for team_name in cat_data["order"]:
             members = cat_data["teams"][team_name]
             
             # Team Title Card (except for Steering Committee section if desired, but mock shows titles)
@@ -476,7 +693,7 @@ def main():
                 modals_html += MODAL_TEMPLATE.format(
                     id=member["id"],
                     name=member["name"],
-                    role=member["role"],
+                    role=member["role_title"] or member["role"],
                     bio=html.escape(member["bio"] or "Bio coming soon."),
                     img_content_large=img_content_large,
                     social_links=generate_social_links(member)

@@ -11,7 +11,7 @@ layout: single
 <!-- External CSS -->
 <link rel="stylesheet" href="/css/steering-committee.css">
 
-<div id="sc-container">
+<div id="sc-container" class="col-lg-12">
     <nav class="sc-nav">
         <a href="#strategic">Strategic Focus Areas</a>
         <a href="#operations">Operations & Stewardship</a>
@@ -35,48 +35,7 @@ layout: single
     <div class="sc-card-overlay"></div>
     <div class="sc-card-content">
         <h4 class="sc-card-name">dr. Steven Verheyen</h4>
-        <p class="sc-card-role">Director (Community & Sustainability)</p>
-    </div>
-</div><div class="sc-title-card teal">
-    <span class="sc-title-label">Team</span>
-    <h3 class="sc-title-text">Education & Pedagogy</h3>
-</div><div class="sc-card" onclick="openModal('drmadeleinepownall')">
-    <img src="/authors/drmadeleinepownall/avatar.webp" alt="Dr Madeleine Pownall" class="sc-card-img" />
-    <div class="sc-card-overlay"></div>
-    <div class="sc-card-content">
-        <h4 class="sc-card-name">Dr Madeleine Pownall</h4>
-        <p class="sc-card-role">Director (Education & Pedagogy)</p>
-    </div>
-</div><div class="sc-card" onclick="openModal('lornahamilton')">
-    <div class="sc-placeholder">LH</div>
-    <div class="sc-card-overlay"></div>
-    <div class="sc-card-content">
-        <h4 class="sc-card-name">Lorna Hamilton</h4>
-        <p class="sc-card-role">Deputy-Director (Education & Pedagogy)</p>
-    </div>
-</div><div class="sc-title-card teal">
-    <span class="sc-title-label">Team</span>
-    <h3 class="sc-title-text">Meta-science & Research</h3>
-</div><div class="sc-card" onclick="openModal('drrachelheyard')">
-    <img src="/authors/drrachelheyard/avatar.webp" alt="Dr Rachel Heyard" class="sc-card-img" />
-    <div class="sc-card-overlay"></div>
-    <div class="sc-card-content">
-        <h4 class="sc-card-name">Dr Rachel Heyard</h4>
-        <p class="sc-card-role">Director (Meta-science & Research)</p>
-    </div>
-</div><div class="sc-card" onclick="openModal('tomheyman')">
-    <div class="sc-placeholder">TH</div>
-    <div class="sc-card-overlay"></div>
-    <div class="sc-card-content">
-        <h4 class="sc-card-name">Tom Heyman</h4>
-        <p class="sc-card-role">Deputy-Director (Meta-science & Research)</p>
-    </div>
-</div><div class="sc-card" onclick="openModal('berittbarthelmesmsc')">
-    <img src="/authors/berittbarthelmesmsc/avatar.webp" alt="Berit T. Barthelmes, M.Sc." class="sc-card-img" />
-    <div class="sc-card-overlay"></div>
-    <div class="sc-card-content">
-        <h4 class="sc-card-name">Berit T. Barthelmes, M.Sc.</h4>
-        <p class="sc-card-role">Project Manager (Meta-science & Research)</p>
+        <p class="sc-card-role">Director</p>
     </div>
 </div><div class="sc-title-card teal">
     <span class="sc-title-label">Team</span>
@@ -86,7 +45,48 @@ layout: single
     <div class="sc-card-overlay"></div>
     <div class="sc-card-content">
         <h4 class="sc-card-name">Dr. Sarah A. Sauvé</h4>
-        <p class="sc-card-role">Director (Social Justice & DEIA)</p>
+        <p class="sc-card-role">Director</p>
+    </div>
+</div><div class="sc-title-card teal">
+    <span class="sc-title-label">Team</span>
+    <h3 class="sc-title-text">Education & Pedagogy</h3>
+</div><div class="sc-card" onclick="openModal('drmadeleinepownall')">
+    <img src="/authors/drmadeleinepownall/avatar.webp" alt="Dr Madeleine Pownall" class="sc-card-img" />
+    <div class="sc-card-overlay"></div>
+    <div class="sc-card-content">
+        <h4 class="sc-card-name">Dr Madeleine Pownall</h4>
+        <p class="sc-card-role">Director</p>
+    </div>
+</div><div class="sc-card" onclick="openModal('lornahamilton')">
+    <div class="sc-placeholder">LH</div>
+    <div class="sc-card-overlay"></div>
+    <div class="sc-card-content">
+        <h4 class="sc-card-name">Lorna Hamilton</h4>
+        <p class="sc-card-role">Deputy-Director</p>
+    </div>
+</div><div class="sc-title-card teal">
+    <span class="sc-title-label">Team</span>
+    <h3 class="sc-title-text">Meta-science & Research</h3>
+</div><div class="sc-card" onclick="openModal('drrachelheyard')">
+    <img src="/authors/drrachelheyard/avatar.webp" alt="Dr Rachel Heyard" class="sc-card-img" />
+    <div class="sc-card-overlay"></div>
+    <div class="sc-card-content">
+        <h4 class="sc-card-name">Dr Rachel Heyard</h4>
+        <p class="sc-card-role">Director</p>
+    </div>
+</div><div class="sc-card" onclick="openModal('tomheyman')">
+    <div class="sc-placeholder">TH</div>
+    <div class="sc-card-overlay"></div>
+    <div class="sc-card-content">
+        <h4 class="sc-card-name">Tom Heyman</h4>
+        <p class="sc-card-role">Deputy-Director</p>
+    </div>
+</div><div class="sc-card" onclick="openModal('berittbarthelmesmsc')">
+    <img src="/authors/berittbarthelmesmsc/avatar.webp" alt="Berit T. Barthelmes, M.Sc." class="sc-card-img" />
+    <div class="sc-card-overlay"></div>
+    <div class="sc-card-content">
+        <h4 class="sc-card-name">Berit T. Barthelmes, M.Sc.</h4>
+        <p class="sc-card-role">Project Manager</p>
     </div>
 </div>
     </div>
@@ -96,10 +96,34 @@ layout: single
             <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.1a2 2 0 0 1-1-1.74v-.47a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"/><circle cx="12" cy="12" r="3"/></svg>
             <span>Operations & Stewardship</span>
         </div>
-        <p class="sc-section-desc">Infrastructure, ethical oversight, and support systems powering FORRT.</p>
+        <p class="sc-section-desc">Infrastructure, community management, ethical oversight, and support systems powering FORRT.</p>
     </div>
     <div class="sc-grid">
         <div class="sc-title-card slate">
+    <span class="sc-title-label">Team</span>
+    <h3 class="sc-title-text">Community Management</h3>
+</div><div class="sc-card" onclick="openModal('dramandakaymontoya')">
+    <img src="/authors/dramandakaymontoya/avatar.webp" alt="Dr. Amanda Kay Montoya" class="sc-card-img" />
+    <div class="sc-card-overlay"></div>
+    <div class="sc-card-content">
+        <h4 class="sc-card-name">Dr. Amanda Kay Montoya</h4>
+        <p class="sc-card-role">Director</p>
+    </div>
+</div><div class="sc-card" onclick="openModal('drkellylloyd')">
+    <img src="/authors/drkellylloyd/avatar.webp" alt="Dr Kelly Lloyd" class="sc-card-img" />
+    <div class="sc-card-overlay"></div>
+    <div class="sc-card-content">
+        <h4 class="sc-card-name">Dr Kelly Lloyd</h4>
+        <p class="sc-card-role">Cohesion-Liaison</p>
+    </div>
+</div><div class="sc-card" onclick="openModal('giorgiaandreolli')">
+    <div class="sc-placeholder">GA</div>
+    <div class="sc-card-overlay"></div>
+    <div class="sc-card-content">
+        <h4 class="sc-card-name">Giorgia Andreolli</h4>
+        <p class="sc-card-role">Cohesion-Liaison</p>
+    </div>
+</div><div class="sc-title-card slate">
     <span class="sc-title-label">Team</span>
     <h3 class="sc-title-text">Community Engagement</h3>
 </div><div class="sc-card" onclick="openModal('drlukasroseler')">
@@ -107,48 +131,24 @@ layout: single
     <div class="sc-card-overlay"></div>
     <div class="sc-card-content">
         <h4 class="sc-card-name">Dr. Lukas Röseler</h4>
-        <p class="sc-card-role">Community Engagement Infrastructure</p>
+        <p class="sc-card-role">Infrastructure</p>
     </div>
 </div><div class="sc-title-card slate">
     <span class="sc-title-label">Team</span>
-    <h3 class="sc-title-text">Community Management [internal governance]</h3>
-</div><div class="sc-card" onclick="openModal('dramandakaymontoya')">
-    <img src="/authors/dramandakaymontoya/avatar.webp" alt="Dr. Amanda Kay Montoya" class="sc-card-img" />
+    <h3 class="sc-title-text">Sustainability & Strategy</h3>
+</div><div class="sc-card" onclick="openModal('drsarahashcroftjones')">
+    <img src="/authors/drsarahashcroftjones/avatar.webp" alt="Dr Sarah Ashcroft-Jones" class="sc-card-img" />
     <div class="sc-card-overlay"></div>
     <div class="sc-card-content">
-        <h4 class="sc-card-name">Dr. Amanda Kay Montoya</h4>
-        <p class="sc-card-role">Director (Community Management)</p>
+        <h4 class="sc-card-name">Dr Sarah Ashcroft-Jones</h4>
+        <p class="sc-card-role">Director</p>
     </div>
-</div><div class="sc-card" onclick="openModal('drkellylloyd')">
-    <img src="/authors/drkellylloyd/avatar.webp" alt="Dr Kelly Lloyd" class="sc-card-img" />
+</div><div class="sc-card" onclick="openModal('saralilmiddleton')">
+    <div class="sc-placeholder">SM</div>
     <div class="sc-card-overlay"></div>
     <div class="sc-card-content">
-        <h4 class="sc-card-name">Dr Kelly Lloyd</h4>
-        <p class="sc-card-role">Community Cohesion-Liaison </p>
-    </div>
-</div><div class="sc-card" onclick="openModal('giorgiaandreolli')">
-    <div class="sc-placeholder">GA</div>
-    <div class="sc-card-overlay"></div>
-    <div class="sc-card-content">
-        <h4 class="sc-card-name">Giorgia Andreolli</h4>
-        <p class="sc-card-role">Community Cohesion-Liaison </p>
-    </div>
-</div><div class="sc-title-card slate">
-    <span class="sc-title-label">Team</span>
-    <h3 class="sc-title-text">Digital Infrastructure Team</h3>
-</div><div class="sc-card" onclick="openModal('justinsulik')">
-    <div class="sc-placeholder">JS</div>
-    <div class="sc-card-overlay"></div>
-    <div class="sc-card-content">
-        <h4 class="sc-card-name">Justin Sulik</h4>
-        <p class="sc-card-role">Director (Digital Infrastructure Team)</p>
-    </div>
-</div><div class="sc-card" onclick="openModal('dushimemudaherarichard')">
-    <img src="/authors/dushimemudaherarichard/avatar.webp" alt="Dushime Mudahera Richard" class="sc-card-img" />
-    <div class="sc-card-overlay"></div>
-    <div class="sc-card-content">
-        <h4 class="sc-card-name">Dushime Mudahera Richard</h4>
-        <p class="sc-card-role">Website Lead</p>
+        <h4 class="sc-card-name">Sara Lil Middleton</h4>
+        <p class="sc-card-role">Knowledge Manager</p>
     </div>
 </div><div class="sc-title-card slate">
     <span class="sc-title-label">Team</span>
@@ -158,14 +158,75 @@ layout: single
     <div class="sc-card-overlay"></div>
     <div class="sc-card-content">
         <h4 class="sc-card-name">Dr John Shaw</h4>
-        <p class="sc-card-role">Director (Ethics and Inclusion)</p>
+        <p class="sc-card-role">Director</p>
     </div>
 </div><div class="sc-card" onclick="openModal('thomasrhysevan')">
     <div class="sc-placeholder">TE</div>
     <div class="sc-card-overlay"></div>
     <div class="sc-card-content">
         <h4 class="sc-card-name">Thomas Rhys Evan</h4>
-        <p class="sc-card-role">Thomas Rhys Evan</p>
+        <p class="sc-card-role">Advisor</p>
+    </div>
+</div><div class="sc-title-card slate">
+    <span class="sc-title-label">Team</span>
+    <h3 class="sc-title-text">Fundraising</h3>
+</div><div class="sc-card" onclick="openModal('drmaxkorbmacher')">
+    <img src="/authors/drmaxkorbmacher/avatar.webp" alt="Dr Max Korbmacher" class="sc-card-img" />
+    <div class="sc-card-overlay"></div>
+    <div class="sc-card-content">
+        <h4 class="sc-card-name">Dr Max Korbmacher</h4>
+        <p class="sc-card-role">Director</p>
+    </div>
+</div><div class="sc-card" onclick="openModal('karenmatvienkosikar')">
+    <div class="sc-placeholder">KM</div>
+    <div class="sc-card-overlay"></div>
+    <div class="sc-card-content">
+        <h4 class="sc-card-name">Karen Matvienko-Sikar</h4>
+        <p class="sc-card-role">Co-Director</p>
+    </div>
+</div><div class="sc-card" onclick="openModal('fotismystakopoulosphdstudent')">
+    <img src="/authors/fotismystakopoulosphdstudent/avatar.webp" alt="Fotis Mystakopoulos, PhD Student" class="sc-card-img" />
+    <div class="sc-card-overlay"></div>
+    <div class="sc-card-content">
+        <h4 class="sc-card-name">Fotis Mystakopoulos, PhD Student</h4>
+        <p class="sc-card-role">Officer</p>
+    </div>
+</div><div class="sc-title-card slate">
+    <span class="sc-title-label">Team</span>
+    <h3 class="sc-title-text">Financial Transparency</h3>
+</div><div class="sc-card" onclick="openModal('aliciatamaraveersmabarredo')">
+    <img src="/authors/aliciatamaraveersmabarredo/avatar.webp" alt="Alicia Tamara Veersma Barredo" class="sc-card-img" />
+    <div class="sc-card-overlay"></div>
+    <div class="sc-card-content">
+        <h4 class="sc-card-name">Alicia Tamara Veersma Barredo</h4>
+        <p class="sc-card-role">Officer</p>
+    </div>
+</div><div class="sc-title-card slate">
+    <span class="sc-title-label">Team</span>
+    <h3 class="sc-title-text">Partnerships</h3>
+</div><div class="sc-card" onclick="openModal('adampartridge')">
+    <div class="sc-placeholder">AP</div>
+    <div class="sc-card-overlay"></div>
+    <div class="sc-card-content">
+        <h4 class="sc-card-name">Adam Partridge</h4>
+        <p class="sc-card-role">Director</p>
+    </div>
+</div><div class="sc-title-card slate">
+    <span class="sc-title-label">Team</span>
+    <h3 class="sc-title-text">Digital Infrastructure Team</h3>
+</div><div class="sc-card" onclick="openModal('justinsulik')">
+    <div class="sc-placeholder">JS</div>
+    <div class="sc-card-overlay"></div>
+    <div class="sc-card-content">
+        <h4 class="sc-card-name">Justin Sulik</h4>
+        <p class="sc-card-role">Director</p>
+    </div>
+</div><div class="sc-card" onclick="openModal('dushimemudaherarichard')">
+    <img src="/authors/dushimemudaherarichard/avatar.webp" alt="Dushime Mudahera Richard" class="sc-card-img" />
+    <div class="sc-card-overlay"></div>
+    <div class="sc-card-content">
+        <h4 class="sc-card-name">Dushime Mudahera Richard</h4>
+        <p class="sc-card-role">Website Lead</p>
     </div>
 </div><div class="sc-title-card slate">
     <span class="sc-title-label">Team</span>
@@ -198,86 +259,15 @@ layout: single
         <h4 class="sc-card-name">Cass Gheoghe</h4>
         <p class="sc-card-role">FORRT Steward</p>
     </div>
-</div><div class="sc-title-card slate">
-    <span class="sc-title-label">Team</span>
-    <h3 class="sc-title-text">Financial Transparency</h3>
-</div><div class="sc-card" onclick="openModal('aliciatamaraveersmabarredo')">
-    <img src="/authors/aliciatamaraveersmabarredo/avatar.webp" alt="Alicia Tamara Veersma Barredo" class="sc-card-img" />
-    <div class="sc-card-overlay"></div>
-    <div class="sc-card-content">
-        <h4 class="sc-card-name">Alicia Tamara Veersma Barredo</h4>
-        <p class="sc-card-role">Officer (Financial Transparency)</p>
-    </div>
-</div><div class="sc-title-card slate">
-    <span class="sc-title-label">Team</span>
-    <h3 class="sc-title-text">Fundraising</h3>
-</div><div class="sc-card" onclick="openModal('drmaxkorbmacher')">
-    <img src="/authors/drmaxkorbmacher/avatar.webp" alt="Dr Max Korbmacher" class="sc-card-img" />
-    <div class="sc-card-overlay"></div>
-    <div class="sc-card-content">
-        <h4 class="sc-card-name">Dr Max Korbmacher</h4>
-        <p class="sc-card-role">Director (Fundraising)</p>
-    </div>
-</div><div class="sc-card" onclick="openModal('karenmatvienkosikar')">
-    <div class="sc-placeholder">KM</div>
-    <div class="sc-card-overlay"></div>
-    <div class="sc-card-content">
-        <h4 class="sc-card-name">Karen Matvienko-Sikar</h4>
-        <p class="sc-card-role">Co-Director (Fundraising)</p>
-    </div>
-</div><div class="sc-card" onclick="openModal('fotismystakopoulosphdstudent')">
-    <img src="/authors/fotismystakopoulosphdstudent/avatar.webp" alt="Fotis Mystakopoulos, PhD Student" class="sc-card-img" />
-    <div class="sc-card-overlay"></div>
-    <div class="sc-card-content">
-        <h4 class="sc-card-name">Fotis Mystakopoulos, PhD Student</h4>
-        <p class="sc-card-role">Officer (Fundraising)</p>
-    </div>
-</div><div class="sc-title-card slate">
-    <span class="sc-title-label">Team</span>
-    <h3 class="sc-title-text">Ombudsman</h3>
-</div><div class="sc-card" onclick="openModal('thomasrhysevans')">
-    <div class="sc-placeholder">TE</div>
-    <div class="sc-card-overlay"></div>
-    <div class="sc-card-content">
-        <h4 class="sc-card-name">Thomas Rhys Evans</h4>
-        <p class="sc-card-role">Thomas Rhys Evan</p>
-    </div>
-</div><div class="sc-title-card slate">
-    <span class="sc-title-label">Team</span>
-    <h3 class="sc-title-text">Partnerships</h3>
-</div><div class="sc-card" onclick="openModal('adampartridge')">
-    <div class="sc-placeholder">AP</div>
-    <div class="sc-card-overlay"></div>
-    <div class="sc-card-content">
-        <h4 class="sc-card-name">Adam Partridge</h4>
-        <p class="sc-card-role">Director (Partnerships)</p>
-    </div>
-</div><div class="sc-title-card slate">
-    <span class="sc-title-label">Team</span>
-    <h3 class="sc-title-text">Sustainability & Strategy</h3>
-</div><div class="sc-card" onclick="openModal('drsarahashcroftjones')">
-    <img src="/authors/drsarahashcroftjones/avatar.webp" alt="Dr Sarah Ashcroft-Jones" class="sc-card-img" />
-    <div class="sc-card-overlay"></div>
-    <div class="sc-card-content">
-        <h4 class="sc-card-name">Dr Sarah Ashcroft-Jones</h4>
-        <p class="sc-card-role">Director (Sustainability & Strategy)</p>
-    </div>
-</div><div class="sc-card" onclick="openModal('saralilmiddleton')">
-    <div class="sc-placeholder">SM</div>
-    <div class="sc-card-overlay"></div>
-    <div class="sc-card-content">
-        <h4 class="sc-card-name">Sara Lil Middleton</h4>
-        <p class="sc-card-role">Knowledge Manager (Sustainability & Strategy)</p>
-    </div>
 </div>
     </div>
 </section><section class="sc-section" id="steering">
     <div class="sc-section-header">
         <div class="sc-section-title">
             <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="5" r="3"/><line x1="12" x2="12" y1="22" y2="8"/><path d="M5 12H2a10 10 0 0 0 20 0h-3"/></svg>
-            <span>Steering Committee</span>
+            <span>Organisational Leadership</span>
         </div>
-        <p class="sc-section-desc">High-level guidance, governance, and strategic oversight.</p>
+        <p class="sc-section-desc">Coordination and strategic direction for FORRT's mission and vision.</p>
     </div>
     <div class="sc-grid">
         <div class="sc-card" onclick="openModal('samparsons')">
@@ -285,21 +275,28 @@ layout: single
     <div class="sc-card-overlay"></div>
     <div class="sc-card-content">
         <h4 class="sc-card-name">Sam Parsons</h4>
-        <p class="sc-card-role">Stewardship Council Chair</p>
+        <p class="sc-card-role">Stewardship Panel</p>
+    </div>
+</div><div class="sc-card" onclick="openModal('thomasrhysevans')">
+    <div class="sc-placeholder">TE</div>
+    <div class="sc-card-overlay"></div>
+    <div class="sc-card-content">
+        <h4 class="sc-card-name">Thomas Rhys Evans</h4>
+        <p class="sc-card-role">Ombudsman</p>
     </div>
 </div><div class="sc-card" onclick="openModal('drlukaswallrich')">
     <img src="/authors/drlukaswallrich/avatar.webp" alt="Dr Lukas Wallrich" class="sc-card-img" />
     <div class="sc-card-overlay"></div>
     <div class="sc-card-content">
         <h4 class="sc-card-name">Dr Lukas Wallrich</h4>
-        <p class="sc-card-role">Co-Director of FORRT</p>
+        <p class="sc-card-role">Co-Chair</p>
     </div>
 </div><div class="sc-card" onclick="openModal('flavioazevedo')">
     <div class="sc-placeholder">FA</div>
     <div class="sc-card-overlay"></div>
     <div class="sc-card-content">
         <h4 class="sc-card-name">Flavio Azevedo</h4>
-        <p class="sc-card-role">Director of FORRT</p>
+        <p class="sc-card-role">Director</p>
     </div>
 </div>
     </div>
@@ -327,6 +324,32 @@ layout: single
                     <h3 class="sc-modal-name">dr. Steven Verheyen</h3>
                     <p class="sc-modal-role">Director (Community & Sustainability)</p>
                     <div class="sc-modal-bio">Steven Verheyen is an Assistant Professor of Cognitive Psychology at Erasmus University Rotterdam, where he also coordinates the Open Science Community Rotterdam and is Open Science Champion of the Erasmus School of Social and Behavioural Sciences. His work on individual differences in language use is positioned at the intersection of quantitative psychology, philosophy of language, and cognitive linguistics. He also conducts meta-scientific research on incentivization, contributorship, conflicts of interest, and replication. He is currently serving as editor of the Review of Philosophy and Psychology, PCI Psychology, and Replication Research.  At FORRT, he aims to promote open and responsible research through pedagogical reform.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div><div id="modal-drsarahasauve" class="sc-modal-backdrop">
+    <div class="sc-modal-content">
+        <div class="sc-modal-header">
+            <button onclick="closeModal('drsarahasauve')" class="sc-close-btn">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 18 12"/></svg>
+            </button>
+        </div>
+        <div class="sc-modal-body">
+            <div class="sc-modal-layout">
+                <div class="sc-modal-sidebar">
+                    <div class="sc-modal-img">
+                        <img src="/authors/drsarahasauve/avatar.webp" alt="Dr. Sarah A. Sauvé" />
+                    </div>
+                    <div class="sc-social-links">
+                        <a href="https://staff.lincoln.ac.uk/8ebcbc1e-6ca0-4fde-b6ad-42775c65d754" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-slate-800 transition-colors"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" x2="22" y1="12" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></a><a href="mailto:ssauve@lincoln.ac.uk" class="text-slate-400 hover:text-slate-800 transition-colors"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg></a>
+                    </div>
+                </div>
+                <div class="sc-modal-main">
+                    <h3 class="sc-modal-name">Dr. Sarah A. Sauvé</h3>
+                    <p class="sc-modal-role">Director (Social Justice & DEIA)</p>
+                    <div class="sc-modal-bio">Dr. Sarah Sauvé is currently a Lecturer in Psychology at the University of Lincoln. She is a white immigrant living and working on the land of the people who colonized the land on which she was born and spent most of her life so far. She is interested in applying feminist and critical theory and praxis to music science research, where her specialties include the neuroscience of learning, music perception in older adults, computational modeling and public engagement.
+In FORRT, she has been involved in co-leading Team Citational Politics and is very excited to be part of FORRT&#x27;s first steering committee as Director of Social Justice and DEIA!</div>
                 </div>
             </div>
         </div>
@@ -456,57 +479,6 @@ layout: single
             </div>
         </div>
     </div>
-</div><div id="modal-drsarahasauve" class="sc-modal-backdrop">
-    <div class="sc-modal-content">
-        <div class="sc-modal-header">
-            <button onclick="closeModal('drsarahasauve')" class="sc-close-btn">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 18 12"/></svg>
-            </button>
-        </div>
-        <div class="sc-modal-body">
-            <div class="sc-modal-layout">
-                <div class="sc-modal-sidebar">
-                    <div class="sc-modal-img">
-                        <img src="/authors/drsarahasauve/avatar.webp" alt="Dr. Sarah A. Sauvé" />
-                    </div>
-                    <div class="sc-social-links">
-                        <a href="https://staff.lincoln.ac.uk/8ebcbc1e-6ca0-4fde-b6ad-42775c65d754" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-slate-800 transition-colors"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" x2="22" y1="12" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></a><a href="mailto:ssauve@lincoln.ac.uk" class="text-slate-400 hover:text-slate-800 transition-colors"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg></a>
-                    </div>
-                </div>
-                <div class="sc-modal-main">
-                    <h3 class="sc-modal-name">Dr. Sarah A. Sauvé</h3>
-                    <p class="sc-modal-role">Director (Social Justice & DEIA)</p>
-                    <div class="sc-modal-bio">Dr. Sarah Sauvé is currently a Lecturer in Psychology at the University of Lincoln. She is a white immigrant living and working on the land of the people who colonized the land on which she was born and spent most of her life so far. She is interested in applying feminist and critical theory and praxis to music science research, where her specialties include the neuroscience of learning, music perception in older adults, computational modeling and public engagement.
-In FORRT, she has been involved in co-leading Team Citational Politics and is very excited to be part of FORRT&#x27;s first steering committee as Director of Social Justice and DEIA!</div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div><div id="modal-drlukasroseler" class="sc-modal-backdrop">
-    <div class="sc-modal-content">
-        <div class="sc-modal-header">
-            <button onclick="closeModal('drlukasroseler')" class="sc-close-btn">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 18 12"/></svg>
-            </button>
-        </div>
-        <div class="sc-modal-body">
-            <div class="sc-modal-layout">
-                <div class="sc-modal-sidebar">
-                    <div class="sc-modal-img">
-                        <span style="font-size: 2rem; color: #94a3b8; font-weight: 600;">DR</span>
-                    </div>
-                    <div class="sc-social-links">
-                        <a href="https://lukasroeseler.github.io/home/" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-slate-800 transition-colors"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" x2="22" y1="12" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></a><a href="mailto:lukas.roeseler@uni-muenster.de" class="text-slate-400 hover:text-slate-800 transition-colors"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg></a>
-                    </div>
-                </div>
-                <div class="sc-modal-main">
-                    <h3 class="sc-modal-name">Dr. Lukas Röseler</h3>
-                    <p class="sc-modal-role">Community Engagement Infrastructure</p>
-                    <div class="sc-modal-bio">Lukas studied consumer behavior and market research, PhD in psychology, and currently managing director of the Münster Center for Open Science where he is responsible to support members of the University of Münster with respect to Open Science. Lukas is heavily invested in repetitive research and has been creating open resources and open infrastructure to support replications and reproductions (e.g., a database, handbook, and academic journal).</div>
-                </div>
-            </div>
-        </div>
-    </div>
 </div><div id="modal-dramandakaymontoya" class="sc-modal-backdrop">
     <div class="sc-modal-content">
         <div class="sc-modal-header">
@@ -582,10 +554,10 @@ In FORRT, she has been involved in co-leading Team Citational Politics and is ve
             </div>
         </div>
     </div>
-</div><div id="modal-justinsulik" class="sc-modal-backdrop">
+</div><div id="modal-drlukasroseler" class="sc-modal-backdrop">
     <div class="sc-modal-content">
         <div class="sc-modal-header">
-            <button onclick="closeModal('justinsulik')" class="sc-close-btn">
+            <button onclick="closeModal('drlukasroseler')" class="sc-close-btn">
                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 18 12"/></svg>
             </button>
         </div>
@@ -593,40 +565,65 @@ In FORRT, she has been involved in co-leading Team Citational Politics and is ve
             <div class="sc-modal-layout">
                 <div class="sc-modal-sidebar">
                     <div class="sc-modal-img">
-                        <span style="font-size: 2rem; color: #94a3b8; font-weight: 600;">JS</span>
+                        <span style="font-size: 2rem; color: #94a3b8; font-weight: 600;">DR</span>
+                    </div>
+                    <div class="sc-social-links">
+                        <a href="https://lukasroeseler.github.io/home/" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-slate-800 transition-colors"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" x2="22" y1="12" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></a><a href="mailto:lukas.roeseler@uni-muenster.de" class="text-slate-400 hover:text-slate-800 transition-colors"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg></a>
+                    </div>
+                </div>
+                <div class="sc-modal-main">
+                    <h3 class="sc-modal-name">Dr. Lukas Röseler</h3>
+                    <p class="sc-modal-role">Community Engagement Infrastructure</p>
+                    <div class="sc-modal-bio">Lukas studied consumer behavior and market research, PhD in psychology, and currently managing director of the Münster Center for Open Science where he is responsible to support members of the University of Münster with respect to Open Science. Lukas is heavily invested in repetitive research and has been creating open resources and open infrastructure to support replications and reproductions (e.g., a database, handbook, and academic journal).</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div><div id="modal-drsarahashcroftjones" class="sc-modal-backdrop">
+    <div class="sc-modal-content">
+        <div class="sc-modal-header">
+            <button onclick="closeModal('drsarahashcroftjones')" class="sc-close-btn">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 18 12"/></svg>
+            </button>
+        </div>
+        <div class="sc-modal-body">
+            <div class="sc-modal-layout">
+                <div class="sc-modal-sidebar">
+                    <div class="sc-modal-img">
+                        <img src="/authors/drsarahashcroftjones/avatar.webp" alt="Dr Sarah Ashcroft-Jones" />
+                    </div>
+                    <div class="sc-social-links">
+                        <a href="https://sarahashcroftjones.com/" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-slate-800 transition-colors"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" x2="22" y1="12" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></a><a href="mailto:sarah.ashcroft-jones@columbia.edu" class="text-slate-400 hover:text-slate-800 transition-colors"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg></a>
+                    </div>
+                </div>
+                <div class="sc-modal-main">
+                    <h3 class="sc-modal-name">Dr Sarah Ashcroft-Jones</h3>
+                    <p class="sc-modal-role">Director (Sustainability & Strategy)</p>
+                    <div class="sc-modal-bio">Sarah Ashcroft-Jones is a researcher of the psychological and behavioural sciences at the Columbia University Mailman School of Public Health. Her research interests include decision making, categorisation, and cognitive biases. Her current work focuses on understanding the individual and structural factors that influence financial and health behaviours. She leads the Junior Researcher Programme, which develops opportunities for early career researchers in the psychological and behavioural sciences. She is an advocate of open science practices and open pedagogy. </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div><div id="modal-saralilmiddleton" class="sc-modal-backdrop">
+    <div class="sc-modal-content">
+        <div class="sc-modal-header">
+            <button onclick="closeModal('saralilmiddleton')" class="sc-close-btn">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 18 12"/></svg>
+            </button>
+        </div>
+        <div class="sc-modal-body">
+            <div class="sc-modal-layout">
+                <div class="sc-modal-sidebar">
+                    <div class="sc-modal-img">
+                        <span style="font-size: 2rem; color: #94a3b8; font-weight: 600;">SM</span>
                     </div>
                     <div class="sc-social-links">
                         
                     </div>
                 </div>
                 <div class="sc-modal-main">
-                    <h3 class="sc-modal-name">Justin Sulik</h3>
-                    <p class="sc-modal-role">Director (Digital Infrastructure Team)</p>
-                    <div class="sc-modal-bio">Bio coming soon.</div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div><div id="modal-dushimemudaherarichard" class="sc-modal-backdrop">
-    <div class="sc-modal-content">
-        <div class="sc-modal-header">
-            <button onclick="closeModal('dushimemudaherarichard')" class="sc-close-btn">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 18 12"/></svg>
-            </button>
-        </div>
-        <div class="sc-modal-body">
-            <div class="sc-modal-layout">
-                <div class="sc-modal-sidebar">
-                    <div class="sc-modal-img">
-                        <img src="/authors/dushimemudaherarichard/avatar.webp" alt="Dushime Mudahera Richard" />
-                    </div>
-                    <div class="sc-social-links">
-                        <a href="https://richarddushime.netlify.app/" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-slate-800 transition-colors"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" x2="22" y1="12" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></a><a href="mailto:mudaherarich@gmail.com" class="text-slate-400 hover:text-slate-800 transition-colors"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg></a>
-                    </div>
-                </div>
-                <div class="sc-modal-main">
-                    <h3 class="sc-modal-name">Dushime Mudahera Richard</h3>
-                    <p class="sc-modal-role">Website Lead</p>
+                    <h3 class="sc-modal-name">Sara Lil Middleton</h3>
+                    <p class="sc-modal-role">Knowledge Manager (Sustainability & Strategy)</p>
                     <div class="sc-modal-bio">Bio coming soon.</div>
                 </div>
             </div>
@@ -676,7 +673,189 @@ In FORRT, she has been involved in co-leading Team Citational Politics and is ve
                 </div>
                 <div class="sc-modal-main">
                     <h3 class="sc-modal-name">Thomas Rhys Evan</h3>
-                    <p class="sc-modal-role">Thomas Rhys Evan</p>
+                    <p class="sc-modal-role">Advisor (Ethics and Inclusion)</p>
+                    <div class="sc-modal-bio">Bio coming soon.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div><div id="modal-drmaxkorbmacher" class="sc-modal-backdrop">
+    <div class="sc-modal-content">
+        <div class="sc-modal-header">
+            <button onclick="closeModal('drmaxkorbmacher')" class="sc-close-btn">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 18 12"/></svg>
+            </button>
+        </div>
+        <div class="sc-modal-body">
+            <div class="sc-modal-layout">
+                <div class="sc-modal-sidebar">
+                    <div class="sc-modal-img">
+                        <img src="/authors/drmaxkorbmacher/avatar.webp" alt="Dr Max Korbmacher" />
+                    </div>
+                    <div class="sc-social-links">
+                        <a href="https://scholar.google.com/citations?user=aZbaBqQAAAAJ&hl=no" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-slate-800 transition-colors"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" x2="22" y1="12" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></a><a href="mailto:nan" class="text-slate-400 hover:text-slate-800 transition-colors"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg></a>
+                    </div>
+                </div>
+                <div class="sc-modal-main">
+                    <h3 class="sc-modal-name">Dr Max Korbmacher</h3>
+                    <p class="sc-modal-role">Director (Fundraising)</p>
+                    <div class="sc-modal-bio">Max Korbmacher is a neuroscientist with a research focus at the intersection of basic and translational brain science. His primary work involves the analysis of large-scale neuroimaging datasets to develop and adapt machine learning models that generalize from healthy populations to individuals with neurological disorders. These models are informed by ageing research and aim to elucidate mechanisms of brain structure and clinical presentation across the lifespan. His broader research interests span neurology, psychology, and meta-science, with a particular emphasis on enhancing the transparency, reproducibility, and interpretability of empirical research. Dr. Korbmacher is actively engaged in interdisciplinary collaborations and contributes to ongoing efforts to strengthen methodological standards in neuroscience and beyond.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div><div id="modal-karenmatvienkosikar" class="sc-modal-backdrop">
+    <div class="sc-modal-content">
+        <div class="sc-modal-header">
+            <button onclick="closeModal('karenmatvienkosikar')" class="sc-close-btn">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 18 12"/></svg>
+            </button>
+        </div>
+        <div class="sc-modal-body">
+            <div class="sc-modal-layout">
+                <div class="sc-modal-sidebar">
+                    <div class="sc-modal-img">
+                        <span style="font-size: 2rem; color: #94a3b8; font-weight: 600;">KM</span>
+                    </div>
+                    <div class="sc-social-links">
+                        
+                    </div>
+                </div>
+                <div class="sc-modal-main">
+                    <h3 class="sc-modal-name">Karen Matvienko-Sikar</h3>
+                    <p class="sc-modal-role">Co-Director (Fundraising)</p>
+                    <div class="sc-modal-bio">Bio coming soon.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div><div id="modal-fotismystakopoulosphdstudent" class="sc-modal-backdrop">
+    <div class="sc-modal-content">
+        <div class="sc-modal-header">
+            <button onclick="closeModal('fotismystakopoulosphdstudent')" class="sc-close-btn">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 18 12"/></svg>
+            </button>
+        </div>
+        <div class="sc-modal-body">
+            <div class="sc-modal-layout">
+                <div class="sc-modal-sidebar">
+                    <div class="sc-modal-img">
+                        <img src="/authors/fotismystakopoulosphdstudent/avatar.webp" alt="Fotis Mystakopoulos, PhD Student" />
+                    </div>
+                    <div class="sc-social-links">
+                        <a href="nan" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-slate-800 transition-colors"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" x2="22" y1="12" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></a><a href="mailto:fmystakopoulos@uniwa.gr" class="text-slate-400 hover:text-slate-800 transition-colors"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg></a>
+                    </div>
+                </div>
+                <div class="sc-modal-main">
+                    <h3 class="sc-modal-name">Fotis Mystakopoulos, PhD Student</h3>
+                    <p class="sc-modal-role">Officer (Fundraising)</p>
+                    <div class="sc-modal-bio">Fotis Mystakopoulos is a professional actively engaged in advancing Open Science. His career trajectory reflects the evolution of information science, from its traditional roots in library services to its modern role in shaping research policy and data infrastructure. With a background in Library and Information Science, he has developed expertise in key areas of scholarly communication, including Responsible Research Assessment, Open Access, Open Science Training, and Research Data Management.
+
+Beyond his formal roles, he is actively engaged in community building, supporting initiatives that connect researchers and professionals around shared values and practices of openness and advocating for cultural change in academia that aligns with the ethos of Open Science.
+Currently, alongside his professional duties, he is pursuing a PhD at the University of West Attica, examining the evolution of academic libraries, and theire services within the expanding global landscape of Open Science.
+
+
+
+</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div><div id="modal-aliciatamaraveersmabarredo" class="sc-modal-backdrop">
+    <div class="sc-modal-content">
+        <div class="sc-modal-header">
+            <button onclick="closeModal('aliciatamaraveersmabarredo')" class="sc-close-btn">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 18 12"/></svg>
+            </button>
+        </div>
+        <div class="sc-modal-body">
+            <div class="sc-modal-layout">
+                <div class="sc-modal-sidebar">
+                    <div class="sc-modal-img">
+                        <img src="/authors/aliciatamaraveersmabarredo/avatar.webp" alt="Alicia Tamara Veersma Barredo" />
+                    </div>
+                    <div class="sc-social-links">
+                        <a href="nan" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-slate-800 transition-colors"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" x2="22" y1="12" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></a><a href="mailto:nan" class="text-slate-400 hover:text-slate-800 transition-colors"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg></a>
+                    </div>
+                </div>
+                <div class="sc-modal-main">
+                    <h3 class="sc-modal-name">Alicia Tamara Veersma Barredo</h3>
+                    <p class="sc-modal-role">Officer (Financial Transparency)</p>
+                    <div class="sc-modal-bio">I recently joined FORRT and am beginning to support the team with operational and administrative tasks, especially in accounting and coordination. I’m excited to contribute to FORRT’s mission of fostering open and reproducible research and to learn more about the work that makes such initiatives possible. My background is in office administration and project organization, and I’m particularly interested in how clear structures and good processes can help teams work more effectively.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div><div id="modal-adampartridge" class="sc-modal-backdrop">
+    <div class="sc-modal-content">
+        <div class="sc-modal-header">
+            <button onclick="closeModal('adampartridge')" class="sc-close-btn">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 18 12"/></svg>
+            </button>
+        </div>
+        <div class="sc-modal-body">
+            <div class="sc-modal-layout">
+                <div class="sc-modal-sidebar">
+                    <div class="sc-modal-img">
+                        <span style="font-size: 2rem; color: #94a3b8; font-weight: 600;">AP</span>
+                    </div>
+                    <div class="sc-social-links">
+                        
+                    </div>
+                </div>
+                <div class="sc-modal-main">
+                    <h3 class="sc-modal-name">Adam Partridge</h3>
+                    <p class="sc-modal-role">Director (Partnerships)</p>
+                    <div class="sc-modal-bio">Bio coming soon.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div><div id="modal-justinsulik" class="sc-modal-backdrop">
+    <div class="sc-modal-content">
+        <div class="sc-modal-header">
+            <button onclick="closeModal('justinsulik')" class="sc-close-btn">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 18 12"/></svg>
+            </button>
+        </div>
+        <div class="sc-modal-body">
+            <div class="sc-modal-layout">
+                <div class="sc-modal-sidebar">
+                    <div class="sc-modal-img">
+                        <span style="font-size: 2rem; color: #94a3b8; font-weight: 600;">JS</span>
+                    </div>
+                    <div class="sc-social-links">
+                        
+                    </div>
+                </div>
+                <div class="sc-modal-main">
+                    <h3 class="sc-modal-name">Justin Sulik</h3>
+                    <p class="sc-modal-role">Director (Digital Infrastructure Team)</p>
+                    <div class="sc-modal-bio">Bio coming soon.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div><div id="modal-dushimemudaherarichard" class="sc-modal-backdrop">
+    <div class="sc-modal-content">
+        <div class="sc-modal-header">
+            <button onclick="closeModal('dushimemudaherarichard')" class="sc-close-btn">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 18 12"/></svg>
+            </button>
+        </div>
+        <div class="sc-modal-body">
+            <div class="sc-modal-layout">
+                <div class="sc-modal-sidebar">
+                    <div class="sc-modal-img">
+                        <img src="/authors/dushimemudaherarichard/avatar.webp" alt="Dushime Mudahera Richard" />
+                    </div>
+                    <div class="sc-social-links">
+                        <a href="https://richarddushime.netlify.app/" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-slate-800 transition-colors"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" x2="22" y1="12" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></a><a href="mailto:mudaherarich@gmail.com" class="text-slate-400 hover:text-slate-800 transition-colors"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg></a>
+                    </div>
+                </div>
+                <div class="sc-modal-main">
+                    <h3 class="sc-modal-name">Dushime Mudahera Richard</h3>
+                    <p class="sc-modal-role">Website Lead</p>
                     <div class="sc-modal-bio">Bio coming soon.</div>
                 </div>
             </div>
@@ -782,10 +961,10 @@ In FORRT, she has been involved in co-leading Team Citational Politics and is ve
             </div>
         </div>
     </div>
-</div><div id="modal-aliciatamaraveersmabarredo" class="sc-modal-backdrop">
+</div><div id="modal-samparsons" class="sc-modal-backdrop">
     <div class="sc-modal-content">
         <div class="sc-modal-header">
-            <button onclick="closeModal('aliciatamaraveersmabarredo')" class="sc-close-btn">
+            <button onclick="closeModal('samparsons')" class="sc-close-btn">
                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 18 12"/></svg>
             </button>
         </div>
@@ -793,98 +972,16 @@ In FORRT, she has been involved in co-leading Team Citational Politics and is ve
             <div class="sc-modal-layout">
                 <div class="sc-modal-sidebar">
                     <div class="sc-modal-img">
-                        <img src="/authors/aliciatamaraveersmabarredo/avatar.webp" alt="Alicia Tamara Veersma Barredo" />
-                    </div>
-                    <div class="sc-social-links">
-                        <a href="nan" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-slate-800 transition-colors"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" x2="22" y1="12" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></a><a href="mailto:nan" class="text-slate-400 hover:text-slate-800 transition-colors"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg></a>
-                    </div>
-                </div>
-                <div class="sc-modal-main">
-                    <h3 class="sc-modal-name">Alicia Tamara Veersma Barredo</h3>
-                    <p class="sc-modal-role">Officer (Financial Transparency)</p>
-                    <div class="sc-modal-bio">I recently joined FORRT and am beginning to support the team with operational and administrative tasks, especially in accounting and coordination. I’m excited to contribute to FORRT’s mission of fostering open and reproducible research and to learn more about the work that makes such initiatives possible. My background is in office administration and project organization, and I’m particularly interested in how clear structures and good processes can help teams work more effectively.</div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div><div id="modal-drmaxkorbmacher" class="sc-modal-backdrop">
-    <div class="sc-modal-content">
-        <div class="sc-modal-header">
-            <button onclick="closeModal('drmaxkorbmacher')" class="sc-close-btn">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 18 12"/></svg>
-            </button>
-        </div>
-        <div class="sc-modal-body">
-            <div class="sc-modal-layout">
-                <div class="sc-modal-sidebar">
-                    <div class="sc-modal-img">
-                        <img src="/authors/drmaxkorbmacher/avatar.webp" alt="Dr Max Korbmacher" />
-                    </div>
-                    <div class="sc-social-links">
-                        <a href="https://scholar.google.com/citations?user=aZbaBqQAAAAJ&hl=no" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-slate-800 transition-colors"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" x2="22" y1="12" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></a><a href="mailto:nan" class="text-slate-400 hover:text-slate-800 transition-colors"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg></a>
-                    </div>
-                </div>
-                <div class="sc-modal-main">
-                    <h3 class="sc-modal-name">Dr Max Korbmacher</h3>
-                    <p class="sc-modal-role">Director (Fundraising)</p>
-                    <div class="sc-modal-bio">Max Korbmacher is a neuroscientist with a research focus at the intersection of basic and translational brain science. His primary work involves the analysis of large-scale neuroimaging datasets to develop and adapt machine learning models that generalize from healthy populations to individuals with neurological disorders. These models are informed by ageing research and aim to elucidate mechanisms of brain structure and clinical presentation across the lifespan. His broader research interests span neurology, psychology, and meta-science, with a particular emphasis on enhancing the transparency, reproducibility, and interpretability of empirical research. Dr. Korbmacher is actively engaged in interdisciplinary collaborations and contributes to ongoing efforts to strengthen methodological standards in neuroscience and beyond.</div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div><div id="modal-karenmatvienkosikar" class="sc-modal-backdrop">
-    <div class="sc-modal-content">
-        <div class="sc-modal-header">
-            <button onclick="closeModal('karenmatvienkosikar')" class="sc-close-btn">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 18 12"/></svg>
-            </button>
-        </div>
-        <div class="sc-modal-body">
-            <div class="sc-modal-layout">
-                <div class="sc-modal-sidebar">
-                    <div class="sc-modal-img">
-                        <span style="font-size: 2rem; color: #94a3b8; font-weight: 600;">KM</span>
+                        <span style="font-size: 2rem; color: #94a3b8; font-weight: 600;">SP</span>
                     </div>
                     <div class="sc-social-links">
                         
                     </div>
                 </div>
                 <div class="sc-modal-main">
-                    <h3 class="sc-modal-name">Karen Matvienko-Sikar</h3>
-                    <p class="sc-modal-role">Co-Director (Fundraising)</p>
+                    <h3 class="sc-modal-name">Sam Parsons</h3>
+                    <p class="sc-modal-role">Stewardship Council Chair</p>
                     <div class="sc-modal-bio">Bio coming soon.</div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div><div id="modal-fotismystakopoulosphdstudent" class="sc-modal-backdrop">
-    <div class="sc-modal-content">
-        <div class="sc-modal-header">
-            <button onclick="closeModal('fotismystakopoulosphdstudent')" class="sc-close-btn">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 18 12"/></svg>
-            </button>
-        </div>
-        <div class="sc-modal-body">
-            <div class="sc-modal-layout">
-                <div class="sc-modal-sidebar">
-                    <div class="sc-modal-img">
-                        <img src="/authors/fotismystakopoulosphdstudent/avatar.webp" alt="Fotis Mystakopoulos, PhD Student" />
-                    </div>
-                    <div class="sc-social-links">
-                        <a href="nan" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-slate-800 transition-colors"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" x2="22" y1="12" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></a><a href="mailto:fmystakopoulos@uniwa.gr" class="text-slate-400 hover:text-slate-800 transition-colors"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg></a>
-                    </div>
-                </div>
-                <div class="sc-modal-main">
-                    <h3 class="sc-modal-name">Fotis Mystakopoulos, PhD Student</h3>
-                    <p class="sc-modal-role">Officer (Fundraising)</p>
-                    <div class="sc-modal-bio">Fotis Mystakopoulos is a professional actively engaged in advancing Open Science. His career trajectory reflects the evolution of information science, from its traditional roots in library services to its modern role in shaping research policy and data infrastructure. With a background in Library and Information Science, he has developed expertise in key areas of scholarly communication, including Responsible Research Assessment, Open Access, Open Science Training, and Research Data Management.
-
-Beyond his formal roles, he is actively engaged in community building, supporting initiatives that connect researchers and professionals around shared values and practices of openness and advocating for cultural change in academia that aligns with the ethos of Open Science.
-Currently, alongside his professional duties, he is pursuing a PhD at the University of West Attica, examining the evolution of academic libraries, and theire services within the expanding global landscape of Open Science.
-
-
-
-</div>
                 </div>
             </div>
         </div>
@@ -908,107 +1005,7 @@ Currently, alongside his professional duties, he is pursuing a PhD at the Univer
                 </div>
                 <div class="sc-modal-main">
                     <h3 class="sc-modal-name">Thomas Rhys Evans</h3>
-                    <p class="sc-modal-role">Thomas Rhys Evan</p>
-                    <div class="sc-modal-bio">Bio coming soon.</div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div><div id="modal-adampartridge" class="sc-modal-backdrop">
-    <div class="sc-modal-content">
-        <div class="sc-modal-header">
-            <button onclick="closeModal('adampartridge')" class="sc-close-btn">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 18 12"/></svg>
-            </button>
-        </div>
-        <div class="sc-modal-body">
-            <div class="sc-modal-layout">
-                <div class="sc-modal-sidebar">
-                    <div class="sc-modal-img">
-                        <span style="font-size: 2rem; color: #94a3b8; font-weight: 600;">AP</span>
-                    </div>
-                    <div class="sc-social-links">
-                        
-                    </div>
-                </div>
-                <div class="sc-modal-main">
-                    <h3 class="sc-modal-name">Adam Partridge</h3>
-                    <p class="sc-modal-role">Director (Partnerships)</p>
-                    <div class="sc-modal-bio">Bio coming soon.</div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div><div id="modal-drsarahashcroftjones" class="sc-modal-backdrop">
-    <div class="sc-modal-content">
-        <div class="sc-modal-header">
-            <button onclick="closeModal('drsarahashcroftjones')" class="sc-close-btn">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 18 12"/></svg>
-            </button>
-        </div>
-        <div class="sc-modal-body">
-            <div class="sc-modal-layout">
-                <div class="sc-modal-sidebar">
-                    <div class="sc-modal-img">
-                        <img src="/authors/drsarahashcroftjones/avatar.webp" alt="Dr Sarah Ashcroft-Jones" />
-                    </div>
-                    <div class="sc-social-links">
-                        <a href="https://sarahashcroftjones.com/" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-slate-800 transition-colors"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" x2="22" y1="12" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></a><a href="mailto:sarah.ashcroft-jones@columbia.edu" class="text-slate-400 hover:text-slate-800 transition-colors"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg></a>
-                    </div>
-                </div>
-                <div class="sc-modal-main">
-                    <h3 class="sc-modal-name">Dr Sarah Ashcroft-Jones</h3>
-                    <p class="sc-modal-role">Director (Sustainability & Strategy)</p>
-                    <div class="sc-modal-bio">Sarah Ashcroft-Jones is a researcher of the psychological and behavioural sciences at the Columbia University Mailman School of Public Health. Her research interests include decision making, categorisation, and cognitive biases. Her current work focuses on understanding the individual and structural factors that influence financial and health behaviours. She leads the Junior Researcher Programme, which develops opportunities for early career researchers in the psychological and behavioural sciences. She is an advocate of open science practices and open pedagogy. </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div><div id="modal-saralilmiddleton" class="sc-modal-backdrop">
-    <div class="sc-modal-content">
-        <div class="sc-modal-header">
-            <button onclick="closeModal('saralilmiddleton')" class="sc-close-btn">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 18 12"/></svg>
-            </button>
-        </div>
-        <div class="sc-modal-body">
-            <div class="sc-modal-layout">
-                <div class="sc-modal-sidebar">
-                    <div class="sc-modal-img">
-                        <span style="font-size: 2rem; color: #94a3b8; font-weight: 600;">SM</span>
-                    </div>
-                    <div class="sc-social-links">
-                        
-                    </div>
-                </div>
-                <div class="sc-modal-main">
-                    <h3 class="sc-modal-name">Sara Lil Middleton</h3>
-                    <p class="sc-modal-role">Knowledge Manager (Sustainability & Strategy)</p>
-                    <div class="sc-modal-bio">Bio coming soon.</div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div><div id="modal-samparsons" class="sc-modal-backdrop">
-    <div class="sc-modal-content">
-        <div class="sc-modal-header">
-            <button onclick="closeModal('samparsons')" class="sc-close-btn">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 18 12"/></svg>
-            </button>
-        </div>
-        <div class="sc-modal-body">
-            <div class="sc-modal-layout">
-                <div class="sc-modal-sidebar">
-                    <div class="sc-modal-img">
-                        <span style="font-size: 2rem; color: #94a3b8; font-weight: 600;">SP</span>
-                    </div>
-                    <div class="sc-social-links">
-                        
-                    </div>
-                </div>
-                <div class="sc-modal-main">
-                    <h3 class="sc-modal-name">Sam Parsons</h3>
-                    <p class="sc-modal-role">Stewardship Council Chair</p>
+                    <p class="sc-modal-role">Ombudsman</p>
                     <div class="sc-modal-bio">Bio coming soon.</div>
                 </div>
             </div>
@@ -1088,7 +1085,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     };
 
-    // Close on backdrop click
     document.querySelectorAll('.sc-modal-backdrop').forEach(backdrop => {
         backdrop.addEventListener('click', (e) => {
             if (e.target === backdrop) {
@@ -1107,6 +1103,223 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }
     });
+
+    /* --- Team linking + ordering based on source CSV --- */
+    const SC_ORDER_CSV = "https://docs.google.com/spreadsheets/d/e/2PACX-1vRCHSY7WBvzDSSWyUyOVPRbsf5QxO7Mc40hGB7yanfT-rjbcNthMbHvUxT0NJ3AAfLKfx4YiOghByZT/pub?output=csv";
+    const TEAM_COLORS = ["#2563eb","#c026d3","#ea580c","#22c55e","#0ea5e9","#f59e0b","#ef4444","#8b5cf6","#14b8a6","#f97316"];
+    const BACKGROUND_COLORS = ["#0f766e", "#475569"];
+    const honorifics = /^(dr|dr\.|prof|prof\.|mr|mrs|ms|miss)\s+/i;
+    const normalizeBase = (str = "") => str.normalize("NFD").replace(/[̀-ͯ]/g, "");
+    const normalizeText = (str = "") => normalizeBase(str.replace(/&amp;/gi, "&").trim().toLowerCase());
+    const normalizeTeam = (str = "") => normalizeText(str).replace(/\s+/g, " ");
+    const nameTokens = (str = "") =>
+        normalizeText(str.replace(honorifics, ""))
+            .replace(/[^a-z0-9\s]/g, " ")
+            .split(/\s+/)
+            .filter(Boolean);
+
+    const tokenSimilarity = (aTokens, bTokens) => {
+        if (!aTokens.length || !bTokens.length) return 0;
+        const aSet = new Set(aTokens);
+        const bSet = new Set(bTokens);
+        let intersect = 0;
+        bSet.forEach((t) => {
+            if (aSet.has(t)) intersect += 1;
+        });
+        return intersect / Math.max(aSet.size, bSet.size, 1);
+    };
+
+    const charDice = (aStr, bStr) => {
+        const a = aStr.replace(/\s+/g, "");
+        const b = bStr.replace(/\s+/g, "");
+        if (!a.length || !b.length) return 0;
+        const count = (s) => {
+            const m = {};
+            for (const ch of s) m[ch] = (m[ch] || 0) + 1;
+            return m;
+        };
+        const aCount = count(a);
+        const bCount = count(b);
+        let overlap = 0;
+        Object.keys(aCount).forEach((ch) => {
+            if (bCount[ch]) overlap += Math.min(aCount[ch], bCount[ch]);
+        });
+        return (2 * overlap) / (a.length + b.length);
+    };
+
+    const parseCSV = (text) =>
+        text
+            .trim()
+            .split(/\r?\n/)
+            .map((line) => line.split(",").map((cell) => cell.replace(/^"+|"+$/g, "").trim()));
+
+    const buildOrders = (rows) => {
+        const sectionMap = {};
+        document.querySelectorAll(".sc-section").forEach((sec) => {
+            const title = sec.querySelector(".sc-section-title span")?.textContent || sec.id;
+            sectionMap[normalizeTeam(title)] = sec.id;
+        });
+
+        const findSection = (raw) => {
+            const key = normalizeTeam(raw);
+            if (sectionMap[key]) return sectionMap[key];
+
+            const operationsId = Object.entries(sectionMap).find(([k]) => k.includes('operation'))?.[1];
+            if (operationsId && (key.includes('ombudsman') || key.includes('steward'))) {
+                return operationsId;
+            }
+
+            let best = null;
+            let bestScore = -1;
+            Object.entries(sectionMap).forEach(([k, id]) => {
+                const score = charDice(k, key);
+                if (score > bestScore) {
+                    bestScore = score;
+                    best = id;
+                }
+            });
+            return best || Object.values(sectionMap)[0] || null;
+        };
+
+        const orders = {};
+        rows.slice(1).forEach((row) => {
+            const sectionRaw = row[1];
+            const teamRaw = row[3];
+            const nameRaw = row[5];
+            if (!sectionRaw || !teamRaw || !nameRaw) return;
+            const secKey = findSection(sectionRaw);
+            if (!secKey) return;
+            if (!orders[secKey]) orders[secKey] = [];
+            let group = orders[secKey].find((g) => normalizeTeam(g.team) === normalizeTeam(teamRaw));
+            if (!group) {
+                group = { team: teamRaw, members: [] };
+                orders[secKey].push(group);
+            }
+            group.members.push(nameRaw);
+        });
+        return orders;
+    };
+
+    const reorderAndLink = (sectionId, teams) => {
+        const grid = document.querySelector(`#${sectionId} .sc-grid`);
+        if (!grid || !teams || !teams.length) return;
+
+        const titleCards = Array.from(grid.querySelectorAll('.sc-title-card'));
+        const memberCards = Array.from(grid.querySelectorAll('.sc-card'));
+
+        [...titleCards, ...memberCards].forEach((el) => {
+            el.classList.remove('sc-team-linked', 'sc-team-title');
+            el.style.removeProperty('--team-color');
+        });
+
+        const titleMap = new Map();
+        titleCards.forEach((card) => {
+            const text = card.querySelector('.sc-title-text')?.textContent || "";
+            titleMap.set(normalizeTeam(text), card);
+        });
+
+        const memberMap = [];
+        memberCards.forEach((card) => {
+            const name = card.querySelector('.sc-card-name')?.textContent || "";
+            const tokens = nameTokens(name);
+            if (!tokens.length) return;
+            memberMap.push({ tokens, card });
+        });
+
+        const takeMember = (rawName) => {
+            const targetTokens = nameTokens(rawName);
+            if (!targetTokens.length) return null;
+            const targetJoined = targetTokens.join("");
+
+            let best = null;
+            let bestScore = 0.45;
+
+            memberMap.forEach((entry, idx) => {
+                const tokenScore = tokenSimilarity(entry.tokens, targetTokens);
+                const joined = entry.tokens.join("");
+                const charScore = charDice(joined, targetJoined);
+                const score = Math.max(tokenScore, charScore);
+                if (score > bestScore) {
+                    bestScore = score;
+                    best = { idx, card: entry.card };
+                }
+            });
+
+            if (best) {
+                memberMap.splice(best.idx, 1);
+                return best.card;
+            }
+            return null;
+        };
+
+        let colorIndex = 0;
+        const parseColor = (hex) => {
+            const h = hex.replace("#", "");
+            const r = parseInt(h.substring(0, 2), 16) / 255;
+            const g = parseInt(h.substring(2, 4), 16) / 255;
+            const b = parseInt(h.substring(4, 6), 16) / 255;
+            const toLin = (c) => (c <= 0.03928 ? c / 12.92 : Math.pow((c + 0.055) / 1.055, 2.4));
+            return { r: toLin(r), g: toLin(g), b: toLin(b) };
+        };
+        const contrast = (hex1, hex2) => {
+            const a = parseColor(hex1);
+            const b = parseColor(hex2);
+            const lum = ({ r, g, b }) => 0.2126 * r + 0.7152 * g + 0.0722 * b;
+            const l1 = lum(a) + 0.05;
+            const l2 = lum(b) + 0.05;
+            return l1 > l2 ? l1 / l2 : l2 / l1;
+        };
+        const nextColor = () => {
+            let attempts = 0;
+            while (attempts < TEAM_COLORS.length * 2) {
+                const color = TEAM_COLORS[colorIndex % TEAM_COLORS.length];
+                colorIndex += 1;
+                const ok = BACKGROUND_COLORS.every((bg) => contrast(color, bg) > 4);
+                if (ok) return color;
+                attempts += 1;
+            }
+            return TEAM_COLORS[(colorIndex++) % TEAM_COLORS.length];
+        };
+
+        const newChildren = [];
+
+        teams.forEach((team) => {
+            const color = nextColor();
+            const teamKey = normalizeTeam(team.team);
+            const titleCard = titleMap.get(teamKey);
+            if (titleCard) {
+                titleCard.style.setProperty('--team-color', color);
+                titleCard.classList.add('sc-team-title');
+                titleMap.delete(teamKey);
+                newChildren.push(titleCard);
+            }
+
+            team.members.forEach((memberName) => {
+                const card = takeMember(memberName);
+                if (card) {
+                    card.style.setProperty('--team-color', color);
+                    card.classList.add('sc-team-linked');
+                    newChildren.push(card);
+                }
+            });
+        });
+
+        const leftovers = [];
+        titleMap.forEach((card) => leftovers.push(card));
+        memberMap.forEach((entry) => leftovers.push(entry.card));
+
+        grid.innerHTML = '';
+        [...newChildren, ...leftovers].forEach((el) => grid.appendChild(el));
+    };
+
+    fetch(SC_ORDER_CSV)
+        .then((res) => res.text())
+        .then((text) => {
+            const rows = parseCSV(text);
+            const orders = buildOrders(rows);
+            Object.entries(orders).forEach(([sectionId, teams]) => reorderAndLink(sectionId, teams));
+        })
+        .catch((err) => console.warn('SC team linking failed', err));
 });
 </script>
 
