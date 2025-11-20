@@ -10,11 +10,6 @@ layout: single
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <!-- External CSS -->
 <link rel="stylesheet" href="/css/steering-committee.css">
-<style>
-  /* Hide the default article title only on this page */
-  .article-title,
-  .article-container > h1:first-of-type { display: none !important; }
-</style>
 
 <div id="sc-container" class="col-lg-12">
     <h1 class="sc-page-title">Steering Committee</h1>
@@ -55,23 +50,6 @@ layout: single
     </div>
 </div><div class="sc-title-card teal">
     <span class="sc-title-label">Team</span>
-    <h3 class="sc-title-text">Education & Pedagogy</h3>
-</div><div class="sc-card" onclick="openModal('drmadeleinepownall')">
-    <img src="/authors/drmadeleinepownall/avatar.webp" alt="Dr Madeleine Pownall" class="sc-card-img" />
-    <div class="sc-card-overlay"></div>
-    <div class="sc-card-content">
-        <h4 class="sc-card-name">Dr Madeleine Pownall</h4>
-        <p class="sc-card-role">Director</p>
-    </div>
-</div><div class="sc-card" onclick="openModal('lornahamilton')">
-    <div class="sc-placeholder">LH</div>
-    <div class="sc-card-overlay"></div>
-    <div class="sc-card-content">
-        <h4 class="sc-card-name">Lorna Hamilton</h4>
-        <p class="sc-card-role">Deputy-Director</p>
-    </div>
-</div><div class="sc-title-card teal">
-    <span class="sc-title-label">Team</span>
     <h3 class="sc-title-text">Meta-science & Research</h3>
 </div><div class="sc-card" onclick="openModal('drrachelheyard')">
     <img src="/authors/drrachelheyard/avatar.webp" alt="Dr Rachel Heyard" class="sc-card-img" />
@@ -93,6 +71,23 @@ layout: single
     <div class="sc-card-content">
         <h4 class="sc-card-name">Berit T. Barthelmes, M.Sc.</h4>
         <p class="sc-card-role">Project Manager</p>
+    </div>
+</div><div class="sc-title-card teal">
+    <span class="sc-title-label">Team</span>
+    <h3 class="sc-title-text">Education & Pedagogy</h3>
+</div><div class="sc-card" onclick="openModal('drmadeleinepownall')">
+    <img src="/authors/drmadeleinepownall/avatar.webp" alt="Dr Madeleine Pownall" class="sc-card-img" />
+    <div class="sc-card-overlay"></div>
+    <div class="sc-card-content">
+        <h4 class="sc-card-name">Dr Madeleine Pownall</h4>
+        <p class="sc-card-role">Director</p>
+    </div>
+</div><div class="sc-card" onclick="openModal('lornahamilton')">
+    <div class="sc-placeholder">LH</div>
+    <div class="sc-card-overlay"></div>
+    <div class="sc-card-content">
+        <h4 class="sc-card-name">Lorna Hamilton</h4>
+        <p class="sc-card-role">Deputy-Director</p>
     </div>
 </div>
     </div>
@@ -236,7 +231,7 @@ layout: single
     </div>
 </div><div class="sc-title-card slate">
     <span class="sc-title-label">Team</span>
-    <h3 class="sc-title-text">FORRT Steward</h3>
+    <h3 class="sc-title-text">FORRT Stewards</h3>
 </div><div class="sc-card" onclick="openModal('adiradaniel')">
     <div class="sc-placeholder">AD</div>
     <div class="sc-card-overlay"></div>
@@ -360,56 +355,6 @@ In FORRT, she has been involved in co-leading Team Citational Politics and is ve
             </div>
         </div>
     </div>
-</div><div id="modal-drmadeleinepownall" class="sc-modal-backdrop">
-    <div class="sc-modal-content">
-        <div class="sc-modal-header">
-            <button onclick="closeModal('drmadeleinepownall')" class="sc-close-btn">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 18 12"/></svg>
-            </button>
-        </div>
-        <div class="sc-modal-body">
-            <div class="sc-modal-layout">
-                <div class="sc-modal-sidebar">
-                    <div class="sc-modal-img">
-                        <img src="/authors/drmadeleinepownall/avatar.webp" alt="Dr Madeleine Pownall" />
-                    </div>
-                    <div class="sc-social-links">
-                        <a href="https://medicinehealth.leeds.ac.uk/psychology/staff/2870/dr-madeleine-pownall-" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-slate-800 transition-colors"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" x2="22" y1="12" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></a><a href="mailto:M.V.Pownall@leeds.ac.uk" class="text-slate-400 hover:text-slate-800 transition-colors"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg></a>
-                    </div>
-                </div>
-                <div class="sc-modal-main">
-                    <h3 class="sc-modal-name">Dr Madeleine Pownall</h3>
-                    <p class="sc-modal-role">Director (Education & Pedagogy)</p>
-                    <div class="sc-modal-bio">Dr Madeleine Pownall is an Associate Professor of Psychology at the University of Leeds. Her work spans three main areas: pedagogical research on psychological literacy and student outcomes; open and transparent research practices in psychology; and feminist social psychology, particularly around gender and equity in education and research. She is interested in how psychological science can be made more inclusive, reflective, and socially responsible. Dr Pownall teaches across undergraduate and postgraduate levels, focusing on evidence-based and inclusive approaches to learning and assessment. She also contributes to projects that promote open scholarship and the integration of global citizenship within psychology curricula. Alongside her research and teaching, she serves on professional committees, mentors early career researchers, and co-authored A Feminist Companion to Social Psychology. Her work aims to support students and researchers to engage critically and ethically with psychological knowledge.</div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div><div id="modal-lornahamilton" class="sc-modal-backdrop">
-    <div class="sc-modal-content">
-        <div class="sc-modal-header">
-            <button onclick="closeModal('lornahamilton')" class="sc-close-btn">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 18 12"/></svg>
-            </button>
-        </div>
-        <div class="sc-modal-body">
-            <div class="sc-modal-layout">
-                <div class="sc-modal-sidebar">
-                    <div class="sc-modal-img">
-                        <span style="font-size: 2rem; color: #94a3b8; font-weight: 600;">LH</span>
-                    </div>
-                    <div class="sc-social-links">
-                        
-                    </div>
-                </div>
-                <div class="sc-modal-main">
-                    <h3 class="sc-modal-name">Lorna Hamilton</h3>
-                    <p class="sc-modal-role">Deputy-Director (Education & Pedagogy)</p>
-                    <div class="sc-modal-bio">Bio coming soon.</div>
-                </div>
-            </div>
-        </div>
-    </div>
 </div><div id="modal-drrachelheyard" class="sc-modal-backdrop">
     <div class="sc-modal-content">
         <div class="sc-modal-header">
@@ -481,6 +426,56 @@ In FORRT, she has been involved in co-leading Team Citational Politics and is ve
                     <h3 class="sc-modal-name">Berit T. Barthelmes, M.Sc.</h3>
                     <p class="sc-modal-role">Project Manager (Meta-science & Research)</p>
                     <div class="sc-modal-bio">Berit T. Barthelmes is a PhD student in Psychology at the University of Illinois Chicago, working with Dr. Christine Coughlin in the Future Learning and Memory (FLAME) Lab. Her research focuses on the development of episodic memory and spontaneous future thinking in children, examining how these abilities support learning, imagination, and self-projection across time. She also investigates how mind-wandering relates to the emergence of future-oriented cognition. Before beginning her PhD, Berit earned an M.Sc. in Psychology: Development, Neuroscience, and Cognition at the University of Zurich, where her master’s work sparked a broader interest in the theoretical foundations of psychology and metascientific questions. She is excited about advancing open, transparent, and conceptually grounded approaches to developmental and cognitive science.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div><div id="modal-drmadeleinepownall" class="sc-modal-backdrop">
+    <div class="sc-modal-content">
+        <div class="sc-modal-header">
+            <button onclick="closeModal('drmadeleinepownall')" class="sc-close-btn">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 18 12"/></svg>
+            </button>
+        </div>
+        <div class="sc-modal-body">
+            <div class="sc-modal-layout">
+                <div class="sc-modal-sidebar">
+                    <div class="sc-modal-img">
+                        <img src="/authors/drmadeleinepownall/avatar.webp" alt="Dr Madeleine Pownall" />
+                    </div>
+                    <div class="sc-social-links">
+                        <a href="https://medicinehealth.leeds.ac.uk/psychology/staff/2870/dr-madeleine-pownall-" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-slate-800 transition-colors"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" x2="22" y1="12" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></a><a href="mailto:M.V.Pownall@leeds.ac.uk" class="text-slate-400 hover:text-slate-800 transition-colors"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg></a>
+                    </div>
+                </div>
+                <div class="sc-modal-main">
+                    <h3 class="sc-modal-name">Dr Madeleine Pownall</h3>
+                    <p class="sc-modal-role">Director (Education & Pedagogy)</p>
+                    <div class="sc-modal-bio">Dr Madeleine Pownall is an Associate Professor of Psychology at the University of Leeds. Her work spans three main areas: pedagogical research on psychological literacy and student outcomes; open and transparent research practices in psychology; and feminist social psychology, particularly around gender and equity in education and research. She is interested in how psychological science can be made more inclusive, reflective, and socially responsible. Dr Pownall teaches across undergraduate and postgraduate levels, focusing on evidence-based and inclusive approaches to learning and assessment. She also contributes to projects that promote open scholarship and the integration of global citizenship within psychology curricula. Alongside her research and teaching, she serves on professional committees, mentors early career researchers, and co-authored A Feminist Companion to Social Psychology. Her work aims to support students and researchers to engage critically and ethically with psychological knowledge.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div><div id="modal-lornahamilton" class="sc-modal-backdrop">
+    <div class="sc-modal-content">
+        <div class="sc-modal-header">
+            <button onclick="closeModal('lornahamilton')" class="sc-close-btn">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 18 12"/></svg>
+            </button>
+        </div>
+        <div class="sc-modal-body">
+            <div class="sc-modal-layout">
+                <div class="sc-modal-sidebar">
+                    <div class="sc-modal-img">
+                        <span style="font-size: 2rem; color: #94a3b8; font-weight: 600;">LH</span>
+                    </div>
+                    <div class="sc-social-links">
+                        
+                    </div>
+                </div>
+                <div class="sc-modal-main">
+                    <h3 class="sc-modal-name">Lorna Hamilton</h3>
+                    <p class="sc-modal-role">Deputy-Director (Education & Pedagogy)</p>
+                    <div class="sc-modal-bio">Bio coming soon.</div>
                 </div>
             </div>
         </div>
@@ -886,7 +881,7 @@ Currently, alongside his professional duties, he is pursuing a PhD at the Univer
                 </div>
                 <div class="sc-modal-main">
                     <h3 class="sc-modal-name">Adira Daniel</h3>
-                    <p class="sc-modal-role">FORRT Steward</p>
+                    <p class="sc-modal-role">FORRT Stewards</p>
                     <div class="sc-modal-bio">Bio coming soon.</div>
                 </div>
             </div>
@@ -911,7 +906,7 @@ Currently, alongside his professional duties, he is pursuing a PhD at the Univer
                 </div>
                 <div class="sc-modal-main">
                     <h3 class="sc-modal-name">Stephanie Zellers</h3>
-                    <p class="sc-modal-role">FORRT Steward</p>
+                    <p class="sc-modal-role">FORRT Stewards</p>
                     <div class="sc-modal-bio">Bio coming soon.</div>
                 </div>
             </div>
@@ -936,7 +931,7 @@ Currently, alongside his professional duties, he is pursuing a PhD at the Univer
                 </div>
                 <div class="sc-modal-main">
                     <h3 class="sc-modal-name">Meera Chandra</h3>
-                    <p class="sc-modal-role">FORRT Steward</p>
+                    <p class="sc-modal-role">FORRT Stewards</p>
                     <div class="sc-modal-bio">Bio coming soon.</div>
                 </div>
             </div>
@@ -961,7 +956,7 @@ Currently, alongside his professional duties, he is pursuing a PhD at the Univer
                 </div>
                 <div class="sc-modal-main">
                     <h3 class="sc-modal-name">Cass Gheoghe</h3>
-                    <p class="sc-modal-role">FORRT Steward</p>
+                    <p class="sc-modal-role">FORRT Stewards</p>
                     <div class="sc-modal-bio">Bio coming soon.</div>
                 </div>
             </div>

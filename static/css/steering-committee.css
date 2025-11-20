@@ -87,6 +87,10 @@ article.article .article-container .article-title {
     padding: 0 2rem;
 }
 
+#sc-container .edit-page {
+    display: none !important;
+}
+
 /* Sections */
 .sc-section {
     margin-bottom: 4rem;
