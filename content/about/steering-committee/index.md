@@ -10,12 +10,18 @@ layout: single
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <!-- External CSS -->
 <link rel="stylesheet" href="/css/steering-committee.css">
+<style>
+  /* Hide the default article title only on this page */
+  .article-title,
+  .article-container > h1:first-of-type { display: none !important; }
+</style>
 
 <div id="sc-container" class="col-lg-12">
+    <h1 class="sc-page-title">Steering Committee</h1>
     <nav class="sc-nav">
         <a href="#strategic">Strategic Focus Areas</a>
         <a href="#operations">Operations & Stewardship</a>
-        <a href="#steering">Steering Committee</a>
+        <a href="#steering">Organisational Leadership</a>
     </nav>
     <main>
         <section class="sc-section" id="strategic">

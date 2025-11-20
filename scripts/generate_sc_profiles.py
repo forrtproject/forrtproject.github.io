@@ -74,10 +74,11 @@ PAGE_TEMPLATE = """
 <link rel="stylesheet" href="/css/steering-committee.css">
 
 <div id="sc-container" class="col-lg-12">
+    <h1 class="sc-page-title">Steering Committee</h1>
     <nav class="sc-nav">
         <a href="#strategic">Strategic Focus Areas</a>
         <a href="#operations">Operations & Stewardship</a>
-        <a href="#steering">Steering Committee</a>
+        <a href="#steering">Organisational Leadership</a>
     </nav>
     <main>
         __CONTENT__

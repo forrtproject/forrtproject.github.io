@@ -27,36 +27,60 @@ article.article .article-container + .article-container .article-style {
 
 /* Navigation */
 .sc-nav {
-    background: white;
-    border-bottom: 1px solid #e2e8f0;
-    padding: 0.75rem 2rem;
-    margin: 0 auto 2rem;
+    background: transparent;
+    border: none;
+    padding: 0.75rem 2rem 1.5rem;
+    margin: 0 auto 1.5rem;
     max-width: 1400px;
-    border-radius: 0.5rem;
-    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
     overflow-x: auto;
     white-space: nowrap;
     display: flex;
-    gap: 1.5rem;
+    justify-content: center;
+    gap: 0.85rem;
 }
 
 .sc-nav a {
+    position: relative;
     text-decoration: none;
-    color: #64748b;
-    /* slate-500 */
-    font-size: 0.75rem;
+    color: #475569;
+    font-size: 0.85rem;
     font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    transition: color 0.2s;
+    letter-spacing: 0.02em;
+    padding: 0.25rem 0.75rem;
+    transition: color 0.2s ease;
+}
+
+.sc-nav a:not(:last-child)::after {
+    content: "|";
+    position: absolute;
+    right: -0.55rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #cbd5e1;
+    pointer-events: none;
 }
 
 .sc-nav a:hover {
     color: #0f766e;
-    /* teal-700 */
 }
 
-/* Main content wrapper */
+/* Title + main wrapper */
+.article-title,
+article.article .article-title,
+article.article .article-container .article-title {
+    display: none !important;
+}
+
+.sc-page-title {
+    text-align: center;
+    font-size: 2.75rem;
+    line-height: 1.2;
+    font-weight: 400; /* match site h1 weight */
+    letter-spacing: -0.01em;
+    color: #1f2937;
+    margin: 0.5rem auto 1.25rem;
+}
+
 #sc-container main {
     max-width: 1400px;
     margin: 0 auto;
@@ -266,7 +290,7 @@ article.article .article-container + .article-container .article-style {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    border: 2px solid transparent;
+    border: 0;
     /* Absolute width for consistent sizing */
     width: 180px;
     flex-shrink: 0;
@@ -291,12 +315,12 @@ article.article .article-container + .article-container .article-style {
 }
 
 .sc-title-card.teal {
-    background-color: #0f766e;
-    color: #f0fdfa;
+    background-color: #0b5d55; /* slightly darker teal */
+    color: #f8fafc;
 }
 
 .sc-title-card.slate {
-    background-color: #475569;
+    background-color: #364152; /* deeper slate */
     color: #f8fafc;
 }
 
@@ -305,7 +329,8 @@ article.article .article-container + .article-container .article-style {
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.1em;
-    opacity: 0.7;
+    opacity: 0.9;
+    color: #e2e8f0;
     margin-bottom: 0.25rem;
 }
 
@@ -313,6 +338,7 @@ article.article .article-container + .article-container .article-style {
     font-size: 0.875rem;
     font-weight: 700;
     line-height: 1.2;
+    color: #f8fafc;
 }
 
 /* Team linkage styling */
@@ -356,7 +382,7 @@ article.article .article-container + .article-container .article-style {
     background: linear-gradient(90deg, transparent 0%, var(--team-color, #0f766e) 60%, transparent 100%);
 }
 
-/* Team title accent: arrow 1/4 down the card */
+/* Team title accent: solid bar + half arrow at top */
 .sc-team-title {
     position: relative;
     border-color: transparent;
@@ -366,28 +392,27 @@ article.article .article-container + .article-container .article-style {
 
 .sc-team-title::before,
 .sc-team-title::after {
-    top: 25%; /* position arrow near the top quarter of the card */
+    display: block;
+    content: "";
+    position: absolute;
+    top: 0;
     left: 0;
-    height: 10px;
-    transform: translateY(-50%); /* keep bar + arrow vertically centered */
 }
 
 .sc-team-title::before {
-    width: calc(100% - 7px); /* extend closer to arrow head for seamless join */
+    width: 100%;
+    height: 8px;
     background: var(--team-color, #0f766e);
 }
 
 .sc-team-title::after {
-    top: 25%;
     left: auto;
-    right: -1px; /* overlap the bar so there is no gap */
-    transform: translateY(-50%); /* center triangle relative to bar */
+    right: 0;
     width: 0;
     height: 0;
-    border-top: 7px solid transparent;
-    border-bottom: 7px solid transparent;
-    border-left: 14px solid var(--team-color, #0f766e); /* tip at the leading edge */
-    background: none;
+    border-top: 4px solid transparent;
+    border-bottom: 4px solid transparent;
+    border-left: 8px solid var(--team-color, #0f766e); /* half arrowhead */
 }
 
 /* Modals */
@@ -475,12 +500,14 @@ article.article .article-container + .article-container .article-style {
     display: flex;
     flex-direction: column;
     align-items: center;
+    text-align: center;
     min-width: 120px;
+    gap: 0.75rem;
 }
 
 @media (min-width: 640px) {
     .sc-modal-sidebar {
-        align-items: flex-start;
+        align-items: center;
     }
 }
 
@@ -505,7 +532,32 @@ article.article .article-container + .article-container .article-style {
 
 .sc-social-links {
     display: flex;
-    gap: 0.75rem;
+    justify-content: center;
+    align-items: center;
+    gap: 0.65rem;
+    width: 100%;
+}
+
+.sc-social-links a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background: #f1f5f9;
+    color: #0f766e;
+    transition: all 0.2s ease;
+}
+
+.sc-social-links a:hover {
+    background: #0f766e;
+    color: #ffffff;
+}
+
+.sc-social-links svg {
+    width: 20px;
+    height: 20px;
 }
 
 .sc-modal-main {
