@@ -5,9 +5,10 @@
 html {
   font-family: $sta-font-body, sans-serif;
   font-size: #{$sta-font-size-small}px;
-  color: rgba(0,0,0,0.8);
+  color: rgba(0, 0, 0, 0.8);
   line-height: 1.65;
 }
+
 @media screen and (min-width: 58em) {
   html {
     font-size: #{$sta-font-size}px;
@@ -20,13 +21,25 @@ body {
   line-height: inherit;
   color: inherit;
   background-color: $sta-background;
-  margin-top: 70px; /* Offset body content by navbar height. */
+  margin-top: 70px;
+  /* Offset body content by navbar height. */
   padding-top: 0;
   counter-reset: captions;
 }
-@media screen and (max-width: 1200px) { /* Match max-width of .nav-bar query. */
+
+@media screen and (max-width: 1200px) {
+
+  /* Match max-width of .nav-bar query. */
   body {
-    margin-top: 50px; /* Offset body content by navbar height. */
+    margin-top: 50px;
+    /* Offset body content by navbar height. */
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1350px) {
+  body {
+    margin-top: 130px;
+    /* Offset for 2-row navbar height */
   }
 }
 
@@ -50,7 +63,9 @@ p {
 }
 
 /* Lists */
-ul, ol, dl {
+ul,
+ol,
+dl {
   margin-top: 0;
   margin-bottom: 1rem;
 }
@@ -72,7 +87,12 @@ ul.task-list li input[type="checkbox"] {
 }
 
 /* Headings */
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: $sta-font-heading, sans-serif;
   font-weight: 400;
   margin-top: 1rem;
@@ -91,19 +111,25 @@ h1, h2, h3, h4, h5, h6 {
   -ms-hyphens: manual;
   hyphens: manual;
 }
+
 h1 {
   font-size: 2.25rem;
 }
+
 h2 {
   margin-top: 1rem;
   font-size: 1.5rem;
 }
+
 h3 {
   font-weight: 700;
   margin-top: 1.5rem;
   font-size: 1.25rem;
 }
-h4, h5, h6 {
+
+h4,
+h5,
+h6 {
   font-weight: 700;
   margin-top: 1rem;
   font-size: 1rem;
@@ -173,14 +199,16 @@ code {
 
 pre {
   margin: 0 0 1rem 0;
-  background-color: rgb(248, 248, 248); /* Match default highlight theme. */
+  background-color: rgb(248, 248, 248);
+  /* Match default highlight theme. */
   border-color: rgb(248, 248, 248);
   font-size: 0.7rem;
   border-radius: 4px;
 }
 
 pre code {
-  white-space: pre; /* Override Bootstrap to preserve line breaks in code. */
+  white-space: pre;
+  /* Override Bootstrap to preserve line breaks in code. */
   overflow-x: auto;
 }
 
@@ -198,9 +226,11 @@ blockquote {
   color: #7a7a7a;
   border-left: .25rem solid #e5e5e5;
 }
+
 blockquote p:last-child {
   margin-bottom: 0;
 }
+
 @media (min-width: 30em) {
   blockquote {
     padding-right: 5rem;
@@ -216,6 +246,7 @@ blockquote p:last-child {
 .space-below {
   margin-bottom: 50px;
 }
+
 @media screen and (max-width: 768px) {
   .space-below {
     margin-bottom: 10px;
@@ -254,7 +285,8 @@ small,
 }
 
 .modal-title {
-  margin: 0; /* Override default h5 margin. */
+  margin: 0;
+  /* Override default h5 margin. */
 }
 
 .modal-content pre {
@@ -263,7 +295,7 @@ small,
 
 .modal-header {
   border: 0;
-  color: rgba(0,0,0,0.8);
+  color: rgba(0, 0, 0, 0.8);
 }
 
 .modal-footer {
@@ -355,13 +387,13 @@ footer p {
 
 site-footer,
 footer a.back-to-top i {
-  color: rgba(0,0,0,0.54);
+  color: rgba(0, 0, 0, 0.54);
 }
 
 .dark site-footer,
 .dark footer a#back_to_top i,
 .dark .docs .body-footer {
-  color: rgba(255,255,255,0.54);
+  color: rgba(255, 255, 255, 0.54);
 }
 
 /**************************************************
@@ -370,8 +402,8 @@ footer a.back-to-top i {
 
 .badge-light {
   border: none;
-  color: rgba(0,0,0,.68);
-  background: rgba(0,0,0,.05);
+  color: rgba(0, 0, 0, .68);
+  background: rgba(0, 0, 0, .05);
   font-weight: normal;
   border-radius: 3px;
   padding: 5px 10px;
@@ -379,18 +411,18 @@ footer a.back-to-top i {
   margin-bottom: 8px;
 }
 
-.article-tags > .badge-light:last-child {
+.article-tags>.badge-light:last-child {
   margin-right: 0;
 }
 
 .badge-light[href]:focus,
 .badge-light[href]:hover {
-  background: rgba(0,0,0,.1);
+  background: rgba(0, 0, 0, .1);
 }
 
 a.badge:focus,
 a.badge:hover {
-  color: rgba(0,0,0,.68);
+  color: rgba(0, 0, 0, .68);
 }
 
 .tag-cloud a {
@@ -468,7 +500,7 @@ a.badge:hover {
 
 .btn-primary:not(:disabled):not(.disabled).active:focus,
 .btn-primary:not(:disabled):not(.disabled):active:focus,
-.show > .btn-primary.dropdown-toggle:focus {
+.show>.btn-primary.dropdown-toggle:focus {
   box-shadow: 0 0 0 .2rem $sta-primary-light;
 }
 
@@ -486,33 +518,33 @@ table {
   font-size: 0.8rem;
 }
 
-table > thead > tr > th,
-table > tbody > tr > th,
-table > tfoot > tr > th,
-table > thead > tr > td,
-table > tbody > tr > td,
-table > tfoot > tr > td {
+table>thead>tr>th,
+table>tbody>tr>th,
+table>tfoot>tr>th,
+table>thead>tr>td,
+table>tbody>tr>td,
+table>tfoot>tr>td {
   padding: 8px;
   line-height: 1.43;
   vertical-align: top;
   border-top: 1px solid #ddd;
 }
 
-table > thead > tr > th {
+table>thead>tr>th {
   vertical-align: bottom;
   border-bottom: 2px solid #ddd;
 }
 
-table > caption + thead > tr:first-child > th,
-table > colgroup + thead > tr:first-child > th,
-table > thead:first-child > tr:first-child > th,
-table > caption + thead > tr:first-child > td,
-table > colgroup + thead > tr:first-child > td,
-table > thead:first-child > tr:first-child > td {
+table>caption+thead>tr:first-child>th,
+table>colgroup+thead>tr:first-child>th,
+table>thead:first-child>tr:first-child>th,
+table>caption+thead>tr:first-child>td,
+table>colgroup+thead>tr:first-child>td,
+table>thead:first-child>tr:first-child>td {
   border-top: 0;
 }
 
-table > tbody + tbody {
+table>tbody+tbody {
   border-top: 2px solid #ddd;
 }
 
@@ -521,14 +553,14 @@ table table {
 }
 
 /* Table Striped */
-table > tbody > tr:nth-child(odd) > td,
-table > tbody > tr:nth-child(odd) > th {
+table>tbody>tr:nth-child(odd)>td,
+table>tbody>tr:nth-child(odd)>th {
   background-color: #f9f9f9;
 }
 
 /* Table Hover */
-table > tbody > tr:hover > td,
-table > tbody > tr:hover > th {
+table>tbody>tr:hover>td,
+table>tbody>tr:hover>th {
   background-color: #e5e5e5;
 }
 
@@ -543,7 +575,7 @@ table > tbody > tr:hover > th {
 
 /* Asides use <p> block element whereas alerts use <div>. */
 .article-style aside p,
-div.alert > div {
+div.alert>div {
   position: relative;
   display: block;
   font-size: 1rem;
@@ -552,16 +584,17 @@ div.alert > div {
   margin-bottom: 0;
 }
 
-div.alert div > * {
-  margin-bottom: .5rem;  /* Use smaller paragraph spacing than usual. */
+div.alert div>* {
+  margin-bottom: .5rem;
+  /* Use smaller paragraph spacing than usual. */
 }
 
-div.alert div > :last-child {
+div.alert div> :last-child {
   margin-bottom: 0;
 }
 
 .article-style aside p::before,
-div.alert > div:first-child::before {
+div.alert>div:first-child::before {
   position: absolute;
   top: -0.5rem;
   left: -2rem;
@@ -574,7 +607,7 @@ div.alert > div:first-child::before {
   text-align: center;
 }
 
-div.alert-warning > div:first-child::before {
+div.alert-warning>div:first-child::before {
   font-family: 'Font Awesome 5 Free';
   font-weight: 900;
   color: #ff3860;
