@@ -22,9 +22,14 @@ name: Data Processing
 
 on:
   schedule:
-    - cron: '0 0 * * 0'  # Weekly on Sundays at Midnight UTC
+    - cron: '0 0 * * *'  # Daily at Midnight UTC
   workflow_dispatch:
     inputs:
+      skip_deploy:
+        description: 'Skip triggering deploy after processing'
+        required: false
+        type: boolean
+        default: false
       regenerate_glossary:
         description: 'Regenerate glossary files (only use when glossary sources are stable)'
         required: false
@@ -450,6 +455,20 @@ jobs:
           git worktree remove "$WORKTREE_DIR" --force || true
         env:
           GITHUB_TOKEN: ${{ secrets.FORRT_PAT }}
+
+      #================
+      # Trigger Deploy
+      #================
+      - name: Trigger Deploy
+        if: inputs.skip_deploy != true
+        run: |
+          echo "🚀 Triggering deployment workflow..."
+          curl -s -X POST \
+            -H "Authorization: Bearer ${{ secrets.FORRT_PAT }}" \
+            -H "Accept: application/vnd.github+json" \
+            "https://api.github.com/repos/${{ github.repository }}/dispatches" \
+            -d '{"event_type": "data-update"}'
+
 
       #====================
       # Trigger Deployment

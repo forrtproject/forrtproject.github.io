@@ -241,7 +241,7 @@ jobs:
             -H "Authorization: Bearer $GITHUB_TOKEN" \
             -H "Accept: application/vnd.github+json" \
             "https://api.github.com/repos/${{ github.repository }}/actions/workflows/data-processing.yml/dispatches" \
-            -d "{\"ref\":\"$REF\"}" \
+            -d "{\"ref\":\"$REF\", \"inputs\": {\"skip_deploy\": \"true\"}}" \
             || { echo "::error::Failed to dispatch data-processing workflow"; exit 1; }
             
           echo "data_processing_triggered=true" >> $GITHUB_OUTPUT
@@ -466,8 +466,9 @@ jobs:
           Please resolve conflicts with the base branch and the deployment will be retried automatically."
             fi
             
-            # Find existing staging deployment comment (limit to 100 most recent comments )
-            EXISTING_COMMENT_ID=$(gh api "repos/${{ github.repository }}/issues/${pr}/comments?per_page=100" \
+            # Find existing staging deployment comment (search all comments)
+            EXISTING_COMMENT_ID=$(gh api "repos/${{ github.repository }}/issues/${pr}/comments" \
+              --paginate \
               --jq '.[] | select(.user.login == "github-actions[bot]" and (.body | contains("<!-- staging-deployment-comment -->"))) | .id' 2>/dev/null | head -1)
             
             if [ -n "$EXISTING_COMMENT_ID" ]; then

@@ -92,7 +92,7 @@ jobs:
             -H "Authorization: Bearer $GITHUB_TOKEN" \
             -H "Accept: application/vnd.github+json" \
             "https://api.github.com/repos/${{ github.repository }}/actions/workflows/data-processing.yml/dispatches" \
-            -d "{\"ref\":\"$REF\"}" \
+            -d "{\"ref\":\"$REF\", \"inputs\": {\"skip_deploy\": \"true\"}}" \
             || { echo "::error::Failed to dispatch data-processing workflow"; exit 1; }
             
           echo "data_processing_triggered=true" >> $GITHUB_OUTPUT
