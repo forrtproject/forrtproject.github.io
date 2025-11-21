@@ -70,12 +70,6 @@
   parent = "about"
 
 [[main]]
-  name = "Curriculum Vitae"  # A link title for your page.
-  url = "/cv"  # The URL of your page.
-  weight = 20  # The position of your page in the menu.
-  parent = "about"
-
-[[main]]
   name = "Feedback"  # A link title for your page.
   url = "/feedback"  # The URL of your page.
   weight = 21  # The position of your page in the menu.
@@ -115,12 +109,6 @@
   name = "Steering Committee"  # A link title for your page.
   url = "/about/steering-committee/"  # The URL of your page.
   weight = 27  # The position of your page in the menu.
-  parent = "about"
-
-[[main]]
-  name = "Talks"  # A link title for your page.
-  url = "talk/"  # The URL of your page.
-  weight = 28  # The position of your page in the menu.
   parent = "about"
 
 [[main]]
