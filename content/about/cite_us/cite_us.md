@@ -29,8 +29,3 @@ subtitle = "Framework for Open and Reproducible Research Training (FORRT)"
 +++
 
 {{< cite-us >}}
-
-### If you want to cite our social justice research
-
-coming soon
-
