@@ -67,8 +67,12 @@ Please investigate the failed projects and fix any issues with the source data o
     title = f"Tenzing Script Failures: {failed} project(s) failed to load"
     
     # Write title and body to temporary files to avoid command injection
-    # Use delete=False and manually clean up to ensure we can handle errors
+    # Initialize paths to None so they're defined in all code paths
+    title_path = None
+    body_path = None
+    
     try:
+        # Create temporary files
         title_file = tempfile.NamedTemporaryFile(mode='w', suffix='.txt', delete=False)
         title_file.write(title)
         title_file.close()
@@ -78,12 +82,8 @@ Please investigate the failed projects and fix any issues with the source data o
         body_file.write(body)
         body_file.close()
         body_path = body_file.name
-    except Exception as e:
-        print(f"❌ Failed to create temporary files: {e}")
-        return False
-    
-    # Use GitHub CLI to create the issue
-    try:
+        
+        # Use GitHub CLI to create the issue
         result = subprocess.run(
             ['gh', 'issue', 'create', 
              '--title-file', title_path,
@@ -96,19 +96,24 @@ Please investigate the failed projects and fix any issues with the source data o
         print(f"✅ Issue created successfully!")
         print(result.stdout)
         return True
+        
     except subprocess.CalledProcessError as e:
         print(f"❌ Failed to create issue: {e}")
         print(f"stdout: {e.stdout}")
         print(f"stderr: {e.stderr}")
         return False
+    except Exception as e:
+        print(f"❌ Error in issue creation process: {e}")
+        return False
     finally:
-        # Clean up temporary files
+        # Clean up temporary files if they were created
         for path in [title_path, body_path]:
-            try:
-                if os.path.exists(path):
-                    os.unlink(path)
-            except OSError as e:
-                print(f"⚠ Warning: Failed to remove temporary file {path}: {e}")
+            if path is not None:
+                try:
+                    if os.path.exists(path):
+                        os.unlink(path)
+                except OSError as e:
+                    print(f"⚠ Warning: Failed to remove temporary file {path}: {e}")
 
 def main():
     # Get the script directory
