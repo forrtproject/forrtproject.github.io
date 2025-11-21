@@ -5,7 +5,7 @@ Generate steering committee member profiles from Google Sheets CSVs.
 This script:
 1. Downloads steering committee member list and personal details from Google Sheets
 2. Merges data by matching member names
-3. Groups members into Strategic, Operations, and Steering categories based on 'Section'
+3. Groups members into Strategic, Operations, Steering, and Guidance categories based on 'Section'
 4. Sub-groups members into Teams based on 'Team' column
 5. Generates a single Hugo content file with static HTML and Vanilla JS
 6. Downloads profile pictures from Google Drive
@@ -28,6 +28,7 @@ from io import BytesIO
 # Configuration
 SC_CSV_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vRCHSY7WBvzDSSWyUyOVPRbsf5QxO7Mc40hGB7yanfT-rjbcNthMbHvUxT0NJ3AAfLKfx4YiOghByZT/pub?output=csv"
 PERSONAL_CSV_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vTbY9_zqSqjCEnGlWMgRYkgd0_tJzXVY2efoqQ3TcPC0eIqIOxVnVHVM7lYpgpZRalacEznJpWDalHi/pub?output=csv"
+PERSONAL_FALLBACK_CSV_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vQxGxmTAbmmUyCITmcj9fI5nHGDp3U7QwtSvNW4LG0NWWr2k2RkU5cGxlVYsHNdQ5xzv55SpmvPk5Ud/pub?output=csv"
 
 # Get the script directory to determine where to save files
 SCRIPT_DIR = Path(__file__).parent
@@ -41,11 +42,11 @@ CATEGORY_MAPPING = {
     "Focus Areas": "strategic",
     "Strategic Focus Areas": "strategic",
     "Operations": "operations",
-    "Operations & Stewardship": "operations",
-    "Ombudsman": "operations",
     "FORRT Stewards": "operations",
     "Steering Committee": "steering",
-    "Governance": "steering"
+    "Governance": "steering",
+    "Guidance": "guidance",
+    "Guidance & Oversight": "guidance"
 }
 
 CATEGORY_DETAILS = {
@@ -60,14 +61,19 @@ CATEGORY_DETAILS = {
         "icon": '<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.1a2 2 0 0 1-1-1.74v-.47a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"/><circle cx="12" cy="12" r="3"/></svg>'
     },
     "steering": {
-        "title": "Organisational Leadership",
-        "description": "Coordination and strategic direction for FORRT's mission and vision.",
+        "title": "Strategic Facilitation & Integration",
+        "description": "Synthesising community efforts to maintain alignment with FORRT’s mission and vision.",
         "icon": '<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="5" r="3"/><line x1="12" x2="12" y1="22" y2="8"/><path d="M5 12H2a10 10 0 0 0 20 0h-3"/></svg>'
+    },
+    "guidance": {
+        "title": "Guidance & Oversight",
+        "description": "Independent ethical guidance and long-term stewardship.",
+        "icon": '<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s-7-3.5-7-9.5V6l7-3 7 3v6.5C19 18.5 12 22 12 22z"/><path d="m9 12 2 2 4-4"/></svg>'
     }
 }
 
 # HTML Templates - Custom CSS (External)
-PAGE_TEMPLATE = """
+PAGE_TEMPLATE = r"""
 <!-- Google Fonts -->
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <!-- External CSS -->
@@ -78,7 +84,8 @@ PAGE_TEMPLATE = """
     <nav class="sc-nav">
         <a href="#strategic">Strategic Focus Areas</a>
         <a href="#operations">Operations & Stewardship</a>
-        <a href="#steering">Organisational Leadership</a>
+        <a href="#steering">Strategic Facilitation & Integration</a>
+        <a href="#guidance">Guidance & Oversight</a>
     </nav>
     <main>
         __CONTENT__
@@ -345,7 +352,7 @@ document.addEventListener('DOMContentLoaded', () => {
 </script>
 """
 
-SECTION_TEMPLATE = """
+SECTION_TEMPLATE = r"""
 <section class="sc-section" id="{type}">
     <div class="sc-section-header">
         <div class="sc-section-title">
@@ -360,14 +367,14 @@ SECTION_TEMPLATE = """
 </section>
 """
 
-TEAM_TITLE_CARD_TEMPLATE = """
+TEAM_TITLE_CARD_TEMPLATE = r"""
 <div class="sc-title-card {bg_class}">
     <span class="sc-title-label">Team</span>
     <h3 class="sc-title-text">{name}</h3>
 </div>
 """
 
-MEMBER_CARD_TEMPLATE = """
+MEMBER_CARD_TEMPLATE = r"""
 <div class="sc-card" onclick="openModal('{id}')">
     {img_content}
     <div class="sc-card-overlay"></div>
@@ -378,7 +385,7 @@ MEMBER_CARD_TEMPLATE = """
 </div>
 """
 
-MODAL_TEMPLATE = """
+MODAL_TEMPLATE = r"""
 <div id="modal-{id}" class="sc-modal-backdrop">
     <div class="sc-modal-content">
         <div class="sc-modal-header">
@@ -504,8 +511,10 @@ def main():
     try:
         sc_df = pd.read_csv(SC_CSV_URL)
         personal_df = pd.read_csv(PERSONAL_CSV_URL)
+        fallback_df = pd.read_csv(PERSONAL_FALLBACK_CSV_URL)
         print(f"✓ Downloaded steering committee data ({len(sc_df)} rows)")
         print(f"✓ Downloaded personal details data ({len(personal_df)} rows)")
+        print(f"✓ Downloaded fallback details data ({len(fallback_df)} rows)")
     except Exception as e:
         print(f"✗ Failed to download CSVs: {e}")
         return
@@ -517,16 +526,30 @@ def main():
     
     # Create a mapping for personal details
     personal_dict = {}
-    for idx, row in personal_df.iterrows():
-        name = normalize_name(row['Full Name (incl academic title)'])
-        personal_dict[name] = {
-            'Full Name': row['Full Name (incl academic title)'],
+
+    def add_personal_entry(row, target, allow_overwrite=False):
+        full_name = row.get('Full Name (incl academic title)', '')
+        if pd.isna(full_name) or str(full_name).strip() == '':
+            return
+        normalized = normalize_name(str(full_name))
+        if not allow_overwrite and normalized in target:
+            return
+        target[normalized] = {
+            'Full Name': full_name,
             'ORCiD': row.get('ORCiD', ''),
             'Email': row.get('Email address (if you are happy to share one in public)', ''),
             'Weblink': row.get('Professional Weblink (e.g., institutional profile, Google Scholar, personal webpage)', ''),
             'Photo URL': row.get('Professional Headshot (for website)', ''),
             'Bio': row.get('Your bio (approximately 150 words)', '')
         }
+
+    for _, row in personal_df.iterrows():
+        add_personal_entry(row, personal_dict, allow_overwrite=True)
+
+    # Fallback sheet with minimal fields (links + headshots) to cover missing responses
+    if 'fallback_df' in locals():
+        for _, row in fallback_df.iterrows():
+            add_personal_entry(row, personal_dict, allow_overwrite=False)
 
     print(f"✓ Prepared personal details index with {len(personal_dict)} entries")
 
@@ -547,11 +570,12 @@ def main():
     # Process members and build data structure
     print("\\n[4/5] Processing members and building data structure...")
 
-    # Initialize data structure for the three main categories
+    # Initialize data structure for the main categories
     categories = {
         "strategic": {"teams": {}, "order": []},
         "operations": {"teams": {}, "order": []},
-        "steering": {"teams": {}, "order": []}
+        "steering": {"teams": {}, "order": []},
+        "guidance": {"teams": {}, "order": []}
     }
 
     for idx, row in sc_df.iterrows():
@@ -591,9 +615,9 @@ def main():
         
         if personal_data and personal_data.get('Photo URL') and pd.notna(personal_data['Photo URL']):
              if not avatar_path.exists():
-                download_url = get_google_drive_download_url(personal_data['Photo URL'])
-                if download_url:
-                    download_image(download_url, avatar_path)
+                raw_photo_url = str(personal_data['Photo URL']).strip()
+                download_url = get_google_drive_download_url(raw_photo_url) or raw_photo_url
+                download_image(download_url, avatar_path)
         
         if avatar_path.exists():
             img_url = f"/authors/{sanitized_name}/avatar.webp"
@@ -635,7 +659,8 @@ def main():
     modals_html = ""
 
     # Order of categories
-    cat_order = ["strategic", "operations", "steering"]
+    cat_order = ["strategic", "operations", "steering", "guidance"]
+    categories_with_team_titles = {"strategic", "operations"}
 
     for cat_key in cat_order:
         cat_data = categories[cat_key]
@@ -647,18 +672,8 @@ def main():
         for team_name in cat_data["order"]:
             members = cat_data["teams"][team_name]
             
-            # Team Title Card (except for Steering Committee section if desired, but mock shows titles)
-            # In the mock, 'Steering Committee' section didn't have a title card, but others did.
-            # Let's keep it consistent: Show title card for all teams except if the team name is same as section name in 'Steering Committee'
-            
-            show_title_card = True
-            if cat_key == "steering" and team_name == "Steering Committee":
-                show_title_card = False # Or True depending on preference. Mock had no title card for SC members.
-            
-            # Actually, looking at the mock, the 'Steering Committee' section just lists members.
-            # Strategic and Operations have sub-teams with title cards.
-            
-            if cat_key != "steering":
+            # Only Strategic and Operations display team title cards; Steering and Guidance list members directly.
+            if cat_key in categories_with_team_titles:
                 bg_class = "teal"
                 if cat_key == "operations":
                     bg_class = "slate"
@@ -734,7 +749,6 @@ layout: single
     print("\\n" + "=" * 60)
     print("✓ Successfully generated steering committee page!")
     print("=" * 60)
-    print(f"  View page at: http://localhost:1313/about/steering-committee/")
 
 if __name__ == "__main__":
     main()
