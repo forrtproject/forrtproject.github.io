@@ -201,29 +201,86 @@ jobs:
           name: data-artifact
           path: .
           github_token: ${{ secrets.GITHUB_TOKEN }}
+          search_artifacts: true
+          if_no_artifact_found: warn
 
-      - name: Run data processing if needed
+      - name: Run data processing if artifact missing
+        id: data-processing
         if: steps.download-artifact.outcome == 'failure'
         env:
-          PYTHON_VERSION: "3.11"
-          GA_API_CREDENTIALS: ${{ secrets.GA_API_CREDENTIALS }}
-          GA_PROPERTY_ID: ${{ secrets.GA_PROPERTY_ID }}
+          GITHUB_TOKEN: ${{ secrets.FORRT_PAT }}
         run: |
-          # Install Python dependencies
-          python3 -m pip install -r ./requirements.txt
-
-          # Generate data files
-          python3 scripts/forrt_contribs/tenzing.py
-          python3 content/resources/resource.py
-          mv scripts/forrt_contribs/tenzing.md content/contributors/tenzing.md
-
-          # Download GA data if possible
-          python scripts/download_ga_data.py
+          set -e
           
-          # Quick validation of GA data structure
-          if [ -f "data/ga_data.json" ]; then
-            python3 -c "import json; data = json.load(open('data/ga_data.json')); print('✅ GA data:', len(data.get('regions', [])), 'countries,', len(data.get('top_pages', [])), 'pages')"
+          # For staging-aggregate, we definitely want to trigger it if missing, 
+          # as this is often run on schedule or manual dispatch where we expect data to be available.
+          
+          # Determine branch ref to dispatch (must be a branch or tag)
+          REF="${GITHUB_REF#refs/heads/}"
+          if [ -z "$REF" ]; then
+            REF="master"
           fi
+
+          echo "🚀 Dispatching data-processing workflow for ref: $REF because artifact was missing"
+          curl -s -X POST \
+            -H "Authorization: Bearer $GITHUB_TOKEN" \
+            -H "Accept: application/vnd.github+json" \
+            "https://api.github.com/repos/${{ github.repository }}/actions/workflows/data-processing.yml/dispatches" \
+            -d "{\"ref\":\"$REF\"}" \
+            || { echo "::error::Failed to dispatch data-processing workflow"; exit 1; }
+            
+          echo "data_processing_triggered=true" >> $GITHUB_OUTPUT
+
+          echo "⏳ Waiting for data-processing workflow run to start and complete..."
+
+          attempts=0
+          max_attempts=90
+          interval=10
+          
+          # Wait a bit for the run to be created
+          sleep 10
+
+          while [ $attempts -lt $max_attempts ]; do
+            # Get the latest run triggered by workflow_dispatch
+            runs_json=$(curl -s -H "Authorization: Bearer $GITHUB_TOKEN" -H "Accept: application/vnd.github+json" \
+              "https://api.github.com/repos/${{ github.repository }}/actions/workflows/data-processing.yml/runs?event=workflow_dispatch&branch=$REF&per_page=1")
+            
+            run_id=$(echo "$runs_json" | jq -r '.workflow_runs[0].id')
+            status=$(echo "$runs_json" | jq -r '.workflow_runs[0].status')
+            conclusion=$(echo "$runs_json" | jq -r '.workflow_runs[0].conclusion')
+            
+            if [ -n "$run_id" ] && [ "$run_id" != "null" ]; then
+              echo "Tracking data-processing run: $run_id (Status: $status)"
+              
+              if [ "$status" = "completed" ]; then
+                if [ "$conclusion" = "success" ]; then
+                  echo "✅ data-processing workflow completed successfully"
+                  echo "run_id=$run_id" >> $GITHUB_OUTPUT
+                  exit 0
+                else
+                  echo "::error::data-processing workflow completed with conclusion: $conclusion"
+                  exit 1
+                fi
+              fi
+            fi
+
+            attempts=$((attempts + 1))
+            sleep $interval
+          done
+
+          echo "::error::Timed out waiting for data-processing workflow"
+          exit 1
+
+      - name: Download data artifact (Retry)
+        id: download-artifact-retry
+        if: steps.download-artifact.outcome == 'failure' && steps.data-processing.outputs.data_processing_triggered == 'true'
+        uses: dawidd6/action-download-artifact@07ab29fd4a977ae4d2b275087cf67563dfdf0295
+        with:
+          workflow: data-processing.yml
+          name: data-artifact
+          path: .
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          run_id: ${{ steps.data-processing.outputs.run_id }}
 
 
       - name: Setup Hugo

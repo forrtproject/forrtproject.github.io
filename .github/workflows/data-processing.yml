@@ -326,6 +326,18 @@ jobs:
           cp -r content/curated_resources /tmp/generated-resources/
           cp content/contributors/tenzing.md /tmp/generated-resources/ || true
           cp data/ga_data.json /tmp/generated-resources/ga_data.json || true
+          
+          # Copy additional generated files
+          mkdir -p /tmp/generated-resources/contributor-analysis
+          cp -r content/contributor-analysis/* /tmp/generated-resources/contributor-analysis/ || true
+          
+          mkdir -p /tmp/generated-resources/publications
+          cp content/publications/citation_chart.webp /tmp/generated-resources/publications/ || true
+          
+          if [ -f data/summaries.json ]; then
+            cp data/summaries.json /tmp/generated-resources/summaries.json
+          fi
+
           if [ "${{ github.event.inputs.regenerate_glossary }}" = "true" ]; then
             cp -r content/glossary /tmp/generated-resources/
           fi
@@ -346,10 +358,13 @@ jobs:
           pushd "$WORKTREE_DIR"
 
           # Ensure target directories exist
-          mkdir -p content/curated_resources content/contributors data
+          mkdir -p content/curated_resources content/contributors data content/contributor-analysis content/publications
 
           # Remove old generated resource files (but keep _index.md)
           find content/curated_resources -type f ! -name '_index.md' -delete 2>/dev/null || true
+          
+          # We also want to clean up old contributor analysis files to avoid stale data
+          rm -rf content/contributor-analysis/* 2>/dev/null || true
 
           # Copy newly generated files
           cp -r /tmp/generated-resources/curated_resources/* content/curated_resources/ || true
@@ -358,6 +373,15 @@ jobs:
           fi
           if [ -f /tmp/generated-resources/ga_data.json ]; then
             cp /tmp/generated-resources/ga_data.json data/ga_data.json
+          fi
+          if [ -f /tmp/generated-resources/summaries.json ]; then
+            cp /tmp/generated-resources/summaries.json data/summaries.json
+          fi
+          
+          # Copy contributor analysis and citation chart
+          cp -r /tmp/generated-resources/contributor-analysis/* content/contributor-analysis/ || true
+          if [ -f /tmp/generated-resources/publications/citation_chart.webp ]; then
+            cp /tmp/generated-resources/publications/citation_chart.webp content/publications/
           fi
 
           # Copy glossary files only if regenerated (preserving directory structure)
@@ -373,19 +397,26 @@ jobs:
             echo "ℹ️ No changes to commit"
           else
             echo "✓ Changes detected, committing..."
-            git add content/curated_resources/ content/contributors/tenzing.md 2>/dev/null || true
-            [ -f data/ga_data.json ] && git add data/ga_data.json
+            
+            # Add all potential files
+            git add content/curated_resources/ 2>/dev/null || true
+            git add content/contributors/tenzing.md 2>/dev/null || true
+            git add data/ga_data.json 2>/dev/null || true
+            git add data/summaries.json 2>/dev/null || true
+            git add content/contributor-analysis/ 2>/dev/null || true
+            git add content/publications/citation_chart.webp 2>/dev/null || true
+            
             if [ "${{ github.event.inputs.regenerate_glossary }}" = "true" ]; then
               git add content/glossary/ 2>/dev/null || true
-              git commit -m "Update generated resources, GA data, and glossary - $(date -u +'%Y-%m-%d %H:%M:%S UTC')" || echo "Nothing to commit"
-            else
-              git commit -m "Update generated resources and GA data - $(date -u +'%Y-%m-%d %H:%M:%S UTC')" || echo "Nothing to commit"
             fi
+            
+            git commit -m "Update generated resources and data - $(date -u +'%Y-%m-%d %H:%M:%S UTC')" || echo "Nothing to commit"
 
             # Push to build-resources with retry logic
             MAX_RETRIES=3
             RETRY_COUNT=0
             while [ $RETRY_COUNT -lt $MAX_RETRIES ]; do
+              # Using force-with-lease to be safer, but effectively force pushing since we are overwriting
               if git push -u origin build-resources --force-with-lease; then
                 echo "✅ Successfully pushed to build-resources branch"
                 break
