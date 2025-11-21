@@ -2,6 +2,13 @@ import pandas as pd
 import os
 import json
 
+def print_failures(failed_sheets):
+    """Print a formatted list of failed sheets."""
+    if failed_sheets:
+        print("\nFailed sheets:")
+        for failure in failed_sheets:
+            print(f"  - {failure['project_name']}: {failure['error']}")
+
 # Tenzing directory
 csv_export_url = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vT_IaXiYtB3iAmtDZ_XiQKrToRkxOlkXNAeNU2SIT_J9PxvsQyptga6Gg9c8mSvDZpwY6d8skswIQYh/pub?output=csv&gid=0'
 extra_roles_url = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vSCsxHTnSSjYqhQSR2kT3gIYg82HiODjPat9y2TFPrZESYWxz4k8CZsOesXPD3C5dngZEGujtKmNZsa/pub?output=csv'
@@ -56,17 +63,13 @@ for project_name, url, project_url in zip(df['Project Name'], df['CSV Link'], df
 if not all_data_frames:
     error_msg = "✗ FATAL: No project data could be loaded. All sheets failed."
     print(error_msg)
-    if failed_sheets:
-        print("\nFailed sheets:")
-        for failure in failed_sheets:
-            print(f"  - {failure['project_name']}: {failure['error']}")
+    print_failures(failed_sheets)
     raise RuntimeError(error_msg)
 
 print(f"\n✓ Successfully loaded {len(all_data_frames)} out of {len(df)} projects")
 if failed_sheets:
     print(f"⚠ Warning: {len(failed_sheets)} project(s) failed to load:")
-    for failure in failed_sheets:
-        print(f"  - {failure['project_name']}: {failure['error']}")
+    print_failures(failed_sheets)
 
 # Concatenate all data frames
 merged_data = pd.concat(all_data_frames, ignore_index=True)

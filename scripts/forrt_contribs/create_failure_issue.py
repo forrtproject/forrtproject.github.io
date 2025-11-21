@@ -7,13 +7,25 @@ import json
 import os
 import sys
 import subprocess
+import shlex
+
+def sanitize_string(s):
+    """Sanitize a string to prevent command injection."""
+    # Remove or escape characters that could be problematic
+    if not isinstance(s, str):
+        s = str(s)
+    # Replace newlines and tabs with spaces
+    s = s.replace('\n', ' ').replace('\r', ' ').replace('\t', ' ')
+    # Remove any control characters
+    s = ''.join(char for char in s if ord(char) >= 32 or char in '\n\r\t')
+    return s.strip()
 
 def create_issue(failures_data):
     """Create a GitHub issue for failed sheets."""
-    timestamp = failures_data['timestamp']
-    total = failures_data['total_projects']
-    successful = failures_data['successful_projects']
-    failed = failures_data['failed_projects']
+    timestamp = sanitize_string(failures_data['timestamp'])
+    total = int(failures_data['total_projects'])
+    successful = int(failures_data['successful_projects'])
+    failed = int(failures_data['failed_projects'])
     failures = failures_data['failures']
     
     # Build the issue body
@@ -31,9 +43,14 @@ def create_issue(failures_data):
 """
     
     for failure in failures:
-        body += f"""#### {failure['project_name']}
-- **URL:** `{failure['url']}`
-- **Error:** `{failure['error']}`
+        # Sanitize all failure data
+        project_name = sanitize_string(failure['project_name'])
+        url = sanitize_string(failure['url'])
+        error = sanitize_string(failure['error'])
+        
+        body += f"""#### {project_name}
+- **URL:** `{url}`
+- **Error:** `{error}`
 
 """
     
@@ -48,12 +65,22 @@ Please investigate the failed projects and fix any issues with the source data o
     # Create the issue title
     title = f"Tenzing Script Failures: {failed} project(s) failed to load"
     
+    # Write title and body to temporary files to avoid command injection
+    import tempfile
+    with tempfile.NamedTemporaryFile(mode='w', suffix='.txt', delete=False) as title_file:
+        title_file.write(title)
+        title_path = title_file.name
+    
+    with tempfile.NamedTemporaryFile(mode='w', suffix='.md', delete=False) as body_file:
+        body_file.write(body)
+        body_path = body_file.name
+    
     # Use GitHub CLI to create the issue
     try:
         result = subprocess.run(
             ['gh', 'issue', 'create', 
-             '--title', title,
-             '--body', body,
+             '--title-file', title_path,
+             '--body-file', body_path,
              '--label', 'bug,tenzing,automated'],
             capture_output=True,
             text=True,
@@ -67,6 +94,13 @@ Please investigate the failed projects and fix any issues with the source data o
         print(f"stdout: {e.stdout}")
         print(f"stderr: {e.stderr}")
         return False
+    finally:
+        # Clean up temporary files
+        try:
+            os.unlink(title_path)
+            os.unlink(body_path)
+        except Exception:
+            pass
 
 def main():
     # Get the script directory
