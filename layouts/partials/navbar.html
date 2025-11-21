@@ -13,7 +13,7 @@
 
     {{if $show_logo}}
     <div class="d-none d-lg-inline-flex">
-      <a class="navbar-brand" href="{{ " /" | relLangURL }}">
+      <a class="navbar-brand" href="{{ "/" | relLangURL }}">
         {{- if $has_logo -}}
         <img src="{{ $logo.RelPermalink }}" alt="{{ site.Title }} Logo. Link to homepage">
         {{- else -}}
@@ -32,7 +32,7 @@
 
     {{if $show_logo}}
     <div class="navbar-brand-mobile-wrapper d-inline-flex d-lg-none">
-      <a class="navbar-brand" href="{{ " /" | relLangURL }}">
+      <a class="navbar-brand" href="{{ "/" | relLangURL }}">
         {{- if $has_logo -}}
         <img src="{{ $logo.RelPermalink }}" alt="{{ site.Title }}">
         {{- else -}}
