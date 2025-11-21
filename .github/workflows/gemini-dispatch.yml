@@ -17,6 +17,7 @@ on:
   pull_request:
     types:
       - 'opened'
+      - 'synchronize'
   issues:
     types:
       - 'opened'
@@ -110,7 +111,7 @@ jobs:
               core.setOutput('command', 'invoke');
               const additionalContext = request.replace(/^@gemini-cli/, '').trim();
               core.setOutput('additional_context', additionalContext);
-            } else if (eventType === 'pull_request.opened') {
+            } else if (['pull_request.opened', 'pull_request.synchronize'].includes(eventType)) {
               core.setOutput('command', 'review');
             } else if (['issues.opened', 'issues.reopened'].includes(eventType)) {
               core.setOutput('command', 'triage');
