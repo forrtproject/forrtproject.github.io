@@ -1,0 +1,754 @@
+#!/usr/bin/env python3
+"""
+Generate steering committee member profiles from Google Sheets CSVs.
+
+This script:
+1. Downloads steering committee member list and personal details from Google Sheets
+2. Merges data by matching member names
+3. Groups members into Strategic, Operations, Steering, and Guidance categories based on 'Section'
+4. Sub-groups members into Teams based on 'Team' column
+5. Generates a single Hugo content file with static HTML and Vanilla JS
+6. Downloads profile pictures from Google Drive
+"""
+
+import pandas as pd
+import os
+import shutil
+import re
+import requests
+import unicodedata
+import json
+import html
+from pathlib import Path
+from difflib import SequenceMatcher
+from urllib.parse import parse_qs, urlparse
+from PIL import Image
+from io import BytesIO
+
+# Configuration
+SC_CSV_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vRCHSY7WBvzDSSWyUyOVPRbsf5QxO7Mc40hGB7yanfT-rjbcNthMbHvUxT0NJ3AAfLKfx4YiOghByZT/pub?output=csv"
+PERSONAL_CSV_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vTbY9_zqSqjCEnGlWMgRYkgd0_tJzXVY2efoqQ3TcPC0eIqIOxVnVHVM7lYpgpZRalacEznJpWDalHi/pub?output=csv"
+PERSONAL_FALLBACK_CSV_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vQxGxmTAbmmUyCITmcj9fI5nHGDp3U7QwtSvNW4LG0NWWr2k2RkU5cGxlVYsHNdQ5xzv55SpmvPk5Ud/pub?output=csv"
+
+# Get the script directory to determine where to save files
+SCRIPT_DIR = Path(__file__).parent
+REPO_ROOT = SCRIPT_DIR.parent
+AUTHORS_DIR = REPO_ROOT / "content" / "authors"
+SC_PAGE_DIR = REPO_ROOT / "content" / "about" / "steering-committee"
+STATIC_IMG_DIR = REPO_ROOT / "static" / "img" / "steering-committee"
+
+# Category Definitions
+CATEGORY_MAPPING = {
+    "Focus Areas": "strategic",
+    "Strategic Focus Areas": "strategic",
+    "Operations": "operations",
+    "FORRT Stewards": "operations",
+    "Steering Committee": "steering",
+    "Governance": "steering",
+    "Guidance": "guidance",
+    "Guidance & Oversight": "guidance"
+}
+
+CATEGORY_DETAILS = {
+    "strategic": {
+        "title": "Strategic Focus Areas",
+        "description": "Core mission-driven teams advancing open scholarship, social justice, and community sustainability.",
+        "icon": '<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>'
+    },
+    "operations": {
+        "title": "Operations & Stewardship",
+        "description": "Infrastructure, community management, ethical oversight, and support systems powering FORRT.",
+        "icon": '<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.1a2 2 0 0 1-1-1.74v-.47a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"/><circle cx="12" cy="12" r="3"/></svg>'
+    },
+    "steering": {
+        "title": "Strategic Facilitation & Integration",
+        "description": "Synthesising community efforts to maintain alignment with FORRT’s mission and vision.",
+        "icon": '<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="5" r="3"/><line x1="12" x2="12" y1="22" y2="8"/><path d="M5 12H2a10 10 0 0 0 20 0h-3"/></svg>'
+    },
+    "guidance": {
+        "title": "Guidance & Oversight",
+        "description": "Independent ethical guidance and long-term stewardship.",
+        "icon": '<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s-7-3.5-7-9.5V6l7-3 7 3v6.5C19 18.5 12 22 12 22z"/><path d="m9 12 2 2 4-4"/></svg>'
+    }
+}
+
+# HTML Templates - Custom CSS (External)
+PAGE_TEMPLATE = r"""
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<!-- External CSS -->
+<link rel="stylesheet" href="/css/steering-committee.css">
+
+<div id="sc-container" class="col-lg-12">
+    <h1 class="sc-page-title">Steering Committee</h1>
+    <nav class="sc-nav">
+        <a href="#strategic">Strategic Focus Areas</a>
+        <a href="#operations">Operations & Stewardship</a>
+        <a href="#steering">Strategic Facilitation & Integration</a>
+        <a href="#guidance">Guidance & Oversight</a>
+    </nav>
+    <main>
+        __CONTENT__
+    </main>
+    <div id="modals-container">
+        __MODALS__
+    </div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    window.openModal = (id) => {
+        const modal = document.getElementById(`modal-${id}`);
+        if (modal) {
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+    };
+
+    window.closeModal = (id) => {
+        const modal = document.getElementById(`modal-${id}`);
+        if (modal) {
+            modal.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+    };
+
+    document.querySelectorAll('.sc-modal-backdrop').forEach(backdrop => {
+        backdrop.addEventListener('click', (e) => {
+            if (e.target === backdrop) {
+                backdrop.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+        });
+    });
+
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+            const activeModal = document.querySelector('.sc-modal-backdrop.active');
+            if (activeModal) {
+                activeModal.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+        }
+    });
+
+    /* --- Team linking + ordering based on source CSV --- */
+    const SC_ORDER_CSV = "https://docs.google.com/spreadsheets/d/e/2PACX-1vRCHSY7WBvzDSSWyUyOVPRbsf5QxO7Mc40hGB7yanfT-rjbcNthMbHvUxT0NJ3AAfLKfx4YiOghByZT/pub?output=csv";
+    const TEAM_COLORS = ["#2563eb","#c026d3","#ea580c","#22c55e","#0ea5e9","#f59e0b","#ef4444","#8b5cf6","#14b8a6","#f97316"];
+    const BACKGROUND_COLORS = ["#0f766e", "#475569"];
+    const honorifics = /^(dr|dr\.|prof|prof\.|mr|mrs|ms|miss)\s+/i;
+    const normalizeBase = (str = "") => str.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+    const normalizeText = (str = "") => normalizeBase(str.replace(/&amp;/gi, "&").trim().toLowerCase());
+    const normalizeTeam = (str = "") => normalizeText(str).replace(/\s+/g, " ");
+    const nameTokens = (str = "") =>
+        normalizeText(str.replace(honorifics, ""))
+            .replace(/[^a-z0-9\s]/g, " ")
+            .split(/\s+/)
+            .filter(Boolean);
+
+    const tokenSimilarity = (aTokens, bTokens) => {
+        if (!aTokens.length || !bTokens.length) return 0;
+        const aSet = new Set(aTokens);
+        const bSet = new Set(bTokens);
+        let intersect = 0;
+        bSet.forEach((t) => {
+            if (aSet.has(t)) intersect += 1;
+        });
+        return intersect / Math.max(aSet.size, bSet.size, 1);
+    };
+
+    const charDice = (aStr, bStr) => {
+        const a = aStr.replace(/\s+/g, "");
+        const b = bStr.replace(/\s+/g, "");
+        if (!a.length || !b.length) return 0;
+        const count = (s) => {
+            const m = {};
+            for (const ch of s) m[ch] = (m[ch] || 0) + 1;
+            return m;
+        };
+        const aCount = count(a);
+        const bCount = count(b);
+        let overlap = 0;
+        Object.keys(aCount).forEach((ch) => {
+            if (bCount[ch]) overlap += Math.min(aCount[ch], bCount[ch]);
+        });
+        return (2 * overlap) / (a.length + b.length);
+    };
+
+    const parseCSV = (text) =>
+        text
+            .trim()
+            .split(/\\r?\\n/)
+            .map((line) => line.split(",").map((cell) => cell.replace(/^"+|"+$/g, "").trim()));
+
+    const buildOrders = (rows) => {
+        const sectionMap = {};
+        document.querySelectorAll(".sc-section").forEach((sec) => {
+            const title = sec.querySelector(".sc-section-title span")?.textContent || sec.id;
+            sectionMap[normalizeTeam(title)] = sec.id;
+        });
+
+        const findSection = (raw) => {
+            const key = normalizeTeam(raw);
+            if (sectionMap[key]) return sectionMap[key];
+
+            const operationsId = Object.entries(sectionMap).find(([k]) => k.includes('operation'))?.[1];
+            if (operationsId && (key.includes('ombudsman') || key.includes('steward'))) {
+                return operationsId;
+            }
+
+            let best = null;
+            let bestScore = -1;
+            Object.entries(sectionMap).forEach(([k, id]) => {
+                const score = charDice(k, key);
+                if (score > bestScore) {
+                    bestScore = score;
+                    best = id;
+                }
+            });
+            return best || Object.values(sectionMap)[0] || null;
+        };
+
+        const orders = {};
+        rows.slice(1).forEach((row) => {
+            const sectionRaw = row[1];
+            const teamRaw = row[3];
+            const nameRaw = row[5];
+            if (!sectionRaw || !teamRaw || !nameRaw) return;
+            const secKey = findSection(sectionRaw);
+            if (!secKey) return;
+            if (!orders[secKey]) orders[secKey] = [];
+            let group = orders[secKey].find((g) => normalizeTeam(g.team) === normalizeTeam(teamRaw));
+            if (!group) {
+                group = { team: teamRaw, members: [] };
+                orders[secKey].push(group);
+            }
+            group.members.push(nameRaw);
+        });
+        return orders;
+    };
+
+    const reorderAndLink = (sectionId, teams) => {
+        const grid = document.querySelector(`#${sectionId} .sc-grid`);
+        if (!grid || !teams || !teams.length) return;
+
+        const titleCards = Array.from(grid.querySelectorAll('.sc-title-card'));
+        const memberCards = Array.from(grid.querySelectorAll('.sc-card'));
+
+        [...titleCards, ...memberCards].forEach((el) => {
+            el.classList.remove('sc-team-linked', 'sc-team-title');
+            el.style.removeProperty('--team-color');
+        });
+
+        const titleMap = new Map();
+        titleCards.forEach((card) => {
+            const text = card.querySelector('.sc-title-text')?.textContent || "";
+            titleMap.set(normalizeTeam(text), card);
+        });
+
+        const memberMap = [];
+        memberCards.forEach((card) => {
+            const name = card.querySelector('.sc-card-name')?.textContent || "";
+            const tokens = nameTokens(name);
+            if (!tokens.length) return;
+            memberMap.push({ tokens, card });
+        });
+
+        const takeMember = (rawName) => {
+            const targetTokens = nameTokens(rawName);
+            if (!targetTokens.length) return null;
+            const targetJoined = targetTokens.join("");
+
+            let best = null;
+            let bestScore = 0.45;
+
+            memberMap.forEach((entry, idx) => {
+                const tokenScore = tokenSimilarity(entry.tokens, targetTokens);
+                const joined = entry.tokens.join("");
+                const charScore = charDice(joined, targetJoined);
+                const score = Math.max(tokenScore, charScore);
+                if (score > bestScore) {
+                    bestScore = score;
+                    best = { idx, card: entry.card };
+                }
+            });
+
+            if (best) {
+                memberMap.splice(best.idx, 1);
+                return best.card;
+            }
+            return null;
+        };
+
+        let colorIndex = 0;
+        const parseColor = (hex) => {
+            const h = hex.replace("#", "");
+            const r = parseInt(h.substring(0, 2), 16) / 255;
+            const g = parseInt(h.substring(2, 4), 16) / 255;
+            const b = parseInt(h.substring(4, 6), 16) / 255;
+            const toLin = (c) => (c <= 0.03928 ? c / 12.92 : Math.pow((c + 0.055) / 1.055, 2.4));
+            return { r: toLin(r), g: toLin(g), b: toLin(b) };
+        };
+        const contrast = (hex1, hex2) => {
+            const a = parseColor(hex1);
+            const b = parseColor(hex2);
+            const lum = ({ r, g, b }) => 0.2126 * r + 0.7152 * g + 0.0722 * b;
+            const l1 = lum(a) + 0.05;
+            const l2 = lum(b) + 0.05;
+            return l1 > l2 ? l1 / l2 : l2 / l1;
+        };
+        const nextColor = () => {
+            let attempts = 0;
+            while (attempts < TEAM_COLORS.length * 2) {
+                const color = TEAM_COLORS[colorIndex % TEAM_COLORS.length];
+                colorIndex += 1;
+                const ok = BACKGROUND_COLORS.every((bg) => contrast(color, bg) > 4);
+                if (ok) return color;
+                attempts += 1;
+            }
+            return TEAM_COLORS[(colorIndex++) % TEAM_COLORS.length];
+        };
+
+        const newChildren = [];
+
+        teams.forEach((team) => {
+            const color = nextColor();
+            const teamKey = normalizeTeam(team.team);
+            const titleCard = titleMap.get(teamKey);
+            if (titleCard) {
+                titleCard.style.setProperty('--team-color', color);
+                titleCard.classList.add('sc-team-title');
+                titleMap.delete(teamKey);
+                newChildren.push(titleCard);
+            }
+
+            team.members.forEach((memberName) => {
+                const card = takeMember(memberName);
+                if (card) {
+                    card.style.setProperty('--team-color', color);
+                    card.classList.add('sc-team-linked');
+                    newChildren.push(card);
+                }
+            });
+        });
+
+        const leftovers = [];
+        titleMap.forEach((card) => leftovers.push(card));
+        memberMap.forEach((entry) => leftovers.push(entry.card));
+
+        grid.innerHTML = '';
+        [...newChildren, ...leftovers].forEach((el) => grid.appendChild(el));
+    };
+
+    fetch(SC_ORDER_CSV)
+        .then((res) => res.text())
+        .then((text) => {
+            const rows = parseCSV(text);
+            const orders = buildOrders(rows);
+            Object.entries(orders).forEach(([sectionId, teams]) => reorderAndLink(sectionId, teams));
+        })
+        .catch((err) => console.warn('SC team linking failed', err));
+});
+</script>
+"""
+
+SECTION_TEMPLATE = r"""
+<section class="sc-section" id="{type}">
+    <div class="sc-section-header">
+        <div class="sc-section-title">
+            {icon}
+            <span>{title}</span>
+        </div>
+        <p class="sc-section-desc">{description}</p>
+    </div>
+    <div class="sc-grid">
+        {cards}
+    </div>
+</section>
+"""
+
+TEAM_TITLE_CARD_TEMPLATE = r"""
+<div class="sc-title-card {bg_class}">
+    <span class="sc-title-label">Team</span>
+    <h3 class="sc-title-text">{name}</h3>
+</div>
+"""
+
+MEMBER_CARD_TEMPLATE = r"""
+<div class="sc-card" onclick="openModal('{id}')">
+    {img_content}
+    <div class="sc-card-overlay"></div>
+    <div class="sc-card-content">
+        <h4 class="sc-card-name">{name}</h4>
+        <p class="sc-card-role">{role}</p>
+    </div>
+</div>
+"""
+
+MODAL_TEMPLATE = r"""
+<div id="modal-{id}" class="sc-modal-backdrop">
+    <div class="sc-modal-content">
+        <div class="sc-modal-header">
+            <button onclick="closeModal('{id}')" class="sc-close-btn">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 18 12"/></svg>
+            </button>
+        </div>
+        <div class="sc-modal-body">
+            <div class="sc-modal-layout">
+                <div class="sc-modal-sidebar">
+                    <div class="sc-modal-img">
+                        {img_content_large}
+                    </div>
+                    <div class="sc-social-links">
+                        {social_links}
+                    </div>
+                </div>
+                <div class="sc-modal-main">
+                    <h3 class="sc-modal-name">{name}</h3>
+                    <p class="sc-modal-role">{role}</p>
+                    <div class="sc-modal-bio">{bio}</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+"""
+
+ICONS = {
+    "twitter": '<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-12.7 12.5S1.2 13 5.3 11c-4.5-1.4-5-7.3-1.9-8.8C7 5 9 9 10 9s-1-1.5-1-4c0-2 .5-4 2.5-4 1.3 0 2.5 1 2.5 1 1.5 0 2.5-1 2.5-1 .5 1.5 1 2.5 1 2.5z"/></svg>',
+    "linkedin": '<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>',
+    "globe": '<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" x2="22" y1="12" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>',
+    "mail": '<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>'
+}
+
+def normalize_name(name):
+    if pd.isna(name): return ""
+    name = str(name).strip()
+    name = re.sub(r'\\b(Dr|Dr\\.|Mr|Mr\\.|Ms|Ms\\.|Mrs|Prof|Prof\\.)\\s+', '', name, flags=re.IGNORECASE)
+    name = re.sub(r'\\*', '', name)
+    name = unicodedata.normalize('NFKD', name)
+    name = name.encode('ascii', 'ignore').decode('ascii')
+    name = re.sub(r'\\s+', ' ', name).strip()
+    return name.lower()
+
+def similarity(a, b):
+    return SequenceMatcher(None, a, b).ratio()
+
+def find_match(name, candidates, threshold=0.6):
+    normalized = normalize_name(name)
+    best_match = None
+    best_score = threshold
+    for candidate in candidates:
+        normalized_candidate = normalize_name(candidate)
+        score = similarity(normalized, normalized_candidate)
+        if score > best_score:
+            best_score = score
+            best_match = candidate
+    return best_match
+
+def sanitize_filename(name):
+    name = normalize_name(name)
+    name = re.sub(r'[^a-z0-9\\s]', '', name)
+    name = re.sub(r'\\s+', '-', name)
+    return name
+
+def get_initials(name):
+    parts = name.split()
+    if len(parts) >= 2:
+        return f"{parts[0][0]}{parts[-1][0]}".upper()
+    elif parts:
+        return parts[0][0].upper()
+    return "??"
+
+def get_google_drive_download_url(share_url):
+    try:
+        if 'open?id=' in share_url:
+            file_id = share_url.split('open?id=')[1]
+        elif '/d/' in share_url:
+            file_id = share_url.split('/d/')[1].split('/')[0]
+        else:
+            return None
+        return f"https://drive.google.com/uc?export=download&id={file_id}"
+    except Exception as e:
+        print(f"Error parsing Google Drive URL: {e}")
+        return None
+
+def download_image(url, filepath):
+    try:
+        response = requests.get(url, timeout=10)
+        response.raise_for_status()
+        img = Image.open(BytesIO(response.content))
+        if img.mode in ('RGBA', 'LA', 'P'):
+            rgb_img = Image.new('RGB', img.size, (255, 255, 255))
+            rgb_img.paste(img, mask=img.split()[-1] if img.mode == 'RGBA' else None)
+            img = rgb_img
+        img.save(filepath, 'WEBP', quality=85)
+        print(f"✓ Downloaded and saved image: {filepath}")
+        return True
+    except Exception as e:
+        print(f"✗ Failed to download image from {url}: {e}")
+        return False
+
+def generate_social_links(member):
+    links = []
+    if member.get('twitter'):
+        links.append(f'<a href="{member["twitter"]}" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-teal-600 transition-colors">{ICONS["twitter"]}</a>')
+    if member.get('linkedin'):
+        links.append(f'<a href="{member["linkedin"]}" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-blue-700 transition-colors">{ICONS["linkedin"]}</a>')
+    if member.get('website'):
+        links.append(f'<a href="{member["website"]}" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-slate-800 transition-colors">{ICONS["globe"]}</a>')
+    if member.get('email'):
+        links.append(f'<a href="mailto:{member["email"]}" class="text-slate-400 hover:text-slate-800 transition-colors">{ICONS["mail"]}</a>')
+    return "".join(links)
+
+def main():
+    print("=" * 60)
+    print("Generating Steering Committee Page (Static HTML)")
+    print("=" * 60)
+
+    # Download CSVs
+    print("\\n[1/5] Downloading data from Google Sheets...")
+    try:
+        sc_df = pd.read_csv(SC_CSV_URL)
+        personal_df = pd.read_csv(PERSONAL_CSV_URL)
+        fallback_df = pd.read_csv(PERSONAL_FALLBACK_CSV_URL)
+        print(f"✓ Downloaded steering committee data ({len(sc_df)} rows)")
+        print(f"✓ Downloaded personal details data ({len(personal_df)} rows)")
+        print(f"✓ Downloaded fallback details data ({len(fallback_df)} rows)")
+    except Exception as e:
+        print(f"✗ Failed to download CSVs: {e}")
+        return
+
+    # Clean and prepare steering committee data
+    print("\\n[2/5] Preparing data...")
+    sc_df = sc_df[sc_df['Persons Invited'].notna()]
+    sc_df = sc_df[sc_df['Persons Invited'].astype(str).str.strip() != '']
+    
+    # Create a mapping for personal details
+    personal_dict = {}
+
+    def add_personal_entry(row, target, allow_overwrite=False):
+        full_name = row.get('Full Name (incl academic title)', '')
+        if pd.isna(full_name) or str(full_name).strip() == '':
+            return
+        normalized = normalize_name(str(full_name))
+        if not allow_overwrite and normalized in target:
+            return
+        target[normalized] = {
+            'Full Name': full_name,
+            'ORCiD': row.get('ORCiD', ''),
+            'Email': row.get('Email address (if you are happy to share one in public)', ''),
+            'Weblink': row.get('Professional Weblink (e.g., institutional profile, Google Scholar, personal webpage)', ''),
+            'Photo URL': row.get('Professional Headshot (for website)', ''),
+            'Bio': row.get('Your bio (approximately 150 words)', '')
+        }
+
+    for _, row in personal_df.iterrows():
+        add_personal_entry(row, personal_dict, allow_overwrite=True)
+
+    # Fallback sheet with minimal fields (links + headshots) to cover missing responses
+    if 'fallback_df' in locals():
+        for _, row in fallback_df.iterrows():
+            add_personal_entry(row, personal_dict, allow_overwrite=False)
+
+    print(f"✓ Prepared personal details index with {len(personal_dict)} entries")
+
+    # Create output directories
+    print("\\n[3/5] Creating directories...")
+    AUTHORS_DIR.mkdir(parents=True, exist_ok=True)
+    SC_PAGE_DIR.mkdir(parents=True, exist_ok=True)
+    STATIC_IMG_DIR.mkdir(parents=True, exist_ok=True)
+    (REPO_ROOT / "static" / "css").mkdir(parents=True, exist_ok=True) # Ensure CSS dir exists
+    print(f"✓ Created output directories")
+
+    # Clean up old widget files
+    print("\\n[3.5/5] Cleaning up old widget files...")
+    for widget_file in SC_PAGE_DIR.glob("people_*.md"):
+        widget_file.unlink()
+    print(f"✓ Cleaned up old widget files")
+
+    # Process members and build data structure
+    print("\\n[4/5] Processing members and building data structure...")
+
+    # Initialize data structure for the main categories
+    categories = {
+        "strategic": {"teams": {}, "order": []},
+        "operations": {"teams": {}, "order": []},
+        "steering": {"teams": {}, "order": []},
+        "guidance": {"teams": {}, "order": []}
+    }
+
+    for idx, row in sc_df.iterrows():
+        member_name = row['Persons Invited']
+        role = row['Role']
+        section = row['Section']
+        team_name = row['Team']
+        role_title = row.get('Role Title', role)
+        
+        # Determine Main Category
+        main_category_key = CATEGORY_MAPPING.get(section, "operations") # Default to operations if unknown
+        
+        # Determine Team Name
+        # If team_name is missing, use Section or a default
+        if pd.isna(team_name) or str(team_name).strip() == "":
+            team_name = section if pd.notna(section) else "General"
+
+        # Try to find matching personal details
+        normalized_member = normalize_name(member_name)
+        personal_data = personal_dict.get(normalized_member)
+        personal_name = member_name
+
+        if personal_data is not None:
+            personal_name = personal_data['Full Name']
+        else:
+            matching_name = find_match(member_name, personal_dict.keys(), threshold=0.65)
+            if matching_name:
+                personal_data = personal_dict[matching_name]
+                personal_name = personal_data['Full Name']
+
+        # Handle image
+        img_url = ""
+        sanitized_name = sanitize_filename(personal_name)
+        author_dir = AUTHORS_DIR / sanitized_name
+        author_dir.mkdir(parents=True, exist_ok=True)
+        avatar_path = author_dir / "avatar.webp"
+        
+        if personal_data and personal_data.get('Photo URL') and pd.notna(personal_data['Photo URL']):
+             if not avatar_path.exists():
+                raw_photo_url = str(personal_data['Photo URL']).strip()
+                download_url = get_google_drive_download_url(raw_photo_url) or raw_photo_url
+                download_image(download_url, avatar_path)
+        
+        if avatar_path.exists():
+            img_url = f"/authors/{sanitized_name}/avatar.webp"
+
+        # Build member object
+        bio_text = ""
+        if personal_data and personal_data.get('Bio'):
+            bio_text = str(personal_data.get('Bio'))
+            if bio_text.lower() == 'nan':
+                bio_text = ""
+        
+        member_obj = {
+            "id": sanitized_name,
+            "name": personal_name,
+            "role": role if pd.notna(role) else "",
+            "role_title": role_title if pd.notna(role_title) else (role if pd.notna(role) else ""),
+            "imgUrl": img_url,
+            "initials": get_initials(personal_name),
+            "bio": bio_text,
+            "email": personal_data.get('Email', '') if personal_data else '',
+            "website": personal_data.get('Weblink', '') if personal_data else '',
+            "twitter": "", 
+            "linkedin": "" 
+        }
+        
+        # Add to appropriate category and team
+        if team_name not in categories[main_category_key]["teams"]:
+             categories[main_category_key]["teams"][team_name] = []
+             categories[main_category_key]["order"].append(team_name)
+        
+        categories[main_category_key]["teams"][team_name].append(member_obj)
+
+    print(f"✓ Built data structure")
+
+    # Generate HTML
+    print("\\n[5/5] Generating HTML...")
+    
+    content_html = ""
+    modals_html = ""
+
+    # Order of categories
+    cat_order = ["strategic", "operations", "steering", "guidance"]
+    categories_with_team_titles = {"strategic", "operations"}
+
+    for cat_key in cat_order:
+        cat_data = categories[cat_key]
+        cat_details = CATEGORY_DETAILS[cat_key]
+        
+        cards_html = ""
+        
+        # Keep teams in CSV order (insertion order)
+        for team_name in cat_data["order"]:
+            members = cat_data["teams"][team_name]
+            
+            # Only Strategic and Operations display team title cards; Steering and Guidance list members directly.
+            if cat_key in categories_with_team_titles:
+                bg_class = "teal"
+                if cat_key == "operations":
+                    bg_class = "slate"
+                
+                cards_html += TEAM_TITLE_CARD_TEMPLATE.format(
+                    name=team_name,
+                    bg_class=bg_class
+                ).strip()
+            
+            # Member Cards
+            for member in members:
+                img_content = ""
+                if member["imgUrl"]:
+                    img_content = f'<img src="{member["imgUrl"]}" alt="{member["name"]}" class="sc-card-img" />'
+                else:
+                    # Placeholder for missing image
+                    img_content = f'<div class="sc-placeholder">{member["initials"]}</div>'
+
+                cards_html += MEMBER_CARD_TEMPLATE.format(
+                    id=member["id"],
+                    name=member["name"],
+                    role=member["role"],
+                    img_content=img_content
+                ).strip()
+
+                # Generate Modal for this member
+                img_content_large = ""
+                if member["imgUrl"]:
+                    img_content_large = f'<img src="{member["imgUrl"]}" alt="{member["name"]}" />'
+                else:
+                    img_content_large = f'<span style="font-size: 2rem; color: #94a3b8; font-weight: 600;">{member["initials"]}</span>'
+
+                modals_html += MODAL_TEMPLATE.format(
+                    id=member["id"],
+                    name=member["name"],
+                    role=member["role_title"] or member["role"],
+                    bio=html.escape(member["bio"] or "Bio coming soon."),
+                    img_content_large=img_content_large,
+                    social_links=generate_social_links(member)
+                ).strip()
+
+        content_html += SECTION_TEMPLATE.format(
+            type=cat_key,
+            title=cat_details["title"],
+            description=cat_details["description"],
+            icon=cat_details["icon"],
+            cards=cards_html
+        ).strip()
+
+    # Assemble full page
+    # IMPORTANT: We must not indent the HTML content when inserting it into the template
+    full_html = PAGE_TEMPLATE.replace("__CONTENT__", content_html).replace("__MODALS__", modals_html)
+    
+    # Add Frontmatter and wrap in rawhtml shortcode to prevent Hugo escaping
+    full_content = f"""---
+title: Steering Committee
+type: page
+layout: single
+---
+
+{{{{< rawhtml >}}}}
+{full_html}
+{{{{< /rawhtml >}}}}
+"""
+
+    # Write to file
+    index_file = SC_PAGE_DIR / "index.md"
+    with open(index_file, 'w', encoding='utf-8') as f:
+        f.write(full_content)
+
+    print(f"✓ Created steering committee page: {index_file}")
+    
+    print("\\n" + "=" * 60)
+    print("✓ Successfully generated steering committee page!")
+    print("=" * 60)
+
+if __name__ == "__main__":
+    main()
