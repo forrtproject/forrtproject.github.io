@@ -154,10 +154,4 @@ This initiative is supported by a consortium of organizations dedicated to advan
 
 ### Join the Movement
 
-We invite you to explore the map and contribute your own resources to this growing community. Together, we can create a more transparent, inclusive, and collaborative future for scientific research.
-
-Explore the Map <a href="https://forrt.org/apps/os_map.html" target="_blank">here</a>
-
-Submit Your Resources: [Google Form Link]
-
-Contact Us: Flavio Azevedo (via [FORRT's Slack](https://join.slack.com/t/forrt/shared_invite/zt-alobr3z7-NOR0mTBfD1vKXn9qlOKqaQ))
+We are revising the interactive map and will relaunch it with verified entries. In the meantime, contribute resources or ask questions by messaging Flavio Azevedo on [FORRT's Slack](https://join.slack.com/t/forrt/shared_invite/zt-alobr3z7-NOR0mTBfD1vKXn9qlOKqaQ). Together, we can create a more transparent, inclusive, and collaborative future for scientific research.
