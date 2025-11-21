@@ -11,7 +11,15 @@ import shlex
 import tempfile
 
 def sanitize_string(s):
-    """Sanitize a string to prevent command injection."""
+    """
+    Sanitize a string to prevent command injection.
+    
+    Args:
+        s: Any value (will be converted to string if not already)
+        
+    Returns:
+        str: Sanitized string with control characters removed and whitespace normalized
+    """
     # Remove or escape characters that could be problematic
     if not isinstance(s, str):
         s = str(s)
@@ -82,6 +90,14 @@ Please investigate the failed projects and fix any issues with the source data o
         body_file.write(body)
         body_file.close()
         body_path = body_file.name
+        
+        # Check if GitHub CLI is available
+        try:
+            gh_check = subprocess.run(['gh', '--version'], capture_output=True, text=True, check=True)
+            print(f"Using GitHub CLI: {gh_check.stdout.split()[0]} {gh_check.stdout.split()[2]}")
+        except (subprocess.CalledProcessError, FileNotFoundError) as e:
+            print(f"❌ GitHub CLI (gh) is not available or not authenticated: {e}")
+            return False
         
         # Use GitHub CLI to create the issue
         result = subprocess.run(
