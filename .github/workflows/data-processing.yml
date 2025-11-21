@@ -155,6 +155,16 @@ jobs:
         run: python3 scripts/forrt_contribs/tenzing.py
 
       #========================================
+      # Check for Tenzing failures and create issue if needed
+      #========================================
+      - name: Check Tenzing failures and create issue
+        if: always()  # Run even if previous step failed
+        continue-on-error: true  # Don't fail the workflow if issue creation fails
+        run: python3 scripts/forrt_contribs/create_failure_issue.py
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      #========================================
       # Process and organize curated resources data
       #========================================
       - name: Run Curated Resources script
