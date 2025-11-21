@@ -1,60 +1,35 @@
 ---
 # Display name
-name: "Kelly Lloyd"
+name: "Dr Kelly Lloyd"
 
-# Username (this should match the folder name and the name on publications)
+# Username (this should match the folder name)
 authors:
-- Name "Kelly Lloyd"
+- Name "Dr Kelly Lloyd"
 
 # Is this the primary user of the site?
 superuser: false
 
-# Role/position (e.g., Professor of Artificial Intelligence)
-role:
+# Role/position
+role: "Community Cohesion-Liaison "
+
+# Team/Subsection (for steering committee subsection grouping)
+team: "Community Management [internal governance]"
 
 # Organizations/Affiliations
-organizations:
-- name: 
-  url: ""
+organizations: []
 
 # Short bio (displayed in user profile at end of posts)
-bio: 
-
-# List each interest with a dash
-interests:
-- Interest 1
-- Interest 2
-
-education:
-  courses:
-  - course: Title course 1
-    institution: Name of Institution
-    year: 2012
-  - course: Title course 1
-    institution: Name of Institution
-    year: 2012
-
-# Social/Academic Networking
-# For available icons, see: https://sourcethemes.com/academic/docs/page-builder/#icons
-#   For an email link, use "fas" icon pack, "envelope" icon, and a link in the
-#   form "mailto:your-email@example.com" or "#contact" for contact widget.
-social:
-- icon: envelope
-  icon_pack: fas
-  link: 'mailto: umkel@leeds.ac.uk'  # For a direct email link, use "mailto:test@example.org".
-# Link to a PDF of your resume/CV from the About widget.
-# To enable, copy your resume/CV to `static/files/cv.pdf` and uncomment the lines below.
-# - icon: cv
-#   icon_pack: ai
-#   link: files/cv.pdf
-
-# Enter email to display Gravatar (if Gravatar enabled in Config)
-email: ""
+bio: ""
 
 # Organizational groups that you belong to (for People widget)
-#   Set this to `[]` or comment out if you are not using People widget.
 user_groups:
-- ""
-#- "Steering Committee"
-#- "Code of Conduct Committee"
+- "Operations"
+
+# Social/Academic Networking
+social:
+- icon: globe
+  icon_pack: fas
+  link: https://medicinehealth.leeds.ac.uk/medicine/staff/11697/dr-kelly-lloyd
 ---
+
+I am a Research Fellow working in primary care research and implementation science at the Leeds Institute of Health Sciences, University of Leeds. I am a keen advocate for open research practices, which led to me joining the amazing FORRT community in 2021! Since, I have worked behind the scenes on aspects such as our communication (e.g., newsletter, social media), and community and cohesion building.
