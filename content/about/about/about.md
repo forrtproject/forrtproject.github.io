@@ -79,7 +79,7 @@ FORRT provides a pedagogical infrastructure and open educational resources desig
 
 ***Want to learn more about us?***
 
-Our community has [**published**](/publications) meta-scientific peer-reviewed papers & policies (and we also have ongoing **manuscripts** being written) so please consider reading our [award-winning](/awards) scholarship at the FORRT's [Publications page](/publications).
+Our community has [**published**](/publications) meta-scientific peer-reviewed papers & policies (and we also have ongoing **manuscripts** being written) so please consider reading our award-winning scholarship on the FORRT's [Publications page](/publications), or start with our manifesto on the [OSF](https://osf.io/bnh7p).
 
 If you’re looking for **open educational resources**, please take a look at our [Educational Nexus](/nexus) and our [FORRT Pedagogies](/pedagogies).
 
