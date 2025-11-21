@@ -14,10 +14,10 @@ def sanitize_string(s):
     # Remove or escape characters that could be problematic
     if not isinstance(s, str):
         s = str(s)
-    # Replace newlines and tabs with spaces
+    # Replace newlines, carriage returns, and tabs with spaces
     s = s.replace('\n', ' ').replace('\r', ' ').replace('\t', ' ')
-    # Remove any control characters
-    s = ''.join(char for char in s if ord(char) >= 32 or char in '\n\r\t')
+    # Remove any other control characters (ASCII < 32, excluding space which is 32)
+    s = ''.join(char for char in s if ord(char) >= 32)
     return s.strip()
 
 def create_issue(failures_data):
