@@ -1,4 +1,1298 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Abouts | FORRT - Framework for Open and Reproducible Research Training</title><link>https://forrt.org/about/</link><atom:link href="https://forrt.org/about/index.xml" rel="self" type="application/rss+xml"/><description>Abouts</description><generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© 2025 - FORRT > Framework for Open and Reproducible Research Training</copyright><image><url>https://forrt.org/img/FORRT_banner.svg</url><title>Abouts</title><link>https://forrt.org/about/</link></image><item><title>About us</title><link>https://forrt.org/about/us/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://forrt.org/about/us/</guid><description/></item><item><title>Cite us</title><link>https://forrt.org/about/cite_us/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://forrt.org/about/cite_us/</guid><description/></item><item><title>Community</title><link>https://forrt.org/about/community/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://forrt.org/about/community/</guid><description/></item><item><title>FORRT Germany e.V.</title><link>https://forrt.org/about/charity/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://forrt.org/about/charity/</guid><description/></item><item><title>Get Involved</title><link>https://forrt.org/about/get-involved/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://forrt.org/about/get-involved/</guid><description/></item><item><title>Mission</title><link>https://forrt.org/about/mission/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://forrt.org/about/mission/</guid><description/></item><item><title>Partnerships</title><link>https://forrt.org/about/partnerships/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://forrt.org/about/partnerships/</guid><description/></item><item><title>Principles</title><link>https://forrt.org/about/principles/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://forrt.org/about/principles/</guid><description/></item><item><title>Teams</title><link>https://forrt.org/about/teams/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://forrt.org/about/teams/</guid><description/></item><item><title>Visitors</title><link>https://forrt.org/about/visitors/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://forrt.org/about/visitors/</guid><description>&lt;p>We are excited to see that our resources are useful for people from all over the world. Here are some statistics to show who has been here over the past 30 days.&lt;/p>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Abouts | FORRT - Framework for Open and Reproducible Research Training</title><link>https://forrt.org/about/</link><atom:link href="https://forrt.org/about/index.xml" rel="self" type="application/rss+xml"/><description>Abouts</description><generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© 2025 - FORRT > Framework for Open and Reproducible Research Training</copyright><image><url>https://forrt.org/img/FORRT_banner.svg</url><title>Abouts</title><link>https://forrt.org/about/</link></image><item><title>About us</title><link>https://forrt.org/about/us/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://forrt.org/about/us/</guid><description/></item><item><title>Cite us</title><link>https://forrt.org/about/cite_us/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://forrt.org/about/cite_us/</guid><description/></item><item><title>Community</title><link>https://forrt.org/about/community/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://forrt.org/about/community/</guid><description/></item><item><title>FORRT Germany e.V.</title><link>https://forrt.org/about/charity/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://forrt.org/about/charity/</guid><description/></item><item><title>Get Involved</title><link>https://forrt.org/about/get-involved/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://forrt.org/about/get-involved/</guid><description/></item><item><title>Mission</title><link>https://forrt.org/about/mission/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://forrt.org/about/mission/</guid><description/></item><item><title>Partnerships</title><link>https://forrt.org/about/partnerships/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://forrt.org/about/partnerships/</guid><description/></item><item><title>Principles</title><link>https://forrt.org/about/principles/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://forrt.org/about/principles/</guid><description/></item><item><title>Steering Committee</title><link>https://forrt.org/about/steering-committee/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://forrt.org/about/steering-committee/</guid><description>
+&lt;!-- Google Fonts -->
+&lt;link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+&lt;!-- External CSS -->
+&lt;link rel="stylesheet" href="https://forrt.org/css/steering-committee.css">
+&lt;div id="sc-container" class="col-lg-12">
+&lt;h1 class="sc-page-title">Steering Committee&lt;/h1>
+&lt;nav class="sc-nav">
+&lt;a href="#strategic">Strategic Focus Areas&lt;/a>
+&lt;a href="#operations">Operations &amp; Stewardship&lt;/a>
+&lt;a href="#steering">Strategic Facilitation &amp; Integration&lt;/a>
+&lt;a href="#guidance">Guidance &amp; Oversight&lt;/a>
+&lt;/nav>
+&lt;main>
+&lt;section class="sc-section" id="strategic">
+&lt;div class="sc-section-header">
+&lt;div class="sc-section-title">
+&lt;svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">&lt;circle cx="12" cy="12" r="10"/>&lt;circle cx="12" cy="12" r="6"/>&lt;circle cx="12" cy="12" r="2"/>&lt;/svg>
+&lt;span>Strategic Focus Areas&lt;/span>
+&lt;/div>
+&lt;p class="sc-section-desc">Core mission-driven teams advancing open scholarship, social justice, and community sustainability.&lt;/p>
+&lt;/div>
+&lt;div class="sc-grid">
+&lt;div class="sc-title-card teal">
+&lt;span class="sc-title-label">Team&lt;/span>
+&lt;h3 class="sc-title-text">Community &amp; Sustainability&lt;/h3>
+&lt;/div>&lt;div class="sc-card" onclick="openModal('drstevenverheyen')">
+&lt;img src="https://forrt.org/authors/drstevenverheyen/avatar.webp" alt="dr. Steven Verheyen" class="sc-card-img" />
+&lt;div class="sc-card-overlay">&lt;/div>
+&lt;div class="sc-card-content">
+&lt;h4 class="sc-card-name">dr. Steven Verheyen&lt;/h4>
+&lt;p class="sc-card-role">Director&lt;/p>
+&lt;/div>
+&lt;/div>&lt;div class="sc-title-card teal">
+&lt;span class="sc-title-label">Team&lt;/span>
+&lt;h3 class="sc-title-text">Social Justice &amp; DEIA&lt;/h3>
+&lt;/div>&lt;div class="sc-card" onclick="openModal('drsarahasauve')">
+&lt;img src="https://forrt.org/authors/drsarahasauve/avatar.webp" alt="Dr. Sarah A. Sauvé" class="sc-card-img" />
+&lt;div class="sc-card-overlay">&lt;/div>
+&lt;div class="sc-card-content">
+&lt;h4 class="sc-card-name">Dr. Sarah A. Sauvé&lt;/h4>
+&lt;p class="sc-card-role">Director&lt;/p>
+&lt;/div>
+&lt;/div>&lt;div class="sc-title-card teal">
+&lt;span class="sc-title-label">Team&lt;/span>
+&lt;h3 class="sc-title-text">Meta-science &amp; Research&lt;/h3>
+&lt;/div>&lt;div class="sc-card" onclick="openModal('drrachelheyard')">
+&lt;img src="https://forrt.org/authors/drrachelheyard/avatar.webp" alt="Dr Rachel Heyard" class="sc-card-img" />
+&lt;div class="sc-card-overlay">&lt;/div>
+&lt;div class="sc-card-content">
+&lt;h4 class="sc-card-name">Dr Rachel Heyard&lt;/h4>
+&lt;p class="sc-card-role">Director&lt;/p>
+&lt;/div>
+&lt;/div>&lt;div class="sc-card" onclick="openModal('tomheyman')">
+&lt;img src="https://forrt.org/authors/tomheyman/avatar.webp" alt="Tom Heyman" class="sc-card-img" />
+&lt;div class="sc-card-overlay">&lt;/div>
+&lt;div class="sc-card-content">
+&lt;h4 class="sc-card-name">Tom Heyman&lt;/h4>
+&lt;p class="sc-card-role">Deputy-Director&lt;/p>
+&lt;/div>
+&lt;/div>&lt;div class="sc-card" onclick="openModal('berittbarthelmesmsc')">
+&lt;img src="https://forrt.org/authors/berittbarthelmesmsc/avatar.webp" alt="Berit T. Barthelmes, M.Sc." class="sc-card-img" />
+&lt;div class="sc-card-overlay">&lt;/div>
+&lt;div class="sc-card-content">
+&lt;h4 class="sc-card-name">Berit T. Barthelmes, M.Sc.&lt;/h4>
+&lt;p class="sc-card-role">Project Manager&lt;/p>
+&lt;/div>
+&lt;/div>&lt;div class="sc-title-card teal">
+&lt;span class="sc-title-label">Team&lt;/span>
+&lt;h3 class="sc-title-text">Education &amp; Pedagogy&lt;/h3>
+&lt;/div>&lt;div class="sc-card" onclick="openModal('drmadeleinepownall')">
+&lt;img src="https://forrt.org/authors/drmadeleinepownall/avatar.webp" alt="Dr Madeleine Pownall" class="sc-card-img" />
+&lt;div class="sc-card-overlay">&lt;/div>
+&lt;div class="sc-card-content">
+&lt;h4 class="sc-card-name">Dr Madeleine Pownall&lt;/h4>
+&lt;p class="sc-card-role">Director&lt;/p>
+&lt;/div>
+&lt;/div>&lt;div class="sc-card" onclick="openModal('lornahamilton')">
+&lt;img src="https://forrt.org/authors/lornahamilton/avatar.webp" alt="Lorna Hamilton" class="sc-card-img" />
+&lt;div class="sc-card-overlay">&lt;/div>
+&lt;div class="sc-card-content">
+&lt;h4 class="sc-card-name">Lorna Hamilton&lt;/h4>
+&lt;p class="sc-card-role">Deputy-Director&lt;/p>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;/section>&lt;section class="sc-section" id="operations">
+&lt;div class="sc-section-header">
+&lt;div class="sc-section-title">
+&lt;svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">&lt;path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.1a2 2 0 0 1-1-1.74v-.47a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"/>&lt;circle cx="12" cy="12" r="3"/>&lt;/svg>
+&lt;span>Operations &amp; Stewardship&lt;/span>
+&lt;/div>
+&lt;p class="sc-section-desc">Infrastructure, community management, ethical oversight, and support systems powering FORRT.&lt;/p>
+&lt;/div>
+&lt;div class="sc-grid">
+&lt;div class="sc-title-card slate">
+&lt;span class="sc-title-label">Team&lt;/span>
+&lt;h3 class="sc-title-text">Community Management&lt;/h3>
+&lt;/div>&lt;div class="sc-card" onclick="openModal('dramandakaymontoya')">
+&lt;img src="https://forrt.org/authors/dramandakaymontoya/avatar.webp" alt="Dr. Amanda Kay Montoya" class="sc-card-img" />
+&lt;div class="sc-card-overlay">&lt;/div>
+&lt;div class="sc-card-content">
+&lt;h4 class="sc-card-name">Dr. Amanda Kay Montoya&lt;/h4>
+&lt;p class="sc-card-role">Director&lt;/p>
+&lt;/div>
+&lt;/div>&lt;div class="sc-card" onclick="openModal('drkellylloyd')">
+&lt;img src="https://forrt.org/authors/drkellylloyd/avatar.webp" alt="Dr Kelly Lloyd" class="sc-card-img" />
+&lt;div class="sc-card-overlay">&lt;/div>
+&lt;div class="sc-card-content">
+&lt;h4 class="sc-card-name">Dr Kelly Lloyd&lt;/h4>
+&lt;p class="sc-card-role">Cohesion-Liaison&lt;/p>
+&lt;/div>
+&lt;/div>&lt;div class="sc-card" onclick="openModal('giorgiaandreolli')">
+&lt;img src="https://forrt.org/authors/giorgiaandreolli/avatar.webp" alt="Giorgia Andreolli" class="sc-card-img" />
+&lt;div class="sc-card-overlay">&lt;/div>
+&lt;div class="sc-card-content">
+&lt;h4 class="sc-card-name">Giorgia Andreolli&lt;/h4>
+&lt;p class="sc-card-role">Cohesion-Liaison&lt;/p>
+&lt;/div>
+&lt;/div>&lt;div class="sc-title-card slate">
+&lt;span class="sc-title-label">Team&lt;/span>
+&lt;h3 class="sc-title-text">Community Engagement&lt;/h3>
+&lt;/div>&lt;div class="sc-card" onclick="openModal('drlukasroseler')">
+&lt;div class="sc-placeholder">DR&lt;/div>
+&lt;div class="sc-card-overlay">&lt;/div>
+&lt;div class="sc-card-content">
+&lt;h4 class="sc-card-name">Dr. Lukas Röseler&lt;/h4>
+&lt;p class="sc-card-role">Infrastructure&lt;/p>
+&lt;/div>
+&lt;/div>&lt;div class="sc-title-card slate">
+&lt;span class="sc-title-label">Team&lt;/span>
+&lt;h3 class="sc-title-text">Sustainability &amp; Strategy&lt;/h3>
+&lt;/div>&lt;div class="sc-card" onclick="openModal('drsarahashcroftjones')">
+&lt;img src="https://forrt.org/authors/drsarahashcroftjones/avatar.webp" alt="Dr Sarah Ashcroft-Jones" class="sc-card-img" />
+&lt;div class="sc-card-overlay">&lt;/div>
+&lt;div class="sc-card-content">
+&lt;h4 class="sc-card-name">Dr Sarah Ashcroft-Jones&lt;/h4>
+&lt;p class="sc-card-role">Director&lt;/p>
+&lt;/div>
+&lt;/div>&lt;div class="sc-card" onclick="openModal('saralilmiddleton')">
+&lt;img src="https://forrt.org/authors/saralilmiddleton/avatar.webp" alt="Sara Lil Middleton" class="sc-card-img" />
+&lt;div class="sc-card-overlay">&lt;/div>
+&lt;div class="sc-card-content">
+&lt;h4 class="sc-card-name">Sara Lil Middleton&lt;/h4>
+&lt;p class="sc-card-role">Knowledge Manager&lt;/p>
+&lt;/div>
+&lt;/div>&lt;div class="sc-title-card slate">
+&lt;span class="sc-title-label">Team&lt;/span>
+&lt;h3 class="sc-title-text">Ethics and Inclusion&lt;/h3>
+&lt;/div>&lt;div class="sc-card" onclick="openModal('drjohnshaw')">
+&lt;img src="https://forrt.org/authors/drjohnshaw/avatar.webp" alt="Dr John Shaw" class="sc-card-img" />
+&lt;div class="sc-card-overlay">&lt;/div>
+&lt;div class="sc-card-content">
+&lt;h4 class="sc-card-name">Dr John Shaw&lt;/h4>
+&lt;p class="sc-card-role">Director&lt;/p>
+&lt;/div>
+&lt;/div>&lt;div class="sc-card" onclick="openModal('thomasrhysevans')">
+&lt;img src="https://forrt.org/authors/thomasrhysevans/avatar.webp" alt="Thomas Rhys Evans" class="sc-card-img" />
+&lt;div class="sc-card-overlay">&lt;/div>
+&lt;div class="sc-card-content">
+&lt;h4 class="sc-card-name">Thomas Rhys Evans&lt;/h4>
+&lt;p class="sc-card-role">Advisor&lt;/p>
+&lt;/div>
+&lt;/div>&lt;div class="sc-title-card slate">
+&lt;span class="sc-title-label">Team&lt;/span>
+&lt;h3 class="sc-title-text">Fundraising&lt;/h3>
+&lt;/div>&lt;div class="sc-card" onclick="openModal('drmaxkorbmacher')">
+&lt;img src="https://forrt.org/authors/drmaxkorbmacher/avatar.webp" alt="Dr Max Korbmacher" class="sc-card-img" />
+&lt;div class="sc-card-overlay">&lt;/div>
+&lt;div class="sc-card-content">
+&lt;h4 class="sc-card-name">Dr Max Korbmacher&lt;/h4>
+&lt;p class="sc-card-role">Director&lt;/p>
+&lt;/div>
+&lt;/div>&lt;div class="sc-card" onclick="openModal('karenmatvienkosikar')">
+&lt;img src="https://forrt.org/authors/karenmatvienkosikar/avatar.webp" alt="Karen Matvienko-Sikar" class="sc-card-img" />
+&lt;div class="sc-card-overlay">&lt;/div>
+&lt;div class="sc-card-content">
+&lt;h4 class="sc-card-name">Karen Matvienko-Sikar&lt;/h4>
+&lt;p class="sc-card-role">Co-Director&lt;/p>
+&lt;/div>
+&lt;/div>&lt;div class="sc-card" onclick="openModal('fotismystakopoulosphdstudent')">
+&lt;img src="https://forrt.org/authors/fotismystakopoulosphdstudent/avatar.webp" alt="Fotis Mystakopoulos, PhD Student" class="sc-card-img" />
+&lt;div class="sc-card-overlay">&lt;/div>
+&lt;div class="sc-card-content">
+&lt;h4 class="sc-card-name">Fotis Mystakopoulos, PhD Student&lt;/h4>
+&lt;p class="sc-card-role">Officer&lt;/p>
+&lt;/div>
+&lt;/div>&lt;div class="sc-title-card slate">
+&lt;span class="sc-title-label">Team&lt;/span>
+&lt;h3 class="sc-title-text">Financial Transparency&lt;/h3>
+&lt;/div>&lt;div class="sc-card" onclick="openModal('aliciatamaraveersmabarredo')">
+&lt;img src="https://forrt.org/authors/aliciatamaraveersmabarredo/avatar.webp" alt="Alicia Tamara Veersma Barredo" class="sc-card-img" />
+&lt;div class="sc-card-overlay">&lt;/div>
+&lt;div class="sc-card-content">
+&lt;h4 class="sc-card-name">Alicia Tamara Veersma Barredo&lt;/h4>
+&lt;p class="sc-card-role">Officer&lt;/p>
+&lt;/div>
+&lt;/div>&lt;div class="sc-title-card slate">
+&lt;span class="sc-title-label">Team&lt;/span>
+&lt;h3 class="sc-title-text">Partnerships&lt;/h3>
+&lt;/div>&lt;div class="sc-card" onclick="openModal('adampartridge')">
+&lt;img src="https://forrt.org/authors/adampartridge/avatar.webp" alt="Adam Partridge" class="sc-card-img" />
+&lt;div class="sc-card-overlay">&lt;/div>
+&lt;div class="sc-card-content">
+&lt;h4 class="sc-card-name">Adam Partridge&lt;/h4>
+&lt;p class="sc-card-role">Director&lt;/p>
+&lt;/div>
+&lt;/div>&lt;div class="sc-title-card slate">
+&lt;span class="sc-title-label">Team&lt;/span>
+&lt;h3 class="sc-title-text">Digital Infrastructure Team&lt;/h3>
+&lt;/div>&lt;div class="sc-card" onclick="openModal('justinsulik')">
+&lt;img src="https://forrt.org/authors/justinsulik/avatar.webp" alt="Justin Sulik" class="sc-card-img" />
+&lt;div class="sc-card-overlay">&lt;/div>
+&lt;div class="sc-card-content">
+&lt;h4 class="sc-card-name">Justin Sulik&lt;/h4>
+&lt;p class="sc-card-role">Director&lt;/p>
+&lt;/div>
+&lt;/div>&lt;div class="sc-card" onclick="openModal('dushimemudaherarichard')">
+&lt;img src="https://forrt.org/authors/dushimemudaherarichard/avatar.webp" alt="Dushime Mudahera Richard" class="sc-card-img" />
+&lt;div class="sc-card-overlay">&lt;/div>
+&lt;div class="sc-card-content">
+&lt;h4 class="sc-card-name">Dushime Mudahera Richard&lt;/h4>
+&lt;p class="sc-card-role">Website Lead&lt;/p>
+&lt;/div>
+&lt;/div>&lt;div class="sc-title-card slate">
+&lt;span class="sc-title-label">Team&lt;/span>
+&lt;h3 class="sc-title-text">FORRT Stewards&lt;/h3>
+&lt;/div>&lt;div class="sc-card" onclick="openModal('adiradaniel')">
+&lt;img src="https://forrt.org/authors/adiradaniel/avatar.webp" alt="Adira Daniel" class="sc-card-img" />
+&lt;div class="sc-card-overlay">&lt;/div>
+&lt;div class="sc-card-content">
+&lt;h4 class="sc-card-name">Adira Daniel&lt;/h4>
+&lt;p class="sc-card-role">FORRT Steward&lt;/p>
+&lt;/div>
+&lt;/div>&lt;div class="sc-card" onclick="openModal('stephaniezellers')">
+&lt;img src="https://forrt.org/authors/stephaniezellers/avatar.webp" alt="Stephanie Zellers" class="sc-card-img" />
+&lt;div class="sc-card-overlay">&lt;/div>
+&lt;div class="sc-card-content">
+&lt;h4 class="sc-card-name">Stephanie Zellers&lt;/h4>
+&lt;p class="sc-card-role">FORRT Steward&lt;/p>
+&lt;/div>
+&lt;/div>&lt;div class="sc-card" onclick="openModal('meerachandra')">
+&lt;img src="https://forrt.org/authors/meerachandra/avatar.webp" alt="Meera Chandra" class="sc-card-img" />
+&lt;div class="sc-card-overlay">&lt;/div>
+&lt;div class="sc-card-content">
+&lt;h4 class="sc-card-name">Meera Chandra&lt;/h4>
+&lt;p class="sc-card-role">FORRT Steward&lt;/p>
+&lt;/div>
+&lt;/div>&lt;div class="sc-card" onclick="openModal('cassgheoghe')">
+&lt;img src="https://forrt.org/authors/cassgheoghe/avatar.webp" alt="Cass Gheoghe" class="sc-card-img" />
+&lt;div class="sc-card-overlay">&lt;/div>
+&lt;div class="sc-card-content">
+&lt;h4 class="sc-card-name">Cass Gheoghe&lt;/h4>
+&lt;p class="sc-card-role">FORRT Steward&lt;/p>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;/section>&lt;section class="sc-section" id="steering">
+&lt;div class="sc-section-header">
+&lt;div class="sc-section-title">
+&lt;svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">&lt;circle cx="12" cy="5" r="3"/>&lt;line x1="12" x2="12" y1="22" y2="8"/>&lt;path d="M5 12H2a10 10 0 0 0 20 0h-3"/>&lt;/svg>
+&lt;span>Strategic Facilitation &amp; Integration&lt;/span>
+&lt;/div>
+&lt;p class="sc-section-desc">Synthesising community efforts to maintain alignment with FORRT’s mission and vision.&lt;/p>
+&lt;/div>
+&lt;div class="sc-grid">
+&lt;div class="sc-card" onclick="openModal('drlukaswallrich')">
+&lt;img src="https://forrt.org/authors/drlukaswallrich/avatar.webp" alt="Dr Lukas Wallrich" class="sc-card-img" />
+&lt;div class="sc-card-overlay">&lt;/div>
+&lt;div class="sc-card-content">
+&lt;h4 class="sc-card-name">Dr Lukas Wallrich&lt;/h4>
+&lt;p class="sc-card-role">Co-Chair&lt;/p>
+&lt;/div>
+&lt;/div>&lt;div class="sc-card" onclick="openModal('flavioazevedo')">
+&lt;img src="https://forrt.org/authors/flavioazevedo/avatar.webp" alt="Flavio Azevedo" class="sc-card-img" />
+&lt;div class="sc-card-overlay">&lt;/div>
+&lt;div class="sc-card-content">
+&lt;h4 class="sc-card-name">Flavio Azevedo&lt;/h4>
+&lt;p class="sc-card-role">Director&lt;/p>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;/section>&lt;section class="sc-section" id="guidance">
+&lt;div class="sc-section-header">
+&lt;div class="sc-section-title">
+&lt;svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">&lt;path d="M12 22s-7-3.5-7-9.5V6l7-3 7 3v6.5C19 18.5 12 22 12 22z"/>&lt;path d="m9 12 2 2 4-4"/>&lt;/svg>
+&lt;span>Guidance &amp; Oversight&lt;/span>
+&lt;/div>
+&lt;p class="sc-section-desc">Ethical guidance and long-term stewardship.&lt;/p>
+&lt;/div>
+&lt;div class="sc-grid">
+&lt;div class="sc-card" onclick="openModal('samparsons')">
+&lt;img src="https://forrt.org/authors/samparsons/avatar.webp" alt="Sam Parsons" class="sc-card-img" />
+&lt;div class="sc-card-overlay">&lt;/div>
+&lt;div class="sc-card-content">
+&lt;h4 class="sc-card-name">Sam Parsons&lt;/h4>
+&lt;p class="sc-card-role">Stewardship Panel&lt;/p>
+&lt;/div>
+&lt;/div>&lt;div class="sc-card" onclick="openModal('thomasrhysevans')">
+&lt;img src="https://forrt.org/authors/thomasrhysevans/avatar.webp" alt="Thomas Rhys Evans" class="sc-card-img" />
+&lt;div class="sc-card-overlay">&lt;/div>
+&lt;div class="sc-card-content">
+&lt;h4 class="sc-card-name">Thomas Rhys Evans&lt;/h4>
+&lt;p class="sc-card-role">Ombudsman&lt;/p>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;/section>
+&lt;/main>
+&lt;div id="modals-container">
+&lt;div id="modal-drstevenverheyen" class="sc-modal-backdrop">
+&lt;div class="sc-modal-content">
+&lt;div class="sc-modal-header">
+&lt;button onclick="closeModal('drstevenverheyen')" class="sc-close-btn">
+&lt;svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">&lt;path d="M18 6 6 18"/>&lt;path d="m6 6 18 12"/>&lt;/svg>
+&lt;/button>
+&lt;/div>
+&lt;div class="sc-modal-body">
+&lt;div class="sc-modal-layout">
+&lt;div class="sc-modal-sidebar">
+&lt;div class="sc-modal-img">
+&lt;img src="https://forrt.org/authors/drstevenverheyen/avatar.webp" alt="dr. Steven Verheyen" />
+&lt;/div>
+&lt;div class="sc-social-links">
+&lt;a href="www.stevenverheyen.com" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-slate-800 transition-colors">&lt;svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">&lt;circle cx="12" cy="12" r="10"/>&lt;line x1="2" x2="22" y1="12" y2="12"/>&lt;path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>&lt;/svg>&lt;/a>&lt;a href="mailto:verheyen@essb.eur.nl" class="text-slate-400 hover:text-slate-800 transition-colors">&lt;svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">&lt;rect width="20" height="16" x="2" y="4" rx="2"/>&lt;path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>&lt;/svg>&lt;/a>
+&lt;/div>
+&lt;/div>
+&lt;div class="sc-modal-main">
+&lt;h3 class="sc-modal-name">dr. Steven Verheyen&lt;/h3>
+&lt;p class="sc-modal-role">Director (Community &amp; Sustainability)&lt;/p>
+&lt;div class="sc-modal-bio">Steven Verheyen is an Assistant Professor of Cognitive Psychology at Erasmus University Rotterdam, where he also coordinates the Open Science Community Rotterdam and is Open Science Champion of the Erasmus School of Social and Behavioural Sciences. His work on individual differences in language use is positioned at the intersection of quantitative psychology, philosophy of language, and cognitive linguistics. He also conducts meta-scientific research on incentivization, contributorship, conflicts of interest, and replication. He is currently serving as editor of the Review of Philosophy and Psychology, PCI Psychology, and Replication Research. At FORRT, he aims to promote open and responsible research through pedagogical reform.&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;/div>&lt;div id="modal-drsarahasauve" class="sc-modal-backdrop">
+&lt;div class="sc-modal-content">
+&lt;div class="sc-modal-header">
+&lt;button onclick="closeModal('drsarahasauve')" class="sc-close-btn">
+&lt;svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">&lt;path d="M18 6 6 18"/>&lt;path d="m6 6 18 12"/>&lt;/svg>
+&lt;/button>
+&lt;/div>
+&lt;div class="sc-modal-body">
+&lt;div class="sc-modal-layout">
+&lt;div class="sc-modal-sidebar">
+&lt;div class="sc-modal-img">
+&lt;img src="https://forrt.org/authors/drsarahasauve/avatar.webp" alt="Dr. Sarah A. Sauvé" />
+&lt;/div>
+&lt;div class="sc-social-links">
+&lt;a href="https://staff.lincoln.ac.uk/8ebcbc1e-6ca0-4fde-b6ad-42775c65d754" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-slate-800 transition-colors">&lt;svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">&lt;circle cx="12" cy="12" r="10"/>&lt;line x1="2" x2="22" y1="12" y2="12"/>&lt;path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>&lt;/svg>&lt;/a>&lt;a href="mailto:ssauve@lincoln.ac.uk" class="text-slate-400 hover:text-slate-800 transition-colors">&lt;svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">&lt;rect width="20" height="16" x="2" y="4" rx="2"/>&lt;path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>&lt;/svg>&lt;/a>
+&lt;/div>
+&lt;/div>
+&lt;div class="sc-modal-main">
+&lt;h3 class="sc-modal-name">Dr. Sarah A. Sauvé&lt;/h3>
+&lt;p class="sc-modal-role">Director (Social Justice &amp; DEIA)&lt;/p>
+&lt;div class="sc-modal-bio">Dr. Sarah Sauvé is currently a Lecturer in Psychology at the University of Lincoln. She is a white immigrant living and working on the land of the people who colonized the land on which she was born and spent most of her life so far. She is interested in applying feminist and critical theory and praxis to music science research, where her specialties include the neuroscience of learning, music perception in older adults, computational modeling and public engagement.
+In FORRT, she has been involved in co-leading Team Citational Politics and is very excited to be part of FORRT&amp;#x27;s first steering committee as Director of Social Justice and DEIA!&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;/div>&lt;div id="modal-drrachelheyard" class="sc-modal-backdrop">
+&lt;div class="sc-modal-content">
+&lt;div class="sc-modal-header">
+&lt;button onclick="closeModal('drrachelheyard')" class="sc-close-btn">
+&lt;svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">&lt;path d="M18 6 6 18"/>&lt;path d="m6 6 18 12"/>&lt;/svg>
+&lt;/button>
+&lt;/div>
+&lt;div class="sc-modal-body">
+&lt;div class="sc-modal-layout">
+&lt;div class="sc-modal-sidebar">
+&lt;div class="sc-modal-img">
+&lt;img src="https://forrt.org/authors/drrachelheyard/avatar.webp" alt="Dr Rachel Heyard" />
+&lt;/div>
+&lt;div class="sc-social-links">
+&lt;a href="http://rachelheyard.com/" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-slate-800 transition-colors">&lt;svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">&lt;circle cx="12" cy="12" r="10"/>&lt;line x1="2" x2="22" y1="12" y2="12"/>&lt;path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>&lt;/svg>&lt;/a>&lt;a href="mailto:rachel.heyard@uzh.ch" class="text-slate-400 hover:text-slate-800 transition-colors">&lt;svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">&lt;rect width="20" height="16" x="2" y="4" rx="2"/>&lt;path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>&lt;/svg>&lt;/a>
+&lt;/div>
+&lt;/div>
+&lt;div class="sc-modal-main">
+&lt;h3 class="sc-modal-name">Dr Rachel Heyard&lt;/h3>
+&lt;p class="sc-modal-role">Director (Meta-science &amp; Research)&lt;/p>
+&lt;div class="sc-modal-bio">I am senior researcher and metaresearcher at the Center for Reproducible Science at the University of Zurich, Switzerland. After my PhD in Biostatistics at University of Zurich, I left academia to join the data team of the Swiss National Science Foundation as a statistician, where I worked on diverse data and statistics projects informing science policy. I returned to academia, after having developed a new passion for metaresearch - the interdisciplinary study of research itself. Now, my research interests include developing and testing new approaches for allocating research funding, statistical methods in research, and improving reproducibility and the uptake of Open Science. Also, I love teaching!&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;/div>&lt;div id="modal-tomheyman" class="sc-modal-backdrop">
+&lt;div class="sc-modal-content">
+&lt;div class="sc-modal-header">
+&lt;button onclick="closeModal('tomheyman')" class="sc-close-btn">
+&lt;svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">&lt;path d="M18 6 6 18"/>&lt;path d="m6 6 18 12"/>&lt;/svg>
+&lt;/button>
+&lt;/div>
+&lt;div class="sc-modal-body">
+&lt;div class="sc-modal-layout">
+&lt;div class="sc-modal-sidebar">
+&lt;div class="sc-modal-img">
+&lt;img src="https://forrt.org/authors/tomheyman/avatar.webp" alt="Tom Heyman" />
+&lt;/div>
+&lt;div class="sc-social-links">
+&lt;a href="https://www.universiteitleiden.nl/en/staffmembers/tom-heyman" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-slate-800 transition-colors">&lt;svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">&lt;circle cx="12" cy="12" r="10"/>&lt;line x1="2" x2="22" y1="12" y2="12"/>&lt;path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>&lt;/svg>&lt;/a>
+&lt;/div>
+&lt;/div>
+&lt;div class="sc-modal-main">
+&lt;h3 class="sc-modal-name">Tom Heyman&lt;/h3>
+&lt;p class="sc-modal-role">Deputy-Director (Meta-science &amp; Research)&lt;/p>
+&lt;div class="sc-modal-bio">Bio coming soon.&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;/div>&lt;div id="modal-berittbarthelmesmsc" class="sc-modal-backdrop">
+&lt;div class="sc-modal-content">
+&lt;div class="sc-modal-header">
+&lt;button onclick="closeModal('berittbarthelmesmsc')" class="sc-close-btn">
+&lt;svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">&lt;path d="M18 6 6 18"/>&lt;path d="m6 6 18 12"/>&lt;/svg>
+&lt;/button>
+&lt;/div>
+&lt;div class="sc-modal-body">
+&lt;div class="sc-modal-layout">
+&lt;div class="sc-modal-sidebar">
+&lt;div class="sc-modal-img">
+&lt;img src="https://forrt.org/authors/berittbarthelmesmsc/avatar.webp" alt="Berit T. Barthelmes, M.Sc." />
+&lt;/div>
+&lt;div class="sc-social-links">
+&lt;a href="linkedin.com/in/beritbarthelmes" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-slate-800 transition-colors">&lt;svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">&lt;circle cx="12" cy="12" r="10"/>&lt;line x1="2" x2="22" y1="12" y2="12"/>&lt;path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>&lt;/svg>&lt;/a>&lt;a href="mailto:bbart10@uic.edu" class="text-slate-400 hover:text-slate-800 transition-colors">&lt;svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">&lt;rect width="20" height="16" x="2" y="4" rx="2"/>&lt;path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>&lt;/svg>&lt;/a>
+&lt;/div>
+&lt;/div>
+&lt;div class="sc-modal-main">
+&lt;h3 class="sc-modal-name">Berit T. Barthelmes, M.Sc.&lt;/h3>
+&lt;p class="sc-modal-role">Project Manager (Meta-science &amp; Research)&lt;/p>
+&lt;div class="sc-modal-bio">Berit T. Barthelmes is a PhD student in Psychology at the University of Illinois Chicago, working with Dr. Christine Coughlin in the Future Learning and Memory (FLAME) Lab. Her research focuses on the development of episodic memory and spontaneous future thinking in children, examining how these abilities support learning, imagination, and self-projection across time. She also investigates how mind-wandering relates to the emergence of future-oriented cognition. Before beginning her PhD, Berit earned an M.Sc. in Psychology: Development, Neuroscience, and Cognition at the University of Zurich, where her master’s work sparked a broader interest in the theoretical foundations of psychology and metascientific questions. She is excited about advancing open, transparent, and conceptually grounded approaches to developmental and cognitive science.&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;/div>&lt;div id="modal-drmadeleinepownall" class="sc-modal-backdrop">
+&lt;div class="sc-modal-content">
+&lt;div class="sc-modal-header">
+&lt;button onclick="closeModal('drmadeleinepownall')" class="sc-close-btn">
+&lt;svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">&lt;path d="M18 6 6 18"/>&lt;path d="m6 6 18 12"/>&lt;/svg>
+&lt;/button>
+&lt;/div>
+&lt;div class="sc-modal-body">
+&lt;div class="sc-modal-layout">
+&lt;div class="sc-modal-sidebar">
+&lt;div class="sc-modal-img">
+&lt;img src="https://forrt.org/authors/drmadeleinepownall/avatar.webp" alt="Dr Madeleine Pownall" />
+&lt;/div>
+&lt;div class="sc-social-links">
+&lt;a href="https://medicinehealth.leeds.ac.uk/psychology/staff/2870/dr-madeleine-pownall-" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-slate-800 transition-colors">&lt;svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">&lt;circle cx="12" cy="12" r="10"/>&lt;line x1="2" x2="22" y1="12" y2="12"/>&lt;path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>&lt;/svg>&lt;/a>&lt;a href="mailto:M.V.Pownall@leeds.ac.uk" class="text-slate-400 hover:text-slate-800 transition-colors">&lt;svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">&lt;rect width="20" height="16" x="2" y="4" rx="2"/>&lt;path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>&lt;/svg>&lt;/a>
+&lt;/div>
+&lt;/div>
+&lt;div class="sc-modal-main">
+&lt;h3 class="sc-modal-name">Dr Madeleine Pownall&lt;/h3>
+&lt;p class="sc-modal-role">Director (Education &amp; Pedagogy)&lt;/p>
+&lt;div class="sc-modal-bio">Dr Madeleine Pownall is an Associate Professor of Psychology at the University of Leeds. Her work spans three main areas: pedagogical research on psychological literacy and student outcomes; open and transparent research practices in psychology; and feminist social psychology, particularly around gender and equity in education and research. She is interested in how psychological science can be made more inclusive, reflective, and socially responsible. Dr Pownall teaches across undergraduate and postgraduate levels, focusing on evidence-based and inclusive approaches to learning and assessment. She also contributes to projects that promote open scholarship and the integration of global citizenship within psychology curricula. Alongside her research and teaching, she serves on professional committees, mentors early career researchers, and co-authored A Feminist Companion to Social Psychology. Her work aims to support students and researchers to engage critically and ethically with psychological knowledge.&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;/div>&lt;div id="modal-lornahamilton" class="sc-modal-backdrop">
+&lt;div class="sc-modal-content">
+&lt;div class="sc-modal-header">
+&lt;button onclick="closeModal('lornahamilton')" class="sc-close-btn">
+&lt;svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">&lt;path d="M18 6 6 18"/>&lt;path d="m6 6 18 12"/>&lt;/svg>
+&lt;/button>
+&lt;/div>
+&lt;div class="sc-modal-body">
+&lt;div class="sc-modal-layout">
+&lt;div class="sc-modal-sidebar">
+&lt;div class="sc-modal-img">
+&lt;img src="https://forrt.org/authors/lornahamilton/avatar.webp" alt="Lorna Hamilton" />
+&lt;/div>
+&lt;div class="sc-social-links">
+&lt;a href="https://www.yorksj.ac.uk/our-staff/staff-profiles/lorna-hamilton.php" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-slate-800 transition-colors">&lt;svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">&lt;circle cx="12" cy="12" r="10"/>&lt;line x1="2" x2="22" y1="12" y2="12"/>&lt;path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>&lt;/svg>&lt;/a>
+&lt;/div>
+&lt;/div>
+&lt;div class="sc-modal-main">
+&lt;h3 class="sc-modal-name">Lorna Hamilton&lt;/h3>
+&lt;p class="sc-modal-role">Deputy-Director (Education &amp; Pedagogy)&lt;/p>
+&lt;div class="sc-modal-bio">Bio coming soon.&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;/div>&lt;div id="modal-dramandakaymontoya" class="sc-modal-backdrop">
+&lt;div class="sc-modal-content">
+&lt;div class="sc-modal-header">
+&lt;button onclick="closeModal('dramandakaymontoya')" class="sc-close-btn">
+&lt;svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">&lt;path d="M18 6 6 18"/>&lt;path d="m6 6 18 12"/>&lt;/svg>
+&lt;/button>
+&lt;/div>
+&lt;div class="sc-modal-body">
+&lt;div class="sc-modal-layout">
+&lt;div class="sc-modal-sidebar">
+&lt;div class="sc-modal-img">
+&lt;img src="https://forrt.org/authors/dramandakaymontoya/avatar.webp" alt="Dr. Amanda Kay Montoya" />
+&lt;/div>
+&lt;div class="sc-social-links">
+&lt;a href="akmontoya.com" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-slate-800 transition-colors">&lt;svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">&lt;circle cx="12" cy="12" r="10"/>&lt;line x1="2" x2="22" y1="12" y2="12"/>&lt;path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>&lt;/svg>&lt;/a>&lt;a href="mailto:akmontoya@ucla.edu" class="text-slate-400 hover:text-slate-800 transition-colors">&lt;svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">&lt;rect width="20" height="16" x="2" y="4" rx="2"/>&lt;path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>&lt;/svg>&lt;/a>
+&lt;/div>
+&lt;/div>
+&lt;div class="sc-modal-main">
+&lt;h3 class="sc-modal-name">Dr. Amanda Kay Montoya&lt;/h3>
+&lt;p class="sc-modal-role">Director (Community Management)&lt;/p>
+&lt;div class="sc-modal-bio">Dr. Montoya is an Associate Professor of Quantitative Psychology at the University of California, Los Angeles (UCLA). She is an advocate for open science and leader across communities, serving on the Board of Directors for the Center for Open Science, the APA Open Science and Methodology Panel, and multiple editorial roles for coordinating registered reports, including as a recommender for Peer Community In Registered Reports. Her research focuses on early adoption of new research practices, with a particular focus on registered reports. She also studies open science practices for computationally intensive approaches such as Monte Carlo simulations. &lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;/div>&lt;div id="modal-drkellylloyd" class="sc-modal-backdrop">
+&lt;div class="sc-modal-content">
+&lt;div class="sc-modal-header">
+&lt;button onclick="closeModal('drkellylloyd')" class="sc-close-btn">
+&lt;svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">&lt;path d="M18 6 6 18"/>&lt;path d="m6 6 18 12"/>&lt;/svg>
+&lt;/button>
+&lt;/div>
+&lt;div class="sc-modal-body">
+&lt;div class="sc-modal-layout">
+&lt;div class="sc-modal-sidebar">
+&lt;div class="sc-modal-img">
+&lt;img src="https://forrt.org/authors/drkellylloyd/avatar.webp" alt="Dr Kelly Lloyd" />
+&lt;/div>
+&lt;div class="sc-social-links">
+&lt;a href="https://medicinehealth.leeds.ac.uk/medicine/staff/11697/dr-kelly-lloyd" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-slate-800 transition-colors">&lt;svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">&lt;circle cx="12" cy="12" r="10"/>&lt;line x1="2" x2="22" y1="12" y2="12"/>&lt;path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>&lt;/svg>&lt;/a>&lt;a href="mailto:nan" class="text-slate-400 hover:text-slate-800 transition-colors">&lt;svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">&lt;rect width="20" height="16" x="2" y="4" rx="2"/>&lt;path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>&lt;/svg>&lt;/a>
+&lt;/div>
+&lt;/div>
+&lt;div class="sc-modal-main">
+&lt;h3 class="sc-modal-name">Dr Kelly Lloyd&lt;/h3>
+&lt;p class="sc-modal-role">Community Cohesion-Liaison &lt;/p>
+&lt;div class="sc-modal-bio">I am a Research Fellow working in primary care research and implementation science at the Leeds Institute of Health Sciences, University of Leeds. I am a keen advocate for open research practices, which led to me joining the amazing FORRT community in 2021! Since, I have worked behind the scenes on aspects such as our communication (e.g., newsletter, social media), and community and cohesion building.&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;/div>&lt;div id="modal-giorgiaandreolli" class="sc-modal-backdrop">
+&lt;div class="sc-modal-content">
+&lt;div class="sc-modal-header">
+&lt;button onclick="closeModal('giorgiaandreolli')" class="sc-close-btn">
+&lt;svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">&lt;path d="M18 6 6 18"/>&lt;path d="m6 6 18 12"/>&lt;/svg>
+&lt;/button>
+&lt;/div>
+&lt;div class="sc-modal-body">
+&lt;div class="sc-modal-layout">
+&lt;div class="sc-modal-sidebar">
+&lt;div class="sc-modal-img">
+&lt;img src="https://forrt.org/authors/giorgiaandreolli/avatar.webp" alt="Giorgia Andreolli" />
+&lt;/div>
+&lt;div class="sc-social-links">
+&lt;a href="https://www.eurac.edu/en/people/giorgia-andreolli" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-slate-800 transition-colors">&lt;svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">&lt;circle cx="12" cy="12" r="10"/>&lt;line x1="2" x2="22" y1="12" y2="12"/>&lt;path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>&lt;/svg>&lt;/a>
+&lt;/div>
+&lt;/div>
+&lt;div class="sc-modal-main">
+&lt;h3 class="sc-modal-name">Giorgia Andreolli&lt;/h3>
+&lt;p class="sc-modal-role">Community Cohesion-Liaison &lt;/p>
+&lt;div class="sc-modal-bio">Bio coming soon.&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;/div>&lt;div id="modal-drlukasroseler" class="sc-modal-backdrop">
+&lt;div class="sc-modal-content">
+&lt;div class="sc-modal-header">
+&lt;button onclick="closeModal('drlukasroseler')" class="sc-close-btn">
+&lt;svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">&lt;path d="M18 6 6 18"/>&lt;path d="m6 6 18 12"/>&lt;/svg>
+&lt;/button>
+&lt;/div>
+&lt;div class="sc-modal-body">
+&lt;div class="sc-modal-layout">
+&lt;div class="sc-modal-sidebar">
+&lt;div class="sc-modal-img">
+&lt;span style="font-size: 2rem; color: #94a3b8; font-weight: 600;">DR&lt;/span>
+&lt;/div>
+&lt;div class="sc-social-links">
+&lt;a href="https://lukasroeseler.github.io/home/" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-slate-800 transition-colors">&lt;svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">&lt;circle cx="12" cy="12" r="10"/>&lt;line x1="2" x2="22" y1="12" y2="12"/>&lt;path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>&lt;/svg>&lt;/a>&lt;a href="mailto:lukas.roeseler@uni-muenster.de" class="text-slate-400 hover:text-slate-800 transition-colors">&lt;svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">&lt;rect width="20" height="16" x="2" y="4" rx="2"/>&lt;path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>&lt;/svg>&lt;/a>
+&lt;/div>
+&lt;/div>
+&lt;div class="sc-modal-main">
+&lt;h3 class="sc-modal-name">Dr. Lukas Röseler&lt;/h3>
+&lt;p class="sc-modal-role">Community Engagement Infrastructure&lt;/p>
+&lt;div class="sc-modal-bio">Lukas studied consumer behavior and market research, PhD in psychology, and currently managing director of the Münster Center for Open Science where he is responsible to support members of the University of Münster with respect to Open Science. Lukas is heavily invested in repetitive research and has been creating open resources and open infrastructure to support replications and reproductions (e.g., a database, handbook, and academic journal).&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;/div>&lt;div id="modal-drsarahashcroftjones" class="sc-modal-backdrop">
+&lt;div class="sc-modal-content">
+&lt;div class="sc-modal-header">
+&lt;button onclick="closeModal('drsarahashcroftjones')" class="sc-close-btn">
+&lt;svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">&lt;path d="M18 6 6 18"/>&lt;path d="m6 6 18 12"/>&lt;/svg>
+&lt;/button>
+&lt;/div>
+&lt;div class="sc-modal-body">
+&lt;div class="sc-modal-layout">
+&lt;div class="sc-modal-sidebar">
+&lt;div class="sc-modal-img">
+&lt;img src="https://forrt.org/authors/drsarahashcroftjones/avatar.webp" alt="Dr Sarah Ashcroft-Jones" />
+&lt;/div>
+&lt;div class="sc-social-links">
+&lt;a href="https://sarahashcroftjones.com/" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-slate-800 transition-colors">&lt;svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">&lt;circle cx="12" cy="12" r="10"/>&lt;line x1="2" x2="22" y1="12" y2="12"/>&lt;path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>&lt;/svg>&lt;/a>&lt;a href="mailto:sarah.ashcroft-jones@columbia.edu" class="text-slate-400 hover:text-slate-800 transition-colors">&lt;svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">&lt;rect width="20" height="16" x="2" y="4" rx="2"/>&lt;path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>&lt;/svg>&lt;/a>
+&lt;/div>
+&lt;/div>
+&lt;div class="sc-modal-main">
+&lt;h3 class="sc-modal-name">Dr Sarah Ashcroft-Jones&lt;/h3>
+&lt;p class="sc-modal-role">Director (Sustainability &amp; Strategy)&lt;/p>
+&lt;div class="sc-modal-bio">Sarah Ashcroft-Jones is a researcher of the psychological and behavioural sciences at the Columbia University Mailman School of Public Health. Her research interests include decision making, categorisation, and cognitive biases. Her current work focuses on understanding the individual and structural factors that influence financial and health behaviours. She leads the Junior Researcher Programme, which develops opportunities for early career researchers in the psychological and behavioural sciences. She is an advocate of open science practices and open pedagogy. &lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;/div>&lt;div id="modal-saralilmiddleton" class="sc-modal-backdrop">
+&lt;div class="sc-modal-content">
+&lt;div class="sc-modal-header">
+&lt;button onclick="closeModal('saralilmiddleton')" class="sc-close-btn">
+&lt;svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">&lt;path d="M18 6 6 18"/>&lt;path d="m6 6 18 12"/>&lt;/svg>
+&lt;/button>
+&lt;/div>
+&lt;div class="sc-modal-body">
+&lt;div class="sc-modal-layout">
+&lt;div class="sc-modal-sidebar">
+&lt;div class="sc-modal-img">
+&lt;img src="https://forrt.org/authors/saralilmiddleton/avatar.webp" alt="Sara Lil Middleton" />
+&lt;/div>
+&lt;div class="sc-social-links">
+&lt;a href="https://www.environmental-research.ox.ac.uk/people/sara-lil-middleton-0" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-slate-800 transition-colors">&lt;svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">&lt;circle cx="12" cy="12" r="10"/>&lt;line x1="2" x2="22" y1="12" y2="12"/>&lt;path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>&lt;/svg>&lt;/a>
+&lt;/div>
+&lt;/div>
+&lt;div class="sc-modal-main">
+&lt;h3 class="sc-modal-name">Sara Lil Middleton&lt;/h3>
+&lt;p class="sc-modal-role">Knowledge Manager (Sustainability &amp; Strategy)&lt;/p>
+&lt;div class="sc-modal-bio">Bio coming soon.&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;/div>&lt;div id="modal-drjohnshaw" class="sc-modal-backdrop">
+&lt;div class="sc-modal-content">
+&lt;div class="sc-modal-header">
+&lt;button onclick="closeModal('drjohnshaw')" class="sc-close-btn">
+&lt;svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">&lt;path d="M18 6 6 18"/>&lt;path d="m6 6 18 12"/>&lt;/svg>
+&lt;/button>
+&lt;/div>
+&lt;div class="sc-modal-body">
+&lt;div class="sc-modal-layout">
+&lt;div class="sc-modal-sidebar">
+&lt;div class="sc-modal-img">
+&lt;img src="https://forrt.org/authors/drjohnshaw/avatar.webp" alt="Dr John Shaw" />
+&lt;/div>
+&lt;div class="sc-social-links">
+&lt;a href="https://www.edgehill.ac.uk/person/dr-john-shaw/staff/" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-slate-800 transition-colors">&lt;svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">&lt;circle cx="12" cy="12" r="10"/>&lt;line x1="2" x2="22" y1="12" y2="12"/>&lt;path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>&lt;/svg>&lt;/a>&lt;a href="mailto:john.shaw@edgehill.ac.uk" class="text-slate-400 hover:text-slate-800 transition-colors">&lt;svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">&lt;rect width="20" height="16" x="2" y="4" rx="2"/>&lt;path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>&lt;/svg>&lt;/a>
+&lt;/div>
+&lt;/div>
+&lt;div class="sc-modal-main">
+&lt;h3 class="sc-modal-name">Dr John Shaw&lt;/h3>
+&lt;p class="sc-modal-role">Director (Ethics and Inclusion)&lt;/p>
+&lt;div class="sc-modal-bio">John J. Shaw (he/him) is a Senior Lecturer in Psychology at Edge Hill University and a Chartered Psychologist with the British Psychological Society. His research sits in cognitive and developmental psychology, with one consistent theme: sleep. He studies how sleep supports learning, memory, and cognitive performance, including how sleeping soon after learning can strengthen understanding of newly taught mathematical concepts. He also works on how social media use in preadolescents relates to sleep and wellbeing, at a stage where many children are online before traditional “minimum age” guidelines. Beyond sleep, he has collaborated on work examining how autistic children understand ownership and how neurodiversity is treated within academia. Alongside his academic role, he is active in open research and reproducibility work, contributing to the Framework for Open and Reproducible Research Training (FORRT), an international initiative focused on research transparency and accessible training for early-career researchers.&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;/div>&lt;div id="modal-thomasrhysevans" class="sc-modal-backdrop">
+&lt;div class="sc-modal-content">
+&lt;div class="sc-modal-header">
+&lt;button onclick="closeModal('thomasrhysevans')" class="sc-close-btn">
+&lt;svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">&lt;path d="M18 6 6 18"/>&lt;path d="m6 6 18 12"/>&lt;/svg>
+&lt;/button>
+&lt;/div>
+&lt;div class="sc-modal-body">
+&lt;div class="sc-modal-layout">
+&lt;div class="sc-modal-sidebar">
+&lt;div class="sc-modal-img">
+&lt;img src="https://forrt.org/authors/thomasrhysevans/avatar.webp" alt="Thomas Rhys Evans" />
+&lt;/div>
+&lt;div class="sc-social-links">
+&lt;a href="https://www.gre.ac.uk/people/rep/faculty-of-education-and-health/thomas-rhys-evans" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-slate-800 transition-colors">&lt;svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">&lt;circle cx="12" cy="12" r="10"/>&lt;line x1="2" x2="22" y1="12" y2="12"/>&lt;path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>&lt;/svg>&lt;/a>
+&lt;/div>
+&lt;/div>
+&lt;div class="sc-modal-main">
+&lt;h3 class="sc-modal-name">Thomas Rhys Evans&lt;/h3>
+&lt;p class="sc-modal-role">Advisor (Ethics and Inclusion)&lt;/p>
+&lt;div class="sc-modal-bio">Bio coming soon.&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;/div>&lt;div id="modal-drmaxkorbmacher" class="sc-modal-backdrop">
+&lt;div class="sc-modal-content">
+&lt;div class="sc-modal-header">
+&lt;button onclick="closeModal('drmaxkorbmacher')" class="sc-close-btn">
+&lt;svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">&lt;path d="M18 6 6 18"/>&lt;path d="m6 6 18 12"/>&lt;/svg>
+&lt;/button>
+&lt;/div>
+&lt;div class="sc-modal-body">
+&lt;div class="sc-modal-layout">
+&lt;div class="sc-modal-sidebar">
+&lt;div class="sc-modal-img">
+&lt;img src="https://forrt.org/authors/drmaxkorbmacher/avatar.webp" alt="Dr Max Korbmacher" />
+&lt;/div>
+&lt;div class="sc-social-links">
+&lt;a href="https://scholar.google.com/citations?user=aZbaBqQAAAAJ&amp;hl=no" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-slate-800 transition-colors">&lt;svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">&lt;circle cx="12" cy="12" r="10"/>&lt;line x1="2" x2="22" y1="12" y2="12"/>&lt;path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>&lt;/svg>&lt;/a>&lt;a href="mailto:nan" class="text-slate-400 hover:text-slate-800 transition-colors">&lt;svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">&lt;rect width="20" height="16" x="2" y="4" rx="2"/>&lt;path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>&lt;/svg>&lt;/a>
+&lt;/div>
+&lt;/div>
+&lt;div class="sc-modal-main">
+&lt;h3 class="sc-modal-name">Dr Max Korbmacher&lt;/h3>
+&lt;p class="sc-modal-role">Director (Fundraising)&lt;/p>
+&lt;div class="sc-modal-bio">Max Korbmacher is a neuroscientist with a research focus at the intersection of basic and translational brain science. His primary work involves the analysis of large-scale neuroimaging datasets to develop and adapt machine learning models that generalize from healthy populations to individuals with neurological disorders. These models are informed by ageing research and aim to elucidate mechanisms of brain structure and clinical presentation across the lifespan. His broader research interests span neurology, psychology, and meta-science, with a particular emphasis on enhancing the transparency, reproducibility, and interpretability of empirical research. Dr. Korbmacher is actively engaged in interdisciplinary collaborations and contributes to ongoing efforts to strengthen methodological standards in neuroscience and beyond.&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;/div>&lt;div id="modal-karenmatvienkosikar" class="sc-modal-backdrop">
+&lt;div class="sc-modal-content">
+&lt;div class="sc-modal-header">
+&lt;button onclick="closeModal('karenmatvienkosikar')" class="sc-close-btn">
+&lt;svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">&lt;path d="M18 6 6 18"/>&lt;path d="m6 6 18 12"/>&lt;/svg>
+&lt;/button>
+&lt;/div>
+&lt;div class="sc-modal-body">
+&lt;div class="sc-modal-layout">
+&lt;div class="sc-modal-sidebar">
+&lt;div class="sc-modal-img">
+&lt;img src="https://forrt.org/authors/karenmatvienkosikar/avatar.webp" alt="Karen Matvienko-Sikar" />
+&lt;/div>
+&lt;div class="sc-social-links">
+&lt;a href="https://www.ucc.ie/en/publichealth/people/estaff/ms-karen-matvienko-sikar/" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-slate-800 transition-colors">&lt;svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">&lt;circle cx="12" cy="12" r="10"/>&lt;line x1="2" x2="22" y1="12" y2="12"/>&lt;path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>&lt;/svg>&lt;/a>
+&lt;/div>
+&lt;/div>
+&lt;div class="sc-modal-main">
+&lt;h3 class="sc-modal-name">Karen Matvienko-Sikar&lt;/h3>
+&lt;p class="sc-modal-role">Co-Director (Fundraising)&lt;/p>
+&lt;div class="sc-modal-bio">Bio coming soon.&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;/div>&lt;div id="modal-fotismystakopoulosphdstudent" class="sc-modal-backdrop">
+&lt;div class="sc-modal-content">
+&lt;div class="sc-modal-header">
+&lt;button onclick="closeModal('fotismystakopoulosphdstudent')" class="sc-close-btn">
+&lt;svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">&lt;path d="M18 6 6 18"/>&lt;path d="m6 6 18 12"/>&lt;/svg>
+&lt;/button>
+&lt;/div>
+&lt;div class="sc-modal-body">
+&lt;div class="sc-modal-layout">
+&lt;div class="sc-modal-sidebar">
+&lt;div class="sc-modal-img">
+&lt;img src="https://forrt.org/authors/fotismystakopoulosphdstudent/avatar.webp" alt="Fotis Mystakopoulos, PhD Student" />
+&lt;/div>
+&lt;div class="sc-social-links">
+&lt;a href="nan" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-slate-800 transition-colors">&lt;svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">&lt;circle cx="12" cy="12" r="10"/>&lt;line x1="2" x2="22" y1="12" y2="12"/>&lt;path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>&lt;/svg>&lt;/a>&lt;a href="mailto:fmystakopoulos@uniwa.gr" class="text-slate-400 hover:text-slate-800 transition-colors">&lt;svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">&lt;rect width="20" height="16" x="2" y="4" rx="2"/>&lt;path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>&lt;/svg>&lt;/a>
+&lt;/div>
+&lt;/div>
+&lt;div class="sc-modal-main">
+&lt;h3 class="sc-modal-name">Fotis Mystakopoulos, PhD Student&lt;/h3>
+&lt;p class="sc-modal-role">Officer (Fundraising)&lt;/p>
+&lt;div class="sc-modal-bio">Fotis Mystakopoulos is a professional actively engaged in advancing Open Science. His career trajectory reflects the evolution of information science, from its traditional roots in library services to its modern role in shaping research policy and data infrastructure. With a background in Library and Information Science, he has developed expertise in key areas of scholarly communication, including Responsible Research Assessment, Open Access, Open Science Training, and Research Data Management.
+Beyond his formal roles, he is actively engaged in community building, supporting initiatives that connect researchers and professionals around shared values and practices of openness and advocating for cultural change in academia that aligns with the ethos of Open Science.
+Currently, alongside his professional duties, he is pursuing a PhD at the University of West Attica, examining the evolution of academic libraries, and theire services within the expanding global landscape of Open Science.
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;/div>&lt;div id="modal-aliciatamaraveersmabarredo" class="sc-modal-backdrop">
+&lt;div class="sc-modal-content">
+&lt;div class="sc-modal-header">
+&lt;button onclick="closeModal('aliciatamaraveersmabarredo')" class="sc-close-btn">
+&lt;svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">&lt;path d="M18 6 6 18"/>&lt;path d="m6 6 18 12"/>&lt;/svg>
+&lt;/button>
+&lt;/div>
+&lt;div class="sc-modal-body">
+&lt;div class="sc-modal-layout">
+&lt;div class="sc-modal-sidebar">
+&lt;div class="sc-modal-img">
+&lt;img src="https://forrt.org/authors/aliciatamaraveersmabarredo/avatar.webp" alt="Alicia Tamara Veersma Barredo" />
+&lt;/div>
+&lt;div class="sc-social-links">
+&lt;a href="nan" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-slate-800 transition-colors">&lt;svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">&lt;circle cx="12" cy="12" r="10"/>&lt;line x1="2" x2="22" y1="12" y2="12"/>&lt;path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>&lt;/svg>&lt;/a>&lt;a href="mailto:nan" class="text-slate-400 hover:text-slate-800 transition-colors">&lt;svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">&lt;rect width="20" height="16" x="2" y="4" rx="2"/>&lt;path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>&lt;/svg>&lt;/a>
+&lt;/div>
+&lt;/div>
+&lt;div class="sc-modal-main">
+&lt;h3 class="sc-modal-name">Alicia Tamara Veersma Barredo&lt;/h3>
+&lt;p class="sc-modal-role">Officer (Financial Transparency)&lt;/p>
+&lt;div class="sc-modal-bio">I recently joined FORRT and am beginning to support the team with operational and administrative tasks, especially in accounting and coordination. I’m excited to contribute to FORRT’s mission of fostering open and reproducible research and to learn more about the work that makes such initiatives possible. My background is in office administration and project organization, and I’m particularly interested in how clear structures and good processes can help teams work more effectively.&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;/div>&lt;div id="modal-adampartridge" class="sc-modal-backdrop">
+&lt;div class="sc-modal-content">
+&lt;div class="sc-modal-header">
+&lt;button onclick="closeModal('adampartridge')" class="sc-close-btn">
+&lt;svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">&lt;path d="M18 6 6 18"/>&lt;path d="m6 6 18 12"/>&lt;/svg>
+&lt;/button>
+&lt;/div>
+&lt;div class="sc-modal-body">
+&lt;div class="sc-modal-layout">
+&lt;div class="sc-modal-sidebar">
+&lt;div class="sc-modal-img">
+&lt;img src="https://forrt.org/authors/adampartridge/avatar.webp" alt="Adam Partridge" />
+&lt;/div>
+&lt;div class="sc-social-links">
+&lt;a href="https://fellowship.elixiruknode.org/adam-partridge" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-slate-800 transition-colors">&lt;svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">&lt;circle cx="12" cy="12" r="10"/>&lt;line x1="2" x2="22" y1="12" y2="12"/>&lt;path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>&lt;/svg>&lt;/a>
+&lt;/div>
+&lt;/div>
+&lt;div class="sc-modal-main">
+&lt;h3 class="sc-modal-name">Adam Partridge&lt;/h3>
+&lt;p class="sc-modal-role">Director (Partnerships)&lt;/p>
+&lt;div class="sc-modal-bio">Bio coming soon.&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;/div>&lt;div id="modal-justinsulik" class="sc-modal-backdrop">
+&lt;div class="sc-modal-content">
+&lt;div class="sc-modal-header">
+&lt;button onclick="closeModal('justinsulik')" class="sc-close-btn">
+&lt;svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">&lt;path d="M18 6 6 18"/>&lt;path d="m6 6 18 12"/>&lt;/svg>
+&lt;/button>
+&lt;/div>
+&lt;div class="sc-modal-body">
+&lt;div class="sc-modal-layout">
+&lt;div class="sc-modal-sidebar">
+&lt;div class="sc-modal-img">
+&lt;img src="https://forrt.org/authors/justinsulik/avatar.webp" alt="Justin Sulik" />
+&lt;/div>
+&lt;div class="sc-social-links">
+&lt;a href="https://www.cvbe.philosophie.uni-muenchen.de/people/assistant-professors/justin-sulik/index.html" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-slate-800 transition-colors">&lt;svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">&lt;circle cx="12" cy="12" r="10"/>&lt;line x1="2" x2="22" y1="12" y2="12"/>&lt;path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>&lt;/svg>&lt;/a>
+&lt;/div>
+&lt;/div>
+&lt;div class="sc-modal-main">
+&lt;h3 class="sc-modal-name">Justin Sulik&lt;/h3>
+&lt;p class="sc-modal-role">Director (Digital Infrastructure Team)&lt;/p>
+&lt;div class="sc-modal-bio">Bio coming soon.&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;/div>&lt;div id="modal-dushimemudaherarichard" class="sc-modal-backdrop">
+&lt;div class="sc-modal-content">
+&lt;div class="sc-modal-header">
+&lt;button onclick="closeModal('dushimemudaherarichard')" class="sc-close-btn">
+&lt;svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">&lt;path d="M18 6 6 18"/>&lt;path d="m6 6 18 12"/>&lt;/svg>
+&lt;/button>
+&lt;/div>
+&lt;div class="sc-modal-body">
+&lt;div class="sc-modal-layout">
+&lt;div class="sc-modal-sidebar">
+&lt;div class="sc-modal-img">
+&lt;img src="https://forrt.org/authors/dushimemudaherarichard/avatar.webp" alt="Dushime Mudahera Richard" />
+&lt;/div>
+&lt;div class="sc-social-links">
+&lt;a href="https://richarddushime.netlify.app/" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-slate-800 transition-colors">&lt;svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">&lt;circle cx="12" cy="12" r="10"/>&lt;line x1="2" x2="22" y1="12" y2="12"/>&lt;path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>&lt;/svg>&lt;/a>&lt;a href="mailto:mudaherarich@gmail.com" class="text-slate-400 hover:text-slate-800 transition-colors">&lt;svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">&lt;rect width="20" height="16" x="2" y="4" rx="2"/>&lt;path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>&lt;/svg>&lt;/a>
+&lt;/div>
+&lt;/div>
+&lt;div class="sc-modal-main">
+&lt;h3 class="sc-modal-name">Dushime Mudahera Richard&lt;/h3>
+&lt;p class="sc-modal-role">Website Lead&lt;/p>
+&lt;div class="sc-modal-bio">Bio coming soon.&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;/div>&lt;div id="modal-adiradaniel" class="sc-modal-backdrop">
+&lt;div class="sc-modal-content">
+&lt;div class="sc-modal-header">
+&lt;button onclick="closeModal('adiradaniel')" class="sc-close-btn">
+&lt;svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">&lt;path d="M18 6 6 18"/>&lt;path d="m6 6 18 12"/>&lt;/svg>
+&lt;/button>
+&lt;/div>
+&lt;div class="sc-modal-body">
+&lt;div class="sc-modal-layout">
+&lt;div class="sc-modal-sidebar">
+&lt;div class="sc-modal-img">
+&lt;img src="https://forrt.org/authors/adiradaniel/avatar.webp" alt="Adira Daniel" />
+&lt;/div>
+&lt;div class="sc-social-links">
+&lt;a href="https://scholar.google.com/citations?user=VRDkDV8AAAAJ&amp;hl=en" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-slate-800 transition-colors">&lt;svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">&lt;circle cx="12" cy="12" r="10"/>&lt;line x1="2" x2="22" y1="12" y2="12"/>&lt;path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>&lt;/svg>&lt;/a>
+&lt;/div>
+&lt;/div>
+&lt;div class="sc-modal-main">
+&lt;h3 class="sc-modal-name">Adira Daniel&lt;/h3>
+&lt;p class="sc-modal-role">FORRT Stewards&lt;/p>
+&lt;div class="sc-modal-bio">Bio coming soon.&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;/div>&lt;div id="modal-stephaniezellers" class="sc-modal-backdrop">
+&lt;div class="sc-modal-content">
+&lt;div class="sc-modal-header">
+&lt;button onclick="closeModal('stephaniezellers')" class="sc-close-btn">
+&lt;svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">&lt;path d="M18 6 6 18"/>&lt;path d="m6 6 18 12"/>&lt;/svg>
+&lt;/button>
+&lt;/div>
+&lt;div class="sc-modal-body">
+&lt;div class="sc-modal-layout">
+&lt;div class="sc-modal-sidebar">
+&lt;div class="sc-modal-img">
+&lt;img src="https://forrt.org/authors/stephaniezellers/avatar.webp" alt="Stephanie Zellers" />
+&lt;/div>
+&lt;div class="sc-social-links">
+&lt;a href="https://researchportal.helsinki.fi/en/persons/stephanie-zellers" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-slate-800 transition-colors">&lt;svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">&lt;circle cx="12" cy="12" r="10"/>&lt;line x1="2" x2="22" y1="12" y2="12"/>&lt;path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>&lt;/svg>&lt;/a>
+&lt;/div>
+&lt;/div>
+&lt;div class="sc-modal-main">
+&lt;h3 class="sc-modal-name">Stephanie Zellers&lt;/h3>
+&lt;p class="sc-modal-role">FORRT Stewards&lt;/p>
+&lt;div class="sc-modal-bio">Bio coming soon.&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;/div>&lt;div id="modal-meerachandra" class="sc-modal-backdrop">
+&lt;div class="sc-modal-content">
+&lt;div class="sc-modal-header">
+&lt;button onclick="closeModal('meerachandra')" class="sc-close-btn">
+&lt;svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">&lt;path d="M18 6 6 18"/>&lt;path d="m6 6 18 12"/>&lt;/svg>
+&lt;/button>
+&lt;/div>
+&lt;div class="sc-modal-body">
+&lt;div class="sc-modal-layout">
+&lt;div class="sc-modal-sidebar">
+&lt;div class="sc-modal-img">
+&lt;img src="https://forrt.org/authors/meerachandra/avatar.webp" alt="Meera Chandra" />
+&lt;/div>
+&lt;div class="sc-social-links">
+&lt;a href="https://www.iins.u-bordeaux.fr/en/person/153902-meera-chandra/" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-slate-800 transition-colors">&lt;svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">&lt;circle cx="12" cy="12" r="10"/>&lt;line x1="2" x2="22" y1="12" y2="12"/>&lt;path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>&lt;/svg>&lt;/a>
+&lt;/div>
+&lt;/div>
+&lt;div class="sc-modal-main">
+&lt;h3 class="sc-modal-name">Meera Chandra&lt;/h3>
+&lt;p class="sc-modal-role">FORRT Stewards&lt;/p>
+&lt;div class="sc-modal-bio">Bio coming soon.&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;/div>&lt;div id="modal-cassgheoghe" class="sc-modal-backdrop">
+&lt;div class="sc-modal-content">
+&lt;div class="sc-modal-header">
+&lt;button onclick="closeModal('cassgheoghe')" class="sc-close-btn">
+&lt;svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">&lt;path d="M18 6 6 18"/>&lt;path d="m6 6 18 12"/>&lt;/svg>
+&lt;/button>
+&lt;/div>
+&lt;div class="sc-modal-body">
+&lt;div class="sc-modal-layout">
+&lt;div class="sc-modal-sidebar">
+&lt;div class="sc-modal-img">
+&lt;img src="https://forrt.org/authors/cassgheoghe/avatar.webp" alt="Cass Gheoghe" />
+&lt;/div>
+&lt;div class="sc-social-links">
+&lt;a href="nan" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-slate-800 transition-colors">&lt;svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">&lt;circle cx="12" cy="12" r="10"/>&lt;line x1="2" x2="22" y1="12" y2="12"/>&lt;path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>&lt;/svg>&lt;/a>
+&lt;/div>
+&lt;/div>
+&lt;div class="sc-modal-main">
+&lt;h3 class="sc-modal-name">Cass Gheoghe&lt;/h3>
+&lt;p class="sc-modal-role">FORRT Stewards&lt;/p>
+&lt;div class="sc-modal-bio">Bio coming soon.&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;/div>&lt;div id="modal-drlukaswallrich" class="sc-modal-backdrop">
+&lt;div class="sc-modal-content">
+&lt;div class="sc-modal-header">
+&lt;button onclick="closeModal('drlukaswallrich')" class="sc-close-btn">
+&lt;svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">&lt;path d="M18 6 6 18"/>&lt;path d="m6 6 18 12"/>&lt;/svg>
+&lt;/button>
+&lt;/div>
+&lt;div class="sc-modal-body">
+&lt;div class="sc-modal-layout">
+&lt;div class="sc-modal-sidebar">
+&lt;div class="sc-modal-img">
+&lt;img src="https://forrt.org/authors/drlukaswallrich/avatar.webp" alt="Dr Lukas Wallrich" />
+&lt;/div>
+&lt;div class="sc-social-links">
+&lt;a href="www.lukaswallrich.coffee" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-slate-800 transition-colors">&lt;svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">&lt;circle cx="12" cy="12" r="10"/>&lt;line x1="2" x2="22" y1="12" y2="12"/>&lt;path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>&lt;/svg>&lt;/a>&lt;a href="mailto:l.wallrich@bbk.ac.uk" class="text-slate-400 hover:text-slate-800 transition-colors">&lt;svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">&lt;rect width="20" height="16" x="2" y="4" rx="2"/>&lt;path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>&lt;/svg>&lt;/a>
+&lt;/div>
+&lt;/div>
+&lt;div class="sc-modal-main">
+&lt;h3 class="sc-modal-name">Dr Lukas Wallrich&lt;/h3>
+&lt;p class="sc-modal-role">Co-Director of FORRT&lt;/p>
+&lt;div class="sc-modal-bio">I work as a Lecturer in Organisational Psychology at Birkbeck Business School, University of London. There, I teach on organisational psychology master programmes and research how workforce diversity can be harnessed to improve organisational performance, and how we can improve the reliability of research. This includes co-leading FORRT’s Replication Hub, acting as a Senior Editor for Replication Research, and leading the UKRI-funded project Making Replications Count. In addition, I am interested in intergroup contact research, and serve as Co-Chair of the International Contact Research Network.
+I am also very interested in Open Science and an avid R user. In that space, I enjoy contributing to the development of tools that support open research - for instance, the CiteSource package that supports meta-analyses. I have also authored three R packages, rsprite2, timesaveR and metaUI.&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;/div>&lt;div id="modal-flavioazevedo" class="sc-modal-backdrop">
+&lt;div class="sc-modal-content">
+&lt;div class="sc-modal-header">
+&lt;button onclick="closeModal('flavioazevedo')" class="sc-close-btn">
+&lt;svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">&lt;path d="M18 6 6 18"/>&lt;path d="m6 6 18 12"/>&lt;/svg>
+&lt;/button>
+&lt;/div>
+&lt;div class="sc-modal-body">
+&lt;div class="sc-modal-layout">
+&lt;div class="sc-modal-sidebar">
+&lt;div class="sc-modal-img">
+&lt;img src="https://forrt.org/authors/flavioazevedo/avatar.webp" alt="Flavio Azevedo" />
+&lt;/div>
+&lt;div class="sc-social-links">
+&lt;a href="http://flavioazevedo.com/about" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-slate-800 transition-colors">&lt;svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">&lt;circle cx="12" cy="12" r="10"/>&lt;line x1="2" x2="22" y1="12" y2="12"/>&lt;path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>&lt;/svg>&lt;/a>
+&lt;/div>
+&lt;/div>
+&lt;div class="sc-modal-main">
+&lt;h3 class="sc-modal-name">Flavio Azevedo&lt;/h3>
+&lt;p class="sc-modal-role">Director of FORRT&lt;/p>
+&lt;div class="sc-modal-bio">Bio coming soon.&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;/div>&lt;div id="modal-samparsons" class="sc-modal-backdrop">
+&lt;div class="sc-modal-content">
+&lt;div class="sc-modal-header">
+&lt;button onclick="closeModal('samparsons')" class="sc-close-btn">
+&lt;svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">&lt;path d="M18 6 6 18"/>&lt;path d="m6 6 18 12"/>&lt;/svg>
+&lt;/button>
+&lt;/div>
+&lt;div class="sc-modal-body">
+&lt;div class="sc-modal-layout">
+&lt;div class="sc-modal-sidebar">
+&lt;div class="sc-modal-img">
+&lt;img src="https://forrt.org/authors/samparsons/avatar.webp" alt="Sam Parsons" />
+&lt;/div>
+&lt;div class="sc-social-links">
+&lt;a href="https://sdparsons.github.io/" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-slate-800 transition-colors">&lt;svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">&lt;circle cx="12" cy="12" r="10"/>&lt;line x1="2" x2="22" y1="12" y2="12"/>&lt;path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>&lt;/svg>&lt;/a>
+&lt;/div>
+&lt;/div>
+&lt;div class="sc-modal-main">
+&lt;h3 class="sc-modal-name">Sam Parsons&lt;/h3>
+&lt;p class="sc-modal-role">Stewardship Council Chair&lt;/p>
+&lt;div class="sc-modal-bio">Bio coming soon.&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;/div>&lt;div id="modal-thomasrhysevans" class="sc-modal-backdrop">
+&lt;div class="sc-modal-content">
+&lt;div class="sc-modal-header">
+&lt;button onclick="closeModal('thomasrhysevans')" class="sc-close-btn">
+&lt;svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">&lt;path d="M18 6 6 18"/>&lt;path d="m6 6 18 12"/>&lt;/svg>
+&lt;/button>
+&lt;/div>
+&lt;div class="sc-modal-body">
+&lt;div class="sc-modal-layout">
+&lt;div class="sc-modal-sidebar">
+&lt;div class="sc-modal-img">
+&lt;img src="https://forrt.org/authors/thomasrhysevans/avatar.webp" alt="Thomas Rhys Evans" />
+&lt;/div>
+&lt;div class="sc-social-links">
+&lt;a href="https://www.gre.ac.uk/people/rep/faculty-of-education-and-health/thomas-rhys-evans" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-slate-800 transition-colors">&lt;svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">&lt;circle cx="12" cy="12" r="10"/>&lt;line x1="2" x2="22" y1="12" y2="12"/>&lt;path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>&lt;/svg>&lt;/a>
+&lt;/div>
+&lt;/div>
+&lt;div class="sc-modal-main">
+&lt;h3 class="sc-modal-name">Thomas Rhys Evans&lt;/h3>
+&lt;p class="sc-modal-role">Ombudsman&lt;/p>
+&lt;div class="sc-modal-bio">Bio coming soon.&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;script>
+document.addEventListener('DOMContentLoaded', () => {
+window.openModal = (id) => {
+const modal = document.getElementById(`modal-${id}`);
+if (modal) {
+modal.classList.add('active');
+document.body.style.overflow = 'hidden';
+}
+};
+window.closeModal = (id) => {
+const modal = document.getElementById(`modal-${id}`);
+if (modal) {
+modal.classList.remove('active');
+document.body.style.overflow = '';
+}
+};
+document.querySelectorAll('.sc-modal-backdrop').forEach(backdrop => {
+backdrop.addEventListener('click', (e) => {
+if (e.target === backdrop) {
+backdrop.classList.remove('active');
+document.body.style.overflow = '';
+}
+});
+});
+document.addEventListener('keydown', (e) => {
+if (e.key === 'Escape') {
+const activeModal = document.querySelector('.sc-modal-backdrop.active');
+if (activeModal) {
+activeModal.classList.remove('active');
+document.body.style.overflow = '';
+}
+}
+});
+/* --- Team linking + ordering based on source CSV --- */
+const SC_ORDER_CSV = "https://docs.google.com/spreadsheets/d/e/2PACX-1vRCHSY7WBvzDSSWyUyOVPRbsf5QxO7Mc40hGB7yanfT-rjbcNthMbHvUxT0NJ3AAfLKfx4YiOghByZT/pub?output=csv";
+const TEAM_COLORS = ["#2563eb","#c026d3","#ea580c","#22c55e","#0ea5e9","#f59e0b","#ef4444","#8b5cf6","#14b8a6","#f97316"];
+const BACKGROUND_COLORS = ["#0f766e", "#475569"];
+const honorifics = /^(dr|dr\.|prof|prof\.|mr|mrs|ms|miss)\s+/i;
+const normalizeBase = (str = "") => str.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+const normalizeText = (str = "") => normalizeBase(str.replace(/&amp;amp;/gi, "&amp;").trim().toLowerCase());
+const normalizeTeam = (str = "") => normalizeText(str).replace(/\s+/g, " ");
+const nameTokens = (str = "") =>
+normalizeText(str.replace(honorifics, ""))
+.replace(/[^a-z0-9\s]/g, " ")
+.split(/\s+/)
+.filter(Boolean);
+const tokenSimilarity = (aTokens, bTokens) => {
+if (!aTokens.length || !bTokens.length) return 0;
+const aSet = new Set(aTokens);
+const bSet = new Set(bTokens);
+let intersect = 0;
+bSet.forEach((t) => {
+if (aSet.has(t)) intersect += 1;
+});
+return intersect / Math.max(aSet.size, bSet.size, 1);
+};
+const charDice = (aStr, bStr) => {
+const a = aStr.replace(/\s+/g, "");
+const b = bStr.replace(/\s+/g, "");
+if (!a.length || !b.length) return 0;
+const count = (s) => {
+const m = {};
+for (const ch of s) m[ch] = (m[ch] || 0) + 1;
+return m;
+};
+const aCount = count(a);
+const bCount = count(b);
+let overlap = 0;
+Object.keys(aCount).forEach((ch) => {
+if (bCount[ch]) overlap += Math.min(aCount[ch], bCount[ch]);
+});
+return (2 * overlap) / (a.length + b.length);
+};
+const parseCSV = (text) =>
+text
+.trim()
+.split(/\\r?\\n/)
+.map((line) => line.split(",").map((cell) => cell.replace(/^"+|"+$/g, "").trim()));
+const buildOrders = (rows) => {
+const sectionMap = {};
+document.querySelectorAll(".sc-section").forEach((sec) => {
+const title = sec.querySelector(".sc-section-title span")?.textContent || sec.id;
+sectionMap[normalizeTeam(title)] = sec.id;
+});
+const findSection = (raw) => {
+const key = normalizeTeam(raw);
+if (sectionMap[key]) return sectionMap[key];
+const operationsId = Object.entries(sectionMap).find(([k]) => k.includes('operation'))?.[1];
+if (operationsId &amp;&amp; (key.includes('ombudsman') || key.includes('steward'))) {
+return operationsId;
+}
+let best = null;
+let bestScore = -1;
+Object.entries(sectionMap).forEach(([k, id]) => {
+const score = charDice(k, key);
+if (score > bestScore) {
+bestScore = score;
+best = id;
+}
+});
+return best || Object.values(sectionMap)[0] || null;
+};
+const orders = {};
+rows.slice(1).forEach((row) => {
+const sectionRaw = row[1];
+const teamRaw = row[3];
+const nameRaw = row[5];
+if (!sectionRaw || !teamRaw || !nameRaw) return;
+const secKey = findSection(sectionRaw);
+if (!secKey) return;
+if (!orders[secKey]) orders[secKey] = [];
+let group = orders[secKey].find((g) => normalizeTeam(g.team) === normalizeTeam(teamRaw));
+if (!group) {
+group = { team: teamRaw, members: [] };
+orders[secKey].push(group);
+}
+group.members.push(nameRaw);
+});
+return orders;
+};
+const reorderAndLink = (sectionId, teams) => {
+const grid = document.querySelector(`#${sectionId} .sc-grid`);
+if (!grid || !teams || !teams.length) return;
+const titleCards = Array.from(grid.querySelectorAll('.sc-title-card'));
+const memberCards = Array.from(grid.querySelectorAll('.sc-card'));
+[...titleCards, ...memberCards].forEach((el) => {
+el.classList.remove('sc-team-linked', 'sc-team-title');
+el.style.removeProperty('--team-color');
+});
+const titleMap = new Map();
+titleCards.forEach((card) => {
+const text = card.querySelector('.sc-title-text')?.textContent || "";
+titleMap.set(normalizeTeam(text), card);
+});
+const memberMap = [];
+memberCards.forEach((card) => {
+const name = card.querySelector('.sc-card-name')?.textContent || "";
+const tokens = nameTokens(name);
+if (!tokens.length) return;
+memberMap.push({ tokens, card });
+});
+const takeMember = (rawName) => {
+const targetTokens = nameTokens(rawName);
+if (!targetTokens.length) return null;
+const targetJoined = targetTokens.join("");
+let best = null;
+let bestScore = 0.45;
+memberMap.forEach((entry, idx) => {
+const tokenScore = tokenSimilarity(entry.tokens, targetTokens);
+const joined = entry.tokens.join("");
+const charScore = charDice(joined, targetJoined);
+const score = Math.max(tokenScore, charScore);
+if (score > bestScore) {
+bestScore = score;
+best = { idx, card: entry.card };
+}
+});
+if (best) {
+memberMap.splice(best.idx, 1);
+return best.card;
+}
+return null;
+};
+let colorIndex = 0;
+const parseColor = (hex) => {
+const h = hex.replace("#", "");
+const r = parseInt(h.substring(0, 2), 16) / 255;
+const g = parseInt(h.substring(2, 4), 16) / 255;
+const b = parseInt(h.substring(4, 6), 16) / 255;
+const toLin = (c) => (c &lt;= 0.03928 ? c / 12.92 : Math.pow((c + 0.055) / 1.055, 2.4));
+return { r: toLin(r), g: toLin(g), b: toLin(b) };
+};
+const contrast = (hex1, hex2) => {
+const a = parseColor(hex1);
+const b = parseColor(hex2);
+const lum = ({ r, g, b }) => 0.2126 * r + 0.7152 * g + 0.0722 * b;
+const l1 = lum(a) + 0.05;
+const l2 = lum(b) + 0.05;
+return l1 > l2 ? l1 / l2 : l2 / l1;
+};
+const nextColor = () => {
+let attempts = 0;
+while (attempts &lt; TEAM_COLORS.length * 2) {
+const color = TEAM_COLORS[colorIndex % TEAM_COLORS.length];
+colorIndex += 1;
+const ok = BACKGROUND_COLORS.every((bg) => contrast(color, bg) > 4);
+if (ok) return color;
+attempts += 1;
+}
+return TEAM_COLORS[(colorIndex++) % TEAM_COLORS.length];
+};
+const newChildren = [];
+teams.forEach((team) => {
+const color = nextColor();
+const teamKey = normalizeTeam(team.team);
+const titleCard = titleMap.get(teamKey);
+if (titleCard) {
+titleCard.style.setProperty('--team-color', color);
+titleCard.classList.add('sc-team-title');
+titleMap.delete(teamKey);
+newChildren.push(titleCard);
+}
+team.members.forEach((memberName) => {
+const card = takeMember(memberName);
+if (card) {
+card.style.setProperty('--team-color', color);
+card.classList.add('sc-team-linked');
+newChildren.push(card);
+}
+});
+});
+const leftovers = [];
+titleMap.forEach((card) => leftovers.push(card));
+memberMap.forEach((entry) => leftovers.push(entry.card));
+grid.innerHTML = '';
+[...newChildren, ...leftovers].forEach((el) => grid.appendChild(el));
+};
+fetch(SC_ORDER_CSV)
+.then((res) => res.text())
+.then((text) => {
+const rows = parseCSV(text);
+const orders = buildOrders(rows);
+Object.entries(orders).forEach(([sectionId, teams]) => reorderAndLink(sectionId, teams));
+})
+.catch((err) => console.warn('SC team linking failed', err));
+});
+&lt;/script></description></item><item><title>Teams</title><link>https://forrt.org/about/teams/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://forrt.org/about/teams/</guid><description/></item><item><title>Visitors</title><link>https://forrt.org/about/visitors/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://forrt.org/about/visitors/</guid><description>&lt;p>We are excited to see that our resources are useful for people from all over the world. Here are some statistics to show who has been here over the past 30 days.&lt;/p>
 &lt;h2 id="last-30-days">Last 30 Days&lt;/h2>
 &lt;h3 id="-by-country">&amp;hellip; by country&lt;/h3>
 &lt;div id="ga_map" style="height: 400px; background: #b3d9ff;">&lt;/div>
