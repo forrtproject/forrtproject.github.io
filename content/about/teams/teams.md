@@ -291,7 +291,7 @@ subtitle = "---"
   buttonurl = "https://forrt.slack.com/archives/C0184989HHC"
   buttondescr = "Join Us"
   name = "Team Outreach and Impact" # Title
-  description = "Team hoping to disseminate information about FORRT activities, initiatives & accomplishments to the public (i.e., on social media like Twitter/FB), develop a newsletter, dissemination materials (e.g., community-wide videos about FORRT’s goals, values, principles, products)."
+  description = "Team hoping to disseminate information about FORRT activities, initiatives & accomplishments to the public (i.e., on social media like Bluesky/FB), develop a newsletter, dissemination materials (e.g., community-wide videos about FORRT’s goals, values, principles, products)."
   color = "#395855" # Background color under the image
 
 
