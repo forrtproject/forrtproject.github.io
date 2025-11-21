@@ -1,32 +1,72 @@
 import pandas as pd
 import os
+import json
 
 # Tenzing directory
 csv_export_url = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vT_IaXiYtB3iAmtDZ_XiQKrToRkxOlkXNAeNU2SIT_J9PxvsQyptga6Gg9c8mSvDZpwY6d8skswIQYh/pub?output=csv&gid=0'
 extra_roles_url = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vSCsxHTnSSjYqhQSR2kT3gIYg82HiODjPat9y2TFPrZESYWxz4k8CZsOesXPD3C5dngZEGujtKmNZsa/pub?output=csv'
 
 # Use pandas to read the CSV
-df = pd.read_csv(csv_export_url)
-df_roles = pd.read_csv(extra_roles_url)
+try:
+    df = pd.read_csv(csv_export_url)
+    print(f"✓ Successfully loaded main Tenzing index with {len(df)} projects")
+except Exception as e:
+    print(f"✗ FATAL: Failed to load main Tenzing index: {str(e)}")
+    raise
+
+try:
+    df_roles = pd.read_csv(extra_roles_url)
+    print(f"✓ Successfully loaded extra roles with {len(df_roles)} entries")
+except Exception as e:
+    print(f"✗ FATAL: Failed to load extra roles: {str(e)}")
+    raise
 
 # Assuming 'df' contains the index data with Tenzing Links
 all_data_frames = []
+failed_sheets = []
 
 print("--- Reading Contributor Data ---")
 # Loop over both the Project Names and the Tenzing Links
 for project_name, url, project_url in zip(df['Project Name'], df['CSV Link'], df['Project URL']):
-    # Make sure each URL is transformed into a CSV export URL as shown above
-    data_frame = pd.read_csv(url)
-    
-    # --- LOGGING ADDED HERE ---
-    # Log the number of contributors read from the current project
-    print(f"Read {len(data_frame)} contributors from '{project_name}'.")
+    try:
+        # Make sure each URL is transformed into a CSV export URL as shown above
+        data_frame = pd.read_csv(url)
+        
+        # --- LOGGING ADDED HERE ---
+        # Log the number of contributors read from the current project
+        print(f"✓ Read {len(data_frame)} contributors from '{project_name}'.")
 
-    # Add a new column with the project name
-    data_frame['Project Name'] = project_name
-    data_frame['Project URL'] = project_url
-    
-    all_data_frames.append(data_frame)
+        # Add a new column with the project name
+        data_frame['Project Name'] = project_name
+        data_frame['Project URL'] = project_url
+        
+        all_data_frames.append(data_frame)
+    except Exception as e:
+        # Log the failure and continue processing other sheets
+        error_msg = f"✗ Failed to read '{project_name}': {str(e)}"
+        print(error_msg)
+        failed_sheets.append({
+            'project_name': project_name,
+            'url': url,
+            'error': str(e)
+        })
+        continue
+
+# Check if we successfully loaded at least one project
+if not all_data_frames:
+    error_msg = "✗ FATAL: No project data could be loaded. All sheets failed."
+    print(error_msg)
+    if failed_sheets:
+        print("\nFailed sheets:")
+        for failure in failed_sheets:
+            print(f"  - {failure['project_name']}: {failure['error']}")
+    raise RuntimeError(error_msg)
+
+print(f"\n✓ Successfully loaded {len(all_data_frames)} out of {len(df)} projects")
+if failed_sheets:
+    print(f"⚠ Warning: {len(failed_sheets)} project(s) failed to load:")
+    for failure in failed_sheets:
+        print(f"  - {failure['project_name']}: {failure['error']}")
 
 # Concatenate all data frames
 merged_data = pd.concat(all_data_frames, ignore_index=True)
@@ -44,7 +84,12 @@ def concatenate_true_columns(row, columns):
 
 # List of column names to check for TRUE values
 fields_url = "https://docs.google.com/spreadsheets/d/e/2PACX-1vT_IaXiYtB3iAmtDZ_XiQKrToRkxOlkXNAeNU2SIT_J9PxvsQyptga6Gg9c8mSvDZpwY6d8skswIQYh/pub?output=csv&gid=277271370"
-column_mappings = pd.read_csv(fields_url)
+try:
+    column_mappings = pd.read_csv(fields_url)
+    print(f"✓ Successfully loaded column mappings with {len(column_mappings)} fields")
+except Exception as e:
+    print(f"✗ FATAL: Failed to load column mappings: {str(e)}")
+    raise
 
 # Extracting Column A (Fields) as columns_to_check
 columns_to_check = column_mappings['Fields'].tolist()
@@ -212,3 +257,24 @@ with open(output_path, 'w') as file:
     file.write(combined_content)
 
 print(f"\nSuccessfully generated the file at: {output_path}")
+
+# Save failure information to a JSON file for potential GitHub issue creation
+if failed_sheets:
+    failure_report_path = os.path.join(script_dir, 'tenzing_failures.json')
+    with open(failure_report_path, 'w') as f:
+        json.dump({
+            'timestamp': pd.Timestamp.now().isoformat(),
+            'total_projects': len(df),
+            'successful_projects': len(all_data_frames),
+            'failed_projects': len(failed_sheets),
+            'failures': failed_sheets
+        }, f, indent=2)
+    print(f"\n⚠ Failure report saved to: {failure_report_path}")
+    print(f"⚠ {len(failed_sheets)} project(s) failed - workflow should create an issue")
+else:
+    print("\n✓ All projects processed successfully!")
+    # Remove any existing failure report
+    failure_report_path = os.path.join(script_dir, 'tenzing_failures.json')
+    if os.path.exists(failure_report_path):
+        os.remove(failure_report_path)
+        print("✓ Removed old failure report")
