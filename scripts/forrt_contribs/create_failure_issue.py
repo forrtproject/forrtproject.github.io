@@ -7,7 +7,6 @@ import json
 import os
 import sys
 import subprocess
-import shlex
 import tempfile
 
 def sanitize_string(s):
@@ -94,7 +93,12 @@ Please investigate the failed projects and fix any issues with the source data o
         # Check if GitHub CLI is available
         try:
             gh_check = subprocess.run(['gh', '--version'], capture_output=True, text=True, check=True)
-            print(f"Using GitHub CLI: {gh_check.stdout.split()[0]} {gh_check.stdout.split()[2]}")
+            # Parse version info safely
+            version_parts = gh_check.stdout.split()
+            if len(version_parts) >= 3:
+                print(f"Using GitHub CLI: {version_parts[0]} {version_parts[2]}")
+            else:
+                print(f"Using GitHub CLI (version info unavailable)")
         except (subprocess.CalledProcessError, FileNotFoundError) as e:
             print(f"❌ GitHub CLI (gh) is not available or not authenticated: {e}")
             return False

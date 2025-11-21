@@ -18,6 +18,7 @@ try:
     df = pd.read_csv(csv_export_url)
     print(f"✓ Successfully loaded main Tenzing index with {len(df)} projects")
 except Exception as e:
+    # Catch all exceptions - we need the main index to proceed
     print(f"✗ FATAL: Failed to load main Tenzing index: {str(e)}")
     raise
 
@@ -25,6 +26,7 @@ try:
     df_roles = pd.read_csv(extra_roles_url)
     print(f"✓ Successfully loaded extra roles with {len(df_roles)} entries")
 except Exception as e:
+    # Catch all exceptions - we need the extra roles to proceed
     print(f"✗ FATAL: Failed to load extra roles: {str(e)}")
     raise
 
@@ -49,6 +51,7 @@ for project_name, url, project_url in zip(df['Project Name'], df['CSV Link'], df
         
         all_data_frames.append(data_frame)
     except Exception as e:
+        # Catch all exceptions (network, parsing, etc.) to maximize robustness
         # Log the failure and continue processing other sheets
         error_msg = f"✗ Failed to read '{project_name}': {str(e)}"
         print(error_msg)
