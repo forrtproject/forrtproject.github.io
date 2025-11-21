@@ -5,7 +5,7 @@
     /* slate-800 */
     background-color: transparent;
     /* Match website background */
-    padding: 0;
+    padding: 1.5rem 0 0;
     border-radius: 0;
     width: 100vw;
     margin-left: calc(-50vw + 50%);
@@ -17,11 +17,11 @@
 }
 
 /* Stretch the SC content full-width without affecting the page header */
-article.article .article-container + .article-container {
+article.article .article-container {
     max-width: none;
     padding: 0;
 }
-article.article .article-container + .article-container .article-style {
+article.article .article-container .article-style {
     padding: 0;
 }
 
@@ -65,6 +65,11 @@ article.article .article-container + .article-container .article-style {
 }
 
 /* Title + main wrapper */
+.page-steering-committee article.article > .article-container:first-of-type,
+article.article > .article-container.pt-3:first-of-type {
+    display: none !important; /* hide theme header; keep custom h1 */
+}
+
 .article-title,
 article.article .article-title,
 article.article .article-container .article-title {
