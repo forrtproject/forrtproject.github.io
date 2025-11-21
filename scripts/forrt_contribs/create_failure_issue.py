@@ -8,6 +8,7 @@ import os
 import sys
 import subprocess
 import shlex
+import tempfile
 
 def sanitize_string(s):
     """Sanitize a string to prevent command injection."""
@@ -66,14 +67,20 @@ Please investigate the failed projects and fix any issues with the source data o
     title = f"Tenzing Script Failures: {failed} project(s) failed to load"
     
     # Write title and body to temporary files to avoid command injection
-    import tempfile
-    with tempfile.NamedTemporaryFile(mode='w', suffix='.txt', delete=False) as title_file:
+    # Use delete=False and manually clean up to ensure we can handle errors
+    try:
+        title_file = tempfile.NamedTemporaryFile(mode='w', suffix='.txt', delete=False)
         title_file.write(title)
+        title_file.close()
         title_path = title_file.name
-    
-    with tempfile.NamedTemporaryFile(mode='w', suffix='.md', delete=False) as body_file:
+        
+        body_file = tempfile.NamedTemporaryFile(mode='w', suffix='.md', delete=False)
         body_file.write(body)
+        body_file.close()
         body_path = body_file.name
+    except Exception as e:
+        print(f"❌ Failed to create temporary files: {e}")
+        return False
     
     # Use GitHub CLI to create the issue
     try:
@@ -96,11 +103,12 @@ Please investigate the failed projects and fix any issues with the source data o
         return False
     finally:
         # Clean up temporary files
-        try:
-            os.unlink(title_path)
-            os.unlink(body_path)
-        except Exception:
-            pass
+        for path in [title_path, body_path]:
+            try:
+                if os.path.exists(path):
+                    os.unlink(path)
+            except OSError as e:
+                print(f"⚠ Warning: Failed to remove temporary file {path}: {e}")
 
 def main():
     # Get the script directory
