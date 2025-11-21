@@ -13,6 +13,12 @@ def sanitize_string(s):
     """
     Sanitize a string to prevent command injection.
     
+    Note: This function is used in conjunction with temporary file-based
+    argument passing (--title-file, --body-file) to the GitHub CLI.
+    The sanitized strings are written to files, not passed through shell,
+    so shell metacharacters are not a concern. We sanitize control characters
+    to ensure clean issue content.
+    
     Args:
         s: Any value (will be converted to string if not already)
         
