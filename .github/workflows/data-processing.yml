@@ -1,13 +1,35 @@
 name: Data Processing
 
-# This workflow is triggered daily at midnight and can also be manually triggered.
-# It processes data from various scripts and uploads the processed data as an artifact.
-# The data is used to update the website's content.
+# FORRT Data Processing Workflow
+# 
+# Purpose: Automated data fetching and processing for FORRT website content
+# 
+# Triggers:
+# - Weekly on Sundays at midnight UTC (scheduled)
+# - Manual trigger via GitHub Actions UI (workflow_dispatch)
+# 
+# Data Sources Processed:
+# 1. Curated Resources (Python script)
+# 3. Google Analytics data (Python script)
+# 4. Contributor analysis (R script) - Monthly only
+# 
+# Outputs:
+# - Updated JSON data files in data/ directory
+# - Static copies in static/data/ for client-side access
+# - Automated PRs for contributor analysis (monthly)
+# 
+# The processed data is used throughout the Hugo website for dynamic content.
 
 on:
   schedule:
-    - cron: '0 0 * * *'  # Daily at midnight
+    - cron: '0 0 * * 0'  # Weekly on Sundays at Midnight UTC
   workflow_dispatch:
+    inputs:
+      regenerate_glossary:
+        description: 'Regenerate glossary files (only use when glossary sources are stable)'
+        required: false
+        type: boolean
+        default: false
 
 jobs:
   process-data:
@@ -19,44 +41,140 @@ jobs:
     env:
       PYTHON_VERSION: "3.11"
     steps:
+
+      #================
+      # Repository Setup
+      #================
       - name: Checkout repository
         uses: actions/checkout@v4
+        # Checkout the repository code to the runner environment
 
+      #======================
+      # Workflow Configuration
+      #======================
+      # Check if this is a monthly run (1st of month or manual trigger)
+      #==========================================================
+      - name: Check if monthly run
+        id: monthly-run
+        run: |
+          CURRENT_DAY=$(date +%d)
+          if [ "$CURRENT_DAY" != "01" ] && [ "${{ github.event_name }}" != "workflow_dispatch" ]; then
+            echo "is_monthly=false" >> $GITHUB_OUTPUT
+            echo "ℹ️ Skipping contributor analysis (not 1st of month and not manual trigger)"
+          else
+            echo "is_monthly=true" >> $GITHUB_OUTPUT
+            echo "🔄 Monthly run detected - will run contributor analysis"
+          fi
+
+      #=================
+      # Environment Setup
+      #=================
+      #========================================
+      # Configure Git with identity for commits
+      #========================================
       - name: Configure Git
         run: |
           git config --global user.email "mudaherarich@gmail.com"
           git config --global user.name "richarddushime"
+        # Configure Git with the identity that will be used for commits for the monthly run
 
+      #========================================
+      # Install Python 3.11 for running scripts
+      #========================================
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
           python-version: ${{ env.PYTHON_VERSION }}
           cache: 'pip'
 
+      #========================================
+      # Setup r2u for fast R package installation
+      #========================================
       - name: Setup r2u
         uses: eddelbuettel/github-actions/r2u-setup@master
+
+      #========================================
+      # Install Pandoc for rendering R Markdown documents
+      #========================================
       - uses: r-lib/actions/setup-pandoc@v2
+
+      #========================================
+      # Install R packages for contributor analysis and visualization
+      #========================================
       - name: Install tenzing R dependencies
         run: Rscript -e 'install.packages(c("rmarkdown","ggplot2", "readxl", "dplyr", "googlesheets4", "stringr", "gridExtra", "glue", "tidygraph", "ggraph", "igraph", "visNetwork"))'
 
+      #==============================
+      # Contributor Analysis (Monthly)
+      #==============================
+      #========================================
+      # Generate contributor analysis reports and network visualizations
+      #========================================
       - name: Run Contributor Analysis
+        if: steps.monthly-run.outputs.is_monthly == 'true'
         continue-on-error: true  # Continue even if this step fails
         run: |
-          echo "🚀 Rendering R Markdown..."
+          echo "🚀 Running Contributor Analysis..."
+          
+          # Clean old files from content/contributor-analysis and partials
+          rm -rf content/contributor-analysis/*.png content/contributor-analysis/*.html content/contributor-analysis/htmlwidgets_libs
+          rm -f layouts/partials/network-graph.html
+          
+          # Run index.Rmd to generate contributor analysis content and plots
+          echo "📊 Rendering contributor analysis..."
           Rscript -e "rmarkdown::render('content/contributor-analysis/index.Rmd')"
-          echo "✅ Done"
+          
+          # Run network-graph.Rmd to generate interactive network visualization
+          echo "🕸️ Rendering network visualization..."
+          Rscript -e "rmarkdown::render('content/contributor-analysis/network-graph.Rmd')"
+          
+          # Move generated HTML file to layouts/partials
+          echo "📁 Moving network graph to partials..."
+          mv content/contributor-analysis/network-graph.html layouts/partials/
+          
+          # Clean up HTML artifacts from index.md if any
+          sed -i.bak -e '/^```{=html}$/d' -e '/^```$/d' content/contributor-analysis/index.md && rm content/contributor-analysis/index.md.bak
+          
+          echo "✅ Contributor analysis complete"
 
+      #=======================
+      # Tenzing Data Processing
+      #=======================
+      #========================================
+      # Install Python packages for data processing scripts
+      #========================================
       - name: Install Python dependencies
         run: python3 -m pip install -r ./requirements.txt
 
+        
+      #========================================
+      # Process contributor data using Tenzing script
+      #========================================
       - name: Run Tenzing script
         continue-on-error: true  # Continue even if this step fails
         run: python3 scripts/forrt_contribs/tenzing.py
 
+      #========================================
+      # Check for Tenzing failures and create issue if needed
+      #========================================
+      - name: Check Tenzing failures and create issue
+        if: always()  # Run even if previous step failed
+        continue-on-error: true  # Don't fail the workflow if issue creation fails
+        run: python3 scripts/forrt_contribs/create_failure_issue.py
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      #========================================
+      # Process and organize curated resources data
+      #========================================
       - name: Run Curated Resources script
         continue-on-error: true  # Continue even if this step fails
         run: python3 content/resources/resource.py
+        # Execute the curated resources script that processes and organizes resource data
 
+      #========================================
+      # Move Tenzing output to content directory and validate
+      #========================================
       - name: Move and validate Tenzing output
         continue-on-error: true  # Continue even if this step fails
         run: |
@@ -66,6 +184,9 @@ jobs:
             exit 1
           fi
 
+      #========================================
+      # Validate that curated resources files available under content/curated_resources
+      #========================================
       - name: Validate curated resources
         continue-on-error: true  # Continue even if this step fails
         run: |
@@ -76,6 +197,18 @@ jobs:
             fi
           done
 
+      #========================================
+      # Process and generate glossary files
+      #========================================
+      - name: Run Glossary Generation script
+        if: github.event.inputs.regenerate_glossary == 'true'
+        continue-on-error: true  # Continue even if this step fails
+        run: python3 content/glossary/_create_glossaries.py
+        # Execute the glossary script that generates glossary markdown files
+
+      #========================================
+      # Download Google Analytics data and validate
+      #========================================
       - name: Download GA Data
         continue-on-error: true  # Continue even if this step fails
         env:
@@ -103,6 +236,9 @@ jobs:
             exit 1
           fi
 
+      #=======================================================
+      # Create a pull request for GA data updates on monthly runs
+      #=======================================================
       - name: Create PR for GA data update
         if: github.event_name != 'pull_request'
         continue-on-error: true  # Continue even if this step fails
@@ -152,12 +288,23 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.FORRT_PAT }}
           GH_TOKEN: ${{ secrets.FORRT_PAT }}
 
+      #=======================
+      # Google Scholar Citations
+      #========================================
+      # Execute Google Scholar citation tracking script
+      #========================================
       - name: Run Google Scholar script
         continue-on-error: true
         run: python3 scripts/gs-cite/google_scholar.py
         env:
           SERPAPI: ${{ secrets.SERPAPI }}
 
+      #==============
+      # Artifact Upload
+      #==============
+      #========================================
+      # Upload all processed data files as artifact
+      #========================================
       - name: Upload data artifact
         id: upload-artifact
         uses: actions/upload-artifact@v4
@@ -166,7 +313,119 @@ jobs:
           path: |
             content/contributors/tenzing.md
             content/curated_resources/
+            content/glossary/
             data/
             content/contributor-analysis/
             content/publications/citation_chart.webp
-          retention-days: 1
+          retention-days: 7
+
+      #========================================
+      # Commit generated files to build-resources branch
+      #========================================
+      - name: Commit to build-resources branch
+        if: github.event_name != 'pull_request'
+        continue-on-error: true
+        run: |
+          echo "📝 Committing generated files to build-resources branch..."
+          
+          # Store current branch name
+          ORIGINAL_BRANCH=$(git branch --show-current)
+          echo "Original branch: $ORIGINAL_BRANCH"
+          
+          # Store generated files in temp location
+          mkdir -p /tmp/generated-resources
+          cp -r content/curated_resources /tmp/generated-resources/
+          cp content/contributors/tenzing.md /tmp/generated-resources/
+          
+          # Only copy glossary if it was regenerated
+          if [ "${{ github.event.inputs.regenerate_glossary }}" = "true" ]; then
+            echo "✓ Glossary regeneration enabled, including glossary files"
+            cp -r content/glossary /tmp/generated-resources/
+          else
+            echo "ℹ️ Glossary regeneration skipped (use workflow_dispatch with regenerate_glossary=true to update)"
+          fi
+          
+          # Fetch build-resources branch (create if doesn't exist)
+          git fetch origin build-resources || echo "build-resources branch doesn't exist yet"
+          
+          if git rev-parse --verify origin/build-resources >/dev/null 2>&1; then
+            echo "✓ build-resources branch exists, checking it out"
+            git checkout build-resources
+            git pull origin build-resources
+          else
+            echo "✓ Creating new build-resources branch from current branch"
+            git checkout -b build-resources
+          fi
+          
+          # Remove old generated resource files (but keep _index.md)
+          find content/curated_resources -type f ! -name '_index.md' -delete 2>/dev/null || true
+          
+          # Copy newly generated files
+          cp -r /tmp/generated-resources/curated_resources/* content/curated_resources/
+          cp /tmp/generated-resources/tenzing.md content/contributors/
+          
+          # Copy glossary files only if regenerated (preserving directory structure)
+          if [ "${{ github.event.inputs.regenerate_glossary }}" = "true" ]; then
+            echo "✓ Updating glossary files in build-resources"
+            # Remove old glossary files (but keep _index.md files)
+            find content/glossary -type f ! -name '_index.md' ! -name '_create_glossaries.py' -delete 2>/dev/null || true
+            rsync -av --exclude='_index.md' --exclude='_create_glossaries.py' /tmp/generated-resources/glossary/ content/glossary/
+          fi
+          
+          # Check if there are any changes to commit
+          if git diff --quiet && git diff --cached --quiet; then
+            echo "ℹ️ No changes to commit"
+          else
+            echo "✓ Changes detected, committing..."
+            
+            # Add files based on what was regenerated
+            git add content/curated_resources/ content/contributors/tenzing.md
+            if [ "${{ github.event.inputs.regenerate_glossary }}" = "true" ]; then
+              git add content/glossary/
+              git commit -m "Update generated resources and glossary - $(date -u +'%Y-%m-%d %H:%M:%S UTC')" || echo "Nothing to commit"
+            else
+              git commit -m "Update generated resources - $(date -u +'%Y-%m-%d %H:%M:%S UTC')" || echo "Nothing to commit"
+            fi
+            
+            # Push to build-resources branch with retry logic
+            MAX_RETRIES=3
+            RETRY_COUNT=0
+            while [ $RETRY_COUNT -lt $MAX_RETRIES ]; do
+              if git push origin build-resources --force-with-lease; then
+                echo "✅ Successfully pushed to build-resources branch"
+                break
+              else
+                RETRY_COUNT=$((RETRY_COUNT + 1))
+                if [ $RETRY_COUNT -lt $MAX_RETRIES ]; then
+                  echo "⚠️ Push failed, retrying ($RETRY_COUNT/$MAX_RETRIES)..."
+                  sleep 2
+                  git pull origin build-resources --rebase
+                else
+                  echo "❌ Push failed after $MAX_RETRIES attempts"
+                  exit 1
+                fi
+              fi
+            done
+          fi
+          
+          # Switch back to original branch
+          git checkout "$ORIGINAL_BRANCH"
+        env:
+          GITHUB_TOKEN: ${{ secrets.FORRT_PAT }}
+
+      #====================
+      # Trigger Deployment
+      #====================
+      #========================================
+      # Trigger the deploy workflow to publish updated data
+      #========================================
+      - name: Trigger deployment
+        if: github.event_name != 'pull_request'
+        run: |
+          echo "🚀 Triggering deployment workflow..."
+          gh api repos/${{ github.repository }}/dispatches \
+            -f event_type=data-update \
+            -F client_payload[data_update]=true
+          echo "✅ Deployment triggered successfully"
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}

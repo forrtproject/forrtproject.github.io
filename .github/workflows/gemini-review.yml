@@ -1,5 +1,12 @@
 name: '🔎 Gemini Review'
 
+# =======================
+# AI-Powered Code Review
+# =======================
+# Purpose: Provides automated code review using Google Gemini AI
+# Triggers: Called by other workflows (workflow_call)
+# Features: Code analysis, suggestions, and automated feedback
+
 on:
   workflow_call:
     inputs:
@@ -19,7 +26,7 @@ defaults:
 jobs:
   review:
     runs-on: 'ubuntu-latest'
-    timeout-minutes: 7
+    timeout-minutes: 15
     permissions:
       contents: 'read'
       id-token: 'write'
@@ -64,7 +71,7 @@ jobs:
           gemini_debug: '${{ fromJSON(vars.DEBUG || vars.ACTIONS_STEP_DEBUG || false) }}'
           settings: |-
             {
-              "maxSessionTurns": 25,
+              "maxSessionTurns": 15,
               "telemetry": {
                 "enabled": ${{ vars.GOOGLE_CLOUD_PROJECT != '' }},
                 "target": "gcp"

@@ -1,5 +1,12 @@
 name: Staging Aggregate Deployment
 
+# =======================
+# Staging Deployment Workflow
+# =======================
+# Purpose: Aggregates and deploys staging changes to production
+# Triggers: PRs to master, monthly schedule, or manual dispatch
+# Features: Multi-PR aggregation, staging deployment, and force deploy option
+
 on:
   pull_request:
     branches:
@@ -126,6 +133,27 @@ jobs:
           # Push the aggregate branch
           git push origin "$AGGREGATE_BRANCH"
           
+          # Clean up old staging branches, keeping only the 5 most recent
+          echo "🧹 Cleaning up old staging branches..."
+          # Get all staging-aggregate branches sorted by name (which includes timestamp YYYYMMDD-HHMMSS)
+          # Lexicographic sorting works correctly because the timestamp format naturally sorts chronologically
+          OLD_BRANCHES=$(git ls-remote --heads origin 'refs/heads/staging-aggregate-*' | \
+            awk '{print $2}' | \
+            sed 's|refs/heads/||' | \
+            sort -r | \
+            tail -n +6)
+          
+          if [ -n "$OLD_BRANCHES" ]; then
+            echo "Found $(echo "$OLD_BRANCHES" | wc -l) old staging branches to delete"
+            for branch in $OLD_BRANCHES; do
+              echo "  Deleting: $branch"
+              git push origin --delete "$branch" || echo "  ⚠️ Failed to delete $branch (may already be deleted)"
+            done
+            echo "✅ Cleanup completed"
+          else
+            echo "No old staging branches to delete (keeping 5 most recent)"
+          fi
+          
           echo "branch=$AGGREGATE_BRANCH" >> $GITHUB_OUTPUT
           echo "included_prs=$INCLUDED_PRS" >> $GITHUB_OUTPUT
           echo "attempted_prs=$ATTEMPTED_PRS" >> $GITHUB_OUTPUT
@@ -197,23 +225,6 @@ jobs:
             python3 -c "import json; data = json.load(open('data/ga_data.json')); print('✅ GA data:', len(data.get('regions', [])), 'countries,', len(data.get('top_pages', [])), 'pages')"
           fi
 
-      # Contributor analysis if needed
-      - name: Setup r2u
-        uses: eddelbuettel/github-actions/r2u-setup@master
-        if: steps.download-artifact.outcome == 'failure'
-      - uses: r-lib/actions/setup-pandoc@v2
-        if: steps.download-artifact.outcome == 'failure'
-      - name: Contributor analysis if needed
-        if: steps.download-artifact.outcome == 'failure'
-        continue-on-error: true
-        run: |
-          Rscript -e 'install.packages(c("rmarkdown","ggplot2", "readxl", "dplyr", "googlesheets4", "stringr", "gridExtra", "glue", "tidygraph", "ggraph", "igraph", "visNetwork"))'
-          Rscript -e "rmarkdown::render('scripts/contributor-analysis/contributor_analysis.rmd')"
-          mv scripts/contributor-analysis/contributor_analysis.md content/contributor-analysis/index.md
-          mv scripts/contributor-analysis/*.png content/contributor-analysis/
-          rm -rf content/contributor-analysis/htmlwidgets_libs
-          mv scripts/contributor-analysis/htmlwidgets_libs content/contributor-analysis/
-          sed -i.bak -e '/^```{=html}$/d' -e '/^```$/d' content/contributor-analysis/index.md  && rm content/contributor-analysis/index.md.bak
 
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@75d2e84710de30f6ff7268e08f310b60ef14033f
@@ -224,6 +235,8 @@ jobs:
       - name: Build site
         run: |
           hugo --gc --minify --cleanDestinationDir --destination public --baseURL https://staging.forrt.org
+        env:
+          HUGO_ENV: staging
 
       - name: Upload site artifact
         uses: actions/upload-artifact@v4
@@ -316,6 +329,7 @@ jobs:
       - name: Comment on PRs
         if: needs.aggregate-prs.outputs.attempted-prs != ''
         run: |
+          DEPLOYMENT_TIME=$(date -u '+%Y-%m-%d %H:%M:%S UTC')
           IFS=',' read -ra PR_ARRAY <<< "${{ needs.aggregate-prs.outputs.attempted-prs }}"
           for pr in "${PR_ARRAY[@]}"; do
             # Check if this PR was successfully merged
@@ -330,38 +344,80 @@ jobs:
               done
             fi
             
-            # Check if we already commented on this PR with our specific message
-            EXISTING_COMMENT=$(gh pr view $pr --json comments --jq '(.comments[] | select(.author.login == "github-actions[bot]" and (.body | contains("deployed to staging as part of an aggregated deployment")))) | .id' 2>/dev/null || echo "")
+            # Create the comment body with a unique identifier
+            COMMENT_IDENTIFIER="<!-- staging-deployment-comment -->"
+            if [ "$SUCCESSFUL_MERGE" = true ]; then
+              COMMENT_BODY="${COMMENT_IDENTIFIER}
+          ✅ **Staging Deployment Status**
+          
+          This PR has been successfully deployed to staging as part of an aggregated deployment.
+          
+          **Deployed at:** ${DEPLOYMENT_TIME}
+          **Staging URL:** https://staging.forrt.org
+          
+          The staging site shows the combined state of all compatible open PRs."
+            else
+              COMMENT_BODY="${COMMENT_IDENTIFIER}
+          ⚠️ **Staging Deployment Status**
+          
+          This PR was attempted for staging deployment but had merge conflicts and was skipped.
+          
+          **Attempted at:** ${DEPLOYMENT_TIME}
+          **Staging URL:** https://staging.forrt.org
+          
+          Please resolve conflicts with the base branch and the deployment will be retried automatically."
+            fi
             
-            if [ -z "$EXISTING_COMMENT" ]; then
-              if [ "$SUCCESSFUL_MERGE" = true ]; then
-                echo "💬 Commenting on PR #$pr (successfully merged)"
-                gh pr comment $pr --body "✅ This PR has been deployed to staging as part of an aggregated deployment. View at: https://staging.forrt.org"
-              else
-                echo "💬 Commenting on PR #$pr (attempted but had conflicts)"
-                gh pr comment $pr --body "⚠️ This PR was attempted to be deployed to staging as part of an aggregated deployment, but had merge conflicts and was skipped. Please resolve conflicts and try again. View staging at: https://staging.forrt.org"
+            # Find existing staging deployment comment (limit to 100 most recent comments )
+            EXISTING_COMMENT_ID=$(gh api "repos/${{ github.repository }}/issues/${pr}/comments?per_page=100" \
+              --jq '.[] | select(.user.login == "github-actions[bot]" and (.body | contains("<!-- staging-deployment-comment -->"))) | .id' 2>/dev/null | head -1)
+            
+            if [ -n "$EXISTING_COMMENT_ID" ]; then
+              echo "💬 Updating existing comment on PR #$pr (comment ID: $EXISTING_COMMENT_ID)"
+              # Try to update the comment, fall back to creating a new one if update fails
+              if ! UPDATE_OUTPUT=$(gh api "repos/${{ github.repository }}/issues/comments/${EXISTING_COMMENT_ID}" \
+                -X PATCH \
+                -f body="$COMMENT_BODY" 2>&1); then
+                echo "⚠️ Failed to update comment: $UPDATE_OUTPUT"
+                echo "⚠️ Creating a new comment instead"
+                gh pr comment $pr --body "$COMMENT_BODY"
               fi
             else
-              echo "ℹ️ Skipping comment on PR #$pr (already has staging comment)"
+              echo "💬 Creating new comment on PR #$pr"
+              gh pr comment $pr --body "$COMMENT_BODY"
             fi
           done
         env:
           GH_TOKEN: ${{ secrets.STAGING_GITHUB_TOKEN }}
 
       - name: Create monthly deployment report
-        if: needs.aggregate-prs.outputs.attempted-prs != '' && github.event_name == 'schedule'
+        if: github.event_name == 'schedule'
         run: |
           # Only create monthly report on scheduled runs (1st of month)
           CURRENT_DAY=$(date +%d)
+          echo "🔍 Current day: $CURRENT_DAY, Event: ${{ github.event_name }}"
+          
           if [ "$CURRENT_DAY" = "01" ]; then
             MONTH=$(date +%B %Y)
-            gh issue create \
-              --title "📊 Monthly Staging Deployment Report - $MONTH" \
-              --body-file deployment-summary.md \
-              --label "deployment,staging,monthly-report"
-            echo "✅ Monthly deployment report created for $MONTH"
+            echo "📊 Creating monthly deployment report for $MONTH"
+            
+            # Check if deployment summary file exists
+            if [ -f "deployment-summary.md" ]; then
+              gh issue create \
+                --title "📊 Monthly Staging Deployment Report - $MONTH" \
+                --body-file deployment-summary.md \
+                --label "deployment,staging,monthly-report"
+              echo "✅ Monthly deployment report created for $MONTH"
+            else
+              echo "⚠️ deployment-summary.md not found, creating basic report"
+              gh issue create \
+                --title "📊 Monthly Staging Deployment Report - $MONTH" \
+                --body "Monthly staging deployment report for $MONTH. No PRs were processed this month." \
+                --label "deployment,staging,monthly-report"
+              echo "✅ Basic monthly deployment report created for $MONTH"
+            fi
           else
-            echo "ℹ️ Skipping issue creation (not 1st of month)"
+            echo "ℹ️ Skipping issue creation (not 1st of month, current day: $CURRENT_DAY)"
           fi
         env:
           GH_TOKEN: ${{ secrets.STAGING_GITHUB_TOKEN }}

@@ -1,5 +1,12 @@
 name: '▶️ Gemini Invoke'
 
+# =======================
+# AI Assistant Invocation
+# =======================
+# Purpose: Invokes AI assistant for code analysis and suggestions
+# Triggers: Called by other workflows (workflow_call)
+# Features: AI-powered code review and automated feedback
+
 on:
   workflow_call:
     inputs:
@@ -19,6 +26,7 @@ defaults:
 jobs:
   invoke:
     runs-on: 'ubuntu-latest'
+    timeout-minutes: 12
     permissions:
       contents: 'read'
       id-token: 'write'
@@ -62,7 +70,7 @@ jobs:
           gemini_model: '${{ vars.GEMINI_MODEL }}'
           settings: |-
             {
-              "maxSessionTurns": 25,
+              "maxSessionTurns": 12,
               "telemetry": {
                 "enabled": ${{ vars.GOOGLE_CLOUD_PROJECT != '' }},
                 "target": "gcp"

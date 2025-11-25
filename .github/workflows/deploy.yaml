@@ -1,5 +1,12 @@
 name: deploy
 
+# =======================
+# FORRT Website Deployment
+# =======================
+# Purpose: Build and deploy the FORRT Hugo website
+# Triggers: Push to master, PRs, manual dispatch, or data updates
+# Target: Production deployment
+
 on:
   push:
     branches:
@@ -13,6 +20,8 @@ on:
         description: 'PR number to deploy (optional)'
         required: false
         type: string
+  repository_dispatch:
+    types: [data-update]
 
 jobs:
   build:
@@ -25,12 +34,18 @@ jobs:
       HUGO_VERSION: "0.123.3"
       HUGO_EXTENDED: true
     steps:
+      # =======================
+      # Repository Setup
+      # =======================
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
-          ref: ${{ github.event.inputs.pr_number || github.ref }}
+          ref: ${{ github.event.inputs.pr_number && format('refs/pull/{0}/head', github.event.inputs.pr_number) || github.ref }}
           fetch-depth: 0
 
+      # =======================
+      # Data Artifact Retrieval
+      # =======================
       - name: Try to download data artifact
         id: download-artifact
         uses: dawidd6/action-download-artifact@07ab29fd4a977ae4d2b275087cf67563dfdf0295
@@ -41,6 +56,9 @@ jobs:
           path: .
           github_token: ${{ secrets.GITHUB_TOKEN }}
 
+      # =======================
+      # Fallback Data Processing
+      # =======================
       - name: Run data processing if needed
         if: steps.download-artifact.outcome == 'failure'
         env:
@@ -66,30 +84,19 @@ jobs:
             fi
           fi
 
-      # Contributor analysis if needed
-      - name: Setup r2u
-        uses: eddelbuettel/github-actions/r2u-setup@master
-        if: steps.download-artifact.outcome == 'failure'
-      - uses: r-lib/actions/setup-pandoc@v2
-        if: steps.download-artifact.outcome == 'failure'
-      - name: Contributor analysis if needed
-        if: steps.download-artifact.outcome == 'failure'
-        continue-on-error: true
-        run: |
-          Rscript -e 'install.packages(c("rmarkdown","ggplot2", "readxl", "dplyr", "googlesheets4", "stringr", "gridExtra", "glue", "tidygraph", "ggraph", "igraph", "visNetwork"))'
-          Rscript -e "rmarkdown::render('scripts/contributor-analysis/contributor_analysis.rmd')"
-          mv scripts/contributor-analysis/contributor_analysis.md content/contributor-analysis/index.md
-          mv scripts/contributor-analysis/*.png content/contributor-analysis/
-          rm -rf content/contributor-analysis/htmlwidgets_libs
-          mv scripts/contributor-analysis/htmlwidgets_libs content/contributor-analysis/
-          sed -i.bak -e '/^```{=html}$/d' -e '/^```$/d' content/contributor-analysis/index.md  && rm content/contributor-analysis/index.md.bak
 
+      # =======================
+      # Hugo Build Environment
+      # =======================
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@75d2e84710de30f6ff7268e08f310b60ef14033f
         with:
           hugo-version: ${{ env.HUGO_VERSION }}
           extended: ${{ env.HUGO_EXTENDED }}
 
+      # =======================
+      # Website Build
+      # =======================
       - name: Build site
         run: |
           if [ "$BRANCH" != 'refs/heads/master' ]; then
@@ -99,7 +106,13 @@ jobs:
           fi
         env:
           BRANCH: ${{ github.ref }}
+          HUGO_ENV: ${{ github.ref != 'refs/heads/master' && 'staging' || 'production' }}
 
+      # =======================
+      # Deployment Artifact
+      #========================================
+      # Upload built website as artifact for deployment
+      #========================================
       - name: Upload site artifact
         uses: actions/upload-artifact@v4
         with:
@@ -107,6 +120,9 @@ jobs:
           path: public/
           retention-days: 1
 
+  #========================================
+  # Deploy website to staging GitHub Pages
+  #========================================
   deploy-test:
     name: Deploy - Test
     runs-on: ubuntu-22.04
@@ -116,12 +132,18 @@ jobs:
       contents: write
     needs: build
     steps:
+      #========================================
+      # Download website artifact for staging deployment
+      #========================================
       - name: Download Artifact - Website
         uses: actions/download-artifact@v4
         with:
           name: forrt-website-${{ github.run_number }}
           path: ${{ github.repository }}/forrt-website
 
+      #========================================
+      # Deploy website to staging GitHub Pages
+      #========================================
       - name: Deploy - GitHub Pages
         uses: peaceiris/actions-gh-pages@4f9cc6602d3f66b9c108549d475ec49e8ef4d45e
         with:
@@ -131,6 +153,9 @@ jobs:
           publish_branch: staging
           cname: staging.forrt.org
 
+  #========================================
+  # Deploy website to production GitHub Pages
+  #========================================
   deploy-prod:
     name: Deploy - Production
     runs-on: ubuntu-22.04
@@ -138,14 +163,20 @@ jobs:
       contents: write
     needs:
       - deploy-test
-    if: (github.event_name == 'push' || github.event_name == 'workflow_dispatch') && github.ref == 'refs/heads/master' && github.event.repository.fork == false
+    if: ((github.event_name == 'push' || github.event_name == 'workflow_dispatch') && github.ref == 'refs/heads/master' || github.event_name == 'repository_dispatch') && github.event.repository.fork == false
     steps:
-      - name: Download Arfifact - Website
+      #========================================
+      # Download website artifact for production deployment
+      #========================================
+      - name: Download Artifact - Website
         uses: actions/download-artifact@v4
         with:
           name: forrt-website-${{ github.run_number }}
           path: ${{ github.repository }}/forrt-website
 
+      #========================================
+      # Deploy website to production GitHub Pages
+      #========================================
       - name: Deploy - GitHub Pages
         uses: peaceiris/actions-gh-pages@4f9cc6602d3f66b9c108549d475ec49e8ef4d45e
         with:
