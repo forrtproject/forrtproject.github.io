@@ -174,15 +174,9 @@ We celebrate neurodivergence, but also acknowledge that being a neurodivergent a
 
 ## DEIA Tools for Academia
 
-### Academic Wheel of Privilege (coming soon!)
+### Academic Wheel of Privilege
 
-We are developing a new, equity-based framework tailored to systemic biases and barriers in academia. We hope that this will be a useful diversity, equity and inclusion tool for academics to make authorship decisions. [Watch our video to find out more](https://www.youtube.com/watch?v=mzEdTyA06cU).
-
-The Academic Wheel of Privilege has been featured in:
-
-- NASA’s Transformation To Open Science initiative, via an [interview with Flavio Azevedo](https://web.archive.org/web/20220919002540/https://science.nasa.gov/open-science/transform-to-open-science/stories/dr-flavio-azevedo?s=09).
-- The UK Research Integrity Office’s [list of equality, diversity and inclusion resources](https://ukrio.org/research-integrity-resources/equality-diversity-and-inclusion/).
-- The [diversity statement](https://gep.psychopen.eu/index.php/gep/diversity) for the journal Global Environmental Psychology.
+Explore the Academic Wheel of Privilege tool on our [/awop](/awop) page, including rationale, guidance, and the latest materials. The Wheel has been featured in NASA’s Transformation To Open Science initiative, the UK Research Integrity Office’s EDI resources, and the diversity statement for the journal Global Environmental Psychology.
 
 <br />
 
