@@ -13,7 +13,7 @@
         "WEIRD"
     ],
     "references": [
-        "\\[@SyedKathawalla2020\\]"
+        "Syed and Kathawalla (2020)"
     ],
     "alt_related_terms": [
         null

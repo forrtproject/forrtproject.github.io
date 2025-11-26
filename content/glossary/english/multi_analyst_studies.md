@@ -12,7 +12,7 @@
         "Scientific Transparency"
     ],
     "references": [
-        "Aczel et. al. (2021); Silberzahn et al. (2018) \\[@Aczel2021a\\], \\[@Silberzahn2018\\]"
+        "Aczel et. al. (2021); Silberzahn et al. (2018)"
     ],
     "alt_related_terms": [
         null

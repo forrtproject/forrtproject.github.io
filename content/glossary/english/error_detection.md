@@ -8,7 +8,7 @@
         "retraction"
     ],
     "references": [
-        "\\[@BikEtAl2016\\], \\[@BrownHeathers2017\\], \\[@EpskampNuijten2016\\], \\[@HeathersAnayaVanDerZeeBrown2018\\], \\[@Nuijten2016\\], \\[@RetractionWatch\\]"
+        "Bik et al. (2016); Brown and Heathers (2017); Epskamp and Nuijten (2016); Heathers et al. (2018); Nuijten et al. (2016); [https://retractionwatch.com/](https://retractionwatch.com/)"
     ],
     "alt_related_terms": [
         null

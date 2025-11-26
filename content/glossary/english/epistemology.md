@@ -7,7 +7,7 @@
         "Ontology (Artificial Intelligence)"
     ],
     "references": [
-        "\\[@SteupNeta2020\\]"
+        "Steup et al. (2020)"
     ],
     "alt_related_terms": [
         null

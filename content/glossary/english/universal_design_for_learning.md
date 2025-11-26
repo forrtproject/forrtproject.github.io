@@ -9,7 +9,7 @@
         "Teaching practice"
     ],
     "references": [
-        "Hitchcock et al. (2002); Rose (2000); Rose and Meyer (2002)  \\[@Hitchcock2002\\], \\[@Rose2000\\], \\[@RoseMeyer2002\\]"
+        "Hitchcock et al. (2002); Rose (2000); Rose and Meyer (2002)"
     ],
     "alt_related_terms": [
         null

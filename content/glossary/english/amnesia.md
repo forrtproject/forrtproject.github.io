@@ -8,7 +8,7 @@
         "Research ethics"
     ],
     "references": [
-        "\\[@OpenAire\\_Amnesia\\]"
+        "[https://amnesia.openaire.eu/](https://amnesia.openaire.eu/)"
     ],
     "alt_related_terms": [
         null

@@ -9,7 +9,7 @@
         "REF"
     ],
     "references": [
-        "\\[@AnonImpact2021\\]"
+        "Anon (2021)"
     ],
     "alt_related_terms": [
         null

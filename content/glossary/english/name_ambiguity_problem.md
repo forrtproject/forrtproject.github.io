@@ -8,7 +8,7 @@
         "ORCID (Open Researcher and Contributor ID)"
     ],
     "references": [
-        "Wilson and Fenner (2012) \\[@WilsonFenner2012\\]"
+        "Wilson and Fenner (2012)"
     ],
     "alt_related_terms": [
         null

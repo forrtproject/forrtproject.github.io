@@ -8,7 +8,7 @@
         "Power relations"
     ],
     "references": [
-        "\\[@Joseph2011\\], \\[@Ledgerwood2021\\], \\[@Padilla1994\\]"
+        "Joseph and Hirschfeld (2011); Ledgerwood et al. (2021); Padilla (1994)"
     ],
     "alt_related_terms": [
         null

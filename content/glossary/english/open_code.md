@@ -13,7 +13,7 @@
         "Syntax"
     ],
     "references": [
-        "Easterbrook (2014) \\[@Easterbrook2014\\]"
+        "Easterbrook (2014)"
     ],
     "alt_related_terms": [
         null

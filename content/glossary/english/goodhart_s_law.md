@@ -5,7 +5,8 @@
     "related_terms": [
         "Campbell's law",
         "DORA",
-        "Reification (fallacy) Reference (s): \\[@Muller2018\\], \\[@Strathern1997\\]"
+        "Reification (fallacy) Reference (s): Muller (2019)",
+        "Strathern (1997)"
     ],
     "references": [
         ""

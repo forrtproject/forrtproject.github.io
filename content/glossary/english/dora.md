@@ -8,7 +8,7 @@
         "Open Science"
     ],
     "references": [
-        "Health Research Board (n.d.); [https://sfdora.org/](https://sfdora.org/) \\[@HealthResearchBoardND\\], \\[@DORA\\_San\\_Francisco\\]"
+        "Health Research Board (n.d.); [https://sfdora.org/](https://sfdora.org/)"
     ],
     "alt_related_terms": [
         null

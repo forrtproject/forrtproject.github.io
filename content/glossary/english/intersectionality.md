@@ -10,7 +10,7 @@
         "Open Science"
     ],
     "references": [
-        "\\[@Crenshaw1989\\], \\[@Grzanka2020\\], \\[@Ledgerwood2021\\]"
+        "Crenshaw (1989); Grzanka (2020); Ledgerwood et al. (2021)"
     ],
     "alt_related_terms": [
         null

@@ -10,7 +10,7 @@
         "Statistics"
     ],
     "references": [
-        "Goertzen (2017) \\[@Goertzen2017\\]"
+        "Goertzen (2017)"
     ],
     "alt_related_terms": [
         null

@@ -7,7 +7,7 @@
         "CRediT"
     ],
     "references": [
-        "\\[@BhopalEtAl1997\\], \\[@ICMJE2019\\]"
+        "Bhopal et al. (1997); ICMJE (2019)"
     ],
     "alt_related_terms": [
         null

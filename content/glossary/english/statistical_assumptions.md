@@ -13,7 +13,7 @@
         "Type S error"
     ],
     "references": [
-        "Garson (2012); Hahn and Meeker (1993); Hoekstra et al. (2012); Nimon (2012) \\[@Garson2012\\], \\[@HahnMeeker1993\\], \\[@Hoekstra2012\\],"
+        "Garson (2012); Hahn and Meeker (1993); Hoekstra et al. (2012); Nimon (2012)"
     ],
     "alt_related_terms": [
         null

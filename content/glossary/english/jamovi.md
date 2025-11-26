@@ -9,7 +9,7 @@
         "Reproducibility"
     ],
     "references": [
-        "\\[@The\\_jamovi\\_project2020\\]"
+        "The jamovi project (2020)"
     ],
     "alt_related_terms": [
         null

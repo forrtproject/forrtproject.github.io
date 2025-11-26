@@ -9,7 +9,7 @@
         "Reproducibility"
     ],
     "references": [
-        "Liu et al. (2020); Tierney et al. (2020); Tierney et al. (2021); [www.replicationmarkets.com](http://www.replicationmarkets.com) \\[@Liu2020\\], \\[@Tierney2020\\], \\[@Tierney2021\\], \\[@ReplicationMarkets\\]"
+        "Liu et al. (2020); Tierney et al. (2020); Tierney et al. (2021); www.replicationmarkets.com"
     ],
     "alt_related_terms": [
         null

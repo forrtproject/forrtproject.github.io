@@ -10,7 +10,7 @@
         "Vibration of effects"
     ],
     "references": [
-        "Simonsohn et al. (2015); Simonsohn (2020); Voracek et al. (2019) \\[@Simonsohn2015\\], \\[@Simonsohn2020\\], \\[@Voracek2019\\]"
+        "Simonsohn et al. (2015); Simonsohn (2020); Voracek et al. (2019)"
     ],
     "alt_related_terms": [
         null

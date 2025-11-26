@@ -6,7 +6,9 @@
         "Diversity",
         "Inclusion",
         "Intersectionality",
-        "Open Science Reference (s): \\[@GuestTweet2017\\], \\[@Whitaker2020\\], \\[@Pownall20210\\]"
+        "Open Science Reference (s): Guest (2017)",
+        "Whitaker and Guest (2020)",
+        "Pownall et al. (2021)"
     ],
     "references": [
         ""

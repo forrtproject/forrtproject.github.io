@@ -6,7 +6,7 @@
         "Academic Impact"
     ],
     "references": [
-        "\\[@ESRC2021\\]"
+        "https://esrc.ukri.org/research/impact-toolkit/what-is-impact/"
     ],
     "alt_related_terms": [
         null

@@ -14,7 +14,7 @@
         "Preprint"
     ],
     "references": [
-        "[https://www.nature.com/sdata/policies/repositories](https://www.nature.com/sdata/policies/repositories) \\[@Nature\\_n\\_d\\]"
+        "[https://www.nature.com/sdata/policies/repositories](https://www.nature.com/sdata/policies/repositories)"
     ],
     "alt_related_terms": [
         null

@@ -10,7 +10,7 @@
         "Team science"
     ],
     "references": [
-        "Himmelstein et al. (2019); Tennant et al. (2019) \\[@Himmelstein2019\\], \\[@Tennant2019b\\]"
+        "Himmelstein et al. (2019); Tennant et al. (2019)"
     ],
     "alt_related_terms": [
         null

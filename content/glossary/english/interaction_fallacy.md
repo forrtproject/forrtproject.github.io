@@ -10,7 +10,7 @@
         "Type II error"
     ],
     "references": [
-        "\\[@GelmanStern2006\\], \\[@Morabia1997\\], \\[@Nieuwenhuis2011\\]"
+        "Gelman and Stern (2006); Morabia et al. (1997); Nieuwenhuis et al. (2011)"
     ],
     "alt_related_terms": [
         null

@@ -11,7 +11,7 @@
         "R"
     ],
     "references": [
-        "Lutz (2001) \\[@Lutz2001\\]"
+        "Lutz (2001)"
     ],
     "alt_related_terms": [
         null

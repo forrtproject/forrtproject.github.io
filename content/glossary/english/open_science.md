@@ -16,7 +16,7 @@
         "Transparency"
     ],
     "references": [
-        "Abele-Brehm et al. (2019); Crüwell et al. (2019); Kathawalla et al. (2020); Syed (2019); Woelfe et al. (2011) \\[@AbeleBrehm2019\\], \\[@Cruwell2019\\], \\[@Kathawalla2020\\], \\[@Syed2019\\], \\[@Woelfle2011\\]"
+        "Abele-Brehm et al. (2019); Crüwell et al. (2019); Kathawalla et al. (2020); Syed (2019); Woelfe et al. (2011)"
     ],
     "alt_related_terms": [
         null

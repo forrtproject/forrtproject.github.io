@@ -8,7 +8,7 @@
         "Name Ambiguity Problem"
     ],
     "references": [
-        "Haak et al. (2012); [https://orcid.org/](https://orcid.org/) \\[@HaakEtAl2012\\], \\[@*ORCID\\]"
+        "Haak et al. (2012); [https://orcid.org/](https://orcid.org/)"
     ],
     "alt_related_terms": [
         null

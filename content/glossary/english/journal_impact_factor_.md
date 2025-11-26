@@ -7,7 +7,7 @@
         "H-index"
     ],
     "references": [
-        "\\[@BrembsEtAl2013\\], \\[@Curry2012\\], \\[@Naudet2018\\], \\[@Rossner2008\\], \\[@Sharma2014\\]"
+        "Brembs et al (2013); Curry (2012); Naudet et al. (2018); Rossner et al. (2008); Sharma et al. (2014)"
     ],
     "alt_related_terms": [
         null

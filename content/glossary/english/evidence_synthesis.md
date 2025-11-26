@@ -13,7 +13,7 @@
         "Systematic review"
     ],
     "references": [
-        "\\[@CentreForEvaluationND\\], \\[@James2016\\], \\[@Siddaway2019\\]"
+        "Centre for Evaluation (n.d.); James et al., (2016); Siddaway et al. (2019)"
     ],
     "alt_related_terms": [
         null

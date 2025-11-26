@@ -6,7 +6,7 @@
         ""
     ],
     "references": [
-        "[https://www.ukrn.org/](https://www.ukrn.org/) ; [https://reproducibilitynetwork.de/](https://reproducibilitynetwork.de/); [https://www.swissrn.org/](https://www.swissrn.org/); [https://slovakrn.wixsite.com/skrn](https://slovakrn.wixsite.com/skrn); [https://www.aus-rn.org/](https://www.aus-rn.org/)  \\[@UKRN2021\\], \\[@GRNND\\], \\[@SwissRN\\_n\\_d\\], \\[@AnonDomovND\\], \\[@AusRNND\\]"
+        "[https://www.ukrn.org/](https://www.ukrn.org/) ; [https://reproducibilitynetwork.de/](https://reproducibilitynetwork.de/); [https://www.swissrn.org/](https://www.swissrn.org/); [https://slovakrn.wixsite.com/skrn](https://slovakrn.wixsite.com/skrn); [https://www.aus-rn.org/](https://www.aus-rn.org/)"
     ],
     "alt_related_terms": [
         null

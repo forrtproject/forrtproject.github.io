@@ -7,7 +7,7 @@
         "Open data"
     ],
     "references": [
-        "\\[@AbeleBrehm2019\\], \\[@Gollwitzer2020\\], \\[@EUDatasharing2021\\]"
+        "Abele-Brehm et al. (2019); Gollwitzer et al. (2020); https://eudatasharing.eu/what-data-sharing"
     ],
     "alt_related_terms": [
         null

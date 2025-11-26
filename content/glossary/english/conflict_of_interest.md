@@ -10,7 +10,7 @@
         "Transparency"
     ],
     "references": [
-        "\\[@icmje\\_conflicts\\], \\[@DOAJ\\]"
+        "[http://www.icmje.org/recommendations/browse/roles-and-responsibilities/author-responsibilities--conflicts-of-interest.html](http://www.icmje.org/recommendations/browse/roles-and-responsibilities/author-responsibilities--conflicts-of-interest.html); DOAJ, 2018: [https://doaj.org/apply/transparency/](https://doaj.org/apply/transparency/)"
     ],
     "alt_related_terms": [
         null

@@ -7,7 +7,7 @@
         "Open Data Alternative definition: (if applicable) Data about data"
     ],
     "references": [
-        "Gollwitzer et al. (2020); [https://schema.datacite.org/](https://schema.datacite.org/) \\[@Gollwitzer2020\\], \\[DataCite\\_MetadataSchema\\]"
+        "Gollwitzer et al. (2020); [https://schema.datacite.org/](https://schema.datacite.org/)"
     ],
     "alt_related_terms": [
         null

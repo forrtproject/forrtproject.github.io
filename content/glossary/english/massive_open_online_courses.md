@@ -9,7 +9,7 @@
         "Open learning"
     ],
     "references": [
-        "\\\\Baturay (2015); [https://opensciencemooc.eu/](https://opensciencemooc.eu/) \\[@Baturay2015\\], \\[@Homepage\\_n\\_d\\]"
+        "Baturay (2015); [https://opensciencemooc.eu/](https://opensciencemooc.eu/)"
     ],
     "alt_related_terms": [
         null

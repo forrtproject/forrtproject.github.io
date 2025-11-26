@@ -15,7 +15,7 @@
         "Type II error Related terms to alternative definition: Type II Error"
     ],
     "references": [
-        "Carter et al. (2021); Cohen (1962); Cohen (1988); Dienes (2008); Giner-Sorolla et al. (2019); Ioannidis (2005); Lakens (2021a) \\[@CarterTillingMunafo2021\\], \\[@Cohen1962\\], \\[@Cohen1969\\], \\[@Dienes2008\\], \\[@GinerSorolla2019\\], \\[@Ioannidis2005\\], \\[@Lakens2021\\]"
+        "Carter et al. (2021); Cohen (1962); Cohen (1988); Dienes (2008); Giner-Sorolla et al. (2019); Ioannidis (2005); Lakens (2021a)"
     ],
     "alt_related_terms": [
         null

@@ -12,7 +12,7 @@
         "Team science"
     ],
     "references": [
-        "Cronin (2001); Moshontz et al. (2021); Wuchty et al. (2007) \\[@Cronin2001\\], \\[@Moshontz2021\\], \\[@Wuchty2007\\]"
+        "Cronin (2001); Moshontz et al. (2021); Wuchty et al. (2007)"
     ],
     "alt_related_terms": [
         null

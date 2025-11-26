@@ -7,7 +7,7 @@
         "Open source"
     ],
     "references": [
-        "\\[@JASP2020\\]"
+        "JASP Team (2020)"
     ],
     "alt_related_terms": [
         null

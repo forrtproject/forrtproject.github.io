@@ -9,10 +9,10 @@ output:
 type: contributors_analysis
 ---
 
-As of 21 November 2025, FORRT has a total of 93 completed or ongoing
+As of 26 November 2025, FORRT has a total of 93 completed or ongoing
 projects and support teams, with a total of 619 contributors. There is
 an average (mean) of 2.40 contributions per person across all FORRT
-projects, and the average number of contributors per project is 15.63.
+projects, and the average number of contributors per project is 15.66.
 You can see the full list of FORRT contributors and their individual
 contributions [here](https://forrt.org/contributors/).
 

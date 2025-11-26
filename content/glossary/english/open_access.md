@@ -10,7 +10,7 @@
         "Repository"
     ],
     "references": [
-        "[Budapest Open Access Initiative (2002)](https://www.budapestopenaccessinitiative.org/read); Suber (2015) \\[@Budapest2002\\], \\[@Suber2015\\]"
+        "[Budapest Open Access Initiative (2002)](https://www.budapestopenaccessinitiative.org/read); Suber (2015)"
     ],
     "alt_related_terms": [
         null

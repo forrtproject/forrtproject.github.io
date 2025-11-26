@@ -8,7 +8,7 @@
         "Exploratory research"
     ],
     "references": [
-        "\\[@Behrens1997\\], \\[@Box1976\\], \\[@Tukey1977\\], \\[@Wagenmakers2012\\]"
+        "Behrens (1997); Box (1976); Tukey (1977); Wagenmakers (2012)"
     ],
     "alt_related_terms": [
         null

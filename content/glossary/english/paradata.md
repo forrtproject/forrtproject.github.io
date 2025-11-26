@@ -10,7 +10,7 @@
         "Process information"
     ],
     "references": [
-        "Kreuter (2013) \\[@Kreuter2013\\]"
+        "Kreuter (2013)"
     ],
     "alt_related_terms": [
         null
