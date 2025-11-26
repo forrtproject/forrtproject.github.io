@@ -197,7 +197,7 @@ jobs:
       # =======================
       - name: Try to download data artifact
         id: download-artifact
-        uses: dawidd6/action-download-artifact@v3
+        uses: dawidd6/action-download-artifact@v6
         continue-on-error: true
         with:
           workflow: data-processing.yml
@@ -292,7 +292,7 @@ jobs:
       - name: Download data artifact (Retry)
         id: download-artifact-retry
         if: steps.download-artifact.outcome == 'failure' && steps.data-processing.outputs.data_processing_triggered == 'true'
-        uses: dawidd6/action-download-artifact@v3
+        uses: dawidd6/action-download-artifact@v6
         with:
           workflow: data-processing.yml
           name: data-artifact
