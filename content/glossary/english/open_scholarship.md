@@ -10,7 +10,7 @@
         "Open Science"
     ],
     "references": [
-        "Tennant et al. (2019) Foundations for Open Scholarship Strategy Development https://www.researchgate.net/publication/330742805\\_Foundations\\_for\\_Open\\_Scholarship\\_Strategy\\_Development"
+        "Tennant et al. (2019) Foundations for Open Scholarship Strategy Development [https://www.researchgate.net/publication/330742805\\_Foundations\\_for\\_Open\\_Scholarship\\_Strategy\\_Development](https://www.researchgate.net/publication/330742805_Foundations_for_Open_Scholarship_Strategy_Development) \\[@Tennant2019a\\]"
     ],
     "alt_related_terms": [
         null

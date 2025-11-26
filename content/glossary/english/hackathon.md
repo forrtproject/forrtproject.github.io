@@ -7,7 +7,7 @@
         "Edithaton"
     ],
     "references": [
-        "Kienzler and Fontanesi (2017)"
+        "\\[@Kienzler2017\\]"
     ],
     "alt_related_terms": [
         null

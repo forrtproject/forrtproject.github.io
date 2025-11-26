@@ -11,7 +11,7 @@
         "Validity"
     ],
     "references": [
-        "Bollen (1989); Drost (2011)"
+        "Bollen (1989); Drost (2011) \\[@Bollen1989\\], \\[@Drost2011\\]"
     ],
     "alt_related_terms": [
         null

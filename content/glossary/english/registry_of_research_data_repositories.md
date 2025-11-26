@@ -10,7 +10,7 @@
         "Repository"
     ],
     "references": [
-        "[https://www.re3data.org/](https://www.re3data.org/) \\- Registry of Research Data Repositories."
+        "[https://www.re3data.org/](https://www.re3data.org/) \\- Registry of Research Data Repositories. \\[@AnonRe3dataND\\]"
     ],
     "alt_related_terms": [
         null

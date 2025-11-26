@@ -4,6 +4,7 @@ import json
 import pandas as pd
 import os
 import shutil
+import unicodedata
 
 script_dir = os.path.dirname(os.path.abspath(__file__))
 print(script_dir)
@@ -14,6 +15,154 @@ df = pd.read_csv(file_links)
 print("file links read")
 grouped = df.groupby('Language')
 formatted_data = {}
+
+# Mapping from extracted names to (Full English Name, Arabic Name)
+TRANSLATOR_MAPPING = {
+    "ali h. al-hoorie": ("Ali H. Al-Hoorie", "علي حسين الحوري"),
+    "amani aloufi": ("Amani A. Aloufi", "أماني عبدالرحمن العوفي"),
+    "amani a. aloufi": ("Amani A. Aloufi", "أماني عبدالرحمن العوفي"),
+    "asma alzahrani": ("Asma A. Alzahrani", "أسماء علي الزهراني"),
+    "asma a. alzahrani": ("Asma A. Alzahrani", "أسماء علي الزهراني"),
+    "hala alghamdi": ("Hala M. Alghamdi", "هلا الغامدي"),
+    "hala m. alghamdi": ("Hala M. Alghamdi", "هلا الغامدي"),
+    "ahlam ahmed": ("Ahlam Ahmed Almehmadi", "أحلام أحمد المحمادي"),
+    "ahlam ahmed almehmadi": ("Ahlam Ahmed Almehmadi", "أحلام أحمد المحمادي"),
+    "hiba alomary": ("Hiba A. Alomary", "هبة علي العُمري"),
+    "hiba a. alomary": ("Hiba A. Alomary", "هبة علي العُمري"),
+    "zainab alsuhaibani": ("Zainab Abdullah Alsuhaibani", "زينب عبدالله السحيباني"),
+    "zainab abdullah alsuhaibani": ("Zainab Abdullah Alsuhaibani", "زينب عبدالله السحيباني"),
+    "abdulsamad humaidan": ("Abdulsamad Yahya Humaidan", "عبد الصمد يحيى حميدان"),
+    "abdulsamad yahya humaidan": ("Abdulsamad Yahya Humaidan", "عبد الصمد يحيى حميدان"),
+    "naif masrahi": ("Naif Ali Masrahi", "نايف علي مسرحي"),
+    "naif ali masrahi": ("Naif Ali Masrahi", "نايف علي مسرحي"),
+    "awatif alruwaili": ("Awatif K. Alruwaili", "عواطف كاتب الرويلي"),
+    "awatif k. alruwaili": ("Awatif K. Alruwaili", "عواطف كاتب الرويلي"),
+    "mahdi aben ahmed": ("Mahdi R. Aben Ahmed", "مهدي رضاء أبن أحمد"),
+    "mahdi r. aben ahmed": ("Mahdi R. Aben Ahmed", "مهدي رضاء أبن أحمد"),
+    "ruwayshid": ("Ruwayshid N. Alruwaili", "رويشد نافع الرويلي"),
+    "ruwayshid n. alruwaili": ("Ruwayshid N. Alruwaili", "رويشد نافع الرويلي"),
+    "hussain mohammed alzubaidi": ("Hussain Mohammed Alzubaidi", "حسين محمد الزبيدي"),
+    "nazik alnour": ("Nazik Noaman A. Alnour", "نازك نعمان أحمد النور"),
+    "nazik noaman a. alnour": ("Nazik Noaman A. Alnour", "نازك نعمان أحمد النور"),
+    "moustafa mohammed shalaby": ("Moustafa Mohammed Shalaby", "مصطفي محمد شلبي"),
+    "nabil sayed": ("Nabil Ali Sayed", "نبيل علي سعيد"),
+    "nabil ali sayed": ("Nabil Ali Sayed", "نبيل علي سعيد"),
+    "mai helmy": ("Mai Salah El din Helmy", "مي صلاح الدين حلمي"),
+    "mai salah el din helmy": ("Mai Salah El din Helmy", "مي صلاح الدين حلمي"),
+    "ahmed hakami": ("Ahmed Hadi Hakami", "أحمد هادي حكمي"),
+    "ahmed hadi hakami": ("Ahmed Hadi Hakami", "أحمد هادي حكمي"),
+    "alaa m. saleh": ("Alaa M. Saleh", "آلاء مأمون صالح"),
+    "alaa saleh": ("Alaa M. Saleh", "آلاء مأمون صالح"),
+    "sarah almutairi": ("Sarah S. Almutairi", "ساره المطيري"),
+    "sarah s. almutairi": ("Sarah S. Almutairi", "ساره المطيري"),
+    "mohammed mohsen": ("Mohammed Ali Mohsen", "محمد محسن"),
+    "mohammed ali mohsen": ("Mohammed Ali Mohsen", "محمد محسن")
+}
+
+def normalize_arabic_text(text):
+    # Remove diacritics
+    text = re.sub(r'[\u064B-\u065F\u0670]', '', text)
+    return text
+
+def update_arabic_index(script_dir, entries):
+    print("Updating Arabic Index with Translators...")
+    
+    names = set()
+    for entry in entries:
+        raw_names = []
+        if 'Translated by' in entry:
+            raw_names.append(entry['Translated by'])
+        if 'Translation reviewed by' in entry:
+            raw_names.append(entry['Translation reviewed by'])
+            
+        for raw in raw_names:
+            # Cleaning logic
+            clean = raw.replace('**', '')
+            clean = re.split(r'###', clean)[0]
+            clean = re.sub(r'\{.*?\}', '', clean)
+            parts = re.split(r'[,;،]|\s{2,}', clean)
+            
+            for p in parts:
+                name = p.strip()
+                name = re.sub(r'^Dr\.\s*', '', name, flags=re.IGNORECASE)
+                name = normalize_arabic_text(name)
+                name = name.strip(' .-_')
+                
+                if len(name) < 3 or len(name) > 40: continue
+                if "http" in name or "www" in name: continue
+                if "Glossary" in name and "|" in name: continue
+                if "Looking for something else" in name: continue
+                if "Term coined" in name: continue
+                if "_" in name: continue
+                if len(name) <= 2: continue
+                
+                name = ' '.join(name.split())
+                if name:
+                    names.add(name)
+
+    # Match with mapping
+    final_rows = []
+    seen_full_names = set()
+    
+    for name in names:
+        key = name.lower()
+        if key in TRANSLATOR_MAPPING:
+            full_eng, arabic = TRANSLATOR_MAPPING[key]
+            if full_eng not in seen_full_names:
+                final_rows.append((full_eng, arabic))
+                seen_full_names.add(full_eng)
+        else:
+            # Fallback
+            if name not in seen_full_names:
+                final_rows.append((name, ""))
+                seen_full_names.add(name)
+                
+    # Sort by English name
+    final_rows.sort(key=lambda x: x[0])
+    
+    # Generate Table
+    table_md = "**Arabic Glossary Translation Team**\n\n"
+    table_md += "|  |  |\n|---|---|\n"
+    for eng, ara in final_rows:
+        table_md += f"| {eng} | {ara} |\n"
+        
+    # Update File
+    index_path = os.path.join(script_dir, "arabic", "_index.md")
+    if os.path.exists(index_path):
+        with open(index_path, 'r', encoding='utf-8') as f:
+            content = f.read()
+            
+        # Regex to find the section
+        # We look for "### **شكر وتقدير للمترجمين**" and replace until "### **المرحلة الثانية**"
+        # Or if not found, insert before Phase 2
+        
+        header = "### **شكر وتقدير للمترجمين**"
+        next_section = "### **المرحلة الثانية**"
+        
+        new_section = f"{header}\n\nنود أن نعرب عن خالص شكرنا وتقديرنا للمترجمين والمراجعين الذين ساهموا في إنجاز هذا العمل:\n\n{table_md}\n"
+        
+        if header in content:
+            # Replace existing
+            pattern = re.compile(f"{re.escape(header)}.*?{re.escape(next_section)}", re.DOTALL)
+            if pattern.search(content):
+                content = pattern.sub(f"{new_section}{next_section}", content)
+            else:
+                # Header exists but next section not found? Append?
+                # Just replace header and following text
+                pass 
+        else:
+            # Insert before Phase 2
+            if next_section in content:
+                content = content.replace(next_section, f"{new_section}{next_section}")
+            else:
+                # Append to end
+                content += f"\n\n{new_section}"
+                
+        with open(index_path, 'w', encoding='utf-8') as f:
+            f.write(content)
+        print("Arabic index updated successfully.")
+    else:
+        print("Arabic index file not found.")
 
 def parse_md_terms(md_text, language):
     
@@ -221,6 +370,10 @@ for language_data in merged_data:
             print(f"Index for {language} found")
         else:
             print(f"BEWARE: index for {language} missing")
+            
+        # Update Arabic Index with Translators
+        if language == "arabic":
+            update_arabic_index(script_dir, entries)
 
 print("Markdown files successfully generated.")
 

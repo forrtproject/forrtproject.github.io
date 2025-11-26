@@ -10,7 +10,7 @@
         "Validity"
     ],
     "references": [
-        "Holden (2010)"
+        "\\[@Holden2010\\]"
     ],
     "alt_related_terms": [
         null

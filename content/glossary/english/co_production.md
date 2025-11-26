@@ -14,7 +14,7 @@
         "Patient and Public Involvement (PPI)"
     ],
     "references": [
-        "Filipe et al. (2017); Graham et al. (2019); NIHR (2021); Co-production Collective (2021)"
+        "\\[@FilipeEtAl2017\\], \\[@GrahamMcCutcheonKothari2019\\], \\[@NIHR2021\\], \\[@CoProductionCollective\\]"
     ],
     "alt_related_terms": [
         null

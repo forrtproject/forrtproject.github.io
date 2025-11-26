@@ -6,7 +6,7 @@
         "Research process"
     ],
     "references": [
-        "Bramoullé and Saint Paul (2010); Lieberman (2020)"
+        "Bramoullé and Saint Paul (2010); Lieberman (2020) \\[@BramouleSaintPaul2010\\], \\[@Lieberman2020\\]"
     ],
     "alt_related_terms": [
         null

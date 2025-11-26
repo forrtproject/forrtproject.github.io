@@ -10,7 +10,7 @@
         "Social justice"
     ],
     "references": [
-        "Albayrak-Aydemir (2020); Posselt (2020)"
+        "\\[@AlbayrakAydemir2020\\], \\[@Posselt2020\\]"
     ],
     "alt_related_terms": [
         null

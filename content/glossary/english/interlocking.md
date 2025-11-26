@@ -12,7 +12,7 @@
         "Social Justice"
     ],
     "references": [
-        "Ledgerwood et al. (2021)"
+        "\\[@Ledgerwood2021\\]"
     ],
     "alt_related_terms": [
         null

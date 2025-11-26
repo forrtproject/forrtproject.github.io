@@ -15,7 +15,7 @@
         "Type II error"
     ],
     "references": [
-        "Simmons et al., (2011)"
+        "Simmons et al., (2011) \\[@Simmons2011\\]"
     ],
     "alt_related_terms": [
         null

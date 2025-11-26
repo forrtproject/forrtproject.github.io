@@ -8,7 +8,7 @@
         "Open Science"
     ],
     "references": [
-        "www.oercommons.org/hubs/OSKB"
+        "[www.oercommons.org/hubs/OSKB](http://www.oercommons.org/hubs/OSKB) \\[@OERCommons\\_OSKB\\]"
     ],
     "alt_related_terms": [
         null

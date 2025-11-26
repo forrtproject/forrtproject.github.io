@@ -6,7 +6,7 @@
         "Adversarial collaboration"
     ],
     "references": [
-        "Coles et al. (2020); Lakens (2020)"
+        "Coles et al. (2020); Lakens (2020) \\[@Coles2020\\], \\[@Lakens2020a\\]"
     ],
     "alt_related_terms": [
         null

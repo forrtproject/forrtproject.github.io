@@ -8,7 +8,7 @@
         "Theory building"
     ],
     "references": [
-        "Schafersman (1997); Wacker (1998)"
+        "Schafersman (1997); Wacker (1998) \\[@Schafersman1997\\], \\[@Wacker1998\\]"
     ],
     "alt_related_terms": [
         null

@@ -7,7 +7,7 @@
         "Participatory research"
     ],
     "references": [
-        "Boivin et al. (2018); [https://www.invo.org.uk/](https://www.invo.org.uk/)"
+        "Boivin et al. (2018); [https://www.invo.org.uk/](https://www.invo.org.uk/) \\[@BoivinEtAl2018\\], \\[@INVOLVE\\]"
     ],
     "alt_related_terms": [
         null

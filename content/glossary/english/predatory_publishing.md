@@ -7,7 +7,7 @@
         "Gaming (the system)"
     ],
     "references": [
-        "Crosetto (2021); Xia et al. (2015)"
+        "Crosetto (2021); Xia et al. (2015) \\[@Crosetto2021\\], \\[@Xia2015\\]"
     ],
     "alt_related_terms": [
         null

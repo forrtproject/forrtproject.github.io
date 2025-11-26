@@ -7,7 +7,7 @@
         "Statistical analysis"
     ],
     "references": [
-        "[https://www.r-project.org/](https://www.r-project.org/); R Core Team (2020)"
+        "[https://www.r-project.org/](https://www.r-project.org/); R Core Team (2020) \\[@RProject\\], \\[@R\\_Core\\_Team2020\\]"
     ],
     "alt_related_terms": [
         null

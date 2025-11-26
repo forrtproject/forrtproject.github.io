@@ -9,7 +9,7 @@
         "Working Paper"
     ],
     "references": [
-        "Bourne et al. (2017); Elmore (2018)"
+        "Bourne et al. (2017); Elmore (2018) \\[@BourneEtAl2017\\], \\[@Elmore2018\\]"
     ],
     "alt_related_terms": [
         null

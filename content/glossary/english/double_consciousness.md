@@ -7,7 +7,7 @@
         "Social integration"
     ],
     "references": [
-        "Albayrak and Okoroji (2019); Du Bois (1968); Gilroy (1993)"
+        "\\[@AlbayrakOkoroji2019\\], \\[@DuBois1968\\], \\[@Gilroy1993\\]"
     ],
     "alt_related_terms": [
         null

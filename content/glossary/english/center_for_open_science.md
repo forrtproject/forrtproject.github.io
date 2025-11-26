@@ -14,7 +14,7 @@
         "Transparency and Openness Promotion Guidelines (TOP)"
     ],
     "references": [
-        "cos.io"
+        "\\[@CentreForOpenScienceND\\]"
     ],
     "alt_related_terms": [
         null

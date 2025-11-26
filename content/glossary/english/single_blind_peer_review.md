@@ -11,7 +11,7 @@
         "Triple-blind peer review"
     ],
     "references": [
-        "Largent and Snodgrass (2016)"
+        "Largent and Snodgrass (2016) \\[@Largent2016\\]"
     ],
     "alt_related_terms": [
         null

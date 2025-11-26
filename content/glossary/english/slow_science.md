@@ -10,7 +10,7 @@
         "research quality"
     ],
     "references": [
-        "http://slow-science.org/; Nelson et al., (2012); Frith (2020)"
+        "http://slow-science.org/; Nelson et al., (2012); Frith (2020) \\[@SlowScienceAcademy2010\\], \\[@Nelson2012\\], \\[@Frith2020\\]"
     ],
     "alt_related_terms": [
         null

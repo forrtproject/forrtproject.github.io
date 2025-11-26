@@ -12,7 +12,7 @@
         "Scientific publishing"
     ],
     "references": [
-        "Byrne and Christopher (2020); Hackett and Kelly (2020)"
+        "Byrne and Christopher (2020); Hackett and Kelly (2020) \\[@ByrneChristopher2020\\], \\[@HackettKelly2020\\]"
     ],
     "alt_related_terms": [
         null

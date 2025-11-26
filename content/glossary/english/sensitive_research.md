@@ -6,7 +6,7 @@
         "Anonymity"
     ],
     "references": [
-        "Lee (1993); Albayrak-Aydemir (2019)"
+        "Lee (1993); Albayrak-Aydemir (2019) \\[@Lee1993\\], \\[@AlbayrakAydemir2020\\]"
     ],
     "alt_related_terms": [
         null

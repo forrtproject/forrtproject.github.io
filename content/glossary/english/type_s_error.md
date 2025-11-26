@@ -9,7 +9,7 @@
         "Type II error"
     ],
     "references": [
-        "Gelman and Carlin (2014); Lu et al. (2018)"
+        "Gelman and Carlin (2014); Lu et al. (2018) \\[@GelmanCarlin2014\\], \\[@Lu2018\\]"
     ],
     "alt_related_terms": [
         null

@@ -9,7 +9,7 @@
         "Reproducibility"
     ],
     "references": [
-        "Carsey (2014); Monroe (2018)"
+        ") \\[@Carsey2014\\], \\[@Monroe2018\\]"
     ],
     "alt_related_terms": [
         null

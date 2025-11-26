@@ -8,7 +8,7 @@
         "Inclusion"
     ],
     "references": [
-        "Albayrak (2018)"
+        "\\[@Albayrak2018a\\]"
     ],
     "alt_related_terms": [
         null

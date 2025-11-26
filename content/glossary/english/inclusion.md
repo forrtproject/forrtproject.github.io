@@ -8,7 +8,7 @@
         "Social Justice"
     ],
     "references": [
-        "Calvert (2019); [Martinez-Acosta and Favero (2018)](https://www-ncbi-nlm-nih-gov.proxy.library.vanderbilt.edu/pmc/articles/PMC6153014/)"
+        "\\[@Calvert2019\\], \\[@MartinezAcosta2018\\]"
     ],
     "alt_related_terms": [
         null

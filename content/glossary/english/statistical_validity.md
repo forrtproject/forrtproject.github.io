@@ -8,7 +8,7 @@
         "Statistical assumptions"
     ],
     "references": [
-        "Cook and Campbell (1979); Drost (2011)"
+        "Cook and Campbell (1979); Drost (2011) \\[@Cook1979\\], \\[@Drost2011\\]"
     ],
     "alt_related_terms": [
         null

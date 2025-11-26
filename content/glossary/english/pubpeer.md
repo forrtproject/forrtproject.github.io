@@ -6,7 +6,7 @@
         "Open Peer Review"
     ],
     "references": [
-        "www.pubpeer.com"
+        "[www.pubpeer.com](http://www.pubpeer.com) \\[@PubPeer\\]"
     ],
     "alt_related_terms": [
         null

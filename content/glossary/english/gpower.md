@@ -9,7 +9,7 @@
         "Statistical power"
     ],
     "references": [
-        "Faul et al. (2007); Faul et al. (2009)"
+        "\\[@FaulEtAl2007\\], \\[@FaulEtAl2009\\]"
     ],
     "alt_related_terms": [
         null

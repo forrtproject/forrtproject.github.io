@@ -10,7 +10,7 @@
         "Posterior distribution"
     ],
     "references": [
-        "van de Schoot et al. (2021)"
+        "van de Schoot et al. (2021) \\[@van\\_de\\_Schoot2021\\]"
     ],
     "alt_related_terms": [
         null

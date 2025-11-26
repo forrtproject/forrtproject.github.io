@@ -10,7 +10,7 @@
         "WEIRD"
     ],
     "references": [
-        "Webster and Rutz (2020)"
+        "Webster and Rutz (2020) \\[@Webster2020\\]"
     ],
     "alt_related_terms": [
         null

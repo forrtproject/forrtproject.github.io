@@ -10,7 +10,7 @@
         "ReproducibiliTea"
     ],
     "references": [
-        "Ellemers (2021); Orben (2019); Shepard (2015)"
+        "\\[@Ellemers2021\\], \\[@Orben2019\\], \\[@Shepard2015\\]"
     ],
     "alt_related_terms": [
         null

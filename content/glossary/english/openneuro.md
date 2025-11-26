@@ -8,7 +8,7 @@
         "OpenfMRI"
     ],
     "references": [
-        "Poldrack et al. (2013); Poldrack and Gorgolewski (2014) https://openneuro.org/"
+        "Poldrack et al. (2013); Poldrack and Gorgolewski (2014) [https://openneuro.org/](https://openneuro.org/) \\[@Poldrack2013\\], \\[@Poldrack2014\\], \\[@OpenNeuro\\]"
     ],
     "alt_related_terms": [
         null

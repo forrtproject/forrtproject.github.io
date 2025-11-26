@@ -8,7 +8,7 @@
         "Repository"
     ],
     "references": [
-        "[https://www.coalition-s.org](https://www.coalition-s.org/)"
+        "[https://www.coalition-s.org](https://www.coalition-s.org/)\\[@coalition\\_s\\]"
     ],
     "alt_related_terms": [
         null

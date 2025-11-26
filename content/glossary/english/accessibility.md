@@ -11,7 +11,7 @@
         "Universal design for learning (UDL)"
     ],
     "references": [
-        "Brown et al. (2018); Pollet and Bond (2021); Pownall et al. (2021); Suber (2004); World Wide Web Consortium (2021)"
+        "\\[@BrownThompsonLeigh2018\\], \\[@PolletBond2021\\], Pownall et al. (2021), \\[@Suber2004\\], \\[@World\\_Wide\\_Web\\_Consortium2021\\], \\[@Pownall2021\\]"
     ],
     "alt_related_terms": [
         null

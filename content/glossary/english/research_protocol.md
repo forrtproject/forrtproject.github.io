@@ -7,7 +7,7 @@
         "Preregistration"
     ],
     "references": [
-        "BMJ (2015); Nosek et al. (2018)"
+        "BMJ (2015); Nosek et al. (2018) \\[@BMJ2015\\], \\[@Nosek2018\\]"
     ],
     "alt_related_terms": [
         null

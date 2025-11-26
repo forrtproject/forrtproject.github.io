@@ -10,7 +10,7 @@
         "Transparency"
     ],
     "references": [
-        "Angrist and Pischke (2010); Vazire (2018); Vazire et al. (2020)"
+        "\\[@AngristPischke2010\\], \\[@Vazire2018\\], \\[@Vazire2020\\]"
     ],
     "alt_related_terms": [
         null
