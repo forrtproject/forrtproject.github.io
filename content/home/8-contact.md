@@ -16,13 +16,6 @@ subtitle = "Whether you have questions getting started or you want to know how t
   description = " [info@forrt.org](mailto:info@forrt.org)"
 
 [[feature]]
-  icon = "twitter"
-  icon_pack = "fab"
-  # img = "partner.webp"
-  name = "Twitter"
-  description = "[Reach out @FORRTproject](https://twitter.com/@FORRTproject)"
-
-[[feature]]
   icon = "slack"
   icon_pack = "fab"
   # img = "teamwork.webp"
