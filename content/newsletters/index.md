@@ -8,7 +8,9 @@ _______________________________________________
 
 **Archive :calendar: 2025**
 
-[**➡️ | October 2025  🆕**](https://eocampaign1.com/web-version?p=4b518678-a414-11f0-bce9-e9770cb46815&pt=campaign&t=1761811280&s=d307b488e66abc12b64a05f6f6e045787a870b27309d5be18bd067643f7ac7ff)
+[**➡️ | November 2025  🆕**]()
+
+[**| October 2025**](https://eocampaign1.com/web-version?p=4b518678-a414-11f0-bce9-e9770cb46815&pt=campaign&t=1761811280&s=d307b488e66abc12b64a05f6f6e045787a870b27309d5be18bd067643f7ac7ff)
 
 [**| September 2025**](https://eocampaign1.com/web-version?p=9d2542f8-89a9-11f0-b475-23ec281bb67b&pt=campaign&t=1758528860&s=eea14e0decade201a0d677844e58344cbdb29bd474af14a1236ee92ee32a9c38)
 
