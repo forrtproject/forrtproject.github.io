@@ -16,56 +16,56 @@ print("file links read")
 grouped = df.groupby('Language')
 formatted_data = {}
 
-# Mapping from extracted names to (Full English Name, Arabic Name)
-TRANSLATOR_MAPPING = {
-    "ali h. al-hoorie": ("Ali H. Al-Hoorie", "علي حسين الحوري"),
-    "amani aloufi": ("Amani A. Aloufi", "أماني عبدالرحمن العوفي"),
-    "amani a. aloufi": ("Amani A. Aloufi", "أماني عبدالرحمن العوفي"),
-    "asma alzahrani": ("Asma A. Alzahrani", "أسماء علي الزهراني"),
-    "asma a. alzahrani": ("Asma A. Alzahrani", "أسماء علي الزهراني"),
-    "hala alghamdi": ("Hala M. Alghamdi", "هلا الغامدي"),
-    "hala m. alghamdi": ("Hala M. Alghamdi", "هلا الغامدي"),
-    "ahlam ahmed": ("Ahlam Ahmed Almehmadi", "أحلام أحمد المحمادي"),
-    "ahlam ahmed almehmadi": ("Ahlam Ahmed Almehmadi", "أحلام أحمد المحمادي"),
-    "hiba alomary": ("Hiba A. Alomary", "هبة علي العُمري"),
-    "hiba a. alomary": ("Hiba A. Alomary", "هبة علي العُمري"),
-    "zainab alsuhaibani": ("Zainab Abdullah Alsuhaibani", "زينب عبدالله السحيباني"),
-    "zainab abdullah alsuhaibani": ("Zainab Abdullah Alsuhaibani", "زينب عبدالله السحيباني"),
-    "abdulsamad humaidan": ("Abdulsamad Yahya Humaidan", "عبد الصمد يحيى حميدان"),
-    "abdulsamad yahya humaidan": ("Abdulsamad Yahya Humaidan", "عبد الصمد يحيى حميدان"),
-    "naif masrahi": ("Naif Ali Masrahi", "نايف علي مسرحي"),
-    "naif ali masrahi": ("Naif Ali Masrahi", "نايف علي مسرحي"),
-    "awatif alruwaili": ("Awatif K. Alruwaili", "عواطف كاتب الرويلي"),
-    "awatif k. alruwaili": ("Awatif K. Alruwaili", "عواطف كاتب الرويلي"),
-    "mahdi aben ahmed": ("Mahdi R. Aben Ahmed", "مهدي رضاء أبن أحمد"),
-    "mahdi r. aben ahmed": ("Mahdi R. Aben Ahmed", "مهدي رضاء أبن أحمد"),
-    "ruwayshid": ("Ruwayshid N. Alruwaili", "رويشد نافع الرويلي"),
-    "ruwayshid n. alruwaili": ("Ruwayshid N. Alruwaili", "رويشد نافع الرويلي"),
-    "hussain mohammed alzubaidi": ("Hussain Mohammed Alzubaidi", "حسين محمد الزبيدي"),
-    "nazik alnour": ("Nazik Noaman A. Alnour", "نازك نعمان أحمد النور"),
-    "nazik noaman a. alnour": ("Nazik Noaman A. Alnour", "نازك نعمان أحمد النور"),
-    "moustafa mohammed shalaby": ("Moustafa Mohammed Shalaby", "مصطفي محمد شلبي"),
-    "nabil sayed": ("Nabil Ali Sayed", "نبيل علي سعيد"),
-    "nabil ali sayed": ("Nabil Ali Sayed", "نبيل علي سعيد"),
-    "mai helmy": ("Mai Salah El din Helmy", "مي صلاح الدين حلمي"),
-    "mai salah el din helmy": ("Mai Salah El din Helmy", "مي صلاح الدين حلمي"),
-    "ahmed hakami": ("Ahmed Hadi Hakami", "أحمد هادي حكمي"),
-    "ahmed hadi hakami": ("Ahmed Hadi Hakami", "أحمد هادي حكمي"),
-    "alaa m. saleh": ("Alaa M. Saleh", "آلاء مأمون صالح"),
-    "alaa saleh": ("Alaa M. Saleh", "آلاء مأمون صالح"),
-    "sarah almutairi": ("Sarah S. Almutairi", "ساره المطيري"),
-    "sarah s. almutairi": ("Sarah S. Almutairi", "ساره المطيري"),
-    "mohammed mohsen": ("Mohammed Ali Mohsen", "محمد محسن"),
-    "mohammed ali mohsen": ("Mohammed Ali Mohsen", "محمد محسن")
-}
-
-def normalize_arabic_text(text):
-    # Remove diacritics
-    text = re.sub(r'[\u064B-\u065F\u0670]', '', text)
-    return text
-
 def update_arabic_index(script_dir, entries):
     print("Updating Arabic Index with Translators...")
+    
+    # Mapping from extracted names to (Full English Name, Arabic Name)
+    TRANSLATOR_MAPPING = {
+        "ali h. al-hoorie": ("Ali H. Al-Hoorie", "علي حسين الحوري"),
+        "amani aloufi": ("Amani A. Aloufi", "أماني عبدالرحمن العوفي"),
+        "amani a. aloufi": ("Amani A. Aloufi", "أماني عبدالرحمن العوفي"),
+        "asma alzahrani": ("Asma A. Alzahrani", "أسماء علي الزهراني"),
+        "asma a. alzahrani": ("Asma A. Alzahrani", "أسماء علي الزهراني"),
+        "hala alghamdi": ("Hala M. Alghamdi", "هلا الغامدي"),
+        "hala m. alghamdi": ("Hala M. Alghamdi", "هلا الغامدي"),
+        "ahlam ahmed": ("Ahlam Ahmed Almehmadi", "أحلام أحمد المحمادي"),
+        "ahlam ahmed almehmadi": ("Ahlam Ahmed Almehmadi", "أحلام أحمد المحمادي"),
+        "hiba alomary": ("Hiba A. Alomary", "هبة علي العُمري"),
+        "hiba a. alomary": ("Hiba A. Alomary", "هبة علي العُمري"),
+        "zainab alsuhaibani": ("Zainab Abdullah Alsuhaibani", "زينب عبدالله السحيباني"),
+        "zainab abdullah alsuhaibani": ("Zainab Abdullah Alsuhaibani", "زينب عبدالله السحيباني"),
+        "abdulsamad humaidan": ("Abdulsamad Yahya Humaidan", "عبد الصمد يحيى حميدان"),
+        "abdulsamad yahya humaidan": ("Abdulsamad Yahya Humaidan", "عبد الصمد يحيى حميدان"),
+        "naif masrahi": ("Naif Ali Masrahi", "نايف علي مسرحي"),
+        "naif ali masrahi": ("Naif Ali Masrahi", "نايف علي مسرحي"),
+        "awatif alruwaili": ("Awatif K. Alruwaili", "عواطف كاتب الرويلي"),
+        "awatif k. alruwaili": ("Awatif K. Alruwaili", "عواطف كاتب الرويلي"),
+        "mahdi aben ahmed": ("Mahdi R. Aben Ahmed", "مهدي رضاء أبن أحمد"),
+        "mahdi r. aben ahmed": ("Mahdi R. Aben Ahmed", "مهدي رضاء أبن أحمد"),
+        "ruwayshid": ("Ruwayshid N. Alruwaili", "رويشد نافع الرويلي"),
+        "ruwayshid n. alruwaili": ("Ruwayshid N. Alruwaili", "رويشد نافع الرويلي"),
+        "hussain mohammed alzubaidi": ("Hussain Mohammed Alzubaidi", "حسين محمد الزبيدي"),
+        "nazik alnour": ("Nazik Noaman A. Alnour", "نازك نعمان أحمد النور"),
+        "nazik noaman a. alnour": ("Nazik Noaman A. Alnour", "نازك نعمان أحمد النور"),
+        "moustafa mohammed shalaby": ("Moustafa Mohammed Shalaby", "مصطفي محمد شلبي"),
+        "nabil sayed": ("Nabil Ali Sayed", "نبيل علي سعيد"),
+        "nabil ali sayed": ("Nabil Ali Sayed", "نبيل علي سعيد"),
+        "mai helmy": ("Mai Salah El din Helmy", "مي صلاح الدين حلمي"),
+        "mai salah el din helmy": ("Mai Salah El din Helmy", "مي صلاح الدين حلمي"),
+        "ahmed hakami": ("Ahmed Hadi Hakami", "أحمد هادي حكمي"),
+        "ahmed hadi hakami": ("Ahmed Hadi Hakami", "أحمد هادي حكمي"),
+        "alaa m. saleh": ("Alaa M. Saleh", "آلاء مأمون صالح"),
+        "alaa saleh": ("Alaa M. Saleh", "آلاء مأمون صالح"),
+        "sarah almutairi": ("Sarah S. Almutairi", "ساره المطيري"),
+        "sarah s. almutairi": ("Sarah S. Almutairi", "ساره المطيري"),
+        "mohammed mohsen": ("Mohammed Ali Mohsen", "محمد محسن"),
+        "mohammed ali mohsen": ("Mohammed Ali Mohsen", "محمد محسن")
+    }
+
+    def normalize_arabic_text(text):
+        # Remove diacritics
+        text = re.sub(r'[\u064B-\u065F\u0670]', '', text)
+        return text
     
     names = set()
     for entry in entries:
