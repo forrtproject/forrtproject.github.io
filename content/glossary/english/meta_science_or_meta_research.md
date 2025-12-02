@@ -6,7 +6,7 @@
         ""
     ],
     "references": [
-        "Ioannidis et al. (2015); Peterson and Panofsky (2020) \\[@Ioannidis2015\\], \\[@Peterson2020\\]"
+        "Ioannidis et al. (2015); Peterson and Panofsky (2020)"
     ],
     "alt_related_terms": [
         null

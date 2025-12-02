@@ -8,7 +8,7 @@
         "Version control"
     ],
     "references": [
-        "\\[@Kalliamvakou2014\\], \\[@ScopatzHuff2015\\], \\[@Vuorre2018\\], \\[@GitInitialRevision\\]"
+        "Kalliamvakov et al. (2014); Scopatz and Huff (2015); Vuorre and Curley (2018); [https://github.com/git/git/commit/e83c5163316f89bfbde7d9ab23ca2e25604af290](https://github.com/git/git/commit/e83c5163316f89bfbde7d9ab23ca2e25604af290)"
     ],
     "alt_related_terms": [
         null

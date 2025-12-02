@@ -14,7 +14,7 @@
         "Transparency"
     ],
     "references": [
-        "[https://rr.peercommunityin.org/about/about](https://rr.peercommunityin.org/about/about) \\[@PCI\\_rr\\]"
+        "[https://rr.peercommunityin.org/about/about](https://rr.peercommunityin.org/about/about)"
     ],
     "alt_related_terms": [
         null

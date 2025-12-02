@@ -6,7 +6,7 @@
         "Social class"
     ],
     "references": [
-        "Evans and Rubin (2021); Rubin et al. (2019); Rubin (2021) \\[@EvansRubin2021\\], \\[@Rubin2019\\], \\[@Rubin2021\\]"
+        "Evans and Rubin (2021); Rubin et al. (2019); Rubin (2021)"
     ],
     "alt_related_terms": [
         null

@@ -8,7 +8,7 @@
         "STRANGE"
     ],
     "references": [
-        "\\[@Percie\\_du\\_Sert2020\\]"
+        "Percie du Sert et al. (2020)"
     ],
     "alt_related_terms": [
         null

@@ -11,7 +11,7 @@
         "Repository"
     ],
     "references": [
-        "Lin et al. (2020) \\[@Lin2020\\]"
+        "Lin et al. (2020)"
     ],
     "alt_related_terms": [
         null

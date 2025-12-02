@@ -8,7 +8,7 @@
         "repeatability"
     ],
     "references": [
-        "Barba (2018); Cruwell et al. (2019); Peng (2011), Stodden (2011); Syed (2019); National Academies of Sciences, Engineering, and Medicine (2019) \\[@Barba2018\\], \\[@Cruwell2019\\], \\[@Peng2011\\], \\[@Stodden2011\\], \\[@Syed2019\\], \\[@National\\_Academies\\_2019\\]"
+        "Barba (2018); Cruwell et al. (2019); Peng (2011), Stodden (2011); Syed (2019); National Academies of Sciences, Engineering, and Medicine (2019)"
     ],
     "alt_related_terms": [
         null

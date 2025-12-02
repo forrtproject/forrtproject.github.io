@@ -9,7 +9,7 @@
         "Transparency"
     ],
     "references": [
-        "Jacobson and Mustafa (2019) \\[@Jacobson2019\\]"
+        "Jacobson and Mustafa (2019)"
     ],
     "alt_related_terms": [
         null

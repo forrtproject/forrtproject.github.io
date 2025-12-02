@@ -6,7 +6,7 @@
         ""
     ],
     "references": [
-        "\\[@Nichols2017\\], \\[@Pernet2020\\]"
+        "Nichols et al. (2017); Pernet et al. (2020)"
     ],
     "alt_related_terms": [
         null

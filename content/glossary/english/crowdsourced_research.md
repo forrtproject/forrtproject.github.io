@@ -9,7 +9,7 @@
         "Team science"
     ],
     "references": [
-        "Benoit et al. (2016); Breznau (2021); Franzoni and Sauermann (2014); Himmelstein et al. (2019); Klein et al. (2018); Lind et al. (2017); Moshontz et al. (2018); Peer et al. (2017); Silberzahn et al. (2018); Stewart et al. (2017); Tennant et al. (2019); Uhlmann et al. (2019); [https://psysciacc.org/](https://psysciacc.org/); [https://crowdsourcingweek.com/what-is-crowdsourcing/](https://crowdsourcingweek.com/what-is-crowdsourcing/#:~:text=Crowdsourcing%20is%20the%20practice%20of,levels%20and%20across%20various%20industries) \\[@BenoitEtAl2016\\], \\[@Breznau2021\\], \\[@FranzoniSauermann2014\\], \\[@Himmelstein2019\\], \\[@Klein2018ManyLabs2\\], \\[@Lind2017\\], \\[@Moshontz2018\\], \\[@Peer2017b\\], \\[@Silberzahn2018\\], \\[@Stewart2017\\], \\[@Tennant2019\\], \\[@Uhlmann2019\\], \\[@Psychological\\_Science\\_Accelerator\\_n\\_d\\], \\[@CrowdsourcingWeek2021\\]"
+        "Benoit et al. (2016); Breznau (2021); Franzoni and Sauermann (2014); Himmelstein et al. (2019); Klein et al. (2018); Lind et al. (2017); Moshontz et al. (2018); Peer et al. (2017); Silberzahn et al. (2018); Stewart et al. (2017); Tennant et al. (2019); Uhlmann et al. (2019); [https://psysciacc.org/](https://psysciacc.org/); [https://crowdsourcingweek.com/what-is-crowdsourcing/](https://crowdsourcingweek.com/what-is-crowdsourcing/#:~:text=Crowdsourcing%20is%20the%20practice%20of,levels%20and%20across%20various%20industries)"
     ],
     "alt_related_terms": [
         null

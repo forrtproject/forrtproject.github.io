@@ -11,7 +11,7 @@
         "Open Source"
     ],
     "references": [
-        "[https://opensource.org/licenses](https://opensource.org/licenses) \\[@AnonOSI\\_ND\\]"
+        "[https://opensource.org/licenses](https://opensource.org/licenses)"
     ],
     "alt_related_terms": [
         null

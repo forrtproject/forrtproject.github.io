@@ -8,7 +8,7 @@
         "Registered Report"
     ],
     "references": [
-        "\\[@Bardsley2018\\], \\[@Nosek2014\\]"
+        "Bardsley (2018); Nosek and Lakens (2014)"
     ],
     "alt_related_terms": [
         null

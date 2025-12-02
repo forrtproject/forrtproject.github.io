@@ -10,7 +10,7 @@
         "Publication bias (File Drawer Problem)"
     ],
     "references": [
-        "\\[@BatemanEtAl2005\\], \\[@Cowan2020\\], \\[@Kerr2018\\], \\[@Mellers2001\\], \\[@Rakow2014\\]"
+        "Bateman et al. (2005); Cowan et al. (2020); Kerr et al. (2018); Mellers et al. (2001); Rakow et al. (2014)"
     ],
     "alt_related_terms": [
         null

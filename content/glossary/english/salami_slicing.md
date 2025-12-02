@@ -8,7 +8,7 @@
         "Partial publication"
     ],
     "references": [
-        "Fanelli (2018) \\[@Fanelli2018\\]"
+        "Fanelli (2018)"
     ],
     "alt_related_terms": [
         null

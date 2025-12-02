@@ -6,7 +6,7 @@
         "Open Data"
     ],
     "references": [
-        "\\[@GorgolewskiEtAl2016\\], \\[@BIDSAbout2020\\]"
+        "Gorgolewski et al. (2016); [https://bids.neuroimaging.io/](https://bids.neuroimaging.io/)"
     ],
     "alt_related_terms": [
         null

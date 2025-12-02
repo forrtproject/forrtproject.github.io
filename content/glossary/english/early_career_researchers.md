@@ -6,7 +6,7 @@
         "Early Career Investigator"
     ],
     "references": [
-        "\\[@Bazeley2003\\], \\[@Eley2012\\], \\[@Pownall20210\\]"
+        "Bazeley (2003); Eley et al. (2012); Pownall et al (2021)"
     ],
     "alt_related_terms": [
         null

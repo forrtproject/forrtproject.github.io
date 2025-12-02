@@ -7,7 +7,7 @@
         "Likelihood Function"
     ],
     "references": [
-        "\\[@Dienes2008\\], \\[@Geyer2003\\], \\[@Geyer2007\\]"
+        "Dienes (2008); Geyer (2003; 2007);"
     ],
     "alt_related_terms": [
         null

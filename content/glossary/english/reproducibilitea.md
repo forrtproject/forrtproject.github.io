@@ -9,7 +9,7 @@
         "Reproducibility"
     ],
     "references": [
-        "[https://reproducibilitea.org/](https://reproducibilitea.org/); Orben (2019) \\[@ReproducibiliTea\\_n\\_d\\], \\[@Orben2019\\]"
+        "[https://reproducibilitea.org/](https://reproducibilitea.org/); Orben (2019)"
     ],
     "alt_related_terms": [
         null

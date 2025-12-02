@@ -9,7 +9,7 @@
         "Research ethics"
     ],
     "references": [
-        "Kleinberg et al. (2017) \\[@Kleinberg2017\\]"
+        "Kleinberg et al. (2017)"
     ],
     "alt_related_terms": [
         null

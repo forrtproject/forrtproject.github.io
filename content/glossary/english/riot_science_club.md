@@ -10,7 +10,7 @@
         "Transparency"
     ],
     "references": [
-        "[http://riotscience.co.uk/](http://riotscience.co.uk/) \\[@RIOT\\_Science\\_Club2021\\]"
+        "[http://riotscience.co.uk/](http://riotscience.co.uk/)"
     ],
     "alt_related_terms": [
         null

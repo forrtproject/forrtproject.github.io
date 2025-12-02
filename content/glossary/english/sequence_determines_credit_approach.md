@@ -7,7 +7,7 @@
         "First-last-author-emphasis norm (FLAE)"
     ],
     "references": [
-        "Schmidt (1987); Tscharntke et al. (2007) \\[@Schmidt1987\\], \\[@Tscharntke2007\\]"
+        "Schmidt (1987); Tscharntke et al. (2007)"
     ],
     "alt_related_terms": [
         null

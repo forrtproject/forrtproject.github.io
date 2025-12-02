@@ -7,7 +7,7 @@
         "Validity"
     ],
     "references": [
-        "\\[@DeVellis2017\\], \\[@Drost2011\\]"
+        "DeVellis (2017); Drost (2011)"
     ],
     "alt_related_terms": [
         null

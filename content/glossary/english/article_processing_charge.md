@@ -7,7 +7,7 @@
         "Under-representation"
     ],
     "references": [
-        "\\[@GrossmannBrembs2021\\], \\[@Smith2020\\]"
+        "Grossmann and Brembs (2021); Smith et al. (2020)"
     ],
     "alt_related_terms": [
         null

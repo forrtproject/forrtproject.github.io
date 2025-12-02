@@ -11,7 +11,7 @@
         "Journal impact factor"
     ],
     "references": [
-        "\\[@Ali2021\\], \\[@GalliganDyasCorreia2013\\]"
+        "Ali (2021); Galligan and Dyas-Correia (2013)"
     ],
     "alt_related_terms": [
         null

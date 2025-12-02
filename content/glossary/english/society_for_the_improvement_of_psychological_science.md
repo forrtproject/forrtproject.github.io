@@ -6,7 +6,7 @@
         "Society for Open, Reliable, and Transparent Ecology and Evolutionary biology (SORTEE)"
     ],
     "references": [
-        "[https://improvingpsych.org/](https://improvingpsych.org/) \\[@ImprovingPsych\\]"
+        "https://improvingpsych.org/"
     ],
     "alt_related_terms": [
         null

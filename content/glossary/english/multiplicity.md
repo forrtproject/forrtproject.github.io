@@ -10,7 +10,7 @@
         "Null Hypothesis Significance Testing (NHST)"
     ],
     "references": [
-        "Sato (1996); Schultz and Grimes (2005) \\[@Sato1996\\], \\[@SchulzGrimes2005\\]"
+        "Sato (1996); Schultz and Grimes (2005)"
     ],
     "alt_related_terms": [
         null

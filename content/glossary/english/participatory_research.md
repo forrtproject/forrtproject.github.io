@@ -10,7 +10,7 @@
         "Transformative paradigm"
     ],
     "references": [
-        "Cornwall and Jewkes (1995); Fletcher-Watson et al. (2019); Kiernan (1999); Leavy (2017); Ottmann et al. (2011); Rose (2018) \\[@CornwallJewkes1995\\], \\[@FletcherWatson2019\\], \\[@Kiernan1999\\], \\[@Leavy2017\\], \\[@Ottmann2011\\], \\[@Rose2018\\]"
+        "Cornwall and Jewkes (1995); Fletcher-Watson et al. (2019); Kiernan (1999); Leavy (2017); Ottmann et al. (2011); Rose (2018)"
     ],
     "alt_related_terms": [
         null

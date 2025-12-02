@@ -8,7 +8,7 @@
         "Plot"
     ],
     "references": [
-        "\\[@Healy2018\\], \\[@Tufte1983\\]"
+        "Healy (2018); Tufte (1983)"
     ],
     "alt_related_terms": [
         null

@@ -9,7 +9,7 @@
         "Reflexivity Alternative definition: (if applicable) In Psychology, the epistemology of qualitative research is typically concerned with understanding people’s perspectives. Such epistemology proposes assuming the equity of researchers and participants as human beings, and in consequence, the need of sympathetic human understanding instead of data-driven conclusions"
     ],
     "references": [
-        "Aspers and Corte (2019); Levitt et al. (2017) \\[@AspersCorte2019\\], \\[@Levitt2017\\]"
+        "Aspers and Corte (2019); Levitt et al. (2017)"
     ],
     "alt_related_terms": [
         null

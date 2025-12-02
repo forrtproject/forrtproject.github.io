@@ -6,7 +6,7 @@
         "Semantometrics"
     ],
     "references": [
-        "Knoth and Herrmannova (2014); Holcombe (2019); Larivière et al. (2016) \\[@Knoth2014\\], \\[@Holcombe2019\\], \\[@Lariviere2016\\]"
+        "Knoth and Herrmannova (2014); Holcombe (2019); Larivière et al. (2016)"
     ],
     "alt_related_terms": [
         null

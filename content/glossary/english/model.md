@@ -8,7 +8,7 @@
         "Theory building"
     ],
     "references": [
-        "Frigg and Hartman, (2020); Glass and Martin (2008); Guest and Martin (2020) \\[@GuestMartin2020\\]"
+        "Frigg and Hartman, (2020); Glass and Martin (2008); Guest and Martin (2020)"
     ],
     "alt_related_terms": [
         null

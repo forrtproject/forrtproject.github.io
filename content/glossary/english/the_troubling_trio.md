@@ -10,7 +10,7 @@
         "Questionable Research Practices or Questionable Reporting Practices (QRPs)"
     ],
     "references": [
-        "Lindsay (2015) \\[@Lindsay2015\\]"
+        "Lindsay (2015)"
     ],
     "alt_related_terms": [
         null

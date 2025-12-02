@@ -9,7 +9,7 @@
         "Validity"
     ],
     "references": [
-        "Davies and Gray (2015); Hurlbert (1984); Lazic (2019) \\[@DaviesGray2015\\], \\[@Hurlbert1984\\], \\[@Lazic2019\\]"
+        "Davies and Gray (2015); Hurlbert (1984); Lazic (2019)"
     ],
     "alt_related_terms": [
         null

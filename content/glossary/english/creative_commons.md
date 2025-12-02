@@ -7,7 +7,7 @@
         "Licence Alternative definition: (if applicable) Creative Commons is an international nonprofit organization that provides Creative Commons licences, with the goal to minimize legal obstacles to the sharing of knowledge and creativity."
     ],
     "references": [
-        "\\[@AnonCCND\\]"
+        "https://creativecommons.org/about/cclicenses/"
     ],
     "alt_related_terms": [
         null

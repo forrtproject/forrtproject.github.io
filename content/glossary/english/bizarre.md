@@ -8,7 +8,7 @@
         "WEIRD"
     ],
     "references": [
-        "Clark et al. (2019); Leavens et al. (2010) \\[@Clark2019\\], \\[@Leavens2010\\]"
+        "Clark et al. (2019); Leavens et al. (2010)"
     ],
     "alt_related_terms": [
         null

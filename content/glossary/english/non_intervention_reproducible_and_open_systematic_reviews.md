@@ -8,7 +8,7 @@
         "Systematic Review Protocol"
     ],
     "references": [
-        "Topor et al. (2021) \\[@Topor2021\\]"
+        "Topor et al. (2021)"
     ],
     "alt_related_terms": [
         null

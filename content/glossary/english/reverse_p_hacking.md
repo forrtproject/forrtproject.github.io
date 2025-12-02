@@ -11,7 +11,7 @@
         "Selective reporting"
     ],
     "references": [
-        "Chuard et al. (2019) \\[@Chuard2019\\]"
+        "Chuard et al. (2019)"
     ],
     "alt_related_terms": [
         null

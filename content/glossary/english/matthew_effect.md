@@ -7,7 +7,7 @@
         "Stigler’s law of eponymy"
     ],
     "references": [
-        "Bol et al. (2018); Bornmann et al. (2019); Merton (1968) \\[@BolEtAl2018\\], \\[@BornmannEtAl2019\\], \\[@Merton1968\\]"
+        "Bol et al. (2018); Bornmann et al. (2019); Merton (1968)"
     ],
     "alt_related_terms": [
         null

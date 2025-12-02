@@ -9,7 +9,7 @@
         "CRediT"
     ],
     "references": [
-        "Holcombe et al. (2020) \\[@Holcombe2020\\]"
+        "Holcombe et al. (2020)"
     ],
     "alt_related_terms": [
         null

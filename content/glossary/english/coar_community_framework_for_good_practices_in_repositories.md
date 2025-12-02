@@ -11,7 +11,7 @@
         "TRUST principles"
     ],
     "references": [
-        "\\[@COAR2020\\]"
+        "Confederation of Open Access Repositories (2020, October 8\\)"
     ],
     "alt_related_terms": [
         null

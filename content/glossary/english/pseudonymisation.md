@@ -11,7 +11,7 @@
         "Research ethics"
     ],
     "references": [
-        "Mourby et al. (2018); UKRI ([https://mrc.ukri.org/documents/pdf/gdpr-guidance-note-5-identifiability-anonymisation-and-pseudonymisation/](https://mrc.ukri.org/documents/pdf/gdpr-guidance-note-5-identifiability-anonymisation-and-pseudonymisation/)) \\[@Mourby2018\\], \\[@MedicalResearchCouncil2019\\]"
+        "Mourby et al. (2018); UKRI ([https://mrc.ukri.org/documents/pdf/gdpr-guidance-note-5-identifiability-anonymisation-and-pseudonymisation/](https://mrc.ukri.org/documents/pdf/gdpr-guidance-note-5-identifiability-anonymisation-and-pseudonymisation/))"
     ],
     "alt_related_terms": [
         null

@@ -8,7 +8,7 @@
         "Team science"
     ],
     "references": [
-        "Chartier et al. (2018); [https://osf.io/view/StudySwap](https://osf.io/view/StudySwap) \\[@ChartierEtAl2018\\], \\[@OSF\\_StudySwap\\]"
+        "Chartier et al. (2018); [https://osf.io/view/StudySwap](https://osf.io/view/StudySwap)"
     ],
     "alt_related_terms": [
         null

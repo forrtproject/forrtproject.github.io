@@ -8,7 +8,7 @@
         "P-hacking"
     ],
     "references": [
-        "Dienes (p.166, 2008\\) \\[@Dienes2008\\]"
+        "Dienes (p.166, 2008\\)"
     ],
     "alt_related_terms": [
         null

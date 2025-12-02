@@ -10,7 +10,7 @@
         "Validity"
     ],
     "references": [
-        "\\[@Lynch1982\\], \\[@Steckler2008\\] Alternative definition: (if applicable) In Psychometrics, the degree of evidence that confirms the relations of a tested psychological construct with external variables Related terms to alternative definition: Criterion validity; Convergent validity; Divergent validity"
+        "Cook and Campbell (1979); Lynch (1982); Steckler and McLeroy (2008) Alternative definition: (if applicable) In Psychometrics, the degree of evidence that confirms the relations of a tested psychological construct with external variables Related terms to alternative definition: Criterion validity; Convergent validity; Divergent validity"
     ],
     "alt_related_terms": [
         null

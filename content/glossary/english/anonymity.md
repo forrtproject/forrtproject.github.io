@@ -11,7 +11,7 @@
         "Vulnerable population"
     ],
     "references": [
-        "\\[@BraunClarke2013\\]"
+        "Braun and Clarke (2013)"
     ],
     "alt_related_terms": [
         null

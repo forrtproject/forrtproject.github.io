@@ -7,7 +7,7 @@
         "Trustworthiness"
     ],
     "references": [
-        "Fraser et al.(2021); [https://replicats.research.unimelb.edu.au/](https://replicats.research.unimelb.edu.au/) \\[@FraserEtAl2021\\], \\[@RepliCATS\\_project2020\\]"
+        "Fraser et al.(2021); [https://replicats.research.unimelb.edu.au/](https://replicats.research.unimelb.edu.au/)"
     ],
     "alt_related_terms": [
         null

@@ -8,7 +8,7 @@
         "Selective reporting"
     ],
     "references": [
-        "\\[@DuyxEtAl2019\\]"
+        "Duyx et al. (2019)"
     ],
     "alt_related_terms": [
         null

@@ -11,7 +11,7 @@
         "Repository"
     ],
     "references": [
-        "\\[@Cruwell2019\\], \\[@Wilkinson2016\\], \\[@go\\_fair\\_principles\\]"
+        "Crüwell et al. (2019); Wilkinson et al. (2016); [https://www.go-fair.org/fair-principles/](https://www.go-fair.org/fair-principles/)"
     ],
     "alt_related_terms": [
         null

@@ -6,7 +6,7 @@
         "Open source software"
     ],
     "references": [
-        "\\[@JabRef2021\\]"
+        "JabRef Development Team (2021)"
     ],
     "alt_related_terms": [
         null

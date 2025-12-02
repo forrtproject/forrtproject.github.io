@@ -7,7 +7,7 @@
         "Preregistration"
     ],
     "references": [
-        "\\[@Box1976\\], \\[@Oberauer2019\\], \\[@Szollosi2019\\], \\[@Tukey1977\\], \\[@Wagenmakers2012\\]"
+        "Box (1976); Oberauer and Lewandowsky (2019); Szollosi and Donkin (2019); Tukey (1977); Wagenmakers et al. (2012)"
     ],
     "alt_related_terms": [
         null

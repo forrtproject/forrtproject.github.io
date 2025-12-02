@@ -7,7 +7,7 @@
         "Bibliometrics"
     ],
     "references": [
-        "Björneborn and Ingwersen (2004) \\[@BjornebornIngwersen2004\\]"
+        "Björneborn and Ingwersen (2004)"
     ],
     "alt_related_terms": [
         null

@@ -9,7 +9,7 @@
         "Impact"
     ],
     "references": [
-        "\\[@Hirsch2005\\], \\[@Wendl2007\\]"
+        "Hirsch (2005); Wendl (2007)"
     ],
     "alt_related_terms": [
         null

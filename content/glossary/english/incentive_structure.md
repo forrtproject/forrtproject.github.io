@@ -14,7 +14,7 @@
         "Structural factors"
     ],
     "references": [
-        "\\[@Koole2012\\], \\[@Nosek2012b\\], \\[@Schonbrodt2019\\], \\[@Smaldino2016\\]"
+        "Koole and Lakens (2012); Nosek et al. (2012); Schonbrodt (2019); Smaldino and McElreath (2016)"
     ],
     "alt_related_terms": [
         null

@@ -8,7 +8,7 @@
         "STRANGE"
     ],
     "references": [
-        "Smith et al. (2018) \\[@Smith2018\\]"
+        "Smith et al. (2018)"
     ],
     "alt_related_terms": [
         null

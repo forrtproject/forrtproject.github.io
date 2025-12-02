@@ -7,7 +7,7 @@
         "Metadata"
     ],
     "references": [
-        "\\[@BIDSModalityND\\]"
+        "https://bids-specification.readthedocs.io/en/stable/03-modality-agnostic-files.html"
     ],
     "alt_related_terms": [
         null

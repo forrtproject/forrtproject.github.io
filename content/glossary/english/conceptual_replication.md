@@ -7,7 +7,7 @@
         "Generalizability"
     ],
     "references": [
-        "\\[@Cruwell2019\\], \\[@Huffmeier2016\\], \\[@LeBel2018\\]"
+        "Crüwell et al. (2019); Hüffmeier et al. (2016); LeBel et al. (2018)"
     ],
     "alt_related_terms": [
         null

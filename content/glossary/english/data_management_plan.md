@@ -10,7 +10,7 @@
         "Open data"
     ],
     "references": [
-        "\\[@BurnetteEtAl2016\\], \\[@Michener2015\\], \\[@Research\\_Data\\_Alliance2020\\], \\[@StanfordLibraries\\_n\\_d\\]"
+        "Burnette et al. (2016); Michener (2015); Research Data Alliance (2020); https://library.stanford.edu/research/data-management-services/data-management-plans\\#:\\~:text=A%20data%20management%20plan%20(DMP,share%20and%20preserve%20your%20data."
     ],
     "alt_related_terms": [
         null

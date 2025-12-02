@@ -7,7 +7,7 @@
         "Data sharing"
     ],
     "references": [
-        "\\[@AnonCkanND\\]"
+        "https://ckan.org/"
     ],
     "alt_related_terms": [
         null

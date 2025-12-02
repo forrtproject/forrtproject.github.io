@@ -10,7 +10,7 @@
         "Equity"
     ],
     "references": [
-        "\\[@EaglyRiger2014\\], \\[@Grzanka2020\\], \\[@Pownall20210\\]"
+        "Eagly and Riger (2014); Grzanka (2020); Pownall et al (2021)"
     ],
     "alt_related_terms": [
         null
