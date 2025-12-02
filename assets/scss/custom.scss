@@ -29,6 +29,7 @@
 // Widen article container for pages with tables to avoid horizontal scrolling
 // Note: :has() selector has 93%+ browser support as of 2025. Older browsers
 // will gracefully degrade to the original behavior with horizontal scrolling.
-.article-container:has(table) {
+// We widen all .article-container elements (including title) when the page has a table.
+article.article:has(table) .article-container {
   max-width: 960px;
 }
