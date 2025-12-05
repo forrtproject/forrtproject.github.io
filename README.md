@@ -32,7 +32,7 @@ Structurally, three pillars were proposed to carry social sciences towards acade
 
 We need expertise in website construction, fundraising, proofing, user experience design, transferring knowledge across platforms, experts in pedagogy/didactics in higher education, database maintenance (for cataloguing and classifying resources), documentation, technical writing and project management.
 
-We'd love your feedback along the way, and of course, we'd love you to take our educational survey aiming at a self-assessment exercise assessing the extent to which your teaching/mentoring abides by open and reproducible tenets (in development).
+We'd love your feedback along the way.
 Our primary goal is to support teachers and mentors trying to bridge the gap between modern and current norms in higher education. And hopefully, making this rather new OS revolution sustainable by promoting the adoption of Open and Reproducible tenets to the teaching and mentoring of prototypical subject matters in higher education.
 
 And while FORRT is aimed at concerned teachers and mentors, we're excited to plug another hole in the leaky pipeline by supporting the professional development of any and all of our contributors. If you're looking to learn to code, try out working collaboratively, get some experience writing grant applications or translate your skills to the digital domain, we're here to help.

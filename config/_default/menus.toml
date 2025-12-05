@@ -234,12 +234,6 @@
     parent = "nexus"
 
   [[main]]
-    name = "Self-Assessment"
-    url = "/self-assessment"
-    weight = 46
-    parent = "nexus"
-
-  [[main]]
     name = "Social Justice Initiatives"
     url = "/dei"
     weight = 47
