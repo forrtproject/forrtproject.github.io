@@ -22,20 +22,13 @@ type: welcome
 
 {{< welcome 
     step="3"
-    title="Take the Self-Assessment"
-    description="Evaluate your current teaching practices and identify areas where you can integrate open science principles."
-    url="/self-assessment"
->}}
-
-{{< welcome 
-    step="4"
     title="Browse Resources"
     description="Explore our curated collection of over 1,400 resources to find materials relevant to your teaching needs."
     url="/curated_resources"
 >}}
 
 {{< welcome 
-    step="5"
+    step="4"
     title="Join the Community"
     description="Connect with other educators, share your experiences, and contribute to the growing FORRT community."
     url="/about/get-involved"
@@ -45,10 +38,10 @@ type: welcome
 
 {{< welcome 
     title="Explore Our Teams"
-    description="Explore projects, Slack channels and teams and join any of your preferences. Here is a list of all our current projects: Ambassador Program, Cohesion, Database, Ethics, Glossary, Lesson Plans, Literature Landscape, Neurodiversity, Outreach, Pedagogies, Reversals, Self-Assessments, Summaries, and Website teams."
+    description="Explore projects, Slack channels and teams and join any of your preferences. Here is a list of all our current projects: Ambassador Program, Cohesion, Database, Ethics, Glossary, Lesson Plans, Literature Landscape, Neurodiversity, Outreach, Pedagogies, Reversals, Summaries, and Website teams."
     url="/about/teams"
     icon="fas fa-users"
-    count="15 teams"
+    count="14 teams"
 >}}
 
 {{< social-media >}}

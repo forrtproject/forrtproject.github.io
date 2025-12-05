@@ -75,10 +75,6 @@ classtitle = "text-center"
 
 A great first step is to reflect on your current teaching and mentoring practices, and the extent to which they communicate the basic tenets of open and reproducible science.
 
-#### <FONT COLOR="#A9A9A9">How?</FONT>
-
-*   To help you in this process, FORRT has developed a [***self-assessment survey***](/self-assessment) that provides tailored feedback and resources for educators and mentors.
-
 <br>
 
 ### 2. Add literature or assignments to your syllabus that teach open science concepts

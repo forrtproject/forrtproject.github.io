@@ -424,7 +424,7 @@ The **<font style="color:#0e2a38">submission</font>** can [be found here](Azeved
 
 We have written to UKRN (UK's Reproducibility Network) and the British Psychological Society (BPS) a short note on our organization and goals, as well as providing 3 (three) recommendations:
 
-1) We ask that degree accrediting societies and higher education institutions endorse FORRT as a valuable tool for educators. Both as an educational self-assessment of current teaching content, and as a resource for successful implemented pedagogies.
+1) We ask that degree accrediting societies and higher education institutions endorse FORRT as a valuable tool for educators, providing resources for successfully implemented pedagogies.
 2) We ask that degree accrediting societies and higher education institutions support and promote the opening of teaching materials, to support educators to integrate principles of open and reproducible research in their own teaching and mentoring materials.
 3) We ask that representatives from degree accrediting societies and higher education institutions meet with FORRT to discuss partnerships and shared educational aspirations with FORRT. 
 
