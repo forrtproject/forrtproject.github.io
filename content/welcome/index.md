@@ -41,7 +41,7 @@ type: welcome
     description="Explore projects, Slack channels and teams and join any of your preferences. Here is a list of all our current projects: Ambassador Program, Cohesion, Database, Ethics, Glossary, Lesson Plans, Literature Landscape, Neurodiversity, Outreach, Pedagogies, Reversals, Summaries, and Website teams."
     url="/about/teams"
     icon="fas fa-users"
-    count="14 teams"
+    count="13 teams"
 >}}
 
 {{< social-media >}}
