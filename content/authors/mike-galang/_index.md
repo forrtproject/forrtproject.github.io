@@ -74,7 +74,7 @@ FORRT is designed by, and envisioned for, educators who wish to integrate typica
 
 FORRT supports this endeavor through a three-pronged approach:
 
-1. Providing to educators a comprehensive, straightforward, and accessible framework to qualify and quantify the degree of open and reproducible research practices in their teaching and mentoring. Through FORRT’s self-assessment tool, educators are supplied with a personalized pathway toward incremental integration of discipline content with open and reproducible science tenets.  
+1. Providing to educators a comprehensive, straightforward, and accessible framework to qualify and quantify the degree of open and reproducible research practices in their teaching and mentoring.  
    <i class="fas fa-arrow-alt-circle-right text-danger fa-1.5x"></i> [FORRT's clusters](/nexus/clusters)  
 
 2. Equipping scholars with high quality pedagogical tools on open and reproducible research practices. Instructors can then adapt successful and implemented pedagogies to help ease the transition and reduce the instructor’s burden.  
