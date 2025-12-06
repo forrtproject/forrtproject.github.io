@@ -77,6 +77,10 @@
   background-color: $sta-home-section-even;
 }
 
+.home-section.wg-people {
+  padding: 40px 0 40px 0;
+}
+
 .dark .home-section {
   background-color: $sta-dark-home-section-odd;
 }
@@ -91,6 +95,9 @@
   }
   .home-section:first-of-type {
     padding-top: 40px;
+  }
+  .home-section.wg-people {
+    padding: 30px 0 30px 0;
   }
 }
 

@@ -1,0 +1,33 @@
+---
+# Display name
+name: "Cass Gheoghe"
+
+# Username (this should match the folder name)
+authors:
+- Name "Cass Gheoghe"
+
+# Is this the primary user of the site?
+superuser: false
+
+# Role/position
+role: "FORRT Steward"
+
+# Team/Subsection (for steering committee subsection grouping)
+team: "FORRT Steward"
+
+# Organizations/Affiliations
+organizations: []
+
+# Short bio (displayed in user profile at end of posts)
+bio: ""
+
+# Organizational groups that you belong to (for People widget)
+user_groups:
+- "FORRT Stewards"
+
+# Social/Academic Networking
+social:
+# No social links
+---
+
+Coming soon.

@@ -1,0 +1,276 @@
+<!-- DearFlip Flipbook using dearflip-js-flipbook library -->
+<style>
+/* DearFlip icon overrides: map ti-* classes to DearFlip glyphs */
+
+/* Use DearFlip font for both ti-* and df-icon-* pseudo elements */
+.df-ui-btn[class^="ti-"]:before,
+.df-ui-btn[class*=" ti-"]:before,
+[class^="df-icon-"]:before,
+[class*=" df-icon-"]:before {
+  font-family: dearflip !important;
+  font-style: normal !important;
+  font-weight: 400 !important;
+  line-height: 1 !important;
+  -webkit-font-smoothing: antialiased !important;
+  -moz-osx-font-smoothing: grayscale !important;
+  display: inline-block !important;
+}
+
+/* Force ti-* icons to use Themify font (content comes from themify-icons.css) */
+._df_book .df-ui-btn[class^="ti-"]::before,
+._df_book .df-ui-btn[class*=" ti-"]::before,
+._df_book .df-share-button[class^="ti-"]::before,
+._df_book .df-share-button[class*=" ti-"]::before {
+  font-family: 'themify' !important;
+  font-style: normal !important;
+  font-weight: normal !important;
+  line-height: 1 !important;
+  -webkit-font-smoothing: antialiased !important;
+  -moz-osx-font-smoothing: grayscale !important;
+  display: inline-block !important;
+}
+
+/* Minimal icon color states after remap */
+
+._df_book .df-ui-btn:before {
+  color: #555 !important;
+  transition: color .2s ease;
+}
+
+._df_book .df-ui-btn:hover:not(.disabled):before,
+._df_book .df-ui-btn.df-active:before {
+  color: #0072B2 !important; /* accessible blue */
+}
+
+._df_book .df-ui-btn.disabled:before {
+  color: #bbb !important;
+}
+
+/* Side navigation (overlay) keep white */
+._df_book .df-ui-nav .df-ui-btn:before {
+  color: #fff !important;
+  filter: drop-shadow(0 0 3px rgba(0,0,0,.8));
+}
+
+/* Subtle hover background */
+._df_book .df-ui-btn:hover:not(.disabled) { background: #f0f0f0 !important; }
+._df_book .df-ui-btn.df-active { background: #e7e7e7 !important; }
+
+/* Fallback icons using Unicode (works even if webfonts fail) */
+._df_book .df-ui-btn::before {
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif !important;
+  font-size: 18px !important;
+  line-height: 1 !important;
+}
+
+/* Prev/Next */
+._df_book .df-ui-btn.ti-angle-left::before,
+._df_book .df-ui-btn.df-icon-arrow-left::before { content: "‹" !important; }
+._df_book .df-ui-btn.ti-angle-right::before,
+._df_book .df-ui-btn.df-icon-arrow-right::before { content: "›" !important; }
+
+/* First/Last page */
+._df_book .df-ui-btn.ti-angle-double-left::before,
+._df_book .df-ui-btn.df-icon-first-page::before { content: "≪" !important; }
+._df_book .df-ui-btn.ti-angle-double-right::before,
+._df_book .df-ui-btn.df-icon-last-page::before { content: "≫" !important; }
+
+/* Menu, Thumbnails (grid), More */
+._df_book .df-ui-btn.ti-menu-alt::before,
+._df_book .df-ui-btn.ti-menu::before,
+._df_book .df-ui-btn.df-icon-menu::before { content: "≡" !important; }
+._df_book .df-ui-btn.ti-layout-grid2::before,
+._df_book .df-ui-btn.df-icon-grid-view::before { content: "▦" !important; }
+._df_book .df-ui-btn.ti-more-alt::before,
+._df_book .df-ui-btn.df-icon-more::before { content: "⋯" !important; }
+
+/* Zoom */
+._df_book .df-ui-btn.ti-zoom-in::before,
+._df_book .df-ui-btn.df-icon-zoom-in::before { content: "+" !important; }
+._df_book .df-ui-btn.ti-zoom-out::before,
+._df_book .df-ui-btn.df-icon-zoom-out::before { content: "−" !important; }
+
+/* Fullscreen */
+._df_book .df-ui-btn.ti-fullscreen::before,
+._df_book .df-ui-btn.df-icon-fullscreen::before { content: "⤢" !important; }
+
+/* Share / Download / File / Print / Mail / Search / Volume */
+._df_book .df-ui-btn.ti-sharethis::before,
+._df_book .df-ui-btn.ti-share::before,
+._df_book .df-ui-btn.df-icon-share::before { content: "⇪" !important; }
+._df_book .df-ui-btn.ti-download::before,
+._df_book .df-ui-btn.df-icon-download::before { content: "⤓" !important; }
+._df_book .df-ui-btn.ti-file::before,
+._df_book .df-ui-btn.df-icon-file::before { content: "📄" !important; }
+._df_book .df-ui-btn.ti-printer::before,
+._df_book .df-ui-btn.df-icon-print::before { content: "🖨" !important; }
+._df_book .df-ui-btn.ti-email::before,
+._df_book .df-ui-btn.df-icon-mail::before { content: "✉" !important; }
+._df_book .df-ui-btn.ti-search::before,
+._df_book .df-ui-btn.df-icon-search::before { content: "🔍" !important; }
+._df_book .df-ui-btn.ti-volume::before,
+._df_book .df-ui-btn.ti-sound::before,
+._df_book .df-ui-btn.df-icon-volume::before { content: "🔊" !important; }
+
+/* Close */
+._df_book .df-ui-btn.ti-close::before,
+._df_book .df-ui-btn.df-icon-close::before { content: "×" !important; }
+
+/* Colors: default / hover-active / disabled */
+._df_book .df-ui-btn::before { color: #555 !important; }
+._df_book .df-ui-btn:hover:not(.disabled)::before,
+._df_book .df-ui-btn.df-active::before { color: #0072B2 !important; }
+._df_book .df-ui-btn.disabled::before { color: #bbb !important; }
+
+/* Side overlay nav arrows stay white for contrast */
+._df_book .df-ui-nav .df-ui-btn::before {
+  color: #fff !important;
+  filter: drop-shadow(0 0 3px rgba(0,0,0,.8));
+}
+
+/* Subtle hover/active backgrounds */
+._df_book .df-ui-btn:hover:not(.disabled) { background: #f0f0f0 !important; }
+._df_book .df-ui-btn.df-active { background: #e7e7e7 !important; }
+
+</style>
+<!-- Required CSS -->
+<link href="/lib/dflip/css/dflip.min.css" rel="stylesheet" type="text/css">
+<link href="/lib/dflip/css/custom.css" rel="stylesheet" type="text/css">
+<!-- themify-icons -->
+<link href="https://cdn.jsdelivr.net/npm/themify-icons@0.1.2/css/themify-icons.css" rel="stylesheet" type="text/css">
+
+{{ with .Get "id" }}
+<!-- Container for the flipbook -->
+<div class="_df_book" id="flipbook-{{ . }}"
+     source="{{ $.Get "pdf" | default "/files/FORRT_Booklet(A5).pdf" }}"
+     style="height: {{ $.Get "height" | default "80vh" }}; margin: 20px 0; min-height: 500px; max-height: 1200px;">
+</div>
+{{ else }}
+<!-- Container for the flipbook -->
+<div class="_df_book" id="flipbook-default"
+     source="{{ .Get "pdf" | default "/files/FORRT_Booklet(A5).pdf" }}"
+     style="height: {{ .Get "height" | default "80vh" }}; margin: 20px 0; min-height: 500px; max-height: 1200px;">
+</div>
+{{ end }}
+
+<!-- Initialize DearFlip once jQuery and DearFlip library are available -->
+<script>
+  if (typeof window !== 'undefined' && !window.pdfjsWorkerSrc) {
+    window.pdfjsWorkerSrc = '/lib/dflip/js/libs/pdf.worker.min.js';
+  }
+  (function() {
+    function initializeDFlip() {
+      var $ = window.jQuery;
+      if (!$) { setTimeout(initializeDFlip,100); return; }
+      if (!$.fn.dFlip) { setTimeout(initializeDFlip,100); return; }
+      try {
+        $('._df_book').dFlip();
+        remapFlipbookIcons(); // run after init
+        // Apply dynamic height after DearFlip initialization
+        setTimeout(function() {
+          updateBookletHeight();
+        }, 100);
+      } catch(e){ console.error('DearFlip init failed:', e); }
+    }
+    function loadDFlip() {
+      var s=document.createElement('script');
+      s.src='/lib/dflip/js/dflip.min.js';
+      s.onload=function(){
+        if (document.readyState==='loading')
+          document.addEventListener('DOMContentLoaded', initializeDFlip);
+        else initializeDFlip();
+      };
+      document.head.appendChild(s);
+    }
+    if (typeof jQuery==='undefined') {
+      var jq=document.createElement('script');
+      jq.src='/lib/dflip/js/libs/jquery.min.js';
+      jq.onload=loadDFlip;
+      document.head.appendChild(jq);
+    } else {
+      loadDFlip();
+    }
+  })();
+
+  /* Dynamic booklet sizing: adjust height based on viewport */
+  function updateBookletHeight() {
+    var books = document.querySelectorAll('._df_book');
+    books.forEach(function(book){
+      // Calculate optimal height: 80% of viewport height
+      // Ensuring minimum of 500px and maximum of 1200px
+      var viewportHeight = window.innerHeight || document.documentElement.clientHeight;
+      var targetHeight = Math.floor(viewportHeight * 0.8);
+      targetHeight = Math.max(500, Math.min(1200, targetHeight));
+      book.style.height = targetHeight + 'px';
+      // Also set inline style with !important to override any library styles
+      book.style.setProperty('height', targetHeight + 'px', 'important');
+    });
+  }
+
+  /* Remap ti-* classes to df-icon-* so glyphs display */
+  function remapFlipbookIcons() {
+    var map = {
+      'ti-angle-left':'df-icon-arrow-left',
+      'ti-angle-right':'df-icon-arrow-right',
+      'ti-angle-double-left':'df-icon-first-page',
+      'ti-angle-double-right':'df-icon-last-page',
+      'ti-menu-alt':'df-icon-menu',
+      'ti-menu':'df-icon-menu',
+      'ti-layout-grid2':'df-icon-grid-view',
+      'ti-zoom-in':'df-icon-zoom-in',
+      'ti-zoom-out':'df-icon-zoom-out',
+      'ti-fullscreen':'df-icon-fullscreen',
+      'ti-sharethis':'df-icon-share',
+      'ti-share':'df-icon-share',
+      'ti-more-alt':'df-icon-more',
+      'ti-file':'df-icon-file',
+      'ti-download':'df-icon-download',
+      'ti-volume':'df-icon-volume',
+      'ti-sound':'df-icon-volume',
+      'ti-search':'df-icon-search',
+      'ti-printer':'df-icon-print',
+      'ti-email':'df-icon-mail',
+      'ti-facebook':'df-icon-facebook',
+      'ti-twitter-alt':'df-icon-twitter',
+      'ti-twitter':'df-icon-twitter',
+      'ti-close':'df-icon-close'
+    };
+    var scope = document.querySelectorAll('._df_book .df-ui-btn, ._df_book .df-share-button');
+    scope.forEach(function(el){
+      Object.keys(map).forEach(function(ti){
+        if (el.classList.contains(ti)) {
+          el.classList.add(map[ti]);
+          el.classList.remove(ti); // remove ti-* to avoid empty pseudo elements
+        }
+      });
+    });
+  }
+
+  /* Observe future additions (e.g. full-screen mode) */
+  var books = document.querySelectorAll('._df_book');
+  books.forEach(function(book){
+    new MutationObserver(function(muts){
+      var need=false;
+      muts.forEach(function(m){
+        m.addedNodes && m.addedNodes.forEach(function(n){
+          if (n.nodeType===1 && n.className && /ti-/.test(n.className)) need=true;
+        });
+      });
+      if (need) remapFlipbookIcons();
+    }).observe(book,{childList:true,subtree:true});
+  });
+
+  /* Update on window resize with debouncing */
+  var resizeTimer;
+  window.addEventListener('resize', function() {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(function() {
+      updateBookletHeight();
+    }, 250);
+  });
+
+  /* Initial height update after page fully loads */
+  window.addEventListener('load', function() {
+    setTimeout(updateBookletHeight, 500);
+  });
+</script>
