@@ -50,26 +50,27 @@ type: "glossary"
 
 |  |  |
 |---|---|
-| Abdulsamad Yahya Humaidan | عبد الصمد يحيى حميدان |
-| Ahlam Ahmed Almehmadi | أحلام أحمد المحمادي |
-| Ahmed Hadi Hakami | أحمد هادي حكمي |
-| Alaa M. Saleh | آلاء مأمون صالح |
 | Ali H. Al-Hoorie | علي حسين الحوري |
 | Amani A. Aloufi | أماني عبدالرحمن العوفي |
 | Asma A. Alzahrani | أسماء علي الزهراني |
-| Asma Alzahran |  |
-| Awatif K. Alruwaili | عواطف كاتب الرويلي |
 | Hala M. Alghamdi | هلا الغامدي |
+| Ahlam Ahmed Almehmadi | أحلام أحمد المحمادي |
 | Hiba A. Alomary | هبة علي العُمري |
-| Mahdi R. Aben Ahmed | مهدي رضاء أبن أحمد |
-| Mai Salah El din Helmy | مي صلاح الدين حلمي |
-| Mohammed Ali Mohsen | محمد محسن |
-| Nabil Ali Sayed | نبيل علي سعيد |
-| Naif Ali Masrahi | نايف علي مسرحي |
-| Nazik Noaman A. Alnour | نازك نعمان أحمد النور |
-| Ruwayshid N. Alruwaili | رويشد نافع الرويلي |
-| Sarah S. Almutairi | ساره المطيري |
+| Alaa M. Saleh | آلاء مأمون صالح |
 | Zainab Abdullah Alsuhaibani | زينب عبدالله السحيباني |
+| Abdulsamad Yahya Humaidan | عبد الصمد يحيى حميدان |
+| Naif Ali Masrahi | نايف علي مسرحي |
+| Awatif K. Alruwaili | عواطف كاتب الرويلي |
+| Mahdi R. Aben Ahmed | مهدي رضاء أبن أحمد |
+| Ruwayshid N. Alruwaili | رويشد نافع الرويلي |
+| Hussain Mohammed Alzubaidi | حسين محمد الزبيدي |
+| Nazik Noaman A. Alnour | نازك نعمان أحمد النور |
+| Moustafa Mohammed Shalaby | مصطفي محمد شلبي |
+| Nabil Ali Sayed | نبيل علي سعيد |
+| Mai Salah El din Helmy | مي صلاح الدين حلمي |
+| Ahmed Hadi Hakami | أحمد هادي حكمي |
+| Sarah S. Almutairi | ساره المطيري |
+| Mohammed Ali Mohsen | محمد محسن |
 
 ### **المرحلة الثانية**
 
