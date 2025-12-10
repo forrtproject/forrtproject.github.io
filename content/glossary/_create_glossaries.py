@@ -21,46 +21,114 @@ def update_arabic_index(script_dir, entries):
     
     # Mapping from extracted names to (Full English Name, Arabic Name)
     TRANSLATOR_MAPPING = {
+        # 1. Ali H. Al-Hoorie
         "ali h. al-hoorie": ("Ali H. Al-Hoorie", "علي حسين الحوري"),
-        "amani aloufi": ("Amani A. Aloufi", "أماني عبدالرحمن العوفي"),
+        
+        # 2. Amani A. Aloufi
         "amani a. aloufi": ("Amani A. Aloufi", "أماني عبدالرحمن العوفي"),
-        "asma alzahrani": ("Asma A. Alzahrani", "أسماء علي الزهراني"),
+        "amani aloufi": ("Amani A. Aloufi", "أماني عبدالرحمن العوفي"),
+
+        # 3. Asma A. Alzahrani
         "asma a. alzahrani": ("Asma A. Alzahrani", "أسماء علي الزهراني"),
-        "hala alghamdi": ("Hala M. Alghamdi", "هلا الغامدي"),
+        "asma alzahrani": ("Asma A. Alzahrani", "أسماء علي الزهراني"),
+        "asma alzahran": ("Asma A. Alzahrani", "أسماء علي الزهراني"),
+
+        # 4. Hala M. Alghamdi
+        "hala a. alghamdi": ("Hala M. Alghamdi", "هلا الغامدي"),
         "hala m. alghamdi": ("Hala M. Alghamdi", "هلا الغامدي"),
-        "ahlam ahmed": ("Ahlam Ahmed Almehmadi", "أحلام أحمد المحمادي"),
+        "hala alghamdi": ("Hala M. Alghamdi", "هلا الغامدي"),
+
+        # 5. Ahlam Ahmed Almehmadi
         "ahlam ahmed almehmadi": ("Ahlam Ahmed Almehmadi", "أحلام أحمد المحمادي"),
-        "hiba alomary": ("Hiba A. Alomary", "هبة علي العُمري"),
+        "ahlam ahmed": ("Ahlam Ahmed Almehmadi", "أحلام أحمد المحمادي"),
+        
+        # 6. Hiba A. Alomary
         "hiba a. alomary": ("Hiba A. Alomary", "هبة علي العُمري"),
-        "zainab alsuhaibani": ("Zainab Abdullah Alsuhaibani", "زينب عبدالله السحيباني"),
-        "zainab abdullah alsuhaibani": ("Zainab Abdullah Alsuhaibani", "زينب عبدالله السحيباني"),
-        "abdulsamad humaidan": ("Abdulsamad Yahya Humaidan", "عبد الصمد يحيى حميدان"),
-        "abdulsamad yahya humaidan": ("Abdulsamad Yahya Humaidan", "عبد الصمد يحيى حميدان"),
-        "naif masrahi": ("Naif Ali Masrahi", "نايف علي مسرحي"),
-        "naif ali masrahi": ("Naif Ali Masrahi", "نايف علي مسرحي"),
-        "awatif alruwaili": ("Awatif K. Alruwaili", "عواطف كاتب الرويلي"),
-        "awatif k. alruwaili": ("Awatif K. Alruwaili", "عواطف كاتب الرويلي"),
-        "mahdi aben ahmed": ("Mahdi R. Aben Ahmed", "مهدي رضاء أبن أحمد"),
-        "mahdi r. aben ahmed": ("Mahdi R. Aben Ahmed", "مهدي رضاء أبن أحمد"),
-        "ruwayshid": ("Ruwayshid N. Alruwaili", "رويشد نافع الرويلي"),
-        "ruwayshid n. alruwaili": ("Ruwayshid N. Alruwaili", "رويشد نافع الرويلي"),
-        "hussain mohammed alzubaidi": ("Hussain Mohammed Alzubaidi", "حسين محمد الزبيدي"),
-        "nazik alnour": ("Nazik Noaman A. Alnour", "نازك نعمان أحمد النور"),
-        "nazik noaman a. alnour": ("Nazik Noaman A. Alnour", "نازك نعمان أحمد النور"),
-        "moustafa mohammed shalaby": ("Moustafa Mohammed Shalaby", "مصطفي محمد شلبي"),
-        "nabil sayed": ("Nabil Ali Sayed", "نبيل علي سعيد"),
-        "nabil ali sayed": ("Nabil Ali Sayed", "نبيل علي سعيد"),
-        "mai helmy": ("Mai Salah El din Helmy", "مي صلاح الدين حلمي"),
-        "mai salah el din helmy": ("Mai Salah El din Helmy", "مي صلاح الدين حلمي"),
-        "ahmed hakami": ("Ahmed Hadi Hakami", "أحمد هادي حكمي"),
-        "ahmed hadi hakami": ("Ahmed Hadi Hakami", "أحمد هادي حكمي"),
+        "hiba alomary": ("Hiba A. Alomary", "هبة علي العُمري"),
+
+        # 7. Alaa M. Saleh
         "alaa m. saleh": ("Alaa M. Saleh", "آلاء مأمون صالح"),
         "alaa saleh": ("Alaa M. Saleh", "آلاء مأمون صالح"),
-        "sarah almutairi": ("Sarah S. Almutairi", "ساره المطيري"),
+
+        # 8. Zainab Abdullah Alsuhaibani
+        "zainab abdullah alsuhaibani": ("Zainab Abdullah Alsuhaibani", "زينب عبدالله السحيباني"),
+        "zainab alsuhaibani": ("Zainab Abdullah Alsuhaibani", "زينب عبدالله السحيباني"),
+
+        # 9. Abdulsamad Yahya Humaidan
+        "abdulsamad yahya humaidan": ("Abdulsamad Yahya Humaidan", "عبد الصمد يحيى حميدان"),
+        "abdulsamad humaidan": ("Abdulsamad Yahya Humaidan", "عبد الصمد يحيى حميدان"),
+
+        # 10. Naif Ali Masrahi
+        "naif ali masrahi": ("Naif Ali Masrahi", "نايف علي مسرحي"),
+        "naif masrahi": ("Naif Ali Masrahi", "نايف علي مسرحي"),
+
+        # 11. Awatif K. Alruwaili
+        "awatif k. alruwaili": ("Awatif K. Alruwaili", "عواطف كاتب الرويلي"),
+        "awatif alruwaili": ("Awatif K. Alruwaili", "عواطف كاتب الرويلي"),
+
+        # 12. Mahdi R. Aben Ahmed
+        "mahdi r. aben ahmed": ("Mahdi R. Aben Ahmed", "مهدي رضاء أبن أحمد"),
+        "mahdi aben ahmed": ("Mahdi R. Aben Ahmed", "مهدي رضاء أبن أحمد"),
+
+        # 13. Ruwayshid N. Alruwaili
+        "ruwayshid n. alruwaili": ("Ruwayshid N. Alruwaili", "رويشد نافع الرويلي"),
+        "ruwayshid": ("Ruwayshid N. Alruwaili", "رويشد نافع الرويلي"),
+
+        # 14. Hussain Mohammed Alzubaidi
+        "hussain mohammed alzubaidi": ("Hussain Mohammed Alzubaidi", "حسين محمد الزبيدي"),
+
+        # 15. Nazik Noaman A. Alnour
+        "nazik noaman a. alnour": ("Nazik Noaman A. Alnour", "نازك نعمان أحمد النور"),
+        "nazik alnour": ("Nazik Noaman A. Alnour", "نازك نعمان أحمد النور"),
+
+        # 16. Moustafa Mohammed Shalaby
+        "moustafa mohammed shalaby": ("Moustafa Mohammed Shalaby", "مصطفي محمد شلبي"),
+
+        # 17. Nabil Ali Sayed
+        "nabil ali sayed": ("Nabil Ali Sayed", "نبيل علي سعيد"),
+        "nabil sayed": ("Nabil Ali Sayed", "نبيل علي سعيد"),
+
+        # 18. Mai Salah El din Helmy
+        "mai salah el din helmy": ("Mai Salah El din Helmy", "مي صلاح الدين حلمي"),
+        "mai helmy": ("Mai Salah El din Helmy", "مي صلاح الدين حلمي"),
+
+        # 19. Ahmed Hadi Hakami
+        "ahmed hadi hakami": ("Ahmed Hadi Hakami", "أحمد هادي حكمي"),
+        "ahmed hakami": ("Ahmed Hadi Hakami", "أحمد هادي حكمي"),
+
+        # 20. Sarah S. Almutairi
         "sarah s. almutairi": ("Sarah S. Almutairi", "ساره المطيري"),
-        "mohammed mohsen": ("Mohammed Ali Mohsen", "محمد محسن"),
-        "mohammed ali mohsen": ("Mohammed Ali Mohsen", "محمد محسن")
+        "sarah almutairi": ("Sarah S. Almutairi", "ساره المطيري"),
+
+        # 21. Mohammed Ali Mohsen
+        "mohammed ali mohsen": ("Mohammed Ali Mohsen", "محمد محسن"),
+        "mohammed mohsen": ("Mohammed Ali Mohsen", "محمد محسن")
     }
+    
+    # Desired order based on contribution
+    CONTRIBUTOR_ORDER = [
+        "Ali H. Al-Hoorie",
+        "Amani A. Aloufi",
+        "Asma A. Alzahrani",
+        "Hala M. Alghamdi",
+        "Ahlam Ahmed Almehmadi",
+        "Hiba A. Alomary",
+        "Alaa M. Saleh",
+        "Zainab Abdullah Alsuhaibani",
+        "Abdulsamad Yahya Humaidan",
+        "Naif Ali Masrahi",
+        "Awatif K. Alruwaili",
+        "Mahdi R. Aben Ahmed",
+        "Ruwayshid N. Alruwaili",
+        "Hussain Mohammed Alzubaidi",
+        "Nazik Noaman A. Alnour",
+        "Moustafa Mohammed Shalaby",
+        "Nabil Ali Sayed",
+        "Mai Salah El din Helmy",
+        "Ahmed Hadi Hakami",
+        "Sarah S. Almutairi",
+        "Mohammed Ali Mohsen"
+    ]
 
     def normalize_arabic_text(text):
         # Remove diacritics
@@ -100,10 +168,29 @@ def update_arabic_index(script_dir, entries):
                 if name:
                     names.add(name)
 
-    # Match with mapping
+    # Match with mapping and ensure all contributors in order are included
     final_rows = []
     seen_full_names = set()
     
+    # First, process names based on the contribution order
+    for full_eng in CONTRIBUTOR_ORDER:
+        # Find the arabic name from the mapping
+        # We need to reverse lookup or find the key that corresponds to this value
+        arabic_name = ""
+        found = False
+        for key, val in TRANSLATOR_MAPPING.items():
+            if val[0] == full_eng:
+                arabic_name = val[1]
+                found = True
+                break
+        
+        if found:
+            final_rows.append((full_eng, arabic_name))
+            seen_full_names.add(full_eng)
+        else:
+             print(f"Warning: {full_eng} not found in TRANSLATOR_MAPPING")
+
+    # Then check if there are any extracted names that were NOT in the contributor order (optional, but good for completeness)
     for name in names:
         key = name.lower()
         if key in TRANSLATOR_MAPPING:
@@ -112,13 +199,20 @@ def update_arabic_index(script_dir, entries):
                 final_rows.append((full_eng, arabic))
                 seen_full_names.add(full_eng)
         else:
-            # Fallback
-            if name not in seen_full_names:
+            # Fallback for completely unknown names
+           if name not in seen_full_names and name not in [r[0] for r in final_rows]:
+                # It might be an unmapped name
                 final_rows.append((name, ""))
                 seen_full_names.add(name)
-                
-    # Sort by English name
-    final_rows.sort(key=lambda x: x[0])
+
+    # Sort logic is now implicit for the main list, but we should ensure valid sort if we added extras
+    def sort_key(row):
+        name = row[0]
+        if name in CONTRIBUTOR_ORDER:
+            return CONTRIBUTOR_ORDER.index(name)
+        return len(CONTRIBUTOR_ORDER) + 1 # Put unknown at the end
+
+    final_rows.sort(key=sort_key)
     
     # Generate Table
     table_md = "**Arabic Glossary Translation Team**\n\n"
