@@ -67,6 +67,28 @@ subtitle = ""
 }
 </style>
 
+<script src="/js/js-confetti.browser.js"></script>
+<script>
+  window.addEventListener("load", () => {
+    const jsConfetti = new JSConfetti();
+    
+    // Function to trigger confetti
+    const triggerConfetti = () => {
+        jsConfetti.addConfetti({
+        emojis: ['🎉', '🥳', '👏', '✨', '⭐','🏆'],
+        emojiSize: 40,
+        confettiNumber: 150,
+      });
+    };
+
+    // Trigger immediately on load
+    triggerConfetti();
+
+    // Trigger every 60 seconds (60000 ms)
+    setInterval(triggerConfetti, 60000);
+  });
+</script>
+
 ------------
 
 <center>
