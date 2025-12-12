@@ -4,7 +4,7 @@
 title: "Being a Minoritized Early Career Researcher in Political Psychology"
 summary: "For the ISPP ECC virtual event titled “Minoritized Early Career Researchers’ Perspectives and Experiences in Political Psychology,” one moderator and three panellists—all Early Career Researchers (ECRs) with intersectional minoritized identities—came together to discuss their experiences in academia, the barriers they face, and future projections to make political psychology a more inclusive field. This blog post summarises the discussion from the event held on May 8, 2024."
 authors: ['Mete Sefa Uysal','Flavio Azevedo','Jamie Chan','Sa-kiera Hudson','Aritra Mukherjee','FORRT']
-tags: ['Political Psychology',' Early Career Researchers',' Minorities',' Intersectionality ','Academia']
+tags: []
 categories: []
 date: 2024-06-10T00:48:51-04:00 
 lastmod: 2024-06-10T00:48:51-04:00
