@@ -79,6 +79,19 @@ Thanks to our amazing community, FORRT has become an ***award-winning*** grassro
 
 ## **Awards**
 
+---
+
+### FORWARD: A UNESCO Decade of Science Programme
+<img src="unesco_recognition.webp" width="200" align="left" style="margin-right: 10px;" alt="FORWARD: A UNESCO Decade of Science Programme"> 
+
+**FORRT** is one of the few initiatives worldwide to be formally endorsed as a **Programme** of the [International Decade of Sciences for Sustainable Development (IDSSD, 2024–2033)](https://www.un-sciences-decade.org/en) , led by UNESCO and the United Nations (UN). This endorsement reflects the highest level of UN policy recognition and positions FORRT’s work in Education & Pedagogy (Curriculum Hub), Metascience & Research (Replication Hub) and Social Justice & DEIA as an **essential contribution to the UN’s strategy for achieving the Sustainable Development Goals (SDGs)**.
+
+<a href="../educators-corner/023-forward-a-unesco-decade-of-science-programme/" class="btn btn-primary" style="font-size:0.7rem;">
+  Click here for more details
+</a>
+
+---
+
 <br>
 
 <img src="ukrn.webp" align="right" /> In 2023, FORRT was awarded the ***[Dorothy Bishop Prize](https://www.ukrn.org/2023/03/21/db-prize-winners-mar2023/)*** from the UK Reproducibility Network, for its work towards integrating open science principles into higher education and advancing research transparency, reproducibility, rigor, and ethics through pedagogical reform.
