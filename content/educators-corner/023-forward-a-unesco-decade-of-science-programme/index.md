@@ -32,4 +32,4 @@ One of the few programmes of the IDSSD to focus on how research is done, FORWARD
 
 The FORRT community is already hard at work producing tools, guidelines, recommendations and materials to democratize science. We invite aligned organizations and strategic national and international partners to join us and invest in FORRT's mission, thereby directly supporting their national commitments to the UN Science Decade through our validated global roadmap.
 
-![FORWARD](./unesco_recognition_h.webp)
+![FORWARD](unesco_recognition.webp)
