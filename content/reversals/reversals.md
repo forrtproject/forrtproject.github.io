@@ -80,17 +80,19 @@ and four of [FORRT’s Mission](https://forrt.org/about/mission/):
 
 ## **Current Status**
 
-This is a dynamic project that is organized in five stages. Currently, we are in stage 3: 
+**This project has now concluded** and has been succeeded by multiple projects within the [FORRT Replication Hub](https://forrt.org/replication-hub/). The outcomes and framework of this initiative are discussed in our recent preprint: [Tracking and Mainstreaming Replications in the Social, Cognitive, and Behavioral Sciences](https://osf.io/preprints/metaarxiv/ad2w6_v1).
+
+The original project was organized in five stages: 
 
 1. **~~Proof of Concept Phase (adaptation of original project into FORRT, inclusion of effects from social and cognitive psychology, using Gavin Leech’s collection as a basis) → ~150 entries finished in 2021.~~**
 
 1. ~~**Team Science Expansion Phase Across Disciplines** (crowd-sourcing entries and refine existing entries), started at the end of 2021. Drafting of first ‘output’ piece. Currently including a total of 600+ effects spanning 22 disciplines.~~
 
-1. **Database'ification and merging**, converting the spreadsheet and all effects into a meta-analytic database and merging it with existing replication databases. Planned until beginning of 2024.
+1. ~~**Database'ification and merging**, converting the spreadsheet and all effects into a meta-analytic database and merging it with existing replication databases.~~
 
-1. **Review Phase** (open review to identify inconsistencies, missing data, and errors), planned for 2024. Publishing of first ‘output’ piece.
+1. ~~**Review Phase** (open review to identify inconsistencies, missing data, and errors). Publishing of output piece.~~
 
-1. Regular **Update Phases** (dynamically adding new effects), planned for 2025 and beyond.
+1. ~~**Update Phases** (dynamically adding new effects). Now continued through the Replication Hub projects.~~
 
 {{% alert example %}}
 
@@ -114,9 +116,7 @@ This is a dynamic project that is organized in five stages. Currently, we are in
 
 ## **How to contribute?**
 
-<!-- Anyone can add new effects or edit existing effects [by joining our initiative on Slack](https://join.slack.com/t/forrt/shared_invite/enQtODMwODI0OTk4ODgzLTM0ZTQ3NDk5MzA1ZjBmNWJjYTVlN2Y2YTk0ZTJhYTY5NDliMDYzMjg2MWE0ZDRhOTY0ZDY3OTRlNDA4ODQ3NjQ) and then [following the instructions in our reversals g-doc](https://docs.google.com/document/d/1kFHayPpdX8RwDSdFPjaz7pxwxTiomIdCozO3hUCSHvM/edit).-->
-
-Currently the project is closed for submissions, as we database'ify and merge our resource with other replication databases. In the meantime, please contribute new entries to the [FORRT Replication Database (FReD)](https://www.soscisurvey.de/replicate/) and contact Lukas Röseler at lukas.roeseler@uni-muenster.de for any questions.
+This specific reversals project has concluded, and its work has been integrated into the broader [FORRT Replication Hub](https://forrt.org/replication-hub/). To contribute replication data, please submit new entries to the [FORRT Replication Database (FReD)](https://www.soscisurvey.de/replicate/) or contact Lukas Röseler at lukas.roeseler@uni-muenster.de for any questions.
 
 All **past or current project contributors** are listed at the [bottom of this page](#contributors).
 
