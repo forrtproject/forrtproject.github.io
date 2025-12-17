@@ -32,6 +32,13 @@ Strack
 Shepard
 NWO
 nwo
+Soler
+Yau
+Carmel
+Loder
+Udo
+Ned
+Ans
 
 # Technical terms
 hugo
@@ -56,9 +63,22 @@ theses
 re-use
 re-used
 alpha-numeric
+Homogenous
+ABl
+wont
+ublication
+commend
+ons
 
 # Legal/formal terms
 recuse
 recusal
+
+# Additional project-specific terms
+Didactical
+AREN's
+ND
+Zenodo
+OT
 
 # Hyphenated words that are acceptable
