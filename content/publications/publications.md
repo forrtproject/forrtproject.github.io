@@ -263,6 +263,22 @@ The **<font style="color:#0e2a38">postprint</font>** can [be found here (osf.io/
 
 <br>
 
+
+## **Open Science in the Developing World: A Collection of Practical Guides for Researchers in Developing Countries**
+
+---
+
+Over the past decade, the open-science movement has transformed the research landscape, although its impact has largely been confined to developed countries. Recently, researchers from developing countries have called for a redesign of open science to better align with their unique contexts. However, raising awareness alone is insufficient—practical actions are required to drive meaningful and inclusive change. In this work, we analyze the opportunities offered by the open-science movement and explore the macro- and micro-level barriers researchers in developing countries face when engaging with these practices. Drawing on these insights and aiming to inspire researchers in developing regions or other resource-constrained contexts to embrace open-science practices, we offer a four-level guide for gradual engagement: (a) foundation, using open resources to build a solid foundation for rigorous research; (b) growth, adopting low-cost, easily implementable practices; (c) community, contributing to open-science communities through actionable steps; and (d) leadership, taking on leadership roles or forming local communities to foster cultural change. We further discuss potential pitfalls of the current open-science practices and call for readaptation of these practices in developing countries’ settings. We conclude by outlining concrete recommendations for future action.
+
+ 
+<div class='altmetric-embed' data-badge-type='medium-donut' data-doi="https://doi.org/10.1177/25152459251357565"></div>
+
+> Hu, C.-P., Xu, Z., Lazić, A., Bhattacharya, P., Seda, L., Hossain, S., Jeftić, A., Özdoğru, A. A., Amaral, O. B., Miljković, N., Ilchovska, Z. G., Lazarevic, L. B., Wu, H., Bao, S., Ghodke, N., Moreau, D., Elsherif, M., C., C., Ghai, S., ... Azevedo, F. (2025). **Open Science in the Developing World: A Collection of Practical Guides for Researchers in Developing Countries.** *Advances in Methods and Practices in Psychological Science*, *8*(3), 25152459251357565. [https://doi.org/10.1177/25152459251357565](https://doi.org/10.1177/25152459251357565) 
+
+---
+
+<br>
+
 <div align="center">
   <h1> Preprints </h1>
   <hr>
