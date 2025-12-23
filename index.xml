@@ -6909,8 +6909,111 @@
 &lt;/ul>
 &lt;br>
 &lt;hr>
-&lt;br></description></item><item><title>FORWARD: A UNESCO Decade of Science Programme</title><link>https://forrt.org/educators-corner/023-forward-a-unesco-decade-of-science-programme/</link><pubDate>Thu, 11 Dec 2025 15:30:39 -0300</pubDate><guid>https://forrt.org/educators-corner/023-forward-a-unesco-decade-of-science-programme/</guid><description>&lt;p>&lt;img alt="UNESCO Recognition" src="./unesco_recognition.webp">
-In a landmark moment for global scientific equity, &lt;strong>FORRT&lt;/strong> is one of the few initiatives worldwide to be formally endorsed as a &lt;strong>Programme&lt;/strong> of the
+&lt;br></description></item><item><title>FORWARD: A UNESCO Decade of Science Programme</title><link>https://forrt.org/educators-corner/023-forward-a-unesco-decade-of-science-programme/</link><pubDate>Thu, 11 Dec 2025 15:30:39 -0300</pubDate><guid>https://forrt.org/educators-corner/023-forward-a-unesco-decade-of-science-programme/</guid><description>&lt;p>&lt;img alt="UNESCO Recognition" src="./unesco_recognition.webp">&lt;/p>
+&lt;div class="forward-card-container">
+&lt;div class="forward-sdg-card">
+&lt;div class="forward-header">
+&lt;h3>FORWARD (FORRT for World Development)&lt;/h3>
+&lt;p>Sustainable Development Goals Addressed&lt;/p>
+&lt;/div>
+&lt;div class="sdg-icons-wrapper">
+&lt;a href="https://sdgs.un.org/goals/goal4" target="_blank" rel="noopener noreferrer">
+&lt;img src="https://forrt.org/img/forward_unesco_sdgs/4.webp" alt="SDG 4: Quality Education"
+title="SDG 4: Quality Education">
+&lt;/a>
+&lt;a href="https://sdgs.un.org/goals/goal5" target="_blank" rel="noopener noreferrer">
+&lt;img src="https://forrt.org/img/forward_unesco_sdgs/5.webp" alt="SDG 5: Gender Equality" title="SDG 5: Gender Equality">
+&lt;/a>
+&lt;a href="https://sdgs.un.org/goals/goal10" target="_blank" rel="noopener noreferrer">
+&lt;img src="https://forrt.org/img/forward_unesco_sdgs/10.webp" alt="SDG 10: Reduced Inequalities"
+title="SDG 10: Reduced Inequalities">
+&lt;/a>
+&lt;a href="https://sdgs.un.org/goals/goal16" target="_blank" rel="noopener noreferrer">
+&lt;img src="https://forrt.org/img/forward_unesco_sdgs/16.webp" alt="SDG 16: Peace, Justice and Strong Institutions"
+title="SDG 16: Peace, Justice and Strong Institutions">
+&lt;/a>
+&lt;a href="https://sdgs.un.org/goals/goal17" target="_blank" rel="noopener noreferrer">
+&lt;img src="https://forrt.org/img/forward_unesco_sdgs/17.webp" alt="SDG 17: Partnerships for the Goals"
+title="SDG 17: Partnerships for the Goals">
+&lt;/a>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;style>
+.forward-card-container {
+width: 100%;
+padding: 1rem 0;
+box-sizing: border-box;
+}
+.forward-sdg-card {
+border: 1px solid #e5e7eb;
+border-radius: 12px;
+padding: 1.5rem;
+background: linear-gradient(to bottom right, #ffffff, #f8f9fa);
+box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+margin: 0 auto;
+max-width: 900px;
+text-align: center;
+font-family: system-ui, -apple-system, sans-serif;
+transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.forward-sdg-card:hover {
+box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+.forward-header h3 {
+margin-top: 0;
+margin-bottom: 0.5rem;
+color: #1a1a1a;
+font-size: 1.25rem;
+font-weight: 700;
+}
+.forward-header p {
+color: #4b5563;
+margin-top: 0;
+margin-bottom: 1.5rem;
+font-size: 0.95rem;
+line-height: 1.4;
+}
+.sdg-icons-wrapper {
+display: flex;
+justify-content: center;
+align-items: center;
+flex-wrap: wrap;
+gap: 1.5rem;
+}
+.sdg-icons-wrapper a {
+display: block;
+text-decoration: none;
+border-bottom: none !important;
+}
+.sdg-icons-wrapper img {
+width: 80px;
+height: 80px;
+border-radius: 8px;
+transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+background-color: white;
+margin: 0 !important;
+}
+.sdg-icons-wrapper a:hover img {
+transform: scale(1.15) translateY(-5px);
+box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+z-index: 10;
+}
+@media (max-width: 640px) {
+.forward-sdg-card {
+padding: 1rem;
+}
+.sdg-icons-wrapper {
+gap: 0.75rem;
+}
+.sdg-icons-wrapper img {
+width: 60px;
+height: 60px;
+}
+}
+&lt;/style>
+&lt;p>In a landmark moment for global scientific equity, &lt;strong>FORRT&lt;/strong> is one of the few initiatives worldwide to be formally endorsed as a &lt;strong>Programme&lt;/strong> of the
 &lt;a href="https://www.un-sciences-decade.org/en/endorsed-activities/forward-forrt-world-development-fostering-open-research-reproducibility-worldwide-accessible?hub=63" target="_blank" rel="noopener">International Decade of Sciences for Sustainable Development (IDSSD, 2024–2033)&lt;/a>, led by UNESCO and the United Nations (UN). This endorsement reflects the highest level of UN policy recognition and positions FORRT’s work in Education &amp;amp; Pedagogy (Curriculum Hub), Metascience &amp;amp; Research (Replication Hub) and Social Justice &amp;amp; DEIA as an &lt;strong>essential contribution to the UN’s strategy for achieving the Sustainable Development Goals (SDGs)&lt;/strong>. Specifically, FORRT for World Development (FORWARD), is recognized as critical infrastructure for advancing &lt;strong>Outcome 4 (widely and equitably practiced open science) and Outcome 1 (a globally science-literate society)&lt;/strong> of the IDSSD. Through this work, FORRT facilitates the international research community to meet its core commitments to rigor, transparency, and global equity while delivering a roadmap for democratizing science worldwide.&lt;/p>
 &lt;p>One of the few programmes of the IDSSD to focus on how research is done, FORWARD provides a concrete, multi-year, and community-driven framework for delivering on the mandate of the UNESCO Science Decade while feeding into the work of the other Programmes and beyond. As an endorsed Programme, we are committed to &lt;strong>accountability and open knowledge sharing&lt;/strong>, ensuring that all outputs are openly accessible and utilized by the global community. The resources developed over the next 8 years will serve as &lt;strong>policy tools for the Decade&amp;rsquo;s Secretariat&lt;/strong> and other high-level stakeholders to monitor and track progress on equity and quality in science. We are directly contributing to realizing the Decade&amp;rsquo;s vision of an inclusive and effective global science culture by 2033, with the ability to contribute policy recommendations to the World Science Forum, the UN Science Summit, the Global Research Council, the European Commission, and more.&lt;/p>
 &lt;p>The FORRT community is already hard at work producing tools, guidelines, recommendations and materials to democratize science. We invite aligned organizations and strategic national and international partners to join us and invest in FORRT&amp;rsquo;s mission, thereby directly supporting their national commitments to the UN Science Decade through our validated global roadmap.&lt;/p>
