@@ -256,8 +256,36 @@ Despite the growing awareness of the benefits of training reproducible methods w
 
 The **<font style="color:#0e2a38">postprint</font>** can [be found here (osf.io/fgv79)](https://doi.org/10.31234/osf.io/fgv79). 
 
-<div class='altmetric-embed' data-badge-type='medium-donut' data-doi="https://doi.org/10.1037/stl0000307"></div>
-<div class='altmetric-embed' data-badge-type='medium-donut' data-doi="https://doi.org/10.31234/osf.io/fgv79"></div>
+<div class='altmetric-embed' data-badge-type='medium-donut' data-doi="https://doi.org/10.1037/stl0000307"></div><div class='altmetric-embed' data-badge-type='medium-donut' data-doi="https://doi.org/10.31234/osf.io/fgv79"></div>
+
+---
+
+## **Bridging Neurodiversity and Open Scholarship: How Shared Values Can Guide Best Practices for Research Integrity, Social Justice, and Principled Education**
+
+---
+
+Not all people conform to socially constructed norms, nor should they have to. Neurodiversity, the natural variation in human brains and cognition, is fundamental to understanding human behavior, yet neurodivergent individuals in academia are often stigmatized, undervalued, or pressured to mask their differences. This position statement, authored predominantly by neurodivergent scholars, explores how aligning the values of the neurodiversity movement with practices of Open Scholarship (OSch) can foster greater research integrity, rigor, social responsibility and justice, diversity, equity, inclusivity, and accessibility in academia. We review systemic barriers faced by neurodivergent researchers—from disclosure dilemmas and hidden curriculum expectations to intersectional disadvantages—and identify how OSch principles (transparency, accessibility, collaboration) can help mitigate these challenges. Drawing on lived experiences and current research, we propose concrete reforms, including adopting universal design in scholarly communication, promoting participatory research methods, and enacting supportive policies (e.g., flexible work arrangements, inclusive codes of conduct). By leveraging shared values of openness and neuro-inclusion, academia can become more just and epistemically equitable. Our recommendations chart a path toward an academic culture where neurodivergent scholars can thrive openly, to the benefit of scientific rigor and social justice alike.
+
+> Phan, J. M., Middleton, S. L., Azevedo, F., Iley, B. J., Grose-Hodge, M., Tyler, S. L., Kapp, S. K., Yeung, S. K., Shaw, J. J., Hartmann, H., & FORRT. (2025). **Bridging Neurodiversity and Open Scholarship: How SharedValues Can Guide Best Practices for Research Integrity,Social Justice, and Principled Education** *Journal of Social Issues*, *81*(4), e70035. [https://doi.org/10.1111/josi.70035](https://doi.org/10.1111/josi.70035)
+
+**<font style="color:#0e2a38">Readmore </font>** [here (josi.70035)](https://doi.org/10.1111/josi.70035). 
+
+<div class='altmetric-embed' data-badge-type='medium-donut' data-doi="https://doi.org/10.1111/josi.70035"></div>
+
+---
+
+<br>
+
+### **No room at the inn? The case for dedicated replication journals**
+
+---
+
+Replication is widely recognized as essential for scientific self-correction, yet published replications remain exceedingly rare in both economics and psychology. At the same time, large-scale collaborative replication efforts and growing attention to research transparency have revealed widespread reproducibility failures across empirical research. This article reviews evidence on the scarcity of published replications, examines why traditional journals continue to resist publishing them, and evaluates the “first-best” proposal that journals should publish replications of their own articles. It then surveys alternative models that journals have adopted, such as dedicated replication sections and special replication issues, and considers their limitations in overcoming structural barriers to replication. Because these approaches have not meaningfully expanded the publication of replications, the article argues that dedicated replication journals offer an essential and complementary solution. By providing a stable, credible, and visible home for replication work, these journals supply critical infrastructure for the self-correcting function of science.
+
+
+> Reed, W. R., Röseler, L., Saam, M., & Wallrich, L. (2026). **No room at the inn? The case for dedicated replication journals.** *Journal of Behavioral and Experimental Economics*, *120*, 102502. [https://doi.org/10.1016/j.socec.2025.102502](https://doi.org/10.1016/j.socec.2025.102502) 
+
+<div class='altmetric-embed' data-badge-type='medium-donut' data-doi="https://doi.org/10.1016/j.socec.2025.102502"></div>
 
 ---
 
