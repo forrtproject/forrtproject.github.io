@@ -23,7 +23,7 @@ Jason, Leonard A.; Glantsman, Olya; O'Brien, Jack F.; and Ramian, Kaitlyn N., "I
 <br>
 
 <div style="position: relative; padding-bottom: 120%; height: 0; overflow: hidden; margin: 20px 0; min-height: 400px;">
-<iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" src="https://press.rebus.community/introductiontocommunitypsychology/chapter/oppression-and-power/" title="Opression and Power" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" src="https://press.rebus.community/introductiontocommunitypsychology/chapter/oppression-and-power/" title="Oppression and Power" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 </div>
 
 <br>
