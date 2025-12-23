@@ -1,28 +1,26 @@
-// add your own SCSS styling.
+// Override this file to add your own SCSS styling.
 .border-3 {
-  border-width: 3px !important;
+    border-width:3px !important;
 }
 
 .btn-toolbar .btn:first-child {
-  border-radius: 6px;
-}
-
-.btn-toolbar .btn:last-child {
-  border-radius: 6px;
-}
+    border-radius: 6px; }
+  
+  .btn-toolbar .btn:last-child {
+    border-radius: 6px; }
 
 .body {
-  background-color: #fefdf6 !important;
+    background-color:#fefdf6 !important;
 }
 
 .nav-btn {
-  line-height: initial;
-  background-color: #fefdf6 !important;
-  color: #3e3e3e !important;
+    line-height: initial;
+    background-color: #fefdf6 !important;
+    color: #3e3e3e !important;
 }
 
 @media print {
-  .tab-content>.tab-pane {
+  .tab-content > .tab-pane {
     display: block !important;
     opacity: 1 !important;
   }
@@ -34,175 +32,4 @@
 // We widen all .article-container elements (including title) when the page has a table.
 article.article:has(table) .article-container {
   max-width: 960px;
-}
-
-/* Publication Card Styles */
-.pub-list {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-  margin-top: 2rem;
-}
-
-.pub-card {
-  background: #fff;
-  border-radius: 12px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
-  border: 1px solid rgba(0, 0, 0, 0.05);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-  overflow: hidden;
-  padding: 1.5rem;
-}
-
-.pub-card:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
-}
-
-.pub-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 0.75rem;
-}
-
-.pub-badge {
-  padding: 0.25rem 0.75rem;
-  border-radius: 50px;
-  font-size: 0.75rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-}
-
-.pub-badge-published {
-  background-color: #e6fcf5;
-  color: #0ca678;
-}
-
-.pub-badge-preprint {
-  background-color: #fff3bf;
-  color: #f08c00;
-}
-
-.pub-badge-policy-brief {
-  background-color: #ffe3e3;
-  color: #e03131;
-}
-
-.pub-badge-op-ed {
-  background-color: #e7f5ff;
-  color: #1c7ed6;
-}
-
-.pub-badge-under-review {
-  background-color: #f1f3f5;
-  color: #495057;
-}
-
-.pub-year {
-  font-size: 0.9rem;
-  color: #868e96;
-  font-weight: 500;
-}
-
-.pub-title {
-  font-size: 1.25rem;
-  font-weight: 700;
-  color: #212529;
-  margin-bottom: 0.5rem;
-  line-height: 1.4;
-}
-
-.pub-authors {
-  font-size: 0.95rem;
-  color: #495057;
-  margin-bottom: 0.5rem;
-}
-
-.pub-journal {
-  font-size: 0.9rem;
-  color: #1c7ed6;
-  font-weight: 500;
-  margin-bottom: 1rem;
-}
-
-.pub-abstract-toggle {
-  margin-bottom: 0.5rem;
-}
-
-.btn-toggle-abstract {
-  background: none;
-  border: none;
-  color: #adb5bd;
-  font-size: 0.85rem;
-  cursor: pointer;
-  padding: 0;
-  display: flex;
-  align-items: center;
-  gap: 0.25rem;
-  transition: color 0.2s;
-}
-
-.btn-toggle-abstract:hover {
-  color: #495057;
-}
-
-.btn-toggle-abstract.active i {
-  transform: rotate(90deg);
-}
-
-.btn-toggle-abstract i {
-  transition: transform 0.2s;
-}
-
-.pub-abstract {
-  display: none;
-  margin-bottom: 1rem;
-  padding: 1rem;
-  background: #f8f9fa;
-  border-radius: 8px;
-  font-size: 0.9rem;
-  color: #495057;
-  line-height: 1.6;
-}
-
-.pub-abstract.show {
-  display: block;
-}
-
-.pub-abstract p {
-  margin-bottom: 0;
-}
-
-.pub-citation-section {
-  font-size: 0.85rem;
-  color: #868e96;
-  margin-bottom: 1.5rem;
-  padding-left: 1rem;
-  border-left: 3px solid #dee2e6;
-}
-
-.pub-footer {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: center;
-  gap: 1rem;
-  margin-top: auto;
-  padding-top: 1rem;
-  border-top: 1px solid #f1f3f5;
-}
-
-.pub-buttons {
-  display: flex;
-  gap: 0.5rem;
-  flex-wrap: wrap;
-}
-
-.pub-metrics {
-  min-height: 50px;
-  display: flex;
-  gap: 10px;
-  align-items: center;
 }
