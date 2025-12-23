@@ -113,6 +113,10 @@ Thanks to our amazing community, FORRT has become an ***award-winning*** grassro
   Read the Official Announcement of the endorsement of FORWARD by the UNESCO Science Decade
 </a>
 
+<br>
+
+{{< forward_unesco_sdgs_card >}}
+
 ---
 
 <br>
