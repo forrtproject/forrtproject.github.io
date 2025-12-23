@@ -263,7 +263,6 @@ The **<font style="color:#0e2a38">postprint</font>** can [be found here (osf.io/
 
 <br>
 
-
 ## **Open Science in the Developing World: A Collection of Practical Guides for Researchers in Developing Countries**
 
 ---
@@ -272,6 +271,12 @@ Over the past decade, the open-science movement has transformed the research lan
 
  
 <div class='altmetric-embed' data-badge-type='medium-donut' data-doi="https://doi.org/10.1177/25152459251357565"></div>
+<div class='altmetric-embed' data-badge-type='medium-donut' data-doi="https://doi.org/10.31234/osf.io/fgv79"></div>
+
+The **<font style="color:#0e2a38">preprint</font>** can [be found here (osf.io/7ubk2)](http://osf.io/7ubk2), and final **<font style="color:#0e2a38">publication</font>**: [here](https://doi.org/10.1177/25152459251357565).
+
+Download the supplementary material [here](https://journals.sagepub.com/doi/suppl/10.1177/25152459251357565/suppl_file/sj-docx-1-amp-10.1177_25152459251357565.docx?_gl=1*qdrt5e*_up*MQ..*_ga*MzI4ODQ0MDI1LjE3NjY0ODg2NjU.*_ga_60R758KFDG*czE3NjY0ODg2NjUkbzEkZzAkdDE3NjY0ODg2NjUkajYwJGwwJGgxOTI0NTEyNTAw).
+
 
 > Hu, C.-P., Xu, Z., Lazić, A., Bhattacharya, P., Seda, L., Hossain, S., Jeftić, A., Özdoğru, A. A., Amaral, O. B., Miljković, N., Ilchovska, Z. G., Lazarevic, L. B., Wu, H., Bao, S., Ghodke, N., Moreau, D., Elsherif, M., C., C., Ghai, S., ... Azevedo, F. (2025). **Open Science in the Developing World: A Collection of Practical Guides for Researchers in Developing Countries.** *Advances in Methods and Practices in Psychological Science*, *8*(3), 25152459251357565. [https://doi.org/10.1177/25152459251357565](https://doi.org/10.1177/25152459251357565) 
 
