@@ -1,19 +1,19 @@
 ---
 # Display name
-name: "Meera Chandra"
+name: "Lorna Hamilton"
 
 # Username (this should match the folder name)
 authors:
-- Name "Meera Chandra"
+- Name "LornaHamilton"
 
 # Is this the primary user of the site?
 superuser: false
 
 # Role/position
-role: "FORRT Steward"
+role: "Deputy-Director (Education & Pedagogy)"
 
 # Team/Subsection (for steering committee subsection grouping)
-team: "FORRT Steward"
+team: "Education & Pedagogy"
 
 # Organizations/Affiliations
 organizations: []
@@ -23,7 +23,7 @@ bio: ""
 
 # Organizational groups that you belong to (for People widget)
 user_groups:
-- "FORRT Stewards"
+- "Focus Areas"
 
 # Social/Academic Networking
 social:

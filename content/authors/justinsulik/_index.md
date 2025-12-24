@@ -1,19 +1,19 @@
 ---
 # Display name
-name: "Tom Heyman"
+name: "Justin Sulik"
 
 # Username (this should match the folder name)
 authors:
-- Name "Tom Heyman"
+- Name "justinsulik"
 
 # Is this the primary user of the site?
 superuser: false
 
 # Role/position
-role: "Deputy-Director (Meta-science & Research)"
+role: "Director (Digital Infrastructure Team)"
 
 # Team/Subsection (for steering committee subsection grouping)
-team: "Meta-science & Research"
+team: "Digital Infrastructure Team"
 
 # Organizations/Affiliations
 organizations: []
@@ -23,7 +23,7 @@ bio: ""
 
 # Organizational groups that you belong to (for People widget)
 user_groups:
-- "Focus Areas"
+- "Operations"
 
 # Social/Academic Networking
 social:

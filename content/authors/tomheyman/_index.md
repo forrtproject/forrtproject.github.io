@@ -1,19 +1,19 @@
 ---
 # Display name
-name: "Cass Gheoghe"
+name: "Tom Heyman"
 
 # Username (this should match the folder name)
 authors:
-- Name "Cass Gheoghe"
+- Name "TomHeyman"
 
 # Is this the primary user of the site?
 superuser: false
 
 # Role/position
-role: "FORRT Steward"
+role: "Deputy-Director (Meta-science & Research)"
 
 # Team/Subsection (for steering committee subsection grouping)
-team: "FORRT Steward"
+team: "Meta-science & Research"
 
 # Organizations/Affiliations
 organizations: []
@@ -23,7 +23,7 @@ bio: ""
 
 # Organizational groups that you belong to (for People widget)
 user_groups:
-- "FORRT Stewards"
+- "Focus Areas"
 
 # Social/Academic Networking
 social:

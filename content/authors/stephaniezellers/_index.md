@@ -1,19 +1,19 @@
 ---
 # Display name
-name: "Adam Partridge"
+name: "Stephanie Zellers"
 
 # Username (this should match the folder name)
 authors:
-- Name "Adam Partridge"
+- Name "stephaniezellers"
 
 # Is this the primary user of the site?
 superuser: false
 
 # Role/position
-role: "Director (Partnerships)"
+role: "FORRT Steward"
 
 # Team/Subsection (for steering committee subsection grouping)
-team: "Partnerships"
+team: "FORRT Steward"
 
 # Organizations/Affiliations
 organizations: []
@@ -23,7 +23,7 @@ bio: ""
 
 # Organizational groups that you belong to (for People widget)
 user_groups:
-- "Operations"
+- "FORRT Stewards"
 
 # Social/Academic Networking
 social:
