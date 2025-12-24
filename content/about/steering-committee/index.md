@@ -146,7 +146,7 @@ layout: single
         <p class="sc-card-role">Director</p>
     </div>
 </div><div class="sc-card" onclick="openModal('saralilmiddleton')">
-    <img src="/authors/saralilmiddleton/avatar.webp" alt="Sara Lil Middleton" class="sc-card-img" />
+    <img src="/authors/sara-lil-middleton/avatar.webp" alt="Sara Lil Middleton" class="sc-card-img" />
     <div class="sc-card-overlay"></div>
     <div class="sc-card-content">
         <h4 class="sc-card-name">Sara Lil Middleton</h4>
@@ -163,7 +163,7 @@ layout: single
         <p class="sc-card-role">Director</p>
     </div>
 </div><div class="sc-card" onclick="openModal('thomasrhysevans')">
-    <img src="/authors/thomasrhysevans/avatar.webp" alt="Thomas Rhys Evans" class="sc-card-img" />
+    <img src="/authors/thomas-rhys-evans/avatar.webp" alt="Thomas Rhys Evans" class="sc-card-img" />
     <div class="sc-card-overlay"></div>
     <div class="sc-card-content">
         <h4 class="sc-card-name">Thomas Rhys Evans</h4>
@@ -241,7 +241,7 @@ layout: single
         <p class="sc-card-role">FORRT Steward</p>
     </div>
 </div><div class="sc-card" onclick="openModal('stephaniezellers')">
-    <img src="/authors/stephaniezellers/avatar.webp" alt="Stephanie Zellers" class="sc-card-img" />
+    <img src="/authors/stephanie-zellers/avatar.webp" alt="Stephanie Zellers" class="sc-card-img" />
     <div class="sc-card-overlay"></div>
     <div class="sc-card-content">
         <h4 class="sc-card-name">Stephanie Zellers</h4>
@@ -628,7 +628,7 @@ In FORRT, she has been involved in co-leading Team Citational Politics and is ve
             <div class="sc-modal-layout">
                 <div class="sc-modal-sidebar">
                     <div class="sc-modal-img">
-                        <img src="/authors/saralilmiddleton/avatar.webp" alt="Sara Lil Middleton" />
+                        <img src="/authors/sara-lil-middleton/avatar.webp" alt="Sara Lil Middleton" />
                     </div>
                     <div class="sc-social-links">
                         <a href="https://www.environmental-research.ox.ac.uk/people/sara-lil-middleton-0" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-slate-800 transition-colors"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" x2="22" y1="12" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></a>
@@ -860,7 +860,7 @@ Currently, alongside his professional duties, he is pursuing a PhD at the Univer
             <div class="sc-modal-layout">
                 <div class="sc-modal-sidebar">
                     <div class="sc-modal-img">
-                        <img src="/authors/dushimemudaherarichard/avatar.webp" alt="Dushime Mudahera Richard" />
+                        <img src="/authors/dushime-mudahera-richard/avatar.webp" alt="Dushime Mudahera Richard" />
                     </div>
                     <div class="sc-social-links">
                         <a href="https://richarddushime.netlify.app/" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-slate-800 transition-colors"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" x2="22" y1="12" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></a><a href="mailto:mudaherarich@gmail.com" class="text-slate-400 hover:text-slate-800 transition-colors"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg></a>
@@ -910,7 +910,7 @@ Currently, alongside his professional duties, he is pursuing a PhD at the Univer
             <div class="sc-modal-layout">
                 <div class="sc-modal-sidebar">
                     <div class="sc-modal-img">
-                        <img src="/authors/stephaniezellers/avatar.webp" alt="Stephanie Zellers" />
+                        <img src="/authors/stephanie-zellers/avatar.webp" alt="Stephanie Zellers" />
                     </div>
                     <div class="sc-social-links">
                         <a href="https://researchportal.helsinki.fi/en/persons/stephanie-zellers" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-slate-800 transition-colors"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" x2="22" y1="12" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></a>
@@ -1062,7 +1062,7 @@ I am also very interested in Open Science and an avid R user. In that space, I e
             <div class="sc-modal-layout">
                 <div class="sc-modal-sidebar">
                     <div class="sc-modal-img">
-                        <img src="/authors/thomasrhysevans/avatar.webp" alt="Thomas Rhys Evans" />
+                        <img src="/authors/thomas-rhys-evans/avatar.webp" alt="Thomas Rhys Evans" />
                     </div>
                     <div class="sc-social-links">
                         <a href="https://www.gre.ac.uk/people/rep/faculty-of-education-and-health/thomas-rhys-evans" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-slate-800 transition-colors"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" x2="22" y1="12" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></a>
