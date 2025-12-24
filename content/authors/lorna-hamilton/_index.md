@@ -1,19 +1,19 @@
 ---
 # Display name
-name: "Thomas Rhys Evans"
+name: "Lorna Hamilton"
 
 # Username (this should match the folder name)
 authors:
-- Name "Thomas Rhys Evans"
+- Name "lorna-hamilton"
 
 # Is this the primary user of the site?
 superuser: false
 
 # Role/position
-role: "Advisor (Ethics and Inclusion)"
+role: "Deputy-Director (Education & Pedagogy)"
 
 # Team/Subsection (for steering committee subsection grouping)
-team: "Ombudsman"
+team: "Education & Pedagogy"
 
 # Organizations/Affiliations
 organizations: []
@@ -23,8 +23,7 @@ bio: ""
 
 # Organizational groups that you belong to (for People widget)
 user_groups:
-- "Ombudsman"
-- "Operations"
+- "Focus Areas"
 
 # Social/Academic Networking
 social:

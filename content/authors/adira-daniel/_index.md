@@ -1,19 +1,19 @@
 ---
 # Display name
-name: "Sara Lil Middleton"
+name: "Adira Daniel"
 
 # Username (this should match the folder name)
 authors:
-- Name "Sara Lil Middleton"
+- Name "adira-daniel"
 
 # Is this the primary user of the site?
 superuser: false
 
 # Role/position
-role: "Knowledge Manager (Sustainability & Strategy)"
+role: "FORRT Steward"
 
 # Team/Subsection (for steering committee subsection grouping)
-team: "Sustainability & Strategy"
+team: "FORRT Steward"
 
 # Organizations/Affiliations
 organizations: []
@@ -23,7 +23,7 @@ bio: ""
 
 # Organizational groups that you belong to (for People widget)
 user_groups:
-- "Operations"
+- "FORRT Stewards"
 
 # Social/Academic Networking
 social:

@@ -1,19 +1,19 @@
 ---
 # Display name
-name: "Adam Partridge"
+name: "Dushime Mudahera Richard"
 
 # Username (this should match the folder name)
 authors:
-- Name "adampartridge"
+- Name "dushime-mudahera-richard"
 
 # Is this the primary user of the site?
 superuser: false
 
 # Role/position
-role: "Director (Partnerships)"
+role: "Website Lead"
 
 # Team/Subsection (for steering committee subsection grouping)
-team: "Partnerships"
+team: "Digital Infrastructure Team"
 
 # Organizations/Affiliations
 organizations: []
@@ -27,7 +27,12 @@ user_groups:
 
 # Social/Academic Networking
 social:
-# No social links
+- icon: envelope
+  icon_pack: fas
+  link: 'mailto:mudaherarich@gmail.com'
+- icon: globe
+  icon_pack: fas
+  link: https://richarddushime.netlify.app/
 ---
 
-Coming soon.
+nan

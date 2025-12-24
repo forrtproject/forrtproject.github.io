@@ -1,19 +1,19 @@
 ---
 # Display name
-name: "Lorna Hamilton"
+name: "Tom Heyman"
 
 # Username (this should match the folder name)
 authors:
-- Name "LornaHamilton"
+- Name "tom-heyman"
 
 # Is this the primary user of the site?
 superuser: false
 
 # Role/position
-role: "Deputy-Director (Education & Pedagogy)"
+role: "Deputy-Director (Meta-science & Research)"
 
 # Team/Subsection (for steering committee subsection grouping)
-team: "Education & Pedagogy"
+team: "Meta-science & Research"
 
 # Organizations/Affiliations
 organizations: []

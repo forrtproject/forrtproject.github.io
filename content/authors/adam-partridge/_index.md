@@ -1,19 +1,19 @@
 ---
 # Display name
-name: "Giorgia Andreolli"
+name: "Adam Partridge"
 
 # Username (this should match the folder name)
 authors:
-- Name "GiorgiaAndreolli"
+- Name "adam-partridge"
 
 # Is this the primary user of the site?
 superuser: false
 
 # Role/position
-role: "Community Cohesion-Liaison "
+role: "Director (Partnerships)"
 
 # Team/Subsection (for steering committee subsection grouping)
-team: "Community Management [internal governance]"
+team: "Partnerships"
 
 # Organizations/Affiliations
 organizations: []

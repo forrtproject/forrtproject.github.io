@@ -1,19 +1,19 @@
 ---
 # Display name
-name: "Adira Daniel"
+name: "Sam Parsons"
 
 # Username (this should match the folder name)
 authors:
-- Name "Adira Daniel"
+- Name "sam-parsons"
 
 # Is this the primary user of the site?
 superuser: false
 
 # Role/position
-role: "FORRT Steward"
+role: "Stewardship Council Chair"
 
 # Team/Subsection (for steering committee subsection grouping)
-team: "FORRT Steward"
+team: "Chair"
 
 # Organizations/Affiliations
 organizations: []
@@ -23,7 +23,7 @@ bio: ""
 
 # Organizational groups that you belong to (for People widget)
 user_groups:
-- "FORRT Stewards"
+- "Steering Committee"
 
 # Social/Academic Networking
 social:
