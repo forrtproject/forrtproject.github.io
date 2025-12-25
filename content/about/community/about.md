@@ -7,8 +7,8 @@ headless = true  # This file represents a page section.
 active = true  # Activate this widget? true/false
 weight = 21  # Order that this section will appear.
 
-title = "Our community"
-subtitle = "*Raising awareness of the pedagogical implications of open and reproducible science in higher education.*"
+title = "Get Featured"
+subtitle = ""
 classtitle = "text-center"
 
 [design]
@@ -53,5 +53,8 @@ classtitle = "text-center"
 
 +++
 
-Would you like to be added to our community? 
-If you would like to be featured, please reach out to [info@forrt.org](mailto:info@forrt.org) with your **name**, **affiliation**, **profile picture**, and a short description of your work.
+If you would like to be featured in our community list, please submit your profile information to info@forrt.org.
+
+* **Name & Affiliation**
+* **Profile Picture** (headshot)
+* **Short Description** of your work or research interests.
