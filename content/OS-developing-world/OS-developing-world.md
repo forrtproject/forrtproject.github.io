@@ -132,6 +132,39 @@ These materials are designed for:
 
 They align closely with FORRT’s broader mission to **democratize access to research training and epistemic participation**.
 
+### Community and Organizational Exemplars
+
+To illustrate how the four-level engagement framework operates in practice, the paper highlights several community-driven organizations and networks that have successfully adapted open science practices to resource-limited and non-Western contexts. These examples are **illustrative rather than exhaustive**, demonstrating diverse pathways through which researchers can engage with, contribute to, and lead open science initiatives.
+
+Importantly, these organizations differ in scale, disciplinary focus, governance models, and regional scope—but share a commitment to accessibility, capacity building, and contextual sensitivity.
+
+#### Grassroots and Regional Open Science Networks
+
+- **:contentReference[oaicite:0]{index=0} (COSN)**  
+  A researcher-led initiative advancing open science training, infrastructure, and community-building in China. COSN demonstrates how open science can be meaningfully localized through language accessibility, culturally relevant training, and institutional engagement.
+
+- **:contentReference[oaicite:1]{index=1} (OSCS)**  
+  A national grassroots network promoting open research practices through workshops, repositories, and policy engagement. OSCS illustrates how sustained community organizing can translate open science principles into national-level infrastructures.
+
+- **:contentReference[oaicite:2]{index=2} (BrRN)**  
+  A multidisciplinary network inspired by reproducibility initiatives but adapted to the Brazilian research ecosystem. BrRN highlights the role of coordinated national networks in linking grassroots efforts with institutional and policy reform.
+
+#### Inclusion-Focused and Transnational Initiatives
+
+- **:contentReference[oaicite:3]{index=3}**  
+  An international consortium addressing barriers faced by researchers from developing countries in big-team and open-science collaborations. ABRIR foregrounds issues of representation, onboarding, credit, and leadership in large-scale research.
+
+- **:contentReference[oaicite:4]{index=4} (FORRT)**  
+  A global, community-driven initiative focused on open science education, training, and metascience. Within the context of this project, FORRT served as a coordination hub, dissemination platform, and educational infrastructure supporting inclusive engagement with open science practices.
+
+#### Why these examples matter
+
+Together, these organizations demonstrate that:
+- Open science can be advanced **without reliance on elite institutions or high-cost infrastructures**  
+- Community-led models are critical for **capacity building, sustainability, and local ownership**  
+- Leadership in open science can and does emerge from the Global South and other resource-constrained settings  
+
+These exemplars reinforce the paper’s central argument: **open science becomes more robust, equitable, and globally relevant when it is shaped by diverse communities rather than exported as a fixed model**.
 
 ### Why this matters for FORRT
 
