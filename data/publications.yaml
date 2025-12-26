@@ -68,6 +68,19 @@
     postprint: "https://doi.org/10.31222/osf.io/r6cvx"
   altmetric_doi: "10.31222/osf.io/r6cvx"
 
+- title: "A Community Model for Rigorous and Inclusive Scholarship"
+  type: "journal"
+  year: "2025"
+  status: "Published"
+  journal_name: "Replication Research"
+  authors: "Röseler, L., Wallrich, L., Adler, S., Oppong Boakye, P., Evans, T. R., Goltermann, J., Haven, T., Horstmann, J., Korbmacher, M., Müller, M., Verheyen, S., Visser, I., & Azevedo, F."
+  abstract: "Reproducibility and replicability are vital for trustworthy, cumulative research, yet remain undervalued in most areas of academic publishing. Replication Research (R2) is a Diamond Open Access journal dedicated to publishing high-quality reproductions, replications, and related methodological work across disciplines. With robust standards for transparency, open peer review, and social responsibility, R2 offers practical guidance and support for authors. We aim to rebalance research culture by valuing diligence and robustness alongside innovation, thereby increasing confidence in research findings. We invite researchers to contribute to and benefit from an open, community-driven journal designed to elevate the status and impact of replications (repeated studies of published findings with different data) and reproductions (repeated tests of published findings with the same data). In this editorial, we introduce the aims, policies, and scope of Replication Research, outlining how the journal will operate and the values that guide it."
+  citation: "Röseler, L., Wallrich, L., Adler, S., Oppong Boakye, P., Evans, T. R., Goltermann, J., Haven, T., Horstmann, J., Korbmacher, M., Müller, M., Verheyen, S., Visser, I., & Azevedo, F. (2025). <strong>A Community Model for Rigorous and Inclusive Scholarship: Inaugural Editorial of Replication Research (R2).</strong> <em>Replication Research</em>, 1. https://doi.org/10.17879/replicationresearch-2025-9022"
+  links:
+    doi: "https://doi.org/10.17879/replicationresearch-2025-9022"
+    pdf: "./pdf/Inaugural_Editorial_of_Replication_Research_R2.pdf"
+  altmetric_doi: "10.17879/replicationresearch-2025-9022"
+
 - title: "Participatory Research Primer"
   type: "journal"
   year: "2023"
