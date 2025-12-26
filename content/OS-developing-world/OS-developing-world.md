@@ -56,62 +56,16 @@ subtitle = "A Collection of Practical Guides"
 <br>
 
 
-## What is this project?
+## The what, how, and why of Open Science in the Developing World
 ---------------------
 
-**Open Science in the Developing World** is a completed, large-scale international collaboration led and supported by FORRT that culminated in a peer-reviewed publication in *Advances in Methods and Practices in Psychological Science* (AMPPS).
+**Open Science in the Developing World** is a completed, large-scale international collaboration by 49 open scientists from 12 developing countries, led and supported by FORRT members, that culminated in several community resources (see below) and a peer-reviewed publication in the journal *Advances in Methods and Practices in Psychological Science* (AMPPS), entitled ["Open Science in the Developing World: A Collection of Practical Guides for Researchers in Developing Countries."](https://doi.org/10.1177/25152459251357565) See our postprint [here](http://osf.io/7ubk2).
 
-The project responds to a central tension in the open science movement:  
-while open science is often presented as *universally beneficial*, its dominant tools, incentives, and norms have largely been designed by and for researchers in well-resourced, Global North contexts.
+The project responds to a central tension in the open science movement:
 
-This initiative reframes open science as something that must be **context-sensitive, adaptable, and equity-oriented**, particularly for researchers working in developing countries and other resource-constrained environments.
+> while open science is often presented as *universally beneficial*, its dominant tools, incentives, and norms have largely been designed by and for researchers in well-resourced, Global North contexts.
 
-****Contributors****
-
-- 49 contributors will cover Open Science related topic from perspective of 12 developing countries.
-
-<center>
-
-<div style="width:100%;">
-
-![Authors map](Authors_Geo.webp)
-
-</div>
-
-</center>
-
-
-<br>
-
-#### Progress 
----------------------
-
-- [x] Open call for contributors.
-
-- [x] Identified topic leads.
-
-- [x] Drafts for each topic.
-
-- [x] First draft of the whole paper.
-
-- [x] Re-structure the first draft of the whole paper.
-
-- [x] Final preprint of the paper is available [here](http://osf.io/7ubk2).
-
-- [x] Final Publication is available [here](https://doi.org/10.1177/25152459251357565).
-
-<br>
-
-
-### Key Publications (2025)
-
-The **<font style="color:#0e2a38">preprint</font>** can [be found here (osf.io/7ubk2)](http://osf.io/7ubk2), and final **<font style="color:#0e2a38">publication</font>**: [here](https://doi.org/10.1177/25152459251357565).
-
-Download the supplementary material [here](https://journals.sagepub.com/doi/suppl/10.1177/25152459251357565/suppl_file/sj-docx-1-amp-10.1177_25152459251357565.docx?_gl=1*qdrt5e*_up*MQ..*_ga*MzI4ODQ0MDI1LjE3NjY0ODg2NjU.*_ga_60R758KFDG*czE3NjY0ODg2NjUkbzEkZzAkdDE3NjY0ODg2NjUkajYwJGwwJGgxOTI0NTEyNTAw).
-
-
-> Hu, C.-P., Xu, Z., Lazić, A., Bhattacharya, P., Seda, L., Hossain, S., Jeftić, A., Özdoğru, A. A., Amaral, O. B., Miljković, N., Ilchovska, Z. G., Lazarevic, L. B., Wu, H., Bao, S., Ghodke, N., Moreau, D., Elsherif, M., C., C., Ghai, S., ... Azevedo, F. (2025). **Open Science in the Developing World: A Collection of Practical Guides for Researchers in Developing Countries.** *Advances in Methods and Practices in Psychological Science*, *8*(3), 25152459251357565. [https://doi.org/10.1177/25152459251357565](https://doi.org/10.1177/25152459251357565) 
-
+This **Open Science in the Developing World** initiative reframes open science as something that must be **context-sensitive, adaptable, and equity-oriented**, particularly for researchers working in developing countries and other resource-constrained environments.
 
 ### What does the paper do?
 
@@ -127,6 +81,7 @@ It explicitly acknowledges structural barriers such as:
 
 and responds with **concrete strategies that researchers can adopt immediately**, without requiring institutional privilege or substantial financial resources.
 
+RICHARD: ADD PAPER FIGURE HERE.
 
 ### The Four-Level Engagement Framework
 
@@ -196,6 +151,42 @@ The paper also directly informs FORRT’s ongoing work on:
 - community-led governance models
 
 
+****Contributors****
+
+- 49 contributors will cover Open Science related topic from perspective of 12 developing countries.
+
+<center>
+
+<div style="width:100%;">
+
+![Authors map](Authors_Geo.webp)
+
+</div>
+
+</center>
+
+
+<br>
+
+#### How we did it?
+---------------------
+
+- [x] Open call for contributors.
+
+- [x] Identified topic leads.
+
+- [x] Drafts for each topic.
+
+- [x] First draft of the whole paper.
+
+- [x] Re-structure the first draft of the whole paper.
+
+- [x] Final preprint of the paper is available [here](http://osf.io/7ubk2).
+
+- [x] Final Publication is available [here](https://doi.org/10.1177/25152459251357565).
+
+<br>
+
 ### Conference Presentations
 
 ---
@@ -208,12 +199,15 @@ The paper also directly informs FORRT’s ongoing work on:
 
 - **2023-10-23** | Big Team Science Conference 2023 (online) | **Featured Panel #24**. See program [here](https://bigteamscienceconference.github.io/program/).
 
-### Learn more & get involved
 
-- Publication: https://doi.org/10.1177/25152459251357565  
-- Preprint & materials: https://osf.io/7ubk2  
-- FORRT: https://forrt.org  
-- FORRT Educational Nexus: https://forrt.org/nexus/
+## Peer-reviewed Publication
+
+The open access **<font style="color:#0e2a38">publication</font>** can be found [here](https://doi.org/10.1177/25152459251357565), and the **<font style="color:#0e2a38">postprint</font>** can [be found here (osf.io/7ubk2)](http://osf.io/7ubk2). Download the supplementary material [here](https://journals.sagepub.com/doi/suppl/10.1177/25152459251357565/suppl_file/sj-docx-1-amp-10.1177_25152459251357565.docx?_gl=1*qdrt5e*_up*MQ..*_ga*MzI4ODQ0MDI1LjE3NjY0ODg2NjU.*_ga_60R758KFDG*czE3NjY0ODg2NjUkbzEkZzAkdDE3NjY0ODg2NjUkajYwJGwwJGgxOTI0NTEyNTAw).
+
+> Hu, C.-P., Xu, Z., Lazić, A., Bhattacharya, P., Seda, L., Hossain, S., Jeftić, A., Özdoğru, A. A., Amaral, O. B., Miljković, N., Ilchovska, Z. G., Lazarevic, L. B., Wu, H., Bao, S., Ghodke, N., Moreau, D., Elsherif, M., C., C., Ghai, S., ... Azevedo, F. (2025). **Open Science in the Developing World: A Collection of Practical Guides for Researchers in Developing Countries.** *Advances in Methods and Practices in Psychological Science*, *8*(3), 25152459251357565. [https://doi.org/10.1177/25152459251357565](https://doi.org/10.1177/25152459251357565) 
+
+
+### Learn more & get involved
 
 If you are interested in adapting, translating, teaching, or extending these materials in your own context, we invite you to connect with the FORRT community.
 
@@ -221,4 +215,4 @@ If you are interested in adapting, translating, teaching, or extending these mat
 ## Contact Us
 ---------- 
 
-For more information, please contact Dr. Hu Chuan-Peng (hcp4715@hotmail.com), School of Psychology, Nanjing Normal University, Nanjing, China and info@forrt.org.
+Please contact Dr. Hu Chuan-Peng (hcp4715@hotmail.com), School of Psychology, Nanjing Normal University, Nanjing, China and Flavio Azevedo (info@forrt.org).
