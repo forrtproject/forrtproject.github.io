@@ -81,7 +81,10 @@ It explicitly acknowledges structural barriers such as:
 
 and responds with **concrete strategies that researchers can adopt immediately**, without requiring institutional privilege or substantial financial resources.
 
-RICHARD: ADD PAPER FIGURE HERE.
+![A layered schematic showing how macro-level barriers (such as infrastructure, funding, language, geography, and policy) interact with micro-level barriers (including time, training, institutional support, incentives, and visibility) to constrain researchers’ access to open resources, opportunities to contribute, and pathways to leadership in open science.](barriers_for_engaging_in_open_science_in_developing_countries.webp)
+
+**Fig. 1.** A schematic representation of the nested and interconnected structure of barriers for engaging in open science in developing countries. The top layer describes the three aspects of engaging in open science: accessibility to open resources, accessible resources to be able to contribute to open science, and opportunities to exercise leadership and to be a leader. The middle layer includes micro-level barriers that directly and specifically slow down engagement in open science. The bottom layer includes macro-level barriers that constrain science in general. The dashed line means the indirect constraints, and the solid line means direct constraints; different colors are used for the lines to enhance visibility.
+
 
 ### The Four-Level Engagement Framework
 
@@ -110,6 +113,17 @@ Contributing to open science through:
 Building and leading **local or regional open-science communities**, shaping norms, incentives, and research culture from within.
 
 This structure explicitly rejects a “one-size-fits-all” model of open science and emphasizes **agency, sustainability, and local relevance**.
+
+![A stepwise framework illustrating four levels of engagement with open science—Foundation, Growth, Community, and Leadership—progressing from individual use of open resources to collective contribution and leadership in open science initiatives.](Practical_Guides_for_Implementing_Open_Science.webp)
+
+**Fig. 2.** Practical guide for engaging in and contributing to open science as researchers from developing countries. Researchers start with using open resources and building a solid foundation, gradually grow and adopt recommended practices according to their own pace and context, contribute to the community in various ways, and finally, become leaders in the open-science movement.
+
+
+![A conceptual illustration showing how researchers can move from individual open science practices toward community contribution and leadership, supported by shared infrastructure, collaboration, training, and grassroots networks across diverse regional and institutional contexts.](The_hidden_costs_of_best_open-science_practices.webp)
+
+**Fig. 3.** The hidden costs of “best open-science practices” for researchers in developing countries. FORRT = the Framework for Open and Reproducible Research Training; COSN = the Chinese Open Science Network; APC = article-processing cost; OA = open access.
+
+This figure synthesizes how individual actions scale into collective impact through community-led open science initiatives. It highlights the role of grassroots networks, shared infrastructure, and inclusive governance in transforming open science from a set of technical practices into a sustainable research culture. The figure reinforces the paper’s central argument that leadership in open science can emerge from diverse global contexts when supported by accessible tools and communities.
 
 
 ### Educational & Practical Resources
@@ -140,21 +154,20 @@ Importantly, these organizations differ in scale, disciplinary focus, governance
 
 #### Grassroots and Regional Open Science Networks
 
-- **:contentReference[oaicite:0]{index=0} (COSN)**  
+- **COSN**  
   A researcher-led initiative advancing open science training, infrastructure, and community-building in China. COSN demonstrates how open science can be meaningfully localized through language accessibility, culturally relevant training, and institutional engagement.
 
-- **:contentReference[oaicite:1]{index=1} (OSCS)**  
+- **OSCS**  
   A national grassroots network promoting open research practices through workshops, repositories, and policy engagement. OSCS illustrates how sustained community organizing can translate open science principles into national-level infrastructures.
 
-- **:contentReference[oaicite:2]{index=2} (BrRN)**  
+- **BrRN**  
   A multidisciplinary network inspired by reproducibility initiatives but adapted to the Brazilian research ecosystem. BrRN highlights the role of coordinated national networks in linking grassroots efforts with institutional and policy reform.
 
 #### Inclusion-Focused and Transnational Initiatives
 
-- **:contentReference[oaicite:3]{index=3}**  
   An international consortium addressing barriers faced by researchers from developing countries in big-team and open-science collaborations. ABRIR foregrounds issues of representation, onboarding, credit, and leadership in large-scale research.
 
-- **:contentReference[oaicite:4]{index=4} (FORRT)**  
+- **FORRT**  
   A global, community-driven initiative focused on open science education, training, and metascience. Within the context of this project, FORRT served as a coordination hub, dissemination platform, and educational infrastructure supporting inclusive engagement with open science practices.
 
 #### Why these examples matter
