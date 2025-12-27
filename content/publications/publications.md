@@ -88,8 +88,6 @@ This page showcases the diverse scholarly and public-facing outputs produced by 
 
 {{< publication_list type="journal" >}}
 
----
-
 <br>
 
 <div align="center">
@@ -99,17 +97,12 @@ This page showcases the diverse scholarly and public-facing outputs produced by 
 
 {{< publication_list type="preprint" >}}
 
----
 
 <br>
 
 # Op-Eds and Other Media 
 
----
-
 {{< publication_list type="media" >}}
-
----
 
 <br>
 
@@ -117,8 +110,6 @@ This page showcases the diverse scholarly and public-facing outputs produced by 
 ***
 
 {{< publication_list type="policy" >}}
-
----
 
 <br>
 
@@ -138,10 +129,7 @@ This page showcases the diverse scholarly and public-facing outputs produced by 
 
 {{< publication_list type="wip" >}}
 
----
 
 # **<font style="color:#4c1322">Ongoing Projects</font>**
 
 We are currently preparing additional manuscripts on a range of topics. To find out more about what we're working on and how you can contribute, visit our [Get Involved page](/about/get-involved).
-
----

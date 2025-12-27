@@ -1,4 +1,19 @@
 # --- Academic Peer-Reviewed Publications ---
+# 1
+- title: "No room at the inn? The case for dedicated replication journals"
+  type: "journal"
+  year: "2026"
+  status: "Published"
+  journal_name: "Journal of Behavioral and Experimental Economics"
+  authors: "Reed, W. R., Röseler, L., Saam, M., & Wallrich, L."
+  abstract: "Replication is widely recognized as essential for scientific self-correction, yet published replications remain exceedingly rare in both economics and psychology. At the same time, large-scale collaborative replication efforts and growing attention to research transparency have revealed widespread reproducibility failures across empirical research. This article reviews evidence on the scarcity of published replications, examines why traditional journals continue to resist publishing them, and evaluates the “first-best” proposal that journals should publish replications of their own articles. It then surveys alternative models that journals have adopted, such as dedicated replication sections and special replication issues, and considers their limitations in overcoming structural barriers to replication. Because these approaches have not meaningfully expanded the publication of replications, the article argues that dedicated replication journals offer an essential and complementary solution. By providing a stable, credible, and visible home for replication work, these journals supply critical infrastructure for the self-correcting function of science."
+  citation: "Reed, W. R., Röseler, L., Saam, M., and Wallrich, L. (2026). <strong>No room at the inn? The case for dedicated replication journals.</strong> <em>Journal of Behavioral and Experimental Economics</em>, 120, 102502. https://doi.org/10.1016/j.socec.2025.102502"
+  links:
+    doi: "https://doi.org/10.1016/j.socec.2025.102502"
+    pdf: "https://doi.org/10.1016/j.socec.2025.102502"
+  altmetric_doi: "10.1016/j.socec.2025.102502"
+
+# 2
 - title: "Mapping Open Science Communities in Psychology: A Systematic Narrative Review"
   type: "journal"
   year: "2025"
@@ -11,6 +26,34 @@
     doi: "https://doi.org/10.1098/rsos.241726"
   altmetric_doi: "10.1098/rsos.241726"
 
+# 3
+- title: "A Community Model for Rigorous and Inclusive Scholarship"
+  type: "journal"
+  year: "2025"
+  status: "Published"
+  journal_name: "Replication Research"
+  authors: "Röseler, L., Wallrich, L., Adler, S., Oppong Boakye, P., Evans, T. R., Goltermann, J., Haven, T., Horstmann, J., Korbmacher, M., Müller, M., Verheyen, S., Visser, I., & Azevedo, F."
+  abstract: "Reproducibility and replicability are vital for trustworthy, cumulative research, yet remain undervalued in most areas of academic publishing. Replication Research (R2) is a Diamond Open Access journal dedicated to publishing high-quality reproductions, replications, and related methodological work across disciplines. With robust standards for transparency, open peer review, and social responsibility, R2 offers practical guidance and support for authors. We aim to rebalance research culture by valuing diligence and robustness alongside innovation, thereby increasing confidence in research findings. We invite researchers to contribute to and benefit from an open, community-driven journal designed to elevate the status and impact of replications (repeated studies of published findings with different data) and reproductions (repeated tests of published findings with the same data). In this editorial, we introduce the aims, policies, and scope of Replication Research, outlining how the journal will operate and the values that guide it."
+  citation: "Röseler, L., Wallrich, L., Adler, S., Oppong Boakye, P., Evans, T. R., Goltermann, J., Haven, T., Horstmann, J., Korbmacher, M., Müller, M., Verheyen, S., Visser, I., & Azevedo, F. (2025). <strong>A Community Model for Rigorous and Inclusive Scholarship: Inaugural Editorial of Replication Research (R2).</strong> <em>Replication Research</em>, 1. https://doi.org/10.17879/replicationresearch-2025-9022"
+  links:
+    doi: "https://doi.org/10.17879/replicationresearch-2025-9022"
+    pdf: "./pdf/Inaugural_Editorial_of_Replication_Research_R2.pdf"
+  altmetric_doi: "10.17879/replicationresearch-2025-9022"
+
+# 4
+- title: "Bridging Neurodiversity and Open Scholarship: How Shared Values Can Guide Best Practices for Research Integrity, Social Justice, and Principled Education"
+  type: "journal"
+  year: "2025"
+  status: "Published"
+  journal_name: "Journal of Social Issues"
+  authors: "Phan, J. M., Middleton, S. L., Azevedo, F., Iley, B. J., Grose-Hodge, M., Tyler, S. L., Kapp, S. K., Yeung, S. K., Shaw, J. J., Hartmann, H., & FORRT."
+  abstract: "Not all people conform to socially constructed norms, nor should they have to. Neurodiversity, the natural variation in human brains and cognition, is fundamental to understanding human behavior, yet neurodivergent individuals in academia are often stigmatized, undervalued, or pressured to mask their differences. This position statement, authored predominantly by neurodivergent scholars, explores how aligning the values of the neurodiversity movement with practices of Open Scholarship (OSch) can foster greater research integrity, rigor, social responsibility and justice, diversity, equity, inclusivity, and accessibility in academia. We review systemic barriers faced by neurodivergent researchers—from disclosure dilemmas and hidden curriculum expectations to intersectional disadvantages—and identify how OSch principles (transparency, accessibility, collaboration) can help mitigate these challenges. Drawing on lived experiences and current research, we propose concrete reforms, including adopting universal design in scholarly communication, promoting participatory research methods, and enacting supportive policies (e.g., flexible work arrangements, inclusive codes of conduct). By leveraging shared values of openness and neuro-inclusion, academia can become more just and epistemically equitable. Our recommendations chart a path toward an academic culture where neurodivergent scholars can thrive openly, to the benefit of scientific rigor and social justice alike."
+  citation: "Phan, J. M., et al. (2025). <strong>Bridging neurodiversity and open scholarship: How shared values can guide best practices for research integrity, social justice, and principled education.</strong> <em>Journal of Social Issues</em>, 81(4), e70035. https://doi.org/10.1111/josi.70035"
+  links:
+    doi: "https://doi.org/10.1111/josi.70035"
+  altmetric_doi: "10.1111/josi.70035"
+
+# 5
 - title: "An annotated introductory reading list for neurodiversity"
   type: "journal"
   year: "2024"
@@ -24,7 +67,7 @@
     postprint: "https://doi.org/10.7554/eLife.102467"
   altmetric_doi: "10.7554/eLife.102467"
 
-
+# 6
 - title: "The Replication Database: Documenting the Replicability of Psychological Science"
   type: "journal"
   year: "2024"
@@ -40,7 +83,7 @@
   altmetric_doi: "10.31222/osf.io/me2ub"
   altmetric_doi_2: "10.5334/jopd.101"
 
-
+# 7
 - title: "The Impact of Open Scholarship on Students' Learning Outcomes (Scoping Review)"
   type: "journal"
   year: "2023"
@@ -55,6 +98,7 @@
   altmetric_doi: "10.1098/rsos.221255"
   altmetric_doi_2: "10.31222/osf.io/9e526"
 
+# 8
 - title: "Improvements since the Replication Crisis: The Structural, Procedural, and Community Changes"
   type: "journal"
   year: "2023"
@@ -68,6 +112,7 @@
     postprint: "https://doi.org/10.31222/osf.io/r6cvx"
   altmetric_doi: "10.31222/osf.io/r6cvx"
 
+# 9
 - title: "Participatory Research Primer"
   type: "journal"
   year: "2023"
@@ -81,6 +126,7 @@
     postprint: "https://osf.io/preprints/metaarxiv/jq23s/"
   altmetric_doi: "10.53841/bpscog.2023.1.8.23"
 
+# 10
 - title: "FORRT's Glossary"
   type: "journal"
   year: "2022"
@@ -96,6 +142,7 @@
   altmetric_doi: "10.1038/s41562-021-01269-4"
   altmetric_doi_2: "10.31222/osf.io/kdqcw"
 
+# 11
 - title: "The Role of Pedagogical Communities"
   type: "journal"
   year: "2021"
@@ -108,6 +155,7 @@
     doi: "https://doi.org/10.1186/s13104-022-05944-1"
   altmetric_doi: "10.1186/s13104-022-05944-1"
 
+# 12
 - title: "FORRT's Lesson Plans"
   type: "journal"
   year: "2021"
@@ -123,59 +171,10 @@
   altmetric_doi: "10.1037/stl0000307"
   altmetric_doi_2: "10.31234/osf.io/fgv79"
 
-- title: "No room at the inn? The case for dedicated replication journals"
-  type: "journal"
-  year: "2026"
-  status: "Published"
-  journal_name: "Journal of Behavioral and Experimental Economics"
-  authors: "Reed, W. R., Röseler, L., Saam, M., & Wallrich, L."
-  abstract: "Replication is widely recognized as essential for scientific self-correction, yet published replications remain exceedingly rare in both economics and psychology. At the same time, large-scale collaborative replication efforts and growing attention to research transparency have revealed widespread reproducibility failures across empirical research. This article reviews evidence on the scarcity of published replications, examines why traditional journals continue to resist publishing them, and evaluates the “first-best” proposal that journals should publish replications of their own articles. It then surveys alternative models that journals have adopted, such as dedicated replication sections and special replication issues, and considers their limitations in overcoming structural barriers to replication. Because these approaches have not meaningfully expanded the publication of replications, the article argues that dedicated replication journals offer an essential and complementary solution. By providing a stable, credible, and visible home for replication work, these journals supply critical infrastructure for the self-correcting function of science."
-  citation: "Reed, W. R., Röseler, L., Saam, M., and Wallrich, L. (2026). <strong>No room at the inn? The case for dedicated replication journals.</strong> <em>Journal of Behavioral and Experimental Economics</em>, 120, 102502. https://doi.org/10.1016/j.socec.2025.102502"
-  links:
-    doi: "https://doi.org/10.1016/j.socec.2025.102502"
-  altmetric_doi: "10.1016/j.socec.2025.102502"
-
-
-- title: "Bridging Neurodiversity and Open Scholarship: How Shared Values Can Guide Best Practices for Research Integrity, Social Justice, and Principled Education"
-  type: "journal"
-  year: "2025"
-  status: "Published"
-  journal_name: "Journal of Social Issues"
-  authors: "Phan, J. M., Middleton, S. L., Azevedo, F., Iley, B. J., Grose-Hodge, M., Tyler, S. L., Kapp, S. K., Yeung, S. K., Shaw, J. J., Hartmann, H., & FORRT."
-  abstract: "Not all people conform to socially constructed norms, nor should they have to. Neurodiversity, the natural variation in human brains and cognition, is fundamental to understanding human behavior, yet neurodivergent individuals in academia are often stigmatized, undervalued, or pressured to mask their differences. This position statement, authored predominantly by neurodivergent scholars, explores how aligning the values of the neurodiversity movement with practices of Open Scholarship (OSch) can foster greater research integrity, rigor, social responsibility and justice, diversity, equity, inclusivity, and accessibility in academia. We review systemic barriers faced by neurodivergent researchers—from disclosure dilemmas and hidden curriculum expectations to intersectional disadvantages—and identify how OSch principles (transparency, accessibility, collaboration) can help mitigate these challenges. Drawing on lived experiences and current research, we propose concrete reforms, including adopting universal design in scholarly communication, promoting participatory research methods, and enacting supportive policies (e.g., flexible work arrangements, inclusive codes of conduct). By leveraging shared values of openness and neuro-inclusion, academia can become more just and epistemically equitable. Our recommendations chart a path toward an academic culture where neurodivergent scholars can thrive openly, to the benefit of scientific rigor and social justice alike."
-  citation: "Phan, J. M., et al. (2025). <strong>Bridging neurodiversity and open scholarship: How shared values can guide best practices for research integrity, social justice, and principled education.</strong> <em>Journal of Social Issues</em>, 81(4), e70035. https://doi.org/10.1111/josi.70035"
-  links:
-    doi: "https://doi.org/10.1111/josi.70035"
-  altmetric_doi: "10.1111/josi.70035"
-
 
 # --- Preprints ---
-- title: "Neurodiversity & Open Scholarship in Academia"
-  type: "preprint"
-  year: "2022"
-  status: "Preprint"
-  journal_name: "MetaArxiv"
-  authors: "Elsherif, M. M., Middleton, S. L., Phan, J. M., Azevedo, F., Iley, B. J., Grose-Hodge, M., … Dokovova, M."
-  abstract: "We have written a manuscript entitled *Bridging Neurodiversity and Open Scholarship: How Shared Values Can Guide Best Practices for Research Integrity, Social Justice, and Principled Education* explaining that Neurodiversity is fundamental to the understanding of human behaviour and cognition."
-  citation: "Elsherif, M. M., et al. (2022). <strong>Bridging neurodiversity and open scholarship: How shared values can guide best practices for research integrity, social justice, and principled education.</strong> <em>MetaArXiv</em>. https://doi.org/10.31222/osf.io/k7a9p"
-  links:
-    doi: "https://doi.org/10.31222/osf.io/k7a9p"
-    postprint: "https://doi.org/10.31222/osf.io/k7a9p"
-  altmetric_doi: "10.31222/osf.io/k7a9p"
 
-- title: "FORRT's Manifesto"
-  type: "preprint"
-  year: "2019"
-  status: "preprint"
-  journal_name: "OSF Preprints"
-  authors: "Azevedo, F., Parsons, S., Micheli, L., Strand, J., Rinke, E., ... & FORRT"
-  abstract: "We have written a manuscript entitled *Introducing a Framework for Open and Reproducible Research Training (FORRT)* describing the importance of integrating open scholarship into higher education."
-  citation: "Azevedo, F., et al. (2019). <strong>Introducing a framework for open and reproducible research training (FORRT).</strong> <em>OSF Preprints</em>. https://doi.org/10.31219/osf.io/bnh7p"
-  links:
-    doi: "https://doi.org/10.31219/osf.io/bnh7p"
-    postprint: "https://osf.io/bnh7p"
-  altmetric_doi: "10.31219/osf.io/bnh7p"
-
+# 1
 - title: "In Pursuit of Citational Justice: A Toolkit for Equitable Scholarship"
   type: "preprint"
   year: "2025"
@@ -189,7 +188,38 @@
     postprint: "https://osf.io/preprints/metaarxiv/qjecy_v2"
   altmetric_doi: "10.31222/osf.io/qjecy_v2"
 
+# 2
+- title: "Neurodiversity & Open Scholarship in Academia"
+  type: "preprint"
+  year: "2022"
+  status: "Preprint"
+  journal_name: "MetaArxiv"
+  authors: "Elsherif, M. M., Middleton, S. L., Phan, J. M., Azevedo, F., Iley, B. J., Grose-Hodge, M., … Dokovova, M."
+  abstract: "We have written a manuscript entitled *Bridging Neurodiversity and Open Scholarship: How Shared Values Can Guide Best Practices for Research Integrity, Social Justice, and Principled Education* explaining that Neurodiversity is fundamental to the understanding of human behaviour and cognition."
+  citation: "Elsherif, M. M., et al. (2022). <strong>Bridging neurodiversity and open scholarship: How shared values can guide best practices for research integrity, social justice, and principled education.</strong> <em>MetaArXiv</em>. https://doi.org/10.31222/osf.io/k7a9p"
+  links:
+    doi: "https://doi.org/10.31222/osf.io/k7a9p"
+    postprint: "https://doi.org/10.31222/osf.io/k7a9p"
+  altmetric_doi: "10.31222/osf.io/k7a9p"
+
+# 3
+- title: "FORRT's Manifesto"
+  type: "preprint"
+  year: "2019"
+  status: "preprint"
+  journal_name: "OSF Preprints"
+  authors: "Azevedo, F., Parsons, S., Micheli, L., Strand, J., Rinke, E., ... & FORRT"
+  abstract: "We have written a manuscript entitled *Introducing a Framework for Open and Reproducible Research Training (FORRT)* describing the importance of integrating open scholarship into higher education."
+  citation: "Azevedo, F., et al. (2019). <strong>Introducing a framework for open and reproducible research training (FORRT).</strong> <em>OSF Preprints</em>. https://doi.org/10.31219/osf.io/bnh7p"
+  links:
+    doi: "https://doi.org/10.31219/osf.io/bnh7p"
+    postprint: "https://osf.io/bnh7p"
+  altmetric_doi: "10.31219/osf.io/bnh7p"
+
+
 # --- Op-Eds and Media ---
+
+# 1
 - title: "Unveiling the Truth in Science"
   type: "media"
   year: "2024"
@@ -201,6 +231,7 @@
   links:
     url: "https://theplosblog.plos.org/2024/02/unveiling-the-truth-in-science-the-quest-for-reliable-knowledge/"
 
+# 2
 - title: "Open Scholarship Pedagogical Communities"
   type: "media"
   year: "2023"
@@ -212,39 +243,7 @@
   links:
     url: "https://www.bps.org.uk/psychologist/open-scholarship-pedagogical-communities"
 
-- title: "Navigating Academia as Neurodivergent Researchers"
-  type: "media"
-  year: "2022"
-  status: "Op-Ed"
-  journal_name: "APS Observer"
-  authors: "Azevedo, F., Middleton, S., Mai Phan, J., Kapp, S., Gourdon-Kanhukamwe, A., Iley, B., Elsherif, M., & Shaw, J. J."
-  abstract: "For the Observer, of the Association for Psychological Science, on Navigating Academia as Neurodivergent Researchers."
-  citation: "Azevedo, F., et al. (2022). <strong>Navigating academia as neurodivergent researchers: Promoting neurodiversity within open scholarship.</strong> <em>APS Observer</em>. https://www.psychologicalscience.org/observer/gs-navigating-academia-as-neurodivergent-researchers"
-  links:
-    url: "https://www.psychologicalscience.org/observer/gs-navigating-academia-as-neurodivergent-researchers"
-
-- title: "What is 'Open Science'? And why does it need a glossary?"
-  type: "media"
-  year: "2022"
-  status: "Op-Ed"
-  journal_name: "In-Mind Magazine"
-  authors: "Azevedo, F., Baum, M., Hartmann, H., Micheli, L., Spitzer, L., & Wingen, T."
-  abstract: "For In-Mind Magazine, on What is Open Science and Why Does It Need a Glossary."
-  citation: "Azevedo, F., et al. (2022). <strong>What is 'Open Science'? And why does it need a glossary?</strong> <em>In-Mind Magazine</em>. https://de.in-mind.org/blog/post/was-ist-offene-wissenschaft-und-warum-braucht-sie-ein-woerterbuch"
-  links:
-    url: "https://de.in-mind.org/blog/post/was-ist-offene-wissenschaft-und-warum-braucht-sie-ein-woerterbuch"
-
-- title: "Educating in the Open Scholarship Era"
-  type: "media"
-  year: "2022"
-  status: "Op-Ed"
-  journal_name: "Center for Open Science Blog"
-  authors: "Azevedo, F."
-  abstract: "For the Center of Open Science Blog, on Integrating Open and Reproducible Science Principles into Higher Education."
-  citation: "Azevedo, F. (2022). <strong>Educating in the open scholarship era.</strong> <em>Center for Open Science (COS)</em>. https://www.cos.io/blog/educating-in-the-open-scholarship-eara"
-  links:
-    url: "https://www.cos.io/blog/educating-in-the-open-scholarship-eara"
-
+# 3
 - title: "Letter to UNESCO’s Principles of Open Science Monitoring"
   type: "media"
   year: "2023"
@@ -256,7 +255,46 @@
   links:
     pdf: "Letter_to_UNESCO’s_Principles_of_Open_Science_Monitoring.pdf"
 
+# 4
+- title: "Navigating Academia as Neurodivergent Researchers"
+  type: "media"
+  year: "2022"
+  status: "Op-Ed"
+  journal_name: "APS Observer"
+  authors: "Azevedo, F., Middleton, S., Mai Phan, J., Kapp, S., Gourdon-Kanhukamwe, A., Iley, B., Elsherif, M., & Shaw, J. J."
+  abstract: "For the Observer, of the Association for Psychological Science, on Navigating Academia as Neurodivergent Researchers."
+  citation: "Azevedo, F., et al. (2022). <strong>Navigating academia as neurodivergent researchers: Promoting neurodiversity within open scholarship.</strong> <em>APS Observer</em>. https://www.psychologicalscience.org/observer/gs-navigating-academia-as-neurodivergent-researchers"
+  links:
+    url: "https://www.psychologicalscience.org/observer/gs-navigating-academia-as-neurodivergent-researchers"
+
+# 5
+- title: "What is 'Open Science'? And why does it need a glossary?"
+  type: "media"
+  year: "2022"
+  status: "Op-Ed"
+  journal_name: "In-Mind Magazine"
+  authors: "Azevedo, F., Baum, M., Hartmann, H., Micheli, L., Spitzer, L., & Wingen, T."
+  abstract: "For In-Mind Magazine, on What is Open Science and Why Does It Need a Glossary."
+  citation: "Azevedo, F., et al. (2022). <strong>What is 'Open Science'? And why does it need a glossary?</strong> <em>In-Mind Magazine</em>. https://de.in-mind.org/blog/post/was-ist-offene-wissenschaft-und-warum-braucht-sie-ein-woerterbuch"
+  links:
+    url: "https://de.in-mind.org/blog/post/was-ist-offene-wissenschaft-und-warum-braucht-sie-ein-woerterbuch"
+
+# 6
+- title: "Educating in the Open Scholarship Era"
+  type: "media"
+  year: "2022"
+  status: "Op-Ed"
+  journal_name: "Center for Open Science Blog"
+  authors: "Azevedo, F."
+  abstract: "For the Center of Open Science Blog, on Integrating Open and Reproducible Science Principles into Higher Education."
+  citation: "Azevedo, F. (2022). <strong>Educating in the open scholarship era.</strong> <em>Center for Open Science (COS)</em>. https://www.cos.io/blog/educating-in-the-open-scholarship-eara"
+  links:
+    url: "https://www.cos.io/blog/educating-in-the-open-scholarship-eara"
+
+
 # --- Policy Briefs ---
+
+# 1
 - title: "Open Scholarship in QAA Briefing"
   type: "policy"
   year: "2023"
@@ -268,6 +306,7 @@
   links:
     pdf: "2023_QAA _ FORRT_UKRN.pdf"
 
+# 2
 - title: "Building Community (UK Parliament)"
   type: "policy"
   year: "2021"
@@ -279,6 +318,7 @@
   links:
     pdf: "Azevedo_et.al._FORRT_Science_Technology_Committee_UK_Inquiry.pdf"
 
+# 3
 - title: "Briefing Note for Degree Accrediting Societies"
   type: "policy"
   year: "2020"
@@ -290,7 +330,10 @@
   links:
     pdf: "Parsons_Azevedo_FORRT_UKRN_Briefing_note_for_degree_accrediting_societies.pdf"
 
+
 # --- Affiliated Projects ---
+
+# 1
 - title: "A scoping review on metrics to quantify reproducibility"
   type: "affiliated"
   year: "2025"
@@ -304,6 +347,7 @@
     postprint: "https://doi.org/10.1098/rsos.242076"
   altmetric_doi: "10.1098/rsos.242076"
 
+# 2
 - title: "The Potential of Preregistration in Psychology"
   type: "affiliated"
   year: "2024"
@@ -317,7 +361,10 @@
     postprint: "https://doi.org/10.1037/met0000687"
   altmetric_doi: "10.1037/met0000687"
 
+
 # --- Work in Progress ---
+
+# 1
 - title: "Open Social Psychology"
   type: "wip"
   year: "In Prep"
