@@ -7,8 +7,8 @@ headless = true  # This file represents a page section.
 active = true  # Activate this widget? true/false
 weight = 5  # Order that this section will appear.
 
-title = "Publications, Preprints, Policy Briefs, Op-Eds, Shiny Apps, Data & R-packages"
-subtitle = ""
+title = "FORRT's Research, Scholarship & Resources"
+subtitle = "Peer-reviewed research, tools, data, teaching materials, and policy resources advancing open and reproducible science."
 
 [design]
   # Choose how many columns the section has. Valid values: 1 or 2.
@@ -73,9 +73,7 @@ subtitle = ""
 
 ---
 
-# **Academic peer-reviewed publications**
 
----
 
 <figure class="citation-container">
   <img src="citation_chart.webp" alt="Citation Chart">
@@ -84,50 +82,31 @@ subtitle = ""
 
 This page showcases the diverse scholarly and public-facing outputs produced by FORRT and its community—including peer-reviewed publications, preprints, policy briefs, opinion pieces, interactive apps, datasets, and open-source tools. It reflects our ongoing efforts to contribute to scientific discourse, inform policy, and promote open, inclusive, and transparent research practices. Whether you're a researcher, educator, or policymaker, this hub provides access to FORRT’s evolving body of work. Dive in to discover, cite, or collaborate.
 
+{{< publication_filters >}}
+
+
+{{< publication_list type="journal" title="Academic peer-reviewed publications" >}}
+
 <br>
 
-{{< publication_list type="journal" >}}
-
-<br>
-
-<div align="center">
-  <h1> Preprints </h1>
-  <hr>
-</div>
-
-{{< publication_list type="preprint" >}}
+{{< publication_list type="preprint" title="Preprints" >}}
 
 
 <br>
 
-# Op-Eds and Other Media 
-
-{{< publication_list type="media" >}}
+{{< publication_list type="media" title="Op-Eds and Other Media" >}}
 
 <br>
 
-# Policy Briefs 
-***
-
-{{< publication_list type="policy" >}}
+{{< publication_list type="policy" title="Policy Briefs" >}}
 
 <br>
 
-<div align="center">
-  <h1> FORRT affiliated projects </h1>
-  <hr>
-</div>
-
-{{< publication_list type="affiliated" >}}
+{{< publication_list type="affiliated" title="FORRT affiliated projects" >}}
 
 <br>
 
-<div align="center">
-  <h1> Work in Progress </h1>
-  <hr>
-</div>
-
-{{< publication_list type="wip" >}}
+{{< publication_list type="wip" title="Work in Progress" >}}
 
 
 # **<font style="color:#4c1322">Ongoing Projects</font>**
