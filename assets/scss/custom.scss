@@ -335,3 +335,104 @@ article.article:has(table) .article-container {
   color: #fff;
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
 }
+
+/* -------------------------------------------------- */
+/* intro pub texts */
+/* -------------------------------------------------- */
+
+.pub-intro {
+  max-width: 100%;
+  margin: 0 auto 2rem auto;
+  font-size: 0.9rem;
+  color: #495057;
+  line-height: 1.6;
+}
+
+.citation-container {
+  float: right;
+  margin: 0 0 1rem 2rem;
+  max-width: 250px;
+  /* Reduced for compactness */
+}
+
+.citation-container img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  /* Consistent radius */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.citation-container figcaption {
+  text-align: center;
+  margin-top: 0.5em;
+  font-size: 0.75rem;
+  color: #868e96;
+}
+
+.pub-section-description {
+  max-width: 800px;
+  margin: 1rem auto 0 auto;
+  font-size: 0.9rem;
+  color: #666;
+  font-style: italic;
+  line-height: 1.5;
+}
+
+/* -------------------------------------------------- */
+/* Muted Publication Buttons */
+/* -------------------------------------------------- */
+
+.pub-buttons .btn {
+  font-weight: 500;
+  border-width: 1px;
+}
+
+/* Primary (DOI, Link) - Muted Blue */
+.pub-buttons .btn-outline-primary {
+  color: #5c7c93;
+  border-color: #5c7c93;
+}
+
+.pub-buttons .btn-outline-primary:hover {
+  background-color: #5c7c93;
+  border-color: #5c7c93;
+  color: #fff;
+}
+
+/* Success (Download Paper) - Muted Green */
+.pub-buttons .btn-outline-success {
+  color: #6c9a76;
+  border-color: #6c9a76;
+}
+
+.pub-buttons .btn-outline-success:hover {
+  background-color: #6c9a76;
+  border-color: #6c9a76;
+  color: #fff;
+}
+
+/* Danger (Download PDF) - Muted Red */
+.pub-buttons .btn-outline-danger {
+  color: #c17d7d;
+  border-color: #c17d7d;
+}
+
+.pub-buttons .btn-outline-danger:hover {
+  background-color: #c17d7d;
+  border-color: #c17d7d;
+  color: #fff;
+}
+
+/* Info (Project) - Muted Teal */
+.pub-buttons .btn-outline-info {
+  color: #769da3;
+  border-color: #769da3;
+}
+
+.pub-buttons .btn-outline-info:hover {
+  background-color: #769da3;
+  border-color: #769da3;
+  color: #fff;
+}

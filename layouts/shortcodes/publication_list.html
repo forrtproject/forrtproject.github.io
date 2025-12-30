@@ -13,14 +13,19 @@
 "tool" "Interactive Tools / Apps"
 "resource" "Teaching Materials"
 "data" "Data, Code & Packages"
-"statement" "Statements"
 }}
 
 <div class="pub-section-group">
+    {{ $description := .Get "description" }}
     {{ if $title }}
     <div class="section-heading" align="center">
         <h1>{{ $title | markdownify }}</h1>
         <hr>
+        {{ if $description }}
+        <div class="pub-section-description">
+            {{ $description | markdownify }}
+        </div>
+        {{ end }}
     </div>
     {{ end }}
     <div class="pub-list">
@@ -68,6 +73,12 @@
                     {{ if .journal_name }}
                     <span class="journal-icon"><i class="fas fa-book-open"></i></span>
                     <span class="journal-name">{{ .journal_name }}</span>
+                    {{ end }}
+                    {{ if .status }}
+                    <span class="pub-status"
+                        style="margin-left: 0.5rem; color: #868e96; font-size: 0.85rem; font-style: italic;">
+                        {{ .status }}
+                    </span>
                     {{ end }}
                 </div>
 
