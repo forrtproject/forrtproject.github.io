@@ -95,11 +95,10 @@ This page showcases the diverse scholarly and public-facing outputs produced by 
 
 <div class="pub-section-group">
   <div class="section-heading" align="center">
-      <h1>Ongoing Projects</h1>
+      <h1>Find More About Ongoing Projects</h1>
       <hr>
       <div class="pub-section-description">
           We are currently preparing additional manuscripts on a range of topics. To find out more about what we're working on and how you can contribute, visit our <a href="/about/get-involved">Get Involved page</a>.
       </div>
   </div>
 </div>
-
