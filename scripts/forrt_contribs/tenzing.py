@@ -2,33 +2,79 @@ import pandas as pd
 import os
 import re
 import html
+import json
+
+def print_failures(failed_sheets):
+    """Print a formatted list of failed sheets."""
+    if failed_sheets:
+        print("\nFailed sheets:")
+        for failure in failed_sheets:
+            print(f"  - {failure['project_name']}: {failure['error']}")
 
 # Tenzing directory
 csv_export_url = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vT_IaXiYtB3iAmtDZ_XiQKrToRkxOlkXNAeNU2SIT_J9PxvsQyptga6Gg9c8mSvDZpwY6d8skswIQYh/pub?output=csv&gid=0'
 extra_roles_url = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vSCsxHTnSSjYqhQSR2kT3gIYg82HiODjPat9y2TFPrZESYWxz4k8CZsOesXPD3C5dngZEGujtKmNZsa/pub?output=csv'
 
 # Use pandas to read the CSV
-df = pd.read_csv(csv_export_url)
-df_roles = pd.read_csv(extra_roles_url)
+try:
+    df = pd.read_csv(csv_export_url)
+    print(f"✓ Successfully loaded main Tenzing index with {len(df)} projects")
+except Exception as e:
+    # Catch all exceptions - we need the main index to proceed
+    print(f"✗ FATAL: Failed to load main Tenzing index: {str(e)}")
+    raise
+
+try:
+    df_roles = pd.read_csv(extra_roles_url)
+    print(f"✓ Successfully loaded extra roles with {len(df_roles)} entries")
+except Exception as e:
+    # Catch all exceptions - we need the extra roles to proceed
+    print(f"✗ FATAL: Failed to load extra roles: {str(e)}")
+    raise
 
 # Assuming 'df' contains the index data with Tenzing Links
 all_data_frames = []
+failed_sheets = []
 
 print("--- Reading Contributor Data ---")
 # Loop over both the Project Names and the Tenzing Links
 for project_name, url, project_url in zip(df['Project Name'], df['CSV Link'], df['Project URL']):
-    # Make sure each URL is transformed into a CSV export URL as shown above
-    data_frame = pd.read_csv(url)
-    
-    # --- LOGGING ADDED HERE ---
-    # Log the number of contributors read from the current project
-    print(f"Read {len(data_frame)} contributors from '{project_name}'.")
+    try:
+        # Make sure each URL is transformed into a CSV export URL as shown above
+        data_frame = pd.read_csv(url)
+        
+        # --- LOGGING ADDED HERE ---
+        # Log the number of contributors read from the current project
+        print(f"✓ Read {len(data_frame)} contributors from '{project_name}'.")
 
-    # Add a new column with the project name
-    data_frame['Project Name'] = project_name
-    data_frame['Project URL'] = project_url
-    
-    all_data_frames.append(data_frame)
+        # Add a new column with the project name
+        data_frame['Project Name'] = project_name
+        data_frame['Project URL'] = project_url
+        
+        all_data_frames.append(data_frame)
+    except Exception as e:
+        # Catch all exceptions (network, parsing, etc.) to maximize robustness
+        # Log the failure and continue processing other sheets
+        error_msg = f"✗ Failed to read '{project_name}': {str(e)}"
+        print(error_msg)
+        failed_sheets.append({
+            'project_name': project_name,
+            'url': url,
+            'error': str(e)
+        })
+        continue
+
+# Check if we successfully loaded at least one project
+if not all_data_frames:
+    error_msg = "✗ FATAL: No project data could be loaded. All sheets failed."
+    print(error_msg)
+    print_failures(failed_sheets)
+    raise RuntimeError(error_msg)
+
+print(f"\n✓ Successfully loaded {len(all_data_frames)} out of {len(df)} projects")
+if failed_sheets:
+    print(f"⚠ Warning: {len(failed_sheets)} project(s) failed to load:")
+    print_failures(failed_sheets)
 
 # Concatenate all data frames
 merged_data = pd.concat(all_data_frames, ignore_index=True)
@@ -46,7 +92,12 @@ def concatenate_true_columns(row, columns):
 
 # List of column names to check for TRUE values
 fields_url = "https://docs.google.com/spreadsheets/d/e/2PACX-1vT_IaXiYtB3iAmtDZ_XiQKrToRkxOlkXNAeNU2SIT_J9PxvsQyptga6Gg9c8mSvDZpwY6d8skswIQYh/pub?output=csv&gid=277271370"
-column_mappings = pd.read_csv(fields_url)
+try:
+    column_mappings = pd.read_csv(fields_url)
+    print(f"✓ Successfully loaded column mappings with {len(column_mappings)} fields")
+except Exception as e:
+    print(f"✗ FATAL: Failed to load column mappings: {str(e)}")
+    raise
 
 # Extracting Column A (Fields) as columns_to_check
 columns_to_check = column_mappings['Fields'].tolist()
@@ -122,81 +173,135 @@ merged_data['ORCID iD'] = merged_data.groupby('full_name')['ORCID iD'].transform
 
 # Helper function to normalize project/role names for data attributes
 def normalize_for_attribute(text):
-    """Convert text to lowercase and replace spaces with hyphens for HTML attributes"""
+    """Normalize text for use in HTML data-* attributes."""
     if pd.isna(text) or text == '':
         return ''
-    # Collapse multiple spaces into single hyphens and replace & with 'and'
-    return re.sub(r'\s+', '-', text.lower().strip()).replace('&', 'and')
+    
+    # Lowercase + trim
+    name = text.lower().strip()
+
+    # Replace & with 'and'
+    name = name.replace('&', 'and')
+
+    # Replace ANY non-alphanumeric sequence with a hyphen
+    name = re.sub(r'[^a-z0-9]+', '-', name)
+
+    # Collapse multiple hyphens
+    name = re.sub(r'-+', '-', name)
+
+    # Remove leading/trailing hyphens
+    name = name.strip('-')
+
+    return name
+
 
 # Group by 'ORCID iD' and concatenate the contributions
-def concatenate_contributions(group):
 
-    # Find the minimum original order for the group
+def concatenate_contributions(group):
+    # Minimum original order for sorting later
     min_order = group['original_order'].min()
 
-    # Format the full name once per group
+    # Format name once
     full_name = format_name(group.iloc[0])
     group = group.sort_values(by='special_role', ascending=False)
 
-    # Collect all projects and roles for data attributes
+    # Collect projects and roles for data attributes
     projects = []
     roles = []
-    
+
     for _, row in group.iterrows():
-        # Normalize project name
         project_name = row['Project Name']
         if pd.notna(project_name) and project_name != '':
             normalized_project = normalize_for_attribute(project_name)
             if normalized_project not in projects:
                 projects.append(normalized_project)
-        
-        # Parse and normalize roles from Contributions
+
         contributions_text = row['Contributions']
         if pd.notna(contributions_text):
-            # Check if it contains 'as Project Manager' (special role)
+
+            # Detect Project Manager special role
             if row['special_role'] and 'Project Manager' in contributions_text:
                 if 'project-manager' not in roles:
                     roles.append('project-manager')
-            
-            # Extract roles from the contributions text
-            # Roles are marked with asterisks like *Writing - original draft*
+
+            # Extract roles marked with *
             role_matches = re.findall(r'\*([^*]+)\*', contributions_text)
             for role_match in role_matches:
                 normalized_role = normalize_for_attribute(role_match)
                 if normalized_role not in roles:
                     roles.append(normalized_role)
 
-    # Create the contributions string for each project
-    contributions = [
-        f"{row['Project Name']} {('as' if row['special_role'] else '')} {row['Contributions']}" if pd.isna(row['Project URL']) or row['Project URL'] == ''
-        else f"[{row['Project Name']}]({row['Project URL']}) {('as' if row['special_role'] else '')} {row['Contributions']}"
-        for _, row in group.iterrows()
-    ]
+    # Build contribution entries (HTML version)
+    contributions_html = []
+    for _, row in group.iterrows():
 
-    # Add numbering only if there are more than 1 contributions
-    if len(contributions) > 1:
-        contributions = [f"{i+1}. {contribution}" for i, contribution in enumerate(contributions)]
+        # Convert project name to HTML <a> if URL exists
+        if pd.notna(row['Project URL']) and row['Project URL'] != '':
+            project_html = f'<a href="{row["Project URL"]}">{row["Project Name"]}</a>'
+        else:
+            project_html = row['Project Name']
 
-    # Turn contributions into multiline list or single line
-    contributions_str = contributions[0] if len(contributions) == 1 else '\n    ' + '\n    '.join(contributions) + '\n' + '{{<rawhtml>}}<br/>&nbsp;<br/> {{</rawhtml>}}'
+        # Convert *role* → <em>role</em>
+        contrib_html = re.sub(r'\*([^*]+)\*', r'<em>\1</em>', row['Contributions'])
 
-    # Create data attributes with proper escaping
-    projects_attr = ','.join(projects) if projects else ''
-    roles_attr = ','.join(roles) if roles else ''
-    
-    # Escape attribute values to prevent HTML injection
-    projects_attr_escaped = html.escape(projects_attr, quote=True)
-    roles_attr_escaped = html.escape(roles_attr, quote=True)
-    
+        # Add special "Project Manager" phrasing
+        if row['special_role']:
+
+            # Remove all variants of "Project Manager" from contrib_html
+            cleaned_contrib = re.sub(
+                r'project[\s\-]*manager',
+                '',
+                contrib_html,
+                flags=re.IGNORECASE
+            ).strip()
+
+            # Clean extra spaces and punctuation
+            cleaned_contrib = re.sub(r'\s{2,}', ' ', cleaned_contrib).strip(' ,')
+
+            if cleaned_contrib:  
+                # Has other roles -> include "and ..."
+                contributions_html.append(
+                    f'{project_html} as Project Manager and {cleaned_contrib}'
+                )
+            else:
+                # No other roles -> only the special phrasing
+                contributions_html.append(
+                    f'{project_html} as Project Manager'
+        )
+        else:
+            contributions_html.append(f'{project_html} {contrib_html}')
+
+    # Number entries if more than one project
+    if len(contributions_html) > 1:
+        # Prepend <br/> before the first numbered item so it doesn’t appear on the same line
+        contributions_html = [f"<br/>{i+1}. {c}" if i == 0 else f"{i+1}. {c}"
+                            for i, c in enumerate(contributions_html)]
+
+
+    # Join using <br/> instead of markdown line breaks
+    contributions_str = '<br/>'.join(contributions_html)
+
+    # Create attributes
+    projects_attr = html.escape(','.join(projects), quote=True)
+    roles_attr = html.escape(','.join(roles), quote=True)
+
     orcid_id = group.iloc[0]['ORCID iD']
-    
-    # Build the list item with data attributes
-    data_attrs = f'data-projects="{projects_attr_escaped}" data-roles="{roles_attr_escaped}"'
-    
+
+    # Build final <li> (all HTML, no markdown)
     if orcid_id:
-        return min_order, f"- {{{{<rawhtml>}}}}<li {data_attrs}><strong><a href=\"https://orcid.org/{orcid_id.strip()}\">{full_name}</a></strong> contributed to {contributions_str}</li>{{{{</rawhtml>}}}}"
+        name_html = f'<strong><a href="https://orcid.org/{orcid_id.strip()}">{full_name}</a></strong>'
     else:
-        return min_order, f"- {{{{<rawhtml>}}}}<li {data_attrs}><strong>{full_name}</strong> contributed to {contributions_str}</li>{{{{</rawhtml>}}}}"
+        name_html = f'<strong>{full_name}</strong>'
+
+    final_html = (
+        f'<li data-projects="{projects_attr}" '
+        f'data-roles="{roles_attr}">'
+        f'{name_html} contributed to {contributions_str}'
+        f'</li><br/>'
+    )
+
+    return min_order, final_html
+
 
 def extract_orcid_id(value):
     if not isinstance(value, str) or len(value) < 5:
@@ -238,7 +343,6 @@ summary_string = '\n\n'.join(summary['Contributions'])
 footer_content = """
 </ul>
 <script src="/js/contributor-filter.js"></script>
-{{</rawhtml>}}
 """
 
 # --- LOGGING ADDED HERE ---
@@ -269,3 +373,24 @@ with open(output_path, 'w') as file:
     file.write(combined_content)
 
 print(f"\nSuccessfully generated the file at: {output_path}")
+
+# Save failure information to a JSON file for potential GitHub issue creation
+if failed_sheets:
+    failure_report_path = os.path.join(script_dir, 'tenzing_failures.json')
+    with open(failure_report_path, 'w') as f:
+        json.dump({
+            'timestamp': pd.Timestamp.now().isoformat(),
+            'total_projects': len(df),
+            'successful_projects': len(all_data_frames),
+            'failed_projects': len(failed_sheets),
+            'failures': failed_sheets
+        }, f, indent=2)
+    print(f"\n⚠ Failure report saved to: {failure_report_path}")
+    print(f"⚠ {len(failed_sheets)} project(s) failed - workflow should create an issue")
+else:
+    print("\n✓ All projects processed successfully!")
+    # Remove any existing failure report
+    failure_report_path = os.path.join(script_dir, 'tenzing_failures.json')
+    if os.path.exists(failure_report_path):
+        os.remove(failure_report_path)
+        print("✓ Removed old failure report")
