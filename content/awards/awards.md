@@ -67,6 +67,28 @@ subtitle = ""
 }
 </style>
 
+<script src="/js/js-confetti.browser.js"></script>
+<script>
+  window.addEventListener("load", () => {
+    const jsConfetti = new JSConfetti();
+    
+    // Function to trigger confetti
+    const triggerConfetti = () => {
+        jsConfetti.addConfetti({
+        emojis: ['🎉', '🥳', '👏', '✨', '⭐','🏆'],
+        emojiSize: 40,
+        confettiNumber: 150,
+      });
+    };
+
+    // Trigger immediately on load
+    triggerConfetti();
+
+    // Trigger every 60 seconds (60000 ms)
+    setInterval(triggerConfetti, 60000);
+  });
+</script>
+
 ------------
 
 <center>
@@ -78,6 +100,24 @@ Thanks to our amazing community, FORRT has become an ***award-winning*** grassro
 ------------
 
 ## **Awards**
+
+---
+
+### [FORWARD: A UNESCO Decade of Science Programme](../educators-corner/023-forward-a-unesco-decade-of-science-programme/)
+
+<img src="unesco_recognition.webp" width="200" align="left" style="margin-right: 10px;" alt="FORWARD: A UNESCO Decade of Science Programme"> 
+
+**FORRT** is one of the few initiatives worldwide to be formally endorsed as a **Programme** of the [International Decade of Sciences for Sustainable Development (IDSSD, 2024–2033)](https://www.un-sciences-decade.org/en/endorsed-activities/forward-forrt-world-development-fostering-open-research-reproducibility-worldwide-accessible?hub=63) , led by UNESCO and the United Nations (UN). This endorsement reflects the highest level of UN policy recognition and positions FORRT’s work in Education & Pedagogy (Curriculum Hub), Metascience & Research (Replication Hub) and Social Justice & DEIA as an **essential contribution to the UN’s strategy for achieving the Sustainable Development Goals (SDGs)**.
+
+<a href="https://www.un-sciences-decade.org/en/endorsed-activities/forward-forrt-world-development-fostering-open-research-reproducibility-worldwide-accessible?hub=63" style="font-size:0.7rem;">
+  Read the Official Announcement of the endorsement of FORWARD by the UNESCO Science Decade
+</a>
+
+<br>
+
+{{< forward_unesco_sdgs_card >}}
+
+---
 
 <br>
 

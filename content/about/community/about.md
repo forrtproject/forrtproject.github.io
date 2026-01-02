@@ -5,10 +5,10 @@
 widget = "blank"  # See https://sourcethemes.com/academic/docs/page-builder/
 headless = true  # This file represents a page section.
 active = true  # Activate this widget? true/false
-weight = 10  # Order that this section will appear.
+weight = 21  # Order that this section will appear.
 
-title = "Our community"
-subtitle = "*Raising awareness of the pedagogical implications of open and reproducible science in higher education.*"
+title = "Get Featured"
+subtitle = ""
 classtitle = "text-center"
 
 [design]
@@ -52,3 +52,9 @@ classtitle = "text-center"
  css_class = ""
 
 +++
+
+If you would like to be featured in our community list, please submit your profile information to info@forrt.org.
+
+* **Name & Affiliation**
+* **Profile Picture** (headshot)
+* **Short Description** of your work or research interests.

@@ -313,20 +313,6 @@ subtitle = "---"
   # icon = "slack"
   # icon_pack = "fab"
   # iconalttext = "Slack"
-  img = "team/selfassessment.svg" #icon OR img that you should put in 
-  imgalttext = "" # Describe the image in words for screen-reader users. 
-  imgside = "left" # image will appear left or right
-  buttonurl = "https://join.slack.com/t/forrt/shared_invite/zt-alobr3z7-NOR0mTBfD1vKXn9qlOKqaQ"
-  buttondescr = "Join"
-  name = "Team Self-Assessment" # Title
-  description = "Team aiming at improving the user experience of the self-assessment tool, as well as coordinating with other teams (e.g., team summaries, database, and website to update its recommendations)."
-  color = "#395855" # Background color under the image
-
-
-[[featurealt]]
-  # icon = "slack"
-  # icon_pack = "fab"
-  # iconalttext = "Slack"
   img = "team/team-summaries.svg" #icon OR img that you should put in 
   imgalttext = "" # Describe the image in words for screen-reader users. 
   imgside = "right" # image will appear left or right
