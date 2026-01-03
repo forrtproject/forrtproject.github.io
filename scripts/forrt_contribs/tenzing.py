@@ -81,8 +81,16 @@ merged_data = pd.concat(all_data_frames, ignore_index=True)
 
 def concatenate_true_columns(row, columns):
     true_columns = [col for col in columns if pd.notna(row[col]) and row[col]]
-    if 'Project Managers' in true_columns:
-        other_columns = [f'*{col}*' for col in true_columns if col != 'Project Managers']
+    
+    # Check for both "Project Managers" and "Project manager" (case variations)
+    pm_column = None
+    for col in true_columns:
+        if col.lower() == 'project managers' or col.lower() == 'project manager':
+            pm_column = col
+            break
+    
+    if pm_column:
+        other_columns = [f'*{col}*' for col in true_columns if col != pm_column]
         if other_columns:
             return 'as Project Manager and with ' + ', '.join(other_columns[:-1]) + (' and ' if len(other_columns) > 1 else '') + other_columns[-1]
         else:
@@ -92,6 +100,7 @@ def concatenate_true_columns(row, columns):
 
 # List of column names to check for TRUE values
 fields_url = "https://docs.google.com/spreadsheets/d/e/2PACX-1vT_IaXiYtB3iAmtDZ_XiQKrToRkxOlkXNAeNU2SIT_J9PxvsQyptga6Gg9c8mSvDZpwY6d8skswIQYh/pub?output=csv&gid=277271370"
+
 try:
     column_mappings = pd.read_csv(fields_url)
     print(f"✓ Successfully loaded column mappings with {len(column_mappings)} fields")
@@ -109,6 +118,7 @@ merged_data.rename(columns=rename_dict, inplace=True)
 # Filtering rows based on the updated columns_to_check list
 # Note: columns_to_check needs to be updated to the renamed columns for the filter to work correctly
 columns_to_check = [rename_dict[col] for col in columns_to_check if col in rename_dict]
+
 # Remove columns not present
 columns_present = [col for col in columns_to_check if col in merged_data.columns]
 columns_dropped = set(columns_to_check) - set(columns_present)
@@ -143,7 +153,7 @@ merged_data.reset_index(drop=True, inplace=True)
 
 # Sort based on surname
 merged_data['sort_order'] = merged_data['Surname']
-merged_data = merged_data.sort_values(by='sort_order')
+merged_data = merged_data.sort_values(by='sort_order') 
 merged_data = merged_data.drop(columns='sort_order')
 
 # Strip spaces from 'ORCID iD' in merged data
@@ -154,7 +164,7 @@ def format_name(row):
     # Extract the first name, middle name initial, and surname
     first_name = row['First name'].strip() if pd.notna(row['First name']) else ""
     middle_name = row['Middle name']
-    surname = row['Surname'].strip() if pd.notna(row['Surname']) else ""
+    surname = row['Surname'].strip().rstrip('*') if pd.notna(row['Surname']) else ""
 
     # Check if the middle name is not NaN and not an empty string
     if pd.notna(middle_name) and middle_name != '':
@@ -205,100 +215,93 @@ def concatenate_contributions(group):
     full_name = format_name(group.iloc[0])
     group = group.sort_values(by='special_role', ascending=False)
 
-    # Collect projects and roles for data attributes
-    projects = []
-    roles = []
-
-    for _, row in group.iterrows():
-        project_name = row['Project Name']
-        if pd.notna(project_name) and project_name != '':
-            normalized_project = normalize_for_attribute(project_name)
-            if normalized_project not in projects:
-                projects.append(normalized_project)
-
-        contributions_text = row['Contributions']
-        if pd.notna(contributions_text):
-
-            # Detect Project Manager special role
-            if row['special_role'] and 'Project Manager' in contributions_text:
-                if 'project-manager' not in roles:
-                    roles.append('project-manager')
-
-            # Extract roles marked with *
-            role_matches = re.findall(r'\*([^*]+)\*', contributions_text)
-            for role_match in role_matches:
-                normalized_role = normalize_for_attribute(role_match)
-                if normalized_role not in roles:
-                    roles.append(normalized_role)
-
-    # Build contribution entries (HTML version)
-    contributions_html = []
-    for _, row in group.iterrows():
-
-        # Convert project name to HTML <a> if URL exists
-        if pd.notna(row['Project URL']) and row['Project URL'] != '':
-            project_html = f'<a href="{row["Project URL"]}">{row["Project Name"]}</a>'
-        else:
-            project_html = row['Project Name']
-
-        # Convert *role* → <em>role</em>
-        contrib_html = re.sub(r'\*([^*]+)\*', r'<em>\1</em>', row['Contributions'])
-
-        # Add special "Project Manager" phrasing
-        if row['special_role']:
-
-            # Remove all variants of "Project Manager" from contrib_html
-            cleaned_contrib = re.sub(
-                r'project[\s\-]*manager',
-                '',
-                contrib_html,
-                flags=re.IGNORECASE
-            ).strip()
-
-            # Clean extra spaces and punctuation
-            cleaned_contrib = re.sub(r'\s{2,}', ' ', cleaned_contrib).strip(' ,')
-
-            if cleaned_contrib:  
-                # Has other roles -> include "and ..."
-                contributions_html.append(
-                    f'{project_html} as Project Manager and {cleaned_contrib}'
-                )
-            else:
-                # No other roles -> only the special phrasing
-                contributions_html.append(
-                    f'{project_html} as Project Manager'
-        )
-        else:
-            contributions_html.append(f'{project_html} {contrib_html}')
-
-    # Number entries if more than one project
-    if len(contributions_html) > 1:
-        # Prepend <br/> before the first numbered item so it doesn’t appear on the same line
-        contributions_html = [f"<br/>{i+1}. {c}" if i == 0 else f"{i+1}. {c}"
-                            for i, c in enumerate(contributions_html)]
-
-
-    # Join using <br/> instead of markdown line breaks
-    contributions_str = '<br/>'.join(contributions_html)
-
-    # Create attributes
-    projects_attr = html.escape(','.join(projects), quote=True)
-    roles_attr = html.escape(','.join(roles), quote=True)
-
     orcid_id = group.iloc[0]['ORCID iD']
 
-    # Build final <li> (all HTML, no markdown)
+    # Build name HTML
     if orcid_id:
         name_html = f'<strong><a href="https://orcid.org/{orcid_id.strip()}">{full_name}</a></strong>'
     else:
         name_html = f'<strong>{full_name}</strong>'
 
-    final_html = (
-        f'<li data-projects="{projects_attr}" '
-        f'data-roles="{roles_attr}">'
-        f'{name_html} contributed to {contributions_str}'
-        f'</li><br/>'
-    )
+    # Build individual contribution items
+    contribution_items = []
+    
+    for _, row in group.iterrows():
+        project_name = row['Project Name']
+        if pd.isna(project_name) or project_name == '':
+            continue
+
+        # Normalize for data attributes
+        normalized_project = normalize_for_attribute(project_name)
+        
+        # Extract roles for this specific contribution
+        contribution_roles = []
+        contributions_text = row['Contributions']
+
+        
+        if pd.notna(contributions_text):
+            # Extract "Project Manager" if present (regardless of special_role)
+            pm_match = re.search(r'as\s+Project\s+Manager(?:\s+and\s+with)?', contributions_text, re.IGNORECASE)
+            if pm_match:
+                if 'project-manager' not in contribution_roles:
+                    contribution_roles.append('project-manager')
+            
+            # Extract special roles (for special_role=True cases)
+            if row['special_role']:
+                special_role_match = re.search(r'(?:as\s+)?(.+?)(?:\s+and\s+with|\s+and|$)', contributions_text)
+                if special_role_match:
+                    special_role_text = special_role_match.group(1).strip()
+                    normalized_special = normalize_for_attribute(special_role_text)
+                    if normalized_special not in contribution_roles:
+                        contribution_roles.append(normalized_special)
+            
+            # Extract roles marked with *
+            role_matches = re.findall(r'\*([^*]+)\*', contributions_text)
+            for role_match in role_matches:
+                normalized_role = normalize_for_attribute(role_match)
+                if normalized_role not in contribution_roles:
+                    contribution_roles.append(normalized_role)
+
+        # Build project HTML
+        if pd.notna(row['Project URL']) and row['Project URL'] != '':
+            project_html = f'<a href="{row["Project URL"]}">{project_name}</a>'
+        else:
+            project_html = project_name
+
+        # Convert *role* → <em>role</em>
+        contrib_html = re.sub(r'\*([^*]+)\*', r'<em>\1</em>', contributions_text) if pd.notna(contributions_text) else ''
+
+        # Handle special role phrasing
+        if row['special_role']:
+            # Use the actual special role text from contributions_text
+            full_contrib = f'{project_html} as {contributions_text}'
+        else:
+            full_contrib = f'{project_html} {contrib_html}'
+
+        # Create data attributes for this contribution
+        projects_attr = html.escape(normalized_project, quote=True)
+        roles_attr = html.escape(','.join(contribution_roles), quote=True)
+
+        # Build the contribution <li>
+        contribution_items.append(
+            f'    <li class="contribution" data-projects="{projects_attr}" '
+            f'data-roles="{roles_attr}">{full_contrib}</li>'
+        )
+
+        # Build the complete contributor group HTML
+        contributions_list = '\n'.join(contribution_items)
+
+        # Add id attribute if ORCID exists
+        id_attr = f' id="{orcid_id.strip()}"' if orcid_id else ''
+
+        final_html = (
+            f'<li class="contributor-group"{id_attr}>\n'
+            f'  {name_html} contributed to\n'
+            f'  <ul class="contributions-list">\n'
+            f'{contributions_list}\n'
+            f'  </ul>\n'
+            f'</li>\n'
+        )
 
     return min_order, final_html
 
@@ -312,7 +315,6 @@ def extract_orcid_id(value):
     
     return value
 
-# Assuming 'data' is your DataFrame
 merged_data['ORCID iD'] = merged_data['ORCID iD'].apply(extract_orcid_id)
 
 # Creating a new column for the concatenated name
@@ -320,6 +322,9 @@ merged_data['Name'] = merged_data.apply(format_name, axis=1)
 
 # Apply the function to each group and create a summary DataFrame
 merged_data['original_order'] = range(len(merged_data))
+
+# Move Flavio to the end of the list
+merged_data.loc[merged_data["ORCID iD"] == "0000-0001-9000-8513", 'original_order'] = 99999
 
 # Perform the groupby operation without sorting
 summary = (merged_data.groupby(merged_data['ORCID iD'].fillna(merged_data['Name']), sort=False)
@@ -339,13 +344,52 @@ summary = summary.sort_values(by='original_order').drop(columns='original_order'
 summary = summary.reset_index(drop=True)
 summary_string = '\n\n'.join(summary['Contributions'])
 
+
+# Get project and role names for dropdown filters
+
+project_names = sorted(merged_data["Project Name"].dropna().unique())
+
+
+role_names = list(set(columns_to_check + df_roles["Contributions"].dropna().unique().tolist()))
+
+projects_list = sorted(
+    [
+        {"value": normalize_for_attribute(p), "label": p}
+        for p in project_names
+        if p not in (None, "")
+    ],
+    key=lambda x: x["label"]
+)
+
+# Deduplicate roles by 'value', keeping the first label encountered (for solving Project Manger / Project manager issue)
+roles_dict = {}
+for r in role_names:
+    if r not in (None, ""):
+        normalized = normalize_for_attribute(r)
+        if normalized not in roles_dict:
+            roles_dict[normalized] = r
+
+roles_list = sorted(
+    [{"value": k, "label": v} for k, v in roles_dict.items()],
+    key=lambda x: x["label"]
+)
+
+# Save in json format
+filter_data = {
+    "projects": projects_list,
+    "roles": roles_list
+}
+
 # Add closing tags and JavaScript include
-footer_content = """
+footer_content = f"""
 </ul>
+<script>
+// Value-labels for filtering menus 
+window.filterData = {json.dumps(filter_data, indent=2)};
+</script>
 <script src="/js/contributor-filter.js"></script>
 """
 
-# --- LOGGING ADDED HERE ---
 # Log the final deduplicated number of contributors
 print("\n--- Processing Complete ---")
 print(f"Total number of unique contributors after deduplication: {len(summary)}")
@@ -357,9 +401,12 @@ try:
 except NameError:
     script_dir = '.' # Default to the current directory
 
+script_dir = "./scripts/forrt_contribs" ### BORRAR
+
 # Construct the paths for the template and output files
 template_path = os.path.join(script_dir, 'tenzing_template.md')
 output_path = os.path.join(script_dir, 'tenzing.md')
+
 
 # Open the template file and read its contents
 with open(template_path, 'r') as file:
