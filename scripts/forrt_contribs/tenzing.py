@@ -43,7 +43,6 @@ for project_name, url, project_url in zip(df['Project Name'], df['CSV Link'], df
         # Make sure each URL is transformed into a CSV export URL as shown above
         data_frame = pd.read_csv(url)
         
-        # --- LOGGING ADDED HERE ---
         # Log the number of contributors read from the current project
         print(f"✓ Read {len(data_frame)} contributors from '{project_name}'.")
 
@@ -237,7 +236,6 @@ def concatenate_contributions(group):
         # Extract roles for this specific contribution
         contribution_roles = []
         contributions_text = row['Contributions']
-
         
         if pd.notna(contributions_text):
             # Extract "Project Manager" if present (regardless of special_role)
@@ -401,12 +399,9 @@ try:
 except NameError:
     script_dir = '.' # Default to the current directory
 
-script_dir = "./scripts/forrt_contribs" ### BORRAR
-
 # Construct the paths for the template and output files
 template_path = os.path.join(script_dir, 'tenzing_template.md')
 output_path = os.path.join(script_dir, 'tenzing.md')
-
 
 # Open the template file and read its contents
 with open(template_path, 'r') as file:
