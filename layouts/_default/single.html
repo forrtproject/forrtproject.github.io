@@ -1,0 +1,21 @@
+{{- define "main" -}}
+
+<article class="article">
+
+  {{/* Allow pages to opt out of the default header (e.g., custom full-width layouts) */}}
+  {{ if not .Params.hide_page_header }}
+    {{ partial "page_header" . }}
+  {{ end }}
+
+  <div class="article-container">
+
+    <div class="article-style">
+      {{ .Content }}
+    </div>
+
+    {{ partial "page_footer" . }}
+
+  </div>
+</article>
+
+{{- end -}}

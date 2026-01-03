@@ -2,7 +2,9 @@
 
 
 
-{{ partial "page_edit" . }}
+{{ if ne .RelPermalink "/about/steering-committee/" }}
+  {{ partial "page_edit" . }}
+{{ end }}
 {{ partial "tags" . }}
 {{ partial "share" . }}
 {{ partial "page_author" . }}
@@ -17,4 +19,3 @@
 {{ end }}
     {{ end }}
 {{ partial "page_related" . }}
-

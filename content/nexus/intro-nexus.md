@@ -76,7 +76,6 @@ FORRT's e-learning platform (or Nexus) is a hub for community-driven initiatives
 * [Mapping OS Communities](/mapping_os)
 * [Neurodiversity Team](/neurodiversity)
 * [Pedagogies](/pedagogies)
-* [Self-Assessment](/self-assessment)
 * [Social Justice Initiatives](/dei)
 * [Summaries](/summaries)
 * [Syllabi Collection](/syllabus)
@@ -86,7 +85,7 @@ FORRT's e-learning platform (or Nexus) is a hub for community-driven initiatives
 
 ### FORRT's Educational Nexus has five major goals: 
 
-* Provide educators a comprehensive but straightforward framework to teach and mentor open and reproducible science (i.e., [FORRT Clusters](/clusters)) as well as qualify and quantify the degree of open and reproducible research practices in their teaching and mentoring (i.e., [FORRT's Lesson Plans](/lesson-plans) where teachers can find ready-to-use pedagogical activities with OS content; [FORRT's self-assessment tool](/self-assessment)) where educators are supplied with a personalized pathway toward incremental integration of discipline content with open and reproducible science tenets; [FORRT's Glossary](/glossary) where educators find consensus-based crowd-sourced definitions of Open Science terminology), and [FORRT's Reversals](/reversals), where educators can find a curated collection of replications and reversals across social sciences to galvanize adoption of replications as a pedagogical tool in the classroom.
+* Provide educators a comprehensive but straightforward framework to teach and mentor open and reproducible science (i.e., [FORRT Clusters](/clusters)) as well as qualify and quantify the degree of open and reproducible research practices in their teaching and mentoring (i.e., [FORRT's Lesson Plans](/lesson-plans) where teachers can find ready-to-use pedagogical activities with OS content; [FORRT's Glossary](/glossary) where educators find consensus-based crowd-sourced definitions of Open Science terminology), and [FORRT's Reversals](/reversals), where educators can find a curated collection of replications and reversals across social sciences to galvanize adoption of replications as a pedagogical tool in the classroom.
 * Curate and enrich available open educational resources and build an easy-to-use, searchable and FAIR platform to facilitate the integration of open and reproducible science into educators' teaching and mentoring (i.e., [FORRT's Curated Resources](/resources).)
 * Offer a platform for educators of all stripes to share their stories, experiences, successes and hardships in teaching and mentoring (i.e., [FORRT's Educational Corner](/educators-corner).)
 * Foster social justice through the opening and democratization of scientific-educational resources to those who otherwise would be educationally disenfranchised (i.e., [FORRT's Initiatives Towards Social Justice in Academia](/dei), [FORRT's Equity in Open Scholarship Initiative](/equityinos), [FORRT's Neurodiversity Resources](/neurodiversity), [FORRT's Open Science Summaries](/summaries), [FORRT's Glossary](/glossary), [FORRT's Reversals](/reversals), & [FORRT's Curated list of Resources](/resources).)
@@ -94,4 +93,4 @@ FORRT's e-learning platform (or Nexus) is a hub for community-driven initiatives
 
 FORRT's community conceptualized the Educational Nexus as integrating diverse components into one infrastructure serving those wishing to learn, adopt, and disseminate open and reproducible science tenets, as well as those teaching and mentoring these concepts, and raising awareness of its pedagogical implications and its associated challenges (e.g., curricular reform, epistemological uncertainty, methods of education, academic *Mertonian* norms in the classroom). 
 
-We hope it fulfils its mission but if you have thoughts, ideas, criticisms, please reach us at [info@forrt.org](mailto:info@forrt.org), via [Twitter](https://twitter.com/FORRTproject), or [join our Slack community](https://join.slack.com/t/forrt/shared_invite/zt-alobr3z7-NOR0mTBfD1vKXn9qlOKqaQ).
+We hope it fulfils its mission but if you have thoughts, ideas, criticisms, please reach us at [info@forrt.org](mailto:info@forrt.org), via [Bluesky](https://bsky.app/profile/forrt.bsky.social), or [join our Slack community](https://join.slack.com/t/forrt/shared_invite/zt-alobr3z7-NOR0mTBfD1vKXn9qlOKqaQ).

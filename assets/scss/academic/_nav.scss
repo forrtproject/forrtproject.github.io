@@ -5,7 +5,7 @@
 .navbar {
   height: 70px;
   background: $sta-menu-primary;
-  box-shadow: 0 0.125rem 0.25rem 0 rgba(0,0,0,.11);
+  box-shadow: 0 0.125rem 0.25rem 0 rgba(0, 0, 0, .11);
   font-size: #{$sta-font-size-small}px;
   position: fixed;
   top: 0;
@@ -21,7 +21,8 @@
     // For z-index compatibility with logo on mobile layout, otherwise nav-item can't be clicked when logo present.
     position: relative;
   }
-  @include media-breakpoint-down(md) {
+
+  @include media-breakpoint-down(lg) {
     height: 50px;
 
     .navbar-nav-scroll {
@@ -75,19 +76,23 @@
 // Remove Bootstrap's border from Toggle button.
 .navbar-toggler {
   border: 0 !important;
-  position: relative;  // For z-index clickable mobile logo.
+  position: relative; // For z-index clickable mobile logo.
   z-index: 1030;
 }
+
 .navbar-toggler:focus,
 .navbar-toggler:active {
   outline: none !important;
   box-shadow: none !important;
 }
 
-@include media-breakpoint-down(md) {  /* Match breakpoint for i18n dropdown in navbar.html. */
+@include media-breakpoint-down(lg) {
+
+  /* Match breakpoint for i18n dropdown in navbar.html. */
   .i18n-dropdown .nav-link::after {
     content: none;
   }
+
   .i18n-dropdown .dropdown-menu {
     /* Use style from uncollapsable dropdowns to prevent dropdown going off page. */
     position: absolute;
@@ -112,7 +117,7 @@
   padding-bottom: 5px;
   font-weight: bold;
   position: relative;
-  z-index: 1030;  // For z-index clickable mobile logo.
+  z-index: 1030; // For z-index clickable mobile logo.
 }
 
 // Dynamically fit logo image to space available.
@@ -124,37 +129,43 @@
   height: -webkit-fill-available;
   height: -webkit-stretch;
   height: stretch;
-  max-height: 60px;  // For lg+ responsive sizing. 60px height +10px v-padding = 70px
-  max-width: fit-content;  // Must override default responsive image style.
+  max-height: 60px; // For lg+ responsive sizing. 60px height +10px v-padding = 70px
+  max-width: fit-content; // Must override default responsive image style.
 }
 
 #navbar-main .main-menu-item ul li .nav-link {
   color: $sta-menu-text;
 }
 
-@include media-breakpoint-down(md) {
+@include media-breakpoint-down(lg) {
+
   // Used in conjunction with mobile .navbar-brand to center logo on mobile.
   .navbar-brand-mobile-wrapper {
     position: absolute;
     left: 0;
     right: 0;
   }
+
   .navbar-brand {
     // Center logo in mobile navbar.
     margin: 0 auto;
   }
+
   .navbar-brand img {
-    max-height: 40px;  // 40px height + 10px v-padding = 50px.
+    max-height: 40px; // 40px height + 10px v-padding = 50px.
   }
+
   .navbar-toggler {
-    border-color: transparent;  // Remove Bootstrap's border from Toggle button.
+    border-color: transparent; // Remove Bootstrap's border from Toggle button.
   }
+
   #navbar-main .main-menu-item {
     text-align: left !important;
     padding-left: 0;
   }
+
   .navbar-collapse {
-    z-index: 1031 !important;  // Appear just over navbar.
+    z-index: 1031 !important; // Appear just over navbar.
     position: absolute;
     left: 0;
     top: 50px;
@@ -162,9 +173,11 @@
     background-color: $sta-menu-primary;
     text-align: center !important;
   }
+
   #navbar-main .main-menu-item .nav-item {
     padding: 10px 15px !important;
   }
+
   #navbar-main .main-menu-item .nav-item .nav-link {
     padding: 5px 15px !important;
   }
@@ -193,10 +206,77 @@ ul.nav-icons li.nav-item a.nav-link {
 .dropdown-menu {
   background-color: $sta-menu-primary !important;
   color: $sta-menu-text !important;
-  z-index: 1032;  // I18n dropdown over mobile expanded menu.
+  z-index: 1032; // I18n dropdown over mobile expanded menu.
 }
 
 .dropdown-item {
   background-color: $sta-menu-primary !important;
   color: $sta-menu-text !important;
+}
+
+/******************************************************************************
+ * Navbar Layout Fix for iPad Pro and Similar Devices (lg breakpoint)
+ * 
+ * Solution: Use a 2-row layout specifically for lg breakpoint (992px - 1199px)
+ *           and extended up to 1350px for Nest Hub Max support.
+ *           Row 1: Logo (left) + Icons (right)
+ *           Row 2: Navigation Links (centered)
+ ******************************************************************************/
+@media (min-width: 992px) and (max-width: 1350px) {
+
+  // Allow navbar to grow in height to accommodate 2 rows
+  .navbar {
+    height: auto !important;
+    padding-top: 0.5rem !important;
+    padding-bottom: 0.5rem !important;
+  }
+
+  // Enable wrapping for the container
+  #navbar-main .container {
+    flex-wrap: wrap !important;
+    justify-content: space-between !important; // Ensure logo and icons are pushed apart
+  }
+
+  // Order 1: Logo (Top Left)
+  #navbar-main .navbar-brand {
+    order: 1;
+    margin-right: auto; // Push everything else to the right
+  }
+
+  // Order 2: Icons (Top Right)
+  // Note: We need to target the ul.nav-icons specifically
+  #navbar-main .nav-icons {
+    order: 2;
+    margin-left: 0 !important; // Reset margin
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+  }
+
+  // Order 3: Navigation Menu (Bottom Row)
+  #navbar-main .navbar-collapse {
+    order: 3;
+    width: 100% !important; // Force full width
+    flex-basis: 100% !important;
+    margin-top: 0.5rem !important; // Add spacing between rows
+    justify-content: center !important; // Center the links
+    border-top: 1px solid rgba(255, 255, 255, 0.15); // Separator line
+    padding-top: 0.5rem; // Spacing below the line
+
+    // Ensure the inner list is also centered
+    .navbar-nav {
+      justify-content: center !important;
+      width: 100%;
+    }
+  }
+
+  // Adjust spacing for the 2-row layout
+  #navbar-main .main-menu-item .nav-item {
+    padding-left: 0.5rem !important; // Restore some padding since we have space now
+    padding-right: 0.5rem !important;
+  }
+
+  // Restore font size since we have a full row
+  #navbar-main .main-menu-item .nav-link {
+    font-size: #{$sta-font-size-small}px !important;
+  }
 }

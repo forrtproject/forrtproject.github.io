@@ -5,7 +5,7 @@ title: "From mental-health breakfast interventions to evidence-based practice"
 subtitle: "Teaching students how to critically engage with science."
 summary: "In this Pedagogies, Dr. Thomas Rhys Evan discusses how he developed and taught a 12-week module about evidence-based practice, focusing on incorporating Open Science principles with an eye on critical thinking skills and professional experience."
 authors: ['Dr. Thomas Rhys Evans']
-tags: ['Dr. Thomas Rhys Evans','FORRT Pedagogies','Evidence-based practice ',' Teaching Open Science' ]
+tags: []
 categories: []
 date: 2024-09-03T15:30:59-04:00
 lastmod: 2024-09-03T15:14:10-04:00

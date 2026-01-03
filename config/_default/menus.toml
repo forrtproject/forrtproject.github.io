@@ -111,29 +111,28 @@
   weight = 26  # The position of your page in the menu.
   parent = "about"
 
-
 [[main]]
-  name = "Talks"  # A link title for your page.
-  url = "talk/"  # The URL of your page.
+  name = "Steering Committee"  # A link title for your page.
+  url = "/about/steering-committee/"  # The URL of your page.
   weight = 27  # The position of your page in the menu.
   parent = "about"
 
 [[main]]
   name = "Teams"  # A link title for your page.
   url = "about/teams/"  # The URL of your page.
-  weight = 28  # The position of your page in the menu.
+  weight = 29  # The position of your page in the menu.
   parent = "about"
 
 [[main]]
   name = "Testimonials"  # A link title for your page.
   url = "/testimonials/"  # The URL of your page.
-  weight = 29  # The position of your page in the menu.
+  weight = 30  # The position of your page in the menu.
   parent = "about"
 
 [[main]]
   name = "Visitors"  # A link title for your page.
   url = "/about/visitors"  # The URL of your page.
-  weight = 29  # The position of your page in the menu.
+  weight = 31  # The position of your page in the menu.
   parent = "about"
 
 
@@ -232,12 +231,6 @@
     name = "Pedagogies"
     url = "/pedagogies"
     weight = 45
-    parent = "nexus"
-
-  [[main]]
-    name = "Self-Assessment"
-    url = "/self-assessment"
-    weight = 46
     parent = "nexus"
 
   [[main]]
