@@ -7,8 +7,8 @@ headless = true  # This file represents a page section.
 active = true  # Activate this widget? true/false
 weight = 5  # Order that this section will appear.
 
-title = "Publications, Preprints, Policy Briefs, Op-Eds, Shiny Apps, Data & R-packages"
-subtitle = ""
+title = "FORRT's Research, Scholarship & Resources"
+subtitle = "Peer-reviewed research, tools, data, teaching materials, and policy resources advancing open and reproducible science."
 
 [design]
   # Choose how many columns the section has. Valid values: 1 or 2.
@@ -50,32 +50,11 @@ subtitle = ""
  css_class = ""
 +++
 
+---
+
  <script type='text/javascript' src='https://d1bxh8uas1mnw7.cloudfront.net/assets/embed.js'></script>
 
-
-<style>
-.citation-container {
-  float: right;
-  margin: -2em 0 -1em 3em;
-  max-width: 300px;
-}
-.citation-container img {
-  display: block;
-  width: 100%;
-  height: auto;
-}
-.citation-container figcaption {
-  text-align: center;
-  margin-top: .5em;
-}
-
-</style>
-
----
-
-# **Academic peer-reviewed publications**
-
----
+<div class="pub-intro">
 
 <figure class="citation-container">
   <img src="citation_chart.webp" alt="Citation Chart">
@@ -84,52 +63,42 @@ subtitle = ""
 
 This page showcases the diverse scholarly and public-facing outputs produced by FORRT and its community—including peer-reviewed publications, preprints, policy briefs, opinion pieces, interactive apps, datasets, and open-source tools. It reflects our ongoing efforts to contribute to scientific discourse, inform policy, and promote open, inclusive, and transparent research practices. Whether you're a researcher, educator, or policymaker, this hub provides access to FORRT’s evolving body of work. Dive in to discover, cite, or collaborate.
 
-<br>
-
-{{< publication_list type="journal" >}}
-
-<br>
-
-<div align="center">
-  <h1> Preprints </h1>
-  <hr>
 </div>
 
-{{< publication_list type="preprint" >}}
+{{< publication_filters >}}
+
+
+{{< publication_list type="journal" title="Academic peer-reviewed publications" >}}
+
+<br>
+
+{{< publication_list type="preprint" title="Preprints" >}}
 
 
 <br>
 
-# Op-Eds and Other Media 
-
-{{< publication_list type="media" >}}
+{{< publication_list type="media" title="Op-Eds and Other Media" >}}
 
 <br>
 
-# Policy Briefs 
-***
-
-{{< publication_list type="policy" >}}
+{{< publication_list type="policy" title="Policy Briefs" >}}
 
 <br>
 
-<div align="center">
-  <h1> FORRT affiliated projects </h1>
-  <hr>
+{{< publication_list type="affiliated" title="FORRT affiliated projects" >}}
+
+<br>
+
+{{< publication_list type="wip" title="Work in Progress" >}}
+
+<br>
+
+<div class="pub-section-group">
+  <div class="section-heading" align="center">
+      <h1>Find More About Ongoing Projects</h1>
+      <hr>
+      <div class="pub-section-description">
+          We are currently preparing additional manuscripts on a range of topics. To find out more about what we're working on and how you can contribute, visit our <a href="/about/get-involved">Get Involved page</a>.
+      </div>
+  </div>
 </div>
-
-{{< publication_list type="affiliated" >}}
-
-<br>
-
-<div align="center">
-  <h1> Work in Progress </h1>
-  <hr>
-</div>
-
-{{< publication_list type="wip" >}}
-
-
-# **<font style="color:#4c1322">Ongoing Projects</font>**
-
-We are currently preparing additional manuscripts on a range of topics. To find out more about what we're working on and how you can contribute, visit our [Get Involved page](/about/get-involved).
