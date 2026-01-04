@@ -265,3 +265,6 @@ Pipfile.lock
 
 # GitHub App credentials
 gha-creds-*.json
+
+# Tenzing failure reports (temporary files for CI)
+scripts/forrt_contribs/tenzing_failures.json

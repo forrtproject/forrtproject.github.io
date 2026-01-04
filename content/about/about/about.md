@@ -79,7 +79,7 @@ FORRT provides a pedagogical infrastructure and open educational resources desig
 
 ***Want to learn more about us?***
 
-Our community has [**published**](/publications) meta-scientific peer-reviewed papers & policies (and we also have ongoing **manuscripts** being written) so please consider reading our [award-winning](/awards) scholarship at the FORRT's [Publications page](/publications).
+Our community has [**published**](/publications) meta-scientific peer-reviewed papers & policies (and we also have ongoing **manuscripts** being written) so please consider reading our award-winning scholarship on the FORRT's [Publications page](/publications), or start with our manifesto on the [OSF](https://osf.io/bnh7p).
 
 If you’re looking for **open educational resources**, please take a look at our [Educational Nexus](/nexus) and our [FORRT Pedagogies](/pedagogies).
 
@@ -118,7 +118,6 @@ FORRT supports this endeavor through a three-pronged approach:
 1. Provide educators a comprehensive but straightforward framework to teach and mentor open and reproducible science as well as qualify and quantify the degree of open and reproducible research practices in their teaching and mentoring.
   
   <i class="fas fa-arrow-alt-circle-right text-danger fa-1.5x"></i> [FORRT's clusters](/clusters/)    
-  <i class="fas fa-arrow-alt-circle-right text-danger fa-1.5x"></i> [FORRT’s self-assessment tool](/self-assessment)  
 
 2. Equipping educators with high quality pedagogical tools on open and reproducible science practices to facilitate its integration into curricula and educators’ teaching mentoring, and research practices.
   

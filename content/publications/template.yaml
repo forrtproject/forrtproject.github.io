@@ -1,0 +1,30 @@
+# Below is a template for adding a new publication to the publications.yaml file. in data/publications.yaml
+# Remove or add the fields as needed following the layout of the existing entries.
+
+- title: ""
+  type: ""
+  year: ""
+  status: ""
+  journal_name: ""
+  authors: ""
+  abstract: ""
+  citation: ""
+  links:
+    doi: ""
+  altmetric_doi: ""
+  altmetric_doi_2: ""
+
+# --- Preprints ---
+
+- title: ""
+  type: " "
+  year: ""
+  status: " "
+  journal_name: ""
+  authors: ""
+  abstract: ""
+  citation: ""
+  links:
+    doi: ""
+  altmetric_doi: ""
+  altmetric_doi_2: ""

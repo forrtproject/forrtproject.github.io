@@ -1,0 +1,149 @@
+{{ $type := .Get "type" }}
+{{ $title := .Get "title" }}
+{{ $items := where site.Data.publications "type" $type }}
+
+{{/* Centralized Type Map */}}
+{{ $typeMap := dict
+"journal" "Publications"
+"preprint" "Preprints"
+"policy" "Policy Briefs"
+"media" "Op-Eds"
+"affiliated" "Affiliated Projects"
+"wip" "Working Papers & Ongoing Projects"
+"tool" "Interactive Tools / Apps"
+"resource" "Teaching Materials"
+"data" "Data, Code & Packages"
+}}
+
+<div class="pub-section-group">
+    {{ $description := .Get "description" }}
+    {{ if $title }}
+    <div class="section-heading" align="center">
+        <h1>{{ $title | markdownify }}</h1>
+        <hr>
+        {{ if $description }}
+        <div class="pub-section-description">
+            {{ $description | markdownify }}
+        </div>
+        {{ end }}
+    </div>
+    {{ end }}
+    <div class="pub-list">
+        {{ range $items }}
+        {{ $dataType := index $typeMap .type | default .type }}
+        <div class="pub-card" data-aos="fade-up" data-type="{{ $dataType }}"
+            data-focus="{{ if .focus_area }}{{ .focus_area }}{{ else }}uncategorized{{ end }}">
+            <div class="pub-card-body">
+
+                <div class="pub-header">
+                    <div class="pub-tags">
+                        {{/* Content Type Pill */}}
+                        {{ $typeLabel := index $typeMap .type }}
+                        {{ if not $typeLabel }}
+                        {{ $typeLabel = .type | humanize | title }}
+                        {{ end }}
+
+                        {{ $typeClass := "" }}
+                        {{ if $typeLabel }}
+                        {{ $typeClass = printf "pill-%s" ($typeLabel | urlize) }}
+                        {{ else }}
+                        {{ $typeClass = printf "pill-%s" (.type | urlize) }}
+                        {{ end }}
+
+                        {{ if eq .type "wip" }}{{ $typeClass = "pill-working-papers" }}{{ end }}
+
+                        <span class="pub-pill {{ $typeClass }}">{{ $typeLabel }}</span>
+
+                        {{/* Focus Area Pill */}}
+                        {{ if .focus_area }}
+                        {{ $focusClass := printf "pill-%s" (.focus_area | urlize) }}
+                        <span class="pub-pill {{ $focusClass }}">{{ .focus_area }}</span>
+                        {{ end }}
+                    </div>
+                    <span class="pub-year">{{ .year }}</span>
+                </div>
+
+                <h3 class="pub-title">{{ .title | markdownify }}</h3>
+
+                <div class="pub-authors">
+                    {{ .authors | markdownify }}
+                </div>
+
+                <div class="pub-journal">
+                    {{ if .journal_name }}
+                    <span class="journal-icon"><i class="fas fa-book-open"></i></span>
+                    <span class="journal-name">{{ .journal_name }}</span>
+                    {{ end }}
+                    {{ if .status }}
+                    <span class="pub-status"
+                        style="margin-left: 0.5rem; color: #868e96; font-size: 0.85rem; font-style: italic;">
+                        {{ .status }}
+                    </span>
+                    {{ end }}
+                </div>
+
+                <div class="pub-abstract-toggle">
+                    <button class="btn-toggle-abstract"
+                        onclick="this.parentElement.nextElementSibling.classList.toggle('show'); this.classList.toggle('active');">
+                        <i class="fas fa-chevron-right"></i> Show Abstract
+                    </button>
+                </div>
+                <div class="pub-abstract">
+                    <p>{{ .abstract | markdownify }}</p>
+                </div>
+
+                <div class="pub-citation-section">
+                    <strong>Cite:</strong>
+                    <div class="citation-text">
+                        {{ .citation | markdownify }}
+                    </div>
+                </div>
+
+                <div class="pub-footer">
+                    <div class="pub-buttons">
+                        {{ if .links.doi }}
+                        <a href="{{ .links.doi }}" target="_blank" class="btn btn-outline-primary btn-sm">
+                            <i class="fas fa-external-link-alt"></i> DOI
+                        </a>
+                        {{ end }}
+                        {{ if .links.postprint }}
+                        <a href="{{ .links.postprint }}" target="_blank" class="btn btn-outline-success btn-sm">
+                            <i class="fas fa-file-pdf"></i> Download the Paper
+                        </a>
+                        {{ end }}
+                        {{ if .links.pdf }}
+                        <a href="{{ .links.pdf }}" target="_blank" class="btn btn-outline-danger btn-sm">
+                            <i class="fas fa-file-pdf"></i> Download the PDF
+                        </a>
+                        {{ end }}
+                        {{ if .links.project }}
+                        <a href="{{ .links.project }}" target="_blank" class="btn btn-outline-info btn-sm">
+                            <i class="fas fa-project-diagram"></i> Project
+                        </a>
+                        {{ end }}
+                        {{ if .links.url }}
+                        <a href="{{ .links.url }}" target="_blank" class="btn btn-outline-primary btn-sm">
+                            <i class="fas fa-link"></i> Read more
+                        </a>
+                        {{ end }}
+                    </div>
+
+                    {{ if or .altmetric_doi .altmetric_doi_2 }}
+                    <div class="pub-metrics">
+                        {{ if .altmetric_doi }}
+                        <div class='altmetric-embed' data-badge-type='donut' data-role='box'
+                            data-doi="{{ .altmetric_doi }}"></div>
+                        {{ end }}
+                        {{ if .altmetric_doi_2 }}
+                        <div class="altmetric-embed" data-badge-type='donut' data-role='box'
+                            data-doi="{{ .altmetric_doi_2 }}"></div>
+                        {{ end }}
+                    </div>
+                    {{ end }}
+                </div>
+
+            </div>
+        </div>
+        {{ end }}
+    </div>
+</div>

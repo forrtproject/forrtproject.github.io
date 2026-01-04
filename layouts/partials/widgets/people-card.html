@@ -1,0 +1,157 @@
+{{ $person := .person }}
+{{ $show_social := .show_social | default false }}
+{{ $is_sc_page := .is_sc_page | default false }}
+{{ $avatar := ($person.Resources.ByType "image").GetMatch "*avatar*" }}
+
+{{ $src := "" }}
+{{ $initials := "" }}
+{{ if site.Params.avatar.gravatar }}
+{{ $src = printf "https://s.gravatar.com/avatar/%s?s=150" (md5 $person.Params.email) }}
+{{ else if $avatar }}
+{{ $avatar_image := $avatar.Fill "270x270 Center" }}
+{{ $src = $avatar_image.RelPermalink }}
+{{ else }}
+{{ $name_parts := split $person.Params.name " " }}
+{{ range first 2 $name_parts }}{{ $initials = print $initials (substr . 0 1 | upper) }}{{ end }}
+{{ end }}
+
+{{ $content := trim $person.Content " \n\t\r" }}
+{{ $has_bio := and $content (ne $content "") (ne $content "Coming soon.") (not (in $content "<p>Coming soon")) }}
+
+  {{ $role_plain := "" }}
+  {{ with $person.Params.role }}
+  {{ $role_plain = (. | markdownify | plainify | htmlUnescape) }}
+  {{ end }}
+
+  {{ $bio_html := "" }}
+  {{ with $person.Content }}
+  {{ $bio_html = printf "%s" . }}
+  {{ end }}
+
+  {{ $social := $person.Params.social }}
+  {{ if not $social }}
+  {{ $social = slice }}
+  {{ end }}
+
+  {{ if $is_sc_page }}
+  {{ $card_classes := "portrait portrait--steering" }}
+  {{ if not $src }}{{ $card_classes = printf "%s portrait--placeholder" $card_classes }}{{ end }}
+
+<div class="{{ $card_classes }}">
+  {{ if $src }}
+  <img class="portrait-cover" src="{{ $src }}" alt="Portrait of {{ $person.Params.name }}">
+  {{ else }}
+  <div class="portrait-cover portrait-cover--initials">{{ $initials }}</div>
+  {{ end }}
+
+  <div class="portrait-overlay">
+    <div class="portrait-overlay-text">
+      <h2>{{ $person.Params.name | htmlUnescape }}</h2>
+      {{ with $role_plain }}<p>{{ . }}</p>{{ end }}
+    </div>
+    {{ if $has_bio }}
+    <span class="portrait-flip-edge" aria-hidden="true">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+        stroke-linejoin="round">
+        <polyline points="9 18 15 12 9 6"></polyline>
+      </svg>
+    </span>
+    <button class="bio-trigger portrait-overlay-hitarea" data-person-id="{{ $person.File.UniqueID }}"
+      aria-label="View bio for {{ $person.Params.name }}"></button>
+    {{ end }}
+  </div>
+</div>
+{{ else }}
+<div class="portrait">
+  {{ if $src }}
+  <img class="avatar-circle" src="{{ $src }}" alt="Avatar of {{ $person.Params.name }}">
+  {{ else }}
+  <div class="avatar-circle">{{ $initials }}</div>
+  {{ end }}
+
+  <div class="portrait-title">
+    <h2>{{ $person.Params.name }}</h2>
+    {{ with $person.Params.role }}<h3>{{ . | markdownify | emojify }}</h3>{{ end }}
+
+    {{ if or $show_social (and $has_bio $is_sc_page) }}
+    <div class="portrait-bio-button">
+      {{ if and $has_bio $is_sc_page }}
+      <button class="bio-trigger" data-person-id="{{ $person.File.UniqueID }}" title="Read full bio">
+        View Bio
+        <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+          stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="9 18 15 12 9 6"></polyline>
+        </svg>
+      </button>
+      {{ end }}
+
+      {{ if $show_social }}
+      <div class="portrait-social" style="margin-top: 0.5rem;">
+        {{ range $person.Params.social }}
+        {{ $link := .link }}
+        {{ $scheme := (urls.Parse $link).Scheme }}
+        {{ $target := "" }}
+        {{ if not $scheme }}
+        {{ $link = .link | relLangURL }}
+        {{ else if in (slice "http" "https") $scheme }}
+        {{ $target = "target=\"_blank\" rel=\"noopener\"" }}
+        {{ end }}
+        <a href="{{ $link | safeURL }}" {{ $target | safeHTMLAttr }} class="network-icon">
+          {{ if eq .icon "envelope" }}
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+            stroke-linejoin="round">
+            <rect x="2" y="4" width="20" height="16" rx="2" />
+            <path d="m22 7-10 5L2 7" />
+          </svg>
+          {{ else if eq .icon "orcid" }}
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+            stroke-linejoin="round">
+            <path
+              d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2m0 3c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3m0 10.5c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5" />
+          </svg>
+          {{ else if eq .icon "globe" }}
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+            stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10" />
+            <path
+              d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
+          </svg>
+          {{ else if eq .icon "linkedin" }}
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+            stroke-linejoin="round">
+            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z" />
+            <circle cx="4" cy="4" r="2" />
+          </svg>
+          {{ else if eq .icon "google-scholar" }}
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+            stroke-linejoin="round">
+            <path d="M4 4h16v12H4zm0-2l8 6 8-6" />
+          </svg>
+          {{ else }}
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+            stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10" />
+          </svg>
+          {{ end }}
+        </a>
+        {{ end }}
+      </div>
+      {{ end }}
+    </div>
+    {{ end }}
+  </div>
+</div>
+{{ end }}
+
+{{ if $has_bio }}
+<script type="application/json" class="bio-data" data-person-id="{{ $person.File.UniqueID }}">
+  {
+    "name": {{ $person.Params.name | jsonify }},
+    "role": {{ $role_plain | jsonify }},
+    "bio": {{ $bio_html | jsonify }},
+    "avatar": {{ $src | jsonify }},
+    "initials": {{ $initials | jsonify }},
+    "social": {{ $social | jsonify }}
+  }
+</script>
+{{ end }}

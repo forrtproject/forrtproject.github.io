@@ -29,7 +29,7 @@ The FORRT community has prepared 100+ summaries of Open and Reproducible Science
 
 ***These summaries are very much a work in progress***. We would love to receive your [criticism, areas for improvement, ideas, and help](https://docs.google.com/spreadsheets/d/1W12WpzI70Ja1FiVeflXNW8VFPzqFFvu_mL2YkNQ_cHk/edit?usp=sharing). 
 
-You can find the summaries via the menu in the left. We made a distinction between "[Open and Reproducible Science](/summaries/open-reproducible/)" summaries and "[Diversity, Equity, & Inclusion](/diversity-equity-inclusion/)" summaries to highlight that the topics of social injustices and DEI (diversity, equity and inclusion) are often neglected in academia, and in open and reproducible science literature. We have also prepared a [.pdf version (coming soon!)](OS_Literature_Summaries_by_FORRT.pdf) in case you want to keep a copy for yourself. If you are an educator, you may also be interested in our [FORRT Syllabus on Open and Reproducible Science (.pdf & G-doc)](https://forrt.org/syllabus), which is based on [FORRT Clusters.](/clusters/)
+You can find the summaries via the menu in the left. We made a distinction between "[Open and Reproducible Science](/summaries/open-reproducible/)" summaries and "[Diversity, Equity, & Inclusion](/diversity-equity-inclusion/)" summaries to highlight that the topics of social injustices and DEI (diversity, equity and inclusion) are often neglected in academia, and in open and reproducible science literature. If you are an educator, you may also be interested in our [FORRT Syllabus on Open and Reproducible Science (.pdf & G-doc)](https://forrt.org/syllabus), which is based on [FORRT Clusters.](/clusters/)
 
 ### Why make these summaries?
 
@@ -51,7 +51,7 @@ Our community will continue to curate and expand on these summaries. Our goal is
 
 One idea to achieve these goals would be to plan a hackaton to make these summaries better to the community. Perhaps Open and Reproducible Science organizations (e.g., [International Network of Open Science & Scholarship Communities (INOSC)](https://osf.io/vz2sy/): OSCU, OSCNL, OSCA, OSCN, OSCR, OSC/e, OSCT, OSCG but also national organizations UKRN and NOSI) could help us in this process.
 
-We also aim to further integrate this initiative with other FORRT initiatives. First, we want to make sure that all open and reproducible sources cited in the [FORRT’s Manuscript](https://forrt.org/manuscript/) have an associated summary to facilitate the reading of FORRT’s manifesto. The same goes for the [FORRT’s self-assessment tool](https://forrt.org/self-assessment/) where educators evaluate their teaching and/or mentoring --i.e., the extent to which their teaching abides by open and reproducible research practices-- and receive personalized feedback (on topics they requested). Finally, we also hope to include each summary as a resource in [FORRT’s curated list of resources](https://forrt.org/resources/), as well include [FORRT Clusters’](/clusters/) tags for each summary. Not yet at a 'plans' stage, but we are considering formalizing this initiative with the drafting of a manuscript, summarizing lessons we learned and hopefully making it a more useful resource to the community.
+We also aim to further integrate this initiative with other FORRT initiatives. First, we want to make sure that all open and reproducible sources cited in the [FORRT’s Manuscript](https://forrt.org/manuscript/) have an associated summary to facilitate the reading of FORRT’s manifesto. Finally, we also hope to include each summary as a resource in [FORRT’s curated list of resources](https://forrt.org/resources/), as well include [FORRT Clusters’](/clusters/) tags for each summary. Not yet at a 'plans' stage, but we are considering formalizing this initiative with the drafting of a manuscript, summarizing lessons we learned and hopefully making it a more useful resource to the community.
 
 ### Process & Credit
 
@@ -59,7 +59,7 @@ Any and all contributions in FORRT are formally recognized. In large part, these
 
 ### Feedback
 
-Do you have feedback to give us? We would love to receive your [criticism, areas for improvement, ideas, and help](https://docs.google.com/spreadsheets/d/1W12WpzI70Ja1FiVeflXNW8VFPzqFFvu_mL2YkNQ_cHk/edit?usp=sharing). You can also write to us at [info@forrt.org](mailto:info@forrt.org) or at [Twitter](https://twitter.com/FORRTproject), or [join our community](https://join.slack.com/t/forrt/shared_invite/zt-alobr3z7-NOR0mTBfD1vKXn9qlOKqaQ).
+Do you have feedback to give us? We would love to receive your [criticism, areas for improvement, ideas, and help](https://docs.google.com/spreadsheets/d/1W12WpzI70Ja1FiVeflXNW8VFPzqFFvu_mL2YkNQ_cHk/edit?usp=sharing). You can also write to us at [info@forrt.org](mailto:info@forrt.org), connect on [Bluesky](https://bsky.app/profile/forrt.bsky.social), or [join our community](https://join.slack.com/t/forrt/shared_invite/zt-alobr3z7-NOR0mTBfD1vKXn9qlOKqaQ).
 
 ### Join and help us
 

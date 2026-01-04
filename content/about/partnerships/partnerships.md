@@ -81,7 +81,7 @@ classtitle = "text-center"
 
 <br>
 
-<img src="logos/reproducibilitea.webp" alt="The ReproducibiliTea (UKRN) logo" align="left" /> [The ReproducibiliTea (UKRN)](https://reproducibilitea.org/) is an ECR-led grassroots initiative that helps researchers create local Open Science journal clubs at their universities. Local journal clubs help build community for those interested in discussing diverse issues around open and reproducible research, improving research quality, research integrity, and more. Local members take ownership of how their journal club runs; whether they focus on reading and discussing papers (e.g. [using RTea's reading lists](https://rpt-rl.netlify.app/)), or holding workshops and tutorials, and even hosting guest speakers. Started in early 2018 at the University of Oxford, ReproducibiliTea has now spread to over 100 institutions in 25 different countries. ReproducibiliTea is completely volunteer run, and seeks to provide a unique and supportive community for members, who are predominantly Early Career Researchers.
+<img src="logos/reproducibilitea.webp" alt="The ReproducibiliTea logo" align="left" /> [The ReproducibiliTea](https://reproducibilitea.org/) is an ECR-led grassroots initiative that helps researchers create local Open Science journal clubs at their universities. Local journal clubs help build community for those interested in discussing diverse issues around open and reproducible research, improving research quality, research integrity, and more. Local members take ownership of how their journal club runs; whether they focus on reading and discussing papers (e.g. [using RTea's reading lists](https://rpt-rl.netlify.app/)), or holding workshops and tutorials, and even hosting guest speakers. Started in early 2018 at the University of Oxford, ReproducibiliTea has now spread to over 100 institutions in 25 different countries. ReproducibiliTea is completely volunteer run, and seeks to provide a unique and supportive community for members, who are predominantly Early Career Researchers.
 
 <br>
 
@@ -292,6 +292,14 @@ More information at [www.openscienceGATE.com](https://opensciencegate.com/)
 <br>
 
 [The Researchers of Statistics Education (RoSE)](https://www.rose-network.org/home) Network proactively creates an open and inclusive space for multidisciplinary researchers and practitioners of statistics education globally to connect, learn, and collaborate, toward advancing statistics education research and evidence-based practice.
+
+<br>
+
+---
+
+<br>
+
+<img src="logos/iRISE.webp" align="left" width=370px alt="iRISE logo" /> [iRISE — improving Reproducibility In SciencE](https://irise-project.eu/) is a Horizon Europe–funded research initiative dedicated to understanding, investigating and guiding strategies to address irreproducibility across the sciences. iRISE engages diverse stakeholders to understand the theoretical basis of reproducibility, conduct evidence syntheses, test interventions to strengthen reproducibility in research, and develop integrative evidence frameworks. Central to its approach is the embedding of equity, diversity, and inclusion (EDI) principles, ensuring that recommended practices are effective, fair, and accessible across different researcher communities. Through its collaborative ethos and alignment with open science and integrity values, iRISE is dedicated to advancing shared goals around reproducible scholarship and evidence-based reform.
 
 <br>
 

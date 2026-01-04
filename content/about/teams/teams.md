@@ -291,7 +291,7 @@ subtitle = "---"
   buttonurl = "https://forrt.slack.com/archives/C0184989HHC"
   buttondescr = "Join Us"
   name = "Team Outreach and Impact" # Title
-  description = "Team hoping to disseminate information about FORRT activities, initiatives & accomplishments to the public (i.e., on social media like Twitter/FB), develop a newsletter, dissemination materials (e.g., community-wide videos about FORRT’s goals, values, principles, products)."
+  description = "Team hoping to disseminate information about FORRT activities, initiatives & accomplishments to the public (i.e., on social media like Bluesky/FB), develop a newsletter, dissemination materials (e.g., community-wide videos about FORRT’s goals, values, principles, products)."
   color = "#395855" # Background color under the image
 
 
@@ -306,20 +306,6 @@ subtitle = "---"
   buttondescr = "Join Us" # leave empty if you don't want a button
   name = "Team Pedagogies" # Title
   description = "Team dedicated to further refine FORRT pedagogies, and collect and catalog instances in which principled education are implemented  across social sciences and humanities – in teaching, mentoring, and openness of educational materials."
-  color = "#395855" # Background color under the image
-
-
-[[featurealt]]
-  # icon = "slack"
-  # icon_pack = "fab"
-  # iconalttext = "Slack"
-  img = "team/selfassessment.svg" #icon OR img that you should put in 
-  imgalttext = "" # Describe the image in words for screen-reader users. 
-  imgside = "left" # image will appear left or right
-  buttonurl = "https://join.slack.com/t/forrt/shared_invite/zt-alobr3z7-NOR0mTBfD1vKXn9qlOKqaQ"
-  buttondescr = "Join"
-  name = "Team Self-Assessment" # Title
-  description = "Team aiming at improving the user experience of the self-assessment tool, as well as coordinating with other teams (e.g., team summaries, database, and website to update its recommendations)."
   color = "#395855" # Background color under the image
 
 

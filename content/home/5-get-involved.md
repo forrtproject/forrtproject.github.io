@@ -20,7 +20,7 @@ subtitle = "---"
   img = "megaphone.webp"
   imgalttext = "Image of a megaphone"
   name = "Spread the Word"
-  description = "Better education is for everyone. Help us spread the word by sharing FORRT content via [Twitter](https://twitter.com/FORRTproject), [YouTube](https://www.youtube.com/channel/UCBQDUYmxMxeWjrCfB2qjA0A/playlists), [Facebook](https://www.facebook.com/forrt.forrt.5), your professional listservs, and other social media."
+  description = "Better education is for everyone. Help us spread the word by sharing FORRT content via [Bluesky](https://bsky.app/profile/forrt.bsky.social), [YouTube](https://www.youtube.com/channel/UCBQDUYmxMxeWjrCfB2qjA0A/playlists), [Facebook](https://www.facebook.com/forrt.forrt.5), your professional listservs, and other social media."
   
 [[feature]]
 #  icon = "users"
