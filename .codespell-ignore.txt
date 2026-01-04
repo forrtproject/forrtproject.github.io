@@ -45,6 +45,7 @@ VSCode
 yaml
 
 # Common acceptable variations
+ABl
 behaviour
 behavioural
 centre
@@ -67,6 +68,7 @@ re-used
 sie
 theses
 tru
+visualisation
 
 # Legal/formal terms
 recusal
