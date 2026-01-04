@@ -8,6 +8,7 @@ FORRT
 OSF
 
 # Research/Academic terms
+aer
 metascience
 preregistration
 preregistrations
@@ -18,16 +19,21 @@ reprohack
 # Names and organizations
 Angelika
 Ans
+Buss
 Carmel
 Hart
 Kathawalla
+Loades
 Loder
+Nam
 Ned
 NWO
 nwo
 Priya
 recognised
 Shepard
+Sherif
+Shepperd
 Soler
 Stefan
 Strack
@@ -35,7 +41,8 @@ Tennant
 Udo
 Yau
 
-# Technical terms
+# Technical or code related terms
+aCount
 agrc
 blogdown
 Github

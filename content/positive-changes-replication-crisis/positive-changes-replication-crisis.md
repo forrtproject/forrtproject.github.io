@@ -110,7 +110,7 @@ Our educational toolkit is designed to support educators, researchers, and stude
 
 <div style="width:900px">
 
-![Vizualization - AI generated](Viz_FORRT.webp)
+![Visualization - AI generated](Viz_FORRT.webp)
 
 </div>
 

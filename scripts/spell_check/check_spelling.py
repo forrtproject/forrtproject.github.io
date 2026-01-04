@@ -17,9 +17,21 @@ def run_codespell():
         # Focus on content, scripts, and GitHub workflows
         paths = ['content', 'scripts', '.github', 'CONTRIBUTING.md', 'README.md']
         
+        # Use repo root - GitHub Actions path or repo root directory
+        repo_root = os.environ.get('GITHUB_WORKSPACE')
+        if not repo_root:
+            # Find repo root by looking for .git directory
+            script_dir = Path(__file__).parent
+            repo_root = script_dir
+            while repo_root.parent != repo_root:
+                if (repo_root / '.git').exists():
+                    break
+                repo_root = repo_root.parent
+            repo_root = str(repo_root)
+
         result = subprocess.run(
             ['codespell', '--config', '.codespellrc'] + paths,
-            cwd='/home/runner/work/forrtproject.github.io/forrtproject.github.io',
+            cwd=repo_root,
             capture_output=True,
             text=True
         )
