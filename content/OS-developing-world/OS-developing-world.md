@@ -56,62 +56,16 @@ subtitle = "A Collection of Practical Guides"
 <br>
 
 
-## What is this project?
+## The what, how, and why of Open Science in the Developing World
 ---------------------
 
-**Open Science in the Developing World** is a completed, large-scale international collaboration led and supported by FORRT that culminated in a peer-reviewed publication in *Advances in Methods and Practices in Psychological Science* (AMPPS).
+**Open Science in the Developing World** is a completed, large-scale international collaboration by 49 open scientists from 12 developing countries, led and supported by FORRT members, that culminated in several community resources (see below) and a peer-reviewed publication in the journal *Advances in Methods and Practices in Psychological Science* (AMPPS), entitled ["Open Science in the Developing World: A Collection of Practical Guides for Researchers in Developing Countries."](https://doi.org/10.1177/25152459251357565) See our postprint [here](http://osf.io/7ubk2).
 
-The project responds to a central tension in the open science movement:  
-while open science is often presented as *universally beneficial*, its dominant tools, incentives, and norms have largely been designed by and for researchers in well-resourced, Global North contexts.
+The project responds to a central tension in the open science movement:
 
-This initiative reframes open science as something that must be **context-sensitive, adaptable, and equity-oriented**, particularly for researchers working in developing countries and other resource-constrained environments.
+> while open science is often presented as *universally beneficial*, its dominant tools, incentives, and norms have largely been designed by and for researchers in well-resourced, Global North contexts.
 
-****Contributors****
-
-- 49 contributors will cover Open Science related topic from perspective of 12 developing countries.
-
-<center>
-
-<div style="width:100%;">
-
-![Authors map](Authors_Geo.webp)
-
-</div>
-
-</center>
-
-
-<br>
-
-#### Progress 
----------------------
-
-- [x] Open call for contributors.
-
-- [x] Identified topic leads.
-
-- [x] Drafts for each topic.
-
-- [x] First draft of the whole paper.
-
-- [x] Re-structure the first draft of the whole paper.
-
-- [x] Final preprint of the paper is available [here](http://osf.io/7ubk2).
-
-- [x] Final Publication is available [here](https://doi.org/10.1177/25152459251357565).
-
-<br>
-
-
-### Key Publications (2025)
-
-The **<font style="color:#0e2a38">preprint</font>** can [be found here (osf.io/7ubk2)](http://osf.io/7ubk2), and final **<font style="color:#0e2a38">publication</font>**: [here](https://doi.org/10.1177/25152459251357565).
-
-Download the supplementary material [here](https://journals.sagepub.com/doi/suppl/10.1177/25152459251357565/suppl_file/sj-docx-1-amp-10.1177_25152459251357565.docx?_gl=1*qdrt5e*_up*MQ..*_ga*MzI4ODQ0MDI1LjE3NjY0ODg2NjU.*_ga_60R758KFDG*czE3NjY0ODg2NjUkbzEkZzAkdDE3NjY0ODg2NjUkajYwJGwwJGgxOTI0NTEyNTAw).
-
-
-> Hu, C.-P., Xu, Z., Lazić, A., Bhattacharya, P., Seda, L., Hossain, S., Jeftić, A., Özdoğru, A. A., Amaral, O. B., Miljković, N., Ilchovska, Z. G., Lazarevic, L. B., Wu, H., Bao, S., Ghodke, N., Moreau, D., Elsherif, M., C., C., Ghai, S., ... Azevedo, F. (2025). **Open Science in the Developing World: A Collection of Practical Guides for Researchers in Developing Countries.** *Advances in Methods and Practices in Psychological Science*, *8*(3), 25152459251357565. [https://doi.org/10.1177/25152459251357565](https://doi.org/10.1177/25152459251357565) 
-
+This **Open Science in the Developing World** initiative reframes open science as something that must be **context-sensitive, adaptable, and equity-oriented**, particularly for researchers working in developing countries and other resource-constrained environments.
 
 ### What does the paper do?
 
@@ -126,6 +80,10 @@ It explicitly acknowledges structural barriers such as:
 - unequal visibility and leadership opportunities  
 
 and responds with **concrete strategies that researchers can adopt immediately**, without requiring institutional privilege or substantial financial resources.
+
+![A layered schematic showing how macro-level barriers (such as infrastructure, funding, language, geography, and policy) interact with micro-level barriers (including time, training, institutional support, incentives, and visibility) to constrain researchers’ access to open resources, opportunities to contribute, and pathways to leadership in open science.](barriers_for_engaging_in_open_science_in_developing_countries.webp)
+
+**Fig. 1.** A schematic representation of the nested and interconnected structure of barriers for engaging in open science in developing countries. The top layer describes the three aspects of engaging in open science: accessibility to open resources, accessible resources to be able to contribute to open science, and opportunities to exercise leadership and to be a leader. The middle layer includes micro-level barriers that directly and specifically slow down engagement in open science. The bottom layer includes macro-level barriers that constrain science in general. The dashed line means the indirect constraints, and the solid line means direct constraints; different colors are used for the lines to enhance visibility.
 
 
 ### The Four-Level Engagement Framework
@@ -156,6 +114,17 @@ Building and leading **local or regional open-science communities**, shaping nor
 
 This structure explicitly rejects a “one-size-fits-all” model of open science and emphasizes **agency, sustainability, and local relevance**.
 
+![A stepwise framework illustrating four levels of engagement with open science—Foundation, Growth, Community, and Leadership—progressing from individual use of open resources to collective contribution and leadership in open science initiatives.](Practical_Guides_for_Implementing_Open_Science.webp)
+
+**Fig. 2.** Practical guide for engaging in and contributing to open science as researchers from developing countries. Researchers start with using open resources and building a solid foundation, gradually grow and adopt recommended practices according to their own pace and context, contribute to the community in various ways, and finally, become leaders in the open-science movement.
+
+
+![A conceptual illustration showing how researchers can move from individual open science practices toward community contribution and leadership, supported by shared infrastructure, collaboration, training, and grassroots networks across diverse regional and institutional contexts.](The_hidden_costs_of_best_open-science_practices.webp)
+
+**Fig. 3.** The hidden costs of “best open-science practices” for researchers in developing countries. FORRT = the Framework for Open and Reproducible Research Training; COSN = the Chinese Open Science Network; APC = article-processing cost; OA = open access.
+
+This figure synthesizes how individual actions scale into collective impact through community-led open science initiatives. It highlights the role of grassroots networks, shared infrastructure, and inclusive governance in transforming open science from a set of technical practices into a sustainable research culture. The figure reinforces the paper’s central argument that leadership in open science can emerge from diverse global contexts when supported by accessible tools and communities.
+
 
 ### Educational & Practical Resources
 
@@ -177,6 +146,38 @@ These materials are designed for:
 
 They align closely with FORRT’s broader mission to **democratize access to research training and epistemic participation**.
 
+### Community and Organizational Exemplars
+
+To illustrate how the four-level engagement framework operates in practice, the paper highlights several community-driven organizations and networks that have successfully adapted open science practices to resource-limited and non-Western contexts. These examples are **illustrative rather than exhaustive**, demonstrating diverse pathways through which researchers can engage with, contribute to, and lead open science initiatives.
+
+Importantly, these organizations differ in scale, disciplinary focus, governance models, and regional scope—but share a commitment to accessibility, capacity building, and contextual sensitivity.
+
+#### Grassroots and Regional Open Science Networks
+
+- **COSN**  
+  A researcher-led initiative advancing open science training, infrastructure, and community-building in China. COSN demonstrates how open science can be meaningfully localized through language accessibility, culturally relevant training, and institutional engagement.
+
+- **OSCS**  
+  A national grassroots network promoting open research practices through workshops, repositories, and policy engagement. OSCS illustrates how sustained community organizing can translate open science principles into national-level infrastructures.
+
+- **BrRN**  
+  A multidisciplinary network inspired by reproducibility initiatives but adapted to the Brazilian research ecosystem. BrRN highlights the role of coordinated national networks in linking grassroots efforts with institutional and policy reform.
+
+#### Inclusion-Focused and Transnational Initiatives
+
+  An international consortium addressing barriers faced by researchers from developing countries in big-team and open-science collaborations. ABRIR foregrounds issues of representation, onboarding, credit, and leadership in large-scale research.
+
+- **FORRT**  
+  A global, community-driven initiative focused on open science education, training, and metascience. Within the context of this project, FORRT served as a coordination hub, dissemination platform, and educational infrastructure supporting inclusive engagement with open science practices.
+
+#### Why these examples matter
+
+Together, these organizations demonstrate that:
+- Open science can be advanced **without reliance on elite institutions or high-cost infrastructures**  
+- Community-led models are critical for **capacity building, sustainability, and local ownership**  
+- Leadership in open science can and does emerge from the Global South and other resource-constrained settings  
+
+These exemplars reinforce the paper’s central argument: **open science becomes more robust, equitable, and globally relevant when it is shaped by diverse communities rather than exported as a fixed model**.
 
 ### Why this matters for FORRT
 
@@ -196,6 +197,42 @@ The paper also directly informs FORRT’s ongoing work on:
 - community-led governance models
 
 
+****Contributors****
+
+- 49 contributors will cover Open Science related topic from perspective of 12 developing countries.
+
+<center>
+
+<div style="width:100%;">
+
+![Authors map](Authors_Geo.webp)
+
+</div>
+
+</center>
+
+
+<br>
+
+#### How we did it?
+---------------------
+
+- [x] Open call for contributors.
+
+- [x] Identified topic leads.
+
+- [x] Drafts for each topic.
+
+- [x] First draft of the whole paper.
+
+- [x] Re-structure the first draft of the whole paper.
+
+- [x] Final preprint of the paper is available [here](http://osf.io/7ubk2).
+
+- [x] Final Publication is available [here](https://doi.org/10.1177/25152459251357565).
+
+<br>
+
 ### Conference Presentations
 
 ---
@@ -208,12 +245,15 @@ The paper also directly informs FORRT’s ongoing work on:
 
 - **2023-10-23** | Big Team Science Conference 2023 (online) | **Featured Panel #24**. See program [here](https://bigteamscienceconference.github.io/program/).
 
-### Learn more & get involved
 
-- Publication: https://doi.org/10.1177/25152459251357565  
-- Preprint & materials: https://osf.io/7ubk2  
-- FORRT: https://forrt.org  
-- FORRT Educational Nexus: https://forrt.org/nexus/
+## Peer-reviewed Publication
+
+The open access **<font style="color:#0e2a38">publication</font>** can be found [here](https://doi.org/10.1177/25152459251357565), and the **<font style="color:#0e2a38">postprint</font>** can [be found here (osf.io/7ubk2)](http://osf.io/7ubk2). Download the supplementary material [here](https://journals.sagepub.com/doi/suppl/10.1177/25152459251357565/suppl_file/sj-docx-1-amp-10.1177_25152459251357565.docx?_gl=1*qdrt5e*_up*MQ..*_ga*MzI4ODQ0MDI1LjE3NjY0ODg2NjU.*_ga_60R758KFDG*czE3NjY0ODg2NjUkbzEkZzAkdDE3NjY0ODg2NjUkajYwJGwwJGgxOTI0NTEyNTAw).
+
+> Hu, C.-P., Xu, Z., Lazić, A., Bhattacharya, P., Seda, L., Hossain, S., Jeftić, A., Özdoğru, A. A., Amaral, O. B., Miljković, N., Ilchovska, Z. G., Lazarevic, L. B., Wu, H., Bao, S., Ghodke, N., Moreau, D., Elsherif, M., C., C., Ghai, S., ... Azevedo, F. (2025). **Open Science in the Developing World: A Collection of Practical Guides for Researchers in Developing Countries.** *Advances in Methods and Practices in Psychological Science*, *8*(3), 25152459251357565. [https://doi.org/10.1177/25152459251357565](https://doi.org/10.1177/25152459251357565) 
+
+
+### Learn more & get involved
 
 If you are interested in adapting, translating, teaching, or extending these materials in your own context, we invite you to connect with the FORRT community.
 
@@ -221,4 +261,4 @@ If you are interested in adapting, translating, teaching, or extending these mat
 ## Contact Us
 ---------- 
 
-For more information, please contact Dr. Hu Chuan-Peng (hcp4715@hotmail.com), School of Psychology, Nanjing Normal University, Nanjing, China and info@forrt.org.
+Please contact Dr. Hu Chuan-Peng (hcp4715@hotmail.com), School of Psychology, Nanjing Normal University, Nanjing, China and Flavio Azevedo (info@forrt.org).
