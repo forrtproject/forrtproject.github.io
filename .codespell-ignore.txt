@@ -52,7 +52,6 @@ VSCode
 yaml
 
 # Common acceptable variations
-ABl
 behaviour
 behavioural
 centre
@@ -63,8 +62,6 @@ grey
 homogenous
 Homogenous
 honour
-ist
-ons
 organisation
 organise
 organised
@@ -72,9 +69,7 @@ practise
 recognise
 re-use
 re-used
-sie
 theses
-tru
 visualisation
 
 # Legal/formal terms
@@ -83,6 +78,7 @@ recuse
 
 # Additional project-specific terms
 AREN's
+AREN’s
 Didactical
 ND
 OT
@@ -92,3 +88,11 @@ Zenodo
 alpha-numeric
 re-use
 re-used
+
+# Other words/parts of words that the spell checker is incorrectly flagging
+ABl
+ist
+ons
+sie
+tru
+ublication
