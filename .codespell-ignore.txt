@@ -2,88 +2,84 @@
 # Add one word per line (case-insensitive by default)
 
 # Project names and acronyms
-FORRT
-forrt
-OSF
-preregistration
 CREP
-Gilad
-Feldman
+forrt
+FORRT
+OSF
 
 # Research/Academic terms
 metascience
-reprohack
+preregistration
 preregistrations
 replicability
 reproducibility
+reprohack
 
 # Names and organizations
-Kathawalla
-Priya
 Angelika
-Stefan
-behavioural
-recognised
-organised
-grey
+Ans
+Carmel
 Hart
-Tennant
-Strack
-Shepard
+Kathawalla
+Loder
+Ned
 NWO
 nwo
+Priya
+recognised
+Shepard
 Soler
-Yau
-Carmel
-Loder
+Stefan
+Strack
+Tennant
 Udo
-Ned
-Ans
+Yau
 
 # Technical terms
-hugo
-blogdown
-netlify
-yaml
-Github
-VSCode
 agrc
+blogdown
+Github
+hugo
+netlify
+VSCode
+yaml
 
 # Common acceptable variations
 behaviour
-honour
-colour
-favour
+behavioural
 centre
-practise
+colour
+commend
+favour
+grey
+homogenous
+Homogenous
+honour
+ist
+ons
 organisation
-recognise
 organise
-theses
+organised
+practise
+recognise
 re-use
 re-used
-alpha-numeric
-Homogenous
-ABl
-wont
-ublication
-commend
-ons
-tru
-Vizualization
-ist
 sie
-homogenous
+theses
+tru
 
 # Legal/formal terms
-recuse
 recusal
+recuse
 
 # Additional project-specific terms
-Didactical
 AREN's
+Didactical
 ND
-Zenodo
 OT
+Zenodo
 
 # Hyphenated words that are acceptable
+alpha-numeric
+re-use
+re-used
