@@ -359,7 +359,7 @@ projects_list = sorted(
     key=lambda x: x["label"]
 )
 
-# Deduplicate roles by 'value', keeping the first label encountered (for solving Project Manger / Project manager issue)
+# Deduplicate roles by 'value', keeping the first label encountered (for solving Project Manager / Project manager issue)
 roles_dict = {}
 for r in role_names:
     if r not in (None, ""):
