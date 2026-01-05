@@ -1,0 +1,98 @@
+# Project-specific terms and proper nouns for FORRT
+# Add one word per line (case-insensitive by default)
+
+# Project names and acronyms
+CREP
+forrt
+FORRT
+OSF
+
+# Research/Academic terms
+aer
+metascience
+preregistration
+preregistrations
+replicability
+reproducibility
+reprohack
+
+# Names and organizations
+Angelika
+Ans
+Buss
+Carmel
+Hart
+Kathawalla
+Loades
+Loder
+Nam
+Ned
+NWO
+nwo
+Priya
+recognised
+Shepard
+Sherif
+Shepperd
+Soler
+Stefan
+Strack
+Tennant
+Udo
+Yau
+
+# Technical or code related terms
+aCount
+agrc
+blogdown
+Github
+hugo
+netlify
+VSCode
+yaml
+
+# Common acceptable variations
+behaviour
+behavioural
+centre
+colour
+commend
+favour
+grey
+homogenous
+Homogenous
+honour
+organisation
+organise
+organised
+practise
+recognise
+re-use
+re-used
+theses
+visualisation
+
+# Legal/formal terms
+recusal
+recuse
+
+# Additional project-specific terms
+AREN's
+AREN’s
+Didactical
+ND
+OT
+Zenodo
+
+# Hyphenated words that are acceptable
+alpha-numeric
+re-use
+re-used
+
+# Other words/parts of words that the spell checker is incorrectly flagging
+ABl
+ist
+ons
+sie
+tru
+ublication

@@ -1,0 +1,124 @@
+<div class="filter-container">
+
+    {{/* Content Type Filter */}}
+    <div class="filter-section-title">Filter by Content Type</div>
+    <div id="pill-bar-type" class="pill-bar">
+        <span class="filter-pill active" data-group="type" data-value="all">All</span>
+        <span class="filter-pill" data-group="type" data-value="Publications">Publications</span>
+        <span class="filter-pill" data-group="type" data-value="Preprints">Preprints</span>
+        <span class="filter-pill" data-group="type" data-value="Policy Briefs">Policy Briefs</span>
+        <span class="filter-pill" data-group="type" data-value="Op-Eds">Op-Eds</span>
+        <span class="filter-pill" data-group="type" data-value="Teaching Materials">Teaching Materials</span>
+        <span class="filter-pill" data-group="type" data-value="Interactive Tools / Apps">Interactive Tools /
+            Apps</span>
+        <span class="filter-pill" data-group="type" data-value="Data, Code & Packages">Data, Code & Packages</span>
+        <span class="filter-pill" data-group="type" data-value="Working Papers & Ongoing Projects">Working Papers &
+            Ongoing Projects</span>
+        <span class="filter-pill" data-group="type" data-value="Affiliated Projects">Affiliated Projects</span>
+    </div>
+
+    <br>
+
+    {{/* Focus Area Filter */}}
+    <div class="filter-section-title">Filter by Research Area</div>
+    <div id="pill-bar-focus" class="pill-bar">
+        <span class="filter-pill active" data-group="focus" data-value="all">All Areas</span>
+        <span class="filter-pill" data-group="focus" data-value="Meta-Research & Scientific Reform">Meta-Research &
+            Scientific Reform</span>
+        <span class="filter-pill" data-group="focus" data-value="Equity, Diversity & Social Justice">Equity, Diversity &
+            Social Justice</span>
+        <span class="filter-pill" data-group="focus" data-value="Community, Governance & Sustainability">Community,
+            Governance & Sustainability</span>
+        <span class="filter-pill" data-group="focus" data-value="Education & Pedagogy">Education & Pedagogy</span>
+    </div>
+
+    {{/* Empty State Warning */}}
+    <div id="no-resources-warning" style="display: none; text-align: center; margin-top: 2rem; color: #666;">
+        <h4><i class="fas fa-search"></i> No resources available</h4>
+        <p>There are no publications matching the selected content type and research area.</p>
+    </div>
+
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const typePills = document.querySelectorAll('#pill-bar-type .filter-pill');
+        const focusPills = document.querySelectorAll('#pill-bar-focus .filter-pill');
+        const pubs = document.querySelectorAll('.pub-card');
+        const sections = document.querySelectorAll('.pub-section-group');
+        const warningDiv = document.getElementById('no-resources-warning');
+
+        let currentType = 'all';
+        let currentFocus = 'all';
+
+        function filterPublications() {
+            let visibleCount = 0;
+
+            pubs.forEach(pub => {
+                const pubType = pub.getAttribute('data-type'); // e.g. "Publications"
+                const pubFocus = pub.getAttribute('data-focus'); // e.g. "Community..."
+
+                const typeActive = currentType !== 'all';
+                const focusActive = currentFocus !== 'all';
+
+                let shouldShow = false;
+
+                if (!typeActive && !focusActive) {
+                    shouldShow = true;
+                } else if (typeActive && !focusActive) {
+                    shouldShow = (pubType === currentType);
+                } else if (!typeActive && focusActive) {
+                    shouldShow = (pubFocus === currentFocus);
+                } else {
+                    // Both active: Union (Merge) logic
+                    shouldShow = (pubType === currentType) || (pubFocus === currentFocus);
+                }
+
+                if (shouldShow) {
+                    pub.style.display = "";
+                    pub.parentElement.style.display = ""; // Ensure column/wrapper is visible
+                    visibleCount++;
+                } else {
+                    pub.style.display = "none";
+                }
+            });
+
+            // Hide empty sections
+            sections.forEach(section => {
+                const visibleCards = section.querySelectorAll('.pub-card:not([style*="display: none"])');
+                if (visibleCards.length === 0) {
+                    section.style.display = "none";
+                } else {
+                    section.style.display = "";
+                }
+            });
+
+            // Show warning if no resources found
+            if (visibleCount === 0) {
+                warningDiv.style.display = "block";
+            } else {
+                warningDiv.style.display = "none";
+            }
+        }
+
+        // Type Filters
+        typePills.forEach(pill => {
+            pill.addEventListener('click', () => {
+                typePills.forEach(p => p.classList.remove('active'));
+                pill.classList.add('active');
+                currentType = pill.getAttribute('data-value');
+                filterPublications();
+            });
+        });
+
+        // Focus Filters
+        focusPills.forEach(pill => {
+            pill.addEventListener('click', () => {
+                focusPills.forEach(p => p.classList.remove('active'));
+                pill.classList.add('active');
+                currentFocus = pill.getAttribute('data-value');
+                filterPublications();
+            });
+        });
+    });
+</script>

@@ -103,7 +103,7 @@ layout: single
     <div class="sc-grid">
         <div class="sc-title-card slate">
     <span class="sc-title-label">Team</span>
-    <h3 class="sc-title-text">Community Management</h3>
+    <h3 class="sc-title-text">Community Governance & Management</h3>
 </div><div class="sc-card" onclick="openModal('dramandakaymontoya')">
     <img src="/authors/dramandakaymontoya/avatar.webp" alt="Dr. Amanda Kay Montoya" class="sc-card-img" />
     <div class="sc-card-overlay"></div>
@@ -129,7 +129,7 @@ layout: single
     <span class="sc-title-label">Team</span>
     <h3 class="sc-title-text">Community Engagement</h3>
 </div><div class="sc-card" onclick="openModal('drlukasroseler')">
-    <div class="sc-placeholder">DR</div>
+    <img src="/authors/drlukasroseler/avatar.webp" alt="Dr. Lukas Röseler" class="sc-card-img" />
     <div class="sc-card-overlay"></div>
     <div class="sc-card-content">
         <h4 class="sc-card-name">Dr. Lukas Röseler</h4>
@@ -232,12 +232,22 @@ layout: single
     </div>
 </div><div class="sc-title-card slate">
     <span class="sc-title-label">Team</span>
-    <h3 class="sc-title-text">FORRT Stewards</h3>
-</div><div class="sc-card" onclick="openModal('adiradaniel')">
-    <img src="/authors/adiradaniel/avatar.webp" alt="Adira Daniel" class="sc-card-img" />
+    <h3 class="sc-title-text">Communication, Dissemination & Impact</h3>
+</div><div class="sc-card" onclick="openModal('charlottepennington')">
+    <img src="/authors/charlottepennington/avatar.webp" alt="Charlotte Pennington" class="sc-card-img" />
     <div class="sc-card-overlay"></div>
     <div class="sc-card-content">
-        <h4 class="sc-card-name">Adira Daniel</h4>
+        <h4 class="sc-card-name">Charlotte Pennington</h4>
+        <p class="sc-card-role">Director</p>
+    </div>
+</div><div class="sc-title-card slate">
+    <span class="sc-title-label">Team</span>
+    <h3 class="sc-title-text">FORRT Stewards</h3>
+</div><div class="sc-card" onclick="openModal('adiradaniel')">
+    <img src="/authors/adiradaniel/avatar.webp" alt="Adira Daniel " class="sc-card-img" />
+    <div class="sc-card-overlay"></div>
+    <div class="sc-card-content">
+        <h4 class="sc-card-name">Adira Daniel </h4>
         <p class="sc-card-role">FORRT Steward</p>
     </div>
 </div><div class="sc-card" onclick="openModal('stephaniezellers')">
@@ -245,6 +255,13 @@ layout: single
     <div class="sc-card-overlay"></div>
     <div class="sc-card-content">
         <h4 class="sc-card-name">Stephanie Zellers</h4>
+        <p class="sc-card-role">FORRT Steward</p>
+    </div>
+</div><div class="sc-card" onclick="openModal('rivaquiroga')">
+    <img src="/authors/rivaquiroga/avatar.webp" alt="Riva Quiroga" class="sc-card-img" />
+    <div class="sc-card-overlay"></div>
+    <div class="sc-card-content">
+        <h4 class="sc-card-name">Riva Quiroga</h4>
         <p class="sc-card-role">FORRT Steward</p>
     </div>
 </div><div class="sc-card" onclick="openModal('meerachandra')">
@@ -279,11 +296,11 @@ layout: single
         <h4 class="sc-card-name">Dr Lukas Wallrich</h4>
         <p class="sc-card-role">Co-Chair</p>
     </div>
-</div><div class="sc-card" onclick="openModal('flavioazevedo')">
-    <img src="/authors/flavioazevedo/avatar.webp" alt="Flavio Azevedo" class="sc-card-img" />
+</div><div class="sc-card" onclick="openModal('drflavioazevedo')">
+    <img src="/authors/drflavioazevedo/avatar.webp" alt="Dr Flavio Azevedo" class="sc-card-img" />
     <div class="sc-card-overlay"></div>
     <div class="sc-card-content">
-        <h4 class="sc-card-name">Flavio Azevedo</h4>
+        <h4 class="sc-card-name">Dr Flavio Azevedo</h4>
         <p class="sc-card-role">Director</p>
     </div>
 </div>
@@ -294,7 +311,7 @@ layout: single
             <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s-7-3.5-7-9.5V6l7-3 7 3v6.5C19 18.5 12 22 12 22z"/><path d="m9 12 2 2 4-4"/></svg>
             <span>Guidance & Oversight</span>
         </div>
-        <p class="sc-section-desc">Ethical guidance and long-term stewardship.</p>
+        <p class="sc-section-desc">Independent ethical guidance and long-term stewardship.</p>
     </div>
     <div class="sc-grid">
         <div class="sc-card" onclick="openModal('samparsons')">
@@ -578,7 +595,7 @@ In FORRT, she has been involved in co-leading Team Citational Politics and is ve
             <div class="sc-modal-layout">
                 <div class="sc-modal-sidebar">
                     <div class="sc-modal-img">
-                        <span style="font-size: 2rem; color: #94a3b8; font-weight: 600;">DR</span>
+                        <img src="/authors/drlukasroseler/avatar.webp" alt="Dr. Lukas Röseler" />
                     </div>
                     <div class="sc-social-links">
                         <a href="https://lukasroeseler.github.io/home/" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-slate-800 transition-colors"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" x2="22" y1="12" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></a><a href="mailto:lukas.roeseler@uni-muenster.de" class="text-slate-400 hover:text-slate-800 transition-colors"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg></a>
@@ -731,13 +748,13 @@ In FORRT, she has been involved in co-leading Team Citational Politics and is ve
                         <img src="/authors/karenmatvienkosikar/avatar.webp" alt="Karen Matvienko-Sikar" />
                     </div>
                     <div class="sc-social-links">
-                        <a href="https://www.ucc.ie/en/publichealth/people/estaff/ms-karen-matvienko-sikar/" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-slate-800 transition-colors"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" x2="22" y1="12" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></a>
+                        <a href="https://research.ucc.ie/en/persons/karen-matvienko-sikar/" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-slate-800 transition-colors"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" x2="22" y1="12" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></a><a href="mailto:Karen.msikar@ucc.ie" class="text-slate-400 hover:text-slate-800 transition-colors"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg></a>
                     </div>
                 </div>
                 <div class="sc-modal-main">
                     <h3 class="sc-modal-name">Karen Matvienko-Sikar</h3>
                     <p class="sc-modal-role">Co-Director (Fundraising)</p>
-                    <div class="sc-modal-bio">Bio coming soon.</div>
+                    <div class="sc-modal-bio">Dr Karen Matvienko-Sikar is a Health Psychologist Senior Lecturer in the School of Public Health, University College Cork, Ireland. Karens research interests and expertise are in the area of maternal and child health, particularly perinatal mental health and infant feeding. She is also an advocate for open research, a BITSS Catalyst, and leads the Principles and Practices of Open Research (PaPOR TRaIL) open education resource for which she has received research commendations and awards.</div>
                 </div>
             </div>
         </div>
@@ -765,7 +782,7 @@ In FORRT, she has been involved in co-leading Team Citational Politics and is ve
                     <div class="sc-modal-bio">Fotis Mystakopoulos is a professional actively engaged in advancing Open Science. His career trajectory reflects the evolution of information science, from its traditional roots in library services to its modern role in shaping research policy and data infrastructure. With a background in Library and Information Science, he has developed expertise in key areas of scholarly communication, including Responsible Research Assessment, Open Access, Open Science Training, and Research Data Management.
 
 Beyond his formal roles, he is actively engaged in community building, supporting initiatives that connect researchers and professionals around shared values and practices of openness and advocating for cultural change in academia that aligns with the ethos of Open Science.
-Currently, alongside his professional duties, he is pursuing a PhD at the University of West Attica, examining the evolution of academic libraries, and theire services within the expanding global landscape of Open Science.
+Currently, alongside his professional duties, he is pursuing a PhD at the University of West Attica, examining the evolution of academic libraries, and their services within the expanding global landscape of Open Science.
 
 
 
@@ -874,6 +891,31 @@ Currently, alongside his professional duties, he is pursuing a PhD at the Univer
             </div>
         </div>
     </div>
+</div><div id="modal-charlottepennington" class="sc-modal-backdrop">
+    <div class="sc-modal-content">
+        <div class="sc-modal-header">
+            <button onclick="closeModal('charlottepennington')" class="sc-close-btn">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 18 12"/></svg>
+            </button>
+        </div>
+        <div class="sc-modal-body">
+            <div class="sc-modal-layout">
+                <div class="sc-modal-sidebar">
+                    <div class="sc-modal-img">
+                        <img src="/authors/charlottepennington/avatar.webp" alt="Charlotte Pennington" />
+                    </div>
+                    <div class="sc-social-links">
+                        <a href="https://research.aston.ac.uk/en/persons/charlotte-rebecca-pennington/" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-slate-800 transition-colors"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" x2="22" y1="12" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></a><a href="mailto:c.pennington@aston.ac.uk" class="text-slate-400 hover:text-slate-800 transition-colors"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg></a>
+                    </div>
+                </div>
+                <div class="sc-modal-main">
+                    <h3 class="sc-modal-name">Charlotte Pennington</h3>
+                    <p class="sc-modal-role">Director (Communication, Dissemination & Impact)</p>
+                    <div class="sc-modal-bio">Dr. Charlotte Pennington is a Senior Lecturer in Psychology at Aston University, Birmingham, UK. As an experimental social psychologist, Charlotte is interested in understanding how people’s complex social environments impact on health and wellbeing, with a particular interest in alcohol consumption and addiction. Charlotte is an expert in Open Scholarship: she is author of “A Student’s Guide to Open Science: Using the Replication Crisis to Reform Psychology”, which won the 2024 British Psychology Society Textbook Award, and is an Action Editor of Registered Reports for Addiction Research &amp; Theory and Peer Community In. Charlotte also sits on the APA Open Science &amp; Methodology Expert Panel, working to deepen commitment to open research, transparency, and methodological rigour. She has been an active member of FORRT for over 6 years, contributing to many initiatives, such as FORRT’s glossary, educator’s corner, impact on students, lesson plans, and mapping of open scholarship communities. As Director of Communication, Dissemination &amp; Impact, Charlotte works to enhance FORRT’s visibility, reach, and mission at a global scale.</div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div><div id="modal-adiradaniel" class="sc-modal-backdrop">
     <div class="sc-modal-content">
         <div class="sc-modal-header">
@@ -885,16 +927,20 @@ Currently, alongside his professional duties, he is pursuing a PhD at the Univer
             <div class="sc-modal-layout">
                 <div class="sc-modal-sidebar">
                     <div class="sc-modal-img">
-                        <img src="/authors/adiradaniel/avatar.webp" alt="Adira Daniel" />
+                        <img src="/authors/adiradaniel/avatar.webp" alt="Adira Daniel " />
                     </div>
                     <div class="sc-social-links">
-                        <a href="https://scholar.google.com/citations?user=VRDkDV8AAAAJ&hl=en" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-slate-800 transition-colors"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" x2="22" y1="12" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></a>
+                        <a href="https://www.linkedin.com/in/adiradaniel/" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-slate-800 transition-colors"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" x2="22" y1="12" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></a><a href="mailto:nan" class="text-slate-400 hover:text-slate-800 transition-colors"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg></a>
                     </div>
                 </div>
                 <div class="sc-modal-main">
-                    <h3 class="sc-modal-name">Adira Daniel</h3>
+                    <h3 class="sc-modal-name">Adira Daniel </h3>
                     <p class="sc-modal-role">FORRT Stewards</p>
-                    <div class="sc-modal-bio">Bio coming soon.</div>
+                    <div class="sc-modal-bio">I’m a PhD Candidate in Social, Personality, and Developmental Psychology at Western University in Canada and an active member of FORRT’s Qualitative Research &amp; Mixed Methods sub-cluster. At FORRT, I focus on creating accessible, equity-focused teaching materials that support researchers in developing rigorous, transparent, and reflexive qualitative and mixed-methods practices. I love building resources that help demystify methodology and make open science more inclusive—especially for early-career scholars.
+
+My own research explores how diverse and intercultural couples navigate identity, disclosure, and resilience under conditions of marginalization. I’m passionate about intersectionality, relationship processes, and rethinking methodological “rigour” in ways that honour complexity and lived experience.
+
+Outside of research, you’ll usually find me baking something cozy, tending to my growing plant collection, or planning overly detailed travel itineraries. I love blending creativity, community engagement, and thoughtful scholarship in everything I do.</div>
                 </div>
             </div>
         </div>
@@ -920,6 +966,31 @@ Currently, alongside his professional duties, he is pursuing a PhD at the Univer
                     <h3 class="sc-modal-name">Stephanie Zellers</h3>
                     <p class="sc-modal-role">FORRT Stewards</p>
                     <div class="sc-modal-bio">Bio coming soon.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div><div id="modal-rivaquiroga" class="sc-modal-backdrop">
+    <div class="sc-modal-content">
+        <div class="sc-modal-header">
+            <button onclick="closeModal('rivaquiroga')" class="sc-close-btn">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 18 12"/></svg>
+            </button>
+        </div>
+        <div class="sc-modal-body">
+            <div class="sc-modal-layout">
+                <div class="sc-modal-sidebar">
+                    <div class="sc-modal-img">
+                        <img src="/authors/rivaquiroga/avatar.webp" alt="Riva Quiroga" />
+                    </div>
+                    <div class="sc-social-links">
+                        <a href="https://rivaquiroga.cl/" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-slate-800 transition-colors"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" x2="22" y1="12" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></a><a href="mailto:rivaquiroga@gmail.com" class="text-slate-400 hover:text-slate-800 transition-colors"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg></a>
+                    </div>
+                </div>
+                <div class="sc-modal-main">
+                    <h3 class="sc-modal-name">Riva Quiroga</h3>
+                    <p class="sc-modal-role">FORRT Steward</p>
+                    <div class="sc-modal-bio">Riva Quiroga is currently a Research Fellow at OLS, a nonprofit dedicated to capacity building and the diversification of open leadership in research worldwide. She is a Software Sustainability Institute Fellow and the founder of the local research software engineering community in Chile (RSE Chile), where she is based. She also serves as an editor at Programming Historian, a diamond open access journal that publishes multilingual, openly peer-reviewed tutorials to help people from the humanities and related fields to learn a wide range of open digital tools, techniques, and workflows for research and teaching. Riva is actively involved in open source communities such as R Ladies, where she is part of the Global Leadership Team and an organizer of local chapters in Chile. She is also a co-organizer of her local PyLadies community and the chair of LatinR. She holds a PhD in Linguistics and has developed an interest in metaresearch over the past few years.</div>
                 </div>
             </div>
         </div>
@@ -1001,10 +1072,10 @@ I am also very interested in Open Science and an avid R user. In that space, I e
             </div>
         </div>
     </div>
-</div><div id="modal-flavioazevedo" class="sc-modal-backdrop">
+</div><div id="modal-drflavioazevedo" class="sc-modal-backdrop">
     <div class="sc-modal-content">
         <div class="sc-modal-header">
-            <button onclick="closeModal('flavioazevedo')" class="sc-close-btn">
+            <button onclick="closeModal('drflavioazevedo')" class="sc-close-btn">
                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 18 12"/></svg>
             </button>
         </div>
@@ -1012,14 +1083,14 @@ I am also very interested in Open Science and an avid R user. In that space, I e
             <div class="sc-modal-layout">
                 <div class="sc-modal-sidebar">
                     <div class="sc-modal-img">
-                        <img src="/authors/flavioazevedo/avatar.webp" alt="Flavio Azevedo" />
+                        <img src="/authors/drflavioazevedo/avatar.webp" alt="Dr Flavio Azevedo" />
                     </div>
                     <div class="sc-social-links">
                         <a href="http://flavioazevedo.com/about" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-slate-800 transition-colors"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" x2="22" y1="12" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></a>
                     </div>
                 </div>
                 <div class="sc-modal-main">
-                    <h3 class="sc-modal-name">Flavio Azevedo</h3>
+                    <h3 class="sc-modal-name">Dr Flavio Azevedo</h3>
                     <p class="sc-modal-role">Director of FORRT</p>
                     <div class="sc-modal-bio">Bio coming soon.</div>
                 </div>

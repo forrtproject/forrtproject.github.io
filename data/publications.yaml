@@ -12,6 +12,7 @@
     doi: "https://doi.org/10.1016/j.socec.2025.102502"
     pdf: "https://doi.org/10.1016/j.socec.2025.102502"
   altmetric_doi: "10.1016/j.socec.2025.102502"
+  focus_area: "Meta-Research & Scientific Reform"
 
 # 2
 - title: "Mapping Open Science Communities in Psychology: A Systematic Narrative Review"
@@ -25,6 +26,7 @@
   links:
     doi: "https://doi.org/10.1098/rsos.241726"
   altmetric_doi: "10.1098/rsos.241726"
+  focus_area: "Community, Governance & Sustainability"
 
 # 3
 - title: "A Community Model for Rigorous and Inclusive Scholarship"
@@ -39,6 +41,7 @@
     doi: "https://doi.org/10.17879/replicationresearch-2025-9022"
     pdf: "./pdf/Inaugural_Editorial_of_Replication_Research_R2.pdf"
   altmetric_doi: "10.17879/replicationresearch-2025-9022"
+  focus_area: "Meta-Research & Scientific Reform"
 
 # 4
 - title: "Bridging Neurodiversity and Open Scholarship: How Shared Values Can Guide Best Practices for Research Integrity, Social Justice, and Principled Education"
@@ -52,6 +55,7 @@
   links:
     doi: "https://doi.org/10.1111/josi.70035"
   altmetric_doi: "10.1111/josi.70035"
+  focus_area: "Equity, Diversity & Social Justice"
 
 # 5
 - title: "An annotated introductory reading list for neurodiversity"
@@ -66,6 +70,7 @@
     doi: "https://doi.org/10.7554/eLife.102467"
     postprint: "https://doi.org/10.7554/eLife.102467"
   altmetric_doi: "10.7554/eLife.102467"
+  focus_area: "Equity, Diversity & Social Justice"
 
 # 6
 - title: "The Replication Database: Documenting the Replicability of Psychological Science"
@@ -84,13 +89,13 @@
   altmetric_doi_2: "10.5334/jopd.101"
 
 # 7
-- title: "The Impact of Open Scholarship on Students' Learning Outcomes (Scoping Review)"
+- title: "Teaching open and reproducible scholarship: a critical review of the evidence base for current pedagogical methods and their outcomes"
   type: "journal"
   year: "2023"
   status: "Published"
   journal_name: "Royal Society Open Science"
   authors: "Pownall, M., Azevedo, F., König, L. M., Slack, H. R., Evans, T. R., Flack, Z., ... & FORRT."
-  abstract: "We have written a manuscript entitled *Teaching open and reproducible scholarship: a critical review of the evidence base for current pedagogical methods and their outcomes*. This manuscript describes the available (empirical) evidence of the impact (and importance) of integrating open scholarship into higher education."
+  abstract: "In recent years, the scientific community has called for improvements in the credibility, robustness and reproducibility of research, characterized by increased interest and promotion of open and transparent research practices. While progress has been positive, there is a lack of consideration about how this approach can be embedded into undergraduate and postgraduate research training. Specifically, a critical overview of the literature which investigates how integrating open and reproducible science may influence student outcomes is needed. In this paper, we provide the first critical review of literature surrounding the integration of open and reproducible scholarship into teaching and learning and its associated outcomes in students. Our review highlighted how embedding open and reproducible scholarship appears to be associated with (i) students' scientific literacies (i.e. students’ understanding of open research, consumption of science and the development of transferable skills); (ii) student engagement (i.e. motivation and engagement with learning, collaboration and engagement in open research) and (iii) students' attitudes towards science (i.e. trust in science and confidence in research findings). However, our review also identified a need for more robust and rigorous methods within pedagogical research, including more interventional and experimental evaluations of teaching practice. We discuss implications for teaching and learning scholarship."
   citation: "Pownall, M., et al. (2023). <strong>Teaching open and reproducible scholarship: A critical review of the evidence base for current pedagogical methods and their outcomes.</strong> <em>Royal Society Open Science</em>, 10(5), 221255. https://doi.org/10.1098/rsos.221255"
   links:
     doi: "https://doi.org/10.1098/rsos.221255"
@@ -189,6 +194,32 @@
   altmetric_doi: "10.31222/osf.io/qjecy_v2"
 
 # 2
+- title: "Tracking and mainstreaming replications in the social, cognitive, and behavioral sciences"
+  type: "preprint"
+  year: "2025"
+  status: "Published"
+  journal_name: "MetaArXiv"
+  authors: "Hartmann H, Azevedo F, Röseler L, Wallrich L, Aldoh A, Elsherif MM, et al."
+  abstract: "Replicability is a cornerstone of scientific progress. Yet, replications are often undervalued, and are sometimes seen as redundant, unimportant, or lacking novelty. This impedes their broader adoption in research and beyond. In response, the credibility revolution calls for slower, more deliberate science and greater responsiveness to fallibility. In this perspective piece, we argue that (a) replications are essential for validating scientific claims, (b) replications need to be made more visible, recognized, and integrated into research and educational practices, and (c) we can change the way we view and judge replication results. We propose a framework where replication studies can be systematically tracked and normalized through the Replication Hub as part of the Framework for Open and Reproducible Research Training (FORRT) initiative, with the goal of enhancing the visibility, integration, and cumulative impact of replication research across disciplines."
+  citation: "Hartmann H, Azevedo F, Röseler L, Wallrich L, Aldoh A, Elsherif MM, et al. <strong>Tracking and mainstreaming replications in the social, cognitive, and behavioral sciences.</strong> <em>MetaArXiv</em>. https://doi.org/10.31222/osf.io/ad2w6_v1"
+  links:
+    doi: "https://doi.org/10.31222/osf.io/ad2w6_v1"
+  altmetric_doi: "10.31222/osf.io/ad2w6_v1"
+
+# 3
+- title: "How to Develop and Use Open Educational Resources"
+  type: "preprint"
+  year: "2025"
+  status: "Preprint"
+  journal_name: "MetaArxiv"
+  authors: "Azevedo, F., Friedel, E., Ashcroft-Jones, S., Korbmacher, M., Lloyd, K., Mudahera, D. R., Kravesta, A., Resulbegoviq, H., Andreolli, G., Micheli, L., &amp; Silverstein, P."
+  abstract: "This chapter explores the critical role of Open Educational Resources (OERs) in advancing open science and promoting educational equity. OERs are freely-available teaching and learning materials that can be reused and adapted, making them powerful tools for democratising access to knowledge. Drawing on principles from critical pedagogy, feminist, and decolonial scholarship, we position OERs not only as cost-saving tools but as instruments of epistemic justice and inclusion. This chapter outlines five foundational principles for OER development—accessibility, inclusivity, collaboration, sustainability, and social justice—and offers a step-by-step framework for creating, implementing, and sustaining high-quality OERs. Case studies are presented to demonstrate participatory and community-driven approaches to OER creation. We also examine common challenges such as structural inequality and linguistic barriers, providing actionable strategies for addressing each. By embedding values of openness, fairness, and co-creation, we show how OERs can help reshape curricula and cultivate more inclusive academic ecosystems."
+  citation: "Azevedo, F., Friedel, E., Ashcroft-Jones, S., Korbmacher, M., Lloyd, K., Mudahera, D. R., Kravesta, A., Resulbegoviq, H., Andreolli, G., Micheli, L., &amp; Silverstein, P. (2025, Sept 30). <strong>How to Develop and Use Open Educational Resources.</strong> <em>In Pennington, C. &amp; Pownall, M. (Eds.), Teaching Open Science. Edward Elgar Publishing.</em>"
+  links:
+    doi: "https://doi.org/10.35542/osf.io/sn693_v1"
+  altmetric_doi: "10.35542/osf.io/sn693_v1"
+
+# 4
 - title: "Neurodiversity & Open Scholarship in Academia"
   type: "preprint"
   year: "2022"
@@ -202,7 +233,7 @@
     postprint: "https://doi.org/10.31222/osf.io/k7a9p"
   altmetric_doi: "10.31222/osf.io/k7a9p"
 
-# 3
+# 5
 - title: "FORRT's Manifesto"
   type: "preprint"
   year: "2019"
@@ -360,6 +391,19 @@
     doi: "https://doi.org/10.1037/met0000687"
     postprint: "https://doi.org/10.1037/met0000687"
   altmetric_doi: "10.1037/met0000687"
+
+# 3
+- title: "Towards FAIRification of learning resources and catalogues—lessons learnt from research communities"
+  type: "affiliated"
+  year: "2024"
+  status: "Published"
+  journal_name: "Frontiers in Education"
+  authors: "Provost, L., Bezuidenhout, L., Venkataraman, S., van der Lek, I., van Gelder, C., Kuchma, I., Leenarts, E., Azevedo, F., Brvar, I. V., Paladin, L., Clare, H., and Braukmann, R."
+  abstract: "Since the introduction of the FAIR (Findable, Accessible, Interoperable and Reusable) data principles in 2016, discussions have evolved beyond the original focus on research data to include learning resources. In 2020, a set of simple rules to FAIRify learning resources was proposed, building on existing expertise within the training community. Disciplinary communities have played an important role in advancing FAIR principles for learning resources, although they have approached FAIRification activities in different ways. These communities range from volunteer-led to funded and independent organisations, however commonly include activities such as organising training and capacity building, and coordinated discussions on disciplinary-focused FAIR best practices and standards."
+  citation: "Provost, L., Bezuidenhout, L., Venkataraman, S., van der Lek, I., van Gelder, C., Kuchma, I., Leenarts, E., Azevedo, F., Brvar, I. V., Paladin, L., Clare, H., and Braukmann, R. (2024). <strong>Towards FAIRification of learning resources and catalogues—lessons learnt from research communities.</strong> <em>Frontiers in Education</em>, 9, 1390444. https://doi.org/10.3389/feduc.2024.1390444"
+  links:
+    doi: "https://doi.org/10.3389/feduc.2024.1390444"
+  altmetric_doi: "10.3389/feduc.2024.1390444"
 
 
 # --- Work in Progress ---
