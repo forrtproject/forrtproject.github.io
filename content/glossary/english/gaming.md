@@ -8,7 +8,7 @@
         "P*\\-hacking"
     ],
     "references": [
-        "Moher et al. (2018); Naudet et al. (2018)"
+        "\\[@Moher2018\\], \\[@Naudet2018\\]"
     ],
     "alt_related_terms": [
         null

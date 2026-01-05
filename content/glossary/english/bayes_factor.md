@@ -10,7 +10,7 @@
         "p*\\-value"
     ],
     "references": [
-        "Hoijtink et al. (2019) Makowski et al. (2019)"
+        "\\[@Hoijtink2019\\], \\[@Makowski2019\\]"
     ],
     "alt_related_terms": [
         null

@@ -8,7 +8,7 @@
         "Under-representation"
     ],
     "references": [
-        "Zurn et al. (2020)"
+        "\\[@Zurn2020\\]"
     ],
     "alt_related_terms": [
         null

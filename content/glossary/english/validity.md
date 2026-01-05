@@ -19,7 +19,7 @@
         "Test"
     ],
     "references": [
-        "Campbell (1957); Boorsboom et al. (2004); Kelley (1927)"
+        "Campbell (1957); Boorsboom et al. (2004); Kelley (1927) \\[@Campbell1957\\], \\[@Kelley1927\\]"
     ],
     "alt_related_terms": [
         null

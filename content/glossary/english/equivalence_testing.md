@@ -13,7 +13,7 @@
         "TOST procedure."
     ],
     "references": [
-        "Lakens et al. (2018); Lakens et al. (2020); Schuirmann (1987)"
+        "\\[@Lakens2018\\], \\[@LakensEtAl2020\\], \\[@Schuirmann1987\\]"
     ],
     "alt_related_terms": [
         null

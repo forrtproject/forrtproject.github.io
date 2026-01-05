@@ -11,7 +11,7 @@
         "Reproducibility"
     ],
     "references": [
-        "Crutzen et al. (2019); [https://ico.org.uk/for-organisations/guide-to-data-protection/guide-to-the-general-data-protection-regulation-gdpr/](https://ico.org.uk/for-organisations/guide-to-data-protection/guide-to-the-general-data-protection-regulation-gdpr/); [https://ec.europa.eu/info/law/law-topic/data-protection\\_en](https://ec.europa.eu/info/law/law-topic/data-protection_en)"
+        "\\[@Crutzen2019\\], \\[@ICO2021\\], \\[@EU\\_DataProtection\\]"
     ],
     "alt_related_terms": [
         null

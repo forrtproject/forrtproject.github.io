@@ -20,7 +20,7 @@
         "Salami slicing"
     ],
     "references": [
-        "Banks et al. (2016); Fiedler and Schwartz (2016); Hardwicke et al. (2014); John et al. (2012); Neuroskeptic (2012); Sijtsma (2016); Simonsohn et al. (2011)"
+        "Banks et al. (2016); Fiedler and Schwartz (2016); Hardwicke et al. (2014); John et al. (2012); Neuroskeptic (2012); Sijtsma (2016); Simonsohn et al. (2011) \\[@BanksEtAl2016\\], \\[@FiedlerSchwarz2016\\], \\[@HardwickeEtAl2014\\], \\[@John2012\\], \\[@Neuroskeptic2012\\], \\[@Sijtsma2016\\],"
     ],
     "alt_related_terms": [
         null

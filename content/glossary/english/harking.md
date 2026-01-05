@@ -12,7 +12,7 @@
         "Questionable Research Practices or Questionable Reporting Practices (QRPs)"
     ],
     "references": [
-        "Kerr (1998); Nosek and Lakens (2014)"
+        "\\[@Kerr1998\\], \\[@Nosek2014\\]"
     ],
     "alt_related_terms": [
         null

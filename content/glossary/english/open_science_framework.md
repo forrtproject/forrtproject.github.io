@@ -11,7 +11,7 @@
         "Preregistration"
     ],
     "references": [
-        "Foster and Deardorff (2017); https://osf.io/"
+        "Foster and Deardorff (2017); [https://osf.io/](https://osf.io/) \\[@FosterDeardorff2017\\], \\[@CentreForOpenScience2011\\]"
     ],
     "alt_related_terms": [
         null

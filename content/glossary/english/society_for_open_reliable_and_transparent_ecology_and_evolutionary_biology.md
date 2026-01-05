@@ -6,7 +6,7 @@
         "Society for the Improvement of Psychological Science (SIPS)"
     ],
     "references": [
-        "https://www.sortee.org/"
+        "[https://www.sortee.org/](https://www.sortee.org/) \\[@SORTEE\\_n\\_d\\]"
     ],
     "alt_related_terms": [
         null

@@ -270,7 +270,7 @@ Educators (POST-Edu) as Project co-lead
     30. Team Cohesion  with *Conceptualization*, *Resources*, *Supervision*, *Writing - original draft* and *Writing - review & editing*
     31. [FReD R package](https://forrt.org/FReD/)  with *Conceptualization*
     32. [Summaries](https://forrt.org/summaries/)  with *Conceptualization*, *Investigation*, *Project administration*, *Resources*, *Supervision* and *Writing - review & editing*
-    33. UNESCO/UN Appliction  with *Conceptualization*, *Funding acquisition*, *Investigation*, *Project administration* and *Writing - original draft*
+    33. UNESCO/UN Application  with *Conceptualization*, *Funding acquisition*, *Investigation*, *Project administration* and *Writing - original draft*
     34. [APS Observer](https://www.psychologicalscience.org/observer/gs-navigating-academia-as-neurodivergent-researchers)  with *Conceptualization*, *Project administration*, *Supervision*, *Writing - original draft* and *Writing - review & editing*
     35. FReD COS Data  with *Conceptualization*, *Funding acquisition*, *Investigation*, *Methodology*, *Project administration*, *Supervision*, *Writing - original draft* and *Writing - review & editing*
     36. FORRT Booklet  with *Conceptualization*, *Visualization*, *Writing - original draft* and *Writing - review & editing*
@@ -1892,7 +1892,7 @@ Educators (POST-Edu) as Project co-lead
     1. Team Citation Politics as Project co-lead
     2. FORRT Booklet  with *Writing - review & editing*
     3. Accessible Feedback in Academia  with *Resources*, *Translation* and *Writing - review & editing*
-    4. UNESCO/UN Appliction  with *Writing - review & editing*
+    4. UNESCO/UN Application  with *Writing - review & editing*
     5. Landscape  with *Data curation*
     6. [Academic Wheel of Privilege](https://forrt.org/awop/)  with *Writing - review & editing*
     7. [FORRT's Clusters](https://forrt.org/clusters/)  with *Writing - original draft* and *Writing - review & editing*

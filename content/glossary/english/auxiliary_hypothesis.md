@@ -9,7 +9,7 @@
         "Hidden moderators"
     ],
     "references": [
-        "Dienes (2008); Lakatos (1978)"
+        "\\[@Dienes2008\\], \\[@Lakatos1978\\]"
     ],
     "alt_related_terms": [
         null

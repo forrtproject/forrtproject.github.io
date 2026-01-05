@@ -9,7 +9,7 @@
         "STROBE"
     ],
     "references": [
-        "Moher et al. (2009) Schulz et al. (2010); Torpor et al. (2021); Von Elm et al. (2007); [https://www.equator-network.org/about-us/what-is-a-reporting-guideline/](https://www.equator-network.org/about-us/what-is-a-reporting-guideline/)"
+        "Moher et al. (2009) Schulz et al. (2010); Torpor et al. (2021); Von Elm et al. (2007); [https://www.equator-network.org/about-us/what-is-a-reporting-guideline/](https://www.equator-network.org/about-us/what-is-a-reporting-guideline/) \\[@Moher2009\\], \\[@SchulzAltmanMoher2010\\], \\[@Von\\_Elm2007\\], \\[@EQUATOR2021\\]"
     ],
     "alt_related_terms": [
         null

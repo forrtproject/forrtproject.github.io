@@ -11,7 +11,7 @@
         "Validation"
     ],
     "references": [
-        "Cronbach and Meehl (1955); Shadish et al. (2002); Smith (2005)"
+        "\\[@Cronbach1955\\], \\[@Shadish2002\\], \\[@Smith2005\\]"
     ],
     "alt_related_terms": [
         null

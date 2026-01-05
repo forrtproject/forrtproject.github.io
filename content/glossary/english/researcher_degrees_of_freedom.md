@@ -12,7 +12,7 @@
         "Specification curve analysis"
     ],
     "references": [
-        "Gelman and Loken (2013); Simmons et al. (2011); Wicherts et al. (2016)"
+        "Gelman and Loken (2013); Simmons et al. (2011); Wicherts et al. (2016) \\[@GelmanLoken2013\\], \\[@Simmons2011\\], \\[@Wicherts2016\\]"
     ],
     "alt_related_terms": [
         null

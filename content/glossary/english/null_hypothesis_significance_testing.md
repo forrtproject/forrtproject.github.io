@@ -9,7 +9,7 @@
         "Type I error"
     ],
     "references": [
-        "Lakens et al. (2018); Pernet (2015); Spence and Stanley (2018)"
+        "Lakens et al. (2018); Pernet (2015); Spence and Stanley (2018) \\[@Lakens2018\\], \\[@Pernet2015\\], \\[@Spence2018\\]"
     ],
     "alt_related_terms": [
         null

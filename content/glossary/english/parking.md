@@ -8,7 +8,7 @@
         "Questionable Research Practices or Questionable Reporting Practices (QRPs)"
     ],
     "references": [
-        "[Ikeda et al. (2019)](https://www.jstage.jst.go.jp/article/sjpr/62/3/62_281/_pdf/-char/ja); [Yamada (2018)](https://www.frontiersin.org/articles/10.3389/fpsyg.2018.01831/full)"
+        "[Ikeda et al. (2019)](https://www.jstage.jst.go.jp/article/sjpr/62/3/62_281/_pdf/-char/ja); [Yamada (2018)](https://www.frontiersin.org/articles/10.3389/fpsyg.2018.01831/full) \\[@Ikeda2019\\], \\[@Yamada2018\\]"
     ],
     "alt_related_terms": [
         null

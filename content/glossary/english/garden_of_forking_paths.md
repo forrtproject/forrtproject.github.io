@@ -11,7 +11,7 @@
         "Specification Curve Analysis"
     ],
     "references": [
-        "Gelman and Loken (2013)"
+        "\\[@GelmanLoken2013\\]"
     ],
     "alt_related_terms": [
         null

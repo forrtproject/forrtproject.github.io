@@ -7,7 +7,7 @@
         "Preregistration Pledge"
     ],
     "references": [
-        "[https://freeourknowledge.org/about/](https://freeourknowledge.org/about/)"
+        "\\[@FreeOurKnowledgeND\\]"
     ],
     "alt_related_terms": [
         null

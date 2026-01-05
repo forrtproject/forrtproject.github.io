@@ -7,7 +7,7 @@
         "Knightian uncertainty"
     ],
     "references": [
-        "Der Kiureghian and Ditlevsen (2009)"
+        "\\[@DerKiureghianDitlevsen2009\\]"
     ],
     "alt_related_terms": [
         null

@@ -10,7 +10,7 @@
         "Open Science Framework"
     ],
     "references": [
-        "www.oercommons.org"
+        "[www.oercommons.org](http://www.oercommons.org) \\[@OERCommons\\]"
     ],
     "alt_related_terms": [
         null

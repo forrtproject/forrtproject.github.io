@@ -7,7 +7,7 @@
         "Collaborative commentary"
     ],
     "references": [
-        "Heyman et al. (2020); Rabagliati et al. (2019); Silberzahn et al. (2014)"
+        "\\[@Heyman2020\\], \\[@Rabagliati2019\\], \\[@Silberzahn2014\\]"
     ],
     "alt_related_terms": [
         null

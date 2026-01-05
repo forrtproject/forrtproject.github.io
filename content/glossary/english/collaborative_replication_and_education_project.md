@@ -7,7 +7,7 @@
         "Exact replication"
     ],
     "references": [
-        "Wagge et al. (2019)"
+        "\\[@Wagge2019\\]"
     ],
     "alt_related_terms": [
         null

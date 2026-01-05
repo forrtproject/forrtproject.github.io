@@ -9,7 +9,7 @@
         "Vibration of effects"
     ],
     "references": [
-        "Del Giudice and Gangestad (2021); Steegen et al. (2016)"
+        "Del Giudice and Gangestad (2021); Steegen et al. (2016) \\[@DelGiudiceGangestad2021\\], \\[@Steegen2016\\]"
     ],
     "alt_related_terms": [
         null

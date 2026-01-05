@@ -8,7 +8,7 @@
         "CreDit taxonomy"
     ],
     "references": [
-        "Tscharntke et al. (2007)"
+        "\\[@Tscharntke2007\\]"
     ],
     "alt_related_terms": [
         null
