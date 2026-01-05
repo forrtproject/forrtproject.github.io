@@ -2,7 +2,7 @@
   "regions": [
     {
       "country": "China",
-      "users": 8224
+      "users": 8237
     },
     {
       "country": "Singapore",
@@ -10,11 +10,11 @@
     },
     {
       "country": "United States of America",
-      "users": 1264
+      "users": 1265
     },
     {
       "country": "Germany",
-      "users": 367
+      "users": 369
     },
     {
       "country": "United Kingdom",
@@ -22,11 +22,11 @@
     },
     {
       "country": "Netherlands",
-      "users": 144
+      "users": 145
     },
     {
       "country": "Egypt",
-      "users": 79
+      "users": 80
     },
     {
       "country": "India",
@@ -50,6 +50,14 @@
     },
     {
       "country": "Algeria",
+      "users": 59
+    },
+    {
+      "country": "Ireland",
+      "users": 59
+    },
+    {
+      "country": "(not set)",
       "users": 58
     },
     {
@@ -57,20 +65,12 @@
       "users": 58
     },
     {
-      "country": "Ireland",
-      "users": 58
-    },
-    {
-      "country": "(not set)",
-      "users": 57
+      "country": "France",
+      "users": 56
     },
     {
       "country": "Indonesia",
       "users": 56
-    },
-    {
-      "country": "France",
-      "users": 55
     },
     {
       "country": "Belgium",
@@ -229,6 +229,10 @@
       "users": 8
     },
     {
+      "country": "Palestine",
+      "users": 8
+    },
+    {
       "country": "South Africa",
       "users": 8
     },
@@ -242,10 +246,6 @@
     },
     {
       "country": "Finland",
-      "users": 7
-    },
-    {
-      "country": "Palestine",
       "users": 7
     },
     {
@@ -413,10 +413,6 @@
       "users": 2
     },
     {
-      "country": "",
-      "users": 1
-    },
-    {
       "country": "Angola",
       "users": 1
     },
@@ -480,15 +476,15 @@
   "top_pages": [
     {
       "page": "/",
-      "views": 1924
+      "views": 1926
     },
     {
       "page": "/reversals/",
-      "views": 265
+      "views": 268
     },
     {
       "page": "/awop/",
-      "views": 153
+      "views": 157
     },
     {
       "page": "/replication-hub/",
@@ -496,11 +492,11 @@
     },
     {
       "page": "/games/",
-      "views": 131
+      "views": 132
     },
     {
       "page": "/about/us/",
-      "views": 117
+      "views": 120
     },
     {
       "page": "/publications/",
@@ -516,7 +512,7 @@
     },
     {
       "page": "/glossary/",
-      "views": 84
+      "views": 85
     }
   ],
   "daily_visitors": [
@@ -642,13 +638,13 @@
     },
     {
       "date": "2026-01-05",
-      "users": 88
+      "users": 112
     }
   ],
   "regions_yearly": [
     {
       "country": "China",
-      "users": 21824
+      "users": 21836
     },
     {
       "country": "United States of America",
@@ -660,7 +656,7 @@
     },
     {
       "country": "Germany",
-      "users": 5634
+      "users": 5636
     },
     {
       "country": "United Kingdom",
@@ -668,11 +664,11 @@
     },
     {
       "country": "Netherlands",
-      "users": 2511
+      "users": 2512
     },
     {
       "country": "Ireland",
-      "users": 1599
+      "users": 1600
     },
     {
       "country": "Canada",
@@ -680,7 +676,7 @@
     },
     {
       "country": "(not set)",
-      "users": 853
+      "users": 854
     },
     {
       "country": "India",
@@ -704,11 +700,11 @@
     },
     {
       "country": "France",
-      "users": 497
+      "users": 498
     },
     {
       "country": "Egypt",
-      "users": 484
+      "users": 485
     },
     {
       "country": "Saudi Arabia",
@@ -720,7 +716,7 @@
     },
     {
       "country": "Algeria",
-      "users": 379
+      "users": 380
     },
     {
       "country": "Poland",
@@ -932,7 +928,7 @@
     },
     {
       "country": "Palestine",
-      "users": 39
+      "users": 40
     },
     {
       "country": "Bahrain",
@@ -1267,10 +1263,6 @@
       "users": 2
     },
     {
-      "country": "",
-      "users": 1
-    },
-    {
       "country": "Andorra",
       "users": 1
     },
@@ -1350,15 +1342,15 @@
   "top_pages_yearly": [
     {
       "page": "/",
-      "views": 15398
+      "views": 15400
     },
     {
       "page": "/awop/",
-      "views": 5038
+      "views": 5042
     },
     {
       "page": "/reversals/",
-      "views": 4076
+      "views": 4079
     },
     {
       "page": "/replication-hub/",
@@ -1366,7 +1358,7 @@
     },
     {
       "page": "/glossary/",
-      "views": 1997
+      "views": 1998
     },
     {
       "page": "/about/get-involved/",
@@ -1382,7 +1374,7 @@
     },
     {
       "page": "/about/us/",
-      "views": 1773
+      "views": 1776
     },
     {
       "page": "/contributors/",
@@ -2343,6 +2335,10 @@
       "users": 112
     },
     {
+      "date": "2026-01-05",
+      "users": 112
+    },
+    {
       "date": "2025-01-15",
       "users": 111
     },
@@ -2588,10 +2584,6 @@
     },
     {
       "date": "2025-05-25",
-      "users": 88
-    },
-    {
-      "date": "2026-01-05",
       "users": 88
     },
     {
