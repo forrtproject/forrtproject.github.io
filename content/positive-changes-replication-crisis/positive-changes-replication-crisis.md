@@ -110,7 +110,7 @@ Our educational toolkit is designed to support educators, researchers, and stude
 
 <div style="width:900px">
 
-![Vizualization - AI generated](Viz_FORRT.webp)
+![Visualization - AI generated](Viz_FORRT.webp)
 
 </div>
 
@@ -134,7 +134,7 @@ Our educational toolkit is designed to support educators, researchers, and stude
 * **Prediction Markets:** These have been developed to assess the credibility of research findings, involving both experts and laypeople in predicting the replicability of studies. 
 * **Statistical Assessment Tools:** Tools like p-curve and Z-curve are now used to detect biases in the literature. Additionally, tests like GRIM and SPRITE help identify inconsistencies in individual studies. 
 * **Multiverse Analysis:** This approach involves testing hypotheses using various analytical methods to ensure the robustness of findings, reducing the influence of researchers' degrees of freedom. 
-* **Cummulative Science:** Adoption of best practices for conducting systematic reviews and meta-analyses, including the use of guidelines like PRISMA (Preferred Reporting Items for Systematic Reviews and Meta-Analyses) to enhance transparency and reproducibility. This involves thorough documentation of methodological choices and comprehensive reporting of findings to minimize bias and improve the reliability of conclusions drawn from multiple studies.
+* **Cumulative Science:** Adoption of best practices for conducting systematic reviews and meta-analyses, including the use of guidelines like PRISMA (Preferred Reporting Items for Systematic Reviews and Meta-Analyses) to enhance transparency and reproducibility. This involves thorough documentation of methodological choices and comprehensive reporting of findings to minimize bias and improve the reliability of conclusions drawn from multiple studies.
 
 
 3. **Community Changes:** 

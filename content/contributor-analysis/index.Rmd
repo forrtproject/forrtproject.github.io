@@ -74,7 +74,7 @@ dt <- bind_rows(data_list, .id = "Source_Sheet")
 dt <- dt %>%
   select(`Project Name`, everything())
 
-# Remove PM column as it is unncessary and might cause problems with binding
+# Remove PM column as it is unnecessary and might cause problems with binding
 dt <- dt %>%
   select(-`Project Managers`)
 ```
