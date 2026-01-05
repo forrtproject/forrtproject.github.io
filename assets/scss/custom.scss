@@ -135,7 +135,7 @@ article.article:has(table) .article-container {
   transition: transform 0.2s;
 }
 
-.pub-abstract {
+.publication-card-abstract {
   display: none;
   margin-bottom: 0.75rem;
   padding: 0.75rem;
@@ -147,11 +147,11 @@ article.article:has(table) .article-container {
   line-height: 1.5;
 }
 
-.pub-abstract.show {
+.publication-card-abstract.show {
   display: block;
 }
 
-.pub-abstract p {
+.publication-card-abstract p {
   margin-bottom: 0;
 }
 
