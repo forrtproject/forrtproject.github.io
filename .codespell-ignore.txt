@@ -40,6 +40,8 @@ Strack
 Tennant
 Udo
 Yau
+Mathes
+Smal
 
 # Technical or code related terms
 aCount
