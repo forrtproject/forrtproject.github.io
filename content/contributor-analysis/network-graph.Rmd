@@ -84,7 +84,7 @@ dt <- bind_rows(data_list, .id = "Source_Sheet")
 dt <- dt %>%
   select(`Project Name`, everything())
 
-# Remove PM column as it is unncessary and might cause problems with binding
+# Remove PM column as it is unnecessary and might cause problems with binding
 dt <- dt %>%
   select(-`Project Managers`)
 ```
@@ -171,7 +171,7 @@ ContributorGroups_nodes <- dt_long %>%
 colnames(ContributorGroups_nodes) <- c("id", "projects")
 
 Contributor_nodes <- left_join(Contributor_nodes_n, ContributorGroups_nodes)
-Contributor_nodes$title <- paste0(Contributor_nodes$id,"<br>", gsub(patter = ",", replacement = "<br>", x = Contributor_nodes$projects))
+Contributor_nodes$title <- paste0(Contributor_nodes$id,"<br>", gsub(pattern = ",", replacement = "<br>", x = Contributor_nodes$projects))
 ```
 
 ```{r create-edges}
