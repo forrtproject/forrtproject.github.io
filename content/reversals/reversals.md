@@ -84,15 +84,15 @@ and four of [FORRT’s Mission](https://forrt.org/about/mission/):
 
 The original project was organized in five stages: 
 
-1. **~~Proof of Concept Phase (adaptation of original project into FORRT, inclusion of effects from social and cognitive psychology, using Gavin Leech’s collection as a basis) → ~150 entries finished in 2021.~~**
+- [x] **Proof of Concept Phase** (adaptation of original project into FORRT, inclusion of effects from social and cognitive psychology, using Gavin Leech's collection as a basis) → ~150 entries finished in 2021.
 
-1. ~~**Team Science Expansion Phase Across Disciplines** (crowd-sourcing entries and refine existing entries), started at the end of 2021. Drafting of first ‘output’ piece. Currently including a total of 600+ effects spanning 22 disciplines.~~
+- [x] **Team Science Expansion Phase Across Disciplines** (crowd-sourcing entries and refine existing entries), started at the end of 2021. Drafting of first 'output' piece. Currently including a total of 600+ effects spanning 22 disciplines.
 
-1. ~~**Database'ification and merging**, converting the spreadsheet and all effects into a meta-analytic database and merging it with existing replication databases.~~
+- [x] **Database'ification and merging**, converting the spreadsheet and all effects into a meta-analytic database and merging it with existing replication databases.
 
-1. ~~**Review Phase** (open review to identify inconsistencies, missing data, and errors). Publishing of output piece.~~
+- [x] **Review Phase** (open review to identify inconsistencies, missing data, and errors). Publishing of output piece.
 
-1. ~~**Update Phases** (dynamically adding new effects). Now continued through the Replication Hub projects.~~
+- [x] **Update Phases** (dynamically adding new effects). Now continued through the Replication Hub projects.
 
 {{% alert example %}}
 

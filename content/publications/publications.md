@@ -145,27 +145,6 @@ The **<font style="color:#0e2a38">postprint</font>** can [be found here (osf.io/
 
 <br>
 
-## **Tracking and Mainstreaming Replications in the Social, Cognitive, and Behavioral Sciences**
-
----
-
-Replicability is a cornerstone of scientific progress. Yet, replications are often undervalued, and are sometimes seen as redundant, unimportant, or lacking novelty. This impedes their broader adoption in research and beyond. In response, the credibility revolution calls for slower, more deliberate science and greater responsiveness to fallibility. In this perspective piece, we argue that (a) replications are essential for validating scientific claims, (b) replications need to be made more visible, recognized, and integrated into research and educational practices, and (c) we can change the way we view and judge replication results. We propose a framework where replication studies can be systematically tracked and normalized through the [Replication Hub](https://forrt.org/replication-hub/) as part of the Framework for Open and Reproducible Research Training (FORRT) initiative, with the goal of enhancing the visibility, integration, and cumulative impact of replication research across disciplines.
-
-<br>
-
-***Status***: Preprinted 🎉🥳. Cite as:
-> Hartmann, H., Azevedo, F., Röseler, L., Wallrich, L., Aldoh, A., Elsherif, M. M., Liu, M., O'Mahoney, R., Pavlovic, Z., Reason, R., Skvortsova, A., Agostini, V., Aitchinson, L., Al-Hoorie, A. H., Albayrak, N., Ammann, N., Anvari, F., Arriaga, P., Baker, B J., ... Leech, G. (2025, December). Tracking and mainstreaming replications in the social, cognitive, and behavioral sciences. MetaArXiv Preprint. https://osf.io/preprints/metaarxiv/ad2w6_v1
-
-<br>
-
-The **<font style="color:#0e2a38">preprint</font>** can [be found here (osf.io/preprints/metaarxiv/ad2w6_v1)](https://osf.io/preprints/metaarxiv/ad2w6_v1). 
-
-<div class='altmetric-embed' data-badge-type='medium-donut' data-doi="https://doi.org/10.31222/osf.io/ad2w6"></div>
-
----
-
-<br>
-
 ## **The Impact of Open Scholarship on Students' Learning Outcomes (Scoping Review)**
 
 ---
