@@ -1,26 +1,28 @@
-// Override this file to add your own SCSS styling.
+// add your own SCSS styling.
 .border-3 {
-    border-width:3px !important;
+  border-width: 3px !important;
 }
 
 .btn-toolbar .btn:first-child {
-    border-radius: 6px; }
-  
-  .btn-toolbar .btn:last-child {
-    border-radius: 6px; }
+  border-radius: 6px;
+}
+
+.btn-toolbar .btn:last-child {
+  border-radius: 6px;
+}
 
 .body {
-    background-color:#fefdf6 !important;
+  background-color: #fefdf6 !important;
 }
 
 .nav-btn {
-    line-height: initial;
-    background-color: #fefdf6 !important;
-    color: #3e3e3e !important;
+  line-height: initial;
+  background-color: #fefdf6 !important;
+  color: #3e3e3e !important;
 }
 
 @media print {
-  .tab-content > .tab-pane {
+  .tab-content>.tab-pane {
     display: block !important;
     opacity: 1 !important;
   }
@@ -32,4 +34,405 @@
 // We widen all .article-container elements (including title) when the page has a table.
 article.article:has(table) .article-container {
   max-width: 960px;
+}
+
+/* Publication Card Styles */
+.pub-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  /* Reduced from 2rem */
+  margin-top: 1rem;
+  /* Reduced from 2rem */
+}
+
+.pub-card {
+  background: #FEFDF6;
+  border-radius: 8px;
+  /* Slightly tighter radius */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  overflow: hidden;
+  padding: 1.25rem;
+  /* Reduced from 1.5rem */
+}
+
+.pub-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+}
+
+.pub-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+  /* Reduced from 0.75rem */
+}
+
+.pub-year {
+  font-size: 0.85rem;
+  /* Slightly smaller */
+  color: #868e96;
+  font-weight: 500;
+}
+
+.pub-title {
+  font-size: 1.05rem;
+  /* Reduced from 1.25rem */
+  font-weight: 700;
+  color: #212529;
+  margin-bottom: 0.25rem;
+  /* Reduced from 0.5rem */
+  line-height: 1.35;
+}
+
+.pub-authors {
+  font-size: 0.85rem;
+  /* Reduced from 0.95rem */
+  color: #495057;
+  margin-bottom: 0.25rem;
+  /* Reduced from 0.5rem */
+}
+
+.pub-journal {
+  font-size: 0.85rem;
+  /* Reduced from 0.9rem */
+  color: #1c7ed6;
+  font-weight: 500;
+  margin-bottom: 0.75rem;
+  /* Reduced from 1rem */
+}
+
+.pub-abstract-toggle {
+  margin-bottom: 0.25rem;
+}
+
+.btn-toggle-abstract {
+  background: none;
+  border: none;
+  color: #adb5bd;
+  font-size: 0.75rem;
+  /* Slightly smaller */
+  cursor: pointer;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  transition: color 0.2s;
+}
+
+.btn-toggle-abstract:hover {
+  color: #495057;
+}
+
+.btn-toggle-abstract.active i {
+  transform: rotate(90deg);
+}
+
+.btn-toggle-abstract i {
+  transition: transform 0.2s;
+}
+
+.publication-card-abstract {
+  display: none;
+  margin-bottom: 0.75rem;
+  padding: 0.75rem;
+  background: #f8f9fa;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  /* Reduced */
+  color: #495057;
+  line-height: 1.5;
+}
+
+.publication-card-abstract.show {
+  display: block;
+}
+
+.publication-card-abstract p {
+  margin-bottom: 0;
+}
+
+.pub-citation-section {
+  font-size: 0.8rem;
+  /* Reduced */
+  color: #83878c;
+  margin-bottom: 1rem;
+  padding-left: 0.75rem;
+  border-left: 3px solid #dee2e6;
+}
+
+.pub-footer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin-top: auto;
+  padding-top: 0.75rem;
+  border-top: 1px solid #f1f3f5;
+}
+
+.pub-buttons {
+  display: flex;
+  gap: 0.35rem;
+  /* Tighter buttons */
+  flex-wrap: wrap;
+}
+
+.pub-metrics {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+/* Pill Styles */
+.pub-tags {
+  margin-bottom: 8px;
+  /* Reduced from 15px */
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.pub-pill {
+  display: inline-block;
+  padding: 0.2em 0.6em;
+  /* Compact padding */
+  font-size: 0.75rem;
+  /* Smaller font */
+  font-weight: 500;
+  line-height: 1.2;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: baseline;
+  border-radius: 50rem;
+  color: #333;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  opacity: 0.8;
+}
+
+.pub-pill:hover {
+  opacity: 1;
+}
+
+.pub-pill.active {
+  opacity: 1 !important;
+  box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.2);
+}
+
+/* Category Colors */
+.pill-publications {
+  background-color: #C6CFDA !important;
+}
+
+.pill-preprints {
+  background-color: #E6DEB8 !important;
+}
+
+.pill-policy-briefs {
+  background-color: #EAD9C7 !important;
+}
+
+.pill-op-eds {
+  background-color: #E1C7C7 !important;
+}
+
+.pill-teaching-materials {
+  background-color: #C9D6C3 !important;
+}
+
+.pill-interactive-tools-apps {
+  background-color: #B8CCC9 !important;
+}
+
+.pill-data-code-packages {
+  background-color: #BFCFC7 !important;
+}
+
+.pill-working-papers {
+  background-color: #EFE7C8 !important;
+}
+
+.pill-statements {
+  background-color: #DCCBC2 !important;
+}
+
+.pill-affiliated-projects {
+  background-color: #DAD7CE !important;
+}
+
+/* Focus Area Colors */
+.pill-meta-research-scientific-reform {
+  background-color: #C6CFDA !important;
+}
+
+.pill-equity-diversity-social-justice {
+  background-color: #DCCBC2 !important;
+}
+
+.pill-community-governance-sustainability {
+  background-color: #BFCFC7 !important;
+}
+
+
+/* -------------------------------------------------- */
+/* New Filter UI Styles (Pill Bar) */
+/* -------------------------------------------------- */
+
+
+.filter-container {
+  margin-bottom: 1rem;
+  padding: 0.75rem;
+  background-color: #fff;
+  /* Clean white background */
+  border: 1px solid #eee;
+  border-radius: 8px;
+}
+
+.filter-section-title {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #555;
+  margin-bottom: 0.35rem;
+  letter-spacing: 0.5px;
+}
+
+.pill-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  /* Spacing between pills */
+}
+
+.filter-pill {
+  display: inline-block;
+  padding: 3px 10px;
+  font-size: 0.75rem;
+  border-radius: 50px;
+  /* Fully rounded */
+  background-color: #f1f3f5;
+  /* Light grey base */
+  color: #495057;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  border: 1px solid transparent;
+  user-select: none;
+}
+
+.filter-pill:hover {
+  background-color: #e9ecef;
+  color: #212529;
+}
+
+.filter-pill.active {
+  background-color: #333;
+  /* Dark active state */
+  color: #fff;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
+}
+
+/* -------------------------------------------------- */
+/* intro pub texts */
+/* -------------------------------------------------- */
+
+.pub-intro {
+  max-width: 100%;
+  margin: 0 auto 2rem auto;
+  font-size: 0.9rem;
+  color: #495057;
+  line-height: 1.6;
+}
+
+.citation-container {
+  float: right;
+  margin: 0 0 1rem 2rem;
+  max-width: 250px;
+  /* Reduced for compactness */
+}
+
+.citation-container img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  /* Consistent radius */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.citation-container figcaption {
+  text-align: center;
+  margin-top: 0.5em;
+  font-size: 0.75rem;
+  color: #868e96;
+}
+
+.pub-section-description {
+  max-width: 800px;
+  margin: 1rem auto 0 auto;
+  font-size: 0.9rem;
+  color: #666;
+  font-style: italic;
+  line-height: 1.5;
+}
+
+/* -------------------------------------------------- */
+/* Muted Publication Buttons */
+/* -------------------------------------------------- */
+
+.pub-buttons .btn {
+  font-weight: 500;
+  border-width: 1px;
+}
+
+/* Primary (DOI, Link) - Muted Blue */
+.pub-buttons .btn-outline-primary {
+  color: #5c7c93;
+  border-color: #5c7c93;
+}
+
+.pub-buttons .btn-outline-primary:hover {
+  background-color: #5c7c93;
+  border-color: #5c7c93;
+  color: #fff;
+}
+
+/* Success (Download Paper) - Muted Green */
+.pub-buttons .btn-outline-success {
+  color: #6c9a76;
+  border-color: #6c9a76;
+}
+
+.pub-buttons .btn-outline-success:hover {
+  background-color: #6c9a76;
+  border-color: #6c9a76;
+  color: #fff;
+}
+
+/* Danger (Download PDF) - Muted Red */
+.pub-buttons .btn-outline-danger {
+  color: #c17d7d;
+  border-color: #c17d7d;
+}
+
+.pub-buttons .btn-outline-danger:hover {
+  background-color: #c17d7d;
+  border-color: #c17d7d;
+  color: #fff;
+}
+
+/* Info (Project) - Muted Teal */
+.pub-buttons .btn-outline-info {
+  color: #769da3;
+  border-color: #769da3;
+}
+
+.pub-buttons .btn-outline-info:hover {
+  background-color: #769da3;
+  border-color: #769da3;
+  color: #fff;
 }

@@ -4,7 +4,7 @@ name: "Karen Matvienko-Sikar"
 
 # Username (this should match the folder name)
 authors:
-- Name "Karen Matvienko-Sikar"
+- Name "karen-matvienkosikar"
 
 # Is this the primary user of the site?
 superuser: false
