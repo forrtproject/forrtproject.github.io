@@ -1,0 +1,124 @@
+<div class="forward-card-container">
+    <div class="forward-sdg-card">
+        <div class="forward-header">
+            <h3>FORWARD (FORRT for World Development)</h3>
+            <p>Sustainable Development Goals Addressed</p>
+        </div>
+
+        <div class="sdg-icons-wrapper">
+            <a href="https://sdgs.un.org/goals/goal4" target="_blank" rel="noopener noreferrer">
+                <img src="/img/forward_unesco_sdgs/4.webp" alt="SDG 4: Quality Education"
+                    title="SDG 4: Quality Education">
+            </a>
+            <a href="https://sdgs.un.org/goals/goal5" target="_blank" rel="noopener noreferrer">
+                <img src="/img/forward_unesco_sdgs/5.webp" alt="SDG 5: Gender Equality" title="SDG 5: Gender Equality">
+            </a>
+            <a href="https://sdgs.un.org/goals/goal10" target="_blank" rel="noopener noreferrer">
+                <img src="/img/forward_unesco_sdgs/10.webp" alt="SDG 10: Reduced Inequalities"
+                    title="SDG 10: Reduced Inequalities">
+            </a>
+            <a href="https://sdgs.un.org/goals/goal16" target="_blank" rel="noopener noreferrer">
+                <img src="/img/forward_unesco_sdgs/16.webp" alt="SDG 16: Peace, Justice and Strong Institutions"
+                    title="SDG 16: Peace, Justice and Strong Institutions">
+            </a>
+            <a href="https://sdgs.un.org/goals/goal17" target="_blank" rel="noopener noreferrer">
+                <img src="/img/forward_unesco_sdgs/17.webp" alt="SDG 17: Partnerships for the Goals"
+                    title="SDG 17: Partnerships for the Goals">
+            </a>
+        </div>
+    </div>
+</div>
+
+<style>
+    .forward-card-container {
+        width: 100%;
+        padding: 1rem 0;
+        box-sizing: border-box;
+    }
+
+    .forward-sdg-card {
+        border: 1px solid #e5e7eb;
+        border-radius: 12px;
+        padding: 1.5rem;
+        background: linear-gradient(to bottom right, #ffffff, #f8f9fa);
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        margin: 0 auto;
+        max-width: 900px;
+        /* Flexible max width */
+        text-align: center;
+        font-family: system-ui, -apple-system, sans-serif;
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .forward-sdg-card:hover {
+        box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    }
+
+    .forward-header h3 {
+        margin-top: 0;
+        margin-bottom: 0.5rem;
+        color: #1a1a1a;
+        font-size: 1.25rem;
+        font-weight: 700;
+    }
+
+    .forward-header p {
+        color: #4b5563;
+        margin-top: 0;
+        margin-bottom: 1.5rem;
+        font-size: 0.95rem;
+        line-height: 1.4;
+    }
+
+    .sdg-icons-wrapper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 1.5rem;
+        /* Gap between icons */
+    }
+
+    .sdg-icons-wrapper a {
+        display: block;
+        text-decoration: none;
+        border-bottom: none !important;
+        /* Override potential theme styles */
+    }
+
+    .sdg-icons-wrapper img {
+        width: 80px;
+        /* Base size */
+        height: 80px;
+        border-radius: 8px;
+        /* Square icons usually have sharp corners, but slight rounding looks nice */
+        transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        background-color: white;
+        /* Fallback */
+        margin: 0 !important;
+        /* Override theme margins */
+    }
+
+    .sdg-icons-wrapper a:hover img {
+        transform: scale(1.15) translateY(-5px);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+        z-index: 10;
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 640px) {
+        .forward-sdg-card {
+            padding: 1rem;
+        }
+
+        .sdg-icons-wrapper {
+            gap: 0.75rem;
+        }
+
+        .sdg-icons-wrapper img {
+            width: 60px;
+            height: 60px;
+        }
+    }
+</style>

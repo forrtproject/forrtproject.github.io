@@ -61,7 +61,7 @@ for item in trs.find_all_next():
                             d["summary_{0}".format(i)].update(interest)
 #                     else:
 #                         d["summary_{0}".format(i)].append(x.content)
-            elif x == item: # breking the loop when encoutering a new summary
+            elif x == item: # breking the loop when encountering a new summary
 #                 print('passing because', x==item, x, item)
                 break
 del d['summary_0']
