@@ -129,7 +129,7 @@ jobs:
             # Get last commit date for the branch
             last_commit_date=$(git log -1 --format=%ct "$branch")
             
-            # check if branch has open PR
+            # Check if branch has open PR
             open_pr_count=$(gh pr list -H "$clean_branch_name" --state open --json number | jq '. | length')
             
             if [ "$open_pr_count" -gt 0 ]; then
