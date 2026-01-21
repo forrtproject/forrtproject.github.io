@@ -213,6 +213,7 @@ article.article:has(table) .article-container {
   cursor: pointer;
   transition: all 0.2s ease;
   opacity: 0.8;
+  background-color: #e0e0e0; /* Default background color for all pills */
 }
 
 .pub-pill:hover {
