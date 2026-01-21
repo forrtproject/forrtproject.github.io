@@ -436,3 +436,238 @@ article.article:has(table) .article-container {
   border-color: #769da3;
   color: #fff;
 }
+
+/* -------------------------------------------------- */
+/* Partner Card Styles */
+/* -------------------------------------------------- */
+
+.partner-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.partner-card {
+  background: #FEFDF6;
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  overflow: hidden;
+  padding: 1.25rem;
+}
+
+.partner-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+}
+
+.partner-card[data-status="inactive"] {
+  opacity: 0.7;
+}
+
+.partner-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.75rem;
+}
+
+.partner-content {
+  display: flex;
+  gap: 1.5rem;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+}
+
+.partner-logo-container {
+  flex-shrink: 0;
+  width: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.partner-logo {
+  max-width: 120px;
+  max-height: 80px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+}
+
+.partner-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.partner-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #212529;
+  margin-bottom: 0.5rem;
+  line-height: 1.35;
+}
+
+.partner-title a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.partner-title a:hover {
+  color: #1c7ed6;
+}
+
+.partner-description {
+  font-size: 0.9rem;
+  color: #495057;
+  line-height: 1.6;
+}
+
+.partner-footer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: auto;
+  padding-top: 0.75rem;
+  border-top: 1px solid #f1f3f5;
+}
+
+.partner-buttons {
+  display: flex;
+  gap: 0.35rem;
+  flex-wrap: wrap;
+}
+
+.partner-buttons .btn {
+  font-weight: 500;
+  border-width: 1px;
+}
+
+.partner-buttons .btn-outline-primary {
+  color: #5c7c93;
+  border-color: #5c7c93;
+}
+
+.partner-buttons .btn-outline-primary:hover {
+  background-color: #5c7c93;
+  border-color: #5c7c93;
+  color: #fff;
+}
+
+.partner-buttons .btn-outline-info {
+  color: #769da3;
+  border-color: #769da3;
+}
+
+.partner-buttons .btn-outline-info:hover {
+  background-color: #769da3;
+  border-color: #769da3;
+  color: #fff;
+}
+
+.partner-buttons .btn-outline-success {
+  color: #6a9a7d;
+  border-color: #6a9a7d;
+}
+
+.partner-buttons .btn-outline-success:hover {
+  background-color: #6a9a7d;
+  border-color: #6a9a7d;
+  color: #fff;
+}
+
+/* Partner Pill Styles */
+.partner-tags {
+  margin-bottom: 8px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.partner-pill {
+  display: inline-block;
+  padding: 0.2em 0.6em;
+  font-size: 0.75rem;
+  font-weight: 500;
+  line-height: 1.2;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: baseline;
+  border-radius: 50rem;
+  color: #333;
+}
+
+/* Cluster Colors */
+.pill-global-orgs {
+  background-color: #D4E5F7 !important;
+  color: #1a3a5c !important;
+}
+
+.pill-repro-networks {
+  background-color: #C6CFDA !important;
+}
+
+.pill-os-infrastructure {
+  background-color: #B8CCC9 !important;
+}
+
+.pill-education {
+  background-color: #C9D6C3 !important;
+}
+
+.pill-research-communities {
+  background-color: #E6DEB8 !important;
+}
+
+.pill-ecr-equity {
+  background-color: #DCCBC2 !important;
+}
+
+.pill-institutional {
+  background-color: #EAD9C7 !important;
+}
+
+.pill-status-inactive {
+  background-color: #e9ecef !important;
+  color: #868e96 !important;
+}
+
+.pill-project {
+  background-color: #d3f9d8 !important;
+  color: #2b8a3e !important;
+}
+
+.partner-section-description {
+  max-width: 800px;
+  margin: 1rem auto 0 auto;
+  font-size: 0.9rem;
+  color: #666;
+  font-style: italic;
+  line-height: 1.5;
+}
+
+/* Responsive adjustments for partner cards */
+@media (max-width: 768px) {
+  .partner-content {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .partner-logo-container {
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+
+  .partner-info {
+    width: 100%;
+  }
+
+  .partner-footer {
+    justify-content: center;
+  }
+}

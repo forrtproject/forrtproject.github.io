@@ -1,0 +1,92 @@
+{{ $cluster := .Get "cluster" }}
+{{ $title := .Get "title" }}
+{{ $description := .Get "description" }}
+{{ $items := where site.Data.partners "cluster" $cluster }}
+
+{{/* Cluster Map for CSS classes */}}
+{{ $clusterMap := dict
+    "Global Intergovernmental Organizations" "global-orgs"
+    "Reproducibility Networks" "repro-networks"
+    "Open Science Infrastructure" "os-infrastructure"
+    "Education & Training" "education"
+    "Research Communities" "research-communities"
+    "Early Career & Equity" "ecr-equity"
+    "Institutional Partners" "institutional"
+}}
+
+<div class="partner-section-group" data-cluster="{{ $cluster }}">
+    {{ if $title }}
+    <div class="section-heading" align="center">
+        <h2>{{ $title | markdownify }}</h2>
+        <hr>
+        {{ if $description }}
+        <div class="partner-section-description">
+            {{ $description | markdownify }}
+        </div>
+        {{ end }}
+    </div>
+    {{ end }}
+    <div class="partner-list">
+        {{ range $items }}
+        {{ $clusterClass := index $clusterMap .cluster | default "default" }}
+        <div class="partner-card" data-aos="fade-up" data-cluster="{{ .cluster }}"
+            {{ if .status }}data-status="{{ .status }}"{{ end }}
+            {{ if .project_specific }}data-project="true"{{ end }}>
+            <div class="partner-card-body">
+
+                <div class="partner-header">
+                    <div class="partner-tags">
+                        {{/* Cluster Pill */}}
+                        <span class="partner-pill pill-{{ $clusterClass }}">{{ .cluster }}</span>
+                        {{ if .status }}
+                        <span class="partner-pill pill-status-{{ .status }}">{{ .status | title }}</span>
+                        {{ end }}
+                        {{ if .project_specific }}
+                        <span class="partner-pill pill-project">Project Partner</span>
+                        {{ end }}
+                    </div>
+                </div>
+
+                <div class="partner-content">
+                    <div class="partner-logo-container">
+                        {{ if .logo }}
+                        <a href="{{ .url }}" target="_blank" rel="noopener">
+                            <img src="logos/{{ .logo }}" alt="{{ .name }} logo" class="partner-logo" loading="lazy">
+                        </a>
+                        {{ end }}
+                    </div>
+                    <div class="partner-info">
+                        <h3 class="partner-title">
+                            <a href="{{ .url }}" target="_blank" rel="noopener">{{ .name }}</a>
+                        </h3>
+                        <div class="partner-description">
+                            {{ .description | markdownify }}
+                        </div>
+                    </div>
+                </div>
+
+                <div class="partner-footer">
+                    <div class="partner-buttons">
+                        {{ if .url }}
+                        <a href="{{ .url }}" target="_blank" rel="noopener" class="btn btn-outline-primary btn-sm">
+                            <i class="fas fa-external-link-alt"></i> Visit Website
+                        </a>
+                        {{ end }}
+                        {{ if .additional_link }}
+                        <a href="{{ .additional_link }}" target="_blank" rel="noopener" class="btn btn-outline-info btn-sm">
+                            <i class="fas fa-file-alt"></i> {{ .additional_link_text | default "Learn More" }}
+                        </a>
+                        {{ end }}
+                        {{ if .project_link }}
+                        <a href="{{ .project_link }}" class="btn btn-outline-success btn-sm">
+                            <i class="fas fa-project-diagram"></i> {{ .project_name | default "Project" }}
+                        </a>
+                        {{ end }}
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        {{ end }}
+    </div>
+</div>
