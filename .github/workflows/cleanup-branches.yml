@@ -122,7 +122,7 @@ jobs:
           echo "Checking for stale branches..."
           
           # Iterate over all remote branches
-          git branch -r | grep -vE "HEAD|$PROTECTED_BRANCHES" | while read -r branch; do
+          git branch -r | grep -vE "HEAD|origin/($PROTECTED_BRANCHES)$" | while read -r branch; do
             branch=$(echo "$branch" | xargs) # trim whitespace
             clean_branch_name=${branch#origin/}
             
