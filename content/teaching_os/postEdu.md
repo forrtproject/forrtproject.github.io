@@ -41,9 +41,9 @@ The next generation of researchers and consumers of science must be equipped wit
 <h3 style="color:#38673F"> 🚨 <strong> Phase 1 (June - October 2024): Launch Events
  </strong> </h3>
 
-We employ a participatory approach to identify the challenges and opportunities educators face when incorporating different aspects of Open Science into their teaching and mentoring. To this end, we are holding launch events to explain the project and to have interesting conversations with educators about what they envision for the three modules. The next launch event will take place on <strong> October 21st from 11.30 to 13.00 (CET)</strong>. [You can register to attend the launch event here.](https://docs.google.com/forms/d/1aH9yRhjehwwgZNDMJz9DEeF5cKAl2MmKsuQOcBawcSw/viewform?ts=66f5bd78&edit_requested=true)
+We employ a participatory approach to identify the challenges and opportunities educators face when incorporating different aspects of Open Science into their teaching and mentoring. To this end, we held launch events to explain the project and to have interesting conversations with educators about what they envision for the three modules.
 
-If you could not attend one of the launch events, you can still watch the recording of a part of one of the launch events, where the project is explained in detail.
+You can watch the recording of a part of one of the launch events, where the project is explained in detail.
 
 {{< youtube Il-O4vFy0Vw >}}
 
@@ -68,12 +68,7 @@ Teaching Open Science incorporating concepts of diversity, inclusion, accessibil
 Disseminate the program, elicit user feedback and engage in sustainable revision. More details to be announced. 
 
 
-<p> <strong> Interested in participating in this project?
- </strong> </p>
-
-[You can express your interest to participate in the module development (Phase 2 of the project) until 27th October 2024 here.](https://docs.google.com/forms/d/10fkyhgAxn94xkrdGhtMJsabHivtfNGTAEVjw48wcqQc/viewform?ts=66f6d87f&edit_requested=true)
-
-### Check the possible contribution roles below:
+### Contribution roles:
 
 <strong>Focus teams</strong>: Educators interested in serving as consultants for module development (~3-5 per module). Contributors will be included in the self-guided course in line with CRediT taxonomy.
 
