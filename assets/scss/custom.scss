@@ -437,3 +437,251 @@ article.article:has(table) .article-container {
   border-color: #769da3;
   color: #fff;
 }
+
+/* -------------------------------------------------- */
+/* Partner Card Styles */
+/* -------------------------------------------------- */
+
+.partner-section-group .partner-list {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 1rem !important;
+  margin-top: 1rem !important;
+}
+
+.partner-section-group .partner-card {
+  background: #FEFDF6 !important;
+  border-radius: 8px !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08) !important;
+  border: 1px solid rgba(0, 0, 0, 0.1) !important;
+  transition: transform 0.2s ease, box-shadow 0.2s ease !important;
+  overflow: hidden !important;
+  padding: 1.25rem !important;
+  margin-bottom: 1rem !important;
+}
+
+.partner-section-group .partner-card:hover {
+  transform: translateY(-2px) !important;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12) !important;
+}
+
+.partner-section-group .partner-card[data-status="inactive"] {
+  opacity: 0.7 !important;
+}
+
+.partner-section-group .partner-card-body {
+  display: block !important;
+}
+
+.partner-section-group .partner-header {
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  margin-bottom: 0.75rem !important;
+}
+
+.partner-section-group .partner-content {
+  display: flex !important;
+  gap: 1.5rem !important;
+  align-items: flex-start !important;
+  margin-bottom: 1rem !important;
+}
+
+.partner-section-group .partner-logo-container {
+  flex-shrink: 0 !important;
+  width: 120px !important;
+  min-width: 120px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+.partner-section-group .partner-logo-container a {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+.partner-section-group .partner-logo,
+.partner-section-group .partner-logo-container img {
+  max-width: 120px !important;
+  max-height: 80px !important;
+  width: auto !important;
+  height: auto !important;
+  object-fit: contain !important;
+}
+
+.partner-section-group .partner-info {
+  flex: 1 !important;
+  min-width: 0 !important;
+}
+
+.partner-section-group .partner-title {
+  font-size: 1.1rem !important;
+  font-weight: 700 !important;
+  color: #212529 !important;
+  margin-bottom: 0.5rem !important;
+  line-height: 1.35 !important;
+}
+
+.partner-section-group .partner-title a {
+  color: inherit !important;
+  text-decoration: none !important;
+}
+
+.partner-section-group .partner-title a:hover {
+  color: #1c7ed6 !important;
+}
+
+.partner-section-group .partner-description {
+  font-size: 0.9rem !important;
+  color: #495057 !important;
+  line-height: 1.6 !important;
+}
+
+.partner-section-group .partner-footer {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  justify-content: flex-start !important;
+  align-items: center !important;
+  gap: 0.5rem !important;
+  margin-top: auto !important;
+  padding-top: 0.75rem !important;
+  border-top: 1px solid #f1f3f5 !important;
+}
+
+.partner-section-group .partner-buttons {
+  display: flex !important;
+  gap: 0.35rem !important;
+  flex-wrap: wrap !important;
+}
+
+.partner-section-group .partner-buttons .btn {
+  font-weight: 500 !important;
+  border-width: 1px !important;
+}
+
+.partner-section-group .partner-buttons .btn-outline-primary {
+  color: #5c7c93 !important;
+  border-color: #5c7c93 !important;
+}
+
+.partner-section-group .partner-buttons .btn-outline-primary:hover {
+  background-color: #5c7c93 !important;
+  border-color: #5c7c93 !important;
+  color: #fff !important;
+}
+
+.partner-section-group .partner-buttons .btn-outline-info {
+  color: #769da3 !important;
+  border-color: #769da3 !important;
+}
+
+.partner-section-group .partner-buttons .btn-outline-info:hover {
+  background-color: #769da3 !important;
+  border-color: #769da3 !important;
+  color: #fff !important;
+}
+
+.partner-section-group .partner-buttons .btn-outline-success {
+  color: #6a9a7d !important;
+  border-color: #6a9a7d !important;
+}
+
+.partner-section-group .partner-buttons .btn-outline-success:hover {
+  background-color: #6a9a7d !important;
+  border-color: #6a9a7d !important;
+  color: #fff !important;
+}
+
+/* Partner Pill Styles */
+.partner-tags {
+  margin-bottom: 8px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.partner-pill {
+  display: inline-block;
+  padding: 0.2em 0.6em;
+  font-size: 0.75rem;
+  font-weight: 500;
+  line-height: 1.2;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: baseline;
+  border-radius: 50rem;
+  color: #333;
+}
+
+/* Cluster Colors */
+.pill-global-orgs {
+  background-color: #D4E5F7 !important;
+  color: #1a3a5c !important;
+}
+
+.pill-repro-networks {
+  background-color: #C6CFDA !important;
+}
+
+.pill-os-infrastructure {
+  background-color: #B8CCC9 !important;
+}
+
+.pill-education {
+  background-color: #C9D6C3 !important;
+}
+
+.pill-research-communities {
+  background-color: #E6DEB8 !important;
+}
+
+.pill-ecr-equity {
+  background-color: #DCCBC2 !important;
+}
+
+.pill-institutional {
+  background-color: #EAD9C7 !important;
+}
+
+.pill-status-inactive {
+  background-color: #e9ecef !important;
+  color: #868e96 !important;
+}
+
+.pill-project {
+  background-color: #d3f9d8 !important;
+  color: #2b8a3e !important;
+}
+
+.partner-section-description {
+  max-width: 800px;
+  margin: 1rem auto 0 auto;
+  font-size: 0.9rem;
+  color: #666;
+  font-style: italic;
+  line-height: 1.5;
+}
+
+/* Responsive adjustments for partner cards */
+@media (max-width: 768px) {
+  .partner-section-group .partner-content {
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+  }
+
+  .partner-section-group .partner-logo-container {
+    width: 100% !important;
+    margin-bottom: 1rem !important;
+  }
+
+  .partner-section-group .partner-info {
+    width: 100% !important;
+  }
+
+  .partner-section-group .partner-footer {
+    justify-content: center !important;
+  }
+}
