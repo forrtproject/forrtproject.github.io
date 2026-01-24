@@ -118,7 +118,6 @@ FORRT supports this endeavor through a three-pronged approach:
 1. Provide educators a comprehensive but straightforward framework to teach and mentor open and reproducible science as well as qualify and quantify the degree of open and reproducible research practices in their teaching and mentoring.
   
   <i class="fas fa-arrow-alt-circle-right text-danger fa-1.5x"></i> [FORRT's clusters](/clusters/)    
-  <i class="fas fa-arrow-alt-circle-right text-danger fa-1.5x"></i> [FORRT’s self-assessment tool](/self-assessment)  
 
 2. Equipping educators with high quality pedagogical tools on open and reproducible science practices to facilitate its integration into curricula and educators’ teaching mentoring, and research practices.
   

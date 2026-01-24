@@ -65,7 +65,7 @@ Find out if these studies meet the definition for replication, that is: Self-ide
 
 1. > Magne, V. (2024). Replication research in the domain of perceived L2 fluency: Approximate and close replications of Kormos and Dénes (2004) and Rossiter (2009). Language Teaching, 1-9. [https://doi.org/10.1017/S0261444824000120](https://doi.org/10.1017/S0261444824000120) 
 
-2. > Stephenson, Corinne (2024). Trends in U.S. Wage Inequality: Revising the Revisionists. A Replication Study of Autor, Katz, and Kearney (2008). Journal of Comments and Replications in Economics, Vol.3 (2024-4). [https://doi.org/10.18718/81781.34](https://doi.org/10.18718/81781.34)
+2. > Stephenson, Corinne (2024). Trends in U.S. Wage Inequality: Revising the Revisionists. A Replication Study of Author, Katz, and Kearney (2008). Journal of Comments and Replications in Economics, Vol.3 (2024-4). [https://doi.org/10.18718/81781.34](https://doi.org/10.18718/81781.34)
 
 3. > Huensch, A. (2024). Clarifying the role of inhibitory control in L2 phonological processing: A preregistered, close replication of Darcy et al.(2016). Studies in Second Language Acquisition, 1-21. [https://doi.org/10.1017/S0272263124000238](https://doi.org/10.1017/S0272263124000238) 
 

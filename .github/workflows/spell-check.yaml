@@ -1,0 +1,56 @@
+name: Spell Check
+
+# =======================
+# Automated Spell Checking
+# =======================
+# Purpose: Checks for spelling errors in pull requests using codespell
+# Triggers: PR opened, synchronized, or reopened
+# Reports: Comments on PR with potential typos and suggestions
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+
+permissions:
+  contents: read
+  issues: write
+  pull-requests: write
+
+jobs:
+  spell-check:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+
+      - name: Install codespell
+        run: |
+          python -m pip install --upgrade pip
+          pip install codespell
+
+      - name: Run Spell Check Script
+        id: spell_check
+        run: |
+          python scripts/spell_check/check_spelling.py
+
+      - name: Find Comment
+        uses: peter-evans/find-comment@v3
+        id: fc
+        with:
+          issue-number: ${{ github.event.pull_request.number }}
+          comment-author: 'github-actions[bot]'
+          body-includes: Spell Check Results
+
+      - name: Create or update comment
+        uses: peter-evans/create-or-update-comment@v4
+        with:
+          comment-id: ${{ steps.fc.outputs.comment-id }}
+          issue-number: ${{ github.event.pull_request.number }}
+          body: ${{ steps.spell_check.outputs.comment }}
+          edit-mode: replace
