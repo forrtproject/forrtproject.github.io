@@ -151,7 +151,24 @@ jobs:
       - name: Install Python dependencies
         run: python3 -m pip install -r ./requirements.txt
 
-        
+
+      #========================================
+      # Setup Node.js for bibliography processing
+      #========================================
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          cache: 'npm'
+
+      #========================================
+      # Install Node.js dependencies for bibliography processing
+      #========================================
+      - name: Install Node.js dependencies
+        run: |
+          cd bibtex_to_apa
+          npm install
+
       #========================================
       # Process contributor data using Tenzing script
       #========================================
@@ -201,6 +218,15 @@ jobs:
               exit 1
             fi
           done
+
+      #========================================
+      # Generate APA lookup from bibliography
+      #========================================
+      - name: Generate APA lookup
+        continue-on-error: true  # Continue even if this step fails
+        run: |
+          cd bibtex_to_apa
+          node bibtex-to-apa.js -o '../content/glossary/apa_lookup.json'
 
       #========================================
       # Process and generate glossary files
