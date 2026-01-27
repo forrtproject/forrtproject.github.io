@@ -1,211 +1,305 @@
 <style>
+  #just-os-widget {
+    position: fixed;
+    top: 100px;
+    /* Below navbar */
+    right: 20px;
+    bottom: auto;
+    left: auto;
+    z-index: 9999;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    /* Right align */
+    font-family: sans-serif;
+  }
+
+  #just-os-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    transition: transform 0.3s ease;
+    position: relative;
+    outline: none;
+    z-index: 2;
+  }
+
+  #just-os-btn:hover {
+    transform: scale(1.05);
+  }
+
+  /* The icon */
+  #just-os-img {
+    width: 80px;
+    height: auto;
+    display: block;
+    filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.1));
+  }
+
+  /* The speech bubble */
+  #just-os-bubble {
+    position: absolute;
+    right: 90px;
+    /* To the left of the button */
+    left: auto;
+    top: 20px;
+    background: white;
+    color: #333;
+    padding: 8px 12px;
+    border-radius: 20px;
+    border: 2px solid #333;
+    white-space: nowrap;
+    font-size: 0.9rem;
+    font-weight: bold;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    transform: translateX(-10px);
+    transition: all 0.3s ease;
+    pointer-events: none;
+  }
+
+  #just-os-btn:hover #just-os-bubble {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  /* Initial state: User image shows it visible. */
+  .bubble-visible {
+    opacity: 1 !important;
+    transform: translateX(0) !important;
+  }
+
+  /* The chat window */
+  #just-os-window {
+    display: none;
+    width: 360px;
+    height: 500px;
+    background: white;
+    border: 2px solid #333;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+    border-radius: 12px;
+    overflow: hidden;
+    flex-direction: column;
+    margin-top: 15px;
+    /* space between button and window */
+    margin-bottom: 0;
+    animation: slideIn 0.3s ease-out forwards;
+  }
+
+  @keyframes slideIn {
+    from {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .chat-header {
+    background: #f8f9fa;
+    padding: 10px 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #eee;
+    gap: 8px;
+  }
+
+  .chat-header span {
+    font-weight: bold;
+    color: #0d3c74;
+  }
+
+  .close-btn {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    line-height: 1;
+    cursor: pointer;
+    color: #666;
+  }
+
+  .close-btn:hover {
+    color: #000;
+  }
+
+  /* --- NEW: Large mode (docked right panel) --- */
+  #just-os-window.large {
+    display: flex;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: auto;
+
+    width: 33vw;
+    height: 100vh;
+
+    margin: 0;
+    border-radius: 0;
+    animation: none;
+
+    z-index: 10000;
+  }
+
+  #just-os-window.large .chat-frame-wrapper {
+    flex: 1;
+    min-height: 0;
+  }
+
+  /* --- NEW: Resizable mode --- */
+  #just-os-window.resizable {
+    resize: both;
+    overflow: hidden;
+    min-width: 320px;
+    min-height: 360px;
+    max-width: 90vw;
+    max-height: 95vh;
+  }
+
+  /* Responsive tweak */
+  @media (max-width: 1100px) {
     #just-os-widget {
-        position: fixed;
-        top: 100px;
-        /* Below navbar */
-        right: 20px;
-        bottom: auto;
-        left: auto;
-        z-index: 9999;
-        display: flex;
-        flex-direction: column;
-        align-items: flex-end;
-        /* Right align */
-        font-family: sans-serif;
+      top: 150px;
     }
 
-    #just-os-btn {
-        background: none;
-        border: none;
-        cursor: pointer;
-        padding: 0;
-        transition: transform 0.3s ease;
-        position: relative;
-        outline: none;
-        z-index: 2;
-    }
-
-    #just-os-btn:hover {
-        transform: scale(1.05);
-    }
-
-    /* The icon */
-    #just-os-img {
-        width: 80px;
-        height: auto;
-        display: block;
-        filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.1));
-    }
-
-    /* The speech bubble */
-    #just-os-bubble {
-        position: absolute;
-        right: 90px;
-        /* To the left of the button */
-        left: auto;
-        top: 20px;
-        background: white;
-        color: #333;
-        padding: 8px 12px;
-        border-radius: 20px;
-        border: 2px solid #333;
-        white-space: nowrap;
-        font-size: 0.9rem;
-        font-weight: bold;
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-        opacity: 0;
-        transform: translateX(-10px);
-        transition: all 0.3s ease;
-        pointer-events: none;
-    }
-
-    #just-os-btn:hover #just-os-bubble {
-        opacity: 1;
-        transform: translateX(0);
-    }
-
-    /* Initial state: User image shows it visible. */
-    .bubble-visible {
-        opacity: 1 !important;
-        transform: translateX(0) !important;
-    }
-
-    /* The chat window */
     #just-os-window {
-        display: none;
-        width: 360px;
-        height: 500px;
-        background: white;
-        border: 2px solid #333;
-        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
-        border-radius: 12px;
-        overflow: hidden;
-        flex-direction: column;
-        margin-top: 15px;
-        /* space between button and window */
-        margin-bottom: 0;
-        animation: slideIn 0.3s ease-out forwards;
+      top: 150px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    #just-os-widget {
+      top: 80px;
     }
 
-    @keyframes slideIn {
-        from {
-            opacity: 0;
-            transform: translateY(-20px);
-        }
-
-        to {
-            opacity: 1;
-            transform: translateY(0);
-        }
+    #just-os-window {
+      width: 90vw;
+      height: 60vh;
+      top: 150px;
+      right: 5vw;
+      left: auto;
+      position: fixed;
     }
 
-    .chat-header {
-        background: #f8f9fa;
-        padding: 10px 15px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        border-bottom: 1px solid #eee;
+    /* On small screens, large mode should just behave like full screen */
+    #just-os-window.large {
+      width: 100vw;
+      height: 100vh;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      border-radius: 0;
     }
-
-    .chat-header span {
-        font-weight: bold;
-        color: #0d3c74;
-    }
-
-    .close-btn {
-        background: none;
-        border: none;
-        font-size: 1.5rem;
-        line-height: 1;
-        cursor: pointer;
-        color: #666;
-    }
-
-    .close-btn:hover {
-        color: #000;
-    }
-
-    /* Responsive tweak */
-    @media (max-width: 1100px) {
-        #just-os-widget {
-            top: 150px;
-        }
-
-        #just-os-window {
-            top: 150px;
-        }
-    }
-
-    @media (max-width: 768px) {
-        #just-os-widget {
-            top: 80px;
-        }
-
-        #just-os-window {
-            width: 90vw;
-            height: 60vh;
-            top: 150px;
-            right: 5vw;
-            left: auto;
-            position: fixed;
-        }
-    }
+  }
 </style>
 
 {{ if ne .RelPermalink "/just_os_chatbot/" }}
 <div id="just-os-widget">
 
-    <!-- Toggle Button (First) -->
-    <button id="just-os-btn" onclick="toggleJustOS()" aria-label="Open Chatbot">
-        <img id="just-os-img" src="/img/just_os_icon.webp" alt="Chat with us">
-        <div id="just-os-bubble">
-            How can I help you?
-        </div>
-    </button>
-
-    <!-- Chat Window (Second, appears below) -->
-    <div id="just-os-window">
-        <div class="chat-header">
-            <span>JUST-OS</span>
-            <a style="margin: auto; font-size: 16px; color: #666;" href="/just_os_chatbot/" target="_blank">Open in new
-                tab</a>
-            <button class="close-btn" onclick="toggleJustOS()">&times;</button>
-        </div>
-        <div class="chat-frame-wrapper" style="flex: 1; overflow: hidden; position: relative; width: 100%;">
-            <iframe src="https://just-os.web.rug.nl/"
-                style="width: 100%; height: 1250px; border: none; margin-top: -160px; " title="Just OS Chatbot">
-            </iframe>
-        </div>
+  <!-- Toggle Button (First) -->
+  <button id="just-os-btn" onclick="toggleJustOS()" aria-label="Open Chatbot">
+    <img id="just-os-img" src="/img/just_os_icon.webp" alt="Chat with us">
+    <div id="just-os-bubble">
+      How can I help you?
     </div>
+  </button>
+
+  <!-- Chat Window (Second, appears below) -->
+  <div id="just-os-window">
+    <div class="chat-header">
+      <span>JUST-OS</span>
+
+      <!-- NEW: expand + resizable toggles -->
+      <button
+        type="button"
+        class="close-btn"
+        style="font-size: 1.1rem;"
+        onclick="toggleJustOSLarge()"
+        aria-label="Toggle large mode"
+        title="Toggle large mode"
+      >⤢</button>
+
+      <button
+        type="button"
+        class="close-btn"
+        style="font-size: 1.1rem;"
+        onclick="toggleJustOSResizable()"
+        aria-label="Toggle resizable mode"
+        title="Toggle resizable mode"
+      >↘</button>
+
+      <a style="margin-left: auto; font-size: 16px; color: #666;" href="/just_os_chatbot/" target="_blank">
+        Open in new tab
+      </a>
+
+      <button class="close-btn" onclick="toggleJustOS()" aria-label="Close">&times;</button>
+    </div>
+
+    <div class="chat-frame-wrapper" style="flex: 1; overflow: hidden; position: relative; width: 100%;">
+      <iframe
+        src="https://just-os.web.rug.nl/"
+        style="width: 100%; height: 1250px; border: none; margin-top: -160px;"
+        title="Just OS Chatbot">
+      </iframe>
+    </div>
+  </div>
 
 </div>
 {{ end }}
 
 <script>
-    function toggleJustOS() {
-        const win = document.getElementById('just-os-window');
-        const bubble = document.getElementById('just-os-bubble');
+  function toggleJustOS() {
+    const win = document.getElementById('just-os-window');
+    const bubble = document.getElementById('just-os-bubble');
 
-        if (!win || !bubble) return;
+    if (!win || !bubble) return;
 
-        if (win.style.display === 'flex') {
-            win.style.display = 'none';
-            bubble.classList.add('bubble-visible'); // Show bubble when closed
-        } else {
-            win.style.display = 'flex';
-            bubble.classList.remove('bubble-visible'); // Hide bubble when open
-        }
+    if (win.style.display === 'flex') {
+      win.style.display = 'none';
+      bubble.classList.add('bubble-visible'); // Show bubble when closed
+
+      // Optional: reset modes when closing
+      win.classList.remove('large');
+      win.classList.remove('resizable');
+    } else {
+      win.style.display = 'flex';
+      bubble.classList.remove('bubble-visible'); // Hide bubble when open
     }
+  }
 
-    // Auto-toggle helper bubble every 3 seconds
-    setInterval(() => {
-        const bubble = document.getElementById('just-os-bubble');
-        const win = document.getElementById('just-os-window');
+  function toggleJustOSLarge() {
+    const win = document.getElementById('just-os-window');
+    if (!win) return;
 
-        // Only toggle if the chat window is NOT open
-        if (bubble && win && win.style.display !== 'flex') {
-            bubble.classList.toggle('bubble-visible');
-        }
-    }, 10000);
+    // Ensure it's open
+    if (win.style.display !== 'flex') toggleJustOS();
+
+    win.classList.toggle('large');
+  }
+
+  function toggleJustOSResizable() {
+    const win = document.getElementById('just-os-window');
+    if (!win) return;
+
+    // Ensure it's open
+    if (win.style.display !== 'flex') toggleJustOS();
+
+    win.classList.toggle('resizable');
+  }
+
+  // Auto-toggle helper bubble every 10 seconds
+  setInterval(() => {
+    const bubble = document.getElementById('just-os-bubble');
+    const win = document.getElementById('just-os-window');
+
+    // Only toggle if the chat window is NOT open
+    if (bubble && win && win.style.display !== 'flex') {
+      bubble.classList.toggle('bubble-visible');
+    }
+  }, 10000);
 </script>
