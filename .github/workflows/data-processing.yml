@@ -160,6 +160,7 @@ jobs:
         with:
           node-version: '18'
           cache: 'npm'
+          cache-dependency-path: bibtex_to_apa/package-lock.json
 
       #========================================
       # Install Node.js dependencies for bibliography processing
@@ -226,7 +227,7 @@ jobs:
         continue-on-error: true  # Continue even if this step fails
         run: |
           cd bibtex_to_apa
-          node bibtex-to-apa.js -o '../content/glossary/apa_lookup.json'
+          node bibtex_to_apa.js -o '../content/glossary/apa_lookup.json'
 
       #========================================
       # Process and generate glossary files

@@ -36,7 +36,7 @@ print(f"\nDetected {len(languages)} languages: {languages}")
 
 # Load APA lookup
 try:
-    with open('apa_lookup.json', 'r') as f:
+    with open(os.path.join(script_dir, 'apa_lookup.json'), 'r', encoding='utf-8') as f:
         apa_lookup = json.load(f)
 except FileNotFoundError:
     print("Warning: apa_lookup.json not found. References will not be formatted.")
@@ -66,7 +66,7 @@ def safe_get(row, column, default=""):
         if column in row.index and pd.notna(row[column]):
             return str(row[column]).strip()
         return default
-    except:
+    except Exception:
         return default
 
 def clean_filename(title):

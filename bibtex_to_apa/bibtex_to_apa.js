@@ -73,11 +73,11 @@ async function main() {
     else if (args[i] === '-o' || args[i] === '--output') output = args[++i];
     else if (args[i] === '--no-url') includeUrl = false;
     else if (args[i] === '-h' || args[i] === '--help') {
-      console.log(`Usage: node bibtex-to-apa.js [-i INPUT] [-o OUTPUT] [--no-url]
-Options:
-  -i, --input   Input BibTeX (URL or file). Default: Google Doc
-  -o, --output  Output JSON file. Default: apa_lookup.json
-  --no-url      Don't append URLs to references`);
+      console.log(`Usage: node bibtex_to_apa.js [-i INPUT] [-o OUTPUT] [--no-url]
+                  Options:
+                    -i, --input   Input BibTeX (URL or file). Default: Google Doc
+                    -o, --output  Output JSON file. Default: apa_lookup.json
+                    --no-url      Don't append URLs to references`);
       process.exit(0);
     }
   }
