@@ -12,9 +12,10 @@ def sanitize_string(s):
     """
     Sanitize a string to ensure clean issue content.
     
-    Note: This function is used to sanitize strings before passing them
-    to the GitHub CLI via --title and --body flags. We sanitize control
-    characters to ensure clean issue content.
+    Note: This function is used to sanitize individual data fields (like project names,
+    URLs, and error messages) that are embedded within the issue title and body.
+    We sanitize control characters to ensure clean issue content. The complete
+    title and body strings are passed directly to GitHub CLI to preserve formatting.
     
     Args:
         s: Any value (will be converted to string if not already)
