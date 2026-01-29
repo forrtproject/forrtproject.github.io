@@ -7,17 +7,14 @@ import json
 import os
 import sys
 import subprocess
-import tempfile
 
 def sanitize_string(s):
     """
-    Sanitize a string to prevent command injection.
+    Sanitize a string to ensure clean issue content.
     
-    Note: This function is used in conjunction with temporary file-based
-    argument passing (--title-file, --body-file) to the GitHub CLI.
-    The sanitized strings are written to files, not passed through shell,
-    so shell metacharacters are not a concern. We sanitize control characters
-    to ensure clean issue content.
+    Note: This function is used to sanitize strings before passing them
+    to the GitHub CLI via --title and --body flags. We sanitize control
+    characters to ensure clean issue content.
     
     Args:
         s: Any value (will be converted to string if not already)
@@ -79,23 +76,7 @@ Please investigate the failed projects and fix any issues with the source data o
     # Create the issue title
     title = f"Tenzing Script Failures: {failed} project(s) failed to load"
     
-    # Write title and body to temporary files to avoid command injection
-    # Initialize paths to None so they're defined in all code paths
-    title_path = None
-    body_path = None
-    
     try:
-        # Create temporary files
-        title_file = tempfile.NamedTemporaryFile(mode='w', suffix='.txt', delete=False)
-        title_file.write(title)
-        title_file.close()
-        title_path = title_file.name
-        
-        body_file = tempfile.NamedTemporaryFile(mode='w', suffix='.md', delete=False)
-        body_file.write(body)
-        body_file.close()
-        body_path = body_file.name
-        
         # Check if GitHub CLI is available
         try:
             gh_check = subprocess.run(['gh', '--version'], capture_output=True, text=True, check=True)
@@ -112,8 +93,8 @@ Please investigate the failed projects and fix any issues with the source data o
         # Use GitHub CLI to create the issue
         result = subprocess.run(
             ['gh', 'issue', 'create', 
-             '--title-file', title_path,
-             '--body-file', body_path,
+             '--title', title,
+             '--body', body,
              '--label', 'bug,tenzing,automated'],
             capture_output=True,
             text=True,
@@ -131,15 +112,6 @@ Please investigate the failed projects and fix any issues with the source data o
     except Exception as e:
         print(f"❌ Error in issue creation process: {e}")
         return False
-    finally:
-        # Clean up temporary files if they were created
-        for path in [title_path, body_path]:
-            if path is not None:
-                try:
-                    if os.path.exists(path):
-                        os.unlink(path)
-                except OSError as e:
-                    print(f"⚠ Warning: Failed to remove temporary file {path}: {e}")
 
 def main():
     # Get the script directory
