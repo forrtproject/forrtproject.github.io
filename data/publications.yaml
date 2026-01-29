@@ -87,6 +87,7 @@
     project: "https://forrt.org/replication-hub/"
   altmetric_doi: "10.31222/osf.io/me2ub"
   altmetric_doi_2: "10.5334/jopd.101"
+  focus_area: "Meta-Research & Scientific Reform"
 
 # 7
 - title: "Teaching open and reproducible scholarship: a critical review of the evidence base for current pedagogical methods and their outcomes"
@@ -102,6 +103,7 @@
     postprint: "https://osf.io/preprints/metaarxiv/9e526/"
   altmetric_doi: "10.1098/rsos.221255"
   altmetric_doi_2: "10.31222/osf.io/9e526"
+  focus_area: "Education & Pedagogy"
 
 # 8
 - title: "Improvements since the Replication Crisis: The Structural, Procedural, and Community Changes"
@@ -116,6 +118,7 @@
     doi: "https://doi.org/10.1038/s44271-023-00003-2"
     postprint: "https://doi.org/10.31222/osf.io/r6cvx"
   altmetric_doi: "10.31222/osf.io/r6cvx"
+  focus_area: "Meta-Research & Scientific Reform"
 
 # 9
 - title: "Participatory Research Primer"
@@ -130,6 +133,7 @@
     doi: "https://doi.org/10.53841/bpscog.2023.1.8.23"
     postprint: "https://osf.io/preprints/metaarxiv/jq23s/"
   altmetric_doi: "10.53841/bpscog.2023.1.8.23"
+  focus_area: "Equity, Diversity & Social Justice"
 
 # 10
 - title: "FORRT's Glossary"
@@ -146,6 +150,7 @@
     project: "/glossary"
   altmetric_doi: "10.1038/s41562-021-01269-4"
   altmetric_doi_2: "10.31222/osf.io/kdqcw"
+  focus_area: "Education & Pedagogy"
 
 # 11
 - title: "The Role of Pedagogical Communities"
@@ -159,6 +164,7 @@
   links:
     doi: "https://doi.org/10.1186/s13104-022-05944-1"
   altmetric_doi: "10.1186/s13104-022-05944-1"
+  focus_area: "Education & Pedagogy"
 
 # 12
 - title: "FORRT's Lesson Plans"
@@ -175,6 +181,7 @@
     project: "/lesson-plans"
   altmetric_doi: "10.1037/stl0000307"
   altmetric_doi_2: "10.31234/osf.io/fgv79"
+  focus_area: "Education & Pedagogy"
 
 
 # --- Preprints ---
@@ -192,6 +199,7 @@
     doi: "https://doi.org/10.31222/osf.io/qjecy_v2"
     postprint: "https://osf.io/preprints/metaarxiv/qjecy_v2"
   altmetric_doi: "10.31222/osf.io/qjecy_v2"
+  focus_area: "Equity, Diversity & Social Justice"
 
 # 2
 - title: "Tracking and mainstreaming replications in the social, cognitive, and behavioral sciences"
@@ -205,6 +213,7 @@
   links:
     doi: "https://doi.org/10.31222/osf.io/ad2w6_v1"
   altmetric_doi: "10.31222/osf.io/ad2w6_v1"
+  focus_area: "Meta-Research & Scientific Reform"
 
 # 3
 - title: "How to Develop and Use Open Educational Resources"
@@ -218,6 +227,7 @@
   links:
     doi: "https://doi.org/10.35542/osf.io/sn693_v1"
   altmetric_doi: "10.35542/osf.io/sn693_v1"
+  focus_area: "Education & Pedagogy"
 
 # 4
 - title: "Neurodiversity & Open Scholarship in Academia"
@@ -232,6 +242,7 @@
     doi: "https://doi.org/10.31222/osf.io/k7a9p"
     postprint: "https://doi.org/10.31222/osf.io/k7a9p"
   altmetric_doi: "10.31222/osf.io/k7a9p"
+  focus_area: "Equity, Diversity & Social Justice"
 
 # 5
 - title: "FORRT's Manifesto"
@@ -246,6 +257,7 @@
     doi: "https://doi.org/10.31219/osf.io/bnh7p"
     postprint: "https://osf.io/bnh7p"
   altmetric_doi: "10.31219/osf.io/bnh7p"
+  focus_area: "Community, Governance & Sustainability"
 
 
 # --- Op-Eds and Media ---
@@ -261,6 +273,7 @@
   citation: "Azevedo, F., et al. (2024). <strong>Unveiling the truth in science.</strong> <em>The Official PLOS Blog</em>. https://theplosblog.plos.org/2024/02/unveiling-the-truth-in-science-the-quest-for-reliable-knowledge/"
   links:
     url: "https://theplosblog.plos.org/2024/02/unveiling-the-truth-in-science-the-quest-for-reliable-knowledge/"
+  focus_area: "Meta-Research & Scientific Reform"
 
 # 2
 - title: "Open Scholarship Pedagogical Communities"
@@ -273,6 +286,7 @@
   citation: "Azevedo, F. (2023). <strong>Open scholarship pedagogical communities.</strong> <em>The Psychologist</em>. https://www.bps.org.uk/psychologist/open-scholarship-pedagogical-communities"
   links:
     url: "https://www.bps.org.uk/psychologist/open-scholarship-pedagogical-communities"
+  focus_area: "Education & Pedagogy"
 
 # 3
 - title: "Letter to UNESCO’s Principles of Open Science Monitoring"
@@ -285,6 +299,7 @@
   citation: "FORRT. (2023). <strong>Letter to UNESCO’s Principles of Open Science Monitoring.</strong> <em>UNESCO</em>. https://www.unesco.org/education/letter-to-unescos-principles-of-open-science-monitoring"
   links:
     pdf: "Letter_to_UNESCO’s_Principles_of_Open_Science_Monitoring.pdf"
+  focus_area: "Community, Governance & Sustainability"
 
 # 4
 - title: "Navigating Academia as Neurodivergent Researchers"
@@ -297,6 +312,7 @@
   citation: "Azevedo, F., et al. (2022). <strong>Navigating academia as neurodivergent researchers: Promoting neurodiversity within open scholarship.</strong> <em>APS Observer</em>. https://www.psychologicalscience.org/observer/gs-navigating-academia-as-neurodivergent-researchers"
   links:
     url: "https://www.psychologicalscience.org/observer/gs-navigating-academia-as-neurodivergent-researchers"
+  focus_area: "Equity, Diversity & Social Justice"
 
 # 5
 - title: "What is 'Open Science'? And why does it need a glossary?"
@@ -309,6 +325,7 @@
   citation: "Azevedo, F., et al. (2022). <strong>What is 'Open Science'? And why does it need a glossary?</strong> <em>In-Mind Magazine</em>. https://de.in-mind.org/blog/post/was-ist-offene-wissenschaft-und-warum-braucht-sie-ein-woerterbuch"
   links:
     url: "https://de.in-mind.org/blog/post/was-ist-offene-wissenschaft-und-warum-braucht-sie-ein-woerterbuch"
+  focus_area: "Education & Pedagogy"
 
 # 6
 - title: "Educating in the Open Scholarship Era"
@@ -321,6 +338,7 @@
   citation: "Azevedo, F. (2022). <strong>Educating in the open scholarship era.</strong> <em>Center for Open Science (COS)</em>. https://www.cos.io/blog/educating-in-the-open-scholarship-eara"
   links:
     url: "https://www.cos.io/blog/educating-in-the-open-scholarship-eara"
+  focus_area: "Education & Pedagogy"
 
 
 # --- Policy Briefs ---
@@ -336,6 +354,7 @@
   citation: "Azevedo, F., DeBruine, L., and Evans, T. R. (2023). <strong>Open scholarship in QAA briefing.</strong> <em>QAA/UKRN</em>. https://www.qaa.ac.uk/forrt-open-scholarship-in-qaa-briefing"
   links:
     pdf: "2023_QAA _ FORRT_UKRN.pdf"
+  focus_area: "Community, Governance & Sustainability"
 
 # 2
 - title: "Building Community (UK Parliament)"
@@ -348,6 +367,7 @@
   citation: "Azevedo, F., et al. (2021). <strong>Towards a culture of open scholarship: The role of pedagogical communities.</strong> <em>UK Parliament Science & Technology Committee, Report No. RRE0080</em>. https://www.parliament.uk/documents/science-and-technology-committee/2021-22/21-22-0080/"
   links:
     pdf: "Azevedo_et.al._FORRT_Science_Technology_Committee_UK_Inquiry.pdf"
+  focus_area: "Community, Governance & Sustainability"
 
 # 3
 - title: "Briefing Note for Degree Accrediting Societies"
@@ -360,6 +380,7 @@
   citation: "Parsons, S., Azevedo, F., and FORRT (2020). <strong>Briefing note for degree accrediting societies.</strong> <em>Framework for Open and Reproducible Research Training.</em> https://forrt.org/"
   links:
     pdf: "Parsons_Azevedo_FORRT_UKRN_Briefing_note_for_degree_accrediting_societies.pdf"
+  focus_area: "Community, Governance & Sustainability"
 
 
 # --- Affiliated Projects ---
@@ -377,6 +398,7 @@
     doi: "https://doi.org/10.1098/rsos.242076"
     postprint: "https://doi.org/10.1098/rsos.242076"
   altmetric_doi: "10.1098/rsos.242076"
+  focus_area: "Meta-Research & Scientific Reform"
 
 # 2
 - title: "The Potential of Preregistration in Psychology"
@@ -391,6 +413,7 @@
     doi: "https://doi.org/10.1037/met0000687"
     postprint: "https://doi.org/10.1037/met0000687"
   altmetric_doi: "10.1037/met0000687"
+  focus_area: "Meta-Research & Scientific Reform"
 
 # 3
 - title: "Towards FAIRification of learning resources and catalogues—lessons learnt from research communities"
@@ -404,6 +427,7 @@
   links:
     doi: "https://doi.org/10.3389/feduc.2024.1390444"
   altmetric_doi: "10.3389/feduc.2024.1390444"
+  focus_area: "Education & Pedagogy"
 
 
 # --- Work in Progress ---
@@ -419,3 +443,4 @@
   citation: "Rahal, R.-M. (in preparation). <strong>Open Social Psychology.</strong> https://forrt.org/open-social-psychology/"
   links:
     project: "https://forrt.org/open-social-psychology/"
+  focus_area: "Education & Pedagogy"

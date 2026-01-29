@@ -1,0 +1,83 @@
+<div class="filter-container">
+
+    {{/* Cluster Filter */}}
+    <div class="filter-section-title">Filter by Partner Category</div>
+    <div id="pill-bar-cluster" class="pill-bar">
+        <span class="filter-pill active" data-group="cluster" data-value="all">All Partners</span>
+        <span class="filter-pill" data-group="cluster" data-value="Global Intergovernmental Organizations">Global Organizations</span>
+        <span class="filter-pill" data-group="cluster" data-value="Reproducibility Networks">Reproducibility Networks</span>
+        <span class="filter-pill" data-group="cluster" data-value="Open Science Infrastructure">Infrastructure</span>
+        <span class="filter-pill" data-group="cluster" data-value="Research Communities">Research Communities</span>
+        <span class="filter-pill" data-group="cluster" data-value="Education & Training">Education & Training</span>
+        <span class="filter-pill" data-group="cluster" data-value="Early Career & Equity">Early Career & Equity</span>
+        <span class="filter-pill" data-group="cluster" data-value="Institutional Partners">Institutional Partners</span>
+    </div>
+
+    {{/* Empty State Warning */}}
+    <div id="no-partners-warning" style="display: none; text-align: center; margin-top: 2rem; color: #666;">
+        <h4><i class="fas fa-search"></i> No partners found</h4>
+        <p>There are no partners matching the selected category.</p>
+    </div>
+
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const clusterPills = document.querySelectorAll('#pill-bar-cluster .filter-pill');
+        const partnerCards = document.querySelectorAll('.partner-card');
+        const sections = document.querySelectorAll('.partner-section-group');
+        const warningDiv = document.getElementById('no-partners-warning');
+
+        let currentCluster = 'all';
+
+        function filterPartners() {
+            let visibleCount = 0;
+
+            partnerCards.forEach(card => {
+                const cardCluster = card.getAttribute('data-cluster');
+
+                let shouldShow = false;
+
+                if (currentCluster === 'all') {
+                    shouldShow = true;
+                } else {
+                    shouldShow = (cardCluster === currentCluster);
+                }
+
+                if (shouldShow) {
+                    card.style.display = "";
+                    visibleCount++;
+                } else {
+                    card.style.display = "none";
+                }
+            });
+
+            // Hide empty sections
+            sections.forEach(section => {
+                const visibleCards = section.querySelectorAll('.partner-card:not([style*="display: none"])');
+                if (visibleCards.length === 0) {
+                    section.style.display = "none";
+                } else {
+                    section.style.display = "";
+                }
+            });
+
+            // Show warning if no partners found
+            if (visibleCount === 0) {
+                warningDiv.style.display = "block";
+            } else {
+                warningDiv.style.display = "none";
+            }
+        }
+
+        // Cluster Filters
+        clusterPills.forEach(pill => {
+            pill.addEventListener('click', () => {
+                clusterPills.forEach(p => p.classList.remove('active'));
+                pill.classList.add('active');
+                currentCluster = pill.getAttribute('data-value');
+                filterPartners();
+            });
+        });
+    });
+</script>
