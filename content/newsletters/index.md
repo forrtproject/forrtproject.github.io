@@ -6,9 +6,13 @@ _______________________________________________
 {{< subscribe >}}
 _______________________________________________
 
+**Archive :calendar: 2026**
+
+[**🆕 | January 2026  🆕**](https://eocampaign1.com/web-version?p=fe198ab4-f705-11f0-b264-b3838bc6094d&pt=campaign&t=1769634321&s=8d9de871b0b694f3fb7ea79f9d5365fb858c018631402d1f306912c583e846e0)
+
 **Archive :calendar: 2025**
 
-[**🆕 | November 2025  🆕**](https://eocampaign1.com/web-version?p=9da7ff18-ca40-11f0-805f-0b7f4a24d8f2&pt=campaign&t=1764317790&s=488ccb62acab0d426b8ec62f02bd6034ee628c1275e0559b6689914870de5485)
+[**| November 2025**](https://eocampaign1.com/web-version?p=9da7ff18-ca40-11f0-805f-0b7f4a24d8f2&pt=campaign&t=1764317790&s=488ccb62acab0d426b8ec62f02bd6034ee628c1275e0559b6689914870de5485)
 
 [**| October 2025**](https://eocampaign1.com/web-version?p=4b518678-a414-11f0-bce9-e9770cb46815&pt=campaign&t=1761811280&s=d307b488e66abc12b64a05f6f6e045787a870b27309d5be18bd067643f7ac7ff)
 
