@@ -7,7 +7,7 @@
         "Open Access"
     ],
     "references": [
-        "Day et al. (2020)"
+        "Day et al. (2020); [https://casrai.org/term/closed-access/](https://casrai.org/term/closed-access/);"
     ],
     "alt_related_terms": [
         null

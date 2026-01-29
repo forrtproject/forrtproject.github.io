@@ -10,10 +10,7 @@
         "Repository"
     ],
     "references": [
-        "[https://v2.sherpa.ac.uk/romeo/](https://v2.sherpa.ac.uk/romeo/) \\[@AnonSherpaRomeoND\\]"
-    ],
-    "alt_related_terms": [
-        null
+        "Anon. (n.d.). Welcome to Sherpa Romeo - v2.sherpa. Retrieved from https://v2.sherpa.ac.uk/romeo/"
     ],
     "drafted_by": [
         "Aleksandra Lazić"
@@ -23,6 +20,9 @@
         "Christopher Graham",
         "Sam Parsons",
         "Martin Vasilev"
+    ],
+    "alt_related_terms": [
+        null
     ],
     "language": "english",
     "aliases": [

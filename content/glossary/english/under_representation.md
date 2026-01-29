@@ -8,12 +8,7 @@
         "Inequality",
         "WEIRD"
     ],
-    "references": [
-        ""
-    ],
-    "alt_related_terms": [
-        null
-    ],
+    "references": [],
     "drafted_by": [
         "Madeleine Pownall"
     ],
@@ -23,6 +18,9 @@
         "Bethan Iley",
         "Adam Parker",
         "Charlotte R. Pennington, Mirela Zaneva"
+    ],
+    "alt_related_terms": [
+        null
     ],
     "language": "english",
     "aliases": [

@@ -13,10 +13,8 @@
         "Type I error"
     ],
     "references": [
-        "Fiedler et al. (2012); Hartgerink et al. (2017)  \\[@FiedlerKutznerKrueger2012\\], \\[@HartgerinkEtAl2017\\]"
-    ],
-    "alt_related_terms": [
-        null
+        "Fiedler, K., Kutzner, F., & Krueger, J. I. (2012). The long way from α-error control to validity proper: Problems with a short-sighted false-positive debate. Perspectives on Psychological Science, 7(6), 661–669. https://doi.org/10.1177/1745691612462587",
+        "Hartgerink, C. H., Wicherts, J. M., & Van Assen, M. A. L. M. (2017). Too good to be false: Nonsignificant results revisited. Collabra: Psychology, 3(1). https://doi.org/10.1525/collabra.71"
     ],
     "drafted_by": [
         "Olly Robertson"
@@ -24,6 +22,9 @@
     "reviewed_by": [
         "Mahmoud Elsherif",
         "Charlotte R. Pennington"
+    ],
+    "alt_related_terms": [
+        null
     ],
     "language": "english",
     "aliases": [

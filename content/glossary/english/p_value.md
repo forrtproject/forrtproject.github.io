@@ -7,7 +7,7 @@
         "statistical significance"
     ],
     "references": [
-        "[https://psyteachr.github.io/glossary/p.html](https://psyteachr.github.io/glossary/p.html); Lakens (2021b); Wasserstein and Lazar (2016) \\[@psyTeachRGlossary\\], \\[@Lakens2021b\\], \\[@Wasserstein2016\\]"
+        "[https://psyteachr.github.io/glossary/p.html](https://psyteachr.github.io/glossary/p.html); Lakens (2021b); Wasserstein and Lazar (2016)"
     ],
     "alt_related_terms": [
         null

@@ -6,10 +6,7 @@
         "Academic Impact"
     ],
     "references": [
-        "\\[@ESRC2021\\]"
-    ],
-    "alt_related_terms": [
-        null
+        "Economic, & Council, S. R. (n.d.). What is impact? Retrieved 8 July 2021. https://esrc.ukri.org/research/impact-toolkit/what-is-impact/"
     ],
     "drafted_by": [
         "Adam Parker"
@@ -18,6 +15,9 @@
         "Helena Hartmann",
         "Aoife O’Mahony",
         "Charlotte R. Pennington"
+    ],
+    "alt_related_terms": [
+        null
     ],
     "language": "english",
     "aliases": [

@@ -8,10 +8,8 @@
         "Research pipeline"
     ],
     "references": [
-        "Kathawalla et al. (2021); Stodden (2011) \\[@Kathawalla2020\\], \\[@Stodden2011\\]"
-    ],
-    "alt_related_terms": [
-        null
+        "Kathawalla, U., Silverstein, P., & Syed, M. (2020). Easing into Open Science: A Guide for Graduate Students and Their Advisors. Collabra: Psychology. https://doi.org/10.31234/osf.io/vzjdp Retrieved from https://psyarxiv.com/vzjdp",
+        "Stodden, V. C. (2011). Trust your science? Open your data and code."
     ],
     "drafted_by": [
         "James E Bartlett"
@@ -24,6 +22,9 @@
         "Timo Roettger",
         "Sam Parsons",
         "Steven Verheyen"
+    ],
+    "alt_related_terms": [
+        null
     ],
     "language": "english",
     "aliases": [

@@ -7,10 +7,7 @@
         "Open source"
     ],
     "references": [
-        "\\[@JASP2020\\]"
-    ],
-    "alt_related_terms": [
-        null
+        "Team, J. (2020). JASP (Version 0.14.1) [Computer software]."
     ],
     "drafted_by": [
         "Amélie Beffara Bret"
@@ -18,6 +15,9 @@
     "reviewed_by": [
         "Adrien Fillon, Adam Parker",
         "Sam Parsons"
+    ],
+    "alt_related_terms": [
+        null
     ],
     "language": "english",
     "aliases": [

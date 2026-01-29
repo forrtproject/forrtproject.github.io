@@ -6,10 +6,9 @@
         "Early Career Investigator"
     ],
     "references": [
-        "\\[@Bazeley2003\\], \\[@Eley2012\\], \\[@Pownall20210\\]"
-    ],
-    "alt_related_terms": [
-        null
+        "Bazeley, P. (2003). Defining “Early Career” in Research. Higher Education, 45, 257–279. https://doi.org/10.1023/A:1022698529612",
+        "Eley, A. R. (2012). Becoming a successful early career researcher. Routledge. Retrieved from http://www.worldcat.org/oclc/934369360",
+        "[@Pownall20210]"
     ],
     "drafted_by": [
         "Micah Vandegrift"
@@ -20,6 +19,9 @@
         "Olly Robertson",
         "Suzanne L. K. Stewart",
         "Flávio Azevedo"
+    ],
+    "alt_related_terms": [
+        null
     ],
     "language": "english",
     "aliases": [

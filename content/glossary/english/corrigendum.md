@@ -8,10 +8,7 @@
         "Retraction"
     ],
     "references": [
-        "\\[@Anon2006\\]"
-    ],
-    "alt_related_terms": [
-        null
+        "Anon. (2006). Correction or retraction? In Nature (Vol. 444, pp. 123–124). https://doi.org/10.1038/444123b"
     ],
     "drafted_by": [
         "Charlotte R. Pennington"
@@ -22,6 +19,9 @@
         "Wanyin Li",
         "Adam Parker",
         "Emily A. Williams"
+    ],
+    "alt_related_terms": [
+        null
     ],
     "language": "english",
     "aliases": [

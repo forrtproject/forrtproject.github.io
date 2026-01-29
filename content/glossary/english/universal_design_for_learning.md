@@ -9,10 +9,9 @@
         "Teaching practice"
     ],
     "references": [
-        "Hitchcock et al. (2002); Rose (2000); Rose and Meyer (2002)  \\[@Hitchcock2002\\], \\[@Rose2000\\], \\[@RoseMeyer2002\\]"
-    ],
-    "alt_related_terms": [
-        null
+        "Hitchcock, C., Meyer, A., Rose, D., & Jackson, R. (2002). Providing new access to the general curriculum: Universal design for learning. Teaching Exceptional Children, 35(2), 8–17. https://www.proquest.com/scholarly-journals/providing-new-access-general-curriculum/docview/201139970/se-2?accountid=8630",
+        "Rose, D. (2000). Universal design for learning. Journal of Special Education Technology, 15(3), 45–49. https://doi.org/10.1177/016264340001500307",
+        "Rose, D. H., & Meyer, A. (2002). Teaching every student in the digital age: Universal design for learning. In The Corsini Encyclopedia of Psychology. Association for Supervision."
     ],
     "drafted_by": [
         "Charlotte R. Pennington"
@@ -22,7 +21,10 @@
         "Mahmoud Elsherif",
         "Graham Reid",
         "Mirela Zaneva",
-        "Flávio Azevedo  ### ---  ### V {#v}"
+        "Flávio Azevedo"
+    ],
+    "alt_related_terms": [
+        null
     ],
     "language": "english",
     "aliases": [

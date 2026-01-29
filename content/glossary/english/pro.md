@@ -9,10 +9,7 @@
         "Transparent peer review"
     ],
     "references": [
-        "Morey et al. (2016) \\[@Morey2016\\]"
-    ],
-    "alt_related_terms": [
-        null
+        "Morey, R. D., Chambers, C. D., Etchells, P. J., Harris, C. R., Hoekstra, R., Lakens, D., Lewandowsky, S., Morey, C. C., Newman, D. P., Schönbrodt, F. D., Vanpaemel, W., Wagenmakers, E.-J., & Zwaan, R. A. (2016). The Peer Reviewers’ Openness Initiative: incentivizing open research practices through peer review. Royal Society Open Science, 3(1). https://doi.org/10.1098/rsos.150547"
     ],
     "drafted_by": [
         "Jamie P. Cockcroft"
@@ -22,6 +19,9 @@
         "Mahmoud Elsherif",
         "Helena Hartmann",
         "Steven Verheyen"
+    ],
+    "alt_related_terms": [
+        null
     ],
     "language": "english",
     "aliases": [

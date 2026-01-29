@@ -7,10 +7,7 @@
         "Metadata"
     ],
     "references": [
-        "\\[@Arslan2019\\]; \\[@icpsr\\_codebook\\]"
-    ],
-    "alt_related_terms": [
-        null
+        "[@**Arslan2019**]"
     ],
     "drafted_by": [
         "Tina Lonsdorf"
@@ -20,6 +17,9 @@
         "Ashley Blake, Kai Krautter",
         "Charlotte R. Pennington",
         "Flávio Azevedo"
+    ],
+    "alt_related_terms": [
+        null
     ],
     "language": "english",
     "aliases": [

@@ -13,10 +13,9 @@
         "Type S error"
     ],
     "references": [
-        "Garson (2012); Hahn and Meeker (1993); Hoekstra et al. (2012); Nimon (2012) \\[@Garson2012\\], \\[@HahnMeeker1993\\], \\[@Hoekstra2012\\],"
-    ],
-    "alt_related_terms": [
-        null
+        "Garson, G. D. (2012). Testing Statistical Assumptions (2012th ed.). North Carolina State University.",
+        "Hahn, G. J., & Meeker, W. Q. (1993). Assumptions for Statistical Inference. The American Statistician, 47(1), 1–11. https://doi.org/10.1080/00031305.1993.10475924",
+        "Hoekstra, R., Kiers, H., & Johnson, A. (2012). Are assumptions of well-known statistical techniques checked, and why (not)? Frontiers in Psychology, 3(137), 1–9. https://doi.org/10.3389/fpsyg.2012.00137"
     ],
     "drafted_by": [
         "Graham Reid"
@@ -26,6 +25,9 @@
         "Sam Parsons",
         "Martin Vasilev",
         "Julia Wolska"
+    ],
+    "alt_related_terms": [
+        null
     ],
     "language": "english",
     "aliases": [

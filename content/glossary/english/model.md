@@ -8,10 +8,7 @@
         "Theory building"
     ],
     "references": [
-        "Frigg and Hartman, (2020); Glass and Martin (2008); Guest and Martin (2020) \\[@GuestMartin2020\\]"
-    ],
-    "alt_related_terms": [
-        null
+        "Guest, O., & Martin, A. E. (2020). How computational modeling can force theory building in psychological science. Perspectives on Psychological Science. https://doi.org/10.1177/1745691620970585"
     ],
     "drafted_by": [
         "Mahmoud Elsherif"
@@ -19,6 +16,9 @@
     "reviewed_by": [
         "Charlotte R. Pennington",
         "Michele C. Lim"
+    ],
+    "alt_related_terms": [
+        null
     ],
     "language": "english",
     "aliases": [
