@@ -7,7 +7,10 @@
         "Preregistration Pledge"
     ],
     "references": [
-        "Free Our Knowledge. (n.d.). About. Retrieved from https://freeourknowledge.org/about/"
+        "[https://freeourknowledge.org/about/](https://freeourknowledge.org/about/)"
+    ],
+    "alt_related_terms": [
+        null
     ],
     "drafted_by": [
         "Jamie P. Cockcroft"
@@ -18,9 +21,6 @@
         "Mahmoud Elsherif",
         "Sam Parsons",
         "Flávio Azevedo"
-    ],
-    "alt_related_terms": [
-        null
     ],
     "language": "german"
 }

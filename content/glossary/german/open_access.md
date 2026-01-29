@@ -10,8 +10,10 @@
         "Repository"
     ],
     "references": [
-        "Budapest Open Access Initiative. (2002). Read the Budapest open access initiative. Retrieved from https://www.budapestopenaccessinitiative.org/read",
-        "Suber, P. (2015). Open Access Overview. http://legacy.earlham.edu/~peters/fos/overview.htm"
+        "[Budapest Open Access Initiative (2002)](https://www.budapestopenaccessinitiative.org/read); Suber (2015)"
+    ],
+    "alt_related_terms": [
+        null
     ],
     "drafted_by": [
         "Mahmoud Elsherif"
@@ -23,9 +25,6 @@
         "Ross Mounce",
         "Mariella Paul",
         "Charlotte R. Pennington"
-    ],
-    "alt_related_terms": [
-        null
     ],
     "language": "german"
 }

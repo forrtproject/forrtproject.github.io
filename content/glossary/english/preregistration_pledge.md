@@ -6,7 +6,10 @@
         "Preregistration"
     ],
     "references": [
-        "Knowledge, F. O. (2020). Preregistration Pledge. https://freeourknowledge.org/2020-12-03-preregistration-pledge/"
+        "[https://freeourknowledge.org/2020-12-03-preregistration-pledge/](https://freeourknowledge.org/2020-12-03-preregistration-pledge/) \\[@Knowledge2020\\]"
+    ],
+    "alt_related_terms": [
+        null
     ],
     "drafted_by": [
         "Helena Hartmann"
@@ -15,9 +18,6 @@
         "Jamie P. Cockcroft",
         "Mahmoud Elsherif",
         "Aleksandra Lazić, Steven Verheyen"
-    ],
-    "alt_related_terms": [
-        null
     ],
     "language": "english",
     "aliases": [

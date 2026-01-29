@@ -10,9 +10,10 @@
         "Equity"
     ],
     "references": [
-        "Eagly, A. H., & Riger, S. (2014). Feminism and psychology: Critiques of methods and epistemology. American Psychologist, 69(7), 685–702. https://doi.org/10.1037/a0037372",
-        "Grzanka, P. R. (2020). From buzzword to critical psychology: An invitation to take intersectionality seriously. Women & Therapy, 43(3–4), 244–261.",
-        "[@Pownall20210]"
+        "\\[@EaglyRiger2014\\], \\[@Grzanka2020\\], \\[@Pownall20210\\]"
+    ],
+    "alt_related_terms": [
+        null
     ],
     "drafted_by": [
         "Madeleine Pownall"
@@ -22,9 +23,6 @@
         "Helena Hartmann",
         "Kai Krautter",
         "Charlotte R. Pennington"
-    ],
-    "alt_related_terms": [
-        null
     ],
     "language": "english",
     "aliases": [

@@ -9,7 +9,12 @@
         "Reproducibility",
         "Trustworthiness"
     ],
-    "references": [],
+    "references": [
+        "Aczel et. al. (2021)"
+    ],
+    "alt_related_terms": [
+        null
+    ],
     "drafted_by": [
         "Barnabas Szaszi"
     ],
@@ -19,9 +24,6 @@
         "Helena Hartmann",
         "Graham Reid",
         "Flávio Azevedo"
-    ],
-    "alt_related_terms": [
-        null
     ],
     "language": "english",
     "aliases": [

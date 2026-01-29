@@ -7,7 +7,7 @@
         "CRediT"
     ],
     "references": [
-        "Open Science Collaboration (2015); Tierney et al. (2020, 2021\\)"
+        "BMJ (2018); Open Science Collaboration (2015); Tierney et al. (2020, 2021\\)"
     ],
     "alt_related_terms": [
         null
