@@ -73,7 +73,7 @@ We provide a comprehensive suite of resources within the AWoP toolkit:
 
 <br>
 
-**Manuscript**: [come back soon!]() 
+**Manuscript**: [https://doi.org/10.31222/osf.io/k7a9p](https://doi.org/10.31222/osf.io/k7a9p)
 
 **Shiny App**: [Access the AWoP Shiny App](https://forrt.shinyapps.io/awop) 
 
