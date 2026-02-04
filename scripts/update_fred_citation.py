@@ -5,11 +5,10 @@ Script to fetch and update the FReD citation from the FReD-data repository.
 This script downloads the latest citation from:
 https://raw.githubusercontent.com/forrtproject/FReD-data/refs/heads/main/output/citation.txt
 
-And saves it to data/fred_citation.json for use in the cite_us page.
+And saves it to static/data/fred_citation.txt for use in the cite_us page.
 """
 
 import sys
-import json
 import logging
 from pathlib import Path
 from urllib import request
@@ -24,7 +23,7 @@ logger = logging.getLogger(__name__)
 
 # Constants
 CITATION_URL = "https://raw.githubusercontent.com/forrtproject/FReD-data/refs/heads/main/output/citation.txt"
-OUTPUT_FILE = "data/fred_citation.json"
+OUTPUT_FILE = "static/data/fred_citation.txt"
 
 def fetch_fred_citation():
     """
@@ -48,7 +47,7 @@ def fetch_fred_citation():
 
 def save_citation(citation, output_path):
     """
-    Save the citation to a JSON file.
+    Save the citation to a text file.
     
     Args:
         citation: The citation text to save
@@ -61,13 +60,8 @@ def save_citation(citation, output_path):
         output_file = Path(output_path)
         output_file.parent.mkdir(parents=True, exist_ok=True)
         
-        # Save as JSON with the citation text
-        citation_data = {
-            "citation": citation.strip()
-        }
-        
         with open(output_file, 'w', encoding='utf-8') as f:
-            json.dump(citation_data, f, ensure_ascii=False, indent=2)
+            f.write(citation)
         
         logger.info(f"Successfully saved citation to {output_path}")
         return True

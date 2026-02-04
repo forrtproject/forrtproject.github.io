@@ -259,9 +259,9 @@ jobs:
           echo "🔄 Running FReD citation update..."
           python3 scripts/update_fred_citation.py
           
-          if [ -f "data/fred_citation.json" ]; then
+          if [ -f "static/data/fred_citation.txt" ]; then
             echo "✅ FReD citation updated successfully"
-            echo "Citation length: $(wc -c < data/fred_citation.json) bytes"
+            echo "Citation length: $(wc -c < static/data/fred_citation.txt) bytes"
           else
             echo "❌ FReD citation file was not created"
             exit 1
@@ -346,6 +346,7 @@ jobs:
             content/curated_resources/
             content/glossary/
             data/
+            static/data/
             content/contributor-analysis/
             content/publications/citation_chart.webp
           retention-days: 7
@@ -367,7 +368,12 @@ jobs:
           cp -r content/curated_resources /tmp/generated-resources/
           cp content/contributors/tenzing.md /tmp/generated-resources/ || true
           cp data/ga_data.json /tmp/generated-resources/ga_data.json || true
-          cp data/fred_citation.json /tmp/generated-resources/fred_citation.json || true
+          
+          # Copy FReD citation if it exists
+          if [ -f static/data/fred_citation.txt ]; then
+            mkdir -p /tmp/generated-resources/static/data
+            cp static/data/fred_citation.txt /tmp/generated-resources/static/data/fred_citation.txt
+          fi
           
           # Copy additional generated files
           mkdir -p /tmp/generated-resources/contributor-analysis
@@ -400,7 +406,7 @@ jobs:
           pushd "$WORKTREE_DIR"
 
           # Ensure target directories exist
-          mkdir -p content/curated_resources content/contributors data content/contributor-analysis content/publications
+          mkdir -p content/curated_resources content/contributors data content/contributor-analysis content/publications static/data
 
           # Remove old generated resource files (but keep _index.md)
           find content/curated_resources -type f ! -name '_index.md' -delete 2>/dev/null || true
@@ -416,8 +422,8 @@ jobs:
           if [ -f /tmp/generated-resources/ga_data.json ]; then
             cp /tmp/generated-resources/ga_data.json data/ga_data.json
           fi
-          if [ -f /tmp/generated-resources/fred_citation.json ]; then
-            cp /tmp/generated-resources/fred_citation.json data/fred_citation.json
+          if [ -f /tmp/generated-resources/static/data/fred_citation.txt ]; then
+            cp /tmp/generated-resources/static/data/fred_citation.txt static/data/fred_citation.txt
           fi
           if [ -f /tmp/generated-resources/summaries.json ]; then
             cp /tmp/generated-resources/summaries.json data/summaries.json
@@ -447,7 +453,7 @@ jobs:
             git add content/curated_resources/ 2>/dev/null || true
             git add content/contributors/tenzing.md 2>/dev/null || true
             git add data/ga_data.json 2>/dev/null || true
-            git add data/fred_citation.json 2>/dev/null || true
+            git add static/data/fred_citation.txt 2>/dev/null || true
             git add data/summaries.json 2>/dev/null || true
             git add content/contributor-analysis/ 2>/dev/null || true
             git add content/publications/citation_chart.webp 2>/dev/null || true
