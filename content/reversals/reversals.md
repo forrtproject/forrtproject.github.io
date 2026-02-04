@@ -61,7 +61,7 @@ Replications of previous scientific work are at the core of the Open Scholarship
 
 <br>
 
-{{% alert warning %}}
+{{% alert note %}}
 
 Data for this project were crowdsourced and not yet consistently validated. Researchers who contributed to this project did so voluntarily and are listed at <a href="http://forrt.org/contributors">forrt.org/contributors</a>. This page can give a good orientation regarding the state of evidence regarding various claims, but you should check specific claims before you rely on them.
 
