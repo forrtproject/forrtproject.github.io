@@ -11,6 +11,7 @@ on:
   pull_request:
     branches:
       - master
+    types: [opened, synchronize, reopened, ready_for_review]
   schedule:
     - cron: '0 1 1 * *'  # 1 AM UTC on the 1st of each month
   workflow_dispatch:
@@ -21,10 +22,18 @@ on:
         type: boolean
         default: false
 
+# Workflow-level concurrency to queue staging builds (wait instead of cancel)
+concurrency:
+  group: staging-aggregate
+  cancel-in-progress: false
+
 jobs:
   aggregate-prs:
     name: Aggregate PRs for Staging
     runs-on: ubuntu-22.04
+    timeout-minutes: 10  # Prevent blocking the queue
+    # Skip draft PRs entirely - they should not trigger staging builds
+    if: github.event.pull_request.draft != true
     permissions:
       contents: write
       pull-requests: read
@@ -173,6 +182,7 @@ jobs:
   build:
     name: Build
     runs-on: ubuntu-22.04
+    timeout-minutes: 20  # Prevent blocking the queue
     needs: [aggregate-prs]
     if: always() && (needs.aggregate-prs.outputs.has-prs == 'true' || github.event.inputs.force_deploy == 'true')
     permissions:
@@ -346,6 +356,7 @@ jobs:
   deploy-staging:
     name: Deploy - Staging
     runs-on: ubuntu-22.04
+    timeout-minutes: 10  # Prevent blocking the queue
     concurrency:
       group: staging
     permissions:
