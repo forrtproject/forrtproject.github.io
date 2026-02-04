@@ -59,10 +59,31 @@ def save_citation(citation, output_path):
     try:
         output_file = Path(output_path)
         output_file.parent.mkdir(parents=True, exist_ok=True)
-        
+
+        # Post-process citation to match required format
+        # Replace DOI URL with HTML link and append note if not present
+        import re
+        # Find DOI URL (assume starts with https://doi.org/)
+        citation = citation.strip()
+        # Remove any trailing note
+        citation_main = citation
+        note = "* These authors contributed equally to this work."
+        if "* These authors contributed equally to this work." in citation:
+            citation_main = citation.split("* These authors contributed equally to this work.")[0].strip()
+
+        # Replace DOI URL with HTML link
+        doi_pattern = r'(https://doi\.org/[\w\./-]+)'
+        def repl(match):
+            url = match.group(1)
+            return f'<a href="{url}">{url}</a>'
+        citation_main = re.sub(doi_pattern, repl, citation_main)
+
+        # Compose final citation
+        citation_final = citation_main + "\n\n" + note + "\n"
+
         with open(output_file, 'w', encoding='utf-8') as f:
-            f.write(citation)
-        
+            f.write(citation_final)
+
         logger.info(f"Successfully saved citation to {output_path}")
         return True
     except Exception as e:
