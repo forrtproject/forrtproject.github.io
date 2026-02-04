@@ -284,7 +284,7 @@
         
         const textNodes = [];
         let node;
-        while (node = walker.nextNode()) {
+        while ((node = walker.nextNode())) {
             // Skip if parent is already a mark
             if (node.parentElement.tagName !== 'MARK') {
                 textNodes.push(node);
@@ -293,10 +293,15 @@
         
         textNodes.forEach(function(textNode) {
             const text = textNode.textContent;
-            if (regex.test(text)) {
-                const span = document.createElement('span');
-                span.innerHTML = text.replace(regex, '<mark class="cluster-highlight">$1</mark>');
-                textNode.parentNode.replaceChild(span, textNode);
+            const testRegex = new RegExp(`(${escapeRegExp(query)})`, 'gi');
+            if (testRegex.test(text)) {
+                const fragment = document.createDocumentFragment();
+                const tempDiv = document.createElement('div');
+                tempDiv.innerHTML = text.replace(regex, '<mark class="cluster-highlight">$1</mark>');
+                while (tempDiv.firstChild) {
+                    fragment.appendChild(tempDiv.firstChild);
+                }
+                textNode.parentNode.replaceChild(fragment, textNode);
             }
         });
     }
@@ -306,16 +311,6 @@
             const parent = mark.parentNode;
             parent.replaceChild(document.createTextNode(mark.textContent), mark);
             parent.normalize();
-        });
-        
-        // Also remove wrapper spans
-        document.querySelectorAll('.tab-pane span').forEach(function(span) {
-            if (span.childNodes.length === 1 && span.childNodes[0].nodeType === Node.TEXT_NODE) {
-                const text = span.textContent;
-                if (span.parentNode && !span.classList.length) {
-                    span.parentNode.replaceChild(document.createTextNode(text), span);
-                }
-            }
         });
     }
 
