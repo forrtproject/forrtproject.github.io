@@ -51,10 +51,13 @@
 
     <div class="cite-us-item">
         <div class="cite-us-text">
-            Röseler, L., Kaiser, L., Doetsch, C., Klett, N., Seida, C., Schütz, A., Aczel, B., Adelina, N., Agostini,
-            V., Alarie, S., ... , Zaneva, M., & Zhang, Y. (2024). The Replication Database: Documenting the
-            Replicability of Psychological Science. Journal of Open Psychology Data, 12: 8, pp. 1–23.
-            <a href="https://doi.org/10.5334/jopd.101" class="doi-link">DOI: https://doi.org/10.5334/jopd.101</a>
+            {{ $fredCitation := "" }}
+            {{ if .Site.Data.fred_citation }}
+                {{ $fredCitation = .Site.Data.fred_citation.citation }}
+            {{ else }}
+                {{ $fredCitation = "Röseler, L., Kaiser, L., Doetsch, C., Klett, N., Seida, C., Schütz, A., Aczel, B., Adelina, N., Agostini, V., Alarie, S., ... , Zaneva, M., & Zhang, Y. (2024). The Replication Database: Documenting the Replicability of Psychological Science. Journal of Open Psychology Data, 12: 8, pp. 1–23. DOI: https://doi.org/10.5334/jopd.101" }}
+            {{ end }}
+            {{ $fredCitation | safeHTML }}
         </div>
         <button class="copy-button" onclick="copyText(this, 'fred')">
             <svg class="copy-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -89,10 +92,16 @@
 </div>
 
 <script>
+    {{ $fredCitation := "" }}
+    {{ if .Site.Data.fred_citation }}
+        {{ $fredCitation = .Site.Data.fred_citation.citation }}
+    {{ else }}
+        {{ $fredCitation = "Röseler, L., Kaiser, L., Doetsch, C., Klett, N., Seida, C., Schütz, A., Aczel, B., Adelina, N., Agostini, V., Alarie, S., ... , Zaneva, M., & Zhang, Y. (2024). The Replication Database: Documenting the Replicability of Psychological Science. Journal of Open Psychology Data, 12: 8, pp. 1–23. DOI: https://doi.org/10.5334/jopd.101" }}
+    {{ end }}
     const citations = {
         forrt1: "Azevedo, F., Parsons, S., Micheli, L., Strand, J., Rinke, E., … & FORRT (2019, December 13). Introducing a Framework for Open and Reproducible Research Training (FORRT). https://doi.org/10.31219/osf.io/bnh7p",
         forrt2: "Azevedo, F., Liu, M., Pennington, C. R., Pownall, M., Evans, T. R., Parsons, S., Elsherif, M. M., Micheli, L., Westwood, S., & FORRT. (2021). Towards a culture of open scholarship: The role of pedagogical communities. BMC Research Notes, 15(1), 1-5. https://doi.org/10.1186/s13104-022-05944-1",
-        fred: "Röseler, L., Kaiser, L., Doetsch, C., Klett, N., Seida, C., Schütz, A., Aczel, B., Adelina, N., Agostini, V., Alarie, S., ... , Zaneva, M., & Zhang, Y. (2024). The Replication Database: Documenting the Replicability of Psychological Science. Journal of Open Psychology Data, 12: 8, pp. 1–23. DOI: https://doi.org/10.5334/jopd.101",
+        fred: {{ $fredCitation | jsonify }},
         citational_justice_toolkit: "Sauvé, S. A., Middleton, S. L., Gellersen, H., & Azevedo, F. (2025, July 31). In Pursuit of Citational Justice: A Toolkit for Equitable Scholarship. https://doi.org/10.31222/osf.io/qjecy_v2"
     };
 

@@ -241,6 +241,32 @@ jobs:
             exit 1
           fi
 
+      #========================================
+      # Update FReD citation (Weekly or Manual)
+      #========================================
+      - name: Update FReD Citation
+        continue-on-error: true  # Continue even if this step fails
+        run: |
+          echo "=== Updating FReD citation ==="
+          
+          # Check if it's a Sunday (day 0) OR manually triggered
+          CURRENT_DAY_OF_WEEK=$(date +%u)
+          if [ "$CURRENT_DAY_OF_WEEK" != "7" ] && [ "${{ github.event_name }}" != "workflow_dispatch" ]; then
+            echo "ℹ️ Skipping FReD citation update (not Sunday and not manual trigger)"
+            exit 0
+          fi
+          
+          echo "🔄 Running FReD citation update..."
+          python3 scripts/update_fred_citation.py
+          
+          if [ -f "data/fred_citation.json" ]; then
+            echo "✅ FReD citation updated successfully"
+            echo "Citation length: $(wc -c < data/fred_citation.json) bytes"
+          else
+            echo "❌ FReD citation file was not created"
+            exit 1
+          fi
+
       #=======================================================
       # Create a pull request for GA data updates on monthly runs
       #=======================================================
@@ -341,6 +367,7 @@ jobs:
           cp -r content/curated_resources /tmp/generated-resources/
           cp content/contributors/tenzing.md /tmp/generated-resources/ || true
           cp data/ga_data.json /tmp/generated-resources/ga_data.json || true
+          cp data/fred_citation.json /tmp/generated-resources/fred_citation.json || true
           
           # Copy additional generated files
           mkdir -p /tmp/generated-resources/contributor-analysis
@@ -389,6 +416,9 @@ jobs:
           if [ -f /tmp/generated-resources/ga_data.json ]; then
             cp /tmp/generated-resources/ga_data.json data/ga_data.json
           fi
+          if [ -f /tmp/generated-resources/fred_citation.json ]; then
+            cp /tmp/generated-resources/fred_citation.json data/fred_citation.json
+          fi
           if [ -f /tmp/generated-resources/summaries.json ]; then
             cp /tmp/generated-resources/summaries.json data/summaries.json
           fi
@@ -417,6 +447,7 @@ jobs:
             git add content/curated_resources/ 2>/dev/null || true
             git add content/contributors/tenzing.md 2>/dev/null || true
             git add data/ga_data.json 2>/dev/null || true
+            git add data/fred_citation.json 2>/dev/null || true
             git add data/summaries.json 2>/dev/null || true
             git add content/contributor-analysis/ 2>/dev/null || true
             git add content/publications/citation_chart.webp 2>/dev/null || true
