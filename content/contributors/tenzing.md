@@ -1206,7 +1206,7 @@ FORRT is driven by a **large and diverse community of contributors** that shape 
 <li class="contributor-group" id="0000-0002-4350-6082">
   <strong><a href="https://orcid.org/0000-0002-4350-6082">Marie Dokovova</a></strong> contributed to
   <ul class="contributions-list">
-    <li class="contribution" data-projects="glossary-bulgarian-translation" data-roles="resources,translation">Glossary - Bulgarian Translation with <em>Resources</em> and <em>Translation</em></li>
+    <li class="contribution" data-projects="glossary-bulgarian-translation" data-roles="resources,validation,translation">Glossary - Bulgarian Translation with <em>Resources</em>, <em>Validation</em> and <em>Translation</em></li>
   </ul>
 </li>
 
@@ -2208,7 +2208,7 @@ Educators (POST-Edu) as Project co-lead</li>
 <li class="contributor-group" id="0000-0001-6682-9952">
   <strong><a href="https://orcid.org/0000-0001-6682-9952">Zlatomira G. Ilchovska</a></strong> contributed to
   <ul class="contributions-list">
-    <li class="contribution" data-projects="glossary-bulgarian-translation" data-roles="resources,translation">Glossary - Bulgarian Translation with <em>Resources</em> and <em>Translation</em></li>
+    <li class="contribution" data-projects="glossary-bulgarian-translation" data-roles="resources,validation,translation">Glossary - Bulgarian Translation with <em>Resources</em>, <em>Validation</em> and <em>Translation</em></li>
     <li class="contribution" data-projects="impact-on-students" data-roles="investigation,resources,writing-original-draft,writing-review-and-editing"><a href="https://forrt.org/impact/">Impact on students</a> with <em>Investigation</em>, <em>Resources</em>, <em>Writing - original draft</em> and <em>Writing - review & editing</em></li>
     <li class="contribution" data-projects="fred-forrt-replication-database" data-roles="investigation"><a href="https://forrt.org/replication-hub/">FReD (FORRT Replication Database)</a> with <em>Investigation</em></li>
     <li class="contribution" data-projects="reversals-and-replications" data-roles="investigation"><a href="https://forrt.org/reversals/">Reversals & Replications</a> with <em>Investigation</em></li>
@@ -2684,7 +2684,7 @@ Educators (POST-Edu) as Project co-lead</li>
     <li class="contribution" data-projects="team-outreach" data-roles="conceptualization,investigation,resources,visualization">Team Outreach with <em>Conceptualization</em>, <em>Investigation</em>, <em>Resources</em> and <em>Visualization</em></li>
     <li class="contribution" data-projects="adopting-principled-education" data-roles="data-curation,resources,writing-original-draft"><a href="https://forrt.org/adopting/">Adopting Principled Education</a> with <em>Data curation</em>, <em>Resources</em> and <em>Writing - original draft</em></li>
     <li class="contribution" data-projects="forrt-s-curated-resources" data-roles="resources"><a href="https://forrt.org/resources/">FORRT's Curated Resources</a> with <em>Resources</em></li>
-    <li class="contribution" data-projects="glossary-bulgarian-translation" data-roles="resources,translation">Glossary - Bulgarian Translation with <em>Resources</em> and <em>Translation</em></li>
+    <li class="contribution" data-projects="glossary-bulgarian-translation" data-roles="resources,validation,translation">Glossary - Bulgarian Translation with <em>Resources</em>, <em>Validation</em> and <em>Translation</em></li>
     <li class="contribution" data-projects="open-educational-resources-chapter" data-roles="writing-review-and-editing"><a href="https://doi.org/10.35542/osf.io/sn693_v2">Open Educational Resources Chapter</a> with <em>Writing - review & editing</em></li>
   </ul>
 </li>
@@ -4633,7 +4633,7 @@ Educators (POST-Edu) as Project co-lead</li>
 <li class="contributor-group" id="0000-0002-1664-6186">
   <strong><a href="https://orcid.org/0000-0002-1664-6186">Momchil Terziev</a></strong> contributed to
   <ul class="contributions-list">
-    <li class="contribution" data-projects="glossary-bulgarian-translation" data-roles="resources,translation">Glossary - Bulgarian Translation with <em>Resources</em> and <em>Translation</em></li>
+    <li class="contribution" data-projects="glossary-bulgarian-translation" data-roles="resources,validation,translation">Glossary - Bulgarian Translation with <em>Resources</em>, <em>Validation</em> and <em>Translation</em></li>
   </ul>
 </li>
 
