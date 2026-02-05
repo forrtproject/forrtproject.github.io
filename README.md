@@ -54,6 +54,68 @@ Please note that it's very important to us that we maintain a positive and suppo
 
 This is the website for the **Framework for Open and Reproducible Research Training (FORRT)**, built with [hugo](https://gohugo.io/), and deployed with [Github Actions](https://docs.github.com/en/actions). You can find the website at [forrt.org](https://forrt.org/). See CONTRIBUTING.md for more information on how to contribute.
 
+## Deployment & Staging
+
+The FORRT website uses a dual deployment strategy to ensure quality and enable collaborative testing:
+
+### Production Deployment
+
+- **URL**: [https://forrt.org](https://forrt.org)
+- **Workflow**: `.github/workflows/deploy.yaml`
+- **Trigger**: Pushes to `master` branch
+- **Target**: GitHub Pages (`gh-pages` branch)
+- **Purpose**: Serves the live, production website
+
+### Staging Deployment
+
+- **URL**: [https://staging.forrt.org](https://staging.forrt.org)
+- **Workflow**: `.github/workflows/staging-aggregate.yaml`
+- **Trigger**: Pull requests to `master`, monthly schedule (1st of each month), or manual dispatch
+- **Target**: External repository (`forrtproject/webpage-staging`)
+- **Purpose**: Preview combined changes from all open PRs
+
+#### How Staging Works
+
+The staging deployment uses an **aggregation strategy** to provide a unified preview environment:
+
+1. **Automatic Aggregation**: When any PR is opened, synchronized, or reopened, the workflow:
+   - Collects all open, non-draft PRs targeting `master`
+   - Creates a temporary aggregation branch from `master`
+   - Attempts to merge each PR in sequence
+   
+2. **Conflict Handling**: 
+   - PRs that merge cleanly are included in the staging build
+   - PRs with merge conflicts are skipped but logged
+   - The deployment continues with all compatible PRs
+   
+3. **Deployment Comments**: Each PR receives an automated comment indicating:
+   - ✅ Successfully deployed (for PRs without conflicts)
+   - ⚠️ Skipped due to conflicts (for conflicting PRs)
+   - Deployment timestamp and staging URL
+   
+4. **Queuing & Timeouts**:
+   - Workflow uses concurrency control to queue builds (not cancel)
+   - Job timeouts (10-20 minutes) prevent indefinite blocking
+   - Draft PRs are filtered out to avoid unnecessary builds
+
+5. **Branch Cleanup**: 
+   - Keeps only the 5 most recent staging branches
+   - Automatically cleans up older staging-aggregate branches
+
+#### Viewing Staging Changes
+
+- Visit [https://staging.forrt.org](https://staging.forrt.org) to see the combined state of all open, compatible PRs
+- Note: Staging shows aggregated changes from **all** open PRs, not individual PR changes
+- PRs with merge conflicts won't appear in staging until conflicts are resolved
+
+#### Monthly Reports
+
+On the 1st of each month, an automated deployment report is created as a GitHub issue with:
+- Total PRs processed
+- Successfully merged PRs
+- Skipped PRs (with conflict information)
+- Deployment statistics
+
 ## License
 
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.
