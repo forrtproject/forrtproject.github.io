@@ -35,6 +35,17 @@ The `tenzing.py` script:
 
 **Important:** `tenzing.md` is auto-generated and should never be edited manually.
 
+## URL Parameters for Filtering
+
+The Contributors page supports URL parameters to filter and customize the view:
+
+| Parameter | Description | Example |
+|-----------|-------------|---------|
+| `project` | Filter by project name (normalized) | `?project=glossary` |
+| `role` | Filter by contribution role (normalized) | `?role=writing` |
+| `collapse-filter` | Hide the filter menu and show a simple "show all" link | `?project=glossary&collapse-filter` |
+
+
 ## Local Development
 
 When working with `tenzing.py` locally, copy the generated file to the content directory before rendering the site:
