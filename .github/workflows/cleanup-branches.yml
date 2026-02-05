@@ -11,6 +11,11 @@ on:
         type: boolean
         default: false
 
+# Workflow-level concurrency to queue cleanup operations (wait instead of cancel)
+concurrency:
+  group: branch-cleanup
+  cancel-in-progress: false
+
 permissions:
   contents: write
   pull-requests: read
@@ -19,11 +24,17 @@ jobs:
   cleanup-staging:
     name: Cleanup Staging Aggregate Branches
     runs-on: ubuntu-latest
+    timeout-minutes: 10  # Prevent blocking the queue
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
+
+      - name: Configure Git
+        run: |
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git config --global user.name "github-actions[bot]"
 
       - name: Delete old staging branches
         env:
@@ -33,8 +44,9 @@ jobs:
           git fetch --all --prune
 
           echo "Listing staging-aggregate branches..."
-          # Get branches matching pattern, sort by committer date (descending), skip first 10
-          BRANCHES_TO_DELETE=$(git branch -r --list 'origin/staging-aggregate-*' --sort=-committerdate | tail -n +11 | sed 's/origin\///')
+          # Get branches matching pattern, sort by committer date (descending), skip first 5
+          # Using git for-each-ref for more reliable remote branch listing (aligns with staging-aggregate.yaml)
+          BRANCHES_TO_DELETE=$(git for-each-ref --format='%(refname:short)' --sort=-committerdate 'refs/remotes/origin/staging-aggregate-*' | tail -n +6 | sed 's#origin/##')
           
           if [ -z "$BRANCHES_TO_DELETE" ]; then
             echo "No old staging branches to delete."
@@ -57,11 +69,17 @@ jobs:
   cleanup-merged:
     name: Cleanup Merged Branches
     runs-on: ubuntu-latest
+    timeout-minutes: 10  # Prevent blocking the queue
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
+
+      - name: Configure Git
+        run: |
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git config --global user.name "github-actions[bot]"
 
       - name: Delete merged branches
         env:
@@ -74,8 +92,8 @@ jobs:
           PROTECTED_BRANCHES="master|main|staging|production|gh-pages"
 
           echo "Finding merged branches..."
-          # List remote branches merged into origin/master, exclude protected ones
-          MERGED_BRANCHES=$(git branch -r --merged origin/master | grep -vE "HEAD|$PROTECTED_BRANCHES" | sed 's/origin\///')
+          # List remote branches merged into origin/master, exclude HEAD and fully matching protected branches
+          MERGED_BRANCHES=$(git branch -r --merged origin/master | grep -vE "HEAD|origin/($PROTECTED_BRANCHES)$" | sed 's/origin\///')
 
           if [ -z "$MERGED_BRANCHES" ]; then
             echo "No merged branches to delete."
@@ -98,11 +116,17 @@ jobs:
   cleanup-stale:
     name: Cleanup Stale Branches
     runs-on: ubuntu-latest
+    timeout-minutes: 20  # Prevent blocking the queue
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
+
+      - name: Configure Git
+        run: |
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git config --global user.name "github-actions[bot]"
 
       - name: Delete stale branches
         env:
@@ -121,10 +145,19 @@ jobs:
 
           echo "Checking for stale branches..."
           
-          # Iterate over all remote branches
-          git branch -r | grep -vE "HEAD|origin/($PROTECTED_BRANCHES)$" | while read -r branch; do
+          # Collect branches to delete first (avoid stdin consumption issues with git push in loop)
+          BRANCHES_TO_DELETE=""
+          
+          # Iterate over all remote branches, excluding protected and staging-aggregate branches
+          while read -r branch; do
             branch=$(echo "$branch" | xargs) # trim whitespace
             clean_branch_name=${branch#origin/}
+            
+            # Skip staging-aggregate branches (handled by cleanup-staging job)
+            if [[ "$clean_branch_name" == staging-aggregate-* ]]; then
+              echo "Skipping $clean_branch_name (staging-aggregate branch)"
+              continue
+            fi
             
             # Get last commit date for the branch
             last_commit_date=$(git log -1 --format=%ct "$branch")
@@ -139,12 +172,27 @@ jobs:
             
             if [ "$last_commit_date" -lt "$THRESHOLD_DATE" ]; then
               echo "Branch '$clean_branch_name' is stale (Last commit: $(date -d "@$last_commit_date"))"
-              
-              if [ "$DRY_RUN" = "true" ]; then
-                echo "[DRY RUN] Would delete: $clean_branch_name"
+              if [ -z "$BRANCHES_TO_DELETE" ]; then
+                BRANCHES_TO_DELETE="$clean_branch_name"
               else
-                echo "Deleting: $clean_branch_name"
-                git push origin --delete "$clean_branch_name" || echo "Failed to delete $clean_branch_name"
+                BRANCHES_TO_DELETE="$BRANCHES_TO_DELETE"$'\n'"$clean_branch_name"
               fi
             fi
-          done
+          done < <(git branch -r | grep -vE "HEAD|origin/($PROTECTED_BRANCHES)$")
+          
+          # Now delete the collected branches
+          if [ -z "$BRANCHES_TO_DELETE" ]; then
+            echo "No stale branches to delete."
+          else
+            echo "Found stale branches to delete:"
+            echo "$BRANCHES_TO_DELETE"
+            
+            while IFS= read -r branch; do
+              if [ "$DRY_RUN" = "true" ]; then
+                echo "[DRY RUN] Would delete: $branch"
+              else
+                echo "Deleting: $branch"
+                git push origin --delete "$branch" || echo "Failed to delete $branch"
+              fi
+            done <<< "$BRANCHES_TO_DELETE"
+          fi
