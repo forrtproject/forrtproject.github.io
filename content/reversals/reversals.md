@@ -61,6 +61,18 @@ Replications of previous scientific work are at the core of the Open Scholarship
 
 <br>
 
+{{% alert note %}}
+
+Data for this project were crowdsourced and not yet consistently validated. Researchers who contributed to this project did so voluntarily and are listed at <a href="http://forrt.org/contributors">forrt.org/contributors</a>. This page can give a good orientation regarding the state of evidence regarding various claims, but you should check specific claims before you rely on them.
+
+Please report errors you spot <a href="https://github.com/forrtproject/forrtproject.github.io/issues/612">here</a>. If you need validated data on replications, we would encourage you to use the FORRT Replication Database (<a href="https://forrt.org/apps/fred_explorer.html">FReD</a>, with effect sizes) or the more comprehensive FORRT Library of Replication Attempts (<a href="https://forrt.org/apps/fred_annotator.html">FLoRA</a>).
+
+Please cite this source as Hartmann H, Azevedo F, Röseler L, Wallrich L, Aldoh A, Elsherif MM, et al. Tracking and mainstreaming replications in the social, cognitive, and behavioral sciences. MetaArXiv. https://doi.org/10.31222/osf.io/ad2w6_v1
+
+{{% /alert %}}
+
+<br>
+
 ## **Motivation**
 
 The purpose of collating these reversal effects in social science is to encourage educators to incorporate replications of these effects into their students' project (e.g., third-year, thesis, course work) to provide them the opportunity to experience the research process directly, assess their ability to perform and report scientific research, and to help evaluate the robustness of the original study, thereby also helping them become good consumers of research. The below crowdsourced and community-curated resource aims to satisfy three of [FORRT’s Goals](https://forrt.org/about/mission/):
