@@ -42,21 +42,37 @@ except FileNotFoundError:
     print("Warning: apa_lookup.json not found. References will not be formatted.")
     apa_lookup = {}
 
-def process_references(references_text, apa_lookup):
+def process_references(references_text, apa_lookup, missing_refs_log=None):
     """Convert citation keys to APA format using the lookup"""
     if not references_text:
         return []
-    
+
     citation_pattern = r'\\?\[@([^\\]+)\\?\]'
     matches = re.findall(citation_pattern, references_text)
-    
+
     formatted_refs = []
     for match in matches:
+        # Clean the key: remove markdown formatting, trailing punctuation, etc.
         key = match.strip()
+        original_key = key  # Keep for logging
+
+        # Remove markdown formatting
+        key = re.sub(r'^\*+|\*+$', '', key)  # Remove leading/trailing asterisks
+        key = re.sub(r'^_+|_+$', '', key)    # Remove leading/trailing underscores
+
+        # Remove trailing punctuation
+        key = re.sub(r'[,;:]+$', '', key)
+
+        # Remove trailing digits that look like typos (e.g., "Pownall20210" -> "Pownall2021")
+        key = re.sub(r'(\d{4})0+$', r'\1', key)
+
         if key in apa_lookup:
             formatted_refs.append(apa_lookup[key])
         else:
-            formatted_refs.append(f"[@{key}]")
+            # Log missing reference but don't include in output
+            if missing_refs_log is not None:
+                missing_refs_log.add(original_key)
+            print(f"Warning: Missing reference key '{original_key}' (cleaned: '{key}') - skipping")
     
     return list(dict.fromkeys(formatted_refs))
 
@@ -81,6 +97,7 @@ def clean_filename(title):
 # Process languages
 formatted_data = {}
 languages_to_process = [lang for lang in languages if lang in language_map]
+missing_refs = set()  # Track missing references
 
 for language_code in languages_to_process:
     print(f"Processing language: {language_code}")
@@ -115,7 +132,7 @@ for language_code in languages_to_process:
 
         # Process references
         raw_references = safe_get(row, "Reference")
-        processed_references = process_references(raw_references, apa_lookup)
+        processed_references = process_references(raw_references, apa_lookup, missing_refs)
 
         # Build entry
         entry = {
@@ -123,7 +140,7 @@ for language_code in languages_to_process:
             "title": title,
             "definition": safe_get(row, f"{language_code}_def"),
             "related_terms": list(dict.fromkeys(safe_get(row, "Related_terms").split("; "))) if safe_get(row, "Related_terms") else [],
-            "references": processed_references,
+            "references": "\n\n".join(processed_references) if processed_references else "",
             "drafted_by": [safe_get(row, "Originally drafted by") or safe_get(row, "Drafted by")] if (safe_get(row, "Originally drafted by") or safe_get(row, "Drafted by")) else [],
             "reviewed_by": list(dict.fromkeys(safe_get(row, "Reviewed (or Edited) by").replace("Reviewed (or Edited) by : ", "").split("; "))) if safe_get(row, "Reviewed (or Edited) by") else [],
             "alt_related_terms": [None],
@@ -183,5 +200,21 @@ if os.path.exists(partials_file_path):
     print(f"Updated {partials_file_path} with languages: {', '.join(sorted(language_map.values()))}")
 else:
     print(f"File not found: {partials_file_path}")
+
+# Report missing references
+if missing_refs:
+    print(f"Missing reference keys found: {len(missing_refs)}")
+    print("Missing keys:", sorted(missing_refs))
+
+    # Save missing references for GitHub Actions
+    missing_refs_file = os.path.join(script_dir, 'missing_references.txt')
+    with open(missing_refs_file, 'w') as f:
+        f.write("Missing Reference Keys:\n")
+        f.write("======================\n\n")
+        for ref in sorted(missing_refs):
+            f.write(f"- {ref}\n")
+    print(f"Missing references logged to: {missing_refs_file}")
+else:
+    print("All references found in lookup!")
 
 print("Data successfully processed.")

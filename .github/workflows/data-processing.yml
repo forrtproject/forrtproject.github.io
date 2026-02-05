@@ -238,6 +238,17 @@ jobs:
         run: python3 content/glossary/_create_glossaries.py
         # Execute the glossary script that generates glossary markdown files
 
+      - name: Check for missing references
+        if: always()
+        run: |
+          if [ -f "content/glossary/missing_references.txt" ]; then
+            echo "Missing references found:"
+            cat content/glossary/missing_references.txt
+            # Optionally fail the workflow or create an issue
+          else
+            echo "All references resolved successfully"
+          fi
+
       #========================================
       # Download Google Analytics data and validate
       #========================================
