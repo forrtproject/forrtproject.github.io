@@ -73,6 +73,7 @@ The FORRT website uses a dual deployment strategy to ensure quality and enable c
 - **Trigger**: Pull requests to `master`, monthly schedule (1st of each month), or manual dispatch
 - **Target**: External repository (`forrtproject/webpage-staging`)
 - **Purpose**: Preview combined changes from all open PRs
+- **Note**: Staging always deploys aggregated changes from all open PRs. There is currently no option to deploy a single PR in isolation to staging.
 
 #### How Staging Works
 
@@ -107,6 +108,16 @@ The staging deployment uses an **aggregation strategy** to provide a unified pre
 - Visit [https://staging.forrt.org](https://staging.forrt.org) to see the combined state of all open, compatible PRs
 - Note: Staging shows aggregated changes from **all** open PRs, not individual PR changes
 - PRs with merge conflicts won't appear in staging until conflicts are resolved
+
+#### Manual Single-PR Deployment
+
+**Currently Not Supported for Staging**: There is no option to deploy a single PR in isolation to the staging environment. All staging deployments include all compatible open PRs.
+
+**Workaround for Testing Individual PRs**:
+- The `deploy.yaml` workflow supports manual dispatch with a `pr_number` input
+- However, this deploys directly to **production** (forrt.org), not staging
+- Use with extreme caution - only for emergency fixes or when you're certain the changes are ready for production
+- For regular PR testing, rely on the aggregated staging deployment or test locally
 
 #### Monthly Reports
 
