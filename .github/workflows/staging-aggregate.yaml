@@ -364,7 +364,8 @@ jobs:
       pull-requests: write
       issues: write
     needs: [build, aggregate-prs]
-    if: always() && needs.build.result == 'success'
+    # Run on successful build OR on schedule (for monthly reports even when no PRs)
+    if: always() && (needs.build.result == 'success' || github.event_name == 'schedule')
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -372,6 +373,7 @@ jobs:
           token: ${{ secrets.STAGING_GITHUB_TOKEN }}
 
       - name: Download Artifact - Website
+        if: needs.build.result == 'success'
         uses: actions/download-artifact@v4
         with:
           name: forrt-website-aggregate-${{ github.run_number }}
@@ -427,6 +429,7 @@ jobs:
           echo "- ✅ Shows combined state of all compatible PRs" >> deployment-summary.md
 
       - name: Deploy - GitHub Pages
+        if: needs.build.result == 'success'
         uses: peaceiris/actions-gh-pages@4f9cc6602d3f66b9c108549d475ec49e8ef4d45e
         with:
           personal_token: ${{ secrets.STAGING_GITHUB_TOKEN }}
