@@ -650,7 +650,7 @@ def main():
             "initials": get_initials(personal_name),
             "bio": bio_text,
             "email": personal_data.get('Email', '') if personal_data else '',
-            "website": normalize_website_url(personal_data.get('Weblink', '') if personal_data else '')
+            "website": normalize_website_url(personal_data.get('Weblink', '') if personal_data else ''),
             "twitter": "", 
             "linkedin": "" 
         }
