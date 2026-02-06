@@ -21,6 +21,11 @@ on:
         required: false
         type: boolean
         default: false
+      single_pr:
+        description: 'Deploy a single PR only (enter PR number, e.g. 123)'
+        required: false
+        type: string
+        default: ''
 
 # Workflow-level concurrency to queue staging builds (wait instead of cancel)
 concurrency:
@@ -64,22 +69,43 @@ jobs:
             echo "🔍 Triggering PR: #${{ github.event.pull_request.number }}"
           fi
           
-          # Get all open, non-draft PRs targeting master (regardless of CI status)
-          PRS=$(gh pr list --base master --state open --json number,title,headRefName,isDraft --jq '.[] | select(.isDraft == false) | .number')
-          
-          if [ -z "$PRS" ]; then
-            echo "No open non-draft PRs found"
-            echo "branch=master" >> $GITHUB_OUTPUT
-            echo "included_prs=" >> $GITHUB_OUTPUT
-            echo "attempted_prs=" >> $GITHUB_OUTPUT
-            echo "total_prs=0" >> $GITHUB_OUTPUT
-            echo "has_prs=false" >> $GITHUB_OUTPUT
-            exit 0
+          # Check if single PR mode is enabled
+          SINGLE_PR="${{ github.event.inputs.single_pr }}"
+          if [ -n "$SINGLE_PR" ] && [ "$SINGLE_PR" != "" ]; then
+            echo "🎯 Single PR mode: deploying only PR #$SINGLE_PR"
+            
+            # Validate PR exists and is open
+            if ! gh pr view "$SINGLE_PR" --json state --jq '.state' | grep -q "OPEN"; then
+              echo "❌ PR #$SINGLE_PR is not open or doesn't exist"
+              echo "branch=master" >> $GITHUB_OUTPUT
+              echo "included_prs=" >> $GITHUB_OUTPUT
+              echo "attempted_prs=$SINGLE_PR" >> $GITHUB_OUTPUT
+              echo "total_prs=0" >> $GITHUB_OUTPUT
+              echo "has_prs=false" >> $GITHUB_OUTPUT
+              exit 1
+            fi
+            
+            PRS="$SINGLE_PR"
+            echo "has_prs=true" >> $GITHUB_OUTPUT
+            echo "total_prs=1" >> $GITHUB_OUTPUT
+          else
+            # Get all open, non-draft PRs targeting master (regardless of CI status)
+            PRS=$(gh pr list --base master --state open --json number,title,headRefName,isDraft --jq '.[] | select(.isDraft == false) | .number')
+            
+            if [ -z "$PRS" ]; then
+              echo "No open non-draft PRs found"
+              echo "branch=master" >> $GITHUB_OUTPUT
+              echo "included_prs=" >> $GITHUB_OUTPUT
+              echo "attempted_prs=" >> $GITHUB_OUTPUT
+              echo "total_prs=0" >> $GITHUB_OUTPUT
+              echo "has_prs=false" >> $GITHUB_OUTPUT
+              exit 0
+            fi
+            
+            echo "Found PRs: $PRS"
+            echo "total_prs=$(echo "$PRS" | wc -l)" >> $GITHUB_OUTPUT
+            echo "has_prs=true" >> $GITHUB_OUTPUT
           fi
-          
-          echo "Found PRs: $PRS"
-          echo "total_prs=$(echo "$PRS" | wc -l)" >> $GITHUB_OUTPUT
-          echo "has_prs=true" >> $GITHUB_OUTPUT
           
           # Create a new branch for aggregation starting from master
           AGGREGATE_BRANCH="staging-aggregate-$(date +%Y%m%d-%H%M%S)"
@@ -169,6 +195,7 @@ jobs:
           
           echo "✅ Aggregation completed"
           echo "📊 Summary:"
+          echo "   - Mode: $( [ -n \"$SINGLE_PR\" ] && echo 'Single PR' || echo 'Aggregate' )"
           echo "   - Total PRs found: $(echo "$PRS" | wc -l)"
           echo "   - PRs attempted: $ATTEMPTED_PRS"
           echo "   - PRs successfully merged: $INCLUDED_PRS"
