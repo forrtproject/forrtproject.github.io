@@ -33,7 +33,7 @@ You can find the summaries via the menu in the left. We made a distinction betwe
 
 ### Why make these summaries?
 
-The FORRT's summaries is community-curated resource aims to satisfy three of [FORRT’s Goals](about/mission/): 
+The FORRT's summaries is community-curated resource aims to satisfy three of [FORRT’s Goals](/about/mission/): 
 *   Support scholars in their efforts to learn and stay up-to-date on best practices regarding open and reproducible research;
 *   Facilitating conversations about the ethics and social impact of teaching substantive topics with due regard to scientific openness, epistemic uncertainty and the credibility revolution;
 *   Foster social justice through the democratization of scientific educational resources and its pedagogies.
