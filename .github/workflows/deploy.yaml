@@ -11,17 +11,17 @@ on:
   push:
     branches:
       - master
-  pull_request:
-    branches:
-      - master
   workflow_dispatch:
     inputs:
       pr_number:
-        description: 'PR number to deploy (optional)'
+        description: 'PR number to deploy (optional, for manual testing)'
         required: false
         type: string
   repository_dispatch:
     types: [data-update]
+
+# Note: PR staging deployments are handled by staging-aggregate.yaml
+# This workflow focuses on production deployments
 
 jobs:
   build:
@@ -165,14 +165,9 @@ jobs:
       # =======================
       - name: Build site
         run: |
-          if [ "$BRANCH" != 'refs/heads/master' ]; then
-            hugo --gc --minify --cleanDestinationDir --destination public --baseURL https://staging.forrt.org
-          else
-            hugo --gc --minify --cleanDestinationDir --destination public
-          fi
+          hugo --gc --minify --cleanDestinationDir --destination public
         env:
-          BRANCH: ${{ github.ref }}
-          HUGO_ENV: ${{ github.ref != 'refs/heads/master' && 'staging' || 'production' }}
+          HUGO_ENV: production
 
       # =======================
       # Deployment Artifact
@@ -187,49 +182,16 @@ jobs:
           retention-days: 1
 
   #========================================
-  # Deploy website to staging GitHub Pages
-  #========================================
-  deploy-test:
-    name: Deploy - Test
-    runs-on: ubuntu-22.04
-    concurrency:
-      group: staging
-    permissions:
-      contents: write
-    needs: build
-    steps:
-      #========================================
-      # Download website artifact for staging deployment
-      #========================================
-      - name: Download Artifact - Website
-        uses: actions/download-artifact@v4
-        with:
-          name: forrt-website-${{ github.run_number }}
-          path: ${{ github.repository }}/forrt-website
-
-      #========================================
-      # Deploy website to staging GitHub Pages
-      #========================================
-      - name: Deploy - GitHub Pages
-        uses: peaceiris/actions-gh-pages@4f9cc6602d3f66b9c108549d475ec49e8ef4d45e
-        with:
-          personal_token: ${{ secrets.STAGING_GITHUB_TOKEN }}
-          publish_dir: ${{ github.repository }}/forrt-website
-          external_repository: forrtproject/webpage-staging
-          publish_branch: staging
-          cname: staging.forrt.org
-
-  #========================================
   # Deploy website to production GitHub Pages
+  # Note: Staging deployments are handled by staging-aggregate.yaml
   #========================================
   deploy-prod:
     name: Deploy - Production
     runs-on: ubuntu-22.04
     permissions:
       contents: write
-    needs:
-      - deploy-test
-    if: ((github.event_name == 'push' || github.event_name == 'workflow_dispatch') && github.ref == 'refs/heads/master' || github.event_name == 'repository_dispatch') && github.event.repository.fork == false
+    needs: build
+    if: github.event.repository.fork == false
     steps:
       #========================================
       # Download website artifact for production deployment
