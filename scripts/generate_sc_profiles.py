@@ -500,6 +500,15 @@ def generate_social_links(member):
     if member.get('email'):
         links.append(f'<a href="mailto:{member["email"]}" class="text-slate-400 hover:text-slate-800 transition-colors">{ICONS["mail"]}</a>')
     return "".join(links)
+def normalize_website_url(url):
+    if not url or not isinstance(url, str):
+        return ""
+    url = url.strip()
+    if "@" in url and not url.startswith("http"):
+        return ""
+    if not url.startswith("http://") and not url.startswith("https://"):
+        return f"https://{url}"
+    return url
 
 def main():
     print("=" * 60)
@@ -638,7 +647,7 @@ def main():
             "initials": get_initials(personal_name),
             "bio": bio_text,
             "email": personal_data.get('Email', '') if personal_data else '',
-            "website": personal_data.get('Weblink', '') if personal_data else '',
+            "website": normalize_website_url(personal_data.get('Weblink', '') if personal_data else '')
             "twitter": "", 
             "linkedin": "" 
         }
