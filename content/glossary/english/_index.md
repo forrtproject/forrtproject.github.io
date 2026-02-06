@@ -56,7 +56,7 @@ Following the success of Phase 1, we invite you to help us continue to improve t
 
 We aim to regularly implement suggested changes and improvements. If you believe an existing definition is incorrect please contact the project leads, we aim to correct any mistakes as quickly as possible. We see the glossary as a potential starting point for other projects and resources the community feels may be needed. Please contact us if you have suggestions for publications or have ideas for related projects that could use or adapt the glossary. 
 
-To receive updates please join [FORRT's Slack channel](https://join.slack.com/t/forrt/shared_invite/zt-alobr3z7-NOR0mTBfD1vKXn9qlOKqaQ). You can also contact [FORRT](info@forrt.org), and project leads [Sam Parsons](sam.parsons@psy.ox.ac.uk) and [Flávio Azevedo](mailto:flavio.azevedo@uni-jena.de). For information on Phase 1 of FORRT’s Glossary Project, see below.
+To receive updates please join [FORRT's Slack channel](https://join.slack.com/t/forrt/shared_invite/zt-alobr3z7-NOR0mTBfD1vKXn9qlOKqaQ). You can also contact [FORRT](mailto:info@forrt.org), and project leads [Sam Parsons](mailto:sam.parsons@psy.ox.ac.uk) and [Flávio Azevedo](mailto:flavio.azevedo@uni-jena.de). For information on Phase 1 of FORRT’s Glossary Project, see below.
 
 <!------
 <br>
