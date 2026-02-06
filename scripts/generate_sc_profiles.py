@@ -500,10 +500,13 @@ def generate_social_links(member):
     if member.get('email'):
         links.append(f'<a href="mailto:{member["email"]}" class="text-slate-400 hover:text-slate-800 transition-colors">{ICONS["mail"]}</a>')
     return "".join(links)
+
 def normalize_website_url(url):
     if not url or not isinstance(url, str):
         return ""
     url = url.strip()
+    if url.lower() == "nan":
+        return ""
     if "@" in url and not url.startswith("http"):
         return ""
     if not url.startswith("http://") and not url.startswith("https://"):
