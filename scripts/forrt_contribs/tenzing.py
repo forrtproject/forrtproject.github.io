@@ -234,7 +234,8 @@ def concatenate_contributions(group):
 
     # Format name once
     full_name = format_name(group.iloc[0])
-    group = group.sort_values(by='special_role', ascending=False)
+    # Sort: special roles first, then alphabetically by project name
+    group = group.sort_values(by=['special_role', 'Project Name'], ascending=[False, True])
 
     orcid_id = group.iloc[0]['ORCID iD']
 
