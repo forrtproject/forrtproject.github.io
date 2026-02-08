@@ -55,10 +55,15 @@
                         <span class="pub-pill {{ $typeClass }}">{{ $typeLabel }}</span>
 
                         {{/* Focus Area Pill */}}
-                        {{ if .focus_area }}
-                        {{ $focusClass := printf "pill-%s" (.focus_area | urlize) }}
-                        <span class="pub-pill {{ $focusClass }}">{{ .focus_area }}</span>
-                        {{ end }}
+                                                {{ if .focus_area }}
+                                                    {{/* Always split on comma, works for both string and array */}}
+                                                    {{ $focusAreas := split .focus_area "," }}
+                                                    {{ range $i, $fa := $focusAreas }}
+                                                        {{ $fa = trim $fa " " }}
+                                                        {{ $focusClass := printf "pill-%s" ($fa | urlize) }}
+                                                        <span class="pub-pill {{ $focusClass }}">{{ $fa }}</span>
+                                                    {{ end }}
+                                                {{ end }}
                     </div>
                     <span class="pub-year">{{ .year }}</span>
                 </div>
