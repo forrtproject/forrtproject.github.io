@@ -4,6 +4,9 @@ import re
 import html
 import json
 
+# Opt into future pandas behavior to silence FutureWarning about downcasting
+pd.set_option('future.no_silent_downcasting', True)
+
 def print_failures(failed_sheets):
     """Print a formatted list of failed sheets."""
     if failed_sheets:
@@ -11,17 +14,32 @@ def print_failures(failed_sheets):
         for failure in failed_sheets:
             print(f"  - {failure['project_name']}: {failure['error']}")
 
-# Tenzing directory
-csv_export_url = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vT_IaXiYtB3iAmtDZ_XiQKrToRkxOlkXNAeNU2SIT_J9PxvsQyptga6Gg9c8mSvDZpwY6d8skswIQYh/pub?output=csv&gid=0'
+def convert_to_csv_url(tenzing_url):
+    """Convert a Google Sheets edit URL to CSV export URL."""
+    # Extract spreadsheet ID
+    match = re.search(r'/d/([a-zA-Z0-9-_]+)', tenzing_url)
+    if not match:
+        raise ValueError(f"Could not extract spreadsheet ID from: {tenzing_url}")
+    spreadsheet_id = match.group(1)
+
+    # Extract gid if present (omit if not found to let Google default to first sheet)
+    gid_match = re.search(r'gid=(\d+)', tenzing_url)
+    if gid_match:
+        return f'https://docs.google.com/spreadsheets/d/{spreadsheet_id}/export?format=csv&gid={gid_match.group(1)}'
+    else:
+        return f'https://docs.google.com/spreadsheets/d/{spreadsheet_id}/export?format=csv'
+
+# TENZING SHEETS SOURCE - contains project names and original Tenzing links
+tenzing_source_url = 'https://docs.google.com/spreadsheets/d/1MUD54FQUhfcBKrvr5gCYoh2wgbJ6Lf7oAJRAqsQ-Nag/export?format=csv&gid=2027524754'
 extra_roles_url = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vSCsxHTnSSjYqhQSR2kT3gIYg82HiODjPat9y2TFPrZESYWxz4k8CZsOesXPD3C5dngZEGujtKmNZsa/pub?output=csv'
 
 # Use pandas to read the CSV
 try:
-    df = pd.read_csv(csv_export_url)
-    print(f"✓ Successfully loaded main Tenzing index with {len(df)} projects")
+    df = pd.read_csv(tenzing_source_url)
+    print(f"✓ Successfully loaded Tenzing source with {len(df)} projects")
 except Exception as e:
     # Catch all exceptions - we need the main index to proceed
-    print(f"✗ FATAL: Failed to load main Tenzing index: {str(e)}")
+    print(f"✗ FATAL: Failed to load Tenzing source: {str(e)}")
     raise
 
 try:
@@ -38,18 +56,19 @@ failed_sheets = []
 
 print("--- Reading Contributor Data ---")
 # Loop over both the Project Names and the Tenzing Links
-for project_name, url, project_url in zip(df['Project Name'], df['CSV Link'], df['Project URL']):
+for project_name, tenzing_link, project_url in zip(df['Project Name'], df['Tenzing Link'], df['Project URL']):
     try:
-        # Make sure each URL is transformed into a CSV export URL as shown above
-        data_frame = pd.read_csv(url)
-        
+        # Convert the Tenzing edit URL to a CSV export URL
+        csv_url = convert_to_csv_url(tenzing_link)
+        data_frame = pd.read_csv(csv_url)
+
         # Log the number of contributors read from the current project
         print(f"✓ Read {len(data_frame)} contributors from '{project_name}'.")
 
         # Add a new column with the project name
         data_frame['Project Name'] = project_name
         data_frame['Project URL'] = project_url
-        
+
         all_data_frames.append(data_frame)
     except Exception as e:
         # Catch all exceptions (network, parsing, etc.) to maximize robustness
@@ -58,7 +77,7 @@ for project_name, url, project_url in zip(df['Project Name'], df['CSV Link'], df
         print(error_msg)
         failed_sheets.append({
             'project_name': project_name,
-            'url': url,
+            'url': tenzing_link,
             'error': str(e)
         })
         continue
@@ -178,7 +197,10 @@ def format_name(row):
 merged_data['full_name'] = merged_data.apply(format_name, axis=1)
 
 # Propagate ORCID iD within each contributor's grouping
-merged_data['ORCID iD'] = merged_data.groupby('full_name')['ORCID iD'].transform(lambda x: x.ffill().bfill())
+merged_data['ORCID iD'] = merged_data.groupby('full_name')['ORCID iD'].transform(
+    lambda x: x.ffill().bfill()
+)
+
 
 # Helper function to normalize project/role names for data attributes
 def normalize_for_attribute(text):
