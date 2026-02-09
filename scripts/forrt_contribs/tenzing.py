@@ -13,6 +13,7 @@ load_dotenv()
 try:
     pd.set_option('future.no_silent_downcasting', True)
 except Exception:
+    # Older pandas versions may not support this option; ignore if unavailable.
     pass
 
 # Get the directory of the current script for relative paths
@@ -63,14 +64,29 @@ def print_failures(failed_sheets):
 
 def convert_to_csv_url(tenzing_url):
     """Convert a Google Sheets edit URL to CSV export URL."""
-    match = re.search(r'/d/([a-zA-Z0-9-_]+)', tenzing_url)
+    from urllib.parse import urlparse, parse_qs
+
+    parsed = urlparse(tenzing_url)
+
+    # Extract spreadsheet ID from path (e.g., /spreadsheets/d/ABC123/edit)
+    match = re.search(r'/d/([a-zA-Z0-9-_]{20,})', parsed.path)
     if not match:
-        raise ValueError(f"Could not extract spreadsheet ID from: {tenzing_url}")
+        raise ValueError(f"Could not extract valid spreadsheet ID from: {tenzing_url}")
     spreadsheet_id = match.group(1)
 
-    gid_match = re.search(r'gid=(\d+)', tenzing_url)
-    if gid_match:
-        return f'https://docs.google.com/spreadsheets/d/{spreadsheet_id}/export?format=csv&gid={gid_match.group(1)}'
+    # Extract gid from query string (?gid=123) or fragment (#gid=123)
+    gid = None
+    query_params = parse_qs(parsed.query)
+    if 'gid' in query_params:
+        gid = query_params['gid'][0]
+    else:
+        # Check fragment (e.g., #gid=123)
+        fragment_match = re.search(r'gid=(\d+)', parsed.fragment)
+        if fragment_match:
+            gid = fragment_match.group(1)
+
+    if gid:
+        return f'https://docs.google.com/spreadsheets/d/{spreadsheet_id}/export?format=csv&gid={gid}'
     else:
         return f'https://docs.google.com/spreadsheets/d/{spreadsheet_id}/export?format=csv'
 
@@ -118,7 +134,11 @@ def fetch_all_contributor_data(df_index):
 
         try:
             csv_url = convert_to_csv_url(tenzing_link)
-            data_frame = pd.read_csv(csv_url)
+            data_frame = pd.read_csv(
+                csv_url,
+                true_values=["TRUE", "True", "true"],
+                false_values=["FALSE", "False", "false", ""],
+            )
 
             print(f"✓ Read {len(data_frame)} contributors from '{project_name}'.")
 
@@ -202,7 +222,11 @@ else:
             "  2. Pull latest from master to get the cache file"
         )
 
-    merged_data = pd.read_csv(CACHE_FILE)
+    merged_data = pd.read_csv(
+        CACHE_FILE,
+        true_values=["TRUE", "True", "true"],
+        false_values=["FALSE", "False", "false", ""],
+    )
     print(f"✓ Loaded {len(merged_data)} rows from cache")
 
 # Load extra roles (always public)
