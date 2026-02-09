@@ -272,7 +272,7 @@ FORRT is driven by a **large and diverse community of contributors** that shape 
 <li class="contributor-group" id="0000-0002-3211-6871">
   <strong><a href="https://orcid.org/0000-0002-3211-6871">Susanne Adler</a></strong> contributed to
   <ul class="contributions-list">
-    <li class="contribution" data-projects="replication-research-m-cos-forrt-journal-editorial-team" data-roles="writing-review-and-editing"><a href="http://replicationresearch.org">Replication Research MüCOS/FORRT Journal - Editorial Team</a> with <em>Writing - review & editing</em></li>
+    <li class="contribution" data-projects="replication-research-journal-editorial-team" data-roles="writing-review-and-editing"><a href="http://replicationresearch.org">Replication Research Journal - Editorial Team</a> with <em>Writing - review & editing</em></li>
     <li class="contribution" data-projects="team-credit" data-roles="resources,visualization"><a href="https://forrt.org/contributors/">Team Credit</a> with <em>Resources</em> and <em>Visualization</em></li>
   </ul>
 </li>
@@ -886,7 +886,7 @@ FORRT is driven by a **large and diverse community of contributors** that shape 
 <li class="contributor-group" id="0000-0001-7824-7650">
   <strong><a href="https://orcid.org/0000-0001-7824-7650">Björn Brembs</a></strong> contributed to
   <ul class="contributions-list">
-    <li class="contribution" data-projects="replication-research-m-cos-forrt-journal-external-member" data-roles="writing-review-and-editing"><a href="http://replicationresearch.org">Replication Research MüCOS/FORRT Journal - External Member</a> with <em>Writing - review & editing</em></li>
+    <li class="contribution" data-projects="replication-research-journal-external-member" data-roles="writing-review-and-editing"><a href="http://replicationresearch.org">Replication Research Journal - External Member</a> with <em>Writing - review & editing</em></li>
   </ul>
 </li>
 
@@ -912,7 +912,7 @@ FORRT is driven by a **large and diverse community of contributors** that shape 
   <strong>Abel Brodeur</strong> contributed to
   <ul class="contributions-list">
     <li class="contribution" data-projects="guide-to-carrying-out-replication-studies" data-roles="writing-review-and-editing"><a href="https://lukasroeseler.github.io/replicationresearch_mockup/">Guide to Carrying out Replication Studies</a> with <em>Writing - review & editing</em></li>
-    <li class="contribution" data-projects="replication-research-m-cos-forrt-journal-external-member" data-roles="writing-review-and-editing"><a href="http://replicationresearch.org">Replication Research MüCOS/FORRT Journal - External Member</a> with <em>Writing - review & editing</em></li>
+    <li class="contribution" data-projects="replication-research-journal-external-member" data-roles="writing-review-and-editing"><a href="http://replicationresearch.org">Replication Research Journal - External Member</a> with <em>Writing - review & editing</em></li>
   </ul>
 </li>
 
@@ -946,7 +946,7 @@ FORRT is driven by a **large and diverse community of contributors** that shape 
 <li class="contributor-group" id="0000-0003-4837-0345">
   <strong><a href="https://orcid.org/0000-0003-4837-0345">Niko Busch</a></strong> contributed to
   <ul class="contributions-list">
-    <li class="contribution" data-projects="replication-research-m-cos-forrt-journal-external-member" data-roles="writing-review-and-editing"><a href="http://replicationresearch.org">Replication Research MüCOS/FORRT Journal - External Member</a> with <em>Writing - review & editing</em></li>
+    <li class="contribution" data-projects="replication-research-journal-external-member" data-roles="writing-review-and-editing"><a href="http://replicationresearch.org">Replication Research Journal - External Member</a> with <em>Writing - review & editing</em></li>
   </ul>
 </li>
 
@@ -979,7 +979,7 @@ FORRT is driven by a **large and diverse community of contributors** that shape 
 <li class="contributor-group" id="0000-0002-6456-5735">
   <strong><a href="https://orcid.org/0000-0002-6456-5735">Rickard Carlsson</a></strong> contributed to
   <ul class="contributions-list">
-    <li class="contribution" data-projects="replication-research-m-cos-forrt-journal-external-member" data-roles="writing-review-and-editing"><a href="http://replicationresearch.org">Replication Research MüCOS/FORRT Journal - External Member</a> with <em>Writing - review & editing</em></li>
+    <li class="contribution" data-projects="replication-research-journal-external-member" data-roles="writing-review-and-editing"><a href="http://replicationresearch.org">Replication Research Journal - External Member</a> with <em>Writing - review & editing</em></li>
   </ul>
 </li>
 
@@ -1191,7 +1191,7 @@ FORRT is driven by a **large and diverse community of contributors** that shape 
   <strong><a href="https://orcid.org/0000-0002-1954-2219">Vaidis C. David</a></strong> contributed to
   <ul class="contributions-list">
     <li class="contribution" data-projects="accessible-feedback-in-academia" data-roles="formal-analysis,resources,writing-original-draft,writing-review-and-editing">Accessible Feedback in Academia with <em>Formal analysis</em>, <em>Resources</em>, <em>Writing - original draft</em> and <em>Writing - review & editing</em></li>
-    <li class="contribution" data-projects="replication-research-m-cos-forrt-journal-external-member" data-roles="writing-review-and-editing"><a href="http://replicationresearch.org">Replication Research MüCOS/FORRT Journal - External Member</a> with <em>Writing - review & editing</em></li>
+    <li class="contribution" data-projects="replication-research-journal-external-member" data-roles="writing-review-and-editing"><a href="http://replicationresearch.org">Replication Research Journal - External Member</a> with <em>Writing - review & editing</em></li>
   </ul>
 </li>
 
@@ -1225,7 +1225,7 @@ FORRT is driven by a **large and diverse community of contributors** that shape 
   <ul class="contributions-list">
     <li class="contribution" data-projects="fred-forrt-replication-database" data-roles="resources"><a href="https://forrt.org/replication-hub/">FReD (FORRT Replication Database)</a> with <em>Resources</em></li>
     <li class="contribution" data-projects="replication-research-journal-advisory-board" data-roles="conceptualization"><a href="http://replicationresearch.org">Replication Research Journal - Advisory Board</a> with <em>Conceptualization</em></li>
-    <li class="contribution" data-projects="replication-research-m-cos-forrt-journal-external-member" data-roles="writing-review-and-editing"><a href="http://replicationresearch.org">Replication Research MüCOS/FORRT Journal - External Member</a> with <em>Writing - review & editing</em></li>
+    <li class="contribution" data-projects="replication-research-journal-external-member" data-roles="writing-review-and-editing"><a href="http://replicationresearch.org">Replication Research Journal - External Member</a> with <em>Writing - review & editing</em></li>
   </ul>
 </li>
 
@@ -1461,7 +1461,7 @@ Educators (POST-Edu) as Project co-lead</li>
     <li class="contribution" data-projects="mapping-open-science-communities" data-roles="investigation,validation,writing-review-and-editing"><a href="https://forrt.org/mapping_os/">Mapping Open Science Communities</a> with <em>Investigation</em>, <em>Validation</em> and <em>Writing - review & editing</em></li>
     <li class="contribution" data-projects="nwo-post-edu-grant" data-roles="conceptualization,writing-original-draft,writing-review-and-editing">NWO POST-EDU Grant with <em>Conceptualization</em>, <em>Writing - original draft</em> and <em>Writing - review & editing</em></li>
     <li class="contribution" data-projects="replication-paper" data-roles="methodology,writing-review-and-editing"><a href="https://forrt.org/positive-changes-replication-crisis/">Replication Paper</a> with <em>Methodology</em> and <em>Writing - review & editing</em></li>
-    <li class="contribution" data-projects="replication-research-m-cos-forrt-journal-editorial-team" data-roles="writing-original-draft,writing-review-and-editing"><a href="http://replicationresearch.org">Replication Research MüCOS/FORRT Journal - Editorial Team</a> with <em>Writing - original draft</em> and <em>Writing - review & editing</em></li>
+    <li class="contribution" data-projects="replication-research-journal-editorial-team" data-roles="writing-original-draft,writing-review-and-editing"><a href="http://replicationresearch.org">Replication Research Journal - Editorial Team</a> with <em>Writing - original draft</em> and <em>Writing - review & editing</em></li>
     <li class="contribution" data-projects="reversals-and-replications" data-roles="investigation"><a href="https://forrt.org/reversals/">Reversals & Replications</a> with <em>Investigation</em></li>
     <li class="contribution" data-projects="summaries" data-roles="resources,writing-review-and-editing"><a href="https://forrt.org/summaries/">Summaries</a> with <em>Resources</em> and <em>Writing - review & editing</em></li>
   </ul>
@@ -1533,7 +1533,7 @@ Educators (POST-Edu) as Project co-lead</li>
     <li class="contribution" data-projects="fred-forrt-replication-database" data-roles="investigation"><a href="https://forrt.org/replication-hub/">FReD (FORRT Replication Database)</a> with <em>Investigation</em></li>
     <li class="contribution" data-projects="glossary" data-roles="writing-review-and-editing"><a href="https://forrt.org/glossary/">Glossary</a> with <em>Writing - review & editing</em></li>
     <li class="contribution" data-projects="guide-to-carrying-out-replication-studies" data-roles="writing-review-and-editing"><a href="https://lukasroeseler.github.io/replicationresearch_mockup/">Guide to Carrying out Replication Studies</a> with <em>Writing - review & editing</em></li>
-    <li class="contribution" data-projects="replication-research-m-cos-forrt-journal-external-member" data-roles="writing-review-and-editing"><a href="http://replicationresearch.org">Replication Research MüCOS/FORRT Journal - External Member</a> with <em>Writing - review & editing</em></li>
+    <li class="contribution" data-projects="replication-research-journal-external-member" data-roles="writing-review-and-editing"><a href="http://replicationresearch.org">Replication Research Journal - External Member</a> with <em>Writing - review & editing</em></li>
     <li class="contribution" data-projects="reversals-and-replications" data-roles="investigation"><a href="https://forrt.org/reversals/">Reversals & Replications</a> with <em>Investigation</em></li>
   </ul>
 </li>
@@ -1898,7 +1898,7 @@ Educators (POST-Edu) as Project co-lead</li>
   <strong><a href="https://orcid.org/0000-0003-3087-1002">Janik Goltermann</a></strong> contributed to
   <ul class="contributions-list">
     <li class="contribution" data-projects="guide-to-carrying-out-replication-studies" data-roles="writing-review-and-editing"><a href="https://lukasroeseler.github.io/replicationresearch_mockup/">Guide to Carrying out Replication Studies</a> with <em>Writing - review & editing</em></li>
-    <li class="contribution" data-projects="replication-research-m-cos-forrt-journal-editorial-team" data-roles="writing-review-and-editing"><a href="http://replicationresearch.org">Replication Research MüCOS/FORRT Journal - Editorial Team</a> with <em>Writing - review & editing</em></li>
+    <li class="contribution" data-projects="replication-research-journal-editorial-team" data-roles="writing-review-and-editing"><a href="http://replicationresearch.org">Replication Research Journal - Editorial Team</a> with <em>Writing - review & editing</em></li>
   </ul>
 </li>
 
@@ -2002,7 +2002,7 @@ Educators (POST-Edu) as Project co-lead</li>
 <li class="contributor-group" id="0000-0002-8395-4357">
   <strong><a href="https://orcid.org/0000-0002-8395-4357">Ulrike Gut</a></strong> contributed to
   <ul class="contributions-list">
-    <li class="contribution" data-projects="replication-research-m-cos-forrt-journal-editorial-team" data-roles="writing-review-and-editing"><a href="http://replicationresearch.org">Replication Research MüCOS/FORRT Journal - Editorial Team</a> with <em>Writing - review & editing</em></li>
+    <li class="contribution" data-projects="replication-research-journal-editorial-team" data-roles="writing-review-and-editing"><a href="http://replicationresearch.org">Replication Research Journal - Editorial Team</a> with <em>Writing - review & editing</em></li>
   </ul>
 </li>
 
@@ -2068,7 +2068,7 @@ Educators (POST-Edu) as Project co-lead</li>
     <li class="contribution" data-projects="neurodiversity-annotated-reading-list" data-roles="investigation,writing-review-and-editing"><a href="https://elifesciences.org/articles/102467">Neurodiversity Annotated Reading List</a> with <em>Investigation</em> and <em>Writing - review & editing</em></li>
     <li class="contribution" data-projects="participatory-research-primer-bps" data-roles="writing-review-and-editing"><a href="https://doi.org/10.53841/bpscog.2023.1.8.23">Participatory Research Primer (BPS)</a> with <em>Writing - review & editing</em></li>
     <li class="contribution" data-projects="replication-paper" data-roles="writing-review-and-editing"><a href="https://forrt.org/positive-changes-replication-crisis/">Replication Paper</a> with <em>Writing - review & editing</em></li>
-    <li class="contribution" data-projects="replication-research-m-cos-forrt-journal-external-member" data-roles="writing-review-and-editing"><a href="http://replicationresearch.org">Replication Research MüCOS/FORRT Journal - External Member</a> with <em>Writing - review & editing</em></li>
+    <li class="contribution" data-projects="replication-research-journal-external-member" data-roles="writing-review-and-editing"><a href="http://replicationresearch.org">Replication Research Journal - External Member</a> with <em>Writing - review & editing</em></li>
     <li class="contribution" data-projects="reversals-and-replications" data-roles="conceptualization,data-curation,funding-acquisition,investigation,project-administration,writing-original-draft,writing-review-and-editing,project-coordinator"><a href="https://forrt.org/reversals/">Reversals & Replications</a> with <em>Conceptualization</em>, <em>Data curation</em>, <em>Funding acquisition</em>, <em>Investigation</em>, <em>Project administration</em>, <em>Writing - original draft</em>, <em>Writing - review & editing</em> and <em>Project Coordinator</em></li>
     <li class="contribution" data-projects="team-einstein-2022" data-roles="conceptualization,investigation,writing-original-draft,writing-review-and-editing">Team Einstein 2022 with <em>Conceptualization</em>, <em>Investigation</em>, <em>Writing - original draft</em> and <em>Writing - review & editing</em></li>
     <li class="contribution" data-projects="team-einstein-2023" data-roles="conceptualization,investigation,writing-original-draft,writing-review-and-editing">Team Einstein 2023 with <em>Conceptualization</em>, <em>Investigation</em>, <em>Writing - original draft</em> and <em>Writing - review & editing</em></li>
@@ -2745,7 +2745,7 @@ Educators (POST-Edu) as Project co-lead</li>
 <li class="contributor-group" id="000-0002-8113-2560">
   <strong><a href="https://orcid.org/000-0002-8113-2560">Max Korbmacher</a></strong> contributed to
   <ul class="contributions-list">
-    <li class="contribution" data-projects="replication-research-m-cos-forrt-journal-editorial-team" data-roles="writing-review-and-editing"><a href="http://replicationresearch.org">Replication Research MüCOS/FORRT Journal - Editorial Team</a> with <em>Writing - review & editing</em></li>
+    <li class="contribution" data-projects="replication-research-journal-editorial-team" data-roles="writing-review-and-editing"><a href="http://replicationresearch.org">Replication Research Journal - Editorial Team</a> with <em>Writing - review & editing</em></li>
   </ul>
 </li>
 
@@ -2841,7 +2841,7 @@ Educators (POST-Edu) as Project co-lead</li>
   <ul class="contributions-list">
     <li class="contribution" data-projects="ceres-manuscript" data-roles="writing-review-and-editing"><a href="https://osf.io/preprints/edarxiv/s73xb">CERES Manuscript</a> with <em>Writing - review & editing</em></li>
     <li class="contribution" data-projects="fred-forrt-replication-database" data-roles="data-curation,validation"><a href="https://forrt.org/replication-hub/">FReD (FORRT Replication Database)</a> with <em>Data curation</em> and <em>Validation</em></li>
-    <li class="contribution" data-projects="replication-research-m-cos-forrt-journal-editorial-team" data-roles="writing-review-and-editing"><a href="http://replicationresearch.org">Replication Research MüCOS/FORRT Journal - Editorial Team</a> with <em>Writing - review & editing</em></li>
+    <li class="contribution" data-projects="replication-research-journal-editorial-team" data-roles="writing-review-and-editing"><a href="http://replicationresearch.org">Replication Research Journal - Editorial Team</a> with <em>Writing - review & editing</em></li>
   </ul>
 </li>
 
@@ -2921,7 +2921,7 @@ Educators (POST-Edu) as Project co-lead</li>
 <li class="contributor-group" id="0000-0002-5839-8010">
   <strong><a href="https://orcid.org/0000-0002-5839-8010">Elen Le Foll</a></strong> contributed to
   <ul class="contributions-list">
-    <li class="contribution" data-projects="replication-research-m-cos-forrt-journal-editorial-team" data-roles="writing-review-and-editing"><a href="http://replicationresearch.org">Replication Research MüCOS/FORRT Journal - Editorial Team</a> with <em>Writing - review & editing</em></li>
+    <li class="contribution" data-projects="replication-research-journal-editorial-team" data-roles="writing-review-and-editing"><a href="http://replicationresearch.org">Replication Research Journal - Editorial Team</a> with <em>Writing - review & editing</em></li>
   </ul>
 </li>
 
@@ -3465,7 +3465,7 @@ Educators (POST-Edu) as Project co-lead</li>
 <li class="contributor-group">
   <strong>Claudia Mohr</strong> contributed to
   <ul class="contributions-list">
-    <li class="contribution" data-projects="replication-research-m-cos-forrt-journal-external-member" data-roles="funding-acquisition,software"><a href="http://replicationresearch.org">Replication Research MüCOS/FORRT Journal - External Member</a> with <em>Funding acquisition</em> and <em>Software</em></li>
+    <li class="contribution" data-projects="replication-research-journal-external-member" data-roles="funding-acquisition,software"><a href="http://replicationresearch.org">Replication Research Journal - External Member</a> with <em>Funding acquisition</em> and <em>Software</em></li>
   </ul>
 </li>
 
@@ -3522,7 +3522,7 @@ Educators (POST-Edu) as Project co-lead</li>
 <li class="contributor-group">
   <strong>Victoria Moser</strong> contributed to
   <ul class="contributions-list">
-    <li class="contribution" data-projects="replication-research-m-cos-forrt-journal-editorial-team" data-roles="conceptualization,resources"><a href="http://replicationresearch.org">Replication Research MüCOS/FORRT Journal - Editorial Team</a> with <em>Conceptualization</em> and <em>Resources</em></li>
+    <li class="contribution" data-projects="replication-research-journal-editorial-team" data-roles="conceptualization,resources"><a href="http://replicationresearch.org">Replication Research Journal - Editorial Team</a> with <em>Conceptualization</em> and <em>Resources</em></li>
   </ul>
 </li>
 
@@ -3572,7 +3572,7 @@ Educators (POST-Edu) as Project co-lead</li>
 <li class="contributor-group">
   <strong>Miriam Müller</strong> contributed to
   <ul class="contributions-list">
-    <li class="contribution" data-projects="replication-research-m-cos-forrt-journal-editorial-team" data-roles="writing-review-and-editing"><a href="http://replicationresearch.org">Replication Research MüCOS/FORRT Journal - Editorial Team</a> with <em>Writing - review & editing</em></li>
+    <li class="contribution" data-projects="replication-research-journal-editorial-team" data-roles="writing-review-and-editing"><a href="http://replicationresearch.org">Replication Research Journal - Editorial Team</a> with <em>Writing - review & editing</em></li>
   </ul>
 </li>
 
@@ -3755,7 +3755,7 @@ Educators (POST-Edu) as Project co-lead</li>
 <li class="contributor-group" id="0009-0003-5447-8034">
   <strong><a href="https://orcid.org/0009-0003-5447-8034">Prince Oppong Boakye</a></strong> contributed to
   <ul class="contributions-list">
-    <li class="contribution" data-projects="replication-research-m-cos-forrt-journal-editorial-team" data-roles="methodology,validation,writing-original-draft,writing-review-and-editing"><a href="http://replicationresearch.org">Replication Research MüCOS/FORRT Journal - Editorial Team</a> with <em>Methodology</em>, <em>Validation</em>, <em>Writing - original draft</em> and <em>Writing - review & editing</em></li>
+    <li class="contribution" data-projects="replication-research-journal-editorial-team" data-roles="methodology,validation,writing-original-draft,writing-review-and-editing"><a href="http://replicationresearch.org">Replication Research Journal - Editorial Team</a> with <em>Methodology</em>, <em>Validation</em>, <em>Writing - original draft</em> and <em>Writing - review & editing</em></li>
   </ul>
 </li>
 
@@ -4179,7 +4179,7 @@ Educators (POST-Edu) as Project co-lead</li>
 <li class="contributor-group" id="0000-0003-4078-3954">
   <strong><a href="https://orcid.org/0000-0003-4078-3954">Maike Richter</a></strong> contributed to
   <ul class="contributions-list">
-    <li class="contribution" data-projects="replication-research-m-cos-forrt-journal-external-member" data-roles="writing-review-and-editing"><a href="http://replicationresearch.org">Replication Research MüCOS/FORRT Journal - External Member</a> with <em>Writing - review & editing</em></li>
+    <li class="contribution" data-projects="replication-research-journal-external-member" data-roles="writing-review-and-editing"><a href="http://replicationresearch.org">Replication Research Journal - External Member</a> with <em>Writing - review & editing</em></li>
   </ul>
 </li>
 
@@ -4187,7 +4187,7 @@ Educators (POST-Edu) as Project co-lead</li>
 <li class="contributor-group" id="0000-0001-5990-0087">
   <strong><a href="https://orcid.org/0000-0001-5990-0087">Helene Richter</a></strong> contributed to
   <ul class="contributions-list">
-    <li class="contribution" data-projects="replication-research-m-cos-forrt-journal-external-member" data-roles="writing-review-and-editing"><a href="http://replicationresearch.org">Replication Research MüCOS/FORRT Journal - External Member</a> with <em>Writing - review & editing</em></li>
+    <li class="contribution" data-projects="replication-research-journal-external-member" data-roles="writing-review-and-editing"><a href="http://replicationresearch.org">Replication Research Journal - External Member</a> with <em>Writing - review & editing</em></li>
   </ul>
 </li>
 
@@ -4307,7 +4307,7 @@ Educators (POST-Edu) as Project co-lead</li>
     <li class="contribution" data-projects="fred-forrt-replication-database" data-roles="conceptualization,data-curation,formal-analysis,funding-acquisition,investigation,methodology,project-administration,resources,software,supervision,validation,visualization,writing-original-draft,writing-review-and-editing"><a href="https://forrt.org/replication-hub/">FReD (FORRT Replication Database)</a> with <em>Conceptualization</em>, <em>Data curation</em>, <em>Formal analysis</em>, <em>Funding acquisition</em>, <em>Investigation</em>, <em>Methodology</em>, <em>Project administration</em>, <em>Resources</em>, <em>Software</em>, <em>Supervision</em>, <em>Validation</em>, <em>Visualization</em>, <em>Writing - original draft</em> and <em>Writing - review & editing</em></li>
     <li class="contribution" data-projects="fred-r-package" data-roles="conceptualization,software"><a href="https://forrt.org/FReD/">FReD R package</a> with <em>Conceptualization</em> and <em>Software</em></li>
     <li class="contribution" data-projects="guide-to-carrying-out-replication-studies" data-roles="conceptualization,project-administration,supervision,writing-original-draft,writing-review-and-editing"><a href="https://lukasroeseler.github.io/replicationresearch_mockup/">Guide to Carrying out Replication Studies</a> with <em>Conceptualization</em>, <em>Project administration</em>, <em>Supervision</em>, <em>Writing - original draft</em> and <em>Writing - review & editing</em></li>
-    <li class="contribution" data-projects="replication-research-m-cos-forrt-journal-editorial-team" data-roles="conceptualization,data-curation,funding-acquisition,investigation,project-administration,resources,software,supervision,validation,visualization,writing-original-draft,writing-review-and-editing"><a href="http://replicationresearch.org">Replication Research MüCOS/FORRT Journal - Editorial Team</a> with <em>Conceptualization</em>, <em>Data curation</em>, <em>Funding acquisition</em>, <em>Investigation</em>, <em>Project administration</em>, <em>Resources</em>, <em>Software</em>, <em>Supervision</em>, <em>Validation</em>, <em>Visualization</em>, <em>Writing - original draft</em> and <em>Writing - review & editing</em></li>
+    <li class="contribution" data-projects="replication-research-journal-editorial-team" data-roles="conceptualization,data-curation,funding-acquisition,investigation,project-administration,resources,software,supervision,validation,visualization,writing-original-draft,writing-review-and-editing"><a href="http://replicationresearch.org">Replication Research Journal - Editorial Team</a> with <em>Conceptualization</em>, <em>Data curation</em>, <em>Funding acquisition</em>, <em>Investigation</em>, <em>Project administration</em>, <em>Resources</em>, <em>Software</em>, <em>Supervision</em>, <em>Validation</em>, <em>Visualization</em>, <em>Writing - original draft</em> and <em>Writing - review & editing</em></li>
     <li class="contribution" data-projects="reversals-and-replications" data-roles="project-manager,conceptualization,data-curation,funding-acquisition,investigation,software"><a href="https://forrt.org/reversals/">Reversals & Replications</a> as Project Manager and with <em>Conceptualization</em>, <em>Data curation</em>, <em>Funding acquisition</em>, <em>Investigation</em> and <em>Software</em></li>
     <li class="contribution" data-projects="team-curations" data-roles="resources"><a href="https://forrt.org/resources/">Team Curations</a> with <em>Resources</em></li>
     <li class="contribution" data-projects="team-einstein-2023" data-roles="conceptualization,investigation,writing-original-draft,writing-review-and-editing">Team Einstein 2023 with <em>Conceptualization</em>, <em>Investigation</em>, <em>Writing - original draft</em> and <em>Writing - review & editing</em></li>
@@ -4328,7 +4328,7 @@ Educators (POST-Edu) as Project co-lead</li>
   <strong><a href="https://orcid.org/0000-0001-7055-0567">Marianne Saam</a></strong> contributed to
   <ul class="contributions-list">
     <li class="contribution" data-projects="replication-research-journal-advisory-board" data-roles="conceptualization"><a href="http://replicationresearch.org">Replication Research Journal - Advisory Board</a> with <em>Conceptualization</em></li>
-    <li class="contribution" data-projects="replication-research-m-cos-forrt-journal-external-member" data-roles="writing-review-and-editing"><a href="http://replicationresearch.org">Replication Research MüCOS/FORRT Journal - External Member</a> with <em>Writing - review & editing</em></li>
+    <li class="contribution" data-projects="replication-research-journal-external-member" data-roles="writing-review-and-editing"><a href="http://replicationresearch.org">Replication Research Journal - External Member</a> with <em>Writing - review & editing</em></li>
   </ul>
 </li>
 
@@ -4382,7 +4382,7 @@ Educators (POST-Edu) as Project co-lead</li>
 <li class="contributor-group">
   <strong>Elisabeth Sawatzky</strong> contributed to
   <ul class="contributions-list">
-    <li class="contribution" data-projects="replication-research-m-cos-forrt-journal-external-member" data-roles="funding-acquisition,software"><a href="http://replicationresearch.org">Replication Research MüCOS/FORRT Journal - External Member</a> with <em>Funding acquisition</em> and <em>Software</em></li>
+    <li class="contribution" data-projects="replication-research-journal-external-member" data-roles="funding-acquisition,software"><a href="http://replicationresearch.org">Replication Research Journal - External Member</a> with <em>Funding acquisition</em> and <em>Software</em></li>
   </ul>
 </li>
 
@@ -4451,7 +4451,7 @@ Educators (POST-Edu) as Project co-lead</li>
 <li class="contributor-group" id="0000-0002-8282-3910">
   <strong><a href="https://orcid.org/0000-0002-8282-3910">Felix Schönbrodt</a></strong> contributed to
   <ul class="contributions-list">
-    <li class="contribution" data-projects="replication-research-m-cos-forrt-journal-external-member" data-roles="writing-review-and-editing"><a href="http://replicationresearch.org">Replication Research MüCOS/FORRT Journal - External Member</a> with <em>Writing - review & editing</em></li>
+    <li class="contribution" data-projects="replication-research-journal-external-member" data-roles="writing-review-and-editing"><a href="http://replicationresearch.org">Replication Research Journal - External Member</a> with <em>Writing - review & editing</em></li>
   </ul>
 </li>
 
@@ -4574,7 +4574,7 @@ Educators (POST-Edu) as Project co-lead</li>
     <li class="contribution" data-projects="open-educational-resources-chapter" data-roles="writing-review-and-editing"><a href="https://doi.org/10.35542/osf.io/sn693_v2">Open Educational Resources Chapter</a> with <em>Writing - review & editing</em></li>
     <li class="contribution" data-projects="open-research-book" data-roles="conceptualization,writing-original-draft"><a href="https://forrt.org/open-research-course/">Open Research Book</a> with <em>Conceptualization</em> and <em>Writing - original draft</em></li>
     <li class="contribution" data-projects="replication-research-journal-advisory-board" data-roles="conceptualization"><a href="http://replicationresearch.org">Replication Research Journal - Advisory Board</a> with <em>Conceptualization</em></li>
-    <li class="contribution" data-projects="replication-research-m-cos-forrt-journal-external-member" data-roles="writing-review-and-editing"><a href="http://replicationresearch.org">Replication Research MüCOS/FORRT Journal - External Member</a> with <em>Writing - review & editing</em></li>
+    <li class="contribution" data-projects="replication-research-journal-external-member" data-roles="writing-review-and-editing"><a href="http://replicationresearch.org">Replication Research Journal - External Member</a> with <em>Writing - review & editing</em></li>
   </ul>
 </li>
 
@@ -4813,7 +4813,7 @@ Educators (POST-Edu) as Project co-lead</li>
   <ul class="contributions-list">
     <li class="contribution" data-projects="academic-wheel-of-privilege" data-roles="writing-review-and-editing"><a href="https://forrt.org/awop/">Academic Wheel of Privilege</a> with <em>Writing - review & editing</em></li>
     <li class="contribution" data-projects="replication-research-journal-advisory-board" data-roles="conceptualization"><a href="http://replicationresearch.org">Replication Research Journal - Advisory Board</a> with <em>Conceptualization</em></li>
-    <li class="contribution" data-projects="replication-research-m-cos-forrt-journal-external-member" data-roles="writing-review-and-editing"><a href="http://replicationresearch.org">Replication Research MüCOS/FORRT Journal - External Member</a> with <em>Writing - review & editing</em></li>
+    <li class="contribution" data-projects="replication-research-journal-external-member" data-roles="writing-review-and-editing"><a href="http://replicationresearch.org">Replication Research Journal - External Member</a> with <em>Writing - review & editing</em></li>
   </ul>
 </li>
 
@@ -4988,7 +4988,7 @@ Educators (POST-Edu) as Project co-lead</li>
 <li class="contributor-group">
   <strong>Jens Unkenholz</strong> contributed to
   <ul class="contributions-list">
-    <li class="contribution" data-projects="replication-research-m-cos-forrt-journal-external-member" data-roles="funding-acquisition,software"><a href="http://replicationresearch.org">Replication Research MüCOS/FORRT Journal - External Member</a> with <em>Funding acquisition</em> and <em>Software</em></li>
+    <li class="contribution" data-projects="replication-research-journal-external-member" data-roles="funding-acquisition,software"><a href="http://replicationresearch.org">Replication Research Journal - External Member</a> with <em>Funding acquisition</em> and <em>Software</em></li>
   </ul>
 </li>
 
@@ -5136,7 +5136,7 @@ Educators (POST-Edu) as Project co-lead</li>
     <li class="contribution" data-projects="fred-forrt-replication-database" data-roles="investigation,resources"><a href="https://forrt.org/replication-hub/">FReD (FORRT Replication Database)</a> with <em>Investigation</em> and <em>Resources</em></li>
     <li class="contribution" data-projects="glossary" data-roles="writing-original-draft,writing-review-and-editing"><a href="https://forrt.org/glossary/">Glossary</a> with <em>Writing - original draft</em> and <em>Writing - review & editing</em></li>
     <li class="contribution" data-projects="impact-on-students" data-roles="resources,writing-review-and-editing"><a href="https://forrt.org/impact/">Impact on students</a> with <em>Resources</em> and <em>Writing - review & editing</em></li>
-    <li class="contribution" data-projects="replication-research-m-cos-forrt-journal-editorial-team" data-roles="writing-review-and-editing"><a href="http://replicationresearch.org">Replication Research MüCOS/FORRT Journal - Editorial Team</a> with <em>Writing - review & editing</em></li>
+    <li class="contribution" data-projects="replication-research-journal-editorial-team" data-roles="writing-review-and-editing"><a href="http://replicationresearch.org">Replication Research Journal - Editorial Team</a> with <em>Writing - review & editing</em></li>
     <li class="contribution" data-projects="reversals-and-replications" data-roles="investigation"><a href="https://forrt.org/reversals/">Reversals & Replications</a> with <em>Investigation</em></li>
     <li class="contribution" data-projects="summaries" data-roles="resources,writing-review-and-editing"><a href="https://forrt.org/summaries/">Summaries</a> with <em>Resources</em> and <em>Writing - review & editing</em></li>
     <li class="contribution" data-projects="team-credit" data-roles="conceptualization,project-administration,resources"><a href="https://forrt.org/contributors/">Team Credit</a> with <em>Conceptualization</em>, <em>Project administration</em> and <em>Resources</em></li>
@@ -5173,7 +5173,7 @@ Educators (POST-Edu) as Project co-lead</li>
 <li class="contributor-group" id="0000-0003-3855-2778">
   <strong><a href="https://orcid.org/0000-0003-3855-2778">Ingmar Visser</a></strong> contributed to
   <ul class="contributions-list">
-    <li class="contribution" data-projects="replication-research-m-cos-forrt-journal-editorial-team" data-roles="writing-review-and-editing"><a href="http://replicationresearch.org">Replication Research MüCOS/FORRT Journal - Editorial Team</a> with <em>Writing - review & editing</em></li>
+    <li class="contribution" data-projects="replication-research-journal-editorial-team" data-roles="writing-review-and-editing"><a href="http://replicationresearch.org">Replication Research Journal - Editorial Team</a> with <em>Writing - review & editing</em></li>
   </ul>
 </li>
 
@@ -5232,7 +5232,7 @@ Educators (POST-Edu) as Project co-lead</li>
     <li class="contribution" data-projects="guide-to-carrying-out-replication-studies" data-roles="conceptualization,writing-original-draft,writing-review-and-editing"><a href="https://lukasroeseler.github.io/replicationresearch_mockup/">Guide to Carrying out Replication Studies</a> with <em>Conceptualization</em>, <em>Writing - original draft</em> and <em>Writing - review & editing</em></li>
     <li class="contribution" data-projects="nwo-trackrep-grant" data-roles="conceptualization,writing-original-draft,writing-review-and-editing">NWO TRACKREP Grant with <em>Conceptualization</em>, <em>Writing - original draft</em> and <em>Writing - review & editing</em></li>
     <li class="contribution" data-projects="oscars-grant-application" data-roles="conceptualization,resources,writing-original-draft,writing-review-and-editing">OSCARS Grant Application with <em>Conceptualization</em>, <em>Resources</em>, <em>Writing - original draft</em> and <em>Writing - review & editing</em></li>
-    <li class="contribution" data-projects="replication-research-m-cos-forrt-journal-editorial-team" data-roles="conceptualization,data-curation,resources,supervision,validation,writing-original-draft,writing-review-and-editing"><a href="http://replicationresearch.org">Replication Research MüCOS/FORRT Journal - Editorial Team</a> with <em>Conceptualization</em>, <em>Data curation</em>, <em>Resources</em>, <em>Supervision</em>, <em>Validation</em>, <em>Writing - original draft</em> and <em>Writing - review & editing</em></li>
+    <li class="contribution" data-projects="replication-research-journal-editorial-team" data-roles="conceptualization,data-curation,resources,supervision,validation,writing-original-draft,writing-review-and-editing"><a href="http://replicationresearch.org">Replication Research Journal - Editorial Team</a> with <em>Conceptualization</em>, <em>Data curation</em>, <em>Resources</em>, <em>Supervision</em>, <em>Validation</em>, <em>Writing - original draft</em> and <em>Writing - review & editing</em></li>
     <li class="contribution" data-projects="reversals-and-replications" data-roles="project-manager,conceptualization,data-curation,funding-acquisition,investigation,project-administration,software"><a href="https://forrt.org/reversals/">Reversals & Replications</a> as Project Manager and with <em>Conceptualization</em>, <em>Data curation</em>, <em>Funding acquisition</em>, <em>Investigation</em>, <em>Project administration</em> and <em>Software</em></li>
     <li class="contribution" data-projects="team-credit" data-roles="conceptualization,data-curation,resources,visualization"><a href="https://forrt.org/contributors/">Team Credit</a> with <em>Conceptualization</em>, <em>Data curation</em>, <em>Resources</em> and <em>Visualization</em></li>
     <li class="contribution" data-projects="team-einstein-2023" data-roles="conceptualization,investigation,writing-original-draft,writing-review-and-editing">Team Einstein 2023 with <em>Conceptualization</em>, <em>Investigation</em>, <em>Writing - original draft</em> and <em>Writing - review & editing</em></li>
@@ -5718,7 +5718,7 @@ Educators (POST-Edu) as Project co-lead</li>
     <li class="contribution" data-projects="participatory-research-primer-bps" data-roles="writing-review-and-editing"><a href="https://doi.org/10.53841/bpscog.2023.1.8.23">Participatory Research Primer (BPS)</a> with <em>Writing - review & editing</em></li>
     <li class="contribution" data-projects="pedagogies" data-roles="conceptualization,data-curation,investigation,supervision,writing-original-draft,writing-review-and-editing"><a href="https://forrt.org/pedagogies/">Pedagogies</a> with <em>Conceptualization</em>, <em>Data curation</em>, <em>Investigation</em>, <em>Supervision</em>, <em>Writing - original draft</em> and <em>Writing - review & editing</em></li>
     <li class="contribution" data-projects="replication-paper" data-roles="methodology,project-administration,supervision,visualization,writing-review-and-editing"><a href="https://forrt.org/positive-changes-replication-crisis/">Replication Paper</a> with <em>Methodology</em>, <em>Project administration</em>, <em>Supervision</em>, <em>Visualization</em> and <em>Writing - review & editing</em></li>
-    <li class="contribution" data-projects="replication-research-m-cos-forrt-journal-editorial-team" data-roles="data-curation,resources,supervision,validation,writing-original-draft,writing-review-and-editing"><a href="http://replicationresearch.org">Replication Research MüCOS/FORRT Journal - Editorial Team</a> with <em>Data curation</em>, <em>Resources</em>, <em>Supervision</em>, <em>Validation</em>, <em>Writing - original draft</em> and <em>Writing - review & editing</em></li>
+    <li class="contribution" data-projects="replication-research-journal-editorial-team" data-roles="data-curation,resources,supervision,validation,writing-original-draft,writing-review-and-editing"><a href="http://replicationresearch.org">Replication Research Journal - Editorial Team</a> with <em>Data curation</em>, <em>Resources</em>, <em>Supervision</em>, <em>Validation</em>, <em>Writing - original draft</em> and <em>Writing - review & editing</em></li>
     <li class="contribution" data-projects="reversals-and-replications" data-roles="conceptualization,data-curation,funding-acquisition,investigation,project-administration,writing-original-draft,writing-review-and-editing,project-coordinator"><a href="https://forrt.org/reversals/">Reversals & Replications</a> with <em>Conceptualization</em>, <em>Data curation</em>, <em>Funding acquisition</em>, <em>Investigation</em>, <em>Project administration</em>, <em>Writing - original draft</em>, <em>Writing - review & editing</em> and <em>Project Coordinator</em></li>
     <li class="contribution" data-projects="summaries" data-roles="conceptualization,investigation,project-administration,resources,supervision,writing-review-and-editing"><a href="https://forrt.org/summaries/">Summaries</a> with <em>Conceptualization</em>, <em>Investigation</em>, <em>Project administration</em>, <em>Resources</em>, <em>Supervision</em> and <em>Writing - review & editing</em></li>
     <li class="contribution" data-projects="team-cohesion" data-roles="conceptualization,resources,supervision,writing-original-draft,writing-review-and-editing">Team Cohesion with <em>Conceptualization</em>, <em>Resources</em>, <em>Supervision</em>, <em>Writing - original draft</em> and <em>Writing - review & editing</em></li>
@@ -5955,12 +5955,12 @@ window.filterData = {
       "label": "Replication Research Journal - Advisory Board"
     },
     {
-      "value": "replication-research-m-cos-forrt-journal-editorial-team",
-      "label": "Replication Research M\u00fcCOS/FORRT Journal - Editorial Team"
+      "value": "replication-research-journal-editorial-team",
+      "label": "Replication Research Journal - Editorial Team"
     },
     {
-      "value": "replication-research-m-cos-forrt-journal-external-member",
-      "label": "Replication Research M\u00fcCOS/FORRT Journal - External Member"
+      "value": "replication-research-journal-external-member",
+      "label": "Replication Research Journal - External Member"
     },
     {
       "value": "reversals-and-replications",
@@ -6173,6 +6173,10 @@ window.filterData = {
       "label": "Project Coordinator"
     },
     {
+      "value": "project-manager",
+      "label": "Project Manager"
+    },
+    {
       "value": "project-administration",
       "label": "Project administration"
     },
@@ -6183,10 +6187,6 @@ window.filterData = {
     {
       "value": "project-lead",
       "label": "Project lead"
-    },
-    {
-      "value": "project-manager",
-      "label": "Project manager"
     },
     {
       "value": "resources",

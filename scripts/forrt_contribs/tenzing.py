@@ -12,7 +12,7 @@ load_dotenv()
 # This option may not exist in older pandas versions, so guard it
 try:
     pd.set_option('future.no_silent_downcasting', True)
-except Exception:
+except (pd.errors.OptionError, KeyError, AttributeError):
     # Older pandas versions may not support this option; ignore if unavailable.
     pass
 
@@ -92,11 +92,16 @@ def convert_to_csv_url(tenzing_url):
 
 
 def get_credentials():
-    """Get Google Sheets API credentials from environment or return None."""
+    """Get Google Sheets API credentials from environment or return None.
+
+    Returns None if no credentials are set (allowing cache fallback for local dev).
+    Raises an error if credentials exist but are invalid (fail loudly in CI).
+    """
     creds_json = os.environ.get('GSHEET_CREDENTIALS')
     if not creds_json:
-        return None
+        return None  # No credentials set - cache fallback OK for local dev
 
+    # Credentials exist - must be valid or fail loudly
     try:
         import gspread
         from google.oauth2.service_account import Credentials
@@ -107,9 +112,10 @@ def get_credentials():
             scopes=['https://www.googleapis.com/auth/spreadsheets.readonly']
         )
         return gspread.authorize(creds)
+    except json.JSONDecodeError as e:
+        raise RuntimeError(f"GSHEET_CREDENTIALS contains invalid JSON: {e}")
     except Exception as e:
-        print(f"⚠ Warning: Failed to initialize credentials: {e}")
-        return None
+        raise RuntimeError(f"Failed to initialize Google Sheets credentials: {e}")
 
 
 def fetch_index_from_api(client):
