@@ -9,7 +9,11 @@ from dotenv import load_dotenv
 load_dotenv()
 
 # Opt into future pandas behavior to silence FutureWarning about downcasting
-pd.set_option('future.no_silent_downcasting', True)
+# This option may not exist in older pandas versions, so guard it
+try:
+    pd.set_option('future.no_silent_downcasting', True)
+except Exception:
+    pass
 
 # Get the directory of the current script for relative paths
 try:
@@ -154,6 +158,8 @@ def fetch_all_contributor_data(df_index):
 # Check for credentials
 gsheet_client = get_credentials()
 failed_sheets = []
+total_projects = 0
+successful_projects = 0
 
 if gsheet_client:
     # WITH CREDENTIALS: Fetch fresh data from Google Sheets
@@ -161,10 +167,12 @@ if gsheet_client:
 
     # Fetch index sheet via API (private)
     df_index = fetch_index_from_api(gsheet_client)
-    print(f"✓ Successfully loaded Tenzing source with {len(df_index)} projects")
+    total_projects = len(df_index)
+    print(f"✓ Successfully loaded Tenzing source with {total_projects} projects")
 
     # Fetch all contributor data from individual sheets (public URLs)
     merged_data, failed_sheets = fetch_all_contributor_data(df_index)
+    successful_projects = total_projects - len(failed_sheets)
 
     # Save cache for local development (only essential columns, no sensitive data)
     cache_columns_present = [col for col in CACHE_COLUMNS if col in merged_data.columns]
@@ -174,6 +182,11 @@ if gsheet_client:
         cache_data['First name'].notna() & (cache_data['First name'] != '') &
         cache_data['Surname'].notna() & (cache_data['Surname'] != '')
     ]
+    # Sanitize string columns: strip whitespace and control characters (newlines, CRs)
+    for col in ['First name', 'Middle name', 'Surname', 'ORCID iD', 'Project Name', 'Project URL']:
+        if col in cache_data.columns:
+            cache_data[col] = cache_data[col].astype(str).str.replace(r'[\r\n\t]+', '', regex=True).str.strip()
+            cache_data[col] = cache_data[col].replace('nan', '')
     cache_data.to_csv(CACHE_FILE, index=False)
     print(f"💾 Cache saved to {CACHE_FILE} ({len(cache_data)} rows, {len(cache_columns_present)} columns)")
 
@@ -530,22 +543,25 @@ print("Note: Copy this file to content/contributors/tenzing.md before rendering 
 print("cp scripts/forrt_contribs/tenzing.md content/contributors/tenzing.md")
 
 # Save failure information to a JSON file for potential GitHub issue creation
-if failed_sheets:
-    failure_report_path = os.path.join(script_dir, 'tenzing_failures.json')
-    with open(failure_report_path, 'w') as f:
-        json.dump({
-            'timestamp': pd.Timestamp.now().isoformat(),
-            'total_projects': len(df),
-            'successful_projects': len(all_data_frames),
-            'failed_projects': len(failed_sheets),
-            'failures': failed_sheets
-        }, f, indent=2)
-    print(f"\n⚠ Failure report saved to: {failure_report_path}")
-    print(f"⚠ {len(failed_sheets)} project(s) failed - workflow should create an issue")
+# Only when running with credentials (fetching fresh data)
+failure_report_path = os.path.join(script_dir, 'tenzing_failures.json')
+if gsheet_client:
+    if failed_sheets:
+        with open(failure_report_path, 'w') as f:
+            json.dump({
+                'timestamp': pd.Timestamp.now().isoformat(),
+                'total_projects': total_projects,
+                'successful_projects': successful_projects,
+                'failed_projects': len(failed_sheets),
+                'failures': failed_sheets
+            }, f, indent=2)
+        print(f"\n⚠ Failure report saved to: {failure_report_path}")
+        print(f"⚠ {len(failed_sheets)} project(s) failed - workflow should create an issue")
+    else:
+        print("\n✓ All projects processed successfully!")
+        # Remove any existing failure report
+        if os.path.exists(failure_report_path):
+            os.remove(failure_report_path)
+            print("✓ Removed old failure report")
 else:
-    print("\n✓ All projects processed successfully!")
-    # Remove any existing failure report
-    failure_report_path = os.path.join(script_dir, 'tenzing_failures.json')
-    if os.path.exists(failure_report_path):
-        os.remove(failure_report_path)
-        print("✓ Removed old failure report")
+    print("\n✓ Generated from cache (no failure tracking in local mode)")
