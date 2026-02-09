@@ -438,6 +438,8 @@ with open(output_path, 'w') as file:
     file.write(combined_content)
 
 print(f"\nSuccessfully generated the file at: {output_path}")
+print("Note: Copy this file to content/contributors/tenzing.md before rendering the site:")
+print("cp scripts/forrt_contribs/tenzing.md content/contributors/tenzing.md")
 
 # Save failure information to a JSON file for potential GitHub issue creation
 if failed_sheets:
