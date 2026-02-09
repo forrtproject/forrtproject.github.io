@@ -4,4 +4,6 @@ pytz==2023.3
 tzdata==2023.3
 google-analytics-data
 google-auth
+gspread
+python-dotenv
 matplotlib
