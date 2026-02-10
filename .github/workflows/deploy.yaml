@@ -12,11 +12,6 @@ on:
     branches:
       - master
   workflow_dispatch:
-    inputs:
-      pr_number:
-        description: 'PR number to deploy (optional, for manual testing)'
-        required: false
-        type: string
   repository_dispatch:
     types: [data-update]
 
