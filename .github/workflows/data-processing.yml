@@ -161,7 +161,7 @@ jobs:
           node-version: '18'
           cache: 'npm'
           cache-dependency-path: bibtex_to_apa/package-lock.json
-
+          cache-dependency-path: bibtex_to_apa/package-lock.json
       #========================================
       # Install Node.js dependencies for bibliography processing
       #========================================
