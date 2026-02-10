@@ -243,6 +243,32 @@ jobs:
             exit 1
           fi
 
+      #========================================
+      # Update FReD citation (Weekly or Manual)
+      #========================================
+      - name: Update FReD Citation
+        continue-on-error: true  # Continue even if this step fails
+        run: |
+          echo "=== Updating FReD citation ==="
+          
+          # Check if it's a Sunday (day 0) OR manually triggered
+          CURRENT_DAY_OF_WEEK=$(date +%u)
+          if [ "$CURRENT_DAY_OF_WEEK" != "7" ] && [ "${{ github.event_name }}" != "workflow_dispatch" ]; then
+            echo "ℹ️ Skipping FReD citation update (not Sunday and not manual trigger)"
+            exit 0
+          fi
+          
+          echo "🔄 Running FReD citation update..."
+          python3 scripts/update_fred_citation.py
+          
+          if [ -f "static/data/fred_citation.txt" ]; then
+            echo "✅ FReD citation updated successfully"
+            echo "Citation length: $(wc -c < static/data/fred_citation.txt) bytes"
+          else
+            echo "❌ FReD citation file was not created"
+            exit 1
+          fi
+
       #=======================================================
       # Create a pull request for GA data updates on monthly runs
       #=======================================================
@@ -323,6 +349,7 @@ jobs:
             content/curated_resources/
             content/glossary/
             data/
+            static/data/
             content/contributor-analysis/
             content/publications/citation_chart.webp
           retention-days: 7
@@ -345,6 +372,12 @@ jobs:
           cp content/contributors/tenzing.md /tmp/generated-resources/ || true
           cp scripts/forrt_contribs/contributors_cache.csv /tmp/generated-resources/ || true
           cp data/ga_data.json /tmp/generated-resources/ga_data.json || true
+          
+          # Copy FReD citation if it exists
+          if [ -f static/data/fred_citation.txt ]; then
+            mkdir -p /tmp/generated-resources/static/data
+            cp static/data/fred_citation.txt /tmp/generated-resources/static/data/fred_citation.txt
+          fi
           
           # Copy additional generated files
           mkdir -p /tmp/generated-resources/contributor-analysis
@@ -377,7 +410,7 @@ jobs:
           pushd "$WORKTREE_DIR"
 
           # Ensure target directories exist
-          mkdir -p content/curated_resources content/contributors data content/contributor-analysis content/publications
+          mkdir -p content/curated_resources content/contributors data content/contributor-analysis content/publications static/data
 
           # Remove old generated resource files (but keep _index.md)
           find content/curated_resources -type f ! -name '_index.md' -delete 2>/dev/null || true
@@ -392,6 +425,9 @@ jobs:
           fi
           if [ -f /tmp/generated-resources/ga_data.json ]; then
             cp /tmp/generated-resources/ga_data.json data/ga_data.json
+          fi
+          if [ -f /tmp/generated-resources/static/data/fred_citation.txt ]; then
+            cp /tmp/generated-resources/static/data/fred_citation.txt static/data/fred_citation.txt
           fi
           if [ -f /tmp/generated-resources/summaries.json ]; then
             cp /tmp/generated-resources/summaries.json data/summaries.json
@@ -426,6 +462,7 @@ jobs:
             git add content/contributors/tenzing.md 2>/dev/null || true
             git add scripts/forrt_contribs/contributors_cache.csv 2>/dev/null || true
             git add data/ga_data.json 2>/dev/null || true
+            git add static/data/fred_citation.txt 2>/dev/null || true
             git add data/summaries.json 2>/dev/null || true
             git add content/contributor-analysis/ 2>/dev/null || true
             git add content/publications/citation_chart.webp 2>/dev/null || true
