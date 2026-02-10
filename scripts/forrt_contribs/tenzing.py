@@ -4,6 +4,56 @@ import re
 import html
 import json
 
+# Load environment variables from .env file (for local development)
+from dotenv import load_dotenv
+load_dotenv()
+
+# Opt into future pandas behavior to silence FutureWarning about downcasting
+# This option may not exist in older pandas versions, so guard it
+try:
+    pd.set_option('future.no_silent_downcasting', True)
+except (pd.errors.OptionError, KeyError, AttributeError):
+    # Older pandas versions may not support this option; ignore if unavailable.
+    pass
+
+# Get the directory of the current script for relative paths
+try:
+    script_dir = os.path.dirname(os.path.abspath(__file__))
+except NameError:
+    script_dir = '.'
+
+# Cache file path for local development without credentials
+CACHE_FILE = os.path.join(script_dir, 'contributors_cache.csv')
+
+# Non-role columns to include in cache 
+ID_COLUMNS = [
+    'First name', 'Middle name', 'Surname', 'ORCID iD',
+    'Project Name', 'Project URL',
+]
+
+# Index sheet configuration (private - requires credentials)
+INDEX_SPREADSHEET_ID = '1MUD54FQUhfcBKrvr5gCYoh2wgbJ6Lf7oAJRAqsQ-Nag'
+INDEX_WORKSHEET_NAME = 'TENZING SHEETS SOURCE'
+
+# Extra roles sheet 
+extra_roles_url = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vSCsxHTnSSjYqhQSR2kT3gIYg82HiODjPat9y2TFPrZESYWxz4k8CZsOesXPD3C5dngZEGujtKmNZsa/pub?output=csv'
+
+# Column mappings (defines which columns are roles)
+fields_url = "https://docs.google.com/spreadsheets/d/e/2PACX-1vT_IaXiYtB3iAmtDZ_XiQKrToRkxOlkXNAeNU2SIT_J9PxvsQyptga6Gg9c8mSvDZpwY6d8skswIQYh/pub?output=csv&gid=277271370"
+
+# Fetch column mappings 
+try:
+    column_mappings = pd.read_csv(fields_url)
+    print(f"✓ Successfully loaded column mappings with {len(column_mappings)} fields")
+except Exception as e:
+    print(f"✗ FATAL: Failed to load column mappings: {str(e)}")
+    raise
+
+# Build cache columns: id + role columns from mappings
+ROLE_COLUMNS = column_mappings['Fields'].tolist()
+CACHE_COLUMNS = ID_COLUMNS + ROLE_COLUMNS
+
+
 def print_failures(failed_sheets):
     """Print a formatted list of failed sheets."""
     if failed_sheets:
@@ -11,72 +61,187 @@ def print_failures(failed_sheets):
         for failure in failed_sheets:
             print(f"  - {failure['project_name']}: {failure['error']}")
 
-# Tenzing directory
-csv_export_url = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vT_IaXiYtB3iAmtDZ_XiQKrToRkxOlkXNAeNU2SIT_J9PxvsQyptga6Gg9c8mSvDZpwY6d8skswIQYh/pub?output=csv&gid=0'
-extra_roles_url = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vSCsxHTnSSjYqhQSR2kT3gIYg82HiODjPat9y2TFPrZESYWxz4k8CZsOesXPD3C5dngZEGujtKmNZsa/pub?output=csv'
 
-# Use pandas to read the CSV
-try:
-    df = pd.read_csv(csv_export_url)
-    print(f"✓ Successfully loaded main Tenzing index with {len(df)} projects")
-except Exception as e:
-    # Catch all exceptions - we need the main index to proceed
-    print(f"✗ FATAL: Failed to load main Tenzing index: {str(e)}")
-    raise
+def convert_to_csv_url(tenzing_url):
+    """Convert a Google Sheets edit URL to CSV export URL."""
+    from urllib.parse import urlparse, parse_qs
 
+    parsed = urlparse(tenzing_url)
+
+    # Extract spreadsheet ID from path (e.g., /spreadsheets/d/ABC123/edit)
+    match = re.search(r'/d/([a-zA-Z0-9-_]{20,})', parsed.path)
+    if not match:
+        raise ValueError(f"Could not extract valid spreadsheet ID from: {tenzing_url}")
+    spreadsheet_id = match.group(1)
+
+    # Extract gid from query string (?gid=123) or fragment (#gid=123)
+    gid = None
+    query_params = parse_qs(parsed.query)
+    if 'gid' in query_params:
+        gid = query_params['gid'][0]
+    else:
+        # Check fragment (e.g., #gid=123)
+        fragment_match = re.search(r'gid=(\d+)', parsed.fragment)
+        if fragment_match:
+            gid = fragment_match.group(1)
+
+    if gid:
+        return f'https://docs.google.com/spreadsheets/d/{spreadsheet_id}/export?format=csv&gid={gid}'
+    else:
+        return f'https://docs.google.com/spreadsheets/d/{spreadsheet_id}/export?format=csv'
+
+
+def get_credentials():
+    """Get Google Sheets API credentials from environment or return None.
+
+    Returns None if no credentials are set (allowing cache fallback for local dev).
+    Raises an error if credentials exist but are invalid (fail loudly in CI).
+    """
+    creds_json = os.environ.get('GSHEET_CREDENTIALS')
+    if not creds_json:
+        return None  # No credentials set - cache fallback OK for local dev
+
+    # Credentials exist - must be valid or fail loudly
+    try:
+        import gspread
+        from google.oauth2.service_account import Credentials
+
+        creds_dict = json.loads(creds_json)
+        creds = Credentials.from_service_account_info(
+            creds_dict,
+            scopes=['https://www.googleapis.com/auth/spreadsheets.readonly']
+        )
+        return gspread.authorize(creds)
+    except json.JSONDecodeError as e:
+        raise RuntimeError(f"GSHEET_CREDENTIALS contains invalid JSON: {e}")
+    except Exception as e:
+        raise RuntimeError(f"Failed to initialize Google Sheets credentials: {e}")
+
+
+def fetch_index_from_api(client):
+    """Fetch the index sheet using Google Sheets API."""
+    print("📡 Fetching index sheet via API (private)...")
+    sheet = client.open_by_key(INDEX_SPREADSHEET_ID)
+    worksheet = sheet.worksheet(INDEX_WORKSHEET_NAME)
+    data = worksheet.get_all_records()
+    return pd.DataFrame(data)
+
+
+def fetch_all_contributor_data(df_index):
+    """Fetch contributor data from all Tenzing sheets."""
+    all_data_frames = []
+    failed_sheets = []
+
+    print("--- Reading Contributor Data ---")
+    for _, row in df_index.iterrows():
+        project_name = row['Project Name']
+        tenzing_link = row['Tenzing Link']
+        project_url = row.get('Project URL', '')
+
+        try:
+            csv_url = convert_to_csv_url(tenzing_link)
+            data_frame = pd.read_csv(
+                csv_url,
+                true_values=["TRUE", "True", "true"],
+                false_values=["FALSE", "False", "false", ""],
+            )
+
+            print(f"✓ Read {len(data_frame)} contributors from '{project_name}'.")
+
+            data_frame['Project Name'] = project_name
+            data_frame['Project URL'] = project_url
+
+            all_data_frames.append(data_frame)
+        except Exception as e:
+            error_msg = f"✗ Failed to read '{project_name}': {str(e)}"
+            print(error_msg)
+            failed_sheets.append({
+                'project_name': project_name,
+                'url': tenzing_link,
+                'error': str(e)
+            })
+            continue
+
+    if not all_data_frames:
+        error_msg = "✗ FATAL: No project data could be loaded. All sheets failed."
+        print(error_msg)
+        print_failures(failed_sheets)
+        raise RuntimeError(error_msg)
+
+    print(f"\n✓ Successfully loaded {len(all_data_frames)} out of {len(df_index)} projects")
+    if failed_sheets:
+        print(f"⚠ Warning: {len(failed_sheets)} project(s) failed to load:")
+        print_failures(failed_sheets)
+
+    merged_data = pd.concat(all_data_frames, ignore_index=True)
+    return merged_data, failed_sheets
+
+
+# =============================================================================
+# MAIN DATA LOADING LOGIC
+# =============================================================================
+
+# Check for credentials
+gsheet_client = get_credentials()
+failed_sheets = []
+total_projects = 0
+successful_projects = 0
+
+if gsheet_client:
+    # WITH CREDENTIALS: Fetch fresh data from Google Sheets
+    print("🔐 Credentials found - fetching fresh data from Google Sheets")
+
+    # Fetch index sheet via API (private)
+    df_index = fetch_index_from_api(gsheet_client)
+    total_projects = len(df_index)
+    print(f"✓ Successfully loaded Tenzing source with {total_projects} projects")
+
+    # Fetch all contributor data from individual sheets (public URLs)
+    merged_data, failed_sheets = fetch_all_contributor_data(df_index)
+    successful_projects = total_projects - len(failed_sheets)
+
+    # Save cache for local development (only essential columns, no sensitive data)
+    cache_columns_present = [col for col in CACHE_COLUMNS if col in merged_data.columns]
+    # Filter to only rows with actual contributor data (First name and Surname present)
+    cache_data = merged_data[cache_columns_present].copy()
+    cache_data = cache_data[
+        cache_data['First name'].notna() & (cache_data['First name'] != '') &
+        cache_data['Surname'].notna() & (cache_data['Surname'] != '')
+    ]
+    # Sanitize string columns: strip whitespace and control characters (newlines, CRs)
+    for col in ['First name', 'Middle name', 'Surname', 'ORCID iD', 'Project Name', 'Project URL']:
+        if col in cache_data.columns:
+            cache_data[col] = cache_data[col].astype(str).str.replace(r'[\r\n\t]+', '', regex=True).str.strip()
+            cache_data[col] = cache_data[col].replace('nan', '')
+    cache_data.to_csv(CACHE_FILE, index=False)
+    print(f"💾 Cache saved to {CACHE_FILE} ({len(cache_data)} rows, {len(cache_columns_present)} columns)")
+
+else:
+    # WITHOUT CREDENTIALS: Use cached data
+    print("🔓 No credentials found - using cached data for local development")
+
+    if not os.path.exists(CACHE_FILE):
+        raise RuntimeError(
+            f"No credentials and no cache file found at {CACHE_FILE}\n"
+            "Either:\n"
+            "  1. Set GSHEET_CREDENTIALS in .env file, or\n"
+            "  2. Pull latest from master to get the cache file"
+        )
+
+    merged_data = pd.read_csv(
+        CACHE_FILE,
+        true_values=["TRUE", "True", "true"],
+        false_values=["FALSE", "False", "false", ""],
+    )
+    print(f"✓ Loaded {len(merged_data)} rows from cache")
+
+# Load extra roles (always public)
 try:
     df_roles = pd.read_csv(extra_roles_url)
     print(f"✓ Successfully loaded extra roles with {len(df_roles)} entries")
 except Exception as e:
-    # Catch all exceptions - we need the extra roles to proceed
     print(f"✗ FATAL: Failed to load extra roles: {str(e)}")
     raise
-
-# Assuming 'df' contains the index data with Tenzing Links
-all_data_frames = []
-failed_sheets = []
-
-print("--- Reading Contributor Data ---")
-# Loop over both the Project Names and the Tenzing Links
-for project_name, url, project_url in zip(df['Project Name'], df['CSV Link'], df['Project URL']):
-    try:
-        # Make sure each URL is transformed into a CSV export URL as shown above
-        data_frame = pd.read_csv(url)
-        
-        # Log the number of contributors read from the current project
-        print(f"✓ Read {len(data_frame)} contributors from '{project_name}'.")
-
-        # Add a new column with the project name
-        data_frame['Project Name'] = project_name
-        data_frame['Project URL'] = project_url
-        
-        all_data_frames.append(data_frame)
-    except Exception as e:
-        # Catch all exceptions (network, parsing, etc.) to maximize robustness
-        # Log the failure and continue processing other sheets
-        error_msg = f"✗ Failed to read '{project_name}': {str(e)}"
-        print(error_msg)
-        failed_sheets.append({
-            'project_name': project_name,
-            'url': url,
-            'error': str(e)
-        })
-        continue
-
-# Check if we successfully loaded at least one project
-if not all_data_frames:
-    error_msg = "✗ FATAL: No project data could be loaded. All sheets failed."
-    print(error_msg)
-    print_failures(failed_sheets)
-    raise RuntimeError(error_msg)
-
-print(f"\n✓ Successfully loaded {len(all_data_frames)} out of {len(df)} projects")
-if failed_sheets:
-    print(f"⚠ Warning: {len(failed_sheets)} project(s) failed to load:")
-    print_failures(failed_sheets)
-
-# Concatenate all data frames
-merged_data = pd.concat(all_data_frames, ignore_index=True)
 
 def concatenate_true_columns(row, columns):
     true_columns = [col for col in columns if pd.notna(row[col]) and row[col]]
@@ -97,15 +262,7 @@ def concatenate_true_columns(row, columns):
     else:
         return 'with ' + ', '.join(f'*{col}*' for col in true_columns[:-1]) + (' and ' if len(true_columns) > 1 else '') + f'*{true_columns[-1]}*'
 
-# List of column names to check for TRUE values
-fields_url = "https://docs.google.com/spreadsheets/d/e/2PACX-1vT_IaXiYtB3iAmtDZ_XiQKrToRkxOlkXNAeNU2SIT_J9PxvsQyptga6Gg9c8mSvDZpwY6d8skswIQYh/pub?output=csv&gid=277271370"
-
-try:
-    column_mappings = pd.read_csv(fields_url)
-    print(f"✓ Successfully loaded column mappings with {len(column_mappings)} fields")
-except Exception as e:
-    print(f"✗ FATAL: Failed to load column mappings: {str(e)}")
-    raise
+# List of column names to check for TRUE values (column_mappings loaded earlier)
 
 # Extracting Column A (Fields) as columns_to_check
 columns_to_check = column_mappings['Fields'].tolist()
@@ -178,7 +335,10 @@ def format_name(row):
 merged_data['full_name'] = merged_data.apply(format_name, axis=1)
 
 # Propagate ORCID iD within each contributor's grouping
-merged_data['ORCID iD'] = merged_data.groupby('full_name')['ORCID iD'].transform(lambda x: x.ffill().bfill())
+merged_data['ORCID iD'] = merged_data.groupby('full_name')['ORCID iD'].transform(
+    lambda x: x.ffill().bfill()
+)
+
 
 # Helper function to normalize project/role names for data attributes
 def normalize_for_attribute(text):
@@ -212,7 +372,8 @@ def concatenate_contributions(group):
 
     # Format name once
     full_name = format_name(group.iloc[0])
-    group = group.sort_values(by='special_role', ascending=False)
+    # Sort: special roles first, then alphabetically by project name
+    group = group.sort_values(by=['special_role', 'Project Name'], ascending=[False, True])
 
     orcid_id = group.iloc[0]['ORCID iD']
 
@@ -392,13 +553,6 @@ window.filterData = {json.dumps(filter_data, indent=2)};
 print("\n--- Processing Complete ---")
 print(f"Total number of unique contributors after deduplication: {len(summary)}")
 
-# Get the directory of the current script
-# Using a try-except block in case __file__ is not defined (e.g., in a notebook)
-try:
-    script_dir = os.path.dirname(os.path.abspath(__file__))
-except NameError:
-    script_dir = '.' # Default to the current directory
-
 # Construct the paths for the template and output files
 template_path = os.path.join(script_dir, 'tenzing_template.md')
 output_path = os.path.join(script_dir, 'tenzing.md')
@@ -415,24 +569,29 @@ with open(output_path, 'w') as file:
     file.write(combined_content)
 
 print(f"\nSuccessfully generated the file at: {output_path}")
+print("Note: Copy this file to content/contributors/tenzing.md before rendering the site:")
+print("cp scripts/forrt_contribs/tenzing.md content/contributors/tenzing.md")
 
 # Save failure information to a JSON file for potential GitHub issue creation
-if failed_sheets:
-    failure_report_path = os.path.join(script_dir, 'tenzing_failures.json')
-    with open(failure_report_path, 'w') as f:
-        json.dump({
-            'timestamp': pd.Timestamp.now().isoformat(),
-            'total_projects': len(df),
-            'successful_projects': len(all_data_frames),
-            'failed_projects': len(failed_sheets),
-            'failures': failed_sheets
-        }, f, indent=2)
-    print(f"\n⚠ Failure report saved to: {failure_report_path}")
-    print(f"⚠ {len(failed_sheets)} project(s) failed - workflow should create an issue")
+# Only when running with credentials (fetching fresh data)
+failure_report_path = os.path.join(script_dir, 'tenzing_failures.json')
+if gsheet_client:
+    if failed_sheets:
+        with open(failure_report_path, 'w') as f:
+            json.dump({
+                'timestamp': pd.Timestamp.now().isoformat(),
+                'total_projects': total_projects,
+                'successful_projects': successful_projects,
+                'failed_projects': len(failed_sheets),
+                'failures': failed_sheets
+            }, f, indent=2)
+        print(f"\n⚠ Failure report saved to: {failure_report_path}")
+        print(f"⚠ {len(failed_sheets)} project(s) failed - workflow should create an issue")
+    else:
+        print("\n✓ All projects processed successfully!")
+        # Remove any existing failure report
+        if os.path.exists(failure_report_path):
+            os.remove(failure_report_path)
+            print("✓ Removed old failure report")
 else:
-    print("\n✓ All projects processed successfully!")
-    # Remove any existing failure report
-    failure_report_path = os.path.join(script_dir, 'tenzing_failures.json')
-    if os.path.exists(failure_report_path):
-        os.remove(failure_report_path)
-        print("✓ Removed old failure report")
+    print("\n✓ Generated from cache (no failure tracking in local mode)")
