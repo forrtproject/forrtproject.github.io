@@ -157,6 +157,25 @@ subtitle = ""
   margin-bottom: 10px;
 }
 
+#filter-collapsed {
+  margin-bottom: 2em;
+  padding: 10px 15px;
+  background-color: transparent;
+  border: 2px solid #8e0000;
+  border-left-width: 6px;
+  border-radius: 4px;
+}
+
+#filter-collapsed a {
+  color: #8e0000;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+#filter-collapsed a:hover {
+  text-decoration: underline;
+}
+
 </style>
 
 <script>
