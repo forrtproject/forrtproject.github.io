@@ -12,17 +12,17 @@ content:
     - name: All
       FORRT_clusters: "*"
     - name: Reproducible Analyses
-      FORRT_clusters: Reproducible Analyses
+      FORRT_clusters: reproducible-analyses
     - name: Open Data and Materials
-      FORRT_clusters: Open Data and Materials
+      FORRT_clusters: open-data-and-materials
     - name: Reproducibility and Replicability Knowledge
-      FORRT_clusters: Reproducibility and Replicability Knowledge
+      FORRT_clusters: reproducibility-and-replicability-knowledge
     - name: Replication Research
-      FORRT_clusters: Replication Research
+      FORRT_clusters: replication-research
     - name: Conceptual and Statistical Knowledge
-      FORRT_clusters: Conceptual and Statistical Knowledge
+      FORRT_clusters: conceptual-and-statistical-knowledge
     - name: Preregistration
-      FORRT_clusters: Preregistration
+      FORRT_clusters: preregistration
 design:
   columns: "1"
   view: 3
