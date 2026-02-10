@@ -25,6 +25,6 @@ Use our [Additions Form](https://forms.gle/MSBWR87GchDo8fED7) to add information
 
 You can find the Open Research Games Portal [here](https://forrtapps.shinyapps.io/open-research-games-portal/)
 
-We're continuing to improve the Portal and would love your feedback on both the database and our forms. Please reach out to [games@forrt.org](games@forrt.org) with any comments or suggestions.
+We're continuing to improve the Portal and would love your feedback on both the database and our forms. Please reach out to [games@forrt.org](mailto:games@forrt.org) with any comments or suggestions.
 
 ---
