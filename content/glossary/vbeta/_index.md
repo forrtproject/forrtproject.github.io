@@ -32,7 +32,7 @@ This means we managed to go from an ambitious idea to a full blown crowd-sourced
 
 ***Importantly, we are preparing for Phase 2*** where FORRT will again open every term for discussion, suggestions, and editing aiming at the improvement of existing definitions, extension the scope of terms, and translation to other languages to increase access. We are trying to set everything up as we already broke google-docs. So we are considering several options to maximize (and facilitate) discussion and exchanges. If you have ideas, please contact us. ***Instructions will follow soon in this page.***
 
-To receive updates please join [FORRT's Slack channel](https://join.slack.com/t/forrt/shared_invite/zt-alobr3z7-NOR0mTBfD1vKXn9qlOKqaQ). You can also contact [FORRT](info@forrt.org), and project leads [Sam Parsons](sam.parsons@psy.ox.ac.uk) and [Flávio Azevedo](mailto:flavio.azevedo@uni-jena.de). For information on Phase 1 of FORRT’s Glossary Project, see below.
+To receive updates please join [FORRT's Slack channel](https://join.slack.com/t/forrt/shared_invite/zt-alobr3z7-NOR0mTBfD1vKXn9qlOKqaQ). You can also contact [FORRT](info@forrt.org), and project leads [Sam Parsons](mailto:sam.parsons@psy.ox.ac.uk) and [Flávio Azevedo](mailto:flavio.azevedo@uni-jena.de). For information on Phase 1 of FORRT’s Glossary Project, see below.
 
 <br>
 {{% alert note %}}
