@@ -16,44 +16,6 @@ permissions:
   pull-requests: read
 
 jobs:
-  cleanup-staging:
-    name: Cleanup Staging Aggregate Branches
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
-
-      - name: Delete old staging branches
-        env:
-          DRY_RUN: ${{ inputs.dry_run }}
-        run: |
-          echo "Fetching all branches..."
-          git fetch --all --prune
-
-          echo "Listing staging-aggregate branches..."
-          # Get branches matching pattern, sort by committer date (descending), skip first 5
-          BRANCHES_TO_DELETE=$(git branch -r --list 'origin/staging-aggregate-*' --sort=-committerdate | tail -n +6 | sed 's/origin\///')
-          
-          if [ -z "$BRANCHES_TO_DELETE" ]; then
-            echo "No old staging branches to delete."
-            exit 0
-          fi
-
-          echo "Found branches to delete:"
-          echo "$BRANCHES_TO_DELETE"
-
-          for branch in $BRANCHES_TO_DELETE; do
-            branch=$(echo "$branch" | xargs) # trim whitespace
-            if [ "$DRY_RUN" = "true" ]; then
-              echo "[DRY RUN] Would delete: $branch"
-            else
-              echo "Deleting: $branch"
-              git push origin --delete "$branch" || echo "Failed to delete $branch"
-            fi
-          done
-
   cleanup-merged:
     name: Cleanup Merged Branches
     runs-on: ubuntu-latest
