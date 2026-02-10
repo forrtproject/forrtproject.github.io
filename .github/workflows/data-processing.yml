@@ -158,6 +158,8 @@ jobs:
       - name: Run Tenzing script
         continue-on-error: true  # Continue even if this step fails
         run: python3 scripts/forrt_contribs/tenzing.py
+        env:
+          GSHEET_CREDENTIALS: ${{ secrets.GSHEET_CREDENTIALS }}
 
       #========================================
       # Check for Tenzing failures and create issue if needed
@@ -343,6 +345,7 @@ jobs:
           name: data-artifact
           path: |
             content/contributors/tenzing.md
+            scripts/forrt_contribs/contributors_cache.csv
             content/curated_resources/
             content/glossary/
             data/
@@ -367,6 +370,7 @@ jobs:
           mkdir -p /tmp/generated-resources
           cp -r content/curated_resources /tmp/generated-resources/
           cp content/contributors/tenzing.md /tmp/generated-resources/ || true
+          cp scripts/forrt_contribs/contributors_cache.csv /tmp/generated-resources/ || true
           cp data/ga_data.json /tmp/generated-resources/ga_data.json || true
           
           # Copy FReD citation if it exists
@@ -428,7 +432,11 @@ jobs:
           if [ -f /tmp/generated-resources/summaries.json ]; then
             cp /tmp/generated-resources/summaries.json data/summaries.json
           fi
-          
+          if [ -f /tmp/generated-resources/contributors_cache.csv ]; then
+            mkdir -p scripts/forrt_contribs
+            cp /tmp/generated-resources/contributors_cache.csv scripts/forrt_contribs/
+          fi
+
           # Copy contributor analysis and citation chart
           cp -r /tmp/generated-resources/contributor-analysis/* content/contributor-analysis/ || true
           if [ -f /tmp/generated-resources/publications/citation_chart.webp ]; then
@@ -452,6 +460,7 @@ jobs:
             # Add all potential files
             git add content/curated_resources/ 2>/dev/null || true
             git add content/contributors/tenzing.md 2>/dev/null || true
+            git add scripts/forrt_contribs/contributors_cache.csv 2>/dev/null || true
             git add data/ga_data.json 2>/dev/null || true
             git add static/data/fred_citation.txt 2>/dev/null || true
             git add data/summaries.json 2>/dev/null || true
