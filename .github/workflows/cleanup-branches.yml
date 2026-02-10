@@ -36,8 +36,8 @@ jobs:
           PROTECTED_BRANCHES="master|main|staging|production|gh-pages"
 
           echo "Finding merged branches..."
-          # List remote branches merged into origin/master, exclude protected ones
-          MERGED_BRANCHES=$(git branch -r --merged origin/master | grep -vE "HEAD|$PROTECTED_BRANCHES" | sed 's/origin\///')
+          # List remote branches merged into origin/master, exclude HEAD and fully matching protected branches
+          MERGED_BRANCHES=$(git branch -r --merged origin/master | grep -vE "HEAD|origin/($PROTECTED_BRANCHES)$" | sed 's/origin\///')
 
           if [ -z "$MERGED_BRANCHES" ]; then
             echo "No merged branches to delete."
