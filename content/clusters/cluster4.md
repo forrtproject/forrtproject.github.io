@@ -145,13 +145,13 @@ Attainment of a grounding in open (FAIR) data and materials. It requires student
 
 * Soderberg, C. K. (2018). Using OSF to Share Data: A Step-by-Step Guide. Advances in Methods and Practices in Psychological Science, 1(1), 115–120. https://doi.org/10.1177/2515245918757689 
 
-* [osf.io](osf.io) 
+* [osf.io](https://osf.io) 
 
-* [figshare.com](figshare.com)
+* [figshare.com](https://figshare.com)
 
-* [github.com](github.com)
+* [github.com](https://github.com)
 
-* [zenodo.org](http://zenodo.org/)
+* [zenodo.org](https://zenodo.org/)
 
 <br>
 </div>
