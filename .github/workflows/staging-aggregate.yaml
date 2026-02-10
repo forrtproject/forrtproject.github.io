@@ -168,7 +168,7 @@ jobs:
           # Push the aggregate branch
           git push origin "$AGGREGATE_BRANCH"
           
-          # Clean up old staging branches, keeping only the 5 most recent
+          # Clean up old staging branches, keeping only the 2 most recent
           echo "🧹 Cleaning up old staging branches..."
           # Get all staging-aggregate branches sorted by name (which includes timestamp YYYYMMDD-HHMMSS)
           # Lexicographic sorting works correctly because the timestamp format naturally sorts chronologically
@@ -176,7 +176,7 @@ jobs:
             awk '{print $2}' | \
             sed 's|refs/heads/||' | \
             sort -r | \
-            tail -n +6)
+            tail -n +3)
           
           if [ -n "$OLD_BRANCHES" ]; then
             echo "Found $(echo "$OLD_BRANCHES" | wc -l) old staging branches to delete"
@@ -186,7 +186,7 @@ jobs:
             done
             echo "✅ Cleanup completed"
           else
-            echo "No old staging branches to delete (keeping 5 most recent)"
+            echo "No old staging branches to delete (keeping 2 most recent)"
           fi
           
           echo "branch=$AGGREGATE_BRANCH" >> $GITHUB_OUTPUT
