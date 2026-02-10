@@ -108,8 +108,8 @@ jobs:
           echo "Fetching all branches..."
           git fetch --all --prune --tags
 
-          # Define protected branches and patterns to skip
-          PROTECTED_BRANCHES="master|main|staging|production|gh-pages"
+          # Define protected branches
+          PROTECTED_BRANCHES="master|gh-pages"
           # Skip auto-generated branches (handled by cleanup-auto-generated job)
           SKIP_PATTERNS="staging-aggregate-|ga-data-update-"
 
@@ -177,8 +177,8 @@ jobs:
           MONTHS_THRESHOLD: 1
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          # Define protected branches and patterns to skip
-          PROTECTED_BRANCHES="master|main|staging|production|gh-pages"
+          # Define protected branches
+          PROTECTED_BRANCHES="master|gh-pages"
 
           echo "Fetching all branches..."
           git fetch --all --prune --tags
