@@ -8,7 +8,7 @@ name: Cleanup Branches
 # Jobs:
 #   - cleanup-auto-generated: Removes old ga-data-update-* and staging-aggregate-* branches (keeps 2 most recent)
 #   - cleanup-merged: Removes branches already merged into master
-#   - cleanup-stale: Removes branches with no activity for 6+ months (no open PRs)
+#   - cleanup-stale: Removes branches with no activity for 1+ month (no open PRs)
 
 on:
   schedule:
@@ -183,7 +183,7 @@ jobs:
           echo "Fetching all branches..."
           git fetch --all --prune --tags
 
-          # Calculate threshold date (6 months ago)
+          # Calculate threshold date
           THRESHOLD_DATE=$(date -d "-$MONTHS_THRESHOLD months" +%s)
           echo "Threshold date: $(date -d "@$THRESHOLD_DATE")"
 
