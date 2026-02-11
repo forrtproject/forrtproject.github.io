@@ -7,12 +7,7 @@
         "Publication bias (File Drawer Problem)",
         "Selective reporting"
     ],
-    "references": [
-        "Duyx et al. (2019)"
-    ],
-    "alt_related_terms": [
-        null
-    ],
+    "references": "Duyx, B., Swaen, G. M., Urlings, M. J., Bouter, L. M., & Zeegers, M. P. (2019). The strong focus on positive results in abstracts may cause bias in systematic reviews: A case study on abstract reporting bias. Systematic Reviews, 8(1), 1–8.",
     "drafted_by": [
         "Ali H. Al-Hoorie"
     ],
@@ -23,6 +18,9 @@
         "Gerald Vineyard",
         "Eliza Woodward",
         "Flávio Azevedo"
+    ],
+    "alt_related_terms": [
+        null
     ],
     "language": "english",
     "aliases": [

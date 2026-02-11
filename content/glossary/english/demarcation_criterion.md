@@ -6,18 +6,16 @@
         "Hypothesis",
         "Falsification"
     ],
-    "references": [
-        "Dienes (2008)"
-    ],
-    "alt_related_terms": [
-        null
-    ],
+    "references": "Dienes, Z. (2008). Understanding psychology as a science: An introduction to scientific and statistical inference. Macmillan International Higher Education.",
     "drafted_by": [
         "Alaa AlDoh"
     ],
     "reviewed_by": [
         "Bethan Iley",
         "Sara Middleton"
+    ],
+    "alt_related_terms": [
+        null
     ],
     "language": "english",
     "aliases": [

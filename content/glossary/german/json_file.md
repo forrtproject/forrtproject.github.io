@@ -6,12 +6,7 @@
         "BIDS data structure",
         "Metadata"
     ],
-    "references": [
-        "https://bids-specification.readthedocs.io/en/stable/03-modality-agnostic-files.html"
-    ],
-    "alt_related_terms": [
-        null
-    ],
+    "references": "BIDS. (n.d.). Modality agnostic files. Retrieved from https://bids-specification.readthedocs.io/en/stable/03-modality-agnostic-files.html",
     "drafted_by": [
         "Tina Lonsdorf"
     ],
@@ -20,6 +15,9 @@
         "Matt Jaquiery",
         "Emma Norris",
         "Charlotte R. Pennington"
+    ],
+    "alt_related_terms": [
+        null
     ],
     "language": "german"
 }

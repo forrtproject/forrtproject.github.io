@@ -7,12 +7,7 @@
         "Confidentiality",
         "Research ethics"
     ],
-    "references": [
-        "[https://amnesia.openaire.eu/](https://amnesia.openaire.eu/)"
-    ],
-    "alt_related_terms": [
-        null
-    ],
+    "references": "",
     "drafted_by": [
         "Norbert Vanek"
     ],
@@ -20,6 +15,9 @@
         "Ali H. Al-Hoorie",
         "Myriam A. Baum",
         "Charlotte R. Pennington"
+    ],
+    "alt_related_terms": [
+        null
     ],
     "language": "english",
     "aliases": [

@@ -7,12 +7,7 @@
         "correction",
         "retraction"
     ],
-    "references": [
-        "Bik et al. (2016); Brown and Heathers (2017); Epskamp and Nuijten (2016); Heathers et al. (2018); Nuijten et al. (2016); [https://retractionwatch.com/](https://retractionwatch.com/)"
-    ],
-    "alt_related_terms": [
-        null
-    ],
+    "references": "Bik, E. M., Casadevall, A., & Fang, F. C. (2016). The prevalence of inappropriate image duplication in biomedical research publications. MBio, 7(3), e00809-16.\n\nBrown, N. J., & Heathers, J. A. (2017). The grim test: A simple technique detects numerous anomalies in the reporting of results in psychology. Social Psychological and Personality Science, 8(4), 363–369.\n\nEpskamp, S., & Nuijten, M. B. (2016). statcheck: Extract statistics from articles and recompute p values. Retrieved from http://CRAN.R-project.org/package=statcheck\n\nHeathers, J. A., Anaya, J., van der Zee, T., & Brown, N. J. (2018). Recovering data from summary statistics: Sample Parameter Reconstruction via Iterative TEchniques (SPRITE). PeerJ Preprints, 6, e26968v1. https://doi.org/10.7287/peerj.preprints.26968v1\n\nNuijten, M. B., Hartgerink, C. H., van Assen, M. A., Epskamp, S., & Wicherts, J. M. (2016). The prevalence of statistical reporting errors in psychology (1985–2013). Behavior Research Methods, 48(4), 1205–1226.\n\nRetraction Watch. (n.d.). Retraction Watch. Retraction Watch. https://retractionwatch.com/",
     "drafted_by": [
         "William Ngiam"
     ],
@@ -23,6 +18,9 @@
         "Sam Parsons",
         "Suzanne L. K. Stewart",
         "Marta Topor"
+    ],
+    "alt_related_terms": [
+        null
     ],
     "language": "english",
     "aliases": [

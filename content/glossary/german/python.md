@@ -10,12 +10,7 @@
         "PsychoPy",
         "R"
     ],
-    "references": [
-        "Lutz (2001)"
-    ],
-    "alt_related_terms": [
-        null
-    ],
+    "references": "Lutz, M. (2001). Programming Python. O’Reilly Media, Inc.",
     "drafted_by": [
         "Shannon Francis"
     ],
@@ -26,6 +21,9 @@
         "Dominik Kiersz",
         "Graham Reid",
         "Andrew J. Stewart"
+    ],
+    "alt_related_terms": [
+        null
     ],
     "language": "german"
 }

@@ -9,17 +9,13 @@
         "Open Science Framework",
         "Preprint"
     ],
-    "references": [
-        "www.zenodo.org"
-    ],
-    "alt_related_terms": [
-        null
-    ],
+    "references": "Zenodo. (n.d.). Zenodo—Research. Shared. https://www.zenodo.org/",
     "drafted_by": [
         "Ali H. Al-Hoorie"
     ],
-    "reviewed_by": [
-        "Sara Middleton"
+    "reviewed_by": [],
+    "alt_related_terms": [
+        null
     ],
     "language": "german"
 }

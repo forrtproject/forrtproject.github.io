@@ -6,12 +6,7 @@
         "External validity",
         "Validity"
     ],
-    "references": [
-        "Campbell and Stanley (1966) Alternative definition: In Psychometrics, the degree of evidence that confirms the internal structure of a psychometric test as compatible with the structure of a psychological construct. Related terms to alternative definition: Construct validity"
-    ],
-    "alt_related_terms": [
-        null
-    ],
+    "references": "Campbell, D. T., & Stanley, J. C. (1966). Experimental and Quasi Experimental Designs. Rand McNally.",
     "drafted_by": [
         "Annalise A. LaPlume"
     ],
@@ -22,6 +17,9 @@
         "Sam Parsons",
         "Graham Reid",
         "Flávio Azevedo"
+    ],
+    "alt_related_terms": [
+        null
     ],
     "language": "english",
     "aliases": [

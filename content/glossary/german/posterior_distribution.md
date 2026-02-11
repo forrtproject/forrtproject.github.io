@@ -9,12 +9,7 @@
         "Likelihood function",
         "Prior distribution"
     ],
-    "references": [
-        "Dienes (2014); Lüdtke et al. (2020); van de Schoot et al. (2021)"
-    ],
-    "alt_related_terms": [
-        null
-    ],
+    "references": "Dienes, Z. (2014). Using Bayes to get the most out of non-significant results. Frontiers in Psychology, 5, 781. https://doi.org/10.3389/fpsyg.2014.00781\n\nLüdtke, O., Ulitzsch, E., & Robitzsch, A. (2020). A Comparison of Penalized Maximum Likelihood Estimation and Markov Chain Monte Carlo Techniques for Estimating Confirmatory Factor Analysis Models with Small Sample Sizes . https://doi.org/10.31234/osf.io/u3qag",
     "drafted_by": [
         "Alaa AlDoh"
     ],
@@ -24,6 +19,9 @@
         "Julia Wolska",
         "Yu-Fang Yang",
         "Charlotte R. Pennington"
+    ],
+    "alt_related_terms": [
+        null
     ],
     "language": "german"
 }

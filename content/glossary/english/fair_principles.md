@@ -10,12 +10,7 @@
         "Open Material",
         "Repository"
     ],
-    "references": [
-        "Crüwell et al. (2019); Wilkinson et al. (2016); [https://www.go-fair.org/fair-principles/](https://www.go-fair.org/fair-principles/)"
-    ],
-    "alt_related_terms": [
-        null
-    ],
+    "references": "Crüwell, S., van Doorn, J., Etz, A., Makel, M. C., Moshontz, H., Niebaum, J. C., Orben, A., Parsons, S., & Schulte-Mecklenbeck, M. (2019). Seven Easy Steps to Open Science: An Annotated Reading List. Zeitschrift Für Psychologie, 227(4), 237–248. https://doi.org/10.1027/2151-2604/a000387\n\nWilkinson, M. D., Dumontier, M., Aalbersberg, I. J., Appleton, G., Axton, M., Baak, A., & others. (2016). The FAIR Guiding Principles for scientific data management and stewardship. Scientific Data, 3(1), 1–9. https://doi.org/10.1038/sdata.2016.18",
     "drafted_by": [
         "Sonia Rishi"
     ],
@@ -23,6 +18,9 @@
         "Mahmoud Elsherif",
         "Sam Parsons",
         "Charlotte R. Pennington"
+    ],
+    "alt_related_terms": [
+        null
     ],
     "language": "english",
     "aliases": [

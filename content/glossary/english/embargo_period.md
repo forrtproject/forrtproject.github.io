@@ -7,12 +7,7 @@
         "Paywall",
         "Preprint"
     ],
-    "references": [
-        "Klein et al. (2018), Laakso and Björk (2013); [https://en.wikipedia.org/wiki/Embargo\\_(academic\\_publishing)](https://en.wikipedia.org/wiki/Embargo_\\(academic_publishing\\))"
-    ],
-    "alt_related_terms": [
-        null
-    ],
+    "references": "Klein, O., Hardwicke, T. E., Aust, F., Breuer, J., Danielsson, H., Mohr, A. H., IJzerman, H., Nilsonne, G., Vanpaemel, W., & Frank, M. C. (2018). A practical guide for transparency in psychological science. Collabra: Psychology, 4(1), 20. https://doi.org/10.1525/collabra.158\n\nLaakso, M., & Björk, B. C. (2013). Delayed open access: An overlooked high‐impact category of openly available scientific literature. Journal of the American Society for Information Science and Technology, 64(7), 1323–1329.\n\nEmbargo (academic publishing). (2021). https://en.wikipedia.org/w/index.php?title=Embargo_(academic_publishing)&oldid=1016895567",
     "drafted_by": [
         "Aleksandra Lazić"
     ],
@@ -22,6 +17,9 @@
         "Sam Parsons",
         "Steven Verheyen",
         "Flávio Azevedo"
+    ],
+    "alt_related_terms": [
+        null
     ],
     "language": "english",
     "aliases": [

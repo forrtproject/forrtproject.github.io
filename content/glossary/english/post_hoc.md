@@ -7,12 +7,7 @@
         "HARKing",
         "P-hacking"
     ],
-    "references": [
-        "Dienes (p.166, 2008\\)"
-    ],
-    "alt_related_terms": [
-        null
-    ],
+    "references": "Dienes, Z. (2008). Understanding psychology as a science: An introduction to scientific and statistical inference. Macmillan International Higher Education.",
     "drafted_by": [
         "Alaa Aldoh"
     ],
@@ -23,6 +18,9 @@
         "Halil E. Kocalar",
         "Graham Reid",
         "Flávio Azevedo"
+    ],
+    "alt_related_terms": [
+        null
     ],
     "language": "english",
     "aliases": [

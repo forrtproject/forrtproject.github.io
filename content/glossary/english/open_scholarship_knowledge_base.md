@@ -7,12 +7,7 @@
         "Open scholarship",
         "Open Science"
     ],
-    "references": [
-        "www.oercommons.org/hubs/OSKB"
-    ],
-    "alt_related_terms": [
-        null
-    ],
+    "references": "",
     "drafted_by": [
         "Ali H. Al-Hoorie"
     ],
@@ -20,6 +15,9 @@
         "Mahmoud Elsherif",
         "Samuel Guay",
         "Tamara Kalandadze"
+    ],
+    "alt_related_terms": [
+        null
     ],
     "language": "english",
     "aliases": [

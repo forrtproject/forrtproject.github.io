@@ -7,12 +7,7 @@
         "Graph",
         "Plot"
     ],
-    "references": [
-        "Healy (2018); Tufte (1983)"
-    ],
-    "alt_related_terms": [
-        null
-    ],
+    "references": "Healy, K. (2018). Data visualization: A practical introduction. Princeton University Press.\n\nTufte, E. R. (1983). The visual display of quantitative information. Graphics Press.",
     "drafted_by": [
         "Bradley Baker"
     ],
@@ -20,6 +15,9 @@
         "Mahmoud Elsherif",
         "Charlotte R. Pennington",
         "Suzanne L. K. Stewart;"
+    ],
+    "alt_related_terms": [
+        null
     ],
     "language": "english",
     "aliases": [

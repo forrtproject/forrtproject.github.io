@@ -13,12 +13,7 @@
         "Research Protocol",
         "Transparency"
     ],
-    "references": [
-        "Haven and van Grootel (2019); Lewandowsky and Bishop (2016); Merten and Krypotos (2019); Navarro (2020); Nosek et al. (2018); Simmons et al. (2021)"
-    ],
-    "alt_related_terms": [
-        null
-    ],
+    "references": "Lewandowsky, S., & Bishop, D. (2016). Research integrity: Don’t let transparency damage science. Nature News, 529(7587), 459. https://doi.org/10.1038/529459a\n\nMertens, G., & Krypotos, A. M. (2019). Preregistration of analyses of preexisting data. Psychologica Belgica, 59(1), 338.\n\nNavarro, D. (2020). Paths in strange spaces: A comment on preregistration.\n\nNosek, B. A., Ebersole, C. R., DeHaven, A. C., & Mellor, D. T. (2018). The preregistration revolution. Proceedings of the National Academy of Sciences, 115(11), 2600–2606. https://doi.org/10.1073/pnas.1708274114\n\nSimmons, J., Nelson, L., & Simonsohn, U. (2021). Pre‐registration: Why and how. Journal of Consumer Psychology, 31(1), 151–162. https://doi.org/10.1002/jcpy.1208",
     "drafted_by": [
         "Mahmoud Elsherif"
     ],
@@ -31,6 +26,9 @@
         "Lisa Spitzer",
         "Olmo van den Akker",
         "Flávio Azevedo"
+    ],
+    "alt_related_terms": [
+        null
     ],
     "language": "english",
     "aliases": [

@@ -7,18 +7,16 @@
         "PeerPub",
         "Peer review"
     ],
-    "references": [
-        ""
-    ],
-    "alt_related_terms": [
-        null
-    ],
+    "references": "",
     "drafted_by": [
         "Ali H. Al-Hoorie"
     ],
     "reviewed_by": [
         "Mahmoud Elsherif",
         "Sam Parsons"
+    ],
+    "alt_related_terms": [
+        null
     ],
     "language": "english",
     "aliases": [

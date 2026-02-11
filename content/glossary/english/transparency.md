@@ -9,12 +9,7 @@
         "Reproducibility",
         "Trustworthiness"
     ],
-    "references": [
-        "Elliott and Resnik (2019); Lyon (2016); [Syed (2019)](https://psyarxiv.com/cteyb/)"
-    ],
-    "alt_related_terms": [
-        null
-    ],
+    "references": "Elliott, K. C., & Resnik, D. B. (2019). Making open science work for science and society. Environmental Health Perspectives, 127(7). https://doi.org/10.1289/EHP4808\n\nLyon, L. (2016). Transparency: The Emerging Third Dimension of Open Science and Open Data. LIBER Quarterly, 25(4), 153–171. http://doi.org/10.18352/lq.10113\n\nSyed, M. (2019). The Open Science Movement is for all of us. PsyArXiv.",
     "drafted_by": [
         "William Ngiam"
     ],
@@ -23,6 +18,9 @@
         "Aoife O’Mahony",
         "Eike Mark Rinke",
         "Flávio Azevedo"
+    ],
+    "alt_related_terms": [
+        null
     ],
     "language": "english",
     "aliases": [

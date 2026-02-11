@@ -9,18 +9,16 @@
         "Likelihood function",
         "Posterior distribution"
     ],
-    "references": [
-        "van de Schoot et al. (2021)"
-    ],
-    "alt_related_terms": [
-        null
-    ],
+    "references": "",
     "drafted_by": [
         "Alaa AlDoh"
     ],
     "reviewed_by": [
         "Charlotte R. Pennington",
         "Martin Vasilev"
+    ],
+    "alt_related_terms": [
+        null
     ],
     "language": "english",
     "aliases": [

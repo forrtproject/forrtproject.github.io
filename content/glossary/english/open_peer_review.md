@@ -8,12 +8,7 @@
         "PRO (peer review openness) initiative",
         "Transparent peer review"
     ],
-    "references": [
-        "Ross-Hellauer (2017)"
-    ],
-    "alt_related_terms": [
-        null
-    ],
+    "references": "",
     "drafted_by": [
         "Sonia Rishi"
     ],
@@ -23,6 +18,9 @@
         "Charlotte R. Pennington",
         "Yuki Yamada",
         "Flávio Azevedo"
+    ],
+    "alt_related_terms": [
+        null
     ],
     "language": "english",
     "aliases": [

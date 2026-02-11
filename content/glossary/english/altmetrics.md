@@ -10,12 +10,7 @@
         "Impact assessment",
         "Journal impact factor"
     ],
-    "references": [
-        "Ali (2021); Galligan and Dyas-Correia (2013)"
-    ],
-    "alt_related_terms": [
-        null
-    ],
+    "references": "Ali, M. J. (2021). Understanding the Altmetrics. Seminars in Ophthalmology. https://doi.org/10.1080/08820538.2021.1930806\n\nGalligan, F., & Dyas-Correia, S. (2013). Altmetrics: rethinking the way we measure. Serials Review, 39(1), 56–61. https://doi.org/10.1016/j.serrev.2013.01.003",
     "drafted_by": [
         "Mirela Zaneva"
     ],
@@ -23,7 +18,10 @@
         "Ali H. Al-Hoorie",
         "Charlotte R. Pennington",
         "Birgit Schmidt",
-        "Flávio Azevedo  ### ---"
+        "Flávio Azevedo"
+    ],
+    "alt_related_terms": [
+        null
     ],
     "language": "english",
     "aliases": [

@@ -5,15 +5,9 @@
     "related_terms": [
         "Qualitative research",
         "Reflexivity",
-        "Researcher bias Reference (s): Rolls and Relf (2006)",
-        "Sorsa et al. (2015)"
+        "Researcher bias **Reference (s)**:  \\[@RollsRelf2006\\], \\[@Sorsa2015\\]"
     ],
-    "references": [
-        ""
-    ],
-    "alt_related_terms": [
-        null
-    ],
+    "references": "",
     "drafted_by": [
         "Claire Melia"
     ],
@@ -22,6 +16,9 @@
         "Charlotte R. Pennington",
         "Graham Reid",
         "Marta Topor"
+    ],
+    "alt_related_terms": [
+        null
     ],
     "language": "english",
     "aliases": [

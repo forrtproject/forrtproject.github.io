@@ -7,12 +7,7 @@
         "Information",
         "Learning"
     ],
-    "references": [
-        "Brule and Blount (1989)"
-    ],
-    "alt_related_terms": [
-        null
-    ],
+    "references": "Brule, J., & Blount, A. (1989). Knowledge acquisition. McGraw-Hill.",
     "drafted_by": [
         "Oscar Lecuona"
     ],
@@ -20,7 +15,10 @@
         "Bradley Baker",
         "Helena Hartmann",
         "Kai Krautter",
-        "Graham Reid  ###  ### L {#l}"
+        "Graham Reid"
+    ],
+    "alt_related_terms": [
+        null
     ],
     "language": "english",
     "aliases": [

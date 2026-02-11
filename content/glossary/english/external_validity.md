@@ -9,12 +9,7 @@
         "Representativity",
         "Validity"
     ],
-    "references": [
-        "Cook and Campbell (1979); Lynch (1982); Steckler and McLeroy (2008) Alternative definition: (if applicable) In Psychometrics, the degree of evidence that confirms the relations of a tested psychological construct with external variables Related terms to alternative definition: Criterion validity; Convergent validity; Divergent validity"
-    ],
-    "alt_related_terms": [
-        null
-    ],
+    "references": "Lynch, J. G., Jr. (1982). On the External Validity of Experiments in Consumer Research. Journal of Consumer Research, 9(3), 225. https://doi.org/10.1086/208919\n\nSteckler, A., & McLeroy, K. R. (2008). The Importance of External Validity. American Journal of Public Health, 98(1), 9–10. https://doi.org/10.2105/AJPH.2007.126847",
     "drafted_by": [
         "Annalise A. LaPlume"
     ],
@@ -23,7 +18,10 @@
         "Helena Hartmann",
         "Kai Krautter",
         "Oscar Lecuona",
-        "Flávio Azevedo  ###  ### F {#f}"
+        "Flávio Azevedo"
+    ],
+    "alt_related_terms": [
+        null
     ],
     "language": "english",
     "aliases": [

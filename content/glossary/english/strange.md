@@ -9,12 +9,7 @@
         "Sampling bias",
         "WEIRD"
     ],
-    "references": [
-        "Webster and Rutz (2020)"
-    ],
-    "alt_related_terms": [
-        null
-    ],
+    "references": "Webster, M. M., & Rutz, C. (2020). How STRANGE are your study animals? Nature, 582, 337–340. https://doi.org/10.1038/d41586-020-01751-5",
     "drafted_by": [
         "Mahmoud Elsherif"
     ],
@@ -23,7 +18,10 @@
         "Zoe Flack",
         "Elias Garcia-Pelegrin",
         "Charlotte R. Pennington",
-        "Graham Reid  ### ---"
+        "Graham Reid"
+    ],
+    "alt_related_terms": [
+        null
     ],
     "language": "english",
     "aliases": [

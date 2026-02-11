@@ -6,12 +6,7 @@
         "Open Science",
         "Preregistration Pledge"
     ],
-    "references": [
-        "[https://freeourknowledge.org/about/](https://freeourknowledge.org/about/)"
-    ],
-    "alt_related_terms": [
-        null
-    ],
+    "references": "Free Our Knowledge. (n.d.). About. Retrieved from https://freeourknowledge.org/about/",
     "drafted_by": [
         "Jamie P. Cockcroft"
     ],
@@ -20,7 +15,10 @@
         "Elizabeth Collins",
         "Mahmoud Elsherif",
         "Sam Parsons",
-        "Flávio Azevedo   ###  ### G {#g}"
+        "Flávio Azevedo"
+    ],
+    "alt_related_terms": [
+        null
     ],
     "language": "english",
     "aliases": [

@@ -7,12 +7,7 @@
         "DOI (digital object identifier)",
         "Name Ambiguity Problem"
     ],
-    "references": [
-        "Haak et al. (2012); [https://orcid.org/](https://orcid.org/)"
-    ],
-    "alt_related_terms": [
-        null
-    ],
+    "references": "Haak, L. L., Fenner, M., Paglione, L., Pentz, E., & Ratner, H. (2012). ORCID: A system to uniquely identify researchers. Learned Publishing, 25(4), 259–264. https://doi.org/10.1087/20120404\n\nORCID. (n.d.). ORCID. https://orcid.org/",
     "drafted_by": [
         "Martin Vasilev"
     ],
@@ -22,7 +17,10 @@
         "Shannon Francis",
         "Charlotte R. Pennington",
         "Emily A. Williams",
-        "Flávio Azevedo  ### ---"
+        "Flávio Azevedo"
+    ],
+    "alt_related_terms": [
+        null
     ],
     "language": "english",
     "aliases": [
