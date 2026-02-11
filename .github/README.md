@@ -61,6 +61,15 @@ Processes:
 - Google Analytics data
 - Contributor analysis (monthly)
 
+**Failure Reporting:**
+- Automatically creates GitHub issues when critical data processing steps fail
+- Each issue includes:
+  - Failed step name
+  - Error details
+  - Workflow run URL for debugging
+  - Automated labels: `bug`, `data-processing`, `automated`
+- Monitored steps include: Contributor Analysis, Curated Resources, GA Data, FReD Citation, Google Scholar, and more
+
 Triggers `deploy.yaml` after successful processing via `repository_dispatch`.
 
 ## Quality Checks
