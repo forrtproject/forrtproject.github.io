@@ -514,8 +514,11 @@ jobs:
       #================
       # Trigger Deploy
       #================
-      - name: Trigger Deploy
-        if: inputs.skip_deploy != true
+      #========================================
+      # Trigger the deploy workflow to publish updated data
+      #========================================
+      - name: Trigger deployment
+        if: github.event_name != 'pull_request' && inputs.skip_deploy != true
         run: |
           echo "🚀 Triggering deployment workflow..."
           curl -s -X POST \
@@ -523,21 +526,6 @@ jobs:
             -H "Accept: application/vnd.github+json" \
             "https://api.github.com/repos/${{ github.repository }}/dispatches" \
             -d '{"event_type": "data-update"}'
-
-
-      #====================
-      # Trigger Deployment
-      #====================
-      #========================================
-      # Trigger the deploy workflow to publish updated data
-      #========================================
-      - name: Trigger deployment
-        if: github.event_name != 'pull_request'
-        run: |
-          echo "🚀 Triggering deployment workflow..."
-          gh api repos/${{ github.repository }}/dispatches \
-            -f event_type=data-update \
-            -F client_payload[data_update]=true
           echo "✅ Deployment triggered successfully"
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
