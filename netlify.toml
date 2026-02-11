@@ -12,8 +12,61 @@
 [context.deploy-preview]
   command = "hugo --gc --minify --buildFuture -b $DEPLOY_PRIME_URL"
 
+[context.deploy-preview.environment]
+  HUGO_ENV = "staging"
+
 [context.branch-deploy]
   command = "hugo --gc --minify -b $DEPLOY_PRIME_URL"
+
+[context.branch-deploy.environment]
+  HUGO_ENV = "staging"
+
+# Redirect old/removed curated resources to the main resources page
+[[redirects]]
+  from = "/curated_resources/*"
+  to = "/resources/"
+  status = 301
+  force = false  # Only redirect if page doesn't exist
+
+# Redirect old/removed glossary terms to the main glossary page
+[[redirects]]
+  from = "/glossary/english/*"
+  to = "/glossary/"
+  status = 301
+  force = false
+
+[[redirects]]
+  from = "/glossary/german/*"
+  to = "/de/glossary/"
+  status = 301
+  force = false
+
+[[redirects]]
+  from = "/glossary/arabic/*"
+  to = "/ar/glossary/"
+  status = 301
+  force = false
+
+# Redirect old author URLs to contributors page
+[[redirects]]
+  from = "/author/*"
+  to = "/contributors/"
+  status = 301
+  force = false
+
+# Redirect old/removed summaries
+[[redirects]]
+  from = "/summaries/*"
+  to = "/"
+  status = 301
+  force = false
+
+# Redirect old/removed reversals
+[[redirects]]
+  from = "/reversals/*"
+  to = "/"
+  status = 301
+  force = false
 
 [[headers]]
   for = "*.webmanifest"
