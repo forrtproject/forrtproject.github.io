@@ -518,5 +518,3 @@ jobs:
             "https://api.github.com/repos/${{ github.repository }}/dispatches" \
             -d '{"event_type": "data-update"}'
           echo "✅ Deployment triggered successfully"
-        env:
-          GITHUB_TOKEN: ${{ secrets.FORRT_PAT }}
