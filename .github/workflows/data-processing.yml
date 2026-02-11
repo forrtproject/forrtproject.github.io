@@ -116,6 +116,7 @@ jobs:
       # Generate contributor analysis reports and network visualizations
       #========================================
       - name: Run Contributor Analysis
+        id: contributor-analysis
         if: steps.monthly-run.outputs.is_monthly == 'true'
         continue-on-error: true  # Continue even if this step fails
         run: |
@@ -156,6 +157,7 @@ jobs:
       # Process contributor data using Tenzing script
       #========================================
       - name: Run Tenzing script
+        id: tenzing-script
         continue-on-error: true  # Continue even if this step fails
         run: python3 scripts/forrt_contribs/tenzing.py
         env:
@@ -175,6 +177,7 @@ jobs:
       # Process and organize curated resources data
       #========================================
       - name: Run Curated Resources script
+        id: curated-resources
         continue-on-error: true  # Continue even if this step fails
         run: python3 content/resources/resource.py
         # Execute the curated resources script that processes and organizes resource data
@@ -183,6 +186,7 @@ jobs:
       # Move Tenzing output to content directory and validate
       #========================================
       - name: Move and validate Tenzing output
+        id: tenzing-output
         continue-on-error: true  # Continue even if this step fails
         run: |
           mv scripts/forrt_contribs/tenzing.md content/contributors/tenzing.md
@@ -195,6 +199,7 @@ jobs:
       # Validate that curated resources files available under content/curated_resources
       #========================================
       - name: Validate curated resources
+        id: validate-resources
         continue-on-error: true  # Continue even if this step fails
         run: |
           for file in content/curated_resources/*; do
@@ -208,6 +213,7 @@ jobs:
       # Process and generate glossary files
       #========================================
       - name: Run Glossary Generation script
+        id: glossary-generation
         if: github.event.inputs.regenerate_glossary == 'true'
         continue-on-error: true  # Continue even if this step fails
         run: python3 content/glossary/_create_glossaries.py
@@ -217,6 +223,7 @@ jobs:
       # Download Google Analytics data and validate
       #========================================
       - name: Download GA Data
+        id: ga-data
         continue-on-error: true  # Continue even if this step fails
         env:
           GA_API_CREDENTIALS: ${{ secrets.GA_API_CREDENTIALS }}
@@ -247,6 +254,7 @@ jobs:
       # Update FReD citation (Weekly or Manual)
       #========================================
       - name: Update FReD Citation
+        id: fred-citation
         continue-on-error: true  # Continue even if this step fails
         run: |
           echo "=== Updating FReD citation ==="
@@ -327,6 +335,7 @@ jobs:
       # Execute Google Scholar citation tracking script
       #========================================
       - name: Run Google Scholar script
+        id: google-scholar
         continue-on-error: true
         run: python3 scripts/gs-cite/google_scholar.py
         env:
@@ -530,5 +539,98 @@ jobs:
             -f event_type=data-update \
             -F client_payload[data_update]=true
           echo "✅ Deployment triggered successfully"
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      #====================
+      # Failure Reporting
+      #====================
+      #========================================
+      # Check all step outcomes and create issues for any failures
+      #========================================
+      - name: Report workflow step failures
+        if: always()  # Always run this step to catch any failures
+        continue-on-error: true  # Don't fail the workflow if issue creation fails
+        run: |
+          echo "🔍 Checking workflow step outcomes..."
+          
+          # Create workflow run URL
+          WORKFLOW_RUN_URL="${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
+          
+          # Track if any failures occurred
+          FAILURES_FOUND=false
+          
+          # Check each critical step outcome
+          # Note: We check steps that are critical for data processing
+          
+          # Contributor Analysis (only if it was supposed to run)
+          if [ "${{ steps.monthly-run.outputs.is_monthly }}" == "true" ] && [ "${{ steps.contributor-analysis.outcome }}" == "failure" ]; then
+            echo "❌ Contributor Analysis failed"
+            FAILURES_FOUND=true
+            python3 scripts/create_workflow_failure_issue.py "Contributor Analysis" "The contributor analysis step failed during execution." "$WORKFLOW_RUN_URL" || echo "Failed to create issue for Contributor Analysis"
+          fi
+          
+          # Tenzing Script
+          if [ "${{ steps.tenzing-script.outcome }}" == "failure" ]; then
+            echo "❌ Tenzing Script failed"
+            FAILURES_FOUND=true
+            # Don't create a duplicate issue since tenzing has its own issue creation
+            echo "ℹ️ Tenzing has its own issue creation mechanism"
+          fi
+          
+          # Curated Resources
+          if [ "${{ steps.curated-resources.outcome }}" == "failure" ]; then
+            echo "❌ Curated Resources script failed"
+            FAILURES_FOUND=true
+            python3 scripts/create_workflow_failure_issue.py "Curated Resources Processing" "The curated resources processing step failed during execution." "$WORKFLOW_RUN_URL" || echo "Failed to create issue for Curated Resources"
+          fi
+          
+          # Tenzing Output Validation
+          if [ "${{ steps.tenzing-output.outcome }}" == "failure" ]; then
+            echo "❌ Tenzing output validation failed"
+            FAILURES_FOUND=true
+            python3 scripts/create_workflow_failure_issue.py "Tenzing Output Validation" "The tenzing.md file validation failed. The file may not have been created or moved correctly." "$WORKFLOW_RUN_URL" || echo "Failed to create issue for Tenzing Output"
+          fi
+          
+          # Curated Resources Validation
+          if [ "${{ steps.validate-resources.outcome }}" == "failure" ]; then
+            echo "❌ Curated resources validation failed"
+            FAILURES_FOUND=true
+            python3 scripts/create_workflow_failure_issue.py "Curated Resources Validation" "The curated resources validation failed. Some files may be invalid or missing." "$WORKFLOW_RUN_URL" || echo "Failed to create issue for Resources Validation"
+          fi
+          
+          # Glossary Generation (only if it was supposed to run)
+          if [ "${{ github.event.inputs.regenerate_glossary }}" == "true" ] && [ "${{ steps.glossary-generation.outcome }}" == "failure" ]; then
+            echo "❌ Glossary generation failed"
+            FAILURES_FOUND=true
+            python3 scripts/create_workflow_failure_issue.py "Glossary Generation" "The glossary generation step failed during execution." "$WORKFLOW_RUN_URL" || echo "Failed to create issue for Glossary Generation"
+          fi
+          
+          # Google Analytics Data
+          if [ "${{ steps.ga-data.outcome }}" == "failure" ]; then
+            echo "❌ GA Data download failed"
+            FAILURES_FOUND=true
+            python3 scripts/create_workflow_failure_issue.py "Google Analytics Data Download" "The Google Analytics data download step failed. This may be due to authentication issues or API problems." "$WORKFLOW_RUN_URL" || echo "Failed to create issue for GA Data"
+          fi
+          
+          # FReD Citation
+          if [ "${{ steps.fred-citation.outcome }}" == "failure" ]; then
+            echo "❌ FReD citation update failed"
+            FAILURES_FOUND=true
+            python3 scripts/create_workflow_failure_issue.py "FReD Citation Update" "The FReD citation update step failed during execution." "$WORKFLOW_RUN_URL" || echo "Failed to create issue for FReD Citation"
+          fi
+          
+          # Google Scholar
+          if [ "${{ steps.google-scholar.outcome }}" == "failure" ]; then
+            echo "❌ Google Scholar script failed"
+            FAILURES_FOUND=true
+            python3 scripts/create_workflow_failure_issue.py "Google Scholar Citation Tracking" "The Google Scholar citation tracking step failed during execution." "$WORKFLOW_RUN_URL" || echo "Failed to create issue for Google Scholar"
+          fi
+          
+          if [ "$FAILURES_FOUND" == "false" ]; then
+            echo "✅ All critical workflow steps completed successfully!"
+          else
+            echo "⚠️ Some workflow steps failed - issues have been created"
+          fi
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
