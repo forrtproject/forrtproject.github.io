@@ -1,0 +1,100 @@
+{
+    "timestamp": "01/01/2020",
+    "title": "Databases and SQL",
+    "link_to_resource": "http://swcarpentry.github.io/sql-novice-survey/",
+    "creators": [
+        "Amy Brown",
+        "Andrew Boughton",
+        "Andrew Kubiak",
+        "Avishek Kumar",
+        "Ben Waugh",
+        "Bill Mills",
+        "Brian Ballsun-Stanton",
+        "Chris Tomlinson",
+        "Colleen Fallaw",
+        "Daniel Suess",
+        "Dan Michael Hegg\u00f8",
+        "Dave Welch",
+        "David W Wright",
+        "Deborah Gertrude Digges",
+        "Donny Winston",
+        "Doug Latornell",
+        "Erin Alison Becker",
+        "Ethan Nelson",
+        "Ethan P White",
+        "Fran\u00e7ois Michonneau",
+        "George Graham",
+        "Gerard Capes",
+        "Gideon Juve",
+        "Greg Wilson",
+        "Ioan Vancea",
+        "Jake Lever",
+        "James Mickley",
+        "John Blischak",
+        "JohnRMoreau@gmail.com",
+        "Jonah Duckles",
+        "Jonathan Guyer",
+        "Joshua Nahum",
+        "Kate Hertweck",
+        "Kevin Dyke",
+        "lorra",
+        "Louis Vernon",
+        "Luc Small",
+        "Luke William Johnston",
+        "Maneesha Sane",
+        "Mark Stacy",
+        "Matthew Collins",
+        "Matty Jones",
+        "Mike Jackson",
+        "Morgan Taschuk",
+        "Patrick McCann",
+        "Paula Andrea Martinez",
+        "Pauline Barmby",
+        "Piotr Banaszkiewicz",
+        "Raniere Silva",
+        "Ray Bell",
+        "Rayna Michelle Harris",
+        "R\u00e9mi Emonet",
+        "R\u00e9mi Rampin",
+        "Seda Arat",
+        "Sheldon John McKay",
+        "Sheldon McKay",
+        "slimlime",
+        "Stephen Davison",
+        "Thomas Guignard",
+        "Trevor Bekolay"
+    ],
+    "material_type": [
+        "Module"
+    ],
+    "education_level": [
+        "Graduate / Professional"
+    ],
+    "abstract": "Software Carpentry lesson that teaches how to use databases and SQL In the late 1920s and early 1930s, William Dyer, Frank Pabodie, and Valentina Roerich led expeditions to the Pole of Inaccessibility in the South Pacific, and then onward to Antarctica. Two years ago, their expeditions were found in a storage locker at Miskatonic University. We have scanned and OCR the data they contain, and we now want to store that information in a way that will make search and analysis easy. Three common options for storage are text files, spreadsheets, and databases. Text files are easiest to create, and work well with version control, but then we would have to build search and analysis tools ourselves. Spreadsheets are good for doing simple analyses, but they don\u2019t handle large or complex data sets well. Databases, however, include powerful tools for search and analysis, and can handle large, complex data sets. These lessons will show how to use a database to explore the expeditions\u2019 data.",
+    "language": [
+        "English"
+    ],
+    "conditions_of_use": "Creative Commons Attribution 4.0 International",
+    "primary_user": [
+        "student",
+        "teacher"
+    ],
+    "subject_areas": [
+        "Computer Science",
+        "Information Science",
+        "Measurement and Data"
+    ],
+    "FORRT_clusters": [
+        ""
+    ],
+    "tags": [
+        "Analysis",
+        "Data",
+        "Education",
+        "Open Scholarship Tools and Technologies",
+        "Reproducibility",
+        "Research Data Management Tools",
+        "Researchers",
+        "SQL"
+    ]
+}

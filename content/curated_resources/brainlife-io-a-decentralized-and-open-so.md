@@ -1,0 +1,102 @@
+{
+    "timestamp": "1/13/2025 6:12:34",
+    "title": "brainlife.io: a decentralized and open-source cloud platform to support neuroscience research",
+    "link_to_resource": "https://doi.org/10.1038/s41592-024-02237-2",
+    "creators": [
+        "Soichi Hayashi",
+        "Bradley A. Caron",
+        "Anibal S\u00f3lon Heinsfeld",
+        "Sophia Vinci-Booher",
+        "Brent McPherson",
+        "Daniel N. Bullock",
+        "Giulia Bert\u00f2",
+        "Guiomar Niso",
+        "Sandra Hanekamp",
+        "Daniel Levitas",
+        "Kimberly Ray",
+        "Anne MacKenzie",
+        "Paolo Avesani",
+        "Lindsey Kitchell",
+        "Josiah K. Leong",
+        "Filipi Nascimento-Silva",
+        "Serge Koudoro",
+        "Hanna Willis",
+        "Jasleen K. Jolly",
+        "Derek Pisner",
+        "Taylor R. Zuidema",
+        "Jan W. Kurzawski",
+        "Kyriaki Mikellidou",
+        "Aurore Bussalb",
+        "Maximilien Chaumon",
+        "Nathalie George",
+        "Christopher Rorden",
+        "Conner Victory",
+        "Dheeraj Bhatia",
+        "Dogu Baran Aydogan",
+        "Fang-Cheng F. Yeh",
+        "Franco Delogu",
+        "Javier Guaje",
+        "Jelle Veraart",
+        "Jeremy Fischer",
+        "Joshua Faskowitz",
+        "Ricardo Fabrega",
+        "David Hunt",
+        "Shawn McKee",
+        "Shawn T. Brown",
+        "Stephanie Heyman",
+        "Vittorio Iacovella",
+        "Amanda F. Mejia",
+        "Daniele Marinazzo",
+        "R. Cameron Craddock",
+        "Emanuale Olivetti",
+        "Jamie L. Hanson",
+        "Eleftherios Garyfallidis",
+        "Dan Stanzione",
+        "James Carson",
+        "Robert Henschel",
+        "David Y. Hancock",
+        "Craig A. Stewart",
+        "David Schnyer",
+        "Damian O. Eke",
+        "Russell A. Poldrack",
+        "Steffen Bollmann",
+        "Ashley Stewart",
+        "Holly Bridge",
+        "Ilaria Sani",
+        "Winrich A. Freiwald",
+        "Aina Puce",
+        "Nicholas L. Port & Franco Pestilli"
+    ],
+    "material_type": [
+        "Reading"
+    ],
+    "education_level": [
+        "College / Upper Division (Undergraduates)",
+        "Graduate / Professional"
+    ],
+    "abstract": "Neuroscience is advancing standardization and tool development to support rigor and transparency. Consequently, data pipeline complexity has increased, hindering FAIR (findable, accessible, interoperable and reusable) access. brainlife.io was developed to democratize neuroimaging research. The platform provides data standardization, management, visualization and processing and automatically tracks the provenance history of thousands of data objects. Here, brainlife.io is described and evaluated for validity, reliability, reproducibility, replicability and scientific utility using four data modalities and 3,200 participants.",
+    "language": [
+        "English"
+    ],
+    "conditions_of_use": "CC BY",
+    "primary_user": [
+        "Student",
+        "Teacher"
+    ],
+    "subject_areas": [
+        "Life Science",
+        "Physical Science",
+        "Social Science"
+    ],
+    "FORRT_clusters": [
+        "Reproducible Analyses",
+        "Open Data and Materials"
+    ],
+    "tags": [
+        "Cognitive Neuroscience",
+        "Computational Neuroscience",
+        "Databases",
+        "Technology",
+        "Translational Research"
+    ]
+}
