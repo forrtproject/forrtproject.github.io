@@ -562,6 +562,8 @@ jobs:
           
           # Check each critical step outcome
           # Note: We check steps that are critical for data processing
+          # For conditional steps, we check both the condition AND the outcome
+          # to avoid reporting failures for skipped steps
           
           # Contributor Analysis (only if it was supposed to run)
           if [ "${{ steps.monthly-run.outputs.is_monthly }}" == "true" ] && [ "${{ steps.contributor-analysis.outcome }}" == "failure" ]; then

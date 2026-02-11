@@ -108,7 +108,7 @@ def main():
     if len(sys.argv) > 3:
         workflow_run_url = sys.argv[3]
     
-    print(f"⚠ Creating issue for failed step: {step_name}")
+    print(f"⚠️ Creating issue for failed step: {step_name}")
     if create_issue(step_name, error_message, workflow_run_url):
         return 0
     else:
