@@ -6,7 +6,12 @@
         "Authorship",
         "CRediT"
     ],
-    "references": "Tierney, W., Hardy III, J. H., Ebersole, C. R., Leavitt, K., Viganola, D., Clemente, E. G., & others. (2020). Creative destruction in science. Organizational Behavior and Human Decision Processes, 161, 291–309. https://doi.org/10.1016/j.obhdp.2020.07.002\n\nTierney, W., Hardy III, J., Ebersole, C. R., Viganola, D., Clemente, E. G., Gordon, M., & others. (2021). A creative destruction approach to replication: Implicit work and sex morality across cultures. Journal of Experimental Social Psychology, 93, 104060. https://doi.org/10.1016/j.jesp.2020.104060",
+    "references": [
+        "\\[@Open\\_Science\\_Collaboration2015\\], \\[@Tierney2020\\], \\[@Tierney2021\\]"
+    ],
+    "alt_related_terms": [
+        null
+    ],
     "drafted_by": [
         "Yuki Yamada"
     ],
@@ -16,9 +21,6 @@
         "Beatrice Valentini",
         "Qinyu Xiao",
         "Flávio Azevedo"
-    ],
-    "alt_related_terms": [
-        null
     ],
     "language": "english",
     "aliases": [

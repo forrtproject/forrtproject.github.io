@@ -6,7 +6,12 @@
         "Open Access",
         "Under-representation"
     ],
-    "references": "Grossmann, A., & Brembs, B. (2021). Current market rates for scholarly publishing services. F1000Research, 10(20), 20. https://doi.org/10.12688/f1000research.27468.1\n\nSmith, A. C., Merz, L., Borden, J. B., Gulick, C., Kshirsagar, A. R., & Bruna, E. M. (2020). Assessing the effect of article processing charges on the geographic diversity of authors using Elsevier’s ‘Mirror Journal’ system. https://doi.org/10.31222/osf.io/s7cx4",
+    "references": [
+        "\\[@GrossmannBrembs2021\\], \\[@Smith2020\\]"
+    ],
+    "alt_related_terms": [
+        null
+    ],
     "drafted_by": [
         "Nick Ballou"
     ],
@@ -16,9 +21,6 @@
         "Flávio Azevedo",
         "Robert Ross",
         "Tobias Wingen \\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_"
-    ],
-    "alt_related_terms": [
-        null
     ],
     "language": "english",
     "aliases": [

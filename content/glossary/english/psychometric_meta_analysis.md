@@ -10,7 +10,12 @@
         "Publication bias (File Drawer Problem)",
         "Validity generalization"
     ],
-    "references": "Borenstein, M., Hedges, L. V., Higgins, J. P., & Rothstein, H. R. (2011). Introduction to meta-analysis. John Wiley & Sons.\n\nHunter, J. E., & Schmidt, F. L. (2015). Methods of Meta-Analysis: Correcting Error and Bias in Research Findings (Third). SAGE.",
+    "references": [
+        "Borenstein et al. (2009); Schmidt and Hunter (2014) \\[@BorensteinEtAl2011\\], \\[@HunterSchmidt2015\\]"
+    ],
+    "alt_related_terms": [
+        null
+    ],
     "drafted_by": [
         "Adrien Fillon"
     ],
@@ -20,9 +25,6 @@
         "Helena Hartmann",
         "Catia M. Oliveira",
         "Flávio Azevedo"
-    ],
-    "alt_related_terms": [
-        null
     ],
     "language": "english",
     "aliases": [

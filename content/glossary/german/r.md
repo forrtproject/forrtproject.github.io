@@ -6,7 +6,12 @@
         "Open-source",
         "Statistical analysis"
     ],
-    "references": "R Project for Statistical Computing. (n.d.). R: The R Project for Statistical Computing. R Project. https://www.r-project.org/",
+    "references": [
+        "[https://www.r-project.org/](https://www.r-project.org/); R Core Team (2020)"
+    ],
+    "alt_related_terms": [
+        null
+    ],
     "drafted_by": [
         "Lisa Spitzer"
     ],
@@ -15,9 +20,6 @@
         "Alexander Hart",
         "Joanne McCuaig",
         "Andrew J. Stewart"
-    ],
-    "alt_related_terms": [
-        null
     ],
     "language": "german"
 }

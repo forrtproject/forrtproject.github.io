@@ -8,7 +8,12 @@
         "Social identity map",
         "Transparency"
     ],
-    "references": "Jacobson, D., & Mustafa, N. (2019). Social Identity Map: A Reflexivity Tool for Practicing Explicit Positionality in Critical Qualitative Research. International Journal of Qualitative Methods, 18, 1609406919870075. https://doi.org/10.1177/1609406919870075",
+    "references": [
+        "Jacobson and Mustafa (2019) \\[@Jacobson2019\\]"
+    ],
+    "alt_related_terms": [
+        null
+    ],
     "drafted_by": [
         "Joanne McCuaig"
     ],
@@ -17,9 +22,6 @@
         "Michele C. Lim",
         "Charlotte R. Pennington",
         "Graham Reid"
-    ],
-    "alt_related_terms": [
-        null
     ],
     "language": "english",
     "aliases": [

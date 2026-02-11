@@ -8,7 +8,12 @@
         "Statistical assumptions",
         "Hidden moderators"
     ],
-    "references": "Dienes, Z. (2008). Understanding psychology as a science: An introduction to scientific and statistical inference. Macmillan International Higher Education.\n\nLakatos, I. (1978). The Methodology of Scientific Research Programs: Vol. I. Cambridge University Press.",
+    "references": [
+        "\\[@Dienes2008\\], \\[@Lakatos1978\\]"
+    ],
+    "alt_related_terms": [
+        null
+    ],
     "drafted_by": [
         "Alaa Aldoh"
     ],
@@ -18,10 +23,7 @@
         "Mahmoud Elsherif",
         "Bethan Iley",
         "Sam Parsons",
-        "Flávio Azevedo"
-    ],
-    "alt_related_terms": [
-        null
+        "Flávio Azevedo  ### B {#b}"
     ],
     "language": "english",
     "aliases": [

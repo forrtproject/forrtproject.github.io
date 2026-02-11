@@ -9,7 +9,12 @@
         "Inclusion",
         "Social justice"
     ],
-    "references": "Albayrak-Aydemir, N. (2020). The hidden costs of being a scholar from the global south. Retrieved from https://blogs.lse.ac.uk/highereducation/2020/02/20/the-hidden-costs-of-being-a-scholar-from-the-global-south/\n\nPosselt, J. R. (2020). Equity in Science: Representation, Culture, and the Dynamics of Change in Graduate Education. Stanford University Press. https://books.google.de/books?id=2CjwDwAAQBAJ",
+    "references": [
+        "\\[@AlbayrakAydemir2020\\], \\[@Posselt2020\\]"
+    ],
+    "alt_related_terms": [
+        null
+    ],
     "drafted_by": [
         "Gisela H. Govaart"
     ],
@@ -20,9 +25,6 @@
         "Charlotte R. Pennington",
         "Beatrice Valentini",
         "Flávio Azevedo"
-    ],
-    "alt_related_terms": [
-        null
     ],
     "language": "english",
     "aliases": [

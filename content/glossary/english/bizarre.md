@@ -7,16 +7,18 @@
         "STRANGE",
         "WEIRD"
     ],
-    "references": "Clark, H., Elsherif, M. M., & Leavens, D. A. (2019). Ontogeny vs. phylogeny in primate/canid comparisons: a meta-analysis of the object choice task. Neuroscience & Biobehavioral Reviews, 105, 178–189. https://doi.org/10.1016/j.neubiorev.2019.06.001\n\nLeavens, D. A., Bard, K. A., & Hopkins, W. D. (2010). BIZARRE chimpanzees do not represent “the chimpanzee.” Behavioral and Brain Sciences, 33(2–3), 100–101. https://doi.org/10.1017/S0140525X10000166",
+    "references": [
+        "Clark et al. (2019); Leavens et al. (2010) \\[@Clark2019\\], \\[@Leavens2010\\]"
+    ],
+    "alt_related_terms": [
+        null
+    ],
     "drafted_by": [
         "Mahmoud Elsherif"
     ],
     "reviewed_by": [
         "Zoe Flack",
-        "Charlotte R. Pennington"
-    ],
-    "alt_related_terms": [
-        null
+        "Charlotte R. Pennington  ### ---"
     ],
     "language": "english",
     "aliases": [

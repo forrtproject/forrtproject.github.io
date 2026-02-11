@@ -12,7 +12,12 @@
         "STRANGE",
         "WEIRD"
     ],
-    "references": "Syed, M., & Kathawalla, U. (2020). Cultural Psychology, Diversity, and Representation in Open Science. https://doi.org/10.31234/osf.io/t7hp2",
+    "references": [
+        "\\[@SyedKathawalla2020\\]"
+    ],
+    "alt_related_terms": [
+        null
+    ],
     "drafted_by": [
         "Ryan Millager; Mariella Paul"
     ],
@@ -25,10 +30,7 @@
         "Wanyin Li",
         "Charlotte R. Pennington",
         "Olly Robertson",
-        "Flávio Azevedo"
-    ],
-    "alt_related_terms": [
-        null
+        "Flávio Azevedo  ### E {#e}"
     ],
     "language": "english",
     "aliases": [

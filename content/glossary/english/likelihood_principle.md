@@ -6,16 +6,18 @@
         "Bayesian inference",
         "Likelihood Function"
     ],
-    "references": "Dienes, Z. (2008). Understanding psychology as a science: An introduction to scientific and statistical inference. Macmillan International Higher Education.\n\nGeyer, C. J. (2003). Maximum Likelihood in R (pp. 1–9). Open Science Framework.\n\nGeyer, C. J. (2007). Stat 5102 Notes: Maximum Likelihood (pp. 1–8). Open Science Framework.",
+    "references": [
+        "\\[@Dienes2008\\], \\[@Geyer2003\\], \\[@Geyer2007\\]"
+    ],
+    "alt_related_terms": [
+        null
+    ],
     "drafted_by": [
         "Alaa Aldoh"
     ],
     "reviewed_by": [
         "Sam Parsons",
         "Flávio Azevedo"
-    ],
-    "alt_related_terms": [
-        null
     ],
     "language": "english",
     "aliases": [

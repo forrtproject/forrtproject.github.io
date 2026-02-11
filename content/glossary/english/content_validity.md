@@ -6,7 +6,12 @@
         "Construct validity",
         "Validity"
     ],
-    "references": "Bollen, K. A. (1989). Structural Equations with Latent Variables (pp. 179–225). John Wiley & Sons.\n\nBrod, M., Tesler, L., & Christensen, T. (2009). Qualitative research and content validity: Developing best practices based on science and experience. Quality of Life Research, 18(9), 1263–1278. https://doi.org/10.1007/s11136-009-9540-9\n\nDrost, E. A. (2011). Validity and reliability in social science research. Education Research and Perspectives, 38(1), 105–123.\n\nHaynes, S. N., Richard, D. C. S., & Kubany, E. S. (1995). Content validity in psychological assessment: A functional approach to concepts and methods. Psychological Assessment, 7(3), 238–247. https://doi.org/10.1037/1040-3590.7.3.238",
+    "references": [
+        "\\[@Bollen1989\\], \\[@BrodEtAl2009\\], \\[@Drost2011\\], \\[@HaynesRichardKubany1995\\]"
+    ],
+    "alt_related_terms": [
+        null
+    ],
     "drafted_by": [
         "Annalise A. LaPlume"
     ],
@@ -17,9 +22,6 @@
         "Eike Mark Rinke",
         "Sam Parsons",
         "Graham Reid"
-    ],
-    "alt_related_terms": [
-        null
     ],
     "language": "english",
     "aliases": [

@@ -10,7 +10,12 @@
         "Open Material",
         "Repository"
     ],
-    "references": "Lin, D., Crabtree, J., Dillo, I., Downs, R. R., Edmunds, R., Giaretta, D., De Giusti, M., L’Hours, H., Hugo, W., Jenkyns, R., Khodiyar, V., Martone, M. E., Mokrane, M., Navale, V., Petters, J., Sierman, B., Sokolova, D. V., Stockhause, M., & Westbrook, J. (2020). The TRUST Principles for digital repositories. Scientific Data, 7(1), 144. https://doi.org/10.1038/s41597-020-0486-7",
+    "references": [
+        "Lin et al. (2020) \\[@Lin2020\\]"
+    ],
+    "alt_related_terms": [
+        null
+    ],
     "drafted_by": [
         "Aleksandra Lazić"
     ],
@@ -19,9 +24,6 @@
         "Mahmoud Elsherif",
         "Helena Hartmann",
         "Sam Parsons"
-    ],
-    "alt_related_terms": [
-        null
     ],
     "language": "english",
     "aliases": [

@@ -5,14 +5,19 @@
     "related_terms": [
         "File-drawer",
         "Hypothesis",
-        "*P*\\-hacking",
-        "*p*\\-value",
+        "P*\\-hacking",
+        "p*\\-value",
         "Publication bias (File Drawer Problem)",
         "Questionable Research Practices or Questionable Reporting Practices (QRPs)",
         "Selective reporting",
         "Z-curve"
     ],
-    "references": "Bruns, S. B., & Ioannidis, J. P. (2016). P-curve and p-hacking in observational research. PLoS ONE, 11(2), e0149144. https://doi.org/10.1371/journal.pone.0149144\n\nSimonsohn, U., Nelson, L. D., & Simmons, J. P. (2014). P-curve: a key to the file-drawer. Journal of Experimental Psychology: General, 143(2), 534. https://doi.org/10.1037/a0030850\n\nSimonsohn, U., Nelson, L. D., & Simmons, J. P. (2014). P-curve and effect size: Correcting for publication bias using only significant results. Perspectives on Psychological Science, 9(6), 666–681. https://doi.org/10.1177/1745691614553988\n\nSimonsohn, U., Nelson, L. D., & Simmons, J. P. (2019). P-curve won’t do your laundry, but it will distinguish replicable from non-replicable findings in observational research: Comment on Bruns & Ioannidis (2016). PLoS ONE, 14(3), e0213454. https://doi.org/10.1371/journal.pone.0213454",
+    "references": [
+        "Bruns and Ioannidis (2016); Simonsohn et al. (2014a); Simonsohn et al.(2014b); Simonsohn et al. (2019) \\[@BrunsIoannidis2016\\], \\[@Simonsohn2014pcurve\\], \\[@Simonsohn2014effect\\], \\[@Simonsohn2019\\]"
+    ],
+    "alt_related_terms": [
+        null
+    ],
     "drafted_by": [
         "Bettina M. J. Kern"
     ],
@@ -22,9 +27,6 @@
         "Charlotte R. Pennington",
         "Robert M. Ross",
         "Olmo van den Akker"
-    ],
-    "alt_related_terms": [
-        null
     ],
     "language": "english",
     "aliases": [

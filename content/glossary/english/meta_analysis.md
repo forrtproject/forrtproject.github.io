@@ -13,7 +13,12 @@
         "STROBE",
         "Systematic Review"
     ],
-    "references": "Borenstein, M., Hedges, L. V., Higgins, J. P., & Rothstein, H. R. (2011). Introduction to meta-analysis. John Wiley & Sons.\n\nYeung, S. K., Feldman, G., Fillon, A., Protzko, J., Elsherif, M. M., Xiao, Q., & Pickering, J. (2020). Experimental Studies Meta-Analysis Registered Report Templates. https://osf.io/ytgrp/",
+    "references": [
+        "Borenstein et al. (2011); [Yeung et al. (2021)](https://osf.io/ytgrp/)  \\[@BorensteinEtAl2011\\], \\[@Yeung2020a\\]"
+    ],
+    "alt_related_terms": [
+        null
+    ],
     "drafted_by": [
         "Martin Vasilev; Siu Kit Yeung"
     ],
@@ -22,9 +27,6 @@
         "Tamara Kalandadze",
         "Charlotte R. Pennington",
         "Mirela Zaneva"
-    ],
-    "alt_related_terms": [
-        null
     ],
     "language": "english",
     "aliases": [

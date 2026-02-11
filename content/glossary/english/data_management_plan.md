@@ -9,7 +9,12 @@
         "FAIR principles",
         "Open data"
     ],
-    "references": "Burnette, M., Williams, S., & Imker, H. (2016). From Plan to Action: Successful Data Management Plan Implementation in a Multidisciplinary Project. Journal of eScience Librarianship, 5(1), e1101. https://doi.org/10.7191/jeslib.2016.1101\n\nMichener, W. K. (2015). Ten simple rules for creating a good data management plan. PLoS Computational Biology, 11(10), e1004525. https://doi.org/10.1371/journal.pcbi.1004525",
+    "references": [
+        "\\[@BurnetteEtAl2016\\], \\[@Michener2015\\], \\[@Research\\_Data\\_Alliance2020\\], \\[@StanfordLibraries\\_n\\_d\\]"
+    ],
+    "alt_related_terms": [
+        null
+    ],
     "drafted_by": [
         "Dominique Roche"
     ],
@@ -18,9 +23,6 @@
         "Sam Parsons",
         "Birgit Schmidt",
         "Flávio Azevedo"
-    ],
-    "alt_related_terms": [
-        null
     ],
     "language": "english",
     "aliases": [

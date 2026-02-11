@@ -11,7 +11,12 @@
         "Scientific misconduct",
         "Scientific publishing"
     ],
-    "references": "Byrne, J. A., & Christopher, J. (2020). Digital magic, or the dark arts of the 21st century—how can journals and peer reviewers detect manuscripts and publications from paper mills? FEBS Letters, 594(4), 583–589. https://doi.org/10.1002/1873-3468.13747\n\nHackett, R., & Kelly, S. (2020). Publishing ethics in the era of paper mills. Biology Open, 9(10), bio056556. https://doi.org/10.1242/bio.056556",
+    "references": [
+        "Byrne and Christopher (2020); Hackett and Kelly (2020) \\[@ByrneChristopher2020\\], \\[@HackettKelly2020\\]"
+    ],
+    "alt_related_terms": [
+        null
+    ],
     "drafted_by": [
         "Helena Hartmann"
     ],
@@ -20,9 +25,6 @@
         "Elizabeth Collins",
         "Mahmoud Elsherif",
         "Charlotte R. Pennington"
-    ],
-    "alt_related_terms": [
-        null
     ],
     "language": "english",
     "aliases": [

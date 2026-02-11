@@ -6,7 +6,12 @@
         "Data dictionary",
         "Metadata"
     ],
-    "references": "Arslan, R. C. (2019). How to Automatically Document Data With the codebook Package to Facilitate Data Reuse. Advances in Methods and Practices in Psychological Science, 2(2), 169–187. https://doi.org/10.1177/2515245919838783",
+    "references": [
+        "\\[@Arslan2019\\]; \\[@icpsr\\_codebook\\]"
+    ],
+    "alt_related_terms": [
+        null
+    ],
     "drafted_by": [
         "Tina Lonsdorf"
     ],
@@ -15,9 +20,6 @@
         "Ashley Blake, Kai Krautter",
         "Charlotte R. Pennington",
         "Flávio Azevedo"
-    ],
-    "alt_related_terms": [
-        null
     ],
     "language": "english",
     "aliases": [

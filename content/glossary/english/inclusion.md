@@ -7,7 +7,12 @@
         "Equity",
         "Social Justice"
     ],
-    "references": "Calvert, D. (2019). How to Make Inclusivity More Than Just an Office Buzzword. Retrieved from https://insight.kellogg.northwestern.edu/article/how-to-make-inclusivity-more-than-just-an-office-buzzword\n\nMartinez-Acosta, V. G., & Favero, C. B. (2018). A discussion of diversity and inclusivity at the institutional level: The need for a strategic plan. Journal of Undergraduate Neuroscience Education, 16(3), A252.",
+    "references": [
+        "\\[@Calvert2019\\], \\[@MartinezAcosta2018\\]"
+    ],
+    "alt_related_terms": [
+        null
+    ],
     "drafted_by": [
         "Ryan Millager"
     ],
@@ -17,9 +22,6 @@
         "Kai Krautter",
         "Suzanne L. K. Stewart",
         "Flávio Azevedo"
-    ],
-    "alt_related_terms": [
-        null
     ],
     "language": "english",
     "aliases": [

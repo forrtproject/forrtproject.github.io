@@ -8,7 +8,12 @@
         "Contributions",
         "CRediT"
     ],
-    "references": "Holcombe, A. O., Kovacs, M., Aust, F., & Aczel, B. (2020). Documenting contributions to scholarly articles using CRediT and tenzing. Plos One, 15(12), e0244611.",
+    "references": [
+        "Holcombe et al. (2020)"
+    ],
+    "alt_related_terms": [
+        null
+    ],
     "drafted_by": [
         "Marton Kovacs"
     ],
@@ -19,9 +24,6 @@
         "Charlotte R. Pennington",
         "Graham Reid",
         "Flávio Azevedo"
-    ],
-    "alt_related_terms": [
-        null
     ],
     "language": "german"
 }

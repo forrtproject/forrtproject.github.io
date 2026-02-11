@@ -7,7 +7,12 @@
         "Replicability",
         "repeatability"
     ],
-    "references": "Barba, L. A. (2018). Terminologies for reproducible research. arXiv Preprint arXiv:1802.03311.\n\nCrüwell, S., van Doorn, J., Etz, A., Makel, M. C., Moshontz, H., Niebaum, J. C., Orben, A., Parsons, S., & Schulte-Mecklenbeck, M. (2019). Seven Easy Steps to Open Science: An Annotated Reading List. Zeitschrift Für Psychologie, 227(4), 237–248. https://doi.org/10.1027/2151-2604/a000387\n\nPeng, R. D. (2011). Reproducible Research in Computational Science. Science, 334(6060), 1226–1227. https://doi.org/10.1126/science.1213847\n\nStodden, V. C. (2011). Trust your science? Open your data and code.\n\nSyed, M. (2019). The Open Science Movement is for all of us. PsyArXiv.",
+    "references": [
+        "Barba (2018); Cruwell et al. (2019); Peng (2011), Stodden (2011); Syed (2019); National Academies of Sciences, Engineering, and Medicine (2019) \\[@Barba2018\\], \\[@Cruwell2019\\], \\[@Peng2011\\], \\[@Stodden2011\\], \\[@Syed2019\\], \\[@National\\_Academies\\_2019\\]"
+    ],
+    "alt_related_terms": [
+        null
+    ],
     "drafted_by": [
         "Mahmoud Elsherif"
     ],
@@ -18,9 +23,6 @@
         "Sam Parsons",
         "Charlotte R. Pennington",
         "Suzanne L. K. Stewart"
-    ],
-    "alt_related_terms": [
-        null
     ],
     "language": "english",
     "aliases": [

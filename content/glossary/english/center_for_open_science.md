@@ -13,7 +13,12 @@
         "Registrations (Preregistrations & Registered Reports)",
         "Transparency and Openness Promotion Guidelines (TOP)"
     ],
-    "references": "for Open Science, C. (n.d.). Show Your Work. Share Your Work. Advance Science. That’s Open Science. https://www.cos.io/",
+    "references": [
+        "\\[@CentreForOpenScienceND\\]"
+    ],
+    "alt_related_terms": [
+        null
+    ],
     "drafted_by": [
         "Beatrix Arendt"
     ],
@@ -22,9 +27,6 @@
         "Mariella Paul",
         "Charlotte R. Pennington",
         "Lisa Spitzer"
-    ],
-    "alt_related_terms": [
-        null
     ],
     "language": "english",
     "aliases": [

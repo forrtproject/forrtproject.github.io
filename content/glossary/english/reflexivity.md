@@ -6,16 +6,18 @@
         "Bracketing Interviews",
         "Qualitative Research"
     ],
-    "references": "Braun, V., & Clarke, V. (2013). Successful Qualitative Research. SAGE Publications.\n\nFinlay, L., & Gough, B. (2008). Reflexivity: A practical guide for researchers in health and social sciences. John Wiley & Sons.",
+    "references": [
+        "Braun and Clarke (2013); Finlay and Gough (2008) \\[@BraunClarke2013\\], \\[@FinlayGough2008\\]"
+    ],
+    "alt_related_terms": [
+        null
+    ],
     "drafted_by": [
         "Claire Melia"
     ],
     "reviewed_by": [
         "Gilad Feldman",
         "Annalise A. LaPlume"
-    ],
-    "alt_related_terms": [
-        null
     ],
     "language": "english",
     "aliases": [

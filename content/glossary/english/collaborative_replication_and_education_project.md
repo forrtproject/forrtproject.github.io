@@ -6,7 +6,12 @@
         "Direct replication",
         "Exact replication"
     ],
-    "references": "Wagge, J. R., Baciu, C., Banas, K., Nadler, J. T., Schwarz, S., Weisberg, Y., & others. (2019). A demonstration of the collaborative replication and education project: Replication attempts of the red-romance effect. Collabra: Psychology, 5(1). https://doi.org/10.1525/collabra.177",
+    "references": [
+        "\\[@Wagge2019\\]"
+    ],
+    "alt_related_terms": [
+        null
+    ],
     "drafted_by": [
         "Connor Keating"
     ],
@@ -15,9 +20,6 @@
         "Mahmoud Elsherif",
         "Zoe Flack",
         "Charlotte R. Pennington"
-    ],
-    "alt_related_terms": [
-        null
     ],
     "language": "english",
     "aliases": [

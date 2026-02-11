@@ -8,7 +8,12 @@
         "Preregistration",
         "Triple badge"
     ],
-    "references": "Hardwicke, T. E., Bohn, M., MacDonald, K., Hembacher, E., Nuijten, M. B., Peloquin, B. N., & others. (2020). Analytic reproducibility in articles receiving open data badges at the journal Psychological Science: an observational study. Royal Society Open Science, 8(1), 201494. https://doi.org/10.1098/rsos.201494\n\nKidwell, M. C., Lazarević, L. B., Baranski, E., Hardwicke, T. E., Piechowski, S., Falkenberg, L. S., & Nosek, B. A. (2016). Badges to acknowledge open practices: A simple, low-cost, effective method for increasing transparency. PLoS Biology, 14(5), e1002456. https://doi.org/10.1371/journal.pbio.1002456",
+    "references": [
+        "Hardwicke et al. (2020); Kidwell et al. (2016); Rowhani-Farid et al. (2020); Science (n.d.) \\[@HardwickeEtAl2020\\], \\[@Kidwell2016\\], \\[@Rowhani\\_Farid2020\\], \\[@Science\\_C\\_n\\_d\\]"
+    ],
+    "alt_related_terms": [
+        null
+    ],
     "drafted_by": [
         "Jacob Miranda"
     ],
@@ -19,9 +24,6 @@
         "Charlotte R. Pennington",
         "Lisa Spitzer",
         "Suzanne L. K. Stewart"
-    ],
-    "alt_related_terms": [
-        null
     ],
     "language": "english",
     "aliases": [

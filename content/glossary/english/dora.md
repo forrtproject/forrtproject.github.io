@@ -7,16 +7,18 @@
         "Journal Impact Factor",
         "Open Science"
     ],
-    "references": "Health Research Board. (n.d.). Declaration on Research Assessment. Retrieved from https://www.hrb.ie/funding/funding-schemes/before-you-apply/how-we-assess-applications/declaration-on-research-assessment/",
+    "references": [
+        "Health Research Board (n.d.); [https://sfdora.org/](https://sfdora.org/) \\[@HealthResearchBoardND\\], \\[@DORA\\_San\\_Francisco\\]"
+    ],
+    "alt_related_terms": [
+        null
+    ],
     "drafted_by": [
         "Aoife O’Mahony"
     ],
     "reviewed_by": [
         "Connor Keating",
         "Charlotte R. Pennington"
-    ],
-    "alt_related_terms": [
-        null
     ],
     "language": "english",
     "aliases": [

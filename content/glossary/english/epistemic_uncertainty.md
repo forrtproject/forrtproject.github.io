@@ -6,7 +6,12 @@
         "Aleatoric uncertainty",
         "Knightian uncertainty"
     ],
-    "references": "Der Kiureghian, A., & Ditlevsen, O. (2009). Aleatory or epistemic? Does it matter? Structural Safety, 31(2), 105–112. https://doi.org/10.1016/j.strusafe.2008.06.020\n\nFerson, S., Joslyn, C. A., Helton, J. C., Oberkampf, W. L., & Sentz, K. (2004). Summary from the epistemic uncertainty workshop: consensus amid diversity. Reliability Engineering & System Safety, 85(1–3), 355–369. https://doi.org/10.1016/j.ress.2004.03.023",
+    "references": [
+        "\\[@DerKiureghianDitlevsen2009\\], \\[@FersonEtAl2004\\] Alternative terms: Epistemic uncertainty is also known as knowledge uncertainty, subjective uncertainty, or type B uncertainty."
+    ],
+    "alt_related_terms": [
+        null
+    ],
     "drafted_by": [
         "Bradley Baker"
     ],
@@ -15,9 +20,6 @@
         "Elizabeth Collins",
         "Charlotte R. Pennington",
         "Graham Reid"
-    ],
-    "alt_related_terms": [
-        null
     ],
     "language": "english",
     "aliases": [

@@ -6,7 +6,12 @@
         "Accessibility",
         "Open Access"
     ],
-    "references": "Day, S., Rennie, S., Luo, D., & Tucker, J. D. (2020). Open to the public: Paywalls and the public rationale for open access medical research publishing. Research Involvement and Engagement, 6(1), 8. https://doi.org/10.1186/s40900-020-0182-y",
+    "references": [
+        "Day et al. (2020); [https://casrai.org/term/closed-access/](https://casrai.org/term/closed-access/);  \\[@Day2020\\]"
+    ],
+    "alt_related_terms": [
+        null
+    ],
     "drafted_by": [
         "Bradley Baker"
     ],
@@ -15,9 +20,6 @@
         "Sam Parsons",
         "Charlotte R. Pennington",
         "Julia Wolska"
-    ],
-    "alt_related_terms": [
-        null
     ],
     "language": "english",
     "aliases": [

@@ -14,7 +14,7 @@
         "Systematic Review"
     ],
     "references": [
-        "Borenstein et al. (2011); [Yeung et al. (2021)](https://mgto.org/exp-ma-rr-template-folder)"
+        "Borenstein et al. (2011); [Yeung et al. (2021)](https://osf.io/ytgrp/)"
     ],
     "alt_related_terms": [
         null

@@ -10,7 +10,12 @@
         "Metadata",
         "Research data management"
     ],
-    "references": "Corti, L., Van den Eynden, V., Bishop, L., & Woollard, M. (2019). Managing and sharing research data: a guide to good practice. Sage.",
+    "references": [
+        "CESSDA; Corti et al. (2019) \\[@CESSDA\\_DataManagement\\], \\[@Corti2019\\]"
+    ],
+    "alt_related_terms": [
+        null
+    ],
     "drafted_by": [
         "Micah Vandegrift"
     ],
@@ -19,9 +24,6 @@
         "Tina B. Lonsdorf",
         "Catia M. Oliveira",
         "Julia Wolska"
-    ],
-    "alt_related_terms": [
-        null
     ],
     "language": "english",
     "aliases": [

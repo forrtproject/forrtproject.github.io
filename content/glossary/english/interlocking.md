@@ -11,7 +11,12 @@
         "Open Science",
         "Social Justice"
     ],
-    "references": "Ledgerwood, A., Hudson, S. T. J., Lewis, Jr., N. A., Maddox, K. B., Pickett, C., Remedios, J. D., & Wilkins, C. L. (2021). The Pandemic as a Portal: Reimagining Psychological Science as Truly Open and Inclusive. https://doi.org/10.31234/osf.io/gdzue",
+    "references": [
+        "\\[@Ledgerwood2021\\]"
+    ],
+    "alt_related_terms": [
+        null
+    ],
     "drafted_by": [
         "Christina Pomareda"
     ],
@@ -21,9 +26,6 @@
         "Mahmoud Elsherif",
         "Eliza Woodward",
         "Gerald Vineyard;"
-    ],
-    "alt_related_terms": [
-        null
     ],
     "language": "english",
     "aliases": [

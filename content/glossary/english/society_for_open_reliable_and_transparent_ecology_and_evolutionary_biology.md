@@ -5,7 +5,12 @@
     "related_terms": [
         "Society for the Improvement of Psychological Science (SIPS)"
     ],
-    "references": "",
+    "references": [
+        "[https://www.sortee.org/](https://www.sortee.org/) \\[@SORTEE\\_n\\_d\\]"
+    ],
+    "alt_related_terms": [
+        null
+    ],
     "drafted_by": [
         "Brice Beffara Bret; Dominique Roche"
     ],
@@ -14,9 +19,6 @@
         "Mahmoud Elsherif",
         "Charlotte R. Pennington",
         "Graham Reid"
-    ],
-    "alt_related_terms": [
-        null
     ],
     "language": "english",
     "aliases": [

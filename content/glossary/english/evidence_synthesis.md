@@ -12,7 +12,12 @@
         "Systematic map",
         "Systematic review"
     ],
-    "references": "for Evaluation, C. (n.d.). Evidence Synthesis. https://www.lshtm.ac.uk/research/centres/centre-evaluation/evidence-synthesis\n\nJames, K. L., Randall, N. P., & Haddaway, N. R. (2016). A methodology for systematic mapping in environmental sciences. Environmental Evidence, 5(1), 1–13. https://doi.org/10.1186/s13750-016-0059-6\n\nSiddaway, A. P., Wood, A. M., & Hedges, L. V. (2019). How to do a systematic review: a best practice guide for conducting and reporting narrative reviews, meta-analyses, and meta-syntheses. Annual Review of Psychology, 70, 747–770. https://doi.org/10.1146/annurev-psych-010418-102803",
+    "references": [
+        "\\[@CentreForEvaluationND\\], \\[@James2016\\], \\[@Siddaway2019\\]"
+    ],
+    "alt_related_terms": [
+        null
+    ],
     "drafted_by": [
         "Marta Topor"
     ],
@@ -21,9 +26,6 @@
         "Tamara Kalandadze",
         "Adam Parker",
         "Charlotte R. Pennington"
-    ],
-    "alt_related_terms": [
-        null
     ],
     "language": "english",
     "aliases": [

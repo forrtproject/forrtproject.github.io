@@ -7,15 +7,17 @@
         "Author contributions",
         "CreDit taxonomy"
     ],
-    "references": "Tscharntke, T., Hochberg, M. E., Rand, T. A., Resh, V. H., & Krauss, J. (2007). Author sequence and credit for contributions in multiauthored publications. PLoS Biology, 5(1), e18. https://doi.org/10.1371/journal.pbio.0050018",
+    "references": [
+        "\\[@Tscharntke2007\\]"
+    ],
+    "alt_related_terms": [
+        null
+    ],
     "drafted_by": [
         "Myriam A. Baum"
     ],
     "reviewed_by": [
         "Charlotte R. Pennington"
-    ],
-    "alt_related_terms": [
-        null
     ],
     "language": "english",
     "aliases": [

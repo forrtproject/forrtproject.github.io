@@ -7,7 +7,7 @@
         "Metadata"
     ],
     "references": [
-        "Arslan et al. (2019); [https://www.icpsr.umich.edu/icpsrweb/content/shared/ICPSR/faqs/what-is-a-codebook.html](https://www.icpsr.umich.edu/icpsrweb/content/shared/ICPSR/faqs/what-is-a-codebook.html)"
+        "Arslan et al. (2019); [https://www.icpsr.umich.edu/web/ICPSR/cms/1983](https://www.icpsr.umich.edu/web/ICPSR/cms/1983)"
     ],
     "alt_related_terms": [
         null

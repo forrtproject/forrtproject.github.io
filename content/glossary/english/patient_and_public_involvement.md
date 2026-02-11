@@ -6,7 +6,12 @@
         "Co-production",
         "Participatory research"
     ],
-    "references": "Boivin, A., Richards, T., Forsythe, L., Gregoire, A., L’Esperance, A., Abelson, J., & Carman, K. L. (2018). Evaluating the patient and public involvement in research. British Medical Journal, 363, k5147. https://doi.org/10.1136/bmj.k5147\n\nINVOLVE. (n.d.). INVOLVE – Supporting public involvement in NHS, public health and social care research. https://www.invo.org.uk/",
+    "references": [
+        "Boivin et al. (2018); [https://www.invo.org.uk/](https://www.invo.org.uk/) \\[@BoivinEtAl2018\\], \\[@INVOLVE\\]"
+    ],
+    "alt_related_terms": [
+        null
+    ],
     "drafted_by": [
         "Jade Pickering"
     ],
@@ -14,9 +19,6 @@
         "Mahmoud Elsherif",
         "Sam Parsons",
         "Catia M. Oliveira"
-    ],
-    "alt_related_terms": [
-        null
     ],
     "language": "english",
     "aliases": [

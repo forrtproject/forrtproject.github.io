@@ -7,16 +7,18 @@
         "Validity",
         "Statistical assumptions"
     ],
-    "references": "Cook, T. D., & Campbell, D. T. (1979). Quasi-Experimentation. Rand McNally.\n\nDrost, E. A. (2011). Validity and reliability in social science research. Education Research and Perspectives, 38(1), 105–123.",
+    "references": [
+        "Cook and Campbell (1979); Drost (2011) \\[@Cook1979\\], \\[@Drost2011\\]"
+    ],
+    "alt_related_terms": [
+        null
+    ],
     "drafted_by": [
         "Annalise A. LaPlume"
     ],
     "reviewed_by": [
         "Jamie P. Cockcroft, Zoltan Kekecs",
         "Graham Reid"
-    ],
-    "alt_related_terms": [
-        null
     ],
     "language": "english",
     "aliases": [

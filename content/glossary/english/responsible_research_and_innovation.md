@@ -7,7 +7,12 @@
         "Public Engagement",
         "Transdisciplinary Research"
     ],
-    "references": "",
+    "references": [
+        "European Commission (2021) \\[@EU\\_DataProtection\\]"
+    ],
+    "alt_related_terms": [
+        null
+    ],
     "drafted_by": [
         "Ana Barbosa Mendes"
     ],
@@ -16,9 +21,6 @@
         "Joanne McCuaig",
         "Sam Parsons",
         "Graham Reid"
-    ],
-    "alt_related_terms": [
-        null
     ],
     "language": "english",
     "aliases": [

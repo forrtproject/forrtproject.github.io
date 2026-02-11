@@ -6,7 +6,12 @@
         "Ad hominem bias",
         "Peer review"
     ],
-    "references": "Tvina, A., Spellecy, R., & Palatnik, A. (2019). Bias in the peer review process: can we do better? Obstetrics & Gynecology, 133(6), 1081–1083. https://doi.org/10.1097/AOG.0000000000003260",
+    "references": [
+        "\\[@Tvina2019\\]"
+    ],
+    "alt_related_terms": [
+        null
+    ],
     "drafted_by": [
         "Mahmoud Elsherif"
     ],
@@ -16,9 +21,6 @@
         "Madeleine Ingham",
         "Sam Parsons",
         "Graham Reid"
-    ],
-    "alt_related_terms": [
-        null
     ],
     "language": "english",
     "aliases": [

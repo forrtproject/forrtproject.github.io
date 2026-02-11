@@ -7,18 +7,20 @@
         "Replication",
         "Reproducibility",
         "Research compendium",
-        "**References:** \\[@Claerbout1992\\], \\[@Gentleman2005\\], \\[@Marwick2018\\], \\[@Nust2018\\]"
+        "References: \\[@Claerbout1992\\], \\[@Gentleman2005\\], \\[@Marwick2018\\], \\[@Nust2018\\]"
     ],
-    "references": "",
+    "references": [
+        ""
+    ],
+    "alt_related_terms": [
+        null
+    ],
     "drafted_by": [
         "Ben Marwick"
     ],
     "reviewed_by": [
         "Ali H. Al-Hoorie",
         "Charlotte R. Pennington"
-    ],
-    "alt_related_terms": [
-        null
     ],
     "language": "english",
     "aliases": [

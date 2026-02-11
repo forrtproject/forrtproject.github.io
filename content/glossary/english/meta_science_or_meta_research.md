@@ -2,8 +2,15 @@
     "type": "glossary",
     "title": "Meta-science or Meta-research",
     "definition": "The scientific study of science itself with the aim to describe, explain, evaluate and/or improve scientific practices. Meta-science typically investigates scientific methods, analyses, the reporting and evaluation of data, the reproducibility and replicability of research results, and research incentives.",
-    "related_terms": [],
-    "references": "Ioannidis, J. P., Fanelli, D., Dunne, D. D., & Goodman, S. N. (2015). Meta-research: Eevaluation and improvement of research methods and practices. PLoS Biology, 13(10), e1002264. https://doi.org/10.1371/journal.pbio.1002264\n\nPeterson, D., & Panofsky, A. (2020). Metascience as a scientific social movement. https://doi.org/10.31235/osf.io/4dsqa",
+    "related_terms": [
+        ""
+    ],
+    "references": [
+        "Ioannidis et al. (2015); Peterson and Panofsky (2020) \\[@Ioannidis2015\\], \\[@Peterson2020\\]"
+    ],
+    "alt_related_terms": [
+        null
+    ],
     "drafted_by": [
         "Elizabeth Collins"
     ],
@@ -11,9 +18,6 @@
         "Tamara Kalandadze",
         "Lisa Spitzer",
         "Olmo van den Akker"
-    ],
-    "alt_related_terms": [
-        null
     ],
     "language": "english",
     "aliases": [

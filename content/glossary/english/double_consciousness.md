@@ -6,7 +6,12 @@
         "Social class",
         "Social integration"
     ],
-    "references": "Albayrak, N., & Okoroji, C. (2019). Facing the challenges of postgraduate study as a minority student. A Guide for Psychology Postgraduates, 63.\n\nDu Bois, W. E. B. (1968). The souls of black folk; essays and sketches. Johnson Reprint Corp.\n\nGilroy, P. (1993). The black Atlantic: Modernity and double consciousness. Harvard University Press.",
+    "references": [
+        "\\[@AlbayrakOkoroji2019\\], \\[@DuBois1968\\], \\[@Gilroy1993\\]"
+    ],
+    "alt_related_terms": [
+        null
+    ],
     "drafted_by": [
         "Nihan Albayrak-Aydemir"
     ],
@@ -15,9 +20,6 @@
         "Wanyin Li",
         "Michele C. Lim",
         "Adam Parker"
-    ],
-    "alt_related_terms": [
-        null
     ],
     "language": "english",
     "aliases": [

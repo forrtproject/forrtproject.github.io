@@ -9,7 +9,12 @@
         "Many Labs",
         "ReproducibiliTea"
     ],
-    "references": "Ellemers, N. (2021). Science as collaborative knowledge generation. British Journal of Social Psychology, 60(1), 1–28. https://doi.org/10.1111/bjso.12430\n\nOrben, A. (2019). A journal club to fix science. Nature, 573(7775), 465–466. https://doi.org/10.1038/d41586-019-02842-8\n\nShepard, B. (2015). Community projects as social activism. SAGE.",
+    "references": [
+        "\\[@Ellemers2021\\], \\[@Orben2019\\], \\[@Shepard2015\\]"
+    ],
+    "alt_related_terms": [
+        null
+    ],
     "drafted_by": [
         "Marta Topor"
     ],
@@ -19,9 +24,6 @@
         "Mahmoud Elsherif",
         "Kai Krautter",
         "Gerald Vineyard"
-    ],
-    "alt_related_terms": [
-        null
     ],
     "language": "english",
     "aliases": [

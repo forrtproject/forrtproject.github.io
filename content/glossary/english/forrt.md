@@ -5,7 +5,12 @@
     "related_terms": [
         "Integrating open and reproducible science tenets into higher education"
     ],
-    "references": "",
+    "references": [
+        "[FORRT \\- Framework for Open and Reproducible Research Training](https://forrt.org/); F (2019) \\[@FORRT2019\\]"
+    ],
+    "alt_related_terms": [
+        null
+    ],
     "drafted_by": [
         "Tamara Kalandadze"
     ],
@@ -13,9 +18,6 @@
         "Mahmoud Elsherif",
         "Charlotte R. Pennington",
         "Flávio Azevedo"
-    ],
-    "alt_related_terms": [
-        null
     ],
     "language": "english",
     "aliases": [

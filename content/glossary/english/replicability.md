@@ -10,7 +10,12 @@
         "Reliability",
         "Robustness (analyses)"
     ],
-    "references": "Barba, L. A. (2018). Terminologies for reproducible research. arXiv Preprint arXiv:1802.03311.\n\nCrüwell, S., van Doorn, J., Etz, A., Makel, M. C., Moshontz, H., Niebaum, J. C., Orben, A., Parsons, S., & Schulte-Mecklenbeck, M. (2019). Seven Easy Steps to Open Science: An Annotated Reading List. Zeitschrift Für Psychologie, 227(4), 237–248. https://doi.org/10.1027/2151-2604/a000387\n\nKing, G. (1995). Replication, replication. PS: Political Science & Politics, 28(3), 444–452. https://doi.org/10.2307/420301\n\nNosek, B. A., & Errington, T. M. (2020). What is replication? PLOS Biology, 18(3), e3000691. https://doi.org/10.1371/journal.pbio.3000691",
+    "references": [
+        "Barba (2018); Crüwell et al. (2019); King (1996); National Academies of Sciences et al. (2011); Nosek and Errington (2020) \\[@Barba2018\\], \\[@Cruwell2019\\], \\[@King1995\\], \\[@National\\_Academies\\_2019\\], \\[@Nosek2020\\]"
+    ],
+    "alt_related_terms": [
+        null
+    ],
     "drafted_by": [
         "Mahmoud Elsherif"
     ],
@@ -23,9 +28,6 @@
         "Sam Parsons",
         "Eike Mark Rinke",
         "Tobias Wingen"
-    ],
-    "alt_related_terms": [
-        null
     ],
     "language": "english",
     "aliases": [

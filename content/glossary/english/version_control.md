@@ -9,7 +9,12 @@
         "Source code management",
         "Source control"
     ],
-    "references": "Git. (n.d.). Git—About Version Control. https://git-scm.com/book/en/v2/Getting-Started-About-Version-Control",
+    "references": [
+        "[https://git-scm.com/book/en/v2/Getting-Started-About-Version-Control](https://git-scm.com/book/en/v2/Getting-Started-About-Version-Control)  \\[@GitVersionControl\\]"
+    ],
+    "alt_related_terms": [
+        null
+    ],
     "drafted_by": [
         "Mahmoud Elsherif"
     ],
@@ -22,10 +27,7 @@
         "Charlotte R. Pennington",
         "Robert M. Ross",
         "Timo Roettger",
-        "Andrew J. Stewart"
-    ],
-    "alt_related_terms": [
-        null
+        "Andrew J. Stewart  ###  ### W {#w}"
     ],
     "language": "english",
     "aliases": [

@@ -5,13 +5,17 @@
     "related_terms": [
         "Hypothesis"
     ],
-    "references": "Dienes, Z. (2008). Understanding psychology as a science: An introduction to scientific and statistical inference. Macmillan International Higher Education.",
+    "references": [
+        "\\[@Dienes2008\\]"
+    ],
+    "alt_related_terms": [
+        null
+    ],
     "drafted_by": [
         "Alaa Aldoh"
     ],
-    "reviewed_by": [],
-    "alt_related_terms": [
-        null
+    "reviewed_by": [
+        ""
     ],
     "language": "english",
     "aliases": [

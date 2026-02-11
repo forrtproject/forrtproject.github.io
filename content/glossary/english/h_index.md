@@ -8,7 +8,12 @@
         "I10-index",
         "Impact"
     ],
-    "references": "Hirsch, J. E. (2005). An index to quantify an individual’s scientific research output. Proceedings of the National Academy of Sciences, 102(46), 16569–16572. https://doi.org/10.1073/pnas.0507655102\n\nWendl, M. C. (2007). H-index: however ranked, citations need context. Nature, 449(7161), 403–403. https://doi.org/10.1038/449403b",
+    "references": [
+        "\\[@Hirsch2005\\], \\[@Wendl2007\\]"
+    ],
+    "alt_related_terms": [
+        null
+    ],
     "drafted_by": [
         "Jacob Miranda"
     ],
@@ -17,9 +22,6 @@
         "Mahmoud M. Elsherif",
         "Brett J. Gall",
         "Charlotte R. Pennington"
-    ],
-    "alt_related_terms": [
-        null
     ],
     "language": "english",
     "aliases": [

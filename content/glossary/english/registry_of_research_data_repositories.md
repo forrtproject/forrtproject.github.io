@@ -9,7 +9,12 @@
         "Open Material",
         "Repository"
     ],
-    "references": "Anon. (n.d.). Home | re3data.org. Retrieved from https://www.re3data.org/",
+    "references": [
+        "[https://www.re3data.org/](https://www.re3data.org/) \\- Registry of Research Data Repositories. \\[@AnonRe3dataND\\]"
+    ],
+    "alt_related_terms": [
+        null
+    ],
     "drafted_by": [
         "Aleksandra Lazić"
     ],
@@ -18,9 +23,6 @@
         "Sam Parsons",
         "Charlotte R. Pennington",
         "Helena Hartmann"
-    ],
-    "alt_related_terms": [
-        null
     ],
     "language": "english",
     "aliases": [

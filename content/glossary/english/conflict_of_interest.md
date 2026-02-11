@@ -9,15 +9,17 @@
         "Publication ethics",
         "Transparency"
     ],
-    "references": "Directory of Open Access Journals. (n.d.). https://doaj.org/apply/transparency/",
+    "references": [
+        "\\[@icmje\\_conflicts\\], \\[@DOAJ\\]"
+    ],
+    "alt_related_terms": [
+        null
+    ],
     "drafted_by": [
         "Christopher Graham"
     ],
     "reviewed_by": [
         "Flávio Azevedo"
-    ],
-    "alt_related_terms": [
-        null
     ],
     "language": "english",
     "aliases": [

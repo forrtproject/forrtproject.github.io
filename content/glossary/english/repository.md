@@ -13,7 +13,12 @@
         "Open Source",
         "Preprint"
     ],
-    "references": "",
+    "references": [
+        "[https://www.nature.com/sdata/policies/repositories](https://www.nature.com/sdata/policies/repositories) \\[@Nature\\_n\\_d\\]"
+    ],
+    "alt_related_terms": [
+        null
+    ],
     "drafted_by": [
         "Tina Lonsdorf"
     ],
@@ -23,9 +28,6 @@
         "Mariella Paul",
         "Charlotte R. Pennington",
         "Flávio Azevedo"
-    ],
-    "alt_related_terms": [
-        null
     ],
     "language": "english",
     "aliases": [
