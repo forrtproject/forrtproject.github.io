@@ -109,11 +109,11 @@ Protected branches (never deleted): `master`, `gh-pages`
 
 | File | Status | Reason |
 |------|--------|--------|
-| `reminder-check.yml_OLD` | Disabled | Replaced by other workflows |
-| `reminder-create.yml_OLD` | Disabled | Replaced by other workflows |
-| `mark-stale.yml_OLD` | Disabled | No longer needed |
-| `labeler.yaml_OLD` | Disabled | No longer needed |
-| `link-check.yaml_OLD` | Disabled | No longer needed |
+| `reminder-check.yml_OLD` | Disabled | Not used, too many action runs |
+| `reminder-create.yml_OLD` | Disabled | Not used, too many action runs |
+| `mark-stale.yml_OLD` | Disabled | Not in use, can be restored with better rules |
+| `labeler.yaml_OLD` | Disabled | Not in use, can be restored with better rules |
+| `link-check.yaml_OLD` | Disabled | Broken, can be restored if fixed. |
 
 ## Manual Triggers
 
