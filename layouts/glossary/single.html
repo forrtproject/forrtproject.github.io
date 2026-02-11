@@ -192,9 +192,19 @@
             {{ end }}
 
             {{ if .Params.references }}
-            {{ $references := delimit .Params.references ", " | len }}
-            {{ if ne $references 0 }}
-            <p class="mb-1 pr-2"><b>{{ if gt (len .Params.references) 1 }}{{ index (index $dictionary $lang) "references" }}{{ else }}{{ index (index $dictionary $lang) "reference" }}{{ end }}: </b>{{ delimit .Params.references ", " ", & " | markdownify }}</p>
+            {{ $refs := .Params.references }}
+            {{ $refsIsString := eq (printf "%T" $refs) "string" }}
+            {{ if $refsIsString }}
+              {{ if ne $refs "" }}
+              <p class="mb-1 pr-2"><b>{{ index (index $dictionary $lang) "references" }}: </b>{{ $refs | markdownify }}</p>
+              {{ end }}
+            {{ else }}
+              {{ if gt (len $refs) 0 }}
+              {{ $firstRef := index $refs 0 }}
+              {{ if $firstRef }}
+              <p class="mb-1 pr-2"><b>{{ if gt (len $refs) 1 }}{{ index (index $dictionary $lang) "references" }}{{ else }}{{ index (index $dictionary $lang) "reference" }}{{ end }}: </b>{{ range $index, $ref := $refs }}{{ if $index }}, {{ end }}{{ $ref }}{{ end }}</p>
+              {{ end }}
+              {{ end }}
             {{ end }}
             {{ end }}
 
