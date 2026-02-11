@@ -68,6 +68,13 @@
   status = 301
   force = false
 
+# Redirect vbeta glossary to English glossary
+[[redirects]]
+  from = "/glossary/vbeta/*"
+  to = "/glossary/english/"
+  status = 301
+  force = true
+
 [[headers]]
   for = "*.webmanifest"
   [headers.values]
