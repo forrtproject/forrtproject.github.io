@@ -50,7 +50,9 @@ def process_references(references_text, apa_lookup, missing_refs_log=None):
     formatted_refs = []
     
     # Match [@key] format (Pandoc citations)
-    # Matches: \[@key\], [@key], \[@key], [@key\]
+    # Pattern handles: \[@key\], [@key], \[@key], [@key\]
+    # The Google Sheets may have escaped brackets (\[@key\]) from Markdown,
+    # so we match both escaped and unescaped versions
     citation_pattern = r'\\?\[@([^\]\\]+)\\?\]'
     matches = re.findall(citation_pattern, references_text)
     

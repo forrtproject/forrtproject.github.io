@@ -202,7 +202,9 @@
               {{ if gt (len $refs) 0 }}
               {{ $firstRef := index $refs 0 }}
               {{ if $firstRef }}
-              <p class="mb-1 pr-2"><b>{{ if gt (len $refs) 1 }}{{ index (index $dictionary $lang) "references" }}{{ else }}{{ index (index $dictionary $lang) "reference" }}{{ end }}: </b>{{ range $index, $ref := $refs }}{{ if $index }}, {{ end }}{{ $ref }}{{ end }}</p>
+              {{ $refLabel := index (index $dictionary $lang) "reference" }}
+              {{ if gt (len $refs) 1 }}{{ $refLabel = index (index $dictionary $lang) "references" }}{{ end }}
+              <p class="mb-1 pr-2"><b>{{ $refLabel }}: </b>{{ range $index, $ref := $refs }}{{ if $index }}, {{ end }}{{ $ref }}{{ end }}</p>
               {{ end }}
               {{ end }}
             {{ end }}
