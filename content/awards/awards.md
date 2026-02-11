@@ -121,6 +121,26 @@ Thanks to our amazing community, FORRT has become an ***award-winning*** grassro
 
 <br>
 
+<img src="sips.webp" align="right" /> In 2025, FORRT received the ***[Mission Award for Educational resources on the replication crisis](https://improvingpsych.org/mission/awards/#:~:text=SEMA3-,June%202025,Educational%20resources%20on%20the%20replication%20crisis,-June%202025)*** from the Society for the Improvement of Psychological Science.
+
+<br />
+
+<img src="sips.webp" align="right" /> In 2025, FORRT received a ***[Commendation Award for Pownall et al. (2023): Teaching open and reproducible scholarship: a critical review of the evidence base for current pedagogical methods and their outcomes](https://doi.org/10.1098/rsos.221255)*** from the Society for the Improvement of Psychological Science.
+
+<br />
+
+<img src="sips.webp" align="right" /> In 2025, FORRT received a ***[Commendation Award for Open Science in the Developing World: A Collection of Practical Guides for Researchers in Developing Countries](https://opensci-cn.github.io/OS-developing-world/)*** from the Society for the Improvement of Psychological Science.
+
+<br />
+
+<img src="sips.webp" align="right" /> In 2025, FORRT received a ***[Commendation Award for International Initiatives to Enhance Awareness and Uptake of Open Research in Psychology: A Systematic Mapping Review](https://doi.org/10.1098/rsos.241726)*** from the Society for the Improvement of Psychological Science.
+
+<br />
+
+<img src="sips.webp" align="right" /> In 2025, FORRT received a ***[Commendation Award for FORRT Credit Project](https://improvingpsych.org/mission/awards/)*** from the Society for the Improvement of Psychological Science.
+
+<br />
+
 <img src="ukrn.webp" align="right" /> In 2023, FORRT was awarded the ***[Dorothy Bishop Prize](https://www.ukrn.org/2023/03/21/db-prize-winners-mar2023/)*** from the UK Reproducibility Network, for its work towards integrating open science principles into higher education and advancing research transparency, reproducibility, rigor, and ethics through pedagogical reform.
 
 <br />
