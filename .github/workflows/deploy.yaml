@@ -3,9 +3,10 @@ name: deploy
 # =======================
 # FORRT Website Deployment
 # =======================
-# Purpose: Build and deploy the FORRT Hugo website
-# Triggers: Push to master, PRs, manual dispatch, or data updates
-# Target: Production deployment
+# Purpose: Build and deploy the FORRT Hugo website to production
+# Triggers: Push to master, manual dispatch, or data updates
+# Target: Production (forrt.org)
+# Note: Staging deployments are handled by staging-aggregate.yaml
 
 on:
   push:
@@ -35,7 +36,6 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
-          ref: ${{ github.event.inputs.pr_number && format('refs/pull/{0}/head', github.event.inputs.pr_number) || github.ref }}
           fetch-depth: 0
 
       # =======================
