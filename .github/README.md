@@ -72,13 +72,7 @@ Triggers `deploy.yaml` after successful processing via `repository_dispatch`.
 |---------|---------|
 | Pull requests | PR branches |
 
-### [link-check.yaml](workflows/link-check.yaml)
-**Broken link detection**
 
-| Trigger | Schedule |
-|---------|----------|
-| Pull requests | On PR |
-| Weekly | Sundays |
 
 ### [check_images.yaml](workflows/check_images.yaml)
 **Image validation in PRs**
@@ -111,30 +105,15 @@ Protected branches (never deleted): `master`, `gh-pages`
 
 > Note: `staging-aggregate-*` branches are auto-generated and cleaned up separately (keeping 2 most recent).
 
-### [mark-stale.yml](workflows/mark-stale.yml)
-**Stale issue/PR marking**
-
-| Trigger | Schedule |
-|---------|----------|
-| Daily | 2 AM UTC |
-
-Marks inactive issues and PRs as stale (does not close them).
-
-### [labeler.yaml](workflows/labeler.yaml)
-**Auto-labeling PRs and issues**
-
-| Trigger | Runs on |
-|---------|---------|
-| Pull requests | On open |
-
-Uses [labeler.yaml](labeler.yaml) config for label rules.
-
 ## Disabled Workflows
 
 | File | Status | Reason |
 |------|--------|--------|
-| `reminder-check.yml_OLD` | Disabled | Replaced by other workflows |
-| `reminder-create.yml_OLD` | Disabled | Replaced by other workflows |
+| `reminder-check.yml_OLD` | Disabled | Not used, too many action runs |
+| `reminder-create.yml_OLD` | Disabled | Not used, too many action runs |
+| `mark-stale.yml_OLD` | Disabled | Not in use, can be restored with better rules |
+| `labeler.yaml_OLD` | Disabled | Not in use, can be restored with better rules |
+| `link-check.yaml_OLD` | Disabled | Broken, can be restored if fixed. |
 
 ## Manual Triggers
 
