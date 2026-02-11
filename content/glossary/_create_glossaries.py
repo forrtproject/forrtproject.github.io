@@ -47,32 +47,43 @@ def process_references(references_text, apa_lookup, missing_refs_log=None):
     if not references_text:
         return []
 
-    citation_pattern = r'\\?\[@([^\\]+)\\?\]'
-    matches = re.findall(citation_pattern, references_text)
-
     formatted_refs = []
-    for match in matches:
-        # Clean the key: remove markdown formatting, trailing punctuation, etc.
-        key = match.strip()
-        original_key = key  # Keep for logging
+    
+    # Match [@key] format (Pandoc citations)
+    # Matches: \[@key\], [@key], \[@key], [@key\]
+    citation_pattern = r'\\?\[@([^\]\\]+)\\?\]'
+    matches = re.findall(citation_pattern, references_text)
+    
+    if matches:
+        # Process [@key] format citations
+        for match in matches:
+            # Clean the key: remove markdown formatting, trailing punctuation, etc.
+            key = match.strip()
+            original_key = key  # Keep for logging
 
-        # Remove markdown formatting
-        key = re.sub(r'^\*+|\*+$', '', key)  # Remove leading/trailing asterisks
-        key = re.sub(r'^_+|_+$', '', key)    # Remove leading/trailing underscores
+            # Remove markdown formatting
+            key = re.sub(r'^\*+|\*+$', '', key)  # Remove leading/trailing asterisks
+            key = re.sub(r'^_+|_+$', '', key)    # Remove leading/trailing underscores
 
-        # Remove trailing punctuation
-        key = re.sub(r'[,;:]+$', '', key)
+            # Remove trailing punctuation
+            key = re.sub(r'[,;:]+$', '', key)
 
-        # Remove trailing digits that look like typos (e.g., "Pownall20210" -> "Pownall2021")
-        key = re.sub(r'(\d{4})0+$', r'\1', key)
+            # Remove trailing digits that look like typos (e.g., "Pownall20210" -> "Pownall2021")
+            key = re.sub(r'(\d{4})0+$', r'\1', key)
 
-        if key in apa_lookup:
-            formatted_refs.append(apa_lookup[key])
-        else:
-            # Log missing reference but don't include in output
+            if key in apa_lookup:
+                formatted_refs.append(apa_lookup[key])
+            else:
+                # Log missing reference but don't include in output
+                if missing_refs_log is not None:
+                    missing_refs_log.add(original_key)
+                print(f"Warning: Missing reference key '{original_key}' (cleaned: '{key}') - skipping")
+    else:
+        # No citation keys found - log a warning
+        if references_text.strip():
+            print(f"Warning: No citation keys found in: '{references_text[:50]}...'")
             if missing_refs_log is not None:
-                missing_refs_log.add(original_key)
-            print(f"Warning: Missing reference key '{original_key}' (cleaned: '{key}') - skipping")
+                missing_refs_log.add(f"[NO KEYS]: {references_text[:50]}")
     
     return list(dict.fromkeys(formatted_refs))
 
