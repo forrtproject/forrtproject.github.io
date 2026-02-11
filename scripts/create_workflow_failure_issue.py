@@ -7,7 +7,7 @@ import json
 import os
 import sys
 import subprocess
-from datetime import datetime
+from datetime import datetime, timezone
 
 def sanitize_string(s):
     """
@@ -29,7 +29,7 @@ def sanitize_string(s):
 
 def create_issue(step_name, error_message, workflow_run_url):
     """Create a GitHub issue for a failed workflow step."""
-    timestamp = datetime.utcnow().strftime('%Y-%m-%d %H:%M:%S UTC')
+    timestamp = datetime.now(timezone.utc).strftime('%Y-%m-%d %H:%M:%S UTC')
     
     # Sanitize inputs
     step_name = sanitize_string(step_name)
