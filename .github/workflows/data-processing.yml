@@ -124,7 +124,7 @@ jobs:
           
           # Clean old files from content/contributor-analysis and partials
           rm -rf content/contributor-analysis/*.png content/contributor-analysis/*.html content/contributor-analysis/htmlwidgets_libs
-          rm -f layouts/partials/network-graph.html
+          rm -f static/partials/network-graph.html
           
           # Run index.Rmd to generate contributor analysis content and plots
           echo "📊 Rendering contributor analysis..."
@@ -134,9 +134,9 @@ jobs:
           echo "🕸️ Rendering network visualization..."
           Rscript -e "rmarkdown::render('content/contributor-analysis/network-graph.Rmd')"
           
-          # Move generated HTML file to layouts/partials
-          echo "📁 Moving network graph to partials..."
-          mv content/contributor-analysis/network-graph.html layouts/partials/
+          # Move generated HTML file to static/partials (served via iframe)
+          echo "📁 Moving network graph to static/partials..."
+          mv content/contributor-analysis/network-graph.html static/partials/
           
           # Clean up HTML artifacts from index.md if any
           sed -i.bak -e '/^```{=html}$/d' -e '/^```$/d' content/contributor-analysis/index.md && rm content/contributor-analysis/index.md.bak
