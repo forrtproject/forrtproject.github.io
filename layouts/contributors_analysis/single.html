@@ -1,19 +1,34 @@
 {{- define "main" -}}
-<div style="max-width: 100%; padding: 15px; margin: 15px; font-size: 1.5rem;">
+<style>
+  .universal-wrapper img {
+    display: block;
+    margin: 0 auto;
+  }
+</style>
+<div style="max-width: 100%; padding: 15px; margin: 15px;">
 
 {{ partial "page_header" . }}
 
 <article class="article">
 
 
-  <div class="article-container">
+  <div class="universal-wrapper">
 
         {{ .Content }}
-    
+
   </div>
 </article>
 
-{{ partial "network-graph.html" . }}
+<div class="universal-wrapper" style="margin-top: 60px;">
+  <iframe id="network-graph" src="/partials/network-graph.html" width="100%" style="border: none; overflow: hidden;" scrolling="no"></iframe>
+</div>
+
+<script>
+  var iframe = document.getElementById('network-graph');
+  iframe.onload = function() {
+    iframe.style.height = iframe.contentDocument.documentElement.scrollHeight + 'px';
+  };
+</script>
 
 </div>
 
