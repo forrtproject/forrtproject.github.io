@@ -107,7 +107,7 @@ jobs:
       # Install R packages for contributor analysis and visualization
       #========================================
       - name: Install tenzing R dependencies
-        run: Rscript -e 'install.packages(c("rmarkdown","ggplot2", "readxl", "dplyr", "googlesheets4", "stringr", "gridExtra", "glue", "tidygraph", "ggraph", "igraph", "visNetwork"))'
+        run: Rscript -e 'install.packages(c("rmarkdown", "ggplot2", "dplyr", "tidyr", "readr", "googlesheets4", "stringr", "here", "sysfonts", "showtext", "treemapify", "igraph", "visNetwork"))'
 
       #==============================
       # Contributor Analysis (Monthly)
