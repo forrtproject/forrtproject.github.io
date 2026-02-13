@@ -359,6 +359,7 @@ jobs:
             content/glossary/
             data/
             static/data/
+            static/partials/
             content/contributor-analysis/
             content/publications/citation_chart.webp
           retention-days: 7
