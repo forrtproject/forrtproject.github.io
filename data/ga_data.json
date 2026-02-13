@@ -2,11 +2,11 @@
   "regions": [
     {
       "country": "China",
-      "users": 6846
+      "users": 6862
     },
     {
       "country": "United States of America",
-      "users": 1075
+      "users": 1079
     },
     {
       "country": "Germany",
@@ -14,11 +14,11 @@
     },
     {
       "country": "United Kingdom",
-      "users": 526
+      "users": 527
     },
     {
       "country": "Netherlands",
-      "users": 353
+      "users": 354
     },
     {
       "country": "Ireland",
@@ -26,11 +26,11 @@
     },
     {
       "country": "Brazil",
-      "users": 235
+      "users": 236
     },
     {
       "country": "Singapore",
-      "users": 180
+      "users": 194
     },
     {
       "country": "Vietnam",
@@ -98,7 +98,7 @@
     },
     {
       "country": "Australia",
-      "users": 46
+      "users": 47
     },
     {
       "country": "Bangladesh",
@@ -150,7 +150,7 @@
     },
     {
       "country": "Poland",
-      "users": 26
+      "users": 27
     },
     {
       "country": "Chile",
@@ -218,7 +218,7 @@
     },
     {
       "country": "Finland",
-      "users": 12
+      "users": 13
     },
     {
       "country": "Nigeria",
@@ -564,11 +564,11 @@
   "top_pages": [
     {
       "page": "/",
-      "views": 1667
+      "views": 1671
     },
     {
       "page": "/reversals/",
-      "views": 537
+      "views": 539
     },
     {
       "page": "/awop/",
@@ -592,11 +592,11 @@
     },
     {
       "page": "/contributors/",
-      "views": 148
+      "views": 149
     },
     {
       "page": "/about/us/",
-      "views": 126
+      "views": 127
     },
     {
       "page": "/glossary/",
@@ -653,16 +653,16 @@
       "users": 471
     },
     {
+      "date": "2026-02-12",
+      "users": 447
+    },
+    {
       "date": "2026-01-15",
       "users": 438
     },
     {
       "date": "2026-01-27",
       "users": 418
-    },
-    {
-      "date": "2026-02-12",
-      "users": 414
     },
     {
       "date": "2026-02-06",
@@ -728,7 +728,7 @@
   "regions_yearly": [
     {
       "country": "China",
-      "users": 29916
+      "users": 29931
     },
     {
       "country": "United States of America",
@@ -736,7 +736,7 @@
     },
     {
       "country": "Singapore",
-      "users": 6156
+      "users": 6165
     },
     {
       "country": "Germany",
@@ -744,11 +744,11 @@
     },
     {
       "country": "United Kingdom",
-      "users": 3904
+      "users": 3905
     },
     {
       "country": "Netherlands",
-      "users": 2671
+      "users": 2672
     },
     {
       "country": "Ireland",
@@ -768,11 +768,11 @@
     },
     {
       "country": "Australia",
-      "users": 773
+      "users": 774
     },
     {
       "country": "Brazil",
-      "users": 738
+      "users": 739
     },
     {
       "country": "Switzerland",
@@ -824,7 +824,7 @@
     },
     {
       "country": "Poland",
-      "users": 339
+      "users": 340
     },
     {
       "country": "Norway",
@@ -888,7 +888,7 @@
     },
     {
       "country": "Finland",
-      "users": 158
+      "users": 159
     },
     {
       "country": "Denmark",
@@ -1454,7 +1454,7 @@
   "top_pages_yearly": [
     {
       "page": "/",
-      "views": 16136
+      "views": 16140
     },
     {
       "page": "/awop/",
@@ -1462,7 +1462,7 @@
     },
     {
       "page": "/reversals/",
-      "views": 4026
+      "views": 4028
     },
     {
       "page": "/replication-hub/",
@@ -1482,7 +1482,7 @@
     },
     {
       "page": "/about/us/",
-      "views": 1794
+      "views": 1795
     },
     {
       "page": "/publications/",
@@ -1490,7 +1490,7 @@
     },
     {
       "page": "/contributors/",
-      "views": 1591
+      "views": 1592
     }
   ],
   "daily_visitors_yearly": [
@@ -1639,6 +1639,10 @@
       "users": 453
     },
     {
+      "date": "2026-02-12",
+      "users": 447
+    },
+    {
       "date": "2026-01-15",
       "users": 438
     },
@@ -1653,10 +1657,6 @@
     {
       "date": "2025-10-12",
       "users": 416
-    },
-    {
-      "date": "2026-02-12",
-      "users": 414
     },
     {
       "date": "2026-02-06",
