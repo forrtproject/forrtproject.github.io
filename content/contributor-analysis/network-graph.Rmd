@@ -6,7 +6,16 @@ output:
     keep_md: FALSE
 ---
 
-The interactive network visualization below shows the connections between FORRT contributors based on their collaborative work across different projects. Each node represents a contributor, and the connections (edges) represent shared project participation.
+The interactive network visualization below shows the connections between FORRT contributors based on their collaborative work across different projects.
+
+**How to read the graph:**
+
+- **Nodes** represent contributor names. Each node is connected to other people involved in the same project(s).
+- **Edges** (lines) represent connections between contributors who worked on the same project.
+
+Use the dropdown menus below to search for a specific contributor by name or to filter the network by project. Hovering over a node highlights its connections and shows which projects that person contributed to. Clicking on a node highlights it in red, and clicking on an edge highlights the connection between two contributors. You can also zoom in and out using the scroll wheel or the navigation buttons.
+
+<div style="margin-bottom: 40px;"></div>
 
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Domine:wght@400;700&display=swap');
@@ -30,6 +39,7 @@ body {
   margin: 0 auto;
   display: block;
 }
+
 </style>
 
 ```{r setup, include=FALSE}
@@ -173,7 +183,7 @@ plot_edges <- bind_rows(
 # Create the network visualization
 visNetwork(contributor_nodes, plot_edges, width = "100%", height = "800px") |>
   visLayout(randomSeed = 1001) |>
-  visIgraphLayout(layout = "layout_with_fr", randomSeed = 1001) |>
+  visIgraphLayout(layout = "layout_with_fr", randomSeed = 1001, start.temp = 16) |>
   visPhysics(
     enabled = TRUE,
     stabilization = list(
@@ -191,7 +201,7 @@ visNetwork(contributor_nodes, plot_edges, width = "100%", height = "800px") |>
       avoidOverlap = 0.2
     )
   ) |>
-  visEdges(color = list(color = "#87CEEB", opacity = 0.3)) |>
+  visEdges(color = list(color = "#87CEEB", opacity = 0.3, hover = "#A52828", highlight = "#A52828")) |>
   visNodes(
     font = list(size = 4, strokeWidth = 1, strokeColor = "white"),
     size = 7,
@@ -205,13 +215,14 @@ visNetwork(contributor_nodes, plot_edges, width = "100%", height = "800px") |>
     hover = TRUE,
     hoverConnectedEdges = TRUE,
     selectable = TRUE,
+    selectConnectedEdges = TRUE,
     multiselect = TRUE,
     navigationButtons = TRUE
   ) |>
   visOptions(
     highlightNearest = list(enabled = TRUE, degree = 1, hover = TRUE, algorithm = "hierarchical"),
-    nodesIdSelection = list(enabled = TRUE, style = "width: 200px;"),
-    selectedBy = list(variable = "projects", multiple = TRUE, style = "width: 200px; background: #f8f8f8;")
+    nodesIdSelection = list(enabled = TRUE, main = "Select by contributor", style = "width: 240px; background: #f8f8f8;"),
+    selectedBy = list(variable = "projects", multiple = TRUE, style = "width: 240px; background: #f8f8f8; margin-bottom: 30px;")
   ) |>
   htmlwidgets::onRender("
     function(el, x) {
@@ -220,7 +231,7 @@ visNetwork(contributor_nodes, plot_edges, width = "100%", height = "800px") |>
       // Set initial zoom level immediately
       network.on('initRedraw', function() {
         network.moveTo({
-          scale: 0.012,
+          scale: 0.042,
           animation: false
         });
       });
