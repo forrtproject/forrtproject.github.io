@@ -125,8 +125,9 @@ credit_roles_long <- credit_roles |>
     values_to = "has_role"
   ) |>
   filter(has_role == TRUE) |>
-  unite(Contributor, Surname, `First name`, sep = " ", remove = FALSE, na.rm = TRUE) |>
-  mutate(Lead = if_else(Role %in% c("lead", "co-lead"), Role, "other"))
+  unite(Contributor, Surname, `First name`, sep = " ", remove = FALSE, na.rm = TRUE)
+  # TODO: uncomment to style lead/co-lead nodes differently
+  # mutate(Lead = if_else(Role %in% c("lead", "co-lead"), Role, "other"))
 
 # Get co-occurrences
 contributor_project_matrix <- credit_roles_long |>
