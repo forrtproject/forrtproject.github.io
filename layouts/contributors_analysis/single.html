@@ -24,10 +24,47 @@
 </div>
 
 <script>
-  var iframe = document.getElementById('network-graph');
-  iframe.onload = function() {
-    iframe.style.height = iframe.contentDocument.documentElement.scrollHeight + 'px';
-  };
+  (function() {
+    var iframe = document.getElementById('network-graph');
+    if (!iframe) {
+      return;
+    }
+
+    function resizeIframe() {
+      if (!iframe.contentWindow) {
+        return;
+      }
+      var doc = iframe.contentDocument || iframe.contentWindow.document;
+      if (!doc || !doc.documentElement) {
+        return;
+      }
+      var newHeight = doc.documentElement.scrollHeight;
+      if (!newHeight) {
+        return;
+      }
+      var targetHeight = newHeight + 'px';
+      if (iframe.style.height !== targetHeight) {
+        iframe.style.height = targetHeight;
+      }
+    }
+
+    iframe.addEventListener('load', function() {
+      resizeIframe();
+
+      if (!iframe._autoResizeInterval) {
+        iframe._autoResizeInterval = setInterval(function() {
+          if (!document.body.contains(iframe)) {
+            clearInterval(iframe._autoResizeInterval);
+            iframe._autoResizeInterval = null;
+            return;
+          }
+          resizeIframe();
+        }, 500);
+      }
+    });
+
+    window.addEventListener('resize', resizeIframe);
+  })();
 </script>
 
 </div>
