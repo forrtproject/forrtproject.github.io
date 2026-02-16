@@ -221,10 +221,15 @@
             {{ end }}
 
             {{ if .Params.references }}
-            {{ $references := delimit .Params.references ", " | len }}
-            {{ if ne $references 0 }}
-            <p class="mb-1 pr-2"><b>{{ if gt (len .Params.references) 1 }}{{ index (index $dictionary $lang) "references" }}{{ else }}{{ index (index $dictionary $lang) "reference" }}{{ end }}: </b>{{ delimit .Params.references ", " ", & " | markdownify }}</p>
-            {{ end }}
+              {{ $references := delimit .Params.references ", " | len }}
+              {{ if ne $references 0 }}
+                <p class="mb-1 pr-2"><b>{{ if gt (len .Params.references) 1 }}{{ index (index $dictionary $lang) "references" }}{{ else }}{{ index (index $dictionary $lang) "reference" }}{{ end }}: </b></p>
+                <ul class="references-list">
+                  {{ range .Params.references }}
+                    <li>{{ . | markdownify }}</li>
+                  {{ end }}
+                </ul>
+              {{ end }}
             {{ end }}
 
             {{ if .Params.drafted_by }}
