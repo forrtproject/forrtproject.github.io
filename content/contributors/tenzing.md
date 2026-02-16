@@ -192,7 +192,7 @@ if (window.location.hash) {
 
 <center>
  
-FORRT is driven by a **large and diverse community of contributors** that shape one or more of our projects. Below you can see everyone's scientific contributions in detail. Note that many also contribute to maintaining our community - we are equally grateful for their efforts. You can find out more about the scale of contributions at FORRT, including an interactive network graph, on our <a href="/contributor-analysis">contributor analysis</a> page.
+FORRT is driven by a **large and diverse community of contributors** that shape one or more of our projects. Below you can see everyone's scientific contributions in detail. Note that many also contribute to maintaining our community - we are equally grateful for their efforts. You can find out more about the scale of contributions at FORRT, including an interactive network graph, on our <a href="https://forrt.org/contributor-analysis">contributor analysis</a> page.
 
 </center>
 
@@ -6225,10 +6225,6 @@ window.filterData = {
       "label": "Project Coordinator"
     },
     {
-      "value": "project-manager",
-      "label": "Project Manager"
-    },
-    {
       "value": "project-administration",
       "label": "Project administration"
     },
@@ -6239,6 +6235,10 @@ window.filterData = {
     {
       "value": "project-lead",
       "label": "Project lead"
+    },
+    {
+      "value": "project-manager",
+      "label": "Project manager"
     },
     {
       "value": "resources",
