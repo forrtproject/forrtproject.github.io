@@ -1,11 +1,11 @@
 {
-  "name": "demo",
+  "name": "forrt-bibtex-to-apa",
   "version": "1.0.0",
-  "description": "",
+  "description": "Converts BibTeX references to APA format for FORRT glossary",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "author": "FORRT Team",
   "license": "ISC",
   "dependencies": {
     "@citation-js/core": "^0.7.21",
