@@ -199,10 +199,6 @@ jobs:
         run: python3 scripts/forrt_contribs/tenzing.py
         env:
           GSHEET_CREDENTIALS: ${{ secrets.GSHEET_CREDENTIALS }}
-          # Clean up HTML artifacts from index.md if any
-          sed -i.bak -e '/^```{=html}$/d' -e '/^```$/d' content/contributor-analysis/index.md && rm content/contributor-analysis/index.md.bak
-
-          echo "✅ Contributor analysis complete"
 
       #========================================
       # Process and organize curated resources data
