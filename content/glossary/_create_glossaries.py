@@ -13,7 +13,7 @@ language_map = {
 }
 
 # Configuration
-sheet_id = '1U__xiWOPEO2jxcNzw5ZLisjScmMSrcJ1xq-QUvkSo-I'
+sheet_id = '1IelzKlB7_UmnwbqgpEZnkFubB0ks-qFaIxhqEJGBH2g'
 gid = '955789150'
 csv_url = f'https://docs.google.com/spreadsheets/d/{sheet_id}/export?format=csv&gid={gid}'
 
@@ -138,9 +138,9 @@ for language_code in languages_to_process:
         entry = {
             "type": "glossary",
             "title": title,
-            "definition": safe_get(row, f"{language_code}_def"),
+            "definition": safe_get(row, f"{language_code}_definition" if language_code == "EN" else f"{language_code}_def"),
             "related_terms": list(dict.fromkeys(safe_get(row, "Related_terms").split("; "))) if safe_get(row, "Related_terms") else [],
-            "references": "\n\n".join(processed_references) if processed_references else "",
+            "references": processed_references,
             "drafted_by": [safe_get(row, "Originally drafted by") or safe_get(row, "Drafted by")] if (safe_get(row, "Originally drafted by") or safe_get(row, "Drafted by")) else [],
             "reviewed_by": list(dict.fromkeys(safe_get(row, "Reviewed (or Edited) by").replace("Reviewed (or Edited) by : ", "").split("; "))) if safe_get(row, "Reviewed (or Edited) by") else [],
             "alt_related_terms": [None],
