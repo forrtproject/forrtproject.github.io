@@ -26,6 +26,9 @@ theme = "academic"
 # Get last modified date for content from Git?
 enableGitInfo = true
 
+# Enable generation of robots.txt file
+enableRobotsTXT = true
+
 # Default language to use (if you setup multilingual support)
 defaultContentLanguage = "en"
 hasCJKLanguage = false  # Set `true` for Chinese/Japanese/Korean languages.

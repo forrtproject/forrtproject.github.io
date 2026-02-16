@@ -1,0 +1,243 @@
+name: Cleanup Branches
+
+# =======================
+# Branch Cleanup Workflow
+# =======================
+# Purpose: Automatically clean up old and merged branches
+# Triggers: Weekly on Sundays or manual dispatch
+# Jobs:
+#   - cleanup-auto-generated: Removes old ga-data-update-* and staging-aggregate-* branches (keeps 2 most recent)
+#   - cleanup-merged: Removes branches already merged into master
+#   - cleanup-stale: Removes branches with no activity for 1+ month (no open PRs)
+
+on:
+  schedule:
+    - cron: '0 0 * * 0' # Run every Sunday at midnight UTC
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: 'Dry run (do not delete)'
+        required: false
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+  pull-requests: read
+
+jobs:
+  cleanup-auto-generated:
+    name: Cleanup Auto-Generated Branches
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Configure Git
+        run: |
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git config --global user.name "github-actions[bot]"
+
+      - name: Delete old auto-generated branches
+        env:
+          DRY_RUN: ${{ inputs.dry_run }}
+        run: |
+          echo "## 🤖 Auto-Generated Branch Cleanup" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          
+          git fetch --all --prune
+          
+          # Patterns to clean up with their keep counts
+          # Format: "pattern:keep_count"
+          PATTERN_CONFIGS=("ga-data-update-:1" "staging-aggregate-:2")
+          
+          for config in "${PATTERN_CONFIGS[@]}"; do
+            pattern="${config%%:*}"
+            keep_count="${config##*:}"
+            
+            echo "### Pattern: \`$pattern*\` (keeping $keep_count)" >> $GITHUB_STEP_SUMMARY
+            echo "" >> $GITHUB_STEP_SUMMARY
+            
+            # Get branches matching pattern, sort by name (timestamp), keep only old ones
+            BRANCHES_TO_DELETE=$(git branch -r --list "origin/${pattern}*" --sort=-committerdate | tail -n +$((keep_count + 1)) | sed 's/origin\///' | xargs)
+            
+            if [ -z "$BRANCHES_TO_DELETE" ]; then
+              echo "No old \`$pattern*\` branches to delete." >> $GITHUB_STEP_SUMMARY
+              echo "" >> $GITHUB_STEP_SUMMARY
+              continue
+            fi
+            
+            for branch in $BRANCHES_TO_DELETE; do
+              branch=$(echo "$branch" | xargs)
+              if [ "$DRY_RUN" = "true" ]; then
+                echo "[DRY RUN] Would delete: $branch"
+                echo "- 🔍 \`$branch\` (dry run)" >> $GITHUB_STEP_SUMMARY
+              else
+                echo "Deleting: $branch"
+                if git push origin --delete "$branch" 2>/dev/null; then
+                  echo "- ✅ \`$branch\` deleted" >> $GITHUB_STEP_SUMMARY
+                else
+                  echo "- ❌ \`$branch\` failed to delete" >> $GITHUB_STEP_SUMMARY
+                fi
+              fi
+            done
+            echo "" >> $GITHUB_STEP_SUMMARY
+          done
+
+  cleanup-merged:
+    name: Cleanup Merged Branches
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Configure Git
+        run: |
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git config --global user.name "github-actions[bot]"
+
+      - name: Delete merged branches
+        env:
+          DRY_RUN: ${{ inputs.dry_run }}
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          echo "Fetching all branches..."
+          git fetch --all --prune --tags
+
+          # Define protected branches
+          PROTECTED_BRANCHES="master|gh-pages"
+          # Skip auto-generated branches (handled by cleanup-auto-generated job)
+          SKIP_PATTERNS="staging-aggregate-|ga-data-update-"
+
+          echo "Finding merged branches..."
+          # List remote branches merged into origin/master, exclude protected ones
+          MERGED_BRANCHES=$(git branch -r --merged origin/master | grep -vE "HEAD|origin/($PROTECTED_BRANCHES)$" | sed 's/origin\///' | xargs)
+
+          if [ -z "$MERGED_BRANCHES" ]; then
+            echo "No merged branches to delete."
+            echo "## 🧹 Merged Branch Cleanup" >> $GITHUB_STEP_SUMMARY
+            echo "No merged branches found to delete." >> $GITHUB_STEP_SUMMARY
+            exit 0
+          fi
+
+          echo "## 🧹 Merged Branch Cleanup" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          
+          DELETED_COUNT=0
+          SKIPPED_COUNT=0
+
+          for branch in $MERGED_BRANCHES; do
+            branch=$(echo "$branch" | xargs)
+            
+            # Skip auto-generated branches (handled separately)
+            if [[ "$branch" =~ ^(staging-aggregate-|ga-data-update-) ]]; then
+              echo "Skipping $branch (auto-generated, handled separately)"
+              ((SKIPPED_COUNT++))
+              continue
+            fi
+            
+            if [ "$DRY_RUN" = "true" ]; then
+              echo "[DRY RUN] Would delete: $branch"
+              echo "- 🔍 \`$branch\` (dry run)" >> $GITHUB_STEP_SUMMARY
+            else
+              echo "Deleting: $branch"
+              if git push origin --delete "$branch" 2>/dev/null; then
+                echo "- ✅ \`$branch\` deleted" >> $GITHUB_STEP_SUMMARY
+                ((DELETED_COUNT++))
+              else
+                echo "- ❌ \`$branch\` failed to delete" >> $GITHUB_STEP_SUMMARY
+              fi
+            fi
+          done
+          
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "**Summary:** Deleted $DELETED_COUNT branches, skipped $SKIPPED_COUNT" >> $GITHUB_STEP_SUMMARY
+
+  cleanup-stale:
+    name: Cleanup Stale Branches
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Configure Git
+        run: |
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git config --global user.name "github-actions[bot]"
+
+      - name: Delete stale branches
+        env:
+          DRY_RUN: ${{ inputs.dry_run }}
+          MONTHS_THRESHOLD: 1
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          # Define protected branches
+          PROTECTED_BRANCHES="master|gh-pages"
+
+          echo "Fetching all branches..."
+          git fetch --all --prune --tags
+
+          # Calculate threshold date
+          THRESHOLD_DATE=$(date -d "-$MONTHS_THRESHOLD months" +%s)
+          echo "Threshold date: $(date -d "@$THRESHOLD_DATE")"
+
+          echo "## 🕰️ Stale Branch Cleanup" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "Branches with no commits in $MONTHS_THRESHOLD months and no open PRs." >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+
+          DELETED_COUNT=0
+          SKIPPED_COUNT=0
+
+          # Collect branches into array to avoid subshell issues
+          mapfile -t BRANCHES < <(git branch -r | grep -vE "HEAD|origin/($PROTECTED_BRANCHES)$" | xargs -n1)
+
+          for branch in "${BRANCHES[@]}"; do
+            branch=$(echo "$branch" | xargs)
+            clean_branch_name=${branch#origin/}
+            
+            # Skip auto-generated branches (handled by cleanup-auto-generated job)
+            if [[ "$clean_branch_name" =~ ^(staging-aggregate-|ga-data-update-) ]]; then
+              echo "Skipping $clean_branch_name (auto-generated, handled separately)"
+              continue
+            fi
+
+            # Get last commit date for the branch
+            last_commit_date=$(git log -1 --format=%ct "$branch" 2>/dev/null || echo "0")
+
+            # Check if branch has open PR
+            open_pr_count=$(gh pr list -H "$clean_branch_name" --state open --json number 2>/dev/null | jq '. | length' || echo "0")
+
+            if [ "$open_pr_count" -gt 0 ]; then
+              echo "Skipping $clean_branch_name (Has open PR)"
+              ((SKIPPED_COUNT++))
+              continue
+            fi
+
+            if [ "$last_commit_date" -lt "$THRESHOLD_DATE" ]; then
+              LAST_DATE=$(date -d "@$last_commit_date" '+%Y-%m-%d')
+              echo "Branch '$clean_branch_name' is stale (Last commit: $LAST_DATE)"
+
+              if [ "$DRY_RUN" = "true" ]; then
+                echo "[DRY RUN] Would delete: $clean_branch_name"
+                echo "- 🔍 \`$clean_branch_name\` (last: $LAST_DATE) - dry run" >> $GITHUB_STEP_SUMMARY
+              else
+                echo "Deleting: $clean_branch_name"
+                if git push origin --delete "$clean_branch_name" 2>/dev/null; then
+                  echo "- ✅ \`$clean_branch_name\` deleted (last: $LAST_DATE)" >> $GITHUB_STEP_SUMMARY
+                  ((DELETED_COUNT++))
+                else
+                  echo "- ❌ \`$clean_branch_name\` failed to delete" >> $GITHUB_STEP_SUMMARY
+                fi
+              fi
+            fi
+          done
+          
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "**Summary:** Deleted $DELETED_COUNT stale branches, skipped $SKIPPED_COUNT (have open PRs)" >> $GITHUB_STEP_SUMMARY

@@ -1,0 +1,129 @@
+# How to Add/Edit Publications
+
+This folder contains PDF files and other publication-related assets. The actual publication data is stored in `/data/publications.yaml` (NOT in this folder).
+
+## Adding a New Publication
+
+Publications are managed in the **`/data/publications.yaml`** file. This file contains all publication metadata that is displayed on the website.
+
+### Steps to Add a Publication
+
+1. **Open** `/data/publications.yaml`
+2. **Find** the appropriate section based on publication type:
+   - `# --- Academic Peer-Reviewed Publications ---` for journal articles
+   - `# --- Preprints ---` for preprints
+   - `# --- Op-Eds and Media ---` for media/op-eds
+   - `# --- Policy Briefs ---` for policy documents
+   - `# --- Affiliated Projects ---` for affiliated work
+   - `# --- Work in Progress ---` for ongoing projects
+
+3. **Add** your publication entry using the structure below
+4. **Increment** the comment number (e.g., `# 1`, `# 2`, etc.)
+5. **Save** the file
+
+### Publication Entry Structure
+
+```yaml
+# [Number]
+- title: "Full Title of the Publication"
+  type: "journal"  # Options: journal, preprint, media, policy, affiliated, wip
+  year: "2025"
+  status: "Published"  # Options: Published, Preprint, In Press, Work in Progress, etc.
+  journal_name: "Name of Journal or Venue"
+  authors: "Author1, Author2, & Author3"
+  abstract: "Full abstract text here. Can be multiple sentences describing the work."
+  citation: "Author1, et al. (2025). <strong>Title in bold.</strong> <em>Journal Name in italics</em>, volume(issue), pages. https://doi.org/..."
+  links:
+    doi: "https://doi.org/10.xxxx/xxxxx"  # Optional
+    pdf: "./filename.pdf"  # Optional - relative path to PDF in this folder
+    postprint: "https://osf.io/preprints/..."  # Optional
+    project: "/project-page-url"  # Optional
+    url: "https://external-link.com"  # Optional
+  altmetric_doi: "10.xxxx/xxxxx"  # Optional - for Altmetric badge
+  altmetric_doi_2: "10.xxxx/xxxxx"  # Optional - for second Altmetric badge
+  focus_area: "Research Area Name"  # RECOMMENDED - see Research Areas below
+```
+
+### Research Areas (focus_area)
+
+Publications can be classified into one or more of these research areas. While the field currently only supports a single value, the classification helps readers filter publications:
+
+- **"Meta-Research & Scientific Reform"** - For work on replication, reproducibility, research methods, scientific reform, open science infrastructure
+- **"Equity, Diversity & Social Justice"** - For work on neurodiversity, inclusion, accessibility, citational justice, DEI in academia
+- **"Community, Governance & Sustainability"** - For work on community building, governance, sustainability, open science communities
+- **"Education & Pedagogy"** - For work on teaching, learning, pedagogical methods, educational resources
+
+**Note:** Choose the most appropriate single category. If multiple categories apply, select the primary focus.
+
+### Field Descriptions
+
+- **title**: Full publication title (in quotes)
+- **type**: Category of publication - determines which section it appears in
+- **year**: Publication year (in quotes)
+- **status**: Publication status for display
+- **journal_name**: Where the work was published/presented
+- **authors**: Author list (use "et al." for long lists if needed)
+- **abstract**: Brief description or abstract of the work
+- **citation**: Full formatted citation using HTML tags (`<strong>` for title, `<em>` for journal)
+- **links**: Object containing various link types (see options above)
+- **altmetric_doi**: DOI for Altmetric badge (displays article metrics)
+- **focus_area**: Research area classification (RECOMMENDED - helps with filtering)
+
+### Link Types
+
+You can include multiple link types in the `links:` section:
+
+- `doi`: Direct link to the DOI
+- `pdf`: Link to PDF file (can be relative `./file.pdf` or absolute URL)
+- `postprint`: Link to preprint/postprint version
+- `project`: Link to related project page
+- `url`: Generic external link
+
+### Adding PDF Files
+
+If you want to host a PDF in this repository:
+
+1. **Save** the PDF file in `/content/publications/` or `/content/publications/pdf/`
+2. **Reference** it in your YAML entry:
+   ```yaml
+   links:
+     pdf: "./filename.pdf"
+     # or
+     pdf: "./pdf/filename.pdf"
+   ```
+
+### Example Entry
+
+```yaml
+# 1
+- title: "Open Science Practices Improve Research Quality"
+  type: "journal"
+  year: "2025"
+  status: "Published"
+  journal_name: "Nature"
+  authors: "Smith, J., Johnson, A., & Williams, B."
+  abstract: "This study demonstrates how open science practices lead to more robust and reproducible research findings across multiple disciplines."
+  citation: "Smith, J., Johnson, A., and Williams, B. (2025). <strong>Open science practices improve research quality.</strong> <em>Nature</em>, 600(1), 123-145. https://doi.org/10.1038/example"
+  links:
+    doi: "https://doi.org/10.1038/example"
+    postprint: "https://osf.io/preprints/metaarxiv/abc123"
+    project: "/open-science-toolkit"
+  altmetric_doi: "10.1038/example"
+  focus_area: "Meta-Research & Scientific Reform"
+```
+
+### Important Notes
+
+- **YAML Syntax**: Be careful with indentation (use 2 spaces, not tabs)
+- **Quotes**: Use quotes around values that contain special characters or colons
+- **HTML in Citations**: Use `<strong>` for titles and `<em>` for journal names
+- **Focus Area**: Always add a focus_area to help with website filtering
+- **Testing**: After adding, rebuild the site locally to verify formatting
+
+### Need Help?
+
+If you encounter issues or have questions about adding publications, please:
+- Check existing entries in the file for reference
+- Ensure YAML syntax is correct (indentation, quotes)
+- Verify all required fields are present
+- Test locally before committing changes

@@ -1,7 +1,9 @@
-{{ if eq hugo.Environment "staging" }}
+{{ if eq (getenv "HUGO_ENV") "staging" }}
 User-agent: *
 Disallow: /
 {{ else }}
 User-agent: *
 Allow: /
+
+Sitemap: {{ .Site.BaseURL }}sitemap.xml
 {{ end }}

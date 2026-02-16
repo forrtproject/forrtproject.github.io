@@ -29,11 +29,11 @@ The FORRT community has prepared 100+ summaries of Open and Reproducible Science
 
 ***These summaries are very much a work in progress***. We would love to receive your [criticism, areas for improvement, ideas, and help](https://docs.google.com/spreadsheets/d/1W12WpzI70Ja1FiVeflXNW8VFPzqFFvu_mL2YkNQ_cHk/edit?usp=sharing). 
 
-You can find the summaries via the menu in the left. We made a distinction between "[Open and Reproducible Science](/summaries/open-reproducible/)" summaries and "[Diversity, Equity, & Inclusion](/diversity-equity-inclusion/)" summaries to highlight that the topics of social injustices and DEI (diversity, equity and inclusion) are often neglected in academia, and in open and reproducible science literature. If you are an educator, you may also be interested in our [FORRT Syllabus on Open and Reproducible Science (.pdf & G-doc)](https://forrt.org/syllabus), which is based on [FORRT Clusters.](/clusters/)
+You can find the summaries via the menu in the left. We made a distinction between "[Open and Reproducible Science](/summaries/open-reproducible/)" summaries and "[Diversity, Equity, & Inclusion](/dei)" summaries to highlight that the topics of social injustices and DEI (diversity, equity and inclusion) are often neglected in academia, and in open and reproducible science literature. If you are an educator, you may also be interested in our [FORRT Syllabus on Open and Reproducible Science (.pdf & G-doc)](https://forrt.org/syllabus), which is based on [FORRT Clusters.](/clusters/)
 
 ### Why make these summaries?
 
-The FORRT's summaries is community-curated resource aims to satisfy three of [FORRT’s Goals](about/mission/): 
+The FORRT's summaries is community-curated resource aims to satisfy three of [FORRT’s Goals](/about/mission/): 
 *   Support scholars in their efforts to learn and stay up-to-date on best practices regarding open and reproducible research;
 *   Facilitating conversations about the ethics and social impact of teaching substantive topics with due regard to scientific openness, epistemic uncertainty and the credibility revolution;
 *   Foster social justice through the democratization of scientific educational resources and its pedagogies.
