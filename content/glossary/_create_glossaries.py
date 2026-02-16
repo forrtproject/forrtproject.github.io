@@ -13,8 +13,10 @@ language_map = {
 }
 
 # Configuration
-sheet_id = '1IelzKlB7_UmnwbqgpEZnkFubB0ks-qFaIxhqEJGBH2g'
-gid = '955789150'
+DEFAULT_SHEET_ID = '1IelzKlB7_UmnwbqgpEZnkFubB0ks-qFaIxhqEJGBH2g'
+DEFAULT_GID = '955789150'
+sheet_id = os.getenv('GLOSSARY_SHEET_ID', DEFAULT_SHEET_ID)
+gid = os.getenv('GLOSSARY_SHEET_GID', DEFAULT_GID)
 csv_url = f'https://docs.google.com/spreadsheets/d/{sheet_id}/export?format=csv&gid={gid}'
 
 # Fetch and parse data
