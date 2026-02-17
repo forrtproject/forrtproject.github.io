@@ -10,12 +10,7 @@
         "Open Data",
         "Open Source"
     ],
-    "references": [
-        "[https://opensource.org/licenses](https://opensource.org/licenses) \\[@AnonOSI\\_ND\\]"
-    ],
-    "alt_related_terms": [
-        null
-    ],
+    "references": [],
     "drafted_by": [
         "Andrew J. Stewart"
     ],
@@ -24,6 +19,9 @@
         "Sam Parsons",
         "Graham Reid",
         "Steven Verheyen"
+    ],
+    "alt_related_terms": [
+        null
     ],
     "language": "english",
     "aliases": [

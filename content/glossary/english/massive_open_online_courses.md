@@ -9,10 +9,7 @@
         "Open learning"
     ],
     "references": [
-        "\\\\Baturay (2015); [https://opensciencemooc.eu/](https://opensciencemooc.eu/) \\[@Baturay2015\\], \\[@Homepage\\_n\\_d\\]"
-    ],
-    "alt_related_terms": [
-        null
+        "Baturay, M. H. (2015). An overview of the world of MOOCs. Procedia-Social and Behavioral Sciences, 174, 427–433. https://doi.org/10.1016/j.sbspro.2015.01.685"
     ],
     "drafted_by": [
         "Elizabeth Collins"
@@ -23,6 +20,9 @@
         "Helena Hartmann",
         "Sam Parsons",
         "Charlotte R. Pennington"
+    ],
+    "alt_related_terms": [
+        null
     ],
     "language": "english",
     "aliases": [

@@ -7,10 +7,8 @@
         "Version control"
     ],
     "references": [
-        "\\[@PetreWilson2014\\], \\[@ScopatzHuff2015\\]"
-    ],
-    "alt_related_terms": [
-        null
+        "Petre, M., & Wilson, G. (2014). Code review for and by scientists. arXiv Preprint arXiv:1407.5648. https://arxiv.org/abs/1407.5648",
+        "Scopatz, A. M., & Huff, K. D. (2015). Effective Computation in Physics: Field Guide to Research with Python (1st ed.). O’Reilly Media. http://shop.oreilly.com/product/0636920033424.do"
     ],
     "drafted_by": [
         "Filip Dechterenko"
@@ -20,6 +18,9 @@
         "Dominik Kiersz",
         "Sam Parsons",
         "Charlotte R. Pennington"
+    ],
+    "alt_related_terms": [
+        null
     ],
     "language": "english",
     "aliases": [

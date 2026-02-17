@@ -13,10 +13,8 @@
         "Secondary data analysis"
     ],
     "references": [
-        "[https://opendefinition.org/](https://opendefinition.org/) (version 2.1); [https://opendatahandbook.org/guide/en/what-is-open-data/](https://opendatahandbook.org/guide/en/what-is-open-data/) \\[@OpenDefinition2021\\], \\[@OpenDataHandbook2021\\]"
-    ],
-    "alt_related_terms": [
-        null
+        "Definition, T. O. (n.d.). The Open Definition—Open Definition—Defining Open in Open Data, Open Content and Open Knowledge. Open Knowledge Foundation. https://opendefinition.org/",
+        "Handbook, O. D. (n.d.). What is Open Data? Retrieved 9 July 2021. https://opendatahandbook.org/guide/en/what-is-open-data/"
     ],
     "drafted_by": [
         "Lisa Spitzer"
@@ -30,6 +28,9 @@
         "Ross Mounce",
         "Charlotte R. Pennington",
         "Steven Verheyen"
+    ],
+    "alt_related_terms": [
+        null
     ],
     "language": "english",
     "aliases": [

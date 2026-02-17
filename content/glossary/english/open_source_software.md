@@ -13,10 +13,7 @@
         "Repository"
     ],
     "references": [
-        "[https://opensource.org/osd](https://opensource.org/osd); [https://www.fosteropenscience.eu/foster-taxonomy/open-source-open-science](https://www.fosteropenscience.eu/foster-taxonomy/open-source-open-science) \\[@Open\\_Source\\_Initiative\\_n\\_d\\], \\[@AnonFOSTERND\\]"
-    ],
-    "alt_related_terms": [
-        null
+        "Anon. (n.d.). Open Source in Open Science | FOSTER. Retrieved from https://www.fosteropenscience.eu/foster-taxonomy/open-source-open-science"
     ],
     "drafted_by": [
         "Connor Keating"
@@ -26,6 +23,9 @@
         "Helena Hartmann",
         "Charlotte R. Pennington",
         "Andrew J. Stewart"
+    ],
+    "alt_related_terms": [
+        null
     ],
     "language": "english",
     "aliases": [

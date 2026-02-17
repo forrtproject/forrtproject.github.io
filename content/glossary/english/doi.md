@@ -8,10 +8,9 @@
         "Permalink"
     ],
     "references": [
-        "\\[@Bilder2013\\], \\[@Morgan1998\\], \\[@AnonDOIHandbook2019\\]"
-    ],
-    "alt_related_terms": [
-        null
+        "Bilder, G. (2013). DOIs unambiguously and persistently identify published, trustworthy, citable online scholarly literature. Right? https://www.crossref.org/blog/dois-unambiguously-and-persistently-identify-published-trustworthy-citable-online-scholarly-literature-right/",
+        "Morgan, C. (1998). The DOI (Digital Object Identifier). Serials, 11(1), 47–51. http://doi.org/10.1629/1147",
+        "Anon. (2019). The DOI Handbook."
     ],
     "drafted_by": [
         "Tina Lonsdorf"
@@ -22,6 +21,9 @@
         "Sam Parsons",
         "Charlotte R. Pennington",
         "Flávio Azevedo"
+    ],
+    "alt_related_terms": [
+        null
     ],
     "language": "english",
     "aliases": [

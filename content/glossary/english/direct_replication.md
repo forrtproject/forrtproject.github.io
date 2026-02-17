@@ -9,10 +9,10 @@
         "hidden moderators"
     ],
     "references": [
-        "\\[@Cruwell2019,\\], \\[@Huffmeier2016\\], \\[@LeBel2017\\], \\[@SchwarzStrack2014\\]"
-    ],
-    "alt_related_terms": [
-        null
+        "Crüwell, S., van Doorn, J., Etz, A., Makel, M. C., Moshontz, H., Niebaum, J. C., Orben, A., Parsons, S., & Schulte-Mecklenbeck, M. (2019). Seven Easy Steps to Open Science: An Annotated Reading List. Zeitschrift Für Psychologie, 227(4), 237–248. https://doi.org/10.1027/2151-2604/a000387",
+        "Hüffmeier, J., Mazei, J., & Schultze, T. (2016). Reconceptualizing replication as a sequence of different studies: A replication typology. Journal of Experimental Social Psychology, 66, 81–92. https://doi.org/10.1016/j.jesp.2015.09.009",
+        "LeBel, E. P., Vanpaemel, W., Cheung, I., & Campbell, L. (2017). A brief guide to evaluate replications. Meta-Psychology, 3. https://doi.org/10.15626/MP.2018.843",
+        "Schwarz, N., & Strack, F. (2014). Does Merely Going Through the Same Moves Make for a “Direct” Replication?: Concepts, Contexts, and Operationalizations. Social Psychology, 45(4), 305–306."
     ],
     "drafted_by": [
         "Mahmoud Elsherif (original); Thomas Rhys Evans (alternative); Tina Lonsdorf (alternative)"
@@ -26,6 +26,9 @@
         "Lisa Spitzer",
         "Tobias Wingen",
         "Flávio Azevedo"
+    ],
+    "alt_related_terms": [
+        null
     ],
     "language": "english",
     "aliases": [

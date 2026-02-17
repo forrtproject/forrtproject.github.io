@@ -7,10 +7,7 @@
         "Metadata"
     ],
     "references": [
-        "\\[@BIDSModalityND\\]"
-    ],
-    "alt_related_terms": [
-        null
+        "BIDS. (n.d.). Modality agnostic files. Retrieved from https://bids-specification.readthedocs.io/en/stable/03-modality-agnostic-files.html"
     ],
     "drafted_by": [
         "Tina Lonsdorf"
@@ -19,7 +16,10 @@
         "Alexander Hart",
         "Matt Jaquiery",
         "Emma Norris",
-        "Charlotte R. Pennington  ###  ### K {#k}"
+        "Charlotte R. Pennington"
+    ],
+    "alt_related_terms": [
+        null
     ],
     "language": "english",
     "aliases": [

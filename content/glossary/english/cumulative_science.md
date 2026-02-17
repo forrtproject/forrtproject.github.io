@@ -6,10 +6,10 @@
         "Slow Science"
     ],
     "references": [
-        "\\[@Curran2009\\], \\[@Despagnat2008\\], \\[@Kuhn1962\\], \\[@Mischel2009\\]"
-    ],
-    "alt_related_terms": [
-        null
+        "Curran, P. J. (2009). The seemingly quixotic pursuit of a cumulative psychological science: Introduction to the special issue. Psychological Methods, 14(2), 77–80. https://doi.org/10.1037/a0015972",
+        "d’Espagnat, B. (2008). Is science cumulative? A physicist viewpoint. In Rethinking Scientific Change and Theory Comparison (pp. 145–151). Springer. https://doi.org/10.1007/978-1-4020-6279-7_10",
+        "Kuhn, T. (1962). The Structure of Scientific Revolutions. University of Chicago Press.",
+        "Mischel, W. (2009). Becoming a Cumulative Science. Association for Psychological Science. https://www.psychologicalscience.org/observer/becoming-a-cumulative-science"
     ],
     "drafted_by": [
         "Beatrice Valentini"
@@ -21,7 +21,10 @@
         "Oscar Lecuona",
         "Wanyin Li",
         "Sonia Rishi",
-        "Flávio Azevedo  ###  ### D {#d}"
+        "Flávio Azevedo"
+    ],
+    "alt_related_terms": [
+        null
     ],
     "language": "english",
     "aliases": [

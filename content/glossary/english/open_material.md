@@ -13,10 +13,8 @@
         "Transparency"
     ],
     "references": [
-        "Blohowiak et al. (2020); Kidwell et al. (2016) \\[@BlohowiakEtAl2020\\], \\[@Kidwell2016\\]"
-    ],
-    "alt_related_terms": [
-        null
+        "Blohowiak, B. B., Cohoon, J., de Wit, L., Eich, E., Farach, F. J., Hasselman, F., & others. (2020). Badges to Acknowledge Open Practices. Retrieved from https://osf.io/tvyxz",
+        "Kidwell, M. C., Lazarević, L. B., Baranski, E., Hardwicke, T. E., Piechowski, S., Falkenberg, L. S., & Nosek, B. A. (2016). Badges to acknowledge open practices: A simple, low-cost, effective method for increasing transparency. PLoS Biology, 14(5), e1002456. https://doi.org/10.1371/journal.pbio.1002456"
     ],
     "drafted_by": [
         "Lisa Spitzer"
@@ -27,6 +25,9 @@
         "Olly Robertson",
         "Emily A. Williams",
         "Flávio Azevedo"
+    ],
+    "alt_related_terms": [
+        null
     ],
     "language": "english",
     "aliases": [

@@ -10,10 +10,7 @@
         "Reproducibility"
     ],
     "references": [
-        "Fanelli (2018); Open Science Collaboration (2015) \\[@Fanelli2018\\], \\[@Open\\_Science\\_Collaboration2015\\]"
-    ],
-    "alt_related_terms": [
-        null
+        "Fanelli, D. (2018). Opinion: Is science really facing a reproducibility crisis, and do we need it to? Proceedings of the National Academy of Sciences, 115(11), 2628–2631. https://doi.org/10.1073/pnas.1708272114"
     ],
     "drafted_by": [
         "Mahmoud Elsherif"
@@ -24,6 +21,9 @@
         "Mariella Paul",
         "Sonia Rishi",
         "Lisa Spitzer"
+    ],
+    "alt_related_terms": [
+        null
     ],
     "language": "english",
     "aliases": [
