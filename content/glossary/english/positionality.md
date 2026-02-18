@@ -8,10 +8,7 @@
         "Perspective"
     ],
     "references": [
-        "Jafar (2018); Oxford Dictionaries (2017)"
-    ],
-    "alt_related_terms": [
-        null
+        "Jafar, A. J. N. (2018). What is positionality and should it be expressed in quantitative studies? Emergency Medicine Journal, 35(5), 323–324. https://doi.org/10.1136/emermed-2017-207158"
     ],
     "drafted_by": [
         "Joanne McCuaig"
@@ -21,6 +18,9 @@
         "Aoife O’Mahony",
         "Madeleine Pownall",
         "Graham Reid"
+    ],
+    "alt_related_terms": [
+        null
     ],
     "language": "english",
     "aliases": [

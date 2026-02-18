@@ -6,10 +6,7 @@
         "Society for Open, Reliable, and Transparent Ecology and Evolutionary biology (SORTEE)"
     ],
     "references": [
-        "https://improvingpsych.org/"
-    ],
-    "alt_related_terms": [
-        null
+        "Improving Psychology. (n.d.). Improving Psychology. https://improvingpsych.org/"
     ],
     "drafted_by": [
         "Mahmoud Elsherif"
@@ -19,6 +16,9 @@
         "Jade Pickering",
         "Graham Reid",
         "Flávio Azevedo"
+    ],
+    "alt_related_terms": [
+        null
     ],
     "language": "english",
     "aliases": [

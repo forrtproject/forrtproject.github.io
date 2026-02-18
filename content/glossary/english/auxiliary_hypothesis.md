@@ -9,10 +9,8 @@
         "Hidden moderators"
     ],
     "references": [
-        "Dienes (2008); Lakatos (1978)"
-    ],
-    "alt_related_terms": [
-        null
+        "Dienes, Z. (2008). Understanding psychology as a science: An introduction to scientific and statistical inference. Macmillan International Higher Education.",
+        "Lakatos, I. (1978). The Methodology of Scientific Research Programs: Vol. I. Cambridge University Press."
     ],
     "drafted_by": [
         "Alaa Aldoh"
@@ -23,7 +21,10 @@
         "Mahmoud Elsherif",
         "Bethan Iley",
         "Sam Parsons",
-        "Flávio Azevedo  ### B {#b}"
+        "Flávio Azevedo"
+    ],
+    "alt_related_terms": [
+        null
     ],
     "language": "english",
     "aliases": [
