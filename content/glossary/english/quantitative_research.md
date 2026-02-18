@@ -10,10 +10,7 @@
         "Statistics"
     ],
     "references": [
-        "Goertzen (2017)"
-    ],
-    "alt_related_terms": [
-        null
+        "Goertzen, M. J. (2017). Introduction to Quantitative Research and Data. Library Technology Reports, 53(4), 12–18."
     ],
     "drafted_by": [
         "Aoife O’Mahony"
@@ -22,6 +19,9 @@
         "Valeria Agostini",
         "Tamara Kalandadze",
         "Adam Parker"
+    ],
+    "alt_related_terms": [
+        null
     ],
     "language": "english",
     "aliases": [
