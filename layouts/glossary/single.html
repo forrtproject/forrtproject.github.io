@@ -122,26 +122,55 @@
 
 <div class="language-switcher">
   {{ $currentLang := .Params.language | default "english" }}
-  {{ $currentPath := .File.Path }}
-{{ $allLanguages := slice "arabic" "english" "german" }}
+  {{ $allLanguages := slice "arabic" "english" "german" }}
   {{ $availableLanguages := slice }}
+  {{ $site := .Site }}
+  
+  {{ $currentEnglishTitle := "" }}
+  {{ if eq $currentLang "english" }}
+    {{ $currentEnglishTitle = .Title }}
+  {{ else }}
+    <!-- Extract English title from parentheses, e.g., "Konstrukt-Validität (Construct validity)" -->
+    {{ $titleParts := split .Title " (" }}
+    {{ if gt (len $titleParts) 1 }}
+      {{ $currentEnglishTitle = trim (index $titleParts 1) ")" }}
+    {{ end }}
+  {{ end }}
 
   {{ range $lang := $allLanguages }}
     {{ if ne $lang $currentLang }}
-      {{ $langPath := replace $currentPath (printf "/%s/" $currentLang) (printf "/%s/" $lang) }}
-      {{ $langPage := site.GetPage $langPath }}
-      {{ if $langPage }}
-        {{ $availableLanguages = $availableLanguages | append $lang }}
+      {{ $langPages := where $site.RegularPages "Type" "glossary" }}
+      {{ $langDirPages := where $langPages "Params.language" $lang }}
+      
+      {{ range $langDirPages }}
+        {{ $matchFound := false }}
+        {{ if eq $lang "english" }}
+          {{ if eq .Title $currentEnglishTitle }}
+            {{ $availableLanguages = $availableLanguages | append (dict "lang" $lang "page" .) }}
+            {{ $matchFound = true }}
+          {{ end }}
+        {{ else }}
+          <!-- For non-English pages, check if English title matches -->
+          {{ $titleParts := split .Title " (" }}
+          {{ if gt (len $titleParts) 1 }}
+            {{ $englishTitle := trim (index $titleParts 1) ")" }}
+            {{ if eq $englishTitle $currentEnglishTitle }}
+              {{ $availableLanguages = $availableLanguages | append (dict "lang" $lang "page" .) }}
+              {{ $matchFound = true }}
+            {{ end }}
+          {{ end }}
+        {{ end }}
+        {{ if $matchFound }}
+          {{ break }}
+        {{ end }}
       {{ end }}
     {{ end }}
   {{ end }}
 
   {{ if gt (len $availableLanguages) 0 }}
     <strong>Also available in: </strong>
-    {{ range $lang := $availableLanguages }}
-      {{ $langPath := replace $currentPath (printf "/%s/" $currentLang) (printf "/%s/" $lang) }}
-      {{ $langPage := site.GetPage $langPath }}
-      <a href="{{ $langPage.RelPermalink }}">{{ $lang | title }}</a>{{ if not (eq (add 1 (index $availableLanguages | len)) $lang) }} | {{ end }}
+    {{ range $index, $item := $availableLanguages }}
+      <a href="{{ $item.page.RelPermalink }}">{{ $item.lang | title }}</a>{{ if lt $index (sub (len $availableLanguages) 1) }} | {{ end }}
     {{ end }}
     <br /> &nbsp;
   {{ end }}
@@ -192,10 +221,15 @@
             {{ end }}
 
             {{ if .Params.references }}
-            {{ $references := delimit .Params.references ", " | len }}
-            {{ if ne $references 0 }}
-            <p class="mb-1 pr-2"><b>{{ if gt (len .Params.references) 1 }}{{ index (index $dictionary $lang) "references" }}{{ else }}{{ index (index $dictionary $lang) "reference" }}{{ end }}: </b>{{ delimit .Params.references ", " ", & " | markdownify }}</p>
-            {{ end }}
+              {{ $references := delimit .Params.references ", " | len }}
+              {{ if ne $references 0 }}
+                <p class="mb-1 pr-2"><b>{{ if gt (len .Params.references) 1 }}{{ index (index $dictionary $lang) "references" }}{{ else }}{{ index (index $dictionary $lang) "reference" }}{{ end }}: </b></p>
+                <ul class="references-list">
+                  {{ range .Params.references }}
+                    <li>{{ . | markdownify }}</li>
+                  {{ end }}
+                </ul>
+              {{ end }}
             {{ end }}
 
             {{ if .Params.drafted_by }}
