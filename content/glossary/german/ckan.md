@@ -7,10 +7,7 @@
         "Data sharing"
     ],
     "references": [
-        "https://ckan.org/"
-    ],
-    "alt_related_terms": [
-        null
+        "Anon. (n.d.). Ckan. Retrieved from https://ckan.org/"
     ],
     "drafted_by": [
         "Tsvetomira Dumbalska"
@@ -19,6 +16,9 @@
         "Ali H. Al-Hoorie",
         "Kai Krautter",
         "Charlotte R. Pennington"
+    ],
+    "alt_related_terms": [
+        null
     ],
     "language": "german"
 }

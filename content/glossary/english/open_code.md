@@ -13,10 +13,7 @@
         "Syntax"
     ],
     "references": [
-        "Easterbrook (2014)"
-    ],
-    "alt_related_terms": [
-        null
+        "Easterbrook, S. M. (2014). Open code for open science? Nature Geoscience, 7(11), 779–781. https://doi.org/10.1038/ngeo2283"
     ],
     "drafted_by": [
         "Charlotte R. Pennington"
@@ -26,6 +23,9 @@
         "Mahmoud Elsherif",
         "Christopher Graham",
         "Emma Henderson"
+    ],
+    "alt_related_terms": [
+        null
     ],
     "language": "english",
     "aliases": [
