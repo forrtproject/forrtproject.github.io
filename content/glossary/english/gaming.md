@@ -5,13 +5,11 @@
     "related_terms": [
         "Incentive structure",
         "Journal Impact Factor",
-        "P*\\-hacking"
+        "*P*\\-hacking"
     ],
     "references": [
-        "Moher et al. (2018); Naudet et al. (2018)"
-    ],
-    "alt_related_terms": [
-        null
+        "Moher, D., Naudet, F., Cristea, I. A., Miedema, F., Ioannidis, J. P. A., & Goodman, S. N. (2018). Assessing scientists for hiring, promotion, and tenure. PLOS Biology, 16(3), e2004089. https://doi.org/10.1371/journal.pbio.2004089",
+        "Naudet, F., Ioannidis, J., Miedema, F., Cristea, I. A., Goodman, S. N., & Moher, D. (2018). Six principles for assessing scientists for hiring, promotion, and tenure. Impact of Social Sciences Blog."
     ],
     "drafted_by": [
         "Adrien Fillon"
@@ -21,6 +19,9 @@
         "Helena Hartmann",
         "Sam Parsons",
         "Charlotte R. Pennington"
+    ],
+    "alt_related_terms": [
+        null
     ],
     "language": "english",
     "aliases": [

@@ -10,10 +10,8 @@
         "Slow Science"
     ],
     "references": [
-        "Case (1928); Fanelli (2010)"
-    ],
-    "alt_related_terms": [
-        null
+        "Case, C. M. (1928). Scholarship in Sociology. Sociology and Social Research, 12, 323–340. http://www.sudoc.fr/036493414",
+        "Fanelli, D. (2010). Do Pressures to Publish Increase Scientists’ Bias? An Empirical Support from US States Data. PLOS ONE, 5(4), e10271. https://doi.org/10.1371/journal.pone.0010271"
     ],
     "drafted_by": [
         "Eliza Woodward"
@@ -26,6 +24,9 @@
         "Sam Parsons",
         "Timo Roettger",
         "Olmo van den Akker"
+    ],
+    "alt_related_terms": [
+        null
     ],
     "language": "english",
     "aliases": [
