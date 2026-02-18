@@ -5,18 +5,21 @@
     "related_terms": [
         "Campbell's law",
         "DORA",
-        "Reification (fallacy) **Reference (s):** \\[@Muller2018\\], \\[@Strathern1997\\]"
+        "Reification (fallacy) Reference (s): Muller (2019)",
+        "Strathern (1997)"
     ],
-    "references": [],
+    "references": [
+        ""
+    ],
+    "alt_related_terms": [
+        null
+    ],
     "drafted_by": [
         "Adam Parker"
     ],
     "reviewed_by": [
         "Sam Parsons",
-        "Flávio Azevedo"
-    ],
-    "alt_related_terms": [
-        null
+        "Flávio Azevedo  ### ---  ### H {#h}"
     ],
     "language": "english",
     "aliases": [

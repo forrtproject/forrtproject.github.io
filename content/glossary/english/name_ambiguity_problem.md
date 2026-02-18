@@ -8,7 +8,10 @@
         "ORCID (Open Researcher and Contributor ID)"
     ],
     "references": [
-        "Wilson, B., & Fenner, M. (2012). Open Researcher & Contributor ID (ORCID): Solving the Name Ambiguity Problem. Educause Review - E-Content, 47(3), 54–55. https://er.educause.edu/articles/2012/5/open-researcher--contributor-id-orcid-solving-the-name-ambiguity-problem"
+        "Wilson and Fenner (2012)"
+    ],
+    "alt_related_terms": [
+        null
     ],
     "drafted_by": [
         "Shannon Francis"
@@ -19,9 +22,6 @@
         "Helena Hartmann",
         "Wanyin Li",
         "Charlotte R. Pennington"
-    ],
-    "alt_related_terms": [
-        null
     ],
     "language": "english",
     "aliases": [

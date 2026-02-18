@@ -14,10 +14,10 @@
         "Patient and Public Involvement (PPI)"
     ],
     "references": [
-        "Filipe, A., Renedo, A., & Marston, C. (2017). The co-production of what? Knowledge, values, and social relations in health care. PLoS Biology, 15(5), e2001403. https://doi.org/10.1371/journal.pbio.2001403",
-        "Graham, I. D., McCutcheon, C., & Kothari, A. (2019). Exploring the frontiers of research co-production: the Integrated Knowledge Translation Research Network concept papers. Health Research Policy and Systems, 17, 88. https://doi.org/10.1186/s12961-019-0501-7",
-        "NIHR Guidance on Co-Producing a Research Project. (2021). https://www.learningforinvolvement.org.uk/?opportunity=nihr-guidance-on-co-producing-a-research-project",
-        "Co-Production Collective. (n.d.). Our Approach. Co-Production Collective. https://www.coproductioncollective.co.uk/what-is-co-production/our-approach"
+        "Filipe et al. (2017); Graham et al. (2019); NIHR (2021); Co-production Collective (2021)"
+    ],
+    "alt_related_terms": [
+        null
     ],
     "drafted_by": [
         "Emma Norris"
@@ -27,10 +27,7 @@
         "Magdalena Grose-Hodge",
         "Helena Hartmann;Charlotte R. Pennington",
         "Sonia Rishi",
-        "Emily A. Williams"
-    ],
-    "alt_related_terms": [
-        null
+        "Emily A. Williams  ### ---"
     ],
     "language": "english",
     "aliases": [

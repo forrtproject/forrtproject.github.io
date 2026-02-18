@@ -7,8 +7,10 @@
         "Validity"
     ],
     "references": [
-        "DeVellis, R. F. (2017). Scale development: Theory and applications (4th ed.). Sage.",
-        "Drost, E. A. (2011). Validity and reliability in social science research. Education Research and Perspectives, 38(1), 105–123."
+        "DeVellis (2017); Drost (2011)"
+    ],
+    "alt_related_terms": [
+        null
     ],
     "drafted_by": [
         "Annalise A. LaPlume"
@@ -18,9 +20,6 @@
         "Kai Krautter",
         "Sam Parsons",
         "Eike Mark Rinke"
-    ],
-    "alt_related_terms": [
-        null
     ],
     "language": "english",
     "aliases": [

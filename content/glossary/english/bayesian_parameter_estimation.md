@@ -9,10 +9,10 @@
         "Null Hypothesis Significance Testing (NHST)"
     ],
     "references": [
-        "Foreman-Mackey, D., Hogg, D. W., Lang, D., & Goodman, J. (2013). emcee: The MCMC Hammer. Publications of the Astronomical Society of the Pacific, 125(925), 306–312. https://doi.org/10.1086/670067",
-        "McElreath, R. (2020). Statistical rethinking: A Bayesian course with examples in R and Stan (2nd ed.). Taylor.",
-        "Press, W. (2007). Numerical recipes: the art of scientific computing, 3rd edition.",
-        "Huber, C. (2016). Introduction to Bayesian statistics, part 2: MCMC and the Metropolis–Hastings algorithm. In The Stata Blog. https://blog.stata.com/2016/11/15/introduction-to-bayesian-statistics-part-2-mcmc-and-the-metropolis-hastings-algorithm/"
+        "Foreman-Mackey et al. (2013); McElreath (2020); Press (2007); [https://blog.stata.com/2016/11/15/introduction-to-bayesian-statistics-part-2-mcmc-and-the-metropolis-hastings-algorithm/](https://blog.stata.com/2016/11/15/introduction-to-bayesian-statistics-part-2-mcmc-and-the-metropolis-hastings-algorithm/)"
+    ],
+    "alt_related_terms": [
+        null
     ],
     "drafted_by": [
         "Alaa AlDoh"
@@ -24,9 +24,6 @@
         "Meng Liu",
         "Ana Todorovic",
         "Markus Weinmann"
-    ],
-    "alt_related_terms": [
-        null
     ],
     "language": "english",
     "aliases": [

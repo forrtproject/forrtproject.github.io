@@ -11,8 +11,10 @@
         "Preregistration"
     ],
     "references": [
-        "Foster, E. D., & Deardorff, A. (2017). Open science framework (OSF). Journal of the Medical Library Association, 105(2), 203. https://doi.org/10.5195/jmla.2017.88",
-        "for Open Science, C. (2011–2021). Open Science Framework. https://osf.io/"
+        "Foster and Deardorff (2017); https://osf.io/"
+    ],
+    "alt_related_terms": [
+        null
     ],
     "drafted_by": [
         "William Ngiam"
@@ -20,10 +22,7 @@
     "reviewed_by": [
         "Mahmoud Elsherif",
         "Charlotte R. Pennington",
-        "Lisa Spitzer"
-    ],
-    "alt_related_terms": [
-        null
+        "Lisa Spitzer  ### ---"
     ],
     "language": "english",
     "aliases": [

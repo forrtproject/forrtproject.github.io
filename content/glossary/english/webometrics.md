@@ -7,7 +7,10 @@
         "Bibliometrics"
     ],
     "references": [
-        "Bjørneborn, L., & Ingwersen, P. (2004). Toward a basic framework for webometrics. Journal of the American Society for Information Science and Technology, 55(14), 1216–1227. https://doi.org/10.1002/asi.20077"
+        "Björneborn and Ingwersen (2004)"
+    ],
+    "alt_related_terms": [
+        null
     ],
     "drafted_by": [
         "Charlotte R. Pennington"
@@ -15,9 +18,6 @@
     "reviewed_by": [
         "Christopher Graham",
         "Mirela Zaneva"
-    ],
-    "alt_related_terms": [
-        null
     ],
     "language": "english",
     "aliases": [

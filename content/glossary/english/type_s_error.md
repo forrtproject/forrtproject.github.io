@@ -9,8 +9,10 @@
         "Type II error"
     ],
     "references": [
-        "Gelman, A., & Carlin, J. (2014). Beyond Power Calculations: Assessing Type S (Sign) and Type M (Magnitude) Errors. Perspectives on Psychological Science, 9(6), 641–651. https://doi.org/10.1177/1745691614551642",
-        "Lu, J., Qiu, Y., & Deng, A. (2018). A note on Type S/M errors in hypothesis testing. British Journal of Mathematical and Statistical Psychology, 72(1), 1–17. https://doi.org/10.1111/bmsp.12132"
+        "Gelman and Carlin (2014); Lu et al. (2018)"
+    ],
+    "alt_related_terms": [
+        null
     ],
     "drafted_by": [
         "Eduardo Garcia-Garzon"
@@ -19,10 +21,7 @@
         "Helena Hartmann",
         "Sam Parsons",
         "Graham Reid",
-        "Mirela Zaneva"
-    ],
-    "alt_related_terms": [
-        null
+        "Mirela Zaneva   ### U {#u}"
     ],
     "language": "english",
     "aliases": [

@@ -6,9 +6,16 @@
         "Diversity",
         "Inclusion",
         "Intersectionality",
-        "Open Science **Reference (s)**: \\[@GuestTweet2017\\], \\[@Whitaker2020\\], \\[@Pownall20210\\]"
+        "Open Science Reference (s): Guest (2017)",
+        "Whitaker and Guest (2020)",
+        "Pownall et al. (2021)"
     ],
-    "references": [],
+    "references": [
+        ""
+    ],
+    "alt_related_terms": [
+        null
+    ],
     "drafted_by": [
         "Zoe Flack"
     ],
@@ -21,10 +28,7 @@
         "Charlotte R. Pennington",
         "Flávio Azevedo",
         "Bradley Baker",
-        "Mahmoud Elsherif"
-    ],
-    "alt_related_terms": [
-        null
+        "Mahmoud Elsherif   ### C {#c}"
     ],
     "language": "english",
     "aliases": [

@@ -9,8 +9,10 @@
         "Vibration of effects"
     ],
     "references": [
-        "Del Giudice, M., & Gangestad, S. W. (2021). A traveler’s guide to the multiverse: Promises, pitfalls, and a framework for the evaluation of analytic decisions. Advances in Methods and Practices in Psychological Science, 4(1), 2515245920954925. https://doi.org/10.1177/2515245920954925",
-        "Steegen, S., Tuerlinckx, F., Gelman, A., & Vanpaemel, W. (2016). Increasing Transparency through a Multiverse Analysis. Perspectives on Psychological Science, 11, 702–712. https://doi.org/10.1177/1745691616658637"
+        "Del Giudice and Gangestad (2021); Steegen et al. (2016)"
+    ],
+    "alt_related_terms": [
+        null
     ],
     "drafted_by": [
         "Tina Lonsdorf; Flávio Azevedo"
@@ -19,10 +21,7 @@
         "Mahmoud Elsherif",
         "Adrien Fillon",
         "William Ngiam",
-        "Sam Parsons"
-    ],
-    "alt_related_terms": [
-        null
+        "Sam Parsons  ###  ### N {#n}"
     ],
     "language": "english",
     "aliases": [

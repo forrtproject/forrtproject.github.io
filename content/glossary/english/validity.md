@@ -19,8 +19,10 @@
         "Test"
     ],
     "references": [
-        "Campbell, D. T. (1957). Factors relevant to the validity of experiments in social settings. Psychological Bulletin, 54(4), 297–312. https://doi.org/10.1037/h0040950",
-        "Kelley, T. L. (1927). Interpretation of educational measurements. Macmillan."
+        "Campbell (1957); Boorsboom et al. (2004); Kelley (1927)"
+    ],
+    "alt_related_terms": [
+        null
     ],
     "drafted_by": [
         "Tamara Kalandadze; Madeleine Pownall; Flávio Azevedo"
@@ -32,9 +34,6 @@
         "Joanne McCuaig",
         "Adam Parker",
         "Charlotte R. Pennington"
-    ],
-    "alt_related_terms": [
-        null
     ],
     "language": "english",
     "aliases": [

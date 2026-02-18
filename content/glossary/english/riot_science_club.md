@@ -9,7 +9,12 @@
         "Reproducibility",
         "Transparency"
     ],
-    "references": [],
+    "references": [
+        "[http://riotscience.co.uk/](http://riotscience.co.uk/)"
+    ],
+    "alt_related_terms": [
+        null
+    ],
     "drafted_by": [
         "Tamara Kalandadze"
     ],
@@ -18,9 +23,6 @@
         "Emma Henderson",
         "Joanne McCuaig",
         "Flávio Azevedo"
-    ],
-    "alt_related_terms": [
-        null
     ],
     "language": "english",
     "aliases": [

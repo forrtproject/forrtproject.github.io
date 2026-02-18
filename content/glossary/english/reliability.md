@@ -11,19 +11,18 @@
         "Validity"
     ],
     "references": [
-        "Bollen, K. A. (1989). Structural Equations with Latent Variables (pp. 179–225). John Wiley & Sons.",
-        "Drost, E. A. (2011). Validity and reliability in social science research. Education Research and Perspectives, 38(1), 105–123."
+        "Bollen (1989); Drost (2011)"
+    ],
+    "alt_related_terms": [
+        null
     ],
     "drafted_by": [
         "Annalise A. LaPlume"
     ],
     "reviewed_by": [
-        "Mahmoud Elsherif**;** Eduardo Garcia-Garzon",
+        "Mahmoud Elsherif; Eduardo Garcia-Garzon",
         "Kai Krautter",
         "Olmo van den Akker"
-    ],
-    "alt_related_terms": [
-        null
     ],
     "language": "english",
     "aliases": [

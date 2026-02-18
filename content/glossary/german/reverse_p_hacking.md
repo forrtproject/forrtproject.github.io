@@ -11,7 +11,10 @@
         "Selective reporting"
     ],
     "references": [
-        "Chuard, P. J. C., Vrtilek, M., Head, M. L., & Jennions, M. D. (2019). Evidence that non-significant results are sometimes preferred: Reverse P-hacking or selective reporting? PLoS Biol, 17(1), e3000127. https://doi.org/10.1371/journal.pbio.3000127"
+        "Chuard et al. (2019)"
+    ],
+    "alt_related_terms": [
+        null
     ],
     "drafted_by": [
         "Robert M. Ross"
@@ -21,9 +24,6 @@
         "Alexander Hart",
         "Sam Parsons",
         "Timo Roettger"
-    ],
-    "alt_related_terms": [
-        null
     ],
     "language": "german"
 }

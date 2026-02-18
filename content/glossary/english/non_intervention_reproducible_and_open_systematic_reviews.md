@@ -8,7 +8,10 @@
         "Systematic Review Protocol"
     ],
     "references": [
-        "Topor, M., Pickering, J. S., Barbosa Mendes, A., Bishop, D. V. M., Büttner, F. C., Elsherif, M. M., & others. (2021). An integrative framework for planning and conducting Non-Intervention, Reproducible, and Open Systematic Reviews (NIRO-SR). https://doi.org/10.31222/osf.io/8gu5z"
+        "Topor et al. (2021)"
+    ],
+    "alt_related_terms": [
+        null
     ],
     "drafted_by": [
         "Asma Assaneea"
@@ -19,9 +22,6 @@
         "Tamara Kalandadze",
         "Jade Pickering",
         "Mirela Zaneva"
-    ],
-    "alt_related_terms": [
-        null
     ],
     "language": "english",
     "aliases": [

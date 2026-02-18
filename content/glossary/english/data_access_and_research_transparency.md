@@ -9,8 +9,10 @@
         "Reproducibility"
     ],
     "references": [
-        "Carsey, T. M. (2014). Making DA-RT a reality. PS: Political Science & Politics, 47(1), 72–77. https://doi.org/10.1017/S1049096513001753",
-        "Monroe, K. R. (2018). The rush to transparency: DA-RT and the potential dangers for qualitative research. Perspectives on Politics, 16(1), 141–148. https://doi.org/10.1017/S153759271700336X"
+        "Carsey (2014); Monroe (2018)"
+    ],
+    "alt_related_terms": [
+        null
     ],
     "drafted_by": [
         "Eike Mark Rinke"
@@ -19,9 +21,6 @@
         "Filip Dechterenko",
         "Kai Krautter",
         "Flávio Azevedo"
-    ],
-    "alt_related_terms": [
-        null
     ],
     "language": "english",
     "aliases": [

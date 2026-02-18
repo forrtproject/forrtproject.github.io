@@ -11,10 +11,10 @@
         "Universal design for learning (UDL)"
     ],
     "references": [
-        "Brown, N., Thompson, P., & Leigh, J. S. (2018). Making academia more accessible. Journal of Perspectives in Applied Academic Practice, 6(2), 82–90. https://doi.org/10.14297/jpaap.v6i2.348",
-        "Pollet, I. L., & Bond, A. L. (2021). Evaluation and recommendations for greater accessibility of colour figures in ornithology. Ibis, 163, 292–295. https://doi.org/10.1111/ibi.12887",
-        "Suber, P. (2004). The primacy of authors in achieving Open Access. In Nature. Retrieved from http://dash.harvard.edu/handle/1/4391161)",
-        "Pownall, M., Talbot, C. V., Henschel, A., Lautarescu, A., Lloyd, K. E., Hartmann, H., Darda, K. M., Tang, K. T. Y., Carmichael-Murphy, P., & Siegel, J. A. (2021). Navigating Open Science as Early Career Feminist Researchers. Psychology of Women Quarterly, 45(4), 526–539. https://doi.org/10.1177/03616843211029255 Retrieved from https://journals.sagepub.com/doi/10.1177/03616843211029255"
+        "Brown et al. (2018); Pollet and Bond (2021); Pownall et al. (2021); Suber (2004); World Wide Web Consortium (2021)"
+    ],
+    "alt_related_terms": [
+        null
     ],
     "drafted_by": [
         "Kai Krautter"
@@ -31,9 +31,6 @@
         "Madeleine Pownall",
         "Robert M. Ross",
         "Flávio Azevedo"
-    ],
-    "alt_related_terms": [
-        null
     ],
     "language": "english",
     "aliases": [

@@ -7,8 +7,10 @@
         "CRediT"
     ],
     "references": [
-        "Bhopal, R., Rankin, J., McColl, E., Thomas, L., Kaner, E., Stacy, R., Pearson, P., Vernon, B., & Rodgers, H. (1997). The vexed question of authorship: views of researchers in a British medical faculty. BMJ, 314, 1009–1012. https://doi.org/10.1136/bmj.314.7086.1009",
-        "of Medical Journal Editors, I. C. (2019). Recommendations for the conduct, reporting, eduting, and publication of scholarly work in medical journals. http://www.icmje.org/icmje-recommendations.pdf"
+        "Bhopal et al. (1997); ICMJE (2019)"
+    ],
+    "alt_related_terms": [
+        null
     ],
     "drafted_by": [
         "Bradley Baker"
@@ -19,9 +21,6 @@
         "Sam Parsons",
         "Charlotte R. Pennington",
         "Flávio Azevedo"
-    ],
-    "alt_related_terms": [
-        null
     ],
     "language": "english",
     "aliases": [

@@ -10,7 +10,10 @@
         "WEIRD"
     ],
     "references": [
-        "Webster, M. M., & Rutz, C. (2020). How STRANGE are your study animals? Nature, 582, 337–340. https://doi.org/10.1038/d41586-020-01751-5"
+        "Webster and Rutz (2020)"
+    ],
+    "alt_related_terms": [
+        null
     ],
     "drafted_by": [
         "Mahmoud Elsherif"
@@ -20,10 +23,7 @@
         "Zoe Flack",
         "Elias Garcia-Pelegrin",
         "Charlotte R. Pennington",
-        "Graham Reid"
-    ],
-    "alt_related_terms": [
-        null
+        "Graham Reid  ### ---"
     ],
     "language": "english",
     "aliases": [

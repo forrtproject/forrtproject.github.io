@@ -11,8 +11,10 @@
         "Research ethics"
     ],
     "references": [
-        "Mourby, M., Mackey, E., Elliot, M., Gowans, H., Wallace, S. E., Bell, J., Smith, H., Aidinlis, S., & Kaye, J. (2018). Are ‘pseudonymised’ data always personal data? Implications of the GDPR for administrative data research in the UK. Computer Law & Security Review, 34(2), 222–233. https://doi.org/10.1016/j.clsr.2018.01.002",
-        "Medical Research Council. (2019). Identifiability, anonymisation and pseudonymisation. Medical Research Council. https://mrc.ukri.org/documents/pdf/gdpr-guidance-note-5-identifiability-anonymisation-and-pseudonymisation/"
+        "Mourby et al. (2018); UKRI ([https://mrc.ukri.org/documents/pdf/gdpr-guidance-note-5-identifiability-anonymisation-and-pseudonymisation/](https://mrc.ukri.org/documents/pdf/gdpr-guidance-note-5-identifiability-anonymisation-and-pseudonymisation/))"
+    ],
+    "alt_related_terms": [
+        null
     ],
     "drafted_by": [
         "Catia M. Oliveira"
@@ -22,9 +24,6 @@
         "Sam Parsons",
         "Charlotte R. Pennington",
         "Birgit Schmidt"
-    ],
-    "alt_related_terms": [
-        null
     ],
     "language": "english",
     "aliases": [

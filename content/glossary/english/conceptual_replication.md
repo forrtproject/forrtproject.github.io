@@ -7,9 +7,10 @@
         "Generalizability"
     ],
     "references": [
-        "Crüwell, S., van Doorn, J., Etz, A., Makel, M. C., Moshontz, H., Niebaum, J. C., Orben, A., Parsons, S., & Schulte-Mecklenbeck, M. (2019). Seven Easy Steps to Open Science: An Annotated Reading List. Zeitschrift Für Psychologie, 227(4), 237–248. https://doi.org/10.1027/2151-2604/a000387",
-        "Hüffmeier, J., Mazei, J., & Schultze, T. (2016). Reconceptualizing replication as a sequence of different studies: A replication typology. Journal of Experimental Social Psychology, 66, 81–92. https://doi.org/10.1016/j.jesp.2015.09.009",
-        "LeBel, E. P., McCarthy, R. J., Earp, B. D., Elson, M., & Vanpaemel, W. (2018). A unified framework to quantify the credibility of scientific findings. Advances in Methods and Practices in Psychological Science, 1(3), 389–402. https://doi.org/10.1177/2515245918787489"
+        "Crüwell et al. (2019); Hüffmeier et al. (2016); LeBel et al. (2018)"
+    ],
+    "alt_related_terms": [
+        null
     ],
     "drafted_by": [
         "Mahmoud Elsherif; Thomas Rhys Evans"
@@ -26,9 +27,6 @@
         "Lisa Spitzer",
         "Suzanne L. K. Stewart",
         "Flávio Azevedo"
-    ],
-    "alt_related_terms": [
-        null
     ],
     "language": "english",
     "aliases": [

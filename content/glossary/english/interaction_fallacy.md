@@ -10,9 +10,10 @@
         "Type II error"
     ],
     "references": [
-        "Gelman, A., & Stern, H. (2006). The difference between “significant” and “not significant” is not itself statistically significant. The American Statistician, 60(4), 328–331. https://doi.org/10.1198/000313006X152649",
-        "Morabia, A., Have, T. T., & Landis, J. R. (1997). Interaction Fallacy. Journal of Clinical Epidemiology, 50(7), 809–812. https://doi.org/10.1016/S0895-4356(97)00053-X",
-        "Nieuwenhuis, S., Forstmann, B. U., & Wagenmakers, E. J. (2011). Erroneous analyses of interactions in neuroscience: a problem of significance. Nature Neuroscience, 14(9), 1105–1107. https://doi.org/10.1038/nn.2886"
+        "Gelman and Stern (2006); Morabia et al. (1997); Nieuwenhuis et al. (2011)"
+    ],
+    "alt_related_terms": [
+        null
     ],
     "drafted_by": [
         "Graham Reid"
@@ -22,9 +23,6 @@
         "Mahmoud Elsherif",
         "Kai Krautter",
         "Sam Parsons"
-    ],
-    "alt_related_terms": [
-        null
     ],
     "language": "english",
     "aliases": [

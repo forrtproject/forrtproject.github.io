@@ -7,7 +7,10 @@
         "Metadata"
     ],
     "references": [
-        "Arslan, R. C. (2019). How to Automatically Document Data With the codebook Package to Facilitate Data Reuse. Advances in Methods and Practices in Psychological Science, 2(2), 169–187. https://doi.org/10.1177/2515245919838783"
+        "Arslan et al. (2019);[https://www.icpsr.umich.edu/icpsrweb/content/shared/ICPSR/faqs/what-is-a-codebook.html](https://www.icpsr.umich.edu/icpsrweb/content/shared/ICPSR/faqs/what-is-a-codebook.html)"
+    ],
+    "alt_related_terms": [
+        null
     ],
     "drafted_by": [
         "Tina Lonsdorf"
@@ -17,9 +20,6 @@
         "Ashley Blake, Kai Krautter",
         "Charlotte R. Pennington",
         "Flávio Azevedo"
-    ],
-    "alt_related_terms": [
-        null
     ],
     "language": "english",
     "aliases": [

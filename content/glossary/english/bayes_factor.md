@@ -7,11 +7,13 @@
         "Bayesian statistics",
         "Likelihood function",
         "Null Hypothesis Significance Testing (NHST)",
-        "*p*\\-value"
+        "p*\\-value"
     ],
     "references": [
-        "Hoijtink, H., Mulder, J., van Lissa, C., & Gu, X. (2019). A tutorial on testing hypotheses using the Bayes factor. Psychological Methods, 24(5), 539–556. https://doi.org/10.1037/met0000201",
-        "Makowski, D., Ben-Shachar, M. S., Chen, S. H. A., & Lüdecke, D. (2019). Indices of Effect Existence and Significance in the Bayesian Framework. https://doi.org/10.3389/fpsyg.2019.02767"
+        "Hoijtink et al. (2019) Makowski et al. (2019)"
+    ],
+    "alt_related_terms": [
+        null
     ],
     "drafted_by": [
         "Meng Liu"
@@ -24,9 +26,6 @@
         "Michele C. Lim",
         "Suzanne L. K. Stewart",
         "Ana Todorovic"
-    ],
-    "alt_related_terms": [
-        null
     ],
     "language": "english",
     "aliases": [

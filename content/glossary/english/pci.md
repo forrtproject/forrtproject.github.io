@@ -10,7 +10,12 @@
         "Peer review",
         "Preprints"
     ],
-    "references": [],
+    "references": [
+        "https://peercommunityin.org/"
+    ],
+    "alt_related_terms": [
+        null
+    ],
     "drafted_by": [
         "Emma Henderson"
     ],
@@ -20,9 +25,6 @@
         "Bethan Iley",
         "Aleksandra Lazić",
         "Charlotte R. Pennington"
-    ],
-    "alt_related_terms": [
-        null
     ],
     "language": "english",
     "aliases": [

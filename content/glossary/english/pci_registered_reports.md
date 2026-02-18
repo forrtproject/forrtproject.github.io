@@ -13,7 +13,12 @@
         "Stage 2 study review",
         "Transparency"
     ],
-    "references": [],
+    "references": [
+        "[https://rr.peercommunityin.org/about/about](https://rr.peercommunityin.org/about/about)"
+    ],
+    "alt_related_terms": [
+        null
+    ],
     "drafted_by": [
         "Charlotte R. Pennington"
     ],
@@ -22,9 +27,6 @@
         "Jamie P. Cockcroft",
         "Mahmoud Elsherif",
         "Helena Hartmann"
-    ],
-    "alt_related_terms": [
-        null
     ],
     "language": "english",
     "aliases": [

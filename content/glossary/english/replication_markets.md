@@ -9,10 +9,10 @@
         "Reproducibility"
     ],
     "references": [
-        "Liu, Y., Gordon, M., Wang, J., Bishop, M., Chen, Y., Pfeiffer, T., Twardy, C., & Viganola, D. (2020). Replication Markets: Results, Lessons, Challenges and Opportunities in AI Replication. ArXiv:2005.04543 . http://arxiv.org/abs/2005.04543",
-        "Tierney, W., Hardy III, J. H., Ebersole, C. R., Leavitt, K., Viganola, D., Clemente, E. G., & others. (2020). Creative destruction in science. Organizational Behavior and Human Decision Processes, 161, 291–309. https://doi.org/10.1016/j.obhdp.2020.07.002",
-        "Tierney, W., Hardy III, J., Ebersole, C. R., Viganola, D., Clemente, E. G., Gordon, M., & others. (2021). A creative destruction approach to replication: Implicit work and sex morality across cultures. Journal of Experimental Social Psychology, 93, 104060. https://doi.org/10.1016/j.jesp.2020.104060",
-        "Replication Markets. (n.d.). Replication Markets – Reliable research replicates…you can bet on it. Replication Markets. https://www.replicationmarkets.com/"
+        "Liu et al. (2020); Tierney et al. (2020); Tierney et al. (2021); www.replicationmarkets.com"
+    ],
+    "alt_related_terms": [
+        null
     ],
     "drafted_by": [
         "Ali H. Al-Hoorie"
@@ -21,9 +21,6 @@
         "Mahmoud Elsherif",
         "Leticia Micheli",
         "Sam Parsons"
-    ],
-    "alt_related_terms": [
-        null
     ],
     "language": "english",
     "aliases": [

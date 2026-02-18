@@ -10,8 +10,10 @@
         "Null Hypothesis Significance Testing (NHST)"
     ],
     "references": [
-        "Sato, T. (1996). Type I and Type II error in multiple comparisons. The Journal of Psychology, 130(3), 293–302. https://doi.org/10.1080/00223980.1996.9915010",
-        "Schulz, K. F., & Grimes, D. A. (2005). Multiplicity in randomised trials I: endpoints and treatments. The Lancet, 365(9470), 1591–1595. https://doi.org/10.1016/S0140-6736(05)66461-6"
+        "Sato (1996); Schultz and Grimes (2005)"
+    ],
+    "alt_related_terms": [
+        null
     ],
     "drafted_by": [
         "Aidan Cashin"
@@ -21,9 +23,6 @@
         "Mahmoud Elsherif",
         "Meng Liu",
         "Charlotte R. Pennington"
-    ],
-    "alt_related_terms": [
-        null
     ],
     "language": "english",
     "aliases": [

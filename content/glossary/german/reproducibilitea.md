@@ -9,7 +9,10 @@
         "Reproducibility"
     ],
     "references": [
-        "Orben, A. (2019). A journal club to fix science. Nature, 573(7775), 465–466. https://doi.org/10.1038/d41586-019-02842-8"
+        "[https://reproducibilitea.org/](https://reproducibilitea.org/); Orben (2019)"
+    ],
+    "alt_related_terms": [
+        null
     ],
     "drafted_by": [
         "Emma Norris"
@@ -21,9 +24,6 @@
         "Charlotte R. Pennington",
         "Sam Parsons",
         "Flávio Azevedo"
-    ],
-    "alt_related_terms": [
-        null
     ],
     "language": "german"
 }

@@ -6,8 +6,10 @@
         "Peer review"
     ],
     "references": [
-        "Barnes, R. M., Johnston, H. M., MacKenzie, N., Tobin, S. J., & Taglang, C. M. (2018). The effect of ad hominem attacks on the evaluation of claims promoted by scientists. PloS One, 13(1), e0192025. https://doi.org/10.1371/journal.pone.0192025",
-        "Tvina, A., Spellecy, R., & Palatnik, A. (2019). Bias in the peer review process: can we do better? Obstetrics & Gynecology, 133(6), 1081–1083. https://doi.org/10.1097/AOG.0000000000003260"
+        "Barnes et al. (2018); Tvina et al. (2019)"
+    ],
+    "alt_related_terms": [
+        null
     ],
     "drafted_by": [
         "Mahmoud Elsherif"
@@ -18,9 +20,6 @@
         "Bethan Iley",
         "Madeleine Ingham",
         "Graham Reid"
-    ],
-    "alt_related_terms": [
-        null
     ],
     "language": "english",
     "aliases": [

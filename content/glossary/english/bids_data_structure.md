@@ -6,8 +6,10 @@
         "Open Data"
     ],
     "references": [
-        "Gorgolewski, K., Auer, T., Calhoun, V., & others. (2016). The brain imaging data structure, a format for organizing and describing outputs of neuroimaging experiments. Scientific Data, 3, 160044. https://doi.org/10.1038/sdata.2016.44",
-        "BIDS. (2020). About BIDS. Retrieved from https://bids.neuroimaging.io"
+        "Gorgolewski et al. (2016); [https://bids.neuroimaging.io/](https://bids.neuroimaging.io/)"
+    ],
+    "alt_related_terms": [
+        null
     ],
     "drafted_by": [
         "Tina Lonsdorf"
@@ -17,9 +19,6 @@
         "David Moreau",
         "Mariella Paul",
         "Charlotte R. Pennington"
-    ],
-    "alt_related_terms": [
-        null
     ],
     "language": "english",
     "aliases": [

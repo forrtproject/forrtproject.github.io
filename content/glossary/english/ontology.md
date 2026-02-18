@@ -8,7 +8,10 @@
         "Taxonomy"
     ],
     "references": [
-        "Noy, N. F., & McGuinness, D. L. (2001). Ontology development 101: A guide to creating your first ontology. https://corais.org/sites/default/files/ontology_development_101_aguide_to_creating_your_first_ontology.pdf"
+        "Noy and McGuinness (2001)"
+    ],
+    "alt_related_terms": [
+        null
     ],
     "drafted_by": [
         "Emma Norris"
@@ -16,9 +19,6 @@
     "reviewed_by": [
         "Charlotte R. Pennington",
         "Graham Reid"
-    ],
-    "alt_related_terms": [
-        null
     ],
     "language": "english",
     "aliases": [

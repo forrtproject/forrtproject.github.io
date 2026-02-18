@@ -11,8 +11,10 @@
         "Reproducibility"
     ],
     "references": [
-        "Crutzen, R., Ygram Peters, G. J., & Mondschein, C. (2019). Why and how we should care about the General Data Protection Regulation. Psychology & Health, 34(11), 1347–1357. https://doi.org/10.1080/08870446.2019.1606222",
-        "Information Commissioner’s Office. (2021). Guide to the UK General Data Protection Regulation (UK GDPR). ICO. https://ico.org.uk/for-organisations/guide-to-data-protection/guide-to-the-general-data-protection-regulation-gdpr/"
+        "Crutzen et al. (2019); [https://ico.org.uk/for-organisations/guide-to-data-protection/guide-to-the-general-data-protection-regulation-gdpr/](https://ico.org.uk/for-organisations/guide-to-data-protection/guide-to-the-general-data-protection-regulation-gdpr/); [https://ec.europa.eu/info/law/law-topic/data-protection\\_en](https://ec.europa.eu/info/law/law-topic/data-protection_en)"
+    ],
+    "alt_related_terms": [
+        null
     ],
     "drafted_by": [
         "Graham Reid"
@@ -22,9 +24,6 @@
         "Mahmoud Elsherif",
         "Christopher Graham",
         "Sam Parsons"
-    ],
-    "alt_related_terms": [
-        null
     ],
     "language": "english",
     "aliases": [
