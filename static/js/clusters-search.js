@@ -253,8 +253,8 @@
                 if (result) {
                     activateTab(result);
                     highlightMatches(result.tabPane, query);
-                    // Scroll to the section
-                    result.section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    // Scroll to the section with offset for navbar
+                    scrollToElement(result.section);
                     // Mark as active
                     resultItems.forEach(r => r.classList.remove('active'));
                     this.classList.add('active');
@@ -292,6 +292,22 @@
         });
         document.querySelectorAll('.nav-link.active').forEach(function(link) {
             link.classList.remove('active');
+        });
+    }
+
+    function scrollToElement(element) {
+        // Get navbar height to offset the scroll
+        const navbar = document.querySelector('.navbar-fixed-top, .fixed-top, nav.navbar');
+        const navbarHeight = navbar ? navbar.offsetHeight : 70;
+        
+        // Calculate the position to scroll to
+        const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
+        const offsetPosition = elementPosition - navbarHeight - 20; // Extra 20px padding
+        
+        // Scroll to the calculated position
+        window.scrollTo({
+            top: offsetPosition,
+            behavior: 'smooth'
         });
     }
 
@@ -373,7 +389,7 @@
             border-radius: 0 5px 5px 0;
             padding: 12px 15px;
             cursor: pointer;
-            z-index: 1000;
+            z-index: 1034;
             box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
             font-size: 14px;
             transition: background 0.3s;
@@ -396,7 +412,7 @@
             height: 100vh;
             background: white;
             box-shadow: 2px 0 10px rgba(0,0,0,0.1);
-            z-index: 1001;
+            z-index: 1035;
             transition: left 0.3s ease;
             display: flex;
             flex-direction: column;
