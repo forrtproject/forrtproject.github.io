@@ -221,7 +221,7 @@
         const resultsDiv = document.getElementById('clusterSearchResults');
         
         if (results.length === 0) {
-            resultsDiv.innerHTML = `<div class="alert alert-warning">No results found for "${escapeHtml(query)}".</div>`;
+            resultsDiv.innerHTML = `<div class="alert alert-info">No results found for "${escapeHtml(query)}".</div>`;
             return;
         }
 
@@ -480,7 +480,7 @@
         .search-result-item.active {
             background: #e7f3ff;
             border-color: #007bff;
-            border-width: 2px;
+            box-shadow: inset 0 0 0 1px #007bff;
         }
         
         .search-result-header {
