@@ -35,7 +35,11 @@ on:
         required: false
         type: boolean
         default: false
-
+      regenerate_ga:
+        description: 'Regenerate Google Analytics data'
+        required: false
+        type: boolean
+        default: false
 jobs:
   process-data:
     name: Process Data
@@ -304,6 +308,9 @@ jobs:
       - name: Download GA Data
         id: ga-data
         continue-on-error: true  # Continue even if this step fails
+        if: |
+          github.event_name == 'schedule' || 
+          github.event.inputs.regenerate_ga == 'true'
         env:
           GA_API_CREDENTIALS: ${{ secrets.GA_API_CREDENTIALS }}
           GA_PROPERTY_ID: ${{ secrets.GA_PROPERTY_ID }}
