@@ -29,7 +29,7 @@
         sidebar.className = 'cluster-search-sidebar';
         sidebar.innerHTML = `
             <button class="cluster-search-toggle" id="clusterSearchToggle" aria-label="Toggle search panel">
-                <i class="fas fa-search"></i> Search Clusters
+                <i class="fas fa-search"></i><span class="cluster-search-toggle-text"> Search Clusters</span>
             </button>
             <div class="cluster-search-panel" id="clusterSearchPanel">
                 <div class="cluster-search-header">
@@ -258,6 +258,8 @@
                     // Mark as active
                     resultItems.forEach(r => r.classList.remove('active'));
                     this.classList.add('active');
+                    // Auto-hide the search panel
+                    document.getElementById('clusterSearchPanel').classList.remove('open');
                 }
             });
         });
@@ -407,9 +409,9 @@
         .cluster-search-panel {
             position: fixed;
             left: -350px;
-            top: 0;
+            top: 70px;
             width: 350px;
-            height: 100vh;
+            height: calc(100vh - 70px);
             background: white;
             box-shadow: 2px 0 10px rgba(0,0,0,0.1);
             z-index: 1035;
@@ -538,8 +540,8 @@
         /* Mobile responsive */
         @media (max-width: 768px) {
             .cluster-search-panel {
-                width: 100%;
-                left: -100%;
+                width: 70%;
+                left: -70%;
             }
             
             .cluster-search-panel.open {
@@ -547,9 +549,13 @@
             }
             
             .cluster-search-toggle {
-                top: 150px;
-                font-size: 12px;
-                padding: 10px 12px;
+                top: 170px;
+                font-size: 14px;
+                padding: 10px;
+            }
+            
+            .cluster-search-toggle-text {
+                display: none;
             }
         }
         
