@@ -1,6 +1,6 @@
 {
     "type": "glossary",
-    "title": "Peer-Review nach der Veröffentlichung (Post Publication Peer Review)",
+    "title": "Peer-Review nach der Veröffentlichung [Post Publication Peer Review]",
     "definition": "Peer-Review, das nach der Veröffentlichung einer Forschungsarbeit stattfindet. Es wird in der Regel auf einer speziellen Plattform (z. B. PubPeer) veröffentlicht. Es unterscheidet sich vom traditionellen Kommentar, der in der gleichen Zeitschrift veröffentlicht wird und in der Regel selbst einem Peer Review unterzogen wird.",
     "related_terms": [
         "Open Peer Review",

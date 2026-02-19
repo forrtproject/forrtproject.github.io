@@ -1,6 +1,6 @@
 {
     "type": "glossary",
-    "title": "externe Validität (External Validity)",
+    "title": "externe Validität [External Validity]",
     "definition": "Ob die Ergebnisse einer wissenschaftlichen Studie auf andere Kontexte außerhalb des Studienkontextes verallgemeinert werden können (andere Maße, Rahmenbedingungen, Personen, Orte und Zeiten). Statistisch gesehen können Bedrohungen der externen Validität Wechselwirkungen widerspiegeln, bei denen die Wirkung eines Faktors (der unabhängigen Variable) von einem anderen Faktor (einer Störvariable) abhängt. Die externe Validität kann auch durch das Studiendesign eingeschränkt werden (z. B. durch eine künstliche Laborumgebung oder eine nicht repräsentative Stichprobe).",
     "related_terms": [
         "Constraints on Generality (COG)",

@@ -35,6 +35,17 @@
         "reference" "مرجع"
         "references" "مراجع"
     )
+    "turkish" (dict
+        "list_of_terms" "Terimler listesi"
+        "definition" "Tanım"
+        "alt_definition" "Alternatif tanım"
+        "related_term" "İlgili terim"
+        "related_terms" "İlgili terimler"
+        "drafted_reviewed_by" "Hazırlayanlar ve Denetleyenler"
+        "note" "Kaynakları doğrudan ilişkilendirmek için çalışmalarımız devam etmektedir. Şimdilik kaynakların tam listesine <a href='https://forrt.org/glossary/references'>buraya tıklayarak</a> ulaşabilirsiniz."
+        "reference" "Kaynak"
+        "references" "Kaynakça"
+    )
 }}
 
 <style>
@@ -122,7 +133,7 @@
 
 <div class="language-switcher">
   {{ $currentLang := .Params.language | default "english" }}
-  {{ $allLanguages := slice "arabic" "english" "german" }}
+{{ $allLanguages := slice "arabic" "english" "german" "turkish" }}
   {{ $availableLanguages := slice }}
   {{ $site := .Site }}
   
@@ -130,10 +141,10 @@
   {{ if eq $currentLang "english" }}
     {{ $currentEnglishTitle = .Title }}
   {{ else }}
-    <!-- Extract English title from parentheses, e.g., "Konstrukt-Validität (Construct validity)" -->
-    {{ $titleParts := split .Title " (" }}
+    <!-- Extract English title from square brackets, e.g., "Konstrukt-Validität [Construct validity]" -->
+    {{ $titleParts := split .Title " [" }}
     {{ if gt (len $titleParts) 1 }}
-      {{ $currentEnglishTitle = trim (index $titleParts 1) ")" }}
+      {{ $currentEnglishTitle = trim (index $titleParts 1) "]" }}
     {{ end }}
   {{ end }}
 
@@ -141,7 +152,7 @@
     {{ if ne $lang $currentLang }}
       {{ $langPages := where $site.RegularPages "Type" "glossary" }}
       {{ $langDirPages := where $langPages "Params.language" $lang }}
-      
+
       {{ range $langDirPages }}
         {{ $matchFound := false }}
         {{ if eq $lang "english" }}
@@ -151,9 +162,9 @@
           {{ end }}
         {{ else }}
           <!-- For non-English pages, check if English title matches -->
-          {{ $titleParts := split .Title " (" }}
+          {{ $titleParts := split .Title " [" }}
           {{ if gt (len $titleParts) 1 }}
-            {{ $englishTitle := trim (index $titleParts 1) ")" }}
+            {{ $englishTitle := trim (index $titleParts 1) "]" }}
             {{ if eq $englishTitle $currentEnglishTitle }}
               {{ $availableLanguages = $availableLanguages | append (dict "lang" $lang "page" .) }}
               {{ $matchFound = true }}

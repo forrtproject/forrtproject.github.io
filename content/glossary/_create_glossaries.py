@@ -10,6 +10,7 @@ language_map = {
     'EN': 'english',
     'AR': 'arabic',
     'DE': 'german',
+    'TR': 'turkish',
 }
 
 # Configuration
@@ -87,14 +88,18 @@ def safe_get(row, column, default=""):
     except Exception:
         return default
 
-def clean_filename(title):
+def clean_filename(title, max_length=200):
     """Clean title for use as filename"""
-    # Extract main title (before parentheses)
-    file_name = title.split(" (")[0].strip()
+    # Extract main title (before English title in square brackets)
+    file_name = title.split(" [")[0].strip()
     # Replace spaces and special characters
     file_name = re.sub(r'[^\w\s]', '_', file_name.replace(" ", "_"))
     # Convert to lowercase and clean up multiple underscores
-    return file_name.lower().strip().replace("__", "_")
+    file_name = file_name.lower().strip().replace("__", "_")
+    # Truncate to avoid filesystem limits
+    if len(file_name) > max_length:
+        file_name = file_name[:max_length].rstrip("_")
+    return file_name
 
 # Process languages
 formatted_data = {}
@@ -130,7 +135,16 @@ for language_code in languages_to_process:
             title = en_title
         else:
             localized_title = safe_get(row, f"{language_code}_title")
-            title = f"{localized_title} ({en_title})" if localized_title else en_title
+            if localized_title:
+                # Check if all English title words are already in the localized title
+                en_words = set(re.sub(r'[^\w\s]', '', en_title).lower().split())
+                local_words = set(re.sub(r'[^\w\s]', '', localized_title).lower().split())
+                if en_words <= local_words:
+                    title = localized_title
+                else:
+                    title = f"{localized_title} [{en_title}]"
+            else:
+                title = en_title
 
         # Process references
         raw_references = safe_get(row, "Reference")

@@ -1,6 +1,6 @@
 {
     "type": "glossary",
-    "title": "Einfachblinde Peer Begutachtung (Single-blind peer review)",
+    "title": "Einfachblinde Peer Begutachtung [Single-blind peer review]",
     "definition": "Bewertung von Forschungsergebnissen durch qualifizierte Expert:innen, wobei die Gutachter:innen die Identität der Autor:innen kennen, die Begutachtenden aber gegenüber den Autor:innen anonym bleiben.",
     "related_terms": [
         "Anonymous review",

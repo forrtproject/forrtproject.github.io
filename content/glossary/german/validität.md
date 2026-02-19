@@ -1,6 +1,6 @@
 {
     "type": "glossary",
-    "title": "Validität (Validity)",
+    "title": "Validität [Validity]",
     "definition": "Validität bezieht sich auf die Anwendung statistischer Prinzipien, um zu fundierten \\- d. h. wahrscheinlich genau der realen Welt entsprechenden \\- Konzepten, Schlussfolgerungen oder Messungen zu gelangen. In der Psychometrie bezieht sich die Validität auf das Ausmaß, in dem etwas das misst, was es zu messen beabsichtigt oder vorgibt zu messen. Unter diesem Oberbegriff gibt es verschiedene Arten von Validität (z. B. interne Validität, Konstruktvalidität, Augenscheinvalidität, Kriteriumsvalidität, diagnostische Validität, diskriminante Validität, übereinstimmende Validität, konvergente Validität, prädiktive Validität, externe Validität).",
     "related_terms": [
         "Causality",

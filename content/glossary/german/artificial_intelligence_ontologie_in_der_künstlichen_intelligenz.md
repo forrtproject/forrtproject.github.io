@@ -1,6 +1,6 @@
 {
     "type": "glossary",
-    "title": "Artificial Intelligence Ontologie in der Künstlichen Intelligenz (Ontology (Artificial Intelligence))",
+    "title": "Artificial Intelligence Ontologie in der Künstlichen Intelligenz [Ontology (Artificial Intelligence)]",
     "definition": "Eine Sammlung von Grundregeln (axioms) in einem Fachgebiet, die zur Klassifizierung und Erklärung der Art der untersuchten Einheiten und der Beziehungen zwischen ihnen beitragen.",
     "related_terms": [
         "Axiology",

@@ -1,6 +1,6 @@
 {
     "type": "glossary",
-    "title": "QRPs Fragwürdige Forschungs- oder Veröffentlichungspraktiken (Questionable Research Practices or Questionable Reporting Practices (QRPs))",
+    "title": "QRPs Fragwürdige Forschungs- oder Veröffentlichungspraktiken [Questionable Research Practices or Questionable Reporting Practices (QRPs)]",
     "definition": "Eine Reihe von Aktivitäten, die absichtlich oder unabsichtlich Daten zugunsten der eigenen Hypothesen eines Forschenden verzerren \\- oder Auslassungen bei der Berichterstattung über solche Praktiken \\- einschließlich selektiver Einbeziehung von Daten, Hypothesenbildung nach Bekanntwerden der Ergebnisse (HARKing) und p-hacking. Verbreitet von John et al. (2012).",
     "related_terms": [
         "Creative use of outliers",

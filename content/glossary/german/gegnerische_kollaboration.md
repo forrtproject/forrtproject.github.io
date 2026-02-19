@@ -1,6 +1,6 @@
 {
     "type": "glossary",
-    "title": "Gegnerische Kollaboration (Adversarial collaboration)",
+    "title": "Gegnerische Kollaboration [Adversarial collaboration]",
     "definition": "Eine Kollaboration, bei der zwei oder mehr Forschende mit gegensätzlichen oder widersprüchlichen theoretischen Ansichten \\- und wahrscheinlich unterschiedlichen Vorhersagen über die Ergebnisse einer Studie \\- an einem Projekt zusammenarbeiten. Das Ziel ist, Verzerrung (bias) und methodische Schwächen zu minimieren und eine gemeinsame Basis an Fakten zu erarbeiten, die von gegensätzlichen Theorien berücksichtigt werden muss.",
     "related_terms": [
         "Collaboration",

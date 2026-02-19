@@ -1,6 +1,6 @@
 {
     "type": "glossary",
-    "title": "Doppeltes Bewusstsein (Double consciousness)",
+    "title": "Doppeltes Bewusstsein [Double consciousness]",
     "definition": "Eine Identitätsverwirrung, da der Einzelne das Gefühl hat, zwei verschiedene Identitäten zu haben. Die eine ist die Anpassung an die dominante Kultur an der Universität, wenn die/der Einzelne mit Kolleg:innen und Professor:innen zusammen ist, die andere, wenn sie/er mit der Familie zusammen ist. Dieser ständige Wechsel kann dazu führen, dass man sich seiner Identität nicht sicher ist und glaubt, nirgendwo richtig dazuzugehören. Dieser Mangel an Zugehörigkeit kann zu einer schlechten sozialen Integration innerhalb der akademischen Kultur führen, die sich in geringeren Chancen und mehr psychischen Problemen bei der Person äußern kann (Rubin, 2021; Rubin et al., 2019).",
     "related_terms": [
         "Social class",

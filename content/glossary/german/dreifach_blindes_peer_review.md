@@ -1,6 +1,6 @@
 {
     "type": "glossary",
-    "title": "Dreifach-blindes Peer Review (Triple-blind peer review)",
+    "title": "Dreifach-blindes Peer Review [Triple-blind peer review]",
     "definition": "Bewertung von Forschungsergebnissen durch qualifizierte Expert:innen im Begutachtungsprozess (Peer-Review), wobei die verfassenden Personen sowohl für die Begutachtenden als auch für den/die Herausgebenden (Editor:innen) anonym bleiben. Die Verblindung der verfassenden Personen und ihrer institutionellen Zugehörigkeit sowohl gegenüber den Herausgebenden als auch den Gutachtenden zielt darauf ab, zu verhindern, dass institutionelle, persönliche und geschlechtsspezifische Vorurteile bei der Bewertung des Manuskripts eine Rolle spielen (Tvina et al., 2019, S. 1082).",
     "related_terms": [
         "Double-blind peer review",

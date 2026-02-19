@@ -1,6 +1,6 @@
 {
     "type": "glossary",
-    "title": "Psychometrische Metaanalyse (Psychometric meta-analysis)",
+    "title": "Psychometrische Metaanalyse [Psychometric meta-analysis]",
     "definition": "Psychometrische Meta-Analysen zielen darauf ab, die Abschwächung der interessierenden Effektgrößen aufgrund von Messfehlern und anderen Artefakten durch Verfahren zu korrigieren, die auf psychometrischen Grundsätzen beruhen, z. B. der Zuverlässigkeit (Reliabilität) der Messgrößen. Diese Verfahren sollten durchgeführt werden, bevor die synthetisierten Effektgrößen in Korrelations- oder experimentellen Meta-Analysen verwendet werden, da die Durchführung dieser Korrekturen tendenziell zu größeren und weniger variablen Effektgrößen führt.",
     "related_terms": [
         "Correlational meta-analysis",
