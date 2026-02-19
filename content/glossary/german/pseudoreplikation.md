@@ -1,6 +1,6 @@
 {
     "type": "glossary",
-    "title": "Pseudoreplikation (Pseudoreplication)",
+    "title": "Pseudoreplikation [Pseudoreplication]",
     "definition": "Wenn die Daten nicht statistisch unabhängig sind und somit die Anzahl der Stichproben (d. h. der Wiederholungen) künstlich vergrößert wird. Zum Beispiel, wenn mehr als ein Datenpunkt von der gleichen Versuchseinheit (z. B. Versuchsperson oder Kulturpflanze) gesammelt wird. Es gibt zahlreiche Methoden, um dieses Problem zu lösen, wie z. B. die Mittelwertbildung über die Wiederholungen (z. B. die mittlere Reaktionszeit einer Versuchsperson) oder die Implementierung von Modellen mit gemischten Effekten (mixed effects), bei denen die Struktur der zufälligen Effekte die Pseudo-Vervielfältigung berücksichtigt (z. B. die Spezifizierung jeder einzelnen Reaktionszeit als zu derselben Person). Beachten Sie, dass die erste Option mit einem Verlust an Information und statistischer Aussagekraft verbunden wäre.",
     "related_terms": [
         "Confounding",

@@ -1,6 +1,6 @@
 {
     "type": "glossary",
-    "title": "Bayes’sche Parameter-Schätzung (Bayesian Parameter Estimation)",
+    "title": "Bayes’sche Parameter-Schätzung [Bayesian Parameter Estimation]",
     "definition": "Ein Bayes’scher Ansatz zur Schätzung von Parameterwerten (Bayesian Parameter Estimation), bei dem eine vorherige Annahme über Modellparameter (d. h. die vorherige \"Prior\" Verteilung) mit neuen Belegen (d. h. beobachteten Daten) über eine Wahrscheinlichkeitsfunktion aktualisiert wird. Dies führt zu einer posterioren Verteilung. Die resultierende (\"Posterior\") Verteilung kann auf verschiedene Weise zusammengefasst werden: Punktschätzungen (Mittelwert/Modus/Median einer posterioren Wahrscheinlichkeitsverteilung), Intervalle mit definierten Grenzen und Intervalle mit definierter Masse (typischerweise als credible interval, d. h. glaubwürdiges Intervall bezeichnet). Eine Posterior-Verteilung kann wiederum in einer nachfolgenden Schätzung zu einer neuen Prior-Verteilung zusammengefasst werden. Eine Posterior-Verteilung kann auch mit Hilfe von Monte-Carlo-Markov-Ketten-Methoden untersucht werden, die zur Bestimmung komplexer Modellunsicherheiten verwendet werden können (z. B. Foreman-Mackey et al., 2013).",
     "related_terms": [
         "Bayes Factor",

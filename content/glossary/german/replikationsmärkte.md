@@ -1,6 +1,6 @@
 {
     "type": "glossary",
-    "title": "Replikationsmärkte (Replication Markets)",
+    "title": "Replikationsmärkte [Replication Markets]",
     "definition": "Ein Replikationsmarkt ist eine Umgebung, in der Nutzer:innen auf die Replizierbarkeit bestimmter Effekte wetten. Für die Vorhersagenden besteht ein Anreiz, genaue Vorhersagen zu treffen, und die erfolgreichsten Vorhersagenden erhalten für ihre Wetten eine finanzielle Entlohnung die Erwähnung als Beitragende (Contributorship). Der Grundgedanke hinter einem Replikationsmarkt ist, dass er die kollektive Weisheit der wissenschaftlichen Gemeinschaft nutzt, um vorherzusagen, welcher Effekt sich am wahrscheinlichsten replizieren lässt, und so die Forschenden ermutigt, ihre begrenzten Ressourcen für die Replikation dieser Effekte einzusetzen.",
     "related_terms": [
         "Citizen science",

@@ -1,6 +1,6 @@
 {
     "type": "glossary",
-    "title": "epistemische Unsicherheit (Epistemic uncertainty)",
+    "title": "epistemische Unsicherheit [Epistemic uncertainty]",
     "definition": "Systematische Unsicherheit aufgrund begrenzter Daten, Messgenauigkeit, Modell- oder Prozessspezifikation oder mangelnden Wissens. Das heißt, Unsicherheit aufgrund mangelnden Kenntnisstands, die theoretisch durch zusätzliche Forschung zur Verbesserung des Verständnisses verringert werden könnte. Eine solche Unsicherheit wird als persönlich bezeichnet, da sich das Wissen der Forschenden unterscheidet, und als vorübergehend, da sie sich ändern kann, wenn neue Daten verfügbar werden.",
     "related_terms": [
         "Aleatoric uncertainty",

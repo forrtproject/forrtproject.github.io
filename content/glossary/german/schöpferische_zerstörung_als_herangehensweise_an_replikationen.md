@@ -1,6 +1,6 @@
 {
     "type": "glossary",
-    "title": "Schöpferische Zerstörung als Herangehensweise an Replikationen (Creative destruction approach to replication)",
+    "title": "Schöpferische Zerstörung als Herangehensweise an Replikationen [Creative destruction approach to replication]",
     "definition": "Replikationsbemühungen sollten nicht nur darauf abzielen, die ursprünglichen Ergebnisse zu stützen oder in Frage zu stellen, sondern sie auch durch überarbeitete, stärkere Theorien mit größerer Erklärungskraft zu ersetzen. Dieser Ansatz beinhaltet daher das \"Stutzen\" bestehender Theorien, den Vergleich aller alternativen Theorien und eine generativere und theoriebildende Ausrichtung von Replikationsbemühungen (Tierney et al. 2020, 2021).",
     "related_terms": [
         "Crowdsourced research",

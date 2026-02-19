@@ -1,6 +1,6 @@
 {
     "type": "glossary",
-    "title": "OERs, Offene Bildungsressourcen (Open Educational Resources (OERs))",
+    "title": "OERs, Offene Bildungsressourcen [Open Educational Resources (OERs)]",
     "definition": "Lernmaterialien, die verändert und verbessert werden können, weil ihre Urheber:innen anderen die Erlaubnis dazu erteilt haben. Die Personen oder Organisationen, die OER erstellen \\- zu denen Materialien wie Präsentationsfolien, Podcasts, Lehrpläne, Bilder, Unterrichtspläne, Vorlesungsvideos, Karten, Arbeitsblätter und sogar ganze Lehrbücher gehören können \\- verzichten auf einige (oder alle) der mit ihren Werken verbundenen Urheberrechte, in der Regel über rechtliche Instrumente wie Creative-Commons-Lizenzen, so dass andere frei darauf zugreifen, sie wiederverwenden, übersetzen und verändern können.",
     "related_terms": [
         "Accessibility",

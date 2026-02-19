@@ -1,6 +1,6 @@
 {
     "type": "glossary",
-    "title": "Software mit offenem Quellcode (Open Source software)",
+    "title": "Software mit offenem Quellcode [Open Source software]",
     "definition": "Eine Art von Computersoftware, bei der der Quellcode unter einer Lizenz veröffentlicht wird, die es anderen erlaubt, die Software zu nutzen, zu verändern und an jede Person und für jeglichen Zweck weiterzugeben. Open Source ist mehr als nur offen zugänglich: Die Vertriebsbedingungen von Open-Source-Software müssen 10 spezifische Kriterien erfüllen (siehe: https://opensource.org/osd).",
     "related_terms": [
         "Github",

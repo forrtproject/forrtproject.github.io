@@ -1,6 +1,6 @@
 {
     "type": "glossary",
-    "title": "Metadaten (Metadata)",
+    "title": "Metadaten [Metadata]",
     "definition": "Strukturierte Daten, die andere Daten beschreiben und zusammenfassen. Metadaten können helfen, Daten zu finden, zu organisieren und zu verstehen. Beispiele für Metadaten sind Urheber:in, Titel, Mitwirkende, Schlüsselwörter (keywords), Tags sowie jede Art von Information, die zur Überprüfung und zum Verständnis der Ergebnisse und Schlussfolgerungen einer Studie erforderlich ist, z. B. ein Codebuch für Datenbeschriftungen, Beschreibungen, die Stichprobe und den Prozess der Datenerhebung.",
     "related_terms": [
         "Data",

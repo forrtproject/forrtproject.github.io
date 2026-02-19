@@ -1,6 +1,6 @@
 {
     "type": "glossary",
-    "title": "Zeitschriften-Impact-Faktor (Journal Impact Factor™)",
+    "title": "Zeitschriften-Impact-Faktor [Journal Impact Factor™]",
     "definition": "Die durchschnittliche Anzahl der Zitierungen von Forschungsartikeln in einer bestimmten Zeitschrift in den vorangegangenen zwei Jahren. Es handelt sich um eine urheberrechtlich geschützte und undurchsichtige Berechnung, die von Clarivate™ vermarktet wird. Die Impact-Faktoren von Zeitschriften stehen nicht in Zusammenhang mit der Qualität des Inhalts oder dem Peer-Review-Verfahren.",
     "related_terms": [
         "DORA",

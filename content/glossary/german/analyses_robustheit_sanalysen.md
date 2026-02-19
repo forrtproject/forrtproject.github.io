@@ -1,6 +1,6 @@
 {
     "type": "glossary",
-    "title": "analyses Robustheit-sanalysen (Robustness (analyses))",
+    "title": "analyses Robustheit-sanalysen [Robustness (analyses)]",
     "definition": "Die Beständigkeit der Unterstützung für eine Hypothese bei Störungen der methodischen/analytischen Pipeline. Mit anderen Worten: Anwendung verschiedener Methoden/Analyseverfahren, um zu prüfen, ob dieselbe Schlussfolgerung unter verschiedenen analytischen Bedingungen unterstützt wird.",
     "related_terms": [
         "Many Labs",

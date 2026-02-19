@@ -1,6 +1,6 @@
 {
     "type": "glossary",
-    "title": "Hypothese (Hypothesis)",
+    "title": "Hypothese [Hypothesis]",
     "definition": "Eine Hypothese ist eine unbewiesene Aussage über den Zusammenhang zwischen Variablen (Glass & Hall, 2008\\) und kann auf früheren Erfahrungen, wissenschaftlichen Erkenntnissen, vorläufigen Beobachtungen, Theorie und/oder Logik beruhen. Bei wissenschaftlichen Tests kann eine Hypothese gerichtet (z. B. eine positive Korrelation) oder ungerichtet (z. B. es wird eine Korrelation geben, aber unklar, ob positiv oder negativ) formuliert werden. Nach Popper (1959) müssen Hypothesen falsifizierbar sein, d. h. es muss möglich sein, die Hypothese zu widerlegen. Es wurde jedoch argumentiert, dass Hypothesentests, die auf Falsifikation beruhen, vage sind, da sie von vielen anderen ungeprüften Annahmen (d. h. Hilfshypothesen, \\[auxiliary hypotheses\\]) abhängig sind. Longino (1990, 1992\\) vertrat die Auffassung, dass in den Biowissenschaften ontologische Heterogenität höher bewertet werden sollte als ontologische Einfachheit, d. h. wir sollten Unterschiede zwischen und innerhalb biologischer Organismen untersuchen.",
     "related_terms": [
         "Auxiliary Hypothesis",

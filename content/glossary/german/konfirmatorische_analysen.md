@@ -1,6 +1,6 @@
 {
     "type": "glossary",
-    "title": "konfirmatorische Analysen (Confirmatory analyses)",
+    "title": "konfirmatorische Analysen [Confirmatory analyses]",
     "definition": "Teil der Unterscheidung zwischen konfirmatorisch und explorativ (Wagenmakers et al., 2012), wobei sich konfirmatorische Analysen auf Analysen beziehen, die im Vorfeld festgelegt wurden und bestehende Hypothesen testen. Die fehlende Abgrenzung dieser beiden Analyse-Arten in veröffentlichten Forschungsergebnissen wird als Erklärung für Replikationsprobleme vermutet. Es wurde vorgeschlagen, dieses Problem durch Präregistrierungen (Preregistrations) zu überwinden, da diese klar konfirmatorische und explorative Analysen trennen. Andere Forschende haben diese Begriffe in Frage gestellt und eine Umbenennung in \"entdeckungsorientierte\" und \"theorieprüfende Forschung\" empfohlen (Oberauer & Lewandowsky, 2019; siehe auch Szollosi & Donkin, 2019).",
     "related_terms": [
         "Exploratory data analysis",

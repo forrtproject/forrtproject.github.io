@@ -1,6 +1,6 @@
 {
     "type": "glossary",
-    "title": "CC (Creative Commons (CC) license)",
+    "title": "CC [Creative Commons (CC) license]",
     "definition": "Eine Reihe kostenloser und benutzerfreundlicher Urheberrechtslizenzen, die die Rechte von Autor:innen und Nutzer:innen frei verfügbarer Daten und Materialien auf standardisierte Weise definieren. CC-Lizenzen ermöglichen es Autor:innen oder Schöpfer:innen, urheberrechtlich geschützte Werke mit der Öffentlichkeit zu teilen. Es gibt sie in verschiedenen Varianten mit mehr oder weniger Bestimmungen. Die Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0) erlaubt beispielsweise, das Material zu teilen und anzupassen, unter den Bedingungen, dass die ursprünglichen Urheber:innen genannt werden, angegeben wird, ob Änderungen vorgenommen wurden, es unter derselben Lizenz wie das Original geteilt wird und das Material nicht für kommerzielle Zwecke verwendet wird.",
     "related_terms": [
         "Copyright",
