@@ -53,3 +53,7 @@ Aşama I'in sonuna başarıyla ulaştık 🎉. Bu, iddialı bir fikirden yola ç
 <br>
 
 Aşama I'in başarısının ardından, bu kaynağı geliştirmeye devam etmemize yardımcı olmanız için sizi davet ediyoruz. Mevcut tanımları iyileştirmeye, terimlerin kapsamını genişletmeye ve erişilebilirliği artırmak amacıyla terimleri farklı dillere çevirmeye yönelik geniş bir katkı yelpazesine açığız.
+
+---
+
+Sözlüğün tam kaynak listesine [buradan](/glossary/references) ulaşabilirsiniz.

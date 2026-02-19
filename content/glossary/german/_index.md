@@ -48,3 +48,7 @@ Wir haben Phase 1 erfolgreich abgeschlossen 🎉. Das bedeutet, dass wir von ein
 
 Nach dem Erfolg von Phase 1 laden wir Sie ein, uns weiterhin dabei zu helfen, diese Ressource zu verbessern. Wir sind an einer Vielzahl von Beiträgen interessiert, um bestehende Definitionen zu verbessern, den Umfang der Begriffe zu erweitern sowie die Definitionen in viele Sprachen zu übersetzen, um die Zugänglichkeit zu verbessern.
 
+---
+
+Die vollständige Referenzliste für das Glossar kann [hier](/glossary/references) eingesehen werden.
+

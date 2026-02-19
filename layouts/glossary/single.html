@@ -250,10 +250,6 @@
             {{ end }}
             {{ end }}
 
-            <div class="alert alert-info mt-5">
-              <div>{{ index (index $dictionary $lang) "note" | safeHTML }}</div>
-            </div>
-
             {{ if ne .Params.docs_section_pager false }}
             {{ if site.Params.docs_section_pager }}
             <div class="article-widget">
