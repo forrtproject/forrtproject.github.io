@@ -72,10 +72,16 @@ def process_references(references_text, apa_lookup, missing_refs_log=None):
         if key in apa_lookup:
             formatted_refs.append(apa_lookup[key])
         else:
-            # Log missing reference but don't include in output
-            if missing_refs_log is not None:
-                missing_refs_log.add(original_key)
-            print(f"Warning: Missing reference key '{original_key}' (cleaned: '{key}') - skipping")
+            # Try case-insensitive match
+            key_lower = key.lower()
+            ci_match = next((k for k in apa_lookup if k.lower() == key_lower), None)
+            if ci_match:
+                formatted_refs.append(apa_lookup[ci_match])
+            else:
+                # Log missing reference but don't include in output
+                if missing_refs_log is not None:
+                    missing_refs_log.add(original_key)
+                print(f"Warning: Missing reference key '{original_key}' (cleaned: '{key}') - skipping")
     
     return list(dict.fromkeys(formatted_refs))
 

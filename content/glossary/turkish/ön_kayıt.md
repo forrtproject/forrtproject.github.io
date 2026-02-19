@@ -14,6 +14,7 @@
         "Transparency"
     ],
     "references": [
+        "Haven, T. L., & Van Grootel, L. (2019). Preregistering qualitative research. Accountability in Research, 26(3), 229–244. https://doi.org/10.1080/08989621.2019.1580147",
         "Lewandowsky, S., & Bishop, D. (2016). Research integrity: Don’t let transparency damage science. Nature News, 529(7587), 459. https://doi.org/10.1038/529459a",
         "Mertens, G., & Krypotos, A. M. (2019). Preregistration of analyses of preexisting data. Psychologica Belgica, 59(1), 338.",
         "Navarro, D. (2020). Paths in strange spaces: A comment on preregistration.",
