@@ -25,5 +25,14 @@
     "alt_related_terms": [
         null
     ],
-    "language": "arabic"
+    "language": "arabic",
+    "translated_by": [
+        "Ahlam Ahmed"
+    ],
+    "translation_reviewed_by": [
+        "Ali H. Al-Hoorie",
+        "Hala Alghamdi",
+        "Asma Alzahrani",
+        "Mohammed Mohsen"
+    ]
 }

@@ -34,5 +34,13 @@
     "alt_related_terms": [
         null
     ],
-    "language": "german"
+    "language": "german",
+    "translated_by": [
+        "Bettina M.J. Kern"
+    ],
+    "translation_reviewed_by": [
+        "Helena Hartmann",
+        "Susanne Vogel",
+        "Joris Frese"
+    ]
 }

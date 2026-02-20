@@ -26,5 +26,13 @@
     "alt_related_terms": [
         null
     ],
-    "language": "arabic"
+    "language": "arabic",
+    "translated_by": [
+        "Mai Helmy.  Ali H. Al-Hoorie",
+        "Asma Alzahrani",
+        "Alaa M. Saleh",
+        "Ahlam Ahmed",
+        "Hiba Alomary",
+        "Mohammed Mohsen"
+    ]
 }

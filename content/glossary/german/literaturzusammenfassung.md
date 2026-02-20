@@ -21,5 +21,13 @@
     "alt_related_terms": [
         null
     ],
-    "language": "german"
+    "language": "german",
+    "translated_by": [
+        "Bettina MJ Kern"
+    ],
+    "translation_reviewed_by": [
+        "Helena Hartmann",
+        "Jennifer Mattschey   We have separated the glossary project across several documents",
+        "see links below:  Landing page:\t\t\t[Glossary Translations German template](https://docs.google.com/document/d/1IIZK-F9SX1P4UrPlZeEKgUAOyiEjNbGFSWafr0ADb0M/edit) Letters A \\- F:\t\t\t[German Glossary | Phase 2 | A-F](https://docs.google.com/document/d/1yQH_iYm7FgjVGtJyQWGv7iv1kt4GkUWeRbXHch57Fuo/edit) Letters G \\- L:\t\t\t[German Glossary | Phase 2 | G-L](https://docs.google.com/document/d/1MbfcDK3G6ybzkkq2jVz36q4TcqQMGpNG2cun6GOeuSQ/edit#) Letters M \\- R: \t\t\t[German Glossary | Phase 2 | M - R](https://docs.google.com/document/d/1sv2C1Y-z3WeiYjvhn2B8rhFyPK5YQ8G3sCCh3ZYwV2Q/edit#heading=h.w0bgiwj800db) Letters S \\- Z:\t\t\t[German Glossary | Phase 2 | S - Z](https://docs.google.com/document/d/1pORanWNHkMRkGYs8vNxdetx907gBv-fm8l-tV8XRIiE/edit) References: \t\t\t[Glossary | Phase 2 | References](https://docs.google.com/document/d/12_F8kbnl2GP66iBkIejJeX2KnkZ13iC_jj7VVYZMxpA/edit?usp=sharing) Terms not yet defined: \t\t[Glossary | Phase 2 | Terms not yet defined](https://docs.google.com/document/d/16FGodUkNoNrBYyq2JqHJMNzYuZf-QbsigooMpB_ns_E/edit?usp=sharing) Contributors spreadsheet: [Glossary Translations German tenzing contributions \\[FORRT\\]](https://docs.google.com/spreadsheets/d/1UEM7s27b5pOlrIYX9-fXYdPOmPpZZyoggJOfOIrOhko/edit#gid=0)  [FORRT slack](https://join.slack.com/t/forrt/shared_invite/zt-alobr3z7-NOR0mTBfD1vKXn9qlOKqaQ) \\- join us\\! [FORRT email](mailto:FORRTproject@gmail.com) \\- contact us\\!"
+    ]
 }

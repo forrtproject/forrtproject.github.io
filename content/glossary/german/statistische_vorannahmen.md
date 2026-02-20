@@ -29,5 +29,10 @@
     "alt_related_terms": [
         null
     ],
-    "language": "german"
+    "language": "german",
+    "translated_by": [
+        "Bettina M.J. Kern **** Helena Hartmann",
+        "Susanne Vogel",
+        "Joris Frese"
+    ]
 }

@@ -34,5 +34,11 @@
     "alt_related_terms": [
         null
     ],
-    "language": "turkish"
+    "language": "turkish",
+    "translated_by": [
+        "Elif Bastan"
+    ],
+    "translation_reviewed_by": [
+        "Neslihan Özhan"
+    ]
 }

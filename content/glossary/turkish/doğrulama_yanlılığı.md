@@ -25,5 +25,11 @@
     "alt_related_terms": [
         null
     ],
-    "language": "turkish"
+    "language": "turkish",
+    "translated_by": [
+        "Ege Emek"
+    ],
+    "translation_reviewed_by": [
+        "Elif Bastan"
+    ]
 }

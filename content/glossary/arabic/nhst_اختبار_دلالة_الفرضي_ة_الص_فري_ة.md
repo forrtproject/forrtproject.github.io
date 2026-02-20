@@ -25,5 +25,12 @@
     "alt_related_terms": [
         null
     ],
-    "language": "arabic"
+    "language": "arabic",
+    "translated_by": [
+        "Ruwayshid"
+    ],
+    "translation_reviewed_by": [
+        "Alaa M. Saleh",
+        "Mohammed Mohsen"
+    ]
 }
