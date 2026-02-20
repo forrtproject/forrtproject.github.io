@@ -20,5 +20,12 @@
     "alt_related_terms": [
         null
     ],
-    "language": "german"
+    "language": "german",
+    "translated_by": [
+        "Helena Hartmann"
+    ],
+    "translation_reviewed_by": [
+        "Jennifer Mattschey",
+        "Susanne Vogel"
+    ]
 }

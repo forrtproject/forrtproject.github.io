@@ -8,7 +8,10 @@
         "alt_definition" "Alternative definition"
         "related_term" "Related term"
         "related_terms" "Related terms"
-        "drafted_reviewed_by" "Drafted and Reviewed by"
+        "originally_drafted_by" "Originally drafted by"
+        "reviewed_by" "Reviewed by"
+        "translated_by" "Translated by"
+        "translation_reviewed_by" "Translation reviewed by"
         "note" "We are currently working to link the references directly. For now, the complete reference list can be viewed <a href='https://forrt.org/glossary/references'>here</a>."
         "reference" "Reference"
         "references" "References"
@@ -19,7 +22,10 @@
         "alt_definition" "Alternative Definition"
         "related_term" "Verwandter Begriff"
         "related_terms" "Verwandte Begriffe"
-        "drafted_reviewed_by" "Verfasst und Überprüft von"
+        "originally_drafted_by" "Ursprünglich verfasst von"
+        "reviewed_by" "Überprüft von"
+        "translated_by" "Übersetzt von"
+        "translation_reviewed_by" "Übersetzung überprüft von"
         "note" "Wir arbeiten momentan daran, die Referenzen direkt zu verlinken. Momentan kann hier die <a href = 'https://forrt.org/glossary/references'>vollständige Referenzliste</a> eingesehen werden."
         "reference" "Referenz"
         "references" "Referenzen"
@@ -30,7 +36,10 @@
         "alt_definition" "تعريف بديل"
         "related_term" "مصطلح ذو صلة"
         "related_terms" "مصطلحات ذات صلة"
-        "drafted_reviewed_by" "كتبه وراجعه"
+        "originally_drafted_by" "أعدّه في الأصل"
+        "reviewed_by" "راجعه"
+        "translated_by" "ترجمه"
+        "translation_reviewed_by" "راجع ترجمته"
         "note" "نحن نعمل حاليًا على آلية تلقائية لربط المراجع المذكورة أعلاه بنسختها الكاملة التي يمكن العثور عليها في <a href='https://forrt.org/glossary/references'>قائمة المراجع الكاملة</a>."
         "reference" "مرجع"
         "references" "مراجع"
@@ -41,7 +50,10 @@
         "alt_definition" "Alternatif tanım"
         "related_term" "İlgili terim"
         "related_terms" "İlgili terimler"
-        "drafted_reviewed_by" "Hazırlayanlar ve Denetleyenler"
+        "originally_drafted_by" "Orijinal terimi ve tanımını hazırlayanlar"
+        "reviewed_by" "Gözden geçirenler"
+        "translated_by" "Çevirenler"
+        "translation_reviewed_by" "Çeviriyi gözden geçirenler"
         "note" "Kaynakları doğrudan ilişkilendirmek için çalışmalarımız devam etmektedir. Şimdilik kaynakların tam listesine <a href='https://forrt.org/glossary/references'>buraya tıklayarak</a> ulaşabilirsiniz."
         "reference" "Kaynak"
         "references" "Kaynakça"
@@ -246,7 +258,28 @@
             {{ if .Params.drafted_by }}
             {{ $drafted_by := delimit .Params.drafted_by ", " | len }}
             {{ if ne $drafted_by 0 }}
-            <p class="mb-1 pr-2"><b>{{ index (index $dictionary $lang) "drafted_reviewed_by" }}: </b>{{ range .Params.drafted_by }}{{ . }}, {{ end }}{{ delimit .Params.reviewed_by ", " | markdownify }}</p>
+            <p class="mb-1 pr-2"><b>{{ index (index $dictionary $lang) "originally_drafted_by" }}: </b>{{ delimit .Params.drafted_by ", " }}</p>
+            {{ end }}
+            {{ end }}
+
+            {{ if .Params.reviewed_by }}
+            {{ $reviewed_by := delimit .Params.reviewed_by ", " | len }}
+            {{ if ne $reviewed_by 0 }}
+            <p class="mb-1 pr-2"><b>{{ index (index $dictionary $lang) "reviewed_by" }}: </b>{{ delimit .Params.reviewed_by ", " | markdownify }}</p>
+            {{ end }}
+            {{ end }}
+
+            {{ if .Params.translated_by }}
+            {{ $translated_by := delimit .Params.translated_by ", " | len }}
+            {{ if ne $translated_by 0 }}
+            <p class="mb-1 pr-2"><b>{{ index (index $dictionary $lang) "translated_by" }}: </b>{{ delimit .Params.translated_by ", " }}</p>
+            {{ end }}
+            {{ end }}
+
+            {{ if .Params.translation_reviewed_by }}
+            {{ $translation_reviewed_by := delimit .Params.translation_reviewed_by ", " | len }}
+            {{ if ne $translation_reviewed_by 0 }}
+            <p class="mb-1 pr-2"><b>{{ index (index $dictionary $lang) "translation_reviewed_by" }}: </b>{{ delimit .Params.translation_reviewed_by ", " }}</p>
             {{ end }}
             {{ end }}
 

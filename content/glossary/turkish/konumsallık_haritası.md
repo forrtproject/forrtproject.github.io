@@ -23,5 +23,11 @@
     "alt_related_terms": [
         null
     ],
-    "language": "turkish"
+    "language": "turkish",
+    "translated_by": [
+        "Neslihan Özhan"
+    ],
+    "translation_reviewed_by": [
+        "Nihan Selin Soylu-Konak"
+    ]
 }

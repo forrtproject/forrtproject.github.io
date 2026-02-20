@@ -169,6 +169,17 @@ for language_code in languages_to_process:
             "language": language_name
         }
 
+        # Add translation credits for non-English entries
+        if language_code != 'EN':
+            transl_col = f"{language_code}_transl"
+            review_col = f"{language_code}_review"
+            transl_val = safe_get(row, transl_col)
+            review_val = safe_get(row, review_col)
+            if transl_val:
+                entry["translated_by"] = [name.strip() for name in re.split(r'[,;]', transl_val) if name.strip()]
+            if review_val:
+                entry["translation_reviewed_by"] = [name.strip() for name in re.split(r'[,;]', review_val) if name.strip()]
+
         # Add aliases for English entries
         if language_code == "EN":
             entry["aliases"] = ["/glossary/" + clean_filename(title)]

@@ -23,5 +23,13 @@
     "alt_related_terms": [
         null
     ],
-    "language": "arabic"
+    "language": "arabic",
+    "translated_by": [
+        "Mai Helmy."
+    ],
+    "translation_reviewed_by": [
+        "Alaa M. Saleh",
+        "Ali H. Al-Hoorie",
+        "Mohammed Mohsen"
+    ]
 }
