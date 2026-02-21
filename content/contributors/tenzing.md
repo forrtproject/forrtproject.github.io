@@ -1365,8 +1365,8 @@ FORRT is driven by a **large and diverse community of contributors** that shape 
 </li>
 
 
-<li class="contributor-group">
-  <strong>Sonja Eisenbeiss</strong> contributed to
+<li class="contributor-group" id="0000-0003-4975-3372">
+  <strong><a href="https://orcid.org/0000-0003-4975-3372">Sonja Eisenbeiss</a></strong> contributed to
   <ul class="contributions-list">
     <li class="contribution" data-projects="german-teaching-network-grant" data-roles="conceptualization,funding-acquisition,writing-original-draft,writing-review-and-editing">German teaching network grant with <em>Conceptualization</em>, <em>Funding acquisition</em>, <em>Writing - original draft</em> and <em>Writing - review & editing</em></li>
   </ul>
@@ -3712,8 +3712,8 @@ Educators (POST-Edu) as Project co-lead</li>
 </li>
 
 
-<li class="contributor-group">
-  <strong>Sebastian Ocklenburg</strong> contributed to
+<li class="contributor-group" id="0000-0001-5882-3200">
+  <strong><a href="https://orcid.org/0000-0001-5882-3200">Sebastian Ocklenburg</a></strong> contributed to
   <ul class="contributions-list">
     <li class="contribution" data-projects="german-teaching-network-grant" data-roles="conceptualization,funding-acquisition,writing-original-draft">German teaching network grant with <em>Conceptualization</em>, <em>Funding acquisition</em> and <em>Writing - original draft</em></li>
   </ul>
@@ -5055,8 +5055,8 @@ Educators (POST-Edu) as Project co-lead</li>
 </li>
 
 
-<li class="contributor-group">
-  <strong>David Urschler</strong> contributed to
+<li class="contributor-group" id="0000-0003-3223-4816">
+  <strong><a href="https://orcid.org/0000-0003-3223-4816">David Urschler</a></strong> contributed to
   <ul class="contributions-list">
     <li class="contribution" data-projects="german-teaching-network-grant" data-roles="conceptualization,funding-acquisition,writing-original-draft">German teaching network grant with <em>Conceptualization</em>, <em>Funding acquisition</em> and <em>Writing - original draft</em></li>
   </ul>
@@ -6233,6 +6233,10 @@ window.filterData = {
       "label": "Project Coordinator"
     },
     {
+      "value": "project-manager",
+      "label": "Project Manager"
+    },
+    {
       "value": "project-administration",
       "label": "Project administration"
     },
@@ -6243,10 +6247,6 @@ window.filterData = {
     {
       "value": "project-lead",
       "label": "Project lead"
-    },
-    {
-      "value": "project-manager",
-      "label": "Project manager"
     },
     {
       "value": "resources",
