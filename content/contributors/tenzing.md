@@ -1682,7 +1682,7 @@ Educators (POST-Edu) as Project co-lead</li>
     <li class="contribution" data-projects="oscars-grant-application" data-roles="resources,writing-review-and-editing">OSCARS Grant Application with <em>Resources</em> and <em>Writing - review & editing</em></li>
     <li class="contribution" data-projects="open-educational-resources-chapter" data-roles="project-administration,writing-review-and-editing"><a href="https://doi.org/10.35542/osf.io/sn693_v2">Open Educational Resources Chapter</a> with <em>Project administration</em> and <em>Writing - review & editing</em></li>
     <li class="contribution" data-projects="summaries" data-roles="resources,supervision,writing-review-and-editing"><a href="https://forrt.org/summaries/">Summaries</a> with <em>Resources</em>, <em>Supervision</em> and <em>Writing - review & editing</em></li>
-    <li class="contribution" data-projects="team-credit" data-roles="formal-analysis,project-administration,resources,visualization,writing-original-draft"><a href="https://forrt.org/contributors/">Team Credit</a> with <em>Formal analysis</em>, <em>Project administration</em>, <em>Resources</em>, <em>Visualization</em> and <em>Writing - original draft</em></li>
+    <li class="contribution" data-projects="team-credit" data-roles="data-curation,formal-analysis,investigation,project-administration,resources,supervision,visualization,writing-original-draft,writing-review-and-editing"><a href="https://forrt.org/contributors/">Team Credit</a> with <em>Data curation</em>, <em>Formal analysis</em>, <em>Investigation</em>, <em>Project administration</em>, <em>Resources</em>, <em>Supervision</em>, <em>Visualization</em>, <em>Writing - original draft</em> and <em>Writing - review & editing</em></li>
     <li class="contribution" data-projects="team-einstein-2025" data-roles="resources,writing-review-and-editing">Team Einstein 2025 with <em>Resources</em> and <em>Writing - review & editing</em></li>
   </ul>
 </li>
@@ -5193,7 +5193,7 @@ Educators (POST-Edu) as Project co-lead</li>
     <li class="contribution" data-projects="replication-research-journal-editorial-team" data-roles="writing-review-and-editing"><a href="http://replicationresearch.org">Replication Research Journal - Editorial Team</a> with <em>Writing - review & editing</em></li>
     <li class="contribution" data-projects="reversals-and-replications" data-roles="investigation"><a href="https://forrt.org/reversals/">Reversals & Replications</a> with <em>Investigation</em></li>
     <li class="contribution" data-projects="summaries" data-roles="resources,writing-review-and-editing"><a href="https://forrt.org/summaries/">Summaries</a> with <em>Resources</em> and <em>Writing - review & editing</em></li>
-    <li class="contribution" data-projects="team-credit" data-roles="conceptualization,project-administration,resources"><a href="https://forrt.org/contributors/">Team Credit</a> with <em>Conceptualization</em>, <em>Project administration</em> and <em>Resources</em></li>
+    <li class="contribution" data-projects="team-credit" data-roles="conceptualization,project-administration,resources,supervision"><a href="https://forrt.org/contributors/">Team Credit</a> with <em>Conceptualization</em>, <em>Project administration</em>, <em>Resources</em> and <em>Supervision</em></li>
   </ul>
 </li>
 
