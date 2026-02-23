@@ -10,16 +10,21 @@
         "Preprint"
     ],
     "references": [
-        "www.zenodo.org"
-    ],
-    "alt_related_terms": [
-        null
+        "Zenodo. (n.d.). Zenodo—Research. Shared. https://www.zenodo.org/"
     ],
     "drafted_by": [
         "Ali H. Al-Hoorie"
     ],
-    "reviewed_by": [
-        "Sara Middleton"
+    "reviewed_by": [],
+    "alt_related_terms": [
+        null
     ],
-    "language": "german"
+    "language": "german",
+    "translated_by": [
+        "Helena Hartmann"
+    ],
+    "translation_reviewed_by": [
+        "Susanne Vogel",
+        "Joris Frese"
+    ]
 }

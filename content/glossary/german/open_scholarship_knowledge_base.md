@@ -7,12 +7,7 @@
         "Open scholarship",
         "Open Science"
     ],
-    "references": [
-        "www.oercommons.org/hubs/OSKB"
-    ],
-    "alt_related_terms": [
-        null
-    ],
+    "references": [],
     "drafted_by": [
         "Ali H. Al-Hoorie"
     ],
@@ -21,5 +16,14 @@
         "Samuel Guay",
         "Tamara Kalandadze"
     ],
-    "language": "german"
+    "alt_related_terms": [
+        null
+    ],
+    "language": "german",
+    "translated_by": [
+        "Susanne Vogel"
+    ],
+    "translation_reviewed_by": [
+        "Helena Hartmann"
+    ]
 }

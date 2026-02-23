@@ -10,10 +10,7 @@
         "WEIRD"
     ],
     "references": [
-        "Webster and Rutz (2020)"
-    ],
-    "alt_related_terms": [
-        null
+        "Webster, M. M., & Rutz, C. (2020). How STRANGE are your study animals? Nature, 582, 337–340. https://doi.org/10.1038/d41586-020-01751-5"
     ],
     "drafted_by": [
         "Mahmoud Elsherif"
@@ -25,5 +22,15 @@
         "Charlotte R. Pennington",
         "Graham Reid"
     ],
-    "language": "german"
+    "alt_related_terms": [
+        null
+    ],
+    "language": "german",
+    "translated_by": [
+        "Helena Hartmann"
+    ],
+    "translation_reviewed_by": [
+        "Susanne Vogel",
+        "Joris Frese"
+    ]
 }

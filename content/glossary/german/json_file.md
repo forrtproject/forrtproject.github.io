@@ -7,10 +7,7 @@
         "Metadata"
     ],
     "references": [
-        "https://bids-specification.readthedocs.io/en/stable/03-modality-agnostic-files.html"
-    ],
-    "alt_related_terms": [
-        null
+        "BIDS. (n.d.). Modality agnostic files. Retrieved from https://bids-specification.readthedocs.io/en/stable/03-modality-agnostic-files.html"
     ],
     "drafted_by": [
         "Tina Lonsdorf"
@@ -21,5 +18,15 @@
         "Emma Norris",
         "Charlotte R. Pennington"
     ],
-    "language": "german"
+    "alt_related_terms": [
+        null
+    ],
+    "language": "german",
+    "translated_by": [
+        "Bettina MJ Kern"
+    ],
+    "translation_reviewed_by": [
+        "Susanne Vogel",
+        "Jennifer Mattschey"
+    ]
 }

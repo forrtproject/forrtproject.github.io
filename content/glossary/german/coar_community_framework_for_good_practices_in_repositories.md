@@ -11,10 +11,7 @@
         "TRUST principles"
     ],
     "references": [
-        "Confederation of Open Access Repositories (2020, October 8\\)"
-    ],
-    "alt_related_terms": [
-        null
+        "of Open Access Repositories, C. (2020). COAR Community Framework for Best Practices in Repositories (Version 1). Zenodo. https://doi.org/10.5281/zenodo.4110829"
     ],
     "drafted_by": [
         "Aleksandra Lazić"
@@ -25,5 +22,15 @@
         "Bethan Iley",
         "Sam Parsons"
     ],
-    "language": "german"
+    "alt_related_terms": [
+        null
+    ],
+    "language": "german",
+    "translated_by": [
+        "Helena Hartmann"
+    ],
+    "translation_reviewed_by": [
+        "Susanne Vogel",
+        "Jennifer Mattschey"
+    ]
 }

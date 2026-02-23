@@ -7,12 +7,7 @@
         "DORA",
         "Repository"
     ],
-    "references": [
-        "[https://www.coalition-s.org](https://www.coalition-s.org/)"
-    ],
-    "alt_related_terms": [
-        null
-    ],
+    "references": [],
     "drafted_by": [
         "Olmo van den Akker"
     ],
@@ -21,6 +16,9 @@
         "Helena Hartmann",
         "Halil E. Kocalar",
         "Birgit Schmidt"
+    ],
+    "alt_related_terms": [
+        null
     ],
     "language": "english",
     "aliases": [

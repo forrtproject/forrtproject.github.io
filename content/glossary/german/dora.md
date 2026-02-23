@@ -8,10 +8,7 @@
         "Open Science"
     ],
     "references": [
-        "Health Research Board (n.d.); [https://sfdora.org/](https://sfdora.org/)"
-    ],
-    "alt_related_terms": [
-        null
+        "Health Research Board. (n.d.). Declaration on Research Assessment. Retrieved from https://www.hrb.ie/funding/funding-schemes/before-you-apply/how-we-assess-applications/declaration-on-research-assessment/"
     ],
     "drafted_by": [
         "Aoife O’Mahony"
@@ -20,5 +17,15 @@
         "Connor Keating",
         "Charlotte R. Pennington"
     ],
-    "language": "german"
+    "alt_related_terms": [
+        null
+    ],
+    "language": "german",
+    "translated_by": [
+        "Helena Hartmann"
+    ],
+    "translation_reviewed_by": [
+        "Susanne Vogel",
+        "Jennifer Mattschey"
+    ]
 }

@@ -7,10 +7,7 @@
         "Trustworthiness"
     ],
     "references": [
-        "Fraser et al.(2021); [https://replicats.research.unimelb.edu.au/](https://replicats.research.unimelb.edu.au/)"
-    ],
-    "alt_related_terms": [
-        null
+        "Fraser, H., Bush, M., Wintle, B., Mody, F., Smith, E., Hanea, A., & others. (2021). Predicting reliability through structured expert elicitation with repliCATS (Collaborative Assessments for Trustworthy Science)."
     ],
     "drafted_by": [
         "Tamara Kalandadze"
@@ -22,5 +19,15 @@
         "Helena Hartmann",
         "Charlotte R. Pennington"
     ],
-    "language": "german"
+    "alt_related_terms": [
+        null
+    ],
+    "language": "german",
+    "translated_by": [
+        "Helena Hartmann"
+    ],
+    "translation_reviewed_by": [
+        "Susanne Vogel",
+        "Jennifer Mattschey"
+    ]
 }

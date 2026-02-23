@@ -7,10 +7,7 @@
         "Preregistration Pledge"
     ],
     "references": [
-        "[https://freeourknowledge.org/about/](https://freeourknowledge.org/about/)"
-    ],
-    "alt_related_terms": [
-        null
+        "Free Our Knowledge. (n.d.). About. Retrieved from https://freeourknowledge.org/about/"
     ],
     "drafted_by": [
         "Jamie P. Cockcroft"
@@ -22,5 +19,15 @@
         "Sam Parsons",
         "Flávio Azevedo"
     ],
-    "language": "german"
+    "alt_related_terms": [
+        null
+    ],
+    "language": "german",
+    "translated_by": [
+        "Helena Hartmann"
+    ],
+    "translation_reviewed_by": [
+        "Susanne Vogel",
+        "Jennifer Mattschey"
+    ]
 }

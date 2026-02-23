@@ -6,7 +6,7 @@ name: Cleanup Branches
 # Purpose: Automatically clean up old and merged branches
 # Triggers: Weekly on Sundays or manual dispatch
 # Jobs:
-#   - cleanup-auto-generated: Removes old ga-data-update-* and staging-aggregate-* branches (keeps 2 most recent)
+#   - cleanup-auto-generated: Removes old ga-data-update-* (keeps 1) and staging-aggregate-* branches (keeps 2)
 #   - cleanup-merged: Removes branches already merged into master
 #   - cleanup-stale: Removes branches with no activity for 1+ month (no open PRs)
 
@@ -85,6 +85,7 @@ jobs:
             done
             echo "" >> $GITHUB_STEP_SUMMARY
           done
+          exit 0  # Ensure the script exits successfully
 
   cleanup-merged:
     name: Cleanup Merged Branches
@@ -110,8 +111,6 @@ jobs:
 
           # Define protected branches
           PROTECTED_BRANCHES="master|gh-pages"
-          # Skip auto-generated branches (handled by cleanup-auto-generated job)
-          SKIP_PATTERNS="staging-aggregate-|ga-data-update-"
 
           echo "Finding merged branches..."
           # List remote branches merged into origin/master, exclude protected ones
@@ -133,10 +132,10 @@ jobs:
           for branch in $MERGED_BRANCHES; do
             branch=$(echo "$branch" | xargs)
             
-            # Skip auto-generated branches (handled separately)
+            # Skip auto-generated branches (handled by cleanup-auto-generated job)
             if [[ "$branch" =~ ^(staging-aggregate-|ga-data-update-) ]]; then
               echo "Skipping $branch (auto-generated, handled separately)"
-              ((SKIPPED_COUNT++))
+              SKIPPED_COUNT=$((SKIPPED_COUNT + 1))
               continue
             fi
             
@@ -147,7 +146,7 @@ jobs:
               echo "Deleting: $branch"
               if git push origin --delete "$branch" 2>/dev/null; then
                 echo "- ✅ \`$branch\` deleted" >> $GITHUB_STEP_SUMMARY
-                ((DELETED_COUNT++))
+                DELETED_COUNT=$((DELETED_COUNT + 1))
               else
                 echo "- ❌ \`$branch\` failed to delete" >> $GITHUB_STEP_SUMMARY
               fi
@@ -156,6 +155,7 @@ jobs:
           
           echo "" >> $GITHUB_STEP_SUMMARY
           echo "**Summary:** Deleted $DELETED_COUNT branches, skipped $SKIPPED_COUNT" >> $GITHUB_STEP_SUMMARY
+          exit 0  # Ensure the script exits successfully
 
   cleanup-stale:
     name: Cleanup Stale Branches
@@ -216,7 +216,7 @@ jobs:
 
             if [ "$open_pr_count" -gt 0 ]; then
               echo "Skipping $clean_branch_name (Has open PR)"
-              ((SKIPPED_COUNT++))
+              SKIPPED_COUNT=$((SKIPPED_COUNT + 1))
               continue
             fi
 
@@ -231,7 +231,7 @@ jobs:
                 echo "Deleting: $clean_branch_name"
                 if git push origin --delete "$clean_branch_name" 2>/dev/null; then
                   echo "- ✅ \`$clean_branch_name\` deleted (last: $LAST_DATE)" >> $GITHUB_STEP_SUMMARY
-                  ((DELETED_COUNT++))
+                  DELETED_COUNT=$((DELETED_COUNT + 1))
                 else
                   echo "- ❌ \`$clean_branch_name\` failed to delete" >> $GITHUB_STEP_SUMMARY
                 fi
@@ -241,3 +241,4 @@ jobs:
           
           echo "" >> $GITHUB_STEP_SUMMARY
           echo "**Summary:** Deleted $DELETED_COUNT stale branches, skipped $SKIPPED_COUNT (have open PRs)" >> $GITHUB_STEP_SUMMARY
+          exit 0  # Ensure the script exits successfully even when branches are skipped

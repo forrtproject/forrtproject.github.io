@@ -277,14 +277,14 @@
   parent = "replications"
 
 [[main]]
-  name = "FReD Annotator"
-  url = "https://forrt.org/apps/fred_annotator.html"
+  name = "FLoRA Annotator"
+  url = "https://forrt.org/annotator"
   weight = 62
   parent = "replications"
 
 [[main]]
   name = "FReD Explorer"
-  url = "https://forrt.org/apps/fred_explorer.html"
+  url = "https://forrt.org/explorer"
   weight = 63
   parent = "replications"
 

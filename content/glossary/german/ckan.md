@@ -7,10 +7,7 @@
         "Data sharing"
     ],
     "references": [
-        "https://ckan.org/"
-    ],
-    "alt_related_terms": [
-        null
+        "Anon. (n.d.). Ckan. Retrieved from https://ckan.org/"
     ],
     "drafted_by": [
         "Tsvetomira Dumbalska"
@@ -20,5 +17,15 @@
         "Kai Krautter",
         "Charlotte R. Pennington"
     ],
-    "language": "german"
+    "alt_related_terms": [
+        null
+    ],
+    "language": "german",
+    "translated_by": [
+        "Helena Hartmann"
+    ],
+    "translation_reviewed_by": [
+        "Susanne Vogel",
+        "Jennifer Mattschey"
+    ]
 }

@@ -9,12 +9,7 @@
         "Reproducibility",
         "Transparency"
     ],
-    "references": [
-        "[http://riotscience.co.uk/](http://riotscience.co.uk/)"
-    ],
-    "alt_related_terms": [
-        null
-    ],
+    "references": [],
     "drafted_by": [
         "Tamara Kalandadze"
     ],
@@ -24,5 +19,15 @@
         "Joanne McCuaig",
         "Flávio Azevedo"
     ],
-    "language": "german"
+    "alt_related_terms": [
+        null
+    ],
+    "language": "german",
+    "translated_by": [
+        "Helena Hartmann"
+    ],
+    "translation_reviewed_by": [
+        "Susanne Vogel",
+        "Jennifer Mattschey"
+    ]
 }

@@ -7,12 +7,7 @@
         "Public Engagement",
         "Transdisciplinary Research"
     ],
-    "references": [
-        "European Commission (2021)"
-    ],
-    "alt_related_terms": [
-        null
-    ],
+    "references": [],
     "drafted_by": [
         "Ana Barbosa Mendes"
     ],
@@ -21,6 +16,9 @@
         "Joanne McCuaig",
         "Sam Parsons",
         "Graham Reid"
+    ],
+    "alt_related_terms": [
+        null
     ],
     "language": "english",
     "aliases": [

@@ -8,12 +8,7 @@
         "R",
         "Reproducibility"
     ],
-    "references": [
-        "The jamovi project (2020)"
-    ],
-    "alt_related_terms": [
-        null
-    ],
+    "references": [],
     "drafted_by": [
         "Amélie Beffara Bret"
     ],
@@ -22,5 +17,15 @@
         "Alexander Hart",
         "Charlotte R. Pennington"
     ],
-    "language": "german"
+    "alt_related_terms": [
+        null
+    ],
+    "language": "german",
+    "translated_by": [
+        "Bettina MJ Kern"
+    ],
+    "translation_reviewed_by": [
+        "Helena Hartmann",
+        "Jennifer Mattschey"
+    ]
 }

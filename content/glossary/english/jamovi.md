@@ -8,12 +8,7 @@
         "R",
         "Reproducibility"
     ],
-    "references": [
-        "The jamovi project (2020)"
-    ],
-    "alt_related_terms": [
-        null
-    ],
+    "references": [],
     "drafted_by": [
         "Amélie Beffara Bret"
     ],
@@ -21,6 +16,9 @@
         "Adrien Fillon",
         "Alexander Hart",
         "Charlotte R. Pennington"
+    ],
+    "alt_related_terms": [
+        null
     ],
     "language": "english",
     "aliases": [

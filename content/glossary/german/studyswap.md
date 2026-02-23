@@ -8,10 +8,7 @@
         "Team science"
     ],
     "references": [
-        "Chartier et al. (2018); [https://osf.io/view/StudySwap](https://osf.io/view/StudySwap)"
-    ],
-    "alt_related_terms": [
-        null
+        "Chartier, C. R., Riegelman, A., & McCarthy, R. J. (2018). StudySwap: A platform for interlab replication, collaboration, and resource exchange. Advances in Methods and Practices in Psychological Science, 1(4), 574–579. https://doi.org/10.1177/2515245918808767"
     ],
     "drafted_by": [
         "Charlotte R. Pennington"
@@ -22,5 +19,15 @@
         "Emma Henderson",
         "Graham Reid"
     ],
-    "language": "german"
+    "alt_related_terms": [
+        null
+    ],
+    "language": "german",
+    "translated_by": [
+        "Helena Hartmann"
+    ],
+    "translation_reviewed_by": [
+        "Susanne Vogel",
+        "Joris Frese"
+    ]
 }

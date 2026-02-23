@@ -8,10 +8,7 @@
         "Learning"
     ],
     "references": [
-        "Brule and Blount (1989)"
-    ],
-    "alt_related_terms": [
-        null
+        "Brule, J., & Blount, A. (1989). Knowledge acquisition. McGraw-Hill."
     ],
     "drafted_by": [
         "Oscar Lecuona"
@@ -22,5 +19,15 @@
         "Kai Krautter",
         "Graham Reid"
     ],
-    "language": "german"
+    "alt_related_terms": [
+        null
+    ],
+    "language": "german",
+    "translated_by": [
+        "Bettina MJ Kern"
+    ],
+    "translation_reviewed_by": [
+        "Helena Hartmann",
+        "Jennifer Mattschey"
+    ]
 }

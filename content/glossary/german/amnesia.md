@@ -7,12 +7,7 @@
         "Confidentiality",
         "Research ethics"
     ],
-    "references": [
-        "[https://amnesia.openaire.eu/](https://amnesia.openaire.eu/)"
-    ],
-    "alt_related_terms": [
-        null
-    ],
+    "references": [],
     "drafted_by": [
         "Norbert Vanek"
     ],
@@ -21,5 +16,15 @@
         "Myriam A. Baum",
         "Charlotte R. Pennington"
     ],
-    "language": "german"
+    "alt_related_terms": [
+        null
+    ],
+    "language": "german",
+    "translated_by": [
+        "Helena Hartmann"
+    ],
+    "translation_reviewed_by": [
+        "Susanne Vogel",
+        "Jennifer Mattschey"
+    ]
 }

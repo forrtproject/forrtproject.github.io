@@ -11,10 +11,7 @@
         "R"
     ],
     "references": [
-        "Lutz (2001)"
-    ],
-    "alt_related_terms": [
-        null
+        "Lutz, M. (2001). Programming Python. O’Reilly Media, Inc."
     ],
     "drafted_by": [
         "Shannon Francis"
@@ -27,5 +24,15 @@
         "Graham Reid",
         "Andrew J. Stewart"
     ],
-    "language": "german"
+    "alt_related_terms": [
+        null
+    ],
+    "language": "german",
+    "translated_by": [
+        "Susanne Vogel"
+    ],
+    "translation_reviewed_by": [
+        "Helena Hartmann",
+        "Jennifer Mattschey"
+    ]
 }

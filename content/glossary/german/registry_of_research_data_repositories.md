@@ -10,10 +10,7 @@
         "Repository"
     ],
     "references": [
-        "[https://www.re3data.org/](https://www.re3data.org/) \\- Registry of Research Data Repositories."
-    ],
-    "alt_related_terms": [
-        null
+        "Anon. (n.d.). Home | re3data.org. Retrieved from https://www.re3data.org/"
     ],
     "drafted_by": [
         "Aleksandra Lazić"
@@ -24,5 +21,15 @@
         "Charlotte R. Pennington",
         "Helena Hartmann"
     ],
-    "language": "german"
+    "alt_related_terms": [
+        null
+    ],
+    "language": "german",
+    "translated_by": [
+        "Helena Hartmann"
+    ],
+    "translation_reviewed_by": [
+        "Susanne Vogel",
+        "Jennifer Mattschey"
+    ]
 }

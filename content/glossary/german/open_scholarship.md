@@ -10,10 +10,7 @@
         "Open Science"
     ],
     "references": [
-        "Tennant et al. (2019) Foundations for Open Scholarship Strategy Development https://www.researchgate.net/publication/330742805\\_Foundations\\_for\\_Open\\_Scholarship\\_Strategy\\_Development"
-    ],
-    "alt_related_terms": [
-        null
+        "Tennant, J., Beamer, J. E., Bosman, J., Brembs, B., Chung, N. C., Clement, G., Crick, T., Dugan, J., Dunning, A., Eccles, D., Enkhbayar, A., Graziotin, D., Harding, R., Havemann, J., Katz, D. S., Khanal, K., Kjaer, J. N., Koder, T., Macklin, P., & Turner, A. (2019). Foundations for Open Scholarship Strategy Development. MetaArXiv. https://doi.org/10.31222/osf.io/b4v8p"
     ],
     "drafted_by": [
         "Gerald Vineyard"
@@ -24,5 +21,15 @@
         "Sam Parsons",
         "Charlotte R. Pennington"
     ],
-    "language": "german"
+    "alt_related_terms": [
+        null
+    ],
+    "language": "german",
+    "translated_by": [
+        "Helena Hartmann"
+    ],
+    "translation_reviewed_by": [
+        "Susanne Vogel",
+        "Jennifer Mattschey"
+    ]
 }

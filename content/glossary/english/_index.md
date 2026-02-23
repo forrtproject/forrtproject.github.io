@@ -17,7 +17,8 @@ type: "glossary"
 
 <div class="btn-group flex-wrap text-center"><a href="/glossary/english" class="btn btn-primary py-2 m-1 btn-lg active" style="line-height:1;border-radius:6px">English</a>
 <a href="/glossary/german" class="btn btn-primary py-2 m-1 btn-lg" style="line-height:1;border-radius:6px">Deutsch (German)</a>
-<a href="/glossary/arabic" class="btn btn-primary py-2 m-1 btn-lg" style="line-height:1;border-radius:6px"> عربي (Arabic)</a></div>
+<a href="/glossary/arabic" class="btn btn-primary py-2 m-1 btn-lg" style="line-height:1;border-radius:6px"> عربي (Arabic)</a>
+<a href="/glossary/turkish" class="btn btn-primary py-2 m-1 btn-lg" style="line-height:1;border-radius:6px">Türkçe (Turkish)</a></div>
 
 ### Introduction
 
@@ -193,3 +194,7 @@ After the manuscript's submission and the display of defined terms in FORRT's Gl
 Would you like to give feedback, help us review terms, or add terms? You can do so by watching this space, joining [FORRT's Slack channel](https://join.slack.com/t/forrt/shared_invite/zt-alobr3z7-NOR0mTBfD1vKXn9qlOKqaQ), contacting [FORRT](info@forrt.org), or contacting project leads [Sam Parsons](sam.parsons@psy.ox.ac.uk) and [Flávio Azevedo](mailto:flavio.azevedo@uni-jena.de).
 
 {{< /expand >}}
+
+---
+
+The complete reference list for the glossary can be viewed [here](/glossary/references).

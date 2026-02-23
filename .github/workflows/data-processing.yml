@@ -35,7 +35,11 @@ on:
         required: false
         type: boolean
         default: false
-
+      regenerate_ga:
+        description: 'Regenerate Google Analytics data'
+        required: false
+        type: boolean
+        default: false
 jobs:
   process-data:
     name: Process Data
@@ -266,12 +270,47 @@ jobs:
             echo "All references resolved successfully"
           fi
 
+      #=======================================================
+      # Create a pull request for glossary updates when regenerated
+      #=======================================================
+      - name: Create PR for glossary updates
+        if: github.event_name == 'workflow_dispatch' && github.event.inputs.regenerate_glossary == 'true'
+        continue-on-error: true  # Continue even if this step fails
+        run: |
+          echo "=== Creating PR for glossary updates ==="
+
+          if [ -z "$(git status --porcelain -- content/glossary)" ]; then
+            echo "ℹ️ No glossary changes detected"
+            exit 0
+          fi
+
+          BRANCH_NAME="glossary-update-$(date +%Y%m%d-%H%M%S)"
+          git checkout -b "$BRANCH_NAME"
+
+          git add content/glossary/
+          git commit -m "Update glossary entries - $(date -u +'%Y-%m-%d %H:%M:%S UTC')"
+
+          git push -u origin "$BRANCH_NAME"
+
+          gh pr create \
+            --title "📘 Glossary update - $(date '+%Y-%m-%d')" \
+            --body "Automated glossary update generated on $(date -u +'%Y-%m-%d %H:%M:%S UTC'). Files changed: content/glossary/" \
+            --base master \
+            --head "$BRANCH_NAME"
+          echo "✅ PR created for glossary updates"
+        env:
+          GITHUB_TOKEN: ${{ secrets.FORRT_PAT }}
+          GH_TOKEN: ${{ secrets.FORRT_PAT }}
+
       #========================================
       # Download Google Analytics data and validate
       #========================================
       - name: Download GA Data
         id: ga-data
         continue-on-error: true  # Continue even if this step fails
+        if: |
+          github.event_name == 'schedule' || 
+          github.event.inputs.regenerate_ga == 'true'
         env:
           GA_API_CREDENTIALS: ${{ secrets.GA_API_CREDENTIALS }}
           GA_PROPERTY_ID: ${{ secrets.GA_PROPERTY_ID }}

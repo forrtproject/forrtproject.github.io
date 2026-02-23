@@ -13,12 +13,7 @@
         "Stage 2 study review",
         "Transparency"
     ],
-    "references": [
-        "[https://rr.peercommunityin.org/about/about](https://rr.peercommunityin.org/about/about)"
-    ],
-    "alt_related_terms": [
-        null
-    ],
+    "references": [],
     "drafted_by": [
         "Charlotte R. Pennington"
     ],
@@ -28,5 +23,15 @@
         "Mahmoud Elsherif",
         "Helena Hartmann"
     ],
-    "language": "german"
+    "alt_related_terms": [
+        null
+    ],
+    "language": "german",
+    "translated_by": [
+        "Helena Hartmann"
+    ],
+    "translation_reviewed_by": [
+        "Jennifer Mattschey",
+        "Susanne Vogel"
+    ]
 }

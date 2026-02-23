@@ -6,10 +6,7 @@
         "Open source software"
     ],
     "references": [
-        "JabRef Development Team (2021)"
-    ],
-    "alt_related_terms": [
-        null
+        "Team, J. D. (2021). JabRef - An open-source, cross-platform citation and reference management software. https://www.jabref.org"
     ],
     "drafted_by": [
         "Aleksandra Lazić"
@@ -20,5 +17,15 @@
         "Sam Parsons",
         "Steven Verheyen"
     ],
-    "language": "german"
+    "alt_related_terms": [
+        null
+    ],
+    "language": "german",
+    "translated_by": [
+        "Bettina MJ Kern"
+    ],
+    "translation_reviewed_by": [
+        "Susanne Vogel",
+        "Jennifer Mattschey"
+    ]
 }

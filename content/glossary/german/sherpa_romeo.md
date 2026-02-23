@@ -10,10 +10,7 @@
         "Repository"
     ],
     "references": [
-        "[https://v2.sherpa.ac.uk/romeo/](https://v2.sherpa.ac.uk/romeo/)"
-    ],
-    "alt_related_terms": [
-        null
+        "Anon. (n.d.). Welcome to Sherpa Romeo - v2.sherpa. Retrieved from https://v2.sherpa.ac.uk/romeo/"
     ],
     "drafted_by": [
         "Aleksandra Lazić"
@@ -24,5 +21,16 @@
         "Sam Parsons",
         "Martin Vasilev"
     ],
-    "language": "german"
+    "alt_related_terms": [
+        null
+    ],
+    "language": "german",
+    "translated_by": [
+        "Bettina M. J. Kern"
+    ],
+    "translation_reviewed_by": [
+        "Helena Hartmann",
+        "Susanne Vogel",
+        "Joris Frese"
+    ]
 }

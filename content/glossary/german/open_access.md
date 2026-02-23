@@ -10,10 +10,8 @@
         "Repository"
     ],
     "references": [
-        "[Budapest Open Access Initiative (2002)](https://www.budapestopenaccessinitiative.org/read); Suber (2015)"
-    ],
-    "alt_related_terms": [
-        null
+        "Budapest Open Access Initiative. (2002). Read the Budapest open access initiative. Retrieved from https://www.budapestopenaccessinitiative.org/read",
+        "Suber, P. (2015). Open Access Overview. http://legacy.earlham.edu/~peters/fos/overview.htm"
     ],
     "drafted_by": [
         "Mahmoud Elsherif"
@@ -26,5 +24,15 @@
         "Mariella Paul",
         "Charlotte R. Pennington"
     ],
-    "language": "german"
+    "alt_related_terms": [
+        null
+    ],
+    "language": "german",
+    "translated_by": [
+        "Helena Hartmann"
+    ],
+    "translation_reviewed_by": [
+        "Susanne Vogel",
+        "Jennifer Mattschey"
+    ]
 }

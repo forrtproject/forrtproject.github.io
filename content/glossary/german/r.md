@@ -7,10 +7,7 @@
         "Statistical analysis"
     ],
     "references": [
-        "[https://www.r-project.org/](https://www.r-project.org/); R Core Team (2020)"
-    ],
-    "alt_related_terms": [
-        null
+        "R Project for Statistical Computing. (n.d.). R: The R Project for Statistical Computing. R Project. https://www.r-project.org/"
     ],
     "drafted_by": [
         "Lisa Spitzer"
@@ -21,5 +18,15 @@
         "Joanne McCuaig",
         "Andrew J. Stewart"
     ],
-    "language": "german"
+    "alt_related_terms": [
+        null
+    ],
+    "language": "german",
+    "translated_by": [
+        "Helena Hartmann"
+    ],
+    "translation_reviewed_by": [
+        "Susanne Vogel",
+        "Jennifer Mattschey"
+    ]
 }
