@@ -1,7 +1,7 @@
 ---
 title: "Meaningful results for meaningful hypotheses"
-subtitle: "A tutorial on hypothesis testing with Bayes factors using ROPEs"
-summary: "Recent times have seen an increase of interest in Bayesian inference across the behavioral sciences. However, the process of testing hypotheses is often conceptually challenging or computationally costly. This tutorial provides an accessible, non-technical introduction to a technique that is both conceptually easy to understand and computationally cheap, and that also covers many common scenarios in the experimental sciences: Quantifying the relative evidence for a pair of interval-based hypotheses using Bayes factors through the Savage Dickey approximation."
+subtitle: "A tutorial on meaningful hypothesis testing with Bayes factors using ROPEs"
+summary: "Recent times have seen an increase of interest in Bayesian inference across the behavioral sciences. Bayesian inference is a statistical approach that updates prior beliefs about unknown parameters based on observed data. However, the process of Bayesian testing hypotheses is often conceptually challenging or computationally costly. This tutorial provides an accessible, non-technical introduction to a technique that is both conceptually easy to understand and computationally cheap, and that also covers many common scenarios in the experimental sciences: Quantifying the relative evidence for a pair of interval-based hypotheses using Bayes factors through the Savage Dickey approximation."
 authors: ['Timo B. Roettger','Michael Franke']
 tags: []
 categories: []
@@ -27,25 +27,29 @@ projects: []
 ---
 ![Meaningful results for meaningful hypotheses](./meaningful_r_for_m_hypotheses.webp)
 
+> Stop asking if an effect is “exactly zero” for experimental designs. It’s not a helpful question. Instead, concentrate on interpreting the actual meaning of the difference between two conditions using Bayesian inference. 
+
 ## How to decide if an effect is meaningful in Bayesian inference?
 
-After years of null hypothesis significance testing (NHST), you might have finally made the switch to Bayesian inference. You set priors, run the models you want to run, and estimate posterior distributions. Great. But what now? When writing up their Bayesian results, people often wonder how to decide on whether the results are meaningful or not. We have been there ourselves. 
+After years of null hypothesis significance testing (NHST), you might have finally made the switch to Bayesian inference. You set priors, run the models you want to run, and estimate posterior distributions. Great! But what now? When writing up their Bayesian results, people often wonder how to decide whether results are meaningful or not. We have been there ourselves.
 
-Nowadays, more and more researchers move away from NHST toward Bayesian inference and are faced with the same conceptual hurdle because decision procedures are not an inherent part of the Bayesian workflow. There are several approaches to hypothesis testing within the Bayesian framework, of course. Unfortunately, many of them, such as various forms of calculating the Bayes Factor, are either conceptually challenging, computationally (too) costly, or both.
+Nowadays, more and more researchers move away from NHST toward Bayesian inference (e.g. [van der Schoot et al. 2017](https://doi.org/10.1037/met0000100)) and are faced with the same conceptual hurdle because decision procedures are not an inherent part of the Bayesian workflow. There are several approaches to hypothesis testing within the Bayesian framework, of course. Unfortunately, many of them, such as various forms of calculating the Bayes Factor, are either conceptually challenging, computationally (too) costly, or both.
 
 ### A computationally feasible and intuitive way
 
-In our [new tutorial](https://osf.io/preprints/psyarxiv/6zsx3_v2), we walk you through a lesser known form of Bayes Factor calculation using the Savage-Dickey approximation. This form of inference is not only conceptually intuitive and computationally slim, but it also allows us to tackle another conceptual issue with traditional hypothesis testing: Researchers coming from NHST tend to test whether differences between conditions are smaller or greater than exactly zero (i.e. testing point-0 hypotheses). But not every difference that is not zero is meaningful for either theoretical or practical purposes. In our tutorial, we use a data set on pitch perception by Korean speakers in formal and informal contexts. The researchers want to know if speakers use meaningfully higher or lower pitch in these two social contexts.
+In our [new tutorial](https://osf.io/preprints/psyarxiv/6zsx3_v2), we walk you through a lesser known form of Bayes Factor calculation using the Savage-Dickey approximation ([Dickey & Lientz 1970](https://www.jstor.org/stable/2239734)). This form of inference is not only conceptually intuitive and computationally efficient, but it also allows us to tackle another conceptual issue with traditional hypothesis testing: Researchers coming from NHST tend to test whether differences between conditions are smaller or greater than exactly zero (i.e. testing point-0 hypotheses). But not every difference that is not zero is meaningful for either theoretical or practical purposes. In our tutorial, we use a data set on pitch perception by Korean speakers in formal and informal contexts. The researchers want to know if speakers use meaningfully higher or lower pitch in these two social contexts.
 
 To test this hypothesis, we suggest the following workflow: 
 
-1. We define the smallest effect size of interest (SESOI, see [Lakens 2017](https://doi.org/10.1177/1948550617697177) ) and implement it as a region of practical equivalence (ROPE, see [Kruschke 2018](https://journals.sagepub.com/doi/10.1177/2515245918771304) ). Defining a SESOI is not easy and requires a good quantitative understanding of the phenomena that we are dealing with. In our example, we define the ROPE in terms of the acoustic differences that lead to a certain accuracy performance in a forced-choice perception task (the so-called just-noticeable-difference, JND). The simplified idea is that if you cannot reliably hear a certain acoustic difference, then the difference should not matter for communication. 
 
-2. For the difference between contexts, we quantify the proportion of posterior samples inside of the ROPE (i.e. the posteriors are practically equivalent to 0, so the effect is not meaningful) relative to the proportion of posteriors outside of the ROPE (i.e. the posteriors represent meaningful differences). We do this for both the posterior distributions before observing the data (i.e., priors only) and after observing the data (i.e., priors combined with the likelihood).
+1. We define the smallest effect size of interest (SESOI, see [Lakens 2017](https://doi.org/10.1177/1948550617697177)) and implement it as a region of practical equivalence (ROPE, see [Kruschke 2018](https://journals.sagepub.com/doi/10.1177/2515245918771304)). Defining a SESOI is not easy and requires a good quantitative understanding of the phenomena. In our example, we define the ROPE in terms of the acoustic differences that lead to a certain accuracy performance in a forced-choice perception task (the so-called just-noticeable-difference). The simplified idea is that if you cannot reliably hear a certain acoustic difference, then the difference should not matter for communication. 
 
-3. By relating these probabilities to each other, we can calculate how the evidence for a meaningful difference shifts when observing the data. This shift is the Bayes Factor, that lets us quantify evidence for and against a meaningful pitch difference between contexts.
 
-The proposed workflow is not new ([Dickey & Lientz 1970, Wagenmakers et al. 2010](https://www.jstor.org/stable/2239734) ), but unfortunately not well known across the behavioral sciences. This computationally lightweight inferential decision procedure is conceptually intuitive and encourages us to critically reflect on what it means for an effect to be truly meaningful. Win-win.
+2. For the difference between contexts, we quantify the proportion of posterior samples inside of the ROPE (i.e. the posteriors are practically equivalent to 0, indicating no meaningful results) relative to the proportion of posteriors outside of the ROPE (i.e. the posteriors represent meaningful differences). We do this for both the posterior distributions before observing the data (i.e., priors only) and after observing the data (i.e., priors combined with the likelihood).
+
+3. By comparing these probabilities to each other, we can calculate how the evidence for a meaningful difference shifts when observing the data. This shift is the Bayes Factor, that lets us quantify evidence for and against a meaningful pitch difference between contexts.
+
+The proposed workflow is not new ([Wagenmakers et al. 2010](https://doi.org/10.1016/j.cogpsych.2009.12.001)), but unfortunately not widely known across the behavioral sciences. This computationally lightweight decision procedure is conceptually intuitive and encourages us to critically reflect on what it means for an effect to be truly meaningful. Win-win.
 
 ### Where to start if you are new to Bayesian inference?
 
