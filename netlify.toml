@@ -68,6 +68,19 @@
   status = 301
   force = false
 
+# Shortcuts for FLoRA Annotator and FReD Explorer apps
+[[redirects]]
+  from = "/annotator"
+  to = "/apps/flora_annotator.html"
+  status = 301
+  force = false
+
+[[redirects]]
+  from = "/explorer"
+  to = "/apps/fred_explorer.html"
+  status = 301
+  force = false
+
 [[headers]]
   for = "*.webmanifest"
   [headers.values]
