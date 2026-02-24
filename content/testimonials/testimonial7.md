@@ -38,19 +38,19 @@ subtitle = ""
 <div style="float: left; margin: 0 1rem 1rem 0; text-align: center;">
   <div style="width: 320px; height: 320px; border-radius: 50%; overflow: hidden;">
     <img
-      src=""
+      src="testimonials/AnaCarolinaMarinho.webp"
       alt="Ana Carolina Marinho Portrait"
       style="width: 100%; height: 100%; object-fit: cover;"
     >
   </div>
   <div style="margin-top: 0.5rem;">
-    <a href="mailto:" target="_blank" title="Email" style="margin-right: 0.5rem;">
+    <a href="mailto:carolsmarinho.ana@gmail.com" target="_blank" title="Email" style="margin-right: 0.5rem;">
       <i class="fas fa-envelope fa-2x" aria-hidden="true"></i>
     </a>
-    <a href="" target="_blank" title="ORCiD">
+    <a href="https://orcid.org/0000-0002-8456-4545" target="_blank" title="ORCiD">
       <i class="ai ai-orcid fa-2x" aria-hidden="true"></i>
     </a>
-    <a href="" target="_blank" title="LinkedIn">
+    <a href="https://www.linkedin.com/in/anacarolinasoaresmarinho/" target="_blank" title="LinkedIn">
       <i class="fa-brands fa-linkedin fa-2x" aria-dden="true"></i>
     </a>
   </div>
