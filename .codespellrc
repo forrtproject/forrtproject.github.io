@@ -1,6 +1,6 @@
 [codespell]
 # Skip these files and directories
-skip = .git,*.png,*.jpg,*.jpeg,*.gif,*.svg,*.ico,*.woff,*.woff2,*.ttf,*.eot,*.min.js,*.min.css,themes,node_modules,public,resources,static/admin,*.lock,package-lock.json,.hugo_build.lock,go.sum,*.json,*.css,*.scss,*.toml,content/glossary/german,content/glossary/portuguese,content/glossary/arabic,content/glossary/spanish,content/glossary/french,data,*.pdf
+skip = .git,*.png,*.jpg,*.jpeg,*.gif,*.svg,*.ico,*.woff,*.woff2,*.ttf,*.eot,*.min.js,*.min.css,themes,node_modules,public,resources,static/admin,*.lock,package-lock.json,.hugo_build.lock,go.sum,*.json,*.css,*.scss,*.toml,content/glossary/german,content/glossary/portuguese,content/glossary/arabic,content/glossary/spanish,content/glossary/french,content/glossary/turkish,data,*.pdf
 
 # Ignore these words (project-specific terms and proper nouns)
 ignore-words = .codespell-ignore.txt
