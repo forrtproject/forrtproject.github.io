@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Timo B. Roettger | FORRT - Framework for Open and Reproducible Research Training</title><link>https://forrt.org/author/timo-b.-roettger/</link><atom:link href="https://forrt.org/author/timo-b.-roettger/index.xml" rel="self" type="application/rss+xml"/><description>Timo B. Roettger</description><generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© 2026 - FORRT > Framework for Open and Reproducible Research Training</copyright><lastBuildDate>Mon, 16 Feb 2026 00:00:00 -0300</lastBuildDate><image><url>https://forrt.org/img/FORRT_banner.svg</url><title>Timo B. Roettger</title><link>https://forrt.org/author/timo-b.-roettger/</link></image><item><title>Meaningful results for meaningful hypotheses</title><link>https://forrt.org/educators-corner/024-meaningful_results_for_meaningful_hypotheses/</link><pubDate>Mon, 16 Feb 2026 00:00:00 -0300</pubDate><guid>https://forrt.org/educators-corner/024-meaningful_results_for_meaningful_hypotheses/</guid><description>&lt;p>&lt;img alt="Meaningful results for meaningful hypotheses" src="./meaningful_r_for_m_hypotheses.webp">&lt;/p>
+&lt;blockquote>
+&lt;p>Stop asking if an effect is “exactly zero” for experimental designs. It’s not a helpful question. Instead, concentrate on interpreting the actual meaning of the difference between two conditions using Bayesian inference.&lt;/p>
+&lt;/blockquote>
+&lt;h2 id="how-to-decide-if-an-effect-is-meaningful-in-bayesian-inference">How to decide if an effect is meaningful in Bayesian inference?&lt;/h2>
+&lt;p>After years of null hypothesis significance testing (NHST), you might have finally made the switch to Bayesian inference. You set priors, run the models you want to run, and estimate posterior distributions. Great! But what now? When writing up their Bayesian results, people often wonder how to decide whether results are meaningful or not. We have been there ourselves.&lt;/p>
+&lt;p>Nowadays, more and more researchers move away from NHST toward Bayesian inference (e.g.
+&lt;a href="https://doi.org/10.1037/met0000100" target="_blank" rel="noopener">van der Schoot et al. 2017&lt;/a>) and are faced with the same conceptual hurdle because decision procedures are not an inherent part of the Bayesian workflow. There are several approaches to hypothesis testing within the Bayesian framework, of course. Unfortunately, many of them, such as various forms of calculating the Bayes Factor, are either conceptually challenging, computationally (too) costly, or both.&lt;/p>
+&lt;h3 id="a-computationally-feasible-and-intuitive-way">A computationally feasible and intuitive way&lt;/h3>
+&lt;p>In our
+&lt;a href="https://osf.io/preprints/psyarxiv/6zsx3_v2" target="_blank" rel="noopener">new tutorial&lt;/a>, we walk you through a lesser known form of Bayes Factor calculation using the Savage-Dickey approximation (
+&lt;a href="https://www.jstor.org/stable/2239734" target="_blank" rel="noopener">Dickey &amp;amp; Lientz 1970&lt;/a>). This form of inference is not only conceptually intuitive and computationally efficient, but it also allows us to tackle another conceptual issue with traditional hypothesis testing: Researchers coming from NHST tend to test whether differences between conditions are smaller or greater than exactly zero (i.e. testing point-0 hypotheses). But not every difference that is not zero is meaningful for either theoretical or practical purposes. In our tutorial, we use a data set on pitch perception by Korean speakers in formal and informal contexts. The researchers want to know if speakers use meaningfully higher or lower pitch in these two social contexts.&lt;/p>
+&lt;p>To test this hypothesis, we suggest the following workflow:&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>We define the smallest effect size of interest (SESOI, see
+&lt;a href="https://doi.org/10.1177/1948550617697177" target="_blank" rel="noopener">Lakens 2017&lt;/a>) and implement it as a region of practical equivalence (ROPE, see
+&lt;a href="https://journals.sagepub.com/doi/10.1177/2515245918771304" target="_blank" rel="noopener">Kruschke 2018&lt;/a>). Defining a SESOI is not easy and requires a good quantitative understanding of the phenomena. In our example, we define the ROPE in terms of the acoustic differences that lead to a certain accuracy performance in a forced-choice perception task (the so-called just-noticeable-difference). The simplified idea is that if you cannot reliably hear a certain acoustic difference, then the difference should not matter for communication.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>For the difference between contexts, we quantify the proportion of posterior samples inside of the ROPE (i.e. the posteriors are practically equivalent to 0, indicating no meaningful results) relative to the proportion of posteriors outside of the ROPE (i.e. the posteriors represent meaningful differences). We do this for both the posterior distributions before observing the data (i.e., priors only) and after observing the data (i.e., priors combined with the likelihood).&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>By comparing these probabilities to each other, we can calculate how the evidence for a meaningful difference shifts when observing the data. This shift is the Bayes Factor, that lets us quantify evidence for and against a meaningful pitch difference between contexts.&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;p>The proposed workflow is not new (
+&lt;a href="https://doi.org/10.1016/j.cogpsych.2009.12.001" target="_blank" rel="noopener">Wagenmakers et al. 2010&lt;/a>), but unfortunately not widely known across the behavioral sciences. This computationally lightweight decision procedure is conceptually intuitive and encourages us to critically reflect on what it means for an effect to be truly meaningful. Win-win.&lt;/p>
+&lt;h3 id="where-to-start-if-you-are-new-to-bayesian-inference">Where to start if you are new to Bayesian inference?&lt;/h3>
+&lt;p>Our tutorial is basically a long awaited 2nd sequel (!?) of
+&lt;a href="https://www.bodo-winter.net/" target="_blank" rel="noopener">Bodo Winter&lt;/a>&amp;rsquo;s original
+&lt;a href="https://bodo-winter.net/tutorials.html" target="_blank" rel="noopener">introduction to linear mixed effects models&lt;/a> from 2013. This tutorial was widely shared and cited because it was one of the first very accessible introductions to linear mixed effects models within NHST. Six years later, we wrote a
+&lt;a href="https://osf.io/preprints/psyarxiv/cdxv3_v1" target="_blank" rel="noopener">sequel&lt;/a> that used the original example problem and demonstrated how to implement it into a Bayesian workflow. Now, another 6 years later, we thought it was time to drop Part 3, sticking to the same phenomenon and data set as the original, finally bringing the trilogy to a “meaningful” conclusion.&lt;/p>
+&lt;h2 id="contact-information">Contact information&lt;/h2>
+&lt;div style="display: flex; flex-wrap: wrap; gap: 2rem;">
+&lt;div style="flex: 1; min-width: 250px;">
+&lt;strong>Timo B. Roettger&lt;/strong>&lt;br>
+Email: &lt;a href="mailto:timo.roettger@iln.uio.no">timo.roettger@iln.uio.no&lt;/a>&lt;br>
+Bluesky: &lt;a href="https://bsky.app/profile/timoroettger.bsky.social">@timoroettger.bsky.social&lt;/a>&lt;br>
+LinkedIn: &lt;a href="https://www.linkedin.com/in/timo-b-roettger/">linkedin.com/in/timo-b-roettger/&lt;/a>&lt;br>
+Website: &lt;a href="https://timo-b-roettger.github.io/">timo-b-roettger.github.io&lt;/a>&lt;br>
+&lt;br>
+&lt;img src="./Timo_B_Roettger.webp" alt="Timo B. Roettger" style="max-width: 100%; height: auto; border-radius: 8px;">
+&lt;/div>
+&lt;div style="flex: 1; min-width: 250px;">
+&lt;strong>Michael Franke&lt;/strong>&lt;br>
+Email: &lt;a href="mailto:mchfranke@gmail.com">mchfranke@gmail.com&lt;/a>&lt;br>
+Bluesky: &lt;a href="https://bsky.app/profile/meanwhileina.bsky.social">@meanwhileina.bsky.social&lt;/a>&lt;br>
+Website: &lt;a href="https://michael-franke.github.io/heimseite/">michael-franke.github.io/heimseite/&lt;/a>&lt;br>
+&lt;br>
+&lt;img src="./Michael_Franke.webp" alt="Michael Franke" style="max-width: 100%; height: auto; border-radius: 8px;">
+&lt;/div>
+&lt;/div></description></item></channel></rss>
