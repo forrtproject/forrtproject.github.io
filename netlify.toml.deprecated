@@ -1,3 +1,10 @@
+# ============================================================================
+# DEPRECATED — This file is NOT used. The site is deployed via GitHub Pages
+# (see .github/workflows/deploy.yaml). Redirects are now handled by
+# layouts/404.html (JS-based wildcard redirects) and static redirect stubs
+# in static/annotator/ and static/explorer/.
+# ============================================================================
+
 [build]
   command = "hugo --gc --minify -b $URL"
   publish = "public"
