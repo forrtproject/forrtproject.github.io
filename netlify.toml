@@ -81,6 +81,12 @@
   status = 301
   force = false
 
+[[redirects]]
+  from = "/re-searchterms"
+  to = "/apps/re_searchterms.html"
+  status = 301
+  force = false
+
 [[headers]]
   for = "*.webmanifest"
   [headers.values]
