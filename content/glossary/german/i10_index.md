@@ -1,6 +1,7 @@
 {
     "type": "glossary",
     "title": "i10-Index",
+    "sort_key": "i10-index",
     "definition": "Eine von Google Scholar erstellte Forschungsmetrik. Sie gibt für eine/n Forschenden die Anzahl der Publikationen mit mindestens 10 Zitationen an.",
     "related_terms": [
         "Citation",

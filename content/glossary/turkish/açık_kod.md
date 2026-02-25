@@ -1,6 +1,7 @@
 {
     "type": "glossary",
     "title": "Açık Kod [Open Code]",
+    "sort_key": "aczizk kod [open code]",
     "definition": "Araştırma metodolojisini ve analizini şeffaf hale getirmek ve yeniden üretilebilirlik ve iş birliğine olanak sağlamak için bilgisayar kodunu (örn. programlama, analiz kodu, uyaran üretimi) serbestçe ve herkese açık hale getirmek. Kod, GitHub, Open Science Framewrok ve Codeshare (birkaçını saymak gerekirse) gibi açık kod web siteleri aracılığıyla kullanılabilir hale getirilebilir ve bu da başkalarının hataları değerlendirip düzeltmesini ve sonraki araştırmalar için kodu yeniden kullanmasını ve değiştirmesini sağlar.",
     "related_terms": [
         "Computational Reproducibility",

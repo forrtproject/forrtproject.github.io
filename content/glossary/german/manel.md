@@ -1,6 +1,7 @@
 {
     "type": "glossary",
     "title": "Manel",
+    "sort_key": "manel",
     "definition": "Kofferwort für “male panel” (männliches Gremium), das sich in der Regel auf die Zusammensetzung von Vortragenden auf Konferenzen (panels) bezieht, die ausschließlich aus (meist weißen) Männern bestehen. Wird in der Regel im Zusammenhang mit Geschlechter-Ungleichheiten im akademischen Bereich diskutiert (z. B. werden Frauen von ihren Kolleg:innen seltener als Expertinnen anerkannt und haben infolgedessen weniger Möglichkeiten zur Karriereentwicklung).",
     "related_terms": [
         "Bropenscience",

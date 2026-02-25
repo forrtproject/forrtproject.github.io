@@ -1,6 +1,7 @@
 {
     "type": "glossary",
     "title": "the system das System überlisten [Gaming (the system)]",
+    "sort_key": "the system das system überlisten [gaming (the system)]",
     "definition": "Bezeichnet den Einsatz fragwürdiger Forschungspraktiken (*Questionable Research Practices*; QRPs, wie beispielsweise Salami-Slicing eines akademischen Papers), die aufgrund der akademischen Anreizstrukturen dem Forschenden zugutekommen (z. B. in Bezug auf Prestige, Einstellung oder Beförderung), unabhängig davon, ob diese Praxis den wissenschaftlichen Prozess als solchen unterstützt. Wann immer ein System zur Bestimmung eines Ergebnisses (z. B. akademische Leistungen) auf quantitative Kennzahlen angewiesen ist, können diese Kennzahlen absichtlich und gezielt manipuliert oder “überlistet” werden (Naudet et al., 2018). Wenn Beförderungen, Einstellungen und Entfristungen auf solchen manipulierbaren Kennzahlen beruhen, können sie offene, genaue und transparente Forschungsleistungen benachteiligen (Naudet et al., 2018\\) \\- z. B. durch die Bevorzugung von Quantität gegenüber Qualität \\- und bestehende Ungleichheiten verschärfen.",
     "related_terms": [
         "Incentive structure",

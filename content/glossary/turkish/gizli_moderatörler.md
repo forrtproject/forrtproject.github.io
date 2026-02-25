@@ -1,6 +1,7 @@
 {
     "type": "glossary",
     "title": "Gizli Moderatörler [Hidden Moderators]",
+    "sort_key": "gizli moderatozrler [hidden moderators]",
     "definition": "Araştırmacıların farkında olmadığı bağlamsal koşullar, bir replikasyon çalışmasının sonuçlarının orijinal çalışmadan sapmasına neden olabilir. Gizli moderatörler bazen başarısız tekrarlamaları açıklamak (veya gerekçelendirmek) için öne sürülür. Gizli varsayımlar olarak da adlandırılır.",
     "related_terms": [
         "Auxiliary Hypothesis"

@@ -1,6 +1,7 @@
 {
     "type": "glossary",
     "title": "Kitlesel Açık Çevrim İçi Makaleler (MOOPs; Massively Open Online Papers)",
+    "sort_key": "kitlesel aczizk czevrim i̇czi makaleler (moops; massively open online papers)",
     "definition": "Geleneksel ortak yazarlı makaleden farklı olarak, MOOP, önceden belirlenmiş bir katkıcı listesiyle sınırlı olmayan, açık katılımcı ve dinamik bir modeli izler.",
     "related_terms": [
         "Citizen science",

@@ -1,6 +1,7 @@
 {
     "type": "glossary",
     "title": "İsim Belirsizliği Sorunu [Name Ambiguity Problem]",
+    "sort_key": "i̇sim belirsizligzi sorunu [name ambiguity problem]",
     "definition": "İki ilgili sorundan kaynaklanan bir atıf sorunudur: yazarlar çalışmalarını yayınlamak için birden fazla isim veya takma ad kullanabilir ve aynı alandaki birden fazla yazarın tam isimleri aynı olabilir. Bu durum, yazarların yalnızca isimler ve uzmanlık alanları üzerinden doğru bir şekilde tanımlanmasını zor bir görev haline getirir. Bu sorun, ORCID gibi dijital parmak izlerine benzer şekilde hareket eden benzersiz dijital tanımlayıcıların oluşturulması ve kullanılması yoluyla çözülebilir.",
     "related_terms": [
         "Authorship",

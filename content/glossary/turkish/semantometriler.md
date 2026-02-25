@@ -1,6 +1,7 @@
 {
     "type": "glossary",
     "title": "Semantometriler [Semantometrics]",
+    "sort_key": "semantometriler [semantometrics]",
     "definition": "Akademik yayınların tam metinleri kullanılarak, yayınlar arasındaki anlamsal benzerliği ölçen ve bir makalenin bilimsel tartışmaların ilerlemesine yaptığı katkıyı değerlendiren ölçütler sınıfıdır. Semantometrik yöntemler, bibliometrik, webometrik ve altmetrik araçların bir uzantısıdır.",
     "related_terms": [
         "Bibliometrics",
@@ -24,7 +25,7 @@
     ],
     "language": "turkish",
     "translated_by": [
-        "Elif Bastan"
+        "Elif Baştan"
     ],
     "translation_reviewed_by": [
         "Neslihan Özhan"

@@ -1,6 +1,7 @@
 {
     "type": "glossary",
     "title": "Veri Görselleştirme [Data visualisation]",
+    "sort_key": "veri gozrsellesztirme [data visualisation]",
     "definition": "Veri ya da bilgilerin görsel olarak sunulmasıdır. Veri görselleştirme, insanların gelişmiş görsel işleme kapasitesinden faydalanarak veriye dayalı anlam çıkarmayı ve temel bilgileri etkili şekilde aktarmayı amaçlar. Veri görselleştirmeleri genellikle ham verileri, betimleyici istatistikleri ve/veya çıkarımsal istatistikleri gösterir.",
     "related_terms": [
         "Figure",

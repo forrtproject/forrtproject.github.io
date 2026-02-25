@@ -1,6 +1,7 @@
 {
     "type": "glossary",
     "title": "Araştırmacının Serbestlik Derecesi [Researcher degrees of freedom]",
+    "sort_key": "arasztizrmaciznizn serbestlik derecesi [researcher degrees of freedom]",
     "definition": "Hipotez oluşturma, bir araştırma tasarlama ve yürütme, veri işleme, analiz etme, yorumlama ve sonuçları raporlama gibi bilimsel sürecin birçok aşamasında doğal olarak var olan esnekliği ifade eder. Kesin biçimde tanımlanmış kuramların ve/veya yeterli ampirik kanıtın eksikliği nedeniyle, araştırma sürecinde verilen birçok karar eşit derecede gerekçelendirilebilir olabilir. Bu terim bazen, istenilen sonuçlara ulaşmak amacıyla bu esnekliğin fırsatçı biçimde (kötüye) kullanılması (opportunistic (ab-)use) anlamında da kullanılır. Belirli verilerin dahil edilmesi ya da hariç tutulması bu duruma örnek olarak verilebilir. Bu terim, teknik olarak kendi içinde olumlu ya da olumsuz bir değer taşımaz.",
     "related_terms": [
         "Analytic Flexibility",
@@ -31,7 +32,7 @@
     ],
     "language": "turkish",
     "translated_by": [
-        "Elif Bastan"
+        "Elif Baştan"
     ],
     "translation_reviewed_by": [
         "Neslihan Özhan"

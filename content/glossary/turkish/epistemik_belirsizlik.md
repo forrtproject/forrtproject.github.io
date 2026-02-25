@@ -1,6 +1,7 @@
 {
     "type": "glossary",
     "title": "Epistemik Belirsizlik [Epistemic uncertainty]",
+    "sort_key": "epistemik belirsizlik [epistemic uncertainty]",
     "definition": "Sınırlı veri, ölçüm hassasiyetinin zayıflığı, model ya da süreç tanımlamalarındaki eksiklikler ya da bilgi eksikliğinden kaynaklanan sistematik bir belirsizliktir. Yani, bilgi eksikliğinden doğan ve teoride, daha fazla araştırma yapılarak ve konunun daha iyi anlaşılmasıyla azaltılabilecek bir belirsizliktir. Bu tür belirsizlik kişiseldir, çünkü bilgi düzeyi bilim insanları farklılık gösterebilir; aynı zamanda geçicidir, çünkü yeni veriler elde edildikçe bu belirsizlik durumu değişebilir.",
     "related_terms": [
         "Aleatoric uncertainty",

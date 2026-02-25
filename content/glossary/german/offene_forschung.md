@@ -1,6 +1,7 @@
 {
     "type": "glossary",
     "title": "Offene Forschung [Open Science]",
+    "sort_key": "offene forschung [open science]",
     "definition": "Ein Oberbegriff, der die Idee widerspiegelt, dass wissenschaftliche Erkenntnisse aller Art, wenn möglich, offen zugänglich, transparent, rigoros (genau), reproduzierbar, replizierbar, akkumulierbar und inklusiv sein sollten. Diese Eigenschaften werden als  grundlegende Merkmale wissenschaftlicher Bestrebungen angesehen. Offene Wissenschaft besteht aus Prinzipien und Verhaltensweisen, die eine transparente, glaubwürdige, reproduzierbare und zugängliche Wissenschaft fördern. Offene Wissenschaft hat sechs Hauptaspekte: offene Daten, offene Methodik, offene Quellcodes, offener Zugang (Open Access), offenes Peer Review und offene Bildungsressourcen.",
     "related_terms": [
         "Accessibility",

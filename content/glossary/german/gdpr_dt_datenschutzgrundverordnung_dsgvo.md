@@ -1,6 +1,7 @@
 {
     "type": "glossary",
     "title": "GDPR, dt. Datenschutzgrundverordnung DSGVO [General Data Protection Regulation (GDPR)]",
+    "sort_key": "gdpr, dt. datenschutzgrundverordnung dsgvo [general data protection regulation (gdpr)]",
     "definition": "Ein rechtlicher Rahmen mit sieben Grundsätzen, der in der gesamten Europäischen Union (EU) umgesetzt wurde und den Schutz persönlicher Daten zum Ziel hat. Dieser Rahmen soll den Bürger:innen Kontrolle über ihre personenbezogenen Daten geben und gleichzeitig die an der Speicherung und Verarbeitung dieser Daten beteiligten Parteien regulieren. Dieser Rechtsrahmen bezieht sich auf den freien Verkehr personenbezogener Daten innerhalb und außerhalb der EU und muss von Forschenden bei der Konzeption und Durchführung von Studien berücksichtigt werden.",
     "related_terms": [
         "Anonymity",

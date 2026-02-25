@@ -1,6 +1,7 @@
 {
     "type": "glossary",
     "title": "Raporlama Kılavuzu [Reporting Guideline]",
+    "sort_key": "raporlama kizlavuzu [reporting guideline]",
     "definition": "Raporlama kılavuzu, belirli bir araştırma türünün raporlanmasında yazarlara rehberlik etmek amacıyla açık bir yöntemle geliştirilmiş ‘kontrol listesi, akış diyagramı veya yapılandırılmış metin’dir (EQUATOR Network, t.y.). Raporlama kılavuzları, araştırma bulgularının doğru şekilde yorumlanabilmesi, değerlendirilebilmesi, sentezlenebilmesi ve replike edilebilmesi için gereken asgari rehberliği sağlar. Bu kılavuzların kullanımı, bilimsel dergiye veya yayınevine göre farklılık gösterebilir.",
     "related_terms": [
         "CONSORT",
@@ -26,7 +27,7 @@
     ],
     "language": "turkish",
     "translated_by": [
-        "Elif Bastan"
+        "Elif Baştan"
     ],
     "translation_reviewed_by": [
         "Neslihan Özhan"

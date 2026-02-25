@@ -1,6 +1,7 @@
 {
     "type": "glossary",
     "title": "Beitrag [Contribution]",
+    "sort_key": "beitrag [contribution]",
     "definition": "Eine formale Ergänzung oder Aktivität in einem Forschungskontext. Erklärungen zu Beiträgen und Mitwirkenden, einschließlich der Danksagungen in Zeitschriftenartikeln, werden an Forschungsprodukte angehängt, um die Vielfalt der Arbeit, die über \"Autor:innenschaft\" hinausgeht und die jede intellektuelle Tätigkeit erfordert, besser zu klassifizieren und anzuerkennen. Contributions sind eine sich entwickelnde “source of data for understanding the relationship between authorship and knowledge production.” (dt. Datenquelle für das Verständnis der Beziehung zwischen Autor:innenschaft und Wissensproduktion; Lariviere et al., S.430). Bei der Entwicklung von Open-Source-Software kann ein solcher Beitrag eine Änderung sein, die nach Begutachtung in das Software-Repositorium eines Projekts aufgenommen wird (technisch als Pull-Request bezeichnet). Ein Beispiel für ein Open-Source-Projekt, das Beiträge akzeptiert, ist NumPy (Harris et al., 2020).",
     "related_terms": [
         "authorship",

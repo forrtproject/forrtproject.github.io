@@ -1,6 +1,7 @@
 {
     "type": "glossary",
     "title": "Olasılık İlkesi [Likelihood Principle]",
+    "sort_key": "olasizlizk i̇lkesi [likelihood principle]",
     "definition": "Verilerde bulunan çıkarımla ilgili tüm bilgilerin olasılık fonksiyonu tarafından sağlandığı düşüncesidir. Bu ilke, olasılık fonksiyonunun çeşitli parametre değerlerinin makul olup olmadığını karşılaştırmak için kullanılabileceğini öne sürer. Bayesçiler ve olasılık teorisyenleri olasılık ilkesine katılırken, Neyman-Pearson teorisyenleri katılmaz; çünkü anlamlılık testleri, olasılıkta olmayan bilgileri hesaba kattıkları için olasılık ilkesini ihlal eder.",
     "related_terms": [
         "Bayesian inference",

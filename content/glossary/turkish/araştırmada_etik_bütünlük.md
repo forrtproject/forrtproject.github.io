@@ -1,6 +1,7 @@
 {
     "type": "glossary",
     "title": "Araştırmada etik bütünlük [Research integrity]",
+    "sort_key": "arasztizrmada etik buztuznluzk [research integrity]",
     "definition": "Araştırmada etik bütünlük; dürüstlük, güvenilirlik, saygı ve hesap verebilirlik temel ilkelerine dayanan bir dizi iyi araştırma uygulamaları ile tanımlanır (ALLEA, 2017). Araştırmada etik bütünlüğün temel ilkelerine dayanan ve araştırmacıların çalışmalarında olduğu kadar araştırmanın doğasında bulunan pratik, etik ve entelektüel zorluklarla başa çıkmalarında da yol gösterici olması gereken iyi araştırma uygulamaları şu gibi alanları kapsar: araştırma ortamı (örn., araştırma kurumları ve organizasyonları farkındalığı artırır ve araştırmada etik bütünlük kültürünün yaygınlaşmasını sağlar), eğitim, danışmanlık ve mentorluk (örn., araştırma kurumları ve organizasyonları, ilgili herkesin geçerli kodlar ve düzenlemeler hakkında bilinçlenmesini sağlayan etik ve araştırmada etik bütünlüğü konularında uygun ve yeterli eğitimler geliştirir), araştırma prosedürleri (örn., araştırmacılar, sonuçlarını, gerektiğinde doğrulanabilir ve yeniden üretilebilir şekilde, o alanın standartlarıyla uyumlu şekilde raporlar), güvenceler (örn., araştırmacılar, toplumun, iş birliği yaptıkları kişilerin ve araştırmayla bağlantılı diğer kişilerin sağlık, güvenlik ve refahına gerekli özeni gösterir), veri uygulamaları ve yönetimi (örn., araştırmacılar, araştırma kurumları ve organizasyonlar, verilerine ve araştırma materyallerine nasıl erişileceği veya bunların nasıl kullanılacağı konusunda şeffaflık sağlar), iş birliği, yayın ve yayım (örn., yazarlar ve yayıncılar, olumsuz bulguların da olumlu bulgular kadar yayın ve yayım açısından geçerli olduğunu kabul eder), hakemlik, değerlendirme ve düzenleme (örn., araştırmacılar, yayın, fonlama, atama, terfi veya ödüllendirme için yapılan başvuruları şeffaf ve gerekçelendirilebilir bir biçimde gözden geçirir ve değerlendirir).",
     "related_terms": [
         "Credibility of scientific claims",
@@ -33,7 +34,7 @@
     ],
     "language": "turkish",
     "translated_by": [
-        "Elif Bastan"
+        "Elif Baştan"
     ],
     "translation_reviewed_by": [
         "Neslihan Özhan"

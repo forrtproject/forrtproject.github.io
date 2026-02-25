@@ -1,6 +1,7 @@
 {
     "type": "glossary",
     "title": "Hakem değerlendirmesi şeffaflığı girişimi (PRO girişimi) [PRO (peer review openness) initiative]",
+    "sort_key": "hakem degzerlendirmesi szeffaflizgziz giriszimi (pro giriszimi) [pro (peer review openness) initiative]",
     "definition": "Akademisyenler tarafından yapılan ve belirli koşullar sağlanmadıkça bir makale için hakem değerlendirmesi yapmayacaklarını belirten bir anlaşmadır. Özellikle, makale yazarları, veri ve materyallerin kamuya açık şekilde erişilebilir olmasını sağlamalıdır (veya neden serbestçe erişilebilir ya da paylaşılabilir olmadıklarına dair bir gerekçe sunmalıdır); herhangi bir dosya veya kodun nasıl çalıştırılacağı ve yorumlanacağına dair açıklayıcı belgeler sağlamalı ve bu dosyaların nerede bulunabileceğini makale içinde ayrıntılı olarak belirtmelidir.",
     "related_terms": [
         "Non-anonymised peer review",

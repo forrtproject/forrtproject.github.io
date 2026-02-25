@@ -1,6 +1,7 @@
 {
     "type": "glossary",
     "title": "Creative Commons (CC) Lisansı [Creative Commons (CC) license]",
+    "sort_key": "creative commons (cc) lisansiz [creative commons (cc) license]",
     "definition": "Açık veri ve materyallerin yazarları ile kullancılarının haklarını standart bir şekilde tanımlayan, ücretsiz ve kullanımı kolay bir telif hakkı lisansları setidir. CC lisansları, yazarların veya yaratıcıların telif hakkı koruması altındaki eserlerini kamuya açık şekilde paylaşmalarına olanak tanır ve farklı maddeler içeren çeşitli türleri vardır. Örneğin, Atıf-GayriTicari-AynıLisanslaPaylaş 4.0 Uluslararası (CC BY-NC-SA 4.0) lisansı, eserin paylaşılmasına ve uyarlanmasına şu koşullarla izin verir: orijinal yaratıcılara atıf yapılmalıdır, değişiklik yapıldıysa belirtilmelidir, eser, orijinaliyle aynı lisans altında paylaşılmalıdır, ve eser ticari amaçlarla kullanılmamalıdır.",
     "related_terms": [
         "Copyright",

@@ -1,7 +1,8 @@
 {
     "type": "glossary",
     "title": "Doğrulayıcı Analizler [Confirmatory analyses]",
-    "definition": "Doğrulayıcı-keşfedici ayrımın bir parçası (Wagenmakers vd., 2012), burada doğrulayıcı analizler önceden belirlenmiş analizleri ifade eder ve mevcut hipotezleri test eder. Yayımlanmış araştırma bulgularında bu ayrımın yapılmaması, tekrarlanabilirlik sorunlarını açıklayan bir etken olarak öne sürülmüştür. Bu sorunun, doğrulayıcı ve keşfedici analizleri açıkça ayırt eden çalışma ön-kayıtları yoluyla aşılabileceği önerilmektedir. Diğer araştırmacılar bu terimleri sorgulamış ve bunların yerine ‘keşif odaklı’ ve ‘teori test eden araştırma’ terimlerinin kullanılmasını önermişlerdir (Oberauer & Lewandowsky, 2019; bkz., Szollosi & Donkin, 2019).",
+    "sort_key": "dogzrulayizciz analizler [confirmatory analyses]",
+    "definition": "Doğrulayıcı-keşfedici ayrımın bir parçası (Wagenmakers vd., 2012), burada doğrulayıcı analizler önceden belirlenmiş analizleri ifade eder ve mevcut hipotezleri test eder. Yayımlanmış araştırma bulgularında bu ayrımın yapılmaması, tekrarlanabilirlik sorunlarını açıklayan bir etken olarak öne sürülmüştür. Bu sorunun, doğrulayıcı ve keşfedici analizleri açıkça ayırt eden çalışma ön-kayıtları yoluyla aşılabileceği önerilmektedir. Diğer araştırmacılar bu terimleri sorgulamış ve bunların yerine ‘keşif odaklı’ ve ‘teori test eden araştırma’ terimlerinin kullanılmasını önermişlerdir (Oberauer ve Lewandowsky, 2019; bkz., Szollosi ve Donkin, 2019).",
     "related_terms": [
         "Exploratory data analysis",
         "Preregistration"
@@ -33,6 +34,6 @@
         "Ege Emek"
     ],
     "translation_reviewed_by": [
-        "Elif Bastan"
+        "Elif Baştan"
     ]
 }

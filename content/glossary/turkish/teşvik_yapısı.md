@@ -1,6 +1,7 @@
 {
     "type": "glossary",
     "title": "Teşvik Yapısı [Incentive structure]",
+    "sort_key": "teszvik yapizsiz [incentive structure]",
     "definition": "Bilim insanları ve onların çalışmaları için geçerli olan değerlendirme ve ödüllendirme mekanizmalarının (açık ve örtük) bütünüdür. Daha geniş yapı içerisinde teşvik edilen alanlar arasında işe alım ve terfi uygulamaları, fon sağlama geçmişi ve yüksek etki faktörüne sahip dergilerde yayımlanan makaleler, davetli sunumlar, editörlükler ve ödüller gibi prestij göstergeleri vardır. Bu kriterlerin genellikle bilimin amacı (telos) ile uyumsuz olduğu ve bu nedenle titiz bilimsel çıktıları teşvik etmediği yaygın olarak kabul edilmektedir. DORA gibi girişimler, alanın dergi etki faktörleri gibi değerlendirme ölçütlerine olan bağımlılığını azaltarak, araştırma çıktılarının içsel kalitesine dayalı değerlendirmeleri tercih etmeyi amaçlamaktadır.",
     "related_terms": [
         "DORA",

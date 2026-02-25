@@ -1,6 +1,7 @@
 {
     "type": "glossary",
     "title": "Etkileşim Yanılgısı [Interaction Fallacy]",
+    "sort_key": "etkileszim yanizlgizsiz [interaction fallacy]",
     "definition": "Anlamlı bir korelasyon ile anlamlı olmayan bir korelasyon  (ya da olasılık oranı gibi diğer ölçümler) arasındaki farkı değerlendirmek için uygun bir test yapılmadığında ortaya çıkan istatistiksel bir yanılgıdır. Bu yanılgı, biri anlamlı, diğeri anlamlı olmayan iki korelasyon katsayısının istatistiksel olarak anlamlı bir farkı temsil ettiği varsayıldığında, ancak bu karşılaştırmanın açıkça test edilmediği durumlarda meydana gelir.",
     "related_terms": [
         "Comparison of Correlations",

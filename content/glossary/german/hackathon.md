@@ -1,6 +1,7 @@
 {
     "type": "glossary",
     "title": "Hackathon",
+    "sort_key": "hackathon",
     "definition": "Eine Veranstaltung, bei der Expert:innen, Designer:innen oder Forschende für einen begrenzten Zeitraum zusammenarbeiten, um intensiv ein Projekt oder Problem zu bearbeiten. Der Begriff kommt ursprünglich von Veranstaltungen für Programmierenden und Softwareentwicklenden mit dem Ziel, am Ende der Veranstaltung, die einige Stunden bis mehrere Tage dauern kann, ein vollständiges Produkt (Ressourcen, Forschung, Software, Hardware) zu schaffen.",
     "related_terms": [
         "Collaboration",

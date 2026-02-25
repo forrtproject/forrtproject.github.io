@@ -1,6 +1,7 @@
 {
     "type": "glossary",
     "title": "Açık Kaynaklı Yazılım [Open Source software]",
+    "sort_key": "aczizk kaynakliz yazizlizm [open source software]",
     "definition": "Kaynak kodunun, başkalarının yazılımı kullanmasına, değiştirmesine ve yazılımı herhangi bir kişiye ve herhangi bir amaçla dağıtmasına izin veren bir lisans altında yayımlandığı bir bilgisayar yazılımı türüdür. Açık kaynak sadece açık erişimden ibaret değildir; açık kaynaklı yazılımların dağıtım koşulları 10 özel kritere uygun olmalıdır (bkz: https://opensource.org/osd).",
     "related_terms": [
         "Github",

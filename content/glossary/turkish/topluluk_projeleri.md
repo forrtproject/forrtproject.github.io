@@ -1,6 +1,7 @@
 {
     "type": "glossary",
     "title": "Topluluk Projeleri [Community Projects]",
+    "sort_key": "topluluk projeleri [community projects]",
     "definition": "Farklı kariyer düzeylerinden, disiplinlerden, kurumlardan veya ülkelerden araştırmacıların katılımıyla yürütülen iş birliğine dayalı projelerdir. Projelerin akran desteği ve öğrenmesi, araştırma yapma, öğretim ve eğitim gibi farklı hedefleri olabilir. Bu projeler kısa vadeli (örneğin konferans etkinlikleri veya hackathonlar) veya uzun vadeli (örneğin dergi kulüpleri veya konsorsiyum liderliğindeki araştırma projeleri) olabilir. İş birliğine dayalı kültür ve topluluk oluşturma, bu projelerin hedeflerine ulaşmasında kilit rol oynar.",
     "related_terms": [
         "Bottom-up approach (to Open Scholarship)",
@@ -32,6 +33,6 @@
         "Ege Emek"
     ],
     "translation_reviewed_by": [
-        "Elif Bastan"
+        "Elif Baştan"
     ]
 }

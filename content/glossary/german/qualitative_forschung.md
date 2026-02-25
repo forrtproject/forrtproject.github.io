@@ -1,6 +1,7 @@
 {
     "type": "glossary",
     "title": "Qualitative Forschung [Qualitative research]",
+    "sort_key": "qualitative forschung [qualitative research]",
     "definition": "Forschung, die nicht-numerische Daten verwendet, wie z. B. Textantworten, Bilder, Videos oder andere Objekte, um Konzepte, Theorien oder Erfahrungen genauer zu untersuchen. Es gibt ein breites Spektrum an qualitativen Ansätzen, von der mikro-detaillierten Erforschung von Sprache oder der Konzentration auf persönliche subjektive Erfahrungen bis hin zu solchen, die soziale Erfahrungen und Meinungen auf der Makroebene untersuchen.",
     "related_terms": [
         "Bracketing Interviews",

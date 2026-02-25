@@ -1,6 +1,7 @@
 {
     "type": "glossary",
     "title": "Versteckte Moderatoren [Hidden Moderators]",
+    "sort_key": "versteckte moderatoren [hidden moderators]",
     "definition": "Kontextuelle Bedingungen, die ohne Wissen der Forschenden dazu führen können, dass die Ergebnisse eines Replikationsversuchs von denen der ursprünglichen Studie abweichen. Versteckte (hidden) Moderatoren werden manchmal angeführt, um fehlgeschlagene Replikationen (weg) zu erklären. Auch versteckte Annahmen (hidden assumptions) genannt.",
     "related_terms": [
         "Auxiliary Hypothesis"

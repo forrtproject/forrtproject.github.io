@@ -1,7 +1,8 @@
 {
     "type": "glossary",
     "title": "Repo [Repository]",
-    "definition": "Araştırma çıktıları, makaleler, analiz kodları ve/veya veriler gibi dijital nesnelerin depolandığı çevrim içi bir arşivdir. Örnekler arasında bioRxiv, MetaArXiv, PsyArXiv gibi ön baskı sunucuları; kurumsal araştırma depoları; zenodo.org, PsychData gibi veri setlerini toplayan ve saklayan veri depoları; Github gibi kod depoları ve tüm araştırma veri türleri için genel amaçlı depolardan biri olan Açık Bilim Platformu (OSF; Open Science Framework) verilebilir. Depolarda saklanan dijital nesneler genellikle, farklı saklama konumlarında bulunmalarını sağlayan metaveriler ile tanımlanır.",
+    "sort_key": "repo [repository]",
+    "definition": "Araştırma çıktıları, makaleler, analiz kodları ve/veya veriler gibi dijital nesnelerin depolandığı çevrim içi bir arşivdir. Örnekler arasında bioRxiv, MetaArXiv, PsyArXiv gibi ön-baskı sunucuları; kurumsal araştırma depoları; zenodo.org, PsychData gibi veri setlerini toplayan ve saklayan veri depoları; Github gibi kod depoları ve tüm araştırma veri türleri için genel amaçlı depolardan biri olan Açık Bilim Platformu (OSF; Open Science Framework) verilebilir. Depolarda saklanan dijital nesneler genellikle, farklı saklama konumlarında bulunmalarını sağlayan metaveriler ile tanımlanır.",
     "related_terms": [
         "Data sharing",
         "Github",
@@ -29,7 +30,7 @@
     ],
     "language": "turkish",
     "translated_by": [
-        "Elif Bastan"
+        "Elif Baştan"
     ],
     "translation_reviewed_by": [
         "Neslihan Özhan"

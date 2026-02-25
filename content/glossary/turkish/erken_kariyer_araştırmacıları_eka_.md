@@ -1,6 +1,7 @@
 {
     "type": "glossary",
     "title": "Erken Kariyer Araştırmacıları (EKA) [Early career researchers (ECRs)]",
+    "sort_key": "erken kariyer arasztizrmacizlariz (eka) [early career researchers (ecrs)]",
     "definition": "‘Erken kariyer araştırmacısı’ etiketi, ‘‘doktora eğitimlerinin son aşamasında olan öğrencilerden, doktora sonrası eğitimlerini tamamlamış ve bu tarihten itibaren 10 yıla kadar süre geçmiş kişilere kadar uzanan bir araştırmacı grubunu kapsar; bu nedenle bu gruba erken kariyer akademisyenleri de dahil edilebilir’’ (Eley vd., 2012, s. 3). Erken kariyer araştırmacısı tanımı; yaş, doktora sonrası geçen süre (kariyer araları ve izinlerin dahil edilip edilmemesi), akademik unvan veya alınan araştırma fonları gibi ölçütlere bağlı olarak farklı fon sağlayıcılar, akademik kurumlar ve ülkeler arasında değişkenlik gösterebilir.",
     "related_terms": [
         "Early Career Investigator"

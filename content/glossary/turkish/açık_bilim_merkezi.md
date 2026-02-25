@@ -1,6 +1,7 @@
 {
     "type": "glossary",
     "title": "Açık Bilim Merkezi [Center for Open Science (COS)]",
+    "sort_key": "aczizk bilim merkezi [center for open science (cos)]",
     "definition": "Merkezi Charlottesville, Virginia'da bulunan ve ‘araştırmaların açıklığını, etik bütünlüğünü ve tekrarlanabilirliğini artırma’ misyonuna sahip, kâr amacı gütmeyen bir teknoloji kuruluşudur. COS, diğer kaynakların yanı sıra Açık Bilim Platformu’na (OSF; Open Science Framework) ve Açık Akademi Bilgi Tabanına (Open Scholarship Knowledge Base) ev sahipliği yapmaktadır.",
     "related_terms": [
         "Open Science badges",
@@ -33,6 +34,6 @@
         "Ege Emek"
     ],
     "translation_reviewed_by": [
-        "Elif Bastan"
+        "Elif Baştan"
     ]
 }

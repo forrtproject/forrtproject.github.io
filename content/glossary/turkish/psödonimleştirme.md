@@ -1,6 +1,7 @@
 {
     "type": "glossary",
     "title": "Psödonimleştirme [Pseudonymisation]",
+    "sort_key": "psozdonimlesztirme [pseudonymisation]",
     "definition": "Psödonimleştirme, araştırma katılımcılarının kimliklerinin tespit edilmesine yol açabilecek herhangi bir bilginin değiştirilmesi veya kaldırılması, ancak kod numarası ve tanımlayıcıların kombinasyonu kullanılarak katılımcıların yine de tanımlanabilir olmasını sağlayan bir tekniktir. Bu süreç şu adımlardan oluşur: araştırma veri setinden tüm tanımlayıcıların kaldırılması; her katılımcıya özgü bir tanımlayıcı (psödonim) atanması ve bunun her araştırma kaydına etiket olarak kullanılması; ve kod numarası ile katılımcıyı ilişkilendiren şifrenin, veri setinden fiziksel olarak ayrı bir belgede tutulması. Psödonimleştirme, özellikle insan katılımcılarla yapılan veya gizli bilgileri içeren araştırmalarda veri gizliliğinin korunmasını sağlamak için genellikle etik kurullar tarafından talep edilen asgari bir gerekliliktir.",
     "related_terms": [
         "Anonymity",

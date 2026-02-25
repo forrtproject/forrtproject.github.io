@@ -1,6 +1,7 @@
 {
     "type": "glossary",
     "title": "Ontoloji (Yapay Zeka) [Ontology (Artificial Intelligence)]",
+    "sort_key": "ontoloji (yapay zeka) [ontology (artificial intelligence)]",
     "definition": "İncelenen varlıkların doğasını ve aralarındaki ilişkileri sınıflandırmaya ve açıklamaya yardımcı olan bir konu alanındaki aksiyomlar kümesi.",
     "related_terms": [
         "Axiology",

@@ -1,6 +1,7 @@
 {
     "type": "glossary",
     "title": "Epistemoloji [Epistemology]",
+    "sort_key": "epistemoloji [epistemology]",
     "definition": "Epistemoloji, etik, mantık ve metafiziğin yanında felsefenin dört temel dalından biridir. Büyük ölçüde bilginin doğası, kökeni ve kapsamıyla; ayrıca inançların rasyonelliğiyle ilgilenir.",
     "related_terms": [
         "Meta-science or Meta-research ",

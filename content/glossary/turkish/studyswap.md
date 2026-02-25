@@ -1,6 +1,7 @@
 {
     "type": "glossary",
     "title": "StudySwap",
+    "sort_key": "studyswap",
     "definition": "Araştırmacıların, araştırma projeleri veya ellerinde bulunan ve başkalarının kullanabileceği kaynakların (‘haves’ – sahip olunanlar) ya da ihtiyaç duydukları ve başka bir araştırmacının sahip olabileceği kaynakların (‘needs’ – ihtiyaç duyulanlar) kısa tanımlarını paylaştığı ücretsiz bir çevrim içi platformdur. StudySwap, araştırma kaynaklarının boşa gitmemesini ve daha fazla araştırmacının ihtiyaç duyduğu kaynaklara erişebilmesini sağlayan bir kitle kaynaklı (crowdsourcing) araştırma yaklaşımıdır.",
     "related_terms": [
         "Collaboration",
@@ -24,7 +25,7 @@
     ],
     "language": "turkish",
     "translated_by": [
-        "Elif Bastan"
+        "Elif Baştan"
     ],
     "translation_reviewed_by": [
         "Neslihan Özhan"

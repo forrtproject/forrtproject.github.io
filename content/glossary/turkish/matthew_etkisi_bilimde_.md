@@ -1,6 +1,7 @@
 {
     "type": "glossary",
     "title": "Matthew Etkisi (Bilimde) [Matthew effect (in science)]",
+    "sort_key": "matthew etkisi (bilimde) [matthew effect (in science)]",
     "definition": "Matta İncili’nden alınan “zengin daha da zenginleşir; yoksul daha da yoksullaşır” ifadesinin bir uyarlamasından adını alır. Saygın bir bursu olan seçkin bilim insanları ve erken kariyer araştırmacıları, bilime yaptıkları katkılar için orantısız bir şekilde daha fazla kredi ve fona sahip olurken, saygın bir bursu olmayan nispeten bilinmeyen veya kariyerinin başındaki araştırmacılar, karşılaştırılabilir katkılar için orantısız bir şekilde az kredi alma eğilimindedir. Bu durum, mütevazı başlangıç ​​karşılaştırmalı avantajlarından (ya da dezavantajlarından) kaynaklanan önemli bir kümülatif avantajdır.",
     "related_terms": [
         "Matthew effect in education",

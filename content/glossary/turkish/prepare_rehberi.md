@@ -1,6 +1,7 @@
 {
     "type": "glossary",
     "title": "PREPARE Rehberi [PREPARE Guidelines]",
+    "sort_key": "prepare rehberi [prepare guidelines]",
     "definition": "Hayvanlar Üzerinde Araştırma ve Deneysel Prosedürlerin Planlanması: Başarı için Öneriler (PREPARE; Planning Research and Experimental Procedures on Animals: Recommendations for Excellence) rehberi ve envanteri, hayvanlar üzerinde yapılacak araştırmaların planlanmasına yardımcı olmayı, ve 3R ilkesine (Yerine Koyma - Replacement, Azaltma - Reduction, İyileştirme - Refinement) riayeti desteklemeyi ve hayvan araştırmalarının yeniden üretilebilirliğini kolaylaştırmayı amaçlamaktadır.",
     "related_terms": [
         "ARRIVE Guidelines",

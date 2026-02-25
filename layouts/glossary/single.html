@@ -129,7 +129,9 @@
           {{ $currentSection := .File.Dir }}
           {{ $glossaryPages := where .Site.RegularPages "Type" "glossary" }}
           {{ $filteredPages := where $glossaryPages "File.Dir" $currentSection }}
-          {{ range $index, $page := where $filteredPages "Params.definition" "!=" nil }}
+          {{ $withDefinition := where $filteredPages "Params.definition" "!=" nil }}
+          {{ $sortedPages := sort $withDefinition "Params.sort_key" }}
+          {{ range $index, $page := $sortedPages }}
           <li class="nav-item" data-toggle="tooltip" data-placement="right" title="{{ .Params.definition }}">
             <a href="{{ .Permalink }}" class="nav-link">{{ .Title }}</a>
           </li>
@@ -157,6 +159,9 @@
     {{ $titleParts := split .Title " [" }}
     {{ if gt (len $titleParts) 1 }}
       {{ $currentEnglishTitle = trim (index $titleParts 1) "]" }}
+    {{ else }}
+      <!-- No brackets: title is the same in English (e.g. BIZARRE, FORRT, Git) -->
+      {{ $currentEnglishTitle = .Title }}
     {{ end }}
   {{ end }}
 
@@ -178,6 +183,12 @@
           {{ if gt (len $titleParts) 1 }}
             {{ $englishTitle := trim (index $titleParts 1) "]" }}
             {{ if eq $englishTitle $currentEnglishTitle }}
+              {{ $availableLanguages = $availableLanguages | append (dict "lang" $lang "page" .) }}
+              {{ $matchFound = true }}
+            {{ end }}
+          {{ else }}
+            <!-- No brackets: use title directly (e.g. BIZARRE, FORRT, Git) -->
+            {{ if eq .Title $currentEnglishTitle }}
               {{ $availableLanguages = $availableLanguages | append (dict "lang" $lang "page" .) }}
               {{ $matchFound = true }}
             {{ end }}
@@ -221,6 +232,9 @@
             {{ $term_clean = lower $term_clean }} <!-- Convert to lowercase -->
             {{ $term_clean = trim $term_clean "_" }} <!-- Trim leading and trailing underscores -->
             {{ $term_page := site.GetPage (printf "/glossary/%s/%s" $lang $term_clean) }}
+            {{ if not $term_page }}
+              {{ $term_page = site.GetPage (printf "/glossary/english/%s" $term_clean) }}
+            {{ end }}
             {{ if $term_page }}
             {{ $term_url := $term_page.RelPermalink }}
             {{ $related_links = $related_links | append (printf "<a href='%s'>%s</a>" $term_url $term) }}
@@ -300,7 +314,9 @@
             {{ $currentSection := .File.Dir }}
             {{ $glossaryPages := where .Site.RegularPages "Type" "glossary" }}
             {{ $filteredPages := where $glossaryPages "File.Dir" $currentSection }}
-            {{ range $index, $page := where $filteredPages "Params.definition" "!=" nil }}
+            {{ $withDefinition := where $filteredPages "Params.definition" "!=" nil }}
+            {{ $sortedPages := sort $withDefinition "Params.sort_key" }}
+            {{ range $index, $page := $sortedPages }}
             <li class="nav-item" data-toggle="tooltip" data-placement="right" title="{{ .Params.definition }}">
               <a href="{{ .Permalink }}" class="nav-link">{{ .Title }}</a>
             </li>

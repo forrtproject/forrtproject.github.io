@@ -1,6 +1,7 @@
 {
     "type": "glossary",
     "title": "Açık Bilim [Open Science]",
+    "sort_key": "aczizk bilim [open science]",
     "definition": "Bilimsel bilginin her türünün, uygun olduğu ölçüde açık erişimli, şeffaf, titiz, yeniden üretilebilir, tekrarlanabilir, kümülatif ve kapsayıcı olması gerektiği fikrini yansıtan; bu nitelikleri bilimin temel özellikleri olarak gören şemsiye bir terimdir. Açık bilim; bilimin şeffaf, güvenilir, yeniden üretilebilir ve erişilebilir olmasını teşvik eden ilke ve davranışları içerir. Açık bilimin altı temel boyutu vardır: açık veri, açık yöntem, açık kaynak, açık erişim, açık hakem değerlendirmesi ve açık eğitim kaynakları.",
     "related_terms": [
         "Accessibility",

@@ -1,6 +1,7 @@
 {
     "type": "glossary",
     "title": "Yayımla ya da Yok Ol [Publish or Perish]",
+    "sort_key": "yayizmla ya da yok ol [publish or perish]",
     "definition": "Araştırmacıların başarılı bir akademik kariyere sahip olmak için genellikle prestijli akademik dergilerde çok sayıda makale yayımlama baskısını hissetmelerini tanımlayan bir aforizmadır. Bu çok sayıda makale yayımlama baskısı, makalelerin kalitesinden ödün verilmesine yol açabilir. Bu kurumsal baskı, işe alım süreçleri ve fonlama kararlarının yayımlanan makale sayısı ve etkisine güçlü şekilde odaklanmasıyla daha da artmaktadır.",
     "related_terms": [
         "Incentive structure",

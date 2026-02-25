@@ -1,6 +1,7 @@
 {
     "type": "glossary",
     "title": "Bilime Duyulan Toplumsal Güven [Public Trust in Science]",
+    "sort_key": "bilime duyulan toplumsal guzven [public trust in science]",
     "definition": "Bilim insanları tarafından üretilen veya sağlanan ve sivil toplumun yararına sunulan bilgiye, rehberliğe ve önerilere duyulan güven (Hendriks vd., 2016). Bunlar aynı zamanda halk sağlığına ilişkin bilim temelli tavsiyelere (örn., evrensel sağlık hizmeti, kök hücre araştırmaları, kadınların üreme hakları için federal fonlar, bulaşıcı hastalıkların önleyici tedbirleri ve aşılama), iklim değişikliğine, ekonomik politikalara (örn., refah, eşitsizlik ve yoksullukla mücadele) ve bunların kesişim noktalarına duyulan güveni de kastedebilir. Bir bireyin bilime duyduğu güvenin; yaş (Anderson vd., 2012), cinsiyet (Von Roten, 2004), bilimsel normların reddi (Lewandowsky ve Oberauer, 2021), politik ideoloji (Azevedo ve Jost, 2021; Brewer ve Ley, 2012; Leiserowitz vd., 2010), sağ eğilimli otoriterlik ve sosyal baskınlık (Kerr ve Wilson, 2021), eğitim (Bak, 2001; Hayes ve Tariq, 2000), gelir (Anderson vd., 2012), bilim bilgisi (Evans ve Durant, 1995; Nisbet vd., 2002), sosyal medya kullanımı (Huber vd., 2019) ve dindarlık (Azevedo, 2021; Brewer ve Ley, 2013; Liu ve Priest, 2009) gibi çok sayıda faktörden etkilendiği gösterilmiştir.",
     "related_terms": [
         "Credibility of scientific claims",

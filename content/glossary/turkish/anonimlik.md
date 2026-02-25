@@ -1,6 +1,7 @@
 {
     "type": "glossary",
     "title": "Anonimlik [Anonymity]",
+    "sort_key": "anonimlik [anonymity]",
     "definition": "Verilerin anonimleştirilmesi, katılımcıların, hakemlerin ve yazarların, diğerleri arasından potansiyel olarak tanınabilecek herhangi bir bilgisinin kaldırılması, genelleştirilmesi, birleştirilmesi veya çarpıtılması anlamına gelir. Veriler, katılımcıların kişisel olarak tanınmasını önlemek amacıyla anonim hale getirilmelidir. Anonimleştirmenin en temelinde, katılımcıların isimlerini takma isimlerle (sahte isimler) değiştirmek ve belirli yerlere yapılan referansları kaldırmak yatar. Anonimleştirme, açık veriler için özellikle önemlidir ve bazı veriler, anonimlik endişeleri nedeniyle açık hale getirilmeyebilir. Anonimlik ve açık veriler, genellikle kişisel deneyimlere ve görüşlere odaklanan nitel araştırmalarda ve klinik popülasyonlardan katılımcıları içeren nicel araştırmalarda tartışılmaktadır.",
     "related_terms": [
         "Anonymising",
@@ -35,6 +36,6 @@
         "Ege Emek"
     ],
     "translation_reviewed_by": [
-        "Elif Bastan"
+        "Elif Baştan"
     ]
 }

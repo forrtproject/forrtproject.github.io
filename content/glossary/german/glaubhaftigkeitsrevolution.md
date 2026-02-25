@@ -1,6 +1,7 @@
 {
     "type": "glossary",
     "title": "Glaubhaftigkeitsrevolution [Credibility revolution]",
+    "sort_key": "glaubhaftigkeitsrevolution [credibility revolution]",
     "definition": "Der Begriff wurde als Alternative zum Begriff “Replikationskrise” vorgeschlagen und umfasst die vielen Lösungen zur Verbesserung der Glaubwürdigkeit der Forschung, wie Präregistrierung, Transparenz und Replikation.",
     "related_terms": [
         "Credibility of scientific claims",

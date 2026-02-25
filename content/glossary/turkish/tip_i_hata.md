@@ -1,6 +1,7 @@
 {
     "type": "glossary",
     "title": "Tip I hata [Type I error]",
+    "sort_key": "tip i hata [type i error]",
     "definition": "“Sıfır hipotezinin yanlış bir şekilde reddedilmesi” (Simmons vd., 2011, s. 1359), yani aslında etki olmadığı durumda, sıfır hipotezinin reddedilmesini destekleyen yanlış bir kanıt bulma durumudur. Örneğin, bir hâkimin masum bir kişiyi hapse atması. Bulguların aslında rastlantı sonucu ortaya çıkmasına rağmen anlamlı bir etki olduğu sonucuna varmak ve sıfır hipotezini reddetmek.",
     "related_terms": [
         "Frequentist statistics",
@@ -36,7 +37,7 @@
     ],
     "language": "turkish",
     "translated_by": [
-        "Elif Bastan"
+        "Elif Baştan"
     ],
     "translation_reviewed_by": [
         "Neslihan Özhan"

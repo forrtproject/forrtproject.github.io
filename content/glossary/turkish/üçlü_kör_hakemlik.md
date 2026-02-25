@@ -1,6 +1,7 @@
 {
     "type": "glossary",
     "title": "Üçlü-kör hakemlik [Triple-blind peer review]",
+    "sort_key": "uzczluz-kozr hakemlik [triple-blind peer review]",
     "definition": "Araştırma ürünlerinin, yazar(lar)ın hem hakem(ler)e hem de editör(ler)e karşı anonim olduğu şekilde, yetkin uzmanlar tarafından değerlendirilmesidir. “Yazarların ve yazarların kurum bilgilerinin hem editörlerden hem de hakemlerden gizlenmesi. Bu yaklaşım, kurumsal, kişisel ve cinsiyete dayalı önyargıların ortadan kaldırılmasını amaçlar” (Tvina vd., 2019, s. 1082).",
     "related_terms": [
         "Double-blind peer review",
@@ -25,7 +26,7 @@
     ],
     "language": "turkish",
     "translated_by": [
-        "Elif Bastan"
+        "Elif Baştan"
     ],
     "translation_reviewed_by": [
         "Neslihan Özhan"

@@ -1,6 +1,7 @@
 {
     "type": "glossary",
     "title": "Interlocking",
+    "sort_key": "interlocking",
     "definition": "An analysis at the core of intersectionality to analyse power, inequality and exclusion, as efforts to reform academic culture cannot be completed by investigating only one avenue in isolation (e.g. race, gender or ability) but by considering all the systems of exclusion. In contrast to intersectionality (which refers to the individual having multiple social identities), interlocking is usually used to describe the systems that combine to serve as oppressive measures toward the individual based on these identities.",
     "related_terms": [
         "Bropenscience",

@@ -1,6 +1,7 @@
 {
     "type": "glossary",
     "title": "PCI Kayıtlı Raporlar [PCI Registered Reports]",
+    "sort_key": "pci kayiztliz raporlar [pci registered reports]",
     "definition": "2021 yılında başlatılan, bilim, teknoloji, mühendislik ve matematik (STEM; science, technology, engineering, and mathematics), tıp, sosyal bilimler ve beşerî bilimlerin tüm yelpazesini kapsayan Kayıtlı Raporları (RR; Registered Reports) kabul etme, değerlendirme ve önerme amacına adanmış bir girişim. Peer Community In (PCI) Kayıtlı Raporlar, bir ‘Önerici’ (Faaliyet Editörü ile eşdeğer) tarafından denetlenir ve ilgili alanda en az iki uzman tarafından değerlendirilir. Araştırma alanları genelinde, çalışma öncesi (Aşama 1) ve çalışma sonrası (Aşama 2) ücretsiz ve şeffaf değerlendirmeler sağlar. PCI Kayıtlı Rapor dostu dergilerden oluşan bir ağ, PCI Kayıtlı Rapor değerlendirme kriterlerini destekler ve PCI Kayıtlı Raporlar’dan olumlu nihai öneri alan kayıtlı raporları, ek bir hakem değerlendirmesi olmadan kabul etmeyi taahhüt eder.",
     "related_terms": [
         "In Principle Acceptance (IPA)",

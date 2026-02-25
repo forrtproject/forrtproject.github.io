@@ -1,6 +1,7 @@
 {
     "type": "glossary",
     "title": "Makale Fabrikası [Papermill]",
+    "sort_key": "makale fabrikasiz [papermill]",
     "definition": "Makalelerin, verilerin tahrif edilmesi veya uydurulması yoluyla üretildiği, bilimsel sahtekârlıkla uğraşan bir organizasyondur, örn., görsellerin veya sayısal verilerin düzenlenmesi ya da yazılı metnin intihal edilmesi yoluyla. Makale fabrikası olarak adlandırılan organizasyonların, ‘araştırma verilerinden, hayalet yazarlar tarafından yazılmış sahte veya uydurma makalelere ve makale gönderim hizmetlerine kadar uzanan ürünler sunduğu iddia edilmektedir’ (Byrne ve Christopher, 2020, s. 583). Bir makale fabrikası, çok sayıda sözde yeni makalenin hızlı bir şekilde üretilmesi ve yayılmasıyla ilişkilidir. Bu tür makaleler genellikle bilimsel yayın sürecinde tespit edilememekte ve bu nedenle ya hiç fark edilmemekte ya da tespit edilmesi hâlinde (örn., intihal yazılımları aracılığıyla) yayından geri çekilmektedir.",
     "related_terms": [
         "Data fabrication",

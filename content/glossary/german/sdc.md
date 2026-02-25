@@ -1,6 +1,7 @@
 {
     "type": "glossary",
     "title": "SDC [Sequence-determines-credit approach (SDC)]",
+    "sort_key": "sdc [sequence-determines-credit approach (sdc)]",
     "definition": "Ein Autor:innenschaftssystem, das die Reihenfolge der Autor:innenschaft auf der Grundlage des Beitrags der einzelnen Autor:innen festlegt. Die Namen der Autor:innen werden entsprechend ihres Beitrags in absteigender Reihenfolge aufgeführt, wobei der/die Autor:in mit dem größten Beitrag an erster Stelle und der/die Autor:in mit dem geringsten Beitrag an letzter Stelle steht.",
     "related_terms": [
         "Authorship",

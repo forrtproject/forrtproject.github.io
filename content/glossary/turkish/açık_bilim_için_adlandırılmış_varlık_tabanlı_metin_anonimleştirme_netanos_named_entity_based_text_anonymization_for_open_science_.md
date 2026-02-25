@@ -1,6 +1,7 @@
 {
     "type": "glossary",
     "title": "Açık Bilim için Adlandırılmış Varlık Tabanlı Metin Anonimleştirme (NETANOS; Named entity-based Text Anonymization for Open Science)",
+    "sort_key": "aczizk bilim iczin adlandizrizlmizsz varlizk tabanliz metin anonimlesztirme (netanos; named entity-based text anonymization for open science)",
     "definition": "Adlandırılmış varlıkları (örn. kişiler, konumlar, saatler, tarihler) tanımlayan ve değiştiren ücretsiz, açık kaynaklı bir anonimleştirme yazılımıdır. Temel özelliği, ikincil analizler için gereken kritik bağlamı korumasıdır. Amaç, araştırmacıların araştırma etiğine uyarak ham metin verilerini paylaşmalarına yardımcı olmaktır.",
     "related_terms": [
         "Anonymity",

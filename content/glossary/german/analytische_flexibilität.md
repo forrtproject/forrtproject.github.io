@@ -1,6 +1,7 @@
 {
     "type": "glossary",
     "title": "Analytische Flexibilität [Analytic Flexibility]",
+    "sort_key": "analytische flexibilität [analytic flexibility]",
     "definition": "Analytische Flexibilität beschreibt eine Art der Freiheitsgrade von Forschenden (Simmons, Nelson, & Simonsohn, 2011), die sich speziell auf die große Anzahl von Entscheidungen bezieht, die während der Datenvorverarbeitung und Datenauswertung getroffen werden. “\\[T\\]he range of analysis outcomes across different acceptable analysis methods” (dt. \\[D\\]ie Bandbreite an Analyseergebnissen über verschiedene akzeptable Analysemethoden; Carp, 2012, p. 1). Analytische Flexibilität kann problematisch sein, da diese Variabilität bei Datenanalyse-Strategien zu einer Variabilität der Forschungsergebnisse führen kann, insbesondere wenn mehrere Strategien angewandt, aber nicht transparent veröffentlicht werden (Masur, 2021).",
     "related_terms": [
         "Garden of forking paths",

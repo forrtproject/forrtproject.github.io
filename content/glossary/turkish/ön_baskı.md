@@ -1,7 +1,8 @@
 {
     "type": "glossary",
     "title": "Ön-baskı [Preprint]",
-    "definition": "Herhangi bir türdeki bilimsel makale ya da araştırma çıktısının, resmi yayımdan önce kamuya açık olarak sunulan versiyonudur ve Yeşil Açık Erişim biçimi olarak kabul edilir. Ön-baskılar genellikle araştırma sonuçlarının geleneksel yayıma kıyasla daha hızlı şekilde paylaşılmasını sağlayan bir arşivde (örn., arXiv) barındırılır. Ön-baskı arşivleri genellikle bu çalışmalara kalıcı tanımlayıcılar (örn., Dijital Nesne Tanımlayıcısı - DOI; Digital Object Identifier) atar. Ön-baskılar araştırma döngüsünün herhangi bir aşamasında yayımlanabilir, ancak en yaygın olarak gönderim aşamasında (yani hakem değerlendirmesinden önce) paylaşılır. Kabul edilmiş ve hakem değerlendirmesinden geçmiş versiyonları da sıklıkla ön baskı sunucularına yüklenir ve bunlara son-baskı adı verilir.",
+    "sort_key": "ozn-baskiz [preprint]",
+    "definition": "Herhangi bir türdeki bilimsel makale ya da araştırma çıktısının, resmi yayımdan önce kamuya açık olarak sunulan versiyonudur ve Yeşil Açık Erişim biçimi olarak kabul edilir. Ön-baskılar genellikle araştırma sonuçlarının geleneksel yayıma kıyasla daha hızlı şekilde paylaşılmasını sağlayan bir arşivde (örn., arXiv) barındırılır. Ön-baskı arşivleri genellikle bu çalışmalara kalıcı tanımlayıcılar (örn., Dijital Nesne Tanımlayıcısı - DOI; Digital Object Identifier) atar. Ön-baskılar araştırma döngüsünün herhangi bir aşamasında yayımlanabilir, ancak en yaygın olarak gönderim aşamasında (yani hakem değerlendirmesinden önce) paylaşılır. Kabul edilmiş ve hakem değerlendirmesinden geçmiş versiyonları da sıklıkla ön-baskı sunucularına yüklenir ve bunlara son-baskı adı verilir.",
     "related_terms": [
         "Open Access",
         "DOI (digital object identifier)",

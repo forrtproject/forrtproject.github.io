@@ -1,6 +1,7 @@
 {
     "type": "glossary",
     "title": "İdeolojik Yanlılık [Ideological bias]",
+    "sort_key": "i̇deolojik yanlizlizk [ideological bias]",
     "definition": "Araştırmanın kalitesine dair önceden var olan görüşlerin, yazar(lar)ın ideolojik görüşlerine bağlı olabileceği fikridir. Hakemlik sürecindeki birçok önyargıdan biri olan bu durum, editörün veya hakemin siyasi görüşlerine arkadaşların, iş birliği yapanların veya bilim insanlarının katılması hâlinde, araştırmaya yönelik olumlu görüşlerin daha olası olacağını öngörür (Tvina vd., 2019). Bu durum, çeşitli çıkar çatışmalarına yol açarak farklı bakış açılarını zayıflatabilir; örneğin, hakemlik sürecinin hızlandırılması veya geciktirilmesi, bireyin araştırmasını sunmaya davet edilme şansını dolayısıyla araştırmasını tanıtma şansını etkilemek gibi.",
     "related_terms": [
         "Ad hominem bias",

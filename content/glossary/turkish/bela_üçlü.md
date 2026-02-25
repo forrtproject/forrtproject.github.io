@@ -1,6 +1,7 @@
 {
     "type": "glossary",
     "title": "Bela Üçlü [The Troubling Trio]",
+    "sort_key": "bela uzczluz [the troubling trio]",
     "definition": "Düşük istatistiksel güç, şaşırtıcı bir sonuç ve .05’ten sadece biraz daha düşük bir p-değeri kombinasyonu olarak tanımlanır.",
     "related_terms": [
         "Replication",
@@ -26,7 +27,7 @@
     ],
     "language": "turkish",
     "translated_by": [
-        "Elif Bastan"
+        "Elif Baştan"
     ],
     "translation_reviewed_by": [
         "Neslihan Özhan"

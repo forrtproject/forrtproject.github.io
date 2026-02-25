@@ -1,6 +1,7 @@
 {
     "type": "glossary",
     "title": "Açık, Güvenilir ve Şeffaf Ekoloji ve Evrimsel Biyoloji Derneği [Society for Open, Reliable, and Transparent Ecology and Evolutionary biology (SORTEE)]",
+    "sort_key": "aczizk, guzvenilir ve szeffaf ekoloji ve evrimsel biyoloji dernegzi [society for open, reliable, and transparent ecology and evolutionary biology (sortee)]",
     "definition": "SORTEE (https://www.sortee.org/), ekoloji, evrim ve ilgili disiplinlerde kültürel ve kurumsal değişimler yoluyla araştırma sonuçlarının şeffaflığını ve güvenilirliğini artırmayı hedefleyen uluslararası bir dernektir. Aralık 2020’de, deneyim düzeyine bakılmaksızın, bu disiplinlerdeki araştırmaları iyileştirmekle ilgilenen herkesin katılımına açık şekilde kurulmuştur. Dernek, kapsamı, üyelik sistemi ve hedefleri bakımından uluslararası niteliktedir. Mayıs 2021 itibarıyla SORTEE’nin 600’den fazla üyesi bulunmaktadır.",
     "related_terms": [
         "Society for the Improvement of Psychological Science (SIPS)"
@@ -20,7 +21,7 @@
     ],
     "language": "turkish",
     "translated_by": [
-        "Elif Bastan"
+        "Elif Baştan"
     ],
     "translation_reviewed_by": [
         "Neslihan Özhan"

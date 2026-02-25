@@ -1,6 +1,7 @@
 {
     "type": "glossary",
     "title": "Ön-baskı Tabanlı Dergi [Overlay Journal]",
+    "sort_key": "ozn-baskiz tabanliz dergi [overlay journal]",
     "definition": "Diğer kaynaklarda (genellikle arXiv gibi ön-baskı sunucularında) mevcut olan makaleleri toplayan ve küratörlüğünü yapan açık erişimli elektronik dergilerdir. Makale küratörlüğü, (yayın sonrası) hakem değerlendirmesi veya editoryal seçim içerebilir. Ön-baskı tabanlı dergiler yeni materyal yayımlamaz; bunun yerine, mevcut arşivlerde yer alan makaleleri organize eder ve derler.",
     "related_terms": [
         "Open access",

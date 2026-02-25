@@ -1,6 +1,7 @@
 {
     "type": "glossary",
     "title": "Açık Bilim Platformu (OSF; Open Science Framework)",
+    "sort_key": "aczizk bilim platformu (osf; open science framework)",
     "definition": "Araştırmacıların araştırma projelerini düzenlemeleri, paylaşmaları ve iş birliğini teşvik etmeleri için kullanılan ücretsiz ve açık kaynaklı bir platformdur. Genellikle araştırma kodları, verileri ve materyalleri, ön-baskılar ve ön-kayıtlar için açık bir depo olarak kullanılırken, daha verimli bir çalışma süreci yönetimini de sağlar. Center for Open Science tarafından oluşturulmuş ve sürdürülmektedir.",
     "related_terms": [
         "Archive",

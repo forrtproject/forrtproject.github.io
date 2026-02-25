@@ -1,6 +1,7 @@
 {
     "type": "glossary",
     "title": "Model (statistical)",
+    "sort_key": "model (statistical)",
     "definition": "A mathematical representation of observed data that aims to reflect the population under study, allowing for the better understanding of the phenomenon of interest, identification of relationships among variables and predictions about future instances. A classic example would be the application of Chi square to understand the relationship between smoking and cancer (Doll & Hill, 1954\\)**.**",
     "related_terms": [
         "Bayesian Inference",

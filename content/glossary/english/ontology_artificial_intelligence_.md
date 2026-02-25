@@ -1,6 +1,7 @@
 {
     "type": "glossary",
     "title": "Ontology (Artificial Intelligence)",
+    "sort_key": "ontology (artificial intelligence)",
     "definition": "A set of axioms in a subject area that help classify and explain the nature of the entities under study and the relationships between them.",
     "related_terms": [
         "Axiology",

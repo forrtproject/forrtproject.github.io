@@ -1,6 +1,7 @@
 {
     "type": "glossary",
     "title": "Öğrenmede evrensel tasarım (ÖET) [Universal design for learning (UDL)]",
+    "sort_key": "ozgzrenmede evrensel tasarizm (ozet) [universal design for learning (udl)]",
     "definition": "İnsanların nasıl öğrendiğine dair bilimsel bulgulara dayanan, öğrenmeyi geliştirmeyi ve öğretimi optimize etmeyi amaçlayan bir yaklaşımdır. Farklı öğrencilerin farklı ihtiyaçlarına yanıt vererek öğrenmeyi herkes için kapsayıcı ve dönüştürücü kılmayı hedefler. Eğitim uygulamalarına rehberlik eden, kanıta dayalı ve bilimsel olarak geçerli bir yaklaşım olarak kabul edilir. ÖET üç temel ilkeye dayanır: katılım (engagement), temsil (representation) ve eylem ile ifade (action and expression). Ayrıca, 2008 tarihli Yükseköğretim Fırsatları Kanunu’nda da (Higher Education Opportunity Act) yer almaktadır (Edyburn, 2010).",
     "related_terms": [
         "Equal opportunities",
@@ -28,7 +29,7 @@
     ],
     "language": "turkish",
     "translated_by": [
-        "Elif Bastan"
+        "Elif Baştan"
     ],
     "translation_reviewed_by": [
         "Neslihan Özhan"

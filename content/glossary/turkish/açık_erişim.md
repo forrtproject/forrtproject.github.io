@@ -1,6 +1,7 @@
 {
     "type": "glossary",
     "title": "Açık Erişim [Open access]",
+    "sort_key": "aczizk eriszim [open access]",
     "definition": "“Herkese açık internet üzerinden bilimsel yayınların ücretsiz olarak erişilebilir olması, kullanıcıların bu araştırma makalelerinin tam metinlerini okumasına, indirmesine, kopyalamasına, dağıtmasına, yazdırmasına, aramasına veya bağlantı vermesine, dizinleme için taramasına, yazılıma veri olarak iletmesine veya başka herhangi bir yasal amaç için kullanmasına izin verir; bu, internetin kendisine erişimden ayrı düşünülemeyecek finansal, yasal veya teknik engeller olmaksızın gerçekleşir” (Boai, 2002). Açık erişime (OA; Open Access) ulaşmanın farklı yöntemleri genellikle renklerle anılır; bunlar arasında Yeşil Açık Erişim (çalışmanın herkese açık bir havuzdan herkese açık olarak erişilebilir olması), Altın Açık Erişim (çalışmanın bir dergi web sitesi aracılığıyla yayımlanır yayımlanmaz herkese açık olarak erişilebilir olması) ve Platin (veya Elmas) Açık Erişim (yazarların makale işlem ücreti [APC; Article Processing Charge] ödemesine gerek kalmadan dergi web sitesinden yayımlandıktan hemen sonra herkese açık olarak erişilebilir olması) yer alır.",
     "related_terms": [
         "Article Processing Charge",

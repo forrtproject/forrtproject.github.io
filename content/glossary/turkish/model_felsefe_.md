@@ -1,6 +1,7 @@
 {
     "type": "glossary",
     "title": "Model (Felsefe) [Model (philosophy)]",
+    "sort_key": "model (felsefe) [model (philosophy)]",
     "definition": "Sözlü bir açıklamanın belirsizliği ortadan kaldırmak için resmileştirilmesi ve aynı zamanda bir teorinin kapsayabileceği boyutların kısıtlandırılması sürecidir. Bu nedenle model veriye dayalıdır. “Birçok bilimsel model temsili modellerdir: Bunlar, modelin hedef sistemi olan dünyanın seçilmiş bir parçasını veya yönünü temsil eder” (Frigg ve Hartman, 2020).",
     "related_terms": [
         "Hypothesis",

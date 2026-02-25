@@ -1,6 +1,7 @@
 {
     "type": "glossary",
     "title": "OpenNeuro",
+    "sort_key": "openneuro",
     "definition": "Eine kostenlose Plattform, auf der Forscher:innen Daten aus Bildgebungsverfahren des Gehirns (z. B. MRI-, MEG-, EEG-, iEEG-, EKoG-, ASL- und PET-Daten) frei und offen austauschen, durchsuchen, herunterladen und wiederverwenden können.",
     "related_terms": [
         "BIDS data structure",

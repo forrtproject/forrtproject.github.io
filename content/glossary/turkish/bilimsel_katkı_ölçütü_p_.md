@@ -1,6 +1,7 @@
 {
     "type": "glossary",
     "title": "Bilimsel Katkı Ölçütü (p) [Research Contribution Metric (*p*)]",
+    "sort_key": "bilimsel katkiz ozlczuztuz (p) [research contribution metric (*p*)]",
     "definition": "Atıf ağıyla bağlantılı yayınlar arasındaki benzerliği değerlendiren semantometrik bir ölçüm türüdür. Bu yöntem, yazarların katkılarını değerlendirmek için basit bir formül kullanır. Bir p yayını, p tarafından atıf yapılan yayınlarla, p’ye atıf yapan yayınlar arasındaki semantik uzaklık temel alınarak tahmin edilebilir.",
     "related_terms": [
         "Semantometrics"
@@ -24,7 +25,7 @@
     ],
     "language": "turkish",
     "translated_by": [
-        "Elif Bastan"
+        "Elif Baştan"
     ],
     "translation_reviewed_by": [
         "Neslihan Özhan"

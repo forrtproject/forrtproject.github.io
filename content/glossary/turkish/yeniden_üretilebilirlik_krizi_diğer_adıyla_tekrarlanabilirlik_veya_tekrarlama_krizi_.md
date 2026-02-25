@@ -1,6 +1,7 @@
 {
     "type": "glossary",
     "title": "Yeniden üretilebilirlik krizi (diğer adıyla, tekrarlanabilirlik veya tekrarlama krizi) [Reproducibility crisis (aka Replicability or replication crisis)]",
+    "sort_key": "yeniden uzretilebilirlik krizi (digzer adizyla, tekrarlanabilirlik veya tekrarlama krizi) [reproducibility crisis (aka replicability or replication crisis)]",
     "definition": "Birçok disiplini kapsayan yayımlanmış bilimsel çalışmaların büyük bir bölümünün tekrarlanamaması yönündeki bulgu (örn., Open Science Collaboration, 2015) ve buna bağlı olarak akademik kültür ve düşünce biçiminde yaşanan değişim. Bunun,  araştırma ve yayıncılık uygulamalarındaki kalite ve dürüstlük eksikliğinden—örneğin yayın yanlılığı, şüpheli araştırma uygulamaları (QRPs; Questionable Research Practice) ve şeffaflık yetersizliğinden—kaynaklandığı ve bu durumun yanlış pozitif sonuçların abartılı bir oranda raporlanmasına sebep olduğu kabul edilmektedir. Bazı araştırmacılar bu süreci, söz konusu uygulamaları iyileştirmeye yönelik bir ‘Güvenilirlik Devrimi (Credibility revolution)’ olarak nitelendirmektedir.",
     "related_terms": [
         "Credibility crisis",
@@ -27,7 +28,7 @@
     ],
     "language": "turkish",
     "translated_by": [
-        "Elif Bastan"
+        "Elif Baştan"
     ],
     "translation_reviewed_by": [
         "Neslihan Özhan"

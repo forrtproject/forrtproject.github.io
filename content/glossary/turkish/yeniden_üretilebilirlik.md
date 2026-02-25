@@ -1,6 +1,7 @@
 {
     "type": "glossary",
     "title": "Yeniden üretilebilirlik [Reproducibility]",
+    "sort_key": "yeniden uzretilebilirlik [reproducibility]",
     "definition": "Bilimsel iddiaların değeri veya doğruluğunu, orijinal yöntemler, veriler ve kodlara dayanarak değerlendirmek için, çeşitli faaliyetleri kapsayan bir yelpaze (reproducibility spectrum – yeniden üretilebilirlik yelpazesi) üzerinde tanımlanan asgari standart. Örneğin, orijinal araştırmacının verileri ve bilgisayar kodları kullanılarak sonuçların yeniden üretilmesi (Barba, 2018) — bu genellikle hesaplamalı yeniden üretilebilirlik (computational reproducibility) olarak adlandırılır. Yeniden üretilebilirlik, yayımlanan sonuçların kalitesini, doğruluğunu veya geçerliliğini garanti etmez (Peng, 2011). Bazı alanlarda ise bu anlam, ‘tekrarlanabilirlik’ (replicability) ya da ‘yinelenebilirlik’ (repeatability) terimleriyle ilişkilendirilir.",
     "related_terms": [
         "Computational reproducibility",
@@ -30,7 +31,7 @@
     ],
     "language": "turkish",
     "translated_by": [
-        "Elif Bastan"
+        "Elif Baştan"
     ],
     "translation_reviewed_by": [
         "Neslihan Özhan"

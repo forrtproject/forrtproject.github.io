@@ -1,6 +1,7 @@
 {
     "type": "glossary",
     "title": "Rozetler (Açık Bilim) [Badges (Open Science)]",
+    "sort_key": "rozetler (aczizk bilim) [badges (open science)]",
     "definition": "Rozetler, editörlük ekiplerinin yayımlanmış makalelere eklediği ve açık bilim uygulamalarını takdir etmek amacıyla kullandığı sembollerdir. Araştırmacıları veri, materyal paylaşmaya veya çalışmanın ön-kayıt yapılmasına teşvik ederler. Görünür semboller olarak, okuyucuya içeriğin rozet almak için genellikle ilgili dergi tarafından gerekli açık araştırma standartlarını karşıladığını gösterirler . Farklı uygulamalara göre farklı rozetler verilebilir. Örneğin, araştırma materyallerinin kalıcı bir yerde erişilebilir hale getirilmesi (‘açık materyal rozeti’ ve ‘açık veri rozeti’) ya da çalışmanın ön-kayıt altına alınması (‘ön-kayıt rozeti’).",
     "related_terms": [
         "Incentives",
@@ -31,6 +32,6 @@
         "Ege Emek"
     ],
     "translation_reviewed_by": [
-        "Elif Bastan"
+        "Elif Baştan"
     ]
 }

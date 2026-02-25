@@ -1,7 +1,8 @@
 {
     "type": "glossary",
     "title": "Çeşitlilik [Diversity]",
-    "definition": "Çeşitlilik, insanlar arasındaki (yani bireyler arası) farklılıkları ifade eder. Örneğin; yetenek, yaş, inançlar, bilişsel özellikler, ülke, engellilik durumu, etnik köken, cinsiyet, dil, ırk, din ya da cinsel yönelim bu farklılıkların bazı boyutlarıdır. Çeşitlilik; araştırmacıların çeşitliliği (araştırmayı kim(ler)in yaptığı), örneklemlerinin çeşitliliği (çalışmalara kimlerin dahil edildiği) ve bakış açılarının çeşitliliği (araştırmacıların çalışmaya getirdiği perspektif ve inançlar; Syed & Kathawalla, 2020) anlamlarına gelebilir.",
+    "sort_key": "czeszitlilik [diversity]",
+    "definition": "Çeşitlilik, insanlar arasındaki (yani bireyler arası) farklılıkları ifade eder. Örneğin; yetenek, yaş, inançlar, bilişsel özellikler, ülke, engellilik durumu, etnik köken, cinsiyet, dil, ırk, din ya da cinsel yönelim bu farklılıkların bazı boyutlarıdır. Çeşitlilik; araştırmacıların çeşitliliği (araştırmayı kim(ler)in yaptığı), örneklemlerinin çeşitliliği (çalışmalara kimlerin dahil edildiği) ve bakış açılarının çeşitliliği (araştırmacıların çalışmaya getirdiği perspektif ve inançlar; Syed ve Kathawalla, 2020) anlamlarına gelebilir.",
     "related_terms": [
         "Bropenscience",
         "BIZARRE",

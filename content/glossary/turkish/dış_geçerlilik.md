@@ -1,6 +1,7 @@
 {
     "type": "glossary",
     "title": "Dış Geçerlilik [External Validity]",
+    "sort_key": "dizsz geczerlilik [external validity]",
     "definition": "Bilimsel bir çalışmanın bulgularının, çalışma bağlamı dışındaki diğer bağlamlara (farklı ölçümler, ortamlar, kişiler, yerler ve zamanlar) genellenip genellenemeyeceğini ifade eder. İstatistiksel açıdan dış geçerliliğe yönelik tehditler, bir faktörün (bağımsız değişken) etkisinin başka bir faktöre (karıştırıcı değişken) bağlı olarak değiştiği etkileşimlerden kaynaklanabilir. Ayrıca dış geçerlilik, çalışmanın tasarımıyla da sınırlanabilir (örn., yapay bir laboratuvar ortamı ya da temsil edici olmayan bir örneklem). Alternatif tanım: Psikometride, test edilen bir psikolojik yapının dışsal değişkenlerle ilişkisini doğrulayan kanıtların gücünü ifade eder.",
     "related_terms": [
         "Constraints on Generality (COG)",

@@ -1,6 +1,7 @@
 {
     "type": "glossary",
     "title": "Aşağıdan yukarıya yaklaşım (Açık Akademiye yönelik) [Bottom-up approach (to Open Scholarship)]",
+    "sort_key": "aszagzizdan yukarizya yaklaszizm (aczizk akademiye yoznelik) [bottom-up approach (to open scholarship)]",
     "definition": "Akademik kültür içinde, akademisyenlerin araştırma ve araştırma kültürünün kalitesini artırmaya yönelik içten gelen ilgilerine odaklanan, bunu örneğin destekleyici, iş birlikçi, yaratıcı ve kapsayıcı hale getirerek yapan, bir yaklaşım. Genellikle, daha kıdemli araştırmacılar tarafından başlatılan ‘yukarıdan aşağıya’ yaklaşıma kıyasla, coşku ve yenilikçilikle bilimsel metodolojide dönüşüm ve değişimi yönlendiren değişim öncüleri olarak hareket eden kariyerinin başındaki araştırmacıların liderliğini ifade eder. “Aşağıdan yukarıya yaklaşımlar, genellikle politika çözümleri geliştirmenin başlangıç noktası olarak ampirik verileri, yaşanmış deneyimleri, kişisel anlatımları ve koşulları kullanarak, olayın kendine özgü yerel koşullarını dikkate alır.”",
     "related_terms": [
         "Early Career Researchers (ECRs)",
@@ -34,6 +35,6 @@
         "Ege Emek"
     ],
     "translation_reviewed_by": [
-        "Elif Bastan"
+        "Elif Baştan"
     ]
 }

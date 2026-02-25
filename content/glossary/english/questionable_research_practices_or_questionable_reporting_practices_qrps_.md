@@ -1,6 +1,7 @@
 {
     "type": "glossary",
     "title": "Questionable Research Practices or Questionable Reporting Practices (QRPs)",
+    "sort_key": "questionable research practices or questionable reporting practices (qrps)",
     "definition": "A range of activities that intentionally or unintentionally distort data in favour of a researcher’s own hypotheses \\- or omissions in reporting such practices \\- including; selective inclusion of data, hypothesising after the results are known (HARKing), and *p*\\-hacking. Popularized by John et al. (2012).",
     "related_terms": [
         "Creative use of outliers",

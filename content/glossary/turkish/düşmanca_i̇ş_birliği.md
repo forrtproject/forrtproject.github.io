@@ -1,7 +1,8 @@
 {
     "type": "glossary",
     "title": "Düşmanca İş Birliği [Adversarial collaboration]",
-    "definition": "Karşıt veya çelişkili teorik görüşlere sahip—ve muhtemelen çalışma sonuçları hakkında ayrışan tahminlerde bulunan—iki veya daha fazla araştırmacının ortak bir projede işbirliği yapması. Amaç, yanlılıkları ve yöntemsel zayıflıkları en aza indirmek ve rakip teorilerin hesaba katması gereken ortak bir olgular tabanı oluşturmaktır.",
+    "sort_key": "duzszmanca i̇sz birligzi [adversarial collaboration]",
+    "definition": "Karşıt veya çelişkili teorik görüşlere sahip—ve muhtemelen çalışma sonuçları hakkında ayrışan tahminlerde bulunan—iki veya daha fazla araştırmacının ortak bir projede iş birliği yapması. Amaç, yanlılıkları ve yöntemsel zayıflıkları en aza indirmek ve rakip teorilerin hesaba katması gereken ortak bir olgular tabanı oluşturmaktır.",
     "related_terms": [
         "Collaboration",
         "Many Analysts",
@@ -34,6 +35,6 @@
         "Ege Emek"
     ],
     "translation_reviewed_by": [
-        "Elif Bastan"
+        "Elif Baştan"
     ]
 }

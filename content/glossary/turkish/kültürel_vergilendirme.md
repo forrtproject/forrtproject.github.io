@@ -1,6 +1,7 @@
 {
     "type": "glossary",
     "title": "Kültürel Vergilendirme [Cultural taxation]",
+    "sort_key": "kuzltuzrel vergilendirme [cultural taxation]",
     "definition": "Azınlıkta kalan veya dışlanmış gruplara mensup bireylerden –özellikle de beyaz olmayan akademisyenlerden– beklenen ya da onlara yüklenen ekstra emek biçimidir. Bu emek genellikle etnik, kültürel ya da toplumsal cinsiyet temsili ve çeşitliliği sağlamak amacıyla verilen hizmet rollerinden kaynaklanır. Söz konusu roller resmi ya da gayri resmî olabilir ve çoğu zaman ödüllendirilmez ya da maddi karşılığı olmaz. Çeşitlilikle ilgili konularda uzmanlık sağlamak, çoğunluk gruplarının üyelerini eğitmek, azınlık topluluklarıyla aracı rolü üstlenmek ve azınlık öğrencilere hem resmî hem de gayri resmî şekilde mentörlük yapıp destek sunmak, bu tür emeğin bazı örneklerindendir.",
     "related_terms": [
         "Invisible labor",

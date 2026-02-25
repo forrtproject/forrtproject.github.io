@@ -1,6 +1,7 @@
 {
     "type": "glossary",
     "title": "Psödoreplikasyon [Pseudoreplication]",
+    "sort_key": "psozdoreplikasyon [pseudoreplication]",
     "definition": "Verilerde istatistiksel bağımsızlığın olmaması ve böylece örneklem sayısının (yani tekrarlamaların) yapay olarak artırılması durumu. Örneğin, aynı deney grubundan (örn., katılımcı veya tarım mahsulü) birden fazla veri noktası toplanması. Bir çok yöntem bu sorunun üstesinden gelebilir; örneğin, tekrarlamalar arasında ortalama almak (örn., bir katılımcının tepki sürelerinin ortalamasını almak) veya karışık etkili modeller kullanarak rastgele etkiler yapısında psödoreplikasyonu dikkate almak (örn., her bir tepki süresinin aynı katılımcıya ait olduğunu belirtmek). Ancak, ilk bahsedilen yöntem bilgi kaybı ve istatistiksel gücün azalması ile ilişkilidir.",
     "related_terms": [
         "Confounding",

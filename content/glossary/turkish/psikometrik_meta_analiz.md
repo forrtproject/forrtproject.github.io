@@ -1,6 +1,7 @@
 {
     "type": "glossary",
     "title": "Psikometrik meta-analiz [Psychometric meta-analysis]",
+    "sort_key": "psikometrik meta-analiz [psychometric meta-analysis]",
     "definition": "Psikometrik meta-analizler, ilgilenilen etki büyüklüklerinin ölçüm hatası ve diğer yapay etkiler nedeniyle azalmasını, psikometrik ilkelere dayanan prosedürler kullanarak (örn., ölçümlerin güvenilirliği) düzeltmeyi amaçlar. Bu prosedürler, sentezlenen etki büyüklükleri korelasyonel veya deneysel meta-analizde kullanılmadan önce uygulanmalıdır, çünkü bu düzeltmeleri yapmak genellikle daha büyük ve daha az değişken etki büyüklüklerine yol açar.",
     "related_terms": [
         "Correlational meta-analysis",

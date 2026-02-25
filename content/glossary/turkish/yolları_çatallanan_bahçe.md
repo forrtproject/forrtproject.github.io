@@ -31,5 +31,6 @@
     ],
     "translation_reviewed_by": [
         "Ege Emek"
-    ]
+    ],
+    "sort_key": "yollariz czatallanan bahcze [garden of forking paths]"
 }

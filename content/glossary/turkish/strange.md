@@ -1,6 +1,7 @@
 {
     "type": "glossary",
     "title": "STRANGE",
+    "sort_key": "strange",
     "definition": "STRANGE ‘çerçevesi’, hayvan davranışı araştırmalarında araştırmacıların, örnekleme yanlılıklarını, planlama, yürütme ve yorumlama aşamalarında dikkate almalarına yardımcı olmak amacıyla önerilen bir yaklaşım ve soru setidir. STRANGE, hayvan araştırmalarında örnekleme yanlılığına yol açabilecek çeşitli olası kaynakları vurgulayan bir kısaltmadır: hayvanların sosyal geçmişi (Social background), yakalanabilirlik ve kendiliğinden seçilme (Trappability and self-selection), yetiştirilme geçmişi (Rearing history), alışma ve uyum sağlama süreci (Acclimation and habituation), tepkisellikteki doğal değişimler (Natural changes in responsiveness), genetik yapı (Genetic make-up) ve deneyim (Experience).",
     "related_terms": [
         "Bias",
@@ -27,7 +28,7 @@
     ],
     "language": "turkish",
     "translated_by": [
-        "Elif Bastan"
+        "Elif Baştan"
     ],
     "translation_reviewed_by": [
         "Neslihan Özhan"

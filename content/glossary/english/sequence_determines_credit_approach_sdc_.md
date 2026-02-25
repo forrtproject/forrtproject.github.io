@@ -1,6 +1,7 @@
 {
     "type": "glossary",
     "title": "Sequence-determines-credit approach (SDC)",
+    "sort_key": "sequence-determines-credit approach (sdc)",
     "definition": "An authorship system that assigns authorship order based on the contribution of each author. The names of the authors are listed according to their contribution in descending order with the most contributing author first and the least contributing author last.",
     "related_terms": [
         "Authorship",

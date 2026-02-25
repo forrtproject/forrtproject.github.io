@@ -1,6 +1,7 @@
 {
     "type": "glossary",
     "title": "Açık Hakem Değerlendirmesi [Open Peer Review]",
+    "sort_key": "aczizk hakem degzerlendirmesi [open peer review]",
     "definition": "Yazar ve hakem kimliklerinin, hakem raporlarının ve editöryal karar mektuplarının herhangi bir kombinasyonunun akademik yayın süresince veya yayın sonrasındaki herhangi bir aşamada birbirlerine veya kamuya açıklanmasını içeren bir akademik değerlendirme süreci. Hakem değerlendirmesi sürecine kimlerin katılabileceğine ve hangi platformlarda yapılabileceğine dair kısıtlamaların kaldırılmasını da ifade edebilir. Not olarak, ‘açık hakem değerlendirmesi’ terimi, yukarıda belirtilen uygulamaların herhangi birini ya da tamamını tanımlamak için birbiriyle dönüşümlü olarak kullanılmıştır.",
     "related_terms": [
         "Non-anonymised peer review",

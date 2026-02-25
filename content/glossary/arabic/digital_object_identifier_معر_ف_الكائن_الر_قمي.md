@@ -1,6 +1,7 @@
 {
     "type": "glossary",
     "title": "digital object identifier معرّف الكائن الرَّقمي [DOI (digital object identifier)]",
+    "sort_key": "digital object identifier معرّف الكائن الرَّقمي [doi (digital object identifier)]",
     "definition": "معرفات الكائنات الرَّقميَّة هي سلاسل أبجديَّة رقميَّة يمكن تخصيصها لأي كيان بما في ذلك: المنشورات (ومنها المطبوعات الأوليَّة)، والمواد، ومجموعات البيانات، والأفلام. ولا يقتصر استخدام المعرّفات الرَّقميَّة على المواد الأكاديميَّة فقط. إنَّ معرفات الكائنات الرَّقميَّة توفِّر نظامًا لتحديد دائم، وقابل للتَّنفيذ، وتبادل قابل للتَّشغيل البيني للمعلومات المدارة على الشَّبكات الرَّقميَّة  (https://www.doi.org/doi-handbook/HTML/index.html). هناك العديد من وكالات لتسجيل معرّفات الكائنات الرَّقميَّة وإدارتها، ولكن من المرجَّح أنْ يواجه أغلب الباحثين اثنتين هما: Crossref و Datacite. :**المصطلحات ذات الصِّلة** arXiv and BibTex; Crossref, Datacite, ISBN, ISO, الأوركيد; Permalink.",
     "related_terms": [
         "arXiv and BibTex",

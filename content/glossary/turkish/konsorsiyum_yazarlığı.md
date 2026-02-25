@@ -1,6 +1,7 @@
 {
     "type": "glossary",
     "title": "Konsorsiyum Yazarlığı [Consortium authorship]",
+    "sort_key": "konsorsiyum yazarlizgziz [consortium authorship]",
     "definition": "Yazar sütununda yalnızca konsorsiyum veya kuruluşun adı görünür ve literatürde bireylerin adları yer almaz. Örneğin, yazar olarak ‘FORRT’. Bu durum, çok sayıda iş birlikçi ve/veya katkıda bulunanların olduğu iş birlikli projelerin ürünlerinde görülebilir. Dergi politikasına bağlı olarak, bireysel araştırmacılar ORCID ve Scopus gibi literatür veri tabanlarında ürünün yazarlarından biri olarak kaydedilebilir. Konsorsiyum yazarlığı, grup, kurumsal, organizasyon/kuruluş veya kolektif yazarlık (örn., https://www.bmj.com/about-bmj/resources-authors/article-submission/authorship-contributorship) veya iş birliğine dayalı yazarlık (örn., https://support.jmir.org/hc/en-us/articles/115001449591-What-is-a-group-author-collaborative-author-and-does-it-need-an-ORCID) olarak da adlandırılabilir.",
     "related_terms": [
         "Authorship",
@@ -28,6 +29,6 @@
         "Ege Emek"
     ],
     "translation_reviewed_by": [
-        "Elif Bastan"
+        "Elif Baştan"
     ]
 }

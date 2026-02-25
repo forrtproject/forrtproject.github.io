@@ -1,6 +1,7 @@
 {
     "type": "glossary",
     "title": "Sosyal sınıf [Social class]",
+    "sort_key": "sosyal siznizf [social class]",
     "definition": "Sosyal sınıf, Amerikan Psikoloji Derneği tarafından da önerildiği üzere (American Psychological Association, Task Force on Socioeconomic Status, 2007) genellikle hem objektif hem de subjektif ölçütlerle değerlendirilir. Genellikle sadece eğitim ya da gelir gibi tek bir faktörü (örn., ekonomik değişkenler) temel alan geleneksel anlayışın aksine, bireyin sosyal sınıfı; eğitim düzeyi, gelir durumu, mesleki statüsü, öznel sosyal statüsü ve bireyin kendini ait hissettiği sosyal sınıf gibi çeşitli bileşenlerin birleşimi olarak ele alınır. Sosyal sınıf, aynı zamanda kültürel bir değişken olarak kabul edilir; çünkü zaman içinde yavaş değişen, görece istikrarlı bir yapıya sahiptir. Sosyal sınıf, akademik sonuçlar üzerinde önemli etkiler yaratabilir. Bir birey yüksek sosyoekonomik statüye sahip olsa bile, kendisini işçi sınıfına ait olarak tanımlayabilir. İşçi sınıfından gelen öğrenciler, orta sınıftan gelen öğrencilerden farklı yaşam koşullarına ve çoğu zaman daha kısıtlayıcı sorumluluklara sahip olma eğilimindedir; bu da onların diğer öğrencilerle kaynaşmasını daha zor hale getirir (Rubin, 2021). Zaman ve maddi imkân eksikliği, üniversitedeki sosyal deneyimlerini kısıtlayabilir. İşçi sınıfından gelen öğrenciler genellikle geçimlerini sağlamak için çalışmak zorundadır; bu da onların hem akademik etkinliklere hem de sosyal etkileşimlere ayırabilecekleri zamanı kısıtlar. Ayrıca, sosyal deneyimlerle ilişkili bazı harcamaları (örn., dışarıda yemek yemek) karşılamalarını da zorlaştırabilir.",
     "related_terms": [
         "Social integration"
@@ -24,7 +25,7 @@
     ],
     "language": "turkish",
     "translated_by": [
-        "Elif Bastan"
+        "Elif Baştan"
     ],
     "translation_reviewed_by": [
         "Neslihan Özhan"

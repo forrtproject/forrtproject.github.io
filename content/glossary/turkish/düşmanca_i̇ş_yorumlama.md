@@ -30,5 +30,6 @@
     ],
     "translation_reviewed_by": [
         "Elif Bastan"
-    ]
+    ],
+    "sort_key": "duzszmanca i̇sz yorumlama [adversarial (collaborative) commentary]"
 }

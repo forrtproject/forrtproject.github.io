@@ -1,6 +1,7 @@
 {
     "type": "glossary",
     "title": "MOOCs [Massive Open Online Courses (MOOCs)]",
+    "sort_key": "moocs [massive open online courses (moocs)]",
     "definition": "Kurse, die ausschließlich online stattfinden, für jeden Lernenden jederzeit zugänglich sind, in der Regel kostenlos sind (wenn auch nicht unbedingt offen lizenziert) und videobasierte Anleitungen sowie herunterladbare Datensätze und Übungen bieten. Der Aspekt \"massive\" beschreibt die große Anzahl von Lernenden, die aufgrund der Flexibilität, der geringen oder gar nicht anfallenden Kosten und der Online-Natur der Materialien gleichzeitig auf den Kurs zugreifen können.",
     "related_terms": [
         "Accessibility",

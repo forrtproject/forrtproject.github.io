@@ -1,6 +1,7 @@
 {
     "type": "glossary",
     "title": "Konumsallık Haritası [Positionality Map]",
+    "sort_key": "konumsallizk haritasiz [positionality map]",
     "definition": "Eleştirel nitel araştırmalarda açık konumsallığı uygulamak için bir refleksif araç. Bir harita, araştırmacıların sosyal konumları üzerine düşünmelerini ve refleksif olmalarını sağlamak için ‘esnek bir başlangıç noktası’ olarak kullanılmaktadır. Harita üç kademeden oluşur: sosyal kimliklerin belirlenmesi (1. Kademe), bu konumların hayatımız üzerindeki etkileri (2. Kademe) ve sosyal kimliğimizin özelliklerine bağlı olabilecek ayrıntılar (3. Kademe) (Jacobson ve Mustafa, 2019, s.1). Haritanın amacı, ‘araştırmacıların sosyal konumlarını ve bu konumların nitel araştırma sürecinde ne tür zorluklar oluşturacağını ve kolaylık sağlayan yönlerini daha iyi tanımlayıp anlamalarıdır’.",
     "related_terms": [
         "Positionality",

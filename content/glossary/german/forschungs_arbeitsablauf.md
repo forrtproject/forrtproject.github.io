@@ -1,6 +1,7 @@
 {
     "type": "glossary",
     "title": "Forschungs-Arbeitsablauf [Research workflow]",
+    "sort_key": "forschungs-arbeitsablauf [research workflow]",
     "definition": "Der Prozess der Durchführung von Forschungsarbeiten von der Konzeption bis zur Verbreitung. Ein typischer Arbeitsablauf (workflow) könnte folgendermaßen aussehen: Beginnend mit der Konzeptualisierung, um eine Forschungsfrage zu ermitteln und eine Studie zu entwerfen. Nach der Konzeption der Studie müssen die Forschenden eine ethische Genehmigung einholen (falls erforderlich) und können beschließen, die endgültige Version zu präregistrieren. Anschließend erheben die Forschenden ihre Daten und analysieren sie. Schließlich endet der Prozess mit der Verbreitung, wobei zwischen Preprint- und Postprint-Phasen unterschieden wird, wenn das Manuskript bei einer Zeitschrift eingereicht wird.",
     "related_terms": [
         "Open Research Workflow",

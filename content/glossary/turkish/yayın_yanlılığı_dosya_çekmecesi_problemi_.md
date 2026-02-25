@@ -1,6 +1,7 @@
 {
     "type": "glossary",
     "title": "Yayın Yanlılığı (Dosya Çekmecesi Problemi) [Publication bias (File Drawer Problem)]",
+    "sort_key": "yayizn yanlizlizgziz (dosya czekmecesi problemi) [publication bias (file drawer problem)]",
     "definition": "‘Çalışma bulgularının yönü veya gücüne dayalı olarak sonuçların yayımlanmaması’ durumu (Dickersin ve Min, 1993, s. 135). Bu yanlılık, genellikle, yeni ve anlamlı sonuçların, replikasyon çalışmalarına ve anlamsız sonuçlara göre yayımlanmaya daha değerli olduğu yönündeki eğilimle birlikte, bir çalışmanın yayımlanabilirliğinin değerlendirilmesinin, orantısız bir şekilde çalışmanın sonucuna bağlı olduğu durumlarda ortaya çıkar. Bu yanlılık, genellikle orantısız sayıda anlamlı bulgu ve şişirilmiş etki büyüklükleri şeklinde gerçekleşir. Bu süreç, yayımlanan bilimsel literatürün tüm araştırmaların genelini temsil etmemesine ve özellikle anlamsız bulguların yetersiz temsil edilmesine yol açar. Bu tür bulgular, dolayısıyla, hiçbir zaman yayımlanmadıkları ve bulunabilir bir dokümantasyona sahip olmadıkları ‘dosya çekmecesi’ olarak adlandırılan yerde kalır.",
     "related_terms": [
         "Dissemination bias",

@@ -1,6 +1,7 @@
 {
     "type": "glossary",
     "title": "Kayıtlı Rapor [Registered Report]",
+    "sort_key": "kayiztliz rapor [registered report]",
     "definition": "Bilimsel bir yayımlama formatı olup, öncelikle arka plan ve yöntemlerin (çalışma tasarımı, ölçüm ve analiz planı) hakem değerlendirmesi yapılır; yeterince kaliteli olan makaleler bu aşamada prensipte kabul (IPA; in-principle acceptance) alır. Genellikle bu Aşama 1 inceleme, veri toplama öncesinde gerçekleşir, ancak ikincil veri analizleri de bu yayımlama formatında oluşturmak mümkündür. Veri analizleri yapıldıktan ve sonuçlar ile tartışma bölümleri yazıldıktan sonra, Aşama 2 incelemesi, yazarların çalışma planına ne kadar sadık kaldığını ve plan dışı değişiklikleri raporlayıp raporlamadığını değerlendirir (ve sonuçlara tarafsız kalır). Bu, değerlendirme odak noktasını çalışmanın önerilen araştırma sorusu ve metodolojisine kaydırır; çalışmanın sonuçlarına duyulan ilginin önüne geçer.",
     "related_terms": [
         "Preregistration",

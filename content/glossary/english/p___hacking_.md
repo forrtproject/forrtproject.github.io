@@ -29,5 +29,6 @@
     "language": "english",
     "aliases": [
         "/glossary/p___hacking_"
-    ]
+    ],
+    "sort_key": "p*****-hacking *"
 }

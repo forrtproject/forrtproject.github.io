@@ -1,6 +1,7 @@
 {
     "type": "glossary",
     "title": "Özet Yanlılığı [Abstract Bias]",
+    "sort_key": "ozzet yanlizlizgziz [abstract bias]",
     "definition": "Makalenin ana gövdesinde anlamlı olmayan sonuçları rapor ederken, özet kısmında sadece anlamlı sonuçları rapor etme eğilimi (anlamlı olmayan sonuçları tamamen rapor etmemek seçici raporlama anlamına gelir). Özet yanlılığı, anlamlı olmayan bulgular bildiren çalışmaların, başlık, özet ve anahtar kelimelerdeki bilgilere dayanan standart meta-analitik arama prosedürleriyle yakalanamamasına ve dolayısıyla meta-analizlerin sonuçlarının saptırılmasına sebep olmaktadır.",
     "related_terms": [
         "Cherry-picking",
@@ -29,6 +30,6 @@
         "Ege Emek"
     ],
     "translation_reviewed_by": [
-        "Elif Bastan"
+        "Elif Baştan"
     ]
 }

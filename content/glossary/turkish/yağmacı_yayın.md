@@ -1,6 +1,7 @@
 {
     "type": "glossary",
     "title": "Yağmacı Yayın [Predatory Publishing]",
+    "sort_key": "yagzmaciz yayizn [predatory publishing]",
     "definition": "Yağmacı (bazen ‘şaibeli’ olarak da adlandırılan) yayıncılık, yayınevlerinin bilimsel çalışmaları yayımlarken meşru kalite kontrol süreçlerini (örn., hakem değerlendirmesi) veya editöryal hizmetleri sağlamaksızın, esas olarak makale işlem ücretleri (APCs; Article Pressing Charges) üzerinden kâr elde etmeyi amaçladığı çeşitli ticari uygulamaları tanımlar. Bu durumun en uç örneğinde, yağmacı yayınevleri ücret ödendiği sürece her türlü çalışmayı yayımlar. Ücret odaklı özel sayılarda yayın yapma ya da editörlük için çok sayıda talep edilmemiş davet gönderme gibi daha az belirgin stratejiler de yağmacı olarak nitelendirilmiştir (Crosetto, 2021).",
     "related_terms": [
         "Article Processing Charge (APC)",

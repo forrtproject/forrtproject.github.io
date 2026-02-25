@@ -1,6 +1,7 @@
 {
     "type": "glossary",
     "title": "Sistemi Oyuna Getirme [Gaming (the system)]",
+    "sort_key": "sistemi oyuna getirme [gaming (the system)]",
     "definition": "Akademik teşvik yapılarıyla örtüşen ancak akademik süreci desteklemeyen, araştırmacının kendisine avantaj sağlayan (örn., prestij, işe alım, terfi) şüpheli araştırma uygulamalarının (örn., bir makaleyi gereksiz yere parçalara bölmek – “veri dilimleme”) benimsenmesidir. Akademik sistemler sonuçları (örn., akademik değerlendirme ölçütü), belirlemek için belirli metriklere dayanıyorsa, bu metrikler kasıtlı olarak manipüle edilebilir veya “oyuna getirilebilir” (Naudet vd., 2018). Terfi, işe alım ve kadro gibi süreçlerin kusurlu metriklere dayanması durumunda, açıklık, titizlik ve şeffaf çalışma dezavantajlı hâle gelebilir; örneğin “nitelik yerine niceliğin” ödüllendirilmesi gibi. Bu durum, mevcut eşitsizlikleri daha da derinleştirebilir.",
     "related_terms": [
         "Incentive structure",

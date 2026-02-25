@@ -1,6 +1,7 @@
 {
     "type": "glossary",
     "title": "JASP",
+    "sort_key": "jasp",
     "definition": "Sir Harold Jeffreys’in adını taşıyan JASP, Jeffrey’s Amazing Statistics Program (Jeffrey’nin Harika İstatistik Programı) ifadesinin kısaltmasıdır. Veri analizi için ücretsiz ve açık kaynaklı bir yazılımdır. Kullanıcı arayüzüne dayanır ve hem sıfır hipotezi testlerini hem de bunların Bayesyen karşılıklarını sunar. JASP, verileri, kodu, analizleri ve sonuçları tek bir dosyada kaydederek hesaplamalı yeniden üretilebilirliği destekler.",
     "related_terms": [
         "Jamovi",

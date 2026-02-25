@@ -1,6 +1,7 @@
 {
     "type": "glossary",
     "title": "Yinelenebilirlik [Repeatability]",
+    "sort_key": "yinelenebilirlik [repeatability]",
     "definition": "Test-tekrar test güvenilirliği (test-retest reliability) ile eş anlamlıdır. Aynı ölçüm aracının ardışık ölçümlerinin sonuçları arasındaki uyumu ifade eder. Yinelenebilirlik, aynı deneysel araçların, aynı gözlemcinin ve aynı ölçüm cihazının, aynı koşullar altında, aynı yerde, kısa bir zaman aralığında tekrarlanacak şekilde ve aynı amaçla kullanılmasını gerektirir (Joint Committee for Guidelines in Metrology, 2008).",
     "related_terms": [
         "Reliability"
@@ -23,7 +24,7 @@
     ],
     "language": "turkish",
     "translated_by": [
-        "Elif Bastan"
+        "Elif Baştan"
     ],
     "translation_reviewed_by": [
         "Neslihan Özhan"

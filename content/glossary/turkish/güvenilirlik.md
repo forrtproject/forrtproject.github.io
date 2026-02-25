@@ -1,6 +1,7 @@
 {
     "type": "glossary",
     "title": "Güvenilirlik [Reliability]",
+    "sort_key": "guzvenilirlik [reliability]",
     "definition": "Tekrarlanan ölçümlerin aynı sonuçlara ne ölçüde ulaştığını ifade eder. Psikometrik bağlamda güvenilirlik, katılımcıların bir anketi birden fazla kez uyguladıklarında benzer puanlar alma derecesini belirtir. Dikkat edilmesi gereken nokta, güvenilirliğin geçerliliği garanti etmediğidir. Ayrıca, iç tutarlılığın yanı sıra farklı güvenilirlik türleri de mevcuttur: test-tekrar test güvenilirliği, paralel form güvenilirliği ve puanlayıcılar arası güvenilirlik.",
     "related_terms": [
         "Consistency",
@@ -27,7 +28,7 @@
     ],
     "language": "turkish",
     "translated_by": [
-        "Elif Bastan"
+        "Elif Baştan"
     ],
     "translation_reviewed_by": [
         "Neslihan Özhan"

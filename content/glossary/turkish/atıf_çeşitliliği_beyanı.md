@@ -1,7 +1,8 @@
 {
     "type": "glossary",
     "title": "Atıf Çeşitliliği Beyanı [Citation Diversity Statement]",
-    "definition": "Cinsiyet ve ırk temelli atıf yanlılığına dikkat çekmek ve bu yanlılığı azaltmak amacıyla yürütülen güncel bir çalışma. Atıf Çeşitliliği Beyanı ‘yazarların kendi yanlılıklarını değerlendirdikleri ve referans listelerinin eşitliğini ölçtükleri kısa bir paragraftır. Bu beyanda şunlar belirtilir: (i) atıf çeşitliliğinin önemi, (ii) makaledeki atıfların yüzdelik dağılımı (veya diğer çeşitlilik göstergeleri), (iii) yüzdelerin değerlendirilme yöntemi ve sınırlılıkları ve (iv) bilimde eşitlikçi uygulamaları iyileştirme taahhüdü’ (Zurn vd., 2020, p. 669).",
+    "sort_key": "atizf czeszitliligzi beyaniz [citation diversity statement]",
+    "definition": "Cinsiyet ve ırk temelli atıf yanlılığına dikkat çekmek ve bu yanlılığı azaltmak amacıyla yürütülen güncel bir çalışma. Atıf Çeşitliliği Beyanı yazarların kendi yanlılıklarını değerlendirdikleri ve referans listelerinin eşitliğini ölçtükleri kısa bir paragraftır. Bu beyanda şunlar belirtilir: (i) atıf çeşitliliğinin önemi, (ii) makaledeki atıfların yüzdelik dağılımı (veya diğer çeşitlilik göstergeleri), (iii) yüzdelerin değerlendirilme yöntemi ve sınırlılıkları ve (iv) bilimde eşitlikçi uygulamaları iyileştirme taahhüdü (Zurn vd., 2020, p. 669).",
     "related_terms": [
         "Citation bias",
         "Diversity",
@@ -27,6 +28,6 @@
         "Ege Emek"
     ],
     "translation_reviewed_by": [
-        "Elif Bastan"
+        "Elif Baştan"
     ]
 }

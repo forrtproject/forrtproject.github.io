@@ -1,6 +1,7 @@
 {
     "type": "glossary",
     "title": "Interaktionsfehlschluss [Interaction Fallacy]",
+    "sort_key": "interaktionsfehlschluss [interaction fallacy]",
     "definition": "Ein statistischer Fehlschluss, der passiert, wenn kein formaler Test durchgeführt wird, um den Unterschied zwischen einer signifikanten und einer nicht signifikanten Korrelation (oder anderen Maßzahlen wie Odds Ratio) zu bewerten. Wenn angenommen wird, dass ein signifikanter und ein nicht signifikanter Korrelationskoeffizient einen statistisch signifikanten Unterschied darstellen, ohne dass der Unterschied ausdrücklich getestet wird, spricht man vom Interaktionsfehler (interaction fallacy)..",
     "related_terms": [
         "Comparison of Correlations",
