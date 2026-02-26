@@ -89,8 +89,8 @@
   force = false
 
 [[redirects]]
-  from = "/re_searchterms"
-  to = "/apps/re_searchterms.html"
+  from = "/re-searchterms"
+  to = "/apps/re-searchterms.html"
   status = 301
   force = false
 
