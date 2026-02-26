@@ -1,6 +1,7 @@
 {
     "type": "glossary",
     "title": "Katılımlı Araştırma [Participatory Research]",
+    "sort_key": "katizlizmliz arasztizrma [participatory research]",
     "definition": "Katılımlı araştırma, araştırmacılar ve topluluklar arasında ortak hedeflere ulaşmak amacıyla, ilgili topluluklardan kişilerin görüşlerinin tüm araştırma sürecine dahil edilmesini ifade eder. Bu yaklaşım, ‘yeni bilginin sistematik ortak üretimi’ yoluyla, araştırmacı ile araştırılanlar arasındaki güç dengesizliğini azaltmayı hedefleyen iş birlikçi bir duruş benimser (Andersson, 2018).",
     "related_terms": [
         "Collaborative research",

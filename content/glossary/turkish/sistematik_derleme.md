@@ -1,6 +1,7 @@
 {
     "type": "glossary",
     "title": "Sistematik Derleme [Systematic Review]",
+    "sort_key": "sistematik derleme [systematic review]",
     "definition": "Bir çeşit alan yazını taraması ve bulgu sentezlemesidir. Bir sistematik derleme, genellikle, belirlenmiş bir konu ve araştırma sorusu üzerine, anahtar terimleri ve veritabanlarını içeren detaylı, yinelenebilir (yeniden üretilebilir) araştırma stratejisi içerir. Sistematik derleme yapan araştırmacılar, arama sonucunda ulaştıkları yayınları, önceden belirledikleri dahil etme ölçütlerine göre süzerek uygun yayınları seçerler. Bu yayınlar daha sonra yazılı bir derleme biçiminde sentezlenebilir. İsteğe bağlı olarak bu sentez, meta-analiz biçiminde istatistiksel bir sentez de içerebilir. Sistematik bir derleme, yanlılığı en aza indirmek için PRISMA (Moher vd., 2009; Page vd., 2021), Cochrane Sistematik Derlemeleri (Higgins vd., 2019) veya NIRO-SR (Topor vd., 2021) gibi standart kılavuzlara uygun şekilde gerçekleştirilmelidir.",
     "related_terms": [
         "Meta-analysis",
@@ -31,7 +32,7 @@
     ],
     "language": "turkish",
     "translated_by": [
-        "Elif Bastan"
+        "Elif Baştan"
     ],
     "translation_reviewed_by": [
         "Neslihan Özhan"

@@ -1,6 +1,7 @@
 {
     "type": "glossary",
     "title": "Genellenebilirlik [Generalizability]",
+    "sort_key": "genellenebilirlik [generalizability]",
     "definition": "Genellenebilirlik, bir çalışmanın bulgularının daha geniş bir insan grubuna, farklı ortamlara veya durumlara ne ölçüde uygulanabilir olduğunu ve bu bulguların daha geniş bir bağlamla nasıl ilişkilendiğini ifade eder (Frey, 2018; Kukull ve Ganguli, 2012). Alternatif tanım: Ele alınan etkinin ne kadar genellenebilir olduğunu test etmek amacıyla, aynı hipotezi sınamak için yeni verilere veya örneklemlere değiştirilmiş materyallerin ve/veya analiz yollarının uygulanmasıdır (The Turing Way Community ve Scriberia, 2021).",
     "related_terms": [
         "Conceptual replication",

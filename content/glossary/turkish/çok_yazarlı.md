@@ -1,6 +1,7 @@
 {
     "type": "glossary",
     "title": "Çok Yazarlı [Many authors]",
+    "sort_key": "czok yazarliz [many authors]",
     "definition": "Farklı kurumlardan onlarca veya yüzlerce yazarı içeren büyük ölçekli işbirlikli projeler. Bu yaklaşım, özellikle 1990'larda yüksek enerji fiziği veya biyomedikal araştırmalarında gözlemlenen daha önceki eğilimleri izleyerek, küçük yazar ekipleri tarafından yürütülen araştırmalara kıyasla, son yıllarda psikoloji ve diğer bilimlerde giderek daha yaygın hale gelmiştir. Bu tür büyük uluslararası bilimsel konsorsiyumlar, daha geniş bir uzmanlık yelpazesini bir araya getirmek ve ortaklaşa makaleler üretmek amacıyla bir araştırma projesi üzerinde çalışırlar.",
     "related_terms": [
         "Collaboration",

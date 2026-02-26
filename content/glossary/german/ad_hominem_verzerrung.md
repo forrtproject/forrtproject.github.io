@@ -1,6 +1,7 @@
 {
     "type": "glossary",
     "title": "Ad hominem Verzerrung [Ad hominem bias]",
+    "sort_key": "ad hominem verzerrung [ad hominem bias]",
     "definition": "Aus dem Lateinischen “zum Menschen hin”; Bewertung eines Arguments oder einer Arbeit in Abhängigkeit von Merkmalen der Person, die diese hervorgebracht hat, und nicht von Merkmalen des Arguments selbst. Ad hominem Verzerrung (bias) kann negativ sein, z. B. wenn Arbeit eine:r Konkurrent:in oder einer Zielperson persönlicher Anfeindungen kritischer betrachtet wird als die Qualität der Arbeit dieser Person verdient, aber auch positiv, z. B. wenn Arbeit eine:r Freund:in von übertrieben positiver Bewertung profitiert.",
     "related_terms": [
         "Peer review"

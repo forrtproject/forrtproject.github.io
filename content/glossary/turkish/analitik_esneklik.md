@@ -1,6 +1,7 @@
 {
     "type": "glossary",
     "title": "Analitik Esneklik [Analytic Flexibility]",
+    "sort_key": "analitik esneklik [analytic flexibility]",
     "definition": "Analitik esneklik, özellikle veri ön işleme ve istatistiksel analiz sırasında yapılan çok sayıda seçimi ifade eden bir tür araştırmacı serbestlik derecesidir (Simmons, Nelson, & Simonsohn, 2011). “Farklı kabul edilebilir analiz yöntemlerinde analiz sonuçlarının çeşitliliği” (Carp, 2012, s. 1). Analitik stratejilerdeki değişkenlik araştırma sonuçlarında da değişkenlik yaratabilir. Özellikle birçok strateji uygulanıp şeffaf bir şekilde raporlanmadığı zaman analitik esneklik problemli olabilir (Masur, 2021).",
     "related_terms": [
         "Garden of forking paths",
@@ -32,6 +33,6 @@
         "Ege Emek"
     ],
     "translation_reviewed_by": [
-        "Elif Bastan"
+        "Elif Baştan"
     ]
 }

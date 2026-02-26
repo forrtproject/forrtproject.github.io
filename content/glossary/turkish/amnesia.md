@@ -1,6 +1,7 @@
 {
     "type": "glossary",
     "title": "AMNESIA",
+    "sort_key": "amnesia",
     "definition": "AMNESIA, verilerden kimlik belirleyici bilgileri kaldırmak için kullanılan ücretsiz bir anonimleştirme aracıdır. Kişisel veriler içeren bir veri seti yüklendikten sonra, AMNESIA orijinal veri setini dönüştürerek kişisel ve hassas veriler açısından anonim hale getirilmiş bir veri seti oluşturur.",
     "related_terms": [
         "Anonymity",
@@ -24,6 +25,6 @@
         "Ege Emek"
     ],
     "translation_reviewed_by": [
-        "Elif Bastan"
+        "Elif Baştan"
     ]
 }

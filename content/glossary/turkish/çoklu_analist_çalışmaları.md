@@ -1,6 +1,7 @@
 {
     "type": "glossary",
     "title": "Çoklu Analist Çalışmaları [Multi-Analyst Studies]",
+    "sort_key": "czoklu analist czalizszmalariz [multi-analyst studies]",
     "definition": "Tipik ampirik çalışmalarda, tek bir araştırmacı veya araştırma ekibi analizi gerçekleştirir ve bu da analiz seçiminin sonuçları ne ölçüde etkilediği konusunda belirsizlik yaratır. Çoklu analistli çalışmalarda, iki veya daha fazla araştırmacı aynı veri seti üzerinde aynı araştırma sorusunu veya hipotezini bağımsız olarak analiz eder. Aczel ve meslektaşlarına (2021) göre, çoklu analistli yaklaşımı belirli bir bulguya olan güvenimizi artırmada; araştırma ekipleri arasındaki analitik tercihlerin etkisini ortaya çıkarmada; ve bu tür analitik yaklaşımlardaki değişkenliği vurgulamada faydalı olabilir.",
     "related_terms": [
         "Analytic flexibility",

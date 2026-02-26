@@ -1,6 +1,7 @@
 {
     "type": "glossary",
     "title": "PARKing",
+    "sort_key": "parking",
     "definition": "Sonuçlar bilindikten sonra ön-kayıt yapmak (PARKing; preregistering after results are known), araştırmacıların bir deneyi (gerektiğinde sonsuz sayıda yeniden deneme ile) tamamladıktan sonra ön kayıt yapması uygulaması olarak tanımlanır. Bu uygulama, ön-kayıt amacını geçersiz kılar ve yalnızca ‘önceden kaydedilmiş’ olmanın sağladığı itibarı elde etmeye çalışan şüpheli araştırma uygulamalarından (QRPs; Questionable Research Practices) biri olup, bilimsel sahtekârlık olarak bile değerlendirilir.",
     "related_terms": [
         "HARKing",

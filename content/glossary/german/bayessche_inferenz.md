@@ -1,6 +1,7 @@
 {
     "type": "glossary",
     "title": "Bayessche Inferenz [Bayesian Inference]",
+    "sort_key": "bayessche inferenz [bayesian inference]",
     "definition": "Eine Methode der statistischen Inferenz oder Schlussfolgerung auf der Grundlage des Bayes'schen Theorems, welche die wissenschaftstheoretische (Un-)Sicherheit unter Zuhilfenahme der Wahrscheinlichkeit nutzt. Die Bayes'sche Schlussfolgerung basiert auf der Zuweisung (und Neuzuweisung, basierend auf neu beobachteten Daten oder gesammelter Evidenz) der Glaubhaftigkeit zu verschiedenen Möglichkeiten. Zwei bestehende Ansätze für Bayes'sche Schlussfolgerungen sind die \"Bayes-Faktoren\" (BF) und die Bayes'sche Parameterschätzung.",
     "related_terms": [
         "Bayes Factor",

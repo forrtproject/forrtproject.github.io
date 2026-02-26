@@ -1,6 +1,7 @@
 {
     "type": "glossary",
     "title": "Interaction Fallacy",
+    "sort_key": "interaction fallacy",
     "definition": "A statistical error in which a formal test is not conducted to assess the difference between a significant and non-significant correlation (or other measures, such as Odds Ratio). This fallacy occurs when a significant and non-significant correlation coefficient are assumed to represent a statistically significant difference but the comparison itself is not explicitly tested.",
     "related_terms": [
         "Comparison of Correlations",

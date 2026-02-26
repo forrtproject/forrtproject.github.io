@@ -1,6 +1,7 @@
 {
     "type": "glossary",
     "title": "Constraints on Generality (COG)",
+    "sort_key": "constraints on generality (cog)",
     "definition": "A statement that explicitly identifies and justifies the target population, and conditions, for the reported findings. Researchers should be explicit about potential boundary conditions for their generalisations (Simons et al., 2017). Researchers should provide detailed descriptions of the sampled population and/or contextual factors that might have affected the results such that future replication attempts can take these factors into account (Brandt et al., 2014). Conditions not explicitly listed are assumed not to have theoretical relevance to the replicability of the effect.",
     "related_terms": [
         "BIZARRE",

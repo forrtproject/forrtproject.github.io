@@ -1,6 +1,7 @@
 {
     "type": "glossary",
     "title": "Çift-kör Hakem Değerlendirmesi [Double-blind peer review]",
+    "sort_key": "czift-kozr hakem degzerlendirmesi [double-blind peer review]",
     "definition": "Araştırma ürünlerinin nitelikli uzmanlar tarafından, yazar(lar) ve hakem(ler)in birbirine karşı anonim kalacak şekilde değerlendirilmesidir. “Bu yaklaşım, yazarların kimliğini ve kurumlarını hakemlerden gizleyerek, mesleki itibar, cinsiyet, ırk ve bağlı olunan kurum gibi önyargıları teorik olarak ortadan kaldırır ve hakemin yanlılık göstermeden yalnızca makalenin bilimsel değerine odaklanmasına olanak tanır.” (Tvina vd., 2019, s.1082).",
     "related_terms": [
         "Ad hominem bias",

@@ -1,6 +1,7 @@
 {
     "type": "glossary",
     "title": "Açık Akademi Bilgi Tabanı (OSKB; Open Scholarship Knowledge Base)",
+    "sort_key": "aczizk akademi bilgi tabaniz (oskb; open scholarship knowledge base)",
     "definition": "Açık Akademi Bilgi Tabanı (OSKB; Open Scholarship Knowledge Base), açık akademinin ne olduğu, neden önemli olduğu ve nasıl uygulandığı hakkında bilgileri paylaşarak bu bilgilerin kolayca bulunup uygulanabilmesini sağlamayı amaçlayan, iş birliğine dayalı bir girişimdir. Bilgiler topluluk tarafından oluşturulur ve düzenlenir. OSKB, Açık Bilim Merkezi (COS; Center for Open Science) bünyesinde yer alan bir topluluktur.",
     "related_terms": [
         "Center for Open Science (COS), Open Educational Resources (OERs)",

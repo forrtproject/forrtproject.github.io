@@ -1,6 +1,7 @@
 {
     "type": "glossary",
     "title": "Model (computational)",
+    "sort_key": "model (computational)",
     "definition": "Computational models aim to mathematically translate the phenomena under study to better understand, communicate and predict complex behaviours.",
     "related_terms": [
         "algorithms",

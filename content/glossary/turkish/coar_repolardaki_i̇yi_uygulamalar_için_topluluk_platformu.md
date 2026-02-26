@@ -1,6 +1,7 @@
 {
     "type": "glossary",
     "title": "COAR Repolardaki İyi Uygulamalar için Topluluk Platformu [COAR Community Framework for Good Practices in Repositories]",
+    "sort_key": "coar repolardaki i̇yi uygulamalar iczin topluluk platformu [coar community framework for good practices in repositories]",
     "definition": "Bilimsel repolar için en iyi uygulamaları ve bu uygulamalar için değerlendirme kriterlerini belirleyen bir platformdur. Esnek ve çok boyutlu yaklaşımı sayesinde, farklı coğrafi ve tematik bağlamlardaki yayın veya veri barındıran çeşitli repo türlerine uygulanabilir.",
     "related_terms": [
         "Metadata",
@@ -30,6 +31,6 @@
         "Ege Emek"
     ],
     "translation_reviewed_by": [
-        "Elif Bastan"
+        "Elif Baştan"
     ]
 }

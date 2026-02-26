@@ -1,6 +1,7 @@
 {
     "type": "glossary",
     "title": "Kesişimsellik [Intersectionality]",
+    "sort_key": "kesiszimsellik [intersectionality]",
     "definition": "Siyahi feminist düşünceden türetilen ve toplumsal kimliklerin ‘iç içe geçmiş (interlocking) baskı sistemleri’ ve eşit(siz)lik yapıları içinde nasıl var olduğunu genel hatlarıyla tanımlayan bir terimdir (Crenshaw, 1989). Kesişimsellik, birden fazla eşitsizlik biçiminin birbirini daha da kötüleştirmek veya karmaşıklaştırmak üzere bir arada nasıl işlediğine dair bir bakış açısı sunar. Birden fazla eşzamanlı kimlik biçimi, çarpansal bir etkiye sahip olabilir ve yalnızca bileşen öğelerinin toplamı değildir. Bunun bir neticesi olarak, kimlik tek bir eksende (örn., ırk, cinsiyet, cinsel yönelim, sınıf) izole bir şekilde incelenerek yeterince anlaşılamaz, aynı anda örtüşen kimlik biçimlerinin de dikkate alınması gerekir.",
     "related_terms": [
         "Bropenscience",

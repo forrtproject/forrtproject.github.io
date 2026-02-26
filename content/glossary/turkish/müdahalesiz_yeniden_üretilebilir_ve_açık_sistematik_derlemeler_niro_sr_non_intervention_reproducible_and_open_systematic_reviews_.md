@@ -1,6 +1,7 @@
 {
     "type": "glossary",
     "title": "Müdahalesiz, Yeniden Üretilebilir ve Açık Sistematik Derlemeler (NIRO-SR; Non-Intervention, Reproducible, and Open Systematic Reviews)",
+    "sort_key": "muzdahalesiz, yeniden uzretilebilir ve aczizk sistematik derlemeler (niro-sr; non-intervention, reproducible, and open systematic reviews)",
     "definition": "Müdahalesiz araştırmalar için sistematik literatür incelemelerinin geliştirilmesini, ön kaydını ve yayılmasını kolaylaştıran kapsamlı bir araç setidir. Bölüm A, müdahalesiz araştırmalar bağlamında sistematik bir inceleme protokolü oluşturmak ve ön kaydını yapmaya ilişkin ayrıntılı yönergeleri ve şeffaflığa hazırlığı temsil eder. Bölüm B ise, tamamlanmış sistematik derlemeyi yazmaya yönelik yönergeleri, özellikle yeniden üretilebilirliği artırmaya odaklanarak sunar.",
     "related_terms": [
         "Knowledge accumulation",

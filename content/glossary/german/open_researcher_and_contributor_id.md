@@ -1,6 +1,7 @@
 {
     "type": "glossary",
     "title": "Open Researcher and Contributor ID [ORCID (Open Researcher and Contributor ID)]",
+    "sort_key": "open researcher and contributor id [orcid (open researcher and contributor id)]",
     "definition": "Eine Organisation, die ein Register mit dauerhaften eindeutigen Identifikatoren (ORCID iDs) für Forscher:innen und Akademiker:innen bereitstellt, so dass diese Nutzer:innen ihre digitalen Forschungsdokumente und andere Beiträge mit ihrem ORCID-Eintrag verknüpfen können. Die Registrierung für eine ORCID iD ist kostenlos aufhttps://orcid.org/register.",
     "related_terms": [
         "Authorship",

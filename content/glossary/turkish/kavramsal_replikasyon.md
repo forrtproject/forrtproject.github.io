@@ -1,7 +1,8 @@
 {
     "type": "glossary",
     "title": "Kavramsal replikasyon [Conceptual replication]",
-    "definition": "İlgilenilen birincil etkinin aynı kaldığı, ancak bu etkinin farklı bir örneklem üzerinde ve orijinal çalışmadan farklı yollarla test edildiği tekrar çalışmasıdır (örneğin, farklı işlemselleştirmeler, veri işleme ve istatistiksel yaklaşımlar ve/veya farklı yapılar kullanılarak; bkz. LeBel vd., 2018). Kavramsal tekrarlamanın amacı genellikle, bir etkinin gözlemlenebilirlik ve genelleştirilebilirlik derecesini (örn., yalnızca belirli bağlamlarda belirli örneklemelerle, belirli ölçüm yaklaşımları kullanılarak) hangi koşulların sınırladığını araştırarak teoriyi değerlendirmek ve ilerletmektir (Hüffmeier vd., 2016).",
+    "sort_key": "kavramsal replikasyon [conceptual replication]",
+    "definition": "İlgilenilen birincil etkinin aynı kaldığı, ancak bu etkinin farklı bir örneklem üzerinde ve orijinal çalışmadan farklı yollarla test edildiği tekrar çalışmasıdır (yani farklı işlemselleştirmeler, veri işleme ve istatistiksel yaklaşımlar ve/veya farklı yapılar kullanılarak; bkz., LeBel vd., 2018). Kavramsal tekrarlamanın amacı genellikle, bir etkinin gözlemlenebilirlik ve genelleştirilebilirlik derecesini (örn., yalnızca belirli bağlamlarda belirli örneklemelerle, belirli ölçüm yaklaşımları kullanılarak) hangi koşulların sınırladığını araştırarak teoriyi değerlendirmek ve ilerletmektir (Hüffmeier vd., 2016).",
     "related_terms": [
         "Direct replication",
         "Generalizability"
@@ -35,6 +36,6 @@
         "Ege Emek"
     ],
     "translation_reviewed_by": [
-        "Elif Bastan"
+        "Elif Baştan"
     ]
 }

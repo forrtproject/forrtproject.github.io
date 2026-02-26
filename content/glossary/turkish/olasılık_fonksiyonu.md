@@ -1,6 +1,7 @@
 {
     "type": "glossary",
     "title": "Olasılık fonksiyonu [Likelihood function]",
+    "sort_key": "olasizlizk fonksiyonu [likelihood function]",
     "definition": "Frekansçı (sıklıkçı) ve Bayesyen analizlerde kullanılan, bir orantının sabitine kadar tanımlanmış istatistiksel bir modeldir. Bir olasılık fonksiyonu, veri göz önünde bulundurulduğunda dağılımınız için farklı parametrelerin olasılığını temsil eder. Olasılık dağılımlarının bilinmeyen popülasyon parametreleri olduğu varsayıldığında, olasılık fonksiyonu örnek verilerin bu parametreleri ne kadar iyi özetlediğini gösterir. Bu nedenle, olasılık fonksiyonu, bilinmeyen popülasyon parametrelerinin belirli değerleri için bir modelin örnek verilere ne kadar iyi uyum sağladığına dair bir fikir verir.",
     "related_terms": [
         "Bayes factor",

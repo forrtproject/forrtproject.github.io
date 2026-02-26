@@ -1,6 +1,7 @@
 {
     "type": "glossary",
     "title": "Açık Veri [Open Data]",
+    "sort_key": "aczizk veri [open data]",
     "definition": "Açık veri, başkaları tarafından kısıtlama olmaksızın serbestçe ve kolayca erişilebilir olan verileri ifade eder, \"Açık veri ve içerik herkes tarafından herhangi bir amaç için serbestçe kullanılabilir, değiştirilebilir ve paylaşılabilir\" ( https://opendefinition.org/). Açık veriler, atıf yapma ve paylaşma gereksinimine tabidir, bu nedenle uygun Açık Lisansları dikkate almak önemlidir. Hassas veya zamana duyarlı veri setleri, veri bütünlüğünün korunmasını sağlamak için ambargo altına alınabilir veya daha seçici erişim seçenekleriyle paylaşılabilir.",
     "related_terms": [
         "Badges (Open Science)",

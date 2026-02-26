@@ -28,5 +28,6 @@
     "language": "english",
     "aliases": [
         "/glossary/p___value_"
-    ]
+    ],
+    "sort_key": "p*****-value *"
 }

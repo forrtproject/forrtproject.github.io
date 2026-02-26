@@ -1,6 +1,7 @@
 {
     "type": "glossary",
     "title": "Şeffaflık [Transparency]",
+    "sort_key": "szeffaflizk [transparency]",
     "definition": "Kişinin eylemlerinin dış değerlendirmeye açık ve erişilebilir olması durumudur. Şeffaflık, araştırmacıların araştırma süreci boyunca aldıkları kuramsal, yöntemsel ve analitik kararlar konusunda dürüst olmalarını ifade eder. Şeffaflık, ‘bilimsellikle ilgili şeffaflık’ ve ‘toplumsallıkla ilgili şeffaflık’ şeklinde anlamlı bir şekilde ayrıştırılabilir. İlki, Açık Bilim söylemlerinin erken dönemlerinde odak noktası olmuştur; ikincisi ise bilimsel bilgilerin karar mekanizmaları ve toplum için anlamlı olacak biçimlerde sunulması açısından gereklidir (Elliott ve Resnik, 2019).",
     "related_terms": [
         "Credibility of scientific claims",
@@ -28,7 +29,7 @@
     ],
     "language": "turkish",
     "translated_by": [
-        "Elif Bastan"
+        "Elif Baştan"
     ],
     "translation_reviewed_by": [
         "Neslihan Özhan"

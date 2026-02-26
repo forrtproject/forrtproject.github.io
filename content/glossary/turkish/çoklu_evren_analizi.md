@@ -1,6 +1,7 @@
 {
     "type": "glossary",
     "title": "Çoklu Evren Analizi [Multiverse analysis]",
+    "sort_key": "czoklu evren analizi [multiverse analysis]",
     "definition": "Çoklu evren analizleri, tek bir hipotezi test etmek için kullanılabilecek, potansiyel olarak eşit derecede gerekçeli tüm veri işleme ve istatistiksel analiz yollarına dayanır. Bir veri çoklu evren analizinde, tek bir ham veri seti, gerekçeli ön-işleme seçeneklerinin tüm olası kombinasyonları uygulanarak bir veri seti çoklu evrenine işlenir. Model çoklu evren analizleri, aynı hipotezi yanıtlamak için aynı veriye eşit derecede gerekçeli istatistiksel modeller uygular. Daha sonra çoklu evrendeki tüm veri setleri üzerinde istatistiksel analiz gerçekleştirilir ve tüm sonuçlar raporlanır; bu da şeffaflığı artırır ve sonuçların farklı veri işleme (veri çoklu evreni) veya istatistiksel (model çoklu evreni) yollara karşı sağlamlığını gösterir. Çoklu evren analizi, grafiksel gösterimler (spesifikasyon eğrisi çizimi yerine histogram ve döşeme çizimi) açısından Spesifikasyon eğrisi analizinden farklıdır.",
     "related_terms": [
         "Garden of forking paths",

@@ -1,6 +1,7 @@
 {
     "type": "glossary",
     "title": "Bayes Faktörü [Bayes Factor]",
+    "sort_key": "bayes faktozruz [bayes factor]",
     "definition": "Bayesyen çıkarımda kullanılan, model seçimi için sürekli bir istatistiksel ölçüt olup, modellerin doğruluğuna bakılmaksızın, bir modelin diğerine göre göreceli kanıtını tanımlar. Bayes faktörleri (BF) 0 ile sonsuz arasında değişir ve kanıtın göreceli gücünü gösterir; 1 ise kanıtın olmadığı nötr bir noktadır. P değerlerinin aksine, Bayes faktörleri 3 tür sonuç çıkarmaya olanak tanır: a) alternatif hipotez için kanıt, b) sıfır hipotezi için kanıt ve c) her ikisi için de yeterli kanıt yok. Bu nedenle, BF genellikle sıfır hipotezine kıyasla alternatifle ilgili kanıtlar için BF10, alternatif hipoteze kıyasla sıfırla ilgili kanıtlar için BF01 olarak ifade edilir.",
     "related_terms": [
         "Bayesian inference",
@@ -33,6 +34,6 @@
         "Ege Emek"
     ],
     "translation_reviewed_by": [
-        "Elif Bastan"
+        "Elif Baştan"
     ]
 }

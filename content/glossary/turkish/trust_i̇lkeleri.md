@@ -1,6 +1,7 @@
 {
     "type": "glossary",
     "title": "TRUST İlkeleri [TRUST Principles]",
+    "sort_key": "trust i̇lkeleri [trust principles]",
     "definition": "Özellikle araştırma verilerini depolayan dijital veri havuzlarının güvenilirliğini değerlendirmek, geliştirmek ve sürdürmek için temel bileşenler olarak Şeffaflık (Transparency), Sorumluluk (Responsibility), Kullanıcı Odaklılık (User focus), Sürdürülebilirlik (Sustainability) ve Teknoloji (Technology) unsurlarını dikkate alan bir dizi yol gösterici ilkedir. Bu ilkeler, FAIR İlkeleri ile tamamlayıcı niteliktedir.",
     "related_terms": [
         "FAIR principles",
@@ -27,7 +28,7 @@
     ],
     "language": "turkish",
     "translated_by": [
-        "Elif Bastan"
+        "Elif Baştan"
     ],
     "translation_reviewed_by": [
         "Neslihan Özhan"

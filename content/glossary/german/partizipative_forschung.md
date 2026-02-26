@@ -1,6 +1,7 @@
 {
     "type": "glossary",
     "title": "Partizipative Forschung [Participatory Research]",
+    "sort_key": "partizipative forschung [participatory research]",
     "definition": "Partizipative Forschung bedeutet, die Ansichten von Menschen aus relevanten Gemeinschaften in den gesamten Forschungsprozess einzubeziehen, um gemeinsame Ziele zwischen Forscher:innen und diesen Gemeinschaften zu erreichen. Dieser Ansatz nimmt eine kollaborative Haltung ein, die darauf abzielt, das Machtungleichgewicht zwischen dem Forschenden und den Erforschten durch eine systematische Miterschaffung von neuem Wissen zu verringern (“systematic cocreation of new knowledge”, Andersson, 2018).",
     "related_terms": [
         "Collaborative research",

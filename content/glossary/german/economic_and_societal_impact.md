@@ -1,6 +1,7 @@
 {
     "type": "glossary",
     "title": "Economic and societal impact",
+    "sort_key": "economic and societal impact",
     "definition": "Der Beitrag, den ein Forschungsgegenstand für die Wirtschaft und Gesellschaft im weiteren Sinne leistet. Erfasst wird auch der Nutzen der Forschung für Einzelpersonen, Organisationen und/oder Nationen.",
     "related_terms": [
         "Academic Impact"

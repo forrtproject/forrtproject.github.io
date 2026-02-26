@@ -1,6 +1,7 @@
 {
     "type": "glossary",
     "title": "Nesnellik [Objectivity]",
+    "sort_key": "nesnellik [objectivity]",
     "definition": "Bilimsel iddiaların, yöntemlerin, sonuçların ve bilim insanlarının kendilerinin değerlerden bağımsız ve tarafsız kalması ve dolayısıyla kültürel, politik, ırksal veya dini önyargılardan ve kişisel çıkarlardan etkilenmemesi gerektiği fikridir (Merton, 1942).",
     "related_terms": [
         "Communality",

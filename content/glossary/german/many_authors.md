@@ -1,6 +1,7 @@
 {
     "type": "glossary",
     "title": "Many authors",
+    "sort_key": "many authors",
     "definition": "Groß angelegte kollaborative Projekte, an denen Dutzende oder Hunderte von Autor:innen aus verschiedenen Einrichtungen beteiligt sind. Dieser Ansatz ist in den letzten Jahren in der Psychologie und anderen Wissenschaften immer häufiger anzutreffen, im Gegensatz zu Forschungsarbeiten, die von kleinen Autor:innenteams durchgeführt werden. Damit folgt er früheren Trends, die z. B. in der Hochenergiephysik oder der biomedizinischen Forschung in den 1990er Jahren zu beobachten waren. Diese großen internationalen wissenschaftlichen Konsortien arbeiten an einem Forschungsprojekt, um ein breiteres Spektrum an Expertise zusammenzubringen und kollaborativ Manuskripte zu erstellen.",
     "related_terms": [
         "Collaboration",

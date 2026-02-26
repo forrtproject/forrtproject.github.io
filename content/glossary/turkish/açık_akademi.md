@@ -1,6 +1,7 @@
 {
     "type": "glossary",
     "title": "Açık Akademi [Open Scholarship]",
+    "sort_key": "aczizk akademi [open scholarship]",
     "definition": "‘Açık akademi’ terimi, sıklıkla ‘açık bilim’ terimiyle eş anlamlı olarak kullanılır; ancak kendini bilim temelli olarak tanımlamayan tüm disiplinleri de kapsar. Bu terim, her türden bilginin açıkça paylaşılması, şeffaf, titiz, yeniden üretilebilir, tekrarlanabilir, kümülatif ve kapsayıcı (tüm bilgi sistemlerine alan açan) olması gerektiği fikrini yansıtır. Açık akademi öğretim ve pedagoji gibi yalnızca araştırma ile sınırlı olmayan tüm akademik aktiviteleri içerir.",
     "related_terms": [
         "Bropenscience",

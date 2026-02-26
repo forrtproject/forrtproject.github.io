@@ -1,6 +1,7 @@
 {
     "type": "glossary",
     "title": "Ambargo Süresi [Embargo Period]",
+    "sort_key": "ambargo suzresi [embargo period]",
     "definition": "Açık Akademi bağlamında, akademik bir makalenin yayımlandıktan sonra Açık Erişim olarak herkesin kullanımına sunulmadan önce geçmesi gereken zaman dilimidir. Yazar, makalesini, örneğin bir açık erişim reposuna, kendi arşivlemek isterse, yayınevinin belirlediği ambargo süresine uyması gerekir. Ambargo süreleri anında erişimden başlayarak 48 aya kadar değişebilir; en yaygın olanları 6 ve 12 aydır (Laakso ve Björk, 2013). Ambargo süresi ön-kayıtlara, materyallere ve verilere de uygulanabilir. Örneğin, yazarlar bu tür bilgileri, makaleleri yayımlandıktan sonra ya da ileride başka yayın planları olduğu durumlarda, çalışmalarının başkaları tarafından erken kullanılmasını önlemek amacıyla belirli bir süre bekledikten sonra kamuya açmayı tercih edebilirler (Klein vd., 2018).",
     "related_terms": [
         "Open access",

@@ -1,6 +1,7 @@
 {
     "type": "glossary",
     "title": "Qualitative research",
+    "sort_key": "qualitative research",
     "definition": "Research which uses non-numerical data, such as textual responses, images, videos or other artefacts, to explore in-depth concepts, theories, or experiences. There are a wide range of qualitative approaches, from micro-detailed exploration of language or focusing on personal subjective experiences, to those which explore macro-level social experiences and opinions.",
     "related_terms": [
         "Bracketing Interviews",

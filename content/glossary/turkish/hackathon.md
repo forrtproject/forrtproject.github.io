@@ -1,6 +1,7 @@
 {
     "type": "glossary",
     "title": "Hackathon",
+    "sort_key": "hackathon",
     "definition": "Uzmanların, tasarımcıların veya araştırmacıların belirli bir proje ya da problem üzerinde kısa bir süre içinde yoğun biçimde birlikte çalıştıkları etkinliklerdir. Terim, bilgisayar programcıları ve yazılım geliştiricileri için düzenlenen; genellikle birkaç saatten birkaç güne kadar sürebilen ve etkinlik sonunda tam işlevsel bir ürün (kaynaklar, araştırma, yazılım ya da donanım) ortaya koymayı amaçlayan etkinliklerden türemiştir.",
     "related_terms": [
         "Collaboration",

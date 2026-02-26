@@ -1,6 +1,7 @@
 {
     "type": "glossary",
     "title": "Yüzey Geçerliliği [Face validity]",
+    "sort_key": "yuzzey geczerliligzi [face validity]",
     "definition": "Bir ölçüm aracının yüzeyde ne kadar uygun göründüğüne, yani ne kadar iyi operasyonelleştirildiğine dair öznel bir değerlendirmedir. Bir anketin maddelerinin ilgili psikolojik yapıyla görünürde ne kadar ilişkili olduğuna karar vermek bu tür bir değerlendirmeye örnektir. Yüzey geçerliliği, yapı geçerliliğiyle ilişkilidir; ancak öznel/resmi olmayan bir değerlendirme biçimi olduğu için, geçerlilik türleri arasında kolay ama zayıf bir geçerlilik türü olarak kabul edilir.",
     "related_terms": [
         "Construct Validity",

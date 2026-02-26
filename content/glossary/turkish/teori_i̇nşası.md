@@ -1,6 +1,7 @@
 {
     "type": "glossary",
     "title": "Teori İnşası [Theory building]",
+    "sort_key": "teori i̇nszasiz [theory building]",
     "definition": "Bir olgunun nasıl ve/veya neden var olduğunu göstermek amacıyla kavramlar ve bu kavramlar arasındaki ilişkiler üzerine açıklamalar oluşturma ve geliştirme sürecidir. Teori inşası, teori testine zemin hazırlar.",
     "related_terms": [
         "Hypothesis",
@@ -28,7 +29,7 @@
     ],
     "language": "turkish",
     "translated_by": [
-        "Elif Bastan"
+        "Elif Baştan"
     ],
     "translation_reviewed_by": [
         "Neslihan Özhan"

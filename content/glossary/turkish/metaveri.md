@@ -1,6 +1,7 @@
 {
     "type": "glossary",
     "title": "Metaveri [Metadata]",
+    "sort_key": "metaveri [metadata]",
     "definition": "Diğer verileri tanımlayan ve sentezleyen yapılandırılmış verilerdir. Metaveriler, verileri bulmaya, düzenlemeye ve anlamaya yardımcı olabilir. Metaveri örnekleri arasında yaratıcı, başlık, katkıda bulunanlar, anahtar kelimeler, etiketler ve ayrıca bir çalışmanın sonuçlarını ve çıkarımlarını doğrulamak ve anlamak için gerekli olan her türlü bilgi bulunur; örneğin veri etiketleri, açıklamalar, örnek ve veri toplama sürecine dair kod kitabı.",
     "related_terms": [
         "Data",

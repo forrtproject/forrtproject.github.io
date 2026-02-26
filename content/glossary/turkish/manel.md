@@ -1,7 +1,8 @@
 {
     "type": "glossary",
     "title": "Manel",
-    "definition": "\"Erkek paneli\" anlamına gelen birleşik bir kelime (male + panel) olup genellikle konferanslardaki tüm konuşmacıların (çoğunlukla beyaz) erkeklerden oluştuğu panelleri tanımlamak için kullanılır. Sıklıkla akademideki cinsiyet eşitsizlikleri bağlamında tartışılır (örn, kadınların meslektaşları tarafından uzman olarak tanınma olasılıklarının daha düşük olması ve bunun sonucunda kariyer gelişimi için daha az fırsata sahip olmaları).",
+    "sort_key": "manel",
+    "definition": "\"Erkek paneli\" anlamına gelen birleşik bir kelime (male + panel) olup genellikle konferanslardaki tüm konuşmacıların (çoğunlukla beyaz) erkeklerden oluştuğu panelleri tanımlamak için kullanılır. Sıklıkla akademideki cinsiyet eşitsizlikleri bağlamında tartışılır (örn., kadınların meslektaşları tarafından uzman olarak tanınma olasılıklarının daha düşük olması ve bunun sonucunda kariyer gelişimi için daha az fırsata sahip olmaları).",
     "related_terms": [
         "Bropenscience",
         "Diversity",

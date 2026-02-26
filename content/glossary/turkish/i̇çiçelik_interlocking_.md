@@ -33,5 +33,6 @@
     ],
     "translation_reviewed_by": [
         "Merve Öztürk"
-    ]
+    ],
+    "sort_key": "i̇cziczelik (interlocking)"
 }

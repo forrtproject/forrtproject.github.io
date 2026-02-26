@@ -1,6 +1,7 @@
 {
     "type": "glossary",
     "title": "Kızıl Ekipler [Red Teams]",
+    "sort_key": "kizzizl ekipler [red teams]",
     "definition": "Araştırma sürecine, meslektaşların ve alan uzmanlarının eleştirilerini entegre eden bir yaklaşımdır. Kızıl ekipler, daha eleştirel ve kapsamlı şekilde değerlendirilen araştırmaların daha güvenilir olduğu fikrine dayanır. Bu terim, aslında askeri bir uygulamadan gelir: bir grup (kızıl ekip) bir şeye saldırır, diğer grup (mavi ekip) onu savunur. Bu uygulama, açık bilime de uyarlanmıştır; araştırma projesinin materyallerinde, kodunda, yazımında vb. hatalar bulmaları veya iyileştirme önerileri sunmaları için belirlenmiş eleştirel kişilerden oluşan bir ‘kızıl ekibe’ maddi teşvikler verilerek uygulanmaktadır (Coles vd., 2020).",
     "related_terms": [
         "Adversarial collaboration"

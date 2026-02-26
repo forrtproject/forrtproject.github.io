@@ -1,6 +1,7 @@
 {
     "type": "glossary",
     "title": "Registered Report",
+    "sort_key": "registered report",
     "definition": "Ein wissenschaftliches Publikationsformat, das eine erste Runde der Begutachtung (Peer Review) des Hintergrunds und der Methoden (Studiendesign, Messung und Analyseplan) umfasst; Manuskripte von hinreichend hoher Qualität werden in dieser Phase zur In-Principle Acceptance (IPA) angenommen. In der Regel findet diese Phase 1 vor der Datenerhebung statt, jedoch sind Sekundärdatenanalysen in diesem Veröffentlichungsformat möglich. Im Anschluss an die Datenanalyse und die Verschriftlichung der Ergebnis- und Diskussionsabschnitte wird in Phase 2 bewertet, ob die Autor:innen ihren Studienplan hinreichend befolgt und über Abweichungen davon berichtet haben (diese Begutachtung erfolgt unabhängig von den Ergebnissen selbst). Damit verschiebt sich der Schwerpunkt der Überprüfung auf die vorgeschlagene Forschungsfrage und die Methodik der Studie und weg von dem wahrgenommenen Interesse an den Ergebnissen der Studie.",
     "related_terms": [
         "Preregistration",

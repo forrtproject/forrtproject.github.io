@@ -1,6 +1,7 @@
 {
     "type": "glossary",
     "title": "Hesaplamalı Yeniden Üretilebilirlik [Computational reproducibility]",
+    "sort_key": "hesaplamaliz yeniden uzretilebilirlik [computational reproducibility]",
     "definition": "Aynı girdi verilerini, hesaplama yöntemlerini ve analiz koşullarını kullanarak, orijinal çalışmayla aynı sonuçları (tablolar, şekiller ve nicel bulgular dahil) yeniden elde edebilme yetisidir. Kod ve verilerin kullanılabilirliği, bu materyallerin hazırlanması (verilere açıklama ekleme, kullanılan yazılım sürümlerini belirtme, hesaplama ortamlarını paylaşma vb.) gibi hesaplamalı yeniden üretilebilirliği kolaylaştırır. İdeal olarak, hesaplamalı yeniden üretilebilirlik, yalnızca bir dizi dosya ve yazılı talimat kullanılarak başka ikinci bir araştırmacı (veya gelecekte orijinal araştırmacı) tarafından gerçekleştirilebilmelidir. Analitik yeniden üretilebilirlik olarak da adlandırılır (LeBel vd., 2018).",
     "related_terms": [
         "FAIR principles",
@@ -33,6 +34,6 @@
         "Ege Emek"
     ],
     "translation_reviewed_by": [
-        "Elif Bastan"
+        "Elif Baştan"
     ]
 }

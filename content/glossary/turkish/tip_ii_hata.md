@@ -1,6 +1,7 @@
 {
     "type": "glossary",
     "title": "Tip II hata [Type II error]",
+    "sort_key": "tip ii hata [type ii error]",
     "definition": "Yanlış negatif sonuç, alternatif hipotezin evrende doğru olduğu durumda, sıfır hipotezinin analiz sonucunda kabul edilmesidir (Hartgerink vd., 2017). Yani, etkinin var olduğu bir durum söz konusu olmasına rağmen istatistiksel olarak anlamlı olmayan bir sonuç bulunmasıdır. Örneğin, bir hâkimin suçlu bir kişiye beraat kararı vermesi. Yanlış negatif sonuçlar, pozitif sonuçlara kıyasla daha az sıklıkla tekrar edilmeye çalışılır (Fiedler vd., 2012) ve bilimsel araştırmalarda hâlâ çözülememiş bir sorun olarak kalmaktadır (Hartgerink vd., 2017).",
     "related_terms": [
         "Effect size",
@@ -28,7 +29,7 @@
     ],
     "language": "turkish",
     "translated_by": [
-        "Elif Bastan"
+        "Elif Baştan"
     ],
     "translation_reviewed_by": [
         "Neslihan Özhan"

@@ -1,6 +1,7 @@
 {
     "type": "glossary",
     "title": "Tenzing",
+    "sort_key": "tenzing",
     "definition": "tenzing, araştırmacıların her ekip üyesinin katkılarını Katkı Rolleri Taksonomisi (CRediT; Contributor Roles Taxonomy) sınıflandırmasına göre etkili bir şekilde takip edip raporlamalarına yardımcı olan çevrim içi bir web uygulaması ve R paketidir. Bir araştırma projesinin ekip üyeleri, her bir CRediT rolüne yaptıkları katkıları çevrim içi bir tablo şablonu kullanarak belirtebilir ve yazarlarla ilgili ek bilgileri (örn., ad, kurum, yayındaki sırası, e-posta adresi ve ORCID kimliği) sağlayabilirler. Makale yazım sürecinde tenzing, her CRediT rolüne ait katkıda bulunanların listesini otomatik olarak oluşturabilir ve bu listeyi makalenin katkılar bölümüne ekleyebilir; ayrıca makalenin başlık sayfasını da oluşturabilir.",
     "related_terms": [
         "Authorship",
@@ -27,7 +28,7 @@
     ],
     "language": "turkish",
     "translated_by": [
-        "Elif Bastan"
+        "Elif Baştan"
     ],
     "translation_reviewed_by": [
         "Neslihan Özhan"

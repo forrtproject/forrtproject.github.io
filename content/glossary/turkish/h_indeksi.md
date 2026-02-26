@@ -1,6 +1,7 @@
 {
     "type": "glossary",
     "title": "H-indeksi [H-index]",
+    "sort_key": "h-indeksi [h-index]",
     "definition": "H-indeksi, diğer adıyla Hirsch indeksi, bir araştırmacının hem üretkenliği hem de araştırmalarının etkisini ölçmeyi amaçlayan bir göstergedir. Bu indeks, yayın sayısıyla bu yayınlara yapılan atıf sayısını birlikte dikkate alır. Hirsch (2005), bu indeksi şöyle tanımlar: “Atıf sayısı ≥ h olan makale sayısı” (s. 16569). Yani, bir araştırmacının (veya derginin) en az h kez atıf almış h sayıda yayını varsa, H-indeksi h olur. H-indeksi, yalnızca atıf sayısını veya yayın sayısını dikkate alan ölçütlerden daha kapsamlı bir gösterge olarak değerlendirilse de, araştırmacı değerlendirmesi amacıyla kullanılması eleştirilmiştir (örn., Wendl, 2007).",
     "related_terms": [
         "Citation",

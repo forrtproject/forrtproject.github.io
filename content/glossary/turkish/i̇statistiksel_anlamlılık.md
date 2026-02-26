@@ -1,6 +1,7 @@
 {
     "type": "glossary",
     "title": "İstatistiksel anlamlılık [Statistical significance]",
+    "sort_key": "i̇statistiksel anlamlizlizk [statistical significance]",
     "definition": "Sıfır Hipotezi Anlamlılık Testi (NHST; Null Hypothesis Significance Testing) kullanılarak elde edilen bir sonucun, belirli bir anlamlılık düzeyine göre, sıfır hipotezi doğru olduğunda ortaya çıkmasının olasılıksız kabul edilmesi durumudur. Tenny ve Abdelgawad (2017), istatistiksel anlamlılığı şu şekilde tanımlamıştır: “Sıfır hipotezinin doğru olduğu varsayımı altında, veri setinizi ya da daha uç verileri elde etme olasılığının, kabul edilebilir bir belirsizlik düzeyi ile karşılaştırılmasıdır” (s.1). Anlamlılık eşiğinin belirlenmesine dair yaygın yöntemler, uygulamaya ve disipline göre farklılık gösterir, ancak nihayetinde araştırmacının makul derecedeki hata payına ilişkin değerlendirmesine bağlıdır. Amerikan İstatistik Derneği’nin açıklamasında (Wasserstein ve Lazar, 2016) şu ifade yer alır: “Araştırmacılar genellikle bir p-değerini, sıfır hipotezinin doğruluğuna ya da gözlemlenen verilerin rastlantı eseri elde edilmiş olma olasılığına dair bir ifadeye dönüştürmek isterler. Oysa, p-değeri bunların hiçbiri değildir. P-değeri, belirli bir varsayımsal açıklamayla ilişkili olarak veriye dair bir ifadedir; açıklamanın kendisine dair bir ifade değildir” (s.131).",
     "related_terms": [
         "Alpha error",
@@ -30,7 +31,7 @@
     ],
     "language": "turkish",
     "translated_by": [
-        "Elif Bastan"
+        "Elif Baştan"
     ],
     "translation_reviewed_by": [
         "Neslihan Özhan"

@@ -1,6 +1,7 @@
 {
     "type": "glossary",
     "title": "rechnerische Reproduzierbarkeit [Computational reproducibility]",
+    "sort_key": "rechnerische reproduzierbarkeit [computational reproducibility]",
     "definition": "Die Fähigkeit, dieselben Ergebnisse wie in der Originalstudie (einschließlich Tabellen, Abbildungen und quantitativer Ergebnisse) unter Verwendung derselben Eingangsdaten, Berechnungsmethoden und Analysebedingungen zu reproduzieren. Die Verfügbarkeit von Code und Daten erleichtert die rechnerische Reproduzierbarkeit, ebenso wie die Aufbereitung dieser Materialien (Datenbeschriftung, Angabe der verwendeten Softwareversionen, gemeinsame Nutzung von Rechenumgebungen usw.). Im Idealfall sollte die rechnerische Reproduzierbarkeit von einer/m zweiten Forschenden (oder der/m ursprünglichen Forschenden zu einem späteren Zeitpunkt) erreicht werden können, wofür nur eine Reihe von Dateien und schriftliche Anweisungen benötigt werden. Dies wird auch als analytische Reproduzierbarkeit bezeichnet (LeBel et al., 2018).",
     "related_terms": [
         "FAIR principles",

@@ -1,7 +1,8 @@
 {
     "type": "glossary",
     "title": "Kitlesel Açık Çevrim İçi Dersler (Massive Open Online Courses; MOOCs)",
-    "definition": "Tamamen çevrimiçi olan, herhangi bir öğrencinin herhangi bir zamanda erişebildiği derslerdir. Genellikle erişimi ücretsizdir (açık lisanslı olmasa da) ve video tabanlı talimatlar ile indirilebilir veri setleri ve alıştırmalar sağlar. \"Kitlesel\" kelimesi, esnekliği, düşük ücretli veya ücretsiz olması ve materyallerin çevrimiçi niteliği nedeniyle herhangi bir zamanda derslere çok sayıda öğrencinin erişebilmesini ifade eder.",
+    "sort_key": "kitlesel aczizk czevrim i̇czi dersler (massive open online courses; moocs)",
+    "definition": "Ücretsiz olarak sunulan, açık kaynaklı ve platformlar arası çalışan bir atıf ve kaynakça yönetim aracıdır. BibTeX dosyalarını düzenlemeye, çevrim içi bilimsel veritabanlarından veri aktarmaya ve BibTeX dosyalarını yönetmeye ve aramaya olanak tanır.",
     "related_terms": [
         "Accessibility",
         "Distance education",

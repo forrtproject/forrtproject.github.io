@@ -94,6 +94,17 @@ def safe_get(row, column, default=""):
     except Exception:
         return default
 
+def sort_key_for_language(title, language_code):
+    """Generate a sort key that handles language-specific character ordering."""
+    key = title.lower()
+    if language_code == 'TR':
+        # Turkish alphabet order: ... c ç d ... g ğ h i ı j ... o ö p ... s ş t u ü v ...
+        # Map special chars so they sort just after their base char
+        key = key.replace('ç', 'cz').replace('ğ', 'gz').replace('ı', 'iz')
+        key = key.replace('ö', 'oz').replace('ş', 'sz').replace('ü', 'uz')
+    return key
+
+
 def clean_filename(title, max_length=200):
     """Clean title for use as filename"""
     # Extract main title (before English title in square brackets)
@@ -157,10 +168,15 @@ for language_code in languages_to_process:
         processed_references = process_references(raw_references, apa_lookup, missing_refs)
 
         # Build entry
+        definition = safe_get(row, f"{language_code}_definition" if language_code == "EN" else f"{language_code}_def")
+        if not definition:
+            continue
+
         entry = {
             "type": "glossary",
             "title": title,
-            "definition": safe_get(row, f"{language_code}_definition" if language_code == "EN" else f"{language_code}_def"),
+            "sort_key": sort_key_for_language(title, language_code),
+            "definition": definition,
             "related_terms": list(dict.fromkeys(safe_get(row, "Related_terms").split("; "))) if safe_get(row, "Related_terms") else [],
             "references": processed_references,
             "drafted_by": [safe_get(row, "Originally drafted by") or safe_get(row, "Drafted by")] if (safe_get(row, "Originally drafted by") or safe_get(row, "Drafted by")) else [],

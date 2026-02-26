@@ -1,6 +1,7 @@
 {
     "type": "glossary",
     "title": "Ekonomik ve toplumsal etki [Economic and societal impact]",
+    "sort_key": "ekonomik ve toplumsal etki [economic and societal impact]",
     "definition": "Bir araştırma çıktısının daha geniş ekonomi ve toplum üzerindeki katkısı. Aynı zamanda, araştırmanın bireyler, kurumlar ve/veya uluslar açısından sağladığı faydaları da kapsar.",
     "related_terms": [
         "Academic Impact"

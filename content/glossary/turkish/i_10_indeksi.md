@@ -1,6 +1,7 @@
 {
     "type": "glossary",
     "title": "i-10 indeksi [i10-index]",
+    "sort_key": "i-10 indeksi [i10-index]",
     "definition": "Google Akademik tarafından oluşturulan, bir araştırmacının en az 10 atıf almış yayınlarının sayısını temsil eden bir araştırma metriğidir.",
     "related_terms": [
         "Citation",

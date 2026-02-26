@@ -1,6 +1,7 @@
 {
     "type": "glossary",
     "title": "Hediye (veya Misafir) Yazarlık [Gift (or Guest) Authorship]",
+    "sort_key": "hediye (veya misafir) yazarlizk [gift (or guest) authorship]",
     "definition": "Bir akademik yayında, yazar olma kriterlerini karşılamayan kişilerin yazar listesine dahil edilmesidir. Yazarlık; meslektaşlar tarafından tanınırlık ve maddi kazanç gibi çeşitli getirilerle bağlantılı olduğundan, yayımlanmış bir çalışmada yazar olarak yer almak için çeşitli teşvikler bulunmaktadır. Hediye yazarlık; bir kişiye yardım etmek, iyilik borcunu ödemek (karşılıklı hediye yazarlığı dâhil), kişisel ya da profesyonel ilişkileri sürdürmek veya makalenin yayımlanma şansını artırmak amacıyla yazarlık kredisi verilmesi şeklinde ortaya çıkabilir. Hediye yazarlık, yaygın olarak etik dışı bir uygulama olarak kabul edilmektedir.",
     "related_terms": [
         "Authorship",

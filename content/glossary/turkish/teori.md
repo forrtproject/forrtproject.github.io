@@ -1,6 +1,7 @@
 {
     "type": "glossary",
     "title": "Teori [Theory]",
+    "sort_key": "teori [theory]",
     "definition": "Teori, bir süreç ya da olgunun birleştirici bir açıklaması ya da betimlemesidir. Bilimsel araştırmalarla, farklı bağımsız araştırmacılar tarafından yürütülen çeşitli deneyler aracılığıyla tekrar tekrar test edilebilir ve doğrulanabilir niteliktedir. Teoriler, bir olguyu daha iyi açıklayan ya da onlarla çelişiyor gibi görünse de daha geniş bir bulgular yelpazesine genellenebilen yeni bir hipotezin titiz biçimde test edilmesi sonrasında reddedilebilir veya söz konusu olgunun yetersiz bir açıklaması olarak değerlendirilebilirilir.",
     "related_terms": [
         "Hypothesis",
@@ -25,7 +26,7 @@
     ],
     "language": "turkish",
     "translated_by": [
-        "Elif Bastan"
+        "Elif Baştan"
     ],
     "translation_reviewed_by": [
         "Neslihan Özhan"

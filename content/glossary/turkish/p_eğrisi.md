@@ -1,6 +1,7 @@
 {
     "type": "glossary",
     "title": "P-eğrisi [P-curve]",
+    "sort_key": "p-egzrisi [p-curve]",
     "definition": "P-eğrisi, olası yayın yanlılığını belirlemek için kullanılan bir araçtır ve bağımsız bulgular dizisindeki anlamlı p-değerlerinin dağılımını kullanır. Beklenen sağa çarpık dağılımdan sapma, yayın yanlılığının varlığı ve derecesini değerlendirmek için kullanılabilir: eğer eğri sağa çarpıksa, bu düşük, yüksek anlamlı p-değerlerinin daha fazla olduğu ve altında gerçek bir etkinin olduğu anlamına gelir. Eğer eğri sola çarpıksa, 0.05 eşik değerinin hemen altında çok sayıda zar zor (marjinal olarak) anlamlı sonuç var demektir. Bu durum, çalışmaların kanıt değeri taşımadığını ve şüpheli araştırma uygulamalarına (QRPs; Questionable Research Practices) (örn., p-hackleme) dayandığını gösterir. Gerçek bir etkinin bulunmadığı (gerçek sıfır hipotezi) ve p-değeri raporlamasında yanlılık olmadığı durumda, p-eğrisi p-değerlerinin tipik dağılımını yansıtan düz, yatay bir çizgi şeklinde olmalıdır.",
     "related_terms": [
         "File-drawer",

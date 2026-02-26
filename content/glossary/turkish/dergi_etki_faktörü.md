@@ -1,6 +1,7 @@
 {
     "type": "glossary",
     "title": "Dergi Etki Faktörü [Journal Impact Factor™]",
+    "sort_key": "dergi etki faktozruz [journal impact factor™]",
     "definition": "Önceki iki yıl boyunca söz konusu dergideki araştırma makalelerine yapılan atıfların ortalama sayısı. Clarivate™ tarafından pazarlanan, tescilli ve şeffaf olmayan bir hesaplamadır. Dergi Etki Faktörleri, içerik kalitesi veya hakem değerlendirmesi süreciyle ilişkili değildir.",
     "related_terms": [
         "DORA",

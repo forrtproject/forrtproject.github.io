@@ -1,6 +1,7 @@
 {
     "type": "glossary",
-    "title": "CRedit (Katkı Rolleri Taksonomisi)",
+    "title": "CRediT (Katkı Rolleri Taksonomisi)",
+    "sort_key": "credit (katkiz rolleri taksonomisi)",
     "definition": "Katkı rolleri taksonomisi (CRediT; https://credit.niso.org/) bilimsel akademik çıktılara katkı sağlayan kişilerin üstlendiği rolleri belirtmek için kullanılan üst düzey bir taksonomidir. Şu anda, her bir yazarın akademik çıktıya sağladığı özel katkıyı tanımlayan 14 rol bulunmaktadır. Bu roller birden fazla yazara atanabildiği gibi tek bir yazara da birden fazla rol atanabilir. CRediT kapsamında tanımlanan roller şunlardır: Kavramsallaştırma (Conceptualization), Veri kürasyonu (Data curation), Biçimsel analiz (Formal analysis), Fon sağlanması (Funding acquisition), Araştırma (Investigation), Yöntem (Methodology), Proje yönetimi (Project administration), Kaynak temini (Resources), Yazılım (Software), Denetleme (Supervision), Doğrulama (Validation), Görselleştirme (Visualization), Yazma - ilk taslak (Writing - original draft), Yazma - gözden geçirme ve düzenleme (Writing - review & editing). Farklı rollerin açıklamaları Brand ve diğerlerinin (2015) makalesinde bulunabilir.",
     "related_terms": [
         "Authorship",

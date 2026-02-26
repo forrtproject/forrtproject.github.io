@@ -1,6 +1,7 @@
 {
     "type": "glossary",
     "title": "Ödeme Duvarı (Paywall)",
+    "sort_key": "ozdeme duvariz (paywall)",
     "definition": "Bilgiye yalnızca belirlenmiş bir ücret veya abonelik karşılığında, kişisel olarak ya da bir kuruluş aracılığıyla ödeme yapan bireylerin erişimine izin veren teknolojik bir engeldir.",
     "related_terms": [
         "Accessibility",

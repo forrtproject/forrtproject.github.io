@@ -1,6 +1,7 @@
 {
     "type": "glossary",
     "title": "PubPeer",
+    "sort_key": "pubpeer",
     "definition": "Eine Website, die es Nutzenden ermöglicht, anonyme Peer-Reviews zu publizierten Forschungsergebnissen zu veröffentlichen (d.h. Post-Publication Peer Review).",
     "related_terms": [
         "Open Peer Review"

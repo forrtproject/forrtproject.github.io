@@ -1,6 +1,7 @@
 {
     "type": "glossary",
     "title": "Araştırma Protokolü [Research Protocol]",
+    "sort_key": "arasztizrma protokoluz [research protocol]",
     "definition": "Araştırma protokolü, bir araştırma yürütülmeden önce hazırlanan ayrıntılı bir belgedir ve genellikle etik kurul ya da fon başvuruları kapsamında yazılır. Protokol, araştırmanın arka planına, gerekçesine ve amaçlarına dair bilgilerin yanı sıra, araştırmacıların beklentilerini yansıtan hipotezleri de içermelidir. Protokolde ayrıca, yöntemsel ayrıntıları ve açık bir analiz planını da içeren araştırmanın nasıl yürütüleceğine dair bir ‘tarif’ yer almalıdır. Protokol hazırlarken, kullanılan yönteme ve alana özgü en iyi uygulama kılavuzları esas alınmalıdır. Araştırma protokolleri, yeni iş birlikleri çekmek veya araştırma laboratuvarları arası etkili iş birliğini kolaylaştırmak amacıyla herkese açık biçimde paylaşılabilir (örn., https://www.protocols.io/). Tıp ve eğitim gibi alanlarda, protokoller genellikle dergilerde yayınlanabilir ayrı bir makale türü olarak kabul edilir. Protokol paylaşımının veya yayımlanmasının yaygın bir uygulama olmadığı durumlarda ise, araştırmacılar ön-kayıt seçeneğini tercih edebilir.",
     "related_terms": [
         "Many Labs",
@@ -24,7 +25,7 @@
     ],
     "language": "turkish",
     "translated_by": [
-        "Elif Bastan"
+        "Elif Baştan"
     ],
     "translation_reviewed_by": [
         "Neslihan Özhan"

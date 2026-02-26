@@ -1,6 +1,7 @@
 {
     "type": "glossary",
     "title": "Hasta ve Topluluk Katılımı (PPI; Patient and Public Involvement)",
+    "sort_key": "hasta ve topluluk katizlizmiz (ppi; patient and public involvement)",
     "definition": "İlgilenilen popülasyonla ‘onlar hakkında’ araştırma yapmanın aksine, aktif bir araştırma iş birliğidir. Araştırmacılar, hastaların ve halkın yaşam deneyimlerini ve uzmanlıklarını araştırma sürecinin tüm aşamalarına dahil edebilirler. Örneğin, hastalar bir dizi araştırma sorusu geliştirmeye yardımcı olabilir, bir çalışma tasarımının uygunluğunu gözden geçirebilir, hibe/etik başvuruları ve yaygınlaştırma için sade İngilizce özetleri onaylayabilir, veri toplayıp analiz edebilir ve bir projenin yayımlanması için yazımına katkı sağlayabilir. Bu yaklaşım, giderek daha fazla tavsiye edilmekte ve hatta bazı fon sağlayıcılar tarafından zorunlu tutulmaktadır (Boivin vd., 2018).",
     "related_terms": [
         "Co-production",

@@ -1,6 +1,7 @@
 {
     "type": "glossary",
     "title": "QMP; Fragwürdige Forschungspraktiken [Questionable Measurement Practices (QMP)]",
+    "sort_key": "qmp; fragwürdige forschungspraktiken [questionable measurement practices (qmp)]",
     "definition": "Entscheidungen von Forschenden, die Zweifel an der Gültigkeit der in einer Studie verwendeten Messgrößen und letztlich an den endgültigen Schlussfolgerungen der Studie aufkommen lassen (Flake & Fried, 2020). Probleme ergeben sich aus mangelnder Transparenz bei der Berichterstattung über Messpraktiken, einem Versäumnis, die Konstruktvalidität zu berücksichtigen, Nachlässigkeit, Unwissenheit oder einer absichtlichen Falschdarstellung von Informationen.",
     "related_terms": [
         "Construct validity",

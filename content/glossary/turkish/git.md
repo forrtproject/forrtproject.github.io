@@ -1,6 +1,7 @@
 {
     "type": "glossary",
     "title": "Git",
+    "sort_key": "git",
     "definition": "Git, ilk olarak Linus Torvalds tarafından geliştirilen, yerel dosya kümesindeki değişiklikleri (yerel sürüm kontrolü) izlemeye yarayan bir yazılım paketidir. Genellikle programcılar tarafından, belirli bir dizin, klasör ya da dosya sistemi içinde bilgisayar kaynak kodunu takip etmek ve geliştirmek için kullanılır. Git, GitHub gibi uzaktan erişimli depo (repo) barındırma hizmetlerine bağlanarak yerel sistemden katkıların yüklenmesini sağlar ve bu sayede uzaktan sürüm kontrolü ile iş birliğine dayalı yazılım geliştirmeyi mümkün kılar. Bu süreç, açık veri, açık kod ve yeniden üretilebilir analizleri mümkün kılmak amacıyla bilimsel araştırma süreçlerine de entegre edilmiştir.",
     "related_terms": [
         "GitHub",

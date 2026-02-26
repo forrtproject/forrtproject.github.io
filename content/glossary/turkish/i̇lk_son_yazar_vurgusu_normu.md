@@ -1,6 +1,7 @@
 {
     "type": "glossary",
     "title": "İlk-son Yazar Vurgusu Normu [First-last-author-emphasis norm (FLAE)]",
+    "sort_key": "i̇lk-son yazar vurgusu normu [first-last-author-emphasis norm (flae)]",
     "definition": "Bir yazarın katkısına bağlı olarak yazar sırasının belirlendiği, ancak yazar sıralamasında en çok ilk ve son sıranın önemsendiği bir yazarlık sistemidir. Bu sisteme göre, iki ana yazar ilk ve son sırada belirtilir; ilk ve son yazar arasında yer alan yazarların sırası ise katkı miktarına göre azalan şekilde düzenlenir.",
     "related_terms": [
         "Authorship",

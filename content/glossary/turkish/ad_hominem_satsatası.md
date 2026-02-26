@@ -28,5 +28,6 @@
     ],
     "translation_reviewed_by": [
         "Elif Bastan"
-    ]
+    ],
+    "sort_key": "ad hominem satsatasiz [ad hominem bias]"
 }

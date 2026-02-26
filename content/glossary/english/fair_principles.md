@@ -1,6 +1,7 @@
 {
     "type": "glossary",
     "title": "FAIR principles",
+    "sort_key": "fair principles",
     "definition": "Describes making scholarly materials Findable, Accessible, Interoperable and Reusable (FAIR). ‘Findable’ and ‘Accessible’ are concerned with where materials are stored (e.g. in data repositories), while ‘Interoperable’ and ‘Reusable’ focus on the importance of data formats and how such formats might change in the future.",
     "related_terms": [
         "Metadata",

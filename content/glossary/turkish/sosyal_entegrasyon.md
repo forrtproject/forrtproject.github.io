@@ -1,6 +1,7 @@
 {
     "type": "glossary",
     "title": "Sosyal entegrasyon [Social integration]",
+    "sort_key": "sosyal entegrasyon [social integration]",
     "definition": "Sosyal entegrasyon, çok boyutlu bir yapıdır. Akademik bağlamda sosyal entegrasyon; öğrencilerin ve akademik personelin birbirleriyle kurduğu sosyal etkileşimlerin niceliği ve niteliği ile üniversiteye ve kurum içerisindeki insanlara yönelik aidiyet ve bağ hissiyle ilişkilidir. Daha özel olarak, sosyal destek, güven ve bağlılık gibi değişkenler sosyal entegrasyona katkıda bulunur. Sosyal entegrasyon, hem akademik başarı hem de psikolojik iyi oluş açısından önemli sonuçlar doğurur (Evans ve Rubin, 2021). İşçi sınıfından gelen öğrencilerin, farklı sosyal ve ekonomik geçmişlere sahip olmaları ve harcanabilir gelirlerinin daha az olması nedeniyle diğer öğrencilerle kaynaşmaları daha az olasıdır. Bu nedenle, diğer öğrencilere kıyasla eğitimsel ve maddi fırsatlara daha az erişim sağlayabilirler. Bu durum, zamanla psikolojik iyi oluşun olumsuz etkilenmesine ve dışlanmışlık hissine yol açabilir (Rubin, 2021).",
     "related_terms": [
         "Social class"
@@ -25,7 +26,7 @@
     ],
     "language": "turkish",
     "translated_by": [
-        "Elif Bastan"
+        "Elif Baştan"
     ],
     "translation_reviewed_by": [
         "Neslihan Özhan"

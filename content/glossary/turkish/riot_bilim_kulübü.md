@@ -1,6 +1,7 @@
 {
     "type": "glossary",
     "title": "RIOT Bilim Kulübü [RIOT Science Club]",
+    "sort_key": "riot bilim kuluzbuz [riot science club]",
     "definition": "RIOT Bilim Kulübü, Yeniden Üretilebilir (Reproducible), Yorumlanabilir (Interpretable), Açık (Open) ve Şeffaf (Transparent) bilim uygulamalarına yönelik farkındalık yaratan ve eğitim sağlayan, çok merkezli bir seminer serisidir. Kulüp, düzenli olarak açık erişimli ve ilgili merkezlerin web siteleri ile YouTube kanallarından tekrar izlenebilir konuşmalar, atölyeler ve konferanslar sunar.",
     "related_terms": [
         "Early career researchers (ECRs)",
@@ -24,7 +25,7 @@
     ],
     "language": "turkish",
     "translated_by": [
-        "Elif Bastan"
+        "Elif Baştan"
     ],
     "translation_reviewed_by": [
         "Neslihan Özhan"

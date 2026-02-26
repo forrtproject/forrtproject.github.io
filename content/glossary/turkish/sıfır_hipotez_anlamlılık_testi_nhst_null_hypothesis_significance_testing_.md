@@ -1,6 +1,7 @@
 {
     "type": "glossary",
     "title": "Sıfır Hipotez Anlamlılık Testi (NHST; Null Hypothesis Significance Testing)",
+    "sort_key": "sizfizr hipotez anlamlizlizk testi (nhst; null hypothesis significance testing)",
     "definition": "Gözlemlenen bir etkinin etki/ilişki yokluğuna dair sıfır hipotezine karşı olasılığını test etmek için kullanılan frekansçı bir çıkarım yaklaşımıdır (Pernet, 2015). Böyle bir sonuca p-değeri adı verilen bir endeksin kullanımıyla varılır. Spesifik olarak, araştırmacılar önceden belirledikleri alfa eşiği karşılandığında bir etkinin mevcut olduğu sonucuna varırlar; bu, kabul edilebilir belirsizlik düzeyini belirler ve Tip I hatasıyla yakından ilişkilidir.",
     "related_terms": [
         "Inference",

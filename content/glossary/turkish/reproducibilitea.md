@@ -1,6 +1,7 @@
 {
     "type": "glossary",
     "title": "ReproducibiliTea",
+    "sort_key": "reproducibilitea",
     "definition": "Açık bilim ve akademik araştırmalarla ilgili çeşitli konuları tartışmak üzere araştırmacıların üniversitelerinde yerel dergi kulüpleri kurmalarına yardımcı olan tabandan gelen bir girişimdir. Her toplantı genellikle, yeniden üretilebilirlik, araştırma uygulamaları, araştırma kalitesi, sosyal adalet ve kapsayıcılık gibi konuları ele alan belirli bir makale etrafında şekillenir ve bilimi geliştirmeye yönelik fikirlerin tartışılmasına olanak tanır.",
     "related_terms": [
         "Grassroots initiative",
@@ -27,7 +28,7 @@
     ],
     "language": "turkish",
     "translated_by": [
-        "Elif Bastan"
+        "Elif Baştan"
     ],
     "translation_reviewed_by": [
         "Neslihan Özhan"

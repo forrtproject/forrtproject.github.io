@@ -1,6 +1,7 @@
 {
     "type": "glossary",
     "title": "CARKing",
+    "sort_key": "carking",
     "definition": "Sonuçlar Bilindikten Sonra Eleştiri (CARKing; Critiquing After the Results are Known), bir araştırma tasarımına yönelik eleştirinin, sanki sonuçlar bilinmeden önce yapılmış gibi sunulmasını ifade eder. Bu tür eleştiriler, eleştiriyi yapan kişi bunun farkında olsa da olmasa da, genellikle istenmeyen veya olumsuz sonuçlara verilen bir tepki ya da eleştiri biçimidir.",
     "related_terms": [
         "HARKing",
@@ -28,6 +29,6 @@
         "Ege Emek"
     ],
     "translation_reviewed_by": [
-        "Elif Bastan"
+        "Elif Baştan"
     ]
 }

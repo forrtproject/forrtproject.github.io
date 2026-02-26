@@ -1,7 +1,8 @@
 {
     "type": "glossary",
     "title": "Çoklu Laboratuvarlı [Many Labs]",
-    "definition": "Açık Bilim İşbirliği ( Open Science Collaboration) (2015) tarafından yürütülen, çeşitli üniversitelerden yüzlerce bağımsız araştırma grubunun yayınlanmış etkilerin tekrarlama çalışmalarını yürüttüğü bir kitle kaynaklı girişimdir. Bu girişim aynı zamanda \"Many Labs I\" olarak da bilinir ve daha sonra örneklemler ve bağlamlar arasında tekrarlama sonuçlarındaki farklılıkları değerlendiren \"Many Labs II\" projesiyle devam etmiştir. Benzer projeler arasında ManyBabies (Çoklu Bebek Araştırmaları), EEGManyLabs (Çoklu EEG Laboratuvarları) ve Psychological Science Accelerator (Psikoloji Bilimi Hızlandırıcı) yer almaktadır.",
+    "sort_key": "czoklu laboratuvarliz [many labs]",
+    "definition": "Açık Bilim İş birliği ( Open Science Collaboration) (2015) tarafından yürütülen, çeşitli üniversitelerden yüzlerce bağımsız araştırma grubunun yayınlanmış etkilerin tekrarlama çalışmalarını yürüttüğü bir kitle kaynaklı girişimdir. Bu girişim aynı zamanda \"Many Labs I\" olarak da bilinir ve daha sonra örneklemler ve bağlamlar arasında tekrarlama sonuçlarındaki farklılıkları değerlendiren \"Many Labs II\" projesiyle devam etmiştir. Benzer projeler arasında ManyBabies (Çoklu Bebek Araştırmaları), EEGManyLabs (Çoklu EEG Laboratuvarları) ve Psychological Science Accelerator (Psikoloji Bilimi Hızlandırıcı) yer almaktadır.",
     "related_terms": [
         "Collaboration",
         "Many analysts",

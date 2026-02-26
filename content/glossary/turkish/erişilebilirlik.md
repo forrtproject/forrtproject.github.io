@@ -1,6 +1,7 @@
 {
     "type": "glossary",
     "title": "Erişilebilirlik [Accessibility]",
+    "sort_key": "eriszilebilirlik [accessibility]",
     "definition": "Erişilebilirlik, akademik amaçlarla materyallere (örn., veriler, kodlar, çıktılar, yayınlar) erişim ve bunların yeniden kullanımının kolaylığını ifade eder. Bu, kronik hastalığı, engeli ve/veya nörogelişimsel farklılığı olan kişilere sağlanan erişim kolaylığı açısından özellikle önemlidir. Bu gruplar, uygun biçimlendirilmiş materyallerin temini ve fiziksel mekânlara erişim dâhil (ancak bunlarla sınırlı olmamak üzere), araştırma kapsamında birçok mali, hukuki ve/veya teknik engelle karşı karşıya kalmaktadır. Erişilebilirlik; çeşitlilik, eşitlik, kapsayıcılık ve temsil ile ilgili yapısal sorunları da kapsar (Pownall vd., 2021). Arayüzler, etkinlikler ve mekanlar, tam katılımı sağlamak için erişilebilirlik göz önünde bulundurularak tasarlanmalıdır. Örneğin, web tabanlı görsellerin renk körü dostu olması ve alternatif metin içermesi ya da etkinliklerde canlı altyazı kullanılması (Brown vd., 2018; Pollet ve Bond, 2021; World Wide Web Consortium, 2021).",
     "related_terms": [
         "Availability",
@@ -40,6 +41,6 @@
         "Ege Emek"
     ],
     "translation_reviewed_by": [
-        "Elif Bastan"
+        "Elif Baştan"
     ]
 }

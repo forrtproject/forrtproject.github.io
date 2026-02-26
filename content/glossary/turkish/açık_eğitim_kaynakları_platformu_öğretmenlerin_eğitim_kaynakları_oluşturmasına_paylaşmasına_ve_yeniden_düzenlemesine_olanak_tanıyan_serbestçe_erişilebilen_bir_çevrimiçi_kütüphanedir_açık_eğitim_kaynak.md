@@ -27,5 +27,6 @@
     ],
     "translation_reviewed_by": [
         "Merve Öztürk"
-    ]
+    ],
+    "sort_key": "aczizk egzitim kaynaklariz platformu, ozgzretmenlerin egzitim kaynaklariz oluszturmasizna, paylaszmasizna ve yeniden duzzenlemesine olanak tanizyan, serbestcze eriszilebilen bir czevrimiczi kuztuzphanedir. aczizk egzitim kaynaklariz hareketinin amaciz, \"iszbirligzine dayaliz ozgzretme ve ozgzrenme\"yi (https://www.oercommons.org/about) teszvik etmek ve herkesin eriszebilecegzi yuzksek kaliteli egzitim kaynaklariz sagzlamaktizr. [open educational resources (oer) commons]"
 }

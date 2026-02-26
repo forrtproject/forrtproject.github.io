@@ -1,6 +1,7 @@
 {
     "type": "glossary",
     "title": "Veri Paylaşımı [Data sharing]",
+    "sort_key": "veri paylaszizmiz [data sharing]",
     "definition": "Akademik araştırmalarda kullanılan verilerin diğer araştırmacıların erişimine açılması uygulamasına ilişkin pratikler, teknolojiler, kültürel unsurlar ve yasal çerçevelerin bütünüdür. Gollwitzer vd. (2020), veri paylaşımını iki tipe ayırmaktadır: Tip 1: Yayımlanmış bir araştırma makalesinin bulgularının tekrarlanabilmesi için gerekli olan veriler. Tip 2: Bir araştırma projesi kapsamında toplanmış ancak proje tamamlandıktan sonra henüz analiz edilmemiş, raporlanmamış ya da yalnızca kısmen analiz edilmiş/raporlanmış veriler. Bu nedenle, bu tür veriler genellikle belirli bir ambargo süresi sonrasında paylaşılır.",
     "related_terms": [
         "FAIR principles",

@@ -1,6 +1,7 @@
 {
     "type": "glossary",
     "title": "Datenvisualisierung [Data visualisation]",
+    "sort_key": "datenvisualisierung [data visualisation]",
     "definition": "Grafische Darstellung von Daten oder Informationen. Die Datenvisualisierung nutzt die gut entwickelte visuelle Verarbeitungskapazität des Menschen, um Erkenntnisse und wichtige Informationen zu vermitteln. Datenvisualisierungen zeigen oft die Rohdaten, deskriptive Statistiken und/oder Inferenzstatistiken.",
     "related_terms": [
         "Figure",

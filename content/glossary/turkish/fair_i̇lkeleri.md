@@ -1,6 +1,7 @@
 {
     "type": "glossary",
     "title": "FAIR İlkeleri [FAIR principles]",
+    "sort_key": "fair i̇lkeleri [fair principles]",
     "definition": "Akademik materyallerin bulunabilir (findable), erişilebilir (accessible), birlikte çalışabilir (interoperable) ve yeniden kullanılabilir (reusable) olmasını amaçlayan ilkeleri tanımlar. “Bulunabilirlik” ve “erişilebilirlik” materyallerin nerede depolandığıyla (örn., veri depolarında) ilgilenirken, “birlikte çalışabilirlik” ve “yeniden kullanılabilirlik” veri formatlarının önemine ve bu formatların gelecekte nasıl değişebileceğine odaklanır.",
     "related_terms": [
         "Metadata",

@@ -1,6 +1,7 @@
 {
     "type": "glossary",
     "title": "Ön-kayıt [Preregistration]",
+    "sort_key": "ozn-kayizt [preregistration]",
     "definition": "Veriler toplanmadan veya incelenmeden önce, bir çalışmanın planının araştırma soruları/hipotezleri, araştırma tasarımı ve veri analizine ilişkin ayrıntılarını içererek yayımlanması uygulamasıdır. İkincil veri analizlerinin de ön-kayıt altına alınması mümkündür (Merten ve Krypotos, 2019). Ön-kayıt belgesi zaman damgalıdır ve genellikle bağımsız bir platforma (örn., bir arşiv) kaydedilir, böylece kamuya açık bir şekilde (bazen bir ambargo süresinden sonra) paylaşılabilir. Ön-kayıt, belirli bir zaman noktasında neyin planlandığını şeffaf bir şekilde belgeleyerek, sonrasında meydana gelmiş olabilecek değişikliklerin üçüncü kişiler tarafından değerlendirilmesine olanak tanır. Ön-kayıt ne kadar ayrıntılıysa, üçüncü kişilerin bu değişiklikleri ve böylece yapılan analizlerin geçerliliğini değerlendirmesi o kadar kolay olur. Ön-kayıt, doğrulayıcı ve keşfedici araştırmaların birbirinden net bir biçimde ayrılmasını amaçlar.",
     "related_terms": [
         "Confirmation bias",

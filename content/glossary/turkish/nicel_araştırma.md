@@ -1,6 +1,7 @@
 {
     "type": "glossary",
     "title": "Nicel araştırma [Quantitative research]",
+    "sort_key": "nicel arasztizrma [quantitative research]",
     "definition": "Nicel araştırma, istatistiksel olarak analiz edilebilen sayısal verilerin kullanımıyla çeşitli olguları sistematik olarak incelemek için geniş bir yöntem yelpazesini kapsar.",
     "related_terms": [
         "Measuring",

@@ -1,6 +1,7 @@
 {
     "type": "glossary",
     "title": "COAR Community Framework for Good Practices in Repositories",
+    "sort_key": "coar community framework for good practices in repositories",
     "definition": "Ein Leitfaden, der die besten Praktiken für wissenschaftliche Repositorien und Bewertungskriterien für diese Praktiken identifiziert. Sein flexibler und mehrdimensionaler Ansatz bedeutet, dass er auf verschiedene Typen von Repositorien angewendet werden kann, einschließlich solcher, die Publikationen oder Daten bereitstellen, über geografische und thematische Kontexte hinweg.",
     "related_terms": [
         "Metadata",
