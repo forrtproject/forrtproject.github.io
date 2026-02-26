@@ -29,7 +29,8 @@
     { pattern: /^\/glossary\/([^/]+)\/.+/, target: '/glossary/$1/' },
     { pattern: /^\/author(\/|$)/, target: '/contributors/' },
     { pattern: /^\/summaries(\/|$)/, target: '/' },
-    { pattern: /^\/reversals(\/|$)/, target: '/' }
+    { pattern: /^\/reversals(\/|$)/, target: '/' },
+    { pattern: /^\/re_searchterms\/?$/, target: '/apps/re_searchterms.html' }
   ];
   for (var i = 0; i < redirects.length; i++) {
     var match = path.match(redirects[i].pattern);
