@@ -1,6 +1,7 @@
 {
     "type": "glossary",
     "title": "Reverse p-hacking",
+    "sort_key": "reverse p-hacking",
     "definition": "Ausnutzung der Freiheitsgrade des Forschenden bei der statistischen Analyse, um die Wahrscheinlichkeit zu erhöhen, dass die Nullhypothese beibehalten wird (z. B. *p* \\> .05).",
     "related_terms": [
         "Analytic flexibility",
@@ -11,10 +12,7 @@
         "Selective reporting"
     ],
     "references": [
-        "Chuard et al. (2019)"
-    ],
-    "alt_related_terms": [
-        null
+        "Chuard, P. J. C., Vrtilek, M., Head, M. L., & Jennions, M. D. (2019). Evidence that non-significant results are sometimes preferred: Reverse P-hacking or selective reporting? PLoS Biol, 17(1), e3000127. https://doi.org/10.1371/journal.pbio.3000127"
     ],
     "drafted_by": [
         "Robert M. Ross"
@@ -25,5 +23,15 @@
         "Sam Parsons",
         "Timo Roettger"
     ],
-    "language": "german"
+    "alt_related_terms": [
+        null
+    ],
+    "language": "german",
+    "translated_by": [
+        "Helena Hartmann"
+    ],
+    "translation_reviewed_by": [
+        "Susanne Vogel",
+        "Jennifer Mattschey"
+    ]
 }

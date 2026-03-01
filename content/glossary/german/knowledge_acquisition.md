@@ -1,6 +1,7 @@
 {
     "type": "glossary",
     "title": "Knowledge acquisition",
+    "sort_key": "knowledge acquisition",
     "definition": "Der Prozess, durch den der Verstand neue Informationen entschlüsselt oder extrahiert, speichert und mit bereits vorhandenen Informationen im Langzeitgedächtnis verknüpft. Angesichts der komplexen Struktur und Natur von Wissen wird dieser Prozess im philosophischen Bereich der Erkenntnistheorie sowie im psychologischen Bereich des Lernens und des Gedächtnisses untersucht.",
     "related_terms": [
         "Epistemology",
@@ -8,10 +9,7 @@
         "Learning"
     ],
     "references": [
-        "Brule and Blount (1989)"
-    ],
-    "alt_related_terms": [
-        null
+        "Brule, J., & Blount, A. (1989). Knowledge acquisition. McGraw-Hill."
     ],
     "drafted_by": [
         "Oscar Lecuona"
@@ -22,5 +20,15 @@
         "Kai Krautter",
         "Graham Reid"
     ],
-    "language": "german"
+    "alt_related_terms": [
+        null
+    ],
+    "language": "german",
+    "translated_by": [
+        "Bettina MJ Kern"
+    ],
+    "translation_reviewed_by": [
+        "Helena Hartmann",
+        "Jennifer Mattschey"
+    ]
 }

@@ -1,0 +1,40 @@
+{
+    "type": "glossary",
+    "title": "Çoklu Laboratuvarlı [Many Labs]",
+    "sort_key": "czoklu laboratuvarliz [many labs]",
+    "definition": "Açık Bilim İş birliği ( Open Science Collaboration) (2015) tarafından yürütülen, çeşitli üniversitelerden yüzlerce bağımsız araştırma grubunun yayınlanmış etkilerin tekrarlama çalışmalarını yürüttüğü bir kitle kaynaklı girişimdir. Bu girişim aynı zamanda \"Many Labs I\" olarak da bilinir ve daha sonra örneklemler ve bağlamlar arasında tekrarlama sonuçlarındaki farklılıkları değerlendiren \"Many Labs II\" projesiyle devam etmiştir. Benzer projeler arasında ManyBabies (Çoklu Bebek Araştırmaları), EEGManyLabs (Çoklu EEG Laboratuvarları) ve Psychological Science Accelerator (Psikoloji Bilimi Hızlandırıcı) yer almaktadır.",
+    "related_terms": [
+        "Collaboration",
+        "Many analysts",
+        "Many Labs I",
+        "Many Labs II",
+        "Open Science Collaboration",
+        "Replication"
+    ],
+    "references": [
+        "Ebersole, C. R., Atherton, O. E., Belanger, A. L., Skulborstad, H. M., Allen, J. M., Banks, J. B., & Nosek, B. A. (2016). Many Labs 3: Evaluating participant pool quality across the academic semester via replication. Journal of Experimental Social Psychology, 67, 68–82. https://doi.org/10.1016/j.jesp.2015.10.012",
+        "Frank, M. C., Bergelson, E., Bergmann, C., Cristia, A., Floccia, C., Gervain, J., Hamlin, J. K., Hannon, E. E., Kline, M., Levelt, C., Lew-Williams, C., Nazzi, T., Panneton, R., Rabagliati, H., Soderstrom, M., Sullivan, J., Waxman, S., & Yurovsky, D. (2017). A Collaborative Approach to Infant Research: Promoting Reproducibility, Best Practices, and Theory-Building. Infancy, 22, 421–435. https://doi.org/10.1111/infa.12182",
+        "Klein, R. A., Ratliff, K. A., Vianello, M., Adams, R. B., Bahník, Š., Bernstein, M. J., & et al. (2014). Investigating variation in replicability: A “many labs” replication project. Social Psychology, 45, 142–152. https://doi.org/10.1027/1864-9335/a000178",
+        "Klein, R. A., Vianello, M., Hasselman, F., Adams, B. G., Adams, R. B., Alper, S., & … Nosek, B. A. (2018). Many Labs 2: Investigating Variation in Replicability Across Samples and Settings. Advances in Methods and Practices in Psychological Science, 1(4), 443–490. https://doi.org/10.1177/2515245918810225",
+        "Moshontz, H., Campbell, L., Ebersole, C. R., IJzerman, H., Urry, H. L., Forscher, P. S., & Chartier, C. R. (2018). The Psychological Science Accelerator: Advancing psychology through a distributed collaborative network. Advances in Methods and Practices in Psychological Science, 1(4), 501–515. https://doi.org/10.1177/2515245918797607",
+        "Pavlov, Y. G., Adamian, N., Appelhoff, S., Arvaneh, M., Benwell, C., Beste, C., & Mushtaq, F. (2020). #EEGManyLabs: Investigating the Replicability of Influential EEG Experiments. PsyArXiv Preprint. https://doi.org/10.31234/osf.io/528nr"
+    ],
+    "drafted_by": [
+        "Sam Parsons"
+    ],
+    "reviewed_by": [
+        "Helena Hartmann",
+        "Charlotte R. Pennington",
+        "Mirela Zaneva"
+    ],
+    "alt_related_terms": [
+        null
+    ],
+    "language": "turkish",
+    "translated_by": [
+        "Nihan Selin Soylu Konak"
+    ],
+    "translation_reviewed_by": [
+        "Merve Öztürk"
+    ]
+}

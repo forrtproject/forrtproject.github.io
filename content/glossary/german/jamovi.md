@@ -1,6 +1,7 @@
 {
     "type": "glossary",
     "title": "Jamovi",
+    "sort_key": "jamovi",
     "definition": "Freie und quelloffene Software für Datenanalyse, auf der Grundlage der statistischen Programmiersprache R. Jamovi verfügt über eine grafische Benutzeroberfläche und stellt den verwendeten R-Code bereit. Damit unterstützt Jamovi die Reproduzierbarkeit von Forschungsergebnissen, indem Daten, Code, Analysen und Ergebnisse in einer einzigen Datei gespeichert werden.",
     "related_terms": [
         "JASP",
@@ -8,12 +9,7 @@
         "R",
         "Reproducibility"
     ],
-    "references": [
-        "The jamovi project (2020)"
-    ],
-    "alt_related_terms": [
-        null
-    ],
+    "references": [],
     "drafted_by": [
         "Amélie Beffara Bret"
     ],
@@ -22,5 +18,15 @@
         "Alexander Hart",
         "Charlotte R. Pennington"
     ],
-    "language": "german"
+    "alt_related_terms": [
+        null
+    ],
+    "language": "german",
+    "translated_by": [
+        "Bettina MJ Kern"
+    ],
+    "translation_reviewed_by": [
+        "Helena Hartmann",
+        "Jennifer Mattschey"
+    ]
 }

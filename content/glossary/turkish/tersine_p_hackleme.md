@@ -1,0 +1,36 @@
+{
+    "type": "glossary",
+    "title": "Tersine p-hackleme [Reverse p-hacking]",
+    "sort_key": "tersine p-hackleme [reverse p-hacking]",
+    "definition": "İstatistiksel veri analizi sırasında, araştırmacının serbestlik derecesini kötüye kullanarak sıfır hipotezinin kabul edilme olasılığını artırmaya yönelik manipülasyonlardır (örneğin, p > .05 elde etmeye çalışmak).",
+    "related_terms": [
+        "Analytic flexibility",
+        "HARKing",
+        "P-hacking",
+        "Questionable Research Practices or Questionable Reporting Practices (QRPs)",
+        "Researcher degrees of freedom",
+        "Selective reporting"
+    ],
+    "references": [
+        "Chuard, P. J. C., Vrtilek, M., Head, M. L., & Jennions, M. D. (2019). Evidence that non-significant results are sometimes preferred: Reverse P-hacking or selective reporting? PLoS Biol, 17(1), e3000127. https://doi.org/10.1371/journal.pbio.3000127"
+    ],
+    "drafted_by": [
+        "Robert M. Ross"
+    ],
+    "reviewed_by": [
+        "Mahmoud Elsherif",
+        "Alexander Hart",
+        "Sam Parsons",
+        "Timo Roettger"
+    ],
+    "alt_related_terms": [
+        null
+    ],
+    "language": "turkish",
+    "translated_by": [
+        "Elif Baştan"
+    ],
+    "translation_reviewed_by": [
+        "Neslihan Özhan"
+    ]
+}

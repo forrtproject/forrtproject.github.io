@@ -1,15 +1,13 @@
 {
     "type": "glossary",
     "title": "PubPeer",
+    "sort_key": "pubpeer",
     "definition": "Eine Website, die es Nutzenden ermöglicht, anonyme Peer-Reviews zu publizierten Forschungsergebnissen zu veröffentlichen (d.h. Post-Publication Peer Review).",
     "related_terms": [
         "Open Peer Review"
     ],
     "references": [
-        "www.pubpeer.com"
-    ],
-    "alt_related_terms": [
-        null
+        "PubPeer. (n.d.). PubPeer—Search publications and join the conversation. Pubpeer. https://www.pubpeer.com/"
     ],
     "drafted_by": [
         "Ali H. Al-Hoorie"
@@ -17,5 +15,15 @@
     "reviewed_by": [
         "Mahmoud ELsherif"
     ],
-    "language": "german"
+    "alt_related_terms": [
+        null
+    ],
+    "language": "german",
+    "translated_by": [
+        "Helena Hartmann"
+    ],
+    "translation_reviewed_by": [
+        "Susanne Vogel",
+        "Jennifer Mattschey"
+    ]
 }

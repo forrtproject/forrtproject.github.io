@@ -1,6 +1,7 @@
 {
     "type": "glossary",
     "title": "Participatory Research",
+    "sort_key": "participatory research",
     "definition": "Participatory research refers to incorporating the views of people from relevant communities in the entire research process to achieve shared goals between researchers and the communities. This approach takes a collaborative stance that seeks to reduce the power imbalance between the researcher and those researched through a “systematic cocreation of new knowledge” (Andersson, 2018).",
     "related_terms": [
         "Collaborative research",
@@ -10,10 +11,12 @@
         "Transformative paradigm"
     ],
     "references": [
-        "Cornwall and Jewkes (1995); Fletcher-Watson et al. (2019); Kiernan (1999); Leavy (2017); Ottmann et al. (2011); Rose (2018)"
-    ],
-    "alt_related_terms": [
-        null
+        "Cornwall, A., & Jewkes, R. (1995). What is participatory research? Social Science & Medicine, 41(12), 1667–1676. https://doi.org/10.1016/0277-9536(95)00127-S",
+        "Fletcher-Watson, S., Adams, J., Brook, K., Charman, T., Crane, L., Cusack, J., Leekam, S., Milton, D., Parr, J. R., & Pellicano, E. (2019). Making the Future Together: Shaping Autism Research Through Meaningful Participation. Autism, 23(4), 943–953.",
+        "Kiernan, C. (1999). Participation in research by people with learning disability: Origins and issues. British Journal of Learning Disabilities, 27(2), 43–47. https://doi.org/10.1111/j.1468-3156.1999.tb00084.x",
+        "Leavy, P. (2017). Research Design: Quantitative, Qualitative, Mixed Methods, Arts-Based, and Community-Based Participatory Research Approaches. The Guilford Press.",
+        "Ottmann, G., Laragy, C., Allen, J., & Feldman, P. (2011). Coproduction in practice: Participatory action research to develop a model of community aged care. Systemic Practice and Action Research, 24, 413–427. https://doi.org/10.1007/s11213-011-9192-x",
+        "Rose, D. (2018). Participatory research: Real or imagined. Social Psychiatry and Psychiatric Epidemiology, 53, 765–771. https://doi.org/10.1007/s00127-018-1549-3"
     ],
     "drafted_by": [
         "Tamara Kalandadze"
@@ -23,6 +26,9 @@
         "Bethan Iley",
         "Halil E. Kocalar",
         "Michele C. Lim"
+    ],
+    "alt_related_terms": [
+        null
     ],
     "language": "english",
     "aliases": [
