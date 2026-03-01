@@ -3,7 +3,6 @@ import re
 import json
 import pandas as pd
 import os
-import shutil
 from io import StringIO
 
 script_dir = os.path.dirname(os.path.abspath(__file__))
@@ -209,10 +208,15 @@ for language_code in languages_to_process:
 # Create markdown files
 for language_name, entries in formatted_data.items():
     language_dir = os.path.join(script_dir, language_name)
-    # Remove existing directory to ensure deleted entries don't persist
+    # Remove existing glossary entry files to ensure deleted entries don't persist
+    # Preserve _index.md files as they are not regenerated
     if os.path.exists(language_dir):
-        shutil.rmtree(language_dir)
-    os.makedirs(language_dir)
+        for existing_file in os.listdir(language_dir):
+            if existing_file != '_index.md' and existing_file.endswith('.md'):
+                file_path_to_remove = os.path.join(language_dir, existing_file)
+                os.remove(file_path_to_remove)
+    else:
+        os.makedirs(language_dir)
     
     print(f"Creating {len(entries)} markdown files for {language_name}")
     
