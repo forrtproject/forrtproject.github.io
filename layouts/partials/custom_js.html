@@ -1,0 +1,6 @@
+{{/* Custom JavaScript for FORRT site */}}
+
+{{/* Include clusters search functionality on clusters page */}}
+{{ if eq .RelPermalink "/clusters/" }}
+<script src="{{ "js/clusters-search.js" | relURL }}"></script>
+{{ end }}
