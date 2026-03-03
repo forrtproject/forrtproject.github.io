@@ -2,6 +2,8 @@
 title: "FORRT Library of Reproduction and Replication Attempts"
 url: "/replication-hub/flora/"
 date: 2026-02-26
+aliases:
+  - /flora/
 ---
 
 The aim of the FORRT Library of Reproduction and Replication Attempts (FLoRA) is to track all attempts to repeatedly test published findings across the sciences and humanities. In contrast to the FORRT Replication Database (FReD), FLoRA does not contain statistical data. This allows FLoRA to include references from any field of research, and to be maintained with limited resources.
