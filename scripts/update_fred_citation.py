@@ -24,6 +24,8 @@ logger = logging.getLogger(__name__)
 # Constants
 CITATION_URL = "https://raw.githubusercontent.com/forrtproject/FReD-data/refs/heads/main/output/citation.txt"
 OUTPUT_FILE = "static/data/fred_citation.txt"
+FLORA_INDEX_FILE = "content/replication-hub/flora/_index.md"
+FLORA_PLACEHOLDER = "{{flora-ref}}"
 
 def fetch_fred_citation():
     """
@@ -90,21 +92,69 @@ def save_citation(citation, output_path):
         logger.error(f"Failed to save citation: {e}")
         return False
 
+def update_flora_index(citation_html):
+    """
+    Replace the {{flora-ref}} placeholder in the FLoRA _index.md with the citation HTML.
+
+    Args:
+        citation_html: The processed citation HTML string (same as saved to fred_citation.txt)
+
+    Returns:
+        bool: True if successful or placeholder not present, False on error
+    """
+    try:
+        index_file = Path(FLORA_INDEX_FILE)
+        if not index_file.exists():
+            logger.warning(f"FLoRA index file not found: {FLORA_INDEX_FILE}")
+            return False
+
+        content = index_file.read_text(encoding='utf-8')
+        if FLORA_PLACEHOLDER not in content:
+            logger.info("No {{flora-ref}} placeholder found in FLoRA index, skipping")
+            return True
+
+        updated = content.replace(FLORA_PLACEHOLDER, citation_html.strip())
+        index_file.write_text(updated, encoding='utf-8')
+        logger.info(f"Successfully updated {FLORA_INDEX_FILE}")
+        return True
+    except Exception as e:
+        logger.error(f"Failed to update FLoRA index: {e}")
+        return False
+
+
 def main():
     """Main function to fetch and save the FReD citation."""
     logger.info("Starting FReD citation update")
-    
+
     # Fetch citation
     citation = fetch_fred_citation()
     if not citation:
         logger.error("Failed to fetch citation, exiting")
         return 1
-    
-    # Save citation
+
+    # Save citation to static data file
     if not save_citation(citation, OUTPUT_FILE):
         logger.error("Failed to save citation, exiting")
         return 1
-    
+
+    # Build the HTML-formatted citation string (same logic as save_citation)
+    import re
+    citation_stripped = citation.strip()
+    note = "* These authors contributed equally to this work."
+    citation_main = citation_stripped
+    if note in citation_stripped:
+        citation_main = citation_stripped.split(note)[0].strip()
+    doi_pattern = r'(https://doi\.org/[\w\./-]+)'
+    def repl(match):
+        url = match.group(1)
+        return f'<a href="{url}">{url}</a>'
+    citation_html = re.sub(doi_pattern, repl, citation_main) + "\n\n" + note
+
+    # Replace placeholder in FLoRA _index.md
+    if not update_flora_index(citation_html):
+        logger.error("Failed to update FLoRA index, exiting")
+        return 1
+
     logger.info("FReD citation update completed successfully")
     return 0
 
