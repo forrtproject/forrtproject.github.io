@@ -39,13 +39,6 @@ layout: single
         <h4 class="sc-card-name">dr. Steven Verheyen</h4>
         <p class="sc-card-role">Director</p>
     </div>
-</div><div class="sc-card" onclick="openModal('sarahannefields')">
-    <div class="sc-placeholder">SF</div>
-    <div class="sc-card-overlay"></div>
-    <div class="sc-card-content">
-        <h4 class="sc-card-name">Sarahanne Fields</h4>
-        <p class="sc-card-role">Director</p>
-    </div>
 </div><div class="sc-title-card teal">
     <span class="sc-title-label">Team</span>
     <h3 class="sc-title-text">Social Justice & DEIA</h3>
@@ -361,31 +354,6 @@ layout: single
                     <h3 class="sc-modal-name">dr. Steven Verheyen</h3>
                     <p class="sc-modal-role">Director (Community & Sustainability)</p>
                     <div class="sc-modal-bio">Steven Verheyen is an Assistant Professor of Cognitive Psychology at Erasmus University Rotterdam, where he also coordinates the Open Science Community Rotterdam and is Open Science Champion of the Erasmus School of Social and Behavioural Sciences. His work on individual differences in language use is positioned at the intersection of quantitative psychology, philosophy of language, and cognitive linguistics. He also conducts meta-scientific research on incentivization, contributorship, conflicts of interest, and replication. He is currently serving as editor of the Review of Philosophy and Psychology, PCI Psychology, and Replication Research.  At FORRT, he aims to promote open and responsible research through pedagogical reform.</div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div><div id="modal-sarahannefields" class="sc-modal-backdrop">
-    <div class="sc-modal-content">
-        <div class="sc-modal-header">
-            <button onclick="closeModal('sarahannefields')" class="sc-close-btn">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 18 12"/></svg>
-            </button>
-        </div>
-        <div class="sc-modal-body">
-            <div class="sc-modal-layout">
-                <div class="sc-modal-sidebar">
-                    <div class="sc-modal-img">
-                        <span style="font-size: 2rem; color: #94a3b8; font-weight: 600;">SF</span>
-                    </div>
-                    <div class="sc-social-links">
-                        
-                    </div>
-                </div>
-                <div class="sc-modal-main">
-                    <h3 class="sc-modal-name">Sarahanne Fields</h3>
-                    <p class="sc-modal-role">Director</p>
-                    <div class="sc-modal-bio">Bio coming soon.</div>
                 </div>
             </div>
         </div>
@@ -814,7 +782,7 @@ In FORRT, she has been involved in co-leading Team Citational Politics and is ve
                     <div class="sc-modal-bio">Fotis Mystakopoulos is a professional actively engaged in advancing Open Science. His career trajectory reflects the evolution of information science, from its traditional roots in library services to its modern role in shaping research policy and data infrastructure. With a background in Library and Information Science, he has developed expertise in key areas of scholarly communication, including Responsible Research Assessment, Open Access, Open Science Training, and Research Data Management.
 
 Beyond his formal roles, he is actively engaged in community building, supporting initiatives that connect researchers and professionals around shared values and practices of openness and advocating for cultural change in academia that aligns with the ethos of Open Science.
-Currently, alongside his professional duties, he is pursuing a PhD at the University of West Attica, examining the evolution of academic libraries, and theire services within the expanding global landscape of Open Science.
+Currently, alongside his professional duties, he is pursuing a PhD at the University of West Attica, examining the evolution of academic libraries, and their services within the expanding global landscape of Open Science.
 
 
 
