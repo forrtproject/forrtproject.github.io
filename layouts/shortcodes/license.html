@@ -1,0 +1,62 @@
+<!--
+User example usage:
+
+Default (CC BY-NC-SA 4.0):
+  { {< license >} }
+
+Custom text only:
+  { {< license text="The AWoP is licensed under CC BY-NC-SA 4.0" >} }
+
+Different license (e.g., CC BY 4.0):
+  { {< license 
+    text="This work is licensed under CC BY 4.0" 
+    link="https://creativecommons.org/licenses/by/4.0/" 
+    image="/img/by.svg" 
+  >} }
+
+Note: Remove spaces between braces when using.
+-->
+
+
+{{- $link := .Get "link" | default "https://creativecommons.org/licenses/by-nc-sa/4.0/" -}}
+{{- $image := .Get "image" | default "/img/by-nc-sa.svg" -}}
+{{- $text := .Get "text" | default (printf "This work is licensed under a <a href=\"%s\">CC BY-NC-SA 4.0</a> license." $link) -}}
+<div class="license-note">
+  <div class="license-content">
+    <p>{{ $text | markdownify }}</p>
+    <a href="{{ $link }}" target="_blank" rel="noopener" class="license-badge">
+      <img src="{{ $image }}" alt="License">
+    </a>
+  </div>
+</div>
+<style>
+.license-note {
+  position: relative;
+  padding: 0.5rem 0.5rem;
+  margin: 0.1rem 0;
+  border-left: 4px solid #209cee;
+  border-right: 4px solid #209cee;
+  border-radius: 4px;
+  background-color: #f6fbfe;
+  color: #12537e;
+}
+.license-note .license-content {
+  text-align: center;
+}
+.license-note .license-content p {
+  margin-bottom: 0.5rem;
+}
+.license-note .license-badge {
+  display: inline-block;
+}
+.license-note .license-badge img {
+  height: 42px;
+}
+.license-note a {
+  color: currentColor;
+  border-bottom: solid 1px currentColor;
+}
+.license-note .license-badge {
+  border-bottom: none;
+}
+</style>

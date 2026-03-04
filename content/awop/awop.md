@@ -158,6 +158,4 @@ For more information, please contact us: awop@forrt.org.
 
 <br>
 
-{{% alert note %}}
-The Academic Wheel of Privilege (AWoP) is licensed under a [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/) license.
-{{% /alert %}}
+{{< license text="The Academic Wheel of Privilege (AWoP) is licensed under a [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/) license." >}}
