@@ -4,10 +4,18 @@ User example usage:
 Default (CC BY 4.0):
   { {< license >} }
 
-Custom text only:
-  { {< license text="The AWoP is licensed under CC BY SA 4.0" >} }
+Using type attribute (recommended):
+  { {< license type="cc-by" >} }
+  { {< license type="cc-by-nc" >} }
+  { {< license type="cc-by-nc-nd" >} }
+  { {< license type="cc-by-nc-sa" >} }
+  { {< license type="cc-by-sa" >} }
+  { {< license type="cc-zero" >} }
 
-Different license (e.g., CC BY SA 4.0):
+Custom text override:
+  { {< license type="cc-by-sa" text="The AWoP is licensed under CC BY-SA 4.0" >} }
+
+Full custom (overrides type):
   { {< license 
     text="This work is licensed under CC BY-SA 4.0" 
     link="https://creativecommons.org/licenses/by-sa/4.0/" 
@@ -17,10 +25,51 @@ Different license (e.g., CC BY SA 4.0):
 Note: Remove spaces between braces when using.
 -->
 
+{{- $type := .Get "type" | default "cc-by" -}}
 
-{{- $link := .Get "link" | default "https://creativecommons.org/licenses/by/4.0/" -}}
-{{- $image := .Get "image" | default "/img/cc_by.svg" -}}
-{{- $text := .Get "text" | default (printf "This work is licensed under a <a href=\"%s\">CC BY 4.0</a> license." $link) -}}
+{{- /* Define license configurations */ -}}
+{{- $licenses := dict 
+  "cc-by" (dict 
+    "link" "https://creativecommons.org/licenses/by/4.0/"
+    "image" "/img/licenses/cc_by.svg"
+    "name" "CC BY 4.0"
+  )
+  "cc-by-nc" (dict 
+    "link" "https://creativecommons.org/licenses/by-nc/4.0/"
+    "image" "/img/licenses/by-nc.svg"
+    "name" "CC BY-NC 4.0"
+  )
+  "cc-by-nc-nd" (dict 
+    "link" "https://creativecommons.org/licenses/by-nc-nd/4.0/"
+    "image" "/img/licenses/by-nc-nd.svg"
+    "name" "CC BY-NC-ND 4.0"
+  )
+  "cc-by-nc-sa" (dict 
+    "link" "https://creativecommons.org/licenses/by-nc-sa/4.0/"
+    "image" "/img/licenses/by-nc-sa.svg"
+    "name" "CC BY-NC-SA 4.0"
+  )
+  "cc-by-sa" (dict 
+    "link" "https://creativecommons.org/licenses/by-sa/4.0/"
+    "image" "/img/licenses/by-sa.svg"
+    "name" "CC BY-SA 4.0"
+  )
+  "cc-zero" (dict 
+    "link" "https://creativecommons.org/publicdomain/zero/1.0/"
+    "image" "/img/licenses/cc-zero.svg"
+    "name" "CC0 1.0"
+  )
+-}}
+
+{{- /* Get license config or fallback to cc-by */ -}}
+{{- $licenseConfig := index $licenses $type | default (index $licenses "cc-by") -}}
+
+{{- /* Allow parameter overrides */ -}}
+{{- $link := .Get "link" | default (index $licenseConfig "link") -}}
+{{- $image := .Get "image" | default (index $licenseConfig "image") -}}
+{{- $licenseName := index $licenseConfig "name" -}}
+{{- $defaultText := printf "This work is licensed under a <a href=\"%s\">%s</a> license." $link $licenseName -}}
+{{- $text := .Get "text" | default $defaultText -}}
 <div class="license-note">
   <div class="license-content">
     <p>{{ $text | markdownify }}</p>
