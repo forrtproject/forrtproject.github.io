@@ -1,26 +1,26 @@
 <!--
 User example usage:
 
-Default (CC BY-NC-SA 4.0):
+Default (CC BY 4.0):
   { {< license >} }
 
 Custom text only:
-  { {< license text="The AWoP is licensed under CC BY-NC-SA 4.0" >} }
+  { {< license text="The AWoP is licensed under CC BY SA 4.0" >} }
 
-Different license (e.g., CC BY 4.0):
+Different license (e.g., CC BY SA 4.0):
   { {< license 
-    text="This work is licensed under CC BY 4.0" 
-    link="https://creativecommons.org/licenses/by/4.0/" 
-    image="/img/by.svg" 
+    text="This work is licensed under CC BY-SA 4.0" 
+    link="https://creativecommons.org/licenses/by-sa/4.0/" 
+    image="/img/by-nc-sa.svg" 
   >} }
 
 Note: Remove spaces between braces when using.
 -->
 
 
-{{- $link := .Get "link" | default "https://creativecommons.org/licenses/by-nc-sa/4.0/" -}}
-{{- $image := .Get "image" | default "/img/by-nc-sa.svg" -}}
-{{- $text := .Get "text" | default (printf "This work is licensed under a <a href=\"%s\">CC BY-NC-SA 4.0</a> license." $link) -}}
+{{- $link := .Get "link" | default "https://creativecommons.org/licenses/by/4.0/" -}}
+{{- $image := .Get "image" | default "/img/cc_by.svg" -}}
+{{- $text := .Get "text" | default (printf "This work is licensed under a <a href=\"%s\">CC BY 4.0</a> license." $link) -}}
 <div class="license-note">
   <div class="license-content">
     <p>{{ $text | markdownify }}</p>
