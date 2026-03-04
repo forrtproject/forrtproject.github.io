@@ -156,4 +156,8 @@ The AWoP is already being recognized and implemented in various settings, includ
 
 For more information, please contact us: awop@forrt.org.
 
+<br>
 
+{{% alert note %}}
+The Academic Wheel of Privilege (AWoP) is licensed under a [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/) license.
+{{% /alert %}}
