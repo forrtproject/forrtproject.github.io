@@ -148,7 +148,7 @@ def main():
     def repl(match):
         url = match.group(1)
         return f'<a href="{url}">{url}</a>'
-    citation_html = re.sub(doi_pattern, repl, citation_main) + "\n\n" + note
+    citation_html = re.sub(doi_pattern, repl, citation_main)
 
     # Replace placeholder in FLoRA _index.md
     if not update_flora_index(citation_html):

@@ -18,9 +18,9 @@ With this simple structure FLoRA allows for tracking of replication rates across
 
 In FLoRA, years of work from a large community of volunteers culminate. If you would like to contribute to the project or use the data for your own research, we would strongly appreciate you reaching out to us.
 
-::: {.callout-note icon="false"}
-## How to cite:
+{{< alert note >}}
 
 {{flora-ref}}
 
-:::
+ * These authors contributed equally to this work.
+{{< /alert >}}
