@@ -28,3 +28,5 @@ Wallrich, L.*, & Röseler, L.*, Hartmann, H., Ashcroft-Jones, S., Doetsch, C., K
 {{< /alert >}}
 
 <!-- flora-citation-end -->
+
+{{< license type="cc-by" >}}
