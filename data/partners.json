@@ -124,7 +124,7 @@
     "short_name": "SIPS",
     "logo": "SIPS.webp",
     "url": "https://improvingpsych.org",
-    "cluster": "Research Communities",
+    "cluster": "Open Research Communities",
     "description": "Brings together scholars working to improve methods and practices in psychological science. Anyone interested in improving psychological research is welcome to join, regardless of experience. SIPS is a service organization aiming to make psychological science higher quality and more cumulative."
   },
   {
@@ -132,7 +132,7 @@
     "short_name": "ReproducibiliTea",
     "logo": "reproducibilitea.webp",
     "url": "https://reproducibilitea.org/",
-    "cluster": "Research Communities",
+    "cluster": "Open Research Communities",
     "description": "An ECR-led grassroots initiative that helps researchers create local Open Science journal clubs at their universities. Started in early 2018 at the University of Oxford, ReproducibiliTea has now spread to over 100 institutions in 25 different countries."
   },
   {
@@ -140,7 +140,7 @@
     "short_name": "BiTS Lab",
     "logo": "BITS.webp",
     "url": "https://bigteamsciencelab.github.io/",
-    "cluster": "Research Communities",
+    "cluster": "Open Research Communities",
     "description": "Established in 2021 to facilitate conversations between members of large-scale collaborations (both at Stanford and beyond) and to advance the work done by these groups. Affiliate organizations include FORRT, Lookit, ManyBabies, ManyBirds, ManyDogs, ManyPrimates, Psychological Science Accelerator, and Strengthening Democracy Challenge."
   },
   {
@@ -148,7 +148,7 @@
     "short_name": "Nowhere Lab",
     "logo": "nowherelab.webp",
     "url": "http://nowherelab.com/",
-    "cluster": "Research Communities",
+    "cluster": "Open Research Communities",
     "description": "An online community for people who would like the lab meeting experience but don't currently have one. Nowhere Lab holds weekly meetings and has an active Slack. Members come from across all populated continents and career stages."
   },
   {
@@ -156,7 +156,7 @@
     "short_name": "QuaLa Lab",
     "logo": "QualaLab.webp",
     "url": "http://qualalab.org/",
-    "cluster": "Research Communities",
+    "cluster": "Open Research Communities",
     "description": "A collaboratively-run working group that works to find ways to find connections between the open science movement and qualitative and mixed methods research. The group meets weekly to discuss ongoing projects, the philosophy of open science, and current events inside and outside of academia."
   },
   {
@@ -164,7 +164,7 @@
     "short_name": "RoSE",
     "logo": "rose_logo.webp",
     "url": "https://www.rose-network.org/home",
-    "cluster": "Research Communities",
+    "cluster": "Open Research Communities",
     "description": "Proactively creates an open and inclusive space for multidisciplinary researchers and practitioners of statistics education globally to connect, learn, and collaborate, toward advancing statistics education research and evidence-based practice."
   },
   {
@@ -247,7 +247,7 @@
     "short_name": "Metadocencia",
     "logo": "MD.webp",
     "url": "https://www.metadocencia.org/",
-    "cluster": "Early Career & Equity",
+    "cluster": "Open Research & Equity",
     "description": "An organization that works towards making the production, communication, and application of scientific and technical knowledge globally equitable. It aims to advance innovation with a local perspective that responsibly builds scientific and technical capacities through the co-creation of networks, learning spaces, and accessible resources for Spanish-speaking communities."
   },
   {
@@ -255,7 +255,7 @@
     "short_name": "ABRIR",
     "logo": "ABRIR.webp",
     "url": "http://www.abrirpsy.org",
-    "cluster": "Early Career & Equity",
+    "cluster": "Open Research & Equity",
     "description": "Advancing Big-team Reproducible science through Increased Representation (ABRIR) was established as a response to the global need of increasing representation in how we conduct open and big-team science, and as a necessity to promote equity, diversity and inclusion in psychological science."
   },
   {
@@ -263,7 +263,7 @@
     "short_name": "JRP",
     "logo": "jrp.webp",
     "url": "https://jrp.pscholars.org/",
-    "cluster": "Early Career & Equity",
+    "cluster": "Open Research & Equity",
     "description": "A global initiative for students and early career researchers in psychology and behavioural sciences. JRP generates diverse research experiences and training, as well as opportunities for personal and professional development of young researchers. The JRP adheres to the principles of Open Science."
   },
   {
@@ -271,7 +271,7 @@
     "short_name": "FWL Collective",
     "logo": "FeministWonderLabCollective_Logo.webp",
     "url": "https://feministwonderlabcoll.github.io/feministwonderlab/index.html",
-    "cluster": "Early Career & Equity",
+    "cluster": "Open Research & Equity",
     "description": "An international group of early career researchers (ECRs), working in the social and life sciences, who passionately believe in making academia a better place for underrepresented people. The Collective meets online at least once a month to work on projects related to feminist perspectives on science, teaching, and academia."
   },
   {
@@ -279,7 +279,7 @@
     "short_name": "Utrecht University",
     "logo": "Utrecht-University.webp",
     "url": "https://www.uu.nl/en/organisation/interdisciplinary-social-science",
-    "cluster": "Institutional Partners",
+    "cluster": "Higher Education Partners",
     "description": "In 2024, FORRT entered a long-term framework agreement with Utrecht University's Department of Interdisciplinary Social Sciences to formalize and expand our shared commitment to advancing open and reproducible research. This partnership enables co-created research, joint initiatives, and mutual support through a structured governance model."
   }
 ]
