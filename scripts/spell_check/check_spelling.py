@@ -2,6 +2,10 @@
 """
 Spell-check script for FORRT repository using codespell.
 Checks for typos in pull requests and generates a formatted comment.
+
+Modes:
+- PR mode: Only checks files changed in the pull request (CHANGED_FILES env var)
+- Full mode: Checks all content directories (CHECK_ALL=true env var)
 """
 
 import os
@@ -10,12 +14,47 @@ import subprocess
 import json
 from pathlib import Path
 
-def run_codespell():
+# Default directories to check in full mode
+DEFAULT_PATHS = ['content', 'scripts', '.github', 'CONTRIBUTING.md', 'README.md']
+
+# File extensions to check
+ALLOWED_EXTENSIONS = {'.md', '.txt', '.html', '.yaml', '.yml', '.py', '.js', '.json', '.toml'}
+
+
+def get_files_to_check():
+    """Determine which files to check based on environment variables."""
+    check_all = os.environ.get('CHECK_ALL', 'false').lower() == 'true'
+    changed_files = os.environ.get('CHANGED_FILES', '').strip()
+    
+    if check_all or not changed_files:
+        # Full mode: check all default directories
+        print("Running in full mode: checking all content...", file=sys.stderr)
+        return DEFAULT_PATHS, True
+    
+    # PR mode: only check changed files
+    files = [f.strip() for f in changed_files.split('\n') if f.strip()]
+    
+    # Filter to only existing files with allowed extensions
+    valid_files = []
+    for f in files:
+        path = Path(f)
+        if path.exists() and path.suffix.lower() in ALLOWED_EXTENSIONS:
+            valid_files.append(f)
+    
+    if not valid_files:
+        print("No spell-checkable files changed in this PR.", file=sys.stderr)
+        return [], False
+    
+    print(f"Running in PR mode: checking {len(valid_files)} changed file(s)...", file=sys.stderr)
+    return valid_files, False
+
+
+def run_codespell(paths):
     """Run codespell and capture output."""
+    if not paths:
+        return "", 0
+    
     try:
-        # Run codespell on specific directories to avoid themes and other large dirs
-        # Focus on content, scripts, and GitHub workflows
-        paths = ['content', 'scripts', '.github', 'CONTRIBUTING.md', 'README.md']
         
         # Use repo root - GitHub Actions path or repo root directory
         repo_root = os.environ.get('GITHUB_WORKSPACE')
@@ -69,15 +108,20 @@ def parse_codespell_output(output):
     
     return typos
 
-def format_comment(typos):
+def format_comment(typos, is_full_mode=False, files_checked=None):
     """Format typos as a GitHub comment."""
+    mode_info = "all content" if is_full_mode else f"{files_checked} changed file(s)"
+    
     if not typos:
         comment = "## ✅ Spell Check Passed\n\n"
-        comment += "No spelling issues found in this PR! 🎉"
+        if files_checked == 0:
+            comment += "No spell-checkable files were changed in this PR."
+        else:
+            comment += f"No spelling issues found when checking {mode_info}! 🎉"
         return comment
     
     comment = "## 📝 Spell Check Results\n\n"
-    comment += f"Found {len(typos)} potential spelling issue(s) in this PR:\n\n"
+    comment += f"Found {len(typos)} potential spelling issue(s) when checking {mode_info}:\n\n"
     
     # Group typos by file
     typos_by_file = {}
@@ -111,14 +155,17 @@ def main():
     """Main function to run spell check and output comment."""
     print("Running spell check...", file=sys.stderr)
     
+    # Determine which files to check
+    paths, is_full_mode = get_files_to_check()
+    
     # Run codespell
-    output, returncode = run_codespell()
+    output, returncode = run_codespell(paths)
     
     # Parse output
     typos = parse_codespell_output(output)
     
     # Format comment
-    comment = format_comment(typos)
+    comment = format_comment(typos, is_full_mode, len(paths) if not is_full_mode else None)
     
     # Output comment for GitHub Actions
     # Escape special characters for GitHub Actions output
