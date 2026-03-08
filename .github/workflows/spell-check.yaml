@@ -4,12 +4,19 @@ name: Spell Check
 # Automated Spell Checking
 # =======================
 # Purpose: Checks for spelling errors in pull requests using codespell
-# Triggers: PR opened, synchronized, or reopened
+# Triggers: PR opened, synchronized, or reopened; manual dispatch for full check
 # Reports: Comments on PR with potential typos and suggestions
 
 on:
   pull_request:
     types: [opened, synchronize, reopened]
+  workflow_dispatch:
+    inputs:
+      check_all:
+        description: 'Check all website content (not just changed files)'
+        required: false
+        default: true
+        type: boolean
 
 permissions:
   contents: read
@@ -23,6 +30,18 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Get changed files (PR only)
+        id: changed_files
+        if: github.event_name == 'pull_request'
+        run: |
+          # Get list of changed files in the PR
+          CHANGED_FILES=$(git diff --name-only ${{ github.event.pull_request.base.sha }} ${{ github.sha }} | grep -E '\.(md|txt|html|yaml|yml|py|js|json|toml)$' || true)
+          echo "files<<EOF" >> $GITHUB_OUTPUT
+          echo "$CHANGED_FILES" >> $GITHUB_OUTPUT
+          echo "EOF" >> $GITHUB_OUTPUT
 
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -36,10 +55,14 @@ jobs:
 
       - name: Run Spell Check Script
         id: spell_check
+        env:
+          CHECK_ALL: ${{ github.event_name == 'workflow_dispatch' && inputs.check_all == true }}
+          CHANGED_FILES: ${{ steps.changed_files.outputs.files }}
         run: |
           python scripts/spell_check/check_spelling.py
 
       - name: Find Comment
+        if: github.event_name == 'pull_request'
         uses: peter-evans/find-comment@v3
         id: fc
         with:
@@ -48,6 +71,7 @@ jobs:
           body-includes: Spell Check Results
 
       - name: Create or update comment
+        if: github.event_name == 'pull_request'
         uses: peter-evans/create-or-update-comment@v4
         with:
           comment-id: ${{ steps.fc.outputs.comment-id }}
