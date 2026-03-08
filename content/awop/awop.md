@@ -51,111 +51,66 @@ subtitle = "An equity-based tool for authorship order"
  css_class = ""
 +++
 
-<br>
-
-<br>
-
 ## Overview
----------------------
+---
 
-Authorship order in academia is not just a matter of protocol but a critical determinant of research impact and professional advancement. However, the decision-making process often overlooks justice and equity, leading to a skewed distribution of authorship that favors privileged individuals, thereby exacerbating credit disparities for marginalized researchers. In response, we introduce the Academic Wheel of Privilege (AWoP): a comprehensive toolkit anchored by a Shiny App and supplemented with educational materials designed to guide equitable authorship order decisions.
+Who goes first? Authorship order in academia is not just a matter of protocol but a critical determinant of research impact and professional advancement. However, the decision-making process often overlooks justice and equity, leading to a skewed distribution of authorship that favors privileged individuals, thereby exacerbating credit disparities for marginalized researchers. In response, we introduce the Academic Wheel of Privilege (AWoP): a comprehensive toolkit anchored by an app and supplemented with educational materials designed to guide equitable authorship order decisions.
 
-The AWoP transcends traditional frameworks by integrating accessibility, inclusivity, diversity, equity, and social justice. It is particularly beneficial in situations where contribution levels are difficult to assess or where systemic biases might influence decisions. Central to the AWoP's mission is its capacity to promote critical discussions on academic privilege, intersectionality, and power dynamics, nurturing a research culture characterized by accountability and a collaborative spirit in research. By adopting this tool, the academic community can move towards a research ethos that recognizes and values diverse backgrounds and experiences.
+The AWoP transcends traditional frameworks by integrating accessibility, inclusivity, diversity, equity, and social justice. It is particularly beneficial in situations where contribution levels are difficult to assess or where systemic biases might influence decisions. Central to the AWoP’s mission is its capacity to promote critical discussions on academic privilege, intersectionality, and power dynamics, nurturing a research culture characterized by accountability and a collaborative spirit in research. By adopting this tool, the academic community can move towards a research ethos that recognizes and values diverse backgrounds and experiences.
 
 The Academic Wheel of Privilege aims to reform authorship practices and inspire a broader transformation towards fairness and inclusiveness in the academic landscape. We invite you to explore the AWoP toolkit and join us in promoting equity and justice in academia.
 
-<br>
-
-## Toolkit 
-------- 
-
-We provide a comprehensive suite of resources within the AWoP toolkit: 
-
-<br>
-
-**Manuscript**: [https://doi.org/10.31222/osf.io/k7a9p](https://doi.org/10.31222/osf.io/k7a9p)
-
-**Shiny App**: [Access the AWoP Shiny App](https://forrt.shinyapps.io/awop) 
-
- * The Shiny App is a dynamic tool that allows users to generate customized weighted indicators of privilege across key socio-economic and cultural identity categories. It helps users actively identify and consider privilege in authorship decisions, facilitating equitable and transparent authorship order determination. 
-
-
-**Supplemental Materials**:  
-     
-  * **Reflection Questions (S3)**: These questions are designed to guide both individual and collective introspection within authorship teams. They help users recognize and understand the dynamics of privilege and how these might influence authorship decisions. The questions can be used as a starting point for discussions about fairness and equity in academic contributions.
-    * Example Question: "Do the people I collaborate with hold similar levels of privilege to me?"
-<br>
-  
-  * **Case Study on First-Generation Academics (S4)**: This case study explores how specific aspects of academic privilege or its absence can shape individual academic trajectories. It provides a nuanced understanding of how socio-economic background influences opportunities and challenges in academia. 
-    * Example Insight: "First-generation students often work more hours outside of academia to support their studies and have fewer interactions with faculty or mentors."
-<br>      
-
-  * **Illustrated Examples of Academic Privilege/Disadvantage (S5)**: These visual representations depict the varied experiences of individuals within academic spaces. They serve as a relatable and engaging means to comprehend complex concepts of privilege and disadvantage. 
-    * Example Scenario: "A scholar from a less privileged background might face significant barriers in networking and accessing funding compared to their more privileged counterparts." 
-<br>      
-
-  * **Detailed Bibliography on Socio-Cultural Identities (S6)**: This extensive resource provides in-depth understanding and research on the diverse identity categories within academia. It supports users in exploring the intersectionality of different identities and their impact on academic careers. 
-    * Example Topic: "The impact of race and gender on citation practices in academic publishing." 
-<br>      
-
-  * **Syllabus for Learning on Equity, Justice, and Accessibility (S7)**: This curated syllabus is designed to support users at different stages of their journey towards equity and justice in academia. It includes structured learning paths and resources tailored to varying levels of familiarity and expertise. 
-    * Example Module: "Understanding the principles of social justice and how they apply to academic authorship."
-
-
-
-
 <center>
 
-<div style="width:600px">
-
-![FORRT AWoP](AWoP_prelim.webp)
-
-</div>
+![The Academic Wheel of Privilege showing the 24 socio-cultural identities. The 24 socio-cultural identity types span six sectors: health and wellbeing, society, culture and communication, gender and sexuality, education and career, living arrangements and lastly childhood and development. These identity types are shown as circles connected to three concentric rings (outer, middle and inner) of “identity” circles with increasing privilege as you go towards the centre.](AWOP.webp)
 
 </center>
 
-<br>
+## Toolkit 
+---
 
-<br>
+We provide a comprehensive suite of resources within the AWoP toolkit:
+
+- **Manuscript**: [https://osf.io/preprints/metaarxiv/af4nk_v1](https://osf.io/preprints/metaarxiv/af4nk_v1)
+
+- **Javascript App**: [Access the AWoP Shiny App](https://academic-privilege-2177e04480f1.herokuapp.com/)
+
+- **OSF page with supplementary files**: [https://osf.io/pfxqb/overview](https://osf.io/pfxqb/overview)
+
+- The App is a dynamic tool that allows users to generate customized weighted indicators of privilege across key socio-economic and cultural identity categories. It helps users actively identify and consider privilege in authorship decisions, facilitating equitable and transparent authorship order determination.
+
+### **Supplemental Materials**:
+     
+* **Reflection Questions (S5)**: These questions are designed to guide both individual and collective introspection within authorship teams. They help users recognize and understand the dynamics of privilege and how these might influence authorship decisions. The questions can be used as a starting point for discussions about fairness and equity in academic contributions.
+
+  > **Example Question**: “Do the people I collaborate with hold similar levels of privilege to me?”
+  
+* **Case Study on First-Generation Academics (S6)**: This case study on first-generation academics—those whose parents did not progress beyond high school education can affect an individual's expectations, opportunities, or resources, leading to disparities in contributions and authorship. The experiences of first-generation academics highlight multiple dimensions represented within the Academic Wheel of Privilege (AWoP), ranging from socio-cultural capital and household wealth in childhood, through networking opportunities and mentorship, to factors like ethnicity and culture.
+
+  > **Example Insight**: “First-generation students often work more hours outside of academia to support their studies and have fewer interactions with faculty or mentors.”
+
+* **Illustrated Examples of Academic Privilege/Disadvantage (S7)**: These visuals serve as a relatable way to comprehend complex concepts of privilege and disadvantage. They depict the varied experiences of individuals within academic spaces. It brings attention to how privilege or disadvantage from early childhood influences an individual's academic opportunities and career trajectory. 
+
+  > **Example Scenario**: “A scholar from a less privileged background might face significant barriers in networking and accessing funding compared to their more privileged counterparts.”
+
+* **Detailed Bibliography on Socio-Cultural Identities (S8)**: This extensive resource provides in-depth understanding and research on the 24 identity categories we present in the Academic Wheel of Privilege. It supports users in exploring the intersectionality of different identities and their impact on academic careers.
+
+  > **Example Topic**: How caring duties demand extra responsibilities, time, money and resources, regardless of the age and support needs of the person(s) who requires care. Greater time and frequency spent on caring duties will have a greater impact on the academic opportunities of the caregiver (e.g. reduced work hours, ability to network/attend conferences). Those who spend less time caring for another person have greater privilege.
+
+* **Syllabus for Learning on Equity, Justice, and Accessibility (S9)**: This curated syllabus covering 14 topics is designed to support users at different stages of their journey towards equity and justice in academia. It includes structured learning paths, suggested activities and resources tailored to varying levels of familiarity and expertise.
+
+  > **Example Topic**: Academic futures: Exploring grassroots initiatives to improve academia. 
 
 ## AWoP in Use 
------------
+---
 
-The AWoP is already being recognized and implemented in various settings, including: 
-
-* [UK Research Integrity Office (UKRIO)](https://ukrio.org/ukrio-resources/equality-diversity-and-inclusion/academic-wheel-of-privilege/) 
-* Other publications and web pages (add more links as they become available)
-
-
-<br>
-
-
-## AWoP Video
----------- 
-
-
-{{< youtube mzEdTyA06cU >}}
-
-<br>
-
-
-## Additional Content Ideas (some are not great!) 
------------------- 
-
-* **User Testimonials**: Collect and display testimonials from academics who have used AWoP. 
-* **Case Studies**: Provide detailed case studies showing how AWoP has been implemented in different research settings. 
-* **Frequently Asked Questions (FAQ)**: Address common questions and concerns about using AWoP. 
-* **Community Forum**: Set up a space for users to discuss their experiences and share tips on implementing AWoP. 
-* **Updates and News**: Regularly update the page with news about AWoP, such as new features, updates to the Shiny App, or upcoming workshops and webinars. 
-* **Gform for feedback**: Place the link for the feedback form here.
-
-
+The AWoP is already being recognized and implemented in various settings, including:
+- [UK Research Integrity Office (UKRIO)](https://ukrio.org/ukrio-resources/equality-diversity-and-inclusion/academic-wheel-of-privilege/)
+- Other publications and web pages (add more links as they become available)
 
 ## Contact Us
----------- 
+---
 
 For more information, please contact us: awop@forrt.org.
-
-<br>
 
 {{< license type="cc-by-nc-sa" text="The Academic Wheel of Privilege (AWoP) is licensed under a [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/) license." >}}
