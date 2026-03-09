@@ -224,7 +224,18 @@
   {{ if .Params.sharing_image_alt }}{{ $og_image_alt = .Params.sharing_image_alt }}{{ end }}
   <meta property="og:site_name" content="{{ site.Title }}">
   <meta property="og:url" content="{{ .Permalink }}">
-  <meta property="og:title" content="{{ if not .IsHome }}{{ .Title }}{{ else }}{{ site.Title }}{{ end }}">
+  {{/* Sharing title: allow override, else append site name for context in previews. */}}
+  {{ $og_title := "" }}
+  {{ if .Params.sharing_title }}
+    {{ $og_title = .Params.sharing_title }}
+  {{ else if .Params.og_title }}
+    {{ $og_title = .Params.og_title }}
+  {{ else if .IsHome }}
+    {{ $og_title = site.Title }}
+  {{ else }}
+    {{ $og_title = printf "%s | %s" .Title site.Title }}
+  {{ end }}
+  <meta property="og:title" content="{{ $og_title }}">
   <meta property="og:description" content='{{ $og_desc }}'>
   {{- with $og_image -}}
   <meta property="og:image" content="{{.}}">
