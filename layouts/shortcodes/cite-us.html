@@ -25,7 +25,7 @@
         <div class="cite-us-text">
             Azevedo, F., Parsons, S., Micheli, L., Strand, J., Rinke, E., … & FORRT (2019, December 13). Introducing a
             Framework for Open and Reproducible Research Training (FORRT).
-            <a href="https://doi.org/10.31219/osf.io/bnh7p" class="doi-link">DOI: https://doi.org/10.31219/osf.io/bnh7p
+            <a href="https://doi.org/10.31219/osf.io/bnh7p" target="_blank" class="doi-link">DOI: https://doi.org/10.31219/osf.io/bnh7p
             </a>
         </div>
         <button class="copy-button" onclick="copyText(this, 'forrt1')">
@@ -43,7 +43,7 @@
             Azevedo, F., Liu, M., Pennington, C. R., Pownall, M., Evans, T. R., Parsons, S., Elsherif, M. M., Micheli,
             L., Westwood, S., & FORRT. (2021). Towards a culture of open scholarship: The role of pedagogical
             communities. BMC Research Notes, 15(1), 1-5.
-            <a href="https://doi.org/10.1186/s13104-022-05944-1" class="doi-link">DOI:
+            <a href="https://doi.org/10.1186/s13104-022-05944-1" target="_blank" class="doi-link">DOI:
                 https://doi.org/10.1186/s13104-022-05944-1 </a>
         </div>
         <button class="copy-button" onclick="copyText(this, 'forrt2')">
@@ -64,11 +64,29 @@
     <div class="cite-us-item">
         <div class="cite-us-text">
             Sauvé, S. A., Middleton, S. L., Gellersen, H., & Azevedo, F. (2025, July 31). In Pursuit of Citational
-            Justice: A Toolkit for Equitable Scholarship. https://doi.org/10.31222/osf.io/qjecy_v2
-            <a href="https://doi.org/10.31222/osf.io/qjecy_v2" class="doi-link">DOI:
-                https://doi.org/10.31222/osf.io/qjecy_v2</a>
+            Justice: A Toolkit for Equitable Scholarship.
+            <a href="https://doi.org/10.31222/osf.io/qjecy_v2" target="_blank" class="doi-link">https://doi.org/10.31222/osf.io/qjecy_v2</a>
         </div>
         <button class="copy-button" onclick="copyText(this, 'citational_justice_toolkit')">
+            <svg class="copy-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z">
+                </path>
+            </svg>
+            Copy
+        </button>
+    </div>
+</div>
+
+<div class="cite-us-section">
+    <h4 class="section-title">The Academic Wheel of Privilege (AWoP):</h4>
+
+    <div class="cite-us-item">
+        <div class="cite-us-text">
+            Middleton, S. L., Sulik, J., Iley, B., Elsherif, M. M., & Azevedo, F. (2026). The Academic Wheel of Privilege: An equity-based tool for authorship order. [Preprint]
+            <a href="https://doi.org/10.31222/osf.io/af4nk_v1" target="_blank" class="doi-link">https://doi.org/10.31222/osf.io/af4nk_v1</a>
+        </div>
+        <button class="copy-button" onclick="copyText(this, 'awop')">
             <svg class="copy-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                     d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z">
@@ -102,7 +120,8 @@
         forrt1: "Azevedo, F., Parsons, S., Micheli, L., Strand, J., Rinke, E., … & FORRT (2019, December 13). Introducing a Framework for Open and Reproducible Research Training (FORRT). https://doi.org/10.31219/osf.io/bnh7p",
         forrt2: "Azevedo, F., Liu, M., Pennington, C. R., Pownall, M., Evans, T. R., Parsons, S., Elsherif, M. M., Micheli, L., Westwood, S., & FORRT. (2021). Towards a culture of open scholarship: The role of pedagogical communities. BMC Research Notes, 15(1), 1-5. https://doi.org/10.1186/s13104-022-05944-1",
         fred: {{ $fredCitation | jsonify }},
-        citational_justice_toolkit: "Sauvé, S. A., Middleton, S. L., Gellersen, H., & Azevedo, F. (2025, July 31). In Pursuit of Citational Justice: A Toolkit for Equitable Scholarship. https://doi.org/10.31222/osf.io/qjecy_v2"
+        citational_justice_toolkit: "Sauvé, S. A., Middleton, S. L., Gellersen, H., & Azevedo, F. (2025, July 31). In Pursuit of Citational Justice: A Toolkit for Equitable Scholarship. https://doi.org/10.31222/osf.io/qjecy_v2",
+        awop: "Middleton, S. L., Sulik, J., Iley, B., Elsherif, M. M., & Azevedo, F. (2026). The Academic Wheel of Privilege: An equity-based tool for authorship order. [Preprint] https://doi.org/10.31222/osf.io/af4nk_v1"
     };
 
     const copyIcon = `<svg class="copy-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
