@@ -73,7 +73,7 @@ We provide a comprehensive suite of resources within the AWoP toolkit:
 
 - **Manuscript**: [https://osf.io/preprints/metaarxiv/af4nk_v1](https://osf.io/preprints/metaarxiv/af4nk_v1)
 
-- **Javascript App**: [Access the AWoP Shiny App](https://academic-privilege-2177e04480f1.herokuapp.com/)
+- **Web App**: [Access the AWoP Web App](https://academic-privilege-2177e04480f1.herokuapp.com/)
 
 - **OSF page with supplementary files**: [https://osf.io/pfxqb/overview](https://osf.io/pfxqb/overview)
 
@@ -112,5 +112,11 @@ The AWoP is already being recognized and implemented in various settings, includ
 ---
 
 For more information, please contact us: awop@forrt.org.
+
+## How to cite us
+---
+> Middleton, S. L., Sulik, J., Iley, B., Elsherif, M. M., & Azevedo, F. (2026). The Academic Wheel of Privilege: An equity-based tool for authorship order. [Preprint] https://osf.io/preprints/metaarxiv/af4nk.
+
+---
 
 {{< license type="cc-by-nc-sa" text="The Academic Wheel of Privilege (AWoP) is licensed under a [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/) license." >}}
