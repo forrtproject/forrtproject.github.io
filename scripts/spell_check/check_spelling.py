@@ -24,27 +24,38 @@ ALLOWED_EXTENSIONS = {'.md', '.txt', '.html', '.yaml', '.yml', '.py', '.js', '.j
 def get_files_to_check():
     """Determine which files to check based on environment variables."""
     check_all = os.environ.get('CHECK_ALL', 'false').lower() == 'true'
-    changed_files = os.environ.get('CHANGED_FILES', '').strip()
-    
-    if check_all or not changed_files:
-        # Full mode: check all default directories
+    changed_files_env = os.environ.get('CHANGED_FILES')
+
+    # If CHECK_ALL is explicitly requested, always run in full mode.
+    if check_all:
         print("Running in full mode: checking all content...", file=sys.stderr)
         return DEFAULT_PATHS, True
-    
+
+    # If CHANGED_FILES is not provided at all, fall back to full mode
+    # (e.g., local runs or legacy workflows).
+    if changed_files_env is None:
+        print("Running in full mode: checking all content (no CHANGED_FILES provided)...", file=sys.stderr)
+        return DEFAULT_PATHS, True
+
+    # CHANGED_FILES is provided but may be empty (no matching files).
+    changed_files = changed_files_env.strip()
+    if not changed_files:
+        print("No spell-checkable files changed in this PR.", file=sys.stderr)
+        return [], False
+
     # PR mode: only check changed files
     files = [f.strip() for f in changed_files.split('\n') if f.strip()]
-    
+
     # Filter to only existing files with allowed extensions
     valid_files = []
     for f in files:
         path = Path(f)
         if path.exists() and path.suffix.lower() in ALLOWED_EXTENSIONS:
             valid_files.append(f)
-    
+
     if not valid_files:
         print("No spell-checkable files changed in this PR.", file=sys.stderr)
         return [], False
-    
     print(f"Running in PR mode: checking {len(valid_files)} changed file(s)...", file=sys.stderr)
     return valid_files, False
 
