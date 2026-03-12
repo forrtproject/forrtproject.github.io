@@ -54,6 +54,15 @@
     {{ $desc = $superuser_role }}
   {{ end }}
   <meta name="description" content='{{ printf "%.254s" $desc }}'>
+  {{/* Shorter description for social previews (avoids mid-word truncation). */}}
+  {{ $og_desc := "" }}
+  {{ if .Params.sharing_description }}
+    {{ $og_desc = .Params.sharing_description }}
+  {{ else if .Params.og_description }}
+    {{ $og_desc = .Params.og_description }}
+  {{ else }}
+    {{ $og_desc = printf "%.200s" $desc }}
+  {{ end }}
 
   {{ range .Translations }}
   <link rel="alternate" hreflang="{{ .Lang }}" href="{{ .Permalink }}">
@@ -186,36 +195,57 @@
   {{ $avatar_image := (.Resources.ByType "image").GetMatch "avatar*" }}
   {{ $has_logo := fileExists "assets/images/logo.webp" | or (fileExists "assets/images/logo.svg") }}
   {{ $og_image := "" }}
-  {{ $twitter_card := "summary_large_image" }}
+  {{ $og_image_width := 0 }}
+  {{ $og_image_height := 0 }}
   {{ if (and (eq .Kind "taxonomy") $avatar_image) }}
-    {{ $og_image = ($avatar_image.Fill "270x270 Center").Permalink }}{{/* Match image proc in About widget. */}}
-    {{ $twitter_card = "summary" }}
+    {{ $avatar_fill := $avatar_image.Fill "270x270 Center" }}
+    {{ $og_image = $avatar_fill.Permalink }}
+    {{ $og_image_width = $avatar_fill.Width }}
+    {{ $og_image_height = $avatar_fill.Height }}
   {{ else if $featured_image }}
     {{ $og_image = $featured_image.Permalink }}
+    {{ $og_image_width = $featured_image.Width }}
+    {{ $og_image_height = $featured_image.Height }}
   {{ else if .Params.header.image }}
     {{ $og_image = printf "%s/%s" $media_dir .Params.header.image | absURL }}
   {{ else if site.Params.sharing_image }}
     {{ $og_image = site.Params.sharing_image | absURL }}
+    {{ with images.Config (printf "/static/%s" site.Params.sharing_image) }}
+      {{ $og_image_width = .Width }}
+      {{ $og_image_height = .Height }}
+    {{ end }}
   {{ else if $has_logo }}
     {{ $og_image = (partial "functions/get_logo" (dict "constraint" "fit" "size" 300)).Permalink }}
-    {{ $twitter_card = "summary" }}
   {{ else }}
     {{ $og_image = (partial "functions/get_icon" 512).Permalink }}
-    {{ $twitter_card = "summary" }}
   {{ end }}
   {{ $scr.Set "og_image" $og_image }}{{/* Set `og_image` globally for `rss.xml`. */}}
-  <meta property="twitter:card" content="{{ $twitter_card }}">
-  {{ with site.Params.twitter }}
-  <meta property="twitter:site" content="@{{ . }}">
-  <meta property="twitter:creator" content="@{{ . }}">
-  {{ end }}
+  {{ $og_image_alt := site.Params.sharing_image_alt | default site.Title }}
+  {{ if .Params.sharing_image_alt }}{{ $og_image_alt = .Params.sharing_image_alt }}{{ end }}
   <meta property="og:site_name" content="{{ site.Title }}">
   <meta property="og:url" content="{{ .Permalink }}">
-  <meta property="og:title" content="{{ if not .IsHome }}{{ .Title }}{{ else }}{{ site.Title }}{{ end }}">
-  <meta property="og:description" content='{{ printf "%.254s" $desc }}'>
+  {{/* Sharing title: allow override, else append site name for context in previews. */}}
+  {{ $og_title := "" }}
+  {{ if .Params.sharing_title }}
+    {{ $og_title = .Params.sharing_title }}
+  {{ else if .Params.og_title }}
+    {{ $og_title = .Params.og_title }}
+  {{ else if .IsHome }}
+    {{ $og_title = site.Title }}
+  {{ else }}
+    {{ $og_title = printf "%s | %s" .Title site.Title }}
+  {{ end }}
+  <meta property="og:title" content="{{ $og_title }}">
+  <meta property="og:description" content='{{ $og_desc }}'>
   {{- with $og_image -}}
   <meta property="og:image" content="{{.}}">
-  <meta property="twitter:image" content="{{.}}">
+  {{- if (and (gt $og_image_width 0) (gt $og_image_height 0)) -}}
+  <meta property="og:image:width" content="{{ $og_image_width }}">
+  <meta property="og:image:height" content="{{ $og_image_height }}">
+  {{- end -}}
+  {{- with $og_image_alt -}}
+  <meta property="og:image:alt" content="{{ . }}">
+  {{- end -}}
   {{- end -}}
   <meta property="og:locale" content="{{ site.LanguageCode | default "en-us" }}">
   {{ if .IsPage }}
