@@ -68,7 +68,7 @@ jobs:
         with:
           issue-number: ${{ github.event.pull_request.number }}
           comment-author: 'github-actions[bot]'
-          body-includes: Spell Check Results
+          body-includes: Spell Check
 
       - name: Create or update comment
         if: github.event_name == 'pull_request'
