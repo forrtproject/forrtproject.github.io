@@ -5,7 +5,7 @@ Checks for typos in pull requests and generates a formatted comment.
 
 Modes:
 - PR mode: Only checks files changed in the pull request (CHANGED_FILES env var)
-- Full mode: Checks all content directories (CHECK_ALL=true env var)
+- Full mode: Checks the default set of paths (content, scripts, .github, CONTRIBUTING.md, README.md) (CHECK_ALL=true env var)
 """
 
 import os
@@ -14,27 +14,30 @@ import subprocess
 import json
 from pathlib import Path
 
-# Default directories to check in full mode
-DEFAULT_PATHS = ['content', 'scripts', '.github', 'CONTRIBUTING.md', 'README.md']
+# Default paths to check in full mode
+DEFAULT_PATHS = ['content', 'scripts', 'data', '.github', 'CONTRIBUTING.md', 'README.md']
 
 # File extensions to check
 ALLOWED_EXTENSIONS = {'.md', '.txt', '.html', '.yaml', '.yml', '.py', '.js', '.json', '.toml'}
 
 
 def get_files_to_check():
-    """Determine which files to check based on environment variables."""
+    """Determine which files to check based on environment variables.
+
+    Returns a tuple of (paths, is_full_mode).
+    """
     check_all = os.environ.get('CHECK_ALL', 'false').lower() == 'true'
     changed_files_env = os.environ.get('CHANGED_FILES')
 
     # If CHECK_ALL is explicitly requested, always run in full mode.
     if check_all:
-        print("Running in full mode: checking all content...", file=sys.stderr)
+        print("Running in full mode: checking default paths...", file=sys.stderr)
         return DEFAULT_PATHS, True
 
     # If CHANGED_FILES is not provided at all, fall back to full mode
     # (e.g., local runs or legacy workflows).
     if changed_files_env is None:
-        print("Running in full mode: checking all content (no CHANGED_FILES provided)...", file=sys.stderr)
+        print("Running in full mode: checking default paths (no CHANGED_FILES provided)...", file=sys.stderr)
         return DEFAULT_PATHS, True
 
     # CHANGED_FILES is provided but may be empty (no matching files).
