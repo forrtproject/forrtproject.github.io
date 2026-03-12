@@ -73,7 +73,7 @@ We provide a comprehensive suite of resources within the AWoP toolkit:
 
 - **Manuscript**: [https://osf.io/preprints/metaarxiv/af4nk_v1](https://osf.io/preprints/metaarxiv/af4nk_v1)
 
-- **Web App**: [Access the AWoP Web App](https://academic-privilege-2177e04480f1.herokuapp.com/)
+- **Web App**: [Access the AWoP Web App](/awop_app/)
 
 - **OSF page with supplementary files**: [https://osf.io/pfxqb/overview](https://osf.io/pfxqb/overview)
 
