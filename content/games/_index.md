@@ -4,7 +4,7 @@ type: plain_page
 ---
 FORRT is excited to launch the Open Research Games Portal – a crowdsourced, pedagogically informed database of games and interactive activities for teaching open and reproducible research practices. This initiative recognizes the power of game-based learning to make complex topics more accessible, memorable, and engaging for learners – from students and early-career researchers to educators and professionals. Whether you're looking for a lighthearted icebreaker or a serious, learning-focused game to integrate into your curriculum, the Portal helps you find what you need.
 
-<a href="https://forrtapps.shinyapps.io/open-research-games-portal/" class="btn btn-primary btn-lg btn-block" style="line-height:1;border-radius:6px; font-size:1.5rem; ">
+<a href="/open-research-games-portal/" class="btn btn-primary btn-lg btn-block" style="line-height:1;border-radius:6px; font-size:1.5rem; ">
   Open Research Games Portal
 </a>
 
@@ -23,7 +23,7 @@ You can search and filter games using topic tags, FORRT Clusters, gameplay style
 
 Use our [Additions Form](https://forms.gle/MSBWR87GchDo8fED7) to add information about games already in the Portal, or the [New Entries Form](https://forms.gle/PXYBrRhXGiZyi8M99) to add games we're missing. You can add any game you know of, even if you haven't played it yourself – the community will fill in the rest!
 
-You can find the Open Research Games Portal [here](https://forrtapps.shinyapps.io/open-research-games-portal/)
+You can find the Open Research Games Portal [here](/open-research-games-portal/)
 
 We're continuing to improve the Portal and would love your feedback on both the database and our forms. Please reach out to [games@forrt.org](mailto:games@forrt.org) with any comments or suggestions.
 

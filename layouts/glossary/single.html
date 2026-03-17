@@ -90,27 +90,31 @@
     text-decoration: underline;
   }
 
+  .glossary-toc {
+    order: 99;
+  }
+
+  @media (min-width: 1200px) {
+    .glossary-toc {
+      order: -1;
+    }
+  }
 
 </style>
 
 
 <script>
   document.addEventListener("DOMContentLoaded", function() {
-    const tocLinksDesktop = document.querySelectorAll("#TableOfContents .nav-link");
-    const tocLinksMobile = document.querySelectorAll("#TableOfContentsMobile .nav-link");
+    const tocLinks = document.querySelectorAll("#TableOfContents .nav-link");
     const currentUrl = window.location.href;
 
-    tocLinksDesktop.forEach(link => {
+    tocLinks.forEach(link => {
       if (link.href === currentUrl) {
         link.classList.add("active");
-        link.scrollIntoView({ behavior: 'auto', block: 'start' });
-        window.scrollBy(0, -document.querySelector('.docs-toc').offsetHeight);
-      }
-    });
-
-    tocLinksMobile.forEach(link => {
-      if (link.href === currentUrl) {
-        link.classList.add("active");
+        if (window.innerWidth >= 1200) {
+          link.scrollIntoView({ behavior: 'auto', block: 'start' });
+          window.scrollBy(0, -document.querySelector('.docs-toc').offsetHeight);
+        }
       }
     });
   });
@@ -119,7 +123,7 @@
 
 <div class="container-fluid docs">
   <div class="row flex-xl-nowrap">
-    <div class="d-none d-xl-block col-xl-3 docs-toc" style="order: 1">
+    <div class="col-12 col-xl-3 docs-toc glossary-toc">
       <ul class="nav toc-top">
         <li><a href="#" id="back_to_top" class="docs-toc-title">{{ index (index $dictionary $lang) "list_of_terms" }}</a></li>
       </ul>
@@ -132,7 +136,7 @@
           {{ $withDefinition := where $filteredPages "Params.definition" "!=" nil }}
           {{ $sortedPages := sort $withDefinition "Params.sort_key" }}
           {{ range $index, $page := $sortedPages }}
-          <li class="nav-item" data-toggle="tooltip" data-placement="right" title="{{ .Params.definition }}">
+          <li class="nav-item">
             <a href="{{ .Permalink }}" class="nav-link">{{ .Title }}</a>
           </li>
           {{ end }}
@@ -308,22 +312,6 @@
         </div>
       </article>
 
-      <div class="d-flex d-xl-none col-12 docs-toc" style="">
-        <nav id="TableOfContentsMobile" class="nav flex-column">
-          <ul>
-            {{ $currentSection := .File.Dir }}
-            {{ $glossaryPages := where .Site.RegularPages "Type" "glossary" }}
-            {{ $filteredPages := where $glossaryPages "File.Dir" $currentSection }}
-            {{ $withDefinition := where $filteredPages "Params.definition" "!=" nil }}
-            {{ $sortedPages := sort $withDefinition "Params.sort_key" }}
-            {{ range $index, $page := $sortedPages }}
-            <li class="nav-item" data-toggle="tooltip" data-placement="right" title="{{ .Params.definition }}">
-              <a href="{{ .Permalink }}" class="nav-link">{{ .Title }}</a>
-            </li>
-            {{ end }}
-          </ul>
-        </nav>
-      </div>
     </main>
   </div>
 </div>

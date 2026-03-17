@@ -474,6 +474,12 @@ jobs:
             mkdir -p /tmp/generated-resources/static/data
             cp static/data/fred_citation.txt /tmp/generated-resources/static/data/fred_citation.txt
           fi
+
+          # Copy updated FLoRA index if it exists
+          if [ -f content/replication-hub/flora/_index.md ]; then
+            mkdir -p /tmp/generated-resources/flora
+            cp content/replication-hub/flora/_index.md /tmp/generated-resources/flora/_index.md
+          fi
           
           # Copy additional generated files
           mkdir -p /tmp/generated-resources/contributor-analysis
@@ -506,7 +512,7 @@ jobs:
           pushd "$WORKTREE_DIR"
 
           # Ensure target directories exist
-          mkdir -p content/curated_resources content/contributors data content/contributor-analysis content/publications static/data
+          mkdir -p content/curated_resources content/contributors data content/contributor-analysis content/publications static/data content/replication-hub/flora
 
           # Remove old generated resource files (but keep _index.md)
           find content/curated_resources -type f ! -name '_index.md' -delete 2>/dev/null || true
@@ -524,6 +530,9 @@ jobs:
           fi
           if [ -f /tmp/generated-resources/static/data/fred_citation.txt ]; then
             cp /tmp/generated-resources/static/data/fred_citation.txt static/data/fred_citation.txt
+          fi
+          if [ -f /tmp/generated-resources/flora/_index.md ]; then
+            cp /tmp/generated-resources/flora/_index.md content/replication-hub/flora/_index.md
           fi
           if [ -f /tmp/generated-resources/summaries.json ]; then
             cp /tmp/generated-resources/summaries.json data/summaries.json
@@ -559,6 +568,7 @@ jobs:
             git add scripts/forrt_contribs/contributors_cache.csv 2>/dev/null || true
             git add data/ga_data.json 2>/dev/null || true
             git add static/data/fred_citation.txt 2>/dev/null || true
+            git add content/replication-hub/flora/_index.md 2>/dev/null || true
             git add data/summaries.json 2>/dev/null || true
             git add content/contributor-analysis/ 2>/dev/null || true
             git add content/publications/citation_chart.webp 2>/dev/null || true
