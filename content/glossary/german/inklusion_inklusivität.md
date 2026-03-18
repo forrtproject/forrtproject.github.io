@@ -1,6 +1,7 @@
 {
     "type": "glossary",
-    "title": "Inklusion, Inklusivität (Inclusion)",
+    "title": "Inklusion, Inklusivität [Inclusion]",
+    "sort_key": "inklusion, inklusivität [inclusion]",
     "definition": "Inklusion oder Inklusivität bezieht sich auf eine Kultur des Willkommens und des Respekts in der Zusammenarbeit an einem bestimmten Projekt oder in einem Umfeld (z. B. im akademischen Bereich), wobei Vielfalt (Diversität) hier ein breites Spektrum an unterschiedlichen Hintergründen, Perspektiven und Erfahrungen bedeutet. Bemühungen zur Erhöhung der Inklusivität beinhalten die Verminderung der Folgen oder die komplette Beseitigung systemischer Barrieren für benachteiligte Gruppen und Minderheiten.",
     "related_terms": [
         "Diversity",
@@ -24,5 +25,12 @@
     "alt_related_terms": [
         null
     ],
-    "language": "german"
+    "language": "german",
+    "translated_by": [
+        "Bettina MJ Kern"
+    ],
+    "translation_reviewed_by": [
+        "Susanne Vogel",
+        "Helena Hartmann"
+    ]
 }

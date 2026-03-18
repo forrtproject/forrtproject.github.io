@@ -1,6 +1,7 @@
 {
     "type": "glossary",
-    "title": "Artificial Intelligence علم الوجود الذَّكاء الاصطناعي (Ontology (Artificial Intelligence))",
+    "title": "Artificial Intelligence علم الوجود الذَّكاء الاصطناعي [Ontology (Artificial Intelligence)]",
+    "sort_key": "artificial intelligence علم الوجود الذَّكاء الاصطناعي [ontology (artificial intelligence)]",
     "definition": "مجموعة من البديهيات في أي مجال، والتي  تساعد على تصنيف طبيعة العناصر تحت الدِّراسة، وشرح العلاقة بينها.  **المصطلحات ذات الصِّلة**: علم وظائف العناصر، نظريَّة المعرفة، علم التَّصنيف.",
     "related_terms": [
         "Axiology",
@@ -20,5 +21,15 @@
     "alt_related_terms": [
         null
     ],
-    "language": "arabic"
+    "language": "arabic",
+    "translated_by": [
+        "Hiba Alomary"
+    ],
+    "translation_reviewed_by": [
+        "Awatif Alruwaili",
+        "Alaa M. Saleh",
+        "Hiba Alomary",
+        "Ali H. Al-Hoorie",
+        "Mohammed Mohsen"
+    ]
 }

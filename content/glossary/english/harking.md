@@ -1,6 +1,7 @@
 {
     "type": "glossary",
     "title": "HARKing",
+    "sort_key": "harking",
     "definition": "A questionable research practice termed ‘Hypothesizing After the Results are Known’ (HARKing). “HARKing is defined as presenting a post hoc hypothesis (i.e., one based on or informed by one's results) in a research report as if it was, in fact, *a priori*” (Kerr, 1998, p. 196). For example, performing subgroup analyses, finding an effect in one subgroup, and writing the introduction with a ‘hypothesis’ that matches these results.",
     "related_terms": [
         "Analytic Flexibility",

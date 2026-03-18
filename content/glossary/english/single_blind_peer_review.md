@@ -1,6 +1,7 @@
 {
     "type": "glossary",
     "title": "Single-blind peer review",
+    "sort_key": "single-blind peer review",
     "definition": "Evaluation of research products by qualified experts where the reviewer(s) knows the identity of the author(s), but the reviewer(s) remains anonymous to the author(s).",
     "related_terms": [
         "Anonymous review",

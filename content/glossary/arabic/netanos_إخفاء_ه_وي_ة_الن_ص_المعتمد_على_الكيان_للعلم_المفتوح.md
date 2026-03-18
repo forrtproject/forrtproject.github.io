@@ -1,6 +1,7 @@
 {
     "type": "glossary",
-    "title": "NETANOS إخفاء هُويَّة النَّص المعتمد على الكيان للعلم المفتوح (Named entity-based Text Anonymization for Open Science (NETANOS))",
+    "title": "NETANOS إخفاء هُويَّة النَّص المعتمد على الكيان للعلم المفتوح [Named entity-based Text Anonymization for Open Science (NETANOS)]",
+    "sort_key": "netanos إخفاء هُويَّة النَّص المعتمد على الكيان للعلم المفتوح [named entity-based text anonymization for open science (netanos)]",
     "definition": "هو برنامج مجاني مفتوح المصدر؛ لإخفاء الهويَّة ويعمل على تحديد وتعديل الكيانات المذكورة (مثل الأشخاص، والمواقع، والأوقات، والتَّواريخ). وتتمثَّل ميزته الرَّئيسيَّة في أنَّه يحافظ على السِّياق الدَّقيق اللَّازم للتَّحليلات الثَّانويَّة.  والهدف هو مساعدة الباحثين في مشاركة بياناتهم النَّصيَّة الأوليَّة ، مع الالتزام بأخلاقيات البحث.  **المصطلحات ذات الصِّلة:** التّعمية، السِّريَّة، مشاركة البيانات، أخلاقيَّات البحث",
     "related_terms": [
         "Anonymity",
@@ -23,5 +24,13 @@
     "alt_related_terms": [
         null
     ],
-    "language": "arabic"
+    "language": "arabic",
+    "translated_by": [
+        "Mai Helmy."
+    ],
+    "translation_reviewed_by": [
+        "Alaa M. Saleh",
+        "Ali H. Al-Hoorie",
+        "Mohammed Mohsen"
+    ]
 }

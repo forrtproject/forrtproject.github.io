@@ -1,6 +1,7 @@
 {
     "type": "glossary",
     "title": "Ad hominem bias",
+    "sort_key": "ad hominem bias",
     "definition": "From Latin meaning “to the person”; Judgment of an argument or piece of work influenced by the characteristics of the person who forwarded it, not the characteristics of the argument itself. Ad hominem bias can be negative, as when work from a competitor or target of personal animosity is viewed more critically than the quality of the work merits, or positive, as when work from a friend benefits from overly favorable evaluation.",
     "related_terms": [
         "Peer review"

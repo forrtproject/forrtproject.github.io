@@ -1,6 +1,7 @@
 {
     "type": "glossary",
-    "title": "DMP خطة إدارة البيانات (Data management plan (DMP))",
+    "title": "DMP خطة إدارة البيانات [Data management plan (DMP)]",
+    "sort_key": "dmp خطة إدارة البيانات [data management plan (dmp)]",
     "definition": "يشير هذا المصطلح إلى ملف منظم يصف عمليَّة الحصول على البيانات وتحليلها وإدارتها وتخزينها أثناء قيام بمشروع بحثي ما ، كما تصف ملكيَّة هذه البيانات وكيف سيتم حفظها ونشرها أثناء وبعد الانتهاء من المشروع. توفِّر قوالب إدارة البيانات إرشادات حول كيفيَّة جعل بيانات البحث متوافقة مع مبادئ فير ومتاحة للجميع إن أمكن ذلك. **المصطلحات ذات الصِّلة:** أرشفة البيانات، مشاركة البيانات، تخزين البيانات، مبادئ فير، البيانات المفتوحة.",
     "related_terms": [
         "Data archiving",
@@ -25,5 +26,13 @@
     "alt_related_terms": [
         null
     ],
-    "language": "arabic"
+    "language": "arabic",
+    "translated_by": [
+        "Hala Alghamdi"
+    ],
+    "translation_reviewed_by": [
+        "Ahlam Ahmed",
+        "Ali H. Al-Hoorie",
+        "Mohammed Mohsen"
+    ]
 }

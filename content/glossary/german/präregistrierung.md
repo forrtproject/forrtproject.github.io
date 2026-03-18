@@ -1,6 +1,7 @@
 {
     "type": "glossary",
-    "title": "Präregistrierung (Preregistration)",
+    "title": "Präregistrierung [Preregistration]",
+    "sort_key": "präregistrierung [preregistration]",
     "definition": "Die Praxis der Veröffentlichung des Plans für eine Studie, einschließlich der Forschungsfragen/Hypothesen, des Forschungsdesigns und der Datenanalyse, bevor die Daten erhoben oder untersucht wurden. Es ist auch möglich, Sekundärdatenanalysen zu präregistrieren (Merten & Krypotos, 2019). Eine Präregistrierung wird mit einem Zeitstempel versehen und in der Regel bei einer unabhängigen Partei (z. B. einem Repositorium) registriert, so dass es öffentlich mit anderen geteilt werden kann (möglicherweise nach einer Sperrfrist). Die Präregistrierung bietet eine transparente Dokumentation dessen, was zu einem bestimmten Zeitpunkt geplant war, und ermöglicht es Dritten, zu beurteilen, welche Änderungen sich im Nachhinein ergeben haben könnten. Je detaillierter eine Präregistrierung ist, desto besser können Dritte diese Änderungen und damit auch die Validität der durchgeführten Analysen beurteilen. Die Präregistrierung zielt darauf ab, konfirmatorische von explorativer Forschung klar zu unterscheiden.",
     "related_terms": [
         "Confirmation bias",
@@ -14,6 +15,7 @@
         "Transparency"
     ],
     "references": [
+        "Haven, T. L., & Van Grootel, L. (2019). Preregistering qualitative research. Accountability in Research, 26(3), 229–244. https://doi.org/10.1080/08989621.2019.1580147",
         "Lewandowsky, S., & Bishop, D. (2016). Research integrity: Don’t let transparency damage science. Nature News, 529(7587), 459. https://doi.org/10.1038/529459a",
         "Mertens, G., & Krypotos, A. M. (2019). Preregistration of analyses of preexisting data. Psychologica Belgica, 59(1), 338.",
         "Navarro, D. (2020). Paths in strange spaces: A comment on preregistration.",
@@ -36,5 +38,12 @@
     "alt_related_terms": [
         null
     ],
-    "language": "german"
+    "language": "german",
+    "translated_by": [
+        "Susanne Vogel"
+    ],
+    "translation_reviewed_by": [
+        "Helena Hartmann",
+        "Jennifer Mattschey"
+    ]
 }

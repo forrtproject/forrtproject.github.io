@@ -1,6 +1,7 @@
 {
     "type": "glossary",
-    "title": "TRUST Prinzipien (TRUST Principles)",
+    "title": "TRUST Prinzipien [TRUST Principles]",
+    "sort_key": "trust prinzipien [trust principles]",
     "definition": "Eine Reihe von Leitprinzipien, die Transparenz, Verantwortung, Nutzer:innenorientierung, Nachhaltigkeit und Technologie (Transparency, Responsibility, User focus, Sustainability, and Technology, TRUST) als die wesentlichen Komponenten für die Bewertung, Entwicklung und Aufrechterhaltung der Vertrauenswürdigkeit digitaler Datenrepositorien (insbesondere solcher, die Forschungsdaten speichern) betrachten. Sie ergänzen die FAIR Daten Prinzipien.",
     "related_terms": [
         "FAIR principles",
@@ -25,5 +26,12 @@
     "alt_related_terms": [
         null
     ],
-    "language": "german"
+    "language": "german",
+    "translated_by": [
+        "Susanne Vogel"
+    ],
+    "translation_reviewed_by": [
+        "Helena Hartmann",
+        "Joris Frese"
+    ]
 }

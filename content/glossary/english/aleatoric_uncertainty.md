@@ -1,6 +1,7 @@
 {
     "type": "glossary",
     "title": "Aleatoric uncertainty",
+    "sort_key": "aleatoric uncertainty",
     "definition": "Variability in outcomes due to unknowable or inherently random factors. The stochastic component of outcome uncertainty that cannot be reduced through additional sources of information. For example, when flipping a coin, uncertainty about whether it will land on heads or tails.",
     "related_terms": [
         "Epistemic uncertainty",

@@ -1,6 +1,7 @@
 {
     "type": "glossary",
-    "title": "Typ S Fehler (Type S error)",
+    "title": "Typ S Fehler [Type S error]",
+    "sort_key": "typ s fehler [type s error]",
     "definition": "Ein Fehler vom Typ S tritt auf, wenn ein:e Forschende:r zu dem Schluss kommt, dass ein Effekt mit einem anderen Vorzeichen als dem tatsächlichen beobachtet wurde. Ein Fehler vom Typ S tritt beispielsweise auf, wenn ein:e Forschende:r behauptet, dass ein positiver Effekt beobachtet wurde, obwohl er in Wirklichkeit negativ ist, oder umgekehrt.",
     "related_terms": [
         "Statistical power",
@@ -24,5 +25,12 @@
     "alt_related_terms": [
         null
     ],
-    "language": "german"
+    "language": "german",
+    "translated_by": [
+        "Susanne Vogel"
+    ],
+    "translation_reviewed_by": [
+        "Helena Hartmann",
+        "Joris Frese"
+    ]
 }

@@ -1,6 +1,7 @@
 {
     "type": "glossary",
-    "title": "Open Researcher and Contributor ID الأوركيد (ORCID (Open Researcher and Contributor ID))",
+    "title": "Open Researcher and Contributor ID الأوركيد [ORCID (Open Researcher and Contributor ID)]",
+    "sort_key": "open researcher and contributor id الأوركيد [orcid (open researcher and contributor id)]",
     "definition": "هي منظمة توفِّر سجل ثابت لمعرِّفات فريدة للباحثين، والعلماء بما يسمح لهم بربط وثائق بحوثهم الرَّقميَّة، ومساهماتهم الأخرى بسجل الأوركيد.  يساعد هذا الإجراء في تجنُّب التباس الأسماء في مجال الاتِّصال العلمي. مُعرِّفات الأوركيد توفِّر معرِّفًا فريدًا ثابتًا دائمًا؛ لربط الباحثين بأعمالهم. يمكن الاشتراك مجانًا عن طريق : [https://orcid.org/register](https://orcid.org/register) **المصطلحات ذات الصِّلة:**  التَّأليف، معرِّف الكائن الرَّقميَّ، مشكلة ازدواجيَّة الاسم.",
     "related_terms": [
         "Authorship",
@@ -25,5 +26,14 @@
     "alt_related_terms": [
         null
     ],
-    "language": "arabic"
+    "language": "arabic",
+    "translated_by": [
+        "Awatif Alruwaili"
+    ],
+    "translation_reviewed_by": [
+        "Ahlam Ahmed",
+        "Ali H. Al-Hoorie",
+        "Asma Alzahrani",
+        "Mohammed Mohsen"
+    ]
 }

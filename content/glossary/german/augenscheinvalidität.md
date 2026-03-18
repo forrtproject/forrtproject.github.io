@@ -1,6 +1,7 @@
 {
     "type": "glossary",
-    "title": "Augenscheinvalidität (Face validity)",
+    "title": "Augenscheinvalidität [Face validity]",
+    "sort_key": "augenscheinvalidität [face validity]",
     "definition": "Ein subjektives Urteil darüber, wie geeignet ein Maß auf den ersten Blick zu sein scheint, d. h. wie gut ein Maß operationalisiert ist. Zum Beispiel die Beurteilung, ob sich die Items eines Fragebogens auf ein interessierendes Konstrukt beziehen. Die Augenscheinvalidität ist mit der Konstruktvalidität verwandt, aber da sie subjektiv/informell ist, wird sie als eine einfache, aber schwache Form der Validität angesehen.",
     "related_terms": [
         "Construct Validity",
@@ -24,5 +25,12 @@
     "alt_related_terms": [
         null
     ],
-    "language": "german"
+    "language": "german",
+    "translated_by": [
+        "Susanne Vogel"
+    ],
+    "translation_reviewed_by": [
+        "Helena Hartmann",
+        "Jennifer Mattschey"
+    ]
 }

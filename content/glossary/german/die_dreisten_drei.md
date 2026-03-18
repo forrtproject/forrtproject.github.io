@@ -1,6 +1,7 @@
 {
     "type": "glossary",
-    "title": "Die dreisten Drei (The Troubling Trio)",
+    "title": "Die dreisten Drei [The Troubling Trio]",
+    "sort_key": "die dreisten drei [the troubling trio]",
     "definition": "Beschrieben als eine Kombination aus geringer statistischer Teststärke (Power), einem überraschenden Ergebnis und einem *p*\\-Wert, der nur geringfügig niedriger als .05 ist.",
     "related_terms": [
         "Replication",
@@ -24,5 +25,12 @@
     "alt_related_terms": [
         null
     ],
-    "language": "german"
+    "language": "german",
+    "translated_by": [
+        "Helena Hartmann"
+    ],
+    "translation_reviewed_by": [
+        "Susanne Vogel",
+        "Joris Frese"
+    ]
 }

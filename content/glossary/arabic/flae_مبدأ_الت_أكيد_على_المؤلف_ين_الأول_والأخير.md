@@ -1,6 +1,7 @@
 {
     "type": "glossary",
-    "title": "FLAE مبدأ التَّأكيد على المؤلفَين الأول والأخير (First-last-author-emphasis norm (FLAE))",
+    "title": "FLAE مبدأ التَّأكيد على المؤلفَين الأول والأخير [First-last-author-emphasis norm (FLAE)]",
+    "sort_key": "flae مبدأ التَّأكيد على المؤلفَين الأول والأخير [first-last-author-emphasis norm (flae)]",
     "definition": "يحدِّد هذا المبدأ ترتيب المؤلِّفين بناءً على مساهمات كل مؤلِّف، ولكن مع تقدير أكبر للمؤلّفَين الأول والأخير. فحسب هذا المبدأ، يكون المؤلفان الرئيسيان هما الأول والأخير، بينما يُحدّد ترتيب باقي المؤلفِين الواقعين بينهما بحسب إسهاماتهم في التَّأليف.  **المصطلحات ذات اِّلصلة:** التأليف،  مساهمات المؤلِّف، تصنيف أدوار المؤلِّفين",
     "related_terms": [
         "Authorship",
@@ -19,5 +20,15 @@
     "alt_related_terms": [
         null
     ],
-    "language": "arabic"
+    "language": "arabic",
+    "translated_by": [
+        "Ahlam Ahmed"
+    ],
+    "translation_reviewed_by": [
+        "Amani Aloufi",
+        "Mahdi Aben Ahmed",
+        "Hiba Alomary",
+        "Ali H. Al-Hoorie",
+        "Mohammed Mohsen"
+    ]
 }

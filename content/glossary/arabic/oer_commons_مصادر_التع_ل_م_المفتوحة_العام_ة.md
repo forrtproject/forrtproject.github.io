@@ -1,6 +1,7 @@
 {
     "type": "glossary",
-    "title": "OER Commons مصادر التعَّلُّم المفتوحة العامّة (Open Educational Resources (OER) Commons)",
+    "title": "OER Commons مصادر التعَّلُّم المفتوحة العامّة [Open Educational Resources (OER) Commons]",
+    "sort_key": "oer commons مصادر التعَّلُّم المفتوحة العامّة [open educational resources (oer) commons]",
     "definition": "مصادر التَّعلُّم المفتوحة هي مكتبة مجانيَّة على الإنترنت تُمكِّن المعلِّمين من إنشاء، ومشاركة ودمج المصادر التَّعليميَّة.  تهدف حركة مصادر التَّعلُّم المفتوح إلى تحفيز\"التعليم والتَّعلُّم التَّعاوني\" ([https://www.oercommons.org/about](https://www.oercommons.org/about)) كما تقدِّم موارد تعليميَّة ذات جودة عالية متاحة للجميع. **المصطلحات ذات الصِّلة:** العدالة، فورت، الشمول، قاعدة المعرفة  للمنح الدِّراسية المفتوحة، إطار العلوم المفتوحة.",
     "related_terms": [
         "Equity",
@@ -21,5 +22,14 @@
     "alt_related_terms": [
         null
     ],
-    "language": "arabic"
+    "language": "arabic",
+    "translated_by": [
+        "Asma Alzahrani"
+    ],
+    "translation_reviewed_by": [
+        "Mahdi Aben Ahmed",
+        "Alaa M. Saleh",
+        "Ali H. Al-Hoorie",
+        "Mohammed Mohsen"
+    ]
 }

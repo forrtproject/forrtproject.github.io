@@ -1,6 +1,7 @@
 {
     "type": "glossary",
-    "title": "computational النُّموذج الحاسوبيّ (Model (computational))",
+    "title": "computational النُّموذج الحاسوبيّ [Model (computational)]",
+    "sort_key": "computational النُّموذج الحاسوبيّ [model (computational)]",
     "definition": "تهدف النَّماذج الحاسوبيَّة إلى ترجمة الظَّواهر قيد  الدِّراسة رياضيًاً بشكل حسابي؛ لفهم السُّلوكيَّات المعقَّدة وتفسيرها، والتَّنبؤ بها بشكلٍ أفضل.  **المصطلحات ذات الصِّلة:** خوارزميّات، محاكاة البيانات، الفرضيَّة، النَّظريَّة، بناء النَّظريَّة",
     "related_terms": [
         "algorithms",
@@ -26,5 +27,14 @@
     "alt_related_terms": [
         null
     ],
-    "language": "arabic"
+    "language": "arabic",
+    "translated_by": [
+        "Hiba Alomary"
+    ],
+    "translation_reviewed_by": [
+        "Ahlam Ahmed",
+        "Alaa M. Saleh",
+        "Ali H. Al-Hoorie",
+        "Mohammed Mohsen"
+    ]
 }

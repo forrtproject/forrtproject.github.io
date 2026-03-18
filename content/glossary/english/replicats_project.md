@@ -1,6 +1,7 @@
 {
     "type": "glossary",
     "title": "RepliCATs project",
+    "sort_key": "replicats project",
     "definition": "Collaborative Assessment for Trustworthy Science. The repliCATS project’s aim is to crowdsource predictions about the reliability and replicability of published research in eight social science fields: business research, criminology, economics, education, political science, psychology, public administration, and sociology.",
     "related_terms": [
         "Replicability",

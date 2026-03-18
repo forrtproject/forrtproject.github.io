@@ -1,6 +1,7 @@
 {
     "type": "glossary",
-    "title": "Typ-I-Fehler (Type I error)",
+    "title": "Typ-I-Fehler [Type I error]",
+    "sort_key": "typ-i-fehler [type i error]",
     "definition": "Incorrect rejection of a null hypothesis” (dt. fälschliches Verwerfen einer Nullhypothese; Simmons et al., 2011, S. 1359), d.h. das Auffinden von Beweisen, um die Nullhypothese, dass es keinen Effekt gibt, zu verwerfen, wenn die Beweise tatsächlich für die Beibehaltung der Nullhypothese sprechen, dass es keinen Effekt gibt (z. B. ein Richter, der eine unschuldige Person inhaftiert). Die Schlussfolgerung, dass ein signifikanter Effekt vorliegt, und die Zurückweisung der Nullhypothese, wenn die Ergebnisse tatsächlich zufällig entstanden sind.",
     "related_terms": [
         "Frequentist statistics",
@@ -34,5 +35,13 @@
     "alt_related_terms": [
         null
     ],
-    "language": "german"
+    "language": "german",
+    "translated_by": [
+        "Bettina M.J. Kern"
+    ],
+    "translation_reviewed_by": [
+        "Helena Hartmann",
+        "Susanne Vogel",
+        "Joris Frese"
+    ]
 }

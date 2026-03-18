@@ -1,6 +1,7 @@
 {
     "type": "glossary",
     "title": "Community Projects",
+    "sort_key": "community projects",
     "definition": "Collaborative projects that involve researchers from different career levels, disciplines, institutions or countries. Projects may have different goals including peer support and learning, conducting research, teaching and education. They can be short-term (e.g., conference events or hackathons) or long-term (e.g., journal clubs or consortium-led research projects). Collaborative culture and community building are key to achieving project goals.",
     "related_terms": [
         "Bottom-up approach (to Open Scholarship)",

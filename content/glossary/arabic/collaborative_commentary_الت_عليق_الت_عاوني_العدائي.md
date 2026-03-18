@@ -1,6 +1,7 @@
 {
     "type": "glossary",
-    "title": "collaborative commentary التَّعليق التَّعاوني العدائي (Adversarial (collaborative) commentary)",
+    "title": "collaborative commentary التَّعليق التَّعاوني العدائي [Adversarial (collaborative) commentary]",
+    "sort_key": "collaborative commentary التَّعليق التَّعاوني العدائي [adversarial (collaborative) commentary]",
     "definition": "الَّتعريف:** تعليق يتعاون فيه المؤلفون الأصليون للعمل مع نُقّاده؛ لصياغة بيان تتوافق فيه الآراء. ويهدف الَّتعليق التَّعاوني إلى صياغة تعليق خالٍ من تحيُّز الشَّخصنة، وينقل فهمًا مشتركًا، أو على الأقل يُحدد أين يتفق الطَّرفان، وأين يختلفان. تقدّم هذه الطَّريقة رسالة واضحة ومسارًا إلى الأمام، بدلًا من ترك القارئ يختار بين وجهات النَّظر المتعارضة التي يتم نقلها في تعليقات منفصلة.  **المصطلحات ذات الصِّلة:** التَّشارك العدائي، التَّعليق التَّعاوني.",
     "related_terms": [
         "Adversarial collaboration",
@@ -24,5 +25,15 @@
     "alt_related_terms": [
         null
     ],
-    "language": "arabic"
+    "language": "arabic",
+    "translated_by": [
+        "Ali H. Al-Hoorie"
+    ],
+    "translation_reviewed_by": [
+        "Amani Aloufi",
+        "Ahlam Ahmed",
+        "Hiba Alomary",
+        "Asma Alzahran",
+        "Mohammed Mohsen"
+    ]
 }

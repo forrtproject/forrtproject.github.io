@@ -1,6 +1,7 @@
 {
     "type": "glossary",
-    "title": "Explorative Datenanalyse (Exploratory data analysis)",
+    "title": "Explorative Datenanalyse [Exploratory data analysis]",
+    "sort_key": "explorative datenanalyse [exploratory data analysis]",
     "definition": "Die explorative Datenanalyse (EDA) ist eine etablierte statistische Tradition, die konzeptionelle und computergestützte Instrumente zur Entdeckung von Mustern in Daten bereitstellt, um die Entwicklung und Verfeinerung von Hypothesen zu fördern. Diese Werkzeuge und Einstellungen ergänzen den Einsatz von Hypothesentests, die in der konfirmatorischen Datenanalyse (CDA) verwendet werden. Selbst wenn gut begründete Theorien vorliegen, kann EDA helfen, die Ergebnisse einer CDA zu interpretieren und unerwartete oder irreführende Muster in den Daten aufzudecken.",
     "related_terms": [
         "Confirmatory analyses",
@@ -25,5 +26,12 @@
     "alt_related_terms": [
         null
     ],
-    "language": "german"
+    "language": "german",
+    "translated_by": [
+        "Helena Hartmann"
+    ],
+    "translation_reviewed_by": [
+        "Susanne Vogel",
+        "Jennifer Mattschey"
+    ]
 }

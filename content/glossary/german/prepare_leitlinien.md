@@ -1,6 +1,7 @@
 {
     "type": "glossary",
-    "title": "PREPARE Leitlinien (PREPARE Guidelines)",
+    "title": "PREPARE Leitlinien [PREPARE Guidelines]",
+    "sort_key": "prepare leitlinien [prepare guidelines]",
     "definition": "Die PREPARE-Leitlinien und die Checkliste (Planning Research and Experimental Procedures on Animals: Recommendations for Excellence) sollen bei der Planung von Tierversuchen helfen, die Einhaltung der sogenannten 3Rs (Replacement, Reduction or Refinement, dt. Ersetzen, Reduzieren und Verfeinern) zu unterstützen und die Reproduzierbarkeit von Tierversuchen zu erleichtern.",
     "related_terms": [
         "ARRIVE Guidelines",
@@ -21,5 +22,12 @@
     "alt_related_terms": [
         null
     ],
-    "language": "german"
+    "language": "german",
+    "translated_by": [
+        "Susanne Vogel"
+    ],
+    "translation_reviewed_by": [
+        "Helena Hartmann",
+        "Jennifer Mattschey"
+    ]
 }

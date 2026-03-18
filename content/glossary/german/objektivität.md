@@ -1,6 +1,7 @@
 {
     "type": "glossary",
-    "title": "Objektivität (Objectivity)",
+    "title": "Objektivität [Objectivity]",
+    "sort_key": "objektivität [objectivity]",
     "definition": "Die Idee, dass wissenschaftliche Behauptungen, Methoden, Ergebnisse und Wissenschaftler:innen selbst wertfrei und unvoreingenommen bleiben sollten und somit nicht von kulturellen, politischen, herkunftsbezogenen oder religiösen Vorurteilen sowie persönlichen Interessen beeinflusst werden sollten (Merton, 1942).",
     "related_terms": [
         "Communality",
@@ -24,5 +25,12 @@
     "alt_related_terms": [
         null
     ],
-    "language": "german"
+    "language": "german",
+    "translated_by": [
+        "Helena Hartmann"
+    ],
+    "translation_reviewed_by": [
+        "Susanne Vogel",
+        "Jennifer Mattschey"
+    ]
 }

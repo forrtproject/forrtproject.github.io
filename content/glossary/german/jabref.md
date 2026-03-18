@@ -1,6 +1,7 @@
 {
     "type": "glossary",
     "title": "JabRef",
+    "sort_key": "jabref",
     "definition": "Ein kostenloses, quell-offenes, plattformübergreifendes Tool zur Verwaltung von Zitationen und Referenzen. Es ermöglicht die Bearbeitung von BibTeX-Dateien, den Import von Daten aus wissenschaftlichen Online-Datenbanken sowie die Verwaltung und Suche von BibTeX-Dateien.",
     "related_terms": [
         "Open source software"
@@ -20,5 +21,12 @@
     "alt_related_terms": [
         null
     ],
-    "language": "german"
+    "language": "german",
+    "translated_by": [
+        "Bettina MJ Kern"
+    ],
+    "translation_reviewed_by": [
+        "Susanne Vogel",
+        "Jennifer Mattschey"
+    ]
 }

@@ -1,6 +1,7 @@
 {
     "type": "glossary",
-    "title": "SDC نهج التَّسلسل الذي يحدِّد المساهمة (Sequence-determines-credit approach (SDC))",
+    "title": "SDC نهج التَّسلسل الذي يحدِّد المساهمة [Sequence-determines-credit approach (SDC)]",
+    "sort_key": "sdc نهج التَّسلسل الذي يحدِّد المساهمة [sequence-determines-credit approach (sdc)]",
     "definition": "نظام تأليف يحدِّد ترتيب التَّأليف بناءً على مساهمة كلِّ مؤلِّف. ويتمّ سرد أسماء المؤلِّفين وفقًا لمساهمتهم بترتيب تنازلي  بدءًا بالمؤلِّف الأكثر مساهمةً وانتهاءً بالمؤلِّف الأقل مساهمة.  **المصطلحات ذات الصِّلة:** التَّأليف، مبدأ التَّأكيد على  المؤلِّفين الأول والأخير",
     "related_terms": [
         "Authorship",
@@ -20,5 +21,14 @@
     "alt_related_terms": [
         null
     ],
-    "language": "arabic"
+    "language": "arabic",
+    "translated_by": [
+        "Mai Helmy."
+    ],
+    "translation_reviewed_by": [
+        "Ahlam Ahmed",
+        "Ali H. Al-Hoorie",
+        "Hala Alghamdi",
+        "Mohammed Mohsen"
+    ]
 }

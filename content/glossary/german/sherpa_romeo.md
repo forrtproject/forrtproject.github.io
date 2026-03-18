@@ -1,6 +1,7 @@
 {
     "type": "glossary",
     "title": "Sherpa Romeo",
+    "sort_key": "sherpa romeo",
     "definition": "Eine Online-Ressource, die die Open-Access-Richtlinien von wissenschaftlichen Verlagen aus der ganzen Welt sammelt und Zusammenfassungen der Urheberrechts- und Open-Access-Archivierungsrichtlinien der einzelnen Zeitschriften bereitstellt.",
     "related_terms": [
         "Embargo period",
@@ -24,5 +25,13 @@
     "alt_related_terms": [
         null
     ],
-    "language": "german"
+    "language": "german",
+    "translated_by": [
+        "Bettina M. J. Kern"
+    ],
+    "translation_reviewed_by": [
+        "Helena Hartmann",
+        "Susanne Vogel",
+        "Joris Frese"
+    ]
 }

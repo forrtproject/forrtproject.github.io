@@ -1,0 +1,35 @@
+{
+    "type": "glossary",
+    "title": "Düşmanca (İş birlikçi) Yorumlama [Adversarial (collaborative) commentary]",
+    "sort_key": "duzszmanca (i̇sz birlikczi) yorumlama [adversarial (collaborative) commentary]",
+    "definition": "Bir çalışmanın orijinal yazarları ve söz konusu çalışmanın eleştirmenlerinin iş birliği yaparak bir konsensüs bildirisi hazırladıkları bir yorum. Amaç, ad hominem safsatalarından uzak, ortak bir anlayışı aktaran veya en azından her iki tarafın hemfikir olduğu ve olmadığı noktaları belirleyen bir yorum hazırlamaktır. Böylelikle, okuyucuyu ayrı yorumlarda aktarılan karşıt görüşler arasında seçim yapmaya bırakmak yerine, net bir mesaj ve ileriye dönük bir yol sunar.",
+    "related_terms": [
+        "Adversarial collaboration",
+        "Collaborative commentary"
+    ],
+    "references": [
+        "Heyman, T., Moors, P., & Rabagliati, H. (2020). The benefits of adversarial collaboration for commentaries. Nature Human Behavior, 4, 1217. https://doi.org/10.1038/s41562-020-00978-6",
+        "Rabagliati, H., Moors, P., & Heyman, T. (2019). Can item effects explain away the evidence for unconscious sound symbolism? An adversarial commentary on Heyman, Maerten, Vankrunkelsven, Voorspoels, and Moors (2019). Psychological Science, 31(9), 1200–1204. https://doi.org/10.1177/0956797620949461",
+        "Silberzahn, R., Simonsohn, U., & Ulhmann, E. L. (2014). Matched-names analysis reveals no evidence of name-meaning effects: A collaborative commentary on Silberzahn and Uhlmann (2013). Psychological Science, 25(7), 1504–1505. https://doi.org/10.1177/0956797614533802"
+    ],
+    "drafted_by": [
+        "Steven Verheyen"
+    ],
+    "reviewed_by": [
+        "Mahmoud Elsherif",
+        "Sam Parsons",
+        "Emma Henderson",
+        "Michele C. Lim",
+        "Flávio Azevedo"
+    ],
+    "alt_related_terms": [
+        null
+    ],
+    "language": "turkish",
+    "translated_by": [
+        "Ege Emek"
+    ],
+    "translation_reviewed_by": [
+        "Elif Baştan"
+    ]
+}

@@ -26,6 +26,11 @@ on:
         required: false
         type: string
         default: ''
+      create_summary:
+        description: 'Create deployment summary (and monthly report if 1st of month)'
+        required: false
+        type: boolean
+        default: false
 
 # Workflow-level concurrency to queue staging builds (wait instead of cancel)
 concurrency:
@@ -407,6 +412,7 @@ jobs:
           path: ${{ github.repository }}/forrt-website
 
       - name: Create deployment summary
+        if: github.event_name != 'workflow_dispatch' || github.event.inputs.create_summary == 'true'
         run: |
           echo "## 🚀 Staging Deployment Summary" > deployment-summary.md
           echo "" >> deployment-summary.md
@@ -532,14 +538,14 @@ jobs:
           GH_TOKEN: ${{ secrets.STAGING_GITHUB_TOKEN }}
 
       - name: Create monthly deployment report
-        if: github.event_name == 'schedule'
+        if: github.event_name == 'schedule' || (github.event_name == 'workflow_dispatch' && github.event.inputs.create_summary == 'true')
         run: |
           # Only create monthly report on scheduled runs (1st of month)
           CURRENT_DAY=$(date +%d)
           echo "🔍 Current day: $CURRENT_DAY, Event: ${{ github.event_name }}"
           
           if [ "$CURRENT_DAY" = "01" ]; then
-            MONTH=$(date +%B %Y)
+            MONTH=$(date +"%B %Y")
             echo "📊 Creating monthly deployment report for $MONTH"
             
             # Check if deployment summary file exists

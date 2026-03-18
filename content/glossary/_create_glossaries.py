@@ -10,6 +10,7 @@ language_map = {
     'EN': 'english',
     'AR': 'arabic',
     'DE': 'german',
+    'TR': 'turkish',
 }
 
 # Configuration
@@ -71,10 +72,16 @@ def process_references(references_text, apa_lookup, missing_refs_log=None):
         if key in apa_lookup:
             formatted_refs.append(apa_lookup[key])
         else:
-            # Log missing reference but don't include in output
-            if missing_refs_log is not None:
-                missing_refs_log.add(original_key)
-            print(f"Warning: Missing reference key '{original_key}' (cleaned: '{key}') - skipping")
+            # Try case-insensitive match
+            key_lower = key.lower()
+            ci_match = next((k for k in apa_lookup if k.lower() == key_lower), None)
+            if ci_match:
+                formatted_refs.append(apa_lookup[ci_match])
+            else:
+                # Log missing reference but don't include in output
+                if missing_refs_log is not None:
+                    missing_refs_log.add(original_key)
+                print(f"Warning: Missing reference key '{original_key}' (cleaned: '{key}') - skipping")
     
     return list(dict.fromkeys(formatted_refs))
 
@@ -87,14 +94,29 @@ def safe_get(row, column, default=""):
     except Exception:
         return default
 
-def clean_filename(title):
+def sort_key_for_language(title, language_code):
+    """Generate a sort key that handles language-specific character ordering."""
+    key = title.lower()
+    if language_code == 'TR':
+        # Turkish alphabet order: ... c ç d ... g ğ h i ı j ... o ö p ... s ş t u ü v ...
+        # Map special chars so they sort just after their base char
+        key = key.replace('ç', 'cz').replace('ğ', 'gz').replace('ı', 'iz')
+        key = key.replace('ö', 'oz').replace('ş', 'sz').replace('ü', 'uz')
+    return key
+
+
+def clean_filename(title, max_length=200):
     """Clean title for use as filename"""
-    # Extract main title (before parentheses)
-    file_name = title.split(" (")[0].strip()
+    # Extract main title (before English title in square brackets)
+    file_name = title.split(" [")[0].strip()
     # Replace spaces and special characters
     file_name = re.sub(r'[^\w\s]', '_', file_name.replace(" ", "_"))
     # Convert to lowercase and clean up multiple underscores
-    return file_name.lower().strip().replace("__", "_")
+    file_name = file_name.lower().strip().replace("__", "_")
+    # Truncate to avoid filesystem limits
+    if len(file_name) > max_length:
+        file_name = file_name[:max_length].rstrip("_")
+    return file_name
 
 # Process languages
 formatted_data = {}
@@ -130,17 +152,31 @@ for language_code in languages_to_process:
             title = en_title
         else:
             localized_title = safe_get(row, f"{language_code}_title")
-            title = f"{localized_title} ({en_title})" if localized_title else en_title
+            if localized_title:
+                # Check if all English title words are already in the localized title
+                en_words = set(re.sub(r'[^\w\s]', '', en_title).lower().split())
+                local_words = set(re.sub(r'[^\w\s]', '', localized_title).lower().split())
+                if en_words <= local_words:
+                    title = localized_title
+                else:
+                    title = f"{localized_title} [{en_title}]"
+            else:
+                title = en_title
 
         # Process references
         raw_references = safe_get(row, "Reference")
         processed_references = process_references(raw_references, apa_lookup, missing_refs)
 
         # Build entry
+        definition = safe_get(row, f"{language_code}_definition" if language_code == "EN" else f"{language_code}_def")
+        if not definition:
+            continue
+
         entry = {
             "type": "glossary",
             "title": title,
-            "definition": safe_get(row, f"{language_code}_definition" if language_code == "EN" else f"{language_code}_def"),
+            "sort_key": sort_key_for_language(title, language_code),
+            "definition": definition,
             "related_terms": list(dict.fromkeys(safe_get(row, "Related_terms").split("; "))) if safe_get(row, "Related_terms") else [],
             "references": processed_references,
             "drafted_by": [safe_get(row, "Originally drafted by") or safe_get(row, "Drafted by")] if (safe_get(row, "Originally drafted by") or safe_get(row, "Drafted by")) else [],
@@ -148,6 +184,17 @@ for language_code in languages_to_process:
             "alt_related_terms": [None],
             "language": language_name
         }
+
+        # Add translation credits for non-English entries
+        if language_code != 'EN':
+            transl_col = f"{language_code}_transl"
+            review_col = f"{language_code}_review"
+            transl_val = safe_get(row, transl_col)
+            review_val = safe_get(row, review_col)
+            if transl_val:
+                entry["translated_by"] = [name.strip() for name in re.split(r'[,;]', transl_val) if name.strip()]
+            if review_val:
+                entry["translation_reviewed_by"] = [name.strip() for name in re.split(r'[,;]', review_val) if name.strip()]
 
         # Add aliases for English entries
         if language_code == "EN":
@@ -161,7 +208,15 @@ for language_code in languages_to_process:
 # Create markdown files
 for language_name, entries in formatted_data.items():
     language_dir = os.path.join(script_dir, language_name)
-    os.makedirs(language_dir, exist_ok=True)
+    # Remove existing glossary entry files to ensure deleted entries don't persist
+    # Preserve _index.md files as they are not regenerated
+    if os.path.exists(language_dir):
+        for existing_file in os.listdir(language_dir):
+            if existing_file != '_index.md' and existing_file.endswith('.md'):
+                file_path_to_remove = os.path.join(language_dir, existing_file)
+                os.remove(file_path_to_remove)
+    else:
+        os.makedirs(language_dir)
     
     print(f"Creating {len(entries)} markdown files for {language_name}")
     

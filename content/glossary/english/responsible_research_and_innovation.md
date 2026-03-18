@@ -1,6 +1,7 @@
 {
     "type": "glossary",
     "title": "Responsible Research and Innovation",
+    "sort_key": "responsible research and innovation",
     "definition": "An approach that considers societal implications and expectations, relating to research and innovation, with the aim to foster inclusivity and sustainability. It accounts for the fact that scientific endeavours are not isolated from their wider effects and that research is motivated by factors beyond the pursuit of knowledge. As such, many parties are important in fostering responsible research, including funding bodies, research teams, stakeholders, activists, and members of the public.",
     "related_terms": [
         "Citizen Science",

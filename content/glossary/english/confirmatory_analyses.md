@@ -1,6 +1,7 @@
 {
     "type": "glossary",
     "title": "Confirmatory analyses",
+    "sort_key": "confirmatory analyses",
     "definition": "Part of the confirmatory-exploratory distinction (Wagenmakers et al., 2012), where confirmatory analyses refer to analyses that were set *a priori* and test existent hypotheses. The lack of this distinction within published research findings has been suggested to explain replicability issues and is suggested to be overcome through study preregistration which clearly distinguishes confirmatory from exploratory analyses. Other researchers have questioned these terms and recommended a replacement with ‘discovery-oriented’ and ‘theory-testing research’ (Oberauer & Lewandowsky, 2019; see also Szollosi & Donkin, 2019).",
     "related_terms": [
         "Exploratory data analysis",

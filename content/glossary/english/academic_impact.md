@@ -1,6 +1,7 @@
 {
     "type": "glossary",
     "title": "Academic Impact",
+    "sort_key": "academic impact",
     "definition": "The contribution that a research output (e.g., published manuscript) makes in shifting understanding and advancing scientific theory, method, and application, across and within disciplines. Impact can also refer to the degree to which an output or research programme influences change outside of academia, e.g. societal and economic impact (cf. ESRC: https://esrc.ukri.org/research/impact-toolkit/what-is-impact/).",
     "related_terms": [
         "Beneficiaries",

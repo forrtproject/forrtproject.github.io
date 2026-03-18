@@ -1,6 +1,7 @@
 {
     "type": "glossary",
     "title": "Credibility revolution",
+    "sort_key": "credibility revolution",
     "definition": "The problems and the solutions resulting from a growing distrust in scientific findings, following concerns about the credibility of scientific claims (e.g., low replicability). The term has been proposed as a more positive alternative to the term replicability crisis, and includes the many solutions to improve the credibility of research, such as preregistration, transparency, and replication.",
     "related_terms": [
         "Credibility of scientific claims",

@@ -1,6 +1,7 @@
 {
     "type": "glossary",
-    "title": "Berichtleitlinien (Reporting Guideline)",
+    "title": "Berichtleitlinien [Reporting Guideline]",
+    "sort_key": "berichtleitlinien [reporting guideline]",
     "definition": "Ein Leitfaden für die Berichterstattung ist eine “checklist, flow diagram, or structured text to guide authors in reporting a specific type of research, developed using explicit methodology.” (dt. Checkliste, ein Flussdiagramm oder ein strukturierter Text, der die Autor:innen bei der Verschriftlichung einer bestimmten Art von Forschung anleitet und unter Verwendung einer expliziten Methodik entwickelt wurde, EQUATOR-Netzwerk, n.d.). Reporting Guidelines bieten ein Mindestmaß an Anleitung, um sicherzustellen, dass Forschungsergebnisse angemessen interpretiert, bewertet, zusammengefasst und reproduziert werden können. Ihre Anwendung ist oft in verschiedenen Journals oder Verlagen unterschiedlich..",
     "related_terms": [
         "CONSORT",
@@ -24,5 +25,12 @@
     "alt_related_terms": [
         null
     ],
-    "language": "german"
+    "language": "german",
+    "translated_by": [
+        "Susanne Vogel"
+    ],
+    "translation_reviewed_by": [
+        "Helena Hartmann",
+        "Jennifer Mattschey"
+    ]
 }

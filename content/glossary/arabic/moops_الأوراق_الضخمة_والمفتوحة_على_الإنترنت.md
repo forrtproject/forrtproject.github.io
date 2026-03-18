@@ -1,6 +1,7 @@
 {
     "type": "glossary",
-    "title": "MOOPs الأوراق الضخمة والمفتوحة على الإنترنت (Massively Open Online Papers (MOOPs))",
+    "title": "MOOPs الأوراق الضخمة والمفتوحة على الإنترنت [Massively Open Online Papers (MOOPs)]",
+    "sort_key": "moops الأوراق الضخمة والمفتوحة على الإنترنت [massively open online papers (moops)]",
     "definition": "تتبع الأوراق الضَّخمة المفتوحة على الإنترنت نموذجًا مفتوحًا تشاركيًا يمتاز بالمرونة، ولا تحكمه قائمة محدَّدة من المشاركين، على عكس المقال التَّقليدي المشترك.  **المصطلحات ذات الصِّلة:** علم المواطن، البحث الجماعي، العديد من المؤلِّفين.",
     "related_terms": [
         "Citizen science",
@@ -20,5 +21,15 @@
     "alt_related_terms": [
         null
     ],
-    "language": "arabic"
+    "language": "arabic",
+    "translated_by": [
+        "Nazik Alnour"
+    ],
+    "translation_reviewed_by": [
+        "Ahlam Ahmed",
+        "Alaa M. Saleh",
+        "Hiba Alomary",
+        "Ali H. Al-Hoorie",
+        "Mohammed Mohsen"
+    ]
 }

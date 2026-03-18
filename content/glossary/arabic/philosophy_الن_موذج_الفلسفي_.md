@@ -1,6 +1,7 @@
 {
     "type": "glossary",
-    "title": "philosophy النَّموذج الفلسفيّ (Model (philosophy))",
+    "title": "philosophy النَّموذج الفلسفيّ [Model (philosophy)]",
+    "sort_key": "philosophy النَّموذج الفلسفيّ [model (philosophy)]",
     "definition": "هو العمليَّة التي يتم من خلالها إضفاء الطَّابع الرَّسمي على الوصف اللَّفظي؛ لإزالة الغموض، مع تقييد الأبعاد التي يمكن أنْ تمتدَّ إليها النَّظريَّة؛ مما ينتج عنه اشتقاق النَّموذج من البيانات.  \"إنَّ العديد من النَّماذج العلميَّة هي نماذج تمثيليَّة: فهي تمثل جزءًا أو جانبًا مختارًا من العالم، وهو النِّظام المستهدف للنَّموذج\" (Frigg & Hartman, 2020). **المصطلحات ذات الصِّلة:** الفرضيَّة، النَّظريَّة،  بناء النَّظريَّة.",
     "related_terms": [
         "Hypothesis",
@@ -20,5 +21,14 @@
     "alt_related_terms": [
         null
     ],
-    "language": "arabic"
+    "language": "arabic",
+    "translated_by": [
+        "Ahlam Ahmed"
+    ],
+    "translation_reviewed_by": [
+        "Alaa M. Saleh",
+        "Hiba Alomary",
+        "Ali H. Al-Hoorie",
+        "Mohammed Mohsen"
+    ]
 }

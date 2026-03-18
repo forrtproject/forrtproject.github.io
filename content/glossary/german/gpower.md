@@ -1,6 +1,7 @@
 {
     "type": "glossary",
     "title": "GPower",
+    "sort_key": "gpower",
     "definition": "Kostenlose Statistiksoftware zur Durchführung von Power-Analysen. Man gibt den gewünschten statistischen Test (z. B. *t*\\-Test, Regression, ANOVA) und drei der folgenden Punkte an: die Anzahl der Gruppen/Beobachtungen, die Effektgröße, das Signifikanzniveau oder die Power. Aus den drei ausgewählten Parametern wird dann der vierte Parameter, der nicht ausgewählt wurde, bestimmt.",
     "related_terms": [
         "Power analysis",
@@ -23,5 +24,12 @@
     "alt_related_terms": [
         null
     ],
-    "language": "german"
+    "language": "german",
+    "translated_by": [
+        "Bettina MJ Kern"
+    ],
+    "translation_reviewed_by": [
+        "Susanne Vogel",
+        "Helena Hartmann"
+    ]
 }

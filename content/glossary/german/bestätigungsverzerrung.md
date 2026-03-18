@@ -1,6 +1,7 @@
 {
     "type": "glossary",
-    "title": "Bestätigungsverzerrung (Confirmation bias)",
+    "title": "Bestätigungsverzerrung [Confirmation bias]",
+    "sort_key": "bestätigungsverzerrung [confirmation bias]",
     "definition": "Die Tendenz, Informationen in einer Weise zu suchen, zu interpretieren, zu bevorzugen und abzurufen, die die eigenen früheren Werte, Überzeugungen, Erwartungen oder Hypothesen beschäftigt und unterstützt.",
     "related_terms": [
         "Confirmatory bias",
@@ -25,5 +26,12 @@
     "alt_related_terms": [
         null
     ],
-    "language": "german"
+    "language": "german",
+    "translated_by": [
+        "Bettina MJ Kern"
+    ],
+    "translation_reviewed_by": [
+        "Helena Hartmann",
+        "Jennifer Mattschey"
+    ]
 }

@@ -1,8 +1,19 @@
 {{- define "main" -}}
 
+<style>
+  .glossary-toc {
+    order: 99;
+  }
+  @media (min-width: 1200px) {
+    .glossary-toc {
+      order: -1;
+    }
+  }
+</style>
+
 <div class="container-fluid docs">
   <div class="row flex-xl-nowrap">
-    <div class="d-none d-xl-block col-xl-3 docs-toc" style="order: 1">
+    <div class="col-12 col-xl-3 docs-toc glossary-toc">
       <ul class="nav toc-top">
         <li><a href="#" id="back_to_top" class="docs-toc-title">List of terms</a></li>
       </ul>
@@ -13,7 +24,7 @@
           {{ $glossaryPages := where .Site.RegularPages "Type" "glossary" }}
           {{ $filteredPages := where $glossaryPages "File.Dir" $currentSection }}
           {{ range $index, $page := $filteredPages }}
-          <li class="nav-item" data-toggle="tooltip" data-placement="right" title="{{ .Params.definition }}">
+          <li class="nav-item">
             <a href="{{ .Permalink }}" class="nav-link">{{ .Title }}</a>
           </li>
           {{ end }}
@@ -41,20 +52,6 @@
         </div>
       </article>
 
-      <div class="d-flex d-xl-none col-12 docs-toc" style="">
-        <nav id="TableOfContentsMobile" class="nav flex-column">
-          <ul>
-            {{ $currentSection := .File.Dir }}
-            {{ $glossaryPages := where .Site.RegularPages "Type" "glossary" }}
-            {{ $filteredPages := where $glossaryPages "File.Dir" $currentSection }}
-            {{ range $index, $page := $filteredPages }}
-            <li class="nav-item" data-toggle="tooltip" data-placement="right" title="{{ .Params.definition }}">
-              <a href="{{ .Permalink }}" class="nav-link">{{ .Title }}</a>
-            </li>
-            {{ end }}
-          </ul>
-        </nav>
-      </div>
     </main>
   </div>
 </div>

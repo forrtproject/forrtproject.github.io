@@ -1,6 +1,7 @@
 {
     "type": "glossary",
-    "title": "Reproduzierbarkeit (Reproducibility)",
+    "title": "Reproduzierbarkeit [Reproducibility]",
+    "sort_key": "reproduzierbarkeit [reproducibility]",
     "definition": "Ein Mindeststandard auf einem Spektrum von Aktivitäten (\"Reproduzierbarkeitsspektrum\") zur Bewertung des Wertes oder der Genauigkeit wissenschaftlicher Aussagen auf der Grundlage der ursprünglichen Methoden, Daten und Codes. Zum Beispiel, wenn die Daten und Computercodes der ursprünglichen Forschenden verwendet werden, um die Ergebnisse wieder zu erzeugen (Barba, 2018), was oft als komputationale Reproduzierbarkeit bezeichnet wird. Die Reproduzierbarkeit garantiert nicht die Qualität, Korrektheit oder Gültigkeit der veröffentlichten Ergebnisse (Peng, 2011). In einigen Bereichen wird diese Bedeutung stattdessen mit dem Begriff \"Replizierbarkeit\" (Replicability) oder \"Wiederholbarkeit\" (Repeatability) in Verbindung gebracht.",
     "related_terms": [
         "Computational reproducibility",
@@ -28,5 +29,12 @@
     "alt_related_terms": [
         null
     ],
-    "language": "german"
+    "language": "german",
+    "translated_by": [
+        "Susanne Vogel"
+    ],
+    "translation_reviewed_by": [
+        "Helena Hartmann",
+        "Jennifer Mattschey"
+    ]
 }

@@ -1,6 +1,7 @@
 {
     "type": "glossary",
-    "title": "GDPR لائحة حماية البيانات العامَّة (General Data Protection Regulation (GDPR))",
+    "title": "GDPR لائحة حماية البيانات العامَّة [General Data Protection Regulation (GDPR)]",
+    "sort_key": "gdpr لائحة حماية البيانات العامَّة [general data protection regulation (gdpr)]",
     "definition": "إطار عمل قانوني مٌطبق في الاتحاد الأوروبيّ، ويتضمَّن سبعة مبادئ هدفها حماية بيانات الأفراد.  يسعى هذا الإطار إلى تمكين الأفراد من التحَّكم ببياناتهم الشَّخصيَّة وتنظيم عمل الجهات التي تعمل في مجال تحليل وحفظ هذه البيانات. كما تضبط هذه التَّشريعات حريَّة نقل البيانات الشَّخصيَّة للأفراد داخل وخارج الاتحاد الأوروبي والتي يجب على الباحثين الالتزام بها عند تصميم وإجراء الدِّراسات. **المصطلحات ذات الصِّلة:** التّعمية ، خِطة إدارة البيانات، مشاركة البيانات، التكرار، قابليَّة التِّكرار، ،قابلية إعادة الإنتاج.",
     "related_terms": [
         "Anonymity",
@@ -26,5 +27,15 @@
     "alt_related_terms": [
         null
     ],
-    "language": "arabic"
+    "language": "arabic",
+    "translated_by": [
+        "Sarah Almutairi"
+    ],
+    "translation_reviewed_by": [
+        "Ali H. Al-Hoorie",
+        "Alaa M. Saleh",
+        "Hala Alghamdi",
+        "Mai Helmy",
+        "Mohammed Mohsen"
+    ]
 }

@@ -1,6 +1,7 @@
 {
     "type": "glossary",
-    "title": "i10-Index (i10-index)",
+    "title": "i10-Index",
+    "sort_key": "i10-index",
     "definition": "Eine von Google Scholar erstellte Forschungsmetrik. Sie gibt für eine/n Forschenden die Anzahl der Publikationen mit mindestens 10 Zitationen an.",
     "related_terms": [
         "Citation",
@@ -21,5 +22,12 @@
     "alt_related_terms": [
         null
     ],
-    "language": "german"
+    "language": "german",
+    "translated_by": [
+        "Bettina MJ Kern"
+    ],
+    "translation_reviewed_by": [
+        "Helena Hartmann",
+        "Jennifer Mattschey"
+    ]
 }
