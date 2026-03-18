@@ -52,7 +52,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Deduplicate errors and collapse 403s
+      - name: Process lychee output
         if: steps.lychee.outputs.exit_code != 0
         run: |
           python3 << 'PYEOF'
@@ -76,43 +76,56 @@ jobs:
               else:
                   summary_lines.append(line)
 
-          # Extract unique error URLs, split by status
-          seen = set()
-          main_errors = []  # non-403
-          forbidden_errors = []  # 403
+          # Parse errors, tracking which pages each URL appears on
+          # url -> {"status": str, "pages": [str]}
+          url_info = {}
+          main_errors = {}    # non-403
+          forbidden_errors = {}  # 403
+          current_page = ""
 
           for line in error_lines:
+              # Track section headers (### Errors in /tmp/site/.../index.html)
+              page_match = re.match(r"^### Errors in /tmp/site/[^/]+/(.+)", line)
+              if page_match:
+                  # Convert file path to URL path
+                  path = page_match.group(1)
+                  path = re.sub(r"/index\.html$", "/", path)
+                  current_page = f"/{path}"
+                  continue
+
               m = re.match(r"^\* \[(\w+)\] <([^>]+)>", line)
               if not m:
                   continue
               status, url = m.group(1), m.group(2)
-              if url in seen:
-                  continue
-              seen.add(url)
-              # Extract just the status and URL, skip the verbose message
-              short = f"* [{status}] <{url}>"
-              if status == "403":
-                  forbidden_errors.append(short)
-              else:
-                  main_errors.append(short)
+
+              target = forbidden_errors if status == "403" else main_errors
+              if url not in target:
+                  target[url] = {"status": status, "pages": []}
+              if current_page and current_page not in target[url]["pages"]:
+                  target[url]["pages"].append(current_page)
 
           # Build output
           output = "\n".join(summary_lines).rstrip()
           output += "\n\n## Broken links\n\n"
+
           if main_errors:
-              output += "\n".join(main_errors)
+              for url, info in main_errors.items():
+                  pages = info["pages"]
+                  page_str = f" (in {pages[0]})" if len(pages) == 1 else f" (in {len(pages)} pages)"
+                  output += f"* [{info['status']}] <{url}>{page_str}\n"
           else:
-              output += "No broken links found (excluding 403s)."
-          output += "\n"
+              output += "No broken links found (excluding 403s).\n"
 
           if forbidden_errors:
               output += f"\n<details>\n<summary>403 Forbidden ({len(forbidden_errors)} URLs — likely bot-blocking, not broken)</summary>\n\n"
               output += "These sites block automated requests. The links may still be valid.\n"
-              output += "Showing first 100 — see workflow logs for the full list.\n\n"
-              output += "\n".join(forbidden_errors[:100])
-              if len(forbidden_errors) > 100:
-                  output += f"\n\n*... and {len(forbidden_errors) - 100} more*"
-              output += "\n\n</details>\n"
+              output += "Showing first 100 — see workflow logs for full list.\n\n"
+              for i, (url, info) in enumerate(forbidden_errors.items()):
+                  if i >= 100:
+                      output += f"\n*... and {len(forbidden_errors) - 100} more*"
+                      break
+                  output += f"* <{url}>\n"
+              output += "\n</details>\n"
 
           with open("/tmp/lychee/out.md", "w") as f:
               f.write(output)
@@ -123,8 +136,6 @@ jobs:
         run: |
           # Search source markdown files (excluding glossary, which is auto-generated)
           # for direct publisher URLs that should use https://doi.org/ instead.
-          # This covers both URLs with visible DOIs and those using publisher-specific
-          # identifiers (e.g. ScienceDirect PII) where the DOI should be looked up.
           PUBLISHERS='(journals\.sagepub|tandfonline|psycnet\.apa|onlinelibrary\.wiley|link\.springer|academic\.oup|sciencedirect|jstor\.org|journals\.lww|royalsocietypublishing)\.(com|org)'
           MATCHES=$(grep -rn --include='*.md' -E \
             "https?://[^ ]*${PUBLISHERS}/[^ ]*(doi/|article|fulltext)" \
@@ -133,8 +144,7 @@ jobs:
             COUNT=$(echo "$MATCHES" | wc -l)
             {
               echo ""
-              echo "<details>"
-              echo "<summary>Publisher URLs that should use doi.org ($COUNT found)</summary>"
+              echo "## Publisher URLs that should use doi.org ($COUNT found)"
               echo ""
               echo "The following links point directly to publisher websites instead of using"
               echo "\`https://doi.org/{DOI}\` format. Publishers often block automated requests,"
@@ -142,14 +152,8 @@ jobs:
               echo "If the DOI is not visible in the URL, look it up on https://search.crossref.org"
               echo ""
               echo '```'
-              echo "$MATCHES" | head -100
-              if [ "$COUNT" -gt 100 ]; then
-                echo ""
-                echo "... and $((COUNT - 100)) more"
-              fi
+              echo "$MATCHES"
               echo '```'
-              echo ""
-              echo "</details>"
             } >> /tmp/lychee/out.md
             echo "found=true" >> "$GITHUB_OUTPUT"
           else
