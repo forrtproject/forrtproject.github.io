@@ -32,11 +32,10 @@ exclude = [
 # ---------------------
 # Request settings
 # ---------------------
-# Accept 2xx/3xx, 403 (bot-blocking), and 429 (rate limiting) to avoid false positives
-# Many academic publishers (Sage, T&F, APA, etc.) return 403 for all automated
-# requests regardless of whether the page exists, so we cannot use 403 to detect
-# broken links.
-accept = ["100..=399", "403", "429"]
+# Accept 2xx/3xx and 429 (rate limiting)
+# Note: 403 is NOT accepted — those are separated into a collapsed section
+# by the workflow's post-processing step, since many publishers block bots.
+accept = ["100..=399", "429"]
 
 # Timeout per request in seconds
 timeout = 30

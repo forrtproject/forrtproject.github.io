@@ -52,6 +52,50 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
+      - name: Separate 403 errors into collapsed section
+        if: steps.lychee.outputs.exit_code != 0
+        run: |
+          python3 << 'PYEOF'
+          import re
+
+          with open("/tmp/lychee/out.md") as f:
+              content = f.read()
+
+          # Split lines, separate 403 entries from the rest
+          lines = content.split("\n")
+          main_lines = []
+          forbidden_lines = []
+          current_header = None
+
+          for line in lines:
+              # Track section headers (### Errors in ...)
+              if line.startswith("### Errors in "):
+                  current_header = line
+                  continue
+              if re.match(r"^\* \[403\]", line):
+                  if current_header:
+                      forbidden_lines.append(current_header)
+                      current_header = None
+                  forbidden_lines.append(line)
+              else:
+                  if current_header:
+                      main_lines.append(current_header)
+                      current_header = None
+                  main_lines.append(line)
+
+          # Rebuild the output
+          output = "\n".join(main_lines).rstrip()
+
+          if forbidden_lines:
+              output += "\n\n<details>\n<summary>403 Forbidden errors (likely bot-blocking, not broken links)</summary>\n\n"
+              output += "These sites block automated requests. The links may still be valid.\n\n"
+              output += "\n".join(forbidden_lines)
+              output += "\n\n</details>\n"
+
+          with open("/tmp/lychee/out.md", "w") as f:
+              f.write(output)
+          PYEOF
+
       - name: Find publisher URLs that should use doi.org
         id: doi-check
         run: |
