@@ -1,0 +1,48 @@
+# Lychee link checker configuration
+# https://lychee.cli.rs/usage/config/
+#
+# Used by the link-check GitHub Actions workflow and can also be run locally:
+#   lychee --config .lychee.toml https://forrt.org
+
+# ---------------------
+# Exclusions
+# ---------------------
+# Patterns to exclude from link checking (common false positives)
+exclude = [
+  # Placeholder / example domains
+  "example\\.com",
+  "localhost",
+  "127\\.0\\.0\\.1",
+
+  # Social media sites that block automated requests
+  "linkedin\\.com",
+  "twitter\\.com",
+  "x\\.com",
+
+  # Web Archive — often slow or flaky
+  "web\\.archive\\.org",
+
+  # DOI resolver — aggressive rate limiting
+  "doi\\.org",
+
+  # GitHub edit links with templated paths
+  "github\\.com/.*/edit/",
+]
+
+# ---------------------
+# Request settings
+# ---------------------
+# Accept 2xx/3xx and 429 (Too Many Requests) to avoid false positives from rate limiting
+accept = ["100..=399", "429"]
+
+# Timeout per request in seconds
+timeout = 30
+
+# Maximum number of retries per link
+max_retries = 3
+
+# Maximum concurrent requests — keep low to avoid overwhelming the server
+max_concurrency = 8
+
+# Do not show progress bar (cleaner CI output)
+no_progress = true

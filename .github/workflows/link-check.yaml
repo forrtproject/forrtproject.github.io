@@ -1,0 +1,50 @@
+name: Link Checker
+
+# =======================
+# Website Link Validation
+# =======================
+# Purpose: Crawls the live FORRT website and checks for broken links
+# Triggers: Weekly on Mondays at 01:30 UTC or manual dispatch
+# Reports: Creates a GitHub issue with label "link-check" when broken links are found
+# Config: See .lychee.toml for exclusion patterns and request settings
+
+on:
+  schedule:
+    # Runs at 01:30 UTC every Monday
+    - cron: '30 1 * * 1'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: write
+
+concurrency:
+  group: link-check-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  link-check:
+    name: Check Links
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Run lychee link checker
+        id: lychee
+        uses: lychee/lychee-action@v2
+        with:
+          args: "--config .lychee.toml https://forrt.org"
+          output: /tmp/lychee/out.md
+          fail: false
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Create issue from lychee output
+        if: steps.lychee.outputs.exit_code != 0
+        uses: peter-evans/create-issue-from-file@v5
+        with:
+          title: "Link Checker Report"
+          content-filepath: /tmp/lychee/out.md
+          labels: link-check
+          token: ${{ secrets.GITHUB_TOKEN }}
