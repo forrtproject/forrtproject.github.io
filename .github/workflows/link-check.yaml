@@ -52,8 +52,33 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
+      - name: Find publisher URLs that should use doi.org
+        id: doi-check
+        run: |
+          # Search source markdown files (excluding glossary, which is auto-generated)
+          # for publisher URLs that contain DOIs and should use doi.org instead
+          MATCHES=$(grep -rn --include='*.md' -E \
+            'https?://[^ ]*(journals\.sagepub|tandfonline|psycnet\.apa|onlinelibrary\.wiley|link\.springer|academic\.oup)\.(com|org)[^ ]*/?(doi/|article/)(abs/|full/|pdf/)?10\.[0-9]{4,}' \
+            content/ --exclude-dir=content/glossary || true)
+          if [ -n "$MATCHES" ]; then
+            {
+              echo "## Publisher URLs that should use doi.org"
+              echo ""
+              echo "The following links use publisher-specific URLs instead of \`https://doi.org/\` format."
+              echo "Using doi.org URLs allows the link checker to verify that DOIs are valid."
+              echo "Publishers often block automated requests, making their URLs uncheckable."
+              echo ""
+              echo '```'
+              echo "$MATCHES"
+              echo '```'
+            } >> /tmp/lychee/out.md
+            echo "found=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "found=false" >> "$GITHUB_OUTPUT"
+          fi
+
       - name: Create issue from lychee output
-        if: steps.lychee.outputs.exit_code != 0
+        if: steps.lychee.outputs.exit_code != 0 || steps.doi-check.outputs.found == 'true'
         uses: peter-evans/create-issue-from-file@v5
         with:
           title: "Link Checker Report"

@@ -25,9 +25,6 @@ exclude = [
   # Web Archive — often slow or flaky
   "web\\.archive\\.org",
 
-  # DOI resolver — aggressive rate limiting
-  "doi\\.org",
-
   # GitHub edit links with templated paths
   "github\\.com/.*/edit/",
 ]

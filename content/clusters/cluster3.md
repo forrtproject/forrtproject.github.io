@@ -164,7 +164,7 @@ PsuTeachR's [Data Skills for Reproducible Science](https://psyteachr.github.io/m
 
 ***Includes tools such as statcheck.io, GRIM, and SPRITE***
 
-* Brown, N. J., & Heathers, J. A. (2016). The GRIM test: A simple technique detects numerous anomalies in the reporting of results in psychology. Social Psychological and Personality Science, 1948550616673876. http://journals.sagepub.com/doi/pdf/10.1177/1948550616673876
+* Brown, N. J., & Heathers, J. A. (2016). The GRIM test: A simple technique detects numerous anomalies in the reporting of results in psychology. Social Psychological and Personality Science, 1948550616673876. https://doi.org/10.1177/1948550616673876
 
 * Nuijten, M. B., Van Assen, M. A. L. M., Hartgerink, C. H. J., Epskamp, S., & Wicherts, J. M. (2017). The validity of the tool “statcheck” in discovering statistical reporting inconsistencies. Preprint retrieved from https://psyarxiv.com/tcxaj/.
 
