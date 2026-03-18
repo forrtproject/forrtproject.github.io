@@ -141,34 +141,63 @@
     function searchAllTabs(query) {
         const results = [];
         const queryLower = query.toLowerCase();
-        
+
         // Find all cluster sections
         const clusterSections = document.querySelectorAll('section[id^="cluster"]');
-        
+
         clusterSections.forEach(function(section) {
             const clusterTitle = section.querySelector('h3, h2, .home-section-title');
             const clusterName = clusterTitle ? clusterTitle.textContent.trim() : 'Unknown Cluster';
-            
+
+            // Search section content outside tabs (title, description)
+            var sectionOnlyText = getSectionNonTabText(section);
+            if (sectionOnlyText.toLowerCase().includes(queryLower)) {
+                results.push({
+                    cluster: clusterName,
+                    tab: 'Description',
+                    tabId: null,
+                    matches: countMatches(sectionOnlyText.toLowerCase(), queryLower),
+                    snippet: getContextSnippet(sectionOnlyText, query),
+                    section: section,
+                    tabPane: null,
+                    tabLink: null
+                });
+            }
+
             // Find all tab panes in this cluster
             const tabPanes = section.querySelectorAll('.tab-pane');
-            
+
             tabPanes.forEach(function(tabPane) {
                 const tabId = tabPane.id;
                 const content = tabPane.textContent || tabPane.innerText;
                 const contentLower = content.toLowerCase();
-                
-                // Check if query is in content
-                if (contentLower.includes(queryLower)) {
+
+                // Get tab label
+                const tabLink = section.querySelector(`a[href="#${tabId}"]`);
+                const tabLabel = tabLink ? tabLink.textContent.trim() : tabId;
+                const tabLabelLower = tabLabel.toLowerCase();
+
+                // Check if query is in content OR in tab label
+                const contentHasMatch = contentLower.includes(queryLower);
+                const labelHasMatch = tabLabelLower.includes(queryLower);
+
+                if (contentHasMatch || labelHasMatch) {
                     // Count occurrences
-                    const matches = countMatches(contentLower, queryLower);
-                    
-                    // Get tab label
-                    const tabLink = section.querySelector(`a[href="#${tabId}"]`);
-                    const tabLabel = tabLink ? tabLink.textContent.trim() : tabId;
-                    
+                    var matches = countMatches(contentLower, queryLower);
+                    if (labelHasMatch) {
+                        matches += countMatches(tabLabelLower, queryLower);
+                    }
+
                     // Get a snippet of context
-                    const snippet = getContextSnippet(content, query);
-                    
+                    var snippet;
+                    if (contentHasMatch) {
+                        snippet = getContextSnippet(content, query);
+                    } else {
+                        // Match is only in the tab label
+                        var regex = new RegExp('(' + escapeRegExp(query) + ')', 'gi');
+                        snippet = 'Tab: ' + tabLabel.replace(regex, '<mark>$1</mark>');
+                    }
+
                     results.push({
                         cluster: clusterName,
                         tab: tabLabel,
@@ -182,8 +211,14 @@
                 }
             });
         });
-        
+
         return results;
+    }
+
+    function getSectionNonTabText(section) {
+        var clone = section.cloneNode(true);
+        clone.querySelectorAll('.tab-pane, .nav-tabs, .nav').forEach(function(el) { el.remove(); });
+        return clone.textContent.trim();
     }
 
     function countMatches(text, query) {
@@ -219,18 +254,18 @@
 
     function displayResults(results, query) {
         const resultsDiv = document.getElementById('clusterSearchResults');
-        
+
         if (results.length === 0) {
             resultsDiv.innerHTML = `<div class="alert alert-info">No results found for "${escapeHtml(query)}".</div>`;
             return;
         }
 
-        let html = `<div class="search-summary">Found ${results.length} tab(s) with ${results.reduce((sum, r) => sum + r.matches, 0)} matches</div>`;
+        let html = `<div class="search-summary">Found ${results.length} result(s) with ${results.reduce((sum, r) => sum + r.matches, 0)} matches</div>`;
         html += '<div class="search-results-list">';
-        
-        results.forEach(function(result) {
+
+        results.forEach(function(result, index) {
             html += `
-                <div class="search-result-item" data-tab-id="${result.tabId}">
+                <div class="search-result-item" data-result-index="${index}">
                     <div class="search-result-header">
                         <strong>${escapeHtml(result.tab)}</strong>
                         <span class="badge badge-primary">${result.matches}</span>
@@ -240,7 +275,7 @@
                 </div>
             `;
         });
-        
+
         html += '</div>';
         resultsDiv.innerHTML = html;
 
@@ -248,27 +283,43 @@
         const resultItems = resultsDiv.querySelectorAll('.search-result-item');
         resultItems.forEach(function(item) {
             item.addEventListener('click', function() {
-                const tabId = this.getAttribute('data-tab-id');
-                const result = results.find(r => r.tabId === tabId);
-                if (result) {
+                var index = parseInt(this.getAttribute('data-result-index'));
+                var result = results[index];
+                if (!result) return;
+
+                removeAllHighlights();
+
+                if (result.tabPane) {
+                    // Tab-level result: activate the tab and highlight
                     activateTab(result);
                     highlightMatches(result.tabPane, query);
-                    // Scroll to the section with offset for navbar
+                    // Scroll to first highlighted match within the tab pane
+                    setTimeout(function() {
+                        var firstHighlight = result.tabPane.querySelector('.cluster-highlight');
+                        scrollToElement(firstHighlight || result.tabPane);
+                    }, 100);
+                } else {
+                    // Section-level result (description/title): highlight in section
+                    highlightMatches(result.section, query);
                     scrollToElement(result.section);
-                    // Mark as active
-                    resultItems.forEach(r => r.classList.remove('active'));
-                    this.classList.add('active');
-                    // Auto-hide the search panel
-                    document.getElementById('clusterSearchPanel').classList.remove('open');
                 }
+
+                // Mark as active
+                resultItems.forEach(function(r) { r.classList.remove('active'); });
+                this.classList.add('active');
+                // Auto-hide the search panel
+                document.getElementById('clusterSearchPanel').classList.remove('open');
             });
         });
 
         // Auto-expand first result
         if (results.length > 0) {
             resultItems[0].classList.add('active');
-            activateTab(results[0]);
-            highlightMatches(results[0].tabPane, query);
+            var first = results[0];
+            if (first.tabPane) {
+                activateTab(first);
+                highlightMatches(first.tabPane, query);
+            }
         }
     }
 
