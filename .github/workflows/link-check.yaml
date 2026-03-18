@@ -137,9 +137,10 @@ jobs:
           # Search source markdown files (excluding glossary, which is auto-generated)
           # for direct publisher URLs that should use https://doi.org/ instead.
           PUBLISHERS='(journals\.sagepub|tandfonline|psycnet\.apa|onlinelibrary\.wiley|link\.springer|academic\.oup|sciencedirect|jstor\.org|journals\.lww|royalsocietypublishing)\.(com|org)'
-          MATCHES=$(grep -rn --include='*.md' -E \
-            "https?://[^ ]*${PUBLISHERS}/[^ ]*(doi/|article|fulltext)" \
-            content/ --exclude-dir=content/glossary || true)
+          # Extract just file:line and the URL itself (not full line content)
+          MATCHES=$(grep -rno --include='*.md' -E \
+            "https?://[^ )\"']*(${PUBLISHERS})/[^ )\"']*(doi/|article|fulltext)[^ )\"']*" \
+            content/ --exclude-dir=content/glossary | sort -u || true)
           if [ -n "$MATCHES" ]; then
             COUNT=$(echo "$MATCHES" | wc -l)
             {
