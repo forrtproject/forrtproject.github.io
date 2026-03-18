@@ -33,7 +33,8 @@ jobs:
       - name: Fetch URLs from sitemap
         run: |
           curl -sL https://forrt.org/sitemap.xml \
-            | grep -oP '<loc>\K[^<]+' \
+            | grep -o '<loc>[^<]*</loc>' \
+            | sed 's/<loc>//;s/<\/loc>//' \
             | sort -u > /tmp/urls.txt
           echo "Found $(wc -l < /tmp/urls.txt) URLs in sitemap"
 
