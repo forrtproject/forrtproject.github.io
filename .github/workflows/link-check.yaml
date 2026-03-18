@@ -52,7 +52,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Separate 403 errors into collapsed section
+      - name: Deduplicate errors and collapse 403s
         if: steps.lychee.outputs.exit_code != 0
         run: |
           python3 << 'PYEOF'
@@ -61,35 +61,54 @@ jobs:
           with open("/tmp/lychee/out.md") as f:
               content = f.read()
 
-          # Split lines, separate 403 entries from the rest
           lines = content.split("\n")
-          main_lines = []
-          forbidden_lines = []
-          current_header = None
 
+          # Keep the summary table (everything before "## Errors per input")
+          summary_lines = []
+          error_lines = []
+          in_errors = False
           for line in lines:
-              # Track section headers (### Errors in ...)
-              if line.startswith("### Errors in "):
-                  current_header = line
+              if line.startswith("## Errors per input"):
+                  in_errors = True
                   continue
-              if re.match(r"^\* \[403\]", line):
-                  if current_header:
-                      forbidden_lines.append(current_header)
-                      current_header = None
-                  forbidden_lines.append(line)
+              if in_errors:
+                  error_lines.append(line)
               else:
-                  if current_header:
-                      main_lines.append(current_header)
-                      current_header = None
-                  main_lines.append(line)
+                  summary_lines.append(line)
 
-          # Rebuild the output
-          output = "\n".join(main_lines).rstrip()
+          # Extract unique error URLs, split by status
+          seen = set()
+          main_errors = []  # non-403
+          forbidden_errors = []  # 403
 
-          if forbidden_lines:
-              output += "\n\n<details>\n<summary>403 Forbidden errors (likely bot-blocking, not broken links)</summary>\n\n"
+          for line in error_lines:
+              m = re.match(r"^\* \[(\w+)\] <([^>]+)>", line)
+              if not m:
+                  continue
+              status, url = m.group(1), m.group(2)
+              if url in seen:
+                  continue
+              seen.add(url)
+              # Extract just the status and URL, skip the verbose message
+              short = f"* [{status}] <{url}>"
+              if status == "403":
+                  forbidden_errors.append(short)
+              else:
+                  main_errors.append(short)
+
+          # Build output
+          output = "\n".join(summary_lines).rstrip()
+          output += "\n\n## Broken links\n\n"
+          if main_errors:
+              output += "\n".join(main_errors)
+          else:
+              output += "No broken links found (excluding 403s)."
+          output += "\n"
+
+          if forbidden_errors:
+              output += f"\n<details>\n<summary>403 Forbidden ({len(forbidden_errors)} URLs — likely bot-blocking, not broken)</summary>\n\n"
               output += "These sites block automated requests. The links may still be valid.\n\n"
-              output += "\n".join(forbidden_lines)
+              output += "\n".join(forbidden_errors)
               output += "\n\n</details>\n"
 
           with open("/tmp/lychee/out.md", "w") as f:
