@@ -107,8 +107,11 @@ jobs:
 
           if forbidden_errors:
               output += f"\n<details>\n<summary>403 Forbidden ({len(forbidden_errors)} URLs — likely bot-blocking, not broken)</summary>\n\n"
-              output += "These sites block automated requests. The links may still be valid.\n\n"
-              output += "\n".join(forbidden_errors)
+              output += "These sites block automated requests. The links may still be valid.\n"
+              output += "Showing first 100 — see workflow logs for the full list.\n\n"
+              output += "\n".join(forbidden_errors[:100])
+              if len(forbidden_errors) > 100:
+                  output += f"\n\n*... and {len(forbidden_errors) - 100} more*"
               output += "\n\n</details>\n"
 
           with open("/tmp/lychee/out.md", "w") as f:
@@ -127,9 +130,11 @@ jobs:
             "https?://[^ ]*${PUBLISHERS}/[^ ]*(doi/|article|fulltext)" \
             content/ --exclude-dir=content/glossary || true)
           if [ -n "$MATCHES" ]; then
+            COUNT=$(echo "$MATCHES" | wc -l)
             {
               echo ""
-              echo "## Publisher URLs that should use doi.org"
+              echo "<details>"
+              echo "<summary>Publisher URLs that should use doi.org ($COUNT found)</summary>"
               echo ""
               echo "The following links point directly to publisher websites instead of using"
               echo "\`https://doi.org/{DOI}\` format. Publishers often block automated requests,"
@@ -137,8 +142,14 @@ jobs:
               echo "If the DOI is not visible in the URL, look it up on https://search.crossref.org"
               echo ""
               echo '```'
-              echo "$MATCHES"
+              echo "$MATCHES" | head -100
+              if [ "$COUNT" -gt 100 ]; then
+                echo ""
+                echo "... and $((COUNT - 100)) more"
+              fi
               echo '```'
+              echo ""
+              echo "</details>"
             } >> /tmp/lychee/out.md
             echo "found=true" >> "$GITHUB_OUTPUT"
           else
