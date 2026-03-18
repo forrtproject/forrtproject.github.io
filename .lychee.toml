@@ -2,7 +2,8 @@
 # https://lychee.cli.rs/usage/config/
 #
 # Used by the link-check GitHub Actions workflow and can also be run locally:
-#   lychee --config .lychee.toml https://forrt.org
+#   curl -sL https://forrt.org/sitemap.xml | grep -oP '<loc>\K[^<]+' > /tmp/urls.txt
+#   lychee --config .lychee.toml /tmp/urls.txt
 
 # ---------------------
 # Exclusions

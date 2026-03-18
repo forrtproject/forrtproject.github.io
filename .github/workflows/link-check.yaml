@@ -30,11 +30,18 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
+      - name: Fetch URLs from sitemap
+        run: |
+          curl -sL https://forrt.org/sitemap.xml \
+            | grep -oP '<loc>\K[^<]+' \
+            | sort -u > /tmp/urls.txt
+          echo "Found $(wc -l < /tmp/urls.txt) URLs in sitemap"
+
       - name: Run lychee link checker
         id: lychee
         uses: lycheeverse/lychee-action@v2
         with:
-          args: "--config .lychee.toml https://forrt.org"
+          args: "--config .lychee.toml /tmp/urls.txt"
           output: /tmp/lychee/out.md
           fail: false
         env:
