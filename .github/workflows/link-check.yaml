@@ -32,7 +32,7 @@ jobs:
 
       - name: Run lychee link checker
         id: lychee
-        uses: lychee/lychee-action@v2
+        uses: lycheeverse/lychee-action@v2
         with:
           args: "--config .lychee.toml https://forrt.org"
           output: /tmp/lychee/out.md
