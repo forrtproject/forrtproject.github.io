@@ -4,7 +4,7 @@
 title: "LMU-FORRT Train-the-Trainer Program Press Release"
 subtitle: "LMU Open Science Center launches Train-the-Trainer program to advance open research practices in partnership with the Framework for Open and Reproducible Research Training (FORRT)"
 summary: "LMU Open Science Center launches Train-the-Trainer program to advance open research practices in partnership with the Framework for Open and Reproducible Research Training (FORRT)"
-authors: ['Dr. Sarah von Grebmer zu Wolfsthurn (s.grebmer@lmu.de).']
+authors: ['Dr. Sarah von Grebmer zu Wolfsthurn']
 tags: []
 categories: []
 date: 2025-06-03T15:30:39-03:00
