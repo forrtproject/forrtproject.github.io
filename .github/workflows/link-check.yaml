@@ -56,17 +56,22 @@ jobs:
         id: doi-check
         run: |
           # Search source markdown files (excluding glossary, which is auto-generated)
-          # for publisher URLs that contain DOIs and should use doi.org instead
+          # for direct publisher URLs that should use https://doi.org/ instead.
+          # This covers both URLs with visible DOIs and those using publisher-specific
+          # identifiers (e.g. ScienceDirect PII) where the DOI should be looked up.
+          PUBLISHERS='(journals\.sagepub|tandfonline|psycnet\.apa|onlinelibrary\.wiley|link\.springer|academic\.oup|sciencedirect|jstor\.org|journals\.lww|royalsocietypublishing)\.(com|org)'
           MATCHES=$(grep -rn --include='*.md' -E \
-            'https?://[^ ]*(journals\.sagepub|tandfonline|psycnet\.apa|onlinelibrary\.wiley|link\.springer|academic\.oup)\.(com|org)[^ ]*/?(doi/|article/)(abs/|full/|pdf/)?10\.[0-9]{4,}' \
+            "https?://[^ ]*${PUBLISHERS}/[^ ]*(doi/|article|fulltext)" \
             content/ --exclude-dir=content/glossary || true)
           if [ -n "$MATCHES" ]; then
             {
+              echo ""
               echo "## Publisher URLs that should use doi.org"
               echo ""
-              echo "The following links use publisher-specific URLs instead of \`https://doi.org/\` format."
-              echo "Using doi.org URLs allows the link checker to verify that DOIs are valid."
-              echo "Publishers often block automated requests, making their URLs uncheckable."
+              echo "The following links point directly to publisher websites instead of using"
+              echo "\`https://doi.org/{DOI}\` format. Publishers often block automated requests,"
+              echo "making these URLs uncheckable. Please replace them with doi.org links."
+              echo "If the DOI is not visible in the URL, look it up on https://search.crossref.org"
               echo ""
               echo '```'
               echo "$MATCHES"
