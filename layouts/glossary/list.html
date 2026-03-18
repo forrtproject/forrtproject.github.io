@@ -11,12 +11,32 @@
   }
 </style>
 
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    const searchInput = document.getElementById('glossary-search');
+    if (searchInput) {
+      searchInput.addEventListener('input', function() {
+        const query = this.value.toLowerCase();
+        document.querySelectorAll('#TableOfContents .nav-item').forEach(function(item) {
+          const link = item.querySelector('.nav-link');
+          const text = link ? link.textContent.toLowerCase() : '';
+          item.style.display = text.includes(query) ? '' : 'none';
+        });
+      });
+    }
+  });
+</script>
+
 <div class="container-fluid docs">
   <div class="row flex-xl-nowrap">
     <div class="col-12 col-xl-3 docs-toc glossary-toc">
       <ul class="nav toc-top">
         <li><a href="#" id="back_to_top" class="docs-toc-title">List of terms</a></li>
       </ul>
+
+      <input type="text" id="glossary-search" class="form-control form-control-sm mb-2"
+             placeholder="Filter terms..."
+             aria-label="Filter terms">
 
       <nav id="TableOfContents" class="nav flex-column">
         <ul>
