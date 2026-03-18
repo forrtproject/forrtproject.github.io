@@ -3,7 +3,7 @@ name: Link Checker
 # =======================
 # Website Link Validation
 # =======================
-# Purpose: Crawls the live FORRT website and checks for broken links
+# Purpose: Downloads the latest built site and checks all links (internal + external)
 # Triggers: Weekly on Mondays at 01:30 UTC or manual dispatch
 # Reports: Creates a GitHub issue with label "link-check" when broken links are found
 # Config: See .lychee.toml for exclusion patterns and request settings
@@ -17,6 +17,7 @@ on:
 permissions:
   contents: read
   issues: write
+  actions: read
 
 concurrency:
   group: link-check-${{ github.ref }}
@@ -30,19 +31,22 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Fetch URLs from sitemap
-        run: |
-          curl -sL https://forrt.org/sitemap.xml \
-            | grep -o '<loc>[^<]*</loc>' \
-            | sed 's/<loc>//;s/<\/loc>//' \
-            | sort -u > /tmp/urls.txt
-          echo "Found $(wc -l < /tmp/urls.txt) URLs in sitemap"
+      - name: Download latest build artifact
+        uses: dawidd6/action-download-artifact@07ab29fd4a977ae4d2b275087cf67563dfdf0295
+        with:
+          workflow: deploy.yaml
+          name: forrt-website-.*
+          name_is_regexp: true
+          path: /tmp/site
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          search_artifacts: true
+          if_no_artifact_found: fail
 
       - name: Run lychee link checker
         id: lychee
         uses: lycheeverse/lychee-action@v2
         with:
-          args: "--config .lychee.toml /tmp/urls.txt"
+          args: "--config .lychee.toml --base https://forrt.org /tmp/site"
           output: /tmp/lychee/out.md
           fail: false
         env:

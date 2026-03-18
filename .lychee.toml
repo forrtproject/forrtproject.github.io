@@ -1,9 +1,8 @@
 # Lychee link checker configuration
 # https://lychee.cli.rs/usage/config/
 #
-# Used by the link-check GitHub Actions workflow and can also be run locally:
-#   curl -sL https://forrt.org/sitemap.xml | grep -oP '<loc>\K[^<]+' > /tmp/urls.txt
-#   lychee --config .lychee.toml /tmp/urls.txt
+# Used by the link-check GitHub Actions workflow.
+# Checks all links (internal + external) in the built HTML files.
 
 # ---------------------
 # Exclusions
@@ -42,8 +41,8 @@ timeout = 30
 # Maximum number of retries per link
 max_retries = 3
 
-# Maximum concurrent requests — keep low to avoid overwhelming the server
-max_concurrency = 8
+# Maximum concurrent requests
+max_concurrency = 16
 
 # Do not show progress bar (cleaner CI output)
 no_progress = true
