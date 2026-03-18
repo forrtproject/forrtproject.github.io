@@ -40,9 +40,9 @@
                 </div>
                 <div class="cluster-search-body">
                     <div class="input-group">
-                        <input type="text" 
-                               id="clusterSearchInput" 
-                               class="form-control" 
+                        <input type="text"
+                               id="clusterSearchInput"
+                               class="form-control"
                                placeholder="Search clusters..."
                                aria-label="Search clusters">
                         <div class="input-group-append">
@@ -104,6 +104,13 @@
             }
         });
 
+        // Live search as user types (debounced)
+        var debounceTimer;
+        searchInput.addEventListener('input', function() {
+            clearTimeout(debounceTimer);
+            debounceTimer = setTimeout(performSearch, 300);
+        });
+
         // Clear search
         clearBtn.addEventListener('click', function() {
             searchInput.value = '';
@@ -121,7 +128,9 @@
         const query = searchInput.value.trim();
 
         if (!query || query.length < 2) {
-            resultsDiv.innerHTML = '<div class="alert alert-warning">Please enter at least 2 characters to search.</div>';
+            resultsDiv.innerHTML = query.length > 0 ? '<div class="alert alert-warning">Please enter at least 2 characters to search.</div>' : '';
+            clearBtn.style.display = 'none';
+            removeAllHighlights();
             return;
         }
 
@@ -146,106 +155,74 @@
         const clusterSections = document.querySelectorAll('section[id^="cluster"]');
 
         clusterSections.forEach(function(section) {
-            const clusterTitle = section.querySelector('h3, h2, .home-section-title');
+            // Use h1 to get the actual cluster title (h3 is "Description" in the content)
+            const clusterTitle = section.querySelector('h1, .home-section-title');
             const clusterName = clusterTitle ? clusterTitle.textContent.trim() : 'Unknown Cluster';
-
-            // Search section content outside tabs (title, description)
-            var sectionOnlyText = getSectionNonTabText(section);
-            if (sectionOnlyText.toLowerCase().includes(queryLower)) {
-                results.push({
-                    cluster: clusterName,
-                    tab: 'Description',
-                    tabId: null,
-                    matches: countMatches(sectionOnlyText.toLowerCase(), queryLower),
-                    snippet: getContextSnippet(sectionOnlyText, query),
-                    section: section,
-                    tabPane: null,
-                    tabLink: null
-                });
-            }
 
             // Find all tab panes in this cluster
             const tabPanes = section.querySelectorAll('.tab-pane');
 
             tabPanes.forEach(function(tabPane) {
                 const tabId = tabPane.id;
-                const content = tabPane.textContent || tabPane.innerText;
-                const contentLower = content.toLowerCase();
 
                 // Get tab label
-                const tabLink = section.querySelector(`a[href="#${tabId}"]`);
+                const tabLink = section.querySelector('a[href="#' + tabId + '"]');
                 const tabLabel = tabLink ? tabLink.textContent.trim() : tabId;
                 const tabLabelLower = tabLabel.toLowerCase();
 
-                // Check if query is in content OR in tab label
-                const contentHasMatch = contentLower.includes(queryLower);
-                const labelHasMatch = tabLabelLower.includes(queryLower);
-
-                if (contentHasMatch || labelHasMatch) {
-                    // Count occurrences
-                    var matches = countMatches(contentLower, queryLower);
-                    if (labelHasMatch) {
-                        matches += countMatches(tabLabelLower, queryLower);
-                    }
-
-                    // Get a snippet of context
-                    var snippet;
-                    if (contentHasMatch) {
-                        snippet = getContextSnippet(content, query);
-                    } else {
-                        // Match is only in the tab label
-                        var regex = new RegExp('(' + escapeRegExp(query) + ')', 'gi');
-                        snippet = 'Tab: ' + tabLabel.replace(regex, '<mark>$1</mark>');
-                    }
-
+                // If the tab label itself matches, add a result for it
+                if (tabLabelLower.includes(queryLower)) {
+                    var regex = new RegExp('(' + escapeRegExp(query) + ')', 'gi');
                     results.push({
                         cluster: clusterName,
                         tab: tabLabel,
                         tabId: tabId,
-                        matches: matches,
-                        snippet: snippet,
+                        snippet: 'Tab: ' + tabLabel.replace(regex, '<mark>$1</mark>'),
                         section: section,
                         tabPane: tabPane,
-                        tabLink: tabLink
+                        tabLink: tabLink,
+                        element: tabPane
                     });
                 }
+
+                // Search each block-level element individually for per-paragraph results
+                // Filter out nested blocks (e.g. <p> inside <li>) to avoid duplicates
+                var allBlocks = tabPane.querySelectorAll('li, p, h2, h3, h4, h5, h6, blockquote');
+                var blocks = Array.from(allBlocks).filter(function(block) {
+                    var parent = block.parentElement;
+                    while (parent && parent !== tabPane) {
+                        if (parent.matches('li, p, blockquote')) return false;
+                        parent = parent.parentElement;
+                    }
+                    return true;
+                });
+
+                blocks.forEach(function(block) {
+                    var text = block.textContent || '';
+                    if (text.toLowerCase().includes(queryLower)) {
+                        var snippetText = text.trim();
+                        if (snippetText.length > 200) {
+                            snippetText = snippetText.substring(0, 200) + '...';
+                        }
+                        var highlightRegex = new RegExp('(' + escapeRegExp(query) + ')', 'gi');
+                        var snippet = escapeHtml(snippetText).replace(highlightRegex, '<mark>$1</mark>');
+
+                        results.push({
+                            cluster: clusterName,
+                            tab: tabLabel,
+                            tabId: tabId,
+                            snippet: snippet,
+                            section: section,
+                            tabPane: tabPane,
+                            tabLink: tabLink,
+                            element: block
+                        });
+                    }
+                });
             });
         });
 
         return results;
-    }
-
-    function getSectionNonTabText(section) {
-        var clone = section.cloneNode(true);
-        clone.querySelectorAll('.tab-pane, .nav-tabs, .nav').forEach(function(el) { el.remove(); });
-        return clone.textContent.trim();
-    }
-
-    function countMatches(text, query) {
-        const regex = new RegExp(query, 'gi');
-        const matches = text.match(regex);
-        return matches ? matches.length : 0;
-    }
-
-    function getContextSnippet(text, query) {
-        const queryLower = query.toLowerCase();
-        const textLower = text.toLowerCase();
-        const index = textLower.indexOf(queryLower);
-        
-        if (index === -1) return '';
-        
-        const start = Math.max(0, index - 50);
-        const end = Math.min(text.length, index + query.length + 100);
-        let snippet = text.substring(start, end);
-        
-        if (start > 0) snippet = '...' + snippet;
-        if (end < text.length) snippet = snippet + '...';
-        
-        // Highlight the query in snippet
-        const regex = new RegExp(`(${escapeRegExp(query)})`, 'gi');
-        snippet = snippet.replace(regex, '<mark>$1</mark>');
-        
-        return snippet;
     }
 
     function escapeRegExp(string) {
@@ -256,31 +233,26 @@
         const resultsDiv = document.getElementById('clusterSearchResults');
 
         if (results.length === 0) {
-            resultsDiv.innerHTML = `<div class="alert alert-info">No results found for "${escapeHtml(query)}".</div>`;
+            resultsDiv.innerHTML = '<div class="alert alert-info">No results found for "' + escapeHtml(query) + '".</div>';
             return;
         }
 
-        let html = `<div class="search-summary">Found ${results.length} result(s) with ${results.reduce((sum, r) => sum + r.matches, 0)} matches</div>`;
+        var html = '<div class="search-summary">Found ' + results.length + ' result(s)</div>';
         html += '<div class="search-results-list">';
 
         results.forEach(function(result, index) {
-            html += `
-                <div class="search-result-item" data-result-index="${index}">
-                    <div class="search-result-header">
-                        <strong>${escapeHtml(result.tab)}</strong>
-                        <span class="badge badge-primary">${result.matches}</span>
-                    </div>
-                    <div class="search-result-cluster">${escapeHtml(result.cluster)}</div>
-                    <div class="search-result-snippet">${result.snippet}</div>
-                </div>
-            `;
+            html += '<div class="search-result-item" data-result-index="' + index + '">' +
+                '<div class="search-result-header"><strong>' + escapeHtml(result.tab) + '</strong></div>' +
+                '<div class="search-result-cluster">' + escapeHtml(result.cluster) + '</div>' +
+                '<div class="search-result-snippet">' + result.snippet + '</div>' +
+                '</div>';
         });
 
         html += '</div>';
         resultsDiv.innerHTML = html;
 
         // Add click handlers to results
-        const resultItems = resultsDiv.querySelectorAll('.search-result-item');
+        var resultItems = resultsDiv.querySelectorAll('.search-result-item');
         resultItems.forEach(function(item) {
             item.addEventListener('click', function() {
                 var index = parseInt(this.getAttribute('data-result-index'));
@@ -288,21 +260,13 @@
                 if (!result) return;
 
                 removeAllHighlights();
+                activateTab(result);
+                highlightMatches(result.tabPane, query);
 
-                if (result.tabPane) {
-                    // Tab-level result: activate the tab and highlight
-                    activateTab(result);
-                    highlightMatches(result.tabPane, query);
-                    // Scroll to first highlighted match within the tab pane
-                    setTimeout(function() {
-                        var firstHighlight = result.tabPane.querySelector('.cluster-highlight');
-                        scrollToElement(firstHighlight || result.tabPane);
-                    }, 100);
-                } else {
-                    // Section-level result (description/title): highlight in section
-                    highlightMatches(result.section, query);
-                    scrollToElement(result.section);
-                }
+                // Scroll to the specific element (paragraph/reference)
+                setTimeout(function() {
+                    scrollToElement(result.element);
+                }, 100);
 
                 // Mark as active
                 resultItems.forEach(function(r) { r.classList.remove('active'); });
@@ -315,11 +279,8 @@
         // Auto-expand first result
         if (results.length > 0) {
             resultItems[0].classList.add('active');
-            var first = results[0];
-            if (first.tabPane) {
-                activateTab(first);
-                highlightMatches(first.tabPane, query);
-            }
+            activateTab(results[0]);
+            highlightMatches(results[0].tabPane, query);
         }
     }
 
@@ -332,7 +293,7 @@
     function activateTab(result) {
         // Collapse all tabs first
         collapseAllTabs();
-        
+
         // Activate the target tab
         if (result.tabLink) {
             result.tabLink.click();
@@ -352,11 +313,11 @@
         // Get navbar height to offset the scroll
         const navbar = document.querySelector('.navbar-fixed-top, .fixed-top, nav.navbar');
         const navbarHeight = navbar ? navbar.offsetHeight : 70;
-        
+
         // Calculate the position to scroll to
         const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
         const offsetPosition = elementPosition - navbarHeight - 20; // Extra 20px padding
-        
+
         // Scroll to the calculated position
         window.scrollTo({
             top: offsetPosition,
@@ -366,13 +327,13 @@
 
     function highlightMatches(tabPane, query) {
         if (!tabPane) return;
-        
+
         // Remove existing highlights first
         removeHighlightsInElement(tabPane);
-        
+
         // Use mark.js-like approach to highlight matches
         const regex = new RegExp(`(${escapeRegExp(query)})`, 'gi');
-        
+
         // Get all text nodes
         const walker = document.createTreeWalker(
             tabPane,
@@ -380,7 +341,7 @@
             null,
             false
         );
-        
+
         const textNodes = [];
         let node;
         while ((node = walker.nextNode())) {
@@ -389,7 +350,7 @@
                 textNodes.push(node);
             }
         }
-        
+
         textNodes.forEach(function(textNode) {
             const text = textNode.textContent;
             const testRegex = new RegExp(`(${escapeRegExp(query)})`, 'gi');
@@ -430,7 +391,7 @@
             padding: 2px 0;
             font-weight: bold;
         }
-        
+
         /* Sidebar toggle button */
         .cluster-search-toggle {
             position: fixed;
@@ -447,15 +408,15 @@
             font-size: 14px;
             transition: background 0.3s;
         }
-        
+
         .cluster-search-toggle:hover {
             background: #0056b3;
         }
-        
+
         .cluster-search-toggle i {
             margin-right: 5px;
         }
-        
+
         /* Sidebar panel */
         .cluster-search-panel {
             position: fixed;
@@ -471,11 +432,11 @@
             flex-direction: column;
             overflow: hidden;
         }
-        
+
         .cluster-search-panel.open {
             left: 0;
         }
-        
+
         /* Sidebar header */
         .cluster-search-header {
             display: flex;
@@ -485,13 +446,13 @@
             border-bottom: 1px solid #dee2e6;
             background: #f8f9fa;
         }
-        
+
         .cluster-search-header h4 {
             margin: 0;
             font-size: 18px;
             color: #333;
         }
-        
+
         .cluster-search-close {
             background: none;
             border: none;
@@ -501,18 +462,18 @@
             padding: 5px;
             line-height: 1;
         }
-        
+
         .cluster-search-close:hover {
             color: #333;
         }
-        
+
         /* Sidebar body */
         .cluster-search-body {
             padding: 20px;
             flex: 1;
             overflow-y: auto;
         }
-        
+
         /* Search results summary */
         .search-summary {
             background: #e7f3ff;
@@ -522,14 +483,14 @@
             font-size: 0.9rem;
             color: #004085;
         }
-        
+
         /* Search results list */
         .search-results-list {
             display: flex;
             flex-direction: column;
             gap: 10px;
         }
-        
+
         /* Individual search result */
         .search-result-item {
             background: #f8f9fa;
@@ -539,77 +500,77 @@
             cursor: pointer;
             transition: all 0.2s;
         }
-        
+
         .search-result-item:hover {
             background: #e9ecef;
             border-color: #007bff;
             box-shadow: 0 2px 5px rgba(0,0,0,0.1);
         }
-        
+
         .search-result-item.active {
             background: #e7f3ff;
             border-color: #007bff;
             box-shadow: inset 0 0 0 1px #007bff;
         }
-        
+
         .search-result-header {
             display: flex;
             justify-content: space-between;
             align-items: center;
             margin-bottom: 5px;
         }
-        
+
         .search-result-header strong {
             font-size: 0.95rem;
             color: #333;
             flex: 1;
             margin-right: 10px;
         }
-        
+
         .search-result-header .badge {
             font-size: 0.75rem;
         }
-        
+
         .search-result-cluster {
             font-size: 0.8rem;
             color: #666;
             margin-bottom: 8px;
         }
-        
+
         .search-result-snippet {
             font-size: 0.8rem;
             color: #555;
             line-height: 1.4;
         }
-        
+
         .search-result-snippet mark {
             background-color: #ffeb3b;
             padding: 1px 2px;
             font-weight: 600;
         }
-        
+
         /* Mobile responsive */
         @media (max-width: 768px) {
             .cluster-search-panel {
                 width: 70%;
                 left: -70%;
             }
-            
+
             .cluster-search-panel.open {
                 left: 0;
             }
-            
+
             .cluster-search-toggle {
                 top: 170px;
                 font-size: 14px;
                 padding: 10px;
             }
-            
+
             .cluster-search-toggle-text {
                 display: none;
             }
         }
-        
+
         /* Alert styling in sidebar */
         .cluster-search-body .alert {
             font-size: 0.85rem;
