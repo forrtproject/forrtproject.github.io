@@ -268,3 +268,6 @@ gha-creds-*.json
 
 # Tenzing failure reports (temporary files for CI)
 scripts/forrt_contribs/tenzing_failures.json
+
+# Bibtex to APA converter output
+bibtex_to_apa/node_modules/

@@ -1,7 +1,8 @@
 {
     "type": "glossary",
     "title": "Open Scholarship",
-    "definition": "‘Open scholarship’ is often used synonymously with ‘open science’, but extends to all disciplines, drawing in those which might not traditionally identify as science-based. It reflects the idea that knowledge of all kinds should be openly shared, transparent, rigorous, reproducible, replicable, accumulative, and inclusive (allowing for all knowledge systems). Open scholarship includes all scholarly activities that are not solely limited to research such as teaching and pedagogy.",
+    "sort_key": "open scholarship",
+    "definition": "‘**Open scholarship’ is often used synonymously with ‘open science’, but extends to all disciplines, drawing in those which might not traditionally identify as science-based. It reflects the idea that knowledge of all kinds should be openly shared, transparent, rigorous, reproducible, replicable, accumulative, and inclusive (allowing for all knowledge systems). Open scholarship includes all scholarly activities that are not solely limited to research such as teaching and pedagogy.",
     "related_terms": [
         "Bropenscience",
         "Decolonisation",
@@ -10,10 +11,7 @@
         "Open Science"
     ],
     "references": [
-        "Tennant et al. (2019) Foundations for Open Scholarship Strategy Development https://www.researchgate.net/publication/330742805\\_Foundations\\_for\\_Open\\_Scholarship\\_Strategy\\_Development"
-    ],
-    "alt_related_terms": [
-        null
+        "Tennant, J., Beamer, J. E., Bosman, J., Brembs, B., Chung, N. C., Clement, G., Crick, T., Dugan, J., Dunning, A., Eccles, D., Enkhbayar, A., Graziotin, D., Harding, R., Havemann, J., Katz, D. S., Khanal, K., Kjaer, J. N., Koder, T., Macklin, P., & Turner, A. (2019). Foundations for Open Scholarship Strategy Development. MetaArXiv. https://doi.org/10.31222/osf.io/b4v8p"
     ],
     "drafted_by": [
         "Gerald Vineyard"
@@ -23,6 +21,9 @@
         "Zoe Flack",
         "Sam Parsons",
         "Charlotte R. Pennington"
+    ],
+    "alt_related_terms": [
+        null
     ],
     "language": "english",
     "aliases": [

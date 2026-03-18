@@ -277,33 +277,39 @@
   parent = "replications"
 
 [[main]]
-  name = "FReD Annotator"
-  url = "https://forrt.org/apps/fred_annotator.html"
+  name = "FLoRA Annotator"
+  url = "https://forrt.org/annotator"
   weight = 62
   parent = "replications"
 
 [[main]]
-  name = "FReD Explorer"
-  url = "https://forrt.org/apps/fred_explorer.html"
+  name = "Zotero Replication Checker"
+  url = "https://forrt.org/flora_zotero/"
   weight = 63
+  parent = "replications"
+
+[[main]]
+  name = "FReD Explorer"
+  url = "https://forrt.org/explorer"
+  weight = 64
   parent = "replications"
 
 [[main]]
   name = "FReD R-Package"
   url = "https://forrt.org/FReD/index.html"
-  weight = 64
+  weight = 65
   parent = "replications"
 
 [[main]]
   name = "Handbook for Reproductions and Replications"
   url = "https://forrt.org/replication_handbook/"
-  weight = 65
+  weight = 66
   parent = "replications"
 
 [[main]]
   name = "Large-Scale Replication Projects"
   url = "/replication-hub/large-scale-replication-projects"
-  weight = 66
+  weight = 67
   parent = "replications"
 
 #[[main]]

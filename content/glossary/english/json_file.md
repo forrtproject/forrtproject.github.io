@@ -1,16 +1,14 @@
 {
     "type": "glossary",
     "title": "JSON file",
+    "sort_key": "json file",
     "definition": "JavaScript Object Notation (JSON) is a data format for structured data that can be used to represent attribute-value pairs. Values thereby can contain further JSON notation (i.e., nested information). JSON files can be formally encoded as strings of text and thus are human-readable. Beyond storing information this feature makes them suitable for annotating other content. For example, JSON files are used in Brain Imaging Data Structure (BIDS) for describing the metadata dataset by following a standardized format (dataset\\_description.json).",
     "related_terms": [
         "BIDS data structure",
         "Metadata"
     ],
     "references": [
-        "https://bids-specification.readthedocs.io/en/stable/03-modality-agnostic-files.html"
-    ],
-    "alt_related_terms": [
-        null
+        "BIDS. (n.d.). Modality agnostic files. Retrieved from https://bids-specification.readthedocs.io/en/stable/03-modality-agnostic-files.html"
     ],
     "drafted_by": [
         "Tina Lonsdorf"
@@ -19,7 +17,10 @@
         "Alexander Hart",
         "Matt Jaquiery",
         "Emma Norris",
-        "Charlotte R. Pennington  ###  ### K {#k}"
+        "Charlotte R. Pennington"
+    ],
+    "alt_related_terms": [
+        null
     ],
     "language": "english",
     "aliases": [

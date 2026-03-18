@@ -1,16 +1,14 @@
 {
     "type": "glossary",
     "title": "Free Our Knowledge Platform",
+    "sort_key": "free our knowledge platform",
     "definition": "Eine kollektive Handlungsplattform, die darauf abzielt, die Open-Science-Bewegung zu unterstützen, indem sie Zusagen von Forschenden einholt, dass diese bestimmte Forschungspraktiken (z. B. Präregistrierung, Preprint) anwenden werden. Bei der Initiative handelt es sich um eine Initiative, die von Nachwuchswissenschaftler:innen ins Leben gerufen wurde.",
     "related_terms": [
         "Open Science",
         "Preregistration Pledge"
     ],
     "references": [
-        "[https://freeourknowledge.org/about/](https://freeourknowledge.org/about/)"
-    ],
-    "alt_related_terms": [
-        null
+        "Free Our Knowledge. (n.d.). About. Retrieved from https://freeourknowledge.org/about/"
     ],
     "drafted_by": [
         "Jamie P. Cockcroft"
@@ -22,5 +20,15 @@
         "Sam Parsons",
         "Flávio Azevedo"
     ],
-    "language": "german"
+    "alt_related_terms": [
+        null
+    ],
+    "language": "german",
+    "translated_by": [
+        "Helena Hartmann"
+    ],
+    "translation_reviewed_by": [
+        "Susanne Vogel",
+        "Jennifer Mattschey"
+    ]
 }

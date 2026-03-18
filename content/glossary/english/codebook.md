@@ -1,16 +1,14 @@
 {
     "type": "glossary",
     "title": "Codebook",
+    "sort_key": "codebook",
     "definition": "A codebook is a high-level summary that describes the contents, structure, nature and layout of a data set. A well-documented codebook contains information intended to be complete and self-explanatory for each variable in a data file, such as the wording and coding of the item, and the underlying construct. It provides transparency to researchers who may be unfamiliar with the data but wish to reproduce analyses or reuse the data.",
     "related_terms": [
         "Data dictionary",
         "Metadata"
     ],
     "references": [
-        "Arslan et al. (2019);[https://www.icpsr.umich.edu/icpsrweb/content/shared/ICPSR/faqs/what-is-a-codebook.html](https://www.icpsr.umich.edu/icpsrweb/content/shared/ICPSR/faqs/what-is-a-codebook.html)"
-    ],
-    "alt_related_terms": [
-        null
+        "Arslan, R. C. (2019). How to Automatically Document Data With the codebook Package to Facilitate Data Reuse. Advances in Methods and Practices in Psychological Science, 2(2), 169–187. https://doi.org/10.1177/2515245919838783"
     ],
     "drafted_by": [
         "Tina Lonsdorf"
@@ -20,6 +18,9 @@
         "Ashley Blake, Kai Krautter",
         "Charlotte R. Pennington",
         "Flávio Azevedo"
+    ],
+    "alt_related_terms": [
+        null
     ],
     "language": "english",
     "aliases": [

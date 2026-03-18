@@ -1,6 +1,7 @@
 {
     "type": "glossary",
     "title": "PCI Registered Reports",
+    "sort_key": "pci registered reports",
     "definition": "An initiative launched in 2021 dedicated to receiving, reviewing, and recommending Registered Reports (RRs) across the full spectrum of Science, technology, engineering, and mathematics (STEM), medicine, social sciences and humanities. Peer Community In (PCI) RRs are overseen by a ‘Recommender’ (equivalent to an Action Editor) and reviewed by at least two experts in the relevant field. It provides free and transparent pre- (Stage 1\\) and post-study (Stage 2\\) reviews across research fields. A network of PCI RR-friendly journals endorse the PCI RR review criteria and commit to accepting, without further peer review, RRs that receive a positive final recommendation from PCI RR.",
     "related_terms": [
         "In Principle Acceptance (IPA)",
@@ -13,12 +14,7 @@
         "Stage 2 study review",
         "Transparency"
     ],
-    "references": [
-        "[https://rr.peercommunityin.org/about/about](https://rr.peercommunityin.org/about/about)"
-    ],
-    "alt_related_terms": [
-        null
-    ],
+    "references": [],
     "drafted_by": [
         "Charlotte R. Pennington"
     ],
@@ -27,6 +23,9 @@
         "Jamie P. Cockcroft",
         "Mahmoud Elsherif",
         "Helena Hartmann"
+    ],
+    "alt_related_terms": [
+        null
     ],
     "language": "english",
     "aliases": [

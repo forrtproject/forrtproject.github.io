@@ -1,6 +1,7 @@
 {
     "type": "glossary",
     "title": "Altmetrics",
+    "sort_key": "altmetrics",
     "definition": "Ausgehend von traditionellen Zitationsmetriken bieten Altmetrics (kurz für den englischen Ausdruck \"alternative metrics\") eine Bewertung der Aufmerksamkeit und der breiteren Bedeutung von Forschungsarbeiten auf der Grundlage verschiedener Quellen. Diese Quellen können soziale Medien umfassen (z. B. Twitter/X), digitale Nachrichtenkanäle, die Anzahl der Downloads von Preprints usw. Altmetrics sind dafür kritisiert worden, dass sensationelle Behauptungen in der Regel mehr Aufmerksamkeit erhalten als seriöse Forschung (Ali, 2021).",
     "related_terms": [
         "Academic impact",
@@ -11,10 +12,8 @@
         "Journal impact factor"
     ],
     "references": [
-        "Ali (2021); Galligan and Dyas-Correia (2013)"
-    ],
-    "alt_related_terms": [
-        null
+        "Ali, M. J. (2021). Understanding the Altmetrics. Seminars in Ophthalmology. https://doi.org/10.1080/08820538.2021.1930806",
+        "Galligan, F., & Dyas-Correia, S. (2013). Altmetrics: rethinking the way we measure. Serials Review, 39(1), 56–61. https://doi.org/10.1016/j.serrev.2013.01.003"
     ],
     "drafted_by": [
         "Mirela Zaneva"
@@ -25,5 +24,15 @@
         "Birgit Schmidt",
         "Flávio Azevedo"
     ],
-    "language": "german"
+    "alt_related_terms": [
+        null
+    ],
+    "language": "german",
+    "translated_by": [
+        "Susanne Vogel"
+    ],
+    "translation_reviewed_by": [
+        "Helena Hartmann",
+        "Jennifer Mattschey"
+    ]
 }

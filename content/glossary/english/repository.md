@@ -1,6 +1,7 @@
 {
     "type": "glossary",
     "title": "Repository",
+    "sort_key": "repository",
     "definition": "An online archive for the storage of digital objects including research outputs, manuscripts, analysis code and/or data. Examples include preprint servers such as bioRxiv, MetaArXiv, PsyArXiv, institutional research repositories, as well as data repositories that collect and store datasets including zenodo.org, PsychData, and code repositories such as Github, or more general repositories for all kinds of research data, such as the Open Science Framework (OSF). Digital objects stored in repositories are typically described through metadata which enables discovery across different storage locations.",
     "related_terms": [
         "Data sharing",
@@ -13,12 +14,7 @@
         "Open Source",
         "Preprint"
     ],
-    "references": [
-        "[https://www.nature.com/sdata/policies/repositories](https://www.nature.com/sdata/policies/repositories)"
-    ],
-    "alt_related_terms": [
-        null
-    ],
+    "references": [],
     "drafted_by": [
         "Tina Lonsdorf"
     ],
@@ -28,6 +24,9 @@
         "Mariella Paul",
         "Charlotte R. Pennington",
         "Flávio Azevedo"
+    ],
+    "alt_related_terms": [
+        null
     ],
     "language": "english",
     "aliases": [

@@ -8,7 +8,9 @@ _______________________________________________
 
 **:calendar: 2026**
 
-[**🆕 | January 2026  🆕**](https://eocampaign1.com/web-version?p=fe198ab4-f705-11f0-b264-b3838bc6094d&pt=campaign&t=1769634321&s=8d9de871b0b694f3fb7ea79f9d5365fb858c018631402d1f306912c583e846e0)
+[**🆕 | February  🆕**](https://eocampaign1.com/web-version?p=e0c335de-11b6-11f1-a1c2-6ba123ee4ad5&pt=campaign&t=1772047352&s=dec61220bf547f2a4345d54a8819f206f19df3923ec3234ae2e98517cbe4d9a7)
+
+[| January ](https://eocampaign1.com/web-version?p=fe198ab4-f705-11f0-b264-b3838bc6094d&pt=campaign&t=1769634321&s=8d9de871b0b694f3fb7ea79f9d5365fb858c018631402d1f306912c583e846e0)
 
 **Archives :calendar: 2025**
 

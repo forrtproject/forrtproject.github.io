@@ -35,7 +35,11 @@ on:
         required: false
         type: boolean
         default: false
-
+      regenerate_ga:
+        description: 'Regenerate Google Analytics data'
+        required: false
+        type: boolean
+        default: false
 jobs:
   process-data:
     name: Process Data
@@ -92,56 +96,6 @@ jobs:
           python-version: ${{ env.PYTHON_VERSION }}
           cache: 'pip'
 
-      #========================================
-      # Setup r2u for fast R package installation
-      #========================================
-      - name: Setup r2u
-        uses: eddelbuettel/github-actions/r2u-setup@master
-
-      #========================================
-      # Install Pandoc for rendering R Markdown documents
-      #========================================
-      - uses: r-lib/actions/setup-pandoc@v2
-
-      #========================================
-      # Install R packages for contributor analysis and visualization
-      #========================================
-      - name: Install tenzing R dependencies
-        run: Rscript -e 'install.packages(c("rmarkdown","ggplot2", "readxl", "dplyr", "googlesheets4", "stringr", "gridExtra", "glue", "tidygraph", "ggraph", "igraph", "visNetwork"))'
-
-      #==============================
-      # Contributor Analysis (Monthly)
-      #==============================
-      #========================================
-      # Generate contributor analysis reports and network visualizations
-      #========================================
-      - name: Run Contributor Analysis
-        if: steps.monthly-run.outputs.is_monthly == 'true'
-        continue-on-error: true  # Continue even if this step fails
-        run: |
-          echo "🚀 Running Contributor Analysis..."
-          
-          # Clean old files from content/contributor-analysis and partials
-          rm -rf content/contributor-analysis/*.png content/contributor-analysis/*.html content/contributor-analysis/htmlwidgets_libs
-          rm -f layouts/partials/network-graph.html
-          
-          # Run index.Rmd to generate contributor analysis content and plots
-          echo "📊 Rendering contributor analysis..."
-          Rscript -e "rmarkdown::render('content/contributor-analysis/index.Rmd')"
-          
-          # Run network-graph.Rmd to generate interactive network visualization
-          echo "🕸️ Rendering network visualization..."
-          Rscript -e "rmarkdown::render('content/contributor-analysis/network-graph.Rmd')"
-          
-          # Move generated HTML file to layouts/partials
-          echo "📁 Moving network graph to partials..."
-          mv content/contributor-analysis/network-graph.html layouts/partials/
-          
-          # Clean up HTML artifacts from index.md if any
-          sed -i.bak -e '/^```{=html}$/d' -e '/^```$/d' content/contributor-analysis/index.md && rm content/contributor-analysis/index.md.bak
-          
-          echo "✅ Contributor analysis complete"
-
       #=======================
       # Tenzing Data Processing
       #=======================
@@ -151,11 +105,13 @@ jobs:
       - name: Install Python dependencies
         run: python3 -m pip install -r ./requirements.txt
 
-        
+
       #========================================
       # Process contributor data using Tenzing script
+      # Must run before Contributor Analysis, which reads contributors_cache.csv
       #========================================
       - name: Run Tenzing script
+        id: tenzing-script
         continue-on-error: true  # Continue even if this step fails
         run: python3 scripts/forrt_contribs/tenzing.py
         env:
@@ -171,10 +127,88 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
+      #==============================
+      # Contributor Analysis (Monthly)
+      #==============================
+      #========================================
+      # Setup r2u for fast R package installation
+      #========================================
+      - name: Setup r2u
+        if: steps.monthly-run.outputs.is_monthly == 'true'
+        uses: eddelbuettel/github-actions/r2u-setup@master
+
+      #========================================
+      # Install Pandoc for rendering R Markdown documents
+      #========================================
+      - name: Setup Pandoc
+        if: steps.monthly-run.outputs.is_monthly == 'true'
+        uses: r-lib/actions/setup-pandoc@v2
+
+      #========================================
+      # Install R packages for contributor analysis and visualization
+      #========================================
+      - name: Install R dependencies
+        if: steps.monthly-run.outputs.is_monthly == 'true'
+        run: Rscript -e 'install.packages(c("rmarkdown", "ggplot2", "dplyr", "tidyr", "readr", "googlesheets4", "stringr", "here", "sysfonts", "showtext", "treemapify", "igraph", "visNetwork"))'
+
+      #========================================
+      # Generate contributor analysis reports and network visualizations
+      # Reads from contributors_cache.csv generated by Tenzing script above
+      #========================================
+      - name: Run Contributor Analysis
+        id: contributor-analysis
+        if: steps.monthly-run.outputs.is_monthly == 'true'
+        continue-on-error: true  # Continue even if this step fails
+        run: |
+          echo "🚀 Running Contributor Analysis..."
+
+          # Clean old files from content/contributor-analysis and partials
+          rm -rf content/contributor-analysis/*.png content/contributor-analysis/*.html content/contributor-analysis/htmlwidgets_libs
+          rm -f static/partials/network-graph.html
+
+          # Run index.Rmd to generate contributor analysis content and plots
+          echo "📊 Rendering contributor analysis..."
+          Rscript -e "rmarkdown::render('content/contributor-analysis/index.Rmd')"
+
+          # Run network-graph.Rmd to generate interactive network visualization
+          echo "🕸️ Rendering network visualization..."
+          Rscript -e "rmarkdown::render('content/contributor-analysis/network-graph.Rmd')"
+
+          # Move generated HTML file to static/partials (served via iframe)
+          echo "📁 Moving network graph to static/partials..."
+          mv content/contributor-analysis/network-graph.html static/partials/
+
+      #========================================
+      # Setup Node.js for bibliography processing
+      #========================================
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          cache: 'npm'
+          cache-dependency-path: bibtex_to_apa/package-lock.json
+      #========================================
+      # Install Node.js dependencies for bibliography processing
+      #========================================
+      - name: Install Node.js dependencies
+        run: |
+          cd bibtex_to_apa
+          npm install
+
+      #========================================
+      # Process contributor data using Tenzing script
+      #========================================
+      - name: Run Tenzing script
+        continue-on-error: true  # Continue even if this step fails
+        run: python3 scripts/forrt_contribs/tenzing.py
+        env:
+          GSHEET_CREDENTIALS: ${{ secrets.GSHEET_CREDENTIALS }}
+
       #========================================
       # Process and organize curated resources data
       #========================================
       - name: Run Curated Resources script
+        id: curated-resources
         continue-on-error: true  # Continue even if this step fails
         run: python3 content/resources/resource.py
         # Execute the curated resources script that processes and organizes resource data
@@ -183,6 +217,7 @@ jobs:
       # Move Tenzing output to content directory and validate
       #========================================
       - name: Move and validate Tenzing output
+        id: tenzing-output
         continue-on-error: true  # Continue even if this step fails
         run: |
           mv scripts/forrt_contribs/tenzing.md content/contributors/tenzing.md
@@ -195,6 +230,7 @@ jobs:
       # Validate that curated resources files available under content/curated_resources
       #========================================
       - name: Validate curated resources
+        id: validate-resources
         continue-on-error: true  # Continue even if this step fails
         run: |
           for file in content/curated_resources/*; do
@@ -205,19 +241,76 @@ jobs:
           done
 
       #========================================
+      # Generate APA lookup from bibliography
+      #========================================
+      - name: Generate APA lookup
+        continue-on-error: true  # Continue even if this step fails
+        run: |
+          cd bibtex_to_apa
+          node bibtex_to_apa.js -o '../content/glossary/apa_lookup.json'
+
+      #========================================
       # Process and generate glossary files
       #========================================
       - name: Run Glossary Generation script
+        id: glossary-generation
         if: github.event.inputs.regenerate_glossary == 'true'
         continue-on-error: true  # Continue even if this step fails
         run: python3 content/glossary/_create_glossaries.py
         # Execute the glossary script that generates glossary markdown files
 
+      - name: Check for missing references
+        if: always()
+        run: |
+          if [ -f "content/glossary/missing_references.txt" ]; then
+            echo "Missing references found:"
+            cat content/glossary/missing_references.txt
+            # Optionally fail the workflow or create an issue
+          else
+            echo "All references resolved successfully"
+          fi
+
+      #=======================================================
+      # Create a pull request for glossary updates when regenerated
+      #=======================================================
+      - name: Create PR for glossary updates
+        if: github.event_name == 'workflow_dispatch' && github.event.inputs.regenerate_glossary == 'true'
+        continue-on-error: true  # Continue even if this step fails
+        run: |
+          echo "=== Creating PR for glossary updates ==="
+
+          if [ -z "$(git status --porcelain -- content/glossary)" ]; then
+            echo "ℹ️ No glossary changes detected"
+            exit 0
+          fi
+
+          BRANCH_NAME="glossary-update-$(date +%Y%m%d-%H%M%S)"
+          git checkout -b "$BRANCH_NAME"
+
+          git add content/glossary/
+          git commit -m "Update glossary entries - $(date -u +'%Y-%m-%d %H:%M:%S UTC')"
+
+          git push -u origin "$BRANCH_NAME"
+
+          gh pr create \
+            --title "📘 Glossary update - $(date '+%Y-%m-%d')" \
+            --body "Automated glossary update generated on $(date -u +'%Y-%m-%d %H:%M:%S UTC'). Files changed: content/glossary/" \
+            --base master \
+            --head "$BRANCH_NAME"
+          echo "✅ PR created for glossary updates"
+        env:
+          GITHUB_TOKEN: ${{ secrets.FORRT_PAT }}
+          GH_TOKEN: ${{ secrets.FORRT_PAT }}
+
       #========================================
       # Download Google Analytics data and validate
       #========================================
       - name: Download GA Data
+        id: ga-data
         continue-on-error: true  # Continue even if this step fails
+        if: |
+          github.event_name == 'schedule' || 
+          github.event.inputs.regenerate_ga == 'true'
         env:
           GA_API_CREDENTIALS: ${{ secrets.GA_API_CREDENTIALS }}
           GA_PROPERTY_ID: ${{ secrets.GA_PROPERTY_ID }}
@@ -247,6 +340,7 @@ jobs:
       # Update FReD citation (Weekly or Manual)
       #========================================
       - name: Update FReD Citation
+        id: fred-citation
         continue-on-error: true  # Continue even if this step fails
         run: |
           echo "=== Updating FReD citation ==="
@@ -327,6 +421,7 @@ jobs:
       # Execute Google Scholar citation tracking script
       #========================================
       - name: Run Google Scholar script
+        id: google-scholar
         continue-on-error: true
         run: python3 scripts/gs-cite/google_scholar.py
         env:
@@ -350,6 +445,7 @@ jobs:
             content/glossary/
             data/
             static/data/
+            static/partials/
             content/contributor-analysis/
             content/publications/citation_chart.webp
           retention-days: 7
@@ -377,6 +473,12 @@ jobs:
           if [ -f static/data/fred_citation.txt ]; then
             mkdir -p /tmp/generated-resources/static/data
             cp static/data/fred_citation.txt /tmp/generated-resources/static/data/fred_citation.txt
+          fi
+
+          # Copy updated FLoRA index if it exists
+          if [ -f content/replication-hub/flora/_index.md ]; then
+            mkdir -p /tmp/generated-resources/flora
+            cp content/replication-hub/flora/_index.md /tmp/generated-resources/flora/_index.md
           fi
           
           # Copy additional generated files
@@ -410,7 +512,7 @@ jobs:
           pushd "$WORKTREE_DIR"
 
           # Ensure target directories exist
-          mkdir -p content/curated_resources content/contributors data content/contributor-analysis content/publications static/data
+          mkdir -p content/curated_resources content/contributors data content/contributor-analysis content/publications static/data content/replication-hub/flora
 
           # Remove old generated resource files (but keep _index.md)
           find content/curated_resources -type f ! -name '_index.md' -delete 2>/dev/null || true
@@ -428,6 +530,9 @@ jobs:
           fi
           if [ -f /tmp/generated-resources/static/data/fred_citation.txt ]; then
             cp /tmp/generated-resources/static/data/fred_citation.txt static/data/fred_citation.txt
+          fi
+          if [ -f /tmp/generated-resources/flora/_index.md ]; then
+            cp /tmp/generated-resources/flora/_index.md content/replication-hub/flora/_index.md
           fi
           if [ -f /tmp/generated-resources/summaries.json ]; then
             cp /tmp/generated-resources/summaries.json data/summaries.json
@@ -463,6 +568,7 @@ jobs:
             git add scripts/forrt_contribs/contributors_cache.csv 2>/dev/null || true
             git add data/ga_data.json 2>/dev/null || true
             git add static/data/fred_citation.txt 2>/dev/null || true
+            git add content/replication-hub/flora/_index.md 2>/dev/null || true
             git add data/summaries.json 2>/dev/null || true
             git add content/contributor-analysis/ 2>/dev/null || true
             git add content/publications/citation_chart.webp 2>/dev/null || true
@@ -505,8 +611,11 @@ jobs:
       #================
       # Trigger Deploy
       #================
-      - name: Trigger Deploy
-        if: inputs.skip_deploy != true
+      #========================================
+      # Trigger the deploy workflow to publish updated data
+      #========================================
+      - name: Trigger deployment
+        if: github.event_name != 'pull_request' && inputs.skip_deploy != true
         run: |
           echo "🚀 Triggering deployment workflow..."
           curl -s -X POST \
@@ -514,21 +623,101 @@ jobs:
             -H "Accept: application/vnd.github+json" \
             "https://api.github.com/repos/${{ github.repository }}/dispatches" \
             -d '{"event_type": "data-update"}'
-
-
-      #====================
-      # Trigger Deployment
-      #====================
-      #========================================
-      # Trigger the deploy workflow to publish updated data
-      #========================================
-      - name: Trigger deployment
-        if: github.event_name != 'pull_request'
-        run: |
-          echo "🚀 Triggering deployment workflow..."
-          gh api repos/${{ github.repository }}/dispatches \
-            -f event_type=data-update \
-            -F client_payload[data_update]=true
           echo "✅ Deployment triggered successfully"
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      #====================
+      # Failure Reporting
+      #====================
+      #========================================
+      # Check all step outcomes and create issues for any failures
+      #========================================
+      - name: Report workflow step failures
+        if: always()  # Always run this step to catch any failures
+        continue-on-error: true  # Don't fail the workflow if issue creation fails
+        run: |
+          echo "🔍 Checking workflow step outcomes..."
+          
+          # Create workflow run URL
+          WORKFLOW_RUN_URL="${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
+          
+          # Track if any failures occurred
+          FAILURES_FOUND=false
+          
+          # Check each critical step outcome
+          # Note: We check steps that are critical for data processing
+          # For conditional steps, we check both the condition AND the outcome
+          # to avoid reporting failures for skipped steps
+          
+          # Contributor Analysis (only if it was supposed to run)
+          if [ "${{ steps.monthly-run.outputs.is_monthly }}" == "true" ] && [ "${{ steps.contributor-analysis.outcome }}" == "failure" ]; then
+            echo "❌ Contributor Analysis failed"
+            FAILURES_FOUND=true
+            python3 scripts/create_workflow_failure_issue.py "Contributor Analysis" "The contributor analysis step failed during execution." "$WORKFLOW_RUN_URL" || echo "Failed to create issue for Contributor Analysis"
+          fi
+          
+          # Tenzing Script
+          if [ "${{ steps.tenzing-script.outcome }}" == "failure" ]; then
+            echo "❌ Tenzing Script failed"
+            FAILURES_FOUND=true
+            # Don't create a duplicate issue since tenzing has its own issue creation
+            echo "ℹ️ Tenzing has its own issue creation mechanism"
+          fi
+          
+          # Curated Resources
+          if [ "${{ steps.curated-resources.outcome }}" == "failure" ]; then
+            echo "❌ Curated Resources script failed"
+            FAILURES_FOUND=true
+            python3 scripts/create_workflow_failure_issue.py "Curated Resources Processing" "The curated resources processing step failed during execution." "$WORKFLOW_RUN_URL" || echo "Failed to create issue for Curated Resources"
+          fi
+          
+          # Tenzing Output Validation
+          if [ "${{ steps.tenzing-output.outcome }}" == "failure" ]; then
+            echo "❌ Tenzing output validation failed"
+            FAILURES_FOUND=true
+            python3 scripts/create_workflow_failure_issue.py "Tenzing Output Validation" "The tenzing.md file validation failed. The file may not have been created or moved correctly." "$WORKFLOW_RUN_URL" || echo "Failed to create issue for Tenzing Output"
+          fi
+          
+          # Curated Resources Validation
+          if [ "${{ steps.validate-resources.outcome }}" == "failure" ]; then
+            echo "❌ Curated resources validation failed"
+            FAILURES_FOUND=true
+            python3 scripts/create_workflow_failure_issue.py "Curated Resources Validation" "The curated resources validation failed. Some files may be invalid or missing." "$WORKFLOW_RUN_URL" || echo "Failed to create issue for Resources Validation"
+          fi
+          
+          # Glossary Generation (only if it was supposed to run)
+          if [ "${{ github.event.inputs.regenerate_glossary }}" == "true" ] && [ "${{ steps.glossary-generation.outcome }}" == "failure" ]; then
+            echo "❌ Glossary generation failed"
+            FAILURES_FOUND=true
+            python3 scripts/create_workflow_failure_issue.py "Glossary Generation" "The glossary generation step failed during execution." "$WORKFLOW_RUN_URL" || echo "Failed to create issue for Glossary Generation"
+          fi
+          
+          # Google Analytics Data
+          if [ "${{ steps.ga-data.outcome }}" == "failure" ]; then
+            echo "❌ GA Data download failed"
+            FAILURES_FOUND=true
+            python3 scripts/create_workflow_failure_issue.py "Google Analytics Data Download" "The Google Analytics data download step failed. This may be due to authentication issues or API problems." "$WORKFLOW_RUN_URL" || echo "Failed to create issue for GA Data"
+          fi
+          
+          # FReD Citation
+          if [ "${{ steps.fred-citation.outcome }}" == "failure" ]; then
+            echo "❌ FReD citation update failed"
+            FAILURES_FOUND=true
+            python3 scripts/create_workflow_failure_issue.py "FReD Citation Update" "The FReD citation update step failed during execution." "$WORKFLOW_RUN_URL" || echo "Failed to create issue for FReD Citation"
+          fi
+          
+          # Google Scholar
+          if [ "${{ steps.google-scholar.outcome }}" == "failure" ]; then
+            echo "❌ Google Scholar script failed"
+            FAILURES_FOUND=true
+            python3 scripts/create_workflow_failure_issue.py "Google Scholar Citation Tracking" "The Google Scholar citation tracking step failed during execution." "$WORKFLOW_RUN_URL" || echo "Failed to create issue for Google Scholar"
+          fi
+          
+          if [ "$FAILURES_FOUND" == "false" ]; then
+            echo "✅ All critical workflow steps completed successfully!"
+          else
+            echo "⚠️ Some workflow steps failed - issues have been created"
+          fi
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}

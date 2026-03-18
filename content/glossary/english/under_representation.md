@@ -1,6 +1,7 @@
 {
     "type": "glossary",
     "title": "Under-representation",
+    "sort_key": "under-representation",
     "definition": "Not all voices, perspectives, and members of the community are adequately represented. Under-representation typically occurs when the voices or perspectives of one group dominate, resulting in the marginalization of another. This often affects groups who are a minority in relation to certain personal characteristics.",
     "related_terms": [
         "Equity",
@@ -8,12 +9,7 @@
         "Inequality",
         "WEIRD"
     ],
-    "references": [
-        ""
-    ],
-    "alt_related_terms": [
-        null
-    ],
+    "references": [],
     "drafted_by": [
         "Madeleine Pownall"
     ],
@@ -23,6 +19,9 @@
         "Bethan Iley",
         "Adam Parker",
         "Charlotte R. Pennington, Mirela Zaneva"
+    ],
+    "alt_related_terms": [
+        null
     ],
     "language": "english",
     "aliases": [

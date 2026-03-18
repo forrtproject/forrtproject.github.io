@@ -20,9 +20,9 @@ The FORRT Replication Hub provides a comprehensive collection of resources and t
    <img src="fred.webp" /> 
 
 
-   - [FReD Explorer](/apps/fred_explorer.html) is an interactive tool within the FORRT Replication Database designed to facilitate the navigation and discovery of replication studies. It allows researchers and educators to explore a wide array of replication projects easily, filtering them based on various criteria. The Explorer helps users identify trends and gaps in replication research, offering a user-friendly interface to access detailed information on past studies.
+   - [FReD Explorer](/explorer) is an interactive tool within the FORRT Replication Database designed to facilitate the navigation and discovery of replication studies. It allows researchers and educators to explore a wide array of replication projects easily, filtering them based on various criteria. The Explorer helps users identify trends and gaps in replication research, offering a user-friendly interface to access detailed information on past studies.
 
-2. [FReD Annotator](/apps/fred_annotator.html) is a tool aimed at enhancing the quality and accessibility of data within the FORRT Replication Database. It allows users to check a list of references for potential replication attempts and returns a reading list that includes replication attempts and outcomes of the replication studies.
+2. [FLoRA Annotator](/annotator) is a tool aimed at enhancing the quality and accessibility of data within the FORRT Replication Database. It allows users to check a list of references for potential replication attempts and returns a reading list that includes replication attempts and outcomes of the replication studies.
 
 3. [Replication Research](http://replicationresearch.org) is a diamond open access journal for reproductions, replications, and conceptual articles from multiple fields. It is being developed by FORRT and the Münster Center for Open Science and will be launched in fall 2025\.  
 
