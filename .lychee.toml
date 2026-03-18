@@ -9,6 +9,9 @@
 # ---------------------
 # Patterns to exclude from link checking (common false positives)
 exclude = [
+  # Internal links — already verified as local files in the build artifact
+  "forrt\\.org",
+
   # Placeholder / example domains
   "example\\.com",
   "localhost",
@@ -27,6 +30,11 @@ exclude = [
 
   # GitHub edit links with templated paths
   "github\\.com/.*/edit/",
+
+  # Academic publishers that aggressively block bots
+  "sagepub\\.com",
+  "tandfonline\\.com",
+  "psycnet\\.apa\\.org",
 ]
 
 # ---------------------
