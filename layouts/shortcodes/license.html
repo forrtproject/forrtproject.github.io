@@ -1,0 +1,111 @@
+<!--
+User example usage:
+
+Default (CC BY 4.0):
+  { {< license >} }
+
+Using type attribute (recommended):
+  { {< license type="cc-by" >} }
+  { {< license type="cc-by-nc" >} }
+  { {< license type="cc-by-nc-nd" >} }
+  { {< license type="cc-by-nc-sa" >} }
+  { {< license type="cc-by-sa" >} }
+  { {< license type="cc-zero" >} }
+
+Custom text override:
+  { {< license type="cc-by-sa" text="The AWoP is licensed under CC BY-SA 4.0" >} }
+
+Full custom (overrides type):
+  { {< license 
+    text="This work is licensed under CC BY-SA 4.0" 
+    link="https://creativecommons.org/licenses/by-sa/4.0/" 
+    image="/img/by-nc-sa.svg" 
+  >} }
+
+Note: Remove spaces between braces when using.
+-->
+
+{{- $type := .Get "type" | default "cc-by" -}}
+
+{{- /* Define license configurations */ -}}
+{{- $licenses := dict 
+  "cc-by" (dict 
+    "link" "https://creativecommons.org/licenses/by/4.0/"
+    "image" "/img/licenses/cc_by.svg"
+    "name" "CC BY 4.0"
+  )
+  "cc-by-nc" (dict 
+    "link" "https://creativecommons.org/licenses/by-nc/4.0/"
+    "image" "/img/licenses/by-nc.svg"
+    "name" "CC BY-NC 4.0"
+  )
+  "cc-by-nc-nd" (dict 
+    "link" "https://creativecommons.org/licenses/by-nc-nd/4.0/"
+    "image" "/img/licenses/by-nc-nd.svg"
+    "name" "CC BY-NC-ND 4.0"
+  )
+  "cc-by-nc-sa" (dict 
+    "link" "https://creativecommons.org/licenses/by-nc-sa/4.0/"
+    "image" "/img/licenses/by-nc-sa.svg"
+    "name" "CC BY-NC-SA 4.0"
+  )
+  "cc-by-sa" (dict 
+    "link" "https://creativecommons.org/licenses/by-sa/4.0/"
+    "image" "/img/licenses/by-sa.svg"
+    "name" "CC BY-SA 4.0"
+  )
+  "cc-zero" (dict 
+    "link" "https://creativecommons.org/publicdomain/zero/1.0/"
+    "image" "/img/licenses/cc-zero.svg"
+    "name" "CC0 1.0"
+  )
+-}}
+
+{{- /* Get license config or fallback to cc-by */ -}}
+{{- $licenseConfig := index $licenses $type | default (index $licenses "cc-by") -}}
+
+{{- /* Allow parameter overrides */ -}}
+{{- $link := .Get "link" | default (index $licenseConfig "link") -}}
+{{- $image := .Get "image" | default (index $licenseConfig "image") -}}
+{{- $licenseName := index $licenseConfig "name" -}}
+{{- $defaultText := printf "This work is licensed under a <a href=\"%s\">%s</a> license." $link $licenseName -}}
+{{- $text := .Get "text" | default $defaultText -}}
+<div class="license-note">
+  <div class="license-content">
+    <p>{{ $text | markdownify }}</p>
+    <a href="{{ $link }}" target="_blank" rel="noopener" class="license-badge">
+      <img style="margin: 4px auto;" src="{{ $image }}" alt="License">
+    </a>
+  </div>
+</div>
+<style>
+.license-note {
+  position: relative;
+  padding: 0.5rem 0.5rem;
+  margin: 0.1rem 0;
+  border-left: 4px solid #209cee;
+  border-right: 4px solid #209cee;
+  border-radius: 4px;
+  background-color: #f6fbfe;
+  color: #12537e;
+}
+.license-note .license-content {
+  text-align: center;
+}
+.license-note .license-content p {
+  margin-bottom: 0.4rem;
+}
+.license-note .license-badge {
+  display: inline-block;
+}
+.license-note .license-badge img {
+  height: 42px;
+}
+.license-note a {
+  color: currentColor;
+  border-bottom: solid 1px currentColor;
+}
+.license-note .license-badge {
+  border-bottom: none;
+}
+</style>
