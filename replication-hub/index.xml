@@ -1,365 +1,365 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>FORRT Replication Hub | FORRT - Framework for Open and Reproducible Research Training</title><link>https://forrt.org/replication-hub/</link><atom:link href="https://forrt.org/replication-hub/index.xml" rel="self" type="application/rss+xml"/><description>FORRT Replication Hub</description><generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© 2026 - FORRT > Framework for Open and Reproducible Research Training</copyright><lastBuildDate>Sat, 09 Sep 2023 00:00:00 +0000</lastBuildDate><image><url>https://forrt.org/img/FORRTbanner.webp</url><title>FORRT Replication Hub</title><link>https://forrt.org/replication-hub/</link></image><item><title>Looking for Data Curators for FORRT’s Replication Database</title><link>https://forrt.org/replication-hub/fred_data_curators_role/</link><pubDate>Mon, 05 May 2025 00:00:00 +0000</pubDate><guid>https://forrt.org/replication-hub/fred_data_curators_role/</guid><description>&lt;p>The Framework for Open and Reproducible Research Training (FORRT) and the Münster Center for Open Science (MüCOS) seek dedicated researchers to expand the world’s largest replication database. Supported by the Center for Open Science (COS) and the Netherlands Organisation for Scientific Research (NWO), we aim to increase coverage of social, cognitive, and behavioral science replications as well as improve data quality (validation) to the Open Science community resource that supports meta-science.&lt;/p>
-&lt;h2 id="position-details">Position Details&lt;/h2>
-&lt;p>● &lt;strong>Duration&lt;/strong>: &lt;span style="text-decoration:underline;">Starting as soon as possible,&lt;/span> with the potential to work until September 2025. We would expect you to work 4-15 hours per week, depending on your availability.&lt;/p>
-&lt;p>● &lt;strong>Training and supervision will be provided&lt;/strong>&lt;/p>
-&lt;p>● &lt;strong>Trial&lt;/strong>: Chosen applicants will be assigned a set of studies to code and submit a dataset with the extracted values. Based on their performance on that initial set of studies, they will receive 250€ for adherence to the strict guidelines, 200€ if they only meet the guidelines after a revision, or 50€ if they do not meet the guidelines for your participation.&lt;/p>
-&lt;p>● &lt;strong>Compensation&lt;/strong>: Candidates who meet the guidelines are offered further work with a base pay of €20/hour with additional performance bonuses based on productivity and accuracy. You will usually work as an independent freelancer, so you might need to pay applicable taxes yourself.&lt;/p>
-&lt;p>● &lt;strong>Transparent contributions&lt;/strong>: Contributors will receive immediate recognition on FORRT’s official
-&lt;a href="https://forrt.org/contributors/" target="_blank" rel="noopener">contributorship&lt;/a> page. Moreover, there are opportunities for ongoing academic and scientific contributions, with potential co-authorship on future manuscripts.&lt;/p>
-&lt;p>● &lt;strong>Work Mode&lt;/strong>: 100% remote (English language).&lt;/p>
-&lt;h2 id="responsibilities">Responsibilities&lt;/h2>
-&lt;p>As a replication recorder or coder, you will:&lt;/p>
-&lt;p>● &lt;strong>Record (or code) replications&lt;/strong>: Extract details from published articles and add them to FORRT’s Replication Database (FReD; &lt;span style="text-decoration:underline;">
-&lt;a href="https://forrt.org/replication-hub/" target="_blank" rel="noopener">https://forrt.org/replication-hub/&lt;/a>)&lt;/span>.&lt;/p>
-&lt;p>● &lt;strong>Validate and expand existing entries&lt;/strong>: Check the accuracy of existing data and enhance records with additional details on statistics and results.&lt;/p>
-&lt;p>● &lt;strong>Record, validate, and report&lt;/strong>: Maintain transparent documentation of coding processes and discrepancies, double-check work done by other coders and resolve discrepancies through discussion.&lt;/p>
-&lt;h2 id="expected-skills--qualifications">Expected Skills &amp;amp; Qualifications&lt;/h2>
-&lt;p>Ideal candidates for this role will:&lt;/p>
-&lt;p>● Have an academic background or demonstrated interest in social, cognitive, or behavioral sciences.&lt;/p>
-&lt;p>● Have experience with data coding (e.g. for meta-analyses) or systematic literature reviews.&lt;/p>
-&lt;p>● Be motivated to contribute to replication research and open science initiatives.&lt;/p>
-&lt;p>● Demonstrate meticulous attention to detail and a commitment to accuracy.&lt;/p>
-&lt;p>● Be comfortable working independently and adhering to structured coding protocols.&lt;/p>
-&lt;p>● Have a solid understanding of statistics so that they can understand quantitative results reported in various social science disciplines.&lt;/p>
-&lt;h2 id="application-process">Application Process&lt;/h2>
-&lt;p>Please complete the tasks below and fill out
-&lt;a href="https://docs.google.com/forms/d/1WHUwV3DD653gzfqL1VkRJCQHc92-4RPp7QiTOpARp0Y/edit" target="_blank" rel="noopener">the application form&lt;/a>.&lt;/p>
-&lt;p>● Submit a brief CV and the latest academic transcript (if available).&lt;/p>
-&lt;p>● Applications will be reviewed on a rolling basis. If you have any questions, contact Lukas Röseler at &lt;span style="text-decoration:underline;">
-&lt;a href="mailto:lukas.roeseler@uni-muenster.de">lukas.roeseler@uni-muenster.de&lt;/a>&lt;/span> and cc &lt;span style="text-decoration:underline;">
-&lt;a href="mailto:info@forrt.org">info@forrt.org&lt;/a>&lt;/span>.&lt;/p>
-&lt;h2 id="assessment-form">Assessment form&lt;/h2>
-&lt;p>The tasks that we are recruiting for require a special skill set involving experience with different types of effect sizes and research articles, as well as a high degree of diligence in coding values. Before reaching out to us, please check if you are up for the task with this self-assessment. Each of the different (sub)tasks should not take you longer than 5 minutes.&lt;/p>
-&lt;h2 id="task-1-check-inclusion-criteria">Task 1: Check inclusion criteria&lt;/h2>
-&lt;p>Find out if these studies meet the definition for replication, that is: Self-identification as a replication, reference to a specific original study that is the replication target, testing a claim that was already tested in an original study, collecting new data and reporting the test results.&lt;/p>
-&lt;ol>
-&lt;li>
-&lt;blockquote>
-&lt;p>Magne, V. (2024). Replication research in the domain of perceived L2 fluency: Approximate and close replications of Kormos and Dénes (2004) and Rossiter (2009). Language Teaching, 1-9.
-&lt;a href="https://doi.org/10.1017/S0261444824000120" target="_blank" rel="noopener">https://doi.org/10.1017/S0261444824000120&lt;/a>&lt;/p>
-&lt;/blockquote>
-&lt;/li>
-&lt;li>
-&lt;blockquote>
-&lt;p>Stephenson, Corinne (2024). Trends in U.S. Wage Inequality: Revising the Revisionists. A Replication Study of Author, Katz, and Kearney (2008). Journal of Comments and Replications in Economics, Vol.3 (2024-4).
-&lt;a href="https://doi.org/10.18718/81781.34" target="_blank" rel="noopener">https://doi.org/10.18718/81781.34&lt;/a>&lt;/p>
-&lt;/blockquote>
-&lt;/li>
-&lt;li>
-&lt;blockquote>
-&lt;p>Huensch, A. (2024). Clarifying the role of inhibitory control in L2 phonological processing: A preregistered, close replication of Darcy et al.(2016). Studies in Second Language Acquisition, 1-21.
-&lt;a href="https://doi.org/10.1017/S0272263124000238" target="_blank" rel="noopener">https://doi.org/10.1017/S0272263124000238&lt;/a>&lt;/p>
-&lt;/blockquote>
-&lt;/li>
-&lt;/ol>
-&lt;h2 id="task-2-quick-but-rigorous-identification-of-metrics">Task 2: Quick but rigorous identification of metrics&lt;/h2>
-&lt;p>Extract the sample size for Study 3 (paper available for download on Researchgate:
-&lt;a href="https://www.researchgate.net/publication/319414600_Awe_and_Humility" target="_blank" rel="noopener">https://www.researchgate.net/publication/319414600_Awe_and_Humility&lt;/a>).&lt;/p>
-&lt;blockquote>
-&lt;p>Stellar, J. E., Gordon, A., Anderson, C. L., Piff, P. K., McNeil, G. D., &amp;amp; Keltner, D. (2018). Awe and humility. Journal of Personality and Social Psychology, 114(2), 258–269.
-&lt;a href="https://doi.org/10.1037/pspi0000109" target="_blank" rel="noopener">https://doi.org/10.1037/pspi0000109&lt;/a>&lt;/p>
-&lt;/blockquote>
-&lt;h2 id="task-3-extraction-and-documentation-of-multiple-values">Task 3: Extraction and documentation of multiple values&lt;/h2>
-&lt;p>Extract the claim, page number, and result from the replication study in the following article (Study 2).&lt;/p>
-&lt;blockquote>
-&lt;p>Murtagh, A. M., &amp;amp; Todd, S. A. (2004). Self-regulation: A challenge to the strength model. Journal of Articles in Support of the Null Hypothesis, 3(1), 19-51.&lt;/p>
-&lt;/blockquote>
-&lt;h2 id="about-forrts-replication-database-fred">About FORRT’s Replication Database (FReD)&lt;/h2>
-&lt;p>FORRT’s Replication Database aims to document replication studies across the social, behavioral, and cognitive sciences - and then make them discoverable through various interfaces. So far, we have identified more than 1,600 replication results from large-scale replication projects and individual articles, yet there are many more to go. You can explore the full database through the &lt;span style="text-decoration:underline;">FReD Explorer&lt;/span> or search for specific results in the &lt;span style="text-decoration:underline;">FReD Annotator&lt;/span>.&lt;/p></description></item><item><title>List of Large-Scale Replication Projects</title><link>https://forrt.org/replication-hub/large-scale-replication-projects/</link><pubDate>Sat, 09 Sep 2023 00:00:00 +0000</pubDate><guid>https://forrt.org/replication-hub/large-scale-replication-projects/</guid><description>&lt;p>Here you can find a list of completed and ongoing projects that summarize replication efforts throughout sciences and humanities.&lt;/p>
-&lt;table>
-&lt;tr>
-&lt;td>&lt;strong>Project Name&lt;/strong>
-&lt;/td>
-&lt;td>&lt;strong>Topic&lt;/strong>
-&lt;/td>
-&lt;td>&lt;strong>Link&lt;/strong>
-&lt;/td>
-&lt;td>&lt;strong>Included in FReD?&lt;/strong>
-&lt;/td>
-&lt;td>&lt;strong>Ongoing as of June 2024?&lt;/strong>
-&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>Reproducibility Project: Psychology
-&lt;/td>
-&lt;td>Psychology
-&lt;/td>
-&lt;td>&lt;a href="https://osf.io/ezcuj/">https://osf.io/ezcuj/&lt;/a>
-&lt;/td>
-&lt;td>Yes
-&lt;/td>
-&lt;td>No
-&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>CORE
-&lt;/td>
-&lt;td>Judgment and Decision Making (JDM)
-&lt;/td>
-&lt;td>&lt;a href="https://osf.io/5z4a8/">https://osf.io/5z4a8/&lt;/a>
-&lt;/td>
-&lt;td>Yes
-&lt;/td>
-&lt;td>Yes
-&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>Data Replicada
-&lt;/td>
-&lt;td>Consumer Psychology and JDM
-&lt;/td>
-&lt;td>&lt;a href="https://datacolada.org/archives/category/replication">https://datacolada.org/archives/category/replication&lt;/a>
-&lt;/td>
-&lt;td>Yes
-&lt;/td>
-&lt;td>No
-&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>Many Labs 1
-&lt;/td>
-&lt;td>Psychology
-&lt;/td>
-&lt;td>&lt;a href="https://osf.io/wx7ck/">https://osf.io/wx7ck/&lt;/a>
-&lt;/td>
-&lt;td>Yes
-&lt;/td>
-&lt;td>No
-&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>Many Labs 2
-&lt;/td>
-&lt;td>Psychology
-&lt;/td>
-&lt;td>&lt;a href="https://osf.io/8cd4r/">https://osf.io/8cd4r/&lt;/a>
-&lt;/td>
-&lt;td>Yes
-&lt;/td>
-&lt;td>No
-&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>Many Labs 3
-&lt;/td>
-&lt;td>Psychology
-&lt;/td>
-&lt;td>&lt;a href="https://osf.io/ct89g/">https://osf.io/ct89g/&lt;/a>
-&lt;/td>
-&lt;td>Yes
-&lt;/td>
-&lt;td>No
-&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>Many Labs 4
-&lt;/td>
-&lt;td>Psychology
-&lt;/td>
-&lt;td>&lt;a href="https://osf.io/8ccnw/">https://osf.io/8ccnw/&lt;/a>
-&lt;/td>
-&lt;td>No
-&lt;/td>
-&lt;td>No
-&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>Many Labs 5
-&lt;/td>
-&lt;td>Psychology
-&lt;/td>
-&lt;td>&lt;a href="https://osf.io/7a6rd/">https://osf.io/7a6rd/&lt;/a>
-&lt;/td>
-&lt;td>No
-&lt;/td>
-&lt;td>No
-&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>Soto
-&lt;/td>
-&lt;td>Personality Psychology
-&lt;/td>
-&lt;td>&lt;a href="https://doi.org/10.1177/0956797619831612">https://doi.org/10.1177/0956797619831612&lt;/a>
-&lt;/td>
-&lt;td>Yes
-&lt;/td>
-&lt;td>No
-&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>Social Sciences Replication Project
-&lt;/td>
-&lt;td>Studies on Human Behavior from Nature and Science
-&lt;/td>
-&lt;td>&lt;a href="http://www.socialsciencesreplicationproject.com">http://www.socialsciencesreplicationproject.com&lt;/a>
-&lt;/td>
-&lt;td>Yes
-&lt;/td>
-&lt;td>No
-&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>Registered Replication Reports
-&lt;/td>
-&lt;td>Various
-&lt;/td>
-&lt;td>–
-&lt;/td>
-&lt;td>Results from 10 RRRs are included
-&lt;/td>
-&lt;td>Yes
-&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>Many Babies 1
-&lt;/td>
-&lt;td>Developmental Psychology
-&lt;/td>
-&lt;td>&lt;a href="https://manybabies.org">https://manybabies.org&lt;/a>
-&lt;/td>
-&lt;td>No
-&lt;/td>
-&lt;td>Yes
-&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>Sports Sciences Replications
-&lt;/td>
-&lt;td>Sports Sciences
-&lt;/td>
-&lt;td>&lt;a href="https://ssreplicationcentre.com">https://ssreplicationcentre.com&lt;/a>
-&lt;/td>
-&lt;td>No
-&lt;/td>
-&lt;td>Yes
-&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>Hagen Cumulative Science Project
-&lt;/td>
-&lt;td>Psychology
-&lt;/td>
-&lt;td>&lt;a href="https://osf.io/d7za8/">https://osf.io/d7za8/&lt;/a>
-&lt;/td>
-&lt;td>No
-&lt;/td>
-&lt;td>No
-&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>I4R Replications
-&lt;/td>
-&lt;td>Political Sciences
-&lt;/td>
-&lt;td>&lt;a href="https://i4replication.org/discussion-papers/">https://i4replication.org/discussion-papers/&lt;/a>
-&lt;/td>
-&lt;td>No
-&lt;/td>
-&lt;td>Yes
-&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>Experimental Philosophy
-&lt;/td>
-&lt;td>Philosophy
-&lt;/td>
-&lt;td>&lt;span style="text-decoration:underline;">h&lt;a href="https://doi.org/10.1007/s13164-018-0400-9">ttps://doi.org/10.1007/s13164-018-0400-9&lt;/a> &lt;/span>
-&lt;/td>
-&lt;td>Partly
-&lt;/td>
-&lt;td>No
-&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>Reproducibility Project: Cancer
-&lt;/td>
-&lt;td>Medicine
-&lt;/td>
-&lt;td>&lt;a href="https://www.cos.io/rpcb">https://www.cos.io/rpcb&lt;/a>
-&lt;/td>
-&lt;td>No
-&lt;/td>
-&lt;td>No
-&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>SCORE
-&lt;/td>
-&lt;td>Social Sciences
-&lt;/td>
-&lt;td>&lt;a href="https://www.cos.io/score">https://www.cos.io/score&lt;/a>
-&lt;/td>
-&lt;td>No
-&lt;/td>
-&lt;td>Yes
-&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>REPEAT
-&lt;/td>
-&lt;td>Healthcare
-&lt;/td>
-&lt;td>&lt;a href="https://www.repeatinitiative.org">https://www.repeatinitiative.org&lt;/a>
-&lt;/td>
-&lt;td>No
-&lt;/td>
-&lt;td>No
-&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>CREP
-&lt;/td>
-&lt;td>Psychology
-&lt;/td>
-&lt;td>&lt;a href="https://www.crep-psych.org">https://www.crep-psych.org&lt;/a>
-&lt;/td>
-&lt;td>No
-&lt;/td>
-&lt;td>Yes
-&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>Boyce et al., 2023
-&lt;/td>
-&lt;td>Psychology
-&lt;/td>
-&lt;td>&lt;a href="https://doi.org/10.1098/rsos.231240">https://doi.org/10.1098/rsos.231240&lt;/a>
-&lt;/td>
-&lt;td>Yes (validation pending)
-&lt;/td>
-&lt;td>No
-&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>ReproSci
-&lt;/td>
-&lt;td>Biology
-&lt;/td>
-&lt;td>&lt;a href="https://reprosci.epfl.ch">https://reprosci.epfl.ch&lt;/a>
-&lt;/td>
-&lt;td>No
-&lt;/td>
-&lt;td>Yes
-&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>Boyce et al. 2024
-&lt;/td>
-&lt;td>Psychology
-&lt;/td>
-&lt;td>&lt;a href="https://doi.org/10.31234/osf.io/an3yb">https://doi.org/10.31234/osf.io/an3yb&lt;/a>
-&lt;/td>
-&lt;td>No
-&lt;/td>
-&lt;td>No
-&lt;/td>
-&lt;/tr>
-&lt;/table></description></item><item><title>Submit a Replication to FReD</title><link>https://forrt.org/replication-hub/submit/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://forrt.org/replication-hub/submit/</guid><description>&lt;br>
-&lt;p>We aim to build a comprehensive database of replication studies across all disciplines.
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>FORRT Replication Hub | FORRT - Framework for Open and Reproducible Research Training</title><link>https://forrt.org/replication-hub/</link><atom:link href="https://forrt.org/replication-hub/index.xml" rel="self" type="application/rss+xml"/><description>FORRT Replication Hub</description><generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-US</language><copyright>© 2026 - FORRT > Framework for Open and Reproducible Research Training</copyright><lastBuildDate>Sat, 09 Sep 2023 00:00:00 +0000</lastBuildDate><image><url>https://forrt.org/img/FORRTbanner.webp</url><title>FORRT Replication Hub</title><link>https://forrt.org/replication-hub/</link></image><item><title>Looking for Data Curators for FORRT’s Replication Database</title><link>https://forrt.org/replication-hub/fred_data_curators_role/</link><pubDate>Mon, 05 May 2025 00:00:00 +0000</pubDate><guid>https://forrt.org/replication-hub/fred_data_curators_role/</guid><description>&lt;p&gt;The Framework for Open and Reproducible Research Training (FORRT) and the Münster Center for Open Science (MüCOS) seek dedicated researchers to expand the world’s largest replication database. Supported by the Center for Open Science (COS) and the Netherlands Organisation for Scientific Research (NWO), we aim to increase coverage of social, cognitive, and behavioral science replications as well as improve data quality (validation) to the Open Science community resource that supports meta-science.&lt;/p&gt;
+&lt;h2 id="position-details"&gt;Position Details&lt;/h2&gt;
+&lt;p&gt;● &lt;strong&gt;Duration&lt;/strong&gt;: &lt;span style="text-decoration:underline;"&gt;Starting as soon as possible,&lt;/span&gt; with the potential to work until September 2025. We would expect you to work 4-15 hours per week, depending on your availability.&lt;/p&gt;
+&lt;p&gt;● &lt;strong&gt;Training and supervision will be provided&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;● &lt;strong&gt;Trial&lt;/strong&gt;: Chosen applicants will be assigned a set of studies to code and submit a dataset with the extracted values. Based on their performance on that initial set of studies, they will receive 250€ for adherence to the strict guidelines, 200€ if they only meet the guidelines after a revision, or 50€ if they do not meet the guidelines for your participation.&lt;/p&gt;
+&lt;p&gt;● &lt;strong&gt;Compensation&lt;/strong&gt;: Candidates who meet the guidelines are offered further work with a base pay of €20/hour with additional performance bonuses based on productivity and accuracy. You will usually work as an independent freelancer, so you might need to pay applicable taxes yourself.&lt;/p&gt;
+&lt;p&gt;● &lt;strong&gt;Transparent contributions&lt;/strong&gt;: Contributors will receive immediate recognition on FORRT’s official
+&lt;a href="https://forrt.org/contributors/" target="_blank" rel="noopener"&gt;contributorship&lt;/a&gt; page. Moreover, there are opportunities for ongoing academic and scientific contributions, with potential co-authorship on future manuscripts.&lt;/p&gt;
+&lt;p&gt;● &lt;strong&gt;Work Mode&lt;/strong&gt;: 100% remote (English language).&lt;/p&gt;
+&lt;h2 id="responsibilities"&gt;Responsibilities&lt;/h2&gt;
+&lt;p&gt;As a replication recorder or coder, you will:&lt;/p&gt;
+&lt;p&gt;● &lt;strong&gt;Record (or code) replications&lt;/strong&gt;: Extract details from published articles and add them to FORRT’s Replication Database (FReD; &lt;span style="text-decoration:underline;"&gt;
+&lt;a href="https://forrt.org/replication-hub/" target="_blank" rel="noopener"&gt;https://forrt.org/replication-hub/&lt;/a&gt;)&lt;/span&gt;.&lt;/p&gt;
+&lt;p&gt;● &lt;strong&gt;Validate and expand existing entries&lt;/strong&gt;: Check the accuracy of existing data and enhance records with additional details on statistics and results.&lt;/p&gt;
+&lt;p&gt;● &lt;strong&gt;Record, validate, and report&lt;/strong&gt;: Maintain transparent documentation of coding processes and discrepancies, double-check work done by other coders and resolve discrepancies through discussion.&lt;/p&gt;
+&lt;h2 id="expected-skills--qualifications"&gt;Expected Skills &amp;amp; Qualifications&lt;/h2&gt;
+&lt;p&gt;Ideal candidates for this role will:&lt;/p&gt;
+&lt;p&gt;● Have an academic background or demonstrated interest in social, cognitive, or behavioral sciences.&lt;/p&gt;
+&lt;p&gt;● Have experience with data coding (e.g. for meta-analyses) or systematic literature reviews.&lt;/p&gt;
+&lt;p&gt;● Be motivated to contribute to replication research and open science initiatives.&lt;/p&gt;
+&lt;p&gt;● Demonstrate meticulous attention to detail and a commitment to accuracy.&lt;/p&gt;
+&lt;p&gt;● Be comfortable working independently and adhering to structured coding protocols.&lt;/p&gt;
+&lt;p&gt;● Have a solid understanding of statistics so that they can understand quantitative results reported in various social science disciplines.&lt;/p&gt;
+&lt;h2 id="application-process"&gt;Application Process&lt;/h2&gt;
+&lt;p&gt;Please complete the tasks below and fill out
+&lt;a href="https://docs.google.com/forms/d/1WHUwV3DD653gzfqL1VkRJCQHc92-4RPp7QiTOpARp0Y/edit" target="_blank" rel="noopener"&gt;the application form&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;● Submit a brief CV and the latest academic transcript (if available).&lt;/p&gt;
+&lt;p&gt;● Applications will be reviewed on a rolling basis. If you have any questions, contact Lukas Röseler at &lt;span style="text-decoration:underline;"&gt;
+&lt;a href="mailto:lukas.roeseler@uni-muenster.de"&gt;lukas.roeseler@uni-muenster.de&lt;/a&gt;&lt;/span&gt; and cc &lt;span style="text-decoration:underline;"&gt;
+&lt;a href="mailto:info@forrt.org"&gt;info@forrt.org&lt;/a&gt;&lt;/span&gt;.&lt;/p&gt;
+&lt;h2 id="assessment-form"&gt;Assessment form&lt;/h2&gt;
+&lt;p&gt;The tasks that we are recruiting for require a special skill set involving experience with different types of effect sizes and research articles, as well as a high degree of diligence in coding values. Before reaching out to us, please check if you are up for the task with this self-assessment. Each of the different (sub)tasks should not take you longer than 5 minutes.&lt;/p&gt;
+&lt;h2 id="task-1-check-inclusion-criteria"&gt;Task 1: Check inclusion criteria&lt;/h2&gt;
+&lt;p&gt;Find out if these studies meet the definition for replication, that is: Self-identification as a replication, reference to a specific original study that is the replication target, testing a claim that was already tested in an original study, collecting new data and reporting the test results.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Magne, V. (2024). Replication research in the domain of perceived L2 fluency: Approximate and close replications of Kormos and Dénes (2004) and Rossiter (2009). Language Teaching, 1-9.
+&lt;a href="https://doi.org/10.1017/S0261444824000120" target="_blank" rel="noopener"&gt;https://doi.org/10.1017/S0261444824000120&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Stephenson, Corinne (2024). Trends in U.S. Wage Inequality: Revising the Revisionists. A Replication Study of Author, Katz, and Kearney (2008). Journal of Comments and Replications in Economics, Vol.3 (2024-4).
+&lt;a href="https://doi.org/10.18718/81781.34" target="_blank" rel="noopener"&gt;https://doi.org/10.18718/81781.34&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Huensch, A. (2024). Clarifying the role of inhibitory control in L2 phonological processing: A preregistered, close replication of Darcy et al.(2016). Studies in Second Language Acquisition, 1-21.
+&lt;a href="https://doi.org/10.1017/S0272263124000238" target="_blank" rel="noopener"&gt;https://doi.org/10.1017/S0272263124000238&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id="task-2-quick-but-rigorous-identification-of-metrics"&gt;Task 2: Quick but rigorous identification of metrics&lt;/h2&gt;
+&lt;p&gt;Extract the sample size for Study 3 (paper available for download on Researchgate:
+&lt;a href="https://www.researchgate.net/publication/319414600_Awe_and_Humility" target="_blank" rel="noopener"&gt;https://www.researchgate.net/publication/319414600_Awe_and_Humility&lt;/a&gt;).&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Stellar, J. E., Gordon, A., Anderson, C. L., Piff, P. K., McNeil, G. D., &amp;amp; Keltner, D. (2018). Awe and humility. Journal of Personality and Social Psychology, 114(2), 258–269.
+&lt;a href="https://doi.org/10.1037/pspi0000109" target="_blank" rel="noopener"&gt;https://doi.org/10.1037/pspi0000109&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id="task-3-extraction-and-documentation-of-multiple-values"&gt;Task 3: Extraction and documentation of multiple values&lt;/h2&gt;
+&lt;p&gt;Extract the claim, page number, and result from the replication study in the following article (Study 2).&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Murtagh, A. M., &amp;amp; Todd, S. A. (2004). Self-regulation: A challenge to the strength model. Journal of Articles in Support of the Null Hypothesis, 3(1), 19-51.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id="about-forrts-replication-database-fred"&gt;About FORRT’s Replication Database (FReD)&lt;/h2&gt;
+&lt;p&gt;FORRT’s Replication Database aims to document replication studies across the social, behavioral, and cognitive sciences - and then make them discoverable through various interfaces. So far, we have identified more than 1,600 replication results from large-scale replication projects and individual articles, yet there are many more to go. You can explore the full database through the &lt;span style="text-decoration:underline;"&gt;FReD Explorer&lt;/span&gt; or search for specific results in the &lt;span style="text-decoration:underline;"&gt;FReD Annotator&lt;/span&gt;.&lt;/p&gt;</description></item><item><title>List of Large-Scale Replication Projects</title><link>https://forrt.org/replication-hub/large-scale-replication-projects/</link><pubDate>Sat, 09 Sep 2023 00:00:00 +0000</pubDate><guid>https://forrt.org/replication-hub/large-scale-replication-projects/</guid><description>&lt;p&gt;Here you can find a list of completed and ongoing projects that summarize replication efforts throughout sciences and humanities.&lt;/p&gt;
+&lt;table&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;Project Name&lt;/strong&gt;
+&lt;/td&gt;
+&lt;td&gt;&lt;strong&gt;Topic&lt;/strong&gt;
+&lt;/td&gt;
+&lt;td&gt;&lt;strong&gt;Link&lt;/strong&gt;
+&lt;/td&gt;
+&lt;td&gt;&lt;strong&gt;Included in FReD?&lt;/strong&gt;
+&lt;/td&gt;
+&lt;td&gt;&lt;strong&gt;Ongoing as of June 2024?&lt;/strong&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Reproducibility Project: Psychology
+&lt;/td&gt;
+&lt;td&gt;Psychology
+&lt;/td&gt;
+&lt;td&gt;&lt;a href="https://osf.io/ezcuj/"&gt;https://osf.io/ezcuj/&lt;/a&gt;
+&lt;/td&gt;
+&lt;td&gt;Yes
+&lt;/td&gt;
+&lt;td&gt;No
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;CORE
+&lt;/td&gt;
+&lt;td&gt;Judgment and Decision Making (JDM)
+&lt;/td&gt;
+&lt;td&gt;&lt;a href="https://osf.io/5z4a8/"&gt;https://osf.io/5z4a8/&lt;/a&gt;
+&lt;/td&gt;
+&lt;td&gt;Yes
+&lt;/td&gt;
+&lt;td&gt;Yes
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Data Replicada
+&lt;/td&gt;
+&lt;td&gt;Consumer Psychology and JDM
+&lt;/td&gt;
+&lt;td&gt;&lt;a href="https://datacolada.org/archives/category/replication"&gt;https://datacolada.org/archives/category/replication&lt;/a&gt;
+&lt;/td&gt;
+&lt;td&gt;Yes
+&lt;/td&gt;
+&lt;td&gt;No
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Many Labs 1
+&lt;/td&gt;
+&lt;td&gt;Psychology
+&lt;/td&gt;
+&lt;td&gt;&lt;a href="https://osf.io/wx7ck/"&gt;https://osf.io/wx7ck/&lt;/a&gt;
+&lt;/td&gt;
+&lt;td&gt;Yes
+&lt;/td&gt;
+&lt;td&gt;No
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Many Labs 2
+&lt;/td&gt;
+&lt;td&gt;Psychology
+&lt;/td&gt;
+&lt;td&gt;&lt;a href="https://osf.io/8cd4r/"&gt;https://osf.io/8cd4r/&lt;/a&gt;
+&lt;/td&gt;
+&lt;td&gt;Yes
+&lt;/td&gt;
+&lt;td&gt;No
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Many Labs 3
+&lt;/td&gt;
+&lt;td&gt;Psychology
+&lt;/td&gt;
+&lt;td&gt;&lt;a href="https://osf.io/ct89g/"&gt;https://osf.io/ct89g/&lt;/a&gt;
+&lt;/td&gt;
+&lt;td&gt;Yes
+&lt;/td&gt;
+&lt;td&gt;No
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Many Labs 4
+&lt;/td&gt;
+&lt;td&gt;Psychology
+&lt;/td&gt;
+&lt;td&gt;&lt;a href="https://osf.io/8ccnw/"&gt;https://osf.io/8ccnw/&lt;/a&gt;
+&lt;/td&gt;
+&lt;td&gt;No
+&lt;/td&gt;
+&lt;td&gt;No
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Many Labs 5
+&lt;/td&gt;
+&lt;td&gt;Psychology
+&lt;/td&gt;
+&lt;td&gt;&lt;a href="https://osf.io/7a6rd/"&gt;https://osf.io/7a6rd/&lt;/a&gt;
+&lt;/td&gt;
+&lt;td&gt;No
+&lt;/td&gt;
+&lt;td&gt;No
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Soto
+&lt;/td&gt;
+&lt;td&gt;Personality Psychology
+&lt;/td&gt;
+&lt;td&gt;&lt;a href="https://doi.org/10.1177/0956797619831612"&gt;https://doi.org/10.1177/0956797619831612&lt;/a&gt;
+&lt;/td&gt;
+&lt;td&gt;Yes
+&lt;/td&gt;
+&lt;td&gt;No
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Social Sciences Replication Project
+&lt;/td&gt;
+&lt;td&gt;Studies on Human Behavior from Nature and Science
+&lt;/td&gt;
+&lt;td&gt;&lt;a href="http://www.socialsciencesreplicationproject.com"&gt;http://www.socialsciencesreplicationproject.com&lt;/a&gt;
+&lt;/td&gt;
+&lt;td&gt;Yes
+&lt;/td&gt;
+&lt;td&gt;No
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Registered Replication Reports
+&lt;/td&gt;
+&lt;td&gt;Various
+&lt;/td&gt;
+&lt;td&gt;–
+&lt;/td&gt;
+&lt;td&gt;Results from 10 RRRs are included
+&lt;/td&gt;
+&lt;td&gt;Yes
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Many Babies 1
+&lt;/td&gt;
+&lt;td&gt;Developmental Psychology
+&lt;/td&gt;
+&lt;td&gt;&lt;a href="https://manybabies.org"&gt;https://manybabies.org&lt;/a&gt;
+&lt;/td&gt;
+&lt;td&gt;No
+&lt;/td&gt;
+&lt;td&gt;Yes
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Sports Sciences Replications
+&lt;/td&gt;
+&lt;td&gt;Sports Sciences
+&lt;/td&gt;
+&lt;td&gt;&lt;a href="https://ssreplicationcentre.com"&gt;https://ssreplicationcentre.com&lt;/a&gt;
+&lt;/td&gt;
+&lt;td&gt;No
+&lt;/td&gt;
+&lt;td&gt;Yes
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Hagen Cumulative Science Project
+&lt;/td&gt;
+&lt;td&gt;Psychology
+&lt;/td&gt;
+&lt;td&gt;&lt;a href="https://osf.io/d7za8/"&gt;https://osf.io/d7za8/&lt;/a&gt;
+&lt;/td&gt;
+&lt;td&gt;No
+&lt;/td&gt;
+&lt;td&gt;No
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;I4R Replications
+&lt;/td&gt;
+&lt;td&gt;Political Sciences
+&lt;/td&gt;
+&lt;td&gt;&lt;a href="https://i4replication.org/discussion-papers/"&gt;https://i4replication.org/discussion-papers/&lt;/a&gt;
+&lt;/td&gt;
+&lt;td&gt;No
+&lt;/td&gt;
+&lt;td&gt;Yes
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Experimental Philosophy
+&lt;/td&gt;
+&lt;td&gt;Philosophy
+&lt;/td&gt;
+&lt;td&gt;&lt;span style="text-decoration:underline;"&gt;h&lt;a href="https://doi.org/10.1007/s13164-018-0400-9"&gt;ttps://doi.org/10.1007/s13164-018-0400-9&lt;/a&gt; &lt;/span&gt;
+&lt;/td&gt;
+&lt;td&gt;Partly
+&lt;/td&gt;
+&lt;td&gt;No
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Reproducibility Project: Cancer
+&lt;/td&gt;
+&lt;td&gt;Medicine
+&lt;/td&gt;
+&lt;td&gt;&lt;a href="https://www.cos.io/rpcb"&gt;https://www.cos.io/rpcb&lt;/a&gt;
+&lt;/td&gt;
+&lt;td&gt;No
+&lt;/td&gt;
+&lt;td&gt;No
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;SCORE
+&lt;/td&gt;
+&lt;td&gt;Social Sciences
+&lt;/td&gt;
+&lt;td&gt;&lt;a href="https://www.cos.io/score"&gt;https://www.cos.io/score&lt;/a&gt;
+&lt;/td&gt;
+&lt;td&gt;No
+&lt;/td&gt;
+&lt;td&gt;Yes
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;REPEAT
+&lt;/td&gt;
+&lt;td&gt;Healthcare
+&lt;/td&gt;
+&lt;td&gt;&lt;a href="https://www.repeatinitiative.org"&gt;https://www.repeatinitiative.org&lt;/a&gt;
+&lt;/td&gt;
+&lt;td&gt;No
+&lt;/td&gt;
+&lt;td&gt;No
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;CREP
+&lt;/td&gt;
+&lt;td&gt;Psychology
+&lt;/td&gt;
+&lt;td&gt;&lt;a href="https://www.crep-psych.org"&gt;https://www.crep-psych.org&lt;/a&gt;
+&lt;/td&gt;
+&lt;td&gt;No
+&lt;/td&gt;
+&lt;td&gt;Yes
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Boyce et al., 2023
+&lt;/td&gt;
+&lt;td&gt;Psychology
+&lt;/td&gt;
+&lt;td&gt;&lt;a href="https://doi.org/10.1098/rsos.231240"&gt;https://doi.org/10.1098/rsos.231240&lt;/a&gt;
+&lt;/td&gt;
+&lt;td&gt;Yes (validation pending)
+&lt;/td&gt;
+&lt;td&gt;No
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;ReproSci
+&lt;/td&gt;
+&lt;td&gt;Biology
+&lt;/td&gt;
+&lt;td&gt;&lt;a href="https://reprosci.epfl.ch"&gt;https://reprosci.epfl.ch&lt;/a&gt;
+&lt;/td&gt;
+&lt;td&gt;No
+&lt;/td&gt;
+&lt;td&gt;Yes
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Boyce et al. 2024
+&lt;/td&gt;
+&lt;td&gt;Psychology
+&lt;/td&gt;
+&lt;td&gt;&lt;a href="https://doi.org/10.31234/osf.io/an3yb"&gt;https://doi.org/10.31234/osf.io/an3yb&lt;/a&gt;
+&lt;/td&gt;
+&lt;td&gt;No
+&lt;/td&gt;
+&lt;td&gt;No
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/table&gt;</description></item><item><title>Submit a Replication to FReD</title><link>https://forrt.org/replication-hub/submit/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://forrt.org/replication-hub/submit/</guid><description>&lt;br&gt;
+&lt;p&gt;We aim to build a comprehensive database of replication studies across all disciplines.
 If you have conducted a replication study that we have not yet included, or just seen one,
-please submit it using the form below.&lt;/p>
-&lt;p>If you want to check if a replication study is already included in the database,
+please submit it using the form below.&lt;/p&gt;
+&lt;p&gt;If you want to check if a replication study is already included in the database,
 the easiest way is to use the
-&lt;a href="https://forrt.org/annotator" target="_blank">References Annotator&lt;/a>&lt;/p>
-&lt;iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeMCwdtP0TPgL55stniuyyTxnNwyC34mO4VUuLcQwYrLI89sQ/viewform", width = "100%", height="800px">&lt;/iframe></description></item></channel></rss>
+&lt;a href="https://forrt.org/annotator" target="_blank"&gt;References Annotator&lt;/a&gt;&lt;/p&gt;
+&lt;iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeMCwdtP0TPgL55stniuyyTxnNwyC34mO4VUuLcQwYrLI89sQ/viewform", width = "100%", height="800px"&gt;&lt;/iframe&gt;</description></item></channel></rss>
