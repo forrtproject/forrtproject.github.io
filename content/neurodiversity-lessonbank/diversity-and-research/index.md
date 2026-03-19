@@ -43,5 +43,5 @@ Watch the presentation here
 
 ### Extra reading:
 
-- [How open science promotes diverse research](https://journals.sagepub.com/doi/full/10.1177/1475725719869164)
+- [How open science promotes diverse research](https://doi.org/10.1177/1475725719869164)
 - [Respect for Diversity in Community Psychology](https://press.rebus.community/introductiontocommunitypsychology/chapter/respect-for-diversity/)
