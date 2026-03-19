@@ -3494,7 +3494,7 @@ Educators (POST-Edu) as Project co-lead</li>
     <li class="contribution" data-projects="aps-observer" data-roles="conceptualization,writing-original-draft,writing-review-and-editing"><a href="https://www.psychologicalscience.org/observer/gs-navigating-academia-as-neurodivergent-researchers">APS Observer</a> with <em>Conceptualization</em>, <em>Writing - original draft</em> and <em>Writing - review & editing</em></li>
     <li class="contribution" data-projects="academic-wheel-of-privilege" data-roles="conceptualization,methodology,project-administration,software,supervision,visualization,writing-original-draft,writing-review-and-editing"><a href="https://forrt.org/awop/">Academic Wheel of Privilege</a> with <em>Conceptualization</em>, <em>Methodology</em>, <em>Project administration</em>, <em>Software</em>, <em>Supervision</em>, <em>Visualization</em>, <em>Writing - original draft</em> and <em>Writing - review & editing</em></li>
     <li class="contribution" data-projects="educators-corner" data-roles="writing-original-draft,writing-review-and-editing"><a href="https://forrt.org/educators-corner/">Educators' Corner</a> with <em>Writing - original draft</em> and <em>Writing - review & editing</em></li>
-    <li class="contribution" data-projects="forrt-booklet" data-roles="writing-review-and-editing">FORRT Booklet with <em>Writing - review & editing</em></li>
+    <li class="contribution" data-projects="forrt-booklet" data-roles="writing-review-and-editing"><a href="https://forrt.org/booklet/">FORRT Booklet</a> with <em>Writing - review & editing</em></li>
     <li class="contribution" data-projects="forrt-s-clusters" data-roles="writing-original-draft,writing-review-and-editing"><a href="https://forrt.org/clusters/">FORRT's Clusters</a> with <em>Writing - original draft</em> and <em>Writing - review & editing</em></li>
     <li class="contribution" data-projects="glossary" data-roles="writing-review-and-editing"><a href="https://forrt.org/glossary/">Glossary</a> with <em>Writing - review & editing</em></li>
   </ul>
@@ -4415,7 +4415,7 @@ Educators (POST-Edu) as Project co-lead</li>
     <li class="contribution" data-projects="flora-forrt-library-of-replication-attempts" data-roles="conceptualization,data-curation,funding-acquisition,investigation,methodology,project-administration,resources,software,supervision,validation,visualization,writing-original-draft,writing-review-and-editing"><a href="https://forrt.org/replication-hub/">FLoRA (FORRT Library of Replication Attempts)</a> with <em>Conceptualization</em>, <em>Data curation</em>, <em>Funding acquisition</em>, <em>Investigation</em>, <em>Methodology</em>, <em>Project administration</em>, <em>Resources</em>, <em>Software</em>, <em>Supervision</em>, <em>Validation</em>, <em>Visualization</em>, <em>Writing - original draft</em> and <em>Writing - review & editing</em></li>
     <li class="contribution" data-projects="flora-notify-preprint-alerts" data-roles="conceptualization,funding-acquisition,software,supervision,writing-review-and-editing">FLoRA - Notify preprint alerts with <em>Conceptualization</em>, <em>Funding acquisition</em>, <em>Software</em>, <em>Supervision</em> and <em>Writing - review & editing</em></li>
     <li class="contribution" data-projects="flora-zotero-plugin" data-roles="conceptualization,software">FLoRA Zotero plugin with <em>Conceptualization</em> and <em>Software</em></li>
-    <li class="contribution" data-projects="forrt-booklet" data-roles="writing-review-and-editing">FORRT Booklet with <em>Writing - review & editing</em></li>
+    <li class="contribution" data-projects="forrt-booklet" data-roles="writing-review-and-editing"><a href="https://forrt.org/booklet/">FORRT Booklet</a> with <em>Writing - review & editing</em></li>
     <li class="contribution" data-projects="forrt-germany-verein" data-roles="conceptualization,funding-acquisition,project-administration,writing-original-draft"><a href="https://forrt.org/about/charity/">FORRT Germany Verein</a> with <em>Conceptualization</em>, <em>Funding acquisition</em>, <em>Project administration</em> and <em>Writing - original draft</em></li>
     <li class="contribution" data-projects="forrt-robustness-lighthouse" data-roles="conceptualization,investigation,methodology,project-administration,resources,software,supervision">FORRT Robustness Lighthouse with <em>Conceptualization</em>, <em>Investigation</em>, <em>Methodology</em>, <em>Project administration</em>, <em>Resources</em>, <em>Software</em> and <em>Supervision</em></li>
     <li class="contribution" data-projects="forrt-s-clusters" data-roles="writing-original-draft,writing-review-and-editing"><a href="https://forrt.org/clusters/">FORRT's Clusters</a> with <em>Writing - original draft</em> and <em>Writing - review & editing</em></li>
@@ -4487,7 +4487,7 @@ Educators (POST-Edu) as Project co-lead</li>
     <li class="contribution" data-projects="team-citation-politics" data-roles="project-co-lead">Team Citation Politics as Project co-lead</li>
     <li class="contribution" data-projects="academic-wheel-of-privilege" data-roles="writing-review-and-editing"><a href="https://forrt.org/awop/">Academic Wheel of Privilege</a> with <em>Writing - review & editing</em></li>
     <li class="contribution" data-projects="accessible-feedback-in-academia" data-roles="resources,translation,writing-review-and-editing">Accessible Feedback in Academia with <em>Resources</em>, <em>Translation</em> and <em>Writing - review & editing</em></li>
-    <li class="contribution" data-projects="forrt-booklet" data-roles="writing-review-and-editing">FORRT Booklet with <em>Writing - review & editing</em></li>
+    <li class="contribution" data-projects="forrt-booklet" data-roles="writing-review-and-editing"><a href="https://forrt.org/booklet/">FORRT Booklet</a> with <em>Writing - review & editing</em></li>
     <li class="contribution" data-projects="forrt-s-clusters" data-roles="writing-original-draft,writing-review-and-editing"><a href="https://forrt.org/clusters/">FORRT's Clusters</a> with <em>Writing - original draft</em> and <em>Writing - review & editing</em></li>
     <li class="contribution" data-projects="landscape" data-roles="data-curation">Landscape with <em>Data curation</em></li>
     <li class="contribution" data-projects="unesco-un-application" data-roles="writing-review-and-editing">UNESCO/UN Application with <em>Writing - review & editing</em></li>
@@ -4656,7 +4656,7 @@ Educators (POST-Edu) as Project co-lead</li>
     <li class="contribution" data-projects="adopting-principled-education" data-roles="data-curation,resources,supervision"><a href="https://forrt.org/adopting/">Adopting Principled Education</a> with <em>Data curation</em>, <em>Resources</em> and <em>Supervision</em></li>
     <li class="contribution" data-projects="autism-and-open-science" data-roles="writing-review-and-editing">Autism & Open Science with <em>Writing - review & editing</em></li>
     <li class="contribution" data-projects="educators-corner" data-roles="writing-original-draft,writing-review-and-editing"><a href="https://forrt.org/educators-corner/">Educators' Corner</a> with <em>Writing - original draft</em> and <em>Writing - review & editing</em></li>
-    <li class="contribution" data-projects="forrt-booklet" data-roles="writing-review-and-editing">FORRT Booklet with <em>Writing - review & editing</em></li>
+    <li class="contribution" data-projects="forrt-booklet" data-roles="writing-review-and-editing"><a href="https://forrt.org/booklet/">FORRT Booklet</a> with <em>Writing - review & editing</em></li>
     <li class="contribution" data-projects="forrt-lesson-plans" data-roles="resources,writing-review-and-editing"><a href="https://forrt.org/lesson-plans/">FORRT Lesson Plans</a> with <em>Resources</em> and <em>Writing - review & editing</em></li>
     <li class="contribution" data-projects="forrt-s-clusters" data-roles="writing-original-draft,writing-review-and-editing"><a href="https://forrt.org/clusters/">FORRT's Clusters</a> with <em>Writing - original draft</em> and <em>Writing - review & editing</em></li>
     <li class="contribution" data-projects="getting-started-with-forrt" data-roles="writing-original-draft,writing-review-and-editing"><a href="https://docs.google.com/document/d/17ECRs6J8spO3CU6siheGL8weQ-TzdyAUpXIiIE8cUeI/edit?tab=t.0#heading=h.9uywlkccaw1">Getting Started with FORRT</a> with <em>Writing - original draft</em> and <em>Writing - review & editing</em></li>
@@ -4773,8 +4773,8 @@ Educators (POST-Edu) as Project co-lead</li>
 <li class="contributor-group" id="0000-0003-4511-9008">
   <strong><a href="https://orcid.org/0000-0003-4511-9008">Iris Smal</a></strong> contributed to
   <ul class="contributions-list">
-    <li class="contribution" data-projects="team-games-for-open-scienxe" data-roles="project-lead">Team Games for Open Scienxe as Project lead</li>
-    <li class="contribution" data-projects="forrt-booklet" data-roles="conceptualization,project-administration,resources,visualization,writing-original-draft,writing-review-and-editing">FORRT Booklet with <em>Conceptualization</em>, <em>Project administration</em>, <em>Resources</em>, <em>Visualization</em>, <em>Writing - original draft</em> and <em>Writing - review & editing</em></li>
+    <li class="contribution" data-projects="team-games-for-open-science" data-roles="project-lead"><a href="https://forrt.org/games/">Team Games for Open Science</a> as Project lead</li>
+    <li class="contribution" data-projects="forrt-booklet" data-roles="conceptualization,project-administration,resources,visualization,writing-original-draft,writing-review-and-editing"><a href="https://forrt.org/booklet/">FORRT Booklet</a> with <em>Conceptualization</em>, <em>Project administration</em>, <em>Resources</em>, <em>Visualization</em>, <em>Writing - original draft</em> and <em>Writing - review & editing</em></li>
   </ul>
 </li>
 
@@ -4782,7 +4782,7 @@ Educators (POST-Edu) as Project co-lead</li>
 <li class="contributor-group">
   <strong>Sofie Smal</strong> contributed to
   <ul class="contributions-list">
-    <li class="contribution" data-projects="forrt-booklet" data-roles="writing-original-draft">FORRT Booklet with <em>Writing - original draft</em></li>
+    <li class="contribution" data-projects="forrt-booklet" data-roles="writing-original-draft"><a href="https://forrt.org/booklet/">FORRT Booklet</a> with <em>Writing - original draft</em></li>
   </ul>
 </li>
 
@@ -5868,7 +5868,7 @@ Educators (POST-Edu) as Project co-lead</li>
     <li class="contribution" data-projects="equity-in-open-scholarship" data-roles="conceptualization,data-curation,investigation,methodology,writing-original-draft,writing-review-and-editing">Equity in Open Scholarship with <em>Conceptualization</em>, <em>Data curation</em>, <em>Investigation</em>, <em>Methodology</em>, <em>Writing - original draft</em> and <em>Writing - review & editing</em></li>
     <li class="contribution" data-projects="flora-forrt-library-of-replication-attempts" data-roles="conceptualization,funding-acquisition,investigation,methodology,project-administration,supervision,writing-original-draft,writing-review-and-editing"><a href="https://forrt.org/replication-hub/">FLoRA (FORRT Library of Replication Attempts)</a> with <em>Conceptualization</em>, <em>Funding acquisition</em>, <em>Investigation</em>, <em>Methodology</em>, <em>Project administration</em>, <em>Supervision</em>, <em>Writing - original draft</em> and <em>Writing - review & editing</em></li>
     <li class="contribution" data-projects="flora-notify-preprint-alerts" data-roles="conceptualization,funding-acquisition">FLoRA - Notify preprint alerts with <em>Conceptualization</em> and <em>Funding acquisition</em></li>
-    <li class="contribution" data-projects="forrt-booklet" data-roles="conceptualization,visualization,writing-original-draft,writing-review-and-editing">FORRT Booklet with <em>Conceptualization</em>, <em>Visualization</em>, <em>Writing - original draft</em> and <em>Writing - review & editing</em></li>
+    <li class="contribution" data-projects="forrt-booklet" data-roles="conceptualization,visualization,writing-original-draft,writing-review-and-editing"><a href="https://forrt.org/booklet/">FORRT Booklet</a> with <em>Conceptualization</em>, <em>Visualization</em>, <em>Writing - original draft</em> and <em>Writing - review & editing</em></li>
     <li class="contribution" data-projects="forrt-germany-verein" data-roles="conceptualization,funding-acquisition,project-administration,supervision,writing-review-and-editing"><a href="https://forrt.org/about/charity/">FORRT Germany Verein</a> with <em>Conceptualization</em>, <em>Funding acquisition</em>, <em>Project administration</em>, <em>Supervision</em> and <em>Writing - review & editing</em></li>
     <li class="contribution" data-projects="forrt-lesson-plans" data-roles="conceptualization,data-curation,investigation,project-administration,resources,supervision,writing-original-draft,writing-review-and-editing"><a href="https://forrt.org/lesson-plans/">FORRT Lesson Plans</a> with <em>Conceptualization</em>, <em>Data curation</em>, <em>Investigation</em>, <em>Project administration</em>, <em>Resources</em>, <em>Supervision</em>, <em>Writing - original draft</em> and <em>Writing - review & editing</em></li>
     <li class="contribution" data-projects="forrt-robustness-lighthouse" data-roles="conceptualization,investigation,methodology,project-administration">FORRT Robustness Lighthouse with <em>Conceptualization</em>, <em>Investigation</em>, <em>Methodology</em> and <em>Project administration</em></li>
@@ -6221,8 +6221,8 @@ window.filterData = {
       "label": "Team Feedback"
     },
     {
-      "value": "team-games-for-open-scienxe",
-      "label": "Team Games for Open Scienxe"
+      "value": "team-games-for-open-science",
+      "label": "Team Games for Open Science"
     },
     {
       "value": "team-glossary-phase-1",
