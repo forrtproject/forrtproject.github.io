@@ -6,7 +6,7 @@
     "features": {
         "ghcr.io/devcontainers/features/hugo:1": {
             "extended": true,
-            "version": "0.123.1"
+            "version": "0.158.0"
         },
         "ghcr.io/devcontainers/features/node:1": {
             "nodeGypDependencies": true,
