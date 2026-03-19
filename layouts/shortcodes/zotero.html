@@ -3,7 +3,10 @@
   {{ $collection := .Get "collection"}}
   {{ $URL := printf "https://api.zotero.org/groups/%s/collections/%s/items/" $group_id $collection }}
   {{ $URL }}
-  {{ $refs := getJSON $URL }}
+  {{ $refs := slice }}
+  {{ with resources.GetRemote $URL }}
+    {{ $refs = .Content | transform.Unmarshal }}
+  {{ end }}
 
   <h3>References</h3>
   <ul class="publication-section">
