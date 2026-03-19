@@ -156,7 +156,7 @@ There are 6 sub-clusters which aim to further parse the learning and teaching pr
 
 * COS: [10 Tips for Making a Great Preregistration](https://cos.io/blog/10-preregistration-tips/)
 
-* COS: [8 Answers About Registered Reports and Research Preregistration](https://www.wiley.com/network/researchers/being-a-peer-reviewer/8-answers-about-registered-reports-research-preregistration-and-why-both-are-important)
+* COS: [8 Answers About Registered Reports and Research Preregistration](https://www.wiley.com/network/researchers/being-a-peer-reviewer/registered-reports-good-for-both-science-and-authors)
 
 <br>
 </div>

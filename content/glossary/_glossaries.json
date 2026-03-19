@@ -45,7 +45,7 @@
                 "type": "glossary",
                 "title": "التَّأثير الأكاديميّ [Academic Impact]",
                 "sort_key": "التَّأثير الأكاديميّ [academic impact]",
-                "definition": "يشير هذا المصطلح إلى الإسهام الذي يحدثه النَّتاج البحثي، مثل: مقالة منشورة في التحوُّل المفاهيمي، وتطوير النَّظريات، والأساليب، والتَّطبيقات العمليَّة، سواء داخل التَّخصص  المعرفي الواحد، أو عبر التَّخصُّصات  المعرفيَّة المختلفة. ويدلُّ التَّأثير الأكاديمي كذلك على درجة التَّغيير الذي يحدثه أي نتاج، أو برنامج بحثي خارج المجال الأكاديمي، مثل التَّأثير الاجتماعي والاقتصادي. (راجع: [https://esrc.ukri.org/research/impact-toolkit/what-is-impact/](https://esrc.ukri.org/research/impact-toolkit/what-is-impact/)). **المصطلحات ذات الصّلة:** المستفيدين، **إعلان سان فرانسيسكو بشأن تقييم البحوث** ; REF",
+                "definition": "يشير هذا المصطلح إلى الإسهام الذي يحدثه النَّتاج البحثي، مثل: مقالة منشورة في التحوُّل المفاهيمي، وتطوير النَّظريات، والأساليب، والتَّطبيقات العمليَّة، سواء داخل التَّخصص  المعرفي الواحد، أو عبر التَّخصُّصات  المعرفيَّة المختلفة. ويدلُّ التَّأثير الأكاديمي كذلك على درجة التَّغيير الذي يحدثه أي نتاج، أو برنامج بحثي خارج المجال الأكاديمي، مثل التَّأثير الاجتماعي والاقتصادي. (راجع: [https://www.ukri.org/councils/esrc/impact-toolkit-for-economic-and-social-sciences/defining-impact/](https://www.ukri.org/councils/esrc/impact-toolkit-for-economic-and-social-sciences/defining-impact/)). **المصطلحات ذات الصّلة:** المستفيدين، **إعلان سان فرانسيسكو بشأن تقييم البحوث** ; REF",
                 "related_terms": [
                     "Beneficiaries",
                     "DORA",
@@ -53,7 +53,7 @@
                     "REF"
                 ],
                 "references": [
-                    "Anon. (2021). What is impact?. Retrieved from https://esrc.ukri.org/research/impact-toolkit/what-is-impact/"
+                    "Anon. (2021). What is impact?. Retrieved from https://www.ukri.org/councils/esrc/impact-toolkit-for-economic-and-social-sciences/defining-impact/"
                 ],
                 "drafted_by": [
                     "Connor Keating"
@@ -2019,7 +2019,7 @@
                     "Filipe, A., Renedo, A., & Marston, C. (2017). The co-production of what? Knowledge, values, and social relations in health care. PLoS Biology, 15(5), e2001403. https://doi.org/10.1371/journal.pbio.2001403",
                     "Graham, I. D., McCutcheon, C., & Kothari, A. (2019). Exploring the frontiers of research co-production: the Integrated Knowledge Translation Research Network concept papers. Health Research Policy and Systems, 17, 88. https://doi.org/10.1186/s12961-019-0501-7",
                     "NIHR Guidance on Co-Producing a Research Project. (2021). https://www.learningforinvolvement.org.uk/?opportunity=nihr-guidance-on-co-producing-a-research-project",
-                    "Co-Production Collective. (n.d.). Our Approach. Co-Production Collective. https://www.coproductioncollective.co.uk/what-is-co-production/our-approach"
+                    "Co-Production Collective. (n.d.). Our Approach. Co-Production Collective. https://www.coproductioncollective.co.uk/championing-co-production/what-does-co-production-mean-to-us"
                 ],
                 "drafted_by": [
                     "Emma Norris"
@@ -2457,7 +2457,7 @@
                 "references": [
                     "Abele-Brehm, A. E., Gollwitzer, M., Steinberg, U., & Schönbrodt, F. D. (2019). Attitudes toward open science and public data sharing. Social Psychology, 50, 252–260. https://doi.org/10.1027/1864-9335/a000384",
                     "Gollwitzer, M., Abele-Brehm, A., Fiebach, C., Ramthun, R., Scheel, A. M., Schönbrodt, F. D., & Steinberg, U. (2020). Data Management and Data Sharing in Psychological Science: Revision of the DGPs Recommendations.",
-                    "for Data Sharing, S. C. (n.d.). What is data sharing? Retrieved 11 July 2021. https://eudatasharing.eu/what-data-sharing"
+                    "for Data Sharing, S. C. (n.d.). What is data sharing? Retrieved 11 July 2021. https://futurium.ec.europa.eu/en/support-centre-data-sharing/pages/about"
                 ],
                 "drafted_by": [
                     "Mahmoud Elsherif"
@@ -2588,7 +2588,7 @@
                 "type": "glossary",
                 "title": "digital object identifier معرّف الكائن الرَّقمي [DOI (digital object identifier)]",
                 "sort_key": "digital object identifier معرّف الكائن الرَّقمي [doi (digital object identifier)]",
-                "definition": "معرفات الكائنات الرَّقميَّة هي سلاسل أبجديَّة رقميَّة يمكن تخصيصها لأي كيان بما في ذلك: المنشورات (ومنها المطبوعات الأوليَّة)، والمواد، ومجموعات البيانات، والأفلام. ولا يقتصر استخدام المعرّفات الرَّقميَّة على المواد الأكاديميَّة فقط. إنَّ معرفات الكائنات الرَّقميَّة توفِّر نظامًا لتحديد دائم، وقابل للتَّنفيذ، وتبادل قابل للتَّشغيل البيني للمعلومات المدارة على الشَّبكات الرَّقميَّة  (https://www.doi.org/doi-handbook/HTML/index.html). هناك العديد من وكالات لتسجيل معرّفات الكائنات الرَّقميَّة وإدارتها، ولكن من المرجَّح أنْ يواجه أغلب الباحثين اثنتين هما: Crossref و Datacite. :**المصطلحات ذات الصِّلة** arXiv and BibTex; Crossref, Datacite, ISBN, ISO, الأوركيد; Permalink.",
+                "definition": "معرفات الكائنات الرَّقميَّة هي سلاسل أبجديَّة رقميَّة يمكن تخصيصها لأي كيان بما في ذلك: المنشورات (ومنها المطبوعات الأوليَّة)، والمواد، ومجموعات البيانات، والأفلام. ولا يقتصر استخدام المعرّفات الرَّقميَّة على المواد الأكاديميَّة فقط. إنَّ معرفات الكائنات الرَّقميَّة توفِّر نظامًا لتحديد دائم، وقابل للتَّنفيذ، وتبادل قابل للتَّشغيل البيني للمعلومات المدارة على الشَّبكات الرَّقميَّة  ([https://www.doi.org/doi-handbook/HTML/index.html](https://www.doi.org/doi-handbook/HTML/index.html)). هناك العديد من وكالات لتسجيل معرّفات الكائنات الرَّقميَّة وإدارتها، ولكن من المرجَّح أنْ يواجه أغلب الباحثين اثنتين هما: Crossref و Datacite. :**المصطلحات ذات الصِّلة** arXiv and BibTex; Crossref, Datacite, ISBN, ISO, الأوركيد; Permalink.",
                 "related_terms": [
                     "arXiv and BibTex",
                     "Crossref, Datacite, ISBN, ISO, ORCID",
@@ -2871,7 +2871,7 @@
                     "Academic Impact"
                 ],
                 "references": [
-                    "Economic, & Council, S. R. (n.d.). What is impact? Retrieved 8 July 2021. https://esrc.ukri.org/research/impact-toolkit/what-is-impact/"
+                    "Economic, & Council, S. R. (n.d.). What is impact? Retrieved 8 July 2021. https://www.ukri.org/councils/esrc/impact-toolkit-for-economic-and-social-sciences/defining-impact/"
                 ],
                 "drafted_by": [
                     "Adam Parker"
@@ -5611,7 +5611,7 @@
                 "type": "glossary",
                 "title": "OER Commons مصادر التعَّلُّم المفتوحة العامّة [Open Educational Resources (OER) Commons]",
                 "sort_key": "oer commons مصادر التعَّلُّم المفتوحة العامّة [open educational resources (oer) commons]",
-                "definition": "مصادر التَّعلُّم المفتوحة هي مكتبة مجانيَّة على الإنترنت تُمكِّن المعلِّمين من إنشاء، ومشاركة ودمج المصادر التَّعليميَّة.  تهدف حركة مصادر التَّعلُّم المفتوح إلى تحفيز\"التعليم والتَّعلُّم التَّعاوني\" ([https://www.oercommons.org/about](https://www.oercommons.org/about)) كما تقدِّم موارد تعليميَّة ذات جودة عالية متاحة للجميع. **المصطلحات ذات الصِّلة:** العدالة، فورت، الشمول، قاعدة المعرفة  للمنح الدِّراسية المفتوحة، إطار العلوم المفتوحة.",
+                "definition": "مصادر التَّعلُّم المفتوحة هي مكتبة مجانيَّة على الإنترنت تُمكِّن المعلِّمين من إنشاء، ومشاركة ودمج المصادر التَّعليميَّة.  تهدف حركة مصادر التَّعلُّم المفتوح إلى تحفيز\"التعليم والتَّعلُّم التَّعاوني\" ([https://www.oercommons.org/about]([https://www.oercommons.org/about](https://www.oercommons.org/about))) كما تقدِّم موارد تعليميَّة ذات جودة عالية متاحة للجميع. **المصطلحات ذات الصِّلة:** العدالة، فورت، الشمول، قاعدة المعرفة  للمنح الدِّراسية المفتوحة، إطار العلوم المفتوحة.",
                 "related_terms": [
                     "Equity",
                     "FORRT",
@@ -7886,7 +7886,7 @@
                     "Liu, Y., Gordon, M., Wang, J., Bishop, M., Chen, Y., Pfeiffer, T., Twardy, C., & Viganola, D. (2020). Replication Markets: Results, Lessons, Challenges and Opportunities in AI Replication. ArXiv:2005.04543 . http://arxiv.org/abs/2005.04543",
                     "Tierney, W., Hardy III, J. H., Ebersole, C. R., Leavitt, K., Viganola, D., Clemente, E. G., & others. (2020). Creative destruction in science. Organizational Behavior and Human Decision Processes, 161, 291–309. https://doi.org/10.1016/j.obhdp.2020.07.002",
                     "Tierney, W., Hardy III, J., Ebersole, C. R., Viganola, D., Clemente, E. G., Gordon, M., & others. (2021). A creative destruction approach to replication: Implicit work and sex morality across cultures. Journal of Experimental Social Psychology, 93, 104060. https://doi.org/10.1016/j.jesp.2020.104060",
-                    "Replication Markets. (n.d.). Replication Markets – Reliable research replicates…you can bet on it. Replication Markets. https://www.replicationmarkets.com/"
+                    "Replication Markets. (n.d.). Replication Markets – Reliable research replicates…you can bet on it. Replication Markets. https://replicationmarkets.org/"
                 ],
                 "drafted_by": [
                     "Ali H. Al-Hoorie"
@@ -8301,7 +8301,7 @@
                 "type": "glossary",
                 "title": "مراسم البحث [Research Protocol]",
                 "sort_key": "مراسم البحث [research protocol]",
-                "definition": "وثيقة مفصَّلة يتم إعدادها قبل إجراء الدِّراسة، وغالبًا ما تتم كتابتها كجزء من التَّقديم على الأخلاقيَّات وطلبات التَّمويل البحثي.  يجب أن تتضمَّن المراسم معلومات تتعلق بخلفية الدِّراسة، ومبرِّراتها، وأهدافها، بالإضافة إلى الفرضيَّات التي تعكس توقُّعات الباحثين.  ويجب أن تقدِّم المراسم أيضًا \"وصفة\" لإجراء الدِّراسة، بما في ذلك التَّفاصيل المنهجيَّة، وخطط واضحة للتَّحليل، ويجب  استخدام أدلة أفضل الممارسات لإنشاء مراسم الدِّراسة لمنهجيَّات، ومجالات محدَّدة. ومن الممكن مشاركة مراسم البحث علنًا لجذب متعاونين جدد أو تسهيل التَّعاون الفعّال عبر المختبرات (مثل https://www.protocols.io/). وفي المجالات الطبيَّة والتَّعليميَّة، غالبًا ما تكون المراسم نوعًا منفصلًا من المقالات المناسبة للنَّشر في المجلّات.  ويمكن للباحثين اختيار التَّسجيل المسبق عندما لا تكون مشاركة المراسم، أو النَّشر ممارسة شائعة.  **المصطلحات ذات الصِّلة**: المعامل المتعدِّدة ، التَّسجيل المسبق.",
+                "definition": "وثيقة مفصَّلة يتم إعدادها قبل إجراء الدِّراسة، وغالبًا ما تتم كتابتها كجزء من التَّقديم على الأخلاقيَّات وطلبات التَّمويل البحثي.  يجب أن تتضمَّن المراسم معلومات تتعلق بخلفية الدِّراسة، ومبرِّراتها، وأهدافها، بالإضافة إلى الفرضيَّات التي تعكس توقُّعات الباحثين.  ويجب أن تقدِّم المراسم أيضًا \"وصفة\" لإجراء الدِّراسة، بما في ذلك التَّفاصيل المنهجيَّة، وخطط واضحة للتَّحليل، ويجب  استخدام أدلة أفضل الممارسات لإنشاء مراسم الدِّراسة لمنهجيَّات، ومجالات محدَّدة. ومن الممكن مشاركة مراسم البحث علنًا لجذب متعاونين جدد أو تسهيل التَّعاون الفعّال عبر المختبرات (مثل [https://www.protocols.io/](https://www.protocols.io/)). وفي المجالات الطبيَّة والتَّعليميَّة، غالبًا ما تكون المراسم نوعًا منفصلًا من المقالات المناسبة للنَّشر في المجلّات.  ويمكن للباحثين اختيار التَّسجيل المسبق عندما لا تكون مشاركة المراسم، أو النَّشر ممارسة شائعة.  **المصطلحات ذات الصِّلة**: المعامل المتعدِّدة ، التَّسجيل المسبق.",
                 "related_terms": [
                     "Many Labs",
                     "Preregistration"
@@ -10070,7 +10070,7 @@
                 "type": "glossary",
                 "title": "منحنى زد [Z-Curve]",
                 "sort_key": "منحنى زد [z-curve]",
-                "definition": "حساب درجة زد هو نهج إحصائي يستخدم بشكل أساسي للحصول على \"معدل النَّسخ المقدر\" و \"معدل الاكتشاف المتوقَّع\" لمجموعة من الدِّراسات التي تم إعداد تقارير نتائجها. يتضمَّن حساب منحنى زد لمجموعة من الدِّراسات ذات الدِّلالة الإحصائيَّة تحويل القيم الاحتماليَّة التي أعدت سلفاً إلى درجات زد، وتثبيت نموذج خليط محدود لتوزيع درجات زد، وتقدير متوسط ​​القوة بناءً على نموذج الخليط. يمكن إجراء تحليل منحنى زد في لغة الآر من خلال حزمة مخصَّصة \\- [https://cran.r-project.org/web/packages/zcurve/index.html](https://cran.r-project.org/web/packages/zcurve/index.html).  **المصطلحات ذات الصِّلة:** المقاييس البديلة، نسبة درج الملفَّات، منحنى القيمة الاحتماليَّة، قرصنة القيمة الاحتماليَّة ، تكرار أو نسخ متماثل، القوة الإحصائيَّة.",
+                "definition": "حساب درجة زد هو نهج إحصائي يستخدم بشكل أساسي للحصول على \"معدل النَّسخ المقدر\" و \"معدل الاكتشاف المتوقَّع\" لمجموعة من الدِّراسات التي تم إعداد تقارير نتائجها. يتضمَّن حساب منحنى زد لمجموعة من الدِّراسات ذات الدِّلالة الإحصائيَّة تحويل القيم الاحتماليَّة التي أعدت سلفاً إلى درجات زد، وتثبيت نموذج خليط محدود لتوزيع درجات زد، وتقدير متوسط ​​القوة بناءً على نموذج الخليط. يمكن إجراء تحليل منحنى زد في لغة الآر من خلال حزمة مخصَّصة \\- [https://cran.r-project.org/web/packages/zcurve/index.html]([https://cran.r-project.org/web/packages/zcurve/index.html](https://cran.r-project.org/web/packages/zcurve/index.html)).  **المصطلحات ذات الصِّلة:** المقاييس البديلة، نسبة درج الملفَّات، منحنى القيمة الاحتماليَّة، قرصنة القيمة الاحتماليَّة ، تكرار أو نسخ متماثل، القوة الإحصائيَّة.",
                 "related_terms": [
                     "Altmetrics",
                     "File drawer ratio",
@@ -10184,7 +10184,7 @@
                 "type": "glossary",
                 "title": "Akademischer Einfluss [Academic Impact]",
                 "sort_key": "akademischer einfluss [academic impact]",
-                "definition": "Den Einfluss, den ein Forschungsergebnis (z. B. ein publizierter Artikel) auf unser Verstehen von wissenschaftliche Theorien, Methoden und Anwendungen hat, und wie weit es dieses Verstehen vorantreibt, sowohl innerhalb von Disziplinen als auch disziplinübergreifend. Einfluss kann auch den Grad meinen, zu dem ein Forschungsergebnis oder ein Forschungsprogramm Veränderungen außerhalb der Wissenschaft beeinflusst, z. B. soziale oder wirtschaftliche Auswirkung (cf. ESRC: [https://esrc.ukri.org/research/impact-toolkit/what-is-impact/](https://esrc.ukri.org/research/impact-toolkit/what-is-impact/)).",
+                "definition": "Den Einfluss, den ein Forschungsergebnis (z. B. ein publizierter Artikel) auf unser Verstehen von wissenschaftliche Theorien, Methoden und Anwendungen hat, und wie weit es dieses Verstehen vorantreibt, sowohl innerhalb von Disziplinen als auch disziplinübergreifend. Einfluss kann auch den Grad meinen, zu dem ein Forschungsergebnis oder ein Forschungsprogramm Veränderungen außerhalb der Wissenschaft beeinflusst, z. B. soziale oder wirtschaftliche Auswirkung (cf. ESRC: [https://www.ukri.org/councils/esrc/impact-toolkit-for-economic-and-social-sciences/defining-impact/](https://www.ukri.org/councils/esrc/impact-toolkit-for-economic-and-social-sciences/defining-impact/)).",
                 "related_terms": [
                     "Beneficiaries",
                     "DORA",
@@ -10192,7 +10192,7 @@
                     "REF"
                 ],
                 "references": [
-                    "Anon. (2021). What is impact?. Retrieved from https://esrc.ukri.org/research/impact-toolkit/what-is-impact/"
+                    "Anon. (2021). What is impact?. Retrieved from https://www.ukri.org/councils/esrc/impact-toolkit-for-economic-and-social-sciences/defining-impact/"
                 ],
                 "drafted_by": [
                     "Connor Keating"
@@ -12019,7 +12019,7 @@
                     "Filipe, A., Renedo, A., & Marston, C. (2017). The co-production of what? Knowledge, values, and social relations in health care. PLoS Biology, 15(5), e2001403. https://doi.org/10.1371/journal.pbio.2001403",
                     "Graham, I. D., McCutcheon, C., & Kothari, A. (2019). Exploring the frontiers of research co-production: the Integrated Knowledge Translation Research Network concept papers. Health Research Policy and Systems, 17, 88. https://doi.org/10.1186/s12961-019-0501-7",
                     "NIHR Guidance on Co-Producing a Research Project. (2021). https://www.learningforinvolvement.org.uk/?opportunity=nihr-guidance-on-co-producing-a-research-project",
-                    "Co-Production Collective. (n.d.). Our Approach. Co-Production Collective. https://www.coproductioncollective.co.uk/what-is-co-production/our-approach"
+                    "Co-Production Collective. (n.d.). Our Approach. Co-Production Collective. https://www.coproductioncollective.co.uk/championing-co-production/what-does-co-production-mean-to-us"
                 ],
                 "drafted_by": [
                     "Emma Norris"
@@ -12437,7 +12437,7 @@
                 "references": [
                     "Abele-Brehm, A. E., Gollwitzer, M., Steinberg, U., & Schönbrodt, F. D. (2019). Attitudes toward open science and public data sharing. Social Psychology, 50, 252–260. https://doi.org/10.1027/1864-9335/a000384",
                     "Gollwitzer, M., Abele-Brehm, A., Fiebach, C., Ramthun, R., Scheel, A. M., Schönbrodt, F. D., & Steinberg, U. (2020). Data Management and Data Sharing in Psychological Science: Revision of the DGPs Recommendations.",
-                    "for Data Sharing, S. C. (n.d.). What is data sharing? Retrieved 11 July 2021. https://eudatasharing.eu/what-data-sharing"
+                    "for Data Sharing, S. C. (n.d.). What is data sharing? Retrieved 11 July 2021. https://futurium.ec.europa.eu/en/support-centre-data-sharing/pages/about"
                 ],
                 "drafted_by": [
                     "Mahmoud Elsherif"
@@ -12565,7 +12565,7 @@
                 "type": "glossary",
                 "title": "digital object identifier [DOI (digital object identifier)]",
                 "sort_key": "digital object identifier [doi (digital object identifier)]",
-                "definition": "Digital Object Identifiers (DOI) sind alphanumerische Zeichenfolgen, die jeder beliebigen Einheit zugewiesen werden können, z. B. Veröffentlichungen (einschließlich Preprints), Materialien, Datensätze und Spielfilme \\- die Verwendung von DOIs ist nicht nur auf wissenschaftliches oder akademisches Material beschränkt. DOIs “provides a system for persistent and actionable identification and interoperable exchange of managed information on digital networks.” (dt. bieten ein System für die dauerhafte und umsetzbare Identifizierung und den interoperablen Austausch von verwalteten Informationen in digitalen Netzwerken; https://www.doi.org/doi-handbook/HTML/index.html). Es gibt viele verschiedene DOI-Registrierungsstellen, die DOIs betreiben, aber die beiden, auf die Forschende am ehesten stoßen, sind [Crossref](https://www.crossref.org/) und [Datacite](https://datacite.org/).",
+                "definition": "Digital Object Identifiers (DOI) sind alphanumerische Zeichenfolgen, die jeder beliebigen Einheit zugewiesen werden können, z. B. Veröffentlichungen (einschließlich Preprints), Materialien, Datensätze und Spielfilme \\- die Verwendung von DOIs ist nicht nur auf wissenschaftliches oder akademisches Material beschränkt. DOIs “provides a system for persistent and actionable identification and interoperable exchange of managed information on digital networks.” (dt. bieten ein System für die dauerhafte und umsetzbare Identifizierung und den interoperablen Austausch von verwalteten Informationen in digitalen Netzwerken; [https://www.doi.org/doi-handbook/HTML/index.html](https://www.doi.org/doi-handbook/HTML/index.html)). Es gibt viele verschiedene DOI-Registrierungsstellen, die DOIs betreiben, aber die beiden, auf die Forschende am ehesten stoßen, sind [Crossref](https://www.crossref.org/) und [Datacite](https://datacite.org/).",
                 "related_terms": [
                     "arXiv and BibTex",
                     "Crossref, Datacite, ISBN, ISO, ORCID",
@@ -12836,7 +12836,7 @@
                     "Academic Impact"
                 ],
                 "references": [
-                    "Economic, & Council, S. R. (n.d.). What is impact? Retrieved 8 July 2021. https://esrc.ukri.org/research/impact-toolkit/what-is-impact/"
+                    "Economic, & Council, S. R. (n.d.). What is impact? Retrieved 8 July 2021. https://www.ukri.org/councils/esrc/impact-toolkit-for-economic-and-social-sciences/defining-impact/"
                 ],
                 "drafted_by": [
                     "Adam Parker"
@@ -15437,7 +15437,7 @@
                 "type": "glossary",
                 "title": "OER [Open Educational Resources (OER) Commons]",
                 "sort_key": "oer [open educational resources (oer) commons]",
-                "definition": "OER Commons (OER steht für Open Educational Resources, aus dem Engl. offene Bildungsressourcen) ist eine frei zugängliche Online-Bibliothek, die es Lehrkräften ermöglicht, Bildungsressourcen zu erstellen, zu teilen und neu zu kombinieren. Das Ziel der OER-Bewegung ist es, kollaboratives Lehren und Lernen (https://www.oercommons.org/about) zu fördern und qualitativ hochwertige Bildungsressourcen bereitzustellen, die für jeden zugänglich sind.",
+                "definition": "OER Commons (OER steht für Open Educational Resources, aus dem Engl. offene Bildungsressourcen) ist eine frei zugängliche Online-Bibliothek, die es Lehrkräften ermöglicht, Bildungsressourcen zu erstellen, zu teilen und neu zu kombinieren. Das Ziel der OER-Bewegung ist es, kollaboratives Lehren und Lernen ([https://www.oercommons.org/about](https://www.oercommons.org/about)) zu fördern und qualitativ hochwertige Bildungsressourcen bereitzustellen, die für jeden zugänglich sind.",
                 "related_terms": [
                     "Equity",
                     "FORRT",
@@ -17598,7 +17598,7 @@
                     "Liu, Y., Gordon, M., Wang, J., Bishop, M., Chen, Y., Pfeiffer, T., Twardy, C., & Viganola, D. (2020). Replication Markets: Results, Lessons, Challenges and Opportunities in AI Replication. ArXiv:2005.04543 . http://arxiv.org/abs/2005.04543",
                     "Tierney, W., Hardy III, J. H., Ebersole, C. R., Leavitt, K., Viganola, D., Clemente, E. G., & others. (2020). Creative destruction in science. Organizational Behavior and Human Decision Processes, 161, 291–309. https://doi.org/10.1016/j.obhdp.2020.07.002",
                     "Tierney, W., Hardy III, J., Ebersole, C. R., Viganola, D., Clemente, E. G., Gordon, M., & others. (2021). A creative destruction approach to replication: Implicit work and sex morality across cultures. Journal of Experimental Social Psychology, 93, 104060. https://doi.org/10.1016/j.jesp.2020.104060",
-                    "Replication Markets. (n.d.). Replication Markets – Reliable research replicates…you can bet on it. Replication Markets. https://www.replicationmarkets.com/"
+                    "Replication Markets. (n.d.). Replication Markets – Reliable research replicates…you can bet on it. Replication Markets. https://replicationmarkets.org/"
                 ],
                 "drafted_by": [
                     "Ali H. Al-Hoorie"
@@ -17992,7 +17992,7 @@
                 "type": "glossary",
                 "title": "Forschungsprotokoll [Research Protocol]",
                 "sort_key": "forschungsprotokoll [research protocol]",
-                "definition": "Ein detailliertes Dokument, das vor der Durchführung einer Studie erstellt wird und häufig Teil von Ethik- und Drittmittelanträgen ist. Das Protokoll sollte Informationen über den Hintergrund, die Begründung und die Ziele der Studie sowie Hypothesen enthalten, die die Erwartungen der Forschenden widerspiegeln. Das Protokoll sollte auch ein \"Rezept\" für die Durchführung der Studie enthalten, einschließlich methodischer Details und klarer Analysepläne. Für bestimmte Methoden und Bereiche sollten Best-Practice-Leitlinien für die Erstellung eines Studienprotokolls verwendet werden. Es ist möglich, Forschungsprotokolle öffentlich zugänglich zu machen, um neue Kooperationspartner:innen zu gewinnen oder die effiziente Zusammenarbeit zwischen Gruppen zu erleichtern (z. B. https://www.protocols.io/). In der Medizin und im Bildungsbereich sind Protokolle oft ein eigener Artikeltyp, der sich für die Veröffentlichung in Fachzeitschriften eignet. Wo die gemeinsame Nutzung oder Veröffentlichung von Protokollen nicht üblich ist, können sich Forschende für eine Präregistrierung entscheiden.",
+                "definition": "Ein detailliertes Dokument, das vor der Durchführung einer Studie erstellt wird und häufig Teil von Ethik- und Drittmittelanträgen ist. Das Protokoll sollte Informationen über den Hintergrund, die Begründung und die Ziele der Studie sowie Hypothesen enthalten, die die Erwartungen der Forschenden widerspiegeln. Das Protokoll sollte auch ein \"Rezept\" für die Durchführung der Studie enthalten, einschließlich methodischer Details und klarer Analysepläne. Für bestimmte Methoden und Bereiche sollten Best-Practice-Leitlinien für die Erstellung eines Studienprotokolls verwendet werden. Es ist möglich, Forschungsprotokolle öffentlich zugänglich zu machen, um neue Kooperationspartner:innen zu gewinnen oder die effiziente Zusammenarbeit zwischen Gruppen zu erleichtern (z. B. [https://www.protocols.io/](https://www.protocols.io/)). In der Medizin und im Bildungsbereich sind Protokolle oft ein eigener Artikeltyp, der sich für die Veröffentlichung in Fachzeitschriften eignet. Wo die gemeinsame Nutzung oder Veröffentlichung von Protokollen nicht üblich ist, können sich Forschende für eine Präregistrierung entscheiden.",
                 "related_terms": [
                     "Many Labs",
                     "Preregistration"
@@ -18569,7 +18569,7 @@
                 "type": "glossary",
                 "title": "SORTEE [Society for Open, Reliable, and Transparent Ecology and Evolutionary biology (SORTEE)]",
                 "sort_key": "sortee [society for open, reliable, and transparent ecology and evolutionary biology (sortee)]",
-                "definition": "SORTEE (https://www.sortee.org/) ist eine internationale Gesellschaft mit dem Ziel, die Transparenz und Zuverlässigkeit von Forschungsergebnissen in den Bereichen Ökologie, Evolution und verwandten Disziplinen durch kulturelle und institutionelle Veränderungen zu verbessern. SORTEE wurde im Dezember 2020 gegründet und richtet sich an alle, die an der Verbesserung der Forschung in diesen Disziplinen interessiert sind, unabhängig von ihrer Erfahrung. Die Gesellschaft ist in Bezug auf Umfang, Mitgliedschaft und Ziele international. SORTEE umfasst über 600 Mitglieder (Stand Mai, 2021).",
+                "definition": "SORTEE ([https://www.sortee.org/](https://www.sortee.org/)) ist eine internationale Gesellschaft mit dem Ziel, die Transparenz und Zuverlässigkeit von Forschungsergebnissen in den Bereichen Ökologie, Evolution und verwandten Disziplinen durch kulturelle und institutionelle Veränderungen zu verbessern. SORTEE wurde im Dezember 2020 gegründet und richtet sich an alle, die an der Verbesserung der Forschung in diesen Disziplinen interessiert sind, unabhängig von ihrer Erfahrung. Die Gesellschaft ist in Bezug auf Umfang, Mitgliedschaft und Ziele international. SORTEE umfasst über 600 Mitglieder (Stand Mai, 2021).",
                 "related_terms": [
                     "Society for the Improvement of Psychological Science (SIPS)"
                 ],
@@ -19683,7 +19683,7 @@
                 "type": "glossary",
                 "title": "Z-Kurve [Z-Curve]",
                 "sort_key": "z-kurve [z-curve]",
-                "definition": "Die Berechnung einer z-Kurve ist ein statistischer Ansatz, der hauptsächlich verwendet wird, um die \"geschätzte Replikationsrate\" (Estimated Replication Rate, ERR) und die \"erwartete Entdeckungsrate\" (Expected Discovery Rate, EDR) für eine Reihe von berichteten Studien zu ermitteln. Die Berechnung einer *z*\\-Kurve für eine Sammlung statistisch signifikanter Studien beinhaltet die Umwandlung der berichteten *p*\\-Werte in *z*\\-Werte, die Anpassung eines Finite Mixture Modell an die Verteilung der *z*\\-Werte und die Schätzung der mittleren Teststärke (Power) auf der Grundlage des Modells. Die *z*\\-Kurven-Analyse kann in R mit einem speziellen Paket durchgeführt werden \\- [https://cran.r-project.org/web/packages/zcurve/index.html](https://cran.r-project.org/web/packages/zcurve/index.html).",
+                "definition": "Die Berechnung einer z-Kurve ist ein statistischer Ansatz, der hauptsächlich verwendet wird, um die \"geschätzte Replikationsrate\" (Estimated Replication Rate, ERR) und die \"erwartete Entdeckungsrate\" (Expected Discovery Rate, EDR) für eine Reihe von berichteten Studien zu ermitteln. Die Berechnung einer *z*\\-Kurve für eine Sammlung statistisch signifikanter Studien beinhaltet die Umwandlung der berichteten *p*\\-Werte in *z*\\-Werte, die Anpassung eines Finite Mixture Modell an die Verteilung der *z*\\-Werte und die Schätzung der mittleren Teststärke (Power) auf der Grundlage des Modells. Die *z*\\-Kurven-Analyse kann in R mit einem speziellen Paket durchgeführt werden \\- [https://cran.r-project.org/web/packages/zcurve/index.html]([https://cran.r-project.org/web/packages/zcurve/index.html](https://cran.r-project.org/web/packages/zcurve/index.html)).",
                 "related_terms": [
                     "Altmetrics",
                     "File drawer ratio",
@@ -19788,7 +19788,7 @@
                 "type": "glossary",
                 "title": "Academic Impact",
                 "sort_key": "academic impact",
-                "definition": "The contribution that a research output (e.g., published manuscript) makes in shifting understanding and advancing scientific theory, method, and application, across and within disciplines. Impact can also refer to the degree to which an output or research programme influences change outside of academia, e.g. societal and economic impact (cf. ESRC: https://esrc.ukri.org/research/impact-toolkit/what-is-impact/).",
+                "definition": "The contribution that a research output (e.g., published manuscript) makes in shifting understanding and advancing scientific theory, method, and application, across and within disciplines. Impact can also refer to the degree to which an output or research programme influences change outside of academia, e.g. societal and economic impact (cf. ESRC: https://www.ukri.org/councils/esrc/impact-toolkit-for-economic-and-social-sciences/defining-impact/).",
                 "related_terms": [
                     "Beneficiaries",
                     "DORA",
@@ -19796,7 +19796,7 @@
                     "REF"
                 ],
                 "references": [
-                    "Anon. (2021). What is impact?. Retrieved from https://esrc.ukri.org/research/impact-toolkit/what-is-impact/"
+                    "Anon. (2021). What is impact?. Retrieved from https://www.ukri.org/councils/esrc/impact-toolkit-for-economic-and-social-sciences/defining-impact/"
                 ],
                 "drafted_by": [
                     "Connor Keating"
@@ -21393,7 +21393,7 @@
                     "Filipe, A., Renedo, A., & Marston, C. (2017). The co-production of what? Knowledge, values, and social relations in health care. PLoS Biology, 15(5), e2001403. https://doi.org/10.1371/journal.pbio.2001403",
                     "Graham, I. D., McCutcheon, C., & Kothari, A. (2019). Exploring the frontiers of research co-production: the Integrated Knowledge Translation Research Network concept papers. Health Research Policy and Systems, 17, 88. https://doi.org/10.1186/s12961-019-0501-7",
                     "NIHR Guidance on Co-Producing a Research Project. (2021). https://www.learningforinvolvement.org.uk/?opportunity=nihr-guidance-on-co-producing-a-research-project",
-                    "Co-Production Collective. (n.d.). Our Approach. Co-Production Collective. https://www.coproductioncollective.co.uk/what-is-co-production/our-approach"
+                    "Co-Production Collective. (n.d.). Our Approach. Co-Production Collective. https://www.coproductioncollective.co.uk/championing-co-production/what-does-co-production-mean-to-us"
                 ],
                 "drafted_by": [
                     "Emma Norris"
@@ -21767,7 +21767,7 @@
                 "references": [
                     "Abele-Brehm, A. E., Gollwitzer, M., Steinberg, U., & Schönbrodt, F. D. (2019). Attitudes toward open science and public data sharing. Social Psychology, 50, 252–260. https://doi.org/10.1027/1864-9335/a000384",
                     "Gollwitzer, M., Abele-Brehm, A., Fiebach, C., Ramthun, R., Scheel, A. M., Schönbrodt, F. D., & Steinberg, U. (2020). Data Management and Data Sharing in Psychological Science: Revision of the DGPs Recommendations.",
-                    "for Data Sharing, S. C. (n.d.). What is data sharing? Retrieved 11 July 2021. https://eudatasharing.eu/what-data-sharing"
+                    "for Data Sharing, S. C. (n.d.). What is data sharing? Retrieved 11 July 2021. https://futurium.ec.europa.eu/en/support-centre-data-sharing/pages/about"
                 ],
                 "drafted_by": [
                     "Mahmoud Elsherif"
@@ -22122,7 +22122,7 @@
                     "Academic Impact"
                 ],
                 "references": [
-                    "Economic, & Council, S. R. (n.d.). What is impact? Retrieved 8 July 2021. https://esrc.ukri.org/research/impact-toolkit/what-is-impact/"
+                    "Economic, & Council, S. R. (n.d.). What is impact? Retrieved 8 July 2021. https://www.ukri.org/councils/esrc/impact-toolkit-for-economic-and-social-sciences/defining-impact/"
                 ],
                 "drafted_by": [
                     "Adam Parker"
@@ -24435,7 +24435,7 @@
                 "type": "glossary",
                 "title": "Open Educational Resources (OER) Commons",
                 "sort_key": "open educational resources (oer) commons",
-                "definition": "OER Commons (with OER standing for open educational resources) is a freely accessible online library allowing teachers to create, share and remix educational resources. The goal of the OER movement is to stimulate “collaborative teaching and learning” ([https://www.oercommons.org/about](https://www.oercommons.org/about)) and provide high-quality educational resources that are accessible for everyone.",
+                "definition": "OER Commons (with OER standing for open educational resources) is a freely accessible online library allowing teachers to create, share and remix educational resources. The goal of the OER movement is to stimulate “collaborative teaching and learning” ([https://www.oercommons.org/about]([https://www.oercommons.org/about](https://www.oercommons.org/about))) and provide high-quality educational resources that are accessible for everyone.",
                 "related_terms": [
                     "Equity",
                     "FORRT",
@@ -26365,7 +26365,7 @@
                     "Liu, Y., Gordon, M., Wang, J., Bishop, M., Chen, Y., Pfeiffer, T., Twardy, C., & Viganola, D. (2020). Replication Markets: Results, Lessons, Challenges and Opportunities in AI Replication. ArXiv:2005.04543 . http://arxiv.org/abs/2005.04543",
                     "Tierney, W., Hardy III, J. H., Ebersole, C. R., Leavitt, K., Viganola, D., Clemente, E. G., & others. (2020). Creative destruction in science. Organizational Behavior and Human Decision Processes, 161, 291–309. https://doi.org/10.1016/j.obhdp.2020.07.002",
                     "Tierney, W., Hardy III, J., Ebersole, C. R., Viganola, D., Clemente, E. G., Gordon, M., & others. (2021). A creative destruction approach to replication: Implicit work and sex morality across cultures. Journal of Experimental Social Psychology, 93, 104060. https://doi.org/10.1016/j.jesp.2020.104060",
-                    "Replication Markets. (n.d.). Replication Markets – Reliable research replicates…you can bet on it. Replication Markets. https://www.replicationmarkets.com/"
+                    "Replication Markets. (n.d.). Replication Markets – Reliable research replicates…you can bet on it. Replication Markets. https://replicationmarkets.org/"
                 ],
                 "drafted_by": [
                     "Ali H. Al-Hoorie"
@@ -28297,7 +28297,7 @@
                 "type": "glossary",
                 "title": "Akademik Etki [Academic Impact]",
                 "sort_key": "akademik etki [academic impact]",
-                "definition": "Bir araştırma çıktısının (örneğin, yayımlanmış bir makale), disiplinler arasında ve disiplin içinde, bilimsel teori, yöntem ve uygulamanın anlaşılmasını değiştirme ve geliştirme konusundaki katkısıdır. Etki, ayrıca bir çıktı veya araştırma programının akademi dışındaki toplumsal ve ekonomik etki gibi değişimi ne ölçüde etkilediğini de ifade edebilir.(krş. ESRC: https://www.ukri.org/councils/esrc/impact-toolkit-for-economic-and-social-sciences/).",
+                "definition": "Bir araştırma çıktısının (örneğin, yayımlanmış bir makale), disiplinler arasında ve disiplin içinde, bilimsel teori, yöntem ve uygulamanın anlaşılmasını değiştirme ve geliştirme konusundaki katkısıdır. Etki, ayrıca bir çıktı veya araştırma programının akademi dışındaki toplumsal ve ekonomik etki gibi değişimi ne ölçüde etkilediğini de ifade edebilir.(krş. ESRC: [https://www.ukri.org/councils/esrc/impact-toolkit-for-economic-and-social-sciences/](https://www.ukri.org/councils/esrc/impact-toolkit-for-economic-and-social-sciences/)).",
                 "related_terms": [
                     "Beneficiaries",
                     "DORA",
@@ -28305,7 +28305,7 @@
                     "REF"
                 ],
                 "references": [
-                    "Anon. (2021). What is impact?. Retrieved from https://esrc.ukri.org/research/impact-toolkit/what-is-impact/"
+                    "Anon. (2021). What is impact?. Retrieved from https://www.ukri.org/councils/esrc/impact-toolkit-for-economic-and-social-sciences/defining-impact/"
                 ],
                 "drafted_by": [
                     "Connor Keating"
@@ -30046,7 +30046,7 @@
                     "Filipe, A., Renedo, A., & Marston, C. (2017). The co-production of what? Knowledge, values, and social relations in health care. PLoS Biology, 15(5), e2001403. https://doi.org/10.1371/journal.pbio.2001403",
                     "Graham, I. D., McCutcheon, C., & Kothari, A. (2019). Exploring the frontiers of research co-production: the Integrated Knowledge Translation Research Network concept papers. Health Research Policy and Systems, 17, 88. https://doi.org/10.1186/s12961-019-0501-7",
                     "NIHR Guidance on Co-Producing a Research Project. (2021). https://www.learningforinvolvement.org.uk/?opportunity=nihr-guidance-on-co-producing-a-research-project",
-                    "Co-Production Collective. (n.d.). Our Approach. Co-Production Collective. https://www.coproductioncollective.co.uk/what-is-co-production/our-approach"
+                    "Co-Production Collective. (n.d.). Our Approach. Co-Production Collective. https://www.coproductioncollective.co.uk/championing-co-production/what-does-co-production-mean-to-us"
                 ],
                 "drafted_by": [
                     "Emma Norris"
@@ -30453,7 +30453,7 @@
                 "references": [
                     "Abele-Brehm, A. E., Gollwitzer, M., Steinberg, U., & Schönbrodt, F. D. (2019). Attitudes toward open science and public data sharing. Social Psychology, 50, 252–260. https://doi.org/10.1027/1864-9335/a000384",
                     "Gollwitzer, M., Abele-Brehm, A., Fiebach, C., Ramthun, R., Scheel, A. M., Schönbrodt, F. D., & Steinberg, U. (2020). Data Management and Data Sharing in Psychological Science: Revision of the DGPs Recommendations.",
-                    "for Data Sharing, S. C. (n.d.). What is data sharing? Retrieved 11 July 2021. https://eudatasharing.eu/what-data-sharing"
+                    "for Data Sharing, S. C. (n.d.). What is data sharing? Retrieved 11 July 2021. https://futurium.ec.europa.eu/en/support-centre-data-sharing/pages/about"
                 ],
                 "drafted_by": [
                     "Mahmoud Elsherif"
@@ -30841,7 +30841,7 @@
                     "Academic Impact"
                 ],
                 "references": [
-                    "Economic, & Council, S. R. (n.d.). What is impact? Retrieved 8 July 2021. https://esrc.ukri.org/research/impact-toolkit/what-is-impact/"
+                    "Economic, & Council, S. R. (n.d.). What is impact? Retrieved 8 July 2021. https://www.ukri.org/councils/esrc/impact-toolkit-for-economic-and-social-sciences/defining-impact/"
                 ],
                 "drafted_by": [
                     "Adam Parker"
@@ -33220,7 +33220,7 @@
                 "type": "glossary",
                 "title": "Açık Veri [Open Data]",
                 "sort_key": "aczizk veri [open data]",
-                "definition": "Açık veri, başkaları tarafından kısıtlama olmaksızın serbestçe ve kolayca erişilebilir olan verileri ifade eder, \"Açık veri ve içerik herkes tarafından herhangi bir amaç için serbestçe kullanılabilir, değiştirilebilir ve paylaşılabilir\" ( https://opendefinition.org/). Açık veriler, atıf yapma ve paylaşma gereksinimine tabidir, bu nedenle uygun Açık Lisansları dikkate almak önemlidir. Hassas veya zamana duyarlı veri setleri, veri bütünlüğünün korunmasını sağlamak için ambargo altına alınabilir veya daha seçici erişim seçenekleriyle paylaşılabilir.",
+                "definition": "Açık veri, başkaları tarafından kısıtlama olmaksızın serbestçe ve kolayca erişilebilir olan verileri ifade eder, \"Açık veri ve içerik herkes tarafından herhangi bir amaç için serbestçe kullanılabilir, değiştirilebilir ve paylaşılabilir\" ( [https://opendefinition.org/](https://opendefinition.org/)). Açık veriler, atıf yapma ve paylaşma gereksinimine tabidir, bu nedenle uygun Açık Lisansları dikkate almak önemlidir. Hassas veya zamana duyarlı veri setleri, veri bütünlüğünün korunmasını sağlamak için ambargo altına alınabilir veya daha seçici erişim seçenekleriyle paylaşılabilir.",
                 "related_terms": [
                     "Badges (Open Science)",
                     "Data availability",
@@ -33263,7 +33263,7 @@
                 "type": "glossary",
                 "title": "Açık Eğitim Kaynakları Platformu [Open Educational Resources (OER) Commons]",
                 "sort_key": "aczizk egzitim kaynaklariz platformu [open educational resources (oer) commons]",
-                "definition": "Açık Eğitim Kaynakları Platformu, öğretmenlerin eğitim kaynakları oluşturmasına, paylaşmasına ve yeniden düzenlemesine olanak tanıyan, serbestçe erişilebilen bir çevrim içi kütüphanedir. Açık Eğitim Kaynakları hareketinin amacı, \"iş birliğine dayalı öğretme ve öğrenme\"yi (https://www.oercommons.org/about) teşvik etmek ve herkesin erişebileceği yüksek kaliteli eğitim kaynakları sağlamaktır.",
+                "definition": "Açık Eğitim Kaynakları Platformu, öğretmenlerin eğitim kaynakları oluşturmasına, paylaşmasına ve yeniden düzenlemesine olanak tanıyan, serbestçe erişilebilen bir çevrim içi kütüphanedir. Açık Eğitim Kaynakları hareketinin amacı, \"iş birliğine dayalı öğretme ve öğrenme\"yi ([https://www.oercommons.org/about](https://www.oercommons.org/about)) teşvik etmek ve herkesin erişebileceği yüksek kaliteli eğitim kaynakları sağlamaktır.",
                 "related_terms": [
                     "Equity",
                     "FORRT",
@@ -34507,7 +34507,7 @@
                 "type": "glossary",
                 "title": "Ön-kayıt Taahhüdü [Preregistration Pledge]",
                 "sort_key": "ozn-kayizt taahhuzduz [preregistration pledge]",
-                "definition": "‘Açık ve yeniden üretilebilir araştırma uygulamalarını destekleyen kolektif bir eylem’ kapsamında, araştırmacılardan önümüzdeki iki yıl içinde en az bir çalışmayı ön kayıt altına alacaklarına dair söz vermelerini isteyen ön-kayıt taahhüdü, Free Our Knowledge projesi ile başlatılmış bir girişimdir (https://freeourknowledge.org/about/). Proje, erken kariyer araştırmacıları (EKA) tarafından başlatılmış tabandan gelen bir harekettir.",
+                "definition": "‘Açık ve yeniden üretilebilir araştırma uygulamalarını destekleyen kolektif bir eylem’ kapsamında, araştırmacılardan önümüzdeki iki yıl içinde en az bir çalışmayı ön kayıt altına alacaklarına dair söz vermelerini isteyen ön-kayıt taahhüdü, Free Our Knowledge projesi ile başlatılmış bir girişimdir ([https://freeourknowledge.org/about/](https://freeourknowledge.org/about/)). Proje, erken kariyer araştırmacıları (EKA) tarafından başlatılmış tabandan gelen bir harekettir.",
                 "related_terms": [
                     "Preregistration"
                 ],
@@ -35714,7 +35714,7 @@
                 "type": "glossary",
                 "title": "Araştırma Protokolü [Research Protocol]",
                 "sort_key": "arasztizrma protokoluz [research protocol]",
-                "definition": "Araştırma protokolü, bir araştırma yürütülmeden önce hazırlanan ayrıntılı bir belgedir ve genellikle etik kurul ya da fon başvuruları kapsamında yazılır. Protokol, araştırmanın arka planına, gerekçesine ve amaçlarına dair bilgilerin yanı sıra, araştırmacıların beklentilerini yansıtan hipotezleri de içermelidir. Protokolde ayrıca, yöntemsel ayrıntıları ve açık bir analiz planını da içeren araştırmanın nasıl yürütüleceğine dair bir ‘tarif’ yer almalıdır. Protokol hazırlarken, kullanılan yönteme ve alana özgü en iyi uygulama kılavuzları esas alınmalıdır. Araştırma protokolleri, yeni iş birlikleri çekmek veya araştırma laboratuvarları arası etkili iş birliğini kolaylaştırmak amacıyla herkese açık biçimde paylaşılabilir (örn., https://www.protocols.io/). Tıp ve eğitim gibi alanlarda, protokoller genellikle dergilerde yayınlanabilir ayrı bir makale türü olarak kabul edilir. Protokol paylaşımının veya yayımlanmasının yaygın bir uygulama olmadığı durumlarda ise, araştırmacılar ön-kayıt seçeneğini tercih edebilir.",
+                "definition": "Araştırma protokolü, bir araştırma yürütülmeden önce hazırlanan ayrıntılı bir belgedir ve genellikle etik kurul ya da fon başvuruları kapsamında yazılır. Protokol, araştırmanın arka planına, gerekçesine ve amaçlarına dair bilgilerin yanı sıra, araştırmacıların beklentilerini yansıtan hipotezleri de içermelidir. Protokolde ayrıca, yöntemsel ayrıntıları ve açık bir analiz planını da içeren araştırmanın nasıl yürütüleceğine dair bir ‘tarif’ yer almalıdır. Protokol hazırlarken, kullanılan yönteme ve alana özgü en iyi uygulama kılavuzları esas alınmalıdır. Araştırma protokolleri, yeni iş birlikleri çekmek veya araştırma laboratuvarları arası etkili iş birliğini kolaylaştırmak amacıyla herkese açık biçimde paylaşılabilir (örn., [https://www.protocols.io/](https://www.protocols.io/)). Tıp ve eğitim gibi alanlarda, protokoller genellikle dergilerde yayınlanabilir ayrı bir makale türü olarak kabul edilir. Protokol paylaşımının veya yayımlanmasının yaygın bir uygulama olmadığı durumlarda ise, araştırmacılar ön-kayıt seçeneğini tercih edebilir.",
                 "related_terms": [
                     "Many Labs",
                     "Preregistration"
@@ -36204,7 +36204,7 @@
                 "type": "glossary",
                 "title": "Açık, Güvenilir ve Şeffaf Ekoloji ve Evrimsel Biyoloji Derneği [Society for Open, Reliable, and Transparent Ecology and Evolutionary biology (SORTEE)]",
                 "sort_key": "aczizk, guzvenilir ve szeffaf ekoloji ve evrimsel biyoloji dernegzi [society for open, reliable, and transparent ecology and evolutionary biology (sortee)]",
-                "definition": "SORTEE (https://www.sortee.org/), ekoloji, evrim ve ilgili disiplinlerde kültürel ve kurumsal değişimler yoluyla araştırma sonuçlarının şeffaflığını ve güvenilirliğini artırmayı hedefleyen uluslararası bir dernektir. Aralık 2020’de, deneyim düzeyine bakılmaksızın, bu disiplinlerdeki araştırmaları iyileştirmekle ilgilenen herkesin katılımına açık şekilde kurulmuştur. Dernek, kapsamı, üyelik sistemi ve hedefleri bakımından uluslararası niteliktedir. Mayıs 2021 itibarıyla SORTEE’nin 600’den fazla üyesi bulunmaktadır.",
+                "definition": "SORTEE ([https://www.sortee.org/](https://www.sortee.org/)), ekoloji, evrim ve ilgili disiplinlerde kültürel ve kurumsal değişimler yoluyla araştırma sonuçlarının şeffaflığını ve güvenilirliğini artırmayı hedefleyen uluslararası bir dernektir. Aralık 2020’de, deneyim düzeyine bakılmaksızın, bu disiplinlerdeki araştırmaları iyileştirmekle ilgilenen herkesin katılımına açık şekilde kurulmuştur. Dernek, kapsamı, üyelik sistemi ve hedefleri bakımından uluslararası niteliktedir. Mayıs 2021 itibarıyla SORTEE’nin 600’den fazla üyesi bulunmaktadır.",
                 "related_terms": [
                     "Society for the Improvement of Psychological Science (SIPS)"
                 ],
@@ -37263,7 +37263,7 @@
                 "type": "glossary",
                 "title": "Z-Eğrisi [Z-Curve]",
                 "sort_key": "z-egzrisi [z-curve]",
-                "definition": "Z-skoru hesaplama, özellikle sunulan çalışmaların ‘Tahmini Tekrar Edilebilirlik Oranı’ (ERR; Estimated Replication Rate) ve ‘Beklenen Keşif Oranı’ (EDR; Expected Discovery Rate) değerlerini elde etmek için kullanılan istatistiksel bir yaklaşımdır. İstatistiksel olarak anlamlı bulunan çalışmalar için z-eğrisi hesaplama süreci, bildirilen p-değerlerinin z-skorlarına dönüştürülmesini, z-skorlarının dağılımına sonlu karışımlı model (finite mixture model) uygulanmasını ve bu karışımlı modele dayanarak ortalama gücün tahmin edilmesini içerir. Z-eğrisi analizi, R üzerinde özel bir paket aracılığıyla gerçekleştirilebilir (https://cran.r-project.org/web/packages/zcurve/index.html).",
+                "definition": "Z-skoru hesaplama, özellikle sunulan çalışmaların ‘Tahmini Tekrar Edilebilirlik Oranı’ (ERR; Estimated Replication Rate) ve ‘Beklenen Keşif Oranı’ (EDR; Expected Discovery Rate) değerlerini elde etmek için kullanılan istatistiksel bir yaklaşımdır. İstatistiksel olarak anlamlı bulunan çalışmalar için z-eğrisi hesaplama süreci, bildirilen p-değerlerinin z-skorlarına dönüştürülmesini, z-skorlarının dağılımına sonlu karışımlı model (finite mixture model) uygulanmasını ve bu karışımlı modele dayanarak ortalama gücün tahmin edilmesini içerir. Z-eğrisi analizi, R üzerinde özel bir paket aracılığıyla gerçekleştirilebilir ([https://cran.r-project.org/web/packages/zcurve/index.html](https://cran.r-project.org/web/packages/zcurve/index.html)).",
                 "related_terms": [
                     "Altmetrics",
                     "File drawer ratio",
