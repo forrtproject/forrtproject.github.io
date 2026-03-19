@@ -2,7 +2,7 @@
     "type": "glossary",
     "title": "Z-Eğrisi [Z-Curve]",
     "sort_key": "z-egzrisi [z-curve]",
-    "definition": "Z-skoru hesaplama, özellikle sunulan çalışmaların ‘Tahmini Tekrar Edilebilirlik Oranı’ (ERR; Estimated Replication Rate) ve ‘Beklenen Keşif Oranı’ (EDR; Expected Discovery Rate) değerlerini elde etmek için kullanılan istatistiksel bir yaklaşımdır. İstatistiksel olarak anlamlı bulunan çalışmalar için z-eğrisi hesaplama süreci, bildirilen p-değerlerinin z-skorlarına dönüştürülmesini, z-skorlarının dağılımına sonlu karışımlı model (finite mixture model) uygulanmasını ve bu karışımlı modele dayanarak ortalama gücün tahmin edilmesini içerir. Z-eğrisi analizi, R üzerinde özel bir paket aracılığıyla gerçekleştirilebilir (https://cran.r-project.org/web/packages/zcurve/index.html).",
+    "definition": "Z-skoru hesaplama, özellikle sunulan çalışmaların ‘Tahmini Tekrar Edilebilirlik Oranı’ (ERR; Estimated Replication Rate) ve ‘Beklenen Keşif Oranı’ (EDR; Expected Discovery Rate) değerlerini elde etmek için kullanılan istatistiksel bir yaklaşımdır. İstatistiksel olarak anlamlı bulunan çalışmalar için z-eğrisi hesaplama süreci, bildirilen p-değerlerinin z-skorlarına dönüştürülmesini, z-skorlarının dağılımına sonlu karışımlı model (finite mixture model) uygulanmasını ve bu karışımlı modele dayanarak ortalama gücün tahmin edilmesini içerir. Z-eğrisi analizi, R üzerinde özel bir paket aracılığıyla gerçekleştirilebilir ([https://cran.r-project.org/web/packages/zcurve/index.html](https://cran.r-project.org/web/packages/zcurve/index.html)).",
     "related_terms": [
         "Altmetrics",
         "File drawer ratio",
