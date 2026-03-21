@@ -10,7 +10,7 @@
     "references": [
         "Abele-Brehm, A. E., Gollwitzer, M., Steinberg, U., & Schönbrodt, F. D. (2019). Attitudes toward open science and public data sharing. Social Psychology, 50, 252–260. https://doi.org/10.1027/1864-9335/a000384",
         "Gollwitzer, M., Abele-Brehm, A., Fiebach, C., Ramthun, R., Scheel, A. M., Schönbrodt, F. D., & Steinberg, U. (2020). Data Management and Data Sharing in Psychological Science: Revision of the DGPs Recommendations.",
-        "for Data Sharing, S. C. (n.d.). What is data sharing? Retrieved 11 July 2021. https://eudatasharing.eu/what-data-sharing"
+        "for Data Sharing, S. C. (n.d.). What is data sharing? Retrieved 11 July 2021. https://futurium.ec.europa.eu/en/support-centre-data-sharing/pages/about"
     ],
     "drafted_by": [
         "Mahmoud Elsherif"

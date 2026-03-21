@@ -221,7 +221,7 @@ jobs:
       contents: read
       actions: read  # Needed for artifact access
     env:
-      HUGO_VERSION: "0.123.3"
+      HUGO_VERSION: "0.158.0"
       HUGO_EXTENDED: true
     steps:
       - name: Checkout repository

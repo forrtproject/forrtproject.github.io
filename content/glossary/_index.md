@@ -132,7 +132,7 @@ There are two outputs for this project. First, the entire glossary will appear o
 
 5. Contributions and Authorship
 
-In this project we will use the CREDIT taxonomy ([https://casrai.org/credit/](https://casrai.org/credit/)) in this prepared [contributors spreadsheet](https://docs.google.com/spreadsheets/d/1zvgAHWfTq6cbj3wMAr46zFU0w5JdV6796sM8FsO13y0). Please add your details (including ORCID) and contributions as you make them. This will facilitate the development of this project, allow us to easily communicate with all contributors, and ensure that all contributions are recognized. 
+In this project we will use the CREDIT taxonomy ([https://credit.niso.org/](https://credit.niso.org/)) in this prepared [contributors spreadsheet](https://docs.google.com/spreadsheets/d/1zvgAHWfTq6cbj3wMAr46zFU0w5JdV6796sM8FsO13y0). Please add your details (including ORCID) and contributions as you make them. This will facilitate the development of this project, allow us to easily communicate with all contributors, and ensure that all contributions are recognized. 
 
 Every few days, one of the team will review this document to finalize definitions that have had sufficient input. 
 
@@ -164,11 +164,11 @@ We invite several specific contributions: _original draft preparation_, and _rev
 
 **Term: CRediT**
 
-**Definition:**  The Contributor Roles Taxonomy (CRediT; https://casrai.org/credit/) is a high-level taxonomy, including 14 roles, that can be used to indicate the roles typically adopted by contributors to scientific scholarly output. The roles describe each contributor’s specific contribution to the scholarly output. They can be assigned multiple times to different authors and one author can also be assigned multiple roles. CRediT includes the following roles: Conceptualization, Data curation, Formal Analysis, Funding acquisition, Investigation, Methodology, Project administration, Resources, Software, Supervision, Validation, Visualization, Writing – original draft, Writing – review & editing. A description of the different roles can be found in the work of Brand et al., (2015).  
+**Definition:**  The Contributor Roles Taxonomy (CRediT; https://credit.niso.org/) is a high-level taxonomy, including 14 roles, that can be used to indicate the roles typically adopted by contributors to scientific scholarly output. The roles describe each contributor’s specific contribution to the scholarly output. They can be assigned multiple times to different authors and one author can also be assigned multiple roles. CRediT includes the following roles: Conceptualization, Data curation, Formal Analysis, Funding acquisition, Investigation, Methodology, Project administration, Resources, Software, Supervision, Validation, Visualization, Writing – original draft, Writing – review & editing. A description of the different roles can be found in the work of Brand et al., (2015).  
 **Related terms:** Authorship  
 **Alternative definition:** (if applicable)  
 **Related terms to alternative definition:** (if applicable)  
-**Reference(s):** Brand et al. (2015); Holcombe (2019); https://casrai.org/credit/  
+**Reference(s):** Brand et al. (2015); Holcombe (2019); https://credit.niso.org/  
 **Drafted by:** Sam Parsons  
 **Reviewed (or Edited) by:** Myriam A. Baum; Matt Jaquiery; Connor Keating; Yuki Yamada
 
