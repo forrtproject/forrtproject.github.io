@@ -159,6 +159,57 @@
             const clusterTitle = section.querySelector('h1, .home-section-title');
             const clusterName = clusterTitle ? clusterTitle.textContent.trim() : 'Unknown Cluster';
 
+            // Search cluster title
+            if (clusterName.toLowerCase().includes(queryLower)) {
+                var titleRegex = new RegExp('(' + escapeRegExp(query) + ')', 'gi');
+                results.push({
+                    cluster: clusterName,
+                    tab: 'Title',
+                    tabId: null,
+                    snippet: escapeHtml(clusterName).replace(titleRegex, '<mark>$1</mark>'),
+                    section: section,
+                    tabPane: null,
+                    tabLink: null,
+                    element: clusterTitle || section
+                });
+            }
+
+            // Search description content (blocks outside tab panes)
+            var allSectionBlocks = section.querySelectorAll('li, p, h2, h3, h4, h5, h6, blockquote');
+            var descriptionBlocks = Array.from(allSectionBlocks).filter(function(block) {
+                return !block.closest('.tab-pane');
+            }).filter(function(block) {
+                var parent = block.parentElement;
+                while (parent && parent !== section) {
+                    if (parent.matches('li, p, blockquote') && !parent.closest('.tab-pane')) return false;
+                    parent = parent.parentElement;
+                }
+                return true;
+            });
+
+            descriptionBlocks.forEach(function(block) {
+                var text = block.textContent || '';
+                if (text.toLowerCase().includes(queryLower)) {
+                    var snippetText = text.trim();
+                    if (snippetText.length > 200) {
+                        snippetText = snippetText.substring(0, 200) + '...';
+                    }
+                    var highlightRegex = new RegExp('(' + escapeRegExp(query) + ')', 'gi');
+                    var snippet = escapeHtml(snippetText).replace(highlightRegex, '<mark>$1</mark>');
+
+                    results.push({
+                        cluster: clusterName,
+                        tab: 'Description',
+                        tabId: null,
+                        snippet: snippet,
+                        section: section,
+                        tabPane: null,
+                        tabLink: null,
+                        element: block
+                    });
+                }
+            });
+
             // Find all tab panes in this cluster
             const tabPanes = section.querySelectorAll('.tab-pane');
 
@@ -260,8 +311,10 @@
                 if (!result) return;
 
                 removeAllHighlights();
-                activateTab(result);
-                highlightMatches(result.tabPane, query);
+                if (result.tabLink) {
+                    activateTab(result);
+                }
+                highlightMatches(result.tabPane || result.element, query);
 
                 // Scroll to the specific element (paragraph/reference)
                 setTimeout(function() {
@@ -279,8 +332,10 @@
         // Auto-expand first result
         if (results.length > 0) {
             resultItems[0].classList.add('active');
-            activateTab(results[0]);
-            highlightMatches(results[0].tabPane, query);
+            if (results[0].tabLink) {
+                activateTab(results[0]);
+            }
+            highlightMatches(results[0].tabPane || results[0].element, query);
         }
     }
 
