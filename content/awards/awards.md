@@ -135,7 +135,7 @@ Thanks to our amazing community, FORRT has become an ***award-winning*** grassro
 
 <img src="sips.webp" align="right" /> In 2025, FORRT received a ***[Commendation Award for Open Science in the Developing World: A Collection of Practical Guides for Researchers in Developing Countries](https://opensci-cn.github.io/OS-developing-world/)*** from the Society for the Improvement of Psychological Science.
 
-- Ressource Links: https://forrt.org/os-developing-world/ and https://doi.org/10.1177/25152459251357565
+- Resource Links: https://forrt.org/os-developing-world/ and https://doi.org/10.1177/25152459251357565
 
 - **[Announcement by SIPS](https://improvingpsych.org/mission/awards/)**
 
