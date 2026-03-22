@@ -121,23 +121,35 @@ Thanks to our amazing community, FORRT has become an ***award-winning*** grassro
 
 <br>
 
-<img src="sips.webp" align="right" /> In 2025, FORRT received the ***[Mission Award for Educational resources on the replication crisis](https://improvingpsych.org/mission/awards/#:~:text=SEMA3-,June%202025,Educational%20resources%20on%20the%20replication%20crisis,-June%202025)*** from the Society for the Improvement of Psychological Science.
+<img src="sips.webp" align="right" /> In 2025, FORRT received the ***[Mission Award for Educational resources on the replication crisis](https://forrt.org/positive-changes-replication-crisis/)*** from the Society for the Improvement of Psychological Science.
+
+- **[Announcement by SIPS](https://improvingpsych.org/mission/awards/)**
 
 <br />
 
 <img src="sips.webp" align="right" /> In 2025, FORRT received a ***[Commendation Award for Pownall et al. (2023): Teaching open and reproducible scholarship: a critical review of the evidence base for current pedagogical methods and their outcomes](https://doi.org/10.1098/rsos.221255)*** from the Society for the Improvement of Psychological Science.
 
+- **[Announcement by SIPS](https://improvingpsych.org/mission/awards/)**
+
 <br />
 
 <img src="sips.webp" align="right" /> In 2025, FORRT received a ***[Commendation Award for Open Science in the Developing World: A Collection of Practical Guides for Researchers in Developing Countries](https://opensci-cn.github.io/OS-developing-world/)*** from the Society for the Improvement of Psychological Science.
+
+- Ressource Links: https://forrt.org/os-developing-world/ and https://doi.org/10.1177/25152459251357565
+
+- **[Announcement by SIPS](https://improvingpsych.org/mission/awards/)**
 
 <br />
 
 <img src="sips.webp" align="right" /> In 2025, FORRT received a ***[Commendation Award for International Initiatives to Enhance Awareness and Uptake of Open Research in Psychology: A Systematic Mapping Review](https://doi.org/10.1098/rsos.241726)*** from the Society for the Improvement of Psychological Science.
 
+- **[Announcement by SIPS](https://improvingpsych.org/mission/awards/)**
+
 <br />
 
-<img src="sips.webp" align="right" /> In 2025, FORRT received a ***[Commendation Award for FORRT Credit Project](https://improvingpsych.org/mission/awards/)*** from the Society for the Improvement of Psychological Science.
+<img src="sips.webp" align="right" /> In 2025, FORRT received a ***[Commendation Award for FORRT Credit Project](https://forrt.org/contributors/)*** from the Society for the Improvement of Psychological Science.
+
+- **[Announcement by SIPS](https://improvingpsych.org/mission/awards/)**
 
 <br />
 
@@ -145,7 +157,7 @@ Thanks to our amazing community, FORRT has become an ***award-winning*** grassro
 
 <br />
 
-<img src="Einstein.webp" align="right" />In 2023, FORRT was a *finalist* for the ***[Early Career Award](https://award.einsteinfoundation.de/award-winners-finalists/recipients-2023/early-career-researcher-award-2023-finalists)*** for Promoting Quality in Research from the Einstein Foundation for its [Replications](https://forrt.org/replication-hub/) initiative. 
+<img src="Einstein.webp" align="right" />In 2023, FORRT was a *finalist* for the ***[Early Career Award](https://award.einsteinfoundation.de/award-winners-finalists/recipients-2023/early-career-researcher-award-2023-finalists)*** for Promoting Quality in Research from the Einstein Foundation for its [Replication Hub](https://forrt.org/replication-hub/) initiative. 
 
 <br />
 
@@ -155,14 +167,17 @@ Thanks to our amazing community, FORRT has become an ***award-winning*** grassro
 
 <img src="sips.webp" align="right" /> In 2023, FORRT received the ***[Mission Award](https://improvingpsych.org/mission/awards/)*** from the Society for the Improvement of Psychological Science for its overall initiatives.
 
+- **[Announcement by SIPS](https://improvingpsych.org/mission/awards/)**
+
 <br />
 
 <img src="Jisc.webp" align="right" /> In 2023, FORRT was named a ***[Community Champion for UK education and research communities](https://www.jisc.ac.uk/news/all/jisc-announces-2023-community-champions)*** by JISC.
 
 <br />
 
-<img src="sips.webp" align="right" /> In 2023, FORRT a ***[Commendation](https://improvingpsych.org/2023/08/22/sips-2023-awards-announced/
-)*** from the Society for the Improvement of Psychological Science for its [Replications & Reversals](https://forrt.org/reversals/) project.
+<img src="sips.webp" align="right" /> In 2023, FORRT received a ***Commendation award*** from the Society for the Improvement of Psychological Science for its [Replications & Reversals](https://forrt.org/reversals/) project.
+
+- **[Announcement by SIPS](https://improvingpsych.org/2023/08/22/sips-2023-awards-announced/)**
 
 <br />
 
