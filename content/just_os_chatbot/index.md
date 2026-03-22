@@ -1,6 +1,6 @@
----
-title: ""
-
----
-
-{{< just_os_chat >}}
++++
+# FORRT page
+type = "widget_page"
+headless = false  # Homepage is headless, other widget pages are not.
+title = "JUST-OS Chatbot"
++++

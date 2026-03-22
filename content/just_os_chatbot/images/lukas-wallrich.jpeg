@@ -1,0 +1,3943 @@
+<!DOCTYPE html><html lang="en-us" >
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  
+  
+  
+    <meta name="generator" content="Wowchemy 5.0.0-beta.3 for Hugo" />
+  
+
+  
+
+  
+  
+
+  
+  
+  
+  
+  
+    
+    
+    
+  
+  
+
+  <meta name="author" content="Dr Lukas Wallrich" />
+
+  
+  
+  
+    
+  
+  <meta name="description" content="Senior Lecturer" />
+
+  
+  <link rel="alternate" hreflang="en-us" href="https://lukaswallrich.coffee/" />
+
+  
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  
+
+  
+  
+  
+    <meta name="theme-color" content="#1565c0" />
+  
+
+  
+  
+
+  
+  
+  
+  
+    
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha256-FMvZuGapsJLjouA6k7Eo2lusoAX9i0ShlWFG6qt7SLc=" crossorigin="anonymous">
+
+    
+    
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" integrity="sha256-Vzbj7sDDS/woiFS3uNKo8eIuni59rjyNGtXfstRzStA=" crossorigin="anonymous" media="print" onload="this.media='all'">
+    
+
+    
+    
+    
+      
+    
+    
+      
+      
+        
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/styles/github.min.css" crossorigin="anonymous" title="hl-light" media="print" onload="this.media='all'">
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/styles/dracula.min.css" crossorigin="anonymous" title="hl-dark" media="print" onload="this.media='all'" disabled>
+        
+      
+    
+
+    
+    
+    
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.min.css" integrity="sha512-1xoFisiGdy9nvho8EgXuXvnpR5GAMSjFwp40gSRE3NwdUdIMIKuPa7bqoUhLD0O/5tPNhteAsE5XyyMi5reQVA==" crossorigin="anonymous" media="print" onload="this.media='all'">
+    
+
+    
+
+    
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.2.2/lazysizes.min.js" integrity="sha512-TmDwFLhg3UA4ZG0Eb4MIyT1O1Mb+Oww5kFG0uHqXsdbyZz9DcvYQhKpGgNkamAI6h2lGGZq2X8ftOJvF/XjTUg==" crossorigin="anonymous" async></script>
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+        
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+  
+
+  
+  
+  
+    
+      
+      <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto+Mono&family=Roboto:wght@400;700&display=swap">
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto+Mono&family=Roboto:wght@400;700&display=swap" media="print" onload="this.media='all'">
+    
+  
+
+  
+  
+  
+  
+  
+  <link rel="stylesheet" href="/css/wowchemy.8273eccd28c1636b83cf05c867df0939.css" />
+
+  
+
+
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XJFV4XGT5M"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+
+  function gtag() {
+      dataLayer.push(arguments);
+  }
+
+  function trackOutboundLink(url, target) {
+    gtag('event', 'click', {
+         'event_category': 'outbound',
+         'event_label': url,
+         'transport_type': 'beacon',
+         'event_callback': function () {
+           if (target !== '_blank') {
+             document.location = url;
+           }
+         }
+    });
+    console.debug("Outbound link clicked: " + url);
+  }
+
+  function onClickCallback(event) {
+    if ((event.target.tagName !== 'A') || (event.target.host === window.location.host)) {
+      return;
+    }
+    trackOutboundLink(event.target, event.target.getAttribute('target'));  
+  }
+
+  gtag('js', new Date());
+  gtag('config', 'G-XJFV4XGT5M', {});
+  gtag('set', {'cookie_flags': 'SameSite=None;Secure'});
+
+  
+  document.addEventListener('click', onClickCallback, false);
+</script>
+
+
+  
+
+  
+
+
+  
+  
+  
+    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+  
+
+  
+    <link rel="alternate" href="/index.xml" type="application/rss+xml" title="Lukas Wallrich" />
+  
+
+  
+    <link rel="manifest" href="/index.webmanifest" />
+  
+
+  <link rel="icon" type="image/png" href="/images/icon_hu87156e0de505495b151a541dd73fa815_44892_32x32_fill_lanczos_center_2.png" />
+  <link rel="apple-touch-icon" type="image/png" href="/images/icon_hu87156e0de505495b151a541dd73fa815_44892_180x180_fill_lanczos_center_2.png" />
+
+  <link rel="canonical" href="https://lukaswallrich.coffee/" />
+
+  
+  
+  
+  
+  
+  
+  
+    
+    
+  
+  
+  <meta property="twitter:card" content="summary" />
+  
+  <meta property="og:site_name" content="Lukas Wallrich" />
+  <meta property="og:url" content="https://lukaswallrich.coffee/" />
+  <meta property="og:title" content="Lukas Wallrich" />
+  <meta property="og:description" content="Senior Lecturer" /><meta property="og:image" content="https://lukaswallrich.coffee/images/icon_hu87156e0de505495b151a541dd73fa815_44892_512x512_fill_lanczos_center_2.png" />
+    <meta property="twitter:image" content="https://lukaswallrich.coffee/images/icon_hu87156e0de505495b151a541dd73fa815_44892_512x512_fill_lanczos_center_2.png" /><meta property="og:locale" content="en-us" />
+  
+    
+      <meta property="og:updated_time" content="2025-08-09T00:00:00&#43;00:00" />
+    
+  
+
+  
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": "https://lukaswallrich.coffee/?q={search_term_string}",
+    "query-input": "required name=search_term_string"
+  },
+  "url": "https://lukaswallrich.coffee/"
+}
+</script>
+
+
+  
+
+  
+
+  
+
+
+
+
+
+  <title>Lukas Wallrich</title>
+  
+</head>
+
+
+<body id="top" data-spy="scroll" data-offset="70" data-target="#navbar-main" class="page-wrapper  ">
+
+  
+  
+  
+  
+  
+  
+  
+  
+  <script src="/js/wowchemy-init.min.eca9bbc7a71accd5ebd9eee0ff004132.js"></script>
+
+  
+
+
+<aside class="search-modal" id="search">
+  <div class="container">
+    <section class="search-header">
+
+      <div class="row no-gutters justify-content-between mb-3">
+        <div class="col-6">
+          <h1>Search</h1>
+        </div>
+        <div class="col-6 col-search-close">
+          <a class="js-search" href="#" aria-label="Close"><i class="fas fa-times-circle text-muted" aria-hidden="true"></i></a>
+        </div>
+      </div>
+
+      <div id="search-box">
+        
+        <input name="q" id="search-query" placeholder="Search..." autocapitalize="off"
+        autocomplete="off" autocorrect="off" spellcheck="false" type="search" class="form-control"
+        aria-label="Search...">
+        
+      </div>
+
+      
+      
+
+      
+
+    </section>
+    <section class="section-search-results">
+
+      <div id="search-hits">
+        
+      </div>
+
+    </section>
+  </div>
+</aside>
+
+
+
+  <div class="page-header">
+    
+
+
+
+
+
+
+
+
+
+
+
+
+<nav class="navbar navbar-expand-lg navbar-light compensate-for-scrollbar" id="navbar-main">
+  <div class="container-xl">
+
+    
+    <div class="d-none d-lg-inline-flex">
+      <a class="navbar-brand" href="/">Lukas Wallrich</a>
+    </div>
+    
+
+    
+    <button type="button" class="navbar-toggler" data-toggle="collapse"
+            data-target="#navbar-content" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+    <span><i class="fas fa-bars"></i></span>
+    </button>
+    
+
+    
+    <div class="navbar-brand-mobile-wrapper d-inline-flex d-lg-none">
+      <a class="navbar-brand" href="/">Lukas Wallrich</a>
+    </div>
+    
+
+    
+    
+    <div class="navbar-collapse main-menu-item collapse justify-content-start" id="navbar-content">
+
+      
+      <ul class="navbar-nav d-md-inline-flex">
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+
+        
+        
+        
+        
+
+        
+          
+            
+            
+          
+          
+            
+            
+            
+              
+            
+            
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#talks" data-target="#talks"><span>Talks</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+
+        
+        
+        
+        
+
+        
+          
+            
+            
+          
+          
+            
+            
+            
+              
+            
+            
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#publications" data-target="#publications"><span>Publications</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+
+        
+        
+        
+        
+
+        
+          
+            
+            
+          
+          
+            
+            
+            
+              
+            
+            
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#blog" data-target="#blog"><span>Blog</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+
+        
+        
+        
+        
+
+        
+          
+            
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/courses/"><span>Teaching</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+
+        
+        
+        
+        
+
+        
+          
+            
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/media/CV_Lukas_Wallrich_academic.pdf"><span>CV</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+
+        
+        
+        
+        
+
+        
+          
+            
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/podcast/"><span>Podcast</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+
+        
+        
+        
+        
+
+        
+          
+            
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/timesaveR/"><span>timesaveR</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+
+        
+        
+        
+        
+
+        
+          
+            
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/stat_consulting/"><span>Statistical consulting</span></a>
+        </li>
+
+        
+        
+
+      
+
+        
+      </ul>
+    </div>
+
+    <ul class="nav-icons navbar-nav flex-row ml-auto d-flex pl-md-2">
+
+      
+      
+        
+          
+          <li class="nav-item d-none d-lg-inline-flex">
+            <a class="nav-link" href="https://twitter.com/lukaswallrich" data-toggle="tooltip" data-placement="bottom" title="Follow me on Twitter" target="_blank" rel="noopener" aria-label="Follow me on Twitter">
+              <i class="fab fa-twitter" aria-hidden="true"></i>
+            </a>
+          </li>
+        
+      
+
+      
+      
+      <li class="nav-item">
+        <a class="nav-link js-search" href="#" aria-label="Search"><i class="fas fa-search" aria-hidden="true"></i></a>
+      </li>
+      
+
+      
+      
+      <li class="nav-item dropdown theme-dropdown">
+        <a href="#" class="nav-link" data-toggle="dropdown" aria-haspopup="true" aria-label="Display preferences">
+          <i class="fas fa-moon" aria-hidden="true"></i>
+        </a>
+        <div class="dropdown-menu">
+          <a href="#" class="dropdown-item js-set-theme-light">
+            <span>Light</span>
+          </a>
+          <a href="#" class="dropdown-item js-set-theme-dark">
+            <span>Dark</span>
+          </a>
+          <a href="#" class="dropdown-item js-set-theme-auto">
+            <span>Automatic</span>
+          </a>
+        </div>
+      </li>
+      
+
+      
+
+    </ul>
+
+  </div>
+</nav>
+
+
+  </div>
+
+  <div class="page-body">
+    
+
+
+
+
+
+
+
+
+
+  
+<span class="js-widget-page d-none"></span>
+
+
+
+
+
+  
+  
+  
+  
+
+
+
+
+  
+  
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+  
+  
+
+  
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  <section id="about" class="home-section wg-about  "  >
+   <div class="home-section-bg " ></div>
+    <div class="container">
+
+    
+
+      
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+<div class="row">
+  <div class="col-12 col-lg-4">
+    <div id="profile">
+
+      
+      
+      <img class="avatar avatar-circle" src="/author/dr-lukas-wallrich/avatar_hu28b7bdeaeef7e3841589fce656dcb638_134803_270x270_fill_q75_lanczos_center.jpeg" alt="Dr Lukas Wallrich">
+      
+
+      <div class="portrait-title">
+        <h2>Dr Lukas Wallrich</h2>
+        <h3>Senior Lecturer</h3>
+
+        
+        <h3>
+          <a href="https://www.bbk.ac.uk/" target="_blank" rel="noopener">
+          <span>Birkbeck, University of London</span>
+          </a>
+        </h3>
+        
+      </div>
+
+      <ul class="network-icon" aria-hidden="true">
+        
+        
+        
+        
+          
+        
+        
+        
+        
+        
+        <li>
+          <a href="mailto:l.wallrich@bbk.ac.uk"  aria-label="envelope">
+            <i class="fas fa-envelope big-icon"></i>
+          </a>
+        </li>
+        
+        
+        
+        
+          
+        
+        
+        
+        
+        
+          
+        
+        <li>
+          <a href="https://twitter.com/lukaswallrich" target="_blank" rel="noopener" aria-label="twitter">
+            <i class="fab fa-twitter big-icon"></i>
+          </a>
+        </li>
+        
+        
+        
+        
+          
+        
+        
+        
+        
+        
+          
+        
+        <li>
+          <a href="https://scholar.google.com/citations?user=T473FrYAAAAJ" target="_blank" rel="noopener" aria-label="graduation-cap">
+            <i class="fas fa-graduation-cap big-icon"></i>
+          </a>
+        </li>
+        
+        
+        
+        
+          
+        
+        
+        
+        
+        
+          
+        
+        <li>
+          <a href="https://github.com/LukasWallrich" target="_blank" rel="noopener" aria-label="github">
+            <i class="fab fa-github big-icon"></i>
+          </a>
+        </li>
+        
+        
+        
+        
+          
+        
+        
+        
+        
+        
+          
+        
+        <li>
+          <a href="https://www.linkedin.com/in/lukas-wallrich/" target="_blank" rel="noopener" aria-label="linkedin">
+            <i class="fab fa-linkedin big-icon"></i>
+          </a>
+        </li>
+        
+      </ul>
+
+    </div>
+  </div>
+  <div class="col-12 col-lg-8">
+
+    
+    
+
+    <div class="article-style">
+      <p>I work as a Lecturer in Organisational Psychology at <a href="https://www.bbk.ac.uk/school/business" target="_blank" rel="noopener">Birkbeck Business School</a>, University of London. There, I teach on organisational psychology master programmes and research how workforce diversity can be harnessed to improve organisational performance, and how we can improve the reliability of research. This includes co-leading <a href="https://forrt.org/replication-hub/" target="_blank" rel="noopener">FORRT&rsquo;s Replication Hub</a>, acting as a Senior Editor for <a href="https://replicationresearch.org" target="_blank" rel="noopener"><em>Replication Research</em></a>, and leading the UKRI-funded project <em>Making Replications Count</em>. In addition, I am interested in intergroup contact research, and serve as Co-Chair of the <a href="https://contact-research-network.github.io/" target="_blank" rel="noopener">International Contact Research Network</a>.</p>
+<p>I am also very interested in Open Science and an avid <em>R</em> user. In that space, I enjoy contributing to the development of tools that support open research - for instance, the <a href="https://www.eshackathon.org/CiteSource/" target="_blank" rel="noopener">CiteSource</a> package that supports meta-analyses. I have also authored three R packages, <a href="https://lukaswallrich.github.io/rsprite2/" target="_blank" rel="noopener">rsprite2</a>, <a href="https://lukaswallrich.github.io/timesaveR/" target="_blank" rel="noopener">timesaveR</a> and <a href="https://lukaswallrich.github.io/metaUI/" target="_blank" rel="noopener">metaUI</a>.</p>
+<p>In 2021, I completed my PhD at <a href="https://www.gold.ac.uk" target="_blank" rel="noopener">Goldsmiths, University of London</a>. In that research, I focused on the relationships between intergroup contact and diversity beliefs. During that time, I was a member of the <a href="http://equalab.co.uk/" target="_blank" rel="noopener">Equalab</a> and <a href="http://blogs.exeter.ac.uk/diplab/" target="_blank" rel="noopener">DIPlab</a> research groups.</p>
+<p>
+  <i class="fas fa-download  pr-1 fa-fw"></i> Download my <a href="/media/CV_Lukas_Wallrich_academic.pdf" target="_blank">CV</a>.</p>
+
+    </div>
+
+    <div class="row">
+
+      
+      <div class="col-md-5">
+        <div class="section-subheading">Interests</div>
+        <ul class="ul-interests">
+          
+          <li>Diversity beliefs, intergroup contact &amp; organisational performance</li>
+          
+          <li>Prejudice reduction &amp; pro-social action</li>
+          
+          <li>Natural language processing &amp; Big Data analytics</li>
+          
+          <li>Innovative educational practices, incl. flipped classroom and open teaching materials</li>
+          
+          <li>Open Science, replicability &amp; meta-research</li>
+          
+        </ul>
+      </div>
+      
+
+      
+      <div class="col-md-7">
+        <div class="section-subheading">Education</div>
+        <ul class="ul-edu fa-ul">
+          
+          <li>
+            <i class="fa-li fas fa-graduation-cap"></i>
+            <div class="description">
+              <p class="course">PhD in Social Psychology, 2021</p>
+              <p class="institution">Goldsmiths, University of London</p>
+            </div>
+          </li>
+          
+          <li>
+            <i class="fa-li fas fa-graduation-cap"></i>
+            <div class="description">
+              <p class="course">MA in Education (Psychology), 2017</p>
+              <p class="institution">UCL Institute of Education</p>
+            </div>
+          </li>
+          
+          <li>
+            <i class="fa-li fas fa-graduation-cap"></i>
+            <div class="description">
+              <p class="course">BA in Philosophy, Politics &amp; Economics (PPE), 2012</p>
+              <p class="institution">University of Oxford (Merton)</p>
+            </div>
+          </li>
+          
+        </ul>
+      </div>
+      
+
+    </div>
+  </div>
+</div>
+
+
+    
+
+    </div>
+  </section>
+
+  
+  
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+  
+  
+
+  
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  <section id="experience" class="home-section wg-experience  "  >
+   <div class="home-section-bg " ></div>
+    <div class="container">
+
+    
+      <div class="row  ">
+      
+        
+          <div class="section-heading col-12 col-lg-4 mb-3 mb-lg-0 d-flex flex-column align-items-center align-items-lg-start">
+            <h1 class="mb-0">Experience</h1>
+            <p class="mt-1">(selected)</p>
+          </div>
+        
+      
+    
+
+      
+
+
+
+
+<div class="col-12 col-lg-8">
+  
+
+  
+  
+  
+  <div class="row experience">
+    
+    <div class="col-auto text-center flex-column d-none d-sm-flex">
+      <div class="row h-50">
+        <div class="col ">&nbsp;</div>
+        <div class="col">&nbsp;</div>
+      </div>
+      <div class="m-2">
+        <span class="badge badge-pill border exp-fill">&nbsp;</span>
+      </div>
+      <div class="row h-50">
+        <div class="col border-right">&nbsp;</div>
+        <div class="col">&nbsp;</div>
+      </div>
+    </div>
+    
+    <div class="col py-2">
+      <div class="card">
+        <div class="card-body">
+          <div class="section-subheading card-title exp-title text-muted mt-0 mb-1">Lecturer in Organisational Psychology</div>
+          <div class="section-subheading card-title exp-company text-muted my-0"><a href="https://www.bbk.ac.uk/" target="_blank" rel="noopener">Birkbeck, University of London</a></div>
+          <div class="text-muted exp-meta">
+            Jul 2021 –
+            
+              Present
+            
+            
+              <span class="middot-divider"></span>
+              <span>London, UK</span>
+            
+          </div>
+          <div class="card-text">Research into how organisations can benefit from workforce diversity &amp; teaching on various organisational psychology master programmes.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="row experience">
+    
+    <div class="col-auto text-center flex-column d-none d-sm-flex">
+      <div class="row h-50">
+        <div class="col border-right">&nbsp;</div>
+        <div class="col">&nbsp;</div>
+      </div>
+      <div class="m-2">
+        <span class="badge badge-pill border ">&nbsp;</span>
+      </div>
+      <div class="row h-50">
+        <div class="col border-right">&nbsp;</div>
+        <div class="col">&nbsp;</div>
+      </div>
+    </div>
+    
+    <div class="col py-2">
+      <div class="card">
+        <div class="card-body">
+          <div class="section-subheading card-title exp-title text-muted mt-0 mb-1">Associate Lecturer</div>
+          <div class="section-subheading card-title exp-company text-muted my-0"><a href="https://stmarys.ac.uk" target="_blank" rel="noopener">St Mary&rsquo;s University Twickenham</a></div>
+          <div class="text-muted exp-meta">
+            Oct 2019 –
+            
+              Apr 2021
+            
+            
+              <span class="middot-divider"></span>
+              <span>Twickenham, UK</span>
+            
+          </div>
+          <div class="card-text">Taught various subjects, primarily social psychology and political psychology.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="row experience">
+    
+    <div class="col-auto text-center flex-column d-none d-sm-flex">
+      <div class="row h-50">
+        <div class="col border-right">&nbsp;</div>
+        <div class="col">&nbsp;</div>
+      </div>
+      <div class="m-2">
+        <span class="badge badge-pill border ">&nbsp;</span>
+      </div>
+      <div class="row h-50">
+        <div class="col border-right">&nbsp;</div>
+        <div class="col">&nbsp;</div>
+      </div>
+    </div>
+    
+    <div class="col py-2">
+      <div class="card">
+        <div class="card-body">
+          <div class="section-subheading card-title exp-title text-muted mt-0 mb-1">PhD Candidate &amp; Associate Lecturer</div>
+          <div class="section-subheading card-title exp-company text-muted my-0"><a href="https://gold.ac.uk" target="_blank" rel="noopener">Goldsmiths, University of London</a></div>
+          <div class="text-muted exp-meta">
+            Oct 2017 –
+            
+              May 2021
+            
+            
+              <span class="middot-divider"></span>
+              <span>London, UK</span>
+            
+          </div>
+          <div class="card-text">Taught quantitative research methods at graduate level and undergraduate psychology tutorials.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="row experience">
+    
+    <div class="col-auto text-center flex-column d-none d-sm-flex">
+      <div class="row h-50">
+        <div class="col border-right">&nbsp;</div>
+        <div class="col">&nbsp;</div>
+      </div>
+      <div class="m-2">
+        <span class="badge badge-pill border ">&nbsp;</span>
+      </div>
+      <div class="row h-50">
+        <div class="col ">&nbsp;</div>
+        <div class="col">&nbsp;</div>
+      </div>
+    </div>
+    
+    <div class="col py-2">
+      <div class="card">
+        <div class="card-body">
+          <div class="section-subheading card-title exp-title text-muted mt-0 mb-1">Management Consultant</div>
+          <div class="section-subheading card-title exp-company text-muted my-0"><a href="https://mckinsey.com" target="_blank" rel="noopener">McKinsey &amp; Company</a></div>
+          <div class="text-muted exp-meta">
+            Jan 2013 –
+            
+              Apr 2016
+            
+            
+              <span class="middot-divider"></span>
+              <span>Berlin, Germany</span>
+            
+          </div>
+          <div class="card-text">Worked on consulting projects for a variety of private and public sector clients, with a particular focus on leadership development and other areas of organisational psychology.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  
+</div>
+
+
+    
+      </div>
+    
+
+    </div>
+  </section>
+
+  
+  
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+  
+  
+
+  
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  <section id="talks" class="home-section wg-pages  "  >
+   <div class="home-section-bg " ></div>
+    <div class="container">
+
+    
+      <div class="row  ">
+      
+        
+          <div class="section-heading col-12 col-lg-4 mb-3 mb-lg-0 d-flex flex-column align-items-center align-items-lg-start">
+            <h1 class="mb-0">Recent &amp; Upcoming Talks</h1>
+            
+          </div>
+        
+      
+    
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+<div class="col-12 col-lg-8">
+
+  
+
+  
+    
+      
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+  
+
+
+<div class="media stream-item">
+  <div class="media-body">
+
+    <div class="section-subheading article-title mb-0 mt-0">
+      <a href="/talk/how-does-diversity-impact-team-performance-podcast-interview/" >How does diversity impact team performance - podcast interview</a>
+    </div>
+
+    
+    <a href="/talk/how-does-diversity-impact-team-performance-podcast-interview/"  class="summary-link">
+      <div class="article-style">
+        In our <a href="https://www.lukaswallrich.coffee/publication/diversity-meta/">large-scale meta-analysis on the links between team diversity and team performance</a>, we found that the overall relationships are …
+      </div>
+    </a>
+    
+
+    <div class="stream-meta article-metadata">
+
+      
+      <div>
+        <span>
+          14 August 2024 1:00 PM
+        </span>
+        
+      </div>
+      
+
+      
+    </div>
+
+    
+
+  </div>
+  <div class="ml-3">
+    
+    
+    
+    
+    
+    <a href="/talk/how-does-diversity-impact-team-performance-podcast-interview/" >
+      <img src="/talk/how-does-diversity-impact-team-performance-podcast-interview/featured_hud5fa9fe4963988469ef9b95282b59c8e_20521_40dbf80b211a913bff7cb38d0bb9a179.jpg" data-src="/talk/how-does-diversity-impact-team-performance-podcast-interview/featured_hud5fa9fe4963988469ef9b95282b59c8e_20521_150x0_resize_q75_lanczos.jpg" alt="How does diversity impact team performance - podcast interview" class="lazyload">
+    </a>
+    
+  </div>
+</div>
+
+    
+  
+    
+      
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+  
+
+
+<div class="media stream-item">
+  <div class="media-body">
+
+    <div class="section-subheading article-title mb-0 mt-0">
+      <a href="/talk/benefiting-from-diversity-using-agent-based-models-to-understand-possibilities-and-barriers/" >Benefiting from diversity - using agent-based models to understand possibilities and barriers</a>
+    </div>
+
+    
+    <a href="/talk/benefiting-from-diversity-using-agent-based-models-to-understand-possibilities-and-barriers/"  class="summary-link">
+      <div class="article-style">
+        Seminar presentation that introduces how cognitive diversity might benefit team performance, what agent-based models are and how the latter might help to understand the former better.
+      </div>
+    </a>
+    
+
+    <div class="stream-meta article-metadata">
+
+      
+      <div>
+        <span>
+          29 June 2022
+        </span>
+        
+        <span class="middot-divider"></span>
+        <span>Birkbeck, University of London</span>
+        
+      </div>
+      
+
+      
+    </div>
+
+    
+    <div class="btn-links">
+      
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+<a class="btn btn-outline-primary btn-page-header btn-sm" href="/pubs/LukasWallrich_summer_seminar_cognitive_diversity.pdf" target="_blank" rel="noopener">
+  Slides
+</a>
+
+
+
+  
+  
+    
+  
+<a class="btn btn-outline-primary btn-page-header btn-sm" href="https://youtu.be/Q9pelY1rIs0" target="_blank" rel="noopener">
+  Video
+</a>
+
+
+
+
+
+    </div>
+    
+
+  </div>
+  <div class="ml-3">
+    
+    
+    
+    
+    
+    <a href="/talk/benefiting-from-diversity-using-agent-based-models-to-understand-possibilities-and-barriers/" >
+      <img src="/talk/benefiting-from-diversity-using-agent-based-models-to-understand-possibilities-and-barriers/featured_hud117748c3efd94418d3820f4267a016b_2991712_57b5291c9536d2b99fe408d7a9909ab3.jpg" data-src="/talk/benefiting-from-diversity-using-agent-based-models-to-understand-possibilities-and-barriers/featured_hud117748c3efd94418d3820f4267a016b_2991712_150x0_resize_q75_lanczos.jpg" alt="Benefiting from diversity - using agent-based models to understand possibilities and barriers" class="lazyload">
+    </a>
+    
+  </div>
+</div>
+
+    
+  
+    
+      
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+  
+
+
+<div class="media stream-item">
+  <div class="media-body">
+
+    <div class="section-subheading article-title mb-0 mt-0">
+      <a href="/talk/widely-prevalent-unevenly-declining-implicit-and-explicit-bias-in-the-us-since-2006/" >Widely prevalent, unevenly declining: implicit and explicit bias in the US since 2006</a>
+    </div>
+
+    
+    <a href="/talk/widely-prevalent-unevenly-declining-implicit-and-explicit-bias-in-the-us-since-2006/"  class="summary-link">
+      <div class="article-style">
+        Conference presentation on how explicit and implicit biases have changed in the US from 2006 to 2020.
+      </div>
+    </a>
+    
+
+    <div class="stream-meta article-metadata">
+
+      
+      <div>
+        <span>
+          18 February 2022
+        </span>
+        
+        <span class="middot-divider"></span>
+        <span>Virtual</span>
+        
+      </div>
+      
+
+      
+    </div>
+
+    
+    <div class="btn-links">
+      
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+<a class="btn btn-outline-primary btn-page-header btn-sm" href="https://github.com/LukasWallrich/bias-trends/raw/main/Widely%20prevalent%20-%20unevenly%20declining%20-%20SPSP%20presentation_Wallrich_PPT.pdf" target="_blank" rel="noopener">
+  Slides
+</a>
+
+
+
+  
+  
+    
+  
+<a class="btn btn-outline-primary btn-page-header btn-sm" href="https://youtu.be/nHY7lo-8WJ8" target="_blank" rel="noopener">
+  Video
+</a>
+
+
+
+
+
+    </div>
+    
+
+  </div>
+  <div class="ml-3">
+    
+    
+    
+    
+    
+    <a href="/talk/widely-prevalent-unevenly-declining-implicit-and-explicit-bias-in-the-us-since-2006/" >
+      <img src="/talk/widely-prevalent-unevenly-declining-implicit-and-explicit-bias-in-the-us-since-2006/featured_huc1313b12458998f87c1dc2ecdc08b549_290600_1e6a5b893fd97c40243d2b06415cd2ce.jpg" data-src="/talk/widely-prevalent-unevenly-declining-implicit-and-explicit-bias-in-the-us-since-2006/featured_huc1313b12458998f87c1dc2ecdc08b549_290600_150x0_resize_q75_lanczos.jpg" alt="Widely prevalent, unevenly declining: implicit and explicit bias in the US since 2006" class="lazyload">
+    </a>
+    
+  </div>
+</div>
+
+    
+  
+    
+      
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+  
+
+
+<div class="media stream-item">
+  <div class="media-body">
+
+    <div class="section-subheading article-title mb-0 mt-0">
+      <a href="/talk/valuing-diversity-an-undervalued-outcome-of-intergroup-contact/" >Valuing diversity: an undervalued outcome of intergroup contact</a>
+    </div>
+
+    
+    <a href="/talk/valuing-diversity-an-undervalued-outcome-of-intergroup-contact/"  class="summary-link">
+      <div class="article-style">
+        Conference presentation on how intergroup contact shapes the valuing of diversity and why this matters.
+      </div>
+    </a>
+    
+
+    <div class="stream-meta article-metadata">
+
+      
+      <div>
+        <span>
+          13 December 2020
+        </span>
+        
+        <span class="middot-divider"></span>
+        <span>Virtual</span>
+        
+      </div>
+      
+
+      
+    </div>
+
+    
+    <div class="btn-links">
+      
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+<a class="btn btn-outline-primary btn-page-header btn-sm" href="https://youtu.be/a9a2uz0BR-k" target="_blank" rel="noopener">
+  Video
+</a>
+
+
+
+
+
+    </div>
+    
+
+  </div>
+  <div class="ml-3">
+    
+    
+    
+    
+    
+    <a href="/talk/valuing-diversity-an-undervalued-outcome-of-intergroup-contact/" >
+      <img src="/talk/valuing-diversity-an-undervalued-outcome-of-intergroup-contact/featured_hue51d908d02c0eed47ed210b870c9e84b_456486_58caad188631897a9368ec004dff4a5d.jpg" data-src="/talk/valuing-diversity-an-undervalued-outcome-of-intergroup-contact/featured_hue51d908d02c0eed47ed210b870c9e84b_456486_150x0_resize_q75_lanczos.jpg" alt="Valuing diversity: an undervalued outcome of intergroup contact" class="lazyload">
+    </a>
+    
+  </div>
+</div>
+
+    
+  
+    
+      
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+  
+
+
+<div class="media stream-item">
+  <div class="media-body">
+
+    <div class="section-subheading article-title mb-0 mt-0">
+      <a href="/talk/when-anti-refugee-violence-backfires/" >When anti-refugee violence backfires</a>
+    </div>
+
+    
+    <a href="/talk/when-anti-refugee-violence-backfires/"  class="summary-link">
+      <div class="article-style">
+        Conference presentation on the link between attitudes towards refugees and episodes of anti-refugee violence at the local level.
+      </div>
+    </a>
+    
+
+    <div class="stream-meta article-metadata">
+
+      
+      <div>
+        <span>
+          14 July 2020
+        </span>
+        
+        <span class="middot-divider"></span>
+        <span>Virtual</span>
+        
+      </div>
+      
+
+      
+    </div>
+
+    
+    <div class="btn-links">
+      
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+<a class="btn btn-outline-primary btn-page-header btn-sm" href="https://youtu.be/iUxW8xyASBA" target="_blank" rel="noopener">
+  Video
+</a>
+
+
+
+
+
+    </div>
+    
+
+  </div>
+  <div class="ml-3">
+    
+    
+    
+    
+    
+    <a href="/talk/when-anti-refugee-violence-backfires/" >
+      <img src="/talk/when-anti-refugee-violence-backfires/featured_hu22ddc3b878d6ab0bc24de80c541821b5_204781_46ff84597d99922b57d90df3b6f47908.jpg" data-src="/talk/when-anti-refugee-violence-backfires/featured_hu22ddc3b878d6ab0bc24de80c541821b5_204781_150x0_resize_q75_lanczos.jpg" alt="When anti-refugee violence backfires" class="lazyload">
+    </a>
+    
+  </div>
+</div>
+
+    
+  
+
+  
+  
+  
+
+</div>
+
+
+    
+      </div>
+    
+
+    </div>
+  </section>
+
+  
+  
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+  
+  
+
+  
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  <section id="publications" class="home-section wg-pages  "  >
+   <div class="home-section-bg " ></div>
+    <div class="container">
+
+    
+      <div class="row  ">
+      
+        
+          <div class="section-heading col-12 col-lg-4 mb-3 mb-lg-0 d-flex flex-column align-items-center align-items-lg-start">
+            <h1 class="mb-0">Recent Publications</h1>
+            
+          </div>
+        
+      
+    
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+<div class="col-12 col-lg-8">
+
+  
+
+  
+    
+      
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+  
+
+
+<div class="media stream-item">
+  <div class="media-body">
+
+    <div class="section-subheading article-title mb-0 mt-0">
+      <a href="/publication/qrp-bestiary/" >Bestiary of Questionable Research Practices in Psychology</a>
+    </div>
+
+    
+    <a href="/publication/qrp-bestiary/"  class="summary-link">
+      <div class="article-style">
+        We defined, collected, and categorized 40 questionable research practices (QRPs) in quantitative psychology through an iterative, community-consensus process informed by existing literature. By clarifying definitions and documenting potential harms, detectability, clues, and preventive measures for each QRP, we provide a foundation for improving research integrity, transparency, and the reliability of scientific findings.
+      </div>
+    </a>
+    
+
+    <div class="stream-meta article-metadata">
+
+      
+
+      
+      <div>
+        
+
+  <span >
+      <a href="/author/tamas-nagy/">Tamás Nagy</a></span>, <span >
+      <a href="/author/jane-hergert/">Jane Hergert</a></span>, <span >
+      <a href="/author/dr-lukas-wallrich/">Dr Lukas Wallrich</a></span>, <span >
+      <a href="/author/eva-rubinova/">Eva Rubínová</a></span>
+      </div>
+      
+    </div>
+
+    
+    <div class="btn-links">
+      
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+<a href="#" class="btn btn-outline-primary btn-page-header btn-sm js-cite-modal"
+        data-filename="/publication/qrp-bestiary/cite.bib">
+  Cite
+</a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<a class="btn btn-outline-primary btn-page-header btn-sm" href="https://doi.org/10.1177/25152459251348431" target="_blank" rel="noopener">
+  DOI
+</a>
+
+
+
+    </div>
+    
+
+  </div>
+  <div class="ml-3">
+    
+    
+    
+    
+    
+    <a href="/publication/qrp-bestiary/" >
+      <img src="/publication/qrp-bestiary/featured_hu5459c0360c2b0cb7a147d2df0eb350ca_663149_2b804de9b11ec98c564093588f00d8f4.jpg" data-src="/publication/qrp-bestiary/featured_hu5459c0360c2b0cb7a147d2df0eb350ca_663149_150x0_resize_q75_lanczos.jpg" alt="Bestiary of Questionable Research Practices in Psychology" class="lazyload">
+    </a>
+    
+  </div>
+</div>
+
+    
+  
+    
+      
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+  
+
+
+<div class="media stream-item">
+  <div class="media-body">
+
+    <div class="section-subheading article-title mb-0 mt-0">
+      <a href="/publication/replication-journals/" >No Room at the Inn? The Case for Dedicated Replication Journals</a>
+    </div>
+
+    
+    <a href="/publication/replication-journals/"  class="summary-link">
+      <div class="article-style">
+        This article reviews the scarcity of published replications in economics and psychology, examines why traditional journals resist publishing them, and argues that dedicated replication journals offer an essential solution by providing critical infrastructure for the self-correcting function of science.
+      </div>
+    </a>
+    
+
+    <div class="stream-meta article-metadata">
+
+      
+
+      
+      <div>
+        
+
+  <span >
+      <a href="/author/w.-robert-reed/">W. Robert Reed</a></span>, <span >
+      <a href="/author/lukas-roseler/">Lukas Röseler</a></span>, <span >
+      <a href="/author/marianne-saam/">Marianne Saam</a></span>, <span >
+      <a href="/author/dr-lukas-wallrich/">Dr Lukas Wallrich</a></span>
+      </div>
+      
+    </div>
+
+    
+    <div class="btn-links">
+      
+
+
+
+
+
+  
+  
+    
+  
+<a class="btn btn-outline-primary btn-page-header btn-sm" href="https://hdl.handle.net/10419/319083" target="_blank" rel="noopener">
+  Preprint
+</a>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+<a class="btn btn-outline-primary btn-page-header btn-sm" href="https://doi.org/10.1016/j.socec.2025.102502" target="_blank" rel="noopener">
+  Source Document
+</a>
+
+
+<a class="btn btn-outline-primary btn-page-header btn-sm" href="https://doi.org/10.1016/j.socec.2025.102502" target="_blank" rel="noopener">
+  DOI
+</a>
+
+
+
+    </div>
+    
+
+  </div>
+  <div class="ml-3">
+    
+    
+    
+    
+    
+    <a href="/publication/replication-journals/" >
+      <img src="/publication/replication-journals/featured_hu5459c0360c2b0cb7a147d2df0eb350ca_662042_c5233b46908d2c5b86aedbbb047d5026.jpg" data-src="/publication/replication-journals/featured_hu5459c0360c2b0cb7a147d2df0eb350ca_662042_150x0_resize_q75_lanczos.jpg" alt="No Room at the Inn? The Case for Dedicated Replication Journals" class="lazyload">
+    </a>
+    
+  </div>
+</div>
+
+    
+  
+    
+      
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+  
+
+
+<div class="media stream-item">
+  <div class="media-body">
+
+    <div class="section-subheading article-title mb-0 mt-0">
+      <a href="/publication/rep-database/" >The Replication Database: Documenting the Replicability of Psychological Science</a>
+    </div>
+
+    
+    <a href="/publication/rep-database/"  class="summary-link">
+      <div class="article-style">
+        The replicability of psychological science has been widely discussed since the Reproducibility Project back in 2015. This paper introduces the Replication Database, a platform that hosts 1,239 original findings paired with replication findings. In addition to supporting research on replicability in general, this dynamic database is intended to make it easier to find replications of specific studies, and thus base teaching and research on more robust evidence.
+      </div>
+    </a>
+    
+
+    <div class="stream-meta article-metadata">
+
+      
+
+      
+      <div>
+        
+
+  <span >
+      <a href="/author/lukas-roseler/">Lukas Röseler</a></span>, <span >
+      <a href="/author/dr-lukas-wallrich/">Dr Lukas Wallrich</a></span>, <span >
+      <a href="/author/yikang-zhang/">Yikang Zhang</a></span>
+      </div>
+      
+    </div>
+
+    
+    <div class="btn-links">
+      
+
+
+
+
+
+  
+  
+    
+  
+<a class="btn btn-outline-primary btn-page-header btn-sm" href="https://osf.io/preprints/metaarxiv/me2ub" target="_blank" rel="noopener">
+  Preprint
+</a>
+
+
+
+
+  
+    
+  
+
+
+
+<a class="btn btn-outline-primary btn-page-header btn-sm" href="https://openpsychologydata.metajnl.com/articles/101/files/66e18fdc5e1b7.pdf" target="_blank" rel="noopener">
+  PDF
+</a>
+
+
+
+<a href="#" class="btn btn-outline-primary btn-page-header btn-sm js-cite-modal"
+        data-filename="/publication/rep-database/cite.bib">
+  Cite
+</a>
+
+
+
+  
+  
+    
+  
+<a class="btn btn-outline-primary btn-page-header btn-sm" href="https://osf.io/9r62x/" target="_blank" rel="noopener">
+  Dataset
+</a>
+
+
+
+
+
+
+
+
+
+
+
+<a class="btn btn-outline-primary btn-page-header btn-sm" href="https://doi.org/10.5334/jopd.101" target="_blank" rel="noopener">
+  DOI
+</a>
+
+
+
+    </div>
+    
+
+  </div>
+  <div class="ml-3">
+    
+    
+    
+    
+    
+    <a href="/publication/rep-database/" >
+      <img src="/publication/rep-database/featured_hu3d03a01dcc18bc5be0e67db3d8d209a6_99713_5c1c308d399b76b1cd9844e42c4ce4e7.jpg" data-src="/publication/rep-database/featured_hu3d03a01dcc18bc5be0e67db3d8d209a6_99713_150x0_resize_q75_lanczos.jpg" alt="The Replication Database: Documenting the Replicability of Psychological Science" class="lazyload">
+    </a>
+    
+  </div>
+</div>
+
+    
+  
+    
+      
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+  
+
+
+<div class="media stream-item">
+  <div class="media-body">
+
+    <div class="section-subheading article-title mb-0 mt-0">
+      <a href="/publication/diversity-meta/" >The Relationship Between Team Diversity and Team Performance: Reconciling Promise and Reality Through a Comprehensive Meta-Analysis Registered Report</a>
+    </div>
+
+    
+    <a href="/publication/diversity-meta/"  class="summary-link">
+      <div class="article-style">
+        As diversity is becoming increasingly important to organizations, there has been a wealth of research on its relationship to team performance. In this meta-analysis, we synthesize 615 reports (with 2,638 effect sizes) to estimate these relationships, and to test whether their size is substantively meaningful.
+      </div>
+    </a>
+    
+
+    <div class="stream-meta article-metadata">
+
+      
+
+      
+      <div>
+        
+
+  <span >
+      <a href="/author/dr-lukas-wallrich/">Dr Lukas Wallrich</a></span>, <span >
+      <a href="/author/victoria-opara/">Victoria Opara</a></span>, <span >
+      <a href="/author/miki-weso%5Clowska/">Miki Weso{\l}owska</a></span>, <span >
+      <a href="/author/ditte-barnoth/">Ditte Barnoth</a></span>, <span >
+      <a href="/author/sayeh-yousefi/">Sayeh Yousefi</a></span>
+      </div>
+      
+    </div>
+
+    
+    <div class="btn-links">
+      
+
+
+
+
+
+  
+  
+    
+  
+<a class="btn btn-outline-primary btn-page-header btn-sm" href="https://osf.io/nscd4/" target="_blank" rel="noopener">
+  Preprint
+</a>
+
+
+
+
+  
+
+
+
+
+
+<a href="#" class="btn btn-outline-primary btn-page-header btn-sm js-cite-modal"
+        data-filename="/publication/diversity-meta/cite.bib">
+  Cite
+</a>
+
+
+  
+  
+    
+  
+<a class="btn btn-outline-primary btn-page-header btn-sm" href="https://osf.io/tzjxp/" target="_blank" rel="noopener">
+  Code
+</a>
+
+
+  
+  
+    
+  
+<a class="btn btn-outline-primary btn-page-header btn-sm" href="https://github.com/LukasWallrich/diversity_meta/blob/main/SM2%20-%20Analysis/data/full_dataset.rds" target="_blank" rel="noopener">
+  Dataset
+</a>
+
+
+
+<a class="btn btn-outline-primary btn-page-header btn-sm" href="https://osf.io/hpsz8/" target="_blank" rel="noopener">
+  Project
+</a>
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+<a class="btn btn-outline-primary btn-page-header btn-sm" href="https://doi.org/10.1007/s10869-024-09977-0" target="_blank" rel="noopener">
+  Source Document
+</a>
+
+
+<a class="btn btn-outline-primary btn-page-header btn-sm" href="https://doi.org/10.1007/s10869-024-09977-0" target="_blank" rel="noopener">
+  DOI
+</a>
+
+
+
+    </div>
+    
+
+  </div>
+  <div class="ml-3">
+    
+    
+    
+    
+    
+    <a href="/publication/diversity-meta/" >
+      <img src="/publication/diversity-meta/featured_hu3d03a01dcc18bc5be0e67db3d8d209a6_35800_2491aa698a3f6d112de2a46235422f9c.jpg" data-src="/publication/diversity-meta/featured_hu3d03a01dcc18bc5be0e67db3d8d209a6_35800_150x0_resize_q75_lanczos.jpg" alt="The Relationship Between Team Diversity and Team Performance: Reconciling Promise and Reality Through a Comprehensive Meta-Analysis Registered Report" class="lazyload">
+    </a>
+    
+  </div>
+</div>
+
+    
+  
+    
+      
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+  
+
+
+<div class="media stream-item">
+  <div class="media-body">
+
+    <div class="section-subheading article-title mb-0 mt-0">
+      <a href="/publication/abm-replication/" >Groups of diverse problem-solvers outperform groups of highest-ability problem-solvers - most of the time</a>
+    </div>
+
+    
+    <a href="/publication/abm-replication/"  class="summary-link">
+      <div class="article-style">
+        Agent-based models can be a useful tool to simulate (and thus understand) dynamics that might emerge in the real world. In that vein, Hong &amp; Page (2004) modeled how diverse teams outperform homogeneous teams. Here, I replicate their model with open code and show that recent criticisms - while valid - leave the overall claim intact.
+      </div>
+    </a>
+    
+
+    <div class="stream-meta article-metadata">
+
+      
+
+      
+      <div>
+        
+
+  <span >
+      <a href="/author/dr-lukas-wallrich/">Dr Lukas Wallrich</a></span>
+      </div>
+      
+    </div>
+
+    
+    <div class="btn-links">
+      
+
+
+
+
+
+
+
+
+  
+    
+  
+
+
+
+<a class="btn btn-outline-primary btn-page-header btn-sm" href="https://zenodo.org/record/7484072/files/article.pdf" target="_blank" rel="noopener">
+  PDF
+</a>
+
+
+
+<a href="#" class="btn btn-outline-primary btn-page-header btn-sm js-cite-modal"
+        data-filename="/publication/abm-replication/cite.bib">
+  Cite
+</a>
+
+
+  
+  
+    
+  
+<a class="btn btn-outline-primary btn-page-header btn-sm" href="https://github.com/LukasWallrich/diversity_abm_replication" target="_blank" rel="noopener">
+  Code
+</a>
+
+
+
+
+
+
+
+
+
+
+
+
+<a class="btn btn-outline-primary btn-page-header btn-sm" href="https://doi.org/http://dx.doi.org/10.5281/zenodo.7484072" target="_blank" rel="noopener">
+  DOI
+</a>
+
+
+
+    </div>
+    
+
+  </div>
+  <div class="ml-3">
+    
+    
+    
+    
+    
+    <a href="/publication/abm-replication/" >
+      <img src="/publication/abm-replication/featured_hu756ae419dca872ecfcac293f58082c63_128193_0680744dcabafe9772a016bfd883c27d.jpg" data-src="/publication/abm-replication/featured_hu756ae419dca872ecfcac293f58082c63_128193_150x0_resize_q75_lanczos.jpg" alt="Groups of diverse problem-solvers outperform groups of highest-ability problem-solvers - most of the time" class="lazyload">
+    </a>
+    
+  </div>
+</div>
+
+    
+  
+    
+      
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+  
+
+
+<div class="media stream-item">
+  <div class="media-body">
+
+    <div class="section-subheading article-title mb-0 mt-0">
+      <a href="/publication/culture-add/" >Making diversity work: transforming assessment and selection to hire for culture-add, not culture-fit</a>
+    </div>
+
+    
+    <a href="/publication/culture-add/"  class="summary-link">
+      <div class="article-style">
+        Beyond moral considerations, organisations often hope that increases in diversity can deliver greater team performance. This commentary argues that selection and assessment needs to change fundamentally to realise the potential benefits of diversity. The idea of hiring for culture-add rather than culture-fit can guide this transformation.
+      </div>
+    </a>
+    
+
+    <div class="stream-meta article-metadata">
+
+      
+
+      
+      <div>
+        
+
+  <span >
+      <a href="/author/dr-lukas-wallrich/">Dr Lukas Wallrich</a></span>
+      </div>
+      
+    </div>
+
+    
+    <div class="btn-links">
+      
+
+
+
+
+
+
+
+
+  
+    
+  
+
+
+
+<a class="btn btn-outline-primary btn-page-header btn-sm" href="https://cms.bps.org.uk/sites/default/files/2023-02/OPO%20December.pdf" target="_blank" rel="noopener">
+  PDF
+</a>
+
+
+
+<a href="#" class="btn btn-outline-primary btn-page-header btn-sm js-cite-modal"
+        data-filename="/publication/culture-add/cite.bib">
+  Cite
+</a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+    
+
+  </div>
+  <div class="ml-3">
+    
+    
+    
+    
+    
+    <a href="/publication/culture-add/" >
+      <img src="/publication/culture-add/featured_hu42ed59a78790e61957a666d31144dbf2_3225716_44d38318e55f01c90f27cdeb92329928.jpg" data-src="/publication/culture-add/featured_hu42ed59a78790e61957a666d31144dbf2_3225716_150x0_resize_q75_lanczos.jpg" alt="Making diversity work: transforming assessment and selection to hire for culture-add, not culture-fit" class="lazyload">
+    </a>
+    
+  </div>
+</div>
+
+    
+  
+    
+      
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+  
+
+
+<div class="media stream-item">
+  <div class="media-body">
+
+    <div class="section-subheading article-title mb-0 mt-0">
+      <a href="/publication/bystander/" >Adolescents challenging discrimination: The benefits of a perspective-taking and action-planning intervention on self-efficacy</a>
+    </div>
+
+    
+    <a href="/publication/bystander/"  class="summary-link">
+      <div class="article-style">
+        Discrimination is widespread and often goes unchallenged because bystanders do not recognize the need to intervene or do not know how to intervene. This field experiment with adolescents (N = 639) tested a group discussion designed to increase perceived importance and self-efficacy around challenging general discrimination. The intervention, which involved perspective-taking and action-planning, was tested with delayed measures against active control conditions, namely sessions on self-disclosure and civic engagement. It led to greater self-efficacy, particularly among White participants.
+      </div>
+    </a>
+    
+
+    <div class="stream-meta article-metadata">
+
+      
+
+      
+      <div>
+        
+
+  <span >
+      <a href="/author/dr-lukas-wallrich/">Dr Lukas Wallrich</a></span>, <span >
+      <a href="/author/sally-b-palmer/">Sally B Palmer</a></span>, <span >
+      <a href="/author/adam-rutland/">Adam Rutland</a></span>
+      </div>
+      
+    </div>
+
+    
+    <div class="btn-links">
+      
+
+
+
+
+
+
+
+
+  
+    
+  
+
+
+
+<a class="btn btn-outline-primary btn-page-header btn-sm" href="https://onlinelibrary.wiley.com/doi/epdf/10.1002/casp.2530" target="_blank" rel="noopener">
+  PDF
+</a>
+
+
+
+<a href="#" class="btn btn-outline-primary btn-page-header btn-sm js-cite-modal"
+        data-filename="/publication/bystander/cite.bib">
+  Cite
+</a>
+
+
+  
+  
+    
+  
+<a class="btn btn-outline-primary btn-page-header btn-sm" href="https://osf.io/xvwqf/" target="_blank" rel="noopener">
+  Code
+</a>
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+<a class="btn btn-outline-primary btn-page-header btn-sm" href="/pubs/SRCD-presentation-bystander.pptx" target="_blank" rel="noopener">
+  Slides
+</a>
+
+
+
+
+
+
+
+    </div>
+    
+
+  </div>
+  <div class="ml-3">
+    
+    
+    
+    
+    
+    <a href="/publication/bystander/" >
+      <img src="/publication/bystander/featured_huba6a0f58740033bdf3001b505453b916_52247_f3029b1792e79429fc99848275be274c.jpg" data-src="/publication/bystander/featured_huba6a0f58740033bdf3001b505453b916_52247_150x0_resize_q75_lanczos.jpg" alt="Adolescents challenging discrimination: The benefits of a perspective-taking and action-planning intervention on self-efficacy" class="lazyload">
+    </a>
+    
+  </div>
+</div>
+
+    
+  
+    
+      
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+  
+
+
+<div class="media stream-item">
+  <div class="media-body">
+
+    <div class="section-subheading article-title mb-0 mt-0">
+      <a href="/publication/citizenship/" >Civic understanding mediates of the effect of educational tracks on voting intentions in German schools</a>
+    </div>
+
+    
+    <a href="/publication/citizenship/"  class="summary-link">
+      <div class="article-style">
+        Secondary education in Germany is strongly divided into distinct tracks that either aim for university entry or for vocational training. Allocation to these tracks predicts a wide range of life outcomes. In this paper, we combine survey and interview results to explore why voting intentions are strongly shaped by attendance of either educational track.
+      </div>
+    </a>
+    
+
+    <div class="stream-meta article-metadata">
+
+      
+
+      
+      <div>
+        
+
+  <span >
+      <a href="/author/dr-lukas-wallrich/">Dr Lukas Wallrich</a></span>, <span >
+      <a href="/author/keon-west/">Keon West</a></span>, <span >
+      <a href="/author/adam-rutland/">Adam Rutland</a></span>
+      </div>
+      
+    </div>
+
+    
+    <div class="btn-links">
+      
+
+
+
+
+
+
+
+
+  
+    
+  
+
+
+
+<a class="btn btn-outline-primary btn-page-header btn-sm" href="https://journals.sagepub.com/doi/pdf/10.1177/20471734211016501" target="_blank" rel="noopener">
+  PDF
+</a>
+
+
+
+<a href="#" class="btn btn-outline-primary btn-page-header btn-sm js-cite-modal"
+        data-filename="/publication/citizenship/cite.bib">
+  Cite
+</a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<a class="btn btn-outline-primary btn-page-header btn-sm" href="https://doi.org/10.1177/20471734211016501" target="_blank" rel="noopener">
+  DOI
+</a>
+
+
+
+    </div>
+    
+
+  </div>
+  <div class="ml-3">
+    
+    
+    
+    
+    
+    <a href="/publication/citizenship/" >
+      <img src="/publication/citizenship/featured_hucde7702e4fb8a7b3c6a188456a04d866_42470_336d893824ed5815629ff134d73e1aa4.jpg" data-src="/publication/citizenship/featured_hucde7702e4fb8a7b3c6a188456a04d866_42470_150x0_resize_q75_lanczos.jpg" alt="Civic understanding mediates of the effect of educational tracks on voting intentions in German schools" class="lazyload">
+    </a>
+    
+  </div>
+</div>
+
+    
+  
+    
+      
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+  
+
+
+<div class="media stream-item">
+  <div class="media-body">
+
+    <div class="section-subheading article-title mb-0 mt-0">
+      <a href="/publication/ejsp-diversity/" >Valuing diversity: An undervalued mediator of intergroup contact</a>
+    </div>
+
+    
+    <a href="/publication/ejsp-diversity/"  class="summary-link">
+      <div class="article-style">
+        This article reports two studies that suggest that intergroup contact is associated with a greater valuing of diversity, and then in turn with positive intergroup attitudes and intentions.
+      </div>
+    </a>
+    
+
+    <div class="stream-meta article-metadata">
+
+      
+
+      
+      <div>
+        
+
+  <span >
+      <a href="/author/dr-lukas-wallrich/">Dr Lukas Wallrich</a></span>, <span >
+      <a href="/author/keon-west/">Keon West</a></span>, <span >
+      <a href="/author/adam-rutland/">Adam Rutland</a></span>
+      </div>
+      
+    </div>
+
+    
+    <div class="btn-links">
+      
+
+
+
+
+
+
+
+
+  
+    
+  
+
+
+
+<a class="btn btn-outline-primary btn-page-header btn-sm" href="https://onlinelibrary.wiley.com/doi/full/10.1002/ejsp.2822" target="_blank" rel="noopener">
+  PDF
+</a>
+
+
+
+<a href="#" class="btn btn-outline-primary btn-page-header btn-sm js-cite-modal"
+        data-filename="/publication/ejsp-diversity/cite.bib">
+  Cite
+</a>
+
+
+  
+  
+    
+  
+<a class="btn btn-outline-primary btn-page-header btn-sm" href="https://osf.io/sbpxj/" target="_blank" rel="noopener">
+  Code
+</a>
+
+
+  
+  
+    
+  
+<a class="btn btn-outline-primary btn-page-header btn-sm" href="https://osf.io/sbpxj/" target="_blank" rel="noopener">
+  Dataset
+</a>
+
+
+
+
+
+  
+  
+    
+  
+<a class="btn btn-outline-primary btn-page-header btn-sm" href="/pubs/Diversity-ICP-poster.pdf" target="_blank" rel="noopener">
+  Poster
+</a>
+
+
+
+
+
+
+
+<a class="btn btn-outline-primary btn-page-header btn-sm" href="https://doi.org/https://doi.org/10.1002/ejsp.2822" target="_blank" rel="noopener">
+  DOI
+</a>
+
+
+
+    </div>
+    
+
+  </div>
+  <div class="ml-3">
+    
+    
+    
+    
+    
+    <a href="/publication/ejsp-diversity/" >
+      <img src="/publication/ejsp-diversity/featured_hub7799cff45c6085f68aba4a5b1e205e3_1982151_f9af315a8bc5d845e3f0b37ec713459e.jpg" data-src="/publication/ejsp-diversity/featured_hub7799cff45c6085f68aba4a5b1e205e3_1982151_150x0_resize_q75_lanczos.jpg" alt="Valuing diversity: An undervalued mediator of intergroup contact" class="lazyload">
+    </a>
+    
+  </div>
+</div>
+
+    
+  
+    
+      
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+  
+
+
+<div class="media stream-item">
+  <div class="media-body">
+
+    <div class="section-subheading article-title mb-0 mt-0">
+      <a href="/publication/jspp-foreigners/" >Painting all foreigners with one brush</a>
+    </div>
+
+    
+    <a href="/publication/jspp-foreigners/"  class="summary-link">
+      <div class="article-style">
+        Surveys often ask respondents to report their attitudes towards &ldquo;foreigners.&rdquo; In this paper, we explore who German respondents typically think of and why this matters for the interpretation of survey results.
+      </div>
+    </a>
+    
+
+    <div class="stream-meta article-metadata">
+
+      
+
+      
+      <div>
+        
+
+  <span >
+      <a href="/author/dr-lukas-wallrich/">Dr Lukas Wallrich</a></span>, <span >
+      <a href="/author/keon-west/">Keon West</a></span>, <span >
+      <a href="/author/adam-rutland/">Adam Rutland</a></span>
+      </div>
+      
+    </div>
+
+    
+    <div class="btn-links">
+      
+
+
+
+
+
+
+
+
+  
+    
+  
+
+
+
+<a class="btn btn-outline-primary btn-page-header btn-sm" href="https://jspp.psychopen.eu/index.php/jspp/article/view/5231/5231.pdf" target="_blank" rel="noopener">
+  PDF
+</a>
+
+
+
+<a href="#" class="btn btn-outline-primary btn-page-header btn-sm js-cite-modal"
+        data-filename="/publication/jspp-foreigners/cite.bib">
+  Cite
+</a>
+
+
+  
+  
+    
+  
+<a class="btn btn-outline-primary btn-page-header btn-sm" href="https://osf.io/tzjxp/" target="_blank" rel="noopener">
+  Code
+</a>
+
+
+
+
+
+
+
+
+
+
+
+
+<a class="btn btn-outline-primary btn-page-header btn-sm" href="https://doi.org/10.5964/jspp.v8i1.1283" target="_blank" rel="noopener">
+  DOI
+</a>
+
+
+
+    </div>
+    
+
+  </div>
+  <div class="ml-3">
+    
+    
+    
+    
+    
+    <a href="/publication/jspp-foreigners/" >
+      <img src="/publication/jspp-foreigners/featured_hu496a05850da32ee3ca3e736f93490660_247047_adeaaa109caf9ced0e0cbd6a3e6315c5.jpg" data-src="/publication/jspp-foreigners/featured_hu496a05850da32ee3ca3e736f93490660_247047_150x0_resize_q75_lanczos.jpg" alt="Painting all foreigners with one brush" class="lazyload">
+    </a>
+    
+  </div>
+</div>
+
+    
+  
+
+  
+  
+  
+
+</div>
+
+
+    
+      </div>
+    
+
+    </div>
+  </section>
+
+  
+  
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+  
+  
+
+  
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  <section id="blog" class="home-section wg-pages  "  >
+   <div class="home-section-bg " ></div>
+    <div class="container">
+
+    
+      <div class="row  ">
+      
+        
+          <div class="section-heading col-12 col-lg-4 mb-3 mb-lg-0 d-flex flex-column align-items-center align-items-lg-start">
+            <h1 class="mb-0">Recent Blog Posts</h1>
+            
+          </div>
+        
+      
+    
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+<div class="col-12 col-lg-8">
+
+  
+
+  
+    
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<div class="media stream-item">
+  <div class="media-body">
+
+    <div class="section-subheading article-title mb-0 mt-0">
+      <a href="/blog/small-telescopes-for-higher-power-replications/" >Small Telescopes for Higher-Power Replications</a>
+    </div>
+
+    
+    <a href="/blog/small-telescopes-for-higher-power-replications/"  class="summary-link">
+      <div class="article-style">
+        TL;DR. In Simonsohn’s Small‑Telescopes framework you test whether the true effect is smaller than the effect that would have given the original study 33% power (call this \(d_{33\%}\)). Simonsohn (2015) shows that this requires 2.
+      </div>
+    </a>
+    
+
+    <div class="stream-meta article-metadata">
+
+      
+
+      
+        
+
+
+<div class="article-metadata">
+
+  
+  
+
+  
+  <span class="article-date">
+    
+    
+      
+          Last updated on
+      
+    
+    9 August 2025
+  </span>
+  
+
+  
+
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+  
+
+</div>
+
+      
+    </div>
+
+    
+
+  </div>
+  <div class="ml-3">
+    
+    
+  </div>
+</div>
+
+    
+  
+    
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<div class="media stream-item">
+  <div class="media-body">
+
+    <div class="section-subheading article-title mb-0 mt-0">
+      <a href="/blog/assessing-interrater-agreement-in-meta-analyses-what-sample-size-do-i-need/" >Assessing interrater agreement in meta-analyses - what sample size do I need?</a>
+    </div>
+
+    
+    <a href="/blog/assessing-interrater-agreement-in-meta-analyses-what-sample-size-do-i-need/"  class="summary-link">
+      <div class="article-style">
+        Work in Progress: This post is a draft and currently under review. Feedback is highly welcome. Please double-check the details before relying on them for decision-making.
+   The problem Researchers conducting meta-analyses and systematic reviews need to decide whether to use one or multiple researchers at both the screening and coding stages.
+      </div>
+    </a>
+    
+
+    <div class="stream-meta article-metadata">
+
+      
+
+      
+        
+
+
+<div class="article-metadata">
+
+  
+  
+
+  
+  <span class="article-date">
+    
+    
+      
+          Last updated on
+      
+    
+    11 May 2023
+  </span>
+  
+
+  
+
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+  
+  <span class="middot-divider"></span>
+  <span class="article-categories">
+    <i class="fas fa-folder mr-1"></i><a href="/category/statistics/">statistics</a></span>
+  
+
+</div>
+
+      
+    </div>
+
+    
+
+  </div>
+  <div class="ml-3">
+    
+    
+    
+    
+    
+    <a href="/blog/assessing-interrater-agreement-in-meta-analyses-what-sample-size-do-i-need/" >
+      <img src="/blog/assessing-interrater-agreement-in-meta-analyses-what-sample-size-do-i-need/featured_hu3d03a01dcc18bc5be0e67db3d8d209a6_44811_d858a9bb3abece368fa64f7bb9c7712f.jpg" data-src="/blog/assessing-interrater-agreement-in-meta-analyses-what-sample-size-do-i-need/featured_hu3d03a01dcc18bc5be0e67db3d8d209a6_44811_150x0_resize_q75_lanczos.jpg" alt="Assessing interrater agreement in meta-analyses - what sample size do I need?" class="lazyload">
+    </a>
+    
+  </div>
+</div>
+
+    
+  
+    
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<div class="media stream-item">
+  <div class="media-body">
+
+    <div class="section-subheading article-title mb-0 mt-0">
+      <a href="/blog/quickly-expand-your-capacity-run-python-script-on-google-cloud/" >Quickly expand your capacity: run Python script on Google Cloud</a>
+    </div>
+
+    
+    <a href="/blog/quickly-expand-your-capacity-run-python-script-on-google-cloud/"  class="summary-link">
+      <div class="article-style">
+        I am currently working on some simulation studies using agent-based models, which can quickly take a very long time to run. Rather than having my system slowed for hours/days, I wanted to find a way to quickly send code into the cloud.
+      </div>
+    </a>
+    
+
+    <div class="stream-meta article-metadata">
+
+      
+
+      
+        
+
+
+<div class="article-metadata">
+
+  
+  
+  
+  
+  <div>
+    
+
+  <span >
+      <a href="/author/lukas-wallrich/">Lukas Wallrich</a></span>
+  </div>
+  
+  
+
+  
+  <span class="article-date">
+    
+    
+      
+    
+    25 October 2021
+  </span>
+  
+
+  
+
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+  
+  <span class="middot-divider"></span>
+  <span class="article-categories">
+    <i class="fas fa-folder mr-1"></i><a href="/category/coding/">coding</a></span>
+  
+
+</div>
+
+      
+    </div>
+
+    
+
+  </div>
+  <div class="ml-3">
+    
+    
+    
+    
+    
+    <a href="/blog/quickly-expand-your-capacity-run-python-script-on-google-cloud/" >
+      <img src="/blog/quickly-expand-your-capacity-run-python-script-on-google-cloud/featured_hu0f81677ca53754b440b5703bcb9bd355_170462_bb0b46f68fcfda544045342c603b2724.jpg" data-src="/blog/quickly-expand-your-capacity-run-python-script-on-google-cloud/featured_hu0f81677ca53754b440b5703bcb9bd355_170462_150x0_resize_q75_lanczos.jpg" alt="Quickly expand your capacity: run Python script on Google Cloud" class="lazyload">
+    </a>
+    
+  </div>
+</div>
+
+    
+  
+
+  
+  
+  
+
+</div>
+
+
+    
+      </div>
+    
+
+    </div>
+  </section>
+
+
+
+  </div>
+
+  <div class="page-footer">
+    
+    
+    <div class="container">
+      <footer class="site-footer">
+ 
+  <p class="powered-by">
+    
+      <a href="/privacy/">Privacy Policy</a>
+    
+    
+ &middot; 
+      <a href="/credits/">Credits</a>
+    
+  </p>
+
+
+  <p class="powered-by">
+
+    Made with <i class="fas fa-heart" style="color: #06805E"></i>, <a href="https://github.com/LukasWallrich/personal_webpage" target="_blank" rel="noopener"><i class="fas fa-code-branch"></i></a>, the <a href="https://cran.r-project.org/" target="_blank" rel="noopener"><i class="fab fa-r-project"></i> </a><a href="https://github.com/rstudio/blogdown" target="_blank" rel="noopener">blogdown</a> package, and the 
+    <a href="https://wowchemy.com/?utm_campaign=poweredby" target="_blank" rel="noopener">Wowchemy</a> <a href="https://github.com/wowchemy/starter-academic" target="_blank" rel="noopener"> Academic theme</a> for
+    <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a>.
+
+    
+    <span class="float-right" aria-hidden="true">
+      <a href="#" id="back_to_top">
+        <span class="button_icon">
+          <i class="fas fa-chevron-up fa-2x"></i>
+        </span>
+      </a>
+    </span>
+    
+    <a hidden rel="me" href="https://sciences.social/@lukaswallrich">Mastodon</a>
+  </p>
+</footer>
+    </div>
+    
+  </div>
+
+  
+<div id="modal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Cite</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <pre><code class="tex hljs"></code></pre>
+      </div>
+      <div class="modal-footer">
+        <a class="btn btn-outline-primary my-1 js-copy-cite" href="#" target="_blank">
+          <i class="fas fa-copy"></i> Copy
+        </a>
+        <a class="btn btn-outline-primary my-1 js-download-cite" href="#" target="_blank">
+          <i class="fas fa-download"></i> Download
+        </a>
+        <div id="modal-error"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+      
+
+    
+    
+    
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/instant.page/5.1.0/instantpage.min.js" integrity="sha512-1+qUtKoh9XZW7j+6LhRMAyOrgSQKenQ4mluTR+cvxXjP1Z54RxZuzstR/H9kgPXQsVB8IW7DMDFUJpzLjvhGSQ==" crossorigin="anonymous"></script>
+
+      
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.4/imagesloaded.pkgd.min.js" integrity="sha256-lqvxZrPLtfffUl2G/e7szqSvPBILGbwmsGE1MKlOi0Q=" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js" integrity="sha256-CBrpuqrMhXwcLLUd5tvQ4euBHCdh7wGlDfNz8vbu/iI=" crossorigin="anonymous"></script>
+      
+
+      
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js" integrity="sha256-yt2kYMy0w8AbtF89WXb2P1rfjcP/HTHLT7097U8Y5b8=" crossorigin="anonymous"></script>
+      
+
+      
+
+      
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/highlight.min.js" integrity="sha512-TDKKr+IvoqZnPzc3l35hdjpHD0m+b2EC2SrLEgKDRWpxf2rFCxemkgvJ5kfU48ip+Y+m2XVKyOCD85ybtlZDmw==" crossorigin="anonymous"></script>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/languages/r.min.js"></script>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/languages/python.min.js"></script>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/languages/latex.min.js"></script>
+        
+      
+
+    
+
+    
+    
+    
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.min.js" integrity="sha512-SeiQaaDh73yrb56sTW/RgVdi/mMqNeM2oBwubFHagc5BkixSpP1fvqF47mKzPGWYSSy4RwbBunrJBQ4Co8fRWA==" crossorigin="anonymous"></script>
+    
+
+    
+    
+
+    
+    
+    
+      
+      <script id="search-hit-fuse-template" type="text/x-template">
+        <div class="search-hit" id="summary-{{key}}">
+          <div class="search-hit-content">
+            <div class="search-hit-name">
+              <a href="{{relpermalink}}">{{title}}</a>
+              <div class="article-metadata search-hit-type">{{type}}</div>
+              <p class="search-hit-description">{{snippet}}</p>
+            </div>
+          </div>
+        </div>
+      </script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/3.2.1/fuse.min.js" integrity="sha256-VzgmKYmhsGNNN4Ph1kMW+BjoYJM2jV5i4IlFoeZA9XI=" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha256-4HLtjeVgH0eIB3aZ9mLYF6E8oU5chNdjU6p6rrXpl9U=" crossorigin="anonymous"></script>
+      
+    
+
+    
+    
+
+    
+    
+    
+    
+
+    <script src="/js/_vendor/bootstrap.bundle.min.f81d0a1705048649befc8b595e455a94.js"></script>
+
+    
+    
+      
+      
+      
+      
+      
+      
+      
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+      
+      
+    
+    
+    <script src="/en/js/wowchemy.min.e20609e6ad3f7fce339ee2e74f13682b.js"></script>
+
+    
+  <script async defer src="https://buttons.github.io/buttons.js"></script>
+
+
+
+
+</body>
+</html>
