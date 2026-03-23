@@ -1,8 +1,7 @@
 {{/* Custom JavaScript for FORRT site */}}
 
-{{/* Clusters list page lives at content/clusters/index.md — Section is often empty; match by path */}}
+{{/* Clusters page: load after DOM; defer runs before DOMContentLoaded so onReady still fires */}}
 {{ $isClustersPage := and .File (strings.HasPrefix .File.Path "clusters/") }}
 {{ if $isClustersPage }}
-<script src="{{ "js/clusters-search.js" | relURL }}"></script>
 <script src="{{ "js/clusters-page.js" | relURL }}" defer></script>
 {{ end }}

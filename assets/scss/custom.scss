@@ -233,63 +233,154 @@
   margin-bottom: 0.75rem;
 }
 
-/* ---- Search bar ---- */
-.clusters-search-bar {
+/* ---- Inline clusters list search (toolbar; not Algolia/site search) ---- */
+.clusters-inline-search {
   position: relative;
 }
 
-.clusters-search-bar .form-control {
-  font-size: 0.9rem;
-  padding: 0.5rem 0.75rem;
+.clusters-inline-search__row {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: stretch;
+  gap: 0.4rem;
+  position: relative;
+  z-index: 2;
+  background: #fefdf6;
+  padding-bottom: 0.45rem;
+}
+
+.clusters-inline-search__input {
+  flex: 1 1 auto;
+  min-width: 0;
+  max-width: 22rem;
+  font-size: 0.88rem;
+  padding: 0.45rem 0.65rem;
   border-radius: 6px;
 }
 
-.cluster-search-results {
-  max-height: 350px;
-  overflow-y: auto;
+.clusters-inline-search__submit {
+  flex: 0 0 auto;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 2.35rem;
+  padding: 0.35rem 0.55rem;
+  border-radius: 6px;
+}
+
+.clusters-inline-search__toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  padding: 0.35rem 0.5rem 0.35rem 0.75rem;
+}
+
+.clusters-inline-search__close {
+  flex-shrink: 0;
+  line-height: 1;
+  padding: 0.25rem 0.45rem !important;
+}
+
+/* Like browser Ctrl+F: flat highlight, no ring/border */
+.clusters-inline-search-highlight {
+  outline: none !important;
+  box-shadow: none !important;
+  background-color: rgba(255, 220, 0, 0.55) !important;
+  border-radius: 2px;
+  transition: background-color 0.35s ease;
+}
+
+/* Panel below input row: toolbar fixed, only hit list scrolls (no overlap with search box) */
+.clusters-inline-search__panel {
+  display: none;
+  flex-direction: column;
+  width: 100%;
+  max-height: 360px;
+  margin-top: 0.75rem;
   background: #fff;
   border: 1px solid #ddd;
   border-radius: 6px;
-  margin-top: 0.25rem;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  position: relative;
+  z-index: 1;
 }
 
-.search-count {
-  font-size: 0.72rem;
-  color: #888;
-  padding: 0.4rem 0.75rem;
+.clusters-inline-search__panel.clusters-inline-search__panel--open {
+  display: flex;
+}
+
+.clusters-inline-search__toolbar-host {
+  flex-shrink: 0;
   border-bottom: 1px solid #eee;
+  background: #fafafa;
 }
 
-.search-result-item {
-  display: block;
+.clusters-inline-search__results-body {
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.clusters-inline-search__count {
+  font-size: 0.72rem;
+  color: #666;
+  font-weight: 600;
+  margin: 0;
+}
+
+.clusters-inline-search__hit {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.2rem;
   padding: 0.5rem 0.75rem;
   border-bottom: 1px solid #f0f0f0;
   color: #333;
   text-decoration: none;
   font-size: 0.8rem;
+  text-align: left;
 }
 
-.search-result-item:hover {
+.clusters-inline-search__hit-label {
+  line-height: 1.35;
+}
+
+.clusters-inline-search__hit-meta {
+  font-size: 0.68rem;
+  color: #888;
+  line-height: 1.25;
+}
+
+.clusters-inline-search__hit:hover {
   background: #f5f7fa;
   text-decoration: none;
   color: #111;
 }
 
-.search-no-results, .search-more {
+.clusters-inline-search__empty,
+.clusters-inline-search__more {
   padding: 0.5rem 0.75rem;
   font-size: 0.78rem;
   color: #888;
 }
 
-/* ---- Sub-cluster tabs (styled like real tabs) ---- */
+/* ---- Sub-cluster tabs (chip style + border: same on desktop & mobile) ---- */
 .cluster-tabs {
   flex-wrap: wrap;
+  gap: 0.35rem 0.3rem;
   margin-bottom: 0;
-  border-bottom: 1px solid rgba(0,0,0,0.15);
+  overflow: visible;
+  align-items: stretch;
+  border-bottom: none;
 }
 
 .cluster-tabs .nav-item {
-  flex-shrink: 0;
+  flex: 0 1 auto;
+  min-width: 0;
   max-width: 100%;
 }
 
@@ -297,25 +388,34 @@
   font-size: 0.78rem;
   padding: 0.4rem 0.75rem;
   color: #8b0000;
-  border: 1px solid transparent;
-  border-bottom: none;
-  margin-bottom: -1px;
   white-space: normal;
   word-break: break-word;
-  border-radius: 4px 4px 0 0;
-  transition: background 0.15s, color 0.15s;
+  hyphens: auto;
+  text-align: center;
+  line-height: 1.25;
+  min-height: 2.35rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.15rem;
+  margin-bottom: 0;
+  border-radius: 6px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  transition: background 0.15s, color 0.15s, border-color 0.15s;
 }
 
 .cluster-tabs .nav-link:hover {
   color: #5a0000;
-  background: rgba(255,255,255,0.5);
+  background: rgba(255, 255, 255, 0.5);
+  border-color: rgba(0, 0, 0, 0.14);
 }
 
 .cluster-tabs .nav-link.active {
   color: #000;
   font-weight: 600;
-  background: rgba(255,255,255,0.7);
-  border-color: rgba(0,0,0,0.15);
+  background: rgba(255, 255, 255, 0.88);
+  border-color: rgba(0, 0, 0, 0.2);
 }
 
 .tab-count {
@@ -327,6 +427,8 @@
 
 .cluster-tab-content {
   padding: 1.25rem 0.5rem;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  margin-top: 0.35rem;
 }
 
 /* ---- Sub-cluster heading & description ---- */
@@ -372,8 +474,8 @@
     padding: 0.4rem;
   }
 
-  .cluster-search-results {
-    max-height: 42vh;
+  .clusters-inline-search__panel {
+    max-height: 320px;
   }
 
   .cluster-section {
@@ -387,6 +489,12 @@
 }
 
 @media (max-width: 991px) {
+  /* Flush under sticky controls (no mb-3 gap) + drawer meets toggle bar */
+  .clusters-layout .clusters-controls {
+    margin-bottom: 0 !important;
+  }
+
+  /* In-flow sidebar hidden until open; when open use fixed drawer so it stays visible after page scroll */
   .clusters-sidebar-inner {
     position: static;
     max-height: 50vh;
@@ -400,28 +508,59 @@
   }
 
   .clusters-sidebar.sidebar-open {
-    background: #fff;
-    border: 1px solid #e9ecef;
-    border-radius: 8px;
-    padding: 0.5rem;
-    margin-bottom: 0.75rem;
-  }
-
-  .cluster-tabs {
-    flex-wrap: nowrap;
-    overflow-x: auto;
-    overflow-y: hidden;
+    display: block;
+    position: fixed;
+    left: 0;
+    right: 0;
+    width: 100%;
+    max-width: 100vw;
+    margin: 0;
+    padding: 0 0.75rem calc(0.75rem + env(safe-area-inset-bottom, 0px));
+    box-sizing: border-box;
+    top: calc(
+      var(--clusters-sticky-offset) +
+      env(safe-area-inset-top, 0px) +
+      var(--clusters-sticky-gap) +
+      var(--clusters-controls-height)
+    );
+    bottom: 0;
+    z-index: 1010;
+    overflow-y: auto;
+    overflow-x: hidden;
     -webkit-overflow-scrolling: touch;
-    scrollbar-width: thin;
+    overscroll-behavior: contain;
+    background: #fefdf6;
+    border-top: 1px solid #e9ecef;
+    box-shadow: 0 -4px 24px rgba(0, 0, 0, 0.12);
+    border-radius: 0;
   }
 
+  .clusters-sidebar.sidebar-open .clusters-sidebar-inner {
+    position: static;
+    max-height: none;
+    margin-bottom: 0;
+    margin-top: 0;
+    overflow: visible;
+    padding-top: 0;
+    border-radius: 0;
+    border: none;
+    border-bottom: 1px solid #e9ecef;
+  }
+
+  .clusters-sidebar.sidebar-open .sidebar-header {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    background: #f8f9fa;
+    padding: 0.15rem 0.1rem 0.45rem;
+    border-bottom: 1px solid #e9ecef;
+    margin-bottom: 0.5rem;
+  }
+
+  /* Narrow screens: sized tab cells (base styles = borders match desktop) */
   .cluster-tabs .nav-item {
-    max-width: none;
-  }
-
-  .cluster-tabs .nav-link {
-    white-space: nowrap;
-    word-break: normal;
+    flex: 1 1 auto;
+    min-width: clamp(7rem, 42vw, 11.5rem);
   }
 
   .cluster-tab-content {
@@ -435,13 +574,13 @@
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
   }
 
-  .clusters-search-bar .form-control {
+  .clusters-inline-search__input {
     font-size: 0.86rem;
     padding: 0.46rem 0.62rem;
   }
 
-  .cluster-search-results {
-    max-height: 38vh;
+  .clusters-inline-search__panel {
+    max-height: 280px;
   }
 
   .cluster-section {
@@ -510,13 +649,14 @@
     border-radius: 5px;
   }
 
-  .clusters-search-bar .form-control {
+  .clusters-inline-search__input {
     font-size: 0.82rem;
     padding: 0.42rem 0.55rem;
+    max-width: 100%;
   }
 
-  .cluster-search-results {
-    max-height: 34vh;
+  .clusters-inline-search__panel {
+    max-height: 240px;
   }
 
   .clusters-mobile-toggle {
@@ -557,14 +697,15 @@
     margin-top: 0.45rem;
   }
 
-  .cluster-tabs {
-    scroll-padding-left: 0.25rem;
+  .cluster-tabs .nav-item {
+    min-width: calc(50% - 0.2rem);
+    flex: 1 1 calc(50% - 0.2rem);
   }
 
   .cluster-tabs .nav-link {
     font-size: 0.66rem;
     min-height: 1.9rem;
-    border-radius: 3px 3px 0 0;
+    border-radius: 5px;
   }
 
   .cluster-tab-content {
@@ -1361,9 +1502,6 @@ article.article:has(table) .article-container {
   margin-top: 1rem;
   margin-bottom: 0;
   padding: 0.85rem 1.25rem 1.15rem;
-  background: #f8f9fa;
-  border-radius: 8px;
-  border: 1px solid #e9ecef;
 }
 
 .syllabus-heading {
