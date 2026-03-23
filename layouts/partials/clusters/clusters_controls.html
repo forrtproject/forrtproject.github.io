@@ -1,0 +1,21 @@
+{{/* Search toolbar + mobile nav toggle (shared by hub and cluster subpages) */}}
+<div class="clusters-controls mb-3">
+  <div class="clusters-inline-search">
+    <div class="clusters-inline-search__row">
+      <input type="text" id="clusters-inline-search-input" class="form-control clusters-inline-search__input"
+             placeholder="Search clusters…" aria-label="Search clusters and sub-clusters" autocomplete="off" spellcheck="false">
+      <button type="button" class="btn btn-sm btn-primary clusters-inline-search__submit" id="clusters-inline-search-btn" aria-label="Run search">
+        <i class="fas fa-search" aria-hidden="true"></i>
+      </button>
+    </div>
+    <div id="clusters-inline-search-panel" class="clusters-inline-search__panel">
+      <div id="clusters-inline-search-toolbar" class="clusters-inline-search__toolbar-host" hidden></div>
+      <div id="clusters-inline-search-results" class="clusters-inline-search__results-body" aria-live="polite"></div>
+    </div>
+  </div>
+
+  <button class="btn btn-sm btn-outline-secondary d-lg-none clusters-mobile-toggle" type="button"
+          id="clusters-mobile-toggle">
+    &#9776; Navigate clusters and sub-clusters
+  </button>
+</div>

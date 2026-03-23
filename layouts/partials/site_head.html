@@ -206,6 +206,11 @@
     {{ $og_image = $featured_image.Permalink }}
     {{ $og_image_width = $featured_image.Width }}
     {{ $og_image_height = $featured_image.Height }}
+  {{ else if and .Params.sharing_image_resource (.Resources.GetMatch .Params.sharing_image_resource) }}
+    {{ $share_res := .Resources.GetMatch .Params.sharing_image_resource }}
+    {{ $og_image = $share_res.Permalink }}
+    {{ $og_image_width = $share_res.Width }}
+    {{ $og_image_height = $share_res.Height }}
   {{ else if .Params.header.image }}
     {{ $og_image = printf "%s/%s" $media_dir .Params.header.image | absURL }}
   {{ else if site.Params.sharing_image }}
@@ -246,6 +251,8 @@
   {{- with $og_image_alt -}}
   <meta property="og:image:alt" content="{{ . }}">
   {{- end -}}
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="{{ $og_image }}">
   {{- end -}}
   <meta property="og:locale" content="{{ site.LanguageCode | default "en-us" }}">
   {{ if .IsPage }}

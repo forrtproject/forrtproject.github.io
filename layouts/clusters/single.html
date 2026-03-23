@@ -1,17 +1,19 @@
-{{/* layouts/clusters/single.html - Main layout for clusters page */}}
+{{/* layouts/clusters/single.html - Main layout for clusters page (same H1/SEO split as list.html) */}}
 {{ define "main" }}
+  {{ partial "clusters/seo_jsonld.html" . }}
   <div class="universal-wrapper pt-3 pb-3">
     <div class="container">
 
       {{/* Clusters page header */}}
       {{ if .Params.image }}
       <div class="article-header d-print-none">
-        <img src="{{ .Params.image }}" alt="{{ .Title }}" class="article-banner" loading="lazy">
+        <img src="{{ .Params.image }}" alt="{{ .Params.heading_title | default .Title }}" class="article-banner" loading="lazy">
       </div>
       {{ end }}
 
       <div class="article-container pt-3">
-        <h1 itemprop="headline">{{ .Title }}</h1>
+        {{/* Hub /clusters/ only: larger H1 (cluster subpages use layout cluster, not this template) */}}
+        <h1 class="clusters-site-heading{{ if and .IsNode (eq .Section "clusters") }} clusters-hub-page__title{{ end }}" itemprop="headline">{{ .Params.heading_title | default .Title }}</h1>
         
         {{/* Subtitle if present */}}
         {{ if .Params.subtitle }}

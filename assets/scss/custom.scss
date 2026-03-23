@@ -107,7 +107,7 @@
   );
   max-height: calc(100vh - var(--clusters-sticky-offset) - 20px);
   overflow-y: auto;
-  padding: 0.75rem;
+  padding: 0 0.75rem 0.75rem;
   background: #f8f9fa;
   border: 1px solid #e9ecef;
   border-radius: 8px;
@@ -119,14 +119,30 @@
   top: 0;
   z-index: 2;
   background: #f8f9fa;
-  padding: 0.15rem 0.1rem 0.45rem;
+  padding: 0;
   border-bottom: 1px solid #e9ecef;
   font-size: 0.75rem;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.5px;
   color: #888;
-  margin-bottom: 0.5rem;
+  margin: 0;
+}
+
+/* No air between section label and cluster list (hub + subpages) */
+.clusters-sidebar-inner #cluster-nav {
+  margin: 0;
+  padding: 0;
+}
+
+/* First cluster row: remove top padding (main source of “gap” below header border) */
+.clusters-sidebar-inner #cluster-nav > .cluster-nav-group:first-child > .cluster-nav-heading {
+  padding-top: 0;
+}
+
+.clusters-sidebar-inner #cluster-nav > .cluster-nav-group:first-child.cluster-nav-group--active {
+  padding-top: 0;
+  margin-top: 0;
 }
 
 .cluster-nav-heading {
@@ -146,6 +162,30 @@
 .cluster-nav-heading:hover {
   background: rgba(0,0,0,0.04);
   color: #111;
+}
+
+/* Current cluster on /clusters/cluster-N/ (see active_cluster_number in sidebar_nav) */
+.cluster-nav-group--active {
+  margin: 0 -0.15rem 0.35rem;
+  padding: 0.25rem 0.2rem 0.3rem;
+  border-radius: 6px;
+  background: rgba(139, 0, 0, 0.07);
+  border: 1px solid rgba(139, 0, 0, 0.14);
+}
+
+.cluster-nav-heading--active {
+  color: #5a0000 !important;
+  background: rgba(255, 255, 255, 0.72);
+  font-weight: 700;
+}
+
+.cluster-nav-heading--active:hover {
+  background: rgba(255, 255, 255, 0.88);
+  color: #3d0000 !important;
+}
+
+.cluster-nav-group--active .cluster-nav-subs .nav-link {
+  color: #444;
 }
 
 .cluster-nav-toggle {
@@ -201,23 +241,24 @@
 }
 
 .cluster-title {
-  font-size: 1.15rem;
-  font-weight: 700;
+  font-size: 0.95rem;
+  font-weight: 600;
   margin-bottom: 0.1rem;
   display: flex;
   align-items: center;
-  gap: 0.4rem;
+  gap: 0.35rem;
+  line-height: 1.3;
 }
 
 .cluster-number {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 1.6em;
-  height: 1.6em;
+  width: 1.45em;
+  height: 1.45em;
   border-radius: 50%;
   background: rgba(0,0,0,0.1);
-  font-size: 0.8em;
+  font-size: 0.75em;
   flex-shrink: 0;
 }
 
@@ -231,6 +272,11 @@
   line-height: 1.5;
   color: #555;
   margin-bottom: 0.75rem;
+}
+
+/* Search bar sits under page title (universal-wrapper); spacing via .mb-3 on wrapper */
+.clusters-title-toolbar {
+  max-width: 100%;
 }
 
 /* ---- Inline clusters list search (toolbar; not Algolia/site search) ---- */
@@ -368,6 +414,10 @@
   color: #888;
 }
 
+.clusters-cluster-lead {
+  max-width: 48rem;
+}
+
 /* ---- Sub-cluster tabs (chip style + border: same on desktop & mobile) ---- */
 .cluster-tabs {
   flex-wrap: wrap;
@@ -433,9 +483,10 @@
 
 /* ---- Sub-cluster heading & description ---- */
 .sc-heading {
-  font-size: 1.1rem;
-  font-weight: 700;
-  margin-bottom: 0.5rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  margin-bottom: 0.45rem;
+  line-height: 1.3;
 }
 
 .sc-description {
@@ -490,7 +541,8 @@
 
 @media (max-width: 991px) {
   /* Flush under sticky controls (no mb-3 gap) + drawer meets toggle bar */
-  .clusters-layout .clusters-controls {
+  .clusters-layout .clusters-controls,
+  .clusters-title-toolbar .clusters-controls {
     margin-bottom: 0 !important;
   }
 
@@ -552,9 +604,9 @@
     top: 0;
     z-index: 1;
     background: #f8f9fa;
-    padding: 0.15rem 0.1rem 0.45rem;
+    padding: 0;
     border-bottom: 1px solid #e9ecef;
-    margin-bottom: 0.5rem;
+    margin: 0;
   }
 
   /* Narrow screens: sized tab cells (base styles = borders match desktop) */
@@ -619,7 +671,7 @@
   }
 
   .cluster-title {
-    font-size: 0.98rem;
+    font-size: 0.86rem;
     line-height: 1.35;
   }
 
@@ -670,12 +722,12 @@
   }
 
   .cluster-title {
-    font-size: 0.92rem;
+    font-size: 0.8rem;
   }
 
   .cluster-number {
-    width: 1.45em;
-    height: 1.45em;
+    width: 1.35em;
+    height: 1.35em;
   }
 
   .cluster-stats {
@@ -688,7 +740,7 @@
   }
 
   .sc-heading {
-    font-size: 0.98rem;
+    font-size: 0.88rem;
   }
 }
 
@@ -1616,6 +1668,245 @@ article.article:has(table) .article-container {
   margin: 0 0 1.5rem;
   border-top: 1px solid #e9ecef;
   border-bottom: 1px solid #e9ecef;
+}
+
+/* ---- /clusters/cluster-N/ only: sticky title + search; <main> scrolls (desktop) ---- */
+/* Sticky on __head-wrap (not inner) — more reliable on iOS/mobile. */
+/* --cluster-subpage-sticky-top on :root (JS). z-index < navbar 1030. */
+.clusters-cluster-subpage {
+  overflow: visible;
+}
+
+/* Opaque band so scrolled content doesn’t show through; full viewport width (overrides .universal-wrapper 1000px cap). */
+.clusters-cluster-subpage__head-wrap.universal-wrapper {
+  position: -webkit-sticky;
+  position: sticky;
+  top: var(--cluster-subpage-sticky-top, 72px);
+  z-index: 1018;
+  overflow: visible;
+  width: 100%;
+  max-width: none;
+  /* Match site base background (foundation) so it blends into the page. */
+  background: #fefdf6;
+  box-shadow: none;
+}
+
+.clusters-cluster-subpage__head-inner {
+  /* Match site base background (foundation) so it blends into the page. */
+  background: #fefdf6;
+  padding-bottom: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+/* Center breadcrumb title row + wrapped lines */
+.clusters-cluster-subpage__head-inner .clusters-heading-row__crumbs {
+  justify-content: center;
+}
+
+.clusters-cluster-subpage__head-inner .clusters-heading-row__title.clusters-site-heading {
+  flex: 0 1 auto;
+  text-align: center;
+}
+
+.clusters-cluster-subpage__head-inner .clusters-title-toolbar {
+  width: 100%;
+  max-width: 32rem;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.clusters-cluster-subpage__head-inner .clusters-inline-search__row {
+  justify-content: center;
+}
+
+.clusters-cluster-subpage__head-inner .clusters-mobile-toggle {
+  text-align: center;
+}
+
+/* No “card” behind search on cluster subpages */
+.clusters-cluster-subpage .clusters-controls {
+  position: static;
+  top: auto;
+  z-index: auto;
+  width: 100%;
+  max-width: 32rem;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 0.25rem !important;
+  padding: 0.35rem 0;
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+.clusters-cluster-subpage__display.clusters-display-section {
+  /* Same foundation bg as .clusters-cluster-subpage__head-wrap */
+  background: #fefdf6;
+  padding-top: 0.25rem;
+  margin-top: 0;
+  border-top: none;
+}
+
+@media (min-width: 992px) {
+  .clusters-cluster-subpage__display {
+    overflow: hidden;
+    padding-top: 0.15rem;
+  }
+
+  .clusters-layout--cluster-subpage .clusters-cluster-subpage__row {
+    align-items: stretch;
+    max-height: calc(100vh - var(--cluster-subpage-head-reserved, 220px));
+    min-height: 280px;
+  }
+
+  .clusters-cluster-subpage__main-scroll {
+    overflow-x: hidden;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior: contain;
+    max-height: calc(100vh - var(--cluster-subpage-head-reserved, 220px));
+    min-height: 0;
+    padding-bottom: 2rem;
+  }
+
+  .clusters-cluster-subpage .clusters-sidebar {
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+    max-height: calc(100vh - var(--cluster-subpage-head-reserved, 220px));
+    overflow: hidden;
+  }
+
+  .clusters-cluster-subpage .clusters-sidebar-inner {
+    position: static !important;
+    top: auto !important;
+    flex: 1 1 auto;
+    min-height: 0;
+    max-height: none;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+}
+
+@media (max-width: 991.98px) {
+  .clusters-cluster-subpage__main-scroll {
+    max-height: none !important;
+    overflow-y: visible !important;
+  }
+
+  /* Drawer drops below title/search bar instead of full-height sheet from old top */
+  .clusters-cluster-subpage .clusters-sidebar.sidebar-open {
+    top: var(--cluster-subpage-drawer-top, 200px);
+    bottom: auto;
+    /* Sass min() shadows CSS min(); pass through as unquoted string for the compiler */
+    max-height: #{"min(78vh, calc(100dvh - var(--cluster-subpage-drawer-top, 200px) - env(safe-area-inset-bottom, 0px) - 8px))"};
+    border-radius: 0 0 10px 10px;
+    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.18);
+    border-top: 1px solid #dee2e6;
+    z-index: 1024;
+    padding-bottom: 0.75rem;
+  }
+}
+
+/* Hub + /clusters/cluster-N/ — smaller than default Academic article H1 */
+h1.clusters-site-heading {
+  font-size: 1.45rem;
+  font-weight: 700;
+  line-height: 1.28;
+  margin-bottom: 0.35rem;
+  letter-spacing: -0.015em;
+}
+
+/* /clusters/ section index only — larger hero title (see layouts/clusters/single.html) */
+h1.clusters-site-heading.clusters-hub-page__title {
+  font-size: 2.35rem;
+  line-height: 1.18;
+  margin-bottom: 0.5rem;
+  letter-spacing: -0.02em;
+}
+
+/* Per-cluster page: FORRT clusters / Cluster N: Name — one flow (wraps on narrow screens) */
+.clusters-heading-row__crumbs {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.35rem 0.5rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.clusters-heading-row__parent {
+  font-size: 1.45rem;
+  font-weight: 700;
+  line-height: 1.28;
+  letter-spacing: -0.015em;
+  color: #8b0000;
+  text-decoration: none;
+  flex-shrink: 0;
+}
+
+.clusters-heading-row__parent:hover {
+  text-decoration: underline;
+  color: #5a0000;
+}
+
+.clusters-heading-row__sep {
+  font-size: 1.45rem;
+  font-weight: 400;
+  line-height: 1.28;
+  color: #adb5bd;
+  flex-shrink: 0;
+  user-select: none;
+}
+
+.clusters-heading-row__title.clusters-site-heading {
+  margin: 0;
+  padding: 0;
+  font-size: 1.45rem;
+  flex: 1 1 14rem;
+  min-width: 0;
+}
+
+@media (max-width: 768px) {
+  h1.clusters-site-heading {
+    font-size: 1.28rem;
+  }
+
+  h1.clusters-site-heading.clusters-hub-page__title {
+    font-size: 1.95rem;
+    line-height: 1.2;
+  }
+
+  .clusters-heading-row__parent,
+  .clusters-heading-row__sep,
+  .clusters-heading-row__title.clusters-site-heading {
+    font-size: 1.28rem;
+    line-height: 1.3;
+  }
+}
+
+@media (max-width: 576px) {
+  h1.clusters-site-heading {
+    font-size: 1.12rem;
+    line-height: 1.32;
+  }
+
+  h1.clusters-site-heading.clusters-hub-page__title {
+    font-size: 1.65rem;
+    line-height: 1.22;
+  }
+
+  .clusters-heading-row__parent,
+  .clusters-heading-row__sep,
+  .clusters-heading-row__title.clusters-site-heading {
+    font-size: 1.12rem;
+    line-height: 1.32;
+  }
 }
 
 .clusters-back-to-top {

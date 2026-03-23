@@ -24,6 +24,12 @@
     return;
   }
 
+  // Old taxonomy index URL (resource tag list root) → main clusters taxonomy page
+  if (/^\/forrt_clusters\/?$/i.test(path)) {
+    window.location.replace('/clusters/');
+    return;
+  }
+
   var redirects = [
     { pattern: /^\/curated_resources(\/|$)/, target: '/resources/' },
     { pattern: /^\/glossary\/([^/]+)\/.+/, target: '/glossary/$1/' },
@@ -70,6 +76,7 @@
         <li><a href="{{ .Site.BaseURL }}replication-hub/">Replication Hub</a></li>
         <li><a href="{{ .Site.BaseURL }}lesson-plans/">Lesson Plans</a></li>
         <li><a href="{{ .Site.BaseURL }}publications/">Publications</a></li>
+        <li><a href="{{ .Site.BaseURL }}clusters/"> FORRT's Clusters</a></li>
       </ul>
     </div>
 
