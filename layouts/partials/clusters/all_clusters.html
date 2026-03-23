@@ -1,0 +1,147 @@
+{{/* all_clusters.html - Partial to display all clusters from data */}}
+{{ $data := site.Data.clusters_v4 }}
+{{ if not $data }}
+  <div class="alert alert-warning">
+    <strong>Data Error:</strong> clusters_v4.json data not found. Run <code>python3 scripts/parse_clusters_to_sheet.py --export-json</code>.
+  </div>
+  {{ return }}
+{{ end }}
+
+{{ $colors := slice "#cacfdc" "#eadce6" "#d4e4d9" "#BDC5CA" "#dce4ea" "#e8ddd4" "#c9dbcb" "#d9cfe0" "#cddde3" "#e0d8cc" "#d4dce8" }}
+{{ $arrowColors := slice "#6070a0" "#a05080" "#408060" "#607080" "#5080a0" "#a08060" "#509060" "#8060a0" "#5090a0" "#907050" "#6070a0" }}
+
+<div class="clusters-layout">
+
+  <div class="clusters-controls mb-3">
+    {{/* ===== SEARCH BAR (above sidebar+content) ===== */}}
+    <div class="clusters-search-bar">
+      <input type="text" id="cluster-search" class="form-control"
+             placeholder="Search clusters…" aria-label="Search clusters">
+      <div id="cluster-search-results" class="cluster-search-results" style="display:none;"></div>
+    </div>
+
+    {{/* ===== MOBILE NAV TOGGLE ===== */}}
+    <button class="btn btn-sm btn-outline-secondary d-lg-none clusters-mobile-toggle" type="button"
+            id="clusters-mobile-toggle">
+      &#9776; Navigate clusters
+    </button>
+  </div>
+
+  <div class="row">
+  {{/* ===== SIDEBAR ===== */}}
+  <div class="col-lg-4 col-xl-3 clusters-sidebar" id="clusters-sidebar">
+    <div class="clusters-sidebar-inner">
+      <div class="sidebar-header">Clusters &amp; Sub-clusters</div>
+      <nav id="cluster-nav">
+        {{ range $ci, $cluster := $data.clusters }}
+        {{ $cid := printf "cluster-%d" (int $cluster.number) }}
+        <div class="cluster-nav-group" data-cluster="{{ $cid }}">
+          <a href="#{{ $cid }}" class="cluster-nav-heading">
+            {{ $arrowColor := index $arrowColors (mod $ci (len $arrowColors)) }}
+            <span class="cluster-nav-toggle" style="color:{{ $arrowColor }};">&#9656;</span>
+            {{ $cluster.name }}
+          </a>
+          <ul class="cluster-nav-subs" style="display:none;">
+            {{ range $si, $sc := $cluster.sub_clusters }}
+            {{ $scid := printf "c%d-sc%d" (int $cluster.number) $si }}
+            <li class="nav-item">
+              <a href="#{{ $cid }}" class="nav-link sc-nav-link" data-cluster="{{ $cid }}" data-tab="{{ $scid }}-tab">
+                {{ $sc.name }}
+                <span class="badge badge-pill">{{ len $sc.publications }}</span>
+              </a>
+            </li>
+            {{ end }}
+          </ul>
+        </div>
+        {{ end }}
+      </nav>
+    </div>
+  </div>
+
+  {{/* ===== MAIN CONTENT ===== */}}
+  <main class="col-12 col-lg-8 col-xl-9 clusters-content">
+    {{ range $ci, $cluster := $data.clusters }}
+    {{ $cid := printf "cluster-%d" (int $cluster.number) }}
+    {{ $color := index $colors (mod $ci (len $colors)) }}
+    {{ $totalPubs := 0 }}{{ range $cluster.sub_clusters }}{{ $totalPubs = add $totalPubs (len .publications) }}{{ end }}
+
+    <section id="{{ $cid }}" class="cluster-section" style="background-color: {{ $color }};">
+      <div class="cluster-header">
+        <h2 class="cluster-title">
+          <span class="cluster-number">{{ (int $cluster.number) }}</span>
+          {{ $cluster.name }}
+        </h2>
+        <span class="cluster-stats">{{ len $cluster.sub_clusters }} sub-clusters &middot; {{ $totalPubs }} references</span>
+      </div>
+
+      {{ if $cluster.description }}
+      <p class="cluster-description">{{ $cluster.description }}</p>
+      {{ end }}
+
+      {{/* Sub-cluster tabs */}}
+      {{ if gt (len $cluster.sub_clusters) 0 }}
+      <ul class="nav nav-tabs cluster-tabs" id="tabs-{{ $cid }}" role="tablist">
+        {{ range $si, $sc := $cluster.sub_clusters }}
+        {{ $scid := printf "c%d-sc%d" (int $cluster.number) $si }}
+        <li class="nav-item">
+          <a class="nav-link{{ if eq $si 0 }} active{{ end }}" id="{{ $scid }}-tab"
+             data-toggle="tab" href="#{{ $scid }}" role="tab"
+             aria-controls="{{ $scid }}" aria-selected="{{ if eq $si 0 }}true{{ else }}false{{ end }}">
+            {{ $sc.name }}
+            <span class="tab-count">{{ len $sc.publications }}</span>
+          </a>
+        </li>
+        {{ end }}
+      </ul>
+
+      <div class="tab-content cluster-tab-content" id="content-{{ $cid }}">
+        {{ range $si, $sc := $cluster.sub_clusters }}
+        {{ $scid := printf "c%d-sc%d" (int $cluster.number) $si }}
+        <div class="tab-pane fade{{ if eq $si 0 }} show active{{ end }}" id="{{ $scid }}"
+             role="tabpanel" aria-labelledby="{{ $scid }}-tab">
+
+          <h3 class="sc-heading">{{ $sc.name }}</h3>
+
+          {{ if $sc.description }}
+          <p class="sc-description">{{ $sc.description }}</p>
+          {{ end }}
+
+          {{ if $sc.publications }}
+          <ul class="publication-list">
+            {{ range $sc.publications }}
+            <li class="publication-item">
+              {{ $ref := .apa }}
+              {{/* Strip DOI URL from text - we show it separately */}}
+              {{ $ref = replaceRE `\s*https?://(?:dx\.)?doi\.org/\S+` "" $ref }}
+              {{ $ref = replaceRE `\s+$` "" $ref }}
+              {{/* Strip dangerous tags but keep i/em for italics (data from doi.org is trusted) */}}
+              {{ $ref = replaceRE `<script[^>]*>.*?</script>` "" $ref }}
+              {{ $ref = replaceRE `<iframe[^>]*>.*?</iframe>` "" $ref }}
+              {{/* Linkify remaining URLs */}}
+              {{ $ref = replaceRE `(https?://\S+)` `<a href="$1" target="_blank" rel="noopener">$1</a>` $ref }}
+              {{ $ref | safeHTML }}
+              {{ if .doi }}
+                {{ $doiURL := printf "https://doi.org/%s" .doi }}
+                <a href="{{ $doiURL }}" target="_blank" rel="noopener">{{ $doiURL }}</a>
+              {{ end }}
+            </li>
+            {{ end }}
+          </ul>
+          {{ else }}
+          <p class="text-muted"><em>No publications listed for this sub-cluster yet.</em></p>
+          {{ end }}
+
+        </div>
+        {{ end }}
+      </div>
+      {{ end }}
+    </section>
+
+    {{ end }}
+  </main>
+  </div>
+</div>
+
+<button type="button" class="clusters-back-to-top" id="clusters-back-to-top" aria-label="Back to top">
+  <i class="fas fa-arrow-up" aria-hidden="true"></i>
+</button>

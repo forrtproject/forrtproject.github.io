@@ -1,0 +1,44 @@
+{{/* layouts/clusters/list.html - List layout for clusters section */}}
+{{ define "main" }}
+  <div class="universal-wrapper pt-3 pb-3">
+    <div class="container">
+
+      {{/* Clusters page header */}}
+      {{ if .Params.image }}
+      <div class="article-header d-print-none">
+        <img src="{{ .Params.image }}" alt="{{ .Title }}" class="article-banner" loading="lazy">
+      </div>
+      {{ end }}
+
+      <div class="article-container pt-3">
+        <h1 itemprop="headline">{{ .Title }}</h1>
+
+        {{/* Subtitle if present */}}
+        {{ if .Params.subtitle }}
+        <p class="page-subtitle">{{ .Params.subtitle | markdownify }}</p>
+        {{ end }}
+
+        {{/* Optional section content */}}
+        {{ with .Content }}
+        <div class="article-style">
+          {{ . }}
+        </div>
+        {{ end }}
+      </div>
+    </div>
+  </div>
+
+  {{/* CLUSTERS INTRO SECTION */}}
+  <section class="clusters-intro-section">
+    <div class="container">
+      {{ partial "clusters/intro.html" . }}
+    </div>
+  </section>
+
+  {{/* CLUSTERS DISPLAY SECTION */}}
+  <section class="clusters-display-section">
+    <div class="container">
+      {{ partial "clusters/all_clusters.html" . }}
+    </div>
+  </section>
+{{ end }}

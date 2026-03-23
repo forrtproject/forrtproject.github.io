@@ -1,6 +1,8 @@
 {{/* Custom JavaScript for FORRT site */}}
 
-{{/* Include clusters search functionality on clusters page */}}
-{{ if eq .RelPermalink "/clusters/" }}
+{{/* Clusters list page lives at content/clusters/index.md — Section is often empty; match by path */}}
+{{ $isClustersPage := and .File (strings.HasPrefix .File.Path "clusters/") }}
+{{ if $isClustersPage }}
 <script src="{{ "js/clusters-search.js" | relURL }}"></script>
+<script src="{{ "js/clusters-page.js" | relURL }}" defer></script>
 {{ end }}
