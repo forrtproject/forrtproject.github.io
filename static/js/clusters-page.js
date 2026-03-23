@@ -255,6 +255,44 @@
     if (window.ResizeObserver && navbarEl) {
       new ResizeObserver(scheduleStickyLayoutMetrics).observe(navbarEl);
     }
+
+    /**
+     * Scroll so el sits below the sticky stack (navbar + .clusters-controls search bar).
+     * Uses live layout after tab/panel updates (rAF).
+     */
+    function scrollElementBelowStickyChrome(el) {
+      if (!el) return;
+      updateStickyLayoutMetrics();
+      requestAnimationFrame(function () {
+        requestAnimationFrame(function () {
+          var margin = 14;
+          var chromeBottom;
+          if (controls) {
+            chromeBottom = Math.ceil(controls.getBoundingClientRect().bottom);
+          } else {
+            var navbar = document.getElementById('navbar-main');
+            chromeBottom = navbar ? Math.ceil(navbar.getBoundingClientRect().bottom) : 72;
+          }
+          var elTopDoc = el.getBoundingClientRect().top + window.pageYOffset;
+          var targetScroll = elTopDoc - chromeBottom - margin;
+          window.scrollTo({ top: Math.max(0, targetScroll), behavior: 'smooth' });
+        });
+      });
+    }
+
+    /** Tab anchor is .nav-link with href="#pane-id" pointing at .tab-pane inside clusters layout. */
+    function scrollToClusterTabPaneFromTrigger(tabAnchor) {
+      if (!tabAnchor) return;
+      var href = tabAnchor.getAttribute('href');
+      if (!href || href.charAt(0) !== '#') return;
+      var pane = document.querySelector(href);
+      if (!pane || !root.contains(pane)) return;
+      var scrollTarget = pane.querySelector('.sc-heading') || pane.querySelector('.cluster-tab-content') || pane;
+      setTimeout(function () {
+        scrollElementBelowStickyChrome(scrollTarget);
+      }, 80);
+    }
+
     if (mobileToggle && sidebar) {
       mobileToggle.addEventListener('click', function () {
         sidebar.classList.toggle('sidebar-open');
@@ -294,12 +332,30 @@
           var tab = document.getElementById(tabId);
           showBootstrapTab(tab);
           setTimeout(function () {
-            section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            scrollToClusterTabPaneFromTrigger(tab);
           }, 100);
         }
         closeClustersMobileSidebar();
       });
     });
+
+    /* Clicking sub-cluster tabs: scroll so pane content clears sticky chrome */
+    if (typeof window.jQuery !== 'undefined' && window.jQuery.fn.tab) {
+      window
+        .jQuery(root)
+        .on('shown.bs.tab', '.cluster-tabs a[data-toggle="tab"], .cluster-tabs a[data-bs-toggle="tab"]', function () {
+          scrollToClusterTabPaneFromTrigger(this);
+        });
+    } else {
+      root.querySelectorAll('.cluster-tabs a.nav-link[data-toggle="tab"], .cluster-tabs a.nav-link[data-bs-toggle="tab"]').forEach(function (tabEl) {
+        tabEl.addEventListener('click', function () {
+          var self = this;
+          setTimeout(function () {
+            scrollToClusterTabPaneFromTrigger(self);
+          }, 200);
+        });
+      });
+    }
 
     var searchInput = document.getElementById('clusters-inline-search-input');
     var searchBtn = document.getElementById('clusters-inline-search-btn');
@@ -327,30 +383,6 @@
       highlightClearTimer = setTimeout(function () {
         el.classList.remove(HIGHLIGHT_CLASS);
       }, HIGHLIGHT_DURATION_MS);
-    }
-
-    /**
-     * Scroll so el sits below the sticky stack (navbar + .clusters-controls search bar).
-     * Uses live layout after tab/panel updates (rAF).
-     */
-    function scrollElementBelowStickyChrome(el) {
-      if (!el) return;
-      updateStickyLayoutMetrics();
-      requestAnimationFrame(function () {
-        requestAnimationFrame(function () {
-          var margin = 14;
-          var chromeBottom;
-          if (controls) {
-            chromeBottom = Math.ceil(controls.getBoundingClientRect().bottom);
-          } else {
-            var navbar = document.getElementById('navbar-main');
-            chromeBottom = navbar ? Math.ceil(navbar.getBoundingClientRect().bottom) : 72;
-          }
-          var elTopDoc = el.getBoundingClientRect().top + window.pageYOffset;
-          var targetScroll = elTopDoc - chromeBottom - margin;
-          window.scrollTo({ top: Math.max(0, targetScroll), behavior: 'smooth' });
-        });
-      });
     }
 
     function hideSearchResults() {
