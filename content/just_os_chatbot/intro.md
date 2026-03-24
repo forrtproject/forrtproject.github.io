@@ -27,10 +27,13 @@ Researchers generally support Open Science practices but often struggle navigati
 
 <br>
 
-# Try the JUST-OS Chatbot
-
 {{< just_os_chat >}}
 
 <br>
+
+Try the JUST-OS Chatbot. For any issues or suggestions, please submit feedback by opening an issue on GitHub [click here](https://github.com/forrtproject/forrtproject.github.io/issues).
+
+
+--- 
 
 {{< just_os_team >}}
