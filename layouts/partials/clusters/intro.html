@@ -1,78 +1,47 @@
-{{/* intro.html - Intro section for clusters page with matching styling */}}
+{{/* intro.html - Concise intro with text left, lightbox image right */}}
 <div class="clusters-intro">
-  
-  {{/* Main introductory text */}}
-  <div class="intro-content">
-    <p class="intro-paragraph">
-      In order to teach Open and Reproducible Science effectively, educators need to make sense of almost a decade of literature, across several fields, and be informed about ongoing (and often dynamic) debates. This is a tall ask for most educators. So FORRT sought to develop strategies and propose solutions to mitigate the effects of competing academic interests and help scholars implement open and reproducible science tenets in their teaching and mentoring workflow.
-    </p>
-    
-    <p class="intro-paragraph">
-      In an effort to reduce some of the burden on educators wishing to learn or teach these concepts, FORRT has drawn on the expertise of more than 50 experts from its community to provide educators with a comprehensive but straightforward accessible didactic framework. FORRT clusters is a result of a comprehensive literature review guided by educational, pedagogical and didactic considerations aiming at providing a pathway towards the incremental adoption of Open and Reproducible Science tenets into educators/scholars teaching and mentoring.
-    </p>
-    
-    <p class="intro-paragraph">
-      The focus lies not on simply aggregating the literature into bins, but on making sense of existing works, weaving connections where none exist, and providing a sensible learning-oriented Open and Reproducible Science taxonomy. FORRT taxonomy is composed of 11 clusters:
-    </p>
-  </div>
 
-  {{/* Clusters list */}}
-  <div class="intro-clusters-list">
-    <ol class="clusters-numbered-list">
-      <li>Replicability crisis and credibility revolution knowledge</li>
-      <li>Conceptual and statistical knowledge</li>
-      <li>Ways of working</li>
-      <li>Pre-analysis planning</li>
-      <li>Transparency and reproducibility in computation and analysis</li>
-      <li>FAIR data and materials</li>
-      <li>Publication sharing</li>
-      <li>Replication and meta-research</li>
-      <li>Academic structures and institutions</li>
-      <li>Qualitative Research</li>
-      <li>Research Integrity</li>
-    </ol>
-  </div>
+  <div class="intro-hero">
+    {{/* Left column: text */}}
+    <div class="intro-hero-text">
+      <p class="intro-paragraph">
+        Teaching Open and Reproducible Science shouldn't require educators to spend months sifting through a decade of literature. FORRT simplifies this process by providing a curated, expert-backed framework. Developed by over 50 scholars, our taxonomy organizes open scholarship into 11 distinct clusters, offering a clear pathway for integrating these tenets into your teaching and mentoring, regardless of your field or level of expertise.
+      </p>
+    </div>
 
-  {{/* Clusters contain info note */}}
-  <div class="intro-content">
-    <p class="intro-note">
-      <strong>Note:</strong> These clusters contain information for quantitative and qualitative researchers.
-    </p>
-
-    <p class="intro-paragraph">
-      We further break down each cluster into sub-categories to provide educators/scholars with useful information on the extent of open scholarship, and how they are connected to one another. The idea behind specifying clusters and sub-clusters is to highlight that we have drawn fuzzy boundaries between clusters, while allowing for diversification and heterogeneity in how each educator integrates these cluster/sub-clusters with their respective field content. The breakdown of each cluster into sub-categories provides scholars with useful information on the extent of open science scholarship, and how they are connected to one another.
-    </p>
-
-    <p class="intro-paragraph">
-      See below for each cluster, its description, sub-clusters, and associated works geared for teaching. And here's an attempt to visualize FORRT's clusters:
-    </p>
-  </div>
-
-  {{/* Clusters visualization image */}}
-  <div class="intro-image-wrapper">
-    <figure class="intro-figure">
-      <img src="FORRT_Clusters.webp" alt="FORRT's Clusters hierarchy diagram" class="intro-image">
-      <figcaption class="intro-figcaption">FORRT's Clusters Overview</figcaption>
-    </figure>
-  </div>
-
-  {{/* Syllabus section */}}
-  <div class="intro-syllabus">
-    <h2 class="syllabus-heading">FORRT's Syllabus</h2>
-    <p class="syllabus-text">
-      Building on the clusters we created a <strong>"Open and Reproducible Science" Syllabus</strong>. We hope it can serve as a starting point for your class.
-    </p>
-    <div class="syllabus-links">
-      <a href="FORRT_O&R_101_Syllabus.pdf" class="syllabus-link" target="_blank" rel="noopener">
-        <span class="link-icon">📄</span> PDF Download
-      </a>
-      <a href="https://docs.google.com/document/d/1pfFro5MbwBHzzXTeM_lE1gjFuq7AnnKWSDWkVwOBAtE/edit#" class="syllabus-link" target="_blank" rel="noopener">
-        <span class="link-icon">📝</span> Editable G-doc
-      </a>
-      <a href="/syllabus/" target="_blank" rel="noopener" class="syllabus-link">
-        <span class="link-icon">📚</span> Syllabus Page
+    {{/* Right column: lightbox image */}}
+    <div class="intro-hero-image">
+      <a href="FORRT_Clusters.webp" class="lightbox-trigger" aria-label="View full-size FORRT Clusters diagram">
+        <img src="FORRT_Clusters.webp" alt="FORRT's Clusters hierarchy diagram" class="intro-thumbnail" loading="lazy">
+        <span class="lightbox-hint">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+          Click to enlarge
+        </span>
       </a>
     </div>
   </div>
+
+  {{/* Lightbox overlay */}}
+  <div class="lightbox-overlay" id="clusters-lightbox" role="dialog" aria-modal="true" aria-label="FORRT Clusters diagram">
+    <button class="lightbox-close" aria-label="Close">&times;</button>
+    <img src="FORRT_Clusters.webp" alt="FORRT's Clusters hierarchy diagram" class="lightbox-image">
+  </div>
+
+  <script>
+  (function() {
+    var trigger = document.querySelector('.lightbox-trigger');
+    var overlay = document.getElementById('clusters-lightbox');
+    var closeBtn = overlay.querySelector('.lightbox-close');
+
+    function open(e) { e.preventDefault(); overlay.classList.add('active'); }
+    function close() { overlay.classList.remove('active'); }
+
+    trigger.addEventListener('click', open);
+    closeBtn.addEventListener('click', close);
+    overlay.addEventListener('click', function(e) { if (e.target === overlay) close(); });
+    document.addEventListener('keydown', function(e) { if (e.key === 'Escape') close(); });
+  })();
+  </script>
+
 
 </div>

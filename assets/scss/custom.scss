@@ -1445,212 +1445,129 @@ article.article:has(table) .article-container {
   margin-bottom: 0;
 }
 
-/* Main introductory paragraphs */
-.intro-content {
-  line-height: 1.6;
+/* Hero: text left, image right */
+.intro-hero {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.intro-hero-text {
+  flex: 1 1 60%;
+}
+
+.intro-hero-image {
+  flex: 0 0 auto;
+  max-width: 360px;
 }
 
 .intro-paragraph {
   font-size: 0.95rem;
   color: #444;
-  margin-bottom: 1.25rem;
-  line-height: 1.6;
-}
-
-.intro-note {
-  font-size: 0.9rem;
-  color: #666;
-  background: rgba(255, 235, 205, 0.3);
-  padding: 0.75rem 1rem;
-  border-left: 3px solid #ff9800;
-  border-radius: 4px;
-  margin: 1.5rem 0;
-  font-style: italic;
-}
-
-/* Numbered clusters list */
-.intro-clusters-list {
-  margin: 1.5rem 0 1.5rem 0;
-}
-
-.clusters-numbered-list {
-  font-size: 0.9rem;
-  color: #555;
-  padding-left: 1.5rem;
+  margin-bottom: 0;
   line-height: 1.7;
 }
 
-.clusters-numbered-list li {
-  margin-bottom: 0.65rem;
-}
-
-.clusters-numbered-list li::marker {
-  color: #6070a0;
-  font-weight: 600;
-}
-
-/* Image section */
-.intro-image-wrapper {
-  margin: 1.25rem 0 0.5rem;
-  text-align: center;
-  padding: 0.85rem 0 0.6rem;
-  background: linear-gradient(135deg, rgba(202, 207, 220, 0.08) 0%, rgba(212, 228, 217, 0.08) 100%);
-  border-radius: 12px;
-}
-
-.intro-figure {
-  margin: 0 auto;
-  display: block;
+/* Thumbnail in the hero */
+.intro-thumbnail {
   width: 100%;
-  max-width: 100%;
-}
-
-.intro-image {
-  width: 100%;
-  max-width: 100%;
   height: auto;
-  border-radius: 10px;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12), 0 2px 6px rgba(0, 0, 0, 0.08);
+  border-radius: 8px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
   border: 2px solid rgba(255, 255, 255, 0.8);
   background: white;
-  padding: 4px;
+  padding: 3px;
+  cursor: pointer;
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.intro-thumbnail:hover {
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.18);
+  transform: scale(1.02);
+}
+
+.lightbox-trigger {
   display: block;
+  text-decoration: none;
+  position: relative;
 }
 
-.intro-figcaption {
-  font-size: 0.95rem;
-  color: #666;
-  margin-top: 0.55rem;
-  margin-bottom: 0;
-  font-weight: 500;
-  font-style: normal;
-}
-
-/* Use full container width on large screens (theme XL container = 1200px) */
-@media (min-width: 992px) {
-  .intro-image-wrapper {
-    padding: 1rem 0 0.75rem;
-  }
-
-  .intro-image {
-    padding: 6px;
-  }
-}
-
-@media (min-width: 1200px) {
-  .intro-image-wrapper {
-    margin: 1.35rem 0 0.55rem;
-    padding: 1.15rem 0 0.7rem;
-  }
-
-  .intro-figcaption {
-    font-size: 1rem;
-    margin-top: 0.65rem;
-  }
-}
-
-/* Syllabus section */
-.intro-syllabus {
-  margin-top: 1rem;
-  margin-bottom: 0;
-  padding: 0.85rem 1.25rem 1.15rem;
-}
-
-.syllabus-heading {
-  font-size: 1.1rem;
-  font-weight: 700;
-  color: #333;
-  margin-bottom: 0.75rem;
-}
-
-.syllabus-text {
-  font-size: 0.95rem;
-  color: #555;
-  margin-bottom: 1rem;
-  line-height: 1.5;
-}
-
-.syllabus-links {
+/* "Click to enlarge" hint */
+.lightbox-hint {
   display: flex;
-  flex-wrap: wrap;
-  gap: 0.75rem;
-}
-
-.syllabus-link {
-  display: inline-flex;
   align-items: center;
-  gap: 0.5rem;
-  padding: 0.6rem 1rem;
+  justify-content: center;
+  gap: 0.35rem;
+  margin-top: 0.5rem;
+  font-size: 0.78rem;
+  color: #6070a0;
+  opacity: 0.7;
+  transition: opacity 0.2s;
+}
+
+.lightbox-trigger:hover .lightbox-hint {
+  opacity: 1;
+}
+
+/* Lightbox overlay */
+.lightbox-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: rgba(0, 0, 0, 0.8);
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.lightbox-overlay.active {
+  display: flex;
+}
+
+.lightbox-image {
+  max-width: 90vw;
+  max-height: 90vh;
+  border-radius: 8px;
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.4);
   background: white;
-  border: 1px solid #dee2e6;
-  border-radius: 6px;
-  color: #1c7ed6;
-  text-decoration: none;
-  font-size: 0.9rem;
-  font-weight: 500;
-  transition: all 0.2s ease;
+  padding: 6px;
 }
 
-.syllabus-link:hover {
-  background: #ecf2ff;
-  border-color: #1c7ed6;
-  color: #0c5ba8;
-  text-decoration: none;
-  box-shadow: 0 2px 6px rgba(28, 126, 214, 0.1);
+.lightbox-close {
+  position: absolute;
+  top: 1rem;
+  right: 1.5rem;
+  font-size: 2.5rem;
+  color: #fff;
+  background: none;
+  border: none;
+  cursor: pointer;
+  line-height: 1;
+  opacity: 0.8;
+  transition: opacity 0.2s;
 }
 
-.link-icon {
-  font-size: 0.95rem;
+.lightbox-close:hover {
+  opacity: 1;
 }
 
-/* Responsive adjustments for clusters intro */
+/* Stack on small screens */
 @media (max-width: 768px) {
+  .intro-hero {
+    flex-direction: column;
+    gap: 1.25rem;
+  }
+
+  .intro-hero-image {
+    max-width: 260px;
+  }
+
   .intro-paragraph {
     font-size: 0.9rem;
   }
-
-  .clusters-numbered-list {
-    font-size: 0.85rem;
-  }
-
-  .intro-syllabus {
-    margin-top: 0.85rem;
-    padding: 0.75rem 1rem 1rem;
-  }
-
-  .syllabus-links {
-    gap: 0.5rem;
-  }
-
-  .syllabus-link {
-    padding: 0.5rem 0.8rem;
-    font-size: 0.85rem;
-  }
-
-  .intro-image-wrapper {
-    margin: 1.1rem 0 0.45rem;
-    padding: 0.65rem 0 0.5rem;
-  }
-
-  .intro-image {
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  }
-
-  .intro-figcaption {
-    font-size: 0.9rem;
-  }
 }
 
-@media (max-width: 480px) {
-  .intro-image-wrapper {
-    margin: 1rem 0 0.35rem;
-    padding: 0.5rem 0 0.4rem;
-  }
-
-  .intro-figure {
-    max-width: 100%;
-  }
-}
 
 /* -------------------------------------------------- */
 /* Clusters Page Section Styles                       */
