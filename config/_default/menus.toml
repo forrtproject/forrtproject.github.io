@@ -210,6 +210,12 @@
     parent = "nexus"
 
   [[main]]
+    name = "JUST-OS Chatbot"
+    url = "/just_os_chatbot"
+    weight = 41.5
+    parent = "nexus"
+
+  [[main]]
     name = "Lesson Plans"
     url = "/lesson-plans/"
     weight = 42
