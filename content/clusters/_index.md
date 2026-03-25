@@ -23,7 +23,6 @@ sharing_image_alt = "Diagram of FORRT's eleven open science clusters taxonomy"
 
 keywords = [ "open science clusters", "reproducible research", "FORRT taxonomy", "replicability", "open scholarship", "research transparency", "FAIR data", "meta-research", "research integrity", "teaching open science" ]
 
-date = 2024-01-01
 draft = false
 
 [sitemap]
