@@ -27,8 +27,7 @@
       <a class="nav-link{{ if eq $si 0 }} active{{ end }}" id="{{ $scid }}-tab"
          data-toggle="tab" href="#{{ $scid }}" role="tab"
          aria-controls="{{ $scid }}" aria-selected="{{ if eq $si 0 }}true{{ else }}false{{ end }}">
-        {{ $sc.name }}
-        <span class="tab-count">{{ len $sc.publications }}</span>
+        <span class="tab-label">{{ $sc.name }}</span>
       </a>
     </li>
     {{ end }}

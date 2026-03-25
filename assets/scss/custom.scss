@@ -418,41 +418,42 @@
   max-width: 48rem;
 }
 
-/* ---- Sub-cluster tabs (chip style + border: same on desktop & mobile) ---- */
+/* ---- Sub-cluster tabs (3-column grid, text clamped to 3 lines) ---- */
 .cluster-tabs {
-  flex-wrap: wrap;
-  gap: 0.35rem 0.3rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.35rem;
   margin-bottom: 0;
-  overflow: visible;
-  align-items: stretch;
   border-bottom: none;
 }
 
 .cluster-tabs .nav-item {
-  flex: 0 1 auto;
   min-width: 0;
-  max-width: 100%;
 }
 
 .cluster-tabs .nav-link {
   font-size: 0.78rem;
   padding: 0.4rem 0.75rem;
   color: #8b0000;
-  white-space: normal;
-  word-break: break-word;
-  hyphens: auto;
   text-align: center;
   line-height: 1.25;
-  min-height: 2.35rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 0.15rem;
+  height: 3.35rem;
   margin-bottom: 0;
   border-radius: 6px;
   border: 1px solid rgba(0, 0, 0, 0.1);
+  background: rgba(0, 0, 0, 0.2);
   transition: background 0.15s, color 0.15s, border-color 0.15s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.tab-label {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
 .cluster-tabs .nav-link:hover {
@@ -466,13 +467,6 @@
   font-weight: 600;
   background: rgba(255, 255, 255, 0.88);
   border-color: rgba(0, 0, 0, 0.2);
-}
-
-.tab-count {
-  font-size: 0.6rem;
-  color: #aaa;
-  margin-left: 0.15em;
-  font-weight: 400;
 }
 
 .cluster-tab-content {
@@ -609,10 +603,8 @@
     margin: 0;
   }
 
-  /* Narrow screens: sized tab cells (base styles = borders match desktop) */
-  .cluster-tabs .nav-item {
-    flex: 1 1 auto;
-    min-width: clamp(7rem, 42vw, 11.5rem);
+  .cluster-tabs {
+    grid-template-columns: repeat(2, 1fr);
   }
 
   .cluster-tab-content {
@@ -735,7 +727,7 @@
   }
 
   .cluster-tabs .nav-link {
-    min-height: 2rem;
+    height: 2.8rem;
     padding: 0.34rem 0.44rem;
   }
 
@@ -749,14 +741,9 @@
     margin-top: 0.45rem;
   }
 
-  .cluster-tabs .nav-item {
-    min-width: calc(50% - 0.2rem);
-    flex: 1 1 calc(50% - 0.2rem);
-  }
-
   .cluster-tabs .nav-link {
     font-size: 0.66rem;
-    min-height: 1.9rem;
+    height: 2.5rem;
     border-radius: 5px;
   }
 
@@ -1486,6 +1473,26 @@ article.article:has(table) .article-container {
   transform: scale(1.02);
 }
 
+.intro-thumbnail-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.update-pending-badge {
+  position: absolute;
+  bottom: 0.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0, 0, 0, 0.65);
+  color: #fff;
+  font-size: 0.7rem;
+  font-weight: 600;
+  padding: 0.2rem 0.6rem;
+  border-radius: 4px;
+  letter-spacing: 0.03em;
+  white-space: nowrap;
+}
+
 .lightbox-trigger {
   display: block;
   text-decoration: none;
@@ -1572,6 +1579,19 @@ article.article:has(table) .article-container {
 /* -------------------------------------------------- */
 /* Clusters Page Section Styles                       */
 /* -------------------------------------------------- */
+
+/* Full-width cluster layout */
+.cluster-full-width {
+  max-width: 100% !important;
+  padding: 15px !important;
+  margin: 15px !important;
+}
+
+.cluster-full-width .container {
+  max-width: 100% !important;
+  padding: 15px !important;
+  margin: 15px !important;
+}
 
 .clusters-intro-section {
   background: linear-gradient(to bottom, #fefdf6 0%, #f9f8f5 100%);

@@ -1,5 +1,6 @@
 {{/* layouts/clusters/single.html - Main layout for clusters page (same H1/SEO split as list.html) */}}
 {{ define "main" }}
+
   {{ partial "clusters/seo_jsonld.html" . }}
   <div class="universal-wrapper pt-3 pb-3">
     <div class="container">
@@ -14,7 +15,7 @@
       <div class="article-container pt-3">
         {{/* Hub /clusters/ only: larger H1 (cluster subpages use layout cluster, not this template) */}}
         <h1 class="clusters-site-heading{{ if and .IsNode (eq .Section "clusters") }} clusters-hub-page__title{{ end }}" itemprop="headline">{{ .Params.heading_title | default .Title }}</h1>
-        
+
         {{/* Subtitle if present */}}
         {{ if .Params.subtitle }}
         <p class="page-subtitle">{{ .Params.subtitle | markdownify }}</p>
@@ -47,7 +48,7 @@
   </section>
 
   {{/* CLUSTERS DISPLAY SECTION - The main clusters content */}}
-  <section class="clusters-display-section">
+  <section class="cluster-full-width clusters-display-section">
     <div class="container">
       {{ partial "clusters/all_clusters.html" . }}
     </div>
