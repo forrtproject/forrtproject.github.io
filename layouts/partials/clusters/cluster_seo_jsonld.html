@@ -1,0 +1,27 @@
+{{/* Structured data for a single cluster page. Expects dict: page, cluster */}}
+{{ $p := .page }}
+{{ $c := .cluster }}
+{{ if not $c }}{{ return }}{{ end }}
+
+{{ $summary := $p.Params.summary | default $p.Description | default "" }}
+{{ if eq $summary "" }}
+  {{ with $c.description }}{{ $summary = plainify . | truncate 300 "…" }}{{ end }}
+{{ end }}
+{{ if eq $summary "" }}{{ $summary = printf "FORRT Cluster %d: %s." (int $c.number) $c.name }}{{ end }}
+
+{{ $hubURL := "clusters/" | absURL }}
+
+{{ $webpage := dict "@type" "WebPage" "@id" (printf "%s#webpage" $p.Permalink) "url" $p.Permalink "name" $p.Title "description" $summary "inLanguage" (site.LanguageCode | default "en-US") }}
+{{ if and $p.Params.sharing_image_resource ($p.Resources.GetMatch $p.Params.sharing_image_resource) }}
+  {{ $pimg := $p.Resources.GetMatch $p.Params.sharing_image_resource }}
+  {{ $webpage = merge $webpage (dict "primaryImageOfPage" (dict "@type" "ImageObject" "url" $pimg.Permalink)) }}
+{{ end }}
+
+{{ $breadcrumb := dict "@type" "BreadcrumbList" "itemListElement" (slice
+  (dict "@type" "ListItem" "position" 1 "name" "FORRT Clusters" "item" $hubURL)
+  (dict "@type" "ListItem" "position" 2 "name" (printf "Cluster %d: %s" (int $c.number) $c.name) "item" $p.Permalink)
+) }}
+
+{{ $graph := slice $webpage $breadcrumb }}
+{{ $root := dict "@context" "https://schema.org" "@graph" $graph }}
+<script type="application/ld+json">{{ $root | jsonify | safeHTML }}</script>

@@ -1,0 +1,56 @@
+{{/* layouts/clusters/single.html - Main layout for clusters page (same H1/SEO split as list.html) */}}
+{{ define "main" }}
+
+  {{ partial "clusters/seo_jsonld.html" . }}
+  <div class="universal-wrapper pt-3 pb-3">
+    <div class="container">
+
+      {{/* Clusters page header */}}
+      {{ if .Params.image }}
+      <div class="article-header d-print-none">
+        <img src="{{ .Params.image }}" alt="{{ .Params.heading_title | default .Title }}" class="article-banner" loading="lazy">
+      </div>
+      {{ end }}
+
+      <div class="article-container pt-3">
+        {{/* Hub /clusters/ only: larger H1 (cluster subpages use layout cluster, not this template) */}}
+        <h1 class="clusters-site-heading{{ if and .IsNode (eq .Section "clusters") }} clusters-hub-page__title{{ end }}" itemprop="headline">{{ .Params.heading_title | default .Title }}</h1>
+
+        {{/* Subtitle if present */}}
+        {{ if .Params.subtitle }}
+        <p class="page-subtitle">{{ .Params.subtitle | markdownify }}</p>
+        {{ end }}
+
+        {{/* Page description/metadata */}}
+        <div class="article-metadata">
+          {{ if .Params.authors }}
+            <span class="article-author-list">
+              {{ with .Params.authors }}
+                {{ delimit . ", " }}
+              {{ end }}
+            </span>
+          {{ end }}
+          {{ if .PublishDate }}
+            <span class="article-date">
+              {{ .PublishDate.Format "January 2, 2006" }}
+            </span>
+          {{ end }}
+        </div>
+      </div>
+    </div>
+  </div>
+
+  {{/* CLUSTERS INTRO SECTION */}}
+  <section class="clusters-intro-section">
+    <div class="container">
+      {{ partial "clusters/intro.html" . }}
+    </div>
+  </section>
+
+  {{/* CLUSTERS DISPLAY SECTION - The main clusters content */}}
+  <section class="cluster-full-width clusters-display-section">
+    <div class="container">
+      {{ partial "clusters/all_clusters.html" . }}
+    </div>
+  </section>
+{{ end }}

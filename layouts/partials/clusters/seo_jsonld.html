@@ -1,0 +1,30 @@
+{{/* Structured data: WebPage + ItemList of all clusters for search engines */}}
+{{ $data := site.Data.clusters_v4 }}
+{{ if not $data }}{{ return }}{{ end }}
+
+{{ $summary := .Params.summary | default .Description | default "" }}
+{{ if eq $summary "" }}
+  {{ with .Summary }}{{ $summary = plainify . | truncate 300 "…" }}{{ end }}
+{{ end }}
+{{ if eq $summary "" }}{{ $summary = "FORRT open science clusters taxonomy for educators and researchers." }}{{ end }}
+
+{{ $elements := slice }}
+{{ range $i, $c := $data.clusters }}
+  {{ $d := "" }}
+  {{ with $c.description }}{{ $d = plainify . | truncate 240 "…" }}{{ end }}
+  {{ $itemURL := printf "clusters/cluster-%d/" (int $c.number) | absURL }}
+  {{ $wp := dict "@type" "WebPage" "name" $c.name "url" $itemURL }}
+  {{ if $d }}{{ $wp = merge $wp (dict "description" $d) }}{{ end }}
+  {{ $item := dict "@type" "ListItem" "position" (add $i 1) "item" $wp }}
+  {{ $elements = $elements | append $item }}
+{{ end }}
+
+{{ $webpage := dict "@type" "WebPage" "@id" (printf "%s#webpage" .Permalink) "url" .Permalink "name" .Title "description" $summary "inLanguage" (site.LanguageCode | default "en-US") }}
+{{ if and .Params.sharing_image_resource (.Resources.GetMatch .Params.sharing_image_resource) }}
+  {{ $pimg := .Resources.GetMatch .Params.sharing_image_resource }}
+  {{ $webpage = merge $webpage (dict "primaryImageOfPage" (dict "@type" "ImageObject" "url" $pimg.Permalink)) }}
+{{ end }}
+{{ $itemlist := dict "@type" "ItemList" "@id" (printf "%s#itemlist" .Permalink) "name" "FORRT Open Science Clusters" "description" "Full taxonomy of open and reproducible science clusters with sub-clusters and teaching references." "numberOfItems" (len $data.clusters) "itemListElement" $elements }}
+{{ $graph := slice $webpage $itemlist }}
+{{ $root := dict "@context" "https://schema.org" "@graph" $graph }}
+<script type="application/ld+json">{{ $root | jsonify | safeHTML }}</script>
