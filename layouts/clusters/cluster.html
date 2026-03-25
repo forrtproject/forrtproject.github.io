@@ -35,34 +35,36 @@
 {{ else }}
   {{ partial "clusters/cluster_seo_jsonld.html" (dict "page" . "cluster" $cluster) }}
 
-  <div class="clusters-cluster-subpage">
-  <div class="universal-wrapper pt-2 pb-0 clusters-cluster-subpage__head-wrap">
+  {{/* Breadcrumb header — narrow width like main page title */}}
+  <div class="universal-wrapper pt-3 pb-2">
     <div class="container">
-      <div class="clusters-cluster-subpage__head-inner">
+      <div class="article-container pt-3">
         {{ $heading := .Params.heading_title | default .Title }}
         <nav aria-label="breadcrumb" class="clusters-heading-row__crumbs mb-1">
-          <a href="{{ "/clusters/" | relURL }}" class="clusters-heading-row__parent">FORRT clusters</a>
+          <a href="{{ "/clusters/" | relURL }}" class="clusters-heading-row__parent">FORRT Clusters</a>
           <span class="clusters-heading-row__sep" aria-hidden="true">/</span>
           <h1 class="clusters-heading-row__title clusters-site-heading" itemprop="headline">{{ $heading }}</h1>
         </nav>
-
-        <div class="clusters-title-toolbar">
-          {{ partial "clusters/clusters_controls.html" . }}
-        </div>
       </div>
     </div>
   </div>
 
-  {{ $colors := slice "#cacfdc" "#eadce6" "#d4e4d9" "#BDC5CA" "#dce4ea" "#e8ddd4" "#c9dbcb" "#d9cfe0" "#cddde3" "#e0d8cc" "#d4dce8" }}
-  {{ $arrowColors := slice "#6070a0" "#a05080" "#408060" "#607080" "#5080a0" "#a08060" "#509060" "#8060a0" "#5090a0" "#907050" "#6070a0" }}
+  {{ $palette := partial "clusters/colors.html" }}
+  {{ $colors := $palette.colors }}
+  {{ $arrowColors := $palette.arrowColors }}
   {{ $ci := sub $n 1 }}
 
-  <section class="clusters-display-section clusters-cluster-subpage__display">
+  {{/* Main content section — same structure as hub page */}}
+  <section class="cluster-full-width clusters-display-section">
     <div class="container">
-      <div class="clusters-layout clusters-layout--cluster-subpage">
-        <div class="row clusters-cluster-subpage__row">
+      <div class="clusters-layout">
+
+        {{ partial "clusters/clusters_controls.html" . }}
+
+        <div class="row">
           {{ partial "clusters/sidebar_nav.html" (dict "data" $data "arrowColors" $arrowColors "link_mode" "subpath" "active_cluster_number" $n) }}
-          <main class="col-12 col-lg-8 col-xl-9 clusters-content clusters-cluster-subpage__main-scroll">
+
+          <main class="col-12 col-lg-8 col-xl-9 clusters-content">
             {{ with .Content }}
             <div class="article-container pt-2 pb-2">
               <div class="article-style clusters-cluster-lead">{{ . }}</div>
@@ -78,6 +80,5 @@
       </button>
     </div>
   </section>
-  </div>
 {{ end }}
 {{ end }}

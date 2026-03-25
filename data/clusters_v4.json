@@ -189,6 +189,11 @@
               "doi": "10.1177/1745691612460687",
               "apa": "Stroebe, W., Postmes, T., & Spears, R. (2012). Scientific Misconduct and the Myth of Self-Correction in Science. Perspectives on Psychological Science, 7(6), 670–688. https://doi.org/10.1177/1745691612460687",
               "auto_ref": true
+            },
+            {
+              "doi": "10.1177/1556264614552421",
+              "apa": "Tijdink, J. K., Verbeke, R., & Smulders, Y. M. (2014). Publication Pressure and Scientific Misconduct in Medical Scientists. Journal of Empirical Research on Human Research Ethics, 9(5), 64–71. https://doi.org/10.1177/1556264614552421",
+              "auto_ref": true
             }
           ]
         },
@@ -476,6 +481,11 @@
             {
               "doi": "10.1525/collabra.18684",
               "apa": "Kathawalla, U.-K., Silverstein, P., & Syed, M. (2021). Easing Into Open Science: A Guide for Graduate Students and Their Advisors. Collabra: Psychology, 7(1). https://doi.org/10.1525/collabra.18684",
+              "auto_ref": true
+            },
+            {
+              "doi": "10.1098/rsos.251997",
+              "apa": "Krähmer, D., Schächtele, L., & Auspurg, K. (2026). Code sharing and reproducibility in survey-based social research: evidence from a large-scale audit. Royal Society Open Science, 13(3). https://doi.org/10.1098/rsos.251997",
               "auto_ref": true
             },
             {
@@ -1231,7 +1241,7 @@
     {
       "number": 3,
       "name": "Ways of Working",
-      "description": "Attainment of an understanding of how research is conducted, managed and disseminated. There are 12 sub-clusters which aim to further parse the learning and teaching process[r]:",
+      "description": "Attainment of an understanding of how research is conducted, managed and disseminated. There are 12 sub-clusters which aim to further parse the learning and teaching process[s]:",
       "sub_clusters": [
         {
           "name": "Qualitative research",
@@ -3292,7 +3302,7 @@
     {
       "number": 8,
       "name": "Replication and meta-research",
-      "description": "Attainment of a grounding in 'replication research', which takes a variety of forms, each with a different purpose and contribution. Replicable science requires replication research. When teaching, students should understand the purpose and need of replications in its variety of forms and be able to conduct (and join) replication projects. There are 6 sub-clusters which aim to further parse the learning and teaching process:[af][ag]",
+      "description": "Attainment of a grounding in 'replication research', which takes a variety of forms, each with a different purpose and contribution. Replicable science requires replication research. When teaching, students should understand the purpose and need of replications in its variety of forms and be able to conduct (and join) replication projects. There are 6 sub-clusters which aim to further parse the learning and teaching process:[ag][ah]",
       "sub_clusters": [
         {
           "name": "Conducting replication studies; challenges, limitations, and comparisons with the original study",
@@ -3727,7 +3737,7 @@
         },
         {
           "name": "The politics of replicating famous studies",
-          "description": "Sometimes responses to replication research can be negative. Failed replications of famous work, most notably power posing, ego depletion, stereotype threat, and facial feedback[ah][ai], have received a lot of attention.",
+          "description": "Sometimes responses to replication research can be negative. Failed replications of famous work, most notably power posing, ego depletion, stereotype threat, and facial feedback[ai][aj], have received a lot of attention.",
           "publications": [
             {
               "doi": "10.1371/journal.pone.0029081",
@@ -4970,7 +4980,7 @@
         },
         {
           "name": "Sexuality & Gender",
-          "description": "Sexuality refers to the various aspects of an individual’s being related to their sexual feelings, thoughts, attractions and behaviour. We use “LGBTQ+” as an inclusive term to refer to all sexual identities and orientations which are not heterosexual. This includes but is not limited to lesbian, gay, bisexual, pansexual, asexual, queer, and questioning[ao].",
+          "description": "Sexuality refers to the various aspects of an individual’s being related to their sexual feelings, thoughts, attractions and behaviour. We use “LGBTQ+” as an inclusive term to refer to all sexual identities and orientations which are not heterosexual. This includes but is not limited to lesbian, gay, bisexual, pansexual, asexual, queer, and questioning[ap].",
           "publications": [
             {
               "doi": "10.1126/sciadv.abe0933",
@@ -6434,7 +6444,7 @@
     {
       "number": 11,
       "name": "Research Integrity",
-      "description": "Research Integrity (RI) encompasses the moral and professional standards that ensure research is trustworthy, transparent, and ethical from inception to publication​. Traditionally, RI efforts have centered on preventing misconduct—the blatant fabrication, falsification, or plagiarism (FFP) that betrays the core of science. Modern perspectives, however, advocate a holistic vision: cultivating a culture of responsible, equitable, and open research practices that goes beyond avoiding misconduct to actively promoting excellence and fairness. Supervision, mentorship, and everyday collegial relations have an important part in cultivating a culture of research integrity and shaping what “good practice” looks like in labs and teams to new researchers. This includes how power dynamics, authorship, and credit are negotiated. Institutions matter too, policies, incentives, workload, and leadership either enable or erode integrity. RI is intrinsically linked with the Open Science movement. Both strive to make research more transparent and accountable, thereby strengthening credibility and public trust​. Open Science initiatives (e.g. data sharing, preregistration, open access) can make misconduct easier to detect and discourage, while fostering norms of honesty and rigor. Conversely, RI provides the ethical foundation for openness – emphasizing values like honesty, accountability, respect, and fairness that guide how openness is pursued. By making research integrity “possible, easy, normative, and rewarding” (Haven et al., 2022)​, institutions and communities create an environment where ethical, inclusive, and rigorous research thrives. Ultimately, RI is about more than rule-following; it is about embedding integrity as a fundamental ethos of research design, conduct, and dissemination – ensuring science advances knowledge and the public good in tandem.[as]",
+      "description": "Research Integrity (RI) encompasses the moral and professional standards that ensure research is trustworthy, transparent, and ethical from inception to publication​. Traditionally, RI efforts have centered on preventing misconduct—the blatant fabrication, falsification, or plagiarism (FFP) that betrays the core of science. Modern perspectives, however, advocate a holistic vision: cultivating a culture of responsible, equitable, and open research practices that goes beyond avoiding misconduct to actively promoting excellence and fairness. Supervision, mentorship, and everyday collegial relations have an important part in cultivating a culture of research integrity and shaping what “good practice” looks like in labs and teams to new researchers. This includes how power dynamics, authorship, and credit are negotiated. Institutions matter too, policies, incentives, workload, and leadership either enable or erode integrity. RI is intrinsically linked with the Open Science movement. Both strive to make research more transparent and accountable, thereby strengthening credibility and public trust​. Open Science initiatives (e.g. data sharing, preregistration, open access) can make misconduct easier to detect and discourage, while fostering norms of honesty and rigor. Conversely, RI provides the ethical foundation for openness – emphasizing values like honesty, accountability, respect, and fairness that guide how openness is pursued. By making research integrity “possible, easy, normative, and rewarding” (Haven et al., 2022)​, institutions and communities create an environment where ethical, inclusive, and rigorous research thrives. Ultimately, RI is about more than rule-following; it is about embedding integrity as a fundamental ethos of research design, conduct, and dissemination – ensuring science advances knowledge and the public good in tandem.[at]",
       "sub_clusters": [
         {
           "name": "Principles and Frameworks of Research Integrity",

@@ -7,8 +7,9 @@
   {{ return }}
 {{ end }}
 
-{{ $colors := slice "#cacfdc" "#eadce6" "#d4e4d9" "#BDC5CA" "#dce4ea" "#e8ddd4" "#c9dbcb" "#d9cfe0" "#cddde3" "#e0d8cc" "#d4dce8" }}
-{{ $arrowColors := slice "#6070a0" "#a05080" "#408060" "#607080" "#5080a0" "#a08060" "#509060" "#8060a0" "#5090a0" "#907050" "#6070a0" }}
+{{ $palette := partial "clusters/colors.html" }}
+{{ $colors := $palette.colors }}
+{{ $arrowColors := $palette.arrowColors }}
 
 <div class="clusters-layout">
 

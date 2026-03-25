@@ -29,5 +29,3 @@ draft = false
   changefreq = "monthly"
   priority = 0.9
 +++
-
-Teaching Open and Reproducible Science shouldn't require educators to spend months sifting through a decade of literature. FORRT simplifies this process by providing a curated, expert-backed framework. Developed by over 50 scholars, our taxonomy organizes open scholarship into 11 distinct clusters, offering a clear pathway for integrating these tenets into your teaching and mentoring, regardless of your field or level of expertise.

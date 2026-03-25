@@ -1,4 +1,4 @@
-{{/* Sidebar: link_mode "anchor" (#cluster-N on hub) or "subpath" (/clusters/cluster-N/ on subpages). active_cluster_number highlights + expands that group on subpages. */}}
+{{/* Sidebar: link_mode "anchor" (#cluster-N on hub) or "subpath" (/clusters/cluster-N/ on subpages). active_cluster_number pre-expands that group on subpages. */}}
 {{ $data := .data }}
 {{ $arrowColors := .arrowColors }}
 {{ $link_mode := .link_mode | default "anchor" }}
@@ -6,24 +6,26 @@
 
 <div class="col-lg-4 col-xl-3 clusters-sidebar" id="clusters-sidebar">
   <div class="clusters-sidebar-inner">
-    <div class="sidebar-header">{{ if eq $link_mode "subpath" }}Clusters{{ else }}Clusters &amp; Sub-clusters{{ end }}</div>
+    <div class="sidebar-header">Clusters &amp; Sub-clusters</div>
     <nav id="cluster-nav">
       {{ range $ci, $cluster := $data.clusters }}
       {{ $cid := printf "cluster-%d" (int $cluster.number) }}
       {{ $cn := int $cluster.number }}
       {{ $isActive := eq $cn $activeN }}
       {{ $clusterHref := cond (eq $link_mode "subpath") (printf "/clusters/cluster-%d/" (int $cluster.number) | relURL) (printf "#%s" $cid) }}
-      <div class="cluster-nav-group{{ if $isActive }} cluster-nav-group--active{{ end }}" data-cluster="{{ $cid }}">
-        <a href="{{ $clusterHref }}" class="cluster-nav-heading{{ if $isActive }} cluster-nav-heading--active{{ end }}"{{ if $isActive }} aria-current="page"{{ end }}>
+      <div class="cluster-nav-group" data-cluster="{{ $cid }}">
+        <a href="{{ $clusterHref }}" class="cluster-nav-heading"{{ if $isActive }} aria-current="page"{{ end }}>
           {{ $arrowColor := index $arrowColors (mod $ci (len $arrowColors)) }}
-          <span class="cluster-nav-toggle" style="color:{{ $arrowColor }};">&#9656;</span>
+          <span class="cluster-nav-toggle" style="color:{{ $arrowColor }};">{{ if $isActive }}&#9662;{{ else }}&#9656;{{ end }}</span>
           {{ $cluster.name }}
         </a>
-        <ul class="cluster-nav-subs" style="display:none;">
+        <ul class="cluster-nav-subs" style="display:{{ if $isActive }}block{{ else }}none{{ end }};">
           {{ range $si, $sc := $cluster.sub_clusters }}
           {{ $scid := printf "c%d-sc%d" (int $cluster.number) $si }}
-          {{/* Subpath: include pane hash so the target tab opens after navigation */}}
-          {{ $subHref := cond (eq $link_mode "subpath") (printf "/clusters/cluster-%d/#%s" (int $cluster.number) $scid | relURL) (printf "#%s" $cid) }}
+          {{ $subHref := printf "#%s" $cid }}
+          {{ if and (eq $link_mode "subpath") (not $isActive) }}
+            {{ $subHref = printf "/clusters/cluster-%d/#%s" (int $cluster.number) $scid | relURL }}
+          {{ end }}
           <li class="nav-item">
             <a href="{{ $subHref }}" class="nav-link sc-nav-link" data-cluster="{{ $cid }}" data-tab="{{ $scid }}-tab">
               {{ $sc.name }}

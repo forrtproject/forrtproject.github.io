@@ -86,7 +86,7 @@
     }
   }
 
-  function collectClustersInlineSearchResults(scopeRoot, tokens) {
+  function collectClustersInlineSearchResults(scopeRoot, tokens, includeRefs) {
     var results = [];
     var seen = {};
 
@@ -136,6 +136,26 @@
             meta: clusterName
           });
         }
+
+        if (includeRefs) {
+          pane.querySelectorAll('.publication-item').forEach(function (pubEl, pi) {
+            if (results.length >= MAX_RESULTS) return;
+            var pubText = pubEl.textContent.replace(/\s+/g, ' ').trim();
+            if (!pubText) return;
+            if (matchesAllTokens(pubText, tokens)) {
+              var truncated = pubText.length > 120 ? pubText.substring(0, 120) + '…' : pubText;
+              add('pub:' + clusterId + ':' + paneId + ':' + pi, {
+                type: 'publication',
+                clusterId: clusterId,
+                tabId: tabId,
+                paneId: paneId,
+                pubIndex: pi,
+                label: truncated,
+                meta: scName
+              });
+            }
+          });
+        }
       });
     });
 
@@ -166,6 +186,11 @@
       return;
     }
 
+    /* Sort: clusters & sub-clusters first, then publications */
+    results.sort(function (a, b) {
+      var order = { cluster: 0, subcluster: 1, publication: 2 };
+      return (order[a.type] || 9) - (order[b.type] || 9);
+    });
     var shown = results.slice(0, SHOWN_RESULTS);
     var countText = results.length + ' result' + (results.length !== 1 ? 's' : '');
     toolbarEl.innerHTML = buildResultsToolbar(countText);
@@ -173,14 +198,21 @@
 
     var html = '<div class="clusters-inline-search__hits">';
     shown.forEach(function (r) {
-      html += '<a href="#" class="clusters-inline-search__hit" role="button"' +
+      var extraAttr = r.pubIndex != null ? ' data-pub-index="' + escAttr(r.pubIndex) + '"' : '';
+      var isPub = r.type === 'publication';
+      var icon = isPub ? '<i class="fas fa-file-alt clusters-inline-search__hit-icon" aria-hidden="true"></i>' : '';
+      var hitClass = 'clusters-inline-search__hit' + (isPub ? ' clusters-inline-search__hit--publication' : '');
+      html += '<a href="#" class="' + hitClass + '" role="button"' +
         ' data-hit-type="' + escAttr(r.type) + '"' +
         ' data-cluster="' + escAttr(r.clusterId) + '"' +
         ' data-tab="' + escAttr(r.tabId) + '"' +
-        ' data-pane="' + escAttr(r.paneId) + '">' +
+        ' data-pane="' + escAttr(r.paneId) + '"' +
+        extraAttr + '>' +
+        icon +
+        '<span class="clusters-inline-search__hit-text">' +
         '<span class="clusters-inline-search__hit-label">' + escapeHtml(r.label) + '</span>' +
         '<span class="clusters-inline-search__hit-meta">' + escapeHtml(r.meta) + '</span>' +
-        '</a>';
+        '</span></a>';
     });
     html += '</div>';
 
@@ -202,69 +234,13 @@
     var controls = document.querySelector('.clusters-controls');
     var navbarEl = document.getElementById('navbar-main');
     var mobileNavMq = window.matchMedia ? window.matchMedia('(max-width: 991.98px)') : null;
-    var clusterSubpage = document.querySelector('.clusters-cluster-subpage');
-    var mainScrollEl = document.querySelector('.clusters-cluster-subpage__main-scroll');
 
     function clustersNavIsMobileWidth() {
       return mobileNavMq && mobileNavMq.matches;
     }
 
-    /** /clusters/cluster-N/: desktop main column is the scroll container */
-    function useClusterSubpageMainScroll() {
-      if (!clusterSubpage || !mainScrollEl) return false;
-      if (clustersNavIsMobileWidth()) return false;
-      var oy = window.getComputedStyle(mainScrollEl).overflowY;
-      return oy === 'auto' || oy === 'scroll';
-    }
-
-    function updateClusterSubpageDrawerTop() {
-      if (!clusterSubpage || !clustersNavIsMobileWidth()) {
-        document.documentElement.style.removeProperty('--cluster-subpage-drawer-top');
-        return;
-      }
-      var bar = clusterSubpage.querySelector('.clusters-cluster-subpage__head-wrap');
-      if (bar) {
-        document.documentElement.style.setProperty(
-          '--cluster-subpage-drawer-top',
-          Math.ceil(bar.getBoundingClientRect().bottom) + 4 + 'px'
-        );
-      }
-    }
-
-    function updateClusterSubpageLayout() {
-      if (!clusterSubpage) {
-        document.documentElement.style.removeProperty('--cluster-subpage-sticky-top');
-        document.documentElement.style.removeProperty('--cluster-subpage-drawer-top');
-        return;
-      }
-      var navOff = getNavbarStickyOffsetPx();
-      clusterSubpage.style.setProperty('--cluster-subpage-nav-offset', navOff + 'px');
-      document.documentElement.style.setProperty(
-        '--cluster-subpage-sticky-top',
-        'calc(' + navOff + 'px + env(safe-area-inset-top, 0px))'
-      );
-      if (clustersNavIsMobileWidth()) {
-        clusterSubpage.style.removeProperty('--cluster-subpage-head-reserved');
-        updateClusterSubpageDrawerTop();
-        return;
-      }
-      document.documentElement.style.removeProperty('--cluster-subpage-drawer-top');
-      var display = clusterSubpage.querySelector('.clusters-cluster-subpage__display');
-      if (display) {
-        clusterSubpage.style.setProperty(
-          '--cluster-subpage-head-reserved',
-          Math.ceil(display.getBoundingClientRect().top) + 12 + 'px'
-        );
-      }
-    }
-
-    /** Hub: lock body when drawer open. Cluster subpage: dropdown below bar — keep page scroll. */
     function syncClustersMobileBodyScrollLock() {
       if (!sidebar) return;
-      if (clusterSubpage && clustersNavIsMobileWidth()) {
-        document.body.style.overflow = '';
-        return;
-      }
       if (!clustersNavIsMobileWidth() || !sidebar.classList.contains('sidebar-open')) {
         document.body.style.overflow = '';
       } else {
@@ -284,15 +260,16 @@
         '--clusters-controls-height',
         controls ? controls.offsetHeight + 'px' : '0px'
       );
+      /* Keep tab content tall enough so the footer stays below the fold */
+      var vh = window.innerHeight + 'px';
+      root.querySelectorAll('.cluster-tab-content').forEach(function (tc) {
+        tc.style.minHeight = vh;
+      });
     }
 
     function scheduleStickyLayoutMetrics() {
       updateStickyLayoutMetrics();
-      updateClusterSubpageLayout();
-      requestAnimationFrame(function () {
-        updateStickyLayoutMetrics();
-        updateClusterSubpageLayout();
-      });
+      requestAnimationFrame(updateStickyLayoutMetrics);
     }
 
     scheduleStickyLayoutMetrics();
@@ -318,18 +295,11 @@
     if (window.ResizeObserver && controls) {
       new ResizeObserver(scheduleStickyLayoutMetrics).observe(controls);
     }
-    if (window.ResizeObserver && clusterSubpage) {
-      new ResizeObserver(scheduleStickyLayoutMetrics).observe(clusterSubpage);
-    }
 
-    /**
-     * Scroll so el sits below the sticky stack (navbar + .clusters-controls search bar).
-     * Cluster subpages: scroll the <main> column only (desktop).
-     */
+    /** Scroll so el sits below the sticky stack (navbar + .clusters-controls search bar). */
     function scrollElementBelowStickyChrome(el) {
       if (!el) return;
       updateStickyLayoutMetrics();
-      updateClusterSubpageLayout();
       requestAnimationFrame(function () {
         requestAnimationFrame(function () {
           var margin = 14;
@@ -339,11 +309,6 @@
           } else {
             var navbar = document.getElementById('navbar-main');
             chromeBottom = navbar ? Math.ceil(navbar.getBoundingClientRect().bottom) : 72;
-          }
-          if (useClusterSubpageMainScroll() && mainScrollEl) {
-            var delta = el.getBoundingClientRect().top - chromeBottom - margin;
-            mainScrollEl.scrollBy({ top: delta, behavior: 'smooth' });
-            return;
           }
           var elTopDoc = el.getBoundingClientRect().top + window.pageYOffset;
           var targetScroll = elTopDoc - chromeBottom - margin;
@@ -376,44 +341,41 @@
         sidebar.classList.toggle('sidebar-open');
         this.classList.toggle('active');
         scheduleStickyLayoutMetrics();
-        requestAnimationFrame(function () {
-          updateClusterSubpageDrawerTop();
-          syncClustersMobileBodyScrollLock();
-        });
+        requestAnimationFrame(syncClustersMobileBodyScrollLock);
       });
-    }
-
-    if (clusterSubpage) {
-      window.addEventListener(
-        'scroll',
-        function () {
-          if (clustersNavIsMobileWidth() && sidebar && sidebar.classList.contains('sidebar-open')) {
-            updateClusterSubpageDrawerTop();
-          }
-        },
-        { passive: true }
-      );
     }
 
     root.querySelectorAll('.cluster-nav-heading').forEach(function (heading) {
       heading.addEventListener('click', function (e) {
-        /* /clusters/cluster-N/ links: navigate; #cluster-N on hub: expand + scroll in-page */
-        if (!isClustersInPageNavHref(this)) {
-          closeClustersMobileSidebar();
-          return;
-        }
-        e.preventDefault();
+        var clickedArrow = e.target.closest('.cluster-nav-toggle');
         var group = this.closest('.cluster-nav-group');
         if (!group) return;
         var subList = group.querySelector('.cluster-nav-subs');
         var arrow = group.querySelector('.cluster-nav-toggle');
-        if (!subList || !arrow) return;
-        var isHidden = subList.style.display === 'none';
-        subList.style.display = isHidden ? 'block' : 'none';
-        arrow.innerHTML = isHidden ? '&#9662;' : '&#9656;';
-        /* Arrow: expand/collapse only — keep mobile drawer open for sub-cluster picks */
-        var clickedArrow = e.target.closest('.cluster-nav-toggle');
-        if (clickedArrow) return;
+
+        /* Arrow click: always toggle expand/collapse, never navigate */
+        if (clickedArrow) {
+          e.preventDefault();
+          if (!subList || !arrow) return;
+          var isHidden = subList.style.display === 'none';
+          subList.style.display = isHidden ? 'block' : 'none';
+          arrow.innerHTML = isHidden ? '&#9662;' : '&#9656;';
+          return;
+        }
+
+        /* Text click on subpath links: navigate to that cluster page */
+        if (!isClustersInPageNavHref(this)) {
+          closeClustersMobileSidebar();
+          return;
+        }
+
+        /* Text click on in-page anchor links: expand + scroll */
+        e.preventDefault();
+        if (subList && arrow) {
+          var isHidden = subList.style.display === 'none';
+          subList.style.display = isHidden ? 'block' : 'none';
+          arrow.innerHTML = isHidden ? '&#9662;' : '&#9656;';
+        }
         var clusterId = group.getAttribute('data-cluster');
         var section = clusterId ? document.getElementById(clusterId) : null;
         if (section) {
@@ -526,10 +488,20 @@
         hideSearchResults();
         return;
       }
-      var results = collectClustersInlineSearchResults(root, tokens);
+      var includeRefsEl = document.getElementById('clusters-search-include-refs');
+      var includeRefs = includeRefsEl ? includeRefsEl.checked : false;
+      var results = collectClustersInlineSearchResults(root, tokens, includeRefs);
       renderClustersInlineResults(results, searchToolbar, searchResults);
       searchPanel.classList.add(RESULTS_OPEN_CLASS);
       scheduleStickyLayoutMetrics();
+    }
+
+    var includeRefsCheckbox = document.getElementById('clusters-search-include-refs');
+    if (includeRefsCheckbox) {
+      includeRefsCheckbox.addEventListener('change', function () {
+        clearTimeout(debounceTimer);
+        runInlineSearch();
+      });
     }
 
     if (searchInput && searchResults && searchPanel && searchToolbar) {
@@ -591,6 +563,15 @@
               section.querySelector('.cluster-header') ||
               section.querySelector('.cluster-title') ||
               section;
+          } else if (hitType === 'publication' && paneId) {
+            var panePub = document.getElementById(paneId);
+            var pubIdx = parseInt(link.getAttribute('data-pub-index'), 10);
+            if (panePub && !isNaN(pubIdx)) {
+              var pubs = panePub.querySelectorAll('.publication-item');
+              scrollEl = pubs[pubIdx] || panePub;
+            } else {
+              scrollEl = panePub || section;
+            }
           } else if (hitType === 'subcluster' && paneId) {
             var paneSc = document.getElementById(paneId);
             scrollEl = paneSc ? paneSc.querySelector('.sc-heading') || paneSc : section;
@@ -620,21 +601,12 @@
 
     if (backToTopBtn) {
       function toggleBackToTop() {
-        var useMain = useClusterSubpageMainScroll();
-        var show = useMain ? mainScrollEl.scrollTop > 400 : window.scrollY > 500;
-        backToTopBtn.classList.toggle('is-visible', show);
+        backToTopBtn.classList.toggle('is-visible', window.scrollY > 500);
       }
       window.addEventListener('scroll', toggleBackToTop, { passive: true });
-      if (mainScrollEl) {
-        mainScrollEl.addEventListener('scroll', toggleBackToTop, { passive: true });
-      }
       toggleBackToTop();
       backToTopBtn.addEventListener('click', function () {
-        if (useClusterSubpageMainScroll() && mainScrollEl) {
-          mainScrollEl.scrollTo({ top: 0, behavior: 'smooth' });
-        } else {
-          window.scrollTo({ top: 0, behavior: 'smooth' });
-        }
+        window.scrollTo({ top: 0, behavior: 'smooth' });
       });
     }
   });
