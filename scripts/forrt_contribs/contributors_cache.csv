@@ -228,6 +228,7 @@ Pablo,Ezequiel,Flores Kanter,0000-0002-6712-779X,FLoRA Zotero plugin,,False,Fals
 Isis,,Trajano,0000-0001-9001-4323,FLoRA Zotero plugin,,False,False,False,False,False,False,False,False,False,False,True,False,,False,False,,
 David,Cyril,Vaidis,0000-0002-1954-2219,FLoRA Zotero plugin,,False,False,False,False,False,False,False,False,False,False,True,False,,False,False,,
 Miriam,,Müller,0009-0006-6029-8808,FLoRA Zotero plugin,,False,False,False,False,False,False,False,False,False,False,False,True,,False,False,,
+Patricia,,Arriaga,0000-0001-5766-0489,FLoRA Zotero plugin,,False,False,False,False,False,False,False,False,False,False,True,False,,False,False,,
 Iris,,Smal,0000-0003-4511-9008,FORRT Booklet,https://forrt.org/booklet/,True,False,False,False,False,False,True,True,False,False,False,True,False,True,True,,
 Flavio,,Azevedo,0000-0001-9000-8513,FORRT Booklet,https://forrt.org/booklet/,True,False,False,False,False,False,False,False,False,False,False,True,False,True,True,,
 Sofie,,Smal,,FORRT Booklet,https://forrt.org/booklet/,False,False,False,False,False,False,False,False,False,False,False,False,False,True,False,,
@@ -396,7 +397,7 @@ Samuel,,Alarie,,FReD (FORRT Replication Database),https://forrt.org/replication-
 Nihan,,Albayrak-Aydemir,0000-0003-3412-4311,FReD (FORRT Replication Database),https://forrt.org/replication-hub/,False,False,False,False,True,False,False,False,False,False,False,False,,False,False,False,
 Shilaan,,Alzahawi,0000-0002-6892-4643,FReD (FORRT Replication Database),https://forrt.org/replication-hub/,False,True,False,False,True,False,False,False,False,False,False,False,,False,False,True,
 Farid,,Anvari,,FReD (FORRT Replication Database),https://forrt.org/replication-hub/,False,False,False,False,True,False,False,False,False,False,False,False,,False,False,False,
-Patrícia,,Arriaga,0000-0001-5766-0489,FReD (FORRT Replication Database),https://forrt.org/replication-hub/,False,False,False,False,True,False,False,False,False,False,False,False,,False,False,False,
+Patricia,,Arriaga,0000-0001-5766-0489,FReD (FORRT Replication Database),https://forrt.org/replication-hub/,False,False,False,False,True,False,False,False,False,False,False,False,,False,False,False,
 Bradley,J.,Baker,0000-0002-1697-4198,FReD (FORRT Replication Database),https://forrt.org/replication-hub/,False,False,False,False,True,False,False,False,False,False,False,False,,False,False,False,
 Charlotte,Lillian,Barth,,FReD (FORRT Replication Database),https://forrt.org/replication-hub/,False,True,False,False,False,False,False,False,False,False,False,False,,False,False,False,
 David,J.,Bauer,,FReD (FORRT Replication Database),https://forrt.org/replication-hub/,False,False,False,False,True,False,False,False,False,False,False,False,,False,False,False,
@@ -762,7 +763,7 @@ Maria,,Montefinese,https://orcid.org/0000-0002-7685-1034,Glossary - Italian Tran
 Valeria,,Agostini,,Glossary - Italian Translation,,False,False,False,False,False,False,False,True,False,False,False,False,True,False,False,,
 Marta,,Mangiarulo,,Glossary - Italian Translation,,False,False,False,False,False,False,False,True,False,False,False,False,True,False,False,,
 Milena,Veronica,Rota,,Glossary - Italian Translation,,False,False,False,False,False,False,False,True,False,False,False,False,True,False,False,,
-Patrícia,,Arriaga,0000-0001-5766-0489,Glossary - Portuguese Translation,,False,False,False,False,False,False,False,True,False,False,False,False,True,False,False,,
+Patricia,,Arriaga,0000-0001-5766-0489,Glossary - Portuguese Translation,,False,False,False,False,False,False,False,True,False,False,False,False,True,False,False,,
 Bruna,,Valério Gomes,0000-0003-4443-7100,Glossary - Portuguese Translation,,False,False,False,False,False,False,False,True,False,False,False,False,True,False,False,,
 Clarissa,,França Dias Carneiro,0000-0001-8127-0034,Glossary - Portuguese Translation,,False,False,False,False,False,False,False,True,False,False,False,False,True,False,False,,
 Larrie,Rabelo,Laporte,https://orcid.org/0000-0002-4252-4668,Glossary - Portuguese Translation,,False,False,False,False,False,False,False,True,False,False,False,False,True,False,False,,
@@ -836,7 +837,7 @@ Suzanne,L. K.,Stewart,0000-0003-2152-0091,Impact on students,https://forrt.org/i
 Kai,,Krautter,0000-0003-1578-3098,Impact on students,https://forrt.org/impact/,False,False,False,False,False,False,False,False,False,False,False,False,,False,True,,
 Karen,,Matvienko-Sikar,0000-0003-2777-6581,Impact on students,https://forrt.org/impact/,False,False,False,False,True,False,False,False,False,False,False,False,,False,True,,
 Samuel,J,Westwood,0000-0002-0107-6651,Impact on students,https://forrt.org/impact/,False,False,False,False,False,False,False,False,False,False,False,False,,False,True,,
-Patrícia,,Arriaga,0000-0001-5766-0489,Impact on students,https://forrt.org/impact/,False,False,False,False,False,False,False,True,False,False,False,False,,False,True,,
+Patricia,,Arriaga,0000-0001-5766-0489,Impact on students,https://forrt.org/impact/,False,False,False,False,False,False,False,True,False,False,False,False,,False,True,,
 Meng,,Liu,0000-0001-8323-2699,Impact on students,https://forrt.org/impact/,False,False,False,False,False,True,False,False,False,False,False,False,,False,True,,
 Myriam,A.,Baum,0000-0002-1006-3430,Impact on students,https://forrt.org/impact/,False,False,False,False,False,False,False,False,False,False,False,False,,False,True,,
 Tobias,,Wingen,0000-0002-1559-859X,Impact on students,https://forrt.org/impact/,False,False,False,False,False,False,False,True,False,False,False,False,,False,True,,
@@ -1055,7 +1056,7 @@ Flavio,,Azevedo,https://orcid.org/0000-0001-9000-8513,Pedagogies,https://forrt.o
 Timo,B.,Roettger,0000-0003-1400-2739,Piece for the Educator’s corner,,True,True,True,False,True,True,True,True,True,False,True,True,False,True,True,,
 Michael,,Franke,0000-0001-9670-8510,Piece for the Educator’s corner,,True,True,True,False,True,True,True,True,True,False,True,True,False,True,True,,
 Flavio,,Azevedo,0000-0001-9000-8513,Piece for the Educator’s corner,,False,False,False,False,False,False,False,False,False,False,False,False,False,False,True,,
-Dora,,Butkovic,,Piece for the Educator’s corner,,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,,
+Dora,,Butkovic,,Piece for the Educator’s corner,,False,False,False,False,False,False,False,False,False,False,False,False,False,False,True,,
 Vladislava,,Trashlieva,0009-0007-9232-9450,Piece for the Educator’s corner,,False,False,False,False,False,False,False,False,False,False,False,False,False,False,True,,
 Max,,Korbmacher,0000-0002-8113-2560,Replication Paper,https://forrt.org/positive-changes-replication-crisis/,True,False,False,False,True,True,True,False,False,True,False,True,,True,True,,
 Flavio,,Azevedo,0000-0001-9000-8513,Replication Paper,https://forrt.org/positive-changes-replication-crisis/,False,False,False,False,False,True,True,False,False,True,False,True,,False,True,,
@@ -1240,7 +1241,7 @@ Valeria,,Agostini,-,Reversals & Replications,https://forrt.org/reversals/,False,
 Valeria,,Agostini,-,Reversals & Replications,https://forrt.org/reversals/,False,False,False,False,True,False,False,False,False,False,False,False,,False,False,False,False
 Alma,,Jeftić,0000-0002-9285-2061,Reversals & Replications,https://forrt.org/reversals/,False,False,False,False,True,False,False,False,False,False,False,False,,False,False,False,False
 Nihan,,Albayrak-Aydemir,0000-0003-3412-4311,Reversals & Replications,https://forrt.org/reversals/,False,False,False,False,True,False,False,False,False,False,False,False,,False,False,False,False
-Patrícia,,Arriaga,0000-0001-5766-0489,Reversals & Replications,https://forrt.org/reversals/,False,False,False,False,True,False,False,False,False,False,False,False,,False,False,False,False
+Patricia,,Arriaga,0000-0001-5766-0489,Reversals & Replications,https://forrt.org/reversals/,False,False,False,False,True,False,False,False,False,False,False,False,,False,False,False,False
 Amélie,,Gourdon-Kanhukamwe,0000-0002-3060-1320,Reversals & Replications,https://forrt.org/reversals/,False,False,False,False,True,False,False,False,False,False,False,False,,False,False,False,False
 Steven,,Verheyen,0000-0002-6778-6744,Reversals & Replications,https://forrt.org/reversals/,False,False,False,False,True,False,False,False,False,False,False,False,,False,False,False,False
 Kimberly,Lewis,Meidenbauer,0000-0001-9135-6130,Reversals & Replications,https://forrt.org/reversals/,False,False,False,False,True,False,False,False,False,False,False,False,,False,False,False,False
@@ -1273,7 +1274,7 @@ Flavio,,Azevedo,0000-0001-9000-8513,Summaries,https://forrt.org/summaries/,True,
 Mahmoud,M,Elsherif,0000-0002-0540-3998,Summaries,https://forrt.org/summaries/,True,False,False,False,True,False,True,True,False,False,False,False,,False,True,,
 Thomas,Rhys,Evans,0000-0002-6670-0718,Summaries,https://forrt.org/summaries/,False,False,False,False,False,False,False,True,False,False,False,False,,False,True,,
 Nihan,,Albayrak-Aydemir,0000-0003-3412-4311,Summaries,https://forrt.org/summaries/,False,False,False,False,False,False,False,True,False,False,False,False,,False,True,,
-Patrícia,,Arriaga,0000-0001-5766-0489,Summaries,https://forrt.org/summaries/,False,False,False,False,False,False,False,True,False,False,False,False,,False,True,,
+Patricia,,Arriaga,0000-0001-5766-0489,Summaries,https://forrt.org/summaries/,False,False,False,False,False,False,False,True,False,False,False,False,,False,True,,
 Madeleine,,Pownall,,Summaries,https://forrt.org/summaries/,False,False,False,False,False,False,False,False,False,False,False,False,,False,True,,
 William,,Ngiam,,Summaries,https://forrt.org/summaries/,False,False,False,False,False,False,False,False,False,False,False,False,,False,True,,
 Aleksandrina,,Skvortsova,,Summaries,https://forrt.org/summaries/,False,False,False,False,False,True,True,True,False,False,False,False,,False,True,,
