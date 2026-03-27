@@ -73,9 +73,9 @@ cards:
       led by a group of experts, FORRT supports all researchers in publishing
       high-quality repetitions.
     links:
-      - text: "Replication Research (RR) Diamond Open Access Journal"
+      - text: "Replication Research (R2) Diamond Open Access Journal"
         url: "http://replicationresearch.org"
-      - text: "RR Mentorship Program"
+      - text: "R2 Mentorship Program"
         url: "https://ejournals.uni-muenster.de/replicationresearch/mentorshipprogram"
       - text: "Replication Journal Federation"
         url: "/rjf"
