@@ -1,58 +1,86 @@
 ---
-# Section metadata
-title: "FORRT Replication Hub"
-date: 2023-09-09
-type: plain_page
+title: "FORRT Replication Hub — Transforming Research"
+heading_title: "FORRT's Replication Hub"
+description: "Support for every level of replication and reproduction — tracking, exploring, conducting, and disseminating replication studies across all research disciplines."
+type: replication_hub
+image: "replication_hub.webp"
+image_alt: "FORRT Replication Hub diagram showing four areas: Track, Explore, Conduct, Disseminate"
+sharing_image_resource: "replication_hub.webp"
+sharing_image_alt: "FORRT Replication Hub diagram showing four areas: Track, Explore, Conduct, Disseminate"
+
+intro: >
+  With the FORRT Replication Hub, our mission is to support reproduction and
+  replication studies across all stages of the research process as well as all
+  research disciplines. It consists of a comprehensive collection of resources
+  and tools designed to assist researchers in the *tracking*, *finding &
+  exploring*, *conducting*, and *publishing & dissemination* of reproduction and
+  replication studies.
+
+cards:
+  - key: track
+    title: Track
+    description: >
+      Reproductions and replications are often published in preprints, as part
+      of meta-papers that can include over one hundred studies, and in different
+      journals than the respective target studies. At the FORRT Replication Hub,
+      we track them in multiple ways by linking original and target studies.
+    links:
+      - text: "FORRT Library of Reproduction and Replication Attempts (FLoRA)"
+        url: "/replication-hub/flora/"
+      - text: "FLoRA Submission Form"
+        url: "/replication-hub/submit/"
+      - text: "Positive Changes from the Replication Crisis"
+        url: "https://doi.org/10.1038/s44271-023-00003-2"
+
+  - key: explore
+    title: Explore
+    description: >
+      *Gotta catch 'em all!* Researchers who are looking to incorporate hundreds
+      of replication attempts into their research and teaching can make use of
+      our free and open-source tools. These are mostly based on FLoRA and FReD.
+    links:
+      - text: "FLoRA Annotator"
+        url: "/annotator"
+      - text: "FReD Explorer"
+        url: "/explorer"
+      - text: "FReD R Package"
+        url: "/FReD"
+
+  - key: conduct
+    title: Conduct
+    description: >
+      Since failures to replicate a large proportion of seminal findings across
+      many disciplines, interest in reproduction and replication has surged and
+      given rise to new techniques and methods. Our resources help students,
+      ECRs, and experienced researchers to take up newly developed methods and
+      conduct high-quality replication research.
+    links:
+      - text: "Handbook for Reproduction and Replication Studies (WIP)"
+        url: "/replication_handbook"
+      - text: "Manuscript Templates"
+        url: "https://osf.io/brxtd/"
+      - text: "Love Replications Week"
+        url: "/LoveReplicationsWeek"
+      - text: "ReplicateThis Nomination Portal (WIP)"
+        url: "/replicatethis"
+
+  - key: disseminate
+    title: Disseminate
+    description: >
+      Research is meant to be shared. While many areas of academic culture value
+      innovation for the sake of robustness and repetition, we strive for
+      equality. With a dedicated and community-owned diamond open access journal
+      led by a group of experts, FORRT supports all researchers in publishing
+      high-quality repetitions.
+    links:
+      - text: "Replication Research (R2) Diamond Open Access Journal"
+        url: "http://replicationresearch.org"
+      - text: "R2 Mentorship Program"
+        url: "https://ejournals.uni-muenster.de/replicationresearch/mentorshipprogram"
+      - text: "Replication Journal Federation"
+        url: "/rjf"
+      - text: "Replication Bot"
+        url: "https://bsky.app/profile/replicationbot.bsky.social"
+      - text: "Journal Replicability Tracker"
+        url: "/journalranking"
 ---
-
-<br>
-
-<img src="https://github.com/user-attachments/assets/f09dbbc0-9fe1-4261-aaa4-4df948ad9be0" />
-
-
-### **Transforming Research: Support for Every Level of Replication and Reproduction**
-
-The FORRT Replication Hub provides a comprehensive collection of resources and tools designed to assist researchers in the identification, evaluation, execution, and publication of replication studies.
-
-### **Projects**
-
-1. FORRT’s Replication Database (FReD) serves as a centralized repository where researchers can access information about past replication efforts, including methodologies and outcomes. This database is intended to facilitate easier access to replication study data, promote transparency, and encourage the conduct of further replications by providing researchers with a clear view of what has been previously attempted and achieved.  
-   <img src="fred.webp" /> 
-
-
-   - [FReD Explorer](/explorer) is an interactive tool within the FORRT Replication Database designed to facilitate the navigation and discovery of replication studies. It allows researchers and educators to explore a wide array of replication projects easily, filtering them based on various criteria. The Explorer helps users identify trends and gaps in replication research, offering a user-friendly interface to access detailed information on past studies.
-
-2. [FLoRA Annotator](/annotator) is a tool aimed at enhancing the quality and accessibility of data within the FORRT Replication Database. It allows users to check a list of references for potential replication attempts and returns a reading list that includes replication attempts and outcomes of the replication studies.
-
-3. [Replication Research](http://replicationresearch.org) is a diamond open access journal for reproductions, replications, and conceptual articles from multiple fields. It is being developed by FORRT and the Münster Center for Open Science and will be launched in fall 2025\.  
-
-   <a href="http://replicationresearch.org" target="_blank">
-      <img src="rep_research.webp" alt="Replication Research">
-   </a>
-
-4. [FORRT’s Replications and Reversals](/reversals/) is a crowdsourced list of studies that have been replicated, not replicated, or reversed (i.e., replication results were the opposite of original results) for pedagogical purposes. It stopped updating in late 2023 as we are merging it into FReD. An updated version of the list will be available shortly.
-
-### **Partner Projects**
-
-* The [Scaling Machine Assessments of Research Trustworthiness](https://www.cos.io/about/news/cos-expands-score-program-efforts) (SMART) competition explores innovative methods to predict the replicability of scientific findings using algorithms. FORRT has [partnered](https://www.cos.io/blog/cos-and-forrt-partner-to-increase-discoverability-and-usability-of-replication-evidence) with the COS to provide a large training dataset.  
-* The [Collaborative Replication and Education Project (CREP)](https://forrt.org/glossary/vbeta/collaborative-replication-and-educa/) is an initiative designed to organize and structure replication efforts of highly-cited empirical studies in psychology to satisfy the dual needs for more high-quality direct replications and more training in empirical research techniques for psychology students. CREP aims to address the need for replications of highly cited studies, and to provide training, support and professional growth opportunities for academics completing replication projects.  
-* The [Institute for Replication (I4R)](https://i4replication.org) organizes replication games to conduct replications and reproductions. It provides replication and teaching resources and helps researchers disseminate and publish replications and reproductions.  
-* The Center for Open Science’s projects to [Systematizing Confidence in Open Research and Evidence (SCORE)](https://www.cos.io/score) and , the [Scaling Machine Assessments of Research Trustworthiness (SMART)](https://www.cos.io/about/news/cos-expands-score-program-efforts)  include prediction markets, machine-learning, and replication efforts.  
-* The project [Improving Reproducibility in Science (iRise)](https://camarades.shinyapps.io/dev-irise-soles/) identifies, tracks, and evaluates discipline-wide open science interventions and develops tools to improve reproducibility.  
-* The [Replication Wiki](https://replication.uni-goettingen.de/wiki/index.php/Main_Page) provides teaching resources for replication research and a database with reproductions and replications from the social sciences (particularly economics).  
-* The [Journal of Comments and Replications in Economics](http://jcr-econ.org) is the go-to outlet for reproductions and replications from the field of economics.
-* We are also very grateful to everyone who contributed to the many large-scale replication efforts in recent years that we drew on in compiling our data. A list of large replication projects can be found [here](/replication-hub/large-scale-replication-projects/).
-
-**Publications and Pre-prints** 
-
-Korbmacher, M., Azevedo, F., Pennington, C. R., Hartmann, H., Pownall, M., Schmidt, K., ... & Evans, T. (2023). The replication crisis has led to positive structural, procedural, and community changes. *Communications Psychology*, 1(1), 3\. [https://doi.org/10.1038/s44271-023-00003-2](https://doi.org/10.1038/s44271-023-00003-2)
-
-Röseler, L., Kaiser, L., Doetsch, C., Klett, N., Seida, C., Schütz, A., ... & Zhang, Y. (2024). The replication database: documenting the replicability of psychological science. Journal of Open Psychology Data, 12(8), 1-23. [https://doi.org/10.5334/jopd.101](https://doi.org/10.5334/jopd.101)
-
-Röseler, L., Gendlina, T., Krapp, J., Labusch, N., & Schütz, A. (2022). Successes and Failures of Replications: A Meta-Analysis of Independent Replication Studies Based on the OSF Registries. *MetaArXiv Preprints*. [https://doi.org/10.31222/osf.io/8psw2](https://doi.org/10.31222/osf.io/8psw2) 
-
-### **Support Us**
-
-[https://opencollective.com/forrt](https://opencollective.com/forrt)
-
-

@@ -1,0 +1,25 @@
+{{/* cards.html - Four area cards for the Replication Hub, driven by .Params.cards */}}
+<div class="rephub-cards">
+
+  {{ range .Params.cards }}
+  <div class="rephub-card rephub-card--{{ .key }}">
+    <div class="rephub-card__header">
+      <h2 class="rephub-card__title">{{ .title }}</h2>
+    </div>
+    <div class="rephub-card__body">
+      <p>{{ .description | markdownify }}</p>
+      {{ if .links }}
+      <h3 class="rephub-card__links-heading">Direct Links to Projects</h3>
+      <ul class="rephub-card__links">
+        {{ range .links }}
+        <li>
+          {{ if .url }}<a href="{{ .url }}">{{ .text }}</a>{{ else }}{{ .text }}{{ end }}
+        </li>
+        {{ end }}
+      </ul>
+      {{ end }}
+    </div>
+  </div>
+  {{ end }}
+
+</div>
