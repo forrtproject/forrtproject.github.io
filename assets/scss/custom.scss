@@ -1767,3 +1767,135 @@ h1.clusters-site-heading.clusters-hub-page__title {
     font-size: 0.92rem;
   }
 }
+
+/* ============================================================
+   REPLICATION HUB – four-area cards
+   ============================================================ */
+
+.rephub-cards-section {
+  padding: 1.5rem 0 2.5rem;
+}
+
+.rephub-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+.rephub-card {
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.rephub-card:hover {
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.13);
+  transform: translateY(-2px);
+}
+
+.rephub-card__header {
+  padding: 1rem 1.25rem 0.6rem;
+}
+
+.rephub-card__title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin: 0;
+  color: #fff;
+}
+
+.rephub-card__body {
+  padding: 0.75rem 1.25rem 1.25rem;
+}
+
+.rephub-card__body p {
+  font-size: 0.9rem;
+  line-height: 1.65;
+  color: #333;
+  margin-bottom: 0.75rem;
+}
+
+.rephub-card__links-heading {
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin: 0.75rem 0 0.4rem;
+  color: #555;
+}
+
+.rephub-card__links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.rephub-card__links li {
+  font-size: 0.88rem;
+  padding: 0.25rem 0;
+  padding-left: 1.1rem;
+  position: relative;
+}
+
+.rephub-card__links li::before {
+  content: "\2022";
+  position: absolute;
+  left: 0;
+  font-weight: 700;
+}
+
+.rephub-card__links a {
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.15s;
+}
+
+.rephub-card__links a:hover {
+  border-bottom-color: currentColor;
+}
+
+/* --- Color themes matching the Venn diagram --- */
+
+/* Track – steel blue */
+.rephub-card--track {
+  background: linear-gradient(135deg, #e8edf5 0%, #f4f6fb 100%);
+  border-top: 4px solid #7B8FB3;
+}
+.rephub-card--track .rephub-card__header { background: #7B8FB3; }
+.rephub-card--track .rephub-card__links li::before { color: #7B8FB3; }
+.rephub-card--track .rephub-card__links a { color: #5a6f91; }
+
+/* Explore – sage green */
+.rephub-card--explore {
+  background: linear-gradient(135deg, #e6eeeb 0%, #f2f6f4 100%);
+  border-top: 4px solid #7FA098;
+}
+.rephub-card--explore .rephub-card__header { background: #7FA098; }
+.rephub-card--explore .rephub-card__links li::before { color: #7FA098; }
+.rephub-card--explore .rephub-card__links a { color: #5a7e74; }
+
+/* Conduct – periwinkle blue */
+.rephub-card--conduct {
+  background: linear-gradient(135deg, #e8ecf5 0%, #f2f4fb 100%);
+  border-top: 4px solid #8B9FC0;
+}
+.rephub-card--conduct .rephub-card__header { background: #8B9FC0; }
+.rephub-card--conduct .rephub-card__links li::before { color: #8B9FC0; }
+.rephub-card--conduct .rephub-card__links a { color: #66799e; }
+
+/* Disseminate – olive green */
+.rephub-card--disseminate {
+  background: linear-gradient(135deg, #eff0e4 0%, #f6f7f0 100%);
+  border-top: 4px solid #A5A87A;
+}
+.rephub-card--disseminate .rephub-card__header { background: #A5A87A; }
+.rephub-card--disseminate .rephub-card__links li::before { color: #A5A87A; }
+.rephub-card--disseminate .rephub-card__links a { color: #7a7d55; }
+
+/* Responsive: single column on mobile */
+@media (max-width: 768px) {
+  .rephub-cards {
+    grid-template-columns: 1fr;
+  }
+}

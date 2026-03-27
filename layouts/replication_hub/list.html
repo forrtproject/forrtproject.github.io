@@ -1,0 +1,26 @@
+{{/* layouts/replication_hub/list.html - Main layout for replication hub page */}}
+{{ define "main" }}
+
+  <div class="universal-wrapper pt-3 pb-3">
+    <div class="container">
+      <div class="article-container pt-3">
+        <h1 class="clusters-site-heading clusters-hub-page__title" itemprop="headline">{{ .Params.heading_title | default .Title }}</h1>
+      </div>
+    </div>
+  </div>
+
+  {{/* INTRO SECTION */}}
+  <section class="clusters-intro-section">
+    <div class="container">
+      {{ partial "replication-hub/intro.html" . }}
+    </div>
+  </section>
+
+  {{/* CARDS SECTION */}}
+  <section class="rephub-cards-section">
+    <div class="container">
+      {{ partial "replication-hub/cards.html" . }}
+    </div>
+  </section>
+
+{{ end }}
