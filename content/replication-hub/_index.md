@@ -5,6 +5,8 @@ description: "Support for every level of replication and reproduction — tracki
 type: replication_hub
 image: "replication_hub.webp"
 image_alt: "FORRT Replication Hub diagram showing four areas: Track, Explore, Conduct, Disseminate"
+sharing_image_resource: "replication_hub.webp"
+sharing_image_alt: "FORRT Replication Hub diagram showing four areas: Track, Explore, Conduct, Disseminate"
 
 intro: >
   With the FORRT Replication Hub, our mission is to support reproduction and
