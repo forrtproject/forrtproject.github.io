@@ -1176,8 +1176,8 @@ FORRT is driven by a **large and diverse community of contributors** that shape 
 </li>
 
 
-<li class="contributor-group">
-  <strong>Harry D. Coulson</strong> contributed to
+<li class="contributor-group" id="0009-0008-8737-6137">
+  <strong><a href="https://orcid.org/0009-0008-8737-6137">Harry D. Coulson</a></strong> contributed to
   <ul class="contributions-list">
     <li class="contribution" data-projects="flora-zotero-plugin" data-roles="validation">FLoRA Zotero plugin with <em>Validation</em></li>
     <li class="contribution" data-projects="fred-forrt-replication-database" data-roles="validation"><a href="https://forrt.org/replication-hub/">FReD (FORRT Replication Database)</a> with <em>Validation</em></li>
@@ -6391,6 +6391,10 @@ window.filterData = {
       "label": "Project Coordinator"
     },
     {
+      "value": "project-manager",
+      "label": "Project Manager"
+    },
+    {
       "value": "project-administration",
       "label": "Project administration"
     },
@@ -6401,10 +6405,6 @@ window.filterData = {
     {
       "value": "project-lead",
       "label": "Project lead"
-    },
-    {
-      "value": "project-manager",
-      "label": "Project manager"
     },
     {
       "value": "resources",
