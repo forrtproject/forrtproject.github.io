@@ -33,11 +33,41 @@ We will take care of the issue as soon as possible. Right now we run on voluntee
 > ### Legal Notice
 > When contributing to this project, you must agree that you have authored 100% of the content, that you have the necessary rights to the content and that the content you contribute may be provided under the project license.
 
-### Cloning the Repository
+# Local setup (quick start)
 
-For FORRT contributors, you can clone this repository to your local machine and make changes on the feature branch. For now, we do not use a separate development branch. Proposed changes must be made in a feature branch. Please then create a pull request into the master branch.
+**Fork and clone**
+   - Fork the repository to your own GitHub account (or use the Dev Container / RStudio workflows below).
 
-For external contributors, this website operates on the [fork and pull](https://reflectoring.io/github-fork-and-pull/) model, so you will need to fork this repository to your GitHub account of choice and then clone it to your local machine.
+To run the FORRT website locally, you need to install.
+
+- [Git](https://git-scm.com/downloads)
+- [Hugo](https://gohugo.io/getting-started/installing/)
+- [Visual Studio Code](https://code.visualstudio.com/) *(Optional: you can use your preferred text editor.)*
+
+Clone the repository:
+
+   ```bash
+   git clone https://github.com/forrtproject/forrtproject.github.io.git
+   cd forrtproject.github.io
+   ```
+Start the development server:
+
+   ```bash
+   hugo server -D
+   ```
+Open `http://localhost:1313` in your browser to preview changes.
+
+Then 
+1. **Create a branch**
+   - Create a descriptive feature branch (for example, `fix-typo-contributing` or `add-new-resource-page`).
+2. **Make and test your changes**
+   - Apply your edits, run the site locally (preview changes), and ensure there are no errors.
+3. **Commit with a clear message**
+   - Commit your changes with a concise, meaningful message describing what you changed and why.
+4. **Push and open a Pull Request**
+   - Push your branch to your fork and open a Pull Request against the `master` branch of `forrtproject/forrtproject.github.io`, linking any relevant issues and briefly summarizing your changes.
+
+For more information about Git commands, see the official documentation [here](https://docs.github.com/en/get-started/using-git/about-git).
 
 ### Development - Dev Containers and VSCode
 
@@ -45,7 +75,7 @@ A way to run the project locally without installing Hugo on the host machine is 
 
 #### Prerequisites
 
-- [Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
+- [Git](https://git-scm.com/downloads)
 - [Docker](https://docs.docker.com/get-docker/)
   - For Windows, make sure to install [WSL2](https://learn.microsoft.com/en-us/windows/wsl/install)
 - [Visual Studio Code](https://code.visualstudio.com/)
@@ -62,7 +92,7 @@ A way to run the project locally without installing Hugo on the host machine is 
 
 #### Prerequisites
 
-* [Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
+* [Git](https://git-scm.com/downloads)
 * [Hugo](https://gohugo.io/getting-started/installing/)
 * [R](https://cran.r-project.org/)
 * [RStudio](https://www.rstudio.com/products/rstudio/download/)
@@ -78,20 +108,8 @@ If you are a R user and would prefer to work in RStudio, you need to:
     * Create project as a subdirectory of: `click Browse and decide where you want put it`
 2. Before editing, try to run it locally using the blogdown Addins in RStudio.
 
-To edit it locally, you will then need to:
 
-1. Fork this GitHub repo (create a version of the FORRT repo on your own account).
-2. Clone this repo you just added in your own account: `git clone https://github.com/yourusername/forrtproject.github.io.git` in a terminal window.
-3. To run the website locally, make sure you are still in `FORRT/` dir and type `hugo server -D` in your terminal.
-   - The -D option is to serve the website including draft .md files.
-4.  Create a new branch with your name or the feature you would like to add (e.g. outreach). Depending on your code editor, the way to do this will vary (e.g. in Visual Studio Code you can click on "master" in the bottom left and select "new branch").
-5. Make changes on your branch. Check that it the website is working using again `hugo server -D`.
-6. Select what changes you want to add now and "stage" them with Git.
-7. Commit your changes and add a message that describes the changes.
-8. Then you can push this branch to GitHub.
-9. Create a pull request to the original FORRT repo.
-
-Please note that RStudio is not designed for website development, so you may find it easier to use the Dev Containers method described above.
+Please note that RStudio is not designed for website development, so you may find it easier to use other methods above.
 
 ## Deployment & Staging
 
