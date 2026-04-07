@@ -1,0 +1,75 @@
+{{/* One field block. Expects dict: field, fi, colors */}}
+{{ $field := .field }}
+{{ $fi := .fi }}
+{{ $colors := .colors }}
+{{ $fid := printf "field-%d" (int $field.number) }}
+{{ $color := index $colors (mod $fi (len $colors)) }}
+{{ $totalRes := 0 }}{{ range $field.disciplines }}{{ $totalRes = add $totalRes (len .resources) }}{{ end }}
+
+{{/* Category badge colors */}}
+{{ $catColors := dict "General" "#6c757d" "Open Data" "#17a2b8" "Open Methods" "#28a745" "Open Outputs" "#fd7e14" "Open Education" "#6f42c1" }}
+
+<section id="{{ $fid }}" class="cluster-section" style="background-color: {{ $color }};">
+  <div class="cluster-header">
+    <h2 class="cluster-title">
+      <span class="cluster-number">{{ (int $field.number) }}</span>
+      {{ $field.name }}
+    </h2>
+    <span class="cluster-stats">{{ len $field.disciplines }} discipline{{ if gt (len $field.disciplines) 1 }}s{{ end }} &middot; {{ $totalRes }} resources</span>
+  </div>
+
+  {{ if $field.summary }}
+  <p class="cluster-description">{{ $field.summary }}</p>
+  {{ end }}
+
+  {{ if gt (len $field.disciplines) 0 }}
+  <ul class="nav nav-tabs cluster-tabs" id="tabs-{{ $fid }}" role="tablist">
+    {{ range $di, $disc := $field.disciplines }}
+    {{ $did := printf "f%d-d%d" (int $field.number) $di }}
+    <li class="nav-item">
+      <a class="nav-link{{ if eq $di 0 }} active{{ end }}" id="{{ $did }}-tab"
+         data-toggle="tab" href="#{{ $did }}" role="tab"
+         aria-controls="{{ $did }}" aria-selected="{{ if eq $di 0 }}true{{ else }}false{{ end }}">
+        <span class="tab-label">{{ $disc.name }}</span>
+      </a>
+    </li>
+    {{ end }}
+  </ul>
+
+  <div class="tab-content cluster-tab-content" id="content-{{ $fid }}">
+    {{ range $di, $disc := $field.disciplines }}
+    {{ $did := printf "f%d-d%d" (int $field.number) $di }}
+    <div class="tab-pane fade{{ if eq $di 0 }} show active{{ end }}" id="{{ $did }}"
+         role="tabpanel" aria-labelledby="{{ $did }}-tab">
+
+      <h3 class="sc-heading">{{ $disc.name }}</h3>
+
+      {{ if $disc.examples }}
+      <div class="sc-description">
+        <strong>Examples of open research practices:</strong> {{ $disc.examples }}
+      </div>
+      {{ end }}
+
+      {{ if $disc.resources }}
+      <ul class="publication-list disciplines-resource-list">
+        {{ range $disc.resources }}
+        <li class="publication-item disciplines-resource-item">
+          {{ $badgeColor := index $catColors .category | default "#6c757d" }}
+          <span class="badge disciplines-category-badge" style="background:{{ $badgeColor }};color:#fff;">{{ .category }}</span>
+          {{ if .link }}
+            <a href="{{ .link }}" target="_blank" rel="noopener">{{ .title }}</a>
+          {{ else }}
+            {{ .title }}
+          {{ end }}
+        </li>
+        {{ end }}
+      </ul>
+      {{ else }}
+      <p class="text-muted"><em>No resources listed for this discipline yet.</em></p>
+      {{ end }}
+
+    </div>
+    {{ end }}
+  </div>
+  {{ end }}
+</section>

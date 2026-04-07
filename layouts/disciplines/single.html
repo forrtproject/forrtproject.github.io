@@ -1,0 +1,38 @@
+{{/* layouts/disciplines/single.html - Main layout for Open Research Across Disciplines page */}}
+{{ define "main" }}
+
+  {{ partial "disciplines/seo_jsonld.html" . }}
+  <div class="universal-wrapper pt-3 pb-3">
+    <div class="container">
+
+      {{/* Page header */}}
+      {{ if .Params.image }}
+      <div class="article-header d-print-none">
+        <img src="{{ .Params.image }}" alt="{{ .Params.heading_title | default .Title }}" class="article-banner" loading="lazy">
+      </div>
+      {{ end }}
+
+      <div class="article-container pt-3">
+        <h1 class="clusters-site-heading clusters-hub-page__title" itemprop="headline">{{ .Params.heading_title | default .Title }}</h1>
+
+        {{ if .Params.subtitle }}
+        <p class="page-subtitle">{{ .Params.subtitle | markdownify }}</p>
+        {{ end }}
+      </div>
+    </div>
+  </div>
+
+  {{/* INTRO SECTION */}}
+  <section class="clusters-intro-section">
+    <div class="container">
+      {{ partial "disciplines/intro.html" . }}
+    </div>
+  </section>
+
+  {{/* DISCIPLINES DISPLAY SECTION */}}
+  <section class="cluster-full-width clusters-display-section">
+    <div class="container">
+      {{ partial "disciplines/all_fields.html" . }}
+    </div>
+  </section>
+{{ end }}

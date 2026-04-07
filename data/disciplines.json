@@ -1,0 +1,3471 @@
+{
+  "fields": [
+    {
+      "number": 1,
+      "name": "Relevant across multiple disciplines",
+      "summary": "DUMMY: This section covers cross-cutting open research resources applicable to all fields, including the Open Science Framework, UKRN primers, FAIR data principles, and general guidance on preregistration, reproducibility, and open access publishing.",
+      "disciplines": [
+        {
+          "name": "Relevant across multiple disciplines",
+          "examples": "",
+          "resources": [
+            {
+              "title": "Open Science Framework (preprints, pre-registration, sharing data, etc.)",
+              "link": "https://osf.io",
+              "category": "General"
+            },
+            {
+              "title": "Open Scholarship Knowledge Base",
+              "link": "https://www.oercommons.org/hubs/OSKB",
+              "category": "General"
+            },
+            {
+              "title": "UKRN primer, pre-registration and registered reports",
+              "link": "https://osf.io/8v2n7/",
+              "category": "General"
+            },
+            {
+              "title": "UKRN primer, preprints",
+              "link": "https://osf.io/m4zyh/",
+              "category": "General"
+            },
+            {
+              "title": "UKRN primer, open access",
+              "link": "https://osf.io/94rsp/",
+              "category": "General"
+            },
+            {
+              "title": "UKRN primer, open software and code",
+              "link": "https://osf.io/qw9ck/",
+              "category": "General"
+            },
+            {
+              "title": "UKRN primer, open data",
+              "link": "https://osf.io/wp4zu/",
+              "category": "General"
+            },
+            {
+              "title": "UKRN primer, Wikimedia and open research",
+              "link": "https://osf.io/preprints/osf/au48t",
+              "category": "General"
+            },
+            {
+              "title": "UKRN primer, Open Source Hardware",
+              "link": "https://osf.io/shv4y",
+              "category": "General"
+            },
+            {
+              "title": "UKRN Checklist for an Open Research Action Plan",
+              "link": "https://osf.io/preprints/osf/94kr7",
+              "category": "General"
+            },
+            {
+              "title": "Trusted Research: a Primer from CPNI and UKRN",
+              "link": "https://osf.io/preprints/osf/2c8bh",
+              "category": "General"
+            },
+            {
+              "title": "UKRN primer, Rights Retention Strategy",
+              "link": "https://osf.io/preprints/osf/2ajsg",
+              "category": "General"
+            },
+            {
+              "title": "Curated reading lists for all areas of open research:",
+              "link": "https://forrt.org/clusters/",
+              "category": "General"
+            },
+            {
+              "title": "Report and case studies of open data (government report from Open Research Data Task Force)",
+              "link": "https://www.gov.uk/government/publications/open-research-data-task-force-final-report",
+              "category": "General"
+            },
+            {
+              "title": "Summaries of current state of open access / open research across lots of disciplines.",
+              "link": "https://open-access.network/en/information/subject-specific-open-access",
+              "category": "General"
+            },
+            {
+              "title": "1,500 scientists lift the lid on reproducibility",
+              "link": "https://doi.org/10.1038/533452a",
+              "category": "General"
+            },
+            {
+              "title": "Reading University Open Research case studies of accessing or practicing Open Research",
+              "link": "https://www.reading.ac.uk/research/research-environment/open-research/open-research-case-studies.aspx",
+              "category": "General"
+            },
+            {
+              "title": "University of Surrey Open Research case studies of practicing Open Research",
+              "link": "https://www.surrey.ac.uk/library/open-research/open-research-case-studies",
+              "category": "General"
+            },
+            {
+              "title": "University of Leeds Open Research case studies",
+              "link": "https://leedsunilibrary.wordpress.com/2022/12/09/open-research-case-studies-by-faculty/",
+              "category": "General"
+            },
+            {
+              "title": "Aston University Open Research case studies",
+              "link": "https://libguides.aston.ac.uk/openresearchawards2023",
+              "category": "General"
+            },
+            {
+              "title": "Open-access policy and data-sharing practice in UK academia",
+              "link": "https://doi.org/10.1177/0165551518823174",
+              "category": "General"
+            },
+            {
+              "title": "Portal supporting open science",
+              "link": "https://openscience.eu/foster-open-science",
+              "category": "General"
+            },
+            {
+              "title": "OpenAIRE offers a suite of services designed to facilitate and foster the growth of open research across Europe",
+              "link": "https://www.openaire.eu/",
+              "category": "General"
+            },
+            {
+              "title": "The European Open Science Cloud",
+              "link": "https://open-science-cloud.ec.europa.eu/",
+              "category": "General"
+            },
+            {
+              "title": "A series of factsheets about open access, repositories and personal data",
+              "link": "https://www.openaire.eu/factsheets",
+              "category": "General"
+            },
+            {
+              "title": "Surrey Reproducibility Society Independent learning resources",
+              "link": "https://osf.io/4ahfw/wiki/home/",
+              "category": "General"
+            },
+            {
+              "title": "Research data policies and support",
+              "link": "https://www.springernature.com/gp/authors/research-data-policy",
+              "category": "General"
+            },
+            {
+              "title": "Legal side of open source",
+              "link": "http://opensource.guide/legal/",
+              "category": "General"
+            },
+            {
+              "title": "Open-source community-driven guide to Open Research",
+              "link": "https://book.the-turing-way.org/",
+              "category": "General"
+            },
+            {
+              "title": "Building social and technical bridges to access open research",
+              "link": "https://www.rd-alliance.org/",
+              "category": "General"
+            },
+            {
+              "title": "Allen, C., & Mehler, D Correction: Open science challenges, benefits and tips in early career and beyond",
+              "link": "https://doi.org/10.1371/journal.pbio.3000587",
+              "category": "General"
+            },
+            {
+              "title": "Introductory open research online courses",
+              "link": "https://opensciencemooc.eu/",
+              "category": "General"
+            },
+            {
+              "title": "What senior academics can do to support reproducible and open research: a short, three-step guide",
+              "link": "https://doi.org/10.31234/osf.io/jyfr7",
+              "category": "General"
+            },
+            {
+              "title": "Five things that every researcher should know about open science",
+              "link": "https://www.youtube.com/watch?v=0uCG3Fl6ugE&feature=youtu.be",
+              "category": "General"
+            },
+            {
+              "title": "How to become an Open Science Champion",
+              "link": "https://www.youtube.com/watch?v=IV1aFnPkUSI",
+              "category": "General"
+            },
+            {
+              "title": "A mentoring and training program to become an Open Science Ambassador",
+              "link": "https://openlifesci.org/index#applications",
+              "category": "General"
+            },
+            {
+              "title": "Reproducibility workshops that raise awareness for open research practices",
+              "link": "https://www.repro4everyone.org/",
+              "category": "General"
+            },
+            {
+              "title": "How to become more open",
+              "link": "https://plos.org/become-more-open/",
+              "category": "General"
+            },
+            {
+              "title": "Passport for Open Science: A guide for PhD students",
+              "link": "https://www.ouvrirlascience.fr/passport-for-open-science-a-practical-guide-for-phd-students/?mc_cid=0abeb12a98&mc_eid=3f2684c619",
+              "category": "General"
+            },
+            {
+              "title": "Introduction to Open Access Publishing",
+              "link": "https://www.jisc.ac.uk/guides/an-introduction-to-open-access",
+              "category": "General"
+            },
+            {
+              "title": "Blogpost on 'Becoming a better scientist with open and reproducible research'",
+              "link": "https://lgatto.github.io/open-and-rr-2/",
+              "category": "General"
+            },
+            {
+              "title": "Transitioning to Open Science post Covid-19: 5 Strategies for the Future",
+              "link": "https://www.research-consulting.com/enabling-a-sustainable-transition-to-open-science-5-strategies-for-the-future/",
+              "category": "General"
+            },
+            {
+              "title": "Glossary of Open Research Terms",
+              "link": "https://forrt.org/glossary/",
+              "category": "General"
+            },
+            {
+              "title": "Journal club initiative that helps researchers create Open Science journal clubs at their universities",
+              "link": "https://reproducibilitea.org/",
+              "category": "General"
+            },
+            {
+              "title": "The RIOT Science Club raises awareness and provides training in Reproducible and Open Science practices",
+              "link": "http://www.riotscience.co.uk/",
+              "category": "General"
+            },
+            {
+              "title": "The Geneva Workshop on Innovations in Scholarly Communication – OA12 (September 2020)",
+              "link": "https://oai.events/oai12/",
+              "category": "General"
+            },
+            {
+              "title": "ReproHack",
+              "link": "https://reprohack.github.io/reprohack-hq/",
+              "category": "General"
+            },
+            {
+              "title": "Octopus",
+              "link": "https://science-octopus.org/",
+              "category": "General"
+            },
+            {
+              "title": "Radical Solutions and Open Science",
+              "link": "https://doi.org/10.1007/978-981-15-4276-3",
+              "category": "General"
+            },
+            {
+              "title": "A survey on how preregistration affects the research workflow: better science but more work",
+              "link": "https://doi.org/10.1098/rsos.211997",
+              "category": "General"
+            },
+            {
+              "title": "Prevalence of questionable research practices, research misconduct and their potential explanatory factors: A survey among academic researchers in The Netherlands",
+              "link": "https://doi.org/10.1371/journal.pone.0263023",
+              "category": "General"
+            },
+            {
+              "title": "Funders need to credit open science",
+              "link": "https://doi.org/10.1038/d41586-021-03418-1",
+              "category": "General"
+            },
+            {
+              "title": "Draft guidelines on commitments that researchers can make regarding the pre-registration of studies using secondary data",
+              "link": "https://osf.io/cgw86/wiki/home/",
+              "category": "General"
+            },
+            {
+              "title": "An Introduction to Preregistration",
+              "link": "https://ox.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=db83bd17-4c08-466b-9ced-ac60012e7573",
+              "category": "General"
+            },
+            {
+              "title": "Registered reports publishing format",
+              "link": "https://www.cos.io/initiatives/registered-reports",
+              "category": "General"
+            },
+            {
+              "title": "Software Deposit: Guidance for Researchers",
+              "link": "https://doi.org/10.5281/zenodo.1327309",
+              "category": "General"
+            },
+            {
+              "title": "Software sharing location resource",
+              "link": "https://github.com",
+              "category": "General"
+            },
+            {
+              "title": "Workflow for Open Reproducible Code (R package)",
+              "link": "https://www.youtube.com/watch?v=uzjpN_yFeUU",
+              "category": "General"
+            },
+            {
+              "title": "Best practices for writing reproducible code",
+              "link": "https://bvreede.github.io/presentations/presentations/2020-09-17_BestPractices-lecture.html#1",
+              "category": "General"
+            },
+            {
+              "title": "Guidance on writing reproducible lab protocol",
+              "link": "https://www.nature.com/articles/d41586-021",
+              "category": "General"
+            },
+            {
+              "title": "Platforms for sharing reproducible methods and protocols",
+              "link": "https://protocolexchange.researchsquare.com/",
+              "category": "General"
+            },
+            {
+              "title": "Computational Reproducibility, from Theory to Practice",
+              "link": "https://www.youtube.com/watch?v=KHMW8fV2NXo",
+              "category": "General"
+            },
+            {
+              "title": "Software Sustainability Institute checklist",
+              "link": "https://zenodo.org/record/2159713",
+              "category": "General"
+            },
+            {
+              "title": "The Carpentries project is a community of Instructors, Trainers, Maintainers, helpers, and supporters who share a mission to teach foundational computational and data science skills to researchers",
+              "link": "https://carpentries.org/",
+              "category": "General"
+            },
+            {
+              "title": "Training materials for researchers",
+              "link": "https://coderefinery.org/",
+              "category": "General"
+            },
+            {
+              "title": "Open and reproducible research guide",
+              "link": "https://the-turing-way.netlify.app/welcome",
+              "category": "General"
+            },
+            {
+              "title": "Modern vision for peer review",
+              "link": "https://medium.com/bits-and-behavior/a-modern-vision-for-peer-review-d5f73f0fae07",
+              "category": "General"
+            },
+            {
+              "title": "When and how to deviate from a preregistration",
+              "link": "https://doi.org/10.1525/collabra.117094",
+              "category": "General"
+            },
+            {
+              "title": "Quala Lab: A group of people who are working on open scholarship and mixed methods research",
+              "link": "https://qualalab.org/our-work/",
+              "category": "General"
+            },
+            {
+              "title": "A summary of Open Research Case Studies Across Disciplines",
+              "link": "https://doi.org/10.31234/osf.io/nmhdp_v1",
+              "category": "General"
+            },
+            {
+              "title": "In depth details of the principles of FAIR (Findable, Accessible, Interoperable, Reusable) data",
+              "link": "https://howtofair.dk/",
+              "category": "Open Data"
+            },
+            {
+              "title": "Case studies of uses of open data",
+              "link": "https://howtofair.dk/how-to-fair/#case-introductions",
+              "category": "Open Data"
+            },
+            {
+              "title": "Research data management handbook",
+              "link": "https://www.openaire.eu/rdm-handbook",
+              "category": "Open Data"
+            },
+            {
+              "title": "Research data transparency",
+              "link": "https://rmarkdown.rstudio.com/",
+              "category": "Open Data"
+            },
+            {
+              "title": "Jupyter Notebook: tool for interactively developing and presenting data science projects",
+              "link": "https://www.dataquest.io/blog/jupyter-notebook-tutorial/",
+              "category": "Open Data"
+            },
+            {
+              "title": "Binder: allows you to create custom computing environments that can be shared and used by many remote users",
+              "link": "https://mybinder.readthedocs.io/en/latest/",
+              "category": "Open Data"
+            },
+            {
+              "title": "Research data repository",
+              "link": "https://www.re3data.org/",
+              "category": "Open Data"
+            },
+            {
+              "title": "Dataverse",
+              "link": "https://dataverse.harvard.edu/",
+              "category": "Open Data"
+            },
+            {
+              "title": "Data portal",
+              "link": "https://www.europeandataportal.eu/en",
+              "category": "Open Data"
+            },
+            {
+              "title": "UK Data Service data catalogue",
+              "link": "https://www.ukdataservice.ac.uk/get-data/key-data.aspx",
+              "category": "Open Data"
+            },
+            {
+              "title": "Resource on data sharing and databases",
+              "link": "https://fairsharing.org/",
+              "category": "Open Data"
+            },
+            {
+              "title": "Database of example data management plans, and funder requirements of data management plans (institutional subscription required for full access)",
+              "link": "https://dmponline.dcc.ac.uk/",
+              "category": "Open Data"
+            },
+            {
+              "title": "How to write an article with supporting data",
+              "link": "https://codata.org/initiatives/data-skills/codata-connect/webinar-and-podcast-series-2019-2024/webinar-series-research-skills/webinar-2-writing-an-article-with-excellent-supporting-data/",
+              "category": "Open Data"
+            },
+            {
+              "title": "Tips for publishing open data and how to use it",
+              "link": "https://theodi.org/",
+              "category": "Open Data"
+            },
+            {
+              "title": "Tool for cleaning up messy data, and for extending and matching data",
+              "link": "https://openrefine.org/",
+              "category": "Open Data"
+            },
+            {
+              "title": "Data repositories across fields",
+              "link": "https://www.nature.com/sdata/policies/repositories",
+              "category": "Open Data"
+            },
+            {
+              "title": "Digital Curation Centre ( has a range of resources from different disciplines related to Research Data Management and Data lifecycle",
+              "link": "https://www.dcc.ac.uk",
+              "category": "Open Data"
+            },
+            {
+              "title": "Open access digital library",
+              "link": "https://www.loc.gov",
+              "category": "Open Data"
+            },
+            {
+              "title": "CODECHECK",
+              "link": "https://f1000research.com/articles/10-253",
+              "category": "Open Data"
+            },
+            {
+              "title": "Video discussing data reusability and GDPR",
+              "link": "https://www.youtube.com/watch?v=biTlb-As4SU",
+              "category": "Open Data"
+            },
+            {
+              "title": "Collection of repositories and databases for open data in different fields",
+              "link": "http://oad.simmons.edu/oadwiki/Data_repositories",
+              "category": "Open Data"
+            },
+            {
+              "title": "State-of-the-art in open data research: Insights from existing literature and a research agenda",
+              "link": "https://doi.org/10.1080/10919392.2015.1124007",
+              "category": "Open Data"
+            },
+            {
+              "title": "Platform that supports the creation of open data",
+              "link": "https://frictionlessdata.io/",
+              "category": "Open Data"
+            },
+            {
+              "title": "The CRAPL ( is a license aimed at researchers with the goal to publish all code used in research",
+              "link": "https://matt.might.net/articles/crapl/",
+              "category": "Open Data"
+            },
+            {
+              "title": "Directories of open access journals across fields",
+              "link": "https://doaj.org/",
+              "category": "Open Outputs"
+            },
+            {
+              "title": "Repositories",
+              "link": "https://zenodo.org/",
+              "category": "Open Outputs"
+            },
+            {
+              "title": "Directories of open access books across fields",
+              "link": "https://www.doabooks.org/",
+              "category": "Open Outputs"
+            },
+            {
+              "title": "List of preprint repositories",
+              "link": "https://docs.google.com/spreadsheets/d/1zYOy6bcydDZ9G56FKmDzg_pexTarVsJR5hH0KiQGt_I/edit#gid=1494155948",
+              "category": "Open Outputs"
+            },
+            {
+              "title": "Repository finder",
+              "link": "https://repositoryfinder.datacite.org/",
+              "category": "Open Outputs"
+            },
+            {
+              "title": "SSRN is a platform for the dissemination of early-stage research",
+              "link": "https://www.ssrn.com/index.cfm/en/",
+              "category": "Open Outputs"
+            },
+            {
+              "title": "First Look is a partnership between SSRN and some of the world’s most influential journals to provide rapid, early and open access to evolving scholarly research prior to publication",
+              "link": "https://www.ssrn.com/index.cfm/en/first-look/",
+              "category": "Open Outputs"
+            },
+            {
+              "title": "Open access in individual disciplines",
+              "link": "https://portal.issn.org/",
+              "category": "Open Outputs"
+            },
+            {
+              "title": "Journal of Open-Source Software",
+              "link": "https://joss.theoj.org/",
+              "category": "Open Outputs"
+            },
+            {
+              "title": "Journal of Open Research Software Deposit",
+              "link": "https://openresearchsoftware.metajnl.com/",
+              "category": "Open Outputs"
+            },
+            {
+              "title": "Example of a methods sharing journal",
+              "link": "https://www.journals.elsevier.com/methodsx/",
+              "category": "Open Outputs"
+            },
+            {
+              "title": "Guidance on how to choose a license for your open project",
+              "link": "https://choosealicense.com/",
+              "category": "Open Outputs"
+            },
+            {
+              "title": "Guidance on how to share research",
+              "link": "https://plos.org/resource/how-to-share-your-research/",
+              "category": "Open Outputs"
+            },
+            {
+              "title": "Rescience C is an open access journal that publishes replicated research",
+              "link": "http://rescience.github.io/",
+              "category": "Open Outputs"
+            },
+            {
+              "title": "Guides for open research:",
+              "link": "https://libguides.graduateinstitute.ch/open-access",
+              "category": "Open Outputs"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "number": 2,
+      "name": "Natural Sciences",
+      "summary": "DUMMY: Open research in the natural sciences has strong uptake, particularly in physics and biological sciences where preprint culture and open data repositories are well-established. Chemistry is catching up with dedicated preprint servers and open-access initiatives.",
+      "disciplines": [
+        {
+          "name": "Chemistry",
+          "examples": "Open Data: Lia et al. (2020) published in Wellcome Open Research, a rapid and transparent publishing platform supporting data citations and open peer review. All data is openly available via RCSB Protein Data Bank and Zenodo.",
+          "resources": [
+            {
+              "title": "Why chemistry research should be open access",
+              "link": "https://www.springeropen.com/p/chemistry",
+              "category": "General"
+            },
+            {
+              "title": "Article about open data",
+              "link": "https://www.chemistryworld.com/news/open-data-linked-to-higher-citations-for-journal-articles/3010723.article",
+              "category": "General"
+            },
+            {
+              "title": "Royal Society of Chemistry often hold open research events, e.g",
+              "link": "https://www.rsc.org/events/detail/42090/open-chemical-science",
+              "category": "General"
+            },
+            {
+              "title": "Royal Society of Chemistry recorded discussion of plan S",
+              "link": "https://youtu.be/isSnSYMpZjY",
+              "category": "General"
+            },
+            {
+              "title": "Open-source software lists",
+              "link": "https://awesomeopensource.com/projects/chemistryhttps://www.openchemistry.org/",
+              "category": "Open Methods"
+            },
+            {
+              "title": "List of chemistry databases",
+              "link": "https://www.rsc.org/journals-books-databases/databases-literature-updates/",
+              "category": "Open Data"
+            },
+            {
+              "title": "Chemistry resources (standards, databases, data policies) registered in FAIRsharing:",
+              "link": "https://fairsharing.org/browse/subject?term=Chemistry",
+              "category": "Open Data"
+            },
+            {
+              "title": "Preprint repositories",
+              "link": "https://chemrxiv.org/",
+              "category": "Open Outputs"
+            }
+          ]
+        },
+        {
+          "name": "Physics",
+          "examples": "Open Methods: ESCAPE brings together astronomy, astroparticle and particle physics communities to address data-driven research challenges. Open Data: The Galaxy and Mass Assembly (GAMA) project uses public data and data sharing to create multi-wavelength photometric and spectroscopic datasets.",
+          "resources": [
+            {
+              "title": "Engineering and Physical Sciences Research Council’s (EPSRC) framework policy requires researchers to link supporting data for funded papers",
+              "link": "https://epsrc.ukri.org/about/standards/researchdata/",
+              "category": "General"
+            },
+            {
+              "title": "Data and software repositories, community science",
+              "link": "https://projectescape.eu/about-us",
+              "category": "Open Methods"
+            },
+            {
+              "title": "Astropy",
+              "link": "https://www.astropy.org/",
+              "category": "Open Methods"
+            },
+            {
+              "title": "Data repository for research conducted at CERN",
+              "link": "http://opendata.cern.ch/",
+              "category": "Open Data"
+            },
+            {
+              "title": "Collection of open access data repositories",
+              "link": "https://www.re3data.org/search?subjects[",
+              "category": "Open Data"
+            },
+            {
+              "title": "Physics resources (standards, databases, data policies) registered in FAIRsharing:",
+              "link": "https://fairsharing.org/browse/subject?term=Physics",
+              "category": "Open Data"
+            },
+            {
+              "title": "NASA Open Data Portal",
+              "link": "https://data.nasa.gov/",
+              "category": "Open Data"
+            },
+            {
+              "title": "Preprint repository",
+              "link": "https://arxiv.org/",
+              "category": "Open Outputs"
+            },
+            {
+              "title": "CERN document server (particle physics preprints)",
+              "link": "https://cds.cern.ch/collection/Preprints",
+              "category": "Open Outputs"
+            }
+          ]
+        },
+        {
+          "name": "Biological Sciences",
+          "examples": "Open Data: Examples include species distribution records from OBIS, GBIF, and Reef Life Survey (Feng et al., 2019). Open Microscopy Environment (OME-NGFF) provides cloud-friendly bioimaging data formats designed for public repositories and AI training.",
+          "resources": [
+            {
+              "title": "MOOC: an introduction to Open Science principles in biomedicine, life sciences and other related research fields",
+              "link": "https://www.open.edu/openlearncreate/course/view.php?id=4633",
+              "category": "General"
+            },
+            {
+              "title": "Reflections on the practice of Responsible (Research and) Innovation in synthetic biology",
+              "link": "https://doi.org/10.1080/14636778.2019.1709431",
+              "category": "General"
+            },
+            {
+              "title": "Open innovation in the life sciences",
+              "link": "https://www.openinnovationlifesciences.com",
+              "category": "General"
+            },
+            {
+              "title": "Open Research guidelines in plant pathology",
+              "link": "https://apsjournals.apsnet.org/doi/10.1094/PHYTO-12-23-0483-IA",
+              "category": "General"
+            },
+            {
+              "title": "Open resources about biological sciences to share, exchange expertise",
+              "link": "https://elixir-europe.org/",
+              "category": "General"
+            },
+            {
+              "title": "Mentoring and training program for Open Science ambassadors",
+              "link": "https://openlifesci.org/",
+              "category": "General"
+            },
+            {
+              "title": "Open, digital and collaborative space for biological and medical research",
+              "link": "https://www.eosc-life.eu",
+              "category": "General"
+            },
+            {
+              "title": "Agricultural and food sciences community",
+              "link": "https://explore.openaire.eu/search/project?projectId=corda__h2020::558cf59efd8258c3e65083d750182257",
+              "category": "General"
+            },
+            {
+              "title": "Scientific rigor and the art of motorcycle maintenance.",
+              "link": "https://doi.org/10.1038/nbt.3004",
+              "category": "General"
+            },
+            {
+              "title": "Recorded talk on preprints",
+              "link": "https://www.youtube.com/watch?index=5&list=PLPkfOHxsjx2gDqOooywho7uvw800pfxq2&v=SWDKyEZ4GeI",
+              "category": "Open Methods"
+            },
+            {
+              "title": "Repository of mathematical models of biological and biomedical systems",
+              "link": "https://www.ebi.ac.uk/biomodels/",
+              "category": "Open Methods"
+            },
+            {
+              "title": "Experimental Design Assistant",
+              "link": "https://www.nc3rs.org.uk/experimental-design-assistant-eda",
+              "category": "Open Methods"
+            },
+            {
+              "title": "Resource Identification Initiative",
+              "link": "https://scicrunch.org/resources",
+              "category": "Open Methods"
+            },
+            {
+              "title": "University of Sheffield discipline-specific guidance on how to make research data and software FAIR (findable, accessible, interoperable & reusable)",
+              "link": "https://doi.org/10.15131/shef.data.20496855.v2",
+              "category": "Open Methods"
+            },
+            {
+              "title": "Life sciences dataset",
+              "link": "https://www.nature.com/sdata/",
+              "category": "Open Data"
+            },
+            {
+              "title": "UK Biobank",
+              "link": "https://www.ukbiobank.ac.uk/",
+              "category": "Open Data"
+            },
+            {
+              "title": "GenBank: an annotated collection of publicly available genetic sequences, maintained by the National Centre for Biotechnology Information (NCBI)",
+              "link": "https://www.ncbi.nlm.nih.gov/genbank/",
+              "category": "Open Data"
+            },
+            {
+              "title": "Biology resources (standards, databases, data policies) registered in FAIRsharing:",
+              "link": "https://fairsharing.org/browse/subject?term=Biology",
+              "category": "Open Data"
+            },
+            {
+              "title": "The FAIR Cookbook is a collection of birds-eye view recipes on the FAIR components, the infrastructure needed, and a set of applied examples in the Life Sciences, offering a deep dive in technical aspects of FAIR data management",
+              "link": "https://faircookbook.elixir-europe.org",
+              "category": "Open Data"
+            },
+            {
+              "title": "Preprint repositories",
+              "link": "https://www.biorxiv.org/",
+              "category": "Open Outputs"
+            },
+            {
+              "title": "Open Access Journals",
+              "link": "https://www.mdpi.com/journal/biology",
+              "category": "Open Outputs"
+            }
+          ]
+        },
+        {
+          "name": "Mathematics and Statistics",
+          "examples": "Open Methods: Kokko and colleagues introduced PYLFIRE, an open-access Python adaptation of Likelihood-Free Inference by Ratio Estimation, accessible via the open-source inference software ELFI.",
+          "resources": [
+            {
+              "title": "The New Statistics for Better Science: Ask How Much, How Uncertain, and What Else Is Known",
+              "link": "https://doi.org/10.1080/00031305.2018.1518266",
+              "category": "General"
+            },
+            {
+              "title": "Open statistical software",
+              "link": "https://jasp-stats.org/",
+              "category": "Open Methods"
+            },
+            {
+              "title": "Open dataset with journal articles",
+              "link": "https://rss.onlinelibrary.wiley.com/hub/datasets",
+              "category": "Open Data"
+            },
+            {
+              "title": "Database of worldbank open data",
+              "link": "https://data.worldbank.org/",
+              "category": "Open Data"
+            },
+            {
+              "title": "Centre for Vision, Speech and Signal Processing, University of Surrey Datasets",
+              "link": "https://cvssp.org/",
+              "category": "Open Data"
+            },
+            {
+              "title": "Mathematics resources (standards, databases, data policies) registered in FAIRsharing:",
+              "link": "https://fairsharing.org/browse/subject?term=Mathematics",
+              "category": "Open Data"
+            },
+            {
+              "title": "Statistics resources (standards, databases, data policies) registered in FAIRsharing:",
+              "link": "https://fairsharing.org/browse/subject?term=Statistics",
+              "category": "Open Data"
+            },
+            {
+              "title": "Preprint repository",
+              "link": "https://arxiv.org/",
+              "category": "Open Outputs"
+            },
+            {
+              "title": "Open Access Journals",
+              "link": "https://www.mdpi.com/journal/mathematics",
+              "category": "Open Outputs"
+            }
+          ]
+        },
+        {
+          "name": "Environmental Sciences, Ecology and Geography",
+          "examples": "Open Data: Dr Jon Blower contributed to ncWMS, open source software for visualising large-scale environmental datasets online. The source code is freely available on GitHub for reuse, modification and redistribution.",
+          "resources": [
+            {
+              "title": "Community dashboard for EuroMarine (a consortium of 56 research and academic organisations) and monitoring dashboard for marine research initiatives, including infrastructures (e.g",
+              "link": "https://mes.openaire.eu/",
+              "category": "General"
+            },
+            {
+              "title": "The UN Sustainable Development Solutions Network (SDSN)",
+              "link": "https://www.unsdsn.org/",
+              "category": "General"
+            },
+            {
+              "title": "Guide on open educational resources in geography",
+              "link": "https://libguides.humboldt.edu/openedu/geog",
+              "category": "General"
+            },
+            {
+              "title": "Challenges and Opportunities of Open Data in Ecology",
+              "link": "https://doi.org/10.1126/science.1197962",
+              "category": "Open Methods"
+            },
+            {
+              "title": "Nontarget Analysis of Polluted Surface Waters in Bangladesh Using Open Science Workflows.",
+              "link": "https://doi.org/10.1021/acs.est.2c08200",
+              "category": "Open Methods"
+            },
+            {
+              "title": "University of Sheffield discipline-specific guidance on how to make research data and software FAIR (findable, accessible, interoperable & reusable)",
+              "link": "https://doi.org/10.15131/shef.data.20496855.v2",
+              "category": "Open Methods"
+            },
+            {
+              "title": "Open access journals",
+              "link": "https://rgs-ibg.onlinelibrary.wiley.com/loi/20544049",
+              "category": "Open Data"
+            },
+            {
+              "title": "Paper on barriers to open data in environmental sciences",
+              "link": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0146695",
+              "category": "Open Data"
+            },
+            {
+              "title": "Navigating the unfolding Open Data landscape in ecology and evolution",
+              "link": "https://doi.org/10.1038/s41559-017-0458-2",
+              "category": "Open Data"
+            },
+            {
+              "title": "Natural Environment Research Council (NERC) Environmental Data Service provides the largest collection of environmental science data in the UK",
+              "link": "https://eds.ukri.org/",
+              "category": "Open Data"
+            },
+            {
+              "title": "Environmental Science resources (standards, databases, data policies) registered in FAIRsharing:",
+              "link": "https://fairsharing.org/browse/subject?term=Environmental%2520Science",
+              "category": "Open Data"
+            },
+            {
+              "title": "Geography resources (standards, databases, data policies) registered in FAIRsharing:",
+              "link": "https://fairsharing.org/browse/subject?term=Geography",
+              "category": "Open Data"
+            },
+            {
+              "title": "Ecology resources (standards, databases, data policies) registered in FAIRsharing:",
+              "link": "https://fairsharing.org/browse/subject?term=Ecology",
+              "category": "Open Data"
+            },
+            {
+              "title": "Preprint repositories",
+              "link": "https://eartharxiv.org/",
+              "category": "Open Outputs"
+            },
+            {
+              "title": "Directory of open access journals",
+              "link": "https://bit.ly/39r3kQ4",
+              "category": "Open Outputs"
+            },
+            {
+              "title": "Open access journals",
+              "link": "https://rgs-ibg.onlinelibrary.wiley.com/loi/20544049",
+              "category": "Open Outputs"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "number": 3,
+      "name": "Life, Medical and Health Sciences",
+      "summary": "DUMMY: Health sciences face unique challenges around personal data and patient confidentiality, but distributed learning approaches and FAIR data practices are growing. Psychology has been at the forefront of the replication crisis response, driving adoption of preregistration and open materials.",
+      "disciplines": [
+        {
+          "name": "Health Sciences and Medicine",
+          "examples": "Open Methods: The 'Unseating Big Pharma' case study involves 15-country collaboration using an open-science model for vaccine equity. Open Data: Carsten Brink works with distributed learning, allowing analysis of sensitive radiotherapy data across institutes without physically moving it.",
+          "resources": [
+            {
+              "title": "Who owns the data? Open Data for healthcare",
+              "link": "https://doi.org/10.3389/fpubh.2016.00007",
+              "category": "General"
+            },
+            {
+              "title": "Guides for MRC funded studies",
+              "link": "https://mrc.ukri.org/research/policies-and-guidance-for-researchers/open-research-data-clinical-trials-and-public-health-interventions/",
+              "category": "General"
+            },
+            {
+              "title": "Guide for DHSC and NIHR funded studies",
+              "link": "https://www.nihr.ac.uk/documents/nihr-open-access-policy/12251",
+              "category": "General"
+            },
+            {
+              "title": "Open science challenges, benefits and tips in early career and beyond",
+              "link": "https://doi.org/10.1371/journal.pbio.3000246",
+              "category": "General"
+            },
+            {
+              "title": "Case studies: working with transcript data; working with sensitive survey data",
+              "link": "https://howtofair.dk/how-to-fair/#humanities",
+              "category": "General"
+            },
+            {
+              "title": "White Paper: Open Digital Health – accelerating transparent and scalable health promotion and treatment",
+              "link": "https://doi.org/10.1080/17437199.2022.2046482",
+              "category": "General"
+            },
+            {
+              "title": "Quality Output Checklist and Content Assessment (QuOCCA): a new tool for assessing research quality and reproducibility",
+              "link": "https://doi.org/10.1136/bmjopen-2022-060976",
+              "category": "General"
+            },
+            {
+              "title": "Three Changes Public Health Scientists Can Make to Help Build a Culture of Reproducible Research",
+              "link": "https://doi.org/10.1177/0033354918821076",
+              "category": "General"
+            },
+            {
+              "title": "Best Practice for Mental Health Data Science: Checklist",
+              "link": "https://mhdss.ac.uk/best-practice-mental-health-data-science",
+              "category": "Open Methods"
+            },
+            {
+              "title": "Best Practice for Mental Health Data Science: case studies",
+              "link": "https://mhdss.ac.uk/case-studies",
+              "category": "Open Methods"
+            },
+            {
+              "title": "UKRN primer, pre-registration and registered reports",
+              "link": "https://www.ukrn.org/primers/",
+              "category": "Open Methods"
+            },
+            {
+              "title": "PROSPERO: Registration for systematic reviews with a health-related outcome",
+              "link": "https://www.crd.york.ac.uk/PROSPERO/#aboutpage",
+              "category": "Open Methods"
+            },
+            {
+              "title": "Protocols: An online platform for developing and sharing reproducible methods",
+              "link": "https://www.protocols.io",
+              "category": "Open Methods"
+            },
+            {
+              "title": "University of Sheffield discipline-specific guidance on how to make research data and software FAIR (findable, accessible, interoperable & reusable)",
+              "link": "https://doi.org/10.15131/shef.data.20496855.v2",
+              "category": "Open Methods"
+            },
+            {
+              "title": "Open access dataset",
+              "link": "https://digital.nhs.uk/data",
+              "category": "Open Data"
+            },
+            {
+              "title": "Link for list of dataset archives",
+              "link": "https://library.bath.ac.uk/research-data/finding-data/health-medicine",
+              "category": "Open Data"
+            },
+            {
+              "title": "Collection of physiological data and software",
+              "link": "https://fairsharing.org/biodbcore-000488/",
+              "category": "Open Data"
+            },
+            {
+              "title": "Health Science resources (standards, databases, data policies) registered in FAIRsharing:",
+              "link": "https://fairsharing.org/browse/subject?term=Health%2520Science",
+              "category": "Open Data"
+            },
+            {
+              "title": "Medicine resources (standards, databases, data policies) registered in FAIRsharing:",
+              "link": "https://fairsharing.org/browse/subject?term=Medicine",
+              "category": "Open Data"
+            },
+            {
+              "title": "Preprint repositories",
+              "link": "https://www.medrxiv.org",
+              "category": "Open Outputs"
+            },
+            {
+              "title": "Medicine and Health sciences preprint repository",
+              "link": "https://www.medrxiv.org/",
+              "category": "Open Outputs"
+            },
+            {
+              "title": "Open Access Journals",
+              "link": "https://bmjopen.bmj.com/",
+              "category": "Open Outputs"
+            }
+          ]
+        },
+        {
+          "name": "Psychology",
+          "examples": "Open Methods: Datavyu is an open-source video coding and data visualization software using machine learning algorithms. The Many Babies project collaborates with 69 labs across 16 countries. PLAY project shares all materials, protocols and data openly. Open Data: The International Brain Laboratory is a collaboration of ~20 labs with an open data portal.",
+          "resources": [
+            {
+              "title": "mproving my lab, my science with the open science framework",
+              "link": "https://www.psychologicalscience.org/observer/improving-my-lab-my-science-with-the-open-science-framework",
+              "category": "General"
+            },
+            {
+              "title": "A Practical Guide for Transparency in Psychological Science",
+              "link": "https://doi.org/10.1525/collabra.158",
+              "category": "General"
+            },
+            {
+              "title": "Dashboard resource containing neuroscience research outputs and brain imaging databases",
+              "link": "https://ni.openaire.eu/",
+              "category": "General"
+            },
+            {
+              "title": "Seven easy steps to open science: An annotated reading list.",
+              "link": "https://econtent.hogrefe.com/doi/10.1027/2151-2604/a000387",
+              "category": "General"
+            },
+            {
+              "title": "Easing into open science: A guide for graduate students and their advisors",
+              "link": "https://doi.org/10.1525/collabra.18684",
+              "category": "General"
+            },
+            {
+              "title": "Promoting an open research culture",
+              "link": "https://doi.org/10.1126/science.aab2374",
+              "category": "General"
+            },
+            {
+              "title": "Protecting against researcher bias in secondary data analysis: challenges and potential solutions.",
+              "link": "https://doi.org/10.1007/s10654-021-00839-0",
+              "category": "General"
+            },
+            {
+              "title": "Replication and robustness in developmental research",
+              "link": "https://doi.org/10.1037/a0037996",
+              "category": "General"
+            },
+            {
+              "title": "An overview of issues in infant and developmental research for the creation of robust and replicable science",
+              "link": "https://doi.org/10.1016/j.infbeh.2019.101339",
+              "category": "General"
+            },
+            {
+              "title": "Special issue on reliability of infant research",
+              "link": "https://doi.org/10.1002/icd.2382",
+              "category": "General"
+            },
+            {
+              "title": "Educational Psychology in the Open Science Era",
+              "link": "https://www.tandfonline.com/toc/hedp20/56/2?nav=tocList",
+              "category": "General"
+            },
+            {
+              "title": "Open Research Practices in Autism Research",
+              "link": "https://sites.google.com/york.ac.uk/openautismresearch/home?authuser=0",
+              "category": "General"
+            },
+            {
+              "title": "Introduction to Open Science in Psychology Reading List",
+              "link": "https://t.co/NAkOaCh7oz",
+              "category": "General"
+            },
+            {
+              "title": "The value of preregistration for psychological science: A conceptual analysis",
+              "link": "https://doi.org/10.31234/osf.io/jbh4w",
+              "category": "General"
+            },
+            {
+              "title": "Open developmental science: An overview and annotated reading list",
+              "link": "https://doi.org/10.1002/icd.2334",
+              "category": "General"
+            },
+            {
+              "title": "Genetic syndromes, neuroconstuctivism, and replicable research; challenges and future directions",
+              "link": "https://doi.org/10.1002/icd.2307",
+              "category": "General"
+            },
+            {
+              "title": "Embedding open and reproducible science into teaching: A bank of lesson plans and resources",
+              "link": "https://doi.org/10.1037/stl0000307",
+              "category": "General"
+            },
+            {
+              "title": "Open science, qualitative methods and social psychology: Possibilities and tensions",
+              "link": "https://bpspsychub.onlinelibrary.wiley.com/toc/20448309/2023/62/4",
+              "category": "General"
+            },
+            {
+              "title": "Pre-registration in social psychology—A discussion and suggested template",
+              "link": "https://doi.org/10.1016/j.jesp.2016.03.004",
+              "category": "General"
+            },
+            {
+              "title": "The replication recipe: What makes for a convincing replication?",
+              "link": "https://doi.org/10.1016/j.jesp.2013.10.005",
+              "category": "General"
+            },
+            {
+              "title": "Preregistering qualitative research\n\n\n\n\n\n\n\n\n",
+              "link": "https://doi.org/10.1080/08989621.2019.1580147",
+              "category": "General"
+            },
+            {
+              "title": "Preregistration of secondary data analysis: A template and tutorial",
+              "link": "https://doi.org/10.15626/MP.2020.2625",
+              "category": "General"
+            },
+            {
+              "title": "A fMRI pre-registration template",
+              "link": "https://doi.org/10.23668/PSYCHARCHIVES.5121",
+              "category": "General"
+            },
+            {
+              "title": "EEG and ERP Methods - Preregistration Template",
+              "link": "https://doi.org/10.31222/osf.io/4nvpt",
+              "category": "General"
+            },
+            {
+              "title": "Preregistration Template for Scoping Reviews (based on PRP-QUANT & PRISMA-ScR). ZPID (Leibniz Institute for Psychology)",
+              "link": "https://doi.org/10.23668/psycharchives.5631",
+              "category": "General"
+            },
+            {
+              "title": "Pre-registration of multiverse analyses",
+              "link": "https://johnflournoy.science/multiverse-preregistration/",
+              "category": "General"
+            },
+            {
+              "title": "Preregistration in diverse contexts: a preregistration template for the application of cognitive models",
+              "link": "https://doi.org/10.1098/rsos.210155",
+              "category": "General"
+            },
+            {
+              "title": "Simulation studies for methodological research in psychology: A standardized template for planning, preregistration, and reporting",
+              "link": "https://doi.org/10.1037/met0000695",
+              "category": "General"
+            },
+            {
+              "title": "Task repositories",
+              "link": "https://expfactory.github.io/",
+              "category": "Open Methods"
+            },
+            {
+              "title": "Neuroimaging tool repository",
+              "link": "https://www.nitrc.org",
+              "category": "Open Methods"
+            },
+            {
+              "title": "NIRO: Guideline resource for systematic reviews",
+              "link": "https://osf.io/erkwa/",
+              "category": "Open Methods"
+            },
+            {
+              "title": "Scholarly Communication and Open Access in Psychology: Current Considerations for Researchers",
+              "link": "https://doi.org/10.31234/osf.io/2d7um",
+              "category": "Open Methods"
+            },
+            {
+              "title": "Preregistration in infant research-A primer",
+              "link": "https://doi.org/10.1111/infa.12353",
+              "category": "Open Methods"
+            },
+            {
+              "title": "Measurement Schmeasurement: Questionable Measurement Practices and How to Avoid Them",
+              "link": "https://doi.org/10.1177/2515245920952393",
+              "category": "Open Methods"
+            },
+            {
+              "title": "Opening up autism research: Bringing open research methods to our field",
+              "link": "https://doi.org/10.1177/13623613221105385",
+              "category": "Open Methods"
+            },
+            {
+              "title": "EEG ERP Preregistration Template. ",
+              "link": "https://antonio-schettino.com/publication/govaart-eeg-erp-prereg-template-2022/",
+              "category": "Open Methods"
+            },
+            {
+              "title": "Using preregistration as a tool for transparent fNIRS study design",
+              "link": "https://doi.org/10.31222/osf.io/zfawx",
+              "category": "Open Methods"
+            },
+            {
+              "title": "Adapting open science and pre‐registration to longitudinal research",
+              "link": "https://doi.org/10.1002/icd.2315",
+              "category": "Open Methods"
+            },
+            {
+              "title": "White Paper: Open Digital Health – accelerating transparent and scalable health promotion and treatment",
+              "link": "https://doi.org/10.1080/17437199.2022.2046482",
+              "category": "Open Methods"
+            },
+            {
+              "title": "Bestiary of questionable research practices in psychology.",
+              "link": "https://doi.org/10.1177/25152459251348431",
+              "category": "Open Methods"
+            },
+            {
+              "title": "University of Sheffield discipline-specific guidance on how to make research data and software FAIR (findable, accessible, interoperable & reusable)",
+              "link": "https://doi.org/10.15131/shef.data.20496855.v2",
+              "category": "Open Methods"
+            },
+            {
+              "title": "A Student's Guide to Open Science: Using the Replication Crisis to Reform Psychology.",
+              "link": "https://www.mheducation.co.uk/a-student-s-guide-to-open-science-using-the-replication-crisis-to-reform-psychology-9780335251162-emea-group",
+              "category": "Open Methods"
+            },
+            {
+              "title": "Towards reproducible and respectful autism research: Combining open and participatory autism research practices.",
+              "link": "https://doi.org/10.1016/j.rasd.2023.102196",
+              "category": "Open Methods"
+            },
+            {
+              "title": "Open platform for sharing MRI, MEG, EEG, iEEG, and ECoG data",
+              "link": "https://openneuro.org",
+              "category": "Open Data"
+            },
+            {
+              "title": "UK data service list of longitudinal cohort study data",
+              "link": "https://www.ukdataservice.ac.uk/get-data/key-data/cohort-and-longitudinal-studies.aspx",
+              "category": "Open Data"
+            },
+            {
+              "title": "Twins Early Development Study (TEDS) data",
+              "link": "http://www.teds.ac.uk/researchers/teds-data-access-policy",
+              "category": "Open Data"
+            },
+            {
+              "title": "Repository for unthresholded statistical maps, parcellations, and atlases of the brain",
+              "link": "https://neurovault.org/",
+              "category": "Open Data"
+            },
+            {
+              "title": "Open video data software",
+              "link": "https://datavyu.org",
+              "category": "Open Data"
+            },
+            {
+              "title": "Databrary supports data sharing of video and audio recordings among researchers in the behavioural, social, educational, developmental, neural, and computer sciences",
+              "link": "https://nyu.databrary.org/",
+              "category": "Open Data"
+            },
+            {
+              "title": "TalkBank is a data repository of 14 research areas, focusing on spoken language",
+              "link": "https://talkbank.org/",
+              "category": "Open Data"
+            },
+            {
+              "title": "Practical Tips for Ethical Data Sharing.",
+              "link": "https://doi.org/10.1177/2515245917747656",
+              "category": "Open Data"
+            },
+            {
+              "title": "Making data meaningful: Guidelines for good quality open data",
+              "link": "https://doi.org/10.1080/00224545.2021.1938811",
+              "category": "Open Data"
+            },
+            {
+              "title": "Psychology resources (standards, databases, data policies) registered in FAIRsharing:",
+              "link": "https://fairsharing.org/browse/subject?term=Psychology",
+              "category": "Open Data"
+            },
+            {
+              "title": "Preprint repository",
+              "link": "https://psyarxiv.com",
+              "category": "Open Outputs"
+            },
+            {
+              "title": "Guide to licensing your work on PsyArXiv",
+              "link": "http://blog.psyarxiv.com/2018/05/14/licensing-work-psyarxiv/",
+              "category": "Open Outputs"
+            },
+            {
+              "title": "Managing Preprints across the Publication Pipeline. Get Syeducated.\n",
+              "link": "https://getsyeducated.blogspot.com/2020/05/managing-preprints-across-publication.html",
+              "category": "Open Outputs"
+            },
+            {
+              "title": "Credible research resource from British Neuroscience Association:",
+              "link": "https://www.bnacredibility.org.uk/toolkits",
+              "category": "General"
+            },
+            {
+              "title": "Open and Reproducible Neuroimaging from study inception to publication:",
+              "link": "https://oreoni.github.io/index.html",
+              "category": "General"
+            },
+            {
+              "title": "Poldrack R, Baker C, Durnez J et al",
+              "link": "https://doi.org/10.1038/nrn.2016.167",
+              "category": "General"
+            },
+            {
+              "title": "Data standardization for neuroimaging data:",
+              "link": "https://bids.neuroimaging.io/",
+              "category": "Open Methods"
+            },
+            {
+              "title": "Open platform for sharing MRI, MEG, EEG, iEEG, and ECoG data",
+              "link": "https://openneuro.org",
+              "category": "Open Data"
+            },
+            {
+              "title": "Repository for unthresholded statistical maps, parcellations, and atlases of the brain",
+              "link": "https://neurovault.org/",
+              "category": "Open Data"
+            },
+            {
+              "title": "Collection of open visual working memory datasets collated by William Ngiam:",
+              "link": "https://williamngiam.github.io/OpenWMData/",
+              "category": "Open Data"
+            },
+            {
+              "title": "MRC CBU list of open datasets:",
+              "link": "https://imaging.mrc-cbu.cam.ac.uk/methods/OpenDatasets",
+              "category": "Open Data"
+            },
+            {
+              "title": "British Neuroscience Association guidance on preregistration and registered reports:",
+              "link": "https://www.bnacredibility.org.uk/preregistration-and-registered-reports",
+              "category": "General"
+            },
+            {
+              "title": "Preregistration posters: Brouwers, K., Cooke, A., Chambers, C",
+              "link": "https://doi.org/10.1038/s41562-020-0868-z",
+              "category": "General"
+            }
+          ]
+        },
+        {
+          "name": "Sport and Exercise Science",
+          "examples": "Case studies from University of Hull and University of Newcastle demonstrate open research practices in sport and exercise science, including preregistration, registered reports, and open datasets.",
+          "resources": [
+            {
+              "title": "Framing the problem - Borg, D",
+              "link": "https://doi.org/10.1016/j.jsams.2023.03.002",
+              "category": "General"
+            },
+            {
+              "title": "The Society for Transparency, Openness, and Replication in Kinesiology (STORK):",
+              "link": "https://storkinesiology.org/",
+              "category": "General"
+            },
+            {
+              "title": "Peer Community in (PCI) Health & Movement Sciences: and",
+              "link": "https://healthmovsci.peercommunityin.org/",
+              "category": "General"
+            },
+            {
+              "title": "Sports Science Replication Centre (SSRC):",
+              "link": "https://ssreplicationcentre.com/",
+              "category": "General"
+            },
+            {
+              "title": "Power, precision, and sample size estimation in sport and exercise science research, Journal of Sports",
+              "link": "https://doi.org/10.1080/02640414.2020.1776002",
+              "category": "Open Methods"
+            },
+            {
+              "title": "Caldwell, A.R., Vigotsky, A.D., Tenan, M.S",
+              "link": "https://doi.org/10.1007/s40279-019-01227-1",
+              "category": "Open Methods"
+            },
+            {
+              "title": "Mesquida, C., Murphy, J., Lakens, D., & Warne, J",
+              "link": "https://doi.org/10.1080/02640414.2023.2269357",
+              "category": "Open Methods"
+            },
+            {
+              "title": "Schweizer, G., & Furley, P",
+              "link": "https://doi.org/10.1016/j.psychsport.2015.11.005",
+              "category": "Open Methods"
+            },
+            {
+              "title": "Articles about Registered Reports - Abt, G., Boreham, C., Davison, G., Jackson, R., Wallace, E., & Williams, A",
+              "link": "https://doi.org/10.1080/02640414.2021.1950974",
+              "category": "Open Methods"
+            },
+            {
+              "title": "Examples of open research practices in use Replication Studies - Hutchinson, J",
+              "link": "https://doi.org/10.51224/cik.2024.60",
+              "category": "Open Methods"
+            },
+            {
+              "title": "Datasets for Journal of Science and Medicine in Sport:",
+              "link": "https://www.journals.elsevier.com/journal-of-science-and-medicine-in-sport/mendeley-datasets",
+              "category": "Open Data"
+            },
+            {
+              "title": "A number of institutions now have platforms for data dissemination",
+              "link": "https://researchportal.bath.ac.uk/en/organisations/department-for-health/datasets/",
+              "category": "Open Data"
+            },
+            {
+              "title": "The National ReferAll Database: An Open Dataset of Exercise Referral Schemes Across the UK: and",
+              "link": "https://doi.org/10.3390/ijerph18094831",
+              "category": "Open Data"
+            },
+            {
+              "title": "Preprint repository:",
+              "link": "https://sportrxiv.org/index.php/server",
+              "category": "Open Outputs"
+            },
+            {
+              "title": "Journals offering Registered Reports: - Journal of Sports Sciences: - Science and Medicine in Football: - Communications in Kinesiology: - Psychology of Sport and Exercise: - Human Movement Science: Sport, Exercise, and Performance Psychology:",
+              "link": "https://www.tandfonline.com/journals/rjsp20",
+              "category": "Open Outputs"
+            }
+          ]
+        },
+        {
+          "name": "Veterinary Science",
+          "examples": "Open Methods: Dr Arnoud van Vliet designed an online course with video tutorials teaching scientists genomics software, including a virtual Linux computer with pre-installed software and practice data, all freely accessible.",
+          "resources": [
+            {
+              "title": "Diederich, K., Schmitt, K., Schwedhelm, P., Bert, B., & Heinl, C",
+              "link": "https://doi.org/10.1371/journal.pbio.3001810",
+              "category": "General"
+            },
+            {
+              "title": "Animal research and testing",
+              "link": "https://doi.org/10.1177/0023677217724823",
+              "category": "Open Data"
+            },
+            {
+              "title": "Open data in veterinary science",
+              "link": "https://osf.io/nmshk/download",
+              "category": "Open Data"
+            },
+            {
+              "title": "Open data on global animal disease",
+              "link": "https://empres-i.review.fao.org/#/",
+              "category": "Open Data"
+            },
+            {
+              "title": "Animal tracking data website",
+              "link": "https://www.zoatrack.org",
+              "category": "Open Data"
+            },
+            {
+              "title": "Open datasets/repositories",
+              "link": "https://www.journals.elsevier.com/research-in-veterinary-science/mendeley-data",
+              "category": "Open Data"
+            },
+            {
+              "title": "Veterinary Medicine resources (standards, databases, data policies) registered in FAIRsharing:",
+              "link": "https://fairsharing.org/browse/subject?term=Veterinary%2520Medicine",
+              "category": "Open Data"
+            },
+            {
+              "title": "Open access journals",
+              "link": "https://www.frontiersin.org/journals/veterinary-science",
+              "category": "Open Outputs"
+            },
+            {
+              "title": "Paper on avoiding predatory open access journals",
+              "link": "https://doi.org/10.3389/fvets.2015.00022",
+              "category": "Open Outputs"
+            },
+            {
+              "title": "Data Preservation Alliance for the Social Sciences",
+              "link": "http://www.data-pass.org",
+              "category": "General"
+            },
+            {
+              "title": "A Bibliography on Open Science in the Social Sciences (Made by Nate Breznau)",
+              "link": "https://www.zotero.org/groups/2608283/open_science_readings",
+              "category": "General"
+            },
+            {
+              "title": "Guide to Data Access and Research Transparency in Social Sciences",
+              "link": "https://www.dartstatement.org/",
+              "category": "General"
+            },
+            {
+              "title": "CIVICA Research Open Science for the Social Sciences",
+              "link": "https://zenodo.org/communities/civica-open-social-science?q=&l=list&p=1&s=10&sort=newest",
+              "category": "General"
+            },
+            {
+              "title": "Guidelines for building transparency into observational social science research",
+              "link": "https://www.sciencedirect.com/science/article/abs/pii/S0165176518301277?via%3Dihub",
+              "category": "Open Methods"
+            },
+            {
+              "title": "Silverstein, P., Elman, C., Montoya, A., McGillivray, B., Pennington, C",
+              "link": "https://doi.org/10.1186/s41073-023-00141-5",
+              "category": "Open Methods"
+            },
+            {
+              "title": "Open access datasets",
+              "link": "https://www.oecd-ilibrary.org",
+              "category": "Open Data"
+            },
+            {
+              "title": "Guidance on sharing data, code and replicating",
+              "link": "https://social-science-data-editors.github.io/guidance/",
+              "category": "Open Data"
+            },
+            {
+              "title": "Ball, R., & Medeiros, N",
+              "link": "https://doi.org/10.1080/00220485.2012.659647",
+              "category": "Open Data"
+            },
+            {
+              "title": "List of open access journals in social sciences",
+              "link": "https://simonbatterbury.wordpress.com/2015/10/25/list-of-decent-open-access-journals/",
+              "category": "Open Outputs"
+            },
+            {
+              "title": "Resource library",
+              "link": "https://www.bitss.org/resource-library/",
+              "category": "Open Outputs"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "number": 4,
+      "name": "Social Sciences",
+      "summary": "DUMMY: Open research in social sciences is advancing with growing support for data sharing, preregistration, and transparency statements. Political science and criminology have seen notable progress in open data and replication initiatives, though qualitative research transparency remains a developing area.",
+      "disciplines": [
+        {
+          "name": "Sociology",
+          "examples": "Open Data: Breznau (2019) advocates making all materials associated with research available online, including data, methodological steps, analyses and software code. Even qualitative research can use pre-registration stating explicitly when flexibility is admissible.",
+          "resources": [
+            {
+              "title": "Breznau, N",
+              "link": "https://doi.org/10.31235/osf.io/d37be",
+              "category": "General"
+            },
+            {
+              "title": "Breznau, N",
+              "link": "https://doi.org/10.3390/soc11010009",
+              "category": "General"
+            },
+            {
+              "title": "Open access resources",
+              "link": "https://researchguides.uoregon.edu/sociology/openaccess",
+              "category": "Open Methods"
+            },
+            {
+              "title": "Materials for a Crowdsourced Replication Initiative",
+              "link": "https://osf.io/bs46f/",
+              "category": "Open Methods"
+            },
+            {
+              "title": "Databases",
+              "link": "http://gss.norc.org/get-the-data",
+              "category": "Open Data"
+            },
+            {
+              "title": "Humanities and Social Science resources (standards, databases, data policies) registered in FAIRsharing:",
+              "link": "https://fairsharing.org/browse/subject?term=Humanities%2520and%2520Social%2520Science",
+              "category": "Open Data"
+            },
+            {
+              "title": "Social and Behavioural Science resources (standards, databases, data policies) registered in FAIRsharing:",
+              "link": "https://fairsharing.org/browse/subject?term=Social%2520and%2520Behavioural%2520Science",
+              "category": "Open Data"
+            },
+            {
+              "title": "Social Science resources (standards, databases, data policies) registered in FAIRsharing:",
+              "link": "https://fairsharing.org/browse/subject?term=Social%2520Science",
+              "category": "Open Data"
+            },
+            {
+              "title": "Preprint repository",
+              "link": "https://osf.io/preprints/socarxiv",
+              "category": "Open Outputs"
+            },
+            {
+              "title": "Open Access Journals",
+              "link": "https://journals.sagepub.com/home/soc",
+              "category": "Open Outputs"
+            }
+          ]
+        },
+        {
+          "name": "Political Science, Politics and International Studies",
+          "examples": "Open Data: Transparency International publishes open access research papers, reports, policy reports, toolkits and guides promoting transparency and accountability across all sectors of society.",
+          "resources": [
+            {
+              "title": "Article about open research",
+              "link": "https://www.samuelmoore.org/2019/07/16/why-open-science-is-actually-pretty-good-politics/",
+              "category": "General"
+            },
+            {
+              "title": "Elman, C., Kapiszewski, D., and Lupia, A",
+              "link": "https://doi.org/10.1146/annurev-polisci-091515-025429",
+              "category": "General"
+            },
+            {
+              "title": "Journal Editors Transparency Statement (JETS)",
+              "link": "https://politicalbehavior.wordpress.com/2015/11/11/statement-on-da-rt-and-the-jets/",
+              "category": "General"
+            },
+            {
+              "title": "Move towards open access in Politics",
+              "link": "https://scholarlykitchen.sspnet.org/2019/12/16/politics-and-open-access/",
+              "category": "General"
+            },
+            {
+              "title": "Symposium on ‘Opening Political Science’",
+              "link": "https://www.cambridge.org/core/journals/ps-political-science-and-politics/special-collections/opening-political-science",
+              "category": "General"
+            },
+            {
+              "title": "Kapiszewski, D., and Karcher, S",
+              "link": "https://doi.org/10.33774/apsa-2019-if2he-v2",
+              "category": "General"
+            },
+            {
+              "title": "Wuttke, A",
+              "link": "https://doi.org/10.1007/s11615-018-0131-7",
+              "category": "General"
+            },
+            {
+              "title": "Basile, L., Blair, A., & Buckley, F",
+              "link": "https://doi.org/10.1057/s41304-023-00424-x",
+              "category": "General"
+            },
+            {
+              "title": "Bowers, J., & Voors, M",
+              "link": "https://doi.org/10.4067/S0718-090X2016000300011",
+              "category": "General"
+            },
+            {
+              "title": "Brodeur, A., Esterling, K., Ankel-Peters, J., Bueno, N",
+              "link": "https://doi.org/10.1177/20531680241233439",
+              "category": "General"
+            },
+            {
+              "title": "Closa, C",
+              "link": "https://doi.org/10.1057/s41304-020-00299-2",
+              "category": "General"
+            },
+            {
+              "title": "Dyrstad, K., & Moses, J",
+              "link": "https://doi.org/10.1057/s41304-022-00396-4",
+              "category": "General"
+            },
+            {
+              "title": "Scoggins, B., & Robertson, M",
+              "link": "http://hdl.handle.net/10419/268345",
+              "category": "General"
+            },
+            {
+              "title": "Open Methods Framework for open observational science",
+              "link": "https://osf.io/preprints/metaarxiv/udfs9/",
+              "category": "Open Methods"
+            },
+            {
+              "title": "Approaches to Open Research for Researchers Using Qualitative Methods",
+              "link": "https://doi.org/10.33774/apsa-2019-if2he-v2",
+              "category": "Open Methods"
+            },
+            {
+              "title": "Alvarez, R",
+              "link": "https://doi.org/10.1017/S1049096521001062",
+              "category": "Open Methods"
+            },
+            {
+              "title": "Harvard dataverse is an open access data repository",
+              "link": "https://dataverse.harvard.edu/dataverse/researchandpolitics",
+              "category": "Open Data"
+            },
+            {
+              "title": "Open political science datasets",
+              "link": "https://www.poliscidata.com/pages/internationalRelations.php",
+              "category": "Open Data"
+            },
+            {
+              "title": "Open public policy digital publication resource",
+              "link": "https://www.openaccessgovernment.org",
+              "category": "Open Data"
+            },
+            {
+              "title": "Open access Political Science articles",
+              "link": "https://www.cambridge.org/core/journals/british-journal-of-political-science/open-access",
+              "category": "Open Data"
+            },
+            {
+              "title": "Human Rights dataset",
+              "link": "http://www.humanrightsdata.com/p/data-documentation.html",
+              "category": "Open Data"
+            },
+            {
+              "title": "Political Science resources (standards, databases, data policies) registered in FAIRsharing:",
+              "link": "https://fairsharing.org/browse/subject?term=Political%2520Science",
+              "category": "Open Data"
+            },
+            {
+              "title": "Political Research Exchange (PRX) offers a dynamic platform to advance research, innovation and debate across the breadth of political science",
+              "link": "https://www.tandfonline.com/action/journalInformation?show=aimsScope&journalCode=prxx20",
+              "category": "Open Outputs"
+            },
+            {
+              "title": "Preprint repositories",
+              "link": "https://preprints.apsanet.org/engage/apsa/public-dashboard",
+              "category": "Open Outputs"
+            },
+            {
+              "title": "Open access journals for Political Science",
+              "link": "https://www.longdom.org/political-sciences-public-affairs.html",
+              "category": "Open Outputs"
+            },
+            {
+              "title": "Open access journals for Politics",
+              "link": "https://www.cogitatiopress.com/politicsandgovernance",
+              "category": "Open Outputs"
+            },
+            {
+              "title": "Open access journal for International Studies",
+              "link": "https://www.jois.eu",
+              "category": "Open Outputs"
+            },
+            {
+              "title": "Open educational resources and practices",
+              "link": "https://www.opolisci.com",
+              "category": "Open Education"
+            },
+            {
+              "title": "Open access book for research methods",
+              "link": "https://ipsrm.com/",
+              "category": "Open Education"
+            }
+          ]
+        },
+        {
+          "name": "Economics",
+          "examples": "Open Data: Macroeconomics and international trade studies require open data sharing because informed outcomes need multiple data sources and equal insights on national policy constraints. Open access reports and datasets are available from EU and WTO sources.",
+          "resources": [
+            {
+              "title": "Camerer, C",
+              "link": "https://doi.org/10.1126/science.aaf0918",
+              "category": "General"
+            },
+            {
+              "title": "Christensen, Garret, and Edward Miguel",
+              "link": "https://doi.org/10.1257/jel.20171350",
+              "category": "General"
+            },
+            {
+              "title": "Hamermesh, D",
+              "link": "https://doi.org/10.1111/j.1365-2966.2007.00428.x",
+              "category": "General"
+            },
+            {
+              "title": "McCullough",
+              "link": "https://doi.org/10.1016/S0313-5926(09",
+              "category": "General"
+            },
+            {
+              "title": "Vilhuber, L",
+              "link": "https://doi.org/10.1162/99608f92.4f6b9e67",
+              "category": "General"
+            },
+            {
+              "title": "Legrand, N",
+              "link": "https://doi.org/10.1002/aepp.13282",
+              "category": "General"
+            },
+            {
+              "title": "Miguel, E., Camerer, C., Casey, K., Cohen, J., Esterling, K",
+              "link": "https://doi.org/10.1126/science.1245317",
+              "category": "Open Methods"
+            },
+            {
+              "title": "Databases",
+              "link": "https://www.data-archive.ac.uk",
+              "category": "Open Data"
+            },
+            {
+              "title": "Journal of Applied Econometrics Data Archive",
+              "link": "http://qed.econ.queensu.ca/jae/",
+              "category": "Open Data"
+            },
+            {
+              "title": "Certification Agency for Scientific Code and Data",
+              "link": "https://www.cascad.tech",
+              "category": "Open Data"
+            },
+            {
+              "title": "Economics resources (standards, databases, data policies) registered in FAIRsharing:",
+              "link": "https://fairsharing.org/browse/subject?term=Economics",
+              "category": "Open Data"
+            },
+            {
+              "title": "Preprint repositories",
+              "link": "http://www.repec.org",
+              "category": "Open Outputs"
+            },
+            {
+              "title": "National Bureau of Economics Research publications, data, videos",
+              "link": "https://www.nber.org/papers?page=1&perPage=50&sortBy=public_date",
+              "category": "Open Outputs"
+            },
+            {
+              "title": "Wiki-Based Project with Access to Data, Resources and Replications for Empirical Articles",
+              "link": "https://ia801607.us.archive.org/view_archive.php?archive=/20/items/wiki-replicationuni_goettingende_wiki/replicationuni_goettingende_wiki-20180506-wikidump.7z&file=index.html",
+              "category": "Open Outputs"
+            }
+          ]
+        },
+        {
+          "name": "Business and Management Studies",
+          "examples": "Open Data: Thousands of companies have used open government data as key business assets, documented by the Open Data 500 and Open Data Impact Map. Data collaboratives represent emerging public-private partnerships for data exchange.",
+          "resources": []
+        },
+        {
+          "name": "Education",
+          "examples": "Open Methods and Open Outputs: The Education Endowment Foundation funds RCTs of educational interventions with independent evaluators, registered trials, published evaluation protocols, and all findings published regardless of outcome.",
+          "resources": [
+            {
+              "title": "Education Researchers for Open Science (EROS) is an open science working group in the Department of Education at the University of York who have compiled a selected list of freely available tools and resources that can help researchers understand and adopt open practices",
+              "link": "https://www.york.ac.uk/education/research/eros/",
+              "category": "General"
+            },
+            {
+              "title": "Van der Zee, T., and Reich, J",
+              "link": "https://doi.org/10.1177/2332858418787466",
+              "category": "General"
+            },
+            {
+              "title": "ManyClasses is a collaborative research project investigating the generalizability of educational interventions in real classrooms",
+              "link": "https://www.manyclasses.org",
+              "category": "Open Methods"
+            },
+            {
+              "title": "Renbarger, R., Adelson, J",
+              "link": "https://doi.org/10.1177/0016986223118457",
+              "category": "Open Methods"
+            },
+            {
+              "title": "Lindström, E",
+              "link": "https://doi.org/10.25894/rise.2490",
+              "category": "Open Methods"
+            },
+            {
+              "title": "Open data outlets",
+              "link": "https://opendataimpactmap.org/education",
+              "category": "Open Data"
+            },
+            {
+              "title": "IRIS: A digital depository of instruments and materials for research into second languages",
+              "link": "https://www.iris-database.org",
+              "category": "Open Data"
+            },
+            {
+              "title": "Education resources (standards, databases, data policies) registered in FAIRsharing:",
+              "link": "https://fairsharing.org/browse/subject?term=Education%2520Science",
+              "category": "Open Data"
+            },
+            {
+              "title": "Open access journals",
+              "link": "https://journals.sfu.ca/flr/index.php/journal",
+              "category": "Open Outputs"
+            },
+            {
+              "title": "Open education science preprint repository",
+              "link": "https://edarxiv.org/",
+              "category": "Open Outputs"
+            },
+            {
+              "title": "Chen, M",
+              "link": "https://doi.org/10.1108/EL-05-2015-0070",
+              "category": "General"
+            },
+            {
+              "title": "Passenger Pigeon Manifesto “A call to public galleries, libraries, archives, museums, and their funders to liberate our cultural heritage that has already been digitised.”",
+              "link": "https://ppmanifesto.hcommons.org/",
+              "category": "General"
+            },
+            {
+              "title": "Intro to open educational resources",
+              "link": "https://rmit.libguides.com/openeducationalresources",
+              "category": "General"
+            },
+            {
+              "title": "What is Open Education",
+              "link": "https://ec.europa.eu/jrc/en/open-education",
+              "category": "General"
+            },
+            {
+              "title": "Blog on switching to open educational resources",
+              "link": "https://www.edutopia.org/blog/transitioning-to-open-educational-resources-andrew-marcinek",
+              "category": "General"
+            },
+            {
+              "title": "Santos-Hermosa, G., & Atenas, J",
+              "link": "https://doi.org/10.3389/feduc.2022.866049",
+              "category": "General"
+            },
+            {
+              "title": "Research methods in LIS open access textbook chapter",
+              "link": "https://www.intechopen.com/books/qualitative-versus-quantitative-research/research-methods-in-library-and-information-science",
+              "category": "Open Methods"
+            },
+            {
+              "title": "List of key databases",
+              "link": "https://libguides.usc.edu/libsci/databases",
+              "category": "Open Data"
+            },
+            {
+              "title": "Open access journals",
+              "link": "https://journals.library.ualberta.ca/eblip/index.php/EBLIP/index",
+              "category": "Open Data"
+            },
+            {
+              "title": "FAIRsharing Educational Factsheet \"FAIRsharing for you: librarians and trainers\":",
+              "link": "https://zenodo.org/record/8186609/files/FAIRsharing%20for%20you_%20librarians%20and%20trainers.pdf?download=1",
+              "category": "Open Data"
+            },
+            {
+              "title": "Knowledge and Information resources (standards, databases, data policies) registered in FAIRsharing:",
+              "link": "https://fairsharing.org/browse/subject?term=Knowledge%2520and%2520Information%2520Systems",
+              "category": "Open Data"
+            },
+            {
+              "title": "Preprint repository",
+              "link": "http://eprints.rclis.org/",
+              "category": "Open Outputs"
+            },
+            {
+              "title": "Open Access Resources explained",
+              "link": "https://salve.libguides.com/OER/OAT",
+              "category": "Open Outputs"
+            }
+          ]
+        },
+        {
+          "name": "Library and Information Science",
+          "examples": "Open Outputs: Evergreen ILS is an open source library management software used by nearly two thousand libraries worldwide, offering public catalogue interface and back-end workflow features.",
+          "resources": []
+        },
+        {
+          "name": "Law",
+          "examples": "Open Outputs: Laws (ISSN 2075-471X) is an international peer-reviewed open access journal publishing works from extensive fields of legal subjects, following standard publication practices in the natural sciences for rapid refereeing.",
+          "resources": [
+            {
+              "title": "Guide on accessing open legal resources - includes lists of books, journals and repository sites",
+              "link": "https://libguides.ials.sas.ac.uk/openfreeresources",
+              "category": "General"
+            },
+            {
+              "title": "Journal article on the surge of open research in law and its benefits",
+              "link": "https://www.bjutijdschriften.nl/tijdschrift/lawandmethod/2016/04/lawandmethod-D-15-00005",
+              "category": "Open Methods"
+            },
+            {
+              "title": "Journal of Open Access to Law",
+              "link": "https://ojs.law.cornell.edu/index.php/joal/index",
+              "category": "Open Data"
+            },
+            {
+              "title": "Open access case databases",
+              "link": "https://www.bailii.org/",
+              "category": "Open Data"
+            },
+            {
+              "title": "Jurisprudence resources (standards, databases, data policies) registered in FAIRsharing:",
+              "link": "https://fairsharing.org/browse/subject?term=Jurisprudence",
+              "category": "Open Data"
+            },
+            {
+              "title": "Preprint repository",
+              "link": "https://law.bepress.com/",
+              "category": "Open Outputs"
+            }
+          ]
+        },
+        {
+          "name": "Criminology",
+          "examples": "Open Data: Matthew Ashby's Crime Open Database (CODE) compiles crime data from 21 of the 50 largest US cities. Open Methods: NSCR researchers use preregistrations for confirmatory testing, scoping reviews, and exploratory studies. Open Outputs: CrimRxiv is the leading global open-access hub in Criminology.",
+          "resources": [
+            {
+              "title": "Framing the problem: - Chin, J.M., Pickett, J.T., Vazire, S., & Holcombe, A.O",
+              "link": "https://doi.org/10.1007/s10940-021-09525-6",
+              "category": "General"
+            },
+            {
+              "title": "European Network for Open Criminology",
+              "link": "https://esc-enoc.github.io/",
+              "category": "General"
+            },
+            {
+              "title": "UK Data Service list of crime datasets",
+              "link": "https://ukdataservice.ac.uk/find-data/browse/crime/",
+              "category": "Open Data"
+            },
+            {
+              "title": "National Archive of Criminal Justice data",
+              "link": "https://www.icpsr.umich.edu/web/pages/NACJD/",
+              "category": "Open Data"
+            },
+            {
+              "title": "Ashby, M",
+              "link": "https://doi.org/10.17605/OSF.IO/ZYAQN",
+              "category": "Open Data"
+            },
+            {
+              "title": "Kaplan, J",
+              "link": "https://crimedatatool.com/index.html",
+              "category": "Open Data"
+            },
+            {
+              "title": "UNODC Atlas on Crime Victimisation Surveys",
+              "link": "https://www.cdeunodc.inegi.org.mx/unodc/index.php/atlas-on-cvs/index.htm",
+              "category": "Open Data"
+            },
+            {
+              "title": "International Crime Victims Survey",
+              "link": "https://www2.unil.ch/icvs/",
+              "category": "Open Data"
+            },
+            {
+              "title": "European Sourcebook of Crime and Criminal Justice Statistics",
+              "link": "https://wp.unil.ch/europeansourcebook/",
+              "category": "Open Data"
+            },
+            {
+              "title": "dataUNODC, United Nations Office on Drugs and Crime",
+              "link": "https://dataunodc.un.org/",
+              "category": "Open Data"
+            },
+            {
+              "title": "Covert networks, Mitchell Centre for Social Network Analysis",
+              "link": "https://www.socialsciences.manchester.ac.uk/mitchell-centre/research/covert-networks/",
+              "category": "Open Data"
+            },
+            {
+              "title": "R packages to analyse crime data: - Adepeju, M",
+              "link": "https://doi.org/10.4236/ojmsi.2023.114007",
+              "category": "Open Methods"
+            },
+            {
+              "title": "How-to guides published by the European Network for Open Criminology: - Ashby, J",
+              "link": "https://esc-enoc.github.io/how-to/open-access.html",
+              "category": "Open Methods"
+            },
+            {
+              "title": "Preprint and postprint repository",
+              "link": "https://www.crimrxiv.com/",
+              "category": "Open Outputs"
+            },
+            {
+              "title": "Information about Open Access journals",
+              "link": "https://www.crimrxiv.com/pub/ql79d70s/release/7",
+              "category": "Open Outputs"
+            },
+            {
+              "title": "Information about Diamond Open Access journals",
+              "link": "https://www.coado.org/",
+              "category": "Open Outputs"
+            },
+            {
+              "title": "Journals offering registered reports: - Legal and Criminological Psychology: - - Law and Human Behavior:",
+              "link": "https://bpspsychub.onlinelibrary.wiley.com/journal/20448333",
+              "category": "Open Outputs"
+            },
+            {
+              "title": "Framing the problem: - Ashby, M.P.J",
+              "link": "https://doi.org/10.1080/10511253.2020.1838588",
+              "category": "Open Outputs"
+            },
+            {
+              "title": "Open training materials for quantitative crime data analysis: - Ashby, M",
+              "link": "https://books.lesscrime.info/learncrimemapping/",
+              "category": "Open Education"
+            }
+          ]
+        },
+        {
+          "name": "Leisure/Hospitality and Tourism",
+          "examples": "Open Methods: MethodsX is an open-access journal where research methods can be regularly updated by authors and viewed by readers. Student et al. (2020) used it to document an agent-based modelling approach for coastal tourism vulnerabilities.",
+          "resources": [
+            {
+              "title": "Brunner-Sperdin, A",
+              "link": "https://doi.org/10.1300/J162v05n01_06",
+              "category": "General"
+            },
+            {
+              "title": "Summary of Core Research Resources for Hospitality and Tourism (Including Journals and Data Sets)",
+              "link": "https://guides.nyu.edu/Hospitality/home",
+              "category": "General"
+            },
+            {
+              "title": "Ardito, L., Cerchione, R., Del Vecchio, P",
+              "link": "https://doi.org/10.1080/13683500.2019.1612860",
+              "category": "Open Data"
+            },
+            {
+              "title": "Open access journals",
+              "link": "https://www.longdom.org/tourism-hospitality.html",
+              "category": "Open Outputs"
+            },
+            {
+              "title": "Research methods downloadable textbook",
+              "link": "https://www.academia.edu/36341057/Handbook_of_Research_Methods_for_Tourism_and_Hospitality_Management",
+              "category": "Open Education"
+            }
+          ]
+        },
+        {
+          "name": "Media and Communication",
+          "examples": "Open Data: OPTED is an EU-funded project designing infrastructure for political text analysis in Europe, including the Legislative Text Corpora Inventory. Open Methods: The MedCon project published full documentation of all methods used in producing and analysing data.",
+          "resources": [
+            {
+              "title": "Dienlin, T., Johannes, N., Bowman, N",
+              "link": "https://doi.org/10.1093/joc/jqz052",
+              "category": "General"
+            },
+            {
+              "title": "Lewis, N",
+              "link": "https://doi.org/10.1080/19312458.2019.1685660",
+              "category": "General"
+            },
+            {
+              "title": "Perreault, G., & Dienlin, T",
+              "link": "https://doi.org/10.1177/10776990241262346",
+              "category": "General"
+            },
+            {
+              "title": "van Atteveldt, W., Strycharz, J., Trilling, D., & Welbers, K",
+              "link": "https://ijoc.org/index.php/ijoc/article/view/10631",
+              "category": "General"
+            },
+            {
+              "title": "OSF. (2019). Osf.io. Open Science Framework ( Transdisciplinary research data repository used by many media and communication researchers",
+              "link": "https://osf.io/",
+              "category": "Open Data"
+            },
+            {
+              "title": "Harvard Dataverse",
+              "link": "https://dataverse.harvard.edu/",
+              "category": "Open Data"
+            },
+            {
+              "title": "Gruber, J",
+              "link": "https://opted.eu/fileadmin/user_upload/k_opted/OPTED_Deliverable_D7.6.pdf",
+              "category": "Open Data"
+            },
+            {
+              "title": "Ha, L",
+              "link": "https://doi.org/10.1177/1077699016630320",
+              "category": "Open Data"
+            },
+            {
+              "title": "Kim, Y., & Nah, S",
+              "link": "https://doi.org/10.1108/OIR-10-2016-0313",
+              "category": "Open Data"
+            },
+            {
+              "title": "Mancosu, M., & Vegetti, F",
+              "link": "https://doi.org/10.1177/2056305120940703",
+              "category": "Open Data"
+            },
+            {
+              "title": "GitHub",
+              "link": "https://github.com/",
+              "category": "Open Methods"
+            },
+            {
+              "title": "OSF. (2024). Osf.io. Preprint repository: used by media and communication researchers working in the social science tradition (hosted by OSF)",
+              "link": "https://osf.io/preprints/socarxiv",
+              "category": "Open Outputs"
+            },
+            {
+              "title": "MediArXiv (2024)",
+              "link": "https://mediarxiv.com/",
+              "category": "Open Outputs"
+            },
+            {
+              "title": "Collaborative and continuously updated open-access book on access to APIs for collection of text and other online data Bauer, P",
+              "link": "https://paulcbauer.github.io/apis_for_social_scientists_a_review/",
+              "category": "Open Education"
+            },
+            {
+              "title": "The Digital Research Infrastructure for the Arts and Humanities (DARIAH) aims to enhance and support digitally enabled research and teaching across the arts and humanities",
+              "link": "https://www.dariah.eu/activities/open-science/dariah-open/",
+              "category": "General"
+            },
+            {
+              "title": "Digital Preservation for the Arts, Social Sciences and Humanities biennial conference",
+              "link": "http://dpassh.org/",
+              "category": "General"
+            },
+            {
+              "title": "Research results, data, scientific publications and projects related to the domain of Digital Humanities",
+              "link": "https://dh-ch.openaire.eu/",
+              "category": "General"
+            },
+            {
+              "title": "Edmond and Tóth-Czifra (2018)",
+              "link": "http://doi.org/10.5281/zenodo.2657248",
+              "category": "Open Methods"
+            },
+            {
+              "title": "A guide to data management in the humanities",
+              "link": "https://allea.org/portfolio-item/sustainable-and-fair-data-sharing-in-the-humanities/",
+              "category": "Open Data"
+            },
+            {
+              "title": "DARIAH Research Data Management Working Group",
+              "link": "https://www.dariah.eu/activities/working-groups/research-data-management/",
+              "category": "Open Data"
+            },
+            {
+              "title": "Reference library for data management in humanities",
+              "link": "https://www.zotero.org/groups/2427138/data_management_best_practices_in_the_humanities/library",
+              "category": "Open Data"
+            },
+            {
+              "title": "SAGE Advance (multidisciplinary Humanities and Social Sciences preprint community)",
+              "link": "https://advance.sagepub.com/",
+              "category": "Open Outputs"
+            },
+            {
+              "title": "Open Access Journals",
+              "link": "https://www.mdpi.com/journal/humanities",
+              "category": "Open Outputs"
+            },
+            {
+              "title": "Repository",
+              "link": "https://osf.io/preprints/socarxiv",
+              "category": "Open Outputs"
+            },
+            {
+              "title": "Reflections of the Cambridge Working Group on OPen Research in the Humanities:",
+              "link": "https://unlockingresearch-blog.lib.cam.ac.uk/?p=3087",
+              "category": "Open Outputs"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "number": 5,
+      "name": "Humanities",
+      "summary": "DUMMY: Open research in the humanities takes distinctive forms, including open access to digitised collections, open textual data, and transparent workflows. Challenges remain around the nature of evidence in humanities disciplines, but digital humanities initiatives are driving progress.",
+      "disciplines": [
+        {
+          "name": "History",
+          "examples": "Open Methods: The Institute of Historical Research has three open access book series and raises awareness through workshops creating discussion opportunities for historians.",
+          "resources": [
+            {
+              "title": "IHR’s open access policy and aims",
+              "link": "https://www.history.ac.uk/publications/open-access",
+              "category": "General"
+            },
+            {
+              "title": "The Programming Historian",
+              "link": "https://programminghistorian.org/",
+              "category": "General"
+            },
+            {
+              "title": "IHR’s list of open access resources",
+              "link": "https://www.history.ac.uk/library/collections/online-resources/open-access-resources",
+              "category": "Open Methods"
+            },
+            {
+              "title": "Archaeology Dataset",
+              "link": "https://openarchaeologydata.metajnl.com/articles/10.5334/joad.57/",
+              "category": "Open Data"
+            },
+            {
+              "title": "Archaeology Data Service",
+              "link": "https://archaeologydataservice.ac.uk/",
+              "category": "Open Data"
+            },
+            {
+              "title": "History resources (standards, databases, data policies) registered in FAIRsharing:",
+              "link": "https://fairsharing.org/browse/subject?term=History",
+              "category": "Open Data"
+            },
+            {
+              "title": "Royal Historical Society guide to open access",
+              "link": "https://royalhistsoc.org/early-career-historians/open-access/",
+              "category": "Open Outputs"
+            },
+            {
+              "title": "Preprint repository",
+              "link": "https://osf.io/preprints/socarxiv",
+              "category": "Open Outputs"
+            },
+            {
+              "title": "Open Access Journals",
+              "link": "https://www.cambridge.org/core/journals/historical-journal/open-access",
+              "category": "Open Outputs"
+            }
+          ]
+        },
+        {
+          "name": "Archaeology and Classics",
+          "examples": "Open Methods: SVG-based digitisation of archaeological drawings for online publication, exemplified by the Excavations at Cricklade project published in Internet Archaeology.",
+          "resources": [
+            {
+              "title": "Marwick",
+              "link": "https://doi.org/10.31235/osf.io/72n8g",
+              "category": "General"
+            },
+            {
+              "title": "Huggett, J",
+              "link": "https://doi.org/10.1017/aap.2018.1",
+              "category": "General"
+            },
+            {
+              "title": "Karoune and Plomp (2022)",
+              "link": "https://doi.org/10.5281/zenodo.6618672",
+              "category": "General"
+            },
+            {
+              "title": "Presentation on Registered Reports in Archaeology",
+              "link": "https://osf.io/6ehfq",
+              "category": "General"
+            },
+            {
+              "title": "Papers covering open methods in Archaeology",
+              "link": "https://core.tdar.org/collection/29739/open-methods-in-archaeology-how-to-encourage-reproducible-research-as-the-default-practice",
+              "category": "Open Methods"
+            },
+            {
+              "title": "Open methods and resources",
+              "link": "https://archaeologicalnetworks.wordpress.com/resources/",
+              "category": "Open Methods"
+            },
+            {
+              "title": "Archaeology data service",
+              "link": "https://archaeologydataservice.ac.uk/",
+              "category": "Open Data"
+            },
+            {
+              "title": "Open access data",
+              "link": "https://opencontext.org/",
+              "category": "Open Data"
+            },
+            {
+              "title": "Open software",
+              "link": "https://github.com/benmarwick/ctv-archaeology",
+              "category": "Open Data"
+            },
+            {
+              "title": "Marwick, B., & Birch, S",
+              "link": "https://doi.org/10.1017/aap.2018.3",
+              "category": "Open Data"
+            },
+            {
+              "title": "University of Sheffield discipline-specific guidance on how to make research data and software FAIR (findable, accessible, interoperable & reusable)",
+              "link": "https://doi.org/10.15131/shef.data.20496855.v2",
+              "category": "Open Data"
+            },
+            {
+              "title": "Archaeology resources (standards, databases, data policies) registered in FAIRsharing",
+              "link": "https://fairsharing.org/browse/subject?term=Archaeology",
+              "category": "Open Data"
+            },
+            {
+              "title": "Preprint repository",
+              "link": "https://osf.io/preprints/socarxiv/discover",
+              "category": "Open Outputs"
+            },
+            {
+              "title": "Open Access journal/data/catalogue",
+              "link": "https://intarch.ac.uk/",
+              "category": "Open Outputs"
+            }
+          ]
+        },
+        {
+          "name": "Philosophy, Theology and Religious Studies",
+          "examples": "Open Data: Hume Texts Online provides free, open access to every philosophical text Hume published, alongside high-quality digital images of his manuscript of the Dialogues concerning Natural Religion.",
+          "resources": [
+            {
+              "title": "Open Access Resources in Religious and Theological Studies: Getting Started",
+              "link": "https://guides.library.duke.edu/openreligion",
+              "category": "General"
+            },
+            {
+              "title": "Open Communication Science: A primer on why and some recommendations for how",
+              "link": "https://osf.io/preprints/mediarxiv",
+              "category": "Open Methods"
+            },
+            {
+              "title": "Hume texts online",
+              "link": "https://davidhume.org/",
+              "category": "Open Data"
+            },
+            {
+              "title": "Archive data",
+              "link": "https://thearda.com/",
+              "category": "Open Data"
+            },
+            {
+              "title": "Philosophy resources (standards, databases, data policies) registered in FAIRsharing:",
+              "link": "https://fairsharing.org/browse/subject?term=Philosophy",
+              "category": "Open Data"
+            },
+            {
+              "title": "Religious Studies resources (standards, databases, data policies) registered in FAIRsharing:",
+              "link": "https://fairsharing.org/browse/subject?term=Religious%2520Studies",
+              "category": "Open Data"
+            },
+            {
+              "title": "Theology resources (standards, databases, data policies) registered in FAIRsharing:",
+              "link": "https://fairsharing.org/browse/subject?term=Theology",
+              "category": "Open Data"
+            },
+            {
+              "title": "List of open access journals",
+              "link": "https://libguides.du.edu/c.php?g=131579&p=2774089",
+              "category": "Open Outputs"
+            },
+            {
+              "title": "Open access guide",
+              "link": "https://umb.libguides.com/c.php?g=350815&p=2468261",
+              "category": "Open Outputs"
+            },
+            {
+              "title": "Open access resources on the Muslim world",
+              "link": "https://archnet.org/",
+              "category": "Open Outputs"
+            },
+            {
+              "title": "Theological studies journal search",
+              "link": "https://cse.google.com/cse?cx=018443097211386924752:luwi5uy2qbe",
+              "category": "Open Outputs"
+            },
+            {
+              "title": "Preprint repository",
+              "link": "http://philsci-archive.pitt.edu/",
+              "category": "Open Outputs"
+            },
+            {
+              "title": "Open access archive",
+              "link": "https://philpapers.org/",
+              "category": "Open Outputs"
+            }
+          ]
+        },
+        {
+          "name": "Modern Language, Literature and Linguistics",
+          "examples": "Open Methods: Language and Cognition field manuals from the Max Planck Institute provide open resources refined over many uses across 50+ languages. Open Data: AHRC requires technical plans for digitally-enabled projects, exemplified by Francesca Benatti's searchable database project.",
+          "resources": [
+            {
+              "title": "Guide on transitioning to open access",
+              "link": "https://www.lingoa.eu/about/mission/",
+              "category": "General"
+            },
+            {
+              "title": "A collection of instruments, materials, stimuli, and data coding and analysis tools used for research into second languages",
+              "link": "https://www.iris-database.org/iris/app/home/index",
+              "category": "General"
+            },
+            {
+              "title": "Encyclopaedia of linguistics",
+              "link": "http://www.glottopedia.org/index.php/Main_Page",
+              "category": "General"
+            },
+            {
+              "title": "Marsden, E., Morgan‐Short, K., Trofimovich, P., & Ellis, N",
+              "link": "https://doi.org/10.1111/lang.12284",
+              "category": "General"
+            },
+            {
+              "title": "Marsden, E., Crossley, S., Ellis, N., Kormos, J., Morgan‐Short, K., & Thierry, G",
+              "link": "https://doi.org/10.1111/lang.12378",
+              "category": "General"
+            },
+            {
+              "title": "AHRC’s open access policy rationale",
+              "link": "https://www.ukri.org/publications/ukri-open-access-policy/uk-research-and-innovation-open-access-policy/",
+              "category": "General"
+            },
+            {
+              "title": "Paper outlining how methods can be made more open to the public",
+              "link": "https://doi.org/10.1111/lang.12337",
+              "category": "Open Methods"
+            },
+            {
+              "title": "Sharing linguistic questionnaires and elicitation stimuli",
+              "link": "http://tulquest.huma-num.fr/",
+              "category": "Open Methods"
+            },
+            {
+              "title": "Language and Cognition field manuals and stimulus materials",
+              "link": "http://fieldmanuals.mpi.nl/",
+              "category": "Open Methods"
+            },
+            {
+              "title": "Tools for analysing language corpora",
+              "link": "http://corpora.lancs.ac.uk/lancsbox/",
+              "category": "Open Methods"
+            },
+            {
+              "title": "Tools for analysing corpus linguistic data",
+              "link": "https://www.laurenceanthony.net/software/antconc/",
+              "category": "Open Methods"
+            },
+            {
+              "title": "Website for statistical analysis",
+              "link": "http://langtest.jp/",
+              "category": "Open Methods"
+            },
+            {
+              "title": "University of Sheffield discipline-specific guidance on how to make research data and software FAIR (findable, accessible, interoperable & reusable)",
+              "link": "https://doi.org/10.15131/shef.data.20496855.v2",
+              "category": "Open Methods"
+            },
+            {
+              "title": "Reproducible research practices and transparency across linguistics",
+              "link": "https://escholarship.org/uc/item/6m62j7p6",
+              "category": "Open Methods"
+            },
+            {
+              "title": "Tromsø Recommendations for Citation of Research Data in Linguistics",
+              "link": "https://doi.org/10.15497/RDA00040",
+              "category": "Open Methods"
+            },
+            {
+              "title": "List of data repositories",
+              "link": "https://guides.lib.ku.edu/c.php?g=94923&p=1224538",
+              "category": "Open Data"
+            },
+            {
+              "title": "Child Language Data Exchange System",
+              "link": "https://childes.talkbank.org/",
+              "category": "Open Data"
+            },
+            {
+              "title": "Open data texts",
+              "link": "https://www.english-corpora.org/",
+              "category": "Open Data"
+            },
+            {
+              "title": "British Library Digital Collections and Data",
+              "link": "https://bl.iro.bl.uk",
+              "category": "Open Data"
+            },
+            {
+              "title": "Collection of Datasets for Natural Language Processing",
+              "link": "https://medium.com/@ODSC/20-open-datasets-for-natural-language-processing-538fbfaf8e38",
+              "category": "Open Data"
+            },
+            {
+              "title": "Linguistics resources (standards, databases, data policies) registered in FAIRsharing:",
+              "link": "https://fairsharing.org/browse/subject?term=Linguistics",
+              "category": "Open Data"
+            },
+            {
+              "title": "List of open access resources for modern languages",
+              "link": "https://www.modernlanguagesopen.org/",
+              "category": "Open Outputs"
+            },
+            {
+              "title": "Guides to open access for linguistics",
+              "link": "http://www.lagb.org.uk/OpenAccess",
+              "category": "Open Outputs"
+            },
+            {
+              "title": "List of platinum open access linguistics journals",
+              "link": "https://oaling.wordpress.com/",
+              "category": "Open Outputs"
+            },
+            {
+              "title": "Lists of open access resources for literature",
+              "link": "https://libguides.tyndale.ca/c.php?g=315370&p=2107755",
+              "category": "Open Outputs"
+            },
+            {
+              "title": "OASIS database repository",
+              "link": "https://oasis-database.org/",
+              "category": "Open Outputs"
+            }
+          ]
+        },
+        {
+          "name": "Art and Design",
+          "examples": "Open Outputs: The National Gallery of Art provides 45,000+ open access digital images for free download and use. Open Data: Garry Barker deposited practice-based arts research sketchbooks as open data on Zenodo under CC BY.",
+          "resources": [
+            {
+              "title": "Benefits of open access for art and design scholarships",
+              "link": "https://blogs.openbookpublishers.com/the-monograph-crisis-open-access-for-art-and-design-scholarship/",
+              "category": "General"
+            },
+            {
+              "title": "Leeds Arts University",
+              "link": "https://www.leeds-art.ac.uk/research/concordat-on-open-research-data",
+              "category": "General"
+            },
+            {
+              "title": "UK Research and Innovation",
+              "link": "https://www.ukri.org/wp-content/uploads/2020/10/UKRI-020920-ConcordatonOpenResearchData.pdf",
+              "category": "General"
+            },
+            {
+              "title": "Blog post exploring research data in the creative arts",
+              "link": "https://researchdata.jiscinvolve.org/wp/2016/11/22/research-data-creative-performing-arts/",
+              "category": "General"
+            },
+            {
+              "title": "Boisseau, É., Omhover, J",
+              "link": "https://doi.org/10.1017/dsj.2017.25",
+              "category": "Open Methods"
+            },
+            {
+              "title": "Open-source design publishing software",
+              "link": "https://www.scribus.net",
+              "category": "Open Methods"
+            },
+            {
+              "title": "Bulley, J., & Sahin, O",
+              "link": "https://doi.org/10.23636/1347",
+              "category": "Open Methods"
+            },
+            {
+              "title": "UKRN Professional and Technical Staff supporting Open Research: Case Study 5, Practice-based arts research project:",
+              "link": "https://osf.io/a2r5p",
+              "category": "Open Methods"
+            },
+            {
+              "title": "Art resources (standards, databases, data policies) registered in FAIRsharing:",
+              "link": "https://fairsharing.org/browse/subject?term=Art",
+              "category": "Open Data"
+            },
+            {
+              "title": "Fine Art resources (standards, databases, data policies) registered in FAIRsharing:",
+              "link": "https://fairsharing.org/browse/subject?term=Fine%2520Arts",
+              "category": "Open Data"
+            },
+            {
+              "title": "Barker, G",
+              "link": "https://doi.org/10.5281/zenodo.14013103",
+              "category": "Open Data"
+            },
+            {
+              "title": "Barker, G",
+              "link": "https://doi.org/10.5281/zenodo.13827974",
+              "category": "Open Data"
+            },
+            {
+              "title": "Barker, G",
+              "link": "https://doi.org/10.5281/zenodo.13684033",
+              "category": "Open Data"
+            },
+            {
+              "title": "Open access journals",
+              "link": "https://openartsjournal.org",
+              "category": "Open Outputs"
+            },
+            {
+              "title": "Open art images repository",
+              "link": "https://images.nga.gov/en/page/show_home_page.html",
+              "category": "Open Outputs"
+            },
+            {
+              "title": "Open Access University Repositories",
+              "link": "https://research.uca.ac.uk/",
+              "category": "Open Outputs"
+            },
+            {
+              "title": "Visual arts data skills for researchers",
+              "link": "http://www.vads4r.vads.ac.uk/p/online-learning.html",
+              "category": "Open Outputs"
+            }
+          ]
+        },
+        {
+          "name": "Music, Drama and Performing Arts, Film and Screen Studies",
+          "examples": "Open Data: MusicLab at RITMO explores new methods for open research and education through concert events that are also objects of study, with all resources freely available.",
+          "resources": [
+            {
+              "title": "Podcast on how music research can be made more open",
+              "link": "https://www.arj.no/2020/01/09/podcast-on-open-research/",
+              "category": "General"
+            },
+            {
+              "title": "Paper on a new open-source application for musical recording analysis",
+              "link": "https://doi.org/10.1145/1873951.1874248",
+              "category": "Open Methods"
+            },
+            {
+              "title": "Resource facilitating music data reusability",
+              "link": "http://soundsoftware.ac.uk/",
+              "category": "Open Data"
+            },
+            {
+              "title": "Musicology resources (standards, databases, data policies) registered in FAIRsharing:",
+              "link": "https://fairsharing.org/browse/subject?term=Musicology",
+              "category": "Open Data"
+            },
+            {
+              "title": "Media Studies resources (standards, databases, data policies) registered in FAIRsharing:",
+              "link": "https://fairsharing.org/browse/subject?term=Media%2520Studies",
+              "category": "Open Data"
+            },
+            {
+              "title": "Theatre Studies resources (standards, databases, data policies) registered in FAIRsharing:",
+              "link": "https://fairsharing.org/browse/subject?term=Theatre%2520Studies",
+              "category": "Open Data"
+            },
+            {
+              "title": "Open film studies preprint archive",
+              "link": "https://mediarxiv.com",
+              "category": "Open Outputs"
+            },
+            {
+              "title": "Performing arts journal",
+              "link": "https://cnu.edu/jpalhe/",
+              "category": "Open Outputs"
+            },
+            {
+              "title": "Performing arts digital books",
+              "link": "https://www.doabooks.org/doab?func=subject&cpId=7&uiLanguage=en",
+              "category": "Open Outputs"
+            },
+            {
+              "title": "Musical performance journal",
+              "link": "https://scholarship.claremont.edu/ppr/",
+              "category": "Open Outputs"
+            }
+          ]
+        },
+        {
+          "name": "Cultural and Media Studies",
+          "examples": "Open Data: D-PLACE is an expandable open-access database combining data from 1400+ human societies covering language, culture and environment, available in downloadable formats including tables, maps and linguistic trees.",
+          "resources": [
+            {
+              "title": "Overview of progression towards open research",
+              "link": "https://mediastudies.hypotheses.org/867",
+              "category": "General"
+            },
+            {
+              "title": "Introduction to Open Science/Research for communication scholars",
+              "link": "https://doi.org/10.1093/joc/jqz052",
+              "category": "General"
+            },
+            {
+              "title": "Presentations about Open Communication regarding research papers, roundtables and workshops",
+              "link": "https://www.youtube.com/channel/UCLfQ-LCjJMfiFCOEG7e6hkA/playlists",
+              "category": "General"
+            },
+            {
+              "title": "Open database on human culture practices",
+              "link": "https://d-place.org/contributions",
+              "category": "Open Data"
+            },
+            {
+              "title": "Culture resources (standards, databases, data policies) registered in FAIRsharing:",
+              "link": "https://fairsharing.org/browse/subject?term=Culture",
+              "category": "Open Data"
+            },
+            {
+              "title": "Open access repositories/archives",
+              "link": "https://mediarep.org/handle/doc/15273",
+              "category": "Open Outputs"
+            },
+            {
+              "title": "Open access journals",
+              "link": "https://journal.media-culture.org.au/index.php/mcjournal",
+              "category": "Open Outputs"
+            },
+            {
+              "title": "Preprint repository",
+              "link": "https://mediarxiv.com",
+              "category": "Open Outputs"
+            },
+            {
+              "title": "Munafò, M., Noble, S., Browne, W",
+              "link": "https://doi.org/10.1038/nbt.3004",
+              "category": "General"
+            },
+            {
+              "title": "Detection and Classification of Acoustic Scenes and Events",
+              "link": "http://dcase.community/",
+              "category": "General"
+            },
+            {
+              "title": "Manifesto about sharing data (electrical/electronic)",
+              "link": "https://theodi.org/article/engineering-data-for-the-public-good-a-manifesto/#1570462630418-fc70c0a6-7ac3",
+              "category": "General"
+            },
+            {
+              "title": "Resource guiding researchers on relevant computer skills via regular workshops",
+              "link": "https://software-carpentry.org",
+              "category": "Open Methods"
+            },
+            {
+              "title": "University of Sheffield discipline-specific guidance on how to make research data and software FAIR (findable, accessible, interoperable & reusable)",
+              "link": "https://doi.org/10.15131/shef.data.20496855.v2",
+              "category": "Open Methods"
+            },
+            {
+              "title": "The SoundSoftware project provides facilities, training, tools and incentives to improve the publication and reuse of scientific software and data in the UK audio and music research community",
+              "link": "http://soundsoftware.ac.uk/",
+              "category": "Open Data"
+            },
+            {
+              "title": "Institution of Engineering and Technology’s (IET) prospective move to open access",
+              "link": "https://www.theiet.org/publishing/publishing-with-iet-journals/transitioning-to-open-access-faq-s-for-authors#:~:text=From%20January%202021%2C%20all%20articles",
+              "category": "Open Data"
+            },
+            {
+              "title": "The Software Sustainability Institute facilitates progression towards more sustainable research software",
+              "link": "https://www.software.ac.uk/about",
+              "category": "Open Data"
+            },
+            {
+              "title": "Open hardware repository",
+              "link": "https://gitlab.com/ohwr",
+              "category": "Open Data"
+            },
+            {
+              "title": "Open access tools for data analysis",
+              "link": "https://opensource.com/",
+              "category": "Open Data"
+            },
+            {
+              "title": "Open-source micro-controller (electrical/electronic)",
+              "link": "https://www.arduino.cc",
+              "category": "Open Data"
+            },
+            {
+              "title": "Open data repository",
+              "link": "https://data.4tu.nl/info/en/",
+              "category": "Open Data"
+            },
+            {
+              "title": "Engineering Science resources (standards, databases, data policies) registered in FAIRsharing:",
+              "link": "https://fairsharing.org/browse/subject?term=Engineering%2520Science",
+              "category": "Open Data"
+            },
+            {
+              "title": "Open-source 3D printing toolbox data (mechanical)",
+              "link": "https://slic3r.org",
+              "category": "Open Outputs"
+            },
+            {
+              "title": "Open electronics supports development, hacking and playing with electronics: they share open projects and create products",
+              "link": "https://www.open-electronics.org/about/",
+              "category": "Open Outputs"
+            },
+            {
+              "title": "The Open-Source Hardware Association (OSHWA) aims to foster technological knowledge and encourage research that is accessible, collaborative and respects user freedom",
+              "link": "https://www.oshwa.org/",
+              "category": "Open Outputs"
+            },
+            {
+              "title": "Guidelines on creating open hardware",
+              "link": "https://opensource.com/article/18/2/5-steps-creating-successful-open-hardware",
+              "category": "Open Outputs"
+            },
+            {
+              "title": "Pearce, J",
+              "link": "https://doi.org/10.4236/me.2015.61001",
+              "category": "Open Outputs"
+            },
+            {
+              "title": "Open access journals (civil/environmental)",
+              "link": "https://opencivilengineeringjournal.com/",
+              "category": "Open Outputs"
+            },
+            {
+              "title": "Open access journals (mechanical)",
+              "link": "https://www.omicsonline.org/architectural-engineering-technology.php",
+              "category": "Open Outputs"
+            },
+            {
+              "title": "Open access journals (chemical)",
+              "link": "https://www.omicsonline.org/analytical-bioanalytical-techniques.php",
+              "category": "Open Outputs"
+            },
+            {
+              "title": "Open-source software for engineering and other sciences",
+              "link": "https://openfoam.com/",
+              "category": "Open Outputs"
+            },
+            {
+              "title": "Preprint repository",
+              "link": "https://engrxiv.org/",
+              "category": "Open Outputs"
+            },
+            {
+              "title": "Database of open access engineering books, magazines, journals and conferences",
+              "link": "https://ieeexplore.ieee.org/Xplore/home.jsp",
+              "category": "Open Education"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "number": 6,
+      "name": "Engineering and Technology",
+      "summary": "DUMMY: Engineering fields are engaging with open research through open-source hardware and software, FAIR data practices for measurement data, and collaborative computational infrastructure. Computer science benefits from a strong culture of preprints and open-source code sharing.",
+      "disciplines": [
+        {
+          "name": "Engineering",
+          "examples": "Open Data: Nikola Vasiljević works with FAIR wind turbine wake measurement data, essential because such data has high reuse potential for decades from creation.",
+          "resources": []
+        },
+        {
+          "name": "Architecture, Built Environment and Planning",
+          "examples": "Open Methods: The OpenStructures project explores modular construction where everyone designs for everyone on a shared geometrical grid, applied in humanitarian architecture in Katanga, Congo.",
+          "resources": [
+            {
+              "title": "Open modular construction system",
+              "link": "https://www.openstructures.net",
+              "category": "Open Methods"
+            },
+            {
+              "title": "Image library resource for architecture projects",
+              "link": "https://www.architecture.com/image-library/",
+              "category": "Open Data"
+            },
+            {
+              "title": "Architecture resources (standards, databases, data policies) registered in FAIRsharing:",
+              "link": "https://fairsharing.org/browse/subject?term=Architecture",
+              "category": "Open Data"
+            },
+            {
+              "title": "Civil Engineering resources (standards, databases, data policies) registered in FAIRsharing:",
+              "link": "https://fairsharing.org/browse/subject?term=Civil%2520Engineering",
+              "category": "Open Data"
+            },
+            {
+              "title": "List of open access resources",
+              "link": "https://guides.library.upenn.edu/architecture/openaccess",
+              "category": "Open Outputs"
+            },
+            {
+              "title": "Open access journals",
+              "link": "https://journal.eahn.org",
+              "category": "Open Outputs"
+            },
+            {
+              "title": "Open access intellectual resource on Muslim architecture",
+              "link": "https://archnet.org",
+              "category": "Open Outputs"
+            }
+          ]
+        },
+        {
+          "name": "Computer Science",
+          "examples": "Open Methods: The Open Science Grid provides large-scale computational infrastructure for resource sharing. Wilson et al. (2017) outline good computing workflow practices. Open Data and Education: Tim Coughlan used open data as learning material for postgraduate CS assignments.",
+          "resources": [
+            {
+              "title": "Fernández, D",
+              "link": "https://arxiv.org/abs/1904.06499",
+              "category": "General"
+            },
+            {
+              "title": "Wilson G, Bryan J, Cranston K, Kitzes J, Nederbragt L, Teal TK (2017) Good enough practices in scientific computing",
+              "link": "https://doi.org/10.1371/journal.pcbi.1005510",
+              "category": "General"
+            },
+            {
+              "title": "The Open Science Grid is an infrastructure project to provide computing resources for Open Science projects:",
+              "link": "https://opensciencegrid.org",
+              "category": "General"
+            },
+            {
+              "title": "List of open-source software",
+              "link": "http://openscience.org/software/computer-science/",
+              "category": "Open Methods"
+            },
+            {
+              "title": "Datasets",
+              "link": "https://researchportal.hw.ac.uk/en/organisations/computer-science/datasets/",
+              "category": "Open Data"
+            },
+            {
+              "title": "Open dataset and tools",
+              "link": "https://cocodataset.org/#home",
+              "category": "Open Data"
+            },
+            {
+              "title": "Open Evidence bank",
+              "link": "https://www.software.ac.uk/open-evidence-bank",
+              "category": "Open Data"
+            },
+            {
+              "title": "Computer Science resources (standards, databases, data policies) registered in FAIRsharing:",
+              "link": "https://fairsharing.org/browse/subject?term=Computer%2520Science",
+              "category": "Open Data"
+            },
+            {
+              "title": "Research Transparency Guidelines",
+              "link": "https://transparency-guide.teamusec.de/",
+              "category": "Open Data"
+            },
+            {
+              "title": "Electronic Colloquium on Computational Complexity",
+              "link": "https://eccc.weizmann.ac.il/eccc/",
+              "category": "Open Outputs"
+            },
+            {
+              "title": "Preprint repository",
+              "link": "https://arxiv.org/",
+              "category": "Open Outputs"
+            },
+            {
+              "title": "Journal of Open-Source Software",
+              "link": "https://joss.theoj.org/",
+              "category": "Open Outputs"
+            },
+            {
+              "title": "CHI and SOUPS introduced mandatory open access in 2026:",
+              "link": "https://chi2026.acm.org/authors/papers/#acm-open",
+              "category": "Open Outputs"
+            },
+            {
+              "title": "Open Data as Open Educational Resources",
+              "link": "http://education.okfn.org/handbooks/open-data-as-open-educational-resources/",
+              "category": "Open Education"
+            }
+          ]
+        },
+        {
+          "name": "Computational Modelling",
+          "examples": "Open Methods: Nousias et al. (2020) present AVATREE, an open-source C++ toolbox for generating anatomically valid airway tree conformations for simulating broncho-constriction in pulmonary diseases.",
+          "resources": [
+            {
+              "title": "Open research course",
+              "link": "https://git.fmrib.ox.ac.uk/open-science/computational-models-course",
+              "category": "General"
+            },
+            {
+              "title": "Standards and best practices",
+              "link": "https://blogs.scientificamerican.com/the-curious-wavefunction/computational-research-in-the-era-of-open-access-standards-and-best-practices/",
+              "category": "General"
+            },
+            {
+              "title": "Introduction to computational reproducibility",
+              "link": "https://hal.inria.fr/hal-01358082/document",
+              "category": "General"
+            },
+            {
+              "title": "Tips for reproducible computational workflows",
+              "link": "https://scicomp.aalto.fi/scicomp/zen-of-scicomp/",
+              "category": "General"
+            },
+            {
+              "title": "The Practice of Reproducible Research, Case Studies and Lessons from the Data-Intensive Sciences",
+              "link": "http://www.practicereproducibleresearch.org/",
+              "category": "General"
+            },
+            {
+              "title": "Collection of resources",
+              "link": "https://www.comses.net/",
+              "category": "Open Methods"
+            },
+            {
+              "title": "Guidelines for modelling and simulation",
+              "link": "https://ieeexplore.ieee.org/document/8247813",
+              "category": "Open Methods"
+            },
+            {
+              "title": "Stodden, V., Leisch, F., and Peng, R",
+              "link": "https://osf.io/s9tya/wiki/home/",
+              "category": "Open Data"
+            },
+            {
+              "title": "Modeling and simulation resources (standards, databases, data policies) registered in FAIRsharing:",
+              "link": "https://fairsharing.org/search?domains=Modeling%2520and%2520simulation",
+              "category": "Open Data"
+            },
+            {
+              "title": "Preprint repository",
+              "link": "https://arxiv.org/",
+              "category": "Open Outputs"
+            }
+          ]
+        },
+        {
+          "name": "Artificial Intelligence",
+          "examples": "Open Methods: Microsoft Research deployed software agents to continuously scavenge the Web for research artifacts, extracting academic knowledge into the Microsoft Academic Graph, equalizing discoverability of research across publishers and self-archived materials.",
+          "resources": [
+            {
+              "title": "Implications of openness in AI",
+              "link": "https://www.nickbostrom.com/papers/openness.pdf",
+              "category": "General"
+            },
+            {
+              "title": "Presentation on new tools and services in AI and open research",
+              "link": "https://www.stm-assoc.org/2018_12_05_STM_Week_Innovations_Jon_White.pdf",
+              "category": "Open Methods"
+            },
+            {
+              "title": "Recommendations on how to create reproducible AI",
+              "link": "https://www.isi.edu/~gil/papers/gundersen-etal-aimagazine18.pdf",
+              "category": "Open Methods"
+            },
+            {
+              "title": "Open data, tasks, and analysis scripts for machine learning",
+              "link": "https://www.openml.org/",
+              "category": "Open Methods"
+            },
+            {
+              "title": "Open-source software and tools",
+              "link": "https://openai.com/",
+              "category": "Open Methods"
+            },
+            {
+              "title": "Comprehensive list of machine learning datasets",
+              "link": "https://www.telusinternational.com/insights/ai-data/article/the-50-best-free-datasets-for-machine-learning",
+              "category": "Open Data"
+            },
+            {
+              "title": "Artificial Intelligence resources (standards, databases, data policies) registered in FAIRsharing",
+              "link": "https://fairsharing.org/browse/subject?term=Artificial%2520Intelligence",
+              "category": "Open Data"
+            },
+            {
+              "title": "Arxiv preprint repository",
+              "link": "https://arxiv.org/",
+              "category": "Open Outputs"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "number": 7,
+      "name": "Meta-research",
+      "summary": "DUMMY: Meta-research examines the research process itself, producing openly accessible datasets, algorithms, and evidence about research credibility. Large-scale initiatives like SCORE have published comprehensive open datasets evaluating reproducibility across fields.",
+      "disciplines": [
+        {
+          "name": "Meta-research",
+          "examples": "General: SCORE (Systematizing Confidence in Open Research and Evidence) was a large-scale initiative to improve assessment of scientific credibility in social and behavioral sciences. All papers are available in Nature and all data and code on OSF.",
+          "resources": [
+            {
+              "title": "Metrics to quantify reproducibility - interactive table based on findings in a scoping review",
+              "link": "http://rachelheyard.com/reproducibility_metrics/",
+              "category": "Open Methods"
+            },
+            {
+              "title": "Rubin, M",
+              "link": "https://doi.org/10.36850/mr4",
+              "category": "Open Methods"
+            },
+            {
+              "title": "MetaArXiv preprint repository",
+              "link": "https://osf.io/preprints/metaarxiv",
+              "category": "Open Outputs"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "number": 8,
+      "name": "Methodologies",
+      "summary": "DUMMY: Cross-cutting methodological approaches such as qualitative research and single-case designs face specific challenges for open research, including sharing sensitive interview data and addressing publication bias in small-sample designs. Dedicated guidance and templates are emerging.",
+      "disciplines": [
+        {
+          "name": "Qualitative Research",
+          "examples": "Open Data: The Qualitative Data Repository (QDR) is a dedicated archive for sharing digital data from qualitative and multi-method research. The Language Technology Group publishes the Danish Parliament Corpus in a FAIR way via CLARIN-DK.",
+          "resources": [
+            {
+              "title": "Kapiszewski, D., and Karcher, S",
+              "link": "https://doi.org/10.33774/apsa-2019-if2he-v2",
+              "category": "General"
+            },
+            {
+              "title": "Haven, T",
+              "link": "https://doi.org/10.1080/08989621.2019.1580147",
+              "category": "General"
+            },
+            {
+              "title": "Haven, T",
+              "link": "https://doi.org/10.31235/osf.io/pz9jr",
+              "category": "General"
+            },
+            {
+              "title": "Qualitative Research Pre-registration Template",
+              "link": "https://osf.io/b6xmd/",
+              "category": "General"
+            },
+            {
+              "title": "Chauvette, A., Schick-Makaroff, K., and Molzahn, A",
+              "link": "https://doi.org/10.1177/1609406918823863",
+              "category": "General"
+            },
+            {
+              "title": "Mannheimer, S., Pienta, A., Kirilova, D., Elman, C., and Wutich, A",
+              "link": "https://doi.org/10.1177/0002764218784991",
+              "category": "General"
+            },
+            {
+              "title": "Qualitative Transparency Deliberations (QTD)",
+              "link": "https://www.qualtd.net/",
+              "category": "General"
+            },
+            {
+              "title": "Annotation for Transparency Inquiry (ATI)",
+              "link": "https://www.cambridge.org/core/services/authors/annotation-for-transparent-inquiry-ati",
+              "category": "General"
+            },
+            {
+              "title": "Paper on qualitative methods for researching teachers’ (re)use of open educational resources",
+              "link": "http://oro.open.ac.uk/37408/",
+              "category": "General"
+            },
+            {
+              "title": "Webinar on the Theory and Practice of Transparent Qualitative Health Research",
+              "link": "https://www.youtube.com/watch?v=DKkExQfwqpU",
+              "category": "General"
+            },
+            {
+              "title": "Pownall, M",
+              "link": "https://doi.org/10.31234/osf.io/dwxeg",
+              "category": "General"
+            },
+            {
+              "title": "Karhulahti, V",
+              "link": "https://doi.org/10.1038/s41562-021-01265-8",
+              "category": "General"
+            },
+            {
+              "title": "Stegenga, S",
+              "link": "https://doi.org/10.1111/spc3.12912",
+              "category": "General"
+            },
+            {
+              "title": "Pre-Analysis Plans for qualitative research",
+              "link": "http://www.redalyc.org/pdf/324/32449207009.pdf",
+              "category": "Open Methods"
+            },
+            {
+              "title": "Malterud, K., Siersma, V",
+              "link": "https://doi.org/10.1177%2F1049732315617444",
+              "category": "Open Methods"
+            },
+            {
+              "title": "Slides from UKDA presentation entitled “Sharing qualitative data: challenges and opportunities”",
+              "link": "https://www.ukdataservice.ac.uk/media/604758/sharingqualdata_lancu_lb_5apr2017.pdf",
+              "category": "Open Data"
+            },
+            {
+              "title": "Qualitative data repository for storing and sharing digital data (and accompanying documentation) generated or collected through qualitative and multi-method research in the social sciences",
+              "link": "https://qdr.syr.edu/",
+              "category": "Open Data"
+            },
+            {
+              "title": "UKDA text anonymisation tool for qualitative data sharing",
+              "link": "http://data-archive.ac.uk/curate/standards-tools/tools",
+              "category": "Open Data"
+            },
+            {
+              "title": "UK dataservice list of qualitative and mixed methods data",
+              "link": "https://www.ukdataservice.ac.uk/get-data/key-data/qualitative-and-mixed-methods-data.aspx",
+              "category": "Open Data"
+            },
+            {
+              "title": "Qualitative Data Repository",
+              "link": "https://qdr.syr.edu/",
+              "category": "Open Data"
+            },
+            {
+              "title": "Voice, Representation, Relationships: Report of the Open Qualitative Research Working Group (2022) - From Cambridge -",
+              "link": "https://doi.org/10.17863/CAM.91979",
+              "category": "Open Data"
+            },
+            {
+              "title": "Annotation for Transparent Inquiry (ATI)",
+              "link": "https://qdr.syr.edu/ati",
+              "category": "Open Outputs"
+            },
+            {
+              "title": "Mannheimer, S., Pienta, A., Kirilova, D., Elman, C., and Wutich, A",
+              "link": "https://doi.org/10.1177/0002764218784991",
+              "category": "Open Outputs"
+            }
+          ]
+        },
+        {
+          "name": "Single-Case Design (SCD)",
+          "examples": "Open Methods: Publication bias exists in SCD research. The Single-Case Design Pilot Standards distinguish between well-designed and statistically effective judgements of prospective research to help reduce this bias.",
+          "resources": [
+            {
+              "title": "Potential factors explaining statistical accuracy errors in SCD studies which use visual analysis",
+              "link": "https://doi.org/10.1016/j.jsp.2017.03.008",
+              "category": "General"
+            },
+            {
+              "title": "Transparency guide for SCD research – includes preregistration information",
+              "link": "https://doi.org/10.1177/0014402919868529",
+              "category": "General"
+            },
+            {
+              "title": "Dowdy, A., Tincani, M., and Schneider, W",
+              "link": "https://doi.org/10.1002/jaba.724",
+              "category": "General"
+            },
+            {
+              "title": "Lobo, M",
+              "link": "https://doi.org/10.1097/NPT.0000000000000187",
+              "category": "Open Methods"
+            },
+            {
+              "title": "Krasny-Pacini, A., and Evans, J",
+              "link": "https://doi.org/10.1016/j.rehab.2017.12.002",
+              "category": "Open Methods"
+            },
+            {
+              "title": "Johnson, A",
+              "link": "https://doi.org/10.35542/osf.io/rmvgc",
+              "category": "Open Methods"
+            },
+            {
+              "title": "Manolov, R., and Moeyaert, M",
+              "link": "https://doi.org/10.1177/0145445516664307",
+              "category": "Open Data"
+            },
+            {
+              "title": "Preprint repositories",
+              "link": "https://edarxiv.org/",
+              "category": "Open Outputs"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "number": 9,
+      "name": "Personal Data",
+      "summary": "DUMMY: Research involving personal data must balance openness with data protection. Approaches include anonymisation, restricted-access repositories like Databrary, and consent frameworks that enable sharing while protecting participants.",
+      "disciplines": [
+        {
+          "name": "Personal Data",
+          "examples": "Databrary is a restricted access library for sharing video and audio research participant data, providing a proven framework for sharing sensitive and identifiable data within a trusted network of authorized researchers.",
+          "resources": [
+            {
+              "title": "Databrary consent template",
+              "link": "https://databrary.org/support/irb/release-template",
+              "category": "General"
+            },
+            {
+              "title": "UK data service example consent forms",
+              "link": "https://ukdataservice.ac.uk/learning-hub/research-data-management/ethical-issues/consent-for-data-sharing/documenting-consent/",
+              "category": "General"
+            },
+            {
+              "title": "Global kids online research kit provides tools and example consent forms for working with children and schools",
+              "link": "http://eprints.lse.ac.uk/71299/1/Getting-Started-final-25-Oct-16.pdf",
+              "category": "General"
+            },
+            {
+              "title": "Human Participants – General guidance",
+              "link": "https://qdr.syr.edu/guidance/human-participants",
+              "category": "General"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "number": 10,
+      "name": "Open Research and Open Innovation",
+      "summary": "DUMMY: Open research and open innovation share the goal of enabling research use by others, but IP considerations may constrain openness. Researchers must consult IP offices before openly sharing potentially commercialisable work.",
+      "disciplines": [
+        {
+          "name": "Open Research and Open Innovation",
+          "examples": "DRIVE (Digital Research Innovation Virtual Environments) at Great Ormond Street Hospital invites academics and industry to work on shared datasets, sharing methodologies and results to speed up innovation and cross-fertilise ideas.",
+          "resources": [
+            {
+              "title": "JRC report on IPRs, technology transfer and open science, “there are no incompatibilities between IPRs and Open Science",
+              "link": "https://publications.jrc.ec.europa.eu/repository/bitstream/JRC106998/kj1a28661enn.pdf",
+              "category": "General"
+            },
+            {
+              "title": "The OSPP also calls for “the right balance between Open Science, the potential to maximize the use and re-use of research data and outputs, IPR, and private companies’ competitiveness” to be promoted, stating that it must become a central feature of a shared research knowledge system",
+              "link": "https://ec.europa.eu/research/openscience/pdf/ec_rtd_ospp-final-report.pdf",
+              "category": "General"
+            },
+            {
+              "title": "EARTO Paper: Towards a Balanced Approach Between IPRs and Open Science Policy",
+              "link": "https://www.earto.eu/wp-content/uploads/EARTO-Paper-Towards-a-Balanced-Approach-Between-IPRs-and-Open-Science-Policy-Final.pdf",
+              "category": "General"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "number": 11,
+      "name": "Open Research and Community Engagement",
+      "summary": "DUMMY: Co-production approaches involve stakeholders in research design and delivery but can create constraints on open sharing, particularly around sensitive or confidential topics. Clear partner agreements and adapted preregistration approaches are recommended.",
+      "disciplines": [
+        {
+          "name": "Open Research and Community Engagement",
+          "examples": "In Kokonoe Town, Japan, local stakeholders used open data collection tools for invasive plant geospatial data, enabling collaborative management plans. CECAN at University of Surrey co-produces research with government partners, balancing openness with NDAs.",
+          "resources": [
+            {
+              "title": "ORION (Open Responsible research and Innovation to further Outstanding Knowledge) include co-creation projects as part of their four-year project, as part of their aim to widen participation and collaboration in research",
+              "link": "https://www.orion-openscience.eu/activities/co-creation",
+              "category": "General"
+            },
+            {
+              "title": "UKRN primer on community engagement",
+              "link": "https://osf.io/preprints/osf/8jgxt",
+              "category": "General"
+            },
+            {
+              "title": "ORION menu of co-creation methods",
+              "link": "https://www.orion-openscience.eu/public/2018-05/D3.1%20Menu%20of%20Creation%20Tools.pdf",
+              "category": "General"
+            },
+            {
+              "title": "Oliver, K., Kothari, A",
+              "link": "https://doi.org/10.1186/s12961-019-0432-3",
+              "category": "General"
+            },
+            {
+              "title": "Phan, J",
+              "link": "https://doi.org/10.1111/josi.70035",
+              "category": "General"
+            },
+            {
+              "title": "Kondo Y, Miyata A, Ikeuchi U et al",
+              "link": "https://doi.org/10.1016/J.COSUST.2019.07.001",
+              "category": "General"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
