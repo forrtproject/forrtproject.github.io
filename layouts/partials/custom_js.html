@@ -2,6 +2,7 @@
 
 {{/* Clusters page: load after DOM; defer runs before DOMContentLoaded so onReady still fires */}}
 {{ $isClustersPage := and .File (strings.HasPrefix .File.Path "clusters/") }}
-{{ if $isClustersPage }}
+{{ $isDisciplinesPage := and .File (strings.HasPrefix .File.Path "disciplines/") }}
+{{ if or $isClustersPage $isDisciplinesPage }}
 <script src="{{ "js/clusters-page.js" | relURL }}" defer></script>
 {{ end }}

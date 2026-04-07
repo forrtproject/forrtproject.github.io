@@ -167,6 +167,12 @@
     parent = "nexus"
 
   [[main]]
+    name = "Disciplines"
+    url = "/disciplines"
+    weight = 34.5
+    parent = "nexus"
+
+  [[main]]
     name = "Curated Resources"
     url = "/resources"
     weight = 35

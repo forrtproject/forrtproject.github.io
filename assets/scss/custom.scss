@@ -1899,3 +1899,25 @@ h1.clusters-site-heading.clusters-hub-page__title {
     grid-template-columns: 1fr;
   }
 }
+
+/* -------------------------------------------------- */
+/* Disciplines page styles                            */
+/* -------------------------------------------------- */
+.disciplines-category-badge {
+  font-size: 0.7rem;
+  font-weight: 600;
+  padding: 0.15em 0.5em;
+  border-radius: 3px;
+  margin-right: 0.4em;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+
+.disciplines-resource-item {
+  margin-bottom: 0.35rem;
+  line-height: 1.5;
+}
+
+.disciplines-resource-item a {
+  word-break: break-word;
+}
