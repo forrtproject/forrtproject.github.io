@@ -41,7 +41,7 @@ classtitle = "text-center"
 
 [design.spacing]
   # Customize the section spacing. Order is top, right, bottom, left.
-  padding = ["60px", "0", "60px", "0"]
+  padding = ["10px", "0", "30px", "0"]
 
 
 [advanced]
@@ -54,8 +54,6 @@ classtitle = "text-center"
 +++
 
 ---
-
-<br>
 
 In a nutshell, FORRT is a ***F***ramework for ***O***pen and ***R***eproducible ***R***esearch ***T***raining which is advancing research transparency, reproducibility, rigor, and ethics through pedagogical reform and meta-scientific research. 
 
