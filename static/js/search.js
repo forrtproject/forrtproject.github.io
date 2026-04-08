@@ -7,10 +7,20 @@ var searchFn = function () {
         "of", "at", "by", "for", "with", "to", "then", "no", "not",
         "so", "too", "can", "and", "but"];
     var normalizer = document.createElement("textarea");
+    // Content normalize: "pre-registration" → " pre registration preregistration "
     var normalize = function (input) {
         normalizer.innerHTML = input;
         var inputDecoded = normalizer.value;
-        return " " + inputDecoded.trim().toLowerCase().replace(/[^0-9a-z ]/gi, " ").replace(/\s+/g, " ") + " ";
+        var text = inputDecoded.trim().toLowerCase();
+        var withSpaces = text.replace(/-/g, " ");
+        var joined = (text.match(/\w+-[\w-]+/g) || []).map(function (w) { return w.replace(/-/g, ""); }).join(" ");
+        return " " + (withSpaces + " " + joined).replace(/[^0-9a-z ]/gi, " ").replace(/\s+/g, " ") + " ";
+    }
+    // Query normalize: strip hyphens so "pre-registration" → " preregistration "
+    var normalizeQuery = function (input) {
+        normalizer.innerHTML = input;
+        var inputDecoded = normalizer.value;
+        return " " + inputDecoded.trim().toLowerCase().replace(/-/g, "").replace(/[^0-9a-z ]/gi, " ").replace(/\s+/g, " ") + " ";
     }
     var limit = 500;
     var minChars = 2;
@@ -94,7 +104,7 @@ var searchFn = function () {
         if (searching) {
             return;
         }
-        var term = normalize($("#searchBox").val()).trim();
+        var term = normalizeQuery($("#searchBox").val()).trim();
         if (term === lastTerm) {
             return;
         }
