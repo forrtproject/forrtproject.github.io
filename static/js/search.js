@@ -12,7 +12,7 @@ var searchFn = function () {
         var inputDecoded = normalizer.value;
         return " " + inputDecoded.trim().toLowerCase().replace(/[^0-9a-z ]/gi, " ").replace(/\s+/g, " ") + " ";
     }
-    var limit = 30;
+    var limit = 500;
     var minChars = 2;
     var searching = false;
     var render = function (results) {
@@ -107,9 +107,10 @@ var searchFn = function () {
                 }
                 var newTerm = str.trim();
                 if (newTerm.length >= minChars && stopwords.indexOf(newTerm) < 0) {
+                    var isPrefix = (j === terms.length - 1);
                     termsTree.push({
                         weight: weight,
-                        term: " " + str.trim() + " "
+                        term: " " + str.trim() + (isPrefix ? "" : " ")
                     });
                 }
             }
