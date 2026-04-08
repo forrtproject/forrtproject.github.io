@@ -663,7 +663,7 @@
             let filterMatch = projectFilter ? $this.is(projectFilter) : true;
             if (!filterMatch) return false;
             if (!projectSearchTerms) return true;
-            let text = $this.text();
+            let text = $this.text().replace(/-/g, '');
             return projectSearchTerms.every(function (re) { return re.test(text); });
           }
         });
@@ -680,7 +680,7 @@
               // Split on hyphens/spaces, require all words (AND logic, prefix matching)
               let words = val.replace(/-/g, ' ').split(/\s+/).filter(function (w) { return w.length >= 2; });
               projectSearchTerms = words.length ? words.map(function (w) {
-                return new RegExp('\\b' + w.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'i');
+                return new RegExp(w.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'i');
               }) : null;
             } else {
               projectSearchTerms = null;
