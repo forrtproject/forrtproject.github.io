@@ -41,10 +41,22 @@ var searchFn = function () {
         });
         return weightResult;
     };
-    var search = function (terms) {
+    var search = function (terms, requiredWords) {
         var results = [];
         searchHost.index.forEach(function (item) {
             if (item.tags) {
+                // AND logic: all query words must appear somewhere in the item
+                var allText = item.title + item.subtitle + item.description + item.content;
+                item.tags.forEach(function (tag) { allText += tag; });
+                var allMatch = true;
+                for (var w = 0; w < requiredWords.length; w++) {
+                    if (!~allText.indexOf(requiredWords[w])) {
+                        allMatch = false;
+                        break;
+                    }
+                }
+                if (!allMatch) return;
+
                 var weight_1 = 0;
                 terms.forEach(function (term) {
                     if (item.title.startsWith(term.term)) {
@@ -115,7 +127,15 @@ var searchFn = function () {
                 }
             }
         }
-        search(termsTree);
+        // Build required words for AND logic (each query word must appear)
+        var requiredWords = [];
+        for (var r = 0; r < terms.length; r++) {
+            if (terms[r].length >= minChars && stopwords.indexOf(terms[r]) < 0) {
+                var isLast = (r === terms.length - 1);
+                requiredWords.push(" " + terms[r] + (isLast ? "" : " "));
+            }
+        }
+        search(termsTree, requiredWords);
         searching = false;
         var endSearch = new Date();
         $("#results").append("<p><small>Search took " + (endSearch - startSearch) + "ms.</small></p>");
