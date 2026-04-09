@@ -16,7 +16,6 @@ on:
   repository_dispatch:
     types: [data-update]
 
-# Opt into Node.js 24 runtime for JavaScript actions.
 env:
   FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: "true"
 

@@ -32,7 +32,6 @@ on:
         type: boolean
         default: false
 
-# Opt into Node.js 24 runtime for JavaScript actions ahead of the June 2026 switch.
 env:
   FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: "true"
 
@@ -371,20 +370,10 @@ jobs:
 
 
       - name: Setup Hugo
-        run: |
-          set -euo pipefail
-          HUGO_VERSION="${HUGO_VERSION}"
-          if [ "${HUGO_EXTENDED}" = "true" ]; then
-            ARCHIVE="hugo_extended_${HUGO_VERSION}_linux-amd64.tar.gz"
-          else
-            ARCHIVE="hugo_${HUGO_VERSION}_linux-amd64.tar.gz"
-          fi
-          URL="https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/${ARCHIVE}"
-          echo "Downloading Hugo from: $URL"
-          curl -fsSL "$URL" -o /tmp/hugo.tgz
-          tar -xzf /tmp/hugo.tgz -C /tmp
-          sudo mv /tmp/hugo /usr/local/bin/hugo
-          hugo version
+        uses: peaceiris/actions-hugo@75d2e84710de30f6ff7268e08f310b60ef14033f
+        with:
+          hugo-version: ${{ env.HUGO_VERSION }}
+          extended: ${{ env.HUGO_EXTENDED }}
 
       - name: Build site
         run: |
@@ -477,31 +466,13 @@ jobs:
 
       - name: Deploy - GitHub Pages
         if: needs.build.result == 'success'
-        run: |
-          set -euo pipefail
-
-          echo "Checking out external staging repository..."
-          mkdir -p /tmp/staging-repo
-          git clone --depth 1 --branch staging "https://x-access-token:${STAGING_TOKEN}@github.com/forrtproject/webpage-staging.git" /tmp/staging-repo
-
-          echo "Syncing built site into staging branch..."
-          rsync -a --delete "${{ github.repository }}/forrt-website/" /tmp/staging-repo/
-          echo "staging.forrt.org" > /tmp/staging-repo/CNAME
-
-          pushd /tmp/staging-repo
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-          git config user.name "github-actions[bot]"
-
-          if git status --porcelain | grep -q .; then
-            git add -A
-            git commit -m "Deploy staging site (run ${{ github.run_id }})"
-            git push origin staging
-          else
-            echo "No changes to deploy."
-          fi
-          popd
-        env:
-          STAGING_TOKEN: ${{ secrets.STAGING_GITHUB_TOKEN }}
+        uses: peaceiris/actions-gh-pages@4f9cc6602d3f66b9c108549d475ec49e8ef4d45e
+        with:
+          personal_token: ${{ secrets.STAGING_GITHUB_TOKEN }}
+          publish_dir: ${{ github.repository }}/forrt-website
+          external_repository: forrtproject/webpage-staging
+          publish_branch: staging
+          cname: staging.forrt.org
 
       - name: Comment on PRs
         if: needs.aggregate-prs.outputs.attempted-prs != ''
