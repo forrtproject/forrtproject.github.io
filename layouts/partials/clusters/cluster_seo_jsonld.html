@@ -24,4 +24,4 @@
 
 {{ $graph := slice $webpage $breadcrumb }}
 {{ $root := dict "@context" "https://schema.org" "@graph" $graph }}
-<script type="application/ld+json">{{ $root | jsonify | safeHTML }}</script>
+<script type="application/ld+json">{{ $root | jsonify | safeJS }}</script>

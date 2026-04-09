@@ -27,4 +27,4 @@
 {{ $itemlist := dict "@type" "ItemList" "@id" (printf "%s#itemlist" .Permalink) "name" "FORRT Open Science Clusters" "description" "Full taxonomy of open and reproducible science clusters with sub-clusters and teaching references." "numberOfItems" (len $data.clusters) "itemListElement" $elements }}
 {{ $graph := slice $webpage $itemlist }}
 {{ $root := dict "@context" "https://schema.org" "@graph" $graph }}
-<script type="application/ld+json">{{ $root | jsonify | safeHTML }}</script>
+<script type="application/ld+json">{{ $root | jsonify | safeJS }}</script>
