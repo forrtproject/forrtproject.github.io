@@ -4,9 +4,12 @@
 
 {{ $summary := .Params.summary | default .Description | default "" }}
 {{ if eq $summary "" }}
-  {{ with .Summary }}{{ $summary = plainify . | truncate 300 "…" }}{{ end }}
+  {{ with .Summary }}{{ $summary = . }}{{ end }}
 {{ end }}
 {{ if eq $summary "" }}{{ $summary = "FORRT open science clusters taxonomy for educators and researchers." }}{{ end }}
+{{ $summary = plainify $summary | truncate 300 "…" }}
+{{/* Defense-in-depth: prevent literal </script from terminating the tag */}}
+{{ $summary = replaceRE "(?i)</script" "<\\/script" $summary }}
 
 {{ $elements := slice }}
 {{ range $i, $c := $data.clusters }}

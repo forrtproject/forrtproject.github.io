@@ -5,9 +5,12 @@
 
 {{ $summary := $p.Params.summary | default $p.Description | default "" }}
 {{ if eq $summary "" }}
-  {{ with $c.description }}{{ $summary = plainify . | truncate 300 "…" }}{{ end }}
+  {{ with $c.description }}{{ $summary = . }}{{ end }}
 {{ end }}
 {{ if eq $summary "" }}{{ $summary = printf "FORRT Cluster %d: %s." (int $c.number) $c.name }}{{ end }}
+{{ $summary = plainify $summary | truncate 300 "…" }}
+{{/* Defense-in-depth: prevent literal </script from terminating the tag */}}
+{{ $summary = replaceRE "(?i)</script" "<\\/script" $summary }}
 
 {{ $hubURL := "clusters/" | absURL }}
 
