@@ -31,5 +31,7 @@
         "Literate Programming",
         "Reproducibility",
         "Version Control"
-    ]
+    ],
+    "forrt_clusters_new": "Transparency and reproducibility in computation and analysis, Ways of Working",
+    "forrt_sub_clusters": "Computational reproducibility, Research with students (under- and graduate)"
 }

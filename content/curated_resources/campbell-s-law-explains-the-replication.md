@@ -35,5 +35,7 @@
         "HARKing",
         "PRARKing",
         "Preregistration Badges"
-    ]
+    ],
+    "forrt_clusters_new": "Replication Crisis and Credibility Revolution, Pre-analysis Planning",
+    "forrt_sub_clusters": "Preregistration, Ongoing debates (e.g., incentives for and against open science practices)"
 }

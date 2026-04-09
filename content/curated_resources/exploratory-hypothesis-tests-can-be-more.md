@@ -49,5 +49,7 @@
         "Prediction",
         "Preregistration",
         "Hypothesis Testing"
-    ]
+    ],
+    "forrt_clusters_new": "Conceptual and Statistical Knowledge",
+    "forrt_sub_clusters": "Exploratory and confirmatory analyses"
 }

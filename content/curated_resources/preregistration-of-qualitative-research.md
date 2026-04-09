@@ -33,5 +33,7 @@
         "Qualitative Research",
         "Research",
         "Research Best Practices"
-    ]
+    ],
+    "forrt_clusters_new": "Qualitative Research",
+    "forrt_sub_clusters": "Preregistration and Registered reports"
 }

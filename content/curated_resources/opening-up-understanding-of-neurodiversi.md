@@ -46,5 +46,7 @@
         "Neurodiversity; Power Imbalance; Diversity",
         "Equity",
         "and Inclusion (DEI); Non-WEIRD Research"
-    ]
+    ],
+    "forrt_clusters_new": "Ways of Working, Academic Structures and Institutions",
+    "forrt_sub_clusters": "Neurodiversity, Participatory research"
 }

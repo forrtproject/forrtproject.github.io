@@ -39,5 +39,7 @@
     "tags": [
         "Responsible Research",
         "Ethics"
-    ]
+    ],
+    "forrt_clusters_new": "Replication Crisis and Credibility Revolution",
+    "forrt_sub_clusters": "Ethical considerations for improved practices"
 }

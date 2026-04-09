@@ -34,5 +34,7 @@
         "Research Best Practices",
         "Research Collaboration",
         "Research Replication"
-    ]
+    ],
+    "forrt_clusters_new": "Ways of Working, Replication Crisis and Credibility Revolution",
+    "forrt_sub_clusters": "Collection of large scale replications, Big team science"
 }

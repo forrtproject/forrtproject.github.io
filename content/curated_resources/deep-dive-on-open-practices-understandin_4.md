@@ -32,5 +32,7 @@
         "Open Science",
         "Replication in Education Research",
         "Unconference 2022"
-    ]
+    ],
+    "forrt_clusters_new": "Replication and meta-research",
+    "forrt_sub_clusters": "Conducting replication studies; challenges, limitations, and comparisons with the original study, Purposes of replication attempts - what is a \u2018failed\u2019 replication?"
 }

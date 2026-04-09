@@ -40,5 +40,7 @@
         "Consulting",
         "Applied Research",
         "Evidence-based Practices"
-    ]
+    ],
+    "forrt_clusters_new": "Pre-analysis Planning",
+    "forrt_sub_clusters": "Preregistration"
 }

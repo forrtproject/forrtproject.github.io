@@ -42,5 +42,7 @@
         "Exploratory Research",
         "Hypothesis Testing",
         "Replication Crisis"
-    ]
+    ],
+    "forrt_clusters_new": "Academic Structures and Institutions",
+    "forrt_sub_clusters": "Structures and incentives in academia"
 }

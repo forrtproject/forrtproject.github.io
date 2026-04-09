@@ -35,5 +35,7 @@
     "tags": [
         "Open Science",
         "Levels"
-    ]
+    ],
+    "forrt_clusters_new": "Replication Crisis and Credibility Revolution",
+    "forrt_sub_clusters": "Scientific Misconduct: Fabrication and Falsification, History of the replication crisis & credibility revolution"
 }

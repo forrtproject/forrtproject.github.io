@@ -46,5 +46,7 @@
         "Open Peer Review",
         "Early Career Researcher",
         "Academic Life"
-    ]
+    ],
+    "forrt_clusters_new": "Academic Structures and Institutions",
+    "forrt_sub_clusters": "Research assessment, proposals, and reforms"
 }

@@ -36,5 +36,7 @@
         "Research Assessment",
         "Research Errors",
         "Scientists"
-    ]
+    ],
+    "forrt_clusters_new": "Research Integrity, Replication Crisis and Credibility Revolution",
+    "forrt_sub_clusters": "Ongoing debates (e.g., incentives for and against open science practices), Research Culture, Incentives, and Institutional Responsibilities"
 }

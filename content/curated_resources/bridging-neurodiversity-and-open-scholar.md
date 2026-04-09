@@ -44,5 +44,7 @@
     ],
     "tags": [
         "Neurodiversity; Inclusivity in Academia; Open Scholarship; Higher Education; Accessibility\nIntersectionality; Systematic Barriers"
-    ]
+    ],
+    "forrt_clusters_new": "Academic Structures and Institutions",
+    "forrt_sub_clusters": "Neurodiversity, Inclusion, Accessibility"
 }

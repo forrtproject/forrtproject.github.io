@@ -37,5 +37,7 @@
         "Embedded Pragmatic Clinical Trials",
         "Open Science",
         "Dementia Care"
-    ]
+    ],
+    "forrt_clusters_new": "Academic Structures and Institutions",
+    "forrt_sub_clusters": "Socially Responsible Research"
 }

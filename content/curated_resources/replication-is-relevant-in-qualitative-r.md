@@ -46,5 +46,7 @@
     "tags": [
         "Replication",
         "Qualitative Research"
-    ]
+    ],
+    "forrt_clusters_new": "Qualitative Research, Replication Crisis and Credibility Revolution, Transparency and reproducibility in computation and analysis",
+    "forrt_sub_clusters": "Computational reproducibility, Replication research, Ongoing debates (e.g., incentives for and against open science practices)"
 }

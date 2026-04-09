@@ -35,5 +35,7 @@
         "Reproducibility Crisis and Credibility Revolution",
         "Open Science",
         "Conceptual and statistical knowledge"
-    ]
+    ],
+    "forrt_clusters_new": "Conceptual and Statistical Knowledge",
+    "forrt_sub_clusters": "Philosophy of science"
 }

@@ -42,5 +42,7 @@
         "Malahanobis Distance",
         "Median Absolute Deviation",
         "Minimum Covariance Determinant"
-    ]
+    ],
+    "forrt_clusters_new": "Pre-analysis Planning",
+    "forrt_sub_clusters": "Study Design, Understanding the types of preregistration and writing one."
 }

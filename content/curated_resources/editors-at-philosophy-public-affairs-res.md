@@ -34,5 +34,7 @@
         "Journal",
         "Open Access",
         "Resignation"
-    ]
+    ],
+    "forrt_clusters_new": "Academic Structures and Institutions",
+    "forrt_sub_clusters": "Structures and incentives in academia, Research assessment, proposals, and reforms"
 }

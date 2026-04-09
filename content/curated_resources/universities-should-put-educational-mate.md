@@ -33,5 +33,7 @@
         "Plan E",
         "Open Educational Resources",
         "Open Educational Practices"
-    ]
+    ],
+    "forrt_clusters_new": "FAIR data and materials",
+    "forrt_sub_clusters": "FAIR principles applied to Education & Training"
 }

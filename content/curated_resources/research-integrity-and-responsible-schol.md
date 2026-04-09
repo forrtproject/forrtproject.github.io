@@ -29,5 +29,7 @@
         "ETHICS REVIEW",
         "DATA MANAGEMENT",
         "RESEARCH INTEGRITY"
-    ]
+    ],
+    "forrt_clusters_new": "Academic Structures and Institutions",
+    "forrt_sub_clusters": "Socially Responsible Research"
 }

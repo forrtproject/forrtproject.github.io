@@ -32,5 +32,7 @@
     ],
     "tags": [
         ""
-    ]
+    ],
+    "forrt_clusters_new": "Publication Sharing, FAIR data and materials",
+    "forrt_sub_clusters": "Different shades of open access, Reasons to share data and materials, Research data management, Repositories"
 }

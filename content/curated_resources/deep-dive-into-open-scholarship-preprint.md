@@ -32,5 +32,7 @@
         "Open Science",
         "Preprints",
         "Scholarly Publishing"
-    ]
+    ],
+    "forrt_clusters_new": "Publication Sharing",
+    "forrt_sub_clusters": "Why open access?, Preprints and postprints, Different shades of open access"
 }

@@ -39,5 +39,7 @@
         "Research Data Management Tools",
         "Researchers",
         "Web Scraping"
-    ]
+    ],
+    "forrt_clusters_new": "FAIR data and materials",
+    "forrt_sub_clusters": "Research data management"
 }

@@ -42,5 +42,7 @@
         "Qualitative",
         "Research",
         "Transparency"
-    ]
+    ],
+    "forrt_clusters_new": "Ways of Working, Qualitative Research",
+    "forrt_sub_clusters": "Qualitative research, Qualitative approaches to open science"
 }

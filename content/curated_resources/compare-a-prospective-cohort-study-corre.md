@@ -44,5 +44,7 @@
         "Reporting",
         "Reporting Guidelines",
         "Reproducibility"
-    ]
+    ],
+    "forrt_clusters_new": "Pre-analysis Planning, Replication and meta-research",
+    "forrt_sub_clusters": "Meta-research, Preregistration"
 }

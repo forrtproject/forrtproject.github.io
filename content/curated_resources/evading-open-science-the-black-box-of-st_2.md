@@ -38,5 +38,7 @@
         "Data Collection",
         "Supervision",
         "Students"
-    ]
+    ],
+    "forrt_clusters_new": "Pre-analysis Planning, Replication Crisis and Credibility Revolution",
+    "forrt_sub_clusters": "Questionable research practices & their prevalence, Registered reports"
 }

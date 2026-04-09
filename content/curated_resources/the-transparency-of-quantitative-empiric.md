@@ -44,5 +44,7 @@
         "Transparency",
         "Credibility",
         "Empirical Legal Research"
-    ]
+    ],
+    "forrt_clusters_new": "Pre-analysis Planning, FAIR data and materials",
+    "forrt_sub_clusters": "Preregistration, Reasons to share data and materials"
 }

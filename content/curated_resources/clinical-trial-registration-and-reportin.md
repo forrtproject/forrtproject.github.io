@@ -46,5 +46,7 @@
     "tags": [
         "Publishing",
         "Reporting"
-    ]
+    ],
+    "forrt_clusters_new": "Pre-analysis Planning, Research Integrity",
+    "forrt_sub_clusters": "Preregistration, Research Integrity, Social Responsibility, and Equity"
 }

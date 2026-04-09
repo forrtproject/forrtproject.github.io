@@ -40,5 +40,7 @@
         "Statistical Data",
         "Statistical Distributions",
         "Statistics"
-    ]
+    ],
+    "forrt_clusters_new": "Replication and meta-research, Conceptual and Statistical Knowledge",
+    "forrt_sub_clusters": "Effect sizes, statistical power, simulations, & confidence intervals., Meta-research"
 }

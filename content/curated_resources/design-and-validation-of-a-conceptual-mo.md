@@ -38,5 +38,7 @@
         "Openness in Science",
         "Openness in Research",
         "Validation"
-    ]
+    ],
+    "forrt_clusters_new": "Transparency and reproducibility in computation and analysis",
+    "forrt_sub_clusters": "Analysis and reporting in qualitative research"
 }

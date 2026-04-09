@@ -43,5 +43,7 @@
         "Reporting Checklists",
         "Scoring Tools",
         "Literature Review"
-    ]
+    ],
+    "forrt_clusters_new": "Transparency and reproducibility in computation and analysis",
+    "forrt_sub_clusters": "Tools to check yourself and others, Analysis and reporting in qualitative research"
 }

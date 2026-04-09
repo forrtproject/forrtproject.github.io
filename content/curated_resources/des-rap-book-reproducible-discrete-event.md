@@ -44,5 +44,7 @@
         "simulation",
         "reproducible",
         "book"
-    ]
+    ],
+    "forrt_clusters_new": "Transparency and reproducibility in computation and analysis",
+    "forrt_sub_clusters": "Computational reproducibility"
 }

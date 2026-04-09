@@ -51,5 +51,7 @@
         "Reviewer Guidelines",
         "Reflexivity",
         "Transparency"
-    ]
+    ],
+    "forrt_clusters_new": "Qualitative Research",
+    "forrt_sub_clusters": "Reflexivity and positionality"
 }

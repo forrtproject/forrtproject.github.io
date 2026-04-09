@@ -31,5 +31,7 @@
     "tags": [
         "Policy",
         "Reproducibility"
-    ]
+    ],
+    "forrt_clusters_new": "Academic Structures and Institutions, Replication Crisis and Credibility Revolution",
+    "forrt_sub_clusters": "Ongoing debates (e.g., incentives for and against open science practices), Structures and incentives in academia"
 }

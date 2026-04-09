@@ -41,5 +41,7 @@
         "Reproducibility",
         "Science Policy",
         "Scientific Publishing"
-    ]
+    ],
+    "forrt_clusters_new": "Academic Structures and Institutions, FAIR data and materials",
+    "forrt_sub_clusters": "Reasons to share data and materials, Research assessment, proposals, and reforms"
 }

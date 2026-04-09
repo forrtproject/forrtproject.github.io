@@ -43,5 +43,7 @@
         "Reporting Completeness",
         "Transparency",
         "ROBIS Assessment"
-    ]
+    ],
+    "forrt_clusters_new": "Replication and meta-research",
+    "forrt_sub_clusters": "Meta-analyses"
 }

@@ -40,5 +40,7 @@
         "Microarrays",
         "Open Data",
         "Scientific Publishing"
-    ]
+    ],
+    "forrt_clusters_new": "FAIR data and materials",
+    "forrt_sub_clusters": "Reasons to share data and materials"
 }

@@ -29,5 +29,7 @@
     ],
     "tags": [
         "Intervention Research; Bias; Evaluation; Statistical Literacy"
-    ]
+    ],
+    "forrt_clusters_new": "Conceptual and Statistical Knowledge",
+    "forrt_sub_clusters": "Research design, sampling methods, & its implications for inferences., The logic of null hypothesis testing, p-values, Type I and II errors (and when and why they might happen)."
 }

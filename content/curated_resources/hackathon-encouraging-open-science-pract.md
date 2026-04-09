@@ -33,5 +33,7 @@
         "Open Science",
         "Qualitative Research",
         "Research"
-    ]
+    ],
+    "forrt_clusters_new": "Qualitative Research",
+    "forrt_sub_clusters": "Qualitative approaches to open science"
 }

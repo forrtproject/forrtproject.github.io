@@ -33,5 +33,7 @@
         "Diversity",
         "Inclusion",
         "Education"
-    ]
+    ],
+    "forrt_clusters_new": "Academic Structures and Institutions",
+    "forrt_sub_clusters": "Equity, Inclusion"
 }

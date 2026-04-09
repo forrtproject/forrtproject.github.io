@@ -34,5 +34,7 @@
         "Research Administration",
         "Research Data Management",
         "Researchers"
-    ]
+    ],
+    "forrt_clusters_new": "Research Integrity",
+    "forrt_sub_clusters": "Education and Training in Research Integrity"
 }

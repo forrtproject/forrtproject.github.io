@@ -62,5 +62,7 @@
         "Educational Technology",
         "Open Science",
         "Open Science Practices"
-    ]
+    ],
+    "forrt_clusters_new": "Replication Crisis and Credibility Revolution, Ways of Working",
+    "forrt_sub_clusters": "Public and Private Partnerships, Questionable research practices & their prevalence"
 }

@@ -38,5 +38,7 @@
         "Pre-registration",
         "Replication",
         "Reproducibility"
-    ]
+    ],
+    "forrt_clusters_new": "Pre-analysis Planning, FAIR data and materials",
+    "forrt_sub_clusters": "Understanding the types of preregistration and writing one., Reasons to share data and materials"
 }

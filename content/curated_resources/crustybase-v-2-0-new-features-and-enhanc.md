@@ -35,5 +35,7 @@
         "Online Resource",
         "RNA-Seq",
         "Transcriptome"
-    ]
+    ],
+    "forrt_clusters_new": "FAIR data and materials",
+    "forrt_sub_clusters": "Repositories"
 }

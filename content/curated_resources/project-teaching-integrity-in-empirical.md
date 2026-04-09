@@ -35,5 +35,7 @@
         "Open Scholarship Guidelines",
         "Researchers",
         "Workflow Tools"
-    ]
+    ],
+    "forrt_clusters_new": "Research Integrity, Replication Crisis and Credibility Revolution",
+    "forrt_sub_clusters": "Education and Training in Research Integrity, Proposed science improvement initiatives on statistics, measurement, teaching, data sharing, code sharing, pre-registration, & replication"
 }

@@ -31,5 +31,7 @@
     "tags": [
         "USA",
         "Data-sharing"
-    ]
+    ],
+    "forrt_clusters_new": "Academic Structures and Institutions, Ways of Working",
+    "forrt_sub_clusters": "Public and Private Partnerships, Socially Responsible Research"
 }

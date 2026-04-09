@@ -28,5 +28,7 @@
     ],
     "tags": [
         "Academic Job Market; Higher Education; Academic Labor Conditions; Funding; Transnational"
-    ]
+    ],
+    "forrt_clusters_new": "Academic Structures and Institutions, Ways of Working",
+    "forrt_sub_clusters": "Types of academic, non-academic, & alt-academic positions, Structures and incentives in academia"
 }

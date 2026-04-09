@@ -32,5 +32,7 @@
     "tags": [
         "Reproducibility Crisis and Credibility Revolution",
         "Open Science"
-    ]
+    ],
+    "forrt_clusters_new": "Qualitative Research",
+    "forrt_sub_clusters": "Qualitative approaches to open science"
 }

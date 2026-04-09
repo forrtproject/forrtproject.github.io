@@ -36,5 +36,7 @@
         "Publishing",
         "Open Access",
         "Preprints"
-    ]
+    ],
+    "forrt_clusters_new": "Publication Sharing",
+    "forrt_sub_clusters": "Alternatives to legacy journals"
 }

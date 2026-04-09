@@ -38,5 +38,7 @@
     ],
     "tags": [
         "OSCA Awards 2025"
-    ]
+    ],
+    "forrt_clusters_new": "Academic Structures and Institutions",
+    "forrt_sub_clusters": "Racism in science, Inclusion, Diversity in Academia"
 }

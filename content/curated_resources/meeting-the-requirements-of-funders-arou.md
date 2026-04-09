@@ -38,5 +38,7 @@
         "Reproducibility",
         "Research Data Management Tools",
         "Researchers"
-    ]
+    ],
+    "forrt_clusters_new": "Pre-analysis Planning, Publication Sharing, FAIR data and materials",
+    "forrt_sub_clusters": "Preregistration, Research data management, Why open access?"
 }

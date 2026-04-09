@@ -41,5 +41,7 @@
         "Publishing",
         "Reporting Bias",
         "Reporting Guidelines"
-    ]
+    ],
+    "forrt_clusters_new": "Replication and meta-research, Replication Crisis and Credibility Revolution",
+    "forrt_sub_clusters": "Proposed science improvement initiatives on statistics, measurement, teaching, data sharing, code sharing, pre-registration, & replication, Meta-research"
 }

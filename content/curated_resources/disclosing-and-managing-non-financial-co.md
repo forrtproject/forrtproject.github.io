@@ -48,5 +48,7 @@
         "Ethics",
         "Policy",
         "Journals"
-    ]
+    ],
+    "forrt_clusters_new": "Academic Structures and Institutions",
+    "forrt_sub_clusters": "Objectivity in Research, Research assessment, proposals, and reforms"
 }

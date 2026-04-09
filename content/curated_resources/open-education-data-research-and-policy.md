@@ -30,5 +30,7 @@
     ],
     "tags": [
         "Research; Policy; Evaluation; Open Education Data; Job; Positions"
-    ]
+    ],
+    "forrt_clusters_new": "FAIR data and materials",
+    "forrt_sub_clusters": "Repositories"
 }

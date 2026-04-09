@@ -44,5 +44,7 @@
         "Researchers",
         "RStudio",
         "Version Control"
-    ]
+    ],
+    "forrt_clusters_new": "Transparency and reproducibility in computation and analysis, FAIR data and materials",
+    "forrt_sub_clusters": "Computational reproducibility, Research data management"
 }

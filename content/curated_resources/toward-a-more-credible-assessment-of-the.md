@@ -32,5 +32,7 @@
     "tags": [
         "Meta-scientific Research Design",
         "Meta Analyst"
-    ]
+    ],
+    "forrt_clusters_new": "Replication and meta-research",
+    "forrt_sub_clusters": "Conducting replication studies; challenges, limitations, and comparisons with the original study"
 }

@@ -34,5 +34,7 @@
         "Theory Crisis",
         "Theoretical and Philosophical Psychology",
         "Methodological Pluralism"
-    ]
+    ],
+    "forrt_clusters_new": "Conceptual and Statistical Knowledge, Replication and meta-research",
+    "forrt_sub_clusters": "Direct vs. conceptual replications, Philosophy of science, Questionable measurement practices (QMPs), validity & reliability issues."
 }

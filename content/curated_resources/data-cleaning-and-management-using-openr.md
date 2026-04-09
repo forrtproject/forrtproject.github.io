@@ -36,5 +36,7 @@
         "Open Scholarship Tools and Technologies",
         "Research Data Management Tools",
         "Researchers"
-    ]
+    ],
+    "forrt_clusters_new": "Transparency and reproducibility in computation and analysis, FAIR data and materials",
+    "forrt_sub_clusters": "Research data management, Free and open source software"
 }

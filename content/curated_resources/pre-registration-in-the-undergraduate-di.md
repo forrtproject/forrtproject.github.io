@@ -48,5 +48,7 @@
         "Role",
         "Research Design",
         "Foreign Countries"
-    ]
+    ],
+    "forrt_clusters_new": "Pre-analysis Planning",
+    "forrt_sub_clusters": "Preregistration, Understanding the types of preregistration and writing one."
 }

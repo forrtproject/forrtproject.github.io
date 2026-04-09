@@ -34,5 +34,7 @@
         "Harvard",
         "Cancer Research",
         "Review of Publications"
-    ]
+    ],
+    "forrt_clusters_new": "Replication Crisis and Credibility Revolution",
+    "forrt_sub_clusters": "Scientific Misconduct: Fabrication and Falsification"
 }

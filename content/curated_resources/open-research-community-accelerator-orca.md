@@ -35,5 +35,7 @@
         "Global Challenges",
         "Open Science",
         "Inclusivity"
-    ]
+    ],
+    "forrt_clusters_new": "Academic Structures and Institutions",
+    "forrt_sub_clusters": "Socially Responsible Research"
 }

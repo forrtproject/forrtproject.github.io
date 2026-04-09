@@ -43,5 +43,7 @@
         "Scientific Community",
         "Marginalized Scholars",
         "Inclusion"
-    ]
+    ],
+    "forrt_clusters_new": "Academic Structures and Institutions",
+    "forrt_sub_clusters": "Inclusion, Diversity in Academia"
 }

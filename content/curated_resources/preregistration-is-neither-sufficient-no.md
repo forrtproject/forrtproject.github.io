@@ -49,5 +49,7 @@
         "Reproducibility Crisis",
         "Consumer Research",
         "Critiques"
-    ]
+    ],
+    "forrt_clusters_new": "Replication Crisis and Credibility Revolution",
+    "forrt_sub_clusters": "Ongoing debates (e.g., incentives for and against open science practices)"
 }

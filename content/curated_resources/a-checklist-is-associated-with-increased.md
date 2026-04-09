@@ -48,5 +48,7 @@
         "Research Reporting Guidelines",
         "Scientific Publishing",
         "Systematic Reviews"
-    ]
+    ],
+    "forrt_clusters_new": "Replication Crisis and Credibility Revolution",
+    "forrt_sub_clusters": "Proposed science improvement initiatives on statistics, measurement, teaching, data sharing, code sharing, pre-registration, & replication"
 }

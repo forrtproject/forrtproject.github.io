@@ -37,5 +37,7 @@
         "Publishers",
         "Publishing",
         "Researchers"
-    ]
+    ],
+    "forrt_clusters_new": "Publication Sharing, Academic Structures and Institutions",
+    "forrt_sub_clusters": "Why open access?, Research assessment, proposals, and reforms"
 }

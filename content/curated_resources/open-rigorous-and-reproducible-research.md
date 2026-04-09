@@ -41,5 +41,7 @@
     "tags": [
         "Textbook",
         "Open Textbook"
-    ]
+    ],
+    "forrt_clusters_new": "Transparency and reproducibility in computation and analysis, FAIR data and materials, Replication Crisis and Credibility Revolution",
+    "forrt_sub_clusters": "Computational reproducibility, Research data management, Proposed science improvement initiatives on statistics, measurement, teaching, data sharing, code sharing, pre-registration, & replication"
 }

@@ -195,5 +195,7 @@
         "Research Data Management Tools",
         "Researchers",
         "Shell"
-    ]
+    ],
+    "forrt_clusters_new": "Transparency and reproducibility in computation and analysis",
+    "forrt_sub_clusters": "Computational reproducibility, Research software engineering"
 }

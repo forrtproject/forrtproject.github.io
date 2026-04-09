@@ -39,5 +39,7 @@
         "Observational Research",
         "Clinical Data",
         "Open Science"
-    ]
+    ],
+    "forrt_clusters_new": "Ways of Working",
+    "forrt_sub_clusters": "Big team science"
 }

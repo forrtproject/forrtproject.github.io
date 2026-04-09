@@ -46,5 +46,7 @@
         "Public Access",
         "Data Sharing",
         "Institutional Expenses"
-    ]
+    ],
+    "forrt_clusters_new": "Academic Structures and Institutions, FAIR data and materials",
+    "forrt_sub_clusters": "Structures and incentives in academia, Research data management"
 }

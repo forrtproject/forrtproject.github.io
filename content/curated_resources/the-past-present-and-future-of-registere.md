@@ -43,5 +43,7 @@
     "tags": [
         "Culture",
         "Publishing"
-    ]
+    ],
+    "forrt_clusters_new": "Pre-analysis Planning, Replication and meta-research",
+    "forrt_sub_clusters": "Registered Replication Reports, Registered reports"
 }

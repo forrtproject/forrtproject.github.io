@@ -28,5 +28,7 @@
     "tags": [
         "Aging Science",
         "Research"
-    ]
+    ],
+    "forrt_clusters_new": "Pre-analysis Planning, Qualitative Research",
+    "forrt_sub_clusters": "Preregistration, Secondary data analysis"
 }

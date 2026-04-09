@@ -40,5 +40,7 @@
         "Data",
         "Drugs",
         "Biologics"
-    ]
+    ],
+    "forrt_clusters_new": "Ways of Working",
+    "forrt_sub_clusters": "Public and Private Partnerships"
 }

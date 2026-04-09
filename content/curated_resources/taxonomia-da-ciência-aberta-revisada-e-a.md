@@ -46,5 +46,7 @@
         "Comunica\u00e7\u00e3o Cient\u00edfica",
         "Representa\u00e7\u00e3o do Conhecimento",
         "Unesco"
-    ]
+    ],
+    "forrt_clusters_new": "Replication Crisis and Credibility Revolution",
+    "forrt_sub_clusters": "Proposed science improvement initiatives on statistics, measurement, teaching, data sharing, code sharing, pre-registration, & replication"
 }

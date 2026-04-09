@@ -36,5 +36,7 @@
         "Metascience",
         "Experiment",
         "Statistical Theory"
-    ]
+    ],
+    "forrt_clusters_new": "Replication and meta-research",
+    "forrt_sub_clusters": "Meta-research"
 }

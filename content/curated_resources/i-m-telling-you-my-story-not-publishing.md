@@ -35,5 +35,7 @@
         "Older Adults",
         "Qualitative Methods",
         "Sexuality"
-    ]
+    ],
+    "forrt_clusters_new": "FAIR data and materials, Ways of Working",
+    "forrt_sub_clusters": "Reasons not to share: Privacy and security considerations, Qualitative research"
 }

@@ -31,5 +31,7 @@
     "tags": [
         "Publication Bias",
         "Publishing"
-    ]
+    ],
+    "forrt_clusters_new": "Replication and meta-research, Pre-analysis Planning",
+    "forrt_sub_clusters": "Registered reports, Meta-research"
 }

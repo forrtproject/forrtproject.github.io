@@ -37,5 +37,7 @@
     ],
     "tags": [
         "Glossary; Guide; Open Scholarship; Open Scholarship Terms; Terminology; Teaching"
-    ]
+    ],
+    "forrt_clusters_new": "FAIR data and materials",
+    "forrt_sub_clusters": "FAIR principles applied to Education & Training"
 }

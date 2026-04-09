@@ -33,5 +33,7 @@
         "Open Science",
         "Environmental Public Health",
         "Environmental Policy"
-    ]
+    ],
+    "forrt_clusters_new": "FAIR data and materials, Replication Crisis and Credibility Revolution",
+    "forrt_sub_clusters": "Reasons not to share: Privacy and security considerations, Ongoing debates (e.g., incentives for and against open science practices)"
 }

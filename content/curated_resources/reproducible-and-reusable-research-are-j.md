@@ -35,5 +35,7 @@
         "Data",
         "Inside Your Classroom",
         "Reproducibility"
-    ]
+    ],
+    "forrt_clusters_new": "Replication and meta-research, FAIR data and materials",
+    "forrt_sub_clusters": "Reasons to share data and materials, Meta-research"
 }

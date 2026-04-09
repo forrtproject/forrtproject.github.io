@@ -35,5 +35,7 @@
         "Flash Mob",
         "Patient-Centered",
         "Scoping Review"
-    ]
+    ],
+    "forrt_clusters_new": "Ways of Working",
+    "forrt_sub_clusters": "Participatory research"
 }

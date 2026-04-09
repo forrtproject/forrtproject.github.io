@@ -34,5 +34,7 @@
         "Writing Fraud",
         "ChatGPT",
         "Artificial Intelligence"
-    ]
+    ],
+    "forrt_clusters_new": "Replication Crisis and Credibility Revolution",
+    "forrt_sub_clusters": "Scientific Misconduct: Fabrication and Falsification"
 }

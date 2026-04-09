@@ -34,5 +34,7 @@
         "Preregistration",
         "Replication",
         "Research Quality"
-    ]
+    ],
+    "forrt_clusters_new": "Academic Structures and Institutions",
+    "forrt_sub_clusters": "Citation Politics & Practices, Structures and incentives in academia"
 }

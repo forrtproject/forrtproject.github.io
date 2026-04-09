@@ -35,5 +35,7 @@
     "tags": [
         "Reproducibility Crisis and Credibility Revolution",
         "Open Science"
-    ]
+    ],
+    "forrt_clusters_new": "Conceptual and Statistical Knowledge, Replication Crisis and Credibility Revolution",
+    "forrt_sub_clusters": "Effect sizes, statistical power, simulations, & confidence intervals., Questionable research practices & their prevalence"
 }

@@ -30,5 +30,7 @@
     ],
     "tags": [
         ""
-    ]
+    ],
+    "forrt_clusters_new": "Conceptual and Statistical Knowledge",
+    "forrt_sub_clusters": "Effect sizes, statistical power, simulations, & confidence intervals., The logic of null hypothesis testing, p-values, Type I and II errors (and when and why they might happen)."
 }

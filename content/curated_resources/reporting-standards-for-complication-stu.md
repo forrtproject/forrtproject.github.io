@@ -39,5 +39,7 @@
     "tags": [
         "Radio Therapy",
         "Open Data"
-    ]
+    ],
+    "forrt_clusters_new": "FAIR data and materials",
+    "forrt_sub_clusters": "Metadata standards"
 }

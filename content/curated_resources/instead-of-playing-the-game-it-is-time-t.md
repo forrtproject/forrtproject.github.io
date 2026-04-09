@@ -39,5 +39,7 @@
     "tags": [
         "Reproducibility Crisis and Credibility Revolution",
         "Open Science"
-    ]
+    ],
+    "forrt_clusters_new": "Pre-analysis Planning",
+    "forrt_sub_clusters": "Registered reports"
 }

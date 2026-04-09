@@ -34,5 +34,7 @@
     ],
     "tags": [
         "Reproducibility Crisis and Credibility Revolution"
-    ]
+    ],
+    "forrt_clusters_new": "Replication and meta-research",
+    "forrt_sub_clusters": "Direct vs. conceptual replications, Conducting replication studies; challenges, limitations, and comparisons with the original study"
 }

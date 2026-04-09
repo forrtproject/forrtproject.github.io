@@ -34,5 +34,7 @@
     "tags": [
         "Open Science",
         "Open Review"
-    ]
+    ],
+    "forrt_clusters_new": "Research Integrity",
+    "forrt_sub_clusters": "Publication, Peer Review, and Research Integrity"
 }

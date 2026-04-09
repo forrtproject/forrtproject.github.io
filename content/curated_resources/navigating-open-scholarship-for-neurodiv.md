@@ -45,5 +45,7 @@
     ],
     "tags": [
         "Neurodiversity; Neurodivergent Researchers; Research Equity; Diversity in Academia; Psychology; Higher Education; Stigma Reduction; Inclusivity"
-    ]
+    ],
+    "forrt_clusters_new": "Academic Structures and Institutions",
+    "forrt_sub_clusters": "Neurodiversity, Inclusion, Diversity in Academia"
 }

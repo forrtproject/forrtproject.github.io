@@ -37,5 +37,7 @@
         "Reporting Guidelines",
         "Data Sharing in Dentistry",
         "Preprints in Dental Research"
-    ]
+    ],
+    "forrt_clusters_new": "Transparency and reproducibility in computation and analysis, FAIR data and materials",
+    "forrt_sub_clusters": "Analysis and reporting in qualitative research, Research data management"
 }

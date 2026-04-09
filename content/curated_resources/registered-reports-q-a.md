@@ -33,5 +33,7 @@
         "Registered Reports",
         "Research",
         "Research Best Practices"
-    ]
+    ],
+    "forrt_clusters_new": "Pre-analysis Planning",
+    "forrt_sub_clusters": "Registered reports"
 }

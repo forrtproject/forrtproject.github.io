@@ -30,5 +30,7 @@
         "Blog",
         "Open Science",
         "Reproducibility Crisis and Credibility Revolution"
-    ]
+    ],
+    "forrt_clusters_new": "Pre-analysis Planning",
+    "forrt_sub_clusters": "Purpose of pre-analysis planning"
 }

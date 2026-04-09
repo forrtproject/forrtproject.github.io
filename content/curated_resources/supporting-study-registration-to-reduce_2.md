@@ -35,5 +35,7 @@
     "tags": [
         "Ecology",
         "Preregistration"
-    ]
+    ],
+    "forrt_clusters_new": "Pre-analysis Planning",
+    "forrt_sub_clusters": "Preregistration, Registered reports"
 }

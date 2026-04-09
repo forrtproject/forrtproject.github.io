@@ -31,5 +31,7 @@
     "tags": [
         "Academic Fraud",
         "Accountability"
-    ]
+    ],
+    "forrt_clusters_new": "Academic Structures and Institutions",
+    "forrt_sub_clusters": "Research assessment, proposals, and reforms"
 }

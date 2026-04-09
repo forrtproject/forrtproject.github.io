@@ -43,5 +43,7 @@
         "Research Funding",
         "Funding Decision Processes",
         "Competitive Funding"
-    ]
+    ],
+    "forrt_clusters_new": "Academic Structures and Institutions",
+    "forrt_sub_clusters": "Structures and incentives in academia"
 }

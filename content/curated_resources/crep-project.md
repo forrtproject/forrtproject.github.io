@@ -34,5 +34,7 @@
     "tags": [
         "Reproducibility Knowledge",
         "OSF Project"
-    ]
+    ],
+    "forrt_clusters_new": "Replication and meta-research",
+    "forrt_sub_clusters": "Direct vs. conceptual replications"
 }

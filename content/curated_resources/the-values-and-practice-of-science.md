@@ -34,5 +34,7 @@
         "Open Science",
         "Scientific Improvement",
         "Science as a Social System"
-    ]
+    ],
+    "forrt_clusters_new": "Academic Structures and Institutions",
+    "forrt_sub_clusters": "Socially Responsible Research"
 }

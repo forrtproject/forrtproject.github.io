@@ -32,5 +32,7 @@
         "Careers",
         "Culture",
         "Education"
-    ]
+    ],
+    "forrt_clusters_new": "Academic Structures and Institutions",
+    "forrt_sub_clusters": "Inclusion, Diversity in Academia"
 }

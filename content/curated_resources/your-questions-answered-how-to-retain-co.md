@@ -33,5 +33,7 @@
         "OSF",
         "Scholarly Communication",
         "Scholarship"
-    ]
+    ],
+    "forrt_clusters_new": "Publication Sharing, FAIR data and materials",
+    "forrt_sub_clusters": "Licenses and reuse, Rights retention strategies"
 }

@@ -40,5 +40,7 @@
     ],
     "tags": [
         "Data Management; FAIR; Citizen Science; Metadata; Culture Change; Author Contract; CC licences"
-    ]
+    ],
+    "forrt_clusters_new": "FAIR data and materials",
+    "forrt_sub_clusters": "Research data management, FAIR principles applied to Education & Training, Licenses and reuse"
 }

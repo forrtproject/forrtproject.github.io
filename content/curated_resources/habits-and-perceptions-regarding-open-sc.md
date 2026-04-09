@@ -54,5 +54,7 @@
         "Data Management",
         "Open Peer Review",
         "Open Data"
-    ]
+    ],
+    "forrt_clusters_new": "FAIR data and materials",
+    "forrt_sub_clusters": "Reasons to share data and materials, Research data management"
 }

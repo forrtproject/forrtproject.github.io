@@ -38,5 +38,7 @@
         "Year of Open Science",
         "NASA",
         "Federal Research"
-    ]
+    ],
+    "forrt_clusters_new": "Academic Structures and Institutions",
+    "forrt_sub_clusters": "Socially Responsible Research"
 }

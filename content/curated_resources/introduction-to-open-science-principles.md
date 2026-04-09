@@ -33,5 +33,7 @@
         "Health Economics",
         "Open Science",
         "Introduction"
-    ]
+    ],
+    "forrt_clusters_new": "Transparency and reproducibility in computation and analysis, FAIR data and materials",
+    "forrt_sub_clusters": "FAIR principles applied to Education & Training, Free and open source software"
 }

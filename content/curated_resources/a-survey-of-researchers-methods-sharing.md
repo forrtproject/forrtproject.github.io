@@ -34,5 +34,7 @@
         "Protocol Sharing",
         "Research Methods",
         "Open Science"
-    ]
+    ],
+    "forrt_clusters_new": "FAIR data and materials, Replication Crisis and Credibility Revolution",
+    "forrt_sub_clusters": "Reasons to share data and materials, Ongoing debates (e.g., incentives for and against open science practices)"
 }

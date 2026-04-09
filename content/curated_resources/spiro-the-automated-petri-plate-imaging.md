@@ -57,5 +57,7 @@
         "Plant Authophagy",
         "Seed Dormancy",
         "Technical Advance"
-    ]
+    ],
+    "forrt_clusters_new": "FAIR data and materials",
+    "forrt_sub_clusters": "Repositories"
 }

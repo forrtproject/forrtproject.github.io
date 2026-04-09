@@ -36,5 +36,7 @@
         "Instrumentation",
         "Methods",
         "Metrics"
-    ]
+    ],
+    "forrt_clusters_new": "FAIR data and materials",
+    "forrt_sub_clusters": "Reasons to share data and materials"
 }

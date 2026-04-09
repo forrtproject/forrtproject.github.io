@@ -32,5 +32,7 @@
         "Uncertainty",
         "Science",
         "Researchers"
-    ]
+    ],
+    "forrt_clusters_new": "Academic Structures and Institutions",
+    "forrt_sub_clusters": "Objectivity in Research"
 }

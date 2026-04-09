@@ -38,5 +38,7 @@
         "Open Access Funding",
         "Archiving",
         "Data Management"
-    ]
+    ],
+    "forrt_clusters_new": "FAIR data and materials",
+    "forrt_sub_clusters": "Research data management, Repositories, Licenses and reuse"
 }

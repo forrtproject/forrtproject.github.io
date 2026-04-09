@@ -38,5 +38,7 @@
         "Data Collection",
         "Supervision",
         "Students"
-    ]
+    ],
+    "forrt_clusters_new": "Replication Crisis and Credibility Revolution, Ways of Working",
+    "forrt_sub_clusters": "Research with students (under- and graduate), Questionable research practices & their prevalence"
 }

@@ -56,5 +56,7 @@
         "Technology",
         "Society",
         "Social Sciences"
-    ]
+    ],
+    "forrt_clusters_new": "Transparency and reproducibility in computation and analysis, FAIR data and materials",
+    "forrt_sub_clusters": "Free and open source software, Reasons to share data and materials"
 }

@@ -30,5 +30,7 @@
     ],
     "tags": [
         "Research Methods; Methodological & Statistical Issues; NHST; Effect Estimation; Replicability"
-    ]
+    ],
+    "forrt_clusters_new": "Conceptual and Statistical Knowledge",
+    "forrt_sub_clusters": "The logic of null hypothesis testing, p-values, Type I and II errors (and when and why they might happen)., Limitations and benefits of NHST, Bayesian & Likelihood approaches., Research design, sampling methods, & its implications for inferences."
 }

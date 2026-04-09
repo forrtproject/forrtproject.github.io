@@ -34,5 +34,7 @@
         "Reproducibility Crisis and Credibility Revolution",
         "Open Science",
         "Transparency"
-    ]
+    ],
+    "forrt_clusters_new": "Replication and meta-research, Pre-analysis Planning",
+    "forrt_sub_clusters": "Preregistration, Conducting replication studies; challenges, limitations, and comparisons with the original study"
 }

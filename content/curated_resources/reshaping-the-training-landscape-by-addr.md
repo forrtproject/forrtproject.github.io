@@ -34,5 +34,7 @@
         "Cultural Taxation",
         "Culture",
         "Psychology"
-    ]
+    ],
+    "forrt_clusters_new": "Academic Structures and Institutions",
+    "forrt_sub_clusters": "Racism in science, Equity"
 }

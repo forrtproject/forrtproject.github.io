@@ -40,5 +40,7 @@
     "tags": [
         "Qualitative Data",
         "Secondary Analysis"
-    ]
+    ],
+    "forrt_clusters_new": "Qualitative Research",
+    "forrt_sub_clusters": "FAIR data and materials: Choosing to share data"
 }

@@ -37,5 +37,7 @@
         "Ethnography",
         "Research Integrity",
         "Responsible Conduct Of Research"
-    ]
+    ],
+    "forrt_clusters_new": "Research Integrity",
+    "forrt_sub_clusters": "Research Culture, Incentives, and Institutional Responsibilities"
 }

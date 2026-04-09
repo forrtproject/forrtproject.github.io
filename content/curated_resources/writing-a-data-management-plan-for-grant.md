@@ -35,5 +35,7 @@
         "Open Scholarship Guidelines",
         "Research Data Management",
         "Researchers"
-    ]
+    ],
+    "forrt_clusters_new": "FAIR data and materials",
+    "forrt_sub_clusters": "Research data management"
 }

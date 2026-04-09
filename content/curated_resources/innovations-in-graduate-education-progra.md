@@ -35,5 +35,7 @@
     "tags": [
         "STEM Graduate Education",
         "Educational Efficiency"
-    ]
+    ],
+    "forrt_clusters_new": "Academic Structures and Institutions, Ways of Working",
+    "forrt_sub_clusters": "Structures and incentives in academia, Research with students (under- and graduate), Types of academic, non-academic, & alt-academic positions"
 }

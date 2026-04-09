@@ -32,5 +32,7 @@
     ],
     "tags": [
         ""
-    ]
+    ],
+    "forrt_clusters_new": "Conceptual and Statistical Knowledge",
+    "forrt_sub_clusters": "Philosophy of science"
 }

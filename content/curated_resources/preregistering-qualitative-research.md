@@ -42,5 +42,7 @@
     "tags": [
         "Preregistration",
         "Qualitative Research"
-    ]
+    ],
+    "forrt_clusters_new": "Qualitative Research, Pre-analysis Planning",
+    "forrt_sub_clusters": "Preregistration, Preregistration and Registered reports"
 }

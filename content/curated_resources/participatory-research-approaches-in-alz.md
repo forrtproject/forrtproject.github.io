@@ -40,5 +40,7 @@
         "Lived Experience",
         "Participatory Research",
         "Scoping Review"
-    ]
+    ],
+    "forrt_clusters_new": "Ways of Working",
+    "forrt_sub_clusters": "Participatory research"
 }

@@ -35,5 +35,7 @@
         "Lymphomas",
         "Open Access Publishing",
         "Phase I Clinical Investigation"
-    ]
+    ],
+    "forrt_clusters_new": "Ways of Working",
+    "forrt_sub_clusters": "Public and Private Partnerships"
 }

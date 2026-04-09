@@ -29,5 +29,7 @@
         "Data Communication",
         "Data Visualization",
         "Open Education Research"
-    ]
+    ],
+    "forrt_clusters_new": "Ways of Working",
+    "forrt_sub_clusters": "Science communication and public outreach"
 }

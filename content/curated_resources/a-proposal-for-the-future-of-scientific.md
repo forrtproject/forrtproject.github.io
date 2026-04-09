@@ -38,5 +38,7 @@
         "Research Funding",
         "Scientific Publishing",
         "Scientists"
-    ]
+    ],
+    "forrt_clusters_new": "Publication Sharing",
+    "forrt_sub_clusters": "Alternatives to legacy journals, Open peer review"
 }

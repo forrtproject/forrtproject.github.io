@@ -32,5 +32,7 @@
     "tags": [
         "Reproducibility Crisis and Credibility Revolution",
         "Open Science"
-    ]
+    ],
+    "forrt_clusters_new": "Research Integrity",
+    "forrt_sub_clusters": "Questionable Research Practices and Responsible Research Practices"
 }

@@ -32,5 +32,7 @@
     ],
     "tags": [
         "Neurodiversity; Inclusivity; Autism; ADHD; Participatory Research; Inclusive Scientific Practices"
-    ]
+    ],
+    "forrt_clusters_new": "Academic Structures and Institutions, Ways of Working",
+    "forrt_sub_clusters": "Neurodiversity, Inclusion, Participatory research"
 }

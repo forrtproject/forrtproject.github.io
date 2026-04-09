@@ -44,5 +44,7 @@
         "Publishing",
         "Reporting",
         "Systematic Reviews"
-    ]
+    ],
+    "forrt_clusters_new": "Replication and meta-research, Research Integrity",
+    "forrt_sub_clusters": "Meta-research, Publication, Peer Review, and Research Integrity"
 }

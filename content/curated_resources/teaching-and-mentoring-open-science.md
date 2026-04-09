@@ -31,5 +31,7 @@
         "Reproducibility Crisis and Credibility Revolution",
         "Open Science",
         "Conceptual and statistical knowledge"
-    ]
+    ],
+    "forrt_clusters_new": "Academic Structures and Institutions",
+    "forrt_sub_clusters": "Hidden curriculum"
 }

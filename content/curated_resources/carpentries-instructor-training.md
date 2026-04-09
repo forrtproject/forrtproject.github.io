@@ -112,5 +112,7 @@
         "Reproducibility",
         "Research Data Management Tools",
         "Researchers"
-    ]
+    ],
+    "forrt_clusters_new": "Ways of Working",
+    "forrt_sub_clusters": "Research with students (under- and graduate)"
 }

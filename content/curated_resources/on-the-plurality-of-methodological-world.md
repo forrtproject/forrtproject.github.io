@@ -35,5 +35,7 @@
     "tags": [
         "Reproducibility Crisis and Credibility Revolution",
         "Open Science"
-    ]
+    ],
+    "forrt_clusters_new": "Replication and meta-research, Conceptual and Statistical Knowledge",
+    "forrt_sub_clusters": "Meta-research, Research design, sampling methods, & its implications for inferences."
 }

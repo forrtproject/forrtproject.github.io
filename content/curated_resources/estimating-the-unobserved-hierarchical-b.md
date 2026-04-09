@@ -34,5 +34,7 @@
     ],
     "tags": [
         "OSCA Awards 2025"
-    ]
+    ],
+    "forrt_clusters_new": "Ways of Working, Replication Crisis and Credibility Revolution",
+    "forrt_sub_clusters": "Proposed science improvement initiatives on statistics, measurement, teaching, data sharing, code sharing, pre-registration, & replication, Research with students (under- and graduate)"
 }

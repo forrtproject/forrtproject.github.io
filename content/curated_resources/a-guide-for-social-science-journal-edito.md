@@ -75,5 +75,7 @@
         "Journal Editing",
         "Scholarly Publishing",
         "Peer Review"
-    ]
+    ],
+    "forrt_clusters_new": "Academic Structures and Institutions",
+    "forrt_sub_clusters": "Research assessment, proposals, and reforms, Structures and incentives in academia"
 }

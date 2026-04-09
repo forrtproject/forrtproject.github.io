@@ -43,5 +43,7 @@
         "Data integration",
         "IT infrastructure",
         "German Network University Medicine"
-    ]
+    ],
+    "forrt_clusters_new": "FAIR data and materials",
+    "forrt_sub_clusters": "Metadata standards, Research data management"
 }

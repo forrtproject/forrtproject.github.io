@@ -31,5 +31,7 @@
     ],
     "tags": [
         "Blog"
-    ]
+    ],
+    "forrt_clusters_new": "Conceptual and Statistical Knowledge",
+    "forrt_sub_clusters": "Limitations and benefits of NHST, Bayesian & Likelihood approaches., The logic of null hypothesis testing, p-values, Type I and II errors (and when and why they might happen)."
 }

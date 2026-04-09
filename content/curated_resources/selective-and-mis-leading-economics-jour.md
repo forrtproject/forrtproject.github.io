@@ -36,5 +36,7 @@
         "Excess Statistical Significance",
         "Experimental Economics",
         "Statistical Power"
-    ]
+    ],
+    "forrt_clusters_new": "Conceptual and Statistical Knowledge",
+    "forrt_sub_clusters": "Effect sizes, statistical power, simulations, & confidence intervals."
 }

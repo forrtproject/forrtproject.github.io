@@ -35,5 +35,7 @@
     "tags": [
         "Reproducibility Crisis and Credibility Revolution",
         "Open Science"
-    ]
+    ],
+    "forrt_clusters_new": "Replication and meta-research, Replication Crisis and Credibility Revolution",
+    "forrt_sub_clusters": "Direct vs. conceptual replications, Questionable research practices & their prevalence"
 }

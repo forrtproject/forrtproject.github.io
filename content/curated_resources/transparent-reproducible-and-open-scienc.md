@@ -38,5 +38,7 @@
         "Data",
         "Dermatology",
         "Reproducibility"
-    ]
+    ],
+    "forrt_clusters_new": "Replication and meta-research",
+    "forrt_sub_clusters": "Meta-research"
 }

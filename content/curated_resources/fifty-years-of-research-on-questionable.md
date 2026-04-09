@@ -48,5 +48,7 @@
         "Scientific Integrity",
         "Ethics of Research",
         "Questionable Research Practices"
-    ]
+    ],
+    "forrt_clusters_new": "Academic Structures and Institutions",
+    "forrt_sub_clusters": "Research assessment, proposals, and reforms"
 }

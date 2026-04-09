@@ -34,5 +34,7 @@
         "Reproducibility Crisis and Credibility Revolution",
         "Open Science",
         "Conceptual and statistical knowledge"
-    ]
+    ],
+    "forrt_clusters_new": "Transparency and reproducibility in computation and analysis, Replication Crisis and Credibility Revolution",
+    "forrt_sub_clusters": "Tools to check yourself and others, Questionable research practices & their prevalence, Computational reproducibility"
 }

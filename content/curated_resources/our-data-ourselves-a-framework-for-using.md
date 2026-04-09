@@ -45,5 +45,7 @@
         "Race and Education",
         "Whiteness",
         "Restorative Practices"
-    ]
+    ],
+    "forrt_clusters_new": "Academic Structures and Institutions, Ways of Working, Qualitative Research",
+    "forrt_sub_clusters": "Reflexivity and positionality, Qualitative research, Feminist Thought"
 }

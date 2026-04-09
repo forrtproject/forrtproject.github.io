@@ -45,5 +45,7 @@
         "Research Evaluation",
         "Team Science",
         "Career"
-    ]
+    ],
+    "forrt_clusters_new": "Academic Structures and Institutions",
+    "forrt_sub_clusters": "Citation Politics & Practices"
 }

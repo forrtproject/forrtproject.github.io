@@ -41,5 +41,7 @@
         "Barcelona Open Research Declaration",
         "Open Science",
         "Open Research"
-    ]
+    ],
+    "forrt_clusters_new": "Academic Structures and Institutions",
+    "forrt_sub_clusters": "Research assessment, proposals, and reforms"
 }

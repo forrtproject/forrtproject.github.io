@@ -34,5 +34,7 @@
     "tags": [
         "Reproducibility Crisis and Credibility Revolution",
         "Open Science"
-    ]
+    ],
+    "forrt_clusters_new": "Pre-analysis Planning, Replication Crisis and Credibility Revolution",
+    "forrt_sub_clusters": "Preregistration, Questionable research practices & their prevalence, Scientific Misconduct: Fabrication and Falsification"
 }

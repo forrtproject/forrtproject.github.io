@@ -46,5 +46,7 @@
         "Replicability",
         "Reporting Guidelines",
         "Reproducibility Research Integrity"
-    ]
+    ],
+    "forrt_clusters_new": "Replication and meta-research",
+    "forrt_sub_clusters": "Meta-research"
 }

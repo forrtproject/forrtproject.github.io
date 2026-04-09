@@ -32,5 +32,7 @@
         "Report Writing",
         "Reproducibility",
         "Version Control"
-    ]
+    ],
+    "forrt_clusters_new": "Transparency and reproducibility in computation and analysis",
+    "forrt_sub_clusters": "Computational reproducibility"
 }

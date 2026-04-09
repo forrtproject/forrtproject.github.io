@@ -38,5 +38,7 @@
         "Depression",
         "Psychotherapy",
         "Reporting Bias"
-    ]
+    ],
+    "forrt_clusters_new": "Replication Crisis and Credibility Revolution",
+    "forrt_sub_clusters": "Questionable research practices & their prevalence"
 }

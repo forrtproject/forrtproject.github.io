@@ -34,5 +34,7 @@
     "tags": [
         "Licensing",
         "Reproducibility"
-    ]
+    ],
+    "forrt_clusters_new": "Research Integrity, Qualitative Research",
+    "forrt_sub_clusters": "Standards and guidelines for rigorous qualitative research, Research Integrity, Social Responsibility, and Equity"
 }

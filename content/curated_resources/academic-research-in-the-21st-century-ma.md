@@ -32,5 +32,7 @@
     "tags": [
         "Reproducibility Crisis and Credibility Revolution",
         "Open Science"
-    ]
+    ],
+    "forrt_clusters_new": "Replication Crisis and Credibility Revolution, Research Integrity",
+    "forrt_sub_clusters": "Research Culture, Incentives, and Institutional Responsibilities, History of the replication crisis & credibility revolution, Ethical considerations for improved practices"
 }

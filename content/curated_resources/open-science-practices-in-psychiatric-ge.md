@@ -39,5 +39,7 @@
         "Open Science",
         "Psychiatric Genetics",
         "Reproducibility"
-    ]
+    ],
+    "forrt_clusters_new": "FAIR data and materials, Replication Crisis and Credibility Revolution",
+    "forrt_sub_clusters": "Reasons to share data and materials, Ethical considerations for improved practices"
 }

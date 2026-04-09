@@ -44,5 +44,7 @@
         "Pre-registration",
         "Replication",
         "Paper-in-a-day"
-    ]
+    ],
+    "forrt_clusters_new": "Replication and meta-research, Pre-analysis Planning",
+    "forrt_sub_clusters": "Registered reports, Conducting replication studies; challenges, limitations, and comparisons with the original study"
 }

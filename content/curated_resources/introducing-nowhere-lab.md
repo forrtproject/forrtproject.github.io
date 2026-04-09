@@ -30,5 +30,7 @@
     ],
     "tags": [
         "Remote Lab; Global Lab"
-    ]
+    ],
+    "forrt_clusters_new": "Academic Structures and Institutions, Ways of Working",
+    "forrt_sub_clusters": "Big team science, Accessibility"
 }

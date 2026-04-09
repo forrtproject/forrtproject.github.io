@@ -40,5 +40,7 @@
         "Transparency",
         "Questionable Research Practices",
         "Embodied Cognition"
-    ]
+    ],
+    "forrt_clusters_new": "Replication Crisis and Credibility Revolution",
+    "forrt_sub_clusters": "Questionable research practices & their prevalence, Proposed science improvement initiatives on statistics, measurement, teaching, data sharing, code sharing, pre-registration, & replication"
 }

@@ -34,5 +34,7 @@
         "Licenses",
         "Open Data",
         "Researchers"
-    ]
+    ],
+    "forrt_clusters_new": "FAIR data and materials",
+    "forrt_sub_clusters": "Research data management, Licenses and reuse"
 }

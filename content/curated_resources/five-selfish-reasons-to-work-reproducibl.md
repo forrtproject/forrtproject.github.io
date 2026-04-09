@@ -33,5 +33,7 @@
         "Organizational Change",
         "Reproducibility",
         "Researchers"
-    ]
+    ],
+    "forrt_clusters_new": "Transparency and reproducibility in computation and analysis, Replication Crisis and Credibility Revolution",
+    "forrt_sub_clusters": "Ongoing debates (e.g., incentives for and against open science practices), Computational reproducibility"
 }

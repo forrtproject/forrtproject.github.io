@@ -36,5 +36,7 @@
     ],
     "tags": [
         "Open Research; FAIR Data Principles; Open Access; Reproducibility; Open Educational Resources (OER); Data & Software; Citizen Science; Open Peer Review; Open Policies"
-    ]
+    ],
+    "forrt_clusters_new": "FAIR data and materials",
+    "forrt_sub_clusters": "Research data management, FAIR principles applied to Education & Training"
 }

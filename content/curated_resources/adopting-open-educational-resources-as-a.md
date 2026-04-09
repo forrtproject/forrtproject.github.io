@@ -35,5 +35,7 @@
         "Nursing Textbooks",
         "Open Educational Resources",
         "Social Determinants of Learning"
-    ]
+    ],
+    "forrt_clusters_new": "Academic Structures and Institutions, FAIR data and materials",
+    "forrt_sub_clusters": "Equity, Accessibility, FAIR principles applied to Education & Training"
 }

@@ -44,5 +44,7 @@
         "Preregistration",
         "Information Acquisition",
         "Verifiable Disclosure"
-    ]
+    ],
+    "forrt_clusters_new": "Pre-analysis Planning",
+    "forrt_sub_clusters": "Preregistration"
 }

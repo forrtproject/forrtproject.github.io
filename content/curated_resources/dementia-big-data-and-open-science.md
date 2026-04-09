@@ -40,5 +40,7 @@
         "Open Science",
         "Science",
         "Security"
-    ]
+    ],
+    "forrt_clusters_new": "FAIR data and materials, Ways of Working",
+    "forrt_sub_clusters": "Reasons to share data and materials, Public and Private Partnerships"
 }

@@ -36,5 +36,7 @@
         "Publication",
         "Publishing Recommendations",
         "Retraction Notifications"
-    ]
+    ],
+    "forrt_clusters_new": "Academic Structures and Institutions, FAIR data and materials",
+    "forrt_sub_clusters": "Citation Politics & Practices, Metadata standards"
 }

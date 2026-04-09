@@ -30,5 +30,7 @@
     ],
     "tags": [
         "Open Science Badges"
-    ]
+    ],
+    "forrt_clusters_new": "FAIR data and materials",
+    "forrt_sub_clusters": "Repositories"
 }

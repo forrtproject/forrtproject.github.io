@@ -43,5 +43,7 @@
         "Survey Research",
         "Surveys",
         "Theft"
-    ]
+    ],
+    "forrt_clusters_new": "Pre-analysis Planning, Replication Crisis and Credibility Revolution",
+    "forrt_sub_clusters": "Ongoing debates (e.g., incentives for and against open science practices), Preregistration"
 }

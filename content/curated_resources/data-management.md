@@ -27,5 +27,7 @@
     ],
     "tags": [
         "Data management"
-    ]
+    ],
+    "forrt_clusters_new": "",
+    "forrt_sub_clusters": ""
 }

@@ -35,5 +35,7 @@
         "Reproducibility Crisis and Credibility Revolution",
         "Open Science",
         "Conceptual and statistical knowledge"
-    ]
+    ],
+    "forrt_clusters_new": "Conceptual and Statistical Knowledge, FAIR data and materials",
+    "forrt_sub_clusters": "FAIR principles applied to Education & Training, Research design, sampling methods, & its implications for inferences."
 }

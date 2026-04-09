@@ -32,5 +32,7 @@
         "Harvard Medical School",
         "Brain Tumors",
         "Questionable Research Practices"
-    ]
+    ],
+    "forrt_clusters_new": "Replication Crisis and Credibility Revolution",
+    "forrt_sub_clusters": "Scientific Misconduct: Fabrication and Falsification"
 }

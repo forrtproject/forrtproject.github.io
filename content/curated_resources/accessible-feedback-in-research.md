@@ -32,5 +32,7 @@
     ],
     "tags": [
         "Diversity & Inclusion; Feedback; Peer Review; Transparency; Marginalised Scholars; Systemic Barriers in Academia; Academic Professional Development"
-    ]
+    ],
+    "forrt_clusters_new": "Academic Structures and Institutions",
+    "forrt_sub_clusters": "Accessibility, Inclusion, Equity"
 }

@@ -45,5 +45,7 @@
         "Political Science",
         "Observational Research",
         "Results-Blind Review"
-    ]
+    ],
+    "forrt_clusters_new": "Pre-analysis Planning",
+    "forrt_sub_clusters": "Preregistration"
 }

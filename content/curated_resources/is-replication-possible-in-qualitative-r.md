@@ -33,5 +33,7 @@
         "Replication",
         "Replicability",
         "Epistemology"
-    ]
+    ],
+    "forrt_clusters_new": "Qualitative Research, Conceptual and Statistical Knowledge",
+    "forrt_sub_clusters": "Replication research, Philosophy of science"
 }

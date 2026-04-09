@@ -35,5 +35,7 @@
     "tags": [
         "Reproducibility Crisis and Credibility Revolution",
         "Open Science"
-    ]
+    ],
+    "forrt_clusters_new": "Conceptual and Statistical Knowledge, Replication Crisis and Credibility Revolution",
+    "forrt_sub_clusters": "Questionable research practices & their prevalence, The logic of null hypothesis testing, p-values, Type I and II errors (and when and why they might happen)."
 }

@@ -37,5 +37,7 @@
         "In Vivo Studies",
         "Preclinical Research",
         "Reproducibility"
-    ]
+    ],
+    "forrt_clusters_new": "Pre-analysis Planning",
+    "forrt_sub_clusters": "Study Design"
 }

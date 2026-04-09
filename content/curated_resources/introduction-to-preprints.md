@@ -38,5 +38,7 @@
         "Reproducibility",
         "Research Data Management Tools",
         "Researchers"
-    ]
+    ],
+    "forrt_clusters_new": "Publication Sharing",
+    "forrt_sub_clusters": "Preprints and postprints"
 }

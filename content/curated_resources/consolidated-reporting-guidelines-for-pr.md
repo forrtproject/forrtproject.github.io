@@ -42,5 +42,7 @@
         "Prognostic Models",
         "Artificial Intelligence",
         "Editorial Policy"
-    ]
+    ],
+    "forrt_clusters_new": "Transparency and reproducibility in computation and analysis",
+    "forrt_sub_clusters": "Computational reproducibility, Analysis and reporting in qualitative research"
 }

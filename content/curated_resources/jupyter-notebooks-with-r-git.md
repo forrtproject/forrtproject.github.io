@@ -38,5 +38,7 @@
         "Reproducibility",
         "Research Data Management Tools",
         "Researchers"
-    ]
+    ],
+    "forrt_clusters_new": "Transparency and reproducibility in computation and analysis",
+    "forrt_sub_clusters": "Computational reproducibility"
 }

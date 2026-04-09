@@ -35,5 +35,7 @@
     ],
     "tags": [
         "OSCA Awards 2025"
-    ]
+    ],
+    "forrt_clusters_new": "Conceptual and Statistical Knowledge, FAIR data and materials",
+    "forrt_sub_clusters": "Exploratory and confirmatory analyses, Reasons to share data and materials"
 }

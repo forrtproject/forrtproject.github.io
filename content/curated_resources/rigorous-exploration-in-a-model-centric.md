@@ -33,5 +33,7 @@
         "Model-Centric",
         "Result-Centric",
         "Exploration"
-    ]
+    ],
+    "forrt_clusters_new": "Conceptual and Statistical Knowledge",
+    "forrt_sub_clusters": "Exploratory and confirmatory analyses, Philosophy of science"
 }

@@ -38,5 +38,7 @@
         "Research Policies",
         "Research Culture",
         "Reproducibility"
-    ]
+    ],
+    "forrt_clusters_new": "Academic Structures and Institutions, Replication Crisis and Credibility Revolution",
+    "forrt_sub_clusters": "Structures and incentives in academia, Proposed science improvement initiatives on statistics, measurement, teaching, data sharing, code sharing, pre-registration, & replication"
 }

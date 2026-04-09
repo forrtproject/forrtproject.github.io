@@ -34,5 +34,7 @@
         "Transparency",
         "Open Science",
         "Registered Reports"
-    ]
+    ],
+    "forrt_clusters_new": "Pre-analysis Planning, Replication and meta-research",
+    "forrt_sub_clusters": "Registered Replication Reports, Registered reports"
 }

@@ -45,5 +45,7 @@
         "Information Technology",
         "Scientific Data",
         "Software"
-    ]
+    ],
+    "forrt_clusters_new": "FAIR data and materials",
+    "forrt_sub_clusters": "Repositories, Metadata standards"
 }

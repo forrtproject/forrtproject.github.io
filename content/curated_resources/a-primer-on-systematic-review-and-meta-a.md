@@ -39,5 +39,7 @@
         "Systematic Review",
         "Meta Analysis",
         "Diabetes"
-    ]
+    ],
+    "forrt_clusters_new": "Transparency and reproducibility in computation and analysis",
+    "forrt_sub_clusters": "Tools to check yourself and others"
 }

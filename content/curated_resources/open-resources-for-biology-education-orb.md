@@ -48,5 +48,7 @@
         "Undergraduate Biology Education",
         "Teaching Resources",
         "Life Sciences"
-    ]
+    ],
+    "forrt_clusters_new": "Academic Structures and Institutions, FAIR data and materials",
+    "forrt_sub_clusters": "FAIR principles applied to Education & Training, Accessibility"
 }

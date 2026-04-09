@@ -44,5 +44,7 @@
         "Research",
         "Science",
         "Transparency"
-    ]
+    ],
+    "forrt_clusters_new": "Replication and meta-research, Academic Structures and Institutions",
+    "forrt_sub_clusters": "Meta-research, Research assessment, proposals, and reforms"
 }

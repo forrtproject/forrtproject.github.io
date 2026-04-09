@@ -44,5 +44,7 @@
         "THREE TS",
         "THREE T'S",
         "PSYCHOLOGY"
-    ]
+    ],
+    "forrt_clusters_new": "Pre-analysis Planning, FAIR data and materials",
+    "forrt_sub_clusters": "FAIR principles applied to Education & Training, Preregistration, Research data management"
 }

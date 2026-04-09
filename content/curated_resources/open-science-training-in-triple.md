@@ -43,5 +43,7 @@
         "EOSC",
         "Scholarly Practice",
         "Project Management"
-    ]
+    ],
+    "forrt_clusters_new": "Academic Structures and Institutions",
+    "forrt_sub_clusters": "Research assessment, proposals, and reforms"
 }

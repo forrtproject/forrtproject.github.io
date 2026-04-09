@@ -36,5 +36,7 @@
         "Reproducibility Crisis and Credibility Revolution",
         "Open Science",
         "Ethics"
-    ]
+    ],
+    "forrt_clusters_new": "Pre-analysis Planning, Conceptual and Statistical Knowledge, Replication and meta-research",
+    "forrt_sub_clusters": "Research design, sampling methods, & its implications for inferences., Preregistration, Conducting replication studies; challenges, limitations, and comparisons with the original study"
 }

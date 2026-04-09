@@ -45,5 +45,7 @@
         "research",
         "software",
         "open software"
-    ]
+    ],
+    "forrt_clusters_new": "FAIR data and materials",
+    "forrt_sub_clusters": "Reasons to share data and materials, Licenses and reuse"
 }

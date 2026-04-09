@@ -35,5 +35,7 @@
         "Transparency",
         "Replication",
         "Rigor-Enhancing Practices"
-    ]
+    ],
+    "forrt_clusters_new": "Replication Crisis and Credibility Revolution",
+    "forrt_sub_clusters": "Collection of large scale replications, Proposed science improvement initiatives on statistics, measurement, teaching, data sharing, code sharing, pre-registration, & replication"
 }

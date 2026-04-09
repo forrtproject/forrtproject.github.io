@@ -33,5 +33,7 @@
     "tags": [
         "Preregistration",
         "Pre-analysis Plans"
-    ]
+    ],
+    "forrt_clusters_new": "Pre-analysis Planning",
+    "forrt_sub_clusters": "Understanding the types of preregistration and writing one."
 }

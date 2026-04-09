@@ -39,5 +39,7 @@
         "Reproducibility",
         "Research Data Management Tools",
         "Researchers"
-    ]
+    ],
+    "forrt_clusters_new": "Pre-analysis Planning, Conceptual and Statistical Knowledge",
+    "forrt_sub_clusters": "Preregistration, Purpose of pre-analysis planning, Exploratory and confirmatory analyses"
 }

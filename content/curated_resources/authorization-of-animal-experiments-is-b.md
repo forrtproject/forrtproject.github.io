@@ -38,5 +38,7 @@
         "Research Reporting Guidelines",
         "Research Validity",
         "Rodents"
-    ]
+    ],
+    "forrt_clusters_new": "Conceptual and Statistical Knowledge, Replication Crisis and Credibility Revolution",
+    "forrt_sub_clusters": "Research design, sampling methods, & its implications for inferences., Questionable research practices & their prevalence"
 }

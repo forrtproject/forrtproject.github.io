@@ -34,5 +34,7 @@
         "Open Science Practices",
         "Energy Research",
         "Climate Research"
-    ]
+    ],
+    "forrt_clusters_new": "Transparency and reproducibility in computation and analysis, FAIR data and materials",
+    "forrt_sub_clusters": "Reasons to share data and materials, Computational reproducibility"
 }

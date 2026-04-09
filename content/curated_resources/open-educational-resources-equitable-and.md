@@ -38,5 +38,7 @@
         "Higher Education Costs",
         "Open Educational Resources",
         "Textbooks"
-    ]
+    ],
+    "forrt_clusters_new": "Academic Structures and Institutions",
+    "forrt_sub_clusters": "Accessibility, Equity"
 }

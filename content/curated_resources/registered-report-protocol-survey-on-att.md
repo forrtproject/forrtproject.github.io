@@ -39,5 +39,7 @@
         "Motivation",
         "Pilot Studies",
         "Psychometrics"
-    ]
+    ],
+    "forrt_clusters_new": "Pre-analysis Planning",
+    "forrt_sub_clusters": "Registered reports, Preregistration"
 }

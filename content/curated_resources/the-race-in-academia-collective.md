@@ -37,5 +37,7 @@
         "Justice",
         "Racialised Academics",
         "Decolonialisation"
-    ]
+    ],
+    "forrt_clusters_new": "Academic Structures and Institutions",
+    "forrt_sub_clusters": "Racism in science, Decolonizing Research Practices, Inclusion"
 }

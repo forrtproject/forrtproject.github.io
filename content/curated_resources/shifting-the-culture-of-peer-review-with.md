@@ -30,5 +30,7 @@
     "tags": [
         "Peer Review; Publishing; Bias in Peer Review; Diversity",
         "Equity & Inclusion (DEI); Academic Culture Change; Early Career Researchers; Transparency"
-    ]
+    ],
+    "forrt_clusters_new": "Academic Structures and Institutions",
+    "forrt_sub_clusters": "Racism in science, Diversity in Academia"
 }

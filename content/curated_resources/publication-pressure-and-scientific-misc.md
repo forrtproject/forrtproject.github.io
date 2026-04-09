@@ -36,5 +36,7 @@
     "tags": [
         "Reproducibility Crisis and Credibility Revolution",
         "Open Science"
-    ]
+    ],
+    "forrt_clusters_new": "Research Integrity, Ways of Working",
+    "forrt_sub_clusters": "Research Culture, Incentives, and Institutional Responsibilities, Adversarial collaborations"
 }

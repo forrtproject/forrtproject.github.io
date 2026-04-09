@@ -73,5 +73,7 @@
         "Pseudotime",
         "Spatial Transcriptomics",
         "Phylogenetics"
-    ]
+    ],
+    "forrt_clusters_new": "Transparency and reproducibility in computation and analysis",
+    "forrt_sub_clusters": "Computational reproducibility, Free and open source software"
 }

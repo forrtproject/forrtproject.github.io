@@ -33,5 +33,7 @@
     "tags": [
         "Reproducibility Crisis and Credibility Revolution",
         "Open Science"
-    ]
+    ],
+    "forrt_clusters_new": "Replication and meta-research",
+    "forrt_sub_clusters": "Purposes of replication attempts - what is a \u2018failed\u2019 replication?"
 }

@@ -53,5 +53,7 @@
         "Consultation",
         "Data Sharing",
         "Legislation"
-    ]
+    ],
+    "forrt_clusters_new": "Academic Structures and Institutions, FAIR data and materials",
+    "forrt_sub_clusters": "Research assessment, proposals, and reforms, Reasons not to share: Privacy and security considerations"
 }

@@ -37,5 +37,7 @@
         "Hardware",
         "Open Source Hardware",
         "Space Research"
-    ]
+    ],
+    "forrt_clusters_new": "FAIR data and materials",
+    "forrt_sub_clusters": "Repositories"
 }

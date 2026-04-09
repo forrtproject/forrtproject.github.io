@@ -54,5 +54,7 @@
         "Scientific Publishing",
         "Scientists",
         "Systematic Reviews"
-    ]
+    ],
+    "forrt_clusters_new": "Replication and meta-research, Conceptual and Statistical Knowledge",
+    "forrt_sub_clusters": "Research design, sampling methods, & its implications for inferences., Meta-research"
 }

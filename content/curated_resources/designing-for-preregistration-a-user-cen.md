@@ -35,5 +35,7 @@
         "Human Computer Interaction (HCI)",
         "Empirical Studies in HCI",
         "Interaction design"
-    ]
+    ],
+    "forrt_clusters_new": "Pre-analysis Planning",
+    "forrt_sub_clusters": "Understanding the types of preregistration and writing one., Purpose of pre-analysis planning"
 }

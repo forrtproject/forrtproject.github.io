@@ -42,5 +42,7 @@
         "Open Science",
         "Social Impact",
         "Societal Impact"
-    ]
+    ],
+    "forrt_clusters_new": "Academic Structures and Institutions, Ways of Working",
+    "forrt_sub_clusters": "Socially Responsible Research, Science communication and public outreach"
 }

@@ -52,5 +52,7 @@
         "Non-WEIRD",
         "Chinese",
         "Equity-Diversity-Inclusion (EDI)"
-    ]
+    ],
+    "forrt_clusters_new": "Academic Structures and Institutions",
+    "forrt_sub_clusters": "Equity, Inclusion, Diversity in Academia"
 }

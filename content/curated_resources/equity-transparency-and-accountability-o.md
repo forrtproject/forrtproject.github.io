@@ -51,5 +51,7 @@
         "Open Science",
         "Misconduct",
         "Accuracy"
-    ]
+    ],
+    "forrt_clusters_new": "Academic Structures and Institutions",
+    "forrt_sub_clusters": "Equity, Socially Responsible Research"
 }

@@ -39,5 +39,7 @@
         "Organizational Climate",
         "Competition",
         "Ethics Training"
-    ]
+    ],
+    "forrt_clusters_new": "Academic Structures and Institutions, Replication Crisis and Credibility Revolution",
+    "forrt_sub_clusters": "Questionable research practices & their prevalence, Structures and incentives in academia"
 }

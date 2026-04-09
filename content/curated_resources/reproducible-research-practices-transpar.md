@@ -40,5 +40,7 @@
         "Scientific Publishing",
         "Sequence Databases",
         "Systematic Reviews"
-    ]
+    ],
+    "forrt_clusters_new": "Replication and meta-research",
+    "forrt_sub_clusters": "Meta-research"
 }

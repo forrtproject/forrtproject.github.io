@@ -38,5 +38,7 @@
     "tags": [
         "Blog",
         "R code"
-    ]
+    ],
+    "forrt_clusters_new": "Conceptual and Statistical Knowledge, Transparency and reproducibility in computation and analysis",
+    "forrt_sub_clusters": "Limitations and benefits of NHST, Bayesian & Likelihood approaches., Computational reproducibility"
 }

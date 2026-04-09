@@ -32,5 +32,7 @@
     "tags": [
         "Open Educational Resources",
         "Open Science"
-    ]
+    ],
+    "forrt_clusters_new": "FAIR data and materials",
+    "forrt_sub_clusters": "FAIR principles applied to Education & Training"
 }

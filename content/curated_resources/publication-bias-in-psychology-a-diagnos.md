@@ -36,5 +36,7 @@
     "tags": [
         "Reproducibility Crisis and Credibility Revolution",
         "Open Science"
-    ]
+    ],
+    "forrt_clusters_new": "Replication and meta-research, Conceptual and Statistical Knowledge",
+    "forrt_sub_clusters": "Effect sizes, statistical power, simulations, & confidence intervals., Meta-research"
 }

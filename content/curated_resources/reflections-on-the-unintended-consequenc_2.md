@@ -35,5 +35,7 @@
         "Science Reform",
         "Methodology",
         "Philosophy of Science"
-    ]
+    ],
+    "forrt_clusters_new": "Academic Structures and Institutions",
+    "forrt_sub_clusters": "Research assessment, proposals, and reforms, Structures and incentives in academia"
 }

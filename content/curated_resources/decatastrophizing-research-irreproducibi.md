@@ -34,5 +34,7 @@
         "Reproducibility",
         "Reliability",
         "Cystic Fibrosis"
-    ]
+    ],
+    "forrt_clusters_new": "Replication and meta-research",
+    "forrt_sub_clusters": "Meta-research, Purposes of replication attempts - what is a \u2018failed\u2019 replication?"
 }

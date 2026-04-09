@@ -32,5 +32,7 @@
         "Podcast",
         "Reproducibility Knowledge",
         "Reproducibility Crisis and Credibility Revolution"
-    ]
+    ],
+    "forrt_clusters_new": "Replication and meta-research",
+    "forrt_sub_clusters": "The politics of replicating famous studies"
 }

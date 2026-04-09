@@ -35,5 +35,7 @@
         "Registered Reports",
         "Registered Reports in Education Research",
         "Unconference 2022"
-    ]
+    ],
+    "forrt_clusters_new": "Pre-analysis Planning",
+    "forrt_sub_clusters": "Registered reports"
 }

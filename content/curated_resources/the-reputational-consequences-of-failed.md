@@ -32,5 +32,7 @@
     "tags": [
         "Reproducibility Crisis and Credibility Revolution",
         "Open Science"
-    ]
+    ],
+    "forrt_clusters_new": "Replication and meta-research, Replication Crisis and Credibility Revolution",
+    "forrt_sub_clusters": "The politics of replicating famous studies, Ongoing debates (e.g., incentives for and against open science practices)"
 }

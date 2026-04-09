@@ -38,5 +38,7 @@
     "tags": [
         "Data management",
         "Reproducible Analyses"
-    ]
+    ],
+    "forrt_clusters_new": "FAIR data and materials",
+    "forrt_sub_clusters": "Research data management, FAIR principles applied to Education & Training"
 }

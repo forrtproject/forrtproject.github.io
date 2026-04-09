@@ -35,5 +35,7 @@
         "Epistemology",
         "Qualitative Method",
         "Methodology"
-    ]
+    ],
+    "forrt_clusters_new": "Qualitative Research, FAIR data and materials",
+    "forrt_sub_clusters": "Reasons not to share: Privacy and security considerations, FAIR data and materials: Ethical and legal challenges"
 }

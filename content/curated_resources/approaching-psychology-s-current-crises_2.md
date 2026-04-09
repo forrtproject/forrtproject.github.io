@@ -36,5 +36,7 @@
         "Context",
         "Crisis",
         "Philosophical Psychology"
-    ]
+    ],
+    "forrt_clusters_new": "Conceptual and Statistical Knowledge, Replication Crisis and Credibility Revolution",
+    "forrt_sub_clusters": "Philosophy of science, History of the replication crisis & credibility revolution"
 }

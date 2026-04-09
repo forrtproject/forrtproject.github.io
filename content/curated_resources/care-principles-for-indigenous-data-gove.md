@@ -44,5 +44,7 @@
         "Data Governance",
         "FAIR Principles",
         "CARE Principles"
-    ]
+    ],
+    "forrt_clusters_new": "FAIR data and materials",
+    "forrt_sub_clusters": "Reasons not to share: Privacy and security considerations"
 }

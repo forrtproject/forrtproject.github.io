@@ -42,5 +42,7 @@
         "Citizen Science",
         "Participatory Research",
         "Open Access"
-    ]
+    ],
+    "forrt_clusters_new": "Academic Structures and Institutions, Ways of Working",
+    "forrt_sub_clusters": "Science communication and public outreach, Socially Responsible Research, Participatory research"
 }

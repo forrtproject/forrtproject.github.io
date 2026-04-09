@@ -35,5 +35,7 @@
         "Epistemology",
         "Labor",
         "Research culture"
-    ]
+    ],
+    "forrt_clusters_new": "Research Integrity, Academic Structures and Institutions",
+    "forrt_sub_clusters": "Questionable Research Practices and Responsible Research Practices, Principles and Frameworks of Research Integrity, Structures and incentives in academia"
 }

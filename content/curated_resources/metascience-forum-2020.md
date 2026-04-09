@@ -29,5 +29,7 @@
         "Reproducibiity",
         "Research",
         "Scientific Process"
-    ]
+    ],
+    "forrt_clusters_new": "Replication and meta-research",
+    "forrt_sub_clusters": "Direct vs. conceptual replications, Meta-research"
 }

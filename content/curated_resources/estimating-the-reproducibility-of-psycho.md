@@ -32,5 +32,7 @@
     "tags": [
         "Reproducibility Crisis and Credibility Revolution",
         "Open Science"
-    ]
+    ],
+    "forrt_clusters_new": "Replication Crisis and Credibility Revolution, Replication and meta-research",
+    "forrt_sub_clusters": "Conducting replication studies; challenges, limitations, and comparisons with the original study, Collection of large scale replications"
 }

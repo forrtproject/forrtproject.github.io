@@ -36,5 +36,7 @@
         "Research Management",
         "Scientific Community",
         "Onboarding Materials"
-    ]
+    ],
+    "forrt_clusters_new": "Academic Structures and Institutions, Ways of Working",
+    "forrt_sub_clusters": "Research with students (under- and graduate), Hidden curriculum"
 }

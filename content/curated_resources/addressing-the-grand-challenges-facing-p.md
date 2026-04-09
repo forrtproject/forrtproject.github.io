@@ -31,5 +31,7 @@
     ],
     "tags": [
         "Psychology; Diversity; Research Integrity; Collaboration"
-    ]
+    ],
+    "forrt_clusters_new": "Academic Structures and Institutions",
+    "forrt_sub_clusters": "Diversity in Academia, Equity"
 }

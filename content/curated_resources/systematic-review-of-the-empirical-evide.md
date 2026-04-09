@@ -40,5 +40,7 @@
         "Questionnaires",
         "Research Funding",
         "Scientific Publishing"
-    ]
+    ],
+    "forrt_clusters_new": "Replication and meta-research, Research Integrity",
+    "forrt_sub_clusters": "Meta-analyses, Publication, Peer Review, and Research Integrity"
 }

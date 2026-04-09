@@ -36,5 +36,7 @@
     ],
     "tags": [
         "Meta Science; Inclusivity; Diversity; Preregistration; Science Reform"
-    ]
+    ],
+    "forrt_clusters_new": "Academic Structures and Institutions, Replication Crisis and Credibility Revolution",
+    "forrt_sub_clusters": "History of the replication crisis & credibility revolution, Ongoing debates (e.g., incentives for and against open science practices), Inclusion"
 }

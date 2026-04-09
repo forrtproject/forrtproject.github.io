@@ -33,5 +33,7 @@
     ],
     "tags": [
         "Pedagogy; Psychology; Credibility Revolution; WEIRD Science; Replication;"
-    ]
+    ],
+    "forrt_clusters_new": "Ways of Working, Replication Crisis and Credibility Revolution",
+    "forrt_sub_clusters": "History of the replication crisis & credibility revolution, Research with students (under- and graduate)"
 }

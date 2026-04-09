@@ -45,5 +45,7 @@
         "Open Science",
         "Palliative Care",
         "Qualitative Data"
-    ]
+    ],
+    "forrt_clusters_new": "FAIR data and materials",
+    "forrt_sub_clusters": "Repositories, Research data management"
 }

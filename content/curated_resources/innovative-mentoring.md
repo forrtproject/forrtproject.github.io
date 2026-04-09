@@ -31,5 +31,7 @@
         "Mentoring;  Teaching; Supervision; Lab Management; Equity",
         "Diversity",
         "and Inclusion (EDI); Professional Development"
-    ]
+    ],
+    "forrt_clusters_new": "Academic Structures and Institutions",
+    "forrt_sub_clusters": "Equity, Inclusion"
 }

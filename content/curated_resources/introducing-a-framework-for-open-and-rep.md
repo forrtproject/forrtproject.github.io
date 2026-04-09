@@ -58,5 +58,7 @@
     ],
     "tags": [
         "Open Scholarship; Pedagogy; Higher Education; Teaching; Mentorship; Research Training; Open Educational Resources (OER)"
-    ]
+    ],
+    "forrt_clusters_new": "",
+    "forrt_sub_clusters": "Proposed science improvement initiatives on statistics, measurement, teaching, data sharing, code sharing, pre-registration, & replication"
 }

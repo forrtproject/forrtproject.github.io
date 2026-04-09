@@ -34,5 +34,7 @@
         "Reproducibility",
         "Researchers",
         "Students"
-    ]
+    ],
+    "forrt_clusters_new": "Replication Crisis and Credibility Revolution, Ways of Working",
+    "forrt_sub_clusters": "Research with students (under- and graduate), Proposed science improvement initiatives on statistics, measurement, teaching, data sharing, code sharing, pre-registration, & replication"
 }

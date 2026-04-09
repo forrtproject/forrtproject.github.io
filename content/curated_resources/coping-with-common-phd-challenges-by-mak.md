@@ -33,5 +33,7 @@
         "Research Management",
         "Scientific Community",
         "PhD"
-    ]
+    ],
+    "forrt_clusters_new": "Academic Structures and Institutions",
+    "forrt_sub_clusters": "Hidden curriculum"
 }

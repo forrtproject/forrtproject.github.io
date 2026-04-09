@@ -47,5 +47,7 @@
         "Participants",
         "Socioeconomic Status",
         "SES"
-    ]
+    ],
+    "forrt_clusters_new": "Academic Structures and Institutions",
+    "forrt_sub_clusters": "Diversity sample and generalizability"
 }

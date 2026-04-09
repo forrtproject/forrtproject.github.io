@@ -37,5 +37,7 @@
         "Open Science",
         "Biomedical Data",
         "Canadian Open Neuroscience Platform"
-    ]
+    ],
+    "forrt_clusters_new": "FAIR data and materials",
+    "forrt_sub_clusters": "Reasons not to share: Privacy and security considerations, Reasons to share data and materials"
 }

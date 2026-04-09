@@ -35,5 +35,7 @@
         "Pre-Analysis Plans",
         "Statistical Decisions",
         "Economics"
-    ]
+    ],
+    "forrt_clusters_new": "Pre-analysis Planning",
+    "forrt_sub_clusters": "Purpose of pre-analysis planning"
 }

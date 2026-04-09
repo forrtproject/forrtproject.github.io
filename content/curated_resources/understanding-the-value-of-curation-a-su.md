@@ -40,5 +40,7 @@
         "Biology",
         "Data repository",
         "Data curation"
-    ]
+    ],
+    "forrt_clusters_new": "FAIR data and materials",
+    "forrt_sub_clusters": "Repositories, Research data management"
 }

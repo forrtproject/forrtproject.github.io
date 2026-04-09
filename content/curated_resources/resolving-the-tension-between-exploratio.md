@@ -34,5 +34,7 @@
         "Replication",
         "Reproducibility",
         "Statistics"
-    ]
+    ],
+    "forrt_clusters_new": "Replication and meta-research, Conceptual and Statistical Knowledge",
+    "forrt_sub_clusters": "Exploratory and confirmatory analyses, Conducting replication studies; challenges, limitations, and comparisons with the original study"
 }

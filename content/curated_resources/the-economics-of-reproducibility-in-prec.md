@@ -37,5 +37,7 @@
         "Internet",
         "Peer Review",
         "Reproducibility"
-    ]
+    ],
+    "forrt_clusters_new": "Replication Crisis and Credibility Revolution",
+    "forrt_sub_clusters": "Collection of large scale replications"
 }

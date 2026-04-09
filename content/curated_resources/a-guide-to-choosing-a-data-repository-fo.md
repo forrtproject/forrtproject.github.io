@@ -31,5 +31,7 @@
         "Data Sharing",
         "Data Repository",
         "Open Access"
-    ]
+    ],
+    "forrt_clusters_new": "FAIR data and materials",
+    "forrt_sub_clusters": "Repositories"
 }

@@ -34,5 +34,7 @@
         "Education",
         "Mentoring",
         "Diversity"
-    ]
+    ],
+    "forrt_clusters_new": "Academic Structures and Institutions",
+    "forrt_sub_clusters": "Diversity in Academia, Inclusion"
 }

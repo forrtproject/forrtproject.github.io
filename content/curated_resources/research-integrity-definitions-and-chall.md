@@ -38,5 +38,7 @@
         "Responsible Conduct of Research",
         "Questionable Research Practices",
         "Biomedical Sciences"
-    ]
+    ],
+    "forrt_clusters_new": "Replication Crisis and Credibility Revolution",
+    "forrt_sub_clusters": "Scientific Misconduct: Fabrication and Falsification, Questionable research practices & their prevalence"
 }

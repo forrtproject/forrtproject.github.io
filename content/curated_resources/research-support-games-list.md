@@ -51,5 +51,7 @@
         "Research Data Management",
         "Open Research",
         "Copyright"
-    ]
+    ],
+    "forrt_clusters_new": "FAIR data and materials",
+    "forrt_sub_clusters": "Research data management"
 }

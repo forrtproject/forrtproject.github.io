@@ -38,5 +38,7 @@
         "Open Access",
         "Technology",
         "Tools"
-    ]
+    ],
+    "forrt_clusters_new": "FAIR data and materials",
+    "forrt_sub_clusters": "Repositories, Reasons to share data and materials"
 }

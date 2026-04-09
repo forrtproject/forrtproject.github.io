@@ -46,5 +46,7 @@
         "Neuroscience",
         "Social and Behavioral Sciences",
         "Life Sciences"
-    ]
+    ],
+    "forrt_clusters_new": "Pre-analysis Planning",
+    "forrt_sub_clusters": "Preregistration"
 }

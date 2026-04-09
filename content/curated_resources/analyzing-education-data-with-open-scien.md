@@ -38,5 +38,7 @@
         "R for Researchers",
         "Rstats",
         "Statistical Programming"
-    ]
+    ],
+    "forrt_clusters_new": "Transparency and reproducibility in computation and analysis, FAIR data and materials",
+    "forrt_sub_clusters": "Computational reproducibility, Repositories, Research data management"
 }

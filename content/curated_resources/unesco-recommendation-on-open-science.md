@@ -27,5 +27,7 @@
     ],
     "tags": [
         "Sustainable Development Goals;"
-    ]
+    ],
+    "forrt_clusters_new": "Academic Structures and Institutions",
+    "forrt_sub_clusters": "Research assessment, proposals, and reforms, Socially Responsible Research"
 }

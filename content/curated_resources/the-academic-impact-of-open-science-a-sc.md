@@ -40,5 +40,7 @@
         "Open Science",
         "Scoping Review",
         "Open Science Aims"
-    ]
+    ],
+    "forrt_clusters_new": "Academic Structures and Institutions",
+    "forrt_sub_clusters": "Structures and incentives in academia, Research assessment, proposals, and reforms"
 }

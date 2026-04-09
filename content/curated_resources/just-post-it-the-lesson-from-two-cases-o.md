@@ -30,5 +30,7 @@
     ],
     "tags": [
         ""
-    ]
+    ],
+    "forrt_clusters_new": "Transparency and reproducibility in computation and analysis, FAIR data and materials",
+    "forrt_sub_clusters": "Tools to check yourself and others, Reasons to share data and materials"
 }

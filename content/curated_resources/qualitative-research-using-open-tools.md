@@ -39,5 +39,7 @@
         "Research Data Management Tools",
         "Researchers",
         "Taguette"
-    ]
+    ],
+    "forrt_clusters_new": "Transparency and reproducibility in computation and analysis, Qualitative Research",
+    "forrt_sub_clusters": "Qualitative approaches to open science, Free and open source software"
 }

@@ -35,5 +35,7 @@
         "COVID-19",
         "Plasma",
         "Public sector"
-    ]
+    ],
+    "forrt_clusters_new": "Academic Structures and Institutions, Ways of Working",
+    "forrt_sub_clusters": "Socially Responsible Research, Public and Private Partnerships"
 }

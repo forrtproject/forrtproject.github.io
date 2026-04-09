@@ -32,5 +32,7 @@
     "tags": [
         "Preregistration",
         "Health Psychology"
-    ]
+    ],
+    "forrt_clusters_new": "Pre-analysis Planning",
+    "forrt_sub_clusters": "Preregistration"
 }

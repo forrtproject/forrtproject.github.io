@@ -32,5 +32,7 @@
     "tags": [
         "Blog",
         "Interaction"
-    ]
+    ],
+    "forrt_clusters_new": "Conceptual and Statistical Knowledge",
+    "forrt_sub_clusters": "Limitations and benefits of NHST, Bayesian & Likelihood approaches."
 }

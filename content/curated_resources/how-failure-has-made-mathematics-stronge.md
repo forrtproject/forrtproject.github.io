@@ -31,5 +31,7 @@
     "tags": [
         "Failure",
         "Math"
-    ]
+    ],
+    "forrt_clusters_new": "Academic Structures and Institutions",
+    "forrt_sub_clusters": "Hidden curriculum"
 }

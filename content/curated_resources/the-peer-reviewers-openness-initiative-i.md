@@ -31,5 +31,7 @@
     "tags": [
         "Transparency",
         "Peer-Review"
-    ]
+    ],
+    "forrt_clusters_new": "Publication Sharing",
+    "forrt_sub_clusters": "Open peer review"
 }

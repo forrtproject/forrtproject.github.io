@@ -39,5 +39,7 @@
     ],
     "tags": [
         "OSCA Awards 2025"
-    ]
+    ],
+    "forrt_clusters_new": "Academic Structures and Institutions, Ways of Working",
+    "forrt_sub_clusters": "Participatory research, Socially Responsible Research, Research with students (under- and graduate)"
 }

@@ -39,5 +39,7 @@
         "Course",
         "Video",
         "Reproducibility Knowledge"
-    ]
+    ],
+    "forrt_clusters_new": "Pre-analysis Planning, Transparency and reproducibility in computation and analysis",
+    "forrt_sub_clusters": "Computational reproducibility, Purpose of pre-analysis planning"
 }

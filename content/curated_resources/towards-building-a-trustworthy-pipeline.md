@@ -44,5 +44,7 @@
         "Metadata",
         "Neuroscience",
         "Data Security"
-    ]
+    ],
+    "forrt_clusters_new": "FAIR data and materials",
+    "forrt_sub_clusters": "Metadata standards, Reasons not to share: Privacy and security considerations"
 }

@@ -31,5 +31,7 @@
     ],
     "tags": [
         "Video"
-    ]
+    ],
+    "forrt_clusters_new": "Replication Crisis and Credibility Revolution",
+    "forrt_sub_clusters": "History of the replication crisis & credibility revolution"
 }

@@ -28,5 +28,7 @@
     ],
     "tags": [
         "Data visualisation"
-    ]
+    ],
+    "forrt_clusters_new": "",
+    "forrt_sub_clusters": ""
 }

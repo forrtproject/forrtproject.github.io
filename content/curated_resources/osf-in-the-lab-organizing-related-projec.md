@@ -39,5 +39,7 @@
         "Reproducibility",
         "Research Data Management Tools",
         "Researchers"
-    ]
+    ],
+    "forrt_clusters_new": "FAIR data and materials, Ways of Working",
+    "forrt_sub_clusters": "Research data management, Research with students (under- and graduate)"
 }

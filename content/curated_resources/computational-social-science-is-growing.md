@@ -37,5 +37,7 @@
         "Validity",
         "Open science Practices",
         "Metascience"
-    ]
+    ],
+    "forrt_clusters_new": "Conceptual and Statistical Knowledge",
+    "forrt_sub_clusters": "Questionable measurement practices (QMPs), validity & reliability issues., Philosophy of science"
 }

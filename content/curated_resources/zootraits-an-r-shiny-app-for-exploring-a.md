@@ -45,5 +45,7 @@
         "Open Science",
         "Raunki\u00e6ran Shortfall",
         "Trait-Based Ecology"
-    ]
+    ],
+    "forrt_clusters_new": "FAIR data and materials",
+    "forrt_sub_clusters": "Repositories, Research data management"
 }

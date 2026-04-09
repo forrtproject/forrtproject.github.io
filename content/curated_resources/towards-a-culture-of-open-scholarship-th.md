@@ -48,5 +48,7 @@
     ],
     "tags": [
         "Open Scholarship; Higher Education; Pedagogy; Mentorship; Policy; Sustainable Change"
-    ]
+    ],
+    "forrt_clusters_new": "Ways of Working, Academic Structures and Institutions",
+    "forrt_sub_clusters": "Big team science, Proposed science improvement initiatives on statistics, measurement, teaching, data sharing, code sharing, pre-registration, & replication, Structures and incentives in academia"
 }

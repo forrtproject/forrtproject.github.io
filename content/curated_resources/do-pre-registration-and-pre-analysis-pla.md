@@ -36,5 +36,7 @@
         "p-Hacking",
         "Publication Bias",
         "Research Credibility"
-    ]
+    ],
+    "forrt_clusters_new": "Pre-analysis Planning",
+    "forrt_sub_clusters": "Preregistration"
 }

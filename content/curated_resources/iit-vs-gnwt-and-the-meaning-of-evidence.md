@@ -37,5 +37,7 @@
         "GNWT",
         "Accelerating Research on Consciousness",
         "Higher Order Theories"
-    ]
+    ],
+    "forrt_clusters_new": "Academic Structures and Institutions",
+    "forrt_sub_clusters": "Objectivity in Research"
 }

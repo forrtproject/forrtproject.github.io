@@ -38,5 +38,7 @@
         "Inclusivity",
         "Diversity",
         "Equity"
-    ]
+    ],
+    "forrt_clusters_new": "Academic Structures and Institutions, Replication Crisis and Credibility Revolution",
+    "forrt_sub_clusters": "History of the replication crisis & credibility revolution, Inclusion"
 }

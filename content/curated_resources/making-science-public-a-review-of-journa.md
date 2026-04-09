@@ -52,5 +52,7 @@
         "Open Science",
         "Journalism",
         "COVID-19"
-    ]
+    ],
+    "forrt_clusters_new": "Ways of Working",
+    "forrt_sub_clusters": "Science communication and public outreach"
 }

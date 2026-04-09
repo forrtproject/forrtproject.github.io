@@ -46,5 +46,7 @@
         "Open Source Software",
         "Public and Occupational Health",
         "Tuberculosis"
-    ]
+    ],
+    "forrt_clusters_new": "Ways of Working",
+    "forrt_sub_clusters": "Public and Private Partnerships, Community science"
 }

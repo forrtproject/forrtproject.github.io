@@ -32,5 +32,7 @@
     ],
     "tags": [
         "Epistemic and Disciplinary Diversity in Open Research"
-    ]
+    ],
+    "forrt_clusters_new": "Academic Structures and Institutions",
+    "forrt_sub_clusters": "Diversity in Academia, Inclusion"
 }

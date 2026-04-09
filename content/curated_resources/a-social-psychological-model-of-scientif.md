@@ -35,5 +35,7 @@
         "Replication Crisis",
         "Reproducibility",
         "Science Reform"
-    ]
+    ],
+    "forrt_clusters_new": "Replication Crisis and Credibility Revolution",
+    "forrt_sub_clusters": "Questionable research practices & their prevalence, Ongoing debates (e.g., incentives for and against open science practices), Proposed science improvement initiatives on statistics, measurement, teaching, data sharing, code sharing, pre-registration, & replication"
 }

@@ -33,5 +33,7 @@
         "Equality",
         "Equity",
         "Black Researchers"
-    ]
+    ],
+    "forrt_clusters_new": "Academic Structures and Institutions",
+    "forrt_sub_clusters": "Racism in science, Diversity in Academia, Equity"
 }

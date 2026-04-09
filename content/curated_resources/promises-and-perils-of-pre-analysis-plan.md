@@ -33,5 +33,7 @@
         "Preregistration",
         "Pre-Analysis Plans",
         "Economics"
-    ]
+    ],
+    "forrt_clusters_new": "Pre-analysis Planning",
+    "forrt_sub_clusters": "Purpose of pre-analysis planning"
 }

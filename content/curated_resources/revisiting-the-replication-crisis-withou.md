@@ -39,5 +39,7 @@
         "Replication",
         "Reproducibility",
         "Statistics."
-    ]
+    ],
+    "forrt_clusters_new": "Replication Crisis and Credibility Revolution, Replication and meta-research",
+    "forrt_sub_clusters": "Meta-research, Ongoing debates (e.g., incentives for and against open science practices)"
 }
