@@ -116,6 +116,26 @@
         });
       }
 
+      /* Search featured resource cards in this cluster */
+      section.querySelectorAll('.fc-card').forEach(function (card) {
+        if (results.length >= MAX_RESULTS) return;
+        var cardText = card.textContent.replace(/\s+/g, ' ').trim();
+        if (!cardText || !matchesAllTokens(cardText, tokens)) return;
+        var titleEl = card.querySelector('.fc-title');
+        var cardTitle = titleEl ? titleEl.textContent.replace(/\s+/g, ' ').trim() : '';
+        var paneEl = card.closest('.tab-pane');
+        var paneId = paneEl ? paneEl.id : '';
+        var tabId = paneEl ? (paneEl.getAttribute('aria-labelledby') || '') : '';
+        add('feat:' + clusterId + ':' + (card.getAttribute('data-doi') || cardTitle), {
+          type: 'featured',
+          clusterId: clusterId,
+          tabId: tabId,
+          paneId: paneId,
+          label: cardTitle.length > 100 ? cardTitle.substring(0, 100) + '…' : cardTitle,
+          meta: clusterName + ' — Recommended'
+        });
+      });
+
       section.querySelectorAll('.tab-pane').forEach(function (pane) {
         if (results.length >= MAX_RESULTS) return;
         var paneId = pane.id;
@@ -186,9 +206,9 @@
       return;
     }
 
-    /* Sort: clusters & sub-clusters first, then publications */
+    /* Sort: clusters, featured, sub-clusters, then publications */
     results.sort(function (a, b) {
-      var order = { cluster: 0, subcluster: 1, publication: 2 };
+      var order = { cluster: 0, featured: 1, subcluster: 2, publication: 3 };
       return (order[a.type] || 9) - (order[b.type] || 9);
     });
     var shown = results.slice(0, SHOWN_RESULTS);
@@ -200,8 +220,10 @@
     shown.forEach(function (r) {
       var extraAttr = r.pubIndex != null ? ' data-pub-index="' + escAttr(r.pubIndex) + '"' : '';
       var isPub = r.type === 'publication';
-      var icon = isPub ? '<i class="fas fa-file-alt clusters-inline-search__hit-icon" aria-hidden="true"></i>' : '';
-      var hitClass = 'clusters-inline-search__hit' + (isPub ? ' clusters-inline-search__hit--publication' : '');
+      var isFeat = r.type === 'featured';
+      var icon = isPub ? '<i class="fas fa-file-alt clusters-inline-search__hit-icon" aria-hidden="true"></i>' :
+                 isFeat ? '<i class="fas fa-star clusters-inline-search__hit-icon" aria-hidden="true"></i>' : '';
+      var hitClass = 'clusters-inline-search__hit' + (isPub ? ' clusters-inline-search__hit--publication' : '') + (isFeat ? ' clusters-inline-search__hit--featured' : '');
       html += '<a href="#" class="' + hitClass + '" role="button"' +
         ' data-hit-type="' + escAttr(r.type) + '"' +
         ' data-cluster="' + escAttr(r.clusterId) + '"' +
@@ -411,10 +433,10 @@
       });
     });
 
-    /* e.g. /clusters/cluster-2/#c2-sc1 — open matching tab after load or hash-only navigation */
+    /* e.g. /clusters/cluster-2/#c2-sc1 or #c2-featured — open matching tab after load or hash-only navigation */
     function applyClusterUrlHashTab() {
       var raw = window.location.hash.replace(/^#/, '');
-      if (!raw || !/^c\d+-sc\d+$/.test(raw)) return;
+      if (!raw || !/^c\d+-(sc\d+|featured)$/.test(raw)) return;
       var tab = document.getElementById(raw + '-tab');
       if (!tab) return;
       showBootstrapTab(tab);
@@ -572,6 +594,9 @@
             } else {
               scrollEl = panePub || section;
             }
+          } else if (hitType === 'featured' && paneId) {
+            var paneFeat = document.getElementById(paneId);
+            scrollEl = paneFeat || section;
           } else if (hitType === 'subcluster' && paneId) {
             var paneSc = document.getElementById(paneId);
             scrollEl = paneSc ? paneSc.querySelector('.sc-heading') || paneSc : section;
