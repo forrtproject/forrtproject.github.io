@@ -351,6 +351,43 @@
   }
 
   /* ================================================================
+     TESTIMONIAL CAROUSEL
+     ================================================================ */
+  function initCarousels() {
+    document.querySelectorAll('.fr-carousel[data-carousel]').forEach(function (carousel) {
+      var id = carousel.getAttribute('data-carousel');
+      var track = carousel.querySelector('.fr-carousel-track');
+      var slides = carousel.querySelectorAll('.fr-carousel-slide');
+      var nav = document.querySelector('.fr-carousel-nav[data-nav="' + id + '"]');
+      if (!track || slides.length < 2 || !nav) return;
+
+      var current = 0;
+
+      function goTo(idx) {
+        if (idx < 0) idx = slides.length - 1;
+        if (idx >= slides.length) idx = 0;
+        current = idx;
+        track.style.transform = 'translateX(-' + (current * 100) + '%)';
+        nav.querySelectorAll('.fr-carousel-dot').forEach(function (dot, di) {
+          dot.classList.toggle('active', di === current);
+        });
+      }
+
+      nav.addEventListener('click', function (e) {
+        var dot = e.target.closest('.fr-carousel-dot');
+        if (dot) {
+          goTo(parseInt(dot.getAttribute('data-idx'), 10));
+          return;
+        }
+        var arrow = e.target.closest('.fr-carousel-arrow');
+        if (arrow) {
+          goTo(current + parseInt(arrow.getAttribute('data-dir'), 10));
+        }
+      });
+    });
+  }
+
+  /* ================================================================
      FILTERING + SEARCH
      ================================================================ */
   function initFiltering() {
@@ -409,7 +446,7 @@
       var query = searchInput ? searchInput.value.toLowerCase().trim() : '';
       var tokens = query ? query.split(/\s+/) : [];
 
-      var cards = container.querySelectorAll('.fc-card');
+      var cards = container.querySelectorAll('.fc-card, .fr-card');
       var visibleCount = 0;
 
       cards.forEach(function (card) {
@@ -419,8 +456,8 @@
 
         var matchSearch = true;
         if (tokens.length > 0) {
-          var text = (card.querySelector('.fc-title') || {}).textContent || '';
-          text += ' ' + ((card.querySelector('.fc-summary') || {}).textContent || '');
+          var text = (card.querySelector('.fc-title') || card.querySelector('.fr-title') || {}).textContent || '';
+          text += ' ' + ((card.querySelector('.fc-summary') || card.querySelector('.fr-summary') || {}).textContent || '');
           text = text.toLowerCase();
           for (var i = 0; i < tokens.length; i++) {
             if (text.indexOf(tokens[i]) === -1) { matchSearch = false; break; }
@@ -452,6 +489,7 @@
     initReferencePopup(resourceIdx);
     initReadingList(resourceIdx);
     initVoting();
+    initCarousels();
     initFiltering();
   });
 })();

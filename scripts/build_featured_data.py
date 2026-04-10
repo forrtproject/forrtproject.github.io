@@ -45,6 +45,42 @@ PUB_ROW_WIDTH = 16
 DOI_RE = re.compile(r"(?:https?://)?(?:dx\.)?doi\.org/(.+?)(?:\s|$)", re.IGNORECASE)
 DOI_BARE_RE = re.compile(r"^10\.\d{4,9}/.+$")
 
+PHOTOS_DIR = os.path.join(ROOT_DIR, "static", "img", "featured-recommenders")
+
+
+def download_photo(url: str, name: str) -> str:
+    """Download a photo from url, save to PHOTOS_DIR, return site-relative path or '' on failure."""
+    import hashlib
+    import urllib.request
+    if not url:
+        return ""
+    os.makedirs(PHOTOS_DIR, exist_ok=True)
+    # Deterministic filename from URL
+    ext = ".jpg"
+    slug = re.sub(r"[^a-z0-9]+", "-", name.lower()).strip("-")
+    url_hash = hashlib.md5(url.encode()).hexdigest()[:8]
+    filename = f"{slug}-{url_hash}{ext}"
+    filepath = os.path.join(PHOTOS_DIR, filename)
+    if os.path.exists(filepath) and os.path.getsize(filepath) > 0:
+        return f"/img/featured-recommenders/{filename}"
+    try:
+        req = urllib.request.Request(url, headers={"User-Agent": "FORRT-build/1.0"})
+        with urllib.request.urlopen(req, timeout=15) as resp:
+            content_type = resp.headers.get("Content-Type", "")
+            if not content_type.startswith("image/"):
+                print(f"  WARNING: Photo URL returned {content_type}, not an image for {name}: {url}")
+                return ""
+            data = resp.read()
+            if len(data) < 500:  # too small to be a real image
+                print(f"  WARNING: Photo too small ({len(data)} bytes) for {name}: {url}")
+                return ""
+            with open(filepath, "wb") as f:
+                f.write(data)
+        return f"/img/featured-recommenders/{filename}"
+    except Exception as e:
+        print(f"  WARNING: Could not download photo for {name}: {e}")
+        return ""
+
 
 def _parse_gws_json(stdout: str) -> dict:
     """Parse JSON from gws output, skipping any non-JSON preamble lines."""
@@ -114,14 +150,37 @@ def main():
     rec_rows = gws_read(RECOMMENDATIONS_SHEET_ID, "Form Responses 1!A2:Z5000")
     print(f"  {len(rec_rows)} form response rows")
 
-    # Extract all recommended DOIs
+    # Extract recommended DOIs and recommendation details per DOI.
+    # Form columns:
+    #   0=Timestamp, 1=Name, 2=Title, 3=Email, 4=Bio, 5=Photo URL
+    #   6=URL#1, 7=Text#1, 8=Another?, 9=URL#2, 10=Text#2, 11=Another?, ...
     recommended_dois = set()
+    recommendations_by_doi: dict[str, list[dict]] = {}  # doi → [{name, title, bio, photo, text}]
+
     for row in rec_rows:
-        # URL columns are at indices 6, 9, 12, 15, 18, 21, 24 (every 3rd starting at 6)
-        for col_idx in range(6, len(row), 3):
-            doi = extract_doi(row[col_idx])
+        row += [""] * (26 - len(row))  # pad to max columns
+        rec_name = row[1].strip()
+        rec_title = row[2].strip()
+        rec_bio = row[4].strip()
+        rec_photo_url = row[5].strip()
+        rec_photo = download_photo(rec_photo_url, rec_name) if rec_photo_url else ""
+        # Each resource is at (6, 7), (9, 10), (12, 13), (15, 16), (18, 19), (21, 22), (24, 25)
+        for url_idx in range(6, 26, 3):
+            text_idx = url_idx + 1
+            url = row[url_idx].strip() if url_idx < len(row) else ""
+            text = row[text_idx].strip() if text_idx < len(row) else ""
+            doi = extract_doi(url)
             if doi:
                 recommended_dois.add(doi)
+                rec = {
+                    "name": rec_name,
+                    "title": rec_title,
+                    "bio": rec_bio,
+                    "photo": rec_photo,
+                    "text": text,
+                }
+                recommendations_by_doi.setdefault(doi, []).append(rec)
+
     print(f"  {len(recommended_dois)} unique recommended DOIs")
 
     if not recommended_dois:
@@ -197,6 +256,7 @@ def main():
             "oa_url": oa_url,
             "authors": row[COL_AUTHORS].strip(),
             "vote_base": 0,
+            "recommendations": recommendations_by_doi.get(doi, []),
         }
 
         key = str(cluster_num)

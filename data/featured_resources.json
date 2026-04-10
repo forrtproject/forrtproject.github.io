@@ -15,7 +15,16 @@
         "is_oa": true,
         "oa_url": "https://doi.org/10.31219/osf.io/n7ej3",
         "authors": "Lonni Besançon, Brian A. Nosek, Tamarinde Haven, Miriah Meyer, Cody Dunne, Mohammad Ghoniem",
-        "vote_base": 0
+        "vote_base": 0,
+        "recommendations": [
+          {
+            "name": "Lukas Wallrich",
+            "title": "Test entry",
+            "bio": "I am just providing some matching entries for now",
+            "photo": "",
+            "text": "This is a wonderful research field - not sure which, actually."
+          }
+        ]
       }
     ],
     "6": [
@@ -33,7 +42,16 @@
         "is_oa": false,
         "oa_url": "",
         "authors": "",
-        "vote_base": 0
+        "vote_base": 0,
+        "recommendations": [
+          {
+            "name": "Lukas Wallrich",
+            "title": "Test entry",
+            "bio": "I am just providing some matching entries for now",
+            "photo": "",
+            "text": "Appreciate more positive framing!"
+          }
+        ]
       }
     ],
     "8": [
@@ -51,7 +69,16 @@
         "is_oa": false,
         "oa_url": "",
         "authors": "Joseph B. Bak-Coleman, Berna Devezer",
-        "vote_base": 0
+        "vote_base": 0,
+        "recommendations": [
+          {
+            "name": "Lukas Wallrich",
+            "title": "Test entry",
+            "bio": "I am just providing some matching entries for now",
+            "photo": "",
+            "text": "Important mirror - not sure whether worth featuring though"
+          }
+        ]
       }
     ]
   }
