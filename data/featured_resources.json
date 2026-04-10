@@ -1,0 +1,58 @@
+{
+  "clusters": {
+    "4": [
+      {
+        "doi": "10.31219/osf.io/n7ej3",
+        "title": "Merits and Limits of Preregistration for Visualization Research",
+        "summary": "This resource provides an overview of how preregistration can be integrated into visualization research, discussing both its potential to reduce questionable research practices and its practical challenges. It specifically addresses the nuances of applying open science standards to user studies and data visualization methodologies.",
+        "focus": "overview",
+        "specificity": "Discipline-specific",
+        "resource_type": "Preprint",
+        "short_ref": "Besançon et al. (2024)",
+        "apa": "Besançon, L., Nosek, B. A., Haven, T. L., Meyer, M., Dunne, C., & Ghoniem, M. (2024). Merits and Limits of Preregistration for Visualization Research. https://doi.org/10.31219/osf.io/n7ej3",
+        "bibtex": "@article{Besan_on_2024, title={Merits and Limits of Preregistration for Visualization Research}, url={http://dx.doi.org/10.31219/osf.io/n7ej3}, DOI={10.31219/osf.io/n7ej3}, publisher={Center for Open Science}, author={Besançon, Lonni and Nosek, Brian A. and Haven, Tamarinde Laura and Meyer, Miriah and Dunne, Cody and Ghoniem, Mohammad}, year={2024}, month=sep }",
+        "abstract": "The replication crisis has spawned a revolution in scientific methods, aimed at increasing the transparency, robustness, and reliability of scientific outcomes.In particular, the practice of preregistering study designs has shown important advantages.Preregistration can help limit questionable research practices, as well as increase the success rate of study replications.Many fields have now adopted preregistration as a default expectation for published studies.In 2022, we set up a panel ``Merits and Limits of User Study Preregistration'' with the overall goal of explaining the concept of preregistration to a wide VIS audience and discussing its suitability for visualization research. We report on the arguments and discussion of this panel in the hope that it can benefit the visualization community at large. All materials and a copy of this paper are available on our OSF repository at https://osf.io/wes57/.",
+        "is_oa": true,
+        "oa_url": "https://doi.org/10.31219/osf.io/n7ej3",
+        "authors": "Lonni Besançon, Brian A. Nosek, Tamarinde Haven, Miriah Meyer, Cody Dunne, Mohammad Ghoniem",
+        "vote_base": 0
+      }
+    ],
+    "6": [
+      {
+        "doi": "10.7554/elife.16800",
+        "title": "Point of View: How open science helps researchers succeed",
+        "summary": "This article synthesizes existing literature to demonstrate that open scholarship practices lead to tangible professional advantages such as increased citations and better career opportunities. It serves as a persuasive resource for researchers who are hesitant to adopt open practices due to concerns about personal career progression.",
+        "focus": "advocacy",
+        "specificity": "Generalist",
+        "resource_type": "Website",
+        "short_ref": "McKiernan et al. (2016)",
+        "apa": "McKiernan, E. C., Bourne, P. E., Brown, C. T., Buck, S., Kenall, A., Lin, J., McDougall, D., Nosek, B. A., Ram, K., Soderberg, C. K., Spies, J. R., Thaney, K., Updegrove, A., Woo, K. H., & Yarkoni, T. (2016). How open science helps researchers succeed. ELife, 5. CLOCKSS. https://doi.org/10.7554/elife.16800",
+        "bibtex": "@article{McKiernan_2016, title={How open science helps researchers succeed}, volume={5}, ISSN={2050-084X}, url={http://dx.doi.org/10.7554/eLife.16800}, DOI={10.7554/elife.16800}, journal={eLife}, publisher={eLife Sciences Publications, Ltd}, author={McKiernan, Erin C and Bourne, Philip E and Brown, C Titus and Buck, Stuart and Kenall, Amye and Lin, Jennifer and McDougall, Damon and Nosek, Brian A and Ram, Karthik and Soderberg, Courtney K and Spies, Jeffrey R and Thaney, Kaitlin and Updegrove, Andrew and Woo, Kara H and Yarkoni, Tal}, year={2016}, month=jul }",
+        "abstract": "Open access, open data, open source and other open scholarship practices are growing in popularity and necessity. However, widespread adoption of these practices has not yet been achieved. One reason is that researchers are uncertain about how sharing their work will affect their careers. We review literature demonstrating that open research is associated with increases in citations, media attention, potential collaborators, job opportunities and funding opportunities. These findings are evidence that open research practices bring significant benefits to researchers relative to more traditional closed practices.",
+        "is_oa": false,
+        "oa_url": "",
+        "authors": "",
+        "vote_base": 0
+      }
+    ],
+    "8": [
+      {
+        "doi": "10.1038/s41562-024-01982-w",
+        "title": "Claims about scientific rigour require rigour",
+        "summary": "This resource critiques a high-profile study on rigour-enhancing practices, arguing that the study itself failed to adhere to the preregistration and transparency standards it advocated. It serves as a methodological cautionary tale, emphasizing that meta-research about scientific rigour must be held to the same rigorous standards it promotes.",
+        "focus": "critique",
+        "specificity": "Generalist",
+        "resource_type": "Letter",
+        "short_ref": "Bak-Coleman & Devezer (2024)",
+        "apa": "Bak-Coleman, J., & Devezer, B. (2024). Claims about scientific rigour require rigour. Nature Human Behaviour, 8(10), 1890–1891. https://doi.org/10.1038/s41562-024-01982-w",
+        "bibtex": "@article{Bak_Coleman_2024, title={Claims about scientific rigour require rigour}, volume={8}, ISSN={2397-3374}, url={http://dx.doi.org/10.1038/s41562-024-01982-w}, DOI={10.1038/s41562-024-01982-w}, number={10}, journal={Nature Human Behaviour}, publisher={Springer Science and Business Media LLC}, author={Bak-Coleman, Joseph and Devezer, Berna}, year={2024}, month=sep, pages={1890–1891} }",
+        "abstract": "Protzko et al.1 describe a project in which internal tests of pilot-tested hypotheses and independent replications embraced “rigour-enhancing practices” such as confirmatory tests, large sample sizes, preregistration and methodological transparency. The authors report a high estimate of replicability, which, in their appraisal, “justifies confidence in rigour-enhancing methods to increase the replicability of new discoveries” (see Abstract). However, replicability was not the original outcome of interest in the project, and analyses associated with replicability were not preregistered as claimed. Instead of replicability, the originally planned study set out to examine whether the mere act of scientifically investigating a phenomenon (data collection or analysis) could cause effect sizes to decline on subsequent investigation (https://osf.io/ba8p7). This “decline effect” hypothesis, posited by one of the authors and not articulated in the published manuscript, invokes phenomena that, if found, could revise the “laws of reality”2. The project did not yield support for this preregistered hypothesis; the preregistered analyses on the decline effect and the resulting null findings were largely relegated to the supplement, and the published article instead focused on replicability, with a set of non-preregistered measures and analyses, despite claims to the contrary.",
+        "is_oa": false,
+        "oa_url": "",
+        "authors": "Joseph B. Bak-Coleman, Berna Devezer",
+        "vote_base": 0
+      }
+    ]
+  }
+}
