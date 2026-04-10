@@ -1,0 +1,99 @@
+{{/* Featured/Recommended resource cards for a cluster. Expects: resources (slice), cluster_number (int) */}}
+{{ $resources := .resources }}
+{{ $cn := .cluster_number }}
+{{ $paneId := printf "c%d-featured" $cn }}
+
+<div class="featured-pane" id="{{ $paneId }}-content">
+
+  {{/* Filter bar */}}
+  <div class="fr-filter-bar">
+    <div class="fr-filter-group">
+      <span class="fr-filter-label">Focus</span>
+      <div class="fr-filter-tags" data-filter="focus" data-cluster="{{ $cn }}">
+        <button class="fr-tag-btn active" data-value="all">All</button>
+        {{/* Collect unique focus values */}}
+        {{ $focusSet := slice }}
+        {{ range $resources }}
+          {{ if .focus }}
+            {{ if not (in $focusSet .focus) }}
+              {{ $focusSet = $focusSet | append .focus }}
+            {{ end }}
+          {{ end }}
+        {{ end }}
+        {{ range $focusSet }}
+        <button class="fr-tag-btn" data-value="{{ . }}">{{ . }}</button>
+        {{ end }}
+      </div>
+    </div>
+    <div class="fr-filter-group">
+      <span class="fr-filter-label">Type</span>
+      <div class="fr-filter-tags" data-filter="type" data-cluster="{{ $cn }}">
+        <button class="fr-tag-btn active" data-value="all">All</button>
+        {{ $typeSet := slice }}
+        {{ range $resources }}
+          {{ if .resource_type }}
+            {{ if not (in $typeSet .resource_type) }}
+              {{ $typeSet = $typeSet | append .resource_type }}
+            {{ end }}
+          {{ end }}
+        {{ end }}
+        {{ range $typeSet }}
+        <button class="fr-tag-btn" data-value="{{ . }}">{{ . }}</button>
+        {{ end }}
+      </div>
+    </div>
+    <div class="fr-filter-group">
+      <label class="fr-specificity-toggle">
+        <input type="checkbox" class="fr-specificity-checkbox" data-cluster="{{ $cn }}">
+        <span>Show specialist resources</span>
+      </label>
+    </div>
+  </div>
+
+  {{/* Search input */}}
+  <div class="fr-search-wrap">
+    <input type="text" class="fr-search-input" data-cluster="{{ $cn }}"
+           placeholder="Search featured resources...">
+  </div>
+
+  {{/* Resource cards */}}
+  <div class="fr-cards-list" data-cluster="{{ $cn }}">
+    {{ range $resources }}
+    <div class="fc-card"
+         data-doi="{{ .doi }}"
+         data-focus="{{ .focus }}"
+         data-type="{{ .resource_type }}"
+         data-specificity="{{ cond (eq .specificity "Narrow") "narrow" "broad" }}"
+         {{ if eq .specificity "Narrow" }}style="display:none;"{{ end }}>
+      <div class="fc-body">
+        <div class="fc-top-row">
+          <div class="fc-tags">
+            {{ if .focus }}<span class="tag tag-focus">{{ .focus }}</span>{{ end }}
+            {{ if .resource_type }}<span class="tag tag-type">{{ .resource_type }}</span>{{ end }}
+          </div>
+          <div class="fc-title">{{ .title }}</div>
+        </div>
+        {{ if .summary }}
+        <div class="fc-summary">{{ .summary }}</div>
+        {{ end }}
+        <div class="fc-actions">
+          <button class="fr-ref-trigger" data-doi="{{ .doi }}">
+            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="12" height="12" rx="2"/><path d="M5 5h6M5 8h6M5 11h3"/></svg>
+            {{ .short_ref }}
+          </button>
+          <button class="fr-bookmark-btn" data-doi="{{ .doi }}">
+            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 2h10v13l-5-3.5L3 15V2z"/></svg>
+            <span>Save</span>
+          </button>
+          <button class="fc-vote-btn" data-doi="{{ .doi }}">
+            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 14H3a1 1 0 01-1-1V8a1 1 0 011-1h2m0 7V7m0 7h6.28a2 2 0 001.94-1.52l1.07-4.28A1 1 0 0014.32 7H10.5l.64-3.18a1.26 1.26 0 00-1.22-1.52h-.17a1 1 0 00-.85.47L5 7"/></svg>
+            <span class="fc-vote-count">{{ .vote_base }}</span>
+          </button>
+        </div>
+      </div>
+    </div>
+    {{ end }}
+  </div>
+
+  <div class="fr-no-results" style="display:none;">No resources match your filters.</div>
+</div>

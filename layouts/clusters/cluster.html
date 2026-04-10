@@ -80,5 +80,9 @@
       </button>
     </div>
   </section>
+
+  {{ if site.Params.enable_featured_resources }}
+    {{ partial "clusters/featured_global.html" . }}
+  {{ end }}
 {{ end }}
 {{ end }}
