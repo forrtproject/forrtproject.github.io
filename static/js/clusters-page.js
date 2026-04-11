@@ -282,11 +282,7 @@
         '--clusters-controls-height',
         controls ? controls.offsetHeight + 'px' : '0px'
       );
-      /* Keep tab content tall enough so the footer stays below the fold */
-      var vh = window.innerHeight + 'px';
-      root.querySelectorAll('.cluster-tab-content').forEach(function (tc) {
-        tc.style.minHeight = vh;
-      });
+      /* (Tab content min-height removed — sections are now stacked, not tabbed) */
     }
 
     function scheduleStickyLayoutMetrics() {
@@ -419,51 +415,47 @@
           return;
         }
         e.preventDefault();
-        var clusterId = this.getAttribute('data-cluster');
-        var tabId = this.getAttribute('data-tab');
-        var section = clusterId ? document.getElementById(clusterId) : null;
-        if (section && tabId) {
-          var tab = document.getElementById(tabId);
-          showBootstrapTab(tab);
-          setTimeout(function () {
-            scrollToClusterTabPaneFromTrigger(tab);
-          }, 100);
+        /* data-tab holds the old tab ID; derive the section ID from it (strip -tab suffix) */
+        var tabId = this.getAttribute('data-tab') || '';
+        var sectionId = tabId.replace(/-tab$/, '');
+        var target = sectionId ? document.getElementById(sectionId) : null;
+        if (target) {
+          var scrollEl = target.querySelector('.sc-heading') || target;
+          setTimeout(function () { scrollElementBelowStickyChrome(scrollEl); }, 50);
         }
         closeClustersMobileSidebar();
       });
     });
 
-    /* e.g. /clusters/cluster-2/#c2-sc1 or #c2-featured — open matching tab after load or hash-only navigation */
-    function applyClusterUrlHashTab() {
+    /* Jump-nav links inside cluster sections */
+    root.addEventListener('click', function (e) {
+      var jumpLink = e.target.closest('.cluster-jump-link');
+      if (!jumpLink) return;
+      e.preventDefault();
+      var href = jumpLink.getAttribute('href');
+      if (!href || href.charAt(0) !== '#') return;
+      var target = document.getElementById(href.substring(1));
+      if (target) {
+        var scrollEl = target.querySelector('.sc-heading') || target;
+        scrollElementBelowStickyChrome(scrollEl);
+      }
+    });
+
+    /* e.g. /clusters/cluster-2/#c2-sc1 or #c2-featured — scroll to matching section */
+    function applyClusterUrlHash() {
       var raw = window.location.hash.replace(/^#/, '');
       if (!raw || !/^c\d+-(sc\d+|featured)$/.test(raw)) return;
-      var tab = document.getElementById(raw + '-tab');
-      if (!tab) return;
-      showBootstrapTab(tab);
+      var target = document.getElementById(raw);
+      if (!target) return;
       setTimeout(function () {
-        scrollToClusterTabPaneFromTrigger(tab);
+        var scrollEl = target.querySelector('.sc-heading') || target;
+        scrollElementBelowStickyChrome(scrollEl);
       }, 150);
     }
-    applyClusterUrlHashTab();
-    window.addEventListener('hashchange', applyClusterUrlHashTab);
+    applyClusterUrlHash();
+    window.addEventListener('hashchange', applyClusterUrlHash);
 
-    /* Clicking sub-cluster tabs: scroll so pane content clears sticky chrome */
-    if (typeof window.jQuery !== 'undefined' && window.jQuery.fn.tab) {
-      window
-        .jQuery(root)
-        .on('shown.bs.tab', '.cluster-tabs a[data-toggle="tab"], .cluster-tabs a[data-bs-toggle="tab"]', function () {
-          scrollToClusterTabPaneFromTrigger(this);
-        });
-    } else {
-      root.querySelectorAll('.cluster-tabs a.nav-link[data-toggle="tab"], .cluster-tabs a.nav-link[data-bs-toggle="tab"]').forEach(function (tabEl) {
-        tabEl.addEventListener('click', function () {
-          var self = this;
-          setTimeout(function () {
-            scrollToClusterTabPaneFromTrigger(self);
-          }, 200);
-        });
-      });
-    }
+    /* (Tab click handler removed — all sub-clusters are now visible sections) */
 
     var searchInput = document.getElementById('clusters-inline-search-input');
     var searchBtn = document.getElementById('clusters-inline-search-btn');
@@ -572,11 +564,6 @@
         var paneId = link.getAttribute('data-pane') || '';
         var section = clusterId ? document.getElementById(clusterId) : null;
         if (!section) return;
-
-        if (tabId) {
-          var tab = document.getElementById(tabId);
-          showBootstrapTab(tab);
-        }
 
         setTimeout(function () {
           var scrollEl = null;

@@ -33,43 +33,33 @@
   {{ end }}
 
   {{ if gt (len $cluster.sub_clusters) 0 }}
-  <ul class="nav nav-tabs cluster-tabs" id="tabs-{{ $cid }}" role="tablist">
-    {{/* Featured "Recommended" tab — first if present */}}
+  {{/* Compact jump-nav: inline links to scroll between sections */}}
+  <nav class="cluster-jump-nav" aria-label="Sub-cluster navigation">
     {{ if $hasFeatured }}
     {{ $fid := printf "c%d-featured" (int $cluster.number) }}
-    <li class="nav-item">
-      <a class="nav-link active fr-featured-tab" id="{{ $fid }}-tab"
-         data-toggle="tab" href="#{{ $fid }}" role="tab"
-         aria-controls="{{ $fid }}" aria-selected="true">
-        <span class="tab-label">Recommended</span>
-      </a>
-    </li>
+    <a href="#{{ $fid }}" class="cluster-jump-link cluster-jump-link--featured">Recommended</a>
     {{ end }}
     {{ range $si, $sc := $cluster.sub_clusters }}
     {{ $scid := printf "c%d-sc%d" (int $cluster.number) $si }}
-    <li class="nav-item">
-      <a class="nav-link{{ if and (eq $si 0) (not $hasFeatured) }} active{{ end }}" id="{{ $scid }}-tab"
-         data-toggle="tab" href="#{{ $scid }}" role="tab"
-         aria-controls="{{ $scid }}" aria-selected="{{ if and (eq $si 0) (not $hasFeatured) }}true{{ else }}false{{ end }}">
-        <span class="tab-label">{{ $sc.name }}</span>
-      </a>
-    </li>
+    <a href="#{{ $scid }}" class="cluster-jump-link">{{ $sc.name }}</a>
     {{ end }}
-  </ul>
+  </nav>
 
-  <div class="tab-content cluster-tab-content" id="content-{{ $cid }}">
-    {{/* Featured tab pane */}}
+  {{/* All sections visible — no tabs */}}
+  <div class="cluster-sections-list" id="content-{{ $cid }}">
+
+    {{/* Featured / Recommended section */}}
     {{ if $hasFeatured }}
     {{ $fid := printf "c%d-featured" (int $cluster.number) }}
-    <div class="tab-pane fade show active" id="{{ $fid }}"
-         role="tabpanel" aria-labelledby="{{ $fid }}-tab">
+    <div class="cluster-sc-section" id="{{ $fid }}">
+      <h3 class="sc-heading sc-heading--featured">Recommended</h3>
       {{ partial "clusters/featured_cards.html" (dict "resources" $featuredData "cluster_number" (int $cluster.number)) }}
     </div>
     {{ end }}
+
     {{ range $si, $sc := $cluster.sub_clusters }}
     {{ $scid := printf "c%d-sc%d" (int $cluster.number) $si }}
-    <div class="tab-pane fade{{ if and (eq $si 0) (not $hasFeatured) }} show active{{ end }}" id="{{ $scid }}"
-         role="tabpanel" aria-labelledby="{{ $scid }}-tab">
+    <div class="cluster-sc-section" id="{{ $scid }}">
 
       <h3 class="sc-heading">{{ $sc.name }}</h3>
 
