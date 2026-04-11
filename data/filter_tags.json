@@ -1,12 +1,12 @@
 {
   "focus": [
-    "critique",
-    "evidence",
     "overview",
+    "evidence",
     "advocacy",
+    "critique",
+    "policies",
     "practice/tools",
-    "teaching/training",
-    "policies"
+    "teaching/training"
   ],
   "type": [
     "Paper",

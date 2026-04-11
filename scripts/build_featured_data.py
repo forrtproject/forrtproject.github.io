@@ -194,6 +194,19 @@ def main():
     print(f"  Recommended DOIs: {recommended_dois}")
 
 
+    # Fetch filter tags early so we can use focus order for sorting
+    print("Fetching filter tags...")
+    tag_rows = gws_read(PUBLICATIONS_SHEET_ID, "tags!A2:B50")
+    focus_tags = []
+    type_tags = []
+    for row in tag_rows:
+        if len(row) >= 1 and row[0].strip():
+            focus_tags.append(row[0].strip())
+        if len(row) >= 2 and row[1].strip():
+            type_tags.append(row[1].strip())
+    focus_order = {tag: i for i, tag in enumerate(focus_tags)}
+    print(f"  Focus order: {focus_tags}")
+
     print("Fetching Publications sheet...")
     pub_rows = gws_read(PUBLICATIONS_SHEET_ID, "Publications!A2:P5000")
     print(f"  {len(pub_rows)} publication rows")
@@ -252,6 +265,10 @@ def main():
             "oa_url": oa_url,
             "authors": row[COL_AUTHORS].strip(),
         }
+        # Attach recommendations if this DOI was recommended
+        if doi in recommendations_by_doi:
+            card["recommendations"] = recommendations_by_doi[doi]
+
         pub_cards[doi] = card
 
         # If this is a recommended DOI, also add to featured clusters
@@ -277,6 +294,10 @@ def main():
         for d in sorted(unmatched):
             print(f"    - {d}")
 
+    # Sort featured resources by focus order within each cluster
+    for resources in clusters.values():
+        resources.sort(key=lambda r: focus_order.get(r.get("focus", ""), 999))
+
     print(f"  {matched} featured resources across {len(clusters)} clusters")
     for k in sorted(clusters.keys(), key=int):
         print(f"    Cluster {k}: {len(clusters[k])} resources")
@@ -290,16 +311,6 @@ def main():
         json.dump(pub_cards, f, indent=2, ensure_ascii=False)
     print(f"Wrote {PUB_CARDS_PATH} ({len(pub_cards)} entries)")
 
-    # Fetch filter tags from the "tags" sheet
-    print("Fetching filter tags...")
-    tag_rows = gws_read(PUBLICATIONS_SHEET_ID, "tags!A2:B50")
-    focus_tags = []
-    type_tags = []
-    for row in tag_rows:
-        if len(row) >= 1 and row[0].strip():
-            focus_tags.append(row[0].strip())
-        if len(row) >= 2 and row[1].strip():
-            type_tags.append(row[1].strip())
     filter_tags = {"focus": focus_tags, "type": type_tags}
     with open(FILTER_TAGS_PATH, "w") as f:
         json.dump(filter_tags, f, indent=2, ensure_ascii=False)

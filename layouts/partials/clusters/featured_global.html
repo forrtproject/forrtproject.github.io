@@ -41,7 +41,7 @@
   </div>
 </div>
 
-{{/* Inject featured data and pub card lookup as JSON for JS */}}
+{{/* Inject featured data, pub card lookup, and focus order as JSON for JS */}}
 {{ $featured := site.Data.featured_resources }}
 {{ if $featured }}
 <script>window.FORRT_FEATURED = {{ $featured | jsonify }};</script>
@@ -49,4 +49,8 @@
 {{ $pubCards := site.Data.pub_cards }}
 {{ if $pubCards }}
 <script>window.FORRT_PUB_CARDS = {{ $pubCards | jsonify }};</script>
+{{ end }}
+{{ $filterTags := site.Data.filter_tags }}
+{{ if $filterTags }}
+<script>window.FORRT_FOCUS_ORDER = {{ $filterTags.focus | jsonify }};</script>
 {{ end }}

@@ -589,6 +589,27 @@
   }
 
   /* ================================================================
+     SORT CARDS BY FOCUS ORDER
+     ================================================================ */
+  function sortCardsByFocus() {
+    var focusOrder = window.FORRT_FOCUS_ORDER;
+    if (!focusOrder || !focusOrder.length) return;
+    var orderMap = {};
+    focusOrder.forEach(function (f, i) { orderMap[f] = i; });
+
+    document.querySelectorAll('.fr-cards-list').forEach(function (list) {
+      var cards = Array.prototype.slice.call(list.querySelectorAll('.fc-card, .fr-card'));
+      if (cards.length < 2) return;
+      cards.sort(function (a, b) {
+        var fa = orderMap[a.getAttribute('data-focus')] !== undefined ? orderMap[a.getAttribute('data-focus')] : 999;
+        var fb = orderMap[b.getAttribute('data-focus')] !== undefined ? orderMap[b.getAttribute('data-focus')] : 999;
+        return fa - fb;
+      });
+      cards.forEach(function (card) { list.appendChild(card); });
+    });
+  }
+
+  /* ================================================================
      INIT
      ================================================================ */
   onReady(function () {
@@ -607,6 +628,7 @@
     initReadingList(resourceIdx);
     initVoting();
     initCarousels();
+    sortCardsByFocus();
     initAccordion();
     initFiltering();
   });

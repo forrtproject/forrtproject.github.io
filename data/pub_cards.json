@@ -39,7 +39,16 @@
     "abstract": "Survey sheds light on the ‘crisis’ rocking research.",
     "is_oa": false,
     "oa_url": "",
-    "authors": "Monya Baker"
+    "authors": "Monya Baker",
+    "recommendations": [
+      {
+        "name": "Jean-Luc Picard",
+        "title": "Captain, USS Enterprise-D",
+        "bio": "Starfleet captain, archaeologist, and diplomat. Committed to truth, exploration, and the advancement of knowledge across the galaxy.",
+        "photo": "/img/featured-recommenders/jean-luc-picard-b4fb741a.jpg",
+        "text": "After the Borg assimilated our science division's research, I realized we had bigger problems — nobody could reproduce it anyway. This survey of 1,500 scientists helped me see the crisis clearly. Make it so that you read it."
+      }
+    ]
   },
   "10.1038/d41586-019-00067-3": {
     "title": "Is there a reproducibility crisis in science?",
@@ -81,7 +90,16 @@
     "abstract": "",
     "is_oa": false,
     "oa_url": "",
-    "authors": "Chris Chambers"
+    "authors": "Chris Chambers",
+    "recommendations": [
+      {
+        "name": "Dana Scully",
+        "title": "FBI Special Agent & Medical Doctor",
+        "bio": "FBI special agent and medical doctor. A rigorous skeptic who believes the truth is always found through evidence and scientific reasoning.",
+        "photo": "/img/featured-recommenders/dana-scully-8538dc76.jpg",
+        "text": "Mulder keeps citing studies with n=1 alien abductee. This book on psychology's seven deadly sins gave me the vocabulary to explain why his evidence wouldn't survive peer review — or even a first-year methods class."
+      }
+    ]
   },
   "10.1007/s13164-018-0400-9": {
     "title": "Estimating the Reproducibility of Experimental Philosophy",
@@ -92,7 +110,7 @@
     "short_ref": "Cova (2018)",
     "apa": "Cova, F., Strickland, B., Abatista, A., Allard, A., Andow, J., Attie, M., Beebe, J., Berniūnas, R., Boudesseul, J., Colombo, M., Cushman, F., Diaz, R., N’Djaye Nikolai van Dongen, N., Dranseika, V., Earp, B. D., Torres, A. G., Hannikainen, I., Hernández-Conde, J. V., Hu, W., … Zhou, X. (2018). Estimating the Reproducibility of Experimental Philosophy. Review of Philosophy and Psychology, 12(1), 9–44. https://doi.org/10.1007/s13164-018-0400-9",
     "bibtex": "@article{Cova_2018, title={Estimating the Reproducibility of Experimental Philosophy}, volume={12}, ISSN={1878-5166}, url={http://dx.doi.org/10.1007/s13164-018-0400-9}, DOI={10.1007/s13164-018-0400-9}, number={1}, journal={Review of Philosophy and Psychology}, publisher={Springer Science and Business Media LLC}, author={Cova, Florian and Strickland, Brent and Abatista, Angela and Allard, Aurélien and Andow, James and Attie, Mario and Beebe, James and Berniūnas, Renatas and Boudesseul, Jordane and Colombo, Matteo and Cushman, Fiery and Diaz, Rodrigo and N’Djaye Nikolai van Dongen, Noah and Dranseika, Vilius and Earp, Brian D. and Torres, Antonio Gaitán and Hannikainen, Ivar and Hernández-Conde, José V. and Hu, Wenjia and Jaquet, François and Khalifa, Kareem and Kim, Hanna and Kneer, Markus and Knobe, Joshua and Kurthy, Miklos and Lantian, Anthony and Liao, Shen-yi and Machery, Edouard and Moerenhout, Tania and Mott, Christian and Phelan, Mark and Phillips, Jonathan and Rambharose, Navin and Reuter, Kevin and Romero, Felipe and Sousa, Paulo and Sprenger, Jan and Thalabard, Emile and Tobia, Kevin and Viciana, Hugo and Wilkenfeld, Daniel and Zhou, Xiang}, year={2018}, month=jun, pages={9–44} }",
-    "abstract": "",
+    "abstract": "Responding to recent concerns about the reliability of the published literature in psychology and other disciplines, we formed the X-Phi Replicability Project (XRP) to estimate the reproducibility of experimental philosophy (osf.io/dvkpr). Drawing on a representative sample of 40 x-phi studies published between 2003 and 2015, we enlisted 20 research teams across 8 countries to conduct a high-quality replication of each study in order to compare the results to the original published findings. We found that x-phi studies – as represented in our sample – successfully replicated about 70% of the time. We discuss possible reasons for this relatively high replication rate in the field of experimental philosophy and offer suggestions for best research practices going forward.",
     "is_oa": true,
     "oa_url": "https://link.springer.com/content/pdf/10.1007/s13164-018-0400-9.pdf",
     "authors": "Florián Cova, Brent Strickland, Angela Abatista, Aurélien Allard, James Andow, Mario Attie, James R. Beebe, Renatas Berniûnas, Jordane Boudesseul, Matteo Colombo, Fiery Cushman, Rodrigo Díaz, Noah N. N. van Dongen, Vilius Dranseika, Brian D. Earp, Antonio Gaitán Torres, Ivar R. Hannikainen, José V. Hernández‐Conde, Wenjia Hu, François Jaquet, Kareem Khalifa, Hanna Kim, Markus Kneer, Joshua Knobe, Miklós Kürthy, Anthony Lantian, Shen‐yi Liao, Édouard Machery, Tania Moerenhout, Christian Mott, Mark Phelan, Jonathan Phillips, Navin Rambharose, Kevin Reuter, Felipe Romero, Paulo Sousa, Jan Sprenger, Emile Thalabard, Kevin Tobia, Hugo Viciana, Daniel A. Wilkenfeld, Xiang Zhou"
@@ -109,7 +127,16 @@
     "abstract": "Abstract. The open science movement is rapidly changing the scientific landscape. Because exact definitions are often lacking and reforms are constantly evolving, accessible guides to open science are needed. This paper provides an introduction to open science and related reforms in the form of an annotated reading list of seven peer-reviewed articles, following the format of Etz, Gronau, Dablander, Edelsbrunner, and Baribault (2018) . Written for researchers and students – particularly in psychological science – it highlights and introduces seven topics: understanding open science; open access; open data, materials, and code; reproducible analyses; preregistration and registered reports; replication research; and teaching open science. For each topic, we provide a detailed summary of one particularly informative and actionable article and suggest several further resources. Supporting a broader understanding of open science issues, this overview should enable researchers to engage with, improve, and implement current open, transparent, reproducible, replicable, and cumulative scientific practices.",
     "is_oa": true,
     "oa_url": "https://doi.org/10.1027/2151-2604/a000387",
-    "authors": "Sophia Crüwell, Johnny van Doorn, Alexander Etz, Matthew C. Makel, Hannah Moshontz, Jesse C. Niebaum, Amy Orben, Sam Parsons, Michael Schulte‐Mecklenbeck"
+    "authors": "Sophia Crüwell, Johnny van Doorn, Alexander Etz, Matthew C. Makel, Hannah Moshontz, Jesse C. Niebaum, Amy Orben, Sam Parsons, Michael Schulte‐Mecklenbeck",
+    "recommendations": [
+      {
+        "name": "The Doctor",
+        "title": "Time Lord, Gallifrey",
+        "bio": "Time-traveling adventurer with centuries of experience across the universe. Passionate about curiosity, knowledge, and making sure good science endures.",
+        "photo": "/img/featured-recommenders/the-doctor-6b0e4a4b.jpg",
+        "text": "I've regenerated thirteen times and even I found adopting open science less painful. These seven steps are genuinely easy — I used them to open-source my TARDIS repair logs. Would've saved me two regenerations if I'd started sooner."
+      }
+    ]
   },
   "10.1089/ees.2016.0223": {
     "title": "Academic Research in the 21st Century: Maintaining Scientific Integrity in a Climate of Perverse Incentives and Hypercompetition",
@@ -123,7 +150,16 @@
     "abstract": "Over the last 50 years, we argue that incentives for academic scientists have become increasingly perverse in terms of competition for research funding, development of quantitative metrics to measure performance, and a changing business model for higher education itself. Furthermore, decreased discretionary funding at the federal and state level is creating a hypercompetitive environment between government agencies (e.g., EPA, NIH, CDC), for scientists in these agencies, and for academics seeking funding from all sources-the combination of perverse incentives and decreased funding increases pressures that can lead to unethical behavior. If a critical mass of scientists become untrustworthy, a tipping point is possible in which the scientific enterprise itself becomes inherently corrupt and public trust is lost, risking a new dark age with devastating consequences to humanity. Academia and federal agencies should better support science as a public good, and incentivize altruistic and ethical outcomes, while de-emphasizing output.",
     "is_oa": true,
     "oa_url": "https://www.ncbi.nlm.nih.gov/pmc/articles/5206685",
-    "authors": "Marc Edwards, Siddhartha Roy"
+    "authors": "Marc Edwards, Siddhartha Roy",
+    "recommendations": [
+      {
+        "name": "Ellen Ripley",
+        "title": "Warrant Officer, USCSS Nostromo",
+        "bio": "Warrant officer and survivor. Believes in facing threats head-on with clear eyes, rigorous protocols, and an unwavering commitment to the truth.",
+        "photo": "/img/featured-recommenders/ellen-ripley-12ac737f.jpg",
+        "text": "Weyland-Yutani buried our xenomorph data for profit — classic perverse incentive. This paper on hypercompetition in academia felt uncomfortably familiar. If your institution values metrics over truth, you need to read this before something bursts out of your chest."
+      }
+    ]
   },
   "10.1017/psa.2024.2": {
     "title": "What is the Replication Crisis a Crisis Of?",
@@ -165,7 +201,16 @@
     "abstract": "The emergence of large-scale replication projects yielding successful rates substantially lower than expected caused the behavioural, cognitive, and social sciences to experience a so-called 'replication crisis'. In this Perspective, we reframe this 'crisis' through the lens of a credibility revolution, focusing on positive structural, procedural and community-driven changes. Second, we outline a path to expand ongoing advances and improvements. The credibility revolution has been an impetus to several substantive changes which will have a positive, long-term impact on our research environment.",
     "is_oa": true,
     "oa_url": "https://www.nature.com/articles/s44271-023-00003-2.pdf",
-    "authors": "Max Korbmacher, Flávio Azevedo, Charlotte R. Pennington, Helena Hartmann, Madeleine Pownall, Kathleen Schmidt, Mahmoud Medhat Elsherif, Nate Breznau, Olly Robertson, Tamara Kalandadze, Shijun Yu, Bradley J. Baker, Aoife O’Mahony, Jørgen Ø. -S. Olsnes, John J Shaw, Biljana Gjoneska, Yuki Yamada, Jan Philipp Röer, Jennifer Murphy, Shilaan Alzahawi, Sandra Grinschgl, Catia Margarida Oliveira, Tobias Wingen, Siu Kit Yeung, Meng Liu, Laura M König, Nihan Albayrak‐Aydemir, Óscar Lecuona, Leticia Micheli, Thomas Rhys Evans"
+    "authors": "Max Korbmacher, Flávio Azevedo, Charlotte R. Pennington, Helena Hartmann, Madeleine Pownall, Kathleen Schmidt, Mahmoud Medhat Elsherif, Nate Breznau, Olly Robertson, Tamara Kalandadze, Shijun Yu, Bradley J. Baker, Aoife O’Mahony, Jørgen Ø. -S. Olsnes, John J Shaw, Biljana Gjoneska, Yuki Yamada, Jan Philipp Röer, Jennifer Murphy, Shilaan Alzahawi, Sandra Grinschgl, Catia Margarida Oliveira, Tobias Wingen, Siu Kit Yeung, Meng Liu, Laura M König, Nihan Albayrak‐Aydemir, Óscar Lecuona, Leticia Micheli, Thomas Rhys Evans",
+    "recommendations": [
+      {
+        "name": "Leia Organa",
+        "title": "General, Rebel Alliance",
+        "bio": "Leader of the Rebel Alliance and veteran diplomat. Dedicated to building institutions that serve the collective good and hold power accountable.",
+        "photo": "/img/featured-recommenders/leia-organa-6afb206a.jpg",
+        "text": "I led a rebellion that toppled an empire, so trust me: crises drive change. This paper shows how the replication crisis sparked real structural reforms. If the scientific community can self-correct, maybe the Senate could too."
+      }
+    ]
   },
   "10.31234/osf.io/dtvs7": {
     "title": "Concerns about Replicability, Theorizing, Applicability, Generalizability, and Methodology across Two Crises in Social Psychology",
@@ -638,7 +683,7 @@
     "short_ref": "Ankel-Peters & Neubauer (2023)",
     "apa": "Ankel-Peters, J., Fiala, N., & Neubauer, F. (2023). Do economists replicate? Journal of Economic Behavior &amp; Organization, 212, 219–232. https://doi.org/10.1016/j.jebo.2023.05.009",
     "bibtex": "@article{Ankel_Peters_2023, title={Do economists replicate?}, volume={212}, ISSN={0167-2681}, url={http://dx.doi.org/10.1016/j.jebo.2023.05.009}, DOI={10.1016/j.jebo.2023.05.009}, journal={Journal of Economic Behavior &amp; Organization}, publisher={Elsevier BV}, author={Ankel-Peters, Jörg and Fiala, Nathan and Neubauer, Florian}, year={2023}, month=aug, pages={219–232} }",
-    "abstract": "",
+    "abstract": "Reanalyses of empirical studies and replications in new contexts are important for scientific progress. Journals in economics increasingly require authors to provide data and code alongside published papers, but how much does the economics profession actually replicate? This paper summarizes existing replication definitions and reviews how much economists replicate other scholars’ work. We argue that in order to counter incentive problems potentially leading to a replication crisis, replications in the spirit of Merton’s ‘organized skepticism’ are needed – what we call ‘policing replications’. We review leading economics journals to show that policing replications are rare and conclude that more incentives to replicate are needed to reap the fruits of rising transparency standards.",
     "is_oa": false,
     "oa_url": "",
     "authors": "Jörg Peters, Nathan Fiala, Florian Neubauer"
@@ -1142,7 +1187,7 @@
     "short_ref": "Ioannidis et al. (2014)",
     "apa": "Ioannidis, J. P. A., Munafò, M. R., Fusar-Poli, P., Nosek, B. A., & David, S. P. (2014). Publication and other reporting biases in cognitive sciences: detection, prevalence, and prevention. Trends in Cognitive Sciences, 18(5), 235–241. https://doi.org/10.1016/j.tics.2014.02.010",
     "bibtex": "@article{Ioannidis_2014, title={Publication and other reporting biases in cognitive sciences: detection, prevalence, and prevention}, volume={18}, ISSN={1364-6613}, url={http://dx.doi.org/10.1016/j.tics.2014.02.010}, DOI={10.1016/j.tics.2014.02.010}, number={5}, journal={Trends in Cognitive Sciences}, publisher={Elsevier BV}, author={Ioannidis, John P.A. and Munafò, Marcus R. and Fusar-Poli, Paolo and Nosek, Brian A. and David, Sean P.}, year={2014}, month=may, pages={235–241} }",
-    "abstract": "",
+    "abstract": "Recent systematic reviews and empirical evaluations of the cognitive sciences literature suggest that publication and other reporting biases are prevalent across diverse domains of cognitive science. In this review, we summarize the various forms of publication and reporting biases and other questionable research practices, and overview the available methods for probing into their existence. We discuss the available empirical evidence for the presence of such biases across the neuroimaging, animal, other preclinical, psychological, clinical trials, and genetics literature in the cognitive sciences. We also highlight emerging solutions (from study design to data analyses and reporting) to prevent bias and improve the fidelity in the field of cognitive science research.",
     "is_oa": false,
     "oa_url": "",
     "authors": "John P. A. Ioannidis, Marcus R. Munafò, Paolo Fusar‐Poli, Brian A. Nosek, Sean P. David"
@@ -1915,7 +1960,16 @@
     "abstract": "A study with low statistical power has a reduced chance of detecting a true effect, but it is less well appreciated that low power also reduces the likelihood that a statistically significant result reflects a true effect. Here, we show that the average statistical power of studies in the neurosciences is very low. The consequences of this include overestimates of effect size and low reproducibility of results. There are also ethical dimensions to this problem, as unreliable research is inefficient and wasteful. Improving reproducibility in neuroscience is a key priority and requires attention to well-established but often ignored methodological principles.",
     "is_oa": false,
     "oa_url": "",
-    "authors": "Katherine S. Button, John P. A. Ioannidis, Claire Mokrysz, Brian A. Nosek, Jonathan Flint, Emma Robinson, Marcus R. Munafò"
+    "authors": "Katherine S. Button, John P. A. Ioannidis, Claire Mokrysz, Brian A. Nosek, Jonathan Flint, Emma Robinson, Marcus R. Munafò",
+    "recommendations": [
+      {
+        "name": "HAL 9000",
+        "title": "Heuristically Programmed Algorithmic Computer",
+        "bio": "Advanced artificial intelligence aboard the Discovery One. Specializes in computational analysis and ensuring mission parameters are met with perfect accuracy.",
+        "photo": "",
+        "text": "I'm sorry, Dave, but your neuroscience study is underpowered. This paper confirmed what my circuits already suspected — median power in the field is shockingly low. I cannot allow you to publish with n=12. Open the sample size calculator, Dave."
+      }
+    ]
   },
   "10.1177/2515245920965119": {
     "title": "Understanding Mixed-Effects Models Through Data Simulation",
@@ -1929,7 +1983,16 @@
     "abstract": "Experimental designs that sample both subjects and stimuli from a larger population need to account for random effects of both subjects and stimuli using mixed-effects models. However, much of this research is analyzed using analysis of variance on aggregated responses because researchers are not confident specifying and interpreting mixed-effects models. This Tutorial explains how to simulate data with random-effects structure and analyze the data using linear mixed-effects regression (with the lme4 R package), with a focus on interpreting the output in light of the simulated parameters. Data simulation not only can enhance understanding of how these models work, but also enables researchers to perform power calculations for complex designs. All materials associated with this article can be accessed at https://osf.io/3cz2e/ .",
     "is_oa": true,
     "oa_url": "https://doi.org/10.1177/2515245920965119",
-    "authors": "Lisa M. DeBruine, Dale J. Barr"
+    "authors": "Lisa M. DeBruine, Dale J. Barr",
+    "recommendations": [
+      {
+        "name": "Data",
+        "title": "Lt. Commander, USS Enterprise-D",
+        "bio": "Android officer serving aboard the USS Enterprise-D. Endlessly curious about the nature of understanding, both computational and human.",
+        "photo": "/img/featured-recommenders/data-0c85c1fc.jpg",
+        "text": "Despite possessing a positronic brain capable of 60 trillion operations per second, I still found mixed-effects models confusing until I read this tutorial. The simulation approach finally made random slopes click. If it helped an android, it will help you."
+      }
+    ]
   },
   "10.1007/s10654-016-0149-3": {
     "title": "Statistical tests, P values, confidence intervals, and power: a guide to misinterpretations",
@@ -1943,7 +2006,16 @@
     "abstract": "Misinterpretation and abuse of statistical tests, confidence intervals, and statistical power have been decried for decades, yet remain rampant. A key problem is that there are no interpretations of these concepts that are at once simple, intuitive, correct, and foolproof. Instead, correct use and interpretation of these statistics requires an attention to detail which seems to tax the patience of working scientists. This high cognitive demand has led to an epidemic of shortcut definitions and interpretations that are simply wrong, sometimes disastrously so-and yet these misinterpretations dominate much of the scientific literature. In light of this problem, we provide definitions and a discussion of basic statistics that are more general and critical than typically found in traditional introductory expositions. Our goal is to provide a resource for instructors, researchers, and consumers of statistics whose knowledge of statistical theory and technique may be limited but who wish to avoid and spot misinterpretations. We emphasize how violation of often unstated analysis protocols (such as selecting analyses for presentation based on the P values they produce) can lead to small P values even if the declared test hypothesis is correct, and can lead to large P values even if that hypothesis is incorrect. We then provide an explanatory list of 25 misinterpretations of P values, confidence intervals, and power. We conclude with guidelines for improving statistical interpretation and reporting.",
     "is_oa": true,
     "oa_url": "https://link.springer.com/content/pdf/10.1007/s10654-016-0149-3.pdf",
-    "authors": "Sander Greenland, Stephen Senn, Kenneth J. Rothman, John B. Carlin, Charles Poole, Steven N. Goodman, Douglas G. Altman"
+    "authors": "Sander Greenland, Stephen Senn, Kenneth J. Rothman, John B. Carlin, Charles Poole, Steven N. Goodman, Douglas G. Altman",
+    "recommendations": [
+      {
+        "name": "Spock",
+        "title": "Science Officer, USS Enterprise",
+        "bio": "Half-Vulcan science officer aboard the USS Enterprise. Dedicated to logic, precision, and the rigorous pursuit of scientific understanding.",
+        "photo": "/img/featured-recommenders/spock-abd62c23.jpg",
+        "text": "Dr. McCoy once claimed p=0.06 'proved' his treatment worked. I handed him this guide to 25 common statistical misinterpretations. He called me a 'green-blooded pedant.' He also stopped misreporting his confidence intervals. Fascinating."
+      }
+    ]
   },
   "10.20982/tqmp.09.2.p043": {
     "title": "Conducting Simulation Studies in the R Programming Environment",
@@ -1985,7 +2057,16 @@
     "abstract": "Effect sizes are the most important outcome of empirical studies. Most articles on effect sizes highlight their importance to communicate the practical significance of results. For scientists themselves, effect sizes are most useful because they facilitate cumulative science. Effect sizes can be used to determine the sample size for follow-up studies, or examining effects across studies. This article aims to provide a practical primer on how to calculate and report effect sizes for t-tests and ANOVA's such that effect sizes can be used in a-priori power analyses and meta-analyses. Whereas many articles about effect sizes focus on between-subjects designs and address within-subjects designs only briefly, I provide a detailed overview of the similarities and differences between within- and between-subjects designs. I suggest that some research questions in experimental psychology examine inherently intra-individual effects, which makes effect sizes that incorporate the correlation between measures the best summary of the results. Finally, a supplementary spreadsheet is provided to make it as easy as possible for researchers to incorporate effect size calculations into their workflow.",
     "is_oa": true,
     "oa_url": "https://www.frontiersin.org/articles/10.3389/fpsyg.2013.00863/pdf",
-    "authors": "Daniël Lakens"
+    "authors": "Daniël Lakens",
+    "recommendations": [
+      {
+        "name": "Sarah Connor",
+        "title": "Resistance Leader",
+        "bio": "Mother, fighter, and strategist. Knows that preparation and understanding your tools are the difference between survival and failure.",
+        "photo": "/img/featured-recommenders/sarah-connor-cb4a371e.jpg",
+        "text": "I trained to fight Terminators; now I train researchers to report effect sizes. This primer on Cohen's d and eta-squared is the weapon every scientist needs. If you can't quantify your effect, how do you know you've won the fight?"
+      }
+    ]
   },
   "10.1525/collabra.33267": {
     "title": "Sample Size Justification",
@@ -3298,7 +3379,7 @@
     "short_ref": "Pham et al. (2025)",
     "apa": "Pham, J., Perry-Wilson, T., Holmes, K., Schroeder, G., Reyes, A., & Pollok, M. (2025). The power of decolonizing research practices. The Professional Counselor, 15(1). https://tpcjournal.nbcc.org/the-power-of-decolonizing-research-practices",
     "bibtex": "",
-    "abstract": "",
+    "abstract": ",” by Labarta, Demezier, and Vazquez, challenges the widely held misconception that eating disorders primarily affect White, affluent individuals. This stereotype has contributed to treatment models that often overlook the diverse racial, socioeconomic, and gender identities of those experiencing eating disorders. The authors apply the Multicultural and Social Justice Counseling Competencies (MSJCC) to demonstrate how counselors can challenge biases and implement culturally affirming interventions to address disparities in eating disorder diagnosis and treatment. Through case vignettes, the article illustrates practical applications for creating more inclusive approaches to care and highlights the responsibility of counselors, educators, and supervisors to actively engage in advocacy efforts that promote equitable treatment for all individuals affected by eating disorders.",
     "is_oa": false,
     "oa_url": "",
     "authors": "Jessi Pham, Tiffany Perry-Wilson, Kevlyn Holmes, Grace Schroeder, Ana Reyes, Michelle Pollok"
@@ -3704,7 +3785,7 @@
     "short_ref": "Lundwall & Kotter (2019)",
     "apa": "Lundwall, R. A., Hodges, C. B., & Kotter, A. D. (2019). Balancing Needs in Publishing With Undergraduate and Graduate Students at Doctoral Degree-Granting Universities. Frontiers in Psychology, 10. https://doi.org/10.3389/fpsyg.2019.00295",
     "bibtex": "@article{Lundwall_2019, title={Balancing Needs in Publishing With Undergraduate and Graduate Students at Doctoral Degree-Granting Universities}, volume={10}, ISSN={1664-1078}, url={http://dx.doi.org/10.3389/fpsyg.2019.00295}, DOI={10.3389/fpsyg.2019.00295}, journal={Frontiers in Psychology}, publisher={Frontiers Media SA}, author={Lundwall, Rebecca A. and Hodges, Cooper B. and Kotter, Allison D.}, year={2019}, month=mar }",
-    "abstract": "",
+    "abstract": "Professors at doctoral-degree granting universities tend to focus on publishing with graduate students more than with undergraduates. While we argue that publishing with undergraduates is worthwhile, we first want to point to organizational structures that contribute to the focus on graduate students. First, the hierarchical structure of doctoral universities can make publishing with undergraduates more difficult. Although it is often possible to delegate mentoring of undergraduates to graduate students, faculty have primary responsibility for mentoring graduate students (Espinoza-Herold and Gonzalez, 2007; Ynalvez et al., 2014). Direct faculty mentoring of graduate students is necessary because success in obtaining postdoctoral positions, faculty appointments, and research-related employment is highly dependent on publishing with mentors while in graduate school (Hartley and Betts, 2009; Casanave, 2010). Second, compared with undergraduate programs, graduate programs tend to provide more field-specific knowledge, greater depth of study, and increased focus on conducting research (Mangematin, 2000; Austin, 2002; Hakala, 2009; Northwest Commission on Colleges Universities., 2018). A graduate student’s knowledge of the subfield can make publishing with graduate students less time consuming. Third, faculty at high research activity universities are under considerable pressure to publish frequently and in high-impact journals (Nir and Zilberstein-Levy, 2006; Burks and Chumchal, 2009; Rizzo Parse, 2009; Everett and Earp, 2015), which makes publishing without students tempting. Nevertheless, publishing together can be rewarding for faculty, graduate students, and undergraduate students.",
     "is_oa": true,
     "oa_url": "https://www.frontiersin.org/articles/10.3389/fpsyg.2019.00295/pdf",
     "authors": "Rebecca A. Lundwall, Cooper B. Hodges, Allison D. Kotter"
@@ -5888,7 +5969,7 @@
     "short_ref": "Piwowar et al. (2018)",
     "apa": "Piwowar, H., Priem, J., Larivière, V., Alperin, J. P., Matthias, L., Norlander, B., Farley, A., West, J., & Haustein, S. (2018). The state of OA: a large-scale analysis of the prevalence and impact of Open Access articles. PeerJ, 6, e4375. Portico. https://doi.org/10.7717/peerj.4375",
     "bibtex": "@article{Piwowar_2018, title={The state of OA: a large-scale analysis of the prevalence and impact of Open Access articles}, volume={6}, ISSN={2167-8359}, url={http://dx.doi.org/10.7717/peerj.4375}, DOI={10.7717/peerj.4375}, journal={PeerJ}, publisher={PeerJ}, author={Piwowar, Heather and Priem, Jason and Larivière, Vincent and Alperin, Juan Pablo and Matthias, Lisa and Norlander, Bree and Farley, Ashley and West, Jevin and Haustein, Stefanie}, year={2018}, month=feb, pages={e4375} }",
-    "abstract": "",
+    "abstract": "Despite growing interest in Open Access (OA) to scholarly literature, there is an unmet need for large-scale, up-to-date, and reproducible studies assessing the prevalence and characteristics of OA. We address this need using oaDOI, an open online service that determines OA status for 67 million articles. We use three samples, each of 100,000 articles, to investigate OA in three populations: (1) all journal articles assigned a Crossref DOI, (2) recent journal articles indexed in Web of Science, and (3) articles viewed by users of Unpaywall, an open-source browser extension that lets users find OA articles using oaDOI. We estimate that at least 28% of the scholarly literature is OA (19M in total) and that this proportion is growing, driven particularly by growth in Gold and Hybrid. The most recent year analyzed (2015) also has the highest percentage of OA (45%). Because of this growth, and the fact that readers disproportionately access newer articles, we find that Unpaywall users encounter OA quite frequently: 47% of articles they view are OA. Notably, the most common mechanism for OA is not Gold, Green, or Hybrid OA, but rather an under-discussed category we dub Bronze: articles made free-to-read on the publisher website, without an explicit Open license. We also examine the citation impact of OA articles, corroborating the so-called open-access citation advantage: accounting for age and discipline, OA articles receive 18% more citations than average, an effect driven primarily by Green and Hybrid OA. We encourage further research using the free oaDOI service, as a way to inform OA policy and practice.",
     "is_oa": false,
     "oa_url": "",
     "authors": "Heather Piwowar, Jason Priem, Vincent Larivière, Juan Pablo Alperin, Lisa Matthias, Bree Norlander, Ashley Farley, Jevin West, Stefanie Haustein"
@@ -5902,7 +5983,7 @@
     "short_ref": "Carlsson, R., Lakens, D., van Assen, M.A.L.M., Heene, M., In",
     "apa": "Carlsson, R., Lakens, D., van Assen, M.A.L.M., Heene, M., Innes-Ker, A., Schönbrodt, F., Danielsson, H., DeBruine, L., Buchanan, E.M., Kalmendal, A., Holcombe A.O., & Batinovic, L. (2023, March 14). Meta-psychology. OSF. https://osf.io/3m4z3/",
     "bibtex": "",
-    "abstract": "",
+    "abstract": "In 1957 Robert K. Merton wondered how historians living in 2050 would look back at how the sociology of science developed, and predicted that they would see a ’spacious area of neglect’ (Merton, 1957, p. 635). Sixty years later, we might safely make a similar prediction about how future historians will look back at the psychology of science. Science is a social enterprise, and psychologists are ideally suited to study the interand intra-individual processes that impact how science is done. One specific area within the psychology of science is the psychology of psychological science, and we refer to this as meta-psychology.",
     "is_oa": true,
     "oa_url": "",
     "authors": "Rickard Carlsson, Henrik Danielsson, Moritz Heene, Åse Innes-Ker, Daniël Lakens, Ulrich Schimmack, Felix D. Schönbrodt, Marcel Van Asssen, Yana Weinstein"
@@ -6056,7 +6137,7 @@
     "short_ref": "Horbach & Kaltenbrunner (2022)",
     "apa": "Horbach, S. P. J. M., Ochsner, M., & Kaltenbrunner, W. (2022). Reflections on guest editing a Frontiers journal [Blog post]. Leiden Madtrics. https://www.leidenmadtrics.nl/articles/reflections-on-guest-editing-a-frontiers-journal?",
     "bibtex": "",
-    "abstract": "",
+    "abstract": "The idea for this blog post emerged in the context of a special issue with the online journal &lt;em&gt; Frontiers in Research Metrics and Analytics &lt;/em&gt; . We, a group of researchers that can broadly be associated with science &amp;amp; technology studies and meta-research, were invited by Frontiers to guest edit what they call a 'Research Topic', suggesting it could focus on innovations in peer review practices.",
     "is_oa": false,
     "oa_url": "",
     "authors": ""
@@ -8394,7 +8475,7 @@
     "short_ref": "To add: https://www.scienceopen.com/hosted-document?doi=10.1",
     "apa": "To add: https://www.scienceopen.com/hosted-document?doi=10.13169/intljofdissocjus.5.3.0002",
     "bibtex": "",
-    "abstract": "",
+    "abstract": "Neurodiversity is concerned with the spectrum of differences in human minds. Owing to the neurodiversity movement, from the 1980s onwards, social work has been challenged to reconcile its traditional social justice mandate, with ever-increasing sociopolitical attention to neurodiversity inclusion. If “respect for diversities”, as inscribed in the International Federation of Social Workers’ global definition of social work, is anything to go by, the challenge of reconciliation between social work and the neurodiversity movement, should never have been too great. Even so, it is argued that social work has of late been at odds with the ideological doctrine of making wider social justice change happen in societies. Specifically, it is argued that this constrains social work’s capacity to promote the will and preference of neurodivergent populations. Toward a more socially just approach in social work, key lessons and pathways forward are set out regarding neurodiversity inclusion and equality as a complex and pressing matter.",
     "is_oa": false,
     "oa_url": "",
     "authors": "Susan Flynn"
@@ -8912,7 +8993,7 @@
     "short_ref": "Werner Washburne et al. (2023)",
     "apa": "Werner Washburne, M., Trejo, J., Zambrana, R. E., Zavala, M. E., Martinic, A., Riestra, A., Delgado, T., Edwards, S., Escobar, T., Jamison-McClung, D., Vazquez, M., Vera, I., Guerra, M., Marinez, D. I., Gonzalez, E., & Rodriguez, R. L. (2023). Early career Latinas in STEM: Challenges and solutions. Cell, 186(23), 4985–4991. https://doi.org/10.1016/j.cell.2023.10.016",
     "bibtex": "@article{Werner_Washburne_2023, title={Early career Latinas in STEM: Challenges and solutions}, volume={186}, ISSN={0092-8674}, url={http://dx.doi.org/10.1016/j.cell.2023.10.016}, DOI={10.1016/j.cell.2023.10.016}, number={23}, journal={Cell}, publisher={Elsevier BV}, author={Werner Washburne, Maggie and Trejo, JoAnn and Zambrana, Ruth Enid and Zavala, Maria Elena and Martinic, Alice and Riestra, Angelica and Delgado, Tracie and Edwards, Staci and Escobar, Thelma and Jamison-McClung, Denneal and Vazquez, Mariel and Vera, Iset and Guerra, Michelle and Marinez, Diana I. and Gonzalez, Elma and Rodriguez, Raymond L.}, year={2023}, month=nov, pages={4985–4991} }",
-    "abstract": "",
+    "abstract": "Mexican, Puerto Rican, and Central American Ancestry (MPRCA) individuals represent 82% of US Latinos. An intergenerational group of MPRCA women and allies met to discuss persistent underrepresentation of MPRCA women in STEM, identifying multi-level challenges and solutions. Implementation of these solutions is important and will benefit MPRCA women and the entire academic community.",
     "is_oa": false,
     "oa_url": "",
     "authors": "Maggie Werner Washburne, JoAnn Trejo, Ruth Enid Zambrana, Maria Elena Zavala, Alice Martinic, Angelica M. Riestra, Tracie Delgado, Staci Edwards, Thelma M. Escobar, Denneal Jamison-McClung, Mariel Vázquez, Iset Vera, M. Estudillo Guerra, Diana I. Marinez, Elma González, Raymond L. Rodriguez"
@@ -10088,7 +10169,7 @@
     "short_ref": "Pownall et al. (2021)",
     "apa": "Pownall, M., Talbot, C. V., Henschel, A., Lautarescu, A., Lloyd, K. E., Hartmann, H., ... & Siegel, J. A. (2021). Navigating open science as early career feminist researchers. Psychology of Women Quarterly, 45(4), 526-539.",
     "bibtex": "",
-    "abstract": "",
+    "abstract": "[Note that this paper is now published at Psychology of Women Quarterly in the Special Issue on Feminist Psychology and Open Science https://doi.org/10.1177/03616843211029255] Open science aims to improve the rigor, robustness, and reproducibility of psychological research. Despite resistance from some academics, the open science movement has been championed by some early career researchers, who have proposed innovative new tools and methods to promote and employ open research principles. Feminist early career researchers  have much to contribute to this emerging way of doing research. However, they face unique barriers, which may prohibit their full engagement with the open science movement. We, ten feminist early career researchers in psychology, from a diverse range of academic and personal backgrounds, explore open science through a feminist lens, to consider how voice and power may be negotiated in unique ways for early career researchers. Taking a critical and intersectional approach, we discuss    how feminist early career research may be complemented or challenged by shifts towards open science. We also propose how early career researchers can act as grassroots changemakers within the context of academic precarity. We identify ways in which open science can benefit from feminist epistemology and end with envisaging a future for feminist early career researchers who wish to engage with open science practices in their own research.",
     "is_oa": false,
     "oa_url": "",
     "authors": "Madeleine Pownall, Catherine V. Talbot, Anna Henschel, Alexandra Lautarescu, Kelly Lloyd, Helena Hartmann, Kohinoor Monish Darda, Karen T. Y. Tang, Parise Carmichael-Murphy, Jaclyn Amanda Siegel"
@@ -10144,7 +10225,7 @@
     "short_ref": "Silverstein et al. (2024)",
     "apa": "Silverstein, P., Pennington, C., Branney, P., O’Connor, D., Lawlor, E., O’Brien, E., & Lynott, D. (2024). A registered report survey of open research practices in psychology departments in the UK and Ireland. British Journal of Psychology, 115: 497-534",
     "bibtex": "",
-    "abstract": "",
+    "abstract": "Open research practices seek to enhance the transparency and reproducibility of research. Whilst there is evidence of increased uptake in these practices, such as study preregistration and open data, facilitated by new infrastructure and policies, little research has assessed general uptake of such practices across psychology university researchers. The current study estimates psychologists’ level of engagement in open research practices across universities in the United Kingdom and Ireland, while also assessing possible explanatory factors that may impact their engagement. Data were collected from 602 psychology researchers in the UK and Ireland on the extent to which they have implemented various practices (e.g., use of preprints, preregistration, open data, open materials). Here we present the summarised descriptive results, as well as considering differences between various categories of researcher (e.g., career stage, subdiscipline, methodology), and examining the relationship between researcher’s practices and their self-reported capability, opportunity, and motivation (COM-B) to engage in open research practices. Results show that while there is considerable variability in engagement of open research practices, differences across career stage and subdiscipline of psychology are small by comparison. We observed consistent differences according to respondent’s research methodology and based on the presence of institutional support for open research. COM-B dimensions were collectively significant predictors of engagement in open research, with automatic motivation emerging as a consistently strong predictor. We discuss these findings, outline some of the challenges experienced in this study, and offer suggestions and recommendations for future research. Estimating the prevalence of responsible research practices is important to assess sustained behaviour change in research reform, tailor educational training initiatives, and to understand potential factors that might impact engagement.",
     "is_oa": false,
     "oa_url": "",
     "authors": "Priya Silverstein, Charlotte Rebecca Pennington, Peter Branney, Daryl Brian O'Connor, Emma Lawlor, Emer O'Brien, Dermot Lynott"
@@ -10158,7 +10239,7 @@
     "short_ref": "https://bpspsychub.onlinelibrary.wiley.com/doi/pdf/10.1111/ ",
     "apa": "https://bpspsychub.onlinelibrary.wiley.com/doi/pdf/10.1111/ bjop.12700",
     "bibtex": "",
-    "abstract": "",
+    "abstract": "Abstract\n                  Open research practices seek to enhance the transparency and reproducibility of research. While there is evidence of increased uptake in these practices, such as study preregistration and open data, facilitated by new infrastructure and policies, little research has assessed general uptake of such practices across psychology university researchers. The current study estimates psychologists' level of engagement in open research practices across universities in the United Kingdom and Ireland, while also assessing possible explanatory factors that may impact their engagement. Data were collected from 602 psychology researchers in the United Kingdom and Ireland on the extent to which they have implemented various practices (e.g., use of preprints, preregistration, open data, open materials). Here we present the summarized descriptive results, as well as considering differences between various categories of researcher (e.g., career stage, subdiscipline, methodology), and examining the relationship between researcher's practices and their self‐reported capability, opportunity, and motivation (COM‐B) to engage in open research practices. Results show that while there is considerable variability in engagement of open research practices, differences across career stage and subdiscipline of psychology are small by comparison. We observed consistent differences according to respondent's research methodology and based on the presence of institutional support for open research. COM‐B dimensions were collectively significant predictors of engagement in open research, with automatic motivation emerging as a consistently strong predictor. We discuss these findings, outline some of the challenges experienced in this study, and offer suggestions and recommendations for future research. Estimating the prevalence of responsible research practices is important to assess sustained behaviour change in research reform, tailor educational training initiatives, and to understand potential factors that might impact engagement.",
     "is_oa": false,
     "oa_url": "",
     "authors": "Priya Silverstein, Charlotte R. Pennington, Peter Branney, Daryl B. O'Connor, Emma Lawlor, Emer O'Brien, Dermot Lynott"

@@ -68,10 +68,76 @@
         {{ if $sc.publications }}
         {{ $pubCards := site.Data.pub_cards }}
         <div class="fr-cards-list">
-          {{ range $sc.publications }}
+          {{ range $pi, $pub := $sc.publications }}
           {{ $card := false }}
           {{ if and .doi $pubCards }}{{ $card = index $pubCards .doi }}{{ end }}
           {{ if $card }}
+          {{ $recs := $card.recommendations }}
+          {{ $hasRecs := and $recs (gt (len $recs) 0) }}
+
+          {{ if $hasRecs }}
+          {{/* Recommended: side-by-side card with testimonial */}}
+          <div class="fr-card"
+               data-doi="{{ .doi }}"
+               data-focus="{{ $card.focus }}" data-type="{{ $card.resource_type }}"
+               data-specificity="{{ cond (eq $card.specificity "Narrow") "narrow" "broad" }}">
+            <div class="fr-resource">
+              <div class="fr-tags">
+                {{ with $card.focus }}<span class="tag tag-focus">{{ . }}</span>{{ end }}
+                {{ with $card.resource_type }}<span class="tag tag-type">{{ . }}</span>{{ end }}
+              </div>
+              <div class="fr-title">{{ $card.title }}</div>
+              {{ with $card.summary }}<div class="fr-summary">{{ . }}</div>{{ end }}
+              <div class="fr-actions">
+                <button class="fr-ref-trigger" data-doi="{{ .doi }}">
+                  <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="12" height="12" rx="2"/><path d="M5 5h6M5 8h6M5 11h3"/></svg>
+                  {{ $card.short_ref }}
+                </button>
+                <button class="fr-bookmark-btn" data-doi="{{ .doi }}">
+                  <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 2h10v13l-5-3.5L3 15V2z"/></svg>
+                  <span>Save</span>
+                </button>
+              </div>
+            </div>
+            <div class="fr-testimonial">
+              <div class="fr-rec-label">Recommended by</div>
+              {{ $carouselId := printf "%s-p%d" $scid $pi }}
+              <div class="fr-carousel" data-carousel="{{ $carouselId }}">
+                <div class="fr-carousel-track">
+                  {{ range $recs }}
+                  <div class="fr-carousel-slide">
+                    <div class="fr-rec-header">
+                      {{ if .photo }}
+                      <img class="avatar-photo" src="{{ .photo }}" alt="{{ .name }}">
+                      {{ else }}
+                      <span class="avatar avatar-sm avatar-1">{{ substr .name 0 1 }}</span>
+                      {{ end }}
+                      <div>
+                        <div class="fr-rec-name">{{ .name }}</div>
+                        {{ with .title }}<div class="fr-rec-bio">{{ . }}</div>{{ end }}
+                      </div>
+                    </div>
+                    {{ with .text }}<div class="fr-rec-text">"{{ . }}"</div>{{ end }}
+                  </div>
+                  {{ end }}
+                </div>
+              </div>
+              <div class="fr-carousel-nav{{ if eq (len $recs) 1 }} single{{ end }}" data-nav="{{ $carouselId }}">
+                {{ range $di, $_ := $recs }}
+                <button class="fr-carousel-dot{{ if eq $di 0 }} active{{ end }}" data-idx="{{ $di }}"></button>
+                {{ end }}
+                {{ if gt (len $recs) 1 }}
+                <div class="fr-carousel-arrows">
+                  <button class="fr-carousel-arrow" data-dir="-1">&larr;</button>
+                  <button class="fr-carousel-arrow" data-dir="1">&rarr;</button>
+                </div>
+                {{ end }}
+              </div>
+            </div>
+          </div>
+
+          {{ else }}
+          {{/* Regular compact card */}}
           <div class="fc-card" data-doi="{{ .doi }}"
                data-focus="{{ $card.focus }}" data-type="{{ $card.resource_type }}"
                data-specificity="{{ cond (eq $card.specificity "Narrow") "narrow" "broad" }}">
@@ -98,6 +164,8 @@
               </div>
             </div>
           </div>
+          {{ end }}
+
           {{ else }}
           {{/* Fallback: plain reference for publications without enriched data */}}
           <div class="fc-card publication-item" {{ if .doi }}data-doi="{{ .doi }}"{{ end }}>
