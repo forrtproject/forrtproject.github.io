@@ -78,23 +78,60 @@
       {{ end }}
 
       {{ if $sc.publications }}
-      <ul class="publication-list">
+      {{ $pubCards := site.Data.pub_cards }}
+      <div class="fr-cards-list">
         {{ range $sc.publications }}
-        <li class="publication-item">
-          {{ $ref := .apa }}
-          {{ $ref = replaceRE `\s*https?://(?:dx\.)?doi\.org/\S+` "" $ref }}
-          {{ $ref = replaceRE `\s+$` "" $ref }}
-          {{ $ref = replaceRE `<script[^>]*>.*?</script>` "" $ref }}
-          {{ $ref = replaceRE `<iframe[^>]*>.*?</iframe>` "" $ref }}
-          {{ $ref = replaceRE `(https?://\S+)` `<a href="$1" target="_blank" rel="noopener">$1</a>` $ref }}
-          {{ $ref | safeHTML }}
-          {{ if .doi }}
-            {{ $doiURL := printf "https://doi.org/%s" .doi }}
-            <a href="{{ $doiURL }}" target="_blank" rel="noopener">{{ $doiURL }}</a>
-          {{ end }}
-        </li>
+        {{ $card := false }}
+        {{ if and .doi $pubCards }}{{ $card = index $pubCards .doi }}{{ end }}
+        {{ if $card }}
+        <div class="fc-card" data-doi="{{ .doi }}"
+             data-focus="{{ $card.focus }}" data-type="{{ $card.resource_type }}"
+             data-specificity="{{ cond (eq $card.specificity "Narrow") "narrow" "broad" }}">
+          <div class="fc-body">
+            <div class="fc-top-row">
+              <div class="fc-tags">
+                {{ with $card.focus }}<span class="tag tag-focus">{{ . }}</span>{{ end }}
+                {{ with $card.resource_type }}<span class="tag tag-type">{{ . }}</span>{{ end }}
+              </div>
+              <div class="fc-title">{{ $card.title }}</div>
+            </div>
+            {{ with $card.summary }}
+            <div class="fc-summary">{{ . }}</div>
+            {{ end }}
+            <div class="fc-actions">
+              <button class="fr-ref-trigger" data-doi="{{ .doi }}">
+                <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="12" height="12" rx="2"/><path d="M5 5h6M5 8h6M5 11h3"/></svg>
+                {{ $card.short_ref }}
+              </button>
+              <button class="fr-bookmark-btn" data-doi="{{ .doi }}">
+                <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 2h10v13l-5-3.5L3 15V2z"/></svg>
+                <span>Save</span>
+              </button>
+            </div>
+          </div>
+        </div>
+        {{ else }}
+        {{/* Fallback: plain reference for publications without enriched data */}}
+        <div class="fc-card publication-item" {{ if .doi }}data-doi="{{ .doi }}"{{ end }}>
+          <div class="fc-body">
+            <div class="fc-summary" style="-webkit-line-clamp:unset;">
+              {{ $ref := .apa }}
+              {{ $ref = replaceRE `\s*https?://(?:dx\.)?doi\.org/\S+` "" $ref }}
+              {{ $ref = replaceRE `\s+$` "" $ref }}
+              {{ $ref = replaceRE `<script[^>]*>.*?</script>` "" $ref }}
+              {{ $ref = replaceRE `<iframe[^>]*>.*?</iframe>` "" $ref }}
+              {{ $ref = replaceRE `(https?://\S+)` `<a href="$1" target="_blank" rel="noopener">$1</a>` $ref }}
+              {{ $ref | safeHTML }}
+              {{ if .doi }}
+                {{ $doiURL := printf "https://doi.org/%s" .doi }}
+                <a href="{{ $doiURL }}" target="_blank" rel="noopener">{{ $doiURL }}</a>
+              {{ end }}
+            </div>
+          </div>
+        </div>
         {{ end }}
-      </ul>
+        {{ end }}
+      </div>
       {{ else }}
       <p class="text-muted"><em>No publications listed for this sub-cluster yet.</em></p>
       {{ end }}

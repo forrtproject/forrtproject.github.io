@@ -483,8 +483,15 @@
      ================================================================ */
   onReady(function () {
     var data = window.FORRT_FEATURED;
-    if (!data) return;
+    var pubCards = window.FORRT_PUB_CARDS;
+    if (!data && !pubCards) return;
     var resourceIdx = buildResourceIndex(data);
+    // Merge pub_cards into resource index (featured entries take precedence)
+    if (pubCards) {
+      Object.keys(pubCards).forEach(function (doi) {
+        if (!resourceIdx[doi]) resourceIdx[doi] = pubCards[doi];
+      });
+    }
 
     initReferencePopup(resourceIdx);
     initReadingList(resourceIdx);

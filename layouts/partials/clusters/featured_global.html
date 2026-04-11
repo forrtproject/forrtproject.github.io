@@ -41,8 +41,12 @@
   </div>
 </div>
 
-{{/* Inject featured data as JSON for JS */}}
+{{/* Inject featured data and pub card lookup as JSON for JS */}}
 {{ $featured := site.Data.featured_resources }}
 {{ if $featured }}
 <script>window.FORRT_FEATURED = {{ $featured | jsonify }};</script>
+{{ end }}
+{{ $pubCards := site.Data.pub_cards }}
+{{ if $pubCards }}
+<script>window.FORRT_PUB_CARDS = {{ $pubCards | jsonify }};</script>
 {{ end }}

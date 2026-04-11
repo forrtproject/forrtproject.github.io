@@ -18,6 +18,7 @@ import sys
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 ROOT_DIR = os.path.dirname(SCRIPT_DIR)
 OUTPUT_PATH = os.path.join(ROOT_DIR, "data", "featured_resources.json")
+PUB_CARDS_PATH = os.path.join(ROOT_DIR, "data", "pub_cards.json")
 
 PUBLICATIONS_SHEET_ID = "1BxYioDDE2GftOFdQGtH0lVguEUWNQ_k8Ls-bdRn8RRo"
 RECOMMENDATIONS_SHEET_ID = "1IyroPSSWYHWTpZ17epMcyaPVF0K9ftRUPSmEYDAptY0"
@@ -220,20 +221,15 @@ def main():
 
     print(f"  {len(sc_to_cluster_number)} sub-clusters mapped to {len(cluster_name_to_number)} clusters")
 
-    # Build featured resources grouped by cluster
-    clusters: dict[str, list[dict]] = {}
+    # Build card data for ALL publications, and featured resources grouped by cluster
+    pub_cards: dict[str, dict] = {}  # DOI → card data (for all publications)
+    clusters: dict[str, list[dict]] = {}  # cluster number → featured resources
     matched = 0
 
     for row in pub_rows:
         row += [""] * (PUB_ROW_WIDTH - len(row))  # pad short rows
         doi = extract_doi(row[COL_DOI]) or row[COL_DOI].strip().lower().rstrip("/.,;")
-        if not doi or doi not in recommended_dois:
-            continue
-
-        sub_cluster_name = row[COL_SUB_CLUSTER].strip()
-        cluster_num = sc_to_cluster_number.get(sub_cluster_name)
-        if not cluster_num:
-            print(f"  WARNING: No cluster mapping for sub-cluster '{sub_cluster_name}' (DOI: {doi})")
+        if not doi:
             continue
 
         license_val = row[COL_LICENSE].strip().lower()
@@ -241,8 +237,7 @@ def main():
         oa_url = row[COL_OA_LINK].strip() if is_oa else ""
         apa = row[COL_APA].strip()
 
-        resource = {
-            "doi": doi,
+        card = {
             "title": row[COL_TITLE].strip(),
             "summary": row[COL_SUMMARY].strip(),
             "focus": row[COL_FOCUS].strip().lower(),
@@ -255,33 +250,44 @@ def main():
             "is_oa": is_oa,
             "oa_url": oa_url,
             "authors": row[COL_AUTHORS].strip(),
-            "vote_base": 0,
-            "recommendations": recommendations_by_doi.get(doi, []),
         }
+        pub_cards[doi] = card
 
-        key = str(cluster_num)
-        clusters.setdefault(key, []).append(resource)
-        matched += 1
+        # If this is a recommended DOI, also add to featured clusters
+        if doi in recommended_dois:
+            sub_cluster_name = row[COL_SUB_CLUSTER].strip()
+            cluster_num = sc_to_cluster_number.get(sub_cluster_name)
+            if not cluster_num:
+                print(f"  WARNING: No cluster mapping for sub-cluster '{sub_cluster_name}' (DOI: {doi})")
+                continue
+
+            resource = dict(card, doi=doi, vote_base=0,
+                            recommendations=recommendations_by_doi.get(doi, []))
+            key = str(cluster_num)
+            clusters.setdefault(key, []).append(resource)
+            matched += 1
+
+    print(f"\n  {len(pub_cards)} publications with card data")
 
     # Report unmatched DOIs
-    matched_dois = set()
-    for resources in clusters.values():
-        for r in resources:
-            matched_dois.add(r["doi"])
-    unmatched = recommended_dois - matched_dois
+    unmatched = recommended_dois - set(pub_cards.keys())
     if unmatched:
         print(f"\n  WARNING: {len(unmatched)} recommended DOI(s) not found in Publications sheet:")
         for d in sorted(unmatched):
             print(f"    - {d}")
 
-    print(f"\nMatched {matched} publications across {len(clusters)} clusters")
+    print(f"  {matched} featured resources across {len(clusters)} clusters")
     for k in sorted(clusters.keys(), key=int):
-        print(f"  Cluster {k}: {len(clusters[k])} resources")
+        print(f"    Cluster {k}: {len(clusters[k])} resources")
 
     output = {"clusters": clusters}
     with open(OUTPUT_PATH, "w") as f:
         json.dump(output, f, indent=2, ensure_ascii=False)
     print(f"\nWrote {OUTPUT_PATH}")
+
+    with open(PUB_CARDS_PATH, "w") as f:
+        json.dump(pub_cards, f, indent=2, ensure_ascii=False)
+    print(f"Wrote {PUB_CARDS_PATH} ({len(pub_cards)} entries)")
 
 
 if __name__ == "__main__":
