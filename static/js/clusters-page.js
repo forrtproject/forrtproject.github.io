@@ -509,7 +509,7 @@
         return;
       }
       var includeRefsEl = document.getElementById('clusters-search-include-refs');
-      var includeRefs = includeRefsEl ? includeRefsEl.checked : false;
+      var includeRefs = includeRefsEl ? includeRefsEl.checked : true;
       var results = collectClustersInlineSearchResults(root, tokens, includeRefs);
       renderClustersInlineResults(results, searchToolbar, searchResults);
       searchPanel.classList.add(RESULTS_OPEN_CLASS);
