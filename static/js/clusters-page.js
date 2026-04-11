@@ -420,25 +420,21 @@
         var sectionId = tabId.replace(/-tab$/, '');
         var target = sectionId ? document.getElementById(sectionId) : null;
         if (target) {
-          var scrollEl = target.querySelector('.sc-heading') || target;
+          /* Expand accordion section if collapsed */
+          var accBody = target.querySelector('.acc-body');
+          var accHeader = target.querySelector('.acc-header');
+          if (accBody && accBody.classList.contains('acc-collapsed') && accHeader && !accHeader.classList.contains('acc-disabled')) {
+            accBody.classList.remove('acc-collapsed');
+            accBody.style.maxHeight = accBody.scrollHeight + 'px';
+            accBody.style.opacity = '1';
+            var ch = accHeader.querySelector('.acc-chevron');
+            if (ch) ch.classList.add('acc-open');
+          }
+          var scrollEl = accHeader || target;
           setTimeout(function () { scrollElementBelowStickyChrome(scrollEl); }, 50);
         }
         closeClustersMobileSidebar();
       });
-    });
-
-    /* Jump-nav links inside cluster sections */
-    root.addEventListener('click', function (e) {
-      var jumpLink = e.target.closest('.cluster-jump-link');
-      if (!jumpLink) return;
-      e.preventDefault();
-      var href = jumpLink.getAttribute('href');
-      if (!href || href.charAt(0) !== '#') return;
-      var target = document.getElementById(href.substring(1));
-      if (target) {
-        var scrollEl = target.querySelector('.sc-heading') || target;
-        scrollElementBelowStickyChrome(scrollEl);
-      }
     });
 
     /* e.g. /clusters/cluster-2/#c2-sc1 or #c2-featured — scroll to matching section */
@@ -447,8 +443,18 @@
       if (!raw || !/^c\d+-(sc\d+|featured)$/.test(raw)) return;
       var target = document.getElementById(raw);
       if (!target) return;
+      /* Expand accordion section if collapsed */
+      var accBody = target.querySelector('.acc-body');
+      var accHeader = target.querySelector('.acc-header');
+      if (accBody && accBody.classList.contains('acc-collapsed') && accHeader && !accHeader.classList.contains('acc-disabled')) {
+        accBody.classList.remove('acc-collapsed');
+        accBody.style.maxHeight = accBody.scrollHeight + 'px';
+        accBody.style.opacity = '1';
+        var ch = accHeader.querySelector('.acc-chevron');
+        if (ch) ch.classList.add('acc-open');
+      }
       setTimeout(function () {
-        var scrollEl = target.querySelector('.sc-heading') || target;
+        var scrollEl = accHeader || target;
         scrollElementBelowStickyChrome(scrollEl);
       }, 150);
     }

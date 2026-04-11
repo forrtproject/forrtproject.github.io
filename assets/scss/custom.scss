@@ -423,66 +423,83 @@
   max-width: 48rem;
 }
 
-/* ---- Sub-cluster jump-nav (compact inline links, separated by middots) ---- */
-.cluster-jump-nav {
+/* ---- Accordion sub-cluster sections ---- */
+.acc-list {
+  margin-top: 0.25rem;
+}
+.acc-section + .acc-section {
+  border-top: 1px solid rgba(0,0,0,0.06);
+}
+.acc-header {
   display: flex;
-  flex-wrap: wrap;
-  gap: 0.1rem 0;
-  margin-bottom: 0.5rem;
-  font-size: 0.68rem;
-  line-height: 1.35;
-  color: #999;
-}
-.cluster-jump-link {
-  color: #8b0000;
-  text-decoration: none;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.4rem 0.15rem;
+  cursor: pointer;
+  font-size: 0.76rem;
+  font-weight: 600;
+  color: #555;
   transition: color 0.15s;
+  user-select: none;
 }
-.cluster-jump-link:hover {
-  color: #5a0000;
-  text-decoration: underline;
-}
-.cluster-jump-link--featured {
-  font-weight: 700;
-  color: #004055;
-}
-.cluster-jump-link--featured:hover {
-  color: #00556e;
-}
-/* Middot separators between links */
-.cluster-jump-link + .cluster-jump-link::before {
-  content: '\00b7';
-  margin: 0 0.4rem;
+.acc-header:hover { color: #333; }
+.acc-header--rec { color: #004055; }
+.acc-header--rec:hover { color: #00556e; }
+.acc-header.acc-disabled {
   color: #bbb;
-  text-decoration: none;
+  cursor: default;
+}
+.acc-header.acc-disabled:hover { color: #bbb; }
+.acc-chevron {
+  font-size: 0.55rem;
+  color: #bbb;
+  transition: transform 0.25s ease;
+  flex-shrink: 0;
   display: inline-block;
 }
-
-/* ---- Stacked sub-cluster sections ---- */
-.cluster-sections-list {
-  margin-top: 0;
+.acc-chevron.acc-open { transform: rotate(90deg); color: #888; }
+.acc-disabled .acc-chevron { color: #ddd; }
+.acc-label {
+  flex: 1;
+  min-width: 0;
+  line-height: 1.3;
 }
-.cluster-sc-section {
-  padding: 0.5rem 0 0.25rem;
+.acc-count {
+  margin-left: auto;
+  font-size: 0.55rem;
+  font-weight: 400;
+  color: #bbb;
+  flex-shrink: 0;
+  white-space: nowrap;
 }
-.cluster-sc-section + .cluster-sc-section {
-  border-top: 1px solid rgba(0,0,0,0.06);
+.acc-body {
+  padding: 0 0.15rem 0.45rem 1rem;
+  overflow: hidden;
+  transition: max-height 0.3s ease, opacity 0.25s ease;
+}
+.acc-body.acc-collapsed {
+  max-height: 0 !important;
+  opacity: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+.acc-toggle-all {
+  font-family: inherit;
+  font-size: 0.58rem;
+  font-weight: 600;
+  color: #888;
+  background: none;
+  border: 1px solid rgba(0,0,0,0.1);
+  border-radius: 3px;
+  padding: 0.15rem 0.45rem;
+  cursor: pointer;
+  transition: color 0.15s, border-color 0.15s;
+  float: right;
   margin-top: 0.15rem;
 }
+.acc-toggle-all:hover { color: #555; border-color: rgba(0,0,0,0.2); }
 
-/* ---- Sub-cluster heading & description ---- */
-.sc-heading {
-  font-size: 0.82rem;
-  font-weight: 600;
-  margin-bottom: 0.25rem;
-  line-height: 1.3;
-  color: #444;
-}
-.sc-heading--featured {
-  color: #004055;
-  font-size: 0.85rem;
-}
-
+/* ---- Sub-cluster description (inside accordion body) ---- */
 .sc-description {
   font-size: 0.75rem;
   color: #666;

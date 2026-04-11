@@ -388,8 +388,90 @@
   }
 
   /* ================================================================
+     ACCORDION
+     ================================================================ */
+  function initAccordion() {
+    function toggleSection(header) {
+      if (header.classList.contains('acc-disabled')) return;
+      var body = header.nextElementSibling;
+      var chevron = header.querySelector('.acc-chevron');
+      if (!body) return;
+      var isCollapsed = body.classList.contains('acc-collapsed');
+      if (isCollapsed) {
+        body.classList.remove('acc-collapsed');
+        body.style.maxHeight = body.scrollHeight + 'px';
+        body.style.opacity = '1';
+        if (chevron) chevron.classList.add('acc-open');
+      } else {
+        body.style.maxHeight = '0';
+        body.style.opacity = '0';
+        body.classList.add('acc-collapsed');
+        if (chevron) chevron.classList.remove('acc-open');
+      }
+    }
+
+    // Click handler for accordion headers
+    document.addEventListener('click', function (e) {
+      var header = e.target.closest('.acc-header');
+      if (header) { toggleSection(header); return; }
+      var toggleBtn = e.target.closest('.acc-toggle-all');
+      if (toggleBtn) { toggleAllSections(toggleBtn); }
+    });
+
+    // Keyboard: Enter/Space on header
+    document.addEventListener('keydown', function (e) {
+      if (e.key !== 'Enter' && e.key !== ' ') return;
+      var header = e.target.closest('.acc-header');
+      if (!header) return;
+      e.preventDefault();
+      toggleSection(header);
+    });
+
+    function toggleAllSections(btn) {
+      var clusterId = btn.getAttribute('data-cluster');
+      var section = clusterId ? document.getElementById(clusterId) : null;
+      if (!section) return;
+      var bodies = section.querySelectorAll('.acc-body');
+      var anyCollapsed = false;
+      bodies.forEach(function (b) {
+        var header = b.previousElementSibling;
+        if (b.classList.contains('acc-collapsed') && header && !header.classList.contains('acc-disabled')) {
+          anyCollapsed = true;
+        }
+      });
+
+      bodies.forEach(function (b) {
+        var header = b.previousElementSibling;
+        if (!header || header.classList.contains('acc-disabled')) return;
+        var chevron = header.querySelector('.acc-chevron');
+        if (anyCollapsed && b.classList.contains('acc-collapsed')) {
+          b.classList.remove('acc-collapsed');
+          b.style.maxHeight = b.scrollHeight + 'px';
+          b.style.opacity = '1';
+          if (chevron) chevron.classList.add('acc-open');
+        } else if (!anyCollapsed && !b.classList.contains('acc-collapsed')) {
+          b.style.maxHeight = '0';
+          b.style.opacity = '0';
+          b.classList.add('acc-collapsed');
+          if (chevron) chevron.classList.remove('acc-open');
+        }
+      });
+      btn.textContent = anyCollapsed ? 'Collapse all' : 'Expand all';
+    }
+
+    // Set initial state: all sections open, max-height auto
+    document.querySelectorAll('.acc-body').forEach(function (body) {
+      if (!body.classList.contains('acc-collapsed')) {
+        body.style.maxHeight = body.scrollHeight + 'px';
+        body.style.opacity = '1';
+      }
+    });
+  }
+
+  /* ================================================================
      GLOBAL FILTERING + SEARCH
-     Filters all .fc-card / .fr-card elements across every tab pane.
+     Filters cards and updates accordion match counts.
+     Disables sections with 0 matches, restores when matches return.
      ================================================================ */
   function initFiltering() {
     var focusGroup = document.getElementById('fr-global-focus-tags');
@@ -434,10 +516,13 @@
       var query = searchInput ? searchInput.value.toLowerCase().trim() : '';
       var tokens = query ? query.split(/\s+/) : [];
 
-      // Filter all cards in every .fr-cards-list across all tab panes
-      document.querySelectorAll('.fr-cards-list').forEach(function (container) {
+      // Filter cards in every .fr-cards-list, update accordion counts
+      document.querySelectorAll('.acc-section').forEach(function (section) {
+        var container = section.querySelector('.fr-cards-list');
+        if (!container) return;
         var cards = container.querySelectorAll('.fc-card, .fr-card');
-        var visibleCount = 0;
+        var total = cards.length;
+        var matchCount = 0;
 
         cards.forEach(function (card) {
           var matchFocus = activeFocus === 'all' || card.getAttribute('data-focus') === activeFocus;
@@ -456,14 +541,48 @@
 
           var show = matchFocus && matchType && matchSpec && matchSearch;
           card.style.display = show ? '' : 'none';
-          if (show) visibleCount++;
+          if (show) matchCount++;
         });
 
-        // No-results message per pane
-        var pane = container.closest('.tab-pane') || container.closest('.featured-pane');
-        if (pane) {
-          var noResults = pane.querySelector('.fr-no-results');
-          if (noResults) noResults.style.display = visibleCount === 0 ? '' : 'none';
+        // Update the x / y count in the header
+        var countEl = section.querySelector('.acc-count-match');
+        if (countEl) countEl.textContent = matchCount;
+
+        // Disable/enable section based on match count
+        var header = section.querySelector('.acc-header');
+        var body = section.querySelector('.acc-body');
+        var chevron = header ? header.querySelector('.acc-chevron') : null;
+        if (!header || !body) return;
+
+        if (matchCount === 0) {
+          // Remember open state before disabling
+          if (!header.classList.contains('acc-disabled')) {
+            header.dataset.wasOpen = body.classList.contains('acc-collapsed') ? '0' : '1';
+          }
+          header.classList.add('acc-disabled');
+          // Collapse
+          if (!body.classList.contains('acc-collapsed')) {
+            body.style.maxHeight = '0';
+            body.style.opacity = '0';
+            body.classList.add('acc-collapsed');
+            if (chevron) chevron.classList.remove('acc-open');
+          }
+        } else {
+          // Re-enable
+          if (header.classList.contains('acc-disabled')) {
+            header.classList.remove('acc-disabled');
+            // Restore previous open state
+            if (header.dataset.wasOpen === '1') {
+              body.classList.remove('acc-collapsed');
+              body.style.maxHeight = body.scrollHeight + 'px';
+              body.style.opacity = '1';
+              if (chevron) chevron.classList.add('acc-open');
+            }
+          }
+          // Update max-height for open sections (content may have changed)
+          if (!body.classList.contains('acc-collapsed')) {
+            body.style.maxHeight = body.scrollHeight + 'px';
+          }
         }
       });
     }
@@ -488,6 +607,7 @@
     initReadingList(resourceIdx);
     initVoting();
     initCarousels();
+    initAccordion();
     initFiltering();
   });
 })();
