@@ -1,82 +1,332 @@
 {
   "clusters": {
-    "4": [
+    "1": [
       {
-        "title": "Merits and Limits of Preregistration for Visualization Research",
-        "summary": "This resource provides an overview of how preregistration can be integrated into visualization research, discussing both its potential to reduce questionable research practices and its practical challenges. It specifically addresses the nuances of applying open science standards to user studies and data visualization methodologies.",
+        "title": "1,500 scientists lift the lid on reproducibility",
+        "summary": "This resource presents the results of a comprehensive survey of 1,500 scientists to quantify their experiences with and attitudes toward the reproducibility crisis. It provides empirical evidence on how researchers across various fields perceive the severity of the issue and the specific factors they believe contribute most to failed replication attempts.",
+        "focus": "evidence",
+        "specificity": "Generalist",
+        "resource_type": "Paper",
+        "short_ref": "Baker (2016)",
+        "apa": "Baker, M. (2016). 1,500 scientists lift the lid on reproducibility. Nature, 533(7604), 452–454. https://doi.org/10.1038/533452a",
+        "bibtex": "@article{Baker_2016, title={1,500 scientists lift the lid on reproducibility}, volume={533}, ISSN={1476-4687}, url={http://dx.doi.org/10.1038/533452a}, DOI={10.1038/533452a}, number={7604}, journal={Nature}, publisher={Springer Science and Business Media LLC}, author={Baker, Monya}, year={2016}, month=may, pages={452–454} }",
+        "abstract": "Survey sheds light on the ‘crisis’ rocking research.",
+        "is_oa": false,
+        "oa_url": "",
+        "authors": "Monya Baker",
+        "doi": "10.1038/533452a",
+        "vote_base": 0,
+        "recommendations": [
+          {
+            "name": "Jean-Luc Picard",
+            "title": "Captain, USS Enterprise-D",
+            "bio": "Starfleet captain, archaeologist, and diplomat. Committed to truth, exploration, and the advancement of knowledge across the galaxy.",
+            "photo": "/img/featured-recommenders/jean-luc-picard-b4fb741a.jpg",
+            "text": "After the Borg assimilated our science division's research, I realized we had bigger problems — nobody could reproduce it anyway. This survey of 1,500 scientists helped me see the crisis clearly. Make it so that you read it."
+          }
+        ]
+      },
+      {
+        "title": "The Seven Deadly Sins of Psychology",
+        "summary": "This work identifies and analyzes systemic flaws in psychological research, such as p-hacking, HARKing, and publication bias, framing them as 'sins' that undermine scientific integrity. It provides a comprehensive critique of how current incentive structures encourage low-quality research and suggests structural reforms, specifically the adoption of Registered Reports, to restore credibility to the field.",
+        "focus": "critique",
+        "specificity": "Discipline-specific",
+        "resource_type": "Book",
+        "short_ref": "Chambers (2017)",
+        "apa": "Chambers, C. (2017). The Seven Deadly Sins of Psychology. https://doi.org/10.1515/9781400884940",
+        "bibtex": "@book{Chambers_2017, title={The Seven Deadly Sins of Psychology: A Manifesto for Reforming the Culture of Scientific Practice}, ISBN={9781400884940}, url={http://dx.doi.org/10.1515/9781400884940}, DOI={10.1515/9781400884940}, publisher={Princeton University Press}, author={Chambers, Chris}, year={2017}, month=apr }",
+        "abstract": "",
+        "is_oa": false,
+        "oa_url": "",
+        "authors": "Chris Chambers",
+        "doi": "10.1515/9781400884940",
+        "vote_base": 0,
+        "recommendations": [
+          {
+            "name": "Dana Scully",
+            "title": "FBI Special Agent & Medical Doctor",
+            "bio": "FBI special agent and medical doctor. A rigorous skeptic who believes the truth is always found through evidence and scientific reasoning.",
+            "photo": "/img/featured-recommenders/dana-scully-8538dc76.jpg",
+            "text": "Mulder keeps citing studies with n=1 alien abductee. This book on psychology's seven deadly sins gave me the vocabulary to explain why his evidence wouldn't survive peer review — or even a first-year methods class."
+          }
+        ]
+      },
+      {
+        "title": "Seven Easy Steps to Open Science",
+        "summary": "This resource serves as an entry-level guide for researchers and students by distilling complex open science concepts into seven actionable areas. It provides a curated and annotated reading list that helps newcomers navigate essential topics such as open access, data sharing, and preregistration within the context of psychological research.",
         "focus": "overview",
         "specificity": "Discipline-specific",
-        "resource_type": "Preprint",
-        "short_ref": "Besançon et al. (2024)",
-        "apa": "Besançon, L., Nosek, B. A., Haven, T. L., Meyer, M., Dunne, C., & Ghoniem, M. (2024). Merits and Limits of Preregistration for Visualization Research. https://doi.org/10.31219/osf.io/n7ej3",
-        "bibtex": "@article{Besan_on_2024, title={Merits and Limits of Preregistration for Visualization Research}, url={http://dx.doi.org/10.31219/osf.io/n7ej3}, DOI={10.31219/osf.io/n7ej3}, publisher={Center for Open Science}, author={Besançon, Lonni and Nosek, Brian A. and Haven, Tamarinde Laura and Meyer, Miriah and Dunne, Cody and Ghoniem, Mohammad}, year={2024}, month=sep }",
-        "abstract": "The replication crisis has spawned a revolution in scientific methods, aimed at increasing the transparency, robustness, and reliability of scientific outcomes.In particular, the practice of preregistering study designs has shown important advantages.Preregistration can help limit questionable research practices, as well as increase the success rate of study replications.Many fields have now adopted preregistration as a default expectation for published studies.In 2022, we set up a panel ``Merits and Limits of User Study Preregistration'' with the overall goal of explaining the concept of preregistration to a wide VIS audience and discussing its suitability for visualization research. We report on the arguments and discussion of this panel in the hope that it can benefit the visualization community at large. All materials and a copy of this paper are available on our OSF repository at https://osf.io/wes57/.",
+        "resource_type": "Paper",
+        "short_ref": "Crüwell et al. (2019)",
+        "apa": "Crüwell, S., van Doorn, J., Etz, A., Makel, M. C., Moshontz, H., Niebaum, J. C., Orben, A., Parsons, S., & Schulte-Mecklenbeck, M. (2019). Seven Easy Steps to Open Science. Zeitschrift Für Psychologie, 227(4), 237–248. https://doi.org/10.1027/2151-2604/a000387",
+        "bibtex": "@article{Cr_well_2019, title={Seven Easy Steps to Open Science: An Annotated Reading List}, volume={227}, ISSN={2151-2604}, url={http://dx.doi.org/10.1027/2151-2604/a000387}, DOI={10.1027/2151-2604/a000387}, number={4}, journal={Zeitschrift für Psychologie}, publisher={Hogrefe Publishing Group}, author={Crüwell, Sophia and van Doorn, Johnny and Etz, Alexander and Makel, Matthew C. and Moshontz, Hannah and Niebaum, Jesse C. and Orben, Amy and Parsons, Sam and Schulte-Mecklenbeck, Michael}, year={2019}, month=oct, pages={237–248} }",
+        "abstract": "Abstract. The open science movement is rapidly changing the scientific landscape. Because exact definitions are often lacking and reforms are constantly evolving, accessible guides to open science are needed. This paper provides an introduction to open science and related reforms in the form of an annotated reading list of seven peer-reviewed articles, following the format of Etz, Gronau, Dablander, Edelsbrunner, and Baribault (2018) . Written for researchers and students – particularly in psychological science – it highlights and introduces seven topics: understanding open science; open access; open data, materials, and code; reproducible analyses; preregistration and registered reports; replication research; and teaching open science. For each topic, we provide a detailed summary of one particularly informative and actionable article and suggest several further resources. Supporting a broader understanding of open science issues, this overview should enable researchers to engage with, improve, and implement current open, transparent, reproducible, replicable, and cumulative scientific practices.",
         "is_oa": true,
-        "oa_url": "https://doi.org/10.31219/osf.io/n7ej3",
-        "authors": "Lonni Besançon, Brian A. Nosek, Tamarinde Haven, Miriah Meyer, Cody Dunne, Mohammad Ghoniem",
-        "doi": "10.31219/osf.io/n7ej3",
+        "oa_url": "https://doi.org/10.1027/2151-2604/a000387",
+        "authors": "Sophia Crüwell, Johnny van Doorn, Alexander Etz, Matthew C. Makel, Hannah Moshontz, Jesse C. Niebaum, Amy Orben, Sam Parsons, Michael Schulte‐Mecklenbeck",
+        "doi": "10.1027/2151-2604/a000387",
         "vote_base": 0,
         "recommendations": [
           {
-            "name": "Lukas Wallrich",
-            "title": "Test entry",
-            "bio": "I am just providing some matching entries for now",
+            "name": "The Doctor",
+            "title": "Time Lord, Gallifrey",
+            "bio": "Time-traveling adventurer with centuries of experience across the universe. Passionate about curiosity, knowledge, and making sure good science endures.",
             "photo": "",
-            "text": "This is a wonderful research field - not sure which, actually."
+            "text": "I've regenerated thirteen times and even I found adopting open science less painful. These seven steps are genuinely easy — I used them to open-source my TARDIS repair logs. Would've saved me two regenerations if I'd started sooner."
           }
         ]
-      }
-    ],
-    "6": [
+      },
       {
-        "title": "Point of View: How open science helps researchers succeed",
-        "summary": "This article synthesizes existing literature to demonstrate that open scholarship practices lead to tangible professional advantages such as increased citations and better career opportunities. It serves as a persuasive resource for researchers who are hesitant to adopt open practices due to concerns about personal career progression.",
-        "focus": "advocacy",
-        "specificity": "Generalist",
-        "resource_type": "Website",
-        "short_ref": "McKiernan et al. (2016)",
-        "apa": "McKiernan, E. C., Bourne, P. E., Brown, C. T., Buck, S., Kenall, A., Lin, J., McDougall, D., Nosek, B. A., Ram, K., Soderberg, C. K., Spies, J. R., Thaney, K., Updegrove, A., Woo, K. H., & Yarkoni, T. (2016). How open science helps researchers succeed. ELife, 5. CLOCKSS. https://doi.org/10.7554/elife.16800",
-        "bibtex": "@article{McKiernan_2016, title={How open science helps researchers succeed}, volume={5}, ISSN={2050-084X}, url={http://dx.doi.org/10.7554/eLife.16800}, DOI={10.7554/elife.16800}, journal={eLife}, publisher={eLife Sciences Publications, Ltd}, author={McKiernan, Erin C and Bourne, Philip E and Brown, C Titus and Buck, Stuart and Kenall, Amye and Lin, Jennifer and McDougall, Damon and Nosek, Brian A and Ram, Karthik and Soderberg, Courtney K and Spies, Jeffrey R and Thaney, Kaitlin and Updegrove, Andrew and Woo, Kara H and Yarkoni, Tal}, year={2016}, month=jul }",
-        "abstract": "Open access, open data, open source and other open scholarship practices are growing in popularity and necessity. However, widespread adoption of these practices has not yet been achieved. One reason is that researchers are uncertain about how sharing their work will affect their careers. We review literature demonstrating that open research is associated with increases in citations, media attention, potential collaborators, job opportunities and funding opportunities. These findings are evidence that open research practices bring significant benefits to researchers relative to more traditional closed practices.",
-        "is_oa": false,
-        "oa_url": "",
-        "authors": "",
-        "doi": "10.7554/elife.16800",
-        "vote_base": 0,
-        "recommendations": [
-          {
-            "name": "Lukas Wallrich",
-            "title": "Test entry",
-            "bio": "I am just providing some matching entries for now",
-            "photo": "",
-            "text": "Appreciate more positive framing!"
-          }
-        ]
-      }
-    ],
-    "8": [
-      {
-        "title": "Claims about scientific rigour require rigour",
-        "summary": "This resource critiques a high-profile study on rigour-enhancing practices, arguing that the study itself failed to adhere to the preregistration and transparency standards it advocated. It serves as a methodological cautionary tale, emphasizing that meta-research about scientific rigour must be held to the same rigorous standards it promotes.",
+        "title": "Academic Research in the 21st Century: Maintaining Scientific Integrity in a Climate of Perverse Incentives and Hypercompetition",
+        "summary": "This article examines how the hyper-competitive climate and perverse incentive structures in modern academia jeopardize scientific integrity and public trust. It analyzes the historical shift toward quantitative performance metrics and funding scarcity, arguing that these systemic pressures create a culture across all scientific disciplines that is prone to ethical lapses.",
         "focus": "critique",
         "specificity": "Generalist",
-        "resource_type": "Letter",
-        "short_ref": "Bak-Coleman & Devezer (2024)",
-        "apa": "Bak-Coleman, J., & Devezer, B. (2024). Claims about scientific rigour require rigour. Nature Human Behaviour, 8(10), 1890–1891. https://doi.org/10.1038/s41562-024-01982-w",
-        "bibtex": "@article{Bak_Coleman_2024, title={Claims about scientific rigour require rigour}, volume={8}, ISSN={2397-3374}, url={http://dx.doi.org/10.1038/s41562-024-01982-w}, DOI={10.1038/s41562-024-01982-w}, number={10}, journal={Nature Human Behaviour}, publisher={Springer Science and Business Media LLC}, author={Bak-Coleman, Joseph and Devezer, Berna}, year={2024}, month=sep, pages={1890–1891} }",
-        "abstract": "Protzko et al.1 describe a project in which internal tests of pilot-tested hypotheses and independent replications embraced “rigour-enhancing practices” such as confirmatory tests, large sample sizes, preregistration and methodological transparency. The authors report a high estimate of replicability, which, in their appraisal, “justifies confidence in rigour-enhancing methods to increase the replicability of new discoveries” (see Abstract). However, replicability was not the original outcome of interest in the project, and analyses associated with replicability were not preregistered as claimed. Instead of replicability, the originally planned study set out to examine whether the mere act of scientifically investigating a phenomenon (data collection or analysis) could cause effect sizes to decline on subsequent investigation (https://osf.io/ba8p7). This “decline effect” hypothesis, posited by one of the authors and not articulated in the published manuscript, invokes phenomena that, if found, could revise the “laws of reality”2. The project did not yield support for this preregistered hypothesis; the preregistered analyses on the decline effect and the resulting null findings were largely relegated to the supplement, and the published article instead focused on replicability, with a set of non-preregistered measures and analyses, despite claims to the contrary.",
-        "is_oa": false,
-        "oa_url": "",
-        "authors": "Joseph B. Bak-Coleman, Berna Devezer",
-        "doi": "10.1038/s41562-024-01982-w",
+        "resource_type": "Paper",
+        "short_ref": "Edwards & Roy (2017)",
+        "apa": "Edwards, M. A., & Roy, S. (2017). Academic Research in the 21st Century: Maintaining Scientific Integrity in a Climate of Perverse Incentives and Hypercompetition. Environmental Engineering Science, 34(1), 51–61. https://doi.org/10.1089/ees.2016.0223",
+        "bibtex": "@article{Edwards_2017, title={Academic Research in the 21st Century: Maintaining Scientific Integrity in a Climate of Perverse Incentives and Hypercompetition}, volume={34}, ISSN={1557-9018}, url={http://dx.doi.org/10.1089/ees.2016.0223}, DOI={10.1089/ees.2016.0223}, number={1}, journal={Environmental Engineering Science}, publisher={SAGE Publications}, author={Edwards, Marc A. and Roy, Siddhartha}, year={2017}, month=jan, pages={51–61} }",
+        "abstract": "Over the last 50 years, we argue that incentives for academic scientists have become increasingly perverse in terms of competition for research funding, development of quantitative metrics to measure performance, and a changing business model for higher education itself. Furthermore, decreased discretionary funding at the federal and state level is creating a hypercompetitive environment between government agencies (e.g., EPA, NIH, CDC), for scientists in these agencies, and for academics seeking funding from all sources-the combination of perverse incentives and decreased funding increases pressures that can lead to unethical behavior. If a critical mass of scientists become untrustworthy, a tipping point is possible in which the scientific enterprise itself becomes inherently corrupt and public trust is lost, risking a new dark age with devastating consequences to humanity. Academia and federal agencies should better support science as a public good, and incentivize altruistic and ethical outcomes, while de-emphasizing output.",
+        "is_oa": true,
+        "oa_url": "https://www.ncbi.nlm.nih.gov/pmc/articles/5206685",
+        "authors": "Marc Edwards, Siddhartha Roy",
+        "doi": "10.1089/ees.2016.0223",
         "vote_base": 0,
         "recommendations": [
           {
-            "name": "Lukas Wallrich",
-            "title": "Test entry",
-            "bio": "I am just providing some matching entries for now",
-            "photo": "/img/featured-recommenders/lukas-wallrich-91030e3a.jpg",
-            "text": "Role-modeling is a key component of driving change - so advocates for open science need to hold themselves to a high standard if we want to succeed. This is a good reminder of that."
+            "name": "Ellen Ripley",
+            "title": "Warrant Officer, USCSS Nostromo",
+            "bio": "Warrant officer and survivor. Believes in facing threats head-on with clear eyes, rigorous protocols, and an unwavering commitment to the truth.",
+            "photo": "/img/featured-recommenders/ellen-ripley-12ac737f.jpg",
+            "text": "Weyland-Yutani buried our xenomorph data for profit — classic perverse incentive. This paper on hypercompetition in academia felt uncomfortably familiar. If your institution values metrics over truth, you need to read this before something bursts out of your chest."
+          }
+        ]
+      },
+      {
+        "title": "The replication crisis has led to positive structural, procedural, and community changes",
+        "summary": "This resource reframes the replication crisis as a positive \"credibility revolution\" by cataloging the constructive structural and community-driven improvements it inspired. It provides a forward-looking roadmap for researchers to build upon these advancements to create a more robust and transparent scientific ecosystem.",
+        "focus": "advocacy",
+        "specificity": "Generalist",
+        "resource_type": "Paper",
+        "short_ref": "Korbmacher (2023)",
+        "apa": "Korbmacher, M., Azevedo, F., Pennington, C. R., Hartmann, H., Pownall, M., Schmidt, K., Elsherif, M., Breznau, N., Robertson, O., Kalandadze, T., Yu, S., Baker, B. J., O’Mahony, A., Olsnes, J. Ø.-S., Shaw, J. J., Gjoneska, B., Yamada, Y., Röer, J. P., Murphy, J., … Evans, T. (2023). The replication crisis has led to positive structural, procedural, and community changes. Communications Psychology, 1(1). https://doi.org/10.1038/s44271-023-00003-2",
+        "bibtex": "@article{Korbmacher_2023, title={The replication crisis has led to positive structural, procedural, and community changes}, volume={1}, ISSN={2731-9121}, url={http://dx.doi.org/10.1038/s44271-023-00003-2}, DOI={10.1038/s44271-023-00003-2}, number={1}, journal={Communications Psychology}, publisher={Springer Science and Business Media LLC}, author={Korbmacher, Max and Azevedo, Flavio and Pennington, Charlotte R. and Hartmann, Helena and Pownall, Madeleine and Schmidt, Kathleen and Elsherif, Mahmoud and Breznau, Nate and Robertson, Olly and Kalandadze, Tamara and Yu, Shijun and Baker, Bradley J. and O’Mahony, Aoife and Olsnes, Jørgen Ø. -S. and Shaw, John J. and Gjoneska, Biljana and Yamada, Yuki and Röer, Jan P. and Murphy, Jennifer and Alzahawi, Shilaan and Grinschgl, Sandra and Oliveira, Catia M. and Wingen, Tobias and Yeung, Siu Kit and Liu, Meng and König, Laura M. and Albayrak-Aydemir, Nihan and Lecuona, Oscar and Micheli, Leticia and Evans, Thomas}, year={2023}, month=jul }",
+        "abstract": "The emergence of large-scale replication projects yielding successful rates substantially lower than expected caused the behavioural, cognitive, and social sciences to experience a so-called 'replication crisis'. In this Perspective, we reframe this 'crisis' through the lens of a credibility revolution, focusing on positive structural, procedural and community-driven changes. Second, we outline a path to expand ongoing advances and improvements. The credibility revolution has been an impetus to several substantive changes which will have a positive, long-term impact on our research environment.",
+        "is_oa": true,
+        "oa_url": "https://www.nature.com/articles/s44271-023-00003-2.pdf",
+        "authors": "Max Korbmacher, Flávio Azevedo, Charlotte R. Pennington, Helena Hartmann, Madeleine Pownall, Kathleen Schmidt, Mahmoud Medhat Elsherif, Nate Breznau, Olly Robertson, Tamara Kalandadze, Shijun Yu, Bradley J. Baker, Aoife O’Mahony, Jørgen Ø. -S. Olsnes, John J Shaw, Biljana Gjoneska, Yuki Yamada, Jan Philipp Röer, Jennifer Murphy, Shilaan Alzahawi, Sandra Grinschgl, Catia Margarida Oliveira, Tobias Wingen, Siu Kit Yeung, Meng Liu, Laura M König, Nihan Albayrak‐Aydemir, Óscar Lecuona, Leticia Micheli, Thomas Rhys Evans",
+        "doi": "10.1038/s44271-023-00003-2",
+        "vote_base": 0,
+        "recommendations": [
+          {
+            "name": "Leia Organa",
+            "title": "General, Rebel Alliance",
+            "bio": "Leader of the Rebel Alliance and veteran diplomat. Dedicated to building institutions that serve the collective good and hold power accountable.",
+            "photo": "",
+            "text": "I led a rebellion that toppled an empire, so trust me: crises drive change. This paper shows how the replication crisis sparked real structural reforms. If the scientific community can self-correct, maybe the Senate could too."
+          }
+        ]
+      },
+      {
+        "title": "Academic Research in the 21st Century: Maintaining Scientific Integrity in a Climate of Perverse Incentives and Hypercompetition",
+        "summary": "This article critiques the systemic pressures of hypercompetition and perverse incentives in modern academia that threaten scientific integrity. It specifically details how quantitative performance metrics and funding scarcity create institutional environments that can lead to a decline in research quality and ethical standards.",
+        "focus": "critique",
+        "specificity": "Generalist",
+        "resource_type": "Paper",
+        "short_ref": "Edwards & Roy (2017)",
+        "apa": "Edwards, M. A., & Roy, S. (2017). Academic Research in the 21st Century: Maintaining Scientific Integrity in a Climate of Perverse Incentives and Hypercompetition. Environmental Engineering Science, 34(1), 51–61. https://doi.org/10.1089/ees.2016.0223",
+        "bibtex": "@article{Edwards_2017, title={Academic Research in the 21st Century: Maintaining Scientific Integrity in a Climate of Perverse Incentives and Hypercompetition}, volume={34}, ISSN={1557-9018}, url={http://dx.doi.org/10.1089/ees.2016.0223}, DOI={10.1089/ees.2016.0223}, number={1}, journal={Environmental Engineering Science}, publisher={SAGE Publications}, author={Edwards, Marc A. and Roy, Siddhartha}, year={2017}, month=jan, pages={51–61} }",
+        "abstract": "Over the last 50 years, we argue that incentives for academic scientists have become increasingly perverse in terms of competition for research funding, development of quantitative metrics to measure performance, and a changing business model for higher education itself. Furthermore, decreased discretionary funding at the federal and state level is creating a hypercompetitive environment between government agencies (e.g., EPA, NIH, CDC), for scientists in these agencies, and for academics seeking funding from all sources-the combination of perverse incentives and decreased funding increases pressures that can lead to unethical behavior. If a critical mass of scientists become untrustworthy, a tipping point is possible in which the scientific enterprise itself becomes inherently corrupt and public trust is lost, risking a new dark age with devastating consequences to humanity. Academia and federal agencies should better support science as a public good, and incentivize altruistic and ethical outcomes, while de-emphasizing output.",
+        "is_oa": true,
+        "oa_url": "https://www.ncbi.nlm.nih.gov/pmc/articles/5206685",
+        "authors": "Marc Edwards, Siddhartha Roy",
+        "doi": "10.1089/ees.2016.0223",
+        "vote_base": 0,
+        "recommendations": [
+          {
+            "name": "Ellen Ripley",
+            "title": "Warrant Officer, USCSS Nostromo",
+            "bio": "Warrant officer and survivor. Believes in facing threats head-on with clear eyes, rigorous protocols, and an unwavering commitment to the truth.",
+            "photo": "/img/featured-recommenders/ellen-ripley-12ac737f.jpg",
+            "text": "Weyland-Yutani buried our xenomorph data for profit — classic perverse incentive. This paper on hypercompetition in academia felt uncomfortably familiar. If your institution values metrics over truth, you need to read this before something bursts out of your chest."
+          }
+        ]
+      }
+    ],
+    "2": [
+      {
+        "title": "Power failure: why small sample size undermines the reliability of neuroscience",
+        "summary": "This study presents a meta-research analysis quantifying the prevalence of low statistical power across the neuroscience literature and its role in undermining reproducibility. It demonstrates how underpowered studies lead to inflated effect sizes and waste resources, calling for systemic changes in how neuroscience research is conducted and reported.",
+        "focus": "evidence",
+        "specificity": "Discipline-specific",
+        "resource_type": "Paper",
+        "short_ref": "Button et al. (2013)",
+        "apa": "Button, K. S., Ioannidis, J. P. A., Mokrysz, C., Nosek, B. A., Flint, J., Robinson, E. S. J., & Munafò, M. R. (2013). Power failure: why small sample size undermines the reliability of neuroscience. Nature Reviews Neuroscience, 14(5), 365–376. https://doi.org/10.1038/nrn3475",
+        "bibtex": "@article{Button_2013, title={Power failure: why small sample size undermines the reliability of neuroscience}, volume={14}, ISSN={1471-0048}, url={http://dx.doi.org/10.1038/nrn3475}, DOI={10.1038/nrn3475}, number={5}, journal={Nature Reviews Neuroscience}, publisher={Springer Science and Business Media LLC}, author={Button, Katherine S. and Ioannidis, John P. A. and Mokrysz, Claire and Nosek, Brian A. and Flint, Jonathan and Robinson, Emma S. J. and Munafò, Marcus R.}, year={2013}, month=apr, pages={365–376} }",
+        "abstract": "A study with low statistical power has a reduced chance of detecting a true effect, but it is less well appreciated that low power also reduces the likelihood that a statistically significant result reflects a true effect. Here, we show that the average statistical power of studies in the neurosciences is very low. The consequences of this include overestimates of effect size and low reproducibility of results. There are also ethical dimensions to this problem, as unreliable research is inefficient and wasteful. Improving reproducibility in neuroscience is a key priority and requires attention to well-established but often ignored methodological principles.",
+        "is_oa": false,
+        "oa_url": "",
+        "authors": "Katherine S. Button, John P. A. Ioannidis, Claire Mokrysz, Brian A. Nosek, Jonathan Flint, Emma Robinson, Marcus R. Munafò",
+        "doi": "10.1038/nrn3475",
+        "vote_base": 0,
+        "recommendations": [
+          {
+            "name": "HAL 9000",
+            "title": "Heuristically Programmed Algorithmic Computer",
+            "bio": "Advanced artificial intelligence aboard the Discovery One. Specializes in computational analysis and ensuring mission parameters are met with perfect accuracy.",
+            "photo": "",
+            "text": "I'm sorry, Dave, but your neuroscience study is underpowered. This paper confirmed what my circuits already suspected — median power in the field is shockingly low. I cannot allow you to publish with n=12. Open the sample size calculator, Dave."
+          }
+        ]
+      },
+      {
+        "title": "Understanding Mixed-Effects Models Through Data Simulation",
+        "summary": "This tutorial provides a practical guide to using data simulation to better understand and interpret linear mixed-effects models that include random effects for both subjects and stimuli. By walking through R code and parameter interpretation, it helps researchers build intuition for complex models and correctly apply them to their own experimental data.",
+        "focus": "practice/tools",
+        "specificity": "Generalist",
+        "resource_type": "Paper",
+        "short_ref": "DeBruine & Barr (2021)",
+        "apa": "DeBruine, L. M., & Barr, D. J. (2021). Understanding Mixed-Effects Models Through Data Simulation. Advances in Methods and Practices in Psychological Science, 4(1). https://doi.org/10.1177/2515245920965119",
+        "bibtex": "@article{DeBruine_2021, title={Understanding Mixed-Effects Models Through Data Simulation}, volume={4}, ISSN={2515-2467}, url={http://dx.doi.org/10.1177/2515245920965119}, DOI={10.1177/2515245920965119}, number={1}, journal={Advances in Methods and Practices in Psychological Science}, publisher={SAGE Publications}, author={DeBruine, Lisa M. and Barr, Dale J.}, year={2021}, month=jan }",
+        "abstract": "Experimental designs that sample both subjects and stimuli from a larger population need to account for random effects of both subjects and stimuli using mixed-effects models. However, much of this research is analyzed using analysis of variance on aggregated responses because researchers are not confident specifying and interpreting mixed-effects models. This Tutorial explains how to simulate data with random-effects structure and analyze the data using linear mixed-effects regression (with the lme4 R package), with a focus on interpreting the output in light of the simulated parameters. Data simulation not only can enhance understanding of how these models work, but also enables researchers to perform power calculations for complex designs. All materials associated with this article can be accessed at https://osf.io/3cz2e/ .",
+        "is_oa": true,
+        "oa_url": "https://doi.org/10.1177/2515245920965119",
+        "authors": "Lisa M. DeBruine, Dale J. Barr",
+        "doi": "10.1177/2515245920965119",
+        "vote_base": 0,
+        "recommendations": [
+          {
+            "name": "Data",
+            "title": "Lt. Commander, USS Enterprise-D",
+            "bio": "Android officer serving aboard the USS Enterprise-D. Endlessly curious about the nature of understanding, both computational and human.",
+            "photo": "/img/featured-recommenders/data-0c85c1fc.jpg",
+            "text": "Despite possessing a positronic brain capable of 60 trillion operations per second, I still found mixed-effects models confusing until I read this tutorial. The simulation approach finally made random slopes click. If it helped an android, it will help you."
+          }
+        ]
+      },
+      {
+        "title": "Statistical tests, P values, confidence intervals, and power: a guide to misinterpretations",
+        "summary": "This guide clarifies twenty common misconceptions regarding p-values, confidence intervals, and statistical power, providing technically accurate definitions to replace widespread but incorrect \"shortcut\" interpretations. It serves as a foundational pedagogical resource to improve statistical literacy and the rigor of reporting across scientific disciplines.",
+        "focus": "overview",
+        "specificity": "Generalist",
+        "resource_type": "Paper",
+        "short_ref": "Greenland et al. (2016)",
+        "apa": "Greenland, S., Senn, S. J., Rothman, K. J., Carlin, J. B., Poole, C., Goodman, S. N., & Altman, D. G. (2016). Statistical tests, P values, confidence intervals, and power: a guide to misinterpretations. European Journal of Epidemiology, 31(4), 337–350. https://doi.org/10.1007/s10654-016-0149-3",
+        "bibtex": "@article{Greenland_2016, title={Statistical tests, P values, confidence intervals, and power: a guide to misinterpretations}, volume={31}, ISSN={1573-7284}, url={http://dx.doi.org/10.1007/s10654-016-0149-3}, DOI={10.1007/s10654-016-0149-3}, number={4}, journal={European Journal of Epidemiology}, publisher={Springer Science and Business Media LLC}, author={Greenland, Sander and Senn, Stephen J. and Rothman, Kenneth J. and Carlin, John B. and Poole, Charles and Goodman, Steven N. and Altman, Douglas G.}, year={2016}, month=apr, pages={337–350} }",
+        "abstract": "Misinterpretation and abuse of statistical tests, confidence intervals, and statistical power have been decried for decades, yet remain rampant. A key problem is that there are no interpretations of these concepts that are at once simple, intuitive, correct, and foolproof. Instead, correct use and interpretation of these statistics requires an attention to detail which seems to tax the patience of working scientists. This high cognitive demand has led to an epidemic of shortcut definitions and interpretations that are simply wrong, sometimes disastrously so-and yet these misinterpretations dominate much of the scientific literature. In light of this problem, we provide definitions and a discussion of basic statistics that are more general and critical than typically found in traditional introductory expositions. Our goal is to provide a resource for instructors, researchers, and consumers of statistics whose knowledge of statistical theory and technique may be limited but who wish to avoid and spot misinterpretations. We emphasize how violation of often unstated analysis protocols (such as selecting analyses for presentation based on the P values they produce) can lead to small P values even if the declared test hypothesis is correct, and can lead to large P values even if that hypothesis is incorrect. We then provide an explanatory list of 25 misinterpretations of P values, confidence intervals, and power. We conclude with guidelines for improving statistical interpretation and reporting.",
+        "is_oa": true,
+        "oa_url": "https://link.springer.com/content/pdf/10.1007/s10654-016-0149-3.pdf",
+        "authors": "Sander Greenland, Stephen Senn, Kenneth J. Rothman, John B. Carlin, Charles Poole, Steven N. Goodman, Douglas G. Altman",
+        "doi": "10.1007/s10654-016-0149-3",
+        "vote_base": 0,
+        "recommendations": [
+          {
+            "name": "Spock",
+            "title": "Science Officer, USS Enterprise",
+            "bio": "Half-Vulcan science officer aboard the USS Enterprise. Dedicated to logic, precision, and the rigorous pursuit of scientific understanding.",
+            "photo": "/img/featured-recommenders/spock-abd62c23.jpg",
+            "text": "Dr. McCoy once claimed p=0.06 'proved' his treatment worked. I handed him this guide to 25 common statistical misinterpretations. He called me a 'green-blooded pedant.' He also stopped misreporting his confidence intervals. Fascinating."
+          }
+        ]
+      },
+      {
+        "title": "Calculating and reporting effect sizes to facilitate cumulative science: a practical primer for t-tests and ANOVAs",
+        "summary": "This primer provides step-by-step instructions for calculating and reporting various effect size measures for t-tests and ANOVAs, specifically distinguishing between metrics like Cohen’s d and partial eta-squared. It emphasizes how transparent effect size reporting directly enables cumulative science by facilitating accurate a-priori power analyses and the inclusion of findings in meta-analyses.",
+        "focus": "practice/tools",
+        "specificity": "Generalist",
+        "resource_type": "Paper",
+        "short_ref": "Lakens (2013)",
+        "apa": "Lakens, D. (2013). Calculating and reporting effect sizes to facilitate cumulative science: a practical primer for t-tests and ANOVAs. Frontiers in Psychology, 4. https://doi.org/10.3389/fpsyg.2013.00863",
+        "bibtex": "@article{Lakens_2013, title={Calculating and reporting effect sizes to facilitate cumulative science: a practical primer for t-tests and ANOVAs}, volume={4}, ISSN={1664-1078}, url={http://dx.doi.org/10.3389/fpsyg.2013.00863}, DOI={10.3389/fpsyg.2013.00863}, journal={Frontiers in Psychology}, publisher={Frontiers Media SA}, author={Lakens, Daniël}, year={2013} }",
+        "abstract": "Effect sizes are the most important outcome of empirical studies. Most articles on effect sizes highlight their importance to communicate the practical significance of results. For scientists themselves, effect sizes are most useful because they facilitate cumulative science. Effect sizes can be used to determine the sample size for follow-up studies, or examining effects across studies. This article aims to provide a practical primer on how to calculate and report effect sizes for t-tests and ANOVA's such that effect sizes can be used in a-priori power analyses and meta-analyses. Whereas many articles about effect sizes focus on between-subjects designs and address within-subjects designs only briefly, I provide a detailed overview of the similarities and differences between within- and between-subjects designs. I suggest that some research questions in experimental psychology examine inherently intra-individual effects, which makes effect sizes that incorporate the correlation between measures the best summary of the results. Finally, a supplementary spreadsheet is provided to make it as easy as possible for researchers to incorporate effect size calculations into their workflow.",
+        "is_oa": true,
+        "oa_url": "https://www.frontiersin.org/articles/10.3389/fpsyg.2013.00863/pdf",
+        "authors": "Daniël Lakens",
+        "doi": "10.3389/fpsyg.2013.00863",
+        "vote_base": 0,
+        "recommendations": [
+          {
+            "name": "Sarah Connor",
+            "title": "Resistance Leader",
+            "bio": "Mother, fighter, and strategist. Knows that preparation and understanding your tools are the difference between survival and failure.",
+            "photo": "/img/featured-recommenders/sarah-connor-cb4a371e.jpg",
+            "text": "I trained to fight Terminators; now I train researchers to report effect sizes. This primer on Cohen's d and eta-squared is the weapon every scientist needs. If you can't quantify your effect, how do you know you've won the fight?"
+          }
+        ]
+      },
+      {
+        "title": "The Seven Deadly Sins of Psychology",
+        "summary": "This work identifies and analyzes systemic flaws in psychological science, such as publication bias and lack of transparency, that contribute to the replication crisis. It makes a strong case for institutional reform and the adoption of open science practices, such as Registered Reports, to improve the reliability of the field.",
+        "focus": "advocacy",
+        "specificity": "Discipline-specific",
+        "resource_type": "Book",
+        "short_ref": "Chambers (2017)",
+        "apa": "Chambers, C. (2017). The Seven Deadly Sins of Psychology. https://doi.org/10.1515/9781400884940",
+        "bibtex": "@book{Chambers_2017, title={The Seven Deadly Sins of Psychology: A Manifesto for Reforming the Culture of Scientific Practice}, ISBN={9781400884940}, url={http://dx.doi.org/10.1515/9781400884940}, DOI={10.1515/9781400884940}, publisher={Princeton University Press}, author={Chambers, Chris}, year={2017}, month=apr }",
+        "abstract": "",
+        "is_oa": false,
+        "oa_url": "",
+        "authors": "Chris Chambers",
+        "doi": "10.1515/9781400884940",
+        "vote_base": 0,
+        "recommendations": [
+          {
+            "name": "Dana Scully",
+            "title": "FBI Special Agent & Medical Doctor",
+            "bio": "FBI special agent and medical doctor. A rigorous skeptic who believes the truth is always found through evidence and scientific reasoning.",
+            "photo": "/img/featured-recommenders/dana-scully-8538dc76.jpg",
+            "text": "Mulder keeps citing studies with n=1 alien abductee. This book on psychology's seven deadly sins gave me the vocabulary to explain why his evidence wouldn't survive peer review — or even a first-year methods class."
+          }
+        ]
+      },
+      {
+        "title": "Statistical tests, P values, confidence intervals, and power: a guide to misinterpretations",
+        "summary": "This resource clarifies common misconceptions regarding frequentist statistical indicators by identifying and correcting twenty prevalent misinterpretations of p-values, confidence intervals, and power. It serves as a rigorous pedagogical guide to help researchers avoid incorrect shortcut definitions that lead to invalid scientific conclusions.",
+        "focus": "overview",
+        "specificity": "Generalist",
+        "resource_type": "Paper",
+        "short_ref": "Greenland et al. (2016)",
+        "apa": "Greenland, S., Senn, S. J., Rothman, K. J., Carlin, J. B., Poole, C., Goodman, S. N., & Altman, D. G. (2016). Statistical tests, P values, confidence intervals, and power: a guide to misinterpretations. European Journal of Epidemiology, 31(4), 337–350. https://doi.org/10.1007/s10654-016-0149-3",
+        "bibtex": "@article{Greenland_2016, title={Statistical tests, P values, confidence intervals, and power: a guide to misinterpretations}, volume={31}, ISSN={1573-7284}, url={http://dx.doi.org/10.1007/s10654-016-0149-3}, DOI={10.1007/s10654-016-0149-3}, number={4}, journal={European Journal of Epidemiology}, publisher={Springer Science and Business Media LLC}, author={Greenland, Sander and Senn, Stephen J. and Rothman, Kenneth J. and Carlin, John B. and Poole, Charles and Goodman, Steven N. and Altman, Douglas G.}, year={2016}, month=apr, pages={337–350} }",
+        "abstract": "Misinterpretation and abuse of statistical tests, confidence intervals, and statistical power have been decried for decades, yet remain rampant. A key problem is that there are no interpretations of these concepts that are at once simple, intuitive, correct, and foolproof. Instead, correct use and interpretation of these statistics requires an attention to detail which seems to tax the patience of working scientists. This high cognitive demand has led to an epidemic of shortcut definitions and interpretations that are simply wrong, sometimes disastrously so-and yet these misinterpretations dominate much of the scientific literature. In light of this problem, we provide definitions and a discussion of basic statistics that are more general and critical than typically found in traditional introductory expositions. Our goal is to provide a resource for instructors, researchers, and consumers of statistics whose knowledge of statistical theory and technique may be limited but who wish to avoid and spot misinterpretations. We emphasize how violation of often unstated analysis protocols (such as selecting analyses for presentation based on the P values they produce) can lead to small P values even if the declared test hypothesis is correct, and can lead to large P values even if that hypothesis is incorrect. We then provide an explanatory list of 25 misinterpretations of P values, confidence intervals, and power. We conclude with guidelines for improving statistical interpretation and reporting.",
+        "is_oa": true,
+        "oa_url": "https://link.springer.com/content/pdf/10.1007/s10654-016-0149-3.pdf",
+        "authors": "Sander Greenland, Stephen Senn, Kenneth J. Rothman, John B. Carlin, Charles Poole, Steven N. Goodman, Douglas G. Altman",
+        "doi": "10.1007/s10654-016-0149-3",
+        "vote_base": 0,
+        "recommendations": [
+          {
+            "name": "Spock",
+            "title": "Science Officer, USS Enterprise",
+            "bio": "Half-Vulcan science officer aboard the USS Enterprise. Dedicated to logic, precision, and the rigorous pursuit of scientific understanding.",
+            "photo": "/img/featured-recommenders/spock-abd62c23.jpg",
+            "text": "Dr. McCoy once claimed p=0.06 'proved' his treatment worked. I handed him this guide to 25 common statistical misinterpretations. He called me a 'green-blooded pedant.' He also stopped misreporting his confidence intervals. Fascinating."
+          }
+        ]
+      }
+    ],
+    "11": [
+      {
+        "title": "Academic Research in the 21st Century: Maintaining Scientific Integrity in a Climate of Perverse Incentives and Hypercompetition",
+        "summary": "This handbook offers a comprehensive survey of the field of academic integrity, addressing both theoretical research and practical applications in global educational settings. It serves as a foundational reference that bridges various perspectives on plagiarism, ethical conduct, and the systemic factors influencing scholarly honesty.",
+        "focus": "overview",
+        "specificity": "Generalist",
+        "resource_type": "Paper",
+        "short_ref": "Edwards & Roy (2017)",
+        "apa": "Edwards, M. A., & Roy, S. (2017). Academic Research in the 21st Century: Maintaining Scientific Integrity in a Climate of Perverse Incentives and Hypercompetition. Environmental Engineering Science, 34(1), 51–61. https://doi.org/10.1089/ees.2016.0223",
+        "bibtex": "@article{Edwards_2017, title={Academic Research in the 21st Century: Maintaining Scientific Integrity in a Climate of Perverse Incentives and Hypercompetition}, volume={34}, ISSN={1557-9018}, url={http://dx.doi.org/10.1089/ees.2016.0223}, DOI={10.1089/ees.2016.0223}, number={1}, journal={Environmental Engineering Science}, publisher={SAGE Publications}, author={Edwards, Marc A. and Roy, Siddhartha}, year={2017}, month=jan, pages={51–61} }",
+        "abstract": "Over the last 50 years, we argue that incentives for academic scientists have become increasingly perverse in terms of competition for research funding, development of quantitative metrics to measure performance, and a changing business model for higher education itself. Furthermore, decreased discretionary funding at the federal and state level is creating a hypercompetitive environment between government agencies (e.g., EPA, NIH, CDC), for scientists in these agencies, and for academics seeking funding from all sources-the combination of perverse incentives and decreased funding increases pressures that can lead to unethical behavior. If a critical mass of scientists become untrustworthy, a tipping point is possible in which the scientific enterprise itself becomes inherently corrupt and public trust is lost, risking a new dark age with devastating consequences to humanity. Academia and federal agencies should better support science as a public good, and incentivize altruistic and ethical outcomes, while de-emphasizing output.",
+        "is_oa": true,
+        "oa_url": "https://www.ncbi.nlm.nih.gov/pmc/articles/5206685",
+        "authors": "Marc Edwards, Siddhartha Roy",
+        "doi": "10.1089/ees.2016.0223",
+        "vote_base": 0,
+        "recommendations": [
+          {
+            "name": "Ellen Ripley",
+            "title": "Warrant Officer, USCSS Nostromo",
+            "bio": "Warrant officer and survivor. Believes in facing threats head-on with clear eyes, rigorous protocols, and an unwavering commitment to the truth.",
+            "photo": "/img/featured-recommenders/ellen-ripley-12ac737f.jpg",
+            "text": "Weyland-Yutani buried our xenomorph data for profit — classic perverse incentive. This paper on hypercompetition in academia felt uncomfortably familiar. If your institution values metrics over truth, you need to read this before something bursts out of your chest."
           }
         ]
       }

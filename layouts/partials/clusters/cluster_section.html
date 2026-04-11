@@ -55,11 +55,11 @@
     {{ $scid := printf "c%d-sc%d" (int $cluster.number) $si }}
     <div class="acc-section" id="{{ $scid }}">
       <div class="acc-header" role="button" tabindex="0">
-        <span class="acc-chevron acc-open">&#9656;</span>
+        <span class="acc-chevron">&#9656;</span>
         <span class="acc-label">{{ $sc.name }}</span>
         <span class="acc-count"><span class="acc-count-match">{{ len $sc.publications }}</span> / {{ len $sc.publications }}</span>
       </div>
-      <div class="acc-body">
+      <div class="acc-body acc-collapsed">
 
         {{ if $sc.description }}
         <p class="sc-description">{{ $sc.description }}</p>
