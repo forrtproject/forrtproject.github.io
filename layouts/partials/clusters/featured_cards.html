@@ -5,57 +5,6 @@
 
 <div class="featured-pane" id="{{ $paneId }}-content">
 
-  {{/* Filter bar */}}
-  <div class="fr-filter-bar">
-    <div class="fr-filter-group">
-      <span class="fr-filter-label">Focus</span>
-      <div class="fr-filter-tags" data-filter="focus" data-cluster="{{ $cn }}">
-        <button class="fr-tag-btn active" data-value="all">All</button>
-        {{/* Collect unique focus values */}}
-        {{ $focusSet := slice }}
-        {{ range $resources }}
-          {{ if .focus }}
-            {{ if not (in $focusSet .focus) }}
-              {{ $focusSet = $focusSet | append .focus }}
-            {{ end }}
-          {{ end }}
-        {{ end }}
-        {{ range $focusSet }}
-        <button class="fr-tag-btn" data-value="{{ . }}">{{ . }}</button>
-        {{ end }}
-      </div>
-    </div>
-    <div class="fr-filter-group">
-      <span class="fr-filter-label">Type</span>
-      <div class="fr-filter-tags" data-filter="type" data-cluster="{{ $cn }}">
-        <button class="fr-tag-btn active" data-value="all">All</button>
-        {{ $typeSet := slice }}
-        {{ range $resources }}
-          {{ if .resource_type }}
-            {{ if not (in $typeSet .resource_type) }}
-              {{ $typeSet = $typeSet | append .resource_type }}
-            {{ end }}
-          {{ end }}
-        {{ end }}
-        {{ range $typeSet }}
-        <button class="fr-tag-btn" data-value="{{ . }}">{{ . }}</button>
-        {{ end }}
-      </div>
-    </div>
-    <div class="fr-filter-group">
-      <label class="fr-specificity-toggle">
-        <input type="checkbox" class="fr-specificity-checkbox" data-cluster="{{ $cn }}">
-        <span>Show specialist resources</span>
-      </label>
-    </div>
-  </div>
-
-  {{/* Search input */}}
-  <div class="fr-search-wrap">
-    <input type="text" class="fr-search-input" data-cluster="{{ $cn }}"
-           placeholder="Search featured resources...">
-  </div>
-
   {{/* Resource cards — fr-card (with testimonial) when recommendations exist, fc-card (compact) otherwise */}}
   <div class="fr-cards-list" data-cluster="{{ $cn }}">
     {{ range $ri, $res := $resources }}

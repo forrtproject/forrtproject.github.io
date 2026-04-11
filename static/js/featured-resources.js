@@ -388,9 +388,15 @@
   }
 
   /* ================================================================
-     FILTERING + SEARCH
+     GLOBAL FILTERING + SEARCH
+     Filters all .fc-card / .fr-card elements across every tab pane.
      ================================================================ */
   function initFiltering() {
+    var focusGroup = document.getElementById('fr-global-focus-tags');
+    var typeGroup = document.getElementById('fr-global-type-tags');
+    var specCheckbox = document.getElementById('fr-global-specificity-checkbox');
+    var searchInput = document.getElementById('clusters-inline-search-input');
+
     // Tag filter buttons
     document.addEventListener('click', function (e) {
       var btn = e.target.closest('.fr-tag-btn');
@@ -398,83 +404,68 @@
       var group = btn.closest('.fr-filter-tags');
       if (!group) return;
       e.preventDefault();
-      // Deactivate siblings, activate this
       group.querySelectorAll('.fr-tag-btn').forEach(function (b) { b.classList.remove('active'); });
       btn.classList.add('active');
-      applyFilters(group.getAttribute('data-cluster'));
+      applyGlobalFilters();
     });
 
-    // Specificity toggle
-    document.addEventListener('change', function (e) {
-      if (!e.target.classList.contains('fr-specificity-checkbox')) return;
-      applyFilters(e.target.getAttribute('data-cluster'));
-    });
+    if (specCheckbox) specCheckbox.addEventListener('change', applyGlobalFilters);
 
-    // Search input
-    document.addEventListener('input', function (e) {
-      if (!e.target.classList.contains('fr-search-input')) return;
-      applyFilters(e.target.getAttribute('data-cluster'));
-    });
+    if (searchInput) {
+      var debounce;
+      searchInput.addEventListener('input', function () {
+        clearTimeout(debounce);
+        debounce = setTimeout(applyGlobalFilters, 150);
+      });
+    }
 
-    function applyFilters(clusterNum) {
-      if (!clusterNum) return;
-      var container = document.querySelector('.fr-cards-list[data-cluster="' + clusterNum + '"]');
-      if (!container) return;
-
-      // Get active focus filter
-      var focusGroup = document.querySelector('.fr-filter-tags[data-filter="focus"][data-cluster="' + clusterNum + '"]');
+    function applyGlobalFilters() {
       var activeFocus = 'all';
       if (focusGroup) {
-        var activeBtn = focusGroup.querySelector('.fr-tag-btn.active');
-        if (activeBtn) activeFocus = activeBtn.getAttribute('data-value');
+        var btn = focusGroup.querySelector('.fr-tag-btn.active');
+        if (btn) activeFocus = btn.getAttribute('data-value');
       }
-
-      // Get active type filter
-      var typeGroup = document.querySelector('.fr-filter-tags[data-filter="type"][data-cluster="' + clusterNum + '"]');
       var activeType = 'all';
       if (typeGroup) {
-        var activeBtn2 = typeGroup.querySelector('.fr-tag-btn.active');
-        if (activeBtn2) activeType = activeBtn2.getAttribute('data-value');
+        var btn2 = typeGroup.querySelector('.fr-tag-btn.active');
+        if (btn2) activeType = btn2.getAttribute('data-value');
       }
-
-      // Specificity
-      var specCheckbox = document.querySelector('.fr-specificity-checkbox[data-cluster="' + clusterNum + '"]');
       var showNarrow = specCheckbox ? specCheckbox.checked : false;
-
-      // Search query
-      var searchInput = document.querySelector('.fr-search-input[data-cluster="' + clusterNum + '"]');
       var query = searchInput ? searchInput.value.toLowerCase().trim() : '';
       var tokens = query ? query.split(/\s+/) : [];
 
-      var cards = container.querySelectorAll('.fc-card, .fr-card');
-      var visibleCount = 0;
+      // Filter all cards in every .fr-cards-list across all tab panes
+      document.querySelectorAll('.fr-cards-list').forEach(function (container) {
+        var cards = container.querySelectorAll('.fc-card, .fr-card');
+        var visibleCount = 0;
 
-      cards.forEach(function (card) {
-        var matchFocus = activeFocus === 'all' || card.getAttribute('data-focus') === activeFocus;
-        var matchType = activeType === 'all' || card.getAttribute('data-type') === activeType;
-        var matchSpec = showNarrow || card.getAttribute('data-specificity') !== 'narrow';
+        cards.forEach(function (card) {
+          var matchFocus = activeFocus === 'all' || card.getAttribute('data-focus') === activeFocus;
+          var matchType = activeType === 'all' || card.getAttribute('data-type') === activeType;
+          var matchSpec = showNarrow || card.getAttribute('data-specificity') !== 'narrow';
 
-        var matchSearch = true;
-        if (tokens.length > 0) {
-          var text = (card.querySelector('.fc-title') || card.querySelector('.fr-title') || {}).textContent || '';
-          text += ' ' + ((card.querySelector('.fc-summary') || card.querySelector('.fr-summary') || {}).textContent || '');
-          text = text.toLowerCase();
-          for (var i = 0; i < tokens.length; i++) {
-            if (text.indexOf(tokens[i]) === -1) { matchSearch = false; break; }
+          var matchSearch = true;
+          if (tokens.length > 0) {
+            var text = (card.querySelector('.fc-title') || card.querySelector('.fr-title') || {}).textContent || '';
+            text += ' ' + ((card.querySelector('.fc-summary') || card.querySelector('.fr-summary') || {}).textContent || '');
+            text = text.toLowerCase();
+            for (var i = 0; i < tokens.length; i++) {
+              if (text.indexOf(tokens[i]) === -1) { matchSearch = false; break; }
+            }
           }
+
+          var show = matchFocus && matchType && matchSpec && matchSearch;
+          card.style.display = show ? '' : 'none';
+          if (show) visibleCount++;
+        });
+
+        // No-results message per pane
+        var pane = container.closest('.tab-pane') || container.closest('.featured-pane');
+        if (pane) {
+          var noResults = pane.querySelector('.fr-no-results');
+          if (noResults) noResults.style.display = visibleCount === 0 ? '' : 'none';
         }
-
-        var show = matchFocus && matchType && matchSpec && matchSearch;
-        card.style.display = show ? '' : 'none';
-        if (show) visibleCount++;
       });
-
-      // No-results message
-      var pane = container.closest('.featured-pane');
-      if (pane) {
-        var noResults = pane.querySelector('.fr-no-results');
-        if (noResults) noResults.style.display = visibleCount === 0 ? '' : 'none';
-      }
     }
   }
 

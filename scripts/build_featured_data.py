@@ -19,6 +19,7 @@ SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 ROOT_DIR = os.path.dirname(SCRIPT_DIR)
 OUTPUT_PATH = os.path.join(ROOT_DIR, "data", "featured_resources.json")
 PUB_CARDS_PATH = os.path.join(ROOT_DIR, "data", "pub_cards.json")
+FILTER_TAGS_PATH = os.path.join(ROOT_DIR, "data", "filter_tags.json")
 
 PUBLICATIONS_SHEET_ID = "1BxYioDDE2GftOFdQGtH0lVguEUWNQ_k8Ls-bdRn8RRo"
 RECOMMENDATIONS_SHEET_ID = "1IyroPSSWYHWTpZ17epMcyaPVF0K9ftRUPSmEYDAptY0"
@@ -288,6 +289,21 @@ def main():
     with open(PUB_CARDS_PATH, "w") as f:
         json.dump(pub_cards, f, indent=2, ensure_ascii=False)
     print(f"Wrote {PUB_CARDS_PATH} ({len(pub_cards)} entries)")
+
+    # Fetch filter tags from the "tags" sheet
+    print("Fetching filter tags...")
+    tag_rows = gws_read(PUBLICATIONS_SHEET_ID, "tags!A2:B50")
+    focus_tags = []
+    type_tags = []
+    for row in tag_rows:
+        if len(row) >= 1 and row[0].strip():
+            focus_tags.append(row[0].strip())
+        if len(row) >= 2 and row[1].strip():
+            type_tags.append(row[1].strip())
+    filter_tags = {"focus": focus_tags, "type": type_tags}
+    with open(FILTER_TAGS_PATH, "w") as f:
+        json.dump(filter_tags, f, indent=2, ensure_ascii=False)
+    print(f"Wrote {FILTER_TAGS_PATH} ({len(focus_tags)} focus, {len(type_tags)} type)")
 
 
 if __name__ == "__main__":
