@@ -423,66 +423,72 @@
   max-width: 48rem;
 }
 
-/* ---- Sub-cluster jump-nav (compact inline links) ---- */
+/* ---- Sub-cluster jump-nav (compact inline links, separated by middots) ---- */
 .cluster-jump-nav {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.25rem 0.5rem;
-  margin-bottom: 0.75rem;
-  padding: 0.45rem 0.6rem;
-  background: rgba(0,0,0,0.06);
-  border-radius: 5px;
-  font-size: 0.72rem;
-  line-height: 1.4;
+  gap: 0.1rem 0;
+  margin-bottom: 0.5rem;
+  font-size: 0.68rem;
+  line-height: 1.35;
+  color: #999;
 }
 .cluster-jump-link {
   color: #8b0000;
   text-decoration: none;
-  border-bottom: 1px dashed rgba(139,0,0,0.3);
-  transition: color 0.15s, border-color 0.15s;
-  white-space: nowrap;
+  transition: color 0.15s;
 }
 .cluster-jump-link:hover {
   color: #5a0000;
-  border-bottom-color: rgba(90,0,0,0.5);
-  text-decoration: none;
+  text-decoration: underline;
 }
 .cluster-jump-link--featured {
   font-weight: 700;
   color: #004055;
-  border-bottom-color: rgba(0,64,85,0.3);
 }
 .cluster-jump-link--featured:hover {
   color: #00556e;
-  border-bottom-color: rgba(0,85,110,0.5);
+}
+/* Middot separators between links */
+.cluster-jump-link + .cluster-jump-link::before {
+  content: '\00b7';
+  margin: 0 0.4rem;
+  color: #bbb;
+  text-decoration: none;
+  display: inline-block;
 }
 
 /* ---- Stacked sub-cluster sections ---- */
 .cluster-sections-list {
-  margin-top: 0.35rem;
+  margin-top: 0;
 }
 .cluster-sc-section {
-  padding: 0.75rem 0.5rem 0.5rem;
-  border-top: 1px solid rgba(0,0,0,0.08);
+  padding: 0.5rem 0 0.25rem;
 }
-.cluster-sc-section:first-child {
-  border-top: none;
+.cluster-sc-section + .cluster-sc-section {
+  border-top: 1px solid rgba(0,0,0,0.06);
+  margin-top: 0.15rem;
 }
 
 /* ---- Sub-cluster heading & description ---- */
 .sc-heading {
-  font-size: 0.95rem;
+  font-size: 0.82rem;
   font-weight: 600;
-  margin-bottom: 0.45rem;
+  margin-bottom: 0.25rem;
   line-height: 1.3;
+  color: #444;
+}
+.sc-heading--featured {
+  color: #004055;
+  font-size: 0.85rem;
 }
 
 .sc-description {
-  font-size: 0.85rem;
-  color: #444;
+  font-size: 0.75rem;
+  color: #666;
   font-style: italic;
-  margin-bottom: 1rem;
-  line-height: 1.5;
+  margin-bottom: 0.45rem;
+  line-height: 1.45;
 }
 
 /* ---- Publication list ---- */
