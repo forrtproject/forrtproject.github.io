@@ -515,6 +515,7 @@
       var showNarrow = specCheckbox ? specCheckbox.checked : false;
       var query = searchInput ? searchInput.value.toLowerCase().trim() : '';
       var tokens = query ? query.split(/\s+/) : [];
+      var isFiltered = activeFocus !== 'all' || activeType !== 'all' || tokens.length > 0;
 
       // Filter cards in every .fr-cards-list, update accordion counts
       document.querySelectorAll('.acc-section').forEach(function (section) {
@@ -548,38 +549,54 @@
         var countEl = section.querySelector('.acc-count-match');
         if (countEl) countEl.textContent = matchCount;
 
-        // Disable/enable section based on match count
+        // Manage accordion open/closed state based on matches and filter
         var header = section.querySelector('.acc-header');
         var body = section.querySelector('.acc-body');
         var chevron = header ? header.querySelector('.acc-chevron') : null;
         if (!header || !body) return;
 
         if (matchCount === 0) {
-          // Remember open state before disabling
+          // Remember open state before collapsing (only on first disable)
           if (!header.classList.contains('acc-disabled')) {
             header.dataset.wasOpen = body.classList.contains('acc-collapsed') ? '0' : '1';
           }
           header.classList.add('acc-disabled');
-          // Collapse
           if (!body.classList.contains('acc-collapsed')) {
             body.style.maxHeight = '0';
             body.style.opacity = '0';
             body.classList.add('acc-collapsed');
             if (chevron) chevron.classList.remove('acc-open');
           }
+        } else if (isFiltered) {
+          // Filter active with matches: auto-expand
+          // Save pre-filter state if not yet saved
+          if (!header.dataset.wasOpen) {
+            header.dataset.wasOpen = body.classList.contains('acc-collapsed') ? '0' : '1';
+          }
+          header.classList.remove('acc-disabled');
+          body.classList.remove('acc-collapsed');
+          body.style.maxHeight = body.scrollHeight + 'px';
+          body.style.opacity = '1';
+          if (chevron) chevron.classList.add('acc-open');
         } else {
-          // Re-enable
-          if (header.classList.contains('acc-disabled')) {
-            header.classList.remove('acc-disabled');
-            // Restore previous open state
-            if (header.dataset.wasOpen === '1') {
+          // No filter active: restore original state
+          header.classList.remove('acc-disabled');
+          if (header.dataset.wasOpen !== undefined) {
+            var shouldBeOpen = header.dataset.wasOpen === '1';
+            if (shouldBeOpen && body.classList.contains('acc-collapsed')) {
               body.classList.remove('acc-collapsed');
               body.style.maxHeight = body.scrollHeight + 'px';
               body.style.opacity = '1';
               if (chevron) chevron.classList.add('acc-open');
+            } else if (!shouldBeOpen && !body.classList.contains('acc-collapsed')) {
+              body.style.maxHeight = '0';
+              body.style.opacity = '0';
+              body.classList.add('acc-collapsed');
+              if (chevron) chevron.classList.remove('acc-open');
             }
+            delete header.dataset.wasOpen;
           }
-          // Update max-height for open sections (content may have changed)
+          // Update max-height for open sections
           if (!body.classList.contains('acc-collapsed')) {
             body.style.maxHeight = body.scrollHeight + 'px';
           }
