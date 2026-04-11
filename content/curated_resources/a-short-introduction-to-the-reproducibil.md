@@ -11,7 +11,7 @@
     "education_level": [
         "Graduate / Professional"
     ],
-    "abstract": "The Journal of European Psychology Students (JEPS) is an open-access, double-blind, peer-reviewed journal for psychology students worldwide. JEPS is run by highly motivated European psychology students and has been publishing since 2009. By ensuring that authors are always provided with extensive feedback, JEPS gives psychology students the chance to gain experience in publishing and to improve their scientific skills. Furthermore, JEPS provides students with the opportunity to share their research and to take a first step toward a scientific career.",
+    "abstract": "Reproducibility is considered a defining feature of science: Trust in scientific discovery and progress are argued to depend on the ability to reproduce previous results. However, recent large-scale replication studies have spurred debate on the reproducibility of scientific findings and suggested that psychology is facing a crisis. The reproducibility of results has been related to current publication practices, which favor sensational and statistically significant results over replication studies. In turn, this skewed incentive system may encourage researchers to engage in questionable research practices, thereby distorting the psychological literature. Important findings and criticisms, as well as potential measures to improve the reproducibility of results, such as preregistered reports, replication studies, and open science, are discussed.",
     "language": [
         "English"
     ],
