@@ -3290,7 +3290,7 @@ Educators (POST-Edu) as Project co-lead</li>
 <li class="contributor-group" id="0000-0002-8456-4545">
   <strong><a href="https://orcid.org/0000-0002-8456-4545">Ana Carolina Marinho</a></strong> contributed to
   <ul class="contributions-list">
-    <li class="contribution" data-projects="team-credit" data-roles="project-manager"><a href="https://forrt.org/contributors/">Team Credit</a> as Project manager</li>
+    <li class="contribution" data-projects="team-credit" data-roles="project-lead"><a href="https://forrt.org/contributors/">Team Credit</a> as Project lead</li>
   </ul>
 </li>
 
@@ -6434,6 +6434,10 @@ window.filterData = {
       "label": "Project Coordinator"
     },
     {
+      "value": "project-manager",
+      "label": "Project Manager"
+    },
+    {
       "value": "project-administration",
       "label": "Project administration"
     },
@@ -6444,10 +6448,6 @@ window.filterData = {
     {
       "value": "project-lead",
       "label": "Project lead"
-    },
-    {
-      "value": "project-manager",
-      "label": "Project manager"
     },
     {
       "value": "resources",
