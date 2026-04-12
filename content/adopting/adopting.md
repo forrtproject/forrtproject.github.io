@@ -54,7 +54,7 @@ classtitle = "text-center"
 
 +++
 
-<br>
+---
 
 *In this page, we describe easy ways to adopt principled teaching and mentoring practices. That is, (a) integrating open and reproducible science tenets into your teaching workflow; (b) striving to teach science (or scholarship) as a process of knowledge acquisition rather than a collection of scientific evidence, as doing so does not yield scientific literacy; (c) share publicly your teaching and mentoring (and Lab) materials so that other educators can make use of your excellent work, which also foster social justice through the democratization of scientific educational resources and pedagogies; (d) recognize that Higher Education is a profoundly unequal, non-inclusive and non-diverse environment due to a plethora of societal constraints, which also shapes academia itself, and which we as educators should try to address in class (whatever the subject taught) by integrating course content with topics of representation, diversity, equity, and inclusion. See below for 7 ways FORRT tips.*
 
@@ -74,7 +74,7 @@ FORRT tips- how you can adopt Principled Education:
 A great first step is to reflect on your own current teaching and mentoring practices, and the extent to which they communicate the basic tenets of open and reproducible science.
 
 #### <FONT COLOR="#A9A9A9">How?</FONT>
-* FORRT has developed the FORRT’s Clusters Page that provides a framework that can be used to help educators make sense of the different key themes of open and reproducible science for independent evaluation of one’s own practices.
+* FORRT has developed the [FORRT’s Clusters Page](/clusters) that provides a framework that can be used to help educators make sense of the different key themes of open and reproducible science for independent evaluation of one’s own practices.
 
 ### 2. Add literature or assignments to your syllabus that teach open science concepts.
 Including sources in your syllabus that discuss open and transparent research can enrich students’ education by helping them think about research more critically. This can be a great addition to research methods courses or any other course that requires students to evaluate or synthesize knowledge.
@@ -82,35 +82,56 @@ Including sources in your syllabus that discuss open and transparent research ca
 
 #### <FONT COLOR="#A9A9A9">How?</FONT>
 
-*   FORRT has created a curated summary of [***100+ Summaries of the Open and Reproducible Literature***](/summaries) that you can use to find suitable reading materials for your course syllabus.
-*   FORRT has also created a [***Open & Reproducible Science Syllabus***](/syllabus) that you can adapt to your course syllabus.
-*   Add an activity or assignment where students can do things such as:
-     - write their own pre-registration or compare a pre-registration with the published manuscript.
-     - learn more about the value of [pre-prints](https://journals.plos.org/plosbiology/article?id=10.1371/journal.pbio.3000151).
-     - learn about the importance of statistical power and how to find out [how many participants they need](https://www.journalofcognition.org/articles/10.5334/joc.72/) for their experiment.
-     - take the free online [Science Literacy course](https://www.coursera.org/learn/science-literacy) which aims at teaching about the process of science and how these are used to produce knowledge (by Dr. Claire Scavuzzo & Dr. Rachel Buertl at Alberta University).
-     - assign students to read (and watch explanatory videos of) [ReproducibiliTea's Reading List](https://rpt-rl.netlify.app/)
-     - assign students to watch single (short) videos a variety of open and reproducible science topics, and discuss it in class
-        -   [Center for Open Science](https://www.youtube.com/@CenterforOpenScience/videos)
-        -   [Metascience presentations](https://www.metascience2019.org/presentations/)
-        -   [Mini course on reproducibility & open research](https://www.youtube.com/playlist?list=PLo1sDp2zqD4Rl9AQblQBMQrVblZfEfHcJ)
-        -   [Professor Writes a Scientific Paper in a Day](https://www.youtube.com/watch?v=1gg_eN_UV7k)
-        -   [RIOT Science Club](https://www.youtube.com/@RIOTScienceClub/videos)
-        -   [You Lied to Me: A Music Video About p-values](https://www.youtube.com/watch?v=E0JzVIjj5wI)
-    -   assign students to listen to Podcasts on open and reproducible science (broadly construed)
-        -   [The Black Goat -- A podcast about doing science](https://www.theblackgoatpodcast.com/)
-        -   [Everything Hertz - A podcast by scientists, for scientists. Methodology, scientific life, and bad language](https://everythinghertz.com/)
-        -   [The Hitchhiker's Guide to Academic Publishing](https://www.youtube.com/watch?v=TgTsgbbdUog&t=6025s&ab_channel=CharlieBurlingham)
-        -   [The HPS Podcast](https://www.hpsunimelb.org/)
-        -   [The juice and the squeeze - A zesty podcast by two academics about where, how, and why we focus our efforts](https://www.juiceandsqueeze.net/)
-        -   [Open Update by Liberate Science](https://creators.spotify.com/pod/show/open-update?ref=libscie.org)
-        -   [Open Science Talk - A podcast about Open Science, Open Access, Open Education, Open Data, Open Software](https://septentrio.uit.no/index.php/OSTalk/issue/archive)
-        -   [The ORION Open Science Podcast](https://orionopenscience.podbean.com/)
-        -   [Quantitude - A podcast dedicated to all things quantitative](https://quantitudepod.org/)
-        -   [ReproducibiliTea - A podcast highlighting the great work of early career researchers](https://soundcloud.com/reproducibilitea)
-        -   [Within & Between - A podcast about the methods and metascience of developmental science](https://podtail.com/en/podcast/within-between/)
+* Find suitable reading materials for your course syllabus:
+     - [FORRT’s Lesson Plans](/lesson-plans) provide community-built open educational resources that can be integrated into taught courses ‘out of the box’. 
+     - [FORRT’s curated summaries](/summaries) of 100+ articles from the open and reproducible scholarship literature. 
+     - [FORRT’s Open & Reproducible Science Syllabus](/syllabus) provides examples that you can adapt to your course syllabus.
+     - [FORRT’s Clusters](/clusters) provide curated lists of open-scholarship literature which organize key themes into clusters and sub-clusters with recommended readings.
+     - [ReproducibiliTea’s Reading List](https://rpt-rl.netlify.app/) including additional explanatory videos. 
+     - [The UK Reproducibility Network (UKRN) Primers](https://www.ukrn.org/primers/) series designed to introduce important topics in open and - reproducible scholarship to a broad audience which can be re-used into your course syllabus.
 
-<br>
+* Add activities and/or assignments where students can do things such as:
+     - Write their own pre-registration or compare a pre-registration with the published manuscript.
+          - [Pre Registration Templates](https://osf.io/7xrn9): A curated OSF collection linking to major preregistration templates, each with brief guidance.  
+     - Learn more about the value of [preprints](https://journals.plos.org/plosbiology/article?id=10.1371/journal.pbio.3000151).
+     - Learn about the importance of statistical power and use [online tutorials](https://journalofcognition.org/articles/10.5334/joc.72) to work this out for studies. 
+     - Learn about the process of science and how these are used to produce knowledge by taking the free online [Science Literacy course](https://www.coursera.org/learn/science-literacy) (by Dr. Claire Scavuzzo & Dr. Rachel Buertl at Alberta University).
+     - Share outcomes from journal club/reproducibiliTea discussions via blogs, PubPeer, or other avenues. [PubBeer](https://www.pubpeer.com) is a post publication peer review platform where researchers can anonymously share thoughts on research articles. If in a journal club you notice certain shortcomings or inconsistencies, this may be the place to publish them.
+     - Run a published article or preprint through [MetaCheck](https://www.scienceverse.org/metacheck/) to assess basic scientific criteria (e.g., whether retracted studies were cited, whether results are reproducible, whether OSF links are working) with the goal of evaluating the credibility, transparency, and reproducibility of the research
+     - Do a reproduction or a replication of a study
+     - Learn more about p-hacking for students using [Schönbrodt’s p-hacker](http://shinyapps.org/apps/p-hacker/).
+     - Learn more about forking paths ([follow this excellent tutorial](http://www.stat.columbia.edu/~gelman/research/published/multiverse_published.pdf), but also check out [FORRT Summaries](https://forrt.org/summaries/open-reproducible/#h.rc4vbzxkf0ax) on this topic).
+
+* Assign students to watch videos of a variety of open and reproducible science topics, and discuss it in class:
+     - [Center for Open Science](https://www.youtube.com/@CenterforOpenScience/videos): A collection of lectures and webinars on open science topics. 
+     - [Metascience presentations](https://www.metascience2019.org/presentations/): A collection of talks, panels, and videos from the Metascience Symposiums, focused on reproducibility, scientific reform, and improving research practices.
+     - [Mini course on reproducibility & open research](https://www.youtube.com/playlist?list=PLo1sDp2zqD4Rl9AQblQBMQrVblZfEfHcJ): A collection of short videos covering open research principles and practices.
+     - [Professor Writes a Scientific Paper in a Day](https://www.youtube.com/watch?v=1gg_eN_UV7k): A video on how to write an academic paper fast.
+     - [RIOT Science Club](https://www.youtube.com/@RIOTScienceClub/videos): A collection of videos teaching Reproducible, Interpretable, Open & Transparent Science. 
+     - [You Lied to Me](https://www.youtube.com/watch?v=E0JzVIjj5wI): A music video about p-values.
+     - [The Hitchhiker’s Guide to Academic Publishing](https://www.youtube.com/watch?v=TgTsgbbdUog&t=6025s&ab_channel=CharlieBurlingham): A video discussing the historical background of the current model of academic publishing and arguing for a free, open, transparent and more efficient alternative.
+          - Dr. Glaucomflecken- Video tools by a physician who uses humour to explain the manuscript submission and review process, while highlighting common frustrations and oddities in academic publishing:
+               - [Academic Journals Doing Crime](https://www.youtube.com/watch?v=8F9gzQz1Pms)
+               - [Nature Needs a Reviewer](https://www.youtube.com/watch?v=lt_b4VKBDhI)
+               - [How to Publish a Manuscript](https://www.youtube.com/watch?v=dx71U3u--qU)
+     - [Paywall: The Business of Scholarship. The Movie](https://www.youtube.com/watch?v=zAzTR8eq20k) - Documentary about the importance of open access.
+
+* Assign students to listen to Podcasts on open and reproducible science (broadly construed):
+     - [The Black Goat](https://www.theblackgoatpodcast.com/): A podcast about doing science
+     - [Everything Hertz](https://everythinghertz.com/): A podcast by scientists, for scientists. Methodology, scientific life, and bad language
+     - [The HPS Podcast](https://www.hpsunimelb.org/): A podcast about the History, Philosophy, and Social Studies of Science sharing insights from contemporary research with both academic and general audiences
+     - [The juice and the squeeze](https://www.juiceandsqueeze.net/): A zesty podcast by two academics about where, how, and why we focus our efforts 
+     - [Open Science Talk](https://septentrio.uit.no/index.php/OSTalk/issue/archive): A podcast about open science, open access, open education, open data, open software 
+     - [Open Update](https://creators.spotify.com/pod/profile/open-update): The Open Update is Liberate Science's weekly digest on what's been going on in the open science space
+     - [The ORION Open Science Podcast](https://orionopenscience.podbean.com/): A podcast about the good, the bad, and the ugly of the current scientific system, and what open science practices can do to improve the way we do science
+     - [Quantitude](https://quantitudepod.org/): A podcast dedicated to all things quantitative
+     - [ReproducibiliTea](https://soundcloud.com/reproducibilitea): A podcast highlighting the great work of early career researchers
+     - [Within & Between](https://podtail.com/en/podcast/within-between/): A podcast about the methods and metascience of developmental science
+
+---
+TBC
+
+---
 
 ### 3. Make your teaching and mentoring materials open
 
