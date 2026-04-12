@@ -106,7 +106,7 @@ Including sources in your syllabus that discuss open and transparent research ca
 
 * Find suitable reading materials for your course syllabus:  
   * [FORRT’s Lesson Plans](https://forrt.org/lesson-plans) provide community-built open educational resources that can be integrated into taught courses ‘out of the box’.   
-  * [FORRT’s curated summar](https://www.google.com/url?q=https://forrt.org/summaries&sa=D&source=docs&ust=1749590843446497&usg=AOvVaw0iLok4YeafcuTUgXkpkB6b)[ies](https://forrt.org/summaries) of [100+ articles from the open and reproducible scholarship literature](https://forrt.org/summaries).   
+  * [FORRT’s curated summary](https://www.google.com/url?q=https://forrt.org/summaries&sa=D&source=docs&ust=1749590843446497&usg=AOvVaw0iLok4YeafcuTUgXkpkB6b)[ies](https://forrt.org/summaries) of [100+ articles from the open and reproducible scholarship literature](https://forrt.org/summaries).   
   * FORRT’s [Open & Reproducible Science Syllabus](https://forrt.org/syllabus) provides examples that you can adapt to your course syllabus.  
   * [FORRT’s Clusters](https://forrt.org/clusters/) provide curated lists of open-scholarship literature which organize key themes into clusters and sub-clusters with recommended readings.  
   * [ReproducibiliTea’s Reading Li](https://rpt-rl.netlify.app/)st including additional explanatory videos.   
