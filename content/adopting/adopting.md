@@ -58,28 +58,27 @@ classtitle = "text-center"
 
 *In this page, we describe easy ways to adopt principled teaching and mentoring practices. That is, (a) integrating open and reproducible science tenets into your teaching workflow; (b) striving to teach science (or scholarship) as a process of knowledge acquisition rather than a collection of scientific evidence, as doing so does not yield scientific literacy; (c) share publicly your teaching and mentoring (and Lab) materials so that other educators can make use of your excellent work, which also foster social justice through the democratization of scientific educational resources and pedagogies; (d) recognize that Higher Education is a profoundly unequal, non-inclusive and non-diverse environment due to a plethora of societal constraints, which also shapes academia itself, and which we as educators should try to address in class (whatever the subject taught) by integrating course content with topics of representation, diversity, equity, and inclusion. See below for 7 ways FORRT tips.*
 
-1. Evaluate your current teaching and mentorship practices.
+FORRT tips- how you can adopt Principled Education:
+
+1. Evaluate your current teaching and mentorship practices regarding open science principles. 
 1. Add literature or assignments to your syllabus that teach open science concepts.
-1. Make your teaching and mentoring materials open.
-1. Help students and mentees learn more about open science practices.
-1. Create opportunities for students to engage in Open Science projects.
-1. Make your research open.
-1. Become an advocate at your own institution/professional society.
+1. Create, re-use and share open teaching materials.
+1. Help students and mentees learn more about open science practices. 
+1. Create opportunities for students and mentees to engage in open science projects. 
+1. Make your research more open, such as by openly sharing your research process and/or materials. 
+1. Embed Diversity, Equity, and Inclusion (DEI) in your teaching and mentorship practices.
+1. Become an advocate for principled education at your own institution/professional society.
 
-
-<br>
-
-<br>
 
 ### 1. Evaluate your current teaching and mentorship practices
+A great first step is to reflect on your own current teaching and mentoring practices, and the extent to which they communicate the basic tenets of open and reproducible science.
 
-A great first step is to reflect on your current teaching and mentoring practices, and the extent to which they communicate the basic tenets of open and reproducible science.
+#### <FONT COLOR="#A9A9A9">How?</FONT>
+* FORRT has developed the FORRT’s Clusters Page that provides a framework that can be used to help educators make sense of the different key themes of open and reproducible science for independent evaluation of one’s own practices.
 
-<br>
+### 2. Add literature or assignments to your syllabus that teach open science concepts.
+Including sources in your syllabus that discuss open and transparent research can enrich students’ education by helping them think about research more critically. This can be a great addition to research methods courses or any other course that requires students to evaluate or synthesize knowledge.
 
-### 2. Add literature or assignments to your syllabus that teach open science concepts
-
-Including sources into your syllabus that discuss open and transparent research can enrich students’ education by helping them think about research more critically. This can be a great addition to research methods courses or any course that requires students to evaluate or synthesize knowledge.
 
 #### <FONT COLOR="#A9A9A9">How?</FONT>
 
