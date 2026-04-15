@@ -1,7 +1,20 @@
 {{ $cluster := .Get "cluster" }}
 {{ $title := .Get "title" }}
 {{ $description := .Get "description" }}
-{{ $items := where site.Data.partners "cluster" $cluster }}
+{{/* 
+  Staging can aggregate branches with mixed cluster naming.
+  Filter by cluster, but accept legacy aliases so sections don't go empty.
+*/}}
+{{ $clusterAliases := dict
+    "Research Communities" (slice "Open Research Communities")
+    "Early Career & Equity" (slice "Open Research & Equity")
+    "Institutional Partners" (slice "Higher Education Partners")
+}}
+{{ $clusters := slice $cluster }}
+{{ with (index $clusterAliases $cluster) }}
+  {{ $clusters = $clusters | append . }}
+{{ end }}
+{{ $items := where site.Data.partners "cluster" "in" $clusters }}
 
 {{/* Cluster Map for CSS classes */}}
 {{ $clusterMap := dict
