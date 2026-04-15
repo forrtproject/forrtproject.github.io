@@ -20,14 +20,6 @@
     "additional_link_text": "Read more"
   },
   {
-    "name": "The Association for Interdisciplinary Metaresearch and Open Science (AIMOS)",
-    "short_name": "AIMOS",
-    "logo": "AIMOS.webp",
-    "url": "https://aimos.community/",
-    "cluster": "Research Communities",
-    "description": " is an organisation that seeks to promote research and education in open science, as well as research that seeks study and improve the research landscape. AIMOS is a co-founder of MetaROR, a publish, review, curate platform for metaresearch."
-  },
-  {
     "name": "UK Reproducibility Network",
     "short_name": "UKRN",
     "logo": "UKRN.webp",
@@ -126,6 +118,14 @@
     "cluster": "Open Science Infrastructure",
     "description": "A database of empirical studies in the social sciences. It informs about the availability of replication material and categorizes them by keywords, methods used, sources, type and geographic origin of data used, and by software used. It lists replication studies and their types and results as well as corrections and retractions.",
     "status": "inactive"
+  },  
+  {
+    "name": "The Association for Interdisciplinary Metaresearch and Open Science (AIMOS)",
+    "short_name": "AIMOS",
+    "logo": "AIMOS.webp",
+    "url": "https://aimos.community/",
+    "cluster": "Open Research Communities",
+    "description": " is an organisation that seeks to promote research and education in open science, as well as research that seeks study and improve the research landscape. AIMOS is a co-founder of MetaROR, a publish, review, curate platform for metaresearch."
   },
   {
     "name": "Society for the Improvement of Psychological Science",
