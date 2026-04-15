@@ -444,6 +444,8 @@ jobs:
             content/curated_resources/
             content/glossary/
             data/
+            !data/partners.json
+            !data/publications.yaml
             static/data/
             static/partials/
             content/contributor-analysis/
