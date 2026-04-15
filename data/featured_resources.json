@@ -14,17 +14,17 @@
         "is_oa": true,
         "oa_url": "https://doi.org/10.1027/2151-2604/a000387",
         "authors": "Sophia Crüwell, Johnny van Doorn, Alexander Etz, Matthew C. Makel, Hannah Moshontz, Jesse C. Niebaum, Amy Orben, Sam Parsons, Michael Schulte‐Mecklenbeck",
+        "vote_base": 0,
         "recommendations": [
           {
             "name": "The Doctor",
             "title": "Time Lord, Gallifrey",
             "bio": "Time-traveling adventurer with centuries of experience across the universe. Passionate about curiosity, knowledge, and making sure good science endures.",
-            "photo": "/img/featured-recommenders/the-doctor-6b0e4a4b.jpg",
-            "text": "I've regenerated thirteen times and even I found adopting open science less painful. These seven steps are genuinely easy — I used them to open-source my TARDIS repair logs. Would've saved me two regenerations if I'd started sooner."
+            "photo": "/img/featured-recommenders/the-doctor-94e456d9.jpg",
+            "text": "I've regenerated ten times and even I found adopting open science less painful. These seven steps are genuinely easy — I used them to open-source my TARDIS repair logs. Would've saved me two regenerations if I'd started sooner."
           }
         ],
-        "doi": "10.1027/2151-2604/a000387",
-        "vote_base": 0
+        "doi": "10.1027/2151-2604/a000387"
       },
       {
         "title": "1,500 scientists lift the lid on reproducibility",
@@ -39,6 +39,7 @@
         "is_oa": false,
         "oa_url": "",
         "authors": "Monya Baker",
+        "vote_base": 1,
         "recommendations": [
           {
             "name": "Jean-Luc Picard",
@@ -48,8 +49,7 @@
             "text": "After the Borg assimilated our science division's research, I realized we had bigger problems — nobody could reproduce it anyway. This survey of 1,500 scientists helped me see the crisis clearly. Make it so that you read it."
           }
         ],
-        "doi": "10.1038/533452a",
-        "vote_base": 0
+        "doi": "10.1038/533452a"
       },
       {
         "title": "The replication crisis has led to positive structural, procedural, and community changes",
@@ -64,6 +64,7 @@
         "is_oa": true,
         "oa_url": "https://www.nature.com/articles/s44271-023-00003-2.pdf",
         "authors": "Max Korbmacher, Flávio Azevedo, Charlotte R. Pennington, Helena Hartmann, Madeleine Pownall, Kathleen Schmidt, Mahmoud Medhat Elsherif, Nate Breznau, Olly Robertson, Tamara Kalandadze, Shijun Yu, Bradley J. Baker, Aoife O’Mahony, Jørgen Ø. -S. Olsnes, John J Shaw, Biljana Gjoneska, Yuki Yamada, Jan Philipp Röer, Jennifer Murphy, Shilaan Alzahawi, Sandra Grinschgl, Catia Margarida Oliveira, Tobias Wingen, Siu Kit Yeung, Meng Liu, Laura M König, Nihan Albayrak‐Aydemir, Óscar Lecuona, Leticia Micheli, Thomas Rhys Evans",
+        "vote_base": 0,
         "recommendations": [
           {
             "name": "Leia Organa",
@@ -73,8 +74,7 @@
             "text": "I led a rebellion that toppled an empire, so trust me: crises drive change. This paper shows how the replication crisis sparked real structural reforms. If the scientific community can self-correct, maybe the Senate could too."
           }
         ],
-        "doi": "10.1038/s44271-023-00003-2",
-        "vote_base": 0
+        "doi": "10.1038/s44271-023-00003-2"
       },
       {
         "title": "The Seven Deadly Sins of Psychology",
@@ -89,6 +89,7 @@
         "is_oa": false,
         "oa_url": "",
         "authors": "Chris Chambers",
+        "vote_base": 0,
         "recommendations": [
           {
             "name": "Dana Scully",
@@ -98,8 +99,7 @@
             "text": "Mulder keeps citing studies with n=1 alien abductee. This book on psychology's seven deadly sins gave me the vocabulary to explain why his evidence wouldn't survive peer review — or even a first-year methods class."
           }
         ],
-        "doi": "10.1515/9781400884940",
-        "vote_base": 0
+        "doi": "10.1515/9781400884940"
       },
       {
         "title": "Academic Research in the 21st Century: Maintaining Scientific Integrity in a Climate of Perverse Incentives and Hypercompetition",
@@ -114,6 +114,7 @@
         "is_oa": true,
         "oa_url": "https://www.ncbi.nlm.nih.gov/pmc/articles/5206685",
         "authors": "Marc Edwards, Siddhartha Roy",
+        "vote_base": 0,
         "recommendations": [
           {
             "name": "Ellen Ripley",
@@ -123,8 +124,7 @@
             "text": "Weyland-Yutani buried our xenomorph data for profit — classic perverse incentive. This paper on hypercompetition in academia felt uncomfortably familiar. If your institution values metrics over truth, you need to read this before something bursts out of your chest."
           }
         ],
-        "doi": "10.1089/ees.2016.0223",
-        "vote_base": 0
+        "doi": "10.1089/ees.2016.0223"
       },
       {
         "title": "Academic Research in the 21st Century: Maintaining Scientific Integrity in a Climate of Perverse Incentives and Hypercompetition",
@@ -139,6 +139,7 @@
         "is_oa": true,
         "oa_url": "https://www.ncbi.nlm.nih.gov/pmc/articles/5206685",
         "authors": "Marc Edwards, Siddhartha Roy",
+        "vote_base": 0,
         "recommendations": [
           {
             "name": "Ellen Ripley",
@@ -148,8 +149,7 @@
             "text": "Weyland-Yutani buried our xenomorph data for profit — classic perverse incentive. This paper on hypercompetition in academia felt uncomfortably familiar. If your institution values metrics over truth, you need to read this before something bursts out of your chest."
           }
         ],
-        "doi": "10.1089/ees.2016.0223",
-        "vote_base": 0
+        "doi": "10.1089/ees.2016.0223"
       }
     ],
     "2": [
@@ -166,6 +166,7 @@
         "is_oa": true,
         "oa_url": "https://link.springer.com/content/pdf/10.1007/s10654-016-0149-3.pdf",
         "authors": "Sander Greenland, Stephen Senn, Kenneth J. Rothman, John B. Carlin, Charles Poole, Steven N. Goodman, Douglas G. Altman",
+        "vote_base": 0,
         "recommendations": [
           {
             "name": "Spock",
@@ -175,8 +176,7 @@
             "text": "Dr. McCoy once claimed p=0.06 'proved' his treatment worked. I handed him this guide to 25 common statistical misinterpretations. He called me a 'green-blooded pedant.' He also stopped misreporting his confidence intervals. Fascinating."
           }
         ],
-        "doi": "10.1007/s10654-016-0149-3",
-        "vote_base": 0
+        "doi": "10.1007/s10654-016-0149-3"
       },
       {
         "title": "Statistical tests, P values, confidence intervals, and power: a guide to misinterpretations",
@@ -191,6 +191,7 @@
         "is_oa": true,
         "oa_url": "https://link.springer.com/content/pdf/10.1007/s10654-016-0149-3.pdf",
         "authors": "Sander Greenland, Stephen Senn, Kenneth J. Rothman, John B. Carlin, Charles Poole, Steven N. Goodman, Douglas G. Altman",
+        "vote_base": 0,
         "recommendations": [
           {
             "name": "Spock",
@@ -200,8 +201,7 @@
             "text": "Dr. McCoy once claimed p=0.06 'proved' his treatment worked. I handed him this guide to 25 common statistical misinterpretations. He called me a 'green-blooded pedant.' He also stopped misreporting his confidence intervals. Fascinating."
           }
         ],
-        "doi": "10.1007/s10654-016-0149-3",
-        "vote_base": 0
+        "doi": "10.1007/s10654-016-0149-3"
       },
       {
         "title": "Power failure: why small sample size undermines the reliability of neuroscience",
@@ -213,20 +213,20 @@
         "apa": "Button, K. S., Ioannidis, J. P. A., Mokrysz, C., Nosek, B. A., Flint, J., Robinson, E. S. J., & Munafò, M. R. (2013). Power failure: why small sample size undermines the reliability of neuroscience. Nature Reviews Neuroscience, 14(5), 365–376. https://doi.org/10.1038/nrn3475",
         "bibtex": "@article{Button_2013, title={Power failure: why small sample size undermines the reliability of neuroscience}, volume={14}, ISSN={1471-0048}, url={http://dx.doi.org/10.1038/nrn3475}, DOI={10.1038/nrn3475}, number={5}, journal={Nature Reviews Neuroscience}, publisher={Springer Science and Business Media LLC}, author={Button, Katherine S. and Ioannidis, John P. A. and Mokrysz, Claire and Nosek, Brian A. and Flint, Jonathan and Robinson, Emma S. J. and Munafò, Marcus R.}, year={2013}, month=apr, pages={365–376} }",
         "abstract": "A study with low statistical power has a reduced chance of detecting a true effect, but it is less well appreciated that low power also reduces the likelihood that a statistically significant result reflects a true effect. Here, we show that the average statistical power of studies in the neurosciences is very low. The consequences of this include overestimates of effect size and low reproducibility of results. There are also ethical dimensions to this problem, as unreliable research is inefficient and wasteful. Improving reproducibility in neuroscience is a key priority and requires attention to well-established but often ignored methodological principles.",
-        "is_oa": false,
-        "oa_url": "",
+        "is_oa": true,
+        "oa_url": "https://www.nature.com/articles/nrn3475.pdf",
         "authors": "Katherine S. Button, John P. A. Ioannidis, Claire Mokrysz, Brian A. Nosek, Jonathan Flint, Emma Robinson, Marcus R. Munafò",
+        "vote_base": 0,
         "recommendations": [
           {
             "name": "HAL 9000",
             "title": "Heuristically Programmed Algorithmic Computer",
             "bio": "Advanced artificial intelligence aboard the Discovery One. Specializes in computational analysis and ensuring mission parameters are met with perfect accuracy.",
-            "photo": "",
+            "photo": "/img/featured-recommenders/hal-9000-98c277eb.jpg",
             "text": "I'm sorry, Dave, but your neuroscience study is underpowered. This paper confirmed what my circuits already suspected — median power in the field is shockingly low. I cannot allow you to publish with n=12. Open the sample size calculator, Dave."
           }
         ],
-        "doi": "10.1038/nrn3475",
-        "vote_base": 0
+        "doi": "10.1038/nrn3475"
       },
       {
         "title": "The Seven Deadly Sins of Psychology",
@@ -241,6 +241,7 @@
         "is_oa": false,
         "oa_url": "",
         "authors": "Chris Chambers",
+        "vote_base": 0,
         "recommendations": [
           {
             "name": "Dana Scully",
@@ -250,8 +251,7 @@
             "text": "Mulder keeps citing studies with n=1 alien abductee. This book on psychology's seven deadly sins gave me the vocabulary to explain why his evidence wouldn't survive peer review — or even a first-year methods class."
           }
         ],
-        "doi": "10.1515/9781400884940",
-        "vote_base": 0
+        "doi": "10.1515/9781400884940"
       },
       {
         "title": "Understanding Mixed-Effects Models Through Data Simulation",
@@ -266,6 +266,7 @@
         "is_oa": true,
         "oa_url": "https://doi.org/10.1177/2515245920965119",
         "authors": "Lisa M. DeBruine, Dale J. Barr",
+        "vote_base": 0,
         "recommendations": [
           {
             "name": "Data",
@@ -275,8 +276,7 @@
             "text": "Despite possessing a positronic brain capable of 60 trillion operations per second, I still found mixed-effects models confusing until I read this tutorial. The simulation approach finally made random slopes click. If it helped an android, it will help you."
           }
         ],
-        "doi": "10.1177/2515245920965119",
-        "vote_base": 0
+        "doi": "10.1177/2515245920965119"
       },
       {
         "title": "Calculating and reporting effect sizes to facilitate cumulative science: a practical primer for t-tests and ANOVAs",
@@ -291,6 +291,7 @@
         "is_oa": true,
         "oa_url": "https://www.frontiersin.org/articles/10.3389/fpsyg.2013.00863/pdf",
         "authors": "Daniël Lakens",
+        "vote_base": 0,
         "recommendations": [
           {
             "name": "Sarah Connor",
@@ -300,8 +301,7 @@
             "text": "I trained to fight Terminators; now I train researchers to report effect sizes. This primer on Cohen's d and eta-squared is the weapon every scientist needs. If you can't quantify your effect, how do you know you've won the fight?"
           }
         ],
-        "doi": "10.3389/fpsyg.2013.00863",
-        "vote_base": 0
+        "doi": "10.3389/fpsyg.2013.00863"
       }
     ],
     "11": [
@@ -318,6 +318,7 @@
         "is_oa": true,
         "oa_url": "https://www.ncbi.nlm.nih.gov/pmc/articles/5206685",
         "authors": "Marc Edwards, Siddhartha Roy",
+        "vote_base": 0,
         "recommendations": [
           {
             "name": "Ellen Ripley",
@@ -327,8 +328,7 @@
             "text": "Weyland-Yutani buried our xenomorph data for profit — classic perverse incentive. This paper on hypercompetition in academia felt uncomfortably familiar. If your institution values metrics over truth, you need to read this before something bursts out of your chest."
           }
         ],
-        "doi": "10.1089/ees.2016.0223",
-        "vote_base": 0
+        "doi": "10.1089/ees.2016.0223"
       }
     ]
   }

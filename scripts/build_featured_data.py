@@ -1,19 +1,27 @@
 #!/usr/bin/env python3
 """Build featured_resources.json for FORRT cluster pages.
 
-Fetches the Recommendations form responses and the Publications sheet,
-matches recommended DOIs to enriched publication metadata, maps each
-to its cluster, and outputs data/featured_resources.json.
+Fetches the Recommendations form responses and the Publications sheet
+(via published CSV URLs), matches recommended DOIs to enriched publication
+metadata, maps each to its cluster, and outputs data/featured_resources.json,
+data/pub_cards.json, and data/filter_tags.json.
+
+No credentials required — all data sources are published as public CSVs.
 
 Usage:
     python scripts/build_featured_data.py
 """
 
+import csv
+import hashlib
+import io
 import json
 import os
 import re
-import subprocess
 import sys
+import urllib.parse
+import urllib.request
+from concurrent.futures import ThreadPoolExecutor
 
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 ROOT_DIR = os.path.dirname(SCRIPT_DIR)
@@ -21,27 +29,14 @@ OUTPUT_PATH = os.path.join(ROOT_DIR, "data", "featured_resources.json")
 PUB_CARDS_PATH = os.path.join(ROOT_DIR, "data", "pub_cards.json")
 FILTER_TAGS_PATH = os.path.join(ROOT_DIR, "data", "filter_tags.json")
 
-PUBLICATIONS_SHEET_ID = "1BxYioDDE2GftOFdQGtH0lVguEUWNQ_k8Ls-bdRn8RRo"
-RECOMMENDATIONS_SHEET_ID = "1IyroPSSWYHWTpZ17epMcyaPVF0K9ftRUPSmEYDAptY0"
-
-# Publications sheet columns (A=0 .. P=15):
-#  A=Sub-Cluster, B=DOI, C=APA Reference, D=BibTex, E=auto-ref, F=annotations,
-#  G=Title, H=Abstract, I=Authors, J=Language, K=License, L=OA Link,
-#  M=Focus, N=Specificity, O=Summary, P=Resource Type
-COL_SUB_CLUSTER = 0
-COL_DOI = 1
-COL_APA = 2
-COL_BIBTEX = 3
-COL_TITLE = 6
-COL_ABSTRACT = 7
-COL_AUTHORS = 8
-COL_LICENSE = 10
-COL_OA_LINK = 11
-COL_FOCUS = 12
-COL_SPECIFICITY = 13
-COL_SUMMARY = 14
-COL_RESOURCE_TYPE = 15
-PUB_ROW_WIDTH = 16
+# Published CSV URLs (Google Sheets → File → Share → Publish to web)
+PUB_SHEET_BASE = "https://docs.google.com/spreadsheets/d/e/2PACX-1vThLoddqfkSkIvLy5VJiYx75ibVKY5NwKZEZ4XRdSakBjJ1Q77kxtCOGJ_nRcLSJJfEV8FUIidI-VBy/pub"
+CLUSTERS_CSV_URL = f"{PUB_SHEET_BASE}?gid=0&single=true&output=csv"
+SUBCLUSTERS_CSV_URL = f"{PUB_SHEET_BASE}?gid=2142431425&single=true&output=csv"
+PUBLICATIONS_CSV_URL = f"{PUB_SHEET_BASE}?gid=1999901341&single=true&output=csv"
+TAGS_CSV_URL = f"{PUB_SHEET_BASE}?gid=1313785554&single=true&output=csv"
+RECOMMENDATIONS_CSV_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vSei1F63CtZ8txpJpdSLbISurscnMtdeVr1izJRTv8XfH5d3T39ywdjCxo9u6JIEVzC0iERcjrHrVh1/pub?output=csv"
+VOTES_CSV_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vS1crENS9uAtDvKy2rcPDZj_hQvYY1vcjOz4_74_H4LLT7kWE9o4zZX296S6xD5HFbquPnpJ_AOzuE5/pub?output=csv"
 
 # DOI regex for extracting from URLs
 DOI_RE = re.compile(r"(?:https?://)?(?:dx\.)?doi\.org/(.+?)(?:\s|$)", re.IGNORECASE)
@@ -50,14 +45,22 @@ DOI_BARE_RE = re.compile(r"^10\.\d{4,9}/.+$")
 PHOTOS_DIR = os.path.join(ROOT_DIR, "static", "img", "featured-recommenders")
 
 
+def fetch_csv(url: str, skip_header: bool = False) -> list[list[str]]:
+    """Fetch a published Google Sheets CSV and return rows as lists of strings."""
+    req = urllib.request.Request(url, headers={"User-Agent": "FORRT-build/1.0"})
+    with urllib.request.urlopen(req, timeout=30) as resp:
+        text = resp.read().decode("utf-8")
+    reader = csv.reader(io.StringIO(text))
+    if skip_header:
+        next(reader, None)
+    return [row for row in reader]
+
+
 def download_photo(url: str, name: str) -> str:
     """Download a photo from url, save to PHOTOS_DIR, return site-relative path or '' on failure."""
-    import hashlib
-    import urllib.request
     if not url:
         return ""
     os.makedirs(PHOTOS_DIR, exist_ok=True)
-    # Deterministic filename from URL
     ext = ".jpg"
     slug = re.sub(r"[^a-z0-9]+", "-", name.lower()).strip("-")
     url_hash = hashlib.md5(url.encode()).hexdigest()[:8]
@@ -73,7 +76,7 @@ def download_photo(url: str, name: str) -> str:
                 print(f"  WARNING: Photo URL returned {content_type}, not an image for {name}: {url}")
                 return ""
             data = resp.read()
-            if len(data) < 500:  # too small to be a real image
+            if len(data) < 500:
                 print(f"  WARNING: Photo too small ({len(data)} bytes) for {name}: {url}")
                 return ""
             with open(filepath, "wb") as f:
@@ -82,27 +85,6 @@ def download_photo(url: str, name: str) -> str:
     except Exception as e:
         print(f"  WARNING: Could not download photo for {name}: {e}")
         return ""
-
-
-def _parse_gws_json(stdout: str) -> dict:
-    """Parse JSON from gws output, skipping any non-JSON preamble lines."""
-    for i, line in enumerate(stdout.split("\n")):
-        if line.strip().startswith("{"):
-            return json.loads("\n".join(stdout.split("\n")[i:]))
-    raise ValueError(f"No JSON found in gws output: {stdout[:200]}")
-
-
-def gws_read(sheet_id: str, range_: str) -> list[list[str]]:
-    """Read a range from a Google Sheet via gws CLI."""
-    result = subprocess.run(
-        ["gws", "sheets", "+read",
-         "--spreadsheet", sheet_id,
-         "--range", range_,
-         "--format", "json"],
-        capture_output=True, text=True, check=True,
-    )
-    data = _parse_gws_json(result.stdout)
-    return data.get("values", [])
 
 
 def extract_doi(url: str) -> str | None:
@@ -122,54 +104,67 @@ def make_short_ref(apa: str) -> str:
     """Generate a compact citation like 'Munafo et al. (2017)' from an APA string."""
     if not apa:
         return ""
-    # Try "Author, A. B., ... (YYYY)" pattern
     m = re.match(r"^(.+?)\((\d{4})\)", apa)
     if not m:
         return apa[:60]
     authors_part = m.group(1).strip().rstrip(",").strip()
     year = m.group(2)
-    # Split on ", " but be careful of initials
-    # Count "&" to determine number of authors
     amp_count = authors_part.count("&")
     if amp_count == 0:
-        # Single author: "Lakens, D."
         surname = authors_part.split(",")[0].strip()
         return f"{surname} ({year})"
     elif amp_count == 1 and len(authors_part) < 60:
-        # Two authors: keep both surnames
         parts = re.split(r"\s*&\s*", authors_part)
         s1 = parts[0].split(",")[0].strip()
         s2 = parts[1].split(",")[0].strip()
         return f"{s1} & {s2} ({year})"
     else:
-        # 3+ authors: first surname et al.
         surname = authors_part.split(",")[0].strip()
         return f"{surname} et al. ({year})"
 
 
+def fetch_vote_counts() -> dict[str, int]:
+    """Fetch vote CSV and return {doi: count} mapping."""
+    print("Fetching vote counts...")
+    try:
+        rows = fetch_csv(VOTES_CSV_URL, skip_header=True)
+        counts: dict[str, int] = {}
+        for row in rows:
+            if not row:
+                continue
+            url = urllib.parse.unquote(row[-1].strip())
+            doi = extract_doi(url)
+            if doi:
+                counts[doi] = counts.get(doi, 0) + 1
+        print(f"  {sum(counts.values())} votes for {len(counts)} unique DOIs")
+        return counts
+    except Exception as e:
+        print(f"  WARNING: Could not fetch vote counts: {e}")
+        return {}
+
+
 def main():
+    # --- Recommendations ---
     print("Fetching Recommendations form responses...")
-    rec_rows = gws_read(RECOMMENDATIONS_SHEET_ID, "Form Responses 1!A2:Z5000")
+    rec_rows = fetch_csv(RECOMMENDATIONS_CSV_URL, skip_header=True)
     print(f"  {len(rec_rows)} form response rows")
 
-    # Extract recommended DOIs and recommendation details per DOI.
-    # Form columns:
+    # Form columns (by position after header):
     #   0=Timestamp, 1=Name, 2=Title, 3=Email, 4=Bio, 5=Photo URL
     #   6=URL#1, 7=Text#1, 8=Another?, 9=URL#2, 10=Text#2, 11=Another?, ...
     recommended_dois = set()
-    recommendations_by_doi: dict[str, list[dict]] = {}  # doi → [{name, title, bio, photo, text}]
+    recommendations_by_doi: dict[str, list[dict]] = {}
 
     for row in rec_rows:
-        row += [""] * (26 - len(row))  # pad to max columns
+        row += [""] * (max(26, len(row) + 1) - len(row))
         rec_name = row[1].strip()
         rec_title = row[2].strip()
         rec_bio = row[4].strip()
         rec_photo_url = row[5].strip()
         rec_photo = download_photo(rec_photo_url, rec_name) if rec_photo_url else ""
-        # Each resource is at (6, 7), (9, 10), (12, 13), (15, 16), (18, 19), (21, 22), (24, 25)
-        for url_idx in range(6, 26, 3):
+        for url_idx in range(6, len(row) - 1, 3):
             text_idx = url_idx + 1
-            url = row[url_idx].strip() if url_idx < len(row) else ""
+            url = row[url_idx].strip()
             text = row[text_idx].strip() if text_idx < len(row) else ""
             doi = extract_doi(url)
             if doi:
@@ -193,10 +188,22 @@ def main():
 
     print(f"  Recommended DOIs: {recommended_dois}")
 
+    # --- Fetch remaining sheets in parallel ---
+    print("Fetching tags, votes, publications, sub-clusters, clusters in parallel...")
+    with ThreadPoolExecutor(max_workers=5) as pool:
+        f_tags = pool.submit(fetch_csv, TAGS_CSV_URL, True)
+        f_votes = pool.submit(fetch_vote_counts)
+        f_pubs = pool.submit(fetch_csv, PUBLICATIONS_CSV_URL, True)
+        f_sc = pool.submit(fetch_csv, SUBCLUSTERS_CSV_URL, True)
+        f_cl = pool.submit(fetch_csv, CLUSTERS_CSV_URL, True)
 
-    # Fetch filter tags early so we can use focus order for sorting
-    print("Fetching filter tags...")
-    tag_rows = gws_read(PUBLICATIONS_SHEET_ID, "tags!A2:B50")
+    tag_rows = f_tags.result()
+    vote_counts = f_votes.result()
+    pub_rows = f_pubs.result()
+    sc_rows = f_sc.result()
+    cl_rows = f_cl.result()
+
+    # --- Filter tags ---
     focus_tags = []
     type_tags = []
     for row in tag_rows:
@@ -207,20 +214,36 @@ def main():
     focus_order = {tag: i for i, tag in enumerate(focus_tags)}
     print(f"  Focus order: {focus_tags}")
 
-    print("Fetching Publications sheet...")
-    pub_rows = gws_read(PUBLICATIONS_SHEET_ID, "Publications!A2:P5000")
+    # --- Publications ---
     print(f"  {len(pub_rows)} publication rows")
 
-    print("Fetching Sub-Clusters sheet (for cluster mapping)...")
-    sc_rows = gws_read(PUBLICATIONS_SHEET_ID, "Sub-Clusters!A2:B500")
+    # Publications CSV columns (matching the header):
+    #  0=Sub-Cluster, 1=DOI, 2=APA Reference, 3=BibTex reference, 4=auto-ref,
+    #  5=annotations, 6=Title, 7=Abstract, 8=Authors, 9=Language, 10=License,
+    #  11=OA Link, 12=Focus, 13=Specificity, 14=Summary, 15=Resource Type,
+    #  16=Display exclusion, 17=Exclusion reason
+    COL_SUB_CLUSTER = 0
+    COL_DOI = 1
+    COL_APA = 2
+    COL_BIBTEX = 3
+    COL_TITLE = 6
+    COL_ABSTRACT = 7
+    COL_AUTHORS = 8
+    COL_LICENSE = 10
+    COL_OA_LINK = 11
+    COL_FOCUS = 12
+    COL_SPECIFICITY = 13
+    COL_SUMMARY = 14
+    COL_RESOURCE_TYPE = 15
+    COL_DISPLAY_EXCLUSION = 16
+    PUB_ROW_WIDTH = 18
 
-    print("Fetching Clusters sheet (for number mapping)...")
-    cl_rows = gws_read(PUBLICATIONS_SHEET_ID, "Clusters!A2:A50")
+    # --- Cluster mapping ---
 
     # Build cluster name → number mapping (row order = cluster number)
     cluster_name_to_number = {}
     for i, row in enumerate(cl_rows, start=1):
-        if row:
+        if row and row[0].strip():
             cluster_name_to_number[row[0].strip()] = i
 
     # Build sub-cluster name → cluster number mapping
@@ -235,20 +258,23 @@ def main():
 
     print(f"  {len(sc_to_cluster_number)} sub-clusters mapped to {len(cluster_name_to_number)} clusters")
 
-    # Build card data for ALL publications, and featured resources grouped by cluster
-    pub_cards: dict[str, dict] = {}  # DOI → card data (for all publications)
-    clusters: dict[str, list[dict]] = {}  # cluster number → featured resources
+    # --- Build card data ---
+    pub_cards: dict[str, dict] = {}
+    clusters: dict[str, list[dict]] = {}
     matched = 0
 
     for row in pub_rows:
-        row += [""] * (PUB_ROW_WIDTH - len(row))  # pad short rows
+        row += [""] * (PUB_ROW_WIDTH - len(row))
         doi = extract_doi(row[COL_DOI]) or row[COL_DOI].strip().lower().rstrip("/.,;")
         if not doi:
             continue
 
-        license_val = row[COL_LICENSE].strip().lower()
-        is_oa = bool(license_val and license_val not in ("", "closed", "none", "n/a"))
-        oa_url = row[COL_OA_LINK].strip() if is_oa else ""
+        # Skip excluded publications
+        if row[COL_DISPLAY_EXCLUSION].strip():
+            continue
+
+        oa_url = row[COL_OA_LINK].strip()
+        is_oa = bool(oa_url)
         apa = row[COL_APA].strip()
 
         card = {
@@ -264,14 +290,13 @@ def main():
             "is_oa": is_oa,
             "oa_url": oa_url,
             "authors": row[COL_AUTHORS].strip(),
+            "vote_base": vote_counts.get(doi, 0),
         }
-        # Attach recommendations if this DOI was recommended
         if doi in recommendations_by_doi:
             card["recommendations"] = recommendations_by_doi[doi]
 
         pub_cards[doi] = card
 
-        # If this is a recommended DOI, also add to featured clusters
         if doi in recommended_dois:
             sub_cluster_name = row[COL_SUB_CLUSTER].strip()
             cluster_num = sc_to_cluster_number.get(sub_cluster_name)
@@ -279,7 +304,7 @@ def main():
                 print(f"  WARNING: No cluster mapping for sub-cluster '{sub_cluster_name}' (DOI: {doi})")
                 continue
 
-            resource = dict(card, doi=doi, vote_base=0,
+            resource = dict(card, doi=doi,
                             recommendations=recommendations_by_doi.get(doi, []))
             key = str(cluster_num)
             clusters.setdefault(key, []).append(resource)

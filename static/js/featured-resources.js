@@ -82,19 +82,13 @@
       html += '<div class="ref-doi-row">';
       var doiUrl = 'https://doi.org/' + encodeURIComponent(doi);
       html += '<a href="' + doiUrl + '" target="_blank" rel="noopener" class="ref-doi-link">' + escHtml(doiUrl) + '</a>';
-      if (r.is_oa) {
+      if (r.oa_url) {
         html += '<span class="ref-oa-badge open">' +
           '<svg viewBox="0 0 16 16" fill="currentColor"><circle cx="8" cy="8" r="6" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M8 5v6M5 8h6"/></svg>' +
           ' Open Access</span>';
-        if (r.oa_url) {
-          html += '<a href="' + escHtml(r.oa_url) + '" target="_blank" rel="noopener" class="ref-oa-link">' +
-            '<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 3H3v10h10v-3M9 1h6v6M9 7L15 1"/></svg>' +
-            ' Free PDF</a>';
-        }
-      } else {
-        html += '<span class="ref-oa-badge closed">' +
-          '<svg viewBox="0 0 16 16" fill="currentColor"><circle cx="8" cy="8" r="6" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M5 5l6 6M11 5l-6 6"/></svg>' +
-          ' Not Open Access</span>';
+        html += '<a href="' + escHtml(r.oa_url) + '" target="_blank" rel="noopener" class="ref-oa-link">' +
+          '<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 3H3v10h10v-3M9 1h6v6M9 7L15 1"/></svg>' +
+          ' Free PDF</a>';
       }
       html += '</div>';
 
@@ -216,16 +210,52 @@
         panelBody.innerHTML = '<div class="rl-panel-empty">No saved resources yet.</div>';
         return;
       }
+      // OA icons (inline SVG, from Wikimedia Commons PLoS OA logos, public domain)
+      var OA_ICON = '<svg class="rl-oa-icon rl-oa-open" viewBox="0 0 640 1000" aria-label="Open Access"><path fill="none" stroke="#008400" stroke-width="105" d="M111 308v-36c0-116 94-209 209-209s209 93 209 209v258"/><circle cx="320" cy="681" r="256" fill="none" stroke="#008400" stroke-width="105"/><circle cx="321" cy="682" r="86" fill="#008400"/></svg>';
       var html = '';
       list.forEach(function (doi) {
         var r = resourceIdx[doi] || {};
         html += '<div class="rl-panel-item" data-doi="' + escHtml(doi) + '">';
+
+        // Header row (always visible)
+        html += '<div class="rl-panel-item-header">';
+        html += '<button class="rl-panel-item-toggle" aria-label="Show details" aria-expanded="false">';
+        html += '<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg>';
+        html += '</button>';
         html += '<div class="rl-panel-item-info">';
         html += '<div class="rl-panel-item-title">' + escHtml(r.title || doi) + '</div>';
         html += '<div class="rl-panel-item-ref">' + escHtml(r.short_ref || '') + '</div>';
         html += '</div>';
         html += '<button class="rl-panel-item-remove" data-doi="' + escHtml(doi) + '" aria-label="Remove">&times;</button>';
         html += '</div>';
+
+        // Details section (collapsed by default)
+        html += '<div class="rl-panel-item-details">';
+        if (r.apa) {
+          html += '<div class="rl-detail-ref-row">';
+          html += '<div class="rl-detail-apa">' + escHtml(r.apa) + '</div>';
+          html += '<button class="rl-detail-copy" data-copy-apa="' + escHtml(doi) + '" title="Copy APA reference">';
+          html += '<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="8" height="10" rx="1"/><path d="M5 3V2a1 1 0 011-1h5a1 1 0 011 1v9a1 1 0 01-1 1h-1"/></svg>';
+          html += '</button>';
+          html += '</div>';
+        }
+        if (r.abstract) {
+          html += '<div class="rl-detail-abstract-wrap">';
+          html += '<div class="rl-detail-abstract">' + escHtml(r.abstract) + '</div>';
+          html += '<button class="rl-detail-show-more">Show more</button>';
+          html += '</div>';
+        }
+        // DOI + OA icon + Free PDF — compact one-liner
+        html += '<div class="rl-detail-meta">';
+        html += '<a href="https://doi.org/' + encodeURIComponent(doi) + '" target="_blank" rel="noopener" class="rl-detail-doi-link">doi.org/' + escHtml(doi) + '</a>';
+        if (r.oa_url) {
+          html += OA_ICON;
+          html += '<a href="' + escHtml(r.oa_url) + '" target="_blank" rel="noopener" class="rl-detail-pdf-link">Free PDF</a>';
+        }
+        html += '</div>';
+        html += '</div>'; // end details
+
+        html += '</div>'; // end item
       });
       panelBody.innerHTML = html;
     }
@@ -270,8 +300,51 @@
       if (tooltip) tooltip.classList.remove('visible');
     });
 
-    // Remove from panel
+    // Panel interactions: toggle, copy, show-more, remove
     if (panelBody) panelBody.addEventListener('click', function (e) {
+      // Toggle expand/collapse details
+      var toggleBtn = e.target.closest('.rl-panel-item-toggle');
+      if (toggleBtn) {
+        var item = toggleBtn.closest('.rl-panel-item');
+        if (item) {
+          item.classList.toggle('expanded');
+          toggleBtn.setAttribute('aria-expanded',
+            item.classList.contains('expanded') ? 'true' : 'false');
+          // Hide "Show more" if abstract isn't actually clamped (defer to next frame)
+          requestAnimationFrame(function () {
+            var absEl = item.querySelector('.rl-detail-abstract');
+            if (absEl && absEl.scrollHeight <= absEl.clientHeight) {
+              var smBtn = item.querySelector('.rl-detail-show-more');
+              if (smBtn) smBtn.style.display = 'none';
+            }
+          });
+        }
+        return;
+      }
+      // Copy APA reference
+      var copyBtn = e.target.closest('.rl-detail-copy[data-copy-apa]');
+      if (copyBtn) {
+        var d = copyBtn.getAttribute('data-copy-apa');
+        var res = resourceIdx[d];
+        if (res && res.apa) {
+          navigator.clipboard.writeText(res.apa).then(function () {
+            copyBtn.classList.add('copied');
+            setTimeout(function () { copyBtn.classList.remove('copied'); }, 1500);
+          });
+        }
+        return;
+      }
+      // Show more / show less abstract
+      var showMore = e.target.closest('.rl-detail-show-more');
+      if (showMore) {
+        var wrap = showMore.closest('.rl-detail-abstract-wrap');
+        if (wrap) {
+          var isExpanded = wrap.classList.toggle('abstract-expanded');
+          showMore.textContent = isExpanded ? 'Show less' : 'Show more';
+        }
+        return;
+      }
+      // Remove item
       var removeBtn = e.target.closest('.rl-panel-item-remove[data-doi]');
       if (removeBtn) {
         var doi = removeBtn.getAttribute('data-doi');
@@ -298,6 +371,143 @@
       a.download = 'forrt-reading-list.bib';
       a.click();
       URL.revokeObjectURL(url);
+    });
+
+    // Download PDF
+    var pdfBtn = document.getElementById('fr-rl-pdf');
+    if (pdfBtn) pdfBtn.addEventListener('click', function () {
+      var list = getList();
+      if (list.length === 0) return;
+
+      var origHTML = pdfBtn.innerHTML;
+      pdfBtn.disabled = true;
+      pdfBtn.innerHTML = '<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" class="rl-spin"><circle cx="8" cy="8" r="6"/></svg> Generating\u2026';
+
+      function generatePDF() {
+        var jspdf = window.jspdf;
+        var doc = new jspdf.jsPDF({ unit: 'mm', format: 'a4' });
+        var pageW = doc.internal.pageSize.getWidth();
+        var pageH = doc.internal.pageSize.getHeight();
+        var margin = 20;
+        var contentW = pageW - 2 * margin;
+        var y = margin;
+
+        function checkPage(needed) {
+          if (y + needed > pageH - margin) {
+            doc.addPage();
+            y = margin;
+          }
+        }
+
+        // Title
+        doc.setFont('helvetica', 'bold');
+        doc.setFontSize(18);
+        doc.setTextColor(0, 64, 85);
+        doc.text('FORRT Reading List', margin, y);
+        y += 8;
+        doc.setDrawColor(0, 64, 85);
+        doc.setLineWidth(0.5);
+        doc.line(margin, y, pageW - margin, y);
+        y += 5;
+
+        // Subtitle
+        doc.setFont('helvetica', 'normal');
+        doc.setFontSize(8);
+        doc.setTextColor(136, 136, 136);
+        doc.text('Generated on ' + new Date().toLocaleDateString() + ' \u2014 ' + list.length + ' resource' + (list.length !== 1 ? 's' : ''), margin, y);
+        y += 8;
+
+        list.forEach(function (doi, i) {
+          var r = resourceIdx[doi] || {};
+
+          // Estimate space needed for this entry (at least title + ref)
+          checkPage(25);
+
+          // Title
+          doc.setFont('helvetica', 'bold');
+          doc.setFontSize(11);
+          doc.setTextColor(34, 34, 34);
+          var titleLines = doc.splitTextToSize(r.title || doi, contentW);
+          doc.text(titleLines, margin, y);
+          y += titleLines.length * 5 + 2;
+
+          // APA reference
+          if (r.apa) {
+            checkPage(10);
+            doc.setFont('times', 'normal');
+            doc.setFontSize(9);
+            doc.setTextColor(68, 68, 68);
+            var apaLines = doc.splitTextToSize(r.apa, contentW - 10);
+            // Hanging indent: first line at margin, rest indented
+            apaLines.forEach(function (line, li) {
+              checkPage(4);
+              doc.text(line, li === 0 ? margin : margin + 10, y);
+              y += 4;
+            });
+            y += 1;
+          }
+
+          // Abstract
+          if (r.abstract) {
+            checkPage(10);
+            doc.setFont('helvetica', 'bold');
+            doc.setFontSize(8);
+            doc.setTextColor(0, 64, 85);
+            doc.text('Abstract', margin, y);
+            y += 4;
+            doc.setFont('times', 'normal');
+            doc.setFontSize(8.5);
+            doc.setTextColor(85, 85, 85);
+            var absLines = doc.splitTextToSize(r.abstract, contentW);
+            absLines.forEach(function (line) {
+              checkPage(3.5);
+              doc.text(line, margin, y);
+              y += 3.5;
+            });
+            y += 1;
+          }
+
+          // DOI + metadata line
+          checkPage(5);
+          doc.setFont('helvetica', 'normal');
+          doc.setFontSize(7.5);
+          var metaParts = ['https://doi.org/' + doi];
+          if (r.oa_url) metaParts.push('Open Access');
+          if (r.focus) metaParts.push(r.focus);
+          if (r.resource_type) metaParts.push(r.resource_type);
+          doc.setTextColor(0, 96, 128);
+          doc.text(metaParts.join('  \u2022  '), margin, y);
+          y += 5;
+
+          // Separator
+          if (i < list.length - 1) {
+            checkPage(5);
+            doc.setDrawColor(221, 221, 221);
+            doc.setLineWidth(0.2);
+            doc.line(margin, y, pageW - margin, y);
+            y += 5;
+          }
+        });
+
+        doc.save('forrt-reading-list.pdf');
+        pdfBtn.disabled = false;
+        pdfBtn.innerHTML = origHTML;
+      }
+
+      // Load jsPDF from CDN if not already loaded
+      if (window.jspdf) {
+        generatePDF();
+      } else {
+        var script = document.createElement('script');
+        script.src = 'https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js';
+        script.onload = generatePDF;
+        script.onerror = function () {
+          pdfBtn.disabled = false;
+          pdfBtn.innerHTML = origHTML;
+          alert('Could not load PDF library. Please check your internet connection.');
+        };
+        document.head.appendChild(script);
+      }
     });
 
     // Initial state
@@ -336,6 +546,19 @@
       });
     }
 
+    // Submit vote to Google Form via hidden iframe to avoid CORS issues
+    function submitVoteToForm(doi) {
+      var url = 'https://doi.org/' + encodeURIComponent(doi);
+      var formURL = 'https://docs.google.com/forms/d/e/1FAIpQLScYBxxTCWRPTbLqzYo6r_gC19BFKvFhlv2ErKVipgQouDKtvg/formResponse?entry.1898150489=' + encodeURIComponent(url);
+      var iframe = document.createElement('iframe');
+      iframe.style.display = 'none';
+      iframe.name = 'forrt-vote-frame-' + Date.now();
+      document.body.appendChild(iframe);
+      iframe.src = formURL;
+      // Clean up after submission
+      setTimeout(function () { iframe.remove(); }, 5000);
+    }
+
     document.addEventListener('click', function (e) {
       var btn = e.target.closest('.fc-vote-btn[data-doi]');
       if (!btn || btn.classList.contains('voted')) return;
@@ -345,6 +568,7 @@
       votes[doi] = true;
       setVotes(votes);
       updateVoteUI();
+      submitVoteToForm(doi);
     });
 
     updateVoteUI();
@@ -479,6 +703,36 @@
     var specCheckbox = document.getElementById('fr-global-specificity-checkbox');
     var searchInput = document.getElementById('clusters-inline-search-input');
 
+    // --- Pre-cache card data so filtering never queries the DOM for text ---
+    var sectionCache = [];
+    document.querySelectorAll('.acc-section').forEach(function (section) {
+      var container = section.querySelector('.fr-cards-list');
+      if (!container) return;
+      var cardEls = container.querySelectorAll('.fc-card, .fr-card');
+      var cards = [];
+      cardEls.forEach(function (card) {
+        var title = (card.querySelector('.fc-title') || card.querySelector('.fr-title') || {}).textContent || '';
+        var summary = (card.querySelector('.fc-summary') || card.querySelector('.fr-summary') || {}).textContent || '';
+        cards.push({
+          el: card,
+          focus: card.getAttribute('data-focus'),
+          type: card.getAttribute('data-type'),
+          spec: card.getAttribute('data-specificity'),
+          text: (title + ' ' + summary).toLowerCase()
+        });
+      });
+      var header = section.querySelector('.acc-header');
+      var body = section.querySelector('.acc-body');
+      sectionCache.push({
+        el: section,
+        countEl: section.querySelector('.acc-count-match'),
+        header: header,
+        body: body,
+        chevron: header ? header.querySelector('.acc-chevron') : null,
+        cards: cards
+      });
+    });
+
     // Tag filter buttons
     document.addEventListener('click', function (e) {
       var btn = e.target.closest('.fr-tag-btn');
@@ -517,46 +771,45 @@
       var tokens = query ? query.split(/\s+/) : [];
       var isFiltered = activeFocus !== 'all' || activeType !== 'all' || tokens.length > 0;
 
-      // Filter cards in every .fr-cards-list, update accordion counts
-      document.querySelectorAll('.acc-section').forEach(function (section) {
-        var container = section.querySelector('.fr-cards-list');
-        if (!container) return;
-        var cards = container.querySelectorAll('.fc-card, .fr-card');
-        var total = cards.length;
+      // --- Pass 1: compute visibility from cached data (no DOM reads) ---
+      var sectionResults = [];
+      for (var s = 0; s < sectionCache.length; s++) {
+        var sec = sectionCache[s];
         var matchCount = 0;
-
-        cards.forEach(function (card) {
-          var matchFocus = activeFocus === 'all' || card.getAttribute('data-focus') === activeFocus;
-          var matchType = activeType === 'all' || card.getAttribute('data-type') === activeType;
-          var matchSpec = showNarrow || card.getAttribute('data-specificity') !== 'narrow';
-
-          var matchSearch = true;
-          if (tokens.length > 0) {
-            var text = (card.querySelector('.fc-title') || card.querySelector('.fr-title') || {}).textContent || '';
-            text += ' ' + ((card.querySelector('.fc-summary') || card.querySelector('.fr-summary') || {}).textContent || '');
-            text = text.toLowerCase();
-            for (var i = 0; i < tokens.length; i++) {
-              if (text.indexOf(tokens[i]) === -1) { matchSearch = false; break; }
+        var cardVis = new Array(sec.cards.length);
+        for (var c = 0; c < sec.cards.length; c++) {
+          var cd = sec.cards[c];
+          var show = (activeFocus === 'all' || cd.focus === activeFocus)
+            && (activeType === 'all' || cd.type === activeType)
+            && (showNarrow || cd.spec !== 'narrow');
+          if (show && tokens.length > 0) {
+            for (var t = 0; t < tokens.length; t++) {
+              if (cd.text.indexOf(tokens[t]) === -1) { show = false; break; }
             }
           }
-
-          var show = matchFocus && matchType && matchSpec && matchSearch;
-          card.style.display = show ? '' : 'none';
+          cardVis[c] = show;
           if (show) matchCount++;
-        });
+        }
+        sectionResults.push({ matchCount: matchCount, cardVis: cardVis });
+      }
 
-        // Update the x / y count in the header
-        var countEl = section.querySelector('.acc-count-match');
-        if (countEl) countEl.textContent = matchCount;
+      // --- Pass 2: batch all DOM writes ---
+      for (var s = 0; s < sectionCache.length; s++) {
+        var sec = sectionCache[s];
+        var res = sectionResults[s];
 
-        // Manage accordion open/closed state based on matches and filter
-        var header = section.querySelector('.acc-header');
-        var body = section.querySelector('.acc-body');
-        var chevron = header ? header.querySelector('.acc-chevron') : null;
-        if (!header || !body) return;
+        for (var c = 0; c < sec.cards.length; c++) {
+          sec.cards[c].el.style.display = res.cardVis[c] ? '' : 'none';
+        }
 
-        if (matchCount === 0) {
-          // Remember open state before collapsing (only on first disable)
+        if (sec.countEl) sec.countEl.textContent = res.matchCount;
+
+        var header = sec.header;
+        var body = sec.body;
+        var chevron = sec.chevron;
+        if (!header || !body) continue;
+
+        if (res.matchCount === 0) {
           if (!header.classList.contains('acc-disabled')) {
             header.dataset.wasOpen = body.classList.contains('acc-collapsed') ? '0' : '1';
           }
@@ -568,24 +821,21 @@
             if (chevron) chevron.classList.remove('acc-open');
           }
         } else if (isFiltered) {
-          // Filter active with matches: auto-expand
-          // Save pre-filter state if not yet saved
           if (!header.dataset.wasOpen) {
             header.dataset.wasOpen = body.classList.contains('acc-collapsed') ? '0' : '1';
           }
           header.classList.remove('acc-disabled');
           body.classList.remove('acc-collapsed');
-          body.style.maxHeight = body.scrollHeight + 'px';
+          body.style.maxHeight = 'none';
           body.style.opacity = '1';
           if (chevron) chevron.classList.add('acc-open');
         } else {
-          // No filter active: restore original state
           header.classList.remove('acc-disabled');
           if (header.dataset.wasOpen !== undefined) {
             var shouldBeOpen = header.dataset.wasOpen === '1';
             if (shouldBeOpen && body.classList.contains('acc-collapsed')) {
               body.classList.remove('acc-collapsed');
-              body.style.maxHeight = body.scrollHeight + 'px';
+              body.style.maxHeight = 'none';
               body.style.opacity = '1';
               if (chevron) chevron.classList.add('acc-open');
             } else if (!shouldBeOpen && !body.classList.contains('acc-collapsed')) {
@@ -596,12 +846,11 @@
             }
             delete header.dataset.wasOpen;
           }
-          // Update max-height for open sections
           if (!body.classList.contains('acc-collapsed')) {
-            body.style.maxHeight = body.scrollHeight + 'px';
+            body.style.maxHeight = 'none';
           }
         }
-      });
+      }
     }
   }
 

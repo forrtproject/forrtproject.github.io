@@ -73,7 +73,7 @@
           {{ if and .doi $pubCards }}{{ $card = index $pubCards .doi }}{{ end }}
           {{ if $card }}
           {{ $recs := $card.recommendations }}
-          {{ $hasRecs := and $recs (gt (len $recs) 0) }}
+          {{ $hasRecs := and $featuredEnabled $recs (gt (len $recs) 0) }}
 
           {{ if $hasRecs }}
           {{/* Recommended: side-by-side card with testimonial */}}
@@ -163,7 +163,7 @@
                 </button>
                 <button class="fc-vote-btn" data-doi="{{ .doi }}">
                   <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 14H3a1 1 0 01-1-1V8a1 1 0 011-1h2m0 7V7m0 7h6.28a2 2 0 001.94-1.52l1.07-4.28A1 1 0 0014.32 7H10.5l.64-3.18a1.26 1.26 0 00-1.22-1.52h-.17a1 1 0 00-.85.47L5 7"/></svg>
-                  <span class="fc-vote-count">0</span>
+                  <span class="fc-vote-count">{{ with $card.vote_base }}{{ . }}{{ else }}0{{ end }}</span>
                 </button>
               </div>
             </div>

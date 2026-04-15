@@ -2692,11 +2692,35 @@ h1.clusters-site-heading.clusters-hub-page__title {
 }
 .rl-panel-item {
   display: flex;
-  align-items: center;
-  gap: 0.65rem;
+  flex-direction: column;
   padding: 0.55rem 1.25rem;
   border-bottom: 1px solid rgba(0,0,0,0.04);
   font-size: 0.78rem;
+}
+.rl-panel-item-header {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  width: 100%;
+}
+.rl-panel-item-toggle {
+  background: none;
+  border: none;
+  color: #bbb;
+  cursor: pointer;
+  padding: 0.2rem;
+  flex-shrink: 0;
+  transition: color 0.15s, transform 0.2s;
+}
+.rl-panel-item-toggle svg {
+  width: 12px;
+  height: 12px;
+  display: block;
+}
+.rl-panel-item-toggle:hover { color: #666; }
+.rl-panel-item.expanded .rl-panel-item-toggle {
+  transform: rotate(180deg);
+  color: #004055;
 }
 .rl-panel-item-info {
   flex: 1;
@@ -2725,6 +2749,103 @@ h1.clusters-site-heading.clusters-hub-page__title {
   transition: color 0.15s;
 }
 .rl-panel-item-remove:hover { color: #b8336a; }
+/* Collapsible details */
+.rl-panel-item-details {
+  display: none;
+  padding: 0.35rem 0 0.15rem 1.6rem;
+  margin-top: 0.25rem;
+  border-left: 2px solid rgba(0,64,85,0.12);
+  margin-left: 0.45rem;
+  font-size: 0.68rem;
+  color: #555;
+  line-height: 1.45;
+}
+.rl-panel-item.expanded .rl-panel-item-details {
+  display: block;
+}
+/* APA reference + copy button row */
+.rl-detail-ref-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.3rem;
+}
+.rl-detail-apa {
+  flex: 1;
+  font-size: 0.66rem;
+  color: #444;
+  line-height: 1.4;
+  padding-left: 1.2em;
+  text-indent: -1.2em;
+}
+.rl-detail-copy {
+  flex-shrink: 0;
+  background: none;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+  padding: 0.15rem 0.25rem;
+  cursor: pointer;
+  color: #888;
+  transition: color 0.15s, border-color 0.15s, background 0.15s;
+  margin-top: 0.1rem;
+}
+.rl-detail-copy svg { width: 11px; height: 11px; display: block; }
+.rl-detail-copy:hover { color: #004055; border-color: #004055; }
+.rl-detail-copy.copied { color: #2a6a3a; border-color: #2a6a3a; background: #e6f4ea; }
+/* Abstract with inline show more/less */
+.rl-detail-abstract-wrap {
+  margin-top: 0.3rem;
+  font-size: 0.64rem;
+  color: #666;
+  line-height: 1.4;
+  position: relative;
+}
+.rl-detail-abstract {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 4;
+  overflow: hidden;
+}
+.rl-detail-abstract-wrap.abstract-expanded .rl-detail-abstract {
+  display: block;
+  -webkit-line-clamp: unset;
+  overflow: visible;
+}
+.rl-detail-show-more {
+  background: none;
+  border: none;
+  padding: 0;
+  font-size: 0.6rem;
+  color: #006080;
+  cursor: pointer;
+  font-family: inherit;
+  margin-top: 0.1rem;
+}
+.rl-detail-show-more:hover { text-decoration: underline; }
+/* DOI + OA icon + Free PDF — compact meta row */
+.rl-detail-meta {
+  margin-top: 0.3rem;
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.62rem;
+}
+.rl-detail-doi-link {
+  color: #006080 !important;
+  text-decoration: none;
+  word-break: break-all;
+}
+.rl-detail-doi-link:hover { text-decoration: underline; }
+.rl-oa-icon {
+  width: 11px;
+  height: 17px;
+  flex-shrink: 0;
+}
+.rl-detail-pdf-link {
+  color: #2a6a3a !important;
+  font-weight: 600;
+  text-decoration: none;
+}
+.rl-detail-pdf-link:hover { text-decoration: underline; }
 .rl-panel-footer {
   padding: 0.65rem 1.25rem;
   border-top: 1px solid rgba(0,0,0,0.06);
@@ -2732,6 +2853,7 @@ h1.clusters-site-heading.clusters-hub-page__title {
   justify-content: flex-end;
   gap: 0.4rem;
   flex-shrink: 0;
+  flex-wrap: wrap;
 }
 .rl-export-btn {
   font-family: inherit;
@@ -2752,6 +2874,39 @@ h1.clusters-site-heading.clusters-hub-page__title {
 .rl-export-btn svg {
   width: 12px;
   height: 12px;
+}
+.rl-pdf-btn {
+  font-family: inherit;
+  font-size: 0.68rem;
+  font-weight: 600;
+  color: #004055;
+  background: transparent;
+  border: 1.5px solid #004055;
+  border-radius: 4px;
+  padding: 0.35rem 0.75rem;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  transition: background 0.15s, color 0.15s;
+}
+.rl-pdf-btn:hover {
+  background: #004055;
+  color: #fff;
+}
+.rl-pdf-btn:disabled {
+  opacity: 0.6;
+  cursor: wait;
+}
+.rl-pdf-btn svg {
+  width: 12px;
+  height: 12px;
+}
+@keyframes rl-spin {
+  to { transform: rotate(360deg); }
+}
+.rl-spin {
+  animation: rl-spin 1s linear infinite;
 }
 
 /* ---- Featured resources responsive ---- */
