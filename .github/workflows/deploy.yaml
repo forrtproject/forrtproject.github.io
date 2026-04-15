@@ -16,6 +16,9 @@ on:
   repository_dispatch:
     types: [data-update]
 
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: "true"
+
 # Note: PR staging deployments are handled by staging-aggregate.yaml
 # This workflow focuses on production deployments
 
