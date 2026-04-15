@@ -1,0 +1,74 @@
+{{/* One cluster block (used on /clusters/ and /clusters/cluster-N/). Expects dict: cluster, ci, colors */}}
+{{ $cluster := .cluster }}
+{{ $ci := .ci }}
+{{ $colors := .colors }}
+{{ $cid := printf "cluster-%d" (int $cluster.number) }}
+{{ $color := index $colors (mod $ci (len $colors)) }}
+{{ $totalPubs := 0 }}{{ range $cluster.sub_clusters }}{{ $totalPubs = add $totalPubs (len .publications) }}{{ end }}
+
+<section id="{{ $cid }}" class="cluster-section" style="background-color: {{ $color }};">
+  <div class="cluster-header">
+    <h2 class="cluster-title">
+      <span class="cluster-number">{{ (int $cluster.number) }}</span>
+      {{ $cluster.name }}
+    </h2>
+    <span class="cluster-stats">{{ len $cluster.sub_clusters }} sub-clusters &middot; {{ $totalPubs }} references</span>
+  </div>
+
+  {{ if $cluster.description }}
+  <p class="cluster-description">{{ $cluster.description }}</p>
+  {{ end }}
+
+  {{ if gt (len $cluster.sub_clusters) 0 }}
+  <ul class="nav nav-tabs cluster-tabs" id="tabs-{{ $cid }}" role="tablist">
+    {{ range $si, $sc := $cluster.sub_clusters }}
+    {{ $scid := printf "c%d-sc%d" (int $cluster.number) $si }}
+    <li class="nav-item">
+      <a class="nav-link{{ if eq $si 0 }} active{{ end }}" id="{{ $scid }}-tab"
+         data-toggle="tab" href="#{{ $scid }}" role="tab"
+         aria-controls="{{ $scid }}" aria-selected="{{ if eq $si 0 }}true{{ else }}false{{ end }}">
+        <span class="tab-label">{{ $sc.name }}</span>
+      </a>
+    </li>
+    {{ end }}
+  </ul>
+
+  <div class="tab-content cluster-tab-content" id="content-{{ $cid }}">
+    {{ range $si, $sc := $cluster.sub_clusters }}
+    {{ $scid := printf "c%d-sc%d" (int $cluster.number) $si }}
+    <div class="tab-pane fade{{ if eq $si 0 }} show active{{ end }}" id="{{ $scid }}"
+         role="tabpanel" aria-labelledby="{{ $scid }}-tab">
+
+      <h3 class="sc-heading">{{ $sc.name }}</h3>
+
+      {{ if $sc.description }}
+      <p class="sc-description">{{ $sc.description }}</p>
+      {{ end }}
+
+      {{ if $sc.publications }}
+      <ul class="publication-list">
+        {{ range $sc.publications }}
+        <li class="publication-item">
+          {{ $ref := .apa }}
+          {{ $ref = replaceRE `\s*https?://(?:dx\.)?doi\.org/\S+` "" $ref }}
+          {{ $ref = replaceRE `\s+$` "" $ref }}
+          {{ $ref = replaceRE `<script[^>]*>.*?</script>` "" $ref }}
+          {{ $ref = replaceRE `<iframe[^>]*>.*?</iframe>` "" $ref }}
+          {{ $ref = replaceRE `(https?://\S+)` `<a href="$1" target="_blank" rel="noopener">$1</a>` $ref }}
+          {{ $ref | safeHTML }}
+          {{ if .doi }}
+            {{ $doiURL := printf "https://doi.org/%s" .doi }}
+            <a href="{{ $doiURL }}" target="_blank" rel="noopener">{{ $doiURL }}</a>
+          {{ end }}
+        </li>
+        {{ end }}
+      </ul>
+      {{ else }}
+      <p class="text-muted"><em>No publications listed for this sub-cluster yet.</em></p>
+      {{ end }}
+
+    </div>
+    {{ end }}
+  </div>
+  {{ end }}
+</section>

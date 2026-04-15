@@ -40,6 +40,9 @@ on:
         required: false
         type: boolean
         default: false
+
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: "true"
 jobs:
   process-data:
     name: Process Data

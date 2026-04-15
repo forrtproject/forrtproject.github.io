@@ -4,6 +4,7 @@
 {{ $dictionary := dict
     "english" (dict
         "list_of_terms" "List of terms"
+        "filter_terms" "Filter terms..."
         "definition" "Definition"
         "alt_definition" "Alternative definition"
         "related_term" "Related term"
@@ -18,6 +19,7 @@
     )
     "german" (dict
         "list_of_terms" "Liste der Begriffe"
+        "filter_terms" "Begriffe filtern..."
         "definition" "Definition"
         "alt_definition" "Alternative Definition"
         "related_term" "Verwandter Begriff"
@@ -32,6 +34,7 @@
     )
     "arabic" (dict
         "list_of_terms" "قائمة المصطلحات"
+        "filter_terms" "تصفية المصطلحات..."
         "definition" "تعريف"
         "alt_definition" "تعريف بديل"
         "related_term" "مصطلح ذو صلة"
@@ -46,6 +49,7 @@
     )
     "turkish" (dict
         "list_of_terms" "Terimler listesi"
+        "filter_terms" "Terimleri filtrele..."
         "definition" "Tanım"
         "alt_definition" "Alternatif tanım"
         "related_term" "İlgili terim"
@@ -117,6 +121,18 @@
         }
       }
     });
+
+    const searchInput = document.getElementById('glossary-search');
+    if (searchInput) {
+      searchInput.addEventListener('input', function() {
+        const query = this.value.toLowerCase();
+        document.querySelectorAll('#TableOfContents .nav-item').forEach(function(item) {
+          const link = item.querySelector('.nav-link');
+          const text = link ? link.textContent.toLowerCase() : '';
+          item.style.display = text.includes(query) ? '' : 'none';
+        });
+      });
+    }
   });
 </script>
 
@@ -127,6 +143,10 @@
       <ul class="nav toc-top">
         <li><a href="#" id="back_to_top" class="docs-toc-title">{{ index (index $dictionary $lang) "list_of_terms" }}</a></li>
       </ul>
+
+      <input type="text" id="glossary-search" class="form-control form-control-sm mb-2"
+             placeholder="{{ index (index $dictionary $lang) "filter_terms" }}"
+             aria-label="{{ index (index $dictionary $lang) "filter_terms" }}">
 
       <nav id="TableOfContents" class="nav flex-column">
         <ul>

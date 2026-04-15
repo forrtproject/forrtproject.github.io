@@ -94,7 +94,7 @@ Each has suitable context: (e.g., entry-level/undergraduate/postgraduate), total
 1. [The myth of the normality How neurodiversity dismantles the generalisability crisis - Lesson Plan](../neurodiversity-lessonbank/Lesson_Plans/The_myth_of_the_normality_How_neurodiversity_dismantles_the_generalisability_crisis.pdf)
 1. [Neurodiversity Culture and Teaching - text](http://rapidintellect.com/AEQweb/ed-5971.pdf) Lesson Plan Pdf[Neurodiversity Culture and Teaching - Lesson Plan](../neurodiversity-lessonbank/Lesson_Plans/Neuro_para.pdf)
 1. [Avoiding ableist language to diversify OS - text](https://www.liebertpub.com/doi/10.1089/aut.2020.0014)Lesson Plan pdf[Avoiding ableist language to diversify OS](../neurodiversity-lessonbank/Lesson_Plans/Avoiding_ableist%20language_to_diversify_open_scholarship.pdf)
-1. How can Open Scholarship address structural ableism and racism? [Text 1](https://www.apa.org/science/about/psa/2019/02/open-science) [Text 2](https://www.tandfonline.com/doi/abs/10.1080/09638288.2023.2173315?journalCode=idre20) LessonPlan Pdf[How can Open Scholarship address structural ableism and racism?](../neurodiversity-lessonbank/Lesson_Plans/How_can_we_Open%20Scholarship_to_address_the%20structural_ableism_and_racism_in_our_society.pdf)
+1. How can Open Scholarship address structural ableism and racism? [Text 1](https://www.apa.org/science/about/psa/2019/02/open-science) [Text 2](https://doi.org/10.1080/09638288.2023.2173315) LessonPlan Pdf[How can Open Scholarship address structural ableism and racism?](../neurodiversity-lessonbank/Lesson_Plans/How_can_we_Open%20Scholarship_to_address_the%20structural_ableism_and_racism_in_our_society.pdf)
 
 ---
 

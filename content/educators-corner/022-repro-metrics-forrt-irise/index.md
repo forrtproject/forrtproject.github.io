@@ -4,7 +4,7 @@
 title: "Quantifying reproducibility: Lessons from an iRISE-FORRT collaborative project"
 subtitle: "The iRISE (improving Reproducibility In SciencE) consortium conducted a scoping review to identify reproducibility metrics. FORRT joined the effort. This piece summarises the lessons learned from this collaborative project."
 summary: "The iRISE (improving Reproducibility In SciencE) consortium conducted a scoping review to identify reproducibility metrics. FORRT joined the effort. This piece summarises the lessons learned from this collaborative project."
-authors: ['Rachel Heyard (rachel.heyard@uzh.ch).']
+authors: ['Rachel Heyard']
 tags: []
 categories: []
 date: 2025-07-16T15:30:39-03:00

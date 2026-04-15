@@ -105,7 +105,7 @@ To further facilitate the creation, the updating, improvement, and maintenance o
 * [Replicability syllabus](https://osf.io/staze/)
 * [Fall 2018 Replicability syllabus](https://osf.io/yj36v/)
 * [Course Syllabi for Open and Reproducible Methods by Simine Vazire (Winter 2015)](https://osf.io/rah35/)
-* [Course on Open Science and Research Data Management (Slides/Recordings by Elli Papadopoulou)](https://www.openaire.eu/item/chist-era-course-on-open-science-and-research-data-management)
+* [Course on Open Science and Research Data Management (Slides/Recordings by Elli Papadopoulou)](https://www.openaire.eu/component/zoo/item/chist-era-course-on-open-science-and-research-data-management)
 * [Rigorous & Reproducible Research Practices](https://osf.io/8bxau/)
 * [Open and reproducible science](https://osf.io/swcv2/)
 * [Social Sciences Research Methods Centre Replication Workshop](https://osf.io/t2q78/)

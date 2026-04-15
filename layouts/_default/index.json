@@ -1,5 +1,6 @@
 {{- $.Scratch.Add "index" slice -}}
 {{- range .Site.RegularPages -}}
-    {{- $.Scratch.Add "index" (dict "title" .Title "subtitle" .Params.subtitle "description" .Params.description "tags" .Params.tags "image" .Params.image "content" .Plain "permalink" .Permalink .Creators ".Params.Creators") -}}
+    {{- $creators := index .Params "Creators" | default (index .Params "creators") -}}
+    {{- $.Scratch.Add "index" (dict "title" .Title "subtitle" .Params.subtitle "description" .Params.description "tags" .Params.tags "image" .Params.image "content" .Plain "permalink" .Permalink "creators" $creators) -}}
 {{- end -}}
 {{- $.Scratch.Get "index" | jsonify -}}

@@ -1,0 +1,50 @@
+# Lychee link checker configuration
+# https://lychee.cli.rs/usage/config/
+#
+# Used by the link-check GitHub Actions workflow.
+# Checks all links (internal + external) in the built HTML files.
+
+# ---------------------
+# Exclusions
+# ---------------------
+# Patterns to exclude from link checking (common false positives)
+exclude = [
+  # Internal links — already verified as local files in the build artifact
+  "forrt\\.org",
+
+  # Placeholder / example domains
+  "example\\.com",
+  "localhost",
+  "127\\.0\\.0\\.1",
+
+  # Social media sites that block automated requests
+  "linkedin\\.com",
+  "twitter\\.com",
+  "x\\.com",
+
+  # Web Archive — often slow or flaky
+  "web\\.archive\\.org",
+
+  # GitHub edit links with templated paths
+  "github\\.com/.*/edit/",
+]
+
+# ---------------------
+# Request settings
+# ---------------------
+# Accept 2xx/3xx and 429 (rate limiting)
+# Note: 403 is NOT accepted — those are separated into a collapsed section
+# by the workflow's post-processing step, since many publishers block bots.
+accept = ["100..=399", "429"]
+
+# Timeout per request in seconds
+timeout = 30
+
+# Maximum number of retries per link
+max_retries = 3
+
+# Maximum concurrent requests
+max_concurrency = 16
+
+# Do not show progress bar (cleaner CI output)
+no_progress = true

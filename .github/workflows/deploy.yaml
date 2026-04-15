@@ -16,6 +16,9 @@ on:
   repository_dispatch:
     types: [data-update]
 
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: "true"
+
 # Note: PR staging deployments are handled by staging-aggregate.yaml
 # This workflow focuses on production deployments
 
@@ -27,7 +30,7 @@ jobs:
       contents: read
       actions: read  # Needed for artifact access
     env:
-      HUGO_VERSION: "0.123.3"
+      HUGO_VERSION: "0.158.0"
       HUGO_EXTENDED: true
     steps:
       # =======================

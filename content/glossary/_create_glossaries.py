@@ -85,6 +85,26 @@ def process_references(references_text, apa_lookup, missing_refs_log=None):
     
     return list(dict.fromkeys(formatted_refs))
 
+def fix_bare_urls_in_parens(text):
+    """Convert bare URLs inside parentheses to markdown links.
+
+    Hugo's auto-linker treats (https://url.com) as a link to https://url.com)
+    — including the closing paren — which generates a broken %29 URL.
+    Wrapping the URL as [url](url) makes Hugo recognise it as a markdown
+    link so the ) is treated as closing punctuation, not part of the URL.
+
+    Skips URLs that are already inside a markdown link ([text](url)).
+    """
+    # Match ( optional-prefix https://url ) but only when ( is NOT preceded by ]
+    # (which would mean it's already the URL part of [text](url))
+    def _replace(m):
+        prefix = m.group(1) or ''
+        url = m.group(2)
+        return f'({prefix}[{url}]({url}))'
+
+    return re.sub(r'(?<!\])\(([^()]*?)(https?://[^\s)]+)\)', _replace, text)
+
+
 def safe_get(row, column, default=""):
     """Safely get a value from a pandas Series row"""
     try:
@@ -171,6 +191,7 @@ for language_code in languages_to_process:
         definition = safe_get(row, f"{language_code}_definition" if language_code == "EN" else f"{language_code}_def")
         if not definition:
             continue
+        definition = fix_bare_urls_in_parens(definition)
 
         entry = {
             "type": "glossary",

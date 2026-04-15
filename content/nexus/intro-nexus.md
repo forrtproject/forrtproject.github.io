@@ -72,6 +72,7 @@ FORRT's e-learning platform (or Nexus) is a hub for community-driven initiatives
 * [Games Portal](/games)
 * [Glossary](/glossary)
 * [Impact of OS on students](/impact)
+* [JUST-OS Chatbot](/just_os_chatbot)
 * [Lesson Plans](/lesson-plans/)
 * [Mapping OS Communities](/mapping_os)
 * [Neurodiversity Team](/neurodiversity)

@@ -35,6 +35,8 @@ subtitle = ""
  css_class = ""
 +++
 
+# From Brazil to the world: How a seemingly 'small' opportunity changed the course of my career
+
 <div style="float: left; margin: 0 1rem 1rem 0; text-align: center;">
   <div style="width: 320px; height: 320px; border-radius: 50%; overflow: hidden;">
     <img
@@ -55,7 +57,6 @@ subtitle = ""
     </a>
   </div>
 </div>
-
 
 Coming from an academic environment that can be highly competitive, it’s hard to even
 imagine what it feels like to be part of a culture rooted in collaboration — but FORRT has

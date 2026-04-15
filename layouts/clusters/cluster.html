@@ -1,0 +1,84 @@
+{{/*
+  Per-cluster URLs (/clusters/cluster-N/) — SEO rationale
+
+  Each cluster is a first-class page with its own canonical URL, crawlable HTML, and
+  front-matter–driven <title>, meta description, and Open Graph/Twitter fields. That gives
+  search engines one clear, indexable document per topic (the cluster and its sub-clusters)
+  instead of relying on hash fragments or a single long hub page for all eleven.
+
+  Structured data (JSON-LD via cluster_seo_jsonld) can describe the page and taxonomy entity
+  in context, improving machine-readable signals for that URL.
+
+  The hub (/clusters/) remains the overview and entry point; these pages are satellites in a
+  classic topic-cluster model—internal links between hub and subpages distribute relevance
+  and help users and crawlers discover each cluster explicitly.
+
+  Shareable links resolve to stable URLs with focused headings, which supports accurate
+  snippets, social previews, and external citations to the right slice of the taxonomy.
+*/}}
+{{ define "main" }}
+{{ $n := int .Params.cluster_number }}
+{{ $data := site.Data.clusters_v4 }}
+{{ $cluster := false }}
+{{ if $data }}
+  {{ range $data.clusters }}
+    {{ if eq (int .number) $n }}{{ $cluster = . }}{{ end }}
+  {{ end }}
+{{ end }}
+
+{{ if not $cluster }}
+  <div class="universal-wrapper pt-3 pb-3">
+    <div class="container">
+      <p class="alert alert-warning">Cluster data not found. <a href="{{ "/clusters/" | relURL }}">Back to all clusters</a>.</p>
+    </div>
+  </div>
+{{ else }}
+  {{ partial "clusters/cluster_seo_jsonld.html" (dict "page" . "cluster" $cluster) }}
+
+  {{/* Breadcrumb header — narrow width like main page title */}}
+  <div class="universal-wrapper pt-3 pb-2">
+    <div class="container">
+      <div class="article-container pt-3">
+        {{ $heading := .Params.heading_title | default .Title }}
+        <nav aria-label="breadcrumb" class="clusters-heading-row__crumbs mb-1">
+          <a href="{{ "/clusters/" | relURL }}" class="clusters-heading-row__parent">FORRT Clusters</a>
+          <span class="clusters-heading-row__sep" aria-hidden="true">/</span>
+          <h1 class="clusters-heading-row__title clusters-site-heading" itemprop="headline">{{ $heading }}</h1>
+        </nav>
+      </div>
+    </div>
+  </div>
+
+  {{ $palette := partial "clusters/colors.html" }}
+  {{ $colors := $palette.colors }}
+  {{ $arrowColors := $palette.arrowColors }}
+  {{ $ci := sub $n 1 }}
+
+  {{/* Main content section — same structure as hub page */}}
+  <section class="cluster-full-width clusters-display-section">
+    <div class="container">
+      <div class="clusters-layout">
+
+        {{ partial "clusters/clusters_controls.html" . }}
+
+        <div class="row">
+          {{ partial "clusters/sidebar_nav.html" (dict "data" $data "arrowColors" $arrowColors "link_mode" "subpath" "active_cluster_number" $n) }}
+
+          <main class="col-12 col-lg-8 col-xl-9 clusters-content">
+            {{ with .Content }}
+            <div class="article-container pt-2 pb-2">
+              <div class="article-style clusters-cluster-lead">{{ . }}</div>
+            </div>
+            {{ end }}
+            {{ partial "clusters/cluster_section.html" (dict "cluster" $cluster "ci" $ci "colors" $colors) }}
+          </main>
+        </div>
+      </div>
+
+      <button type="button" class="clusters-back-to-top" id="clusters-back-to-top" aria-label="Back to top">
+        <i class="fas fa-arrow-up" aria-hidden="true"></i>
+      </button>
+    </div>
+  </section>
+{{ end }}
+{{ end }}

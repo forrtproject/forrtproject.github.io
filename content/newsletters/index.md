@@ -1,14 +1,14 @@
 ---
 title: Newsletter Archives
 ---
-_______________________________________________
-### Stay updated by subscribing to the FORRT Newsletter 
+Stay updated by subscribing to the FORRT Newsletter 
 {{< subscribe >}}
-_______________________________________________
 
 **:calendar: 2026**
 
-[**🆕 | February  🆕**](https://eocampaign1.com/web-version?p=e0c335de-11b6-11f1-a1c2-6ba123ee4ad5&pt=campaign&t=1772047352&s=dec61220bf547f2a4345d54a8819f206f19df3923ec3234ae2e98517cbe4d9a7)
+[**🆕 | March  🆕**](https://eocampaign1.com/web-version?p=37587f24-13bc-11f1-a58e-016a4c8ed9d0&pt=campaign&t=1774939747&s=0364890f4fe6275bb6fcf840a4994b12cab30ff7fa9428df282730367dd893bb)
+
+[| February ](https://eocampaign1.com/web-version?p=e0c335de-11b6-11f1-a1c2-6ba123ee4ad5&pt=campaign&t=1772047352&s=dec61220bf547f2a4345d54a8819f206f19df3923ec3234ae2e98517cbe4d9a7)
 
 [| January ](https://eocampaign1.com/web-version?p=fe198ab4-f705-11f0-b264-b3838bc6094d&pt=campaign&t=1769634321&s=8d9de871b0b694f3fb7ea79f9d5365fb858c018631402d1f306912c583e846e0)
 
@@ -68,4 +68,4 @@ _______________________________________________
 
 [| April 20th 2022](https://eepurl.com/hZ06Bb)
 
-_______________________________________________
+---

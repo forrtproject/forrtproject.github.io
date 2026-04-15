@@ -56,7 +56,7 @@ This team is responsible for discussing how open scholarship can be used to supp
 
 Although originally written about autistic people, we believe that this quote summarizes our approach to all forms of neurodiversity:
 
-> ‘Their strengths and deficits do not deny them humanity but, rather, shape their humanity’ ([Grinker, 2010, p.173](https://anthrosource.onlinelibrary.wiley.com/doi/full/10.1111/j.1548-1352.2010.01087.x)).
+> ‘Their strengths and deficits do not deny them humanity but, rather, shape their humanity’ ([Grinker, 2010, p.173](https://doi.org/10.1111/j.1548-1352.2010.01087.x)).
 
 <br />
 

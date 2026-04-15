@@ -1,4 +1,4 @@
-{{ $summaries := getJSON "data/summaries.json" }}
+{{ $summaries := site.Data.summaries }}
 {{ range $summaries }}
 
 <h2 id="{{.Id}}">{{ .Title | markdownify }}</h2>

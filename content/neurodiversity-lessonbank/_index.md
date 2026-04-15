@@ -54,7 +54,7 @@ Lesson 9: <a href="https://www.liebertpub.com/doi/10.1089/aut.2020.0014" target=
 
 Lesson 10: How can Open Scholarship address structural ableism and racism?  
    <a href="https://www.apa.org/science/about/psa/2019/02/open-science" target="_blank"><u>Text 1</u></a>  
-   <a href="https://www.tandfonline.com/doi/abs/10.1080/09638288.2023.2173315?journalCode=idre20" target="_blank"><u>Text 2</u></a>  
+   <a href="https://doi.org/10.1080/09638288.2023.2173315" target="_blank"><u>Text 2</u></a>  
    <a href="./Lesson_Plans/How_can_we_Open%20Scholarship_to_address_the%20structural_ableism_and_racism_in_our_society.pdf" target="_blank"><u>Lesson Plan</u></a>
 
 {{< youtube oMkF8DiAolQ >}}

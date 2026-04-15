@@ -1,0 +1,4 @@
+{{/* Site override: extra head tags (see theme academic site_head.html) */}}
+{{ with .Params.keywords }}
+  <meta name="keywords" content="{{ delimit . ", " }}">
+{{ end }}
