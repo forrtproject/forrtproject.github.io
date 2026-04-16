@@ -32,6 +32,9 @@ on:
         type: boolean
         default: false
 
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: "true"
+
 # Workflow-level concurrency to queue staging builds (wait instead of cancel)
 concurrency:
   group: staging-aggregate
