@@ -40,6 +40,9 @@ on:
         required: false
         type: boolean
         default: false
+
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: "true"
 jobs:
   process-data:
     name: Process Data
@@ -452,6 +455,8 @@ jobs:
             content/curated_resources/
             content/glossary/
             data/
+            !data/partners.json
+            !data/publications.yaml
             static/data/
             static/partials/
             content/contributor-analysis/
