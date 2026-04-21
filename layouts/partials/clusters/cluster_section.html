@@ -6,6 +6,19 @@
 {{ $color := index $colors (mod $ci (len $colors)) }}
 {{ $totalPubs := 0 }}{{ range $cluster.sub_clusters }}{{ $totalPubs = add $totalPubs (len .publications) }}{{ end }}
 
+{{/* Featured resources: check if this cluster has any */}}
+{{ $featuredEnabled := site.Params.enable_featured_resources }}
+{{ $featuredData := false }}
+{{ if $featuredEnabled }}
+  {{ with site.Data.featured_resources }}
+    {{ $key := printf "%d" (int $cluster.number) }}
+    {{ with index .clusters $key }}
+      {{ $featuredData = . }}
+    {{ end }}
+  {{ end }}
+{{ end }}
+{{ $hasFeatured := and $featuredEnabled $featuredData }}
+
 <section id="{{ $cid }}" class="cluster-section" style="background-color: {{ $color }};">
   <div class="cluster-header">
     <h2 class="cluster-title">
@@ -13,6 +26,7 @@
       {{ $cluster.name }}
     </h2>
     <span class="cluster-stats">{{ len $cluster.sub_clusters }} sub-clusters &middot; {{ $totalPubs }} references</span>
+    <button class="acc-toggle-all" data-cluster="{{ $cid }}">Expand all</button>
   </div>
 
   {{ if $cluster.description }}
@@ -20,53 +34,169 @@
   {{ end }}
 
   {{ if gt (len $cluster.sub_clusters) 0 }}
-  <ul class="nav nav-tabs cluster-tabs" id="tabs-{{ $cid }}" role="tablist">
-    {{ range $si, $sc := $cluster.sub_clusters }}
-    {{ $scid := printf "c%d-sc%d" (int $cluster.number) $si }}
-    <li class="nav-item">
-      <a class="nav-link{{ if eq $si 0 }} active{{ end }}" id="{{ $scid }}-tab"
-         data-toggle="tab" href="#{{ $scid }}" role="tab"
-         aria-controls="{{ $scid }}" aria-selected="{{ if eq $si 0 }}true{{ else }}false{{ end }}">
-        <span class="tab-label">{{ $sc.name }}</span>
-      </a>
-    </li>
+  <div class="acc-list" id="content-{{ $cid }}">
+
+    {{/* Featured / Recommended accordion section */}}
+    {{ if $hasFeatured }}
+    {{ $fid := printf "c%d-featured" (int $cluster.number) }}
+    <div class="acc-section" id="{{ $fid }}">
+      <div class="acc-header acc-header--rec" role="button" tabindex="0">
+        <span class="acc-chevron acc-open">&#9656;</span>
+        <span class="acc-label">Recommended</span>
+        <span class="acc-count"><span class="acc-count-match">{{ len $featuredData }}</span> / {{ len $featuredData }}</span>
+      </div>
+      <div class="acc-body">
+        {{ partial "clusters/featured_cards.html" (dict "resources" $featuredData "cluster_number" (int $cluster.number)) }}
+      </div>
+    </div>
     {{ end }}
-  </ul>
 
-  <div class="tab-content cluster-tab-content" id="content-{{ $cid }}">
     {{ range $si, $sc := $cluster.sub_clusters }}
     {{ $scid := printf "c%d-sc%d" (int $cluster.number) $si }}
-    <div class="tab-pane fade{{ if eq $si 0 }} show active{{ end }}" id="{{ $scid }}"
-         role="tabpanel" aria-labelledby="{{ $scid }}-tab">
+    <div class="acc-section" id="{{ $scid }}">
+      <div class="acc-header" role="button" tabindex="0">
+        <span class="acc-chevron">&#9656;</span>
+        <span class="acc-label">{{ $sc.name }}</span>
+        <span class="acc-count"><span class="acc-count-match">{{ len $sc.publications }}</span> / {{ len $sc.publications }}</span>
+      </div>
+      <div class="acc-body acc-collapsed">
 
-      <h3 class="sc-heading">{{ $sc.name }}</h3>
-
-      {{ if $sc.description }}
-      <p class="sc-description">{{ $sc.description }}</p>
-      {{ end }}
-
-      {{ if $sc.publications }}
-      <ul class="publication-list">
-        {{ range $sc.publications }}
-        <li class="publication-item">
-          {{ $ref := .apa }}
-          {{ $ref = replaceRE `\s*https?://(?:dx\.)?doi\.org/\S+` "" $ref }}
-          {{ $ref = replaceRE `\s+$` "" $ref }}
-          {{ $ref = replaceRE `<script[^>]*>.*?</script>` "" $ref }}
-          {{ $ref = replaceRE `<iframe[^>]*>.*?</iframe>` "" $ref }}
-          {{ $ref = replaceRE `(https?://\S+)` `<a href="$1" target="_blank" rel="noopener">$1</a>` $ref }}
-          {{ $ref | safeHTML }}
-          {{ if .doi }}
-            {{ $doiURL := printf "https://doi.org/%s" .doi }}
-            <a href="{{ $doiURL }}" target="_blank" rel="noopener">{{ $doiURL }}</a>
-          {{ end }}
-        </li>
+        {{ if $sc.description }}
+        <p class="sc-description">{{ $sc.description }}</p>
         {{ end }}
-      </ul>
-      {{ else }}
-      <p class="text-muted"><em>No publications listed for this sub-cluster yet.</em></p>
-      {{ end }}
 
+        {{ if $sc.publications }}
+        {{ $pubCards := site.Data.pub_cards }}
+        <div class="fr-cards-list">
+          {{ range $pi, $pub := $sc.publications }}
+          {{ $card := false }}
+          {{ if and .doi $pubCards }}{{ $card = index $pubCards .doi }}{{ end }}
+          {{ if $card }}
+          {{ $recs := $card.recommendations }}
+          {{ $hasRecs := and $featuredEnabled $recs (gt (len $recs) 0) }}
+
+          {{ if $hasRecs }}
+          {{/* Recommended: side-by-side card with testimonial */}}
+          <div class="fr-card"
+               data-doi="{{ .doi }}"
+               data-focus="{{ $card.focus }}" data-type="{{ $card.resource_type }}"
+               data-specificity="{{ cond (eq $card.specificity "Narrow") "narrow" "broad" }}">
+            <div class="fr-resource">
+              <div class="fr-tags">
+                {{ with $card.focus }}<span class="tag tag-focus">{{ . }}</span>{{ end }}
+                {{ with $card.resource_type }}<span class="tag tag-type">{{ . }}</span>{{ end }}
+              </div>
+              <div class="fr-title">{{ $card.title }}</div>
+              {{ with $card.summary }}<div class="fr-summary">{{ . }}</div>{{ end }}
+              <div class="fr-actions">
+                <button class="fr-ref-trigger" data-doi="{{ .doi }}">
+                  <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="12" height="12" rx="2"/><path d="M5 5h6M5 8h6M5 11h3"/></svg>
+                  {{ $card.short_ref }}
+                </button>
+                <button class="fr-bookmark-btn" data-doi="{{ .doi }}">
+                  <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 2h10v13l-5-3.5L3 15V2z"/></svg>
+                  <span>Save</span>
+                </button>
+              </div>
+            </div>
+            <div class="fr-testimonial">
+              <div class="fr-rec-label">Recommended by</div>
+              {{ $carouselId := printf "%s-p%d" $scid $pi }}
+              <div class="fr-carousel" data-carousel="{{ $carouselId }}">
+                <div class="fr-carousel-track">
+                  {{ range $recs }}
+                  <div class="fr-carousel-slide">
+                    <div class="fr-rec-header">
+                      {{ if .photo }}
+                      <img class="avatar-photo" src="{{ .photo }}" alt="{{ .name }}">
+                      {{ else }}
+                      <span class="avatar avatar-sm avatar-1">{{ substr .name 0 1 }}</span>
+                      {{ end }}
+                      <div>
+                        <div class="fr-rec-name">{{ .name }}</div>
+                        {{ with .title }}<div class="fr-rec-bio">{{ . }}</div>{{ end }}
+                      </div>
+                    </div>
+                    {{ with .text }}<div class="fr-rec-text">"{{ . }}"</div>{{ end }}
+                  </div>
+                  {{ end }}
+                </div>
+              </div>
+              <div class="fr-carousel-nav{{ if eq (len $recs) 1 }} single{{ end }}" data-nav="{{ $carouselId }}">
+                {{ range $di, $_ := $recs }}
+                <button class="fr-carousel-dot{{ if eq $di 0 }} active{{ end }}" data-idx="{{ $di }}"></button>
+                {{ end }}
+                {{ if gt (len $recs) 1 }}
+                <div class="fr-carousel-arrows">
+                  <button class="fr-carousel-arrow" data-dir="-1">&larr;</button>
+                  <button class="fr-carousel-arrow" data-dir="1">&rarr;</button>
+                </div>
+                {{ end }}
+              </div>
+            </div>
+          </div>
+
+          {{ else }}
+          {{/* Regular compact card */}}
+          <div class="fc-card" data-doi="{{ .doi }}"
+               data-focus="{{ $card.focus }}" data-type="{{ $card.resource_type }}"
+               data-specificity="{{ cond (eq $card.specificity "Narrow") "narrow" "broad" }}">
+            <div class="fc-body">
+              <div class="fc-top-row">
+                <div class="fc-tags">
+                  {{ with $card.focus }}<span class="tag tag-focus">{{ . }}</span>{{ end }}
+                  {{ with $card.resource_type }}<span class="tag tag-type">{{ . }}</span>{{ end }}
+                </div>
+                <div class="fc-title">{{ $card.title }}</div>
+              </div>
+              {{ with $card.summary }}
+              <div class="fc-summary">{{ . }}</div>
+              {{ end }}
+              <div class="fc-actions">
+                <button class="fr-ref-trigger" data-doi="{{ .doi }}">
+                  <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="12" height="12" rx="2"/><path d="M5 5h6M5 8h6M5 11h3"/></svg>
+                  {{ $card.short_ref }}
+                </button>
+                <button class="fr-bookmark-btn" data-doi="{{ .doi }}">
+                  <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 2h10v13l-5-3.5L3 15V2z"/></svg>
+                  <span>Save</span>
+                </button>
+                <button class="fc-vote-btn" data-doi="{{ .doi }}">
+                  <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 14H3a1 1 0 01-1-1V8a1 1 0 011-1h2m0 7V7m0 7h6.28a2 2 0 001.94-1.52l1.07-4.28A1 1 0 0014.32 7H10.5l.64-3.18a1.26 1.26 0 00-1.22-1.52h-.17a1 1 0 00-.85.47L5 7"/></svg>
+                  <span class="fc-vote-count">{{ with $card.vote_base }}{{ . }}{{ else }}0{{ end }}</span>
+                </button>
+              </div>
+            </div>
+          </div>
+          {{ end }}
+
+          {{ else }}
+          {{/* Fallback: plain reference for publications without enriched data */}}
+          <div class="fc-card publication-item" {{ if .doi }}data-doi="{{ .doi }}"{{ end }}>
+            <div class="fc-body">
+              <div class="fc-summary" style="-webkit-line-clamp:unset;">
+                {{ $ref := .apa }}
+                {{ $ref = replaceRE `\s*https?://(?:dx\.)?doi\.org/\S+` "" $ref }}
+                {{ $ref = replaceRE `\s+$` "" $ref }}
+                {{ $ref = replaceRE `<script[^>]*>.*?</script>` "" $ref }}
+                {{ $ref = replaceRE `<iframe[^>]*>.*?</iframe>` "" $ref }}
+                {{ $ref = replaceRE `(https?://\S+)` `<a href="$1" target="_blank" rel="noopener">$1</a>` $ref }}
+                {{ $ref | safeHTML }}
+                {{ if .doi }}
+                  {{ $doiURL := printf "https://doi.org/%s" .doi }}
+                  <a href="{{ $doiURL }}" target="_blank" rel="noopener">{{ $doiURL }}</a>
+                {{ end }}
+              </div>
+            </div>
+          </div>
+          {{ end }}
+          {{ end }}
+        </div>
+        {{ else }}
+        <p class="text-muted"><em>No publications listed for this sub-cluster yet.</em></p>
+        {{ end }}
+
+      </div>
     </div>
     {{ end }}
   </div>

@@ -23,6 +23,35 @@
     z-index: 2;
   }
 
+  #just-os-dismiss {
+    position: absolute;
+    top: -6px;
+    right: -6px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 1px solid #ccc;
+    background: white;
+    color: #999;
+    font-size: 14px;
+    line-height: 18px;
+    text-align: center;
+    cursor: pointer;
+    z-index: 3;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+    padding: 0;
+  }
+
+  #just-os-widget:hover #just-os-dismiss {
+    opacity: 1;
+  }
+
+  #just-os-dismiss:hover {
+    background: #eee;
+    color: #333;
+  }
+
   #just-os-btn:hover {
     transform: scale(1.05);
   }
@@ -387,6 +416,9 @@
 
 {{ if ne .RelPermalink "/just_os_chatbot/" }}
 <div id="just-os-widget">
+
+  <!-- Dismiss Button -->
+  <button id="just-os-dismiss" onclick="dismissJustOS()" aria-label="Dismiss chatbot" title="Dismiss">&times;</button>
 
   <!-- Toggle Button -->
   <button id="just-os-btn" onclick="toggleJustOS()" aria-label="Open Chatbot">

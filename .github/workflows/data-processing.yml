@@ -208,6 +208,14 @@ jobs:
           GSHEET_CREDENTIALS: ${{ secrets.GSHEET_CREDENTIALS }}
 
       #========================================
+      # Build featured resources data from recommendations + publications
+      #========================================
+      - name: Build Featured Resources data
+        id: featured-resources
+        continue-on-error: true  # Continue even if this step fails
+        run: python3 scripts/build_featured_data.py
+
+      #========================================
       # Process and organize curated resources data
       #========================================
       - name: Run Curated Resources script
@@ -447,6 +455,8 @@ jobs:
             content/curated_resources/
             content/glossary/
             data/
+            !data/partners.json
+            !data/publications.yaml
             static/data/
             static/partials/
             content/contributor-analysis/
@@ -471,7 +481,9 @@ jobs:
           cp content/contributors/tenzing.md /tmp/generated-resources/ || true
           cp scripts/forrt_contribs/contributors_cache.csv /tmp/generated-resources/ || true
           cp data/ga_data.json /tmp/generated-resources/ga_data.json || true
-          
+          cp data/featured_resources.json /tmp/generated-resources/featured_resources.json || true
+          cp data/pub_cards.json /tmp/generated-resources/pub_cards.json || true
+
           # Copy FReD citation if it exists
           if [ -f static/data/fred_citation.txt ]; then
             mkdir -p /tmp/generated-resources/static/data
@@ -540,6 +552,12 @@ jobs:
           if [ -f /tmp/generated-resources/summaries.json ]; then
             cp /tmp/generated-resources/summaries.json data/summaries.json
           fi
+          if [ -f /tmp/generated-resources/featured_resources.json ]; then
+            cp /tmp/generated-resources/featured_resources.json data/featured_resources.json
+          fi
+          if [ -f /tmp/generated-resources/pub_cards.json ]; then
+            cp /tmp/generated-resources/pub_cards.json data/pub_cards.json
+          fi
           if [ -f /tmp/generated-resources/contributors_cache.csv ]; then
             mkdir -p scripts/forrt_contribs
             cp /tmp/generated-resources/contributors_cache.csv scripts/forrt_contribs/
@@ -570,6 +588,8 @@ jobs:
             git add content/contributors/tenzing.md 2>/dev/null || true
             git add scripts/forrt_contribs/contributors_cache.csv 2>/dev/null || true
             git add data/ga_data.json 2>/dev/null || true
+            git add data/featured_resources.json 2>/dev/null || true
+            git add data/pub_cards.json 2>/dev/null || true
             git add static/data/fred_citation.txt 2>/dev/null || true
             git add content/replication-hub/flora/_index.md 2>/dev/null || true
             git add data/summaries.json 2>/dev/null || true
