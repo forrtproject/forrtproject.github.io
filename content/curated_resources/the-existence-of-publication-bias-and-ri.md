@@ -35,5 +35,9 @@
         "Open Science"
     ],
     "forrt_clusters_new": "Replication and meta-research",
-    "forrt_sub_clusters": "Meta-research"
+    "forrt_sub_clusters": "Meta-research",
+    "doi": "10.1001/jama.1990.03440100097014",
+    "in-clusters": false,
+    "pdf name": "",
+    "apa reference": ""
 }

@@ -32,5 +32,9 @@
         "Science Communicators"
     ],
     "forrt_clusters_new": "Ways of Working",
-    "forrt_sub_clusters": "Science communication and public outreach"
+    "forrt_sub_clusters": "Science communication and public outreach",
+    "doi": "10.1177/10755470241239947",
+    "in-clusters": true,
+    "pdf name": "",
+    "apa reference": ""
 }

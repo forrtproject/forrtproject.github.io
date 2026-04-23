@@ -33,5 +33,9 @@
         "Reproducibility Knowledge"
     ],
     "forrt_clusters_new": "Conceptual and Statistical Knowledge",
-    "forrt_sub_clusters": "Questionable measurement practices (QMPs), validity & reliability issues."
+    "forrt_sub_clusters": "Questionable measurement practices (QMPs), validity & reliability issues.",
+    "doi": "",
+    "in-clusters": false,
+    "pdf name": "",
+    "apa reference": ""
 }

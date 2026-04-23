@@ -35,5 +35,9 @@
         "Open science"
     ],
     "forrt_clusters_new": "FAIR data and materials",
-    "forrt_sub_clusters": "Reasons to share data and materials"
+    "forrt_sub_clusters": "Reasons to share data and materials",
+    "doi": "",
+    "in-clusters": false,
+    "pdf name": "",
+    "apa reference": ""
 }

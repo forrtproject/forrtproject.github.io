@@ -34,5 +34,9 @@
         "Quantitative Methods"
     ],
     "forrt_clusters_new": "Ways of Working",
-    "forrt_sub_clusters": "Research with students (under- and graduate)"
+    "forrt_sub_clusters": "Research with students (under- and graduate)",
+    "doi": "10.1038/s44159-024-00288-y",
+    "in-clusters": true,
+    "pdf name": "",
+    "apa reference": ""
 }

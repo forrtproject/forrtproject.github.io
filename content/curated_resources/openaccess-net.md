@@ -43,5 +43,9 @@
         "Researchers"
     ],
     "forrt_clusters_new": "Publication Sharing",
-    "forrt_sub_clusters": "Why open access?, Different shades of open access"
+    "forrt_sub_clusters": "Why open access?, Different shades of open access",
+    "doi": "",
+    "in-clusters": false,
+    "pdf name": "",
+    "apa reference": ""
 }

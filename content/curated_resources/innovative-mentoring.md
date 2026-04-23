@@ -33,5 +33,9 @@
         "and Inclusion (EDI); Professional Development"
     ],
     "forrt_clusters_new": "Academic Structures and Institutions",
-    "forrt_sub_clusters": "Equity, Inclusion"
+    "forrt_sub_clusters": "Equity, Inclusion",
+    "doi": "",
+    "in-clusters": false,
+    "pdf name": "",
+    "apa reference": ""
 }

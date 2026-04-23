@@ -49,5 +49,9 @@
         "Publication Bias"
     ],
     "forrt_clusters_new": "Transparency and reproducibility in computation and analysis",
-    "forrt_sub_clusters": "Tools to check yourself and others"
+    "forrt_sub_clusters": "Tools to check yourself and others",
+    "doi": "10.3389/fpsyg.2015.01549",
+    "in-clusters": true,
+    "pdf name": "",
+    "apa reference": ""
 }

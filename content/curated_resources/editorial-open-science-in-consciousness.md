@@ -35,5 +35,9 @@
         "Publishing"
     ],
     "forrt_clusters_new": "Pre-analysis Planning",
-    "forrt_sub_clusters": "Registered reports"
+    "forrt_sub_clusters": "Registered reports",
+    "doi": "10.1093/nc/niz018",
+    "in-clusters": true,
+    "pdf name": "",
+    "apa reference": ""
 }

@@ -33,5 +33,9 @@
         "Open Science"
     ],
     "forrt_clusters_new": "Replication and meta-research, Replication Crisis and Credibility Revolution",
-    "forrt_sub_clusters": "Collection of large scale replications, Meta-analyses"
+    "forrt_sub_clusters": "Collection of large scale replications, Meta-analyses",
+    "doi": "10.1371/journal.pone.0149794",
+    "in-clusters": true,
+    "pdf name": "",
+    "apa reference": ""
 }

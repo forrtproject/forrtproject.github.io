@@ -46,5 +46,9 @@
         "Proposal"
     ],
     "forrt_clusters_new": "Academic Structures and Institutions",
-    "forrt_sub_clusters": "Research assessment, proposals, and reforms"
+    "forrt_sub_clusters": "Research assessment, proposals, and reforms",
+    "doi": "10.1007/s11192-024-04968-7",
+    "in-clusters": false,
+    "pdf name": "",
+    "apa reference": ""
 }

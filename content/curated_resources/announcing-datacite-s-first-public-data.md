@@ -41,5 +41,9 @@
         "Product"
     ],
     "forrt_clusters_new": "FAIR data and materials",
-    "forrt_sub_clusters": "Metadata standards, Repositories"
+    "forrt_sub_clusters": "Metadata standards, Repositories",
+    "doi": "10.5438/xcnb-0j33",
+    "in-clusters": true,
+    "pdf name": "",
+    "apa reference": ""
 }

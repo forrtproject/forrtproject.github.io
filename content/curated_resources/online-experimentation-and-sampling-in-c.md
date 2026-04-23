@@ -38,5 +38,9 @@
         "Cognitive Aging"
     ],
     "forrt_clusters_new": "Transparency and reproducibility in computation and analysis",
-    "forrt_sub_clusters": "Analysis and reporting in qualitative research"
+    "forrt_sub_clusters": "Analysis and reporting in qualitative research",
+    "doi": "10.1037/pag0000655",
+    "in-clusters": true,
+    "pdf name": "",
+    "apa reference": ""
 }

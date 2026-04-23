@@ -45,5 +45,9 @@
         "Reproducibility"
     ],
     "forrt_clusters_new": "Replication and meta-research, FAIR data and materials",
-    "forrt_sub_clusters": "Meta-research, Reasons to share data and materials"
+    "forrt_sub_clusters": "Meta-research, Reasons to share data and materials",
+    "doi": "10.1098/rsos.180448",
+    "in-clusters": true,
+    "pdf name": "",
+    "apa reference": ""
 }

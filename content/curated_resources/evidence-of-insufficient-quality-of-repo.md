@@ -36,5 +36,9 @@
         "Reproducibility"
     ],
     "forrt_clusters_new": "Research Integrity, Qualitative Research",
-    "forrt_sub_clusters": "Standards and guidelines for rigorous qualitative research, Research Integrity, Social Responsibility, and Equity"
+    "forrt_sub_clusters": "Standards and guidelines for rigorous qualitative research, Research Integrity, Social Responsibility, and Equity",
+    "doi": "",
+    "in-clusters": false,
+    "pdf name": "",
+    "apa reference": ""
 }

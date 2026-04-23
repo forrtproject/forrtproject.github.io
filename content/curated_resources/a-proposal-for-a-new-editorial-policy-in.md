@@ -32,5 +32,9 @@
         ""
     ],
     "forrt_clusters_new": "Conceptual and Statistical Knowledge",
-    "forrt_sub_clusters": "The logic of null hypothesis testing, p-values, Type I and II errors (and when and why they might happen)., Philosophy of science"
+    "forrt_sub_clusters": "The logic of null hypothesis testing, p-values, Type I and II errors (and when and why they might happen)., Philosophy of science",
+    "doi": "10.1080/00031305.1970.10478884",
+    "in-clusters": true,
+    "pdf name": "",
+    "apa reference": ""
 }

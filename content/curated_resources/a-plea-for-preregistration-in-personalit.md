@@ -39,5 +39,9 @@
         "Psychopathology"
     ],
     "forrt_clusters_new": "Pre-analysis Planning",
-    "forrt_sub_clusters": "Preregistration, Understanding the types of preregistration and writing one."
+    "forrt_sub_clusters": "Preregistration, Understanding the types of preregistration and writing one.",
+    "doi": "10.1521/pedi_2019_33_426",
+    "in-clusters": true,
+    "pdf name": "",
+    "apa reference": ""
 }

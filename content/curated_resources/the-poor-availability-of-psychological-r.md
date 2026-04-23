@@ -41,5 +41,9 @@
         "Open Science"
     ],
     "forrt_clusters_new": "FAIR data and materials",
-    "forrt_sub_clusters": "Licenses and reuse"
+    "forrt_sub_clusters": "Licenses and reuse",
+    "doi": "10.1037/0003-066X.61.7.726",
+    "in-clusters": true,
+    "pdf name": "",
+    "apa reference": ""
 }

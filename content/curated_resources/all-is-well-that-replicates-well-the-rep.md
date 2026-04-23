@@ -37,5 +37,9 @@
         "Replicability"
     ],
     "forrt_clusters_new": "Replication Crisis and Credibility Revolution",
-    "forrt_sub_clusters": "Collection of large scale replications"
+    "forrt_sub_clusters": "Collection of large scale replications",
+    "doi": "10.1037/apl0001197",
+    "in-clusters": true,
+    "pdf name": "",
+    "apa reference": ""
 }

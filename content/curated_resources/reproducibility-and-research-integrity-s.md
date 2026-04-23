@@ -50,5 +50,9 @@
         "Reproducibility Challenges"
     ],
     "forrt_clusters_new": "Replication Crisis and Credibility Revolution",
-    "forrt_sub_clusters": "Ongoing debates (e.g., incentives for and against open science practices), History of the replication crisis & credibility revolution"
+    "forrt_sub_clusters": "Ongoing debates (e.g., incentives for and against open science practices), History of the replication crisis & credibility revolution",
+    "doi": "",
+    "in-clusters": false,
+    "pdf name": "",
+    "apa reference": ""
 }

@@ -38,5 +38,9 @@
         "Retraction Notifications"
     ],
     "forrt_clusters_new": "Academic Structures and Institutions, FAIR data and materials",
-    "forrt_sub_clusters": "Citation Politics & Practices, Metadata standards"
+    "forrt_sub_clusters": "Citation Politics & Practices, Metadata standards",
+    "doi": "10.1038/d41586-024-00014-x",
+    "in-clusters": true,
+    "pdf name": "",
+    "apa reference": ""
 }

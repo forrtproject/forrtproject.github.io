@@ -36,5 +36,9 @@
         "Psychology"
     ],
     "forrt_clusters_new": "Academic Structures and Institutions",
-    "forrt_sub_clusters": "Racism in science, Equity"
+    "forrt_sub_clusters": "Racism in science, Equity",
+    "doi": "10.1038/s44159-023-00264-y",
+    "in-clusters": true,
+    "pdf name": "",
+    "apa reference": ""
 }

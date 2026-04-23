@@ -37,5 +37,9 @@
         "Transparency"
     ],
     "forrt_clusters_new": "Pre-analysis Planning",
-    "forrt_sub_clusters": "Preregistration, Registered reports"
+    "forrt_sub_clusters": "Preregistration, Registered reports",
+    "doi": "10.1007/s12108-023-09563-6",
+    "in-clusters": false,
+    "pdf name": "",
+    "apa reference": ""
 }

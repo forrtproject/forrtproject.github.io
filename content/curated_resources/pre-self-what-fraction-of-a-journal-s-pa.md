@@ -35,5 +35,9 @@
         "Science"
     ],
     "forrt_clusters_new": "Transparency and reproducibility in computation and analysis, Academic Structures and Institutions",
-    "forrt_sub_clusters": "Computational reproducibility, Research assessment, proposals, and reforms"
+    "forrt_sub_clusters": "Computational reproducibility, Research assessment, proposals, and reforms",
+    "doi": "",
+    "in-clusters": false,
+    "pdf name": "",
+    "apa reference": ""
 }

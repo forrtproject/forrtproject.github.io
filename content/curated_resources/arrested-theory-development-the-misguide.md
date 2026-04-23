@@ -52,5 +52,9 @@
         "Direct Replication"
     ],
     "forrt_clusters_new": "Conceptual and Statistical Knowledge",
-    "forrt_sub_clusters": "Exploratory and confirmatory analyses"
+    "forrt_sub_clusters": "Exploratory and confirmatory analyses",
+    "doi": "10.1177/1745691620966796",
+    "in-clusters": true,
+    "pdf name": "",
+    "apa reference": ""
 }

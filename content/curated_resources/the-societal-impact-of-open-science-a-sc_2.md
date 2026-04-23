@@ -44,5 +44,9 @@
         "Open Access"
     ],
     "forrt_clusters_new": "Academic Structures and Institutions, Ways of Working",
-    "forrt_sub_clusters": "Science communication and public outreach, Socially Responsible Research, Participatory research"
+    "forrt_sub_clusters": "Science communication and public outreach, Socially Responsible Research, Participatory research",
+    "doi": "10.1098/rsos.240286",
+    "in-clusters": true,
+    "pdf name": "",
+    "apa reference": ""
 }

@@ -55,5 +55,9 @@
         "Legislation"
     ],
     "forrt_clusters_new": "Academic Structures and Institutions, FAIR data and materials",
-    "forrt_sub_clusters": "Research assessment, proposals, and reforms, Reasons not to share: Privacy and security considerations"
+    "forrt_sub_clusters": "Research assessment, proposals, and reforms, Reasons not to share: Privacy and security considerations",
+    "doi": "10.1186/s13063-023-07576-7",
+    "in-clusters": true,
+    "pdf name": "",
+    "apa reference": ""
 }

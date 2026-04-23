@@ -40,5 +40,9 @@
         "Philosophy"
     ],
     "forrt_clusters_new": "Pre-analysis Planning",
-    "forrt_sub_clusters": "Purpose of pre-analysis planning"
+    "forrt_sub_clusters": "Purpose of pre-analysis planning",
+    "doi": "10.33392/diam.1587",
+    "in-clusters": true,
+    "pdf name": "",
+    "apa reference": ""
 }

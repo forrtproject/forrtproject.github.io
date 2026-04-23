@@ -37,5 +37,9 @@
         "Open Science"
     ],
     "forrt_clusters_new": "Replication and meta-research, Conceptual and Statistical Knowledge",
-    "forrt_sub_clusters": "Research design, sampling methods, & its implications for inferences., Meta-research"
+    "forrt_sub_clusters": "Research design, sampling methods, & its implications for inferences., Meta-research",
+    "doi": "",
+    "in-clusters": false,
+    "pdf name": "",
+    "apa reference": ""
 }

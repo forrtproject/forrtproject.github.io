@@ -50,5 +50,9 @@
         "Questionable Research Practice"
     ],
     "forrt_clusters_new": "Pre-analysis Planning",
-    "forrt_sub_clusters": "Registered reports"
+    "forrt_sub_clusters": "Registered reports",
+    "doi": "10.1098/rsos.181351",
+    "in-clusters": true,
+    "pdf name": "",
+    "apa reference": ""
 }

@@ -37,5 +37,9 @@
         ""
     ],
     "forrt_clusters_new": "Pre-analysis Planning",
-    "forrt_sub_clusters": "Preregistration"
+    "forrt_sub_clusters": "Preregistration",
+    "doi": "10.1001/jama.2009.1242",
+    "in-clusters": false,
+    "pdf name": "",
+    "apa reference": ""
 }

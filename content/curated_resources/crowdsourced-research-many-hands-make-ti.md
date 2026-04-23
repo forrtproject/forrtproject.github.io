@@ -37,5 +37,9 @@
         "Open Science"
     ],
     "forrt_clusters_new": "Ways of Working",
-    "forrt_sub_clusters": "Big team science"
+    "forrt_sub_clusters": "Big team science",
+    "doi": "10.1038/526189a",
+    "in-clusters": true,
+    "pdf name": "",
+    "apa reference": ""
 }

@@ -35,5 +35,9 @@
         "Reproducibility Crisis and Credibility Revolution"
     ],
     "forrt_clusters_new": "Replication and meta-research",
-    "forrt_sub_clusters": "Meta-research"
+    "forrt_sub_clusters": "Meta-research",
+    "doi": "",
+    "in-clusters": false,
+    "pdf name": "",
+    "apa reference": ""
 }

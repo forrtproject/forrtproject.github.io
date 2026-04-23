@@ -36,5 +36,9 @@
         ""
     ],
     "forrt_clusters_new": "Conceptual and Statistical Knowledge",
-    "forrt_sub_clusters": "Effect sizes, statistical power, simulations, & confidence intervals., Research design, sampling methods, & its implications for inferences."
+    "forrt_sub_clusters": "Effect sizes, statistical power, simulations, & confidence intervals., Research design, sampling methods, & its implications for inferences.",
+    "doi": "10.1001/jama.1994.03520020048013",
+    "in-clusters": false,
+    "pdf name": "",
+    "apa reference": ""
 }

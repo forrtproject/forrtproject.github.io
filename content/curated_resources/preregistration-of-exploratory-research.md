@@ -47,5 +47,9 @@
         "Confirmatory Research"
     ],
     "forrt_clusters_new": "Pre-analysis Planning",
-    "forrt_sub_clusters": "Registered reports, Preregistration, Purpose of pre-analysis planning"
+    "forrt_sub_clusters": "Registered reports, Preregistration, Purpose of pre-analysis planning",
+    "doi": "10.1371/journal.pbio.3000690",
+    "in-clusters": true,
+    "pdf name": "",
+    "apa reference": ""
 }

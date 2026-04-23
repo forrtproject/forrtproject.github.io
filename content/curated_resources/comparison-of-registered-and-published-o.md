@@ -36,5 +36,9 @@
         "Publishing"
     ],
     "forrt_clusters_new": "Pre-analysis Planning, Replication and meta-research",
-    "forrt_sub_clusters": "Meta-research, Preregistration"
+    "forrt_sub_clusters": "Meta-research, Preregistration",
+    "doi": "10.1186/s12916-015-0520-3",
+    "in-clusters": true,
+    "pdf name": "",
+    "apa reference": ""
 }

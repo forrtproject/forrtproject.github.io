@@ -35,5 +35,9 @@
         "Open Science"
     ],
     "forrt_clusters_new": "Academic Structures and Institutions",
-    "forrt_sub_clusters": "Structures and incentives in academia"
+    "forrt_sub_clusters": "Structures and incentives in academia",
+    "doi": "10.31234/osf.io/zak4f",
+    "in-clusters": true,
+    "pdf name": "",
+    "apa reference": ""
 }

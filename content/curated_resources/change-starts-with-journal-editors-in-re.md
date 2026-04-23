@@ -34,5 +34,9 @@
         "Open Science"
     ],
     "forrt_clusters_new": "Replication and meta-research, Replication Crisis and Credibility Revolution",
-    "forrt_sub_clusters": "Proposed science improvement initiatives on statistics, measurement, teaching, data sharing, code sharing, pre-registration, & replication, Conducting replication studies; challenges, limitations, and comparisons with the original study"
+    "forrt_sub_clusters": "Proposed science improvement initiatives on statistics, measurement, teaching, data sharing, code sharing, pre-registration, & replication, Conducting replication studies; challenges, limitations, and comparisons with the original study",
+    "doi": "10.1037/a0035801",
+    "in-clusters": true,
+    "pdf name": "",
+    "apa reference": ""
 }

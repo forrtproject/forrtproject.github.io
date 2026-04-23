@@ -34,5 +34,9 @@
         "metadata"
     ],
     "forrt_clusters_new": "FAIR data and materials",
-    "forrt_sub_clusters": "FAIR principles applied to Education & Training, Metadata standards"
+    "forrt_sub_clusters": "FAIR principles applied to Education & Training, Metadata standards",
+    "doi": "",
+    "in-clusters": false,
+    "pdf name": "",
+    "apa reference": ""
 }

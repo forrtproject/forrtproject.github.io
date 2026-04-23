@@ -37,5 +37,9 @@
         "Open Science"
     ],
     "forrt_clusters_new": "Replication and meta-research, Conceptual and Statistical Knowledge",
-    "forrt_sub_clusters": "Conducting replication studies; challenges, limitations, and comparisons with the original study, Effect sizes, statistical power, simulations, & confidence intervals."
+    "forrt_sub_clusters": "Conducting replication studies; challenges, limitations, and comparisons with the original study, Effect sizes, statistical power, simulations, & confidence intervals.",
+    "doi": "10.1177/0956797614567341",
+    "in-clusters": true,
+    "pdf name": "",
+    "apa reference": ""
 }

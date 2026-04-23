@@ -89,5 +89,9 @@
         "Training"
     ],
     "forrt_clusters_new": "Research Integrity, FAIR data and materials",
-    "forrt_sub_clusters": "FAIR principles applied to Education & Training, Education and Training in Research Integrity"
+    "forrt_sub_clusters": "FAIR principles applied to Education & Training, Education and Training in Research Integrity",
+    "doi": "10.7554/eLife.89736",
+    "in-clusters": true,
+    "pdf name": "",
+    "apa reference": ""
 }

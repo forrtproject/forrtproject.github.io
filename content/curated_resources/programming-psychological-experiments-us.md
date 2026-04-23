@@ -38,5 +38,9 @@
         "OpenSesame"
     ],
     "forrt_clusters_new": "Transparency and reproducibility in computation and analysis",
-    "forrt_sub_clusters": "Free and open source software, Research software engineering"
+    "forrt_sub_clusters": "Free and open source software, Research software engineering",
+    "doi": "",
+    "in-clusters": false,
+    "pdf name": "",
+    "apa reference": ""
 }

@@ -49,5 +49,9 @@
         "Meta-Analysis"
     ],
     "forrt_clusters_new": "Transparency and reproducibility in computation and analysis",
-    "forrt_sub_clusters": "Analysis and reporting in qualitative research"
+    "forrt_sub_clusters": "Analysis and reporting in qualitative research",
+    "doi": "",
+    "in-clusters": false,
+    "pdf name": "",
+    "apa reference": ""
 }

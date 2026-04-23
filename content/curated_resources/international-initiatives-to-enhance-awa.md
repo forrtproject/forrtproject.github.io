@@ -37,5 +37,9 @@
         "Open Research; Reproducibility; Replicability; Research Transparency; Psychology; Systematic Mapping Review; International Initiatives; Community-Based Change; Research Culture"
     ],
     "forrt_clusters_new": "Academic Structures and Institutions",
-    "forrt_sub_clusters": "Research assessment, proposals, and reforms"
+    "forrt_sub_clusters": "Research assessment, proposals, and reforms",
+    "doi": "10.1098/rsos.241726",
+    "in-clusters": true,
+    "pdf name": "",
+    "apa reference": ""
 }

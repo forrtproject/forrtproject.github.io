@@ -40,5 +40,9 @@
         "Scientists"
     ],
     "forrt_clusters_new": "Publication Sharing",
-    "forrt_sub_clusters": "Alternatives to legacy journals, Open peer review"
+    "forrt_sub_clusters": "Alternatives to legacy journals, Open peer review",
+    "doi": "10.1371/journal.pbio.3000116",
+    "in-clusters": true,
+    "pdf name": "",
+    "apa reference": ""
 }

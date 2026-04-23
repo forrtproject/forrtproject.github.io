@@ -35,5 +35,9 @@
         "Epistemology"
     ],
     "forrt_clusters_new": "Qualitative Research, Conceptual and Statistical Knowledge",
-    "forrt_sub_clusters": "Replication research, Philosophy of science"
+    "forrt_sub_clusters": "Replication research, Philosophy of science",
+    "doi": "10.1080/13803611.2024.2314526",
+    "in-clusters": true,
+    "pdf name": "",
+    "apa reference": ""
 }

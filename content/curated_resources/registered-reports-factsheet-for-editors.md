@@ -29,5 +29,9 @@
         "Research"
     ],
     "forrt_clusters_new": "Pre-analysis Planning",
-    "forrt_sub_clusters": "Registered reports"
+    "forrt_sub_clusters": "Registered reports",
+    "doi": "",
+    "in-clusters": false,
+    "pdf name": "",
+    "apa reference": ""
 }

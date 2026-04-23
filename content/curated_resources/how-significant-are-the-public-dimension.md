@@ -41,5 +41,9 @@
         "Scholarly Communications"
     ],
     "forrt_clusters_new": "Academic Structures and Institutions",
-    "forrt_sub_clusters": "Research assessment, proposals, and reforms, Structures and incentives in academia"
+    "forrt_sub_clusters": "Research assessment, proposals, and reforms, Structures and incentives in academia",
+    "doi": "",
+    "in-clusters": false,
+    "pdf name": "",
+    "apa reference": ""
 }

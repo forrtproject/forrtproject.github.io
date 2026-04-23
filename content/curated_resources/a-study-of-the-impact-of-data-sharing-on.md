@@ -44,5 +44,9 @@
         "Statistical Data"
     ],
     "forrt_clusters_new": "Replication and meta-research, FAIR data and materials",
-    "forrt_sub_clusters": "Reasons to share data and materials, Meta-research"
+    "forrt_sub_clusters": "Reasons to share data and materials, Meta-research",
+    "doi": "10.1371/journal.pone.0225883",
+    "in-clusters": true,
+    "pdf name": "",
+    "apa reference": ""
 }

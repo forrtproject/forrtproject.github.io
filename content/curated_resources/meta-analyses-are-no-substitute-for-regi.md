@@ -41,5 +41,9 @@
         "Open Science"
     ],
     "forrt_clusters_new": "Replication and meta-research",
-    "forrt_sub_clusters": "Meta-analyses, Purposes of replication attempts - what is a \u2018failed\u2019 replication?"
+    "forrt_sub_clusters": "Meta-analyses, Purposes of replication attempts - what is a \u2018failed\u2019 replication?",
+    "doi": "10.3389/fpsyg.2015.01365",
+    "in-clusters": true,
+    "pdf name": "",
+    "apa reference": ""
 }

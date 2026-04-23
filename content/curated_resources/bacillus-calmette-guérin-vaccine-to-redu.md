@@ -41,5 +41,9 @@
         "OSCA Awards"
     ],
     "forrt_clusters_new": "FAIR data and materials",
-    "forrt_sub_clusters": "Reasons to share data and materials, Repositories"
+    "forrt_sub_clusters": "Reasons to share data and materials, Repositories",
+    "doi": "10.1101/2022.12.15.22283474v1#p-5",
+    "in-clusters": true,
+    "pdf name": "",
+    "apa reference": ""
 }

@@ -40,5 +40,9 @@
         "Preregistration"
     ],
     "forrt_clusters_new": "Pre-analysis Planning",
-    "forrt_sub_clusters": "Study Design, Preregistration"
+    "forrt_sub_clusters": "Study Design, Preregistration",
+    "doi": "10.31235/osf.io/sbwcq",
+    "in-clusters": true,
+    "pdf name": "",
+    "apa reference": ""
 }

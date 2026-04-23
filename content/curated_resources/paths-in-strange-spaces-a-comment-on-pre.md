@@ -45,5 +45,9 @@
         "Preregistration"
     ],
     "forrt_clusters_new": "Pre-analysis Planning",
-    "forrt_sub_clusters": "Preregistration"
+    "forrt_sub_clusters": "Preregistration",
+    "doi": "10.31234/osf.io/wxn58",
+    "in-clusters": true,
+    "pdf name": "",
+    "apa reference": ""
 }

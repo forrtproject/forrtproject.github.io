@@ -38,5 +38,9 @@
         "Inclusion"
     ],
     "forrt_clusters_new": "Academic Structures and Institutions",
-    "forrt_sub_clusters": "Racism in science"
+    "forrt_sub_clusters": "Racism in science",
+    "doi": "",
+    "in-clusters": false,
+    "pdf name": "",
+    "apa reference": ""
 }

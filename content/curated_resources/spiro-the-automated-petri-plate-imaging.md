@@ -59,5 +59,9 @@
         "Technical Advance"
     ],
     "forrt_clusters_new": "FAIR data and materials",
-    "forrt_sub_clusters": "Repositories"
+    "forrt_sub_clusters": "Repositories",
+    "doi": "10.1111/tpj.16587",
+    "in-clusters": true,
+    "pdf name": "",
+    "apa reference": ""
 }

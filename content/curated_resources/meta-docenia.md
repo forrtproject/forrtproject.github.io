@@ -109,5 +109,9 @@
         "Resources"
     ],
     "forrt_clusters_new": "Academic Structures and Institutions",
-    "forrt_sub_clusters": "Equity, Accessibility"
+    "forrt_sub_clusters": "Equity, Accessibility",
+    "doi": "",
+    "in-clusters": false,
+    "pdf name": "",
+    "apa reference": ""
 }

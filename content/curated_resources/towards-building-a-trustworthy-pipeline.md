@@ -46,5 +46,9 @@
         "Data Security"
     ],
     "forrt_clusters_new": "FAIR data and materials",
-    "forrt_sub_clusters": "Metadata standards, Reasons not to share: Privacy and security considerations"
+    "forrt_sub_clusters": "Metadata standards, Reasons not to share: Privacy and security considerations",
+    "doi": "10.1093/database/baae023",
+    "in-clusters": true,
+    "pdf name": "",
+    "apa reference": ""
 }

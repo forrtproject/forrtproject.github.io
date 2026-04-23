@@ -37,5 +37,9 @@
         "Data"
     ],
     "forrt_clusters_new": "Replication and meta-research, Replication Crisis and Credibility Revolution",
-    "forrt_sub_clusters": "Meta-research, Ongoing debates (e.g., incentives for and against open science practices)"
+    "forrt_sub_clusters": "Meta-research, Ongoing debates (e.g., incentives for and against open science practices)",
+    "doi": "",
+    "in-clusters": false,
+    "pdf name": "",
+    "apa reference": ""
 }

@@ -38,5 +38,9 @@
         "Collaboration"
     ],
     "forrt_clusters_new": "Academic Structures and Institutions, FAIR data and materials",
-    "forrt_sub_clusters": "Accessibility, FAIR principles applied to Education & Training"
+    "forrt_sub_clusters": "Accessibility, FAIR principles applied to Education & Training",
+    "doi": "",
+    "in-clusters": false,
+    "pdf name": "",
+    "apa reference": ""
 }

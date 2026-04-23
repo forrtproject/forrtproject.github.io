@@ -37,5 +37,9 @@
         "Levels"
     ],
     "forrt_clusters_new": "Replication Crisis and Credibility Revolution",
-    "forrt_sub_clusters": "Scientific Misconduct: Fabrication and Falsification, History of the replication crisis & credibility revolution"
+    "forrt_sub_clusters": "Scientific Misconduct: Fabrication and Falsification, History of the replication crisis & credibility revolution",
+    "doi": "10.1080/00223891.2017.1319711",
+    "in-clusters": true,
+    "pdf name": "",
+    "apa reference": ""
 }

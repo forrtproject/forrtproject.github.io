@@ -37,5 +37,9 @@
         "Interaction design"
     ],
     "forrt_clusters_new": "Pre-analysis Planning",
-    "forrt_sub_clusters": "Understanding the types of preregistration and writing one., Purpose of pre-analysis planning"
+    "forrt_sub_clusters": "Understanding the types of preregistration and writing one., Purpose of pre-analysis planning",
+    "doi": "10.1145/3290607.3312862",
+    "in-clusters": true,
+    "pdf name": "",
+    "apa reference": ""
 }

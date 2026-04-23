@@ -37,5 +37,9 @@
         "Economics"
     ],
     "forrt_clusters_new": "Pre-analysis Planning",
-    "forrt_sub_clusters": "Purpose of pre-analysis planning"
+    "forrt_sub_clusters": "Purpose of pre-analysis planning",
+    "doi": "",
+    "in-clusters": false,
+    "pdf name": "",
+    "apa reference": ""
 }

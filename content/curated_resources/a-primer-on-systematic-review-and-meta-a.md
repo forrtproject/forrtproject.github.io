@@ -41,5 +41,9 @@
         "Diabetes"
     ],
     "forrt_clusters_new": "Transparency and reproducibility in computation and analysis",
-    "forrt_sub_clusters": "Tools to check yourself and others"
+    "forrt_sub_clusters": "Tools to check yourself and others",
+    "doi": "10.2337/dci23-0031",
+    "in-clusters": true,
+    "pdf name": "",
+    "apa reference": ""
 }

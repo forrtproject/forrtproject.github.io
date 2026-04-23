@@ -45,5 +45,9 @@
         "German Network University Medicine"
     ],
     "forrt_clusters_new": "FAIR data and materials",
-    "forrt_sub_clusters": "Metadata standards, Research data management"
+    "forrt_sub_clusters": "Metadata standards, Research data management",
+    "doi": "10.1007/s00103-024-03884-8",
+    "in-clusters": false,
+    "pdf name": "",
+    "apa reference": ""
 }

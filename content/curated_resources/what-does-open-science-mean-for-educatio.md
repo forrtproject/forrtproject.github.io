@@ -64,5 +64,9 @@
         "Open Science Practices"
     ],
     "forrt_clusters_new": "Replication Crisis and Credibility Revolution, Ways of Working",
-    "forrt_sub_clusters": "Public and Private Partnerships, Questionable research practices & their prevalence"
+    "forrt_sub_clusters": "Public and Private Partnerships, Questionable research practices & their prevalence",
+    "doi": "10.35542/osf.io/s73xb",
+    "in-clusters": true,
+    "pdf name": "",
+    "apa reference": ""
 }

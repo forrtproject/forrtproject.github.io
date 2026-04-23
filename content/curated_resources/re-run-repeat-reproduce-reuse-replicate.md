@@ -39,5 +39,9 @@
         "Software Development"
     ],
     "forrt_clusters_new": "Transparency and reproducibility in computation and analysis",
-    "forrt_sub_clusters": "Computational reproducibility, Research software engineering"
+    "forrt_sub_clusters": "Computational reproducibility, Research software engineering",
+    "doi": "10.3389/fninf.2017.00069/full",
+    "in-clusters": true,
+    "pdf name": "",
+    "apa reference": ""
 }

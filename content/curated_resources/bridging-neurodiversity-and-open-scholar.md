@@ -46,5 +46,9 @@
         "Neurodiversity; Inclusivity in Academia; Open Scholarship; Higher Education; Accessibility\nIntersectionality; Systematic Barriers"
     ],
     "forrt_clusters_new": "Academic Structures and Institutions",
-    "forrt_sub_clusters": "Neurodiversity, Inclusion, Accessibility"
+    "forrt_sub_clusters": "Neurodiversity, Inclusion, Accessibility",
+    "doi": "10.31222/osf.io/k7a9p_v2",
+    "in-clusters": true,
+    "pdf name": "",
+    "apa reference": ""
 }

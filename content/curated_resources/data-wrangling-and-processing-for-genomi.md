@@ -71,5 +71,9 @@
         "Shell"
     ],
     "forrt_clusters_new": "Transparency and reproducibility in computation and analysis, FAIR data and materials",
-    "forrt_sub_clusters": "Research data management, Computational reproducibility"
+    "forrt_sub_clusters": "Research data management, Computational reproducibility",
+    "doi": "",
+    "in-clusters": false,
+    "pdf name": "",
+    "apa reference": ""
 }

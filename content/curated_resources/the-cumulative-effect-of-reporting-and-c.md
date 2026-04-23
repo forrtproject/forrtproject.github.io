@@ -40,5 +40,9 @@
         "Reporting Bias"
     ],
     "forrt_clusters_new": "Replication Crisis and Credibility Revolution",
-    "forrt_sub_clusters": "Questionable research practices & their prevalence"
+    "forrt_sub_clusters": "Questionable research practices & their prevalence",
+    "doi": "",
+    "in-clusters": false,
+    "pdf name": "",
+    "apa reference": ""
 }

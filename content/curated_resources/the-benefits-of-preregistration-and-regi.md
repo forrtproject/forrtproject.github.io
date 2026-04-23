@@ -38,5 +38,9 @@
         "Severity"
     ],
     "forrt_clusters_new": "Pre-analysis Planning",
-    "forrt_sub_clusters": "Preregistration, Registered reports"
+    "forrt_sub_clusters": "Preregistration, Registered reports",
+    "doi": "10.31234/osf.io/dqap7",
+    "in-clusters": true,
+    "pdf name": "",
+    "apa reference": ""
 }

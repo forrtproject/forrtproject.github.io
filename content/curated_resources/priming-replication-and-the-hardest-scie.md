@@ -33,5 +33,9 @@
         "Open Science"
     ],
     "forrt_clusters_new": "Replication and meta-research",
-    "forrt_sub_clusters": "Conducting replication studies; challenges, limitations, and comparisons with the original study, Purposes of replication attempts - what is a \u2018failed\u2019 replication?"
+    "forrt_sub_clusters": "Conducting replication studies; challenges, limitations, and comparisons with the original study, Purposes of replication attempts - what is a \u2018failed\u2019 replication?",
+    "doi": "10.1177/1745691613513470",
+    "in-clusters": true,
+    "pdf name": "",
+    "apa reference": ""
 }

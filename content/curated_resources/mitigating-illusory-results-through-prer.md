@@ -39,5 +39,9 @@
         "Research Methods"
     ],
     "forrt_clusters_new": "Pre-analysis Planning",
-    "forrt_sub_clusters": "Preregistration"
+    "forrt_sub_clusters": "Preregistration",
+    "doi": "10.1080/19345747.2017.1387950",
+    "in-clusters": true,
+    "pdf name": "",
+    "apa reference": ""
 }

@@ -35,5 +35,9 @@
         "Researchers"
     ],
     "forrt_clusters_new": "Transparency and reproducibility in computation and analysis, Replication Crisis and Credibility Revolution",
-    "forrt_sub_clusters": "Ongoing debates (e.g., incentives for and against open science practices), Computational reproducibility"
+    "forrt_sub_clusters": "Ongoing debates (e.g., incentives for and against open science practices), Computational reproducibility",
+    "doi": "10.1186/s13059-015-0850-7",
+    "in-clusters": true,
+    "pdf name": "",
+    "apa reference": ""
 }

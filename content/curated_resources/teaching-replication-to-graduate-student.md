@@ -38,5 +38,9 @@
         "Quantitative"
     ],
     "forrt_clusters_new": "Replication and meta-research, Replication Crisis and Credibility Revolution",
-    "forrt_sub_clusters": "Conducting replication studies; challenges, limitations, and comparisons with the original study, Proposed science improvement initiatives on statistics, measurement, teaching, data sharing, code sharing, pre-registration, & replication"
+    "forrt_sub_clusters": "Conducting replication studies; challenges, limitations, and comparisons with the original study, Proposed science improvement initiatives on statistics, measurement, teaching, data sharing, code sharing, pre-registration, & replication",
+    "doi": "10.1177/0092055X19867996",
+    "in-clusters": true,
+    "pdf name": "",
+    "apa reference": ""
 }

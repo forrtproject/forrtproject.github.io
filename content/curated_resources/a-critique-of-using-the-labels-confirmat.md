@@ -35,5 +35,9 @@
         "Philosophy Of Science"
     ],
     "forrt_clusters_new": "Conceptual and Statistical Knowledge",
-    "forrt_sub_clusters": "Exploratory and confirmatory analyses"
+    "forrt_sub_clusters": "Exploratory and confirmatory analyses",
+    "doi": "10.3389/fpsyg.2022.1020770",
+    "in-clusters": true,
+    "pdf name": "",
+    "apa reference": ""
 }

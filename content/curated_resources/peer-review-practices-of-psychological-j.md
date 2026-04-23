@@ -36,5 +36,9 @@
         "Open Review"
     ],
     "forrt_clusters_new": "Research Integrity",
-    "forrt_sub_clusters": "Publication, Peer Review, and Research Integrity"
+    "forrt_sub_clusters": "Publication, Peer Review, and Research Integrity",
+    "doi": "10.1017/S0140525X00011183",
+    "in-clusters": true,
+    "pdf name": "",
+    "apa reference": ""
 }

@@ -33,5 +33,9 @@
         "Peer-Review"
     ],
     "forrt_clusters_new": "Publication Sharing",
-    "forrt_sub_clusters": "Open peer review"
+    "forrt_sub_clusters": "Open peer review",
+    "doi": "10.1098/rsos.150547",
+    "in-clusters": true,
+    "pdf name": "",
+    "apa reference": ""
 }

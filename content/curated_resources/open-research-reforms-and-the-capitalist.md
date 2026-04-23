@@ -38,5 +38,9 @@
         "Administration"
     ],
     "forrt_clusters_new": "Academic Structures and Institutions",
-    "forrt_sub_clusters": "Structures and incentives in academia"
+    "forrt_sub_clusters": "Structures and incentives in academia",
+    "doi": "10.1525/collabra.121383",
+    "in-clusters": true,
+    "pdf name": "",
+    "apa reference": ""
 }

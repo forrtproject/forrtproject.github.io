@@ -50,5 +50,9 @@
         "Traceability"
     ],
     "forrt_clusters_new": "FAIR data and materials",
-    "forrt_sub_clusters": "Reasons to share data and materials, Metadata standards"
+    "forrt_sub_clusters": "Reasons to share data and materials, Metadata standards",
+    "doi": "10.1101/2024.01.15.575636",
+    "in-clusters": true,
+    "pdf name": "",
+    "apa reference": ""
 }

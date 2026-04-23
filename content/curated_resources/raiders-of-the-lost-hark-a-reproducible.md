@@ -39,5 +39,9 @@
         "Reproducibility"
     ],
     "forrt_clusters_new": "Conceptual and Statistical Knowledge, Replication Crisis and Credibility Revolution",
-    "forrt_sub_clusters": "Questionable research practices & their prevalence, Exploratory and confirmatory analyses"
+    "forrt_sub_clusters": "Questionable research practices & their prevalence, Exploratory and confirmatory analyses",
+    "doi": "",
+    "in-clusters": false,
+    "pdf name": "",
+    "apa reference": ""
 }

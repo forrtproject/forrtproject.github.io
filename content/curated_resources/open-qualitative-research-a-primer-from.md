@@ -38,5 +38,9 @@
         "Open Qualitative Research; Qualitative Methods; Data Sharing; Participatory Research; Preregistration; Positionality; Open Data"
     ],
     "forrt_clusters_new": "Pre-analysis Planning, FAIR data and materials",
-    "forrt_sub_clusters": "Reasons to share data and materials, Preregistration"
+    "forrt_sub_clusters": "Reasons to share data and materials, Preregistration",
+    "doi": "",
+    "in-clusters": false,
+    "pdf name": "",
+    "apa reference": ""
 }

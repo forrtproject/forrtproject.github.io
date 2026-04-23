@@ -47,5 +47,9 @@
         "Research Methods. Transparency"
     ],
     "forrt_clusters_new": "Pre-analysis Planning",
-    "forrt_sub_clusters": "Understanding the types of preregistration and writing one., Preregistration"
+    "forrt_sub_clusters": "Understanding the types of preregistration and writing one., Preregistration",
+    "doi": "10.31234/osf.io/cj5mh",
+    "in-clusters": true,
+    "pdf name": "",
+    "apa reference": ""
 }

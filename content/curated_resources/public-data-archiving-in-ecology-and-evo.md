@@ -41,5 +41,9 @@
         "Scientific Publishing"
     ],
     "forrt_clusters_new": "Replication and meta-research, FAIR data and materials",
-    "forrt_sub_clusters": "Meta-research, Reasons to share data and materials"
+    "forrt_sub_clusters": "Meta-research, Reasons to share data and materials",
+    "doi": "10.1371/journal.pbio.1002295",
+    "in-clusters": true,
+    "pdf name": "",
+    "apa reference": ""
 }

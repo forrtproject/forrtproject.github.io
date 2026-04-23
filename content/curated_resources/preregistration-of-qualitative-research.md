@@ -35,5 +35,9 @@
         "Research Best Practices"
     ],
     "forrt_clusters_new": "Qualitative Research",
-    "forrt_sub_clusters": "Preregistration and Registered reports"
+    "forrt_sub_clusters": "Preregistration and Registered reports",
+    "doi": "",
+    "in-clusters": false,
+    "pdf name": "",
+    "apa reference": ""
 }

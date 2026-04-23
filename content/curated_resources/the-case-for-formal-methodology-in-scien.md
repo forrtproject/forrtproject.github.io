@@ -53,5 +53,9 @@
         "Reproducibility"
     ],
     "forrt_clusters_new": "",
-    "forrt_sub_clusters": "Proposed science improvement initiatives on statistics, measurement, teaching, data sharing, code sharing, pre-registration, & replication"
+    "forrt_sub_clusters": "Proposed science improvement initiatives on statistics, measurement, teaching, data sharing, code sharing, pre-registration, & replication",
+    "doi": "10.1098/rsos.200805",
+    "in-clusters": true,
+    "pdf name": "",
+    "apa reference": ""
 }

@@ -38,5 +38,9 @@
         "Onboarding Materials"
     ],
     "forrt_clusters_new": "Academic Structures and Institutions, Ways of Working",
-    "forrt_sub_clusters": "Research with students (under- and graduate), Hidden curriculum"
+    "forrt_sub_clusters": "Research with students (under- and graduate), Hidden curriculum",
+    "doi": "10.1038/s44159-023-00163-2",
+    "in-clusters": true,
+    "pdf name": "",
+    "apa reference": ""
 }

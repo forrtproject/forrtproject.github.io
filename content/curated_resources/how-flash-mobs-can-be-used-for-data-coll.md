@@ -37,5 +37,9 @@
         "Scoping Review"
     ],
     "forrt_clusters_new": "Ways of Working",
-    "forrt_sub_clusters": "Participatory research"
+    "forrt_sub_clusters": "Participatory research",
+    "doi": "10.1111/aas.14404",
+    "in-clusters": true,
+    "pdf name": "",
+    "apa reference": ""
 }

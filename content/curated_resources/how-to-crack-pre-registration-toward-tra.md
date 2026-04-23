@@ -45,5 +45,9 @@
         "Preregistration"
     ],
     "forrt_clusters_new": "Pre-analysis Planning",
-    "forrt_sub_clusters": "Preregistration, Understanding the types of preregistration and writing one."
+    "forrt_sub_clusters": "Preregistration, Understanding the types of preregistration and writing one.",
+    "doi": "10.3389/fpsyg.2018.01831",
+    "in-clusters": true,
+    "pdf name": "",
+    "apa reference": ""
 }

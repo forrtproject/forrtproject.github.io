@@ -40,5 +40,9 @@
         "Scientific Impact"
     ],
     "forrt_clusters_new": "FAIR data and materials",
-    "forrt_sub_clusters": "Reasons to share data and materials"
+    "forrt_sub_clusters": "Reasons to share data and materials",
+    "doi": "10.1007/s12094-024-03468-7",
+    "in-clusters": false,
+    "pdf name": "",
+    "apa reference": ""
 }

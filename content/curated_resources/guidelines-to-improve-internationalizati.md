@@ -45,5 +45,9 @@
         "Science"
     ],
     "forrt_clusters_new": "Academic Structures and Institutions",
-    "forrt_sub_clusters": "Accessibility"
+    "forrt_sub_clusters": "Accessibility",
+    "doi": "10.1111/spc3.12847",
+    "in-clusters": true,
+    "pdf name": "",
+    "apa reference": ""
 }

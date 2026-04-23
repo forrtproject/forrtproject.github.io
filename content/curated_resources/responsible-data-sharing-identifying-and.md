@@ -37,5 +37,9 @@
         "Research Integrity"
     ],
     "forrt_clusters_new": "FAIR data and materials",
-    "forrt_sub_clusters": "Reasons not to share: Privacy and security considerations"
+    "forrt_sub_clusters": "Reasons not to share: Privacy and security considerations",
+    "doi": "10.31222/osf.io/5m3cx",
+    "in-clusters": true,
+    "pdf name": "",
+    "apa reference": ""
 }

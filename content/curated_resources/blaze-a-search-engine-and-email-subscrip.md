@@ -41,5 +41,9 @@
         "Technical Blogs"
     ],
     "forrt_clusters_new": "Academic Structures and Institutions",
-    "forrt_sub_clusters": "Accessibility"
+    "forrt_sub_clusters": "Accessibility",
+    "doi": "",
+    "in-clusters": false,
+    "pdf name": "",
+    "apa reference": ""
 }

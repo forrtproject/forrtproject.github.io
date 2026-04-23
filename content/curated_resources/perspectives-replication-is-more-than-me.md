@@ -44,5 +44,9 @@
         "Truth Value"
     ],
     "forrt_clusters_new": "Replication Crisis and Credibility Revolution",
-    "forrt_sub_clusters": "Proposed science improvement initiatives on statistics, measurement, teaching, data sharing, code sharing, pre-registration, & replication"
+    "forrt_sub_clusters": "Proposed science improvement initiatives on statistics, measurement, teaching, data sharing, code sharing, pre-registration, & replication",
+    "doi": "10.1080/02650487.2023.2245278",
+    "in-clusters": true,
+    "pdf name": "",
+    "apa reference": ""
 }

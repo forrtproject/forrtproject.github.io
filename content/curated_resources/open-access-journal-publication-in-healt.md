@@ -41,5 +41,9 @@
         "Medical Research"
     ],
     "forrt_clusters_new": "Academic Structures and Institutions",
-    "forrt_sub_clusters": "Research assessment, proposals, and reforms"
+    "forrt_sub_clusters": "Research assessment, proposals, and reforms",
+    "doi": "10.1136/bmjebm-2022-112126",
+    "in-clusters": true,
+    "pdf name": "",
+    "apa reference": ""
 }

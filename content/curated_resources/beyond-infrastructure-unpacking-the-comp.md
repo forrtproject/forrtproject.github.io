@@ -33,5 +33,9 @@
         "OSCA Awards 2025"
     ],
     "forrt_clusters_new": "Academic Structures and Institutions",
-    "forrt_sub_clusters": "Equity, Inclusion, Accessibility"
+    "forrt_sub_clusters": "Equity, Inclusion, Accessibility",
+    "doi": "",
+    "in-clusters": false,
+    "pdf name": "",
+    "apa reference": ""
 }

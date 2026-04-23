@@ -44,5 +44,9 @@
         "Recommendations"
     ],
     "forrt_clusters_new": "Academic Structures and Institutions, FAIR data and materials",
-    "forrt_sub_clusters": "Licenses and reuse, Research assessment, proposals, and reforms"
+    "forrt_sub_clusters": "Licenses and reuse, Research assessment, proposals, and reforms",
+    "doi": "10.5281/zenodo.8084051",
+    "in-clusters": true,
+    "pdf name": "",
+    "apa reference": ""
 }

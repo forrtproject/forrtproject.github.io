@@ -34,5 +34,9 @@
         "Preregistration"
     ],
     "forrt_clusters_new": "Pre-analysis Planning",
-    "forrt_sub_clusters": "Preregistration"
+    "forrt_sub_clusters": "Preregistration",
+    "doi": "10.1016/j.obhdp.2021.05.006",
+    "in-clusters": false,
+    "pdf name": "",
+    "apa reference": ""
 }

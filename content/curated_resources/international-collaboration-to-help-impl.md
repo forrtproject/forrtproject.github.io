@@ -36,5 +36,9 @@
         "UKRN"
     ],
     "forrt_clusters_new": "Academic Structures and Institutions",
-    "forrt_sub_clusters": "Research assessment, proposals, and reforms"
+    "forrt_sub_clusters": "Research assessment, proposals, and reforms",
+    "doi": "",
+    "in-clusters": false,
+    "pdf name": "",
+    "apa reference": ""
 }

@@ -33,5 +33,9 @@
         "Open Science"
     ],
     "forrt_clusters_new": "Replication and meta-research",
-    "forrt_sub_clusters": "Meta-analyses"
+    "forrt_sub_clusters": "Meta-analyses",
+    "doi": "10.3389/fpsyg.2014.00823",
+    "in-clusters": true,
+    "pdf name": "",
+    "apa reference": ""
 }

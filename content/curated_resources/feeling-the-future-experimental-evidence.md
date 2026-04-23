@@ -33,5 +33,9 @@
         "Open Science"
     ],
     "forrt_clusters_new": "Replication and meta-research",
-    "forrt_sub_clusters": "The politics of replicating famous studies"
+    "forrt_sub_clusters": "The politics of replicating famous studies",
+    "doi": "10.1037/a0021524",
+    "in-clusters": true,
+    "pdf name": "",
+    "apa reference": ""
 }

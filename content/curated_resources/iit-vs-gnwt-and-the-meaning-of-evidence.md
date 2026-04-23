@@ -39,5 +39,9 @@
         "Higher Order Theories"
     ],
     "forrt_clusters_new": "Academic Structures and Institutions",
-    "forrt_sub_clusters": "Objectivity in Research"
+    "forrt_sub_clusters": "Objectivity in Research",
+    "doi": "",
+    "in-clusters": false,
+    "pdf name": "",
+    "apa reference": ""
 }

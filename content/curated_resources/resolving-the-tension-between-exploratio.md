@@ -36,5 +36,9 @@
         "Statistics"
     ],
     "forrt_clusters_new": "Replication and meta-research, Conceptual and Statistical Knowledge",
-    "forrt_sub_clusters": "Exploratory and confirmatory analyses, Conducting replication studies; challenges, limitations, and comparisons with the original study"
+    "forrt_sub_clusters": "Exploratory and confirmatory analyses, Conducting replication studies; challenges, limitations, and comparisons with the original study",
+    "doi": "10.1007/164_2019_278?error=cookies_not_supported&code=678079ec-b664-45e4-b059-1e139742b870",
+    "in-clusters": false,
+    "pdf name": "",
+    "apa reference": ""
 }

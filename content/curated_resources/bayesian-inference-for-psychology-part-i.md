@@ -57,5 +57,9 @@
         "Statistics"
     ],
     "forrt_clusters_new": "Conceptual and Statistical Knowledge",
-    "forrt_sub_clusters": "Limitations and benefits of NHST, Bayesian & Likelihood approaches."
+    "forrt_sub_clusters": "Limitations and benefits of NHST, Bayesian & Likelihood approaches.",
+    "doi": "10.3758/s13423-017-1323-7?error=cookies_not_supported&code=573b51ec-5ff2-490f-87b5-25f2369f4e8a",
+    "in-clusters": true,
+    "pdf name": "",
+    "apa reference": ""
 }

@@ -35,5 +35,9 @@
         "Scholarship"
     ],
     "forrt_clusters_new": "Publication Sharing, FAIR data and materials",
-    "forrt_sub_clusters": "Licenses and reuse, Rights retention strategies"
+    "forrt_sub_clusters": "Licenses and reuse, Rights retention strategies",
+    "doi": "",
+    "in-clusters": false,
+    "pdf name": "",
+    "apa reference": ""
 }

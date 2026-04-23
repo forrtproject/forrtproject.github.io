@@ -33,5 +33,9 @@
         "OSCA Awards"
     ],
     "forrt_clusters_new": "Transparency and reproducibility in computation and analysis",
-    "forrt_sub_clusters": "Free and open source software, Computational reproducibility"
+    "forrt_sub_clusters": "Free and open source software, Computational reproducibility",
+    "doi": "",
+    "in-clusters": false,
+    "pdf name": "",
+    "apa reference": ""
 }

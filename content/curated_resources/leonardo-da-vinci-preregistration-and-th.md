@@ -34,5 +34,9 @@
         "Health Psychology"
     ],
     "forrt_clusters_new": "Pre-analysis Planning",
-    "forrt_sub_clusters": "Preregistration"
+    "forrt_sub_clusters": "Preregistration",
+    "doi": "10.5334/hpb.30",
+    "in-clusters": true,
+    "pdf name": "",
+    "apa reference": ""
 }

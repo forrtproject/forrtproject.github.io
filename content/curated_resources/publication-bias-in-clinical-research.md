@@ -38,5 +38,9 @@
         "Clinical Research"
     ],
     "forrt_clusters_new": "Academic Structures and Institutions",
-    "forrt_sub_clusters": "Structures and incentives in academia"
+    "forrt_sub_clusters": "Structures and incentives in academia",
+    "doi": "10.1016/0140-6736(91)90201-Y",
+    "in-clusters": false,
+    "pdf name": "",
+    "apa reference": ""
 }

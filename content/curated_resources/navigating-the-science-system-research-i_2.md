@@ -37,5 +37,9 @@
         "Research culture"
     ],
     "forrt_clusters_new": "Research Integrity, Academic Structures and Institutions",
-    "forrt_sub_clusters": "Questionable Research Practices and Responsible Research Practices, Principles and Frameworks of Research Integrity, Structures and incentives in academia"
+    "forrt_sub_clusters": "Questionable Research Practices and Responsible Research Practices, Principles and Frameworks of Research Integrity, Structures and incentives in academia",
+    "doi": "10.1007/s11948-024-00467-3",
+    "in-clusters": false,
+    "pdf name": "",
+    "apa reference": ""
 }

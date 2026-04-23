@@ -40,5 +40,9 @@
         "Reproducibility"
     ],
     "forrt_clusters_new": "Replication and meta-research",
-    "forrt_sub_clusters": "Meta-research"
+    "forrt_sub_clusters": "Meta-research",
+    "doi": "10.1186/s41073-020-0091-5",
+    "in-clusters": true,
+    "pdf name": "",
+    "apa reference": ""
 }

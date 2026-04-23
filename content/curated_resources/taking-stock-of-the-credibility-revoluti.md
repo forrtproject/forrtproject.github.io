@@ -34,5 +34,9 @@
         "Credibility revolution"
     ],
     "forrt_clusters_new": "Replication Crisis and Credibility Revolution",
-    "forrt_sub_clusters": "History of the replication crisis & credibility revolution"
+    "forrt_sub_clusters": "History of the replication crisis & credibility revolution",
+    "doi": "10.13140/RG.2.2.21721.47200/1",
+    "in-clusters": true,
+    "pdf name": "",
+    "apa reference": ""
 }

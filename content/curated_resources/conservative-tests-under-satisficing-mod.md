@@ -37,5 +37,9 @@
         "Open Science"
     ],
     "forrt_clusters_new": "Conceptual and Statistical Knowledge, Replication Crisis and Credibility Revolution",
-    "forrt_sub_clusters": "Effect sizes, statistical power, simulations, & confidence intervals., Questionable research practices & their prevalence"
+    "forrt_sub_clusters": "Effect sizes, statistical power, simulations, & confidence intervals., Questionable research practices & their prevalence",
+    "doi": "10.1371/journal.pone.0149590",
+    "in-clusters": true,
+    "pdf name": "",
+    "apa reference": ""
 }

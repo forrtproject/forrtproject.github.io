@@ -40,5 +40,9 @@
         "Researchers"
     ],
     "forrt_clusters_new": "FAIR data and materials, Replication Crisis and Credibility Revolution",
-    "forrt_sub_clusters": "Research data management, Proposed science improvement initiatives on statistics, measurement, teaching, data sharing, code sharing, pre-registration, & replication"
+    "forrt_sub_clusters": "Research data management, Proposed science improvement initiatives on statistics, measurement, teaching, data sharing, code sharing, pre-registration, & replication",
+    "doi": "",
+    "in-clusters": false,
+    "pdf name": "",
+    "apa reference": ""
 }

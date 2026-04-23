@@ -36,5 +36,9 @@
         "Archiving"
     ],
     "forrt_clusters_new": "FAIR data and materials",
-    "forrt_sub_clusters": "Repositories"
+    "forrt_sub_clusters": "Repositories",
+    "doi": "",
+    "in-clusters": false,
+    "pdf name": "",
+    "apa reference": ""
 }

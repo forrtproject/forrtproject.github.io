@@ -49,5 +49,9 @@
         "Reproducibility"
     ],
     "forrt_clusters_new": "Qualitative Research",
-    "forrt_sub_clusters": "FAIR data and materials: Ethical and legal challenges, Replication research"
+    "forrt_sub_clusters": "FAIR data and materials: Ethical and legal challenges, Replication research",
+    "doi": "10.31222/osf.io/n5zkw",
+    "in-clusters": true,
+    "pdf name": "",
+    "apa reference": ""
 }

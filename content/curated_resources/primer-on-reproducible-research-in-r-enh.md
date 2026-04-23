@@ -39,5 +39,9 @@
         "Renv"
     ],
     "forrt_clusters_new": "Transparency and reproducibility in computation and analysis",
-    "forrt_sub_clusters": "Computational reproducibility"
+    "forrt_sub_clusters": "Computational reproducibility",
+    "doi": "10.3390/clockssleep6010001",
+    "in-clusters": true,
+    "pdf name": "",
+    "apa reference": ""
 }

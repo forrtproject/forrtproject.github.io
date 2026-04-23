@@ -49,5 +49,9 @@
         "Just in Bello"
     ],
     "forrt_clusters_new": "Academic Structures and Institutions",
-    "forrt_sub_clusters": "Socially Responsible Research"
+    "forrt_sub_clusters": "Socially Responsible Research",
+    "doi": "10.1007/s10676-022-09643-0",
+    "in-clusters": false,
+    "pdf name": "",
+    "apa reference": ""
 }

@@ -53,5 +53,9 @@
         "Accuracy"
     ],
     "forrt_clusters_new": "Academic Structures and Institutions",
-    "forrt_sub_clusters": "Equity, Socially Responsible Research"
+    "forrt_sub_clusters": "Equity, Socially Responsible Research",
+    "doi": "10.1016/S0140-6736(23)01575-1",
+    "in-clusters": false,
+    "pdf name": "",
+    "apa reference": ""
 }

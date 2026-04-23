@@ -100,5 +100,9 @@
         "Translational Research"
     ],
     "forrt_clusters_new": "Transparency and reproducibility in computation and analysis, FAIR data and materials",
-    "forrt_sub_clusters": "Computational reproducibility, Repositories"
+    "forrt_sub_clusters": "Computational reproducibility, Repositories",
+    "doi": "10.1038/s41592-024-02237-2",
+    "in-clusters": true,
+    "pdf name": "",
+    "apa reference": ""
 }

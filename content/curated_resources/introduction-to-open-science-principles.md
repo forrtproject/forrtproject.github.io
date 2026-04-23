@@ -35,5 +35,9 @@
         "Introduction"
     ],
     "forrt_clusters_new": "Transparency and reproducibility in computation and analysis, FAIR data and materials",
-    "forrt_sub_clusters": "FAIR principles applied to Education & Training, Free and open source software"
+    "forrt_sub_clusters": "FAIR principles applied to Education & Training, Free and open source software",
+    "doi": "10.5281/zenodo.8214707",
+    "in-clusters": true,
+    "pdf name": "",
+    "apa reference": ""
 }

@@ -42,5 +42,9 @@
         "Biologics"
     ],
     "forrt_clusters_new": "Ways of Working",
-    "forrt_sub_clusters": "Public and Private Partnerships"
+    "forrt_sub_clusters": "Public and Private Partnerships",
+    "doi": "10.1001/jamainternmed.2023.4073",
+    "in-clusters": false,
+    "pdf name": "",
+    "apa reference": ""
 }

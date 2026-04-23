@@ -34,5 +34,9 @@
         ""
     ],
     "forrt_clusters_new": "Publication Sharing, FAIR data and materials",
-    "forrt_sub_clusters": "Different shades of open access, Reasons to share data and materials, Research data management, Repositories"
+    "forrt_sub_clusters": "Different shades of open access, Reasons to share data and materials, Research data management, Repositories",
+    "doi": "10.3758/s13428-015-0630-z",
+    "in-clusters": true,
+    "pdf name": "",
+    "apa reference": ""
 }

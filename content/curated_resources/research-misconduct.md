@@ -41,5 +41,9 @@
         "Responsible Conduct of Research"
     ],
     "forrt_clusters_new": "Transparency and reproducibility in computation and analysis, Academic Structures and Institutions",
-    "forrt_sub_clusters": "Tools to check yourself and others, Structures and incentives in academia"
+    "forrt_sub_clusters": "Tools to check yourself and others, Structures and incentives in academia",
+    "doi": "",
+    "in-clusters": false,
+    "pdf name": "",
+    "apa reference": ""
 }

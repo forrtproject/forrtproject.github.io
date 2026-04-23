@@ -39,5 +39,9 @@
         "Healthcare"
     ],
     "forrt_clusters_new": "FAIR data and materials",
-    "forrt_sub_clusters": "Reasons to share data and materials, Research data management"
+    "forrt_sub_clusters": "Reasons to share data and materials, Research data management",
+    "doi": "10.12788/fp.0412",
+    "in-clusters": true,
+    "pdf name": "",
+    "apa reference": ""
 }

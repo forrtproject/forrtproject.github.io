@@ -45,5 +45,9 @@
         "RStudio"
     ],
     "forrt_clusters_new": "Transparency and reproducibility in computation and analysis",
-    "forrt_sub_clusters": "Computational reproducibility"
+    "forrt_sub_clusters": "Computational reproducibility",
+    "doi": "",
+    "in-clusters": false,
+    "pdf name": "",
+    "apa reference": ""
 }

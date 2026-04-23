@@ -36,5 +36,9 @@
         "Open Science"
     ],
     "forrt_clusters_new": "Replication and meta-research, Conceptual and Statistical Knowledge",
-    "forrt_sub_clusters": "Meta-analyses, Effect sizes, statistical power, simulations, & confidence intervals."
+    "forrt_sub_clusters": "Meta-analyses, Effect sizes, statistical power, simulations, & confidence intervals.",
+    "doi": "10.1177/1745691614529796",
+    "in-clusters": true,
+    "pdf name": "",
+    "apa reference": ""
 }

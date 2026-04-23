@@ -36,5 +36,9 @@
         "Research"
     ],
     "forrt_clusters_new": "Transparency and reproducibility in computation and analysis, FAIR data and materials, Replication Crisis and Credibility Revolution",
-    "forrt_sub_clusters": "Proposed science improvement initiatives on statistics, measurement, teaching, data sharing, code sharing, pre-registration, & replication, Research data management, Computational reproducibility"
+    "forrt_sub_clusters": "Proposed science improvement initiatives on statistics, measurement, teaching, data sharing, code sharing, pre-registration, & replication, Research data management, Computational reproducibility",
+    "doi": "",
+    "in-clusters": false,
+    "pdf name": "",
+    "apa reference": ""
 }

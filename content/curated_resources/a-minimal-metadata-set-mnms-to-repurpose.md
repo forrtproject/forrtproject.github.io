@@ -45,5 +45,9 @@
         "In-vivo Data"
     ],
     "forrt_clusters_new": "FAIR data and materials",
-    "forrt_sub_clusters": "Metadata standards"
+    "forrt_sub_clusters": "Metadata standards",
+    "doi": "10.1038/s41684-024-01335-0",
+    "in-clusters": true,
+    "pdf name": "",
+    "apa reference": ""
 }

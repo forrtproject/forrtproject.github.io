@@ -36,5 +36,9 @@
         "Scientific Progress"
     ],
     "forrt_clusters_new": "Replication Crisis and Credibility Revolution",
-    "forrt_sub_clusters": "Ongoing debates (e.g., incentives for and against open science practices), Collection of large scale replications"
+    "forrt_sub_clusters": "Ongoing debates (e.g., incentives for and against open science practices), Collection of large scale replications",
+    "doi": "",
+    "in-clusters": false,
+    "pdf name": "",
+    "apa reference": ""
 }

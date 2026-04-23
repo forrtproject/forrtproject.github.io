@@ -32,5 +32,9 @@
         ""
     ],
     "forrt_clusters_new": "FAIR data and materials",
-    "forrt_sub_clusters": "Licenses and reuse"
+    "forrt_sub_clusters": "Licenses and reuse",
+    "doi": "10.1177/2515245917751886",
+    "in-clusters": true,
+    "pdf name": "",
+    "apa reference": ""
 }

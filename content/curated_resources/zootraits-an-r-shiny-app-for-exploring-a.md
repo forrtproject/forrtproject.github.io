@@ -47,5 +47,9 @@
         "Trait-Based Ecology"
     ],
     "forrt_clusters_new": "FAIR data and materials",
-    "forrt_sub_clusters": "Repositories, Research data management"
+    "forrt_sub_clusters": "Repositories, Research data management",
+    "doi": "10.1002/ece3.11334",
+    "in-clusters": false,
+    "pdf name": "",
+    "apa reference": ""
 }

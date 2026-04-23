@@ -38,5 +38,9 @@
         "Scientific Publishing"
     ],
     "forrt_clusters_new": "Publication Sharing",
-    "forrt_sub_clusters": "Why open access?"
+    "forrt_sub_clusters": "Why open access?",
+    "doi": "10.1371/journal.pone.0159614",
+    "in-clusters": true,
+    "pdf name": "",
+    "apa reference": ""
 }

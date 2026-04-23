@@ -33,5 +33,9 @@
         "Open Science"
     ],
     "forrt_clusters_new": "Replication and meta-research, Replication Crisis and Credibility Revolution",
-    "forrt_sub_clusters": "Conducting replication studies; challenges, limitations, and comparisons with the original study, Collection of large scale replications"
+    "forrt_sub_clusters": "Conducting replication studies; challenges, limitations, and comparisons with the original study, Collection of large scale replications",
+    "doi": "10.1016/j.jesp.2015.10.001",
+    "in-clusters": false,
+    "pdf name": "",
+    "apa reference": ""
 }

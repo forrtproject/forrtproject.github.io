@@ -39,5 +39,9 @@
         "Metascience"
     ],
     "forrt_clusters_new": "Conceptual and Statistical Knowledge",
-    "forrt_sub_clusters": "Questionable measurement practices (QMPs), validity & reliability issues., Philosophy of science"
+    "forrt_sub_clusters": "Questionable measurement practices (QMPs), validity & reliability issues., Philosophy of science",
+    "doi": "10.1140/epjds/s13688-023-00434-1",
+    "in-clusters": true,
+    "pdf name": "",
+    "apa reference": ""
 }

@@ -46,5 +46,9 @@
         "Guidelines"
     ],
     "forrt_clusters_new": "FAIR data and materials",
-    "forrt_sub_clusters": "Repositories, Research data management"
+    "forrt_sub_clusters": "Repositories, Research data management",
+    "doi": "10.1038/s41597-024-03406-w",
+    "in-clusters": true,
+    "pdf name": "",
+    "apa reference": ""
 }

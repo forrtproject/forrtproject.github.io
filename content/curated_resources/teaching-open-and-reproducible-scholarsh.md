@@ -103,5 +103,9 @@
         "Pedagogy; Higher Education; Graduate Education; Teaching Practices; Open Scholarship; Reproducible Scholarship"
     ],
     "forrt_clusters_new": "Ways of Working",
-    "forrt_sub_clusters": "Proposed science improvement initiatives on statistics, measurement, teaching, data sharing, code sharing, pre-registration, & replication, Research with students (under- and graduate)"
+    "forrt_sub_clusters": "Proposed science improvement initiatives on statistics, measurement, teaching, data sharing, code sharing, pre-registration, & replication, Research with students (under- and graduate)",
+    "doi": "10.1098/rsos.221255",
+    "in-clusters": true,
+    "pdf name": "",
+    "apa reference": ""
 }

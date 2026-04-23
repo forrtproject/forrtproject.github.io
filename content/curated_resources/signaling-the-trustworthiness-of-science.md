@@ -34,5 +34,9 @@
         "OSKB"
     ],
     "forrt_clusters_new": "Replication Crisis and Credibility Revolution",
-    "forrt_sub_clusters": "Proposed science improvement initiatives on statistics, measurement, teaching, data sharing, code sharing, pre-registration, & replication"
+    "forrt_sub_clusters": "Proposed science improvement initiatives on statistics, measurement, teaching, data sharing, code sharing, pre-registration, & replication",
+    "doi": "10.1073/pnas.1913039116",
+    "in-clusters": true,
+    "pdf name": "",
+    "apa reference": ""
 }

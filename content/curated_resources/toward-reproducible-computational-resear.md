@@ -43,5 +43,9 @@
         "Scientific Publishing"
     ],
     "forrt_clusters_new": "Academic Structures and Institutions, FAIR data and materials",
-    "forrt_sub_clusters": "Reasons to share data and materials, Research assessment, proposals, and reforms"
+    "forrt_sub_clusters": "Reasons to share data and materials, Research assessment, proposals, and reforms",
+    "doi": "10.1371/journal.pone.0067111",
+    "in-clusters": true,
+    "pdf name": "",
+    "apa reference": ""
 }

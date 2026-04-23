@@ -47,5 +47,9 @@
         "Code Sharing"
     ],
     "forrt_clusters_new": "Transparency and reproducibility in computation and analysis",
-    "forrt_sub_clusters": "Tools to check yourself and others"
+    "forrt_sub_clusters": "Tools to check yourself and others",
+    "doi": "10.1016/j.jclinepi.2023.10.015",
+    "in-clusters": false,
+    "pdf name": "",
+    "apa reference": ""
 }

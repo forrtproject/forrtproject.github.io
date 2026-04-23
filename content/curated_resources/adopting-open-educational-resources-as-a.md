@@ -37,5 +37,9 @@
         "Social Determinants of Learning"
     ],
     "forrt_clusters_new": "Academic Structures and Institutions, FAIR data and materials",
-    "forrt_sub_clusters": "Equity, Accessibility, FAIR principles applied to Education & Training"
+    "forrt_sub_clusters": "Equity, Accessibility, FAIR principles applied to Education & Training",
+    "doi": "10.1097/01.NEP.0000000000001170",
+    "in-clusters": true,
+    "pdf name": "",
+    "apa reference": ""
 }

@@ -34,5 +34,9 @@
         "Publishing"
     ],
     "forrt_clusters_new": "Publication Sharing",
-    "forrt_sub_clusters": "Open peer review"
+    "forrt_sub_clusters": "Open peer review",
+    "doi": "10.7554/eLife.32011",
+    "in-clusters": true,
+    "pdf name": "",
+    "apa reference": ""
 }

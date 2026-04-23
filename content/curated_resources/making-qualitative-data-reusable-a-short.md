@@ -42,5 +42,9 @@
         "Secondary Analysis"
     ],
     "forrt_clusters_new": "Qualitative Research",
-    "forrt_sub_clusters": "FAIR data and materials: Choosing to share data"
+    "forrt_sub_clusters": "FAIR data and materials: Choosing to share data",
+    "doi": "10.5281/zenodo.8160880",
+    "in-clusters": true,
+    "pdf name": "",
+    "apa reference": ""
 }

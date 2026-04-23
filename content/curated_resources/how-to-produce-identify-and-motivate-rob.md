@@ -39,5 +39,9 @@
         "Transparency"
     ],
     "forrt_clusters_new": "Replication Crisis and Credibility Revolution",
-    "forrt_sub_clusters": "Ongoing debates (e.g., incentives for and against open science practices)"
+    "forrt_sub_clusters": "Ongoing debates (e.g., incentives for and against open science practices)",
+    "doi": "10.1177/10731911241299723",
+    "in-clusters": true,
+    "pdf name": "",
+    "apa reference": ""
 }

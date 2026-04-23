@@ -45,5 +45,9 @@
         "Theft"
     ],
     "forrt_clusters_new": "Pre-analysis Planning, Replication Crisis and Credibility Revolution",
-    "forrt_sub_clusters": "Ongoing debates (e.g., incentives for and against open science practices), Preregistration"
+    "forrt_sub_clusters": "Ongoing debates (e.g., incentives for and against open science practices), Preregistration",
+    "doi": "10.1371/journal.pone.0226443",
+    "in-clusters": true,
+    "pdf name": "",
+    "apa reference": ""
 }

@@ -33,5 +33,9 @@
         "Open Science"
     ],
     "forrt_clusters_new": "Replication and meta-research",
-    "forrt_sub_clusters": "Conducting replication studies; challenges, limitations, and comparisons with the original study"
+    "forrt_sub_clusters": "Conducting replication studies; challenges, limitations, and comparisons with the original study",
+    "doi": "10.1037/a0015108",
+    "in-clusters": true,
+    "pdf name": "",
+    "apa reference": ""
 }

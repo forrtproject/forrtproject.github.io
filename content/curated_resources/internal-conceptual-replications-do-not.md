@@ -34,5 +34,9 @@
         "Open Science"
     ],
     "forrt_clusters_new": "Replication and meta-research",
-    "forrt_sub_clusters": "Direct vs. conceptual replications"
+    "forrt_sub_clusters": "Direct vs. conceptual replications",
+    "doi": "10.3758/s13423-016-1030-9",
+    "in-clusters": true,
+    "pdf name": "",
+    "apa reference": ""
 }

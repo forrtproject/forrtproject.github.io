@@ -39,5 +39,9 @@
         "Researchers"
     ],
     "forrt_clusters_new": "Publication Sharing, Academic Structures and Institutions",
-    "forrt_sub_clusters": "Why open access?, Research assessment, proposals, and reforms"
+    "forrt_sub_clusters": "Why open access?, Research assessment, proposals, and reforms",
+    "doi": "",
+    "in-clusters": false,
+    "pdf name": "",
+    "apa reference": ""
 }

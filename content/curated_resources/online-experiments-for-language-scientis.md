@@ -31,5 +31,9 @@
         "Programming"
     ],
     "forrt_clusters_new": "FAIR data and materials",
-    "forrt_sub_clusters": "Research data management"
+    "forrt_sub_clusters": "Research data management",
+    "doi": "",
+    "in-clusters": false,
+    "pdf name": "",
+    "apa reference": ""
 }

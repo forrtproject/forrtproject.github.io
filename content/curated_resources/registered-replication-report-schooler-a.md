@@ -36,5 +36,9 @@
         "Registered Reports"
     ],
     "forrt_clusters_new": "Pre-analysis Planning, Replication and meta-research",
-    "forrt_sub_clusters": "Registered Replication Reports, Registered reports"
+    "forrt_sub_clusters": "Registered Replication Reports, Registered reports",
+    "doi": "10.1177/1745691614545653",
+    "in-clusters": true,
+    "pdf name": "",
+    "apa reference": ""
 }

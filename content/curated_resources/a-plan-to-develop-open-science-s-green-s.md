@@ -38,5 +38,9 @@
         "Equality"
     ],
     "forrt_clusters_new": "Academic Structures and Institutions",
-    "forrt_sub_clusters": "Socially Responsible Research"
+    "forrt_sub_clusters": "Socially Responsible Research",
+    "doi": "",
+    "in-clusters": false,
+    "pdf name": "",
+    "apa reference": ""
 }

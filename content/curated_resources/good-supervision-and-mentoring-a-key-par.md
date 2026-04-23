@@ -34,5 +34,9 @@
         "Responsible Research Culture"
     ],
     "forrt_clusters_new": "Academic Structures and Institutions, Ways of Working",
-    "forrt_sub_clusters": "Research with students (under- and graduate), Research assessment, proposals, and reforms"
+    "forrt_sub_clusters": "Research with students (under- and graduate), Research assessment, proposals, and reforms",
+    "doi": "",
+    "in-clusters": false,
+    "pdf name": "",
+    "apa reference": ""
 }

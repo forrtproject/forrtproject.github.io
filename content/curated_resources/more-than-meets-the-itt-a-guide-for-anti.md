@@ -36,5 +36,9 @@
         "Bias"
     ],
     "forrt_clusters_new": "Conceptual and Statistical Knowledge",
-    "forrt_sub_clusters": "The logic of null hypothesis testing, p-values, Type I and II errors (and when and why they might happen)., Effect sizes, statistical power, simulations, & confidence intervals."
+    "forrt_sub_clusters": "The logic of null hypothesis testing, p-values, Type I and II errors (and when and why they might happen)., Effect sizes, statistical power, simulations, & confidence intervals.",
+    "doi": "10.1017/XPS.2024.1",
+    "in-clusters": true,
+    "pdf name": "",
+    "apa reference": ""
 }

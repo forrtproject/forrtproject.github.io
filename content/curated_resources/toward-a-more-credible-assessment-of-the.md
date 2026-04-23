@@ -34,5 +34,9 @@
         "Meta Analyst"
     ],
     "forrt_clusters_new": "Replication and meta-research",
-    "forrt_sub_clusters": "Conducting replication studies; challenges, limitations, and comparisons with the original study"
+    "forrt_sub_clusters": "Conducting replication studies; challenges, limitations, and comparisons with the original study",
+    "doi": "10.1073/pnas.2404035121",
+    "in-clusters": true,
+    "pdf name": "",
+    "apa reference": ""
 }

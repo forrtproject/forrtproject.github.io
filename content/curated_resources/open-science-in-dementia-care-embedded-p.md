@@ -39,5 +39,9 @@
         "Dementia Care"
     ],
     "forrt_clusters_new": "Academic Structures and Institutions",
-    "forrt_sub_clusters": "Socially Responsible Research"
+    "forrt_sub_clusters": "Socially Responsible Research",
+    "doi": "10.1037/pag0000644",
+    "in-clusters": true,
+    "pdf name": "",
+    "apa reference": ""
 }

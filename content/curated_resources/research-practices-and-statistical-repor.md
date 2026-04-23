@@ -33,5 +33,9 @@
         "Reproducibility"
     ],
     "forrt_clusters_new": "Replication and meta-research, Replication Crisis and Credibility Revolution",
-    "forrt_sub_clusters": "Meta-research, Questionable research practices & their prevalence"
+    "forrt_sub_clusters": "Meta-research, Questionable research practices & their prevalence",
+    "doi": "10.1098/rsos.190738",
+    "in-clusters": true,
+    "pdf name": "",
+    "apa reference": ""
 }

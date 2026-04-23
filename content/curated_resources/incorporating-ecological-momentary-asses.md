@@ -44,5 +44,9 @@
         "Transferability"
     ],
     "forrt_clusters_new": "Conceptual and Statistical Knowledge",
-    "forrt_sub_clusters": "Research design, sampling methods, & its implications for inferences."
+    "forrt_sub_clusters": "Research design, sampling methods, & its implications for inferences.",
+    "doi": "10.1037/pag0000646",
+    "in-clusters": true,
+    "pdf name": "",
+    "apa reference": ""
 }

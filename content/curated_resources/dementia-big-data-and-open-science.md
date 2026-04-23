@@ -42,5 +42,9 @@
         "Security"
     ],
     "forrt_clusters_new": "FAIR data and materials, Ways of Working",
-    "forrt_sub_clusters": "Reasons to share data and materials, Public and Private Partnerships"
+    "forrt_sub_clusters": "Reasons to share data and materials, Public and Private Partnerships",
+    "doi": "",
+    "in-clusters": false,
+    "pdf name": "",
+    "apa reference": ""
 }

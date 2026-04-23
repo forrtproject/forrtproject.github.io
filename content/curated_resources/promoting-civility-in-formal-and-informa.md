@@ -46,5 +46,9 @@
         "Research Transparency"
     ],
     "forrt_clusters_new": "Ways of Working",
-    "forrt_sub_clusters": "Big team science"
+    "forrt_sub_clusters": "Big team science",
+    "doi": "10.31234/osf.io/rfkyu",
+    "in-clusters": true,
+    "pdf name": "",
+    "apa reference": ""
 }

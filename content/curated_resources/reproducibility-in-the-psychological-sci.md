@@ -36,5 +36,9 @@
         "Open Science"
     ],
     "forrt_clusters_new": "Replication and meta-research, Replication Crisis and Credibility Revolution",
-    "forrt_sub_clusters": "History of the replication crisis & credibility revolution, Collection of large scale replications, Meta-research"
+    "forrt_sub_clusters": "History of the replication crisis & credibility revolution, Collection of large scale replications, Meta-research",
+    "doi": "",
+    "in-clusters": false,
+    "pdf name": "",
+    "apa reference": ""
 }

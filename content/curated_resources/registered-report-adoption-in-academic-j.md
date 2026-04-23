@@ -39,5 +39,9 @@
         "Publication Bias"
     ],
     "forrt_clusters_new": "Pre-analysis Planning",
-    "forrt_sub_clusters": "Registered reports"
+    "forrt_sub_clusters": "Registered reports",
+    "doi": "10.1007/s11192-023-04896-y",
+    "in-clusters": false,
+    "pdf name": "",
+    "apa reference": ""
 }

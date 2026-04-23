@@ -54,5 +54,9 @@
         "Genome-wide Association Study"
     ],
     "forrt_clusters_new": "Conceptual and Statistical Knowledge",
-    "forrt_sub_clusters": "Research design, sampling methods, & its implications for inferences., Effect sizes, statistical power, simulations, & confidence intervals."
+    "forrt_sub_clusters": "Research design, sampling methods, & its implications for inferences., Effect sizes, statistical power, simulations, & confidence intervals.",
+    "doi": "10.1007/s10519-023-10152-z",
+    "in-clusters": false,
+    "pdf name": "",
+    "apa reference": ""
 }

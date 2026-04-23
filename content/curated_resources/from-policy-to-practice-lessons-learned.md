@@ -47,5 +47,9 @@
         "Reproducibility"
     ],
     "forrt_clusters_new": "Academic Structures and Institutions",
-    "forrt_sub_clusters": "Research assessment, proposals, and reforms"
+    "forrt_sub_clusters": "Research assessment, proposals, and reforms",
+    "doi": "10.1371/journal.pcbi.1011626",
+    "in-clusters": true,
+    "pdf name": "",
+    "apa reference": ""
 }

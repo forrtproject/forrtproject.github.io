@@ -39,5 +39,9 @@
         "Open Science"
     ],
     "forrt_clusters_new": "FAIR data and materials",
-    "forrt_sub_clusters": "Reasons not to share: Privacy and security considerations"
+    "forrt_sub_clusters": "Reasons not to share: Privacy and security considerations",
+    "doi": "10.1177/2515245917744281",
+    "in-clusters": true,
+    "pdf name": "",
+    "apa reference": ""
 }

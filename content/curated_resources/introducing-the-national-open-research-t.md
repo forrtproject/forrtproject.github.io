@@ -36,5 +36,9 @@
         "Education"
     ],
     "forrt_clusters_new": "FAIR data and materials, Ways of Working",
-    "forrt_sub_clusters": "Research with students (under- and graduate), FAIR principles applied to Education & Training"
+    "forrt_sub_clusters": "Research with students (under- and graduate), FAIR principles applied to Education & Training",
+    "doi": "",
+    "in-clusters": false,
+    "pdf name": "",
+    "apa reference": ""
 }

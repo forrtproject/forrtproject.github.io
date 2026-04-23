@@ -37,5 +37,9 @@
         "OSCA Awards 2025"
     ],
     "forrt_clusters_new": "Conceptual and Statistical Knowledge, Replication Crisis and Credibility Revolution",
-    "forrt_sub_clusters": "Proposed science improvement initiatives on statistics, measurement, teaching, data sharing, code sharing, pre-registration, & replication, Exploratory and confirmatory analyses"
+    "forrt_sub_clusters": "Proposed science improvement initiatives on statistics, measurement, teaching, data sharing, code sharing, pre-registration, & replication, Exploratory and confirmatory analyses",
+    "doi": "",
+    "in-clusters": false,
+    "pdf name": "",
+    "apa reference": ""
 }

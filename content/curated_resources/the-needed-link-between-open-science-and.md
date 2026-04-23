@@ -44,5 +44,9 @@
         "science diplomacy"
     ],
     "forrt_clusters_new": "Academic Structures and Institutions",
-    "forrt_sub_clusters": "Socially Responsible Research, Decolonizing Research Practices"
+    "forrt_sub_clusters": "Socially Responsible Research, Decolonizing Research Practices",
+    "doi": "10.3389/frma.2024.1355393",
+    "in-clusters": true,
+    "pdf name": "",
+    "apa reference": ""
 }

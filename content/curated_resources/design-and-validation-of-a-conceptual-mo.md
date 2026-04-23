@@ -40,5 +40,9 @@
         "Validation"
     ],
     "forrt_clusters_new": "Transparency and reproducibility in computation and analysis",
-    "forrt_sub_clusters": "Analysis and reporting in qualitative research"
+    "forrt_sub_clusters": "Analysis and reporting in qualitative research",
+    "doi": "10.1186/s12913-024-10764-z",
+    "in-clusters": true,
+    "pdf name": "",
+    "apa reference": ""
 }

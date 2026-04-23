@@ -36,5 +36,9 @@
         "Social Interaction"
     ],
     "forrt_clusters_new": "Replication Crisis and Credibility Revolution",
-    "forrt_sub_clusters": "Collection of large scale replications, Ongoing debates (e.g., incentives for and against open science practices)"
+    "forrt_sub_clusters": "Collection of large scale replications, Ongoing debates (e.g., incentives for and against open science practices)",
+    "doi": "10.1017/SJP.2023.6",
+    "in-clusters": true,
+    "pdf name": "",
+    "apa reference": ""
 }

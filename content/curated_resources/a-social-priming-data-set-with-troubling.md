@@ -37,5 +37,9 @@
         "Open Science"
     ],
     "forrt_clusters_new": "Replication and meta-research, Replication Crisis and Credibility Revolution",
-    "forrt_sub_clusters": "Conducting replication studies; challenges, limitations, and comparisons with the original study, Scientific Misconduct: Fabrication and Falsification"
+    "forrt_sub_clusters": "Conducting replication studies; challenges, limitations, and comparisons with the original study, Scientific Misconduct: Fabrication and Falsification",
+    "doi": "10.1080/01973533.2015.1124767",
+    "in-clusters": true,
+    "pdf name": "",
+    "apa reference": ""
 }

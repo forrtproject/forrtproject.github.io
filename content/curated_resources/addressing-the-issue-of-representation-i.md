@@ -32,5 +32,9 @@
         "Psychology Education; Representation in Science; Diversity & Inclusion; Student Engagement; Higher Education; Undergraduate Teaching; Equity in Academia; Gender Bias; \nPedagogy; Academic Reform"
     ],
     "forrt_clusters_new": "Academic Structures and Institutions",
-    "forrt_sub_clusters": "Inclusion, Equity"
+    "forrt_sub_clusters": "Inclusion, Equity",
+    "doi": "",
+    "in-clusters": false,
+    "pdf name": "",
+    "apa reference": ""
 }

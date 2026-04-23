@@ -50,5 +50,9 @@
         "Researchers"
     ],
     "forrt_clusters_new": "FAIR data and materials, Ways of Working",
-    "forrt_sub_clusters": "Research data management, Research with students (under- and graduate)"
+    "forrt_sub_clusters": "Research data management, Research with students (under- and graduate)",
+    "doi": "",
+    "in-clusters": false,
+    "pdf name": "",
+    "apa reference": ""
 }

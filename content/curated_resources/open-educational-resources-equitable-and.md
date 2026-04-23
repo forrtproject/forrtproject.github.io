@@ -40,5 +40,9 @@
         "Textbooks"
     ],
     "forrt_clusters_new": "Academic Structures and Institutions",
-    "forrt_sub_clusters": "Accessibility, Equity"
+    "forrt_sub_clusters": "Accessibility, Equity",
+    "doi": "10.1097/01.NEP.0000000000001180",
+    "in-clusters": true,
+    "pdf name": "",
+    "apa reference": ""
 }

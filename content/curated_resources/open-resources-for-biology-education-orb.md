@@ -50,5 +50,9 @@
         "Life Sciences"
     ],
     "forrt_clusters_new": "Academic Structures and Institutions, FAIR data and materials",
-    "forrt_sub_clusters": "FAIR principles applied to Education & Training, Accessibility"
+    "forrt_sub_clusters": "FAIR principles applied to Education & Training, Accessibility",
+    "doi": "10.1128/jmbe.00203-23",
+    "in-clusters": true,
+    "pdf name": "",
+    "apa reference": ""
 }

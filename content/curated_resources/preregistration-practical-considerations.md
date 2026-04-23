@@ -38,5 +38,9 @@
         "Preregistration"
     ],
     "forrt_clusters_new": "Pre-analysis Planning",
-    "forrt_sub_clusters": "Understanding the types of preregistration and writing one., Study Design"
+    "forrt_sub_clusters": "Understanding the types of preregistration and writing one., Study Design",
+    "doi": "10.1044/2022_JSLHR-22-00317",
+    "in-clusters": true,
+    "pdf name": "",
+    "apa reference": ""
 }

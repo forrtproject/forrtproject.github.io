@@ -43,5 +43,9 @@
         "Open Science"
     ],
     "forrt_clusters_new": "Conceptual and Statistical Knowledge",
-    "forrt_sub_clusters": "Exploratory and confirmatory analyses"
+    "forrt_sub_clusters": "Exploratory and confirmatory analyses",
+    "doi": "10.1177/1745691612463078",
+    "in-clusters": true,
+    "pdf name": "",
+    "apa reference": ""
 }

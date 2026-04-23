@@ -37,5 +37,9 @@
         "Open Science"
     ],
     "forrt_clusters_new": "Replication Crisis and Credibility Revolution",
-    "forrt_sub_clusters": "Ethical considerations for improved practices"
+    "forrt_sub_clusters": "Ethical considerations for improved practices",
+    "doi": "",
+    "in-clusters": false,
+    "pdf name": "",
+    "apa reference": ""
 }

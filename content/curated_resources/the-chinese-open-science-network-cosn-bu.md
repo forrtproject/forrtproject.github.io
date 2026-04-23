@@ -54,5 +54,9 @@
         "Equity-Diversity-Inclusion (EDI)"
     ],
     "forrt_clusters_new": "Academic Structures and Institutions",
-    "forrt_sub_clusters": "Equity, Inclusion, Diversity in Academia"
+    "forrt_sub_clusters": "Equity, Inclusion, Diversity in Academia",
+    "doi": "10.1177/25152459221144986",
+    "in-clusters": true,
+    "pdf name": "",
+    "apa reference": ""
 }

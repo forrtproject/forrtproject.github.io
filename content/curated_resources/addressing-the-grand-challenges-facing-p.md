@@ -33,5 +33,9 @@
         "Psychology; Diversity; Research Integrity; Collaboration"
     ],
     "forrt_clusters_new": "Academic Structures and Institutions",
-    "forrt_sub_clusters": "Diversity in Academia, Equity"
+    "forrt_sub_clusters": "Diversity in Academia, Equity",
+    "doi": "",
+    "in-clusters": false,
+    "pdf name": "",
+    "apa reference": ""
 }

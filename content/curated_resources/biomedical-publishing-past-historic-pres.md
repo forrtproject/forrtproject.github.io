@@ -38,5 +38,9 @@
         "Preprints"
     ],
     "forrt_clusters_new": "Publication Sharing",
-    "forrt_sub_clusters": "Alternatives to legacy journals"
+    "forrt_sub_clusters": "Alternatives to legacy journals",
+    "doi": "10.1371/journal.pbio.3002234",
+    "in-clusters": true,
+    "pdf name": "",
+    "apa reference": ""
 }

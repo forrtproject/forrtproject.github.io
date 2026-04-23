@@ -40,5 +40,9 @@
         "Open Science"
     ],
     "forrt_clusters_new": "Replication and meta-research",
-    "forrt_sub_clusters": "The politics of replicating famous studies, Conducting replication studies; challenges, limitations, and comparisons with the original study"
+    "forrt_sub_clusters": "The politics of replicating famous studies, Conducting replication studies; challenges, limitations, and comparisons with the original study",
+    "doi": "10.1037/a0022790",
+    "in-clusters": true,
+    "pdf name": "",
+    "apa reference": ""
 }

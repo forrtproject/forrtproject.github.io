@@ -36,5 +36,9 @@
         "Research Quality"
     ],
     "forrt_clusters_new": "Academic Structures and Institutions",
-    "forrt_sub_clusters": "Citation Politics & Practices, Structures and incentives in academia"
+    "forrt_sub_clusters": "Citation Politics & Practices, Structures and incentives in academia",
+    "doi": "10.1162/qss_c_00274",
+    "in-clusters": true,
+    "pdf name": "",
+    "apa reference": ""
 }

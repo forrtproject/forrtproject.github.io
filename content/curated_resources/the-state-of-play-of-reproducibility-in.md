@@ -40,5 +40,9 @@
         "Reproducibility Policy"
     ],
     "forrt_clusters_new": "Transparency and reproducibility in computation and analysis",
-    "forrt_sub_clusters": "Computational reproducibility"
+    "forrt_sub_clusters": "Computational reproducibility",
+    "doi": "10.1080/00031305.2022.2131625",
+    "in-clusters": true,
+    "pdf name": "",
+    "apa reference": ""
 }

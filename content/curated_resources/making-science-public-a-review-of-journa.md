@@ -54,5 +54,9 @@
         "COVID-19"
     ],
     "forrt_clusters_new": "Ways of Working",
-    "forrt_sub_clusters": "Science communication and public outreach"
+    "forrt_sub_clusters": "Science communication and public outreach",
+    "doi": "10.12688/f1000research.133710.1",
+    "in-clusters": true,
+    "pdf name": "",
+    "apa reference": ""
 }

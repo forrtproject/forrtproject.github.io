@@ -36,5 +36,9 @@
         "ABCD"
     ],
     "forrt_clusters_new": "FAIR data and materials",
-    "forrt_sub_clusters": "Research data management, Metadata standards"
+    "forrt_sub_clusters": "Research data management, Metadata standards",
+    "doi": "10.1016/j.dcn.2024.101388",
+    "in-clusters": false,
+    "pdf name": "",
+    "apa reference": ""
 }

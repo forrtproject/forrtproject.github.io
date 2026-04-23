@@ -45,5 +45,9 @@
         "Literature Review"
     ],
     "forrt_clusters_new": "Transparency and reproducibility in computation and analysis",
-    "forrt_sub_clusters": "Tools to check yourself and others, Analysis and reporting in qualitative research"
+    "forrt_sub_clusters": "Tools to check yourself and others, Analysis and reporting in qualitative research",
+    "doi": "10.1007/s00330-023-10487-5",
+    "in-clusters": false,
+    "pdf name": "",
+    "apa reference": ""
 }

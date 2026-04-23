@@ -78,5 +78,9 @@
         "Electronic Health Records"
     ],
     "forrt_clusters_new": "Transparency and reproducibility in computation and analysis",
-    "forrt_sub_clusters": "Free and open source software"
+    "forrt_sub_clusters": "Free and open source software",
+    "doi": "10.1002/pds.5815",
+    "in-clusters": false,
+    "pdf name": "",
+    "apa reference": ""
 }

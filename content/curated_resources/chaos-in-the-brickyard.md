@@ -35,5 +35,9 @@
         "Open Science"
     ],
     "forrt_clusters_new": "Replication Crisis and Credibility Revolution",
-    "forrt_sub_clusters": "History of the replication crisis & credibility revolution"
+    "forrt_sub_clusters": "History of the replication crisis & credibility revolution",
+    "doi": "10.1126/science.142.3590.339",
+    "in-clusters": true,
+    "pdf name": "",
+    "apa reference": ""
 }

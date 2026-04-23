@@ -34,5 +34,9 @@
         "Scientific Presentations"
     ],
     "forrt_clusters_new": "Transparency and reproducibility in computation and analysis",
-    "forrt_sub_clusters": "Tools to check yourself and others"
+    "forrt_sub_clusters": "Tools to check yourself and others",
+    "doi": "",
+    "in-clusters": false,
+    "pdf name": "",
+    "apa reference": ""
 }

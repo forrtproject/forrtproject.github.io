@@ -40,5 +40,9 @@
         "Reproducibility"
     ],
     "forrt_clusters_new": "Pre-analysis Planning, Transparency and reproducibility in computation and analysis",
-    "forrt_sub_clusters": "Computational reproducibility, Registered reports"
+    "forrt_sub_clusters": "Computational reproducibility, Registered reports",
+    "doi": "",
+    "in-clusters": false,
+    "pdf name": "",
+    "apa reference": ""
 }

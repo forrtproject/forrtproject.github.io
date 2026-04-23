@@ -40,5 +40,9 @@
         "Rodents"
     ],
     "forrt_clusters_new": "Conceptual and Statistical Knowledge, Replication Crisis and Credibility Revolution",
-    "forrt_sub_clusters": "Research design, sampling methods, & its implications for inferences., Questionable research practices & their prevalence"
+    "forrt_sub_clusters": "Research design, sampling methods, & its implications for inferences., Questionable research practices & their prevalence",
+    "doi": "10.1371/journal.pbio.2000598",
+    "in-clusters": true,
+    "pdf name": "",
+    "apa reference": ""
 }

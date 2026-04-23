@@ -36,5 +36,9 @@
         "School Psychology"
     ],
     "forrt_clusters_new": "Pre-analysis Planning",
-    "forrt_sub_clusters": "Registered reports"
+    "forrt_sub_clusters": "Registered reports",
+    "doi": "10.1016/j.jsp.2024.101294",
+    "in-clusters": false,
+    "pdf name": "",
+    "apa reference": ""
 }

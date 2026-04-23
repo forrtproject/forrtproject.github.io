@@ -40,5 +40,9 @@
         "Students"
     ],
     "forrt_clusters_new": "Replication Crisis and Credibility Revolution, Ways of Working",
-    "forrt_sub_clusters": "Research with students (under- and graduate), Questionable research practices & their prevalence"
+    "forrt_sub_clusters": "Research with students (under- and graduate), Questionable research practices & their prevalence",
+    "doi": "10.32872/spb.9411",
+    "in-clusters": true,
+    "pdf name": "",
+    "apa reference": ""
 }

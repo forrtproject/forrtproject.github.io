@@ -37,5 +37,9 @@
         "Open Science"
     ],
     "forrt_clusters_new": "Academic Structures and Institutions",
-    "forrt_sub_clusters": "Research assessment, proposals, and reforms, Inclusion"
+    "forrt_sub_clusters": "Research assessment, proposals, and reforms, Inclusion",
+    "doi": "10.1037/spq0000623",
+    "in-clusters": true,
+    "pdf name": "",
+    "apa reference": ""
 }

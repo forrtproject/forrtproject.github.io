@@ -34,5 +34,9 @@
         "Reproducibility Crisis and Credibility Revolution"
     ],
     "forrt_clusters_new": "Replication and meta-research",
-    "forrt_sub_clusters": "The politics of replicating famous studies"
+    "forrt_sub_clusters": "The politics of replicating famous studies",
+    "doi": "",
+    "in-clusters": false,
+    "pdf name": "",
+    "apa reference": ""
 }

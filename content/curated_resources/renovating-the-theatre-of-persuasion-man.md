@@ -38,5 +38,9 @@
         "Scientific Reform"
     ],
     "forrt_clusters_new": "Replication Crisis and Credibility Revolution",
-    "forrt_sub_clusters": "History of the replication crisis & credibility revolution"
+    "forrt_sub_clusters": "History of the replication crisis & credibility revolution",
+    "doi": "10.31222/osf.io/vhmk2",
+    "in-clusters": true,
+    "pdf name": "",
+    "apa reference": ""
 }

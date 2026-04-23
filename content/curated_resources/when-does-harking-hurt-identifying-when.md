@@ -49,5 +49,9 @@
         "Replication Crisis"
     ],
     "forrt_clusters_new": "Pre-analysis Planning",
-    "forrt_sub_clusters": "Purpose of pre-analysis planning"
+    "forrt_sub_clusters": "Purpose of pre-analysis planning",
+    "doi": "10.1037/gpr0000128",
+    "in-clusters": true,
+    "pdf name": "",
+    "apa reference": ""
 }

@@ -49,5 +49,9 @@
         "Secondary Data Preregistration"
     ],
     "forrt_clusters_new": "Pre-analysis Planning, Qualitative Research",
-    "forrt_sub_clusters": "Understanding the types of preregistration and writing one., Secondary data analysis"
+    "forrt_sub_clusters": "Understanding the types of preregistration and writing one., Secondary data analysis",
+    "doi": "",
+    "in-clusters": false,
+    "pdf name": "",
+    "apa reference": ""
 }

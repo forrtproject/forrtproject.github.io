@@ -34,5 +34,9 @@
         "Preregistration"
     ],
     "forrt_clusters_new": "Pre-analysis Planning",
-    "forrt_sub_clusters": "Preregistration, Purpose of pre-analysis planning"
+    "forrt_sub_clusters": "Preregistration, Purpose of pre-analysis planning",
+    "doi": "10.1017/S1049096515000189",
+    "in-clusters": true,
+    "pdf name": "",
+    "apa reference": ""
 }

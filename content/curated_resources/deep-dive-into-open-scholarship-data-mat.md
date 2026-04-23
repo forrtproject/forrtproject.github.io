@@ -38,5 +38,9 @@
         "Research Best Practices"
     ],
     "forrt_clusters_new": "FAIR data and materials",
-    "forrt_sub_clusters": "Reasons to share data and materials, Research data management"
+    "forrt_sub_clusters": "Reasons to share data and materials, Research data management",
+    "doi": "",
+    "in-clusters": false,
+    "pdf name": "",
+    "apa reference": ""
 }

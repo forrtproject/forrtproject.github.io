@@ -33,5 +33,9 @@
         "Publishing"
     ],
     "forrt_clusters_new": "Replication and meta-research, Pre-analysis Planning",
-    "forrt_sub_clusters": "Registered reports, Meta-research"
+    "forrt_sub_clusters": "Registered reports, Meta-research",
+    "doi": "",
+    "in-clusters": false,
+    "pdf name": "",
+    "apa reference": ""
 }

@@ -40,5 +40,9 @@
         "Equity"
     ],
     "forrt_clusters_new": "Academic Structures and Institutions, Replication Crisis and Credibility Revolution",
-    "forrt_sub_clusters": "History of the replication crisis & credibility revolution, Inclusion"
+    "forrt_sub_clusters": "History of the replication crisis & credibility revolution, Inclusion",
+    "doi": "",
+    "in-clusters": false,
+    "pdf name": "",
+    "apa reference": ""
 }

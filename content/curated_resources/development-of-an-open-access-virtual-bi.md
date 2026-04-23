@@ -38,5 +38,9 @@
         "Online Teaching"
     ],
     "forrt_clusters_new": "FAIR data and materials",
-    "forrt_sub_clusters": "FAIR principles applied to Education & Training"
+    "forrt_sub_clusters": "FAIR principles applied to Education & Training",
+    "doi": "10.1093/ajcp/aqad166",
+    "in-clusters": true,
+    "pdf name": "",
+    "apa reference": ""
 }

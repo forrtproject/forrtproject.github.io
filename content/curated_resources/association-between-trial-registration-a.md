@@ -45,5 +45,9 @@
         "Reproducibility"
     ],
     "forrt_clusters_new": "Pre-analysis Planning, Replication and meta-research",
-    "forrt_sub_clusters": "Meta-analyses, Preregistration"
+    "forrt_sub_clusters": "Meta-analyses, Preregistration",
+    "doi": "10.1186/s12916-016-0639-x",
+    "in-clusters": true,
+    "pdf name": "",
+    "apa reference": ""
 }

@@ -42,5 +42,9 @@
         "Source Code"
     ],
     "forrt_clusters_new": "Transparency and reproducibility in computation and analysis",
-    "forrt_sub_clusters": "Computational reproducibility"
+    "forrt_sub_clusters": "Computational reproducibility",
+    "doi": "10.1371/journal.pcbi.1003285",
+    "in-clusters": true,
+    "pdf name": "",
+    "apa reference": ""
 }

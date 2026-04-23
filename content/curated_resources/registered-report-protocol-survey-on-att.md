@@ -41,5 +41,9 @@
         "Psychometrics"
     ],
     "forrt_clusters_new": "Pre-analysis Planning",
-    "forrt_sub_clusters": "Registered reports, Preregistration"
+    "forrt_sub_clusters": "Registered reports, Preregistration",
+    "doi": "10.1371/journal.pone.0253950",
+    "in-clusters": true,
+    "pdf name": "",
+    "apa reference": ""
 }

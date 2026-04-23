@@ -40,5 +40,9 @@
         "Federal Research"
     ],
     "forrt_clusters_new": "Academic Structures and Institutions",
-    "forrt_sub_clusters": "Socially Responsible Research"
+    "forrt_sub_clusters": "Socially Responsible Research",
+    "doi": "10.1038/d41586-023-00019-y",
+    "in-clusters": true,
+    "pdf name": "",
+    "apa reference": ""
 }

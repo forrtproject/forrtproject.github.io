@@ -36,5 +36,9 @@
         "Power Analysis Tool"
     ],
     "forrt_clusters_new": "Pre-analysis Planning",
-    "forrt_sub_clusters": "Study Design"
+    "forrt_sub_clusters": "Study Design",
+    "doi": "",
+    "in-clusters": false,
+    "pdf name": "",
+    "apa reference": ""
 }

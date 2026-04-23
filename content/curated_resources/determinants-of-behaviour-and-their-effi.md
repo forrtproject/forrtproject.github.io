@@ -34,5 +34,9 @@
         "Psychology"
     ],
     "forrt_clusters_new": "Academic Structures and Institutions",
-    "forrt_sub_clusters": "Socially Responsible Research"
+    "forrt_sub_clusters": "Socially Responsible Research",
+    "doi": "10.1038/s44159-024-00305-0",
+    "in-clusters": true,
+    "pdf name": "",
+    "apa reference": ""
 }

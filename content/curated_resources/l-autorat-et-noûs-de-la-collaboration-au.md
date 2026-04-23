@@ -38,5 +38,9 @@
         "authorship; research ethics; publication ethics; research integrity"
     ],
     "forrt_clusters_new": "Academic Structures and Institutions",
-    "forrt_sub_clusters": "Structures and incentives in academia, Citation Politics & Practices"
+    "forrt_sub_clusters": "Structures and incentives in academia, Citation Politics & Practices",
+    "doi": "",
+    "in-clusters": false,
+    "pdf name": "",
+    "apa reference": ""
 }

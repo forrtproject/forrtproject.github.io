@@ -41,5 +41,9 @@
         "Exploratory Analysis"
     ],
     "forrt_clusters_new": "Pre-analysis Planning",
-    "forrt_sub_clusters": "Purpose of pre-analysis planning"
+    "forrt_sub_clusters": "Purpose of pre-analysis planning",
+    "doi": "10.1017/S1366728921000031",
+    "in-clusters": true,
+    "pdf name": "",
+    "apa reference": ""
 }

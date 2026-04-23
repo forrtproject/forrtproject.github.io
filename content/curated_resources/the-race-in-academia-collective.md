@@ -39,5 +39,9 @@
         "Decolonialisation"
     ],
     "forrt_clusters_new": "Academic Structures and Institutions",
-    "forrt_sub_clusters": "Racism in science, Decolonizing Research Practices, Inclusion"
+    "forrt_sub_clusters": "Racism in science, Decolonizing Research Practices, Inclusion",
+    "doi": "",
+    "in-clusters": false,
+    "pdf name": "",
+    "apa reference": ""
 }

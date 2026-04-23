@@ -34,5 +34,9 @@
         "Open Science"
     ],
     "forrt_clusters_new": "Replication Crisis and Credibility Revolution",
-    "forrt_sub_clusters": "Collection of large scale replications"
+    "forrt_sub_clusters": "Collection of large scale replications",
+    "doi": "10.1126/science.aad9163",
+    "in-clusters": true,
+    "pdf name": "",
+    "apa reference": ""
 }

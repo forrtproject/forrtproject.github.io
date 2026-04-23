@@ -34,5 +34,9 @@
         "Teaching; Pedagogy; Critical Skills; Evidence Based Practice; Module"
     ],
     "forrt_clusters_new": "Ways of Working",
-    "forrt_sub_clusters": "Research with students (under- and graduate)"
+    "forrt_sub_clusters": "Research with students (under- and graduate)",
+    "doi": "",
+    "in-clusters": false,
+    "pdf name": "",
+    "apa reference": ""
 }

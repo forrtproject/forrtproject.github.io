@@ -44,5 +44,9 @@
         ""
     ],
     "forrt_clusters_new": "Conceptual and Statistical Knowledge",
-    "forrt_sub_clusters": "Effect sizes, statistical power, simulations, & confidence intervals., Limitations and benefits of NHST, Bayesian & Likelihood approaches."
+    "forrt_sub_clusters": "Effect sizes, statistical power, simulations, & confidence intervals., Limitations and benefits of NHST, Bayesian & Likelihood approaches.",
+    "doi": "10.1007/s10654-016-0149-3",
+    "in-clusters": false,
+    "pdf name": "",
+    "apa reference": ""
 }

@@ -33,5 +33,9 @@
         "Collaboration"
     ],
     "forrt_clusters_new": "Ways of Working",
-    "forrt_sub_clusters": "Big team science"
+    "forrt_sub_clusters": "Big team science",
+    "doi": "",
+    "in-clusters": false,
+    "pdf name": "",
+    "apa reference": ""
 }

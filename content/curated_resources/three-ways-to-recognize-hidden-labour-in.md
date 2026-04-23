@@ -35,5 +35,9 @@
         "Research Support Staff"
     ],
     "forrt_clusters_new": "Academic Structures and Institutions",
-    "forrt_sub_clusters": "Structures and incentives in academia"
+    "forrt_sub_clusters": "Structures and incentives in academia",
+    "doi": "10.1038/d41586-024-01749-3",
+    "in-clusters": true,
+    "pdf name": "",
+    "apa reference": ""
 }

@@ -36,5 +36,9 @@
         "Hidden Curriculum"
     ],
     "forrt_clusters_new": "Academic Structures and Institutions",
-    "forrt_sub_clusters": "Hidden curriculum"
+    "forrt_sub_clusters": "Hidden curriculum",
+    "doi": "",
+    "in-clusters": false,
+    "pdf name": "",
+    "apa reference": ""
 }

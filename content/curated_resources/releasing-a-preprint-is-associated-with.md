@@ -32,5 +32,9 @@
         "Publishing"
     ],
     "forrt_clusters_new": "Publication Sharing",
-    "forrt_sub_clusters": "Preprints and postprints"
+    "forrt_sub_clusters": "Preprints and postprints",
+    "doi": "",
+    "in-clusters": false,
+    "pdf name": "",
+    "apa reference": ""
 }

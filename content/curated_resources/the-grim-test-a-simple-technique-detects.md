@@ -36,5 +36,9 @@
         "Open Science"
     ],
     "forrt_clusters_new": "Transparency and reproducibility in computation and analysis",
-    "forrt_sub_clusters": "Tools to check yourself and others"
+    "forrt_sub_clusters": "Tools to check yourself and others",
+    "doi": "10.1177/1948550616673876",
+    "in-clusters": true,
+    "pdf name": "",
+    "apa reference": ""
 }

@@ -58,5 +58,9 @@
         "Reporting Guidelines"
     ],
     "forrt_clusters_new": "Academic Structures and Institutions",
-    "forrt_sub_clusters": "Research assessment, proposals, and reforms"
+    "forrt_sub_clusters": "Research assessment, proposals, and reforms",
+    "doi": "10.2519/jospt.2023.12016",
+    "in-clusters": true,
+    "pdf name": "",
+    "apa reference": ""
 }

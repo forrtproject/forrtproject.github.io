@@ -37,5 +37,9 @@
         "Teaching Activity"
     ],
     "forrt_clusters_new": "Ways of Working",
-    "forrt_sub_clusters": "Research with students (under- and graduate)"
+    "forrt_sub_clusters": "Research with students (under- and graduate)",
+    "doi": "10.1007/s41669-023-00469-0",
+    "in-clusters": false,
+    "pdf name": "",
+    "apa reference": ""
 }

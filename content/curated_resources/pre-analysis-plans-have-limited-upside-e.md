@@ -47,5 +47,9 @@
         "Critique"
     ],
     "forrt_clusters_new": "Pre-analysis Planning",
-    "forrt_sub_clusters": "Purpose of pre-analysis planning"
+    "forrt_sub_clusters": "Purpose of pre-analysis planning",
+    "doi": "10.1257/jep.29.3.81",
+    "in-clusters": true,
+    "pdf name": "",
+    "apa reference": ""
 }

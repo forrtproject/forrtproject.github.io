@@ -38,5 +38,9 @@
         "Reproducibility of results"
     ],
     "forrt_clusters_new": "Transparency and reproducibility in computation and analysis, FAIR data and materials",
-    "forrt_sub_clusters": "Computational reproducibility, Repositories"
+    "forrt_sub_clusters": "Computational reproducibility, Repositories",
+    "doi": "10.1007/s00330-023-10095-3",
+    "in-clusters": false,
+    "pdf name": "",
+    "apa reference": ""
 }

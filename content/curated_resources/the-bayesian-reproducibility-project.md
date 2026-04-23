@@ -40,5 +40,9 @@
         "R code"
     ],
     "forrt_clusters_new": "Conceptual and Statistical Knowledge, Transparency and reproducibility in computation and analysis",
-    "forrt_sub_clusters": "Limitations and benefits of NHST, Bayesian & Likelihood approaches., Computational reproducibility"
+    "forrt_sub_clusters": "Limitations and benefits of NHST, Bayesian & Likelihood approaches., Computational reproducibility",
+    "doi": "",
+    "in-clusters": false,
+    "pdf name": "",
+    "apa reference": ""
 }

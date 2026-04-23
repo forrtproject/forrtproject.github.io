@@ -37,5 +37,9 @@
         "Open Science"
     ],
     "forrt_clusters_new": "Replication and meta-research, Replication Crisis and Credibility Revolution",
-    "forrt_sub_clusters": "Questionable research practices & their prevalence, Meta-research"
+    "forrt_sub_clusters": "Questionable research practices & their prevalence, Meta-research",
+    "doi": "10.1257/app.20150044",
+    "in-clusters": true,
+    "pdf name": "",
+    "apa reference": ""
 }

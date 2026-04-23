@@ -47,5 +47,9 @@
         "Restorative Practices"
     ],
     "forrt_clusters_new": "Academic Structures and Institutions, Ways of Working, Qualitative Research",
-    "forrt_sub_clusters": "Reflexivity and positionality, Qualitative research, Feminist Thought"
+    "forrt_sub_clusters": "Reflexivity and positionality, Qualitative research, Feminist Thought",
+    "doi": "10.1080/09518398.2020.1760393",
+    "in-clusters": true,
+    "pdf name": "",
+    "apa reference": ""
 }

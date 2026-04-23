@@ -42,5 +42,9 @@
         "Open Science"
     ],
     "forrt_clusters_new": "Pre-analysis Planning",
-    "forrt_sub_clusters": "Purpose of pre-analysis planning"
+    "forrt_sub_clusters": "Purpose of pre-analysis planning",
+    "doi": "10.1126/scitranslmed.3007513",
+    "in-clusters": true,
+    "pdf name": "",
+    "apa reference": ""
 }

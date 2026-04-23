@@ -34,5 +34,9 @@
         "Meta-science Replication crisis"
     ],
     "forrt_clusters_new": "Conceptual and Statistical Knowledge",
-    "forrt_sub_clusters": "The logic of null hypothesis testing, p-values, Type I and II errors (and when and why they might happen)."
+    "forrt_sub_clusters": "The logic of null hypothesis testing, p-values, Type I and II errors (and when and why they might happen).",
+    "doi": "10.1186/s41235-024-00553-x",
+    "in-clusters": true,
+    "pdf name": "",
+    "apa reference": ""
 }

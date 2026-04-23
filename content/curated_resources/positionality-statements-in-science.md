@@ -39,5 +39,9 @@
         "Subjectivity"
     ],
     "forrt_clusters_new": "Qualitative Research",
-    "forrt_sub_clusters": "Reflexivity and positionality"
+    "forrt_sub_clusters": "Reflexivity and positionality",
+    "doi": "10.12688/openreseurope.17058.2",
+    "in-clusters": true,
+    "pdf name": "",
+    "apa reference": ""
 }

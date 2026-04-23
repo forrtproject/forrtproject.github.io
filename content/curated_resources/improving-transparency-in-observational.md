@@ -34,5 +34,9 @@
         "Social Science"
     ],
     "forrt_clusters_new": "Pre-analysis Planning",
-    "forrt_sub_clusters": "Preregistration"
+    "forrt_sub_clusters": "Preregistration",
+    "doi": "10.1016/j.econlet.2018.03.036",
+    "in-clusters": false,
+    "pdf name": "",
+    "apa reference": ""
 }

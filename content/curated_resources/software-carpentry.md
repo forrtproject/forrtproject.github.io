@@ -39,5 +39,9 @@
         "Workflow Tools"
     ],
     "forrt_clusters_new": "Transparency and reproducibility in computation and analysis",
-    "forrt_sub_clusters": "Research software engineering, Computational reproducibility"
+    "forrt_sub_clusters": "Research software engineering, Computational reproducibility",
+    "doi": "",
+    "in-clusters": false,
+    "pdf name": "",
+    "apa reference": ""
 }

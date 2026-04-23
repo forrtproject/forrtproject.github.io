@@ -34,5 +34,9 @@
         "TOP Factor"
     ],
     "forrt_clusters_new": "Academic Structures and Institutions",
-    "forrt_sub_clusters": "Research assessment, proposals, and reforms"
+    "forrt_sub_clusters": "Research assessment, proposals, and reforms",
+    "doi": "10.1037/pag0000670",
+    "in-clusters": true,
+    "pdf name": "",
+    "apa reference": ""
 }

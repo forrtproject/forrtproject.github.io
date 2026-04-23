@@ -40,5 +40,9 @@
         "Reproducibility"
     ],
     "forrt_clusters_new": "Academic Structures and Institutions, Replication Crisis and Credibility Revolution",
-    "forrt_sub_clusters": "Structures and incentives in academia, Proposed science improvement initiatives on statistics, measurement, teaching, data sharing, code sharing, pre-registration, & replication"
+    "forrt_sub_clusters": "Structures and incentives in academia, Proposed science improvement initiatives on statistics, measurement, teaching, data sharing, code sharing, pre-registration, & replication",
+    "doi": "10.1525/collabra.57545",
+    "in-clusters": true,
+    "pdf name": "",
+    "apa reference": ""
 }

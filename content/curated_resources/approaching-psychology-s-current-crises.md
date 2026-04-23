@@ -36,5 +36,9 @@
         "Methodological Pluralism"
     ],
     "forrt_clusters_new": "Conceptual and Statistical Knowledge, Replication and meta-research",
-    "forrt_sub_clusters": "Direct vs. conceptual replications, Philosophy of science, Questionable measurement practices (QMPs), validity & reliability issues."
+    "forrt_sub_clusters": "Direct vs. conceptual replications, Philosophy of science, Questionable measurement practices (QMPs), validity & reliability issues.",
+    "doi": "10.1037/amp0001300",
+    "in-clusters": true,
+    "pdf name": "",
+    "apa reference": ""
 }

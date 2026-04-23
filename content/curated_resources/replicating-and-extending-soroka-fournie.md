@@ -39,5 +39,9 @@
         "OSCA Awards 2025"
     ],
     "forrt_clusters_new": "Pre-analysis Planning",
-    "forrt_sub_clusters": "Preregistration, Study Design"
+    "forrt_sub_clusters": "Preregistration, Study Design",
+    "doi": "",
+    "in-clusters": false,
+    "pdf name": "",
+    "apa reference": ""
 }

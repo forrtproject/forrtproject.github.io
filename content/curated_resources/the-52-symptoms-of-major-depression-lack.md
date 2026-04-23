@@ -33,5 +33,9 @@
         "Open Science"
     ],
     "forrt_clusters_new": "Replication and meta-research",
-    "forrt_sub_clusters": "Meta-research"
+    "forrt_sub_clusters": "Meta-research",
+    "doi": "10.1016/j.jad.2016.10.019",
+    "in-clusters": false,
+    "pdf name": "",
+    "apa reference": ""
 }

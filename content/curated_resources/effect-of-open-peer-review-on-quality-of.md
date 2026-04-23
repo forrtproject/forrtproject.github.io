@@ -33,5 +33,9 @@
         "Open Science"
     ],
     "forrt_clusters_new": "Publication Sharing",
-    "forrt_sub_clusters": "Open peer review"
+    "forrt_sub_clusters": "Open peer review",
+    "doi": "10.1136/bmj.318.7175.23",
+    "in-clusters": true,
+    "pdf name": "",
+    "apa reference": ""
 }

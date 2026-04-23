@@ -30,5 +30,9 @@
         "Publishing"
     ],
     "forrt_clusters_new": "Ways of Working, Replication Crisis and Credibility Revolution",
-    "forrt_sub_clusters": "History of the replication crisis & credibility revolution, Research with students (under- and graduate)"
+    "forrt_sub_clusters": "History of the replication crisis & credibility revolution, Research with students (under- and graduate)",
+    "doi": "10.5334/jeps.469/",
+    "in-clusters": true,
+    "pdf name": "",
+    "apa reference": ""
 }

@@ -37,5 +37,9 @@
         "Hypothesis Testing"
     ],
     "forrt_clusters_new": "Conceptual and Statistical Knowledge",
-    "forrt_sub_clusters": "Exploratory and confirmatory analyses"
+    "forrt_sub_clusters": "Exploratory and confirmatory analyses",
+    "doi": "10.1080/09515089.2022.2113771",
+    "in-clusters": true,
+    "pdf name": "",
+    "apa reference": ""
 }

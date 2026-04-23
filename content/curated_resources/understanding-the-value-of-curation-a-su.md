@@ -42,5 +42,9 @@
         "Data curation"
     ],
     "forrt_clusters_new": "FAIR data and materials",
-    "forrt_sub_clusters": "Repositories, Research data management"
+    "forrt_sub_clusters": "Repositories, Research data management",
+    "doi": "10.1371/journal.pone.0301171",
+    "in-clusters": true,
+    "pdf name": "",
+    "apa reference": ""
 }

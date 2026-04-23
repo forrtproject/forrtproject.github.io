@@ -50,5 +50,9 @@
         "Journals"
     ],
     "forrt_clusters_new": "Academic Structures and Institutions",
-    "forrt_sub_clusters": "Objectivity in Research, Research assessment, proposals, and reforms"
+    "forrt_sub_clusters": "Objectivity in Research, Research assessment, proposals, and reforms",
+    "doi": "10.1177%2F17470161221148387",
+    "in-clusters": true,
+    "pdf name": "",
+    "apa reference": ""
 }

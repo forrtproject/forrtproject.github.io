@@ -39,5 +39,9 @@
         "Editorial"
     ],
     "forrt_clusters_new": "Pre-analysis Planning",
-    "forrt_sub_clusters": "Preregistration, Registered reports"
+    "forrt_sub_clusters": "Preregistration, Registered reports",
+    "doi": "10.1097/EDE.0000000000001162",
+    "in-clusters": true,
+    "pdf name": "",
+    "apa reference": ""
 }

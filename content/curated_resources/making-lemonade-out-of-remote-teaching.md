@@ -34,5 +34,9 @@
         "Remote Learning; Online Education; Higher Education; Open Access; Global Education; Academic Opportunities"
     ],
     "forrt_clusters_new": "Academic Structures and Institutions",
-    "forrt_sub_clusters": "Accessibility, Inclusion"
+    "forrt_sub_clusters": "Accessibility, Inclusion",
+    "doi": "",
+    "in-clusters": false,
+    "pdf name": "",
+    "apa reference": ""
 }

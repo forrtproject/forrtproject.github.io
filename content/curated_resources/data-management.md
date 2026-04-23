@@ -29,5 +29,9 @@
         "Data management"
     ],
     "forrt_clusters_new": "",
-    "forrt_sub_clusters": ""
+    "forrt_sub_clusters": "",
+    "doi": "",
+    "in-clusters": false,
+    "pdf name": "",
+    "apa reference": ""
 }

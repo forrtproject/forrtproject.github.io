@@ -35,5 +35,9 @@
         "Context-Exploratory Replication"
     ],
     "forrt_clusters_new": "Replication and meta-research",
-    "forrt_sub_clusters": "Direct vs. conceptual replications, Purposes of replication attempts - what is a \u2018failed\u2019 replication?"
+    "forrt_sub_clusters": "Direct vs. conceptual replications, Purposes of replication attempts - what is a \u2018failed\u2019 replication?",
+    "doi": "",
+    "in-clusters": false,
+    "pdf name": "",
+    "apa reference": ""
 }

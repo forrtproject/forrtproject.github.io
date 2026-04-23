@@ -48,5 +48,9 @@
         "Academic Life"
     ],
     "forrt_clusters_new": "Academic Structures and Institutions",
-    "forrt_sub_clusters": "Research assessment, proposals, and reforms"
+    "forrt_sub_clusters": "Research assessment, proposals, and reforms",
+    "doi": "10.1128/mbio.01948-23",
+    "in-clusters": true,
+    "pdf name": "",
+    "apa reference": ""
 }

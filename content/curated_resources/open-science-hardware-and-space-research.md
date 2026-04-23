@@ -39,5 +39,9 @@
         "Space Research"
     ],
     "forrt_clusters_new": "FAIR data and materials",
-    "forrt_sub_clusters": "Repositories"
+    "forrt_sub_clusters": "Repositories",
+    "doi": "10.5281/zenodo.10054521",
+    "in-clusters": true,
+    "pdf name": "",
+    "apa reference": ""
 }

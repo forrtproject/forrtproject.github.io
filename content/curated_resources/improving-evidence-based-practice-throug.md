@@ -42,5 +42,9 @@
         "Evidence-based Practices"
     ],
     "forrt_clusters_new": "Pre-analysis Planning",
-    "forrt_sub_clusters": "Preregistration"
+    "forrt_sub_clusters": "Preregistration",
+    "doi": "10.1080/08989621.2021.1969233",
+    "in-clusters": true,
+    "pdf name": "",
+    "apa reference": ""
 }

@@ -41,5 +41,9 @@
         "Open Science"
     ],
     "forrt_clusters_new": "Ways of Working",
-    "forrt_sub_clusters": "Big team science"
+    "forrt_sub_clusters": "Big team science",
+    "doi": "10.1093/jamiaopen/ooae017",
+    "in-clusters": true,
+    "pdf name": "",
+    "apa reference": ""
 }

@@ -56,5 +56,9 @@
         "Open Science"
     ],
     "forrt_clusters_new": "FAIR data and materials",
-    "forrt_sub_clusters": "Research data management, Metadata standards"
+    "forrt_sub_clusters": "Research data management, Metadata standards",
+    "doi": "10.1186/s13326-023-00297-5",
+    "in-clusters": true,
+    "pdf name": "",
+    "apa reference": ""
 }

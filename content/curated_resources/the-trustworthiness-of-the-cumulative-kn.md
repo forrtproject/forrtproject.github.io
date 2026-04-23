@@ -42,5 +42,9 @@
         "Open Science Practices"
     ],
     "forrt_clusters_new": "Replication Crisis and Credibility Revolution",
-    "forrt_sub_clusters": "Questionable research practices & their prevalence"
+    "forrt_sub_clusters": "Questionable research practices & their prevalence",
+    "doi": "10.1016/j.actpsy.2023.104005",
+    "in-clusters": false,
+    "pdf name": "",
+    "apa reference": ""
 }

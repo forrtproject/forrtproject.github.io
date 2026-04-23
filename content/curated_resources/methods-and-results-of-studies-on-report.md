@@ -45,5 +45,9 @@
         "Research-on-research"
     ],
     "forrt_clusters_new": "Replication and meta-research",
-    "forrt_sub_clusters": "Meta-research"
+    "forrt_sub_clusters": "Meta-research",
+    "doi": "10.1016/j.jclinepi.2023.05.017",
+    "in-clusters": false,
+    "pdf name": "",
+    "apa reference": ""
 }

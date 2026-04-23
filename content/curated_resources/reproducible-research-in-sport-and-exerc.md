@@ -34,5 +34,9 @@
         ""
     ],
     "forrt_clusters_new": "Conceptual and Statistical Knowledge",
-    "forrt_sub_clusters": "Research design, sampling methods, & its implications for inferences., Effect sizes, statistical power, simulations, & confidence intervals."
+    "forrt_sub_clusters": "Research design, sampling methods, & its implications for inferences., Effect sizes, statistical power, simulations, & confidence intervals.",
+    "doi": "10.1016/j.psychsport.2015.11.005",
+    "in-clusters": false,
+    "pdf name": "",
+    "apa reference": ""
 }

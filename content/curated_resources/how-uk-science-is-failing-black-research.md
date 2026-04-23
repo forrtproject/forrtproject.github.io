@@ -35,5 +35,9 @@
         "Black Researchers"
     ],
     "forrt_clusters_new": "Academic Structures and Institutions",
-    "forrt_sub_clusters": "Racism in science, Diversity in Academia, Equity"
+    "forrt_sub_clusters": "Racism in science, Diversity in Academia, Equity",
+    "doi": "",
+    "in-clusters": false,
+    "pdf name": "",
+    "apa reference": ""
 }

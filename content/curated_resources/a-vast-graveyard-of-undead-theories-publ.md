@@ -35,5 +35,9 @@
         "Open Science"
     ],
     "forrt_clusters_new": "Replication and meta-research, Replication Crisis and Credibility Revolution",
-    "forrt_sub_clusters": "Purposes of replication attempts - what is a \u2018failed\u2019 replication?, Ongoing debates (e.g., incentives for and against open science practices)"
+    "forrt_sub_clusters": "Purposes of replication attempts - what is a \u2018failed\u2019 replication?, Ongoing debates (e.g., incentives for and against open science practices)",
+    "doi": "10.1177/1745691612459059",
+    "in-clusters": true,
+    "pdf name": "",
+    "apa reference": ""
 }

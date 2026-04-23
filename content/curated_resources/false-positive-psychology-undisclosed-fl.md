@@ -36,5 +36,9 @@
         "Open Science"
     ],
     "forrt_clusters_new": "Replication Crisis and Credibility Revolution, Research Integrity",
-    "forrt_sub_clusters": "Questionable research practices & their prevalence, Questionable Research Practices and Responsible Research Practices"
+    "forrt_sub_clusters": "Questionable research practices & their prevalence, Questionable Research Practices and Responsible Research Practices",
+    "doi": "10.1177/0956797611417632",
+    "in-clusters": true,
+    "pdf name": "",
+    "apa reference": ""
 }

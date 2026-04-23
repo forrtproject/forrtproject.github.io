@@ -34,5 +34,9 @@
         "Epidemiology"
     ],
     "forrt_clusters_new": "Pre-analysis Planning",
-    "forrt_sub_clusters": "Preregistration"
+    "forrt_sub_clusters": "Preregistration",
+    "doi": "10.1097/EDE.0b013e31821c06c5",
+    "in-clusters": true,
+    "pdf name": "",
+    "apa reference": ""
 }

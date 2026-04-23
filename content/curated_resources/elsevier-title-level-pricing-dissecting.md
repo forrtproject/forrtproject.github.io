@@ -35,5 +35,9 @@
         "Subscription"
     ],
     "forrt_clusters_new": "Academic Structures and Institutions",
-    "forrt_sub_clusters": "Structures and incentives in academia, Research assessment, proposals, and reforms"
+    "forrt_sub_clusters": "Structures and incentives in academia, Research assessment, proposals, and reforms",
+    "doi": "10.7710/2162-3309.2410/",
+    "in-clusters": true,
+    "pdf name": "",
+    "apa reference": ""
 }

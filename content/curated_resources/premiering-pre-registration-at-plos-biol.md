@@ -40,5 +40,9 @@
         "Research Design"
     ],
     "forrt_clusters_new": "Pre-analysis Planning",
-    "forrt_sub_clusters": "Registered reports"
+    "forrt_sub_clusters": "Registered reports",
+    "doi": "10.1371/journal.pbio.3001611",
+    "in-clusters": true,
+    "pdf name": "",
+    "apa reference": ""
 }

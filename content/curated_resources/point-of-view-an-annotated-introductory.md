@@ -34,5 +34,9 @@
         "Neurodiversity; Inclusivity; Autism; ADHD; Participatory Research; Inclusive Scientific Practices"
     ],
     "forrt_clusters_new": "Academic Structures and Institutions, Ways of Working",
-    "forrt_sub_clusters": "Neurodiversity, Inclusion, Participatory research"
+    "forrt_sub_clusters": "Neurodiversity, Inclusion, Participatory research",
+    "doi": "10.7554/eLife.102467",
+    "in-clusters": true,
+    "pdf name": "",
+    "apa reference": ""
 }

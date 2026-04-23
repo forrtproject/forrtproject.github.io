@@ -36,5 +36,9 @@
         "Researchers"
     ],
     "forrt_clusters_new": "Transparency and reproducibility in computation and analysis, FAIR data and materials",
-    "forrt_sub_clusters": "Computational reproducibility, Research data management"
+    "forrt_sub_clusters": "Computational reproducibility, Research data management",
+    "doi": "",
+    "in-clusters": false,
+    "pdf name": "",
+    "apa reference": ""
 }

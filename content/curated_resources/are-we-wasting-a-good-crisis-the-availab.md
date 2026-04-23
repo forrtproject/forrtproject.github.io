@@ -36,5 +36,9 @@
         "Open Science"
     ],
     "forrt_clusters_new": "Replication and meta-research",
-    "forrt_sub_clusters": "Meta-research"
+    "forrt_sub_clusters": "Meta-research",
+    "doi": "10.1525/collabra.13",
+    "in-clusters": true,
+    "pdf name": "",
+    "apa reference": ""
 }

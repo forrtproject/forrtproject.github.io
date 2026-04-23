@@ -36,5 +36,9 @@
         "Open Science"
     ],
     "forrt_clusters_new": "Conceptual and Statistical Knowledge, Replication Crisis and Credibility Revolution",
-    "forrt_sub_clusters": "History of the replication crisis & credibility revolution, Limitations and benefits of NHST, Bayesian & Likelihood approaches., The logic of null hypothesis testing, p-values, Type I and II errors (and when and why they might happen)."
+    "forrt_sub_clusters": "History of the replication crisis & credibility revolution, Limitations and benefits of NHST, Bayesian & Likelihood approaches., The logic of null hypothesis testing, p-values, Type I and II errors (and when and why they might happen).",
+    "doi": "",
+    "in-clusters": false,
+    "pdf name": "",
+    "apa reference": ""
 }

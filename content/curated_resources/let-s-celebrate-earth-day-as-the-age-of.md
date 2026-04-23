@@ -36,5 +36,9 @@
         "Open Science"
     ],
     "forrt_clusters_new": "Academic Structures and Institutions, Ways of Working",
-    "forrt_sub_clusters": "Socially Responsible Research, Science communication and public outreach"
+    "forrt_sub_clusters": "Socially Responsible Research, Science communication and public outreach",
+    "doi": "10.1126/sciadv.adp604",
+    "in-clusters": true,
+    "pdf name": "",
+    "apa reference": ""
 }

@@ -35,5 +35,9 @@
         "Open Code Policy"
     ],
     "forrt_clusters_new": "FAIR data and materials",
-    "forrt_sub_clusters": "Reasons to share data and materials, Licenses and reuse"
+    "forrt_sub_clusters": "Reasons to share data and materials, Licenses and reuse",
+    "doi": "",
+    "in-clusters": false,
+    "pdf name": "",
+    "apa reference": ""
 }

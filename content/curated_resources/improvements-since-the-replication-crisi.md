@@ -92,5 +92,9 @@
         "Replication Crisis; Reproducibility; Academic Reform"
     ],
     "forrt_clusters_new": "Replication Crisis and Credibility Revolution",
-    "forrt_sub_clusters": "History of the replication crisis & credibility revolution"
+    "forrt_sub_clusters": "History of the replication crisis & credibility revolution",
+    "doi": "10.1038/s44271-023-00003-2",
+    "in-clusters": true,
+    "pdf name": "",
+    "apa reference": ""
 }

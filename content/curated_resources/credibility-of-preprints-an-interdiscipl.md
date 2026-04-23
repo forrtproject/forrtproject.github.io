@@ -34,5 +34,9 @@
         "Preprints"
     ],
     "forrt_clusters_new": "Replication and meta-research",
-    "forrt_sub_clusters": "Meta-research"
+    "forrt_sub_clusters": "Meta-research",
+    "doi": "10.1098/rsos.201520",
+    "in-clusters": true,
+    "pdf name": "",
+    "apa reference": ""
 }

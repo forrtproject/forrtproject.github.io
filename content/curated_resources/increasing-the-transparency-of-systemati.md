@@ -68,5 +68,9 @@
         "Meta-Analysis"
     ],
     "forrt_clusters_new": "Pre-analysis Planning",
-    "forrt_sub_clusters": "Understanding the types of preregistration and writing one."
+    "forrt_sub_clusters": "Understanding the types of preregistration and writing one.",
+    "doi": "10.1186/s13643-023-02281-7",
+    "in-clusters": true,
+    "pdf name": "",
+    "apa reference": ""
 }

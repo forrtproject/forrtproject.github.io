@@ -38,5 +38,9 @@
         "Replicability"
     ],
     "forrt_clusters_new": "Replication Crisis and Credibility Revolution",
-    "forrt_sub_clusters": "Proposed science improvement initiatives on statistics, measurement, teaching, data sharing, code sharing, pre-registration, & replication, History of the replication crisis & credibility revolution"
+    "forrt_sub_clusters": "Proposed science improvement initiatives on statistics, measurement, teaching, data sharing, code sharing, pre-registration, & replication, History of the replication crisis & credibility revolution",
+    "doi": "10.1111/1740-9713.01444",
+    "in-clusters": true,
+    "pdf name": "",
+    "apa reference": ""
 }

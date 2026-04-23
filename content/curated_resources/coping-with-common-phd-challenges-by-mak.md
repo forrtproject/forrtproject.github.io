@@ -35,5 +35,9 @@
         "PhD"
     ],
     "forrt_clusters_new": "Academic Structures and Institutions",
-    "forrt_sub_clusters": "Hidden curriculum"
+    "forrt_sub_clusters": "Hidden curriculum",
+    "doi": "10.1038/s44159-023-00267-9",
+    "in-clusters": true,
+    "pdf name": "",
+    "apa reference": ""
 }

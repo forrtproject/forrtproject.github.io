@@ -47,5 +47,9 @@
         "Career"
     ],
     "forrt_clusters_new": "Academic Structures and Institutions",
-    "forrt_sub_clusters": "Citation Politics & Practices"
+    "forrt_sub_clusters": "Citation Politics & Practices",
+    "doi": "10.36850/mr8",
+    "in-clusters": true,
+    "pdf name": "",
+    "apa reference": ""
 }

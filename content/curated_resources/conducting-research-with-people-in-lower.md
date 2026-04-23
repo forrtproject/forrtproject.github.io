@@ -49,5 +49,9 @@
         "SES"
     ],
     "forrt_clusters_new": "Academic Structures and Institutions",
-    "forrt_sub_clusters": "Diversity sample and generalizability"
+    "forrt_sub_clusters": "Diversity sample and generalizability",
+    "doi": "10.1177/25152459231193044",
+    "in-clusters": true,
+    "pdf name": "",
+    "apa reference": ""
 }

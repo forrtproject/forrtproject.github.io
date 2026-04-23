@@ -37,5 +37,9 @@
         "A Priori Power Analysis"
     ],
     "forrt_clusters_new": "Conceptual and Statistical Knowledge, Replication Crisis and Credibility Revolution",
-    "forrt_sub_clusters": "History of the replication crisis & credibility revolution, Questionable research practices & their prevalence, Effect sizes, statistical power, simulations, & confidence intervals."
+    "forrt_sub_clusters": "History of the replication crisis & credibility revolution, Questionable research practices & their prevalence, Effect sizes, statistical power, simulations, & confidence intervals.",
+    "doi": "10.1177/1477153520926328",
+    "in-clusters": true,
+    "pdf name": "",
+    "apa reference": ""
 }

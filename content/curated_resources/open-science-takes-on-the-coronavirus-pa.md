@@ -36,5 +36,9 @@
         "Pandemic"
     ],
     "forrt_clusters_new": "Academic Structures and Institutions, Ways of Working",
-    "forrt_sub_clusters": "Community science, Socially Responsible Research"
+    "forrt_sub_clusters": "Community science, Socially Responsible Research",
+    "doi": "10.1038/d41586-020-01246-3",
+    "in-clusters": true,
+    "pdf name": "",
+    "apa reference": ""
 }

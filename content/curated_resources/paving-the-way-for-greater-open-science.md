@@ -44,5 +44,9 @@
         "Open Data"
     ],
     "forrt_clusters_new": "FAIR data and materials",
-    "forrt_sub_clusters": "Reasons to share data and materials"
+    "forrt_sub_clusters": "Reasons to share data and materials",
+    "doi": "10.1136/bjsports-2023-107225",
+    "in-clusters": true,
+    "pdf name": "",
+    "apa reference": ""
 }

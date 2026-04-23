@@ -51,5 +51,9 @@
         "Qualitative Research"
     ],
     "forrt_clusters_new": "Qualitative Research, Pre-analysis Planning",
-    "forrt_sub_clusters": "Preregistration, Preregistration and Registered reports"
+    "forrt_sub_clusters": "Preregistration, Preregistration and Registered reports",
+    "doi": "10.1177/1609406920976417",
+    "in-clusters": true,
+    "pdf name": "",
+    "apa reference": ""
 }

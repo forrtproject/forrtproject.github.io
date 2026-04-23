@@ -35,5 +35,9 @@
         "Borrowers"
     ],
     "forrt_clusters_new": "Academic Structures and Institutions",
-    "forrt_sub_clusters": "Research assessment, proposals, and reforms, Equity"
+    "forrt_sub_clusters": "Research assessment, proposals, and reforms, Equity",
+    "doi": "",
+    "in-clusters": false,
+    "pdf name": "",
+    "apa reference": ""
 }

@@ -36,5 +36,9 @@
         "Open Science"
     ],
     "forrt_clusters_new": "Transparency and reproducibility in computation and analysis, FAIR data and materials",
-    "forrt_sub_clusters": "Computational reproducibility, Research data management, Metadata standards"
+    "forrt_sub_clusters": "Computational reproducibility, Research data management, Metadata standards",
+    "doi": "10.15497/RDA00074",
+    "in-clusters": true,
+    "pdf name": "",
+    "apa reference": ""
 }

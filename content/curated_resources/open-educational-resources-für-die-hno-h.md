@@ -41,5 +41,9 @@
         "Teaching"
     ],
     "forrt_clusters_new": "FAIR data and materials",
-    "forrt_sub_clusters": "FAIR principles applied to Education & Training, Licenses and reuse"
+    "forrt_sub_clusters": "FAIR principles applied to Education & Training, Licenses and reuse",
+    "doi": "10.1007/s00106-024-01465-4",
+    "in-clusters": false,
+    "pdf name": "",
+    "apa reference": ""
 }

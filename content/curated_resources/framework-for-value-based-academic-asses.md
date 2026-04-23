@@ -36,5 +36,9 @@
         "Framework"
     ],
     "forrt_clusters_new": "Academic Structures and Institutions",
-    "forrt_sub_clusters": "Research assessment, proposals, and reforms, Structures and incentives in academia"
+    "forrt_sub_clusters": "Research assessment, proposals, and reforms, Structures and incentives in academia",
+    "doi": "10.17605/OSF.IO/Z9XSR",
+    "in-clusters": true,
+    "pdf name": "",
+    "apa reference": ""
 }

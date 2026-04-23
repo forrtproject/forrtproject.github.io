@@ -40,5 +40,9 @@
         "Web-based Applications"
     ],
     "forrt_clusters_new": "Transparency and reproducibility in computation and analysis, FAIR data and materials",
-    "forrt_sub_clusters": "Reasons to share data and materials, Tools to check yourself and others"
+    "forrt_sub_clusters": "Reasons to share data and materials, Tools to check yourself and others",
+    "doi": "10.1371/journal.pbio.2002477",
+    "in-clusters": true,
+    "pdf name": "",
+    "apa reference": ""
 }

@@ -34,5 +34,9 @@
         "Research Best Practices"
     ],
     "forrt_clusters_new": "Pre-analysis Planning",
-    "forrt_sub_clusters": "Preregistration, Registered reports"
+    "forrt_sub_clusters": "Preregistration, Registered reports",
+    "doi": "",
+    "in-clusters": false,
+    "pdf name": "",
+    "apa reference": ""
 }

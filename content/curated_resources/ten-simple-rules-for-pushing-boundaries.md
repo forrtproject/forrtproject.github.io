@@ -51,5 +51,9 @@
         "Equity"
     ],
     "forrt_clusters_new": "Academic Structures and Institutions",
-    "forrt_sub_clusters": "Inclusion, Diversity in Academia, Equity"
+    "forrt_sub_clusters": "Inclusion, Diversity in Academia, Equity",
+    "doi": "10.1371/journal.pcbi.1011797",
+    "in-clusters": true,
+    "pdf name": "",
+    "apa reference": ""
 }

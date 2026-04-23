@@ -47,5 +47,9 @@
         "open software"
     ],
     "forrt_clusters_new": "FAIR data and materials",
-    "forrt_sub_clusters": "Reasons to share data and materials, Licenses and reuse"
+    "forrt_sub_clusters": "Reasons to share data and materials, Licenses and reuse",
+    "doi": "10.1371/journal.pbio.3002204",
+    "in-clusters": true,
+    "pdf name": "",
+    "apa reference": ""
 }

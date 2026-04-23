@@ -46,5 +46,9 @@
         "Verifiable Disclosure"
     ],
     "forrt_clusters_new": "Pre-analysis Planning",
-    "forrt_sub_clusters": "Preregistration"
+    "forrt_sub_clusters": "Preregistration",
+    "doi": "10.2139/ssrn.3796813",
+    "in-clusters": true,
+    "pdf name": "",
+    "apa reference": ""
 }

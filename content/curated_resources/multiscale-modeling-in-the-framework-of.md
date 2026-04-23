@@ -40,5 +40,9 @@
         "Spaceflight Biology Research"
     ],
     "forrt_clusters_new": "",
-    "forrt_sub_clusters": ""
+    "forrt_sub_clusters": "",
+    "doi": "10.1016/j.isci.2022.105421",
+    "in-clusters": false,
+    "pdf name": "",
+    "apa reference": ""
 }

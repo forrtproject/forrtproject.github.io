@@ -35,5 +35,9 @@
         "Exploration"
     ],
     "forrt_clusters_new": "Conceptual and Statistical Knowledge",
-    "forrt_sub_clusters": "Exploratory and confirmatory analyses, Philosophy of science"
+    "forrt_sub_clusters": "Exploratory and confirmatory analyses, Philosophy of science",
+    "doi": "10.1037/mac0000121",
+    "in-clusters": true,
+    "pdf name": "",
+    "apa reference": ""
 }

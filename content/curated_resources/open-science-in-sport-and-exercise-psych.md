@@ -34,5 +34,9 @@
         "Open Science"
     ],
     "forrt_clusters_new": "Qualitative Research",
-    "forrt_sub_clusters": "Qualitative approaches to open science"
+    "forrt_sub_clusters": "Qualitative approaches to open science",
+    "doi": "10.1016/j.psychsport.2017.12.010",
+    "in-clusters": false,
+    "pdf name": "",
+    "apa reference": ""
 }

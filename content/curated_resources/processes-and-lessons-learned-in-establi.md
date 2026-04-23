@@ -47,5 +47,9 @@
         "Qualitative Data"
     ],
     "forrt_clusters_new": "FAIR data and materials",
-    "forrt_sub_clusters": "Repositories, Research data management"
+    "forrt_sub_clusters": "Repositories, Research data management",
+    "doi": "10.31219/osf.io/z5bty",
+    "in-clusters": true,
+    "pdf name": "",
+    "apa reference": ""
 }

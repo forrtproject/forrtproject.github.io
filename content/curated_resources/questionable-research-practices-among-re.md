@@ -41,5 +41,9 @@
         "Research Integrity"
     ],
     "forrt_clusters_new": "Replication Crisis and Credibility Revolution",
-    "forrt_sub_clusters": "Questionable research practices & their prevalence"
+    "forrt_sub_clusters": "Questionable research practices & their prevalence",
+    "doi": "10.1002/job.2623",
+    "in-clusters": false,
+    "pdf name": "",
+    "apa reference": ""
 }

@@ -32,5 +32,9 @@
         ""
     ],
     "forrt_clusters_new": "Conceptual and Statistical Knowledge",
-    "forrt_sub_clusters": "Limitations and benefits of NHST, Bayesian & Likelihood approaches., The logic of null hypothesis testing, p-values, Type I and II errors (and when and why they might happen)."
+    "forrt_sub_clusters": "Limitations and benefits of NHST, Bayesian & Likelihood approaches., The logic of null hypothesis testing, p-values, Type I and II errors (and when and why they might happen).",
+    "doi": "10.1111/j.1467-9280.1997.tb00536.x",
+    "in-clusters": true,
+    "pdf name": "",
+    "apa reference": ""
 }

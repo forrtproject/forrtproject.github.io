@@ -37,5 +37,9 @@
         "Social Sciences; Research Methods; Digital Tools; Data Collection Tools; Survey Tools; Qualitative Research Tools; Quantitative Research Tools; GitHub; Software; Teaching; Open Data"
     ],
     "forrt_clusters_new": "FAIR data and materials",
-    "forrt_sub_clusters": "Repositories, Research data management"
+    "forrt_sub_clusters": "Repositories, Research data management",
+    "doi": "",
+    "in-clusters": false,
+    "pdf name": "",
+    "apa reference": ""
 }

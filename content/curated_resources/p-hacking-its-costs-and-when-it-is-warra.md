@@ -34,5 +34,9 @@
         "Inductive Risk"
     ],
     "forrt_clusters_new": "Replication Crisis and Credibility Revolution",
-    "forrt_sub_clusters": "Questionable research practices & their prevalence"
+    "forrt_sub_clusters": "Questionable research practices & their prevalence",
+    "doi": "10.1007/s10670-024-00834-3",
+    "in-clusters": false,
+    "pdf name": "",
+    "apa reference": ""
 }

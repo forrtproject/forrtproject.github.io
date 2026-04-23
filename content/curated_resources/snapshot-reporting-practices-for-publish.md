@@ -45,5 +45,9 @@
         "Data"
     ],
     "forrt_clusters_new": "FAIR data and materials",
-    "forrt_sub_clusters": "Metadata standards"
+    "forrt_sub_clusters": "Metadata standards",
+    "doi": "10.1016/j.stemcr.2023.08.010",
+    "in-clusters": false,
+    "pdf name": "",
+    "apa reference": ""
 }

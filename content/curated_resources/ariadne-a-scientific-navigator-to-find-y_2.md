@@ -53,5 +53,9 @@
         "Open Materials"
     ],
     "forrt_clusters_new": "FAIR data and materials",
-    "forrt_sub_clusters": "Research data management, Repositories"
+    "forrt_sub_clusters": "Research data management, Repositories",
+    "doi": "10.1177/25152459241297674",
+    "in-clusters": true,
+    "pdf name": "",
+    "apa reference": ""
 }

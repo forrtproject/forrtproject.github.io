@@ -45,5 +45,9 @@
         "Research Methods"
     ],
     "forrt_clusters_new": "Replication and meta-research",
-    "forrt_sub_clusters": "Meta-research"
+    "forrt_sub_clusters": "Meta-research",
+    "doi": "10.1073/pnas.1618569114",
+    "in-clusters": true,
+    "pdf name": "",
+    "apa reference": ""
 }

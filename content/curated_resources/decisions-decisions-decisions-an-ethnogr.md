@@ -39,5 +39,9 @@
         "Responsible Conduct Of Research"
     ],
     "forrt_clusters_new": "Research Integrity",
-    "forrt_sub_clusters": "Research Culture, Incentives, and Institutional Responsibilities"
+    "forrt_sub_clusters": "Research Culture, Incentives, and Institutional Responsibilities",
+    "doi": "10.1007/s11948-024-00481-5",
+    "in-clusters": false,
+    "pdf name": "",
+    "apa reference": ""
 }

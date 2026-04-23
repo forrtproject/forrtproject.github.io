@@ -40,5 +40,9 @@
         "Methodological Reform."
     ],
     "forrt_clusters_new": "Pre-analysis Planning, Replication Crisis and Credibility Revolution",
-    "forrt_sub_clusters": "Ongoing debates (e.g., incentives for and against open science practices), Understanding the types of preregistration and writing one."
+    "forrt_sub_clusters": "Ongoing debates (e.g., incentives for and against open science practices), Understanding the types of preregistration and writing one.",
+    "doi": "10.31234/osf.io/g7dn2",
+    "in-clusters": true,
+    "pdf name": "",
+    "apa reference": ""
 }

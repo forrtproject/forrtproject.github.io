@@ -46,5 +46,9 @@
         "Transparency"
     ],
     "forrt_clusters_new": "Replication and meta-research, Academic Structures and Institutions",
-    "forrt_sub_clusters": "Meta-research, Research assessment, proposals, and reforms"
+    "forrt_sub_clusters": "Meta-research, Research assessment, proposals, and reforms",
+    "doi": "10.1093/ptj/pzad133",
+    "in-clusters": true,
+    "pdf name": "",
+    "apa reference": ""
 }

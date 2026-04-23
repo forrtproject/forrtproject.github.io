@@ -38,5 +38,9 @@
         "Scientists"
     ],
     "forrt_clusters_new": "Research Integrity, Replication Crisis and Credibility Revolution",
-    "forrt_sub_clusters": "Ongoing debates (e.g., incentives for and against open science practices), Research Culture, Incentives, and Institutional Responsibilities"
+    "forrt_sub_clusters": "Ongoing debates (e.g., incentives for and against open science practices), Research Culture, Incentives, and Institutional Responsibilities",
+    "doi": "10.1371/journal.pbio.2000995",
+    "in-clusters": true,
+    "pdf name": "",
+    "apa reference": ""
 }

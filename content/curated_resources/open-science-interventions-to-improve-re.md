@@ -53,5 +53,9 @@
         "Research Integrity"
     ],
     "forrt_clusters_new": "Replication Crisis and Credibility Revolution",
-    "forrt_sub_clusters": "Proposed science improvement initiatives on statistics, measurement, teaching, data sharing, code sharing, pre-registration, & replication, Collection of large scale replications"
+    "forrt_sub_clusters": "Proposed science improvement initiatives on statistics, measurement, teaching, data sharing, code sharing, pre-registration, & replication, Collection of large scale replications",
+    "doi": "10.31222/osf.io/a8rmu",
+    "in-clusters": true,
+    "pdf name": "",
+    "apa reference": ""
 }

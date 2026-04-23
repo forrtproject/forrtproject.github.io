@@ -39,5 +39,9 @@
         "Gambling Studies"
     ],
     "forrt_clusters_new": "Pre-analysis Planning",
-    "forrt_sub_clusters": "Understanding the types of preregistration and writing one."
+    "forrt_sub_clusters": "Understanding the types of preregistration and writing one.",
+    "doi": "10.31234/osf.io/nj4es",
+    "in-clusters": true,
+    "pdf name": "",
+    "apa reference": ""
 }

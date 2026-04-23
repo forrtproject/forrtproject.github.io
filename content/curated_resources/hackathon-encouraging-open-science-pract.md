@@ -35,5 +35,9 @@
         "Research"
     ],
     "forrt_clusters_new": "Qualitative Research",
-    "forrt_sub_clusters": "Qualitative approaches to open science"
+    "forrt_sub_clusters": "Qualitative approaches to open science",
+    "doi": "",
+    "in-clusters": false,
+    "pdf name": "",
+    "apa reference": ""
 }

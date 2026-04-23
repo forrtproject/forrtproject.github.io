@@ -37,5 +37,9 @@
         "Preregistration Badges"
     ],
     "forrt_clusters_new": "Replication Crisis and Credibility Revolution, Pre-analysis Planning",
-    "forrt_sub_clusters": "Preregistration, Ongoing debates (e.g., incentives for and against open science practices)"
+    "forrt_sub_clusters": "Preregistration, Ongoing debates (e.g., incentives for and against open science practices)",
+    "doi": "10.1177/10731911241253430",
+    "in-clusters": true,
+    "pdf name": "",
+    "apa reference": ""
 }

@@ -40,5 +40,9 @@
         "Research Evaluation"
     ],
     "forrt_clusters_new": "FAIR data and materials",
-    "forrt_sub_clusters": "Metadata standards"
+    "forrt_sub_clusters": "Metadata standards",
+    "doi": "10.1002/asi.24896",
+    "in-clusters": false,
+    "pdf name": "",
+    "apa reference": ""
 }

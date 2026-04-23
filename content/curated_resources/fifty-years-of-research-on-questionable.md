@@ -50,5 +50,9 @@
         "Questionable Research Practices"
     ],
     "forrt_clusters_new": "Academic Structures and Institutions",
-    "forrt_sub_clusters": "Research assessment, proposals, and reforms"
+    "forrt_sub_clusters": "Research assessment, proposals, and reforms",
+    "doi": "10.1098/rsos.230677",
+    "in-clusters": true,
+    "pdf name": "",
+    "apa reference": ""
 }

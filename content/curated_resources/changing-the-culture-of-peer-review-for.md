@@ -35,5 +35,9 @@
         "equity"
     ],
     "forrt_clusters_new": "Academic Structures and Institutions",
-    "forrt_sub_clusters": "Research assessment, proposals, and reforms, Equity, Inclusion"
+    "forrt_sub_clusters": "Research assessment, proposals, and reforms, Equity, Inclusion",
+    "doi": "10.31234/osf.io/435xz",
+    "in-clusters": true,
+    "pdf name": "",
+    "apa reference": ""
 }

@@ -36,5 +36,9 @@
         "Machine Learning"
     ],
     "forrt_clusters_new": "Ways of Working",
-    "forrt_sub_clusters": "Science communication and public outreach"
+    "forrt_sub_clusters": "Science communication and public outreach",
+    "doi": "10.58079/ne8n",
+    "in-clusters": true,
+    "pdf name": "",
+    "apa reference": ""
 }

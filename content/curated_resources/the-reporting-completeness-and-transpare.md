@@ -45,5 +45,9 @@
         "ROBIS Assessment"
     ],
     "forrt_clusters_new": "Replication and meta-research",
-    "forrt_sub_clusters": "Meta-analyses"
+    "forrt_sub_clusters": "Meta-analyses",
+    "doi": "10.1016/j.jclinepi.2024.111264",
+    "in-clusters": false,
+    "pdf name": "",
+    "apa reference": ""
 }

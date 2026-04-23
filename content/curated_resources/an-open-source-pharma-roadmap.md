@@ -48,5 +48,9 @@
         "Tuberculosis"
     ],
     "forrt_clusters_new": "Ways of Working",
-    "forrt_sub_clusters": "Public and Private Partnerships, Community science"
+    "forrt_sub_clusters": "Public and Private Partnerships, Community science",
+    "doi": "10.1371/journal.pmed.1002276",
+    "in-clusters": true,
+    "pdf name": "",
+    "apa reference": ""
 }

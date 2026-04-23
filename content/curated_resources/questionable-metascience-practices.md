@@ -38,5 +38,9 @@
         "Science Reform"
     ],
     "forrt_clusters_new": "Replication Crisis and Credibility Revolution",
-    "forrt_sub_clusters": "Questionable research practices & their prevalence, Ongoing debates (e.g., incentives for and against open science practices)"
+    "forrt_sub_clusters": "Questionable research practices & their prevalence, Ongoing debates (e.g., incentives for and against open science practices)",
+    "doi": "10.36850/mr4",
+    "in-clusters": true,
+    "pdf name": "",
+    "apa reference": ""
 }

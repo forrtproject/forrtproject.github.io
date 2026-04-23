@@ -36,5 +36,9 @@
         "Reproducible Research"
     ],
     "forrt_clusters_new": "Replication Crisis and Credibility Revolution",
-    "forrt_sub_clusters": "Collection of large scale replications, History of the replication crisis & credibility revolution"
+    "forrt_sub_clusters": "Collection of large scale replications, History of the replication crisis & credibility revolution",
+    "doi": "10.3389/fpsyg.2017.00862/full",
+    "in-clusters": true,
+    "pdf name": "",
+    "apa reference": ""
 }

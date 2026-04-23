@@ -33,5 +33,9 @@
         "Open Educational Resources"
     ],
     "forrt_clusters_new": "Pre-analysis Planning",
-    "forrt_sub_clusters": "Understanding the types of preregistration and writing one."
+    "forrt_sub_clusters": "Understanding the types of preregistration and writing one.",
+    "doi": "",
+    "in-clusters": false,
+    "pdf name": "",
+    "apa reference": ""
 }

@@ -37,5 +37,9 @@
         "Zombie Methodology"
     ],
     "forrt_clusters_new": "Replication Crisis and Credibility Revolution",
-    "forrt_sub_clusters": "History of the replication crisis & credibility revolution, Questionable research practices & their prevalence"
+    "forrt_sub_clusters": "History of the replication crisis & credibility revolution, Questionable research practices & their prevalence",
+    "doi": "10.1111/amet.13235",
+    "in-clusters": true,
+    "pdf name": "",
+    "apa reference": ""
 }

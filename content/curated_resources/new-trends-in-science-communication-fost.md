@@ -55,5 +55,9 @@
         "Digitalisation"
     ],
     "forrt_clusters_new": "Ways of Working",
-    "forrt_sub_clusters": "Science communication and public outreach"
+    "forrt_sub_clusters": "Science communication and public outreach",
+    "doi": "10.12688/openreseurope.14769.2",
+    "in-clusters": true,
+    "pdf name": "",
+    "apa reference": ""
 }

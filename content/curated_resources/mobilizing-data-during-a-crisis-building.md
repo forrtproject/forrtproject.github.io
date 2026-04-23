@@ -46,5 +46,9 @@
         "Rapid Evidence Generation"
     ],
     "forrt_clusters_new": "FAIR data and materials",
-    "forrt_sub_clusters": "Research data management"
+    "forrt_sub_clusters": "Research data management",
+    "doi": "10.1016/j.hjdsi.2024.100738",
+    "in-clusters": false,
+    "pdf name": "",
+    "apa reference": ""
 }

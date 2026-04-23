@@ -48,5 +48,9 @@
         "Reproducibility"
     ],
     "forrt_clusters_new": "Qualitative Research",
-    "forrt_sub_clusters": "Reflexivity and positionality"
+    "forrt_sub_clusters": "Reflexivity and positionality",
+    "doi": "10.1007/s13194-020-00324-7",
+    "in-clusters": false,
+    "pdf name": "",
+    "apa reference": ""
 }

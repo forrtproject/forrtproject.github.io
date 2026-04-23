@@ -37,5 +37,9 @@
         "Neurodiversity"
     ],
     "forrt_clusters_new": "Academic Structures and Institutions",
-    "forrt_sub_clusters": "Neurodiversity, Inclusion, Accessibility"
+    "forrt_sub_clusters": "Neurodiversity, Inclusion, Accessibility",
+    "doi": "",
+    "in-clusters": false,
+    "pdf name": "",
+    "apa reference": ""
 }

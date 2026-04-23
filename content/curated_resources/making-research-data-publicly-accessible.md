@@ -48,5 +48,9 @@
         "Institutional Expenses"
     ],
     "forrt_clusters_new": "Academic Structures and Institutions, FAIR data and materials",
-    "forrt_sub_clusters": "Structures and incentives in academia, Research data management"
+    "forrt_sub_clusters": "Structures and incentives in academia, Research data management",
+    "doi": "10.29242/report.radsexpense2024",
+    "in-clusters": true,
+    "pdf name": "",
+    "apa reference": ""
 }

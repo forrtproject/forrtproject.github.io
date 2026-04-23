@@ -36,5 +36,9 @@
         "Cystic Fibrosis"
     ],
     "forrt_clusters_new": "Replication and meta-research",
-    "forrt_sub_clusters": "Meta-research, Purposes of replication attempts - what is a \u2018failed\u2019 replication?"
+    "forrt_sub_clusters": "Meta-research, Purposes of replication attempts - what is a \u2018failed\u2019 replication?",
+    "doi": "10.1016/j.bcp.2024.116090",
+    "in-clusters": false,
+    "pdf name": "",
+    "apa reference": ""
 }

@@ -30,5 +30,9 @@
         "Research"
     ],
     "forrt_clusters_new": "Pre-analysis Planning, Qualitative Research",
-    "forrt_sub_clusters": "Preregistration, Secondary data analysis"
+    "forrt_sub_clusters": "Preregistration, Secondary data analysis",
+    "doi": "",
+    "in-clusters": false,
+    "pdf name": "",
+    "apa reference": ""
 }

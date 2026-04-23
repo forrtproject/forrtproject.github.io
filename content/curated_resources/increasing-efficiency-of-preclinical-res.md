@@ -48,5 +48,9 @@
         "Research Errors"
     ],
     "forrt_clusters_new": "Conceptual and Statistical Knowledge",
-    "forrt_sub_clusters": "Research design, sampling methods, & its implications for inferences."
+    "forrt_sub_clusters": "Research design, sampling methods, & its implications for inferences.",
+    "doi": "10.1371/journal.pbio.2001307",
+    "in-clusters": true,
+    "pdf name": "",
+    "apa reference": ""
 }

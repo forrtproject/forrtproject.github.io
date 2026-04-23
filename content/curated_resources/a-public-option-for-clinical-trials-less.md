@@ -37,5 +37,9 @@
         "Public sector"
     ],
     "forrt_clusters_new": "Academic Structures and Institutions, Ways of Working",
-    "forrt_sub_clusters": "Socially Responsible Research, Public and Private Partnerships"
+    "forrt_sub_clusters": "Socially Responsible Research, Public and Private Partnerships",
+    "doi": "10.1017/jme.2024.57",
+    "in-clusters": false,
+    "pdf name": "",
+    "apa reference": ""
 }

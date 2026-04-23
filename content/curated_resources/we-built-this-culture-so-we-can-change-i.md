@@ -35,5 +35,9 @@
         "Inequality"
     ],
     "forrt_clusters_new": "Academic Structures and Institutions",
-    "forrt_sub_clusters": "Structures and incentives in academia, Socially Responsible Research"
+    "forrt_sub_clusters": "Structures and incentives in academia, Socially Responsible Research",
+    "doi": "10.1037/amp0001209",
+    "in-clusters": true,
+    "pdf name": "",
+    "apa reference": ""
 }

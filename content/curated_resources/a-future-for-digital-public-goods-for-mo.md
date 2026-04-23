@@ -51,5 +51,9 @@
         "Policy"
     ],
     "forrt_clusters_new": "Academic Structures and Institutions",
-    "forrt_sub_clusters": "Socially Responsible Research"
+    "forrt_sub_clusters": "Socially Responsible Research",
+    "doi": "10.1038/s41597-023-02803-x",
+    "in-clusters": true,
+    "pdf name": "",
+    "apa reference": ""
 }

@@ -36,5 +36,9 @@
         "Open Science"
     ],
     "forrt_clusters_new": "FAIR data and materials, Replication Crisis and Credibility Revolution",
-    "forrt_sub_clusters": "Reasons to share data and materials, Ongoing debates (e.g., incentives for and against open science practices)"
+    "forrt_sub_clusters": "Reasons to share data and materials, Ongoing debates (e.g., incentives for and against open science practices)",
+    "doi": "10.7717/peerj.16731",
+    "in-clusters": true,
+    "pdf name": "",
+    "apa reference": ""
 }

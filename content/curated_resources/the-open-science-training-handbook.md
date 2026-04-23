@@ -46,5 +46,9 @@
         ""
     ],
     "forrt_clusters_new": "FAIR data and materials",
-    "forrt_sub_clusters": "FAIR principles applied to Education & Training"
+    "forrt_sub_clusters": "FAIR principles applied to Education & Training",
+    "doi": "",
+    "in-clusters": false,
+    "pdf name": "",
+    "apa reference": ""
 }

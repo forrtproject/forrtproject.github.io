@@ -46,5 +46,9 @@
         "Preregistration"
     ],
     "forrt_clusters_new": "Pre-analysis Planning",
-    "forrt_sub_clusters": "Preregistration"
+    "forrt_sub_clusters": "Preregistration",
+    "doi": "10.1097/EDE.0b013e3181e9bba6",
+    "in-clusters": true,
+    "pdf name": "",
+    "apa reference": ""
 }

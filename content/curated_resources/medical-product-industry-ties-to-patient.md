@@ -42,5 +42,9 @@
         "Industry"
     ],
     "forrt_clusters_new": "Academic Structures and Institutions, Ways of Working",
-    "forrt_sub_clusters": "Public and Private Partnerships, Socially Responsible Research"
+    "forrt_sub_clusters": "Public and Private Partnerships, Socially Responsible Research",
+    "doi": "10.1001/jamainternmed.2023.2842",
+    "in-clusters": false,
+    "pdf name": "",
+    "apa reference": ""
 }

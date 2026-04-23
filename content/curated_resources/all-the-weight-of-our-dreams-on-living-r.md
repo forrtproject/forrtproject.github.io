@@ -37,5 +37,9 @@
         "Equity and Inclusion"
     ],
     "forrt_clusters_new": "Academic Structures and Institutions",
-    "forrt_sub_clusters": "Neurodiversity, Racism in science, Inclusion"
+    "forrt_sub_clusters": "Neurodiversity, Racism in science, Inclusion",
+    "doi": "",
+    "in-clusters": false,
+    "pdf name": "",
+    "apa reference": ""
 }

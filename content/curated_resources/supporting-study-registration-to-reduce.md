@@ -36,5 +36,9 @@
         "Registration"
     ],
     "forrt_clusters_new": "Pre-analysis Planning",
-    "forrt_sub_clusters": "Registered reports, Preregistration"
+    "forrt_sub_clusters": "Registered reports, Preregistration",
+    "doi": "10.1038/s41559-024-02433-5",
+    "in-clusters": true,
+    "pdf name": "",
+    "apa reference": ""
 }

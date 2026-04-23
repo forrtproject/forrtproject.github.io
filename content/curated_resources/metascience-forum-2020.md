@@ -31,5 +31,9 @@
         "Scientific Process"
     ],
     "forrt_clusters_new": "Replication and meta-research",
-    "forrt_sub_clusters": "Direct vs. conceptual replications, Meta-research"
+    "forrt_sub_clusters": "Direct vs. conceptual replications, Meta-research",
+    "doi": "",
+    "in-clusters": false,
+    "pdf name": "",
+    "apa reference": ""
 }

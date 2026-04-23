@@ -35,5 +35,9 @@
         "Computer Code"
     ],
     "forrt_clusters_new": "FAIR data and materials, Replication Crisis and Credibility Revolution",
-    "forrt_sub_clusters": "Research data management, Proposed science improvement initiatives on statistics, measurement, teaching, data sharing, code sharing, pre-registration, & replication"
+    "forrt_sub_clusters": "Research data management, Proposed science improvement initiatives on statistics, measurement, teaching, data sharing, code sharing, pre-registration, & replication",
+    "doi": "10.1038/nphys3313",
+    "in-clusters": true,
+    "pdf name": "",
+    "apa reference": ""
 }

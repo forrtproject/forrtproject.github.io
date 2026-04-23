@@ -39,5 +39,9 @@
         "Variability"
     ],
     "forrt_clusters_new": "Transparency and reproducibility in computation and analysis, FAIR data and materials",
-    "forrt_sub_clusters": "Analysis and reporting in qualitative research, Metadata standards"
+    "forrt_sub_clusters": "Analysis and reporting in qualitative research, Metadata standards",
+    "doi": "10.1146/annurev-animal-021022-043531",
+    "in-clusters": true,
+    "pdf name": "",
+    "apa reference": ""
 }

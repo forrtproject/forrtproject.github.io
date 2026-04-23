@@ -37,5 +37,9 @@
         "Open Science"
     ],
     "forrt_clusters_new": "Replication and meta-research, Conceptual and Statistical Knowledge",
-    "forrt_sub_clusters": "Meta-research, Philosophy of science"
+    "forrt_sub_clusters": "Meta-research, Philosophy of science",
+    "doi": "",
+    "in-clusters": false,
+    "pdf name": "",
+    "apa reference": ""
 }

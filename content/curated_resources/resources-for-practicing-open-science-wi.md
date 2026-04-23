@@ -44,5 +44,9 @@
         "Transparency"
     ],
     "forrt_clusters_new": "Ways of Working, Qualitative Research",
-    "forrt_sub_clusters": "Qualitative research, Qualitative approaches to open science"
+    "forrt_sub_clusters": "Qualitative research, Qualitative approaches to open science",
+    "doi": "",
+    "in-clusters": false,
+    "pdf name": "",
+    "apa reference": ""
 }

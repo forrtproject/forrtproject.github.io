@@ -37,5 +37,9 @@
         "Open Science"
     ],
     "forrt_clusters_new": "Pre-analysis Planning, FAIR data and materials, Replication Crisis and Credibility Revolution",
-    "forrt_sub_clusters": "History of the replication crisis & credibility revolution, Preregistration, Reasons to share data and materials"
+    "forrt_sub_clusters": "History of the replication crisis & credibility revolution, Preregistration, Reasons to share data and materials",
+    "doi": "",
+    "in-clusters": false,
+    "pdf name": "",
+    "apa reference": ""
 }

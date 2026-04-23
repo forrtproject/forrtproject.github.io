@@ -36,5 +36,9 @@
         "OSF Project"
     ],
     "forrt_clusters_new": "Replication and meta-research",
-    "forrt_sub_clusters": "Direct vs. conceptual replications"
+    "forrt_sub_clusters": "Direct vs. conceptual replications",
+    "doi": "",
+    "in-clusters": false,
+    "pdf name": "",
+    "apa reference": ""
 }

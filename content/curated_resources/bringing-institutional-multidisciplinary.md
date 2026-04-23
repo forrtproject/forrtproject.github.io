@@ -47,5 +47,9 @@
         "Software"
     ],
     "forrt_clusters_new": "FAIR data and materials",
-    "forrt_sub_clusters": "Repositories, Metadata standards"
+    "forrt_sub_clusters": "Repositories, Metadata standards",
+    "doi": "10.1038/s41597-023-02652-8",
+    "in-clusters": true,
+    "pdf name": "",
+    "apa reference": ""
 }

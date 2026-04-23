@@ -32,5 +32,9 @@
         ""
     ],
     "forrt_clusters_new": "Conceptual and Statistical Knowledge",
-    "forrt_sub_clusters": "Research design, sampling methods, & its implications for inferences."
+    "forrt_sub_clusters": "Research design, sampling methods, & its implications for inferences.",
+    "doi": "10.1371/journal.pone.0132102",
+    "in-clusters": true,
+    "pdf name": "",
+    "apa reference": ""
 }

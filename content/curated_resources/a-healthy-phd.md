@@ -35,5 +35,9 @@
         "Social Sciences"
     ],
     "forrt_clusters_new": "Academic Structures and Institutions, Ways of Working",
-    "forrt_sub_clusters": "Structures and incentives in academia, Research with students (under- and graduate)"
+    "forrt_sub_clusters": "Structures and incentives in academia, Research with students (under- and graduate)",
+    "doi": "10.1038/s44159-022-00132-1",
+    "in-clusters": true,
+    "pdf name": "",
+    "apa reference": ""
 }

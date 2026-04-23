@@ -41,5 +41,9 @@
         "Ethics"
     ],
     "forrt_clusters_new": "Replication Crisis and Credibility Revolution",
-    "forrt_sub_clusters": "Ethical considerations for improved practices"
+    "forrt_sub_clusters": "Ethical considerations for improved practices",
+    "doi": "10.17226/12192",
+    "in-clusters": true,
+    "pdf name": "",
+    "apa reference": ""
 }

@@ -48,5 +48,9 @@
         "Reproducibility Research Integrity"
     ],
     "forrt_clusters_new": "Replication and meta-research",
-    "forrt_sub_clusters": "Meta-research"
+    "forrt_sub_clusters": "Meta-research",
+    "doi": "10.31222/osf.io/a8rmu",
+    "in-clusters": true,
+    "pdf name": "",
+    "apa reference": ""
 }

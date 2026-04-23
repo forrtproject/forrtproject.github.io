@@ -42,5 +42,9 @@
         "Scientific Progress"
     ],
     "forrt_clusters_new": "Replication and meta-research",
-    "forrt_sub_clusters": "Conducting replication studies; challenges, limitations, and comparisons with the original study, Direct vs. conceptual replications"
+    "forrt_sub_clusters": "Conducting replication studies; challenges, limitations, and comparisons with the original study, Direct vs. conceptual replications",
+    "doi": "10.1111/deci.12623",
+    "in-clusters": true,
+    "pdf name": "",
+    "apa reference": ""
 }

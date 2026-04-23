@@ -55,5 +55,9 @@
         "Scientific Integrity"
     ],
     "forrt_clusters_new": "FAIR data and materials",
-    "forrt_sub_clusters": "FAIR principles applied to Education & Training, Research data management, Repositories"
+    "forrt_sub_clusters": "FAIR principles applied to Education & Training, Research data management, Repositories",
+    "doi": "10.17605/OSF.IO/DTB7V",
+    "in-clusters": true,
+    "pdf name": "",
+    "apa reference": ""
 }

@@ -30,5 +30,9 @@
         "Non-academic"
     ],
     "forrt_clusters_new": "Ways of Working",
-    "forrt_sub_clusters": "Types of academic, non-academic, & alt-academic positions"
+    "forrt_sub_clusters": "Types of academic, non-academic, & alt-academic positions",
+    "doi": "",
+    "in-clusters": false,
+    "pdf name": "",
+    "apa reference": ""
 }

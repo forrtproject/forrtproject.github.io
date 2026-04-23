@@ -46,5 +46,9 @@
         "Study Planning"
     ],
     "forrt_clusters_new": "Pre-analysis Planning, Conceptual and Statistical Knowledge",
-    "forrt_sub_clusters": "Study Design, Effect sizes, statistical power, simulations, & confidence intervals., Research design, sampling methods, & its implications for inferences."
+    "forrt_sub_clusters": "Study Design, Effect sizes, statistical power, simulations, & confidence intervals., Research design, sampling methods, & its implications for inferences.",
+    "doi": "",
+    "in-clusters": false,
+    "pdf name": "",
+    "apa reference": ""
 }

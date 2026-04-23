@@ -58,5 +58,9 @@
         "Research Quality Assessment"
     ],
     "forrt_clusters_new": "Academic Structures and Institutions",
-    "forrt_sub_clusters": "Research assessment, proposals, and reforms"
+    "forrt_sub_clusters": "Research assessment, proposals, and reforms",
+    "doi": "10.1371/journal.pbio.3002362",
+    "in-clusters": true,
+    "pdf name": "",
+    "apa reference": ""
 }

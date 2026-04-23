@@ -38,5 +38,9 @@
         "South Africa"
     ],
     "forrt_clusters_new": "Academic Structures and Institutions, FAIR data and materials",
-    "forrt_sub_clusters": "Research assessment, proposals, and reforms, Reasons not to share: Privacy and security considerations"
+    "forrt_sub_clusters": "Research assessment, proposals, and reforms, Reasons not to share: Privacy and security considerations",
+    "doi": "10.3389/fphar.2024.1304950",
+    "in-clusters": true,
+    "pdf name": "",
+    "apa reference": ""
 }

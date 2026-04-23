@@ -36,5 +36,9 @@
         "Registered Reports"
     ],
     "forrt_clusters_new": "Replication and meta-research",
-    "forrt_sub_clusters": "Registered Replication Reports"
+    "forrt_sub_clusters": "Registered Replication Reports",
+    "doi": "10.1177/1745691615605826",
+    "in-clusters": true,
+    "pdf name": "",
+    "apa reference": ""
 }

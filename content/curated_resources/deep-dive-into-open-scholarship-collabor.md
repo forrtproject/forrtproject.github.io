@@ -36,5 +36,9 @@
         "Research Replication"
     ],
     "forrt_clusters_new": "Ways of Working, Replication Crisis and Credibility Revolution",
-    "forrt_sub_clusters": "Collection of large scale replications, Big team science"
+    "forrt_sub_clusters": "Collection of large scale replications, Big team science",
+    "doi": "",
+    "in-clusters": false,
+    "pdf name": "",
+    "apa reference": ""
 }

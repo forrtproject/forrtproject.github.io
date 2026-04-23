@@ -48,5 +48,9 @@
         "Reporting"
     ],
     "forrt_clusters_new": "Pre-analysis Planning, Research Integrity",
-    "forrt_sub_clusters": "Preregistration, Research Integrity, Social Responsibility, and Equity"
+    "forrt_sub_clusters": "Preregistration, Research Integrity, Social Responsibility, and Equity",
+    "doi": "10.1186/s12916-018-1042-6",
+    "in-clusters": true,
+    "pdf name": "",
+    "apa reference": ""
 }

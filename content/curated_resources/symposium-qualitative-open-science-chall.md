@@ -38,5 +38,9 @@
         "Transparency"
     ],
     "forrt_clusters_new": "Ways of Working",
-    "forrt_sub_clusters": "Qualitative research"
+    "forrt_sub_clusters": "Qualitative research",
+    "doi": "",
+    "in-clusters": false,
+    "pdf name": "",
+    "apa reference": ""
 }

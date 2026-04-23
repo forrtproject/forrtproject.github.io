@@ -40,5 +40,9 @@
         "Students"
     ],
     "forrt_clusters_new": "Pre-analysis Planning, Replication Crisis and Credibility Revolution",
-    "forrt_sub_clusters": "Questionable research practices & their prevalence, Registered reports"
+    "forrt_sub_clusters": "Questionable research practices & their prevalence, Registered reports",
+    "doi": "10.32872/spb.9411",
+    "in-clusters": true,
+    "pdf name": "",
+    "apa reference": ""
 }

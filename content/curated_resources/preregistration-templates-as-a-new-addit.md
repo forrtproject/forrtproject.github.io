@@ -36,5 +36,9 @@
         "Toxicology"
     ],
     "forrt_clusters_new": "Pre-analysis Planning",
-    "forrt_sub_clusters": "Understanding the types of preregistration and writing one., Preregistration"
+    "forrt_sub_clusters": "Understanding the types of preregistration and writing one., Preregistration",
+    "doi": "10.1080/2833373X.2024.2314303",
+    "in-clusters": true,
+    "pdf name": "",
+    "apa reference": ""
 }

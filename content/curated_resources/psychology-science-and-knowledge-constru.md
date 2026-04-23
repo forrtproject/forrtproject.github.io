@@ -34,5 +34,9 @@
         "Open Science"
     ],
     "forrt_clusters_new": "Replication and meta-research, Replication Crisis and Credibility Revolution",
-    "forrt_sub_clusters": "History of the replication crisis & credibility revolution, Questionable research practices & their prevalence, Meta-analyses"
+    "forrt_sub_clusters": "History of the replication crisis & credibility revolution, Questionable research practices & their prevalence, Meta-analyses",
+    "doi": "10.1146/annurev-psych-122216-011845",
+    "in-clusters": true,
+    "pdf name": "",
+    "apa reference": ""
 }

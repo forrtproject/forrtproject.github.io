@@ -51,5 +51,9 @@
         "Publication Bias"
     ],
     "forrt_clusters_new": "Pre-analysis Planning",
-    "forrt_sub_clusters": "Preregistration"
+    "forrt_sub_clusters": "Preregistration",
+    "doi": "10.20982/tqmp.16.4.p376",
+    "in-clusters": true,
+    "pdf name": "",
+    "apa reference": ""
 }

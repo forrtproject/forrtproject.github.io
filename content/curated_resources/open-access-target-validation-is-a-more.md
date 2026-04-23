@@ -37,5 +37,9 @@
         "Phase I Clinical Investigation"
     ],
     "forrt_clusters_new": "Ways of Working",
-    "forrt_sub_clusters": "Public and Private Partnerships"
+    "forrt_sub_clusters": "Public and Private Partnerships",
+    "doi": "10.1371/journal.pbio.1002164",
+    "in-clusters": true,
+    "pdf name": "",
+    "apa reference": ""
 }

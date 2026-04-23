@@ -31,5 +31,9 @@
         "Social Psychology"
     ],
     "forrt_clusters_new": "Academic Structures and Institutions",
-    "forrt_sub_clusters": "Socially Responsible Research"
+    "forrt_sub_clusters": "Socially Responsible Research",
+    "doi": "10.3389/frsps.2023.1283272",
+    "in-clusters": true,
+    "pdf name": "",
+    "apa reference": ""
 }

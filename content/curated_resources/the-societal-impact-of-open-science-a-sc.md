@@ -44,5 +44,9 @@
         "Societal Impact"
     ],
     "forrt_clusters_new": "Academic Structures and Institutions, Ways of Working",
-    "forrt_sub_clusters": "Socially Responsible Research, Science communication and public outreach"
+    "forrt_sub_clusters": "Socially Responsible Research, Science communication and public outreach",
+    "doi": "10.31235/osf.io/tqrwg",
+    "in-clusters": true,
+    "pdf name": "",
+    "apa reference": ""
 }

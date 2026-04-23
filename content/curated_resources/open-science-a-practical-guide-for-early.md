@@ -47,5 +47,9 @@
         "Open Science Community"
     ],
     "forrt_clusters_new": "Replication Crisis and Credibility Revolution",
-    "forrt_sub_clusters": "Proposed science improvement initiatives on statistics, measurement, teaching, data sharing, code sharing, pre-registration, & replication"
+    "forrt_sub_clusters": "Proposed science improvement initiatives on statistics, measurement, teaching, data sharing, code sharing, pre-registration, & replication",
+    "doi": "10.5281/zenodo.7716153",
+    "in-clusters": true,
+    "pdf name": "",
+    "apa reference": ""
 }

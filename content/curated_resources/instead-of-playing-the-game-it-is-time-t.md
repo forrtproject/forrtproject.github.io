@@ -41,5 +41,9 @@
         "Open Science"
     ],
     "forrt_clusters_new": "Pre-analysis Planning",
-    "forrt_sub_clusters": "Registered reports"
+    "forrt_sub_clusters": "Registered reports",
+    "doi": "10.3934/Neuroscience.2014.1.4",
+    "in-clusters": true,
+    "pdf name": "",
+    "apa reference": ""
 }

@@ -34,5 +34,9 @@
         "Open Science"
     ],
     "forrt_clusters_new": "Research Integrity",
-    "forrt_sub_clusters": "Questionable Research Practices and Responsible Research Practices"
+    "forrt_sub_clusters": "Questionable Research Practices and Responsible Research Practices",
+    "doi": "10.1126/science.aab2374",
+    "in-clusters": true,
+    "pdf name": "",
+    "apa reference": ""
 }

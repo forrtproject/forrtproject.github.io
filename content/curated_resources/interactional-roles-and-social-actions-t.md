@@ -38,5 +38,9 @@
         "OSCA Awards 2025"
     ],
     "forrt_clusters_new": "Ways of Working",
-    "forrt_sub_clusters": "Big team science"
+    "forrt_sub_clusters": "Big team science",
+    "doi": "10.1101/2022.11.15.516566v3",
+    "in-clusters": true,
+    "pdf name": "",
+    "apa reference": ""
 }

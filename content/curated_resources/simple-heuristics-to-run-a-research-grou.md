@@ -36,5 +36,9 @@
         "Trust"
     ],
     "forrt_clusters_new": "Ways of Working",
-    "forrt_sub_clusters": "Research with students (under- and graduate)"
+    "forrt_sub_clusters": "Research with students (under- and graduate)",
+    "doi": "10.1002/pchj.533",
+    "in-clusters": false,
+    "pdf name": "",
+    "apa reference": ""
 }

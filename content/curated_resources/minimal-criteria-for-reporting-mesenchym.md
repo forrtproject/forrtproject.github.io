@@ -38,5 +38,9 @@
         "Characterization"
     ],
     "forrt_clusters_new": "Transparency and reproducibility in computation and analysis",
-    "forrt_sub_clusters": "Analysis and reporting in qualitative research"
+    "forrt_sub_clusters": "Analysis and reporting in qualitative research",
+    "doi": "10.1007/s11259-024-10398-w",
+    "in-clusters": false,
+    "pdf name": "",
+    "apa reference": ""
 }

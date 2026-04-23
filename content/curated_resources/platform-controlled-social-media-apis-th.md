@@ -58,5 +58,9 @@
         "Social Sciences"
     ],
     "forrt_clusters_new": "Transparency and reproducibility in computation and analysis, FAIR data and materials",
-    "forrt_sub_clusters": "Free and open source software, Reasons to share data and materials"
+    "forrt_sub_clusters": "Free and open source software, Reasons to share data and materials",
+    "doi": "10.1038/s41562-023-01750-2",
+    "in-clusters": true,
+    "pdf name": "",
+    "apa reference": ""
 }

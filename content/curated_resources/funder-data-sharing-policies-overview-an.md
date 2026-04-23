@@ -38,5 +38,9 @@
         "Policy"
     ],
     "forrt_clusters_new": "Academic Structures and Institutions, FAIR data and materials",
-    "forrt_sub_clusters": "Reasons to share data and materials, Research assessment, proposals, and reforms"
+    "forrt_sub_clusters": "Reasons to share data and materials, Research assessment, proposals, and reforms",
+    "doi": "",
+    "in-clusters": false,
+    "pdf name": "",
+    "apa reference": ""
 }

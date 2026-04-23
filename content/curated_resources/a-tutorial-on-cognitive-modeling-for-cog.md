@@ -36,5 +36,9 @@
         "Replication"
     ],
     "forrt_clusters_new": "Transparency and reproducibility in computation and analysis",
-    "forrt_sub_clusters": "Computational reproducibility"
+    "forrt_sub_clusters": "Computational reproducibility",
+    "doi": "10.1037/pag0000637",
+    "in-clusters": true,
+    "pdf name": "",
+    "apa reference": ""
 }

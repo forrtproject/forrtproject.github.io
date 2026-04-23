@@ -35,5 +35,9 @@
         "Open Data"
     ],
     "forrt_clusters_new": "FAIR data and materials, Replication Crisis and Credibility Revolution",
-    "forrt_sub_clusters": "Ongoing debates (e.g., incentives for and against open science practices), Reasons to share data and materials"
+    "forrt_sub_clusters": "Ongoing debates (e.g., incentives for and against open science practices), Reasons to share data and materials",
+    "doi": "10.1186/s41073-017-0028-9",
+    "in-clusters": true,
+    "pdf name": "",
+    "apa reference": ""
 }

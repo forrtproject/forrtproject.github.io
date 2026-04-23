@@ -53,5 +53,9 @@
         "Copyright"
     ],
     "forrt_clusters_new": "FAIR data and materials",
-    "forrt_sub_clusters": "Research data management"
+    "forrt_sub_clusters": "Research data management",
+    "doi": "10.6084/m9.figshare.16652701",
+    "in-clusters": true,
+    "pdf name": "",
+    "apa reference": ""
 }

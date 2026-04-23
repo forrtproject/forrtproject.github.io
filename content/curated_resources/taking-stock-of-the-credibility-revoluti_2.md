@@ -36,5 +36,9 @@
         "Book; Credibility Revolution; Scientific Reform;"
     ],
     "forrt_clusters_new": "Replication Crisis and Credibility Revolution",
-    "forrt_sub_clusters": "History of the replication crisis & credibility revolution"
+    "forrt_sub_clusters": "History of the replication crisis & credibility revolution",
+    "doi": "10.17605/OSF.IO/5CX2D",
+    "in-clusters": true,
+    "pdf name": "",
+    "apa reference": ""
 }

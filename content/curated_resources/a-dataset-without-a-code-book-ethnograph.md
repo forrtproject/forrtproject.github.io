@@ -37,5 +37,9 @@
         "Methodology"
     ],
     "forrt_clusters_new": "Qualitative Research, FAIR data and materials",
-    "forrt_sub_clusters": "Reasons not to share: Privacy and security considerations, FAIR data and materials: Ethical and legal challenges"
+    "forrt_sub_clusters": "Reasons not to share: Privacy and security considerations, FAIR data and materials: Ethical and legal challenges",
+    "doi": "10.3389/fsoc.2024.1308029",
+    "in-clusters": true,
+    "pdf name": "",
+    "apa reference": ""
 }

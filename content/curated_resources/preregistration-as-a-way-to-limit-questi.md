@@ -35,5 +35,9 @@
         "Questionable Research Practices"
     ],
     "forrt_clusters_new": "Pre-analysis Planning",
-    "forrt_sub_clusters": "Preregistration"
+    "forrt_sub_clusters": "Preregistration",
+    "doi": "10.1080/02650487.2020.1753441",
+    "in-clusters": true,
+    "pdf name": "",
+    "apa reference": ""
 }

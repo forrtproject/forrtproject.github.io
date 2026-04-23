@@ -44,5 +44,9 @@
         "Minimum Covariance Determinant"
     ],
     "forrt_clusters_new": "Pre-analysis Planning",
-    "forrt_sub_clusters": "Study Design, Understanding the types of preregistration and writing one."
+    "forrt_sub_clusters": "Study Design, Understanding the types of preregistration and writing one.",
+    "doi": "10.5334/irsp.289",
+    "in-clusters": true,
+    "pdf name": "",
+    "apa reference": ""
 }

@@ -38,5 +38,9 @@
         "False Preregistration"
     ],
     "forrt_clusters_new": "Replication and meta-research",
-    "forrt_sub_clusters": "Meta-research"
+    "forrt_sub_clusters": "Meta-research",
+    "doi": "10.1038/s41562-024-01982-w",
+    "in-clusters": true,
+    "pdf name": "",
+    "apa reference": ""
 }

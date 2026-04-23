@@ -57,5 +57,9 @@
         "Quantitative"
     ],
     "forrt_clusters_new": "Qualitative Research, Conceptual and Statistical Knowledge, Transparency and reproducibility in computation and analysis",
-    "forrt_sub_clusters": "Qualitative approaches to open science, Philosophy of science, Transparency in qualitative research, Replication research, Preregistration and Registered reports, Reflexivity and positionality, Computational reproducibility"
+    "forrt_sub_clusters": "Qualitative approaches to open science, Philosophy of science, Transparency in qualitative research, Replication research, Preregistration and Registered reports, Reflexivity and positionality, Computational reproducibility",
+    "doi": "10.36850/mr7",
+    "in-clusters": true,
+    "pdf name": "",
+    "apa reference": ""
 }

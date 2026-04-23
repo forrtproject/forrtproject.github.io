@@ -37,5 +37,9 @@
         "Open Science"
     ],
     "forrt_clusters_new": "Replication and meta-research",
-    "forrt_sub_clusters": "Meta-analyses, Meta-research"
+    "forrt_sub_clusters": "Meta-analyses, Meta-research",
+    "doi": "10.1001/jama.2012.13444",
+    "in-clusters": false,
+    "pdf name": "",
+    "apa reference": ""
 }

@@ -36,5 +36,9 @@
         "Autism"
     ],
     "forrt_clusters_new": "Academic Structures and Institutions",
-    "forrt_sub_clusters": "Neurodiversity, Inclusion"
+    "forrt_sub_clusters": "Neurodiversity, Inclusion",
+    "doi": "",
+    "in-clusters": false,
+    "pdf name": "",
+    "apa reference": ""
 }

@@ -48,5 +48,9 @@
         "and Inclusion (DEI); Non-WEIRD Research"
     ],
     "forrt_clusters_new": "Ways of Working, Academic Structures and Institutions",
-    "forrt_sub_clusters": "Neurodiversity, Participatory research"
+    "forrt_sub_clusters": "Neurodiversity, Participatory research",
+    "doi": "10.53841/bpscog.2023.1.8.23",
+    "in-clusters": true,
+    "pdf name": "",
+    "apa reference": ""
 }

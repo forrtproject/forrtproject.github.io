@@ -43,5 +43,9 @@
         "Machine Learning"
     ],
     "forrt_clusters_new": "FAIR data and materials",
-    "forrt_sub_clusters": "Repositories, Research data management"
+    "forrt_sub_clusters": "Repositories, Research data management",
+    "doi": "10.1016/j.forsciint.2024.111934",
+    "in-clusters": false,
+    "pdf name": "",
+    "apa reference": ""
 }

@@ -40,5 +40,9 @@
         ""
     ],
     "forrt_clusters_new": "Conceptual and Statistical Knowledge",
-    "forrt_sub_clusters": "The logic of null hypothesis testing, p-values, Type I and II errors (and when and why they might happen)., Exploratory and confirmatory analyses"
+    "forrt_sub_clusters": "The logic of null hypothesis testing, p-values, Type I and II errors (and when and why they might happen)., Exploratory and confirmatory analyses",
+    "doi": "10.1371/journal.pbio.1002106",
+    "in-clusters": true,
+    "pdf name": "",
+    "apa reference": ""
 }

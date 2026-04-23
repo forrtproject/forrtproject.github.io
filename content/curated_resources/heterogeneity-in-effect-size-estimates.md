@@ -36,5 +36,9 @@
         "Theory"
     ],
     "forrt_clusters_new": "Conceptual and Statistical Knowledge",
-    "forrt_sub_clusters": "Effect sizes, statistical power, simulations, & confidence intervals."
+    "forrt_sub_clusters": "Effect sizes, statistical power, simulations, & confidence intervals.",
+    "doi": "10.1073/pnas.2403490121",
+    "in-clusters": true,
+    "pdf name": "",
+    "apa reference": ""
 }

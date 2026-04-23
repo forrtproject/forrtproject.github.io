@@ -37,5 +37,9 @@
         "Data Infrastructure"
     ],
     "forrt_clusters_new": "FAIR data and materials",
-    "forrt_sub_clusters": "Reasons not to share: Privacy and security considerations, Research data management"
+    "forrt_sub_clusters": "Reasons not to share: Privacy and security considerations, Research data management",
+    "doi": "10.17226/27335",
+    "in-clusters": true,
+    "pdf name": "",
+    "apa reference": ""
 }

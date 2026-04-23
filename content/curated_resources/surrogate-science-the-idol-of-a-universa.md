@@ -32,5 +32,9 @@
         ""
     ],
     "forrt_clusters_new": "Conceptual and Statistical Knowledge",
-    "forrt_sub_clusters": "Philosophy of science"
+    "forrt_sub_clusters": "Philosophy of science",
+    "doi": "10.1177/0149206314547522",
+    "in-clusters": true,
+    "pdf name": "",
+    "apa reference": ""
 }

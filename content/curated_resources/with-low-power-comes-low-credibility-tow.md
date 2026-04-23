@@ -33,5 +33,9 @@
         "Power"
     ],
     "forrt_clusters_new": "Conceptual and Statistical Knowledge, Replication Crisis and Credibility Revolution, Research Integrity, Replication and meta-research",
-    "forrt_sub_clusters": "Questionable Research Practices and Responsible Research Practices, The logic of null hypothesis testing, p-values, Type I and II errors (and when and why they might happen)., Limitations and benefits of NHST, Bayesian & Likelihood approaches., Meta-research, Effect sizes, statistical power, simulations, & confidence intervals., Questionable research practices & their prevalence"
+    "forrt_sub_clusters": "Questionable Research Practices and Responsible Research Practices, The logic of null hypothesis testing, p-values, Type I and II errors (and when and why they might happen)., Limitations and benefits of NHST, Bayesian & Likelihood approaches., Meta-research, Effect sizes, statistical power, simulations, & confidence intervals., Questionable research practices & their prevalence",
+    "doi": "10.1177/25152459241296397",
+    "in-clusters": true,
+    "pdf name": "",
+    "apa reference": ""
 }

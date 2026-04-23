@@ -30,5 +30,9 @@
         "Open Access"
     ],
     "forrt_clusters_new": "FAIR data and materials",
-    "forrt_sub_clusters": "Reasons to share data and materials"
+    "forrt_sub_clusters": "Reasons to share data and materials",
+    "doi": "10.1016/j.sopen.2019.04.002",
+    "in-clusters": false,
+    "pdf name": "",
+    "apa reference": ""
 }

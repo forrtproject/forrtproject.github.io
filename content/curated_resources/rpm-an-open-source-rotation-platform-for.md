@@ -44,5 +44,9 @@
         "Open Hardware"
     ],
     "forrt_clusters_new": "Transparency and reproducibility in computation and analysis",
-    "forrt_sub_clusters": "Free and open source software"
+    "forrt_sub_clusters": "Free and open source software",
+    "doi": "10.1016/j.jneumeth.2023.110002",
+    "in-clusters": false,
+    "pdf name": "",
+    "apa reference": ""
 }

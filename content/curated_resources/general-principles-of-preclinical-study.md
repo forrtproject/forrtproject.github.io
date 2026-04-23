@@ -39,5 +39,9 @@
         "Reproducibility"
     ],
     "forrt_clusters_new": "Pre-analysis Planning",
-    "forrt_sub_clusters": "Study Design"
+    "forrt_sub_clusters": "Study Design",
+    "doi": "10.1007/164_2019_277?error=cookies_not_supported&code=e3998d2b-489c-49a1-9602-1fbdd877aefc",
+    "in-clusters": false,
+    "pdf name": "",
+    "apa reference": ""
 }

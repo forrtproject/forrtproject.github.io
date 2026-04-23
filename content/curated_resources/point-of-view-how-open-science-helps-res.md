@@ -35,5 +35,9 @@
         "Open Science"
     ],
     "forrt_clusters_new": "FAIR data and materials",
-    "forrt_sub_clusters": "Reasons to share data and materials"
+    "forrt_sub_clusters": "Reasons to share data and materials",
+    "doi": "10.7554/eLife.16800",
+    "in-clusters": true,
+    "pdf name": "",
+    "apa reference": ""
 }

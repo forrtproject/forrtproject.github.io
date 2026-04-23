@@ -51,5 +51,9 @@
         "Research Data"
     ],
     "forrt_clusters_new": "FAIR data and materials",
-    "forrt_sub_clusters": "Metadata standards, Reasons to share data and materials"
+    "forrt_sub_clusters": "Metadata standards, Reasons to share data and materials",
+    "doi": "10.1038/s41591-024-02879-x",
+    "in-clusters": true,
+    "pdf name": "",
+    "apa reference": ""
 }

@@ -43,5 +43,9 @@
         "Open Educational Resource"
     ],
     "forrt_clusters_new": "FAIR data and materials",
-    "forrt_sub_clusters": "FAIR principles applied to Education & Training"
+    "forrt_sub_clusters": "FAIR principles applied to Education & Training",
+    "doi": "10.12688/hrbopenres.13171.1",
+    "in-clusters": true,
+    "pdf name": "",
+    "apa reference": ""
 }

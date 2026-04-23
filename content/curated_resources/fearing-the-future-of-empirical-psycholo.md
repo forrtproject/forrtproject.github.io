@@ -37,5 +37,9 @@
         "Open Science"
     ],
     "forrt_clusters_new": "Replication and meta-research, Replication Crisis and Credibility Revolution",
-    "forrt_sub_clusters": "Direct vs. conceptual replications, Questionable research practices & their prevalence"
+    "forrt_sub_clusters": "Direct vs. conceptual replications, Questionable research practices & their prevalence",
+    "doi": "10.1037/a0025172",
+    "in-clusters": true,
+    "pdf name": "",
+    "apa reference": ""
 }

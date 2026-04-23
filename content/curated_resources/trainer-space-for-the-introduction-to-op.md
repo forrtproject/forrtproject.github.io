@@ -42,5 +42,9 @@
         "Researchers"
     ],
     "forrt_clusters_new": "Research Integrity",
-    "forrt_sub_clusters": "Education and Training in Research Integrity"
+    "forrt_sub_clusters": "Education and Training in Research Integrity",
+    "doi": "",
+    "in-clusters": false,
+    "pdf name": "",
+    "apa reference": ""
 }

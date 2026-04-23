@@ -48,5 +48,9 @@
         "Life Sciences"
     ],
     "forrt_clusters_new": "Pre-analysis Planning",
-    "forrt_sub_clusters": "Preregistration"
+    "forrt_sub_clusters": "Preregistration",
+    "doi": "10.31234/osf.io/bcd9t",
+    "in-clusters": true,
+    "pdf name": "",
+    "apa reference": ""
 }

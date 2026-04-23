@@ -53,5 +53,9 @@
         "Transparency"
     ],
     "forrt_clusters_new": "Qualitative Research",
-    "forrt_sub_clusters": "Reflexivity and positionality"
+    "forrt_sub_clusters": "Reflexivity and positionality",
+    "doi": "10.1615/JWomenMinorScienEng.2022044277",
+    "in-clusters": true,
+    "pdf name": "",
+    "apa reference": ""
 }

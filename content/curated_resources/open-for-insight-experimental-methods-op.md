@@ -37,5 +37,9 @@
         "Conceptual and statistical knowledge"
     ],
     "forrt_clusters_new": "Conceptual and Statistical Knowledge, FAIR data and materials",
-    "forrt_sub_clusters": "FAIR principles applied to Education & Training, Research design, sampling methods, & its implications for inferences."
+    "forrt_sub_clusters": "FAIR principles applied to Education & Training, Research design, sampling methods, & its implications for inferences.",
+    "doi": "",
+    "in-clusters": false,
+    "pdf name": "",
+    "apa reference": ""
 }

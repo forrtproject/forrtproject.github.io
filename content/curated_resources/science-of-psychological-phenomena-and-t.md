@@ -37,5 +37,9 @@
         "Replication"
     ],
     "forrt_clusters_new": "Conceptual and Statistical Knowledge",
-    "forrt_sub_clusters": "Philosophy of science, Research design, sampling methods, & its implications for inferences."
+    "forrt_sub_clusters": "Philosophy of science, Research design, sampling methods, & its implications for inferences.",
+    "doi": "10.1037/amp0001362",
+    "in-clusters": true,
+    "pdf name": "",
+    "apa reference": ""
 }

@@ -48,5 +48,9 @@
         "Pandemic Preparedness"
     ],
     "forrt_clusters_new": "Academic Structures and Institutions",
-    "forrt_sub_clusters": "Socially Responsible Research"
+    "forrt_sub_clusters": "Socially Responsible Research",
+    "doi": "10.1016/s2214-109x(23)00328-5",
+    "in-clusters": false,
+    "pdf name": "",
+    "apa reference": ""
 }

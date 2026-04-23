@@ -31,5 +31,9 @@
         ""
     ],
     "forrt_clusters_new": "Conceptual and Statistical Knowledge",
-    "forrt_sub_clusters": "Exploratory and confirmatory analyses"
+    "forrt_sub_clusters": "Exploratory and confirmatory analyses",
+    "doi": "10.1511/2014.111.460",
+    "in-clusters": true,
+    "pdf name": "",
+    "apa reference": ""
 }

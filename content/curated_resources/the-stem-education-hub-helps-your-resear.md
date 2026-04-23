@@ -34,5 +34,9 @@
         "Research"
     ],
     "forrt_clusters_new": "Pre-analysis Planning, Qualitative Research",
-    "forrt_sub_clusters": "Understanding the types of preregistration and writing one., Preregistration and Registered reports"
+    "forrt_sub_clusters": "Understanding the types of preregistration and writing one., Preregistration and Registered reports",
+    "doi": "",
+    "in-clusters": false,
+    "pdf name": "",
+    "apa reference": ""
 }

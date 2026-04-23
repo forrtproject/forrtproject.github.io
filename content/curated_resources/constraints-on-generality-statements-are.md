@@ -35,5 +35,9 @@
         "Open Science"
     ],
     "forrt_clusters_new": "Replication and meta-research",
-    "forrt_sub_clusters": "Direct vs. conceptual replications, Conducting replication studies; challenges, limitations, and comparisons with the original study"
+    "forrt_sub_clusters": "Direct vs. conceptual replications, Conducting replication studies; challenges, limitations, and comparisons with the original study",
+    "doi": "10.1017/S0140525X18000845",
+    "in-clusters": true,
+    "pdf name": "",
+    "apa reference": ""
 }

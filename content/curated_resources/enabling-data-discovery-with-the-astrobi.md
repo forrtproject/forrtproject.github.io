@@ -47,5 +47,9 @@
         "ARMS"
     ],
     "forrt_clusters_new": "FAIR data and materials",
-    "forrt_sub_clusters": "Metadata standards"
+    "forrt_sub_clusters": "Metadata standards",
+    "doi": "10.1089/ast.2023.0067",
+    "in-clusters": true,
+    "pdf name": "",
+    "apa reference": ""
 }

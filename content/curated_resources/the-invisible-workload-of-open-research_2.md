@@ -36,5 +36,9 @@
         "Open Research"
     ],
     "forrt_clusters_new": "Academic Structures and Institutions, Ways of Working",
-    "forrt_sub_clusters": "Structures and incentives in academia, Slow Science/Slow Scholarship"
+    "forrt_sub_clusters": "Structures and incentives in academia, Slow Science/Slow Scholarship",
+    "doi": "10.36850/mr5",
+    "in-clusters": true,
+    "pdf name": "",
+    "apa reference": ""
 }

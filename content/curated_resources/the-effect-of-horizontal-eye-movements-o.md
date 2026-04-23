@@ -36,5 +36,9 @@
         "Transparency"
     ],
     "forrt_clusters_new": "Replication and meta-research, Pre-analysis Planning",
-    "forrt_sub_clusters": "Preregistration, Conducting replication studies; challenges, limitations, and comparisons with the original study"
+    "forrt_sub_clusters": "Preregistration, Conducting replication studies; challenges, limitations, and comparisons with the original study",
+    "doi": "10.1037/xge0000038",
+    "in-clusters": true,
+    "pdf name": "",
+    "apa reference": ""
 }

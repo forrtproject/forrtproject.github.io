@@ -35,5 +35,9 @@
         "SIPS 2016"
     ],
     "forrt_clusters_new": "Academic Structures and Institutions",
-    "forrt_sub_clusters": "Diversity in Academia"
+    "forrt_sub_clusters": "Diversity in Academia",
+    "doi": "",
+    "in-clusters": false,
+    "pdf name": "",
+    "apa reference": ""
 }

@@ -56,5 +56,9 @@
         "Open Data"
     ],
     "forrt_clusters_new": "FAIR data and materials",
-    "forrt_sub_clusters": "Reasons to share data and materials, Research data management"
+    "forrt_sub_clusters": "Reasons to share data and materials, Research data management",
+    "doi": "10.1371/journal.pone.0288313",
+    "in-clusters": true,
+    "pdf name": "",
+    "apa reference": ""
 }

@@ -42,5 +42,9 @@
         "Systematic Reviews"
     ],
     "forrt_clusters_new": "Replication and meta-research",
-    "forrt_sub_clusters": "Meta-research"
+    "forrt_sub_clusters": "Meta-research",
+    "doi": "10.1371/journal.pbio.2006930",
+    "in-clusters": true,
+    "pdf name": "",
+    "apa reference": ""
 }

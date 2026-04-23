@@ -32,5 +32,9 @@
         "Kindness"
     ],
     "forrt_clusters_new": "Academic Structures and Institutions, Replication Crisis and Credibility Revolution",
-    "forrt_sub_clusters": "Ongoing debates (e.g., incentives for and against open science practices), Structures and incentives in academia"
+    "forrt_sub_clusters": "Ongoing debates (e.g., incentives for and against open science practices), Structures and incentives in academia",
+    "doi": "",
+    "in-clusters": false,
+    "pdf name": "",
+    "apa reference": ""
 }

@@ -35,5 +35,9 @@
         "Epistemic (Intellectual) Humility"
     ],
     "forrt_clusters_new": "Academic Structures and Institutions",
-    "forrt_sub_clusters": "Equity"
+    "forrt_sub_clusters": "Equity",
+    "doi": "10.15626/MP.2023.3797",
+    "in-clusters": true,
+    "pdf name": "",
+    "apa reference": ""
 }

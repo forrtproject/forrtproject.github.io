@@ -45,5 +45,9 @@
         "Project Management"
     ],
     "forrt_clusters_new": "Academic Structures and Institutions",
-    "forrt_sub_clusters": "Research assessment, proposals, and reforms"
+    "forrt_sub_clusters": "Research assessment, proposals, and reforms",
+    "doi": "10.12688%2Fopenreseurope.15430.2",
+    "in-clusters": true,
+    "pdf name": "",
+    "apa reference": ""
 }

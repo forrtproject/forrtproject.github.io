@@ -43,5 +43,9 @@
         "Strategic Goals"
     ],
     "forrt_clusters_new": "Academic Structures and Institutions",
-    "forrt_sub_clusters": "Research assessment, proposals, and reforms, Structures and incentives in academia"
+    "forrt_sub_clusters": "Research assessment, proposals, and reforms, Structures and incentives in academia",
+    "doi": "10.5281/zenodo.7433767",
+    "in-clusters": true,
+    "pdf name": "",
+    "apa reference": ""
 }

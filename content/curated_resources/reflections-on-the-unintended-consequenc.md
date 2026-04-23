@@ -38,5 +38,9 @@
         "philosophy of science"
     ],
     "forrt_clusters_new": "Conceptual and Statistical Knowledge, Replication Crisis and Credibility Revolution",
-    "forrt_sub_clusters": "Philosophy of science, Ongoing debates (e.g., incentives for and against open science practices)"
+    "forrt_sub_clusters": "Philosophy of science, Ongoing debates (e.g., incentives for and against open science practices)",
+    "doi": "10.36850/ed4",
+    "in-clusters": true,
+    "pdf name": "",
+    "apa reference": ""
 }

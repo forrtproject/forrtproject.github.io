@@ -41,5 +41,9 @@
         "Reproducibility Knowledge"
     ],
     "forrt_clusters_new": "Pre-analysis Planning, Transparency and reproducibility in computation and analysis",
-    "forrt_sub_clusters": "Computational reproducibility, Purpose of pre-analysis planning"
+    "forrt_sub_clusters": "Computational reproducibility, Purpose of pre-analysis planning",
+    "doi": "",
+    "in-clusters": false,
+    "pdf name": "",
+    "apa reference": ""
 }

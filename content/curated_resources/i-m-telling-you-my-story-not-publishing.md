@@ -37,5 +37,9 @@
         "Sexuality"
     ],
     "forrt_clusters_new": "FAIR data and materials, Ways of Working",
-    "forrt_sub_clusters": "Reasons not to share: Privacy and security considerations, Qualitative research"
+    "forrt_sub_clusters": "Reasons not to share: Privacy and security considerations, Qualitative research",
+    "doi": "10.1177/13591053241239109",
+    "in-clusters": true,
+    "pdf name": "",
+    "apa reference": ""
 }

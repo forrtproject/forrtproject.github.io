@@ -46,5 +46,9 @@
         "Registered Reports"
     ],
     "forrt_clusters_new": "Pre-analysis Planning, Transparency and reproducibility in computation and analysis",
-    "forrt_sub_clusters": "Registered reports, Analysis and reporting in qualitative research"
+    "forrt_sub_clusters": "Registered reports, Analysis and reporting in qualitative research",
+    "doi": "10.12688%2Fopenreseurope.15532.2",
+    "in-clusters": true,
+    "pdf name": "",
+    "apa reference": ""
 }

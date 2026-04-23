@@ -52,5 +52,9 @@
         "Unknown Unknowns"
     ],
     "forrt_clusters_new": "Pre-analysis Planning",
-    "forrt_sub_clusters": "Understanding the types of preregistration and writing one."
+    "forrt_sub_clusters": "Understanding the types of preregistration and writing one.",
+    "doi": "10.31222/osf.io/3t7pc",
+    "in-clusters": true,
+    "pdf name": "",
+    "apa reference": ""
 }

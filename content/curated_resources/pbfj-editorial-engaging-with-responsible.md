@@ -37,5 +37,9 @@
         "Responsible Science"
     ],
     "forrt_clusters_new": "Pre-analysis Planning",
-    "forrt_sub_clusters": "Registered reports"
+    "forrt_sub_clusters": "Registered reports",
+    "doi": "10.1016/j.pacfin.2022.101837",
+    "in-clusters": false,
+    "pdf name": "",
+    "apa reference": ""
 }

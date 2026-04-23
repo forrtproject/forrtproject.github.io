@@ -45,5 +45,9 @@
         "Health for all"
     ],
     "forrt_clusters_new": "FAIR data and materials",
-    "forrt_sub_clusters": "Reasons to share data and materials, Reasons not to share: Privacy and security considerations"
+    "forrt_sub_clusters": "Reasons to share data and materials, Reasons not to share: Privacy and security considerations",
+    "doi": "10.3389/fmed.2024.1360653",
+    "in-clusters": true,
+    "pdf name": "",
+    "apa reference": ""
 }

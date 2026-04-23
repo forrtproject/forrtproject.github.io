@@ -35,5 +35,9 @@
         "OSCA Awards 2025"
     ],
     "forrt_clusters_new": "Ways of Working",
-    "forrt_sub_clusters": "Participatory research, Community science"
+    "forrt_sub_clusters": "Participatory research, Community science",
+    "doi": "",
+    "in-clusters": false,
+    "pdf name": "",
+    "apa reference": ""
 }

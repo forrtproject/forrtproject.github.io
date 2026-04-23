@@ -32,5 +32,9 @@
         "Open Educational Resources (OER); Research Training; Higher Education; Undergraduate Research; Graduate Research; Research Integrity; Pre-registration; Data Management; Reproducibility; Open Reporting; Knowledge Dissemination"
     ],
     "forrt_clusters_new": "FAIR data and materials",
-    "forrt_sub_clusters": "FAIR principles applied to Education & Training, Research data management"
+    "forrt_sub_clusters": "FAIR principles applied to Education & Training, Research data management",
+    "doi": "",
+    "in-clusters": false,
+    "pdf name": "",
+    "apa reference": ""
 }

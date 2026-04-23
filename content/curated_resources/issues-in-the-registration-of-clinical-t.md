@@ -34,5 +34,9 @@
         "Clinical Trials"
     ],
     "forrt_clusters_new": "Pre-analysis Planning",
-    "forrt_sub_clusters": "Preregistration"
+    "forrt_sub_clusters": "Preregistration",
+    "doi": "10.1001/jama.297.19.2112",
+    "in-clusters": false,
+    "pdf name": "",
+    "apa reference": ""
 }

@@ -46,5 +46,9 @@
         "Behavioral Medicine"
     ],
     "forrt_clusters_new": "Pre-analysis Planning",
-    "forrt_sub_clusters": "Registered reports"
+    "forrt_sub_clusters": "Registered reports",
+    "doi": "10.1080/21642850.2024.2351939",
+    "in-clusters": true,
+    "pdf name": "",
+    "apa reference": ""
 }

@@ -39,5 +39,9 @@
         "Researchers"
     ],
     "forrt_clusters_new": "Academic Structures and Institutions",
-    "forrt_sub_clusters": "Citation Politics & Practices"
+    "forrt_sub_clusters": "Citation Politics & Practices",
+    "doi": "",
+    "in-clusters": false,
+    "pdf name": "",
+    "apa reference": ""
 }

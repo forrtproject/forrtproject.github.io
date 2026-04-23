@@ -39,5 +39,9 @@
         "Preprints in Dental Research"
     ],
     "forrt_clusters_new": "Transparency and reproducibility in computation and analysis, FAIR data and materials",
-    "forrt_sub_clusters": "Analysis and reporting in qualitative research, Research data management"
+    "forrt_sub_clusters": "Analysis and reporting in qualitative research, Research data management",
+    "doi": "10.1016/j.jdent.2024.104869",
+    "in-clusters": false,
+    "pdf name": "",
+    "apa reference": ""
 }

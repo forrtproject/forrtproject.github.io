@@ -42,5 +42,9 @@
         "Scientific Publishing"
     ],
     "forrt_clusters_new": "Replication and meta-research, Research Integrity",
-    "forrt_sub_clusters": "Meta-analyses, Publication, Peer Review, and Research Integrity"
+    "forrt_sub_clusters": "Meta-analyses, Publication, Peer Review, and Research Integrity",
+    "doi": "10.1371/journal.pone.0066844",
+    "in-clusters": true,
+    "pdf name": "",
+    "apa reference": ""
 }

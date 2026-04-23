@@ -40,5 +40,9 @@
         "Publication"
     ],
     "forrt_clusters_new": "FAIR data and materials",
-    "forrt_sub_clusters": "Reasons to share data and materials"
+    "forrt_sub_clusters": "Reasons to share data and materials",
+    "doi": "10.17226/27480",
+    "in-clusters": true,
+    "pdf name": "",
+    "apa reference": ""
 }

@@ -42,5 +42,9 @@
         "Source Code"
     ],
     "forrt_clusters_new": "Transparency and reproducibility in computation and analysis, FAIR data and materials",
-    "forrt_sub_clusters": "Computational reproducibility, Research data management"
+    "forrt_sub_clusters": "Computational reproducibility, Research data management",
+    "doi": "10.1371/journal.pcbi.1005510",
+    "in-clusters": true,
+    "pdf name": "",
+    "apa reference": ""
 }

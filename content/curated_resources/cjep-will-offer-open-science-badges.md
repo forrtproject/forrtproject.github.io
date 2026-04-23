@@ -32,5 +32,9 @@
         "Open Science Badges"
     ],
     "forrt_clusters_new": "FAIR data and materials",
-    "forrt_sub_clusters": "Repositories"
+    "forrt_sub_clusters": "Repositories",
+    "doi": "10.1037/cep0000128",
+    "in-clusters": true,
+    "pdf name": "",
+    "apa reference": ""
 }

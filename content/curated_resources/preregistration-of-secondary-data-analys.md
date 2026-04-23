@@ -58,5 +58,9 @@
         "Secondary Data Analysis"
     ],
     "forrt_clusters_new": "Pre-analysis Planning",
-    "forrt_sub_clusters": "Preregistration"
+    "forrt_sub_clusters": "Preregistration",
+    "doi": "10.15626/MP.2020.2625",
+    "in-clusters": true,
+    "pdf name": "",
+    "apa reference": ""
 }

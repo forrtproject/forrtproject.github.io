@@ -34,5 +34,9 @@
         "OSCA Awards 2025"
     ],
     "forrt_clusters_new": "Ways of Working",
-    "forrt_sub_clusters": "Science communication and public outreach"
+    "forrt_sub_clusters": "Science communication and public outreach",
+    "doi": "",
+    "in-clusters": false,
+    "pdf name": "",
+    "apa reference": ""
 }

@@ -36,5 +36,9 @@
         "Climate Research"
     ],
     "forrt_clusters_new": "Transparency and reproducibility in computation and analysis, FAIR data and materials",
-    "forrt_sub_clusters": "Reasons to share data and materials, Computational reproducibility"
+    "forrt_sub_clusters": "Reasons to share data and materials, Computational reproducibility",
+    "doi": "10.1371/journal.pclm.0000336",
+    "in-clusters": true,
+    "pdf name": "",
+    "apa reference": ""
 }

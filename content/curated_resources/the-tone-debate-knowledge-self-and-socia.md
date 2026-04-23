@@ -41,5 +41,9 @@
         "Debate"
     ],
     "forrt_clusters_new": "Ways of Working",
-    "forrt_sub_clusters": "Adversarial collaborations"
+    "forrt_sub_clusters": "Adversarial collaborations",
+    "doi": "10.1177/10892680211015636",
+    "in-clusters": true,
+    "pdf name": "",
+    "apa reference": ""
 }

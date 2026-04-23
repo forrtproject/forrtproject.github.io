@@ -44,5 +44,9 @@
         "Reform"
     ],
     "forrt_clusters_new": "Replication Crisis and Credibility Revolution",
-    "forrt_sub_clusters": "Proposed science improvement initiatives on statistics, measurement, teaching, data sharing, code sharing, pre-registration, & replication, Ongoing debates (e.g., incentives for and against open science practices)"
+    "forrt_sub_clusters": "Proposed science improvement initiatives on statistics, measurement, teaching, data sharing, code sharing, pre-registration, & replication, Ongoing debates (e.g., incentives for and against open science practices)",
+    "doi": "10.1371/journal.pbio.3002362",
+    "in-clusters": true,
+    "pdf name": "",
+    "apa reference": ""
 }

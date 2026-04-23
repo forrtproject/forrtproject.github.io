@@ -36,5 +36,9 @@
         "Diversity"
     ],
     "forrt_clusters_new": "Academic Structures and Institutions",
-    "forrt_sub_clusters": "Diversity in Academia, Inclusion"
+    "forrt_sub_clusters": "Diversity in Academia, Inclusion",
+    "doi": "10.1038/s44159-023-00180-1",
+    "in-clusters": true,
+    "pdf name": "",
+    "apa reference": ""
 }

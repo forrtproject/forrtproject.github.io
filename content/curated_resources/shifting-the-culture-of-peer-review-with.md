@@ -32,5 +32,9 @@
         "Equity & Inclusion (DEI); Academic Culture Change; Early Career Researchers; Transparency"
     ],
     "forrt_clusters_new": "Academic Structures and Institutions",
-    "forrt_sub_clusters": "Racism in science, Diversity in Academia"
+    "forrt_sub_clusters": "Racism in science, Diversity in Academia",
+    "doi": "",
+    "in-clusters": false,
+    "pdf name": "",
+    "apa reference": ""
 }

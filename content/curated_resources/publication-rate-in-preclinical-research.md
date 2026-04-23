@@ -41,5 +41,9 @@
         "Publication Bias"
     ],
     "forrt_clusters_new": "Pre-analysis Planning",
-    "forrt_sub_clusters": "Preregistration"
+    "forrt_sub_clusters": "Preregistration",
+    "doi": "10.1136/bmjos-2019-100051",
+    "in-clusters": true,
+    "pdf name": "",
+    "apa reference": ""
 }

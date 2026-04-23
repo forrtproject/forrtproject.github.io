@@ -37,5 +37,9 @@
         "Open Science"
     ],
     "forrt_clusters_new": "Conceptual and Statistical Knowledge",
-    "forrt_sub_clusters": "Research design, sampling methods, & its implications for inferences., Questionable measurement practices (QMPs), validity & reliability issues."
+    "forrt_sub_clusters": "Research design, sampling methods, & its implications for inferences., Questionable measurement practices (QMPs), validity & reliability issues.",
+    "doi": "10.1162/jocn_a_01192",
+    "in-clusters": true,
+    "pdf name": "",
+    "apa reference": ""
 }

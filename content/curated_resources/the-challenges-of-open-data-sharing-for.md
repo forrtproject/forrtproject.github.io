@@ -40,5 +40,9 @@
         "Quantitative Methods"
     ],
     "forrt_clusters_new": "Qualitative Research, Replication Crisis and Credibility Revolution, FAIR data and materials",
-    "forrt_sub_clusters": "Reasons not to share: Privacy and security considerations, Ethical considerations for improved practices, FAIR data and materials: Ethical and legal challenges"
+    "forrt_sub_clusters": "Reasons not to share: Privacy and security considerations, Ethical considerations for improved practices, FAIR data and materials: Ethical and legal challenges",
+    "doi": "10.1177/13591053241237620",
+    "in-clusters": true,
+    "pdf name": "",
+    "apa reference": ""
 }

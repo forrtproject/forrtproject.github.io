@@ -44,5 +44,9 @@
         "Behavioural Medicine"
     ],
     "forrt_clusters_new": "Pre-analysis Planning",
-    "forrt_sub_clusters": "Registered reports"
+    "forrt_sub_clusters": "Registered reports",
+    "doi": "10.31234/osf.io/bgudc",
+    "in-clusters": true,
+    "pdf name": "",
+    "apa reference": ""
 }

@@ -55,5 +55,9 @@
         "data sharing"
     ],
     "forrt_clusters_new": "FAIR data and materials",
-    "forrt_sub_clusters": "Reasons to share data and materials, Reasons not to share: Privacy and security considerations"
+    "forrt_sub_clusters": "Reasons to share data and materials, Reasons not to share: Privacy and security considerations",
+    "doi": "10.1016/S2589-7500(24)00069-4",
+    "in-clusters": false,
+    "pdf name": "",
+    "apa reference": ""
 }
