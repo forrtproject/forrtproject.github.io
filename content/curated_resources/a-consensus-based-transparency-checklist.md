@@ -100,6 +100,6 @@
     "forrt_sub_clusters": "Proposed science improvement initiatives on statistics, measurement, teaching, data sharing, code sharing, pre-registration, & replication",
     "doi": "10.1038/s41562-019-0772-6",
     "in-clusters": true,
-    "pdf name": "",
+    "pdf name": "0002.pdf",
     "apa reference": ""
 }
