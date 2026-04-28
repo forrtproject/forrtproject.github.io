@@ -1,0 +1,17 @@
+{{- define "main" -}}
+
+<div class="article-container" style="padding-top: 2rem;">
+  <div style="display:flex; flex-wrap:wrap; align-items:center; gap:1.5rem; margin-bottom: 1.5rem;">
+    <div style="flex:1 1 320px; min-width:240px;">
+      <h1 style="margin-top:0;">{{ .Title }}</h1>
+      {{ with .Params.subtitle }}<div class="article-subtitle" style="font-size:1.25rem; color:#555;">{{ . | markdownify }}</div>{{ end }}
+    </div>
+    <img src="/img/nowherelab-logo.png" alt="Nowhere Lab logo" style="width:160px; height:160px; flex:0 0 auto;" />
+  </div>
+
+  <div class="article-style">
+    {{ .Content }}
+  </div>
+</div>
+
+{{- end -}}
