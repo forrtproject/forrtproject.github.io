@@ -37,7 +37,7 @@ jobs:
       # Repository Setup
       # =======================
       - name: Checkout repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
         with:
           fetch-depth: 0
 
@@ -173,7 +173,7 @@ jobs:
       # Upload built website as artifact for deployment
       #========================================
       - name: Upload site artifact
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: forrt-website-${{ github.run_number }}
           path: public/
@@ -195,7 +195,7 @@ jobs:
       # Download website artifact for production deployment
       #========================================
       - name: Download Artifact - Website
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v7
         with:
           name: forrt-website-${{ github.run_number }}
           path: ${{ github.repository }}/forrt-website
