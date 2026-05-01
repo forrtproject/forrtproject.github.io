@@ -13,7 +13,7 @@
       "order": 20,
       "name": "Lighthouse",
       "link": "",
-      "description": "The FORRT Robustness Lighthouse is building infrastructure to assess and showcase the robustness and reproducibility of published research findings. We welcome collaborators interested in metascience, data curation, and tool development.",
+      "description": "The FORRT Robustness Lighthouse is building infrastructure to showcase the robustness and reproducibility of the evidence for key effects, and thus to support teaching and research alike. We welcome collaborators interested in metascience, data curation, and tool development.",
       "slack": "",
       "contact_name": "Lukas Röseler",
       "contact_email": "lukas.roeseler@uni-muenster.de"
@@ -31,17 +31,17 @@
       "order": 40,
       "name": "Re-SearchTerms",
       "link": "/apps/re-searchterms.html",
-      "description": "Re-SearchTerms is a Shiny app that helps researchers and educators discover open-science terms and resources by exploring curated FORRT vocabularies. We welcome contributors to help expand the database and refine the interface.",
-      "slack": "https://join.slack.com/t/forrt/shared_invite/zt-alobr3z7-NOR0mTBfD1vKXn9qlOKqaQ",
+      "description": "Re-SearchTerms is a Shiny app that helps researchers and educators discover open-science terms and their various definitions. We welcome contributors to help expand the database and refine the interface.",
+      "slack": "",
       "contact_name": "Anna Leung",
-      "contact_email": ""
+      "contact_email": "leung.yi.lmu@gmail.com"
     },
     {
       "order": 50,
       "name": "Mapping Open Science Initiatives",
       "link": "/mapping_os/",
       "description": "A global effort to systematically identify, map, and connect Open Science organisations across disciplines and regions. Volunteers help with desk research, taxonomy work, and visualisation.",
-      "slack": "https://join.slack.com/t/forrt/shared_invite/zt-alobr3z7-NOR0mTBfD1vKXn9qlOKqaQ",
+      "slack": "",
       "contact_name": "Flavio Azevedo",
       "contact_email": ""
     },
@@ -50,7 +50,7 @@
       "name": "Team Credit",
       "link": "",
       "description": "Team Credit ensures all contributions to FORRT projects are accurately and appropriately recognised, developing tools and policies that make community work visible.",
-      "slack": "https://join.slack.com/t/forrt/shared_invite/zt-alobr3z7-NOR0mTBfD1vKXn9qlOKqaQ",
+      "slack": "https://forrt.slack.com/archives/C082GR7P04X",
       "contact_name": "Ana Marinho",
       "contact_email": "carolsmarinho.ana@gmail.com"
     },
@@ -68,7 +68,7 @@
       "name": "Feedback",
       "link": "",
       "description": "Team Feedback is developing a community-maintained e-book mapping and critically evaluating feedback mechanisms across disciplines and regions.",
-      "slack": "https://join.slack.com/t/forrt/shared_invite/zt-alobr3z7-NOR0mTBfD1vKXn9qlOKqaQ",
+      "slack": "",
       "contact_name": "Thomas Rhys-Evans",
       "contact_email": ""
     },
@@ -77,7 +77,7 @@
       "name": "OS Games Portal",
       "link": "/open-research-games-portal/",
       "description": "A crowdsourced, pedagogically informed database of games and interactive activities for teaching open and reproducible research. We welcome contributions of new games, evaluations, and playing tips.",
-      "slack": "https://join.slack.com/t/forrt/shared_invite/zt-alobr3z7-NOR0mTBfD1vKXn9qlOKqaQ",
+      "slack": "",
       "contact_name": "Iris Smal",
       "contact_email": "games@forrt.org"
     },
@@ -86,7 +86,7 @@
       "name": "OS Storytelling",
       "link": "",
       "description": "OS Storytelling collects and shares lived experiences of open scholarship to make the human side of doing research visible. We welcome storytellers, editors, and collaborators interested in narrative methods.",
-      "slack": "https://join.slack.com/t/forrt/shared_invite/zt-alobr3z7-NOR0mTBfD1vKXn9qlOKqaQ",
+      "slack": "",
       "contact_name": "Iris Smal",
       "contact_email": ""
     },
@@ -94,8 +94,8 @@
       "order": 110,
       "name": "Clusters & Curated Resources",
       "link": "/clusters/",
-      "description": "FORRT's curated library of open scholarship resources, organised into thematic clusters that map the field. Volunteers help review, tag, and recommend resources.",
-      "slack": "https://forrt.slack.com/archives/C0190S42M1N",
+      "description": "FORRT has a vast collection of open scholarship readings (Clusters) and Curated Resources. Volunteers help review, tag, and recommend resources to make them discoverable and useful.",
+      "slack": "",
       "contact_name": "Lukas Wallrich",
       "contact_email": "l.wallrich@bbk.ac.uk"
     },
@@ -103,8 +103,8 @@
       "order": 120,
       "name": "JUST-OS Chatbot",
       "link": "/just-os-chatbot/",
-      "description": "JUST-OS is an AI-based chatbot — developed with the University of Groningen — that helps researchers navigate Open Science resources. Collaborators are welcome on prompt design, evaluation, and content curation.",
-      "slack": "https://join.slack.com/t/forrt/shared_invite/zt-alobr3z7-NOR0mTBfD1vKXn9qlOKqaQ",
+      "description": "JUST-OS is an AI-based chatbot that helps researchers navigate Open Science resources. Collaborators are welcome for work on technical improvements and content curation.",
+      "slack": "",
       "contact_name": "Lukas Wallrich",
       "contact_email": "l.wallrich@bbk.ac.uk"
     },
@@ -112,8 +112,8 @@
       "order": 130,
       "name": "Team Website",
       "link": "",
-      "description": "Team Website maintains and improves forrt.org — content updates, new pages, accessibility, and ideas for showcasing FORRT's work.",
-      "slack": "https://forrt.slack.com/archives/C017W8Y9C87",
+      "description": "Team Website maintains and improves forrt.org, with content updates, new pages, accessibility, and ideas for showcasing FORRT's work.",
+      "slack": "https://forrt.slack.com/archives/C080N39QRJ9",
       "contact_name": "Lukas Wallrich",
       "contact_email": "l.wallrich@bbk.ac.uk"
     },
@@ -122,7 +122,7 @@
       "name": "Nowhere Lab",
       "link": "/nowherelab/",
       "description": "Nowhere Lab is an online community for people who would like the lab meeting experience but don't currently have one. Weekly meetings and an active Slack bring together members across all populated continents and career stages.",
-      "slack": "",
+      "slack": "https://forrt.slack.com/archives/C0B0FKG3GH2",
       "contact_name": "Priya Silverstein",
       "contact_email": "priyasilverstein@gmail.com"
     },
@@ -131,7 +131,7 @@
       "name": "Team Curriculum",
       "link": "",
       "description": "Team Curriculum develops open and reproducible lecture materials and supports the integration of principled education into university curricula.",
-      "slack": "https://join.slack.com/t/forrt/shared_invite/zt-alobr3z7-NOR0mTBfD1vKXn9qlOKqaQ",
+      "slack": "",
       "contact_name": "Federica Stablum",
       "contact_email": ""
     }
