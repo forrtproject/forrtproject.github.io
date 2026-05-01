@@ -134,6 +134,107 @@ jobs:
               f.write(output)
           PYEOF
 
+      - name: Validate DOI links via Crossref API
+        id: doi-validate
+        run: |
+          mkdir -p /tmp/lychee
+          python3 << 'PYEOF'
+          import os, re, sys, time, urllib.error, urllib.parse, urllib.request
+          from collections import defaultdict
+          from concurrent.futures import ThreadPoolExecutor, as_completed
+          from pathlib import Path
+
+          SITE_ROOT = Path("/tmp/site")
+          # DOI body: any non-whitespace char except quotes / angle brackets / closers /
+          # backslash. Backslashes show up in JSON-escaped strings inside rendered HTML.
+          DOI_RE = re.compile(r'https?://(?:dx\.)?doi\.org/(10\.[^\s"\'<>)\]\\]+)', re.I)
+          # Strip trailing punctuation that's almost always sentence/markup, not DOI
+          TRAIL = '.,);:]}>"\''
+
+          # doi -> set of source pages
+          doi_pages = defaultdict(set)
+          for html in SITE_ROOT.rglob("*.html"):
+              try:
+                  text = html.read_text(errors="ignore")
+              except Exception:
+                  continue
+              # Strip the artifact-name dir (/tmp/site/<artifact>/<path>) -> /<path>
+              rel_parts = html.relative_to(SITE_ROOT).parts[1:]
+              page = "/" + "/".join(rel_parts)
+              page = re.sub(r"/index\.html$", "/", page)
+              for m in DOI_RE.finditer(text):
+                  doi = m.group(1).rstrip(TRAIL).lower()
+                  doi_pages[doi].add(page)
+
+          if not doi_pages:
+              print("No DOIs found in site")
+              with open(os.environ["GITHUB_OUTPUT"], "a") as gh:
+                  gh.write("found=false\n")
+              sys.exit(0)
+
+          print(f"Validating {len(doi_pages)} unique DOIs via Crossref...")
+
+          # Crossref polite pool: include a contact email in the UA.
+          # https://api.crossref.org/swagger-ui/index.html
+          headers = {
+              "User-Agent": "forrt-link-checker/1.0 (+https://forrt.org; mailto:info@forrt.org)",
+              "Accept": "application/json",
+          }
+
+          def check(doi, retries=3):
+              # DOIs in HTML are sometimes URL-encoded (e.g. %2F for /, %28 for ().
+              # Decode first to avoid double-encoding when we hand it to Crossref.
+              clean = urllib.parse.unquote(doi)
+              url = "https://api.crossref.org/works/" + urllib.parse.quote(clean, safe="/")
+              delay = 1.5
+              for attempt in range(retries):
+                  req = urllib.request.Request(url, headers=headers, method="HEAD")
+                  try:
+                      with urllib.request.urlopen(req, timeout=20) as r:
+                          return doi, r.status, None
+                  except urllib.error.HTTPError as e:
+                      if e.code == 429 and attempt < retries - 1:
+                          time.sleep(delay)
+                          delay *= 2
+                          continue
+                      return doi, e.code, None
+                  except Exception as e:
+                      return doi, None, str(e)
+              return doi, 429, None
+
+          broken = {}
+          transient = []
+          # Keep concurrency modest — Crossref rate-limits HEAD bursts even
+          # within the polite pool, and the cron job is not time-critical.
+          with ThreadPoolExecutor(max_workers=4) as pool:
+              futures = {pool.submit(check, d): d for d in sorted(doi_pages)}
+              for fut in as_completed(futures):
+                  doi, code, err = fut.result()
+                  if code == 404:
+                      broken[doi] = sorted(doi_pages[doi])
+                  elif err is not None or (code is not None and code >= 500):
+                      transient.append((doi, code or err))
+
+          if transient:
+              print(f"  ({len(transient)} DOIs returned transient errors - treating as valid)")
+
+          if broken:
+              with open("/tmp/lychee/out.md", "a") as f:
+                  f.write(f"\n## Broken DOIs ({len(broken)} found via Crossref API)\n\n")
+                  f.write("These DOIs are not registered with Crossref - they likely contain a typo, were withdrawn, or were never minted.\n\n")
+                  for doi in sorted(broken):
+                      pages = broken[doi]
+                      page_str = f" (in {pages[0]})" if len(pages) == 1 else f" (in {len(pages)} pages)"
+                      f.write(f"* <https://doi.org/{doi}>{page_str}\n")
+              with open(os.environ["GITHUB_OUTPUT"], "a") as gh:
+                  gh.write("found=true\n")
+              print(f"Found {len(broken)} broken DOIs")
+          else:
+              with open(os.environ["GITHUB_OUTPUT"], "a") as gh:
+                  gh.write("found=false\n")
+              print(f"All {len(doi_pages)} DOIs valid")
+          PYEOF
+
       - name: Find publisher URLs that should use doi.org
         id: doi-check
         run: |
@@ -165,7 +266,7 @@ jobs:
           fi
 
       - name: Create or update Link Checker Report issue
-        if: steps.lychee.outputs.exit_code != 0 || steps.doi-check.outputs.found == 'true'
+        if: steps.lychee.outputs.exit_code != 0 || steps.doi-check.outputs.found == 'true' || steps.doi-validate.outputs.found == 'true'
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GH_REPO: ${{ github.repository }}
