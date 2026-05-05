@@ -36,7 +36,17 @@
     { pattern: /^\/author(\/|$)/, target: '/contributors/' },
     { pattern: /^\/summaries(\/|$)/, target: '/' },
     { pattern: /^\/reversals(\/|$)/, target: '/' },
-    { pattern: /^\/re-searchterms\/?$/, target: '/apps/re-searchterms.html' }
+    { pattern: /^\/re-searchterms\/?$/, target: '/apps/re-searchterms.html' },
+
+    // Repo rename redirects (kebab-case migration). Order: longer prefixes first.
+    { pattern: /^\/FReD-apps(\/.*)?$/,                      target: '/fred-apps$1' },
+    { pattern: /^\/FReD(\/.*)?$/,                           target: '/fred$1' },
+    { pattern: /^\/flora_zotero(\/.*)?$/,                   target: '/flora-zotero$1' },
+    { pattern: /^\/LoveReplicationsWeek(\/.*)?$/,           target: '/love-replications-week$1' },
+    { pattern: /^\/plugin_notification_dummy(\/.*)?$/,      target: '/plugin-notification-dummy$1' },
+    { pattern: /^\/replication_handbook(\/.*)?$/,           target: '/replication-handbook$1' },
+    { pattern: /^\/TenureRun(\/.*)?$/,                      target: '/tenure-run$1' },
+    { pattern: /^\/Transform-to-Open-Science-Book(\/.*)?$/, target: '/transform-to-open-science-book$1' }
   ];
   for (var i = 0; i < redirects.length; i++) {
     var match = path.match(redirects[i].pattern);
