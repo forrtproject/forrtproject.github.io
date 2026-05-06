@@ -54,6 +54,9 @@ description = "Integrating open and reproducible science into higher education"
 ## Site Features
 ############################
 
+# Show "Recommended" tab with community-endorsed resources on cluster pages
+enable_featured_resources = false
+
 # Enable source code highlighting? true/false
 # Documentation: https://sourcethemes.com/academic/docs/writing-markdown-latex/#highlighting-options
 highlight = true
@@ -172,6 +175,18 @@ link_authors = true
 # Load JS plugins
 #   E.g. To load `/assets/js/custom.js`, set `plugins_js = ["custom"]`.
 plugins_js  = []
+
+# JUST-OS chatbot.
+# Set `active = false` to display an "offline" state on the floating widget
+# and the standalone /just_os_chatbot page (e.g. while the backend is down)
+# instead of attempting to connect to the API.
+# Flip `active` back to true when the JUST-OS backend is healthy again.
+# `short_message` is shown in the floating-icon hover bubble.
+# `offline_message` is shown on the standalone /just_os_chatbot/ page.
+[justos_chatbot]
+  active = false
+  short_message = "Chatbot offline — we hope to bring it back soon"
+  offline_message = "We hope to bring it back soon — please check again later."
 
 # Avatars.
 # An avatar is an image that appears next to a user's name.
