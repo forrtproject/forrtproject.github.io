@@ -45,14 +45,19 @@ If you think you can help in any of the areas listed above (and we bet you can) 
  
 There, we can direct you towards relevant documents and tasks. 
 
-- But if you are interested in contributing to the **FORRT manuscript**, a google doc version can be found here: https://tinyurl.com/FORRTworkingDOC. 
-- If you are interested in contributing to the **Website**, see specific instructions below, and please check out FORRT’s Github [to-do](https://github.com/forrtproject/forrt/projects/1) and [open issues](https://github.com/forrtproject/forrt). 
-
 Please note that it's very important to us that we maintain a positive and supportive environment for everyone who wants to participate. When you join us we ask that you follow our code of conduct in all interactions both on and offline.
 
-#### FORRT Website on Github
+- If you are interested in contributing to the **FORRT manuscript**, you can find a Google Doc version [here](https://tinyurl.com/FORRTworkingDOC). 
 
-This is the website for the **Framework for Open and Reproducible Research Training (FORRT)**, built with [hugo](https://gohugo.io/), and deployed with [Github Actions](https://docs.github.com/en/actions). You can find the website at [forrt.org](https://forrt.org/). See CONTRIBUTING.md for more information on how to contribute.
+#### Contributing
+
+This is the website for the **Framework for Open and Reproducible Research Training (FORRT)**, built with [hugo](https://gohugo.io/), and deployed with [GitHub Actions](https://docs.github.com/en/actions). You can find the website at [forrt.org](https://forrt.org/).
+- If you are interested in contributing to the **website**, see specific instructions below, and please check out FORRT’s GitHub repository [open issues](https://github.com/forrtproject/forrtproject.github.io/issues).
+
+> [!IMPORTANT]
+> There are many FORRT tools and initiatives you can contribute to. Check them out [here](https://github.com/forrtproject).
+
+See [Contributing](CONTRIBUTING.md) for more information on how to contribute.
 
 ## License
 
