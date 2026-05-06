@@ -117,6 +117,22 @@
     "description": "A database of empirical studies in the social sciences. It informs about the availability of replication material and categorizes them by keywords, methods used, sources, type and geographic origin of data used, and by software used. It lists replication studies and their types and results as well as corrections and retractions.",
     "status": "inactive"
   },
+    {
+    "name": "Open Science Community Utrecht (OSCU)",
+    "short_name": "OSCU",
+    "logo": "Klein_logo_OSCU.webp",
+    "url": "https://oscu.nl/",
+    "cluster": "Open Science Infrastructure",
+    "description": "A bottom-up community of (prospective) open scientists in and around Utrecht (The Netherlands). OSCU  organizes, promotes, and facilitates open science events, for its members exchange knowledge and knowhow on open science practices."
+  },
+      {
+    "name": "rainbowR",
+    "short_name": "rainbowR",
+    "logo": "rainbowR.webp",
+    "url": "https://rainbowr.org/",
+    "cluster": "Open Science Infrastructure",
+    "description": "A community that supports, promotes and connects LGBTQ+ people who code in the R language, and spreads awareness of LGBTQ+ issues through data-driven activism."
+  },
   {
     "name": "Society for the Improvement of Psychological Science",
     "short_name": "SIPS",
