@@ -266,8 +266,7 @@ Involving students in open science projects is an effective way to deepen their 
   * Helpful resources for overall robustness/validity include:  
     * [A Protocol for Structured Robustness Reproductions and Replicability Assessments](https://econpapers.repec.org/paper/zbwi4rdps/143.htm): A list of three different reporting tools used to streamline the presentation of results and assess adherence to pre-analysis plans in the replicated papers, as well as to evaluate external and construct validity.  
     * [Author Guidelines for Verification Reports](https://openpsychologydata.metajnl.com/verification-reports): Guidelines for evaluating claims in published research by reanalysing original study data.   
-    * [FORRT’s 60+ pages guide on reproductions and replications](https://forrt.org/replication_handbook/).  
-
+    * [FORRT’s 60+ pages guide on reproductions and replications](https://forrt.org/replication-handbook/).  
 * Review and evaluate examples of replication studies and reproducibility reviews found from directories below:  
   * [ReplicationWiki – Economics and social sciences](https://blog.repec.org/2020/08/04/a-replication-database-for-economics-and-social-sciences-the-replicationwiki/)  
   * [Political Science Replication](https://politicalsciencereplication.wordpress.com/about/)  

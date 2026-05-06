@@ -44,7 +44,7 @@ cards:
       - text: "FReD Explorer"
         url: "/explorer"
       - text: "FReD R Package"
-        url: "/FReD"
+        url: "/fred"
 
   - key: conduct
     title: Conduct
@@ -56,11 +56,11 @@ cards:
       conduct high-quality replication research.
     links:
       - text: "Handbook for Reproduction and Replication Studies (WIP)"
-        url: "/replication_handbook"
+        url: "/replication-handbook"
       - text: "Manuscript Templates"
         url: "https://osf.io/brxtd/"
       - text: "Love Replications Week"
-        url: "/LoveReplicationsWeek"
+        url: "/love-replications-week"
       - text: "ReplicateThis Nomination Portal (WIP)"
         url: "/replicatethis"
 
