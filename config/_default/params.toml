@@ -184,7 +184,7 @@ plugins_js  = []
 # `short_message` is shown in the floating-icon hover bubble.
 # `offline_message` is shown on the standalone /just_os_chatbot/ page.
 [justos_chatbot]
-  active = false
+  active = true
   short_message = "Chatbot offline — we hope to bring it back soon"
   offline_message = "We hope to bring it back soon — please check again later."
 
