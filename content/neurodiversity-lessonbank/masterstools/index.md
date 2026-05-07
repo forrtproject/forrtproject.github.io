@@ -34,7 +34,7 @@ Read and discuss the following citations:
 
 *1. Psychology of oppression reveals that oppression is not always perceptible and repellant. It can be disguised and beguiling. People do not always know they are oppressed. Sometimes they have to be educated about their oppression. The reason is that oppression stunts people's critical, rational, analytical, and probing capabilities. Normative oppression also becomes taken for granted and mundane and therefore imperceptible* (Ratner, 2014).
 
-*2. People cannot reject the system of domination without rejecting [part of] themselves, their own repressive instinctual needs and values* (Marcuse, [1969](https://link.springer.com/referenceworkentry/10.1007/978-1-4614-5583-7_571#ref-CR161164), p. 17).
+*2. People cannot reject the system of domination without rejecting [part of] themselves, their own repressive instinctual needs and values* (Marcuse, [1969](https://doi.org/10.1007/978-1-4614-5583-7_571), p. 17).
 
 3. *Advocating the mere tolerance of difference between women is the grossest reformism. It is a total denial of the creative function of difference in our lives. Difference must be not merely tolerated, but seen as a fund of necessary polarities between which our creativity can spark like a dialectic. Only then does the necessity for interdependency Lorde 2 become unthreatening. Only within that interdependency of difference strengths, acknowledged and equal, can the power to seek new ways of being in the world generate, as well as the courage and sustenance to act where there are no charters* (Lorde, 1984).
 
