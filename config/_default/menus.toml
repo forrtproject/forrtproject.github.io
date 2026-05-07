@@ -290,7 +290,7 @@
 
 [[main]]
   name = "Zotero Replication Checker"
-  url = "https://forrt.org/flora_zotero/"
+  url = "https://forrt.org/flora-zotero/"
   weight = 63
   parent = "replications"
 
@@ -302,13 +302,13 @@
 
 [[main]]
   name = "FReD R-Package"
-  url = "https://forrt.org/FReD/index.html"
+  url = "https://forrt.org/fred/index.html"
   weight = 65
   parent = "replications"
 
 [[main]]
   name = "Handbook for Reproductions and Replications"
-  url = "https://forrt.org/replication_handbook/"
+  url = "https://forrt.org/replication-handbook/"
   weight = 66
   parent = "replications"
 
