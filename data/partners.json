@@ -127,6 +127,22 @@
     "cluster": "Open Research Communities",
     "description": " is an organisation that seeks to promote research and education in open science, as well as research that seeks study and improve the research landscape. AIMOS is a co-founder of MetaROR, a publish, review, curate platform for metaresearch."
   },
+    {
+    "name": "Open Science Community Utrecht (OSCU)",
+    "short_name": "OSCU",
+    "logo": "Klein_logo_OSCU.webp",
+    "url": "https://oscu.nl/",
+    "cluster": "Open Science Infrastructure",
+    "description": "A bottom-up community of (prospective) open scientists in and around Utrecht (The Netherlands). OSCU  organizes, promotes, and facilitates open science events, for its members exchange knowledge and knowhow on open science practices."
+  },
+      {
+    "name": "rainbowR",
+    "short_name": "rainbowR",
+    "logo": "rainbowR.webp",
+    "url": "https://rainbowr.org/",
+    "cluster": "Open Science Infrastructure",
+    "description": "A community that supports, promotes and connects LGBTQ+ people who code in the R language, and spreads awareness of LGBTQ+ issues through data-driven activism."
+  },
   {
     "name": "Society for the Improvement of Psychological Science",
     "short_name": "SIPS",

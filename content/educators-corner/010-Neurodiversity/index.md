@@ -136,7 +136,7 @@ Grant, A., & Kara, H. (2021). Considering the Autistic advantage in qualitative 
 
 Grinker R R. (2010). Commentary: On being autistic and social. Ethos, 38 (1), 172-8.
 
-Harding, S. (1992). Rethinking standpoint epistemology: What is" strong objectivity?". The Centennial Review, 36(3), 437-470. https://www.jstor.org/stable/23739232
+Harding, S. (1992). Rethinking standpoint epistemology: What is" strong objectivity?". The Centennial Review, 36(3), 437-470. https://doi.org/10.1371/journal.pone.0175967
 
 Jackson, M. (1998) Minima Ethnographica: Intersubjectivity and the Anthropological Project. Chicago: University of Chicago Press.
 
