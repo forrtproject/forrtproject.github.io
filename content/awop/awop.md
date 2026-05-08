@@ -71,7 +71,7 @@ The Academic Wheel of Privilege aims to reform authorship practices and inspire 
 
 We provide a comprehensive suite of resources within the AWoP toolkit:
 
-- **Manuscript**: [https://osf.io/preprints/metaarxiv/af4nk_v1](https://osf.io/preprints/metaarxiv/af4nk_v1)
+- **Manuscript**: [https://doi.org/10.31222/osf.io/af4nk_v2](https://doi.org/10.31222/osf.io/af4nk_v2)
 
 - **Web App**: [Access the AWoP Web App](/awop_app/)
 

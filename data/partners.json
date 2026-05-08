@@ -1,15 +1,5 @@
 [
   {
-    "name": "UN",
-    "short_name": "UN",
-    "logo": "",
-    "url": "",
-    "cluster": "Global Intergovernmental Organizations",
-    "description": "Details Coming Soon",
-    "additional_link": "",
-    "additional_link_text": "Read more"
-  },
-  {
     "name": "UNESCO",
     "short_name": "UNESCO",
     "logo": "UNESCO.webp",
@@ -74,14 +64,6 @@
     "url": "https://libscie.org/",
     "cluster": "Open Science Infrastructure",
     "description": "Founded in 2019, Liberate Science is about growing positive alternatives to enable a better research environment. Their main project is ResearchEquals, a modular publishing platform that helps researchers document, communicate, and get credit for each step of the research process."
-  },
-  {
-    "name": "LMU Open Science Center",
-    "short_name": "OSC",
-    "logo": "OSC_Logo.webp",
-    "url": "https://www.osc.uni-muenchen.de/index.html",
-    "cluster": "Open Science Infrastructure",
-    "description": "The LMU Open Science Center has the mission to promote and foster open research practices at LMU Munich. As a central knowledge hub, the OSC provides support for researchers on various aspects of open science, including research data management, FAIR data sharing, licensing, data privacy, and reproducible workflows."
   },
   {
     "name": "Münster Center for Open Science",
@@ -265,6 +247,14 @@
     "project_specific": true,
     "project_name": "Project Summaries",
     "project_link": "/summaries/"
+  },
+  {
+    "name": "LMU Open Science Center",
+    "short_name": "OSC",
+    "logo": "OSC_Logo.webp",
+    "url": "http://www.osc.lmu.de/",
+    "cluster": "Education & Training",
+    "description": "The LMU Open Science Center has the mission to promote and foster open research practices at LMU Munich. As a central knowledge hub, the OSC provides support for researchers on various aspects of open science, including research data management, FAIR data sharing, licensing, data privacy, and reproducible workflows."
   },
   {
     "name": "Metadocencia",
