@@ -1,0 +1,139 @@
+{
+  "projects": [
+    {
+      "order": 10,
+      "name": "FLoRA - FORRT Library of Replication and Reproduction Attempts",
+      "link": "/replication-hub/flora/",
+      "description": "FLoRA tracks attempts to repeatedly test published findings across the sciences and humanities. As an open, crowd-sourced project we are always looking for collaborators to help curate replications and reproductions and to put the data to use.",
+      "slack": "",
+      "contact_name": "Lukas Röseler",
+      "contact_email": "lukas.roeseler@uni-muenster.de"
+    },
+    {
+      "order": 20,
+      "name": "Lighthouse",
+      "link": "",
+      "description": "The FORRT Robustness Lighthouse is building infrastructure to showcase the robustness and reproducibility of the evidence for key effects, and thus to support teaching and research alike. We welcome collaborators interested in metascience, data curation, and tool development.",
+      "slack": "",
+      "contact_name": "Lukas Röseler",
+      "contact_email": "lukas.roeseler@uni-muenster.de"
+    },
+    {
+      "order": 30,
+      "name": "Best-Practice Guidelines for Psychology",
+      "link": "/best-practices-psychology/",
+      "description": "A community-driven initiative developing consensus-based best-practice guidelines for psychology that support the most stringent levels of the TOP Guidelines, covering practices such as preregistration, open data and open materials, with all outputs released under CC-BY for adaptation by other disciplines. Researchers, journals, funders and societies are invited to take part in hackathons, consensus discussions and endorsement activities throughout 2026–2028.",
+      "slack": "",
+      "contact_name": "Lisa Spitzer",
+      "contact_email": "ls@leibniz-psychology.org"
+    },
+    {
+      "order": 40,
+      "name": "Re-SearchTerms",
+      "link": "/apps/re-searchterms.html",
+      "description": "Re-SearchTerms is an interactive app that helps researchers and educators explore open-science terms and their various definitions across multiple sources. We welcome contributors to help expand the database, enrich the app's features, and refine the interface.",
+      "slack": "",
+      "contact_name": "Anna Leung",
+      "contact_email": "leung.yi.lmu@gmail.com"
+    },
+    {
+      "order": 50,
+      "name": "Mapping Open Science Initiatives",
+      "link": "/mapping_os/",
+      "description": "A global effort to systematically identify, map, and connect Open Science organisations across disciplines and regions. Volunteers help with desk research, taxonomy work, and visualisation.",
+      "slack": "",
+      "contact_name": "Flavio Azevedo",
+      "contact_email": ""
+    },
+    {
+      "order": 60,
+      "name": "Team Credit",
+      "link": "",
+      "description": "Team Credit ensures all contributions to FORRT projects are accurately and appropriately recognised, developing tools and policies that make community work visible.",
+      "slack": "https://forrt.slack.com/archives/C082GR7P04X",
+      "contact_name": "Ana Marinho",
+      "contact_email": "carolsmarinho.ana@gmail.com"
+    },
+    {
+      "order": 70,
+      "name": "Team Outreach",
+      "link": "",
+      "description": "Team Outreach disseminates FORRT activities, initiatives and accomplishments through social media, newsletters, and community-facing materials.",
+      "slack": "https://forrt.slack.com/archives/C0184989HHC",
+      "contact_name": "Flavio Azevedo",
+      "contact_email": ""
+    },
+    {
+      "order": 80,
+      "name": "Feedback",
+      "link": "",
+      "description": "Team Feedback is developing a community-maintained e-book mapping and critically evaluating feedback mechanisms across disciplines and regions.",
+      "slack": "",
+      "contact_name": "Thomas Rhys-Evans",
+      "contact_email": "thomas.evans@greenwich.ac.uk"
+    },
+    {
+      "order": 90,
+      "name": "OS Games Portal",
+      "link": "/open-research-games-portal/",
+      "description": "A crowdsourced, pedagogically informed database of games and interactive activities for teaching open and reproducible research. We welcome contributions of new games, evaluations, and playing tips.",
+      "slack": "",
+      "contact_name": "Iris Smal",
+      "contact_email": "games@forrt.org"
+    },
+    {
+      "order": 100,
+      "name": "FORRT Storytelling",
+      "link": "",
+      "description": "Telling the story of FORRT in a compelling way to preserve the vision, values, struggles, breakthroughs, and relationships that shaped the FORRT’s trajectory. We welcome storytellers, editors, and collaborators interested in narrative methods.",
+      "slack": "",
+      "contact_name": "Iris Smal",
+      "contact_email": "i.m.smal@uva.nl"
+    },
+    {
+      "order": 110,
+      "name": "Clusters & Curated Resources",
+      "link": "/clusters/",
+      "description": "FORRT has a vast collection of open scholarship readings (Clusters) and Curated Resources. Volunteers help review, tag, and recommend resources to make them discoverable and useful.",
+      "slack": "",
+      "contact_name": "Lukas Wallrich",
+      "contact_email": "l.wallrich@bbk.ac.uk"
+    },
+    {
+      "order": 120,
+      "name": "JUST-OS Chatbot",
+      "link": "/just-os-chatbot/",
+      "description": "JUST-OS is an AI-based chatbot that helps researchers navigate Open Science resources. Collaborators are welcome for work on technical improvements and content curation.",
+      "slack": "",
+      "contact_name": "Lukas Wallrich",
+      "contact_email": "l.wallrich@bbk.ac.uk"
+    },
+    {
+      "order": 130,
+      "name": "Team Website",
+      "link": "",
+      "description": "Team Website maintains and improves forrt.org, with content updates, new pages, accessibility, and ideas for showcasing FORRT's work.",
+      "slack": "https://forrt.slack.com/archives/C080N39QRJ9",
+      "contact_name": "Lukas Wallrich",
+      "contact_email": "l.wallrich@bbk.ac.uk"
+    },
+    {
+      "order": 140,
+      "name": "Nowhere Lab",
+      "link": "/nowherelab/",
+      "description": "Nowhere Lab is an online community for people who would like the lab meeting experience but don't currently have one. Weekly meetings and an active Slack bring together members across all populated continents and career stages.",
+      "slack": "https://forrt.slack.com/archives/C0B0FKG3GH2",
+      "contact_name": "Priya Silverstein",
+      "contact_email": "priyasilverstein@gmail.com"
+    },
+    {
+      "order": 150,
+      "name": "Team Curriculum",
+      "link": "",
+      "description": "Team Curriculum develops open and reproducible lecture materials and supports the integration of principled education into university curricula.",
+      "slack": "",
+      "contact_name": "Federica Stablum",
+      "contact_email": ""
+    }
+  ]
+}
