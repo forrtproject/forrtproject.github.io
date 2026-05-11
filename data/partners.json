@@ -1,4 +1,14 @@
 [
+    {
+    "name": "The United Nations",
+    "short_name": "UN",
+    "logo": "UN.webp",
+    "url": "https://www.un-sciences-decade.org/en/endorsed-activities/forward-forrt-world-development-fostering-open-research-reproducibility-worldwide-accessible",
+    "cluster": "Global Intergovernmental Organizations",
+    "description": "The United Nations (UN) is a global intergovernmental organization founded in 1945, currently comprising 193 member states, dedicated to maintaining international peace, security, and human rights. Headquartered in New York City, it works on global issues like development, climate action, and humanitarian aid.",
+    "additional_link": "https://www.un-sciences-decade.org/en/endorsed-activities/forward-forrt-world-development-fostering-open-research-reproducibility-worldwide-accessible",
+    "additional_link_text": "Read more"
+  },
   {
     "name": "UNESCO",
     "short_name": "UNESCO",
