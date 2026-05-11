@@ -259,6 +259,21 @@
   altmetric_doi: "10.31219/osf.io/bnh7p"
   focus_area: "Community, Governance & Sustainability"
 
+# 6
+- title: "Making Open Science Multilingual: Lessons from the Turkish Adaptation of FORRT’s Open Science Glossary"
+  type: "preprint"
+  year: "2026"
+  status: "preprint"
+  journal_name: "OSF Preprints"
+  authors: "Elif Bastan,Ege Emek,Merve Öztürk,Neslihan Özhan,Nihan Selin Soylu Konak,Flavio Azevedo"
+  abstract: "In response to the replication crisis, a significant number of structural and procedural changes have been made in how scientific research is conducted. Of these changes, open science practices, in particular, have been seen as a panacea for improving transparency, reproducibility, and accessibility in research. However, engaging in such reforms is not equally possible for everyone in academia, partly due to dominant resources being available in the English language. This situation results in a linguistic power asymmetry that creates and perpetuates structural barriers for researchers, educators, and students working in non-English contexts, overall limiting their efforts to take part in global scientific discourse. Using the frameworks of open science, linguistics, and epistemic justice as an organizing point, this article reports and reflects on translating the Open Science Glossary of the Framework for Open and Reproducible Research Training (FORRT) into Turkish, conducted as part of a multilingual initiative. Our team of five researchers carried out a collaborative translation process and translated approximately 250 open science terms. Translation decisions, particularly for terms without established Turkish equivalents, were debated collectively, and final decisions were made by considering the principles of clarity, accuracy, accessibility, and adaptation. We argue that translating terminology is an act of epistemic inclusion that supports capacity building, teaching, and research reform, rather than simply being a technical necessity. By localising open science concepts in the Turkish language, our work contributes to more inclusive and globally representative open science efforts."
+  citation: "Bastan, E., Emek, E., Öztürk, M., Özhan, N., Soylu Konak, N. S., & Azevedo, F. (2026). <strong>Making open science multilingual: Lessons from the Turkish adaptation of FORRT’s Open Science Glossary.</strong> <em>OSF Preprints</em>. https://doi.org/10.31234/osf.io/c4jqr_v1"
+  links:
+    doi: "https://doi.org/10.31234/osf.io/c4jqr_v1"
+    pdf: "pdf/OSF_Making_Open_Science_Multilingual_Lessons_from_the_Turkish_Adaptation_of_FORRT’s_Open_Science_Glossary.pdf"
+  altmetric_doi: "10.31234/osf.io/c4jqr_v1"
+  focus_area: "Education & Pedagogy"
+
 
 # --- Op-Eds and Media ---
 
