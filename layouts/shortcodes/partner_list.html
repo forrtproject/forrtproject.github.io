@@ -1,17 +1,30 @@
 {{ $cluster := .Get "cluster" }}
 {{ $title := .Get "title" }}
 {{ $description := .Get "description" }}
-{{ $items := where site.Data.partners "cluster" $cluster }}
+{{/* 
+  Staging can aggregate branches with mixed cluster naming.
+  Filter by cluster, but accept legacy aliases so sections don't go empty.
+*/}}
+{{ $clusterAliases := dict
+    "Research Communities" (slice "Open Research Communities")
+    "Early Career & Equity" (slice "Open Research & Equity")
+    "Institutional Partners" (slice "Higher Education Partners")
+}}
+{{ $clusters := slice $cluster }}
+{{ with (index $clusterAliases $cluster) }}
+  {{ $clusters = $clusters | append . }}
+{{ end }}
+{{ $items := where site.Data.partners "cluster" "in" $clusters }}
 
 {{/* Cluster Map for CSS classes */}}
 {{ $clusterMap := dict
     "Global Intergovernmental Organizations" "global-orgs"
-    "Reproducibility Networks" "repro-networks"
     "Open Science Infrastructure" "os-infrastructure"
+    "Reproducibility Networks" "repro-networks"
     "Education & Training" "education"
-    "Research Communities" "research-communities"
-    "Early Career & Equity" "ecr-equity"
-    "Institutional Partners" "institutional"
+    "Open Research Communities" "research-communities"
+    "Open Research & Equity" "ecr-equity"
+    "Higher Education Partners" "institutional"
 }}
 
 <div class="partner-section-group" data-cluster="{{ $cluster }}">
