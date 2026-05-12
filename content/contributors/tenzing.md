@@ -1048,7 +1048,7 @@ FORRT is driven by a **large and diverse community of contributors** that shape 
 <li class="contributor-group" id="0009-0006-3380-2458">
   <strong><a href="https://orcid.org/0009-0006-3380-2458">Priti Chahal</a></strong> contributed to
   <ul class="contributions-list">
-    <li class="contribution" data-projects="forrt-lighthouse" data-roles="software"><a href="https://www.lighthouse.forrt.org/">FORRT Lighthouse</a> with <em>Software</em></li>
+    <li class="contribution" data-projects="forrt-lighthouse" data-roles="software,visualization"><a href="https://www.lighthouse.forrt.org/">FORRT Lighthouse</a> with <em>Software</em> and <em>Visualization</em></li>
   </ul>
 </li>
 
@@ -1073,7 +1073,7 @@ FORRT is driven by a **large and diverse community of contributors** that shape 
   <strong><a href="https://orcid.org/0000-0002-8599-9241">Subramanya Prasad Chandrashekar</a></strong> contributed to
   <ul class="contributions-list">
     <li class="contribution" data-projects="forrt-replication-databases-fred-and-flora" data-roles="investigation"><a href="https://forrt.org/flora">FORRT Replication Databases (FReD and FLoRA)</a> with <em>Investigation</em></li>
-    <li class="contribution" data-projects="pubpeer-repnote" data-roles="data-curation">Pubpeer RepNote with <em>Data curation</em></li>
+    <li class="contribution" data-projects="pubpeer-repnote" data-roles="data-curation,writing-review-and-editing">Pubpeer RepNote with <em>Data curation</em> and <em>Writing - review & editing</em></li>
   </ul>
 </li>
 
@@ -2893,7 +2893,7 @@ Educators (POST-Edu) as Project co-lead</li>
 <li class="contributor-group" id="0000-0003-0928-1139">
   <strong><a href="https://orcid.org/0000-0003-0928-1139">Eftychia Koukouraki</a></strong> contributed to
   <ul class="contributions-list">
-    <li class="contribution" data-projects="flora-extractor" data-roles="conceptualization,software">FLoRA Extractor with <em>Conceptualization</em> and <em>Software</em></li>
+    <li class="contribution" data-projects="flora-extractor" data-roles="software">FLoRA Extractor with <em>Software</em></li>
   </ul>
 </li>
 
@@ -5398,7 +5398,7 @@ Educators (POST-Edu) as Project co-lead</li>
   <strong><a href="https://orcid.org/0009-0000-8879-2839">Keegan G. Vaz</a></strong> contributed to
   <ul class="contributions-list">
     <li class="contribution" data-projects="flora-notify-preprint-alerts" data-roles="software">FLoRA - Notify preprint alerts with <em>Software</em></li>
-    <li class="contribution" data-projects="replication-tracker-chromium-plugin" data-roles="software,supervision,visualization">Replication Tracker Chromium Plugin with <em>Software</em>, <em>Supervision</em> and <em>Visualization</em></li>
+    <li class="contribution" data-projects="replication-tracker-chromium-plugin" data-roles="project-administration,software,supervision,visualization">Replication Tracker Chromium Plugin with <em>Project administration</em>, <em>Software</em>, <em>Supervision</em> and <em>Visualization</em></li>
   </ul>
 </li>
 
