@@ -6,3 +6,6 @@
 {{ if or $isClustersPage $isDisciplinesPage }}
 <script src="{{ "js/clusters-page.js" | relURL }}" defer></script>
 {{ end }}
+{{ if $isClustersPage }}
+<script src="{{ "js/featured-resources.js" | relURL }}" defer></script>
+{{ end }}

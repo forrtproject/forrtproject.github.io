@@ -208,6 +208,23 @@ jobs:
           GSHEET_CREDENTIALS: ${{ secrets.GSHEET_CREDENTIALS }}
 
       #========================================
+      # Build featured resources data from recommendations + publications
+      #========================================
+      - name: Build Featured Resources data
+        id: featured-resources
+        continue-on-error: true  # Continue even if this step fails
+        run: python3 scripts/build_featured_data.py
+
+      #========================================
+      # Build Get Involved projects list from the published Google Sheet
+      # Falls back to scripts/get_involved/projects.csv if the sheet is unreachable
+      #========================================
+      - name: Build Get Involved data
+        id: get-involved
+        continue-on-error: true
+        run: python3 scripts/build_get_involved.py
+
+      #========================================
       # Process and organize curated resources data
       #========================================
       - name: Run Curated Resources script
@@ -298,7 +315,7 @@ jobs:
           gh pr create \
             --title "📘 Glossary update - $(date '+%Y-%m-%d')" \
             --body "Automated glossary update generated on $(date -u +'%Y-%m-%d %H:%M:%S UTC'). Files changed: content/glossary/" \
-            --base master \
+            --base main \
             --head "$BRANCH_NAME"
           echo "✅ PR created for glossary updates"
         env:
@@ -383,8 +400,8 @@ jobs:
           fi
           
           BRANCH_NAME="ga-data-update-$(date +%Y%m%d-%H%M%S)"
-          git fetch origin master
-          git checkout master
+          git fetch origin main
+          git checkout main
           # Delete local branch if it exists
           git branch -D "$BRANCH_NAME" 2>/dev/null || true
           git checkout -b "$BRANCH_NAME"
@@ -409,7 +426,7 @@ jobs:
           gh pr create \
             --title "📊 Monthly GA Data Update - $(date '+%B %Y')" \
             --body "Automated monthly Google Analytics data update. Generated on $(date -u +'%Y-%m-%d %H:%M:%S UTC'). Files changed: data/ga_data.json" \
-            --base master \
+            --base main \
             --head "$BRANCH_NAME" \
             --label "ga-data,monthly-update"
           echo "✅ PR created for GA data update"
@@ -473,7 +490,10 @@ jobs:
           cp content/contributors/tenzing.md /tmp/generated-resources/ || true
           cp scripts/forrt_contribs/contributors_cache.csv /tmp/generated-resources/ || true
           cp data/ga_data.json /tmp/generated-resources/ga_data.json || true
-          
+          cp data/featured_resources.json /tmp/generated-resources/featured_resources.json || true
+          cp data/pub_cards.json /tmp/generated-resources/pub_cards.json || true
+          cp data/get_involved_projects.json /tmp/generated-resources/get_involved_projects.json || true
+
           # Copy FReD citation if it exists
           if [ -f static/data/fred_citation.txt ]; then
             mkdir -p /tmp/generated-resources/static/data
@@ -509,8 +529,8 @@ jobs:
             echo "✓ build-resources branch exists, creating/updating worktree"
             git worktree add -B build-resources "$WORKTREE_DIR" origin/build-resources
           else
-            echo "✓ build-resources does not exist, creating from master"
-            git worktree add -b build-resources "$WORKTREE_DIR" origin/master
+            echo "✓ build-resources does not exist, creating from main"
+            git worktree add -b build-resources "$WORKTREE_DIR" origin/main
           fi
 
           # Apply updates inside the worktree
@@ -542,6 +562,15 @@ jobs:
           if [ -f /tmp/generated-resources/summaries.json ]; then
             cp /tmp/generated-resources/summaries.json data/summaries.json
           fi
+          if [ -f /tmp/generated-resources/featured_resources.json ]; then
+            cp /tmp/generated-resources/featured_resources.json data/featured_resources.json
+          fi
+          if [ -f /tmp/generated-resources/pub_cards.json ]; then
+            cp /tmp/generated-resources/pub_cards.json data/pub_cards.json
+          fi
+          if [ -f /tmp/generated-resources/get_involved_projects.json ]; then
+            cp /tmp/generated-resources/get_involved_projects.json data/get_involved_projects.json
+          fi
           if [ -f /tmp/generated-resources/contributors_cache.csv ]; then
             mkdir -p scripts/forrt_contribs
             cp /tmp/generated-resources/contributors_cache.csv scripts/forrt_contribs/
@@ -572,6 +601,9 @@ jobs:
             git add content/contributors/tenzing.md 2>/dev/null || true
             git add scripts/forrt_contribs/contributors_cache.csv 2>/dev/null || true
             git add data/ga_data.json 2>/dev/null || true
+            git add data/featured_resources.json 2>/dev/null || true
+            git add data/pub_cards.json 2>/dev/null || true
+            git add data/get_involved_projects.json 2>/dev/null || true
             git add static/data/fred_citation.txt 2>/dev/null || true
             git add content/replication-hub/flora/_index.md 2>/dev/null || true
             git add data/summaries.json 2>/dev/null || true
@@ -712,6 +744,13 @@ jobs:
             python3 scripts/create_workflow_failure_issue.py "FReD Citation Update" "The FReD citation update step failed during execution." "$WORKFLOW_RUN_URL" || echo "Failed to create issue for FReD Citation"
           fi
           
+          # Get Involved data
+          if [ "${{ steps.get-involved.outcome }}" == "failure" ]; then
+            echo "❌ Get Involved data build failed"
+            FAILURES_FOUND=true
+            python3 scripts/create_workflow_failure_issue.py "Get Involved Data Build" "The Get Involved projects list build step failed. Check that the published Google Sheet (FORRT — Get Involved Projects) is still shared with anyone-with-link." "$WORKFLOW_RUN_URL" || echo "Failed to create issue for Get Involved"
+          fi
+
           # Google Scholar
           if [ "${{ steps.google-scholar.outcome }}" == "failure" ]; then
             echo "❌ Google Scholar script failed"

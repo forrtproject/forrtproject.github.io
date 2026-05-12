@@ -1,0 +1,45 @@
+{{/*
+  Renders the Get Involved projects list from data/get_involved_projects.json.
+  Source CSV is in scripts/get_involved/projects.csv (mirrors a Google Sheet).
+  Regenerate with: python scripts/build_get_involved.py
+*/}}
+{{ $data := index site.Data "get_involved_projects" }}
+{{ $projects := $data.projects }}
+
+<div class="get-involved-projects" style="display: flex; flex-direction: column; gap: 1rem; margin-top: 1.5rem;">
+  {{ range $projects }}
+    <div class="get-involved-card" style="background: #FEFDF6; border-radius: 8px; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08); border: 1px solid rgba(0, 0, 0, 0.1); padding: 1.25rem;">
+      <h3 style="font-size: 1.15rem; font-weight: 700; margin: 0 0 0.5rem 0; line-height: 1.35;">
+        {{ if .link }}
+          <a href="{{ .link }}" style="color: inherit; text-decoration: none;">{{ .name }}</a>
+        {{ else }}
+          {{ .name }}
+        {{ end }}
+      </h3>
+      <div style="font-size: 0.95rem; color: #495057; line-height: 1.6; margin-bottom: 0.9rem;">
+        {{ .description | markdownify }}
+      </div>
+      <div style="display: flex; flex-wrap: wrap; gap: 0.5rem; align-items: center; padding-top: 0.6rem; border-top: 1px solid #f1f3f5;">
+        {{ if .link }}
+          <a href="{{ .link }}" class="btn btn-outline-primary btn-sm">
+            <i class="fas fa-external-link-alt"></i> Visit project
+          </a>
+        {{ end }}
+        {{ if .slack }}
+          <a href="{{ .slack }}" target="_blank" rel="noopener" class="btn btn-outline-info btn-sm">
+            <i class="fab fa-slack"></i> Slack
+          </a>
+        {{ end }}
+        {{ if .contact_email }}
+          <a href="mailto:{{ .contact_email }}" class="btn btn-outline-success btn-sm">
+            <i class="fas fa-envelope"></i> Email {{ .contact_name }}
+          </a>
+        {{ else if .contact_name }}
+          <span style="font-size: 0.85rem; color: #495057;">
+            <i class="fas fa-user"></i> Contact: {{ .contact_name }} (reach out via Slack)
+          </span>
+        {{ end }}
+      </div>
+    </div>
+  {{ end }}
+</div>
