@@ -64,14 +64,34 @@ def fetch_sheet(sheet_name: str, use_cache: bool = False) -> list[list[str]]:
     return rows
 
 
+def _truthy(val: str) -> bool:
+    """Spreadsheet-style truthiness: TRUE/YES/1 are true; empty defaults to true."""
+    if val is None:
+        return True
+    s = str(val).strip().lower()
+    if s == "":
+        return True
+    return s in {"true", "yes", "y", "1", "t"}
+
+
 def build_json(fields_rows, disciplines_rows, resources_rows) -> dict:
     """Build the disciplines.json structure from sheet data."""
+
+    # Locate optional "Show" column on the Fields header (case-insensitive).
+    header = [str(c).strip().lower() for c in (fields_rows[0] if fields_rows else [])]
+    show_idx = next(
+        (i for i, h in enumerate(header) if h in {"show", "visible", "publish"}),
+        None,
+    )
 
     # Parse Fields (skip header)
     fields_list = []
     for row in fields_rows[1:]:
         name = row[0] if len(row) > 0 else ""
         summary = row[1] if len(row) > 1 else ""
+        show = _truthy(row[show_idx]) if show_idx is not None and show_idx < len(row) else True
+        if not show:
+            continue
         fields_list.append({"name": name, "summary": summary})
 
     # Parse Disciplines (skip header) — group by field
