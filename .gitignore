@@ -16,6 +16,9 @@ hugo.linux
 # Temporary lock file while building
 /.hugo_build.lock
 
+# Generated disciplines markdown export (regenerate via scripts/export_disciplines_to_md.py)
+/scripts/output/
+
 ### Python ###
 # Byte-compiled / optimized / DLL files
 __pycache__/

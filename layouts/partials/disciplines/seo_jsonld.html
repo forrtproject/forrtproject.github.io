@@ -1,0 +1,20 @@
+{{/* Structured data: WebPage + ItemList for disciplines page */}}
+{{ $data := site.Data.disciplines }}
+{{ if not $data }}{{ return }}{{ end }}
+
+{{ $summary := .Params.summary | default .Description | default "FORRT open research across disciplines for educators and researchers." }}
+
+{{ $elements := slice }}
+{{ range $i, $f := $data.fields }}
+  {{ $d := "" }}
+  {{ with $f.summary }}{{ $d = plainify . | truncate 240 "..." }}{{ end }}
+  {{ $item := dict "@type" "ListItem" "position" (add $i 1) "name" $f.name }}
+  {{ if $d }}{{ $item = merge $item (dict "description" $d) }}{{ end }}
+  {{ $elements = $elements | append $item }}
+{{ end }}
+
+{{ $webpage := dict "@type" "WebPage" "@id" (printf "%s#webpage" .Permalink) "url" .Permalink "name" .Title "description" $summary "inLanguage" (site.LanguageCode | default "en-US") }}
+{{ $itemlist := dict "@type" "ItemList" "@id" (printf "%s#itemlist" .Permalink) "name" "Open Research Across Disciplines" "description" "Fields and disciplines with open research resources and examples." "numberOfItems" (len $data.fields) "itemListElement" $elements }}
+{{ $graph := slice $webpage $itemlist }}
+{{ $root := dict "@context" "https://schema.org" "@graph" $graph }}
+<script type="application/ld+json">{{ $root | jsonify | safeHTML }}</script>
