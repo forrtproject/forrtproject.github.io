@@ -43,7 +43,8 @@
           {{ $currentSection := .File.Dir }}
           {{ $glossaryPages := where .Site.RegularPages "Type" "glossary" }}
           {{ $filteredPages := where $glossaryPages "File.Dir" $currentSection }}
-          {{ range $index, $page := $filteredPages }}
+          {{ $sortedPages := sort $filteredPages "Params.sort_key" }}
+          {{ range $index, $page := $sortedPages }}
           <li class="nav-item">
             <a href="{{ .Permalink }}" class="nav-link">{{ .Title }}</a>
           </li>
