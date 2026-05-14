@@ -499,13 +499,42 @@
 }
 .acc-toggle-all:hover { color: #555; border-color: rgba(0,0,0,0.2); }
 
-/* ---- Sub-cluster description (inside accordion body) ---- */
+/* ---- Sub-cluster heading & description (inside accordion body) ---- */
+.sc-heading {
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin: 0.5rem 0 0.35rem;
+  line-height: 1.3;
+}
+
 .sc-description {
   font-size: 0.75rem;
   color: #666;
-  font-style: italic;
   margin-bottom: 0.45rem;
   line-height: 1.45;
+}
+
+.sc-description p {
+  margin-bottom: 0.45rem;
+}
+
+.sc-description p:last-child {
+  margin-bottom: 0;
+}
+
+.sc-description__lede {
+  font-style: normal;
+  color: #444;
+  margin-bottom: 0.25rem;
+}
+
+.sc-description a {
+  color: #1c7ed6;
+  word-break: break-word;
+}
+
+.sc-description a:hover {
+  color: #1264ab;
 }
 
 /* ---- Publication list ---- */

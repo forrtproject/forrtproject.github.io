@@ -46,7 +46,8 @@
 
       {{ if $disc.examples }}
       <div class="sc-description">
-        <strong>Examples of open research practices:</strong> {{ $disc.examples }}
+        <p class="sc-description__lede"><strong>Examples of open research practices</strong></p>
+        {{ $disc.examples | markdownify }}
       </div>
       {{ end }}
 
