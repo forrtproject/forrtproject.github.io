@@ -4,11 +4,13 @@ import json
 import pandas as pd
 import os
 from io import StringIO
+from pypinyin import lazy_pinyin, Style
 
 script_dir = os.path.dirname(os.path.abspath(__file__))
 language_map = {
     'EN': 'english',
     'AR': 'arabic',
+    'CN': 'chinese',
     'DE': 'german',
     'TR': 'turkish',
 }
@@ -122,6 +124,16 @@ def sort_key_for_language(title, language_code):
         # Map special chars so they sort just after their base char
         key = key.replace('ç', 'cz').replace('ğ', 'gz').replace('ı', 'iz')
         key = key.replace('ö', 'oz').replace('ş', 'sz').replace('ü', 'uz')
+    elif language_code == 'CN':
+        # Chinese audiences expect pinyin sort order. Sort by the Chinese part
+        # only (before the optional " [English Title]" suffix); pypinyin passes
+        # latin characters through, so titles that have no Chinese form still
+        # sort sensibly. Strip leading non-alphanumeric chars so titles that
+        # open with punctuation (e.g. "兄弟"… or 《…》) sort by their first
+        # real character's pinyin instead of jumping to the top of the list.
+        chinese_part = title.split(" [")[0]
+        key = "".join(lazy_pinyin(chinese_part, style=Style.NORMAL)).lower()
+        key = re.sub(r'^[^\w]+', '', key)
     return key
 
 
