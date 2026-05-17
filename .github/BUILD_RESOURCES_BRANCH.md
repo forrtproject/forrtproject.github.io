@@ -135,7 +135,7 @@ If you don't see expected changes:
 ### Merge Conflicts
 
 This branch should never have merge conflicts since:
-- It's not meant to be merged back to master
+- It's not meant to be merged back to main
 - All changes are automated
 - Manual edits are discouraged
 
