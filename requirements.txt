@@ -7,3 +7,4 @@ google-auth
 gspread
 python-dotenv
 matplotlib
+pypinyin
