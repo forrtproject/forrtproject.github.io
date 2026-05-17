@@ -1,0 +1,31 @@
+{{/* all_fields.html - Render all fields from disciplines.json data */}}
+{{ $data := site.Data.disciplines }}
+{{ if not $data }}
+  <div class="alert alert-warning">
+    <strong>Data Error:</strong> disciplines.json not found. Run <code>python3 scripts/parse_disciplines_to_json.py</code>.
+  </div>
+  {{ return }}
+{{ end }}
+
+{{ $palette := partial "disciplines/colors.html" }}
+{{ $colors := $palette.colors }}
+{{ $arrowColors := $palette.arrowColors }}
+
+<div class="clusters-layout" id="disciplines-layout">
+
+  {{ partial "disciplines/controls.html" . }}
+
+  <div class="row">
+    {{ partial "disciplines/sidebar_nav.html" (dict "data" $data "arrowColors" $arrowColors "link_mode" "anchor") }}
+
+    <main class="col-12 col-lg-8 col-xl-9 clusters-content">
+      {{ range $fi, $field := $data.fields }}
+        {{ partial "disciplines/field_section.html" (dict "field" $field "fi" $fi "colors" $colors) }}
+      {{ end }}
+    </main>
+  </div>
+</div>
+
+<button type="button" class="clusters-back-to-top" id="clusters-back-to-top" aria-label="Back to top">
+  <i class="fas fa-arrow-up" aria-hidden="true"></i>
+</button>
