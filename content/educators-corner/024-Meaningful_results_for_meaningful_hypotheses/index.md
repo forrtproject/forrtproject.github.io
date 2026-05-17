@@ -2,7 +2,7 @@
 title: "Meaningful results for meaningful hypotheses"
 subtitle: "A tutorial on meaningful hypothesis testing with Bayes factors using ROPEs"
 summary: "Recent times have seen an increase of interest in Bayesian inference across the behavioral sciences. Bayesian inference is a statistical approach that updates prior beliefs about unknown parameters based on observed data. However, the process of Bayesian testing hypotheses is often conceptually challenging or computationally costly. This tutorial provides an accessible, non-technical introduction to a technique that is both conceptually easy to understand and computationally cheap, and that also covers many common scenarios in the experimental sciences: Quantifying the relative evidence for a pair of interval-based hypotheses using Bayes factors through the Savage Dickey approximation."
-authors: ['Timo B. Roettger','Michael Franke']
+authors: ['Timo B. Roettger','Michael Franke', 'Flavio Azevedo', 'Dora Butkovic', 'Vladislava Trashlieva']
 tags: []
 categories: []
 date: 2026-02-16T00:00:00-03:00
