@@ -6566,6 +6566,10 @@ window.filterData = {
       "label": "Project Coordinator"
     },
     {
+      "value": "project-manager",
+      "label": "Project Manager"
+    },
+    {
       "value": "project-administration",
       "label": "Project administration"
     },
@@ -6576,10 +6580,6 @@ window.filterData = {
     {
       "value": "project-lead",
       "label": "Project lead"
-    },
-    {
-      "value": "project-manager",
-      "label": "Project manager"
     },
     {
       "value": "resources",
