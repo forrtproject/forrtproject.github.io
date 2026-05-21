@@ -1,4 +1,14 @@
 // add your own SCSS styling.
+
+/* -------------------------------------------------- */
+/* Navigation accessibility & readability             */
+/* -------------------------------------------------- */
+
+/* Switch nav to a sans-serif stack for improved readability (WCAG) */
+.navbar-light {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif !important;
+}
+
 .border-3 {
   border-width: 3px !important;
 }
