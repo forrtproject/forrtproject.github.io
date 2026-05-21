@@ -648,6 +648,9 @@
       }
 
       $container.imagesLoaded(function () {
+        let projectFilter = $section.find('.default-project-filter').text();
+        let projectSearchTerms = null;
+
         // Initialize Isotope after all images have loaded.
         $container.isotope({
           itemSelector: '.isotope-item',
@@ -655,13 +658,48 @@
           masonry: {
             gutter: 20
           },
-          filter: $section.find('.default-project-filter').text()
+          filter: function () {
+            let $this = $(this);
+            let filterMatch = projectFilter ? $this.is(projectFilter) : true;
+            if (!filterMatch) return false;
+            if (!projectSearchTerms) return true;
+            let text = $this.text().replace(/-/g, '');
+            return projectSearchTerms.every(function (re) { return re.test(text); });
+          }
+        });
+
+        // Text search on cards.
+        let searchTimeout;
+        let $searchCount = $section.find('.search-count');
+        $section.find('.project-search').keyup(function () {
+          clearTimeout(searchTimeout);
+          let input = this;
+          searchTimeout = setTimeout(function () {
+            let val = $(input).val().trim();
+            if (val) {
+              // Split on hyphens/spaces, require all words (AND logic, prefix matching)
+              let words = val.replace(/-/g, ' ').split(/\s+/).filter(function (w) { return w.length >= 2; });
+              projectSearchTerms = words.length ? words.map(function (w) {
+                return new RegExp(w.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'i');
+              }) : null;
+            } else {
+              projectSearchTerms = null;
+            }
+            $container.isotope();
+            let count = $container.isotope('getFilteredItemElements').length;
+            let total = $container.find('.isotope-item').length;
+            if (projectSearchTerms) {
+              $searchCount.text(count + ' of ' + total + ' resources shown');
+            } else {
+              $searchCount.text('');
+            }
+          }, 200);
         });
 
         // Filter items when filter link is clicked.
         $section.find('.project-filters a').click(function () {
-          let selector = $(this).attr('data-filter');
-          $container.isotope({filter: selector});
+          projectFilter = $(this).attr('data-filter');
+          $container.isotope();
           $(this).removeClass('active').addClass('active').siblings().removeClass('active all');
           return false;
         });

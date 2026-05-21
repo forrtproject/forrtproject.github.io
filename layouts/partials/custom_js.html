@@ -4,4 +4,5 @@
 {{ $isClustersPage := and .File (strings.HasPrefix .File.Path "clusters/") }}
 {{ if $isClustersPage }}
 <script src="{{ "js/clusters-page.js" | relURL }}" defer></script>
+<script src="{{ "js/featured-resources.js" | relURL }}" defer></script>
 {{ end }}

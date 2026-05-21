@@ -25,6 +25,11 @@ exclude = [
   # Web Archive — often slow or flaky
   "web\\.archive\\.org",
 
+  # DOI resolvers — validated separately via the Crossref REST API in the
+  # workflow, since following the redirect to the publisher just hits
+  # bot-blocking and produces noisy 403/404s.
+  "(?:dx\\.)?doi\\.org",
+
   # GitHub edit links with templated paths
   "github\\.com/.*/edit/",
 ]

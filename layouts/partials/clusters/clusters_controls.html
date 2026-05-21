@@ -1,21 +1,43 @@
-{{/* Search toolbar + mobile nav toggle (shared by hub and cluster subpages) */}}
+{{/* Search toolbar + card filters + mobile nav toggle (shared by hub and cluster subpages) */}}
 <div class="clusters-controls mb-3">
-  <div class="clusters-inline-search">
-    <div class="clusters-inline-search__row">
-      <input type="text" id="clusters-inline-search-input" class="form-control clusters-inline-search__input"
-             placeholder="Search clusters…" aria-label="Search clusters and sub-clusters" autocomplete="off" spellcheck="false">
-      <button type="button" class="btn btn-sm btn-primary clusters-inline-search__submit" id="clusters-inline-search-btn" aria-label="Run search">
-        <i class="fas fa-search" aria-hidden="true"></i>
-      </button>
-      <label class="clusters-inline-search__option-label">
-        <input type="checkbox" id="clusters-search-include-refs">
-        Include references
+
+  {{/* Filter bar: search + Focus/Type tags + specificity toggle */}}
+  <div class="fr-filter-bar" id="clusters-filter-bar">
+    <div class="fr-filter-group fr-filter-search-group">
+      <input type="text" id="clusters-inline-search-input" class="fr-search-input"
+             placeholder="Search resources..." aria-label="Search clusters and resources" autocomplete="off" spellcheck="false">
+    </div>
+    {{ $tags := site.Data.filter_tags }}
+    <div class="fr-filter-group">
+      <span class="fr-filter-label">Focus</span>
+      <div class="fr-filter-tags" data-filter="focus" id="fr-global-focus-tags">
+        <button class="fr-tag-btn active" data-value="all">All</button>
+        {{ with $tags }}{{ range .focus }}
+        <button class="fr-tag-btn" data-value="{{ . }}">{{ . }}</button>
+        {{ end }}{{ end }}
+      </div>
+    </div>
+    <div class="fr-filter-group">
+      <span class="fr-filter-label">Type</span>
+      <div class="fr-filter-tags" data-filter="type" id="fr-global-type-tags">
+        <button class="fr-tag-btn active" data-value="all">All</button>
+        {{ with $tags }}{{ range .type }}
+        <button class="fr-tag-btn" data-value="{{ . }}">{{ . }}</button>
+        {{ end }}{{ end }}
+      </div>
+    </div>
+    <div class="fr-filter-group">
+      <label class="fr-specificity-toggle">
+        <input type="checkbox" id="fr-global-specificity-checkbox">
+        <span>Show specialist resources</span>
       </label>
     </div>
-    <div id="clusters-inline-search-panel" class="clusters-inline-search__panel">
-      <div id="clusters-inline-search-toolbar" class="clusters-inline-search__toolbar-host" hidden></div>
-      <div id="clusters-inline-search-results" class="clusters-inline-search__results-body" aria-live="polite"></div>
-    </div>
+  </div>
+
+  {{/* Inline search results panel (kept for cluster/subcluster name search) */}}
+  <div id="clusters-inline-search-panel" class="clusters-inline-search__panel">
+    <div id="clusters-inline-search-toolbar" class="clusters-inline-search__toolbar-host" hidden></div>
+    <div id="clusters-inline-search-results" class="clusters-inline-search__results-body" aria-live="polite"></div>
   </div>
 
   <button class="btn btn-sm btn-outline-secondary d-lg-none clusters-mobile-toggle" type="button"

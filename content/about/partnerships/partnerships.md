@@ -58,15 +58,15 @@ classtitle = "text-center"
 
 <br>
 
-{{< partner_list cluster="Reproducibility Networks" title="Reproducibility Networks" description="National and regional networks dedicated to improving research reproducibility and transparency." >}}
-
-<br>
-
 {{< partner_list cluster="Open Science Infrastructure" title="Open Science Infrastructure" description="Organizations providing tools, platforms, and infrastructure to support open science practices." >}}
 
 <br>
 
-{{< partner_list cluster="Research Communities" title="Research Communities" description="Networks and groups bringing researchers together to improve scientific practices." >}}
+{{< partner_list cluster="Reproducibility Networks" title="Reproducibility Networks" description="National and regional networks dedicated to improving research reproducibility and transparency." >}}
+
+<br>
+
+{{< partner_list cluster="Open Research Communities" title="Open Research Communities" description="Networks and groups bringing researchers together to improve scientific practices." >}}
 
 <br>
 
@@ -74,11 +74,11 @@ classtitle = "text-center"
 
 <br>
 
-{{< partner_list cluster="Early Career & Equity" title="Early Career & Equity" description="Organizations supporting early career researchers and promoting equity, diversity, and inclusion in science." >}}
+{{< partner_list cluster="Open Research & Equity" title="Open Research & Equity" description="Organizations supporting early career researchers and promoting equity, diversity, and inclusion in science." >}}
 
 <br>
 
-{{< partner_list cluster="Institutional Partners" title="Institutional Partners" description="Universities and institutions with formal partnership agreements with FORRT." >}}
+{{< partner_list cluster="Higher Education Partners" title="Higher Education Partners" description="Universities and institutions with formal partnership agreements with FORRT." >}}
 
 <br>
 

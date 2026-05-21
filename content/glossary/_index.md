@@ -19,10 +19,12 @@ layout: index
 
 Click one of the buttons to open the Glossary. Further translations are already in the works.
 
-<div class="btn-group flex-wrap text-center"><a href="/glossary/english" class="btn btn-primary py-2 m-1 btn-lg active" style="line-height:1;border-radius:6px">English</a>
+<div class="btn-group flex-wrap text-center">
+<a href="/glossary/english" class="btn btn-primary py-2 m-1 btn-lg" style="line-height:1;border-radius:6px">English</a>
 <a href="/glossary/german" class="btn btn-primary py-2 m-1 btn-lg" style="line-height:1;border-radius:6px">Deutsch (German)</a>
 <a href="/glossary/arabic" class="btn btn-primary py-2 m-1 btn-lg" style="line-height:1;border-radius:6px"> عربي (Arabic)</a>
-<a href="/glossary/turkish" class="btn btn-primary py-2 m-1 btn-lg" style="line-height:1;border-radius:6px">Türkçe (Turkish)</a></div>
+<a href="/glossary/turkish" class="btn btn-primary py-2 m-1 btn-lg" style="line-height:1;border-radius:6px">Türkçe (Turkish)</a>
+</div>
 
 ## Background
 
@@ -81,7 +83,7 @@ Link to the FORRT preprint explaining Phase 1
 
 ### Glossary Versioning
 
-We plan to continuously improve, extend, and update our items with community involvement. Versioning will allow the study of the evolution of the terminology. The version-controlled source code of the official releases of the complete Glossary is archived on FORRT’s [GitHub](https://github.com/forrtproject/forrtproject.github.io/tree/master/content/glossary), [OSF](https://osf.io/vdb8z/), and [Zenodo](https://zenodo.org/record/5643745). The present glossary is the Beta 0.1 version and can be accessed from within FORRT website (as will its updates) below:
+We plan to continuously improve, extend, and update our items with community involvement. Versioning will allow the study of the evolution of the terminology. The version-controlled source code of the official releases of the complete Glossary is archived on FORRT’s [GitHub](https://github.com/forrtproject/forrtproject.github.io/tree/main/content/glossary), [OSF](https://osf.io/vdb8z/), and [Zenodo](https://zenodo.org/record/5643745). The present glossary is the Beta 0.1 version and can be accessed from within FORRT website (as will its updates) below:
 
 1. Current Version: [FORRT's Glossary | Phase 1 | Beta version 0.1](/glossary/vbeta)
 

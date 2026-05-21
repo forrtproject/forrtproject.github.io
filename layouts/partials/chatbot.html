@@ -1,3 +1,12 @@
+{{ $active := true }}
+{{ $shortMsg := "Chatbot offline" }}
+{{ if isset site.Params "justos_chatbot" }}
+  {{ $active = default true (index site.Params.justos_chatbot "active") }}
+  {{ if isset site.Params.justos_chatbot "short_message" }}
+    {{ $shortMsg = site.Params.justos_chatbot.short_message }}
+  {{ end }}
+{{ end }}
+
 <style>
   #just-os-widget {
     position: fixed;
@@ -21,6 +30,37 @@
     position: relative;
     outline: none;
     z-index: 2;
+    display: inline-block;
+    text-decoration: none;
+  }
+
+  #just-os-dismiss {
+    position: absolute;
+    top: -6px;
+    right: -6px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 1px solid #ccc;
+    background: white;
+    color: #999;
+    font-size: 14px;
+    line-height: 18px;
+    text-align: center;
+    cursor: pointer;
+    z-index: 3;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+    padding: 0;
+  }
+
+  #just-os-widget:hover #just-os-dismiss {
+    opacity: 1;
+  }
+
+  #just-os-dismiss:hover {
+    background: #eee;
+    color: #333;
   }
 
   #just-os-btn:hover {
@@ -32,6 +72,35 @@
     height: auto;
     display: block;
     filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.1));
+  }
+
+  /* Offline state */
+  #just-os-widget.is-offline #just-os-img {
+    filter: grayscale(0.85) opacity(0.7) drop-shadow(0 4px 6px rgba(0, 0, 0, 0.1));
+  }
+
+  #just-os-offline-badge {
+    position: absolute;
+    bottom: -4px;
+    right: -6px;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: #fff;
+    border: 2px solid #c0392b;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #c0392b;
+    z-index: 4;
+    pointer-events: none;
+  }
+
+  #just-os-offline-badge svg {
+    width: 18px;
+    height: 18px;
+    display: block;
   }
 
   #just-os-bubble {
@@ -52,6 +121,21 @@
     transform: translateX(-10px);
     transition: all 0.3s ease;
     pointer-events: none;
+  }
+
+  #just-os-widget.is-offline #just-os-bubble {
+    border-color: #bbb;
+    color: #555;
+    font-weight: 500;
+    font-size: 0.8rem;
+    padding: 6px 12px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+    white-space: normal;
+    width: 220px;
+    text-align: left;
+    line-height: 1.35;
+    top: 18px;
+    right: 95px;
   }
 
   #just-os-btn:hover #just-os-bubble {
@@ -361,6 +445,44 @@
     color: #333;
   }
 
+  /* Standalone page offline notice */
+  .just-os-offline-page {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 48px 32px;
+    border: 1px solid #f1d6d2;
+    border-radius: 12px;
+    background: #fdf5f4;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    color: #4a1f1a;
+  }
+
+  .just-os-offline-page__icon {
+    width: 64px;
+    height: 64px;
+    color: #c0392b;
+    margin-bottom: 16px;
+  }
+
+  .just-os-offline-page__title {
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin: 0 0 8px;
+    color: #c0392b;
+  }
+
+  .just-os-offline-page__body {
+    font-size: 1rem;
+    line-height: 1.5;
+    max-width: 640px;
+    margin: 0;
+  }
+
   /* Responsive */
   @media (max-width: 1100px) {
     #just-os-widget {
@@ -386,8 +508,12 @@
 </style>
 
 {{ if ne .RelPermalink "/just_os_chatbot/" }}
-<div id="just-os-widget">
+<div id="just-os-widget"{{ if not $active }} class="is-offline"{{ end }}>
 
+  <!-- Dismiss Button -->
+  <button id="just-os-dismiss" onclick="dismissJustOS()" aria-label="Dismiss chatbot" title="Dismiss">&times;</button>
+
+  {{ if $active }}
   <!-- Toggle Button -->
   <button id="just-os-btn" onclick="toggleJustOS()" aria-label="Open Chatbot">
     <img id="just-os-img" src="/img/just_os_icon.webp" alt="Chat with us">
@@ -417,8 +543,41 @@
     </div>
     <div class="just-os-resize-handle"></div>
   </div>
+  {{ else }}
+  <!-- Inactive state: icon links to the standalone page where the full offline notice lives -->
+  <a id="just-os-btn" href="/just_os_chatbot/" aria-label="JUST-OS chatbot is offline — open status page">
+    <img id="just-os-img" src="/img/just_os_icon.webp" alt="JUST-OS chatbot (offline)">
+    <span id="just-os-offline-badge" aria-hidden="true" title="Chatbot offline">
+      <!-- Unplugged plug icon -->
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M9 2v4"/>
+        <path d="M15 2v4"/>
+        <path d="M7 6h10v5a5 5 0 0 1-5 5 5 5 0 0 1-5-5V6z"/>
+        <path d="M12 16v6"/>
+        <line x1="3" y1="3" x2="21" y2="21"/>
+      </svg>
+    </span>
+    <div id="just-os-bubble">{{ $shortMsg }}</div>
+  </a>
+  {{ end }}
 
 </div>
 {{ end }}
 
+{{ if $active }}
 <script src="/js/just-os-chat.js"></script>
+{{ else }}
+<script>
+  (function () {
+    if (sessionStorage.getItem('just-os-dismissed')) {
+      var widget = document.getElementById('just-os-widget');
+      if (widget) widget.style.display = 'none';
+    }
+    window.dismissJustOS = function () {
+      var widget = document.getElementById('just-os-widget');
+      if (widget) widget.style.display = 'none';
+      sessionStorage.setItem('just-os-dismissed', '1');
+    };
+  })();
+</script>
+{{ end }}
