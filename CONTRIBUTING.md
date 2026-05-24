@@ -4,7 +4,7 @@ First off, thanks for taking the time to contribute! ❤️
 
 All types of contributions are encouraged and valued. Please read the relevant section before contributing — it makes things smoother for everyone. The community looks forward to your contributions. 🎉
 
-> **Not ready to contribute code?** That's fine. You can still support FORRT by:
+You can support FORRT by:
 > - Starring the repository
 > - Sharing FORRT on social media
 > - Referencing FORRT in your project's readme
@@ -13,10 +13,8 @@ All types of contributions are encouraged and valued. Please read the relevant s
 ## Table of Contents
 
 - [I Have a Question](#i-have-a-question)
-- [Legal Notice](#legal-notice)
 - [Local Development Setup](#local-development-setup)
-  - [Standard Setup (Git + Hugo)](#standard-setup-git--hugo)
-  - [Dev Containers (VSCode)](#dev-containers-vscode)
+  - [Standard Setup](#standard-setup-git--hugo)
   - [RStudio Setup](#rstudio-setup)
 - [Contribution Workflow](#contribution-workflow)
 - [Deployment & Staging](#deployment--staging)
@@ -31,26 +29,14 @@ All types of contributions are encouraged and valued. Please read the relevant s
 
 Before opening an issue, please:
 
-1. Search existing [Issues](/issues) — your question may already be answered.
-2. Join the FORRT Community on Slack [here](https://join.slack.com/t/forrt/shared_invite/zt-alobr3z7-NOR0mTBfD1vKXn9qlOKqaQ) and Ask.
+- Take a moment to search existing [Issues](https://github.com/forrtproject/forrtproject.github.io/issues) — your question or suggestion may already have been addressed.
 
-If you still need help:
+If you still need assistance:
 
-- Open a [new Issue](/issues/new).
-- Provide as much context as you can about the problem.
-- Include relevant versions (Hugo, OS, etc.).
+- Open a [new Issue](https://github.com/forrtproject/forrtproject.github.io/issues).
+- Share as much relevant context as possible about the problem, question, or suggestion.
 
-We run on volunteer time, so please be patient — we'll get back to you as soon as we can.
-
----
-
-## Legal Notice
-
-When contributing to this project, you confirm that:
-
-- You authored 100% of the content you are contributing.
-- You have the necessary rights to that content.
-- The content may be provided under the project's license.
+FORRT is maintained by volunteers, so response times may vary. We appreciate your patience and contribution.
 
 ---
 
@@ -68,7 +54,7 @@ Choose the setup method that suits your workflow.
 
 **Steps**
 
-1. Clone the repository:
+1. Fork and Clone the repository:
 
    ```bash
    git clone https://github.com/forrtproject/forrtproject.github.io.git
@@ -85,33 +71,6 @@ Choose the setup method that suits your workflow.
 
 ---
 
-### Dev Containers (VSCode)
-
-Run the project locally without installing Hugo on your host machine. Dev Containers use Docker to provide a consistent, reproducible environment.
-
-**Prerequisites**
-
-- [Git](https://git-scm.com/downloads)
-- [Docker](https://docs.docker.com/get-docker/)
-  - Windows users: also install [WSL2](https://learn.microsoft.com/en-us/windows/wsl/install)
-- [Visual Studio Code](https://code.visualstudio.com/) with the [Dev Containers](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers) extension
-
-**Steps**
-
-1. Open `.devcontainer/devcontainer.json` in VSCode.
-   - **Windows only:** open `.devcontainer\dev\devcontainer.json` and uncomment the line `"remoteUser": "root"` before continuing.
-2. Open the Command Palette (`Ctrl+Shift+P`) and select **Dev Containers: Open Folder in Container**. Alternatively, click **Reopen in Container** in the pop-up that appears in the bottom-right corner.
-3. Wait for the container to build. The bottom-left corner will show a green **Hugo Dev** badge when ready.
-4. Start the server:
-
-   ```bash
-   hugo server -D
-   ```
-
-   The container forwards port 1313 to your host — open `http://localhost:1313` to preview the site.
-
----
-
 ### RStudio Setup
 
 For R users who prefer to work entirely within RStudio.
@@ -123,6 +82,7 @@ For R users who prefer to work entirely within RStudio.
 - [R](https://cran.r-project.org/)
 - [RStudio](https://www.rstudio.com/products/rstudio/download/)
 - [blogdown](https://bookdown.org/yihui/blogdown/)
+- [usethis](https://usethis.r-lib.org/) — recommended for PR management
 
 **Steps**
 
@@ -131,8 +91,17 @@ For R users who prefer to work entirely within RStudio.
    - Project directory name: `FORRT`
    - Choose a location with **Browse**.
 2. Run the site locally using the **blogdown Addins** in RStudio, or run `hugo server -D` in the RStudio terminal.
+3. Use `usethis` to manage your Pull Request workflow from within R — it is the most accessible approach for R users:
 
-> **Note:** RStudio is not designed for website development. For a smoother experience, consider the [Standard Setup](#standard-setup-git--hugo) or [Dev Containers](#dev-containers-vscode) instead.
+   ```r
+   usethis::pr_init("my-feature-branch")   # create a branch
+   usethis::pr_push()                       # push and open a PR on GitHub
+   usethis::pr_finish()                     # clean up after the PR is merged
+   ```
+
+   See the [usethis documentation](https://usethis.r-lib.org/index.html) for the full workflow.
+
+> **Note:** RStudio is not designed for website development. For a smoother experience, consider the [Standard Setup](#standard-setup-git--hugo) instead.
 
 ---
 
@@ -211,4 +180,5 @@ On the 1st of each month, an automated GitHub issue is created with:
 - Deployment statistics
 
 ---
+
 Thank you for contributing to FORRT and helping build a more open, reproducible, and inclusive research culture.

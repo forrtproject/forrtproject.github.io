@@ -1,3 +1,5 @@
+# Not updated 
+
 #!/usr/bin/env bash
 
 # Source Themes Academic: Theme updater

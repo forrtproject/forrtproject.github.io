@@ -18,17 +18,7 @@ This document provides an overview of the FORRT project and the ways in which yo
 
 ## About FORRT
 
-### The Problem
-
-The scientific community has recently undertaken substantial efforts to address longstanding concerns about the reliability and transparency of research, ushering in what has been termed a "credibility revolution." These efforts have encompassed higher standards of evidence, preregistration, direct replication, greater transparency, and open dissemination of data and materials. Structurally, three pillars have been proposed to advance the social sciences toward greater epistemic rigour: opening scientific communication, restructuring incentives and practices, and fostering collaborative and crowdsourced science.
-
-Yet ongoing attempts at reform have largely neglected a foundational element of the academic enterprise: the training of students. Current norms for teaching and mentoring in higher education remain rooted in practices that predate — and are often incompatible with — the standards now demanded of contemporary scholarship.
-
-### The Solution
-
-FORRT proposes a fourth pillar of scientific reform, whose principal aim is to familiarise students — the future consumers of scientific knowledge and prospective knowledge producers — with the rigorous, transparent, and reproducible practices that characterise credible research. We believe that the systematic teaching and mentoring of reproducible and open research practices constitutes the most meaningful indicator of the degree to which institutions and departments genuinely embody the principles of credible science, going well beyond mere rhetorical commitment to best practices.
-
-> **FORRT** aims to provide a didactic and pedagogical infrastructure designed to recognise and support the teaching and mentoring of open and reproducible research in tandem with prototypical subject matters in higher education.
+For a deeper look into FORRT’s mission, initiatives, and available resources, visit **[forrt.org](https://forrt.org)**.
 
 ---
 
@@ -42,14 +32,9 @@ Please note that participation in FORRT requires adherence to our code of conduc
 
 ### Join the Community
 
-- **Slack**: [Join FORRT's Slack workspace](https://join.slack.com/t/forrt/shared_invite/zt-alobr3z7-NOR0mTBfD1vKXn9qlOKqaQ) and introduce yourself with a brief message:
+- **Slack**: [Join FORRT's Slack workspace](https://join.slack.com/t/forrt/shared_invite/zt-alobr3z7-NOR0mTBfD1vKXn9qlOKqaQ) and introduce yourself.
 
-  > "Hi everyone, I am a ___ (e.g., doctoral researcher, postdoctoral fellow, assistant professor) in ___ (field of study) at ___ (institution), and I would be glad to contribute to ___."
-
-  A community member will direct you to relevant documents and open tasks.
-
-- **Manuscript**: Contribute to the FORRT manuscript via [this collaborative Google Doc](https://tinyurl.com/FORRTworkingDOC).
-- **Other initiatives**: Explore the full range of FORRT tools and projects at [github.com/forrtproject](https://github.com/forrtproject).
+- **Other initiatives**: Explore the full range of FORRT tools and projects at [forrt.org](https://forrt.org/).
 
 ---
 
@@ -58,7 +43,7 @@ Please note that participation in FORRT requires adherence to our code of conduc
 This site is built with [Hugo](https://gohugo.io/) and deployed via [GitHub Actions](https://docs.github.com/en/actions). Contributions are submitted as Pull Requests targeting the `main` branch.
 
 > [!IMPORTANT]
-> See [CONTRIBUTING.md](CONTRIBUTING.md) for full setup instructions, contribution workflow, and deployment details.
+> See [CONTRIBUTING](CONTRIBUTING.md) for full setup instructions, contribution workflow, and deployment details.
 
 **Quick start:**
 
@@ -68,12 +53,14 @@ cd forrtproject.github.io
 hugo server -D
 ```
 
-Open `http://localhost:1313` in your browser to preview the site locally. Open issues are tracked at [github.com/forrtproject/forrtproject.github.io/issues](https://github.com/forrtproject/forrtproject.github.io/issues).
+Open [http://localhost:1313](http://localhost:1313) in your browser to preview the site locally. 
+
+You can find open issues [ here](https://github.com/forrtproject/forrtproject.github.io/issues). and contribute to any that interest you.
 
 ---
 
 ## License
 
-<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a>
+<a rel="license" href="https://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://licensebuttons.net/l//by/4.0/88x31.png" /></a>
 
-This work is licensed under a [Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License](http://creativecommons.org/licenses/by-nc-sa/4.0/).
+This work is licensed under a [Creative Commons Attribution 4.0 International](http://creativecommons.org/licenses/by/4.0/).
