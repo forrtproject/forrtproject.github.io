@@ -35,7 +35,7 @@ We will take care of the issue as soon as possible. Right now we run on voluntee
 
 ### Cloning the Repository
 
-For FORRT contributors, you can clone this repository to your local machine and make changes on the feature branch. For now, we do not use a separate development branch. Proposed changes must be made in a feature branch. Please then create a pull request into the master branch.
+For FORRT contributors, you can clone this repository to your local machine and make changes on the feature branch. For now, we do not use a separate development branch. Proposed changes must be made in a feature branch. Please then create a pull request into the main branch.
 
 For external contributors, this website operates on the [fork and pull](https://reflectoring.io/github-fork-and-pull/) model, so you will need to fork this repository to your GitHub account of choice and then clone it to your local machine.
 
@@ -84,7 +84,7 @@ To edit it locally, you will then need to:
 2. Clone this repo you just added in your own account: `git clone https://github.com/yourusername/forrtproject.github.io.git` in a terminal window.
 3. To run the website locally, make sure you are still in `FORRT/` dir and type `hugo server -D` in your terminal.
    - The -D option is to serve the website including draft .md files.
-4.  Create a new branch with your name or the feature you would like to add (e.g. outreach). Depending on your code editor, the way to do this will vary (e.g. in Visual Studio Code you can click on "master" in the bottom left and select "new branch").
+4.  Create a new branch with your name or the feature you would like to add (e.g. outreach). Depending on your code editor, the way to do this will vary (e.g. in Visual Studio Code you can click on "main" in the bottom left and select "new branch").
 5. Make changes on your branch. Check that it the website is working using again `hugo server -D`.
 6. Select what changes you want to add now and "stage" them with Git.
 7. Commit your changes and add a message that describes the changes.
@@ -101,7 +101,7 @@ The FORRT website uses a dual deployment strategy to ensure quality and enable c
 
 - **URL**: [https://forrt.org](https://forrt.org)
 - **Workflow**: `.github/workflows/deploy.yaml`
-- **Trigger**: Pushes to `master` branch
+- **Trigger**: Pushes to `main` branch
 - **Target**: GitHub Pages (`gh-pages` branch)
 - **Purpose**: Serves the live, production website
 
@@ -109,7 +109,7 @@ The FORRT website uses a dual deployment strategy to ensure quality and enable c
 
 - **URL**: [https://staging.forrt.org](https://staging.forrt.org)
 - **Workflow**: `.github/workflows/staging-aggregate.yaml`
-- **Trigger**: Pull requests to `master`, monthly schedule (1st of each month), or manual dispatch
+- **Trigger**: Pull requests to `main`, monthly schedule (1st of each month), or manual dispatch
 - **Target**: External repository (`forrtproject/webpage-staging`)
 - **Purpose**: Preview combined changes from all open PRs
 
@@ -118,8 +118,8 @@ The FORRT website uses a dual deployment strategy to ensure quality and enable c
 The staging deployment uses an **aggregation strategy** to provide a unified preview environment:
 
 1. **Automatic Aggregation**: When any PR is opened, synchronized, or reopened, the workflow:
-   - Collects all open, non-draft PRs targeting `master`
-   - Creates a temporary aggregation branch from `master`
+   - Collects all open, non-draft PRs targeting `main`
+   - Creates a temporary aggregation branch from `main`
    - Attempts to merge each PR in sequence
    
 2. **Conflict Handling**: 
