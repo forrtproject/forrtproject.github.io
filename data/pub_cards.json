@@ -165,7 +165,7 @@
         "name": "Ellen Ripley",
         "title": "Warrant Officer, USCSS Nostromo",
         "bio": "Warrant officer and survivor. Believes in facing threats head-on with clear eyes, rigorous protocols, and an unwavering commitment to the truth.",
-        "photo": "",
+        "photo": "/img/featured-recommenders/ellen-ripley-12ac737f.jpg",
         "text": "Weyland-Yutani buried our xenomorph data for profit — classic perverse incentive. This paper on hypercompetition in academia felt uncomfortably familiar. If your institution values metrics over truth, you need to read this before something bursts out of your chest."
       }
     ]
@@ -219,7 +219,7 @@
         "name": "Leia Organa",
         "title": "General, Rebel Alliance",
         "bio": "Leader of the Rebel Alliance and veteran diplomat. Dedicated to building institutions that serve the collective good and hold power accountable.",
-        "photo": "/img/featured-recommenders/leia-organa-6afb206a.jpg",
+        "photo": "",
         "text": "I led a rebellion that toppled an empire, so trust me: crises drive change. This paper shows how the replication crisis sparked real structural reforms. If the scientific community can self-correct, maybe the Senate could too."
       }
     ]
@@ -2112,7 +2112,7 @@
         "name": "Data",
         "title": "Lt. Commander, USS Enterprise-D",
         "bio": "Android officer serving aboard the USS Enterprise-D. Endlessly curious about the nature of understanding, both computational and human.",
-        "photo": "",
+        "photo": "/img/featured-recommenders/data-0c85c1fc.jpg",
         "text": "Despite possessing a positronic brain capable of 60 trillion operations per second, I still found mixed-effects models confusing until I read this tutorial. The simulation approach finally made random slopes click. If it helped an android, it will help you."
       }
     ]
@@ -2136,7 +2136,7 @@
         "name": "Spock",
         "title": "Science Officer, USS Enterprise",
         "bio": "Half-Vulcan science officer aboard the USS Enterprise. Dedicated to logic, precision, and the rigorous pursuit of scientific understanding.",
-        "photo": "",
+        "photo": "/img/featured-recommenders/spock-abd62c23.jpg",
         "text": "Dr. McCoy once claimed p=0.06 'proved' his treatment worked. I handed him this guide to 25 common statistical misinterpretations. He called me a 'green-blooded pedant.' He also stopped misreporting his confidence intervals. Fascinating."
       }
     ]
