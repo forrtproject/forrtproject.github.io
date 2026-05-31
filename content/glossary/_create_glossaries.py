@@ -59,14 +59,6 @@ def process_references(references_text, apa_lookup, missing_refs_log=None, conte
     citation_pattern = r'\\?\[@(.+?)\\?\]'
     matches = re.findall(citation_pattern, references_text)
 
-    # Surface content that is NOT a parseable \[@citekey\] and would otherwise be
-    # dropped silently: free-text references (e.g. "Pownall et al. (2021)") or keys
-    # the regex can't capture (e.g. escaped underscores: \[@World\_Wide\_Web2021\]).
-    residual = re.sub(citation_pattern, '', references_text)
-    if re.search(r'[A-Za-z0-9@]', residual):
-        where = f" in {context}" if context else ""
-        print(f"Warning: unparsed reference content{where} (not a [@citekey], dropped): {residual.strip(' ,;.')!r}")
-
     formatted_refs = []
     for match in matches:
         # Clean the key: remove markdown formatting, trailing punctuation, etc.
@@ -99,7 +91,37 @@ def process_references(references_text, apa_lookup, missing_refs_log=None, conte
                 if missing_refs_log is not None:
                     missing_refs_log.add(original_key)
                 print(f"Warning: Missing reference key '{original_key}' (cleaned: '{key}') - skipping")
-    
+
+    # A bare URL (or markdown link) is a valid reference type — keep any that remain
+    # in the residual rather than dropping them, unless the URL is already part of a
+    # resolved citation. Bare URLs are wrapped as markdown links so Hugo renders them.
+    residual = re.sub(citation_pattern, '', references_text)
+    md_links = re.findall(r'\[[^\]]*\]\(https?://[^)]+\)', residual)
+    leftover = residual
+    for link in md_links:
+        leftover = leftover.replace(link, ' ', 1)
+    bare_urls = re.findall(r'(?:https?://|www\.)[^\s,;)\]]+', leftover)
+
+    def _url_of(link):
+        m = re.search(r'\((https?://[^)]+)\)', link)
+        return (m.group(1) if m else link).rstrip('.,;)')
+
+    for link in md_links:
+        if not any(_url_of(link) in ref for ref in formatted_refs):
+            formatted_refs.append(link)
+    for url in bare_urls:
+        url = url.rstrip('.,;)')
+        if not any(url in ref for ref in formatted_refs):
+            formatted_refs.append(f'[{url}]({url})')
+
+    # Whatever is left once citekeys and URLs are removed is genuine free-text that the
+    # pipeline can't resolve — surface it so it can be turned into a citekey.
+    for url in bare_urls:
+        leftover = leftover.replace(url, ' ', 1)
+    if re.search(r'[A-Za-z0-9@]', leftover):
+        where = f" in {context}" if context else ""
+        print(f"Warning: unresolved free-text reference{where} (needs a citekey): {leftover.strip(' ,;.')!r}")
+
     return list(dict.fromkeys(formatted_refs))
 
 def fix_bare_urls_in_parens(text):
