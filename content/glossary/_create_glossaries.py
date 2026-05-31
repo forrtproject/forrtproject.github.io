@@ -197,9 +197,12 @@ for language_code in languages_to_process:
             else:
                 title = en_title
 
-        # Process references
-        raw_references = safe_get(row, "Reference")
-        processed_references = process_references(raw_references, apa_lookup, missing_refs)
+        # Process references: always combine the generic shared column with any
+        # language-specific column (e.g. AR_refs, CN_refs), generic first. Both use
+        # the same [@citekey] format resolved via apa_lookup; dedupe across them.
+        processed_references = process_references(safe_get(row, "Reference"), apa_lookup, missing_refs)
+        lang_refs = process_references(safe_get(row, f"{language_code}_refs"), apa_lookup, missing_refs)
+        processed_references = list(dict.fromkeys(processed_references + lang_refs))
 
         # Build entry
         definition = safe_get(row, f"{language_code}_definition" if language_code == "EN" else f"{language_code}_def")
