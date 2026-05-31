@@ -52,7 +52,11 @@ def process_references(references_text, apa_lookup, missing_refs_log=None, conte
     if not references_text:
         return []
 
-    citation_pattern = r'\\?\[@([^\\]+)\\?\]'
+    # Capture the key lazily up to the closing (optionally backslash-escaped) bracket,
+    # so keys with escaped characters survive — notably escaped underscores in pandoc
+    # citekeys (e.g. \[@R\_Core\_Team2020\]), which the old [^\\]+ class truncated at the
+    # first backslash. The backslashes are unescaped out of each captured key below.
+    citation_pattern = r'\\?\[@(.+?)\\?\]'
     matches = re.findall(citation_pattern, references_text)
 
     # Surface content that is NOT a parseable \[@citekey\] and would otherwise be
@@ -68,6 +72,9 @@ def process_references(references_text, apa_lookup, missing_refs_log=None, conte
         # Clean the key: remove markdown formatting, trailing punctuation, etc.
         key = match.strip()
         original_key = key  # Keep for logging
+
+        # Unescape backslash escapes (e.g. \_ -> _) so the key matches apa_lookup
+        key = re.sub(r'\\(.)', r'\1', key)
 
         # Remove markdown formatting
         key = re.sub(r'^\*+|\*+$', '', key)  # Remove leading/trailing asterisks
