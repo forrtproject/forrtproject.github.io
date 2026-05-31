@@ -47,13 +47,21 @@ except FileNotFoundError:
     print("Warning: apa_lookup.json not found. References will not be formatted.")
     apa_lookup = {}
 
-def process_references(references_text, apa_lookup, missing_refs_log=None):
+def process_references(references_text, apa_lookup, missing_refs_log=None, context=""):
     """Convert citation keys to APA format using the lookup"""
     if not references_text:
         return []
 
     citation_pattern = r'\\?\[@([^\\]+)\\?\]'
     matches = re.findall(citation_pattern, references_text)
+
+    # Surface content that is NOT a parseable \[@citekey\] and would otherwise be
+    # dropped silently: free-text references (e.g. "Pownall et al. (2021)") or keys
+    # the regex can't capture (e.g. escaped underscores: \[@World\_Wide\_Web2021\]).
+    residual = re.sub(citation_pattern, '', references_text)
+    if re.search(r'[A-Za-z0-9@]', residual):
+        where = f" in {context}" if context else ""
+        print(f"Warning: unparsed reference content{where} (not a [@citekey], dropped): {residual.strip(' ,;.')!r}")
 
     formatted_refs = []
     for match in matches:
@@ -200,8 +208,8 @@ for language_code in languages_to_process:
         # Process references: always combine the generic shared column with any
         # language-specific column (e.g. AR_refs, CN_refs), generic first. Both use
         # the same [@citekey] format resolved via apa_lookup; dedupe across them.
-        processed_references = process_references(safe_get(row, "Reference"), apa_lookup, missing_refs)
-        lang_refs = process_references(safe_get(row, f"{language_code}_refs"), apa_lookup, missing_refs)
+        processed_references = process_references(safe_get(row, "Reference"), apa_lookup, missing_refs, context=f"{title} (Reference)")
+        lang_refs = process_references(safe_get(row, f"{language_code}_refs"), apa_lookup, missing_refs, context=f"{title} ({language_code}_refs)")
         processed_references = list(dict.fromkeys(processed_references + lang_refs))
 
         # Build entry
