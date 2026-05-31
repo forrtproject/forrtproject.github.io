@@ -98,13 +98,15 @@ def fix_bare_urls_in_parens(text):
     Skips URLs that are already inside a markdown link ([text](url)).
     """
     # Match ( optional-prefix https://url ) but only when ( is NOT preceded by ]
-    # (which would mean it's already the URL part of [text](url))
+    # (which would mean it's already the URL part of [text](url)). The URL char
+    # class also excludes [ ] ( so the match can't run across an existing
+    # markdown link ([text](url)) and double-wrap it.
     def _replace(m):
         prefix = m.group(1) or ''
         url = m.group(2)
         return f'({prefix}[{url}]({url}))'
 
-    return re.sub(r'(?<!\])\(([^()]*?)(https?://[^\s)]+)\)', _replace, text)
+    return re.sub(r'(?<!\])\(([^()]*?)(https?://[^\s)\]\[(]+)\)', _replace, text)
 
 
 def safe_get(row, column, default=""):
