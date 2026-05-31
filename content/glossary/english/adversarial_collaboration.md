@@ -25,7 +25,8 @@
         "Aoife O’Mahony",
         "Charlotte R. Pennington",
         "Flávio Azevedo",
-        "Madeleine Pownall**;** Martin Vasilev"
+        "Madeleine Pownall",
+        "Martin Vasilev"
     ],
     "alt_related_terms": [
         null

@@ -7,7 +7,7 @@
         "Many Labs",
         "Multiverse analysis",
         "Sensitivity analyses",
-        "Specification Curve Analysis **Alternative definition:** “Robustness refers to the stability of experimental conclusions to variations in either baseline assumptions or experimental procedures. It is somewhat related to the concept of generalizability (also known as transportability), which refers to the persistence of an effect in settings different from and outside of an experimental framework \\[...\\] Whether a study design is similar enough to the original to be considered a replication, a “robustness test,” or some of many variations of pure replication that have been identified, particularly in the social sciences (for example, conceptual replication, pseudoreplication), is an unsettled question” (Goodman et al., 2016)."
+        "Specification Curve Analysis"
     ],
     "references": [
         "Goodman, S. N., Fanelli, D., & Ioannidis, J. P. A. (2016). What does research reproducibility mean? Science Translational Medicine, 8(341), 341ps12-341ps12. https://doi.org/10.1126/scitranslmed.aaf5027",

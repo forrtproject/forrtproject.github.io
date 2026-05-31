@@ -4,11 +4,13 @@ import json
 import pandas as pd
 import os
 from io import StringIO
+from pypinyin import lazy_pinyin, Style
 
 script_dir = os.path.dirname(os.path.abspath(__file__))
 language_map = {
     'EN': 'english',
     'AR': 'arabic',
+    'CN': 'chinese',
     'DE': 'german',
     'TR': 'turkish',
 }
@@ -96,13 +98,15 @@ def fix_bare_urls_in_parens(text):
     Skips URLs that are already inside a markdown link ([text](url)).
     """
     # Match ( optional-prefix https://url ) but only when ( is NOT preceded by ]
-    # (which would mean it's already the URL part of [text](url))
+    # (which would mean it's already the URL part of [text](url)). The URL char
+    # class also excludes [ ] ( so the match can't run across an existing
+    # markdown link ([text](url)) and double-wrap it.
     def _replace(m):
         prefix = m.group(1) or ''
         url = m.group(2)
         return f'({prefix}[{url}]({url}))'
 
-    return re.sub(r'(?<!\])\(([^()]*?)(https?://[^\s)]+)\)', _replace, text)
+    return re.sub(r'(?<!\])\(([^()]*?)(https?://[^\s)\]\[(]+)\)', _replace, text)
 
 
 def safe_get(row, column, default=""):
@@ -122,6 +126,16 @@ def sort_key_for_language(title, language_code):
         # Map special chars so they sort just after their base char
         key = key.replace('ç', 'cz').replace('ğ', 'gz').replace('ı', 'iz')
         key = key.replace('ö', 'oz').replace('ş', 'sz').replace('ü', 'uz')
+    elif language_code == 'CN':
+        # Chinese audiences expect pinyin sort order. Sort by the Chinese part
+        # only (before the optional " [English Title]" suffix); pypinyin passes
+        # latin characters through, so titles that have no Chinese form still
+        # sort sensibly. Strip leading non-alphanumeric chars so titles that
+        # open with punctuation (e.g. "兄弟"… or 《…》) sort by their first
+        # real character's pinyin instead of jumping to the top of the list.
+        chinese_part = title.split(" [")[0]
+        key = "".join(lazy_pinyin(chinese_part, style=Style.NORMAL)).lower()
+        key = re.sub(r'^[^\w]+', '', key)
     return key
 
 

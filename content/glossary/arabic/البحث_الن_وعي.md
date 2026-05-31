@@ -7,7 +7,7 @@
         "Bracketing Interviews",
         "Positionality",
         "Quantitative research",
-        "Reflexivity **Alternative definition:** (if applicable) In Psychology, the **epistemology** of qualitative research is typically concerned with understanding people’s perspectives. Such epistemology proposes assuming the equity of researchers and participants as human beings, and in consequence, the need of sympathetic human understanding instead of data-driven conclusions"
+        "Reflexivity"
     ],
     "references": [
         "Aspers, P., & Corte, U. (2019). What is qualitative in qualitative research. Qualitative Sociology, 42(2), 139–160. https://doi.org/10.1007/s11133-019-9413-7",

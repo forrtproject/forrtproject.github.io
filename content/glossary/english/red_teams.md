@@ -15,7 +15,8 @@
     ],
     "reviewed_by": [
         "Nick Ballou",
-        "Mahmoud Elsherif**;** Thomas Rhys Evans",
+        "Mahmoud Elsherif",
+        "Thomas Rhys Evans",
         "Helena Hartmann",
         "Timo Roettger"
     ],

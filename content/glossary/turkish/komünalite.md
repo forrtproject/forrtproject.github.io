@@ -5,7 +5,7 @@
     "definition": "Bilimsel sonuçların ve yöntemlerin ortak mülkiyeti ve bunun sonucunda her ikisinin de serbestçe paylaşılması zorunluluğu. Komünalite, her bilimsel bulgunun çok sayıda kişinin çabasının ürünü olduğu anlayışına dayanır. Bilim insanları yeni bulgularını meslektaşlarıyla açık bir şekilde paylaştığında bu norm izlenmiş olur.",
     "related_terms": [
         "Mertonian norms",
-        "Objectivity **Alternative definition:** Communism (in Merton, 1942\\) **Related terms to alternative definition** (if applicable)"
+        "Objectivity"
     ],
     "references": [
         "Anderson, M. S., Ronning, E. A., Devries, R., & Martinson, B. C. (2010). Extending the Mertonian norms: Scientists’ subscription to norms of research. Journal of Higher Education, 81(3), 366–393. https://doi.org/10.1353/jhe.0.0095",
