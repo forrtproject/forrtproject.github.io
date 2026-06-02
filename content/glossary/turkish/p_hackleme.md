@@ -12,8 +12,8 @@
         "Selective reporting"
     ],
     "references": [
-        "Hardwicke, T. E., Jameel, L., Jones, M., Walczak, E. J., & Weinberg, L. M. (2014). Only human: Scientists, systems, and suspect statistics. Opticon1826, 16, 25. https://doi.org/10.5334/OPT.CH",
-        "Neuroskeptic. (2012). The nine circles of scientific hell. Perspectives on Psychological Science, 7(6), 643–644. https://doi.org/10.1177/1745691612459519"
+        "Hardwicke, T. E., Jameel, L., Jones, M., Walczak, E. J., & Weinberg, L. M. (2014). Only human: Scientists, systems, and suspect statistics. <i>Opticon1826</i>, <i>16</i>, 25. https://doi.org/10.5334/OPT.CH",
+        "Neuroskeptic. (2012). The nine circles of scientific hell. <i>Perspectives on Psychological Science</i>, <i>7</i>(6), 643–644. https://doi.org/10.1177/1745691612459519"
     ],
     "drafted_by": [
         "Mahmoud Elsherif"

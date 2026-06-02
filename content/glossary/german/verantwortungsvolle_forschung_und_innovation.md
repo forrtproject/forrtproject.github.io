@@ -8,7 +8,9 @@
         "Public Engagement",
         "Transdisciplinary Research"
     ],
-    "references": [],
+    "references": [
+        "European Commission. (2021). <i>Responsible research & innovation</i>. Retrieved from https://ec.europa.eu/programmes/horizon2020/en/h2020-section/responsible-research-innovation"
+    ],
     "drafted_by": [
         "Ana Barbosa Mendes"
     ],

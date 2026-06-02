@@ -12,9 +12,9 @@
         "Validation"
     ],
     "references": [
-        "Cronbach, L. J., & Meehl, P. E. (1955). Construct validity in psychological tests. Psychological Bulletin, 52(4), 281–302. https://doi.org/10.1037/h0040957",
-        "Shadish, W. R., Cook, T. D., & Campbell, D. T. (2002). Experimental and quasi-experimental designs for generalized causal inference. Houghton Mifflin.",
-        "Smith, G. T. (2005). On Construct Validity: Issues of Method and Measurement. Psychological Assessment, 17(4), 396–408. https://doi.org/10.1037/1040-3590.17.4.396"
+        "Cronbach, L. J., & Meehl, P. E. (1955). Construct validity in psychological tests. <i>Psychological Bulletin</i>, <i>52</i>(4), 281–302. https://doi.org/10.1037/h0040957",
+        "Shadish, W. R., Cook, T. D., & Campbell, D. T. (2002). <i>Experimental and quasi-experimental designs for generalized causal inference</i>. Houghton Mifflin.",
+        "Smith, G. T. (2005). On Construct Validity: Issues of Method and Measurement. <i>Psychological Assessment</i>, <i>17</i>(4), 396–408. https://doi.org/10.1037/1040-3590.17.4.396"
     ],
     "drafted_by": [
         "Annalise A. LaPlume"

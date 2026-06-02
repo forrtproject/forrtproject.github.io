@@ -9,8 +9,8 @@
         "Reification (fallacy)"
     ],
     "references": [
-        "Muller, J. Z. (2018). The Tyranny of Metrics. Princeton University Press.",
-        "Strathern, M. (1997). ‘Improving ratings’: audit in the British University system. European Review, 5(3), 305–321. https://doi.org/10.1002/(SICI)1234-981X(199707)5:3<305::AID-EURO184>3.0.CO;2-4"
+        "Muller, J. Z. (2018). <i>The Tyranny of Metrics</i>. Princeton University Press.",
+        "Strathern, M. (1997). ‘Improving ratings’: audit in the British University system. <i>European Review</i>, <i>5</i>(3), 305–321. https://doi.org/10.1002/(SICI)1234-981X(199707)5:3&#60;305::AID-EURO184&#62;3.0.CO;2-4"
     ],
     "drafted_by": [
         "Adam Parker"

@@ -10,7 +10,9 @@
         "Reproducibility",
         "Trustworthiness"
     ],
-    "references": [],
+    "references": [
+        "Aczel, B., Szaszi, B., Sarafoglou, A., Kekecs, Z., Kucharský, Š., Benjamin, D., ..., & Wagenmakers, E. J. (2020). A consensus-based transparency checklist. <i>Nature Human Behaviour</i>, <i>4</i>(1), 4–6. https://doi.org/10.1038/s41562-019-0772-6"
+    ],
     "drafted_by": [
         "Barnabas Szaszi"
     ],

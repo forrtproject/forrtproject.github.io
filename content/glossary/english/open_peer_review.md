@@ -9,7 +9,9 @@
         "PRO (peer review openness) initiative",
         "Transparent peer review"
     ],
-    "references": [],
+    "references": [
+        "Ross-Hellauer, T. (2017). What is open peer review? A systematic review [version 2; peer review: 4 approved]. <i>F1000Research</i>, <i>6</i>, 588. https://doi.org/10.12688/f1000research.11369.2"
+    ],
     "drafted_by": [
         "Sonia Rishi"
     ],

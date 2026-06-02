@@ -10,7 +10,7 @@
         "Null Hypothesis Significance Testing (NHST)"
     ],
     "references": [
-        "Doll, R., & Hill, A. B. (1954). The mortality of doctors in relation to their smoking habits; a preliminary report. British Medical Journal, 1(4877), 1451–1455. https://doi.org/10.1136/bmj.1.4877.1451"
+        "Doll, R., & Hill, A. B. (1954). The mortality of doctors in relation to their smoking habits; a preliminary report. <i>British Medical Journal</i>, <i>1</i>(4877), 1451–1455. https://doi.org/10.1136/bmj.1.4877.1451"
     ],
     "drafted_by": [
         "Jamie P. Cockcroft"

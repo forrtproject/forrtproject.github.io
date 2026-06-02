@@ -10,9 +10,9 @@
         "Validity"
     ],
     "references": [
-        "Davies, G. M., & Gray, A. (2015). Don’t let spurious accusations of pseudoreplication limit our ability to learn from natural experiments (and other messy kinds of ecological monitoring). Ecology and Evolution, 5(22), 5295–5304. https://doi.org/10.1002/ece3.1782",
-        "Hurlbert, S. H. (1984). Pseudoreplication and the Design of Ecological Field Experiments. Ecological Monographs, 54(2), 187–211. https://doi.org/10.2307/1942661",
-        "Lazic, S. E. (2019). Genuine replication and pseudoreplication: What’s the difference? In BMJ Open Science. https://blogs.bmj.com/openscience/2019/09/16/genuine-replication-and-pseudoreplication-whats-the-difference/"
+        "Davies, G. M., & Gray, A. (2015). Don’t let spurious accusations of pseudoreplication limit our ability to learn from natural experiments (and other messy kinds of ecological monitoring). <i>Ecology and Evolution</i>, <i>5</i>(22), 5295–5304. https://doi.org/10.1002/ece3.1782",
+        "Hurlbert, S. H. (1984). Pseudoreplication and the Design of Ecological Field Experiments. <i>Ecological Monographs</i>, <i>54</i>(2), 187–211. https://doi.org/10.2307/1942661",
+        "Lazic, S. E. (2019). Genuine replication and pseudoreplication: What’s the difference? In <i>BMJ Open Science</i>. https://blogs.bmj.com/openscience/2019/09/16/genuine-replication-and-pseudoreplication-whats-the-difference/"
     ],
     "drafted_by": [
         "Ben Farrar"

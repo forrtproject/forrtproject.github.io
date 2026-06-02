@@ -8,7 +8,6 @@ sync. Run it after apa_lookup.json is regenerated:
     python3 content/glossary/_build_references.py
 """
 
-import html
 import json
 import os
 import re
@@ -42,11 +41,14 @@ def sort_key(citation):
 
 
 def render(citation):
-    """HTML-escape a citation string and turn its URLs into links."""
-    escaped = html.escape(citation)
-    # URLs can't contain the entities introduced by escaping, so it is safe to
-    # linkify after escaping.
-    return URL_RE.sub(lambda m: f'<a href="{m.group(1)}">{m.group(1)}</a>', escaped)
+    """Linkify the bare DOI/URL in an apa_lookup HTML fragment.
+
+    Values are HTML fragments from citation-js (journal titles in <i>/<sub>, literal
+    "&", the odd &#60;/&#62; entity). They are emitted into a Markdown page rendered
+    with goldmark unsafe=true, which escapes bare "&" to &amp; itself — so we only
+    wrap the DOI/URL here (its literal "&" gets escaped in the href too).
+    """
+    return URL_RE.sub(lambda m: f'<a href="{m.group(1)}">{m.group(1)}</a>', citation)
 
 
 def main():

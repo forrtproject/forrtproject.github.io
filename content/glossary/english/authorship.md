@@ -13,10 +13,10 @@
         "Sequence-determines-credit approach (SDC)"
     ],
     "references": [
-        "Academies, A. A. E. (2017). The European Code of Conduct for Research Integrity. Revised Edition. Retrieved from https://allea.org/code-of-conduct/",
-        "German Research Foundation. (2019). Guidelines for Safeguarding Good Research Practice. Code of Conduct.",
-        "McNutt, M. K., Bradford, M., Drazen, J. M., Hanson, B., Howard, B., Jamieson, K. H., Kiermer, V., Marcus, E., Pope, B. K., Schekman, R., Swaminathan, S., Stang, P. J., & Verma, I. M. (2018). Transparency in authors’ contributions and responsibilities to promote integrity in scientific publication. Proceedings of the National Academy of Sciences of the United States of America, 115(11), 2557–2560. https://doi.org/10.1073/pnas.1715374115",
-        "Patience, G. S., Galli, F., Patience, P. A., & Boffito, D. C. (2019). Intellectual contributions meriting authorship: Survey results from the top cited authors across all science categories. PLoS One, 14(1), e0198117. https://doi.org/10.1371/journal.pone.0198117"
+        "Academies, A. A. E. (2017). <i>The European Code of Conduct for Research Integrity. Revised Edition</i>. Retrieved from https://allea.org/code-of-conduct/",
+        "German Research Foundation. (2019). <i>Guidelines for Safeguarding Good Research Practice. Code of Conduct</i>.",
+        "McNutt, M. K., Bradford, M., Drazen, J. M., Hanson, B., Howard, B., Jamieson, K. H., Kiermer, V., Marcus, E., Pope, B. K., Schekman, R., Swaminathan, S., Stang, P. J., & Verma, I. M. (2018). Transparency in authors’ contributions and responsibilities to promote integrity in scientific publication. <i>Proceedings of the National Academy of Sciences of the United States of America</i>, <i>115</i>(11), 2557–2560. https://doi.org/10.1073/pnas.1715374115",
+        "Patience, G. S., Galli, F., Patience, P. A., & Boffito, D. C. (2019). Intellectual contributions meriting authorship: Survey results from the top cited authors across all science categories. <i>PLoS One</i>, <i>14</i>(1), e0198117. https://doi.org/10.1371/journal.pone.0198117"
     ],
     "drafted_by": [
         "Jacob Miranda"

@@ -8,8 +8,8 @@
         "Preregistration"
     ],
     "references": [
-        "BMJ. (2015). Introducing ‘How to write and publish a Study Protocol’ using BMJ’s new eLearning programme: Research to Publication. Retrieved from https://blogs.bmj.com/bmjopen/2015/09/22/introducing-how-to-write-and-publish-a-study-protocol-using-bmjs-new-elearning-programme-research-to-publication/",
-        "Nosek, B. A., Ebersole, C. R., DeHaven, A. C., & Mellor, D. T. (2018). The preregistration revolution. Proceedings of the National Academy of Sciences, 115(11), 2600–2606. https://doi.org/10.1073/pnas.1708274114"
+        "BMJ. (2015). <i>Introducing ‘How to write and publish a Study Protocol’ using BMJ’s new eLearning programme: Research to Publication</i>. Retrieved from https://blogs.bmj.com/bmjopen/2015/09/22/introducing-how-to-write-and-publish-a-study-protocol-using-bmjs-new-elearning-programme-research-to-publication/",
+        "Nosek, B. A., Ebersole, C. R., DeHaven, A. C., & Mellor, D. T. (2018). The preregistration revolution. <i>Proceedings of the National Academy of Sciences</i>, <i>115</i>(11), 2600–2606. https://doi.org/10.1073/pnas.1708274114"
     ],
     "drafted_by": [
         "Marta Topor"

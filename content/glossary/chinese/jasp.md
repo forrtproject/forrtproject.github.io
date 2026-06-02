@@ -8,7 +8,7 @@
         "Open source"
     ],
     "references": [
-        "Team, J. (2020). JASP (Version 0.14.1) [Computer software]."
+        "JASP Team. (2020). <i>JASP (Version 0.14.1) [Computer software]</i>."
     ],
     "drafted_by": [
         "Amélie Beffara Bret"

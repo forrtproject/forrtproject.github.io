@@ -11,8 +11,8 @@
         "theory building"
     ],
     "references": [
-        "Guest, O., & Martin, A. E. (2020). How computational modeling can force theory building in psychological science. Perspectives on Psychological Science. https://doi.org/10.1177/1745691620970585",
-        "Wilson, R. C., & Collins, A. G. (2019). Ten simple rules for the computational modeling of behavioral data. eLife, 8, e49547. https://doi.org/10.7554/eLife.49547"
+        "Guest, O., & Martin, A. E. (2020). How computational modeling can force theory building in psychological science. <i>Perspectives on Psychological Science</i>. https://doi.org/10.1177/1745691620970585",
+        "Wilson, R. C., & Collins, A. G. (2019). Ten simple rules for the computational modeling of behavioral data. <i>eLife</i>, <i>8</i>, e49547. https://doi.org/10.7554/eLife.49547"
     ],
     "drafted_by": [
         "Charlotte R. Pennington"

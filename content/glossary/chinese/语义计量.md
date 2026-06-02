@@ -8,8 +8,8 @@
         "Contribution(p)"
     ],
     "references": [
-        "Herrmannova, D., & Knoth, P. (n.d.). Semantometrics Towards Full text-based Research Evaluation. Retrieved from https://arxiv.org/pdf/1605.04180.pdf",
-        "Knoth, P., & Herrmannova, D. (2014). Towards semantometrics: A new semantic similarity based measure for assessing a research publication’s contribution. D-Lib Magazine, 20(11), 8. https://doi.org/10.1045/november2014-knoth"
+        "Herrmannova, D., & Knoth, P. (n.d.). <i>Semantometrics Towards Full text-based Research Evaluation</i>. Retrieved from https://arxiv.org/pdf/1605.04180.pdf",
+        "Knoth, P., & Herrmannova, D. (2014). Towards semantometrics: A new semantic similarity based measure for assessing a research publication’s contribution. <i>D-Lib Magazine</i>, <i>20</i>(11), 8. https://doi.org/10.1045/november2014-knoth"
     ],
     "drafted_by": [
         "Alaa AlDoh"

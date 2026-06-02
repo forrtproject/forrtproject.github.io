@@ -10,7 +10,8 @@
         "Open learning"
     ],
     "references": [
-        "Baturay, M. H. (2015). An overview of the world of MOOCs. Procedia-Social and Behavioral Sciences, 174, 427–433. https://doi.org/10.1016/j.sbspro.2015.01.685"
+        "Baturay, M. H. (2015). An overview of the world of MOOCs. <i>Procedia-Social and Behavioral Sciences</i>, <i>174</i>, 427–433. https://doi.org/10.1016/j.sbspro.2015.01.685",
+        "<i>Open Science MOOC</i>. (n.d.). https://opensciencemooc.eu/"
     ],
     "drafted_by": [
         "Elizabeth Collins"

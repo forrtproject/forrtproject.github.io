@@ -15,9 +15,9 @@
         "Trustworthy research"
     ],
     "references": [
-        "Academies, A. A. E. (2017). The European Code of Conduct for Research Integrity. Revised Edition. Retrieved from https://allea.org/code-of-conduct/",
-        "Medin, D. L. (2012). Rigor without rigor mortis: The APS Board discusses research integrity. APS Observer, 25(5–9), 27–28. https://www.psychologicalscience.org/observer/scientific-rigor",
-        "Moher, D., Bouter, L., Kleinert, S., Glasziou, P., Sham, M. H., Barbour, V., & Dirnagl, U. (2020). The Hong Kong Principles for assessing researchers: Fostering research integrity. PLoS Biology, 18(7), e3000737. https://doi.org/10.1371/journal.pbio.3000737"
+        "Academies, A. A. E. (2017). <i>The European Code of Conduct for Research Integrity. Revised Edition</i>. Retrieved from https://allea.org/code-of-conduct/",
+        "Medin, D. L. (2012). Rigor without rigor mortis: The APS Board discusses research integrity. <i>APS Observer</i>, <i>25</i>(5–9), 27–28. https://www.psychologicalscience.org/observer/scientific-rigor",
+        "Moher, D., Bouter, L., Kleinert, S., Glasziou, P., Sham, M. H., Barbour, V., & Dirnagl, U. (2020). The Hong Kong Principles for assessing researchers: Fostering research integrity. <i>PLoS Biology</i>, <i>18</i>(7), e3000737. https://doi.org/10.1371/journal.pbio.3000737"
     ],
     "drafted_by": [
         "Ana Barbosa Mendes; Flávio Azevedo"

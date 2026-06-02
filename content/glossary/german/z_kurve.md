@@ -12,8 +12,8 @@
         "Statistical power"
     ],
     "references": [
-        "Bartoš, F., & Schimmack, U. (2020). Z-Curve 2.0: Estimating replication rates and discovery rates. https://doi.org/10.31234/osf.io/urgtn",
-        "Brunner, J., & Schimmack, U. (2020). Estimating population mean power under conditions of heterogeneity and selection for significance. Meta-Psychology, 4, MP.2018.874. https://doi.org/10.15626/MP.2018.874"
+        "Bartoš, F., & Schimmack, U. (2020). <i>Z-Curve 2.0: Estimating replication rates and discovery rates</i>. https://doi.org/10.31234/osf.io/urgtn",
+        "Brunner, J., & Schimmack, U. (2020). Estimating population mean power under conditions of heterogeneity and selection for significance. <i>Meta-Psychology</i>, <i>4</i>, MP.2018.874. https://doi.org/10.15626/MP.2018.874"
     ],
     "drafted_by": [
         "Bradley J. Baker"

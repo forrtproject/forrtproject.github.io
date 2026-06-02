@@ -8,9 +8,9 @@
         "Likelihood Function"
     ],
     "references": [
-        "Dienes, Z. (2008). Understanding psychology as a science: An introduction to scientific and statistical inference. Macmillan International Higher Education.",
-        "Geyer, C. J. (2003). Maximum Likelihood in R (pp. 1–9). Open Science Framework.",
-        "Geyer, C. J. (2007). Stat 5102 Notes: Maximum Likelihood (pp. 1–8). Open Science Framework."
+        "Dienes, Z. (2008). <i>Understanding psychology as a science: An introduction to scientific and statistical inference</i>. Macmillan International Higher Education.",
+        "Geyer, C. J. (2003). <i>Maximum Likelihood in R</i> (pp. 1–9). Open Science Framework.",
+        "Geyer, C. J. (2007). <i>Stat 5102 Notes: Maximum Likelihood</i> (pp. 1–8). Open Science Framework."
     ],
     "drafted_by": [
         "Alaa Aldoh"

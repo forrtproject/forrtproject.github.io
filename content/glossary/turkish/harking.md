@@ -13,8 +13,8 @@
         "Questionable Research Practices or Questionable Reporting Practices (QRPs)"
     ],
     "references": [
-        "Kerr, N. L. (1998). HARKing: Hypothesizing after the results are known. Personality and Social Psychology Review, 2(3), 196–217. https://doi.org/10.1207/s15327957pspr0203_4",
-        "Nosek, B. A., & Lakens, D. (2014). Registered reports. Social Psychology, 45, 137–141. https://doi.org/10.1027/1864-9335/a000192"
+        "Kerr, N. L. (1998). HARKing: Hypothesizing after the results are known. <i>Personality and Social Psychology Review</i>, <i>2</i>(3), 196–217. https://doi.org/10.1207/s15327957pspr0203_4",
+        "Nosek, B. A., & Lakens, D. (2014). Registered reports. <i>Social Psychology</i>, <i>45</i>, 137–141. https://doi.org/10.1027/1864-9335/a000192"
     ],
     "drafted_by": [
         "Beatrix Arendt"

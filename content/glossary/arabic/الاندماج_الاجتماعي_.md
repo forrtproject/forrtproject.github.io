@@ -7,9 +7,9 @@
         "Social class"
     ],
     "references": [
-        "Evans, O., & Rubin, M. (2021). In a Class on Their Own: Investigating the Role of Social Integration in the Association Between Social Class and Mental Well-Being. Personality and Social Psychology Bulletin, 014616722110211. https://doi.org/10.1177/01461672211021190",
-        "Rubin, M., Evans, O., & McGuffog, R. (2019). Social class differences in social integration at university: Implications for academic outcomes and mental health. In J. Jetten & K. Peters (Eds.), The social psychology of inequality (pp. 87–102). Springer. https://doi.org/10.1007/978-3-030-28856-3_6",
-        "Rubin, M. (2021). Explaining the association between subjective social status and mental health among university students using an impact ratings approach. SN Social Sciences, 1(1), 1–21. https://doi.org/10.1007/s43545-020-00031-3"
+        "Evans, O., & Rubin, M. (2021). In a Class on Their Own: Investigating the Role of Social Integration in the Association Between Social Class and Mental Well-Being. <i>Personality and Social Psychology Bulletin</i>, 014616722110211. https://doi.org/10.1177/01461672211021190",
+        "Rubin, M., Evans, O., & McGuffog, R. (2019). Social class differences in social integration at university: Implications for academic outcomes and mental health. In J. Jetten & K. Peters (Eds.), <i>The social psychology of inequality</i> (pp. 87–102). Springer. https://doi.org/10.1007/978-3-030-28856-3_6",
+        "Rubin, M. (2021). Explaining the association between subjective social status and mental health among university students using an impact ratings approach. <i>SN Social Sciences</i>, <i>1</i>(1), 1–21. https://doi.org/10.1007/s43545-020-00031-3"
     ],
     "drafted_by": [
         "Mahmoud Elsherif"

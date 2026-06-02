@@ -12,7 +12,7 @@
         "Specification Curve Analysis"
     ],
     "references": [
-        "Gelman, A., & Loken, E. (n.d.). The garden of forking paths: Why multiple comparisons can be a problem, even when there is no “fishing expedition” or “p-hacking” and the research hypothesis was posited ahead of time. Retrieved from http://www.stat.columbia.edu/"
+        "Gelman, A., & Loken, E. (n.d.). <i>The garden of forking paths: Why multiple comparisons can be a problem, even when there is no “fishing expedition” or “p-hacking” and the research hypothesis was posited ahead of time</i>. Retrieved from http://www.stat.columbia.edu/"
     ],
     "drafted_by": [
         "Flávio Azevedo; Mahmoud Elsherif"

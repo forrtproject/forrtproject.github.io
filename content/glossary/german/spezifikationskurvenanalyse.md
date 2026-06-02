@@ -11,9 +11,9 @@
         "Vibration of effects"
     ],
     "references": [
-        "Simonsohn, U., Simmons, J. P., & Nelson, L. D. (2015). Specification curve: Descriptive and inferential statistics on all reasonable specifications. http://sticerd.lse.ac.uk/seminarpapers/psyc16022016.pdf",
-        "Simonsohn, U., Simmons, J. P., & Nelson, L. D. (2020). Specification curve analysis. Nature Human Behaviour, 4(11), 1208–1214. https://doi.org/10.1038/s41562-020-0912-z",
-        "Voracek, M., Kossmeier, M., & Tran, U. S. (2019). Which Data to Meta-Analyze, and How? Zeitschrift Für Psychologie. https://doi.org/10.1027/2151-2604/a000357"
+        "Simonsohn, U., Simmons, J. P., & Nelson, L. D. (2015). <i>Specification curve: Descriptive and inferential statistics on all reasonable specifications</i>. http://sticerd.lse.ac.uk/seminarpapers/psyc16022016.pdf",
+        "Simonsohn, U., Simmons, J. P., & Nelson, L. D. (2020). Specification curve analysis. <i>Nature Human Behaviour</i>, <i>4</i>(11), 1208–1214. https://doi.org/10.1038/s41562-020-0912-z",
+        "Voracek, M., Kossmeier, M., & Tran, U. S. (2019). Which Data to Meta-Analyze, and How? <i>Zeitschrift Für Psychologie</i>. https://doi.org/10.1027/2151-2604/a000357"
     ],
     "drafted_by": [
         "Bradley Baker"
