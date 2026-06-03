@@ -1,10 +1,8 @@
 ---
 # Display name
 name: "Mehdi Shaahdadi Goughari"
+title: "Mehdi Shaahdadi Goughari"
 
-# Username (this should match the folder name and the name on publications)
-authors:
-- Name "Mehdi Shaahdadi Goughari"
 
 # Is this the primary user of the site?
 superuser: false

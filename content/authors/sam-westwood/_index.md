@@ -1,10 +1,8 @@
 ---
 # Display name
 name: "Sam Westwood"
+title: "Sam Westwood"
 
-# Username (this should match the folder name and the name on publications)
-authors:
-- Name "Sam Westwood"
 
 # Is this the primary user of the site?
 superuser: false

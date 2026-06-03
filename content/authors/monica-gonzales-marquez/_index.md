@@ -1,10 +1,8 @@
 ---
 # Display name
 name: "Monica Gonzales-Marquez"
+title: "Monica Gonzales-Marquez"
 
-# Username (this should match the folder name and the name on publications)
-authors:
-- "Monica Gonzales-Marquez"
 
 # Is this the primary user of the site?
 superuser: false
