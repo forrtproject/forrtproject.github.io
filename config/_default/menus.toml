@@ -234,6 +234,12 @@
     parent = "nexus"
 
   [[main]]
+    name = "Nowhere Lab"
+    url = "/nowherelab/"
+    weight = 44.5
+    parent = "nexus"
+
+  [[main]]
     name = "Pedagogies"
     url = "/pedagogies"
     weight = 45

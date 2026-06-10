@@ -18,7 +18,8 @@
         "Leticia Micheli",
         "Eliza Woodward",
         "Julika Wolska",
-        "Gerald Vineyard**;** Yu-Fang Yang"
+        "Gerald Vineyard",
+        "Yu-Fang Yang"
     ],
     "alt_related_terms": [
         null

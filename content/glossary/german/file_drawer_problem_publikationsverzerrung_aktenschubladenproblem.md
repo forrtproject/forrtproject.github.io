@@ -9,7 +9,8 @@
         "P-hacking",
         "Selective reporting",
         "Statistical significance",
-        "Trim and fill **Alternative definition:** In the context of meta-analysis, publication bias “...occurs whenever the research that appears in the published literature is systematically unrepresentative of the population of completed studies. Simply put, when the research that is readily available differs in its results from the results of all the research that has been done in an area, readers and reviewers of that research are in danger of drawing the wrong conclusion about what that body of research shows.” (Rothstein et al., 2005, p. 1\\) **Related terms to alternative definition:** meta-analysis"
+        "Trim and fill",
+        "Meta-Analysis"
     ],
     "references": [
         "Dickersin, K., & Min, Y. (1993). Publication Bias: The Problem That Won’t Go Away. Annals of the New York Academy of Sciences, 703(1), 135–148. https://doi.org/10.1111/j.1749-6632.1993.tb26343.x",

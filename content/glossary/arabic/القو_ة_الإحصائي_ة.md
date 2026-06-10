@@ -13,7 +13,7 @@
         "Sample size",
         "Significance criterion (alpha)",
         "Type I error",
-        "Type II error **Related terms to alternative definition:** Type II Error"
+        "Type II error"
     ],
     "references": [
         "Carter, A., Tilling, K., & Munafo, M. R. (2021). Considerations of sample size and power calculations given a range of analytical scenarios. https://doi.org/10.31234/osf.io/tcqrn",

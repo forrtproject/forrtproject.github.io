@@ -19,7 +19,8 @@
         "Annalise A. LaPlume"
     ],
     "reviewed_by": [
-        "Mahmoud Elsherif**;** Eduardo Garcia-Garzon",
+        "Mahmoud Elsherif",
+        "Eduardo Garcia-Garzon",
         "Kai Krautter",
         "Olmo van den Akker"
     ],
