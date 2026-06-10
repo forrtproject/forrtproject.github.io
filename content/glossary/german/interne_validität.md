@@ -9,7 +9,7 @@
         "Construct validity"
     ],
     "references": [
-        "Campbell, D. T., & Stanley, J. C. (1966). Experimental and Quasi Experimental Designs. Rand McNally."
+        "Campbell, D. T., & Stanley, J. C. (1966). <i>Experimental and Quasi Experimental Designs</i>. Rand McNally."
     ],
     "drafted_by": [
         "Annalise A. LaPlume"

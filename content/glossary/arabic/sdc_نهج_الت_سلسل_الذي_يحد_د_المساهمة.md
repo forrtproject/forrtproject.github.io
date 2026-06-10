@@ -8,8 +8,8 @@
         "First-last-author-emphasis norm (FLAE)"
     ],
     "references": [
-        "Schmidt, R. H. (1987). A worksheet for authorship of scientific articles. The Bulletin of the Ecological Society of America, 68, 8–10. http://www.jstor.org/stable/20166549",
-        "Tscharntke, T., Hochberg, M. E., Rand, T. A., Resh, V. H., & Krauss, J. (2007). Author sequence and credit for contributions in multiauthored publications. PLoS Biology, 5(1), e18. https://doi.org/10.1371/journal.pbio.0050018"
+        "Schmidt, R. H. (1987). A worksheet for authorship of scientific articles. <i>The Bulletin of the Ecological Society of America</i>, <i>68</i>, 8–10. http://www.jstor.org/stable/20166549",
+        "Tscharntke, T., Hochberg, M. E., Rand, T. A., Resh, V. H., & Krauss, J. (2007). Author sequence and credit for contributions in multiauthored publications. <i>PLoS Biology</i>, <i>5</i>(1), e18. https://doi.org/10.1371/journal.pbio.0050018"
     ],
     "drafted_by": [
         "Myriam A. Baum"

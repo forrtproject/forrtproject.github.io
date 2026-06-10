@@ -8,9 +8,9 @@
         "Social integration"
     ],
     "references": [
-        "Albayrak, N., & Okoroji, C. (2019). Facing the challenges of postgraduate study as a minority student. A Guide for Psychology Postgraduates, 63.",
-        "Du Bois, W. E. B. (1968). The souls of black folk; essays and sketches. Johnson Reprint Corp.",
-        "Gilroy, P. (1993). The black Atlantic: Modernity and double consciousness. Harvard University Press."
+        "Albayrak, N., & Okoroji, C. (2019). Facing the challenges of postgraduate study as a minority student. <i>A Guide for Psychology Postgraduates</i>, 63.",
+        "Du Bois, W. E. B. (1968). <i>The souls of black folk; essays and sketches</i>. Johnson Reprint Corp.",
+        "Gilroy, P. (1993). <i>The black Atlantic: Modernity and double consciousness</i>. Harvard University Press."
     ],
     "drafted_by": [
         "Nihan Albayrak-Aydemir"

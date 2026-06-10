@@ -12,10 +12,11 @@
         "Universal design for learning (UDL)"
     ],
     "references": [
-        "Brown, N., Thompson, P., & Leigh, J. S. (2018). Making academia more accessible. Journal of Perspectives in Applied Academic Practice, 6(2), 82–90. https://doi.org/10.14297/jpaap.v6i2.348",
-        "Pollet, I. L., & Bond, A. L. (2021). Evaluation and recommendations for greater accessibility of colour figures in ornithology. Ibis, 163, 292–295. https://doi.org/10.1111/ibi.12887",
-        "Suber, P. (2004). The primacy of authors in achieving Open Access. In Nature. Retrieved from http://dash.harvard.edu/handle/1/4391161)",
-        "Pownall, M., Talbot, C. V., Henschel, A., Lautarescu, A., Lloyd, K. E., Hartmann, H., Darda, K. M., Tang, K. T. Y., Carmichael-Murphy, P., & Siegel, J. A. (2021). Navigating Open Science as Early Career Feminist Researchers. Psychology of Women Quarterly, 45(4), 526–539. https://doi.org/10.1177/03616843211029255 Retrieved from https://journals.sagepub.com/doi/10.1177/03616843211029255"
+        "Brown, N., Thompson, P., & Leigh, J. S. (2018). Making academia more accessible. <i>Journal of Perspectives in Applied Academic Practice</i>, <i>6</i>(2), 82–90. https://doi.org/10.14297/jpaap.v6i2.348",
+        "Pollet, I. L., & Bond, A. L. (2021). Evaluation and recommendations for greater accessibility of colour figures in ornithology. <i>Ibis</i>, <i>163</i>, 292–295. https://doi.org/10.1111/ibi.12887",
+        "Suber, P. (2004). The primacy of authors in achieving Open Access. In <i>Nature</i>. Retrieved from http://dash.harvard.edu/handle/1/4391161)",
+        "World Wide Web Consortium. (2021). <i>Web Accessibility Initiative</i>. https://www.w3.org/WAI/",
+        "Pownall, M., Talbot, C. V., Henschel, A., Lautarescu, A., Lloyd, K. E., Hartmann, H., Darda, K. M., Tang, K. T. Y., Carmichael-Murphy, P., & Siegel, J. A. (2021). Navigating Open Science as Early Career Feminist Researchers. <i>Psychology of Women Quarterly</i>, <i>45</i>(4), 526–539. https://doi.org/10.1177/03616843211029255 Retrieved from https://journals.sagepub.com/doi/10.1177/03616843211029255"
     ],
     "drafted_by": [
         "Kai Krautter"

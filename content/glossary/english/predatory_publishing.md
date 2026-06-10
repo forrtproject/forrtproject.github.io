@@ -8,8 +8,8 @@
         "Gaming (the system)"
     ],
     "references": [
-        "Crosetto, P. (2021). Is MDPI a predatory publisher? https://paolocrosetto.wordpress.com/2021/04/12/is-mdpi-a-predatory-publisher/",
-        "Xia, J., Harmon, J. L., Connolly, K. G., Donnelly, R. M., Anderson, M. R., & Howard, H. A. (2015). Who publishes in “predatory” journals? Journal of the Association for Information Science and Technology, 66(7), 1406–1417. https://doi.org/10.1002/asi.23265"
+        "Crosetto, P. (2021). <i>Is MDPI a predatory publisher?</i> https://paolocrosetto.wordpress.com/2021/04/12/is-mdpi-a-predatory-publisher/",
+        "Xia, J., Harmon, J. L., Connolly, K. G., Donnelly, R. M., Anderson, M. R., & Howard, H. A. (2015). Who publishes in “predatory” journals? <i>Journal of the Association for Information Science and Technology</i>, <i>66</i>(7), 1406–1417. https://doi.org/10.1002/asi.23265"
     ],
     "drafted_by": [
         "Nick Ballou"

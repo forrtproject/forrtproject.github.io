@@ -9,8 +9,8 @@
         "Neutrality"
     ],
     "references": [
-        "Macfarlane, B., & Cheng, M. (2008). Communism, Universalism and Disinterestedness: Re-examining Contemporary Support among Academics for Merton’s Scientific Norms. Journal of Academic Ethics, 6(1), 67–78. https://doi.org/10.1007/s10805-008-9055-y",
-        "Merton, R. K. (1942). A note on science and democracy. Journal of Legal and Political Sociology, 1, 115–126. https://doi.org/10.1515/9783110375008-013"
+        "Macfarlane, B., & Cheng, M. (2008). Communism, Universalism and Disinterestedness: Re-examining Contemporary Support among Academics for Merton’s Scientific Norms. <i>Journal of Academic Ethics</i>, <i>6</i>(1), 67–78. https://doi.org/10.1007/s10805-008-9055-y",
+        "Merton, R. K. (1942). A note on science and democracy. <i>Journal of Legal and Political Sociology</i>, <i>1</i>, 115–126. https://doi.org/10.1515/9783110375008-013"
     ],
     "drafted_by": [
         "Ryan Millager"

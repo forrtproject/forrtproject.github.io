@@ -8,7 +8,7 @@
         "Edithaton"
     ],
     "references": [
-        "Kienzler, H., & Fontanesi, C. (2017). Learning through inquiry: A global health hackathon. Teaching in Higher Education, 22(2), 129–142. https://doi.org/10.1080/13562517.2016.1221805"
+        "Kienzler, H., & Fontanesi, C. (2017). Learning through inquiry: A global health hackathon. <i>Teaching in Higher Education</i>, <i>22</i>(2), 129–142. https://doi.org/10.1080/13562517.2016.1221805"
     ],
     "drafted_by": [
         "Flávio Azevedo"

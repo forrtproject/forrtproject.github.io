@@ -11,7 +11,9 @@
         "Open Data",
         "Open Source"
     ],
-    "references": [],
+    "references": [
+        "Anon. (n.d.). <i>Licenses & Standards | Open Source Initiative</i>. Retrieved from https://opensource.org/licenses"
+    ],
     "drafted_by": [
         "Andrew J. Stewart"
     ],

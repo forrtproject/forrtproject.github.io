@@ -7,8 +7,8 @@
         "Research process"
     ],
     "references": [
-        "Bramoullé, Y., & Saint-Paul, G. (2010). Research cycles. In Journal of Economic Theory (Vol. 145, pp. 1890–1920). https://doi.org/10.2139/ssrn.965816",
-        "Lieberman, E. (2020). Research Cycles. In C. Elman, J. Gerring, & J. Mahoney (Eds.), The Production of Knowledge: Enhancing Progress in Social Science (pp. 42–70). Cambridge University Press. https://doi.org/10.1017/9781108762519.003"
+        "Bramoullé, Y., & Saint-Paul, G. (2010). Research cycles. In <i>Journal of Economic Theory</i> (Vol. 145, pp. 1890–1920). https://doi.org/10.2139/ssrn.965816",
+        "Lieberman, E. (2020). Research Cycles. In C. Elman, J. Gerring, & J. Mahoney (Eds.), <i>The Production of Knowledge: Enhancing Progress in Social Science</i> (pp. 42–70). Cambridge University Press. https://doi.org/10.1017/9781108762519.003"
     ],
     "drafted_by": [
         "Helena Hartmann"

@@ -15,8 +15,8 @@
         "Systematic Review"
     ],
     "references": [
-        "Borenstein, M., Hedges, L. V., Higgins, J. P., & Rothstein, H. R. (2011). Introduction to meta-analysis. John Wiley & Sons.",
-        "Yeung, S. K., Feldman, G., Fillon, A., Protzko, J., Elsherif, M. M., Xiao, Q., & Pickering, J. (2020). Experimental Studies Meta-Analysis Registered Report Templates. https://osf.io/ytgrp/"
+        "Borenstein, M., Hedges, L. V., Higgins, J. P., & Rothstein, H. R. (2011). <i>Introduction to meta-analysis</i>. John Wiley & Sons.",
+        "Yeung, S. K., Feldman, G., Fillon, A., Protzko, J., Elsherif, M. M., Xiao, Q., & Pickering, J. (2020). <i>Experimental Studies Meta-Analysis Registered Report Templates</i>. https://osf.io/ytgrp/"
     ],
     "drafted_by": [
         "Martin Vasilev; Siu Kit Yeung"

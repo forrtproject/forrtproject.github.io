@@ -21,12 +21,13 @@
         "Salami slicing"
     ],
     "references": [
-        "Banks, G. C., Rogelberg, S. G., Woznyj, H. M., Landis, R. S., & Rupp, D. E. (2016). Editorial: Evidence on questionable research practices: The good, the bad, and the ugly. Journal of Business and Psychology, 31(3), 323–338. https://doi.org/10.1007/s10869-016-9456-7",
-        "Fiedler, K., & Schwarz, N. (2016). Questionable research practices revisited. Social Psychological and Personality Science, 7(1), 45–52. https://doi.org/10.1177/1948550615612150",
-        "Hardwicke, T. E., Jameel, L., Jones, M., Walczak, E. J., & Weinberg, L. M. (2014). Only human: Scientists, systems, and suspect statistics. Opticon1826, 16, 25. https://doi.org/10.5334/OPT.CH",
-        "John, L. K., Loewenstein, G., & Prelec, D. (2012). Measuring the prevalence of questionable research practices with incentives for truth telling. Psychological Science, 23(5), 524–532. https://doi.org/10.1177/0956797611430953",
-        "Neuroskeptic. (2012). The nine circles of scientific hell. Perspectives on Psychological Science, 7(6), 643–644. https://doi.org/10.1177/1745691612459519",
-        "Sijtsma, K. (2016). Playing with data—Or how to discourage questionable research practices and stimulate researchers to do things right. Psychometrika, 81(1), 1–15. https://doi.org/10.1007/s11336-015-9446-0"
+        "Banks, G. C., Rogelberg, S. G., Woznyj, H. M., Landis, R. S., & Rupp, D. E. (2016). Editorial: Evidence on questionable research practices: The good, the bad, and the ugly. <i>Journal of Business and Psychology</i>, <i>31</i>(3), 323–338. https://doi.org/10.1007/s10869-016-9456-7",
+        "Fiedler, K., & Schwarz, N. (2016). Questionable research practices revisited. <i>Social Psychological and Personality Science</i>, <i>7</i>(1), 45–52. https://doi.org/10.1177/1948550615612150",
+        "Hardwicke, T. E., Jameel, L., Jones, M., Walczak, E. J., & Weinberg, L. M. (2014). Only human: Scientists, systems, and suspect statistics. <i>Opticon1826</i>, <i>16</i>, 25. https://doi.org/10.5334/OPT.CH",
+        "John, L. K., Loewenstein, G., & Prelec, D. (2012). Measuring the prevalence of questionable research practices with incentives for truth telling. <i>Psychological Science</i>, <i>23</i>(5), 524–532. https://doi.org/10.1177/0956797611430953",
+        "Neuroskeptic. (2012). The nine circles of scientific hell. <i>Perspectives on Psychological Science</i>, <i>7</i>(6), 643–644. https://doi.org/10.1177/1745691612459519",
+        "Sijtsma, K. (2016). Playing with data—Or how to discourage questionable research practices and stimulate researchers to do things right. <i>Psychometrika</i>, <i>81</i>(1), 1–15. https://doi.org/10.1007/s11336-015-9446-0",
+        "Simmons, J. P., Nelson, L. D., & Simonsohn, U. (2011). False-positive psychology: Undisclosed flexibility in data collection and analysis allows presenting anything as significant. <i>Psychological Science</i>, <i>22</i>(11), 1359–1366. https://doi.org/10.1177/0956797611417632"
     ],
     "drafted_by": [
         "Mahmoud Elsherif"

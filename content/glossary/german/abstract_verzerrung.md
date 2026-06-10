@@ -9,7 +9,7 @@
         "Selective reporting"
     ],
     "references": [
-        "Duyx, B., Swaen, G. M., Urlings, M. J., Bouter, L. M., & Zeegers, M. P. (2019). The strong focus on positive results in abstracts may cause bias in systematic reviews: A case study on abstract reporting bias. Systematic Reviews, 8(1), 1–8."
+        "Duyx, B., Swaen, G. M., Urlings, M. J., Bouter, L. M., & Zeegers, M. P. (2019). The strong focus on positive results in abstracts may cause bias in systematic reviews: A case study on abstract reporting bias. <i>Systematic Reviews</i>, <i>8</i>(1), 1–8."
     ],
     "drafted_by": [
         "Ali H. Al-Hoorie"

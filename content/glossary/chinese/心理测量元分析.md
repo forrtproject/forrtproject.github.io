@@ -12,8 +12,8 @@
         "Validity generalization"
     ],
     "references": [
-        "Borenstein, M., Hedges, L. V., Higgins, J. P., & Rothstein, H. R. (2011). Introduction to meta-analysis. John Wiley & Sons.",
-        "Hunter, J. E., & Schmidt, F. L. (2015). Methods of Meta-Analysis: Correcting Error and Bias in Research Findings (Third). SAGE."
+        "Borenstein, M., Hedges, L. V., Higgins, J. P., & Rothstein, H. R. (2011). <i>Introduction to meta-analysis</i>. John Wiley & Sons.",
+        "Hunter, J. E., & Schmidt, F. L. (2015). <i>Methods of Meta-Analysis: Correcting Error and Bias in Research Findings</i> (Third). SAGE."
     ],
     "drafted_by": [
         "Adrien Fillon"

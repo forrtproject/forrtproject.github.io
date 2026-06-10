@@ -1,10 +1,8 @@
 ---
 # Display name
 name: "Priya Silverstein"
+title: "Priya Silverstein"
 
-# Username (this should match the folder name and the name on publications)
-authors:
-- Name "Priya Silverstein"
 
 # Is this the primary user of the site?
 superuser: false

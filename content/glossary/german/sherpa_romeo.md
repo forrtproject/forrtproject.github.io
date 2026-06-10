@@ -11,7 +11,7 @@
         "Repository"
     ],
     "references": [
-        "Anon. (n.d.). Welcome to Sherpa Romeo - v2.sherpa. Retrieved from https://v2.sherpa.ac.uk/romeo/"
+        "Anon. (n.d.). <i>Welcome to Sherpa Romeo - v2.sherpa</i>. Retrieved from https://v2.sherpa.ac.uk/romeo/"
     ],
     "drafted_by": [
         "Aleksandra Lazić"

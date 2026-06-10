@@ -11,8 +11,8 @@
         "Repository"
     ],
     "references": [
-        "Budapest Open Access Initiative. (2002). Read the Budapest open access initiative. Retrieved from https://www.budapestopenaccessinitiative.org/read",
-        "Suber, P. (2015). Open Access Overview. http://legacy.earlham.edu/~peters/fos/overview.htm"
+        "Budapest Open Access Initiative. (2002). <i>Read the Budapest open access initiative</i>. Retrieved from https://www.budapestopenaccessinitiative.org/read",
+        "Suber, P. (2015). <i>Open Access Overview</i>. http://legacy.earlham.edu/~peters/fos/overview.htm"
     ],
     "drafted_by": [
         "Mahmoud Elsherif"

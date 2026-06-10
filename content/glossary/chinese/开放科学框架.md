@@ -12,8 +12,8 @@
         "Preregistration"
     ],
     "references": [
-        "Foster, E. D., & Deardorff, A. (2017). Open science framework (OSF). Journal of the Medical Library Association, 105(2), 203. https://doi.org/10.5195/jmla.2017.88",
-        "for Open Science, C. (2011–2021). Open Science Framework. https://osf.io/"
+        "Foster, E. D., & Deardorff, A. (2017). Open science framework (OSF). <i>Journal of the Medical Library Association</i>, <i>105</i>(2), 203. https://doi.org/10.5195/jmla.2017.88",
+        "Centre for Open Science. (2011–2021). <i>Open Science Framework</i>. https://osf.io/"
     ],
     "drafted_by": [
         "William Ngiam"

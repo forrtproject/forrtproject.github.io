@@ -15,10 +15,10 @@
         "WEIRD"
     ],
     "references": [
-        "Busse, C., Kach, A. P., & Wagner, S. M. (2017). Boundary Conditions: What They Are, How to Explore Them, Why We Need Them, and When to Consider Them. Organizational Research Methods, 20(4), 574–609. https://doi.org/10.1177/1094428116641191",
-        "Brandt, M. J., IJzerman, H., Dijksterhuis, A., Farach, F. J., Geller, J., Giner-Sorolla, R., & others. (2014). The replication recipe: What makes for a convincing replication? Journal of Experimental Social Psychology, 50, 217–224. https://doi.org/10.1016/j.jesp.2013.10.005",
-        "Simons, D. J., Shoda, Y., & Lindsay, D. S. (2017). Constraints on generality (COG): A proposed addition to all empirical papers. Perspectives on Psychological Science, 12(6), 1123–1128. https://doi.org/10.1177/1745691617708630",
-        "Yarkoni, T. (2020). The generalizability crisis. Behavioral and Brain Sciences, 1–37. https://doi.org/10.1017/S0140525X20001685"
+        "Busse, C., Kach, A. P., & Wagner, S. M. (2017). Boundary Conditions: What They Are, How to Explore Them, Why We Need Them, and When to Consider Them. <i>Organizational Research Methods</i>, <i>20</i>(4), 574–609. https://doi.org/10.1177/1094428116641191",
+        "Brandt, M. J., IJzerman, H., Dijksterhuis, A., Farach, F. J., Geller, J., Giner-Sorolla, R., & others. (2014). The replication recipe: What makes for a convincing replication? <i>Journal of Experimental Social Psychology</i>, <i>50</i>, 217–224. https://doi.org/10.1016/j.jesp.2013.10.005",
+        "Simons, D. J., Shoda, Y., & Lindsay, D. S. (2017). Constraints on generality (COG): A proposed addition to all empirical papers. <i>Perspectives on Psychological Science</i>, <i>12</i>(6), 1123–1128. https://doi.org/10.1177/1745691617708630",
+        "Yarkoni, T. (2020). The generalizability crisis. <i>Behavioral and Brain Sciences</i>, 1–37. https://doi.org/10.1017/S0140525X20001685"
     ],
     "drafted_by": [
         "Mahmoud Elsherif"

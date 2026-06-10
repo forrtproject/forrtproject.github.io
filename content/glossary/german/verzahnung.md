@@ -13,7 +13,7 @@
         "Social Justice"
     ],
     "references": [
-        "Ledgerwood, A., Hudson, S. T. J., Lewis, Jr., N. A., Maddox, K. B., Pickett, C., Remedios, J. D., & Wilkins, C. L. (2021). The Pandemic as a Portal: Reimagining Psychological Science as Truly Open and Inclusive. https://doi.org/10.31234/osf.io/gdzue"
+        "Ledgerwood, A., Hudson, S. T. J., Lewis, Jr., N. A., Maddox, K. B., Pickett, C., Remedios, J. D., & Wilkins, C. L. (2021). <i>The Pandemic as a Portal: Reimagining Psychological Science as Truly Open and Inclusive</i>. https://doi.org/10.31234/osf.io/gdzue"
     ],
     "drafted_by": [
         "Christina Pomareda"

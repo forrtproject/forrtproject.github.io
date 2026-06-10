@@ -7,7 +7,7 @@
         "Society for Open, Reliable, and Transparent Ecology and Evolutionary biology (SORTEE)"
     ],
     "references": [
-        "Improving Psychology. (n.d.). Improving Psychology. https://improvingpsych.org/"
+        "Improving Psychology. (n.d.). <i>Improving Psychology</i>. https://improvingpsych.org/"
     ],
     "drafted_by": [
         "Mahmoud Elsherif"

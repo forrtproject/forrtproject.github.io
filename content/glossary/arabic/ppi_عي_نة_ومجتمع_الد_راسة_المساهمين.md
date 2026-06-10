@@ -8,8 +8,8 @@
         "Participatory research"
     ],
     "references": [
-        "Boivin, A., Richards, T., Forsythe, L., Gregoire, A., L’Esperance, A., Abelson, J., & Carman, K. L. (2018). Evaluating the patient and public involvement in research. British Medical Journal, 363, k5147. https://doi.org/10.1136/bmj.k5147",
-        "INVOLVE. (n.d.). INVOLVE – Supporting public involvement in NHS, public health and social care research. https://www.invo.org.uk/"
+        "Boivin, A., Richards, T., Forsythe, L., Gregoire, A., L’Esperance, A., Abelson, J., & Carman, K. L. (2018). Evaluating the patient and public involvement in research. <i>British Medical Journal</i>, <i>363</i>, k5147. https://doi.org/10.1136/bmj.k5147",
+        "INVOLVE. (n.d.). <i>INVOLVE – Supporting public involvement in NHS, public health and social care research</i>. https://www.invo.org.uk/"
     ],
     "drafted_by": [
         "Jade Pickering"

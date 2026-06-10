@@ -11,7 +11,7 @@
         "Repository"
     ],
     "references": [
-        "Anon. (n.d.). Home | re3data.org. Retrieved from https://www.re3data.org/"
+        "Anon. (n.d.). <i>Home | re3data.org</i>. Retrieved from https://www.re3data.org/"
     ],
     "drafted_by": [
         "Aleksandra Lazić"

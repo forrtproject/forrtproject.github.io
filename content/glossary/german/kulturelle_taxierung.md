@@ -9,9 +9,9 @@
         "Power relations"
     ],
     "references": [
-        "Joseph, T. D., & Hirshfield, L. E. (2011). `Why don’t you get somebody new to do it?’ Race and cultural taxation in the academy. Ethnic and Racial Studies, 34(1), 121–141. https://doi.org/10.1080/01419870.2010.496489",
-        "Ledgerwood, A., Hudson, S. T. J., Lewis, Jr., N. A., Maddox, K. B., Pickett, C., Remedios, J. D., & Wilkins, C. L. (2021). The Pandemic as a Portal: Reimagining Psychological Science as Truly Open and Inclusive. https://doi.org/10.31234/osf.io/gdzue",
-        "Padilla, A. M. (1994). Research news and comment: Ethnic minority scholars; research, and mentoring: Current and future issues. Educational Researcher, 23(4), 24–27. https://doi.org/10.3102/0013189X023004024"
+        "Joseph, T. D., & Hirshfield, L. E. (2011). `Why don’t you get somebody new to do it?’ Race and cultural taxation in the academy. <i>Ethnic and Racial Studies</i>, <i>34</i>(1), 121–141. https://doi.org/10.1080/01419870.2010.496489",
+        "Ledgerwood, A., Hudson, S. T. J., Lewis, Jr., N. A., Maddox, K. B., Pickett, C., Remedios, J. D., & Wilkins, C. L. (2021). <i>The Pandemic as a Portal: Reimagining Psychological Science as Truly Open and Inclusive</i>. https://doi.org/10.31234/osf.io/gdzue",
+        "Padilla, A. M. (1994). Research news and comment: Ethnic minority scholars; research, and mentoring: Current and future issues. <i>Educational Researcher</i>, <i>23</i>(4), 24–27. https://doi.org/10.3102/0013189X023004024"
     ],
     "drafted_by": [
         "Bradley Baker"

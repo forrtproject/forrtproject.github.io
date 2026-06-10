@@ -11,7 +11,8 @@
         "Open Material"
     ],
     "references": [
-        "Opensource.Com. (n.d.). What is open education? Retrieved 9 July 2021. https://opensource.com/resources/what-open-education"
+        "Opensource.Com. (n.d.). <i>What is open education?</i> Retrieved 9 July 2021. https://opensource.com/resources/what-open-education",
+        "UNESCO. (2017). <i>Open Educational Resources (OER)</i>. https://en.unesco.org/themes/building-knowledge-societies/oer"
     ],
     "drafted_by": [
         "Aleksandra Lazić"

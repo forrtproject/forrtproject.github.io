@@ -12,7 +12,8 @@
         "Research data management"
     ],
     "references": [
-        "Corti, L., Van den Eynden, V., Bishop, L., & Woollard, M. (2019). Managing and sharing research data: a guide to good practice. Sage."
+        "CESSDA. (n.d.). <i>Data Management Expert Guide—CESSDA TRAINING</i>. https://www.cessda.eu/Training/Training-Resources/Library/Data-Management-Expert-Guide",
+        "Corti, L., Van den Eynden, V., Bishop, L., & Woollard, M. (2019). <i>Managing and sharing research data: a guide to good practice</i>. Sage."
     ],
     "drafted_by": [
         "Micah Vandegrift"

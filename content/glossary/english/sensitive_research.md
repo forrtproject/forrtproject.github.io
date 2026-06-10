@@ -7,8 +7,8 @@
         "Anonymity"
     ],
     "references": [
-        "Lee, R. M. (1993). Doing research on sensitive topics. Sage.",
-        "Albayrak-Aydemir, N. (2020). The hidden costs of being a scholar from the global south. Retrieved from https://blogs.lse.ac.uk/highereducation/2020/02/20/the-hidden-costs-of-being-a-scholar-from-the-global-south/"
+        "Lee, R. M. (1993). <i>Doing research on sensitive topics</i>. Sage.",
+        "Albayrak-Aydemir, N. (2020). <i>The hidden costs of being a scholar from the global south</i>. Retrieved from https://blogs.lse.ac.uk/highereducation/2020/02/20/the-hidden-costs-of-being-a-scholar-from-the-global-south/"
     ],
     "drafted_by": [
         "Nihan Albayrak-Aydemir"

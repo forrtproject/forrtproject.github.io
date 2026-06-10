@@ -8,7 +8,7 @@
         "Licence"
     ],
     "references": [
-        "Anon. (n.d.). About CC Licenses. Retrieved from https://creativecommons.org/about/cclicenses/"
+        "Anon. (n.d.). <i>About CC Licenses</i>. Retrieved from https://creativecommons.org/about/cclicenses/"
     ],
     "drafted_by": [
         "Tina Lonsdorf"

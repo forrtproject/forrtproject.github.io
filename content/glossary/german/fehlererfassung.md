@@ -9,12 +9,12 @@
         "retraction"
     ],
     "references": [
-        "Bik, E. M., Casadevall, A., & Fang, F. C. (2016). The prevalence of inappropriate image duplication in biomedical research publications. MBio, 7(3), e00809-16.",
-        "Brown, N. J., & Heathers, J. A. (2017). The grim test: A simple technique detects numerous anomalies in the reporting of results in psychology. Social Psychological and Personality Science, 8(4), 363–369.",
-        "Epskamp, S., & Nuijten, M. B. (2016). statcheck: Extract statistics from articles and recompute p values. Retrieved from http://CRAN.R-project.org/package=statcheck",
-        "Heathers, J. A., Anaya, J., van der Zee, T., & Brown, N. J. (2018). Recovering data from summary statistics: Sample Parameter Reconstruction via Iterative TEchniques (SPRITE). PeerJ Preprints, 6, e26968v1. https://doi.org/10.7287/peerj.preprints.26968v1",
-        "Nuijten, M. B., Hartgerink, C. H., van Assen, M. A., Epskamp, S., & Wicherts, J. M. (2016). The prevalence of statistical reporting errors in psychology (1985–2013). Behavior Research Methods, 48(4), 1205–1226.",
-        "Retraction Watch. (n.d.). Retraction Watch. Retraction Watch. https://retractionwatch.com/"
+        "Bik, E. M., Casadevall, A., & Fang, F. C. (2016). The prevalence of inappropriate image duplication in biomedical research publications. <i>MBio</i>, <i>7</i>(3), e00809-16.",
+        "Brown, N. J., & Heathers, J. A. (2017). The grim test: A simple technique detects numerous anomalies in the reporting of results in psychology. <i>Social Psychological and Personality Science</i>, <i>8</i>(4), 363–369.",
+        "Epskamp, S., & Nuijten, M. B. (2016). <i>statcheck: Extract statistics from articles and recompute p values</i>. Retrieved from http://CRAN.R-project.org/package=statcheck",
+        "Heathers, J. A., Anaya, J., van der Zee, T., & Brown, N. J. (2018). Recovering data from summary statistics: Sample Parameter Reconstruction via Iterative TEchniques (SPRITE). <i>PeerJ Preprints</i>, <i>6</i>, e26968v1. https://doi.org/10.7287/peerj.preprints.26968v1",
+        "Nuijten, M. B., Hartgerink, C. H., van Assen, M. A., Epskamp, S., & Wicherts, J. M. (2016). The prevalence of statistical reporting errors in psychology (1985–2013). <i>Behavior Research Methods</i>, <i>48</i>(4), 1205–1226.",
+        "Retraction Watch. (n.d.). <i>Retraction Watch</i>. Retraction Watch. https://retractionwatch.com/"
     ],
     "drafted_by": [
         "William Ngiam"

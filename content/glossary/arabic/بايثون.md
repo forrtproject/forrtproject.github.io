@@ -12,7 +12,7 @@
         "R"
     ],
     "references": [
-        "Lutz, M. (2001). Programming Python. O’Reilly Media, Inc."
+        "Lutz, M. (2001). <i>Programming Python</i>. O’Reilly Media, Inc."
     ],
     "drafted_by": [
         "Shannon Francis"

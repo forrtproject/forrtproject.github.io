@@ -11,7 +11,8 @@
         "Preprint"
     ],
     "references": [
-        "Zenodo. (n.d.). Zenodo—Research. Shared. https://www.zenodo.org/"
+        "Zenodo. (n.d.). <i>Zenodo—Research. Shared.</i> https://www.zenodo.org/",
+        "[www.zenodo.org](http://www.zenodo.org)"
     ],
     "drafted_by": [
         "Ali H. Al-Hoorie"

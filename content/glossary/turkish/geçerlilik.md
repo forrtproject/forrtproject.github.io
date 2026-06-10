@@ -20,8 +20,9 @@
         "Test"
     ],
     "references": [
-        "Campbell, D. T. (1957). Factors relevant to the validity of experiments in social settings. Psychological Bulletin, 54(4), 297–312. https://doi.org/10.1037/h0040950",
-        "Kelley, T. L. (1927). Interpretation of educational measurements. Macmillan."
+        "Campbell, D. T. (1957). Factors relevant to the validity of experiments in social settings. <i>Psychological Bulletin</i>, <i>54</i>(4), 297–312. https://doi.org/10.1037/h0040950",
+        "Kelley, T. L. (1927). <i>Interpretation of educational measurements</i>. Macmillan.",
+        "Borsboom, D., Mellenbergh, G. J., & van Heerden, J. (2004). The Concept of Validity. <i>Psychological Review</i>, <i>111</i>(4), 1061–1071. https://doi.org/10.1037/0033-295X.111.4.1061"
     ],
     "drafted_by": [
         "Tamara Kalandadze; Madeleine Pownall; Flávio Azevedo"

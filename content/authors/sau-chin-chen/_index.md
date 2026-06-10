@@ -1,10 +1,8 @@
 ---
 # Display name
 name: "Sau-Chin Chen"
+title: "Sau-Chin Chen"
 
-# Username (this should match the folder name and the name on publications)
-authors:
-- Name "Sau-Chin Chen"
 
 # Is this the primary user of the site?
 superuser: false

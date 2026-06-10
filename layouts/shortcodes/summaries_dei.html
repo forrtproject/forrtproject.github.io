@@ -1,3 +1,4 @@
+{{ partial "structured-data/summaries-jsonld.html" (dict "page" .Page "deiOnly" true) }}
 {{ $summaries := site.Data.summaries }}
 {{ range $summaries}}
 {{ if in .Title "⌺" }}

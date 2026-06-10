@@ -14,7 +14,9 @@
         "Stage 2 study review",
         "Transparency"
     ],
-    "references": [],
+    "references": [
+        "Peer Community In Registered Reports. (2025). <i>About PCI Registered Reports</i>. https://rr.peercommunityin.org/about/about"
+    ],
     "drafted_by": [
         "Charlotte R. Pennington"
     ],

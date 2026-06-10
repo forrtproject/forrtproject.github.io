@@ -10,7 +10,7 @@
         "Research ethics"
     ],
     "references": [
-        "Kleinberg, B., Mozes, M., van der Toolen, Y., & Verschuere, B. (2017). NETANOS - Named entity-based Text Anonymization for Open Science. https://osf.io/w9nhb/"
+        "Kleinberg, B., Mozes, M., van der Toolen, Y., & Verschuere, B. (2017). <i>NETANOS - Named entity-based Text Anonymization for Open Science</i>. https://osf.io/w9nhb/"
     ],
     "drafted_by": [
         "Norbert Vanek"
