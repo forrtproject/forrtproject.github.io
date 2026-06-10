@@ -9,7 +9,9 @@
         "Team science"
     ],
     "references": [
-        "Chartier, C. R., Riegelman, A., & McCarthy, R. J. (2018). StudySwap: A platform for interlab replication, collaboration, and resource exchange. Advances in Methods and Practices in Psychological Science, 1(4), 574–579. https://doi.org/10.1177/2515245918808767"
+        "Chartier, C. R., Riegelman, A., & McCarthy, R. J. (2018). StudySwap: A platform for interlab replication, collaboration, and resource exchange. <i>Advances in Methods and Practices in Psychological Science</i>, <i>1</i>(4), 574–579. https://doi.org/10.1177/2515245918808767",
+        "OSF. (n.d.). <i>OSF | StudySwap: A platform for interlab replication, collaboration, and research resource exchange</i>. https://osf.io/meetings/StudySwap/",
+        "[https://osf.io/view/StudySwap](https://osf.io/view/StudySwap)"
     ],
     "drafted_by": [
         "Charlotte R. Pennington"

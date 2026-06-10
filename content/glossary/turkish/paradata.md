@@ -11,7 +11,7 @@
         "Process information"
     ],
     "references": [
-        "Kreuter, F. (Ed.). (2013). Improving Surveys with Paradata. https://doi.org/10.1002/9781118596869"
+        "Kreuter, F. (Ed.). (2013). <i>Improving Surveys with Paradata</i>. https://doi.org/10.1002/9781118596869"
     ],
     "drafted_by": [
         "Alexander Hart; Graham Reid"

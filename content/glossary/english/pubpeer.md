@@ -7,7 +7,8 @@
         "Open Peer Review"
     ],
     "references": [
-        "PubPeer. (n.d.). PubPeer—Search publications and join the conversation. Pubpeer. https://www.pubpeer.com/"
+        "PubPeer. (n.d.). <i>PubPeer—Search publications and join the conversation</i>. Pubpeer. https://www.pubpeer.com/",
+        "[www.pubpeer.com](http://www.pubpeer.com)"
     ],
     "drafted_by": [
         "Ali H. Al-Hoorie"

@@ -10,7 +10,7 @@
         "Transparency"
     ],
     "references": [
-        "Jacobson, D., & Mustafa, N. (2019). Social Identity Map: A Reflexivity Tool for Practicing Explicit Positionality in Critical Qualitative Research. International Journal of Qualitative Methods, 18, 1609406919870075. https://doi.org/10.1177/1609406919870075"
+        "Jacobson, D., & Mustafa, N. (2019). Social Identity Map: A Reflexivity Tool for Practicing Explicit Positionality in Critical Qualitative Research. <i>International Journal of Qualitative Methods</i>, <i>18</i>, 1609406919870075. https://doi.org/10.1177/1609406919870075"
     ],
     "drafted_by": [
         "Joanne McCuaig"

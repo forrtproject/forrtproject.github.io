@@ -12,8 +12,8 @@
         "Journal impact factor"
     ],
     "references": [
-        "Ali, M. J. (2021). Understanding the Altmetrics. Seminars in Ophthalmology. https://doi.org/10.1080/08820538.2021.1930806",
-        "Galligan, F., & Dyas-Correia, S. (2013). Altmetrics: rethinking the way we measure. Serials Review, 39(1), 56–61. https://doi.org/10.1016/j.serrev.2013.01.003"
+        "Ali, M. J. (2021). Understanding the Altmetrics. <i>Seminars in Ophthalmology</i>. https://doi.org/10.1080/08820538.2021.1930806",
+        "Galligan, F., & Dyas-Correia, S. (2013). Altmetrics: rethinking the way we measure. <i>Serials Review</i>, <i>39</i>(1), 56–61. https://doi.org/10.1016/j.serrev.2013.01.003"
     ],
     "drafted_by": [
         "Mirela Zaneva"

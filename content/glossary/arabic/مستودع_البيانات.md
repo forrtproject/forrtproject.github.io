@@ -14,7 +14,9 @@
         "Open Source",
         "Preprint"
     ],
-    "references": [],
+    "references": [
+        "<i>Recommended Data Repositories</i>. (n.d.). Scientific Data. https://www.nature.com/sdata/policies/repositories"
+    ],
     "drafted_by": [
         "Tina Lonsdorf"
     ],

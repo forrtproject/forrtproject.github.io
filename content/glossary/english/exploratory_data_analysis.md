@@ -9,10 +9,10 @@
         "Exploratory research"
     ],
     "references": [
-        "Behrens, J. T. (1997). Principles and procedures of exploratory data analysis. Psychological Methods, 2(2), 131–160. https://doi.org/10.1037/1082-989X.2.2.131",
-        "Box, G. E. P. (1976). Science and statistics. Journal of the American Statistical Association, 71(356), 791–799.",
-        "Tukey, J. W. (1977). Exploratory data analysis. Addison-Wesley.",
-        "Wagenmakers, E. J., Wetzels, R., Borsboom, D., van der Maas, H. L., & Kievit, R. A. (2012). An agenda for purely confirmatory research. Perspectives on Psychological Science, 7(6), 632–638. https://doi.org/10.1177/1745691612463078"
+        "Behrens, J. T. (1997). Principles and procedures of exploratory data analysis. <i>Psychological Methods</i>, <i>2</i>(2), 131–160. https://doi.org/10.1037/1082-989X.2.2.131",
+        "Box, G. E. P. (1976). Science and statistics. <i>Journal of the American Statistical Association</i>, <i>71</i>(356), 791–799.",
+        "Tukey, J. W. (1977). <i>Exploratory data analysis</i>. Addison-Wesley.",
+        "Wagenmakers, E. J., Wetzels, R., Borsboom, D., van der Maas, H. L., & Kievit, R. A. (2012). An agenda for purely confirmatory research. <i>Perspectives on Psychological Science</i>, <i>7</i>(6), 632–638. https://doi.org/10.1177/1745691612463078"
     ],
     "drafted_by": [
         "Jenny Terry"

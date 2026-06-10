@@ -1,10 +1,8 @@
 ---
 # Display name
 name: "Siu Kit Yeung"
+title: "Siu Kit Yeung"
 
-# Username (this should match the folder name and the name on publications)
-authors:
-- Name "Siu Kit Yeung"
 
 # Is this the primary user of the site?
 superuser: false

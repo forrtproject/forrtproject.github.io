@@ -1,0 +1,29 @@
+{{/* Display author list (byline).
+
+     Project override of the theme partial: the `author` taxonomy was disabled,
+     so profiles now live at /authors/<slug>/ as section pages. Posts credit
+     authors by display name (e.g. "Anna Meier"), so we slugify the name with
+     `urlize` to find the matching profile page and link to it. Names that don't
+     resolve to a profile (e.g. multi-name strings) render as plain text. */}}
+
+{{ with .Param "authors" }}
+  {{ $link_authors := site.Params.link_authors | default true }}
+  {{ range $index, $name_raw := . }}
+    {{- $profile_page := site.GetPage (printf "/authors/%s" (urlize $name_raw)) -}}
+    {{- $name := $name_raw -}}
+    {{- if and $profile_page $profile_page.Params.name }}{{ $name = $profile_page.Params.name }}{{ end -}}
+    {{- if gt $index 0 }}, {{ end -}}
+    <span {{ if site.Params.highlight_superuser | and (eq (and $profile_page $profile_page.Params.superuser) true) }}class="font-weight-bold"{{ end }}>
+      {{- if and $profile_page $profile_page.Params.name $link_authors -}}
+        <a href="{{ $profile_page.RelPermalink }}">{{ $name }}</a>
+      {{- else -}}
+        {{ $name }}
+      {{- end -}}
+    </span>
+    {{- if isset $.Params "author_notes" -}}
+      {{- with (index $.Params.author_notes $index) -}}
+        <span title="{{ . }}" class="author-notes">(?)</span>
+      {{- end -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}

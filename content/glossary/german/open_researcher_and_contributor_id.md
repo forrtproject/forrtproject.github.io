@@ -9,8 +9,8 @@
         "Name Ambiguity Problem"
     ],
     "references": [
-        "Haak, L. L., Fenner, M., Paglione, L., Pentz, E., & Ratner, H. (2012). ORCID: A system to uniquely identify researchers. Learned Publishing, 25(4), 259–264. https://doi.org/10.1087/20120404",
-        "ORCID. (n.d.). ORCID. https://orcid.org/"
+        "Haak, L. L., Fenner, M., Paglione, L., Pentz, E., & Ratner, H. (2012). ORCID: A system to uniquely identify researchers. <i>Learned Publishing</i>, <i>25</i>(4), 259–264. https://doi.org/10.1087/20120404",
+        "ORCID. (n.d.). <i>ORCID</i>. https://orcid.org/"
     ],
     "drafted_by": [
         "Martin Vasilev"

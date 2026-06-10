@@ -1,10 +1,8 @@
 ---
 # Display name
 name: "Alicia Tamara Veersma Barredo"
+title: "Alicia Tamara Veersma Barredo"
 
-# Username (this should match the folder name)
-authors:
-- Name "Alicia Tamara Veersma Barredo"
 
 # Is this the primary user of the site?
 superuser: false

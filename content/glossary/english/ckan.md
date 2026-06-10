@@ -8,7 +8,7 @@
         "Data sharing"
     ],
     "references": [
-        "Anon. (n.d.). Ckan. Retrieved from https://ckan.org/"
+        "Anon. (n.d.). <i>Ckan</i>. Retrieved from https://ckan.org/"
     ],
     "drafted_by": [
         "Tsvetomira Dumbalska"

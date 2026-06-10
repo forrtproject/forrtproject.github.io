@@ -13,9 +13,9 @@
         "Team science"
     ],
     "references": [
-        "Cronin, B. (2001). Hyperauthorship: A postmodern perversion or evidence of a structural shift in scholarly communication practices? Journal of the American Society for Information Science and Technology, 52(7), 558–569. https://doi.org/10.1002/asi.1097",
-        "Moshontz, H., Ebersole, C. R., Weston, S. J., & Klein, R. A. (2021). A guide for many authors: Writing manuscripts in large collaborations. Social and Personality Psychology Compass, 15(4). https://doi.org/10.1111/spc3.12590",
-        "Wuchty, S., Jones, B. F., & Uzzi, B. (2007). The increasing dominance of teams in production of knowledge. Science, 316(5827), 1036–1039. https://doi.org/10.1126/science.1136099"
+        "Cronin, B. (2001). Hyperauthorship: A postmodern perversion or evidence of a structural shift in scholarly communication practices? <i>Journal of the American Society for Information Science and Technology</i>, <i>52</i>(7), 558–569. https://doi.org/10.1002/asi.1097",
+        "Moshontz, H., Ebersole, C. R., Weston, S. J., & Klein, R. A. (2021). A guide for many authors: Writing manuscripts in large collaborations. <i>Social and Personality Psychology Compass</i>, <i>15</i>(4). https://doi.org/10.1111/spc3.12590",
+        "Wuchty, S., Jones, B. F., & Uzzi, B. (2007). The increasing dominance of teams in production of knowledge. <i>Science</i>, <i>316</i>(5827), 1036–1039. https://doi.org/10.1126/science.1136099"
     ],
     "drafted_by": [
         "Yu-Fang Yang"

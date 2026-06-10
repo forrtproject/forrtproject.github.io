@@ -7,15 +7,16 @@
         "Adversarial collaboration"
     ],
     "references": [
-        "Coles, N. A., Tiokhin, L., Arslan, R., Forscher, P., Scheel, A., & Lakens, D. (2020). Red Team Challenge. http://daniellakens.blogspot.com/2020/05/red-team-challenge.html",
-        "Lakens, D. (2020). The 20% Statistician: Red Team Challenge. The 20% Statistician. http://daniellakens.blogspot.com/2020/05/red-team-challenge.html"
+        "Coles, N. A., Tiokhin, L., Arslan, R., Forscher, P., Scheel, A., & Lakens, D. (2020). <i>Red Team Challenge</i>. http://daniellakens.blogspot.com/2020/05/red-team-challenge.html",
+        "Lakens, D. (2020). <i>The 20% Statistician: Red Team Challenge</i>. The 20% Statistician. http://daniellakens.blogspot.com/2020/05/red-team-challenge.html"
     ],
     "drafted_by": [
         "Annalise A. LaPlume"
     ],
     "reviewed_by": [
         "Nick Ballou",
-        "Mahmoud Elsherif**;** Thomas Rhys Evans",
+        "Mahmoud Elsherif",
+        "Thomas Rhys Evans",
         "Helena Hartmann",
         "Timo Roettger"
     ],

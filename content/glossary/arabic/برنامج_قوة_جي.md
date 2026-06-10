@@ -10,8 +10,8 @@
         "Statistical power"
     ],
     "references": [
-        "Faul, F., Erdfelder, E., Lang, A.-G., & Buchner, A. (2007). G*Power 3: A flexible statistical power analysis program for the social, behavioral, and biomedical sciences. Behavior Research Methods, 39, 175–191. https://doi.org/10.3758/BF03193146",
-        "Faul, F., Erdfelder, E., Buchner, A., & Lang, A.-G. (2009). Statistical power analyses using G*Power 3.1: Tests for correlation and regression analyses. Behavior Research Methods, 41, 1149–1160. https://doi.org/10.3758/BRM.41.4.1149"
+        "Faul, F., Erdfelder, E., Lang, A.-G., & Buchner, A. (2007). G*Power 3: A flexible statistical power analysis program for the social, behavioral, and biomedical sciences. <i>Behavior Research Methods</i>, <i>39</i>, 175–191. https://doi.org/10.3758/BF03193146",
+        "Faul, F., Erdfelder, E., Buchner, A., & Lang, A.-G. (2009). Statistical power analyses using G*Power 3.1: Tests for correlation and regression analyses. <i>Behavior Research Methods</i>, <i>41</i>, 1149–1160. https://doi.org/10.3758/BRM.41.4.1149"
     ],
     "drafted_by": [
         "Filip Dechterenko"

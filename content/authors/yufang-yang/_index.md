@@ -1,10 +1,8 @@
 ---
 # Display name
 name: "Yu-Fang Yang"
+title: "Yu-Fang Yang"
 
-# Username (this should match the folder name and the name on publications)
-authors:
-- Name "Yu-Fang Yang"
 
 # Is this the primary user of the site?
 superuser: false

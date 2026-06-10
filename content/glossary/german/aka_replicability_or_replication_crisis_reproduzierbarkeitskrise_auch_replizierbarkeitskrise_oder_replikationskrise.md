@@ -11,7 +11,8 @@
         "Reproducibility"
     ],
     "references": [
-        "Fanelli, D. (2018). Opinion: Is science really facing a reproducibility crisis, and do we need it to? Proceedings of the National Academy of Sciences, 115(11), 2628–2631. https://doi.org/10.1073/pnas.1708272114"
+        "Fanelli, D. (2018). Opinion: Is science really facing a reproducibility crisis, and do we need it to? <i>Proceedings of the National Academy of Sciences</i>, <i>115</i>(11), 2628–2631. https://doi.org/10.1073/pnas.1708272114",
+        "Open Science Collaboration. (2015). Estimating the reproducibility of psychological science. <i>Science</i>, <i>349</i>(6251), aac4716. https://doi.org/10.1126/science.aac4716"
     ],
     "drafted_by": [
         "Mahmoud Elsherif"

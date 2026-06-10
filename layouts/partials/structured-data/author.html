@@ -1,0 +1,40 @@
+{{/* Person JSON-LD for substantive author profile pages (/authors/<slug>/).
+     Called from custom_head.html only for author pages that pass the
+     is-substantive check, so empty stubs never emit a Person. Built with
+     dict + jsonify + safeJS for safe JSON escaping. */}}
+{{- $name := .Params.name | default .Title -}}
+{{- $person := dict
+    "@context" "https://schema.org"
+    "@type" "Person"
+    "name" $name
+    "url" .Permalink -}}
+
+{{- with .Params.role }}{{ $person = merge $person (dict "jobTitle" .) }}{{ end -}}
+{{- with .Params.bio }}{{ $person = merge $person (dict "description" (. | plainify)) }}{{ end -}}
+
+{{/* Affiliations (skip blank template entries) */}}
+{{- $affs := slice -}}
+{{- range .Params.organizations -}}
+  {{- with .name -}}{{ $affs = $affs | append (dict "@type" "Organization" "name" .) }}{{- end -}}
+{{- end -}}
+{{- with $affs }}{{ $person = merge $person (dict "affiliation" .) }}{{ end -}}
+
+{{/* External profile links → sameAs (skip mailto and relative links) */}}
+{{- $sameAs := slice -}}
+{{- range .Params.social -}}
+  {{- if and .link (hasPrefix .link "http") }}{{ $sameAs = $sameAs | append .link }}{{ end -}}
+{{- end -}}
+{{- with $sameAs }}{{ $person = merge $person (dict "sameAs" .) }}{{ end -}}
+
+{{/* Interests → knowsAbout, dropping placeholders */}}
+{{- $topics := slice -}}
+{{- range .Params.interests -}}
+  {{- if not (findRE `(?i)^interest \d+$` .) }}{{ $topics = $topics | append . }}{{ end -}}
+{{- end -}}
+{{- with $topics }}{{ $person = merge $person (dict "knowsAbout" .) }}{{ end -}}
+
+{{/* Avatar image */}}
+{{- $avatar := (.Resources.ByType "image").GetMatch "*avatar*" -}}
+{{- with $avatar }}{{ $person = merge $person (dict "image" .Permalink) }}{{ end -}}
+
+<script type="application/ld+json">{{ $person | jsonify | safeJS }}</script>

@@ -11,8 +11,8 @@
         "Validity"
     ],
     "references": [
-        "Lynch, J. G., Jr. (1982). On the External Validity of Experiments in Consumer Research. Journal of Consumer Research, 9(3), 225. https://doi.org/10.1086/208919",
-        "Steckler, A., & McLeroy, K. R. (2008). The Importance of External Validity. American Journal of Public Health, 98(1), 9–10. https://doi.org/10.2105/AJPH.2007.126847"
+        "Lynch, J. G., Jr. (1982). On the External Validity of Experiments in Consumer Research. <i>Journal of Consumer Research</i>, <i>9</i>(3), 225. https://doi.org/10.1086/208919",
+        "Steckler, A., & McLeroy, K. R. (2008). The Importance of External Validity. <i>American Journal of Public Health</i>, <i>98</i>(1), 9–10. https://doi.org/10.2105/AJPH.2007.126847"
     ],
     "drafted_by": [
         "Annalise A. LaPlume"

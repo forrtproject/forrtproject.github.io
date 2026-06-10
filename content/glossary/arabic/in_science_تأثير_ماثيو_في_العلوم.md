@@ -8,9 +8,9 @@
         "Stigler’s law of eponymy"
     ],
     "references": [
-        "Bol, T., de Vaan, M., & van de Rijt, A. (2018). The Matthew effect in science funding. Proceedings of the National Academy of Sciences, 115(19), 4887–4890. https://doi.org/10.1073/pnas.1719557115",
-        "Bornmann, L., Ganser, C., Tekles, A., & Leydesdorff, L. (2019). Does the hα index reinforce the Matthew effect in science? Agent-based simulations using Stata and R. arXiv preprint https://arxiv.org/abs/1905.11052.",
-        "Merton, R. K. (1968). The Matthew Effect in Science. Science, 159(3810), 56–63. https://doi.org/10.1126/science.159.3810.56"
+        "Bol, T., de Vaan, M., & van de Rijt, A. (2018). The Matthew effect in science funding. <i>Proceedings of the National Academy of Sciences</i>, <i>115</i>(19), 4887–4890. https://doi.org/10.1073/pnas.1719557115",
+        "Bornmann, L., Ganser, C., Tekles, A., & Leydesdorff, L. (2019). <i>Does the h<sub>α</sub> index reinforce the Matthew effect in science? Agent-based simulations using Stata and R</i>. arXiv preprint https://arxiv.org/abs/1905.11052.",
+        "Merton, R. K. (1968). The Matthew Effect in Science. <i>Science</i>, <i>159</i>(3810), 56–63. https://doi.org/10.1126/science.159.3810.56"
     ],
     "drafted_by": [
         "Tamara Kalandadze"

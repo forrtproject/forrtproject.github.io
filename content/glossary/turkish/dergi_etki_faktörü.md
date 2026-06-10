@@ -8,11 +8,11 @@
         "H-index"
     ],
     "references": [
-        "Brembs, B., Button, K., & Munafò, M. (2013). Deep impact: unintended consequences of journal rank. Frontiers in Human Neuroscience, 7, 291. https://doi.org/10.3389/fnhum.2013.00291",
-        "Curry, S. (2012). Sick of impact factors. http://occamstypewriter.org/scurry/2012/08/13/sick-of-impact-factors/",
-        "Naudet, F., Ioannidis, J., Miedema, F., Cristea, I. A., Goodman, S. N., & Moher, D. (2018). Six principles for assessing scientists for hiring, promotion, and tenure. Impact of Social Sciences Blog.",
-        "Rossner, M., Van Epps, H., & Hill, E. (2008). Show me the data. https://doi.org/10.1083/jcb.200711140",
-        "Sharma, M., Sarin, A., Gupta, P., Sachdeva, S., & Desai, A. (2014). Journal impact factor: its use, significance and limitations. World Journal of Nuclear Medicine, 13(2), 146. https://doi.org/10.4103/1450-1147.139151"
+        "Brembs, B., Button, K., & Munafò, M. (2013). Deep impact: unintended consequences of journal rank. <i>Frontiers in Human Neuroscience</i>, <i>7</i>, 291. https://doi.org/10.3389/fnhum.2013.00291",
+        "Curry, S. (2012). <i>Sick of impact factors</i>. http://occamstypewriter.org/scurry/2012/08/13/sick-of-impact-factors/",
+        "Naudet, F., Ioannidis, J., Miedema, F., Cristea, I. A., Goodman, S. N., & Moher, D. (2018). <i>Six principles for assessing scientists for hiring, promotion, and tenure</i>. Impact of Social Sciences Blog.",
+        "Rossner, M., Van Epps, H., & Hill, E. (2008). <i>Show me the data</i>. https://doi.org/10.1083/jcb.200711140",
+        "Sharma, M., Sarin, A., Gupta, P., Sachdeva, S., & Desai, A. (2014). Journal impact factor: its use, significance and limitations. <i>World Journal of Nuclear Medicine</i>, <i>13</i>(2), 146. https://doi.org/10.4103/1450-1147.139151"
     ],
     "drafted_by": [
         "Jacob Miranda"

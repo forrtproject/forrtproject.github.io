@@ -4,11 +4,13 @@ import json
 import pandas as pd
 import os
 from io import StringIO
+from pypinyin import lazy_pinyin, Style
 
 script_dir = os.path.dirname(os.path.abspath(__file__))
 language_map = {
     'EN': 'english',
     'AR': 'arabic',
+    'CN': 'chinese',
     'DE': 'german',
     'TR': 'turkish',
 }
@@ -45,12 +47,16 @@ except FileNotFoundError:
     print("Warning: apa_lookup.json not found. References will not be formatted.")
     apa_lookup = {}
 
-def process_references(references_text, apa_lookup, missing_refs_log=None):
+def process_references(references_text, apa_lookup, missing_refs_log=None, context=""):
     """Convert citation keys to APA format using the lookup"""
     if not references_text:
         return []
 
-    citation_pattern = r'\\?\[@([^\\]+)\\?\]'
+    # Capture the key lazily up to the closing (optionally backslash-escaped) bracket,
+    # so keys with escaped characters survive — notably escaped underscores in pandoc
+    # citekeys (e.g. \[@R\_Core\_Team2020\]), which the old [^\\]+ class truncated at the
+    # first backslash. The backslashes are unescaped out of each captured key below.
+    citation_pattern = r'\\?\[@(.+?)\\?\]'
     matches = re.findall(citation_pattern, references_text)
 
     formatted_refs = []
@@ -58,6 +64,9 @@ def process_references(references_text, apa_lookup, missing_refs_log=None):
         # Clean the key: remove markdown formatting, trailing punctuation, etc.
         key = match.strip()
         original_key = key  # Keep for logging
+
+        # Unescape backslash escapes (e.g. \_ -> _) so the key matches apa_lookup
+        key = re.sub(r'\\(.)', r'\1', key)
 
         # Remove markdown formatting
         key = re.sub(r'^\*+|\*+$', '', key)  # Remove leading/trailing asterisks
@@ -82,7 +91,37 @@ def process_references(references_text, apa_lookup, missing_refs_log=None):
                 if missing_refs_log is not None:
                     missing_refs_log.add(original_key)
                 print(f"Warning: Missing reference key '{original_key}' (cleaned: '{key}') - skipping")
-    
+
+    # A bare URL (or markdown link) is a valid reference type — keep any that remain
+    # in the residual rather than dropping them, unless the URL is already part of a
+    # resolved citation. Bare URLs are wrapped as markdown links so Hugo renders them.
+    residual = re.sub(citation_pattern, '', references_text)
+    md_links = re.findall(r'\[[^\]]*\]\(https?://[^)]+\)', residual)
+    leftover = residual
+    for link in md_links:
+        leftover = leftover.replace(link, ' ', 1)
+    bare_urls = re.findall(r'(?:https?://|www\.)[^\s,;)\]]+', leftover)
+
+    def _url_of(link):
+        m = re.search(r'\((https?://[^)]+)\)', link)
+        return (m.group(1) if m else link).rstrip('.,;)')
+
+    for link in md_links:
+        if not any(_url_of(link) in ref for ref in formatted_refs):
+            formatted_refs.append(link)
+    for url in bare_urls:
+        url = url.rstrip('.,;)')
+        if not any(url in ref for ref in formatted_refs):
+            formatted_refs.append(f'[{url}]({url})')
+
+    # Whatever is left once citekeys and URLs are removed is genuine free-text that the
+    # pipeline can't resolve — surface it so it can be turned into a citekey.
+    for url in bare_urls:
+        leftover = leftover.replace(url, ' ', 1)
+    if re.search(r'[A-Za-z0-9@]', leftover):
+        where = f" in {context}" if context else ""
+        print(f"Warning: unresolved free-text reference{where} (needs a citekey): {leftover.strip(' ,;.')!r}")
+
     return list(dict.fromkeys(formatted_refs))
 
 def fix_bare_urls_in_parens(text):
@@ -96,13 +135,15 @@ def fix_bare_urls_in_parens(text):
     Skips URLs that are already inside a markdown link ([text](url)).
     """
     # Match ( optional-prefix https://url ) but only when ( is NOT preceded by ]
-    # (which would mean it's already the URL part of [text](url))
+    # (which would mean it's already the URL part of [text](url)). The URL char
+    # class also excludes [ ] ( so the match can't run across an existing
+    # markdown link ([text](url)) and double-wrap it.
     def _replace(m):
         prefix = m.group(1) or ''
         url = m.group(2)
         return f'({prefix}[{url}]({url}))'
 
-    return re.sub(r'(?<!\])\(([^()]*?)(https?://[^\s)]+)\)', _replace, text)
+    return re.sub(r'(?<!\])\(([^()]*?)(https?://[^\s)\]\[(]+)\)', _replace, text)
 
 
 def safe_get(row, column, default=""):
@@ -122,6 +163,16 @@ def sort_key_for_language(title, language_code):
         # Map special chars so they sort just after their base char
         key = key.replace('ç', 'cz').replace('ğ', 'gz').replace('ı', 'iz')
         key = key.replace('ö', 'oz').replace('ş', 'sz').replace('ü', 'uz')
+    elif language_code == 'CN':
+        # Chinese audiences expect pinyin sort order. Sort by the Chinese part
+        # only (before the optional " [English Title]" suffix); pypinyin passes
+        # latin characters through, so titles that have no Chinese form still
+        # sort sensibly. Strip leading non-alphanumeric chars so titles that
+        # open with punctuation (e.g. "兄弟"… or 《…》) sort by their first
+        # real character's pinyin instead of jumping to the top of the list.
+        chinese_part = title.split(" [")[0]
+        key = "".join(lazy_pinyin(chinese_part, style=Style.NORMAL)).lower()
+        key = re.sub(r'^[^\w]+', '', key)
     return key
 
 
@@ -183,9 +234,12 @@ for language_code in languages_to_process:
             else:
                 title = en_title
 
-        # Process references
-        raw_references = safe_get(row, "Reference")
-        processed_references = process_references(raw_references, apa_lookup, missing_refs)
+        # Process references: always combine the generic shared column with any
+        # language-specific column (e.g. AR_refs, CN_refs), generic first. Both use
+        # the same [@citekey] format resolved via apa_lookup; dedupe across them.
+        processed_references = process_references(safe_get(row, "Reference"), apa_lookup, missing_refs, context=f"{title} (Reference)")
+        lang_refs = process_references(safe_get(row, f"{language_code}_refs"), apa_lookup, missing_refs, context=f"{title} ({language_code}_refs)")
+        processed_references = list(dict.fromkeys(processed_references + lang_refs))
 
         # Build entry
         definition = safe_get(row, f"{language_code}_definition" if language_code == "EN" else f"{language_code}_def")
