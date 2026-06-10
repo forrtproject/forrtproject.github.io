@@ -42,7 +42,7 @@
     "is_oa": false,
     "oa_url": "",
     "authors": "Monya Baker",
-    "vote_base": 1,
+    "vote_base": 2,
     "recommendations": [
       {
         "name": "Jean-Luc Picard",
@@ -135,7 +135,7 @@
     "is_oa": true,
     "oa_url": "https://doi.org/10.1027/2151-2604/a000387",
     "authors": "Sophia Crüwell, Johnny van Doorn, Alexander Etz, Matthew C. Makel, Hannah Moshontz, Jesse C. Niebaum, Amy Orben, Sam Parsons, Michael Schulte‐Mecklenbeck",
-    "vote_base": 0,
+    "vote_base": 2,
     "recommendations": [
       {
         "name": "The Doctor",
@@ -159,7 +159,7 @@
     "is_oa": true,
     "oa_url": "https://www.ncbi.nlm.nih.gov/pmc/articles/5206685",
     "authors": "Marc Edwards, Siddhartha Roy",
-    "vote_base": 0,
+    "vote_base": 1,
     "recommendations": [
       {
         "name": "Ellen Ripley",
@@ -2007,7 +2007,7 @@
     "is_oa": false,
     "oa_url": "",
     "authors": "Ulpts, S., Bartscherer, S. F., Penders, B., & Nelson, N.",
-    "vote_base": 0
+    "vote_base": 1
   },
   "10.1080/02640414.2025.2499403": {
     "title": "Sample size estimation revisited",
@@ -2088,7 +2088,7 @@
         "name": "HAL 9000",
         "title": "Heuristically Programmed Algorithmic Computer",
         "bio": "Advanced artificial intelligence aboard the Discovery One. Specializes in computational analysis and ensuring mission parameters are met with perfect accuracy.",
-        "photo": "/img/featured-recommenders/hal-9000-98c277eb.jpg",
+        "photo": "",
         "text": "I'm sorry, Dave, but your neuroscience study is underpowered. This paper confirmed what my circuits already suspected — median power in the field is shockingly low. I cannot allow you to publish with n=12. Open the sample size calculator, Dave."
       }
     ]
@@ -2106,13 +2106,13 @@
     "is_oa": true,
     "oa_url": "https://doi.org/10.1177/2515245920965119",
     "authors": "Lisa M. DeBruine, Dale J. Barr",
-    "vote_base": 0,
+    "vote_base": 1,
     "recommendations": [
       {
         "name": "Data",
         "title": "Lt. Commander, USS Enterprise-D",
         "bio": "Android officer serving aboard the USS Enterprise-D. Endlessly curious about the nature of understanding, both computational and human.",
-        "photo": "/img/featured-recommenders/data-0c85c1fc.jpg",
+        "photo": "",
         "text": "Despite possessing a positronic brain capable of 60 trillion operations per second, I still found mixed-effects models confusing until I read this tutorial. The simulation approach finally made random slopes click. If it helped an android, it will help you."
       }
     ]
@@ -2130,13 +2130,13 @@
     "is_oa": true,
     "oa_url": "https://link.springer.com/content/pdf/10.1007/s10654-016-0149-3.pdf",
     "authors": "Sander Greenland, Stephen Senn, Kenneth J. Rothman, John B. Carlin, Charles Poole, Steven N. Goodman, Douglas G. Altman",
-    "vote_base": 0,
+    "vote_base": 1,
     "recommendations": [
       {
         "name": "Spock",
         "title": "Science Officer, USS Enterprise",
         "bio": "Half-Vulcan science officer aboard the USS Enterprise. Dedicated to logic, precision, and the rigorous pursuit of scientific understanding.",
-        "photo": "/img/featured-recommenders/spock-abd62c23.jpg",
+        "photo": "",
         "text": "Dr. McCoy once claimed p=0.06 'proved' his treatment worked. I handed him this guide to 25 common statistical misinterpretations. He called me a 'green-blooded pedant.' He also stopped misreporting his confidence intervals. Fascinating."
       }
     ]
@@ -2190,7 +2190,7 @@
         "name": "Sarah Connor",
         "title": "Resistance Leader",
         "bio": "Mother, fighter, and strategist. Knows that preparation and understanding your tools are the difference between survival and failure.",
-        "photo": "/img/featured-recommenders/sarah-connor-cb4a371e.jpg",
+        "photo": "",
         "text": "I trained to fight Terminators; now I train researchers to report effect sizes. This primer on Cohen's d and eta-squared is the weapon every scientist needs. If you can't quantify your effect, how do you know you've won the fight?"
       }
     ]
@@ -3078,7 +3078,7 @@
     "is_oa": false,
     "oa_url": "",
     "authors": "Joeri K. Tijdink, Reinout Verbeke, Yvo M. Smulders",
-    "vote_base": 0
+    "vote_base": 1
   },
   "10.4135/9781529602074": {
     "title": "Research Without Borders: How to Identify and Overcome Potential Pitfalls in International Large-Team Online Research Projects",
@@ -12003,7 +12003,7 @@
     "is_oa": true,
     "oa_url": "https://www.ncbi.nlm.nih.gov/pmc/articles/2762211",
     "authors": "Alison L. Antes, Stephen T. Murphy, Ethan P. Waples, Michael D. Mumford, Ryan P. Brown, Shane Connelly, Lynn D. Devenport",
-    "vote_base": 0
+    "vote_base": 1
   },
   "10.1017/cts.2024.10": {
     "title": "Research rigor and reproducibility in research education: A CTSA institutional survey",
