@@ -25,9 +25,20 @@
 }
 
 .nav-btn {
-  line-height: initial;
+  display: inline-flex;
+  align-items: center;
+  line-height: 1.5;
+  font-weight: bold; // Match the bold weight of the main menu items.
   background-color: #fefdf6 !important;
   color: #3e3e3e !important;
+}
+
+// The FORRT wordmark inside the logo image sits low, so although the image is
+// flex-centred the wordmark lands ~6.5px below the navbar centre line that the
+// menu links and icons share. Nudge the desktop logo up so the wordmark aligns
+// with the menu text. Scoped to the desktop logo only (mobile brand untouched).
+.d-lg-inline-flex .navbar-brand img {
+  transform: translateY(-3px);
 }
 
 @media print {
