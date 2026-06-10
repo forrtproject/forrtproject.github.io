@@ -8,7 +8,8 @@
         "Metadata"
     ],
     "references": [
-        "Arslan, R. C. (2019). How to Automatically Document Data With the codebook Package to Facilitate Data Reuse. Advances in Methods and Practices in Psychological Science, 2(2), 169–187. https://doi.org/10.1177/2515245919838783"
+        "Arslan, R. C. (2019). How to Automatically Document Data With the codebook Package to Facilitate Data Reuse. <i>Advances in Methods and Practices in Psychological Science</i>, <i>2</i>(2), 169–187. https://doi.org/10.1177/2515245919838783",
+        "Inter-university Consortium for Political and Social Research. (2025). <i>What is a Codebook?</i> https://www.icpsr.umich.edu/web/ICPSR/cms/1983"
     ],
     "drafted_by": [
         "Tina Lonsdorf"

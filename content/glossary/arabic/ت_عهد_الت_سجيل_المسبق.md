@@ -7,7 +7,7 @@
         "Preregistration"
     ],
     "references": [
-        "Knowledge, F. O. (2020). Preregistration Pledge. https://freeourknowledge.org/2020-12-03-preregistration-pledge/"
+        "Knowledge, F. O. (2020). <i>Preregistration Pledge</i>. https://freeourknowledge.org/2020-12-03-preregistration-pledge/"
     ],
     "drafted_by": [
         "Helena Hartmann"

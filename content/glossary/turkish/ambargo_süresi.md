@@ -9,9 +9,9 @@
         "Preprint"
     ],
     "references": [
-        "Klein, O., Hardwicke, T. E., Aust, F., Breuer, J., Danielsson, H., Mohr, A. H., IJzerman, H., Nilsonne, G., Vanpaemel, W., & Frank, M. C. (2018). A practical guide for transparency in psychological science. Collabra: Psychology, 4(1), 20. https://doi.org/10.1525/collabra.158",
-        "Laakso, M., & Björk, B. C. (2013). Delayed open access: An overlooked high‐impact category of openly available scientific literature. Journal of the American Society for Information Science and Technology, 64(7), 1323–1329.",
-        "Embargo (academic publishing). (2021). https://en.wikipedia.org/w/index.php?title=Embargo_(academic_publishing)&oldid=1016895567"
+        "Klein, O., Hardwicke, T. E., Aust, F., Breuer, J., Danielsson, H., Mohr, A. H., IJzerman, H., Nilsonne, G., Vanpaemel, W., & Frank, M. C. (2018). A practical guide for transparency in psychological science. <i>Collabra: Psychology</i>, <i>4</i>(1), 20. https://doi.org/10.1525/collabra.158",
+        "Laakso, M., & Björk, B. C. (2013). Delayed open access: An overlooked high‐impact category of openly available scientific literature. <i>Journal of the American Society for Information Science and Technology</i>, <i>64</i>(7), 1323–1329.",
+        "<i>Embargo (academic publishing)</i>. (2021). https://en.wikipedia.org/w/index.php?title=Embargo_(academic_publishing)&oldid=1016895567"
     ],
     "drafted_by": [
         "Aleksandra Lazić"

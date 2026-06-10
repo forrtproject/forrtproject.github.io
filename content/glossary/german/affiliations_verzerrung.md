@@ -7,7 +7,7 @@
         "Peer review"
     ],
     "references": [
-        "Tvina, A., Spellecy, R., & Palatnik, A. (2019). Bias in the peer review process: can we do better? Obstetrics & Gynecology, 133(6), 1081–1083. https://doi.org/10.1097/AOG.0000000000003260"
+        "Tvina, A., Spellecy, R., & Palatnik, A. (2019). Bias in the peer review process: can we do better? <i>Obstetrics & Gynecology</i>, <i>133</i>(6), 1081–1083. https://doi.org/10.1097/AOG.0000000000003260"
     ],
     "drafted_by": [
         "Mahmoud Elsherif"

@@ -8,7 +8,7 @@
         "Ontology (Artificial Intelligence)"
     ],
     "references": [
-        "Steup, M., & Neta, R. (2020). Epistemology. Stanford Encyclopedia of Philosophy. https://plato.stanford.edu/entries/epistemology/"
+        "Steup, M., & Neta, R. (2020). Epistemology. <i>Stanford Encyclopedia of Philosophy</i>. https://plato.stanford.edu/entries/epistemology/"
     ],
     "drafted_by": [
         "Amélie Beffara Bret"

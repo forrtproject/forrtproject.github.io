@@ -14,7 +14,7 @@
         "WEIRD"
     ],
     "references": [
-        "Syed, M., & Kathawalla, U. (2020). Cultural Psychology, Diversity, and Representation in Open Science. https://doi.org/10.31234/osf.io/t7hp2"
+        "Syed, M., & Kathawalla, U. (2020). <i>Cultural Psychology, Diversity, and Representation in Open Science</i>. https://doi.org/10.31234/osf.io/t7hp2"
     ],
     "drafted_by": [
         "Ryan Millager; Mariella Paul"

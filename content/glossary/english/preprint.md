@@ -10,8 +10,8 @@
         "Working Paper"
     ],
     "references": [
-        "Bourne, P. E., Polka, J. K., Vale, R. D., & Kiley, R. (2017). Ten simple rules to consider regarding preprint submission. PLoS Computational Biology, 13(5), e1005473. https://doi.org/10.1371/journal.pcbi.1005473",
-        "Elmore, S. A. (2018). Preprints: What Role Do These Have in Communicating Scientific Results? Toxicologic Pathology, 46(4), 364–365. https://doi.org/10.1177/0192623318767322"
+        "Bourne, P. E., Polka, J. K., Vale, R. D., & Kiley, R. (2017). Ten simple rules to consider regarding preprint submission. <i>PLoS Computational Biology</i>, <i>13</i>(5), e1005473. https://doi.org/10.1371/journal.pcbi.1005473",
+        "Elmore, S. A. (2018). Preprints: What Role Do These Have in Communicating Scientific Results? <i>Toxicologic Pathology</i>, <i>46</i>(4), 364–365. https://doi.org/10.1177/0192623318767322"
     ],
     "drafted_by": [
         "Mariella Paul"

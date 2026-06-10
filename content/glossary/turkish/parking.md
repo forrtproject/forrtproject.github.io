@@ -9,8 +9,10 @@
         "Questionable Research Practices or Questionable Reporting Practices (QRPs)"
     ],
     "references": [
-        "Ikeda, A., Xu, H., Fuji, N., Zhu, S., & Yamada, Y. (2019). Questionable research practices following pre-registration. Japanese Psychological Review, 62, 281–295.",
-        "Yamada, Y. (2018). How to crack pre-registration: Toward transparent and open science. Frontiers in Psychology, 9, 1831. https://doi.org/10.3389/fpsyg.2018.01831"
+        "Ikeda, A., Xu, H., Fuji, N., Zhu, S., & Yamada, Y. (2019). Questionable research practices following pre-registration. <i>Japanese Psychological Review</i>, <i>62</i>, 281–295.",
+        "Yamada, Y. (2018). How to crack pre-registration: Toward transparent and open science. <i>Frontiers in Psychology</i>, <i>9</i>, 1831. https://doi.org/10.3389/fpsyg.2018.01831",
+        "[Ikeda et al. (2019)](https://www.jstage.jst.go.jp/article/sjpr/62/3/62_281/_pdf/-char/ja)",
+        "[Yamada (2018)](https://www.frontiersin.org/articles/10.3389/fpsyg.2018.01831/full)"
     ],
     "drafted_by": [
         "Qinyu Xiao"

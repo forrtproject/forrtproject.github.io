@@ -11,9 +11,9 @@
         "ReproducibiliTea"
     ],
     "references": [
-        "Ellemers, N. (2021). Science as collaborative knowledge generation. British Journal of Social Psychology, 60(1), 1–28. https://doi.org/10.1111/bjso.12430",
-        "Orben, A. (2019). A journal club to fix science. Nature, 573(7775), 465–466. https://doi.org/10.1038/d41586-019-02842-8",
-        "Shepard, B. (2015). Community projects as social activism. SAGE."
+        "Ellemers, N. (2021). Science as collaborative knowledge generation. <i>British Journal of Social Psychology</i>, <i>60</i>(1), 1–28. https://doi.org/10.1111/bjso.12430",
+        "Orben, A. (2019). A journal club to fix science. <i>Nature</i>, <i>573</i>(7775), 465–466. https://doi.org/10.1038/d41586-019-02842-8",
+        "Shepard, B. (2015). <i>Community projects as social activism</i>. SAGE."
     ],
     "drafted_by": [
         "Marta Topor"

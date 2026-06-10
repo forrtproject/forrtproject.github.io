@@ -8,13 +8,14 @@
         "Knightian uncertainty"
     ],
     "references": [
-        "Der Kiureghian, A., & Ditlevsen, O. (2009). Aleatory or epistemic? Does it matter? Structural Safety, 31(2), 105–112. https://doi.org/10.1016/j.strusafe.2008.06.020"
+        "Der Kiureghian, A., & Ditlevsen, O. (2009). Aleatory or epistemic? Does it matter? <i>Structural Safety</i>, <i>31</i>(2), 105–112. https://doi.org/10.1016/j.strusafe.2008.06.020"
     ],
     "drafted_by": [
         "Bradley Baker"
     ],
     "reviewed_by": [
-        "Nihan Albayrak-Aydemir**;** Brett Gall",
+        "Nihan Albayrak-Aydemir",
+        "Brett Gall",
         "Magdalena Grose-Hodge",
         "Bethan Iley",
         "Charlotte R. Pennington"

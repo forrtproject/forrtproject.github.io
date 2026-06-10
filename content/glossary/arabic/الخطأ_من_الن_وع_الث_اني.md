@@ -14,8 +14,8 @@
         "Type I error"
     ],
     "references": [
-        "Fiedler, K., Kutzner, F., & Krueger, J. I. (2012). The long way from α-error control to validity proper: Problems with a short-sighted false-positive debate. Perspectives on Psychological Science, 7(6), 661–669. https://doi.org/10.1177/1745691612462587",
-        "Hartgerink, C. H., Wicherts, J. M., & Van Assen, M. A. L. M. (2017). Too good to be false: Nonsignificant results revisited. Collabra: Psychology, 3(1). https://doi.org/10.1525/collabra.71"
+        "Fiedler, K., Kutzner, F., & Krueger, J. I. (2012). The long way from α-error control to validity proper: Problems with a short-sighted false-positive debate. <i>Perspectives on Psychological Science</i>, <i>7</i>(6), 661–669. https://doi.org/10.1177/1745691612462587",
+        "Hartgerink, C. H., Wicherts, J. M., & Van Assen, M. A. L. M. (2017). Too good to be false: Nonsignificant results revisited. <i>Collabra: Psychology</i>, <i>3</i>(1). https://doi.org/10.1525/collabra.71"
     ],
     "drafted_by": [
         "Olly Robertson"

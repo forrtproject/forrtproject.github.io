@@ -11,7 +11,9 @@
         "Peer review",
         "Preprints"
     ],
-    "references": [],
+    "references": [
+        "<i>PCI IN A FEW LINES</i>. (n.d.). https://peercommunityin.org/"
+    ],
     "drafted_by": [
         "Emma Henderson"
     ],
