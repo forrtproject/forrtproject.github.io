@@ -1,0 +1,60 @@
+{{/* Global HTML skeletons for featured resources: reference popup, reading list pill/panel.
+     Include once per page (in cluster layout templates). */}}
+
+{{/* Reference popup */}}
+<div class="ref-popup-backdrop" id="fr-ref-popup-backdrop">
+  <div class="ref-popup" role="dialog" aria-modal="true" aria-label="Reference details">
+    <button class="ref-popup-close" aria-label="Close">&times;</button>
+    <div class="ref-popup-body" id="fr-ref-popup-body"></div>
+  </div>
+</div>
+
+{{/* Reading list pill (top-right, appears after first save) */}}
+<div class="rl-pill" id="fr-rl-pill" role="button" tabindex="0" aria-label="Open reading list">
+  <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 2h10v13l-5-3.5L3 15V2z"/></svg>
+  Reading List
+  <span class="rl-pill-count" id="fr-rl-pill-count">0</span>
+</div>
+
+{{/* First-save tooltip */}}
+<div class="rl-tooltip" id="fr-rl-tooltip">
+  <div class="rl-tooltip-text">Saved to your reading list! Click the pill to view, export BibTeX, or manage your list.</div>
+  <button class="rl-tooltip-dismiss" id="fr-rl-tooltip-dismiss">Got it</button>
+</div>
+
+{{/* Reading list panel (right sidebar drawer) */}}
+<div class="rl-panel-backdrop" id="fr-rl-backdrop"></div>
+<div class="rl-panel" id="fr-rl-panel" role="dialog" aria-modal="true" aria-label="Reading list">
+  <div class="rl-panel-header">
+    <span class="rl-panel-title">Reading List</span>
+    <button class="rl-panel-close" id="fr-rl-panel-close" aria-label="Close">&times;</button>
+  </div>
+  <div class="rl-panel-note">Your list is saved in this browser. Export BibTeX before clearing.</div>
+  <div class="rl-panel-body" id="fr-rl-panel-body">
+    <div class="rl-panel-empty">No saved resources yet.</div>
+  </div>
+  <div class="rl-panel-footer">
+    <button class="rl-pdf-btn" id="fr-rl-pdf">
+      <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4V1h8v3M4 11H2V6h12v5h-2"/><rect x="4" y="9" width="8" height="6" rx="0.5"/></svg>
+      Download PDF
+    </button>
+    <button class="rl-export-btn" id="fr-rl-export">
+      <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M8 2v8m0 0l-3-3m3 3l3-3M3 13h10"/></svg>
+      Export BibTeX
+    </button>
+  </div>
+</div>
+
+{{/* Inject featured data, pub card lookup, and focus order as JSON for JS */}}
+{{ $featured := site.Data.featured_resources }}
+{{ if $featured }}
+<script>window.FORRT_FEATURED = {{ $featured | jsonify | safeJS }};</script>
+{{ end }}
+{{ $pubCards := site.Data.pub_cards }}
+{{ if $pubCards }}
+<script>window.FORRT_PUB_CARDS = {{ $pubCards | jsonify | safeJS }};</script>
+{{ end }}
+{{ $filterTags := site.Data.filter_tags }}
+{{ if $filterTags }}
+<script>window.FORRT_FOCUS_ORDER = {{ $filterTags.focus | jsonify | safeJS }};</script>
+{{ end }}

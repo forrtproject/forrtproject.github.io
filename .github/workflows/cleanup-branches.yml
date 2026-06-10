@@ -7,7 +7,7 @@ name: Cleanup Branches
 # Triggers: Weekly on Sundays or manual dispatch
 # Jobs:
 #   - cleanup-auto-generated: Removes old ga-data-update-* (keeps 1) and staging-aggregate-* branches (keeps 2)
-#   - cleanup-merged: Removes branches already merged into master
+#   - cleanup-merged: Removes branches already merged into main
 #   - cleanup-stale: Removes branches with no activity for 1+ month (no open PRs)
 
 on:
@@ -20,6 +20,9 @@ on:
         required: false
         type: boolean
         default: false
+
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: "true"
 
 permissions:
   contents: write
@@ -110,11 +113,11 @@ jobs:
           git fetch --all --prune --tags
 
           # Define protected branches
-          PROTECTED_BRANCHES="master|gh-pages"
+          PROTECTED_BRANCHES="main|gh-pages"
 
           echo "Finding merged branches..."
-          # List remote branches merged into origin/master, exclude protected ones
-          MERGED_BRANCHES=$(git branch -r --merged origin/master | grep -vE "HEAD|origin/($PROTECTED_BRANCHES)$" | sed 's/origin\///' | xargs)
+          # List remote branches merged into origin/main, exclude protected ones
+          MERGED_BRANCHES=$(git branch -r --merged origin/main | grep -vE "HEAD|origin/($PROTECTED_BRANCHES)$" | sed 's/origin\///' | xargs)
 
           if [ -z "$MERGED_BRANCHES" ]; then
             echo "No merged branches to delete."
@@ -178,7 +181,7 @@ jobs:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           # Define protected branches
-          PROTECTED_BRANCHES="master|gh-pages"
+          PROTECTED_BRANCHES="main|gh-pages"
 
           echo "Fetching all branches..."
           git fetch --all --prune --tags

@@ -5,7 +5,7 @@ name: Link Checker
 # =======================
 # Purpose: Downloads the latest built site and checks all links (internal + external)
 # Triggers: Weekly on Mondays at 01:30 UTC or manual dispatch
-# Reports: Creates a GitHub issue with label "link-check" when broken links are found
+# Reports: Updates the existing open "link-check"-labeled issue (or creates one if none exists)
 # Config: See .lychee.toml for exclusion patterns and request settings
 
 on:
@@ -13,6 +13,9 @@ on:
     # Runs at 01:30 UTC every Monday
     - cron: '30 1 * * 1'
   workflow_dispatch:
+
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: "true"
 
 permissions:
   contents: read
@@ -131,6 +134,128 @@ jobs:
               f.write(output)
           PYEOF
 
+      - name: Validate DOI links via the DOI Handle API
+        id: doi-validate
+        run: |
+          mkdir -p /tmp/lychee
+          python3 << 'PYEOF'
+          import json, os, re, sys, time, urllib.error, urllib.parse, urllib.request
+          from collections import defaultdict
+          from concurrent.futures import ThreadPoolExecutor, as_completed
+          from pathlib import Path
+
+          SITE_ROOT = Path("/tmp/site")
+          # DOI body: any non-whitespace char except quotes, angle brackets, backslash.
+          # Parens are allowed because SICI-style DOIs (e.g. 10.1016/0277-9536(95)00127-S)
+          # legitimately contain balanced parens — we strip unbalanced trailing ones below.
+          DOI_RE = re.compile(r'https?://(?:dx\.)?doi\.org/(10\.[^\s"\'<>\\]+)', re.I)
+          TRAIL = '.,;:]}>"\''
+
+          def balance(s):
+              """Strip trailing ')' / ']' if they are unbalanced (i.e. enclosing punctuation)."""
+              while s and s[-1] in ')]':
+                  opener = '(' if s[-1] == ')' else '['
+                  if s.count(opener) < s.count(s[-1]):
+                      s = s[:-1]
+                  else:
+                      break
+              return s
+
+          # doi -> set of source pages
+          doi_pages = defaultdict(set)
+          for html in SITE_ROOT.rglob("*.html"):
+              try:
+                  text = html.read_text(errors="ignore")
+              except Exception:
+                  continue
+              # Strip the artifact-name dir (/tmp/site/<artifact>/<path>) -> /<path>
+              rel_parts = html.relative_to(SITE_ROOT).parts[1:]
+              page = "/" + "/".join(rel_parts)
+              page = re.sub(r"/index\.html$", "/", page)
+              for m in DOI_RE.finditer(text):
+                  doi = m.group(1).rstrip(TRAIL)
+                  doi = balance(doi)
+                  doi = doi.rstrip(TRAIL)
+                  if doi:
+                      doi_pages[doi.lower()].add(page)
+
+          if not doi_pages:
+              print("No DOIs found in site")
+              with open(os.environ["GITHUB_OUTPUT"], "a") as gh:
+                  gh.write("found=false\n")
+              sys.exit(0)
+
+          print(f"Validating {len(doi_pages)} unique DOIs via the DOI Handle API...")
+
+          # The Handle API is registry-agnostic — works for Crossref, DataCite,
+          # mEDRA, JaLC, etc. responseCode 1 = handle found, 100 = not registered.
+          # https://www.doi.org/factsheets/DOIProxy.html
+          headers = {
+              "User-Agent": "forrt-link-checker/1.0 (+https://forrt.org; mailto:info@forrt.org)",
+          }
+
+          def check(doi, retries=3):
+              # DOIs in HTML are sometimes URL-encoded (e.g. %2F for /, %28 for ().
+              # Decode first to avoid double-encoding when we hand it to the API.
+              clean = urllib.parse.unquote(doi)
+              url = "https://doi.org/api/handles/" + urllib.parse.quote(clean, safe="/")
+              delay = 1.0
+              for attempt in range(retries):
+                  req = urllib.request.Request(url, headers=headers)
+                  try:
+                      with urllib.request.urlopen(req, timeout=20) as r:
+                          data = json.load(r)
+                          return doi, data.get("responseCode"), None
+                  except urllib.error.HTTPError as e:
+                      if e.code in (429, 500, 502, 503, 504) and attempt < retries - 1:
+                          time.sleep(delay)
+                          delay *= 2
+                          continue
+                      # 404 from the proxy means the DOI is not registered.
+                      if e.code == 404:
+                          return doi, 100, None
+                      return doi, None, f"HTTP {e.code}"
+                  except Exception as e:
+                      if attempt < retries - 1:
+                          time.sleep(delay)
+                          delay *= 2
+                          continue
+                      return doi, None, str(e)
+              return doi, None, "exhausted retries"
+
+          broken = {}
+          transient = []
+          with ThreadPoolExecutor(max_workers=6) as pool:
+              futures = {pool.submit(check, d): d for d in sorted(doi_pages)}
+              for fut in as_completed(futures):
+                  doi, code, err = fut.result()
+                  if code == 1:
+                      pass
+                  elif code == 100:
+                      broken[doi] = sorted(doi_pages[doi])
+                  else:
+                      transient.append((doi, err or code))
+
+          if transient:
+              print(f"  ({len(transient)} DOIs returned transient errors - treating as valid)")
+
+          if broken:
+              with open("/tmp/lychee/out.md", "a") as f:
+                  f.write(f"\n## Broken DOIs ({len(broken)} not registered)\n\n")
+                  f.write("These DOIs are not registered with any DOI agency (Crossref, DataCite, etc.) per the DOI Handle System — they likely contain a typo, were withdrawn, or were never minted.\n\n")
+                  for doi in sorted(broken):
+                      pages = broken[doi]
+                      page_str = f" (in {pages[0]})" if len(pages) == 1 else f" (in {len(pages)} pages)"
+                      f.write(f"* <https://doi.org/{doi}>{page_str}\n")
+              with open(os.environ["GITHUB_OUTPUT"], "a") as gh:
+                  gh.write("found=true\n")
+              print(f"Found {len(broken)} broken DOIs")
+          else:
+              with open(os.environ["GITHUB_OUTPUT"], "a") as gh:
+                  gh.write("found=false\n")
+              print(f"All {len(doi_pages)} DOIs valid")
+          PYEOF
+
       - name: Find publisher URLs that should use doi.org
         id: doi-check
         run: |
@@ -161,11 +286,22 @@ jobs:
             echo "found=false" >> "$GITHUB_OUTPUT"
           fi
 
-      - name: Create issue from lychee output
-        if: steps.lychee.outputs.exit_code != 0 || steps.doi-check.outputs.found == 'true'
-        uses: peter-evans/create-issue-from-file@v5
-        with:
-          title: "Link Checker Report"
-          content-filepath: /tmp/lychee/out.md
-          labels: link-check
-          token: ${{ secrets.GITHUB_TOKEN }}
+      - name: Create or update Link Checker Report issue
+        if: steps.lychee.outputs.exit_code != 0 || steps.doi-check.outputs.found == 'true' || steps.doi-validate.outputs.found == 'true'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_REPO: ${{ github.repository }}
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        run: |
+          set -euo pipefail
+          TITLE="Link Checker Report"
+          BODY_FILE=/tmp/lychee/out.md
+          EXISTING=$(gh issue list --label link-check --state open --limit 1 --json number --jq '.[0].number // empty')
+          if [ -n "$EXISTING" ]; then
+            echo "Updating existing issue #$EXISTING"
+            gh issue edit "$EXISTING" --body-file "$BODY_FILE"
+            gh issue comment "$EXISTING" --body "Report refreshed by [workflow run]($RUN_URL)."
+          else
+            echo "No open link-check issue found; creating a new one"
+            gh issue create --title "$TITLE" --body-file "$BODY_FILE" --label link-check
+          fi

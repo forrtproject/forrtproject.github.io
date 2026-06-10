@@ -116,6 +116,26 @@
         });
       }
 
+      /* Search featured resource cards in this cluster */
+      section.querySelectorAll('.fc-card').forEach(function (card) {
+        if (results.length >= MAX_RESULTS) return;
+        var cardText = card.textContent.replace(/\s+/g, ' ').trim();
+        if (!cardText || !matchesAllTokens(cardText, tokens)) return;
+        var titleEl = card.querySelector('.fc-title');
+        var cardTitle = titleEl ? titleEl.textContent.replace(/\s+/g, ' ').trim() : '';
+        var paneEl = card.closest('.tab-pane');
+        var paneId = paneEl ? paneEl.id : '';
+        var tabId = paneEl ? (paneEl.getAttribute('aria-labelledby') || '') : '';
+        add('feat:' + clusterId + ':' + (card.getAttribute('data-doi') || cardTitle), {
+          type: 'featured',
+          clusterId: clusterId,
+          tabId: tabId,
+          paneId: paneId,
+          label: cardTitle.length > 100 ? cardTitle.substring(0, 100) + '…' : cardTitle,
+          meta: clusterName + ' — Recommended'
+        });
+      });
+
       section.querySelectorAll('.tab-pane').forEach(function (pane) {
         if (results.length >= MAX_RESULTS) return;
         var paneId = pane.id;
@@ -186,9 +206,9 @@
       return;
     }
 
-    /* Sort: clusters & sub-clusters first, then publications */
+    /* Sort: clusters, featured, sub-clusters, then publications */
     results.sort(function (a, b) {
-      var order = { cluster: 0, subcluster: 1, publication: 2 };
+      var order = { cluster: 0, featured: 1, subcluster: 2, publication: 3 };
       return (order[a.type] || 9) - (order[b.type] || 9);
     });
     var shown = results.slice(0, SHOWN_RESULTS);
@@ -200,8 +220,10 @@
     shown.forEach(function (r) {
       var extraAttr = r.pubIndex != null ? ' data-pub-index="' + escAttr(r.pubIndex) + '"' : '';
       var isPub = r.type === 'publication';
-      var icon = isPub ? '<i class="fas fa-file-alt clusters-inline-search__hit-icon" aria-hidden="true"></i>' : '';
-      var hitClass = 'clusters-inline-search__hit' + (isPub ? ' clusters-inline-search__hit--publication' : '');
+      var isFeat = r.type === 'featured';
+      var icon = isPub ? '<i class="fas fa-file-alt clusters-inline-search__hit-icon" aria-hidden="true"></i>' :
+                 isFeat ? '<i class="fas fa-star clusters-inline-search__hit-icon" aria-hidden="true"></i>' : '';
+      var hitClass = 'clusters-inline-search__hit' + (isPub ? ' clusters-inline-search__hit--publication' : '') + (isFeat ? ' clusters-inline-search__hit--featured' : '');
       html += '<a href="#" class="' + hitClass + '" role="button"' +
         ' data-hit-type="' + escAttr(r.type) + '"' +
         ' data-cluster="' + escAttr(r.clusterId) + '"' +
@@ -260,11 +282,7 @@
         '--clusters-controls-height',
         controls ? controls.offsetHeight + 'px' : '0px'
       );
-      /* Keep tab content tall enough so the footer stays below the fold */
-      var vh = window.innerHeight + 'px';
-      root.querySelectorAll('.cluster-tab-content').forEach(function (tc) {
-        tc.style.minHeight = vh;
-      });
+      /* (Tab content min-height removed — sections are now stacked, not tabbed) */
     }
 
     function scheduleStickyLayoutMetrics() {
@@ -397,51 +415,53 @@
           return;
         }
         e.preventDefault();
-        var clusterId = this.getAttribute('data-cluster');
-        var tabId = this.getAttribute('data-tab');
-        var section = clusterId ? document.getElementById(clusterId) : null;
-        if (section && tabId) {
-          var tab = document.getElementById(tabId);
-          showBootstrapTab(tab);
-          setTimeout(function () {
-            scrollToClusterTabPaneFromTrigger(tab);
-          }, 100);
+        /* data-tab holds the old tab ID; derive the section ID from it (strip -tab suffix) */
+        var tabId = this.getAttribute('data-tab') || '';
+        var sectionId = tabId.replace(/-tab$/, '');
+        var target = sectionId ? document.getElementById(sectionId) : null;
+        if (target) {
+          /* Expand accordion section if collapsed */
+          var accBody = target.querySelector('.acc-body');
+          var accHeader = target.querySelector('.acc-header');
+          if (accBody && accBody.classList.contains('acc-collapsed') && accHeader && !accHeader.classList.contains('acc-disabled')) {
+            accBody.classList.remove('acc-collapsed');
+            accBody.style.maxHeight = accBody.scrollHeight + 'px';
+            accBody.style.opacity = '1';
+            var ch = accHeader.querySelector('.acc-chevron');
+            if (ch) ch.classList.add('acc-open');
+          }
+          var scrollEl = accHeader || target;
+          setTimeout(function () { scrollElementBelowStickyChrome(scrollEl); }, 50);
         }
         closeClustersMobileSidebar();
       });
     });
 
-    /* e.g. /clusters/cluster-2/#c2-sc1 — open matching tab after load or hash-only navigation */
-    function applyClusterUrlHashTab() {
+    /* e.g. /clusters/cluster-2/#c2-sc1 or #c2-featured — scroll to matching section */
+    function applyClusterUrlHash() {
       var raw = window.location.hash.replace(/^#/, '');
-      if (!raw || !/^c\d+-sc\d+$/.test(raw)) return;
-      var tab = document.getElementById(raw + '-tab');
-      if (!tab) return;
-      showBootstrapTab(tab);
+      if (!raw || !/^c\d+-(sc\d+|featured)$/.test(raw)) return;
+      var target = document.getElementById(raw);
+      if (!target) return;
+      /* Expand accordion section if collapsed */
+      var accBody = target.querySelector('.acc-body');
+      var accHeader = target.querySelector('.acc-header');
+      if (accBody && accBody.classList.contains('acc-collapsed') && accHeader && !accHeader.classList.contains('acc-disabled')) {
+        accBody.classList.remove('acc-collapsed');
+        accBody.style.maxHeight = accBody.scrollHeight + 'px';
+        accBody.style.opacity = '1';
+        var ch = accHeader.querySelector('.acc-chevron');
+        if (ch) ch.classList.add('acc-open');
+      }
       setTimeout(function () {
-        scrollToClusterTabPaneFromTrigger(tab);
+        var scrollEl = accHeader || target;
+        scrollElementBelowStickyChrome(scrollEl);
       }, 150);
     }
-    applyClusterUrlHashTab();
-    window.addEventListener('hashchange', applyClusterUrlHashTab);
+    applyClusterUrlHash();
+    window.addEventListener('hashchange', applyClusterUrlHash);
 
-    /* Clicking sub-cluster tabs: scroll so pane content clears sticky chrome */
-    if (typeof window.jQuery !== 'undefined' && window.jQuery.fn.tab) {
-      window
-        .jQuery(root)
-        .on('shown.bs.tab', '.cluster-tabs a[data-toggle="tab"], .cluster-tabs a[data-bs-toggle="tab"]', function () {
-          scrollToClusterTabPaneFromTrigger(this);
-        });
-    } else {
-      root.querySelectorAll('.cluster-tabs a.nav-link[data-toggle="tab"], .cluster-tabs a.nav-link[data-bs-toggle="tab"]').forEach(function (tabEl) {
-        tabEl.addEventListener('click', function () {
-          var self = this;
-          setTimeout(function () {
-            scrollToClusterTabPaneFromTrigger(self);
-          }, 200);
-        });
-      });
-    }
+    /* (Tab click handler removed — all sub-clusters are now visible sections) */
 
     var searchInput = document.getElementById('clusters-inline-search-input');
     var searchBtn = document.getElementById('clusters-inline-search-btn');
@@ -489,7 +509,7 @@
         return;
       }
       var includeRefsEl = document.getElementById('clusters-search-include-refs');
-      var includeRefs = includeRefsEl ? includeRefsEl.checked : false;
+      var includeRefs = includeRefsEl ? includeRefsEl.checked : true;
       var results = collectClustersInlineSearchResults(root, tokens, includeRefs);
       renderClustersInlineResults(results, searchToolbar, searchResults);
       searchPanel.classList.add(RESULTS_OPEN_CLASS);
@@ -551,11 +571,6 @@
         var section = clusterId ? document.getElementById(clusterId) : null;
         if (!section) return;
 
-        if (tabId) {
-          var tab = document.getElementById(tabId);
-          showBootstrapTab(tab);
-        }
-
         setTimeout(function () {
           var scrollEl = null;
           if (hitType === 'cluster') {
@@ -572,6 +587,9 @@
             } else {
               scrollEl = panePub || section;
             }
+          } else if (hitType === 'featured' && paneId) {
+            var paneFeat = document.getElementById(paneId);
+            scrollEl = paneFeat || section;
           } else if (hitType === 'subcluster' && paneId) {
             var paneSc = document.getElementById(paneId);
             scrollEl = paneSc ? paneSc.querySelector('.sc-heading') || paneSc : section;

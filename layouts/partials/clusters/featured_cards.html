@@ -1,0 +1,124 @@
+{{/* Featured/Recommended resource cards for a cluster. Expects: resources (slice), cluster_number (int) */}}
+{{ $resources := .resources }}
+{{ $cn := .cluster_number }}
+{{ $paneId := printf "c%d-featured" $cn }}
+
+<div class="featured-pane" id="{{ $paneId }}-content">
+
+  {{/* Resource cards — fr-card (with testimonial) when recommendations exist, fc-card (compact) otherwise */}}
+  <div class="fr-cards-list" data-cluster="{{ $cn }}">
+    {{ range $ri, $res := $resources }}
+    {{ $recs := .recommendations }}
+    {{ $hasRecs := gt (len $recs) 0 }}
+
+    {{ if $hasRecs }}
+    {{/* Side-by-side card with testimonial carousel */}}
+    <div class="fr-card"
+         data-doi="{{ .doi }}"
+         data-focus="{{ .focus }}"
+         data-type="{{ .resource_type }}"
+         data-specificity="{{ cond (eq .specificity "Narrow") "narrow" "broad" }}"
+         {{ if eq .specificity "Narrow" }}style="display:none;"{{ end }}>
+      <div class="fr-resource">
+        <div class="fr-tags">
+          {{ if .focus }}<span class="tag tag-focus">{{ .focus }}</span>{{ end }}
+          {{ if .resource_type }}<span class="tag tag-type">{{ .resource_type }}</span>{{ end }}
+        </div>
+        <div class="fr-title">{{ .title }}</div>
+        <div class="fr-summary">{{ .summary }}</div>
+        <div class="fr-actions">
+          <button class="fr-ref-trigger" data-doi="{{ .doi }}">
+            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="12" height="12" rx="2"/><path d="M5 5h6M5 8h6M5 11h3"/></svg>
+            {{ .short_ref }}
+          </button>
+          <button class="fr-bookmark-btn" data-doi="{{ .doi }}">
+            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 2h10v13l-5-3.5L3 15V2z"/></svg>
+            <span>Save</span>
+          </button>
+          <button class="fc-vote-btn" data-doi="{{ .doi }}">
+            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 14H3a1 1 0 01-1-1V8a1 1 0 011-1h2m0 7V7m0 7h6.28a2 2 0 001.94-1.52l1.07-4.28A1 1 0 0014.32 7H10.5l.64-3.18a1.26 1.26 0 00-1.22-1.52h-.17a1 1 0 00-.85.47L5 7"/></svg>
+            <span class="fc-vote-count">{{ .vote_base }}</span>
+          </button>
+        </div>
+      </div>
+      <div class="fr-testimonial">
+        <div class="fr-rec-label">Recommended by</div>
+        {{ $carouselId := printf "c%d-r%d" $cn $ri }}
+        <div class="fr-carousel" data-carousel="{{ $carouselId }}">
+          <div class="fr-carousel-track">
+            {{ range $recs }}
+            <div class="fr-carousel-slide">
+              <div class="fr-rec-header">
+                {{ if .photo }}
+                <img class="avatar-photo" src="{{ .photo }}" alt="{{ .name }}">
+                {{ else }}
+                <span class="avatar avatar-sm avatar-1">{{ substr .name 0 1 }}</span>
+                {{ end }}
+                <div>
+                  <div class="fr-rec-name">{{ .name }}</div>
+                  {{ if .title }}<div class="fr-rec-bio">{{ .title }}</div>{{ end }}
+                </div>
+              </div>
+              {{ if .text }}
+              <div class="fr-rec-text">"{{ .text }}"</div>
+              {{ end }}
+            </div>
+            {{ end }}
+          </div>
+        </div>
+        <div class="fr-carousel-nav{{ if eq (len $recs) 1 }} single{{ end }}" data-nav="{{ $carouselId }}">
+          {{ range $di, $_ := $recs }}
+          <button class="fr-carousel-dot{{ if eq $di 0 }} active{{ end }}" data-idx="{{ $di }}"></button>
+          {{ end }}
+          {{ if gt (len $recs) 1 }}
+          <div class="fr-carousel-arrows">
+            <button class="fr-carousel-arrow" data-dir="-1">&larr;</button>
+            <button class="fr-carousel-arrow" data-dir="1">&rarr;</button>
+          </div>
+          {{ end }}
+        </div>
+      </div>
+    </div>
+
+    {{ else }}
+    {{/* Compact card (no recommendations) */}}
+    <div class="fc-card"
+         data-doi="{{ .doi }}"
+         data-focus="{{ .focus }}"
+         data-type="{{ .resource_type }}"
+         data-specificity="{{ cond (eq .specificity "Narrow") "narrow" "broad" }}"
+         {{ if eq .specificity "Narrow" }}style="display:none;"{{ end }}>
+      <div class="fc-body">
+        <div class="fc-top-row">
+          <div class="fc-tags">
+            {{ if .focus }}<span class="tag tag-focus">{{ .focus }}</span>{{ end }}
+            {{ if .resource_type }}<span class="tag tag-type">{{ .resource_type }}</span>{{ end }}
+          </div>
+          <div class="fc-title">{{ .title }}</div>
+        </div>
+        {{ if .summary }}
+        <div class="fc-summary">{{ .summary }}</div>
+        {{ end }}
+        <div class="fc-actions">
+          <button class="fr-ref-trigger" data-doi="{{ .doi }}">
+            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="12" height="12" rx="2"/><path d="M5 5h6M5 8h6M5 11h3"/></svg>
+            {{ .short_ref }}
+          </button>
+          <button class="fr-bookmark-btn" data-doi="{{ .doi }}">
+            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 2h10v13l-5-3.5L3 15V2z"/></svg>
+            <span>Save</span>
+          </button>
+          <button class="fc-vote-btn" data-doi="{{ .doi }}">
+            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 14H3a1 1 0 01-1-1V8a1 1 0 011-1h2m0 7V7m0 7h6.28a2 2 0 001.94-1.52l1.07-4.28A1 1 0 0014.32 7H10.5l.64-3.18a1.26 1.26 0 00-1.22-1.52h-.17a1 1 0 00-.85.47L5 7"/></svg>
+            <span class="fc-vote-count">{{ .vote_base }}</span>
+          </button>
+        </div>
+      </div>
+    </div>
+    {{ end }}
+
+    {{ end }}
+  </div>
+
+  <div class="fr-no-results" style="display:none;">No resources match your filters.</div>
+</div>

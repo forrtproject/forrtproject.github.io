@@ -1,3 +1,13 @@
+{{ $active := true }}
+{{ if isset site.Params "justos_chatbot" }}
+  {{ $active = default true (index site.Params.justos_chatbot "active") }}
+{{ end }}
+{{ $offlineMsg := "We hope to bring it back soon — please check again later." }}
+{{ if and (isset site.Params "justos_chatbot") (isset site.Params.justos_chatbot "offline_message") }}
+  {{ $offlineMsg = site.Params.justos_chatbot.offline_message }}
+{{ end }}
+
+{{ if $active }}
 <div id="just-os-fullpage" class="just-os-fullpage" style="
   width: 100%;
   max-width: 1200px;
@@ -68,3 +78,16 @@
     ">Send</button>
   </div>
 </div>
+{{ else }}
+<div class="just-os-offline-page" role="status" aria-live="polite">
+  <svg class="just-os-offline-page__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    <path d="M9 2v4"/>
+    <path d="M15 2v4"/>
+    <path d="M7 6h10v5a5 5 0 0 1-5 5 5 5 0 0 1-5-5V6z"/>
+    <path d="M12 16v6"/>
+    <line x1="3" y1="3" x2="21" y2="21"/>
+  </svg>
+  <p class="just-os-offline-page__title">JUST-OS chatbot is offline</p>
+  <p class="just-os-offline-page__body">{{ $offlineMsg }}</p>
+</div>
+{{ end }}

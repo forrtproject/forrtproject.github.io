@@ -8,7 +8,7 @@
         "Bayesian inference",
         "Bayesian parameter estimation",
         "Posterior distribution",
-        "Prior distribution **Alternative definition:** For a more statistically-informed definition, given a parametric model specified by a probability (densidity) function f(x|theta), a likelihood *for* a statistical model is defined by the same formula as the density except that the roles of the data *x* and the parameter *theta* are interchanged, and thus the likelihood can be considered a function of *theta* for fixed data *x*. Here, then, the likelihood function would describe a curve or hypersurface whose peak, if it exists, represents the combination of model parameter values that maximize the probability of drawing the sample obtained."
+        "Prior distribution"
     ],
     "references": [
         "Dienes, Z. (2008). Understanding psychology as a science: An introduction to scientific and statistical inference. Macmillan International Higher Education.",

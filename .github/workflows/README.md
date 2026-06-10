@@ -10,7 +10,7 @@ This document describes the GitHub Actions workflows used in the FORRT website r
 │   (daily)       │     │  (production)   │     │   (forrt.org)   │
 └─────────────────┘     └─────────────────┘     └─────────────────┘
                               ▲
-                              │ (master push)
+                              │ (main push)
                               │
 ┌─────────────────┐     ┌─────────────────┐     ┌─────────────────┐
 │   Pull Request  │────▶│staging-aggregate│────▶│  staging.forrt  │
@@ -25,7 +25,7 @@ This document describes the GitHub Actions workflows used in the FORRT website r
 
 | Trigger | Target | Schedule |
 |---------|--------|----------|
-| Push to `master` | forrt.org | On push |
+| Push to `main` | forrt.org | On push |
 | Manual dispatch | forrt.org | Manual |
 | Data update event | forrt.org | Triggered by data-processing |
 
@@ -36,7 +36,7 @@ Builds the Hugo site and deploys to GitHub Pages (`gh-pages` branch).
 
 | Trigger | Target | Schedule |
 |---------|--------|----------|
-| PR to `master` | staging.forrt.org | On PR events |
+| PR to `main` | staging.forrt.org | On PR events |
 | Monthly schedule | staging.forrt.org | 1st of month |
 | Manual dispatch | staging.forrt.org | Manual |
 
@@ -110,7 +110,7 @@ Cleans up:
 | Merged branches | Delete all |
 | Stale (1+ month, no PR) | Delete |
 
-Protected branches (never deleted): `master`, `gh-pages`
+Protected branches (never deleted): `main`, `gh-pages`
 
 > Note: `staging-aggregate-*` branches are auto-generated and cleaned up separately (keeping 2 most recent).
 

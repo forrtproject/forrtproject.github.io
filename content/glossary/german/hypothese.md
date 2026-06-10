@@ -30,7 +30,8 @@
         "Ali H. Al-Hoorie",
         "Mahmoud Elsherif",
         "Helena Hartmann",
-        "Charlotte R. Pennington**;** Graham Reid",
+        "Charlotte R. Pennington",
+        "Graham Reid",
         "Olly Robertson"
     ],
     "alt_related_terms": [

@@ -8,7 +8,7 @@
         "External Validity",
         "Opportunistic sampling",
         "Sampling bias",
-        "WEIRD **Alternative definition:** Applying modified materials and/or analysis pipelines to new data or samples to answer the same hypothesis (different materials, different data) to test how generalizable the effect under study is (The Turing Way Community & Scriberia, 2021). **Related terms to alternative definition:** (if applicable): Conceptual Replication"
+        "WEIRD"
     ],
     "references": [
         "Esterling, K., Brady, D., & Schwitzgebel, E. (2021). The Necessity of Construct and External Validity for Generalized Causal Claims. Retrieved from https://doi.org/10.31219/osf.io/2s8w5.",
