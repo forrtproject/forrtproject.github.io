@@ -133,7 +133,7 @@ layout: single
     <div class="sc-card-overlay"></div>
     <div class="sc-card-content">
         <h4 class="sc-card-name">Dr. Lukas Röseler</h4>
-        <p class="sc-card-role">Infrastructure</p>
+        <p class="sc-card-role">Infrastructure-Liaison</p>
     </div>
 </div><div class="sc-title-card slate">
     <span class="sc-title-label">Team</span>
@@ -257,6 +257,13 @@ layout: single
         <h4 class="sc-card-name">Stephanie Zellers</h4>
         <p class="sc-card-role">FORRT Steward</p>
     </div>
+</div><div class="sc-card" onclick="openModal('roksanasobolak')">
+    <img src="/authors/roksanasobolak/avatar.webp" alt="Roksana Sobolak" class="sc-card-img" />
+    <div class="sc-card-overlay"></div>
+    <div class="sc-card-content">
+        <h4 class="sc-card-name">Roksana Sobolak</h4>
+        <p class="sc-card-role">FORRT Steward</p>
+    </div>
 </div><div class="sc-card" onclick="openModal('rivaquiroga')">
     <img src="/authors/rivaquiroga/avatar.webp" alt="Riva Quiroga" class="sc-card-img" />
     <div class="sc-card-overlay"></div>
@@ -269,13 +276,6 @@ layout: single
     <div class="sc-card-overlay"></div>
     <div class="sc-card-content">
         <h4 class="sc-card-name">Meera Chandra</h4>
-        <p class="sc-card-role">FORRT Steward</p>
-    </div>
-</div><div class="sc-card" onclick="openModal('cassgheoghe')">
-    <img src="/authors/cassgheoghe/avatar.webp" alt="Cass Gheoghe" class="sc-card-img" />
-    <div class="sc-card-overlay"></div>
-    <div class="sc-card-content">
-        <h4 class="sc-card-name">Cass Gheoghe</h4>
         <p class="sc-card-role">FORRT Steward</p>
     </div>
 </div>
@@ -773,7 +773,7 @@ In FORRT, she has been involved in co-leading Team Citational Politics and is ve
                         <img src="/authors/fotismystakopoulosphdstudent/avatar.webp" alt="Fotis Mystakopoulos, PhD Student" />
                     </div>
                     <div class="sc-social-links">
-                        <a href="https://fair-impact.eu/eosc-fair-champions/fotis-mystakopoulos" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-slate-800 transition-colors"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" x2="22" y1="12" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></a><a href="mailto:fmystakopoulos@uniwa.gr" class="text-slate-400 hover:text-slate-800 transition-colors"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg></a>
+                        <a href="mailto:fmystakopoulos@uniwa.gr" class="text-slate-400 hover:text-slate-800 transition-colors"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg></a>
                     </div>
                 </div>
                 <div class="sc-modal-main">
@@ -805,7 +805,7 @@ Currently, alongside his professional duties, he is pursuing a PhD at the Univer
                         <img src="/authors/aliciatamaraveersmabarredo/avatar.webp" alt="Alicia Tamara Veersma Barredo" />
                     </div>
                     <div class="sc-social-links">
-                        <!--<a href="nan" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-slate-800 transition-colors"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" x2="22" y1="12" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></a><a href="mailto:nan" class="text-slate-400 hover:text-slate-800 transition-colors"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg></a>-->
+                        <a href="mailto:nan" class="text-slate-400 hover:text-slate-800 transition-colors"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg></a>
                     </div>
                 </div>
                 <div class="sc-modal-main">
@@ -970,6 +970,33 @@ Outside of research, you’ll usually find me baking something cozy, tending to 
             </div>
         </div>
     </div>
+</div><div id="modal-roksanasobolak" class="sc-modal-backdrop">
+    <div class="sc-modal-content">
+        <div class="sc-modal-header">
+            <button onclick="closeModal('roksanasobolak')" class="sc-close-btn">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 18 12"/></svg>
+            </button>
+        </div>
+        <div class="sc-modal-body">
+            <div class="sc-modal-layout">
+                <div class="sc-modal-sidebar">
+                    <div class="sc-modal-img">
+                        <img src="/authors/roksanasobolak/avatar.webp" alt="Roksana Sobolak" />
+                    </div>
+                    <div class="sc-social-links">
+                        <a href="mailto:nan" class="text-slate-400 hover:text-slate-800 transition-colors"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg></a>
+                    </div>
+                </div>
+                <div class="sc-modal-main">
+                    <h3 class="sc-modal-name">Roksana Sobolak</h3>
+                    <p class="sc-modal-role">FORRT Stewards</p>
+                    <div class="sc-modal-bio">I am a PhD student at King’s College London researching ADHD and women’s health, with a particular focus on the menopausal transition. I have a strong interest in open and transparent research practices, and I am passionate about improving accessibility and equity throughout the research process. Before beginning my PhD, I worked as a Research Fellow in Open Science, where I focused on identifying accessible feedback opportunities across the research cycle.
+
+I have been actively involved in several FORRT initiatives, including contributions to the Replication Database and Team Curriculum through creating lecture materials, both of which deepened my commitment to collaborative, community-led scholarship. I am excited to join the FORRT Steering Board as a Steward and look forward to contributing to FORRT’s mission to advance open, responsible, and inclusive research practices across disciplines.</div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div><div id="modal-rivaquiroga" class="sc-modal-backdrop">
     <div class="sc-modal-content">
         <div class="sc-modal-header">
@@ -1014,31 +1041,6 @@ Outside of research, you’ll usually find me baking something cozy, tending to 
                 </div>
                 <div class="sc-modal-main">
                     <h3 class="sc-modal-name">Meera Chandra</h3>
-                    <p class="sc-modal-role">FORRT Stewards</p>
-                    <div class="sc-modal-bio">Bio coming soon.</div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div><div id="modal-cassgheoghe" class="sc-modal-backdrop">
-    <div class="sc-modal-content">
-        <div class="sc-modal-header">
-            <button onclick="closeModal('cassgheoghe')" class="sc-close-btn">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 18 12"/></svg>
-            </button>
-        </div>
-        <div class="sc-modal-body">
-            <div class="sc-modal-layout">
-                <div class="sc-modal-sidebar">
-                    <div class="sc-modal-img">
-                        <img src="/authors/cassgheoghe/avatar.webp" alt="Cass Gheoghe" />
-                    </div>
-                    <div class="sc-social-links">
-                    <!--<a href="nan" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-slate-800 transition-colors"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" x2="22" y1="12" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></a> -->
-                    </div>
-                </div>
-                <div class="sc-modal-main">
-                    <h3 class="sc-modal-name">Cass Gheoghe</h3>
                     <p class="sc-modal-role">FORRT Stewards</p>
                     <div class="sc-modal-bio">Bio coming soon.</div>
                 </div>

@@ -1,0 +1,8 @@
+{{/* Custom JavaScript for FORRT site */}}
+
+{{/* Clusters page: load after DOM; defer runs before DOMContentLoaded so onReady still fires */}}
+{{ $isClustersPage := and .File (strings.HasPrefix .File.Path "clusters/") }}
+{{ if $isClustersPage }}
+<script src="{{ "js/clusters-page.js" | relURL }}" defer></script>
+<script src="{{ "js/featured-resources.js" | relURL }}" defer></script>
+{{ end }}

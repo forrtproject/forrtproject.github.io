@@ -3,17 +3,21 @@ name: deploy
 # =======================
 # FORRT Website Deployment
 # =======================
-# Purpose: Build and deploy the FORRT Hugo website
-# Triggers: Push to master, PRs, manual dispatch, or data updates
-# Target: Production deployment
+# Purpose: Build and deploy the FORRT Hugo website to production
+# Triggers: Push to main, manual dispatch, or data updates
+# Target: Production (forrt.org)
+# Note: Staging deployments are handled by staging-aggregate.yaml
 
 on:
   push:
     branches:
-      - master
+      - main
   workflow_dispatch:
   repository_dispatch:
     types: [data-update]
+
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: "true"
 
 # Note: PR staging deployments are handled by staging-aggregate.yaml
 # This workflow focuses on production deployments
@@ -26,16 +30,15 @@ jobs:
       contents: read
       actions: read  # Needed for artifact access
     env:
-      HUGO_VERSION: "0.123.3"
+      HUGO_VERSION: "0.158.0"
       HUGO_EXTENDED: true
     steps:
       # =======================
       # Repository Setup
       # =======================
       - name: Checkout repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
         with:
-          ref: ${{ github.event.inputs.pr_number && format('refs/pull/{0}/head', github.event.inputs.pr_number) || github.ref }}
           fetch-depth: 0
 
       # =======================
@@ -79,7 +82,7 @@ jobs:
           # Determine branch ref to dispatch (must be a branch or tag)
           REF="${GITHUB_REF#refs/heads/}"
           if [ -z "$REF" ]; then
-            REF="master"
+            REF="main"
           fi
 
           echo "🚀 Dispatching data-processing workflow for ref: $REF because artifact was missing"
@@ -170,7 +173,7 @@ jobs:
       # Upload built website as artifact for deployment
       #========================================
       - name: Upload site artifact
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: forrt-website-${{ github.run_number }}
           path: public/
@@ -192,7 +195,7 @@ jobs:
       # Download website artifact for production deployment
       #========================================
       - name: Download Artifact - Website
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v7
         with:
           name: forrt-website-${{ github.run_number }}
           path: ${{ github.repository }}/forrt-website

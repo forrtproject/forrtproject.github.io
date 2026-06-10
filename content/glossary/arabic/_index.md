@@ -18,9 +18,7 @@ type: "glossary"
 <div dir="rtl" style="text-align: right;">
 
 
-<div class="btn-group flex-wrap text-center"><a href="/glossary/english" class="btn btn-primary py-2 m-1 btn-lg active" style="line-height:1;border-radius:6px">English</a>
-<a href="/glossary/german" class="btn btn-primary py-2 m-1 btn-lg" style="line-height:1;border-radius:6px">Deutsch (German)</a>
-<a href="/glossary/arabic" class="btn btn-primary py-2 m-1 btn-lg" style="line-height:1;border-radius:6px"> عربي (Arabic)</a></div>
+{{< glossary_language_switcher current="arabic" >}}
 
 ### لمحة عامّة
  
@@ -77,5 +75,9 @@ type: "glossary"
 🚨 [المرحلة الثانية من مشروع قاموس FORRT مفتوحة الآن](https://docs.google.com/document/d/1BKzztg7srUeC_2Yn0b7cMbxp_vYMDlOnEYpxg_S2hWs/edit?tab=t.0#heading=h.2l8ssl89e1ey) 🚨\!
 
 بعد النّجاح الذي حقّقته المرحلة الأولى، ندعوكم للمساهمة في تحسين هذا المرجع. نحن نسعى للحصول على مساهمات متنوّعة تشمل تحسين التّعريفات الحاليّة، وتوسيع نطاق المصطلحات، بالإضافة إلى ترجمة المصطلحات لتعزيز سهولة الوصول.
+
+---
+
+يمكن الاطلاع على قائمة المراجع الكاملة للقاموس [هنا](/glossary/references).
 
 </div>

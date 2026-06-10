@@ -13,11 +13,13 @@ header:
   caption: ""
   image: ""
 type: "glossary"
+aliases:
+  - /glossary/
 ---
 
-<div class="btn-group flex-wrap text-center"><a href="/glossary/english" class="btn btn-primary py-2 m-1 btn-lg active" style="line-height:1;border-radius:6px">English</a>
-<a href="/glossary/german" class="btn btn-primary py-2 m-1 btn-lg" style="line-height:1;border-radius:6px">Deutsch (German)</a>
-<a href="/glossary/arabic" class="btn btn-primary py-2 m-1 btn-lg" style="line-height:1;border-radius:6px"> عربي (Arabic)</a></div>
+{{< glossary_language_switcher current="english" >}}
+
+Also consider the [Re-SearchTerms app](/re-searchterms/) to explore alternative definitions.
 
 ### Introduction
 
@@ -76,7 +78,7 @@ Link to the FORRT preprint explaining Phase 1
 
 ### Glossary Versioning
 
-We plan to continuously improve, extend, and update our items with community involvement. Versioning will allow the study of the evolution of the terminology. The version-controlled source code of the official releases of the complete Glossary is archived on FORRT’s [GitHub](https://github.com/forrtproject/forrtproject.github.io/tree/master/content/glossary), [OSF](https://osf.io/vdb8z/), and [Zenodo](https://zenodo.org/record/5643745). The present glossary is the Beta 0.1 version and can be accessed from within FORRT website (as will its updates) below:
+We plan to continuously improve, extend, and update our items with community involvement. Versioning will allow the study of the evolution of the terminology. The version-controlled source code of the official releases of the complete Glossary is archived on FORRT’s [GitHub](https://github.com/forrtproject/forrtproject.github.io/tree/main/content/glossary), [OSF](https://osf.io/vdb8z/), and [Zenodo](https://zenodo.org/record/5643745). The present glossary is the Beta 0.1 version and can be accessed from within FORRT website (as will its updates) below:
 
 1. Current Version: [FORRT's Glossary | Phase 1 | Beta version 0.1](/glossary/vbeta)
 
@@ -127,7 +129,7 @@ There are two outputs for this project. First, the entire glossary will appear o
 
 5. Contributions and Authorship
 
-In this project we will use the CREDIT taxonomy ([https://casrai.org/credit/](https://casrai.org/credit/)) in this prepared [contributors spreadsheet](https://docs.google.com/spreadsheets/d/1zvgAHWfTq6cbj3wMAr46zFU0w5JdV6796sM8FsO13y0). Please add your details (including ORCID) and contributions as you make them. This will facilitate the development of this project, allow us to easily communicate with all contributors, and ensure that all contributions are recognized. 
+In this project we will use the CREDIT taxonomy ([https://credit.niso.org/](https://credit.niso.org/)) in this prepared [contributors spreadsheet](https://docs.google.com/spreadsheets/d/1zvgAHWfTq6cbj3wMAr46zFU0w5JdV6796sM8FsO13y0). Please add your details (including ORCID) and contributions as you make them. This will facilitate the development of this project, allow us to easily communicate with all contributors, and ensure that all contributions are recognized. 
 
 Every few days, one of the team will review this document to finalize definitions that have had sufficient input. 
 
@@ -159,11 +161,11 @@ We invite several specific contributions: _original draft preparation_, and _rev
 
 **Term: CRediT**
 
-**Definition:**  The Contributor Roles Taxonomy (CRediT; https://casrai.org/credit/) is a high-level taxonomy, including 14 roles, that can be used to indicate the roles typically adopted by contributors to scientific scholarly output. The roles describe each contributor’s specific contribution to the scholarly output. They can be assigned multiple times to different authors and one author can also be assigned multiple roles. CRediT includes the following roles: Conceptualization, Data curation, Formal Analysis, Funding acquisition, Investigation, Methodology, Project administration, Resources, Software, Supervision, Validation, Visualization, Writing – original draft, Writing – review & editing. A description of the different roles can be found in the work of Brand et al., (2015).  
+**Definition:**  The Contributor Roles Taxonomy (CRediT; https://credit.niso.org/) is a high-level taxonomy, including 14 roles, that can be used to indicate the roles typically adopted by contributors to scientific scholarly output. The roles describe each contributor’s specific contribution to the scholarly output. They can be assigned multiple times to different authors and one author can also be assigned multiple roles. CRediT includes the following roles: Conceptualization, Data curation, Formal Analysis, Funding acquisition, Investigation, Methodology, Project administration, Resources, Software, Supervision, Validation, Visualization, Writing – original draft, Writing – review & editing. A description of the different roles can be found in the work of Brand et al., (2015).  
 **Related terms:** Authorship  
 **Alternative definition:** (if applicable)  
 **Related terms to alternative definition:** (if applicable)  
-**Reference(s):** Brand et al. (2015); Holcombe (2019); https://casrai.org/credit/  
+**Reference(s):** Brand et al. (2015); Holcombe (2019); https://credit.niso.org/  
 **Drafted by:** Sam Parsons  
 **Reviewed (or Edited) by:** Myriam A. Baum; Matt Jaquiery; Connor Keating; Yuki Yamada
 
@@ -193,3 +195,7 @@ After the manuscript's submission and the display of defined terms in FORRT's Gl
 Would you like to give feedback, help us review terms, or add terms? You can do so by watching this space, joining [FORRT's Slack channel](https://join.slack.com/t/forrt/shared_invite/zt-alobr3z7-NOR0mTBfD1vKXn9qlOKqaQ), contacting [FORRT](info@forrt.org), or contacting project leads [Sam Parsons](sam.parsons@psy.ox.ac.uk) and [Flávio Azevedo](mailto:flavio.azevedo@uni-jena.de).
 
 {{< /expand >}}
+
+---
+
+The complete reference list for the glossary can be viewed [here](/glossary/references).

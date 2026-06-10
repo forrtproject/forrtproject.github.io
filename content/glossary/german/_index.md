@@ -15,9 +15,7 @@ header:
 type: "glossary"
 ---
 
-<div class="btn-group flex-wrap text-center"><a href="/glossary/english" class="btn btn-primary py-2 m-1 btn-lg active" style="line-height:1;border-radius:6px">English</a>
-<a href="/glossary/german" class="btn btn-primary py-2 m-1 btn-lg" style="line-height:1;border-radius:6px">Deutsch (German)</a>
-<a href="/glossary/arabic" class="btn btn-primary py-2 m-1 btn-lg" style="line-height:1;border-radius:6px"> عربي (Arabic)</a></div>
+{{< glossary_language_switcher current="german" >}}
 
 ### Einführung
 
@@ -46,4 +44,8 @@ Wir haben Phase 1 erfolgreich abgeschlossen 🎉. Das bedeutet, dass wir von ein
 [ <center> <p style="color:#38673F"> 🚨 <strong> Phase 2 des FORRT-Glossar-Projekts ist jetzt offen </strong>! 🚨 </p>  </center>](https://docs.google.com/document/d/1BKzztg7srUeC_2Yn0b7cMbxp_vYMDlOnEYpxg_S2hWs/)
 
 Nach dem Erfolg von Phase 1 laden wir Sie ein, uns weiterhin dabei zu helfen, diese Ressource zu verbessern. Wir sind an einer Vielzahl von Beiträgen interessiert, um bestehende Definitionen zu verbessern, den Umfang der Begriffe zu erweitern sowie die Definitionen in viele Sprachen zu übersetzen, um die Zugänglichkeit zu verbessern.
+
+---
+
+Die vollständige Referenzliste für das Glossar kann [hier](/glossary/references) eingesehen werden.
 

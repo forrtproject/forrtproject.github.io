@@ -1,5 +1,8 @@
 {{ $url := "https://docs.google.com/spreadsheets/d/e/2PACX-1vTlMp-kKqssGTD4IwsIdvV0Tk28djKp0YJCocc9CKgYV3GgElP4HDOTduMNEIpk-ZQXRsV-03m95RpO/pub?output=csv" }}
 {{ $sep := "," }}
-{{ $csv := getCSV $sep $url }}
+{{ $csv := slice }}
+{{ with resources.GetRemote $url }}
+	{{ $csv = transform.Unmarshal (dict "delimiter" $sep) .Content }}
+{{ end }}
 
 {{ len $csv | markdownify | emojify }}

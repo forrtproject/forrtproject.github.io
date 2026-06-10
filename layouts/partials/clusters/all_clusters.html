@@ -1,0 +1,31 @@
+{{/* all_clusters.html - Partial to display all clusters from data */}}
+{{ $data := site.Data.clusters_v4 }}
+{{ if not $data }}
+  <div class="alert alert-warning">
+    <strong>Data Error:</strong> clusters_v4.json data not found. Run <code>python3 scripts/parse_clusters_to_sheet.py --export-json</code>.
+  </div>
+  {{ return }}
+{{ end }}
+
+{{ $palette := partial "clusters/colors.html" }}
+{{ $colors := $palette.colors }}
+{{ $arrowColors := $palette.arrowColors }}
+
+<div class="clusters-layout">
+
+  {{ partial "clusters/clusters_controls.html" . }}
+
+  <div class="row">
+    {{ partial "clusters/sidebar_nav.html" (dict "data" $data "arrowColors" $arrowColors "link_mode" "anchor") }}
+
+    <main class="col-12 col-lg-8 col-xl-9 clusters-content">
+      {{ range $ci, $cluster := $data.clusters }}
+        {{ partial "clusters/cluster_section.html" (dict "cluster" $cluster "ci" $ci "colors" $colors) }}
+      {{ end }}
+    </main>
+  </div>
+</div>
+
+<button type="button" class="clusters-back-to-top" id="clusters-back-to-top" aria-label="Back to top">
+  <i class="fas fa-arrow-up" aria-hidden="true"></i>
+</button>

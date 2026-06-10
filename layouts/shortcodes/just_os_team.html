@@ -1,0 +1,27 @@
+{{ $imageBase := "/img/team/just_os_chatbot_team" }}
+
+<h2 style="text-align: center; margin: 10px 0 24px;">The Team</h2>
+
+<div style="display: flex; flex-wrap: wrap; gap: 24px; justify-content: center; margin-top: 20px;">
+  {{ $members := slice
+    (dict "name" "Rink Hoekstra" "image" "rink-hoekstra.webp" "alt" "Rink Hoekstra" "description" "Associate Professor at Pedagogical and Educational Science department, University of Groningen; board member Open Science Community Groningen; co-project manager.")
+    (dict "name" "Nina Schwarzbach" "image" "nina-schwarzbach.webp" "alt" "Nina Schwarzbach" "description" "PhD candidate in psychotherapy and research methodology at University of Groningen; co-project manager.")
+    (dict "name" "Flavio Azevedo" "image" "flavio-azevedo.webp" "alt" "Flavio Azevedo" "description" "Assistant Professor of Interdisciplinary Social Science at Utrecht University (formerly Groningen); FORRT liaison.")
+    (dict "name" "Michiel van der Ree" "image" "michiel-van-der-ree.webp" "alt" "Michiel van der Ree" "description" "Consultant applied AI at Center for Information Technology, University of Groningen; programming lead.")
+    (dict "name" "Vera Heininga" "image" "vera-heininga.webp" "alt" "Vera Heininga" "description" "Assistant Professor studying psychology, psychiatry, sociology, and pedagogy; Open Science researcher.")
+    (dict "name" "Madelief van der Velden" "image" "madelief-van-der-velden.webp" "alt" "Madelief van der Velden" "description" "Research Master student with Pedagogy and Education background; student assistant.")
+    (dict "name" "Robin Hoekstra" "image" "robin-hoekstra.webp" "alt" "Robin Hoekstra" "description" "Bachelor student with Psychology and Law background; student assistant.")
+    (dict "name" "Lukas Wallrich" "image" "lukas-wallrich.webp" "alt" "Lukas Wallrich" "description" "Lecturer in Organisational Psychology at Birkbeck, University of London; FORRT Co-Director.")
+    (dict "name" "JUST-OS" "image" "just-os-mascot.webp" "alt" "JUST-OS Mascot" "description" "Jellyfish and chatbot for Open Science.")
+  }}
+
+  {{ range $members }}
+  <div style="width: 250px; padding: 2px; border-radius: 18px; background: linear-gradient(135deg, #0f766e 0%, #0ea5e9 50%, #f59e0b 100%); box-shadow: 0 10px 24px rgba(15, 118, 110, 0.15);">
+    <div style="height: 100%; background: #fff; border-radius: 16px; padding: 16px; text-align: center;">
+      <img src="{{ printf "%s/%s" $imageBase .image | relURL }}" alt="{{ .alt }}" style="width: 180px; height: 180px; border-radius: 50%; object-fit: cover;">
+      <h4 style="margin: 12px 0 6px;">{{ .name }}</h4>
+      <p style="font-size: 0.9rem; color: #555; margin: 0;">{{ .description }}</p>
+    </div>
+  </div>
+  {{ end }}
+</div>

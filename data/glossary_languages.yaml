@@ -1,0 +1,17 @@
+# Single source of truth for the glossary language switcher.
+# Order in this file determines display order of the buttons.
+# When adding a language: append an entry, add an _index.md in
+# content/glossary/<slug>/, and add the language code to language_map
+# in content/glossary/_create_glossaries.py.
+- slug: english
+  label: English
+- slug: german
+  label: Deutsch (German)
+- slug: arabic
+  # Leading space matches the existing hardcoded markup that gave
+  # the RTL Arabic glyphs a bit of breathing room from the button edge.
+  label: " عربي (Arabic)"
+- slug: turkish
+  label: Türkçe (Turkish)
+- slug: chinese
+  label: 中文 (Chinese)

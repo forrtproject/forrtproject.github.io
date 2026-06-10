@@ -210,6 +210,12 @@
     parent = "nexus"
 
   [[main]]
+    name = "JUST-OS Chatbot"
+    url = "/just_os_chatbot"
+    weight = 41.5
+    parent = "nexus"
+
+  [[main]]
     name = "Lesson Plans"
     url = "/lesson-plans/"
     weight = 42
@@ -225,6 +231,12 @@
     name = "Neurodiversity Team"
     url = "/neurodiversity"
     weight = 44
+    parent = "nexus"
+
+  [[main]]
+    name = "Nowhere Lab"
+    url = "/nowherelab/"
+    weight = 44.5
     parent = "nexus"
 
   [[main]]
@@ -277,33 +289,39 @@
   parent = "replications"
 
 [[main]]
-  name = "FReD Annotator"
-  url = "https://forrt.org/apps/fred_annotator.html"
+  name = "FLoRA Annotator"
+  url = "https://forrt.org/annotator"
   weight = 62
   parent = "replications"
 
 [[main]]
-  name = "FReD Explorer"
-  url = "https://forrt.org/apps/fred_explorer.html"
+  name = "Zotero Replication Checker"
+  url = "https://forrt.org/flora-zotero/"
   weight = 63
   parent = "replications"
 
 [[main]]
-  name = "FReD R-Package"
-  url = "https://forrt.org/FReD/index.html"
+  name = "FReD Explorer"
+  url = "https://forrt.org/explorer"
   weight = 64
   parent = "replications"
 
 [[main]]
-  name = "Handbook for Reproductions and Replications"
-  url = "https://forrt.org/replication_handbook/"
+  name = "FReD R-Package"
+  url = "https://forrt.org/fred/index.html"
   weight = 65
+  parent = "replications"
+
+[[main]]
+  name = "Handbook for Reproductions and Replications"
+  url = "https://forrt.org/replication-handbook/"
+  weight = 66
   parent = "replications"
 
 [[main]]
   name = "Large-Scale Replication Projects"
   url = "/replication-hub/large-scale-replication-projects"
-  weight = 66
+  weight = 67
   parent = "replications"
 
 #[[main]]

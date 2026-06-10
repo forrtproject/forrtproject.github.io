@@ -1,19 +1,71 @@
 {{- define "main" -}}
-<div style="max-width: 100%; padding: 15px; margin: 15px; font-size: 1.5rem;">
+<style>
+  .universal-wrapper img {
+    display: block;
+    margin: 0 auto;
+  }
+</style>
+<div style="max-width: 100%; padding: 15px; margin: 15px;">
 
 {{ partial "page_header" . }}
 
 <article class="article">
 
 
-  <div class="article-container">
+  <div class="universal-wrapper">
 
         {{ .Content }}
-    
+
   </div>
 </article>
 
-{{ partial "network-graph.html" . }}
+<div class="universal-wrapper" style="margin-top: 60px;">
+  <iframe id="network-graph" src="/partials/network-graph.html" width="100%" style="border: none; overflow: hidden;" scrolling="no"></iframe>
+</div>
+
+<script>
+  (function() {
+    var iframe = document.getElementById('network-graph');
+    if (!iframe) {
+      return;
+    }
+
+    function resizeIframe() {
+      if (!iframe.contentWindow) {
+        return;
+      }
+      var doc = iframe.contentDocument || iframe.contentWindow.document;
+      if (!doc || !doc.documentElement) {
+        return;
+      }
+      var newHeight = doc.documentElement.scrollHeight;
+      if (!newHeight) {
+        return;
+      }
+      var targetHeight = newHeight + 'px';
+      if (iframe.style.height !== targetHeight) {
+        iframe.style.height = targetHeight;
+      }
+    }
+
+    iframe.addEventListener('load', function() {
+      resizeIframe();
+
+      if (!iframe._autoResizeInterval) {
+        iframe._autoResizeInterval = setInterval(function() {
+          if (!document.body.contains(iframe)) {
+            clearInterval(iframe._autoResizeInterval);
+            iframe._autoResizeInterval = null;
+            return;
+          }
+          resizeIframe();
+        }, 500);
+      }
+    });
+
+    window.addEventListener('resize', resizeIframe);
+  })();
+</script>
 
 </div>
 

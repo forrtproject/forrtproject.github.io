@@ -4,13 +4,13 @@ name: Staging Aggregate Deployment
 # Staging Deployment Workflow
 # =======================
 # Purpose: Aggregates and deploys staging changes to production
-# Triggers: PRs to master, monthly schedule, or manual dispatch
+# Triggers: PRs to main, monthly schedule, or manual dispatch
 # Features: Multi-PR aggregation, staging deployment, and force deploy option
 
 on:
   pull_request:
     branches:
-      - master
+      - main
     types: [opened, synchronize, reopened, ready_for_review]
   schedule:
     - cron: '0 1 1 * *'  # 1 AM UTC on the 1st of each month
@@ -26,6 +26,14 @@ on:
         required: false
         type: string
         default: ''
+      create_summary:
+        description: 'Create deployment summary (and monthly report if 1st of month)'
+        required: false
+        type: boolean
+        default: false
+
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: "true"
 
 # Workflow-level concurrency to queue staging builds (wait instead of cancel)
 concurrency:
@@ -50,7 +58,7 @@ jobs:
       has-prs: ${{ steps.aggregate.outputs.has_prs }}
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
         with:
           fetch-depth: 0
           token: ${{ secrets.STAGING_GITHUB_TOKEN }}
@@ -77,7 +85,7 @@ jobs:
             # Validate PR exists and is open
             if ! gh pr view "$SINGLE_PR" --json state --jq '.state' | grep -q "OPEN"; then
               echo "❌ PR #$SINGLE_PR is not open or doesn't exist"
-              echo "branch=master" >> $GITHUB_OUTPUT
+              echo "branch=main" >> $GITHUB_OUTPUT
               echo "included_prs=" >> $GITHUB_OUTPUT
               echo "attempted_prs=$SINGLE_PR" >> $GITHUB_OUTPUT
               echo "total_prs=0" >> $GITHUB_OUTPUT
@@ -89,12 +97,12 @@ jobs:
             echo "has_prs=true" >> $GITHUB_OUTPUT
             echo "total_prs=1" >> $GITHUB_OUTPUT
           else
-            # Get all open, non-draft PRs targeting master (regardless of CI status)
-            PRS=$(gh pr list --base master --state open --json number,title,headRefName,isDraft --jq '.[] | select(.isDraft == false) | .number')
+            # Get all open, non-draft PRs targeting main (regardless of CI status)
+            PRS=$(gh pr list --base main --state open --json number,title,headRefName,isDraft --jq '.[] | select(.isDraft == false) | .number')
             
             if [ -z "$PRS" ]; then
               echo "No open non-draft PRs found"
-              echo "branch=master" >> $GITHUB_OUTPUT
+              echo "branch=main" >> $GITHUB_OUTPUT
               echo "included_prs=" >> $GITHUB_OUTPUT
               echo "attempted_prs=" >> $GITHUB_OUTPUT
               echo "total_prs=0" >> $GITHUB_OUTPUT
@@ -107,9 +115,9 @@ jobs:
             echo "has_prs=true" >> $GITHUB_OUTPUT
           fi
           
-          # Create a new branch for aggregation starting from master
+          # Create a new branch for aggregation starting from main
           AGGREGATE_BRANCH="staging-aggregate-$(date +%Y%m%d-%H%M%S)"
-          git checkout master
+          git checkout main
           git checkout -b "$AGGREGATE_BRANCH"
           
           INCLUDED_PRS=""
@@ -168,7 +176,7 @@ jobs:
           # Push the aggregate branch
           git push origin "$AGGREGATE_BRANCH"
           
-          # Clean up old staging branches, keeping only the 5 most recent
+          # Clean up old staging branches, keeping only the 2 most recent
           echo "🧹 Cleaning up old staging branches..."
           # Get all staging-aggregate branches sorted by name (which includes timestamp YYYYMMDD-HHMMSS)
           # Lexicographic sorting works correctly because the timestamp format naturally sorts chronologically
@@ -176,7 +184,7 @@ jobs:
             awk '{print $2}' | \
             sed 's|refs/heads/||' | \
             sort -r | \
-            tail -n +6)
+            tail -n +3)
           
           if [ -n "$OLD_BRANCHES" ]; then
             echo "Found $(echo "$OLD_BRANCHES" | wc -l) old staging branches to delete"
@@ -186,7 +194,7 @@ jobs:
             done
             echo "✅ Cleanup completed"
           else
-            echo "No old staging branches to delete (keeping 5 most recent)"
+            echo "No old staging branches to delete (keeping 2 most recent)"
           fi
           
           echo "branch=$AGGREGATE_BRANCH" >> $GITHUB_OUTPUT
@@ -216,13 +224,13 @@ jobs:
       contents: read
       actions: read  # Needed for artifact access
     env:
-      HUGO_VERSION: "0.123.3"
+      HUGO_VERSION: "0.158.0"
       HUGO_EXTENDED: true
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
         with:
-          ref: ${{ needs.aggregate-prs.outputs.aggregated-branch || 'master' }}
+          ref: ${{ needs.aggregate-prs.outputs.aggregated-branch || 'main' }}
 
       - name: Configure Git
         run: |
@@ -270,7 +278,7 @@ jobs:
           # Determine branch ref to dispatch (must be a branch or tag)
           REF="${GITHUB_REF#refs/heads/}"
           if [ -z "$REF" ]; then
-            REF="master"
+            REF="main"
           fi
 
           echo "🚀 Dispatching data-processing workflow for ref: $REF because artifact was missing"
@@ -374,7 +382,7 @@ jobs:
           HUGO_ENV: staging
 
       - name: Upload site artifact
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: forrt-website-aggregate-${{ github.run_number }}
           path: public/
@@ -395,18 +403,19 @@ jobs:
     if: always() && (needs.build.result == 'success' || github.event_name == 'schedule')
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
         with:
           token: ${{ secrets.STAGING_GITHUB_TOKEN }}
 
       - name: Download Artifact - Website
         if: needs.build.result == 'success'
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v7
         with:
           name: forrt-website-aggregate-${{ github.run_number }}
           path: ${{ github.repository }}/forrt-website
 
       - name: Create deployment summary
+        if: github.event_name != 'workflow_dispatch' || github.event.inputs.create_summary == 'true'
         run: |
           echo "## 🚀 Staging Deployment Summary" > deployment-summary.md
           echo "" >> deployment-summary.md
@@ -532,14 +541,14 @@ jobs:
           GH_TOKEN: ${{ secrets.STAGING_GITHUB_TOKEN }}
 
       - name: Create monthly deployment report
-        if: github.event_name == 'schedule'
+        if: github.event_name == 'schedule' || (github.event_name == 'workflow_dispatch' && github.event.inputs.create_summary == 'true')
         run: |
           # Only create monthly report on scheduled runs (1st of month)
           CURRENT_DAY=$(date +%d)
           echo "🔍 Current day: $CURRENT_DAY, Event: ${{ github.event_name }}"
           
           if [ "$CURRENT_DAY" = "01" ]; then
-            MONTH=$(date +%B %Y)
+            MONTH=$(date +"%B %Y")
             echo "📊 Creating monthly deployment report for $MONTH"
             
             # Check if deployment summary file exists

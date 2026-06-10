@@ -30,9 +30,9 @@ Publications are managed in the **`/data/publications.yaml`** file. This file co
   year: "2025"
   status: "Published"  # Options: Published, Preprint, In Press, Work in Progress, etc.
   journal_name: "Name of Journal or Venue"
-  authors: "Author1, Author2, & Author3"
+  authors: "Author1, A., Author2, B. & Author3, C."
   abstract: "Full abstract text here. Can be multiple sentences describing the work."
-  citation: "Author1, et al. (2025). <strong>Title in bold.</strong> <em>Journal Name in italics</em>, volume(issue), pages. https://doi.org/..."
+  citation: "Author1, A., Author2, B. & Author3, C. (2025). <strong>Title in bold.</strong> <em>Journal Name in italics</em>, volume(issue), pages. https://doi.org/..."
   links:
     doi: "https://doi.org/10.xxxx/xxxxx"  # Optional
     pdf: "./filename.pdf"  # Optional - relative path to PDF in this folder
@@ -62,7 +62,7 @@ Publications can be classified into one or more of these research areas. While t
 - **year**: Publication year (in quotes)
 - **status**: Publication status for display
 - **journal_name**: Where the work was published/presented
-- **authors**: Author list (use "et al." for long lists if needed)
+- **authors**: Author list in `LastName, I.` format, joined with `, ` and ` & ` before the last author. For >9 authors, show the first 8, then `, ... & LastAuthor`
 - **abstract**: Brief description or abstract of the work
 - **citation**: Full formatted citation using HTML tags (`<strong>` for title, `<em>` for journal)
 - **links**: Object containing various link types (see options above)
@@ -101,9 +101,9 @@ If you want to host a PDF in this repository:
   year: "2025"
   status: "Published"
   journal_name: "Nature"
-  authors: "Smith, J., Johnson, A., & Williams, B."
+  authors: "Smith, J., Johnson, A. & Williams, B."
   abstract: "This study demonstrates how open science practices lead to more robust and reproducible research findings across multiple disciplines."
-  citation: "Smith, J., Johnson, A., and Williams, B. (2025). <strong>Open science practices improve research quality.</strong> <em>Nature</em>, 600(1), 123-145. https://doi.org/10.1038/example"
+  citation: "Smith, J., Johnson, A. & Williams, B. (2025). <strong>Open science practices improve research quality.</strong> <em>Nature</em>, 600(1), 123-145. https://doi.org/10.1038/example"
   links:
     doi: "https://doi.org/10.1038/example"
     postprint: "https://osf.io/preprints/metaarxiv/abc123"
@@ -114,6 +114,7 @@ If you want to host a PDF in this repository:
 
 ### Important Notes
 
+- **Author Format**: Use `LastName, I.` for each author (initials, not full first names). Use ` & ` (no comma before) to separate the last author. For >9 authors: show first 8, then `, ... & LastAuthor`. The `authors` and `citation` fields should use the same author string.
 - **YAML Syntax**: Be careful with indentation (use 2 spaces, not tabs)
 - **Quotes**: Use quotes around values that contain special characters or colons
 - **HTML in Citations**: Use `<strong>` for titles and `<em>` for journal names

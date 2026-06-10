@@ -1,6 +1,5 @@
-{{/* {{ partial "_shared/banner.html" . }} */}}
-<p id="loading">Loading search data...</p>
-<label for="searchBox">Enter full keywords below to find relevant resources for you or use the filters below:</label>
-<input disabled placeholder="Enter search text" type="text" name="searchBox" id="searchBox" class="w-100" />
-<div id="results"></div>
-<script src="{{"/js/search.js" | urlize | relURL }}"></script>
+<div class="project-search-box mb-3">
+  <label for="projectSearch">Search resources by keyword:</label>
+  <input type="search" id="projectSearch" class="project-search form-control" placeholder="Search resources..." autocapitalize="off" autocomplete="off" spellcheck="false">
+  <small class="search-count text-muted"></small>
+</div>

@@ -43,7 +43,10 @@ ignoreFiles = ["\\.ipynb$", ".ipynb_checkpoints$", "\\.Rmd$", "\\.Rmarkdown$", "
 
 # Workaround Hugo publishing taxonomy URLs as plurals - consistently use singular across Academic.
 [permalinks]
-  authors = "/author/:slug/"
+  # `authors` taxonomy permalink removed: author profiles are now plain section
+  # pages under /authors/<slug>/ (see layouts/authors/list.html). The taxonomy
+  # was disabled because it collided with the content/authors/ section, which
+  # suppressed every profile whose term slug matched its folder name.
   tags = "/tag/:slug/"
   categories = "/category/:slug/"
   publication_types = "/publication-type/:slug/"
@@ -81,7 +84,8 @@ ignoreFiles = ["\\.ipynb$", ".ipynb_checkpoints$", "\\.Rmd$", "\\.Rmarkdown$", "
   tag = "tags"
   category = "categories"
   publication_type = "publication_types"
-  author = "authors"
+  # `author = "authors"` taxonomy disabled: it collided with the content/authors/
+  # section. Author profiles render as section pages at /authors/<slug>/ instead.
   cluster = "FORRT_clusters"
 
 # Related content.
@@ -105,10 +109,6 @@ ignoreFiles = ["\\.ipynb$", ".ipynb_checkpoints$", "\\.Rmd$", "\\.Rmarkdown$", "
   [[related.indices]]
     name = "categories"
     weight = 70.0
-
-  [[related.indices]]
-    name = "authors"
-    weight = 20.0
 
 [build]
   no404check = true

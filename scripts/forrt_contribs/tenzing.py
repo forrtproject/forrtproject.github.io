@@ -213,6 +213,14 @@ if gsheet_client:
         if col in cache_data.columns:
             cache_data[col] = cache_data[col].astype(str).str.replace(r'[\r\n\t]+', '', regex=True).str.strip()
             cache_data[col] = cache_data[col].replace('nan', '')
+    # Standardize names in cache by ORCID: when the same ORCID appears with different
+    # name variants across projects (e.g. swapped first/surname), use the first
+    # occurrence as the canonical name. Only affects the cache, not tenzing.md.
+    name_cols = ['First name', 'Middle name', 'Surname']
+    orcid_mask = cache_data['ORCID iD'] != ''
+    canonical = cache_data.loc[orcid_mask].groupby('ORCID iD')[name_cols].first()
+    for col in name_cols:
+        cache_data.loc[orcid_mask, col] = cache_data.loc[orcid_mask, 'ORCID iD'].map(canonical[col]).values
     cache_data.to_csv(CACHE_FILE, index=False)
     print(f"💾 Cache saved to {CACHE_FILE} ({len(cache_data)} rows, {len(cache_columns_present)} columns)")
 
