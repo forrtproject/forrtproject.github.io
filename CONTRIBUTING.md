@@ -29,7 +29,7 @@ You can support FORRT by:
 
 ## Questions, Ideas & Suggestions
 
-Issues are the best place to raise a question, suggest an improvement, or propose a new resource. Conversations on Slack tend to get lost, whereas an issue stays visible and is easy for someone to pick up later.
+Issues are the best place to raise a question, suggest an improvement, or propose a resource for inclusion (unless you can find the more specific submission form).
 
 - Have a quick look through the existing [Issues](https://github.com/forrtproject/forrtproject.github.io/issues) in case the same idea is already being discussed.
 - Otherwise, [open a new Issue](https://github.com/forrtproject/forrtproject.github.io/issues/new) and go for it — a question, a rough idea, or a fully worked-out proposal are all welcome. Share whatever context is helpful.
