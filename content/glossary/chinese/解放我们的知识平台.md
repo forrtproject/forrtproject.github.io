@@ -8,7 +8,7 @@
         "Preregistration Pledge"
     ],
     "references": [
-        "Free Our Knowledge. (n.d.). About. Retrieved from https://freeourknowledge.org/about/"
+        "Free Our Knowledge. (n.d.). <i>About</i>. Retrieved from https://freeourknowledge.org/about/"
     ],
     "drafted_by": [
         "Jamie P. Cockcroft"

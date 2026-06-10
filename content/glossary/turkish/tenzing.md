@@ -10,7 +10,7 @@
         "CRediT"
     ],
     "references": [
-        "Holcombe, A. O., Kovacs, M., Aust, F., & Aczel, B. (2020). Documenting contributions to scholarly articles using CRediT and tenzing. Plos One, 15(12), e0244611."
+        "Holcombe, A. O., Kovacs, M., Aust, F., & Aczel, B. (2020). Documenting contributions to scholarly articles using CRediT and tenzing. <i>Plos One</i>, <i>15</i>(12), e0244611."
     ],
     "drafted_by": [
         "Marton Kovacs"

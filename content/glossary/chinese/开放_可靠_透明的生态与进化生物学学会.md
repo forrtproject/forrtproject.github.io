@@ -6,7 +6,9 @@
     "related_terms": [
         "Society for the Improvement of Psychological Science (SIPS)"
     ],
-    "references": [],
+    "references": [
+        "<i>SORTEE</i>. (n.d.). Society for Open, Reliable and Transparent Ecology and Evolutionary Biology. https://www.sortee.org/"
+    ],
     "drafted_by": [
         "Brice Beffara Bret; Dominique Roche"
     ],

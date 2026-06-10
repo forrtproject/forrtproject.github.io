@@ -9,7 +9,7 @@
         "Retraction"
     ],
     "references": [
-        "Anon. (2006). Correction or retraction? In Nature (Vol. 444, pp. 123–124). https://doi.org/10.1038/444123b"
+        "Anon. (2006). Correction or retraction? In <i>Nature</i> (Vol. 444, pp. 123–124). https://doi.org/10.1038/444123b"
     ],
     "drafted_by": [
         "Charlotte R. Pennington"

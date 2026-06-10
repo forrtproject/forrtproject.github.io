@@ -11,7 +11,7 @@
         "WEIRD"
     ],
     "references": [
-        "Webster, M. M., & Rutz, C. (2020). How STRANGE are your study animals? Nature, 582, 337–340. https://doi.org/10.1038/d41586-020-01751-5"
+        "Webster, M. M., & Rutz, C. (2020). How STRANGE are your study animals? <i>Nature</i>, <i>582</i>, 337–340. https://doi.org/10.1038/d41586-020-01751-5"
     ],
     "drafted_by": [
         "Mahmoud Elsherif"

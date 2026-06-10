@@ -270,6 +270,14 @@ jobs:
           node bibtex_to_apa.js -o '../content/glossary/apa_lookup.json'
 
       #========================================
+      # Regenerate the glossary reference list page from apa_lookup.json so the
+      # public "List of References" stays in sync with the dynamic glossary.
+      #========================================
+      - name: Build glossary reference list
+        continue-on-error: true  # Continue even if this step fails
+        run: python3 content/glossary/_build_references.py
+
+      #========================================
       # Process and generate glossary files
       #========================================
       - name: Run Glossary Generation script

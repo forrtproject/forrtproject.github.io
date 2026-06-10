@@ -15,12 +15,12 @@
         "Transparency"
     ],
     "references": [
-        "Haven, T. L., & Van Grootel, L. (2019). Preregistering qualitative research. Accountability in Research, 26(3), 229–244. https://doi.org/10.1080/08989621.2019.1580147",
-        "Lewandowsky, S., & Bishop, D. (2016). Research integrity: Don’t let transparency damage science. Nature News, 529(7587), 459. https://doi.org/10.1038/529459a",
-        "Mertens, G., & Krypotos, A. M. (2019). Preregistration of analyses of preexisting data. Psychologica Belgica, 59(1), 338.",
-        "Navarro, D. (2020). Paths in strange spaces: A comment on preregistration.",
-        "Nosek, B. A., Ebersole, C. R., DeHaven, A. C., & Mellor, D. T. (2018). The preregistration revolution. Proceedings of the National Academy of Sciences, 115(11), 2600–2606. https://doi.org/10.1073/pnas.1708274114",
-        "Simmons, J., Nelson, L., & Simonsohn, U. (2021). Pre‐registration: Why and how. Journal of Consumer Psychology, 31(1), 151–162. https://doi.org/10.1002/jcpy.1208"
+        "Haven, T. L., & Van Grootel, L. (2019). Preregistering qualitative research. <i>Accountability in Research</i>, <i>26</i>(3), 229–244. https://doi.org/10.1080/08989621.2019.1580147",
+        "Lewandowsky, S., & Bishop, D. (2016). Research integrity: Don’t let transparency damage science. <i>Nature News</i>, <i>529</i>(7587), 459. https://doi.org/10.1038/529459a",
+        "Mertens, G., & Krypotos, A. M. (2019). Preregistration of analyses of preexisting data. <i>Psychologica Belgica</i>, <i>59</i>(1), 338.",
+        "Navarro, D. (2020). <i>Paths in strange spaces: A comment on preregistration</i>.",
+        "Nosek, B. A., Ebersole, C. R., DeHaven, A. C., & Mellor, D. T. (2018). The preregistration revolution. <i>Proceedings of the National Academy of Sciences</i>, <i>115</i>(11), 2600–2606. https://doi.org/10.1073/pnas.1708274114",
+        "Simmons, J., Nelson, L., & Simonsohn, U. (2021). Pre‐registration: Why and how. <i>Journal of Consumer Psychology</i>, <i>31</i>(1), 151–162. https://doi.org/10.1002/jcpy.1208"
     ],
     "drafted_by": [
         "Mahmoud Elsherif"

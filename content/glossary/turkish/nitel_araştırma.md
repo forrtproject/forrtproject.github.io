@@ -10,8 +10,8 @@
         "Reflexivity"
     ],
     "references": [
-        "Aspers, P., & Corte, U. (2019). What is qualitative in qualitative research. Qualitative Sociology, 42(2), 139–160. https://doi.org/10.1007/s11133-019-9413-7",
-        "Levitt, H. M., Motulsky, S. L., Wertz, F. J., Morrow, S. L., & Ponterotto, J. G. (2017). Recommendations for designing and reviewing qualitative research in psychology: Promoting methodological integrity. Qualitative Psychology, 4(1), 2. https://doi.org/10.1037/qup0000082"
+        "Aspers, P., & Corte, U. (2019). What is qualitative in qualitative research. <i>Qualitative Sociology</i>, <i>42</i>(2), 139–160. https://doi.org/10.1007/s11133-019-9413-7",
+        "Levitt, H. M., Motulsky, S. L., Wertz, F. J., Morrow, S. L., & Ponterotto, J. G. (2017). Recommendations for designing and reviewing qualitative research in psychology: Promoting methodological integrity. <i>Qualitative Psychology</i>, <i>4</i>(1), 2. https://doi.org/10.1037/qup0000082"
     ],
     "drafted_by": [
         "Madeleine Pownall"

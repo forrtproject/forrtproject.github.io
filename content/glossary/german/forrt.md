@@ -7,7 +7,7 @@
         "Integrating open and reproducible science tenets into higher education"
     ],
     "references": [
-        "Forrt. (2019). Introducing a Framework for Open and Reproducible Research Training (FORRT). Open Science Framework. https://doi.org/10.31219/osf.io/bnh7p"
+        "Forrt. (2019). <i>Introducing a Framework for Open and Reproducible Research Training (FORRT)</i>. Open Science Framework. https://doi.org/10.31219/osf.io/bnh7p"
     ],
     "drafted_by": [
         "Tamara Kalandadze"

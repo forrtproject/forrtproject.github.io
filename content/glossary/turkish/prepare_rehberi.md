@@ -9,7 +9,7 @@
         "STRANGE"
     ],
     "references": [
-        "Smith, A. J., Clutton, R. E., Lilley, E., Hansen, K. E. A., & Brattelid, T. (2018). PREPARE: Guidelines for planning animal research and testing. Laboratory Animals, 52(2), 135–141. https://doi.org/10.1177/0023677217724823"
+        "Smith, A. J., Clutton, R. E., Lilley, E., Hansen, K. E. A., & Brattelid, T. (2018). PREPARE: Guidelines for planning animal research and testing. <i>Laboratory Animals</i>, <i>52</i>(2), 135–141. https://doi.org/10.1177/0023677217724823"
     ],
     "drafted_by": [
         "Ben Farrar"

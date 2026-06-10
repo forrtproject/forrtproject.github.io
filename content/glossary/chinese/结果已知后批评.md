@@ -9,8 +9,8 @@
         "Registered Report"
     ],
     "references": [
-        "Bardsley, N. (2018). What lessons does the “replication crisis” in psychology hold for experimental economics? In Handbook of Psychology and Economic Behaviour, 2nd edition. Cambridge University Press. Retrieved from http://centaur.reading.ac.uk/69874/",
-        "Nosek, B. A., & Lakens, D. (2014). Registered reports. Social Psychology, 45, 137–141. https://doi.org/10.1027/1864-9335/a000192"
+        "Bardsley, N. (2018). What lessons does the “replication crisis” in psychology hold for experimental economics? In <i>Handbook of Psychology and Economic Behaviour, 2nd edition</i>. Cambridge University Press. Retrieved from http://centaur.reading.ac.uk/69874/",
+        "Nosek, B. A., & Lakens, D. (2014). Registered reports. <i>Social Psychology</i>, <i>45</i>, 137–141. https://doi.org/10.1027/1864-9335/a000192"
     ],
     "drafted_by": [
         "Mahmoud Elsherif"

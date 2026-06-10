@@ -9,8 +9,8 @@
         "Plot"
     ],
     "references": [
-        "Healy, K. (2018). Data visualization: A practical introduction. Princeton University Press.",
-        "Tufte, E. R. (1983). The visual display of quantitative information. Graphics Press."
+        "Healy, K. (2018). <i>Data visualization: A practical introduction</i>. Princeton University Press.",
+        "Tufte, E. R. (1983). <i>The visual display of quantitative information</i>. Graphics Press."
     ],
     "drafted_by": [
         "Bradley Baker"

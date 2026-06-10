@@ -7,7 +7,7 @@
         "Auxiliary Hypothesis"
     ],
     "references": [
-        "Zwaan, R., Etz, A., Lucas, R., & Donnellan, M. (2018). Making replication mainstream. Behavioral and Brain Sciences, 41, E120. https://doi.org/10.1017/S0140525X17001972"
+        "Zwaan, R., Etz, A., Lucas, R., & Donnellan, M. (2018). Making replication mainstream. <i>Behavioral and Brain Sciences</i>, <i>41</i>, E120. https://doi.org/10.1017/S0140525X17001972"
     ],
     "drafted_by": [
         "Ali H. Al-Hoorie"

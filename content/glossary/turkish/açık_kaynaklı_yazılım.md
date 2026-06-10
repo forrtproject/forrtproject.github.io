@@ -14,7 +14,8 @@
         "Repository"
     ],
     "references": [
-        "Anon. (n.d.). Open Source in Open Science | FOSTER. Retrieved from https://www.fosteropenscience.eu/foster-taxonomy/open-source-open-science"
+        "Open Source Initiative. (n.d.). <i>The Open Source Definition</i>. https://opensource.org/osd",
+        "Anon. (n.d.). <i>Open Source in Open Science | FOSTER</i>. Retrieved from https://www.fosteropenscience.eu/foster-taxonomy/open-source-open-science"
     ],
     "drafted_by": [
         "Connor Keating"

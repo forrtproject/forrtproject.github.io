@@ -8,8 +8,8 @@
         "Contributions"
     ],
     "references": [
-        "Brand, A., Allen, L., Altman, M., Hlava, M., & Scott, J. (2015). Beyond authorship: attribution, contribution, collaboration, and credit. Learned Publishing, 28(2), 151–155. https://doi.org/10.1087/20150211",
-        "Holcombe, A. O. (2019). Contributorship, not authorship: Use CRediT to indicate who did what. Publications, 7(3), 48. https://doi.org/10.3390/publications7030048"
+        "Brand, A., Allen, L., Altman, M., Hlava, M., & Scott, J. (2015). Beyond authorship: attribution, contribution, collaboration, and credit. <i>Learned Publishing</i>, <i>28</i>(2), 151–155. https://doi.org/10.1087/20150211",
+        "Holcombe, A. O. (2019). Contributorship, not authorship: Use CRediT to indicate who did what. <i>Publications</i>, <i>7</i>(3), 48. https://doi.org/10.3390/publications7030048"
     ],
     "drafted_by": [
         "Sam Parsons"

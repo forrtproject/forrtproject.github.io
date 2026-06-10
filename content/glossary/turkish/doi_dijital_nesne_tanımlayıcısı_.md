@@ -9,9 +9,9 @@
         "Permalink"
     ],
     "references": [
-        "Bilder, G. (2013). DOIs unambiguously and persistently identify published, trustworthy, citable online scholarly literature. Right? https://www.crossref.org/blog/dois-unambiguously-and-persistently-identify-published-trustworthy-citable-online-scholarly-literature-right/",
-        "Morgan, C. (1998). The DOI (Digital Object Identifier). Serials, 11(1), 47–51. http://doi.org/10.1629/1147",
-        "Anon. (2019). The DOI Handbook."
+        "Bilder, G. (2013). <i>DOIs unambiguously and persistently identify published, trustworthy, citable online scholarly literature. Right?</i> https://www.crossref.org/blog/dois-unambiguously-and-persistently-identify-published-trustworthy-citable-online-scholarly-literature-right/",
+        "Morgan, C. (1998). The DOI (Digital Object Identifier). <i>Serials</i>, <i>11</i>(1), 47–51. http://doi.org/10.1629/1147",
+        "Anon. (2019). <i>The DOI Handbook</i>."
     ],
     "drafted_by": [
         "Tina Lonsdorf"

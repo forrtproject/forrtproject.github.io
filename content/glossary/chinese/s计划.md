@@ -8,7 +8,9 @@
         "DORA",
         "Repository"
     ],
-    "references": [],
+    "references": [
+        "cOAlition S. (2025). <i>cOAlition S – Making Full and Immediate Open Access a Reality</i>. https://www.coalition-s.org/"
+    ],
     "drafted_by": [
         "Olmo van den Akker"
     ],

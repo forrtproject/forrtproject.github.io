@@ -11,7 +11,7 @@
         "Statistics"
     ],
     "references": [
-        "Goertzen, M. J. (2017). Introduction to Quantitative Research and Data. Library Technology Reports, 53(4), 12–18."
+        "Goertzen, M. J. (2017). Introduction to Quantitative Research and Data. <i>Library Technology Reports</i>, <i>53</i>(4), 12–18."
     ],
     "drafted_by": [
         "Aoife O’Mahony"

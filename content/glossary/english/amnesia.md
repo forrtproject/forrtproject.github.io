@@ -8,7 +8,9 @@
         "Confidentiality",
         "Research ethics"
     ],
-    "references": [],
+    "references": [
+        "Open Aire. (n.d.). <i>Amnesia Anonymization Tool—Data anonymization made easy</i>. https://amnesia.openaire.eu/"
+    ],
     "drafted_by": [
         "Norbert Vanek"
     ],
