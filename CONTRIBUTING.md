@@ -29,7 +29,7 @@ You can support FORRT by:
 
 ## Questions, Ideas & Suggestions
 
-Issues are the best place to raise a question, suggest an improvement, or propose a resource for inclusion (unless you can find the more specific submission form).
+Issues are the best place to raise a question, suggest an improvement, or propose a resource for ilusion (unless you can find the more specific submission form).
 
 - Have a quick look through the existing [Issues](https://github.com/forrtproject/forrtproject.github.io/issues) in case the same idea is already being discussed.
 - Otherwise, [open a new Issue](https://github.com/forrtproject/forrtproject.github.io/issues/new) and go for it — a question, a rough idea, or a fully worked-out proposal are all welcome. Share whatever context is helpful.
@@ -131,15 +131,15 @@ For more on Git, see the [official documentation](https://docs.github.com/en/get
 
 ### Contributing with AI tools
 
-Contributions co-authored with AI agents are welcome — but only if you have **fully reviewed both the code and the content** yourself and can stand behind them.
+Contributions co-authored with AI agents are welcome, but only if you have **fully reviewed both the code and the content** yourself and can stand behind them.
 
-If a contribution amounts to running a single prompt, please consider posting the prompt or idea as an [issue](https://github.com/forrtproject/forrtproject.github.io/issues) instead. It is often faster for us to run it ourselves — with full knowledge of the project's coding conventions — than to review and integrate unverified, vibe-coded output.
+If a contribution amounts to running a single prompt, please consider posting the prompt or idea as an [issue](https://github.com/forrtproject/forrtproject.github.io/issues) instead. It is often faster for us to run it ourselves, with full knowledge of the project's coding conventions, than to review and integrate unverified, vibe-coded output.
 
 ### Content, Licensing & Fact-Checking
 
-- You don't need to be the sole author of a contribution. Collaboratively written text and openly licensed resources are welcome, as long as you have the right to share the content.
 - Please **fact-check** anything you add and cite sources where relevant, so the site stays accurate and trustworthy.
-- Unless you tell us otherwise, contributions are assumed to be offered under [**CC BY 4.0**](https://creativecommons.org/licenses/by/4.0/). Note that the site as a whole is published under [CC BY-NC-SA 4.0](LICENSE.md).
+- Make sure you have the right to share the content under the licence applicable to the relevant section of the site.
+- Unless you tell us otherwise, contributions are assumed to be offered under [**CC BY 4.0**](https://creativecommons.org/licenses/by/4.0/).
 
 ---
 
