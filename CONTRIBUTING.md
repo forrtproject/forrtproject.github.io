@@ -12,11 +12,13 @@ You can support FORRT by:
 
 ## Table of Contents
 
-- [I Have a Question](#i-have-a-question)
+- [Questions, Ideas & Suggestions](#questions-ideas--suggestions)
 - [Local Development Setup](#local-development-setup)
   - [Standard Setup](#standard-setup-git--hugo)
   - [RStudio Setup](#rstudio-setup)
 - [Contribution Workflow](#contribution-workflow)
+  - [Contributing with AI tools](#contributing-with-ai-tools)
+  - [Content, Licensing & Fact-Checking](#content-licensing--fact-checking)
 - [Deployment & Staging](#deployment--staging)
   - [Production](#production)
   - [Staging](#staging)
@@ -25,18 +27,14 @@ You can support FORRT by:
 
 ---
 
-## I Have a Question
+## Questions, Ideas & Suggestions
 
-Before opening an issue, please:
+Issues are the best place to raise a question, suggest an improvement, or propose a new resource. Conversations on Slack tend to get lost, whereas an issue stays visible and is easy for someone to pick up later.
 
-- Take a moment to search existing [Issues](https://github.com/forrtproject/forrtproject.github.io/issues) — your question or suggestion may already have been addressed.
+- Have a quick look through the existing [Issues](https://github.com/forrtproject/forrtproject.github.io/issues) in case the same idea is already being discussed.
+- Otherwise, [open a new Issue](https://github.com/forrtproject/forrtproject.github.io/issues/new) and go for it — a question, a rough idea, or a fully worked-out proposal are all welcome. Share whatever context is helpful.
 
-If you still need assistance:
-
-- Open a [new Issue](https://github.com/forrtproject/forrtproject.github.io/issues).
-- Share as much relevant context as possible about the problem, question, or suggestion.
-
-FORRT is maintained by volunteers, so response times may vary. We appreciate your patience and contribution.
+FORRT is maintained by volunteers, so response times may vary. We appreciate your patience and your contribution.
 
 ---
 
@@ -130,6 +128,18 @@ All proposed changes must be made on a feature branch and submitted via a Pull R
 5. **Push and open a Pull Request** — push your branch and open a PR targeting the `main` branch of `forrtproject/forrtproject.github.io`. Link any related issues and briefly summarise your changes.
 
 For more on Git, see the [official documentation](https://docs.github.com/en/get-started/using-git/about-git).
+
+### Contributing with AI tools
+
+Contributions co-authored with AI agents are welcome — but only if you have **fully reviewed both the code and the content** yourself and can stand behind them.
+
+If a contribution amounts to running a single prompt, please consider posting the prompt or idea as an [issue](https://github.com/forrtproject/forrtproject.github.io/issues) instead. It is often faster for us to run it ourselves — with full knowledge of the project's coding conventions — than to review and integrate unverified, vibe-coded output.
+
+### Content, Licensing & Fact-Checking
+
+- You don't need to be the sole author of a contribution. Collaboratively written text and openly licensed resources are welcome, as long as you have the right to share the content.
+- Please **fact-check** anything you add and cite sources where relevant, so the site stays accurate and trustworthy.
+- Unless you tell us otherwise, contributions are assumed to be offered under [**CC BY 4.0**](https://creativecommons.org/licenses/by/4.0/). Note that the site as a whole is published under [CC BY-NC-SA 4.0](LICENSE.md).
 
 ---
 

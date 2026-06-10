@@ -53,14 +53,14 @@ cd forrtproject.github.io
 hugo server -D
 ```
 
-Open [http://localhost:1313](http://localhost:1313) in your browser to preview the site locally. 
+Open [http://localhost:1313](http://localhost:1313) in your browser to preview the site locally.
 
-You can find open issues [ here](https://github.com/forrtproject/forrtproject.github.io/issues). and contribute to any that interest you.
+You can find [open issues here](https://github.com/forrtproject/forrtproject.github.io/issues) and contribute to any that interest you.
 
 ---
 
 ## License
 
-<a rel="license" href="https://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://licensebuttons.net/l//by/4.0/88x31.png" /></a>
+<a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://licensebuttons.net/l/by-nc-sa/4.0/88x31.png" /></a>
 
-This work is licensed under a [Creative Commons Attribution 4.0 International](http://creativecommons.org/licenses/by/4.0/).
+This work is licensed under a [Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International](https://creativecommons.org/licenses/by-nc-sa/4.0/) license. See [LICENSE.md](LICENSE.md) for the full text.
