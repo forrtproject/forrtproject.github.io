@@ -1,10 +1,8 @@
 ---
 # Display name
 name: "Lydia Riedl"
+title: "Lydia Riedl"
 
-# Username (this should match the folder name and the name on publications)
-authors:
-- Name "Lydia Riedl"
 
 # Is this the primary user of the site?
 superuser: false

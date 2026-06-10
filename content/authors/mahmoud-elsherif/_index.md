@@ -1,10 +1,8 @@
 ---
 # Display name
 name: "Mahmoud Elsherif"
+title: "Mahmoud Elsherif"
 
-# Username (this should match the folder name and the name on publications)
-authors:
-- Name "Mahmoud Elsherif"
 
 # Is this the primary user of the site?
 superuser: false

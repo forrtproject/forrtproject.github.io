@@ -2,3 +2,19 @@
 {{ with .Params.keywords }}
   <meta name="keywords" content="{{ delimit . ", " }}">
 {{ end }}
+
+{{/* Structured data (JSON-LD) for richer search / GenAI results.
+     Each partial self-gates on page type, so only matching pages emit. */}}
+{{ partial "structured-data/glossary-term.html" . }}
+{{ partial "structured-data/educators-corner.html" . }}
+
+{{/* Author profile pages: noindex empty template stubs, and emit Person
+     structured data for the substantive ones. (Computed once.) */}}
+{{ if and (eq .Section "authors") .Params.name }}
+  {{ $substantive := partial "authors/is-substantive.html" . }}
+  {{ if $substantive }}
+    {{ partial "structured-data/author.html" . }}
+  {{ else }}
+  <meta name="robots" content="noindex, follow">
+  {{ end }}
+{{ end }}

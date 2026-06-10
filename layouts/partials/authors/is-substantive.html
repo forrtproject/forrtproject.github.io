@@ -1,0 +1,20 @@
+{{/* Returns true if an author profile page has enough content to be worth
+     indexing: a bio, a role, a real organisation, real (non-placeholder)
+     interests, or at least one piece of credited content on the site.
+     Used to noindex empty template-stub profiles. Call: partial with the page. */}}
+{{- $page := . -}}
+{{- $sub := false -}}
+{{- with $page.Params.bio }}{{ $sub = true }}{{ end -}}
+{{- with $page.Params.role }}{{ $sub = true }}{{ end -}}
+{{- range $page.Params.organizations }}{{ with .name }}{{ $sub = true }}{{ end }}{{ end -}}
+{{- range $page.Params.interests }}{{ if not (findRE `(?i)^interest \d+$` .) }}{{ $sub = true }}{{ end }}{{ end -}}
+{{- if not $sub -}}
+  {{- $slug := $page.File.ContentBaseName -}}
+  {{- $name := $page.Params.name -}}
+  {{- range site.RegularPages -}}
+    {{- range .Params.authors -}}
+      {{- if or (eq (urlize .) $slug) (eq . $name) }}{{ $sub = true }}{{ end -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
+{{- return $sub -}}

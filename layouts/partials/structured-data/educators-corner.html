@@ -1,0 +1,29 @@
+{{/* Article JSON-LD for Educators' Corner posts. */}}
+{{- if and (eq .Type "educators-corner") .IsPage -}}
+  {{- $descSrc := .Params.summary | default .Summary -}}
+  {{- $desc := $descSrc | plainify | truncate 300 "…" -}}
+  {{- $desc = replaceRE "(?i)</script" "<\\/script" $desc -}}
+  {{- $authors := slice -}}
+  {{- range .Params.authors -}}
+    {{- $authors = $authors | append (dict "@type" "Person" "name" .) -}}
+  {{- end -}}
+  {{- $org := dict
+      "@type" "Organization"
+      "name" "FORRT"
+      "url" "https://forrt.org"
+      "logo" (dict "@type" "ImageObject" "url" (absURL "img/FORRT.svg")) -}}
+  {{- $article := dict
+      "@context" "https://schema.org"
+      "@type" "Article"
+      "headline" .Title
+      "url" .Permalink
+      "mainEntityOfPage" .Permalink
+      "datePublished" (.Date.Format "2006-01-02")
+      "dateModified" (.Lastmod.Format "2006-01-02")
+      "publisher" $org
+      "about" (dict "@type" "Thing" "name" "Open and Reproducible Science") -}}
+  {{- with $desc }}{{ $article = merge $article (dict "description" .) }}{{ end -}}
+  {{- with $authors }}{{ $article = merge $article (dict "author" .) }}{{ end -}}
+  {{- with .Params.tags }}{{ $article = merge $article (dict "keywords" (delimit . ", ")) }}{{ end -}}
+  <script type="application/ld+json">{{ $article | jsonify | safeJS }}</script>
+{{- end -}}

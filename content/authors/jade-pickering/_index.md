@@ -1,10 +1,8 @@
 ---
 # Display name
 name: "Jade Pickering"
+title: "Jade Pickering"
 
-# Username (this should match the folder name and the name on publications)
-authors:
-- Name "Jade Pickering"
 
 # Is this the primary user of the site?
 superuser: false
