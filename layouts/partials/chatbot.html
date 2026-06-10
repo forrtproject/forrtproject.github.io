@@ -7,6 +7,11 @@
   {{ end }}
 {{ end }}
 
+{{/* Load Inter for the JUST-OS chat UI (the site's body font is Domine). */}}
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap">
+
 <style>
   #just-os-widget {
     position: fixed;
@@ -18,7 +23,13 @@
     display: flex;
     flex-direction: column;
     align-items: flex-end;
-    font-family: sans-serif;
+    font-family: "Inter", "Open Sans", "Lexend", "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  }
+
+  /* Standalone full-page chat: positioning context + Inter font */
+  .just-os-fullpage {
+    position: relative;
+    font-family: "Inter", "Open Sans", "Lexend", "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   }
 
   #just-os-btn {
@@ -429,8 +440,9 @@
     cursor: not-allowed;
   }
 
-  /* New Chat button */
-  .just-os-new-chat-btn {
+  /* New Chat / History buttons */
+  .just-os-new-chat-btn,
+  .just-os-history-btn {
     background: none;
     border: none;
     cursor: pointer;
@@ -440,9 +452,126 @@
     border-radius: 4px;
   }
 
-  .just-os-new-chat-btn:hover {
+  .just-os-new-chat-btn:hover,
+  .just-os-history-btn:hover {
     background: #eee;
     color: #333;
+  }
+
+  /* History button pushed to the right in the widget header */
+  .chat-header .just-os-history-btn {
+    margin-left: auto;
+  }
+
+  /* History panel — overlays the chat area */
+  .just-os-history-panel {
+    position: absolute;
+    inset: 0;
+    background: #fff;
+    z-index: 20;
+    flex-direction: column;
+    overflow: hidden;
+  }
+
+  .just-os-history-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 15px;
+    border-bottom: 1px solid #eee;
+    background: #f8f9fa;
+    flex-shrink: 0;
+  }
+
+  .just-os-history-header span {
+    font-weight: bold;
+    color: #0d3c74;
+  }
+
+  .just-os-history-back {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 0.9rem;
+    color: #0d3c74;
+    padding: 4px 6px;
+    border-radius: 4px;
+  }
+
+  .just-os-history-back:hover {
+    background: #eee;
+  }
+
+  .just-os-history-list {
+    flex: 1;
+    overflow-y: auto;
+    padding: 8px;
+    min-height: 0;
+  }
+
+  .just-os-history-empty {
+    color: #888;
+    font-size: 0.85rem;
+    text-align: center;
+    margin: 24px 0;
+  }
+
+  .just-os-history-item {
+    display: flex;
+    align-items: stretch;
+    border-radius: 8px;
+    margin-bottom: 4px;
+  }
+
+  .just-os-history-item:hover {
+    background: #f0f2f5;
+  }
+
+  .just-os-history-item.active {
+    background: #e8eef6;
+  }
+
+  .just-os-history-open {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    text-align: left;
+    padding: 8px 10px;
+    min-width: 0;
+  }
+
+  .just-os-history-title {
+    font-size: 0.88rem;
+    color: #1a1a1a;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 100%;
+  }
+
+  .just-os-history-meta {
+    font-size: 0.72rem;
+    color: #999;
+  }
+
+  .just-os-history-delete {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #bbb;
+    font-size: 0.9rem;
+    padding: 0 10px;
+    border-radius: 8px;
+    flex-shrink: 0;
+  }
+
+  .just-os-history-delete:hover {
+    color: #c0392b;
   }
 
   /* Standalone page offline notice */
@@ -526,6 +655,8 @@
   <div id="just-os-window">
     <div class="chat-header">
       <span>JUST-OS</span>
+
+      <button type="button" class="just-os-history-btn" onclick="toggleJustOSHistory()" title="Chat history">History</button>
 
       <button type="button" class="just-os-new-chat-btn" onclick="newJustOSChat()" title="New Chat">New Chat</button>
 

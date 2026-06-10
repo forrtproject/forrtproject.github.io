@@ -6,8 +6,10 @@
   'use strict';
 
   const API_URL = 'https://bot.just-os.org/chat';
-  const STORAGE_KEY = 'just-os-chat-state';
-  const WELCOME_MESSAGE = "Hi \u2014 I'm the JUST-OS bot and can help you with questions around open science. What's on your mind?";
+  const HISTORY_KEY = 'just-os-chat-history'; // localStorage: array of saved conversations
+  const ACTIVE_KEY = 'just-os-chat-active';   // localStorage: id of the conversation last viewed
+  const MAX_CHATS = 50;                        // cap stored conversations to avoid unbounded growth
+  const WELCOME_MESSAGE = "Hi — I'm the JUST-OS bot and can help you with questions around open science. What's on your mind?";
 
   const state = {
     chatId: null,
@@ -40,30 +42,83 @@
   }
 
   /* -------------------------------------------------- */
-  /*  State persistence                                  */
+  /*  Chat history (localStorage)                        */
   /* -------------------------------------------------- */
 
-  function saveState() {
+  function loadHistory() {
     try {
-      sessionStorage.setItem(STORAGE_KEY, JSON.stringify({
-        chatId: state.chatId,
-        messages: state.messages,
-      }));
+      const raw = localStorage.getItem(HISTORY_KEY);
+      if (!raw) return [];
+      const arr = JSON.parse(raw);
+      return Array.isArray(arr) ? arr : [];
+    } catch (_) { return []; }
+  }
+
+  function persistHistory(history) {
+    try {
+      localStorage.setItem(HISTORY_KEY, JSON.stringify(history));
     } catch (_) { /* quota exceeded – ignore */ }
+  }
+
+  function setActiveId(id) {
+    try { localStorage.setItem(ACTIVE_KEY, id); } catch (_) { /* ignore */ }
+  }
+
+  function deriveTitle(messages) {
+    const firstUser = messages.find(function (m) { return m.role === 'user'; });
+    if (!firstUser) return 'New conversation';
+    const t = firstUser.content.trim().replace(/\s+/g, ' ');
+    return t.length > 40 ? t.slice(0, 40) + '…' : t;
+  }
+
+  // Persist the current conversation into the history list (newest first).
+  function saveState() {
+    const hasUser = state.messages.some(function (m) { return m.role === 'user'; });
+    if (!hasUser) return; // don't store empty / welcome-only conversations
+
+    const history = loadHistory();
+    const now = Date.now();
+    const idx = history.findIndex(function (c) { return c.id === state.chatId; });
+    const entry = {
+      id: state.chatId,
+      title: deriveTitle(state.messages),
+      messages: state.messages,
+      createdAt: idx >= 0 ? history[idx].createdAt : now,
+      updatedAt: now,
+    };
+    if (idx >= 0) history[idx] = entry;
+    else history.push(entry);
+
+    history.sort(function (a, b) { return b.updatedAt - a.updatedAt; });
+    if (history.length > MAX_CHATS) history.length = MAX_CHATS;
+
+    persistHistory(history);
+    setActiveId(state.chatId);
   }
 
   function restoreState() {
     try {
-      const raw = sessionStorage.getItem(STORAGE_KEY);
-      if (!raw) return false;
-      const saved = JSON.parse(raw);
-      if (saved.chatId) {
-        state.chatId = saved.chatId;
-        state.messages = saved.messages || [];
+      const activeId = localStorage.getItem(ACTIVE_KEY);
+      if (!activeId) return false;
+      const chat = loadHistory().find(function (c) { return c.id === activeId; });
+      if (chat) {
+        state.chatId = chat.id;
+        state.messages = chat.messages || [];
         return true;
       }
     } catch (_) { /* corrupt – ignore */ }
     return false;
+  }
+
+  function relativeTime(ts) {
+    if (!ts) return '';
+    const diff = Date.now() - ts;
+    const min = 60000, hr = 3600000, day = 86400000;
+    if (diff < min) return 'just now';
+    if (diff < hr) return Math.floor(diff / min) + 'm ago';
+    if (diff < day) return Math.floor(diff / hr) + 'h ago';
+    if (diff < 7 * day) return Math.floor(diff / day) + 'd ago';
+    return new Date(ts).toLocaleDateString();
   }
 
   /* -------------------------------------------------- */
@@ -85,23 +140,25 @@
       bubble.textContent = msg.content;
     } else {
       bubble.innerHTML = msg.content;
-
       wrapper.appendChild(bubble);
 
-      // Copy button below bubble
+      // Capture the answer text before references are merged into the box.
+      const answerText = bubble.innerText.trim();
+
+      // Merge references into the answer box as a collapsible list.
+      const refs = extractReferences(bubble);
+      if (refs.length) bubble.appendChild(buildReferenceDetails(refs));
+
+      // Copy button below the box — copies the answer together with its references.
       const copyBtn = document.createElement('button');
       copyBtn.className = 'just-os-copy-btn';
       copyBtn.type = 'button';
       copyBtn.title = 'Copy response';
       copyBtn.innerHTML = '\u{1F4CB}';
       copyBtn.addEventListener('click', function () {
-        copyResponse(copyBtn, bubble);
+        copyResponse(copyBtn, answerText, refs);
       });
       wrapper.appendChild(copyBtn);
-
-      // Extract references and render as a list below
-      const refList = buildReferenceList(bubble);
-      if (refList) wrapper.appendChild(refList);
 
       return wrapper;
     }
@@ -294,17 +351,20 @@
   }
 
   /* -------------------------------------------------- */
-  /*  New Chat                                           */
+  /*  New Chat / open / delete                           */
   /* -------------------------------------------------- */
 
   function newChat() {
+    // The previous conversation is already persisted (saved after each turn),
+    // so starting a new chat simply leaves it in the history list.
     state.chatId = generateId();
     state.messages = [];
     state.streaming = false;
-    sessionStorage.removeItem(STORAGE_KEY);
+    setActiveId(state.chatId);
     renderAllMessages();
     const container = getContainer();
     if (container) {
+      closeHistoryPanel(container);
       showWelcome(container);
       updateInputState(container);
       const input = getInputEl(container);
@@ -312,12 +372,130 @@
     }
   }
 
+  function openChat(id) {
+    const chat = loadHistory().find(function (c) { return c.id === id; });
+    if (!chat) return;
+    state.chatId = chat.id;
+    state.messages = chat.messages || [];
+    state.streaming = false;
+    setActiveId(chat.id);
+    renderAllMessages();
+    const container = getContainer();
+    if (container) {
+      closeHistoryPanel(container);
+      updateInputState(container);
+      const input = getInputEl(container);
+      if (input) input.focus();
+    }
+  }
+
+  function deleteChat(id) {
+    persistHistory(loadHistory().filter(function (c) { return c.id !== id; }));
+    if (id === state.chatId) {
+      newChat();
+    } else {
+      const container = getContainer();
+      if (container) renderHistoryList(container);
+    }
+  }
+
+  /* -------------------------------------------------- */
+  /*  History panel                                      */
+  /* -------------------------------------------------- */
+
+  function getHistoryPanel(container) {
+    let panel = container.querySelector('.just-os-history-panel');
+    if (panel) return panel;
+
+    panel = document.createElement('div');
+    panel.className = 'just-os-history-panel';
+    panel.style.display = 'none';
+
+    const header = document.createElement('div');
+    header.className = 'just-os-history-header';
+    const back = document.createElement('button');
+    back.type = 'button';
+    back.className = 'just-os-history-back';
+    back.innerHTML = '‹ Back';
+    back.addEventListener('click', function () { closeHistoryPanel(container); });
+    const title = document.createElement('span');
+    title.textContent = 'Chat history';
+    header.appendChild(back);
+    header.appendChild(title);
+    panel.appendChild(header);
+
+    const list = document.createElement('div');
+    list.className = 'just-os-history-list';
+    panel.appendChild(list);
+
+    container.appendChild(panel);
+    return panel;
+  }
+
+  function renderHistoryList(container) {
+    const panel = getHistoryPanel(container);
+    const list = panel.querySelector('.just-os-history-list');
+    list.innerHTML = '';
+
+    const history = loadHistory().sort(function (a, b) { return (b.updatedAt || 0) - (a.updatedAt || 0); });
+    if (!history.length) {
+      const empty = document.createElement('p');
+      empty.className = 'just-os-history-empty';
+      empty.textContent = 'No saved conversations yet.';
+      list.appendChild(empty);
+      return;
+    }
+
+    history.forEach(function (chat) {
+      const item = document.createElement('div');
+      item.className = 'just-os-history-item' + (chat.id === state.chatId ? ' active' : '');
+
+      const open = document.createElement('button');
+      open.type = 'button';
+      open.className = 'just-os-history-open';
+      const t = document.createElement('span');
+      t.className = 'just-os-history-title';
+      t.textContent = chat.title || 'Conversation';
+      const meta = document.createElement('span');
+      meta.className = 'just-os-history-meta';
+      meta.textContent = relativeTime(chat.updatedAt);
+      open.appendChild(t);
+      open.appendChild(meta);
+      open.addEventListener('click', function () { openChat(chat.id); });
+
+      const del = document.createElement('button');
+      del.type = 'button';
+      del.className = 'just-os-history-delete';
+      del.title = 'Delete conversation';
+      del.setAttribute('aria-label', 'Delete conversation');
+      del.innerHTML = '\u{1F5D1}';
+      del.addEventListener('click', function (e) { e.stopPropagation(); deleteChat(chat.id); });
+
+      item.appendChild(open);
+      item.appendChild(del);
+      list.appendChild(item);
+    });
+  }
+
+  function openHistoryPanel(container) {
+    renderHistoryList(container);
+    getHistoryPanel(container).style.display = 'flex';
+  }
+
+  function closeHistoryPanel(container) {
+    const panel = container.querySelector('.just-os-history-panel');
+    if (panel) panel.style.display = 'none';
+  }
+
   /* -------------------------------------------------- */
   /*  Copy response                                      */
   /* -------------------------------------------------- */
 
-  function copyResponse(btn, bubble) {
-    const text = bubble.innerText;
+  function copyResponse(btn, answerText, refs) {
+    let text = answerText;
+    if (refs && refs.length) {
+      text += '\n\nReferences:\n' + formatReferencesText(refs);
+    }
     navigator.clipboard.writeText(text).then(function () {
       const orig = btn.innerHTML;
       btn.innerHTML = '&#x2705;';
@@ -339,14 +517,12 @@
   }
 
   /* -------------------------------------------------- */
-  /*  Reference list                                     */
+  /*  References                                         */
   /* -------------------------------------------------- */
 
-  function buildReferenceList(bubble) {
+  // Pull the (deduplicated) references embedded in a bot message.
+  function extractReferences(bubble) {
     const links = bubble.querySelectorAll('a[data-reference]');
-    if (!links.length) return null;
-
-    // Deduplicate references by URL
     const seen = new Set();
     const refs = [];
     links.forEach(function (link) {
@@ -357,9 +533,26 @@
         refs.push(ref);
       } catch (_) { /* skip bad JSON */ }
     });
+    return refs;
+  }
 
-    if (!refs.length) return null;
+  // Plain-text reference list for the clipboard (full authors + title + URL).
+  function formatReferencesText(refs) {
+    return refs.map(function (ref, i) {
+      const parts = [];
+      if (ref.authors) parts.push(ref.authors.trim());
+      if (ref.title) parts.push(ref.title.trim());
+      if (ref.url) parts.push(ref.url.trim());
+      // Join with ". " but avoid doubling punctuation when a part already ends in one.
+      const body = parts.reduce(function (acc, p) {
+        if (!acc) return p;
+        return acc + (/[.!?]$/.test(acc) ? ' ' : '. ') + p;
+      }, '');
+      return (i + 1) + '. ' + body;
+    }).join('\n');
+  }
 
+  function buildReferenceDetails(refs) {
     const details = document.createElement('details');
     details.className = 'just-os-references';
     details.open = true;
@@ -371,7 +564,6 @@
     const ol = document.createElement('ol');
     refs.forEach(function (ref) {
       const li = document.createElement('li');
-      const parts = [];
 
       if (ref.authors) {
         const authSpan = document.createElement('span');
@@ -395,12 +587,6 @@
     });
     details.appendChild(ol);
     return details;
-  }
-
-  function escapeHtml(str) {
-    const div = document.createElement('div');
-    div.textContent = str;
-    return div.innerHTML;
   }
 
   /* -------------------------------------------------- */
@@ -449,6 +635,17 @@
   };
 
   window.newJustOSChat = newChat;
+
+  window.toggleJustOSHistory = function () {
+    const container = getContainer();
+    if (!container) return;
+    const panel = container.querySelector('.just-os-history-panel');
+    if (panel && panel.style.display === 'flex') {
+      closeHistoryPanel(container);
+    } else {
+      openHistoryPanel(container);
+    }
+  };
 
   window.dismissJustOS = function () {
     var widget = document.getElementById('just-os-widget');
@@ -519,7 +716,8 @@
     if (sessionStorage.getItem('just-os-dismissed')) {
       var widget = document.getElementById('just-os-widget');
       if (widget) widget.style.display = 'none';
-      return;
+      // The standalone page has its own container, so keep initializing there.
+      if (!document.getElementById('just-os-fullpage')) return;
     }
 
     const container = getContainer();
