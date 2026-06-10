@@ -1,6 +1,4 @@
 ---
-authors:
-- Mike Galang
 bio: 
 # education:
 #   courses:
@@ -19,6 +17,7 @@ email: ""
 # - Computational Linguistics
 # - Information Retrieval
 name: Mike Galang
+title: "Mike Galang"
 # organizations:
 # - name: Stanford University
 #   url: ""

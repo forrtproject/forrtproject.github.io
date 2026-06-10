@@ -13,8 +13,8 @@
         "Scientific publishing"
     ],
     "references": [
-        "Byrne, J. A., & Christopher, J. (2020). Digital magic, or the dark arts of the 21st century—how can journals and peer reviewers detect manuscripts and publications from paper mills? FEBS Letters, 594(4), 583–589. https://doi.org/10.1002/1873-3468.13747",
-        "Hackett, R., & Kelly, S. (2020). Publishing ethics in the era of paper mills. Biology Open, 9(10), bio056556. https://doi.org/10.1242/bio.056556"
+        "Byrne, J. A., & Christopher, J. (2020). Digital magic, or the dark arts of the 21st century—how can journals and peer reviewers detect manuscripts and publications from paper mills? <i>FEBS Letters</i>, <i>594</i>(4), 583–589. https://doi.org/10.1002/1873-3468.13747",
+        "Hackett, R., & Kelly, S. (2020). Publishing ethics in the era of paper mills. <i>Biology Open</i>, <i>9</i>(10), bio056556. https://doi.org/10.1242/bio.056556"
     ],
     "drafted_by": [
         "Helena Hartmann"

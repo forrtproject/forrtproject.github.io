@@ -11,7 +11,8 @@
         "Open Science Framework"
     ],
     "references": [
-        "OER Commons. (n.d.). OER Commons. https://www.oercommons.org/"
+        "OER Commons. (n.d.). <i>OER Commons</i>. https://www.oercommons.org/",
+        "[www.oercommons.org](http://www.oercommons.org)"
     ],
     "drafted_by": [
         "Ali H. Al-Hoorie"

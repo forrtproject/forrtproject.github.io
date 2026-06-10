@@ -9,7 +9,7 @@
         "Partial publication"
     ],
     "references": [
-        "Fanelli, D. (2018). Opinion: Is science really facing a reproducibility crisis, and do we need it to? Proceedings of the National Academy of Sciences, 115(11), 2628–2631. https://doi.org/10.1073/pnas.1708272114"
+        "Fanelli, D. (2018). Opinion: Is science really facing a reproducibility crisis, and do we need it to? <i>Proceedings of the National Academy of Sciences</i>, <i>115</i>(11), 2628–2631. https://doi.org/10.1073/pnas.1708272114"
     ],
     "drafted_by": [
         "Mahmoud Elsherif"

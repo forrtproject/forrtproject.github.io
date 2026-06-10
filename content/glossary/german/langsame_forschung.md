@@ -11,9 +11,9 @@
         "research quality"
     ],
     "references": [
-        "Academy, S. S. (2010). The Slow Science Manifesto. Slow Science. http://slow-science.org/",
-        "Nelson, L. D., Simmons, J. P., & Simonsohn, U. (2012). Let’s Publish Fewer Papers. Psychological Inquiry, 23(3), 291–293. https://doi.org/10.1080/1047840X.2012.705245",
-        "Frith, U. (2020). Fast lane to slow science. Trends in Cognitive Sciences, 24(1), 1–2. https://doi.org/10.1016/j.tics.2019.10.007"
+        "Slow Science Academy. (2010). <i>The Slow Science Manifesto</i>. Slow Science. http://slow-science.org/",
+        "Nelson, L. D., Simmons, J. P., & Simonsohn, U. (2012). Let’s Publish Fewer Papers. <i>Psychological Inquiry</i>, <i>23</i>(3), 291–293. https://doi.org/10.1080/1047840X.2012.705245",
+        "Frith, U. (2020). Fast lane to slow science. <i>Trends in Cognitive Sciences</i>, <i>24</i>(1), 1–2. https://doi.org/10.1016/j.tics.2019.10.007"
     ],
     "drafted_by": [
         "Sonia Rishi"

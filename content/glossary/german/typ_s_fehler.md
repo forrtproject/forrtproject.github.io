@@ -10,8 +10,8 @@
         "Type II error"
     ],
     "references": [
-        "Gelman, A., & Carlin, J. (2014). Beyond Power Calculations: Assessing Type S (Sign) and Type M (Magnitude) Errors. Perspectives on Psychological Science, 9(6), 641–651. https://doi.org/10.1177/1745691614551642",
-        "Lu, J., Qiu, Y., & Deng, A. (2018). A note on Type S/M errors in hypothesis testing. British Journal of Mathematical and Statistical Psychology, 72(1), 1–17. https://doi.org/10.1111/bmsp.12132"
+        "Gelman, A., & Carlin, J. (2014). Beyond Power Calculations: Assessing Type S (Sign) and Type M (Magnitude) Errors. <i>Perspectives on Psychological Science</i>, <i>9</i>(6), 641–651. https://doi.org/10.1177/1745691614551642",
+        "Lu, J., Qiu, Y., & Deng, A. (2018). A note on Type S/M errors in hypothesis testing. <i>British Journal of Mathematical and Statistical Psychology</i>, <i>72</i>(1), 1–17. https://doi.org/10.1111/bmsp.12132"
     ],
     "drafted_by": [
         "Eduardo Garcia-Garzon"

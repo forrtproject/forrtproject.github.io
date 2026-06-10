@@ -7,10 +7,10 @@
         "Slow Science"
     ],
     "references": [
-        "Curran, P. J. (2009). The seemingly quixotic pursuit of a cumulative psychological science: Introduction to the special issue. Psychological Methods, 14(2), 77–80. https://doi.org/10.1037/a0015972",
-        "d’Espagnat, B. (2008). Is science cumulative? A physicist viewpoint. In Rethinking Scientific Change and Theory Comparison (pp. 145–151). Springer. https://doi.org/10.1007/978-1-4020-6279-7_10",
-        "Kuhn, T. (1962). The Structure of Scientific Revolutions. University of Chicago Press.",
-        "Mischel, W. (2009). Becoming a Cumulative Science. Association for Psychological Science. https://www.psychologicalscience.org/observer/becoming-a-cumulative-science"
+        "Curran, P. J. (2009). The seemingly quixotic pursuit of a cumulative psychological science: Introduction to the special issue. <i>Psychological Methods</i>, <i>14</i>(2), 77–80. https://doi.org/10.1037/a0015972",
+        "d’Espagnat, B. (2008). Is science cumulative? A physicist viewpoint. In <i>Rethinking Scientific Change and Theory Comparison</i> (pp. 145–151). Springer. https://doi.org/10.1007/978-1-4020-6279-7_10",
+        "Kuhn, T. (1962). <i>The Structure of Scientific Revolutions</i>. University of Chicago Press.",
+        "Mischel, W. (2009). <i>Becoming a Cumulative Science</i>. Association for Psychological Science. https://www.psychologicalscience.org/observer/becoming-a-cumulative-science"
     ],
     "drafted_by": [
         "Beatrice Valentini"

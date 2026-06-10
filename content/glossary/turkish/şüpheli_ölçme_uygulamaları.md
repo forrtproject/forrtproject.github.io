@@ -12,7 +12,7 @@
         "Validity"
     ],
     "references": [
-        "Flake, J. K., & Fried, E. I. (2020). Measurement schmeasurement: Questionable measurement practices and how to avoid them. Advances in Methods and Practices in Psychological Science, 3(4), 456–465. https://doi.org/10.1177/2515245920952393"
+        "Flake, J. K., & Fried, E. I. (2020). Measurement schmeasurement: Questionable measurement practices and how to avoid them. <i>Advances in Methods and Practices in Psychological Science</i>, <i>3</i>(4), 456–465. https://doi.org/10.1177/2515245920952393"
     ],
     "drafted_by": [
         "Halil Emre Kocalar"

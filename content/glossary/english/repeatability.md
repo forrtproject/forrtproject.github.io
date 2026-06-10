@@ -7,8 +7,8 @@
         "Reliability"
     ],
     "references": [
-        "ISO. (1993). Guide to the Expression of Uncertainty in Measurement (1st ed.). International Organization for Standardization.",
-        "Stodden, V. C. (2011). Trust your science? Open your data and code."
+        "ISO. (1993). <i>Guide to the Expression of Uncertainty in Measurement</i> (1st ed.). International Organization for Standardization.",
+        "Stodden, V. C. (2011). <i>Trust your science? Open your data and code</i>."
     ],
     "drafted_by": [
         "Mahmoud Elsherif, Adam Parker"

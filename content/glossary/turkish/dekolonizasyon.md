@@ -9,7 +9,7 @@
         "Inclusion"
     ],
     "references": [
-        "Albayrak, N. (2018). Diversity helps but decolonisation is the key to equality in higher education. Retrieved from https://lsepgcertcitl.wordpress.com/2018/04/16/diversity-helps-but-decolonisation-is-the-key-to-equality-in-higher-education/"
+        "Albayrak, N. (2018). <i>Diversity helps but decolonisation is the key to equality in higher education</i>. Retrieved from https://lsepgcertcitl.wordpress.com/2018/04/16/diversity-helps-but-decolonisation-is-the-key-to-equality-in-higher-education/"
     ],
     "drafted_by": [
         "Nihan Albayrak-Aydemir"

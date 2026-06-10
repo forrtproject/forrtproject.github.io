@@ -1,33 +1,117 @@
 {{- define "main" -}}
+{{- $page := . -}}
 
-{{/* Author profile page. */}}
+{{- if $page.Params.name -}}
+{{/* =========================================================================
+     Author profile page  (/authors/<slug>/)
+     Rendered as a plain section page — the `author` taxonomy was disabled
+     because it collided with the content/authors/ section. The profile data
+     (name, role, organizations, bio, social, avatar) comes straight from this
+     page's front matter; the post list is gathered by scanning the site for
+     content that credits this author.
+     ========================================================================= */}}
+  {{- $slug := $page.File.ContentBaseName -}}
+  {{- $name := $page.Params.name | default $page.Title -}}
+  {{- $avatar := ($page.Resources.ByType "image").GetMatch "*avatar*" -}}
+  {{- $avatar_shape := site.Params.avatar.shape | default "circle" -}}
 
-{{/* If an account has not been created for this user, just display their name as the title. */}}
-{{ if not .File }}
-<div class="universal-wrapper pt-3">
-  <h1>{{ .Title }}</h1>
-</div>
-{{ end }}
+  {{/* Collect this author's content (matched by slug or exact display name). */}}
+  {{- $posts := slice -}}
+  {{- range site.RegularPages -}}
+    {{- $p := . -}}
+    {{- $match := false -}}
+    {{- range $p.Params.authors -}}
+      {{- if or (eq (urlize .) $slug) (eq . $name) -}}{{- $match = true -}}{{- end -}}
+    {{- end -}}
+    {{- if $match -}}{{- $posts = $posts | append $p -}}{{- end -}}
+  {{- end -}}
+  {{- $posts = sort $posts "Date" "desc" -}}
 
 <section id="profile-page" class="pt-5">
   <div class="container">
-    {{/* Show the About widget if an account exists for this user. */}}
+    <div class="row">
 
-    {{ $query := where .Pages ".IsNode" false }}
-    {{ $count := len $query }}
-    {{ if $count }}
-    <div class="article-widget content-widget-hr">
-      <h3>{{ i18n "user_profile_latest" | default "Latest" }}</h3>
-      <ul>
-        {{ range $query }}
-        <li>
-          <a href="{{ .RelPermalink }}">{{ .Title }}</a>
-        </li>
+      <div class="col-12 col-lg-4">
+        <div id="profile">
+          {{ with $avatar }}
+            {{ $img := .Fill "270x270 Center" }}
+            <img class="avatar {{ if eq $avatar_shape "square" }}avatar-square{{ else }}avatar-circle{{ end }}" src="{{ $img.RelPermalink }}" alt="{{ $name }}" loading="lazy">
+          {{ end }}
+          <div class="portrait-title">
+            <h2>{{ $name }}</h2>
+            {{ with $page.Params.role }}<h3>{{ . | markdownify | emojify }}</h3>{{ end }}
+            {{ range $page.Params.organizations }}
+            <h3>
+              {{ with .url }}<a href="{{ . }}" target="_blank" rel="noopener">{{ end }}
+              <span>{{ .name }}</span>
+              {{ if .url }}</a>{{ end }}
+            </h3>
+            {{ end }}
+          </div>
+
+          <ul class="network-icon" aria-hidden="true">
+            {{ range $page.Params.social }}
+              {{ $pack := or .icon_pack "fas" }}
+              {{ $pack_prefix := $pack }}
+              {{ if in (slice "fab" "fas" "far" "fal") $pack }}{{ $pack_prefix = "fa" }}{{ end }}
+              {{ $link := .link }}
+              {{ $scheme := (urls.Parse $link).Scheme }}
+              {{ $target := "" }}
+              {{ if not $scheme }}{{ $link = .link | relLangURL }}{{ else if in (slice "http" "https") $scheme }}{{ $target = "target=\"_blank\" rel=\"noopener\"" }}{{ end }}
+              <li>
+                <a href="{{ $link | safeURL }}" {{ $target | safeHTMLAttr }}>
+                  <i class="{{ $pack }} {{ $pack_prefix }}-{{ .icon }} big-icon"></i>
+                </a>
+              </li>
+            {{ end }}
+          </ul>
+        </div>
+      </div>
+
+      <div class="col-12 col-lg-8">
+        {{ with $page.Params.bio }}{{ . | markdownify | emojify }}{{ end }}
+        {{ $page.Content }}
+
+        {{/* Interests, dropping the Wowchemy template placeholders ("Interest 1"). */}}
+        {{ $interests := slice }}
+        {{ range $page.Params.interests }}
+          {{ if not (findRE `(?i)^interest \d+$` .) }}{{ $interests = $interests | append . }}{{ end }}
         {{ end }}
-      </ul>
+        {{ with $interests }}
+        <h3>{{ i18n "interests" | default "Interests" | markdownify }}</h3>
+        <ul class="ul-interests">
+          {{ range . }}<li>{{ . | markdownify | emojify }}</li>{{ end }}
+        </ul>
+        {{ end }}
+
+        {{ with $posts }}
+        <div class="article-widget content-widget-hr">
+          <h3>{{ i18n "user_profile_latest" | default "Latest" }}</h3>
+          <ul>
+            {{ range . }}<li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>{{ end }}
+          </ul>
+        </div>
+        {{ end }}
+      </div>
+
     </div>
-    {{ end }}
   </div>
 </section>
 
+{{- else -}}
+{{/* =========================================================================
+     Authors index  (/authors/) — lists every author who has a profile page.
+     ========================================================================= */}}
+<section class="pt-5">
+  <div class="universal-wrapper">
+    <h1>{{ $page.Title | default "Authors" }}</h1>
+    {{ $page.Content }}
+    <ul class="authors-index">
+      {{ range $page.Pages.ByParam "name" }}
+        <li><a href="{{ .RelPermalink }}">{{ .Params.name | default .Title }}</a></li>
+      {{ end }}
+    </ul>
+  </div>
+</section>
+{{- end -}}
 {{- end -}}

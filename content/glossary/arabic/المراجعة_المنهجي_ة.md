@@ -10,10 +10,10 @@
         "PRISMA"
     ],
     "references": [
-        "Higgins, J. P. T., Thomas, J., Chandler, J., Cumpston, M., Li, T., Page, M. J., & Welch, V. A. (Eds.). (2019). Cochrane Handbook for Systematic Reviews of Interventions. 2nd Edition. John Wiley & Sons.",
-        "Moher, D., Liberati, A., Tetzlaff, J., & Altman, D. (2009). Preferred Reporting Items for Systematic Reviews and Meta-Analyses: The PRISMA Statement. PLoS Medicine, 6(7), e1000097. https://doi.org/10.1371/journal.pmed.1000097",
-        "Page, M. J., Moher, D., Bossuyt, P. M., Boutron, I., Hoffmann, T. C., Mulrow, C. D., & McKenzie, J. E. (2021). PRISMA 2020 explanation and elaboration: updated guidance and exemplars for reporting systematic reviews. British Medical Journal, 372. https://doi.org/10.1136/bmj.n160",
-        "Topor, M., Pickering, J. S., Barbosa Mendes, A., Bishop, D. V. M., Büttner, F. C., Elsherif, M. M., & others. (2021). An integrative framework for planning and conducting Non-Intervention, Reproducible, and Open Systematic Reviews (NIRO-SR). https://doi.org/10.31222/osf.io/8gu5z"
+        "Higgins, J. P. T., Thomas, J., Chandler, J., Cumpston, M., Li, T., Page, M. J., & Welch, V. A. (Eds.). (2019). <i>Cochrane Handbook for Systematic Reviews of Interventions. 2nd Edition</i>. John Wiley & Sons.",
+        "Moher, D., Liberati, A., Tetzlaff, J., & Altman, D. (2009). Preferred Reporting Items for Systematic Reviews and Meta-Analyses: The PRISMA Statement. <i>PLoS Medicine</i>, <i>6</i>(7), e1000097. https://doi.org/10.1371/journal.pmed.1000097",
+        "Page, M. J., Moher, D., Bossuyt, P. M., Boutron, I., Hoffmann, T. C., Mulrow, C. D., & McKenzie, J. E. (2021). PRISMA 2020 explanation and elaboration: updated guidance and exemplars for reporting systematic reviews. <i>British Medical Journal</i>, <i>372</i>. https://doi.org/10.1136/bmj.n160",
+        "Topor, M., Pickering, J. S., Barbosa Mendes, A., Bishop, D. V. M., Büttner, F. C., Elsherif, M. M., & others. (2021). <i>An integrative framework for planning and conducting Non-Intervention, Reproducible, and Open Systematic Reviews (NIRO-SR)</i>. https://doi.org/10.31222/osf.io/8gu5z"
     ],
     "drafted_by": [
         "Jade Pickering"

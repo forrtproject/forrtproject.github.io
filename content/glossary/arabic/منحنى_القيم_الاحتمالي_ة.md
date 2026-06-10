@@ -14,10 +14,10 @@
         "Z-curve"
     ],
     "references": [
-        "Bruns, S. B., & Ioannidis, J. P. (2016). P-curve and p-hacking in observational research. PLoS ONE, 11(2), e0149144. https://doi.org/10.1371/journal.pone.0149144",
-        "Simonsohn, U., Nelson, L. D., & Simmons, J. P. (2014). P-curve: a key to the file-drawer. Journal of Experimental Psychology: General, 143(2), 534. https://doi.org/10.1037/a0030850",
-        "Simonsohn, U., Nelson, L. D., & Simmons, J. P. (2014). P-curve and effect size: Correcting for publication bias using only significant results. Perspectives on Psychological Science, 9(6), 666–681. https://doi.org/10.1177/1745691614553988",
-        "Simonsohn, U., Nelson, L. D., & Simmons, J. P. (2019). P-curve won’t do your laundry, but it will distinguish replicable from non-replicable findings in observational research: Comment on Bruns & Ioannidis (2016). PLoS ONE, 14(3), e0213454. https://doi.org/10.1371/journal.pone.0213454"
+        "Bruns, S. B., & Ioannidis, J. P. (2016). P-curve and p-hacking in observational research. <i>PLoS ONE</i>, <i>11</i>(2), e0149144. https://doi.org/10.1371/journal.pone.0149144",
+        "Simonsohn, U., Nelson, L. D., & Simmons, J. P. (2014). P-curve: a key to the file-drawer. <i>Journal of Experimental Psychology: General</i>, <i>143</i>(2), 534. https://doi.org/10.1037/a0030850",
+        "Simonsohn, U., Nelson, L. D., & Simmons, J. P. (2014). P-curve and effect size: Correcting for publication bias using only significant results. <i>Perspectives on Psychological Science</i>, <i>9</i>(6), 666–681. https://doi.org/10.1177/1745691614553988",
+        "Simonsohn, U., Nelson, L. D., & Simmons, J. P. (2019). P-curve won’t do your laundry, but it will distinguish replicable from non-replicable findings in observational research: Comment on Bruns & Ioannidis (2016). <i>PLoS ONE</i>, <i>14</i>(3), e0213454. https://doi.org/10.1371/journal.pone.0213454"
     ],
     "drafted_by": [
         "Bettina M. J. Kern"

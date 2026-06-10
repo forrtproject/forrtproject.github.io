@@ -41,11 +41,21 @@ function bibtexToApaJson(bibtexContent, includeUrl = true) {
 
   for (const entry of cite.data) {
     const key = entry.id || entry['citation-key'];
-    let ref = new Cite(entry).format('bibliography', {
-      format: 'text',
+    // Render as HTML so journal titles / volumes keep their APA italics, then peel
+    // off citation-js's wrapping <div class="csl-bib-body"><div class="csl-entry">…
+    // so each value is a clean inline HTML fragment.
+    const html = new Cite(entry).format('bibliography', {
+      format: 'html',
       template: 'apa',
       lang: 'en-US'
-    }).trim();
+    });
+    const m = html.match(/class="csl-entry"[^>]*>([\s\S]*?)<\/div>/);
+    let ref = (m ? m[1] : html).trim();
+    // citation-js escapes every "&" as &#38; (in author lists AND inside URLs).
+    // Decode to a literal "&" so it survives Hugo's markdownify cleanly: authors
+    // re-escape to &amp;, and URLs with query strings (e.g. ...&oldid=) link
+    // correctly instead of double-escaping to &amp;#38;.
+    ref = ref.replace(/&#38;/g, '&');
 
     if (includeUrl) {
       const url = extractUrl(entry);

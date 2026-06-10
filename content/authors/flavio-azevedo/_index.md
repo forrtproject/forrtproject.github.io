@@ -1,10 +1,8 @@
 ---
 # Display name
 name: "Flavio Azevedo"
+title: "Flavio Azevedo"
 
-# Username (this should match the folder name)
-authors:
-- Name "flavio-azevedo"
 
 # Is this the primary user of the site?
 superuser: false

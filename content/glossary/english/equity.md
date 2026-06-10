@@ -11,8 +11,8 @@
         "Social justice"
     ],
     "references": [
-        "Albayrak-Aydemir, N. (2020). The hidden costs of being a scholar from the global south. Retrieved from https://blogs.lse.ac.uk/highereducation/2020/02/20/the-hidden-costs-of-being-a-scholar-from-the-global-south/",
-        "Posselt, J. R. (2020). Equity in Science: Representation, Culture, and the Dynamics of Change in Graduate Education. Stanford University Press. https://books.google.de/books?id=2CjwDwAAQBAJ"
+        "Albayrak-Aydemir, N. (2020). <i>The hidden costs of being a scholar from the global south</i>. Retrieved from https://blogs.lse.ac.uk/highereducation/2020/02/20/the-hidden-costs-of-being-a-scholar-from-the-global-south/",
+        "Posselt, J. R. (2020). <i>Equity in Science: Representation, Culture, and the Dynamics of Change in Graduate Education</i>. Stanford University Press. https://books.google.de/books?id=2CjwDwAAQBAJ"
     ],
     "drafted_by": [
         "Gisela H. Govaart"

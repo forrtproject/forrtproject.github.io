@@ -10,10 +10,10 @@
         "Null Hypothesis Significance Testing (NHST)"
     ],
     "references": [
-        "Foreman-Mackey, D., Hogg, D. W., Lang, D., & Goodman, J. (2013). emcee: The MCMC Hammer. Publications of the Astronomical Society of the Pacific, 125(925), 306–312. https://doi.org/10.1086/670067",
-        "McElreath, R. (2020). Statistical rethinking: A Bayesian course with examples in R and Stan (2nd ed.). Taylor.",
-        "Press, W. (2007). Numerical recipes: the art of scientific computing, 3rd edition.",
-        "Huber, C. (2016). Introduction to Bayesian statistics, part 2: MCMC and the Metropolis–Hastings algorithm. In The Stata Blog. https://blog.stata.com/2016/11/15/introduction-to-bayesian-statistics-part-2-mcmc-and-the-metropolis-hastings-algorithm/"
+        "Foreman-Mackey, D., Hogg, D. W., Lang, D., & Goodman, J. (2013). emcee: The MCMC Hammer. <i>Publications of the Astronomical Society of the Pacific</i>, <i>125</i>(925), 306–312. https://doi.org/10.1086/670067",
+        "McElreath, R. (2020). <i>Statistical rethinking: A Bayesian course with examples in R and Stan</i> (2nd ed.). Taylor.",
+        "Press, W. (2007). <i>Numerical recipes: the art of scientific computing, 3rd edition</i>.",
+        "Huber, C. (2016). Introduction to Bayesian statistics, part 2: MCMC and the Metropolis–Hastings algorithm. In <i>The Stata Blog</i>. https://blog.stata.com/2016/11/15/introduction-to-bayesian-statistics-part-2-mcmc-and-the-metropolis-hastings-algorithm/"
     ],
     "drafted_by": [
         "Alaa AlDoh"

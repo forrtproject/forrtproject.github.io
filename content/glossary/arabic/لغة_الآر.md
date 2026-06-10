@@ -8,7 +8,8 @@
         "Statistical analysis"
     ],
     "references": [
-        "R Project for Statistical Computing. (n.d.). R: The R Project for Statistical Computing. R Project. https://www.r-project.org/"
+        "R Project for Statistical Computing. (n.d.). <i>R: The R Project for Statistical Computing</i>. R Project. https://www.r-project.org/",
+        "R Core Team. (2020). <i>R: A language and environment for statistical computing</i>. R Foundation for Statistical Computing. https://www.R-project.org/"
     ],
     "drafted_by": [
         "Lisa Spitzer"
