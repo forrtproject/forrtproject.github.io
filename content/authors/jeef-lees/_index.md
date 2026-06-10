@@ -1,10 +1,8 @@
 ---
 # Display name
 name: "Jeef Lees"
+title: "Jeef Lees"
 
-# Username (this should match the folder name and the name on publications)
-authors:
-- Name "Jeef Lees"
 
 # Is this the primary user of the site?
 superuser: false

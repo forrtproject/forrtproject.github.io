@@ -4,14 +4,14 @@ name: deploy
 # FORRT Website Deployment
 # =======================
 # Purpose: Build and deploy the FORRT Hugo website to production
-# Triggers: Push to master, manual dispatch, or data updates
+# Triggers: Push to main, manual dispatch, or data updates
 # Target: Production (forrt.org)
 # Note: Staging deployments are handled by staging-aggregate.yaml
 
 on:
   push:
     branches:
-      - master
+      - main
   workflow_dispatch:
   repository_dispatch:
     types: [data-update]
@@ -82,7 +82,7 @@ jobs:
           # Determine branch ref to dispatch (must be a branch or tag)
           REF="${GITHUB_REF#refs/heads/}"
           if [ -z "$REF" ]; then
-            REF="master"
+            REF="main"
           fi
 
           echo "🚀 Dispatching data-processing workflow for ref: $REF because artifact was missing"

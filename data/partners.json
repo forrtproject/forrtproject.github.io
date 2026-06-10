@@ -1,4 +1,14 @@
 [
+    {
+    "name": "The United Nations",
+    "short_name": "UN",
+    "logo": "UN.webp",
+    "url": "https://www.un-sciences-decade.org/en/endorsed-activities/forward-forrt-world-development-fostering-open-research-reproducibility-worldwide-accessible",
+    "cluster": "Global Intergovernmental Organizations",
+    "description": "The United Nations (UN) is a global intergovernmental organization founded in 1945, currently comprising 193 member states, dedicated to maintaining international peace, security, and human rights. Headquartered in New York City, it works on global issues like development, climate action, and humanitarian aid.",
+    "additional_link": "https://www.un-sciences-decade.org/en/endorsed-activities/forward-forrt-world-development-fostering-open-research-reproducibility-worldwide-accessible",
+    "additional_link_text": "Read more"
+  },
   {
     "name": "UNESCO",
     "short_name": "UNESCO",
@@ -9,13 +19,13 @@
     "additional_link": "logos/2025_04_09_FORRT_Flavio_Azevedo_.pdf",
     "additional_link_text": "Read more"
   },
-  {
-    "name": "The Association for Interdisciplinary Metaresearch and Open Science (AIMOS)",
-    "short_name": "AIMOS",
-    "logo": "AIMOS.webp",
-    "url": "https://aimos.community/",
-    "cluster": "Research Communities",
-    "description": " is an organisation that seeks to promote research and education in open science, as well as research that seeks study and improve the research landscape. AIMOS is a co-founder of MetaROR, a publish, review, curate platform for metaresearch."
+    {
+    "name": "Peer Community In & Peer Community Journal",
+    "short_name": "PCI & PCJ Journal",
+    "logo": "Logo_PCI-PCJ-full.webp",
+    "url": "https://peercommunityin.org/",
+    "cluster": "Open Science Infrastructure",
+    "description": "Peer Community In (PCI) offers thematic platforms to review preprints and the multidisciplinary, indexed and diamond open access Peer Community Journal (PCJ), where validated preprints can be published free of charge for authors"
   },
   {
     "name": "UK Reproducibility Network",
@@ -74,14 +84,6 @@
     "description": "Founded in 2019, Liberate Science is about growing positive alternatives to enable a better research environment. Their main project is ResearchEquals, a modular publishing platform that helps researchers document, communicate, and get credit for each step of the research process."
   },
   {
-    "name": "LMU Open Science Center",
-    "short_name": "OSC",
-    "logo": "OSC_Logo.webp",
-    "url": "https://www.osc.uni-muenchen.de/index.html",
-    "cluster": "Open Science Infrastructure",
-    "description": "The LMU Open Science Center has the mission to promote and foster open research practices at LMU Munich. As a central knowledge hub, the OSC provides support for researchers on various aspects of open science, including research data management, FAIR data sharing, licensing, data privacy, and reproducible workflows."
-  },
-  {
     "name": "Münster Center for Open Science",
     "short_name": "MüCOS",
     "logo": "mucos_logo.webp",
@@ -116,13 +118,37 @@
     "cluster": "Open Science Infrastructure",
     "description": "A database of empirical studies in the social sciences. It informs about the availability of replication material and categorizes them by keywords, methods used, sources, type and geographic origin of data used, and by software used. It lists replication studies and their types and results as well as corrections and retractions.",
     "status": "inactive"
+  },  
+  {
+    "name": "The Association for Interdisciplinary Metaresearch and Open Science (AIMOS)",
+    "short_name": "AIMOS",
+    "logo": "AIMOS.webp",
+    "url": "https://aimos.community/",
+    "cluster": "Open Research Communities",
+    "description": " is an organisation that seeks to promote research and education in open science, as well as research that seeks study and improve the research landscape. AIMOS is a co-founder of MetaROR, a publish, review, curate platform for metaresearch."
+  },
+    {
+    "name": "Open Science Community Utrecht (OSCU)",
+    "short_name": "OSCU",
+    "logo": "Klein_logo_OSCU.webp",
+    "url": "https://oscu.nl/",
+    "cluster": "Open Science Infrastructure",
+    "description": "A bottom-up community of (prospective) open scientists in and around Utrecht (The Netherlands). OSCU  organizes, promotes, and facilitates open science events, for its members exchange knowledge and knowhow on open science practices."
+  },
+      {
+    "name": "rainbowR",
+    "short_name": "rainbowR",
+    "logo": "rainbowR.webp",
+    "url": "https://rainbowr.org/",
+    "cluster": "Open Science Infrastructure",
+    "description": "A community that supports, promotes and connects LGBTQ+ people who code in the R language, and spreads awareness of LGBTQ+ issues through data-driven activism."
   },
   {
     "name": "Society for the Improvement of Psychological Science",
     "short_name": "SIPS",
     "logo": "SIPS.webp",
     "url": "https://improvingpsych.org",
-    "cluster": "Research Communities",
+    "cluster": "Open Research Communities",
     "description": "Brings together scholars working to improve methods and practices in psychological science. Anyone interested in improving psychological research is welcome to join, regardless of experience. SIPS is a service organization aiming to make psychological science higher quality and more cumulative."
   },
   {
@@ -130,7 +156,7 @@
     "short_name": "ReproducibiliTea",
     "logo": "reproducibilitea.webp",
     "url": "https://reproducibilitea.org/",
-    "cluster": "Research Communities",
+    "cluster": "Open Research Communities",
     "description": "An ECR-led grassroots initiative that helps researchers create local Open Science journal clubs at their universities. Started in early 2018 at the University of Oxford, ReproducibiliTea has now spread to over 100 institutions in 25 different countries."
   },
   {
@@ -138,7 +164,7 @@
     "short_name": "BiTS Lab",
     "logo": "BITS.webp",
     "url": "https://bigteamsciencelab.github.io/",
-    "cluster": "Research Communities",
+    "cluster": "Open Research Communities",
     "description": "Established in 2021 to facilitate conversations between members of large-scale collaborations (both at Stanford and beyond) and to advance the work done by these groups. Affiliate organizations include FORRT, Lookit, ManyBabies, ManyBirds, ManyDogs, ManyPrimates, Psychological Science Accelerator, and Strengthening Democracy Challenge."
   },
   {
@@ -146,7 +172,7 @@
     "short_name": "Nowhere Lab",
     "logo": "nowherelab.webp",
     "url": "http://nowherelab.com/",
-    "cluster": "Research Communities",
+    "cluster": "Open Research Communities",
     "description": "An online community for people who would like the lab meeting experience but don't currently have one. Nowhere Lab holds weekly meetings and has an active Slack. Members come from across all populated continents and career stages."
   },
   {
@@ -154,7 +180,7 @@
     "short_name": "QuaLa Lab",
     "logo": "QualaLab.webp",
     "url": "http://qualalab.org/",
-    "cluster": "Research Communities",
+    "cluster": "Open Research Communities",
     "description": "A collaboratively-run working group that works to find ways to find connections between the open science movement and qualitative and mixed methods research. The group meets weekly to discuss ongoing projects, the philosophy of open science, and current events inside and outside of academia."
   },
   {
@@ -162,7 +188,7 @@
     "short_name": "RoSE",
     "logo": "rose_logo.webp",
     "url": "https://www.rose-network.org/home",
-    "cluster": "Research Communities",
+    "cluster": "Open Research Communities",
     "description": "Proactively creates an open and inclusive space for multidisciplinary researchers and practitioners of statistics education globally to connect, learn, and collaborate, toward advancing statistics education research and evidence-based practice."
   },
   {
@@ -241,11 +267,19 @@
     "project_link": "/summaries/"
   },
   {
+    "name": "LMU Open Science Center",
+    "short_name": "OSC",
+    "logo": "OSC_Logo.webp",
+    "url": "http://www.osc.lmu.de/",
+    "cluster": "Education & Training",
+    "description": "The LMU Open Science Center has the mission to promote and foster open research practices at LMU Munich. As a central knowledge hub, the OSC provides support for researchers on various aspects of open science, including research data management, FAIR data sharing, licensing, data privacy, and reproducible workflows."
+  },
+  {
     "name": "Metadocencia",
     "short_name": "Metadocencia",
     "logo": "MD.webp",
     "url": "https://www.metadocencia.org/",
-    "cluster": "Early Career & Equity",
+    "cluster": "Open Research & Equity",
     "description": "An organization that works towards making the production, communication, and application of scientific and technical knowledge globally equitable. It aims to advance innovation with a local perspective that responsibly builds scientific and technical capacities through the co-creation of networks, learning spaces, and accessible resources for Spanish-speaking communities."
   },
   {
@@ -253,7 +287,7 @@
     "short_name": "ABRIR",
     "logo": "ABRIR.webp",
     "url": "http://www.abrirpsy.org",
-    "cluster": "Early Career & Equity",
+    "cluster": "Open Research & Equity",
     "description": "Advancing Big-team Reproducible science through Increased Representation (ABRIR) was established as a response to the global need of increasing representation in how we conduct open and big-team science, and as a necessity to promote equity, diversity and inclusion in psychological science."
   },
   {
@@ -261,7 +295,7 @@
     "short_name": "JRP",
     "logo": "jrp.webp",
     "url": "https://jrp.pscholars.org/",
-    "cluster": "Early Career & Equity",
+    "cluster": "Open Research & Equity",
     "description": "A global initiative for students and early career researchers in psychology and behavioural sciences. JRP generates diverse research experiences and training, as well as opportunities for personal and professional development of young researchers. The JRP adheres to the principles of Open Science."
   },
   {
@@ -269,7 +303,7 @@
     "short_name": "FWL Collective",
     "logo": "FeministWonderLabCollective_Logo.webp",
     "url": "https://feministwonderlabcoll.github.io/feministwonderlab/index.html",
-    "cluster": "Early Career & Equity",
+    "cluster": "Open Research & Equity",
     "description": "An international group of early career researchers (ECRs), working in the social and life sciences, who passionately believe in making academia a better place for underrepresented people. The Collective meets online at least once a month to work on projects related to feminist perspectives on science, teaching, and academia."
   },
   {
@@ -277,7 +311,7 @@
     "short_name": "Utrecht University",
     "logo": "Utrecht-University.webp",
     "url": "https://www.uu.nl/en/organisation/interdisciplinary-social-science",
-    "cluster": "Institutional Partners",
+    "cluster": "Higher Education Partners",
     "description": "In 2024, FORRT entered a long-term framework agreement with Utrecht University's Department of Interdisciplinary Social Sciences to formalize and expand our shared commitment to advancing open and reproducible research. This partnership enables co-created research, joint initiatives, and mutual support through a structured governance model."
   }
 ]

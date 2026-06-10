@@ -20,7 +20,8 @@
     ],
     "reviewed_by": [
         "James E. Bartlett",
-        "Alexander Hart**;** Annalise A. LaPlume",
+        "Alexander Hart",
+        "Annalise A. LaPlume",
         "Charlotte R. Pennington",
         "Graham Reid",
         "Timo Roettger",

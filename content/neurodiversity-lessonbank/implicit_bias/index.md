@@ -117,7 +117,7 @@ Are non-neurotypical brains presented as deficient in the article and the tweet?
 *Now choose one of the two articles below and skim the abstract and intro. Discuss or reflect on the questions below.*
 
 **Article 1:**
-- Zwaigenbaum, L., & Penner, M. (2018). Autism spectrum disorder: advances in diagnosis and evaluation. BMJ: British Medical Journal, 361. [https://www.jstor.org/stable/26959693](https://www.jstor.org/stable/26959693)
+- Zwaigenbaum, L., & Penner, M. (2018). Autism spectrum disorder: advances in diagnosis and evaluation. BMJ: British Medical Journal, 361. [https://doi.org/10.20883/jofa.36)
 
 **Article 2:**
 - Faras, H., Al Ateeqi, N., & Tidmarsh, L. (2010). Autism spectrum disorders. *Annals of Saudi medicine*, *30*(4), 295–300. [https://doi.org/10.4103/0256-4947.65261](https://doi.org/10.4103/0256-4947.65261)

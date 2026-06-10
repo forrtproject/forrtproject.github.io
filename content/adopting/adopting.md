@@ -94,15 +94,19 @@ classtitle = "text-center"
 
 A great first step is to reflect on your own current teaching and mentoring practices, and the extent to which they communicate the basic tenets of open and reproducible science.
 
-#### <FONT COLOR="#A9A9A9">How ?</FONT>
+<details>
+<summary><FONT COLOR="#A9A9A9">How ?</FONT></summary>
 
 * FORRT has developed the [FORRT’s Clusters Page](https://docs.google.com/document/d/1_TRh7z3Bv_tdxGqjdWMm4kfQerTYvYw3e4wvQLNpTDQ/edit?tab=t.0#heading=h.9uywlkccaw1) that provides a framework that can be used to help educators make sense of the different key themes of open and reproducible science for independent evaluation of one’s own practices.
+
+</details>
 
 ## **2. Add literature or assignments to your syllabus that teach open science concepts.**
 
 Including sources in your syllabus that discuss open and transparent research can enrich students’ education by helping them think about research more critically. This can be a great addition to research methods courses or any other course that requires students to evaluate or synthesize knowledge.
 
-#### <FONT COLOR="#A9A9A9">How ?</FONT>
+<details>
+<summary><FONT COLOR="#A9A9A9">How ?</FONT></summary>
 
 * Find suitable reading materials for your course syllabus:  
   * [FORRT’s Lesson Plans](https://forrt.org/lesson-plans) provide community-built open educational resources that can be integrated into taught courses ‘out of the box’.   
@@ -147,12 +151,15 @@ Including sources in your syllabus that discuss open and transparent research ca
   * [ReproducibiliTea: A podcast highlighting the great work of early career researchers](https://soundcloud.com/reproducibilitea)  
   * [Within & Between: A podcast about the methods and metascience of developmental science](https://podtail.com/en/podcast/within-between/)
 
+</details>
+
 
 ## **3. Create, re-use and share open educational materials**
 
 Open educational resources allow community members to make contributions and continuously improve the materials. For example, they can enhance their documentation, add media (transcripts, voice, video), translate materials, improve accessibility, and much more. Educators can then reuse and adapt these materials for their own courses, thus reducing the need to produce high-quality materials on their own and saving time better used for teaching and mentoring. 
 
-#### <FONT COLOR="#A9A9A9">How ?</FONT>
+<details>
+<summary><FONT COLOR="#A9A9A9">How ?</FONT></summary>
 
 * Explore existing instances of principled education:   
   * [FORRT Pedagogies](https://forrt.org/pedagogies) aims to collect and catalogue exemplary instances of principled education \- i.e., successful instances of teaching or mentoring of open and reproducible principles, and detailed examples of the processes by which ideals in teaching, mentoring, and openness of these materials come to materialize.  
@@ -184,6 +191,8 @@ Open educational resources allow community members to make contributions and con
     * Creating materials in interoperable formats that allow (re)use in different software programmes and operating systems.  
     * Keeping materials up-to-date and inviting contributions from others.
 
+</details>
+
 <center>
 
 ![Garcia et al. (2020) Figure 1](/img/Garciaetal2020.webp) 
@@ -196,7 +205,8 @@ Open educational resources allow community members to make contributions and con
 
 Educators and mentors can actively support students in exploring open and reproducible science through curated resources, experiential learning, and community engagement. This means not only sharing accessible introductory materials, but also encouraging participation in clubs, workshops, or mentorship initiatives. 
 
-#### <FONT COLOR="#A9A9A9">How ?</FONT>
+<details>
+<summary><FONT COLOR="#A9A9A9">How ?</FONT></summary>
 
 * Use one of the following pedagogical resources:   
   * [‘The 4-Step Robustness Check’](https://www.metascience2019.org/presentations/michele-nuijten/) breaks down concepts of reproducibility and replicability exceedingly well:  
@@ -206,13 +216,17 @@ Educators and mentors can actively support students in exploring open and reprod
     * Performing a *replication* study in a new sample.  
   * [Seven Easy Steps to Open Science](https://psyarxiv.com/cfzyx) provides an introduction to open science using an annotated reading list of 7 key topics (e.g., pre-registration, open data, reproducible research).  
   * [Easing Into Open Science: A Tutorial for Graduate Students](https://psyarxiv.com/vzjdp/) provides simple steps for graduate students to adopt open science practices, along with resources and advice.  
+
 * Consider taking part in one of FORRT’s [Towards Social Justice in Academia Initiatives](https://forrt.org/dei) by:  
   * Attending, participating, or hosting an [“Open (and Reproducible) Office hours”](https://forrt.org/dei) where anyone in the world wishing to learn, adopt, teach/mentor and disseminate open and reproducible science practices can attend.  
   * Additional ways to involve students in *Towards Social Justice In Academia Initiatives* can be found in [tip 8](#8.-become-an-advocate-at-your-own-institution/professional-society).  
+
 * Encourage students to join a local [ReproducibiliTea](https://reproducibilitea.org/) chapter.  
   * *ReproducibiliTea* is a global journal club initiative that encourages students and staff to read and discuss journal articles related to open science. If one doesn’t exist in your university/city, you can start your own local chapter\!  
+
 * Encourage your mentees to join courses or workshops related to open science research ([see here for a variety of Open and Reproducible science resources](https://forrt.org/resources/) but bear in mind the list of teaching-specific resources is in progress).  
   * [OpenLearn Create](https://www.open.edu/openlearncreate/course/index.php?categoryid=1589) offers a variety of free online courses on research methods, open science practices, and reproducible research.  
+
 * And encourage students to check out these introductions to open science topics:  
   * [UKRN: Open research primers](https://www.ukrn.org/primers/): Important topics in open and reproducible scholarship.  
   * [INOSC Starter Kit](https://inosc-starter-kit.netlify.app/): Open Science Community Starter Kit.  
@@ -220,15 +234,19 @@ Educators and mentors can actively support students in exploring open and reprod
   * [A Student’s Guide to Open Science: Using the Replication Crisis to Reform Psychology](https://forrt.org/educators-corner/014-students-guide-to-open-science/).  
   * FORRT: [The PaPOR TRaIL Course: Principles and Practices in Open Research: Teaching, Research, Impact and Learning.](https://forrt.org/educators-corner/009-papor-trail/)
 
+</details>
+
 ## **5. Create opportunities for students and mentees to engage in open science research projects**
 
 Involving students in open science projects is an effective way to deepen their understanding of transparent and collaborative research practices. These experiences can also help them connect with like-minded researchers, gain mentorship, and build valuable skills—especially early in their academic journey.
 
-#### <FONT COLOR="#A9A9A9">How ?</FONT>
+<details>
+<summary><FONT COLOR="#A9A9A9">How ?</FONT></summary>
 
 * Join Established Collaborative Projects  
   * The [Collaborative Replications and Education Project in Psychology](https://osf.io/wfc6u/wiki) supports student-led replication studies in psychology, often for dissertations, in collaboration with other universities.   
   * The Psychology Science Accelerator ([PSA](https://psysciacc.org/)*)* runs large-scale, multi-lab experiments that follow open science principles. Students can participate through dissertations, internships, or course projects.  
+
 * Design Your Own Replication Project  
   * Encourage students to replicate a classic study as part of a class assignment. This helps them understand the importance of reproducibility and scientific integrity.  
   * Helpful resources for classroom replication projects include:  
@@ -248,11 +266,13 @@ Involving students in open science projects is an effective way to deepen their 
   * Helpful resources for overall robustness/validity include:  
     * [A Protocol for Structured Robustness Reproductions and Replicability Assessments](https://econpapers.repec.org/paper/zbwi4rdps/143.htm): A list of three different reporting tools used to streamline the presentation of results and assess adherence to pre-analysis plans in the replicated papers, as well as to evaluate external and construct validity.  
     * [Author Guidelines for Verification Reports](https://openpsychologydata.metajnl.com/verification-reports): Guidelines for evaluating claims in published research by reanalysing original study data.   
-    * [FORRT’s 60+ pages guide on reproductions and replications](https://forrt.org/replication_handbook/).  
+    * [FORRT’s 60+ pages guide on reproductions and replications](https://forrt.org/replication-handbook/).  
 * Review and evaluate examples of replication studies and reproducibility reviews found from directories below:  
   * [ReplicationWiki – Economics and social sciences](https://blog.repec.org/2020/08/04/a-replication-database-for-economics-and-social-sciences-the-replicationwiki/)  
   * [Political Science Replication](https://politicalsciencereplication.wordpress.com/about/)  
   * [Reproducibility Reviews AGILE 2024](https://osf.io/qvr4s/)[.](https://osf.io/numa5)
+
+</details>
 
 
 
@@ -260,13 +280,16 @@ Involving students in open science projects is an effective way to deepen their 
 
 Sharing your research openly helps others learn from your work. Educators can use open data and materials in their teaching—for example, in hands-on classroom activities like data analysis or mini-replication projects. This makes your work more impactful and supports student learning at both undergraduate and graduate levels.
 
-#### <FONT COLOR="#A9A9A9">How ?</FONT>
+<details>
+<summary><FONT COLOR="#A9A9A9">How ?</FONT></summary>
 
 * [Open Science Framework](https://osf.io/): A popular platform where research data and materials can be easily shared and indexed.  
 * [Zenodo](http://zenodo.org/): Another trusted platform for uploading and sharing research outputs. Supports a range of file types and provides DOIs.  
 * [re3data](https://www.re3data.org/): A searchable directory of research repositories across different fields. Great for finding a subject-specific platform for your work.  
 * [Table with Open Access Types](https://lukasroeseler.github.io/MueCOS-Infomodule/%C3%BCbergreifend/gen_3.html#zentrale-typen-von-open-access) (original is in German):  An overview of the most common Open Access models, evaluating their accessibility and cost implications.  
 * [GitHub](https://github.com/): Online platform for creating, storing, managing, and sharing code, with version control.
+
+</details>
 
 ## **7. Embed Diversity, Equity, and Inclusion (DEI) in your teaching and mentorship**
 
@@ -279,7 +302,8 @@ Common structural barriers and how to address them:
 * Group work inequities → structured roles, rotating facilitation, credit tracking.  
 * Neurodiversity → predictable structure, multiple submission formats, low-sensory options.
 
-#### <FONT COLOR="#A9A9A9">How ?</FONT>
+<details>
+<summary><FONT COLOR="#A9A9A9">How ?</FONT></summary>
 
 * Foster an inclusive classroom culture:  
   * Check out [Stanford’s Inclusive Teaching Guide](https://teachingcommons.stanford.edu/teaching-guides/inclusive-teaching-guide) for tips on creating equitable learning environments, supporting diverse student needs, and embedding inclusion into everyday teaching practices.  
@@ -292,38 +316,47 @@ Common structural barriers and how to address them:
   * Use one of [FORRT’s lesson plans](https://forrt.org/neurodiversity-lessonbank/) that aim to promote Neurodiversity and Open Scholarship in Academia.   
   * Use resources such as the [BIPOC-authored Psychology Papers spreadsheet](https://docs.google.com/spreadsheets/d/1i7Eacoyv9VVg2lBbCV-KJZg4nSGvR_VZFOysOyOGG8g/edit?fbclid=IwAR1zlaZHcY1HMYYnaa5M96aC577qDagmphf_R7EH2YXBl_P1ihJcPu9zUPM&gid=666010790#gid=666010790%20), intended for use by instructors of undergraduate/ graduate-level psychology courses to help diversify their syllabi, or [the Diversity Reading list](https://www.google.com/url?q=https://diversityreadinglist.org/about/&sa=D&source=docs&ust=1749130331285358&usg=AOvVaw1xfd6fPDUWRJ2pzNFMxdf7) offering quality texts in philosophy by authors from underrepresented groups, or [FORRT’S annotated reading list](https://forrt.org/curated_resources/point-of-view-an-annotated-introductory/) supporting readers in understanding some of the key ideas and topics within neurodiversity.  
 * Use inclusive citation practices.  
-  * Consider adding a [Citation Diversity Statement](https://www.sciencedirect.com/science/article/abs/pii/S1364661320301649) in your course materials or assignments, to acknowledge and intentionally include scholarship from diverse voices and underrepresented groups.  
+  * Consider adding a [Citation Diversity Statement](https://doi.org/10.1016/j.tics.2020.06.009) in your course materials or assignments, to acknowledge and intentionally include scholarship from diverse voices and underrepresented groups.  
   * Use [McGill’s Citation Justice Guide](https://libraryguides.mcgill.ca/citation_justice/how_to) to help students audit their citation practices and intentionally seek out diverse voices in their research. The guide offers practical tools for analyzing whose work is being cited, identifying gaps, and finding resources to include scholars from marginalized communities.   
   * Read [FORRTs Manuscript](https://forrt.org/citation-politics/) on The Citational Justice Toolkit which offers practical guidance and tools to help researchers make more equitable and conscientious citation choices throughout the research process.  
 * Engage with *Towards Social Justice In Academia Initiatives:*  
   * [FORRT’s remote mentorship program](https://forrt.org/dei) aims to facilitate and encourage adherence to open and reproducible research practices for (a) students from underprivileged and underrepresented backgrounds; (b) non-WEIRD; and (c) when there are no local open science friendly institutions or personnel.  
   * [FORRT’s supporting underprivileged and underrepresented early-career researchers initiative](https://forrt.org/dei) serves as a link between willing mentors and mentees in their engagement with academia, its several duties (e.g., application materials, grant/funding proposals, academic writing, research development, statistical analyses, etc.), as well as open and reproducible science practices. It is FORRT’s goal to chip away at the barriers that exist and to promote a more inclusive environment for all (Roberson, 2020).
 
+</details>
+
+
 ## **8. Become an advocate at your own institution/professional society**
 
 A great way to adopt the values of principled education is to advocate in your own institution for incorporating the values of open science and transparent research into teaching.
 
-#### <FONT COLOR="#A9A9A9">How ?</FONT>
+<details>
+<summary><FONT COLOR="#A9A9A9">How ?</FONT></summary>
 
 * Within your institution:  
   * If you're part of a teaching committee, suggest adding open science topics to course content, as simple as adding a slide or a real-world example.  
   * Start conversations with colleagues about including transparency and reproducibility in the curriculum.  
   * If you are involved in hiring decisions, try to understand the quality criteria used. If your institution is only using citation numbers or Journal Impact Factors, make everybody aware of [sfdora.org](http://sfdora.org) and [coara.eu](http://coara.eu) (if you are at a big university, chances are high that they signed SF DORA); maybe you can ask the committee to use [resque.info](http://resque.info). Relying solely on bibliometrics is not useful if the aim is to choose a qualified person as they are not reproducible and possibly unrelated to scientific quality (e.g., [Prestigious Science Journals Struggle to Reach Even Average Reliability](https://www.frontiersin.org/journals/human-neuroscience/articles/10.3389/fnhum.2018.00037/full)).   
+
 * Within professional societies or unions:  
   * Advocate for policies that support openness, transparency, and equality in research and education.  
   * Encourage societies to offer workshops, resources, or statements supporting these values.  
+
 * Track open science adoption: Monitoring how open science is implemented across journals reveals progress, gaps, and opportunities for change. It also provides concrete examples to inform discussions in advocacy, teaching, and policy. Use the following tools to track OS uptake and support data-informed advocacy:  
   * [OSF Registries](https://osf.io/registries) – Monitor how often studies are preregistered, and explore trends in research transparency across disciplines. To see how many registrations there are by subject you can use the [OSF registries website](https://osf.io/registries).  
   * [Registered Reports Database](https://docs.google.com/spreadsheets/d/1D4_k-8C_UENTRtbPzXfhjEyu3BfLxdOsn9j-otrO870/edit?gid=0#gid=0) – Discover which journals accept Registered Reports, a publishing format that promotes methodological rigor by reviewing research plans before data collection.  
   * [TOP Factor](https://topfactor.org/) – Compare journals based on their transparency and openness policies. This tool rates journals across 10 dimensions, including data sharing, preregistration, and replication.  
   * [Peer Community In (PCI)](https://peercommunityin.org/) – Explore peer-reviewed preprint platforms across disciplines that support open, transparent, and community-driven scholarly communication.  
+
 * Connect with others who care about open research by joining networks such as:  
   * [ABRIR](https://abrirpsy.org/): An international network of researchers and practitioners dedicated to promoting open, reproducible, and transparent research practices across disciplines.  
   * [FORRT](https://forrt.org/): A collaborative forum connecting educators and researchers who develop, share, and discuss resources for teaching open and reproducible science.  
-  * T[he repliCATS project](https://replicats.research.unimelb.edu.au/): A collaborative initiative that engages researchers in systematically assessing reproducibility and credibility in published research, fostering methodological reflection and community learning.  
+  * [The repliCATS project](https://replicats.research.unimelb.edu.au/): A collaborative initiative that engages researchers in systematically assessing reproducibility and credibility in published research, fostering methodological reflection and community learning.  
   * [Quala Lab](https://qualalab.org/): Collaborative working group finding connections between the open science movement and qualitative and mixed methods research.  
   * [Reproducibility Network](https://www.ukrn.org/global-networks/): National peer led consortium of researchers aiming to promote and ensure rigorous research practices.    
   * [ReproducibiliTea:](https://soundcloud.com/reproducibilitea) A podcast highlighting the great work of early career researchers.
+
+</details>
 
 ### **What do you think of these tips?**
 

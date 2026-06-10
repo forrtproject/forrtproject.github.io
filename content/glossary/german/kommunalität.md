@@ -5,7 +5,7 @@
     "definition": "Das geteilte öffentliche Eigentum wissenschaftlicher Ergebnisse und Methoden und das daraus folgende Gebot, beides frei zu teilen. Die Kommunalität beruht auf der Tatsache, dass jede wissenschaftliche Erkenntnis das Ergebnis der Bemühungen einer Reihe von Akteuren ist. Um diese Norm zu befolgen, teilen Forschende ihre neuen Erkenntnisse offen mit Kolleg:innen.",
     "related_terms": [
         "Mertonian norms",
-        "Objectivity **Alternative definition:** Communism (in Merton, 1942\\) **Related terms to alternative definition** (if applicable)"
+        "Objectivity"
     ],
     "references": [
         "Anderson, M. S., Ronning, E. A., Devries, R., & Martinson, B. C. (2010). Extending the Mertonian norms: Scientists’ subscription to norms of research. Journal of Higher Education, 81(3), 366–393. https://doi.org/10.1353/jhe.0.0095",

@@ -4,13 +4,13 @@ name: Staging Aggregate Deployment
 # Staging Deployment Workflow
 # =======================
 # Purpose: Aggregates and deploys staging changes to production
-# Triggers: PRs to master, monthly schedule, or manual dispatch
+# Triggers: PRs to main, monthly schedule, or manual dispatch
 # Features: Multi-PR aggregation, staging deployment, and force deploy option
 
 on:
   pull_request:
     branches:
-      - master
+      - main
     types: [opened, synchronize, reopened, ready_for_review]
   schedule:
     - cron: '0 1 1 * *'  # 1 AM UTC on the 1st of each month
@@ -85,7 +85,7 @@ jobs:
             # Validate PR exists and is open
             if ! gh pr view "$SINGLE_PR" --json state --jq '.state' | grep -q "OPEN"; then
               echo "❌ PR #$SINGLE_PR is not open or doesn't exist"
-              echo "branch=master" >> $GITHUB_OUTPUT
+              echo "branch=main" >> $GITHUB_OUTPUT
               echo "included_prs=" >> $GITHUB_OUTPUT
               echo "attempted_prs=$SINGLE_PR" >> $GITHUB_OUTPUT
               echo "total_prs=0" >> $GITHUB_OUTPUT
@@ -97,12 +97,12 @@ jobs:
             echo "has_prs=true" >> $GITHUB_OUTPUT
             echo "total_prs=1" >> $GITHUB_OUTPUT
           else
-            # Get all open, non-draft PRs targeting master (regardless of CI status)
-            PRS=$(gh pr list --base master --state open --json number,title,headRefName,isDraft --jq '.[] | select(.isDraft == false) | .number')
+            # Get all open, non-draft PRs targeting main (regardless of CI status)
+            PRS=$(gh pr list --base main --state open --json number,title,headRefName,isDraft --jq '.[] | select(.isDraft == false) | .number')
             
             if [ -z "$PRS" ]; then
               echo "No open non-draft PRs found"
-              echo "branch=master" >> $GITHUB_OUTPUT
+              echo "branch=main" >> $GITHUB_OUTPUT
               echo "included_prs=" >> $GITHUB_OUTPUT
               echo "attempted_prs=" >> $GITHUB_OUTPUT
               echo "total_prs=0" >> $GITHUB_OUTPUT
@@ -115,9 +115,9 @@ jobs:
             echo "has_prs=true" >> $GITHUB_OUTPUT
           fi
           
-          # Create a new branch for aggregation starting from master
+          # Create a new branch for aggregation starting from main
           AGGREGATE_BRANCH="staging-aggregate-$(date +%Y%m%d-%H%M%S)"
-          git checkout master
+          git checkout main
           git checkout -b "$AGGREGATE_BRANCH"
           
           INCLUDED_PRS=""
@@ -230,7 +230,7 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v6
         with:
-          ref: ${{ needs.aggregate-prs.outputs.aggregated-branch || 'master' }}
+          ref: ${{ needs.aggregate-prs.outputs.aggregated-branch || 'main' }}
 
       - name: Configure Git
         run: |
@@ -278,7 +278,7 @@ jobs:
           # Determine branch ref to dispatch (must be a branch or tag)
           REF="${GITHUB_REF#refs/heads/}"
           if [ -z "$REF" ]; then
-            REF="master"
+            REF="main"
           fi
 
           echo "🚀 Dispatching data-processing workflow for ref: $REF because artifact was missing"

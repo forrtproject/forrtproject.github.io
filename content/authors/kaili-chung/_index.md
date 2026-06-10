@@ -1,10 +1,8 @@
 ---
 # Display name
 name: "Kai Li Chung"
+title: "Kai Li Chung"
 
-# Username (this should match the folder name and the name on publications)
-authors:
-- Name "Kai Li Chung"
 
 # Is this the primary user of the site?
 superuser: false

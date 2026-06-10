@@ -62,6 +62,21 @@
         "reference" "Kaynak"
         "references" "Kaynakça"
     )
+    "chinese" (dict
+        "list_of_terms" "术语列表"
+        "filter_terms" "筛选术语..."
+        "definition" "定义"
+        "alt_definition" "替代定义"
+        "related_term" "相关术语"
+        "related_terms" "相关术语"
+        "originally_drafted_by" "原稿作者"
+        "reviewed_by" "审阅者"
+        "translated_by" "翻译者"
+        "translation_reviewed_by" "译稿审阅者"
+        "note" "我们正在努力将参考文献直接链接起来。目前，完整的参考文献列表可在<a href='https://forrt.org/glossary/references'>此处</a>查看。"
+        "reference" "参考文献"
+        "references" "参考文献"
+    )
 }}
 
 <style>
@@ -171,7 +186,7 @@
 
 <div class="language-switcher">
   {{ $currentLang := .Params.language | default "english" }}
-{{ $allLanguages := slice "arabic" "english" "german" "turkish" }}
+{{ $allLanguages := slice "arabic" "chinese" "english" "german" "turkish" }}
   {{ $availableLanguages := slice }}
   {{ $site := .Site }}
   

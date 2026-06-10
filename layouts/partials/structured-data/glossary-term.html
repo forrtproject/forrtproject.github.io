@@ -1,0 +1,26 @@
+{{/* DefinedTerm JSON-LD for individual glossary term pages.
+     Built with dict + jsonify + safeJS (see clusters/seo_jsonld.html) so that
+     all values are safely JSON-escaped rather than hand-interpolated. */}}
+{{- if and (eq .Type "glossary") .IsPage .Params.definition -}}
+  {{/* Strip stray markdown emphasis markers (the source occasionally has
+       malformed bold like **"** that CommonMark leaves literal). */}}
+  {{- $desc := .Params.definition | plainify | replaceRE `\*+` "" | truncate 300 "…" -}}
+  {{/* Defense-in-depth: stop a literal </script from terminating the tag. */}}
+  {{- $desc = replaceRE "(?i)</script" "<\\/script" $desc -}}
+  {{- $langMap := dict "arabic" "ar" "chinese" "zh" "english" "en" "german" "de" "turkish" "tr" -}}
+  {{- $lang := index $langMap (.Params.language | default "english") | default "en" -}}
+  {{- $set := dict
+      "@type" "DefinedTermSet"
+      "name" "FORRT Glossary of Open and Reproducible Science"
+      "url" (absURL "glossary/")
+      "inLanguage" $lang -}}
+  {{- $term := dict
+      "@context" "https://schema.org"
+      "@type" "DefinedTerm"
+      "name" .Title
+      "description" $desc
+      "url" .Permalink
+      "inLanguage" $lang
+      "inDefinedTermSet" $set -}}
+  <script type="application/ld+json">{{ $term | jsonify | safeJS }}</script>
+{{- end -}}
