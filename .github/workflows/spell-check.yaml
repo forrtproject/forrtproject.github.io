@@ -64,8 +64,9 @@ jobs:
         run: |
           python scripts/spell_check/check_spelling.py
 
+      # Same-repo PRs: the token can write, so post/update the result as a PR comment.
       - name: Find Comment
-        if: github.event_name == 'pull_request'
+        if: github.event_name == 'pull_request' && github.event.pull_request.head.repo.full_name == github.repository
         uses: peter-evans/find-comment@v4
         id: fc
         with:
@@ -74,10 +75,26 @@ jobs:
           body-includes: Spell Check
 
       - name: Create or update comment
-        if: github.event_name == 'pull_request'
+        if: github.event_name == 'pull_request' && github.event.pull_request.head.repo.full_name == github.repository
         uses: peter-evans/create-or-update-comment@v5
         with:
           comment-id: ${{ steps.fc.outputs.comment-id }}
           issue-number: ${{ github.event.pull_request.number }}
           body: ${{ steps.spell_check.outputs.comment }}
           edit-mode: replace
+
+      # Fork PRs: the GITHUB_TOKEN is read-only, so a PR comment would 403.
+      # Surface the same result as a job-summary report in the workflow run instead.
+      - name: Spell check report (fork PR)
+        if: github.event_name == 'pull_request' && github.event.pull_request.head.repo.full_name != github.repository
+        env:
+          REPORT: ${{ steps.spell_check.outputs.comment }}
+        run: |
+          {
+            echo "## 📝 Spell check report"
+            echo ""
+            echo "> This PR is from a fork, so the workflow cannot post a PR comment"
+            echo "> (fork runs receive a read-only token). The result is shown below."
+            echo ""
+            echo "$REPORT"
+          } >> "$GITHUB_STEP_SUMMARY"
