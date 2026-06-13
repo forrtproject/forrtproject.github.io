@@ -32,8 +32,8 @@ image:
 How can AI and large language models help us understand and improve how science works — and how are they changing science itself? To explore these questions, we are inviting submissions for the **FORRT AI in Metascience Online Conference**.
 
 **When:** 28–30 September 2026 (time-zone inclusive)<br>
-**Where:** Online<br>
-**Submission deadline:** 31 July 2026
+**Where:** Online — free to attend<br>
+**Submission deadline:** 31 July 2026 (23:59 in your own time zone)
 
 Speakers who opt in will have their talks shared on the [FORRT YouTube channel](https://youtube.com/@forrtproject).
 
@@ -58,7 +58,7 @@ Expand each format for examples and the details you'll be asked to provide.
 <details>
 <summary>Talks, Symposia &amp; Lightning Talks</summary>
 
-Share results from AI-enabled research, present practical experiences, or organise a themed symposium with several contributors.
+Share results from AI-enabled research, present practical experiences, or organise a themed symposium of 4–6 talks.
 
 **Ideas could include:** AI for data extraction, claim verification, automated "peer" review, or reproducibility checks; honest lessons from using AI in your own workflow; or a lightning demo that opens up new possibilities.
 
@@ -91,7 +91,7 @@ Want to propose something else, such as a roundtable or panel discussion? Email 
 
 ## Ready to contribute?
 
-Put your idea together and submit it by **31 July 2026**.
+Put your idea together and submit it by **31 July 2026**. Further programme details will follow closer to the event.
 
 <a href="https://forms.gle/XSoZH7X7naqZGVmS8" class="btn btn-primary btn-lg btn-block" style="line-height:1;border-radius:6px;font-size:1.4rem;" target="_blank" rel="noopener">
   Submit your proposal
