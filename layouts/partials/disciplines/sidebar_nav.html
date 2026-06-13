@@ -1,0 +1,35 @@
+{{/* Sidebar navigation for disciplines page */}}
+{{ $data := .data }}
+{{ $arrowColors := .arrowColors }}
+{{ $link_mode := .link_mode | default "anchor" }}
+
+<div class="col-lg-4 col-xl-3 clusters-sidebar" id="clusters-sidebar">
+  <div class="clusters-sidebar-inner">
+    <div class="sidebar-header">Fields &amp; Disciplines</div>
+    <nav id="cluster-nav">
+      {{ range $fi, $field := $data.fields }}
+      {{ $fid := printf "field-%d" (int $field.number) }}
+      {{ $fieldHref := printf "#%s" $fid }}
+      <div class="cluster-nav-group" data-cluster="{{ $fid }}">
+        <a href="{{ $fieldHref }}" class="cluster-nav-heading">
+          {{ $arrowColor := index $arrowColors (mod $fi (len $arrowColors)) }}
+          <span class="cluster-nav-toggle" style="color:{{ $arrowColor }};">&#9656;</span>
+          {{ $field.name }}
+        </a>
+        <ul class="cluster-nav-subs" style="display:none;">
+          {{ range $di, $disc := $field.disciplines }}
+          {{ $did := printf "f%d-d%d" (int $field.number) $di }}
+          {{ $subHref := printf "#%s" $fid }}
+          <li class="nav-item">
+            <a href="{{ $subHref }}" class="nav-link sc-nav-link" data-cluster="{{ $fid }}" data-tab="{{ $did }}-tab">
+              {{ $disc.name }}
+              <span class="badge badge-pill">{{ len $disc.resources }}</span>
+            </a>
+          </li>
+          {{ end }}
+        </ul>
+      </div>
+      {{ end }}
+    </nav>
+  </div>
+</div>
