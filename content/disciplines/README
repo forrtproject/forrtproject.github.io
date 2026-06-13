@@ -1,0 +1,169 @@
+# How to Edit the Disciplines Page
+
+The disciplines page (`/disciplines/`) shows curated open-research resources
+across fields and disciplines. All content comes from a **Google Sheet**,
+not from this folder.
+
+- **Public page:** https://forrt.org/disciplines/
+- **Source spreadsheet:** [OSxDisciplines source][sheet]
+  (`1mSlduu86_nE1sY1gXobw3Pp1vI73B_0iHBsJqjtsJU4`)
+- **Tenzing contributors sheet:** [OSxDisciplines | Tenzing][tenzing]
+  (`1mPT7cGZIvNjOzY6Q6YPLf2CzTL9PG3I5f8oP3mhNfo0`)
+- **Canonical G-Doc (per-edition):** the latest hackathon document
+  ("Open Research: Examples of good practice, and resources across disciplines"),
+  shared via FORRT Drive.
+
+[sheet]: https://docs.google.com/spreadsheets/d/1mSlduu86_nE1sY1gXobw3Pp1vI73B_0iHBsJqjtsJU4
+[tenzing]: https://docs.google.com/spreadsheets/d/1mPT7cGZIvNjOzY6Q6YPLf2CzTL9PG3I5f8oP3mhNfo0
+
+## Where each thing lives
+
+| What | Location |
+| --- | --- |
+| Page content (fields, disciplines, examples, resources) | Google Sheet |
+| Page layout (Hugo template) | `layouts/disciplines/single.html` + `layouts/partials/disciplines/*.html` |
+| Frontmatter (page title, SEO copy) | `content/disciplines/_index.md` |
+| Cached page data committed to the repo | `data/disciplines.json` |
+| Scripts | `scripts/parse_disciplines_to_json.py`, `scripts/parse_disciplines_gdoc.py`, `scripts/export_disciplines_to_md.py` |
+
+## Source spreadsheet structure
+
+Three tabs, all with header rows:
+
+**Fields** — top-level groupings, in display order
+
+| Name | Summary | Show |
+| --- | --- | --- |
+| Natural Sciences | _(optional one-paragraph intro)_ | TRUE |
+| … | | |
+
+- `Show` controls visibility on the page. `TRUE` / `YES` / `1` (or empty) shows the field;
+  `FALSE` hides it. Hidden fields stay in the sheet for future use.
+
+**Disciplines** — disciplines within each field
+
+| Field | Discipline | Examples |
+| --- | --- | --- |
+| Natural Sciences | Chemistry | _short prose with case-study examples_ |
+
+- The `Field` column must match a `Name` in the Fields tab exactly.
+- `Examples` is plain prose shown under the discipline heading.
+
+**Resources** — one row per resource link
+
+| Discipline | Title | Link | Category |
+| --- | --- | --- | --- |
+| Chemistry | Why chemistry research should be open access | https://… | General |
+
+- `Discipline` must match a `Discipline` in the Disciplines tab exactly.
+- `Category` should be one of: `General`, `Open Data`, `Open Methods`,
+  `Open Outputs`, `Open Education`. Other values render as a grey badge.
+
+## Common workflows
+
+### Small edits (typo, new resource, condense Examples text)
+
+1. Edit the [Google Sheet][sheet] directly.
+2. Refresh the cached data:
+   ```bash
+   python3 scripts/parse_disciplines_to_json.py
+   ```
+3. Preview locally and commit `data/disciplines.json`:
+   ```bash
+   ~/go/bin/hugo server -D --port 1313
+   git add data/disciplines.json && git commit -m "Update disciplines data" && git push
+   ```
+
+### Hide or reveal a whole field
+
+Set `Show` to `FALSE` / `TRUE` on the Fields tab, then re-run the parser and commit.
+
+### Producing an editable markdown copy (for review or sharing)
+
+```bash
+python3 scripts/export_disciplines_to_md.py
+# writes scripts/output/disciplines.md (gitignored)
+```
+
+The markdown groups resources by category under each discipline. Useful for
+editorial review without opening the spreadsheet, or for sharing a snapshot
+that mirrors the old Google Doc layout.
+
+### Major rewrite from a new G-Doc edition
+
+After a hackathon refresh, the team produces a new master Google Doc.
+`scripts/parse_disciplines_gdoc.py` rewrites the three sheet tabs from
+that document — destructive, so back up first if you want a copy.
+
+```bash
+# 1) Get the file id of the G-Doc from Google Drive (URL ends with /d/<ID>/edit)
+# 2) Dry run — parse only, write a JSON preview:
+python3 scripts/parse_disciplines_gdoc.py --drive-id <FILE_ID> --json /tmp/parsed.json
+
+# 3) When happy, push to the spreadsheet:
+python3 scripts/parse_disciplines_gdoc.py --drive-id <FILE_ID> --push
+
+# 4) Refresh cached data and commit:
+python3 scripts/parse_disciplines_to_json.py
+git add data/disciplines.json && git commit -m "Refresh disciplines from <edition>" && git push
+```
+
+Or run it on a local `.docx` file:
+
+```bash
+python3 scripts/parse_disciplines_gdoc.py path/to/source.docx --json /tmp/parsed.json
+python3 scripts/parse_disciplines_gdoc.py path/to/source.docx --push
+```
+
+What the script does:
+
+- Reads Heading 1 / Heading 2 paragraphs as Fields / Disciplines.
+- Captures paragraphs under "Examples of open research practices" as the
+  discipline's Examples text.
+- Reads each "Table of resources" — 1- or 2-column — as resources. Cells
+  with multiple URLs are split into one resource per URL.
+- Sets `Show = TRUE` for Natural Sciences → Methodologies and `FALSE` for
+  the remaining cross-cutting fields. Edit `SHOW_FIELDS` in the script to
+  change which fields are public.
+- Skips `Introduction` and `Contents` Heading 1 sections.
+
+The script depends on `python-docx` and the `gws` CLI (only needed for
+`--drive-id` and `--push`).
+
+### Contributors (Tenzing)
+
+The Tenzing sheet (`1mPT7cGZIvNjOzY6Q6YPLf2CzTL9PG3I5f8oP3mhNfo0`) feeds
+the FORRT contributors page and any future formal authorship list.
+It is populated manually from the G-Doc title page; everyone listed
+gets `Data curation = TRUE` and `Writing - review & editing = TRUE` by
+default, and named Authors typically also tick Conceptualization,
+Methodology, etc.
+
+There is no script that maintains this sheet — it is edited by hand.
+
+## Page mechanics (quick reference)
+
+- The Hugo build reads `data/disciplines.json`. That file is generated by
+  `scripts/parse_disciplines_to_json.py` from the spreadsheet — do not edit
+  by hand.
+- The intro paragraph, badges legend, and feedback link are in
+  `layouts/partials/disciplines/intro.html`.
+- Page title / SEO copy / sharing metadata are in `_index.md` here.
+  If the field or discipline counts change substantially, update the
+  numbers in `summary`, `description`, and `sharing_description`.
+
+## When something goes wrong
+
+- **A field or discipline doesn't appear on the page.** Check `Show` on
+  the Fields tab, and confirm the `Field` value on the Disciplines tab
+  exactly matches a Field `Name`.
+- **Resources show under the wrong discipline.** The `Discipline` column
+  on the Resources tab must match a `Discipline` value exactly — a
+  trailing space or a renamed discipline breaks the link.
+- **Categories render as a grey "General" badge.** The value in the
+  `Category` column isn't one of the five recognised categories. Either
+  fix the value or accept the grey rendering for now.
+- **`scripts/parse_disciplines_to_json.py` fails.** It depends on `gws`
+  being authenticated for the FORRT Google account. Run
+  `gws sheets spreadsheets values get --params '{"spreadsheetId":"1mSlduu86_nE1sY1gXobw3Pp1vI73B_0iHBsJqjtsJU4","range":"Fields"}'`
+  to test access.
