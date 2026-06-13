@@ -13,7 +13,7 @@
   {{ end }}
   {{ end }}
 
-  {{ if not (in (slice "talk" "pedagogies" "page") $page.Type) }}
+  {{ if and (not (in (slice "talk" "pedagogies" "page") $page.Type)) (not $page.Params.hide_date) }}
   <span class="article-date">
     {{ $date := $page.Lastmod.Format site.Params.date_format }}
     {{ if eq $page.Type "publication" }}

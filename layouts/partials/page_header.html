@@ -54,7 +54,7 @@
 {{end}}
 
 <div class="article-container pt-3">
-  <h1>{{ $title }}</h1>
+  {{ if $page.Params.hide_title }}<h1 class="sr-only">{{ $title }}</h1>{{ else }}<h1>{{ $title }}</h1>{{ end }}
 
   {{ with $page.Params.subtitle }}
   <p class="page-subtitle">{{ . | markdownify | emojify }}</p>
@@ -80,7 +80,7 @@
     {{ $ctnr = "universal-wrapper" }}
   {{end}}
 <div class="{{$ctnr}} pt-3">
-  <h1>{{ $title }}</h1>
+  {{ if $page.Params.hide_title }}<h1 class="sr-only">{{ $title }}</h1>{{ else }}<h1>{{ $title }}</h1>{{ end }}
 
   {{ with .Params.subtitle }}
     <p class="page-subtitle">{{ . | markdownify | emojify }}</p>
