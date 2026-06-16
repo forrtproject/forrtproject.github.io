@@ -6,6 +6,11 @@
   'use strict';
 
   const API_URL = 'https://bot.just-os.org/chat';
+  // Feedback is handled by feedback_server.py (runs on port 5001 alongside Hugo).
+  // Override window.FORRT_FEEDBACK_URL before this script loads to point elsewhere.
+  const FEEDBACK_URL = (typeof window.FORRT_FEEDBACK_URL !== 'undefined')
+    ? window.FORRT_FEEDBACK_URL
+    : 'http://localhost:5001/feedback';
   const HISTORY_KEY = 'just-os-chat-history'; // localStorage: array of saved conversations
   const ACTIVE_KEY = 'just-os-chat-active';   // localStorage: id of the conversation last viewed
   const MAX_CHATS = 50;                        // cap stored conversations to avoid unbounded growth
@@ -13,9 +18,23 @@
 
   const state = {
     chatId: null,
-    messages: [], // { role: 'user'|'bot', content: string }
+    messages: [], // { role: 'user'|'bot', content: string, turnId?: string }
     streaming: false,
   };
+
+  // Accumulates implicit signals per turn before the explicit rating fires.
+  const _pendingSignals = {};
+
+  function _addSignal(turnId, signal) {
+    if (!_pendingSignals[turnId]) _pendingSignals[turnId] = {};
+    Object.assign(_pendingSignals[turnId], signal);
+  }
+
+  function _popSignals(turnId) {
+    var s = _pendingSignals[turnId] || {};
+    delete _pendingSignals[turnId];
+    return s;
+  }
 
   /* -------------------------------------------------- */
   /*  Helpers                                            */
@@ -129,7 +148,7 @@
     if (messagesEl) messagesEl.scrollTop = messagesEl.scrollHeight;
   }
 
-  function createMessageEl(msg) {
+  function createMessageEl(msg, msgIndex) {
     const wrapper = document.createElement('div');
     wrapper.className = 'just-os-msg ' + msg.role;
 
@@ -160,6 +179,14 @@
       });
       wrapper.appendChild(copyBtn);
 
+      // Feedback bar + implicit signal trackers — only for messages with a turnId.
+      if (msg.turnId) {
+        trackCopy(bubble, msg.turnId);
+        trackDwell(msg.turnId);
+        trackFollowup(msg.turnId);
+        wrapper.appendChild(buildFeedbackBar(wrapper, msg.turnId, msg.query || '', answerText));
+      }
+
       return wrapper;
     }
 
@@ -181,8 +208,8 @@
     if (!messagesEl) return;
 
     messagesEl.innerHTML = '';
-    state.messages.forEach(function (msg) {
-      messagesEl.appendChild(createMessageEl(msg));
+    state.messages.forEach(function (msg, idx) {
+      messagesEl.appendChild(createMessageEl(msg, idx));
     });
     scrollToBottom(messagesEl);
   }
@@ -221,6 +248,9 @@
     // Ensure we have a chatId
     if (!state.chatId) state.chatId = generateId();
 
+    // Stable turn ID for this request — passed to the backend and the feedback widget.
+    const turnId = generateId().slice(0, 8);
+
     // Add user message
     const userMsg = { role: 'user', content: text.trim() };
     state.messages.push(userMsg);
@@ -239,7 +269,7 @@
       const resp = await fetch(API_URL, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ message: text.trim(), chat_id: state.chatId }),
+        body: JSON.stringify({ message: text.trim(), chat_id: state.chatId, turn_id: turnId }),
       });
 
       if (!resp.ok) throw new Error('API returned ' + resp.status);
@@ -283,9 +313,9 @@
 
       hideTyping(container);
 
-      const botMsg = { role: 'bot', content: botContent };
+      const botMsg = { role: 'bot', content: botContent, turnId: turnId, query: text.trim() };
       state.messages.push(botMsg);
-      messagesEl.appendChild(createMessageEl(botMsg));
+      messagesEl.appendChild(createMessageEl(botMsg, state.messages.length - 1));
       scrollToBottom(messagesEl);
       saveState();
 
@@ -587,6 +617,147 @@
     });
     details.appendChild(ol);
     return details;
+  }
+
+  /* -------------------------------------------------- */
+  /*  Feedback (explicit + implicit signals)             */
+  /* -------------------------------------------------- */
+
+  // rho_exp : +1 | -1 | 0 (0 = implicit-only)
+  // signals : { copy?, followup?, fast_exit? }
+  // comment : optional free-text
+  // extra   : { query?, response? } — included when available
+  // fetch with keepalive survives page unload and works cross-origin.
+  function sendFeedback(turnId, rho_exp, signals, comment, extra) {
+    extra = extra || {};
+    fetch(FEEDBACK_URL, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        turn_id:  turnId,
+        rho_exp:  rho_exp,
+        signals:  signals || {},
+        comment:  comment || '',
+        query:    extra.query || '',
+        response: extra.response || '',
+        ts:       Date.now(),
+      }),
+      keepalive: true,
+    }).catch(function () { /* ignore network errors */ });
+  }
+
+  // Implicit signal: user copied text from this response (+0.5 weight server-side).
+  function trackCopy(msgEl, turnId) {
+    msgEl.addEventListener('copy', function () {
+      if (_pendingSignals[turnId] !== undefined) {
+        _addSignal(turnId, { copy: true });
+      } else {
+        sendFeedback(turnId, 0, { copy: true });
+      }
+    }, { once: true });
+  }
+
+  // Implicit signal: session ended within 10 s of message render (-0.3 weight).
+  function trackDwell(turnId) {
+    var renderTime = Date.now();
+    window.addEventListener('beforeunload', function () {
+      if (Date.now() - renderTime < 10000) {
+        sendFeedback(turnId, 0, { fast_exit: true });
+      }
+    }, { once: true });
+  }
+
+  // Implicit signal: user submitted another query within 30 s (-0.5 weight).
+  function trackFollowup(turnId) {
+    var renderTime = Date.now();
+    var sendBtn = getSendBtn(getContainer());
+    if (!sendBtn) return;
+    sendBtn.addEventListener('click', function () {
+      if (Date.now() - renderTime < 30000) {
+        sendFeedback(turnId, 0, { followup: true });
+      }
+    }, { once: true });
+  }
+
+  // Comment box — slim single-line input, shown after a Bad rating.
+  function showComment(msgEl, turnId, query, response) {
+    if (msgEl.querySelector('.comment-box')) return;
+
+    var box = document.createElement('div');
+    box.className = 'comment-box';
+
+    var wrap = document.createElement('div');
+    wrap.className = 'comment-box-inner';
+
+    var input = document.createElement('input');
+    input.type = 'text';
+    input.maxLength = 500;
+    input.placeholder = 'What was wrong? (optional)';
+
+    var submit = document.createElement('button');
+    submit.className = 'comment-submit';
+    submit.textContent = 'Send';
+    submit.addEventListener('click', function () {
+      var text = input.value.trim();
+      if (text) sendFeedback(turnId, -1, {}, text, { query: query, response: response });
+      box.remove();
+    });
+
+    wrap.appendChild(input);
+    wrap.appendChild(submit);
+    box.appendChild(wrap);
+    msgEl.appendChild(box);
+    input.focus();
+  }
+
+  function buildFeedbackBar(msgEl, turnId, query, response) {
+    _pendingSignals[turnId] = {};
+
+    var bar = document.createElement('div');
+    bar.className = 'rating-bar';
+
+    var good = document.createElement('button');
+    good.className = 'rating-btn';
+    good.title = 'Helpful';
+    good.setAttribute('aria-label', 'Mark as helpful');
+    good.innerHTML = '&#128077; Good';
+
+    var bad = document.createElement('button');
+    bad.className = 'rating-btn';
+    bad.title = 'Not helpful';
+    bad.setAttribute('aria-label', 'Mark as not helpful');
+    bad.innerHTML = '&#128078; Bad';
+
+    function lockBar() {
+      good.disabled = true;
+      bad.disabled = true;
+    }
+
+    good.addEventListener('click', function () {
+      lockBar();
+      sendFeedback(turnId, +1, _popSignals(turnId), '', { query: query, response: response });
+      bar.innerHTML = '';
+      var thanks = document.createElement('span');
+      thanks.className = 'rating-thanks';
+      thanks.textContent = 'Thanks for your feedback!';
+      bar.appendChild(thanks);
+    });
+
+    bad.addEventListener('click', function () {
+      lockBar();
+      sendFeedback(turnId, -1, _popSignals(turnId), '', { query: query, response: response });
+      bar.innerHTML = '';
+      var thanks = document.createElement('span');
+      thanks.className = 'rating-thanks';
+      thanks.textContent = 'Thanks for your feedback!';
+      bar.appendChild(thanks);
+      showComment(msgEl, turnId, query, response);
+    });
+
+    bar.appendChild(good);
+    bar.appendChild(bad);
+
+    return bar;
   }
 
   /* -------------------------------------------------- */

@@ -342,6 +342,83 @@
     color: #555;
   }
 
+  /* Feedback — always-visible row beneath bot message */
+  .rating-bar {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: 8px;
+  }
+
+  .rating-bar .rating-btn {
+    background: none;
+    border: 1px solid #0d3c74;
+    color: #0d3c74;
+    cursor: pointer;
+    font-size: 0.72rem;
+    padding: 2px 8px;
+    line-height: 1.4;
+    border-radius: 12px;
+    font-weight: 500;
+    transition: background 0.15s, color 0.15s;
+  }
+
+  .rating-bar .rating-btn:hover {
+    background: #0d3c74;
+    color: #fff;
+  }
+
+  .rating-thanks {
+    font-size: 0.75rem;
+    color: #4caf50;
+    font-style: italic;
+  }
+
+  /* Comment box — appears after "Bad" rating */
+  .comment-box {
+    margin-top: 5px;
+  }
+
+  .comment-box-inner {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .comment-box-inner input[type="text"] {
+    flex: 1;
+    min-width: 0;
+    border: none;
+    border-bottom: 1px solid #ddd;
+    padding: 2px 4px;
+    font-size: 0.75rem;
+    font-family: inherit;
+    background: transparent;
+    outline: none;
+    color: #444;
+  }
+
+  .comment-box-inner input[type="text"]:focus {
+    border-bottom-color: #0d3c74;
+  }
+
+  .comment-submit {
+    background: none;
+    border: none;
+    color: #0d3c74;
+    font-size: 0.72rem;
+    cursor: pointer;
+    padding: 0;
+    white-space: nowrap;
+    font-weight: 500;
+    opacity: 0.8;
+  }
+
+  .comment-submit:hover {
+    opacity: 1;
+    text-decoration: underline;
+  }
+
   /* References list below bot message */
   .just-os-references {
     margin-top: 8px;
