@@ -95,7 +95,7 @@
     {{ range $.Site.Taxonomies.FORRT_clusters.ByCount }}
     {{ if gt .Count 1 }}
     <li>
-      <a href="/tags/{{ .Name }}"> {{ .Name }} <small>({{ .Count }})</small></a>
+      <a href="{{ .Page.RelPermalink }}"> {{ .Name }} <small>({{ .Count }})</small></a>
     </li>
     {{ end }}
     {{end}}
