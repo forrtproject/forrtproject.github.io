@@ -309,13 +309,105 @@
     text-decoration: underline;
   }
 
-  /* Inline citation links rendered as plain text */
+  /* Inline citation links open the supporting retrieved chunk */
   .just-os-msg.bot .just-os-bubble-content a.reference-link {
-    color: inherit;
+    color: #0d3c74;
     text-decoration: none;
-    pointer-events: none;
-    cursor: default;
+    cursor: pointer;
     font-size: 0.85em;
+    font-weight: 600;
+  }
+
+  .just-os-msg.bot .just-os-bubble-content a.reference-link:hover {
+    text-decoration: underline;
+  }
+
+  .just-os-reference-tooltip {
+    position: fixed;
+    width: min(500px, calc(100vw - 24px));
+    max-height: min(420px, calc(100vh - 24px));
+    overflow-y: auto;
+    padding: 14px;
+    background: white;
+    border: 1px solid #d9dde3;
+    border-radius: 8px;
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.18);
+    color: #1a1a1a;
+    font-size: 0.85rem;
+    line-height: 1.45;
+    z-index: 10001;
+  }
+
+  .just-os-reference-tooltip .title {
+    font-weight: 700;
+    margin-bottom: 4px;
+  }
+
+  .just-os-reference-tooltip .metadata {
+    color: #666;
+    font-size: 0.8rem;
+    margin-bottom: 10px;
+  }
+
+  .just-os-reference-tooltip .content {
+    padding: 10px;
+    background: #f8f9fb;
+    border-radius: 6px;
+  }
+
+  /* Rendered markdown inside the supporting chunk — keep it compact so a
+     chunk heading doesn't dwarf the tooltip. */
+  .just-os-reference-tooltip .content > :first-child {
+    margin-top: 0;
+  }
+
+  .just-os-reference-tooltip .content > :last-child {
+    margin-bottom: 0;
+  }
+
+  .just-os-reference-tooltip .content p {
+    margin: 0 0 8px;
+  }
+
+  .just-os-reference-tooltip .content h1,
+  .just-os-reference-tooltip .content h2,
+  .just-os-reference-tooltip .content h3,
+  .just-os-reference-tooltip .content h4,
+  .just-os-reference-tooltip .content h5,
+  .just-os-reference-tooltip .content h6 {
+    margin: 10px 0 6px;
+    font-size: 0.95rem;
+    font-weight: 700;
+    line-height: 1.3;
+  }
+
+  .just-os-reference-tooltip .content ul,
+  .just-os-reference-tooltip .content ol {
+    margin: 0 0 8px;
+    padding-left: 20px;
+  }
+
+  .just-os-reference-tooltip .content li {
+    margin-bottom: 2px;
+  }
+
+  .just-os-reference-tooltip .content a {
+    color: #0d3c74;
+    text-decoration: underline;
+  }
+
+  .just-os-reference-tooltip .content code {
+    background: #eceff3;
+    border-radius: 3px;
+    padding: 1px 4px;
+    font-size: 0.85em;
+  }
+
+  .just-os-reference-tooltip .source-link {
+    display: inline-block;
+    margin-top: 10px;
+    color: #0d3c74;
+    font-weight: 600;
   }
 
   .just-os-copy-btn {

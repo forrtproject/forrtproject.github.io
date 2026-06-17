@@ -173,11 +173,12 @@
       bubble.innerHTML = msg.content;
       wrapper.appendChild(bubble);
 
-      // Capture the answer text before references are merged into the box.
+      // Renumber citations by source before capturing the answer for copying.
+      const refs = extractAndRenumberReferences(bubble);
+      setupCitationLinks(bubble);
       const answerText = bubble.innerText.trim();
 
       // Merge references into the answer box as a collapsible list.
-      const refs = extractReferences(bubble);
       if (refs.length) bubble.appendChild(buildReferenceDetails(refs));
 
       // Copy button below the box — copies the answer together with its references.
@@ -571,17 +572,217 @@
   /*  References                                         */
   /* -------------------------------------------------- */
 
-  // Pull the (deduplicated) references embedded in a bot message.
-  function extractReferences(bubble) {
+  // Teardown for the currently open reference tooltip (removes it and its
+  // document/window listeners). Only one tooltip is open at a time.
+  let activeTooltipTeardown = null;
+
+  /* -------------------------------------------------- */
+  /*  Minimal markdown renderer for supporting chunks    */
+  /* -------------------------------------------------- */
+
+  // The supporting chunks are verbatim retrieved document text the backend
+  // entity-encodes (a tighter trust boundary than the composed answer). We
+  // honour that by escaping first and only ever emitting a whitelist of tags,
+  // so no chunk text can inject markup.
+
+  function escapeHtml(str) {
+    return str
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;');
+  }
+
+  // Allow only http(s)/mailto and relative/anchor links; drop the rest
+  // (e.g. javascript:, data:) so a chunk link can't run script.
+  function sanitizeUrl(url) {
+    const trimmed = (url || '').trim();
+    if (/^(https?:|mailto:)/i.test(trimmed) || /^[/#]/.test(trimmed)) return trimmed;
+    return '';
+  }
+
+  // Inline spans on an already-escaped string: links, code, bold, italic.
+  function renderInline(text) {
+    return text
+      .replace(/\[([^\]]+)\]\(([^)\s]+)\)/g, function (_m, label, url) {
+        const safe = sanitizeUrl(url);
+        if (!safe) return label;
+        return '<a href="' + escapeHtml(safe) + '" target="_blank" rel="noopener">' + label + '</a>';
+      })
+      .replace(/`([^`]+)`/g, '<code>$1</code>')
+      .replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>')
+      .replace(/__([^_]+)__/g, '<strong>$1</strong>')
+      .replace(/\*([^*]+)\*/g, '<em>$1</em>')
+      .replace(/_([^_]+)_/g, '<em>$1</em>');
+  }
+
+  function renderMarkdown(src) {
+    const lines = escapeHtml(src).replace(/\r\n?/g, '\n').split('\n');
+    let html = '';
+    let listType = null; // 'ul' | 'ol'
+    let paragraph = [];
+
+    function closeList() {
+      if (listType) { html += '</' + listType + '>'; listType = null; }
+    }
+    function flushParagraph() {
+      if (paragraph.length) {
+        html += '<p>' + renderInline(paragraph.join(' ')) + '</p>';
+        paragraph = [];
+      }
+    }
+
+    lines.forEach(function (line) {
+      const trimmed = line.trim();
+      if (!trimmed) { flushParagraph(); closeList(); return; }
+
+      const heading = /^(#{1,6})\s+(.*)$/.exec(trimmed);
+      if (heading) {
+        flushParagraph(); closeList();
+        const level = heading[1].length;
+        html += '<h' + level + '>' + renderInline(heading[2]) + '</h' + level + '>';
+        return;
+      }
+
+      const ulItem = /^[-*+]\s+(.*)$/.exec(trimmed);
+      const olItem = /^\d+\.\s+(.*)$/.exec(trimmed);
+      if (ulItem || olItem) {
+        flushParagraph();
+        const want = ulItem ? 'ul' : 'ol';
+        if (listType !== want) { closeList(); html += '<' + want + '>'; listType = want; }
+        html += '<li>' + renderInline((ulItem || olItem)[1]) + '</li>';
+        return;
+      }
+
+      paragraph.push(trimmed);
+    });
+
+    flushParagraph();
+    closeList();
+    return html;
+  }
+
+  function setupCitationLinks(bubble) {
+    bubble.querySelectorAll('a[data-reference]').forEach(function (link) {
+      link.addEventListener('click', function (event) {
+        event.preventDefault();
+        event.stopPropagation();
+
+        // Tear down any tooltip already open, including its listeners.
+        if (activeTooltipTeardown) activeTooltipTeardown();
+
+        let ref;
+        try {
+          ref = JSON.parse(link.getAttribute('data-reference'));
+        } catch (_) {
+          return;
+        }
+
+        const tooltip = document.createElement('div');
+        tooltip.className = 'just-os-reference-tooltip';
+
+        const title = document.createElement('div');
+        title.className = 'title';
+        title.textContent = ref.title || 'Unknown title';
+        tooltip.appendChild(title);
+
+        const metadata = document.createElement('div');
+        metadata.className = 'metadata';
+        metadata.textContent = [ref.authors, ref.year ? '(' + ref.year + ')' : '']
+          .filter(Boolean)
+          .join(' ');
+        tooltip.appendChild(metadata);
+
+        const content = document.createElement('div');
+        content.className = 'content';
+        // ref.text is entity-encoded markdown — decode it, then render the
+        // markdown through our escape-first whitelist renderer.
+        const decodedText = document.createElement('textarea');
+        decodedText.innerHTML = ref.text || 'No supporting chunk available.';
+        content.innerHTML = renderMarkdown(decodedText.value);
+        tooltip.appendChild(content);
+
+        if (ref.url && ref.url !== '#') {
+          const sourceLink = document.createElement('a');
+          sourceLink.className = 'source-link';
+          sourceLink.href = ref.url;
+          sourceLink.target = '_blank';
+          sourceLink.rel = 'noopener';
+          sourceLink.textContent = 'View source';
+          tooltip.appendChild(sourceLink);
+        }
+
+        document.body.appendChild(tooltip);
+
+        const linkRect = link.getBoundingClientRect();
+        const tooltipRect = tooltip.getBoundingClientRect();
+        const left = Math.max(
+          12,
+          Math.min(linkRect.left, window.innerWidth - tooltipRect.width - 12)
+        );
+        const spaceBelow = window.innerHeight - linkRect.bottom;
+        const top = spaceBelow >= tooltipRect.height + 12
+          ? linkRect.bottom + 6
+          : Math.max(12, linkRect.top - tooltipRect.height - 6);
+
+        tooltip.style.left = left + 'px';
+        tooltip.style.top = top + 'px';
+
+        function removeTooltip() {
+          tooltip.remove();
+          document.removeEventListener('click', onDocClick);
+          document.removeEventListener('keydown', onKeyDown);
+          window.removeEventListener('scroll', removeTooltip, true);
+          window.removeEventListener('resize', removeTooltip);
+          if (activeTooltipTeardown === removeTooltip) activeTooltipTeardown = null;
+        }
+
+        function onDocClick(closeEvent) {
+          if (!tooltip.contains(closeEvent.target) && closeEvent.target !== link) {
+            removeTooltip();
+          }
+        }
+
+        function onKeyDown(keyEvent) {
+          if (keyEvent.key === 'Escape') removeTooltip();
+        }
+
+        activeTooltipTeardown = removeTooltip;
+
+        setTimeout(function () {
+          document.addEventListener('click', onDocClick);
+          document.addEventListener('keydown', onKeyDown);
+          // Close on scroll/resize — the fixed-position tooltip would otherwise
+          // drift away from the citation marker it points to.
+          window.addEventListener('scroll', removeTooltip, true);
+          window.addEventListener('resize', removeTooltip);
+        }, 0);
+      });
+    });
+  }
+
+  // Pull the references embedded in a bot message and renumber citations by source.
+  // Note: this mutates the inline citation markers (renumbering them), so it must
+  // run before the answer text is captured for copying.
+  function extractAndRenumberReferences(bubble) {
     const links = bubble.querySelectorAll('a[data-reference]');
-    const seen = new Set();
+    const sourceNumbers = new Map();
     const refs = [];
     links.forEach(function (link) {
       try {
         const ref = JSON.parse(link.getAttribute('data-reference'));
-        if (!ref || !ref.url || seen.has(ref.url)) return;
-        seen.add(ref.url);
-        refs.push(ref);
+        if (!ref) return;
+
+        const sourceKey = ref.url && ref.url !== '#'
+          ? ref.url
+          : [ref.authors, ref.year, ref.title].join('|');
+
+        if (!sourceNumbers.has(sourceKey)) {
+          refs.push(ref);
+          sourceNumbers.set(sourceKey, refs.length);
+        }
+
+        link.textContent = '[' + sourceNumbers.get(sourceKey) + ']';
       } catch (_) { /* skip bad JSON */ }
     });
     return refs;
