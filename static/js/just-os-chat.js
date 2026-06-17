@@ -143,7 +143,7 @@
       wrapper.appendChild(bubble);
 
       // Renumber citations by source before capturing the answer for copying.
-      const refs = extractReferences(bubble);
+      const refs = extractAndRenumberReferences(bubble);
       setupCitationLinks(bubble);
       const answerText = bubble.innerText.trim();
 
@@ -521,15 +521,18 @@
   /*  References                                         */
   /* -------------------------------------------------- */
 
+  // Teardown for the currently open reference tooltip (removes it and its
+  // document/window listeners). Only one tooltip is open at a time.
+  let activeTooltipTeardown = null;
+
   function setupCitationLinks(bubble) {
     bubble.querySelectorAll('a[data-reference]').forEach(function (link) {
       link.addEventListener('click', function (event) {
         event.preventDefault();
         event.stopPropagation();
 
-        document.querySelectorAll('.just-os-reference-tooltip').forEach(function (tooltip) {
-          tooltip.remove();
-        });
+        // Tear down any tooltip already open, including its listeners.
+        if (activeTooltipTeardown) activeTooltipTeardown();
 
         let ref;
         try {
@@ -586,22 +589,43 @@
         tooltip.style.left = left + 'px';
         tooltip.style.top = top + 'px';
 
-        function closeTooltip(closeEvent) {
+        function removeTooltip() {
+          tooltip.remove();
+          document.removeEventListener('click', onDocClick);
+          document.removeEventListener('keydown', onKeyDown);
+          window.removeEventListener('scroll', removeTooltip, true);
+          window.removeEventListener('resize', removeTooltip);
+          if (activeTooltipTeardown === removeTooltip) activeTooltipTeardown = null;
+        }
+
+        function onDocClick(closeEvent) {
           if (!tooltip.contains(closeEvent.target) && closeEvent.target !== link) {
-            tooltip.remove();
-            document.removeEventListener('click', closeTooltip);
+            removeTooltip();
           }
         }
 
+        function onKeyDown(keyEvent) {
+          if (keyEvent.key === 'Escape') removeTooltip();
+        }
+
+        activeTooltipTeardown = removeTooltip;
+
         setTimeout(function () {
-          document.addEventListener('click', closeTooltip);
+          document.addEventListener('click', onDocClick);
+          document.addEventListener('keydown', onKeyDown);
+          // Close on scroll/resize — the fixed-position tooltip would otherwise
+          // drift away from the citation marker it points to.
+          window.addEventListener('scroll', removeTooltip, true);
+          window.addEventListener('resize', removeTooltip);
         }, 0);
       });
     });
   }
 
   // Pull the references embedded in a bot message and renumber citations by source.
-  function extractReferences(bubble) {
+  // Note: this mutates the inline citation markers (renumbering them), so it must
+  // run before the answer text is captured for copying.
+  function extractAndRenumberReferences(bubble) {
     const links = bubble.querySelectorAll('a[data-reference]');
     const sourceNumbers = new Map();
     const refs = [];
