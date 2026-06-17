@@ -6,15 +6,22 @@
   'use strict';
 
   const API_URL = 'https://bot.just-os.org/chat';
-  // Feedback is handled by feedback_server.py (runs on port 5001 alongside Hugo).
+  // Feedback is collected by a Google Apps Script web app that appends each
+  // event as a row to a Google Sheet (no backend to maintain).
   // Override window.FORRT_FEEDBACK_URL before this script loads to point elsewhere.
   const FEEDBACK_URL = (typeof window.FORRT_FEEDBACK_URL !== 'undefined')
     ? window.FORRT_FEEDBACK_URL
-    : 'http://localhost:5001/feedback';
+    : 'https://script.google.com/macros/s/AKfycbz0fGz3iLkkUOuO_r4o8_f-oHzgBzFVbBALJsy92GFijddYCTZ_Zav4kin6hVDMN6O-/exec';
   const HISTORY_KEY = 'just-os-chat-history'; // localStorage: array of saved conversations
   const ACTIVE_KEY = 'just-os-chat-active';   // localStorage: id of the conversation last viewed
   const MAX_CHATS = 50;                        // cap stored conversations to avoid unbounded growth
   const WELCOME_MESSAGE = "Hi — I'm the JUST-OS bot and can help you with questions around open science. What's on your mind?";
+
+  // Inline SVGs (stroke = currentColor, so they inherit the button's colour).
+  const SVG_ATTRS = 'fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"';
+  const COPY_ICON = '<svg viewBox="0 0 24 24" ' + SVG_ATTRS + '><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>';
+  const CHECK_ICON = '<svg viewBox="0 0 24 24" ' + SVG_ATTRS + '><polyline points="20 6 9 17 4 12"/></svg>';
+  const INFO_ICON = '<svg viewBox="0 0 24 24" ' + SVG_ATTRS + '><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>';
 
   const state = {
     chatId: null,
@@ -24,6 +31,11 @@
 
   // Accumulates implicit signals per turn before the explicit rating fires.
   const _pendingSignals = {};
+
+  // The most recent live answer — the only turn that can emit fast_exit/followup
+  // signals, so a single page-exit or follow-up never duplicates across turns.
+  var _activeTurn = null;   // { turnId, ts, followupSent }
+  var _fastExitWired = false;
 
   function _addSignal(turnId, signal) {
     if (!_pendingSignals[turnId]) _pendingSignals[turnId] = {};
@@ -173,17 +185,18 @@
       copyBtn.className = 'just-os-copy-btn';
       copyBtn.type = 'button';
       copyBtn.title = 'Copy response';
-      copyBtn.innerHTML = '\u{1F4CB}';
+      copyBtn.setAttribute('aria-label', 'Copy response');
+      copyBtn.innerHTML = COPY_ICON;
       copyBtn.addEventListener('click', function () {
         copyResponse(copyBtn, answerText, refs);
       });
       wrapper.appendChild(copyBtn);
 
-      // Feedback bar + implicit signal trackers — only for messages with a turnId.
+      // Feedback bar + copy tracker — for any message with a turnId (incl. restored
+      // history). fast_exit/followup are wired once per live answer, not here, so
+      // re-rendering old turns can't re-arm them.
       if (msg.turnId) {
         trackCopy(bubble, msg.turnId);
-        trackDwell(msg.turnId);
-        trackFollowup(msg.turnId);
         wrapper.appendChild(buildFeedbackBar(wrapper, msg.turnId, msg.query || '', answerText));
       }
 
@@ -244,6 +257,9 @@
 
     const messagesEl = getMessagesEl(container);
     if (!messagesEl) return;
+
+    // Implicit followup: this new question arrived soon after the last answer.
+    _maybeSendFollowup();
 
     // Ensure we have a chatId
     if (!state.chatId) state.chatId = generateId();
@@ -318,6 +334,11 @@
       messagesEl.appendChild(createMessageEl(botMsg, state.messages.length - 1));
       scrollToBottom(messagesEl);
       saveState();
+
+      // This is now the latest live answer — the only turn that emits implicit
+      // fast_exit/followup signals.
+      _activeTurn = { turnId: turnId, ts: Date.now(), followupSent: false };
+      _wireFastExit();
 
     } catch (err) {
       hideTyping(container);
@@ -528,7 +549,7 @@
     }
     navigator.clipboard.writeText(text).then(function () {
       const orig = btn.innerHTML;
-      btn.innerHTML = '&#x2705;';
+      btn.innerHTML = CHECK_ICON;
       setTimeout(function () { btn.innerHTML = orig; }, 1500);
     }).catch(function () {
       // Fallback
@@ -541,7 +562,7 @@
       document.execCommand('copy');
       document.body.removeChild(ta);
       const orig = btn.innerHTML;
-      btn.innerHTML = '&#x2705;';
+      btn.innerHTML = CHECK_ICON;
       setTimeout(function () { btn.innerHTML = orig; }, 1500);
     });
   }
@@ -627,12 +648,16 @@
   // signals : { copy?, followup?, fast_exit? }
   // comment : optional free-text
   // extra   : { query?, response? } — included when available
-  // fetch with keepalive survives page unload and works cross-origin.
+  // Sent as text/plain so the request stays a CORS "simple request" (no
+  // preflight, which the Apps Script endpoint can't answer); the handler parses
+  // the JSON body and appends a row. no-cors + keepalive let the beacon survive
+  // page unload — we never read the response, so the opaque result is fine.
   function sendFeedback(turnId, rho_exp, signals, comment, extra) {
     extra = extra || {};
     fetch(FEEDBACK_URL, {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
+      mode: 'no-cors',
+      headers: { 'Content-Type': 'text/plain;charset=utf-8' },
       body: JSON.stringify({
         turn_id:  turnId,
         rho_exp:  rho_exp,
@@ -657,31 +682,38 @@
     }, { once: true });
   }
 
-  // Implicit signal: session ended within 10 s of message render (-0.3 weight).
-  function trackDwell(turnId) {
-    var renderTime = Date.now();
-    window.addEventListener('beforeunload', function () {
-      if (Date.now() - renderTime < 10000) {
-        sendFeedback(turnId, 0, { fast_exit: true });
+  // Implicit signal: session ended within 10 s of the latest answer (-0.3 weight).
+  // One handler for the whole session — it reads _activeTurn at exit time, so only
+  // the most recent answer is counted and beforeunload+pagehide can't double-fire.
+  function _wireFastExit() {
+    if (_fastExitWired) return;
+    _fastExitWired = true;
+    var fired = false;
+    function flush() {
+      if (fired) return;
+      if (_activeTurn && Date.now() - _activeTurn.ts < 10000) {
+        fired = true;
+        sendFeedback(_activeTurn.turnId, 0, { fast_exit: true });
       }
-    }, { once: true });
+    }
+    window.addEventListener('beforeunload', flush);
+    window.addEventListener('pagehide', flush);
   }
 
-  // Implicit signal: user submitted another query within 30 s (-0.5 weight).
-  function trackFollowup(turnId) {
-    var renderTime = Date.now();
-    var sendBtn = getSendBtn(getContainer());
-    if (!sendBtn) return;
-    sendBtn.addEventListener('click', function () {
-      if (Date.now() - renderTime < 30000) {
-        sendFeedback(turnId, 0, { followup: true });
-      }
-    }, { once: true });
+  // Implicit signal: user submitted another query within 30 s of the last answer
+  // (-0.5 weight). Fires at most once for that answer.
+  function _maybeSendFollowup() {
+    if (_activeTurn && !_activeTurn.followupSent && Date.now() - _activeTurn.ts < 30000) {
+      _activeTurn.followupSent = true;
+      sendFeedback(_activeTurn.turnId, 0, { followup: true });
+    }
   }
 
   // Comment box — slim single-line input, shown after a Bad rating.
-  function showComment(msgEl, turnId, query, response) {
-    if (msgEl.querySelector('.comment-box')) return;
+  // onSubmit(text) is called once, when the user sends (button or Enter).
+  // Returns the input element so the caller can read it on timeout/unload.
+  function showComment(msgEl, onSubmit) {
+    if (msgEl.querySelector('.comment-box')) return null;
 
     var box = document.createElement('div');
     box.className = 'comment-box';
@@ -697,10 +729,14 @@
     var submit = document.createElement('button');
     submit.className = 'comment-submit';
     submit.textContent = 'Send';
-    submit.addEventListener('click', function () {
-      var text = input.value.trim();
-      if (text) sendFeedback(turnId, -1, {}, text, { query: query, response: response });
+
+    function send() {
+      onSubmit(input.value.trim());
       box.remove();
+    }
+    submit.addEventListener('click', send);
+    input.addEventListener('keydown', function (e) {
+      if (e.key === 'Enter') { e.preventDefault(); send(); }
     });
 
     wrap.appendChild(input);
@@ -708,6 +744,7 @@
     box.appendChild(wrap);
     msgEl.appendChild(box);
     input.focus();
+    return input;
   }
 
   function buildFeedbackBar(msgEl, turnId, query, response) {
@@ -728,34 +765,68 @@
     bad.setAttribute('aria-label', 'Mark as not helpful');
     bad.innerHTML = '&#128078; Bad';
 
+    // What-is-collected disclosure — hover/focus the (i) for a plain-language note.
+    var infoText = 'Stores your rating, this question and answer, and any comment, '
+      + 'to improve the assistant. No personal data or chat history is collected.';
+    var info = document.createElement('span');
+    info.className = 'rating-info';
+    info.setAttribute('tabindex', '0');
+    info.setAttribute('role', 'button');
+    info.setAttribute('aria-label', infoText);
+    info.innerHTML = INFO_ICON;
+    var tip = document.createElement('span');
+    tip.className = 'rating-tip';
+    tip.textContent = infoText;
+    info.appendChild(tip);
+
     function lockBar() {
       good.disabled = true;
       bad.disabled = true;
     }
 
+    function showThanks() {
+      bar.innerHTML = '';
+      var thanks = document.createElement('span');
+      thanks.className = 'rating-thanks';
+      thanks.textContent = 'Thanks for your feedback!';
+      bar.appendChild(thanks);
+    }
+
     good.addEventListener('click', function () {
       lockBar();
       sendFeedback(turnId, +1, _popSignals(turnId), '', { query: query, response: response });
-      bar.innerHTML = '';
-      var thanks = document.createElement('span');
-      thanks.className = 'rating-thanks';
-      thanks.textContent = 'Thanks for your feedback!';
-      bar.appendChild(thanks);
+      showThanks();
     });
 
+    // Bad rating: confirm immediately, but send the row only ONCE. Sending a
+    // bare downvote up front would duplicate the row when a comment follows, so
+    // instead we send when the user submits a comment; failing that, we send the
+    // bare (or partially-typed) rating only when they actually leave the page.
+    // This captures every comment and never emits a premature first row.
     bad.addEventListener('click', function () {
       lockBar();
-      sendFeedback(turnId, -1, _popSignals(turnId), '', { query: query, response: response });
-      bar.innerHTML = '';
-      var thanks = document.createElement('span');
-      thanks.className = 'rating-thanks';
-      thanks.textContent = 'Thanks for your feedback!';
-      bar.appendChild(thanks);
-      showComment(msgEl, turnId, query, response);
+      showThanks();
+
+      var sent = false;
+      function flush(comment) {
+        if (sent) return;
+        sent = true;
+        window.removeEventListener('beforeunload', onLeave);
+        window.removeEventListener('pagehide', onLeave);
+        sendFeedback(turnId, -1, _popSignals(turnId), comment || '',
+          { query: query, response: response });
+      }
+
+      var input = showComment(msgEl, function (text) { flush(text); });
+      function onLeave() { flush(input ? input.value.trim() : ''); }
+
+      window.addEventListener('beforeunload', onLeave);
+      window.addEventListener('pagehide', onLeave);
     });
 
     bar.appendChild(good);
     bar.appendChild(bad);
+    bar.appendChild(info);
 
     return bar;
   }
