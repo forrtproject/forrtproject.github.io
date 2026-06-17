@@ -289,8 +289,8 @@
   parent = "replications"
 
 [[main]]
-  name = "FLoRA Annotator"
-  url = "https://forrt.org/annotator"
+  name = "Replication Atlas"
+  url = "https://forrt.org/flora-replication-atlas/"
   weight = 62
   parent = "replications"
 
