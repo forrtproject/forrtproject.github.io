@@ -636,6 +636,8 @@
 
     // Click handler for accordion headers
     document.addEventListener('click', function (e) {
+      // Controls embedded in the header (e.g. copy-link) handle their own clicks.
+      if (e.target.closest('.acc-copy-link')) return;
       var header = e.target.closest('.acc-header');
       if (header) { toggleSection(header); return; }
       var toggleBtn = e.target.closest('.acc-toggle-all');
@@ -645,6 +647,7 @@
     // Keyboard: Enter/Space on header
     document.addEventListener('keydown', function (e) {
       if (e.key !== 'Enter' && e.key !== ' ') return;
+      if (e.target.closest('.acc-copy-link')) return;
       var header = e.target.closest('.acc-header');
       if (!header) return;
       e.preventDefault();

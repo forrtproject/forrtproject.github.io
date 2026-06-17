@@ -440,7 +440,7 @@
     /* e.g. /clusters/cluster-2/#c2-sc1 or #c2-featured — scroll to matching section */
     function applyClusterUrlHash() {
       var raw = window.location.hash.replace(/^#/, '');
-      if (!raw || !/^c\d+-(sc\d+|featured)$/.test(raw)) return;
+      if (!raw || !/^c\d+-[a-z0-9-]+$/.test(raw)) return;
       var target = document.getElementById(raw);
       if (!target) return;
       /* Expand accordion section if collapsed */
@@ -460,6 +460,50 @@
     }
     applyClusterUrlHash();
     window.addEventListener('hashchange', applyClusterUrlHash);
+
+    /* Per-sub-cluster "copy link" buttons: copy a shareable URL to the section. */
+    function copyTextToClipboard(text) {
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        return navigator.clipboard.writeText(text);
+      }
+      return new Promise(function (resolve, reject) {
+        try {
+          var ta = document.createElement('textarea');
+          ta.value = text;
+          ta.setAttribute('readonly', '');
+          ta.style.position = 'absolute';
+          ta.style.left = '-9999px';
+          document.body.appendChild(ta);
+          ta.select();
+          var ok = document.execCommand('copy');
+          document.body.removeChild(ta);
+          ok ? resolve() : reject();
+        } catch (err) {
+          reject(err);
+        }
+      });
+    }
+
+    root.addEventListener('click', function (e) {
+      var btn = e.target.closest('.acc-copy-link');
+      if (!btn) return;
+      /* Don't let the click bubble to the accordion header toggle. */
+      e.preventDefault();
+      e.stopPropagation();
+      var anchor = btn.getAttribute('data-anchor');
+      if (!anchor) return;
+      var url = window.location.origin + window.location.pathname + window.location.search + '#' + anchor;
+      /* Reflect the anchor in the address bar without re-scrolling (no hashchange). */
+      try { window.history.replaceState(null, '', '#' + anchor); } catch (err) {}
+      copyTextToClipboard(url).then(function () {
+        btn.classList.add('is-copied');
+        if (btn._copiedTimer) clearTimeout(btn._copiedTimer);
+        btn._copiedTimer = setTimeout(function () { btn.classList.remove('is-copied'); }, 1600);
+      }).catch(function () {
+        /* Clipboard blocked (e.g. insecure context): prompt the user with the URL. */
+        window.prompt('Copy this link:', url);
+      });
+    });
 
     /* (Tab click handler removed — all sub-clusters are now visible sections) */
 
