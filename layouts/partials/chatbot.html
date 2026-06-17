@@ -353,7 +353,54 @@
     padding: 10px;
     background: #f8f9fb;
     border-radius: 6px;
-    white-space: pre-wrap;
+  }
+
+  /* Rendered markdown inside the supporting chunk — keep it compact so a
+     chunk heading doesn't dwarf the tooltip. */
+  .just-os-reference-tooltip .content > :first-child {
+    margin-top: 0;
+  }
+
+  .just-os-reference-tooltip .content > :last-child {
+    margin-bottom: 0;
+  }
+
+  .just-os-reference-tooltip .content p {
+    margin: 0 0 8px;
+  }
+
+  .just-os-reference-tooltip .content h1,
+  .just-os-reference-tooltip .content h2,
+  .just-os-reference-tooltip .content h3,
+  .just-os-reference-tooltip .content h4,
+  .just-os-reference-tooltip .content h5,
+  .just-os-reference-tooltip .content h6 {
+    margin: 10px 0 6px;
+    font-size: 0.95rem;
+    font-weight: 700;
+    line-height: 1.3;
+  }
+
+  .just-os-reference-tooltip .content ul,
+  .just-os-reference-tooltip .content ol {
+    margin: 0 0 8px;
+    padding-left: 20px;
+  }
+
+  .just-os-reference-tooltip .content li {
+    margin-bottom: 2px;
+  }
+
+  .just-os-reference-tooltip .content a {
+    color: #0d3c74;
+    text-decoration: underline;
+  }
+
+  .just-os-reference-tooltip .content code {
+    background: #eceff3;
+    border-radius: 3px;
+    padding: 1px 4px;
+    font-size: 0.85em;
   }
 
   .just-os-reference-tooltip .source-link {

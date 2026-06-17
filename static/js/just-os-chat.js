@@ -525,6 +525,92 @@
   // document/window listeners). Only one tooltip is open at a time.
   let activeTooltipTeardown = null;
 
+  /* -------------------------------------------------- */
+  /*  Minimal markdown renderer for supporting chunks    */
+  /* -------------------------------------------------- */
+
+  // The supporting chunks are verbatim retrieved document text the backend
+  // entity-encodes (a tighter trust boundary than the composed answer). We
+  // honour that by escaping first and only ever emitting a whitelist of tags,
+  // so no chunk text can inject markup.
+
+  function escapeHtml(str) {
+    return str
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;');
+  }
+
+  // Allow only http(s)/mailto and relative/anchor links; drop the rest
+  // (e.g. javascript:, data:) so a chunk link can't run script.
+  function sanitizeUrl(url) {
+    const trimmed = (url || '').trim();
+    if (/^(https?:|mailto:)/i.test(trimmed) || /^[/#]/.test(trimmed)) return trimmed;
+    return '';
+  }
+
+  // Inline spans on an already-escaped string: links, code, bold, italic.
+  function renderInline(text) {
+    return text
+      .replace(/\[([^\]]+)\]\(([^)\s]+)\)/g, function (_m, label, url) {
+        const safe = sanitizeUrl(url);
+        if (!safe) return label;
+        return '<a href="' + escapeHtml(safe) + '" target="_blank" rel="noopener">' + label + '</a>';
+      })
+      .replace(/`([^`]+)`/g, '<code>$1</code>')
+      .replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>')
+      .replace(/__([^_]+)__/g, '<strong>$1</strong>')
+      .replace(/\*([^*]+)\*/g, '<em>$1</em>')
+      .replace(/_([^_]+)_/g, '<em>$1</em>');
+  }
+
+  function renderMarkdown(src) {
+    const lines = escapeHtml(src).replace(/\r\n?/g, '\n').split('\n');
+    let html = '';
+    let listType = null; // 'ul' | 'ol'
+    let paragraph = [];
+
+    function closeList() {
+      if (listType) { html += '</' + listType + '>'; listType = null; }
+    }
+    function flushParagraph() {
+      if (paragraph.length) {
+        html += '<p>' + renderInline(paragraph.join(' ')) + '</p>';
+        paragraph = [];
+      }
+    }
+
+    lines.forEach(function (line) {
+      const trimmed = line.trim();
+      if (!trimmed) { flushParagraph(); closeList(); return; }
+
+      const heading = /^(#{1,6})\s+(.*)$/.exec(trimmed);
+      if (heading) {
+        flushParagraph(); closeList();
+        const level = heading[1].length;
+        html += '<h' + level + '>' + renderInline(heading[2]) + '</h' + level + '>';
+        return;
+      }
+
+      const ulItem = /^[-*+]\s+(.*)$/.exec(trimmed);
+      const olItem = /^\d+\.\s+(.*)$/.exec(trimmed);
+      if (ulItem || olItem) {
+        flushParagraph();
+        const want = ulItem ? 'ul' : 'ol';
+        if (listType !== want) { closeList(); html += '<' + want + '>'; listType = want; }
+        html += '<li>' + renderInline((ulItem || olItem)[1]) + '</li>';
+        return;
+      }
+
+      paragraph.push(trimmed);
+    });
+
+    flushParagraph();
+    closeList();
+    return html;
+  }
+
   function setupCitationLinks(bubble) {
     bubble.querySelectorAll('a[data-reference]').forEach(function (link) {
       link.addEventListener('click', function (event) {
@@ -558,9 +644,11 @@
 
         const content = document.createElement('div');
         content.className = 'content';
+        // ref.text is entity-encoded markdown — decode it, then render the
+        // markdown through our escape-first whitelist renderer.
         const decodedText = document.createElement('textarea');
         decodedText.innerHTML = ref.text || 'No supporting chunk available.';
-        content.textContent = decodedText.value;
+        content.innerHTML = renderMarkdown(decodedText.value);
         tooltip.appendChild(content);
 
         if (ref.url && ref.url !== '#') {
