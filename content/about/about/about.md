@@ -75,6 +75,12 @@ FORRT provides a pedagogical infrastructure and open educational resources desig
 
 <br>
 
+Learn more about FORRT in the interactive flipbook <a href="https://forrt.org/booklet/" class="btn btn-primary btn-sm btn-block" style="line-height:0.5;border-radius:6px; font-size:1.5rem;">
+  FORRT Booklet
+</a>
+
+<br>
+
 ***Want to learn more about us?***
 
 Our community has [**published**](/publications) meta-scientific peer-reviewed papers & policies (and we also have ongoing **manuscripts** being written) so please consider reading our award-winning scholarship on the FORRT's [Publications page](/publications), or start with our manifesto on the [OSF](https://osf.io/bnh7p).
