@@ -75,11 +75,9 @@ FORRT provides a pedagogical infrastructure and open educational resources desig
 
 <br>
 
-Learn more about FORRT in the interactive flipbook <a href="https://forrt.org/booklet/" class="btn btn-primary btn-sm btn-block" style="line-height:0.5;border-radius:6px; font-size:1.5rem;">
+Learn more about FORRT in the interactive flipbook <a href="https://forrt.org/booklet/" class="btn btn-primary btn-lg btn-block" style="line-height:1;border-radius:6px; font-size:1.5rem;">
   FORRT Booklet
 </a>
-
-<br>
 
 ***Want to learn more about us?***
 
