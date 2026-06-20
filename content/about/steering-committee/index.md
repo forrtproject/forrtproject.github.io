@@ -39,6 +39,13 @@ layout: single
         <h4 class="sc-card-name">dr. Steven Verheyen</h4>
         <p class="sc-card-role">Director</p>
     </div>
+</div><div class="sc-card" onclick="openModal('adiradaniel')">
+    <img src="/authors/adiradaniel/avatar.webp" alt="Adira Daniel " class="sc-card-img" />
+    <div class="sc-card-overlay"></div>
+    <div class="sc-card-content">
+        <h4 class="sc-card-name">Adira Daniel </h4>
+        <p class="sc-card-role">Co-Director</p>
+    </div>
 </div><div class="sc-title-card teal">
     <span class="sc-title-label">Team</span>
     <h3 class="sc-title-text">Social Justice & DEIA</h3>
@@ -243,13 +250,6 @@ layout: single
 </div><div class="sc-title-card slate">
     <span class="sc-title-label">Team</span>
     <h3 class="sc-title-text">FORRT Stewards</h3>
-</div><div class="sc-card" onclick="openModal('adiradaniel')">
-    <img src="/authors/adiradaniel/avatar.webp" alt="Adira Daniel " class="sc-card-img" />
-    <div class="sc-card-overlay"></div>
-    <div class="sc-card-content">
-        <h4 class="sc-card-name">Adira Daniel </h4>
-        <p class="sc-card-role">FORRT Steward</p>
-    </div>
 </div><div class="sc-card" onclick="openModal('stephaniezellers')">
     <img src="/authors/stephaniezellers/avatar.webp" alt="Stephanie Zellers" class="sc-card-img" />
     <div class="sc-card-overlay"></div>
@@ -294,7 +294,7 @@ layout: single
     <div class="sc-card-overlay"></div>
     <div class="sc-card-content">
         <h4 class="sc-card-name">Dr Lukas Wallrich</h4>
-        <p class="sc-card-role">Co-Chair</p>
+        <p class="sc-card-role">Co-Director</p>
     </div>
 </div><div class="sc-card" onclick="openModal('drflavioazevedo')">
     <img src="/authors/drflavioazevedo/avatar.webp" alt="Dr Flavio Azevedo" class="sc-card-img" />
@@ -354,6 +354,35 @@ layout: single
                     <h3 class="sc-modal-name">dr. Steven Verheyen</h3>
                     <p class="sc-modal-role">Director (Community & Sustainability)</p>
                     <div class="sc-modal-bio">Steven Verheyen is an Assistant Professor of Cognitive Psychology at Erasmus University Rotterdam, where he also coordinates the Open Science Community Rotterdam and is Open Science Champion of the Erasmus School of Social and Behavioural Sciences. His work on individual differences in language use is positioned at the intersection of quantitative psychology, philosophy of language, and cognitive linguistics. He also conducts meta-scientific research on incentivization, contributorship, conflicts of interest, and replication. He is currently serving as editor of the Review of Philosophy and Psychology, PCI Psychology, and Replication Research.  At FORRT, he aims to promote open and responsible research through pedagogical reform.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div><div id="modal-adiradaniel" class="sc-modal-backdrop">
+    <div class="sc-modal-content">
+        <div class="sc-modal-header">
+            <button onclick="closeModal('adiradaniel')" class="sc-close-btn">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 18 12"/></svg>
+            </button>
+        </div>
+        <div class="sc-modal-body">
+            <div class="sc-modal-layout">
+                <div class="sc-modal-sidebar">
+                    <div class="sc-modal-img">
+                        <img src="/authors/adiradaniel/avatar.webp" alt="Adira Daniel " />
+                    </div>
+                    <div class="sc-social-links">
+                        <a href="https://www.linkedin.com/in/adiradaniel/" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-slate-800 transition-colors"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" x2="22" y1="12" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></a>
+                    </div>
+                </div>
+                <div class="sc-modal-main">
+                    <h3 class="sc-modal-name">Adira Daniel </h3>
+                    <p class="sc-modal-role">Co-Director</p>
+                    <div class="sc-modal-bio">I’m a PhD Candidate in Social, Personality, and Developmental Psychology at Western University in Canada and an active member of FORRT’s Qualitative Research &amp; Mixed Methods sub-cluster. At FORRT, I focus on creating accessible, equity-focused teaching materials that support researchers in developing rigorous, transparent, and reflexive qualitative and mixed-methods practices. I love building resources that help demystify methodology and make open science more inclusive—especially for early-career scholars.
+
+My own research explores how diverse and intercultural couples navigate identity, disclosure, and resilience under conditions of marginalization. I’m passionate about intersectionality, relationship processes, and rethinking methodological “rigour” in ways that honour complexity and lived experience.
+
+Outside of research, you’ll usually find me baking something cozy, tending to my growing plant collection, or planning overly detailed travel itineraries. I love blending creativity, community engagement, and thoughtful scholarship in everything I do.</div>
                 </div>
             </div>
         </div>
@@ -548,7 +577,7 @@ In FORRT, she has been involved in co-leading Team Citational Politics and is ve
                         <img src="/authors/drkellylloyd/avatar.webp" alt="Dr Kelly Lloyd" />
                     </div>
                     <div class="sc-social-links">
-                        <a href="https://medicinehealth.leeds.ac.uk/medicine/staff/11697/dr-kelly-lloyd" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-slate-800 transition-colors"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" x2="22" y1="12" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></a><a href="mailto:nan" class="text-slate-400 hover:text-slate-800 transition-colors"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg></a>
+                        <a href="https://medicinehealth.leeds.ac.uk/medicine/staff/11697/dr-kelly-lloyd" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-slate-800 transition-colors"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" x2="22" y1="12" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></a>
                     </div>
                 </div>
                 <div class="sc-modal-main">
@@ -723,7 +752,7 @@ In FORRT, she has been involved in co-leading Team Citational Politics and is ve
                         <img src="/authors/drmaxkorbmacher/avatar.webp" alt="Dr Max Korbmacher" />
                     </div>
                     <div class="sc-social-links">
-                        <a href="https://scholar.google.com/citations?user=aZbaBqQAAAAJ&hl=no" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-slate-800 transition-colors"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" x2="22" y1="12" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></a><a href="mailto:nan" class="text-slate-400 hover:text-slate-800 transition-colors"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg></a>
+                        <a href="https://scholar.google.com/citations?user=aZbaBqQAAAAJ&hl=no" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-slate-800 transition-colors"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" x2="22" y1="12" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></a>
                     </div>
                 </div>
                 <div class="sc-modal-main">
@@ -805,7 +834,7 @@ Currently, alongside his professional duties, he is pursuing a PhD at the Univer
                         <img src="/authors/aliciatamaraveersmabarredo/avatar.webp" alt="Alicia Tamara Veersma Barredo" />
                     </div>
                     <div class="sc-social-links">
-                        <a href="mailto:nan" class="text-slate-400 hover:text-slate-800 transition-colors"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg></a>
+                        
                     </div>
                 </div>
                 <div class="sc-modal-main">
@@ -916,35 +945,6 @@ Currently, alongside his professional duties, he is pursuing a PhD at the Univer
             </div>
         </div>
     </div>
-</div><div id="modal-adiradaniel" class="sc-modal-backdrop">
-    <div class="sc-modal-content">
-        <div class="sc-modal-header">
-            <button onclick="closeModal('adiradaniel')" class="sc-close-btn">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 18 12"/></svg>
-            </button>
-        </div>
-        <div class="sc-modal-body">
-            <div class="sc-modal-layout">
-                <div class="sc-modal-sidebar">
-                    <div class="sc-modal-img">
-                        <img src="/authors/adiradaniel/avatar.webp" alt="Adira Daniel " />
-                    </div>
-                    <div class="sc-social-links">
-                        <a href="https://www.linkedin.com/in/adiradaniel/" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-slate-800 transition-colors"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" x2="22" y1="12" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></a><a href="mailto:nan" class="text-slate-400 hover:text-slate-800 transition-colors"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg></a>
-                    </div>
-                </div>
-                <div class="sc-modal-main">
-                    <h3 class="sc-modal-name">Adira Daniel </h3>
-                    <p class="sc-modal-role">FORRT Stewards</p>
-                    <div class="sc-modal-bio">I’m a PhD Candidate in Social, Personality, and Developmental Psychology at Western University in Canada and an active member of FORRT’s Qualitative Research &amp; Mixed Methods sub-cluster. At FORRT, I focus on creating accessible, equity-focused teaching materials that support researchers in developing rigorous, transparent, and reflexive qualitative and mixed-methods practices. I love building resources that help demystify methodology and make open science more inclusive—especially for early-career scholars.
-
-My own research explores how diverse and intercultural couples navigate identity, disclosure, and resilience under conditions of marginalization. I’m passionate about intersectionality, relationship processes, and rethinking methodological “rigour” in ways that honour complexity and lived experience.
-
-Outside of research, you’ll usually find me baking something cozy, tending to my growing plant collection, or planning overly detailed travel itineraries. I love blending creativity, community engagement, and thoughtful scholarship in everything I do.</div>
-                </div>
-            </div>
-        </div>
-    </div>
 </div><div id="modal-stephaniezellers" class="sc-modal-backdrop">
     <div class="sc-modal-content">
         <div class="sc-modal-header">
@@ -984,7 +984,7 @@ Outside of research, you’ll usually find me baking something cozy, tending to 
                         <img src="/authors/roksanasobolak/avatar.webp" alt="Roksana Sobolak" />
                     </div>
                     <div class="sc-social-links">
-                        <a href="mailto:nan" class="text-slate-400 hover:text-slate-800 transition-colors"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg></a>
+                        
                     </div>
                 </div>
                 <div class="sc-modal-main">
