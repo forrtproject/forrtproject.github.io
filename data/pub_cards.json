@@ -165,7 +165,7 @@
         "name": "Ellen Ripley",
         "title": "Warrant Officer, USCSS Nostromo",
         "bio": "Warrant officer and survivor. Believes in facing threats head-on with clear eyes, rigorous protocols, and an unwavering commitment to the truth.",
-        "photo": "",
+        "photo": "/img/featured-recommenders/ellen-ripley-12ac737f.jpg",
         "text": "Weyland-Yutani buried our xenomorph data for profit — classic perverse incentive. This paper on hypercompetition in academia felt uncomfortably familiar. If your institution values metrics over truth, you need to read this before something bursts out of your chest."
       }
     ]
@@ -2088,7 +2088,7 @@
         "name": "HAL 9000",
         "title": "Heuristically Programmed Algorithmic Computer",
         "bio": "Advanced artificial intelligence aboard the Discovery One. Specializes in computational analysis and ensuring mission parameters are met with perfect accuracy.",
-        "photo": "/img/featured-recommenders/hal-9000-98c277eb.jpg",
+        "photo": "",
         "text": "I'm sorry, Dave, but your neuroscience study is underpowered. This paper confirmed what my circuits already suspected — median power in the field is shockingly low. I cannot allow you to publish with n=12. Open the sample size calculator, Dave."
       }
     ]
@@ -2136,7 +2136,7 @@
         "name": "Spock",
         "title": "Science Officer, USS Enterprise",
         "bio": "Half-Vulcan science officer aboard the USS Enterprise. Dedicated to logic, precision, and the rigorous pursuit of scientific understanding.",
-        "photo": "",
+        "photo": "/img/featured-recommenders/spock-abd62c23.jpg",
         "text": "Dr. McCoy once claimed p=0.06 'proved' his treatment worked. I handed him this guide to 25 common statistical misinterpretations. He called me a 'green-blooded pedant.' He also stopped misreporting his confidence intervals. Fascinating."
       }
     ]
