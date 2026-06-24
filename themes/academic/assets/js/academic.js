@@ -663,7 +663,9 @@
             let filterMatch = projectFilter ? $this.is(projectFilter) : true;
             if (!filterMatch) return false;
             if (!projectSearchTerms) return true;
-            let text = $this.text().replace(/-/g, '');
+            // Search the hidden data-search index (all fields, untruncated) when present,
+            // falling back to the rendered card text for widgets that don't provide it.
+            let text = ($this.attr('data-search') || $this.text()).replace(/-/g, '');
             return projectSearchTerms.every(function (re) { return re.test(text); });
           }
         });
