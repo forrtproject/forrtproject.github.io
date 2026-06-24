@@ -1,11 +1,11 @@
 <!-- layouts/shortcodes/ga_daily_visitors_yearly.html -->
-{{ if .Site.Data.ga_data.daily_visitors_yearly }}
+{{ if hugo.Data.ga_data.daily_visitors_yearly }}
 <h3 id="-by-day-1">&hellip; by day</h3>
 <canvas id="visitorsChartYearly" width="400" height="200"></canvas>
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script>
 document.addEventListener('DOMContentLoaded', function() {
-  var dailyData = {{ .Site.Data.ga_data.daily_visitors_yearly | jsonify | safeJS }};
+  var dailyData = {{ hugo.Data.ga_data.daily_visitors_yearly | jsonify | safeJS }};
   if (dailyData && dailyData.length) {
     dailyData.sort((a, b) => new Date(a.date) - new Date(b.date));
     dailyData.pop();

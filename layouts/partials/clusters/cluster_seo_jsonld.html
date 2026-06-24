@@ -14,7 +14,7 @@
 
 {{ $hubURL := "clusters/" | absURL }}
 
-{{ $webpage := dict "@type" "WebPage" "@id" (printf "%s#webpage" $p.Permalink) "url" $p.Permalink "name" $p.Title "description" $summary "inLanguage" (site.LanguageCode | default "en-US") }}
+{{ $webpage := dict "@type" "WebPage" "@id" (printf "%s#webpage" $p.Permalink) "url" $p.Permalink "name" $p.Title "description" $summary "inLanguage" (site.Language.Locale | default "en-US") }}
 {{ if and $p.Params.sharing_image_resource ($p.Resources.GetMatch $p.Params.sharing_image_resource) }}
   {{ $pimg := $p.Resources.GetMatch $p.Params.sharing_image_resource }}
   {{ $webpage = merge $webpage (dict "primaryImageOfPage" (dict "@type" "ImageObject" "url" $pimg.Permalink)) }}

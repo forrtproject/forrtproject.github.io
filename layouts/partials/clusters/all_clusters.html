@@ -1,5 +1,5 @@
 {{/* all_clusters.html - Partial to display all clusters from data */}}
-{{ $data := site.Data.clusters_v4 }}
+{{ $data := hugo.Data.clusters_v4 }}
 {{ if not $data }}
   <div class="alert alert-warning">
     <strong>Data Error:</strong> clusters_v4.json data not found. Run <code>python3 scripts/parse_clusters_to_sheet.py --export-json</code>.

@@ -3,7 +3,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="Source Themes Academic {{ site.Data.academic.version }}">
+  <meta name="generator" content="Source Themes Academic {{ hugo.Data.academic.version }}">
 
   {{ range .Resources.Match "htmlwidgets_libs/**/*.js" }}
   <script src="{{ .RelPermalink }}"></script>
@@ -67,11 +67,11 @@
   {{ range .Translations }}
   <link rel="alternate" hreflang="{{ .Lang }}" href="{{ .Permalink }}">
   {{ end }}
-  <link rel="alternate" hreflang="{{ site.LanguageCode | default "en-us" }}" href="{{ .Permalink }}">
+  <link rel="alternate" hreflang="{{ site.Language.Locale | default "en-us" }}" href="{{ .Permalink }}">
 
   {{ partial "functions/parse_theme" . }}
-  {{ $css := site.Data.assets.css }}
-  {{ $js := site.Data.assets.js }}
+  {{ $css := hugo.Data.assets.css }}
+  {{ $js := hugo.Data.assets.js }}
   {{ if ne ($scr.Get "primary") "#fff" }}
   <meta name="theme-color" content="{{ $scr.Get "primary" }}">
   {{ end }}
@@ -130,7 +130,7 @@
     {{ end }}
 
     {{/* Load async scripts. */}}
-    {{ range $k, $v := site.Data.assets.js }}{{/* TODO: investigate why `where ... "async" true` does not work. */}}
+    {{ range $k, $v := hugo.Data.assets.js }}{{/* TODO: investigate why `where ... "async" true` does not work. */}}
       {{ $load := $v.async }}
 
       {{/* Only load MathJax if required. */}}
@@ -158,7 +158,7 @@
     {{ end }}
   {{ end }}
 
-  {{ $css_comment := printf "/*!* Source Themes Academic v%s (https://sourcethemes.com/academic/) */\n" site.Data.academic.version }}
+  {{ $css_comment := printf "/*!* Source Themes Academic v%s (https://sourcethemes.com/academic/) */\n" hugo.Data.academic.version }}
   {{ $css_bundle_head := $css_comment | resources.FromString "css/bundle-head.css" }}
   {{ $css_options := dict "targetPath" "css/academic.css" }}
   {{- if (in (slice (getenv "HUGO_ENV") hugo.Environment) "production") -}}
@@ -254,7 +254,7 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:image" content="{{ $og_image }}">
   {{- end -}}
-  <meta property="og:locale" content="{{ site.LanguageCode | default "en-us" }}">
+  <meta property="og:locale" content="{{ site.Language.Locale | default "en-us" }}">
   {{ if .IsPage }}
     {{ if not .PublishDate.IsZero }}
       <meta property="article:published_time" content="{{ .PublishDate.Format "2006-01-02T15:04:05-07:00" | safeHTML }}">
