@@ -57,7 +57,7 @@
         "Outcome measurement instrument",
         "PRISMA",
         "Reporting guideline",
-        "Systematic reviews."
+        "Systematic reviews"
     ],
     "forrt_clusters_new": "Replication and meta-research, Replication Crisis and Credibility Revolution",
     "forrt_sub_clusters": "Meta-analyses, Proposed science improvement initiatives on statistics, measurement, teaching, data sharing, code sharing, pre-registration, & replication",
