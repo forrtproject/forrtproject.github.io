@@ -198,7 +198,7 @@
       // re-rendering old turns can't re-arm them.
       if (msg.turnId) {
         trackCopy(bubble, msg.turnId);
-        wrapper.appendChild(buildFeedbackBar(wrapper, msg.turnId, msg.query || '', answerText));
+        wrapper.appendChild(buildFeedbackBar(wrapper, msg, answerText));
       }
 
       return wrapper;
@@ -948,11 +948,25 @@
     return input;
   }
 
-  function buildFeedbackBar(msgEl, turnId, query, response) {
-    _pendingSignals[turnId] = {};
+  function buildFeedbackBar(msgEl, msg, response) {
+    var turnId = msg.turnId;
+    var query = msg.query || '';
 
     var bar = document.createElement('div');
     bar.className = 'rating-bar';
+
+    // One rating per response: if this turn was already rated (in a prior visit,
+    // restored from history), show the locked confirmation and arm nothing —
+    // no buttons, no fresh signal bucket, no duplicate page-leave listeners.
+    if (msg.feedback) {
+      var done = document.createElement('span');
+      done.className = 'rating-thanks';
+      done.textContent = 'Thanks for your feedback!';
+      bar.appendChild(done);
+      return bar;
+    }
+
+    _pendingSignals[turnId] = {};
 
     var good = document.createElement('button');
     good.className = 'rating-btn';
@@ -995,6 +1009,8 @@
 
     good.addEventListener('click', function () {
       lockBar();
+      msg.feedback = { rating: +1 };
+      saveState();
       sendFeedback(turnId, +1, _popSignals(turnId), '', { query: query, response: response });
       showThanks();
     });
@@ -1006,6 +1022,10 @@
     // This captures every comment and never emits a premature first row.
     bad.addEventListener('click', function () {
       lockBar();
+      // Mark rated immediately so the turn shows "Thanks" (not buttons) if the
+      // page is revisited, even before the deferred row is sent.
+      msg.feedback = { rating: -1 };
+      saveState();
       showThanks();
 
       var sent = false;
@@ -1014,6 +1034,7 @@
         sent = true;
         window.removeEventListener('beforeunload', onLeave);
         window.removeEventListener('pagehide', onLeave);
+        if (comment) { msg.feedback.comment = comment; saveState(); }
         sendFeedback(turnId, -1, _popSignals(turnId), comment || '',
           { query: query, response: response });
       }

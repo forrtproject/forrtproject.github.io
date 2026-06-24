@@ -491,7 +491,10 @@
   .rating-bar .rating-tip {
     position: absolute;
     bottom: calc(100% + 7px);
-    right: 0;
+    /* Centre the tip over the (i) icon, which sits near the panel centre, so the
+       full text stays inside the narrow docked chat panel (its overflow clips). */
+    left: 50%;
+    transform: translateX(-50%) translateY(3px);
     width: max-content;
     max-width: 230px;
     background: #0d3c74;
@@ -506,7 +509,6 @@
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
     opacity: 0;
     visibility: hidden;
-    transform: translateY(3px);
     transition: opacity 0.1s ease, transform 0.1s ease;
     pointer-events: none;
     white-space: normal;
@@ -518,7 +520,8 @@
     content: "";
     position: absolute;
     top: 100%;
-    right: 5px;
+    left: 50%;
+    transform: translateX(-50%);
     border: 5px solid transparent;
     border-top-color: #0d3c74;
   }
@@ -528,7 +531,7 @@
   .rating-bar .rating-info:focus-within .rating-tip {
     opacity: 1;
     visibility: visible;
-    transform: translateY(0);
+    transform: translateX(-50%) translateY(0);
   }
 
   .rating-thanks {
