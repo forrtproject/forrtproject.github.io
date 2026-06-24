@@ -1,0 +1,104 @@
+name: Create announcements
+
+# =====================================================================
+# Generates FORRT announcement posts from the "FORRT Announcements"
+# Google Sheet and delivers them to the deploy as an ARTIFACT — it never
+# commits to main and never runs the full data-processing pipeline.
+#
+# Flow:
+#   1. Download the previous run's announcements artifact (for the cached
+#      sheet hash) to decide whether anything changed.
+#   2. Run scripts/create_announcements.R. It no-ops (exits early) when the
+#      sheet hash is unchanged.
+#   3. If — and only if — the sheet changed, upload content/post as the
+#      `announcements-artifact` and fire the `data-update` repository_dispatch.
+#
+# deploy.yaml downloads `announcements-artifact` and unpacks it over
+# content/post before the Hugo build (see "Apply announcements" there). The
+# latest successful artifact always holds the full current set of posts, so
+# deploys triggered by anything else still pick up the announcements.
+# =====================================================================
+
+on:
+  schedule:
+    - cron: '15 * * * *'   # hourly (offset to balance runner load)
+  workflow_dispatch:
+
+concurrency:
+  group: create-announcements
+  cancel-in-progress: false
+
+jobs:
+  announcements:
+    name: Generate announcements
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      actions: read   # read previous artifact
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+
+      - name: Download previous announcements artifact (for change detection)
+        id: prev
+        uses: dawidd6/action-download-artifact@07ab29fd4a977ae4d2b275087cf67563dfdf0295
+        continue-on-error: true
+        with:
+          workflow: create_announcements.yml
+          name: announcements-artifact
+          path: .prev
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          search_artifacts: true
+          if_no_artifact_found: warn
+
+      - name: Seed previous hash
+        run: |
+          if [ -f .prev/gs_announcement_hash.txt ]; then
+            cp .prev/gs_announcement_hash.txt gs_announcement_hash.txt
+            echo "Seeded previous hash."
+          else
+            echo "No previous hash — first run or expired artifact."
+          fi
+
+      - name: Setup r2u
+        uses: eddelbuettel/github-actions/r2u-setup@master
+
+      - name: Install R package dependencies
+        run: Rscript -e 'install.packages(c("googlesheets4", "httr", "digest"))'
+
+      - name: Generate announcement posts
+        id: gen
+        run: |
+          before="$(cat gs_announcement_hash.txt 2>/dev/null || echo none)"
+          Rscript scripts/create_announcements.R
+          after="$(cat gs_announcement_hash.txt 2>/dev/null || echo none)"
+          if [ "$before" = "$after" ]; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+            echo "Sheet unchanged — nothing to publish."
+          else
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+            echo "Sheet changed — packaging announcements."
+          fi
+
+      - name: Package announcements
+        if: steps.gen.outputs.changed == 'true'
+        run: tar czf announcements.tar.gz content/post
+
+      - name: Upload announcements artifact
+        if: steps.gen.outputs.changed == 'true'
+        uses: actions/upload-artifact@v7
+        with:
+          name: announcements-artifact
+          path: |
+            announcements.tar.gz
+            gs_announcement_hash.txt
+          retention-days: 90
+
+      - name: Trigger production deploy
+        if: steps.gen.outputs.changed == 'true'
+        run: |
+          curl -s -X POST \
+            -H "Authorization: Bearer ${{ secrets.FORRT_PAT }}" \
+            -H "Accept: application/vnd.github+json" \
+            "https://api.github.com/repos/${{ github.repository }}/dispatches" \
+            -d '{"event_type": "data-update"}'

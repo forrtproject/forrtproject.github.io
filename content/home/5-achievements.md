@@ -1,67 +1,39 @@
 +++
-# A Demo section created with the Blank widget.
-# Any elements can be added in the body: https://sourcethemes.com/academic/docs/writing-markdown-latex/
-# Add more sections by duplicating this file and customizing to your requirements.
-
+# Combined Achievements & Awards section (two columns).
 widget = "blank"  # See https://sourcethemes.com/academic/docs/page-builder/
 headless = true  # This file represents a page section.
 active = true  # Activate this widget? true/false
 weight = 50  # Order that this section will appear.
 
-title = "Achievements"
-subtitle = "---"
-
+title = "Achievements &amp; Awards"
 [design]
   # Choose how many columns the section has. Valid values: 1 or 2.
   columns = "1"
 
 [design.background]
-  # Apply a background color, gradient, or image.
-  #   Uncomment (by removing `#`) an option to apply it.
-  #   Choose a light or dark text color by setting `text_color_light`.
-  #   Any HTML color name or Hex value is valid.
-
-  # Background color.
-   color = "#fefdf6"
-  
-  # Background gradient.
-  # gradient_start = "DeepSkyBlue"
-  # gradient_end = "SkyBlue"
-  
-  # Background image.
-  # image = "headers/bubbles-wide.webp"  # Name of image in `static/img/`.
-  # image_darken = 0.6  # Darken the image? Range 0-1 where 0 is transparent and 1 is opaque.
-  # image_size = "cover"  #  Options are `cover` (default), `contain`, or `actual` size.
-  # image_position = "center"  # Options include `left`, `center` (default), or `right`.
-  # image_parallax = true  # Use a fun parallax-like fixed background effect? true/false
-
-  # Text color (true=light or false=dark).
+  color = "#fefdf6"
   text_color_light = false
 
 [design.spacing]
   # Customize the section spacing. Order is top, right, bottom, left.
-  padding = ["60px", "0", "60px", "0"]
-
-[advanced]
- # Custom CSS. 
- css_style = ""
- 
- # CSS class.
- css_class = ""
+  padding = ["40px", "0", "40px", "0"]
 +++
 
-<br>
+<div class="aa-grid">
+  <div class="aa-col aa-achievements">
 
-<center>
+![FORRT achievements infographic](/img/Achievements.webp)
 
-<div style="width:400px">
+  </div>
+  <div class="aa-col aa-awards">
 
-![FORRT Awards](/img/Achievements.webp)
+FORRT has won a series of awards and commendations for our work, including:
 
+- The UK Reproducibility Network's Dorothy Bishop Prize
+- Open Science Community Amsterdam's OSC Award in the Open Educational Resources / Open Education / Open Online Courses category
+- An Open Scholarship Prize (1st Place) award from the Atlantic Technological University and the Open Science Community Galway
+
+To find out more about these and more, read [FORRT's awards page](/awards).
+
+  </div>
 </div>
-
-</center>
-
-<a rel="me" href="https://mastodon.social/@FORRT"></a>
-
-<br>

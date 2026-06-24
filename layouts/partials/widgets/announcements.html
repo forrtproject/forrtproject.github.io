@@ -1,0 +1,20 @@
+{{/* Announcements widget — recent posts as a card grid. */}}
+{{ $ := .root }}
+{{ $page := .page }}
+{{ $count := $page.Params.count | default 3 }}
+{{ $posts := first $count (sort (where site.RegularPages "Type" "post") "Date" "desc") }}
+
+<div class="row justify-content-center">
+  <div class="col-12 section-heading text-center">
+    {{ with $page.Title }}<h1>{{ . | markdownify | emojify }}</h1>{{ end }}
+    {{ with $page.Params.subtitle }}<p>{{ . | markdownify | emojify }}</p>{{ end }}
+  </div>
+</div>
+
+<div class="announcements-grid">
+  {{ range $posts }}{{ partial "announcement_card.html" . }}{{ end }}
+</div>
+
+<div class="announcements-all">
+  <a class="btn btn-outline-primary" href="{{ (site.GetPage "/post").RelPermalink }}">See all announcements</a>
+</div>

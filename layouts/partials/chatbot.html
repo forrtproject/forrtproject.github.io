@@ -867,6 +867,20 @@
       top: 80px;
     }
 
+    /* On mobile there's no room to the left of the seal, so drop the
+       "How can I help you?" bubble below it instead. */
+    #just-os-bubble,
+    #just-os-widget.is-offline #just-os-bubble {
+      top: 92px;
+      right: 0;
+      left: auto;
+      transform: translateY(-8px);
+    }
+    #just-os-btn:hover #just-os-bubble,
+    .bubble-visible {
+      transform: translateY(0) !important;
+    }
+
     #just-os-window {
       width: 100vw;
     }

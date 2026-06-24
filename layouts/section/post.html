@@ -1,0 +1,43 @@
+{{- define "main" -}}
+
+{{ partial "page_header.html" . }}
+
+<div class="universal-wrapper">
+
+  {{ with .Content }}<div class="article-style text-center mb-4">{{ . }}</div>{{ end }}
+
+  {{ $posts := sort .Pages "Date" "desc" }}
+
+  {{/* Build the category list from the posts */}}
+  {{ $cats := slice }}
+  {{ range $posts }}{{ with .Params.categories }}{{ $cats = $cats | append (index . 0) }}{{ end }}{{ end }}
+  {{ $cats = uniq $cats }}
+
+  <div class="ac-filters">
+    <button class="ac-chip active" data-cat="all">All</button>
+    {{ range $cats }}<button class="ac-chip" data-cat="{{ lower . }}">{{ . }}</button>{{ end }}
+  </div>
+
+  <div class="announcements-grid ac-grid-page">
+    {{ range $posts }}
+      {{ $cat := "" }}{{ with .Params.categories }}{{ $cat = lower (index . 0) }}{{ end }}
+      <div class="ac-item" data-cat="{{ $cat }}">{{ partial "announcement_card.html" . }}</div>
+    {{ end }}
+  </div>
+
+</div>
+
+<script>
+document.querySelectorAll('.ac-chip').forEach(function (chip) {
+  chip.addEventListener('click', function () {
+    document.querySelectorAll('.ac-chip').forEach(function (c) { c.classList.remove('active'); });
+    chip.classList.add('active');
+    var cat = chip.getAttribute('data-cat');
+    document.querySelectorAll('.ac-item').forEach(function (it) {
+      it.style.display = (cat === 'all' || it.getAttribute('data-cat') === cat) ? '' : 'none';
+    });
+  });
+});
+</script>
+
+{{- end -}}

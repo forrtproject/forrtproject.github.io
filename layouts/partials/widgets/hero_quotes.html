@@ -1,0 +1,63 @@
+{{/* Rotating-quote hero. Cycles through $page.Params.quote with fade + dots. */}}
+{{ $ := .root }}
+{{ $page := .page }}
+{{ $quotes := $page.Params.quote }}
+
+<div class="hero-quotes">
+  {{ with $page.Params.eyebrow }}<p class="hq-eyebrow">{{ . | markdownify | emojify }}</p>{{ end }}
+
+  <div class="hq-stage">
+    {{ range $i, $q := $quotes }}
+      <blockquote class="hq-quote{{ if eq $i 0 }} is-active{{ end }}">{{ $q.text | safeHTML }}</blockquote>
+    {{ end }}
+  </div>
+
+  <div class="hq-actions">
+    {{ with $page.Params.primary_cta }}
+      <a class="btn btn-primary btn-lg" href="{{ .url | relLangURL }}">{{ .label }}</a>
+    {{ end }}
+    {{ with $page.Params.secondary_cta }}
+      <a class="btn btn-outline-primary btn-lg" href="{{ .url | relLangURL }}">{{ .label }}</a>
+    {{ end }}
+  </div>
+
+  {{ if gt (len $quotes) 1 }}
+  <div class="hq-dots" role="tablist" aria-label="Cycle key statements">
+    {{ range $i, $q := $quotes }}
+      <button class="hq-dot{{ if eq $i 0 }} on{{ end }}" data-i="{{ $i }}" aria-label="Statement {{ add $i 1 }}"></button>
+    {{ end }}
+  </div>
+  {{ end }}
+</div>
+
+<script>
+(function () {
+  var root = document.querySelector('.hero-quotes');
+  if (!root) return;
+  var quotes = root.querySelectorAll('.hq-quote');
+  var dots = root.querySelectorAll('.hq-dot');
+  if (quotes.length < 2) return;
+  var i = 0, timer = null;
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function show(n) {
+    var prev = i;
+    var leaving = quotes[prev];
+    leaving.classList.remove('is-active');
+    leaving.classList.add('is-leaving');
+    // Reset the leaving quote once it has slid out, so it's ready below again.
+    setTimeout(function () { leaving.classList.remove('is-leaving'); }, 600);
+    if (dots[prev]) dots[prev].classList.remove('on');
+    i = (n + quotes.length) % quotes.length;
+    quotes[i].classList.add('is-active');
+    if (dots[i]) dots[i].classList.add('on');
+  }
+  function start() { if (reduce) return; stop(); timer = setInterval(function () { show(i + 1); }, 6000); }
+  function stop() { if (timer) { clearInterval(timer); timer = null; } }
+  dots.forEach(function (d) {
+    d.addEventListener('click', function () { show(parseInt(d.getAttribute('data-i'), 10)); start(); });
+  });
+  root.addEventListener('mouseenter', stop);
+  root.addEventListener('mouseleave', start);
+  start();
+})();
+</script>

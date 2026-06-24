@@ -6,9 +6,6 @@ active = true  # Activate this widget? true/false
 weight = 60  # Order that this section will appear.
 
 title = "How can you help?"
-subtitle = "---"
-
-
 # Add/remove as many `[[feature]]` blocks below as you like.
 # 
 # For available icons, see: https://sourcethemes.com/academic/docs/widgets/#icons
