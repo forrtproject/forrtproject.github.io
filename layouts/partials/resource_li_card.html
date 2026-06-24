@@ -19,7 +19,24 @@
 {{ $resource := ($item.Resources.ByType "image").GetMatch "*featured*" }}
 {{ $js_tag_classes := delimit (apply (apply $item.Params.FORRT_clusters "replace" "." " " "-") "printf" "js-id-%s" ".") " " }}
 
-<div class="project-card project-item isotope-item py-1 {{ $js_tag_classes | safeHTMLAttr }}">
+{{/* Build a hidden, label-free search index spanning all fields (issue #286). The
+     displayed card truncates the abstract and omits several fields; searching this
+     blob instead of the rendered text lets partial matches hit every field. */}}
+{{ $search := delimit (slice
+  ($item.Title | plainify)
+  ($item.Params.Abstract | default "" | markdownify | plainify)
+  (delimit $item.Params.Creators " ")
+  (delimit $item.Params.Material_Type " ")
+  (delimit $item.Params.Primary_User " ")
+  (delimit $item.Params.Subject_Areas " ")
+  (delimit $item.Params.Tags " ")
+  (delimit $item.Params.Education_Level " ")
+  (delimit $item.Params.Language " ")
+  ($item.Params.Conditions_of_Use | default "")
+  (delimit $item.Params.FORRT_clusters " ")
+) " " }}
+
+<div class="project-card project-item isotope-item py-1 {{ $js_tag_classes | safeHTMLAttr }}" data-search="{{ lower $search }}">
   <div class="card">
     {{ with $resource }}
     {{ $image := .Resize (printf "550x q90 %s") }}
