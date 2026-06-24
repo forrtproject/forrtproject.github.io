@@ -29,74 +29,102 @@ layout: single
         <p class="sc-section-desc">Core mission-driven teams advancing open scholarship, social justice, and community sustainability.</p>
     </div>
     <div class="sc-grid">
-        <div class="sc-title-card teal">
+        <div class="sc-title-card" style="--team-color:#0f766e;--bar-extend:calc(1rem + 1px)">
     <span class="sc-title-label">Team</span>
     <h3 class="sc-title-text">Community & Sustainability</h3>
-</div><div class="sc-card" onclick="openModal('drstevenverheyen')">
-    <img src="/authors/drstevenverheyen/avatar.webp" alt="dr. Steven Verheyen" class="sc-card-img" />
-    <div class="sc-card-overlay"></div>
+    <span class="sc-cbar"></span>
+</div><div class="sc-card" onclick="openModal('drstevenverheyen')" style="--team-color:#0f766e;--bar-extend:calc(1rem + 1px)">
+    <div class="sc-card-photo">
+        <img src="/authors/drstevenverheyen/avatar.webp" alt="dr. Steven Verheyen" class="sc-card-img" />
+        <div class="sc-card-overlay"></div>
+    </div>
     <div class="sc-card-content">
         <h4 class="sc-card-name">dr. Steven Verheyen</h4>
         <p class="sc-card-role">Director</p>
     </div>
-</div><div class="sc-card" onclick="openModal('adiradaniel')">
-    <img src="/authors/adiradaniel/avatar.webp" alt="Adira Daniel " class="sc-card-img" />
-    <div class="sc-card-overlay"></div>
+    <span class="sc-cbar"></span>
+</div><div class="sc-card" onclick="openModal('adiradaniel')" style="--team-color:#0f766e;--bar-extend:0px">
+    <div class="sc-card-photo">
+        <img src="/authors/adiradaniel/avatar.webp" alt="Adira Daniel " class="sc-card-img" />
+        <div class="sc-card-overlay"></div>
+    </div>
     <div class="sc-card-content">
         <h4 class="sc-card-name">Adira Daniel </h4>
         <p class="sc-card-role">Co-Director</p>
     </div>
-</div><div class="sc-title-card teal">
+    <span class="sc-cbar"></span>
+</div><div class="sc-title-card" style="--team-color:#2563eb;--bar-extend:calc(1rem + 1px)">
     <span class="sc-title-label">Team</span>
     <h3 class="sc-title-text">Social Justice & DEIA</h3>
-</div><div class="sc-card" onclick="openModal('drsarahasauve')">
-    <img src="/authors/drsarahasauve/avatar.webp" alt="Dr. Sarah A. Sauvé" class="sc-card-img" />
-    <div class="sc-card-overlay"></div>
+    <span class="sc-cbar"></span>
+</div><div class="sc-card" onclick="openModal('drsarahasauve')" style="--team-color:#2563eb;--bar-extend:0px">
+    <div class="sc-card-photo">
+        <img src="/authors/drsarahasauve/avatar.webp" alt="Dr. Sarah A. Sauvé" class="sc-card-img" />
+        <div class="sc-card-overlay"></div>
+    </div>
     <div class="sc-card-content">
         <h4 class="sc-card-name">Dr. Sarah A. Sauvé</h4>
         <p class="sc-card-role">Director</p>
     </div>
-</div><div class="sc-title-card teal">
+    <span class="sc-cbar"></span>
+</div><div class="sc-title-card" style="--team-color:#7c3aed;--bar-extend:calc(1rem + 1px)">
     <span class="sc-title-label">Team</span>
     <h3 class="sc-title-text">Meta-science & Research</h3>
-</div><div class="sc-card" onclick="openModal('drrachelheyard')">
-    <img src="/authors/drrachelheyard/avatar.webp" alt="Dr Rachel Heyard" class="sc-card-img" />
-    <div class="sc-card-overlay"></div>
+    <span class="sc-cbar"></span>
+</div><div class="sc-card" onclick="openModal('drrachelheyard')" style="--team-color:#7c3aed;--bar-extend:calc(1rem + 1px)">
+    <div class="sc-card-photo">
+        <img src="/authors/drrachelheyard/avatar.webp" alt="Dr Rachel Heyard" class="sc-card-img" />
+        <div class="sc-card-overlay"></div>
+    </div>
     <div class="sc-card-content">
         <h4 class="sc-card-name">Dr Rachel Heyard</h4>
         <p class="sc-card-role">Director</p>
     </div>
-</div><div class="sc-card" onclick="openModal('tomheyman')">
-    <img src="/authors/tomheyman/avatar.webp" alt="Tom Heyman" class="sc-card-img" />
-    <div class="sc-card-overlay"></div>
+    <span class="sc-cbar"></span>
+</div><div class="sc-card" onclick="openModal('tomheyman')" style="--team-color:#7c3aed;--bar-extend:calc(1rem + 1px)">
+    <div class="sc-card-photo">
+        <img src="/authors/tomheyman/avatar.webp" alt="Tom Heyman" class="sc-card-img" />
+        <div class="sc-card-overlay"></div>
+    </div>
     <div class="sc-card-content">
         <h4 class="sc-card-name">Tom Heyman</h4>
         <p class="sc-card-role">Deputy-Director</p>
     </div>
-</div><div class="sc-card" onclick="openModal('berittbarthelmesmsc')">
-    <img src="/authors/berittbarthelmesmsc/avatar.webp" alt="Berit T. Barthelmes, M.Sc." class="sc-card-img" />
-    <div class="sc-card-overlay"></div>
+    <span class="sc-cbar"></span>
+</div><div class="sc-card" onclick="openModal('berittbarthelmesmsc')" style="--team-color:#7c3aed;--bar-extend:0px">
+    <div class="sc-card-photo">
+        <img src="/authors/berittbarthelmesmsc/avatar.webp" alt="Berit T. Barthelmes, M.Sc." class="sc-card-img" />
+        <div class="sc-card-overlay"></div>
+    </div>
     <div class="sc-card-content">
         <h4 class="sc-card-name">Berit T. Barthelmes, M.Sc.</h4>
         <p class="sc-card-role">Project Manager</p>
     </div>
-</div><div class="sc-title-card teal">
+    <span class="sc-cbar"></span>
+</div><div class="sc-title-card" style="--team-color:#be123c;--bar-extend:calc(1rem + 1px)">
     <span class="sc-title-label">Team</span>
     <h3 class="sc-title-text">Education & Pedagogy</h3>
-</div><div class="sc-card" onclick="openModal('drmadeleinepownall')">
-    <img src="/authors/drmadeleinepownall/avatar.webp" alt="Dr Madeleine Pownall" class="sc-card-img" />
-    <div class="sc-card-overlay"></div>
+    <span class="sc-cbar"></span>
+</div><div class="sc-card" onclick="openModal('drmadeleinepownall')" style="--team-color:#be123c;--bar-extend:calc(1rem + 1px)">
+    <div class="sc-card-photo">
+        <img src="/authors/drmadeleinepownall/avatar.webp" alt="Dr Madeleine Pownall" class="sc-card-img" />
+        <div class="sc-card-overlay"></div>
+    </div>
     <div class="sc-card-content">
         <h4 class="sc-card-name">Dr Madeleine Pownall</h4>
         <p class="sc-card-role">Director</p>
     </div>
-</div><div class="sc-card" onclick="openModal('lornahamilton')">
-    <img src="/authors/lornahamilton/avatar.webp" alt="Lorna Hamilton" class="sc-card-img" />
-    <div class="sc-card-overlay"></div>
+    <span class="sc-cbar"></span>
+</div><div class="sc-card" onclick="openModal('lornahamilton')" style="--team-color:#be123c;--bar-extend:0px">
+    <div class="sc-card-photo">
+        <img src="/authors/lornahamilton/avatar.webp" alt="Lorna Hamilton" class="sc-card-img" />
+        <div class="sc-card-overlay"></div>
+    </div>
     <div class="sc-card-content">
         <h4 class="sc-card-name">Lorna Hamilton</h4>
         <p class="sc-card-role">Deputy-Director</p>
     </div>
+    <span class="sc-cbar"></span>
 </div>
     </div>
 </section><section class="sc-section" id="operations">
@@ -108,176 +136,246 @@ layout: single
         <p class="sc-section-desc">Infrastructure, community management, ethical oversight, and support systems powering FORRT.</p>
     </div>
     <div class="sc-grid">
-        <div class="sc-title-card slate">
+        <div class="sc-title-card" style="--team-color:#0f766e;--bar-extend:calc(1rem + 1px)">
     <span class="sc-title-label">Team</span>
     <h3 class="sc-title-text">Community Governance & Management</h3>
-</div><div class="sc-card" onclick="openModal('dramandakaymontoya')">
-    <img src="/authors/dramandakaymontoya/avatar.webp" alt="Dr. Amanda Kay Montoya" class="sc-card-img" />
-    <div class="sc-card-overlay"></div>
+    <span class="sc-cbar"></span>
+</div><div class="sc-card" onclick="openModal('dramandakaymontoya')" style="--team-color:#0f766e;--bar-extend:calc(1rem + 1px)">
+    <div class="sc-card-photo">
+        <img src="/authors/dramandakaymontoya/avatar.webp" alt="Dr. Amanda Kay Montoya" class="sc-card-img" />
+        <div class="sc-card-overlay"></div>
+    </div>
     <div class="sc-card-content">
         <h4 class="sc-card-name">Dr. Amanda Kay Montoya</h4>
         <p class="sc-card-role">Director</p>
     </div>
-</div><div class="sc-card" onclick="openModal('drkellylloyd')">
-    <img src="/authors/drkellylloyd/avatar.webp" alt="Dr Kelly Lloyd" class="sc-card-img" />
-    <div class="sc-card-overlay"></div>
+    <span class="sc-cbar"></span>
+</div><div class="sc-card" onclick="openModal('drkellylloyd')" style="--team-color:#0f766e;--bar-extend:calc(1rem + 1px)">
+    <div class="sc-card-photo">
+        <img src="/authors/drkellylloyd/avatar.webp" alt="Dr Kelly Lloyd" class="sc-card-img" />
+        <div class="sc-card-overlay"></div>
+    </div>
     <div class="sc-card-content">
         <h4 class="sc-card-name">Dr Kelly Lloyd</h4>
         <p class="sc-card-role">Cohesion-Liaison</p>
     </div>
-</div><div class="sc-card" onclick="openModal('giorgiaandreolli')">
-    <img src="/authors/giorgiaandreolli/avatar.webp" alt="Giorgia Andreolli" class="sc-card-img" />
-    <div class="sc-card-overlay"></div>
+    <span class="sc-cbar"></span>
+</div><div class="sc-card" onclick="openModal('giorgiaandreolli')" style="--team-color:#0f766e;--bar-extend:0px">
+    <div class="sc-card-photo">
+        <img src="/authors/giorgiaandreolli/avatar.webp" alt="Giorgia Andreolli" class="sc-card-img" />
+        <div class="sc-card-overlay"></div>
+    </div>
     <div class="sc-card-content">
         <h4 class="sc-card-name">Giorgia Andreolli</h4>
         <p class="sc-card-role">Cohesion-Liaison</p>
     </div>
-</div><div class="sc-title-card slate">
+    <span class="sc-cbar"></span>
+</div><div class="sc-title-card" style="--team-color:#2563eb;--bar-extend:calc(1rem + 1px)">
     <span class="sc-title-label">Team</span>
     <h3 class="sc-title-text">Community Engagement</h3>
-</div><div class="sc-card" onclick="openModal('drlukasroseler')">
-    <img src="/authors/drlukasroseler/avatar.webp" alt="Dr. Lukas Röseler" class="sc-card-img" />
-    <div class="sc-card-overlay"></div>
+    <span class="sc-cbar"></span>
+</div><div class="sc-card" onclick="openModal('drlukasroseler')" style="--team-color:#2563eb;--bar-extend:0px">
+    <div class="sc-card-photo">
+        <img src="/authors/drlukasroseler/avatar.webp" alt="Dr. Lukas Röseler" class="sc-card-img" />
+        <div class="sc-card-overlay"></div>
+    </div>
     <div class="sc-card-content">
         <h4 class="sc-card-name">Dr. Lukas Röseler</h4>
         <p class="sc-card-role">Infrastructure-Liaison</p>
     </div>
-</div><div class="sc-title-card slate">
+    <span class="sc-cbar"></span>
+</div><div class="sc-title-card" style="--team-color:#7c3aed;--bar-extend:calc(1rem + 1px)">
     <span class="sc-title-label">Team</span>
     <h3 class="sc-title-text">Sustainability & Strategy</h3>
-</div><div class="sc-card" onclick="openModal('drsarahashcroftjones')">
-    <img src="/authors/drsarahashcroftjones/avatar.webp" alt="Dr Sarah Ashcroft-Jones" class="sc-card-img" />
-    <div class="sc-card-overlay"></div>
+    <span class="sc-cbar"></span>
+</div><div class="sc-card" onclick="openModal('drsarahashcroftjones')" style="--team-color:#7c3aed;--bar-extend:calc(1rem + 1px)">
+    <div class="sc-card-photo">
+        <img src="/authors/drsarahashcroftjones/avatar.webp" alt="Dr Sarah Ashcroft-Jones" class="sc-card-img" />
+        <div class="sc-card-overlay"></div>
+    </div>
     <div class="sc-card-content">
         <h4 class="sc-card-name">Dr Sarah Ashcroft-Jones</h4>
         <p class="sc-card-role">Director</p>
     </div>
-</div><div class="sc-card" onclick="openModal('saralilmiddleton')">
-    <img src="/authors/saralilmiddleton/avatar.webp" alt="Sara Lil Middleton" class="sc-card-img" />
-    <div class="sc-card-overlay"></div>
+    <span class="sc-cbar"></span>
+</div><div class="sc-card" onclick="openModal('saralilmiddleton')" style="--team-color:#7c3aed;--bar-extend:0px">
+    <div class="sc-card-photo">
+        <img src="/authors/saralilmiddleton/avatar.webp" alt="Sara Lil Middleton" class="sc-card-img" />
+        <div class="sc-card-overlay"></div>
+    </div>
     <div class="sc-card-content">
         <h4 class="sc-card-name">Sara Lil Middleton</h4>
         <p class="sc-card-role">Knowledge Manager</p>
     </div>
-</div><div class="sc-title-card slate">
+    <span class="sc-cbar"></span>
+</div><div class="sc-title-card" style="--team-color:#be123c;--bar-extend:calc(1rem + 1px)">
     <span class="sc-title-label">Team</span>
     <h3 class="sc-title-text">Ethics and Inclusion</h3>
-</div><div class="sc-card" onclick="openModal('drjohnshaw')">
-    <img src="/authors/drjohnshaw/avatar.webp" alt="Dr John Shaw" class="sc-card-img" />
-    <div class="sc-card-overlay"></div>
+    <span class="sc-cbar"></span>
+</div><div class="sc-card" onclick="openModal('drjohnshaw')" style="--team-color:#be123c;--bar-extend:calc(1rem + 1px)">
+    <div class="sc-card-photo">
+        <img src="/authors/drjohnshaw/avatar.webp" alt="Dr John Shaw" class="sc-card-img" />
+        <div class="sc-card-overlay"></div>
+    </div>
     <div class="sc-card-content">
         <h4 class="sc-card-name">Dr John Shaw</h4>
         <p class="sc-card-role">Director</p>
     </div>
-</div><div class="sc-card" onclick="openModal('thomasrhysevans')">
-    <img src="/authors/thomasrhysevans/avatar.webp" alt="Thomas Rhys Evans" class="sc-card-img" />
-    <div class="sc-card-overlay"></div>
+    <span class="sc-cbar"></span>
+</div><div class="sc-card" onclick="openModal('thomasrhysevans')" style="--team-color:#be123c;--bar-extend:0px">
+    <div class="sc-card-photo">
+        <img src="/authors/thomasrhysevans/avatar.webp" alt="Thomas Rhys Evans" class="sc-card-img" />
+        <div class="sc-card-overlay"></div>
+    </div>
     <div class="sc-card-content">
         <h4 class="sc-card-name">Thomas Rhys Evans</h4>
         <p class="sc-card-role">Advisor</p>
     </div>
-</div><div class="sc-title-card slate">
+    <span class="sc-cbar"></span>
+</div><div class="sc-title-card" style="--team-color:#b45309;--bar-extend:calc(1rem + 1px)">
     <span class="sc-title-label">Team</span>
     <h3 class="sc-title-text">Fundraising</h3>
-</div><div class="sc-card" onclick="openModal('drmaxkorbmacher')">
-    <img src="/authors/drmaxkorbmacher/avatar.webp" alt="Dr Max Korbmacher" class="sc-card-img" />
-    <div class="sc-card-overlay"></div>
+    <span class="sc-cbar"></span>
+</div><div class="sc-card" onclick="openModal('drmaxkorbmacher')" style="--team-color:#b45309;--bar-extend:calc(1rem + 1px)">
+    <div class="sc-card-photo">
+        <img src="/authors/drmaxkorbmacher/avatar.webp" alt="Dr Max Korbmacher" class="sc-card-img" />
+        <div class="sc-card-overlay"></div>
+    </div>
     <div class="sc-card-content">
         <h4 class="sc-card-name">Dr Max Korbmacher</h4>
         <p class="sc-card-role">Director</p>
     </div>
-</div><div class="sc-card" onclick="openModal('karenmatvienkosikar')">
-    <img src="/authors/karenmatvienkosikar/avatar.webp" alt="Karen Matvienko-Sikar" class="sc-card-img" />
-    <div class="sc-card-overlay"></div>
+    <span class="sc-cbar"></span>
+</div><div class="sc-card" onclick="openModal('karenmatvienkosikar')" style="--team-color:#b45309;--bar-extend:calc(1rem + 1px)">
+    <div class="sc-card-photo">
+        <img src="/authors/karenmatvienkosikar/avatar.webp" alt="Karen Matvienko-Sikar" class="sc-card-img" />
+        <div class="sc-card-overlay"></div>
+    </div>
     <div class="sc-card-content">
         <h4 class="sc-card-name">Karen Matvienko-Sikar</h4>
         <p class="sc-card-role">Co-Director</p>
     </div>
-</div><div class="sc-card" onclick="openModal('fotismystakopoulosphdstudent')">
-    <img src="/authors/fotismystakopoulosphdstudent/avatar.webp" alt="Fotis Mystakopoulos, PhD Student" class="sc-card-img" />
-    <div class="sc-card-overlay"></div>
+    <span class="sc-cbar"></span>
+</div><div class="sc-card" onclick="openModal('fotismystakopoulosphdstudent')" style="--team-color:#b45309;--bar-extend:0px">
+    <div class="sc-card-photo">
+        <img src="/authors/fotismystakopoulosphdstudent/avatar.webp" alt="Fotis Mystakopoulos, PhD Student" class="sc-card-img" />
+        <div class="sc-card-overlay"></div>
+    </div>
     <div class="sc-card-content">
         <h4 class="sc-card-name">Fotis Mystakopoulos, PhD Student</h4>
         <p class="sc-card-role">Officer</p>
     </div>
-</div><div class="sc-title-card slate">
+    <span class="sc-cbar"></span>
+</div><div class="sc-title-card" style="--team-color:#0891b2;--bar-extend:calc(1rem + 1px)">
     <span class="sc-title-label">Team</span>
     <h3 class="sc-title-text">Financial Transparency</h3>
-</div><div class="sc-card" onclick="openModal('aliciatamaraveersmabarredo')">
-    <img src="/authors/aliciatamaraveersmabarredo/avatar.webp" alt="Alicia Tamara Veersma Barredo" class="sc-card-img" />
-    <div class="sc-card-overlay"></div>
+    <span class="sc-cbar"></span>
+</div><div class="sc-card" onclick="openModal('aliciatamaraveersmabarredo')" style="--team-color:#0891b2;--bar-extend:0px">
+    <div class="sc-card-photo">
+        <img src="/authors/aliciatamaraveersmabarredo/avatar.webp" alt="Alicia Tamara Veersma Barredo" class="sc-card-img" />
+        <div class="sc-card-overlay"></div>
+    </div>
     <div class="sc-card-content">
         <h4 class="sc-card-name">Alicia Tamara Veersma Barredo</h4>
         <p class="sc-card-role">Officer</p>
     </div>
-</div><div class="sc-title-card slate">
+    <span class="sc-cbar"></span>
+</div><div class="sc-title-card" style="--team-color:#4d7c0f;--bar-extend:calc(1rem + 1px)">
     <span class="sc-title-label">Team</span>
     <h3 class="sc-title-text">Partnerships</h3>
-</div><div class="sc-card" onclick="openModal('adampartridge')">
-    <img src="/authors/adampartridge/avatar.webp" alt="Adam Partridge" class="sc-card-img" />
-    <div class="sc-card-overlay"></div>
+    <span class="sc-cbar"></span>
+</div><div class="sc-card" onclick="openModal('adampartridge')" style="--team-color:#4d7c0f;--bar-extend:0px">
+    <div class="sc-card-photo">
+        <img src="/authors/adampartridge/avatar.webp" alt="Adam Partridge" class="sc-card-img" />
+        <div class="sc-card-overlay"></div>
+    </div>
     <div class="sc-card-content">
         <h4 class="sc-card-name">Adam Partridge</h4>
         <p class="sc-card-role">Director</p>
     </div>
-</div><div class="sc-title-card slate">
+    <span class="sc-cbar"></span>
+</div><div class="sc-title-card" style="--team-color:#db2777;--bar-extend:calc(1rem + 1px)">
     <span class="sc-title-label">Team</span>
     <h3 class="sc-title-text">Digital Infrastructure Team</h3>
-</div><div class="sc-card" onclick="openModal('justinsulik')">
-    <img src="/authors/justinsulik/avatar.webp" alt="Justin Sulik" class="sc-card-img" />
-    <div class="sc-card-overlay"></div>
+    <span class="sc-cbar"></span>
+</div><div class="sc-card" onclick="openModal('justinsulik')" style="--team-color:#db2777;--bar-extend:calc(1rem + 1px)">
+    <div class="sc-card-photo">
+        <img src="/authors/justinsulik/avatar.webp" alt="Justin Sulik" class="sc-card-img" />
+        <div class="sc-card-overlay"></div>
+    </div>
     <div class="sc-card-content">
         <h4 class="sc-card-name">Justin Sulik</h4>
         <p class="sc-card-role">Director</p>
     </div>
-</div><div class="sc-card" onclick="openModal('dushimemudaherarichard')">
-    <img src="/authors/dushimemudaherarichard/avatar.webp" alt="Dushime Mudahera Richard" class="sc-card-img" />
-    <div class="sc-card-overlay"></div>
+    <span class="sc-cbar"></span>
+</div><div class="sc-card" onclick="openModal('dushimemudaherarichard')" style="--team-color:#db2777;--bar-extend:0px">
+    <div class="sc-card-photo">
+        <img src="/authors/dushimemudaherarichard/avatar.webp" alt="Dushime Mudahera Richard" class="sc-card-img" />
+        <div class="sc-card-overlay"></div>
+    </div>
     <div class="sc-card-content">
         <h4 class="sc-card-name">Dushime Mudahera Richard</h4>
         <p class="sc-card-role">Website Lead</p>
     </div>
-</div><div class="sc-title-card slate">
+    <span class="sc-cbar"></span>
+</div><div class="sc-title-card" style="--team-color:#475569;--bar-extend:calc(1rem + 1px)">
     <span class="sc-title-label">Team</span>
     <h3 class="sc-title-text">Communication, Dissemination & Impact</h3>
-</div><div class="sc-card" onclick="openModal('charlottepennington')">
-    <img src="/authors/charlottepennington/avatar.webp" alt="Charlotte Pennington" class="sc-card-img" />
-    <div class="sc-card-overlay"></div>
+    <span class="sc-cbar"></span>
+</div><div class="sc-card" onclick="openModal('charlottepennington')" style="--team-color:#475569;--bar-extend:0px">
+    <div class="sc-card-photo">
+        <img src="/authors/charlottepennington/avatar.webp" alt="Charlotte Pennington" class="sc-card-img" />
+        <div class="sc-card-overlay"></div>
+    </div>
     <div class="sc-card-content">
         <h4 class="sc-card-name">Charlotte Pennington</h4>
         <p class="sc-card-role">Director</p>
     </div>
-</div><div class="sc-title-card slate">
+    <span class="sc-cbar"></span>
+</div><div class="sc-title-card" style="--team-color:#a16207;--bar-extend:calc(1rem + 1px)">
     <span class="sc-title-label">Team</span>
     <h3 class="sc-title-text">FORRT Stewards</h3>
-</div><div class="sc-card" onclick="openModal('stephaniezellers')">
-    <img src="/authors/stephaniezellers/avatar.webp" alt="Stephanie Zellers" class="sc-card-img" />
-    <div class="sc-card-overlay"></div>
+    <span class="sc-cbar"></span>
+</div><div class="sc-card" onclick="openModal('stephaniezellers')" style="--team-color:#a16207;--bar-extend:calc(1rem + 1px)">
+    <div class="sc-card-photo">
+        <img src="/authors/stephaniezellers/avatar.webp" alt="Stephanie Zellers" class="sc-card-img" />
+        <div class="sc-card-overlay"></div>
+    </div>
     <div class="sc-card-content">
         <h4 class="sc-card-name">Stephanie Zellers</h4>
         <p class="sc-card-role">FORRT Steward</p>
     </div>
-</div><div class="sc-card" onclick="openModal('roksanasobolak')">
-    <img src="/authors/roksanasobolak/avatar.webp" alt="Roksana Sobolak" class="sc-card-img" />
-    <div class="sc-card-overlay"></div>
+    <span class="sc-cbar"></span>
+</div><div class="sc-card" onclick="openModal('roksanasobolak')" style="--team-color:#a16207;--bar-extend:calc(1rem + 1px)">
+    <div class="sc-card-photo">
+        <img src="/authors/roksanasobolak/avatar.webp" alt="Roksana Sobolak" class="sc-card-img" />
+        <div class="sc-card-overlay"></div>
+    </div>
     <div class="sc-card-content">
         <h4 class="sc-card-name">Roksana Sobolak</h4>
         <p class="sc-card-role">FORRT Steward</p>
     </div>
-</div><div class="sc-card" onclick="openModal('rivaquiroga')">
-    <img src="/authors/rivaquiroga/avatar.webp" alt="Riva Quiroga" class="sc-card-img" />
-    <div class="sc-card-overlay"></div>
+    <span class="sc-cbar"></span>
+</div><div class="sc-card" onclick="openModal('rivaquiroga')" style="--team-color:#a16207;--bar-extend:calc(1rem + 1px)">
+    <div class="sc-card-photo">
+        <img src="/authors/rivaquiroga/avatar.webp" alt="Riva Quiroga" class="sc-card-img" />
+        <div class="sc-card-overlay"></div>
+    </div>
     <div class="sc-card-content">
         <h4 class="sc-card-name">Riva Quiroga</h4>
         <p class="sc-card-role">FORRT Steward</p>
     </div>
-</div><div class="sc-card" onclick="openModal('meerachandra')">
-    <img src="/authors/meerachandra/avatar.webp" alt="Meera Chandra" class="sc-card-img" />
-    <div class="sc-card-overlay"></div>
+    <span class="sc-cbar"></span>
+</div><div class="sc-card" onclick="openModal('meerachandra')" style="--team-color:#a16207;--bar-extend:0px">
+    <div class="sc-card-photo">
+        <img src="/authors/meerachandra/avatar.webp" alt="Meera Chandra" class="sc-card-img" />
+        <div class="sc-card-overlay"></div>
+    </div>
     <div class="sc-card-content">
         <h4 class="sc-card-name">Meera Chandra</h4>
         <p class="sc-card-role">FORRT Steward</p>
     </div>
+    <span class="sc-cbar"></span>
 </div>
     </div>
 </section><section class="sc-section" id="steering">
@@ -290,15 +388,19 @@ layout: single
     </div>
     <div class="sc-grid">
         <div class="sc-card" onclick="openModal('drlukaswallrich')">
-    <img src="/authors/drlukaswallrich/avatar.webp" alt="Dr Lukas Wallrich" class="sc-card-img" />
-    <div class="sc-card-overlay"></div>
+    <div class="sc-card-photo">
+        <img src="/authors/drlukaswallrich/avatar.webp" alt="Dr Lukas Wallrich" class="sc-card-img" />
+        <div class="sc-card-overlay"></div>
+    </div>
     <div class="sc-card-content">
         <h4 class="sc-card-name">Dr Lukas Wallrich</h4>
         <p class="sc-card-role">Co-Director</p>
     </div>
 </div><div class="sc-card" onclick="openModal('drflavioazevedo')">
-    <img src="/authors/drflavioazevedo/avatar.webp" alt="Dr Flavio Azevedo" class="sc-card-img" />
-    <div class="sc-card-overlay"></div>
+    <div class="sc-card-photo">
+        <img src="/authors/drflavioazevedo/avatar.webp" alt="Dr Flavio Azevedo" class="sc-card-img" />
+        <div class="sc-card-overlay"></div>
+    </div>
     <div class="sc-card-content">
         <h4 class="sc-card-name">Dr Flavio Azevedo</h4>
         <p class="sc-card-role">Director</p>
@@ -315,15 +417,19 @@ layout: single
     </div>
     <div class="sc-grid">
         <div class="sc-card" onclick="openModal('samparsons')">
-    <img src="/authors/samparsons/avatar.webp" alt="Sam Parsons" class="sc-card-img" />
-    <div class="sc-card-overlay"></div>
+    <div class="sc-card-photo">
+        <img src="/authors/samparsons/avatar.webp" alt="Sam Parsons" class="sc-card-img" />
+        <div class="sc-card-overlay"></div>
+    </div>
     <div class="sc-card-content">
         <h4 class="sc-card-name">Sam Parsons</h4>
         <p class="sc-card-role">Stewardship Panel</p>
     </div>
 </div><div class="sc-card" onclick="openModal('thomasrhysevans')">
-    <img src="/authors/thomasrhysevans/avatar.webp" alt="Thomas Rhys Evans" class="sc-card-img" />
-    <div class="sc-card-overlay"></div>
+    <div class="sc-card-photo">
+        <img src="/authors/thomasrhysevans/avatar.webp" alt="Thomas Rhys Evans" class="sc-card-img" />
+        <div class="sc-card-overlay"></div>
+    </div>
     <div class="sc-card-content">
         <h4 class="sc-card-name">Thomas Rhys Evans</h4>
         <p class="sc-card-role">Ombudsman</p>
@@ -1189,223 +1295,6 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }
     });
-
-    /* --- Team linking + ordering based on source CSV --- */
-    const SC_ORDER_CSV = "https://docs.google.com/spreadsheets/d/e/2PACX-1vRCHSY7WBvzDSSWyUyOVPRbsf5QxO7Mc40hGB7yanfT-rjbcNthMbHvUxT0NJ3AAfLKfx4YiOghByZT/pub?output=csv";
-    const TEAM_COLORS = ["#2563eb","#c026d3","#ea580c","#22c55e","#0ea5e9","#f59e0b","#ef4444","#8b5cf6","#14b8a6","#f97316"];
-    const BACKGROUND_COLORS = ["#0f766e", "#475569"];
-    const honorifics = /^(dr|dr\.|prof|prof\.|mr|mrs|ms|miss)\s+/i;
-    const normalizeBase = (str = "") => str.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
-    const normalizeText = (str = "") => normalizeBase(str.replace(/&amp;/gi, "&").trim().toLowerCase());
-    const normalizeTeam = (str = "") => normalizeText(str).replace(/\s+/g, " ");
-    const nameTokens = (str = "") =>
-        normalizeText(str.replace(honorifics, ""))
-            .replace(/[^a-z0-9\s]/g, " ")
-            .split(/\s+/)
-            .filter(Boolean);
-
-    const tokenSimilarity = (aTokens, bTokens) => {
-        if (!aTokens.length || !bTokens.length) return 0;
-        const aSet = new Set(aTokens);
-        const bSet = new Set(bTokens);
-        let intersect = 0;
-        bSet.forEach((t) => {
-            if (aSet.has(t)) intersect += 1;
-        });
-        return intersect / Math.max(aSet.size, bSet.size, 1);
-    };
-
-    const charDice = (aStr, bStr) => {
-        const a = aStr.replace(/\s+/g, "");
-        const b = bStr.replace(/\s+/g, "");
-        if (!a.length || !b.length) return 0;
-        const count = (s) => {
-            const m = {};
-            for (const ch of s) m[ch] = (m[ch] || 0) + 1;
-            return m;
-        };
-        const aCount = count(a);
-        const bCount = count(b);
-        let overlap = 0;
-        Object.keys(aCount).forEach((ch) => {
-            if (bCount[ch]) overlap += Math.min(aCount[ch], bCount[ch]);
-        });
-        return (2 * overlap) / (a.length + b.length);
-    };
-
-    const parseCSV = (text) =>
-        text
-            .trim()
-            .split(/\\r?\\n/)
-            .map((line) => line.split(",").map((cell) => cell.replace(/^"+|"+$/g, "").trim()));
-
-    const buildOrders = (rows) => {
-        const sectionMap = {};
-        document.querySelectorAll(".sc-section").forEach((sec) => {
-            const title = sec.querySelector(".sc-section-title span")?.textContent || sec.id;
-            sectionMap[normalizeTeam(title)] = sec.id;
-        });
-
-        const findSection = (raw) => {
-            const key = normalizeTeam(raw);
-            if (sectionMap[key]) return sectionMap[key];
-
-            const operationsId = Object.entries(sectionMap).find(([k]) => k.includes('operation'))?.[1];
-            if (operationsId && (key.includes('ombudsman') || key.includes('steward'))) {
-                return operationsId;
-            }
-
-            let best = null;
-            let bestScore = -1;
-            Object.entries(sectionMap).forEach(([k, id]) => {
-                const score = charDice(k, key);
-                if (score > bestScore) {
-                    bestScore = score;
-                    best = id;
-                }
-            });
-            return best || Object.values(sectionMap)[0] || null;
-        };
-
-        const orders = {};
-        rows.slice(1).forEach((row) => {
-            const sectionRaw = row[1];
-            const teamRaw = row[3];
-            const nameRaw = row[5];
-            if (!sectionRaw || !teamRaw || !nameRaw) return;
-            const secKey = findSection(sectionRaw);
-            if (!secKey) return;
-            if (!orders[secKey]) orders[secKey] = [];
-            let group = orders[secKey].find((g) => normalizeTeam(g.team) === normalizeTeam(teamRaw));
-            if (!group) {
-                group = { team: teamRaw, members: [] };
-                orders[secKey].push(group);
-            }
-            group.members.push(nameRaw);
-        });
-        return orders;
-    };
-
-    const reorderAndLink = (sectionId, teams) => {
-        const grid = document.querySelector(`#${sectionId} .sc-grid`);
-        if (!grid || !teams || !teams.length) return;
-
-        const titleCards = Array.from(grid.querySelectorAll('.sc-title-card'));
-        const memberCards = Array.from(grid.querySelectorAll('.sc-card'));
-
-        [...titleCards, ...memberCards].forEach((el) => {
-            el.classList.remove('sc-team-linked', 'sc-team-title');
-            el.style.removeProperty('--team-color');
-        });
-
-        const titleMap = new Map();
-        titleCards.forEach((card) => {
-            const text = card.querySelector('.sc-title-text')?.textContent || "";
-            titleMap.set(normalizeTeam(text), card);
-        });
-
-        const memberMap = [];
-        memberCards.forEach((card) => {
-            const name = card.querySelector('.sc-card-name')?.textContent || "";
-            const tokens = nameTokens(name);
-            if (!tokens.length) return;
-            memberMap.push({ tokens, card });
-        });
-
-        const takeMember = (rawName) => {
-            const targetTokens = nameTokens(rawName);
-            if (!targetTokens.length) return null;
-            const targetJoined = targetTokens.join("");
-
-            let best = null;
-            let bestScore = 0.45;
-
-            memberMap.forEach((entry, idx) => {
-                const tokenScore = tokenSimilarity(entry.tokens, targetTokens);
-                const joined = entry.tokens.join("");
-                const charScore = charDice(joined, targetJoined);
-                const score = Math.max(tokenScore, charScore);
-                if (score > bestScore) {
-                    bestScore = score;
-                    best = { idx, card: entry.card };
-                }
-            });
-
-            if (best) {
-                memberMap.splice(best.idx, 1);
-                return best.card;
-            }
-            return null;
-        };
-
-        let colorIndex = 0;
-        const parseColor = (hex) => {
-            const h = hex.replace("#", "");
-            const r = parseInt(h.substring(0, 2), 16) / 255;
-            const g = parseInt(h.substring(2, 4), 16) / 255;
-            const b = parseInt(h.substring(4, 6), 16) / 255;
-            const toLin = (c) => (c <= 0.03928 ? c / 12.92 : Math.pow((c + 0.055) / 1.055, 2.4));
-            return { r: toLin(r), g: toLin(g), b: toLin(b) };
-        };
-        const contrast = (hex1, hex2) => {
-            const a = parseColor(hex1);
-            const b = parseColor(hex2);
-            const lum = ({ r, g, b }) => 0.2126 * r + 0.7152 * g + 0.0722 * b;
-            const l1 = lum(a) + 0.05;
-            const l2 = lum(b) + 0.05;
-            return l1 > l2 ? l1 / l2 : l2 / l1;
-        };
-        const nextColor = () => {
-            let attempts = 0;
-            while (attempts < TEAM_COLORS.length * 2) {
-                const color = TEAM_COLORS[colorIndex % TEAM_COLORS.length];
-                colorIndex += 1;
-                const ok = BACKGROUND_COLORS.every((bg) => contrast(color, bg) > 4);
-                if (ok) return color;
-                attempts += 1;
-            }
-            return TEAM_COLORS[(colorIndex++) % TEAM_COLORS.length];
-        };
-
-        const newChildren = [];
-
-        teams.forEach((team) => {
-            const color = nextColor();
-            const teamKey = normalizeTeam(team.team);
-            const titleCard = titleMap.get(teamKey);
-            if (titleCard) {
-                titleCard.style.setProperty('--team-color', color);
-                titleCard.classList.add('sc-team-title');
-                titleMap.delete(teamKey);
-                newChildren.push(titleCard);
-            }
-
-            team.members.forEach((memberName) => {
-                const card = takeMember(memberName);
-                if (card) {
-                    card.style.setProperty('--team-color', color);
-                    card.classList.add('sc-team-linked');
-                    newChildren.push(card);
-                }
-            });
-        });
-
-        const leftovers = [];
-        titleMap.forEach((card) => leftovers.push(card));
-        memberMap.forEach((entry) => leftovers.push(entry.card));
-
-        grid.innerHTML = '';
-        [...newChildren, ...leftovers].forEach((el) => grid.appendChild(el));
-    };
-
-    fetch(SC_ORDER_CSV)
-        .then((res) => res.text())
-        .then((text) => {
-            const rows = parseCSV(text);
-            const orders = buildOrders(rows);
-            Object.entries(orders).forEach(([sectionId, teams]) => reorderAndLink(sectionId, teams));
-        })
-        .catch((err) => console.warn('SC team linking failed', err));
 });
 </script>
 
