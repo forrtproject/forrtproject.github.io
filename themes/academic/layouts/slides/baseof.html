@@ -1,16 +1,16 @@
 <!DOCTYPE html>
-<html lang="{{ site.LanguageCode | default "en-us" }}">
+<html lang="{{ site.Language.Locale | default "en-us" }}">
 <head>
   {{ $media_dir := site.Params.media_dir | default "media" }}
   {{ .Scratch.Set "media_dir" $media_dir }}
 
-  {{ $css := site.Data.assets.css }}
+  {{ $css := hugo.Data.assets.css }}
   {{ $cdn_url_reveal := "https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.8.0" }}
 
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="Source Themes Academic {{ site.Data.academic.version }}">
+  <meta name="generator" content="Source Themes Academic {{ hugo.Data.academic.version }}">
 
   <link rel="manifest" href="{{ "index.webmanifest" | relLangURL }}">
   <link rel="icon" type="image/png" href="{{(partial "functions/get_icon" 32).RelPermalink}}">

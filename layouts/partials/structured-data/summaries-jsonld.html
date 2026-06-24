@@ -12,7 +12,7 @@
 {{- $page := .page -}}
 {{- $deiOnly := .deiOnly -}}
 {{- $parts := slice -}}
-{{- range $s := site.Data.summaries -}}
+{{- range $s := hugo.Data.summaries -}}
   {{- if or (not $deiOnly) (in $s.Title "⌺") -}}
     {{/* Clean the title: drop the ◈ / ⌺ status symbols and any markdown. */}}
     {{- $name := trim ($s.Title | replaceRE "[◈⌺]" "" | plainify) " " -}}

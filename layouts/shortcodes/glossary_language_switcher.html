@@ -19,7 +19,7 @@
   {{- end -}}
 {{- end -}}
 <div class="btn-group flex-wrap text-center">
-{{- range $i, $lang := .Site.Data.glossary_languages -}}
+{{- range $i, $lang := hugo.Data.glossary_languages -}}
 {{- $active := "" -}}
 {{- if eq $lang.slug $current -}}{{- $active = " active" -}}{{- end -}}
 {{- if $i }}

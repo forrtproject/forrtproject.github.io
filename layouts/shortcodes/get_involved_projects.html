@@ -3,7 +3,7 @@
   Source CSV is in scripts/get_involved/projects.csv (mirrors a Google Sheet).
   Regenerate with: python scripts/build_get_involved.py
 */}}
-{{ $data := index site.Data "get_involved_projects" }}
+{{ $data := index hugo.Data "get_involved_projects" }}
 {{ $projects := $data.projects }}
 
 <div class="get-involved-projects" style="display: flex; flex-direction: column; gap: 1rem; margin-top: 1.5rem;">

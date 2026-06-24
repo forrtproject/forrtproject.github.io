@@ -1,6 +1,6 @@
 {{ $type := .Get "type" }}
 {{ $title := .Get "title" }}
-{{ $items := where site.Data.publications "type" $type }}
+{{ $items := where hugo.Data.publications "type" $type }}
 
 {{/* Centralized Type Map */}}
 {{ $typeMap := dict

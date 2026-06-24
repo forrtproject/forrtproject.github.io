@@ -14,7 +14,7 @@
 {{ with (index $clusterAliases $cluster) }}
   {{ $clusters = $clusters | append . }}
 {{ end }}
-{{ $items := where site.Data.partners "cluster" "in" $clusters }}
+{{ $items := where hugo.Data.partners "cluster" "in" $clusters }}
 
 {{/* Cluster Map for CSS classes */}}
 {{ $clusterMap := dict

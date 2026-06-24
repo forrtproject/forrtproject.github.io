@@ -27,7 +27,7 @@
         "Conceptual and Statistical Knowledge"
     ],
     "tags": [
-        "Statistics; Effect Sizes; Confidence Intervals; Data Analysis; Data Visualization; Data Interpretation."
+        "Statistics; Effect Sizes; Confidence Intervals; Data Analysis; Data Visualization; Data Interpretation"
     ],
     "forrt_clusters_new": "Conceptual and Statistical Knowledge",
     "forrt_sub_clusters": "Effect sizes, statistical power, simulations, & confidence intervals.",
