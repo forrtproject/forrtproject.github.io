@@ -14,7 +14,9 @@
       <span class="ac-date">{{ $post.Date.Format "Jan 2006" }}</span>
     </div>
     <h3>{{ $post.Title }}</h3>
-    <p>{{ with $post.Params.summary }}{{ . }}{{ else }}{{ $post.Summary | plainify | truncate 120 }}{{ end }}</p>
+    {{/* Render the rendered-markdown summary as HTML so formatting (bold, links)
+         and typographic entities (’, —) display correctly; CSS clamps the height. */}}
+    <div class="ac-summary">{{ $post.Summary }}</div>
     <span class="ac-more">Read more ›</span>
   </div>
 </a>

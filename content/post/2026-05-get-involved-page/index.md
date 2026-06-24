@@ -1,5 +1,5 @@
 ---
-title: "New data-driven Get Involved page"
+title: "Updated Get Involved page"
 date: 2026-05-07
 tags: []
 categories:
@@ -7,6 +7,8 @@ categories:
 authors: ["FORRT"]
 ---
 
-The Get Involved page has been rebuilt to draw its content directly from a Google Sheet, making it easier to keep opportunities to contribute to FORRT current and helping newcomers find ways to participate.
+The **Get Involved** page has been updated and rebuilt, and we have made it easier to keep the updates coming. So if you are looking for ways to get involved, have a look at the current opportunities now.
   
+<!--more-->
+
 [Get involved](/about/get-involved/)

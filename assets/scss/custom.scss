@@ -3049,13 +3049,20 @@ h1.clusters-site-heading.clusters-hub-page__title {
   color: #004055;
   margin: 0 0 0.5rem;
 }
-.announcement-card p {
+.announcement-card .ac-summary {
   flex: 1;
   font-size: 0.9rem;
   line-height: 1.5;
   color: #4a4a4a;
   margin: 0 0 0.9rem;
+  /* Clamp to a few lines so cards stay even regardless of summary length. */
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
+.announcement-card .ac-summary p { margin: 0; }
+.announcement-card .ac-summary a { color: inherit; text-decoration: underline; }
 .announcement-card .ac-more {
   font-size: 0.86rem;
   font-weight: 700;

@@ -7,6 +7,8 @@ categories:
 authors: ["FORRT"]
 ---
 
-FORRT's glossary of open scholarship terms is now available in Chinese, helping lower the barrier to understanding and participating in open science discussions for Chinese-speaking researchers and students. It joins the existing English, German, and Arabic versions.
+FORRT's **Glossary of Open Scholarship** terms is now available in **Chinese**, lowering the barrier to understanding and participating in open-science discussions for Chinese-speaking researchers and students. It joins the existing English, German, and Arabic versions.
   
+<!--more-->
+
 [Explore the glossary](/glossary/chinese/)

@@ -7,6 +7,8 @@ categories:
 authors: ["FORRT"]
 ---
 
-FORRT is inviting submissions for a free online conference (28-30 September 2026) exploring how AI and large language models can help us understand and improve how science works. Talks, workshops, and hackathon proposals are welcome from all career stages, with a submission deadline of 31 July 2026.
+We are inviting submissions for a **free online conference (28–30 September 2026)** exploring how AI and large language models can help us understand and improve how science works. Talks, workshops, and hackathon proposals are welcome from all career stages, with a **submission deadline of 31 July 2026**.
   
-[Submit your proposal](/ai-metascience/)
+<!--more-->
+
+[Find out more and submit your proposal](/ai-metascience/)

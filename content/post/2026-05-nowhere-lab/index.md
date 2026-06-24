@@ -7,6 +7,8 @@ categories:
 authors: ["FORRT"]
 ---
 
-A new page introduces Nowhere Lab, an online lab community (a FORRT partner) for anyone without a lab who wants the lab-meeting experience, including new faculty, ex-academics, freelancers, and keen undergrads. The page features an interactive map of its 200+ members worldwide and a PhD Survival Guide.
+FORRT welcomes **Nowhere Lab** into our community - a space for anyone without a lab who wants the lab-meeting experience — new faculty, ex-academics, freelancers, and keen undergrads. Their members have also produced a **PhD Survival Guide**. Check the website, or join their [channel on Slack](https://forrt.slack.com/archives/C0B0FKG3GH2).
   
+<!--more-->
+
 [Read more](/nowherelab/)
