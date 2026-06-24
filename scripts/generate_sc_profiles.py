@@ -497,8 +497,9 @@ def generate_social_links(member):
         links.append(f'<a href="{member["linkedin"]}" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-blue-700 transition-colors">{ICONS["linkedin"]}</a>')
     if member.get('website'):
         links.append(f'<a href="{member["website"]}" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-slate-800 transition-colors">{ICONS["globe"]}</a>')
-    if member.get('email'):
-        links.append(f'<a href="mailto:{member["email"]}" class="text-slate-400 hover:text-slate-800 transition-colors">{ICONS["mail"]}</a>')
+    email = str(member.get('email') or '').strip()
+    if email and email.lower() != 'nan' and '@' in email:
+        links.append(f'<a href="mailto:{email}" class="text-slate-400 hover:text-slate-800 transition-colors">{ICONS["mail"]}</a>')
     return "".join(links)
 
 def normalize_website_url(url):
