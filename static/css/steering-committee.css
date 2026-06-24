@@ -133,6 +133,9 @@ article.article .article-container .article-title {
     gap: 1rem;
     padding: 0;
     justify-content: flex-start;
+    /* Top-align every tile so title cards and member cards (and their connecting bars)
+       always line up, regardless of any height differences or theme alignment defaults. */
+    align-items: flex-start;
     /* Clip the connecting team bars at the row/section edges so they break cleanly
        at the end of a row and resume on the next one (see .sc-cbar). */
     overflow: hidden;
@@ -157,12 +160,22 @@ article.article .article-container .article-title {
 }
 
 /* Clipped photo wrapper: holds the image + overlay so the zoom-on-hover and crop stay
-   contained, while the connecting bar (a direct child of .sc-card) can overflow. */
+   contained, while the connecting bar (a direct child of .sc-card) can overflow.
+   Positioning is forced so theme rules can never push the photo down inside the card. */
 .sc-card-photo {
-    position: absolute;
-    inset: 0;
+    position: absolute !important;
+    inset: 0 !important;
     overflow: hidden;
     background: #e2e8f0;
+    margin: 0 !important;
+}
+/* Guard against the theme wrapping the avatar in a lightbox <a>: make any such wrapper
+   fill the photo box so the image stays flush with the top of the card. */
+.sc-card-photo a {
+    position: absolute !important;
+    inset: 0 !important;
+    display: block !important;
+    margin: 0 !important;
 }
 
 @media (min-width: 640px) {
@@ -210,8 +223,10 @@ article.article .article-container .article-title {
 }
 
 .sc-card-img {
-    position: absolute;
-    inset: 0;
+    /* position/inset forced: the theme's `.article-style img` selector outranks this class,
+       so without !important it could drop the image into normal flow and misalign it. */
+    position: absolute !important;
+    inset: 0 !important;
     width: 100% !important; /* Force fill even if global img rules set height:auto */
     height: 100% !important;
     min-width: 100%;
@@ -348,7 +363,7 @@ article.article .article-container .article-title {
     letter-spacing: 0.1em;
     opacity: 0.9;
     color: #e2e8f0;
-    margin-bottom: 0.25rem;
+    margin: 0 0 0.25rem; /* reset theme heading/paragraph margins */
 }
 
 .sc-title-text {
@@ -356,6 +371,7 @@ article.article .article-container .article-title {
     font-weight: 700;
     line-height: 1.2;
     color: #f8fafc;
+    margin: 0; /* reset theme h3 margins so the title card can't grow past its aspect ratio */
 }
 
 /* Connecting team bar
