@@ -148,7 +148,11 @@ article.article .article-container .article-title {
     /* overflow stays visible so the connecting bar can reach into the gap; the photo
        itself is clipped by .sc-card-photo. */
     overflow: visible;
-    border: 1px solid transparent;
+    /* No border: title cards have border:0, and with box-sizing:border-box a 1px border
+       here would push the absolutely-positioned photo and connecting bar 1px inward, so
+       photo cards would sit lower/smaller than title cards and the top bars wouldn't line
+       up into one continuous row. */
+    border: 0;
     /* Portrait aspect ratio 2:3 */
     aspect-ratio: 2/3;
     transition: box-shadow 0.3s ease;
