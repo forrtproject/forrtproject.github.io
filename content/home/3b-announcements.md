@@ -3,7 +3,7 @@
 widget = "announcements"  # See layouts/partials/widgets/announcements.html
 headless = true  # This file represents a page section.
 active = true  # Activate this widget? true/false
-weight = 35  # Order that this section will appear (after "What is FORRT?", before Products).
+weight = 30  # Order that this section will appear (before "What is FORRT?").
 
 title = "News & Announcements"
 # Divider under the header comes from the shared .home-section heading rule (custom.scss).
