@@ -274,6 +274,20 @@
   altmetric_doi: "10.31234/osf.io/c4jqr_v1"
   focus_area: "Education & Pedagogy"
 
+# 7
+- title: "Open Source 2.0: From Open Source Software to Open Source Resources?"
+  type: "preprint"
+  year: "2026"
+  status: "Preprint"
+  journal_name: "Zenodo"
+  authors: "Rossi, S."
+  abstract: "What is « open source »? Commonly associated with software whose source code is available under a licence following the « Open Source Definition » (OSD) of the Open Source Initiative (OSI), the definition of open source remains a major source of confusion and conflict. Within software communities the OSD is controversial, and with the democratisation of other openness movements (open science, open education, open hardware, etc.) there is an increasing question regarding open source beyond software for digital resources where source files are provided. The topic of « open source resources » can be essential to enable modifiability of openly available resources in these various domains, greatly enhancing the ability to collaborate. Based on the review of more than 200 documents related to debates and usages of the notion, conducted as independent citizen research, this paper argues for a paradigm shift in the very meaning of « open source »."
+  citation: "Rossi, S. (2026). <strong>Open Source 2.0: From Open Source Software to Open Source Resources?</strong> <em>Zenodo</em>. https://doi.org/10.5281/zenodo.20237079"
+  links:
+    doi: "https://doi.org/10.5281/zenodo.20237079"
+  altmetric_doi: "10.5281/zenodo.20237079"
+  focus_area: "Meta-Research & Scientific Reform"
+
 
 # --- Op-Eds and Media ---
 
