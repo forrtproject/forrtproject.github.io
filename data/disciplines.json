@@ -83,7 +83,7 @@
             {
               "title": "European Space Agency Open Science Catalogue",
               "link": "https://opensciencedata.esa.int/",
-              "category": ""
+              "category": "Open Data"
             },
             {
               "title": "Data and software repositories, community science",
@@ -93,7 +93,7 @@
             {
               "title": "Astropy",
               "link": "https://www.astropy.org/",
-              "category": ""
+              "category": "Open Methods"
             },
             {
               "title": "Data repository for research conducted at CERN",
@@ -113,7 +113,7 @@
             {
               "title": "NASA Open Data Portal",
               "link": "https://data.nasa.gov/",
-              "category": ""
+              "category": "Open Data"
             },
             {
               "title": "Open access guide. open-access.network: Open Access in Physics",
@@ -514,7 +514,7 @@
             {
               "title": "The Catalogue of Bias - University of Oxford",
               "link": "https://catalogofbias.org/",
-              "category": ""
+              "category": "Open Methods"
             },
             {
               "title": "Open access dataset",
@@ -675,242 +675,242 @@
             {
               "title": "Leibniz Institute for Psychology: Open science institute for psychology that supports (psychological) researchers in using open science practices and provides various tools",
               "link": "https://leibniz-psychology.org/en/",
-              "category": ""
+              "category": "General"
             },
             {
               "title": "Leibniz Institute for Psychology: Open science institute for psychology that supports (psychological) researchers in using open science practices and provides various tools",
               "link": "https://pubpsych.zpid.de/pubpsych/about.jsp?lang=EN",
-              "category": ""
+              "category": "General"
             },
             {
               "title": "Leibniz Institute for Psychology: Open science institute for psychology that supports (psychological) researchers in using open science practices and provides various tools",
               "link": "https://psyndex.de/en/",
-              "category": ""
+              "category": "General"
             },
             {
               "title": "Leibniz Institute for Psychology: Open science institute for psychology that supports (psychological) researchers in using open science practices and provides various tools",
               "link": "https://www.testarchiv.eu/en",
-              "category": ""
+              "category": "General"
             },
             {
               "title": "Leibniz Institute for Psychology: Open science institute for psychology that supports (psychological) researchers in using open science practices and provides various tools",
               "link": "https://prereg-psych.org/",
-              "category": ""
+              "category": "General"
             },
             {
               "title": "Leibniz Institute for Psychology: Open science institute for psychology that supports (psychological) researchers in using open science practices and provides various tools",
               "link": "https://ethiktool.org/en/main",
-              "category": ""
+              "category": "General"
             },
             {
               "title": "Leibniz Institute for Psychology: Open science institute for psychology that supports (psychological) researchers in using open science practices and provides various tools",
               "link": "https://psycharchives.org/",
-              "category": ""
+              "category": "General"
             },
             {
               "title": "Leibniz Institute for Psychology: Open science institute for psychology that supports (psychological) researchers in using open science practices and provides various tools",
               "link": "https://rdc-psychology.org/en/about-the-rdc-at-zpid",
-              "category": ""
+              "category": "General"
             },
             {
               "title": "Leibniz Institute for Psychology: Open science institute for psychology that supports (psychological) researchers in using open science practices and provides various tools",
               "link": "https://datawiz.leibniz-psychology.org/DataWiz/?datawiz_locale=en",
-              "category": ""
+              "category": "General"
             },
             {
               "title": "Leibniz Institute for Psychology: Open science institute for psychology that supports (psychological) researchers in using open science practices and provides various tools",
               "link": "https://cama.psychopen.eu/",
-              "category": ""
+              "category": "General"
             },
             {
               "title": "Leibniz Institute for Psychology: Open science institute for psychology that supports (psychological) researchers in using open science practices and provides various tools",
               "link": "https://klarpsy.de/ueber/",
-              "category": ""
+              "category": "General"
             },
             {
               "title": "Open Science Collaboration. (2015). Estimating the reproducibility of psychological science. Science, 349(6251), aac4716",
               "link": "https://doi.org/10.1126/science.aac4716",
-              "category": ""
+              "category": "Open Methods"
             },
             {
               "title": "Psychological Research Preregistration-Quantitative (aka PRP-QUANT) Template V3 Template for the preregistration of quantitative studies in psychology Publication: Bosnjak, M., Fiebach, C. J., Mellor, D., Mueller, S., O'Connor, D. B., Oswald, F. L., & Sokol, R. I. (2022). A template for preregistration of quantitative research in psychology: Report of the joint psychological societies preregistration task force.American Psychologist, 77(4), 602–615",
               "link": "https://doi.org/10.1037/amp0000879",
-              "category": "Preregistration"
+              "category": "Open Methods"
             },
             {
               "title": "Psychological Research Preregistration-Quantitative (aka PRP-QUANT) Template V3 Template for the preregistration of quantitative studies in psychology Publication: Bosnjak, M., Fiebach, C. J., Mellor, D., Mueller, S., O'Connor, D. B., Oswald, F. L., & Sokol, R. I. (2022). A template for preregistration of quantitative research in psychology: Report of the joint psychological societies preregistration task force.American Psychologist, 77(4), 602–615",
               "link": "https://stef.shinyapps.io/prp-quant/",
-              "category": "Preregistration"
+              "category": "Open Methods"
             },
             {
               "title": "Psychological Research Preregistration-Quantitative (aka PRP-QUANT) Template V3 Template for the preregistration of quantitative studies in psychology Publication: Bosnjak, M., Fiebach, C. J., Mellor, D., Mueller, S., O'Connor, D. B., Oswald, F. L., & Sokol, R. I. (2022). A template for preregistration of quantitative research in psychology: Report of the joint psychological societies preregistration task force.American Psychologist, 77(4), 602–615",
               "link": "https://docs.google.com/document/d/12JmDrTA1WMGBsrFDC-8VZbosY75Q9Kkx1RMi8Q_SufI/edit?tab=t.0",
-              "category": "Preregistration"
+              "category": "Open Methods"
             },
             {
               "title": "Psychological Research Preregistration-Quantitative (aka PRP-QUANT) Template V3 Template for the preregistration of quantitative studies in psychology Publication: Bosnjak, M., Fiebach, C. J., Mellor, D., Mueller, S., O'Connor, D. B., Oswald, F. L., & Sokol, R. I. (2022). A template for preregistration of quantitative research in psychology: Report of the joint psychological societies preregistration task force.American Psychologist, 77(4), 602–615",
               "link": "http://dx.doi.org/10.23668/psycharchives.15193",
-              "category": "Preregistration"
+              "category": "Open Methods"
             },
             {
               "title": "Psychological Research Preregistration-Quantitative (aka PRP-QUANT) Template V3 Template for the preregistration of quantitative studies in psychology Publication: Bosnjak, M., Fiebach, C. J., Mellor, D., Mueller, S., O'Connor, D. B., Oswald, F. L., & Sokol, R. I. (2022). A template for preregistration of quantitative research in psychology: Report of the joint psychological societies preregistration task force.American Psychologist, 77(4), 602–615",
               "link": "https://doi.org/10.23668/psycharchives.5111",
-              "category": "Preregistration"
+              "category": "Open Methods"
             },
             {
               "title": "AsPredicted - Preregistration platform that also provides the popular, very short AsPredicted preregistration template",
               "link": "",
-              "category": ""
+              "category": "Open Methods"
             },
             {
               "title": "Registered Report Protocol Preregistration (Chambers, 2026) - Template for writing Registered Reports",
               "link": "",
-              "category": ""
+              "category": "Open Methods"
             },
             {
               "title": "Van't Veer, A. E., & Giner-Sorolla, R. (2016). Pre-registration in social psychology—A discussion and suggested template. Journal of experimental social psychology, 67, 2-12",
               "link": "https://doi.org/10.1016/j.jesp.2016.03.004",
-              "category": ""
+              "category": "Open Methods"
             },
             {
               "title": "Brandt, M. J., IJzerman, H., Dijksterhuis, A., Farach, F. J., Geller, J., Giner-Sorolla, R., ... & Van't Veer, A. (2014). The replication recipe: What makes for a convincing replication?. Journal of Experimental Social Psychology, 50, 217-224",
               "link": "https://doi.org/10.1016/j.jesp.2013.10.005",
-              "category": ""
+              "category": "Open Methods"
             },
             {
               "title": "L. Haven, T., & Van Grootel, Dr. L. (2019). Preregistering qualitative research. Accountability in Research, 26(3), 229–244",
               "link": "https://doi.org/10.1080/08989621.2019.1580147",
-              "category": ""
+              "category": "Open Methods"
             },
             {
               "title": "Van den Akker, O., Weston, S., Campbell, L., Chopik, B., Damian, R., Davis-Kean, P., ... & Bakker, M. (2021). Preregistration of secondary data analysis: A template and tutorial. Meta-psychology, 5, 2625",
               "link": "https://doi.org/10.15626/MP.2020.2625",
-              "category": ""
+              "category": "Open Methods"
             },
             {
               "title": "COS Preregistration Challenge Template (OSF)",
               "link": "",
-              "category": ""
+              "category": "Open Methods"
             },
             {
               "title": "Beyer, F., Flannery, J., Gau, R., Janssen, L., Schaare, L., Hartmann, H., Nilsonne, G., Martin, S., Khalil, A., Lipp, I., Puhlmann, L., Heinrichs, H., Mohamed, A., Herholz, P., Sicorello, M., & Panagoulas, E. (2021). A fMRI pre-registration template. PsychArchives",
               "link": "https://doi.org/10.23668/PSYCHARCHIVES.5121",
-              "category": ""
+              "category": "Open Methods"
             },
             {
               "title": "Govaart, G. H., Schettino, A., Helbling, S., Mehler, D. M. A., Ngiam, W. X. Q., Moreau, D., … Paul, E. (2022, June 17). EEG and ERP Methods - Preregistration Template",
               "link": "https://doi.org/10.31222/osf.io/4nvpt",
-              "category": ""
+              "category": "Open Methods"
             },
             {
               "title": "Spitzer, L. (ed.). (2022). Preregistration Template for Scoping Reviews (based on PRP-QUANT & PRISMA-ScR). ZPID (Leibniz Institute for Psychology)",
               "link": "https://doi.org/10.23668/psycharchives.5631",
-              "category": ""
+              "category": "Open Methods"
             },
             {
               "title": "Spitzer, L. (ed.). (2022). Preregistration Template for Scoping Reviews (based on PRP-QUANT & PRISMA-ScR). ZPID (Leibniz Institute for Psychology)",
               "link": "https://apps.leibniz-psychology.org/scope/",
-              "category": ""
+              "category": "Open Methods"
             },
             {
               "title": "Pre-registration of multiverse analyses. (n.d.). Johnflournoy.Science. Retrieved April 7, 2026, from",
               "link": "https://johnflournoy.science/multiverse-preregistration/",
-              "category": ""
+              "category": "Open Methods"
             },
             {
               "title": "Preregistration of Experience-Sampling Studies",
               "link": "",
-              "category": ""
+              "category": "Open Methods"
             },
             {
               "title": "Crüwell, S., & Evans, N. J. (2021). Preregistration in diverse contexts: a preregistration template for the application of cognitive models. Royal Society Open Science, 8(10), 210155",
               "link": "https://doi.org/10.1098/rsos.210155",
-              "category": ""
+              "category": "Open Methods"
             },
             {
               "title": "Siepe, B. S., Bartoš, F., Morris, T. P., Boulesteix, A.-L., Heck, D. W., & Pawel, S. (2024). Simulation studies for methodological research in psychology: A standardized template for planning, preregistration, and reporting. Psychological Methods",
               "link": "https://doi.org/10.1037/met0000695",
-              "category": ""
+              "category": "Open Methods"
             },
             {
               "title": "Lakens, D. (2024). When and how to deviate from a preregistration. Collabra. Psychology, 10(1)",
               "link": "https://doi.org/10.1525/collabra.117094",
-              "category": "Preregistration"
+              "category": "Open Methods"
             },
             {
               "title": "Willroth EC, Atherton OE. Best Laid Plans: A Guide to Reporting Preregistration Deviations. Advances in Methods and Practices in Psychological Science. 2024;7(1). doi:10.1177/25152459231213802",
               "link": "",
-              "category": ""
+              "category": "Open Methods"
             },
             {
               "title": "PRP-DEV: Template for reporting deviations, based on the PRP-QUANT Template",
               "link": "https://apps.leibniz-psychology.org/prp-dev/",
-              "category": ""
+              "category": "Open Methods"
             },
             {
               "title": "Nosek BA, Lindsay DS. Preregistration Becoming the Norm in Psychological Science. 2018 Feb 28 [cited 2023 Jan 13]. In: APS Obs [Internet]",
               "link": "https://www.psychologicalscience.org/observer/preregistration-becoming-the-norm-in-psychological-science/comment-page-1",
-              "category": "Preregistration"
+              "category": "Open Methods"
             },
             {
               "title": "Wagenmakers E-J, Dutilh G. Seven Selfish Reasons for Preregistration. 2016 Oct 31 [cited 2023 Jan 13]. In: APS Obs [Internet]",
               "link": "https://www.psychologicalscience.org/observer/seven%C3%A2%E2%82%AC%20selfish%C3%A2%E2%82%AC%20reasons%C3%A2%E2%82%AC%20for%C3%A2%E2%82%AC%20preregistration",
-              "category": ""
+              "category": "Open Methods"
             },
             {
               "title": "Hardwicke, T. E., Thibault, R. T., Kosie, J. E., Wallach, J. D., Kidwell, M. C., & Ioannidis, J. P. A. (2022). Estimating the prevalence of transparency and reproducibility-related research practices in psychology (2014-2017). Perspectives on Psychological Science: A Journal of the Association for Psychological Science, 17(1), 239–251",
               "link": "https://doi.org/10.1177/1745691620979806",
-              "category": ""
+              "category": "Open Methods"
             },
             {
               "title": "Wicherts, J. M., Veldkamp, C. L., Augusteijn, H. E., Bakker, M., Van Aert, R., & Van Assen, M. A. (2016). Degrees of freedom in planning, running, analyzing, and reporting psychological studies: A checklist to avoid p-hacking. Frontiers in psychology, 7, 222767",
               "link": "https://doi.org/10.3389/fpsyg.2016.01832",
-              "category": ""
+              "category": "Open Methods"
             },
             {
               "title": "Blincoe, S., & Buchert, S. (2020). Research preregistration as a teaching and learning tool in undergraduate psychology courses. Psychology Learning & Teaching, 19(1), 107-115",
               "link": "https://doi.org/10.1177/1475725719875844",
-              "category": ""
+              "category": "Open Methods"
             },
             {
               "title": "Dirnagl, U. (2020). Preregistration of exploratory research: Learning from the golden age of discovery. PLoS biology, 18(3), e3000690",
               "link": "https://doi.org/10.1371/journal.pbio.3000690",
-              "category": ""
+              "category": "Open Methods"
             },
             {
               "title": "Heirene, R., LaPlante, D., Louderback, E., Keen, B., Bakker, M., Serafimovska, A., & Gainsbury, S. (2024). Preregistration specificity and adherence: A review of preregistered gambling studies and cross-disciplinary comparison. Meta-Psychology, 8",
               "link": "https://doi.org/10.15626/mp.2021.2909",
-              "category": ""
+              "category": "Open Methods"
             },
             {
               "title": "van den Akker, O. R., Bakker, M., van Assen, M. A. L. M., Pennington, C. R., Verweij, L., Elsherif, M. M., Claesen, A., Gaillard, S. D. M., Yeung, S. K., Frankenberger, J.-L., Krautter, K., Cockcroft, J. P., Kreuer, K. S., Evans, T. R., Heppel, F. M., Schoch, S. F., Korbmacher, M., Yamada, Y., Albayrak-Aydemir, N., . . . Wicherts, J. M. (2024). The potential of preregistration in psychology: Assessing preregistration producibility and preregistration-study consistency.Psychological Methods. Advance online publication",
               "link": "https://doi.org/10.1037/met0000687",
-              "category": ""
+              "category": "Open Methods"
             },
             {
               "title": "Van Den Akker, O. R., Van Assen, M. A. L. M., Bakker, M., Elsherif, M., Wong, T. K., & Wicherts, J. M. (2023). Preregistration in practice: A comparison of preregistered and non-preregistered studies in psychology. Behavior Research Methods, 56(6), 5424–5433",
               "link": "https://doi.org/10.3758/s13428-023-02277-0",
-              "category": ""
+              "category": "Open Methods"
             },
             {
               "title": "Preregistration posters: Brouwers, K., Cooke, A., Chambers, C. D., Henson, R., & Tibon, R. (2020). Evidence for prereg posters as a platform for preregistration. Nature Human Behaviour, 4(9), 884–886",
               "link": "https://doi.org/10.1038/s41562-020-0868-z",
-              "category": ""
+              "category": "Open Methods"
             },
             {
               "title": "Preregistration posters: Brouwers, K., Cooke, A., Chambers, C. D., Henson, R., & Tibon, R. (2020). Evidence for prereg posters as a platform for preregistration. Nature Human Behaviour, 4(9), 884–886",
               "link": "https://doi.org/10.1016/j.tics.2018.01.008",
-              "category": ""
+              "category": "Open Methods"
             },
             {
               "title": "Lakens, D. (2019). The value of preregistration for psychological science: A conceptual analysis. Japanese Psychological Review, 62(3), 221–230",
               "link": "https://doi.org/10.24602/sjpr.62.3_221",
-              "category": ""
+              "category": "Open Methods"
             },
             {
               "title": "Lakens, D., & DeBruine, L. M. (2021). Improving Transparency, Falsifiability, and Rigor by Making Hypothesis Tests Machine-Readable. Advances in Methods and Practices in Psychological Science, 4(2), 2515245920970949",
               "link": "https://doi.org/10.1177/2515245920970949",
-              "category": ""
+              "category": "Open Methods"
             },
             {
               "title": "Task repositories",
@@ -990,17 +990,17 @@
             {
               "title": "Hobson, H., Linden, A., Crane, L., & Kalandadze, T. (2023). Towards reproducible and respectful autism research: Combining open and participatory autism research practices. Research in Autism Spectrum Disorders, 106, 1-9",
               "link": "https://doi.org/10.1016/j.rasd.2023.102196",
-              "category": ""
+              "category": "General"
             },
             {
               "title": "PsychoPy: open source software for running experiments: Peirce, J. W., Hirst, R. J. & MacAskill, M. R. (2022). Building Experiments in PsychoPy. 2nd Edn London: Sage",
               "link": "https://www.psychopy.org/",
-              "category": ""
+              "category": "Open Methods"
             },
             {
               "title": "Pavlovia: a place for the wide community of researchers in the behavioural sciences to run, share, and explore experiments online",
               "link": "https://pavlovia.org/",
-              "category": ""
+              "category": "Open Methods"
             },
             {
               "title": "Open platform for sharing MRI, MEG, EEG, iEEG, and ECoG data",
@@ -1071,6 +1071,11 @@
               "title": "Syed, M. (2020, May 7). Managing Preprints across the Publication Pipeline. Get Syeducated",
               "link": "https://getsyeducated.blogspot.com/2020/05/managing-preprints-across-publication.html",
               "category": "Open Outputs"
+            },
+            {
+              "title": "Autistica Research Festival 2022: Symposium: autism and open research practices",
+              "link": "https://www.youtube.com/watch?v=w9sHmZVJ7TA",
+              "category": "Open Methods"
             }
           ]
         },
@@ -1086,17 +1091,17 @@
             {
               "title": "Open and Reproducible Neuroimaging from study inception to publication - online resource",
               "link": "https://oreoni.github.io/index.html",
-              "category": ""
+              "category": "General"
             },
             {
               "title": "Open and Reproducible Neuroimaging from study inception to publication - online resource",
               "link": "https://doi.org/10.1016/j.neuroimage.2022.119623",
-              "category": ""
+              "category": "General"
             },
             {
               "title": "Poldrack R, Baker C, Durnez J et al. Scanning the horizon: towards transparent and reproducible neuroimaging research. Nat Rev Neurosci 18, 115–126 (2017)",
               "link": "https://doi.org/10.1038/nrn.2016.167",
-              "category": ""
+              "category": "Open Methods"
             },
             {
               "title": "Data format standardization for neuroimaging data",
@@ -1111,12 +1116,12 @@
             {
               "title": "PsychoPy: open source software for running experiments: Peirce J. W. (2009). Generating stimuli for neuroscience using PsychoPy. Frontiers in Neuroinformatics, 2 (10), 1-8. doi:10.3389/neuro.11.010.2008",
               "link": "https://www.psychopy.org/",
-              "category": ""
+              "category": "Open Methods"
             },
             {
               "title": "Experimental Design Assistant for animal research: NC3R’s EDA",
               "link": "https://nc3rs.org.uk/our-portfolio/experimental-design-assistant-eda",
-              "category": ""
+              "category": "Open Methods"
             },
             {
               "title": "Open platform for sharing MRI, MEG, EEG, iEEG, and ECoG data",
@@ -1126,17 +1131,17 @@
             {
               "title": "Repository for unthresholded statistical maps, parcellations, and atlases of the brain",
               "link": "https://neurovault.org/",
-              "category": ""
+              "category": "Open Data"
             },
             {
               "title": "Collection of open visual working memory datasets collated by William Ngiam",
               "link": "https://williamngiam.github.io/OpenWMData/",
-              "category": ""
+              "category": "Open Data"
             },
             {
               "title": "MRC CBU list of open datasets",
               "link": "https://imaging.mrc-cbu.cam.ac.uk/methods/OpenDatasets",
-              "category": ""
+              "category": "Open Data"
             },
             {
               "title": "Preprint servers",
@@ -1156,37 +1161,37 @@
             {
               "title": "British Neuroscience Association guidance on preregistration and registered reports",
               "link": "https://www.bnacredibility.org.uk/preregistration-and-registered-reports",
-              "category": "Preregistration and Registered Reports"
+              "category": "Open Methods"
             },
             {
               "title": "Ellis, R. J. (2022). Questionable research practices, low statistical power, and other obstacles to replicability: Why preclinical neuroscience research would benefit from registered reports. eNeuro, 9(4), ENEURO.0017-22.2022",
               "link": "https://doi.org/10.1523/ENEURO.0017-22.2022",
-              "category": ""
+              "category": "Open Methods"
             },
             {
               "title": "Preregistration posters: Brouwers, K., Cooke, A., Chambers, C. D., Henson, R., & Tibon, R. (2020). Evidence for prereg posters as a platform for preregistration. Nature Human Behaviour, 4(9), 884–886",
               "link": "https://doi.org/10.1038/s41562-020-0868-z",
-              "category": ""
+              "category": "Open Methods"
             },
             {
               "title": "Preregistration posters: Brouwers, K., Cooke, A., Chambers, C. D., Henson, R., & Tibon, R. (2020). Evidence for prereg posters as a platform for preregistration. Nature Human Behaviour, 4(9), 884–886",
               "link": "https://doi.org/10.1016/j.tics.2018.01.008",
-              "category": ""
+              "category": "Open Methods"
             },
             {
               "title": "ARRIVE Guidelines for reporting Animal Studies in vivo experiments",
               "link": "https://arriveguidelines.org/about",
-              "category": "Guidelines and checklists"
+              "category": "Open Methods"
             },
             {
               "title": "Neuromatch Academy - Online summer school in computational neuroscience",
               "link": "https://neuromatch.io/",
-              "category": "Open training"
+              "category": "Open Education"
             },
             {
               "title": "Brainhack School - reusable summer school program with online materials",
               "link": "https://school.brainhackmtl.org/",
-              "category": ""
+              "category": "Open Education"
             }
           ]
         },
@@ -1371,11 +1376,6 @@
               "category": "General"
             },
             {
-              "title": "Resources required – please complete the Google form (link provided in the introduction) if you can input here",
-              "link": "",
-              "category": "Open Methods"
-            },
-            {
               "title": "Animal research and testing. Workflow checklist in Table 1 Smith, A. J., Clutton, R. E., Lilley, E., Hansen, K. E. A., and Brattelid, T. (2018). PREPARE: guidelines for planning animal research and testing. Laboratory Animals, 52(2), 135–141",
               "link": "https://doi.org/10.1177/0023677217724823",
               "category": "Open Data"
@@ -1479,9 +1479,9 @@
               "category": "General"
             },
             {
-              "title": "Should Reproducibility be the Aim for ?",
+              "title": "Should Reproducibility be the Aim for Open Qualitative Research?",
               "link": "https://www.youtube.com/watch?v=KMKgfFLIm3o&list=PLPK_Rz82LOLC7DGXpY5eo4kOcsdHw_sSH&index=5",
-              "category": ""
+              "category": "Open Methods"
             },
             {
               "title": "Guidelines for building transparency into observational social science research",
@@ -1547,12 +1547,12 @@
             {
               "title": "Making Research on Vulnerable and Marginalised Communities Open (2025)",
               "link": "https://www.youtube.com/watch?v=WJ_vQpyW_ms",
-              "category": ""
+              "category": "General"
             },
             {
               "title": "2013 issue of POLAR about the politics of transparency and its practices in political and legal anthropology (and otherwise)",
               "link": "https://polarjournal.org/virtual-edition-transparency/",
-              "category": ""
+              "category": "General"
             }
           ]
         },
@@ -1618,22 +1618,22 @@
             {
               "title": "Open Access Journals",
               "link": "https://journals.sagepub.com/home/soc",
-              "category": ""
+              "category": "Open Outputs"
             },
             {
               "title": "Open Access Journals",
               "link": "https://www.frontiersin.org/journals/sociology#",
-              "category": ""
+              "category": "Open Outputs"
             },
             {
               "title": "Open Access Journals",
               "link": "https://onlinelibrary.wiley.com/journal/14684446",
-              "category": ""
+              "category": "Open Outputs"
             },
             {
               "title": "Open Access Journals",
               "link": "https://www.jasss.org/",
-              "category": ""
+              "category": "Open Outputs"
             }
           ]
         },
@@ -1864,7 +1864,7 @@
             },
             {
               "title": "McCullough. B. D. (2009). Open Access Economics Journals and the Market for Reproducible Economic Research. Economic Analysis and Policy, 39(1), 117-126",
-              "link": "https://doi.org/10.1016/S0313-5926(09",
+              "link": "https://doi.org/10.1016/s0313-5926(09)50047-1",
               "category": "General"
             },
             {
@@ -1949,14 +1949,14 @@
               "category": "General"
             },
             {
-              "title": "State of the field: Prosser, A. M., Brown, O., Augustine, G., & Ellis, D. A. (2024, May). It’s time to join the conversation: Visions of the Future for Qualitative Transparency and Openness in Management and Organisation Studies",
+              "title": "De Lucas, I. M., Yang, C., Russell, A. M., Prosser, A., & Network, R. (2025, January 9). Being Open about the Unopenable: a series of workshops about open research in qualitative research with socially marginalised people. \n",
               "link": "https://doi.org/10.31235/osf.io/ntf73",
-              "category": ""
+              "category": "General"
             },
             {
-              "title": "State of the field: Prosser, A. M., Brown, O., Augustine, G., & Ellis, D. A. (2024, May). It’s time to join the conversation: Visions of the Future for Qualitative Transparency and Openness in Management and Organisation Studies",
+              "title": "Hüffmeier, J.& Mertes, M. (2023) Unfortunately, Journals in Industrial, Work, and Organizational Psychology Still Fail to Support Open Science Practices in Meta Psychology",
               "link": "https://doi.org/10.15626/MP.2022.3271",
-              "category": ""
+              "category": "Open Outputs"
             },
             {
               "title": "O’Boyle, E. H., Banks, G. C., & Gonzalez-Mulé, E. (2017). The Chrysalis Effect: How Ugly Initial Results Metamorphosize Into Beautiful Articles. Journal of Management, 43(2), 376-399",
@@ -1991,17 +1991,17 @@
             {
               "title": "How Tos",
               "link": "https://carmattu.com/wp-content/uploads/2025/07/Feb-2025-WL_Briker.pdf",
-              "category": "Registered Reports/\nPreregistration"
+              "category": "Open Methods"
             },
             {
               "title": "How Tos",
               "link": "https://www.youtube.com/watch?v=6gaIxLuGhNc",
-              "category": "Registered Reports/\nPreregistration"
+              "category": "Open Methods"
             },
             {
               "title": "Pre-registration",
               "link": "https://library.maastrichtuniversity.nl/news/preregistration-in-academia-making-research-more-findable-and-reliable/",
-              "category": "Registered Reports/\nPreregistration"
+              "category": "Open Methods"
             },
             {
               "title": "Open access journals",
@@ -2036,17 +2036,22 @@
             {
               "title": "Simeth, M., & Raffo, J. D. (2013). What makes companies pursue an open science strategy?. Research Policy, 42(9), 1531-1543",
               "link": "https://doi.org/10.1016/j.respol.2013.05.007",
-              "category": "Structural Accounts of Open Science in Organisations"
+              "category": "General"
             },
             {
-              "title": "Simeth, M., & Raffo, J. D. (2013). What makes companies pursue an open science strategy?. Research Policy, 42(9), 1531-1543",
+              "title": "Bogers, M., Chesbrough, H. & Moedas, C. (2018).Open Innovation: Research, Practices, and Policies. California Management Review 60(2)",
               "link": "https://doi.org/10.1177/0008125617745086",
-              "category": "Structural Accounts of Open Science in Organisations"
+              "category": "General"
             },
             {
-              "title": "Simeth, M., & Raffo, J. D. (2013). What makes companies pursue an open science strategy?. Research Policy, 42(9), 1531-1543",
+              "title": "Maier, L., Schreier, M. & Dahl, DW. (2025). The Open Design Effect. Journal of Marketing Research, 63(2), 322-339",
               "link": "https://doi.org/10.1177/00222437251373034",
-              "category": "Structural Accounts of Open Science in Organisations"
+              "category": "General"
+            },
+            {
+              "title": "Bekkers, R., Chapman, C. M., Prosser, A. M., Wiepking, P., & Meyer, M. (2025). Let us be Clear: Why and how to Demonstrate data and Methods Transparency in Nonprofit Research. VOLUNTAS: International Journal of Voluntary and Nonprofit Organizations, 36(4), 473-482.",
+              "link": "https://www.cambridge.org/core/journals/voluntas/article/let-us-be-clear-why-and-how-to-demonstrate-data-and-methods-transparency-in-nonprofit-research/6787ACB147D0EC88B8650BDCDF4D8F4C",
+              "category": "Open Methods"
             }
           ]
         },
@@ -2075,7 +2080,7 @@
               "category": "General"
             },
             {
-              "title": "Van Vaerenbergh, Y., Hazée, S., & Zwienenberg, T. J. (2026). Open science: a review of its effectiveness and implications for service research. Journal of Service Research, 29(1), 22-44",
+              "title": "Moussa, S. (2025) Reimagining Consumer Psychology through Open Science Principles. Meta Psychology. 9",
               "link": "https://doi.org/10.15626/MP.2024.4164",
               "category": "General"
             },
@@ -2095,44 +2100,34 @@
               "category": "Open Outputs"
             },
             {
-              "title": "Ozanne, J. L., Davis, B., Murray, J. B., Grier, S., Benmecheddal, A., Downey, H., ... & Veer, E. (2017). Assessing the societal impact of research: The relational engagement approach. Journal of Public Policy & Marketing, 36(1), 1-14",
+              "title": "Ozanne, J. L., Davis, B., Murray, J. B., Grier, S., Benmecheddal, A., Downey, H., Ekpo, A. E., Garnier, M., Hietanen, J., Gall-Ely, M. L., Seregina, A., Thomas, K. D., & Veer, E. (2017). Assessing the Societal Impact of Research: The Relational Engagement Approach. Journal of Public Policy & Marketing, 36(1), 1-14.",
               "link": "https://doi.org/10.1509/jppm.14.121",
               "category": "Open Outputs"
             },
             {
-              "title": "Weaver, J., Hunter-Jones, P., & Donnelly, R. (2025). Unlocking the full potential of transformative service research by embedding collaboration throughout the research process. Journal of Service Research, 28(2), 262-277",
-              "link": "https://doi.org/10.1509/jppm.14.121",
-              "category": "Open Outputs"
-            },
-            {
-              "title": "Weaver, J., Hunter-Jones, P., & Donnelly, R. (2025). Unlocking the full potential of transformative service research by embedding collaboration throughout the research process. Journal of Service Research, 28(2), 262-277",
+              "title": "Stäbler, S., Haenlein, M. The unheard voice of marketing research: Breaking through to news and social media. J. of the Acad. Mark. Sci. 53, 105–128 (2025). https://doi.org/10.1007/s11747-024-01038-5",
               "link": "https://doi.org/10.1007/s11747-024-01038-5",
               "category": "Open Outputs"
             },
             {
               "title": "Easley, R. W., Madden, C. S., & Dunn, M. G. (2000). Conducting marketing science: The role of replication in the research process. Journal of business research, 48(1), 83-92",
-              "link": "https://doi.org/10.1016/S0148-2963(98",
-              "category": "Replication"
-            },
-            {
-              "title": "Easley, R. W., Madden, C. S., & Dunn, M. G. (2000). Conducting marketing science: The role of replication in the research process. Journal of business research, 48(1), 83-92",
-              "link": "https://doi.org/10.1016/S0148-2963(98",
-              "category": "Replication"
+              "link": "https://doi.org/10.1016/s0148-2963(98)00079-4",
+              "category": "Open Methods"
             },
             {
               "title": "Pham, M. T., & Oh, T. T. (2021). Preregistration is neither sufficient nor necessary for good science. Journal of Consumer Psychology, 31(1), 163-176",
               "link": "https://doi.org/10.1002/jcpy.1209",
-              "category": "Preregistration"
+              "category": "Open Methods"
             },
             {
               "title": "Goodman, J. K., & Paolacci, G. (2017). Crowdsourcing consumer research. Journal of Consumer Research, 44(1), 196-210",
               "link": "https://doi.org/10.1093/jcr/ucx047",
-              "category": "Crowdsourcing"
+              "category": "Open Methods"
             },
             {
               "title": "Shaw, S. D., & Nave, G. (2023). Don't hate the player, hate the game: Realigning incentive structures to promote robust science and better scientific practices in marketing. Journal of Business Research, 167, 114129",
               "link": "https://doi.org/10.1016/j.jbusres.2023.114129",
-              "category": "Structural Context"
+              "category": "Open Methods"
             }
           ]
         },
@@ -2153,7 +2148,7 @@
             {
               "title": "Companion Guidelines on Replication and Reproducibility in Education Research",
               "link": "https://ies.ed.gov/learn/blog/companion-guidelines-replication-and-reproducibility-education-research",
-              "category": ""
+              "category": "Open Methods"
             },
             {
               "title": "ManyClasses is a collaborative research project investigating the generalizability of educational interventions in real classrooms",
@@ -2590,11 +2585,6 @@
               "category": "General"
             },
             {
-              "title": "Resources required – please complete the Google form (link provided in the introduction) if you can input here",
-              "link": "",
-              "category": "Open Methods"
-            },
-            {
               "title": "Ardito, L., Cerchione, R., Del Vecchio, P. and Raguseo, E. (2019). Big data in smart tourism: challenges, issues and opportunities. Current Issues in Tourism, 22(15), 1805-1809",
               "link": "https://doi.org/10.1080/13683500.2019.1612860",
               "category": "Open Data"
@@ -2651,18 +2641,8 @@
               "category": "Open Data"
             },
             {
-              "title": "OSF. (2019). Osf.io",
-              "link": "https://osf.io/",
-              "category": "Open Data"
-            },
-            {
               "title": "media/rep/ (",
               "link": "https://mediarep.org/",
-              "category": "Open Data"
-            },
-            {
-              "title": "Harvard Dataverse. (n.d.). Dataverse.harvard.edu",
-              "link": "https://dataverse.harvard.edu/",
               "category": "Open Data"
             },
             {
@@ -2688,11 +2668,6 @@
             {
               "title": "Mancosu, M., & Vegetti, F. (2020). What you can scrape and what is right to scrape: A proposal for a tool to collect public Facebook data. Social Media + Society, 6(3), Article 205630512094070",
               "link": "https://doi.org/10.1177/2056305120940703",
-              "category": ""
-            },
-            {
-              "title": "GitHub. (n.d.). GitHub. GitHub",
-              "link": "https://github.com/",
               "category": "Open Methods"
             },
             {
@@ -2703,16 +2678,6 @@
             {
               "title": "OSF. (2024). Osf.io",
               "link": "https://osf.io/preprints/socarxiv",
-              "category": "Open Outputs"
-            },
-            {
-              "title": "OSF. (2024). Osf.io",
-              "link": "https://osf.io/preprints/socarxiv",
-              "category": "Open Outputs"
-            },
-            {
-              "title": "MediArXiv | The Open Archive for Media, Film, and Communication Studies. (2024). Mediarxiv.com",
-              "link": "https://mediarxiv.com/",
               "category": "Open Outputs"
             },
             {
@@ -2738,6 +2703,11 @@
           "name": "Humanities",
           "examples": "**Open Data** The following are examples of things that could be listed as open data: lists, tables or matrices containing organised, numerical, categorical, and ordinal information (e.g. the population of French medieval cities, a list of participants in the Society of Independent Artists exhibition in 1917, the GDP of European countries before and after Brexit, etc.).\n([source](https://repository.dri.ie/catalog/tq582c863))\n\n**Open Data** Objects can also be research data. These include historical artefacts, digital (incl. digitised) documents, images, sound and video recordings (e.g. archaeological finds, medieval manuscripts, poetry texts, social media posts, paintings, recording of a theatre performance).\n([source](https://repository.dri.ie/catalog/tq582c863))\n\n**Open Methods** Make the workflow open of how you arrived at your open data from your source. Share or at least indicate, to the greatest extent that you can, the contextual components and contributors to your understanding of the material and realization of your conclusions etc.\n([source](https://zenodo.org/record/2657248#.Xvxm1yhKhaS))\n\n**Open Methods and Open Outputs** Establish your sharing rights while you are at the archive, or otherwise accessing sources. Have the documents I need been digitised? If so, how can I obtain digital copies? If not, may I photograph documents myself or order photographs? May I share any photographs I take away? Under what conditions? Under what license(s) (such as the Creative Commons CC-BY)?\n([source](https://zenodo.org/record/2657248#.Xvxm1yhKhaS))",
           "resources": [
+            {
+              "title": "Replication in the Humanities- Recorded Symposium from Metascience 2023\n",
+              "link": "https://www.youtube.com/watch?v=WjKEghQMF4g",
+              "category": "Open Methods"
+            },
             {
               "title": "The Digital Research Infrastructure for the Arts and Humanities (DARIAH) aims to enhance and support digitally enabled research and teaching across the arts and humanities",
               "link": "https://www.dariah.eu/activities/open-science/dariah-open/",
@@ -2781,7 +2751,7 @@
             {
               "title": "Data repositories: Digital Repository of Ireland -",
               "link": "https://dri.ie/",
-              "category": ""
+              "category": "Open Data"
             },
             {
               "title": "SAGE Advance (multidisciplinary Humanities and Social Sciences preprint community)",
@@ -3281,7 +3251,7 @@
             {
               "title": "UKRN Professional and Technical Staff supporting Open Research: Case Study 5, Practice-based arts research project",
               "link": "https://osf.io/a2r5p",
-              "category": ""
+              "category": "General"
             },
             {
               "title": "Art resources (standards, databases, data policies) registered in FAIRsharing",
@@ -3451,11 +3421,6 @@
               "category": "General"
             },
             {
-              "title": "Resources required – please complete the Google form (link provided in the introduction) if you can input here",
-              "link": "",
-              "category": "Open Methods"
-            },
-            {
               "title": "Open database on human culture practices",
               "link": "https://d-place.org/contributions",
               "category": "Open Data"
@@ -3488,11 +3453,6 @@
             {
               "title": "Open access journals",
               "link": "http://www.transformationsjournal.org",
-              "category": "Open Outputs"
-            },
-            {
-              "title": "Open access journals",
-              "link": "https://csalateral.org/archive/",
               "category": "Open Outputs"
             },
             {
@@ -3665,11 +3625,6 @@
           "examples": "**Open Methods** “The [OS (OpenStructures) project](http://www.openstructures.net/) explores the possibility of a modular construction model where everyone designs for everyone on the basis of one shared geometrical grid. It initiates a kind of collaborative MECCANO© to which everyone can contribute parts, components and structures.” Described as a “three-dimensional open-source code from our built environment”, this ecosystem explores the idea of designing hardware in the way we design software by having different individuals contribute to one main model as opposed to working on separate entities. This concept has been applied to developing societies within Katanga, Congo in the form of humanitarian architecture by recycling, upcycling and reusing goods as a way of strengthening the local economy.\n([Case study: Katanga, Congo](http://studies.bc-as.org/case-study-1-katanga-congo))",
           "resources": [
             {
-              "title": "Resources required – please complete the Google form (link provided in the introduction) if you can input here",
-              "link": "",
-              "category": "General"
-            },
-            {
               "title": "Open modular construction system",
               "link": "https://www.openstructures.net",
               "category": "Open Methods"
@@ -3743,7 +3698,7 @@
             {
               "title": "The Open Science Grid is an infrastructure project to provide computing resources for Open Science projects",
               "link": "https://opensciencegrid.org",
-              "category": ""
+              "category": "General"
             },
             {
               "title": "List of open-source software",
@@ -3753,12 +3708,12 @@
             {
               "title": "Recommendations for statistical test selection, reporting and interpretation",
               "link": "https://www.usenix.org/conference/soups2025/presentation/tang",
-              "category": ""
+              "category": "Open Methods"
             },
             {
               "title": "Recommendations for data management plan compliance and handling of sensitive data during research",
               "link": "https://doi.org/10.1145/3706598.3713654",
-              "category": ""
+              "category": "Open Data"
             },
             {
               "title": "Datasets",
@@ -3783,7 +3738,7 @@
             {
               "title": "Research Transparency Guidelines",
               "link": "https://transparency-guide.teamusec.de/",
-              "category": ""
+              "category": "General"
             },
             {
               "title": "Electronic Colloquium on Computational Complexity",
@@ -3808,12 +3763,12 @@
             {
               "title": "CHI and SOUPS introduced mandatory open access in 2026",
               "link": "https://chi2026.acm.org/authors/papers/#acm-open",
-              "category": ""
+              "category": "Open Outputs"
             },
             {
               "title": "CHI and SOUPS introduced mandatory open access in 2026",
               "link": "https://soups.page/cfp.html",
-              "category": ""
+              "category": "Open Outputs"
             },
             {
               "title": "Open Data as Open Educational Resources",
@@ -3953,27 +3908,27 @@
             {
               "title": "Rubin, M. (2023). Questionable Metascience Practices. Journal of Trial & Error, 4(1)",
               "link": "https://doi.org/10.36850/mr4",
-              "category": ""
+              "category": "Open Methods"
             },
             {
               "title": "A tutorial on methodological studies: the what, when, how and why",
               "link": "https://doi.org/10.1186/s12874-020-01107-7",
-              "category": ""
+              "category": "Open Methods"
             },
             {
               "title": "Guidelines for reporting meta-epidemiological methodology research",
               "link": "https://doi.org/10.1136/ebmed-2017-110713",
-              "category": ""
+              "category": "Open Methods"
             },
             {
               "title": "What is a meta-epidemiological study? Analysis of published literature indicated heterogeneous study designs and definitions",
               "link": "https://doi.org/10.2217/cer-2019-0201",
-              "category": ""
+              "category": "Open Methods"
             },
             {
               "title": "Mapping the nomenclature, methodology, and reporting of studies that review methods: a pilot methodological review",
               "link": "https://doi.org/10.1186/s40814-019-0544-0",
-              "category": ""
+              "category": "Open Methods"
             },
             {
               "title": "Retraction Watch via Crossref",
@@ -3999,6 +3954,11 @@
               "title": "MetaArXiv preprint repository",
               "link": "https://metaror.org/",
               "category": "Open Outputs"
+            },
+            {
+              "title": "improving Reproducibility In SciencE Project",
+              "link": "iRISE: improving Reproducibility In SciencE",
+              "category": "General"
             }
           ]
         }
@@ -4019,22 +3979,22 @@
               "category": "General"
             },
             {
-              "title": "Peer Community: The Open Qualitative Research Community (Qualitopia) On LinkedIn-",
+              "title": "Peer Community: The Open Qualitative Research Community (Qualitopia): LinkedIn",
               "link": "https://www.linkedin.com/groups/13344052/",
               "category": "General"
             },
             {
-              "title": "Peer Community: The Open Qualitative Research Community (Qualitopia) On LinkedIn-",
+              "title": "Peer Community: The Open Qualitative Research Community (Qualitopia): Website",
               "link": "https://qualitopia.my.canva.site/",
               "category": "General"
             },
             {
-              "title": "Annotation for Transparency Inquiry (ATI)",
+              "title": "Annotation for Transparency Inquiry (ATI): Tool to annotate passages in an article, to amplify the text / link to data sources",
               "link": "https://www.cambridge.org/core/services/authors/annotation-for-transparent-inquiry-ati",
               "category": "General"
             },
             {
-              "title": "Paper on qualitative methods for researching teachers’ (re)use of open educational resources",
+              "title": "Beaven, Tita (2013). Qualitative methods for researching teachers’ (re)use of OER. In: OER13: Creating a Virtuous Circle, 26-27 Mar 2013, University of Nottingham.",
               "link": "http://oro.open.ac.uk/37408/",
               "category": "General"
             },
@@ -4046,31 +4006,31 @@
             {
               "title": "Prosser, A. M. B., Hamshaw, R. J. T., Meyer, J., Bagnall, R., Blackwood, L., Huysamen, M. , Jordan, A., Vasileiou, K., & Walter, Z. (2022). When open data closes the door: A critical examination of the past, present and the potential future for open data guidelines in journals. British Journal of Social Psychology, 00, 1–17",
               "link": "https://doi.org/10.1111/bjso.12576",
-              "category": "Ethics of Open Data in Qualitative Research"
+              "category": "Open Data"
             },
             {
-              "title": "Prosser, A. M. B., Hamshaw, R. J. T., Meyer, J., Bagnall, R., Blackwood, L., Huysamen, M. , Jordan, A., Vasileiou, K., & Walter, Z. (2022). When open data closes the door: A critical examination of the past, present and the potential future for open data guidelines in journals. British Journal of Social Psychology, 00, 1–17",
+              "title": "Chauvette, A., Schick-Makaroff, K., & Molzahn, A. E. (2019). Open Data in Qualitative Research. International Journal of Qualitative Methods, 18.",
               "link": "https://doi.org/10.1177/1609406918823863",
-              "category": "Ethics of Open Data in Qualitative Research"
+              "category": "Open Data"
             },
             {
-              "title": "Prosser, A. M. B., Hamshaw, R. J. T., Meyer, J., Bagnall, R., Blackwood, L., Huysamen, M. , Jordan, A., Vasileiou, K., & Walter, Z. (2022). When open data closes the door: A critical examination of the past, present and the potential future for open data guidelines in journals. British Journal of Social Psychology, 00, 1–17",
+              "title": "Prosser AM, Bagnall R, Higson-Sweeney N. Reflection over compliance: Critiquing mandatory data sharing policies for qualitative research. Journal of Health Psychology. 2024;29(7):653-658.",
               "link": "https://doi.org/10.1177/13591053231225903",
-              "category": "Ethics of Open Data in Qualitative Research"
+              "category": "Open Data"
             },
             {
-              "title": "Prosser, A. M. B., Hamshaw, R. J. T., Meyer, J., Bagnall, R., Blackwood, L., Huysamen, M. , Jordan, A., Vasileiou, K., & Walter, Z. (2022). When open data closes the door: A critical examination of the past, present and the potential future for open data guidelines in journals. British Journal of Social Psychology, 00, 1–17",
+              "title": "Stegenga, S. M., Steltenpohl, C. N., Lustick, H., Meyer, M. S., Renbarger, R., Standiford Reyes, L., & Lee, L. E. (2024). Qualitative research at the crossroads of open science and big data: Ethical considerations. Social and Personality Psychology Compass, e12912. https://doi.org/10.1111/spc3.12912",
               "link": "https://doi.org/10.1111/spc3.12912",
-              "category": "Ethics of Open Data in Qualitative Research"
+              "category": "Open Data"
             },
             {
-              "title": "Prosser, A. M. B., Hamshaw, R. J. T., Meyer, J., Bagnall, R., Blackwood, L., Huysamen, M. , Jordan, A., Vasileiou, K., & Walter, Z. (2022). When open data closes the door: A critical examination of the past, present and the potential future for open data guidelines in journals. British Journal of Social Psychology, 00, 1–17",
+              "title": "De Lucas, I. M., Yang, C., Russell, A. M., Prosser, A., & Network, R. (2025, January 9). Being Open about the Unopenable: a series of workshops about open research in qualitative research with socially marginalised people. https://doi.org/10.31219/osf.io/c78qu",
               "link": "https://osf.io/preprints/osf/c78qu_v1",
-              "category": "Ethics of Open Data in Qualitative Research"
+              "category": "General"
             },
             {
               "title": "Pre-Analysis Plans for qualitative research",
-              "link": "http://www.redalyc.org/pdf/324/32449207009.pdf",
+              "link": "https://www.redalyc.org/pdf/324/32449207009.pdf",
               "category": "Open Methods"
             },
             {
@@ -4079,24 +4039,39 @@
               "category": "Open Methods"
             },
             {
+              "title": "Westbury, M., Candea, M., Gabrys, J., Hennessy, S., Jarman, B., Mcneice, K., & Sharma, C. (2022). Voice, Representation, Relationships: Report of the Open Qualitative Research Working Group. ",
+              "link": "https://doi.org/10.17863/CAM.91979",
+              "category": "Open Methods"
+            },
+            {
+              "title": "Qualitative Research Pre-registration Template",
+              "link": "https://osf.io/b6xmd/",
+              "category": "Open Methods"
+            },
+            {
+              "title": "Haven, T. L., and Van Grootel, L. (2019). Preregistering qualitative research. Accountability in Research, 26 (3), 229–244",
+              "link": "https://doi.org/10.1080/08989621.2019.1580147",
+              "category": "Open Methods"
+            },
+            {
+              "title": "Haven, T. L., Errington, T. M., Gleditsch, K., van Grootel, L., Jacobs, A. M., Kern, F., … Mokkink, L. (2020, July 6). Preregistering Qualitative Research: A Delphi Study",
+              "link": "https://doi.org/10.31235/osf.io/pz9jr",
+              "category": "Open Methods"
+            },
+            {
+              "title": "Pownall, M. (2022). Is replication possible for qualitative research?",
+              "link": "https://doi.org/10.31234/osf.io/dwxeg",
+              "category": "Open Methods"
+            },
+            {
               "title": "Slides from UKDA presentation entitled “Sharing qualitative data: challenges and opportunities”",
               "link": "https://www.ukdataservice.ac.uk/media/604758/sharingqualdata_lancu_lb_5apr2017.pdf",
               "category": "Open Data"
             },
             {
-              "title": "Chauvette, A., Schick-Makaroff, K., and Molzahn, A. E. (2019). Open data in qualitative research. International Journal of Qualitative Methods, 18",
-              "link": "https://doi.org/10.1177/1609406918823863",
-              "category": "Open Data"
-            },
-            {
-              "title": "Mannheimer, S., Pienta, A., Kirilova, D., Elman, C., and Wutich, A. (2019). Qualitative data sharing: Data repositories and academic libraries as key partners in addressing challenges. American Behavioural Scientist, 63(5), 643-664",
-              "link": "https://doi.org/10.1177/0002764218784991",
-              "category": "Open Data"
-            },
-            {
               "title": "Qualitative data repository for storing and sharing digital data (and accompanying documentation) generated or collected through qualitative and multi-method research in the social sciences",
               "link": "https://qdr.syr.edu/",
-              "category": "Open Data"
+              "category": "General"
             },
             {
               "title": "UKDA text anonymisation tool for qualitative data sharing",
@@ -4105,18 +4080,8 @@
             },
             {
               "title": "UK dataservice list of qualitative and mixed methods data",
-              "link": "https://www.ukdataservice.ac.uk/get-data/key-data/qualitative-and-mixed-methods-data.aspx",
-              "category": ""
-            },
-            {
-              "title": "Qualitative Data Repository",
-              "link": "https://qdr.syr.edu/",
-              "category": ""
-            },
-            {
-              "title": "Voice, Representation, Relationships: Report of the Open Qualitative Research Working Group (2022) - From Cambridge -",
-              "link": "https://doi.org/10.17863/CAM.91979",
-              "category": ""
+              "link": "https://ukdataservice.ac.uk/help/data-types/qualitative-mixed-methods/",
+              "category": "Open Data"
             },
             {
               "title": "Annotation for Transparent Inquiry (ATI). Tool to annotate passages in an article, to amplify the text / link to data sources",
@@ -4129,29 +4094,69 @@
               "category": "Open Outputs"
             },
             {
-              "title": "Qualitative Research Pre-registration Template",
-              "link": "https://osf.io/b6xmd/",
-              "category": "Preregistration"
-            },
-            {
-              "title": "Haven, T. L., and Van Grootel, L. (2019). Preregistering qualitative research. Accountability in Research, 26 (3), 229–244",
-              "link": "https://doi.org/10.1080/08989621.2019.1580147",
-              "category": ""
-            },
-            {
-              "title": "Haven, T. L., Errington, T. M., Gleditsch, K., van Grootel, L., Jacobs, A. M., Kern, F., … Mokkink, L. (2020, July 6). Preregistering Qualitative Research: A Delphi Study",
-              "link": "https://doi.org/10.31235/osf.io/pz9jr",
-              "category": ""
-            },
-            {
-              "title": "Pownall, M. (2022). Is replication possible for qualitative research?",
-              "link": "https://doi.org/10.31234/osf.io/dwxeg",
-              "category": "Replication"
-            },
-            {
               "title": "Karhulahti, V. (2022). Registered reports for qualitative research. Nature Human Behaviour, 6(1), 4-5",
               "link": "https://doi.org/10.1038/s41562-021-01265-8",
-              "category": "Registered Reports"
+              "category": "Open Outputs"
+            },
+            {
+              "title": "Branney, P. E., Brooks, J., Kilby, L., Newman, K., Norris, E., Pownall, M., Talbot, C. V., Treharne, G. J., & Whitaker, C. M. (2023). Three steps to open science for qualitative research in psychology. Social and Personality Psychology Compass, 17(4), e12728. https://doi.org/10.1111/spc3.12728",
+              "link": "https://doi.org/10.1111/spc3.12728",
+              "category": "General"
+            },
+            {
+              "title": "Webinar: Open Science in Qualitative Research- Behavioural Research UK Leadership Hub",
+              "link": "https://www.youtube.com/watch?v=bJ6Z7qCEXbc",
+              "category": "General"
+            },
+            {
+              "title": "Riot Science Club Webinar: Dr Peter Branney | Opportunities and challenges of open science for qualitative methods",
+              "link": "https://www.youtube.com/watch?v=_aUhFqDnk6o",
+              "category": "General"
+            },
+            {
+              "title": "BJSP Special Issue: Special Section: Open Science, Qualitative Methods and Social Psychology: Possibilities and Tensions",
+              "link": "https://bpspsychub.onlinelibrary.wiley.com/toc/20448309/2023/62/4",
+              "category": "General"
+            },
+            {
+              "title": "Pownall, M., Talbot, C.V., Kilby, L. and Branney, P. (2023), Opportunities, challenges and tensions: Open science through a lens of qualitative social psychology. Br J Soc Psychol, 62: 1581-1589. https://doi.org/10.1111/bjso.12628",
+              "link": "https://doi.org/10.1111/bjso.12628",
+              "category": "General"
+            },
+            {
+              "title": "Plenary talk recordings from the Qualitative Open Science Symposium at Vrije Universiteit Amsterdam, February 2025",
+              "link": "https://osf.io/hf68x",
+              "category": "General"
+            },
+            {
+              "title": "Recorded Talk on Qualitative Preregistration from Tamarinde Haven: Open Science: Qualitative research and preregistrations",
+              "link": "https://www.youtube.com/watch?v=e7QNBy4Bn6g",
+              "category": "Open Methods"
+            },
+            {
+              "title": "Should Reproducibility be the Aim of Qualitative Research? Researchers' Perspectives- Recorded Panel at LSE- 2025",
+              "link": "https://www.youtube.com/watch?v=KMKgfFLIm3o",
+              "category": "General"
+            },
+            {
+              "title": "Considerations and suggestions on data sharing in qualitative health psychology research on sensitive topics",
+              "link": "https://journals.sagepub.com/doi/abs/10.1177/13591053241239109",
+              "category": "Open Data"
+            },
+            {
+              "title": "Dunleavy LSE Blog: Qualitative research can and should be more open and reproducible",
+              "link": "https://blogs.lse.ac.uk/impactofsocialsciences/2026/05/13/qualitative-research-can-and-should-be-more-open-and-reproducible/",
+              "category": "General"
+            },
+            {
+              "title": "De Lucas, I. M., Yang, C., Russell, A. M., Prosser, A., & Network, R. (2025, January 9). Being Open about the Unopenable: a series of workshops about open research in qualitative research with socially marginalised people. https://doi.org/10.31219/osf.io/c78qu\n",
+              "link": "https://doi.org/10.31219/osf.io/c78qu",
+              "category": "Open Methods"
+            },
+            {
+              "title": "Steltenpohl, C. N., Mawhinney, B., Karhulahti, V. M., & Prosser, A. M. (2025). Open science for qualitative research. BMJ Evidence-Based Medicine, 30(6), 413-419.",
+              "link": "https://doi.org/10.1136/bmjebm-2024-113532",
+              "category": "General"
             }
           ]
         },
@@ -4248,47 +4253,47 @@
             {
               "title": "Dilger, H., Pels, P., & Sleeboom-Faulkner, M. (2019). Guidelines for data management and scientific integrity in ethnography. Ethnography, 20(1), 3-7",
               "link": "https://journals.sagepub.com/doi/full/10.1177/1466138118819018",
-              "category": "Data Management"
+              "category": "Open Data"
             },
             {
               "title": "Pool, R. (2017). The verification of ethnographic data. Ethnography, 18(3), 281-286",
               "link": "https://doi.org/10.1177/1466138117723936",
-              "category": "Verification"
+              "category": "Open Methods"
             },
             {
               "title": "Okune, A. (2020). Open ethnographic archiving as feminist, decolonizing practice. Catalyst: Feminism, Theory, Technoscience, 6(2)",
               "link": "https://doi.org/10.28968/cftt.v6i2.33041",
-              "category": "Archiving and Infrastructure"
+              "category": "Open Data"
             },
             {
               "title": "Grace-McCaskey, C. A., Iatarola, B., Manda, A. K., & Etheridge, J. R. (2019). Eco-ethnography and citizen science: Lessons from within. Society & Natural Resources, 32(10), 1123-1138",
               "link": "https://doi.org/10.1080/08941920.2019.1584343",
-              "category": "Critical Discussions on ‘Citizen Science’"
+              "category": "General"
             },
             {
               "title": "Atkinson, P., Cataldi, S., & Wästerfors, D. (2025). For an ethics of generosity: Values for ethnography in a time of regulatory ethics. Qualitative Research, 25(2), 313-329",
               "link": "https://journals.sagepub.com/doi/full/10.1177/1466138118819018",
-              "category": "Ethics"
+              "category": "General"
             },
             {
               "title": "Atkinson, P., Cataldi, S., & Wästerfors, D. (2025). For an ethics of generosity: Values for ethnography in a time of regulatory ethics. Qualitative Research, 25(2), 313-329",
               "link": "https://doi.org/10.1177/1077800417732090",
-              "category": "Ethics"
+              "category": "General"
             },
             {
               "title": "Piqueiras, E., Stanley, E., & Laskey, A. (2023). Mitigating challenges of collaborative science through team ethnography. Journal of Organizational Ethnography, 12(2), 162-180",
               "link": "https://doi.org/10.1108/JOE-06-2022-0017",
-              "category": "Collaborative Research"
+              "category": "General"
             },
             {
               "title": "Piqueiras, E., Stanley, E., & Laskey, A. (2023). Mitigating challenges of collaborative science through team ethnography. Journal of Organizational Ethnography, 12(2), 162-180",
               "link": "https://doi.org/10.1080/13645579.2016.1152022",
-              "category": "Collaborative Research"
+              "category": "General"
             },
             {
               "title": "Pink, S., & Fors, V. (2017). Ethnography, stakeholders, and audiences: toward openness and inclusivity. Sociological Research Online, 22(4), 169-173",
               "link": "https://doi.org/10.1177/1360780417746029",
-              "category": "Stakeholders and Audiences"
+              "category": "General"
             }
           ]
         }
