@@ -12,15 +12,17 @@
         "Type I error **Incorrect definition:** Statistical significance describes the likelihood of the observed result against chance (regardless of the null hypotheses)"
     ],
     "references": [
-        "Cassidy, S. A., Dimova, R., Giguère, B., Spence, J. R., & Stanley, D. J. (2019). Failing grade: 89% of introduction-to-psychology textbooks that define or explain statistical significance do so incorrectly. Advances in Methods and Practices in Psychological Science, 2(3), 233–239. https://doi.org/10.1177/2515245919858072",
-        "Wasserstein, R. L., & Lazar, N. A. (2016). The ASA Statement on p-Values: Context, Process, and Purpose. The American Statistician, 70, 129–133. https://doi.org/10.1080/00031305.2016.1154108"
+        "Cassidy, S. A., Dimova, R., Giguère, B., Spence, J. R., & Stanley, D. J. (2019). Failing grade: 89% of introduction-to-psychology textbooks that define or explain statistical significance do so incorrectly. <i>Advances in Methods and Practices in Psychological Science</i>, <i>2</i>(3), 233–239. https://doi.org/10.1177/2515245919858072",
+        "Wasserstein, R. L., & Lazar, N. A. (2016). The ASA Statement on p-Values: Context, Process, and Purpose. <i>The American Statistician</i>, <i>70</i>, 129–133. https://doi.org/10.1080/00031305.2016.1154108",
+        "Tenny, S., & Abdelgawad, I. (2021). Statistical Significance. In <i>StatPearls</i>. StatPearls Publishing. https://www.ncbi.nlm.nih.gov/books/NBK459346/"
     ],
     "drafted_by": [
         "Alaa AlDoh; Flávio Azevedo"
     ],
     "reviewed_by": [
         "James E. Bartlett",
-        "Alexander Hart**;** Annalise A. LaPlume",
+        "Alexander Hart",
+        "Annalise A. LaPlume",
         "Charlotte R. Pennington",
         "Graham Reid",
         "Timo Roettger",

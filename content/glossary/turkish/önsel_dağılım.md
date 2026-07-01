@@ -10,7 +10,9 @@
         "Likelihood function",
         "Posterior distribution"
     ],
-    "references": [],
+    "references": [
+        "van de Schoot, R., Depaoli, S., King, R., Kramer, B., Märtens, K., Tadesse, M. G., Vannucci, M., Gelman, A., Veen, D., Willemsen, J., & Yau, C. (2021). Bayesian statistics and modelling. <i>Nature Reviews Methods Primers</i>, <i>1</i>(1), 1–26. https://doi.org/10.1038/s43586-020-00001-2"
+    ],
     "drafted_by": [
         "Alaa AlDoh"
     ],

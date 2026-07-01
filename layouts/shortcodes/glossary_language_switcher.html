@@ -1,0 +1,29 @@
+{{/*
+  Renders the language switcher used at the top of each glossary _index.md.
+  Source of truth: data/glossary_languages.yaml.
+
+  Active language: resolved from (in order)
+    1. the `current` shortcode argument, if provided
+    2. the page's `Params.language`
+    3. derived from the page's directory under content/glossary/
+*/}}
+{{- $current := .Get "current" -}}
+{{- if not $current -}}
+  {{- $current = .Page.Params.language -}}
+{{- end -}}
+{{- if not $current -}}
+  {{- $dir := .Page.File.Dir -}}
+  {{- $parts := split (trim $dir "/") "/" -}}
+  {{- if gt (len $parts) 1 -}}
+    {{- $current = index $parts 1 -}}
+  {{- end -}}
+{{- end -}}
+<div class="btn-group flex-wrap text-center">
+{{- range $i, $lang := hugo.Data.glossary_languages -}}
+{{- $active := "" -}}
+{{- if eq $lang.slug $current -}}{{- $active = " active" -}}{{- end -}}
+{{- if $i }}
+{{ end -}}
+<a href="/glossary/{{ $lang.slug }}" class="btn btn-primary py-2 m-1 btn-lg{{ $active }}" style="line-height:1;border-radius:6px">{{ $lang.label | safeHTML }}</a>
+{{- end }}
+</div>

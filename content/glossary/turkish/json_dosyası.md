@@ -8,7 +8,7 @@
         "Metadata"
     ],
     "references": [
-        "BIDS. (n.d.). Modality agnostic files. Retrieved from https://bids-specification.readthedocs.io/en/stable/03-modality-agnostic-files.html"
+        "BIDS. (n.d.). <i>Modality agnostic files</i>. Retrieved from https://bids-specification.readthedocs.io/en/stable/03-modality-agnostic-files.html"
     ],
     "drafted_by": [
         "Tina Lonsdorf"

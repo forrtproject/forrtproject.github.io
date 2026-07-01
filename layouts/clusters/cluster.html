@@ -18,7 +18,7 @@
 */}}
 {{ define "main" }}
 {{ $n := int .Params.cluster_number }}
-{{ $data := site.Data.clusters_v4 }}
+{{ $data := hugo.Data.clusters_v4 }}
 {{ $cluster := false }}
 {{ if $data }}
   {{ range $data.clusters }}

@@ -1,7 +1,7 @@
 {{ if site.Params.privacy_pack }}
   {{ $scr := .Scratch }}
-  {{ $js := site.Data.assets.js }}
-  {{ $css := site.Data.assets.css }}
+  {{ $js := hugo.Data.assets.js }}
+  {{ $css := hugo.Data.assets.css }}
   {{ if ($scr.Get "use_cdn") }}
     {{ printf "<script src=\"%s\" integrity=\"%s\" crossorigin=\"anonymous\"></script>" (printf $js.cookieconsent.url $js.cookieconsent.version) $js.cookieconsent.sri | safeHTML }}
     {{ printf "<link rel=\"stylesheet\" href=\"%s\" integrity=\"%s\" crossorigin=\"anonymous\">" (printf $css.cookieconsent.url $css.cookieconsent.version) $css.cookieconsent.sri | safeHTML }}

@@ -31,7 +31,7 @@
       "order": 40,
       "name": "Re-SearchTerms",
       "link": "/apps/re-searchterms.html",
-      "description": "Re-SearchTerms is a Shiny app that helps researchers and educators discover open-science terms and their various definitions. We welcome contributors to help expand the database and refine the interface.",
+      "description": "Re-SearchTerms is an interactive app that helps researchers and educators explore open-science terms and their various definitions across multiple sources. We welcome contributors to help expand the database, enrich the app's features, and refine the interface.",
       "slack": "",
       "contact_name": "Anna Leung",
       "contact_email": "leung.yi.lmu@gmail.com"
@@ -70,7 +70,7 @@
       "description": "Team Feedback is developing a community-maintained e-book mapping and critically evaluating feedback mechanisms across disciplines and regions.",
       "slack": "",
       "contact_name": "Thomas Rhys-Evans",
-      "contact_email": ""
+      "contact_email": "thomas.evans@greenwich.ac.uk"
     },
     {
       "order": 90,
@@ -83,12 +83,12 @@
     },
     {
       "order": 100,
-      "name": "OS Storytelling",
+      "name": "FORRT Storytelling",
       "link": "",
-      "description": "OS Storytelling collects and shares lived experiences of open scholarship to make the human side of doing research visible. We welcome storytellers, editors, and collaborators interested in narrative methods.",
+      "description": "Telling the story of FORRT in a compelling way to preserve the vision, values, struggles, breakthroughs, and relationships that shaped the FORRT’s trajectory. We welcome storytellers, editors, and collaborators interested in narrative methods.",
       "slack": "",
       "contact_name": "Iris Smal",
-      "contact_email": ""
+      "contact_email": "i.m.smal@uva.nl"
     },
     {
       "order": 110,

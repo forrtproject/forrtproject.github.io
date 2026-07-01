@@ -13,8 +13,8 @@
         "Scientific Transparency"
     ],
     "references": [
-        "Aczel, B., Szaszi, B., Nilsonne, G., Van den Akker, O., Albers, C. J., van Assen, M. A. L. M., ..., & Wagenmakers, E. (2021). Guidance for Multi-Analyst Studies. https://doi.org/10.31222/osf.io/5ecnh",
-        "Silberzahn, R., Uhlmann, E. L., Martin, D. P., Anselmi, P., Aust, F., Awtrey, E., Bahník, Š., Bai, F., Bannard, C., Bonnier, E., & others. (2018). Many Analysts, One Data Set: Making Transparent How Variations in Analytic Choices Affect Results. Advances in Methods and Practices in Psychological Science, 337–356. https://doi.org/10.1177/2515245917747646"
+        "Aczel, B., Szaszi, B., Nilsonne, G., Van den Akker, O., Albers, C. J., van Assen, M. A. L. M., ..., & Wagenmakers, E. (2021). <i>Guidance for Multi-Analyst Studies</i>. https://doi.org/10.31222/osf.io/5ecnh",
+        "Silberzahn, R., Uhlmann, E. L., Martin, D. P., Anselmi, P., Aust, F., Awtrey, E., Bahník, Š., Bai, F., Bannard, C., Bonnier, E., & others. (2018). Many Analysts, One Data Set: Making Transparent How Variations in Analytic Choices Affect Results. <i>Advances in Methods and Practices in Psychological Science</i>, 337–356. https://doi.org/10.1177/2515245917747646"
     ],
     "drafted_by": [
         "Sam Parsons"

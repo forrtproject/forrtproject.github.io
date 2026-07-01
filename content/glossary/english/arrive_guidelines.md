@@ -8,7 +8,9 @@
         "Reporting Guideline",
         "STRANGE"
     ],
-    "references": [],
+    "references": [
+        "Percie du Sert, N., Hurst, V., Ahluwalia, A., Alam, S., Avey, M. T., Baker, M., Browne, W. J., Clark, A., Cuthill, I. C., Dirnagl, U., Emerson, M., Garner, P., Holgate, S. T., Howells, D. W., Karp, N. A., Lazic, S. E., Lidster, K., MacCallum, C. J., Macleod, M., & others. (2020). The ARRIVE guidelines 2.0: Updated guidelines for reporting animal research. <i>PLOS Biology</i>, <i>18</i>(7), e3000410. https://doi.org/10.1371/journal.pbio.3000410"
+    ],
     "drafted_by": [
         "Ben Farrar"
     ],

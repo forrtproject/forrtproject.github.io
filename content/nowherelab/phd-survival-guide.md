@@ -1,7 +1,7 @@
 ---
 title: Nowhere Lab PhD Survival Guide
 date: 2026-04-28
-_build:
+build:
   list: never
 ---
 

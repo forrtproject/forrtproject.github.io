@@ -9,7 +9,7 @@
         "Learning"
     ],
     "references": [
-        "Brule, J., & Blount, A. (1989). Knowledge acquisition. McGraw-Hill."
+        "Brule, J., & Blount, A. (1989). <i>Knowledge acquisition</i>. McGraw-Hill."
     ],
     "drafted_by": [
         "Oscar Lecuona"

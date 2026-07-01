@@ -6,6 +6,14 @@ name: Staging Aggregate Deployment
 # Purpose: Aggregates and deploys staging changes to production
 # Triggers: PRs to main, monthly schedule, or manual dispatch
 # Features: Multi-PR aggregation, staging deployment, and force deploy option
+#
+# Fork PRs: GitHub does not pass repository secrets to runs triggered from a
+#   fork, so a fork PR cannot auto-deploy to staging (its run fails fast with a
+#   note instead of a cryptic token error). To preview a fork PR on staging, a
+#   maintainer runs this workflow manually (Actions -> Run workflow) from `main`
+#   and sets `single_pr` to the PR number. The run resolves the fork from the PR
+#   number and fetches it over its public URL, so there is no need to pick the
+#   fork branch in the dropdown.
 
 on:
   pull_request:
@@ -57,8 +65,32 @@ jobs:
       total-prs: ${{ steps.aggregate.outputs.total_prs }}
       has-prs: ${{ steps.aggregate.outputs.has_prs }}
     steps:
+      # Fork PRs can't receive secrets, so the checkout/gh steps below would fail
+      # with a cryptic "Input required and not supplied: token". Fail fast with a
+      # clear note pointing maintainers at the manual single_pr dispatch instead.
+      - name: Fork PR — staging not auto-deployed
+        if: github.event_name == 'pull_request' && github.event.pull_request.head.repo.full_name != github.repository
+        run: |
+          PR_NUM="${{ github.event.pull_request.number }}"
+          {
+            echo "## ⏭️ Fork PR — staging not auto-deployed"
+            echo ""
+            echo "GitHub does not pass repository secrets to runs triggered from a fork,"
+            echo "so this workflow cannot auto-deploy a fork PR to staging."
+            echo ""
+            echo "**To preview this PR on staging**, a maintainer runs the *Staging Aggregate"
+            echo "Deployment* workflow manually (Actions → Run workflow) from \`main\` and sets:"
+            echo ""
+            echo "    single_pr = ${PR_NUM}"
+            echo ""
+            echo "The run pulls this fork in by PR number over its public URL — no need to"
+            echo "select the fork branch in the dropdown."
+          } >> "$GITHUB_STEP_SUMMARY"
+          echo "::error::Fork PR #${PR_NUM} not auto-deployed. Maintainer: run this workflow manually with single_pr=${PR_NUM} to preview it on staging."
+          exit 1
+
       - name: Checkout repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
         with:
           fetch-depth: 0
           token: ${{ secrets.STAGING_GITHUB_TOKEN }}
@@ -228,7 +260,7 @@ jobs:
       HUGO_EXTENDED: true
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
         with:
           ref: ${{ needs.aggregate-prs.outputs.aggregated-branch || 'main' }}
 
@@ -382,7 +414,7 @@ jobs:
           HUGO_ENV: staging
 
       - name: Upload site artifact
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: forrt-website-aggregate-${{ github.run_number }}
           path: public/
@@ -403,13 +435,13 @@ jobs:
     if: always() && (needs.build.result == 'success' || github.event_name == 'schedule')
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
         with:
           token: ${{ secrets.STAGING_GITHUB_TOKEN }}
 
       - name: Download Artifact - Website
         if: needs.build.result == 'success'
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v7
         with:
           name: forrt-website-aggregate-${{ github.run_number }}
           path: ${{ github.repository }}/forrt-website

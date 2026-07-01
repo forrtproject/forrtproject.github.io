@@ -7,7 +7,7 @@
       <input type="text" id="clusters-inline-search-input" class="fr-search-input"
              placeholder="Search resources..." aria-label="Search clusters and resources" autocomplete="off" spellcheck="false">
     </div>
-    {{ $tags := site.Data.filter_tags }}
+    {{ $tags := hugo.Data.filter_tags }}
     <div class="fr-filter-group">
       <span class="fr-filter-label">Focus</span>
       <div class="fr-filter-tags" data-filter="focus" id="fr-global-focus-tags">

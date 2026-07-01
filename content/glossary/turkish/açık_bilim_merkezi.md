@@ -15,7 +15,7 @@
         "Transparency and Openness Promotion Guidelines (TOP)"
     ],
     "references": [
-        "for Open Science, C. (n.d.). Show Your Work. Share Your Work. Advance Science. That’s Open Science. https://www.cos.io/"
+        "Centre for Open Science. (n.d.). <i>Show Your Work. Share Your Work. Advance Science. That’s Open Science</i>. https://www.cos.io/"
     ],
     "drafted_by": [
         "Beatrix Arendt"

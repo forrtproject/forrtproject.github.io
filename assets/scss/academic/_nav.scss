@@ -40,6 +40,13 @@
   .navbar-nav {
     display: flex;
 
+    // Vertically centre every item (links, button, icons) on one line in the
+    // horizontal (lg+) navbar. Left to the default `stretch` the button and
+    // menu links sit on different centre lines.
+    @include media-breakpoint-up(lg) {
+      align-items: center;
+    }
+
     .nav-link {
       color: rgba($sta-menu-text, .85);
 
@@ -49,9 +56,17 @@
         color: $sta-menu-text;
       }
 
+      &:hover,
+      &:focus {
+        text-decoration: underline;
+        text-underline-offset: 3px;
+      }
+
       &.active {
         font-weight: bold !important;
         color: $sta-menu-text-active !important;
+        text-decoration: underline;
+        text-underline-offset: 3px;
       }
     }
   }
@@ -212,6 +227,14 @@ ul.nav-icons li.nav-item a.nav-link {
 .dropdown-item {
   background-color: $sta-menu-primary !important;
   color: $sta-menu-text !important;
+
+  &:hover,
+  &:focus {
+    background-color: rgba(255, 255, 255, 0.12) !important;
+    color: $sta-menu-text !important;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
 }
 
 /******************************************************************************

@@ -25,10 +25,10 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
 
       - name: Set up Python
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v6
         with:
           python-version: '3.x'
 
@@ -46,8 +46,10 @@ jobs:
         run: |
           python scripts/webp_conversion/check_images_in_pr.py
 
+      # Same-repo PRs: the token can write, so post/update the result as a PR comment.
       - name: Find Comment
-        uses: peter-evans/find-comment@v3
+        if: github.event.pull_request.head.repo.full_name == github.repository
+        uses: peter-evans/find-comment@v4
         id: fc
         with:
           issue-number: ${{ github.event.pull_request.number }}
@@ -55,9 +57,26 @@ jobs:
           body-includes: mage files/references
 
       - name: Create or update comment
-        uses: peter-evans/create-or-update-comment@v4
+        if: github.event.pull_request.head.repo.full_name == github.repository
+        uses: peter-evans/create-or-update-comment@v5
         with:
           comment-id: ${{ steps.fc.outputs.comment-id }}
           issue-number: ${{ github.event.pull_request.number }}
           body: ${{ steps.image_check.outputs.comment }}
           edit-mode: replace
+
+      # Fork PRs: the GITHUB_TOKEN is read-only, so a PR comment would 403.
+      # Surface the same result as a job-summary report in the workflow run instead.
+      - name: Image check report (fork PR)
+        if: github.event.pull_request.head.repo.full_name != github.repository
+        env:
+          REPORT: ${{ steps.image_check.outputs.comment }}
+        run: |
+          {
+            echo "## 🖼️ Image check report"
+            echo ""
+            echo "> This PR is from a fork, so the workflow cannot post a PR comment"
+            echo "> (fork runs receive a read-only token). The result is shown below."
+            echo ""
+            echo "$REPORT"
+          } >> "$GITHUB_STEP_SUMMARY"

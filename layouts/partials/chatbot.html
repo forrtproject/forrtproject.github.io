@@ -7,6 +7,11 @@
   {{ end }}
 {{ end }}
 
+{{/* Load Inter for the JUST-OS chat UI (the site's body font is Domine). */}}
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap">
+
 <style>
   #just-os-widget {
     position: fixed;
@@ -18,7 +23,13 @@
     display: flex;
     flex-direction: column;
     align-items: flex-end;
-    font-family: sans-serif;
+    font-family: "Inter", "Open Sans", "Lexend", "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  }
+
+  /* Standalone full-page chat: positioning context + Inter font */
+  .just-os-fullpage {
+    position: relative;
+    font-family: "Inter", "Open Sans", "Lexend", "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   }
 
   #just-os-btn {
@@ -298,13 +309,105 @@
     text-decoration: underline;
   }
 
-  /* Inline citation links rendered as plain text */
+  /* Inline citation links open the supporting retrieved chunk */
   .just-os-msg.bot .just-os-bubble-content a.reference-link {
-    color: inherit;
+    color: #0d3c74;
     text-decoration: none;
-    pointer-events: none;
-    cursor: default;
+    cursor: pointer;
     font-size: 0.85em;
+    font-weight: 600;
+  }
+
+  .just-os-msg.bot .just-os-bubble-content a.reference-link:hover {
+    text-decoration: underline;
+  }
+
+  .just-os-reference-tooltip {
+    position: fixed;
+    width: min(500px, calc(100vw - 24px));
+    max-height: min(420px, calc(100vh - 24px));
+    overflow-y: auto;
+    padding: 14px;
+    background: white;
+    border: 1px solid #d9dde3;
+    border-radius: 8px;
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.18);
+    color: #1a1a1a;
+    font-size: 0.85rem;
+    line-height: 1.45;
+    z-index: 10001;
+  }
+
+  .just-os-reference-tooltip .title {
+    font-weight: 700;
+    margin-bottom: 4px;
+  }
+
+  .just-os-reference-tooltip .metadata {
+    color: #666;
+    font-size: 0.8rem;
+    margin-bottom: 10px;
+  }
+
+  .just-os-reference-tooltip .content {
+    padding: 10px;
+    background: #f8f9fb;
+    border-radius: 6px;
+  }
+
+  /* Rendered markdown inside the supporting chunk — keep it compact so a
+     chunk heading doesn't dwarf the tooltip. */
+  .just-os-reference-tooltip .content > :first-child {
+    margin-top: 0;
+  }
+
+  .just-os-reference-tooltip .content > :last-child {
+    margin-bottom: 0;
+  }
+
+  .just-os-reference-tooltip .content p {
+    margin: 0 0 8px;
+  }
+
+  .just-os-reference-tooltip .content h1,
+  .just-os-reference-tooltip .content h2,
+  .just-os-reference-tooltip .content h3,
+  .just-os-reference-tooltip .content h4,
+  .just-os-reference-tooltip .content h5,
+  .just-os-reference-tooltip .content h6 {
+    margin: 10px 0 6px;
+    font-size: 0.95rem;
+    font-weight: 700;
+    line-height: 1.3;
+  }
+
+  .just-os-reference-tooltip .content ul,
+  .just-os-reference-tooltip .content ol {
+    margin: 0 0 8px;
+    padding-left: 20px;
+  }
+
+  .just-os-reference-tooltip .content li {
+    margin-bottom: 2px;
+  }
+
+  .just-os-reference-tooltip .content a {
+    color: #0d3c74;
+    text-decoration: underline;
+  }
+
+  .just-os-reference-tooltip .content code {
+    background: #eceff3;
+    border-radius: 3px;
+    padding: 1px 4px;
+    font-size: 0.85em;
+  }
+
+  .just-os-reference-tooltip .source-link {
+    display: inline-block;
+    margin-top: 10px;
+    color: #0d3c74;
+    font-weight: 600;
   }
 
   .just-os-copy-btn {
@@ -329,6 +432,157 @@
 
   .just-os-copy-btn:hover {
     color: #555;
+  }
+
+  .just-os-copy-btn svg {
+    width: 15px;
+    height: 15px;
+    display: block;
+  }
+
+  /* Feedback — always-visible row beneath bot message */
+  .rating-bar {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: 8px;
+  }
+
+  .rating-bar .rating-btn {
+    background: none;
+    border: 1px solid #0d3c74;
+    color: #0d3c74;
+    cursor: pointer;
+    font-size: 0.72rem;
+    padding: 2px 8px;
+    line-height: 1.4;
+    border-radius: 12px;
+    font-weight: 500;
+    transition: background 0.15s, color 0.15s;
+  }
+
+  .rating-bar .rating-btn:hover {
+    background: #0d3c74;
+    color: #fff;
+  }
+
+  /* Info (i) — subtle disclosure of what feedback is stored, with instant tooltip */
+  .rating-bar .rating-info {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    color: #bbb;
+    cursor: help;
+    margin-left: 3px;
+  }
+
+  .rating-bar .rating-info svg {
+    width: 14px;
+    height: 14px;
+    display: block;
+  }
+
+  .rating-bar .rating-info:hover,
+  .rating-bar .rating-info:focus {
+    color: #0d3c74;
+    outline: none;
+  }
+
+  .rating-bar .rating-tip {
+    position: absolute;
+    bottom: calc(100% + 7px);
+    /* Centre the tip over the (i) icon, which sits near the panel centre, so the
+       full text stays inside the narrow docked chat panel (its overflow clips). */
+    left: 50%;
+    transform: translateX(-50%) translateY(3px);
+    width: max-content;
+    max-width: 230px;
+    background: #0d3c74;
+    color: #fff;
+    font-size: 0.7rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.4;
+    text-align: left;
+    padding: 7px 9px;
+    border-radius: 6px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.1s ease, transform 0.1s ease;
+    pointer-events: none;
+    white-space: normal;
+    z-index: 10;
+  }
+
+  /* small arrow pointing down to the icon */
+  .rating-bar .rating-tip::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border: 5px solid transparent;
+    border-top-color: #0d3c74;
+  }
+
+  .rating-bar .rating-info:hover .rating-tip,
+  .rating-bar .rating-info:focus .rating-tip,
+  .rating-bar .rating-info:focus-within .rating-tip {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(0);
+  }
+
+  .rating-thanks {
+    font-size: 0.75rem;
+    color: #4caf50;
+    font-style: italic;
+  }
+
+  /* Comment box — appears after "Bad" rating */
+  .comment-box {
+    margin-top: 5px;
+  }
+
+  .comment-box-inner {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .comment-box-inner input[type="text"] {
+    flex: 1;
+    min-width: 0;
+    border: none;
+    border-bottom: 1px solid #ddd;
+    padding: 2px 4px;
+    font-size: 0.75rem;
+    font-family: inherit;
+    background: transparent;
+    outline: none;
+    color: #444;
+  }
+
+  .comment-box-inner input[type="text"]:focus {
+    border-bottom-color: #0d3c74;
+  }
+
+  .comment-submit {
+    background: none;
+    border: none;
+    color: #0d3c74;
+    font-size: 0.72rem;
+    cursor: pointer;
+    padding: 0;
+    white-space: nowrap;
+    font-weight: 500;
+    opacity: 0.8;
+  }
+
+  .comment-submit:hover {
+    opacity: 1;
+    text-decoration: underline;
   }
 
   /* References list below bot message */
@@ -429,8 +683,9 @@
     cursor: not-allowed;
   }
 
-  /* New Chat button */
-  .just-os-new-chat-btn {
+  /* New Chat / History buttons */
+  .just-os-new-chat-btn,
+  .just-os-history-btn {
     background: none;
     border: none;
     cursor: pointer;
@@ -440,9 +695,126 @@
     border-radius: 4px;
   }
 
-  .just-os-new-chat-btn:hover {
+  .just-os-new-chat-btn:hover,
+  .just-os-history-btn:hover {
     background: #eee;
     color: #333;
+  }
+
+  /* History button pushed to the right in the widget header */
+  .chat-header .just-os-history-btn {
+    margin-left: auto;
+  }
+
+  /* History panel — overlays the chat area */
+  .just-os-history-panel {
+    position: absolute;
+    inset: 0;
+    background: #fff;
+    z-index: 20;
+    flex-direction: column;
+    overflow: hidden;
+  }
+
+  .just-os-history-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 15px;
+    border-bottom: 1px solid #eee;
+    background: #f8f9fa;
+    flex-shrink: 0;
+  }
+
+  .just-os-history-header span {
+    font-weight: bold;
+    color: #0d3c74;
+  }
+
+  .just-os-history-back {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 0.9rem;
+    color: #0d3c74;
+    padding: 4px 6px;
+    border-radius: 4px;
+  }
+
+  .just-os-history-back:hover {
+    background: #eee;
+  }
+
+  .just-os-history-list {
+    flex: 1;
+    overflow-y: auto;
+    padding: 8px;
+    min-height: 0;
+  }
+
+  .just-os-history-empty {
+    color: #888;
+    font-size: 0.85rem;
+    text-align: center;
+    margin: 24px 0;
+  }
+
+  .just-os-history-item {
+    display: flex;
+    align-items: stretch;
+    border-radius: 8px;
+    margin-bottom: 4px;
+  }
+
+  .just-os-history-item:hover {
+    background: #f0f2f5;
+  }
+
+  .just-os-history-item.active {
+    background: #e8eef6;
+  }
+
+  .just-os-history-open {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    text-align: left;
+    padding: 8px 10px;
+    min-width: 0;
+  }
+
+  .just-os-history-title {
+    font-size: 0.88rem;
+    color: #1a1a1a;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 100%;
+  }
+
+  .just-os-history-meta {
+    font-size: 0.72rem;
+    color: #999;
+  }
+
+  .just-os-history-delete {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #bbb;
+    font-size: 0.9rem;
+    padding: 0 10px;
+    border-radius: 8px;
+    flex-shrink: 0;
+  }
+
+  .just-os-history-delete:hover {
+    color: #c0392b;
   }
 
   /* Standalone page offline notice */
@@ -526,6 +898,8 @@
   <div id="just-os-window">
     <div class="chat-header">
       <span>JUST-OS</span>
+
+      <button type="button" class="just-os-history-btn" onclick="toggleJustOSHistory()" title="Chat history">History</button>
 
       <button type="button" class="just-os-new-chat-btn" onclick="newJustOSChat()" title="New Chat">New Chat</button>
 

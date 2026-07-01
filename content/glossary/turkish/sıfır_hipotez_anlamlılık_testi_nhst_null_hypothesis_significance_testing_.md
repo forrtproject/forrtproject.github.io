@@ -10,9 +10,9 @@
         "Type I error"
     ],
     "references": [
-        "Lakens, D., Scheel, A. M., & Isager, P. M. (2018). Equivalence testing for psychological research: A tutorial. Advances in Methods and Practices in Psychological Science, 1(2), 259–269. https://doi.org/10.1177/2515245918770963",
-        "Pernet, C. R. (2015). Null hypothesis significance testing: a short tutorial. F1000Research, 4, 621. https://doi.org/10.12688/f1000research.6963.3",
-        "Spence, J. R., & Stanley, D. J. (2018). Concise, simple, and not wrong: In search of a short-hand interpretation of statistical significance. Frontiers in Psychology, 9, 2185. https://doi.org/10.3389/fpsyg.2018.02185"
+        "Lakens, D., Scheel, A. M., & Isager, P. M. (2018). Equivalence testing for psychological research: A tutorial. <i>Advances in Methods and Practices in Psychological Science</i>, <i>1</i>(2), 259–269. https://doi.org/10.1177/2515245918770963",
+        "Pernet, C. R. (2015). Null hypothesis significance testing: a short tutorial. <i>F1000Research</i>, <i>4</i>, 621. https://doi.org/10.12688/f1000research.6963.3",
+        "Spence, J. R., & Stanley, D. J. (2018). Concise, simple, and not wrong: In search of a short-hand interpretation of statistical significance. <i>Frontiers in Psychology</i>, <i>9</i>, 2185. https://doi.org/10.3389/fpsyg.2018.02185"
     ],
     "drafted_by": [
         "Alaa AlDoh"

@@ -10,8 +10,8 @@
         "Hidden moderators"
     ],
     "references": [
-        "Dienes, Z. (2008). Understanding psychology as a science: An introduction to scientific and statistical inference. Macmillan International Higher Education.",
-        "Lakatos, I. (1978). The Methodology of Scientific Research Programs: Vol. I. Cambridge University Press."
+        "Dienes, Z. (2008). <i>Understanding psychology as a science: An introduction to scientific and statistical inference</i>. Macmillan International Higher Education.",
+        "Lakatos, I. (1978). <i>The Methodology of Scientific Research Programs: Vol. I</i>. Cambridge University Press."
     ],
     "drafted_by": [
         "Alaa Aldoh"

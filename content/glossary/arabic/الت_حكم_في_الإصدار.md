@@ -11,7 +11,7 @@
         "Source control"
     ],
     "references": [
-        "Git. (n.d.). Git—About Version Control. https://git-scm.com/book/en/v2/Getting-Started-About-Version-Control"
+        "Git. (n.d.). <i>Git—About Version Control</i>. https://git-scm.com/book/en/v2/Getting-Started-About-Version-Control"
     ],
     "drafted_by": [
         "Mahmoud Elsherif"

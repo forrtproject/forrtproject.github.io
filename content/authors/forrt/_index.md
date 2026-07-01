@@ -1,8 +1,6 @@
 ---
 title: FORRT
 name: FORRT
-authors:
-- forrt
 bio:
 # education:
 #   courses:

@@ -2,7 +2,7 @@
     "type": "glossary",
     "title": "Açık Kaynaklı Yazılım [Open Source software]",
     "sort_key": "aczizk kaynakliz yazizlizm [open source software]",
-    "definition": "Kaynak kodunun, başkalarının yazılımı kullanmasına, değiştirmesine ve yazılımı herhangi bir kişiye ve herhangi bir amaçla dağıtmasına izin veren bir lisans altında yayımlandığı bir bilgisayar yazılımı türüdür. Açık kaynak sadece açık erişimden ibaret değildir; açık kaynaklı yazılımların dağıtım koşulları 10 özel kritere uygun olmalıdır (bkz: https://opensource.org/osd).",
+    "definition": "Kaynak kodunun, başkalarının yazılımı kullanmasına, değiştirmesine ve yazılımı herhangi bir kişiye ve herhangi bir amaçla dağıtmasına izin veren bir lisans altında yayımlandığı bir bilgisayar yazılımı türüdür. Açık kaynak sadece açık erişimden ibaret değildir; açık kaynaklı yazılımların dağıtım koşulları 10 özel kritere uygun olmalıdır (bkz: [https://opensource.org/osd](https://opensource.org/osd)).",
     "related_terms": [
         "Github",
         "Open Access",
@@ -14,7 +14,8 @@
         "Repository"
     ],
     "references": [
-        "Anon. (n.d.). Open Source in Open Science | FOSTER. Retrieved from https://www.fosteropenscience.eu/foster-taxonomy/open-source-open-science"
+        "Open Source Initiative. (n.d.). <i>The Open Source Definition</i>. https://opensource.org/osd",
+        "Anon. (n.d.). <i>Open Source in Open Science | FOSTER</i>. Retrieved from https://www.fosteropenscience.eu/foster-taxonomy/open-source-open-science"
     ],
     "drafted_by": [
         "Connor Keating"

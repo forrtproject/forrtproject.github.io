@@ -1,10 +1,8 @@
 ---
 # Display name
 name: "Sara Lil Middleton"
+title: "Sara Lil Middleton"
 
-# Username (this should match the folder name)
-authors:
-- Name "sara-lil-middleton"
 
 # Is this the primary user of the site?
 superuser: false

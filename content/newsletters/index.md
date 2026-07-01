@@ -6,7 +6,11 @@ Stay updated by subscribing to the FORRT Newsletter
 
 **:calendar: 2026**
 
-[**🆕 | March  🆕**](https://eocampaign1.com/web-version?p=37587f24-13bc-11f1-a58e-016a4c8ed9d0&pt=campaign&t=1774939747&s=0364890f4fe6275bb6fcf840a4994b12cab30ff7fa9428df282730367dd893bb)
+[| May  🆕](https://eocampaign1.com/web-version?p=fc2dc0f2-5a02-11f1-acce-9d9105ec3473&pt=campaign&t=1779997339&s=3af80e5a532a00aab817156af2b3a85643ab7b668d1960d384ba6d9ee2072ddd)
+
+[| April ](https://eocampaign1.com/web-version?p=8644de88-42bb-11f1-bea3-9d65e0900500&pt=campaign&t=1777532460&s=1106ac34f85bfa9f49456127a0721dc5de49dcde3135c164ab272a08a51f553e)
+
+[| March ](https://eocampaign1.com/web-version?p=37587f24-13bc-11f1-a58e-016a4c8ed9d0&pt=campaign&t=1774939747&s=0364890f4fe6275bb6fcf840a4994b12cab30ff7fa9428df282730367dd893bb)
 
 [| February ](https://eocampaign1.com/web-version?p=e0c335de-11b6-11f1-a1c2-6ba123ee4ad5&pt=campaign&t=1772047352&s=dec61220bf547f2a4345d54a8819f206f19df3923ec3234ae2e98517cbe4d9a7)
 

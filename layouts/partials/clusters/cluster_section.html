@@ -10,7 +10,7 @@
 {{ $featuredEnabled := site.Params.enable_featured_resources }}
 {{ $featuredData := false }}
 {{ if $featuredEnabled }}
-  {{ with site.Data.featured_resources }}
+  {{ with hugo.Data.featured_resources }}
     {{ $key := printf "%d" (int $cluster.number) }}
     {{ with index .clusters $key }}
       {{ $featuredData = . }}
@@ -52,12 +52,17 @@
     {{ end }}
 
     {{ range $si, $sc := $cluster.sub_clusters }}
-    {{ $scid := printf "c%d-sc%d" (int $cluster.number) $si }}
+    {{/* Stable, human-readable anchor slug derived from the name (not the array index), so shared links survive reordering. Must match sidebar_nav.html. */}}
+    {{ $slug := $sc.name | lower | replaceRE "[^a-z0-9]+" "-" | replaceRE "^-+|-+$" "" }}
+    {{ $scid := printf "c%d-%s" (int $cluster.number) $slug }}
     <div class="acc-section" id="{{ $scid }}">
       <div class="acc-header" role="button" tabindex="0">
         <span class="acc-chevron">&#9656;</span>
-        <span class="acc-label">{{ $sc.name }}</span>
+        <h3 class="acc-label">{{ $sc.name }}</h3>
         <span class="acc-count"><span class="acc-count-match">{{ len $sc.publications }}</span> / {{ len $sc.publications }}</span>
+        <button type="button" class="acc-copy-link" data-anchor="{{ $scid }}" aria-label="Copy link to this sub-cluster" title="Copy link to this sub-cluster">
+          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M6.5 9.5l3-3M7 4.5l1-1a3 3 0 014.25 4.25l-1 1M9 11.5l-1 1a3 3 0 01-4.25-4.25l1-1"/></svg>
+        </button>
       </div>
       <div class="acc-body acc-collapsed">
 
@@ -66,7 +71,7 @@
         {{ end }}
 
         {{ if $sc.publications }}
-        {{ $pubCards := site.Data.pub_cards }}
+        {{ $pubCards := hugo.Data.pub_cards }}
         <div class="fr-cards-list">
           {{ range $pi, $pub := $sc.publications }}
           {{ $card := false }}

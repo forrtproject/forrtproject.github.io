@@ -8,8 +8,8 @@
         "Qualitative Research"
     ],
     "references": [
-        "Braun, V., & Clarke, V. (2013). Successful Qualitative Research. SAGE Publications.",
-        "Finlay, L., & Gough, B. (2008). Reflexivity: A practical guide for researchers in health and social sciences. John Wiley & Sons."
+        "Braun, V., & Clarke, V. (2013). <i>Successful Qualitative Research</i>. SAGE Publications.",
+        "Finlay, L., & Gough, B. (2008). <i>Reflexivity: A practical guide for researchers in health and social sciences</i>. John Wiley & Sons."
     ],
     "drafted_by": [
         "Claire Melia"

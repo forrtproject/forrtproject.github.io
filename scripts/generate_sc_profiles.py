@@ -11,19 +11,26 @@ This script:
 6. Downloads profile pictures from Google Drive
 """
 
-import pandas as pd
 import os
 import shutil
 import re
-import requests
 import unicodedata
 import json
 import html
 from pathlib import Path
 from difflib import SequenceMatcher
 from urllib.parse import parse_qs, urlparse
-from PIL import Image
-from io import BytesIO
+
+# Heavy, network/data-only dependencies. Kept optional so the page templates and render
+# helpers in this module can be imported (e.g. by tooling that re-renders the page from
+# existing data) without installing pandas/requests/Pillow. main() requires them.
+try:
+    import pandas as pd
+    import requests
+    from PIL import Image
+    from io import BytesIO
+except ImportError:  # pragma: no cover - exercised only when deps are absent
+    pd = requests = Image = BytesIO = None
 
 # Configuration
 SC_CSV_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vRCHSY7WBvzDSSWyUyOVPRbsf5QxO7Mc40hGB7yanfT-rjbcNthMbHvUxT0NJ3AAfLKfx4YiOghByZT/pub?output=csv"
@@ -131,223 +138,6 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }
     });
-
-    /* --- Team linking + ordering based on source CSV --- */
-    const SC_ORDER_CSV = "https://docs.google.com/spreadsheets/d/e/2PACX-1vRCHSY7WBvzDSSWyUyOVPRbsf5QxO7Mc40hGB7yanfT-rjbcNthMbHvUxT0NJ3AAfLKfx4YiOghByZT/pub?output=csv";
-    const TEAM_COLORS = ["#2563eb","#c026d3","#ea580c","#22c55e","#0ea5e9","#f59e0b","#ef4444","#8b5cf6","#14b8a6","#f97316"];
-    const BACKGROUND_COLORS = ["#0f766e", "#475569"];
-    const honorifics = /^(dr|dr\.|prof|prof\.|mr|mrs|ms|miss)\s+/i;
-    const normalizeBase = (str = "") => str.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
-    const normalizeText = (str = "") => normalizeBase(str.replace(/&amp;/gi, "&").trim().toLowerCase());
-    const normalizeTeam = (str = "") => normalizeText(str).replace(/\s+/g, " ");
-    const nameTokens = (str = "") =>
-        normalizeText(str.replace(honorifics, ""))
-            .replace(/[^a-z0-9\s]/g, " ")
-            .split(/\s+/)
-            .filter(Boolean);
-
-    const tokenSimilarity = (aTokens, bTokens) => {
-        if (!aTokens.length || !bTokens.length) return 0;
-        const aSet = new Set(aTokens);
-        const bSet = new Set(bTokens);
-        let intersect = 0;
-        bSet.forEach((t) => {
-            if (aSet.has(t)) intersect += 1;
-        });
-        return intersect / Math.max(aSet.size, bSet.size, 1);
-    };
-
-    const charDice = (aStr, bStr) => {
-        const a = aStr.replace(/\s+/g, "");
-        const b = bStr.replace(/\s+/g, "");
-        if (!a.length || !b.length) return 0;
-        const count = (s) => {
-            const m = {};
-            for (const ch of s) m[ch] = (m[ch] || 0) + 1;
-            return m;
-        };
-        const aCount = count(a);
-        const bCount = count(b);
-        let overlap = 0;
-        Object.keys(aCount).forEach((ch) => {
-            if (bCount[ch]) overlap += Math.min(aCount[ch], bCount[ch]);
-        });
-        return (2 * overlap) / (a.length + b.length);
-    };
-
-    const parseCSV = (text) =>
-        text
-            .trim()
-            .split(/\\r?\\n/)
-            .map((line) => line.split(",").map((cell) => cell.replace(/^"+|"+$/g, "").trim()));
-
-    const buildOrders = (rows) => {
-        const sectionMap = {};
-        document.querySelectorAll(".sc-section").forEach((sec) => {
-            const title = sec.querySelector(".sc-section-title span")?.textContent || sec.id;
-            sectionMap[normalizeTeam(title)] = sec.id;
-        });
-
-        const findSection = (raw) => {
-            const key = normalizeTeam(raw);
-            if (sectionMap[key]) return sectionMap[key];
-
-            const operationsId = Object.entries(sectionMap).find(([k]) => k.includes('operation'))?.[1];
-            if (operationsId && (key.includes('ombudsman') || key.includes('steward'))) {
-                return operationsId;
-            }
-
-            let best = null;
-            let bestScore = -1;
-            Object.entries(sectionMap).forEach(([k, id]) => {
-                const score = charDice(k, key);
-                if (score > bestScore) {
-                    bestScore = score;
-                    best = id;
-                }
-            });
-            return best || Object.values(sectionMap)[0] || null;
-        };
-
-        const orders = {};
-        rows.slice(1).forEach((row) => {
-            const sectionRaw = row[1];
-            const teamRaw = row[3];
-            const nameRaw = row[5];
-            if (!sectionRaw || !teamRaw || !nameRaw) return;
-            const secKey = findSection(sectionRaw);
-            if (!secKey) return;
-            if (!orders[secKey]) orders[secKey] = [];
-            let group = orders[secKey].find((g) => normalizeTeam(g.team) === normalizeTeam(teamRaw));
-            if (!group) {
-                group = { team: teamRaw, members: [] };
-                orders[secKey].push(group);
-            }
-            group.members.push(nameRaw);
-        });
-        return orders;
-    };
-
-    const reorderAndLink = (sectionId, teams) => {
-        const grid = document.querySelector(`#${sectionId} .sc-grid`);
-        if (!grid || !teams || !teams.length) return;
-
-        const titleCards = Array.from(grid.querySelectorAll('.sc-title-card'));
-        const memberCards = Array.from(grid.querySelectorAll('.sc-card'));
-
-        [...titleCards, ...memberCards].forEach((el) => {
-            el.classList.remove('sc-team-linked', 'sc-team-title');
-            el.style.removeProperty('--team-color');
-        });
-
-        const titleMap = new Map();
-        titleCards.forEach((card) => {
-            const text = card.querySelector('.sc-title-text')?.textContent || "";
-            titleMap.set(normalizeTeam(text), card);
-        });
-
-        const memberMap = [];
-        memberCards.forEach((card) => {
-            const name = card.querySelector('.sc-card-name')?.textContent || "";
-            const tokens = nameTokens(name);
-            if (!tokens.length) return;
-            memberMap.push({ tokens, card });
-        });
-
-        const takeMember = (rawName) => {
-            const targetTokens = nameTokens(rawName);
-            if (!targetTokens.length) return null;
-            const targetJoined = targetTokens.join("");
-
-            let best = null;
-            let bestScore = 0.45;
-
-            memberMap.forEach((entry, idx) => {
-                const tokenScore = tokenSimilarity(entry.tokens, targetTokens);
-                const joined = entry.tokens.join("");
-                const charScore = charDice(joined, targetJoined);
-                const score = Math.max(tokenScore, charScore);
-                if (score > bestScore) {
-                    bestScore = score;
-                    best = { idx, card: entry.card };
-                }
-            });
-
-            if (best) {
-                memberMap.splice(best.idx, 1);
-                return best.card;
-            }
-            return null;
-        };
-
-        let colorIndex = 0;
-        const parseColor = (hex) => {
-            const h = hex.replace("#", "");
-            const r = parseInt(h.substring(0, 2), 16) / 255;
-            const g = parseInt(h.substring(2, 4), 16) / 255;
-            const b = parseInt(h.substring(4, 6), 16) / 255;
-            const toLin = (c) => (c <= 0.03928 ? c / 12.92 : Math.pow((c + 0.055) / 1.055, 2.4));
-            return { r: toLin(r), g: toLin(g), b: toLin(b) };
-        };
-        const contrast = (hex1, hex2) => {
-            const a = parseColor(hex1);
-            const b = parseColor(hex2);
-            const lum = ({ r, g, b }) => 0.2126 * r + 0.7152 * g + 0.0722 * b;
-            const l1 = lum(a) + 0.05;
-            const l2 = lum(b) + 0.05;
-            return l1 > l2 ? l1 / l2 : l2 / l1;
-        };
-        const nextColor = () => {
-            let attempts = 0;
-            while (attempts < TEAM_COLORS.length * 2) {
-                const color = TEAM_COLORS[colorIndex % TEAM_COLORS.length];
-                colorIndex += 1;
-                const ok = BACKGROUND_COLORS.every((bg) => contrast(color, bg) > 4);
-                if (ok) return color;
-                attempts += 1;
-            }
-            return TEAM_COLORS[(colorIndex++) % TEAM_COLORS.length];
-        };
-
-        const newChildren = [];
-
-        teams.forEach((team) => {
-            const color = nextColor();
-            const teamKey = normalizeTeam(team.team);
-            const titleCard = titleMap.get(teamKey);
-            if (titleCard) {
-                titleCard.style.setProperty('--team-color', color);
-                titleCard.classList.add('sc-team-title');
-                titleMap.delete(teamKey);
-                newChildren.push(titleCard);
-            }
-
-            team.members.forEach((memberName) => {
-                const card = takeMember(memberName);
-                if (card) {
-                    card.style.setProperty('--team-color', color);
-                    card.classList.add('sc-team-linked');
-                    newChildren.push(card);
-                }
-            });
-        });
-
-        const leftovers = [];
-        titleMap.forEach((card) => leftovers.push(card));
-        memberMap.forEach((entry) => leftovers.push(entry.card));
-
-        grid.innerHTML = '';
-        [...newChildren, ...leftovers].forEach((el) => grid.appendChild(el));
-    };
-
-    fetch(SC_ORDER_CSV)
-        .then((res) => res.text())
-        .then((text) => {
-            const rows = parseCSV(text);
-            const orders = buildOrders(rows);
-            Object.entries(orders).forEach(([sectionId, teams]) => reorderAndLink(sectionId, teams));
-        })
-        .catch((err) => console.warn('SC team linking failed', err));
 });
 </script>
 """
@@ -367,17 +157,50 @@ SECTION_TEMPLATE = r"""
 </section>
 """
 
+# Distinct, white-text-legible colour per team within a section. Operations has the most
+# teams (10), so the palette has 10 entries; sections restart the index, so no repeats
+# occur within a single section.
+TEAM_COLORS = [
+    "#0f766e", "#2563eb", "#7c3aed", "#be123c", "#b45309",
+    "#0891b2", "#4d7c0f", "#db2777", "#475569", "#a16207",
+]
+
+# How far a tile's connecting bar reaches past its right edge to bridge the flex gap to
+# the next tile in the same team (the grid gap is 1rem). Last tile in a team gets 0px, so
+# the bar stops cleanly; tiles mid-team extend, and at a row break the bar is clipped at
+# the row edge and resumes on the next row — a visible "this team continues" cue.
+BAR_EXTEND = "calc(1rem + 1px)"
+
 TEAM_TITLE_CARD_TEMPLATE = r"""
-<div class="sc-title-card {bg_class}">
+<div class="sc-title-card" style="--team-color:{color};--bar-extend:{extend}">
     <span class="sc-title-label">Team</span>
     <h3 class="sc-title-text">{name}</h3>
+    <span class="sc-cbar"></span>
 </div>
 """
 
+# Connected member card (teams with a title card): coloured connecting bar links it to its team.
 MEMBER_CARD_TEMPLATE = r"""
+<div class="sc-card" onclick="openModal('{id}')" style="--team-color:{color};--bar-extend:{extend}">
+    <div class="sc-card-photo">
+        {img_content}
+        <div class="sc-card-overlay"></div>
+    </div>
+    <div class="sc-card-content">
+        <h4 class="sc-card-name">{name}</h4>
+        <p class="sc-card-role">{role}</p>
+    </div>
+    <span class="sc-cbar"></span>
+</div>
+"""
+
+# Plain member card (sections without team titles, e.g. Steering & Guidance): no team bar.
+MEMBER_CARD_PLAIN_TEMPLATE = r"""
 <div class="sc-card" onclick="openModal('{id}')">
-    {img_content}
-    <div class="sc-card-overlay"></div>
+    <div class="sc-card-photo">
+        {img_content}
+        <div class="sc-card-overlay"></div>
+    </div>
     <div class="sc-card-content">
         <h4 class="sc-card-name">{name}</h4>
         <p class="sc-card-role">{role}</p>
@@ -497,8 +320,9 @@ def generate_social_links(member):
         links.append(f'<a href="{member["linkedin"]}" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-blue-700 transition-colors">{ICONS["linkedin"]}</a>')
     if member.get('website'):
         links.append(f'<a href="{member["website"]}" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-slate-800 transition-colors">{ICONS["globe"]}</a>')
-    if member.get('email'):
-        links.append(f'<a href="mailto:{member["email"]}" class="text-slate-400 hover:text-slate-800 transition-colors">{ICONS["mail"]}</a>')
+    email = str(member.get('email') or '').strip()
+    if email and email.lower() != 'nan' and '@' in email:
+        links.append(f'<a href="mailto:{email}" class="text-slate-400 hover:text-slate-800 transition-colors">{ICONS["mail"]}</a>')
     return "".join(links)
 
 def normalize_website_url(url):
@@ -512,6 +336,30 @@ def normalize_website_url(url):
     if not url.startswith("http://") and not url.startswith("https://"):
         return f"https://{url}"
     return url
+
+def render_title_card(name, color, has_members):
+    """Team title tile (the coloured anchor each team's connecting bar runs from)."""
+    return TEAM_TITLE_CARD_TEMPLATE.format(
+        name=name,
+        color=color,
+        extend=BAR_EXTEND if has_members else "0px",
+    ).strip()
+
+def render_member_card(member_id, name, role, img_content, color=None, is_last=False):
+    """Member tile. With a colour it carries the team's connecting bar; without, it is plain
+    (used by sections that have no team titles, e.g. Steering & Guidance)."""
+    if color is None:
+        return MEMBER_CARD_PLAIN_TEMPLATE.format(
+            id=member_id, name=name, role=role, img_content=img_content
+        ).strip()
+    return MEMBER_CARD_TEMPLATE.format(
+        id=member_id,
+        name=name,
+        role=role,
+        img_content=img_content,
+        color=color,
+        extend="0px" if is_last else BAR_EXTEND,
+    ).strip()
 
 def main():
     print("=" * 60)
@@ -679,24 +527,21 @@ def main():
         cat_details = CATEGORY_DETAILS[cat_key]
         
         cards_html = ""
-        
+        has_team_titles = cat_key in categories_with_team_titles
+
         # Keep teams in CSV order (insertion order)
-        for team_name in cat_data["order"]:
+        for team_index, team_name in enumerate(cat_data["order"]):
             members = cat_data["teams"][team_name]
-            
-            # Only Strategic and Operations display team title cards; Steering and Guidance list members directly.
-            if cat_key in categories_with_team_titles:
-                bg_class = "teal"
-                if cat_key == "operations":
-                    bg_class = "slate"
-                
-                cards_html += TEAM_TITLE_CARD_TEMPLATE.format(
-                    name=team_name,
-                    bg_class=bg_class
-                ).strip()
-            
+
+            # Only Strategic and Operations display team title cards (and the connecting
+            # bars that group each team); Steering and Guidance list members directly.
+            team_color = TEAM_COLORS[team_index % len(TEAM_COLORS)] if has_team_titles else None
+
+            if has_team_titles:
+                cards_html += render_title_card(team_name, team_color, has_members=bool(members))
+
             # Member Cards
-            for member in members:
+            for member_index, member in enumerate(members):
                 img_content = ""
                 if member["imgUrl"]:
                     img_content = f'<img src="{member["imgUrl"]}" alt="{member["name"]}" class="sc-card-img" />'
@@ -704,12 +549,11 @@ def main():
                     # Placeholder for missing image
                     img_content = f'<div class="sc-placeholder">{member["initials"]}</div>'
 
-                cards_html += MEMBER_CARD_TEMPLATE.format(
-                    id=member["id"],
-                    name=member["name"],
-                    role=member["role"],
-                    img_content=img_content
-                ).strip()
+                cards_html += render_member_card(
+                    member["id"], member["name"], member["role"], img_content,
+                    color=team_color,
+                    is_last=(member_index == len(members) - 1),
+                )
 
                 # Generate Modal for this member
                 img_content_large = ""

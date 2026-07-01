@@ -9,7 +9,8 @@
         "Open Science"
     ],
     "references": [
-        "Health Research Board. (n.d.). Declaration on Research Assessment. Retrieved from https://www.hrb.ie/funding/funding-schemes/before-you-apply/how-we-assess-applications/declaration-on-research-assessment/"
+        "Health Research Board. (n.d.). <i>Declaration on Research Assessment</i>. Retrieved from https://www.hrb.ie/funding/funding-schemes/before-you-apply/how-we-assess-applications/declaration-on-research-assessment/",
+        "<i>San Francisco Declaration on Research Assessment (DORA)</i>. (n.d.). https://sfdora.org/"
     ],
     "drafted_by": [
         "Aoife O’Mahony"

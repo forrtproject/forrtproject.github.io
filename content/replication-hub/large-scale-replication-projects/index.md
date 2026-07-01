@@ -295,5 +295,41 @@ Here you can find a list of completed and ongoing projects that summarize replic
    <td>No
    </td>
   </tr>
+  <tr>
+   <td>Experimental Economics Replication Project (EERP; Camerer et al. 2016)
+   </td>
+   <td>Experimental Economics
+   </td>
+   <td><a href="https://doi.org/10.1126/science.aaf0918">https://doi.org/10.1126/science.aaf0918</a>
+   </td>
+   <td>Yes
+   </td>
+   <td>No
+   </td>
+  </tr>
+  <tr>
+   <td>Mechanical Turk Replication Project (MTRP; Holzmeister et al. 2024)
+   </td>
+   <td>Social Sciences (online experiments)
+   </td>
+   <td><a href="https://doi.org/10.1038/s41562-024-02062-9">https://doi.org/10.1038/s41562-024-02062-9</a>
+   </td>
+   <td>Yes
+   </td>
+   <td>No
+   </td>
+  </tr>
+  <tr>
+   <td>Huber et al. (forthcoming)
+   </td>
+   <td>Experimental Economics (asset markets)
+   </td>
+   <td><a href="https://dx.doi.org/10.2139/ssrn.5048949">https://dx.doi.org/10.2139/ssrn.5048949</a>
+   </td>
+   <td>No
+   </td>
+   <td>No
+   </td>
+  </tr>
 </table>
 

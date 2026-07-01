@@ -12,7 +12,7 @@
         "Vulnerable population"
     ],
     "references": [
-        "Braun, V., & Clarke, V. (2013). Successful Qualitative Research. SAGE Publications."
+        "Braun, V., & Clarke, V. (2013). <i>Successful Qualitative Research</i>. SAGE Publications."
     ],
     "drafted_by": [
         "Claire Melia"

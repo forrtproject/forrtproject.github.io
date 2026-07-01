@@ -9,7 +9,7 @@
         "Taxonomy"
     ],
     "references": [
-        "Noy, N. F., & McGuinness, D. L. (2001). Ontology development 101: A guide to creating your first ontology. https://corais.org/sites/default/files/ontology_development_101_aguide_to_creating_your_first_ontology.pdf"
+        "Noy, N. F., & McGuinness, D. L. (2001). <i>Ontology development 101: A guide to creating your first ontology</i>. https://corais.org/sites/default/files/ontology_development_101_aguide_to_creating_your_first_ontology.pdf"
     ],
     "drafted_by": [
         "Emma Norris"

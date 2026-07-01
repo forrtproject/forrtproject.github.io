@@ -24,7 +24,7 @@
           {{ $featEnabled := site.Params.enable_featured_resources }}
           {{ $hasFeat := false }}
           {{ if $featEnabled }}
-            {{ with site.Data.featured_resources }}
+            {{ with hugo.Data.featured_resources }}
               {{ $ck := printf "%d" (int $cluster.number) }}
               {{ with index .clusters $ck }}{{ $hasFeat = true }}{{ end }}
             {{ end }}
@@ -42,7 +42,9 @@
           </li>
           {{ end }}
           {{ range $si, $sc := $cluster.sub_clusters }}
-          {{ $scid := printf "c%d-sc%d" (int $cluster.number) $si }}
+          {{/* Slug must match cluster_section.html so the anchor target exists. */}}
+          {{ $slug := $sc.name | lower | replaceRE "[^a-z0-9]+" "-" | replaceRE "^-+|-+$" "" }}
+          {{ $scid := printf "c%d-%s" (int $cluster.number) $slug }}
           {{ $subHref := printf "#%s" $cid }}
           {{ if and (eq $link_mode "subpath") (not $isActive) }}
             {{ $subHref = printf "/clusters/cluster-%d/#%s" (int $cluster.number) $scid | relURL }}

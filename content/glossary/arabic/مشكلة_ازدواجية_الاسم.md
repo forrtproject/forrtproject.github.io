@@ -9,7 +9,7 @@
         "ORCID (Open Researcher and Contributor ID)"
     ],
     "references": [
-        "Wilson, B., & Fenner, M. (2012). Open Researcher & Contributor ID (ORCID): Solving the Name Ambiguity Problem. Educause Review - E-Content, 47(3), 54–55. https://er.educause.edu/articles/2012/5/open-researcher--contributor-id-orcid-solving-the-name-ambiguity-problem"
+        "Wilson, B., & Fenner, M. (2012). Open Researcher & Contributor ID (ORCID): Solving the Name Ambiguity Problem. <i>Educause Review - E-Content</i>, <i>47</i>(3), 54–55. https://er.educause.edu/articles/2012/5/open-researcher--contributor-id-orcid-solving-the-name-ambiguity-problem"
     ],
     "drafted_by": [
         "Shannon Francis"

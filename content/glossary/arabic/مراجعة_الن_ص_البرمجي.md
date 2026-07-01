@@ -8,8 +8,8 @@
         "Version control"
     ],
     "references": [
-        "Petre, M., & Wilson, G. (2014). Code review for and by scientists. arXiv Preprint arXiv:1407.5648. https://arxiv.org/abs/1407.5648",
-        "Scopatz, A. M., & Huff, K. D. (2015). Effective Computation in Physics: Field Guide to Research with Python (1st ed.). O’Reilly Media. http://shop.oreilly.com/product/0636920033424.do"
+        "Petre, M., & Wilson, G. (2014). Code review for and by scientists. <i>arXiv Preprint arXiv:1407.5648</i>. https://arxiv.org/abs/1407.5648",
+        "Scopatz, A. M., & Huff, K. D. (2015). <i>Effective Computation in Physics: Field Guide to Research with Python</i> (1st ed.). O’Reilly Media. http://shop.oreilly.com/product/0636920033424.do"
     ],
     "drafted_by": [
         "Filip Dechterenko"

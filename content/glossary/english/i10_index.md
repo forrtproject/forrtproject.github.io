@@ -10,7 +10,7 @@
         "Impact"
     ],
     "references": [
-        "University, C. (2020). Measuring your research impact: i10 index. Cornell University Library. https://guides.library.cornell.edu/impact/author-impact-10"
+        "Cornell University. (2020). <i>Measuring your research impact: i10 index</i>. Cornell University Library. https://guides.library.cornell.edu/impact/author-impact-10"
     ],
     "drafted_by": [
         "Emma Norris"

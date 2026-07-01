@@ -9,7 +9,9 @@
         "R",
         "Reproducibility"
     ],
-    "references": [],
+    "references": [
+        "The jamovi project. (2020). <i>jamovi (Version 1.2) [Computer Software]</i>. https://www.jamovi.org"
+    ],
     "drafted_by": [
         "Amélie Beffara Bret"
     ],

@@ -9,7 +9,7 @@
         "Under-representation"
     ],
     "references": [
-        "Zurn, P., Bassett, D. S., & Rust, N. C. (2020). The Citation Diversity Statement: A Practice of Transparency, A Way of Life. Trends in Cognitive Sciences, 24(9), 669–672. https://doi.org/10.1016/j.tics.2020.06.009"
+        "Zurn, P., Bassett, D. S., & Rust, N. C. (2020). The Citation Diversity Statement: A Practice of Transparency, A Way of Life. <i>Trends in Cognitive Sciences</i>, <i>24</i>(9), 669–672. https://doi.org/10.1016/j.tics.2020.06.009"
     ],
     "drafted_by": [
         "Helena Hartmann"

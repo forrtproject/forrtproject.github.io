@@ -1,4 +1,5 @@
-{{ $summaries := site.Data.summaries }}
+{{ partial "structured-data/summaries-jsonld.html" (dict "page" .Page "deiOnly" false) }}
+{{ $summaries := hugo.Data.summaries }}
 {{ range $summaries }}
 
 <h2 id="{{.Id}}">{{ .Title | markdownify }}</h2>

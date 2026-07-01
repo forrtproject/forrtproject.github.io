@@ -7,7 +7,7 @@
         "Open source software"
     ],
     "references": [
-        "Team, J. D. (2021). JabRef - An open-source, cross-platform citation and reference management software. https://www.jabref.org"
+        "JabRef Development Team. (2021). <i>JabRef - An open-source, cross-platform citation and reference management software</i>. https://www.jabref.org"
     ],
     "drafted_by": [
         "Aleksandra Lazić"

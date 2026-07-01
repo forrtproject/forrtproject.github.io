@@ -1,0 +1,50 @@
+{{/* CollectionPage + ScholarlyArticle JSON-LD for the Open & Reproducible
+     Science Summaries pages. The summaries live in data/summaries.json and are
+     rendered as anchored sections on a single page, so each entry is exposed as
+     a ScholarlyArticle whose url points at its in-page anchor.
+
+     Call with: (dict "page" $page "deiOnly" <bool>)
+       deiOnly true  -> only the DEI-tagged summaries (⌺), matching summaries_dei
+       deiOnly false -> all summaries, matching the summaries shortcode
+
+     DOIs are extracted from the stored APA reference; if none is present the
+     identifier is simply omitted (never guessed). */}}
+{{- $page := .page -}}
+{{- $deiOnly := .deiOnly -}}
+{{- $parts := slice -}}
+{{- range $s := hugo.Data.summaries -}}
+  {{- if or (not $deiOnly) (in $s.Title "⌺") -}}
+    {{/* Clean the title: drop the ◈ / ⌺ status symbols and any markdown. */}}
+    {{- $name := trim ($s.Title | replaceRE "[◈⌺]" "" | plainify) " " -}}
+    {{- $url := printf "%s#%s" $page.Permalink $s.Id -}}
+    {{- $article := dict
+        "@type" "ScholarlyArticle"
+        "name" $name
+        "headline" $name
+        "url" $url
+        "inLanguage" "en"
+        "publisher" (dict "@type" "Organization" "name" "FORRT" "url" "https://forrt.org") -}}
+    {{- with $s.Abstract -}}
+      {{- $abs := . | plainify | truncate 500 "…" -}}
+      {{- $abs = replaceRE "(?i)</script" "<\\/script" $abs -}}
+      {{- $article = merge $article (dict "abstract" $abs) -}}
+    {{- end -}}
+    {{- $dois := findRE `10\.\d{4,9}/[^\s)\]]+` ($s.Reference | default "") 1 -}}
+    {{- with $dois -}}
+      {{- $doi := index . 0 | replaceRE `[.,;]+$` "" -}}
+      {{- $article = merge $article (dict "identifier" (dict "@type" "PropertyValue" "propertyID" "DOI" "value" $doi)) -}}
+    {{- end -}}
+    {{- $parts = $parts | append $article -}}
+  {{- end -}}
+{{- end -}}
+{{- if $parts -}}
+  {{- $collection := dict
+      "@context" "https://schema.org"
+      "@type" "CollectionPage"
+      "name" $page.Title
+      "url" $page.Permalink
+      "isPartOf" (dict "@type" "WebSite" "name" "FORRT" "url" "https://forrt.org")
+      "numberOfItems" (len $parts)
+      "hasPart" $parts -}}
+  <script type="application/ld+json">{{ $collection | jsonify | safeJS }}</script>
+{{- end -}}

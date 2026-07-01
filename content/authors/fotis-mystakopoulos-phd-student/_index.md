@@ -1,10 +1,8 @@
 ---
 # Display name
 name: "Fotis Mystakopoulos, PhD Student"
+title: "Fotis Mystakopoulos, PhD Student"
 
-# Username (this should match the folder name)
-authors:
-- Name "Fotis Mystakopoulos, PhD Student"
 
 # Is this the primary user of the site?
 superuser: false
