@@ -58,6 +58,10 @@ Three tabs, all with header rows:
 - `Discipline` must match a `Discipline` in the Disciplines tab exactly.
 - `Category` should be one of: `General`, `Open Data`, `Open Methods`,
   `Open Outputs`, `Open Education`. Other values render as a grey badge.
+- Column E, `Category (pre-cleanup backup)`, holds each row's category
+  value from before the 2026-07 cleanup pass (issue #771) that fixed
+  empty/non-standard categories. Safe to delete once that pass is
+  confirmed correct; not read by any script.
 
 ## Common workflows
 
