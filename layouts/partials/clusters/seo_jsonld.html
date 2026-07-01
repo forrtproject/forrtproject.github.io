@@ -1,5 +1,5 @@
 {{/* Structured data: WebPage + ItemList of all clusters for search engines */}}
-{{ $data := site.Data.clusters_v4 }}
+{{ $data := hugo.Data.clusters_v4 }}
 {{ if not $data }}{{ return }}{{ end }}
 
 {{ $summary := .Params.summary | default .Description | default "" }}
@@ -22,7 +22,7 @@
   {{ $elements = $elements | append $item }}
 {{ end }}
 
-{{ $webpage := dict "@type" "WebPage" "@id" (printf "%s#webpage" .Permalink) "url" .Permalink "name" .Title "description" $summary "inLanguage" (site.LanguageCode | default "en-US") }}
+{{ $webpage := dict "@type" "WebPage" "@id" (printf "%s#webpage" .Permalink) "url" .Permalink "name" .Title "description" $summary "inLanguage" (site.Language.Locale | default "en-US") }}
 {{ if and .Params.sharing_image_resource (.Resources.GetMatch .Params.sharing_image_resource) }}
   {{ $pimg := .Resources.GetMatch .Params.sharing_image_resource }}
   {{ $webpage = merge $webpage (dict "primaryImageOfPage" (dict "@type" "ImageObject" "url" $pimg.Permalink)) }}

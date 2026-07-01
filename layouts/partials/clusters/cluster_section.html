@@ -10,7 +10,7 @@
 {{ $featuredEnabled := site.Params.enable_featured_resources }}
 {{ $featuredData := false }}
 {{ if $featuredEnabled }}
-  {{ with site.Data.featured_resources }}
+  {{ with hugo.Data.featured_resources }}
     {{ $key := printf "%d" (int $cluster.number) }}
     {{ with index .clusters $key }}
       {{ $featuredData = . }}
@@ -71,7 +71,7 @@
         {{ end }}
 
         {{ if $sc.publications }}
-        {{ $pubCards := site.Data.pub_cards }}
+        {{ $pubCards := hugo.Data.pub_cards }}
         <div class="fr-cards-list">
           {{ range $pi, $pub := $sc.publications }}
           {{ $card := false }}

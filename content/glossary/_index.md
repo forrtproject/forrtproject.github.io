@@ -1,6 +1,6 @@
 ---
 title: Glossary
-_build:
+build:
   render: never
   list: never
 ---

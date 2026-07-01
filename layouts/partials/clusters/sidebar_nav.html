@@ -24,7 +24,7 @@
           {{ $featEnabled := site.Params.enable_featured_resources }}
           {{ $hasFeat := false }}
           {{ if $featEnabled }}
-            {{ with site.Data.featured_resources }}
+            {{ with hugo.Data.featured_resources }}
               {{ $ck := printf "%d" (int $cluster.number) }}
               {{ with index .clusters $ck }}{{ $hasFeat = true }}{{ end }}
             {{ end }}

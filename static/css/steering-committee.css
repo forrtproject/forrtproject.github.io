@@ -133,15 +133,26 @@ article.article .article-container .article-title {
     gap: 1rem;
     padding: 0;
     justify-content: flex-start;
+    /* Top-align every tile so title cards and member cards (and their connecting bars)
+       always line up, regardless of any height differences or theme alignment defaults. */
+    align-items: flex-start;
+    /* Clip the connecting team bars at the row/section edges so they break cleanly
+       at the end of a row and resume on the next one (see .sc-cbar). */
+    overflow: hidden;
 }
 
 /* Cards */
 .sc-card {
     position: relative;
-    background: #e2e8f0;
     cursor: pointer;
-    overflow: hidden;
-    border: 1px solid transparent;
+    /* overflow stays visible so the connecting bar can reach into the gap; the photo
+       itself is clipped by .sc-card-photo. */
+    overflow: visible;
+    /* No border: title cards have border:0, and with box-sizing:border-box a 1px border
+       here would push the absolutely-positioned photo and connecting bar 1px inward, so
+       photo cards would sit lower/smaller than title cards and the top bars wouldn't line
+       up into one continuous row. */
+    border: 0;
     /* Portrait aspect ratio 2:3 */
     aspect-ratio: 2/3;
     transition: box-shadow 0.3s ease;
@@ -150,6 +161,25 @@ article.article .article-container .article-title {
     /* Absolute width for consistent sizing */
     width: 180px;
     flex-shrink: 0;
+}
+
+/* Clipped photo wrapper: holds the image + overlay so the zoom-on-hover and crop stay
+   contained, while the connecting bar (a direct child of .sc-card) can overflow.
+   Positioning is forced so theme rules can never push the photo down inside the card. */
+.sc-card-photo {
+    position: absolute !important;
+    inset: 0 !important;
+    overflow: hidden;
+    background: #e2e8f0;
+    margin: 0 !important;
+}
+/* Guard against the theme wrapping the avatar in a lightbox <a>: make any such wrapper
+   fill the photo box so the image stays flush with the top of the card. */
+.sc-card-photo a {
+    position: absolute !important;
+    inset: 0 !important;
+    display: block !important;
+    margin: 0 !important;
 }
 
 @media (min-width: 640px) {
@@ -197,8 +227,10 @@ article.article .article-container .article-title {
 }
 
 .sc-card-img {
-    position: absolute;
-    inset: 0;
+    /* position/inset forced: the theme's `.article-style img` selector outranks this class,
+       so without !important it could drop the image into normal flow and misalign it. */
+    position: absolute !important;
+    inset: 0 !important;
     width: 100% !important; /* Force fill even if global img rules set height:auto */
     height: 100% !important;
     min-width: 100%;
@@ -293,6 +325,8 @@ article.article .article-container .article-title {
 
 /* Title Cards */
 .sc-title-card {
+    position: relative;
+    overflow: visible; /* let the connecting bar reach into the gap toward the first member */
     aspect-ratio: 2/3;
     /* Match card aspect ratio */
     padding: 1rem;
@@ -300,6 +334,9 @@ article.article .article-container .article-title {
     flex-direction: column;
     justify-content: center;
     border: 0;
+    /* Per-team colour, set inline via --team-color */
+    background-color: var(--team-color, #0b5d55);
+    color: #f8fafc;
     /* Absolute width for consistent sizing */
     width: 180px;
     flex-shrink: 0;
@@ -323,16 +360,6 @@ article.article .article-container .article-title {
     }
 }
 
-.sc-title-card.teal {
-    background-color: #0b5d55; /* slightly darker teal */
-    color: #f8fafc;
-}
-
-.sc-title-card.slate {
-    background-color: #364152; /* deeper slate */
-    color: #f8fafc;
-}
-
 .sc-title-label {
     font-size: 0.65rem;
     font-weight: 700;
@@ -340,7 +367,7 @@ article.article .article-container .article-title {
     letter-spacing: 0.1em;
     opacity: 0.9;
     color: #e2e8f0;
-    margin-bottom: 0.25rem;
+    margin: 0 0 0.25rem; /* reset theme heading/paragraph margins */
 }
 
 .sc-title-text {
@@ -348,80 +375,24 @@ article.article .article-container .article-title {
     font-weight: 700;
     line-height: 1.2;
     color: #f8fafc;
+    margin: 0; /* reset theme h3 margins so the title card can't grow past its aspect ratio */
 }
 
-/* Team linkage styling */
-.sc-team-linked {
-    position: relative;
-    border-color: transparent;
-    box-shadow: none;
-}
-
-.sc-team-title {
-    position: relative;
-    border-color: transparent;
-    box-shadow: none;
-    overflow: hidden;
-}
-
-.sc-team-linked::before,
-.sc-team-linked::after,
-.sc-team-title::before,
-.sc-team-title::after {
-    content: "";
+/* Connecting team bar
+   A coloured rail along the top of every tile in a team (title + members). It reaches
+   --bar-extend past the tile's right edge to bridge the grid gap to the next tile in the
+   same team, so a team reads as one connected run. The last tile in a team uses
+   --bar-extend: 0, ending the run; the .sc-grid clips overflow, so when a team wraps the
+   bar is cut at the row edge and resumes on the next row. */
+.sc-cbar {
     position: absolute;
+    top: 0;
+    left: 0;
+    right: calc(-1 * var(--bar-extend, 0px));
+    height: 7px;
+    background: var(--team-color, #0f766e);
     pointer-events: none;
-    z-index: 30;
-}
-
-/* Member accent: thin line at top */
-.sc-team-linked::before,
-.sc-team-linked::after {
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 5px;
-    background: var(--team-color, #0f766e);
-}
-
-.sc-team-linked::after {
-    right: 12px;
-    width: 16px;
-    height: 5px;
-    background: linear-gradient(90deg, transparent 0%, var(--team-color, #0f766e) 60%, transparent 100%);
-}
-
-/* Team title accent: solid bar + half arrow at top */
-.sc-team-title {
-    position: relative;
-    border-color: transparent;
-    box-shadow: none;
-    overflow: hidden;
-}
-
-.sc-team-title::before,
-.sc-team-title::after {
-    display: block;
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-}
-
-.sc-team-title::before {
-    width: 100%;
-    height: 8px;
-    background: var(--team-color, #0f766e);
-}
-
-.sc-team-title::after {
-    left: auto;
-    right: 0;
-    width: 0;
-    height: 0;
-    border-top: 4px solid transparent;
-    border-bottom: 4px solid transparent;
-    border-left: 8px solid var(--team-color, #0f766e); /* half arrowhead */
+    z-index: 31;
 }
 
 /* Modals */

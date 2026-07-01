@@ -4,8 +4,8 @@
 {{- $theme_index := (site.Params.theme | lower | replaceRE "\\s" "_") | default "minimal" -}}
 
 {{/* Get name of site's Font Set. Precedence: Params.toml > Theme > Default (Minimal) */}}
-{{- $font_index := (site.Params.font | lower | replaceRE "\\s" "_") | default ((index site.Data.themes $theme_index).font | lower | replaceRE "\\s" "_") | default $theme_index -}}
-{{- $font_index := cond (isset site.Data.fonts $font_index) $font_index "minimal" -}}
+{{- $font_index := (site.Params.font | lower | replaceRE "\\s" "_") | default ((index hugo.Data.themes $theme_index).font | lower | replaceRE "\\s" "_") | default $theme_index -}}
+{{- $font_index := cond (isset hugo.Data.fonts $font_index) $font_index "minimal" -}}
 
 {{/* Get Font Size. */}}
 
@@ -17,7 +17,7 @@
 
 {{/* Load Font Set. */}}
 
-{{- $font := index site.Data.fonts $font_index -}}
+{{- $font := index hugo.Data.fonts $font_index -}}
 {{- $scr.Set "google_fonts" $font.google_fonts -}}
 {{- $scr.Set "body_font" $font.body_font -}}
 {{- $scr.Set "heading_font" $font.heading_font -}}
@@ -26,7 +26,7 @@
 
 {{/* Load Theme. */}}
 
-{{ $theme := index site.Data.themes $theme_index }}
+{{ $theme := index hugo.Data.themes $theme_index }}
 
 {{- $scr.Set "light" ($theme.light | default true) -}}
 
