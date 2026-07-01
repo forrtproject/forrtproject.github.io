@@ -86,6 +86,20 @@
     }
   }
 
+  /**
+   * Some pages (e.g. disciplines) render each sub-section as a Bootstrap
+   * tab-pane rather than an always-in-DOM accordion section, so an inactive
+   * pane sits at `display: none` until its trigger tab is shown. Activate it
+   * before any scroll/measurement runs, otherwise the target has a zeroed
+   * bounding rect and the scroll lands at the top of the page.
+   */
+  function activateBootstrapTabIfNeeded(paneId, tabId) {
+    var pane = paneId ? document.getElementById(paneId) : null;
+    if (pane && pane.classList.contains('tab-pane') && tabId) {
+      showBootstrapTab(document.getElementById(tabId));
+    }
+  }
+
   function collectClustersInlineSearchResults(scopeRoot, tokens, includeRefs) {
     var results = [];
     var seen = {};
@@ -420,6 +434,7 @@
         var sectionId = tabId.replace(/-tab$/, '');
         var target = sectionId ? document.getElementById(sectionId) : null;
         if (target) {
+          activateBootstrapTabIfNeeded(sectionId, tabId);
           /* Expand accordion section if collapsed */
           var accBody = target.querySelector('.acc-body');
           var accHeader = target.querySelector('.acc-header');
@@ -437,12 +452,13 @@
       });
     });
 
-    /* e.g. /clusters/cluster-2/#c2-sc1 or #c2-featured — scroll to matching section */
+    /* e.g. /clusters/cluster-2/#c2-sc1 or #c2-featured, or /disciplines/#f1-d3 — scroll to matching section */
     function applyClusterUrlHash() {
       var raw = window.location.hash.replace(/^#/, '');
-      if (!raw || !/^c\d+-[a-z0-9-]+$/.test(raw)) return;
+      if (!raw || !/^(c\d+-[a-z0-9-]+|f\d+-d\d+)$/.test(raw)) return;
       var target = document.getElementById(raw);
       if (!target) return;
+      activateBootstrapTabIfNeeded(raw, raw + '-tab');
       /* Expand accordion section if collapsed */
       var accBody = target.querySelector('.acc-body');
       var accHeader = target.querySelector('.acc-header');
@@ -616,6 +632,7 @@
         if (!section) return;
 
         setTimeout(function () {
+          activateBootstrapTabIfNeeded(paneId, tabId);
           var scrollEl = null;
           if (hitType === 'cluster') {
             scrollEl =
