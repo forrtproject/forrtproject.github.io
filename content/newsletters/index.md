@@ -1,6 +1,5 @@
 ---
 title: Newsletter Archives
-# description: 
 newsletters:
   - year: 2026
     color: "#2c7a7b"
