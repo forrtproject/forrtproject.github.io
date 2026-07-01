@@ -24,7 +24,7 @@ type: welcome
     step="3"
     title="Browse Resources"
     description="Explore our curated collection of over 1,400 resources to find materials relevant to your teaching needs."
-    url="/curated_resources"
+    url="/resources"
 >}}
 
 {{< welcome 
