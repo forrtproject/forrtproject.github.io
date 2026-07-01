@@ -64,6 +64,12 @@
   parent = "about"
 
 [[main]]
+  name = "Confidential Advisor & Ombuds"  # A link title for your page.
+  url = "/about/confidential-advisor-ombuds/"  # The URL of your page.
+  weight = 18.5  # The position of your page in the menu.
+  parent = "about"
+
+[[main]]
   name = "Contributors"  # A link title for your page.
   url = "/contributors"  # The URL of your page.
   weight = 19  # The position of your page in the menu.

@@ -275,6 +275,17 @@ def sanitize_filename(name):
     name = re.sub(r'\\s+', '-', name)
     return name
 
+# Role labels the sheet uses that we want to display differently on the site
+# (e.g. to keep terminology gender-neutral and consistent with other pages).
+ROLE_LABEL_OVERRIDES = {
+    "Ombudsman": "Ombuds",
+}
+
+def normalize_role_label(role):
+    if not role or (pd is not None and pd.isna(role)):
+        return role
+    return ROLE_LABEL_OVERRIDES.get(str(role).strip(), role)
+
 def get_initials(name):
     parts = name.split()
     if len(parts) >= 2:
@@ -522,6 +533,12 @@ def main():
     cat_order = ["strategic", "operations", "steering", "guidance"]
     categories_with_team_titles = {"strategic", "operations"}
 
+    # Some people hold more than one role (e.g. an Ethics & Inclusion advisor who is
+    # also the Ombuds) and appear as separate rows in the sheet. Give each occurrence
+    # a distinct DOM id so its card links to its own modal instead of two cards sharing
+    # one id (only the first would ever open, per getElementById semantics).
+    seen_ids = {}
+
     for cat_key in cat_order:
         cat_data = categories[cat_key]
         cat_details = CATEGORY_DETAILS[cat_key]
@@ -542,6 +559,11 @@ def main():
 
             # Member Cards
             for member_index, member in enumerate(members):
+                base_id = member["id"]
+                occurrence = seen_ids.get(base_id, 0) + 1
+                seen_ids[base_id] = occurrence
+                render_id = base_id if occurrence == 1 else f"{base_id}-{occurrence}"
+
                 img_content = ""
                 if member["imgUrl"]:
                     img_content = f'<img src="{member["imgUrl"]}" alt="{member["name"]}" class="sc-card-img" />'
@@ -550,7 +572,7 @@ def main():
                     img_content = f'<div class="sc-placeholder">{member["initials"]}</div>'
 
                 cards_html += render_member_card(
-                    member["id"], member["name"], member["role"], img_content,
+                    render_id, member["name"], normalize_role_label(member["role"]), img_content,
                     color=team_color,
                     is_last=(member_index == len(members) - 1),
                 )
@@ -563,9 +585,9 @@ def main():
                     img_content_large = f'<span style="font-size: 2rem; color: #94a3b8; font-weight: 600;">{member["initials"]}</span>'
 
                 modals_html += MODAL_TEMPLATE.format(
-                    id=member["id"],
+                    id=render_id,
                     name=member["name"],
-                    role=member["role_title"] or member["role"],
+                    role=normalize_role_label(member["role_title"] or member["role"]),
                     bio=html.escape(member["bio"] or "Bio coming soon."),
                     img_content_large=img_content_large,
                     social_links=generate_social_links(member)
