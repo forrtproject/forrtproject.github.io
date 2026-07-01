@@ -167,6 +167,12 @@
     parent = "nexus"
 
   [[main]]
+    name = "Best-Practice Guidelines for Psychology"
+    url = "https://forrt.org/best-practices-psychology/"
+    weight = 32.5
+    parent = "nexus"
+
+  [[main]]
     name = "Citation Politics"
     url = "/citation-politics"
     weight = 33
