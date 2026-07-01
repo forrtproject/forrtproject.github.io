@@ -435,14 +435,14 @@ layout: single
         <h4 class="sc-card-name">Sam Parsons</h4>
         <p class="sc-card-role">Stewardship Panel</p>
     </div>
-</div><div class="sc-card" onclick="openModal('thomasrhysevans')">
+</div><div class="sc-card" onclick="openModal('thomasrhysevans-2')">
     <div class="sc-card-photo">
         <img src="/authors/thomasrhysevans/avatar.webp" alt="Thomas Rhys Evans" class="sc-card-img" />
         <div class="sc-card-overlay"></div>
     </div>
     <div class="sc-card-content">
         <h4 class="sc-card-name">Thomas Rhys Evans</h4>
-        <p class="sc-card-role">Ombudsman</p>
+        <p class="sc-card-role">Ombuds</p>
     </div>
 </div>
     </div>
@@ -1265,10 +1265,10 @@ I am also very interested in Open Science and an avid R user. In that space, I e
             </div>
         </div>
     </div>
-</div><div id="modal-thomasrhysevans" class="sc-modal-backdrop">
+</div><div id="modal-thomasrhysevans-2" class="sc-modal-backdrop">
     <div class="sc-modal-content">
         <div class="sc-modal-header">
-            <button onclick="closeModal('thomasrhysevans')" class="sc-close-btn">
+            <button onclick="closeModal('thomasrhysevans-2')" class="sc-close-btn">
                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 18 12"/></svg>
             </button>
         </div>
@@ -1284,7 +1284,7 @@ I am also very interested in Open Science and an avid R user. In that space, I e
                 </div>
                 <div class="sc-modal-main">
                     <h3 class="sc-modal-name">Thomas Rhys Evans</h3>
-                    <p class="sc-modal-role">Ombudsman</p>
+                    <p class="sc-modal-role">Ombuds</p>
                     <div class="sc-modal-bio">Bio coming soon.</div>
                 </div>
             </div>
