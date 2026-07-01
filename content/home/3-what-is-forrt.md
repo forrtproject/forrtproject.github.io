@@ -3,7 +3,7 @@
 widget = "about_welcome"  # See https://sourcethemes.com/academic/docs/page-builder/
 headless = true  # This file represents a page section.
 active = true  # Activate this widget? true/false
-weight = 30  # Order that this section will appear in.
+weight = 35  # Order that this section will appear in.
 
 title = "What is FORRT?"
 
@@ -12,9 +12,12 @@ title = "What is FORRT?"
 # See https://sourcethemes.com/academic/docs/get-started/#introduce-yourself
 author = "forrt"
 
+# YouTube video shown (as a click-to-play lightbox) in the left media column.
+video_id = "XlL54egjSoA"
+
 [design.spacing]
   # Customize the section spacing. Order is top, right, bottom, left.
-  padding = ["60px", "0", "60px", "0"]
+  padding = ["24px", "0", "24px", "0"]
   
 +++
 

@@ -1,0 +1,76 @@
+{{- define "main" -}}
+{{ $newsletters := .Params.newsletters }}
+
+<article class="article nla-page">
+  {{ partial "page_header" . }}
+
+  <div class="article-container nla-container">
+
+    <div class="nla-subscribe-band">
+      <p class="nla-subscribe-label">Subscribe to the FORRT newsletter to receive the latest news, initiatives, events, and opportunities straight to your inbox.</p>
+      <div id="octopus-form-5fb3cb44-8c81-11f0-9781-f7fc195374ed">
+        <script async src="https://eocampaign1.com/form/5fb3cb44-8c81-11f0-9781-f7fc195374ed.js"
+                data-form="5fb3cb44-8c81-11f0-9781-f7fc195374ed"></script>
+      </div>
+    </div>
+
+    <div class="nla-archive-header">
+      <h3 class="nla-archive-title">Archive</h3>
+      <div class="nla-year-tabs" role="tablist" aria-label="Filter by year">
+        <button class="nla-year-tab active" data-year="all" role="tab" aria-selected="true">All</button>
+        {{ range $newsletters }}
+        <button class="nla-year-tab" data-year="{{ .year }}" role="tab" aria-selected="false"
+                style="--nla-year-color: {{ .color }}">{{ .year }}</button>
+        {{ end }}
+      </div>
+    </div>
+
+    <div class="nla-archive">
+      {{ range $newsletters }}
+      {{ $y := . }}
+      <section class="nla-year-section" data-year="{{ $y.year }}" aria-label="{{ $y.year }} issues">
+
+        <div class="nla-year-band" style="--nla-year-color: {{ $y.color }}">
+          <span class="nla-year-band-line"></span>
+          <span class="nla-year-band-label">{{ $y.year }}</span>
+          <span class="nla-year-band-line"></span>
+        </div>
+
+        <div class="nla-grid">
+          {{ range $y.issues }}
+          <a href="{{ .url }}" target="_blank" rel="noopener"
+             class="nla-card" style="--nla-year-color: {{ $y.color }}"
+             aria-label="Read {{ .month }} {{ $y.year }} newsletter">
+            <div class="nla-card-accent"></div>
+            <div class="nla-card-body">
+              {{ if .new }}<span class="nla-badge-new">New</span>{{ end }}
+              <div class="nla-card-month">{{ .month }}</div>
+              <div class="nla-card-year">{{ $y.year }}</div>
+            </div>
+            <div class="nla-card-footer">Read →</div>
+          </a>
+          {{ end }}
+        </div>
+
+      </section>
+      {{ end }}
+    </div>
+
+  </div>
+</article>
+
+<script>
+(function () {
+  var tabs = document.querySelectorAll('.nla-year-tab');
+  var sections = document.querySelectorAll('.nla-year-section');
+  tabs.forEach(function (tab) {
+    tab.addEventListener('click', function () {
+      var year = tab.dataset.year;
+      tabs.forEach(function (t) { t.classList.remove('active'); t.setAttribute('aria-selected', 'false'); });
+      tab.classList.add('active'); tab.setAttribute('aria-selected', 'true');
+      sections.forEach(function (s) { s.style.display = (year === 'all' || s.dataset.year === year) ? '' : 'none'; });
+    });
+  });
+}());
+</script>
+{{- end -}}

@@ -1,0 +1,22 @@
+{{/* Renders one announcement card. Context (.) is the post page. */}}
+{{ $post := . }}
+{{ $img := ($post.Resources.ByType "image").GetMatch "*featured*" }}
+{{ $cat := "" }}{{ with $post.Params.categories }}{{ $cat = index . 0 }}{{ end }}
+<a class="announcement-card{{ if not $img }} no-image{{ end }}" href="{{ $post.RelPermalink }}">
+  {{ with $img }}
+  <div class="ac-thumb">
+    <img loading="lazy" src="{{ (.Fill "640x360 Center").RelPermalink }}" alt="">
+  </div>
+  {{ end }}
+  <div class="ac-body">
+    <div class="ac-meta">
+      {{ with $cat }}<span class="ac-cat {{ lower . }}">{{ . }}</span>{{ end }}
+      <span class="ac-date">{{ $post.Date.Format "Jan 2006" }}</span>
+    </div>
+    <h3>{{ $post.Title }}</h3>
+    {{/* Render the rendered-markdown summary as HTML so formatting (bold, links)
+         and typographic entities (’, —) display correctly; CSS clamps the height. */}}
+    <div class="ac-summary">{{ $post.Summary }}</div>
+    <span class="ac-more">Read more ›</span>
+  </div>
+</a>

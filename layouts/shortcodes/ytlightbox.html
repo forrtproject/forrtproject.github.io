@@ -1,0 +1,9 @@
+{{/* Click-to-play YouTube thumbnail that opens in a Fancybox lightbox.
+     Usage: {{< ytlightbox VIDEO_ID >}}  (optional 2nd arg = max width, e.g. 560) */}}
+{{ $id := .Get 0 }}
+{{ $maxw := .Get 1 | default "560" }}
+<a class="yt-lightbox" data-fancybox style="max-width:{{ $maxw }}px"
+   href="https://www.youtube.com/watch?v={{ $id }}" aria-label="Play video">
+  <img loading="lazy" src="https://i.ytimg.com/vi/{{ $id }}/hqdefault.jpg" alt="Play video">
+  <span class="yt-play" aria-hidden="true"><i class="fas fa-play"></i></span>
+</a>

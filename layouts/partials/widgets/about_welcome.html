@@ -43,6 +43,13 @@
       {{ end }}
 
 
+      {{ with $page.Params.video_id }}
+      <a class="yt-lightbox profile-video" data-fancybox href="https://www.youtube.com/watch?v={{ . }}" aria-label="Play video">
+        <img loading="lazy" src="https://i.ytimg.com/vi/{{ . }}/hqdefault.jpg" alt="Play introduction video">
+        <span class="yt-play" aria-hidden="true"><i class="fas fa-play"></i></span>
+      </a>
+      {{ end }}
+
       <ul class="network-icon" aria-hidden="true">
         {{ range $person.social }}
         {{ $pack := or .icon_pack "fas" }}

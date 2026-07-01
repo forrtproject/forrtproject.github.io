@@ -1,75 +1,80 @@
 ---
 title: Newsletter Archives
----
-Stay updated by subscribing to the FORRT Newsletter 
-{{< subscribe >}}
-
-**:calendar: 2026**
-
-[| May  🆕](https://eocampaign1.com/web-version?p=fc2dc0f2-5a02-11f1-acce-9d9105ec3473&pt=campaign&t=1779997339&s=3af80e5a532a00aab817156af2b3a85643ab7b668d1960d384ba6d9ee2072ddd)
-
-[| April ](https://eocampaign1.com/web-version?p=8644de88-42bb-11f1-bea3-9d65e0900500&pt=campaign&t=1777532460&s=1106ac34f85bfa9f49456127a0721dc5de49dcde3135c164ab272a08a51f553e)
-
-[| March ](https://eocampaign1.com/web-version?p=37587f24-13bc-11f1-a58e-016a4c8ed9d0&pt=campaign&t=1774939747&s=0364890f4fe6275bb6fcf840a4994b12cab30ff7fa9428df282730367dd893bb)
-
-[| February ](https://eocampaign1.com/web-version?p=e0c335de-11b6-11f1-a1c2-6ba123ee4ad5&pt=campaign&t=1772047352&s=dec61220bf547f2a4345d54a8819f206f19df3923ec3234ae2e98517cbe4d9a7)
-
-[| January ](https://eocampaign1.com/web-version?p=fe198ab4-f705-11f0-b264-b3838bc6094d&pt=campaign&t=1769634321&s=8d9de871b0b694f3fb7ea79f9d5365fb858c018631402d1f306912c583e846e0)
-
-**Archives :calendar: 2025**
-
-[| November 2025](https://eocampaign1.com/web-version?p=9da7ff18-ca40-11f0-805f-0b7f4a24d8f2&pt=campaign&t=1764317790&s=488ccb62acab0d426b8ec62f02bd6034ee628c1275e0559b6689914870de5485)
-
-[| October 2025](https://eocampaign1.com/web-version?p=4b518678-a414-11f0-bce9-e9770cb46815&pt=campaign&t=1761811280&s=d307b488e66abc12b64a05f6f6e045787a870b27309d5be18bd067643f7ac7ff)
-
-[| September 2025](https://eocampaign1.com/web-version?p=9d2542f8-89a9-11f0-b475-23ec281bb67b&pt=campaign&t=1758528860&s=eea14e0decade201a0d677844e58344cbdb29bd474af14a1236ee92ee32a9c38)
-
-[| June 2025](https://us14.campaign-archive.com/?u=64c29a25a0ca81454399d522e&id=5161198508)
-
-[| May 2025](https://mailchi.mp/forrt/forrt-newsletter-10337231?e=626cf66991)
-
-[| April 2025](https://mailchi.mp/forrt/forrt-newsletter-10336035?e=626cf66991)
-
-[| March 2025](https://mailchi.mp/forrt/forrt-newsletter-10335133?e=626cf66991)
-
-[| February 2025](https://us14.campaign-archive.com/?u=64c29a25a0ca81454399d522e&id=ee4ccbd93a)
-
-[| January 2025](https://mailchi.mp/forrt/forrt-newsletter-10332513?e=626cf66991)
-
-**Archives :calendar: 2024**
-
-[| November 2024](https://mailchi.mp/forrt/forrt-newsletter-10331615?e=626cf66991)
-
-[| October 2024](https://us14.campaign-archive.com/?u=64c29a25a0ca81454399d522e&id=7373fd5817)
-
-[| September 2024](https://us14.campaign-archive.com/?u=64c29a25a0ca81454399d522e&id=aa76d449b1)
-
-[| June 2024](https://us14.campaign-archive.com/?u=64c29a25a0ca81454399d522e&id=8794516653)
-
-[| May 2024](https://mailchi.mp/forrt/forrt-newsletter-10322031?e=b822aa3541)
- 
-[| April 2024](https://eepurl.com/iNOpHc)
-
-[| March 2024](https://eepurl.com/iMC_ws)
-
-[| February 2024](https://eepurl.com/iJ49B-/)
-
-[| January 2024](http://eepurl.com/iF50HU)
-
-**Archives :calendar: 2023**
-
-[| November 2023](https://eepurl.com/iDsmPs)
-
-[| October 2023](https://eepurl.com/izZ49-/)
-
-[| September 2023](https://eepurl.com/itk9F-/)
-
-[| January 13th 2023](https://eepurl.com/ieYWrv)
-
-**Archives :calendar: 2022**
-
-[| August 19th 2022](https://eepurl.com/h5Y7xb)
-
-[| April 20th 2022](https://eepurl.com/hZ06Bb)
-
+newsletters:
+  - year: 2026
+    color: "#2c7a7b"
+    issues:
+      - month: "June"
+        url: "https://eocampaign1.com/web-version?p=a79bb344-73d1-11f1-a663-494f0ddf7524&pt=campaign&t=1782859269&s=3ae2d2946128703ed9115e6c0298dcc114fb97972e4eb76fb25ec221e2598a4e"
+        new: true
+      - month: "May"
+        url: "https://eocampaign1.com/web-version?p=fc2dc0f2-5a02-11f1-acce-9d9105ec3473&pt=campaign&t=1779997339&s=3af80e5a532a00aab817156af2b3a85643ab7b668d1960d384ba6d9ee2072ddd"
+      - month: "April"
+        url: "https://eocampaign1.com/web-version?p=8644de88-42bb-11f1-bea3-9d65e0900500&pt=campaign&t=1777532460&s=1106ac34f85bfa9f49456127a0721dc5de49dcde3135c164ab272a08a51f553e"
+      - month: "March"
+        url: "https://eocampaign1.com/web-version?p=37587f24-13bc-11f1-a58e-016a4c8ed9d0&pt=campaign&t=1774939747&s=0364890f4fe6275bb6fcf840a4994b12cab30ff7fa9428df282730367dd893bb"
+      - month: "February"
+        url: "https://eocampaign1.com/web-version?p=e0c335de-11b6-11f1-a1c2-6ba123ee4ad5&pt=campaign&t=1772047352&s=dec61220bf547f2a4345d54a8819f206f19df3923ec3234ae2e98517cbe4d9a7"
+      - month: "January"
+        url: "https://eocampaign1.com/web-version?p=fe198ab4-f705-11f0-b264-b3838bc6094d&pt=campaign&t=1769634321&s=8d9de871b0b694f3fb7ea79f9d5365fb858c018631402d1f306912c583e846e0"
+  - year: 2025
+    color: "#3b82c4"
+    issues:
+      - month: "November"
+        url: "https://eocampaign1.com/web-version?p=9da7ff18-ca40-11f0-805f-0b7f4a24d8f2&pt=campaign&t=1764317790&s=488ccb62acab0d426b8ec62f02bd6034ee628c1275e0559b6689914870de5485"
+      - month: "October"
+        url: "https://eocampaign1.com/web-version?p=4b518678-a414-11f0-bce9-e9770cb46815&pt=campaign&t=1761811280&s=d307b488e66abc12b64a05f6f6e045787a870b27309d5be18bd067643f7ac7ff"
+      - month: "September"
+        url: "https://eocampaign1.com/web-version?p=9d2542f8-89a9-11f0-b475-23ec281bb67b&pt=campaign&t=1758528860&s=eea14e0decade201a0d677844e58344cbdb29bd474af14a1236ee92ee32a9c38"
+      - month: "June"
+        url: "https://us14.campaign-archive.com/?u=64c29a25a0ca81454399d522e&id=5161198508"
+      - month: "May"
+        url: "https://mailchi.mp/forrt/forrt-newsletter-10337231?e=626cf66991"
+      - month: "April"
+        url: "https://mailchi.mp/forrt/forrt-newsletter-10336035?e=626cf66991"
+      - month: "March"
+        url: "https://mailchi.mp/forrt/forrt-newsletter-10335133?e=626cf66991"
+      - month: "February"
+        url: "https://us14.campaign-archive.com/?u=64c29a25a0ca81454399d522e&id=ee4ccbd93a"
+      - month: "January"
+        url: "https://mailchi.mp/forrt/forrt-newsletter-10332513?e=626cf66991"
+  - year: 2024
+    color: "#c05621"
+    issues:
+      - month: "November"
+        url: "https://mailchi.mp/forrt/forrt-newsletter-10331615?e=626cf66991"
+      - month: "October"
+        url: "https://us14.campaign-archive.com/?u=64c29a25a0ca81454399d522e&id=7373fd5817"
+      - month: "September"
+        url: "https://us14.campaign-archive.com/?u=64c29a25a0ca81454399d522e&id=aa76d449b1"
+      - month: "June"
+        url: "https://us14.campaign-archive.com/?u=64c29a25a0ca81454399d522e&id=8794516653"
+      - month: "May"
+        url: "https://mailchi.mp/forrt/forrt-newsletter-10322031?e=b822aa3541"
+      - month: "April"
+        url: "https://eepurl.com/iNOpHc"
+      - month: "March"
+        url: "https://eepurl.com/iMC_ws"
+      - month: "February"
+        url: "https://eepurl.com/iJ49B-/"
+      - month: "January"
+        url: "http://eepurl.com/iF50HU"
+  - year: 2023
+    color: "#6b46c1"
+    issues:
+      - month: "November"
+        url: "https://eepurl.com/iDsmPs"
+      - month: "October"
+        url: "https://eepurl.com/izZ49-/"
+      - month: "September"
+        url: "https://eepurl.com/itk9F-/"
+      - month: "January"
+        url: "https://eepurl.com/ieYWrv"
+  - year: 2022
+    color: "#b83280"
+    issues:
+      - month: "August"
+        url: "https://eepurl.com/h5Y7xb"
+      - month: "April"
+        url: "https://eepurl.com/hZ06Bb"
 ---
