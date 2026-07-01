@@ -5,8 +5,6 @@ headless = true  # This file represents a page section.
 active = true  # Activate this widget? true/false
 weight = 10  # Order that this section will appear.
 
-eyebrow = "FORRT — a fort and a force"
-
 # Key statements to cycle through. Wrap the part to highlight in
 # <span class="accent">…</span>. Drawn from FORRT's vision and mission.
 [[quote]]
@@ -24,11 +22,11 @@ eyebrow = "FORRT — a fort and a force"
 
 [secondary_cta]
   label = "About FORRT"
-  url = "/about/us/"
+  url = "#3-what-is-forrt"
 
 [design.spacing]
   # Customize the section spacing. Order is top, right, bottom, left.
-  padding = ["60px", "0", "56px", "0"]
+  padding = ["40px", "0", "44px", "0"]
 
 [design.background]
   text_color_light = false

@@ -3094,6 +3094,24 @@ h1.clusters-site-heading.clusters-hub-page__title {
 
 .announcements-all { text-align: center; margin-top: 40px; }
 
+/* Compact newsletter band directly under the announcements grid — reuses the
+   look of .nla-subscribe-band (newsletter archive page) so the two match. */
+.nl-band {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.9rem;
+  max-width: 760px;
+  margin: 0 auto;
+  background: #f0f4f8;
+  border: 1px solid #dde4ec;
+  border-radius: 8px;
+  padding: 0.75rem 1.2rem;
+}
+.nl-band-label { margin: 0; font-size: 0.88rem; color: #4a5568; font-weight: 500; }
+@media (max-width: 560px) { .nl-band { flex-direction: column; text-align: center; } }
+
 /* dedicated-page filter chips */
 .ac-filters {
   display: flex;
@@ -3196,11 +3214,54 @@ h1.clusters-site-heading.clusters-hub-page__title {
 }
 .aa-col img { max-width: 100%; height: auto; }
 .aa-achievements { text-align: center; }
-.aa-achievements img { max-width: 440px; }
 .aa-awards p:first-child { margin-top: 0; }
 @media (max-width: 768px) {
   .aa-grid { grid-template-columns: 1fr; gap: 1.4rem; }
 }
+
+/* Milestones card — CSS-based replacement for the yearly infographic image. */
+.ms-card {
+  text-align: left;
+  background: #fff;
+  border: 1px solid #ece9db;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 1px 3px rgba(0, 64, 85, 0.06);
+}
+.ms-title {
+  margin: 0;
+  padding: 1rem 1.2rem 0.7rem;
+  font-family: 'Domine', serif;
+  font-weight: 400;
+  font-size: 1.15rem;
+  color: #313131;
+  text-align: center;
+  border-bottom: 1px solid #ece9db;
+}
+.ms-list { list-style: none; margin: 0; padding: 0; }
+.ms-row {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.85rem 1.2rem;
+}
+.ms-row:nth-child(odd) { background: #e3eff3; }
+.ms-icon {
+  flex: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #004055;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.02rem;
+}
+.ms-icon.ms-icon--pair { gap: 2px; }
+.ms-icon.ms-icon--pair i { font-size: 0.78rem; }
+.ms-text { font-size: 0.92rem; line-height: 1.4; color: #4a4a4a; }
+.ms-text strong { color: #004055; }
 
 /* ============================================================
  *  Rotating-quote hero (wg-hero-quotes)

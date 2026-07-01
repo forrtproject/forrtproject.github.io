@@ -22,7 +22,39 @@ title = "Achievements &amp; Awards"
 <div class="aa-grid">
   <div class="aa-col aa-achievements">
 
-![FORRT achievements infographic](/img/Achievements.webp)
+<div class="ms-card">
+  <h3 class="ms-title">Milestones in 2025</h3>
+  <ul class="ms-list">
+    <li class="ms-row">
+      <span class="ms-icon ms-icon--pair"><i class="fab fa-bluesky"></i><i class="fab fa-linkedin"></i></span>
+      <span class="ms-text"><strong>Over 2,000</strong> followers on Bluesky, and <strong>over 1,000</strong> followers on LinkedIn</span>
+    </li>
+    <li class="ms-row">
+      <span class="ms-icon"><i class="fas fa-puzzle-piece"></i></span>
+      <span class="ms-text"><strong>More than 50</strong> active or completed projects, with more on the way</span>
+    </li>
+    <li class="ms-row">
+      <span class="ms-icon"><i class="fab fa-slack"></i></span>
+      <span class="ms-text"><strong>Over 1,500</strong> of FORRT's members are on Slack</span>
+    </li>
+    <li class="ms-row">
+      <span class="ms-icon"><i class="fas fa-book"></i></span>
+      <span class="ms-text"><strong>10</strong> journal articles, <strong>5</strong> op-eds/other media, <strong>4</strong> preprints, <strong>&gt;600</strong> citations, <strong>3</strong> policy briefings, and <strong>14</strong> awards &amp; commendations (and counting)</span>
+    </li>
+    <li class="ms-row">
+      <span class="ms-icon"><i class="fas fa-envelope-open-text"></i></span>
+      <span class="ms-text"><strong>1,200+</strong> subscribers to the FORRT newsletter</span>
+    </li>
+    <li class="ms-row">
+      <span class="ms-icon"><i class="fas fa-users"></i></span>
+      <span class="ms-text"><strong>435 individuals</strong> have contributed to FORRT projects</span>
+    </li>
+    <li class="ms-row">
+      <span class="ms-icon"><i class="fas fa-handshake"></i></span>
+      <span class="ms-text"><strong>12</strong> formal institutional partnerships</span>
+    </li>
+  </ul>
+</div>
 
   </div>
   <div class="aa-col aa-awards">

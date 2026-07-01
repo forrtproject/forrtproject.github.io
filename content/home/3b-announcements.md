@@ -13,5 +13,7 @@ count = 3
 
 [design.spacing]
   # Customize the section spacing. Order is top, right, bottom, left.
-  padding = ["20px", "0", "50px", "0"]
+  # Tighter bottom padding: the newsletter band (4-newsletter.md, weight 31)
+  # sits directly below and should read as part of this block.
+  padding = ["20px", "0", "24px", "0"]
 +++
