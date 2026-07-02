@@ -44,11 +44,18 @@
     return parts.join(' ').replace(/\s+/g, ' ').trim();
   }
 
+  /** Sub-cluster/discipline heading: an .sc-heading in the pane body (disciplines'
+   *  tab-panes), or the .acc-label in the accordion header (clusters' acc-sections). */
+  function getSubclusterPaneHeading(pane) {
+    if (!pane) return null;
+    return pane.querySelector('.sc-heading') || pane.querySelector('.acc-label');
+  }
+
   /** Text used to match a sub-cluster pane (heading + description). */
   function getSubclusterPaneSearchText(pane) {
     if (!pane) return '';
     var parts = [];
-    var heading = pane.querySelector('.sc-heading');
+    var heading = getSubclusterPaneHeading(pane);
     if (heading) parts.push(heading.textContent);
     var descEl = pane.querySelector('.sc-description');
     if (descEl) parts.push(descEl.textContent);
@@ -100,6 +107,22 @@
     }
   }
 
+  /** Expand an accordion section's .acc-body if it's currently collapsed. Returns
+   *  the .acc-header (a good scroll target) or null if this isn't an accordion section. */
+  function expandAccordionIfCollapsed(sectionEl) {
+    if (!sectionEl) return null;
+    var accBody = sectionEl.querySelector('.acc-body');
+    var accHeader = sectionEl.querySelector('.acc-header');
+    if (accBody && accBody.classList.contains('acc-collapsed') && accHeader && !accHeader.classList.contains('acc-disabled')) {
+      accBody.classList.remove('acc-collapsed');
+      accBody.style.maxHeight = accBody.scrollHeight + 'px';
+      accBody.style.opacity = '1';
+      var ch = accHeader.querySelector('.acc-chevron');
+      if (ch) ch.classList.add('acc-open');
+    }
+    return accHeader;
+  }
+
   function collectClustersInlineSearchResults(scopeRoot, tokens, includeRefs) {
     var results = [];
     var seen = {};
@@ -137,7 +160,7 @@
         if (!cardText || !matchesAllTokens(cardText, tokens)) return;
         var titleEl = card.querySelector('.fc-title');
         var cardTitle = titleEl ? titleEl.textContent.replace(/\s+/g, ' ').trim() : '';
-        var paneEl = card.closest('.tab-pane');
+        var paneEl = card.closest('.acc-section, .tab-pane');
         var paneId = paneEl ? paneEl.id : '';
         var tabId = paneEl ? (paneEl.getAttribute('aria-labelledby') || '') : '';
         add('feat:' + clusterId + ':' + (card.getAttribute('data-doi') || cardTitle), {
@@ -150,13 +173,13 @@
         });
       });
 
-      section.querySelectorAll('.tab-pane').forEach(function (pane) {
+      section.querySelectorAll('.acc-section, .tab-pane').forEach(function (pane) {
         if (results.length >= MAX_RESULTS) return;
         var paneId = pane.id;
         if (!paneId) return;
         var tabId = pane.getAttribute('aria-labelledby') || '';
 
-        var scHeading = pane.querySelector('.sc-heading');
+        var scHeading = getSubclusterPaneHeading(pane);
         var scName = scHeading ? scHeading.textContent.replace(/\s+/g, ' ').trim() : '';
         var paneHaystack = getSubclusterPaneSearchText(pane);
 
@@ -435,16 +458,7 @@
         var target = sectionId ? document.getElementById(sectionId) : null;
         if (target) {
           activateBootstrapTabIfNeeded(sectionId, tabId);
-          /* Expand accordion section if collapsed */
-          var accBody = target.querySelector('.acc-body');
-          var accHeader = target.querySelector('.acc-header');
-          if (accBody && accBody.classList.contains('acc-collapsed') && accHeader && !accHeader.classList.contains('acc-disabled')) {
-            accBody.classList.remove('acc-collapsed');
-            accBody.style.maxHeight = accBody.scrollHeight + 'px';
-            accBody.style.opacity = '1';
-            var ch = accHeader.querySelector('.acc-chevron');
-            if (ch) ch.classList.add('acc-open');
-          }
+          var accHeader = expandAccordionIfCollapsed(target);
           var scrollEl = accHeader || target;
           setTimeout(function () { scrollElementBelowStickyChrome(scrollEl); }, 50);
         }
@@ -459,16 +473,7 @@
       var target = document.getElementById(raw);
       if (!target) return;
       activateBootstrapTabIfNeeded(raw, raw + '-tab');
-      /* Expand accordion section if collapsed */
-      var accBody = target.querySelector('.acc-body');
-      var accHeader = target.querySelector('.acc-header');
-      if (accBody && accBody.classList.contains('acc-collapsed') && accHeader && !accHeader.classList.contains('acc-disabled')) {
-        accBody.classList.remove('acc-collapsed');
-        accBody.style.maxHeight = accBody.scrollHeight + 'px';
-        accBody.style.opacity = '1';
-        var ch = accHeader.querySelector('.acc-chevron');
-        if (ch) ch.classList.add('acc-open');
-      }
+      var accHeader = expandAccordionIfCollapsed(target);
       setTimeout(function () {
         var scrollEl = accHeader || target;
         scrollElementBelowStickyChrome(scrollEl);
@@ -633,6 +638,7 @@
 
         setTimeout(function () {
           activateBootstrapTabIfNeeded(paneId, tabId);
+          if (paneId) expandAccordionIfCollapsed(document.getElementById(paneId));
           var scrollEl = null;
           if (hitType === 'cluster') {
             scrollEl =
@@ -653,7 +659,7 @@
             scrollEl = paneFeat || section;
           } else if (hitType === 'subcluster' && paneId) {
             var paneSc = document.getElementById(paneId);
-            scrollEl = paneSc ? paneSc.querySelector('.sc-heading') || paneSc : section;
+            scrollEl = paneSc ? (paneSc.querySelector('.sc-heading') || paneSc.querySelector('.acc-header') || paneSc) : section;
           } else {
             scrollEl = section.querySelector('.cluster-header') || section.querySelector('.cluster-title') || section;
           }
