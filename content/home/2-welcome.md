@@ -5,7 +5,7 @@
 
 widget = "blank"  # See https://sourcethemes.com/academic/docs/page-builder/
 headless = true  # This file represents a page section.
-active = true  # Activate this widget? true/false
+active = false  # Disabled: redundant with the hero. Its tagline now lives in the hero lead (1-hero.md).
 weight = 20  # Order that this section will appear.
 
 title = "**Welcome to FORRT**<br>------<br>"

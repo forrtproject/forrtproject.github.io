@@ -64,6 +64,12 @@
   parent = "about"
 
 [[main]]
+  name = "Confidential Advisor & Ombuds"  # A link title for your page.
+  url = "/about/confidential-advisor-ombuds/"  # The URL of your page.
+  weight = 18.5  # The position of your page in the menu.
+  parent = "about"
+
+[[main]]
   name = "Contributors"  # A link title for your page.
   url = "/contributors"  # The URL of your page.
   weight = 19  # The position of your page in the menu.
@@ -158,6 +164,12 @@
     name = "Adopting Principled Education"
     url = "/adopting"
     weight = 32
+    parent = "nexus"
+
+  [[main]]
+    name = "Best-Practice Guidelines for Psychology"
+    url = "https://forrt.org/best-practices-psychology/"
+    weight = 32.5
     parent = "nexus"
 
   [[main]]

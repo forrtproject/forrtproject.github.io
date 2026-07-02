@@ -3041,3 +3041,470 @@ h1.clusters-site-heading.clusters-hub-page__title {
     gap: 0.25rem;
   }
 }
+
+/* ============================================================
+ *  Announcements (card grid) — homepage widget + /post/ page
+ * ============================================================ */
+.announcements-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.6rem;
+}
+.announcement-card {
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  border: 1px solid #ece9db;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 1px 3px rgba(0, 64, 85, 0.06);
+  transition: transform 0.15s, box-shadow 0.15s;
+  color: inherit;
+  text-decoration: none;
+  height: 100%;
+}
+.announcement-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 22px rgba(0, 64, 85, 0.12);
+  text-decoration: none;
+}
+.announcement-card .ac-thumb {
+  aspect-ratio: 16 / 9;
+  background: #eef1ec;
+  overflow: hidden;
+}
+.announcement-card .ac-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.announcement-card .ac-body {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding: 1rem 1.1rem 1.2rem;
+}
+.announcement-card .ac-meta {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-bottom: 0.55rem;
+}
+.announcement-card .ac-date {
+  font-size: 0.78rem;
+  color: #8a8a8a;
+}
+.announcement-card h3 {
+  font-size: 1.06rem;
+  line-height: 1.3;
+  color: #004055;
+  margin: 0 0 0.5rem;
+}
+.announcement-card .ac-summary {
+  flex: 1;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: #4a4a4a;
+  margin: 0 0 0.9rem;
+  /* Clamp to a few lines so cards stay even regardless of summary length. */
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.announcement-card .ac-summary p { margin: 0; }
+.announcement-card .ac-summary a { color: inherit; text-decoration: underline; }
+.announcement-card .ac-more {
+  font-size: 0.86rem;
+  font-weight: 700;
+  color: #8e0000;
+}
+.announcement-card:hover .ac-more { color: #ff6bbc; }
+
+/* Image-less cards: a slim brand accent on top so they don't read as bare. */
+.announcement-card.no-image { border-top: 3px solid #69b3a2; }
+.announcement-card.no-image .ac-body { padding-top: 1.1rem; }
+
+/* category pills */
+.ac-cat {
+  display: inline-block;
+  font-size: 0.68rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 0.16rem 0.5rem;
+  border-radius: 999px;
+  color: #004055;
+  background: #d9eef2;
+}
+.ac-cat.event       { color: #7a1f47; background: #f7dce8; }
+.ac-cat.opportunity { color: #7a4a00; background: #fbeccd; }
+.ac-cat.resource    { color: #1f5e52; background: #d8efe9; }
+.ac-cat.milestone   { color: #5c2e8e; background: #ece0f7; }
+.ac-cat.newsletter  { color: #004055; background: #d9eef2; }
+
+.announcements-all { text-align: center; margin-top: 40px; }
+
+/* Compact newsletter band directly under the announcements grid — reuses the
+   look of .nla-subscribe-band (newsletter archive page) so the two match. */
+.nl-band {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.9rem;
+  max-width: 760px;
+  margin: 0 auto;
+  background: #f0f4f8;
+  border: 1px solid #dde4ec;
+  border-radius: 8px;
+  padding: 0.75rem 1.2rem;
+}
+.nl-band-label { margin: 0; font-size: 0.88rem; color: #4a5568; font-weight: 500; }
+@media (max-width: 560px) { .nl-band { flex-direction: column; text-align: center; } }
+
+/* dedicated-page filter chips */
+.ac-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  justify-content: center;
+  margin: 0 0 36px;
+}
+.ac-chip {
+  font-family: inherit;
+  font-size: 0.82rem;
+  color: #004055;
+  border: 1px solid #cfd9d3;
+  background: #fff;
+  padding: 0.32rem 0.9rem;
+  border-radius: 999px;
+  cursor: pointer;
+}
+.ac-chip.active { background: #004055; color: #fff; border-color: #004055; }
+
+@media (max-width: 820px) { .announcements-grid { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 560px) { .announcements-grid { grid-template-columns: 1fr; } }
+
+/* ---- YouTube lightbox thumbnail (compact "video in lightbox") ---- */
+.yt-lightbox {
+  position: relative;
+  display: block;
+  width: 100%;
+  border-radius: 10px;
+  overflow: hidden;
+  line-height: 0;
+}
+.yt-lightbox img { width: 100%; height: auto; }
+.yt-lightbox .yt-play {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.18);
+  transition: background 0.15s;
+}
+.yt-lightbox:hover .yt-play { background: rgba(0, 0, 0, 0.34); }
+.yt-lightbox .yt-play i {
+  color: #fff;
+  font-size: 1.6rem;
+  width: 64px;
+  height: 64px;
+  line-height: 64px;
+  text-align: center;
+  padding-left: 6px;
+  border-radius: 50%;
+  background: rgba(184, 51, 106, 0.92);
+}
+
+/* ============================================================
+ *  Unified homepage section-heading divider.
+ *  One real rule for every home section title, replacing the ad-hoc
+ *  `subtitle = "---"` / `***` content dividers (which some sections had and
+ *  others didn't). Scoped to .home-section so inner pages are unaffected.
+ * ============================================================ */
+.home-section .section-heading h1::after,
+.home-section.wg-about-welcome h1::after {
+  content: "";
+  display: block;
+  height: 1px;
+  background: rgba(0, 64, 85, 0.18);
+  margin: 16px auto 0;
+}
+
+/* ============================================================
+ *  Newsletter (EmailOctopus) submit button — ships Bootstrap-purple;
+ *  repaint it in FORRT teal. High specificity + !important to beat the
+ *  embed's own injected, later-loaded styles.
+ * ============================================================ */
+[id^="octopus-form"] input.btn.btn-primary,
+[id^="octopus-form"] input[type="submit"],
+[id^="octopus-form"] button[type="submit"] {
+  background-color: #004055 !important;
+  border-color: #004055 !important;
+  color: #fff !important;
+}
+[id^="octopus-form"] input.btn.btn-primary:hover,
+[id^="octopus-form"] input[type="submit"]:hover,
+[id^="octopus-form"] button[type="submit"]:hover {
+  background-color: #00566f !important;
+  border-color: #00566f !important;
+}
+
+/* ============================================================
+ *  Combined Achievements & Awards section (two columns)
+ * ============================================================ */
+.aa-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.05fr;
+  gap: 2.8rem;
+  align-items: start;
+  max-width: 980px;
+  margin: 0 auto;
+}
+.aa-col img { max-width: 100%; height: auto; }
+.aa-achievements { text-align: center; }
+.aa-awards p:first-child { margin-top: 0; }
+@media (max-width: 768px) {
+  .aa-grid { grid-template-columns: 1fr; gap: 1.4rem; }
+}
+
+/* Milestones card — CSS-based replacement for the yearly infographic image. */
+.ms-card {
+  text-align: left;
+  background: #fff;
+  border: 1px solid #ece9db;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 1px 3px rgba(0, 64, 85, 0.06);
+}
+.ms-title {
+  margin: 0;
+  padding: 1rem 1.2rem 0.7rem;
+  font-family: 'Domine', serif;
+  font-weight: 400;
+  font-size: 1.15rem;
+  color: #313131;
+  text-align: center;
+  border-bottom: 1px solid #ece9db;
+}
+.ms-list { list-style: none; margin: 0; padding: 0; }
+.ms-row {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.85rem 1.2rem;
+}
+.ms-row:nth-child(odd) { background: #e3eff3; }
+.ms-icon {
+  flex: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #004055;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.02rem;
+}
+.ms-icon.ms-icon--pair { gap: 2px; }
+.ms-icon.ms-icon--pair i { font-size: 0.78rem; }
+.ms-text { font-size: 0.92rem; line-height: 1.4; color: #4a4a4a; }
+.ms-text strong { color: #004055; }
+
+/* ============================================================
+ *  Rotating-quote hero (wg-hero-quotes)
+ * ============================================================ */
+.hero-quotes {
+  max-width: 1000px;
+  margin: 0 auto;
+  text-align: center;
+}
+.hq-eyebrow {
+  font-family: 'Domine', serif;
+  font-size: 0.82rem;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: #69b3a2;
+  font-weight: 700;
+  margin: 0 0 1.6rem;
+}
+/* All quotes share one grid cell so the hero height = tallest quote (no shift).
+   minmax(0,1fr) stops the column auto-sizing to the longest quote's one-line
+   (max-content) width, which would otherwise overflow narrow viewports. */
+.hq-stage { display: grid; grid-template-columns: minmax(0, 1fr); justify-items: center; align-items: center; }
+.hq-quote {
+  grid-area: 1 / 1;
+  /* Match the site-wide section-title treatment: Domine, weight 400, #313131. */
+  font-family: 'Domine', serif;
+  color: #313131;
+  font-weight: 400;
+  font-size: 3.3rem;
+  line-height: 1.22;
+  margin: 0 auto;
+  max-width: 22ch;
+  /* Neutralise the theme's default blockquote treatment (left border, padding). */
+  border: 0;
+  padding: 0;
+  /* Resting state: waiting just below, hidden. Active slides up into place;
+     leaving keeps sliding up and out — a continuous upward motion. */
+  opacity: 0;
+  transform: translateY(34px);
+  transition: opacity 0.55s ease, transform 0.55s cubic-bezier(0.22, 0.61, 0.36, 1);
+  pointer-events: none;
+}
+.hq-quote.is-active { opacity: 1; transform: translateY(0); pointer-events: auto; }
+.hq-quote.is-leaving { opacity: 0; transform: translateY(-34px); }
+.hq-quote .accent { color: #b8336a; }
+@media (prefers-reduced-motion: reduce) {
+  .hq-quote { transition: opacity 0.4s ease; transform: none; }
+  .hq-quote.is-leaving { transform: none; }
+}
+.hq-actions {
+  display: flex;
+  gap: 0.8rem;
+  justify-content: center;
+  margin-top: 1.8rem;
+}
+.hq-dots {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+  margin-top: 1.8rem;
+}
+.hq-dot {
+  width: 9px;
+  height: 9px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: #d8d4c2;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+}
+.hq-dot:hover { transform: scale(1.2); }
+.hq-dot.on { background: #b8336a; }
+@media (max-width: 992px) { .hq-quote { font-size: 2.5rem; } }
+@media (max-width: 640px) { .hq-quote { font-size: 1.8rem; max-width: 18ch; overflow-wrap: break-word; } }
+@media (max-width: 430px) { .hq-quote { font-size: 1.42rem; max-width: 17ch; } }
+
+/* ---- Compress the hero: cap the logo height so the top of the site is tighter.
+       Base rule keeps the logo within the viewport on every screen; the height
+       cap (which needs width:auto) only kicks in on large screens. ---- */
+.wg-hero-welcome .hero-media img {
+  max-width: 100%;
+  height: auto;
+}
+@media (min-width: 992px) {
+  .wg-hero-welcome .hero-media img {
+    width: auto;
+    max-height: 240px;
+    margin: 0 auto;
+    display: block;
+  }
+}
+
+/* ---- "What is FORRT?" media column: logo + video stacked, text beside it. ---- */
+.wg-about-welcome .avatar {
+  width: 170px;
+  height: 170px;
+}
+.wg-about-welcome .profile-video {
+  display: block;
+  width: 100%;
+  max-width: 280px;
+  margin: 1.4rem auto 0;
+}
+.wg-about-welcome #profile { text-align: center; }
+.wg-about-welcome .network-icon { margin-top: 1.1rem; }
+/* On mobile, lead with the heading + intro text, then the logo/video/socials. */
+@media (max-width: 991px) {
+  .wg-about-welcome .row { flex-direction: column; }
+  .wg-about-welcome .col-lg-8 { order: 1; }
+  .wg-about-welcome .col-lg-4 { order: 2; margin-top: 1.5rem; }
+}
+
+/* ── Newsletter Archives ── */
+.nla-subscribe-band {
+  display: flex; align-items: center; flex-wrap: wrap; gap: 0.75rem;
+  background: #f0f4f8; border: 1px solid #dde4ec; border-radius: 8px;
+  padding: 0.65rem 1rem; margin-bottom: 1.5rem;
+}
+.nla-subscribe-label { margin: 0; font-size: 0.78rem; color: #4a5568; font-weight: 500; }
+
+.nla-archive-header {
+  display: flex; align-items: center; flex-wrap: wrap;
+  gap: 0.6rem; margin-bottom: 1rem;
+}
+.nla-archive-title { font-size: 0.88rem; font-weight: 700; color: #2d3748; margin: 0; }
+.nla-year-tabs { display: flex; flex-wrap: wrap; gap: 0.3rem; }
+.nla-year-tab {
+  background: transparent; border: 1px solid #cbd5e0; color: #4a5568;
+  font-size: 0.7rem; font-weight: 600; padding: 0.2rem 0.6rem;
+  border-radius: 20px; cursor: pointer; font-family: inherit;
+  transition: background 0.15s, border-color 0.15s, color 0.15s;
+}
+.nla-year-tab:hover { border-color: var(--nla-year-color, #2c7a7b); color: var(--nla-year-color, #2c7a7b); }
+.nla-year-tab.active { background: var(--nla-year-color, #2c7a7b); border-color: var(--nla-year-color, #2c7a7b); color: #fff; }
+.nla-year-tab[data-year="all"].active { background: #2d3748; border-color: #2d3748; }
+
+.nla-year-section { margin-bottom: 1.5rem; }
+.nla-year-band { display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.75rem; }
+.nla-year-band-label {
+  font-size: 0.68rem; font-weight: 800; letter-spacing: 0.1em;
+  text-transform: uppercase; color: var(--nla-year-color, #2c7a7b); white-space: nowrap;
+}
+.nla-year-band-line {
+  flex: 1; height: 1px; opacity: 0.25;
+  background: linear-gradient(90deg, var(--nla-year-color, #2c7a7b), transparent);
+}
+.nla-year-band-line:first-of-type {
+  background: linear-gradient(270deg, var(--nla-year-color, #2c7a7b), transparent);
+}
+
+.nla-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(85px, 1fr)); gap: 0.4rem; }
+
+.nla-card {
+  display: flex; flex-direction: column; min-height: 100px;
+  background: #fff; border: 1px solid #e2e8f0; border-radius: 8px;
+  overflow: hidden; text-decoration: none; color: inherit;
+  transition: transform 0.15s, box-shadow 0.15s, border-color 0.15s;
+}
+.nla-card:hover {
+  transform: translateY(-2px); box-shadow: 0 6px 16px rgba(0,0,0,0.09);
+  border-color: var(--nla-year-color, #2c7a7b); text-decoration: none; color: inherit;
+}
+.nla-card-accent { height: 3px; background: var(--nla-year-color, #2c7a7b); }
+.nla-card-body {
+  flex: 1; display: flex; flex-direction: column; align-items: center;
+  justify-content: center; padding: 0.55rem 0.1rem 0.1rem;
+  text-align: center; gap: 0.1rem; position: relative;
+}
+.nla-badge-new {
+  background: #e8423c; color: #fff;
+  font-size: 0.45rem; font-weight: 900; letter-spacing: 0.08em;
+  text-transform: uppercase; padding: 0.1em 0.4em; border-radius: 3px;
+  box-shadow: 0 1px 3px rgba(232,66,60,0.3); margin-bottom: 0.15rem;
+}
+.nla-card-month { font-size: 0.82rem; font-weight: 700; color: #2d3748; line-height: 1.1; }
+.nla-card-year  { font-size: 0.62rem; color: #718096; }
+.nla-card-footer {
+  padding: 0.2rem 0.1rem 0.25rem; text-align: center;
+  font-size: 0.62rem; font-weight: 700; color: var(--nla-year-color, #2c7a7b);
+  letter-spacing: 0.06em; opacity: 0; transition: opacity 0.15s;
+}
+.nla-card:hover .nla-card-footer { opacity: 1; }
+
+.dark .nla-subscribe-band { background: #1a202c; border-color: #2d3748; }
+.dark .nla-subscribe-label { color: #a0aec0; }
+.dark .nla-archive-title { color: #e2e8f0; }
+.dark .nla-year-tab { border-color: #4a5568; color: #a0aec0; }
+.dark .nla-card { background: #1a202c; border-color: #2d3748; }
+.dark .nla-card-month { color: #e2e8f0; }
+
+@media (max-width: 600px) {
+  .nla-grid { grid-template-columns: repeat(auto-fill, minmax(95px, 1fr)); }
+  .nla-archive-header, .nla-subscribe-band { flex-direction: column; align-items: flex-start; }
+}

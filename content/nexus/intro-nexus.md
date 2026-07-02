@@ -62,6 +62,7 @@ FORRT's e-learning platform (or Nexus) is a hub for community-driven initiatives
 
 * [About Educational Nexus](/nexus)
 * [Adopting Principled Education](/adopting)
+* [Best-Practice Guidelines for Psychology](https://forrt.org/best-practices-psychology/)
 * [Citation Politics](/citation-politics)
 * [Clusters](/clusters)
 * [Curated Resources](/resources)
