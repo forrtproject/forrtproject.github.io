@@ -275,17 +275,6 @@ def sanitize_filename(name):
     name = re.sub(r'\\s+', '-', name)
     return name
 
-# Role labels the sheet uses that we want to display differently on the site
-# (e.g. to keep terminology gender-neutral and consistent with other pages).
-ROLE_LABEL_OVERRIDES = {
-    "Ombudsman": "Ombuds",
-}
-
-def normalize_role_label(role):
-    if not role or (pd is not None and pd.isna(role)):
-        return role
-    return ROLE_LABEL_OVERRIDES.get(str(role).strip(), role)
-
 def get_initials(name):
     parts = name.split()
     if len(parts) >= 2:
@@ -572,7 +561,7 @@ def main():
                     img_content = f'<div class="sc-placeholder">{member["initials"]}</div>'
 
                 cards_html += render_member_card(
-                    render_id, member["name"], normalize_role_label(member["role"]), img_content,
+                    render_id, member["name"], member["role"], img_content,
                     color=team_color,
                     is_last=(member_index == len(members) - 1),
                 )
@@ -587,7 +576,7 @@ def main():
                 modals_html += MODAL_TEMPLATE.format(
                     id=render_id,
                     name=member["name"],
-                    role=normalize_role_label(member["role_title"] or member["role"]),
+                    role=member["role_title"] or member["role"],
                     bio=html.escape(member["bio"] or "Bio coming soon."),
                     img_content_large=img_content_large,
                     social_links=generate_social_links(member)
