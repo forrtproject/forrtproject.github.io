@@ -31,6 +31,8 @@ Consequences for violations of this code of conduct include, but are not limited
 
 As stated in the code, participants may report any violations of the code to any member of the FORRT ethics committee. Alternatively, you can report a suspected code of conduct violation through this anonymous form: [Access link here.](https://forms.gle/nQ51x1c8a8nnfQ7a9)
 
+If you'd like to talk a concern through first, in confidence, before deciding whether to file a report, you can also reach out to FORRT's [Confidential Advisor or Ombuds](/about/confidential-advisor-ombuds/).
+
 If possible, please report the following information: 
 * Your contact information, if you allow us to follow up with you 
 * Names (real, nicknames, or pseudonyms) of any individuals involved. 
