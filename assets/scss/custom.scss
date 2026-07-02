@@ -2045,6 +2045,34 @@ h1.clusters-site-heading.clusters-hub-page__title {
 .fr-specificity-toggle input {
   margin: 0;
 }
+.fr-clear-btn {
+  margin-left: auto;
+  align-self: center;
+  font-family: inherit;
+  font-size: 0.62rem;
+  font-weight: 600;
+  padding: 0.18rem 0.5rem;
+  border-radius: 3px;
+  border: 1px solid rgba(0,64,85,0.25);
+  background: transparent;
+  color: #004055;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background 0.15s, color 0.15s, border-color 0.15s;
+}
+.fr-clear-btn::before {
+  content: "\00d7";
+  margin-right: 0.3rem;
+  font-weight: 700;
+}
+.fr-clear-btn:hover {
+  background: #004055;
+  color: #fff;
+  border-color: #004055;
+}
+.fr-clear-btn[hidden] {
+  display: none;
+}
 
 /* ---- Search input ---- */
 .fr-search-wrap {

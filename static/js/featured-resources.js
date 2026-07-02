@@ -705,6 +705,7 @@
     var typeGroup = document.getElementById('fr-global-type-tags');
     var specCheckbox = document.getElementById('fr-global-specificity-checkbox');
     var searchInput = document.getElementById('clusters-inline-search-input');
+    var clearBtn = document.getElementById('fr-global-clear');
 
     // --- Pre-cache card data so filtering never queries the DOM for text ---
     var sectionCache = [];
@@ -761,6 +762,24 @@
 
     if (specCheckbox) specCheckbox.addEventListener('change', applyGlobalFilters);
 
+    if (clearBtn) {
+      clearBtn.addEventListener('click', function () {
+        if (searchInput) searchInput.value = '';
+        resetGroupToAll(focusGroup);
+        resetGroupToAll(typeGroup);
+        if (specCheckbox) specCheckbox.checked = false;
+        applyGlobalFilters();
+        if (searchInput) searchInput.focus();
+      });
+    }
+
+    function resetGroupToAll(group) {
+      if (!group) return;
+      group.querySelectorAll('.fr-tag-btn').forEach(function (b) {
+        b.classList.toggle('active', b.getAttribute('data-value') === 'all');
+      });
+    }
+
     if (searchInput) {
       var debounce;
       searchInput.addEventListener('input', function () {
@@ -784,6 +803,7 @@
       var query = searchInput ? searchInput.value.toLowerCase().trim() : '';
       var tokens = query ? query.split(/\s+/) : [];
       var isFiltered = activeFocus !== 'all' || activeType !== 'all' || tokens.length > 0;
+      if (clearBtn) clearBtn.hidden = !isFiltered;
 
       // --- Pass 1: compute visibility from cached data (no DOM reads) ---
       var sectionResults = [];
