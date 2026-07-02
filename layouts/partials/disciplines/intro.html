@@ -1,13 +1,39 @@
 {{/* intro.html - Intro text for Open Research Across Disciplines */}}
+
+{{/* Reuse the "Cite us" citation box styling for the source attribution below. */}}
+{{ $css := resources.Get "css/cite_us.css" }}
+{{ if $css }}
+{{ $style := $css | minify | fingerprint }}
+<link rel="stylesheet" href="{{ $style.RelPermalink }}">
+{{ else }}
+{{ warnf "CSS not found: css/cite_us.css. Using static version" }}
+<link rel="stylesheet" href="{{ "css/cite_us.css" | relURL }}">
+{{ end }}
+
 <div class="clusters-intro">
   <div class="intro-hero">
     <div class="intro-hero-text">
-      <p class="intro-paragraph intro-attribution">
-        This page is adapted and extended from: Farran, E. K., Silverstein, P., Ameen, A. A., Misheva, I., &amp; Gilmore, C. (2020, December 15). <a href="https://doi.org/10.31219/osf.io/3r8hb" target="_blank" rel="noopener">Open Research: Examples of good practice, and resources across disciplines (2026 edition)</a>. Updates supported by UKRN and FORRT.
-      </p>
       <p class="intro-paragraph">
         Open research applies to all disciplines. If the concept of open research is new to you, it might be difficult to determine how you can apply open research practices to your research. This page provides resources and examples of open research practices relevant to your discipline. As a starting point, it may be useful to read the <a href="https://www.ukrn.org/primers/" target="_blank" rel="noopener">UK Reproducibility Network primers</a>.
       </p>
+
+      <div class="cite-us-section disciplines-attribution">
+        <h4 class="section-title">Adapted and extended from:</h4>
+        <div class="cite-us-item">
+          <div class="cite-us-text">
+            Farran, E. K., Silverstein, P., Ameen, A. A., Misheva, I., &amp; Gilmore, C. (2020, December 15). Open Research: Examples of good practice, and resources across disciplines (2026 edition).
+            <a href="https://doi.org/10.31219/osf.io/3r8hb" target="_blank" rel="noopener" class="doi-link">https://doi.org/10.31219/osf.io/3r8hb</a>.
+            Updates supported by UKRN and FORRT.
+          </div>
+          <button class="copy-button" onclick="copyDisciplinesAttribution(this)">
+            <svg class="copy-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
+            </svg>
+            Copy
+          </button>
+        </div>
+      </div>
+
       <p class="intro-paragraph">
         Use the sidebar to jump to your overarching field and specific discipline. Resources are categorised into five areas: <span class="badge" style="background:#6c757d;color:#fff;">General</span> <span class="badge" style="background:#17a2b8;color:#fff;">Open Data</span> <span class="badge" style="background:#28a745;color:#fff;">Open Methods</span> <span class="badge" style="background:#fd7e14;color:#fff;">Open Outputs</span> <span class="badge" style="background:#6f42c1;color:#fff;">Open Education</span>.
       </p>
@@ -17,3 +43,26 @@
     </div>
   </div>
 </div>
+
+<script>
+  async function copyDisciplinesAttribution(button) {
+    const text = "Farran, E. K., Silverstein, P., Ameen, A. A., Misheva, I., & Gilmore, C. (2020, December 15). Open Research: Examples of good practice, and resources across disciplines (2026 edition). https://doi.org/10.31219/osf.io/3r8hb";
+    try {
+      await navigator.clipboard.writeText(text);
+    } catch (err) {
+      const textarea = document.createElement('textarea');
+      textarea.value = text;
+      document.body.appendChild(textarea);
+      textarea.select();
+      document.execCommand('copy');
+      document.body.removeChild(textarea);
+    }
+    const copyIcon = button.innerHTML;
+    button.innerHTML = '<svg class="copy-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Copied!';
+    button.classList.add('copied');
+    setTimeout(() => {
+      button.innerHTML = copyIcon;
+      button.classList.remove('copied');
+    }, 2000);
+  }
+</script>
