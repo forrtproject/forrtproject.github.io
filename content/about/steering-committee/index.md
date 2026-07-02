@@ -423,7 +423,7 @@ layout: single
             <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s-7-3.5-7-9.5V6l7-3 7 3v6.5C19 18.5 12 22 12 22z"/><path d="m9 12 2 2 4-4"/></svg>
             <span>Guidance & Oversight</span>
         </div>
-        <p class="sc-section-desc">Independent ethical guidance and long-term stewardship.</p>
+        <p class="sc-section-desc">Independent ethical guidance and long-term stewardship. To raise a concern or talk something through in confidence, see our <a href="/about/confidential-advisor-ombuds/">Confidential Advisor & Ombuds</a> page.</p>
     </div>
     <div class="sc-grid">
         <div class="sc-card" onclick="openModal('samparsons')">
