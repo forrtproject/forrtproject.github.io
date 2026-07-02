@@ -611,89 +611,9 @@
     });
   }
 
-  /* ================================================================
-     ACCORDION
-     ================================================================ */
-  function initAccordion() {
-    function toggleSection(header) {
-      if (header.classList.contains('acc-disabled')) return;
-      var body = header.nextElementSibling;
-      var chevron = header.querySelector('.acc-chevron');
-      if (!body) return;
-      var isCollapsed = body.classList.contains('acc-collapsed');
-      if (isCollapsed) {
-        body.classList.remove('acc-collapsed');
-        body.style.maxHeight = body.scrollHeight + 'px';
-        body.style.opacity = '1';
-        if (chevron) chevron.classList.add('acc-open');
-      } else {
-        body.style.maxHeight = '0';
-        body.style.opacity = '0';
-        body.classList.add('acc-collapsed');
-        if (chevron) chevron.classList.remove('acc-open');
-      }
-    }
-
-    // Click handler for accordion headers
-    document.addEventListener('click', function (e) {
-      // Controls embedded in the header (e.g. copy-link) handle their own clicks.
-      if (e.target.closest('.acc-copy-link')) return;
-      var header = e.target.closest('.acc-header');
-      if (header) { toggleSection(header); return; }
-      var toggleBtn = e.target.closest('.acc-toggle-all');
-      if (toggleBtn) { toggleAllSections(toggleBtn); }
-    });
-
-    // Keyboard: Enter/Space on header
-    document.addEventListener('keydown', function (e) {
-      if (e.key !== 'Enter' && e.key !== ' ') return;
-      if (e.target.closest('.acc-copy-link')) return;
-      var header = e.target.closest('.acc-header');
-      if (!header) return;
-      e.preventDefault();
-      toggleSection(header);
-    });
-
-    function toggleAllSections(btn) {
-      var clusterId = btn.getAttribute('data-cluster');
-      var section = clusterId ? document.getElementById(clusterId) : null;
-      if (!section) return;
-      var bodies = section.querySelectorAll('.acc-body');
-      var anyCollapsed = false;
-      bodies.forEach(function (b) {
-        var header = b.previousElementSibling;
-        if (b.classList.contains('acc-collapsed') && header && !header.classList.contains('acc-disabled')) {
-          anyCollapsed = true;
-        }
-      });
-
-      bodies.forEach(function (b) {
-        var header = b.previousElementSibling;
-        if (!header || header.classList.contains('acc-disabled')) return;
-        var chevron = header.querySelector('.acc-chevron');
-        if (anyCollapsed && b.classList.contains('acc-collapsed')) {
-          b.classList.remove('acc-collapsed');
-          b.style.maxHeight = b.scrollHeight + 'px';
-          b.style.opacity = '1';
-          if (chevron) chevron.classList.add('acc-open');
-        } else if (!anyCollapsed && !b.classList.contains('acc-collapsed')) {
-          b.style.maxHeight = '0';
-          b.style.opacity = '0';
-          b.classList.add('acc-collapsed');
-          if (chevron) chevron.classList.remove('acc-open');
-        }
-      });
-      btn.textContent = anyCollapsed ? 'Collapse all' : 'Expand all';
-    }
-
-    // Set initial state: all sections open, max-height auto
-    document.querySelectorAll('.acc-body').forEach(function (body) {
-      if (!body.classList.contains('acc-collapsed')) {
-        body.style.maxHeight = body.scrollHeight + 'px';
-        body.style.opacity = '1';
-      }
-    });
-  }
+  /* Accordion click/keyboard toggling now lives in clusters-page.js (loads on
+     both the clusters and disciplines pages); this file only reads/writes
+     .acc-* classes as part of its own card filtering below. */
 
   /* ================================================================
      GLOBAL FILTERING + SEARCH
@@ -898,7 +818,6 @@
     initVoting();
     initCarousels();
     sortCardsByFocus();
-    initAccordion();
     initFiltering();
   });
 })();

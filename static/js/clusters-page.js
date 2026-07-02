@@ -123,6 +123,87 @@
     return accHeader;
   }
 
+  /** Click/keyboard toggling for .acc-header sections and "Expand all" buttons.
+   *  Shared by clusters and disciplines - both render the same accordion markup. */
+  function initAccordionToggle() {
+    function toggleSection(header) {
+      if (header.classList.contains('acc-disabled')) return;
+      var body = header.nextElementSibling;
+      var chevron = header.querySelector('.acc-chevron');
+      if (!body) return;
+      var isCollapsed = body.classList.contains('acc-collapsed');
+      if (isCollapsed) {
+        body.classList.remove('acc-collapsed');
+        body.style.maxHeight = body.scrollHeight + 'px';
+        body.style.opacity = '1';
+        if (chevron) chevron.classList.add('acc-open');
+      } else {
+        body.style.maxHeight = '0';
+        body.style.opacity = '0';
+        body.classList.add('acc-collapsed');
+        if (chevron) chevron.classList.remove('acc-open');
+      }
+    }
+
+    document.addEventListener('click', function (e) {
+      /* Controls embedded in the header (e.g. copy-link) handle their own clicks. */
+      if (e.target.closest('.acc-copy-link')) return;
+      var header = e.target.closest('.acc-header');
+      if (header) { toggleSection(header); return; }
+      var toggleBtn = e.target.closest('.acc-toggle-all');
+      if (toggleBtn) { toggleAllSections(toggleBtn); }
+    });
+
+    document.addEventListener('keydown', function (e) {
+      if (e.key !== 'Enter' && e.key !== ' ') return;
+      if (e.target.closest('.acc-copy-link')) return;
+      var header = e.target.closest('.acc-header');
+      if (!header) return;
+      e.preventDefault();
+      toggleSection(header);
+    });
+
+    function toggleAllSections(btn) {
+      var clusterId = btn.getAttribute('data-cluster');
+      var section = clusterId ? document.getElementById(clusterId) : null;
+      if (!section) return;
+      var bodies = section.querySelectorAll('.acc-body');
+      var anyCollapsed = false;
+      bodies.forEach(function (b) {
+        var header = b.previousElementSibling;
+        if (b.classList.contains('acc-collapsed') && header && !header.classList.contains('acc-disabled')) {
+          anyCollapsed = true;
+        }
+      });
+
+      bodies.forEach(function (b) {
+        var header = b.previousElementSibling;
+        if (!header || header.classList.contains('acc-disabled')) return;
+        var chevron = header.querySelector('.acc-chevron');
+        if (anyCollapsed && b.classList.contains('acc-collapsed')) {
+          b.classList.remove('acc-collapsed');
+          b.style.maxHeight = b.scrollHeight + 'px';
+          b.style.opacity = '1';
+          if (chevron) chevron.classList.add('acc-open');
+        } else if (!anyCollapsed && !b.classList.contains('acc-collapsed')) {
+          b.style.maxHeight = '0';
+          b.style.opacity = '0';
+          b.classList.add('acc-collapsed');
+          if (chevron) chevron.classList.remove('acc-open');
+        }
+      });
+      btn.textContent = anyCollapsed ? 'Collapse all' : 'Expand all';
+    }
+
+    /* Initial state: any section not server-rendered with .acc-collapsed starts open. */
+    document.querySelectorAll('.acc-body').forEach(function (body) {
+      if (!body.classList.contains('acc-collapsed')) {
+        body.style.maxHeight = body.scrollHeight + 'px';
+        body.style.opacity = '1';
+      }
+    });
+  }
+
   function collectClustersInlineSearchResults(scopeRoot, tokens, includeRefs) {
     var results = [];
     var seen = {};
@@ -285,6 +366,8 @@
   onReady(function () {
     var root = document.querySelector('.clusters-layout');
     if (!root) return;
+
+    initAccordionToggle();
 
     var mobileToggle = document.getElementById('clusters-mobile-toggle');
     var sidebar = document.getElementById('clusters-sidebar');
@@ -466,10 +549,10 @@
       });
     });
 
-    /* e.g. /clusters/cluster-2/#c2-sc1 or #c2-featured, or /disciplines/#f1-d3 — scroll to matching section */
+    /* e.g. /clusters/cluster-2/#c2-sc1 or #c2-featured, or /disciplines/#f1-chemistry — scroll to matching section */
     function applyClusterUrlHash() {
       var raw = window.location.hash.replace(/^#/, '');
-      if (!raw || !/^(c\d+-[a-z0-9-]+|f\d+-d\d+)$/.test(raw)) return;
+      if (!raw || !/^[cf]\d+-[a-z0-9-]+$/.test(raw)) return;
       var target = document.getElementById(raw);
       if (!target) return;
       activateBootstrapTabIfNeeded(raw, raw + '-tab');

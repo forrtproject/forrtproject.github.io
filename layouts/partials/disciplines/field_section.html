@@ -16,6 +16,9 @@
       {{ $field.name }}
     </h2>
     <span class="cluster-stats">{{ len $field.disciplines }} discipline{{ if gt (len $field.disciplines) 1 }}s{{ end }} &middot; {{ $totalRes }} resources</span>
+    {{ if gt (len $field.disciplines) 0 }}
+    <button class="acc-toggle-all" data-cluster="{{ $fid }}">Expand all</button>
+    {{ end }}
   </div>
 
   {{ if $field.summary }}
@@ -23,52 +26,48 @@
   {{ end }}
 
   {{ if gt (len $field.disciplines) 0 }}
-  <ul class="nav nav-tabs cluster-tabs" id="tabs-{{ $fid }}" role="tablist">
+  <div class="acc-list" id="content-{{ $fid }}">
     {{ range $di, $disc := $field.disciplines }}
-    {{ $did := printf "f%d-d%d" (int $field.number) $di }}
-    <li class="nav-item">
-      <a class="nav-link{{ if eq $di 0 }} active{{ end }}" id="{{ $did }}-tab"
-         data-toggle="tab" href="#{{ $did }}" role="tab"
-         aria-controls="{{ $did }}" aria-selected="{{ if eq $di 0 }}true{{ else }}false{{ end }}">
-        <span class="tab-label">{{ $disc.name }}</span>
-      </a>
-    </li>
-    {{ end }}
-  </ul>
-
-  <div class="tab-content cluster-tab-content" id="content-{{ $fid }}">
-    {{ range $di, $disc := $field.disciplines }}
-    {{ $did := printf "f%d-d%d" (int $field.number) $di }}
-    <div class="tab-pane fade{{ if eq $di 0 }} show active{{ end }}" id="{{ $did }}"
-         role="tabpanel" aria-labelledby="{{ $did }}-tab">
-
-      <h3 class="sc-heading">{{ $disc.name }}</h3>
-
-      {{ if $disc.examples }}
-      <div class="sc-description">
-        <p class="sc-description__lede"><strong>Examples of open research practices</strong></p>
-        {{ $disc.examples | markdownify }}
+    {{/* Stable, human-readable anchor slug derived from the name (not the array index), so shared links survive reordering. Must match sidebar_nav.html. */}}
+    {{ $slug := $disc.name | lower | replaceRE "[^a-z0-9]+" "-" | replaceRE "^-+|-+$" "" }}
+    {{ $did := printf "f%d-%s" (int $field.number) $slug }}
+    <div class="acc-section" id="{{ $did }}">
+      <div class="acc-header" role="button" tabindex="0">
+        <span class="acc-chevron">&#9656;</span>
+        <h3 class="acc-label">{{ $disc.name }}</h3>
+        <span class="acc-count">{{ len $disc.resources }} resource{{ if ne (len $disc.resources) 1 }}s{{ end }}</span>
+        <button type="button" class="acc-copy-link" data-anchor="{{ $did }}" aria-label="Copy link to this discipline" title="Copy link to this discipline">
+          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M6.5 9.5l3-3M7 4.5l1-1a3 3 0 014.25 4.25l-1 1M9 11.5l-1 1a3 3 0 01-4.25-4.25l1-1"/></svg>
+        </button>
       </div>
-      {{ end }}
+      <div class="acc-body acc-collapsed">
 
-      {{ if $disc.resources }}
-      <ul class="publication-list disciplines-resource-list">
-        {{ range $disc.resources }}
-        <li class="publication-item disciplines-resource-item">
-          {{ $badgeColor := index $catColors .category | default "#6c757d" }}
-          <span class="badge disciplines-category-badge" style="background:{{ $badgeColor }};color:#fff;">{{ .category }}</span>
-          {{ if .link }}
-            <a href="{{ .link }}" target="_blank" rel="noopener">{{ .title }}</a>
-          {{ else }}
-            {{ .title }}
-          {{ end }}
-        </li>
+        {{ if $disc.examples }}
+        <div class="sc-description">
+          <p class="sc-description__lede"><strong>Examples of open research practices</strong></p>
+          {{ $disc.examples | markdownify }}
+        </div>
         {{ end }}
-      </ul>
-      {{ else }}
-      <p class="text-muted"><em>No resources listed for this discipline yet.</em></p>
-      {{ end }}
 
+        {{ if $disc.resources }}
+        <ul class="publication-list disciplines-resource-list">
+          {{ range $disc.resources }}
+          <li class="publication-item disciplines-resource-item">
+            {{ $badgeColor := index $catColors .category | default "#6c757d" }}
+            <span class="badge disciplines-category-badge" style="background:{{ $badgeColor }};color:#fff;">{{ .category }}</span>
+            {{ if .link }}
+              <a href="{{ .link }}" target="_blank" rel="noopener">{{ .title }}</a>
+            {{ else }}
+              {{ .title }}
+            {{ end }}
+          </li>
+          {{ end }}
+        </ul>
+        {{ else }}
+        <p class="text-muted"><em>No resources listed for this discipline yet.</em></p>
+        {{ end }}
+
+      </div>
     </div>
     {{ end }}
   </div>
