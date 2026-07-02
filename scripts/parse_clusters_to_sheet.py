@@ -204,7 +204,7 @@ def parse_cluster_toc(lines, desc_start, section_end):
                 if toc_names:
                     toc_names[-1] += ' ' + stripped
             else:
-                description_parts.append(stripped)
+                description_parts.append(extract_annotations(stripped)[0])
 
         i += 1
 
@@ -371,7 +371,7 @@ def parse_subclusters_standard(lines, start, end, toc_names, cluster_name):
             if current_cites:
                 current_cites[-1] += ' ' + stripped
             elif current_sc is not None:
-                current_desc.append(stripped)
+                current_desc.append(extract_annotations(stripped)[0])
             i += 1
             continue
 
@@ -426,7 +426,7 @@ def parse_subclusters_standard(lines, start, end, toc_names, cluster_name):
 
         # 5. Description text (after heading, before citations)
         if state == 'in_description':
-            current_desc.append(stripped)
+            current_desc.append(extract_annotations(stripped)[0])
             i += 1
             continue
 
@@ -460,7 +460,7 @@ def parse_cluster_11(lines, start, end):
             if stripped in ('Cross-Cluster Integration and Synergies',
                            'Possible Additional Sub-clusters?'):
                 break
-            desc_parts.append(stripped)
+            desc_parts.append(extract_annotations(stripped)[0])
         elif found_desc and not stripped and desc_parts:
             # Blank line after description content
             # Check if next non-blank line is a sub-cluster or ToC
@@ -575,7 +575,7 @@ def parse_cluster_11(lines, start, end):
 
         # Description continuation
         if current_sc and not in_key_readings:
-            current_desc.append(stripped)
+            current_desc.append(clean_stripped)
 
         j += 1
 
