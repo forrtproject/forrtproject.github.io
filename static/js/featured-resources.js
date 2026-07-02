@@ -709,29 +709,40 @@
     // --- Pre-cache card data so filtering never queries the DOM for text ---
     var sectionCache = [];
     document.querySelectorAll('.acc-section').forEach(function (section) {
-      var container = section.querySelector('.fr-cards-list');
-      if (!container) return;
-      var cardEls = container.querySelectorAll('.fc-card, .fr-card');
-      var cards = [];
-      cardEls.forEach(function (card) {
-        var title = (card.querySelector('.fc-title') || card.querySelector('.fr-title') || {}).textContent || '';
-        var summary = (card.querySelector('.fc-summary') || card.querySelector('.fr-summary') || {}).textContent || '';
-        cards.push({
-          el: card,
-          focus: card.getAttribute('data-focus'),
-          type: card.getAttribute('data-type'),
-          spec: card.getAttribute('data-specificity'),
-          text: (title + ' ' + summary).toLowerCase()
-        });
-      });
       var header = section.querySelector('.acc-header');
       var body = section.querySelector('.acc-body');
+
+      /* Own text (heading + description) - a query matching only this, not any
+         card, still means the section is relevant and shouldn't disable/collapse. */
+      var labelEl = header ? header.querySelector('.acc-label') : null;
+      var descEl = section.querySelector('.sc-description');
+      var ownText = ((labelEl ? labelEl.textContent : '') + ' ' + (descEl ? descEl.textContent : '')).toLowerCase();
+
+      var container = section.querySelector('.fr-cards-list');
+      var cards = [];
+      if (container) {
+        container.querySelectorAll('.fc-card, .fr-card').forEach(function (card) {
+          var title = (card.querySelector('.fc-title') || card.querySelector('.fr-title') || {}).textContent || '';
+          var summary = (card.querySelector('.fc-summary') || card.querySelector('.fr-summary') || {}).textContent || '';
+          cards.push({
+            el: card,
+            focus: card.getAttribute('data-focus'),
+            type: card.getAttribute('data-type'),
+            spec: card.getAttribute('data-specificity'),
+            text: (title + ' ' + summary).toLowerCase()
+          });
+        });
+      }
+
+      if (!container && !ownText.trim()) return;
+
       sectionCache.push({
         el: section,
         countEl: section.querySelector('.acc-count-match'),
         header: header,
         body: body,
         chevron: header ? header.querySelector('.acc-chevron') : null,
+        ownText: ownText,
         cards: cards
       });
     });
@@ -793,7 +804,19 @@
           cardVis[c] = show;
           if (show) matchCount++;
         }
-        sectionResults.push({ matchCount: matchCount, cardVis: cardVis });
+
+        /* A query matching only the section's own heading/description (no card)
+           still means it's relevant - keep it open rather than disabling it.
+           Only applies with no active facet, since facets are card-specific. */
+        var ownTextMatches = false;
+        if (tokens.length > 0 && activeFocus === 'all' && activeType === 'all' && sec.ownText) {
+          ownTextMatches = true;
+          for (var t2 = 0; t2 < tokens.length; t2++) {
+            if (sec.ownText.indexOf(tokens[t2]) === -1) { ownTextMatches = false; break; }
+          }
+        }
+
+        sectionResults.push({ matchCount: matchCount, cardVis: cardVis, ownTextMatches: ownTextMatches });
       }
 
       // --- Pass 2: batch all DOM writes ---
@@ -812,7 +835,7 @@
         var chevron = sec.chevron;
         if (!header || !body) continue;
 
-        if (res.matchCount === 0) {
+        if (res.matchCount === 0 && !res.ownTextMatches) {
           if (!header.classList.contains('acc-disabled')) {
             header.dataset.wasOpen = body.classList.contains('acc-collapsed') ? '0' : '1';
           }
