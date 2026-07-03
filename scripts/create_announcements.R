@@ -197,5 +197,16 @@ create_post <- function(row) {
   get_image(row["imageUrl"], slug_folder)
 }
 
+# Rebuild content/post from the publishable set so the sheet is the single
+# source of truth. Removing a row — or setting Show to "no", or scheduling it
+# into the future — drops it from filtered_data, and clearing the old bundles
+# here takes the announcement down instead of leaving a stale post behind.
+# Only the per-post page bundles are removed; the section index
+# (content/post/_index.md) and any other files are preserved. deploy.yaml does
+# the same clear before unpacking this artifact, because tar extraction adds
+# files but never deletes ones the archive no longer contains.
+post_dirs <- list.dirs("content/post", recursive = FALSE)
+if (length(post_dirs) > 0) unlink(post_dirs, recursive = TRUE)
+
 # Apply the function to each row of the filtered data
 apply(filtered_data, 1, function(row) create_post(as.list(row)))
