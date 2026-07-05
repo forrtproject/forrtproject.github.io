@@ -8,7 +8,10 @@ title: "Karen Matvienko-Sikar"
 superuser: false
 
 # Role/position (e.g., Professor of Artificial Intelligence)
-role:
+role: "Co-Director (Fundraising)"
+
+# Team/Subsection (for steering committee subsection grouping)
+team: "Fundraising"
 
 # Organizations/Affiliations
 organizations:
@@ -52,7 +55,5 @@ email: ""
 # Organizational groups that you belong to (for People widget)
 #   Set this to `[]` or comment out if you are not using People widget.
 user_groups:
-- ""
-#- "Steering Committee"
-#- "Code of Conduct Committee"
+- "Operations"
 ---
