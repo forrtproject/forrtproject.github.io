@@ -1,0 +1,90 @@
+name: Update publications
+
+# =====================================================================
+# Hydrates DOI-stub entries in data/publications.yaml (see
+# scripts/build_publications.py) by fetching title/authors/journal/year/
+# abstract/citation from the DOI's registration agency (Crossref/DataCite).
+#
+# Never commits to main directly: if hydration produces a diff, it's pushed
+# to a new branch and opened as a PR for human review before it goes live.
+#
+# Triggers:
+#   - push to main touching data/publications.yaml (hydrate a newly added
+#     DOI stub right away)
+#   - weekly schedule (catch metadata drift: preprint -> published,
+#     volume/page assignment, etc.)
+#   - workflow_dispatch (manual run, optionally ignoring the DOI cache)
+# =====================================================================
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'data/publications.yaml'
+  schedule:
+    - cron: '30 3 * * 1'   # weekly, Monday 03:30 UTC
+  workflow_dispatch:
+    inputs:
+      force:
+        description: 'Ignore the DOI lookup cache and refetch everything'
+        required: false
+        type: boolean
+        default: false
+
+concurrency:
+  group: update-publications
+  cancel-in-progress: false
+
+jobs:
+  hydrate:
+    name: Hydrate publication DOIs
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: pip install ruamel.yaml
+
+      - name: Restore DOI metadata cache
+        uses: actions/cache@v4
+        with:
+          path: scripts/publications_doi_cache.json
+          key: publications-doi-cache-${{ github.run_id }}
+          restore-keys: |
+            publications-doi-cache-
+
+      - name: Run hydration script
+        run: |
+          python3 scripts/build_publications.py ${{ inputs.force && '--force' || '' }}
+
+      - name: Create PR with hydrated metadata
+        env:
+          GITHUB_TOKEN: ${{ secrets.FORRT_PAT }}
+        run: |
+          if [ -z "$(git status --porcelain -- data/publications.yaml)" ]; then
+            echo "ℹ️ No publication metadata changes detected"
+            exit 0
+          fi
+
+          BRANCH_NAME="publications-update-$(date +%Y%m%d-%H%M%S)"
+          git checkout -b "$BRANCH_NAME"
+
+          git add data/publications.yaml
+          git commit -m "Update hydrated publication metadata - $(date -u +'%Y-%m-%d %H:%M:%S UTC')"
+
+          git push -u origin "$BRANCH_NAME"
+
+          gh pr create \
+            --title "📚 Publications metadata update - $(date '+%Y-%m-%d')" \
+            --body "Automated DOI metadata hydration generated on $(date -u +'%Y-%m-%d %H:%M:%S UTC') by scripts/build_publications.py. Please review the hydrated title/authors/abstract/citation fields before merging." \
+            --base main \
+            --head "$BRANCH_NAME"
+          echo "✅ PR created for publications update"

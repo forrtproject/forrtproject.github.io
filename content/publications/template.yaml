@@ -1,6 +1,23 @@
 # Below is a template for adding a new publication to the publications.yaml file. in data/publications.yaml
 # Remove or add the fields as needed following the layout of the existing entries.
 
+# --- Preferred: DOI stub (auto-hydrated by scripts/build_publications.py) ---
+# Only `doi`, `type`, and `focus_area` are hand-written; the rest is fetched
+# from Crossref/DataCite and refreshed on every run. Pin a field permanently by
+# adding it under `overrides:` instead. See content/publications/README.
+
+- doi: "10.xxxx/xxxxx"
+  type: "journal"   # journal, preprint, media, policy, affiliated, wip
+  focus_area: "Meta-Research & Scientific Reform"
+  # overrides:
+  #   abstract: "Custom short blurb instead of the paper's full abstract"
+  #   status: "In Press"
+  #   links:
+  #     postprint: "https://osf.io/preprints/..."
+  #     pdf: "./pdf/local-copy.pdf"
+
+# --- Fallback: full manual entry (no DOI, e.g. op-eds, policy briefs, WIP) ---
+
 - title: ""
   type: ""
   year: ""

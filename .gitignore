@@ -277,3 +277,6 @@ bibtex_to_apa/node_modules/
 
 # DOI lookup cache for cluster parsing script
 scripts/doi_cache.json
+
+# DOI metadata cache for publications hydration script
+scripts/publications_doi_cache.json

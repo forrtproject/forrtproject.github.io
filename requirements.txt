@@ -8,3 +8,4 @@ gspread
 python-dotenv
 matplotlib
 pypinyin
+ruamel.yaml

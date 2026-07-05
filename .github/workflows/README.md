@@ -72,6 +72,21 @@ Processes:
 
 Triggers `deploy.yaml` after successful processing via `repository_dispatch`.
 
+### [update_publications.yml](workflows/update_publications.yml)
+**Hydrates DOI-stub entries in `data/publications.yaml`**
+
+| Trigger | Schedule |
+|---------|----------|
+| Push to `main` touching `data/publications.yaml` | On push |
+| Weekly | Monday 03:30 UTC |
+| Manual dispatch | Manual (`force` option to bypass the DOI cache) |
+
+Runs `scripts/build_publications.py`, which fetches title/authors/journal/year/
+abstract/citation for any entry with a top-level `doi:` key from Crossref/DataCite
+(via doi.org content negotiation). Never commits to `main` directly — opens a PR
+for review when metadata changes, same pattern as the glossary-update PR in
+`data-processing.yml`. See `content/publications/README` for the entry format.
+
 ## Quality Checks
 
 ### [spell-check.yaml](workflows/spell-check.yaml)

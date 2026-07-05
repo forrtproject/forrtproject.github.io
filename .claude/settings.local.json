@@ -3,7 +3,21 @@
     "allow": [
       "Bash(wc:*)",
       "Bash(git:*)",
-      "Bash(gh pr:*)"
+      "Bash(gh pr:*)",
+      "Bash(python3 -c \"import yaml; print\\(yaml.__version__\\)\")",
+      "Bash(pip3 show *)",
+      "Bash(pip3 install *)",
+      "Bash(python3 -c \"from ruamel.yaml import YAML; print\\('ok'\\)\")",
+      "Bash(mkdir -p /private/tmp/claude-501/-Users-rdm-oss-forrtproject-github-io/d40a3858-03b0-4abe-8e07-eb52ecb3b04b/scratchpad/pubtest/data /private/tmp/claude-501/-Users-rdm-oss-forrtproject-github-io/d40a3858-03b0-4abe-8e07-eb52ecb3b04b/scratchpad/pubtest/scripts)",
+      "Bash(cp /private/tmp/claude-501/-Users-rdm-oss-forrtproject-github-io/d40a3858-03b0-4abe-8e07-eb52ecb3b04b/scratchpad/publications_test.yaml /private/tmp/claude-501/-Users-rdm-oss-forrtproject-github-io/d40a3858-03b0-4abe-8e07-eb52ecb3b04b/scratchpad/pubtest/data/publications.yaml)",
+      "Bash(cp /Users/rdm/oss/forrtproject.github.io/scripts/build_publications.py /private/tmp/claude-501/-Users-rdm-oss-forrtproject-github-io/d40a3858-03b0-4abe-8e07-eb52ecb3b04b/scratchpad/pubtest/scripts/)",
+      "Bash(python3 scripts/build_publications.py)",
+      "Bash(mkdir -p /private/tmp/claude-501/-Users-rdm-oss-forrtproject-github-io/d40a3858-03b0-4abe-8e07-eb52ecb3b04b/scratchpad/pubtest2/data /private/tmp/claude-501/-Users-rdm-oss-forrtproject-github-io/d40a3858-03b0-4abe-8e07-eb52ecb3b04b/scratchpad/pubtest2/scripts)",
+      "Bash(cp /Users/rdm/oss/forrtproject.github.io/scripts/build_publications.py /private/tmp/claude-501/-Users-rdm-oss-forrtproject-github-io/d40a3858-03b0-4abe-8e07-eb52ecb3b04b/scratchpad/pubtest2/scripts/)",
+      "Bash(cat)",
+      "Bash(mkdir -p /private/tmp/claude-501/-Users-rdm-oss-forrtproject-github-io/d40a3858-03b0-4abe-8e07-eb52ecb3b04b/scratchpad/pubtest3/data /private/tmp/claude-501/-Users-rdm-oss-forrtproject-github-io/d40a3858-03b0-4abe-8e07-eb52ecb3b04b/scratchpad/pubtest3/scripts)",
+      "Bash(cp /Users/rdm/oss/forrtproject.github.io/scripts/build_publications.py /private/tmp/claude-501/-Users-rdm-oss-forrtproject-github-io/d40a3858-03b0-4abe-8e07-eb52ecb3b04b/scratchpad/pubtest3/scripts/)",
+      "Bash(python3 scripts/build_publications.py --dry-run)"
     ]
   }
 }

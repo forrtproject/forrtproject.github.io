@@ -2,9 +2,60 @@
 
 This folder contains PDF files and other publication-related assets. The actual publication data is stored in `/data/publications.yaml` (NOT in this folder).
 
-## Adding a New Publication
+## Adding a New Publication (DOI, recommended)
 
-Publications are managed in the **`/data/publications.yaml`** file. This file contains all publication metadata that is displayed on the website.
+If the publication has a DOI, you only need to add a minimal stub — a script
+fetches the rest. Add an entry with a top-level `doi:` key:
+
+```yaml
+- doi: "10.1016/j.socec.2025.102502"
+  type: "journal"          # journal, preprint, media, policy, affiliated, wip
+  focus_area: "Meta-Research & Scientific Reform"
+```
+
+Commit that stub to `data/publications.yaml` and push (or open a PR). The
+[update_publications.yml](/.github/workflows/update_publications.yml) workflow
+runs `scripts/build_publications.py`, which resolves the DOI via Crossref/DataCite
+and fills in `title`, `authors`, `journal_name`, `year`, `status`, `abstract`,
+`citation`, `links.doi`, and `altmetric_doi`. It opens a PR with the hydrated
+result for review — nothing is pushed straight to `main`.
+
+**On every run, all of the auto-filled fields above are recomputed from the DOI
+and will overwrite hand edits.** To pin a field permanently (a custom abstract
+blurb, an extra `postprint`/`pdf`/`project` link, a manually-chosen `status`),
+add it under `overrides:` instead of editing the auto field directly:
+
+```yaml
+- doi: "10.1016/j.socec.2025.102502"
+  type: "journal"
+  focus_area: "Meta-Research & Scientific Reform"
+  overrides:
+    abstract: "Custom short blurb instead of the paper's full abstract"
+    status: "In Press"
+    links:
+      postprint: "https://osf.io/preprints/..."
+      pdf: "./pdf/local-copy.pdf"
+```
+
+`type` and `focus_area` are never touched by the script — always set those by
+hand. If a DOI fails to resolve (bad DOI, API outage), the script leaves that
+entry's existing fields untouched and logs a warning rather than blanking them.
+
+Citations are built as
+`{authors} ({year}). <strong>{title}.</strong> <em>{journal_name}</em>, {volume}({issue}), {page}. https://doi.org/{doi}`
+— good for typical journal articles and preprints, but book chapters and other
+unusual venues often need a hand-written `overrides.citation`. Check the PR
+diff before merging.
+
+**Note:** Existing publications that predate this pipeline are still fully
+hand-written (no top-level `doi:` key) and are left alone by the script —
+migrating them to the DOI-stub format is a separate, deliberate task, not
+something that happens automatically.
+
+## Adding a New Publication (manual, no DOI)
+
+For publications without a DOI (op-eds, policy briefs, work-in-progress, etc.),
+write the full entry by hand as before.
 
 ### Steps to Add a Publication
 
