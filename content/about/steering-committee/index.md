@@ -83,11 +83,11 @@ layout: single
     <span class="sc-cbar"></span>
 </div><div class="sc-card" onclick="openModal('tom-heyman')" style="--team-color:#7c3aed;--bar-extend:calc(1rem + 1px)">
     <div class="sc-card-photo">
-        <img src="/authors/tom-heyman/avatar.webp" alt="Tom Heyman" class="sc-card-img" />
+        <img src="/authors/tom-heyman/avatar.webp" alt="Dr. Tom Heyman" class="sc-card-img" />
         <div class="sc-card-overlay"></div>
     </div>
     <div class="sc-card-content">
-        <h4 class="sc-card-name">Tom Heyman</h4>
+        <h4 class="sc-card-name">Dr. Tom Heyman</h4>
         <p class="sc-card-role">Deputy-Director</p>
     </div>
     <span class="sc-cbar"></span>
@@ -117,11 +117,11 @@ layout: single
     <span class="sc-cbar"></span>
 </div><div class="sc-card" onclick="openModal('lorna-hamilton')" style="--team-color:#be123c;--bar-extend:0px">
     <div class="sc-card-photo">
-        <img src="/authors/lorna-hamilton/avatar.webp" alt="Lorna Hamilton" class="sc-card-img" />
+        <img src="/authors/lorna-hamilton/avatar.webp" alt="Prof Lorna Hamilton" class="sc-card-img" />
         <div class="sc-card-overlay"></div>
     </div>
     <div class="sc-card-content">
-        <h4 class="sc-card-name">Lorna Hamilton</h4>
+        <h4 class="sc-card-name">Prof Lorna Hamilton</h4>
         <p class="sc-card-role">Deputy-Director</p>
     </div>
     <span class="sc-cbar"></span>
@@ -200,11 +200,11 @@ layout: single
     <span class="sc-cbar"></span>
 </div><div class="sc-card" onclick="openModal('sara-lil-middleton')" style="--team-color:#7c3aed;--bar-extend:0px">
     <div class="sc-card-photo">
-        <img src="/authors/sara-lil-middleton/avatar.webp" alt="Sara Lil Middleton" class="sc-card-img" />
+        <img src="/authors/sara-lil-middleton/avatar.webp" alt="Dr Sara Lil Middleton" class="sc-card-img" />
         <div class="sc-card-overlay"></div>
     </div>
     <div class="sc-card-content">
-        <h4 class="sc-card-name">Sara Lil Middleton</h4>
+        <h4 class="sc-card-name">Dr Sara Lil Middleton</h4>
         <p class="sc-card-role">Knowledge Manager</p>
     </div>
     <span class="sc-cbar"></span>
@@ -444,6 +444,15 @@ layout: single
         <h4 class="sc-card-name">Thomas Rhys Evans</h4>
         <p class="sc-card-role">Ombuds</p>
     </div>
+</div><div class="sc-card" onclick="openModal('ruthvanderhallenphd-2')">
+    <div class="sc-card-photo">
+        <img src="/authors/ruthvanderhallenphd/avatar.webp" alt="Ruth Van der Hallen, PhD " class="sc-card-img" />
+        <div class="sc-card-overlay"></div>
+    </div>
+    <div class="sc-card-content">
+        <h4 class="sc-card-name">Ruth Van der Hallen, PhD </h4>
+        <p class="sc-card-role">Confidential Advisor</p>
+    </div>
 </div>
     </div>
 </section>
@@ -488,7 +497,7 @@ layout: single
                         <img src="/authors/adira-daniel/avatar.webp" alt="Adira Daniel " />
                     </div>
                     <div class="sc-social-links">
-                        <a href="https://www.linkedin.com/in/adira-daniel/" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-slate-800 transition-colors"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" x2="22" y1="12" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></a>
+                        <a href="https://www.linkedin.com/in/adiradaniel/" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-slate-800 transition-colors"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" x2="22" y1="12" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></a>
                     </div>
                 </div>
                 <div class="sc-modal-main">
@@ -565,16 +574,16 @@ In FORRT, she has been involved in co-leading Team Citational Politics and is ve
             <div class="sc-modal-layout">
                 <div class="sc-modal-sidebar">
                     <div class="sc-modal-img">
-                        <img src="/authors/tom-heyman/avatar.webp" alt="Tom Heyman" />
+                        <img src="/authors/tom-heyman/avatar.webp" alt="Dr. Tom Heyman" />
                     </div>
                     <div class="sc-social-links">
-                        <a href="https://www.universiteitleiden.nl/en/staffmembers/tom-heyman" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-slate-800 transition-colors"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" x2="22" y1="12" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></a>
+                        <a href="https://www.universiteitleiden.nl/en/staffmembers/tom-heyman" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-slate-800 transition-colors"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" x2="22" y1="12" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></a><a href="mailto:t.d.p.heyman@fsw.leidenuniv.nl" class="text-slate-400 hover:text-slate-800 transition-colors"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg></a>
                     </div>
                 </div>
                 <div class="sc-modal-main">
-                    <h3 class="sc-modal-name">Tom Heyman</h3>
+                    <h3 class="sc-modal-name">Dr. Tom Heyman</h3>
                     <p class="sc-modal-role">Deputy-Director (Meta-science & Research)</p>
-                    <div class="sc-modal-bio">Bio coming soon.</div>
+                    <div class="sc-modal-bio">Cognitive psychologist turned meta-scientist. PhD obtained at KU Leuven (Belgium), and currently working as an assistant professor at Leiden University (The Netherlands) in the Methods &amp; Statistics unit of the Institute of Psychology. Research interests include the potential and risks of using Large Language Models in (meta-)science, the pedagogy of responsible research practices, evaluating the robustness of scientific findings, and examining evidence accumulation, correction mechanisms as well as the adoption of responsible research practices through the lens of metascience. Teaching introduction to statistics, research methodology, and responsible research practices.</div>
                 </div>
             </div>
         </div>
@@ -640,16 +649,16 @@ In FORRT, she has been involved in co-leading Team Citational Politics and is ve
             <div class="sc-modal-layout">
                 <div class="sc-modal-sidebar">
                     <div class="sc-modal-img">
-                        <img src="/authors/lorna-hamilton/avatar.webp" alt="Lorna Hamilton" />
+                        <img src="/authors/lorna-hamilton/avatar.webp" alt="Prof Lorna Hamilton" />
                     </div>
                     <div class="sc-social-links">
-                        <a href="https://www.yorksj.ac.uk/our-staff/staff-profiles/lorna-hamilton.php" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-slate-800 transition-colors"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" x2="22" y1="12" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></a>
+                        <a href="https://www.yorksj.ac.uk/our-staff/staff-profiles/lorna-hamilton.php" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-slate-800 transition-colors"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" x2="22" y1="12" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></a><a href="mailto:l.hamilton1@yorksj.ac.uk" class="text-slate-400 hover:text-slate-800 transition-colors"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg></a>
                     </div>
                 </div>
                 <div class="sc-modal-main">
-                    <h3 class="sc-modal-name">Lorna Hamilton</h3>
+                    <h3 class="sc-modal-name">Prof Lorna Hamilton</h3>
                     <p class="sc-modal-role">Deputy-Director (Education & Pedagogy)</p>
-                    <div class="sc-modal-bio">Bio coming soon.</div>
+                    <div class="sc-modal-bio">Lorna Hamilton is Professor of Developmental Psychology and Inclusive Education at York St John University. Her research uses participatory approaches, longitudinal designs and mixed methods to understand educational experiences and outcomes for neurodivergent children and young people. Lorna is committed to social justice in education, with a particular focus on Universal Design for Learning, compassionate pedagogies and widening access to higher education.</div>
                 </div>
             </div>
         </div>
@@ -790,16 +799,16 @@ In FORRT, she has been involved in co-leading Team Citational Politics and is ve
             <div class="sc-modal-layout">
                 <div class="sc-modal-sidebar">
                     <div class="sc-modal-img">
-                        <img src="/authors/sara-lil-middleton/avatar.webp" alt="Sara Lil Middleton" />
+                        <img src="/authors/sara-lil-middleton/avatar.webp" alt="Dr Sara Lil Middleton" />
                     </div>
                     <div class="sc-social-links">
-                        <a href="https://www.environmental-research.ox.ac.uk/people/sara-lil-middleton-0" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-slate-800 transition-colors"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" x2="22" y1="12" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></a>
+                        <a href="https://saralilmiddleton.com/" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-slate-800 transition-colors"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" x2="22" y1="12" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></a>
                     </div>
                 </div>
                 <div class="sc-modal-main">
-                    <h3 class="sc-modal-name">Sara Lil Middleton</h3>
+                    <h3 class="sc-modal-name">Dr Sara Lil Middleton</h3>
                     <p class="sc-modal-role">Knowledge Manager (Sustainability & Strategy)</p>
-                    <div class="sc-modal-bio">Bio coming soon.</div>
+                    <div class="sc-modal-bio">Joy, creativity and integrity are the values at the root of how Sara Lil moves through the world as an environmental scientist, interdisciplinary scholar and educator. She is interested in how different parts of our environment intertwine and impact how we show up as individuals and in community from plants to people. At FORRT, Sara adopts social justice and systems-thinking approaches to help foster a space where academic scholarship is both scientifically rigorous and socially just.</div>
                 </div>
             </div>
         </div>
@@ -1286,6 +1295,31 @@ I am also very interested in Open Science and an avid R user. In that space, I e
                     <h3 class="sc-modal-name">Thomas Rhys Evans</h3>
                     <p class="sc-modal-role">Ombuds</p>
                     <div class="sc-modal-bio">Bio coming soon.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div><div id="modal-ruthvanderhallenphd-2" class="sc-modal-backdrop">
+    <div class="sc-modal-content">
+        <div class="sc-modal-header">
+            <button onclick="closeModal('ruthvanderhallenphd-2')" class="sc-close-btn">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 18 12"/></svg>
+            </button>
+        </div>
+        <div class="sc-modal-body">
+            <div class="sc-modal-layout">
+                <div class="sc-modal-sidebar">
+                    <div class="sc-modal-img">
+                        <img src="/authors/ruthvanderhallenphd/avatar.webp" alt="Ruth Van der Hallen, PhD " />
+                    </div>
+                    <div class="sc-social-links">
+                        <a href="https://www.eur.nl/people/ruth-van-der-hallen" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-slate-800 transition-colors"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" x2="22" y1="12" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></a><a href="mailto:confidential-advisor@forrt.org" class="text-slate-400 hover:text-slate-800 transition-colors"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg></a>
+                    </div>
+                </div>
+                <div class="sc-modal-main">
+                    <h3 class="sc-modal-name">Ruth Van der Hallen, PhD </h3>
+                    <p class="sc-modal-role">Confidential Advisor</p>
+                    <div class="sc-modal-bio">Ruth Van der Hallen is an Associate Professor in Clinical Psychology at Erasmus University Rotterdam, where she combines teaching, research, and academic leadership. She coordinates the Master’s specialisation in Clinical Psychology and leads projects that connect academic training with professional practice in clinical settings. In addition, she serves as a confidential counsellor for students and staff at the university. At FORRT, she acts as a confidential advisor and offers a safe and independent point of contact for community members seeking advice or support when navigating sensitive situations involving inappropriate behaviour, interpersonal conflicts, and concerns related to integrity and professional conduct.</div>
                 </div>
             </div>
         </div>

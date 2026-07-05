@@ -247,12 +247,6 @@ ICONS = {
 def normalize_name(name):
     if pd.isna(name): return ""
     name = str(name).strip()
-    # NOTE: these were previously double-escaped (r'\\b', r'\\s+', r'\\*'), which made
-    # them match literal backslash characters instead of the intended \b/\s/\* shorthands
-    # — title prefixes and asterisks were silently never stripped, and whitespace was
-    # never collapsed. That in turn fed inconsistent strings into sanitize_filename()
-    # below, which is why the same person could get a different folder slug (and a fresh
-    # duplicate content/authors/ directory) on every script run.
     name = re.sub(r'\b(Dr|Dr\.|Mr|Mr\.|Ms|Ms\.|Mrs|Prof|Prof\.)\s+', '', name, flags=re.IGNORECASE)
     name = re.sub(r'\*', '', name)
     name = unicodedata.normalize('NFKD', name)
