@@ -1,10 +1,15 @@
 # Generate FORRT announcement posts from the "FORRT Announcements" Google Sheet.
 #
 # Adapted from the contact-research-network webpage pipeline. Reads a publicly
-# shared Google Sheet (no auth via gs4_deauth), and for every row with
-# Show == "yes" writes a Hugo page bundle to content/post/<Slug>/index.md plus an
-# optional featured image. A hash of the sheet is cached so unchanged data is a
-# no-op. Run from the repo root: Rscript scripts/create_announcements.R
+# shared Google Sheet (no auth via gs4_deauth), and for every row that is
+# Show == "yes" AND dated today or earlier writes a Hugo page bundle to
+# content/post/<Slug>/index.md plus an optional featured image. A hash of the
+# publishable set is cached so an unchanged set is a no-op.
+# Run from the repo root: Rscript scripts/create_announcements.R
+#
+# Scheduling: give a row a future Date to stage it. It stays hidden until that
+# date, then the hourly workflow publishes it automatically (see the hashing
+# note below). No sheet edit is needed on the day it goes live.
 #
 # Sheet columns: Slug, Title, Description, imageUrl, webUrl, LinkText, Date,
 #                Author, Category, Show
@@ -19,35 +24,60 @@ library(digest)
 # Define file path for hash
 hash_file <- "gs_announcement_hash.txt"
 
-# Authenticate and read the Google Sheet (public, so read without auth)
+# Authenticate and read the Google Sheet (public, so read without auth).
+# Read the data tab by name so re-ordering tabs (e.g. adding an instructions
+# tab) can never feed the wrong sheet into the pipeline.
 sheet_url <- "https://docs.google.com/spreadsheets/d/1jVJyxdpArAGBbWhmdlbXfEhZRrIHl8JFkRrZGWkvOcI/edit"
 googlesheets4::gs4_deauth()
-data <- read_sheet(sheet_url)
+data <- read_sheet(sheet_url, sheet = "Sheet1")
 
 # Trim any stray whitespace from column names so lookups by name are robust.
 names(data) <- trimws(names(data))
 
-# Compute new hash
-new_hash <- digest(data, algo = "md5")
+# --- Scheduling: only publish rows whose Date has arrived -------------------
+# A row goes live when Show == "yes" AND its Date is today or earlier (UTC, the
+# CI runner's clock). A future Date keeps the announcement staged: it is neither
+# written nor counted in the change hash below, so nothing is published until
+# the date arrives. A blank/unparseable Date is treated as "publish now" so a
+# missing date never silently hides a post.
+to_date <- function(x) {
+  x <- trimws(as.character(x))
+  if (length(x) == 0 || is.na(x) || x == "") return(as.Date(NA))
+  if (grepl("^[0-9]+(\\.[0-9]+)?$", x)) {   # Google Sheets numeric date serial
+    return(as.Date(as.numeric(x), origin = "1899-12-30"))
+  }
+  suppressWarnings(as.Date(x))
+}
+row_dates <- do.call(c, lapply(data$Date, to_date))
+today     <- Sys.Date()
+is_shown  <- tolower(trimws(as.character(data$Show))) == "yes"
+is_future <- !is.na(row_dates) & row_dates > today
+keep      <- is_shown & !is_future
+keep[is.na(keep)] <- FALSE
+filtered_data <- data[keep, ]
+
+# Compute the change hash over the *publishable* set rather than the raw sheet.
+# This is what makes scheduling work: when a staged post's Date arrives it
+# enters this set and the hash changes, so the hourly workflow redeploys and the
+# post appears — even though the sheet itself was not edited. Edits to future or
+# hidden rows leave the set unchanged and so do not trigger a needless deploy.
+new_hash <- digest(filtered_data, algo = "md5")
 
 # Read old hash if exists
 old_hash <- if (file.exists(hash_file)) readLines(hash_file) else NULL
 
-# Abort if data hasn't changed
+# Abort if the publishable set hasn't changed
 if (!is.null(old_hash) && new_hash == old_hash) {
   if (!interactive()) {
-    message("Data hasn't changed. Exiting.")
+    message("Publishable announcements unchanged. Exiting.")
     quit(save = "no", status = 0)
   } else {
-    stop("Data hasn't changed. Exiting.")
+    stop("Publishable announcements unchanged. Exiting.")
   }
 }
 
 # Save new hash
 writeLines(new_hash, hash_file)
-
-# Filter for show = yes
-filtered_data <- data[tolower(trimws(data$Show)) == "yes", ]
 
 # Extract ID from Google Drive URL
 extract_id <- function(url) {
@@ -166,6 +196,17 @@ create_post <- function(row) {
 
   get_image(row["imageUrl"], slug_folder)
 }
+
+# Rebuild content/post from the publishable set so the sheet is the single
+# source of truth. Removing a row — or setting Show to "no", or scheduling it
+# into the future — drops it from filtered_data, and clearing the old bundles
+# here takes the announcement down instead of leaving a stale post behind.
+# Only the per-post page bundles are removed; the section index
+# (content/post/_index.md) and any other files are preserved. deploy.yaml does
+# the same clear before unpacking this artifact, because tar extraction adds
+# files but never deletes ones the archive no longer contains.
+post_dirs <- list.dirs("content/post", recursive = FALSE)
+if (length(post_dirs) > 0) unlink(post_dirs, recursive = TRUE)
 
 # Apply the function to each row of the filtered data
 apply(filtered_data, 1, function(row) create_post(as.list(row)))

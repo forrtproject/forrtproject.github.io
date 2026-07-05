@@ -169,6 +169,15 @@ jobs:
         run: |
           if [ -f .announcements/announcements.tar.gz ]; then
             echo "📥 Applying announcement posts from artifact..."
+            # The artifact holds the full current set of announcements. Replace
+            # the committed seed bundles entirely so a post removed from the
+            # sheet (or set to Show = "no") is taken down rather than lingering
+            # from the checkout — tar extraction adds files but never deletes
+            # ones the archive no longer contains. The section index and any
+            # non-bundle files are preserved. Only runs when we actually have an
+            # artifact to apply, so announcements are never wiped without a
+            # replacement.
+            find content/post -mindepth 1 -maxdepth 1 -type d -exec rm -rf {} +
             tar xzf .announcements/announcements.tar.gz
           else
             echo "::warning::announcements artifact present but tarball missing; skipping."
