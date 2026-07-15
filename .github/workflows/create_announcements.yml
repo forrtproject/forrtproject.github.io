@@ -64,7 +64,26 @@ jobs:
         uses: eddelbuettel/github-actions/r2u-setup@master
 
       - name: Install R package dependencies
-        run: Rscript -e 'install.packages(c("googlesheets4", "httr", "digest"))'
+        # install.packages here runs through r2u/bspm, which fetches .debs via apt.
+        # The r2u mirror occasionally times out, so retry a few times before failing —
+        # a transient blip clears on the next attempt. We verify the packages are
+        # actually present (install.packages only warns, it does not error, on a
+        # partial failure) so the retry can't be fooled into a false success.
+        run: |
+          for attempt in 1 2 3; do
+            echo "::group::install R packages (attempt $attempt)"
+            Rscript -e '
+              pkgs <- c("googlesheets4", "httr", "digest")
+              install.packages(pkgs)
+              missing <- pkgs[!pkgs %in% rownames(installed.packages())]
+              if (length(missing)) { message("Still missing: ", paste(missing, collapse = ", ")); quit(status = 1) }
+            ' && { echo "::endgroup::"; echo "R packages installed on attempt $attempt."; exit 0; }
+            echo "::endgroup::"
+            echo "Attempt $attempt failed; retrying in 30s..."
+            sleep 30
+          done
+          echo "All 3 attempts to install R packages failed." >&2
+          exit 1
 
       - name: Generate announcement posts
         id: gen
