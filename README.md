@@ -63,6 +63,8 @@ You can find [open issues here](https://github.com/forrtproject/forrtproject.git
 
 If you use FORRT resources or refer to the FORRT website in your work, please cite us.
 
+The FORRT website has a persistent DOI: [**10.17605/OSF.IO/QBCJ3**](https://doi.org/10.17605/OSF.IO/QBCJ3) (FORRT-owned, registered on OSF).
+
 Machine-readable citation metadata is provided in [`CITATION.cff`](CITATION.cff). On GitHub, you can obtain a formatted citation (APA or BibTeX) via the **"Cite this repository"** button in the sidebar of the [repository page](https://github.com/forrtproject/forrtproject.github.io).
 
 To cite a specific FORRT initiative, resource, or publication, please use the citation details provided on its dedicated page at [forrt.org](https://forrt.org). Many FORRT outputs (e.g. the Glossary, Summaries of Open Scholarship, and Lesson Banks) have their own preferred citations and persistent identifiers.

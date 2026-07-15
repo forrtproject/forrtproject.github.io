@@ -13,13 +13,12 @@ authors:
     website: 'https://forrt.org'
 repository-code: 'https://github.com/forrtproject/forrtproject.github.io'
 url: 'https://forrt.org'
-# Once the repository is archived on Zenodo (see the GitHub–Zenodo
-# integration), add the concept DOI that always points to the latest
-# version by uncommenting the block below:
-# identifiers:
-#   - type: doi
-#     value: 10.5281/zenodo.XXXXXXX
-#     description: The concept DOI representing all versions.
+doi: 10.17605/OSF.IO/QBCJ3
+identifiers:
+  - type: doi
+    value: 10.17605/OSF.IO/QBCJ3
+    description: >-
+      FORRT-owned DOI for the FORRT website, registered on OSF.
 abstract: >-
   FORRT (Framework for Open and Reproducible Research
   Training) is a community-led didactic and pedagogical
