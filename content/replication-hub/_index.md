@@ -47,7 +47,7 @@ cards:
         url: "/explorer"
       - text: "FReD R Package"
         url: "/fred"
-      - text: "Atlas"
+      - text: "Replication Atlas"
         url: "/flora-replication-atlas/"
       - text: "Zotero Replication Checker"
         url: "/flora-zotero/"
@@ -67,7 +67,7 @@ cards:
         url: "https://osf.io/brxtd/"
       - text: "Love Replications Week"
         url: "/love-replications-week"
-      - text: "ReplicateThis Nomination Portal (WIP)"
+      - text: "ReplicateThis Nomination Portal (demo!)"
         url: "/replicatethis"
 
   - key: disseminate
