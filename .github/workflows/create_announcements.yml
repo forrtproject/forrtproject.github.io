@@ -21,7 +21,7 @@ name: Create announcements
 
 on:
   schedule:
-    - cron: '15 * * * *'   # hourly (offset to balance runner load)
+    - cron: '15 */2 * * *'   # every 2 hours (offset to balance runner load)
   workflow_dispatch:
 
 concurrency:
