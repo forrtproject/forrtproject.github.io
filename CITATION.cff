@@ -1,0 +1,36 @@
+cff-version: 1.2.0
+title: >-
+  FORRT — Framework for Open and Reproducible Research
+  Training (forrt.org)
+message: >-
+  If you refer to the FORRT website,
+  please cite it using the metadata from this file.
+  For citing specific projects, please refer to the
+  respective project pages and their citation information.
+type: software
+authors:
+  - name: >-
+      FORRT — Framework for Open and Reproducible Research
+      Training
+    website: 'https://forrt.org'
+repository-code: 'https://github.com/forrtproject/forrtproject.github.io'
+url: 'https://forrt.org'
+doi: 10.17605/OSF.IO/QBCJ3
+identifiers:
+  - type: doi
+    value: 10.17605/OSF.IO/QBCJ3
+    description: >-
+      FORRT-owned DOI for the FORRT website, registered on OSF.
+abstract: >-
+  FORRT is a community committed to advancing open scholarship through
+  education, meta-research, community building, training and advocacy. 
+  This repository contains the source code and content of the FORRT website, forrt.org.
+keywords:
+  - open scholarship
+  - reproducibility
+  - open science
+  - research training
+  - pedagogy
+  - higher education
+  - metascience
+license: CC-BY-NC-SA-4.0
