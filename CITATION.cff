@@ -1,0 +1,37 @@
+cff-version: 1.2.0
+title: >-
+  FORRT — Framework for Open and Reproducible Research
+  Training (forrt.org)
+message: >-
+  If you use FORRT resources or refer to the FORRT website,
+  please cite it using the metadata from this file.
+type: software
+authors:
+  - name: >-
+      FORRT — Framework for Open and Reproducible Research
+      Training
+    website: 'https://forrt.org'
+repository-code: 'https://github.com/forrtproject/forrtproject.github.io'
+url: 'https://forrt.org'
+# Once the repository is archived on Zenodo (see the GitHub–Zenodo
+# integration), add the concept DOI that always points to the latest
+# version by uncommenting the block below:
+# identifiers:
+#   - type: doi
+#     value: 10.5281/zenodo.XXXXXXX
+#     description: The concept DOI representing all versions.
+abstract: >-
+  FORRT (Framework for Open and Reproducible Research
+  Training) is a community-led didactic and pedagogical
+  infrastructure supporting open and reproducible research
+  training in higher education. This repository contains the
+  source code and content of the FORRT website, forrt.org.
+keywords:
+  - open scholarship
+  - reproducibility
+  - open science
+  - research training
+  - pedagogy
+  - higher education
+  - metascience
+license: CC-BY-NC-SA-4.0
