@@ -41,10 +41,16 @@ cards:
     links:
       - text: "FLoRA Annotator"
         url: "/annotator"
+      - text: "FLoRA Explorer"
+        url: "/flora-explorer/"
       - text: "FReD Explorer"
         url: "/explorer"
       - text: "FReD R Package"
         url: "/fred"
+      - text: "Atlas"
+        url: "/flora-replication-atlas/"
+      - text: "Zotero Replication Checker"
+        url: "/flora-zotero/"
 
   - key: conduct
     title: Conduct
@@ -79,8 +85,6 @@ cards:
         url: "https://ejournals.uni-muenster.de/replicationresearch/mentorshipprogram"
       - text: "Replication Journal Federation"
         url: "/rjf"
-      - text: "Replication Bot"
-        url: "https://bsky.app/profile/replicationbot.bsky.social"
       - text: "Journal Replicability Tracker"
         url: "/journalranking"
 ---
