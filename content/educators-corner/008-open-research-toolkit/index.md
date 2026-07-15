@@ -43,33 +43,33 @@ All videos are publicly accessible on [YouTube](http://doi.org/10.7290/ORT_Video
 
 The modules in the Open Research Toolkit currently cover the following topics. Links to each module’s materials are provided.
 
-* Module 1: The Open Research Ecosystem [[YouTube](https://youtu.be/XnI3HmiJ_TU), [PowerPoint](https://osf.io/cmh2r/), [gSlides](https://osf.io/gqwta/), [Notes](https://osf.io/ahvxd/)] 
+* Module 1: The Open Research Ecosystem [[Video](https://osf.io/rb3p9/), [PowerPoint](https://osf.io/cmh2r/), [gSlides](https://osf.io/gqwta/), [Notes](https://osf.io/ahvxd/)] 
 
-* Module 2: Principles & Practices of Open Research [[YouTube](https://youtu.be/6eV6YHgvpSk), [PowerPoint](https://osf.io/q439h/), [gSlides](https://osf.io/v9g7q/), [Notes](https://osf.io/qw5mk/)]
+* Module 2: Principles & Practices of Open Research [[Video](https://osf.io/psr3w/), [PowerPoint](https://osf.io/q439h/), [gSlides](https://osf.io/v9g7q/), [Notes](https://osf.io/qw5mk/)]
 
-* Module 3: The Philosophical Underpinning of Open Research [[YouTube](https://youtu.be/i6_RRYBH7uc), [PowerPoint](https://osf.io/2mgkr/), [gSlides](https://osf.io/ak682/), [Notes](https://osf.io/hp7n5/)]
+* Module 3: The Philosophical Underpinning of Open Research [[Video](https://osf.io/gbnx2/), [PowerPoint](https://osf.io/2mgkr/), [gSlides](https://osf.io/ak682/), [Notes](https://osf.io/hp7n5/)]
 
-* Module 4: Open Access to Published Research [[YouTube](https://youtu.be/9UUGv93-hTA), [PowerPoint](https://osf.io/vhmnz/), [gSlides](https://osf.io/prenk/), [Notes](https://osf.io/pektx/)]
+* Module 4: Open Access to Published Research [[Video](https://osf.io/3ap5c/), [PowerPoint](https://osf.io/vhmnz/), [gSlides](https://osf.io/prenk/), [Notes](https://osf.io/pektx/)]
 
-* Module 5: Open Access to Research Data [[YouTube](https://youtu.be/LW849Rqf8hg), [PowerPoint](https://osf.io/am49n/), [gSlides](https://osf.io/y754z/), [Notes](https://osf.io/v6jk2/)]
+* Module 5: Open Access to Research Data [[Video](https://osf.io/eukhp/), [PowerPoint](https://osf.io/am49n/), [gSlides](https://osf.io/y754z/), [Notes](https://osf.io/v6jk2/)]
 
-* Module 6: FAIR Data Principles [[YouTube](https://youtu.be/XPhIgL5phFo), [PowerPoint](https://osf.io/xchjp/), [gSlides](https://osf.io/szxav/), [Notes](https://osf.io/9un5c/)]
+* Module 6: FAIR Data Principles [[Video](https://osf.io/rq3ab/), [PowerPoint](https://osf.io/xchjp/), [gSlides](https://osf.io/szxav/), [Notes](https://osf.io/9un5c/)]
 
-* Module 7: Reproducibility of Research [[YouTube](https://youtu.be/MyzQSe6KiLs), [PowerPoint](https://osf.io/9t8xm/), [gSlides](https://osf.io/xazqr/), [Notes](https://osf.io/x65dh/)]
+* Module 7: Reproducibility of Research [[Video](https://osf.io/z5uqn/), [PowerPoint](https://osf.io/9t8xm/), [gSlides](https://osf.io/xazqr/), [Notes](https://osf.io/x65dh/)]
 
-* Module 8: The Five Rs of Open Research [[YouTube](https://youtu.be/AcKBNPPNgp0), [PowerPoint](https://osf.io/kywpx/), [gSlides](https://osf.io/tcky6/), [Notes](https://osf.io/84mex/)]
+* Module 8: The Five Rs of Open Research [[Video](https://osf.io/65z9n/), [PowerPoint](https://osf.io/kywpx/), [gSlides](https://osf.io/tcky6/), [Notes](https://osf.io/84mex/)]
 
-* Module 9: Open Peer Review [[YouTube](https://youtu.be/GHVoVHV1xyk), [PowerPoint](https://osf.io/q6bpz/), [gSlides](https://osf.io/68agv/), [Notes](https://osf.io/tnjk8/)]
+* Module 9: Open Peer Review [[Video](https://osf.io/jwmcq/), [PowerPoint](https://osf.io/q6bpz/), [gSlides](https://osf.io/68agv/), [Notes](https://osf.io/tnjk8/)]
 
-* Module 10: Open Licensing of Data & Software [[YouTube](https://youtu.be/_gnIAejr_js), [PowerPoint](https://osf.io/52nyk/), [gSlides](https://osf.io/avpme/), [Notes](https://osf.io/ekygv/)]
+* Module 10: Open Licensing of Data & Software [[Video](https://osf.io/zvahe/), [PowerPoint](https://osf.io/52nyk/), [gSlides](https://osf.io/avpme/), [Notes](https://osf.io/ekygv/)]
 
-* Module 11: Open Advocacy [[YouTube](https://youtu.be/pCxb2wgZZEI), [PowerPoint](https://osf.io/p798v/), [gSlides](https://osf.io/5d78q/), [Notes](https://osf.io/zac8p/)]
+* Module 11: Open Advocacy [[Video](https://osf.io/j6n7u/), [PowerPoint](https://osf.io/p798v/), [gSlides](https://osf.io/5d78q/), [Notes](https://osf.io/zac8p/)]
 
-* Module 12: Citizen Science [[YouTube](https://youtu.be/kj053ov8Qfg), [PowerPoint](https://osf.io/s8z5c/), [gSlides](https://osf.io/z26e3/), [Notes](https://osf.io/kymwe/)]
+* Module 12: Citizen Science [[Video](https://osf.io/fqapm/), [PowerPoint](https://osf.io/s8z5c/), [gSlides](https://osf.io/z26e3/), [Notes](https://osf.io/kymwe/)]
 
-* Module 13: Open Policies [[YouTube](https://youtu.be/pw6faLOdTdc), [PowerPoint](https://osf.io/zpje3/), [gSlides](https://osf.io/zqc3t/), [Notes](https://osf.io/27xuv/)]
+* Module 13: Open Policies [[Video](https://osf.io/3ktva/), [PowerPoint](https://osf.io/zpje3/), [gSlides](https://osf.io/zqc3t/), [Notes](https://osf.io/27xuv/)]
 
-* Module 14: Open Education Resources [[YouTube](https://youtu.be/_BlrPmtM938), [PowerPoint](https://osf.io/v83rg/), [gSlides](https://osf.io/qm82w/), [Notes](https://osf.io/5pv86/)]
+* Module 14: Open Education Resources [[Video](https://osf.io/zu6ad/), [PowerPoint](https://osf.io/v83rg/), [gSlides](https://osf.io/qm82w/), [Notes](https://osf.io/5pv86/)]
 
 More resources and additional modules may be added over time. Future resources and modules may include topics such as open research ethics, open source software and collaborative platforms, and creating more detailed curricula for those interested in using the ORT for a course. Please let me know how you use the material so I can track its adoption and use.
 

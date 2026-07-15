@@ -11,7 +11,7 @@
         "Transparency"
     ],
     "references": [
-        "International Committee of Medical Journal Editors. (2025). <i>Author Responsibilities—Conflicts of Interest</i>. https://www.icmje.org/recommendations/browse/roles-and-responsibilities/author-responsibilities–conflicts-of-interest.html",
+        "International Committee of Medical Journal Editors. (2025). <i>Author Responsibilities—Conflicts of Interest</i>. https://www.icmje.org/recommendations/browse/roles-and-responsibilities/author-responsibilities--conflicts-of-interest.html",
         "<i>Directory of Open Access Journals</i>. (n.d.). https://doaj.org/apply/transparency/"
     ],
     "drafted_by": [

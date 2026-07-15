@@ -1,7 +1,7 @@
 {
     "timestamp": "01/01/2020",
     "title": "The Meaningfulness of Effect Sizes in Psychological Research: Differences Between Sub-Disciplines and the Impact of Potential Biases",
-    "link_to_resource": "https://www.frontiersin.org/articles/10.3389/fpsyg.2019.00813/full",
+    "link_to_resource": "https://doi.org/10.3389/fpsyg.2019.00813",
     "creators": [
         "Marcus A. Schwarz",
         "Thomas Sch\u00e4fer"
@@ -38,7 +38,7 @@
     ],
     "forrt_clusters_new": "Conceptual and Statistical Knowledge",
     "forrt_sub_clusters": "Effect sizes, statistical power, simulations, & confidence intervals.",
-    "doi": "10.3389/fpsyg.2019.00813/full",
+    "doi": "10.3389/fpsyg.2019.00813",
     "in-clusters": true,
     "pdf name": "",
     "apa reference": ""

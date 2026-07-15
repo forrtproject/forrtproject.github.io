@@ -18,7 +18,7 @@ date: 2023-10-03
 
 We strongly recommend reading chapter 9 on Oppression from the source below before engaging with this lesson.
 
-Jason, Leonard A.; Glantsman, Olya; O'Brien, Jack F.; and Ramian, Kaitlyn N., "Introduction to Community Psychology: Becoming an Agent of Change" (2019). *College of Science and Health Full Text Publications*. 1. [https://via.library.depaul.edu/cshtextbooks/1Lesson](https://via.library.depaul.edu/cshtextbooks/1Lesson)
+Jason, Leonard A.; Glantsman, Olya; O'Brien, Jack F.; and Ramian, Kaitlyn N., "Introduction to Community Psychology: Becoming an Agent of Change" (2019). *College of Science and Health Full Text Publications*. 1. [https://via.library.depaul.edu/cshtextbooks/1](https://via.library.depaul.edu/cshtextbooks/1)
 
 <br>
 
@@ -42,7 +42,7 @@ Read and discuss the following citations:
 
 *Now read the short essay written by Audre Lorde in 1984. What does she mean when she says that the master's tools will never dismantle the master's house?*
 
-[Lorde, Audre. "The Master's Tools Will Never Dismantle the Master's House." 1984. Sister Outsider: Essays and Speeches. Ed. Berkeley, CA: Crossing Press. 110-114. 2007. Print.](https://collectiveliberation.org/wp-content/uploads/2013/01/Lorde_The_Masters_Tools.pdf)
+[Lorde, Audre. "The Master's Tools Will Never Dismantle the Master's House." 1984. Sister Outsider: Essays and Speeches. Ed. Berkeley, CA: Crossing Press. 110-114. 2007. Print.](https://web.archive.org/web/20260629143548/https://collectiveliberation.org/wp-content/uploads/2013/01/Lorde_The_Masters_Tools.pdf)
 
 You can listen to the essay here:
 

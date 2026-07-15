@@ -33,7 +33,7 @@ projects: []
 
 Often the search and exploration of tools and technologies in social science research is not part of the class curriculum in the same way as the systematic review of literature is. This, sadly, leaves the becoming researcher in a place of disadvantage, in my opinion. In their early research career, students will mostly rely on their supervisor or peers to advise on the tools they use, which is still a very limited sample. However, with strides in technological development, researchers could choose from a growing number of multivariate tools for social science methods rising from within the discipline itself, as well as borrowed from other disciplines or coming from the commercial sector. 
 
-Starting from this premise, we decided to build a [tools directory](https://ocean.sagepub.com/research-tools-directory#categories) for social scientists, a simple solution for a place where any researcher or student can come and find the right tool for what they need. In this piece, I explain how the tools directory was developed and how it can be used by educators, researchers and students.
+Starting from this premise, we decided to build a [tools directory](https://researchmethodscommunity.sagepub.com/research-tools) for social scientists, a simple solution for a place where any researcher or student can come and find the right tool for what they need. In this piece, I explain how the tools directory was developed and how it can be used by educators, researchers and students.
 
 
 ### Developing the tools directory

@@ -1,7 +1,7 @@
 {
     "timestamp": "1/9/2025 10:42:06",
     "title": "Minimizing Questionable Research Practices \u2013 The Role of Norms, Counter Norms, and Micro-Organizational Ethics Discussion",
-    "link_to_resource": "https://link.springer.com/article/10.1007/s10805-024-09520-z",
+    "link_to_resource": "https://doi.org/10.1007/s10805-024-09520-z",
     "creators": [
         "Solmaz Filiz Karabag",
         "Christian Berggren",

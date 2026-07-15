@@ -1,7 +1,7 @@
 {
     "timestamp": "01/01/2020",
     "title": "Open Science Toolbox",
-    "link_to_resource": "https://www.osc.uni-muenchen.de/toolbox/index.html",
+    "link_to_resource": "http://web.archive.org/web/20260314004917/https://www.osc.uni-muenchen.de/toolbox/index.html",
     "creators": [
         "Lutz Heil"
     ],

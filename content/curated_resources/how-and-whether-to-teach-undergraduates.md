@@ -1,7 +1,7 @@
 {
     "timestamp": "2020-05-22T18:38:12.752Z",
     "title": "How (and Whether) to Teach Undergraduates About the Replication Crisis in Psychological Science",
-    "link_to_resource": "https://journals.sagepub.com/doi/abs/10.1177/0098628318762900",
+    "link_to_resource": "https://doi.org/10.1177/0098628318762900",
     "creators": [
         "William J. Chopik",
         "Ryan H. Bremner",

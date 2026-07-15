@@ -9,7 +9,7 @@
         "Theory building"
     ],
     "references": [
-        "Schafersman, S. D. (1997). <i>An Introduction to Science</i>. https://www.geo.sunysb.edu/esp/files/scientific-method.html",
+        "Schafersman, S. D. (1997). <i>An Introduction to Science</i>. http://web.archive.org/web/20221109113137/https://www.geo.sunysb.edu/esp/files/scientific-method.html",
         "Wacker, J. (1998). A definition of theory: research guidelines for different theory-building research methods in operations management. <i>Journal of Operations Management</i>, <i>16</i>(4), 361–385. https://doi.org/10.1016/s0272-6963(98)00019-9"
     ],
     "drafted_by": [
