@@ -3,8 +3,10 @@ title: >-
   FORRT — Framework for Open and Reproducible Research
   Training (forrt.org)
 message: >-
-  If you use FORRT resources or refer to the FORRT website,
+  If you refer to the FORRT website,
   please cite it using the metadata from this file.
+  For citing specific projects, please refer to the
+  respective project pages and their citation information.
 type: software
 authors:
   - name: >-
@@ -20,11 +22,9 @@ identifiers:
     description: >-
       FORRT-owned DOI for the FORRT website, registered on OSF.
 abstract: >-
-  FORRT (Framework for Open and Reproducible Research
-  Training) is a community-led didactic and pedagogical
-  infrastructure supporting open and reproducible research
-  training in higher education. This repository contains the
-  source code and content of the FORRT website, forrt.org.
+  FORRT is a community committed to advancing open scholarship through
+  education, meta-research, community building, training and advocacy. 
+  This repository contains the source code and content of the FORRT website, forrt.org.
 keywords:
   - open scholarship
   - reproducibility
