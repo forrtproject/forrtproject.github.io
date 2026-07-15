@@ -279,7 +279,11 @@ def find_existing_author_dir(personal_name, authors_dir):
     """
     normalized_target = normalize_name(personal_name)
     best_match = None
-    best_score = 0.75
+    # 0.9 is deliberately strict: legitimate spelling variants of the SAME person
+    # (Dr prefix, missing middle initial, hyphen vs space in a surname) all score >=0.95
+    # against their existing folder, while two DIFFERENT people never do. A looser
+    # threshold risks collapsing distinct authors onto one folder (overwriting avatars).
+    best_score = 0.9
     for existing_dir in authors_dir.iterdir():
         if not existing_dir.is_dir():
             continue

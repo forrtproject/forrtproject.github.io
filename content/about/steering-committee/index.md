@@ -33,9 +33,9 @@ layout: single
     <span class="sc-title-label">Team</span>
     <h3 class="sc-title-text">Community & Sustainability</h3>
     <span class="sc-cbar"></span>
-</div><div class="sc-card" onclick="openModal('dr-steven-verheyen')" style="--team-color:#0f766e;--bar-extend:calc(1rem + 1px)">
+</div><div class="sc-card" onclick="openModal('steven-verheyen')" style="--team-color:#0f766e;--bar-extend:calc(1rem + 1px)">
     <div class="sc-card-photo">
-        <img src="/authors/dr-steven-verheyen/avatar.webp" alt="dr. Steven Verheyen" class="sc-card-img" />
+        <img src="/authors/steven-verheyen/avatar.webp" alt="dr. Steven Verheyen" class="sc-card-img" />
         <div class="sc-card-overlay"></div>
     </div>
     <div class="sc-card-content">
@@ -57,9 +57,9 @@ layout: single
     <span class="sc-title-label">Team</span>
     <h3 class="sc-title-text">Social Justice & DEIA</h3>
     <span class="sc-cbar"></span>
-</div><div class="sc-card" onclick="openModal('dr-sarah-a-sauve')" style="--team-color:#2563eb;--bar-extend:0px">
+</div><div class="sc-card" onclick="openModal('sarah-a-sauve')" style="--team-color:#2563eb;--bar-extend:0px">
     <div class="sc-card-photo">
-        <img src="/authors/dr-sarah-a-sauve/avatar.webp" alt="Dr. Sarah A. Sauvé" class="sc-card-img" />
+        <img src="/authors/sarah-a-sauve/avatar.webp" alt="Dr. Sarah A. Sauvé" class="sc-card-img" />
         <div class="sc-card-overlay"></div>
     </div>
     <div class="sc-card-content">
@@ -174,9 +174,9 @@ layout: single
     <span class="sc-title-label">Team</span>
     <h3 class="sc-title-text">Community Engagement</h3>
     <span class="sc-cbar"></span>
-</div><div class="sc-card" onclick="openModal('drlukasroseler')" style="--team-color:#2563eb;--bar-extend:0px">
+</div><div class="sc-card" onclick="openModal('lukas-roseler')" style="--team-color:#2563eb;--bar-extend:0px">
     <div class="sc-card-photo">
-        <img src="/authors/drlukasroseler/avatar.webp" alt="Dr. Lukas Röseler" class="sc-card-img" />
+        <img src="/authors/lukas-roseler/avatar.webp" alt="Dr. Lukas Röseler" class="sc-card-img" />
         <div class="sc-card-overlay"></div>
     </div>
     <div class="sc-card-content">
@@ -397,9 +397,9 @@ layout: single
         <p class="sc-section-desc">Synthesising community efforts to maintain alignment with FORRT’s mission and vision.</p>
     </div>
     <div class="sc-grid">
-        <div class="sc-card" onclick="openModal('dr-lukas-wallrich')">
+        <div class="sc-card" onclick="openModal('lukas-wallrich')">
     <div class="sc-card-photo">
-        <img src="/authors/dr-lukas-wallrich/avatar.webp" alt="Dr Lukas Wallrich" class="sc-card-img" />
+        <img src="/authors/lukas-wallrich/avatar.webp" alt="Dr Lukas Wallrich" class="sc-card-img" />
         <div class="sc-card-overlay"></div>
     </div>
     <div class="sc-card-content">
@@ -458,10 +458,10 @@ layout: single
 </section>
     </main>
     <div id="modals-container">
-        <div id="modal-dr-steven-verheyen" class="sc-modal-backdrop">
+        <div id="modal-steven-verheyen" class="sc-modal-backdrop">
     <div class="sc-modal-content">
         <div class="sc-modal-header">
-            <button onclick="closeModal('dr-steven-verheyen')" class="sc-close-btn">
+            <button onclick="closeModal('steven-verheyen')" class="sc-close-btn">
                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 18 12"/></svg>
             </button>
         </div>
@@ -469,7 +469,7 @@ layout: single
             <div class="sc-modal-layout">
                 <div class="sc-modal-sidebar">
                     <div class="sc-modal-img">
-                        <img src="/authors/dr-steven-verheyen/avatar.webp" alt="dr. Steven Verheyen" />
+                        <img src="/authors/steven-verheyen/avatar.webp" alt="dr. Steven Verheyen" />
                     </div>
                     <div class="sc-social-links">
                         <a href="https://www.stevenverheyen.com" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-slate-800 transition-colors"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" x2="22" y1="12" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></a><a href="mailto:verheyen@essb.eur.nl" class="text-slate-400 hover:text-slate-800 transition-colors"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg></a>
@@ -512,10 +512,10 @@ Outside of research, you’ll usually find me baking something cozy, tending to 
             </div>
         </div>
     </div>
-</div><div id="modal-dr-sarah-a-sauve" class="sc-modal-backdrop">
+</div><div id="modal-sarah-a-sauve" class="sc-modal-backdrop">
     <div class="sc-modal-content">
         <div class="sc-modal-header">
-            <button onclick="closeModal('dr-sarah-a-sauve')" class="sc-close-btn">
+            <button onclick="closeModal('sarah-a-sauve')" class="sc-close-btn">
                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 18 12"/></svg>
             </button>
         </div>
@@ -523,7 +523,7 @@ Outside of research, you’ll usually find me baking something cozy, tending to 
             <div class="sc-modal-layout">
                 <div class="sc-modal-sidebar">
                     <div class="sc-modal-img">
-                        <img src="/authors/dr-sarah-a-sauve/avatar.webp" alt="Dr. Sarah A. Sauvé" />
+                        <img src="/authors/sarah-a-sauve/avatar.webp" alt="Dr. Sarah A. Sauvé" />
                     </div>
                     <div class="sc-social-links">
                         <a href="https://staff.lincoln.ac.uk/8ebcbc1e-6ca0-4fde-b6ad-42775c65d754" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-slate-800 transition-colors"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" x2="22" y1="12" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></a><a href="mailto:ssauve@lincoln.ac.uk" class="text-slate-400 hover:text-slate-800 transition-colors"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg></a>
@@ -738,10 +738,10 @@ In FORRT, she has been involved in co-leading Team Citational Politics and is ve
             </div>
         </div>
     </div>
-</div><div id="modal-drlukasroseler" class="sc-modal-backdrop">
+</div><div id="modal-lukas-roseler" class="sc-modal-backdrop">
     <div class="sc-modal-content">
         <div class="sc-modal-header">
-            <button onclick="closeModal('drlukasroseler')" class="sc-close-btn">
+            <button onclick="closeModal('lukas-roseler')" class="sc-close-btn">
                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 18 12"/></svg>
             </button>
         </div>
@@ -749,7 +749,7 @@ In FORRT, she has been involved in co-leading Team Citational Politics and is ve
             <div class="sc-modal-layout">
                 <div class="sc-modal-sidebar">
                     <div class="sc-modal-img">
-                        <img src="/authors/drlukasroseler/avatar.webp" alt="Dr. Lukas Röseler" />
+                        <img src="/authors/lukas-roseler/avatar.webp" alt="Dr. Lukas Röseler" />
                     </div>
                     <div class="sc-social-links">
                         <a href="https://lukasroeseler.github.io/home/" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-slate-800 transition-colors"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" x2="22" y1="12" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></a><a href="mailto:lukas.roeseler@uni-muenster.de" class="text-slate-400 hover:text-slate-800 transition-colors"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg></a>
@@ -1197,10 +1197,10 @@ I have been actively involved in several FORRT initiatives, including contributi
             </div>
         </div>
     </div>
-</div><div id="modal-dr-lukas-wallrich" class="sc-modal-backdrop">
+</div><div id="modal-lukas-wallrich" class="sc-modal-backdrop">
     <div class="sc-modal-content">
         <div class="sc-modal-header">
-            <button onclick="closeModal('dr-lukas-wallrich')" class="sc-close-btn">
+            <button onclick="closeModal('lukas-wallrich')" class="sc-close-btn">
                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 18 12"/></svg>
             </button>
         </div>
@@ -1208,7 +1208,7 @@ I have been actively involved in several FORRT initiatives, including contributi
             <div class="sc-modal-layout">
                 <div class="sc-modal-sidebar">
                     <div class="sc-modal-img">
-                        <img src="/authors/dr-lukas-wallrich/avatar.webp" alt="Dr Lukas Wallrich" />
+                        <img src="/authors/lukas-wallrich/avatar.webp" alt="Dr Lukas Wallrich" />
                     </div>
                     <div class="sc-social-links">
                         <a href="https://www.lukaswallrich.coffee" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-slate-800 transition-colors"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" x2="22" y1="12" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></a><a href="mailto:l.wallrich@bbk.ac.uk" class="text-slate-400 hover:text-slate-800 transition-colors"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg></a>
