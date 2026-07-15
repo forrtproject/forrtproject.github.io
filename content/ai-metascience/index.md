@@ -35,7 +35,7 @@ How can AI and large language models help us understand and improve how science 
 **Where:** Online — free to attend<br>
 **Submission deadline:** 31 July 2026 (23:59 in your own time zone)
 
-Speakers who opt in will have their talks shared on the [FORRT YouTube channel](https://youtube.com/@forrtproject).
+Speakers who opt in will have their talks shared on the [FORRT YouTube channel](https://youtube.com/@forrtproject9995).
 
 <a href="https://forms.gle/XSoZH7X7naqZGVmS8" class="btn btn-primary btn-lg btn-block" style="line-height:1;border-radius:6px;font-size:1.4rem;" target="_blank" rel="noopener">
   Submit your proposal

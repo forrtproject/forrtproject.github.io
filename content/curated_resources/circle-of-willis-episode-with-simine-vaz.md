@@ -1,7 +1,7 @@
 {
     "timestamp": "2020-05-16T12:04:50.998Z",
     "title": "Circle of Willis (episode with Simine Vazire)",
-    "link_to_resource": "https://www.circleofwillispodcast.com/episodes-1/8-simine-vazire",
+    "link_to_resource": "https://podcasts.apple.com/us/podcast/simine-vazire/id1277917115?i=1000398415804",
     "creators": [
         "Jim Coan"
     ],

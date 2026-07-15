@@ -1,7 +1,7 @@
 {
     "timestamp": "01/01/2020",
     "title": "Bayesian inference for psychology. Part II: Example applications with JASP",
-    "link_to_resource": "https://link.springer.com/article/10.3758/s13423-017-1323-7?error=cookies_not_supported&code=573b51ec-5ff2-490f-87b5-25f2369f4e8a",
+    "link_to_resource": "https://doi.org/10.3758/s13423-017-1323-7",
     "creators": [
         "Akash Raj",
         "Alexander Etz",
@@ -58,7 +58,7 @@
     ],
     "forrt_clusters_new": "Conceptual and Statistical Knowledge",
     "forrt_sub_clusters": "Limitations and benefits of NHST, Bayesian & Likelihood approaches.",
-    "doi": "10.3758/s13423-017-1323-7?error=cookies_not_supported&code=573b51ec-5ff2-490f-87b5-25f2369f4e8a",
+    "doi": "10.3758/s13423-017-1323-7",
     "in-clusters": true,
     "pdf name": "",
     "apa reference": ""

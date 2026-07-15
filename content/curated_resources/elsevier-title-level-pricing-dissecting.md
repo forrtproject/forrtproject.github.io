@@ -1,7 +1,7 @@
 {
     "timestamp": "5/16/2021 15:20:04",
     "title": "Elsevier Title Level Pricing: Dissecting the Bowl of Spaghetti",
-    "link_to_resource": "https://jlsc-pub.org/articles/abstract/10.7710/2162-3309.2410/",
+    "link_to_resource": "https://doi.org/10.7710/2162-3309.2410",
     "creators": [
         "Joel B. Thornton and Curtis Brundy"
     ],
@@ -36,7 +36,7 @@
     ],
     "forrt_clusters_new": "Academic Structures and Institutions",
     "forrt_sub_clusters": "Structures and incentives in academia, Research assessment, proposals, and reforms",
-    "doi": "10.7710/2162-3309.2410/",
+    "doi": "10.7710/2162-3309.2410",
     "in-clusters": true,
     "pdf name": "",
     "apa reference": ""

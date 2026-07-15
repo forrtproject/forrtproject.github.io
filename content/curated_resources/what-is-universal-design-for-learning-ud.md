@@ -1,7 +1,7 @@
 {
     "timestamp": "1/23/2021 13:47:35",
     "title": "What is Universal Design for Learning (UDL)?",
-    "link_to_resource": "https://www.understood.org/en/learning-thinking-differences/treatments-approaches/educational-strategies/universal-design-for-learning-what-it-is-and-how-it-works",
+    "link_to_resource": "https://www.understood.org/en/articles/universal-design-for-learning-what-it-is-and-how-it-works",
     "creators": [
         "Amanda Morin and Ace Parsi"
     ],

@@ -44,7 +44,7 @@ Lesson 7: The myth of the normality: How neurodiversity dismantles the generalis
    <a href="https://www.cambridge.org/core/journals/behavioral-and-brain-sciences/article/abs/generalizability-crisis/AD386115BA539A759ACB3093760F4824" target="_blank"><u>Text 2</u></a>  
    <a href="./Lesson_Plans/The_myth_of_the_normality_How_neurodiversity_dismantles_the_generalisability_crisis.pdf" target="_blank"><u>The myth of the normality How neurodiversity dismantles the generalisability crisis - Lesson Plan</u></a>
 
-Lesson 8: <a href="http://rapidintellect.com/AEQweb/ed-5971.pdf" target="_blank"><u>Neurodiversity Culture and Teaching - text</u></a>
+Lesson 8: <a href="http://web.archive.org/web/20240802211120/https://www.rapidintellect.com/AEQweb/ed-5971.pdf" target="_blank"><u>Neurodiversity Culture and Teaching - text</u></a>
 
    <a href="./Lesson_Plans/Neuro_para.pdf" target="_blank"><u>Neurodiversity Culture and Teaching - Lesson Plan</u></a>
 

@@ -1,7 +1,7 @@
 {
     "timestamp": "2020-06-09T16:40:23.897Z",
     "title": "We Knew the Future All Along: Scientific Hypothesizing Is Much More Accurate Than Other Forms of Precognition-A Satire in One Part",
-    "link_to_resource": "http://dx.doi.org/10.2307/41613568",
+    "link_to_resource": "https://doi.org/10.1177/1745691612441216",
     "creators": [
         "Arina K Bones"
     ],
@@ -35,7 +35,7 @@
     ],
     "forrt_clusters_new": "Replication and meta-research",
     "forrt_sub_clusters": "The politics of replicating famous studies",
-    "doi": "10.2307/41613568",
+    "doi": "10.1177/1745691612441216",
     "in-clusters": true,
     "pdf name": "",
     "apa reference": ""

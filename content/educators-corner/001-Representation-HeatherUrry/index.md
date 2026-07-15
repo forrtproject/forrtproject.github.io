@@ -54,13 +54,13 @@ So, this semester I introduced a single class session focused on the importance 
 
 I had them read this work about [the diversity-innovation paradox by Hofstra and colleagues](https://www.pnas.org/content/117/17/9284).
 
-I also invited them to watch the [Picture a Scientist film](https://www.pictureascientist.com/) and/or listen to the Everything Hertz podcast ([@hertzpodcast](https://twitter.com/hertzpodcast)) about Diversity in science [with Jess Wade](https://everythinghertz.com/114). 
+I also invited them to watch the [Picture a Scientist film](https://web.archive.org/web/20210529203210/https://www.pictureascientist.com/) and/or listen to the Everything Hertz podcast ([@hertzpodcast](https://twitter.com/hertzpodcast)) about Diversity in science [with Jess Wade](https://web.archive.org/web/20210116220326/https://everythinghertz.com/114). 
 
 I talked about psychology’s positivist tradition of believing there’s some sort of objective reality that we can discover if we cleave to principles like empiricism, transparency, & falsifiability and how that position is marred by biases (e.g., confirmation bias, availability).
 
 It’s also marred by the fact that scientists are humans with standpoints that affect the questions they ask. And that power structures dominated by men and white people guide what we think is “normal” science. Such ideas aren’t commonly discussed in quantitative research circles.
 
-I showed them clips from [Picture a Scientist](https://www.pictureascientist.com/) so they could appreciate what it’s like to be a woman in science, and the progress that’s been made to remediate gender bias (e.g., [the MIT report from 1999](http://web.mit.edu/fnl/women/women.html)).
+I showed them clips from [Picture a Scientist](https://web.archive.org/web/20210529203210/https://www.pictureascientist.com/) so they could appreciate what it’s like to be a woman in science, and the progress that’s been made to remediate gender bias (e.g., [the MIT report from 1999](http://web.mit.edu/fnl/women/women.html)).
  
 ![](iceberg.webp) 
 

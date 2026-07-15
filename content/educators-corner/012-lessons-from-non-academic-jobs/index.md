@@ -52,7 +52,7 @@ I originally went into academia because I loved this process of learning and dev
 
 ***
 
-**Contact information**: Karolina Urbanska ([k.urbanska@sheffield.ac.uk](mailto:k.urbanska@sheffield.ac.uk)), Twitter [@karo_urb](https://twitter.com/karo_urb), & website [https://www.karolinaurbanska.co.uk/](https://www.karolinaurbanska.co.uk/), and link to the original thread: [https://twitter.com/karo_urb/status/1529784303885885441](https://twitter.com/karo_urb/status/1529784303885885441).
+**Contact information**: Karolina Urbanska ([k.urbanska@sheffield.ac.uk](mailto:k.urbanska@sheffield.ac.uk)), Twitter [@karo_urb](https://twitter.com/karo_urb), & website [https://web.archive.org/web/20220607134246/https://www.karolinaurbanska.co.uk/](https://web.archive.org/web/20220607134246/https://www.karolinaurbanska.co.uk/), and link to the original thread: [https://twitter.com/karo_urb/status/1529784303885885441](https://twitter.com/karo_urb/status/1529784303885885441).
 
 
 ***

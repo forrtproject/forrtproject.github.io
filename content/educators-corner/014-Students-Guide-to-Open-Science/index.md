@@ -63,9 +63,9 @@ In addition to these pedagogic resources, the book also contains top tips for im
 
 - “A Student’s Guide to Open Science” (Pennington, 2023, Open University Press)
 - FORRT’s open educational resources including a [bank of lesson plans](/lesson-plans), [replications and reversals](/reversals), and [open science glossary](/glossary).
-- [RIOT Science Club](https://riotscience.co.uk/)
+- [RIOT Science Club](https://web.archive.org/web/20260317091517/https://www.riotscience.co.uk/)
 - [ReproducibiliTea Journal Clubs](https://reproducibilitea.org/)
-- Podcasts, such as [Everything Hertz](https://everythinghertz.com/)
+- Podcasts, such as [Everything Hertz](https://web.archive.org/web/20260122061515/https://everythinghertz.com/)
 - Global Reproducibility Networks, such as the [UKRN](https://www.ukrn.org/) and their [primers on open science practices](https://www.ukrn.org/primers/)
 - The [Open Research Calendar](https://openresearchcalendar.org/)
 - New meta-research articles via [MetaArXiv](https://osf.io/preprints/metaarxiv/)

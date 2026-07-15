@@ -1,7 +1,7 @@
 {
     "timestamp": "01/01/2020",
     "title": "A Short Introduction to the Reproducibility Debate in Psychology",
-    "link_to_resource": "https://jeps.efpsa.org/articles/abstract/10.5334/jeps.469/",
+    "link_to_resource": "https://doi.org/10.5334/jeps.469",
     "creators": [
         "Cedric Galetzka"
     ],
@@ -31,7 +31,7 @@
     ],
     "forrt_clusters_new": "Ways of Working, Replication Crisis and Credibility Revolution",
     "forrt_sub_clusters": "History of the replication crisis & credibility revolution, Research with students (under- and graduate)",
-    "doi": "10.5334/jeps.469/",
+    "doi": "10.5334/jeps.469",
     "in-clusters": true,
     "pdf name": "",
     "apa reference": ""

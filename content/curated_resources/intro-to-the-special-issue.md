@@ -1,7 +1,7 @@
 {
     "timestamp": "2020-05-22T19:27:41.535Z",
     "title": "Intro to the special issue",
-    "link_to_resource": "https://onlinelibrary.wiley.com/doi/pdf/10.1080/03640210802473582",
+    "link_to_resource": "https://doi.org/10.1080/03640210802473582",
     "creators": [
         "Kevin Glucka",
         "Paul Bellob",

@@ -114,7 +114,7 @@
     "name": "ReplicationWiki",
     "short_name": "ReplicationWiki",
     "logo": "ReplicationWiki.webp",
-    "url": "https://replication.uni-goettingen.de/wiki/index.php/Main_Page",
+    "url": "https://web.archive.org/web/20250130153630/http://replication.uni-goettingen.de/wiki/index.php/Main_Page",
     "cluster": "Open Science Infrastructure",
     "description": "A database of empirical studies in the social sciences. It informs about the availability of replication material and categorizes them by keywords, methods used, sources, type and geographic origin of data used, and by software used. It lists replication studies and their types and results as well as corrections and retractions.",
     "status": "inactive"

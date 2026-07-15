@@ -1,7 +1,7 @@
 {
     "timestamp": "01/01/2020",
     "title": "Re-run, Repeat, Reproduce, Reuse, Replicate: Transforming Code into Scientific Contributions",
-    "link_to_resource": "https://www.frontiersin.org/articles/10.3389/fninf.2017.00069/full",
+    "link_to_resource": "https://doi.org/10.3389/fninf.2017.00069",
     "creators": [
         "Fabien C. Y. Benureau",
         "Nicolas P. Rougier"
@@ -40,7 +40,7 @@
     ],
     "forrt_clusters_new": "Transparency and reproducibility in computation and analysis",
     "forrt_sub_clusters": "Computational reproducibility, Research software engineering",
-    "doi": "10.3389/fninf.2017.00069/full",
+    "doi": "10.3389/fninf.2017.00069",
     "in-clusters": true,
     "pdf name": "",
     "apa reference": ""

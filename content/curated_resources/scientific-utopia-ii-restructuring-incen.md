@@ -1,7 +1,7 @@
 {
     "timestamp": "01/01/2020",
     "title": "Scientific Utopia: II. Restructuring Incentives and Practices to Promote Truth Over Publishability",
-    "link_to_resource": "https://journals.sagepub.com/doi/10.1177/1745691612459058",
+    "link_to_resource": "https://doi.org/10.1177/1745691612459058",
     "creators": [
         "Brian A. Nosek",
         "Jeffrey R. Spies",

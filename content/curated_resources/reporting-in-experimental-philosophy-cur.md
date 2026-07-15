@@ -1,7 +1,7 @@
 {
     "timestamp": "01/01/2020",
     "title": "Reporting in Experimental Philosophy: Current Standards and Recommendations for Future Practice",
-    "link_to_resource": "https://link.springer.com/article/10.1007/s13164-018-0414-3?error=cookies_not_supported&code=6a46adb9-4c37-41a9-b208-afd4f9b2331a",
+    "link_to_resource": "https://doi.org/10.1007/s13164-018-0414-3",
     "creators": [
         "Andrea Polonioli",
         "Brittany Blankinship",
@@ -34,7 +34,7 @@
     ],
     "forrt_clusters_new": "Replication Crisis and Credibility Revolution",
     "forrt_sub_clusters": "Proposed science improvement initiatives on statistics, measurement, teaching, data sharing, code sharing, pre-registration, & replication",
-    "doi": "10.1007/s13164-018-0414-3?error=cookies_not_supported&code=6a46adb9-4c37-41a9-b208-afd4f9b2331a",
+    "doi": "10.1007/s13164-018-0414-3",
     "in-clusters": false,
     "pdf name": "",
     "apa reference": ""

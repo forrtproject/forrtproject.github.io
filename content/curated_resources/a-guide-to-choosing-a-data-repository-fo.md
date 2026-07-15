@@ -1,7 +1,7 @@
 {
     "timestamp": "1/9/2025 9:37:39",
     "title": "A Guide to Choosing a Data Repository for NIH-Funded Research",
-    "link_to_resource": "https://dataworks.faseb.org/helpdesk/kb/guide-to-choosing-a-data-repository",
+    "link_to_resource": "http://web.archive.org/web/20250619002408/https://dataworks.faseb.org/helpdesk/kb/guide-to-choosing-a-data-repository",
     "creators": [
         "Federation of American Societies for Experimental Biology"
     ],
