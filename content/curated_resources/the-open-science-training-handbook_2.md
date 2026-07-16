@@ -1,7 +1,7 @@
 {
     "timestamp": "2/6/2025 5:29:07",
     "title": "The Open Science Training Handbook",
-    "link_to_resource": "https://book.fosteropenscience.eu/",
+    "link_to_resource": "https://open-science-training-handbook.gitbook.io/book",
     "creators": [
         "Sonja Bezjak",
         "Philipp Conzett",

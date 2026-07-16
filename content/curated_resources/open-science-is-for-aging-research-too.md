@@ -1,7 +1,7 @@
 {
     "timestamp": "01/01/2020",
     "title": "Open Science is for Aging Research, Too",
-    "link_to_resource": "https://academic.oup.com/innovateage/article/3/4/igz028/5560155",
+    "link_to_resource": "https://doi.org/10.1093/geroni/igz028",
     "creators": [
         "Isaacowitz Derek M",
         "Lind Majse"
@@ -31,8 +31,8 @@
     ],
     "forrt_clusters_new": "Replication Crisis and Credibility Revolution",
     "forrt_sub_clusters": "Questionable research practices & their prevalence",
-    "doi": "",
-    "in-clusters": false,
+    "doi": "10.1093/geroni/igz028",
+    "in-clusters": true,
     "pdf name": "",
     "apa reference": ""
 }

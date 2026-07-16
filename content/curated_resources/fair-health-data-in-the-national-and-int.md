@@ -1,7 +1,7 @@
 {
     "timestamp": "1/9/2025 10:35:35",
     "title": "FAIR health data in the national and international data space",
-    "link_to_resource": "https://link.springer.com/article/10.1007/s00103-024-03884-8",
+    "link_to_resource": "https://doi.org/10.1007/s00103-024-03884-8",
     "creators": [
         "Dagmar Waltemath",
         "Oya Beyan",

@@ -1,7 +1,7 @@
 {
     "timestamp": "01/01/2020",
     "title": "The Role Of Replication Research In Advancing Gerontological Science: Trajectories, Transitions, And Typologies",
-    "link_to_resource": "https://academic.oup.com/innovateage/article/2/suppl_1/784/5169882?login=false",
+    "link_to_resource": "https://doi.org/10.1093/geroni/igy023.2906",
     "creators": [
         "Hofer S M"
     ],
@@ -33,8 +33,8 @@
     ],
     "forrt_clusters_new": "Replication and meta-research",
     "forrt_sub_clusters": "Conducting replication studies; challenges, limitations, and comparisons with the original study",
-    "doi": "",
-    "in-clusters": false,
+    "doi": "10.1093/geroni/igy023.2906",
+    "in-clusters": true,
     "pdf name": "",
     "apa reference": ""
 }

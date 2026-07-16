@@ -1,7 +1,7 @@
 {
     "timestamp": "5/16/2021 15:21:08",
     "title": "Joy and rigor in behavioral science",
-    "link_to_resource": "https://www.sciencedirect.com/science/article/pii/S0749597821000327",
+    "link_to_resource": "https://doi.org/10.1016/j.obhdp.2021.03.002",
     "creators": [
         "Hanne K.Collins et al."
     ],
@@ -33,7 +33,7 @@
     ],
     "forrt_clusters_new": "Academic Structures and Institutions, Replication Crisis and Credibility Revolution",
     "forrt_sub_clusters": "Ongoing debates (e.g., incentives for and against open science practices), Structures and incentives in academia",
-    "doi": "",
+    "doi": "10.1016/j.obhdp.2021.03.002",
     "in-clusters": false,
     "pdf name": "",
     "apa reference": ""

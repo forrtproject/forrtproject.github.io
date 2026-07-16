@@ -1,7 +1,7 @@
 {
     "timestamp": "2020-06-10T19:01:00.577Z",
     "title": "Introduction to Meta-Analysis",
-    "link_to_resource": "https://onlinelibrary.wiley.com/doi/book/10.1002/9780470743386",
+    "link_to_resource": "https://doi.org/10.1002/9780470743386",
     "creators": [
         "Borenstein",
         "M.",

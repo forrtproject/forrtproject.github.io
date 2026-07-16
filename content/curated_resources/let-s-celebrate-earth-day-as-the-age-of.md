@@ -1,7 +1,7 @@
 {
     "timestamp": "1/13/2025 6:30:43",
     "title": "Let\u2019s celebrate Earth Day as the Age of Open Science",
-    "link_to_resource": " https://doi.org/10.1126/sciadv.adp604",
+    "link_to_resource": " https://doi.org/10.1126/sciadv.adp6040",
     "creators": [
         "Shahid Naeem",
         "Jeremy Jackson",
@@ -37,7 +37,7 @@
     ],
     "forrt_clusters_new": "Academic Structures and Institutions, Ways of Working",
     "forrt_sub_clusters": "Socially Responsible Research, Science communication and public outreach",
-    "doi": "10.1126/sciadv.adp604",
+    "doi": "10.1126/sciadv.adp6040",
     "in-clusters": true,
     "pdf name": "",
     "apa reference": ""

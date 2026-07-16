@@ -1,7 +1,7 @@
 {
     "timestamp": "2020-05-24T12:00:43.880Z",
     "title": "A Unified Framework to Quantify the Credibility of Scientific Findings",
-    "link_to_resource": "https://journals.sagepub.com/doi/10.1177/2515245918787489",
+    "link_to_resource": "https://doi.org/10.1177/2515245918787489",
     "creators": [
         "Etienne P. LeBel",
         "Randy J. McCarthy",

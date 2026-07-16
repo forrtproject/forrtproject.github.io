@@ -1,7 +1,7 @@
 {
     "timestamp": "01/01/2020",
     "title": "A test of the diffusion model explanation for the worst performance rule using preregistration and blinding",
-    "link_to_resource": "https://link.springer.com/article/10.3758/s13414-017-1304-y?error=cookies_not_supported&code=2d5c8bff-946b-48d7-b2d6-65664f133add",
+    "link_to_resource": "https://doi.org/10.3758/s13414-017-1304-y",
     "creators": [
         "Alexander Ly",
         "Andreas Pedroni",
@@ -38,7 +38,7 @@
     ],
     "forrt_clusters_new": "Pre-analysis Planning",
     "forrt_sub_clusters": "Preregistration, Study Design",
-    "doi": "10.3758/s13414-017-1304-y?error=cookies_not_supported&code=2d5c8bff-946b-48d7-b2d6-65664f133add",
+    "doi": "10.3758/s13414-017-1304-y",
     "in-clusters": true,
     "pdf name": "",
     "apa reference": ""

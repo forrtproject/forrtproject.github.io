@@ -1,7 +1,7 @@
 {
     "timestamp": "2020-05-24T12:04:53.667Z",
     "title": "Investigating Variation in Replicability: A \u201cMany Labs\u201d Replication Project",
-    "link_to_resource": "https://psycnet.apa.org/fulltext/2014-20922-002.html",
+    "link_to_resource": "https://doi.org/10.1027/1864-9335/a000178",
     "creators": [
         "Klein et al."
     ],
@@ -36,8 +36,8 @@
     ],
     "forrt_clusters_new": "Replication Crisis and Credibility Revolution",
     "forrt_sub_clusters": "Collection of large scale replications",
-    "doi": "",
-    "in-clusters": false,
+    "doi": "10.1027/1864-9335/a000178",
+    "in-clusters": true,
     "pdf name": "",
     "apa reference": ""
 }

@@ -50,7 +50,7 @@
         "College / Upper Division (Undergraduates)",
         "Graduate / Professional"
     ],
-    "abstract": "Journal editors have a large amount of power to advance open science in their respective fields by incentivising and mandating open policies and practices at their journals. The Data PASS Journal Editors Discussion Interface (JEDI, an online community for social science journal editors: www.dpjedi.org) has collated several resources on open science in journal editing (www.dpjedi.org/resources). However, it can be overwhelming as a new editor to know where to start. For this reason, we have created a guide for journal editors on how to get started with open science. The guide outlines steps that editors can take to implement open policies and practices at their journal, and goes through the what, why, how, and worries of each policy/practice.",
+    "abstract": "Journal editors have a large amount of power to advance open science in their respective fields by incentivising and mandating open policies and practices at their journals. The Data PASS Journal Editors Discussion Interface (JEDI, an online community for social science journal editors: [www.dpjedi.org](https://www.dpjedi.org)) has collated several resources on open science in journal editing ([www.dpjedi.org/resources](https://www.dpjedi.org/resources)). However, it can be overwhelming as a new editor to know where to start. For this reason, we have created a guide for journal editors on how to get started with open science. The guide outlines steps that editors can take to implement open policies and practices at their journal, and goes through the what, why, how, and worries of each policy/practice.",
     "language": [
         "English"
     ],

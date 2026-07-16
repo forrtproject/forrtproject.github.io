@@ -1,7 +1,7 @@
 {
     "timestamp": "01/01/2020",
     "title": "Are Psychology Journals Anti-replication? A Snapshot of Editorial Practices",
-    "link_to_resource": "https://www.frontiersin.org/articles/10.3389/fpsyg.2017.00523/full",
+    "link_to_resource": "https://doi.org/10.3389/fpsyg.2017.00523",
     "creators": [
         "G. N. Martin",
         "Richard M. Clarke"
@@ -36,7 +36,7 @@
     ],
     "forrt_clusters_new": "Replication and meta-research, Replication Crisis and Credibility Revolution",
     "forrt_sub_clusters": "Ongoing debates (e.g., incentives for and against open science practices), Meta-research",
-    "doi": "10.3389/fpsyg.2017.00523/full",
+    "doi": "10.3389/fpsyg.2017.00523",
     "in-clusters": true,
     "pdf name": "",
     "apa reference": ""

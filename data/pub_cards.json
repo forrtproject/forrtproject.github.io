@@ -2136,7 +2136,7 @@
         "name": "Spock",
         "title": "Science Officer, USS Enterprise",
         "bio": "Half-Vulcan science officer aboard the USS Enterprise. Dedicated to logic, precision, and the rigorous pursuit of scientific understanding.",
-        "photo": "",
+        "photo": "/img/featured-recommenders/spock-abd62c23.jpg",
         "text": "Dr. McCoy once claimed p=0.06 'proved' his treatment worked. I handed him this guide to 25 common statistical misinterpretations. He called me a 'green-blooded pedant.' He also stopped misreporting his confidence intervals. Fascinating."
       }
     ]
@@ -3606,18 +3606,18 @@
     "vote_base": 0
   },
   "10.4000/proceedings.elpub.2018.23": {
-    "title": "Framing Power: Tracing Key Discourses in Open Science Policies",
-    "summary": "This meta-research study provides a content analysis of global Open Science policies to identify how dominant narratives may reinforce existing power imbalances. It highlights how institutional policy framing often serves the interests of established global powers while potentially marginalizing the knowledge systems of the Global South.",
+    "title": "Framing power: Tracing key discourses in open science policies",
+    "summary": "This paper conducts a critical analysis of open science policies to uncover how power dynamics and colonial legacies are embedded within their language and objectives. It highlights how current policy frameworks may inadvertently reinforce global inequalities while appearing to promote openness and equity.",
     "focus": "evidence",
     "specificity": "Generalist",
-    "resource_type": "Preprint",
+    "resource_type": "Website",
     "short_ref": "Albornoz et al. (2018)",
-    "apa": "Albornoz, D., Huang, M., Martin, I. M., Mateus, M., Touré, A. Y., & Chan, L. (2018). Framing Power: Tracing Key Discourses in Open Science Policies. 22nd International Conference on Electronic. https://doi.org/10.4000/proceedings.elpub.2018.23",
-    "bibtex": "@inproceedings{Albornoz_2018, series={ELPUB}, title={Framing Power: Tracing Key Discourses in Open Science Policies}, url={http://dx.doi.org/10.4000/proceedings.elpub.2018.23}, DOI={10.4000/proceedings.elpub.2018.23}, booktitle={22nd International Conference on Electronic\n\t\t\t\tPublishing}, publisher={OpenEdition Press}, author={Albornoz, Denisse and Huang, Maggie and Martin, Issra Marie and Mateus, Maria and Touré, Aicha Yasmine and Chan, Leslie}, year={2018}, month=jun, collection={ELPUB} }",
-    "abstract": "Given that “Open Science” is becoming a popular policy object around the world, this study sought to identify key narratives about Open Science in policy, and critically examine the extent to which they are sustaining or strengthening multi-layered domination and inequality schemes that pre-exist in scientific knowledge production. To do so, we conducted a content analysis of Open Science policies stemming from Europe, North America, Latin America, Asia and Africa to understand which narratives about Open Science policies are produced, reproduced and by whom; and in turn, whose interests may be neglected in this process. We found that Open Science policies, mostly stemming from Europe, frame “openness” as a vehicle to promote technological change as part of an inevitable and necessary cultural shift to modernity in scientific production. The global reach of these narratives, and the technologies, standards and models these narratives sustain, are dictating modes of working and collaborating among those who can access them, and creating new categories of exclusion that invalidate knowledge that cannot meet this criteria, putting historically marginalized researchers and publics at further disadvantage.",
-    "is_oa": true,
-    "oa_url": "https://hal.archives-ouvertes.fr/hal-01816725/document",
-    "authors": "Denisse Albornoz, Maggie Huang, Issra Marie Martin, Maria Mateus, Aicha Yasmine Touré, Leslie Chan",
+    "apa": "Albornoz, D., Huang, M., Martin, I. M., Mateus, M., Touré, A. Y., & Chan, L. (2018). Framing power: Tracing key discourses in open science policies. In Connecting the Knowledge Commons — From Projects to Sustainable Infrastructure: 22nd International Conference on Electronic Publishing (ELPUB 2018). OpenEdition Press. https://doi.org/10.4000/proceedings.elpub.2018.23",
+    "bibtex": "",
+    "abstract": "",
+    "is_oa": false,
+    "oa_url": "",
+    "authors": "Albornoz, D., Huang, M., Martin, I. M., Mateus, M., Touré, A. Y., & Chan, L.",
     "vote_base": 0
   },
   "10.31235/osf.io/rbyt6_v1": {
@@ -6155,14 +6155,14 @@
     "authors": "William K. Michener",
     "vote_base": 0
   },
-  "10.1177/251524592513361": {
+  "10.1177/25152459251336130": {
     "title": "De-Identification When Making Data Sets Findable, Accessible, Interoperable and Reusable",
     "summary": "This resource offers technical and ethical guidance for the de-identification of research datasets to enable sharing in accordance with FAIR principles. It identifies common pitfalls in the anonymization process and provides strategies to balance data utility with participant privacy protection.",
     "focus": "practice/tools",
     "specificity": "Narrow",
     "resource_type": "Website",
     "short_ref": "van Ravenzwaaij et al. (2025)",
-    "apa": "van Ravenzwaaij, D., de Jong, M., Hoekstra, R., Scheibe, S., Span, M. M., Wessel, I., & Heininga, V. E. (2025). De-Identification When Making Data Sets Findable, Accessible, Interoperable, and Reusable (FAIR): Two Worked Examples From the Behavioral and Social Sciences. Advances in Methods and Practices in Psychological Science, 8(2), 25152459251336130. https://doi.org/10.1177/251524592513361",
+    "apa": "van Ravenzwaaij, D., de Jong, M., Hoekstra, R., Scheibe, S., Span, M. M., Wessel, I., & Heininga, V. E. (2025). De-Identification When Making Data Sets Findable, Accessible, Interoperable, and Reusable (FAIR): Two Worked Examples From the Behavioral and Social Sciences. Advances in Methods and Practices in Psychological Science, 8(2), 25152459251336130. https://doi.org/10.1177/25152459251336130",
     "bibtex": "",
     "abstract": "",
     "is_oa": false,
@@ -7833,21 +7833,6 @@
     "is_oa": true,
     "oa_url": "https://jspp.psychopen.eu/index.php/jspp/article/download/4851/4851.pdf",
     "authors": "Glenn Adams, Ignacio Dobles, Luis H. Gómez, Tuğçe Kurtiş, Ludwin E. Molina",
-    "vote_base": 0
-  },
-  "10.2307/j.ctv1qv3j7.6": {
-    "title": "Framing power: Tracing key discourses in open science policies",
-    "summary": "This paper conducts a critical analysis of open science policies to uncover how power dynamics and colonial legacies are embedded within their language and objectives. It highlights how current policy frameworks may inadvertently reinforce global inequalities while appearing to promote openness and equity.",
-    "focus": "evidence",
-    "specificity": "Generalist",
-    "resource_type": "Website",
-    "short_ref": "Albornoz et al. (2020)",
-    "apa": "Albornoz, D., Huang, M., Martin, I. M., Mateus, M., Touré, A. Y., & Chan, L. (2020). Framing power: Tracing key discourses in open science policies. In Contextualizing openness: Situating open science (pp. 9–34). University of Ottawa Press. https://doi.org/10.2307/j.ctv1qv3j7.6",
-    "bibtex": "",
-    "abstract": "",
-    "is_oa": false,
-    "oa_url": "",
-    "authors": "Albornoz, D., Huang, M., Martin, I. M., Mateus, M., Touré, A. Y., & Chan, L.",
     "vote_base": 0
   },
   "10.5334/dsj-2020-043": {
@@ -10715,14 +10700,14 @@
     "authors": "Sara Mannheimer, Amy Pienta, Dessi Kirilova, Colin Elman, Amber Wutich",
     "vote_base": 0
   },
-  "10.4067/s0718-090x2016000300785": {
+  "10.4067/s0718-090x2016000300009": {
     "title": "Pre-analysis plans for qualitative research",
     "summary": "This publication adapts the concept of pre-analysis plans for use in qualitative research, offering a framework to enhance transparency and rigor. It provides actionable guidance on how researchers can document their theoretical frameworks and analytical intentions prior to data collection.",
     "focus": "practice/tools",
     "specificity": "Narrow",
     "resource_type": "Website",
     "short_ref": "Piñeiro & Rosenblatt (2016)",
-    "apa": "Piñeiro, R., & Rosenblatt, F. (2016). Pre-analysis plans for qualitative research. Revista de Ciencia Política, 36(3), 785–796. https://doi.org/10.4067/S0718-090X2016000300785",
+    "apa": "Piñeiro, R., & Rosenblatt, F. (2016). Pre-analysis plans for qualitative research. Revista de Ciencia Política, 36(3), 785–796. https://doi.org/10.4067/S0718-090X2016000300009",
     "bibtex": "",
     "abstract": "",
     "is_oa": false,
@@ -11570,14 +11555,14 @@
     "authors": "Nick Allum, Abigail Reid, Miriam Bidoglia, George Gaskell, Noémie Aubert Bonn, Ivan Buljan, Simon Fuglsang, Serge P. J. M. Horbach, Panagiotis Kavouras, Ana Marušić, Niels Mejlgaard, Daniel Pizzolato, Rea Roje, Joeri K. Tijdink, Giuseppe Veltri",
     "vote_base": 0
   },
-  "10.1038/520429a–": {
+  "10.1038/520429a": {
     "title": "Bibliometrics: The Leiden Manifesto for research metrics",
     "summary": "This paper reports on how perceptions of research integrity climate vary significantly across different academic disciplines and hierarchy levels. By identifying these disparities, the study provides evidence that integrity-building efforts must be tailored to the specific needs and environmental pressures of different academic subgroups.",
     "focus": "evidence",
     "specificity": "Generalist",
     "resource_type": "Website",
     "short_ref": "Hicks et al. (2015)",
-    "apa": "Hicks, D., Wouters, P., Waltman, L., de Rijcke, S., & Rafols, I. (2015). The Leiden Manifesto for research metrics. Nature, 520(7548), 429–431. https://doi.org/10.1038/520429a– Ten principles for responsible research evaluation (e.g. avoid misplaced concreteness of metrics, protect qualitative judgment, account for diversity in fields). A direct response to metric-driven distortions, aiming to realign incentives with integrity and quality.",
+    "apa": "Hicks, D., Wouters, P., Waltman, L., de Rijcke, S., & Rafols, I. (2015). The Leiden Manifesto for research metrics. Nature, 520(7548), 429–431. https://doi.org/10.1038/520429a — Ten principles for responsible research evaluation (e.g. avoid misplaced concreteness of metrics, protect qualitative judgment, account for diversity in fields). A direct response to metric-driven distortions, aiming to realign incentives with integrity and quality.",
     "bibtex": "",
     "abstract": "",
     "is_oa": false,

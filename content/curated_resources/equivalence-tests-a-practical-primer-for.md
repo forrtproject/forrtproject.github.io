@@ -1,7 +1,7 @@
 {
     "timestamp": "01/01/2020",
     "title": "Equivalence Tests: A Practical Primer for t Tests, Correlations, and Meta-Analyses",
-    "link_to_resource": "https://journals.sagepub.com/doi/10.1177/1948550617697177",
+    "link_to_resource": "https://doi.org/10.1177/1948550617697177",
     "creators": [
         "Dani\u00ebl Lakens"
     ],
