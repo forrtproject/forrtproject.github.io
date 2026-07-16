@@ -141,7 +141,7 @@ Including sources in your syllabus that discuss open and transparent research ca
   * [Paywall: The Business of Scholarship. The Movie](https://www.youtube.com/watch?v=zAzTR8eq20k)\- Documentary about the importance of open access.  
 * Assign students to listen to Podcasts on open and reproducible science (broadly construed):  
   * [The Black Goat: A podcast about doing science](https://www.theblackgoatpodcast.com/)  
-  * [Everything Hertz: A podcast by scientists, for scientists. Methodology, scientific life, and bad language](https://everythinghertz.com/)  
+  * [Everything Hertz: A podcast by scientists, for scientists. Methodology, scientific life, and bad language](https://web.archive.org/web/20260122061515/https://everythinghertz.com/)  
   * [The HPS Podcast](https://www.hpsunimelb.org/): A podcast about the History, Philosophy, and Social Studies of Science sharing insights from contemporary research with both academic and general audiences  
   * [The juice and the squeeze: A zesty podcast by two academics about where, how, and why we focus our efforts](https://www.juiceandsqueeze.net/)   
   * [Open Science Talk: A podcast about open science, open access, open education, open data, open software](https://septentrio.uit.no/index.php/OSTalk/issue/archive)   

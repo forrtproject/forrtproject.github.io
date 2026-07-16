@@ -1,7 +1,7 @@
 {
     "timestamp": "10/27/2023 10:15:35",
     "title": "Preregistration of Analyses of Preexisting Data",
-    "link_to_resource": "https://psychologicabelgica.com/articles/10.5334/pb.493",
+    "link_to_resource": "https://doi.org/10.5334/pb.493",
     "creators": [
         "Ga\u00ebtan Mertens",
         "Angelos-Miltiadis Krypotos"

@@ -33,7 +33,7 @@ projects: []
 
 2020 was a year of big changes for the whole world. For the academic community, it was not different. The need to rapidly switch from in-person to online teaching represented a big challenge for most educators. However, with new challenges come also new and big opportunities. Assistant Professor of Economics at Stockholm University, [Johannes Haushofer](https://haushofer.ne.su.se/), saw in remote teaching the opportunity to open classes to students from low and middle-income countries. 
 
-_Remote Student Exchange_ was then created as a volunteer and non-profit initiative to match professors willing to offer spots in their classes with interested students from low and middle-income countries. To facilitate the matching process, a [website](https://remotestudentexchange.org/) was launched.  It has been a great success so far. Two weeks after its launch, there were 1701 students and 88 professors registered and more than 30 courses offered in varied disciplines such as Economics, Business, Psychology, Political Science, Neuroscience, and many others. You can browse the available courses [here](https://remotestudentexchange.org/courses?subject_area=10).
+_Remote Student Exchange_ was then created as a volunteer and non-profit initiative to match professors willing to offer spots in their classes with interested students from low and middle-income countries. To facilitate the matching process, a [website](https://web.archive.org/web/20260115081240/http://remotestudentexchange.org/) was launched.  It has been a great success so far. Two weeks after its launch, there were 1701 students and 88 professors registered and more than 30 courses offered in varied disciplines such as Economics, Business, Psychology, Political Science, Neuroscience, and many others. You can browse the available courses [here](https://web.archive.org/web/20221206073220/https://web.archive.org/web/20260115081240/http://remotestudentexchange.org/courses?subject_area=10).
 
 At FORRT, we believe that one of the most overlooked benefits of integrating open and reproducible scholarship into higher education is that of social justice. Academia is still a place of privileges that many cannot afford. We highly commend this initiative and in the hopes of helping it grow even further, we have invited Johannes Haushoffer to explain a bit more how this idea came to be and to share his initial experiences with the community. 
 
@@ -41,7 +41,7 @@ At FORRT, we believe that one of the most overlooked benefits of integrating ope
 
 If you are teaching a remote course in the next few months, we highly encourage you to consider taking part in this initiative. Students can sign up free of charge, but they do not receive official grades or credits. This means that this initiative is informal and in most cases, it should not require permission from universities or department chairs. 
 
-To participate, visit the website [https://remotestudentexchange.org/](https://remotestudentexchange.org/). In the home page (see figure below) you can sign up as a professor.  
+To participate, visit the website [https://web.archive.org/web/20260115081240/http://remotestudentexchange.org/](https://web.archive.org/web/20260115081240/http://remotestudentexchange.org/). In the home page (see figure below) you can sign up as a professor.  
 
 
 ![Remote Student Exchange](Fig1.webp "Remote Student Exchange")
@@ -63,7 +63,7 @@ Importantly, you are flexible to decide how many students you can host and how t
 
 Interested students also have to sign up on the website. They will be able to browse the courses being currently offered and apply to take part in a class, provided it still has free spots and that they fulfill the prerequisites (if any).
 
-If you have more questions, make sure to access the [FAQ](https://remotestudentexchange.org/help) and watch the video below where Johannes explains a bit more about this initiative. We hope that many more scholars consider joining it. Share this idea widely with other educators and with students that may be interested. You can find a link to the countries contemplated by this initiative [here](https://data.worldbank.org/?locations=XM-XP). 
+If you have more questions, make sure to access the [FAQ](https://web.archive.org/web/20221206064353/https://web.archive.org/web/20260115081240/http://remotestudentexchange.org/help) and watch the video below where Johannes explains a bit more about this initiative. We hope that many more scholars consider joining it. Share this idea widely with other educators and with students that may be interested. You can find a link to the countries contemplated by this initiative [here](https://data.worldbank.org/?locations=XM-XP). 
 
 <br>
 

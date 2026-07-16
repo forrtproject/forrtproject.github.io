@@ -247,11 +247,11 @@ ICONS = {
 def normalize_name(name):
     if pd.isna(name): return ""
     name = str(name).strip()
-    name = re.sub(r'\\b(Dr|Dr\\.|Mr|Mr\\.|Ms|Ms\\.|Mrs|Prof|Prof\\.)\\s+', '', name, flags=re.IGNORECASE)
-    name = re.sub(r'\\*', '', name)
+    name = re.sub(r'\b(Dr|Dr\.|Mr|Mr\.|Ms|Ms\.|Mrs|Prof|Prof\.)\s+', '', name, flags=re.IGNORECASE)
+    name = re.sub(r'\*', '', name)
     name = unicodedata.normalize('NFKD', name)
     name = name.encode('ascii', 'ignore').decode('ascii')
-    name = re.sub(r'\\s+', ' ', name).strip()
+    name = re.sub(r'\s+', ' ', name).strip()
     return name.lower()
 
 def similarity(a, b):
@@ -269,10 +269,39 @@ def find_match(name, candidates, threshold=0.6):
             best_match = candidate
     return best_match
 
+def find_existing_author_dir(personal_name, authors_dir):
+    """Reuse an existing content/authors/<slug> folder for this person instead of minting
+    a new one. The same person's name can be spelled slightly differently across the SC
+    roster sheet, the personal-details form, and a pre-existing blog-post author folder
+    (extra/missing hyphen, "Dr" prefix, middle initial) — matching a fresh slug from
+    sanitize_filename() alone would create a duplicate directory every time one of those
+    sources disagrees with what's already on disk.
+    """
+    normalized_target = normalize_name(personal_name)
+    best_match = None
+    # 0.9 is deliberately strict: legitimate spelling variants of the SAME person
+    # (Dr prefix, missing middle initial, hyphen vs space in a surname) all score >=0.95
+    # against their existing folder, while two DIFFERENT people never do. A looser
+    # threshold risks collapsing distinct authors onto one folder (overwriting avatars).
+    best_score = 0.9
+    for existing_dir in authors_dir.iterdir():
+        if not existing_dir.is_dir():
+            continue
+        candidate = normalize_name(existing_dir.name.replace('-', ' '))
+        score = similarity(normalized_target, candidate)
+        if score > best_score:
+            best_score = score
+            best_match = existing_dir.name
+    return best_match
+
 def sanitize_filename(name):
     name = normalize_name(name)
-    name = re.sub(r'[^a-z0-9\\s]', '', name)
-    name = re.sub(r'\\s+', '-', name)
+    # Keep hyphens (e.g. "Matvienko-Sikar"): existing author folders are slugged with
+    # Hugo's urlize, which preserves hyphens already in the name. Stripping them produced
+    # a different slug than the real author folder for any hyphenated surname.
+    name = re.sub(r'[^a-z0-9\s-]', '', name)
+    name = re.sub(r'\s+', '-', name)
+    name = re.sub(r'-+', '-', name).strip('-')
     return name
 
 def get_initials(name):
@@ -468,7 +497,7 @@ def main():
 
         # Handle image
         img_url = ""
-        sanitized_name = sanitize_filename(personal_name)
+        sanitized_name = find_existing_author_dir(personal_name, AUTHORS_DIR) or sanitize_filename(personal_name)
         author_dir = AUTHORS_DIR / sanitized_name
         author_dir.mkdir(parents=True, exist_ok=True)
         avatar_path = author_dir / "avatar.webp"

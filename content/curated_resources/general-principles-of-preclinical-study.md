@@ -1,7 +1,7 @@
 {
     "timestamp": "01/01/2020",
     "title": "General Principles of Preclinical Study Design",
-    "link_to_resource": "https://link.springer.com/chapter/10.1007/164_2019_277?error=cookies_not_supported&code=e3998d2b-489c-49a1-9602-1fbdd877aefc",
+    "link_to_resource": "https://doi.org/10.1007/164_2019_277",
     "creators": [
         "Andrew S. C. Rice",
         "Jan Vollert",
@@ -40,7 +40,7 @@
     ],
     "forrt_clusters_new": "Pre-analysis Planning",
     "forrt_sub_clusters": "Study Design",
-    "doi": "10.1007/164_2019_277?error=cookies_not_supported&code=e3998d2b-489c-49a1-9602-1fbdd877aefc",
+    "doi": "10.1007/164_2019_277",
     "in-clusters": false,
     "pdf name": "",
     "apa reference": ""

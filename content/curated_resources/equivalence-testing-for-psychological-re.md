@@ -1,7 +1,7 @@
 {
     "timestamp": "01/01/2020",
     "title": "Equivalence Testing for Psychological Research: A Tutorial",
-    "link_to_resource": "https://journals.sagepub.com/doi/full/10.1177/2515245918770963",
+    "link_to_resource": "https://doi.org/10.1177/2515245918770963",
     "creators": [
         "Anne Scheel",
         "Daniel Lakens",

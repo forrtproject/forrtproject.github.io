@@ -9,7 +9,7 @@
     ],
     "references": [
         "Anderson, M. S., Ronning, E. A., Devries, R., & Martinson, B. C. (2010). Extending the Mertonian norms: Scientists’ subscription to norms of research. <i>Journal of Higher Education</i>, <i>81</i>(3), 366–393. https://doi.org/10.1353/jhe.0.0095",
-        "Azevedo, F. (n.d.). <i>Ideology May Help Explain Anti-Scientific Attitudes | Psychology Today</i>. https://www.psychologytoday.com/intl/blog/social-justice-pacifists/202107/ideology-may-help-explain-anti-scientific-attitudes",
+        "Azevedo, F. (n.d.). <i>Ideology May Help Explain Anti-Scientific Attitudes | Psychology Today</i>. https://www.psychologytoday.com/us/blog/social-justice-pacifists/202107/ideology-may-help-explain-anti-scientific-attitudes",
         "Azevedo, F., & Jost, J. T. (2021). The ideological basis of antiscientific attitudes: Effects of authoritarianism, conservatism, religiosity, social dominance, and system justification. <i>Group Processes & Intergroup Relations</i>, <i>24</i>(4), 518–549. https://doi.org/10.1177/1368430221990104",
         "Bak, H.-J. (2001). Education and Public Attitudes toward Science: Implications for the ‘Deficit Model’ of Education and Support for Science and Technology. <i>Social Science Quarterly</i>, <i>82</i>(4), 779–795. https://www.jstor.org/stable/42955760",
         "Brewer, P. R., & Ley, B. L. (2013). Whose Science Do You Believe? Explaining Trust in Sources of Scientific Information About the Environment. <i>Science Communication</i>, <i>35</i>(1), 115–137. https://doi.org/10.1177/1075547012441691",

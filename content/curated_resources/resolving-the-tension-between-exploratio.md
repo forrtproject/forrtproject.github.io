@@ -1,7 +1,7 @@
 {
     "timestamp": "01/01/2020",
     "title": "Resolving the Tension Between Exploration and Confirmation in Preclinical Biomedical Research",
-    "link_to_resource": "https://link.springer.com/chapter/10.1007/164_2019_278?error=cookies_not_supported&code=678079ec-b664-45e4-b059-1e139742b870",
+    "link_to_resource": "https://doi.org/10.1007/164_2019_278",
     "creators": [
         "Ulrich Dirnagl"
     ],
@@ -37,7 +37,7 @@
     ],
     "forrt_clusters_new": "Replication and meta-research, Conceptual and Statistical Knowledge",
     "forrt_sub_clusters": "Exploratory and confirmatory analyses, Conducting replication studies; challenges, limitations, and comparisons with the original study",
-    "doi": "10.1007/164_2019_278?error=cookies_not_supported&code=678079ec-b664-45e4-b059-1e139742b870",
+    "doi": "10.1007/164_2019_278",
     "in-clusters": false,
     "pdf name": "",
     "apa reference": ""

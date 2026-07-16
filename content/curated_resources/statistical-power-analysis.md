@@ -1,7 +1,7 @@
 {
     "timestamp": "2020-05-22T19:04:53.880Z",
     "title": "Statistical power analysis",
-    "link_to_resource": "https://journals.sagepub.com/doi/abs/10.1111/1467-8721.ep10768783",
+    "link_to_resource": "https://doi.org/10.1111/1467-8721.ep10768783",
     "creators": [
         "Jacob Cohen"
     ],

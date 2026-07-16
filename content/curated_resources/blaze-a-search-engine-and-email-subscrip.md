@@ -1,7 +1,7 @@
 {
     "timestamp": "12/12/2024 10:03:56",
     "title": "Blaze: A search engine and email subscription tool for discovering the best and most recent independent technical writing ",
-    "link_to_resource": "https://blaze.email/about",
+    "link_to_resource": "http://web.archive.org/web/20251007220812/https://blaze.email/about",
     "creators": [
         "Alastair Rushworth"
     ],

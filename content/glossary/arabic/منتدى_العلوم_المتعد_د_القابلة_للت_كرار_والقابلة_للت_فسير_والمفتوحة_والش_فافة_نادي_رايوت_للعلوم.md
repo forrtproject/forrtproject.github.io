@@ -11,7 +11,7 @@
         "Transparency"
     ],
     "references": [
-        "<i>RIOT Science Club</i>. (2021). http://riotscience.co.uk/"
+        "<i>RIOT Science Club</i>. (2021). https://web.archive.org/web/20260317091517/https://www.riotscience.co.uk/"
     ],
     "drafted_by": [
         "Tamara Kalandadze"

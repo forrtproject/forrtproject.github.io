@@ -2096,6 +2096,34 @@ h1.clusters-site-heading.clusters-hub-page__title {
 .fr-specificity-toggle input {
   margin: 0;
 }
+.fr-clear-btn {
+  margin-left: auto;
+  align-self: center;
+  font-family: inherit;
+  font-size: 0.62rem;
+  font-weight: 600;
+  padding: 0.18rem 0.5rem;
+  border-radius: 3px;
+  border: 1px solid rgba(0,64,85,0.25);
+  background: transparent;
+  color: #004055;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background 0.15s, color 0.15s, border-color 0.15s;
+}
+.fr-clear-btn::before {
+  content: "\00d7";
+  margin-right: 0.3rem;
+  font-weight: 700;
+}
+.fr-clear-btn:hover {
+  background: #004055;
+  color: #fff;
+  border-color: #004055;
+}
+.fr-clear-btn[hidden] {
+  display: none;
+}
 
 /* ---- Search input ---- */
 .fr-search-wrap {
@@ -3051,6 +3079,7 @@ h1.clusters-site-heading.clusters-hub-page__title {
   gap: 1.6rem;
 }
 .announcement-card {
+  position: relative;
   display: flex;
   flex-direction: column;
   background: #fff;
@@ -3062,6 +3091,19 @@ h1.clusters-site-heading.clusters-hub-page__title {
   color: inherit;
   text-decoration: none;
   height: 100%;
+}
+/* Whole-card click target: the title link stretches over the card via an
+   overlay. Keeping the card an <article> (not an <a>) lets summary links
+   nest without breaking the HTML. */
+.announcement-card .ac-link {
+  color: inherit;
+  text-decoration: none;
+}
+.announcement-card .ac-link::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
 }
 .announcement-card:hover {
   transform: translateY(-3px);

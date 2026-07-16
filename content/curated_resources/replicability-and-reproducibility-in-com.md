@@ -1,7 +1,7 @@
 {
     "timestamp": "01/01/2020",
     "title": "Replicability and Reproducibility in Comparative Psychology",
-    "link_to_resource": "https://www.frontiersin.org/articles/10.3389/fpsyg.2017.00862/full",
+    "link_to_resource": "https://doi.org/10.3389/fpsyg.2017.00862",
     "creators": [
         "Jeffrey R. Stevens"
     ],
@@ -37,7 +37,7 @@
     ],
     "forrt_clusters_new": "Replication Crisis and Credibility Revolution",
     "forrt_sub_clusters": "Collection of large scale replications, History of the replication crisis & credibility revolution",
-    "doi": "10.3389/fpsyg.2017.00862/full",
+    "doi": "10.3389/fpsyg.2017.00862",
     "in-clusters": true,
     "pdf name": "",
     "apa reference": ""
