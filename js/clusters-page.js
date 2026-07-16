@@ -44,11 +44,18 @@
     return parts.join(' ').replace(/\s+/g, ' ').trim();
   }
 
+  /** Sub-cluster/discipline heading: an .sc-heading in the pane body (disciplines'
+   *  tab-panes), or the .acc-label in the accordion header (clusters' acc-sections). */
+  function getSubclusterPaneHeading(pane) {
+    if (!pane) return null;
+    return pane.querySelector('.sc-heading') || pane.querySelector('.acc-label');
+  }
+
   /** Text used to match a sub-cluster pane (heading + description). */
   function getSubclusterPaneSearchText(pane) {
     if (!pane) return '';
     var parts = [];
-    var heading = pane.querySelector('.sc-heading');
+    var heading = getSubclusterPaneHeading(pane);
     if (heading) parts.push(heading.textContent);
     var descEl = pane.querySelector('.sc-description');
     if (descEl) parts.push(descEl.textContent);
@@ -84,6 +91,117 @@
     } else {
       tabEl.click();
     }
+  }
+
+  /**
+   * Some pages (e.g. disciplines) render each sub-section as a Bootstrap
+   * tab-pane rather than an always-in-DOM accordion section, so an inactive
+   * pane sits at `display: none` until its trigger tab is shown. Activate it
+   * before any scroll/measurement runs, otherwise the target has a zeroed
+   * bounding rect and the scroll lands at the top of the page.
+   */
+  function activateBootstrapTabIfNeeded(paneId, tabId) {
+    var pane = paneId ? document.getElementById(paneId) : null;
+    if (pane && pane.classList.contains('tab-pane') && tabId) {
+      showBootstrapTab(document.getElementById(tabId));
+    }
+  }
+
+  /** Expand an accordion section's .acc-body if it's currently collapsed. Returns
+   *  the .acc-header (a good scroll target) or null if this isn't an accordion section. */
+  function expandAccordionIfCollapsed(sectionEl) {
+    if (!sectionEl) return null;
+    var accBody = sectionEl.querySelector('.acc-body');
+    var accHeader = sectionEl.querySelector('.acc-header');
+    if (accBody && accBody.classList.contains('acc-collapsed') && accHeader && !accHeader.classList.contains('acc-disabled')) {
+      accBody.classList.remove('acc-collapsed');
+      accBody.style.maxHeight = accBody.scrollHeight + 'px';
+      accBody.style.opacity = '1';
+      var ch = accHeader.querySelector('.acc-chevron');
+      if (ch) ch.classList.add('acc-open');
+    }
+    return accHeader;
+  }
+
+  /** Click/keyboard toggling for .acc-header sections and "Expand all" buttons.
+   *  Shared by clusters and disciplines - both render the same accordion markup. */
+  function initAccordionToggle() {
+    function toggleSection(header) {
+      if (header.classList.contains('acc-disabled')) return;
+      var body = header.nextElementSibling;
+      var chevron = header.querySelector('.acc-chevron');
+      if (!body) return;
+      var isCollapsed = body.classList.contains('acc-collapsed');
+      if (isCollapsed) {
+        body.classList.remove('acc-collapsed');
+        body.style.maxHeight = body.scrollHeight + 'px';
+        body.style.opacity = '1';
+        if (chevron) chevron.classList.add('acc-open');
+      } else {
+        body.style.maxHeight = '0';
+        body.style.opacity = '0';
+        body.classList.add('acc-collapsed');
+        if (chevron) chevron.classList.remove('acc-open');
+      }
+    }
+
+    document.addEventListener('click', function (e) {
+      /* Controls embedded in the header (e.g. copy-link) handle their own clicks. */
+      if (e.target.closest('.acc-copy-link')) return;
+      var header = e.target.closest('.acc-header');
+      if (header) { toggleSection(header); return; }
+      var toggleBtn = e.target.closest('.acc-toggle-all');
+      if (toggleBtn) { toggleAllSections(toggleBtn); }
+    });
+
+    document.addEventListener('keydown', function (e) {
+      if (e.key !== 'Enter' && e.key !== ' ') return;
+      if (e.target.closest('.acc-copy-link')) return;
+      var header = e.target.closest('.acc-header');
+      if (!header) return;
+      e.preventDefault();
+      toggleSection(header);
+    });
+
+    function toggleAllSections(btn) {
+      var clusterId = btn.getAttribute('data-cluster');
+      var section = clusterId ? document.getElementById(clusterId) : null;
+      if (!section) return;
+      var bodies = section.querySelectorAll('.acc-body');
+      var anyCollapsed = false;
+      bodies.forEach(function (b) {
+        var header = b.previousElementSibling;
+        if (b.classList.contains('acc-collapsed') && header && !header.classList.contains('acc-disabled')) {
+          anyCollapsed = true;
+        }
+      });
+
+      bodies.forEach(function (b) {
+        var header = b.previousElementSibling;
+        if (!header || header.classList.contains('acc-disabled')) return;
+        var chevron = header.querySelector('.acc-chevron');
+        if (anyCollapsed && b.classList.contains('acc-collapsed')) {
+          b.classList.remove('acc-collapsed');
+          b.style.maxHeight = b.scrollHeight + 'px';
+          b.style.opacity = '1';
+          if (chevron) chevron.classList.add('acc-open');
+        } else if (!anyCollapsed && !b.classList.contains('acc-collapsed')) {
+          b.style.maxHeight = '0';
+          b.style.opacity = '0';
+          b.classList.add('acc-collapsed');
+          if (chevron) chevron.classList.remove('acc-open');
+        }
+      });
+      btn.textContent = anyCollapsed ? 'Collapse all' : 'Expand all';
+    }
+
+    /* Initial state: any section not server-rendered with .acc-collapsed starts open. */
+    document.querySelectorAll('.acc-body').forEach(function (body) {
+      if (!body.classList.contains('acc-collapsed')) {
+        body.style.maxHeight = body.scrollHeight + 'px';
+        body.style.opacity = '1';
+      }
+    });
   }
 
   function collectClustersInlineSearchResults(scopeRoot, tokens, includeRefs) {
@@ -123,7 +241,7 @@
         if (!cardText || !matchesAllTokens(cardText, tokens)) return;
         var titleEl = card.querySelector('.fc-title');
         var cardTitle = titleEl ? titleEl.textContent.replace(/\s+/g, ' ').trim() : '';
-        var paneEl = card.closest('.tab-pane');
+        var paneEl = card.closest('.acc-section, .tab-pane');
         var paneId = paneEl ? paneEl.id : '';
         var tabId = paneEl ? (paneEl.getAttribute('aria-labelledby') || '') : '';
         add('feat:' + clusterId + ':' + (card.getAttribute('data-doi') || cardTitle), {
@@ -136,13 +254,13 @@
         });
       });
 
-      section.querySelectorAll('.tab-pane').forEach(function (pane) {
+      section.querySelectorAll('.acc-section, .tab-pane').forEach(function (pane) {
         if (results.length >= MAX_RESULTS) return;
         var paneId = pane.id;
         if (!paneId) return;
         var tabId = pane.getAttribute('aria-labelledby') || '';
 
-        var scHeading = pane.querySelector('.sc-heading');
+        var scHeading = getSubclusterPaneHeading(pane);
         var scName = scHeading ? scHeading.textContent.replace(/\s+/g, ' ').trim() : '';
         var paneHaystack = getSubclusterPaneSearchText(pane);
 
@@ -249,6 +367,8 @@
     var root = document.querySelector('.clusters-layout');
     if (!root) return;
 
+    initAccordionToggle();
+
     var mobileToggle = document.getElementById('clusters-mobile-toggle');
     var sidebar = document.getElementById('clusters-sidebar');
     var backToTopBtn = document.getElementById('clusters-back-to-top');
@@ -265,8 +385,10 @@
       if (!sidebar) return;
       if (!clustersNavIsMobileWidth() || !sidebar.classList.contains('sidebar-open')) {
         document.body.style.overflow = '';
+        document.body.classList.remove('clusters-mobile-nav-open');
       } else {
         document.body.style.overflow = 'hidden';
+        document.body.classList.add('clusters-mobile-nav-open');
       }
     }
 
@@ -420,16 +542,8 @@
         var sectionId = tabId.replace(/-tab$/, '');
         var target = sectionId ? document.getElementById(sectionId) : null;
         if (target) {
-          /* Expand accordion section if collapsed */
-          var accBody = target.querySelector('.acc-body');
-          var accHeader = target.querySelector('.acc-header');
-          if (accBody && accBody.classList.contains('acc-collapsed') && accHeader && !accHeader.classList.contains('acc-disabled')) {
-            accBody.classList.remove('acc-collapsed');
-            accBody.style.maxHeight = accBody.scrollHeight + 'px';
-            accBody.style.opacity = '1';
-            var ch = accHeader.querySelector('.acc-chevron');
-            if (ch) ch.classList.add('acc-open');
-          }
+          activateBootstrapTabIfNeeded(sectionId, tabId);
+          var accHeader = expandAccordionIfCollapsed(target);
           var scrollEl = accHeader || target;
           setTimeout(function () { scrollElementBelowStickyChrome(scrollEl); }, 50);
         }
@@ -437,22 +551,14 @@
       });
     });
 
-    /* e.g. /clusters/cluster-2/#c2-sc1 or #c2-featured — scroll to matching section */
+    /* e.g. /clusters/cluster-2/#c2-sc1 or #c2-featured, or /disciplines/#f1-chemistry — scroll to matching section */
     function applyClusterUrlHash() {
       var raw = window.location.hash.replace(/^#/, '');
-      if (!raw || !/^c\d+-[a-z0-9-]+$/.test(raw)) return;
+      if (!raw || !/^[cf]\d+-[a-z0-9-]+$/.test(raw)) return;
       var target = document.getElementById(raw);
       if (!target) return;
-      /* Expand accordion section if collapsed */
-      var accBody = target.querySelector('.acc-body');
-      var accHeader = target.querySelector('.acc-header');
-      if (accBody && accBody.classList.contains('acc-collapsed') && accHeader && !accHeader.classList.contains('acc-disabled')) {
-        accBody.classList.remove('acc-collapsed');
-        accBody.style.maxHeight = accBody.scrollHeight + 'px';
-        accBody.style.opacity = '1';
-        var ch = accHeader.querySelector('.acc-chevron');
-        if (ch) ch.classList.add('acc-open');
-      }
+      activateBootstrapTabIfNeeded(raw, raw + '-tab');
+      var accHeader = expandAccordionIfCollapsed(target);
       setTimeout(function () {
         var scrollEl = accHeader || target;
         scrollElementBelowStickyChrome(scrollEl);
@@ -616,6 +722,8 @@
         if (!section) return;
 
         setTimeout(function () {
+          activateBootstrapTabIfNeeded(paneId, tabId);
+          if (paneId) expandAccordionIfCollapsed(document.getElementById(paneId));
           var scrollEl = null;
           if (hitType === 'cluster') {
             scrollEl =
@@ -636,7 +744,7 @@
             scrollEl = paneFeat || section;
           } else if (hitType === 'subcluster' && paneId) {
             var paneSc = document.getElementById(paneId);
-            scrollEl = paneSc ? paneSc.querySelector('.sc-heading') || paneSc : section;
+            scrollEl = paneSc ? (paneSc.querySelector('.sc-heading') || paneSc.querySelector('.acc-header') || paneSc) : section;
           } else {
             scrollEl = section.querySelector('.cluster-header') || section.querySelector('.cluster-title') || section;
           }
