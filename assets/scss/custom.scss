@@ -679,7 +679,9 @@
       var(--clusters-controls-height)
     );
     bottom: 0;
-    z-index: 1010;
+    /* Above .clusters-controls (z-index: 1020) so the open drawer fully covers
+       the sticky search bar instead of it showing through on top. */
+    z-index: 1030;
     overflow-y: auto;
     overflow-x: hidden;
     -webkit-overflow-scrolling: touch;
@@ -688,6 +690,12 @@
     border-top: 1px solid #e9ecef;
     box-shadow: 0 -4px 24px rgba(0, 0, 0, 0.12);
     border-radius: 0;
+  }
+
+  /* The JUST-OS chat widget (z-index: 9999, layouts/partials/chatbot.html) would
+     otherwise float on top of the open drawer regardless of the z-index above. */
+  body.clusters-mobile-nav-open #just-os-widget {
+    display: none;
   }
 
   .clusters-sidebar.sidebar-open .clusters-sidebar-inner {
@@ -1763,6 +1771,10 @@ h1.clusters-site-heading.clusters-hub-page__title {
   h1.clusters-site-heading.clusters-hub-page__title {
     font-size: 1.95rem;
     line-height: 1.2;
+    /* Reserve space for the fixed JUST-OS chat widget (top-right, ~80px wide +
+       20px offset), which sits at top: 80px at this breakpoint and otherwise
+       overlaps long titles that wrap to two lines here. */
+    padding-right: 104px;
   }
 
   .clusters-heading-row__parent,

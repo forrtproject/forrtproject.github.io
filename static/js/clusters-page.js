@@ -385,8 +385,10 @@
       if (!sidebar) return;
       if (!clustersNavIsMobileWidth() || !sidebar.classList.contains('sidebar-open')) {
         document.body.style.overflow = '';
+        document.body.classList.remove('clusters-mobile-nav-open');
       } else {
         document.body.style.overflow = 'hidden';
+        document.body.classList.add('clusters-mobile-nav-open');
       }
     }
 
