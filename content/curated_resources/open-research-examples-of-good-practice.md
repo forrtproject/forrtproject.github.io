@@ -1,6 +1,6 @@
 {
     "timestamp": "10/16/2020 6:22:33",
-    "title": "Open Research: Examples of good practice, and resources across disciplines",
+    "title": "Open Research: Examples of good practice, and resources across disciplines (2026 edition)",
     "link_to_resource": "https://doi.org/10.31219/osf.io/3r8hb",
     "creators": [
         "Emily K Farran",
