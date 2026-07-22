@@ -10,6 +10,23 @@ def import_data(url: str):
     return pd.read_csv(url)
 
 
+def drop_excluded(df):
+    '''
+    Remove rows flagged for exclusion via the first "Exclude" column in the
+    source sheet. A truthy marker (TRUE/1/yes/y/x, case-insensitive) marks the
+    row for removal so the resource file is not regenerated; blank cells are
+    kept. Returns the DataFrame without the Exclude column.
+    '''
+    exclude_col = next((c for c in df.columns if c.strip().lower() == 'exclude'), None)
+    if exclude_col is None:
+        return df
+
+    truthy = {'true', '1', 'yes', 'y', 'x'}
+    flag = df[exclude_col].fillna('').astype(str).str.strip().str.lower()
+    keep = ~flag.isin(truthy)
+    return df[keep].drop(columns=[exclude_col]).reset_index(drop=True)
+
+
 def wrangle_data(df):
     '''
     Standardize column names
@@ -69,6 +86,8 @@ def main():
     URL_FORRT = "https://docs.google.com/spreadsheets/d/e/2PACX-1vRgYcUP3ybhe4x05Xp4-GTf-Cn2snBCW8WOP_N7X-9r80AeCpFAGTfWn6ITtBk-haBkDqXAYXh9a_x4/pub?gid=1924034107&single=true&output=csv"
 
     FORRT = import_data(URL_FORRT)
+
+    FORRT = drop_excluded(FORRT)
 
     wrangle_data(FORRT)
 
