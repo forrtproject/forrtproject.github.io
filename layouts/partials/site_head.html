@@ -211,6 +211,14 @@
     {{ $og_image = $share_res.Permalink }}
     {{ $og_image_width = $share_res.Width }}
     {{ $og_image_height = $share_res.Height }}
+  {{ else if .Params.sharing_image }}
+    {{/* Path relative to `static/`, e.g. `sharing_image: "img/my-image.webp"` - for pages that aren't
+         Hugo page bundles and so can't use `sharing_image_resource`. */}}
+    {{ $og_image = .Params.sharing_image | absURL }}
+    {{ with images.Config (printf "/static/%s" .Params.sharing_image) }}
+      {{ $og_image_width = .Width }}
+      {{ $og_image_height = .Height }}
+    {{ end }}
   {{ else if .Params.header.image }}
     {{ $og_image = printf "%s/%s" $media_dir .Params.header.image | absURL }}
   {{ else if site.Params.sharing_image }}
