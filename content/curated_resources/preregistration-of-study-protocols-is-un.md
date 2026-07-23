@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "10/23/2023 12:05:22",
     "title": "Preregistration of Study Protocols Is Unlikely to Improve the Yield From Our Science, But Other Strategies Might",
     "link_to_resource": "https://doi.org/10.1097/EDE.0b013e3181e9bba6",

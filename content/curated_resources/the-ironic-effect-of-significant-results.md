@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "2020-05-26T15:42:09.693Z",
     "title": "The ironic effect of significant results on the credibility of multiple-study articles.",
     "link_to_resource": "https://doi.org/10.1037/a0029487",

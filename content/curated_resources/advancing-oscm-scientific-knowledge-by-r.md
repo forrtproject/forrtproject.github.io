@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "1/9/2025 8:56:09",
     "title": "Advancing OSCM scientific knowledge by replicating empirical findings: Step-by-step procedure and illustration for transformative replication endeavors",
     "link_to_resource": "https://doi.org/10.1111/deci.12623",

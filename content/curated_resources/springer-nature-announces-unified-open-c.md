@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "1/9/2025 9:04:24",
     "title": "Springer Nature announces unified open code policy to better support open research practices",
     "link_to_resource": "https://group.springernature.com/gp/group/media/press-releases/unified-code-sharing-policy-promoting-open-science/26789930?mkt_tok=NDIyLU1CVi0wOTEAAAGRmJcjkEvgNphFa5yw30IuWwMFM3BbI1ZOtBrSGRKYeX0sygPYIacR_yEf0Fa8WnZgEvvADh1ZLQHO-93Jie9X1kKzF7D7Z_Csmo7iOchnCfE",

@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "01/01/2020",
     "title": "Plotting and Programming in Python",
     "link_to_resource": "http://swcarpentry.github.io/python-novice-gapminder/",

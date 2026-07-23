@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "2020-05-22T19:01:39.952Z",
     "title": "An exploratory test for an excess of significant findings",
     "link_to_resource": "https://doi.org/10.1177/1740774507079441",

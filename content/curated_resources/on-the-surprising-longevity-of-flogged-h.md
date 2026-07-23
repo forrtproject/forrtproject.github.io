@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "2020-06-06T19:03:16.404Z",
     "title": "On the Surprising Longevity of Flogged Horses: Why There Is a Case for the Significance Test",
     "link_to_resource": "https://doi.org/10.1111/j.1467-9280.1997.tb00536.x",

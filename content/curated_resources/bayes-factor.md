@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "2020-05-22T18:55:08.142Z",
     "title": "Bayes Factor",
     "link_to_resource": "https://doi.org/10.1111/j.1740-9713.2006.00204.x",

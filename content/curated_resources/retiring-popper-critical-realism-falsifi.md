@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "2/13/2025 6:33:51",
     "title": "Retiring Popper: Critical realism, falsificationism, and the crisis of replication",
     "link_to_resource": "https://doi.org/10.1177/09593543241250079",

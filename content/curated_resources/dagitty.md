@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "2020-05-08T08:44:12.396Z",
     "title": "DAGitty",
     "link_to_resource": "https://dagitty.net",

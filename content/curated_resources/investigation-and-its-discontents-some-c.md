@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "2020-06-06T19:30:50.930Z",
     "title": "Investigation and its discontents: Some constraints on progress in psychological research. ",
     "link_to_resource": "https://doi.org/10.1037/0003-066X.35.5.399",

@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "2020-05-10T09:00:27.501Z",
     "title": "The Bayesian Reproducibility Project",
     "link_to_resource": "https://alexanderetz.com/2015/08/30/the-bayesian-reproducibility-project/",

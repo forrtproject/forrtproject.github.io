@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "01/01/2020",
     "title": "SPARC Popular Resources",
     "link_to_resource": "https://sparcopen.org/what-we-do/popular-resources/",

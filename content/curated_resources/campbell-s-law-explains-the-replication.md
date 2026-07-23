@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "12/19/2024 6:39:38",
     "title": "Campbell\u2019s Law Explains the Replication Crisis: Pre-Registration Badges Are History Repeating",
     "link_to_resource": "https://doi.org/10.1177/10731911241253430",

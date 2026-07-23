@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "2020-06-03T20:46:54.231Z",
     "title": "The pipeline project: Pre-publication independent replications of a single laboratory's research pipeline",
     "link_to_resource": "https://doi.org/10.1016/j.jesp.2015.10.001",

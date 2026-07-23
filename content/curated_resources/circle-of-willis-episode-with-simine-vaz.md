@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "2020-05-16T12:04:50.998Z",
     "title": "Circle of Willis (episode with Simine Vazire)",
     "link_to_resource": "https://podcasts.apple.com/us/podcast/simine-vazire/id1277917115?i=1000398415804",

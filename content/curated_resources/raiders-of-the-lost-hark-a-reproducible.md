@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "01/01/2020",
     "title": "Raiders of the lost HARK: a reproducible inference framework for big data science",
     "link_to_resource": "https://www.nature.com/articles/s41599-019-0340-8",

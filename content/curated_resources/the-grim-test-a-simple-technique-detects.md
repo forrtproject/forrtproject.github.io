@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "2020-05-26T14:57:56.043Z",
     "title": "The GRIM Test: A Simple Technique Detects Numerous Anomalies in the Reporting of Results in Psychology",
     "link_to_resource": "https://doi.org/10.1177/1948550616673876",

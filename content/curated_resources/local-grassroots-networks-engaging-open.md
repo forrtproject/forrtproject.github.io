@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "01/01/2020",
     "title": "Local Grassroots Networks Engaging Open Science in Their Communities",
     "link_to_resource": "https://www.youtube.com/watch?v=uZT8_pOSPvg",

@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "8/15/2025 12:37:36",
     "title": "Generic Syllabus Maker",
     "link_to_resource": "http://wcaleb.rice.edu/syllabusmaker/generic/",

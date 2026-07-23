@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "6/10/2025 12:56:13",
     "title": "Research Transparency and Reproducibility: A Complementary Module for All",
     "link_to_resource": "https://osf.io/qw52b/",

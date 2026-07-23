@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "2020-05-27T16:35:24.398Z",
     "title": "Do Statistical Reporting Standards Affect What Is Published? Publication Bias in Two Leading Political Science Journals",
     "link_to_resource": "http://dx.doi.org/10.1561/100.00008024",

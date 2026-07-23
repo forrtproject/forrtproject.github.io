@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "10/2/2023 17:33:21",
     "title": "Open science takes on the coronavirus pandemic",
     "link_to_resource": "https://doi.org/10.1038/d41586-020-01246-3",

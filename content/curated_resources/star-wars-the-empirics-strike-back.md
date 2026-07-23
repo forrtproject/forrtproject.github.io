@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "2020-05-24T12:13:40.761Z",
     "title": "Star wars: The empirics strike back",
     "link_to_resource": "https://doi.org/10.1257/app.20150044",

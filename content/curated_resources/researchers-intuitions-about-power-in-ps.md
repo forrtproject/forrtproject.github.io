@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "2020-06-07T19:16:02.933Z",
     "title": "Researchers\u2019 Intuitions About Power in Psychological Research",
     "link_to_resource": "https://doi.org/10.1177/0956797616647519",

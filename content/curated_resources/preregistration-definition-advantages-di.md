@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "12/18/2023 17:00:52",
     "title": "Preregistration: Definition, Advantages, Disadvantages, and How It Can Help Against Questionable Research Practices",
     "link_to_resource": "https://doi.org/10.1007/978-3-031-04968-2_15",

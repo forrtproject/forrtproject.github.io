@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "12/12/2024 9:03:45",
     "title": "Embracing Open Science: Paving the Way for Transparent, Collaborative, and Inclusive Research in Traditional, Complementary, and Integrative Medicine",
     "link_to_resource": "https://doi.org/10.1089/jicm.2024.0346",

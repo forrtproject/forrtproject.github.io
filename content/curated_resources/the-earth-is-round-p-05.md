@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "2020-05-22T19:25:32.671Z",
     "title": "The earth is round (p\u2002<\u2002.05).",
     "link_to_resource": "https://doi.org/10.1037/0003-066X.49.12.997",

@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "2/20/2025 9:32:26",
     "title": "Schools \u2018should teach children how to spot conspiracy theories",
     "link_to_resource": "https://www.telegraph.co.uk/news/2023/07/02/schools-teach-children-spot-conspiracy-theories-curriculum/?utm_medium=Social&utm_campaign=Echobox&utm_source=Twitter#Echobox=1688337338-1",

@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "01/01/2020",
     "title": "Empirical Study of Data Sharing by Authors Publishing in PLoS Journals",
     "link_to_resource": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0007078",

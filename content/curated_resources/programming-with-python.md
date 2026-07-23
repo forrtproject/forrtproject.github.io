@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "01/01/2020",
     "title": "Programming with Python",
     "link_to_resource": "https://swcarpentry.github.io/python-novice-inflammation/",

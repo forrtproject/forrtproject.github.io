@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "1/12/2025 9:52:08",
     "title": "The Benefits of Preregistration and Registered Reports",
     "link_to_resource": "https://doi.org/10.31234/osf.io/dqap7",

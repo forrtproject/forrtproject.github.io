@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "2/27/2025 6:08:41",
     "title": "Towards inclusive mentoring in academic psychology",
     "link_to_resource": "https://doi.org/10.1038/s44159-023-00180-1",

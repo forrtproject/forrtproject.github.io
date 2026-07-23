@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "2020-05-24T12:17:30.012Z",
     "title": "Statistical errors: P values, the \u2018gold standard\u2019 of statistical validity, are not as reliable as many scientists assume",
     "link_to_resource": "https://www.nature.com/news/scientific-method-statistical-errors-1.14700",

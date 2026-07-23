@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "2/13/2025 5:47:10",
     "title": "Introducing the National Open Research Training Programme",
     "link_to_resource": "https://norf.ie/introducing-the-national-open-research-training-programme/",

@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "01/01/2020",
     "title": "Supporting Open Science Data Curation, Preservation, and Access by Libraries",
     "link_to_resource": "https://www.youtube.com/watch?v=SbmGWHpzAHs",

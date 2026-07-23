@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "2/6/2025 5:14:41",
     "title": "Opinion: Promoting open science",
     "link_to_resource": "https://doi.org/10.1177/1477153520926328",

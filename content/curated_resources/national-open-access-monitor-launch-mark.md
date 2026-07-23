@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "1/12/2025 10:17:19",
     "title": "National Open Access Monitor Launch Marks a New Chapter in the Irish Open Science Landscape",
     "link_to_resource": "https://www.openaire.eu/national-open-access-monitor-launch-marks-a-new-chapter-in-the-irish-open-science-landscape",

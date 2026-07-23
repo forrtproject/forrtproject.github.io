@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "2/13/2025 9:41:34",
     "title": "Open Science ",
     "link_to_resource": "https://www.phdontrack.net/open-science/",

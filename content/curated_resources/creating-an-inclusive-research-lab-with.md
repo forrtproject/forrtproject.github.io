@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "2/20/2025 4:43:57",
     "title": "Creating an inclusive research lab with student onboarding materials",
     "link_to_resource": "https://doi.org/10.1038/s44159-023-00163-2",

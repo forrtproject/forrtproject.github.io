@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "01/01/2020",
     "title": "Deep Dive into Open Scholarship: Data, Materials, and Code Transparency",
     "link_to_resource": "https://www.youtube.com/watch?v=21RE2Iw4bsQ&list=PLChfyH8TVDGldpd5KBkDL2udamWRiuj5B&index=2",

@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "3/8/2025 15:29:35",
     "title": "Community-Sourced Glossary of Open Scholarship Terms. ",
     "link_to_resource": "https://forrt.org/glossary/",

@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "01/01/2020",
     "title": "An excess of positive results: Comparing the standard Psychology literature with Registered Reports",
     "link_to_resource": "https://psyarxiv.com/p6e9c/",

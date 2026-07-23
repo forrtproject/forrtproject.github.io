@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "10/27/2023 15:18:55",
     "title": "The value of preregistration for psychological science: A conceptual analysis",
     "link_to_resource": "https://doi.org/10.24602/sjpr.62.3_221",

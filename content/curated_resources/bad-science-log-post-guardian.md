@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "2020-05-14T10:14:00.086Z",
     "title": "Bad Science log, post-Guardian",
     "link_to_resource": "http://www.badscience.net/",

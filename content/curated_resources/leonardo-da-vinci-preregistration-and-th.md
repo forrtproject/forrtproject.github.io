@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "10/27/2023 15:54:47",
     "title": "Leonardo da Vinci, preregistration and the Architecture of Science: Towards a More Open and Transparent Research Culture",
     "link_to_resource": "https://doi.org/10.5334/hpb.30",

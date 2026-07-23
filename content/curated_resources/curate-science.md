@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "01/01/2020",
     "title": "Curate Science",
     "link_to_resource": "https://curatescience.org/app/",

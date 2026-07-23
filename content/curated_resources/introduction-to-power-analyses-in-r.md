@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "01/01/2020",
     "title": "Introduction to Power Analyses in R",
     "link_to_resource": "http://web.archive.org/web/20240613170054/https://www.fosteropenscience.eu/content/introduction-power-analyses-r",

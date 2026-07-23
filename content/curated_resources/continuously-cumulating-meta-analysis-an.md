@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "2020-06-08T18:39:01.563Z",
     "title": "Continuously Cumulating Meta-Analysis and Replicability",
     "link_to_resource": "https://doi.org/10.1177/1745691614529796",

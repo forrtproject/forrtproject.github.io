@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "2020-05-27T16:43:31.803Z",
     "title": "Improving the Dependability of Research in Personality and Social Psychology: Recommendations for Research and Educational Practice",
     "link_to_resource": "https://doi.org/10.1177/1088868313507536",

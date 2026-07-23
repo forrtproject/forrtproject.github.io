@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "11/6/2023 12:20:07",
     "title": "An Open Science MRI Database of over 100 Synaesthetic Brains and Accompanying Deep Phenotypic Information",
     "link_to_resource": "https://doi.org/10.1038/s41597-023-02664-4",

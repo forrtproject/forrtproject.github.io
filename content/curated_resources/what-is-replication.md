@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "01/01/2020",
     "title": "What is replication?",
     "link_to_resource": "https://osf.io/preprints/metaarxiv/u4g6t/",

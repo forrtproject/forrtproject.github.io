@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "1/16/2025 4:10:21",
     "title": "The State of Play of Reproducibility in Statistics: An Empirical Analysis",
     "link_to_resource": "https://doi.org/10.1080/00031305.2022.2131625",

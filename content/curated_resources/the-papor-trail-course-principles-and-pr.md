@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "3/13/2025 17:46:28",
     "title": "The PaPOR TRaIL Course: Principles and Practices in Open Research: Teaching, Research, Impact and Learning",
     "link_to_resource": "https://forrt.org/educators-corner/009-papor-trail/",

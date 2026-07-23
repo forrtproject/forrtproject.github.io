@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "2/13/2025 10:28:48",
     "title": "Open and Responsible Researcher Reward and Recognition (OR4)",
     "link_to_resource": "https://www.ukrn.org/open-and-responsible-researcher-reward-and-recognition-or4/",

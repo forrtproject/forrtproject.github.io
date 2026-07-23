@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "2/13/2025 9:38:47",
     "title": "Getting ontologically serious about the replication crisis in psychology.",
     "link_to_resource": "https://doi.org/10.1037/teo0000281",

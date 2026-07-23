@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "10/31/2020 13:19:10",
     "title": "Race to the Bottom: Competition and Quality in Science",
     "link_to_resource": "http://dx.doi.org/10.1093/qje/qjaf010",

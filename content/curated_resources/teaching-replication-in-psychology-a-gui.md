@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "2020-05-11T10:45:22.707Z",
     "title": "Teaching Replication in Psychology: A Guide for Teachers and Students",
     "link_to_resource": "https://osf.io/28r6g/",

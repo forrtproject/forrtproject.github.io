@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "12/12/2024 10:12:04",
     "title": "Selective and (mis)leading economics journals: Meta-research evidence",
     "link_to_resource": "https://doi.org/10.1111/joes.12598",

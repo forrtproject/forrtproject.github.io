@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "01/01/2020",
     "title": "Python for Humanities",
     "link_to_resource": "https://carpentries-incubator.github.io/python-humanities-lesson/",

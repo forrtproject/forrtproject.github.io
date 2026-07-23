@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "2020-05-07T18:08:06.000Z",
     "title": "Pre-registration of clinical trials is associated with fewer positive findings",
     "link_to_resource": "http://theincidentaleconomist.com/wordpress/pre-registration-of-clinical-trials-is-associated-with-fewer-positive-findings/",

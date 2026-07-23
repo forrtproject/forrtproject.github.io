@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "10/23/2023 11:47:42",
     "title": "The Costs of HARKing",
     "link_to_resource": "https://doi.org/10.1093/bjps/axz050",

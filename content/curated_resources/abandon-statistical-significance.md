@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "2020-05-24T12:19:43.126Z",
     "title": "Abandon statistical significance. ",
     "link_to_resource": "https://doi.org/10.1080/00031305.2018.1527253",

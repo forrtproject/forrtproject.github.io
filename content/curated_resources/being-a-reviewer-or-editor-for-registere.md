@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "01/01/2020",
     "title": "Being a Reviewer or Editor for Registered Reports",
     "link_to_resource": "https://www.youtube.com/watch?v=5lWVaewx35k",

@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "2/13/2025 4:57:19",
     "title": "Advancing Equity in Academia through Innovation",
     "link_to_resource": "https://www.nwo.nl/en/researchprogrammes/advancing-equity-academia",

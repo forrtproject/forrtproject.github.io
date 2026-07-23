@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "2020-05-14T11:21:34.371Z",
     "title": "Cognitive Science StackExchange site (for psychology Q&A)",
     "link_to_resource": "http://cogsci.stackexchange.com",

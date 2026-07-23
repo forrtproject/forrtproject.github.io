@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "12/19/2024 9:21:11",
     "title": "More than meets the ITT: A guide for anticipating and investigating nonsignificant results in survey experiments",
     "link_to_resource": "https://doi.org/10.1017/XPS.2024.1",

@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "01/01/2020",
     "title": "An open investigation of the reproducibility of cancer biology research",
     "link_to_resource": "https://doi.org/10.7554/eLife.04333",

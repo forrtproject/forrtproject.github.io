@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "10/2/2023 17:36:32",
     "title": "Preliminary analysis of COVID-19 academic information patterns: a call for open science in the times of closed borders",
     "link_to_resource": "https://doi.org/10.1007/s11192-020-03587-2",

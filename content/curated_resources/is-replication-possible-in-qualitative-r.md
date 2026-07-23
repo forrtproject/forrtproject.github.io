@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "2/27/2025 3:40:46",
     "title": "Is replication possible in qualitative research? A response to Makel et al. (2022)",
     "link_to_resource": "https://doi.org/10.1080/13803611.2024.2314526",

@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "2020-05-24T12:16:20.027Z",
     "title": "Social, Behavioral, and Economic Sciences Perspectives on Robust and Reliable Science",
     "link_to_resource": "http://web.stanford.edu/group/bps/cgi-bin/wordpress/wp-content/uploads/2015/09/NSF-Robust-Research-Workshop-Report.pdf",

@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "12/18/2024 8:05:40",
     "title": "Sorry we\u2032re open, come in we're closed: different profiles in the perceived applicability of open science practices to completed research projects",
     "link_to_resource": "https://doi.org/10.1098/rsos.230595",

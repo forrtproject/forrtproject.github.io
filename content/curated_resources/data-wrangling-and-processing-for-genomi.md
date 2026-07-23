@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "01/01/2020",
     "title": "Data Wrangling and Processing for Genomics",
     "link_to_resource": "https://datacarpentry.org/wrangling-genomics/",

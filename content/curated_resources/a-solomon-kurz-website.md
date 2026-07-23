@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "11/21/2020 7:20:31",
     "title": "A. Solomon Kurz website",
     "link_to_resource": "https://solomonkurz.netlify.app/blog/",

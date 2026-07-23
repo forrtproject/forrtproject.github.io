@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "2020-06-03T20:23:31.650Z",
     "title": "The Extent and Consequences of P-Hacking in Science",
     "link_to_resource": "http://doi.org/10.1371/journal.pbio.1002106",

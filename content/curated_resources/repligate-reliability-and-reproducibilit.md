@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "10/14/2021 13:29:37",
     "title": "Repligate: Reliability and Reproducibility in Psychology Syllabus",
     "link_to_resource": "https://osf.io/ms7ix/",

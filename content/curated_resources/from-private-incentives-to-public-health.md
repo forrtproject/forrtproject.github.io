@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "9/5/2023 10:24:07",
     "title": "From private incentives to public health need: rethinking research and development for pandemic preparedness",
     "link_to_resource": "https://doi.org/10.1016/s2214-109x(23)00328-5",

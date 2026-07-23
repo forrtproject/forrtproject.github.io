@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "1/12/2025 9:49:49",
     "title": "GelBox: Open-source software to improve rigor and reproducibility when analyzing gels and immunoblots",
     "link_to_resource": "https://doi.org/10.1152/ajpheart.00144.2024",

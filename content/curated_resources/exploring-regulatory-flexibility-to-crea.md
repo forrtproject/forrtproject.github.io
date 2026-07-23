@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "12/19/2024 4:04:30",
     "title": "Exploring regulatory flexibility to create novel incentives to optimize drug discovery",
     "link_to_resource": "https://doi.org/10.3389/fmed.2024.1379966",

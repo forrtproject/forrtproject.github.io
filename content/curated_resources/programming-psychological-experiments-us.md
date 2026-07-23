@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "5/23/2023 9:11:15",
     "title": "Programming Psychological Experiments using python and OpenSesame",
     "link_to_resource": "https://jeshuat.github.io/Experimentation1/intro.html",

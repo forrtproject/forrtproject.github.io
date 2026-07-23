@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "10/23/2023 12:26:48",
     "title": "Pre-analysis Plans Have Limited Upside, Especially Where Replications Are Feasible",
     "link_to_resource": "https://doi.org/10.1257/jep.29.3.81",

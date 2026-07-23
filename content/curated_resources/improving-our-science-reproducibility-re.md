@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "10/14/2021 13:52:29",
     "title": "Improving (Our) Science: Reproducibility, Reporting, and Openness",
     "link_to_resource": "https://osf.io/bcdpv/",

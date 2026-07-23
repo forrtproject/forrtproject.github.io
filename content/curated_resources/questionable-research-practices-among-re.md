@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "1/12/2025 10:21:28",
     "title": "Questionable research practices among researchers in the most research-productive management programs",
     "link_to_resource": "https://doi.org/10.1002/job.2623",

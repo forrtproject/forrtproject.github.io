@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "10/6/2023 12:47:55",
     "title": "Preregistration Is Hard, And Worthwhile",
     "link_to_resource": "https://doi.org/10.1016/j.tics.2019.07.009",

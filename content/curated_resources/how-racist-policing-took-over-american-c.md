@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "3/14/2021 15:14:25",
     "title": "How racist policing took over American cities, explained by a historian",
     "link_to_resource": "https://www.vox.com/2020/6/6/21280643/police-brutality-violence-protests-racism-khalil-muhammad",

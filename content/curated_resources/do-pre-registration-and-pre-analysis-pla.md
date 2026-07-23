@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "12/13/2023 15:37:59",
     "title": "Do Pre-Registration and Pre-Analysis Plans Reduce p-Hacking and Publication Bias?",
     "link_to_resource": "https://dx.doi.org/10.2139/ssrn.4180594",

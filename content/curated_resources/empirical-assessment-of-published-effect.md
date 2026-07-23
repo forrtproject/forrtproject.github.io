@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "01/01/2020",
     "title": "Empirical assessment of published effect sizes and power in the recent cognitive neuroscience and psychology literature",
     "link_to_resource": "https://journals.plos.org/plosbiology/article?id=10.1371/journal.pbio.2000797",

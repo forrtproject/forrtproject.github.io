@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "12/18/2023 17:10:16",
     "title": "Comparing Analysis Blinding With Preregistration in the Many-Analysts Religion Project",
     "link_to_resource": "https://doi.org/10.1177/25152459221128319",

@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "2020-05-11T10:41:21.439Z",
     "title": "Hack Your Way To Scientific Glory",
     "link_to_resource": "http://projects.fivethirtyeight.com/p-hacking/",

@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "3/20/2025 16:10:43",
     "title": "Bridging Neurodiversity and Open Scholarship: How Shared Values Can Guide Best Practices for Research Integrity, Social Justice, and Principled Education",
     "link_to_resource": "https://doi.org/10.31222/osf.io/k7a9p_v2",

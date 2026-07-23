@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "01/01/2020",
     "title": "R para An\u00e1lisis Cient\u00edficos Reproducibles",
     "link_to_resource": "https://swcarpentry.github.io/r-novice-gapminder-es/",

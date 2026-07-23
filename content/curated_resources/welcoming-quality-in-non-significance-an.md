@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "2020-05-31T18:29:22.863Z",
     "title": "Welcoming Quality in Non-Significance and Replication Work, but Moving Beyond the p-Value: Announcing New Editorial Policies for Quantitative Research in JOAA",
     "link_to_resource": "https://doi.org/10.1177/1932202X14532177",

@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "01/01/2020",
     "title": "Open + Reproducible Research Workshop",
     "link_to_resource": "https://docs.google.com/presentation/d/1QfJVeim797fLBBAE003W6cqtahkGdJqa2GSsmm-t89s/edit#slide=id.p4",

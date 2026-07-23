@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "12/9/2020 20:09:57",
     "title": "The General Linear Model: Semester 2",
     "link_to_resource": "https://osf.io/x3vyf/",

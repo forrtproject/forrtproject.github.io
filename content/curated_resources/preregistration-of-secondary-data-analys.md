@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "10/27/2023 10:17:54",
     "title": "Preregistration of secondary data analysis: A template and tutorial",
     "link_to_resource": "https://doi.org/10.15626/MP.2020.2625",

@@ -1,10 +1,13 @@
 {
+    "exclude": "",
     "timestamp": "10/16/2020 6:22:33",
-    "title": "Open Research: Examples of good practice, and resources across disciplines",
-    "link_to_resource": "https://docs.google.com/document/d/1Vblnwym18kX2tmL3VcooSdN1CLg3xkppARGCGB39lvw/edit",
+    "title": "Open Research: Examples of good practice, and resources across disciplines (2026 edition)",
+    "link_to_resource": "https://doi.org/10.31219/osf.io/3r8hb",
     "creators": [
         "Emily K Farran",
         "Priya Silverstein",
+        "Aicha Abbad Ameen",
+        "Iliana Misheva",
         "Camilla Gilmore"
     ],
     "material_type": [
@@ -35,8 +38,8 @@
     ],
     "forrt_clusters_new": "FAIR data and materials",
     "forrt_sub_clusters": "Reasons to share data and materials",
-    "doi": "",
-    "in-clusters": false,
+    "doi": "10.31219/osf.io/3r8hb",
+    "in-clusters": true,
     "pdf name": "",
     "apa reference": ""
 }

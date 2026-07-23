@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "10/14/2021 16:03:57",
     "title": "When is science (un)reliable?",
     "link_to_resource": "https://osf.io/9hytb/",

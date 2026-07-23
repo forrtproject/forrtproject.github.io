@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "2020-06-06T19:36:22.578Z",
     "title": "Psychology, Science, and Knowledge Construction: Broadening Perspectives from the Replication Crisis",
     "link_to_resource": "https://doi.org/10.1146/annurev-psych-122216-011845",

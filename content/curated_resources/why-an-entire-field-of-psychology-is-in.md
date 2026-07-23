@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "2020-05-14T11:13:50.654Z",
     "title": "Why an Entire Field of Psychology Is in Trouble",
     "link_to_resource": "https://www.youtube.com/watch?v=2MDNvKXdLEM",

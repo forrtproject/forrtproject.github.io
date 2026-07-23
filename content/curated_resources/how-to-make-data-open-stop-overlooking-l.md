@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "12/13/2023 14:27:03",
     "title": "How to make data open? Stop overlooking librarians",
     "link_to_resource": "https://doi.org/10.1038/d41586-023-03935-1",

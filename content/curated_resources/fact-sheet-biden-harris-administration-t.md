@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "1/9/2025 10:09:27",
     "title": "FACT SHEET: Biden-\u2060Harris Administration Takes New Action to Crack Down on Junk Fees in Higher Education",
     "link_to_resource": "https://bidenwhitehouse.archives.gov/briefing-room/statements-releases/2024/03/15/fact-sheet-biden-harris-administration-takes-new-action-to-crack-down-on-junk-fees-in-higher-education/",

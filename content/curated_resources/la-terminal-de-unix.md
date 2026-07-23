@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "01/01/2020",
     "title": "La Terminal de Unix",
     "link_to_resource": "https://swcarpentry.github.io/shell-novice-es/",

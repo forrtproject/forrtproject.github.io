@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "2020-05-10T08:54:23.927Z",
     "title": "The Bayesfactor blog",
     "link_to_resource": "http://bayesfactor.blogspot.com",

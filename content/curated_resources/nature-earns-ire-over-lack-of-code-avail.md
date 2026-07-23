@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "1/16/2025 4:24:21",
     "title": "Nature earns ire over lack of code availability for Google DeepMind protein folding paper",
     "link_to_resource": "https://retractionwatch.com/2024/05/14/nature-earns-ire-over-lack-of-code-availability-for-google-deepmind-protein-folding-paper/",

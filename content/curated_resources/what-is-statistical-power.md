@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "01/01/2020",
     "title": "What is statistical power",
     "link_to_resource": "https://www.youtube.com/watch?v=-ZU7fbvSJ60",

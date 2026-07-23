@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "01/01/2020",
     "title": "Reporting in Experimental Philosophy: Current Standards and Recommendations for Future Practice",
     "link_to_resource": "https://doi.org/10.1007/s13164-018-0414-3",

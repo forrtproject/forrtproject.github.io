@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "2020-06-07T18:34:55.042Z",
     "title": "Strong inference",
     "link_to_resource": "https://doi.org/10.1126/science.146.3642.347",

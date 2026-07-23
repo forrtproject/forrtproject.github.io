@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "2020-06-07T18:36:25.638Z",
     "title": "Best practices in data analysis and sharing in neuroimaging using MRI",
     "link_to_resource": "https://doi.org/10.1038/nn.4500",

@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "12/19/2024 9:32:11",
     "title": "Reflections on the Unintended\nConsequences of the Science\nReform Movement",
     "link_to_resource": "https://doi.org/10.36850/ed4",

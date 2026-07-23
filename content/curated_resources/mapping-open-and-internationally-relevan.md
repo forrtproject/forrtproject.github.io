@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "2/27/2025 5:07:42",
     "title": "Mapping open and internationally relevant open science capacity building and training modules to support the implementation of the UNESCO Recommendation on Open Science",
     "link_to_resource": "https://www.unesco.org/sites/default/files/medias/fichiers/2022/05/Open%20Science_Capacity_Building_Preliminary_Collation.pdf",

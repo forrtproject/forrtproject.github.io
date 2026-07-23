@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "5/12/2026 7:56:47",
     "title": "An introduction to the topic of Open Science for researchers in business studies and economics",
     "link_to_resource": "https://doi.org/10.5281/zenodo.15348619",

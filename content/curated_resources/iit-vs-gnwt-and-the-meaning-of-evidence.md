@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "9/12/2023 13:55:29",
     "title": "IIT vs. GNWT and the meaning of evidence in consciousness science",
     "link_to_resource": "https://elusiveself.wordpress.com/2023/09/09/iit-vs-gnwt-and-the-meaning-of-evidence-in-consciousness-science/",

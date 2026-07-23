@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "2/20/2025 4:27:12",
     "title": "Open Science Clusters Action for Research & Society (OSCARS)",
     "link_to_resource": "https://oscars-project.eu/",

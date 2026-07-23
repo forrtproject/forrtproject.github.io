@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "2020-05-15T15:37:55.398Z",
     "title": "The New Statistics: Planning, Power, and Precision (Workshop Part 5)",
     "link_to_resource": "https://www.youtube.com/watch?v=Np4lxvS8C-E",

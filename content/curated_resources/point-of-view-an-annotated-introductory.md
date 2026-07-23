@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "3/20/2025 16:28:11",
     "title": "Point of View: An annotated introductory reading list for neurodiversity",
     "link_to_resource": "https://doi.org/10.7554/eLife.102467",

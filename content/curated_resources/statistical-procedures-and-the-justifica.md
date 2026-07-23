@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "2020-06-05T19:23:03.318Z",
     "title": "Statistical Procedures and the Justification of Knowledge in Psychological Science ",
     "link_to_resource": "https://doi.org/10.1037/0003-066X.44.10.1276",

@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "6/12/2025 12:33:21",
     "title": "Teaching Replication in Social Sciences",
     "link_to_resource": "https://osf.io/g3k5t/",

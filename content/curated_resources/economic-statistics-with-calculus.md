@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "10/14/2021 12:41:54",
     "title": "Economic Statistics with Calculus",
     "link_to_resource": "https://osf.io/hurgd/",

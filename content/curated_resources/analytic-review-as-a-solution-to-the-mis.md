@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "2020-05-31T18:33:50.069Z",
     "title": "Analytic Review as a Solution to the Misreporting of Statistical Results in Psychological Science",
     "link_to_resource": "https://doi.org/10.1177/1745691614549257",

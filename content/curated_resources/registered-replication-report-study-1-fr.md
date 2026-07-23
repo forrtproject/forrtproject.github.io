@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "2020-06-11T07:03:26.467Z",
     "title": "Registered Replication Report: Study 1 From Finkel, Rusbult, Kumashiro, & Hannon (2002).",
     "link_to_resource": "https://doi.org/10.1177/1745691616664694",

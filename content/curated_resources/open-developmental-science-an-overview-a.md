@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "01/01/2020",
     "title": "Open Developmental Science: An Overview and Annotated Reading List",
     "link_to_resource": "https://psyarxiv.com/6fk98/",

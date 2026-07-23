@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "01/01/2020",
     "title": "Materials for the Webinar \"Helping Science Succeed: The Librarian\u2019s Role in Addressing the Reproducibility Crisis\"",
     "link_to_resource": "https://osf.io/n8dv2/",

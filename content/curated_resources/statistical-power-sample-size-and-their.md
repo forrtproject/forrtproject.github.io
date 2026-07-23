@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "2020-06-06T19:22:48.150Z",
     "title": "Statistical Power, Sample Size, and Their Reporting in Randomized Controlled Trials",
     "link_to_resource": "https://doi.org/10.1001/jama.1994.03520020048013",

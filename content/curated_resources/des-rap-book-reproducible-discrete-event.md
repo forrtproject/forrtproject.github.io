@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "3/9/2026 8:58:18",
     "title": "DES RAP Book: Reproducible Discrete-Event Simulation in Python and R",
     "link_to_resource": "https://pythonhealthdatascience.github.io/des_rap_book/",

@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "10/27/2023 10:54:19",
     "title": "Open science in dementia care embedded pragmatic clinical trials",
     "link_to_resource": "https://doi.org/10.1037/pag0000644",

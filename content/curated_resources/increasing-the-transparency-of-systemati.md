@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "9/25/2023 9:24:28",
     "title": "Increasing the transparency of systematic reviews: Presenting a generalized registration form",
     "link_to_resource": "https://doi.org/10.1186/s13643-023-02281-7",

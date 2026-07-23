@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "2020-06-05T18:16:31.342Z",
     "title": "Correlational Effect Size Benchmarks",
     "link_to_resource": "https://doi.org/10.1037/a0038047",

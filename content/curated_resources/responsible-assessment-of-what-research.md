@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "2/27/2025 5:12:02",
     "title": "Responsible assessment of what research? Beware of epistemic diversity!",
     "link_to_resource": "https://doi.org/10.15626/MP.2023.3797",

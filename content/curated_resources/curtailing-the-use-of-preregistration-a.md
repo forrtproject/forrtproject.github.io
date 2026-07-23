@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "12/18/2023 16:16:08",
     "title": "Curtailing the Use of Preregistration: A Misused Term",
     "link_to_resource": "https://doi.org/10.1177/1745691619858427",

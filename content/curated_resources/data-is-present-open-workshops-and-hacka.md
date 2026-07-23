@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "01/01/2020",
     "title": "Data Is Present: Open Workshops and Hackathons",
     "link_to_resource": "https://github.com/pablobernabeu/data-is-present",

@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "10/30/2023 12:24:48",
     "title": "Research Preregistration in Political Science: The Case, Counterarguments, and a Response to Critiques",
     "link_to_resource": "https://doi.org/10.1017/S1049096515000189",

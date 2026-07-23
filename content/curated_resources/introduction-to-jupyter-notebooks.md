@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "01/01/2020",
     "title": "Introduction to Jupyter Notebooks",
     "link_to_resource": "https://nyu-dataservices.github.io/Intro-Jupyter-Notebooks/#/",

@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "2020-05-16T10:37:17.656Z",
     "title": "Detecting fraud in social science",
     "link_to_resource": "http://rationallyspeakingpodcast.org/155-detecting-fraud-in-social-science-uri-simonsohn/",

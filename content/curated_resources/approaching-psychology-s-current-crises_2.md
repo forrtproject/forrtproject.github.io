@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "2/20/2025 5:12:32",
     "title": "Approaching psychology\u2019s current crises by exploring the vagueness of psychological concepts: Recommendations for advancing the discipline.",
     "link_to_resource": "https://doi.org/10.1037/amp0001300",

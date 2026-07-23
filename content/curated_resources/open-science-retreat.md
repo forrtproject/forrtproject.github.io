@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "2/27/2025 6:05:16",
     "title": "Open Science Retreat ",
     "link_to_resource": "https://openscienceretreat.zbw.eu/review/",

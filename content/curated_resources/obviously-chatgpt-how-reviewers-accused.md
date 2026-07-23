@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "12/18/2024 8:16:43",
     "title": "\u2018Obviously ChatGPT\u2019 \u2014 how reviewers accused me of scientific fraud",
     "link_to_resource": "https://doi.org/10.1038/d41586-024-00349-5",

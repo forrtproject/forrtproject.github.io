@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "2/27/2025 5:47:38",
     "title": "Science for Progress Initiative",
     "link_to_resource": "https://www.povertyactionlab.org/initiative/science-progress-initiative",

@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "2020-06-04T18:58:56.621Z",
     "title": "Benefits of Open and High-Powered Research Outweigh Costs",
     "link_to_resource": "https://doi.org/10.1037/pspi0000049",

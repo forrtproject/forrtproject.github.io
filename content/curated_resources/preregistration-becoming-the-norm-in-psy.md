@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "2020-06-08T18:16:12.222Z",
     "title": "Preregistration Becoming the Norm in Psychological Science",
     "link_to_resource": "https://www.psychologicalscience.org/observer/preregistration-becoming-the-norm-in-psychological-science/comment-page-1",

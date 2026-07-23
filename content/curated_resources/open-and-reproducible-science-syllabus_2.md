@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "6/30/2025 4:11:42",
     "title": "Open and Reproducible Science Syllabus ",
     "link_to_resource": "https://osf.io/fuds5",

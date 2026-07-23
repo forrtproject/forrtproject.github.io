@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "2020-05-15T17:50:57.842Z",
     "title": "Philosophical Psychology 1989",
     "link_to_resource": "http://meehl.umn.edu/video",

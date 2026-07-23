@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "2020-05-14T10:22:54.428Z",
     "title": "Replacing p-values with Bayes-Factors: A Miracle Cure for the Replicability Crisis in Psychological Science",
     "link_to_resource": "https://replicationindex.wordpress.com/2015/04/30/replacing-p-values-with-bayes-factors-a-miracle-cure-for-the-replicability-crisis-in-psychological-science/",

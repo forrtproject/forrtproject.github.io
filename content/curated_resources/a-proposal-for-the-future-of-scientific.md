@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "01/01/2020",
     "title": "A proposal for the future of scientific publishing in the life sciences",
     "link_to_resource": "https://journals.plos.org/plosbiology/article?id=10.1371/journal.pbio.3000116",

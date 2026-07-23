@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "8/6/2021 16:49:19",
     "title": "Data Management for Psychological Science: A Crowdsourced Syllabus",
     "link_to_resource": "https://docs.google.com/document/d/1z15bL9cP84re6d4zdkO60q06lnknnN3xEktN7GnLFFQ/edit",

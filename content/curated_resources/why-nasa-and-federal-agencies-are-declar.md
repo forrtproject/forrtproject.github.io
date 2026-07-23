@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "10/9/2023 13:04:12",
     "title": "Why NASA and federal agencies are declaring this the Year of Open Science",
     "link_to_resource": "https://doi.org/10.1038/d41586-023-00019-y",

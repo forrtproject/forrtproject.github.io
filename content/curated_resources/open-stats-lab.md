@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "2020-05-14T11:32:55.954Z",
     "title": "open stats lab",
     "link_to_resource": "https://sites.trinity.edu/osl/",

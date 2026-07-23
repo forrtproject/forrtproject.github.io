@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "2/6/2025 5:59:10",
     "title": "Increasing transparency through open science badges",
     "link_to_resource": "https://doi.org/10.1111/cobi.13735",

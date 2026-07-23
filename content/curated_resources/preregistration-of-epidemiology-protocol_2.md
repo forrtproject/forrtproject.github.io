@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "10/27/2023 14:01:14",
     "title": "Preregistration of Epidemiology Protocols (Response)",
     "link_to_resource": "https://doi.org/10.1097/EDE.0b013e31821c08d9",

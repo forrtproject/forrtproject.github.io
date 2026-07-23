@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "10/27/2023 13:38:09",
     "title": "Adapting open science and pre-registration to longitudinal research",
     "link_to_resource": "https://doi.org/10.1002/icd.2315",

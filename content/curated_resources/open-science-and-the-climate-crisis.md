@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "12/18/2024 8:23:26",
     "title": "Open science and the climate crisis",
     "link_to_resource": "https://doi.org/10.1371/journal.pclm.0000336",

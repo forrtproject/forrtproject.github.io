@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "12/13/2023 14:34:10",
     "title": "Using artificial intelligence to create diverse and inclusive medical case vignettes for education",
     "link_to_resource": "https://doi.org/10.1111/bcp.15977",

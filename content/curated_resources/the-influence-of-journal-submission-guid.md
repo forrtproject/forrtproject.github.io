@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "01/01/2020",
     "title": "The influence of journal submission guidelines on authors' reporting of statistics and use of open research practices",
     "link_to_resource": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0175583",

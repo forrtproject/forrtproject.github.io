@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "2020-05-28T13:21:15.116Z",
     "title": "Performing high\u2010powered studies efficiently with sequential analyses",
     "link_to_resource": "https://doi.org/10.1002/ejsp.2023",

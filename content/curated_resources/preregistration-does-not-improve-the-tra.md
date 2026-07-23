@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "2/6/2025 10:16:34",
     "title": "Preregistration Does Not Improve the Transparent\nEvaluation of Severity in Popper\u2019s Philosophy of\nScience or When Deviations are Allowed",
     "link_to_resource": "https://doi.org/10.48550/arXiv.2408.12347",

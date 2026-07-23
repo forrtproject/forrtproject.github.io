@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "1/9/2025 9:28:02",
     "title": "A Plan to Develop Open Science\u2019s Green Shoots into a Thriving Garden",
     "link_to_resource": "https://issues.org/open-science-tananbaum-gentemann-naim-marcum/",

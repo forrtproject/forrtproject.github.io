@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "12/18/2024 8:19:48",
     "title": "Sneaked references: Cooked reference metadata inflate citation counts",
     "link_to_resource": "https://doi.org/10.1002/asi.24896",

@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "2020-05-27T16:14:55.320Z",
     "title": "Psychology's Replication Crisis and the Grant Culture: Righting the Ship",
     "link_to_resource": "https://doi.org/10.1177/1745691616687745",

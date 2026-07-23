@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "2020-05-15T05:01:55.362Z",
     "title": "The Missing Semester of Your CS Education",
     "link_to_resource": "https://missing.csail.mit.edu/",

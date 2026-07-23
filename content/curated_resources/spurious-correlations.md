@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "2020-05-08T06:38:05.000Z",
     "title": "Spurious Correlations",
     "link_to_resource": "http://www.tylervigen.com/spurious-correlations",

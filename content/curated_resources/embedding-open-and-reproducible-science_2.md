@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "3/20/2025 15:44:36",
     "title": "Embedding open and reproducible science into teaching: a bank of lesson plans and resources",
     "link_to_resource": "https://doi.org/10.1037/stl0000307",

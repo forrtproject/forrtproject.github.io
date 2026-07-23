@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "11/21/2020 7:16:27",
     "title": "Bayesian Cognitive Modelling",
     "link_to_resource": "https://bayesmodels.com/",

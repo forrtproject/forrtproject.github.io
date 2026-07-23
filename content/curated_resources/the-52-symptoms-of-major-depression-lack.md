@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "2020-06-10T19:15:32.485Z",
     "title": "The 52 symptoms of major depression: Lack of content overlap among seven common depression scales",
     "link_to_resource": "https://doi.org/10.1016/j.jad.2016.10.019",

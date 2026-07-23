@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "01/01/2020",
     "title": "Evaluating Registered Reports: A Naturalistic Comparative Study of Article Impact",
     "link_to_resource": "https://osf.io/5y8w7/",

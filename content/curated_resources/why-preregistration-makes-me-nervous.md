@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "10/10/2023 13:45:16",
     "title": "Why Preregistration Makes Me Nervous",
     "link_to_resource": "https://www.psychologicalscience.org/observer/why-preregistration-makes-me-nervous",

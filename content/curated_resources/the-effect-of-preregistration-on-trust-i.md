@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "12/13/2023 15:32:50",
     "title": "The effect of preregistration on trust in empirical research findings: results of a registered report",
     "link_to_resource": "https://doi.org/10.1098/rsos.181351",

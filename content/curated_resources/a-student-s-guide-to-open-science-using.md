@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "3/15/2025 10:27:51",
     "title": "A Student\u2019s Guide to Open Science: Using the Replication Crisis to Reform Psychology",
     "link_to_resource": "https://forrt.org/educators-corner/014-students-guide-to-open-science/",

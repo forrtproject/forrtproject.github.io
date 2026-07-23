@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "6/30/2025 3:44:32",
     "title": "Research Methods in Social Psychology",
     "link_to_resource": "https://osf.io/uv9x6",

@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "10/18/2023 11:05:39",
     "title": "Who Re-Uses Data? A Bibliometric Analysis of Dataset Citations",
     "link_to_resource": "https://doi.org/10.48550/arXiv.2308.04379",

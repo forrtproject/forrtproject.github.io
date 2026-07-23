@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "2/27/2025 5:46:44",
     "title": "Methods and results of studies on reporting guideline adherence are poorly reported: a meta-research study",
     "link_to_resource": "https://doi.org/10.1016/j.jclinepi.2023.05.017",

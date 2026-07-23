@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "10/30/2023 13:59:21",
     "title": "Preregistration and Incentives",
     "link_to_resource": "https://dx.doi.org/10.2139/ssrn.3796813",

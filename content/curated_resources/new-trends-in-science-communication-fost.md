@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "11/6/2023 12:34:36",
     "title": "New trends in science communication fostering evidence-informed policymaking",
     "link_to_resource": "https://doi.org/10.12688/openreseurope.14769.2",

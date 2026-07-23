@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "10/30/2023 12:33:51",
     "title": "The need for public opinion and survey methodology research to embrace preregistration and replication, exemplified by a team\u2019s failure to replicate their own findings on visual cues in grid-type questions",
     "link_to_resource": "https://doi.org/10.1093/ijpor/edac040",

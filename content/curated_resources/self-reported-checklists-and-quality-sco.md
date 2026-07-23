@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "12/12/2024 9:47:46",
     "title": "Self-reported checklists and quality scoring tools in radiomics: a meta-research",
     "link_to_resource": "https://doi.org/10.1007/s00330-023-10487-5",

@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "4/8/2025 8:44:43",
     "title": "Open and Reproducible Science walks into a classroom",
     "link_to_resource": "https://forrt.org/pedagogies/001-julia-strand/",

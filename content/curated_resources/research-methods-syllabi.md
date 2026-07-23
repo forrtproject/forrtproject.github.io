@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "2020-05-08T06:46:19.902Z",
     "title": "Research Methods Syllabi",
     "link_to_resource": "https://online225.psych.wisc.edu/",

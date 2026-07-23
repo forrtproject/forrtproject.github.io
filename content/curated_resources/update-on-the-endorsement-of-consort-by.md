@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "01/01/2020",
     "title": "Update on the endorsement of CONSORT by high impact factor journals: a survey of journal \u201cInstructions to Authors\u201d in 2014",
     "link_to_resource": "https://trialsjournal.biomedcentral.com/articles/10.1186/s13063-016-1408-z",

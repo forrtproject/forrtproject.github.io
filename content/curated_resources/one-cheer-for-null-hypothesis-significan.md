@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "2020-06-01T19:02:03.113Z",
     "title": "One cheer for null hypothesis significance testing",
     "link_to_resource": "https://doi.org/10.1037/1082-989X.4.2.212",

@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "01/01/2020",
     "title": "Enhancing Reproducibility through Rigor and Transparency",
     "link_to_resource": "https://grants.nih.gov/policy/reproducibility/index.htm",

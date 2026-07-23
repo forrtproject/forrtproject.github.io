@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "10/23/2023 10:34:09",
     "title": "Up front and open, shrouded in secrecy, or somewhere in between? A Meta Research Systematic Review of Open Science Practices in Sport Medicine Research",
     "link_to_resource": "https://www.jospt.org/doi/10.2519/jospt.2023.12016",

@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "2020-06-05T19:09:54.895Z",
     "title": "A Software Tool for Removing Patient Identifying Information from Clinical Documents",
     "link_to_resource": "https://doi.org/10.1197/jamia.M2702",

@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "2020-06-04T19:33:08.859Z",
     "title": "Safeguard Power as a Protection Against Imprecise Power Estimates",
     "link_to_resource": "https://doi.org/10.1177/1745691614528519",

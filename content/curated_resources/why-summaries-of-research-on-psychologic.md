@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "2020-06-03T20:40:01.843Z",
     "title": "Why Summaries of Research on Psychological Theories are Often Uninterpretable",
     "link_to_resource": "https://doi.org/10.2466/pr0.1990.66.1.195",

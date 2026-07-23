@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "1/5/2023 16:23:03",
     "title": "Changing the Culture of Peer Review for a More Inclusive and Equitable Psychological Science",
     "link_to_resource": "https://doi.org/10.31234/osf.io/435xz",

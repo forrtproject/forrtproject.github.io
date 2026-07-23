@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "12/14/2023 9:15:20",
     "title": "Trial registration 10 years on",
     "link_to_resource": "https://doi.org/10.1136/bmj.h3572",

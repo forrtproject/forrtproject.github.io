@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "2020-05-15T13:31:19.979Z",
     "title": "The New Statistics: Confidence Intervals, NHST, and p Values (Workshop Part 1)",
     "link_to_resource": "https://www.youtube.com/watch?v=iJ4kqk3V8jQ",

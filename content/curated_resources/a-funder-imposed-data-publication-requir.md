@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "01/01/2020",
     "title": "A funder-imposed data publication requirement seldom inspired data sharing",
     "link_to_resource": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0199789",

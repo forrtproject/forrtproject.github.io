@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "7/15/2025 8:50:56",
     "title": "The Corpus of Language Discrimination in Interaction",
     "link_to_resource": "https://emcawiki.net/CLDI",

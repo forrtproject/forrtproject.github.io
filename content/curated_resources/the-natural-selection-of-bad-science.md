@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "2020-06-03T19:44:06.983Z",
     "title": "The natural selection of bad science.",
     "link_to_resource": "https://doi.org/10.1098/rsos.160384",

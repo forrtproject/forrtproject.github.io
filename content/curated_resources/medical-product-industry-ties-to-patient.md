@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "8/28/2023 9:48:01",
     "title": "Medical Product Industry Ties to Patient Advocacy Organizations\u2019 Executive Leadership",
     "link_to_resource": "https://doi.org/10.1001/jamainternmed.2023.2842",

@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "01/01/2020",
     "title": "The Post-Embargo Open Access Citation Advantage: It Exists (Probably), It\u2019s Modest (Usually), and the Rich Get Richer (of Course)",
     "link_to_resource": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0159614",

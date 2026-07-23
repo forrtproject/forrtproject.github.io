@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "2020-05-24T12:26:19.575Z",
     "title": "The case against statistical significance testing",
     "link_to_resource": "https://doi.org/10.17763/haer.48.3.t490261645281841",

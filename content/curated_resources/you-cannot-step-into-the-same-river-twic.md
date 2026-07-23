@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "2020-06-04T19:34:14.528Z",
     "title": "You Cannot Step Into the Same River Twice: When Power Analyses Are Optimistic",
     "link_to_resource": "https://doi.org/10.1177/1745691614548513",

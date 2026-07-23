@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "1/16/2025 4:05:30",
     "title": "Advancing data honesty in experimental biology",
     "link_to_resource": "https://doi.org/10.1242/jeb.247383",

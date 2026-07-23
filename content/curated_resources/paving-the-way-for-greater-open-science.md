@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "12/12/2024 8:06:33",
     "title": "Paving the way for greater open science in sports and exercise medicine: navigating the barriers to adopting open and accessible data practices",
     "link_to_resource": "https://doi.org/10.1136/bjsports-2023-107225",

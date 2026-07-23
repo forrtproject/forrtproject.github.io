@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "01/01/2020",
     "title": "Preregistration in Complex Contexts: A Preregistration Template for the Application of Cognitive Models",
     "link_to_resource": "https://psyarxiv.com/2hykx/",

@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "2020-06-08T18:08:58.444Z",
     "title": "Excess Success for Psychology Articles in the Journal Science",
     "link_to_resource": "https://doi.org/10.1371/journal.pone.0114255",

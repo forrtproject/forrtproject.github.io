@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "10/2/2023 10:05:11",
     "title": "Open access journal publication in health and medical research and open science: Benefits, challenges and limitations",
     "link_to_resource": "http://dx.doi.org/10.1136/bmjebm-2022-112126",

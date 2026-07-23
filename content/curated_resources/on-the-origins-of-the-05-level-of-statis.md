@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "2020-05-24T12:45:47.042Z",
     "title": "On the origins of the .05 level of statistical significance",
     "link_to_resource": "https://doi.org/10.1037/0003-066X.37.5.553",

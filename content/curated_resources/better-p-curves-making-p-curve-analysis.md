@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "2020-06-06T19:18:18.085Z",
     "title": "Better P-curves: Making P-curve Analysis More Robust to Errors, Fraud, and Ambitious P-hacking, a Reply to Ulrich and Miller (2015)",
     "link_to_resource": "https://doi.org/10.1037/xge0000104",

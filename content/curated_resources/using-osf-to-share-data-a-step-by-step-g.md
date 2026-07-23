@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "2020-06-03T19:35:51.218Z",
     "title": "Using OSF to Share Data: A Step-by-Step Guide",
     "link_to_resource": "https://doi.org/10.1177/2515245918757689",

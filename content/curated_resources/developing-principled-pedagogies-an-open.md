@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "4/8/2025 8:54:21",
     "title": "Developing principled pedagogies - An Open Science journey",
     "link_to_resource": "https://forrt.org/pedagogies/002-gilad-feldman/",

@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "10/14/2021 17:11:19",
     "title": "Social Sciences Research Methods Centre Replication Workshop",
     "link_to_resource": "https://osf.io/t2q78/",

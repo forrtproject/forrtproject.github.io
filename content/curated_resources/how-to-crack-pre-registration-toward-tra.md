@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "10/23/2023 12:02:08",
     "title": "How to Crack Pre-registration: Toward Transparent and Open Science",
     "link_to_resource": "https://doi.org/10.3389/fpsyg.2018.01831",

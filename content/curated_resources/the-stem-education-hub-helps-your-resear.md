@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "01/01/2020",
     "title": "The STEM Education Hub Helps Your Research Workflow with Open Tools",
     "link_to_resource": "https://osf.io/g4km9/",

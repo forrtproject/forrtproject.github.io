@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "1/13/2025 6:17:42",
     "title": "Barcelona Declaration on Open Research Information",
     "link_to_resource": "https://barcelona-declaration.org/",

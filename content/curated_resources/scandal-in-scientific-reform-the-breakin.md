@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "2/20/2025 5:59:03",
     "title": "Scandal in scientific reform: the breaking and remaking of science",
     "link_to_resource": "https://doi.org/10.1080/23299460.2024.2371172",

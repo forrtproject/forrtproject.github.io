@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "9/6/2023 10:59:16",
     "title": "Positionality Statements are just the tip of the Iceberg: Moving toward a Reflexive Process",
     "link_to_resource": "https://doi.org/10.1615/JWomenMinorScienEng.2022044277",

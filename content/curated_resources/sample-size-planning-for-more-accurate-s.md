@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "2020-05-28T14:55:21.462Z",
     "title": "Sample-size planning for more accurate statistical power: A method adjusting sample effect sizes for publication bias and uncertainty. ",
     "link_to_resource": "http://doi.org/10.1177/0956797617723724",

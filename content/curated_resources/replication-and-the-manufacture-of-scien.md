@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "2020-05-29T18:22:24.009Z",
     "title": "Replication and the Manufacture of Scientific Inferences: A Formal Approach",
     "link_to_resource": "https://doi.org/10.1093/isp/ekv011",

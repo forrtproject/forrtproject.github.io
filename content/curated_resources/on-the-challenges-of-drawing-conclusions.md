@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "2020-05-31T18:36:46.879Z",
     "title": "On the challenges of drawing conclusions from p-values just below 0.05",
     "link_to_resource": "https://doi.org/10.7717/peerj.1142",

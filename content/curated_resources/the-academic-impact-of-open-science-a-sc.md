@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "2/13/2025 6:34:52",
     "title": "The academic impact of Open Science: a scoping review",
     "link_to_resource": "https://doi.org/10.31235/osf.io/ptjub",

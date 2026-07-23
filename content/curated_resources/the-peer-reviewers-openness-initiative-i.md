@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "2020-06-07T19:09:59.434Z",
     "title": "The Peer Reviewers\u2019 Openness Initiative: incentivizing open research practices through peer review. ",
     "link_to_resource": "https://doi.org/10.1098/rsos.150547",

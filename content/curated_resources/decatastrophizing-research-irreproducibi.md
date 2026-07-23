@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "1/9/2025 9:25:39",
     "title": "Decatastrophizing research irreproducibility",
     "link_to_resource": "https://doi.org/10.1016/j.bcp.2024.116090",

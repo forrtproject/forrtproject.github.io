@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "10/30/2023 13:07:33",
     "title": "Exploring Pre-registration and Pre-analysis Plans for Qualitative Inference",
     "link_to_resource": "https://www.researchgate.net/profile/Florian_Kern4/publication/319141144_Exploring_Pre-registration_and_Pre-analysis_Plans_for_Qualitative_Inference/links/599455d60f7e9b98953af045/Exploring-Pre-registration-and-Pre-analysis-Plans-for-Qualitative-Inference.pdf",

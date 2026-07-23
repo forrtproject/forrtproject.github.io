@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "2020-05-11T10:16:17.692Z",
     "title": "G*Power",
     "link_to_resource": "http://www.gpower.hhu.de/",

@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "12/12/2024 10:58:13",
     "title": "Natio\u00adnal guide\u00adli\u00adnes for promoting open science in Sweden",
     "link_to_resource": "https://www.kb.se/samverkan-och-utveckling/nytt-fran-kb/nyheter-samverkan-och-utveckling/2024-01-15-national-guidelines-for-promoting-open-science-in-sweden.html",

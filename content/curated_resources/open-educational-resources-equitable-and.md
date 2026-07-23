@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "8/18/2023 12:32:50",
     "title": "Open Educational Resources: Equitable and Affordable Nursing Education",
     "link_to_resource": "https://doi.org/10.1097/01.NEP.0000000000001180",

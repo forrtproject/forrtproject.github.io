@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "2/27/2025 8:55:11",
     "title": "A critique of using the labels confirmatory and exploratory in modern psychological research",
     "link_to_resource": "https://doi.org/10.3389/fpsyg.2022.1020770",

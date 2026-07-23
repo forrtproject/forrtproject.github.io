@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "1/12/2025 9:57:38",
     "title": "Advancing Equity and Innovation in Research Publishing: Time for a New Era in the Open Access Movement?",
     "link_to_resource": "https://www.cgdev.org/blog/advancing-equity-and-innovation-research-publishing-time-new-era-open-access-movement",

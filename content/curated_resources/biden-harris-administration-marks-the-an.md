@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "12/18/2024 7:48:58",
     "title": "Biden-\u2060Harris Administration Marks the Anniversary of OSTP\u2019s Year of Open Science",
     "link_to_resource": "https://bidenwhitehouse.archives.gov/ostp/news-updates/2024/01/31/fact-sheet-biden-harris-administration-marks-the-anniversary-of-ostps-year-of-open-science/",

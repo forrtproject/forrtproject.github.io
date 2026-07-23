@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "2020-06-05T19:19:33.825Z",
     "title": "Theoretical risks and tabular asterisks: Sir Karl, Sir Ronald, and the slow progress of soft psychology.",
     "link_to_resource": "https://doi.org/10.1037/0022-006X.46.4.806",

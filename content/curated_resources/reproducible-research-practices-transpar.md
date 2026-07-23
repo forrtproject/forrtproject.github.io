@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "01/01/2020",
     "title": "Reproducible research practices, transparency, and open access data in the biomedical literature, 2015\u20132017",
     "link_to_resource": "https://journals.plos.org/plosbiology/article?id=10.1371/journal.pbio.2006930",

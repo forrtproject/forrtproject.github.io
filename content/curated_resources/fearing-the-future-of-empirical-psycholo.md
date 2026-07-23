@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "2020-06-10T18:55:24.184Z",
     "title": "Fearing the future of empirical psychology: Bem\u2019s (2011) evidence of psi as a case study in deficiencies in modal research practice. ",
     "link_to_resource": "http://dx.doi.org/10.1037/a0025172",

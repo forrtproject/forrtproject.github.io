@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "7/16/2025 3:08:27",
     "title": "Transdisciplinary Global Health Challenge (TGHC) - a transdisciplinary community engagement project to foster Open Science practices with marginalized communities",
     "link_to_resource": "https://openresearch.amsterdam/en/page/88148/transdisciplinary-global-health-challenge",

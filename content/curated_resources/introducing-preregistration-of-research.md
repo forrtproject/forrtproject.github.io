@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "10/27/2023 14:10:50",
     "title": "Introducing Preregistration of Research Design to Archaeology",
     "link_to_resource": "https://doi.org/10.31235/osf.io/sbwcq",

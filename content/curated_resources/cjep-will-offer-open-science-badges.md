@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "2/6/2025 6:39:39",
     "title": "CJEP will offer open science badges",
     "link_to_resource": "https://doi.org/10.1037/cep0000128",

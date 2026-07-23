@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "2020-05-27T17:12:08.421Z",
     "title": "Open sharing of data on close relationships and other sensitive social psychological topics: Challenges, tools, and future directions",
     "link_to_resource": "https://doi.org/10.1177/2515245917744281",

@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "2/6/2025 4:35:21",
     "title": "Eleven strategies for making reproducible research and open science training the norm at research institutions",
     "link_to_resource": "https://doi.org/10.7554/eLife.89736",

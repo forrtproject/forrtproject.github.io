@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "2020-05-22T19:24:27.127Z",
     "title": "The Persistence of Underpowered Studies in Psychological Research: Causes, Consequences, and Remedies",
     "link_to_resource": "https://doi.org/10.1037/1082-989X.9.2.147",

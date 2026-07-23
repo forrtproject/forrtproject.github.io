@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "2/6/2025 5:08:52",
     "title": "Reputation Without Practice? A Dynamic Computational Model of the Unintended Consequences of Open Scientist Reputations",
     "link_to_resource": "https://doi.org/10.36850/mr10",

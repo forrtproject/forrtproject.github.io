@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "2020-06-04T19:40:47.120Z",
     "title": "A Power Primer",
     "link_to_resource": "https://doi.org/10.1037/0033-2909.112.1.155",

@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "01/01/2020",
     "title": "Statistics of DOOM",
     "link_to_resource": "https://www.youtube.com/channel/UCMdihazndR0f9XBoSXWqnYg/",

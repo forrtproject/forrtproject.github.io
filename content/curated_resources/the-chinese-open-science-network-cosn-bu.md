@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "2/6/2025 5:22:16",
     "title": "The Chinese Open Science Network (COSN): Building an Open Science Community From Scratch",
     "link_to_resource": "https://doi.org/10.1177/25152459221144986",

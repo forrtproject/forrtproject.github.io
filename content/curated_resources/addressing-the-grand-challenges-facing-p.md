@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "3/13/2025 18:01:35",
     "title": "Addressing the grand challenges facing psychological science",
     "link_to_resource": "https://forrt.org/educators-corner/011-intersectionality-open-science/",

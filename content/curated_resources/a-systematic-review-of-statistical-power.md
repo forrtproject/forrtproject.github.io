@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "2020-06-03T20:33:54.957Z",
     "title": "A systematic review of statistical power in software engineering experiments. ",
     "link_to_resource": "https://doi.org/10.1016/j.infsof.2005.08.009",

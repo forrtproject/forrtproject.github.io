@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "2/20/2025 5:17:54",
     "title": "RLUK22 | Keynote - Kaitlin Thaney, Invest in Open Infrastructure",
     "link_to_resource": "https://www.youtube.com/watch?v=GjcqZBalcwY&t=527s",

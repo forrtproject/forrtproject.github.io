@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "2020-05-16T07:21:04.327Z",
     "title": "Science and Pseudoscience BBC Radio Talk",
     "link_to_resource": "http://www.inf.fu-berlin.de/lehre/pmo/eng/Lakatos-Science.pdf",

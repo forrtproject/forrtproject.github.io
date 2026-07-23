@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "10/27/2023 10:34:35",
     "title": "Preregistration in Single-Case Design Research",
     "link_to_resource": "https://doi.org/10.1177/0014402919868529",

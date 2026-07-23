@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "12/19/2024 3:40:07",
     "title": "Do grant proposal texts matter for funding decisions? A field experiment",
     "link_to_resource": "https://doi.org/10.1007/s11192-024-04968-7",

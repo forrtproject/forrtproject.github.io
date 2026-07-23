@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "10/24/2020 9:10:15",
     "title": "Taking stock of the credibility revolution: Scientific reform 2011-no",
     "link_to_resource": "https://doi.org/10.13140/RG.2.2.21721.47200/1",

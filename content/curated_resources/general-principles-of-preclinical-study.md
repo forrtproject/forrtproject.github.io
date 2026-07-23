@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "01/01/2020",
     "title": "General Principles of Preclinical Study Design",
     "link_to_resource": "https://doi.org/10.1007/164_2019_277",

@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "2020-05-26T14:48:00.540Z",
     "title": "Psychologists Are Open to Change, yet Wary of Rules",
     "link_to_resource": "https://doi.org/10.1177/1745691612459521",

@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "01/01/2020",
     "title": "Presentations Given by Center for Open Science",
     "link_to_resource": "https://osf.io/zvp8k/files/",

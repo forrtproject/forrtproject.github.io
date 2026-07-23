@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "2020-05-11T10:10:21.373Z",
     "title": "GLIMMPSE",
     "link_to_resource": "https://glimmpse.samplesizeshop.org/#/",

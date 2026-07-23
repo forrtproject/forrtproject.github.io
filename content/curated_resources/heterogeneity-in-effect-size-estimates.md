@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "2/20/2025 4:57:13",
     "title": "Heterogeneity in effect size estimates",
     "link_to_resource": "https://doi.org/10.1073/pnas.2403490121",

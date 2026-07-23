@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "4/8/2025 9:09:25",
     "title": "Open Science education through student participation",
     "link_to_resource": "https://forrt.org/pedagogies/003-crep/",

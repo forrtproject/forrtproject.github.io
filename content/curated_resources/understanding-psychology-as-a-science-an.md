@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "2020-05-19T16:34:08.333Z",
     "title": "Understanding psychology as a science: An introduction to scientific and statistical inference",
     "link_to_resource": "https://www.academia.edu/40202736/Dienes_Z_2008_Understanding_psychology_as_a_science_An_introduction_to_scientific_and_statistical_inference",

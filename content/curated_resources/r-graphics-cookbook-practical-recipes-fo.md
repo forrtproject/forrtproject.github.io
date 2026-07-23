@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "2020-05-19T16:54:01.549Z",
     "title": "R Graphics Cookbook: Practical Recipes for Visualizing Data ",
     "link_to_resource": "https://www.amazon.com/R-Graphics-Cookbook-Winston-Chang/dp/1449316956?ie=UTF8&psc=1&redirect=true&ref_=oh_aui_detailpage_o03_s00",

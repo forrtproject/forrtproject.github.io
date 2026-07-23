@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "2/6/2025 5:00:42",
     "title": "JPA Promotes Open Science",
     "link_to_resource": "https://doi.org/10.1080/00223891.2017.1319711",

@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "2/13/2025 5:01:06",
     "title": "The Race in Academia Collective",
     "link_to_resource": "https://raceinacademia.nl/page/the-race-in-academia-collective",

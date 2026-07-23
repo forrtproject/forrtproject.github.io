@@ -1,4 +1,5 @@
 {
+    "exclude": true,
     "timestamp": "10/28/2020 8:00:56",
     "title": "Preregistration for Quantitative Research in Psychology Template",
     "link_to_resource": "https://docs.google.com/spreadsheets/d/1vlp5GN-HXrtrjCdjE28f_3tT6RiwhQO2vVeOZGOaFsQ/edit#gid=0",

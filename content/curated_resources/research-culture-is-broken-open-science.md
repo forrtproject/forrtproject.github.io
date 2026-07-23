@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "2/6/2025 5:58:27",
     "title": "Research Culture is Broken; Open Science can Fix It",
     "link_to_resource": "https://www.youtube.com/watch?v=c-bemNZ-IqA",

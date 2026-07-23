@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "2020-05-31T18:35:05.650Z",
     "title": "The poor availability of psychological research data for reanalysis.",
     "link_to_resource": "https://doi.org/10.1037/0003-066X.61.7.726",

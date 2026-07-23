@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "2/13/2025 5:43:47",
     "title": "ChatGPT teaches open science",
     "link_to_resource": "https://doi.org/10.58079/ne8n",

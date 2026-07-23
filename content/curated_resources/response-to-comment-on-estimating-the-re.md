@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "2020-05-23T03:12:32.579Z",
     "title": "Response to Comment on \u201cEstimating the reproducibility of psychological science\u201d",
     "link_to_resource": "https://doi.org/10.1126/science.aad9163",

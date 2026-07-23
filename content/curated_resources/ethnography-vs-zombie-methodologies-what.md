@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "12/12/2024 6:44:02",
     "title": "Ethnography vs. zombie methodologies: What anthropology can teach psychology about nonreproducibility",
     "link_to_resource": "https://doi.org/10.1111/amet.13235",

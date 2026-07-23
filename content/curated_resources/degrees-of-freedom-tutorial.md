@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "2020-05-08T09:09:04.110Z",
     "title": "Degrees of Freedom Tutorial",
     "link_to_resource": "http://ron.dotsch.org/degrees-of-freedom/",

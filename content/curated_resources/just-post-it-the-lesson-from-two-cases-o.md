@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "2020-05-28T13:42:57.798Z",
     "title": "Just Post It: The Lesson From Two Cases of Fabricated Data Detected by Statistics Alone",
     "link_to_resource": "https://doi.org/10.1177/0956797613480366",

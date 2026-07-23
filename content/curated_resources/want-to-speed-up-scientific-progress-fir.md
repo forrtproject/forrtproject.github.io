@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "8/21/2023 16:15:02",
     "title": "Want to speed up scientific progress? First understand how science policy works",
     "link_to_resource": "https://doi.org/10.1038/d41586-023-02602-9",

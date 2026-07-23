@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "1/12/2025 10:32:53",
     "title": "Assessment of transparency indicators in space medicine",
     "link_to_resource": "https://doi.org/10.1371/journal.pone.0300701",

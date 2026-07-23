@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "12/13/2023 15:34:09",
     "title": "Do Pre-analysis Plans Hamper Publication?",
     "link_to_resource": "https://doi.org/10.1257/pandp.20201079",

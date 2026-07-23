@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "01/01/2020",
     "title": "Automation and Make",
     "link_to_resource": "http://swcarpentry.github.io/make-novice/",

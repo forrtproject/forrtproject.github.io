@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "10/6/2023 12:43:54",
     "title": "Science isn't Broken",
     "link_to_resource": "https://fivethirtyeight.com/features/science-isnt-broken/#part1",

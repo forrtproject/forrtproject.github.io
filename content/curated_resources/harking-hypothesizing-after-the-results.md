@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "2020-06-03T20:22:21.975Z",
     "title": "HARKing: Hypothesizing after the results are known",
     "link_to_resource": "https://doi.org/10.1207/s15327957pspr0203_4",

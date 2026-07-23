@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "2/27/2025 5:17:49",
     "title": "Decisions, Decisions, Decisions: An Ethnographic Study of Researcher Discretion in Practice",
     "link_to_resource": "https://doi.org/10.1007/s11948-024-00481-5",

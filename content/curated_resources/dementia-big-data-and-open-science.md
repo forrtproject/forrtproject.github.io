@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "01/01/2020",
     "title": "Dementia, Big Data and Open Science",
     "link_to_resource": "https://www.oecd.org/digital/dementia-bigdata-openscience.htm",

@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "2/13/2025 5:27:16",
     "title": "Open Education Challenge Series",
     "link_to_resource": "https://oechallenge.opened.ca/",

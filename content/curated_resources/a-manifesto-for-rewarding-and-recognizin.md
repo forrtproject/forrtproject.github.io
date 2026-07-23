@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "2/6/2025 4:59:10",
     "title": "A Manifesto for Rewarding and Recognizing Team Infrastructure Roles",
     "link_to_resource": "https://doi.org/10.36850/mr8",

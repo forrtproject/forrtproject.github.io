@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "6/10/2022 6:48:02",
     "title": "QDR Data for Teaching",
     "link_to_resource": "https://qdr.syr.edu/guidance/teaching/data-for-teaching",

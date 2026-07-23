@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "01/01/2020",
     "title": "Registered Reports Factsheet for Editors",
     "link_to_resource": "https://osf.io/jbeus/",

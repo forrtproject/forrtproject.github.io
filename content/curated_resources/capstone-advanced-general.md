@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "10/14/2021 13:23:34",
     "title": "Capstone: Advanced General",
     "link_to_resource": "https://osf.io/24ws6/",

@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "01/01/2020",
     "title": "Open science challenges, benefits and tips in early career and beyond",
     "link_to_resource": "https://journals.plos.org/plosbiology/article?id=10.1371/journal.pbio.3000246",

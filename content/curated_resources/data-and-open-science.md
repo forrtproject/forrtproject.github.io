@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "2/6/2025 4:51:09",
     "title": "DATA AND OPEN SCIENCE",
     "link_to_resource": "https://periodicos.fgv.br/rae/article/view/80767?articlesBySameAuthorPage=3",

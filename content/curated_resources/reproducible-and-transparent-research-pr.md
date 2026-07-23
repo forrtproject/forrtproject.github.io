@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "01/01/2020",
     "title": "Reproducible and transparent research practices in published neurology research",
     "link_to_resource": "https://researchintegrityjournal.biomedcentral.com/articles/10.1186/s41073-020-0091-5",

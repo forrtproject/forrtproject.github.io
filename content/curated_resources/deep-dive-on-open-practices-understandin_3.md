@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "01/01/2020",
     "title": "Deep Dive on Open Practices: Understanding Registered Reports in Education Research",
     "link_to_resource": "https://www.youtube.com/watch?v=peh8oB_haYQ",

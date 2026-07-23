@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "1/12/2025 9:40:57",
     "title": "The power of many brains: Catalyzing neuropsychiatric discovery through open neuroimaging data and large-scale collaboration",
     "link_to_resource": "https://doi.org/10.1016/j.scib.2024.03.006",

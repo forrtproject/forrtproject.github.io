@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "01/01/2020",
     "title": "Registered Reports Q&A",
     "link_to_resource": "https://www.youtube.com/watch?v=NjPJRxADP1U",

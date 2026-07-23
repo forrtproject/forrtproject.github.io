@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "12/19/2024 3:49:05",
     "title": "A Public Option for Clinical Trials? Lessons from Convalescent Plasma",
     "link_to_resource": "https://doi.org/10.1017/jme.2024.57",

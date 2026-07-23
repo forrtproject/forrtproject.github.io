@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "2/13/2025 10:25:18",
     "title": "Will Funders Have The Patience to Reform Science?",
     "link_to_resource": "https://www.macroscience.org/p/will-funders-have-the-patience-to",

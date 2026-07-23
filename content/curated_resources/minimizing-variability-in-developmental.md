@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "1/16/2025 4:20:04",
     "title": "Minimizing Variability in Developmental Fear Studies in Mice: Toward Improved Replicability in the Field",
     "link_to_resource": "https://doi.org/10.1002/cpz1.1040",

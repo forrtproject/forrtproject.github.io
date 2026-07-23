@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "12/18/2024 5:36:53",
     "title": "Open Data Governance at the Canadian Open Neuroscience Platform (CONP): From the Walled Garden to the Arboretum",
     "link_to_resource": "https://doi.org/10.1093/gigascience/giad114",

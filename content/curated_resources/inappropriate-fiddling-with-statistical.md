@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "2020-06-04T19:00:43.218Z",
     "title": "Inappropriate fiddling with statistical analyses to obtain a desirable p-value: tests to detect its presence in published literature. ",
     "link_to_resource": "https://doi.org/10.1371/journal.pone.0046363",

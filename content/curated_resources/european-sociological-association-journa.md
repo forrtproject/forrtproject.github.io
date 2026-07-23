@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "6/25/2024 4:27:24",
     "title": "European Sociological Association journals European Societies and European Journal of Cultural and Political Sociology move to  diamond open access at the MIT Press",
     "link_to_resource": "https://mitpress.mit.edu/european-sociological-association-journals-european-societies-and-european-journal-of-cultural-and-political-sociology-move-to-diamond-open-access-at-the-mit-press/",

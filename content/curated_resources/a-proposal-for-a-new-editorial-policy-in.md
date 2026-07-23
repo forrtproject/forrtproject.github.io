@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "2020-06-11T07:01:18.532Z",
     "title": "A proposal for a new editorial policy in the social sciences.",
     "link_to_resource": "https://doi.org/10.1080/00031305.1970.10478884",

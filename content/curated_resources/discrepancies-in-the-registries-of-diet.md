@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "01/01/2020",
     "title": "Discrepancies in the Registries of Diet vs Drug Trials",
     "link_to_resource": "https://jamanetwork.com/journals/jamanetworkopen/fullarticle/2755303",

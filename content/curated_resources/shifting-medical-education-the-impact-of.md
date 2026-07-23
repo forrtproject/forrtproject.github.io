@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "12/12/2024 9:40:41",
     "title": "Shifting medical education: the impact of open educational resources",
     "link_to_resource": "https://pubmed.ncbi.nlm.nih.gov/38175556/",

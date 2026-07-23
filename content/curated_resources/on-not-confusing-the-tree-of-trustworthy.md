@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "10/6/2023 13:00:02",
     "title": "On Not Confusing the Tree of Trustworthy Statistics with the Greater Forest of Good Science: A Comment on Simmons et al.\u2019s Perspective on Pre-registration",
     "link_to_resource": "https://doi.org/10.1002/jcpy.1213",

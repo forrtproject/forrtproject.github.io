@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "01/01/2020",
     "title": "Reproducibility Librarianship in Practice",
     "link_to_resource": "https://zenodo.org/record/1915952",

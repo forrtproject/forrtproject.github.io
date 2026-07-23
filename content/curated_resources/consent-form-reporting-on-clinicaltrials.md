@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "12/12/2024 9:16:58",
     "title": "Consent Form Reporting on ClinicalTrials.Gov, 2013-2023",
     "link_to_resource": "https://doi.org/10.1001/jamanetworkopen.2024.18895",

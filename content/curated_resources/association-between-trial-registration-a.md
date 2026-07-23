@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "01/01/2020",
     "title": "Association between trial registration and treatment effect estimates: a meta-epidemiological study",
     "link_to_resource": "https://bmcmedicine.biomedcentral.com/articles/10.1186/s12916-016-0639-x",

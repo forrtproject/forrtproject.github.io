@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "2020-06-07T19:04:41.241Z",
     "title": "Replicating Studies in Which Samples of Participants Respond to Samples of Stimuli",
     "link_to_resource": "https://doi.org/10.1177/1745691614564879",

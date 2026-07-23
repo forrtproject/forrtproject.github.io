@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "2020-06-09T16:40:23.897Z",
     "title": "We Knew the Future All Along: Scientific Hypothesizing Is Much More Accurate Than Other Forms of Precognition-A Satire in One Part",
     "link_to_resource": "https://doi.org/10.1177/1745691612441216",

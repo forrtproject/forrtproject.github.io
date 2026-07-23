@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "2020-05-29T18:19:49.274Z",
     "title": "Ten Simple Rules for the Care and Feeding of Scientific Data",
     "link_to_resource": "https://doi.org/10.1371/journal.pcbi.1003542",

@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "01/01/2020",
     "title": "Analysis of Open Data and Computational Reproducibility in Registered Reports in Psychology",
     "link_to_resource": "https://psyarxiv.com/fk8vh/",

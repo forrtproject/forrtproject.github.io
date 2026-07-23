@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "01/01/2020",
     "title": "Transparency and Open Science Symposium GSA 2019",
     "link_to_resource": "https://osf.io/b5t8j/",

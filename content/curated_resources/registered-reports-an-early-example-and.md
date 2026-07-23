@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "01/01/2020",
     "title": "Registered reports: an early example and analysis",
     "link_to_resource": "https://peerj.com/articles/6232/",

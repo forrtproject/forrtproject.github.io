@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "12/13/2023 14:45:37",
     "title": "From policy to practice: Lessons learned from an open science funding initiative",
     "link_to_resource": "https://doi.org/10.1371/journal.pcbi.1011626",

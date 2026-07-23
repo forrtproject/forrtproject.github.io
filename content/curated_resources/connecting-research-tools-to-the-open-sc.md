@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "01/01/2020",
     "title": "Connecting Research Tools to the Open Science Framework (OSF)",
     "link_to_resource": "https://www.youtube.com/watch?v=YLZxZfTPAA8",

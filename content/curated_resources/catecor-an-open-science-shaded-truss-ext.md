@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "12/12/2024 9:42:52",
     "title": "CATEcor: An Open Science, Shaded-Truss, Externally-Occulted Coronagraph",
     "link_to_resource": "https://doi.org/10.1007/s11207-024-02314-x",

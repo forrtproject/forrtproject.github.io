@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "10/14/2021 17:04:29",
     "title": "Ci\u00eancia aberta e reprodut\u00edvel",
     "link_to_resource": "https://osf.io/wmakh/",

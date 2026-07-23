@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "12/12/2024 8:50:48",
     "title": "Sharing brain imaging data in the Open Science era: how and why?",
     "link_to_resource": "https://doi.org/10.1016/S2589-7500(24)00069-4",

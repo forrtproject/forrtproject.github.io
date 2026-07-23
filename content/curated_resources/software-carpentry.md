@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "01/01/2020",
     "title": "Software Carpentry",
     "link_to_resource": "https://software-carpentry.org/lessons/",

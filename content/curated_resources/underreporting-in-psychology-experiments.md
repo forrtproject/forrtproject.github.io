@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "2020-06-03T20:06:39.357Z",
     "title": "Underreporting in Psychology Experiments: Evidence from a Study Registry. ",
     "link_to_resource": "https://doi.org/10.1177/1948550615598377",

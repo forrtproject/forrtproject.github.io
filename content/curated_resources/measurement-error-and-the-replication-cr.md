@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "2020-06-03T20:14:19.516Z",
     "title": "Measurement error and the replication crisis. ",
     "link_to_resource": "http://science.sciencemag.org/content/355/6325/584",

@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "6/24/2024 16:05:13",
     "title": "Establishing trust in automated reasoning",
     "link_to_resource": "https://doi.org/10.31222/osf.io/nt96q",

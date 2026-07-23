@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "01/01/2020",
     "title": "Estimating the prevalence of transparency and reproducibility-related research practices in psychology (2014-2017)",
     "link_to_resource": "https://osf.io/preprints/metaarxiv/9sz2y/",

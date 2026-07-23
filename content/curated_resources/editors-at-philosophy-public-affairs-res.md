@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "1/9/2025 10:14:12",
     "title": "Editors at Philosophy & Public Affairs Resign; Will Launch New OA Journal",
     "link_to_resource": "https://dailynous.com/2024/05/22/editors-at-philosophy-will-launch-new-oa-journal/",

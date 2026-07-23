@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "10/9/2023 13:02:11",
     "title": "The secret to writing a great NASA proposal",
     "link_to_resource": "https://medium.com/nasa-butterfly/how-to-write-a-great-nasa-proposal-2c6010faf7ab",

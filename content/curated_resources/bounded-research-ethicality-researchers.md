@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "12/18/2024 8:26:54",
     "title": "Bounded research ethicality: researchers rate themselves and their field as better than others at following good research practice",
     "link_to_resource": "https://doi.org/10.1038/s41598-024-53450-0",

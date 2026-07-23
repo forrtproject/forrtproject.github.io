@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "2020-05-11T10:36:37.736Z",
     "title": "Chrome Book Data Science",
     "link_to_resource": "https://jhudatascience.org/chromebookdatascience/",

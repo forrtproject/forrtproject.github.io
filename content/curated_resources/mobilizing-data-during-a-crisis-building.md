@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "1/12/2025 10:08:21",
     "title": "Mobilizing data during a crisis: Building rapid evidence pipelines using multi-institutional real world data",
     "link_to_resource": "https://doi.org/10.1016/j.hjdsi.2024.100738",

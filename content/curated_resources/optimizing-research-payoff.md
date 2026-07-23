@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "2020-06-07T18:37:56.242Z",
     "title": "Optimizing Research Payoff",
     "link_to_resource": "https://doi.org/10.1177/1745691616649170",

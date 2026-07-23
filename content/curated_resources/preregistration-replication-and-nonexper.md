@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "10/10/2023 13:47:49",
     "title": "Preregistration, Replication, and Nonexperimental Studies",
     "link_to_resource": "https://www.psychologicalscience.org/observer/preregistration-replication-and-nonexperimental-studies",

@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "1/9/2025 9:47:15",
     "title": "PEARL-Neuro Database: EEG, fMRI, health and lifestyle data of middle-aged people at risk of dementia",
     "link_to_resource": "https://doi.org/10.1038/s41597-024-03106-5",

@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "2/20/2025 5:06:47",
     "title": "Open Research Reforms and the Capitalist University: Areas of Opposition and Alignment",
     "link_to_resource": "https://doi.org/10.1525/collabra.121383",

@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "2020-05-14T11:43:57.289Z",
     "title": "Statistical Methods in Psychological Research Syllabus",
     "link_to_resource": "https://crumplab.github.io/psyc3400/",

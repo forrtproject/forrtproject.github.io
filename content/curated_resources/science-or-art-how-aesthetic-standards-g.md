@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "2020-06-06T19:09:00.928Z",
     "title": "Science or art? How aesthetic standards grease the way through the publication bottleneck but undermine science.",
     "link_to_resource": "https://doi.org/10.1177/1745691612457576",

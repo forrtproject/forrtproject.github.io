@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "01/01/2020",
     "title": "Reproducibility in Cancer Biology: The challenges of replication",
     "link_to_resource": "https://doi.org/10.7554/eLife.23693",

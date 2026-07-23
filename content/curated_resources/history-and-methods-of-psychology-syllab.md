@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "10/14/2021 17:12:49",
     "title": "History and Methods of Psychology Syllabus",
     "link_to_resource": "https://osf.io/r4w2q/",

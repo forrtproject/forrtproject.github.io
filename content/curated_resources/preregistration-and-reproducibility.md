@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "10/30/2023 12:44:12",
     "title": "Preregistration and reproducibility",
     "link_to_resource": "https://doi.org/10.1016/j.joep.2019.01.006",

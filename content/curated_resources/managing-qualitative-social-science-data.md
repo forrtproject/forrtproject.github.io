@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "10/20/2020 8:05:06",
     "title": "Managing Qualitative Social Science Data",
     "link_to_resource": "https://managing-qualitative-data.org/",

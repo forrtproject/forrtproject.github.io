@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "10/4/2023 11:36:38",
     "title": "Eleven Strategies for Making Reproducible Research and Open Science Training the Norm at Research Institutions",
     "link_to_resource": "https://doi.org/10.31219/osf.io/kcvra",

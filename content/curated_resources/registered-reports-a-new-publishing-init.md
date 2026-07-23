@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "2020-05-27T17:14:57.354Z",
     "title": "Registered Reports: A New Publishing Initiative at Cortex",
     "link_to_resource": "https://doi.org/10.1016/j.cortex.2012.12.016",

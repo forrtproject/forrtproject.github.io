@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "12/18/2024 5:46:12",
     "title": "CARE Principles for Indigenous Data Governance",
     "link_to_resource": "https://www.gida-global.org/careprinciples",

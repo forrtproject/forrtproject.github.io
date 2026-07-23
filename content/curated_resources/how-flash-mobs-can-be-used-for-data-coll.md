@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "1/12/2025 9:45:35",
     "title": "How flash mobs can be used for data collection in healthcare? A scoping review protocol",
     "link_to_resource": "https://doi.org/10.1111/aas.14404",

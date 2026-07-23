@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "10/27/2023 10:30:18",
     "title": "Preregistration in diverse contexts: A preregistration template for the application of cognitive models",
     "link_to_resource": "https://doi.org/10.1098/rsos.210155",

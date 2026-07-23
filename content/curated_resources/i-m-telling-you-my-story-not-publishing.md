@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "1/12/2025 10:04:11",
     "title": "\u201cI\u2019m telling you my story, not publishing a blog\u201d: Considerations and suggestions on data sharing in qualitative health psychology research on sensitive topics",
     "link_to_resource": "https://doi.org/10.1177/13591053241239109",

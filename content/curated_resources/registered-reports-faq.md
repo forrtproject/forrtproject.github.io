@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "01/01/2020",
     "title": "Registered Reports FAQ",
     "link_to_resource": "https://osf.io/gha9f/",

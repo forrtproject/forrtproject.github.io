@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "01/01/2020",
     "title": "Two Years Later: Journals Are Not Yet Enforcing the ARRIVE Guidelines on Reporting Standards for Pre-Clinical Animal Studies",
     "link_to_resource": "https://journals.plos.org/plosbiology/article?id=10.1371/journal.pbio.1001756",

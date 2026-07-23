@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "2/27/2025 8:50:54",
     "title": "The Invisible Workload of Open Research",
     "link_to_resource": "https://doi.org/10.36850/mr5",

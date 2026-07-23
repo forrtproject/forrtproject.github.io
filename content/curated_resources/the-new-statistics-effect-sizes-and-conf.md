@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "2020-05-14T10:25:50.166Z",
     "title": "The New Statistics: Effect Sizes and Confidence Intervals (Workshop Part 3)",
     "link_to_resource": "https://www.youtube.com/watch?v=1P2yV6joYlc",

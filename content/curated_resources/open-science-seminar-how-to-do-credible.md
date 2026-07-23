@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "10/14/2021 16:08:00",
     "title": "Open Science Seminar: How to do credible research with a high informational value (and how not to do it)",
     "link_to_resource": "https://osf.io/9cd7h/",

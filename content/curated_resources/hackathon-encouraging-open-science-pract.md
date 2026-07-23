@@ -1,4 +1,5 @@
 {
+    "exclude": true,
     "timestamp": "01/01/2020",
     "title": "Hackathon: Encouraging Open Science Practices in Qualitative Education Research",
     "link_to_resource": "https://docs.google.com/document/d/1x-Q6pE3eaPRkOyhHxf_wUjBWbi2a5ASGLTZRxneDs6g/edit",

@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "2020-06-04T19:12:25.920Z",
     "title": "What You See Is What You Get? Enhancing Methodological Transparency in Management Research",
     "link_to_resource": "https://doi.org/10.5465/annals.2016.0011",

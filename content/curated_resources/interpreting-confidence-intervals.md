@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "2020-05-08T09:33:04.497Z",
     "title": "Interpreting confidence intervals",
     "link_to_resource": "http://rpsychologist.com/d3/CI/",

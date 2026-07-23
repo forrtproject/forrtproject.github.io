@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "12/18/2024 6:12:47",
     "title": "The reporting completeness and transparency of systematic reviews of prognostic prediction models for COVID-19 was poor: a methodological overview of systematic reviews",
     "link_to_resource": " https://doi.org/10.1016/j.jclinepi.2024.111264",

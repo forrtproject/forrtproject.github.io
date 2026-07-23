@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "2020-06-07T19:27:16.108Z",
     "title": "Sample Size Planning for the Standardized Mean Difference: Accuracy in Parameter Estimation via Narrow Confidence Intervals",
     "link_to_resource": "https://doi.org/10.1037/1082-989X.11.4.363",

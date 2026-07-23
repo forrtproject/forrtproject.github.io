@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "10/30/2023 12:56:47",
     "title": "Ulysses' pact or Ulysses' raft: Using pre-analysis plans in experimental and nonexperimental research",
     "link_to_resource": "https://doi.org/10.1002/aepp.13133",

@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "12/19/2024 9:13:59",
     "title": "Advocating for Generalizability: Accepting Inherent Variability in Translation of Animal Research Outcomes",
     "link_to_resource": "https://doi.org/10.1146/annurev-animal-021022-043531",

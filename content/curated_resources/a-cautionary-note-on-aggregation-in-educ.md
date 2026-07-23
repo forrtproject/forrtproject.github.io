@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "10/4/2023 11:10:40",
     "title": "A cautionary note on aggregation in educational psychology and beyond",
     "link_to_resource": "https://doi.org/10.1177/09593543231172495",

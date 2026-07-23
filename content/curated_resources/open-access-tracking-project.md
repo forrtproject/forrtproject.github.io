@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "01/01/2020",
     "title": "Open Access Tracking Project",
     "link_to_resource": "https://cyber.harvard.edu/hoap/Open_Access_Tracking_Project",

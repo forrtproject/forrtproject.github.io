@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "2020-05-22T19:13:41.207Z",
     "title": "Measuring the Prevalence of Questionable Research Practices With Incentives for Truth Telling",
     "link_to_resource": "https://doi.org/10.1177/0956797611430953",

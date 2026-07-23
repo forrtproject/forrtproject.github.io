@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "7/2/2025 13:43:05",
     "title": "Open Science and Reproducible Research, Karolinska Institutet 2022 (fall)",
     "link_to_resource": "https://osf.io/6q3dz/",

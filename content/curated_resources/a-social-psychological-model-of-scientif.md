@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "01/01/2020",
     "title": "A Social Psychological Model of Scientific Practices: Explaining Research Practices and Outlining the Potential for Successful Reforms",
     "link_to_resource": "https://doi.org/10.5334/pb.496",

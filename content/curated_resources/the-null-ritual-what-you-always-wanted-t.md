@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "2020-06-08T18:36:57.024Z",
     "title": "The Null Ritual What You Always Wanted to Know About Significance Testing but Were Afraid to Ask",
     "link_to_resource": "https://pure.mpg.de/rest/items/item_2101291/component/file_3080636/content",

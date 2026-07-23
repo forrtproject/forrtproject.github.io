@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "2020-05-31T18:19:30.056Z",
     "title": "Effect Size Estimates: Current Use, Calculations, and Interpretation",
     "link_to_resource": "https://doi.org/10.1037/a0024338",

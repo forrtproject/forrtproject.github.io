@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "1/31/2022 4:39:18",
     "title": "Mini course on reproducibility & open research",
     "link_to_resource": "https://www.youtube.com/playlist?list=PLo1sDp2zqD4Rl9AQblQBMQrVblZfEfHcJ",

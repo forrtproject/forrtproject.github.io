@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "01/01/2020",
     "title": "Open Source Guides",
     "link_to_resource": "https://opensource.guide/",

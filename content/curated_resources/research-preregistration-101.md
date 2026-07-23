@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "2020-06-11T06:44:55.555Z",
     "title": "Research preregistration 101",
     "link_to_resource": "https://www.psychologicalscience.org/observer/research-preregistration-101",

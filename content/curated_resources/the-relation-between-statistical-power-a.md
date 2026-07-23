@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "2020-06-06T19:27:39.827Z",
     "title": "The relation between statistical power and inference in fMRI.",
     "link_to_resource": "https://doi.org/10.1371/journal.pone.0184923",

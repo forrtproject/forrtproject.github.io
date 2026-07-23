@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "12/13/2023 15:20:59",
     "title": "Are Preregistration and Registered Reports Vulnerable to Hacking?",
     "link_to_resource": "https://doi.org/10.1097/EDE.0000000000001162",

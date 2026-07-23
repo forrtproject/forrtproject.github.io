@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "2020-05-16T12:11:05.263Z",
     "title": "ReproducibiliTea",
     "link_to_resource": "https://reproducibilitea.org/",

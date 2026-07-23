@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "10/14/2021 13:49:16",
     "title": "Topics in Social Psychology and Personality",
     "link_to_resource": "https://osf.io/8ecbz/",

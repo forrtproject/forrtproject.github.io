@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "01/01/2020",
     "title": "Bayesian inference for psychology. Part II: Example applications with JASP",
     "link_to_resource": "https://doi.org/10.3758/s13423-017-1323-7",

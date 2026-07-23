@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "2020-06-03T20:37:47.649Z",
     "title": "Statistical Power Problems with Moderated Multiple Regression in Management Research ",
     "link_to_resource": "https://doi.org/10.1177/014920639502100607",

@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "6/10/2025 13:57:37",
     "title": "Open science teaching",
     "link_to_resource": "https://osf.io/er7xk/",

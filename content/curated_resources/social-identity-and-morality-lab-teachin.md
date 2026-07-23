@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "5/13/2021 11:54:46",
     "title": "Social Identity and morality lab teaching",
     "link_to_resource": "https://www.jayvanbavel.com/resources",

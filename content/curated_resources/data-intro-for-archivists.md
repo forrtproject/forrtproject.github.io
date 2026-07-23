@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "01/01/2020",
     "title": "Data Intro for Archivists",
     "link_to_resource": "https://librarycarpentry.org/lc-data-intro-archives/",

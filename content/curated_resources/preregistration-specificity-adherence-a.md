@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "12/14/2023 13:30:49",
     "title": "Preregistration specificity & adherence: A review of preregistered gambling studies & cross-disciplinary comparison",
     "link_to_resource": "https://doi.org/10.31234/osf.io/nj4es",

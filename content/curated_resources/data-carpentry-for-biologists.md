@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "01/01/2020",
     "title": "Data Carpentry for Biologists",
     "link_to_resource": "https://datacarpentry.org/semester-biology/",

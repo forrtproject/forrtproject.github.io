@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "2020-05-23T02:57:51.044Z",
     "title": "Willingness to share research data is related to the strength of the evidence and the quality of reporting of statistical results",
     "link_to_resource": "https://doi.org/10.1371/journal.pone.0026828",

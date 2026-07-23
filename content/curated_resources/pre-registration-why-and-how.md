@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "10/30/2023 12:36:13",
     "title": "Pre-registration: Why and How",
     "link_to_resource": "https://doi.org/10.1002/jcpy.1208",

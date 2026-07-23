@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "6/10/2025 13:31:02",
     "title": "Oxford|Berlin Summer School on Open Research 2021",
     "link_to_resource": "https://osf.io/8q59y/",

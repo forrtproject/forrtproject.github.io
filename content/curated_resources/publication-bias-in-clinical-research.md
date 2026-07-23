@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "10/6/2023 12:41:12",
     "title": "Publication bias in clinical research",
     "link_to_resource": "https://doi.org/10.1016/0140-6736(91)90201-Y",

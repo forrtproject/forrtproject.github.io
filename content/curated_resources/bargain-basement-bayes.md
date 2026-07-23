@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "2020-05-14T10:16:27.761Z",
     "title": "Bargain Basement Bayes",
     "link_to_resource": "https://funderstorms.wordpress.com/2015/07/22/bargain-basement-bayes/",

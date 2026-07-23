@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "2020-06-05T19:29:27.056Z",
     "title": "Likelihood of Null Effects of Large NHLBI Clinical Trials Has Increased over Time",
     "link_to_resource": "https://doi.org/10.1371/journal.pone.0132382",

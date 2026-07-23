@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "10/27/2023 14:13:30",
     "title": "HARK No More: On the Preregistration of CHI Experiments",
     "link_to_resource": "https://doi.org/10.1145/3173574.3173715",

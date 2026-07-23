@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "01/01/2020",
     "title": "A Case For Data Dashboards: First Steps with R Shiny",
     "link_to_resource": "https://www.linkedin.com/pulse/shiny-data-presentation-added-value-pablo-bernabeu/",

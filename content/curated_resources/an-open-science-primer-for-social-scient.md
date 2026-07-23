@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "01/01/2020",
     "title": "An Open Science Primer for Social Scientists",
     "link_to_resource": "https://osf.io/cj2jn/",

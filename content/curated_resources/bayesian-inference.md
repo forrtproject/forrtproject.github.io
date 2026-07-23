@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "2020-05-09T07:50:00.360Z",
     "title": "Bayesian inference",
     "link_to_resource": "http://rpsychologist.com/new-d3-js-visualization-bayes",

@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "2020-05-16T06:36:40.345Z",
     "title": "Faking Science: A True Story of Academic Fraud",
     "link_to_resource": "https://errorstatistics.files.wordpress.com/2014/12/fakingscience-20141214.pdf",

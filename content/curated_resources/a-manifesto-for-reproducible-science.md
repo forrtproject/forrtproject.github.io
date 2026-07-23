@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "2020-06-03T20:48:47.976Z",
     "title": "A manifesto for reproducible science",
     "link_to_resource": "https://doi.org/10.1038/s41562-016-0021",

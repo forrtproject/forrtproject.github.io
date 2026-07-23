@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "2020-05-27T16:04:57.881Z",
     "title": "The existence of publication bias and risk factors for its occurrence.",
     "link_to_resource": "https://doi.org/10.1001/jama.1990.03440100097014",

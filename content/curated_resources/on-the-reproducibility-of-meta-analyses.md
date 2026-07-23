@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "2020-05-31T18:17:52.489Z",
     "title": "On the reproducibility of meta-analyses: six practical recommendations",
     "link_to_resource": "https://doi.org/10.1186/s40359-016-0126-3",

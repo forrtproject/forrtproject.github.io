@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "2020-05-22T19:22:28.222Z",
     "title": "Comparing Published Scientific Journal Articlesto Their Pre-print VersionsMart",
     "link_to_resource": "https://arxiv.org/abs/1604.05363",

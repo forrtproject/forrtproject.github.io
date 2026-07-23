@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "12/13/2023 14:36:58",
     "title": "Big team science initiatives: A catalyst for trustworthy advancements in IO psychology",
     "link_to_resource": "https://doi.org/10.1016/j.actpsy.2023.104101",

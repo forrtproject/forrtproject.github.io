@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "01/01/2020",
     "title": "Open Access Directory",
     "link_to_resource": "https://oad.simmons.edu/oadwiki/Main_Page",

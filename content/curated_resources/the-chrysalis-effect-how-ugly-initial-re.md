@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "2020-06-03T19:45:58.086Z",
     "title": "The Chrysalis Effect: How Ugly Initial Results Metamorphosize Into Beautiful Articles",
     "link_to_resource": "http://doi.org/10.1177/0149206314527133",

@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "2020-06-04T19:27:40.678Z",
     "title": "Detecting and avoiding likely false-positive findings: A practical guide",
     "link_to_resource": "https://doi.org/10.1111/brv.12315",

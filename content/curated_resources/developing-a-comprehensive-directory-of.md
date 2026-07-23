@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "3/13/2025 12:48:23",
     "title": "Developing a comprehensive directory of tools and technologies for social science research methods",
     "link_to_resource": "https://forrt.org/educators-corner/003-developing-tools/",

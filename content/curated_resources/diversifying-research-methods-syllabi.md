@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "10/14/2021 12:04:20",
     "title": "Diversifying Research Methods Syllabi",
     "link_to_resource": "https://osf.io/y5gr9/",

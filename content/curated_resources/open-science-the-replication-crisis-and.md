@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "2/27/2025 8:47:00",
     "title": "Open science, the replication crisis, and environmental public health",
     "link_to_resource": "https://doi.org/10.1080/08989621.2021.1962713",

@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "12/3/2020 12:59:00",
     "title": "Online Experiments for Language Scientists",
     "link_to_resource": "https://kennysmithed.github.io/oels2020/",

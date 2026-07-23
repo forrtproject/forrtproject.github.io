@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "1/13/2025 6:33:54",
     "title": "Research Integrity definitions and challenges",
     "link_to_resource": "https://doi.org/10.1016/j.jclinepi.2024.111367",

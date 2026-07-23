@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "3/20/2025 16:24:13",
     "title": "Introducing a Framework for Open and Reproducible Research Training (FORRT)",
     "link_to_resource": "https://doi.org/10.31219/osf.io/bnh7p",

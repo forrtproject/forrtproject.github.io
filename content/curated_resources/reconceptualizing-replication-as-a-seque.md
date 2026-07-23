@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "2020-06-01T18:54:50.364Z",
     "title": "Reconceptualizing replication as a sequence of different studies: A replication typology",
     "link_to_resource": "https://doi.org/10.1016/j.jesp.2015.09.009",

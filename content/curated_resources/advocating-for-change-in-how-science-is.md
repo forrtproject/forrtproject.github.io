@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "01/01/2020",
     "title": "Advocating for Change in How Science is Conducted to Level the Playing Field",
     "link_to_resource": "https://www.youtube.com/watch?v=3WX0gXXztlE",

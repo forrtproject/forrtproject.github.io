@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "12/12/2024 10:11:26",
     "title": "Materials scientist explains why he started commenting on PubPeer",
     "link_to_resource": "https://cen.acs.org/people/Materials-scientist-explains-why-he-started-commenting-PubPeer/102/web/2024/06",

@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "12/12/2024 9:32:24",
     "title": "CONSORT statement adherence and risk of bias in randomized controlled trials on deep caries management: a meta-research",
     "link_to_resource": "https://doi.org/10.1186/s12903-024-04417-0",

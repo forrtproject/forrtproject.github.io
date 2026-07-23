@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "2/6/2025 5:28:16",
     "title": "Editorial: Open Science and Ethics",
     "link_to_resource": "https://doi.org/10.1007/s10677-019-10053-3",

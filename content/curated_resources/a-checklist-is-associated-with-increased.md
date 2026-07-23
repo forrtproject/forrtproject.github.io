@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "01/01/2020",
     "title": "A checklist is associated with increased quality of reporting preclinical biomedical research: A systematic review",
     "link_to_resource": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0183591",

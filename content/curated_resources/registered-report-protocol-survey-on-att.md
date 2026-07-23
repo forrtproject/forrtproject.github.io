@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "12/18/2023 16:43:22",
     "title": "Registered Report Protocol: Survey on attitudes and experiences regarding preregistration in psychological research",
     "link_to_resource": "https://doi.org/10.1371/journal.pone.0253950",

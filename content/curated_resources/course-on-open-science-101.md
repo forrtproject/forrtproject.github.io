@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "3/15/2025 10:48:20",
     "title": "Course on Open Science 101",
     "link_to_resource": "https://forrt.org/educators-corner/017-teaching-os-to-undergraduates/",

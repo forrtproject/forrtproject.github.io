@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "2020-05-24T12:27:53.785Z",
     "title": "Evolution of Reporting P Values in the Biomedical Literature, 1990-2015",
     "link_to_resource": "https://doi.org/10.1001/jama.2016.1952",

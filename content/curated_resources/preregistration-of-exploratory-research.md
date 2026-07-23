@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "10/27/2023 10:13:42",
     "title": "Preregistration of exploratory research: Learning from the golden age of discovery",
     "link_to_resource": "https://doi.org/10.1371/journal.pbio.3000690",

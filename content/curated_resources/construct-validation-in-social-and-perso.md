@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "2020-06-03T19:42:56.653Z",
     "title": "Construct validation in social and personality research: Current practice and recommendations. ",
     "link_to_resource": "http://doi.org/10.1177/1948550617693063",

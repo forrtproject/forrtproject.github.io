@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "12/19/2024 3:21:16",
     "title": "Supporting study registration to reduce research waste",
     "link_to_resource": "https://doi.org/10.1038/s41559-024-02433-5",

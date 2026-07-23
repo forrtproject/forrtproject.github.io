@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "2020-06-04T19:42:36.518Z",
     "title": "A Powerful Nudge? Presenting Calculable Consequences of Underpowered Research Shifts Incentives Toward Adequately Powered Designs",
     "link_to_resource": "https://doi.org/10.1177/1948550615584199",

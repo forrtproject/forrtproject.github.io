@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "2020-05-08T06:25:26.000Z",
     "title": "Always use Welch t-test",
     "link_to_resource": "http://daniellakens.blogspot.com/2015/01/always-use-welchs-t-test-instead-of.html",

@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "8/28/2023 9:44:34",
     "title": "The transparency of quantitative empirical legal research published in highly ranked law journals (2018\u20132020): an observational study",
     "link_to_resource": "https://doi.org/10.12688/f1000research.127563.1",

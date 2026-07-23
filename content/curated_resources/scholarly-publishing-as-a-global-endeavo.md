@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "2/27/2025 4:30:34",
     "title": "Scholarly Publishing as a Global Endeavor: Leveraging Open Source Software for Bibliodiversity",
     "link_to_resource": "https://scholarlykitchen.sspnet.org/2023/02/16/guest-post-scholarly-publishing-as-a-global-endeavor-leveraging-open-source-software-for-bibliodiversity/",

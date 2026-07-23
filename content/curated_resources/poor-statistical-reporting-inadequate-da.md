@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "01/01/2020",
     "title": "Poor statistical reporting, inadequate data presentation and spin persist despite editorial advice",
     "link_to_resource": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0202121",

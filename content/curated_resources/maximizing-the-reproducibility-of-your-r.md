@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "2020-06-10T19:23:20.801Z",
     "title": "Maximizing the Reproducibility of Your Research",
     "link_to_resource": "https://doi.org/10.1002/9781119095910.ch1",

@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "12/13/2023 14:47:31",
     "title": "A future for digital public goods for monitoring SDG indicators",
     "link_to_resource": "https://doi.org/10.1038/s41597-023-02803-x",

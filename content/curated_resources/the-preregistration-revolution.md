@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "2020-05-22T18:40:59.988Z",
     "title": "The preregistration revolution",
     "link_to_resource": "https://www.pnas.org/content/115/11/2600",

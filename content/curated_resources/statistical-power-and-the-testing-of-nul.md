@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "2020-06-03T20:36:15.353Z",
     "title": "Statistical Power and the Testing of Null Hypotheses: A Review of Contemporary Management Research and Recommendations for Future Studies",
     "link_to_resource": "https://doi.org/10.1177/1094428104263676",

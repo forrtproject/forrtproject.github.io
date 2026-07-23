@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "2/20/2025 9:44:21",
     "title": "Evading Open Science: The Black Box of Student Data Collection",
     "link_to_resource": "https://doi.org/10.32872/spb.9411",

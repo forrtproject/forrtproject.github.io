@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "2020-05-28T13:37:27.140Z",
     "title": "Effect Size Estimation in Neuroimaging. ",
     "link_to_resource": "https://doi.org/10.1001/jamapsychiatry.2016.3356",

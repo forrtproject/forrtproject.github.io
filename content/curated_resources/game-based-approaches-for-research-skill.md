@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "6/20/2025 4:38:18",
     "title": "Game-Based Approaches for Research Skills Training and Researcher Development: A Survey of Attitudes and Acceptance in Higher Education",
     "link_to_resource": "https://library.iated.org/view/ABBOTT2024GAM2",

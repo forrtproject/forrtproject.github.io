@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "01/01/2020",
     "title": "How significant are the public dimensions of faculty work in review, promotion and tenure documents?",
     "link_to_resource": "https://elifesciences.org/articles/42254",

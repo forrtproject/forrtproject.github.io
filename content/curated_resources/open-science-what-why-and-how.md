@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "2020-06-08T18:24:57.469Z",
     "title": "Open Science: What, Why, and How",
     "link_to_resource": "https://psyarxiv.com/ak6jr/",

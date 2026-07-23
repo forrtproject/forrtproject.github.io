@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "3/8/2025 4:44:20",
     "title": "Interpreting Effect Sizes and Confidence Intervals",
     "link_to_resource": "https://osf.io/8jmbu",

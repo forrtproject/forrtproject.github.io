@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "7/15/2025 9:42:18",
     "title": "Studying the association between loneliness and support for populist radical right using state-of-the art open science practices",
     "link_to_resource": "https://www-sciencedirect-com.utrechtuniversity.idm.oclc.org/science/article/pii/S027795362500005X?via%3Dihub",

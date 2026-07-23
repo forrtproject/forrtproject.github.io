@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "2020-06-07T19:25:08.972Z",
     "title": "Beyond Power Calculations: Assessing Type S (Sign) and Type M (Magnitude) Errors",
     "link_to_resource": "https://doi.org/10.1177/1745691614551642",

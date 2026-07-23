@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "2020-06-09T16:21:23.599Z",
     "title": "Trust your science? Open your data and code.",
     "link_to_resource": "https://stodden.net/papers/TrustYourScience-STODDEN.pdf",

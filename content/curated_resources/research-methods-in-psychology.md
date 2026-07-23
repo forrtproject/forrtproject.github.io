@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "10/14/2021 13:41:13",
     "title": "Research Methods in Psychology",
     "link_to_resource": "https://osf.io/3967b/",

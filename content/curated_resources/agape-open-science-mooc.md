@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "2/13/2025 9:20:56",
     "title": "Agape Open Science MOOC",
     "link_to_resource": "https://doi.org/10.17605/OSF.IO/DTB7V",

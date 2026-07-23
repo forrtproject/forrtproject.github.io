@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "01/01/2020",
     "title": "Open Access Target Validation Is a More Efficient Way to Accelerate Drug Discovery",
     "link_to_resource": "https://journals.plos.org/plosbiology/article?id=10.1371/journal.pbio.1002164",

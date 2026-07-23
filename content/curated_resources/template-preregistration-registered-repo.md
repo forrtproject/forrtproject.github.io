@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "01/01/2020",
     "title": "Template preregistration Registered Report",
     "link_to_resource": "https://osf.io/93znh/",

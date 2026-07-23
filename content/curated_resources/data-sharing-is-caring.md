@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "2020-06-03T20:11:45.559Z",
     "title": "Data: Sharing Is Caring",
     "link_to_resource": "https://doi.org/10.1177/2515245918758319",

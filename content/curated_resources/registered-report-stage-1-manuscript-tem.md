@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "2/13/2025 9:27:44",
     "title": "Registered Report Stage 1 manuscript template",
     "link_to_resource": "https://doi.org/10.17605/OSF.IO/YQXTP",

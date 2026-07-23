@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "2020-05-24T12:23:32.312Z",
     "title": "Surrogate Science: The Idol of a Universal Method for Scientific Inference",
     "link_to_resource": "https://doi.org/10.1177/0149206314547522",

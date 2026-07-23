@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "6/27/2023 14:45:33",
     "title": "10 Things for Curating Reproducible and FAIR Research",
     "link_to_resource": "https://doi.org/10.15497/RDA00074",

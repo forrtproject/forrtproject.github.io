@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "2020-06-09T16:31:01.069Z",
     "title": "Registered replication report: Hart & Albarrac\u00edn (2011).",
     "link_to_resource": "https://doi.org/10.1177/1745691615605826",

@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "12/12/2024 8:13:19",
     "title": "The landscape of open science in behavioral addiction research: Current practices and future directions",
     "link_to_resource": "https://doi.org/10.1556/2006.2023.00052",

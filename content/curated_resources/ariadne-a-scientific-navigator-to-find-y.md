@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "3/27/2024 5:58:55",
     "title": "ARIADNE \u2013 a scientific navigator to find your way through the resource labyrinth",
     "link_to_resource": "https://igor-biodgps.github.io/ARIADNE/graph/graph.html",

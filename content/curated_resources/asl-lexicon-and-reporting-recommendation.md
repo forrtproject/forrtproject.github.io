@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "10/30/2023 10:58:05",
     "title": "ASL lexicon and reporting recommendations: A consensus report from the ISMRM Open Science Initiative for Perfusion Imaging (OSIPI)",
     "link_to_resource": "https://doi.org/10.1002/mrm.29815",

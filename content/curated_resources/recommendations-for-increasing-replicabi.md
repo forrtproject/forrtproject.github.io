@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "2020-06-10T19:24:51.647Z",
     "title": "Recommendations for Increasing Replicability in Psychology",
     "link_to_resource": "https://doi.org/10.1037/14805-038",

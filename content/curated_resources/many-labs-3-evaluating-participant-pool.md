@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "2020-05-28T13:06:08.688Z",
     "title": "Many Labs 3: Evaluating participant pool quality across the academic semester via replication.",
     "link_to_resource": "https://doi.org/10.1016/j.jesp.2015.10.012",

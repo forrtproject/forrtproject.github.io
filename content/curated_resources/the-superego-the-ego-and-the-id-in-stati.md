@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "2020-06-10T19:13:18.266Z",
     "title": "The Superego, the Ego, and the Id in Statistical Reasoning",
     "link_to_resource": "https://doi.org/10.1093/acprof:oso/9780195153729.003.0013",

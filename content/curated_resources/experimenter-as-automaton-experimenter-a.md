@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "10/23/2023 13:00:59",
     "title": "Experimenter as automaton; experimenter as human: Exploring the position of the researcher in scientific research",
     "link_to_resource": "https://doi.org/10.1007/s13194-020-00324-7",

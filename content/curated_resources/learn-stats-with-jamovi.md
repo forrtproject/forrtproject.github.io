@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "2020-05-14T11:59:39.296Z",
     "title": "Learn Stats with Jamovi",
     "link_to_resource": "https://www.learnstatswithjamovi.com/",

@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "4/3/2024 11:07:15",
     "title": "Research Integrity and Responsible Scholarship",
     "link_to_resource": "https://renebekkers.files.wordpress.com/2024/04/2024-p5-research-integrity-and-responsible-scholarship-course-manual.pdf",

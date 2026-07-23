@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "10/14/2021 12:37:44",
     "title": "Draft dated 2016-01-11; please see cuLearn for possible updatesp.1PSYC 5601:Contemporary Research in Personality",
     "link_to_resource": "https://osf.io/3e2pg/",

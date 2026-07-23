@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "2020-05-08T09:48:23.546Z",
     "title": "Understanding Statistical Power and Significance Testing: an interactive visualization",
     "link_to_resource": "http://rpsychologist.com/d3/NHST/",

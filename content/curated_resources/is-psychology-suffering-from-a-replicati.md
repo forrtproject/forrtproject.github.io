@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "2020-05-23T03:24:41.687Z",
     "title": "Is Psychology Suffering From a Replication Crisis? What Does \u201cFailure to Replicate\u201d Really Mean?",
     "link_to_resource": "https://doi.org/10.1037/a0039400",

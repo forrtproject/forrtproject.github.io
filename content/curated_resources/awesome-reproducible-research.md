@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "7/5/2024 8:17:49",
     "title": "Awesome Reproducible Research",
     "link_to_resource": "https://github.com/leipzig/awesome-reproducible-research",

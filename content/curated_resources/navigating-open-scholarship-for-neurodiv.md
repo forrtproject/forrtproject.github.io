@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "3/13/2025 17:56:08",
     "title": "Navigating Open scholarship for neurodivergent researchers",
     "link_to_resource": "https://forrt.org/educators-corner/010-neurodiversity/",

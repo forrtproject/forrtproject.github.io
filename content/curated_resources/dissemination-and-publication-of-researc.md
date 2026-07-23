@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "01/01/2020",
     "title": "Dissemination and publication of research findings: an updated review of related biases",
     "link_to_resource": "https://www.journalslibrary.nihr.ac.uk/hta/hta14080/",

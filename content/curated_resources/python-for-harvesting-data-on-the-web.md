@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "01/01/2020",
     "title": "Python for Harvesting Data on the Web",
     "link_to_resource": "https://nyu-dataservices.github.io/DataHarvesting-Python/",

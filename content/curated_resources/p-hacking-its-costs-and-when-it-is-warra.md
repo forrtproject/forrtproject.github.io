@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "2/13/2025 10:05:52",
     "title": "p-Hacking: Its Costs and When It Is Warranted",
     "link_to_resource": "https://doi.org/10.1007/s10670-024-00834-3",

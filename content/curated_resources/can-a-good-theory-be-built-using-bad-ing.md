@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "2/20/2025 4:33:24",
     "title": "Can a Good Theory Be Built Using Bad Ingredients?",
     "link_to_resource": "https://doi.org/10.1007/s42113-024-00220-w",

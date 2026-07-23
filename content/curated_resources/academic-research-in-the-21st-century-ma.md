@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "2020-05-27T17:05:25.015Z",
     "title": "Academic Research in the 21st Century: Maintaining Scientific Integrity in a Climate of Perverse Incentives and Hypercompetition",
     "link_to_resource": "https://doi.org/10.1089/ees.2016.0223",

@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "2020-05-09T07:46:43.203Z",
     "title": "P-curve visualization updated with log x-axis",
     "link_to_resource": "http://rpsychologist.com/updated-d3-js-visualization-p-curve-distribution",

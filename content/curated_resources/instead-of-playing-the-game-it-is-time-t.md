@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "2020-06-08T18:04:03.232Z",
     "title": "Instead of \u201cplaying the game\u201d it is time to change the rules: Registered Reports at AIMS Neuroscience and beyond. ",
     "link_to_resource": "https://doi.org/10.3934/Neuroscience.2014.1.4",

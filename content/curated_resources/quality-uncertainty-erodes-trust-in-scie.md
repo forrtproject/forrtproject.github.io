@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "2020-06-09T16:25:58.562Z",
     "title": "Quality Uncertainty Erodes Trust in Science",
     "link_to_resource": "http://doi.org/10.1525/collabra.74",

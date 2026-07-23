@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "01/01/2020",
     "title": "Consequences of Low Statistical Power",
     "link_to_resource": "https://www.youtube.com/watch?v=7daQRvRO-NE",

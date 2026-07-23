@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "2/6/2025 4:42:33",
     "title": "Reflections on the Unintended Consequences of the Science Reform Movement",
     "link_to_resource": "https://doi.org/10.36850/ed4",

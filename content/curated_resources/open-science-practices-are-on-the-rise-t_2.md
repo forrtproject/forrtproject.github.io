@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "2/13/2025 6:39:45",
     "title": "Open Science Practices are on the Rise: The State of Social Science (3S) Survey",
     "link_to_resource": "https://escholarship.org/uc/item/0hx0207r",

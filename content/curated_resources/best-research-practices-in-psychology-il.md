@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "2020-06-08T18:34:16.962Z",
     "title": "Best research practices in psychology: Illustrating epistemological and pragmatic considerations with the case of relationship science. ",
     "link_to_resource": "https://doi.org/10.1037/pspi0000007",

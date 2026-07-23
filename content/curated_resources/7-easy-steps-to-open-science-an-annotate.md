@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "6/27/2023 14:45:33",
     "title": "7 Easy Steps to Open Science: An Annotated Reading List",
     "link_to_resource": "https://psyarxiv.com/cfzyx/",

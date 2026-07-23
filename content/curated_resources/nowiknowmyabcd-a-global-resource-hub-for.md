@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "12/12/2024 9:50:20",
     "title": "NowIKnowMyABCD: A global resource hub for researchers using data from the ABCD Study",
     "link_to_resource": "https://doi.org/10.1016/j.dcn.2024.101388",

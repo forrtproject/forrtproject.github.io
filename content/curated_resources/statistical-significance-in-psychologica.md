@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "2020-05-24T12:30:51.357Z",
     "title": "Statistical significance in psychological research.",
     "link_to_resource": "https://doi.org/10.1037/h0026141",

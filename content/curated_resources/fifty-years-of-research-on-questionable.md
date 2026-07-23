@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "10/23/2023 10:36:11",
     "title": "Fifty years of research on questionable research practises in science: Quantitative analysis of co-citation patterns",
     "link_to_resource": "https://doi.org/10.1098/rsos.230677",

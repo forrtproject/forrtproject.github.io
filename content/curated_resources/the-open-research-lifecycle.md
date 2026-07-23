@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "01/01/2020",
     "title": "The Open Research Lifecycle",
     "link_to_resource": "https://www.youtube.com/watch?v=9YuNGB3vNOw",

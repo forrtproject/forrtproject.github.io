@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "12/9/2020 20:08:44",
     "title": "Reproducibility/Open Science and Clinical Psych Reading List",
     "link_to_resource": "https://docs.google.com/document/d/1ewFMFBEASv7UL0qkOP5HNtFDngzdBax8tDKK-L_0knc/edit",

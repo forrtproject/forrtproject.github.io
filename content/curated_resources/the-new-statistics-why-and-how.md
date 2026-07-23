@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "2020-05-26T15:52:37.569Z",
     "title": "The new statistics: Why and how",
     "link_to_resource": "https://doi.org/10.1177/0956797613504966",

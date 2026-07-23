@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "12/18/2024 6:26:37",
     "title": "Who Would Have Thought That We Needed Another Listserv?",
     "link_to_resource": "https://scholarlykitchen.sspnet.org/2024/02/05/who-would-have-thought-that-we-needed-another-listserv/?informz=1&nbd=71d80b9e-1945-4b39-a9e3-7c818b23e162&nbd_source=informz",

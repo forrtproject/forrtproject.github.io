@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "01/01/2020",
     "title": "Citing and Being Cited: Data & Code Edition",
     "link_to_resource": "https://docs.google.com/presentation/d/1xBa9NC53573EniqjnYp7uXRgvlCxMkHxB3N4bruy4z0/edit?usp=sharing",

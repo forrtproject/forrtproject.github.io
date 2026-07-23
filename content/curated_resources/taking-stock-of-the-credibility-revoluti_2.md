@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "6/25/2025 13:30:22",
     "title": "Taking stock of the credibility revolution: Scientific reform 2011-2019",
     "link_to_resource": "http://dx.doi.org/10.17605/OSF.IO/5CX2D",

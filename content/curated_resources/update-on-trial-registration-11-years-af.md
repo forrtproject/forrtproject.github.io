@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "10/30/2023 13:43:52",
     "title": "Update on Trial Registration 11 Years after the ICMJE Policy Was Established",
     "link_to_resource": "https://doi.org/10.1056/NEJMsr1601330",

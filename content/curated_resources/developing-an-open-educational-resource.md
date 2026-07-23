@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "2/20/2025 4:53:14",
     "title": "Developing an open educational resource for open research: Protocol for the PaPOR TRAIL project",
     "link_to_resource": "https://doi.org/10.12688/hrbopenres.13171.1",

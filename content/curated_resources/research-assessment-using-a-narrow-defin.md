@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "2/20/2025 5:09:17",
     "title": "Research assessment using a narrow definition of \u201cresearch quality\u201d is an act of gatekeeping: A comment on G\u00e4rtner et al. (2022)",
     "link_to_resource": "https://doi.org/10.15626/MP.2023.3764",

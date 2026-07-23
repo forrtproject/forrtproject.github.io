@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "2020-05-16T10:35:36.465Z",
     "title": "Neuroscientist Explains",
     "link_to_resource": "https://www.theguardian.com/science/audio/2018/mar/19/a-neuroscientist-explains-psychologys-replication-crisis-podcast",

@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "2020-05-28T13:45:26.039Z",
     "title": "Problems in using p-curve analysis and text-mining to detect rate of p-hacking.",
     "link_to_resource": "https://doi.org/10.7287/peerj.preprints.1266v3",

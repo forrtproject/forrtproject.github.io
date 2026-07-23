@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "2/27/2025 4:58:14",
     "title": "Preregistration is not a panacea, but why? A rejoinder to Chen & Li's (2024) \u201cinfusing preregistration into tourism research\u201d",
     "link_to_resource": "https://doi.org/10.1017/can.2024.44",

@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "2020-05-24T12:32:09.741Z",
     "title": "Null Hypothesis Significance Testing. On the Survival of a Flawed Method",
     "link_to_resource": "https://doi.org/10.1037/0003-066x.56.1.16",

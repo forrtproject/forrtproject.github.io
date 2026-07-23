@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "01/01/2020",
     "title": "Deep Dive into Open Scholarship: Preregistration and Registered Reports",
     "link_to_resource": "https://www.youtube.com/watch?v=q1EH0qHQus0&list=PLChfyH8TVDGldpd5KBkDL2udamWRiuj5B&index=4",

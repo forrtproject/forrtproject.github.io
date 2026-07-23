@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "12/12/2024 6:10:17",
     "title": "Opening open science to all: Demystifying reproducibility and transparency practices in linguistic research",
     "link_to_resource": "https://doi.org/10.31234/osf.io/spz4w",

@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "10/14/2021 16:28:47",
     "title": "Replicability Syllabus (2020)",
     "link_to_resource": "https://osf.io/yj36v/",

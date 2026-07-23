@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "2020-05-26T15:22:16.616Z",
     "title": "Statistical power in operations management research ",
     "link_to_resource": "https://doi.org/10.1016/0272-6963(95)00020-S",

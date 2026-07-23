@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "2020-05-09T07:29:09.914Z",
     "title": "Evaluating the R-Index and the P-Curve",
     "link_to_resource": "http://web.archive.org/web/20210918175727/http://disjointedthinking.jeffhughes.ca/2015/01/evaluating-r-index-p-curve/",

@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "01/01/2020",
     "title": "The Weak Spots in Contemporary Science (and How to Fix Them)",
     "link_to_resource": "https://www.mdpi.com/2076-2615/7/12/90",

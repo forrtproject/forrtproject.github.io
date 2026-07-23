@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "12/18/2023 17:08:32",
     "title": "The past, present and future of Registered Reports",
     "link_to_resource": "https://doi.org/10.1038/s41562-021-01193-7",

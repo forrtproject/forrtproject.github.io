@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "2020-05-11T10:25:12.200Z",
     "title": "SWIRL",
     "link_to_resource": "https://swirlstats.com/",

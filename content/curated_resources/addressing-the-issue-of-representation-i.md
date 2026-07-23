@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "3/13/2025 12:08:53",
     "title": "Addressing the issue of representation in an undergraduate psych class",
     "link_to_resource": "https://forrt.org/educators-corner/001-representation-heatherurry/",

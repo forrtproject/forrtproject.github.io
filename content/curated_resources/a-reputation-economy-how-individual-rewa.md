@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "01/01/2020",
     "title": "A reputation economy: how individual reward considerations trump systemic arguments for open access to data",
     "link_to_resource": "https://www.nature.com/articles/palcomms201751",

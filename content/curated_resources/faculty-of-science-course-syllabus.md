@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "6/25/2025 13:42:06",
     "title": "Faculty of Science Course Syllabus",
     "link_to_resource": "https://osf.io/8ecbz",

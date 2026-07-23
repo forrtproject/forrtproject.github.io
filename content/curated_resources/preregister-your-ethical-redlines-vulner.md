@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "12/18/2024 8:31:34",
     "title": "Preregister Your Ethical Redlines: Vulnerable Populations, Policy Engagement, and the Perils of E-Hacking",
     "link_to_resource": "http://dx.doi.org/10.2139/ssrn.4066842",

@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "1/9/2025 10:07:23",
     "title": "The challenges of open data sharing for qualitative researchers",
     "link_to_resource": "https://doi.org/10.1177/13591053241237620",

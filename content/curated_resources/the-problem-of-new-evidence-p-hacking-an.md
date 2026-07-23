@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "10/30/2023 12:59:56",
     "title": "The Problem of New Evidence: P-Hacking and Pre-Analysis Plans",
     "link_to_resource": "http://dx.doi.org/10.33392/diam.1587",

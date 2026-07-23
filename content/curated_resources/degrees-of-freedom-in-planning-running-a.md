@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "2020-05-26T15:00:11.045Z",
     "title": "Degrees of Freedom in Planning, Running, Analyzing, and Reporting Psychological Studies: A Checklist to Avoid p-Hacking",
     "link_to_resource": "https://doi.org/10.3389/fpsyg.2016.01832",

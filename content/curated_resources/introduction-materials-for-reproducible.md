@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "01/01/2020",
     "title": "Introduction materials for Reproducible Research Curriculum",
     "link_to_resource": "https://github.com/datacarpentry/rr-intro",

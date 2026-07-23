@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "12/9/2020 20:11:55",
     "title": "Data management",
     "link_to_resource": "https://www.youtube.com/playlist?list=PLy1c0eubiYXlBLTk4T_i-IQGopzSWfSuj",

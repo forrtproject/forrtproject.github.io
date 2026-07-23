@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "3/20/2025 15:40:12",
     "title": "Towards a culture of open scholarship: the role of pedagogical communities",
     "link_to_resource": "https://doi.org/10.1186/s13104-022-05944-1",

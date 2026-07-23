@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "10/27/2023 16:06:34",
     "title": "A Plea for Preregistration in Personality Disorders Research: The Case of Psychopathy",
     "link_to_resource": "https://doi.org/10.1521/pedi_2019_33_426",

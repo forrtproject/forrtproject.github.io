@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "01/01/2020",
     "title": "Attitudes towards animal study registries and their characteristics: An online survey of three cohorts of animal researchers",
     "link_to_resource": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0226443",

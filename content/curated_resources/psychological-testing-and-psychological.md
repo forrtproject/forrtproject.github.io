@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "2020-05-22T19:16:27.793Z",
     "title": "Psychological testing and psychological assessment: A review of evidence and issues.",
     "link_to_resource": "https://doi.org/10.1037/0003-066X.56.2.128",

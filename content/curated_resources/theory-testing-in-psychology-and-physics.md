@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "2020-05-27T16:02:03.205Z",
     "title": "Theory-Testing in Psychology and Physics: A Methodological Paradox",
     "link_to_resource": "https://doi.org/10.1086/288135",

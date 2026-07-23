@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "01/01/2020",
     "title": "Reproducible Science Curriculum Lesson for Version Control",
     "link_to_resource": "https://github.com/datacarpentry/rr-version-control",

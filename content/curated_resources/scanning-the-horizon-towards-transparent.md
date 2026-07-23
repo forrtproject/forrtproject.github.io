@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "2020-05-28T13:40:20.741Z",
     "title": "Scanning the horizon: towards transparent and reproducible neuroimaging research",
     "link_to_resource": "https://doi.org/10.1038/nrn.2016.167",

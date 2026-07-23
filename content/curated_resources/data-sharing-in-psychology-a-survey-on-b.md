@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "2020-06-07T18:48:21.209Z",
     "title": "Data Sharing in Psychology: A Survey on Barriers and Preconditions",
     "link_to_resource": "https://doi.org/10.1177/2515245917751886",

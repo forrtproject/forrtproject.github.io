@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "01/01/2020",
     "title": "Questionable and Open Research Practices in Education Research",
     "link_to_resource": "https://edarxiv.org/f7srb/",

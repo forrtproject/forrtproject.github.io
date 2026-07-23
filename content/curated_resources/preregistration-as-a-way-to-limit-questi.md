@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "10/30/2023 12:35:07",
     "title": "Preregistration as a way to limit questionable research practice in advertising research",
     "link_to_resource": "https://doi.org/10.1080/02650487.2020.1753441",

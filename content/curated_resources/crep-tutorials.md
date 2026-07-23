@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "10/16/2020 6:20:13",
     "title": "CREP tutorials",
     "link_to_resource": "https://www.youtube.com/playlist?list=PLECcejm-vUj-kOyCGXxN2TeAFTRFj1HU1",

@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "01/01/2020",
     "title": "Leveraging Open Ecosystems to Enhance Reproducible Workflows",
     "link_to_resource": "https://www.youtube.com/watch?v=z9QpLYMM1aQ",

@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "12/18/2024 6:08:09",
     "title": "CrustyBase v.2.0: new features and enhanced utilities to support open science",
     "link_to_resource": "https://doi.org/10.1186/s12864-024-10033-7",

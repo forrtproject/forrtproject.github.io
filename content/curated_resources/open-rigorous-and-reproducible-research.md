@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "2/8/2024 12:05:46",
     "title": "Open, rigorous and reproducible research: A practitioner\u2019s handbook",
     "link_to_resource": "https://stanforddatascience.github.io/best-practices/",

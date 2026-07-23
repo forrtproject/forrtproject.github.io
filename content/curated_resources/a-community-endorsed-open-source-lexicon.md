@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "10/16/2023 14:01:01",
     "title": "A community-endorsed open-source lexicon for contrast agent\u2013based perfusion MRI: A consensus guidelines report from the ISMRM Open Science Initiative for Perfusion Imaging (OSIPI)",
     "link_to_resource": "https://doi.org/10.1002/mrm.29840",

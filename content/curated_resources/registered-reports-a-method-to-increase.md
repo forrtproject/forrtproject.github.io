@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "2020-06-04T19:18:52.809Z",
     "title": "Registered reports: A method to increase the credibility of published results",
     "link_to_resource": "https://doi.org/10.1027/1864-9335/a000192",

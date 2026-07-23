@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "1/13/2025 6:23:13",
     "title": "Navigating the Science System: Research Integrity and Academic Survival Strategies",
     "link_to_resource": "https://doi.org/10.1007/s11948-024-00467-3",

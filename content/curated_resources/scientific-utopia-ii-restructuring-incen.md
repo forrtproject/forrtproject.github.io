@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "01/01/2020",
     "title": "Scientific Utopia: II. Restructuring Incentives and Practices to Promote Truth Over Publishability",
     "link_to_resource": "https://doi.org/10.1177/1745691612459058",

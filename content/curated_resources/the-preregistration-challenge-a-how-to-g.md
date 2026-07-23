@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "01/01/2020",
     "title": "The Preregistration Challenge: A How To Guide",
     "link_to_resource": "https://www.youtube.com/watch?v=QAr2-3IdG4Q",

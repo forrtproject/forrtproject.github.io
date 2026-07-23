@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "01/01/2020",
     "title": "Secondary Data Preregistration",
     "link_to_resource": "https://osf.io/x4gzt/wiki/home/",

@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "01/01/2020",
     "title": "Genomics Workshop Overview",
     "link_to_resource": "https://datacarpentry.org/genomics-workshop/",

@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "01/01/2020",
     "title": "The citation advantage of linking publications to research data",
     "link_to_resource": "https://arxiv.org/abs/1907.02565",

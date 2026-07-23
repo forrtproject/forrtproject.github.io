@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "01/01/2020",
     "title": "Defining and Growing the Field of Metascience",
     "link_to_resource": "https://www.youtube.com/watch?v=5LF_vw0ARGk",

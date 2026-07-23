@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "2/13/2025 9:22:12",
     "title": "Claims about scientific rigour require rigour",
     "link_to_resource": "https://doi.org/10.1038/s41562-024-01982-w",

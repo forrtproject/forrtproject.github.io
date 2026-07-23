@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "12/18/2024 5:50:11",
     "title": "Decolonising Open Science Symposium: Dismantling Global Hierarchies of Knowledge",
     "link_to_resource": "https://forumforopen.org/events/decolonising-open-science-symposium-dismantling-global-hierarchies-of-knowledge/",

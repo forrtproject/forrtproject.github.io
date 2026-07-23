@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "2020-06-06T19:14:34.538Z",
     "title": "Peer-review practices of psychological journals: The fate of published articles, submitted again. ",
     "link_to_resource": "https://doi.org/https://doi.org/10.1017/S0140525X00011183",

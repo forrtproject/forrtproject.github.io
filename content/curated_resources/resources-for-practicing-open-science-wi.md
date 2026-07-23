@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "01/01/2020",
     "title": "Resources for Practicing Open Science with Qualitative Research in Education",
     "link_to_resource": "https://www.oercommons.org/courseware/lesson/80058/overview",

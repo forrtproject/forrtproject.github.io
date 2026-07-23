@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "1/12/2025 9:54:54",
     "title": "Announcing DataCite\u2019s First Public Data File",
     "link_to_resource": "https://doi.org/10.5438/xcnb-0j33",

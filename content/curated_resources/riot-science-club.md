@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "10/29/2020 13:08:48",
     "title": "RIOT science club",
     "link_to_resource": "https://www.youtube.com/c/RIOTScienceClub/videos",

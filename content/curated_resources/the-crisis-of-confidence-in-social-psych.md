@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "2020-06-09T16:36:57.877Z",
     "title": "The crisis of confidence in social psychology.",
     "link_to_resource": "https://doi.org/10.1037/0003-066X.30.10.967",

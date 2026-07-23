@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "2020-06-06T19:33:27.577Z",
     "title": "Chaos in the brickyard",
     "link_to_resource": "https://doi.org/10.1126/science.142.3590.339",

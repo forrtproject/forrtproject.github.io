@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "2/6/2025 5:20:49",
     "title": "\nEditorial: Introducing Surgery Open Science",
     "link_to_resource": "https://doi.org/10.1016/j.sopen.2019.04.002",

@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "2020-06-10T19:19:01.811Z",
     "title": "Probing Birth-Order Effects on Narrow Traits Using Specification-Curve Analysis",
     "link_to_resource": "https://doi.org/10.1177/0956797617723726",

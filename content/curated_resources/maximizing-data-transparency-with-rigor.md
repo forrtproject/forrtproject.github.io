@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "12/18/2024 8:34:50",
     "title": "Maximizing Data Transparency with Rigor Icons",
     "link_to_resource": "https://www.ninds.nih.gov/current-research/trans-agency-activities/rigor-transparency/rigor-champions-and-opportunities/maximizing-data-transparency-rigor-icons",

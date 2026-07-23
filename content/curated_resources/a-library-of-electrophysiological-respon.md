@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "1/9/2025 9:59:01",
     "title": "A library of electrophysiological responses in plants - a model of transversal education and open science",
     "link_to_resource": "https://doi.org/10.1080/15592324.2024.2310977",

@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "01/01/2020",
     "title": "DEBATE-statistical analysis plans for observational studies",
     "link_to_resource": "https://bmcmedresmethodol.biomedcentral.com/articles/10.1186/s12874-019-0879-5",

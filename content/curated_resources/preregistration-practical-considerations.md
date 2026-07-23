@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "10/27/2023 14:24:49",
     "title": "Preregistration: Practical Considerations for Speech, Language, and Hearing Research",
     "link_to_resource": "https://doi.org/10.1044/2022_JSLHR-22-00317",

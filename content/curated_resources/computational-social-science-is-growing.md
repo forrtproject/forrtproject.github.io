@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "12/18/2023 12:27:36",
     "title": "Computational social science is growing up: why puberty consists of embracing measurement validation, theory development, and open science practices",
     "link_to_resource": "https://doi.org/10.1140/epjds/s13688-023-00434-1",

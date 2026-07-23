@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "01/01/2020",
     "title": "Reproducible Research: Walking the Walk",
     "link_to_resource": "https://github.com/reproducible-research/scipy-tutorial-2014",

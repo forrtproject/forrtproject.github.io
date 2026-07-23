@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "2020-06-10T19:34:02.572Z",
     "title": "Publication bias and the limited strength model of self-control: has the evidence for ego depletion been overestimated?",
     "link_to_resource": "https://doi.org/10.3389/fpsyg.2014.00823",

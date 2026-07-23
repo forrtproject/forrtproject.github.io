@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "3/15/2025 10:33:18",
     "title": "Academic Jobs in the US vs. the UK",
     "link_to_resource": "https://forrt.org/educators-corner/015-academic-jobs-us-vs-uk/",

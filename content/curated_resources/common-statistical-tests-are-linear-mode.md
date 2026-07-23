@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "12/9/2020 20:13:00",
     "title": "Common statistical tests are linear models (or: how to teach stats)",
     "link_to_resource": "https://lindeloev.github.io/tests-as-linear/",

@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "11/6/2023 12:37:10",
     "title": "Making science public: a review of journalists\u2019 use of Open Science research",
     "link_to_resource": "https://doi.org/10.12688/f1000research.133710.1",

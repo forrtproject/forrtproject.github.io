@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "2020-06-04T19:31:13.021Z",
     "title": "Statistical power and optimal design in experiments in which samples of participants respond to samples of stimuli",
     "link_to_resource": "https://doi.org/10.1037/xge0000014",

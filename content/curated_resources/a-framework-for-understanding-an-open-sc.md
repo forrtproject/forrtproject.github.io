@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "1/9/2025 9:23:29",
     "title": "A framework for understanding an open scientific community using automated harvesting of public artifacts ",
     "link_to_resource": "https://doi.org/10.1093/jamiaopen/ooae017",

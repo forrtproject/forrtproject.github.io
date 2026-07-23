@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "2020-05-27T16:32:51.626Z",
     "title": "How to Make More Published Research True",
     "link_to_resource": "https://doi.org/10.1371/journal.pmed.1001747",

@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "9/12/2023 13:52:04",
     "title": "Perspectives: Replication is more than meets the eye",
     "link_to_resource": "https://doi.org/10.1080/02650487.2023.2245278",

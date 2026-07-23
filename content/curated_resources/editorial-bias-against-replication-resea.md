@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "2020-05-31T18:57:05.866Z",
     "title": "Editorial Bias Against Replication Research",
     "link_to_resource": "https://search.proquest.com/docview/1292299467?pq-origsite=gscholar&imgSeq=1",

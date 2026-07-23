@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "2020-05-15T13:01:06.716Z",
     "title": "The New Statistics: Meta-Analysis and Meta-Analytic Thinking (workshop Part 6)",
     "link_to_resource": "https://www.youtube.com/watch?v=2CBIQDoHCKU",

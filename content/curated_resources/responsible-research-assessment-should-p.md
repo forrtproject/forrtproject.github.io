@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "2/13/2025 9:54:11",
     "title": "Responsible Research Assessment Should Prioritize Theory Development and Testing Over Ticking Open Science Boxes",
     "link_to_resource": "https://doi.org/10.15626/MP.2023.3735",

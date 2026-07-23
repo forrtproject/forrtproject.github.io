@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "2020-06-05T19:18:22.188Z",
     "title": "Effect of open peer review on quality of reviews and on reviewers'recommendations: a randomised trial",
     "link_to_resource": "https://doi.org/10.1136/bmj.318.7175.23",

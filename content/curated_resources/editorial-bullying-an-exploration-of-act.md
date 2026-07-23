@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "1/9/2025 9:52:26",
     "title": "Editorial bullying: an exploration of acts impacting publication ethics and related environment",
     "link_to_resource": "https://doi.org/10.3389/frma.2024.1345553",

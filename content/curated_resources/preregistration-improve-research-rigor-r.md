@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "01/01/2020",
     "title": "Preregistration: Improve Research Rigor, Reduce Bias",
     "link_to_resource": "https://www.youtube.com/watch?v=PboPpcg6ik4",

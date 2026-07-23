@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "7/2/2025 13:12:15",
     "title": "UNESCO Recommendation on Open Science",
     "link_to_resource": "https://en.m.wikiversity.org/wiki/UNESCO_Recommendation_on_Open_Science",

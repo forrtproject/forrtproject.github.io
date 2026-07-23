@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "12/12/2024 8:25:19",
     "title": "The needed link between open science and science diplomacy\u2014A Latin American perspective",
     "link_to_resource": "https://doi.org/10.3389/frma.2024.1355393",

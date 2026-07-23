@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "2020-05-31T18:40:20.303Z",
     "title": "A Short (Personal) Future History of Revolution 2.0",
     "link_to_resource": "https://doi.org/10.1177/1745691615609918",

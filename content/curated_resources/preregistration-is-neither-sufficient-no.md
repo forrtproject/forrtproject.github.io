@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "10/6/2023 12:56:37",
     "title": "Preregistration Is Neither Sufficient nor Necessary for Good Science",
     "link_to_resource": "https://doi.org/10.1002/jcpy.1209",

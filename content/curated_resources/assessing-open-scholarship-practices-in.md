@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "2/13/2025 9:46:05",
     "title": "Assessing Open Scholarship Practices in Education Research: Opportunities for Adoption",
     "link_to_resource": "https://www.cos.io/blog/assessing-open-scholarship-practices-in-education-research",

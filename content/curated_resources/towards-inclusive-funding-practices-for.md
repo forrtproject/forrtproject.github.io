@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "11/2/2020 11:13:04",
     "title": "Towards inclusive funding practices for early career researchers",
     "link_to_resource": "https://osf.io/9sfm8/",

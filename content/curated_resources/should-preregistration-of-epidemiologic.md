@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "10/23/2023 12:08:26",
     "title": "Should Preregistration of Epidemiologic Study Protocols Become Compulsory? Reflections and a Counterproposal",
     "link_to_resource": "https://doi.org/10.1097/EDE.0b013e318245c05b",

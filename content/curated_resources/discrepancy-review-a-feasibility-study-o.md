@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "12/18/2023 16:49:59",
     "title": "Discrepancy review: A feasibility study of a novel peer review intervention to reduce undisclosed discrepancies between registrations and publications",
     "link_to_resource": "https://doi.org/10.1098/rsos.220142",

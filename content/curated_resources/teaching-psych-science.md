@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "2020-05-10T08:13:40.715Z",
     "title": "teaching psych science",
     "link_to_resource": "http://www.teachpsychscience.org/",

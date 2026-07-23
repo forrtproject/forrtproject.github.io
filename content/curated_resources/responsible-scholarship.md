@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "2/20/2025 6:01:01",
     "title": "Responsible Scholarship",
     "link_to_resource": "https://www.universiteitleiden.nl/en/social-behavioural-sciences/psychology/good-practises/responsible-scholarship",

@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "2020-05-27T16:27:58.120Z",
     "title": "Let\u2019s Put Our Money Where Our Mouth Is: If Authors Are to Change Their Ways, Reviewers (and Editors) Must Change With Them",
     "link_to_resource": "https://doi.org/10.1177/1745691614528215",

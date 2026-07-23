@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "01/01/2020",
     "title": "No evidence of publication bias in climate change science",
     "link_to_resource": "https://doi.org/10.1007/s10584-016-1880-1",

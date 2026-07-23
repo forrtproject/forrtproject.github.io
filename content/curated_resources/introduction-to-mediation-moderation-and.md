@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "2020-05-19T16:46:40.198Z",
     "title": "Introduction to Mediation, Moderation, and Conditional Process Analysis, First Edition: A Regression-Based Approach (Methodology in the Social Sciences)",
     "link_to_resource": "https://www.amazon.com/Introduction-Mediation-Moderation-Conditional-Analysis/dp/1609182308?ie=UTF8&psc=1&redirect=true&ref_=oh_aui_detailpage_o03_s00",

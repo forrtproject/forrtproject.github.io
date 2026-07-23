@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "1/16/2025 4:22:07",
     "title": "Flood of Fake Science Forces Multiple Journal Closures",
     "link_to_resource": "https://www.wsj.com/science/academic-studies-research-paper-mills-journals-publishing-f5a3d4bc?st=jlwr04emuzmcbtx&reflink=desktopwebshare_permalink",

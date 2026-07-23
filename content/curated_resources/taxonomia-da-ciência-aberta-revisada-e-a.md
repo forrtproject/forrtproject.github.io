@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "2/20/2025 5:39:21",
     "title": "Taxonomia da Ci\u00eancia Aberta: revisada e ampliada",
     "link_to_resource": "https://doi.org/10.5007/1518-2924.2023.e91712",

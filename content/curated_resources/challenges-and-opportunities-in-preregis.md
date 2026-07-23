@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "10/27/2023 10:41:31",
     "title": "Challenges and opportunities in preregistration of coordinated data analysis: A tutorial and template",
     "link_to_resource": "https://doi.org/10.1037/pag0000611",

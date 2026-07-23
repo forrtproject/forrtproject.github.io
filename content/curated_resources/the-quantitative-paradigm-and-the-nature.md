@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "2/20/2025 5:51:34",
     "title": "The quantitative paradigm and the nature of the human mind. The replication crisis as an epistemological crisis of quantitative psychology in view of the ontic nature of the psyche",
     "link_to_resource": "https://doi.org/10.3389/fpsyg.2024.1390233",

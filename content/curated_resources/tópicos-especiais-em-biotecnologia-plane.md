@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "10/14/2021 13:27:12",
     "title": "T\u00f3picos Especiais em Biotecnologia: Planejamento e Otimiza\u00e7\u00e3o de Experimentos",
     "link_to_resource": "https://osf.io/qc2w4/",

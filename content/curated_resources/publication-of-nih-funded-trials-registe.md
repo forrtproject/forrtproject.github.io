@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "12/14/2023 9:36:22",
     "title": "Publication of NIH funded trials registered in ClinicalTrials.gov: Cross sectional analysis",
     "link_to_resource": "https://doi.org/10.1136/bmj.d7292",

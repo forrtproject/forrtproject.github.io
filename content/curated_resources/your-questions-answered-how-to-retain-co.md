@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "6/27/2023 14:45:33",
     "title": "Your Questions Answered: How to Retain Copyright While Others Distribute and Build Upon Your Work",
     "link_to_resource": "https://www.youtube.com/watch?v=CspRk3hBE6c",

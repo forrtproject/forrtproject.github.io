@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "2020-05-11T10:56:42.741Z",
     "title": "CREP project",
     "link_to_resource": "https://osf.io/wfc6u/",

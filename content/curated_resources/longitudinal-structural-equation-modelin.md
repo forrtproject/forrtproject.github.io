@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "2020-05-19T16:49:10.473Z",
     "title": "Longitudinal Structural Equation Modeling (Methodology in the Social Sciences)",
     "link_to_resource": "https://www.amazon.com/Longitudinal-Structural-Equation-Modeling-Methodology/dp/1462510167?ie=UTF8&psc=1&redirect=true&ref_=oh_aui_detailpage_o03_s00",

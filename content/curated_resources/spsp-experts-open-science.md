@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "2020-05-14T10:39:09.822Z",
     "title": "SPSP experts - open science",
     "link_to_resource": "http://spsp.org/resources/multimedia/experts/openscience",

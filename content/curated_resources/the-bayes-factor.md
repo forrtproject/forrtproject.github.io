@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "2020-05-16T12:49:35.192Z",
     "title": "The Bayes Factor",
     "link_to_resource": "https://sites.tufts.edu/hilab/podcast/",

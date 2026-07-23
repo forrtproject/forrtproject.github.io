@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "3/13/2025 18:06:51",
     "title": "Research and data lessons from a non-academic job",
     "link_to_resource": "https://forrt.org/educators-corner/012-lessons-from-non-academic-jobs/",

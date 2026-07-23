@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "10/14/2021 16:30:06",
     "title": "Open and Reproducible Methods Syllabus",
     "link_to_resource": "https://osf.io/rah35/",

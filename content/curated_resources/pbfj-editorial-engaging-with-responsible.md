@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "10/30/2023 12:42:47",
     "title": "PBFJ Editorial \u2026 Engaging with responsible science. \u201cOPEN FOR BUSINESS\u201d \u2013 Launching the PBFJ pre-registration publication initiative",
     "link_to_resource": "https://doi.org/10.1016/j.pacfin.2022.101837",

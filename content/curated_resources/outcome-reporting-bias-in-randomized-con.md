@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "01/01/2020",
     "title": "Outcome reporting bias in randomized-controlled trials investigating antipsychotic drugs",
     "link_to_resource": "https://www.nature.com/articles/tp2017203",

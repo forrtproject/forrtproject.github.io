@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "01/01/2020",
     "title": "Transparency of CHI Research Artifacts: Results of a Self-Reported Survey",
     "link_to_resource": "https://osf.io/3bu6t/",

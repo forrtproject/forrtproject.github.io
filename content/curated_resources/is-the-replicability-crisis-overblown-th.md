@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "2020-05-26T14:35:55.684Z",
     "title": "Is the replicability crisis overblown? Three arguments examined",
     "link_to_resource": "https://doi.org/10.1177/1745691612463401",

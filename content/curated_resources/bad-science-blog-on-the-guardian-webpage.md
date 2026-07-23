@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "2020-05-10T09:04:37.815Z",
     "title": "Bad Science blog on the Guardian webpages",
     "link_to_resource": "https://www.theguardian.com/science/series/badscience",

@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "2020-05-08T08:15:01.701Z",
     "title": "Significance",
     "link_to_resource": "https://xkcd.com/882/",

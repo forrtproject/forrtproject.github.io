@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "12/12/2024 9:22:37",
     "title": "A survey of researchers\u2019 methods sharing practices and priorities",
     "link_to_resource": "https://doi.org/10.7717/peerj.16731",

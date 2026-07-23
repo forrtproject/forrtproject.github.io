@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "12/18/2023 17:02:30",
     "title": "Research Preregistration as a Teaching and Learning Tool in Undergraduate Psychology Courses",
     "link_to_resource": "https://doi.org/10.1177/1475725719875844",

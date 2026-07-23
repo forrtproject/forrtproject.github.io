@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "12/12/2024 9:33:17",
     "title": "PathOS: Open Science Impact Pathways",
     "link_to_resource": "https://pathos-project.eu/",

@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "01/01/2020",
     "title": "An\u00e1lisis y visualizaci\u00f3n de datos usando Python",
     "link_to_resource": "https://datacarpentry.org/python-ecology-lesson-es/",

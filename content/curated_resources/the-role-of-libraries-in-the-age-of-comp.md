@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "01/01/2020",
     "title": "The Role of Libraries in the Age of Computational Reproducibility",
     "link_to_resource": "https://zenodo.org/record/2692864",

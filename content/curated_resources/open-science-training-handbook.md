@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "2/20/2025 6:04:36",
     "title": "Open Science Training Handbook",
     "link_to_resource": "https://github.com/Open-Science-Training-Handbook",

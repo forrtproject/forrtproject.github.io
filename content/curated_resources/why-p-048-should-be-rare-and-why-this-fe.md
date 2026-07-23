@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "2020-05-09T07:42:17.421Z",
     "title": "why p = .048 should be rare (and why this feels counterintuitive)",
     "link_to_resource": "http://sometimesimwrong.typepad.com/wrong/2015/06/why-p-048-should-be-rare-and-why-this-feels-counterintuitive.html",

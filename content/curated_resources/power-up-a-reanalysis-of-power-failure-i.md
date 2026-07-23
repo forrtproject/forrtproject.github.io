@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "2020-06-03T20:28:07.675Z",
     "title": "Power-up: A reanalysis of \u2018power failure\u2019 in neuroscience using mixture modeling.",
     "link_to_resource": "https://doi.org/10.1523/JNEUROSCI.3592-16.2017",

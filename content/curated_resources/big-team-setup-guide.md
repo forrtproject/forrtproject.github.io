@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "1/9/2025 9:55:28",
     "title": "Big Team Setup Guide",
     "link_to_resource": "https://debruine.github.io/big-team-setup/",

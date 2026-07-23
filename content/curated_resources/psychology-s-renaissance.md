@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "2020-05-27T16:22:44.790Z",
     "title": "Psychology's renaissance",
     "link_to_resource": "https://doi.org/10.1146/annurev-psych-122216-011836",

@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "2020-05-26T14:40:54.418Z",
     "title": "Meta-analyses are no substitute for registered replications: a skeptical perspective on religious priming",
     "link_to_resource": "https://doi.org/10.3389/fpsyg.2015.01365",

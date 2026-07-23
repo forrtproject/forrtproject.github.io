@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "2020-06-10T19:27:50.116Z",
     "title": "Registered Replication Report: Strack, Martin, & Stepper (1988)",
     "link_to_resource": "https://doi.org/10.1177/1745691616674458",

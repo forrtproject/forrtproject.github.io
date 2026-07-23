@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "2020-05-26T14:54:13.825Z",
     "title": "Bite-Size Science and Its Undesired Side Effects",
     "link_to_resource": "https://doi.org/10.1177/1745691611429353",

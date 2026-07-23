@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "2/20/2025 4:38:31",
     "title": "What Makes a Good Theory, and How Do We Make a Theory Good?",
     "link_to_resource": "https://doi.org/10.1007/s42113-023-00193-2",

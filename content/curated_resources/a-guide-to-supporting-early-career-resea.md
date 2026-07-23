@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "01/01/2020",
     "title": "A Guide to Supporting Early Career Researchers in Open Science",
     "link_to_resource": "https://www.youtube.com/watch?v=6DrlUc_54lE&t=6s",

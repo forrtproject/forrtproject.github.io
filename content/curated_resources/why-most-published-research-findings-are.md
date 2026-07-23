@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "2020-05-26T15:58:40.309Z",
     "title": "Why most published research findings are false",
     "link_to_resource": "https://doi.org/10.1371/journal.pmed.0020124",

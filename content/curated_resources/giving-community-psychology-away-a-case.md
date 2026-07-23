@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "2020-05-22T18:33:13.945Z",
     "title": "Giving Community Psychology Away: A case for open access publishing",
     "link_to_resource": "https://www.gjcpp.org/en/article.php?issue=33&article=199",

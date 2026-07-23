@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "1/9/2025 9:30:58",
     "title": "A minimal metadata set (MNMS) to repurpose nonclinical in vivo data for biomedical research",
     "link_to_resource": " https://doi.org/10.1038/s41684-024-01335-0",

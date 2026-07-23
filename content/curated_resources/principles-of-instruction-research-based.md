@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "2/27/2025 4:54:42",
     "title": "Principles of Instruction: Research-Based Strategies That All Teachers Should Know ",
     "link_to_resource": "https://www.aft.org/sites/default/files/Rosenshine.pdf",

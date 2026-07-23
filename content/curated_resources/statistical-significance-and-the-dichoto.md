@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "2020-06-03T19:22:07.215Z",
     "title": "Statistical Significance and the Dichotomization of Evidence",
     "link_to_resource": "https://doi.org/10.1080/01621459.2017.1289846",

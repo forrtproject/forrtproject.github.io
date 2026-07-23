@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "01/01/2020",
     "title": "Introduction to R for Geospatial Data",
     "link_to_resource": "https://datacarpentry.org/r-intro-geospatial/",

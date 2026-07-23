@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "12/19/2024 3:57:29",
     "title": "Demystifying Open Science in health psychology and\nbehavioral medicine: a practical guide to Registered Reports\nand Data Notes",
     "link_to_resource": "https://doi.org/10.1080/21642850.2024.2351939",

@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "1/13/2025 6:30:43",
     "title": "Let\u2019s celebrate Earth Day as the Age of Open Science",
     "link_to_resource": " https://doi.org/10.1126/sciadv.adp6040",

@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "01/01/2020",
     "title": "The cumulative effect of reporting and citation biases on the apparent efficacy of treatments: the case of depression",
     "link_to_resource": "https://www.cambridge.org/core/journals/psychological-medicine/article/cumulative-effect-of-reporting-and-citation-biases-on-the-apparent-efficacy-of-treatments-the-case-of-depression/71D73CADE32C0D3D996DABEA3FCDBF57",

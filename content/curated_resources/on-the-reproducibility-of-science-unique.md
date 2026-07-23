@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "01/01/2020",
     "title": "On the reproducibility of science: unique identification of research resources in the biomedical literature",
     "link_to_resource": "https://peerj.com/articles/148/",

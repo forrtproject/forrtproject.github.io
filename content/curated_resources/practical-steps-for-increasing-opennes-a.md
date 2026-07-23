@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "01/01/2020",
     "title": "Practical steps for increasing opennes and reproducibility: an introduction to OSF, Workshop Manual",
     "link_to_resource": "https://osf.io/48up3/",

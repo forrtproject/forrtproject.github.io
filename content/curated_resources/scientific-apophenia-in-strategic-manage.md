@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "2020-05-28T13:04:25.650Z",
     "title": "Scientific apophenia in strategic management research: Significance tests & mistaken inference",
     "link_to_resource": "https://doi.org/10.1002/smj.2459",

@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "1/13/2025 6:38:12",
     "title": "Declaration of Helsinki: ethical norm in pursuit of common global goals",
     "link_to_resource": "https://doi.org/10.3389/fmed.2024.1360653",

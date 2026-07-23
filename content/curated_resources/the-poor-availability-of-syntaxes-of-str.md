@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "2020-05-28T14:52:10.841Z",
     "title": "The poor availability of syntaxes of structural equation modeling",
     "link_to_resource": "https://doi.org/10.1080/08989621.2017.1396214",

@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "2/27/2025 5:24:27",
     "title": "Multi-Site Replications in Social Psychology: Reflections, Implications, and Future Directions",
     "link_to_resource": "https://doi.org/10.1017/SJP.2023.6",

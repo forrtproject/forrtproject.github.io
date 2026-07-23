@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "2020-06-03T19:33:25.880Z",
     "title": "Statistical tests, p values, confidence intervals, and power: a guide to misinterpretations. ",
     "link_to_resource": "http://doi.org/10.1007/s10654-016-0149-3",

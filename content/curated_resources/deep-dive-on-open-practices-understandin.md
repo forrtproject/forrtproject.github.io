@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "01/01/2020",
     "title": "Deep Dive on Open Practices: Understanding Data Sharing with Sara Hart",
     "link_to_resource": "https://www.youtube.com/watch?v=24LTVqHi7hw",

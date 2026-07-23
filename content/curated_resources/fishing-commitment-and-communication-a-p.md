@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "2020-06-07T19:33:16.857Z",
     "title": "Fishing, Commitment, and Communication: A Proposal for Comprehensive Nonbinding Research Registration",
     "link_to_resource": "https://doi.org/10.1093/pan/mps021",

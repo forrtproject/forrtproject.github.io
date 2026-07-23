@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "2020-06-05T19:27:33.056Z",
     "title": "Badges to Acknowledge Open Practices: A Simple, Low-Cost, Effective Method for Increasing Transparency",
     "link_to_resource": "https://doi.org/10.1371/journal.pbio.1002456",

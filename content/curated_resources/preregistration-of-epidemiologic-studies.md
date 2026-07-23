@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "10/23/2023 12:07:05",
     "title": "Preregistration of Epidemiologic Studies: An Ill-founded Mix of Ideas",
     "link_to_resource": "https://doi.org/10.1097/EDE.0b013e3181e942b8",

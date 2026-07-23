@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "10/12/2020 12:58:25",
     "title": "Data Management and Data Sharing in Psychological Science: Revision of the DGPs Recommendations",
     "link_to_resource": "https://psyarxiv.com/24ncs/",

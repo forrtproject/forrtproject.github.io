@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "2020-06-03T19:31:18.321Z",
     "title": "Consequences of prejudice against the null hypothesis.",
     "link_to_resource": "https://doi.org/10.1037/h0076157",

@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "10/14/2021 16:31:28",
     "title": "Rigorous & Reproducible Research Practices",
     "link_to_resource": "https://osf.io/8bxau/",

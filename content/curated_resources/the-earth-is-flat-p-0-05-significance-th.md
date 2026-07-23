@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "01/01/2020",
     "title": "The earth is flat (p > 0.05): significance thresholds and the crisis of unreplicable research",
     "link_to_resource": "https://peerj.com/articles/3544/",

@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "9/18/2023 8:49:53",
     "title": "Open hardware in microscopy ",
     "link_to_resource": "https://doi.org/10.1016/j.ohx.2023.e00473",

@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "01/01/2020",
     "title": "Statistics with JASP and the Open Science Framework",
     "link_to_resource": "https://www.youtube.com/watch?v=B98FwY_frAw",

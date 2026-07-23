@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "4/17/2026 10:19:37",
     "title": "Defining Effect Sizes",
     "link_to_resource": "https://matthewbjane.quarto.pub/Defining-Effect-Sizes.html",

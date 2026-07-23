@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "12/18/2024 6:22:47",
     "title": "Harvard Professor\u2019s Papers Contain Copied Images, Says Science Sleuth",
     "link_to_resource": "https://www.wsj.com/science/harvard-professors-papers-contain-copied-images-science-sleuth-claims-82e2610e?st=inkfwbfdl238tv1&reflink=desktopwebshare_permalink",

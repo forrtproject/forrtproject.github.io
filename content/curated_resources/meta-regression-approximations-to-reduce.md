@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "2020-06-03T20:16:57.085Z",
     "title": "Meta\u2010regression approximations to reduce publication selection bias.",
     "link_to_resource": "https://doi.org/10.1002/jrsm.1095",

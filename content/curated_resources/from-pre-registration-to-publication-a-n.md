@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "10/27/2023 13:45:55",
     "title": "From pre-registration to publication: A non-technical primer for conducting a meta-analysis to synthesize correlational data",
     "link_to_resource": "https://doi.org/10.3389/fpsyg.2015.01549",

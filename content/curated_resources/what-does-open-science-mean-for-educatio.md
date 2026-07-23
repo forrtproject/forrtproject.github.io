@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "1/13/2025 6:21:25",
     "title": "What does Open Science mean for Educational Technology Research? Challenges, Opportunities, and a Call for Research",
     "link_to_resource": "https://doi.org/10.35542/osf.io/s73xb",

@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "10/9/2023 10:43:30",
     "title": "Medicines and Healthcare products Regulatory Agency\u2019s \u201cConsultation on proposals for legislative changes for clinical trials\u201d: a response from the Trials Methodology Research Partnership Adaptive Designs Working Group, with a focus on data sharing",
     "link_to_resource": "https://doi.org/10.1186/s13063-023-07576-7",

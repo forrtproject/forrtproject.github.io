@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "01/01/2020",
     "title": "Economics Lesson with Stata",
     "link_to_resource": "https://datacarpentry.org/stata-economics/",

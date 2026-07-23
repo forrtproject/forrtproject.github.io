@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "2020-06-03T19:20:02.575Z",
     "title": "Reporting Effect Sizes in Original Psychological Research: A Discussion and Tutorial",
     "link_to_resource": "https://doi.org/10.1037/met0000126",

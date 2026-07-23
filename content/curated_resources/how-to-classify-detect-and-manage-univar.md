@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "12/18/2023 16:52:56",
     "title": "How to classify, detect, and manage univariate and multivariate outliers, with emphasis on pre-registration",
     "link_to_resource": "http://doi.org/10.5334/irsp.289",

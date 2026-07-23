@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "12/18/2024 7:56:28",
     "title": "Do organisms need an impact factor? Citations of key biological resources including model organisms reveal usage patterns and impact",
     "link_to_resource": "https://doi.org/10.1101/2024.01.15.575636",

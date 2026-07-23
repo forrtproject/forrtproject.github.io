@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "2/6/2025 4:52:22",
     "title": "Rethinking Transparency and Rigor from a Qualitative Open Science Perspective",
     "link_to_resource": "https://doi.org/10.36850/mr7",

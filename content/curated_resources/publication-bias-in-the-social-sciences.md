@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "2020-05-26T14:49:40.450Z",
     "title": "Publication bias in the social sciences: Unlocking the file drawer",
     "link_to_resource": "https://doi.org/10.1126/science.1255484",

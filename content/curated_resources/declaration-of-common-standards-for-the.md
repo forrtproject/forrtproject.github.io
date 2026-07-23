@@ -1,4 +1,5 @@
 {
+    "exclude": "",
     "timestamp": "12/18/2023 17:12:02",
     "title": "Declaration of common standards for the preregistration of animal research\u2014speeding up the scientific progress",
     "link_to_resource": "https://doi.org/10.1093/pnasnexus/pgac016",
