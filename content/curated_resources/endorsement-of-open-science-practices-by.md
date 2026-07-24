@@ -1,5 +1,4 @@
 {
-    "exclude": "",
     "timestamp": "12/18/2024 8:10:05",
     "title": "Endorsement of open science practices by dental journals: A meta-research study",
     "link_to_resource": "https://doi.org/10.1016/j.jdent.2024.104869",

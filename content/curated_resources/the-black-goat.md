@@ -1,5 +1,4 @@
 {
-    "exclude": "",
     "timestamp": "2020-05-16T12:47:35.074Z",
     "title": "The Black Goat",
     "link_to_resource": "http://www.theblackgoatpodcast.com/",

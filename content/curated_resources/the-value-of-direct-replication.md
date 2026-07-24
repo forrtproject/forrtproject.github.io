@@ -1,5 +1,4 @@
 {
-    "exclude": "",
     "timestamp": "2020-05-29T18:28:25.497Z",
     "title": "The value of direct replication.",
     "link_to_resource": "https://doi.org/10.1177/1745691613514755",

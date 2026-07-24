@@ -1,5 +1,4 @@
 {
-    "exclude": "",
     "timestamp": "10/10/2023 13:41:42",
     "title": "Does preregistration improve the credibility of research findings?",
     "link_to_resource": "https://doi.org/10.20982/tqmp.16.4.p376",

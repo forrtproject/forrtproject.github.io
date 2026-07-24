@@ -1,5 +1,4 @@
 {
-    "exclude": "",
     "timestamp": "1/16/2025 4:17:24",
     "title": "Open Resources for Biology Education (ORBE): a resource collection",
     "link_to_resource": "https://doi.org/10.1128/jmbe.00203-23",

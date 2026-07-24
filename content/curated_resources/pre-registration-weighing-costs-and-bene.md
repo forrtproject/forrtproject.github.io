@@ -1,5 +1,4 @@
 {
-    "exclude": "",
     "timestamp": "10/30/2023 12:37:37",
     "title": "Pre-registration: Weighing costs and benefits for researchers",
     "link_to_resource": "https://doi.org/10.1016/j.obhdp.2021.05.006",

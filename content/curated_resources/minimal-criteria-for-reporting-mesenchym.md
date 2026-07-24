@@ -1,5 +1,4 @@
 {
-    "exclude": "",
     "timestamp": "1/13/2025 7:04:45",
     "title": "Minimal criteria for reporting mesenchymal stem cells in veterinary regenerative medicine",
     "link_to_resource": "https://doi.org/10.1007/s11259-024-10398-w",

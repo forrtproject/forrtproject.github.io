@@ -1,5 +1,4 @@
 {
-    "exclude": "",
     "timestamp": "6/10/2025 13:23:09",
     "title": "Credible science course",
     "link_to_resource": "https://osf.io/78bhv/",

@@ -1,5 +1,4 @@
 {
-    "exclude": "",
     "timestamp": "10/10/2023 13:54:20",
     "title": "Preregistration: the good, the bad, and the confusing",
     "link_to_resource": "https://doi.org/10.31234/osf.io/bcd9t",

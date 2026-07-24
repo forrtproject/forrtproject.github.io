@@ -1,5 +1,4 @@
 {
-    "exclude": "",
     "timestamp": "1/23/2021 15:13:34",
     "title": "Landmark College Institute for Research & Training (LCIRT) ",
     "link_to_resource": "https://www.landmark.edu/research-training",

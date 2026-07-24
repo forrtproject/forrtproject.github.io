@@ -1,5 +1,4 @@
 {
-    "exclude": "",
     "timestamp": "01/01/2020",
     "title": "Funder Data-Sharing Policies: Overview and Recommendations",
     "link_to_resource": "https://figshare.com/articles/journal_contribution/Funder_Data-Sharing_Policies_Overview_and_Recommendations/5395456",

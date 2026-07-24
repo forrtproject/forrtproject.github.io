@@ -1,5 +1,4 @@
 {
-    "exclude": "",
     "timestamp": "12/12/2024 8:47:12",
     "title": "A Replication Crisis in Methodological Research?",
     "link_to_resource": "https://doi.org/10.1111/1740-9713.01444",

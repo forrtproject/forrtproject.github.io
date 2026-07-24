@@ -1,5 +1,4 @@
 {
-    "exclude": "",
     "timestamp": "01/01/2020",
     "title": "Introduction to Research Data Management",
     "link_to_resource": "https://nyu-dataservices.github.io/Intro-RDM/#/",

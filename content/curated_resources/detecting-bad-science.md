@@ -1,5 +1,4 @@
 {
-    "exclude": "",
     "timestamp": "2/14/2025 12:04:23",
     "title": "Detecting Bad Science",
     "link_to_resource": "https://detectingbadscience.wordpress.com/the-course/",

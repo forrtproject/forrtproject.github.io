@@ -1,5 +1,4 @@
 {
-    "exclude": "",
     "timestamp": "1/9/2025 9:57:51",
     "title": "News at a glance: Planning for mentoring, tracking replications, and deracializing lung tests",
     "link_to_resource": "https://www.science.org/content/article/news-glance-planning-mentoring-tracking-replications-and-deracializing-lung-tests",

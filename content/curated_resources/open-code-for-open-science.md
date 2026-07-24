@@ -1,5 +1,4 @@
 {
-    "exclude": "",
     "timestamp": "2/6/2025 5:38:38",
     "title": "Open code for open science?",
     "link_to_resource": "https://doi.org/10.1038/ngeo2283",

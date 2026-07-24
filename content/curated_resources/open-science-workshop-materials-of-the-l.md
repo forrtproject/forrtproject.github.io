@@ -1,5 +1,4 @@
 {
-    "exclude": "",
     "timestamp": "10/14/2021 12:33:52",
     "title": "Open Science Workshop Materials of the LMU Open Science Center",
     "link_to_resource": "https://osf.io/zjrhu/",

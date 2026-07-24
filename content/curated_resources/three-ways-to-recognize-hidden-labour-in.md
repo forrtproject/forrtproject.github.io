@@ -1,5 +1,4 @@
 {
-    "exclude": "",
     "timestamp": "2/20/2025 5:20:28",
     "title": "Three ways to recognize hidden labour in research",
     "link_to_resource": "https://doi.org/10.1038/d41586-024-01749-3",

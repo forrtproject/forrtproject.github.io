@@ -1,5 +1,4 @@
 {
-    "exclude": "",
     "timestamp": "2020-05-28T14:48:51.882Z",
     "title": "Accuracy of effect size estimates from published psychological research ",
     "link_to_resource": "https://doi.org/10.1080/00221309.2011.604365",

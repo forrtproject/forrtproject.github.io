@@ -1,5 +1,4 @@
 {
-    "exclude": "",
     "timestamp": "10/23/2023 12:18:05",
     "title": "Is Preregistration Worthwhile?",
     "link_to_resource": "https://doi.org/10.1016/j.tics.2019.11.009",

@@ -1,5 +1,4 @@
 {
-    "exclude": "",
     "timestamp": "01/01/2020",
     "title": "Project Organization and Management for Genomics",
     "link_to_resource": "https://datacarpentry.org/organization-genomics/",

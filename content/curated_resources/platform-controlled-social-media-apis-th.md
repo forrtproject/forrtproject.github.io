@@ -1,5 +1,4 @@
 {
-    "exclude": "",
     "timestamp": "11/6/2023 12:14:21",
     "title": "Platform-controlled social media APIs threaten open science",
     "link_to_resource": "https://doi.org/10.1038/s41562-023-01750-2",

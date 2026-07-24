@@ -1,5 +1,4 @@
 {
-    "exclude": "",
     "timestamp": "10/14/2021 13:48:05",
     "title": "History and Philosophy of Psychology",
     "link_to_resource": "https://osf.io/73zyu/",

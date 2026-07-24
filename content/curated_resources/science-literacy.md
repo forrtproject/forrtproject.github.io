@@ -1,5 +1,4 @@
 {
-    "exclude": "",
     "timestamp": "10/25/2020 3:00:22",
     "title": "Science Literacy",
     "link_to_resource": "https://www.coursera.org/learn/science-literacy",

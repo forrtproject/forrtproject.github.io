@@ -1,5 +1,4 @@
 {
-    "exclude": "",
     "timestamp": "01/01/2020",
     "title": "Jupyter Notebooks with R & Git",
     "link_to_resource": "https://vickysteeves.gitlab.io/jupyteR-git/",

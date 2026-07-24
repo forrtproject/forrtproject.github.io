@@ -1,5 +1,4 @@
 {
-    "exclude": "",
     "timestamp": "10/14/2021 12:39:00",
     "title": "Replicability syllabus (2018)",
     "link_to_resource": "https://osf.io/xs89g/",

@@ -1,5 +1,4 @@
 {
-    "exclude": "",
     "timestamp": "10/14/2021 17:19:55",
     "title": "Psychology\u2019s Credibility Revolution",
     "link_to_resource": "https://osf.io/9v2sy/",

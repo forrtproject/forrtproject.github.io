@@ -1,5 +1,4 @@
 {
-    "exclude": "",
     "timestamp": "7/16/2025 4:52:47",
     "title": "The Web of Schizotypal Personality Traits: Frequentist Network Replication and Bayesian Network Re-Analysis",
     "link_to_resource": "https://osf.io/4buha/",

@@ -1,5 +1,4 @@
 {
-    "exclude": "",
     "timestamp": "1/12/2025 10:14:27",
     "title": "Positionality statements in science",
     "link_to_resource": "https://doi.org/10.12688/openreseurope.17058.2",

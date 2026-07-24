@@ -1,5 +1,4 @@
 {
-    "exclude": "",
     "timestamp": "01/01/2020",
     "title": "OpenAccess.net",
     "link_to_resource": "https://open-access.network/en/home",

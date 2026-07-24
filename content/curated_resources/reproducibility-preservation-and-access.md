@@ -1,5 +1,4 @@
 {
-    "exclude": "",
     "timestamp": "01/01/2020",
     "title": "Reproducibility, Preservation, and Access to Research with ReproZip and ReproServer",
     "link_to_resource": "https://zenodo.org/record/3612732",

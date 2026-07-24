@@ -1,5 +1,4 @@
 {
-    "exclude": "",
     "timestamp": "10/9/2023 10:41:03",
     "title": "Equity, transparency, and accountability: Open science for the 21st century",
     "link_to_resource": "https://doi.org/10.1016/S0140-6736(23)01575-1",

@@ -1,5 +1,4 @@
 {
-    "exclude": "",
     "timestamp": "8/28/2023 9:31:45",
     "title": "The trustworthiness of the cumulative knowledge in industrial/organizational psychology: The current state of affairs and a path forward",
     "link_to_resource": "https://doi.org/10.1016/j.actpsy.2023.104005",

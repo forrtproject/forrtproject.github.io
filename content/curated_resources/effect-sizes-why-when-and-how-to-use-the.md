@@ -1,5 +1,4 @@
 {
-    "exclude": "",
     "timestamp": "2020-06-07T19:29:25.553Z",
     "title": "Effect Sizes: Why, When, and How to Use Them",
     "link_to_resource": "https://doi.org/10.1027/0044-3409.217.1.6",

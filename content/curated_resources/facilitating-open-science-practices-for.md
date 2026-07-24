@@ -1,5 +1,4 @@
 {
-    "exclude": "",
     "timestamp": "10/27/2023 13:42:39",
     "title": "Facilitating open science practices for research syntheses: PreregRS guides preregistration",
     "link_to_resource": "https://doi.org/10.1002/jrsm.1540",

@@ -1,5 +1,4 @@
 {
-    "exclude": "",
     "timestamp": "01/01/2020",
     "title": "Reproducibility for Everyone",
     "link_to_resource": "https://www.repro4everyone.org/resources",

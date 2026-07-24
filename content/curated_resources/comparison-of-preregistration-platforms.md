@@ -1,5 +1,4 @@
 {
-    "exclude": "",
     "timestamp": "12/18/2023 17:16:36",
     "title": "Comparison of Preregistration Platforms",
     "link_to_resource": "https://doi.org/10.31222/osf.io/zry2u",

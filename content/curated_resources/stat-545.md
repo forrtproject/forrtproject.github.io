@@ -1,5 +1,4 @@
 {
-    "exclude": "",
     "timestamp": "2020-05-11T10:21:15.633Z",
     "title": "Stat 545",
     "link_to_resource": "https://stat545.com/",

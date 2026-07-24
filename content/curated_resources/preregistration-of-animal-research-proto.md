@@ -1,5 +1,4 @@
 {
-    "exclude": "",
     "timestamp": "10/27/2023 15:04:14",
     "title": "Preregistration of animal research protocols: development and 3-year overview of preclinicaltrials.eu",
     "link_to_resource": "https://doi.org/10.1136%2Fbmjos-2021-100259",

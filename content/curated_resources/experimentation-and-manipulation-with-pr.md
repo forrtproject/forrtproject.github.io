@@ -1,5 +1,4 @@
 {
-    "exclude": "",
     "timestamp": "12/14/2023 13:37:17",
     "title": "Experimentation and manipulation with preregistration",
     "link_to_resource": "https://doi.org/10.1016/j.geb.2021.09.002",

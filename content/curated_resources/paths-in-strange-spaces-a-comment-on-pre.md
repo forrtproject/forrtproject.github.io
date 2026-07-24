@@ -1,5 +1,4 @@
 {
-    "exclude": "",
     "timestamp": "10/10/2023 13:53:04",
     "title": "Paths in strange spaces: A comment on preregistration",
     "link_to_resource": "https://doi.org/10.31234/osf.io/wxn58",

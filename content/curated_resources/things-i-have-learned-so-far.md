@@ -1,5 +1,4 @@
 {
-    "exclude": "",
     "timestamp": "2020-06-06T19:01:12.709Z",
     "title": "Things I have learned (so far)",
     "link_to_resource": "https://doi.org/10.1037/10109-028",

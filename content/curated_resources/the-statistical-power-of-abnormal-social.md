@@ -1,5 +1,4 @@
 {
-    "exclude": "",
     "timestamp": "2020-05-26T15:33:31.079Z",
     "title": "The statistical power of abnormal-social psychological research: A review. ",
     "link_to_resource": "https://doi.org/10.1037/h0045186",

@@ -1,5 +1,4 @@
 {
-    "exclude": "",
     "timestamp": "10/14/2021 16:06:17",
     "title": "Procedimentos para investiga\u00e7\u00e3o cient\u00edfica",
     "link_to_resource": "https://osf.io/4gwd2/",

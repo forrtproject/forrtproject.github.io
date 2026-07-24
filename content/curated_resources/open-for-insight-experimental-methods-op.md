@@ -1,5 +1,4 @@
 {
-    "exclude": "",
     "timestamp": "10/14/2021 16:02:43",
     "title": "Open for Insight (Experimental Methods + Open Science)",
     "link_to_resource": "https://osf.io/qstmv/",

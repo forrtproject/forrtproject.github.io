@@ -1,5 +1,4 @@
 {
-    "exclude": "",
     "timestamp": "2020-06-06T18:59:43.953Z",
     "title": "Mindless statistics",
     "link_to_resource": "https://doi.org/10.1016/j.socec.2004.09.033",

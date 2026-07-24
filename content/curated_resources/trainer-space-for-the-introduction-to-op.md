@@ -1,5 +1,4 @@
 {
-    "exclude": "",
     "timestamp": "01/01/2020",
     "title": "Trainer Space for the Introduction to Open and Reproducible Research Workshop",
     "link_to_resource": "https://osf.io/qsb2c/",

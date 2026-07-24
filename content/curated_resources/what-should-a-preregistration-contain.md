@@ -1,5 +1,4 @@
 {
-    "exclude": "",
     "timestamp": "12/18/2023 17:19:20",
     "title": "What should a preregistration contain?",
     "link_to_resource": "https://doi.org/10.31234/osf.io/cj5mh",

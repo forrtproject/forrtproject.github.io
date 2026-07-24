@@ -1,5 +1,4 @@
 {
-    "exclude": "",
     "timestamp": "10/14/2021 16:09:19",
     "title": "Methodological Advances in Behavioral Research: Crowdsourcing Science",
     "link_to_resource": "https://osf.io/78s5c/",

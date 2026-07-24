@@ -1,5 +1,4 @@
 {
-    "exclude": "",
     "timestamp": "2020-06-09T16:42:32.077Z",
     "title": "Der Umgang mit Forschungsdaten im Fach Psychologie: Konkretisierung der DFG-Leitlinien. [Data Management in Psychological Science: Specification of the DFG Guidelines].",
     "link_to_resource": "https://psyarxiv.com/vhx89/",

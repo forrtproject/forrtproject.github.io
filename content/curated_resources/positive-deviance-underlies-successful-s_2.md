@@ -1,5 +1,4 @@
 {
-    "exclude": "",
     "timestamp": "2/27/2025 3:32:51",
     "title": "Positive Deviance Underlies Successful Science: Normative Methodologies Risk Throwing out the Baby With the Bathwater",
     "link_to_resource": "https://doi.org/10.1177/10892680241235120",

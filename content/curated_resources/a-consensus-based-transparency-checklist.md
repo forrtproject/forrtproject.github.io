@@ -1,5 +1,4 @@
 {
-    "exclude": "",
     "timestamp": "01/01/2020",
     "title": "A consensus-based transparency checklist",
     "link_to_resource": "https://www.nature.com/articles/s41562-019-0772-6",

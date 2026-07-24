@@ -1,5 +1,4 @@
 {
-    "exclude": "",
     "timestamp": "11/1/2023 8:55:39",
     "title": "Beyond kindness: A proposal for the flourishing of science and scientists",
     "link_to_resource": "https://doi.org/10.31231/osf.io/4zrmd",

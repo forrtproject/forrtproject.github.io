@@ -1,5 +1,4 @@
 {
-    "exclude": "",
     "timestamp": "2020-05-22T19:33:08.534Z",
     "title": "A Vast Graveyard of Undead Theories: Publication Bias and Psychological Science\u2019s Aversion to the Null",
     "link_to_resource": "https://doi.org/10.1177/1745691612459059",

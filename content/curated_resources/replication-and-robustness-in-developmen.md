@@ -1,5 +1,4 @@
 {
-    "exclude": "",
     "timestamp": "2020-05-24T12:06:33.029Z",
     "title": "Replication and Robustness in Developmental Research",
     "link_to_resource": "https://doi.org/10.1037/a0037996",

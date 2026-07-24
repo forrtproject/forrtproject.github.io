@@ -1,5 +1,4 @@
 {
-    "exclude": "",
     "timestamp": "01/01/2020",
     "title": "Impact of genetic background and experimental reproducibility on identifying chemical compounds with robust longevity effects",
     "link_to_resource": "https://www.nature.com/articles/ncomms14256",

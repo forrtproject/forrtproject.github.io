@@ -1,5 +1,4 @@
 {
-    "exclude": "",
     "timestamp": "01/01/2020",
     "title": "Research practices and statistical reporting quality in 250 economic psychology master's theses: a meta-research investigation",
     "link_to_resource": "https://doi.org/10.1098/rsos.190738",

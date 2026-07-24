@@ -1,5 +1,4 @@
 {
-    "exclude": "",
     "timestamp": "01/01/2020",
     "title": "Library Carpentry: SQL",
     "link_to_resource": "https://librarycarpentry.org/lc-sql/",

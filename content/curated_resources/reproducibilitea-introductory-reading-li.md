@@ -1,5 +1,4 @@
 {
-    "exclude": "",
     "timestamp": "6/25/2025 13:09:57",
     "title": "ReproducibiliTea Introductory Reading List",
     "link_to_resource": "https://osf.io/qxbcs",

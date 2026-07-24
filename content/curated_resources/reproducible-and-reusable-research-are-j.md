@@ -1,5 +1,4 @@
 {
-    "exclude": "",
     "timestamp": "01/01/2020",
     "title": "Reproducible and reusable research: are journal data sharing policies meeting the mark?",
     "link_to_resource": "https://peerj.com/articles/3208/",

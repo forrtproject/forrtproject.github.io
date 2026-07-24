@@ -1,5 +1,4 @@
 {
-    "exclude": "",
     "timestamp": "2020-06-09T16:16:56.514Z",
     "title": "Opening Science",
     "link_to_resource": "http://doi.org/10.1007/978-3-319-00026-8",

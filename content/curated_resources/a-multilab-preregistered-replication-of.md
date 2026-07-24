@@ -1,5 +1,4 @@
 {
-    "exclude": "",
     "timestamp": "2020-06-08T18:28:49.937Z",
     "title": "A multilab preregistered replication of the ego-depletion effect.",
     "link_to_resource": "https://doi.org/10.1177/1745691616652873",

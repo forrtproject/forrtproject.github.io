@@ -1,5 +1,4 @@
 {
-    "exclude": "",
     "timestamp": "7/22/2026 2:46:56",
     "title": "Samply",
     "link_to_resource": "https://samply.uni-konstanz.de",

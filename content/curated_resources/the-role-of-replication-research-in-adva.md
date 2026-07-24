@@ -1,5 +1,4 @@
 {
-    "exclude": "",
     "timestamp": "01/01/2020",
     "title": "The Role Of Replication Research In Advancing Gerontological Science: Trajectories, Transitions, And Typologies",
     "link_to_resource": "https://doi.org/10.1093/geroni/igy023.2906",

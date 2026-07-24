@@ -1,5 +1,4 @@
 {
-    "exclude": "",
     "timestamp": "01/01/2020",
     "title": "Preregistration Overview page",
     "link_to_resource": "https://www.cos.io/initiatives/prereg",

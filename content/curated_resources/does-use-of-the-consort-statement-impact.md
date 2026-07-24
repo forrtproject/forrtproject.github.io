@@ -1,5 +1,4 @@
 {
-    "exclude": "",
     "timestamp": "01/01/2020",
     "title": "Does use of the CONSORT Statement impact the completeness of reporting of randomised controlled trials published in medical journals? A Cochrane reviewa",
     "link_to_resource": "https://systematicreviewsjournal.biomedcentral.com/articles/10.1186/2046-4053-1-60",

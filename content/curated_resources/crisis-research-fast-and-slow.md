@@ -1,5 +1,4 @@
 {
-    "exclude": "",
     "timestamp": "10/31/2020 13:20:41",
     "title": "Crisis research, fast and slow",
     "link_to_resource": "http://www.the100.ci/2020/03/26/crisis-research-fast-and-slow/",

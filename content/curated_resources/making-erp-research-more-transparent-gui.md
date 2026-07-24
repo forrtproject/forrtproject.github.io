@@ -1,5 +1,4 @@
 {
-    "exclude": "",
     "timestamp": "10/27/2023 13:52:52",
     "title": "Making ERP research more transparent: Guidelines for preregistration",
     "link_to_resource": "https://doi.org/10.1016/j.ijpsycho.2021.02.016",

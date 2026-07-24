@@ -1,5 +1,4 @@
 {
-    "exclude": "",
     "timestamp": "1/16/2025 4:01:55",
     "title": "Consolidated Reporting Guidelines for Prognostic and Diagnostic Machine Learning Models (CREMLS)",
     "link_to_resource": "https://doi.org/10.2196/52508",

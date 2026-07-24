@@ -1,5 +1,4 @@
 {
-    "exclude": "",
     "timestamp": "01/01/2020",
     "title": "R for Social Scientists",
     "link_to_resource": "https://datacarpentry.org/r-socialsci/",

@@ -1,5 +1,4 @@
 {
-    "exclude": "",
     "timestamp": "3/20/2025 15:36:35",
     "title": "Opening up understanding of neurodiversity: A call for applying participatory and open scholarship practices ",
     "link_to_resource": "https://doi.org/10.53841/bpscog.2023.1.8.23",

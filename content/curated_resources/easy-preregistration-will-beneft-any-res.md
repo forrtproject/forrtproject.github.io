@@ -1,5 +1,4 @@
 {
-    "exclude": "",
     "timestamp": "2020-06-04T19:29:29.055Z",
     "title": "Easy preregistration will beneft any research",
     "link_to_resource": "https://doi.org/10.1038/s41562-018-0294-7",

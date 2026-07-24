@@ -1,5 +1,4 @@
 {
-    "exclude": "",
     "timestamp": "10/14/2021 13:39:53",
     "title": "Quantitative Emerging Practices and Methods in Psychology",
     "link_to_resource": "https://osf.io/k7bfc/",

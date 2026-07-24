@@ -1,5 +1,4 @@
 {
-    "exclude": "",
     "timestamp": "10/27/2023 14:26:47",
     "title": "Premiering pre-registration at PLOS Biology",
     "link_to_resource": "https://doi.org/10.1371/journal.pbio.3001611",

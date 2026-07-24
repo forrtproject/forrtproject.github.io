@@ -1,5 +1,4 @@
 {
-    "exclude": "",
     "timestamp": "01/01/2020",
     "title": "Replicability and Reproducibility in Comparative Psychology",
     "link_to_resource": "https://doi.org/10.3389/fpsyg.2017.00862",

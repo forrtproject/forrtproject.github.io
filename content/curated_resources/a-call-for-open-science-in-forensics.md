@@ -1,5 +1,4 @@
 {
-    "exclude": "",
     "timestamp": "12/19/2024 9:27:04",
     "title": "A call for open science in forensics",
     "link_to_resource": "https://doi.org/10.1073/pnas.2321809121",

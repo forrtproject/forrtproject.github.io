@@ -1,5 +1,4 @@
 {
-    "exclude": "",
     "timestamp": "2020-08-06T12:27:08.954Z",
     "title": "Intellectual humility is central to science",
     "link_to_resource": "https://psyarxiv.com/edh2s/",

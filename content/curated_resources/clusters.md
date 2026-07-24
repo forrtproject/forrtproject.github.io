@@ -1,5 +1,4 @@
 {
-    "exclude": "",
     "timestamp": "3/8/2025 15:43:17",
     "title": "Clusters",
     "link_to_resource": "https://forrt.org/clusters/",

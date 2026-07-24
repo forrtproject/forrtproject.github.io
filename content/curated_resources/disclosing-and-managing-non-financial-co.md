@@ -1,5 +1,4 @@
 {
-    "exclude": "",
     "timestamp": "8/28/2023 9:41:35",
     "title": "Disclosing and Managing Non-Financial Conflicts of Interest in Scientific Publications",
     "link_to_resource": "https://doi.org/10.1177%2F17470161221148387",

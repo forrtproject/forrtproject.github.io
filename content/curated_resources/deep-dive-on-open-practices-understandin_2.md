@@ -1,5 +1,4 @@
 {
-    "exclude": "",
     "timestamp": "01/01/2020",
     "title": "Deep Dive on Open Practices: Understanding Preregistration with Scott Peters & Karen Rambo-Hernandez",
     "link_to_resource": "https://www.youtube.com/watch?v=Noaux1daasg",

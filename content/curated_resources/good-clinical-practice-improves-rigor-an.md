@@ -1,5 +1,4 @@
 {
-    "exclude": "",
     "timestamp": "10/27/2023 10:52:12",
     "title": "Good clinical practice improves rigor and transparency: Lessons from the ACTIVE trial",
     "link_to_resource": "https://doi.org/10.1037/pag0000653",

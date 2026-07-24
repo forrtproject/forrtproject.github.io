@@ -1,5 +1,4 @@
 {
-    "exclude": "",
     "timestamp": "1/13/2025 7:12:16",
     "title": "Investigating the nature of open science practices across complementary, alternative, and integrative medicine journals: An audit",
     "link_to_resource": "https://doi.org/10.1371/journal.pone.0302655",

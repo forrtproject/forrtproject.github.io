@@ -1,5 +1,4 @@
 {
-    "exclude": "",
     "timestamp": "6/30/2025 13:21:50",
     "title": "Critical Metascience Articles",
     "link_to_resource": "https://sites.google.com/site/markrubinsocialpsychresearch/replication-crisis/list-of-critical-metascience-articles",

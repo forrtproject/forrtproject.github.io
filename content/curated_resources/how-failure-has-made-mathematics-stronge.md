@@ -1,5 +1,4 @@
 {
-    "exclude": "",
     "timestamp": "1/9/2025 10:10:11",
     "title": "How Failure Has Made Mathematics Stronger",
     "link_to_resource": "https://www.quantamagazine.org/how-failure-has-made-mathematics-stronger-20240522/",

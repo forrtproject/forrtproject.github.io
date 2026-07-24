@@ -1,5 +1,4 @@
 {
-    "exclude": "",
     "timestamp": "01/01/2020",
     "title": "Open Science in Latin America",
     "link_to_resource": "https://www.youtube.com/watch?v=WwZH2MCz-q0",

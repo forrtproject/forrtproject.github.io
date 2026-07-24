@@ -1,5 +1,4 @@
 {
-    "exclude": "",
     "timestamp": "3/15/2025 10:43:02",
     "title": "Shifting the culture of peer review with Reviewer Zero",
     "link_to_resource": "https://forrt.org/educators-corner/016-reviewer-zero/",

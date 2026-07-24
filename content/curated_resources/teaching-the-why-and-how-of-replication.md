@@ -1,5 +1,4 @@
 {
-    "exclude": "",
     "timestamp": "3/13/2025 12:56:15",
     "title": "Teaching the why and how of replication studies",
     "link_to_resource": "https://forrt.org/educators-corner/004-teaching-why-how-replication/",

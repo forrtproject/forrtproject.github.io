@@ -1,5 +1,4 @@
 {
-    "exclude": "",
     "timestamp": "2/20/2025 5:16:02",
     "title": "Science of psychological phenomena and their testing.",
     "link_to_resource": "https://doi.org/10.1037/amp0001362",

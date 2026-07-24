@@ -1,5 +1,4 @@
 {
-    "exclude": "",
     "timestamp": "2020-05-22T18:43:10.415Z",
     "title": "Teaching replication",
     "link_to_resource": "https://doi.org/10.1177/1745691612460686",

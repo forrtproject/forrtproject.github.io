@@ -1,5 +1,4 @@
 {
-    "exclude": "",
     "timestamp": "2/13/2025 6:32:11",
     "title": "The societal impact of Open Science: a scoping review",
     "link_to_resource": "https://doi.org/10.1098/rsos.240286",

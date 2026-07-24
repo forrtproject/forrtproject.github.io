@@ -1,5 +1,4 @@
 {
-    "exclude": "",
     "timestamp": "2020-05-29T18:30:35.236Z",
     "title": "Practical Solutions for Sharing Data and Materials From Psychological Research",
     "link_to_resource": "https://doi.org/10.1177/2515245917746500",

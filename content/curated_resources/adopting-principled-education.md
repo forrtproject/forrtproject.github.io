@@ -1,5 +1,4 @@
 {
-    "exclude": "",
     "timestamp": "3/13/2025 11:58:44",
     "title": "Adopting Principled Education",
     "link_to_resource": "https://forrt.org/adopting/",

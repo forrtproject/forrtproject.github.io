@@ -1,5 +1,4 @@
 {
-    "exclude": "",
     "timestamp": "12/12/2024 8:54:14",
     "title": "Building reproducible bridges to cross the \u201cvalley of death\u201d",
     "link_to_resource": "https://doi.org/10.1172/JCI177383",

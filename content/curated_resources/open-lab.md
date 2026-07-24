@@ -1,5 +1,4 @@
 {
-    "exclude": "",
     "timestamp": "7/22/2026 2:48:49",
     "title": "Open Lab ",
     "link_to_resource": "https://research.open-lab.online/",

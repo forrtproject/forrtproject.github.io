@@ -1,5 +1,4 @@
 {
-    "exclude": "",
     "timestamp": "2/20/2025 5:24:04",
     "title": "The costs of competition in distributing scarce research funds",
     "link_to_resource": "https://doi.org/10.1073/pnas.2407644121",

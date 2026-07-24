@@ -1,5 +1,4 @@
 {
-    "exclude": "",
     "timestamp": "10/14/2021 17:22:25",
     "title": "Reproducibility in Psychology Syllabus",
     "link_to_resource": "https://osf.io/xpe6c/",

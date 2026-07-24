@@ -1,5 +1,4 @@
 {
-    "exclude": "",
     "timestamp": "3/17/2025 8:06:32",
     "title": "Open Qualitative Research: A Primer from UKRN",
     "link_to_resource": "https://osf.io/preprints/osf/kje7r_v1",

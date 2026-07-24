@@ -1,5 +1,4 @@
 {
-    "exclude": "",
     "timestamp": "6/10/2025 12:14:35",
     "title": "Error Tight: Exercises for Lab Groups to Prevent Research Mistakes",
     "link_to_resource": "https://doi.org/10.1037/met0000547",

@@ -1,5 +1,4 @@
 {
-    "exclude": "",
     "timestamp": "10/14/2021 12:35:58",
     "title": "Open Science and Methodological Improvements",
     "link_to_resource": "https://osf.io/jvsbg/",

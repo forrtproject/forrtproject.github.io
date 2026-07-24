@@ -1,5 +1,4 @@
 {
-    "exclude": "",
     "timestamp": "4/8/2025 9:22:49",
     "title": "From mental-health breakfast interventions to evidence-based practice",
     "link_to_resource": "https://forrt.org/pedagogies/004-thomas-rhys-evans/",

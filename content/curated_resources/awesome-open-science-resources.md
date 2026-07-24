@@ -1,5 +1,4 @@
 {
-    "exclude": "",
     "timestamp": "01/01/2020",
     "title": "Awesome Open Science Resources",
     "link_to_resource": "https://github.com/asoplata/open-science-resources",

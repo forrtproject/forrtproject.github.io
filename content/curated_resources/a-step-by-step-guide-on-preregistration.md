@@ -1,5 +1,4 @@
 {
-    "exclude": "",
     "timestamp": "10/27/2023 16:10:10",
     "title": "A step-by-step guide on preregistration and effective data sharing for psychopathology research",
     "link_to_resource": "https://doi.org/10.1037/abn0000424",

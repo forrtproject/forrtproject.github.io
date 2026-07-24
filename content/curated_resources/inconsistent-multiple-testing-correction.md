@@ -1,5 +1,4 @@
 {
-    "exclude": "",
     "timestamp": "2/27/2025 4:12:56",
     "title": "Inconsistent multiple testing corrections: The fallacy of using family-based error rates to make inferences about individual hypotheses",
     "link_to_resource": "https://doi.org/10.1016/j.metip.2024.100140",

@@ -1,5 +1,4 @@
 {
-    "exclude": "",
     "timestamp": "2020-06-08T18:10:23.082Z",
     "title": "A Duty to Describe: Better the Devil You Know Than the Devil You Don't",
     "link_to_resource": "https://doi.org/10.1177/1745691614551749",

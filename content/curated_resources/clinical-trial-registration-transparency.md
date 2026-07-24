@@ -1,5 +1,4 @@
 {
-    "exclude": "",
     "timestamp": "10/30/2023 13:51:38",
     "title": "Clinical trial registration: transparency is the watchword",
     "link_to_resource": "https://doi.org/10.1016/S0140-6736(06)68708-4",

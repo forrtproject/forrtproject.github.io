@@ -1,5 +1,4 @@
 {
-    "exclude": "",
     "timestamp": "2020-06-08T18:07:14.930Z",
     "title": "Logical and methodological issues affecting genetic studies of humans reported in top neuroscience journals. ",
     "link_to_resource": "https://doi.org/10.1162/jocn_a_01192",

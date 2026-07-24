@@ -1,5 +1,4 @@
 {
-    "exclude": "",
     "timestamp": "10/27/2023 15:25:06",
     "title": "How can preregistration contribute to research in our field?",
     "link_to_resource": "https://doi.org/10.1080/23743603.2015.1070611",

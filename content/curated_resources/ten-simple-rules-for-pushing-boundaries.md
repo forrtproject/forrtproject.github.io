@@ -1,5 +1,4 @@
 {
-    "exclude": "",
     "timestamp": "2/20/2025 5:47:25",
     "title": "Ten simple rules for pushing boundaries of inclusion at academic events",
     "link_to_resource": "https://doi.org/10.1371/journal.pcbi.1011797",

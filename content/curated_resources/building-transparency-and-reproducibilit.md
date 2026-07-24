@@ -1,5 +1,4 @@
 {
-    "exclude": "",
     "timestamp": "12/19/2024 6:48:32",
     "title": "Building transparency and reproducibility into the practice of pharmacoepidemiology and outcomes research",
     "link_to_resource": "https://doi.org/10.1093/aje/kwae087",

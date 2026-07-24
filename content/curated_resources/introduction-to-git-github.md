@@ -1,5 +1,4 @@
 {
-    "exclude": "",
     "timestamp": "01/01/2020",
     "title": "Introduction to Git & GitHub",
     "link_to_resource": "https://nyu-dataservices.github.io/Intro-Git-GitHub/#/",

@@ -1,5 +1,4 @@
 {
-    "exclude": "",
     "timestamp": "10/30/2023 12:28:21",
     "title": "Tie my hands loosely: Pre-analysis plans in political science",
     "link_to_resource": "https://doi.org/10.1017/pls.2021.23",

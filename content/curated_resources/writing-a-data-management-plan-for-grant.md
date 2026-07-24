@@ -1,5 +1,4 @@
 {
-    "exclude": "",
     "timestamp": "01/01/2020",
     "title": "Writing a Data Management Plan for Grant Applications",
     "link_to_resource": "https://nyu-dataservices.github.io/WritingDMP-GrantApplications/#/",

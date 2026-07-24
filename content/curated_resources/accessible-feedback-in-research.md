@@ -1,5 +1,4 @@
 {
-    "exclude": "",
     "timestamp": "3/15/2025 10:55:37",
     "title": "Accessible Feedback in Research",
     "link_to_resource": "https://forrt.org/educators-corner/018-accessible-feedback-in-research/",

@@ -1,5 +1,4 @@
 {
-    "exclude": "",
     "timestamp": "2020-05-16T11:34:46.639Z",
     "title": "Open science: many hands make light work",
     "link_to_resource": "https://jiscpodcast.libsyn.com/open-science-many-hands-make-light-work",

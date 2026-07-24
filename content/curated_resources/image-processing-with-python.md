@@ -1,5 +1,4 @@
 {
-    "exclude": "",
     "timestamp": "01/01/2020",
     "title": "Image Processing with Python",
     "link_to_resource": "https://datacarpentry.org/image-processing/",

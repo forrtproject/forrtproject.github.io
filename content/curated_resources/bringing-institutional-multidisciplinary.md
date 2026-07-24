@@ -1,5 +1,4 @@
 {
-    "exclude": "",
     "timestamp": "11/6/2023 12:16:51",
     "title": "Bringing institutional multidisciplinary repositories into the FAIR picture",
     "link_to_resource": "https://doi.org/10.1038/s41597-023-02652-8",

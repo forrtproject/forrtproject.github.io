@@ -1,5 +1,4 @@
 {
-    "exclude": "",
     "timestamp": "10/23/2023 13:02:58",
     "title": "Our data, ourselves: A framework for using emotion in qualitative analysis",
     "link_to_resource": "https://doi.org/10.1080/09518398.2020.1760393",

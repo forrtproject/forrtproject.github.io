@@ -1,5 +1,4 @@
 {
-    "exclude": "",
     "timestamp": "01/01/2020",
     "title": "The effect of publishing peer review reports on referee behavior in five scholarly journals",
     "link_to_resource": "https://www.nature.com/articles/s41467-018-08250-2",

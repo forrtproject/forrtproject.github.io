@@ -1,5 +1,4 @@
 {
-    "exclude": "",
     "timestamp": "2/20/2025 5:56:19",
     "title": "Conflicting Results and Statistical Malleability: Embracing Pluralism of Empirical Results",
     "link_to_resource": "https://doi.org/10.1162/posc_a_00627",

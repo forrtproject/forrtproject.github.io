@@ -1,5 +1,4 @@
 {
-    "exclude": "",
     "timestamp": "01/01/2020",
     "title": "Statistics and Quantitative Methods Example Videos for Teaching",
     "link_to_resource": "https://osf.io/zc89h/",

@@ -1,5 +1,4 @@
 {
-    "exclude": "",
     "timestamp": "2/13/2025 9:52:22",
     "title": "Open Scholarship Norms Among Education Researchers",
     "link_to_resource": "https://doi.org/10.17605/OSF.IO/NSBR3",

@@ -1,5 +1,4 @@
 {
-    "exclude": "",
     "timestamp": "12/12/2024 9:22:46",
     "title": "Pubcompare : The largest database of trusted experimental protocols",
     "link_to_resource": "https://www.pubcompare.ai/",

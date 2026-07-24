@@ -1,5 +1,4 @@
 {
-    "exclude": "",
     "timestamp": "01/01/2020",
     "title": "COS Registered Reports Portal",
     "link_to_resource": "https://www.cos.io/initiatives/registered-reports",

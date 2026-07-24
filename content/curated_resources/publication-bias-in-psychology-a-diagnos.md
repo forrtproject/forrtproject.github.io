@@ -1,5 +1,4 @@
 {
-    "exclude": "",
     "timestamp": "2020-05-26T14:44:04.818Z",
     "title": "Publication Bias in Psychology: A Diagnosis Based on the Correlation between Effect Size and Sample Size",
     "link_to_resource": "https://doi.org/10.1371/journal.pone.0105825",

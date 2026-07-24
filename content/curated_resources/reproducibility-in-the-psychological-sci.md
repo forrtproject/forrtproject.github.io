@@ -1,5 +1,4 @@
 {
-    "exclude": "",
     "timestamp": "10/14/2021 13:30:42",
     "title": "Reproducibility in the Psychological Sciences",
     "link_to_resource": "https://osf.io/c6ve4/",

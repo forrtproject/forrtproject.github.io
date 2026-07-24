@@ -1,5 +1,4 @@
 {
-    "exclude": "",
     "timestamp": "2020-05-15T13:07:53.560Z",
     "title": "Transparent and Open Social Science Research course",
     "link_to_resource": "https://www.bitss.org/mooc-parent-page/",

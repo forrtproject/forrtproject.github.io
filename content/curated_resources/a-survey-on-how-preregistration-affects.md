@@ -1,5 +1,4 @@
 {
-    "exclude": "",
     "timestamp": "12/18/2023 16:20:05",
     "title": "A survey on how preregistration affects the research workflow: better science but more work",
     "link_to_resource": "https://doi.org/10.1098/rsos.211997",

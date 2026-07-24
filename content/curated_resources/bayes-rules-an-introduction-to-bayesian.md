@@ -1,5 +1,4 @@
 {
-    "exclude": "",
     "timestamp": "11/21/2020 7:24:19",
     "title": "Bayes Rules! An Introduction to Bayesian Modelling in R",
     "link_to_resource": "https://www.bayesrulesbook.com/",

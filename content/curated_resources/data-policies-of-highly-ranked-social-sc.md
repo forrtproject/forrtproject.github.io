@@ -1,5 +1,4 @@
 {
-    "exclude": "",
     "timestamp": "01/01/2020",
     "title": "Data policies of highly-ranked social science journals",
     "link_to_resource": "https://osf.io/preprints/socarxiv/9h7ay/",

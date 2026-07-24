@@ -1,5 +1,4 @@
 {
-    "exclude": "",
     "timestamp": "2/13/2025 6:19:47",
     "title": "Champions of Transparency in Education: What Journal Reviewers Can Do to Encourage Open Science Practices",
     "link_to_resource": "https://doi.org/10.1177/00169862231184575",

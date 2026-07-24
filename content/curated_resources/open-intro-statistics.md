@@ -1,5 +1,4 @@
 {
-    "exclude": "",
     "timestamp": "2/8/2024 12:07:48",
     "title": "Open Intro Statistics\n",
     "link_to_resource": "https://www.openintro.org/book/os/",

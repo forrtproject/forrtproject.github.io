@@ -1,5 +1,4 @@
 {
-    "exclude": "",
     "timestamp": "2/27/2025 3:45:36",
     "title": "Reflection over compliance: Critiquing mandatory data sharing policies for qualitative research",
     "link_to_resource": "https://doi.org/10.1177/13591053231225903",

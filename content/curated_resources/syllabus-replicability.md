@@ -1,5 +1,4 @@
 {
-    "exclude": "",
     "timestamp": "6/12/2025 13:17:31",
     "title": "Syllabus replicability",
     "link_to_resource": "https://osf.io/staze",

@@ -1,5 +1,4 @@
 {
-    "exclude": "",
     "timestamp": "6/25/2024 4:36:36",
     "title": "Optimizing the methodology of human sleep and memory research",
     "link_to_resource": "https://www.nature.com/articles/s44159-023-00262-0",

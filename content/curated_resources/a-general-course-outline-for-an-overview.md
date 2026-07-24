@@ -1,5 +1,4 @@
 {
-    "exclude": "",
     "timestamp": "7/2/2025 12:48:31",
     "title": "A general course outline for an overview of Open Science",
     "link_to_resource": "https://sites.google.com/openscienceeducation.org/ose",

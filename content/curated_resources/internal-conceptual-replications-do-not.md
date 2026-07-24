@@ -1,5 +1,4 @@
 {
-    "exclude": "",
     "timestamp": "2020-06-01T18:56:40.604Z",
     "title": "Internal conceptual replications do not increase independent replication success",
     "link_to_resource": "https://doi.org/10.3758/s13423-016-1030-9",

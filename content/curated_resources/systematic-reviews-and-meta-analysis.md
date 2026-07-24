@@ -1,5 +1,4 @@
 {
-    "exclude": "",
     "timestamp": "10/18/2023 11:09:45",
     "title": "Systematic Reviews and Meta-Analysis",
     "link_to_resource": "https://oli.cmu.edu/courses/systematic-reviews-and-meta-analysis-o-f/",

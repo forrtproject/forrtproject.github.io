@@ -1,5 +1,4 @@
 {
-    "exclude": "",
     "timestamp": "6/12/2025 13:22:51",
     "title": "Research Methods in Psychology Syllabus (PSYC 190)",
     "link_to_resource": "https://osf.io/rah35",

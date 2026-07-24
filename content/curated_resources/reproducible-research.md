@@ -1,5 +1,4 @@
 {
-    "exclude": "",
     "timestamp": "01/01/2020",
     "title": "Reproducible Research",
     "link_to_resource": "https://github.com/IRCS-analysis-mini-courses/reproducible-research",

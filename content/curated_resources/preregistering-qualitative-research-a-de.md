@@ -1,5 +1,4 @@
 {
-    "exclude": "",
     "timestamp": "10/30/2023 13:35:43",
     "title": "Preregistering Qualitative Research: A Delphi Study",
     "link_to_resource": "https://doi.org/10.1177/1609406920976417",

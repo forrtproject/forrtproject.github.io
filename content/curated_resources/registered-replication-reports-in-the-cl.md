@@ -1,5 +1,4 @@
 {
-    "exclude": "",
     "timestamp": "2/28/2025 8:50:42",
     "title": "Registered Replication Reports in the Classroom",
     "link_to_resource": "https://doi.org/10.31234/osf.io/28fxd",

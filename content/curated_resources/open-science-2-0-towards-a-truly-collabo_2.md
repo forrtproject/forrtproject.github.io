@@ -1,5 +1,4 @@
 {
-    "exclude": "",
     "timestamp": "2/6/2025 9:23:37",
     "title": "Open Science 2.0: Towards a truly collaborative research ecosystem",
     "link_to_resource": "https://doi.org/10.1371/journal.pbio.3002362",

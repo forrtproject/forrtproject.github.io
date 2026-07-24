@@ -1,5 +1,4 @@
 {
-    "exclude": "",
     "timestamp": "2/13/2025 5:18:52",
     "title": "SIPS 2016 - What does diversity mean for open science?",
     "link_to_resource": "https://osf.io/jrshq/#!",

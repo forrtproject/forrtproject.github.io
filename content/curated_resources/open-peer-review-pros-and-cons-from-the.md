@@ -1,5 +1,4 @@
 {
-    "exclude": "",
     "timestamp": "10/16/2023 14:03:07",
     "title": "Open peer review, pros and cons from the perspective of an early career researcher",
     "link_to_resource": "https://doi.org/10.1128/mbio.01948-23",

@@ -1,5 +1,4 @@
 {
-    "exclude": "",
     "timestamp": "2/27/2025 5:23:43",
     "title": "Meta Docenia",
     "link_to_resource": "https://www.metadocencia.org/en/",

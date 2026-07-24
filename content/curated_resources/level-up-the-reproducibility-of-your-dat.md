@@ -1,5 +1,4 @@
 {
-    "exclude": "",
     "timestamp": "01/01/2020",
     "title": "Level up the reproducibility of your data and code! A 2-hour, hands-on workshop",
     "link_to_resource": "https://zenodo.org/record/3633147",

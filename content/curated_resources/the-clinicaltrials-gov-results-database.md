@@ -1,5 +1,4 @@
 {
-    "exclude": "",
     "timestamp": "12/18/2023 16:47:39",
     "title": "The ClinicalTrials.gov Results Database \u2014 Update and Key Issues",
     "link_to_resource": "https://doi.org/10.1056/NEJMsa1012065",

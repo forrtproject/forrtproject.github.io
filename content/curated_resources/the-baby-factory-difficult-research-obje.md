@@ -1,5 +1,4 @@
 {
-    "exclude": "",
     "timestamp": "2020-05-31T18:38:37.236Z",
     "title": "The Baby Factory: Difficult Research Objects, Disciplinary Standards, and the Production of Statistical Significance",
     "link_to_resource": "https://doi.org/10.1177/2378023115625071",

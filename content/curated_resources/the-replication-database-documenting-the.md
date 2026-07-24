@@ -1,5 +1,4 @@
 {
-    "exclude": "",
     "timestamp": "3/20/2025 15:10:05",
     "title": "The Replication Database: Documenting the Replicability of Psychological Science",
     "link_to_resource": "https://doi.org/10.5334/jopd.101",

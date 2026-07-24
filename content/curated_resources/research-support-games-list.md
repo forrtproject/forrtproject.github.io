@@ -1,5 +1,4 @@
 {
-    "exclude": "",
     "timestamp": "2/28/2025 4:09:51",
     "title": "Research Support Games List",
     "link_to_resource": "https://doi.org/10.6084/m9.figshare.16652701",

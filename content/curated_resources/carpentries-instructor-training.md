@@ -1,5 +1,4 @@
 {
-    "exclude": "",
     "timestamp": "01/01/2020",
     "title": "Carpentries Instructor Training",
     "link_to_resource": "https://zenodo.org/record/3258398#.XxcRK5NKjOQ",

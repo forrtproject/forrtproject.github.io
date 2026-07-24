@@ -1,5 +1,4 @@
 {
-    "exclude": "",
     "timestamp": "01/01/2020",
     "title": "Signaling the trustworthiness of science",
     "link_to_resource": "https://www.pnas.org/doi/10.1073/pnas.1913039116",

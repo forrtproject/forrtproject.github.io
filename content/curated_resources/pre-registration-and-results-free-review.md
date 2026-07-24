@@ -1,5 +1,4 @@
 {
-    "exclude": "",
     "timestamp": "10/30/2023 13:15:52",
     "title": "Pre-registration and Results-Free Review in Observational and Qualitative Research",
     "link_to_resource": "https://doi.org/10.1017/9781108762519.009",

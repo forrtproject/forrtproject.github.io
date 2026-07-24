@@ -1,5 +1,4 @@
 {
-    "exclude": "",
     "timestamp": "7/16/2025 4:13:43",
     "title": "Turtle and Hare Workshops: Exchanging software skills from beginner to experienced",
     "link_to_resource": "https://scipost.org/JRobustRep.0-Editorial",

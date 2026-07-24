@@ -1,5 +1,4 @@
 {
-    "exclude": "",
     "timestamp": "01/01/2020",
     "title": "lab.js Online research made easy",
     "link_to_resource": "https://lab.js.org/",

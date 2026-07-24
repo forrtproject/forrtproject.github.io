@@ -1,5 +1,4 @@
 {
-    "exclude": "",
     "timestamp": "10/14/2021 12:10:32",
     "title": "Campbell Open and Reproducible Science Syllabus",
     "link_to_resource": "https://osf.io/qbm89/",

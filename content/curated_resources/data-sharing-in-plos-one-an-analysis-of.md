@@ -1,5 +1,4 @@
 {
-    "exclude": "",
     "timestamp": "01/01/2020",
     "title": "Data sharing in PLOS ONE: An analysis of Data Availability Statements",
     "link_to_resource": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0194768",

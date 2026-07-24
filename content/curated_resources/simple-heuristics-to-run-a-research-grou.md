@@ -1,5 +1,4 @@
 {
-    "exclude": "",
     "timestamp": "2/27/2025 5:51:44",
     "title": "Simple heuristics to run a research group",
     "link_to_resource": "https://doi.org/10.1002/pchj.533",

@@ -1,5 +1,4 @@
 {
-    "exclude": "",
     "timestamp": "10/27/2023 10:19:58",
     "title": "Quality Indicators of Secondary Data Analyses in Special Education Research: A Preregistration Guide",
     "link_to_resource": "https://doi.org/10.1177/00144029221141029",

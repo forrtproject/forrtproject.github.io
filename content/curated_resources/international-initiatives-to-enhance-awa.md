@@ -1,5 +1,4 @@
 {
-    "exclude": "",
     "timestamp": "3/20/2025 16:06:14",
     "title": "International initiatives to enhance awareness and uptake of open research in psychology: a systematic mapping review",
     "link_to_resource": "https://doi.org/10.1098/rsos.241726",

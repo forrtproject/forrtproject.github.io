@@ -1,5 +1,4 @@
 {
-    "exclude": "",
     "timestamp": "2020-06-11T06:39:53.751Z",
     "title": "Making Prospective Registration of Observational Research a Reality",
     "link_to_resource": "https://doi.org/10.1126/scitranslmed.3007513",

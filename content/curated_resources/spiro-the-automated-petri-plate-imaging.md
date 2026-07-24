@@ -1,5 +1,4 @@
 {
-    "exclude": "",
     "timestamp": "12/12/2024 9:16:22",
     "title": "SPIRO \u2013 the automated Petri plate imaging platform designed by biologists, for biologists",
     "link_to_resource": "https://doi.org/10.1111/tpj.16587",

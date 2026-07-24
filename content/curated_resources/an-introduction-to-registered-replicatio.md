@@ -1,5 +1,4 @@
 {
-    "exclude": "",
     "timestamp": "2020-06-04T19:14:15.524Z",
     "title": "An Introduction to Registered Replication Reports at Perspectives on Psychological Science",
     "link_to_resource": "https://doi.org/10.1177/1745691614543974",

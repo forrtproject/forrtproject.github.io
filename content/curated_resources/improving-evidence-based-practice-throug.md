@@ -1,5 +1,4 @@
 {
-    "exclude": "",
     "timestamp": "10/30/2023 12:39:39",
     "title": "Improving evidence-based practice through preregistration of applied research: Barriers and recommendations",
     "link_to_resource": "https://doi.org/10.1080/08989621.2021.1969233",

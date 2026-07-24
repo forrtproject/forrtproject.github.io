@@ -1,5 +1,4 @@
 {
-    "exclude": "",
     "timestamp": "01/01/2020",
     "title": "Four simple recommendations to encourage best practices in research software",
     "link_to_resource": "https://f1000research.com/articles/6-876/v1",

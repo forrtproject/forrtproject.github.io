@@ -1,5 +1,4 @@
 {
-    "exclude": "",
     "timestamp": "01/01/2020",
     "title": "Reproducible Research Methods",
     "link_to_resource": "http://eriqande.github.io/rep-res-web/",

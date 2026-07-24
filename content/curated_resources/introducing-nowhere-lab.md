@@ -1,5 +1,4 @@
 {
-    "exclude": "",
     "timestamp": "3/13/2025 18:20:45",
     "title": "Introducing Nowhere Lab",
     "link_to_resource": "https://forrt.org/educators-corner/013-introducing-nowhere-lab/",

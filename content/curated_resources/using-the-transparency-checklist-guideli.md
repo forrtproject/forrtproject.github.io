@@ -1,5 +1,4 @@
 {
-    "exclude": "",
     "timestamp": "3/13/2025 12:41:09",
     "title": "Using the 'Transparency Checklist Guidelines' as an Educational tool",
     "link_to_resource": "https://forrt.org/educators-corner/002-transparencychecklist-balazsaczel/",

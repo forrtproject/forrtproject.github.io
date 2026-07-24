@@ -1,5 +1,4 @@
 {
-    "exclude": "",
     "timestamp": "01/01/2020",
     "title": "A Short Introduction to the Reproducibility Debate in Psychology",
     "link_to_resource": "https://doi.org/10.5334/jeps.469",

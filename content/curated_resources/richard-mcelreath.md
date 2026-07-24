@@ -1,5 +1,4 @@
 {
-    "exclude": "",
     "timestamp": "11/21/2020 7:21:40",
     "title": "Richard McElreath",
     "link_to_resource": "https://www.youtube.com/channel/UCNJK6_DZvcMqNSzQdEkzvzA/videos",

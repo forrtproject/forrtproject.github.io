@@ -1,5 +1,4 @@
 {
-    "exclude": "",
     "timestamp": "01/01/2020",
     "title": "TOP Guidelines",
     "link_to_resource": "https://www.cos.io/initiatives/top-guidelines",

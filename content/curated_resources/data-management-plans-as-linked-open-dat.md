@@ -1,5 +1,4 @@
 {
-    "exclude": "",
     "timestamp": "11/6/2023 12:30:02",
     "title": "Data management plans as linked open data: exploiting ARGOS FAIR and machine actionable outputs in the OpenAIRE research graph",
     "link_to_resource": "https://doi.org/10.1186/s13326-023-00297-5",

@@ -1,5 +1,4 @@
 {
-    "exclude": "",
     "timestamp": "2020-05-22T19:29:31.744Z",
     "title": "Facts Are More Important Than Novelty: Replication in the Education Sciences",
     "link_to_resource": "https://doi.org/10.3102/0013189X14545513",

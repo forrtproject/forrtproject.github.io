@@ -1,5 +1,4 @@
 {
-    "exclude": "",
     "timestamp": "2020-06-09T16:19:09.067Z",
     "title": "Transparent science: A more credible, reproducible, and publishable way to do science",
     "link_to_resource": "https://psyarxiv.com/7wkdn/",

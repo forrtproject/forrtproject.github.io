@@ -1,5 +1,4 @@
 {
-    "exclude": "",
     "timestamp": "01/01/2020",
     "title": "Use of the Journal Impact Factor in academic review, promotion, and tenure evaluations",
     "link_to_resource": "https://peerj.com/preprints/27638/",

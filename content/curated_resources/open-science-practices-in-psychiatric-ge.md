@@ -1,5 +1,4 @@
 {
-    "exclude": "",
     "timestamp": "12/18/2024 7:59:05",
     "title": "Open Science Practices in Psychiatric Genetics: A Primer",
     "link_to_resource": "https://doi.org/10.1016/j.bpsgos.2023.08.007",

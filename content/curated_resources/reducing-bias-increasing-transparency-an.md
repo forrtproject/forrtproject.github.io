@@ -1,5 +1,4 @@
 {
-    "exclude": "",
     "timestamp": "10/6/2023 12:51:16",
     "title": "Reducing bias, increasing transparency and calibrating confidence with preregistration",
     "link_to_resource": "https://doi.org/10.1038/s41562-022-01497-2",

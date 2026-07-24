@@ -1,5 +1,4 @@
 {
-    "exclude": "",
     "timestamp": "12/19/2024 4:25:57",
     "title": "The O3 guidelines: open data, open code, and open infrastructure for sustainable curated scientific resources\n",
     "link_to_resource": "https://doi.org/10.1038/s41597-024-03406-w",

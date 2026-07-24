@@ -1,5 +1,4 @@
 {
-    "exclude": "",
     "timestamp": "01/01/2020",
     "title": "Data Analysis and Visualization in Python for Ecologists",
     "link_to_resource": "https://datacarpentry.org/python-ecology-lesson/",

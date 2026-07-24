@@ -1,5 +1,4 @@
 {
-    "exclude": "",
     "timestamp": "01/01/2020",
     "title": "COMPare: a prospective cohort study correcting and monitoring 58 misreported trials in real time",
     "link_to_resource": "https://trialsjournal.biomedcentral.com/articles/10.1186/s13063-019-3173-2",

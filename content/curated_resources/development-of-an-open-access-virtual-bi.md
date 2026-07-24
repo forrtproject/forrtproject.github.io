@@ -1,5 +1,4 @@
 {
-    "exclude": "",
     "timestamp": "12/12/2024 8:28:03",
     "title": "Development of an open access, virtual bioinformatics lab for students in medical laboratory sciences",
     "link_to_resource": "https://doi.org/10.1093/ajcp/aqad166",

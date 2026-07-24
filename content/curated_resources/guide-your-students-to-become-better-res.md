@@ -1,5 +1,4 @@
 {
-    "exclude": "",
     "timestamp": "2020-05-08T06:02:18.000Z",
     "title": "Guide Your Students to Become Better Research Consumers",
     "link_to_resource": "https://www.psychologicalscience.org/observer/teach-your-students-to-be-better-consumers",

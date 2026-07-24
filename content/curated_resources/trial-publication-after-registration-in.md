@@ -1,5 +1,4 @@
 {
-    "exclude": "",
     "timestamp": "12/13/2023 15:27:54",
     "title": "Trial Publication after Registration in ClinicalTrials.Gov: A Cross-Sectional Analysis",
     "link_to_resource": "https://doi.org/10.1371/journal.pmed.1000144",

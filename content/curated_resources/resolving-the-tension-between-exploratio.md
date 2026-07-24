@@ -1,5 +1,4 @@
 {
-    "exclude": "",
     "timestamp": "01/01/2020",
     "title": "Resolving the Tension Between Exploration and Confirmation in Preclinical Biomedical Research",
     "link_to_resource": "https://doi.org/10.1007/164_2019_278",

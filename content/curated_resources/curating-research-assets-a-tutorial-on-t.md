@@ -1,5 +1,4 @@
 {
-    "exclude": "",
     "timestamp": "2020-05-22T19:20:06.810Z",
     "title": "Curating Research Assets: A Tutorial on the Git Version Control System",
     "link_to_resource": "https://doi.org/10.1177/2515245918754826",

@@ -1,5 +1,4 @@
 {
-    "exclude": "",
     "timestamp": "4/17/2026 9:48:59",
     "title": "Transform to Open Science",
     "link_to_resource": "https://forrt.org/Transform-to-Open-Science-Book/",

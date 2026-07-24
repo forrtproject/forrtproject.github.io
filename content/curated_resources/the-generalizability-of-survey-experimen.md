@@ -1,5 +1,4 @@
 {
-    "exclude": "",
     "timestamp": "2020-05-31T18:15:05.189Z",
     "title": "The Generalizability of Survey Experiments",
     "link_to_resource": "https://doi.org/10.1017/XPS.2015.19",

@@ -1,5 +1,4 @@
 {
-    "exclude": "",
     "timestamp": "1/16/2025 3:58:14",
     "title": "ZooTraits: An R shiny app for exploring animal trait data for ecological and evolutionary research",
     "link_to_resource": "https://doi.org/10.1002/ece3.11334",

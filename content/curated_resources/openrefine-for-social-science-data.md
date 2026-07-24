@@ -1,5 +1,4 @@
 {
-    "exclude": "",
     "timestamp": "01/01/2020",
     "title": "OpenRefine for Social Science Data",
     "link_to_resource": "https://datacarpentry.org/openrefine-socialsci/",

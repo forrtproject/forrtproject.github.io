@@ -1,5 +1,4 @@
 {
-    "exclude": "",
     "timestamp": "7/15/2025 8:43:44",
     "title": "Can You Trust the Data from Your Wearable? A Critical Evaluation of Heart Rate and HRV Accuracy",
     "link_to_resource": "https://onlinelibrary-wiley-com.utrechtuniversity.idm.oclc.org/doi/10.1111/psyp.70004",

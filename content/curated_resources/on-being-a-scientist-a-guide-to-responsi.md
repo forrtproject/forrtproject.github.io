@@ -1,5 +1,4 @@
 {
-    "exclude": "",
     "timestamp": "2/27/2025 4:08:19",
     "title": "On Being a Scientist - A Guide to Responsible Conduct in Research: Third Edition",
     "link_to_resource": "https://doi.org/10.17226/12192",

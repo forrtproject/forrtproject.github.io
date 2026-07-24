@@ -1,5 +1,4 @@
 {
-    "exclude": "",
     "timestamp": "12/5/2020 13:47:07",
     "title": "GGPlot Colors Best Tricks You Will Love",
     "link_to_resource": "https://www.datanovia.com/en/blog/ggplot-colors-best-tricks-you-will-love/",

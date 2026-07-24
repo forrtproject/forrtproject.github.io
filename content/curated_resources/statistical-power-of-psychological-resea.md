@@ -1,5 +1,4 @@
 {
-    "exclude": "",
     "timestamp": "2020-05-26T15:24:15.724Z",
     "title": "Statistical Power of Psychological Research: What Have We Gained in 20 Years?",
     "link_to_resource": "https://doi.org/10.1037//0022-006x.58.5.646",

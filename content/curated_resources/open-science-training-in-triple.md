@@ -1,5 +1,4 @@
 {
-    "exclude": "",
     "timestamp": "9/5/2023 10:31:31",
     "title": "Open Science Training in TRIPLE",
     "link_to_resource": "https://doi.org/10.12688%2Fopenreseurope.15430.2",

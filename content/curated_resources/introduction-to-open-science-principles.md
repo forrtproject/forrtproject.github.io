@@ -1,5 +1,4 @@
 {
-    "exclude": "",
     "timestamp": "9/4/2023 5:04:03",
     "title": "Introduction to Open Science principles and practices (in Health Economics)",
     "link_to_resource": "https://doi.org/10.5281/zenodo.8214707",

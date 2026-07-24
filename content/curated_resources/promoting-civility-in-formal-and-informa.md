@@ -1,5 +1,4 @@
 {
-    "exclude": "",
     "timestamp": "2/27/2025 6:07:29",
     "title": "Promoting Civility in Formal And Informal Open Science Contexts",
     "link_to_resource": "https://doi.org/10.31234/osf.io/rfkyu",

@@ -1,5 +1,4 @@
 {
-    "exclude": "",
     "timestamp": "10/9/2023 10:54:17",
     "title": "Feasibility of Emulating Clinical Trials Supporting US FDA Supplemental Indication Approvals of Drugs and Biologics",
     "link_to_resource": "https://doi.org/10.1001/jamainternmed.2023.4073",

@@ -1,5 +1,4 @@
 {
-    "exclude": "",
     "timestamp": "01/01/2020",
     "title": "Meeting the Requirements of Funders Around Open Science: Open Resources and Processes for Education",
     "link_to_resource": "https://www.youtube.com/watch?v=rgJ_99OLGdA",

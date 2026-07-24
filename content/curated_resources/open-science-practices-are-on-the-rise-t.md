@@ -1,5 +1,4 @@
 {
-    "exclude": "",
     "timestamp": "01/01/2020",
     "title": "Open Science Practices are on the Rise: The State of Social Science (3S) Survey",
     "link_to_resource": "https://osf.io/preprints/metaarxiv/5rksu/",

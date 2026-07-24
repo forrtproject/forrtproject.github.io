@@ -1,5 +1,4 @@
 {
-    "exclude": "",
     "timestamp": "6/30/2025 13:04:12",
     "title": "Research Methods Psychology Summer 2021 - Professor Gernsbacher",
     "link_to_resource": "https://online225.psych.wisc.edu/wp-content/uploads/225-Master/225-CourseMaterials/PSY-225_Gernsbacher_Syllabus_SU2021.pdf",

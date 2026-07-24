@@ -1,5 +1,4 @@
 {
-    "exclude": "",
     "timestamp": "2/27/2025 5:42:22",
     "title": "The logical structure of experiments lays the foundation for a theory of reproducibility",
     "link_to_resource": "https://doi.org/10.1098/rsos.221042",

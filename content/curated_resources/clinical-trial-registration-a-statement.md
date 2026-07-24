@@ -1,5 +1,4 @@
 {
-    "exclude": "",
     "timestamp": "10/30/2023 13:55:54",
     "title": "Clinical trial registration: A statement from the International Committee of Medical Journal Editors",
     "link_to_resource": "https://doi.org/10.1016/S0140-6736(04)17034-7",

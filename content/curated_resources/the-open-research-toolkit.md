@@ -1,5 +1,4 @@
 {
-    "exclude": "",
     "timestamp": "3/13/2025 17:37:09",
     "title": "The Open Research Toolkit",
     "link_to_resource": "https://forrt.org/educators-corner/008-open-research-toolkit/",

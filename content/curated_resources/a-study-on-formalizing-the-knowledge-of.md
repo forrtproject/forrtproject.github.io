@@ -1,5 +1,4 @@
 {
-    "exclude": "",
     "timestamp": "1/13/2025 7:00:18",
     "title": "A study on formalizing the knowledge of data curation activities across different fields",
     "link_to_resource": "https://doi.org/10.1371/journal.pone.0301772",

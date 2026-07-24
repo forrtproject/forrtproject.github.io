@@ -1,5 +1,4 @@
 {
-    "exclude": "",
     "timestamp": "10/23/2023 12:09:45",
     "title": "Breaking free: How preregistration hurts scholars and science",
     "link_to_resource": "https://doi.org/10.1017/pls.2022.4",

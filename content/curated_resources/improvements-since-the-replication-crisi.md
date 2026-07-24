@@ -1,5 +1,4 @@
 {
-    "exclude": "",
     "timestamp": "3/20/2025 15:32:15",
     "title": "Improvements since the Replication Crisis: The Structural, Procedural, and Community Changes",
     "link_to_resource": "https://doi.org/10.1038/s44271-023-00003-2",

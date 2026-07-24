@@ -1,5 +1,4 @@
 {
-    "exclude": "",
     "timestamp": "2/20/2025 5:08:07",
     "title": "Opening Knowledge: Retaining Rights and Open Licensing in Europe",
     "link_to_resource": "https://doi.org/10.5281/zenodo.8084051",

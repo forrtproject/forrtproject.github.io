@@ -1,5 +1,4 @@
 {
-    "exclude": "",
     "timestamp": "01/01/2020",
     "title": "Rigor and Reproducibility",
     "link_to_resource": "https://grants.nih.gov/reproducibility/index.htm",

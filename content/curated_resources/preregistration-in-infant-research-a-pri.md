@@ -1,5 +1,4 @@
 {
-    "exclude": "",
     "timestamp": "10/27/2023 15:11:13",
     "title": "Preregistration in infant research\u2014A primer",
     "link_to_resource": "https://doi.org/10.1111/infa.12353",

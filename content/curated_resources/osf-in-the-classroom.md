@@ -1,5 +1,4 @@
 {
-    "exclude": "",
     "timestamp": "01/01/2020",
     "title": "OSF in the Classroom",
     "link_to_resource": "https://www.youtube.com/watch?v=IZrYNfsTsPc",

@@ -1,5 +1,4 @@
 {
-    "exclude": "",
     "timestamp": "10/27/2023 14:15:56",
     "title": "Preregistration of Information Systems Research",
     "link_to_resource": "https://doi.org/10.17705/1CAIS.04905",

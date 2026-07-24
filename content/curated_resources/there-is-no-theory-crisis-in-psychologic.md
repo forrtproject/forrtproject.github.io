@@ -1,5 +1,4 @@
 {
-    "exclude": "",
     "timestamp": "2/13/2025 5:52:24",
     "title": "There Is No Theory Crisis in Psychological Science",
     "link_to_resource": "https://dx.doi.org/10.1037/teo0000301",

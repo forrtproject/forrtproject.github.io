@@ -1,5 +1,4 @@
 {
-    "exclude": "",
     "timestamp": "2/6/2025 5:54:33",
     "title": "Editorial: Open science in consciousness research",
     "link_to_resource": "https://doi.org/10.1093/nc/niz018",

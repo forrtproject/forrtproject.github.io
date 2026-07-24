@@ -1,5 +1,4 @@
 {
-    "exclude": "",
     "timestamp": "10/14/2021 13:34:16",
     "title": "Perspectives on Improving Methods in Psychological Science",
     "link_to_resource": "https://osf.io/87t4g/",

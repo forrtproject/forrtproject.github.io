@@ -1,5 +1,4 @@
 {
-    "exclude": "",
     "timestamp": "01/01/2020",
     "title": "Poor replication validity of biomedical association studies reported by newspapers",
     "link_to_resource": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0172650",

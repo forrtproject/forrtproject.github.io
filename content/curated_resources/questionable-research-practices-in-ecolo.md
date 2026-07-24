@@ -1,5 +1,4 @@
 {
-    "exclude": "",
     "timestamp": "01/01/2020",
     "title": "Questionable research practices in ecology and evolution",
     "link_to_resource": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0200303",

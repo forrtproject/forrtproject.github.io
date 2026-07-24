@@ -1,5 +1,4 @@
 {
-    "exclude": "",
     "timestamp": "01/01/2020",
     "title": "Assessing data availability and research reproducibility in hydrology and water resources",
     "link_to_resource": "https://www.nature.com/articles/sdata201930",

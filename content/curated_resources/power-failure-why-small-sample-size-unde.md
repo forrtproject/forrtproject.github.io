@@ -1,5 +1,4 @@
 {
-    "exclude": "",
     "timestamp": "2020-05-22T19:06:59.335Z",
     "title": "Power failure: why small sample size undermines the reliability of neuroscience",
     "link_to_resource": "https://doi.org/10.1038/nrn3475",

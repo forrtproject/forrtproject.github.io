@@ -1,5 +1,4 @@
 {
-    "exclude": "",
     "timestamp": "12/13/2023 15:22:34",
     "title": "Issues in the Registration of Clinical Trials",
     "link_to_resource": "https://doi.org/10.1001/jama.297.19.2112",

@@ -1,5 +1,4 @@
 {
-    "exclude": "",
     "timestamp": "10/4/2023 11:13:16",
     "title": "Artificial intelligence and responsibility gaps: What is the problem?",
     "link_to_resource": "https://doi.org/10.1007/s10676-022-09643-0",

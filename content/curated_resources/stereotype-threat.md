@@ -1,5 +1,4 @@
 {
-    "exclude": "",
     "timestamp": "2020-05-16T07:32:40.694Z",
     "title": "Stereotype threat",
     "link_to_resource": "https://www.wnycstudios.org/story/stereothreat/",

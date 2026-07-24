@@ -1,5 +1,4 @@
 {
-    "exclude": "",
     "timestamp": "01/01/2020",
     "title": "An open source pharma roadmap",
     "link_to_resource": "https://journals.plos.org/plosmedicine/article?id=10.1371/journal.pmed.1002276",

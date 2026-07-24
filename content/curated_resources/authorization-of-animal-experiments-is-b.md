@@ -1,5 +1,4 @@
 {
-    "exclude": "",
     "timestamp": "01/01/2020",
     "title": "Authorization of Animal Experiments Is Based on Confidence Rather than Evidence of Scientific Rigor",
     "link_to_resource": "https://journals.plos.org/plosbiology/article?id=10.1371/journal.pbio.2000598",

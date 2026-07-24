@@ -1,5 +1,4 @@
 {
-    "exclude": "",
     "timestamp": "01/01/2020",
     "title": "Analyzing Education Data with Open Science Best Practices, R, and OSF",
     "link_to_resource": "https://www.youtube.com/watch?v=WxdWzTIzYmI&t=4s",

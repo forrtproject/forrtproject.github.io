@@ -1,5 +1,4 @@
 {
-    "exclude": "",
     "timestamp": "2020-05-08T07:11:28.000Z",
     "title": "Methods for Reliable, Transparent, and Open Science",
     "link_to_resource": "https://github.com/rouderj/transparent-science-course",

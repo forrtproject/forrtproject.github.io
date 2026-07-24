@@ -1,5 +1,4 @@
 {
-    "exclude": "",
     "timestamp": "7/2/2025 13:27:56",
     "title": "Evaluating What Works ",
     "link_to_resource": "https://bookdown.org/dorothy_bishop/Evaluating_What_Works/",

@@ -1,5 +1,4 @@
 {
-    "exclude": "",
     "timestamp": "2020-06-04T19:05:26.743Z",
     "title": "The State of Social and Personality Science: Rotten to the Core, Not So Bad, Getting Better, or Getting Worse?",
     "link_to_resource": "https://doi.org/10.1037/pspa0000084",

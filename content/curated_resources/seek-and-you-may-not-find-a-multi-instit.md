@@ -1,5 +1,4 @@
 {
-    "exclude": "",
     "timestamp": "1/13/2025 7:03:00",
     "title": "Seek and you may (not) find: A multi-institutional analysis of where research data are shared",
     "link_to_resource": "https://doi.org/10.1371/journal.pone.0302426",

@@ -1,5 +1,4 @@
 {
-    "exclude": "",
     "timestamp": "01/01/2020",
     "title": "Linking to Data - Effect on Citation Rates in Astronomy",
     "link_to_resource": "https://arxiv.org/abs/1111.3618",

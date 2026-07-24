@@ -1,5 +1,4 @@
 {
-    "exclude": "",
     "timestamp": "10/27/2023 14:22:11",
     "title": "The benefits of preregistration for hypothesis-driven bilingualism research",
     "link_to_resource": "https://doi.org/10.1017/S1366728921000031",

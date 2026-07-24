@@ -1,5 +1,4 @@
 {
-    "exclude": "",
     "timestamp": "2/27/2025 3:53:23",
     "title": "66th Helmholtz Open Science Online Seminar",
     "link_to_resource": "https://os.helmholtz.de/en/events/online-seminars/66th-online-seminar/",

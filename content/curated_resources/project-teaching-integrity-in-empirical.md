@@ -1,5 +1,4 @@
 {
-    "exclude": "",
     "timestamp": "01/01/2020",
     "title": "Project Teaching Integrity in Empirical Research (TIER)",
     "link_to_resource": "https://www.projecttier.org/",

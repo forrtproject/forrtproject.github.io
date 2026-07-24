@@ -1,5 +1,4 @@
 {
-    "exclude": "",
     "timestamp": "10/14/2021 13:42:42",
     "title": "Research Methods 2020",
     "link_to_resource": "https://osf.io/au735/",

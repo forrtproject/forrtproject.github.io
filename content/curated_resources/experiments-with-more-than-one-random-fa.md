@@ -1,5 +1,4 @@
 {
-    "exclude": "",
     "timestamp": "2020-05-28T13:18:50.167Z",
     "title": "Experiments with More Than One Random Factor: Designs, Analytic Models, and Statistical Power.",
     "link_to_resource": "https://doi.org/10.1146/annurev-psych-122414-033702",

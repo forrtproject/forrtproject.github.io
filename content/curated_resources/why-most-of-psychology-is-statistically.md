@@ -1,5 +1,4 @@
 {
-    "exclude": "",
     "timestamp": "2020-06-08T18:31:05.327Z",
     "title": "Why most of psychology is statistically unfalsifiable",
     "link_to_resource": "https://github.com/richarddmorey/psychology_resolution/blob/master/paper/response.pdf",

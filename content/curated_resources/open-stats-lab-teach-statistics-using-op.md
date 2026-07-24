@@ -1,5 +1,4 @@
 {
-    "exclude": "",
     "timestamp": "2/27/2025 3:57:33",
     "title": "Open Stats Lab: Teach Statistics Using Open Data from Psychological Science",
     "link_to_resource": "https://sites.google.com/view/openstatslab/home?authuser=0",

@@ -1,5 +1,4 @@
 {
-    "exclude": "",
     "timestamp": "1/9/2025 9:43:03",
     "title": "Pre Self: what fraction of a journal\u2019s papers are preprinted?",
     "link_to_resource": "https://quantixed.org/2024/03/09/pre-self-what-fraction-of-a-journals-papers-are-preprinted/",

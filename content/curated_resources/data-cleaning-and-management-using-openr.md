@@ -1,5 +1,4 @@
 {
-    "exclude": "",
     "timestamp": "01/01/2020",
     "title": "Data Cleaning and Management Using OpenRefine",
     "link_to_resource": "https://nyu-dataservices.github.io/CleaningData-OpenRefine/#/",

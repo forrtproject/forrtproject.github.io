@@ -1,5 +1,4 @@
 {
-    "exclude": "",
     "timestamp": "12/12/2024 8:12:59",
     "title": "The GO FAIR Foundation's FAIR Capacity Building Programme",
     "link_to_resource": "https://osf.io/bthf8",

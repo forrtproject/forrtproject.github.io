@@ -1,5 +1,4 @@
 {
-    "exclude": "",
     "timestamp": "2020-06-10T19:32:33.133Z",
     "title": "Bayes for Beginners: Probability and Likelihood",
     "link_to_resource": "https://www.psychologicalscience.org/observer/bayes-for-beginners-probability-and-likelihood",

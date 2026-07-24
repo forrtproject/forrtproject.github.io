@@ -1,5 +1,4 @@
 {
-    "exclude": "",
     "timestamp": "10/27/2023 10:25:52",
     "title": "Preregistration of Randomized Controlled Trials",
     "link_to_resource": "https://doi.org/10.1177/10497315221121117",

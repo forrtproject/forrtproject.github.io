@@ -1,5 +1,4 @@
 {
-    "exclude": "",
     "timestamp": "2/27/2025 9:01:02",
     "title": "Growth from uncertainty: understanding the replication 'crisis' in infant psychology",
     "link_to_resource": "https://philsci-archive.pitt.edu/22679/",

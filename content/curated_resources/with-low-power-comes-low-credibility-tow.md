@@ -1,5 +1,4 @@
 {
-    "exclude": "",
     "timestamp": "2/6/2025 10:10:43",
     "title": "With Low Power Comes Low Credibility? Toward a Principled Critique of Results From Underpowered Tests",
     "link_to_resource": "http://dx.doi.org/10.1177/25152459241296397",

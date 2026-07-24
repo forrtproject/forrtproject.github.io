@@ -1,5 +1,4 @@
 {
-    "exclude": "",
     "timestamp": "10/23/2023 11:58:20",
     "title": "When Does HARKing Hurt? Identifying When Different Types of Undisclosed Post Hoc Hypothesizing Harm Scientific Progress",
     "link_to_resource": "https://doi.org/10.1037/gpr0000128",

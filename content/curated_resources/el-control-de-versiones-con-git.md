@@ -1,5 +1,4 @@
 {
-    "exclude": "",
     "timestamp": "01/01/2020",
     "title": "El Control de Versiones con Git",
     "link_to_resource": "https://swcarpentry.github.io/git-novice-es/",

@@ -1,5 +1,4 @@
 {
-    "exclude": "",
     "timestamp": "01/01/2020",
     "title": "Mapping the universe of registered reports",
     "link_to_resource": "https://osf.io/preprints/metaarxiv/fzpcy/",

@@ -1,5 +1,4 @@
 {
-    "exclude": "",
     "timestamp": "4/18/2026 4:40:42",
     "title": "Open Science Sprint Content",
     "link_to_resource": "https://opensciency.github.io/sprint-content/",

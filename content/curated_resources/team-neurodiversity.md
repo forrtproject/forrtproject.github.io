@@ -1,5 +1,4 @@
 {
-    "exclude": "",
     "timestamp": "4/8/2025 8:31:19",
     "title": "Team Neurodiversity",
     "link_to_resource": "https://forrt.org/neurodiversity/",

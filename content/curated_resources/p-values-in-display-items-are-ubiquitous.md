@@ -1,5 +1,4 @@
 {
-    "exclude": "",
     "timestamp": "01/01/2020",
     "title": "P values in display items are ubiquitous and almost invariably significant: A survey of top science journals",
     "link_to_resource": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0197440",

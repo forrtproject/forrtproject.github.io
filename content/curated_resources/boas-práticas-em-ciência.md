@@ -1,5 +1,4 @@
 {
-    "exclude": "",
     "timestamp": "10/14/2021 13:38:38",
     "title": "Boas pr\u00e1ticas em ci\u00eancia",
     "link_to_resource": "https://osf.io/dwf3z/",

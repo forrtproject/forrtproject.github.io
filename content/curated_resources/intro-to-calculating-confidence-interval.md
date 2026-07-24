@@ -1,5 +1,4 @@
 {
-    "exclude": "",
     "timestamp": "01/01/2020",
     "title": "Intro to Calculating Confidence Intervals",
     "link_to_resource": "https://www.youtube.com/watch?v=SF6Xvdui4wU",

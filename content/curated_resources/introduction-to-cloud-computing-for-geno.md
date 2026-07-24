@@ -1,5 +1,4 @@
 {
-    "exclude": "",
     "timestamp": "01/01/2020",
     "title": "Introduction to Cloud Computing for Genomics",
     "link_to_resource": "https://datacarpentry.org/cloud-genomics/",

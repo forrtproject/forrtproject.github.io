@@ -1,5 +1,4 @@
 {
-    "exclude": "",
     "timestamp": "1/9/2025 10:29:04",
     "title": "Reporting Standards for Complication Studies of Radiation Therapy for Pediatric Cancer: Lessons From PENTEC",
     "link_to_resource": "https://www.redjournal.org/article/S0360-3016(24)00325-0/fulltext",

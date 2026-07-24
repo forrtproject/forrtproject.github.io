@@ -1,5 +1,4 @@
 {
-    "exclude": "",
     "timestamp": "10/27/2023 13:28:00",
     "title": "Supporting robust research on adult emotional development by considering context",
     "link_to_resource": "https://doi.org/10.1037/pag0000669",

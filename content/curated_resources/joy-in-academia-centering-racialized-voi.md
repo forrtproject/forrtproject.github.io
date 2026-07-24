@@ -1,5 +1,4 @@
 {
-    "exclude": "",
     "timestamp": "7/16/2025 2:55:53",
     "title": "Joy in academia: centering racialized voices in Dutch and Belgian universities.",
     "link_to_resource": "https://podcasts.apple.com/nl/podcast/joy-in-academia/id1737201288",

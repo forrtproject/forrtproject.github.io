@@ -1,5 +1,4 @@
 {
-    "exclude": "",
     "timestamp": "10/14/2021 13:46:56",
     "title": "Open Science & Inclusive Psychology",
     "link_to_resource": "https://osf.io/sg9ej/",

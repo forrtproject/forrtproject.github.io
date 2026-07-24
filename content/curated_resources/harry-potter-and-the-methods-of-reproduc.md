@@ -1,5 +1,4 @@
 {
-    "exclude": "",
     "timestamp": "01/01/2020",
     "title": "Harry Potter and the Methods of Reproducibility",
     "link_to_resource": "https://osf.io/m67rf/",

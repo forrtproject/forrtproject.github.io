@@ -1,5 +1,4 @@
 {
-    "exclude": "",
     "timestamp": "1/12/2025 9:43:26",
     "title": "A registered report survey of open research practices in psychology departments in the UK and Ireland",
     "link_to_resource": "https://doi.org/10.1111/bjop.12700",

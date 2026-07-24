@@ -1,5 +1,4 @@
 {
-    "exclude": "",
     "timestamp": "01/01/2020",
     "title": "Metascience Forum 2020",
     "link_to_resource": "https://www.youtube.com/watch?v=Nu3j25UqFxs",

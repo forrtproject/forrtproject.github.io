@@ -1,5 +1,4 @@
 {
-    "exclude": "",
     "timestamp": "01/01/2020",
     "title": "The Economics of Reproducibility in Preclinical Research",
     "link_to_resource": "https://journals.plos.org/plosbiology/article?id=10.1371/journal.pbio.1002165",

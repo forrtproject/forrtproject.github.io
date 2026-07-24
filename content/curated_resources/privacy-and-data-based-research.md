@@ -1,5 +1,4 @@
 {
-    "exclude": "",
     "timestamp": "2020-06-07T19:08:02.926Z",
     "title": "Privacy and Data-Based Research",
     "link_to_resource": "https://doi.org/10.1257/jep.28.2.75",

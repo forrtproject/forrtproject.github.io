@@ -1,5 +1,4 @@
 {
-    "exclude": "",
     "timestamp": "01/01/2020",
     "title": "Library Carpentry: Introduction to Git",
     "link_to_resource": "https://librarycarpentry.org/lc-git/",

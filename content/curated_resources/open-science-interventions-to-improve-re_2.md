@@ -1,5 +1,4 @@
 {
-    "exclude": "",
     "timestamp": "2/13/2025 9:59:50",
     "title": "Open Science interventions to improve reproducibility and replicability of research: a scoping review preprint",
     "link_to_resource": "https://doi.org/10.31222/osf.io/a8rmu",

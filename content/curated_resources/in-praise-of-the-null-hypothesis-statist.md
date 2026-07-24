@@ -1,5 +1,4 @@
 {
-    "exclude": "",
     "timestamp": "2020-05-24T12:37:21.911Z",
     "title": "In Praise of the Null Hypothesis Statistical Test",
     "link_to_resource": "https://doi.org/10.1037/0003-066X.52.1.15",

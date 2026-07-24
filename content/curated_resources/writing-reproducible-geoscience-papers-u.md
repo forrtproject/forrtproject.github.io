@@ -1,5 +1,4 @@
 {
-    "exclude": "",
     "timestamp": "01/01/2020",
     "title": "Writing reproducible geoscience papers using R Markdown, Docker, and GitLab",
     "link_to_resource": "https://vickysteeves.gitlab.io/repro-papers/",

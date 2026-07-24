@@ -1,5 +1,4 @@
 {
-    "exclude": "",
     "timestamp": "10/27/2023 13:32:36",
     "title": "Data overuse in aging research: Emerging issues and potential solutions",
     "link_to_resource": "https://doi.org/10.1037/pag0000605",

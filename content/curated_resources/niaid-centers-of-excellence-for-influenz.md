@@ -1,5 +1,4 @@
 {
-    "exclude": "",
     "timestamp": "10/9/2023 10:29:16",
     "title": "NIAID Centers of Excellence for Influenza Research and Response (CEIRR) Data Standards",
     "link_to_resource": "https://www.ceirr-network.org/resources/data-standards",

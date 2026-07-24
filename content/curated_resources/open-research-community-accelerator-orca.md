@@ -1,5 +1,4 @@
 {
-    "exclude": "",
     "timestamp": "12/18/2024 6:20:45",
     "title": "Open Research Community Accelerator (ORCA)",
     "link_to_resource": "https://www.orcaopen.org/",

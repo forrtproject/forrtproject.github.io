@@ -1,5 +1,4 @@
 {
-    "exclude": "",
     "timestamp": "1/13/2025 6:57:52",
     "title": "Open Educational Resources f\u00fcr die HNO-Heilkunde",
     "link_to_resource": "https://doi.org/10.1007/s00106-024-01465-4",

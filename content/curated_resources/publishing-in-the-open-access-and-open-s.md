@@ -1,5 +1,4 @@
 {
-    "exclude": "",
     "timestamp": "12/19/2024 9:05:57",
     "title": "Publishing in the Open Access and Open Science era",
     "link_to_resource": "https://doi.org/10.1111/gtc.13100",

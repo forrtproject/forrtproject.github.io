@@ -1,5 +1,4 @@
 {
-    "exclude": "",
     "timestamp": "2/13/2025 6:28:18",
     "title": "Open Pedagogy: A Driving Force for Meaningful Learning",
     "link_to_resource": "https://communities.surf.nl/files/Artikel/download/BrochureOpenPedagogy%26MeaningfulLearning_UK.pdf",

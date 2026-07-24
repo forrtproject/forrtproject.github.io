@@ -1,5 +1,4 @@
 {
-    "exclude": "",
     "timestamp": "7/16/2025 4:44:33",
     "title": "What's New in Neuro",
     "link_to_resource": "https://open.spotify.com/episode/70UjcUqgo61UOy4Z9TavDd?",

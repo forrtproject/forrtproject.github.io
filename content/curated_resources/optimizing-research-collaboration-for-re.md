@@ -1,5 +1,4 @@
 {
-    "exclude": "",
     "timestamp": "01/01/2020",
     "title": "Optimizing Research Collaboration for Remote Teams",
     "link_to_resource": "https://www.youtube.com/watch?v=PW5a45pwquI",

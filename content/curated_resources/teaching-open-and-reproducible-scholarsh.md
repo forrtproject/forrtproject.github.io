@@ -1,5 +1,4 @@
 {
-    "exclude": "",
     "timestamp": "3/20/2025 15:27:27",
     "title": "Teaching open and reproducible scholarship: a critical review of the evidence base for current pedagogical methods and their outcomes",
     "link_to_resource": "https://doi.org/10.1098/rsos.221255",

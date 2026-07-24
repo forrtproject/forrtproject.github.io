@@ -1,5 +1,4 @@
 {
-    "exclude": "",
     "timestamp": "2/13/2025 10:16:50",
     "title": "What is the Replication Crisis a Crisis Of?",
     "link_to_resource": "https://doi.org/10.1017/psa.2024.2",

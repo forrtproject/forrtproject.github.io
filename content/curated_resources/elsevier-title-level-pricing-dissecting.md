@@ -1,5 +1,4 @@
 {
-    "exclude": "",
     "timestamp": "5/16/2021 15:20:04",
     "title": "Elsevier Title Level Pricing: Dissecting the Bowl of Spaghetti",
     "link_to_resource": "https://doi.org/10.7710/2162-3309.2410",

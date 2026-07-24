@@ -1,5 +1,4 @@
 {
-    "exclude": "",
     "timestamp": "4/8/2025 9:48:09",
     "title": "Open and Reproducible Science Syllabus",
     "link_to_resource": "https://forrt.org/syllabus/",

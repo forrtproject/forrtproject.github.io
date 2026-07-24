@@ -1,5 +1,4 @@
 {
-    "exclude": "",
     "timestamp": "12/13/2023 15:18:24",
     "title": "Questionable research practices following pre-registration",
     "link_to_resource": "https://doi.org/10.24602/sjpr.62.3_281",

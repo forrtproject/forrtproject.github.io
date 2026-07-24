@@ -1,5 +1,4 @@
 {
-    "exclude": "",
     "timestamp": "2/27/2025 3:27:44",
     "title": "Renovating the Theatre of Persuasion. ManyLabs as Collaborative Prototypes for the Production of Credible Knowledge",
     "link_to_resource": "https://doi.org/10.31222/osf.io/vhmk2",

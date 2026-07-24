@@ -1,5 +1,4 @@
 {
-    "exclude": "",
     "timestamp": "2020-06-07T18:45:22.803Z",
     "title": "Mini Meta-Analysis of Your Own Studies: Some Arguments on Why and a Primer on How",
     "link_to_resource": "https://doi.org/10.1111/spc3.12267",

@@ -1,5 +1,4 @@
 {
-    "exclude": "",
     "timestamp": "9/5/2023 10:28:13",
     "title": "A primer for choosing, designing and evaluating registered reports for qualitative methods",
     "link_to_resource": "https://doi.org/10.12688%2Fopenreseurope.15532.2",

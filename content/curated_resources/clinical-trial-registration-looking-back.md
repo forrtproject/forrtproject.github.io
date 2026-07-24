@@ -1,5 +1,4 @@
 {
-    "exclude": "",
     "timestamp": "10/30/2023 13:46:33",
     "title": "Clinical trial registration: Looking back and moving ahead",
     "link_to_resource": "https://doi.org/10.1016/S0140-6736(07)60894-0",

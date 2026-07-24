@@ -1,5 +1,4 @@
 {
-    "exclude": "",
     "timestamp": "10/27/2023 15:07:20",
     "title": "Mitigating Illusory Results through Preregistration in Education",
     "link_to_resource": "https://doi.org/10.1080/19345747.2017.1387950",

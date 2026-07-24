@@ -1,5 +1,4 @@
 {
-    "exclude": "",
     "timestamp": "01/01/2020",
     "title": "Reproducible Science Workshop",
     "link_to_resource": "https://github.com/Reproducible-Science-Curriculum/2015-05-14-duke-materials",

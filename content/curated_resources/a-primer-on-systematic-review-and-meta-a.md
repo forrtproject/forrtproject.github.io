@@ -1,5 +1,4 @@
 {
-    "exclude": "",
     "timestamp": "10/30/2023 12:01:47",
     "title": "A Primer on Systematic Review and Meta-analysis in Diabetes Research",
     "link_to_resource": "https://doi.org/10.2337/dci23-0031",

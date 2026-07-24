@@ -1,5 +1,4 @@
 {
-    "exclude": "",
     "timestamp": "2020-06-07T19:31:18.607Z",
     "title": "Interpreting effect sizes: Toward a quantitative cumulative social psychology",
     "link_to_resource": "https://doi.org/10.1002/ejsp.2019",

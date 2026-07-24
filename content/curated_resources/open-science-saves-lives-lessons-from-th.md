@@ -1,5 +1,4 @@
 {
-    "exclude": "",
     "timestamp": "10/31/2020 13:16:26",
     "title": "Open Science Saves Lives: Lessons from the COVID-19 Pandemic",
     "link_to_resource": "https://www.biorxiv.org/content/10.1101/2020.08.13.249847v2",

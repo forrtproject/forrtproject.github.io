@@ -1,5 +1,4 @@
 {
-    "exclude": "",
     "timestamp": "10/5/2023 14:44:07",
     "title": "Biomedical publishing: Past historic, present continuous, future conditional",
     "link_to_resource": "https://doi.org/10.1371/journal.pbio.3002234",

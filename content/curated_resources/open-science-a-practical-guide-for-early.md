@@ -1,5 +1,4 @@
 {
-    "exclude": "",
     "timestamp": "2/27/2025 3:42:32",
     "title": "Open Science: A Practical Guide for Early-Career Researchers",
     "link_to_resource": "https://doi.org/10.5281/zenodo.7716153",

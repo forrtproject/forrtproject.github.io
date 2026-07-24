@@ -1,5 +1,4 @@
 {
-    "exclude": "",
     "timestamp": "6/10/2025 12:23:56",
     "title": "Research Integrity and Open Science I (PSYC123)",
     "link_to_resource": "https://osf.io/km34v/wiki/PSYC123-Research%20Integrity%20and%20Open%20Science%201/",

@@ -1,5 +1,4 @@
 {
-    "exclude": "",
     "timestamp": "2020-06-06T18:57:55.560Z",
     "title": "The fickle P value generates irreproducible results",
     "link_to_resource": "https://doi.org/10.1038/nmeth.3288",

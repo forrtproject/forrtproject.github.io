@@ -1,5 +1,4 @@
 {
-    "exclude": "",
     "timestamp": "2020-05-19T17:01:58.699Z",
     "title": "Improving your statistical inferences",
     "link_to_resource": "https://www.coursera.org/learn/statistical-inferences",

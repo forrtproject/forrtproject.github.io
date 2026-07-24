@@ -1,5 +1,4 @@
 {
-    "exclude": "",
     "timestamp": "01/01/2020",
     "title": "Qualitative Research Using Open Tools",
     "link_to_resource": "https://zenodo.org/record/2673016",

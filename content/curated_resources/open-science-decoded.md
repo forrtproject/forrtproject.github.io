@@ -1,5 +1,4 @@
 {
-    "exclude": "",
     "timestamp": "2/6/2025 4:45:40",
     "title": "Open science decoded",
     "link_to_resource": "https://doi.org/10.1038/nphys3313",

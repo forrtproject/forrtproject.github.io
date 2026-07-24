@@ -1,5 +1,4 @@
 {
-    "exclude": "",
     "timestamp": "10/14/2021 12:43:38",
     "title": "Open and Reproducible Research in Psychology",
     "link_to_resource": "https://osf.io/zvfu4/",

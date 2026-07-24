@@ -1,5 +1,4 @@
 {
-    "exclude": "",
     "timestamp": "1/16/2025 4:13:24",
     "title": "All is well that replicates well: The replicability of reported moderation and interaction effects in leading organizational sciences journals.",
     "link_to_resource": "https://doi.org/10.1037/apl0001197",

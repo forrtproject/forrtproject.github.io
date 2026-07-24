@@ -1,5 +1,4 @@
 {
-    "exclude": "",
     "timestamp": "9/14/2023 9:47:55",
     "title": "The replication crisis is less of a \u201ccrisis\u201d in the Lakatosian approach than it is in the Popperian and na\u00efve methodological falsificationism approaches",
     "link_to_resource": "https://osf.io/preprints/metaarxiv/2dz9s/",
