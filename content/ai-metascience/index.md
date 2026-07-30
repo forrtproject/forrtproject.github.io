@@ -4,8 +4,8 @@ type: plain_page
 url: "/ai-metascience/"
 hide_title: true
 hide_date: true
-summary: "Call for submissions: the FORRT AI in Metascience Online Conference, 28–30 September 2026, online. Propose a talk, workshop, or hackathon by 31 July 2026."
-sharing_description: "Call for submissions — FORRT AI in Metascience Online Conference, 28–30 September 2026, online. Deadline 31 July 2026."
+summary: "Call for submissions: the FORRT AI in Metascience Online Conference, 28–30 September 2026, online. Propose a talk, workshop, or hackathon by 7 August 2026."
+sharing_description: "Call for submissions — FORRT AI in Metascience Online Conference, 28–30 September 2026, online. Deadline 7 August 2026."
 sharing_image_alt: "FORRT AI in Metascience Conference — online, 28–30 September 2026"
 image:
   placement: 1
@@ -33,7 +33,7 @@ How can AI and large language models help us understand and improve how science 
 
 **When:** 28–30 September 2026 (time-zone inclusive)<br>
 **Where:** Online — free to attend<br>
-**Submission deadline:** 31 July 2026 (23:59 in your own time zone)
+**Submission deadline:** 7 August 2026 (23:59 in your own time zone)
 
 Speakers who opt in will have their talks shared on the [FORRT YouTube channel](https://youtube.com/@forrtproject9995).
 
@@ -91,7 +91,7 @@ Want to propose something else, such as a roundtable or panel discussion? Email 
 
 ## Ready to contribute?
 
-Put your idea together and submit it by **31 July 2026**. Further programme details will follow closer to the event.
+Put your idea together and submit it by **7 August 2026**. Further programme details will follow closer to the event.
 
 <a href="https://forms.gle/XSoZH7X7naqZGVmS8" class="btn btn-primary btn-lg btn-block" style="line-height:1;border-radius:6px;font-size:1.4rem;" target="_blank" rel="noopener">
   Submit your proposal
