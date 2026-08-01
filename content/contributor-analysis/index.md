@@ -7,13 +7,11 @@ output:
     preserve_yaml: true
     toc: false
 type: contributors_analysis
-sharing_image_resource: "treemap-plot-1.png"
-sharing_image_alt: "Treemap showing the share of FORRT contributors by number of projects they contributed to"
 ---
 
-As of 10 June 2026, FORRT has a total of 109 completed or ongoing
-projects and support teams, with a total of 647 contributors. There is
-an average (mean) of 2.44 contributions per person across all FORRT
+As of 01 August 2026, FORRT has a total of 109 completed or ongoing
+projects and support teams, with a total of 648 contributors. There is
+an average (mean) of 2.45 contributions per person across all FORRT
 projects, and the average number of contributors per project is 14. You
 can see the full list of FORRT contributors and their individual
 contributions [here](https://forrt.org/contributors/).
