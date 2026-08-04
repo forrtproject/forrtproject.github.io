@@ -7,6 +7,8 @@ output:
     preserve_yaml: true
     toc: false
 type: contributors_analysis
+sharing_image_resource: "treemap-plot-1.png"
+sharing_image_alt: "Treemap showing the share of FORRT contributors by number of projects they contributed to"
 ---
 
 As of 10 June 2026, FORRT has a total of 109 completed or ongoing
