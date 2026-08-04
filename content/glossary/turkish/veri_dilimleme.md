@@ -1,6 +1,7 @@
 {
     "type": "glossary",
     "title": "Veri dilimleme [Salami slicing]",
+    "en_title": "Salami slicing",
     "sort_key": "veri dilimleme [salami slicing]",
     "definition": "Şüpheli bir araştırma/raporlama stratejisi, genellikle post hoc gerçekleştirilir ve tek bir çalışmadan elde edilen veriler ‘dilimlenerek’ birden fazla yayımlanabilir makale üretilmesi amaçlanır. Bu, akademik teşvik sistemini manipüle etmenin bir yoludur. Örneğin, tek bir veri setinden birden fazla çalışma yayımlamak ya da farklı veri toplama merkezlerinden gelen verilerle yapılmış çalışmaları, verinin kaynağını şeffaf biçimde belirtmeden yayımlamak bu kapsamdadır. Bu tür uygulamalar, alan yazını ve özellikle meta-analizleri yanıltır, çünkü elde edilen bulguların aslında aynı veri setinden kaynaklandığı anlaşılmaz, böylece birbirinden ayrı yayımlanmış makaleler arasındaki bağımlılıklar gizlenmiş olur.",
     "related_terms": [

@@ -1,6 +1,7 @@
 {
     "type": "glossary",
     "title": "Ad Hominem Safsatası [Ad hominem bias]",
+    "en_title": "Ad hominem bias",
     "sort_key": "ad hominem safsatasiz [ad hominem bias]",
     "definition": "Ad hominem latince ‘kişiye’ anlamına gelir. Bir argümanın ya da çalışmanın, içeriğine değil, onu ortaya koyan kişinin özelliklerine göre değerlendirilmesi durumudur. Ad hominem safsatası; örneğin bir rakibin ya da kin tutulan birinin çalışmasının, niteliğinden bağımsız olarak gereğinden fazla eleştirilmesi gibi, olumsuz olabilir. Aynı zamanda, bir arkadaşın çalışmasının hak ettiğinden daha iyi değerlendirilmesi gibi, olumlu da olabilir.",
     "related_terms": [

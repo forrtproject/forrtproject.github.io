@@ -1,6 +1,7 @@
 {
     "type": "glossary",
     "title": "Bağlantı Yanlılığı [Affiliation bias]",
+    "en_title": "Affiliation bias",
     "sort_key": "bagzlantiz yanlizlizgziz [affiliation bias]",
     "definition": "Bu yanlılık, bir kişinin araştırmanın kalitesi hakkındaki görüşleri veya yargılarının, yazar(lar)ın bağlantılı olduğu kurumdan etkilenmesiyle ortaya çıkar. Makaleleri yayımlarken, bağlantı yanlılığının potansiyel bir örneği, editörlerin prestijli kurumlardan gelen çalışmaları yayımlamayı tercih etmeleri olabilir (Tvina vd., 2019).",
     "related_terms": [

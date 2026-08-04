@@ -1,6 +1,7 @@
 {
     "type": "glossary",
     "title": "Paranteze alma (epoche) Görüşmeleri [Bracketing Interviews]",
+    "en_title": "Bracketing Interviews",
     "sort_key": "paranteze alma (epoche) gozruzszmeleri [bracketing interviews]",
     "definition": "Paranteze alma görüşmeleri, nitel yaklaşımlarda sıklıkla kullanılır. Bu görüşmeler sırasında araştırmacılar, devam eden araştırmalarıyla ilgili kişisel öznelliklerini ve varsayımlarını keşfederler. Bu, araştırmacıların kendi ilgi alanlarının farkında olmalarını ve kendi deneyimlerinin araştırma sürecini nasıl etkileyebileceğini göz önünde bulundurarak araştırmaları hakkında hem daha düşünceli hem de eleştirel olmalarını sağlar. Paranteze alma görüşmeleri nitel analize de tabi tutulabilir.",
     "related_terms": [

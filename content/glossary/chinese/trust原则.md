@@ -1,6 +1,7 @@
 {
     "type": "glossary",
     "title": "TRUST原则 [TRUST Principles]",
+    "en_title": "TRUST Principles",
     "sort_key": "trustyuanze",
     "definition": "TRUST原则是一套评估、开发和维护数字数据存储库（尤指研究数据存储库）可信度的指导原则，强调透明度（Transparency）、责任（Responsibility）、用户中心（User focus）、可持续性（Sustainability）和技术（Technology）5项核心要素。该原则对FAIR数据原则形成补充。",
     "related_terms": [

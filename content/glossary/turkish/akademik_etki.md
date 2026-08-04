@@ -1,6 +1,7 @@
 {
     "type": "glossary",
     "title": "Akademik Etki [Academic Impact]",
+    "en_title": "Academic Impact",
     "sort_key": "akademik etki [academic impact]",
     "definition": "Bir araştırma çıktısının (örneğin, yayımlanmış bir makale), disiplinler arasında ve disiplin içinde, bilimsel teori, yöntem ve uygulamanın anlaşılmasını değiştirme ve geliştirme konusundaki katkısıdır. Etki, ayrıca bir çıktı veya araştırma programının akademi dışındaki toplumsal ve ekonomik etki gibi değişimi ne ölçüde etkilediğini de ifade edebilir.(krş. ESRC: [https://www.ukri.org/councils/esrc/impact-toolkit-for-economic-and-social-sciences/](https://www.ukri.org/councils/esrc/impact-toolkit-for-economic-and-social-sciences/)).",
     "related_terms": [

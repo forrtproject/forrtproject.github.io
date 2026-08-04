@@ -1,6 +1,7 @@
 {
     "type": "glossary",
     "title": "Yazar sırası krediyi belirler yaklaşımı [Sequence-determines-credit approach (SDC)]",
+    "en_title": "Sequence-determines-credit approach (SDC)",
     "sort_key": "yazar sizrasiz krediyi belirler yaklaszizmiz [sequence-determines-credit approach (sdc)]",
     "definition": "Her yazarın katkısına dayalı olarak yazar sırasını belirleyen bir yazarlık sistemidir. Yazarların isimleri, katkı miktarına göre azalan sırayla listelenir: En fazla katkı sağlayan yazar ilk sırada, en az katkıda bulunan yazar ise son sırada yer alır.",
     "related_terms": [

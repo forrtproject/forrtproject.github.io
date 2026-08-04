@@ -32,9 +32,7 @@
         "Reproducible Analyses",
         "Open Data and Materials"
     ],
-    "tags": [
-        ""
-    ],
+    "tags": [],
     "forrt_clusters_new": "FAIR data and materials",
     "forrt_sub_clusters": "Reasons not to share: Privacy and security considerations",
     "doi": "10.1197/jamia.M2702",

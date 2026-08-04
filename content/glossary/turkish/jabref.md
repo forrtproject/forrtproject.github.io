@@ -1,6 +1,7 @@
 {
     "type": "glossary",
     "title": "JabRef",
+    "en_title": "JabRef",
     "sort_key": "jabref",
     "definition": "Ücretsiz olarak sunulan, açık kaynaklı ve platformlar arası çalışan bir atıf ve kaynakça yönetim aracıdır. BibTeX dosyalarını düzenlemeye, çevrim içi bilimsel veritabanlarından veri aktarmaya ve BibTeX dosyalarını yönetmeye ve aramaya olanak tanır.",
     "related_terms": [

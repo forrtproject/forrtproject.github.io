@@ -1,6 +1,7 @@
 {
     "type": "glossary",
     "title": "Sağlamlık (analizleri) [Robustness (analyses)]",
+    "en_title": "Robustness (analyses)",
     "sort_key": "sagzlamlizk (analizleri) [robustness (analyses)]",
     "definition": "Bir hipoteze verilen desteğin, yöntemsel ya da analitik süreçte yapılan değişikliklere rağmen devam etmesi durumudur. Başka bir deyişle, aynı sonucun farklı analitik koşullar altında da desteklenip desteklenmediğini incelemek için farklı yöntemler veya analiz süreçleri uygulanmasıdır. Bu, çıkarımların analitik açıdan farklı koşullarda da geçerli olup olmadığını değerlendirir.",
     "related_terms": [

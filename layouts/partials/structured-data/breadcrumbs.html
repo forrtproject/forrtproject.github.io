@@ -1,0 +1,63 @@
+{{/* BreadcrumbList for every page deep enough to have a trail.
+
+     Breadcrumbs replace the raw URL line in a search result with a readable
+     hierarchy, which matters on a site this deep — most content sits two or
+     three levels down (`/about/mission/`, `/glossary/german/<term>/`).
+
+     Skipped for:
+       - the home page, which is the root of every trail;
+       - `clusters`, which builds a richer trail of its own in
+         `clusters/cluster_seo_jsonld.html` — two BreadcrumbLists on one page
+         would compete;
+       - thin tag archives, which are `noindex` and so will never render a
+         result to enhance.
+
+     The skips are one wrapping conditional rather than early `return`s: a Hugo
+     partial either returns a value or writes output, and mixing the two makes
+     the `return` silently fail to stop rendering.
+
+     `jsonify` escapes `<`, `>` and `&`, so titles cannot break out of the
+     script element.
+
+     Inputs: page context. */}}
+
+{{ $skip := or
+  .IsHome
+  (eq .Type "clusters")
+  (partial "functions/is_thin_taxonomy.html" .)
+}}
+
+{{ if not $skip }}
+  {{ $trail := slice }}
+
+  {{ range .Ancestors.Reverse }}
+    {{ $ancestor := . }}
+    {{ $name := cond .IsHome (site.Params.short_title | default site.Title) (.LinkTitle | default .Title) }}
+    {{ if $name }}
+      {{ $trail = $trail | append (dict
+        "@type" "ListItem"
+        "position" (add (len $trail) 1)
+        "name" $name
+        "item" $ancestor.Permalink
+      ) }}
+    {{ end }}
+  {{ end }}
+
+  {{ with .LinkTitle | default .Title }}
+    {{ $trail = $trail | append (dict
+      "@type" "ListItem"
+      "position" (add (len $trail) 1)
+      "name" .
+      "item" $.Permalink
+    ) }}
+  {{ end }}
+
+  {{/* A single entry is just the page itself — no hierarchy worth describing. */}}
+  {{ if gt (len $trail) 1 }}
+<script type="application/ld+json">{{ (dict
+  "@context" "https://schema.org"
+  "@type" "BreadcrumbList"
+  "itemListElement" $trail
+) | jsonify | safeJS }}</script>
+  {{ end }}
+{{ end }}

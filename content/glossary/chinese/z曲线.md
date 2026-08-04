@@ -1,6 +1,7 @@
 {
     "type": "glossary",
     "title": "Z曲线 [Z-Curve]",
+    "en_title": "Z-Curve",
     "sort_key": "zquxian",
     "definition": "Z分数计算是一种统计方法，主要用于估算一组研究报告的“估计重复率”（Estimated Replication Rate，简称ERR）和“预期发现率”（Expected Discovery Rate，简称EDR）。对于一组具有统计显著性的研究，其Z曲线计算过程包括：将报告的p值转换为Z分数，将有限混合模型拟合到这些Z分数的分布上，并基于该混合模型估算平均统计功效。该计算可通过R语言的一个专用包zcurve实现（https://cran.r-project.org/web/packages/zcurve/index.html）。",
     "related_terms": [

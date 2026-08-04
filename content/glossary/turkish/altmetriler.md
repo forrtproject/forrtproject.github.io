@@ -1,6 +1,7 @@
 {
     "type": "glossary",
     "title": "Altmetriler [Altmetrics]",
+    "en_title": "Altmetrics",
     "sort_key": "altmetriler [altmetrics]",
     "definition": "Geleneksel atıf ölçütlerinden farklı olarak, altmetriler (kısaca “alternatif metriler”) sosyal medya (örneğin Twitter), dijital haber medyası, ön-baskı indirme sayısı gibi çeşitli kaynaklara dayalı olarak araştırma çıktılarının elde ettiği ilgi ve daha geniş anlamda etkisini değerlendirir. Altmetriler, sansasyonel iddiaların genellikle ciddi araştırmalardan daha fazla ilgi görmesi nedeniyle eleştirilmektedir (Ali, 2021).",
     "related_terms": [

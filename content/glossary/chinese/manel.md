@@ -1,6 +1,7 @@
 {
     "type": "glossary",
     "title": "Manel",
+    "en_title": "Manel",
     "sort_key": "manel",
     "definition": "Manel是“male panel”的合成词，通常指完全由男性（尤其是白人男性）组成的会议发言小组。这一术语经常出现在有关学术界性别差异的讨论中，例如女性通常不被同行视为专家，导致其职业发展机会较少。",
     "related_terms": [

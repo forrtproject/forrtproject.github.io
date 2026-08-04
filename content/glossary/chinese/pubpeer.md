@@ -1,6 +1,7 @@
 {
     "type": "glossary",
     "title": "PubPeer",
+    "en_title": "PubPeer",
     "sort_key": "pubpeer",
     "definition": "PuPeer是一个允许用户针对已发表研究发布匿名同行评审（即发表后同行评审）的网站。",
     "related_terms": [

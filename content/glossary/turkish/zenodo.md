@@ -1,6 +1,7 @@
 {
     "type": "glossary",
     "title": "Zenodo",
+    "en_title": "Zenodo",
     "sort_key": "zenodo",
     "definition": "Araştırmacıların araştırma makaleleri, raporlar, veri setleri, araştırma yazılımları ve araştırma ile ilgili diğer dijital materyalleri depolayabildiği bir açık bilim deposudur. Zenodo, her gönderi için kalıcı bir Dijital Nesne Tanımlayıcısı (DOI; Digital Object Identifier) oluşturarak bu materyallerin atıf yapılabilir olmalarını sağlar. Bu platform, European OpenAIRE programı kapsamında geliştirilmiştir ve CERN tarafından işletilmektedir.",
     "related_terms": [

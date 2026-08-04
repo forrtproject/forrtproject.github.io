@@ -1,6 +1,7 @@
 {
     "type": "glossary",
     "title": "P-hackleme [p-hacking]",
+    "en_title": "p-hacking",
     "sort_key": "p-hackleme [p-hacking]",
     "definition": "İstatistiksel olarak anlamlı bir sonuca ulaşma olasılığını, standart istatistiksel anlamlılık kriterini (genellikle α = .05) karşılayarak yapay şekilde artırabilecek tekniklerin kötüye kullanılması. Örneğin, birden fazla analiz yapıp ve yalnızca p < .05 olanları raporlamak, p < .05 olana kadar verileri seçici olarak çıkarmak, analizlerde kullanılacak değişkenleri bu parametrelerin istatistiksel olarak anlamlı olup olmamasına göre seçmek.",
     "related_terms": [

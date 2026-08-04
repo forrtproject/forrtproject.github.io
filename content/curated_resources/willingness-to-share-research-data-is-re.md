@@ -31,9 +31,7 @@
     "FORRT_clusters": [
         "Open Data and Materials"
     ],
-    "tags": [
-        ""
-    ],
+    "tags": [],
     "forrt_clusters_new": "FAIR data and materials",
     "forrt_sub_clusters": "Reasons to share data and materials, Reasons not to share: Privacy and security considerations",
     "doi": "10.1371/journal.pone.0026828",

@@ -1,6 +1,7 @@
 {
     "type": "glossary",
     "title": "Önceliği kapma [Scooping]",
+    "en_title": "Scooping",
     "sort_key": "oznceligzi kapma [scooping]",
     "definition": "Bir araştırmacı veya araştırma ekibinin, başka bir araştırmacıdan/ekipten önce özgün bir bulguyu raporlaması veya yayımlaması eylemidir. Psikoloji alanında yapılan anket bazlı araştırmalar, önceliği kaptırma korkusunun veri paylaşımının önündeki korkuya dayalı önemli engellerden biri olduğunu göstermektedir. Ajan tabanlı modellemeler (agent-based models) ise, öncelik için rekabetin bilimsel güvenilirliği olumsuz etkilediğini öne sürmektedir (Tiokhin vd., 2021).",
     "related_terms": [

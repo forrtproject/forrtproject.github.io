@@ -1,6 +1,7 @@
 {
     "type": "glossary",
     "title": "Aleatorik/Seçkisiz Belirsizlik [Aleatoric uncertainty]",
+    "en_title": "Aleatoric uncertainty",
     "sort_key": "aleatorik/seczkisiz belirsizlik [aleatoric uncertainty]",
     "definition": "Sonuçlar üzerindeki bilinemez ya da doğası gereği rastgele olan etkenlerden kaynaklanan değişkenlik. Ek bilgi kaynakları ile azaltılamayan sonuç belirsizliğinin stokastik bileşeni. Örneğin, yazı tura atarken, yazı mı tura mı geleceği konusundaki belirsizlik.",
     "related_terms": [

@@ -1,6 +1,7 @@
 {
     "type": "glossary",
     "title": "Compendium",
+    "en_title": "Compendium",
     "sort_key": "compendium",
     "definition": "A collection of files prepared by a researcher to support a report or publication that include the data, metadata, programming code, software dependencies, licenses, and other instructions necessary for another researcher to independently reproduce the findings presented in the report or publication.",
     "related_terms": [

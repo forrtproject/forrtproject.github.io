@@ -1,6 +1,7 @@
 {
     "type": "glossary",
     "title": "Kompendiyum [Compendium]",
+    "en_title": "Compendium",
     "sort_key": "kompendiyum [compendium]",
     "definition": "Bir araştırmacı tarafından, bir raporu veya yayını desteklemek amacıyla hazırlanan; veri, metaveri, programlama kodları, yazılım bağımlılıkları, lisanslar ve bir başka araştırmacının söz konusu rapor ya da yayındaki bulguları bağımsız olarak yeniden üretebilmesi için gerekli diğer talimatları içeren dosya koleksiyonu.",
     "related_terms": [

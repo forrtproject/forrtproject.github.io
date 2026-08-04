@@ -1,6 +1,7 @@
 {
     "type": "glossary",
     "title": "Kapsayıcılık [Inclusion]",
+    "en_title": "Inclusion",
     "sort_key": "kapsayizcizlizk [inclusion]",
     "definition": "Kapsayıcılık (dahil etme) ya da kapsayıcı anlayış, belirli bir iş birliği projesi ya da ortamında (akademi gibi) bir hoş karşılanma ve saygı görme hissine işaret ederken; çeşitlilik basitçe geniş bir arka plan, bakış açısı ve deneyim yelpazesini ifade eder. Kapsayıcılık çabaları ise daha da ileri giderek, aksi takdirde dışlanabilecek olan çeşitli bireyler arasında katılımı ve eşit değer görmeyi teşvik etmeyi amaçlar. Kapsayıcı anlayışı artırmak genellikle erişilebilirlik ve katılım üzerindeki sistematik engellerin etkisini en aza indirmeyi ya da  tamamen ortadan kaldırmayı içerir.",
     "related_terms": [

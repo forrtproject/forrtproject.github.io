@@ -29,8 +29,7 @@
         "Open Data and Materials"
     ],
     "tags": [
-        "Open Science",
-        ""
+        "Open Science"
     ],
     "forrt_clusters_new": "FAIR data and materials",
     "forrt_sub_clusters": "Research data management",

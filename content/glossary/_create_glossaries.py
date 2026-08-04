@@ -250,6 +250,12 @@ for language_code in languages_to_process:
         entry = {
             "type": "glossary",
             "title": title,
+            # The English title is what ties a term to its translations in the
+            # other glossaries. The site groups on it to emit hreflang, so it
+            # has to be a field of its own: `title` only sometimes carries the
+            # English form in brackets (see the branch above), and parsing it
+            # back out of the title is not reliable.
+            "en_title": en_title,
             "sort_key": sort_key_for_language(title, language_code),
             "definition": definition,
             "related_terms": list(dict.fromkeys(safe_get(row, "Related_terms").split("; "))) if safe_get(row, "Related_terms") else [],

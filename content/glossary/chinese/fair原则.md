@@ -1,6 +1,7 @@
 {
     "type": "glossary",
     "title": "FAIR原则 [FAIR principles]",
+    "en_title": "FAIR principles",
     "sort_key": "fairyuanze",
     "definition": "FAIR原则描述了学术资料应可查找、可访问、可互操作和可重复使用。\"可查找\"和\"可访问\"关注资料的存储位置（例如，数据存储仓库），而\"可互操作\"和\"可重复使用\"则强调数据格式的重要性及其在未来的会如何变化。",
     "related_terms": [

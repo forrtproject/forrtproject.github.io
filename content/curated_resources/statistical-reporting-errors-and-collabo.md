@@ -35,9 +35,7 @@
         "Conceptual and Statistical Knowledge",
         "Open Data and Materials"
     ],
-    "tags": [
-        ""
-    ],
+    "tags": [],
     "forrt_clusters_new": "Conceptual and Statistical Knowledge, FAIR data and materials",
     "forrt_sub_clusters": "Reasons to share data and materials, The logic of null hypothesis testing, p-values, Type I and II errors (and when and why they might happen).",
     "doi": "10.1371/journal.pone.0114876",

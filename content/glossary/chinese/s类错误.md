@@ -1,6 +1,7 @@
 {
     "type": "glossary",
     "title": "S类错误 [Type S error]",
+    "en_title": "Type S error",
     "sort_key": "sleicuowu",
     "definition": "S类错误指研究者对效应方向的误判：认为观察效应与实际效应方向相反（例如，将正向效应误判为负向）。",
     "related_terms": [

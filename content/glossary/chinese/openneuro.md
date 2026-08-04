@@ -1,6 +1,7 @@
 {
     "type": "glossary",
     "title": "OpenNeuro",
+    "en_title": "OpenNeuro",
     "sort_key": "openneuro",
     "definition": "OpenNeuro是一个免费的平台，研究人员可以在此免费、公开地分享、浏览、下载并再利用大脑影像数据（如MRI、MEG、EEG、iEEG、ECoG、ASL和PET数据）。",
     "related_terms": [

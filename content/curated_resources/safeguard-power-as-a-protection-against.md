@@ -29,9 +29,7 @@
     "FORRT_clusters": [
         "Conceptual and Statistical Knowledge"
     ],
-    "tags": [
-        ""
-    ],
+    "tags": [],
     "forrt_clusters_new": "Conceptual and Statistical Knowledge",
     "forrt_sub_clusters": "Research design, sampling methods, & its implications for inferences., Effect sizes, statistical power, simulations, & confidence intervals.",
     "doi": "10.1177/1745691614528519",

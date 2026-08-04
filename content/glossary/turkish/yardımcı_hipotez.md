@@ -1,6 +1,7 @@
 {
     "type": "glossary",
     "title": "Yardımcı Hipotez [Auxiliary Hypothesis]",
+    "en_title": "Auxiliary Hypothesis",
     "sort_key": "yardizmciz hipotez [auxiliary hypothesis]",
     "definition": "Tüm teoriler, yapıların doğasına ve nasıl ölçülebileceklerine dair varsayımlar içerir. Ancak, tüm öngörüler teorilerden türetilmez ve varsayımlar bazen başka öncüllerden de çıkarılabilir. Bir öngörüyü çıkarsamak için ek varsayımlar yapılır ve bunlar, gözlemlenebilir verilerle ilişkilendirilerek test edilir. Bu yardımcı hipotezler bazen bir replikasyon girişiminin neden başarısız olduğunu açıklamak için kullanılır.",
     "related_terms": [

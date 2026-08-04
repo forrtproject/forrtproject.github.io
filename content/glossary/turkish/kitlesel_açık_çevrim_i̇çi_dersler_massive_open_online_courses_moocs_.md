@@ -1,6 +1,7 @@
 {
     "type": "glossary",
     "title": "Kitlesel Açık Çevrim İçi Dersler (Massive Open Online Courses; MOOCs)",
+    "en_title": "Kitlesel Açık Çevrim İçi Dersler (Massive Open Online Courses; MOOCs)",
     "sort_key": "kitlesel aczizk czevrim i̇czi dersler (massive open online courses; moocs)",
     "definition": "Ücretsiz olarak sunulan, açık kaynaklı ve platformlar arası çalışan bir atıf ve kaynakça yönetim aracıdır. BibTeX dosyalarını düzenlemeye, çevrim içi bilimsel veritabanlarından veri aktarmaya ve BibTeX dosyalarını yönetmeye ve aramaya olanak tanır.",
     "related_terms": [

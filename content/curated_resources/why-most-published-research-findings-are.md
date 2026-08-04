@@ -27,9 +27,7 @@
     "FORRT_clusters": [
         "Conceptual and Statistical Knowledge"
     ],
-    "tags": [
-        ""
-    ],
+    "tags": [],
     "forrt_clusters_new": "Replication and meta-research",
     "forrt_sub_clusters": "Meta-research",
     "doi": "10.1371/journal.pmed.0020124",

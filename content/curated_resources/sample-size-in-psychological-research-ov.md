@@ -30,9 +30,7 @@
     "FORRT_clusters": [
         "Conceptual and Statistical Knowledge"
     ],
-    "tags": [
-        ""
-    ],
+    "tags": [],
     "forrt_clusters_new": "Conceptual and Statistical Knowledge",
     "forrt_sub_clusters": "Research design, sampling methods, & its implications for inferences.",
     "doi": "10.2466/03.11.pms.112.2.331-348",

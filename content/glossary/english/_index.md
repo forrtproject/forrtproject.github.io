@@ -13,6 +13,11 @@ header:
   caption: ""
   image: ""
 type: "glossary"
+# Declares the language this glossary is written in. Read by
+# `partials/functions/page_language.html` for `lang`/`dir`/hreflang;
+# `en_title` groups the five indexes into one hreflang cluster.
+language: english
+en_title: "Glossary"
 aliases:
   - /glossary/
 ---

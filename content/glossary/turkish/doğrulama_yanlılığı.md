@@ -1,6 +1,7 @@
 {
     "type": "glossary",
     "title": "Doğrulama yanlılığı [Confirmation bias]",
+    "en_title": "Confirmation bias",
     "sort_key": "dogzrulama yanlizlizgziz [confirmation bias]",
     "definition": "Kişinin önceden sahip olduğu değerleri, inançları, beklentileri veya hipotezlerini doğrulayacak şekilde bilgiyi arama, yorumlama, tercih etme ve hatırlama eğilimi.",
     "related_terms": [

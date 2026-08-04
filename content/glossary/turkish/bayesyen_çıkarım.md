@@ -1,6 +1,7 @@
 {
     "type": "glossary",
     "title": "Bayesyen Çıkarım [Bayesian Inference]",
+    "en_title": "Bayesian Inference",
     "sort_key": "bayesyen czizkarizm [bayesian inference]",
     "definition": "Bayes teoremine dayanan ve olasılığın matematiksel dilini kullanarak epistemolojik belirsizliği ifade eden bir istatistiksel çıkarım yöntemi. Bayesyen çıkarım, olasılıklar arasında güvenilirliğin tahsis edilmesine (ve yeni gözlemlenen veriler veya kanıtlara dayanarak yeniden tahsis edilmesine) dayanır. Bayesyen çıkarıma yönelik mevcut iki yaklaşım ‘Bayes faktörleri’ (BF) ve Bayesyen parametre tahminidir.",
     "related_terms": [

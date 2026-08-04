@@ -1,6 +1,7 @@
 {
     "type": "glossary",
     "title": "Tip S hata [Type S error]",
+    "en_title": "Type S error",
     "sort_key": "tip s hata [type s error]",
     "definition": "Tip S hata, bir araştırmacının gözlemlenen etkinin yönünü gerçekte olduğunun tersi olarak yorumlaması durumunda meydana gelir. Örneğin, gerçek etkisi negatif olan bir durumu pozitif olarak rapor etmek ya da tam tersi, bir Tip S hatasıdır. (Buradaki S harfi, İngilizcede ‘işaret/yön’ anlamlarına gelen ‘sign’ kelimesinden gelmektedir.)",
     "related_terms": [
