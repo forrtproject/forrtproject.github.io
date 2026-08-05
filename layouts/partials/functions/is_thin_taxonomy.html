@@ -1,0 +1,35 @@
+{{/* Reports whether a page is a low-value `tags` archive that should be kept
+     out of search results and out of the sitemap.
+
+     Tags are free text entered on curated resources, so the taxonomy has grown
+     to ~1,600 terms of which roughly three quarters apply to a single resource.
+     Those term pages restate one card and little else, which is thin,
+     near-duplicate content at a scale that dominates the sitemap.
+
+     Two kinds of page qualify:
+       - a term page (`/tag/<term>/`) with fewer than `tag_index_min_pages`
+         entries;
+       - the term index (`/tag/`) itself, which is a flat list of every term and
+         serves no search intent.
+
+     Only the `tags` taxonomy is affected. `categories`, `publication_types` and
+     `FORRT_clusters` are curated vocabularies and are left alone.
+
+     Inputs: page context. Output: bool. */}}
+
+{{ $min := site.Params.tag_index_min_pages | default 0 }}
+{{ $thin := false }}
+
+{{ if gt $min 0 }}
+  {{ $taxonomy := "" }}
+  {{ with .Data }}{{ $taxonomy = .Plural | default "" }}{{ end }}
+  {{ if eq $taxonomy "tags" }}
+    {{ if eq .Kind "term" }}
+      {{ $thin = lt (len .Pages) $min }}
+    {{ else if eq .Kind "taxonomy" }}
+      {{ $thin = true }}
+    {{ end }}
+  {{ end }}
+{{ end }}
+
+{{ return $thin }}

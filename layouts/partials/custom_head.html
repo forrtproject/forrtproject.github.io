@@ -8,6 +8,15 @@
 {{ partial "structured-data/glossary-term.html" . }}
 {{ partial "structured-data/educators-corner.html" . }}
 
+{{ partial "structured-data/breadcrumbs.html" . }}
+
+{{/* Thin `tags` archives: browsable and still passing link equity, but kept
+     out of search results. See `functions/is_thin_taxonomy.html`, which the
+     sitemap template consults too so the two cannot disagree. */}}
+{{ if partial "functions/is_thin_taxonomy.html" . }}
+  <meta name="robots" content="noindex, follow">
+{{ end }}
+
 {{/* Author profile pages: noindex empty template stubs, and emit Person
      structured data for the substantive ones. (Computed once.) */}}
 {{ if and (eq .Section "authors") .Params.name }}

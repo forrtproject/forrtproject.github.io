@@ -52,7 +52,14 @@ def split_cells(df):
     df['education_level'] = [[y.strip() for y in x.split(',')] for x in df['education_level'].values]
     df['subject_areas'] = [[y.strip() for y in x.split(',')] for x in df['subject_areas'].values]
     df['FORRT_clusters'] = [[y.strip() for y in x.split(',')] for x in df['FORRT_clusters'].values]
-    df['tags'] = [[y.strip() for y in x.split(',')] for x in df['tags'].values]
+    # `tags` becomes a Hugo taxonomy, so a blank cell would otherwise yield
+    # [""] and collect every such resource into one archive; the sheet also
+    # carries "-" and "." as stand-ins for "no tags". Anything without a
+    # letter or digit is a placeholder, not a term, so drop it — the resource
+    # itself is kept, it just ends up untagged.
+    df['tags'] = [[y.strip() for y in x.split(',')
+                   if any(ch.isalnum() for ch in y)]
+                  for x in df['tags'].values]
     df['language'] = [[y.strip() for y in x.split(',')] for x in df['language'].values]
 
 

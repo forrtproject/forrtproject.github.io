@@ -1,0 +1,34 @@
+{{/* Override of Hugo's built-in sitemap template.
+
+     Identical to the built-in output except that pages judged low-value by
+     `functions/is_thin_taxonomy.html` are skipped. Those same pages are served
+     with `noindex, follow` (see `partials/custom_head.html`); listing a
+     noindexed URL in the sitemap sends search engines two contradictory
+     signals, so both rules read the same predicate.
+
+     Kept deliberately close to the built-in template so it stays easy to diff
+     against upstream when Hugo changes. */ -}}
+{{ printf "<?xml version=\"1.0\" encoding=\"utf-8\" standalone=\"yes\"?>" | safeHTML }}
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  {{- range .Pages -}}
+    {{- if not (partial "functions/is_thin_taxonomy.html" .) -}}
+  <url>
+    <loc>{{ .Permalink }}</loc>
+    {{- if not .Lastmod.IsZero }}
+    <lastmod>{{ .Lastmod.Format "2006-01-02T15:04:05-07:00" | safeHTML }}</lastmod>
+    {{- end }}
+    {{- with .Sitemap.ChangeFreq }}
+    <changefreq>{{ . }}</changefreq>
+    {{- end }}
+    {{- if ge .Sitemap.Priority 0.0 }}
+    <priority>{{ .Sitemap.Priority }}</priority>
+    {{- end }}
+    {{- if .IsTranslated }}
+      {{- range .AllTranslations }}
+    <xhtml:link rel="alternate" hreflang="{{ .Language.LanguageCode }}" href="{{ .Permalink }}" />
+      {{- end }}
+    {{- end }}
+  </url>
+    {{- end -}}
+  {{- end }}
+</urlset>
