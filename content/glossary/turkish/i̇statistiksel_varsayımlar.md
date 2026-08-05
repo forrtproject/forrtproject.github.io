@@ -1,5 +1,6 @@
 {
     "type": "glossary",
+    "en_title": "Statistical Assumptions",
     "title": "İstatistiksel Varsayımlar [Statistical Assumptions]",
     "sort_key": "i̇statistiksel varsayizmlar [statistical assumptions]",
     "definition": "Analitik yaklaşımlar ve modeller, verilerin belirli özelliklere sahip olduğunu varsayar (örn., istatistiksel bağımsızlık, rastgele örneklem, normallik, eşit varyans). Bir analiz yapılmadan önce bu varsayımlar kontrol edilmelidir; çünkü varsayımların ihlali, çalışmanın sonuçlarını ve çıkarımlarını değiştirebilir. Açık ve yeniden üretilebilir bilimde iyi bir uygulama, doğrulanan varsayımlar ile uygulanan kontrollerin veya düzeltmelerin sonuçlarının raporlanmasıdır.",

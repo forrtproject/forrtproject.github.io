@@ -1,5 +1,6 @@
 {
     "type": "glossary",
+    "en_title": "Society for the Improvement of Psychological Science (SIPS)",
     "title": "Psikoloji Biliminin Geliştirilmesi Derneği [Society for the Improvement of Psychological Science (SIPS)]",
     "sort_key": "psikoloji biliminin gelisztirilmesi dernegzi [society for the improvement of psychological science (sips)]",
     "definition": "Psikoloji araştırmaları alanında daha iyi yöntemlerin ve uygulamaların teşvik edilmesi amacıyla kurulmuş bir üyelik derneğidir. Dernek, psikoloji araştırmacılarının eğitimini geliştirmek, daha yüksek kaliteli araştırmalara olanak tanıyan araştırma kültürlerini teşvik etmek, bu tür reformların etkisini niceliksel ve ampirik olarak değerlendirmek ve psikoloji alanının hem içinde hem de dışında farkındalık etkinlikleri düzenleyerek mevcut araştırma normlarını iyileştirmek yoluyla misyonunu gerçekleştirmeyi hedeflemektedir.",

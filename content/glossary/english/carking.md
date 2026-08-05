@@ -1,5 +1,6 @@
 {
     "type": "glossary",
+    "en_title": "CARKing",
     "title": "CARKing",
     "sort_key": "carking",
     "definition": "Critiquing After the Results are Known (CARKing) refers to presenting a criticism of a design as one that you would have made in advance of the results being known. It usually forms a reaction or criticism to unwelcome or unfavourable results, results whether the critic is conscious of this fact or not.",

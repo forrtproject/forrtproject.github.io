@@ -1,5 +1,6 @@
 {
     "type": "glossary",
+    "en_title": "Demarcation criterion",
     "title": "Sınırlandırma Ölçütü [Demarcation criterion]",
     "sort_key": "siznizrlandizrma ozlczuztuz [demarcation criterion]",
     "definition": "Bilimi, bilim dışı olandan ayırmaya yarayan ve dünyaya ait bilgiyi arttırmanın en uygun yolunu göstermeyi amaçlayan bir ölçüttür. Poppercı yaklaşıma göre sınırlandırma ölçütü, yanlışlanabilirlik ve yanlışlamacı bir tutumun uygulanmasıdır. Alternatif yaklaşımlar arasında, bu ölçütün doğayı anlamayı amaçlayan problem çözme olduğunu düşünen Kuhn’un görüşü ve bilimin ilerleyici bir araştırma programı çerçevesinde çalışmakla belirlendiğini savunan Lakatos’un yaklaşımı yer almaktadır.",

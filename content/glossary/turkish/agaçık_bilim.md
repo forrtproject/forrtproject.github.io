@@ -1,5 +1,6 @@
 {
     "type": "glossary",
+    "en_title": "Bropenscience",
     "title": "Agaçık Bilim [Bropenscience]",
     "sort_key": "agaczizk bilim [bropenscience]",
     "definition": "Açık bilimde çeşitli seslerin eksikliğine (Bahlai, Bartlett, Burgio vd., 2019; Onie, 2020) ve toksik veya dışlayıcı olabilen davranış ve iletişim tarzlarına dikkat çekmeyi amaçlayan esprili bir ifade. Önemli olan, tüm agaların (“bro”ların) erkek olmamasıdır; aksine, bunlar katı düşünce tarzı sergileyen, öz farkındalıktan yoksun, düşmanlık, kaba davranış ve dışlayıcı eğilimleri olan bireylerdir (Pownall vd., 2021; Whitaker & Guest, 2020). Genellikle yapısal ayrıcalıklardan yararlanan egemen gruplara mensupturlar. #agaçıkbilim (#bropenscience) sorununu ele almak için, araştırmacıların akademik sistemler ve kurumlar içerisindeki yapısal eşitsizlikleri sorgulaması ve çözmeye çalışması gerekmektedir.",

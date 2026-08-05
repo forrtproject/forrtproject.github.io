@@ -1,5 +1,6 @@
 {
     "type": "glossary",
+    "en_title": "Creative destruction approach to replication",
     "title": "Creative destruction approach to replication",
     "sort_key": "creative destruction approach to replication",
     "definition": "Replication efforts should seek not just to support or question the original findings, but also to replace them with revised, stronger theories with greater explanatory power. This approach therefore involves ‘pruning’ existing theories, comparing all the alternative theories, and making replication efforts more generative and engaged in theory-building (Tierney et al. 2020, 2021).",

@@ -1,5 +1,6 @@
 {
     "type": "glossary",
+    "en_title": "Open Scholarship Knowledge Base",
     "title": "Open Scholarship Knowledge Base",
     "sort_key": "open scholarship knowledge base",
     "definition": "The Open Scholarship Knowledge Base (OSKB) is a collaborative initiative to share knowledge on the what, why and how of open scholarship to make this knowledge easy to find and apply. Information is curated and created by the community. The OSKB is a community under the Center for Open Science (COS).",

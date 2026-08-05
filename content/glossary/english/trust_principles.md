@@ -1,5 +1,6 @@
 {
     "type": "glossary",
+    "en_title": "TRUST Principles",
     "title": "TRUST Principles",
     "sort_key": "trust principles",
     "definition": "A set of guiding principles that consider Transparency, Responsibility, User focus, Sustainability, and Technology (TRUST) as the essential components for assessing, developing, and sustaining the trustworthiness of digital data repositories (especially those that store research data). They are complementary to the FAIR Data Principles.",

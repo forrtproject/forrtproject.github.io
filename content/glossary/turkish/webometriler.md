@@ -1,5 +1,6 @@
 {
     "type": "glossary",
+    "en_title": "Webometrics",
     "title": "Webometriler [Webometrics]",
     "sort_key": "webometriler [webometrics]",
     "definition": "Webometrik, çevrim içi içeriklerin incelenmesini kapsar. Webometrik, farklı çevrim içi siteler arasındaki bağlantıların sayısı ve türlerine odaklanır. Bu yaklaşımlar genellikle altmetrik türü olarak kabul edilir. “Bilgi kaynaklarının, yapıların ve teknolojilerin web üzerindeki inşası ve kullanımının niceliksel yönlerini, bibliyometrik ve informetrik yaklaşımlardan yararlanarak incelenmesi” (Björneborn ve Ingwersen, 2004).",

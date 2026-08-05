@@ -1,5 +1,6 @@
 {
     "type": "glossary",
+    "en_title": "Communality",
     "title": "Komünalite [Communality]",
     "sort_key": "komuznalite [communality]",
     "definition": "Bilimsel sonuçların ve yöntemlerin ortak mülkiyeti ve bunun sonucunda her ikisinin de serbestçe paylaşılması zorunluluğu. Komünalite, her bilimsel bulgunun çok sayıda kişinin çabasının ürünü olduğu anlayışına dayanır. Bilim insanları yeni bulgularını meslektaşlarıyla açık bir şekilde paylaştığında bu norm izlenmiş olur.",

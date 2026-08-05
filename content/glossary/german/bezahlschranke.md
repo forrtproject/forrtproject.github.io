@@ -1,5 +1,6 @@
 {
     "type": "glossary",
+    "en_title": "Paywall",
     "title": "Bezahlschranke [Paywall]",
     "sort_key": "bezahlschranke [paywall]",
     "definition": "Eine technische Hürde, die den Zugang zu Informationen nur für Personen ermöglicht, die \\- entweder persönlich oder über eine Organisation \\- eine bestimmte Gebühr oder ein Abonnement bezahlt haben.",

@@ -1,5 +1,6 @@
 {
     "type": "glossary",
+    "en_title": "Registry of Research Data Repositories",
     "title": "Araştırma Veri Deposu Kayıtları [Registry of Research Data Repositories]",
     "sort_key": "arasztizrma veri deposu kayiztlariz [registry of research data repositories]",
     "definition": "Farklı akademik disiplinlerden araştırma veri depolarının küresel bir kayıt arşividir. Bu arşiv, araştırmacıların, fon sağlayıcıların, yayınevlerinin ve akademik kurumların veri setlerini kalıcı olarak depolamasına, metaveri ile tanımlamasına ve bu verilere erişmesine olanak tanıyan depoları içerir.",

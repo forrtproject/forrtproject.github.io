@@ -1,5 +1,6 @@
 {
     "type": "glossary",
+    "en_title": "Paywall",
     "title": "Paywall",
     "sort_key": "paywall",
     "definition": "A technological barrier that permits access to information only to individuals who have paid \\- either personally, or via an organisation \\- a designated fee or subscription.",

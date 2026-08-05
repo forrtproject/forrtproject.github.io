@@ -1,5 +1,6 @@
 {
     "type": "glossary",
+    "en_title": "Single-blind peer review",
     "title": "Tek-kör hakemlik [Single-blind peer review]",
     "sort_key": "tek-kozr hakemlik [single-blind peer review]",
     "definition": "Araştırma ürünlerinin nitelikli uzmanlar tarafından değerlendirildiği ve hakem(ler)in yazar(lar)ın kimliğini bildiği, ancak yazar(lar)ın hakem(ler)in kimliğini bilmediği yöntemdir.",

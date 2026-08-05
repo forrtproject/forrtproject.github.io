@@ -1,5 +1,6 @@
 {
     "type": "glossary",
+    "en_title": "Reverse p-hacking",
     "title": "Reverse p-hacking",
     "sort_key": "reverse p-hacking",
     "definition": "Exploiting researcher degrees of freedom during statistical analysis in order to increase the likelihood of accepting the null hypothesis (for instance, *p* \\> .05).",

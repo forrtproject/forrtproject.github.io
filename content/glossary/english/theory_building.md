@@ -1,5 +1,6 @@
 {
     "type": "glossary",
+    "en_title": "Theory building",
     "title": "Theory building",
     "sort_key": "theory building",
     "definition": "The process of creating and developing a statement of concepts and their interrelationships to show how and/or why a phenomenon occurs. Theory building leads to theory testing.",

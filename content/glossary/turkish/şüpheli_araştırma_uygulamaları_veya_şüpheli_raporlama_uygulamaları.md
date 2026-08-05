@@ -1,5 +1,6 @@
 {
     "type": "glossary",
+    "en_title": "Questionable Research Practices or Questionable Reporting Practices (QRPs)",
     "title": "Şüpheli Araştırma Uygulamaları veya Şüpheli Raporlama Uygulamaları [Questionable Research Practices or Questionable Reporting Practices (QRPs)]",
     "sort_key": "szuzpheli arasztizrma uygulamalariz veya szuzpheli raporlama uygulamalariz [questionable research practices or questionable reporting practices (qrps)]",
     "definition": "Araştırmacının kendi hipotezlerini destekleyecek şekilde verileri kasıtlı ya da kasıtsız olarak çarpıtmasına veya bu tür uygulamaların raporlanmasında yapılan ihmallere yönelik bir dizi etkinliği kapsar. Bunlar arasında; verilerin seçici olarak dahil edilmesi, sonuçlar bilindikten sonra hipotez kurma (HARKing) ve p-hackleme gibi uygulamalar yer alır. Bu kavram, John vd. (2012) tarafından popülerleştirilmiştir.",

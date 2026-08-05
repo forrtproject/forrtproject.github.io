@@ -1,5 +1,6 @@
 {
     "type": "glossary",
+    "en_title": "Reverse p-hacking",
     "title": "Tersine p-hackleme [Reverse p-hacking]",
     "sort_key": "tersine p-hackleme [reverse p-hacking]",
     "definition": "İstatistiksel veri analizi sırasında, araştırmacının serbestlik derecesini kötüye kullanarak sıfır hipotezinin kabul edilme olasılığını artırmaya yönelik manipülasyonlardır (örneğin, p > .05 elde etmeye çalışmak).",

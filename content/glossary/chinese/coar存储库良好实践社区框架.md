@@ -1,5 +1,6 @@
 {
     "type": "glossary",
+    "en_title": "COAR Community Framework for Good Practices in Repositories",
     "title": "COAR存储库良好实践社区框架 [COAR Community Framework for Good Practices in Repositories]",
     "sort_key": "coarcunchukulianghaoshijianshequkuangjia",
     "definition": "用于识别科学存储库最佳实践以及这些实践评估标准的框架。其灵活且多维的设计能适应多种存储库类型，包括托管出版物或数据的存储库，且适用于不同的地理位置和主题背景。",

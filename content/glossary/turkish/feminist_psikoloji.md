@@ -1,5 +1,6 @@
 {
     "type": "glossary",
+    "en_title": "Feminist psychology",
     "title": "Feminist Psikoloji [Feminist psychology]",
     "sort_key": "feminist psikoloji [feminist psychology]",
     "definition": "Feminist psikoloji, cinsiyet ve cinsellik konularına özel bir vurgu yaparak, temelde temsiliyet, çeşitlilik, kapsayıcılık, erişilebilirlik ve eşitlikle ilgilenir. Başlangıçta, kız çocuklarının ve kadınların yaşantılarının temsiline yönelik kaygılardan doğmuş olsa da, zamanla daha incelikli, kesişimsel ve kapsamlı bir eşitlik anlayışına evrilmiştir (örn., Eagly ve Riger, 2014). Feminist psikologlar, Açık Bilim alanlarında eşitlik, çeşitlilik ve kapsayıcılığın daha titizlikle ele alınması gerektiğini savunmuşlardır (Pownall vd., 2021).",

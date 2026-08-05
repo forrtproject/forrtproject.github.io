@@ -1,5 +1,6 @@
 {
     "type": "glossary",
+    "en_title": "Massive Open Online Courses (MOOCs)",
     "title": "Massive Open Online Courses (MOOCs)",
     "sort_key": "massive open online courses (moocs)",
     "definition": "Exclusively online courses which are accessible to any learner at any time, are typically free to access (while not necessarily openly licensed), and provide video-based instructions and downloadable data sets and exercises. The “massive” aspect describes the high volume of students that can access the course at any one time due to their flexibility, low or no cost, and online nature of the materials.",

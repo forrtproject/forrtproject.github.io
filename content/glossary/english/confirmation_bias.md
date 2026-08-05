@@ -1,5 +1,6 @@
 {
     "type": "glossary",
+    "en_title": "Confirmation bias",
     "title": "Confirmation bias",
     "sort_key": "confirmation bias",
     "definition": "The tendency to seek out, interpret, favor and recall information in a way that supports one’s prior values, beliefs, expectations, or hypothesis.",

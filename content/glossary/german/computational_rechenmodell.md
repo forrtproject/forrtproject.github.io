@@ -1,5 +1,6 @@
 {
     "type": "glossary",
+    "en_title": "Model (computational)",
     "title": "computational Rechenmodell [Model (computational)]",
     "sort_key": "computational rechenmodell [model (computational)]",
     "definition": "Rechenmodelle zielen darauf ab, untersuchte Phänomene mathematisch zu übersetzen, um komplexe Verhaltensweisen besser zu verstehen, zu vermitteln und vorherzusagen.",

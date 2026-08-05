@@ -1,5 +1,6 @@
 {
     "type": "glossary",
+    "en_title": "Bayesian Inference",
     "title": "Bayesian Inference",
     "sort_key": "bayesian inference",
     "definition": "A method of statistical inference based upon Bayes’ theorem, which makes use of epistemological (un)certainty using the mathematical language of probability. Bayesian inference is based on allocating (and reallocating, based on newly-observed data or evidence) credibility across possibilities. Two existing approaches to Bayesian inference include “Bayes factors” (BF) and Bayesian parameter estimation.",

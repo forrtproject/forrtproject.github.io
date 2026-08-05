@@ -1,5 +1,6 @@
 {
     "type": "glossary",
+    "en_title": "Interlocking",
     "title": "İç içelik (Interlocking)",
     "sort_key": "i̇cz iczelik (interlocking)",
     "definition": "Akademik kültürü dönüştürme çabalarının yalnızca tek bir alanı (örn., ırk, toplumsal cinsiyet veya yeti) ayrı ayrı inceleyerek tamamlanamayacağı, bunun yerine dışlayıcı tüm sistemlerin birlikte ele alınması gerektiği anlayışıyla, kesişimselliğin merkezinde yer alan güç, eşitsizlik ve dışlanmayı analiz etmeye yönelik bir yaklaşımdır. Kesişimselliğin (bireyin birden fazla toplumsal kimliğe sahip olmasına atıfta bulunan) aksine, iç içelik genellikle bu kimlikler temelinde bireye karşı baskı aracı olarak birlikte işleyen sistemleri tanımlamak için kullanılır.",

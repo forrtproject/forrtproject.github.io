@@ -1,5 +1,6 @@
 {
     "type": "glossary",
+    "en_title": "Content validity",
     "title": "İçerik geçerliliği [Content validity]",
     "sort_key": "i̇czerik geczerliligzi [content validity]",
     "definition": "Bir ölçümün, araştırmacının ölçtüğünü iddia ettiği kavramın tüm yönlerini ne ölçüde içerdiği: “Kavramsal alanın net bir şekilde tanımlandığı ve ölçütlerin bu alanı tam olarak temsil edip etmediğinin analist tarafından değerlendirildiği nitel bir geçerlilik türüdür\" (Bollen, 1989, s. 185). İçerik geçerliliği, yapı geçerliliğinin bir bileşenidir ve genellikle uzman değerlendirmesi içeren nicel ve nitel yöntemler kullanılarak belirlenebilir.",
