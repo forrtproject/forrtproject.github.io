@@ -1,5 +1,6 @@
 {
     "type": "glossary",
+    "en_title": "Journal Impact Factor™",
     "title": "Journal Impact Factor™",
     "sort_key": "journal impact factor™",
     "definition": "The mean number of citations to research articles in that journal over the preceding two years. It is a proprietary and opaque calculation marketed by Clarivate**™**. Journal Impact Factors are not associated with the content quality or the peer review process.",

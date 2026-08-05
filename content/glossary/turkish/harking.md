@@ -1,5 +1,6 @@
 {
     "type": "glossary",
+    "en_title": "HARKing",
     "title": "HARKing",
     "sort_key": "harking",
     "definition": "‘Sonuçlar Bilindikten Sonra Hipotez Belirleme’ (HARKing; Hypothesizing After the Results are Known) olarak adlandırılan şüpheli bir araştırma pratiğidir. \"HARKing, sonuçlara dayanarak veya sonuçlardan etkilenerek oluşturulan bir hipotezin, araştırma raporunda sanki araştırmadan önce (a priori) belirlenmiş gibi sunulmasıdır\" (Kerr, 1998, s. 196). Örneğin, alt grup analizleri yapmak, bir alt grupta bir etki bulmak ve ardından giriş bölümünü bu sonuçlarla uyumlu bir 'hipotez' oluşturacak şekilde yazmak buna örnek olarak gösterilebilir.",

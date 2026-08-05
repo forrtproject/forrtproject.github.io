@@ -1,5 +1,6 @@
 {
     "type": "glossary",
+    "en_title": "Research Contribution Metric (*p*)",
     "title": "研究贡献指标（p） [Research Contribution Metric (*p*)]",
     "sort_key": "yanjiugongxianzhibiao（p）",
     "definition": "研究贡献指标是一种用于评估引文网络中关联文献相似度的语义计量方法。这种方法通过简单的公式来衡量作者的贡献。具体而言，某篇出版物p的贡献度可基于其引用的文献与被引文献之间的语义距离来测算。",

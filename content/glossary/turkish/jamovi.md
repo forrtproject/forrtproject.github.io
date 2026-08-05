@@ -1,5 +1,6 @@
 {
     "type": "glossary",
+    "en_title": "Jamovi",
     "title": "Jamovi",
     "sort_key": "jamovi",
     "definition": "R diline dayalı veri analizi için kullanılan ücretsiz ve açık kaynaklı bir yazılım. Yazılımın grafiksel bir kullanıcı arayüzü vardır ve analizlere R kodunu sağlar. Jamovi, verileri, kodu, analizleri ve sonuçları tek bir dosyada kaydederek hesaplamalı yeniden üretilebilirliği destekler.",

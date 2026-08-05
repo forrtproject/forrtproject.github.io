@@ -1,5 +1,6 @@
 {
     "type": "glossary",
+    "en_title": "Reverse p-hacking",
     "title": "反向p值操纵 [Reverse p-hacking]",
     "sort_key": "fanxiangpzhicaozong",
     "definition": "反向p值操纵是指在统计分析中，利用研究人员的自由度增加接受零假设（如 p > .05）的可能性。",

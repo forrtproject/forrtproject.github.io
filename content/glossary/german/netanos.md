@@ -1,5 +1,6 @@
 {
     "type": "glossary",
+    "en_title": "Named entity-based Text Anonymization for Open Science (NETANOS)",
     "title": "NETANOS [Named entity-based Text Anonymization for Open Science (NETANOS)]",
     "sort_key": "netanos [named entity-based text anonymization for open science (netanos)]",
     "definition": "Eine kostenlose, quelloffene Anonymisierungssoftware, die benannte Entitäten (z. B. Personen, Orte, Zeiten, Daten) identifiziert und verändert. Ihr Hauptmerkmal besteht darin, dass sie den für Sekundäranalysen benötigten kritischen Kontext bewahrt. Ziel ist es, Forscher:innen bei der gemeinsamen Nutzung ihrer ursprünglichen Textdaten zu unterstützen und sich dabei an Forschungsethik zu halten.",

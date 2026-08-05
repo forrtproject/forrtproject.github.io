@@ -1,5 +1,6 @@
 {
     "type": "glossary",
+    "en_title": "Under-representation",
     "title": "Yetersiz temsil [Under-representation]",
     "sort_key": "yetersiz temsil [under-representation]",
     "definition": "Tüm katkılar, bakış açıları ve topluluk üyeleri yeterince temsil edilmediğinde yetersiz temsil durumu ortaya çıkar. Genellikle, bir grubun katkıları ya da bakış açılarının baskın hale gelmesiyle ortaya çıkar ve diğerlerinin marjinalize edilmesiyle sonuçlanır. Bu durum çoğunlukla, belirli kişisel özellikler açısından azınlıkta kalan grupları etkiler.",

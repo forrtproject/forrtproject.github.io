@@ -1,5 +1,6 @@
 {
     "type": "glossary",
+    "en_title": "Hypothesis",
     "title": "Hipotez [Hypothesis]",
     "sort_key": "hipotez [hypothesis]",
     "definition": "Hipotez, değişkenler arasındaki bağlantıyı ilişkilendiren kanıtlanmamış bir ifadedir (Glass ve Hall, 2008) ve önceki deneyimlere, bilimsel bilgiye, ön gözlemlere, teoriye ve/veya mantığa dayanabilir. Bilimsel testlerde, bir hipotez genellikle yönlü (örn., pozitif bir korelasyon) ya da yönsüz (örn., bir korelasyon olacak) şekilde formüle edilebilir. Popper (1959), hipotezlerin yanlışlanabilir olması gerektiğini, yani hipotezin yanlış olduğunun kavramsal olarak mümkün olması gerektiğini savunmuştur. Ancak, yanlışlamaya dayalı hipotez testinin belirsiz olduğu ileri sürülmüştür; çünkü hipotezdeki birçok başka test edilmemiş varsayıma-auxiliary hypotheses-bağlıdır. Longino (1990, 1992), biyolojik bilimler için ontolojik çeşitliliğin ontolojik sadelikten daha fazla değer görmesi gerektiğini savunmuş, yani biyolojik organizmaların hem birbirleri arasındaki hem de kendi içlerindeki farklılıkların araştırılması gerektiğini öne sürmüştür.",

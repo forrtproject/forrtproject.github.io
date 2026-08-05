@@ -1,5 +1,6 @@
 {
     "type": "glossary",
+    "en_title": "Type M error",
     "title": "Tip M hata [Type M error]",
     "sort_key": "tip m hata [type m error]",
     "definition": "Tip M hata, bir araştırmacı gözlemlenen etkinin gerçek büyüklüğünden daha küçük ya da daha büyük olduğu sonucuna varması durumunda meydana gelir. Örneğin, bir etki için gerçekte büyükken, küçük olduğu iddia edilirse veya bunun tersi yaşanırsa Tip M hata oluşur. (Buradaki M harfi, İngilizcede ‘etki büyüklüğü’ anlamında gelen ‘magnitude’ kelimesinden gelmektedir.)",

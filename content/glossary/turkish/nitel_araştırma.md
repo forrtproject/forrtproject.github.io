@@ -1,5 +1,6 @@
 {
     "type": "glossary",
+    "en_title": "Qualitative research",
     "title": "Nitel araştırma [Qualitative research]",
     "sort_key": "nitel arasztizrma [qualitative research]",
     "definition": "Sayısal olmayan veriler, örneğin metinsel yanıtlar, görüntüler, videolar veya diğer nesneler kullanılarak, kavramları, teorileri veya deneyimleri derinlemesine inceleyen araştırma. Dilin mikro düzeyde detaylı incelenmesinden ya da kişisel öznel deneyimlere odaklanmaktan, makro düzeyde sosyal deneyimleri ve görüşleri inceleyen yaklaşımlara kadar geniş bir yelpazeye sahiptir.",

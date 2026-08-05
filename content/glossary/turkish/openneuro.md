@@ -1,5 +1,6 @@
 {
     "type": "glossary",
+    "en_title": "OpenNeuro",
     "title": "OpenNeuro",
     "sort_key": "openneuro",
     "definition": "Araştırmacıların beyin görüntüleme verilerini (örn. MRI, MEG, EEG, iEEG, ECoG, ASL ve PET verileri) serbestçe ve açık bir şekilde paylaşabilecekleri, inceleyebilecekleri, indirebilecekleri ve yeniden kullanabilecekleri ücretsiz bir platformdur.",

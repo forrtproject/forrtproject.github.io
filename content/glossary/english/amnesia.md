@@ -1,5 +1,6 @@
 {
     "type": "glossary",
+    "en_title": "AMNESIA",
     "title": "AMNESIA",
     "sort_key": "amnesia",
     "definition": "AMNESIA is a free anonymization tool to remove identifying information from data. After uploading a dataset that contains personal data, the original dataset is transformed by the tool, resulting in a dataset that is anonymized regarding personal and sensitive data.",

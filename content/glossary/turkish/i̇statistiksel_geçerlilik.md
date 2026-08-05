@@ -1,5 +1,6 @@
 {
     "type": "glossary",
+    "en_title": "Statistical validity",
     "title": "İstatistiksel geçerlilik [Statistical validity]",
     "sort_key": "i̇statistiksel geczerlilik [statistical validity]",
     "definition": "Bir istatistiksel testten elde edilen sonuçların, evrende bulunan gerçek etkiyi ne ölçüde doğru ve yansıtıcı şekilde temsil ettiğidir. Başka bir deyişle, iki değişken arasında bir ilişkinin gerçekten var olup olmadığı ve yapılan analizlerle bu ilişkinin doğru şekilde tespit edilip edilemediğidir. İstatistiksel geçerliği tehdit eden unsurlar arasında, ulaşılan sonuçların güvenirliğini ve genellenebilirliğini etkileyebilen düşük istatistiksel güç, varsayımların ihlali, ölçümlerin güvenirliği gibi faktörler yer alır.",

@@ -1,5 +1,6 @@
 {
     "type": "glossary",
+    "en_title": "STRANGE",
     "title": "STRANGE",
     "sort_key": "strange",
     "definition": "The STRANGE “framework” is a proposal and series of questions to help animal behaviour researchers consider sampling biases when planning, performing and interpreting research with animals. STRANGE is an acronym highlighting several possible sources of sampling bias in animal research, such as the animals’ Social background; Trappability and self-selection; Rearing history; Acclimation and habituation; Natural changes in responsiveness; Genetic make-up, and Experience.",

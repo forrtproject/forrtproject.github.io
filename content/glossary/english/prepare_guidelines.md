@@ -1,5 +1,6 @@
 {
     "type": "glossary",
+    "en_title": "PREPARE Guidelines",
     "title": "PREPARE Guidelines",
     "sort_key": "prepare guidelines",
     "definition": "The PREPARE guidelines and checklist (Planning Research and Experimental Procedures on Animals: Recommendations for Excellence) aim to help the planning of animal research, and support adherence to the 3Rs (Replacement, Reduction or Refinement) and facilitate the reproducibility of animal research.",

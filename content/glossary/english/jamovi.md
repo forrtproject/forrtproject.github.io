@@ -1,5 +1,6 @@
 {
     "type": "glossary",
+    "en_title": "Jamovi",
     "title": "Jamovi",
     "sort_key": "jamovi",
     "definition": "Free and open source software for data analysis based on the R language. The software has a graphical user interface and provides the R code to the analyses. Jamovi supports computational reproducibility by saving the data, code, analyses, and results in a single file.",

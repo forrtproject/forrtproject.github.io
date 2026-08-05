@@ -1,5 +1,6 @@
 {
     "type": "glossary",
+    "en_title": "Massively Open Online Papers (MOOPs)",
     "title": "MOOPs [Massively Open Online Papers (MOOPs)]",
     "sort_key": "moops [massively open online papers (moops)]",
     "definition": "Im Gegensatz zum traditionellen kollaborativen Artikel folgt ein MOOP einem offenen, partizipativen und dynamischen Modell, das nicht durch eine vorgegebene Liste von Mitwirkenden eingeschränkt ist.",

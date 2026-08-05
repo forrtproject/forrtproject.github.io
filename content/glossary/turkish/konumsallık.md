@@ -1,5 +1,6 @@
 {
     "type": "glossary",
+    "en_title": "Positionality",
     "title": "Konumsallık [Positionality]",
     "sort_key": "konumsallizk [positionality]",
     "definition": "Üretilen araştırma dahilinde, sınırları tanımlamak için hem araştırma ortamı hem araştırmacının bağlamsallaştırılması (Jaraf, 2018). Konumsallık, genellikle nitel araştırmalarda merkezde tutulur ve önemsenir; ancak son zamanlarda bunun nicel araştırmalarda da kullanılmasına yönelik çağrılar yapılmıştır. Araştırmacının kendi geçmişini ve araştırma içerisindeki ve araştırmaya dair 'konumunu' belirttiği konumsallık ifadeleri, araştırmacı ön yargısını tanımak ve merkeze almak için önerilen yöntemlerden biri olarak önerilmiştir.",

@@ -1,5 +1,6 @@
 {
     "type": "glossary",
+    "en_title": "Type M error",
     "title": "M类错误 [Type M error]",
     "sort_key": "mleicuowu",
     "definition": "M类错误指研究者对效应幅度的误判：认为观察效应小于或大于实际效应（例如，低估强效应或高估弱效应）。",

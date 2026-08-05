@@ -1,5 +1,6 @@
 {
     "type": "glossary",
+    "en_title": "RepliCATs project",
     "title": "RepliCATs项目 [RepliCATs project]",
     "sort_key": "replicatsxiangmu",
     "definition": "CATs（Collaborative Assessment for Trustworthy Science）项目是指对值得信赖的科学的协作评估。RepliCATs 项目的目标是通过众包方式预测已发表研究的可靠性和可重复性，该项目主要关注8个社会科学领域，包括商业研究、犯罪学、经济学、教育学、政治学、心理学、公共管理和社会学。",

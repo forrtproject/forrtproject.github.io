@@ -1,5 +1,6 @@
 {
     "type": "glossary",
+    "en_title": "Equity",
     "title": "Hakkaniyet [Equity]",
     "sort_key": "hakkaniyet [equity]",
     "definition": "Farklı bireyler farklı başlangıç noktalarına (krş.“fırsat eşitsizlikleri”) ve ihtiyaçlara sahiptir. Eşit (equal) muamele, herkese aynı şekilde davranmayı amaçlarken; hakkaniyetli (equitable) muamele, dezavantajlı grupların fırsatlarını artırarak koşulları dengelemeyi hedefler. Hakkaniyet yaklaşımı, yalnızca çoğunluğun ihtiyaçlarına odaklanmak yerine, her bireyin farklı destek ihtiyaçlarını göz önünde bulundurarak adil bir şekilde eşitliği sağlamayı amaçlar.",

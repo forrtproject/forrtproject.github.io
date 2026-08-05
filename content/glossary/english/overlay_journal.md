@@ -1,5 +1,6 @@
 {
     "type": "glossary",
+    "en_title": "Overlay Journal",
     "title": "Overlay Journal",
     "sort_key": "overlay journal",
     "definition": "Open access electronic journals that collect and curate articles available from other sources (typically preprint servers, such as arXiv). Article curation may include (post-publication) peer review or editorial selection. Overlay journals do not publish novel material; rather, they organize and collate articles available in existing repositories.",

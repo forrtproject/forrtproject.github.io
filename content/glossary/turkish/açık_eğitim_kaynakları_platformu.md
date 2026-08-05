@@ -1,5 +1,6 @@
 {
     "type": "glossary",
+    "en_title": "Open Educational Resources (OER) Commons",
     "title": "Açık Eğitim Kaynakları Platformu [Open Educational Resources (OER) Commons]",
     "sort_key": "aczizk egzitim kaynaklariz platformu [open educational resources (oer) commons]",
     "definition": "Açık Eğitim Kaynakları Platformu, öğretmenlerin eğitim kaynakları oluşturmasına, paylaşmasına ve yeniden düzenlemesine olanak tanıyan, serbestçe erişilebilen bir çevrim içi kütüphanedir. Açık Eğitim Kaynakları hareketinin amacı, \"iş birliğine dayalı öğretme ve öğrenme\"yi ([https://www.oercommons.org/about](https://www.oercommons.org/about)) teşvik etmek ve herkesin erişebileceği yüksek kaliteli eğitim kaynakları sağlamaktır.",

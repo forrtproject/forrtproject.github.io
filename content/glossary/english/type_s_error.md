@@ -1,5 +1,6 @@
 {
     "type": "glossary",
+    "en_title": "Type S error",
     "title": "Type S error",
     "sort_key": "type s error",
     "definition": "A Type S error occurs when a researcher concludes that an effect was observed with an opposite sign than real one. For example, a type S error occurs when a researcher claims that a positive effect was observed when it is negative in reality or vice versa.",

@@ -1,5 +1,6 @@
 {
     "type": "glossary",
+    "en_title": "Preregistration Pledge",
     "title": "Ön-kayıt Taahhüdü [Preregistration Pledge]",
     "sort_key": "ozn-kayizt taahhuzduz [preregistration pledge]",
     "definition": "‘Açık ve yeniden üretilebilir araştırma uygulamalarını destekleyen kolektif bir eylem’ kapsamında, araştırmacılardan önümüzdeki iki yıl içinde en az bir çalışmayı ön kayıt altına alacaklarına dair söz vermelerini isteyen ön-kayıt taahhüdü, Free Our Knowledge projesi ile başlatılmış bir girişimdir ([https://freeourknowledge.org/about/](https://freeourknowledge.org/about/)). Proje, erken kariyer araştırmacıları (EKA) tarafından başlatılmış tabandan gelen bir harekettir.",

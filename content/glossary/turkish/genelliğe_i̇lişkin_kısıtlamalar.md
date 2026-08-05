@@ -1,5 +1,6 @@
 {
     "type": "glossary",
+    "en_title": "Constraints on Generality (COG)",
     "title": "Genelliğe İlişkin Kısıtlamalar [Constraints on Generality (COG)]",
     "sort_key": "genelligze i̇liszkin kizsiztlamalar [constraints on generality (cog)]",
     "definition": "Bildirilen bulgular için hedef popülasyonu ve koşulları açıkça tanımlayan ve gerekçelendiren bir açıklama. Araştırmacılar, genellemelerinin potansiyel sınır koşulları hakkında açık olmalıdır (Simons vd., 2017). Araştırmacılar, örneklenen kitlenin ve/veya sonuçları etkilemiş olabilecek bağlamsal faktörlerin ayrıntılı açıklamalarını sunmalıdır. Böylece gelecekteki tekrarlama girişimleri bu faktörleri hesaba katabilir (Brandt  vd., 2014). Açıkça listelenmeyen koşulların, etkinin tekrarlanabilirliği ile teorik olarak ilgisi olmadığı varsayılır.",

@@ -1,5 +1,6 @@
 {
     "type": "glossary",
+    "en_title": "Data management plan (DMP)",
     "title": "Veri Yönetim Planı (DMP) [Data management plan (DMP)]",
     "sort_key": "veri yoznetim planiz (dmp) [data management plan (dmp)]",
     "definition": "Bir araştırma projesinde verinin edinimi, analizi, yönetimi ve depolanması süreçlerini tanımlayan yapılandırılmış bir belgedir. Ayrıca veri sahipliğini ve verilerin proje süresince ve sonrasında nasıl korunacağını ve paylaşılacağını da açıklar. Veri yönetim planı taslakları, araştırma verilerinin nasıl ‘FAIR’ (bulunabilir, erişilebilir, birlikte çalışabilir ve yeniden kullanılabilir) ilkelerine uygun hale getirilebileceği ve mümkün olduğunda açık erişime sunulabileceği konusunda rehberlik sağlar.",

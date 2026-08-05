@@ -1,5 +1,6 @@
 {
     "type": "glossary",
+    "en_title": "JabRef",
     "title": "JabRef",
     "sort_key": "jabref",
     "definition": "An open-sourced, cross-platform citation and reference management tool that is available free of charge. It allows editing BibTeX files, importing data from online scientific databases, and managing and searching BibTeX files.",

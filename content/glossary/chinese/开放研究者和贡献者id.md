@@ -1,5 +1,6 @@
 {
     "type": "glossary",
+    "en_title": "ORCID (Open Researcher and Contributor ID)",
     "title": "开放研究者和贡献者ID [ORCID (Open Researcher and Contributor ID)]",
     "sort_key": "kaifangyanjiuzhehegongxianzheid",
     "definition": "ORCID是一个为研究人员和学者提供永久唯一标识符（ORCID iD）注册服务的组织，允许用户将数字研究成果和其他学术贡献与其ORCID记录关联。通过使用ORCID，可以有效解决学术交流中的姓名歧义问题。ORCID iD提供永久且唯一的标识符，能够连接研究人员与其学术成就。注册ORCID iD完全免费，注册网址为 https://orcid.org/register。",

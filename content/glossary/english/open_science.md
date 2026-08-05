@@ -1,5 +1,6 @@
 {
     "type": "glossary",
+    "en_title": "Open Science",
     "title": "Open Science",
     "sort_key": "open science",
     "definition": "An umbrella term reflecting the idea that scientific knowledge of all kinds, where appropriate, should be openly accessible, transparent, rigorous, reproducible, replicable, accumulative, and inclusive, all which are considered fundamental features of the scientific endeavour. Open science consists of principles and behaviors that promote transparent, credible, reproducible, and accessible science. Open science has six major aspects: open data, open methodology, open source, open access, open peer review, and open educational resources.",

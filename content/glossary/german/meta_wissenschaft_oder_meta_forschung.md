@@ -1,5 +1,6 @@
 {
     "type": "glossary",
+    "en_title": "Meta-science or Meta-research",
     "title": "Meta-Wissenschaft oder Meta-Forschung [Meta-science or Meta-research]",
     "sort_key": "meta-wissenschaft oder meta-forschung [meta-science or meta-research]",
     "definition": "Die wissenschaftliche Untersuchung der Wissenschaft selbst mit dem Ziel, wissenschaftliche Praktiken zu beschreiben, zu erklären, zu bewerten und/oder zu verbessern. Meta-Wissenschaft untersucht typischerweise wissenschaftliche Methoden, Analysen, die Berichterstattung und Auswertung von Daten, die Reproduzierbarkeit und Replizierbarkeit von Forschungsergebnissen sowie Anreize in der Wissenschaft.",

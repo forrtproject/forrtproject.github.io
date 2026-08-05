@@ -1,5 +1,6 @@
 {
     "type": "glossary",
+    "en_title": "OpenNeuro",
     "title": "OpenNeuro",
     "sort_key": "openneuro",
     "definition": "A free platform where researchers can freely and openly share, browse, download and re-use brain imaging data (e.g., MRI, MEG, EEG, iEEG, ECoG, ASL, and PET data).",

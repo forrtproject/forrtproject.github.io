@@ -1,5 +1,6 @@
 {
     "type": "glossary",
+    "en_title": "Multiplicity",
     "title": "Multiplicity",
     "sort_key": "multiplicity",
     "definition": "Potential inflation of Type I error rates (incorrectly rejecting the null hypothesis) because of multiple statistical testing, for example, multiple outcomes, multiple follow-up time points, or multiple subgroup analyses. To overcome issues with multiplicity, researchers will often apply controlling procedures (e.g., Bonferroni, Holm-Bonferroni; Tukey) that correct the alpha value to control for inflated Type I errors. However, by controlling for Type I errors, one can increase the possibility of Type II errors (i.e., incorrectly accepting the null hypothesis).",

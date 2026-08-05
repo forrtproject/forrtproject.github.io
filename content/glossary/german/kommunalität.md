@@ -1,5 +1,6 @@
 {
     "type": "glossary",
+    "en_title": "Communality",
     "title": "Kommunalität [Communality]",
     "sort_key": "kommunalität [communality]",
     "definition": "Das geteilte öffentliche Eigentum wissenschaftlicher Ergebnisse und Methoden und das daraus folgende Gebot, beides frei zu teilen. Die Kommunalität beruht auf der Tatsache, dass jede wissenschaftliche Erkenntnis das Ergebnis der Bemühungen einer Reihe von Akteuren ist. Um diese Norm zu befolgen, teilen Forschende ihre neuen Erkenntnisse offen mit Kolleg:innen.",

@@ -1,5 +1,6 @@
 {
     "type": "glossary",
+    "en_title": "p-value",
     "title": "p值 [p-value]",
     "sort_key": "pzhi",
     "definition": "p值是零假设显著性检验（Null Hypothesis Significance Testing，简称NHST）中，用于评估检验结果是否显著的关键统计量。它指的是在零假设成立的情况下，观察到某种效应或更极端效应的可能性（Lakens, 2021b）。美国统计协会声明（Wasserstein & Lazar, 2016）指出，p值不能作为零假设真假的指标，并将其定义为：“通俗地来说，p值是指定统计模型中，数据的某个统计量（如两个比较组的样本均值差）等于或比其观测值更极端的概率”（p. 131）。",

@@ -1,5 +1,6 @@
 {
     "type": "glossary",
+    "en_title": "Responsible Research and Innovation",
     "title": "Sorumlu Araştırma ve İnovasyon [Responsible Research and Innovation]",
     "sort_key": "sorumlu arasztizrma ve i̇novasyon [responsible research and innovation]",
     "definition": "Araştırma ve yenilikle ilişkili olarak toplumsal etkileri ve beklentileri dikkate alan, kapsayıcılık ve sürdürülebilirliği teşvik etmeyi amaçlayan bir yaklaşımdır. Bu yaklaşım, bilimsel çabaların daha geniş etkilerinden bağımsız olmadığını ve araştırmanın yalnızca bilgi üretme arzusuyla değil, başka faktörlerden de etkilendiğini göz önünde bulundurur. Bu nedenle, sorumlu araştırmayı teşvik etmede birçok taraf önemlidir; bunlar arasında fon sağlayan kurumlar, araştırma ekipleri, paydaşlar, aktivistler ve halk üyeleri yer alır.",
