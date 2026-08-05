@@ -9,7 +9,7 @@
         "UK Reproducibility Network. (n.d.). <i>UK Reproducibility Network</i>. Retrieved 10 July 2021. https://www.ukrn.org/",
         "GRN · German Reproducibility Network. (n.d.). <i>A German Reproducibility Network</i>. Retrieved from https://reproducibilitynetwork.de/",
         "<i>Swiss Reproducibility Network</i>. (n.d.). https://www.swissrn.org/",
-        "Anon. (n.d.). <i>Domov | SKRN (Slovak Reproducibility network)</i>. Retrieved from https://www.slovakrn.org/",
+        "Anon. (n.d.). <i>Domov | SKRN (Slovak Reproducibility network)</i>. Retrieved from https://www.skrn.sk/",
         "AusRN. (n.d.). <i>Australian Reproducibility Network</i>. Retrieved from https://www.aus-rn.org/"
     ],
     "drafted_by": [

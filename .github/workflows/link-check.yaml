@@ -59,7 +59,9 @@ jobs:
         if: steps.lychee.outputs.exit_code != 0
         run: |
           python3 << 'PYEOF'
-          import re
+          import json, re, time, urllib.error, urllib.parse, urllib.request
+          from concurrent.futures import ThreadPoolExecutor, as_completed
+          from datetime import datetime, timezone
 
           with open("/tmp/lychee/out.md") as f:
               content = f.read()
@@ -107,9 +109,135 @@ jobs:
               if current_page and current_page not in target[url]["pages"]:
                   target[url]["pages"].append(current_page)
 
+          # ------------------------------------------------------------------
+          # Second-pass verification of 403s.
+          #
+          # lychee already sends a browser User-Agent (see .lychee.toml), but some
+          # WAFs additionally gate on Accept/Accept-Language or on the HEAD method.
+          # Rather than excluding these domains outright — which silently drops a
+          # large share of the site's outbound links from any checking at all — we
+          # re-request each 403 with full browser headers and a GET.
+          #
+          # Whatever still refuses is genuinely unverifiable over HTTP, so we ask the
+          # Wayback availability API whether a snapshot exists. "Blocked, and never
+          # archived" is the state actually worth a maintainer's attention: nothing,
+          # anywhere, can confirm that link still resolves.
+          # ------------------------------------------------------------------
+          BROWSER_HEADERS = {
+              "User-Agent": (
+                  "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 "
+                  "(KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
+              ),
+              "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+              "Accept-Language": "en-US,en;q=0.9",
+          }
+
+          def recheck(url):
+              """Does this URL respond to a full browser request? -> (url, recovered)."""
+              req = urllib.request.Request(url, headers=BROWSER_HEADERS)
+              try:
+                  with urllib.request.urlopen(req, timeout=30) as r:
+                      return url, r.status < 400
+              except urllib.error.HTTPError as e:
+                  # 401/429 mean "authenticate" / "slow down", not "gone".
+                  return url, e.code < 400 or e.code in (401, 429)
+              except Exception:
+                  return url, False
+
+          # Hard ceiling on the archive pass. A single CDX query can take a minute on
+          # deep-crawled hosts, and the blocked set can run to a couple of hundred URLs;
+          # without a deadline this step would dominate the weekly job. Anything not
+          # reached in time is reported as "unknown", never as "not archived".
+          WAYBACK_DEADLINE = time.monotonic() + 8 * 60
+
+          # A link that was archived once in 2013 tells you nothing about whether it
+          # still resolves — the failure mode being hunted is rot, not non-existence.
+          # So the question asked of the archive is "when was this last successfully
+          # captured?", and anything not captured within this window is treated as
+          # possibly stale even though something was archived at some point.
+          STALE_AFTER_DAYS = 365
+
+          def wayback(url, retries=4):
+              """When was this URL last archived with a 200? -> (state, 'YYYY-MM'|None).
+
+              state is one of: fresh / stale / never / unknown.
+
+              Uses the CDX search API rather than archive.org/wayback/available, which
+              returns 429 for essentially every request. Two CDX details matter:
+              results are chronological, so `limit=1` yields the *oldest* capture —
+              exactly the wrong end — hence `limit=-1` for the newest; and the
+              statuscode filter is essential, because a host that started serving 404s
+              or a parking page keeps accumulating captures of that dead page.
+              """
+              if time.monotonic() > WAYBACK_DEADLINE:
+                  return "unknown", None
+              api = ("http://web.archive.org/cdx/search/cdx?url="
+                     + urllib.parse.quote(url, safe="")
+                     + "&limit=-1&filter=statuscode:200&fl=timestamp&output=json")
+              delay = 2.0
+              for attempt in range(retries):
+                  try:
+                      req = urllib.request.Request(api, headers={"User-Agent": BROWSER_HEADERS["User-Agent"]})
+                      # CDX can take well over 30s on deep-crawled hosts (jstor, jisc).
+                      with urllib.request.urlopen(req, timeout=60) as r:
+                          raw = r.read()
+                      rows = json.loads(raw) if raw.strip() else []
+                      if len(rows) < 2:
+                          return "never", None
+                      ts = rows[-1][0]
+                      last = datetime.strptime(ts[:8], "%Y%m%d").replace(tzinfo=timezone.utc)
+                      age = (datetime.now(timezone.utc) - last).days
+                      return ("fresh" if age <= STALE_AFTER_DAYS else "stale"), last.strftime("%Y-%m")
+                  except urllib.error.HTTPError as e:
+                      if e.code in (429, 503) and attempt < retries - 1:
+                          time.sleep(delay)
+                          delay *= 2
+                          continue
+                      return "unknown", None
+                  except Exception:
+                      if attempt < retries - 1:
+                          time.sleep(delay)
+                          delay *= 2
+                          continue
+                      return "unknown", None
+              return "unknown", None
+
+          recovered, blocked_fresh, blocked_stale, blocked_never, blocked_untested = [], [], [], [], []
+          if forbidden_errors:
+              print(f"Re-checking {len(forbidden_errors)} 403s with full browser headers...")
+              still_blocked = []
+              with ThreadPoolExecutor(max_workers=8) as pool:
+                  for fut in as_completed([pool.submit(recheck, u) for u in forbidden_errors]):
+                      url, ok = fut.result()
+                      (recovered if ok else still_blocked).append(url)
+              print(f"  {len(recovered)} recovered, {len(still_blocked)} still blocked")
+
+              # Wayback lookups run at low concurrency: CDX tolerates a few parallel
+              # requests but individual queries can take a minute on deep-crawled
+              # hosts, so a fully serial pass would dominate the job's runtime.
+              if still_blocked:
+                  print(f"Checking Wayback (CDX) for {len(still_blocked)} blocked URLs...")
+                  buckets = {"fresh": blocked_fresh, "stale": blocked_stale,
+                             "never": blocked_never, "unknown": blocked_untested}
+                  with ThreadPoolExecutor(max_workers=5) as pool:
+                      jobs = {pool.submit(wayback, u): u for u in still_blocked}
+                      for fut in as_completed(jobs):
+                          url = jobs[fut]
+                          state, when = fut.result()
+                          buckets[state].append((url, when))
+              print(f"  {len(blocked_fresh)} archived recently, {len(blocked_stale)} last archived "
+                    f"long ago, {len(blocked_never)} never archived, "
+                    f"{len(blocked_untested)} archive check unavailable")
+
           # Build output
           output = "\n".join(summary_lines).rstrip()
-          output += "\n\n## Broken links\n\n"
+          output += (
+              f"\n\n> **Actionable total: {len(main_errors)} broken links.** "
+              f"The `Errors` figure above is lychee's raw per-occurrence count and is "
+              f"dominated by bot-blocking responses; see the 403 section for how those "
+              f"were resolved.\n"
+          )
+          output += "\n## Broken links\n\n"
 
           if main_errors:
               for url, info in main_errors.items():
@@ -120,15 +248,64 @@ jobs:
               output += "No broken links found (excluding 403s).\n"
 
           if forbidden_errors:
-              output += f"\n<details>\n<summary>403 Forbidden ({len(forbidden_errors)} URLs — likely bot-blocking, not broken)</summary>\n\n"
-              output += "These sites block automated requests. The links may still be valid.\n"
-              output += "Showing first 100 — see workflow logs for full list.\n\n"
-              for i, (url, info) in enumerate(forbidden_errors.items()):
-                  if i >= 100:
-                      output += f"\n*... and {len(forbidden_errors) - 100} more*"
-                      break
-                  output += f"* <{url}>\n"
-              output += "\n</details>\n"
+              def with_pages(url):
+                  pages = forbidden_errors[url]["pages"]
+                  return f" (in {pages[0]})" if len(pages) == 1 else f" (in {len(pages)} pages)"
+
+              output += (
+                  f"\n## Bot-blocked (403) — {len(forbidden_errors)} URLs, re-verified\n\n"
+                  f"These refused lychee. Each was re-requested with full browser headers, and "
+                  f"whatever still refused was dated against its most recent successful Wayback "
+                  f"capture — the question being *when was this last known to work*, not whether "
+                  f"it ever existed.\n\n"
+                  f"* ✅ **{len(recovered)}** responded normally to a browser request — not broken.\n"
+                  f"* 🗄️ **{len(blocked_fresh)}** blocked, but archived within the last "
+                  f"{STALE_AFTER_DAYS} days — alive recently.\n"
+                  f"* ⚠️ **{len(blocked_stale)}** blocked, and not successfully archived for over "
+                  f"{STALE_AFTER_DAYS} days — **most likely to have rotted**.\n"
+                  f"* ⚠️ **{len(blocked_never)}** blocked and never archived — unverifiable.\n"
+              )
+              if blocked_untested:
+                  output += (
+                      f"* ❔ **{len(blocked_untested)}** blocked, and the archive lookup did not "
+                      f"return in time — status unknown this run.\n"
+                  )
+
+              if blocked_stale:
+                  output += (
+                      f"\n### ⚠️ Blocked, and stale in the archive\n\n"
+                      f"Last successful capture shown. The older that date, the more likely the "
+                      f"link is dead rather than merely defended.\n\n"
+                  )
+                  for url, when in sorted(blocked_stale, key=lambda x: (x[1] or "", x[0])):
+                      output += f"* `{when}` <{url}>{with_pages(url)}\n"
+
+              if blocked_never:
+                  output += "\n### ⚠️ Blocked, and never archived\n\n"
+                  for url, _ in sorted(blocked_never):
+                      output += f"* <{url}>{with_pages(url)}\n"
+
+              for label, bucket in (
+                  (f"🗄️ Blocked but archived recently ({len(blocked_fresh)} URLs — no action needed)",
+                   blocked_fresh),
+                  (f"❔ Blocked, archive check unavailable ({len(blocked_untested)} URLs)",
+                   blocked_untested),
+              ):
+                  if not bucket:
+                      continue
+                  output += f"\n<details>\n<summary>{label}</summary>\n\n"
+                  for url, when in sorted(bucket):
+                      output += f"* <{url}>" + (f" — last archived `{when}`\n" if when else "\n")
+                  output += "\n</details>\n"
+
+              if recovered:
+                  output += (
+                      f"\n<details>\n<summary>✅ Recovered on re-check "
+                      f"({len(recovered)} URLs — false positives)</summary>\n\n"
+                  )
+                  for url in sorted(recovered):
+                      output += f"* <{url}>\n"
+                  output += "\n</details>\n"
 
           with open("/tmp/lychee/out.md", "w") as f:
               f.write(output)
@@ -139,17 +316,25 @@ jobs:
         run: |
           mkdir -p /tmp/lychee
           python3 << 'PYEOF'
-          import json, os, re, sys, time, urllib.error, urllib.parse, urllib.request
+          import html, json, os, re, sys, time, urllib.error, urllib.parse, urllib.request
           from collections import defaultdict
           from concurrent.futures import ThreadPoolExecutor, as_completed
           from pathlib import Path
 
           SITE_ROOT = Path("/tmp/site")
-          # DOI body: any non-whitespace char except quotes, angle brackets, backslash.
+          # DOI body: any non-whitespace char except quotes, angle brackets, backslash
+          # and backtick.
           # Parens are allowed because SICI-style DOIs (e.g. 10.1016/0277-9536(95)00127-S)
           # legitimately contain balanced parens — we strip unbalanced trailing ones below.
-          DOI_RE = re.compile(r'https?://(?:dx\.)?doi\.org/(10\.[^\s"\'<>\\]+)', re.I)
-          TRAIL = '.,;:]}>"\''
+          # The backtick exclusion matters because DOIs are frequently embedded in JS
+          # template literals in generated pages (`https://doi.org/10.x/y`,authors: ...).
+          # Without it the match swallows the closing backtick plus the next field name
+          # and reports a perfectly good DOI as unregistered.
+          DOI_RE = re.compile(r'https?://(?:dx\.)?doi\.org/(10\.[^\s"\'<>\\`]+)', re.I)
+          TRAIL = '.,;:]}>"\'`'
+          # bioRxiv/medRxiv preprint URLs carry a version suffix that addresses the *page*
+          # and is not part of the registered DOI: .../2020.08.13.249847v2 -> ...249847
+          PREPRINT_VER_RE = re.compile(r'^(10\.1101/.+?)v\d+$', re.I)
 
           def balance(s):
               """Strip trailing ')' / ']' if they are unbalanced (i.e. enclosing punctuation)."""
@@ -173,9 +358,15 @@ jobs:
               page = "/" + "/".join(rel_parts)
               page = re.sub(r"/index\.html$", "/", page)
               for m in DOI_RE.finditer(text):
-                  doi = m.group(1).rstrip(TRAIL)
+                  # Entities survive into the captured group (SICI DOIs are written
+                  # &lt;...&gt; in HTML); decode them so the DOI matches what was minted.
+                  doi = html.unescape(m.group(1))
+                  # A URL fragment (#p-5, #sec-2) addresses part of the page, not the DOI.
+                  doi = doi.split('#', 1)[0]
+                  doi = doi.rstrip(TRAIL)
                   doi = balance(doi)
                   doi = doi.rstrip(TRAIL)
+                  doi = PREPRINT_VER_RE.sub(r'\1', doi)
                   if doi:
                       doi_pages[doi.lower()].add(page)
 

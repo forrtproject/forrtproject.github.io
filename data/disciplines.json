@@ -21,7 +21,7 @@
             },
             {
               "title": "Royal Society of Chemistry often hold open research events, e.g.",
-              "link": "https://www.rsc.org/events/detail/42090/open-chemical-science",
+              "link": "https://web.archive.org/web/20201101053146/https://www.rsc.org/events/detail/42090/open-chemical-science",
               "category": "General"
             },
             {
@@ -134,7 +134,7 @@
         },
         {
           "name": "Biological Sciences",
-          "examples": "**Open Data** Using and contributing to open data. Examples are reported in Table 1 of Feng et al. (2019), such as: “Species distribution records were collected from the Ocean Biogeographic Information System (OBIS; [http://iobis.org](http://iobis.org), accessed February 2016), from the Global Biodiversity Information Facility (GBIF; [http://gbif.org](http://gbif.org), accessed January 2016), the Reef Life Survey (RLS; [http://reeflifesurvey.com](http://reeflifesurvey.com), accessed February 2016) and for a few species via personal communications (Bosch et al., 2018).” (From [Feng et al (2019). A checklist for maximizing reproducibility of ecological niche models. Nat Ecol Evol 3, 1382–1395](https://doi.org/10.1038/s41559-019-0972-5))\n\n**Open Data** Working alongside ‘Open Microscopy’, Glencoe Software have developed and adopted Open Microscopy Environment – Next-Generation File Formats (OME-NGFF). This is a new “Cloud-friendly data format for multi-D bioimaging data using... It has been designed from its inception to work with scalable, cloud-based data resources and for public or shared data repositories used for AI training and data publication. There are examples of using OME-NGFF for whole slide imaging (as in digital pathology), high content screening and 3D imaging of large tissue samples.”. (OME-NGFF in action;  Glencoe Software, Inc.)",
+          "examples": "**Open Data** Using and contributing to open data. Examples are reported in Table 1 of Feng et al. (2019), such as: “Species distribution records were collected from the Ocean Biogeographic Information System (OBIS; [http://iobis.org](https://obis.org/), accessed February 2016), from the Global Biodiversity Information Facility (GBIF; [http://gbif.org](http://gbif.org), accessed January 2016), the Reef Life Survey (RLS; [http://reeflifesurvey.com](http://reeflifesurvey.com), accessed February 2016) and for a few species via personal communications (Bosch et al., 2018).” (From [Feng et al (2019). A checklist for maximizing reproducibility of ecological niche models. Nat Ecol Evol 3, 1382–1395](https://doi.org/10.1038/s41559-019-0972-5))\n\n**Open Data** Working alongside ‘Open Microscopy’, Glencoe Software have developed and adopted Open Microscopy Environment – Next-Generation File Formats (OME-NGFF). This is a new “Cloud-friendly data format for multi-D bioimaging data using... It has been designed from its inception to work with scalable, cloud-based data resources and for public or shared data repositories used for AI training and data publication. There are examples of using OME-NGFF for whole slide imaging (as in digital pathology), high content screening and 3D imaging of large tissue samples.”. (OME-NGFF in action;  Glencoe Software, Inc.)",
           "resources": [
             {
               "title": "MOOC: an introduction to Open Science principles in biomedicine, life sciences and other related research fields",
@@ -594,7 +594,7 @@
             },
             {
               "title": "Dashboard resource containing neuroscience research outputs and brain imaging databases",
-              "link": "https://ni.openaire.eu/",
+              "link": "https://web.archive.org/web/20260112035808/https://ni.openaire.eu/",
               "category": "General"
             },
             {
@@ -854,7 +854,7 @@
             },
             {
               "title": "Wagenmakers E-J, Dutilh G. Seven Selfish Reasons for Preregistration. 2016 Oct 31 [cited 2023 Jan 13]. In: APS Obs [Internet]",
-              "link": "https://www.psychologicalscience.org/observer/seven%C3%A2%E2%82%AC%20selfish%C3%A2%E2%82%AC%20reasons%C3%A2%E2%82%AC%20for%C3%A2%E2%82%AC%20preregistration",
+              "link": "https://www.psychologicalscience.org/observer/seven-selfish-reasons-for-preregistration",
               "category": "Open Methods"
             },
             {
@@ -1437,7 +1437,7 @@
             },
             {
               "title": "Open access journals",
-              "link": "https://www.degruyter.com/view/journals/ovs/ovs-overview.xml",
+              "link": "https://www.degruyterbrill.com/journal/key/ovs/html",
               "category": "Open Outputs"
             },
             {
@@ -1803,7 +1803,7 @@
             },
             {
               "title": "Open access journals for Political Science",
-              "link": "https://www.degruyter.com/view/journals/openps/openps-overview.xml",
+              "link": "https://www.degruyterbrill.com/journal/key/openps/html",
               "category": "Open Outputs"
             },
             {
@@ -1980,7 +1980,7 @@
             },
             {
               "title": "The value of open data in the private sector",
-              "link": "https://www.stateofopendata.od4d.net/chapters/stakeholders/private-sector.html",
+              "link": "https://web.archive.org/web/20230620212657/https://www.stateofopendata.od4d.net/chapters/stakeholders/private-sector.html",
               "category": "Open Data"
             },
             {
@@ -2187,7 +2187,7 @@
             },
             {
               "title": "Open access journals",
-              "link": "https://journals.sfu.ca/flr/index.php/journal",
+              "link": "https://frontlinelearningresearch.org/index.php/journal",
               "category": "Open Outputs"
             },
             {
@@ -2430,7 +2430,7 @@
             },
             {
               "title": "Covert networks, Mitchell Centre for Social Network Analysis",
-              "link": "https://www.socialsciences.manchester.ac.uk/mitchell-centre/research/covert-networks/",
+              "link": "https://www.socialsciences.manchester.ac.uk/mitchell-centre/research/past-projects/covert-networks/",
               "category": "Open Data"
             },
             {
@@ -2520,7 +2520,7 @@
             },
             {
               "title": "Information about Diamond Open Access journals",
-              "link": "https://www.coado.org/",
+              "link": "https://web.archive.org/web/20250905050001/https://www.coado.org/",
               "category": "Open Outputs"
             },
             {
@@ -2947,7 +2947,7 @@
             },
             {
               "title": "Open Access journal/data/catalogue",
-              "link": "https://www.degruyter.com/view/journals/",
+              "link": "https://www.degruyterbrill.com/",
               "category": "Open Outputs"
             },
             {
@@ -3023,7 +3023,7 @@
             },
             {
               "title": "List of open access journals",
-              "link": "https://www.degruyter.com/view/journals/opth/opth-overview.xml",
+              "link": "https://www.degruyterbrill.com/journal/key/opth/html",
               "category": "Open Outputs"
             },
             {
@@ -3064,7 +3064,7 @@
             },
             {
               "title": "A collection of instruments, materials, stimuli, and data coding and analysis tools used for research into second languages",
-              "link": "https://www.iris-database.org/iris/app/home/index",
+              "link": "https://www.iris-database.org/",
               "category": "General"
             },
             {
@@ -3169,7 +3169,7 @@
             },
             {
               "title": "Guides to open access for linguistics",
-              "link": "http://www.lagb.org.uk/OpenAccess",
+              "link": "https://www.lagb.org.uk/about-linguistics/open-access-for-uk-linguists/",
               "category": "Open Outputs"
             },
             {
@@ -3452,7 +3452,7 @@
             },
             {
               "title": "Open access journals",
-              "link": "http://www.transformationsjournal.org",
+              "link": "https://transformationsjournal.org/index.php/transformations",
               "category": "Open Outputs"
             },
             {
@@ -3467,7 +3467,7 @@
             },
             {
               "title": "Open access journals",
-              "link": "https://www.degruyter.com/view/journals/culture/culture-overview.xml",
+              "link": "https://www.degruyterbrill.com/journal/key/culture/html",
               "category": "Open Outputs"
             },
             {
@@ -3520,7 +3520,7 @@
             },
             {
               "title": "Institution of Engineering and Technology’s (IET) prospective move to open access",
-              "link": "https://www.theiet.org/publishing/publishing-with-iet-journals/transitioning-to-open-access-faq-s-for-authors#:~:text=From%20January%202021%2C%20all%20articles,to%20a%20CC%2DBY%20licence",
+              "link": "https://web.archive.org/web/20250810095837/https://www.theiet.org/publishing/publishing-with-iet-journals/transitioning-to-open-access-faq-s-for-authors",
               "category": "Open Data"
             },
             {
@@ -3570,7 +3570,7 @@
             },
             {
               "title": "Guidelines on creating open hardware",
-              "link": "https://opensource.com/article/18/2/5-steps-creating-successful-open-hardware",
+              "link": "https://opensource.com/article/18/2/5-keys-open-hardware-design",
               "category": "Open Outputs"
             },
             {
@@ -3590,7 +3590,7 @@
             },
             {
               "title": "Open access journals (civil/environmental)",
-              "link": "https://www.degruyter.com/view/journals/eng/eng-overview.xml",
+              "link": "https://www.degruyterbrill.com/journal/key/eng/html",
               "category": "Open Outputs"
             },
             {
@@ -3631,7 +3631,7 @@
             },
             {
               "title": "Image library resource for architecture projects",
-              "link": "https://www.architecture.com/image-library/",
+              "link": "https://www.riba.org/explore/riba-collections/",
               "category": "Open Data"
             },
             {
@@ -3844,7 +3844,7 @@
             },
             {
               "title": "Presentation on new tools and services in AI and open research",
-              "link": "https://www.stm-assoc.org/2018_12_05_STM_Week_Innovations_Jon_White.pdf",
+              "link": "https://web.archive.org/web/20220121043358/https://www.stm-assoc.org/2018_12_05_STM_Week_Innovations_Jon_White.pdf",
               "category": "Open Methods"
             },
             {
