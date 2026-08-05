@@ -1,3 +1,21 @@
+"""Generate content/curated_resources/*.md from the FORRT Database 2.0 Google Sheet.
+
+!! content/curated_resources/ IS GENERATED — DO NOT EDIT THOSE FILES DIRECTLY !!
+
+    One markdown file per sheet row, rewritten from scratch on every daily
+    data-processing run. The result ships in `data-artifact`, which deploy.yaml
+    unpacks over the checkout (path: ".") before Hugo builds, so edits committed to
+    these files are overwritten at build time even though nothing bot-commits to main.
+    Only `_index.md` is preserved.
+
+    To fix a resource's link, edit the URL cell in the published sheet
+    (gid=1924034107) — see SOURCE_URL below. There is no override or patch file.
+
+    This has been done correctly at least once: the archive.org replacements from
+    PR #838 survive because the sheet cells were updated to match. The glossary
+    equivalents were not, and reverted on the next build.
+"""
+
 import json
 import pandas as pd
 import re

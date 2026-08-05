@@ -10,6 +10,40 @@ Data sources (Google Sheet 1mSlduu86_nE1sY1gXobw3Pp1vI73B_0iHBsJqjtsJU4):
     - Fields:       top-level groupings (Name, Summary)
     - Disciplines:  disciplines within fields (Field, Discipline, Examples)
     - Resources:    per-discipline resources (Discipline, Title, Link, Category)
+
+!! data/disciplines.json IS GENERATED — DO NOT EDIT IT DIRECTLY !!
+
+    The Google Sheet above is the source of truth. Anything you change in
+    data/disciplines.json is silently discarded the next time this script runs, and
+    content/disciplines/_index.md renders straight from the JSON, so a repo-side
+    "fix" looks correct in a diff and in review while changing nothing durable.
+
+    To fix a broken link on /disciplines/, edit the Link cell in the Resources tab
+    (or the Examples prose in the Disciplines tab), then re-run this script and
+    commit the regenerated JSON.
+
+    Broken links repaired at source on 2026-08-05 (link-checker issue #845), all
+    verified 200 before the edit — 20 cells in Resources plus one in Disciplines:
+      - 6 De Gruyter journal pages   -> degruyterbrill.com/journal/key/<key>/html
+                                        (culture, eng, openps, opth, ovs + index)
+      - iobis.org                    -> obis.org (link target only; the surrounding
+                                        text is a quotation from Feng et al. 2019,
+                                        so its displayed URL was left as written)
+      - lagb.org.uk/OpenAccess       -> /about-linguistics/open-access-for-uk-linguists/
+      - transformationsjournal.org   -> /index.php/transformations
+      - journals.sfu.ca/flr          -> frontlinelearningresearch.org
+      - opensource.com open-hardware -> current slug (5-keys-open-hardware-design)
+      - architecture.com image-libr. -> riba.org/explore/riba-collections/
+      - iris-database.org/iris/app/  -> iris-database.org
+      - manchester covert-networks   -> moved under /past-projects/
+      - APS Observer preregistration -> de-mojibaked slug
+      - 6 dead pages                 -> Wayback captures (ni.openaire.eu, coado.org,
+                                        rsc.org event, stateofopendata.od4d.net,
+                                        stm-assoc.org PDF, theiet.org OA FAQ)
+
+    Still outstanding: qualitopia.my.canva.site (Resources row 910) is gone with no
+    Wayback capture and no successor — that row needs deleting or repointing, which
+    is a content decision rather than a link fix.
 """
 
 import argparse
