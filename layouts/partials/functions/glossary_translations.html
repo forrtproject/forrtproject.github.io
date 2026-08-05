@@ -1,0 +1,33 @@
+{{/* Builds the glossary translation index: English term -> every language it
+     exists in.
+
+     The five glossaries are separate content directories rather than Hugo
+     language sites, so `.Translations` is empty for them and nothing links a
+     term to its counterparts. Each term carries `en_title` (written by
+     `content/glossary/_create_glossaries.py`) naming the concept it defines, so
+     grouping on that reconstructs the sets.
+
+     Call through `partialCached` with a fixed key — the index is the same for
+     every page and walking ~1,300 pages per page would be needlessly slow.
+
+     Inputs: any page context. Output: map of lowercased `en_title` to a slice
+     of `{tag, url}` dicts, one per language. */}}
+
+{{ $index := newScratch }}
+
+{{/* `site.Pages` rather than `site.RegularPages` so the five glossary landing
+     pages — which are section pages, and the most linked-to of the set — join
+     the clusters alongside the individual terms. Requiring `en_title` below
+     keeps everything else out. */}}
+{{ range where site.Pages "Type" "glossary" }}
+  {{/* Held in a variable because `with` below rebinds `.` to the title. */}}
+  {{ $term := . }}
+  {{ with .Params.en_title }}
+    {{ $index.Add (lower .) (slice (dict
+      "tag" (partial "functions/page_language.html" $term)
+      "url" $term.Permalink
+    )) }}
+  {{ end }}
+{{ end }}
+
+{{ return $index.Values }}

@@ -47,8 +47,37 @@ local_business_type = ""
 # Enter an organization or project name. Defaults to the site title from `config.toml`.
 org_name = "Framework for Open and Reproducible Research Training"
 
+# Short site name, used as the `<title>` suffix on every non-home page and as
+# `alternateName` in the Organization structured data. Keep it short: search
+# engines truncate titles at roughly 60 characters, so spelling out `org_name`
+# on every page pushes the page's own title out of the visible result.
+short_title = "FORRT"
+
 # Description for social sharing and search engines. If undefined, superuser role is used in place.
 description = "Integrating open and reproducible science into higher education"
+
+# Official FORRT profiles elsewhere, emitted as `sameAs` in the Organization
+# structured data so search engines can tie this site to them as one entity.
+# Keep in sync with `layouts/shortcodes/social-media.html`.
+social_profiles = [
+  "https://bsky.app/profile/forrt.bsky.social",
+  "https://mastodon.social/@FORRT",
+  "https://linkedin.com/company/forrt",
+  "https://github.com/forrtproject",
+  "https://osf.io/forrt",
+  "https://youtube.com/@forrtproject9995",
+  "https://instagram.com/forrtproject",
+  "https://facebook.com/forrtproject",
+]
+
+# Minimum number of entries a `tags` term needs before its archive page is left
+# open to search engines. Tags come from free text on curated resources, and
+# roughly three quarters of them are used exactly once, so without a floor the
+# site publishes ~1,500 near-empty archives that mostly restate a single card.
+# Terms below the floor are still browsable and still pass link equity — they
+# are marked `noindex, follow` and kept out of the sitemap. Set to 0 to index
+# every term again.
+tag_index_min_pages = 5
 
 ############################
 ## Site Features
@@ -288,6 +317,19 @@ plugins_js  = []
   engine = 2
   api_key = ""
   zoom = 15
+
+############################
+## Content Management System
+############################
+[cms]
+  # Loads the Netlify Identity widget on the home page, as a render-blocking
+  # script. Turned off because it cannot work here: `static/admin/config.yml`
+  # uses the `git-gateway` backend, which authenticates through Netlify
+  # Identity, but the site is deployed to GitHub Pages (see
+  # `.github/workflows/deploy.yaml`) and `netlify.toml` is retained only as
+  # `netlify.toml.deprecated`. Set back to `true` if the admin panel is ever
+  # moved to a backend that needs the widget.
+  netlify_cms = false
 
 ############################
 ## Marketing

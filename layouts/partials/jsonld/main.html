@@ -1,0 +1,79 @@
+{{/* Site override of the theme's `jsonld/main.html`.
+
+     The theme dispatches structured data for the home page and for `post`,
+     `publication`, `project` and `talk` singles, and emits nothing for list
+     pages. That left the section landings — `/summaries/`, `/publications/`,
+     `/resources/`, `/educators-corner/`, the glossaries — describing themselves
+     to search engines as nothing at all, despite being the pages most likely to
+     rank for a topic rather than a title.
+
+     This adds a `CollectionPage` for those, carrying an `ItemList` of what the
+     page actually lists. Everything the theme already handled is delegated
+     back to it unchanged. */}}
+
+{{ $page := .page }}
+{{ $summary := .summary }}
+{{ $site_type := site.Params.site_type | default "Person" }}
+
+{{- if $page.IsHome -}}
+
+  {{ partial "jsonld/website.html" $page }}
+
+  {{ if ne $site_type "Person" }}
+    {{ partial "jsonld/business.html" $page }}
+  {{ end }}
+
+{{- else if $page.IsPage -}}
+
+  {{ if (eq $page.Type "post") | or (eq $page.Type "publication") | or (eq $page.Type "project") }}
+    {{ partial "jsonld/article.html" (dict "page" $page "summary" $summary) }}
+  {{ end }}
+
+  {{ if eq $page.Type "talk" }}
+    {{ partial "jsonld/event.html" (dict "page" $page "summary" $summary) }}
+  {{ end }}
+
+{{- else if in (slice "section" "taxonomy" "term") $page.Kind -}}
+
+  {{/* Thin tag archives are `noindex`, so describing them only adds weight. */}}
+  {{ if not (partial "functions/is_thin_taxonomy.html" $page) }}
+
+    {{ $collection := dict
+      "@context" "https://schema.org"
+      "@type" "CollectionPage"
+      "@id" (printf "%s#collection" $page.Permalink)
+      "url" $page.Permalink
+      "name" $page.Title
+      "isPartOf" (dict "@type" "WebSite" "@id" site.BaseURL "name" site.Title)
+      "inLanguage" (partial "functions/page_language.html" $page)
+    }}
+
+    {{ with $summary }}
+      {{ $collection = merge $collection (dict "description" (. | plainify | truncate 300 "…")) }}
+    {{ end }}
+
+    {{/* Capped: these lists run to hundreds of entries, and the point is to
+         describe what the page covers, not to mirror it. */}}
+    {{ $elements := slice }}
+    {{ range $i, $item := first 25 $page.Pages }}
+      {{ $elements = $elements | append (dict
+        "@type" "ListItem"
+        "position" (add $i 1)
+        "url" $item.Permalink
+        "name" $item.LinkTitle
+      ) }}
+    {{ end }}
+
+    {{ if $elements }}
+      {{ $collection = merge $collection (dict "mainEntity" (dict
+        "@type" "ItemList"
+        "numberOfItems" (len $page.Pages)
+        "itemListElement" $elements
+      )) }}
+    {{ end }}
+
+<script type="application/ld+json">{{ $collection | jsonify | safeJS }}</script>
+
+  {{ end }}
+
+{{- end }}

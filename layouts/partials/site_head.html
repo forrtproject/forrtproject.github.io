@@ -48,10 +48,20 @@
     {{ $desc = .Params.definition }}
   {{ else if .IsPage }}
     {{ $desc = .Summary }}
-  {{ else if site.Params.description }}
-    {{ $desc = site.Params.description }}
-  {{ else }}
-    {{ $desc = $superuser_role }}
+  {{ end }}
+  {{/* `summary`, `abstract` and `definition` are raw Markdown in front matter,
+       so `**bold**`, `[text](url)` and escaped brackets were reaching search
+       results verbatim (262 glossary definitions carry bold markers alone).
+       Render first, then flatten: `.Summary` is already HTML and passes through
+       unchanged, and `plainify` strips the markup either way. */}}
+  {{ $desc = trim (.RenderString $desc | plainify) " \n\r\t" }}
+  {{/* Widget-composed pages (`headless = true`) render no body of their own, so
+       `.Summary` is empty for them even though `.IsPage` is true. The branch
+       above therefore matches and sets an empty description, which is why the
+       site-wide fallback has to test the *result* for content rather than sit
+       at the end of the chain as another `else if`. */}}
+  {{ if not $desc }}
+    {{ $desc = site.Params.description | default $superuser_role }}
   {{ end }}
   <meta name="description" content='{{ printf "%.254s" $desc }}'>
   {{/* Shorter description for social previews (avoids mid-word truncation). */}}
@@ -64,10 +74,37 @@
     {{ $og_desc = printf "%.200s" $desc }}
   {{ end }}
 
+  {{ $page_lang := partial "functions/page_language.html" . }}
+
   {{ range .Translations }}
   <link rel="alternate" hreflang="{{ .Lang }}" href="{{ .Permalink }}">
   {{ end }}
-  <link rel="alternate" hreflang="{{ site.Language.Locale | default "en-us" }}" href="{{ .Permalink }}">
+
+  {{/* Glossary terms live in five parallel content directories rather than Hugo
+       language sites, so `.Translations` is empty for them. Rebuild the set by
+       grouping on `en_title` and emit the whole cluster on every member —
+       hreflang is only honoured when the annotations are reciprocal and each
+       page also points at itself. */}}
+  {{ $cluster := slice }}
+  {{ if eq .Type "glossary" }}
+    {{ with .Params.en_title }}
+      {{ $translations := partialCached "functions/glossary_translations.html" $ "glossary-translations" }}
+      {{ $cluster = index $translations (lower .) | default slice }}
+    {{ end }}
+  {{ end }}
+
+  {{ if $cluster }}
+    {{ range sort $cluster "tag" }}
+  <link rel="alternate" hreflang="{{ .tag }}" href="{{ .url }}">
+    {{- end }}
+    {{/* English is the source glossary, so it is the sensible landing point for
+         a searcher whose language we do not publish. */}}
+    {{ range where $cluster "tag" "en-US" }}
+  <link rel="alternate" hreflang="x-default" href="{{ .url }}">
+    {{- end }}
+  {{ else }}
+  <link rel="alternate" hreflang="{{ $page_lang }}" href="{{ .Permalink }}">
+  {{ end }}
 
   {{ partial "functions/parse_theme" . }}
   {{ $css := hugo.Data.assets.css }}
@@ -81,6 +118,15 @@
   {{ $mathjax_config := resources.Get "js/mathjax-config.js" }}
   <script src="{{ $mathjax_config.RelPermalink }}"></script>
   {{ end }}
+
+  {{/* Every render-blocking stylesheet below the first comes from a third-party
+       origin, so the browser cannot start fetching any of them until it has
+       paid for a DNS lookup, TCP connection and TLS handshake it does not yet
+       know it needs. Warming the connections costs nothing and moves that work
+       off the critical path. */}}
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
   {{/* Attempt to load local vendor CSS, otherwise load from CDN. */}}
   {{ $scr.Set "vendor_css_filename" "main.min.css" }}
@@ -120,7 +166,13 @@
       {{ end }}
     {{ end }}
 
-    {{ if or (eq site.Params.map.engine 2) (eq site.Params.map.engine 3) }}
+    {{/* Leaflet was render-blocking on all ~5,400 pages because `map.engine` is
+         a site-wide setting. The only maps on the site come from the `ga_map`
+         shortcodes; the Contact widget's map needs `coordinates`, which is not
+         set, and the community map and contributor network render inside
+         iframes that load their own copies. So load it per page instead. */}}
+    {{ $needs_map := or (.HasShortcode "ga_map") (.HasShortcode "ga_map_yearly") (.Params.needs_map | default false) }}
+    {{ if and $needs_map (or (eq site.Params.map.engine 2) (eq site.Params.map.engine 3)) }}
     {{ printf "<link rel=\"stylesheet\" href=\"%s\" integrity=\"%s\" crossorigin=\"anonymous\">" (printf $css.leaflet.url $css.leaflet.version) $css.leaflet.sri | safeHTML }}
     {{ end }}
 
@@ -246,7 +298,7 @@
   {{ else if .IsHome }}
     {{ $og_title = site.Title }}
   {{ else }}
-    {{ $og_title = printf "%s | %s" .Title site.Title }}
+    {{ $og_title = printf "%s | %s" .Title (site.Params.short_title | default site.Title) }}
   {{ end }}
   <meta property="og:title" content="{{ $og_title }}">
   <meta property="og:description" content='{{ $og_desc }}'>
@@ -262,7 +314,7 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:image" content="{{ $og_image }}">
   {{- end -}}
-  <meta property="og:locale" content="{{ site.Language.Locale | default "en-us" }}">
+  <meta property="og:locale" content="{{ $page_lang }}">
   {{ if .IsPage }}
     {{ if not .PublishDate.IsZero }}
       <meta property="article:published_time" content="{{ .PublishDate.Format "2006-01-02T15:04:05-07:00" | safeHTML }}">
@@ -280,6 +332,10 @@
 
   {{ partial "custom_head" . }}
 
-  <title>{{ if not .IsHome }}{{ .Title }} | {{ end }}{{ site.Title }}</title>
+  {{/* Search engines truncate titles at roughly 60 characters. Suffixing every
+       page with the full site title spent 61 of those on text that was never
+       displayed, so pages carry the short name and only the home page spells
+       the organisation out in full. */}}
+  <title>{{ if .IsHome }}{{ site.Title }}{{ else }}{{ .Title }} | {{ site.Params.short_title | default site.Title }}{{ end }}</title>
 
 </head>

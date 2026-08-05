@@ -249,6 +249,12 @@ for language_code in languages_to_process:
 
         entry = {
             "type": "glossary",
+            # The English name of the concept, emitted for every language. The
+            # five glossaries are parallel content directories rather than Hugo
+            # language sites, so `.Translations` is empty for them; grouping on
+            # `en_title` is what lets `partials/functions/glossary_translations.html`
+            # reconstruct the translation sets and emit hreflang.
+            "en_title": en_title,
             "title": title,
             "sort_key": sort_key_for_language(title, language_code),
             "definition": definition,
