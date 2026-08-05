@@ -20,7 +20,7 @@ We are Nowhere Lab. Anyone from any field is welcome to join who doesn't have a 
 - People between jobs
 - Keen undergrads
 
-**To join, email priyasilverstein at gmail.com**
+**To join, email priyasilverstein@gmail.com**
 
 ## Origin story
 
@@ -36,7 +36,7 @@ We hold weekly meetings that change time every 3 months to attempt to accommodat
 
 ## Slack channel
 
-We have a Slack channel which is the base for our community — somewhere members can interact even if they're unable to attend meetings. Here we share resources, memes, support, and more.
+We have a [Slack channel](https://forrt.slack.com/archives/C0B0FKG3GH2) which is the base for our community — somewhere members can interact even if they're unable to attend meetings. Here we share resources, memes, support, and more.
 
 ## Resources
 
