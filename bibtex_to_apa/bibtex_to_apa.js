@@ -75,8 +75,18 @@ function bibtexToApaJson(bibtexContent, includeUrl = true) {
     // This runs last so it covers both the rendered reference and any URL appended
     // above; repairing earlier would leave the two spellings inconsistent, and the
     // `!ref.includes(url)` test would then append a second, still-broken copy.
+    //
+    // The same pass fixes angle brackets. SICI-style DOIs contain literal "<" and
+    // ">" (10.1002/(SICI)1234-981X(199707)5:3<305::AID-EURO184>3.0.CO;2-4), and
+    // citation-js emits them as the HTML entities &#60; / &#62;. Hugo then renders
+    // those back to bare "<" and ">", which truncates the link and is why #845
+    // reported this one DOI twice, split at the bracket. Percent-encoding is the
+    // form that survives both the markdown render and the link checker.
     ref = ref.replace(/https?:\/\/[^\s"'<>]+/g, (u) =>
-      u.replace(/—/g, '---').replace(/–/g, '--'));
+      u.replace(/—/g, '---')
+       .replace(/–/g, '--')
+       .replace(/&#60;|&lt;/g, '%3C')
+       .replace(/&#62;|&gt;/g, '%3E'));
 
     result[key] = ref;
   }
