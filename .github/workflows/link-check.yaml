@@ -61,6 +61,7 @@ jobs:
           python3 << 'PYEOF'
           import json, re, time, urllib.error, urllib.parse, urllib.request
           from concurrent.futures import ThreadPoolExecutor, as_completed
+          from datetime import datetime, timezone
 
           with open("/tmp/lychee/out.md") as f:
               content = f.read()
@@ -149,18 +150,30 @@ jobs:
           # reached in time is reported as "unknown", never as "not archived".
           WAYBACK_DEADLINE = time.monotonic() + 8 * 60
 
-          def wayback(url, retries=4):
-              if time.monotonic() > WAYBACK_DEADLINE:
-                  return None
-              """Is there an archived snapshot? -> True / False / None (couldn't tell).
+          # A link that was archived once in 2013 tells you nothing about whether it
+          # still resolves — the failure mode being hunted is rot, not non-existence.
+          # So the question asked of the archive is "when was this last successfully
+          # captured?", and anything not captured within this window is treated as
+          # possibly stale even though something was archived at some point.
+          STALE_AFTER_DAYS = 365
 
-              Uses the CDX search API rather than archive.org/wayback/available: the
-              latter returns 429 for essentially every request, which would make every
-              blocked link look like it had never been archived. CDX answers with a
-              JSON array — a header row plus one row per capture, or [] for nothing.
+          def wayback(url, retries=4):
+              """When was this URL last archived with a 200? -> (state, 'YYYY-MM'|None).
+
+              state is one of: fresh / stale / never / unknown.
+
+              Uses the CDX search API rather than archive.org/wayback/available, which
+              returns 429 for essentially every request. Two CDX details matter:
+              results are chronological, so `limit=1` yields the *oldest* capture —
+              exactly the wrong end — hence `limit=-1` for the newest; and the
+              statuscode filter is essential, because a host that started serving 404s
+              or a parking page keeps accumulating captures of that dead page.
               """
+              if time.monotonic() > WAYBACK_DEADLINE:
+                  return "unknown", None
               api = ("http://web.archive.org/cdx/search/cdx?url="
-                     + urllib.parse.quote(url, safe="") + "&limit=1&output=json")
+                     + urllib.parse.quote(url, safe="")
+                     + "&limit=-1&filter=statuscode:200&fl=timestamp&output=json")
               delay = 2.0
               for attempt in range(retries):
                   try:
@@ -169,22 +182,27 @@ jobs:
                       with urllib.request.urlopen(req, timeout=60) as r:
                           raw = r.read()
                       rows = json.loads(raw) if raw.strip() else []
-                      return len(rows) > 1
+                      if len(rows) < 2:
+                          return "never", None
+                      ts = rows[-1][0]
+                      last = datetime.strptime(ts[:8], "%Y%m%d").replace(tzinfo=timezone.utc)
+                      age = (datetime.now(timezone.utc) - last).days
+                      return ("fresh" if age <= STALE_AFTER_DAYS else "stale"), last.strftime("%Y-%m")
                   except urllib.error.HTTPError as e:
                       if e.code in (429, 503) and attempt < retries - 1:
                           time.sleep(delay)
                           delay *= 2
                           continue
-                      return None
+                      return "unknown", None
                   except Exception:
                       if attempt < retries - 1:
                           time.sleep(delay)
                           delay *= 2
                           continue
-                      return None
-              return None
+                      return "unknown", None
+              return "unknown", None
 
-          recovered, blocked_archived, blocked_unknown, blocked_untested = [], [], [], []
+          recovered, blocked_fresh, blocked_stale, blocked_never, blocked_untested = [], [], [], [], []
           if forbidden_errors:
               print(f"Re-checking {len(forbidden_errors)} 403s with full browser headers...")
               still_blocked = []
@@ -199,18 +217,16 @@ jobs:
               # hosts, so a fully serial pass would dominate the job's runtime.
               if still_blocked:
                   print(f"Checking Wayback (CDX) for {len(still_blocked)} blocked URLs...")
+                  buckets = {"fresh": blocked_fresh, "stale": blocked_stale,
+                             "never": blocked_never, "unknown": blocked_untested}
                   with ThreadPoolExecutor(max_workers=5) as pool:
                       jobs = {pool.submit(wayback, u): u for u in still_blocked}
                       for fut in as_completed(jobs):
                           url = jobs[fut]
-                          archived = fut.result()
-                          if archived is True:
-                              blocked_archived.append(url)
-                          elif archived is False:
-                              blocked_unknown.append(url)
-                          else:
-                              blocked_untested.append(url)
-              print(f"  {len(blocked_archived)} archived, {len(blocked_unknown)} no snapshot, "
+                          state, when = fut.result()
+                          buckets[state].append((url, when))
+              print(f"  {len(blocked_fresh)} archived recently, {len(blocked_stale)} last archived "
+                    f"long ago, {len(blocked_never)} never archived, "
                     f"{len(blocked_untested)} archive check unavailable")
 
           # Build output
@@ -232,44 +248,54 @@ jobs:
               output += "No broken links found (excluding 403s).\n"
 
           if forbidden_errors:
+              def with_pages(url):
+                  pages = forbidden_errors[url]["pages"]
+                  return f" (in {pages[0]})" if len(pages) == 1 else f" (in {len(pages)} pages)"
+
               output += (
                   f"\n## Bot-blocked (403) — {len(forbidden_errors)} URLs, re-verified\n\n"
-                  f"* ✅ **{len(recovered)}** responded normally to a full browser request — "
-                  f"not broken, no action needed.\n"
-                  f"* 🗄️ **{len(blocked_archived)}** still refuse automated requests but have a "
-                  f"Wayback snapshot, so the resource demonstrably exists.\n"
-                  f"* ⚠️ **{len(blocked_unknown)}** still refuse *and* have no archived snapshot — "
-                  f"these cannot be verified by any means and are the ones worth checking by hand.\n"
+                  f"These refused lychee. Each was re-requested with full browser headers, and "
+                  f"whatever still refused was dated against its most recent successful Wayback "
+                  f"capture — the question being *when was this last known to work*, not whether "
+                  f"it ever existed.\n\n"
+                  f"* ✅ **{len(recovered)}** responded normally to a browser request — not broken.\n"
+                  f"* 🗄️ **{len(blocked_fresh)}** blocked, but archived within the last "
+                  f"{STALE_AFTER_DAYS} days — alive recently.\n"
+                  f"* ⚠️ **{len(blocked_stale)}** blocked, and not successfully archived for over "
+                  f"{STALE_AFTER_DAYS} days — **most likely to have rotted**.\n"
+                  f"* ⚠️ **{len(blocked_never)}** blocked and never archived — unverifiable.\n"
               )
               if blocked_untested:
                   output += (
-                      f"* ❔ **{len(blocked_untested)}** still refuse, and the Wayback archive "
-                      f"lookup did not return in time — status unknown this run.\n"
+                      f"* ❔ **{len(blocked_untested)}** blocked, and the archive lookup did not "
+                      f"return in time — status unknown this run.\n"
                   )
 
-              if blocked_unknown:
-                  output += "\n### ⚠️ Unverifiable (blocked, no archive)\n\n"
-                  for url in sorted(blocked_unknown):
-                      pages = forbidden_errors[url]["pages"]
-                      page_str = f" (in {pages[0]})" if len(pages) == 1 else f" (in {len(pages)} pages)"
-                      output += f"* <{url}>{page_str}\n"
-
-              if blocked_archived:
+              if blocked_stale:
                   output += (
-                      f"\n<details>\n<summary>🗄️ Blocked but archived "
-                      f"({len(blocked_archived)} URLs — no action needed)</summary>\n\n"
+                      f"\n### ⚠️ Blocked, and stale in the archive\n\n"
+                      f"Last successful capture shown. The older that date, the more likely the "
+                      f"link is dead rather than merely defended.\n\n"
                   )
-                  for url in sorted(blocked_archived):
-                      output += f"* <{url}>\n"
-                  output += "\n</details>\n"
+                  for url, when in sorted(blocked_stale, key=lambda x: (x[1] or "", x[0])):
+                      output += f"* `{when}` <{url}>{with_pages(url)}\n"
 
-              if blocked_untested:
-                  output += (
-                      f"\n<details>\n<summary>❔ Blocked, archive check unavailable "
-                      f"({len(blocked_untested)} URLs)</summary>\n\n"
-                  )
-                  for url in sorted(blocked_untested):
-                      output += f"* <{url}>\n"
+              if blocked_never:
+                  output += "\n### ⚠️ Blocked, and never archived\n\n"
+                  for url, _ in sorted(blocked_never):
+                      output += f"* <{url}>{with_pages(url)}\n"
+
+              for label, bucket in (
+                  (f"🗄️ Blocked but archived recently ({len(blocked_fresh)} URLs — no action needed)",
+                   blocked_fresh),
+                  (f"❔ Blocked, archive check unavailable ({len(blocked_untested)} URLs)",
+                   blocked_untested),
+              ):
+                  if not bucket:
+                      continue
+                  output += f"\n<details>\n<summary>{label}</summary>\n\n"
+                  for url, when in sorted(bucket):
+                      output += f"* <{url}>" + (f" — last archived `{when}`\n" if when else "\n")
                   output += "\n</details>\n"
 
               if recovered:

@@ -66,6 +66,18 @@ function bibtexToApaJson(bibtexContent, includeUrl = true) {
       }
     }
 
+    // citation-js applies LaTeX dash semantics ("--" -> en dash, "---" -> em dash)
+    // to every field, including ones holding a URL. In prose that is correct; in a
+    // URL it silently breaks the link — the ICMJE conflict-of-interest page really
+    // does contain a literal "--" and was being emitted as
+    // ...author-responsibilities–conflicts-of-interest.html, which 404s.
+    // Repair dashes inside URL substrings only, so page ranges keep their en dash.
+    // This runs last so it covers both the rendered reference and any URL appended
+    // above; repairing earlier would leave the two spellings inconsistent, and the
+    // `!ref.includes(url)` test would then append a second, still-broken copy.
+    ref = ref.replace(/https?:\/\/[^\s"'<>]+/g, (u) =>
+      u.replace(/—/g, '---').replace(/–/g, '--'));
+
     result[key] = ref;
   }
 
