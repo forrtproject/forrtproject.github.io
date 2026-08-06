@@ -28,9 +28,7 @@
     "FORRT_clusters": [
         "Conceptual and Statistical Knowledge"
     ],
-    "tags": [
-        ""
-    ],
+    "tags": [],
     "forrt_clusters_new": "Conceptual and Statistical Knowledge",
     "forrt_sub_clusters": "Effect sizes, statistical power, simulations, & confidence intervals., Questionable measurement practices (QMPs), validity & reliability issues.",
     "doi": "10.1001/jamapsychiatry.2016.3356",

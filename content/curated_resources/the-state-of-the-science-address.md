@@ -35,9 +35,7 @@
     "FORRT_clusters": [
         "Academic Life and Culture"
     ],
-    "tags": [
-        "-"
-    ],
+    "tags": [],
     "forrt_clusters_new": "Academic Structures and Institutions",
     "forrt_sub_clusters": "Research assessment, proposals, and reforms, Socially Responsible Research",
     "doi": "",

@@ -30,9 +30,7 @@
     "FORRT_clusters": [
         "Open Data and Materials"
     ],
-    "tags": [
-        ""
-    ],
+    "tags": [],
     "forrt_clusters_new": "FAIR data and materials",
     "forrt_sub_clusters": "FAIR principles applied to Education & Training",
     "doi": "",

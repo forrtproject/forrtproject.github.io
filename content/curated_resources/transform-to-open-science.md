@@ -33,8 +33,7 @@
         "Reproducibility",
         "Transparency",
         "Preregistration",
-        "Open Data",
-        ""
+        "Open Data"
     ],
     "forrt_clusters_new": "",
     "forrt_sub_clusters": "",

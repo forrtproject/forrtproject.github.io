@@ -27,9 +27,7 @@
     "FORRT_clusters": [
         "Conceptual and Statistical Knowledge"
     ],
-    "tags": [
-        ""
-    ],
+    "tags": [],
     "forrt_clusters_new": "Conceptual and Statistical Knowledge",
     "forrt_sub_clusters": "Exploratory and confirmatory analyses",
     "doi": "10.1511/2014.111.460",

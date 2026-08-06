@@ -28,9 +28,7 @@
         "Reproducible Analyses",
         "Open Data and Materials"
     ],
-    "tags": [
-        ""
-    ],
+    "tags": [],
     "forrt_clusters_new": "Transparency and reproducibility in computation and analysis, FAIR data and materials",
     "forrt_sub_clusters": "Tools to check yourself and others, Reasons to share data and materials",
     "doi": "10.1177/0956797613480366",

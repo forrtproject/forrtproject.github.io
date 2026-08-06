@@ -32,9 +32,7 @@
     "FORRT_clusters": [
         "Conceptual and Statistical Knowledge"
     ],
-    "tags": [
-        ""
-    ],
+    "tags": [],
     "forrt_clusters_new": "Conceptual and Statistical Knowledge",
     "forrt_sub_clusters": "Effect sizes, statistical power, simulations, & confidence intervals., Limitations and benefits of NHST, Bayesian & Likelihood approaches.",
     "doi": "10.1177/1745691616662243",

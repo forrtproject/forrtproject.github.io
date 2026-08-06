@@ -26,9 +26,7 @@
     "FORRT_clusters": [
         "Conceptual and Statistical Knowledge"
     ],
-    "tags": [
-        ""
-    ],
+    "tags": [],
     "forrt_clusters_new": "Conceptual and Statistical Knowledge",
     "forrt_sub_clusters": "Questionable measurement practices (QMPs), validity & reliability issues.",
     "doi": "10.1037/0003-066X.56.2.128",

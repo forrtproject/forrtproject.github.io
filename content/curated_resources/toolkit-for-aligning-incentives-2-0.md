@@ -34,9 +34,7 @@
         "Reproducibility and Replicability Knowledge",
         "Academic Life and Culture"
     ],
-    "tags": [
-        ""
-    ],
+    "tags": [],
     "forrt_clusters_new": "Academic Structures and Institutions",
     "forrt_sub_clusters": "Structures and incentives in academia, Research assessment, proposals, and reforms",
     "doi": "10.31219/osf.io/8x4e9",
