@@ -6,6 +6,30 @@ renders the same data as the public "List of References" page so the two stay in
 sync. Run it after apa_lookup.json is regenerated:
 
     python3 content/glossary/_build_references.py
+
+!! content/glossary/references/index.md IS GENERATED — DO NOT EDIT IT DIRECTLY !!
+
+    This is the single most expensive trap in the repo, so it is worth being explicit
+    about the mechanism. Both this script and bibtex_to_apa.js run unconditionally on
+    every daily data-processing run, and their output ships in `data-artifact`, which
+    deploy.yaml unpacks over the checkout (path: ".") *before* Hugo builds. So a fix
+    committed to references/index.md or apa_lookup.json:
+
+      - passes review, because the diff is real;
+      - stays in git indefinitely, because nothing bot-commits to main;
+      - and never appears on the live site, because the build overwrites it.
+
+    PR #838 fixed ~12 glossary URLs this way in July 2026. They were still broken in
+    the next link-checker report, and were still broken on forrt.org while being
+    provably absent from the repo — the give-away that the overwrite happens at build
+    time rather than in git history.
+
+    To fix a reference URL, edit the "Glossary BibTex" Google Doc
+    (1-KKsOYZWJ3LdgdO2b2uJsOG2AmUDaQBNqWVVTY2W4W8), which is the source of truth.
+
+    Note that the same URL often appears in several BibTeX entries, and sometimes in
+    both a `url =` and a `note = {Retrieved from \\url{...}}` field of the same entry,
+    so a single-occurrence replace will leave copies behind.
 """
 
 import json
