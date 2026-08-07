@@ -70,7 +70,7 @@
             "name": "Leia Organa",
             "title": "General, Rebel Alliance",
             "bio": "Leader of the Rebel Alliance and veteran diplomat. Dedicated to building institutions that serve the collective good and hold power accountable.",
-            "photo": "/img/featured-recommenders/leia-organa-6afb206a.jpg",
+            "photo": "",
             "text": "I led a rebellion that toppled an empire, so trust me: crises drive change. This paper shows how the replication crisis sparked real structural reforms. If the scientific community can self-correct, maybe the Senate could too."
           }
         ],
@@ -272,7 +272,7 @@
             "name": "Data",
             "title": "Lt. Commander, USS Enterprise-D",
             "bio": "Android officer serving aboard the USS Enterprise-D. Endlessly curious about the nature of understanding, both computational and human.",
-            "photo": "",
+            "photo": "/img/featured-recommenders/data-0c85c1fc.jpg",
             "text": "Despite possessing a positronic brain capable of 60 trillion operations per second, I still found mixed-effects models confusing until I read this tutorial. The simulation approach finally made random slopes click. If it helped an android, it will help you."
           }
         ],
