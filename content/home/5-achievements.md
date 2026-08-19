@@ -41,7 +41,7 @@ title = "Achievements &amp; Awards"
   <div class="aa-col aa-achievements">
 
 <div class="ms-card">
-  <h3 class="ms-title">Milestones in 2025</h3>
+  <h3 class="ms-title">Milestones</h3>
   <ul class="ms-list">
     <li class="ms-row">
       <span class="ms-icon ms-icon--pair"><i class="fab fa-bluesky"></i><i class="fab fa-linkedin"></i></span>
