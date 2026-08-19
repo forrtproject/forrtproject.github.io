@@ -348,13 +348,13 @@ jobs:
 
           # doi -> set of source pages
           doi_pages = defaultdict(set)
-          for html in SITE_ROOT.rglob("*.html"):
+          for page_file in SITE_ROOT.rglob("*.html"):
               try:
-                  text = html.read_text(errors="ignore")
+                  text = page_file.read_text(errors="ignore")
               except Exception:
                   continue
               # Strip the artifact-name dir (/tmp/site/<artifact>/<path>) -> /<path>
-              rel_parts = html.relative_to(SITE_ROOT).parts[1:]
+              rel_parts = page_file.relative_to(SITE_ROOT).parts[1:]
               page = "/" + "/".join(rel_parts)
               page = re.sub(r"/index\.html$", "/", page)
               for m in DOI_RE.finditer(text):
