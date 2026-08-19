@@ -8,7 +8,7 @@ active = true  # Activate this widget? true/false
 weight = 20  # Order that this section will appear.
 
 title = "Our community"
-subtitle = "*Raising awareness of the pedagogical implications of open and reproducible science in higher education.*"
+subtitle = "*Embedding open, rigorous, and inclusive scholarship in research and education.*"
 
 [content]
   # Choose which groups/teams of users to display.
@@ -52,7 +52,11 @@ subtitle = "*Raising awareness of the pedagogical implications of open and repro
 +++
 
 
-We endorse the [Mozilla Manifesto ](https://www.mozilla.org/en-US/about/manifesto/) in committing to verifiable facts, critical thinking, and reasoned argument along with inclusion, collaboration, and shared knowledge.  When advocating that “a person’s demographic characteristics should not determine their online access, opportunities, or quality of experience,” FORRT community concurrently advocates for civil discourse guided by human dignity. We are committed to a community that (a) includes all the peoples of the earth, where a person’s demographic characteristics do not determine their online access, opportunities, or quality of experience; (b) promotes civil discourse, human dignity, and individual expression; (c) elevates critical thinking, reasoned argument, shared knowledge, and verifiable facts; and that (d) catalyzes collaboration among diverse communities working together for the common good towards better educational practices in higher education. 
+FORRT is committed to building an inclusive, collaborative community where everyone can participate. We seek to treat one another with dignity and respect, fostering civil discourse grounded in critical thinking, reasoned argument, shared knowledge, and verifiable evidence. We recognise we will not always get this right; when mistakes occur, we expect members to listen, take responsibility, and learn from their impact.
+
+We value diversity across age, culture, disability, ethnicity, gender identity and expression, language, national origin, neurodiversity, profession, race, religion, sexual orientation, socioeconomic background, technical ability, and other aspects of identity and experience. Discrimination, harassment, and exclusion have no place here.
+
+We also champion epistemological and methodological pluralism. Welcoming diverse approaches to knowledge strengthens Open Scholarship. It broadens the questions we ask, helps challenge assumptions, and contributes to more open, rigorous, inclusive, and equitable higher education.
 
 We are comprised of 1,500+ Slack members, 435 contributors across 50+ projects, 1,200+ newsletter subscribers, and 2,000+ followers on Bluesky (1,000+ on LinkedIn)—and below you find the profiles of our community members.
 For more information on the leadership of the community, please visit the [Steering Committee ](/about/steering-committee/).
