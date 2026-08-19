@@ -58,5 +58,5 @@ We value diversity across age, culture, disability, ethnicity, gender identity a
 
 We also champion epistemological and methodological pluralism. Welcoming diverse approaches to knowledge strengthens Open Scholarship. It broadens the questions we ask, helps challenge assumptions, and contributes to more open, rigorous, inclusive, and equitable higher education.
 
-We are comprised of 1,500+ Slack members, 435 contributors across 50+ projects, 1,200+ newsletter subscribers, and 2,000+ followers on Bluesky (1,000+ on LinkedIn)—and below you find the profiles of our community members.
+We are comprised of 1,500+ Slack members, 647 contributors across 100+ projects, 1,200+ newsletter subscribers, and 2,000+ followers on Bluesky (1,000+ on LinkedIn)—and below you find the profiles of our community members.
 For more information on the leadership of the community, please visit the [Steering Committee ](/about/steering-committee/).

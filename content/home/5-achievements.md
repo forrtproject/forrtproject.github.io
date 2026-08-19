@@ -49,7 +49,7 @@ title = "Achievements &amp; Awards"
     </li>
     <li class="ms-row">
       <span class="ms-icon"><i class="fas fa-puzzle-piece"></i></span>
-      <span class="ms-text"><strong>More than 50</strong> active or completed projects, with more on the way</span>
+      <span class="ms-text"><strong>More than 100</strong> active or completed projects and support teams, with more on the way</span>
     </li>
     <li class="ms-row">
       <span class="ms-icon"><i class="fab fa-slack"></i></span>
@@ -65,7 +65,7 @@ title = "Achievements &amp; Awards"
     </li>
     <li class="ms-row">
       <span class="ms-icon"><i class="fas fa-users"></i></span>
-      <span class="ms-text"><strong>435 individuals</strong> have contributed to FORRT projects</span>
+      <span class="ms-text"><strong>647 individuals</strong> have contributed to FORRT projects</span>
     </li>
     <li class="ms-row">
       <span class="ms-icon"><i class="fas fa-handshake"></i></span>
