@@ -41,7 +41,7 @@ title = "Achievements &amp; Awards"
   <div class="aa-col aa-achievements">
 
 <div class="ms-card">
-  <h3 class="ms-title">Milestones in 2025</h3>
+  <h3 class="ms-title">Milestones</h3>
   <ul class="ms-list">
     <li class="ms-row">
       <span class="ms-icon ms-icon--pair"><i class="fab fa-bluesky"></i><i class="fab fa-linkedin"></i></span>
@@ -49,7 +49,7 @@ title = "Achievements &amp; Awards"
     </li>
     <li class="ms-row">
       <span class="ms-icon"><i class="fas fa-puzzle-piece"></i></span>
-      <span class="ms-text"><strong>More than 50</strong> active or completed projects, with more on the way</span>
+      <span class="ms-text"><strong>More than 100</strong> active or completed projects and support teams, with more on the way</span>
     </li>
     <li class="ms-row">
       <span class="ms-icon"><i class="fab fa-slack"></i></span>
@@ -65,7 +65,7 @@ title = "Achievements &amp; Awards"
     </li>
     <li class="ms-row">
       <span class="ms-icon"><i class="fas fa-users"></i></span>
-      <span class="ms-text"><strong>435 individuals</strong> have contributed to FORRT projects</span>
+      <span class="ms-text"><strong>647 individuals</strong> have contributed to FORRT projects</span>
     </li>
     <li class="ms-row">
       <span class="ms-icon"><i class="fas fa-handshake"></i></span>
