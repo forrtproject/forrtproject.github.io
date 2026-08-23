@@ -84,7 +84,7 @@ How is AI changing the way research is done, checked and understood? The **FORRT
 </div>
 
 <div class="am-reg-cta">
-<a href="REGISTRATION_FORM_URL_PLACEHOLDER" class="btn btn-primary btn-lg btn-block" style="line-height:1;border-radius:6px;font-size:1.4rem;" target="_blank" rel="noopener">
+<a href="https://docs.google.com/forms/d/e/1FAIpQLSdFF-BdifNeBEkOrt-gjfDqAYON5xA3N5YzM40B3aBt-A2ejA/viewform" class="btn btn-primary btn-lg btn-block" style="line-height:1;border-radius:6px;font-size:1.4rem;" target="_blank" rel="noopener">
   Register
 </a>
 </div>
@@ -124,15 +124,19 @@ The full programme, with talk titles and speakers, goes up on this page on **2 S
 
 Everything runs on Google Meet. We will email joining details to everyone who has registered in the week before the conference, so use an address you check.
 
+Live captions are on in every session. If anything else would help you take part, there is a place to tell us on the registration form, and we will do what we can.
+
 ## Recording, and how talks are shared
 
 Sessions are recorded by default. The conference spans a lot of time zones, and a recording means that people who cannot be there at 09:30 or 17:00 their time can still watch. **A presenter who would rather not be recorded can tell us, and their talk will not be recorded.**
 
-Publishing is a separate decision. A recorded talk goes on the [FORRT YouTube channel](https://youtube.com/@forrtproject9995) only if that presenter has explicitly opted in. Without that opt-in, the recording stays unpublished.
+Publishing is a separate decision. A recorded talk goes on the [FORRT YouTube channel](https://youtube.com/@forrtproject9995) only if that presenter has explicitly opted in. Without that opt-in, the recording stays unpublished. Published talks stay up permanently, and the published cut is the talk itself: the discussion and questions afterwards are not included, so anyone who speaks in the Q&A stays out of the video.
 
 ## Code of conduct
 
-Everyone taking part, whether presenting or watching, follows the [FORRT code of conduct](https://forrt.org/coc/). It sets out what we expect of each other and how to raise a concern.
+Everyone taking part, whether presenting or watching, follows the [FORRT code of conduct](https://forrt.org/coc/).
+
+During the conference, raise a concern with the organising committee — message a session chair or the organiser, or email [l.wallrich@bbk.ac.uk](mailto:l.wallrich@bbk.ac.uk). We will act on it the same day. Afterwards, or if you would rather not come to us, report it to the FORRT ethics committee, either by contacting any of its members or through the [anonymous reporting form](https://forms.gle/nQ51x1c8a8nnfQ7a9). FORRT's [confidential advisor](https://forrt.org/about/confidential-advisor-ombuds/) is there if you would like to talk something through first.
 
 ## Questions
 
