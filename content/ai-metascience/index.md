@@ -126,9 +126,7 @@ Everything runs on Google Meet. We will email joining details to everyone who ha
 
 Live captions are on in every session. If anything else would help you take part, there is a place to tell us on the registration form, and we will do what we can.
 
-## Talks afterwards
-
-Where a speaker opts in, their talk is published on the [FORRT YouTube channel](https://youtube.com/@forrtproject9995) and stays there. The published cut is the talk itself; the discussion and questions that follow are not included. Speakers who would rather not be recorded at all can say so, and we will not record them.
+Where a speaker opts in, their talk is published afterwards on the [FORRT YouTube channel](https://youtube.com/@forrtproject9995); the discussion that follows is not.
 
 ## Code of conduct
 
