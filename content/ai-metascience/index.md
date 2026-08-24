@@ -126,11 +126,9 @@ Everything runs on Google Meet. We will email joining details to everyone who ha
 
 Live captions are on in every session. If anything else would help you take part, there is a place to tell us on the registration form, and we will do what we can.
 
-## Recording, and how talks are shared
+## Talks afterwards
 
-Sessions are recorded by default. The conference spans a lot of time zones, and a recording means that people who cannot be there at 09:30 or 17:00 their time can still watch. **A presenter who would rather not be recorded can tell us, and their talk will not be recorded.**
-
-Publishing is a separate decision. A recorded talk goes on the [FORRT YouTube channel](https://youtube.com/@forrtproject9995) only if that presenter has explicitly opted in. Without that opt-in, the recording stays unpublished. Published talks stay up permanently, and the published cut is the talk itself: the discussion and questions afterwards are not included, so anyone who speaks in the Q&A stays out of the video.
+Where a speaker opts in, their talk is published on the [FORRT YouTube channel](https://youtube.com/@forrtproject9995) and stays there. The published cut is the talk itself; the discussion and questions that follow are not included. Speakers who would rather not be recorded at all can say so, and we will not record them.
 
 ## Code of conduct
 
