@@ -4,7 +4,7 @@ type: plain_page
 url: "/ai-metascience/"
 hide_title: true
 hide_date: true
-summary: "Registration is open for the FORRT AI in Metascience Online Conference, 28–30 September 2026. Online, free to attend, 33 accepted submissions in a single track."
+summary: "Registration is open for the FORRT AI in Metascience Online Conference, 28–30 September 2026. Online, free to attend, 33 sessions over 3 days."
 sharing_description: "Register for the FORRT AI in Metascience Online Conference, 28–30 September 2026. Online and free to attend."
 sharing_image_alt: "FORRT AI in Metascience Conference — online, 28–30 September 2026"
 image:
@@ -79,7 +79,7 @@ How is AI changing the way research is done, checked and understood? The **FORRT
   <dt>Cost</dt>
   <dd>Free to attend.</dd>
   <dt>Programme</dt>
-  <dd>33 accepted submissions in a single track, so nothing clashes and you can follow the whole conference.</dd>
+  <dd>33 accepted submissions in a single track, so you can follow the whole conference if you want - or dip in and out as you like..</dd>
 </dl>
 </div>
 
@@ -97,36 +97,36 @@ How is AI changing the way research is done, checked and understood? The **FORRT
 <span class="am-reg-date">Monday 28 September</span>
 <h3>AI in the research pipeline</h3>
 
-<p>What AI is already doing to the literature, whether it can carry out evidence synthesis, how science evaluates itself, and what would make adoption legitimate.</p>
+<p>What AI is already doing to the literature, whether it can carry out evidence synthesis, how it can inform research science evaluation ... and what legitimate and ethical AI adoption would look like.</p>
 </div>
 
 <div class="am-reg-day">
 <span class="am-reg-date">Tuesday 29 September</span>
 <h3>Replications and reproductions</h3>
 
-<p>Replication as people do it now, whether findings survive another system or another analyst, predicting replicability, and measuring the agents that claim to do the work.</p>
+<p>Replications and reproductions are key to credible science - yet currently hard to do and hard to find. Here, we explore whether AI can help with both, and discuss some risks of handing this work over to machines.</p>
 </div>
 
 <div class="am-reg-day">
 <span class="am-reg-date">Wednesday 30 September</span>
 <h3>Workshops</h3>
 
-<p>Three hands-on sessions of 90 minutes each, one after the other, so you can join all three.</p>
+<p>Three hands-on sessions of 90 minutes each, helping you to get started with AI for knowledge management, evidence synthesis or the evaluation and improvement of pre-registrations.</p>
 </div>
 
 </div>
 
-## When you will see the programme
+## When can I get the detailed programme
 
-The full programme, with talk titles and speakers, goes up on this page on **2 September**. Timings and abstracts follow on **10 September**. Register now, then come back in September to plan which days you want to keep clear.
+The full programme will be available here in early September. *Register now*, then come back in September to plan which time slots you want to keep clear.
 
 ## Joining the sessions
 
-Everything runs on Google Meet. We will email joining details to everyone who has registered in the week before the conference, so use an address you check.
+Everything runs on Google Meet. We will email joining details to everyone who has registered in the week before the conference, so use an email address you check.
 
-Live captions are on in every session. If anything else would help you take part, there is a place to tell us on the registration form, and we will do what we can.
+Live captions are on in every session. If anything else would help you take part, tell us on the registration form, and we will do what we can.
 
-Where a speaker opts in, their talk is published afterwards on the [FORRT YouTube channel](https://youtube.com/@forrtproject9995); the discussion that follows is not.
+Where speakers opt in, their talks are published afterwards on the [FORRT YouTube channel](https://youtube.com/@forrtproject9995).
 
 ## Code of conduct
 
