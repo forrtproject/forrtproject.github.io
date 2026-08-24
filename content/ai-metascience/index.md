@@ -4,8 +4,8 @@ type: plain_page
 url: "/ai-metascience/"
 hide_title: true
 hide_date: true
-summary: "Call for submissions: the FORRT AI in Metascience Online Conference, 28–30 September 2026, online. Propose a talk, workshop, or hackathon by 7 August 2026."
-sharing_description: "Call for submissions — FORRT AI in Metascience Online Conference, 28–30 September 2026, online. Deadline 7 August 2026."
+summary: "Registration is open for the FORRT AI in Metascience Online Conference, 28–30 September 2026. Online, free to attend, 33 sessions over 3 days."
+sharing_description: "Register for the FORRT AI in Metascience Online Conference, 28–30 September 2026. Online and free to attend."
 sharing_image_alt: "FORRT AI in Metascience Conference — online, 28–30 September 2026"
 image:
   placement: 1
@@ -14,89 +14,126 @@ image:
 ---
 
 <style>
-.am-formats details {
-  border: 1px solid #e6e2d2;
+.am-reg-facts {
+  background: #f4f2e8;
+  border-left: 4px solid #004055;
   border-radius: 8px;
-  padding: 0.7rem 1.1rem;
-  margin-bottom: 0.6rem;
+  padding: 1rem 1.2rem;
+  margin: 1.4rem 0;
+}
+.am-reg-facts dl {
+  margin: 0;
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  column-gap: 1.1rem;
+  row-gap: 0.45rem;
+}
+.am-reg-facts dt {
+  color: #004055;
+  font-weight: 700;
+}
+.am-reg-facts dd { margin: 0; }
+@media (max-width: 560px) {
+  .am-reg-facts dl { grid-template-columns: 1fr; row-gap: 0.15rem; }
+  .am-reg-facts dd { margin-bottom: 0.6rem; }
+}
+.am-reg-days {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(185px, 1fr));
+  gap: 1rem;
+  margin: 1.4rem 0;
+}
+.am-reg-day {
+  border: 1px solid #e6e2d2;
+  border-top: 4px solid #004055;
+  border-radius: 8px;
+  padding: 1rem 1.1rem;
   background: #fff;
 }
-.am-formats summary {
-  cursor: pointer;
-  font-weight: 700;
+.am-reg-day h3 {
+  margin: 0 0 0.2rem;
+  font-size: 1.05rem;
   color: #004055;
 }
-.am-formats details[open] summary { margin-bottom: 0.6rem; }
+.am-reg-day .am-reg-date {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #5d6b70;
+  margin-bottom: 0.35rem;
+}
+.am-reg-day p { margin: 0; }
+.am-reg-cta { margin: 1.6rem 0; }
 </style>
 
-How can AI and large language models help us understand and improve how science works — and how are they changing science itself? To explore these questions, we are inviting submissions for the **FORRT AI in Metascience Online Conference**.
+How is AI changing the way research is done, checked and understood? The **FORRT AI in Metascience Online Conference** takes three days over that question, with 33 accepted submissions from people who are studying it or building with it. Registration is now open, and everyone is welcome.
 
-**When:** 28–30 September 2026 (time-zone inclusive)<br>
-**Where:** Online — free to attend<br>
-**Submission deadline:** 7 August 2026 (23:59 in your own time zone)
+<div class="am-reg-facts">
+<dl>
+  <dt>When</dt>
+  <dd>28–30 September 2026. Sessions run between 09:30 and 18:00 CEST (UTC+2) each day.</dd>
+  <dt>Where</dt>
+  <dd>Online, on Google Meet.</dd>
+  <dt>Cost</dt>
+  <dd>Free to attend.</dd>
+  <dt>Programme</dt>
+  <dd>33 accepted submissions in a single track, so you can follow the whole conference if you want - or dip in and out as you like..</dd>
+</dl>
+</div>
 
-Speakers who opt in will have their talks shared on the [FORRT YouTube channel](https://youtube.com/@forrtproject9995).
-
-<a href="https://forms.gle/XSoZH7X7naqZGVmS8" class="btn btn-primary btn-lg btn-block" style="line-height:1;border-radius:6px;font-size:1.4rem;" target="_blank" rel="noopener">
-  Submit your proposal
+<div class="am-reg-cta">
+<a href="https://docs.google.com/forms/d/e/1FAIpQLSdFF-BdifNeBEkOrt-gjfDqAYON5xA3N5YzM40B3aBt-A2ejA/viewform" class="btn btn-primary btn-lg btn-block" style="line-height:1;border-radius:6px;font-size:1.4rem;" target="_blank" rel="noopener">
+  Register
 </a>
+</div>
 
-<br>
+## What each day covers
 
-## What is this event?
+<div class="am-reg-days">
 
-This is not just a series of talks. The conference is designed to build capacity and cultivate community at the intersection of AI and meta-research. We want to explore how AI can accelerate our understanding of science, while also critically engaging with its ethical, practical, and systemic effects on research.
+<div class="am-reg-day">
+<span class="am-reg-date">Monday 28 September</span>
+<h3>AI in the research pipeline</h3>
 
-We welcome submissions from all career stages, including (meta-)researchers, software engineers, librarians, and editors.
+<p>What AI is already doing to the literature, whether it can carry out evidence synthesis, how it can inform research science evaluation ... and what legitimate and ethical AI adoption would look like.</p>
+</div>
 
-## Ways to contribute
+<div class="am-reg-day">
+<span class="am-reg-date">Tuesday 29 September</span>
+<h3>Replications and reproductions</h3>
 
-Expand each format for examples and the details you'll be asked to provide.
+<p>Replications and reproductions are key to credible science - yet currently hard to do and hard to find. Here, we explore whether AI can help with both, and discuss some risks of handing this work over to machines.</p>
+</div>
 
-<div class="am-formats">
+<div class="am-reg-day">
+<span class="am-reg-date">Wednesday 30 September</span>
+<h3>Workshops</h3>
 
-<details>
-<summary>Talks, Symposia &amp; Lightning Talks</summary>
-
-Share results from AI-enabled research, present practical experiences, or organise a themed symposium of 4–6 talks.
-
-**Ideas could include:** AI for data extraction, claim verification, automated "peer" review, or reproducibility checks; honest lessons from using AI in your own workflow; or a lightning demo that opens up new possibilities.
-
-**You'll be asked for:** an abstract (~200–300 words), the presenter name(s) and affiliation(s), and your target audience. Symposia also need a short overall summary and an individual abstract for each presenter.
-</details>
-
-<details>
-<summary>Workshops &amp; Tutorials</summary>
-
-Offer a hands-on deep dive into a specific tool or demonstrate an AI workflow.
-
-**Ideas could include:** how to work with an API; using coding agents (e.g. Claude Code) for research; building a retrieval-augmented chatbot over a body of literature; or practical use of agentic frameworks.
-
-**You'll be asked for:** an abstract (~200–300 words), the facilitator name(s) and affiliation(s), and your target audience (with any prerequisites).
-</details>
-
-<details>
-<summary>Hackathons</summary>
-
-Pitch a project for a team-based, ~6-hour intensive session to co-create tools, resources, or guidelines.
-
-**Ideas could include:** prototyping a tool, building a shared resource, or tackling a targeted meta-research problem as a team. Hackathons work best with clear aims.
-
-**You'll be asked for:** a team name, the team members and affiliations, your project idea, and any technical needs or prerequisites.
-</details>
+<p>Three hands-on sessions of 90 minutes each, helping you to get started with AI for knowledge management, evidence synthesis or the evaluation and improvement of pre-registrations.</p>
+</div>
 
 </div>
 
-Want to propose something else, such as a roundtable or panel discussion? Email [l.wallrich@bbk.ac.uk](mailto:l.wallrich@bbk.ac.uk) to discuss.
+## When can I get the detailed programme
 
-## Ready to contribute?
+The full programme will be available here in early September. *Register now*, then come back in September to plan which time slots you want to keep clear.
 
-Put your idea together and submit it by **7 August 2026**. Further programme details will follow closer to the event.
+## Joining the sessions
 
-<a href="https://forms.gle/XSoZH7X7naqZGVmS8" class="btn btn-primary btn-lg btn-block" style="line-height:1;border-radius:6px;font-size:1.4rem;" target="_blank" rel="noopener">
-  Submit your proposal
-</a>
+Everything runs on Google Meet. We will email joining details to everyone who has registered in the week before the conference, so use an email address you check.
 
-<br>
+Live captions are on in every session. If anything else would help you take part, tell us on the registration form, and we will do what we can.
 
-Want to discuss an idea first? Reach out to [l.wallrich@bbk.ac.uk](mailto:l.wallrich@bbk.ac.uk) or message **Lukas Wallrich** on the FORRT Slack.
+Where speakers opt in, their talks are published afterwards on the [FORRT YouTube channel](https://youtube.com/@forrtproject9995).
+
+## Code of conduct
+
+Everyone taking part, whether presenting or watching, follows the [FORRT code of conduct](https://forrt.org/coc/).
+
+During the conference, raise a concern with the organising committee — message a session chair or the organiser, or email [l.wallrich@bbk.ac.uk](mailto:l.wallrich@bbk.ac.uk). We will act on it the same day. Afterwards, or if you would rather not come to us, report it to the FORRT ethics committee, either by contacting any of its members or through the [anonymous reporting form](https://forms.gle/nQ51x1c8a8nnfQ7a9). FORRT's [confidential advisor](https://forrt.org/about/confidential-advisor-ombuds/) is there if you would like to talk something through first.
+
+## Questions
+
+Email the organiser, Lukas Wallrich, at [l.wallrich@bbk.ac.uk](mailto:l.wallrich@bbk.ac.uk), or message him on the FORRT Slack.
