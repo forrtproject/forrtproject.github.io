@@ -8,3 +8,5 @@ gspread
 python-dotenv
 matplotlib
 pypinyin
+flask
+flask-cors
