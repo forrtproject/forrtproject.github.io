@@ -155,31 +155,59 @@ function render(template, data) {
 * Initialize.
 * --------------------------------------------------------------------------- */
 
-// If Academic's in-built search is enabled and Fuse loaded, then initialize it.
+// Fetch the search index and build the Fuse instance, but only once — and
+// only when a visitor actually needs it. The index is a full-text dump of
+// every page on the site (megabytes), so fetching it unconditionally on
+// every pageview meant everyone paid for it whether or not they ever opened
+// search. `searchReadyPromise` memoizes the in-flight/completed fetch so
+// however many trigger points below fire, `$.getJSON` and the `#search-query`
+// keyup binding each happen exactly once.
+let searchReadyPromise = null;
+function ensureSearchReady() {
+  if (!searchReadyPromise) {
+    searchReadyPromise = $.getJSON(search_config.indexURI).then(function (search_index) {
+      let fuse = new Fuse(search_index, fuseOptions);
+
+      // On search box key up, process query.
+      $('#search-query').keyup(function (e) {
+        clearTimeout($.data(this, 'searchTimer')); // Ensure only one timer runs!
+        if (e.keyCode == 13) {
+          initSearch(true, fuse);
+        } else {
+          $(this).data('searchTimer', setTimeout(function () {
+            initSearch(false, fuse);
+          }, 250));
+        }
+      });
+
+      return fuse;
+    });
+  }
+  return searchReadyPromise;
+}
+
+// If Academic's in-built search is enabled and Fuse loaded, wire it up.
 if (typeof Fuse === 'function') {
-// Wait for Fuse to initialize.
-  $.getJSON(search_config.indexURI, function (search_index) {
-    let fuse = new Fuse(search_index, fuseOptions);
-
-    // On page load, check for search query in URL.
-    if (query = getSearchQuery('q')) {
-      $("body").addClass('searching');
-      $('.search-results').css({opacity: 0, visibility: "visible"}).animate({opacity: 1},200);
-      $("#search-query").val(query);
-      $("#search-query").focus();
+  let query = getSearchQuery('q');
+  if (query) {
+    // Arrived via a shared/back-button search URL — results are needed
+    // immediately, so fetch the index right away rather than waiting for a
+    // search-open interaction that has already effectively happened.
+    $("body").addClass('searching');
+    $('.search-results').css({opacity: 0, visibility: "visible"}).animate({opacity: 1},200);
+    $("#search-query").val(query);
+    $("#search-query").focus();
+    ensureSearchReady().done(function (fuse) {
       initSearch(true, fuse);
-    }
-
-    // On search box key up, process query.
-    $('#search-query').keyup(function (e) {
-      clearTimeout($.data(this, 'searchTimer')); // Ensure only one timer runs!
-      if (e.keyCode == 13) {
-        initSearch(true, fuse);
-      } else {
-        $(this).data('searchTimer', setTimeout(function () {
-          initSearch(false, fuse);
-        }, 250));
+    });
+  } else {
+    // Otherwise, defer the index fetch until the visitor opens search —
+    // via the navbar icon (`.js-search`) or the `/` keyboard shortcut.
+    $('.js-search').one('click', ensureSearchReady);
+    $(document).one('keydown', function (e) {
+      if (e.which == 191 && e.shiftKey == false && !$('input,textarea').is(':focus')) {
+        ensureSearchReady();
       }
     });
-  });
+  }
 }

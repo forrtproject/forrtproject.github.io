@@ -36,13 +36,11 @@
     {{- end -}}
 
     {{- /* Glossary terms and curated resources have JSON front matter and no
-           markdown body, so `.Plain` is empty and they'd be matchable by
-           title alone. Fall back to the description text above so the term
-           definition / resource abstract is actually searchable. */ -}}
-    {{- $pageContent := .Plain -}}
-    {{- if eq $pageContent "" -}}
-      {{- $pageContent = plainify $desc -}}
-    {{- end -}}
+           markdown body (`.Plain` is empty), but their `summary` above
+           already carries the definition/abstract text — do NOT also copy
+           it into `content`. Fuse searches both fields, so a duplicate would
+           only inflate the index (confirmed: doing this once added ~3MB of
+           byte-identical text with no gain in what's matchable). */ -}}
 
     {{- /* Curated resources credit authorship via `creators`, not the
            theme's usual `authors` field. */ -}}
@@ -80,7 +78,7 @@
       {{- end -}}
     {{- end -}}
 
-    {{- $index = $index | append (dict "objectID" .File.UniqueID "date" .Date.UTC.Unix "publishdate" .PublishDate "lastmod" .Lastmod.UTC.Unix "expirydate" .ExpiryDate.UTC.Unix "lang" .Lang "permalink" $permalink "relpermalink" $rel_permalink "title" $title "summary" (plainify $desc) "content" $pageContent "authors" $authors "kind" .Kind "type" .Type "section" .Section "tags" .Params.Tags "categories" .Params.Categories "image" .Params.image) -}}
+    {{- $index = $index | append (dict "objectID" .File.UniqueID "date" .Date.UTC.Unix "publishdate" .PublishDate "lastmod" .Lastmod.UTC.Unix "expirydate" .ExpiryDate.UTC.Unix "lang" .Lang "permalink" $permalink "relpermalink" $rel_permalink "title" $title "summary" (plainify $desc) "content" .Plain "authors" $authors "kind" .Kind "type" .Type "section" .Section "tags" .Params.Tags "categories" .Params.Categories "image" .Params.image) -}}
 
   {{- end -}}
 {{- end -}}
