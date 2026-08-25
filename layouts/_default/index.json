@@ -1,6 +1,88 @@
-{{- $.Scratch.Add "index" slice -}}
-{{- range .Site.RegularPages -}}
-    {{- $creators := index .Params "Creators" | default (index .Params "creators") -}}
-    {{- $.Scratch.Add "index" (dict "title" .Title "subtitle" .Params.subtitle "description" .Params.description "tags" .Params.tags "image" .Params.image "content" .Plain "permalink" .Permalink "creators" $creators) -}}
+{{- /* Search index for the navbar search (Fuse, via academic-search.js).
+       Each entry must carry the fields Fuse queries — title, summary,
+       authors, content, tags, categories — plus relpermalink and section,
+       which the result template needs to link to and label each hit. */ -}}
+{{- $index := slice -}}
+{{- $pages := site.RegularPages -}}
+{{- /* A docs/book section's root page (its `_index.md`) is `Kind: section`,
+       which `.Site.RegularPages` excludes — add those roots back so the
+       section overview itself is searchable, not just its sub-pages. */ -}}
+{{- $pages := $pages | union (where (where site.Pages "Kind" "section") "Type" "docs") -}}
+{{- $pages := $pages | union (where (where site.Pages "Kind" "section") "Type" "book") -}}
+{{- /* Same problem for author profiles — also `Kind: section`. Filter on
+       `superuser`, which only real profiles set, so the empty `/authors/`
+       list page is left out. */ -}}
+{{- $pages := $pages | union (where (where site.Pages "Section" "authors") "Params.superuser" "!=" nil) -}}
+
+{{- range $pages -}}
+  {{- /* Skip drafts and pages marked private. */ -}}
+  {{- if and (not .Draft) (not .Params.private) -}}
+
+    {{- /* Pick a description, trying the field each content type actually
+           uses: `summary` for most pages, `abstract` for curated resources,
+           `definition` for glossary terms, `description` as a last resort,
+           and finally Hugo's auto-generated `.Summary`. */ -}}
+    {{- $desc := "" -}}
+    {{- if .Params.summary -}}
+      {{- $desc = .Params.summary -}}
+    {{- else if .Params.abstract -}}
+      {{- $desc = .Params.abstract -}}
+    {{- else if .Params.definition -}}
+      {{- $desc = .Params.definition -}}
+    {{- else if .Params.description -}}
+      {{- $desc = .Params.description -}}
+    {{- else -}}
+      {{- $desc = .Summary -}}
+    {{- end -}}
+
+    {{- /* Glossary terms and curated resources have JSON front matter and no
+           markdown body, so `.Plain` is empty and they'd be matchable by
+           title alone. Fall back to the description text above so the term
+           definition / resource abstract is actually searchable. */ -}}
+    {{- $pageContent := .Plain -}}
+    {{- if eq $pageContent "" -}}
+      {{- $pageContent = plainify $desc -}}
+    {{- end -}}
+
+    {{- /* Curated resources credit authorship via `creators`, not the
+           theme's usual `authors` field. */ -}}
+    {{- $authors := .Params.authors | default .Params.creators -}}
+    {{- $title := .Title}}
+    {{- $rel_permalink := .RelPermalink -}}
+    {{- $permalink := .Permalink -}}
+
+    {{- /* Author profile pages live at a nested path; point the index entry
+           at the profile's own URL instead. */ -}}
+    {{- if eq .Section "authors" -}}
+      {{- $username := path.Base (path.Split .Path).Dir -}}
+      {{- with site.GetPage (printf "/authors/%s" $username) -}}
+        {{- $permalink = .Permalink -}}
+        {{- $rel_permalink = .RelPermalink -}}
+      {{- end -}}
+    {{- else -}}
+      {{- /* Resolve each author to their profile's display name where one
+             exists, falling back to the raw front-matter value. */ -}}
+      {{- if $authors -}}
+        {{- $authorLen := len $authors -}}
+        {{- if gt $authorLen 0 -}}
+          {{- $resolvedAuthors := slice -}}
+            {{- range $k, $v := $authors -}}
+              {{- $person_page_path := (printf "/authors/%s" (urlize $v)) -}}
+              {{- $person_page := site.GetPage $person_page_path -}}
+              {{- if and $person_page $person_page.File -}}
+                {{- $resolvedAuthors = $resolvedAuthors | append $person_page.Title -}}
+              {{- else -}}
+                {{- $resolvedAuthors = $resolvedAuthors | append ($v | plainify) -}}
+              {{- end -}}
+            {{- end -}}
+          {{- $authors = $resolvedAuthors -}}
+        {{- end -}}
+      {{- end -}}
+    {{- end -}}
+
+    {{- $index = $index | append (dict "objectID" .File.UniqueID "date" .Date.UTC.Unix "publishdate" .PublishDate "lastmod" .Lastmod.UTC.Unix "expirydate" .ExpiryDate.UTC.Unix "lang" .Lang "permalink" $permalink "relpermalink" $rel_permalink "title" $title "summary" (plainify $desc) "content" $pageContent "authors" $authors "kind" .Kind "type" .Type "section" .Section "tags" .Params.Tags "categories" .Params.Categories "image" .Params.image) -}}
+
+  {{- end -}}
 {{- end -}}
-{{- $.Scratch.Get "index" | jsonify -}}
+
+{{- $index | jsonify -}}
