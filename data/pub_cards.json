@@ -42,7 +42,7 @@
     "is_oa": false,
     "oa_url": "",
     "authors": "Monya Baker",
-    "vote_base": 2,
+    "vote_base": 0,
     "recommendations": [
       {
         "name": "Jean-Luc Picard",
@@ -135,7 +135,7 @@
     "is_oa": true,
     "oa_url": "https://doi.org/10.1027/2151-2604/a000387",
     "authors": "Sophia Crüwell, Johnny van Doorn, Alexander Etz, Matthew C. Makel, Hannah Moshontz, Jesse C. Niebaum, Amy Orben, Sam Parsons, Michael Schulte‐Mecklenbeck",
-    "vote_base": 2,
+    "vote_base": 0,
     "recommendations": [
       {
         "name": "The Doctor",
@@ -159,13 +159,13 @@
     "is_oa": true,
     "oa_url": "https://www.ncbi.nlm.nih.gov/pmc/articles/5206685",
     "authors": "Marc Edwards, Siddhartha Roy",
-    "vote_base": 1,
+    "vote_base": 0,
     "recommendations": [
       {
         "name": "Ellen Ripley",
         "title": "Warrant Officer, USCSS Nostromo",
         "bio": "Warrant officer and survivor. Believes in facing threats head-on with clear eyes, rigorous protocols, and an unwavering commitment to the truth.",
-        "photo": "/img/featured-recommenders/ellen-ripley-12ac737f.jpg",
+        "photo": "",
         "text": "Weyland-Yutani buried our xenomorph data for profit — classic perverse incentive. This paper on hypercompetition in academia felt uncomfortably familiar. If your institution values metrics over truth, you need to read this before something bursts out of your chest."
       }
     ]
@@ -2007,7 +2007,7 @@
     "is_oa": false,
     "oa_url": "",
     "authors": "Ulpts, S., Bartscherer, S. F., Penders, B., & Nelson, N.",
-    "vote_base": 1
+    "vote_base": 0
   },
   "10.1080/02640414.2025.2499403": {
     "title": "Sample size estimation revisited",
@@ -2106,7 +2106,7 @@
     "is_oa": true,
     "oa_url": "https://doi.org/10.1177/2515245920965119",
     "authors": "Lisa M. DeBruine, Dale J. Barr",
-    "vote_base": 1,
+    "vote_base": 0,
     "recommendations": [
       {
         "name": "Data",
@@ -2130,13 +2130,13 @@
     "is_oa": true,
     "oa_url": "https://link.springer.com/content/pdf/10.1007/s10654-016-0149-3.pdf",
     "authors": "Sander Greenland, Stephen Senn, Kenneth J. Rothman, John B. Carlin, Charles Poole, Steven N. Goodman, Douglas G. Altman",
-    "vote_base": 1,
+    "vote_base": 0,
     "recommendations": [
       {
         "name": "Spock",
         "title": "Science Officer, USS Enterprise",
         "bio": "Half-Vulcan science officer aboard the USS Enterprise. Dedicated to logic, precision, and the rigorous pursuit of scientific understanding.",
-        "photo": "/img/featured-recommenders/spock-abd62c23.jpg",
+        "photo": "",
         "text": "Dr. McCoy once claimed p=0.06 'proved' his treatment worked. I handed him this guide to 25 common statistical misinterpretations. He called me a 'green-blooded pedant.' He also stopped misreporting his confidence intervals. Fascinating."
       }
     ]
@@ -3078,7 +3078,7 @@
     "is_oa": false,
     "oa_url": "",
     "authors": "Joeri K. Tijdink, Reinout Verbeke, Yvo M. Smulders",
-    "vote_base": 1
+    "vote_base": 0
   },
   "10.4135/9781529602074": {
     "title": "Research Without Borders: How to Identify and Overcome Potential Pitfalls in International Large-Team Online Research Projects",
@@ -5433,7 +5433,7 @@
     "is_oa": true,
     "oa_url": "https://journals.sagepub.com/doi/pdf/10.1177/2515245918758319",
     "authors": "Margaret C. Levenstein, Jared Lyle",
-    "vote_base": 1
+    "vote_base": 0
   },
   "10.18352/lq.10113": {
     "title": "Transparency: The Emerging Third Dimension of Open Science and Open Data",
@@ -11988,7 +11988,7 @@
     "is_oa": true,
     "oa_url": "https://www.ncbi.nlm.nih.gov/pmc/articles/2762211",
     "authors": "Alison L. Antes, Stephen T. Murphy, Ethan P. Waples, Michael D. Mumford, Ryan P. Brown, Shane Connelly, Lynn D. Devenport",
-    "vote_base": 1
+    "vote_base": 0
   },
   "10.1017/cts.2024.10": {
     "title": "Research rigor and reproducibility in research education: A CTSA institutional survey",
