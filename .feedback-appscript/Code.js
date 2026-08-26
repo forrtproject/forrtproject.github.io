@@ -19,7 +19,7 @@
  */
 
 var SHEET_ID = '1YTDMUgBzHTy558M5u3ClrnwMnbKF_nxWn0ufLnqBJY4';
-var SHEET_NAME = 'feedback';
+var SHEET_NAME = 'Forrt-feedbacks';
 var GLOSSARY_SHEET_NAME = 'glossary_feedback';
 var ADOPTING_SHEET_NAME = 'adopting_feedback';
 
@@ -116,7 +116,7 @@ function _getOrCreateSheet(name, headers) {
 
 // Health check for GET requests.
 function doGet() {
-  return _json({ ok: true, service: 'just-os-feedback' });
+  return _json({ ok: true, service: 'FORRT Feedback Forms' });
 }
 
 function _json(obj) {
