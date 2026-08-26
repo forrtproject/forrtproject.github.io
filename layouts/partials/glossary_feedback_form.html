@@ -1,0 +1,260 @@
+{{/* Feedback/suggestion form for individual glossary term pages.
+     Submits to the same Google Apps Script web app used by the JUST-OS chat
+     feedback widget (see .feedback-appscript/Code.js), which appends each
+     submission as a row to a "glossary_feedback" sheet — no backend to
+     maintain. See static/js/glossary-feedback.js for the client logic. */}}
+
+{{ $lang := .Params.language | default "english" }}
+{{ $dictionary := dict
+    "english" (dict
+        "heading" "Suggest an improvement"
+        "intro" "Spotted an error, a broken link, or think this entry is missing something? Let us know — this goes directly to the glossary team."
+        "type_label" "Type of feedback"
+        "type_placeholder" "Select a type…"
+        "type_correction" "Correction (error, typo, broken link)"
+        "type_suggestion" "Suggestion (missing term, related term, reference)"
+        "type_other" "Other"
+        "message_label" "Your feedback"
+        "message_placeholder" "Describe the issue or suggestion..."
+        "email_label" "Email (optional, if you'd like a reply)"
+        "submit" "Submit feedback"
+        "sending" "Sending…"
+        "thanks" "Thank you — your feedback has been recorded."
+        "error" "Something went wrong. Please try again later."
+    )
+    "german" (dict
+        "heading" "Verbesserungsvorschlag"
+        "intro" "Einen Fehler oder einen defekten Link entdeckt, oder fehlt diesem Eintrag etwas? Lassen Sie es uns wissen — das geht direkt an das Glossar-Team."
+        "type_label" "Art des Feedbacks"
+        "type_placeholder" "Art auswählen…"
+        "type_correction" "Korrektur (Fehler, Tippfehler, defekter Link)"
+        "type_suggestion" "Vorschlag (fehlender Begriff, verwandter Begriff, Referenz)"
+        "type_other" "Sonstiges"
+        "message_label" "Ihr Feedback"
+        "message_placeholder" "Beschreiben Sie das Problem oder den Vorschlag..."
+        "email_label" "E-Mail (optional, falls Sie eine Antwort wünschen)"
+        "submit" "Feedback senden"
+        "sending" "Wird gesendet…"
+        "thanks" "Vielen Dank — Ihr Feedback wurde gespeichert."
+        "error" "Etwas ist schiefgelaufen. Bitte versuchen Sie es später erneut."
+    )
+    "arabic" (dict
+        "heading" "اقترح تحسينًا"
+        "intro" "هل لاحظت خطأً أو رابطًا معطلاً، أو تعتقد أن هذا المدخل ينقصه شيء؟ أخبرنا — ستصل ملاحظتك مباشرة إلى فريق المسرد."
+        "type_label" "نوع الملاحظة"
+        "type_placeholder" "اختر نوعًا…"
+        "type_correction" "تصحيح (خطأ، خطأ إملائي، رابط معطل)"
+        "type_suggestion" "اقتراح (مصطلح مفقود، مصطلح ذو صلة، مرجع)"
+        "type_other" "أخرى"
+        "message_label" "ملاحظتك"
+        "message_placeholder" "صف المشكلة أو الاقتراح..."
+        "email_label" "البريد الإلكتروني (اختياري، إذا رغبت في الحصول على رد)"
+        "submit" "إرسال الملاحظة"
+        "sending" "جارٍ الإرسال…"
+        "thanks" "شكرًا لك — تم تسجيل ملاحظتك."
+        "error" "حدث خطأ ما. يرجى المحاولة مرة أخرى لاحقًا."
+    )
+    "turkish" (dict
+        "heading" "Bir iyileştirme önerin"
+        "intro" "Bir hata, bozuk bir bağlantı fark ettiniz mi ya da bu maddede eksik bir şey mi var? Bize bildirin — geri bildiriminiz doğrudan sözlük ekibine ulaşır."
+        "type_label" "Geri bildirim türü"
+        "type_placeholder" "Bir tür seçin…"
+        "type_correction" "Düzeltme (hata, yazım hatası, bozuk bağlantı)"
+        "type_suggestion" "Öneri (eksik terim, ilgili terim, kaynak)"
+        "type_other" "Diğer"
+        "message_label" "Geri bildiriminiz"
+        "message_placeholder" "Sorunu veya öneriyi açıklayın..."
+        "email_label" "E-posta (isteğe bağlı, yanıt almak isterseniz)"
+        "submit" "Geri bildirimi gönder"
+        "sending" "Gönderiliyor…"
+        "thanks" "Teşekkürler — geri bildiriminiz kaydedildi."
+        "error" "Bir şeyler ters gitti. Lütfen daha sonra tekrar deneyin."
+    )
+    "chinese" (dict
+        "heading" "提出改进建议"
+        "intro" "发现了错误、失效链接，或者认为此词条遗漏了什么？请告诉我们——您的反馈将直接发送给术语表团队。"
+        "type_label" "反馈类型"
+        "type_placeholder" "请选择反馈类型…"
+        "type_correction" "更正（错误、拼写错误、失效链接）"
+        "type_suggestion" "建议（缺失术语、相关术语、参考文献）"
+        "type_other" "其他"
+        "message_label" "您的反馈"
+        "message_placeholder" "请描述问题或建议..."
+        "email_label" "电子邮件（可选，如果您希望收到回复）"
+        "submit" "提交反馈"
+        "sending" "发送中…"
+        "thanks" "谢谢——您的反馈已记录。"
+        "error" "出现问题，请稍后重试。"
+    )
+}}
+{{ $t := index $dictionary $lang }}
+
+<section class="glossary-feedback"{{ if eq $lang "arabic" }} dir="rtl"{{ end }}>
+  <div class="glossary-feedback-header">
+    <span class="glossary-feedback-icon" aria-hidden="true">&#9998;</span>
+    <div>
+      <h3 class="glossary-feedback-heading">{{ index $t "heading" }}</h3>
+      <p class="glossary-feedback-intro">{{ index $t "intro" }}</p>
+    </div>
+  </div>
+
+  <form id="glossary-feedback-form"
+        class="glossary-feedback-form"
+        data-term="{{ .Title }}"
+        data-url="{{ .Permalink }}"
+        data-language="{{ $lang }}">
+
+    <div class="glossary-feedback-row">
+      <div class="form-group glossary-feedback-type">
+        <label for="glossary-feedback-type">{{ index $t "type_label" }}</label>
+        <select id="glossary-feedback-type" name="feedback_type" class="form-control" required>
+          <option value="" disabled selected>{{ index $t "type_placeholder" }}</option>
+          <option value="correction">{{ index $t "type_correction" }}</option>
+          <option value="suggestion">{{ index $t "type_suggestion" }}</option>
+          <option value="other">{{ index $t "type_other" }}</option>
+        </select>
+      </div>
+
+      <div class="form-group glossary-feedback-email">
+        <label for="glossary-feedback-email">{{ index $t "email_label" }}</label>
+        <input type="email" id="glossary-feedback-email" name="email" class="form-control">
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="glossary-feedback-message">{{ index $t "message_label" }}</label>
+      <textarea id="glossary-feedback-message" name="message" class="form-control" rows="3"
+                required placeholder="{{ index $t "message_placeholder" }}"></textarea>
+    </div>
+
+    {{/* Honeypot: hidden from sighted users and skipped by screen readers
+         via aria-hidden; most bots fill in every field regardless. */}}
+    <div class="glossary-feedback-hp" aria-hidden="true">
+      <label for="glossary-feedback-website">Website</label>
+      <input type="text" id="glossary-feedback-website" name="website" tabindex="-1" autocomplete="off">
+    </div>
+
+    <div class="glossary-feedback-actions">
+      <button type="submit" class="btn btn-primary">{{ index $t "submit" }}</button>
+      <span class="glossary-feedback-status" role="status" aria-live="polite"></span>
+    </div>
+  </form>
+</section>
+
+<style>
+  .glossary-feedback {
+    margin: 2.5rem 0 1.5rem;
+    padding: 1.5rem 1.75rem;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    border-inline-start: 4px solid #007bff;
+    border-radius: 8px;
+    background: rgba(0, 123, 255, 0.03);
+  }
+
+  .glossary-feedback-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.85rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .glossary-feedback-icon {
+    flex: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.25rem;
+    height: 2.25rem;
+    border-radius: 50%;
+    background: rgba(0, 123, 255, 0.12);
+    color: #007bff;
+    font-size: 1.1rem;
+  }
+
+  .glossary-feedback-heading {
+    margin: 0 0 0.2rem;
+    font-size: 1.05rem;
+    font-weight: 700;
+  }
+
+  .glossary-feedback-intro {
+    margin: 0;
+    color: #6c757d;
+    font-size: 0.9rem;
+    line-height: 1.5;
+  }
+
+  .glossary-feedback-form .form-group {
+    margin-bottom: 1rem;
+  }
+
+  .glossary-feedback-form label {
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 0.35rem;
+  }
+
+  .glossary-feedback-form .form-control:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 0 0.15rem rgba(0, 123, 255, 0.2);
+  }
+
+  .glossary-feedback-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0 1.25rem;
+  }
+
+  @media (max-width: 576px) {
+    .glossary-feedback {
+      padding: 1.25rem;
+    }
+
+    .glossary-feedback-row {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .glossary-feedback-actions {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-top: 0.25rem;
+  }
+
+  .glossary-feedback-status {
+    font-size: 0.85rem;
+    color: #28a745;
+  }
+
+  .glossary-feedback-status.text-danger {
+    color: #dc3545 !important;
+  }
+
+  .glossary-feedback-hp {
+    position: absolute;
+    left: -9999px;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+  }
+
+  .dark .glossary-feedback {
+    background: rgba(0, 123, 255, 0.07);
+    border-color: rgb(68, 71, 90);
+  }
+
+  .dark .glossary-feedback-intro {
+    color: rgb(152, 166, 173);
+  }
+</style>
+
+<script>
+  window.GLOSSARY_FEEDBACK_I18N = {
+    sending: {{ index $t "sending" | jsonify | safeJS }},
+    thanks: {{ index $t "thanks" | jsonify | safeJS }},
+    error: {{ index $t "error" | jsonify | safeJS }}
+  };
+</script>
+<script src="{{ "js/glossary-feedback.js" | relURL }}" defer></script>
