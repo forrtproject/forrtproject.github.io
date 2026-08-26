@@ -146,6 +146,8 @@
     margin: 2.5rem 0 1.5rem;
     padding: 1.5rem 1.75rem;
     border: 1px solid rgba(0, 0, 0, 0.08);
+    /* Logical property (not border-left) so the accent stripe flips to the
+       visual right automatically on the Arabic (dir="rtl") pages. */
     border-inline-start: 4px solid #007bff;
     border-radius: 8px;
     background: rgba(0, 123, 255, 0.03);
@@ -250,6 +252,9 @@
   }
 </style>
 
+{{/* `| safeJS` is required here: without it, Hugo's contextual autoescaping
+     re-escapes the already-quoted jsonify output, doubling the quotes and
+     breaking the object literal below. */}}
 <script>
   window.GLOSSARY_FEEDBACK_I18N = {
     sending: {{ index $t "sending" | jsonify | safeJS }},

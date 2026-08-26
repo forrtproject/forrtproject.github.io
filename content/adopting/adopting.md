@@ -362,7 +362,8 @@ A great way to adopt the values of principled education is to advocate in your o
 
 Have you used any of these tips? What do you think worked well or what did you have to change? What demographic of students did you use this for (e.g. Bachelor, Masters, PhD)? 
 
-We welcome contributions from educators, researchers, and practitioners who would like to help expand and enrich these resources. Have your say through this Google Form. 
+We welcome contributions from educators, researchers, and practitioners who would like to help expand and enrich these resources. Have your say through the form below.
+
 
 **Share back**
 
@@ -374,4 +375,6 @@ You can also submit a short contribution to FORRT’s curated database or direct
 
 * a case study
 
-Submissions can be made via our short [Google Form](). Please note that contributors can get credit. We are committed to transparent and meaningful attribution. Contributors are credited using our formal crediting mechanism (Tenzing / CRediT taxonomy). When submitting via the Google Form, you will be invited to add your details so that you can be properly credited for your contribution. We value community knowledge and aim to recognise all contributions appropriately
+Submissions can be made via our short Google Form below. Please note that contributors can get credit. We are committed to transparent and meaningful attribution. Contributors are credited using our formal crediting mechanism (Tenzing / CRediT taxonomy). When submitting via the Google Form, you will be invited to add your details so that you can be properly credited for your contribution. We value community knowledge and aim to recognise all contributions appropriately
+
+{{< adopting_feedback_form >}}

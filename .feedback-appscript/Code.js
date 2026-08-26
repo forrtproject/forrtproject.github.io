@@ -9,14 +9,19 @@
  *
  *   - Glossary entry feedback/suggestion form (`type: "glossary_feedback"`):
  *     sheet "glossary_feedback" — { term, url, language, feedback_type,
- *     message, email, ts }. Sheet is created automatically (with headers)
- *     on first submission.
+ *     message, email, ts }.
  *
+ *   - Adopting Principled Education feedback form (`type: "adopting_feedback"`):
+ *     sheet "adopting_feedback" — { tips_used, what_worked, demographics,
+ *     demographics_other, additional_comments, url, ts }.
+ *
+ * Sheets are created automatically (with headers) on first submission.
  */
 
 var SHEET_ID = '1YTDMUgBzHTy558M5u3ClrnwMnbKF_nxWn0ufLnqBJY4';
 var SHEET_NAME = 'feedback';
 var GLOSSARY_SHEET_NAME = 'glossary_feedback';
+var ADOPTING_SHEET_NAME = 'adopting_feedback';
 
 function doPost(e) {
   try {
@@ -25,8 +30,14 @@ function doPost(e) {
     if (data.type === 'glossary_feedback') {
       return _handleGlossaryFeedback(data);
     }
+    if (data.type === 'adopting_feedback') {
+      return _handleAdoptingFeedback(data);
+    }
     return _handleChatFeedback(data);
   } catch (err) {
+    // Clients POST with `mode: 'no-cors'` and never read this response, so an
+    // error here is otherwise invisible; returning it (rather than throwing)
+    // at least leaves a trace in the Apps Script execution log.
     return _json({ ok: false, error: String(err) });
   }
 }
@@ -65,6 +76,27 @@ function _handleGlossaryFeedback(data) {
     data.feedback_type || '',
     data.message || '',
     data.email || '',
+  ]);
+
+  return _json({ ok: true });
+}
+
+function _handleAdoptingFeedback(data) {
+  var sheet = _getOrCreateSheet(ADOPTING_SHEET_NAME, [
+    'received_at', 'ts', 'tips_used', 'what_worked', 'demographics', 'demographics_other', 'additional_comments', 'url',
+  ]);
+
+  sheet.appendRow([
+    new Date(),                        // received_at (server time)
+    data.ts || '',                     // ts (client epoch ms)
+    data.tips_used || '',
+    data.what_worked || '',
+    // Demographics arrive as an array of checked values; flattened to a
+    // single string since a spreadsheet cell can't hold a list.
+    (data.demographics || []).join(', '),
+    data.demographics_other || '',
+    data.additional_comments || '',
+    data.url || '',
   ]);
 
   return _json({ ok: true });

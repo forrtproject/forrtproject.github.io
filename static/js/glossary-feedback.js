@@ -1,9 +1,8 @@
 /**
  * Glossary entry feedback/suggestion form.
- * Submits to a Google Apps Script web app deployed from the same project as
- * the JUST-OS chat feedback (see .feedback-appscript/Code.js), which appends
- * each submission as a row to a "glossary_feedback" sheet in the "Forrt-feedbacks"
- * spreadsheet.
+ * Submits to a Google Apps Script web app (see .feedback-appscript/Code.js),
+ * which appends each submission as a row to a "glossary_feedback" sheet in
+ * the "Forrt-feedbacks" spreadsheet.
  * Override window.FORRT_FEEDBACK_URL before this script loads to point elsewhere.
  */
 (function () {
@@ -13,10 +12,14 @@
     ? window.FORRT_FEEDBACK_URL
     : 'https://script.google.com/macros/s/AKfycbwMOWeJSQRrLiZFUN18vbB8pW-dqdPZE9FtQXjYh5J33DRazccGr7MTNmSbV6lG2QQyXQ/exec';
 
+  /** Wires up the form. Guards on the element existing so this script can be
+   *  safely re-included or reloaded without throwing if the form isn't present. */
   function init() {
     var form = document.getElementById('glossary-feedback-form');
     if (!form) return;
 
+    // Populated per-page by the glossary_feedback_form partial (translated
+    // strings); the literal fallbacks below cover the case where it's missing.
     var i18n = window.GLOSSARY_FEEDBACK_I18N || {};
     var statusEl = form.querySelector('.glossary-feedback-status');
     var submitBtn = form.querySelector('button[type="submit"]');
@@ -28,6 +31,8 @@
       // most bots that blindly populate every field. Silently drop those.
       if (form.website && form.website.value) return;
 
+      // The textarea has `required`, but that only checks for non-empty input —
+      // whitespace-only text passes native validation, so re-check after trim.
       var message = form.message.value.trim();
       if (!message) {
         form.message.focus();
@@ -67,6 +72,9 @@
     });
   }
 
+  // The script tag uses `defer`, so the DOM is normally already parsed by the
+  // time this runs — but the readyState check keeps init() safe if the script
+  // is ever loaded without `defer` or injected after page load.
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', init);
   } else {

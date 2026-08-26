@@ -1,0 +1,191 @@
+{{/*
+  "Adopting Principled Education" feedback form.
+  Submits to the same Google Apps Script web app used by the glossary
+  feedback form (see .feedback-appscript/Code.js and
+  layouts/partials/glossary_feedback_form.html), which appends each
+  submission as a row to an "adopting_feedback" sheet.
+  Client logic: static/js/adopting-feedback.js.
+
+  Usage: {{< adopting_feedback_form >}}
+*/}}
+<section class="adopting-feedback" id="adopting-feedback-form-section">
+  <div class="adopting-feedback-header">
+    <span class="adopting-feedback-icon" aria-hidden="true">&#9998;</span>
+    <div>
+      <h3 class="adopting-feedback-heading">FORRT Adopting Principled Education Feedback</h3>
+      <p class="adopting-feedback-intro">We’d love to hear from the community! Please share your experiences using these teaching tips. Your feedback helps us understand what works, what needs adapting, and for which students.</p>
+    </div>
+  </div>
+  <form id="adopting-feedback-form" class="adopting-feedback-form">
+    <div class="form-group">
+      <label for="adopting-feedback-tips-used">1. Which tips have you used? <span class="adopting-feedback-optional">(Optional)</span></label>
+      <input type="text" id="adopting-feedback-tips-used" name="tips_used" class="form-control" placeholder="List the tips you tried or applied.">
+    </div>
+    <div class="form-group">
+      <label for="adopting-feedback-what-worked">2. What worked well, or what did you have to change? <span class="adopting-feedback-optional">(Optional)</span></label>
+      <textarea id="adopting-feedback-what-worked" name="what_worked" class="form-control" rows="3"></textarea>
+    </div>
+    <div class="form-group">
+      <label>3. What demographic of students did you use these tips for? <span class="adopting-feedback-optional">(Optional)</span></label>
+      <div class="adopting-feedback-checkboxes">
+        <label class="adopting-feedback-checkbox"><input type="checkbox" name="demographics" value="bachelor"> Bachelor students</label>
+        <label class="adopting-feedback-checkbox"><input type="checkbox" name="demographics" value="masters"> Master’s students</label>
+        <label class="adopting-feedback-checkbox"><input type="checkbox" name="demographics" value="phd"> PhD students</label>
+        <label class="adopting-feedback-checkbox"><input type="checkbox" name="demographics" value="other"> Other (please specify)</label>
+      </div>
+      <div id="adopting-feedback-demographics-other-field" class="adopting-feedback-other-field">
+        <input type="text" id="adopting-feedback-demographics-other" name="demographics_other" class="form-control" placeholder="Please specify">
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="adopting-feedback-additional-comments">4. Additional comments / feedback <span class="adopting-feedback-optional">(Optional)</span></label>
+      <textarea id="adopting-feedback-additional-comments" name="additional_comments" class="form-control" rows="3"></textarea>
+    </div>
+    <!-- Honeypot: hidden from sighted users and skipped by screen readers via
+         aria-hidden; most bots fill in every field regardless. -->
+    <div class="adopting-feedback-hp" aria-hidden="true">
+      <label for="adopting-feedback-website">Website</label>
+      <input type="text" id="adopting-feedback-website" name="website" tabindex="-1" autocomplete="off">
+    </div>
+    <div class="adopting-feedback-actions">
+      <button type="submit" class="btn btn-primary">Submit</button>
+      <span class="adopting-feedback-status" role="status" aria-live="polite"></span>
+    </div>
+  </form>
+  <div id="adopting-feedback-thanks" class="adopting-feedback-thanks" hidden>
+    <h3>Thank You!</h3>
+    <p>Thank you for taking the time to share your feedback. We really appreciate your insights, they help us understand what works, what needs adapting, and how to better support students.</p>
+  </div>
+</section>
+
+<style>
+  .adopting-feedback {
+    margin: 2rem 0;
+    padding: 1.5rem 1.75rem;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    /* Logical property for visual consistency with the (RTL-aware) glossary
+       feedback form, even though this page itself is English-only. */
+    border-inline-start: 4px solid #007bff;
+    border-radius: 8px;
+    background: rgba(0, 123, 255, 0.03);
+  }
+
+  .adopting-feedback-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.85rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .adopting-feedback-icon {
+    flex: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.25rem;
+    height: 2.25rem;
+    border-radius: 50%;
+    background: rgba(0, 123, 255, 0.12);
+    color: #007bff;
+    font-size: 1.1rem;
+  }
+
+  .adopting-feedback-heading {
+    margin: 0 0 0.2rem;
+    font-size: 1.05rem;
+    font-weight: 700;
+  }
+
+  .adopting-feedback-intro {
+    margin: 0;
+    color: #6c757d;
+    font-size: 0.9rem;
+    line-height: 1.5;
+  }
+
+  .adopting-feedback-form .form-group {
+    margin-bottom: 1.1rem;
+  }
+
+  .adopting-feedback-form label {
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: 0.35rem;
+  }
+
+  .adopting-feedback-optional {
+    font-weight: 400;
+    color: #6c757d;
+    font-size: 0.8rem;
+  }
+
+  .adopting-feedback-form .form-control:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 0 0.15rem rgba(0, 123, 255, 0.2);
+  }
+
+  .adopting-feedback-checkboxes {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+  }
+
+  .adopting-feedback-checkbox {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: 400;
+    font-size: 0.95rem;
+  }
+
+  .adopting-feedback-checkbox input {
+    width: auto;
+    margin: 0;
+  }
+
+  .adopting-feedback-other-field {
+    margin-top: 0.5rem;
+    max-width: 320px;
+  }
+
+  .adopting-feedback-actions {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-top: 0.25rem;
+  }
+
+  .adopting-feedback-status {
+    font-size: 0.85rem;
+    color: #28a745;
+  }
+
+  .adopting-feedback-status.text-danger {
+    color: #dc3545 !important;
+  }
+
+  .adopting-feedback-hp {
+    position: absolute;
+    left: -9999px;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+  }
+
+  .adopting-feedback-thanks {
+    text-align: center;
+    padding: 1rem 0;
+  }
+
+  .dark .adopting-feedback {
+    background: rgba(0, 123, 255, 0.07);
+    border-color: rgb(68, 71, 90);
+  }
+
+  .dark .adopting-feedback-intro {
+    color: rgb(152, 166, 173);
+  }
+</style>
+
+<script src="/js/adopting-feedback.js" defer></script>
