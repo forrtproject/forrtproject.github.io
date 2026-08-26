@@ -18,10 +18,10 @@
  * Sheets are created automatically (with headers) on first submission.
  */
 
-var SHEET_ID = '1YTDMUgBzHTy558M5u3ClrnwMnbKF_nxWn0ufLnqBJY4';
-var SHEET_NAME = 'feedback';
-var GLOSSARY_SHEET_NAME = 'glossary_feedback';
-var ADOPTING_SHEET_NAME = 'adopting_feedback';
+var SHEET_ID = '1YTDMUgBzHTy558M5u3ClrnwMnbKF_nxWn0ufLnqBJY4'; // Forrt-feedbacks sheet (contains all three feedback sheets)
+var SHEET_NAME = 'feedback'; // just-os feedback
+var GLOSSARY_SHEET_NAME = 'glossary_feedback'; // glossary feedback
+var ADOPTING_SHEET_NAME = 'adopting_feedback'; // adopting feedback
 
 function doPost(e) {
   try {
