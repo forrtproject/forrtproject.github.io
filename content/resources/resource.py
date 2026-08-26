@@ -87,6 +87,12 @@ def convert_row_to_file(df, fpath):
     If there are duplicates, an index is appended to the filename.
     """
     
+    # Replace the generated collection rather than leaving files for rows that
+    # have been removed from the source sheet.
+    for path in fpath.iterdir():
+        if path.is_file() and path.name != '_index.md':
+            path.unlink()
+
     # Track filenames to handle duplicates
     filename_counts = {}
 

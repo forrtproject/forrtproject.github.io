@@ -44,6 +44,13 @@ jobs:
       # =======================
       # Data Artifact Retrieval
       # =======================
+      # The repository contains a generated seed copy of curated resources.
+      # Remove it before overlaying the artifact so rows removed from the
+      # source sheet cannot survive in the deployed site.
+      - name: Clear generated curated resources
+        run: |
+          find content/curated_resources -maxdepth 1 -type f ! -name '_index.md' -delete
+
       - name: Try to download data artifact
         id: download-artifact
         uses: dawidd6/action-download-artifact@07ab29fd4a977ae4d2b275087cf67563dfdf0295
