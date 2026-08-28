@@ -258,7 +258,7 @@ Here are the sessions and the talks in each, in the order they run. It is provis
 <h5>Symposium: how can AI help us understand animal-to-human translation in drug development?</h5>
 <p class="am-prog-blurb">Four talks and a discussion on the oldest replication question in biomedicine — whether a finding survives the move from an animal model to a human trial. Chaired by Benjamin Ineichen.</p>
 <ul>
-<li><span class="am-prog-title">How Can AI Help Us Understand Animal-to-Human Translation in Drug Development?</span><span class="am-prog-who">Miriam Kober (University of Bern, Department of Clinical Research), Tim Chopard (University of Bern, Department of Clinical Research), Vera Bernhard (University of Bern, Department of Clinical Research), Simona Doneva (University of Bern, Department of Clinical Research)</span></li>
+<li><span class="am-prog-who">Miriam Kober (University of Bern, Department of Clinical Research), Tim Chopard (University of Bern, Department of Clinical Research), Vera Bernhard (University of Bern, Department of Clinical Research), Simona Doneva (University of Bern, Department of Clinical Research)</span></li>
 </ul>
 </div>
 <h4 class="am-prog-half">Afternoon</h4>
