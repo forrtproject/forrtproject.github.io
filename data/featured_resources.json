@@ -14,7 +14,7 @@
         "is_oa": true,
         "oa_url": "https://doi.org/10.1027/2151-2604/a000387",
         "authors": "Sophia Crüwell, Johnny van Doorn, Alexander Etz, Matthew C. Makel, Hannah Moshontz, Jesse C. Niebaum, Amy Orben, Sam Parsons, Michael Schulte‐Mecklenbeck",
-        "vote_base": 0,
+        "vote_base": 2,
         "recommendations": [
           {
             "name": "The Doctor",
@@ -39,7 +39,7 @@
         "is_oa": false,
         "oa_url": "",
         "authors": "Monya Baker",
-        "vote_base": 0,
+        "vote_base": 2,
         "recommendations": [
           {
             "name": "Jean-Luc Picard",
@@ -114,7 +114,7 @@
         "is_oa": true,
         "oa_url": "https://www.ncbi.nlm.nih.gov/pmc/articles/5206685",
         "authors": "Marc Edwards, Siddhartha Roy",
-        "vote_base": 0,
+        "vote_base": 1,
         "recommendations": [
           {
             "name": "Ellen Ripley",
@@ -139,7 +139,7 @@
         "is_oa": true,
         "oa_url": "https://www.ncbi.nlm.nih.gov/pmc/articles/5206685",
         "authors": "Marc Edwards, Siddhartha Roy",
-        "vote_base": 0,
+        "vote_base": 1,
         "recommendations": [
           {
             "name": "Ellen Ripley",
@@ -166,7 +166,7 @@
         "is_oa": true,
         "oa_url": "https://link.springer.com/content/pdf/10.1007/s10654-016-0149-3.pdf",
         "authors": "Sander Greenland, Stephen Senn, Kenneth J. Rothman, John B. Carlin, Charles Poole, Steven N. Goodman, Douglas G. Altman",
-        "vote_base": 0,
+        "vote_base": 1,
         "recommendations": [
           {
             "name": "Spock",
@@ -191,7 +191,7 @@
         "is_oa": true,
         "oa_url": "https://link.springer.com/content/pdf/10.1007/s10654-016-0149-3.pdf",
         "authors": "Sander Greenland, Stephen Senn, Kenneth J. Rothman, John B. Carlin, Charles Poole, Steven N. Goodman, Douglas G. Altman",
-        "vote_base": 0,
+        "vote_base": 1,
         "recommendations": [
           {
             "name": "Spock",
@@ -266,7 +266,7 @@
         "is_oa": true,
         "oa_url": "https://doi.org/10.1177/2515245920965119",
         "authors": "Lisa M. DeBruine, Dale J. Barr",
-        "vote_base": 0,
+        "vote_base": 1,
         "recommendations": [
           {
             "name": "Data",
@@ -318,7 +318,7 @@
         "is_oa": true,
         "oa_url": "https://www.ncbi.nlm.nih.gov/pmc/articles/5206685",
         "authors": "Marc Edwards, Siddhartha Roy",
-        "vote_base": 0,
+        "vote_base": 1,
         "recommendations": [
           {
             "name": "Ellen Ripley",
