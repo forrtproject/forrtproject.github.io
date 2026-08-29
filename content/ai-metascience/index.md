@@ -4,7 +4,7 @@ type: plain_page
 url: "/ai-metascience/"
 hide_title: true
 hide_date: true
-summary: "Registration is open for the FORRT AI in Metascience Online Conference, 28–30 September 2026. Online, free to attend, 33 sessions over 3 days."
+summary: "Registration is open for the FORRT AI in Metascience Online Conference, 28–30 September 2026. Online, free to attend, 34 talks and workshops over 3 days."
 sharing_description: "Register for the FORRT AI in Metascience Online Conference, 28–30 September 2026. Online and free to attend."
 sharing_image_alt: "FORRT AI in Metascience Conference — online, 28–30 September 2026"
 image:
@@ -223,7 +223,7 @@ image:
 }
 </style>
 
-How is AI changing the way research is done, checked and understood? The **FORRT AI in Metascience Online Conference** takes three days over that question, with 33 accepted submissions from people who are studying it or building with it. Registration is now open, and everyone is welcome.
+How is AI changing the way research is done, checked and understood? The **FORRT AI in Metascience Online Conference** takes three days over that question, with 34 talks and workshops from people who are studying it or building with it. Registration is now open, and everyone is welcome.
 
 <div class="am-reg-facts">
 <dl>
@@ -234,7 +234,7 @@ How is AI changing the way research is done, checked and understood? The **FORRT
   <dt>Cost</dt>
   <dd>Free to attend.</dd>
   <dt>Programme</dt>
-  <dd>33 accepted submissions in a single track, so you can follow the whole conference if you want - or dip in and out as you like..</dd>
+  <dd>34 talks and workshops in a single track, so you can follow the whole conference if you want - or dip in and out as you like.</dd>
 </dl>
 </div>
 
