@@ -5,7 +5,7 @@ newsletters:
     color: "#2c7a7b"
     issues:
       - month: "August"
-        url: ""
+        url: "https://eocampaign1.com/web-version?p=70dccb38-a138-11f1-a13e-3dcb3d9116a3&pt=campaign&t=1788139229&s=832e7856e81cd01a0d146de9850e9190c651482bf3676650087db736ff319f4a"
         new: true 
 
       - month: "July"
