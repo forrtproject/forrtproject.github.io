@@ -60,6 +60,10 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v6
         # Checkout the repository code to the runner environment
+        with:
+          # Full history: the generators read per-file commit dates to bootstrap
+          # `lastmod`, which a shallow clone would report as HEAD for every file.
+          fetch-depth: 0
 
       #======================
       # Workflow Configuration
@@ -225,11 +229,28 @@ jobs:
         run: python3 scripts/build_get_involved.py
 
       #========================================
+      # Fetch the previous generated curated resources from the build-resources
+      # branch, so unchanged entries keep their lastmod date.
+      # If the branch or the extraction is unavailable, the directory stays
+      # absent and resource.py falls back to the seed copy in the checkout.
+      #========================================
+      - name: Fetch previous curated resources state
+        id: previous-curated-resources
+        continue-on-error: true
+        run: |
+          mkdir -p /tmp/previous-generated
+          git fetch origin build-resources || true
+          git archive origin/build-resources content/curated_resources \
+            | tar -x -C /tmp/previous-generated || true
+
+      #========================================
       # Process and organize curated resources data
       #========================================
       - name: Run Curated Resources script
         id: curated-resources
         continue-on-error: true  # Continue even if this step fails
+        env:
+          CURATED_PREVIOUS_DIR: /tmp/previous-generated/content/curated_resources
         run: python3 content/resources/resource.py
         # Execute the curated resources script that processes and organizes resource data
 

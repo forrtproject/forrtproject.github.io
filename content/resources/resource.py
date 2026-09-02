@@ -17,9 +17,43 @@
 """
 
 import json
-import pandas as pd
+import os
 import re
+import sys
 from pathlib import Path
+
+import pandas as pd
+from dateutil import parser as date_parser
+
+sys.path.insert(0, str(Path(__file__).resolve().parents[2] / 'scripts'))
+from generated_lastmod import load_previous, resolve_lastmod
+
+
+def previous_directory(fpath: Path) -> Path:
+    """Where the previous run's files are.
+
+    The daily workflow points CURATED_PREVIOUS_DIR at a checkout of the
+    `build-resources` branch, which holds the last generated state. Without it
+    (local runs, or a missing branch) the checkout's own seed copy is used.
+    """
+    env_dir = os.environ.get('CURATED_PREVIOUS_DIR')
+    if env_dir and Path(env_dir).is_dir():
+        return Path(env_dir)
+    return fpath
+
+
+def submission_date(timestamp) -> str:
+    """Sheet submission date as YYYY-MM-DD, or None if it cannot be parsed.
+
+    Used as the `lastmod` for entries carried over from before this key
+    existed. The sheet mixes ISO and US month-first formats.
+    """
+    if not timestamp or not isinstance(timestamp, str):
+        return None
+    try:
+        return date_parser.parse(timestamp).strftime('%Y-%m-%d')
+    except (ValueError, OverflowError):
+        return None
 
 
 ## Function definition
@@ -87,6 +121,10 @@ def convert_row_to_file(df, fpath):
     If there are duplicates, an index is appended to the filename.
     """
     
+    # Read the previous run's files before deleting them, so each resource can
+    # keep its `lastmod` for as long as its content is unchanged.
+    previous = load_previous(previous_directory(fpath))
+
     # Replace the generated collection rather than leaving files for rows that
     # have been removed from the source sheet.
     for path in fpath.iterdir():
@@ -108,8 +146,14 @@ def convert_row_to_file(df, fpath):
         else:
             filename_counts[filename] = 1
             filename_md = fpath / f"{filename}.md"
-        
-        filename_md.write_text(json.dumps(row.to_dict(), indent=4))
+
+        entry = row.to_dict()
+        entry["lastmod"] = resolve_lastmod(
+            entry,
+            previous.get(filename_md.name),
+            lambda: submission_date(entry.get("timestamp")),
+        )
+        filename_md.write_text(json.dumps(entry, indent=4))
 
 
 # Import data and prettify it:

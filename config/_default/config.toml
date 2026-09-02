@@ -26,6 +26,14 @@ theme = "academic"
 # Get last modified date for content from Git?
 enableGitInfo = true
 
+# An explicit `lastmod` in front matter wins over the Git commit date. Generated
+# collections (glossary, curated resources) carry their own `lastmod`, set by
+# their generators only when an entry's content changes; hand-maintained pages
+# without one fall back to Git. Requires `core.quotepath=false` in the build
+# checkout so Git reports non-ASCII filenames unquoted (see deploy.yaml).
+[frontmatter]
+lastmod = ["lastmod", ":git", "date", "publishDate"]
+
 # Enable generation of robots.txt file
 enableRobotsTXT = true
 

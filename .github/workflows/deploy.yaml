@@ -41,6 +41,12 @@ jobs:
         with:
           fetch-depth: 0
 
+      # Hugo derives page dates from `git log --name-only`, and Git quotes
+      # non-ASCII paths (glossary terms, accented resource titles) unless this
+      # is off. Quoted paths never match, leaving those pages without a date.
+      - name: Let Git report non-ASCII paths unquoted
+        run: git config core.quotepath false
+
       # =======================
       # Data Artifact Retrieval
       # =======================
@@ -207,6 +213,17 @@ jobs:
           hugo --gc --minify --cleanDestinationDir --destination public
         env:
           HUGO_ENV: production
+
+      # =======================
+      # Sitemap Quality Check
+      # =======================
+      # Reports pages missing a <lastmod>, a timestamp stamped on most of the
+      # site, and a sample of pages whose date disagrees with their source
+      # (front-matter lastmod or Git). Warns only: a stale sitemap date must
+      # not block a deployment.
+      - name: Check sitemap lastmod
+        continue-on-error: true
+        run: python3 scripts/check_sitemap_lastmod.py public/sitemap.xml --compare-source --sample 200
 
       # =======================
       # Deployment Artifact
