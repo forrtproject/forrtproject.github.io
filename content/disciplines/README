@@ -104,7 +104,9 @@ that mirrors the old Google Doc layout.
 
 After a hackathon refresh, the team produces a new master Google Doc.
 `scripts/parse_disciplines_gdoc.py` rewrites the three sheet tabs from
-that document — destructive, so back up first if you want a copy.
+that document — destructive, so back up first if you want a copy. It clears
+every tab before writing, so the `Leads` columns are lost: copy them out
+beforehand and paste them back after the push.
 
 ```bash
 # 1) Get the file id of the G-Doc from Google Drive (URL ends with /d/<ID>/edit)
