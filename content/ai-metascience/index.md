@@ -14,212 +14,118 @@ image:
 ---
 
 <style>
-.am-reg-facts {
-  background: #f4f2e8;
-  border-left: 4px solid #004055;
-  border-radius: 8px;
-  padding: 1rem 1.2rem;
-  margin: 1.4rem 0;
-}
 .am-reg-facts dl {
-  margin: 0;
   display: grid;
   grid-template-columns: max-content 1fr;
-  column-gap: 1.1rem;
-  row-gap: 0.45rem;
+  column-gap: 1.2rem;
+  row-gap: 0.3rem;
+  margin: 1.2rem 0;
 }
-.am-reg-facts dt {
-  color: #004055;
-  font-weight: 700;
-}
+.am-reg-facts dt { font-weight: 700; }
 .am-reg-facts dd { margin: 0; }
 @media (max-width: 560px) {
-  .am-reg-facts dl { grid-template-columns: 1fr; row-gap: 0.15rem; }
+  .am-reg-facts dl { grid-template-columns: 1fr; row-gap: 0; }
   .am-reg-facts dd { margin-bottom: 0.6rem; }
 }
-.am-reg-days {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(185px, 1fr));
-  gap: 1rem;
-  margin: 1.4rem 0;
-}
-.am-reg-day {
-  border: 1px solid #e6e2d2;
-  border-top: 4px solid #004055;
-  border-radius: 8px;
-  padding: 1rem 1.1rem;
-  background: #fff;
-}
-.am-reg-day h3 {
-  margin: 0 0 0.2rem;
-  font-size: 1.05rem;
-  color: #004055;
-}
-.am-reg-day .am-reg-date {
-  display: block;
-  font-size: 0.85rem;
-  font-weight: 700;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  color: #5d6b70;
-  margin-bottom: 0.35rem;
-}
-.am-reg-day p { margin: 0; }
 .am-reg-cta { margin: 1.6rem 0; }
-.am-prog { margin: 1.6rem 0 0; }
-.am-prog-day { margin: 0 0 3.4rem; }
-.am-prog-date {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: baseline;
-  gap: 0.2rem 0.8rem;
-  margin: 0 0 0.2rem;
-  padding-bottom: 0.35rem;
-  border-bottom: 2px solid #004055;
-  color: #004055;
-  font-size: 1.25rem;
-}
+
+/* Programme: the markup between the PROGRAMME markers is generated, so this
+   block styles it without expecting any hooks beyond the class names. */
+.am-prog-day { margin: 0 0 2.5rem; }
 .am-prog-date span {
-  font-size: 0.92rem;
+  display: block;
+  font-size: 1rem;
   font-weight: 400;
   color: #5d6b70;
 }
 .am-prog-half {
-  display: flex;
-  align-items: center;
-  gap: 0.7rem;
-  margin: 2.6rem 0 0.8rem;
-  font-size: 0.75rem;
+  margin: 1.8rem 0 0.5rem;
+  font-size: 0.85rem;
   font-weight: 700;
-  letter-spacing: 0.09em;
+  letter-spacing: 0.05em;
   text-transform: uppercase;
-  color: #6e644b;
+  color: #5d6b70;
 }
-.am-prog-half::after {
-  content: "";
-  flex: 1;
-  height: 1px;
-  background: #e6e2d2;
-}
-.am-prog-session {
-  margin: 0 0 2.4rem;
-  padding-left: 1rem;
-  border-left: 3px solid #b5ad98;
-}
+.am-prog-session { margin: 0 0 1.4rem; }
 .am-prog-session h4 {
-  margin: 0 0 0.3rem;
-  font-size: 1.18rem;
-  font-weight: 700;
-  color: #004055;
+  margin: 0 0 0.2rem;
+  font-size: 1.05rem;
 }
 .am-prog-blurb {
-  margin: 0 0 0.55rem;
+  margin: 0 0 0.5rem;
   color: #5d6b70;
   font-size: 0.9rem;
-  max-width: 46em;
 }
-.am-prog-talks { list-style: none; margin: 0; padding: 0; }
-.am-prog-talks li + li { border-top: 1px solid #eae5d5; }
+.am-prog-talks { margin: 0 0 0 1.2rem; padding: 0; }
+.am-prog-talks li { padding: 0.3rem 0; }
 .am-prog-item {
-  display: grid;
-  grid-template-columns: 1fr auto;
-  gap: 0.1rem 1rem;
-  width: calc(100% + 1.2rem);
-  min-height: 44px;
-  margin: 0 -0.6rem;
-  padding: 0.55rem 0.6rem;
+  display: block;
+  padding: 0;
   border: 0;
-  border-radius: 5px;
   background: none;
   font: inherit;
   color: inherit;
   text-align: left;
   cursor: pointer;
 }
-.am-prog-item:hover, .am-prog-item:focus-visible {
-  background: #f4f2e8;
+.am-prog-title {
+  display: block;
+  color: #8e0000;
+  line-height: 1.35;
 }
-.am-prog-item:hover .am-prog-title { color: #004055; }
-.am-prog-title { font-size: 0.98rem; font-weight: 600; line-height: 1.35; }
-.am-prog-who {
-  grid-column: 1;
+.am-prog-item:hover .am-prog-title,
+.am-prog-item:focus-visible .am-prog-title { text-decoration: underline; }
+.am-prog-who, .am-prog-len {
   color: #5d6b70;
   font-size: 0.86rem;
 }
-.am-prog-len::after {
-  content: " \203a";
-  display: inline-block;
-  margin-left: 0.25rem;
-  color: #004055;
-  font-size: 0.95rem;
-  font-weight: 700;
-  transition: transform 0.15s ease;
-}
-.am-prog-item:hover .am-prog-len::after,
-.am-prog-item:focus-visible .am-prog-len::after { transform: translateX(3px); }
-.am-prog-item-plain .am-prog-len::after { content: none; }
-.am-prog-len {
-  grid-row: 1;
-  grid-column: 2;
-  align-self: start;
-  padding-top: 0.15rem;
-  color: #9a927c;
-  font-size: 0.75rem;
-  font-variant-numeric: tabular-nums;
-  white-space: nowrap;
-}
+.am-prog-len::before { content: " · "; }
 .am-prog-item-plain { cursor: default; }
-.am-prog-item-plain:hover { background: none; }
+.am-prog-item-plain .am-prog-title { color: inherit; text-decoration: none; }
+
 .am-prog-dialog {
   width: min(38rem, calc(100vw - 2rem));
   max-height: 85vh;
   overflow-y: auto;
   overscroll-behavior: contain;
-  padding: 1.6rem 1.7rem 1.8rem;
-  border: 0;
-  border-top: 5px solid #004055;
-  border-radius: 10px;
-  background: #fffdf7;
-  color: #12181b;
-  box-shadow: 0 18px 50px rgba(0, 32, 42, 0.28);
+  padding: 1.4rem 1.6rem 1.6rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background: #fff;
+  color: #313131;
 }
-.am-prog-dialog::backdrop { background: rgba(0, 32, 42, 0.45); }
+.am-prog-dialog::backdrop { background: rgba(0, 0, 0, 0.4); }
 .am-prog-close {
   float: right;
-  margin: -0.6rem -0.6rem 0 0.6rem;
+  margin: -0.5rem -0.6rem 0 0.6rem;
   border: 0;
   background: none;
-  color: #8d8266;
+  color: #5d6b70;
   font-size: 1.7rem;
   line-height: 1;
   cursor: pointer;
 }
-.am-prog-close:hover { color: #004055; }
+.am-prog-close:hover { color: #313131; }
 .am-prog-dialog-len {
   margin: 0;
-  font-size: 0.75rem;
-  font-weight: 700;
-  letter-spacing: 0.09em;
-  text-transform: uppercase;
-  color: #8d8266;
+  color: #5d6b70;
+  font-size: 0.86rem;
 }
 .am-prog-dialog-title {
-  margin: 0.2rem 0 0.3rem;
-  font-size: 1.15rem;
-  color: #004055;
+  margin: 0.1rem 0 0.2rem;
+  font-size: 1.2rem;
 }
 .am-prog-dialog-who {
   margin: 0 0 1rem;
-  padding-bottom: 0.9rem;
-  border-bottom: 1px solid #e6e2d2;
+  padding-bottom: 0.8rem;
+  border-bottom: 1px solid #ddd;
   color: #5d6b70;
   font-size: 0.9rem;
 }
 .am-prog-dialog-abstract p { margin: 0 0 0.8rem; }
 .am-prog-dialog-abstract p:last-child { margin-bottom: 0; }
 @media (max-width: 480px) {
-  .am-prog-session { padding-left: 0.6rem; }
-  .am-prog-dialog { padding: 1.3rem 1.1rem 1.4rem; }
+  .am-prog-dialog { padding: 1.1rem 1rem 1.2rem; }
 }
 </style>
 
@@ -246,30 +152,11 @@ How is AI changing the way research is done, checked and understood? The **FORRT
 
 ## What each day covers
 
-<div class="am-reg-days">
+**Monday 28 September: AI in the research pipeline.** What AI is already doing to the literature, whether it can carry out evidence synthesis, how it can inform research science evaluation ... and what legitimate and ethical AI adoption would look like.
 
-<div class="am-reg-day">
-<span class="am-reg-date">Monday 28 September</span>
-<h3>AI in the research pipeline</h3>
+**Tuesday 29 September: Replications and reproductions.** Replications and reproductions are key to credible science - yet currently hard to do and hard to find. Here, we explore whether AI can help with both, and discuss some risks of handing this work over to machines.
 
-<p>What AI is already doing to the literature, whether it can carry out evidence synthesis, how it can inform research science evaluation ... and what legitimate and ethical AI adoption would look like.</p>
-</div>
-
-<div class="am-reg-day">
-<span class="am-reg-date">Tuesday 29 September</span>
-<h3>Replications and reproductions</h3>
-
-<p>Replications and reproductions are key to credible science - yet currently hard to do and hard to find. Here, we explore whether AI can help with both, and discuss some risks of handing this work over to machines.</p>
-</div>
-
-<div class="am-reg-day">
-<span class="am-reg-date">Wednesday 30 September</span>
-<h3>Workshops</h3>
-
-<p>Three hands-on sessions of 90 minutes each, helping you to get started with AI for knowledge management, evidence synthesis or the evaluation and improvement of pre-registrations.</p>
-</div>
-
-</div>
+**Wednesday 30 September: Workshops.** Three hands-on sessions of 90 minutes each, helping you to get started with AI for knowledge management, evidence synthesis or the evaluation and improvement of pre-registrations.
 
 ## Programme
 
