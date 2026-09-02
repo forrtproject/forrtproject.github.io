@@ -7,13 +7,10 @@
   <link rel="stylesheet" href="{{ "css/cite_us.css" | relURL }}">
 {{ end }}
 
-<div class="cite-us-section glossary-citation">
+<div class="cite-us-section citation-card">
   <div class="cite-us-item">
-    <div class="cite-us-text">
-      Parsons, S., Azevedo, F., Elsherif, M. M., Guay, S., Shahim, O. N., Govaart, G. H., … &amp; Aczel, B. (2022). A Community-Sourced Glossary of Open Scholarship Terms. <em>Nature Human Behaviour, 6</em>(3), 312–318.
-      <a href="https://doi.org/10.1038/s41562-021-01269-4" target="_blank" rel="noopener" class="doi-link">https://doi.org/10.1038/s41562-021-01269-4</a>
-    </div>
-    <button type="button" class="copy-button" aria-label="Copy glossary citation" onclick="copyGlossaryCitation(this)">
+    <div class="cite-us-text">{{ .Inner | markdownify }}</div>
+    <button type="button" class="copy-button" aria-label="Copy citation" onclick="copyCitationCard(this)">
       <svg class="copy-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
       </svg>
@@ -23,7 +20,7 @@
 </div>
 
 <script>
-  async function copyGlossaryCitation(button) {
+  async function copyCitationCard(button) {
     const citation = button.previousElementSibling.innerText.trim();
     const originalContent = button.innerHTML;
 
