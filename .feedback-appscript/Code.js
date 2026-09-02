@@ -33,7 +33,11 @@ function doPost(e) {
     if (data.type === 'adopting_feedback') {
       return _handleAdoptingFeedback(data);
     }
-    return _handleChatFeedback(data);
+    // No `type` = chat payloads from cached copies of the previous just-os-chat.js.
+    if (data.type === 'chat' || !data.type) {
+      return _handleChatFeedback(data);
+    }
+    return _json({ ok: false, error: 'unknown type: ' + data.type });
   } catch (err) {
     // Clients POST with `mode: 'no-cors'` and never read this response, so an
     // error here is otherwise invisible; returning it (rather than throwing)
