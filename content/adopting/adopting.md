@@ -375,6 +375,6 @@ You can also submit a short contribution to FORRT’s curated database or direct
 
 * a case study
 
-Submissions can be made via our short Google Form below. Please note that contributors can get credit. We are committed to transparent and meaningful attribution. Contributors are credited using our formal crediting mechanism (Tenzing / CRediT taxonomy). When submitting via the Google Form, you will be invited to add your details so that you can be properly credited for your contribution. We value community knowledge and aim to recognise all contributions appropriately
+Submissions can be made via our short  Form below. Please note that contributors can get credit. We are committed to transparent and meaningful attribution. Contributors are credited using our formal crediting mechanism (Tenzing / CRediT taxonomy). When submitting via the Form, you will be invited to add your details so that you can be properly credited for your contribution. We value community knowledge and aim to recognise all contributions appropriately
 
 {{< adopting_feedback_form >}}
