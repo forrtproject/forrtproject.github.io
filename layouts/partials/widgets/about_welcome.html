@@ -39,13 +39,13 @@
       <img class="avatar {{if eq $avatar_shape "square"}}avatar-square{{else}}avatar-circle{{end}}" src="https://s.gravatar.com/avatar/{{ md5 $person.email }}?s=270')" alt="Avatar of {{ $person.name }}">
       {{ else if $avatar }}
       {{ $avatar_image := $avatar.Fill "270x270 Center" }}
-      <img class="avatar {{if eq $avatar_shape "square"}}avatar-square{{else}}avatar-circle{{end}}" src="{{ $avatar_image.RelPermalink }}" alt="Avatar of {{ $person.name }}">
+      <img class="avatar {{if eq $avatar_shape "square"}}avatar-square{{else}}avatar-circle{{end}}" src="{{ $avatar_image.RelPermalink }}" width="270" height="270" alt="Avatar of {{ $person.name }}">
       {{ end }}
 
 
       {{ with $page.Params.video_id }}
       <a class="yt-lightbox profile-video" data-fancybox href="https://www.youtube.com/watch?v={{ . }}" aria-label="Play video">
-        <img loading="lazy" src="https://i.ytimg.com/vi/{{ . }}/hqdefault.jpg" alt="Play introduction video">
+        <img loading="lazy" src="https://i.ytimg.com/vi/{{ . }}/hqdefault.jpg" width="480" height="360" alt="Play introduction video">
         <span class="yt-play" aria-hidden="true"><i class="fas fa-play"></i></span>
       </a>
       {{ end }}
@@ -78,7 +78,7 @@
   <div class="col-12 col-lg-8">
 
     {{/* Only display widget title in explicit instances of about widget, not in author pages. */}}
-    {{ if and $page.Params.widget $page.Title }}<h1>{{ $page.Title | markdownify | emojify }}</h1>{{ end }}
+    {{ if and $page.Params.widget $page.Title }}<h2>{{ $page.Title | markdownify | emojify }}</h2>{{ end }}
 
     {{ $person_page.Content }}
 

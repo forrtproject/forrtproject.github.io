@@ -1,0 +1,10 @@
+{{/* Intrinsic width/height attributes for an image under static/img/, so that the browser
+     can reserve its space before it loads. Input: file name relative to static/img/.
+     Output: `width="W" height="H"` (safe attribute string), or empty when the file is
+     missing or not a raster format Hugo can read (e.g. SVG). */}}
+{{ $dims := "" }}
+{{ $path := printf "static/img/%s" . }}
+{{ if and (fileExists $path) (in (slice ".png" ".jpg" ".jpeg" ".gif" ".webp") (path.Ext $path | lower)) }}
+  {{ with imageConfig $path }}{{ $dims = printf "width=\"%d\" height=\"%d\"" .Width .Height }}{{ end }}
+{{ end }}
+{{ return ($dims | safeHTMLAttr) }}

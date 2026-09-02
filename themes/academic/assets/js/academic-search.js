@@ -182,6 +182,15 @@ function ensureSearchReady() {
 
       return fuse;
     });
+
+    // If the index cannot be fetched, tell the visitor and clear the memo so that
+    // the next attempt refetches. The open-search triggers below are `.one()`
+    // handlers and have already been consumed, so rebind the navbar icon.
+    searchReadyPromise.fail(function () {
+      searchReadyPromise = null;
+      $('#search-hits').html('<div class="search-no-results">Search is unavailable right now. Please reload the page and try again.</div>');
+      $('.js-search').one('click', ensureSearchReady);
+    });
   }
   return searchReadyPromise;
 }

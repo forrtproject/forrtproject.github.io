@@ -161,8 +161,10 @@ video {
 }
 
 .img-responsive {
-  /* Extend Bootstrap declaration with centering. */
+  /* Extend Bootstrap declaration with centering; keep intrinsic-size images fluid. */
   margin: 0 auto;
+  max-width: 100%;
+  height: auto;
 }
 
 // Center all figure images by default.

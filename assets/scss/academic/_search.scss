@@ -57,9 +57,11 @@
   background-color: $sta-dark-background;
 }
 
-.search-header h1 {
+/* The search overlay is a subordinate region, so its heading is an h2; keep the h1 size. */
+.search-header h2 {
   margin: 0;
   line-height: 1;
+  font-size: 2.25rem;
 }
 
 .col-search-close {

@@ -220,6 +220,13 @@ jobs:
           path: public/
           retention-days: 1
 
+      # =======================
+      # Built HTML Regression Checks
+      # =======================
+      - name: Check built HTML (headings, conditional assets, image alt)
+        run: |
+          python3 scripts/check_seo_html.py public
+
   #========================================
   # Deploy website to production GitHub Pages
   # Note: Staging deployments are handled by staging-aggregate.yaml

@@ -50,7 +50,7 @@
       {{/* Fall back to the title: `image.alttext` is set on almost no posts, so
            these banners were shipping an empty `alt` despite being meaningful
            content rather than decoration. */}}
-      <img src="{{ $image.RelPermalink }}" class="article-banner" alt="{{ $item.Params.image.alttext | default $item.Title }}">
+      <img src="{{ $image.RelPermalink }}" width="{{ $image.Width }}" height="{{ $image.Height }}" class="article-banner" alt="{{ $item.Params.image.alttext | default $item.Title }}">
   </a>
   {{end}}
 
