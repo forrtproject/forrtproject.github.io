@@ -34,13 +34,11 @@ Accompanying this cultural shift towards increased transparency and rigour has b
 
 In order to reduce barriers to entry and understanding, we present a Glossary of terms relating to open scholarship. We aim that the glossary will help clarify terminologies, including where terms are used differently/interchangeably or where terms are less known in some fields or among students. We also hope that this glossary will be a welcome resource for those new to these concepts, and that it helps grow their confidence in navigating discussions of open scholarship. We also hope that this glossary aids in mentoring and teaching, and allows newcomers and experts to communicate efficiently. 
 
-{{% alert note %}}
+If you use this glossary in any form, please cite the associated paper:
 
-If you use this glossary in any form, please cite the associated paper: Parsons, S., Azevedo, F., Elsherif, M. M., Guay, S., Shahim, O. N., Govaart, G. H., ... & Aczel, B. (2022). A Community-Sourced Glossary of Open Scholarship Terms. *Nature human behaviour, 6*(3), 312-318. [https://doi.org/10.1038/s41562-021-01269-4](https://doi.org/10.1038/s41562-021-01269-4)
+{{< glossary-citation >}}
 
 👀 [The [Open Access link](https://rdcu.be/cHsqM) to the copy-edited version at the publisher's website, and here's the [postprint](https://doi.org/10.31222/osf.io/kdqcw) which is the same as the published version.] ⬅️
-
-{{% /alert %}}
 
 The list of terms we have drafted and reviewed can be found on the left if you are viewing this page on a computer screen or bigger, otherwise they can be found at the bottom of the page. If you hover a word, you will be able to read the full description of the term. To know more about a term, including references, simply click on it and it will bring you to the term page. 
 
