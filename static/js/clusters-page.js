@@ -127,7 +127,7 @@
    *  Only fires for disciplines anchors (f<N>-<slug>), once per id per page load.
    *  `source` is 'hash', 'sidebar' or 'click'. */
   function trackDisciplineView(sectionEl, source) {
-    if (!sectionEl || !sectionEl.id || !/^f\d+-/.test(sectionEl.id)) return;
+    if (!sectionEl || !sectionEl.id || !sectionEl.closest('#disciplines-layout')) return;
     if (trackedDisciplineViews[sectionEl.id]) return;
     if (typeof window.gtag !== 'function') return;
     trackedDisciplineViews[sectionEl.id] = true;
@@ -586,12 +586,18 @@
       });
     });
 
-    /* e.g. /clusters/cluster-2/#c2-sc1 or #c2-featured, or /disciplines/#f1-chemistry — scroll to matching section */
+    /* e.g. /clusters/cluster-2/#c2-sc1 or #c2-featured, or /disciplines/#chemistry — scroll to matching section */
     function applyClusterUrlHash() {
       var raw = window.location.hash.replace(/^#/, '');
-      if (!raw || !/^[cf]\d+-[a-z0-9-]+$/.test(raw)) return;
+      if (!raw || !/^[a-z0-9-]+$/.test(raw)) return;
       var target = document.getElementById(raw);
-      if (!target) return;
+      /* Earlier disciplines links used f<N>-<slug>; map them onto the plain slug. */
+      if (!target && /^f\d+-/.test(raw)) {
+        raw = raw.replace(/^f\d+-/, '');
+        target = document.getElementById(raw);
+        if (target) { try { window.history.replaceState(null, '', '#' + raw); } catch (err) {} }
+      }
+      if (!target || !target.closest('.clusters-layout')) return;
       activateBootstrapTabIfNeeded(raw, raw + '-tab');
       var accHeader = expandAccordionIfCollapsed(target);
       trackDisciplineView(target, 'hash');
@@ -635,7 +641,7 @@
       var anchor = btn.getAttribute('data-anchor');
       if (!anchor) return;
       var url = window.location.origin + window.location.pathname + window.location.search + '#' + anchor;
-      if (/^f\d+-/.test(anchor) && typeof window.gtag === 'function') {
+      if (btn.closest('#disciplines-layout') && typeof window.gtag === 'function') {
         window.gtag('event', 'discipline_link_copied', { anchor: anchor });
       }
       /* Reflect the anchor in the address bar without re-scrolling (no hashchange). */

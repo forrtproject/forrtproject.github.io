@@ -67,19 +67,18 @@
     </div>
 
     <div class="intro-hero-image disciplines-partner">
-      <p class="disciplines-partner__caption">Developed with the support of</p>
+      <p class="disciplines-partner__caption">Supported by</p>
       <a href="https://www.ukrn.org/" target="_blank" rel="noopener">
-        <img src="UKRN.webp" alt="UK Reproducibility Network (UKRN) logo" width="275" height="275">
+        <img src="UKRN.webp" alt="UK Reproducibility Network (UKRN)" title="UK Reproducibility Network" width="275" height="275">
       </a>
-      <p class="disciplines-partner__name">UK Reproducibility Network</p>
     </div>
   </div>
 </div>
 
 <script>
   var disciplinesCitations = {
-    preprint: {{ $preprintCitation | jsonify }},
-    web: {{ $webCitation | jsonify }}
+    preprint: {{ $preprintCitation }},
+    web: {{ $webCitation }}
   };
 
   async function copyDisciplinesCitation(button, key) {

@@ -178,9 +178,10 @@ citation only.
 ## Analytics
 
 Every discipline heading has a shareable link and a copy button next to it.
-The links have the form `https://forrt.org/disciplines/#f<N>-<slug>`, where
-`<N>` is the field number and `<slug>` is the discipline name in lowercase
-with non-alphanumeric characters replaced by hyphens.
+The links have the form `https://forrt.org/disciplines/#<slug>`, where `<slug>`
+is the discipline name in lowercase with non-alphanumeric characters replaced
+by hyphens, e.g. `#chemistry`. Links in the earlier `#f<N>-<slug>` form still
+resolve.
 
 Opening a discipline sends a GA4 event `discipline_view` with these parameters:
 
@@ -188,7 +189,7 @@ Opening a discipline sends a GA4 event `discipline_view` with these parameters:
 | --- | --- |
 | `discipline` | Discipline name |
 | `field` | Field name |
-| `anchor` | Anchor id, e.g. `f1-chemistry` |
+| `anchor` | Anchor id, e.g. `chemistry` |
 | `source` | `click` (heading clicked), `sidebar` (sidebar link), or `hash` (page opened on a discipline link) |
 
 Each discipline fires at most once per page load. "Expand all" does not fire
