@@ -7,12 +7,13 @@
   {{- $desc := .Params.definition | plainify | replaceRE `\*+` "" | truncate 300 "…" -}}
   {{/* Defense-in-depth: stop a literal </script from terminating the tag. */}}
   {{- $desc = replaceRE "(?i)</script" "<\\/script" $desc -}}
+  {{- $languageName := .Params.language | default "english" -}}
   {{- $langMap := dict "arabic" "ar" "chinese" "zh" "english" "en" "german" "de" "turkish" "tr" -}}
-  {{- $lang := index $langMap (.Params.language | default "english") | default "en" -}}
+  {{- $lang := index $langMap $languageName | default "en" -}}
   {{- $set := dict
       "@type" "DefinedTermSet"
       "name" "FORRT Glossary of Open and Reproducible Science"
-      "url" (absURL "glossary/")
+      "url" (absURL (printf "glossary/%s/" $languageName))
       "inLanguage" $lang -}}
   {{- $term := dict
       "@context" "https://schema.org"
