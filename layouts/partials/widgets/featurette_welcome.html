@@ -4,7 +4,7 @@
 <div class="row featurette justify-content-around">
   {{ with $page.Title }}
   <div class="col-md-12 section-heading">
-    <h1>{{ . | markdownify | emojify }}</h1>
+    <h2>{{ . | markdownify | emojify }}</h2>
     {{ if $page.Params.subtitle }}<p>{{ $page.Params.subtitle | markdownify | emojify }}</p>{{ end }}
   </div>
   {{ end }}
@@ -17,7 +17,7 @@
   {{ end }}
   <div class="col-12 col-sm-4">
     {{ if .icon }}<div class="featurette-icon"><i class="{{ $pack }} {{ $pack_prefix }}-{{ .icon }}" alt="{{ .iconalttext }}"></i></div>{{ end }}
-    {{ if .img }}<div class="pb-2"><img src="{{ (printf "img/%s" .img) | absURL }}" class="mx-auto w-25" alt="{{ .imgalttext }}"></div>{{ end }}
+    {{ if .img }}<div class="pb-2">{{ $dims := partial "functions/static_img_dims" .img }}<img src="{{ (printf "img/%s" .img) | absURL }}" {{ $dims }} class="mx-auto w-25" alt="{{ .imgalttext }}"></div>{{ end }}
     <h3>{{ .name | markdownify | emojify }}</h3>
     {{ with .description }}<p>{{ . | markdownify | emojify }}</p>{{ end }}
   </div>

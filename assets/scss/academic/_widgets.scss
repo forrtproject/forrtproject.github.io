@@ -93,8 +93,11 @@
   }
 }
 
-.section-heading h1 {
+/* Section titles are h2 (the page's h1 belongs to its hero); keep the h1 size. */
+.section-heading h1,
+.section-heading h2 {
   margin: 0 0 10px 0;
+  font-size: 2.25rem;
 }
 
 .section-heading p {
@@ -288,6 +291,7 @@ a.hero-cta-alt:hover {
   border-radius: 3px;
 }
 
+#profile .portrait-title h1,
 .portrait-title h2 {
   font-size: 1.75em;
   font-weight: 300;

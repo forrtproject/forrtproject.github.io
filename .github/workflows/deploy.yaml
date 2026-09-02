@@ -209,6 +209,13 @@ jobs:
           HUGO_ENV: production
 
       # =======================
+      # Built HTML Regression Checks
+      # =======================
+      - name: Check built HTML (headings, conditional assets, image alt)
+        run: |
+          python3 scripts/check_seo_html.py public
+
+      # =======================
       # Deployment Artifact
       #========================================
       # Upload built website as artifact for deployment

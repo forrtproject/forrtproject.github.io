@@ -86,9 +86,11 @@ tag_index_min_pages = 5
 # Show "Recommended" tab with community-endorsed resources on cluster pages
 enable_featured_resources = false
 
-# Enable source code highlighting? true/false
+# Force Highlight.js onto every page? true/false
+#   With false, it loads only on pages whose Markdown content contains a code block,
+#   plus any page with `highlight: true` in its front matter.
 # Documentation: https://sourcethemes.com/academic/docs/writing-markdown-latex/#highlighting-options
-highlight = true
+highlight = false
 highlight_languages = ["r"]  # Add support for highlighting additional languages
 # highlight_style = "github"  # For supported styles, see https://cdnjs.com/libraries/highlight.js/
 
@@ -96,9 +98,10 @@ highlight_languages = ["r"]  # Add support for highlighting additional languages
 #   If false, you can enable math on a per page basis as needed.
 math = false
 
-# Enable diagram rendering? true/false
-#   If false, you can enable diagrams on a per page basis as needed.
-diagram = true
+# Force Mermaid onto every page? true/false
+#   With false, it loads only on pages whose Markdown content contains a mermaid code
+#   block, plus any page with `diagram: true` in its front matter.
+diagram = false
 
 # Privacy pack
 #   Show a cookie consent message to visitors

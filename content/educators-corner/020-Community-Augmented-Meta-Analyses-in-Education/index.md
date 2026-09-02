@@ -46,7 +46,7 @@ Box 1.
 
 The community-augmented approach therefore extends beyond the content development. Like existing [CAMAs](https://github.com/metahag/ELD-CAMA_source) that encourage ***forking*** and reusing established code, we aim to help meta-researchers with similar needs in developing their own database and platform with the template code we share. The beauty of it lies in the flexibility of the components. Users can take some components (e.g., only the SQL database) and build upon them to add new variables, improve the entire platform (e.g., add additional features or dynamic markdowns), or simply reuse it as is to build a platform in a different scientific filed (e.g., medicine). This flexibility facilitates incremental knowledge and collaboration, which is what ELD CAMA and FORRT both strive for. Repository: https://github.com/metahag/ELD-CAMA_source.
 
-<img src="ELD-CAMA.webp" align="center" />
+<img src="ELD-CAMA.webp" align="center" alt="Diagram: ELD CAMA (Evidence in Learning and Didactics Community-Augmented Meta-Analysis) branches into two uses. Use the content: pedagogical tool, meta-research, evidence synthesis. Reuse the code: copy the SQL database, improve the Shiny apps, add new features to the platform." />
 
 ---
 

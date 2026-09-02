@@ -12,7 +12,7 @@
 <div class="row">
   <div class="col-12 col-lg-4 section-heading">
 
-    {{ with $st.Title }}<h1>{{ . | markdownify | emojify }}</h1>{{ end }}
+    {{ with $st.Title }}<h2>{{ . | markdownify | emojify }}</h2>{{ end }}
     {{ with $st.Params.subtitle }}<p>{{ . | markdownify | emojify }}</p>{{ end }}
 
   </div>
@@ -24,7 +24,7 @@
     <div class="margin-auto">
 
       <div class="center-text">
-        {{ with $st.Title }}<h1 class="mt-0">{{ . | markdownify | emojify }}</h1>{{ end }}
+        {{ with $st.Title }}<h2 class="mt-0">{{ . | markdownify | emojify }}</h2>{{ end }}
         {{ with $st.Params.subtitle }}<p>{{ . | markdownify | emojify }}</p>{{ end }}
       </div>
       <div>

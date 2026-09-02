@@ -35,10 +35,10 @@
         <div id="profile">
           {{ with $avatar }}
             {{ $img := .Fill "270x270 Center" }}
-            <img class="avatar {{ if eq $avatar_shape "square" }}avatar-square{{ else }}avatar-circle{{ end }}" src="{{ $img.RelPermalink }}" alt="{{ $name }}" loading="lazy">
+            <img class="avatar {{ if eq $avatar_shape "square" }}avatar-square{{ else }}avatar-circle{{ end }}" src="{{ $img.RelPermalink }}" width="270" height="270" alt="{{ $name }}" loading="lazy">
           {{ end }}
           <div class="portrait-title">
-            <h2>{{ $name }}</h2>
+            <h1>{{ $name }}</h1>
             {{ with $page.Params.role }}<h3>{{ . | markdownify | emojify }}</h3>{{ end }}
             {{ range $page.Params.organizations }}
             <h3>
