@@ -25,6 +25,12 @@
   <p class="cluster-description">{{ $field.summary }}</p>
   {{ end }}
 
+  {{ with $field.leads }}
+  <div class="disciplines-leads">
+    <span class="disciplines-leads__label">Field lead{{ if strings.Contains . "," }}s{{ end }}:</span> {{ . | markdownify }}
+  </div>
+  {{ end }}
+
   {{ if gt (len $field.disciplines) 0 }}
   <div class="acc-list" id="content-{{ $fid }}">
     {{ range $di, $disc := $field.disciplines }}
@@ -41,6 +47,12 @@
         </button>
       </div>
       <div class="acc-body acc-collapsed">
+
+        {{ with $disc.leads }}
+        <div class="disciplines-leads">
+          <span class="disciplines-leads__label">Discipline lead{{ if strings.Contains . "," }}s{{ end }}:</span> {{ . | markdownify }}
+        </div>
+        {{ end }}
 
         {{ if $disc.examples }}
         <div class="sc-description">
