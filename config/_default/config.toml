@@ -26,14 +26,6 @@ theme = "academic"
 # Get last modified date for content from Git?
 enableGitInfo = true
 
-# An explicit `lastmod` in front matter wins over the Git commit date. Generated
-# collections (glossary, curated resources) carry their own `lastmod`, set by
-# their generators only when an entry's content changes; hand-maintained pages
-# without one fall back to Git. Requires `core.quotepath=false` in the build
-# checkout so Git reports non-ASCII filenames unquoted (see deploy.yaml).
-[frontmatter]
-lastmod = ["lastmod", ":git", "date", "publishDate"]
-
 # Enable generation of robots.txt file
 enableRobotsTXT = true
 
@@ -121,3 +113,19 @@ ignoreFiles = ["\\.ipynb$", ".ipynb_checkpoints$", "\\.Rmd$", "\\.Rmarkdown$", "
 [build]
   no404check = true
   timeout = 60
+
+# Date resolution order for front matter.
+#
+# NOTE: keep this table at the end of the file. A TOML table header captures
+# every bare key that follows it, so placing this higher up would silently
+# demote the top-level settings below it (enableRobotsTXT, removePathAccents,
+# summaryLength, ...) into `frontmatter.*`, where Hugo ignores them.
+#
+# An explicit `lastmod` in front matter wins over the Git commit date (Hugo's
+# default puts `:git` first). Generated collections (glossary, curated
+# resources) carry their own `lastmod`, set by their generators only when an
+# entry's content changes; hand-maintained pages without one fall back to Git.
+# Requires `core.quotepath=false` in the build checkout so Git reports
+# non-ASCII filenames unquoted (see deploy.yaml).
+[frontmatter]
+  lastmod = ["lastmod", ":git", "date", "publishDate"]

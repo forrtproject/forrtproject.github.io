@@ -232,16 +232,31 @@ jobs:
       # Fetch the previous generated curated resources from the build-resources
       # branch, so unchanged entries keep their lastmod date.
       # If the branch or the extraction is unavailable, the directory stays
-      # absent and resource.py falls back to the seed copy in the checkout.
+      # absent and resource.py falls back to the seed copy in the checkout --
+      # which silently re-dates every drifted resource on every run, so the
+      # step logs the file count to make that fallback visible in the log.
       #========================================
       - name: Fetch previous curated resources state
         id: previous-curated-resources
         continue-on-error: true
         run: |
           mkdir -p /tmp/previous-generated
-          git fetch origin build-resources || true
+          # Explicit refspec: actions/checkout may configure a narrow
+          # remote.origin.fetch, in which case a bare `git fetch origin
+          # build-resources` updates FETCH_HEAD without creating the
+          # origin/build-resources tracking ref that git archive needs.
+          git fetch origin +refs/heads/build-resources:refs/remotes/origin/build-resources || true
           git archive origin/build-resources content/curated_resources \
             | tar -x -C /tmp/previous-generated || true
+
+          PREV_DIR=/tmp/previous-generated/content/curated_resources
+          if [ -d "$PREV_DIR" ]; then
+            echo "✅ Previous curated resources: $(find "$PREV_DIR" -name '*.md' | wc -l) files"
+          else
+            echo "⚠️ build-resources state unavailable - falling back to the"
+            echo "   seed copy in this checkout. Resources that have drifted"
+            echo "   from the seed will be stamped with today's date."
+          fi
 
       #========================================
       # Process and organize curated resources data

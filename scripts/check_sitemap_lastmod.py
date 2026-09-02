@@ -9,6 +9,13 @@ Two levels of checking:
   every page being stamped with the build or checkout time. Smaller blocks are
   reported but tolerated, since one commit can legitimately touch a whole
   generated collection.
+
+  Do not lower --max-bulk-share below 0.5 hoping to catch a stale block: the
+  two generated collections are 47% (curated_resources) and 41% (glossary) of
+  the site, and regenerating either in one commit produces exactly the same
+  shape as the bug. This check only catches a *site-wide* stamp; a single
+  collection frozen on a stale date is caught by the generators writing their
+  own `lastmod` and by --compare-source verifying it reaches the sitemap.
 * Source comparison (--compare-source): rebuilds the expected lastmod for each
   page from the repository -- explicit front-matter `lastmod`, else the Git
   commit date of the source file -- and reports disagreements. Needs `hugo`
@@ -93,12 +100,15 @@ def check_structure(entries, max_missing, max_bulk_share):
     limit = max_bulk_share * total
     bulk = [(stamp, n) for stamp, n in counts.most_common() if n > limit]
     print(f"\nMost widely shared timestamps (fail above {max_bulk_share:.0%} of URLs):")
-    for stamp, n in counts.most_common(3):
+    # Every offender is printed, not just the leaders: a block ranked below the
+    # top few can still fail the check, and a silent failure is unactionable.
+    for stamp, n in dict.fromkeys(counts.most_common(3) + bulk):
         sections = Counter(
             section_of(loc) for loc, lastmod in entries if lastmod == stamp
         )
         where = ", ".join(f"{name} ({c})" for name, c in sections.most_common(3))
-        print(f"  {stamp}: {n} URLs -- {where}")
+        flag = "  <-- FAILS" if n > limit else ""
+        print(f"  {stamp}: {n} URLs -- {where}{flag}")
 
     return len(missing) <= max_missing and not bulk
 
@@ -166,8 +176,12 @@ def check_against_source(entries, sample_size):
         print("No sitemap URL maps to a page: `hugo list all` output not usable")
         return False
     if sample_size and sample_size < len(candidates):
-        candidates = random.Random(0).sample(candidates, sample_size)
-        print(f"Checking a seeded random sample of {len(candidates)}")
+        # Seeded on the date so a run is reproducible while the sample rotates
+        # between deploys: a fixed seed would check the same few hundred pages
+        # forever and never look at the rest of the site.
+        seed = datetime.now(timezone.utc).strftime("%Y-%m-%d")
+        candidates = random.Random(seed).sample(candidates, sample_size)
+        print(f"Checking a random sample of {len(candidates)} (seed {seed})")
 
     mismatches = []
     for loc, lastmod in candidates:

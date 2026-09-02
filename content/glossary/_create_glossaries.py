@@ -11,7 +11,7 @@ from pypinyin import lazy_pinyin, Style
 script_dir = os.path.dirname(os.path.abspath(__file__))
 
 sys.path.insert(0, str(Path(script_dir).resolve().parents[1] / 'scripts'))
-from generated_lastmod import load_previous, resolve_lastmod, git_commit_date
+from generated_lastmod import load_previous, resolve_lastmod, git_commit_dates
 language_map = {
     'EN': 'english',
     'AR': 'arabic',
@@ -296,8 +296,11 @@ for language_name, entries in formatted_data.items():
     language_dir = os.path.join(script_dir, language_name)
 
     # Read the previous entries before deleting them, so each term can keep its
-    # `lastmod` for as long as its content is unchanged.
+    # `lastmod` for as long as its content is unchanged. Commit dates are
+    # collected in one pass up front; they only bootstrap entries written
+    # before `lastmod` existed.
     previous_entries = load_previous(language_dir)
+    commit_dates = git_commit_dates(language_dir)
 
     # Remove existing glossary entry files to ensure deleted entries don't persist
     # Preserve _index.md files as they are not regenerated
@@ -318,7 +321,7 @@ for language_name, entries in formatted_data.items():
         entry["lastmod"] = resolve_lastmod(
             entry,
             previous_entries.get(file_name + ".md"),
-            lambda: git_commit_date(file_path),
+            lambda: commit_dates.get(file_name + ".md"),
         )
 
         with open(file_path, 'w', encoding='utf-8') as f:

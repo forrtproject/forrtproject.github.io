@@ -60,14 +60,41 @@ def resolve_lastmod(new_entry: dict, previous_entry, bootstrap) -> str:
     return previous_entry.get('lastmod') or bootstrap() or today_utc()
 
 
-def git_commit_date(path) -> str:
-    """Date of the last commit touching `path`, or None if unavailable."""
-    path = Path(path)
+# Prefix that cannot collide with a path line, so date and path lines in
+# `git log --name-only` output can be told apart without guessing.
+_DATE_PREFIX = 'commit-date:'
+
+
+def git_commit_dates(directory) -> dict:
+    """Map filename -> `YYYY-MM-DD` of the last commit touching it.
+
+    A single `git log` walk over the directory rather than one subprocess per
+    file: bootstrapping a fresh collection means ~1,300 lookups, measured at
+    ~10s of pure process spawning locally and worse on a CI runner, against
+    ~0.1s for the batched walk. `core.quotepath=false` is required here --
+    without it Git escapes the non-ASCII glossary filenames and none of them
+    match, which is the same defect this whole mechanism exists to fix.
+
+    Returns an empty map (callers fall back to today) if Git is unavailable.
+    """
+    directory = Path(directory)
+    cwd = directory if directory.is_dir() else directory.parent
     try:
         result = subprocess.run(
-            ['git', 'log', '-1', '--format=%cs', '--', path.name],
-            cwd=str(path.parent), capture_output=True, text=True, check=True,
+            ['git', '-c', 'core.quotepath=false', 'log',
+             f'--format={_DATE_PREFIX}%cs', '--name-only', '--', '.'],
+            cwd=str(cwd), capture_output=True, text=True, check=True,
         )
     except (OSError, subprocess.CalledProcessError):
-        return None
-    return result.stdout.strip() or None
+        return {}
+
+    dates = {}
+    current = None
+    for line in result.stdout.splitlines():
+        if line.startswith(_DATE_PREFIX):
+            current = line[len(_DATE_PREFIX):].strip() or None
+        elif line.strip() and current:
+            # git log walks newest-first, so the first sighting of a path is
+            # its most recent commit; later sightings are older history.
+            dates.setdefault(Path(line.strip()).name, current)
+    return dates
