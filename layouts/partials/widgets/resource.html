@@ -24,7 +24,9 @@
     <div class="margin-auto">
 
       <div class="center-text">
-        {{ with $st.Title }}<h2 class="mt-0">{{ . | markdownify | emojify }}</h2>{{ end }}
+        {{/* Same as the one-column blank widget: outside `.section-heading`, so the
+             title needs `.widget-title` to keep its size after the h1 -> h2 demotion. */}}
+        {{ with $st.Title }}<h2 class="mt-0 widget-title">{{ . | markdownify | emojify }}</h2>{{ end }}
         {{ with $st.Params.subtitle }}<p>{{ . | markdownify | emojify }}</p>{{ end }}
       </div>
       <div>

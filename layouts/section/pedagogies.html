@@ -65,7 +65,7 @@
   {{ with $resource }}
   {{ $image := .Fill (printf "918x517 q90 %s" $anchor) }}
   <a href="{{ $item.RelPermalink }}">
-      <img src="{{ $image.RelPermalink }}" class="article-banner" alt="{{ $item.Params.image.alttext }}">
+      <img src="{{ $image.RelPermalink }}" class="article-banner" alt="{{ with $item.Params.image.alttext }}{{ . }}{{ else }}Featured image for {{ $item.Title }}{{ end }}">
     </a>
   {{end}}
   

@@ -3572,3 +3572,25 @@ h1.clusters-site-heading.clusters-hub-page__title {
   .nla-grid { grid-template-columns: repeat(auto-fill, minmax(95px, 1fr)); }
   .nla-archive-header, .nla-subscribe-band { flex-direction: column; align-items: flex-start; }
 }
+
+/* ============================================================
+ *  Cite modal BibTeX block.
+ *  `<code class="tex hljs">` in the citation modal used to inherit its colours
+ *  and block layout from the highlight.js theme stylesheet, which now loads only
+ *  on pages that actually contain a code block. Without it the snippet falls
+ *  back to the inline-code rule (pink on pink, no padding), so restate the few
+ *  declarations the hljs theme provided. Values mirror highlight.js `github`
+ *  (light) and the existing `.dark code` colours (dark).
+ * ============================================================ */
+code.tex {
+  display: block;
+  overflow-x: auto;
+  padding: 0.5em;
+  color: #333;
+  background: #f8f8f8;
+}
+
+.dark code.tex {
+  color: rgb(139, 233, 253);
+  background: rgb(68, 71, 90);
+}

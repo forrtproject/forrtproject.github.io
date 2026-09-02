@@ -12,7 +12,12 @@
     </div>
   {{ else }}
     <div class="col-lg-12 text-center">
-      {{ with $st.Title }}<h2 {{ with $st.Params.classtitle }} class="{{.}}"{{end}}>{{ . | markdownify | emojify }}</h2>{{ end }}
+      {{/* One-column sections centre the title instead of putting it in the
+           `.section-heading` column, so `.section-heading h2` cannot restore the
+           size lost when this heading was demoted from h1 to h2. The class gives
+           that rule a hook here without pulling in `.section-heading p`, which
+           would also restyle the subtitle. */}}
+      {{ with $st.Title }}<h2 class="widget-title{{ with $st.Params.classtitle }} {{ . }}{{ end }}">{{ . | markdownify | emojify }}</h2>{{ end }}
       {{ with $st.Params.subtitle }}<p {{ with $st.Params.classtitle }} class="{{.}}"{{end}}>{{ . | markdownify | emojify }}</p>{{ end }}
     </div>
     </div>

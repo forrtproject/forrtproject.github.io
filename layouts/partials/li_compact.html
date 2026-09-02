@@ -78,7 +78,7 @@
     {{ with $resource }}
     {{ $image := .Resize "150x" }}
     <a href="{{$link}}" {{ $target | safeHTMLAttr }}>
-      <img src="{{ $image.RelPermalink }}" width="{{ $image.Width }}" height="{{ $image.Height }}" alt="{{ $item.Params.image.alttext }}">
+      <img src="{{ $image.RelPermalink }}" width="{{ $image.Width }}" height="{{ $image.Height }}" alt="{{ with $item.Params.image.alttext }}{{ . }}{{ else }}Featured image for {{ $item.Title }}{{ end }}">
     </a>
     {{end}}
   </div>
