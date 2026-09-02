@@ -89,57 +89,62 @@
 }}
 {{ $t := index $dictionary $lang }}
 
-<section class="glossary-feedback"{{ if eq $lang "arabic" }} dir="rtl"{{ end }}>
-  <div class="glossary-feedback-header">
+{{/* form collapsed by default so the form doesn't compete with the entry's content */}}
+<details class="glossary-feedback"{{ if eq $lang "arabic" }} dir="rtl"{{ end }}>
+  <summary class="glossary-feedback-header">
     <span class="glossary-feedback-icon" aria-hidden="true">&#9998;</span>
-    <div>
-      <h3 class="glossary-feedback-heading">{{ index $t "heading" }}</h3>
-      <p class="glossary-feedback-intro">{{ index $t "intro" }}</p>
-    </div>
+    <span class="glossary-feedback-heading">{{ index $t "heading" }}</span>
+    <span class="glossary-feedback-chevron" aria-hidden="true">&#9662;</span>
+  </summary>
+
+  <div class="glossary-feedback-body">
+    <p class="glossary-feedback-intro">{{ index $t "intro" }}</p>
+
+    {{/* data-* attributes carry page context into the submission payload;
+         read by static/js/glossary-feedback.js, */}}
+    <form id="glossary-feedback-form"
+          class="glossary-feedback-form"
+          data-term="{{ .Title }}"
+          data-url="{{ .Permalink }}"
+          data-language="{{ $lang }}">
+
+      <div class="glossary-feedback-row">
+        <div class="form-group glossary-feedback-type">
+          <label for="glossary-feedback-type">{{ index $t "type_label" }}</label>
+          <select id="glossary-feedback-type" name="feedback_type" class="form-control" required>
+            <option value="" disabled selected>{{ index $t "type_placeholder" }}</option>
+            <option value="correction">{{ index $t "type_correction" }}</option>
+            <option value="suggestion">{{ index $t "type_suggestion" }}</option>
+            <option value="other">{{ index $t "type_other" }}</option>
+          </select>
+        </div>
+
+        <div class="form-group glossary-feedback-email">
+          <label for="glossary-feedback-email">{{ index $t "email_label" }}</label>
+          <input type="email" id="glossary-feedback-email" name="email" class="form-control">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="glossary-feedback-message">{{ index $t "message_label" }}</label>
+        <textarea id="glossary-feedback-message" name="message" class="form-control" rows="3"
+                  required placeholder="{{ index $t "message_placeholder" }}"></textarea>
+      </div>
+
+      {{/* Honeypot: hidden from sighted users and skipped by screen readers
+           via aria-hidden; most bots fill in every field regardless. */}}
+      <div class="glossary-feedback-hp" aria-hidden="true">
+        <label for="glossary-feedback-website">Website</label>
+        <input type="text" id="glossary-feedback-website" name="website" tabindex="-1" autocomplete="off">
+      </div>
+
+      <div class="glossary-feedback-actions">
+        <button type="submit" class="btn btn-primary">{{ index $t "submit" }}</button>
+        <span class="glossary-feedback-status" role="status" aria-live="polite"></span>
+      </div>
+    </form>
   </div>
-
-  <form id="glossary-feedback-form"
-        class="glossary-feedback-form"
-        data-term="{{ .Title }}"
-        data-url="{{ .Permalink }}"
-        data-language="{{ $lang }}">
-
-    <div class="glossary-feedback-row">
-      <div class="form-group glossary-feedback-type">
-        <label for="glossary-feedback-type">{{ index $t "type_label" }}</label>
-        <select id="glossary-feedback-type" name="feedback_type" class="form-control" required>
-          <option value="" disabled selected>{{ index $t "type_placeholder" }}</option>
-          <option value="correction">{{ index $t "type_correction" }}</option>
-          <option value="suggestion">{{ index $t "type_suggestion" }}</option>
-          <option value="other">{{ index $t "type_other" }}</option>
-        </select>
-      </div>
-
-      <div class="form-group glossary-feedback-email">
-        <label for="glossary-feedback-email">{{ index $t "email_label" }}</label>
-        <input type="email" id="glossary-feedback-email" name="email" class="form-control">
-      </div>
-    </div>
-
-    <div class="form-group">
-      <label for="glossary-feedback-message">{{ index $t "message_label" }}</label>
-      <textarea id="glossary-feedback-message" name="message" class="form-control" rows="3"
-                required placeholder="{{ index $t "message_placeholder" }}"></textarea>
-    </div>
-
-    {{/* Honeypot: hidden from sighted users and skipped by screen readers
-         via aria-hidden; most bots fill in every field regardless. */}}
-    <div class="glossary-feedback-hp" aria-hidden="true">
-      <label for="glossary-feedback-website">Website</label>
-      <input type="text" id="glossary-feedback-website" name="website" tabindex="-1" autocomplete="off">
-    </div>
-
-    <div class="glossary-feedback-actions">
-      <button type="submit" class="btn btn-primary">{{ index $t "submit" }}</button>
-      <span class="glossary-feedback-status" role="status" aria-live="polite"></span>
-    </div>
-  </form>
-</section>
+</details>
 
 <style>
   .glossary-feedback {
@@ -155,9 +160,20 @@
 
   .glossary-feedback-header {
     display: flex;
-    align-items: flex-start;
+    align-items: center;
     gap: 0.85rem;
-    margin-bottom: 1.25rem;
+    /* <summary> renders the header row; strip its native disclosure
+       triangle so our own chevron is the only toggle affordance. */
+    cursor: pointer;
+    list-style: none;
+  }
+
+  .glossary-feedback-header::-webkit-details-marker {
+    display: none;
+  }
+
+  .glossary-feedback-header::marker {
+    content: "";
   }
 
   .glossary-feedback-icon {
@@ -174,13 +190,30 @@
   }
 
   .glossary-feedback-heading {
-    margin: 0 0 0.2rem;
+    margin: 0;
     font-size: 1.05rem;
     font-weight: 700;
+    flex: 1 1 auto;
+  }
+
+  .glossary-feedback-chevron {
+    flex: none;
+    color: #6c757d;
+    font-size: 0.8rem;
+    transition: transform 0.2s ease;
+  }
+
+  /* Rotate the chevron to point up once the <details> is expanded. */
+  .glossary-feedback[open] .glossary-feedback-chevron {
+    transform: rotate(180deg);
+  }
+
+  .glossary-feedback-body {
+    margin-top: 1.25rem;
   }
 
   .glossary-feedback-intro {
-    margin: 0;
+    margin: 0 0 1rem;
     color: #6c757d;
     font-size: 0.9rem;
     line-height: 1.5;
@@ -191,9 +224,15 @@
   }
 
   .glossary-feedback-form label {
-    font-size: 0.85rem;
+    font-size: 0.8rem;
     font-weight: 600;
     margin-bottom: 0.35rem;
+  }
+
+  /* Bootstrap's default .form-control font-size (1rem) reads oversized next
+     to this form's compact label/intro text — halved to match. */
+  .glossary-feedback-form .form-control {
+    font-size: 0.7rem;
   }
 
   .glossary-feedback-form .form-control:focus {
@@ -234,6 +273,9 @@
     color: #dc3545 !important;
   }
 
+  /* Off-screen positioning (not display:none) keeps the field in the
+     accessibility tree's "present but hidden" state — some bots skip
+     display:none fields outright but still auto-fill this kind of trap. */
   .glossary-feedback-hp {
     position: absolute;
     left: -9999px;

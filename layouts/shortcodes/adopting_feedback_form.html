@@ -18,15 +18,15 @@
   </div>
   <form id="adopting-feedback-form" class="adopting-feedback-form">
     <div class="form-group">
-      <label for="adopting-feedback-tips-used">1. Which tips have you used? <span class="adopting-feedback-optional">(Optional)</span></label>
-      <input type="text" id="adopting-feedback-tips-used" name="tips_used" class="form-control" placeholder="List the tips you tried or applied.">
+      <label for="adopting-feedback-tips-used">1. Which tips have you used?</label>
+      <input type="text" id="adopting-feedback-tips-used" name="tips_used" class="form-control" placeholder="List the tips you tried or applied." required>
     </div>
     <div class="form-group">
-      <label for="adopting-feedback-what-worked">2. What worked well, or what did you have to change? <span class="adopting-feedback-optional">(Optional)</span></label>
-      <textarea id="adopting-feedback-what-worked" name="what_worked" class="form-control" rows="3"></textarea>
+      <label for="adopting-feedback-what-worked">2. What worked well, or what did you have to change?</label>
+      <textarea id="adopting-feedback-what-worked" name="what_worked" class="form-control" rows="3" required></textarea>
     </div>
     <div class="form-group">
-      <label>3. What demographic of students did you use these tips for? <span class="adopting-feedback-optional">(Optional)</span></label>
+      <label>3. What demographic of students did you use these tips for?</label>
       <div class="adopting-feedback-checkboxes">
         <label class="adopting-feedback-checkbox"><input type="checkbox" name="demographics" value="bachelor"> Bachelor students</label>
         <label class="adopting-feedback-checkbox"><input type="checkbox" name="demographics" value="masters"> Master’s students</label>
@@ -117,6 +117,12 @@
     font-weight: 400;
     color: #6c757d;
     font-size: 0.8rem;
+  }
+
+  /* Bootstrap's default .form-control font-size (1rem) reads oversized next
+     to this form's compact label/intro text — halved to match. */
+  .adopting-feedback-form .form-control {
+    font-size: 0.7rem;
   }
 
   .adopting-feedback-form .form-control:focus {

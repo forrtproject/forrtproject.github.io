@@ -32,6 +32,23 @@
       toggleOther();
     }
 
+    // Question 3 is a checkbox group: HTML's `required` can only demand one
+    // specific checkbox be checked, not "at least one of the group". The
+    // standard workaround is to keep every checkbox `required` while none
+    // are checked (so native validation blocks submit and focuses the
+    // group), then drop `required` from all of them the moment any one is
+    // checked (so the still-unchecked siblings don't also block submit).
+    var demographicCheckboxes = Array.prototype.slice
+      .call(form.querySelectorAll('input[name="demographics"]'));
+    var updateDemographicsRequired = function () {
+      var anyChecked = demographicCheckboxes.some(function (el) { return el.checked; });
+      demographicCheckboxes.forEach(function (el) { el.required = !anyChecked; });
+    };
+    demographicCheckboxes.forEach(function (el) {
+      el.addEventListener('change', updateDemographicsRequired);
+    });
+    updateDemographicsRequired();
+
     form.addEventListener('submit', function (e) {
       e.preventDefault();
 
@@ -44,6 +61,11 @@
       var demographics = Array.prototype.slice
         .call(form.querySelectorAll('input[name="demographics"]:checked'))
         .map(function (el) { return el.value; });
+
+      var tipsUsed = (form.tips_used.value || '').trim();
+      var whatWorked = (form.what_worked.value || '').trim();
+      var demographicsOther = (form.demographics_other.value || '').trim();
+      var additionalComments = (form.additional_comments.value || '').trim();
 
       submitBtn.disabled = true;
       statusEl.classList.remove('text-danger');
@@ -59,13 +81,11 @@
         headers: { 'Content-Type': 'text/plain;charset=utf-8' },
         body: JSON.stringify({
           type: 'adopting_feedback',
-          // Every field on this form is optional, so all values default to
-          // '' rather than being required before submission.
-          tips_used: (form.tips_used.value || '').trim(),
-          what_worked: (form.what_worked.value || '').trim(),
+          tips_used: tipsUsed,
+          what_worked: whatWorked,
           demographics: demographics,
-          demographics_other: (form.demographics_other.value || '').trim(),
-          additional_comments: (form.additional_comments.value || '').trim(),
+          demographics_other: demographicsOther,
+          additional_comments: additionalComments,
           url: window.location.href,
           ts: Date.now(),
         }),
@@ -73,6 +93,10 @@
       }).then(function () {
         submitBtn.disabled = false;
         form.reset();
+        // form.reset() doesn't fire 'change' on the checkboxes it clears, so
+        // the required-toggle above would otherwise be left stale (still
+        // "not required" from the checked box that just got submitted).
+        updateDemographicsRequired();
         // Prefer swapping in the dedicated thank-you panel; fall back to an
         // inline status message if the markup doesn't include one.
         if (thanksEl) {
