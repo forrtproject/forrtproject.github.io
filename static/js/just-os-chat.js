@@ -860,6 +860,7 @@
       mode: 'no-cors',
       headers: { 'Content-Type': 'text/plain;charset=utf-8' },
       body: JSON.stringify({
+        type:     'chat',
         turn_id:  turnId,
         rho_exp:  rho_exp,
         signals:  signals || {},

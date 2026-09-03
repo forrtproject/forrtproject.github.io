@@ -336,6 +336,8 @@
             {{ end }}
             {{ end }}
 
+            {{ partial "glossary_feedback_form" . }}
+
             {{ if ne .Params.docs_section_pager false }}
             {{ if site.Params.docs_section_pager }}
             <div class="article-widget">
