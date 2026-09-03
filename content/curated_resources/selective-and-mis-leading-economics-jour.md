@@ -42,5 +42,6 @@
     "doi": "10.1111/joes.12598",
     "in-clusters": true,
     "pdf name": "",
-    "apa reference": ""
+    "apa reference": "",
+    "lastmod": "2024-12-12"
 }

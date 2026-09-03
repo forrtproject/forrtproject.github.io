@@ -49,5 +49,6 @@
     "doi": "10.12688%2Fopenreseurope.15430.2",
     "in-clusters": true,
     "pdf name": "",
-    "apa reference": ""
+    "apa reference": "",
+    "lastmod": "2023-09-05"
 }

@@ -43,5 +43,6 @@
     "doi": "10.1007/s11192-023-04896-y",
     "in-clusters": false,
     "pdf name": "",
-    "apa reference": ""
+    "apa reference": "",
+    "lastmod": "2024-12-12"
 }

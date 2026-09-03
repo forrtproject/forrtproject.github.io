@@ -43,5 +43,6 @@
     "doi": "10.17705/1CAIS.04905",
     "in-clusters": true,
     "pdf name": "",
-    "apa reference": ""
+    "apa reference": "",
+    "lastmod": "2023-10-27"
 }

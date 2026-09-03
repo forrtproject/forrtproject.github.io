@@ -36,5 +36,6 @@
     "doi": "10.1089/jicm.2024.0346",
     "in-clusters": true,
     "pdf name": "",
-    "apa reference": ""
+    "apa reference": "",
+    "lastmod": "2024-12-12"
 }

@@ -40,5 +40,6 @@
     "doi": "10.1017/XPS.2024.1",
     "in-clusters": true,
     "pdf name": "",
-    "apa reference": ""
+    "apa reference": "",
+    "lastmod": "2024-12-19"
 }

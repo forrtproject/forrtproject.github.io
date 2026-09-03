@@ -43,5 +43,6 @@
     "doi": "10.1007/s10805-024-09520-z",
     "in-clusters": false,
     "pdf name": "",
-    "apa reference": ""
+    "apa reference": "",
+    "lastmod": "2025-01-09"
 }

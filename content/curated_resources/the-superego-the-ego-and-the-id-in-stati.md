@@ -33,5 +33,6 @@
     "doi": "10.1093/acprof:oso/9780195153729.003.0013",
     "in-clusters": true,
     "pdf name": "",
-    "apa reference": ""
+    "apa reference": "",
+    "lastmod": "2020-06-10"
 }

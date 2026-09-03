@@ -39,5 +39,6 @@
     "doi": "10.5465/annals.2016.0011",
     "in-clusters": true,
     "pdf name": "",
-    "apa reference": ""
+    "apa reference": "",
+    "lastmod": "2020-06-04"
 }

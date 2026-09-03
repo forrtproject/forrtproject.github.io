@@ -45,5 +45,6 @@
     "doi": "10.3386/w26993",
     "in-clusters": true,
     "pdf name": "",
-    "apa reference": ""
+    "apa reference": "",
+    "lastmod": "2023-10-30"
 }

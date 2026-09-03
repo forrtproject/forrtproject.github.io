@@ -50,5 +50,6 @@
     "doi": "10.2307/j.ctvhrd092.21",
     "in-clusters": true,
     "pdf name": "",
-    "apa reference": ""
+    "apa reference": "",
+    "lastmod": "2023-10-27"
 }

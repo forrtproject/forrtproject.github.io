@@ -35,5 +35,6 @@
     "doi": "10.1037/met0000547",
     "in-clusters": true,
     "pdf name": "",
-    "apa reference": ""
+    "apa reference": "",
+    "lastmod": "2025-06-10"
 }

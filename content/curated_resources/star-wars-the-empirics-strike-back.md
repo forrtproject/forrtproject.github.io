@@ -41,5 +41,6 @@
     "doi": "10.1257/app.20150044",
     "in-clusters": true,
     "pdf name": "",
-    "apa reference": ""
+    "apa reference": "",
+    "lastmod": "2020-05-24"
 }

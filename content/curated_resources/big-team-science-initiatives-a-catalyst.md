@@ -43,5 +43,6 @@
     "doi": "10.1016/j.actpsy.2023.104101",
     "in-clusters": false,
     "pdf name": "",
-    "apa reference": ""
+    "apa reference": "",
+    "lastmod": "2023-12-13"
 }

@@ -43,5 +43,6 @@
     "doi": "10.1140/epjds/s13688-023-00434-1",
     "in-clusters": true,
     "pdf name": "",
-    "apa reference": ""
+    "apa reference": "",
+    "lastmod": "2023-12-18"
 }

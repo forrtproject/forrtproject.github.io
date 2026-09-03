@@ -61,5 +61,6 @@
     "doi": "10.3758/s13423-017-1323-7",
     "in-clusters": true,
     "pdf name": "",
-    "apa reference": ""
+    "apa reference": "",
+    "lastmod": "2020-01-01"
 }

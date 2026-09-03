@@ -37,5 +37,6 @@
     "doi": "10.1007/s13164-018-0414-3",
     "in-clusters": false,
     "pdf name": "",
-    "apa reference": ""
+    "apa reference": "",
+    "lastmod": "2020-01-01"
 }

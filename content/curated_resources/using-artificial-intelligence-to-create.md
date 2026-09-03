@@ -52,5 +52,6 @@
     "doi": "10.1111/bcp.15977",
     "in-clusters": true,
     "pdf name": "",
-    "apa reference": ""
+    "apa reference": "",
+    "lastmod": "2023-12-13"
 }

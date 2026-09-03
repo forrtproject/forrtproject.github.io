@@ -48,5 +48,6 @@
     "doi": "10.1136/bjsports-2023-107225",
     "in-clusters": true,
     "pdf name": "",
-    "apa reference": ""
+    "apa reference": "",
+    "lastmod": "2024-12-12"
 }

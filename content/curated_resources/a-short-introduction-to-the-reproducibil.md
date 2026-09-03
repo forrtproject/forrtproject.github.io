@@ -34,5 +34,6 @@
     "doi": "10.5334/jeps.469",
     "in-clusters": true,
     "pdf name": "",
-    "apa reference": ""
+    "apa reference": "",
+    "lastmod": "2020-01-01"
 }

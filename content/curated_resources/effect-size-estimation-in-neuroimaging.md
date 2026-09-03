@@ -34,5 +34,6 @@
     "doi": "10.1001/jamapsychiatry.2016.3356",
     "in-clusters": false,
     "pdf name": "",
-    "apa reference": ""
+    "apa reference": "",
+    "lastmod": "2020-05-28"
 }

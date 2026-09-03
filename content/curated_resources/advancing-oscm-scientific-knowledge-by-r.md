@@ -46,5 +46,6 @@
     "doi": "10.1111/deci.12623",
     "in-clusters": true,
     "pdf name": "",
-    "apa reference": ""
+    "apa reference": "",
+    "lastmod": "2025-01-09"
 }

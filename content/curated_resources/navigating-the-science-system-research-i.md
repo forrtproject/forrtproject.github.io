@@ -40,5 +40,6 @@
     "doi": "10.1007/s11948-024-00467-3",
     "in-clusters": false,
     "pdf name": "",
-    "apa reference": ""
+    "apa reference": "",
+    "lastmod": "2025-01-13"
 }

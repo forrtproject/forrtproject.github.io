@@ -38,5 +38,6 @@
     "doi": "10.1111/brv.12315",
     "in-clusters": true,
     "pdf name": "",
-    "apa reference": ""
+    "apa reference": "",
+    "lastmod": "2020-06-04"
 }

@@ -55,5 +55,6 @@
     "doi": "10.20982/tqmp.16.4.p376",
     "in-clusters": true,
     "pdf name": "",
-    "apa reference": ""
+    "apa reference": "",
+    "lastmod": "2023-10-10"
 }

@@ -51,5 +51,6 @@
     "doi": "10.31234/osf.io/cj5mh",
     "in-clusters": true,
     "pdf name": "",
-    "apa reference": ""
+    "apa reference": "",
+    "lastmod": "2023-12-18"
 }

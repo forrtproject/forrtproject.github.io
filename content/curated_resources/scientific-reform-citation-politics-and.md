@@ -40,5 +40,6 @@
     "doi": "10.1162/qss_c_00274",
     "in-clusters": true,
     "pdf name": "",
-    "apa reference": ""
+    "apa reference": "",
+    "lastmod": "2025-02-27"
 }

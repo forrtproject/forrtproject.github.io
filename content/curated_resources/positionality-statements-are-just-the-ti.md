@@ -57,5 +57,6 @@
     "doi": "10.1615/JWomenMinorScienEng.2022044277",
     "in-clusters": true,
     "pdf name": "",
-    "apa reference": ""
+    "apa reference": "",
+    "lastmod": "2023-09-06"
 }

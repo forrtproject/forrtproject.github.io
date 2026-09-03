@@ -48,5 +48,6 @@
     "doi": "10.1016/j.jneumeth.2023.110002",
     "in-clusters": false,
     "pdf name": "",
-    "apa reference": ""
+    "apa reference": "",
+    "lastmod": "2023-11-06"
 }

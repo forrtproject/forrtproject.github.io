@@ -36,5 +36,6 @@
     "doi": "10.2466/03.11.pms.112.2.331-348",
     "in-clusters": true,
     "pdf name": "",
-    "apa reference": ""
+    "apa reference": "",
+    "lastmod": "2020-06-03"
 }

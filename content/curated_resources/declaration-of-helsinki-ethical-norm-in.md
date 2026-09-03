@@ -49,5 +49,6 @@
     "doi": "10.3389/fmed.2024.1360653",
     "in-clusters": true,
     "pdf name": "",
-    "apa reference": ""
+    "apa reference": "",
+    "lastmod": "2025-01-13"
 }

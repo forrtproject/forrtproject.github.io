@@ -44,5 +44,6 @@
     "doi": "10.32872/spb.9411",
     "in-clusters": true,
     "pdf name": "",
-    "apa reference": ""
+    "apa reference": "",
+    "lastmod": "2025-02-20"
 }

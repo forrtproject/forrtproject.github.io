@@ -41,5 +41,6 @@
     "doi": "10.3389/fsoc.2024.1308029",
     "in-clusters": true,
     "pdf name": "",
-    "apa reference": ""
+    "apa reference": "",
+    "lastmod": "2025-02-20"
 }

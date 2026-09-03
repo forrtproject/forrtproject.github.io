@@ -39,5 +39,6 @@
     "doi": "10.1172/JCI177383",
     "in-clusters": true,
     "pdf name": "",
-    "apa reference": ""
+    "apa reference": "",
+    "lastmod": "2024-12-12"
 }

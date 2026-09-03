@@ -44,5 +44,6 @@
     "doi": "10.1002/asi.24896",
     "in-clusters": false,
     "pdf name": "",
-    "apa reference": ""
+    "apa reference": "",
+    "lastmod": "2024-12-18"
 }

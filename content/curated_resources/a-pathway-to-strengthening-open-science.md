@@ -42,5 +42,6 @@
     "doi": "10.3389/fphar.2024.1304950",
     "in-clusters": true,
     "pdf name": "",
-    "apa reference": ""
+    "apa reference": "",
+    "lastmod": "2025-01-12"
 }

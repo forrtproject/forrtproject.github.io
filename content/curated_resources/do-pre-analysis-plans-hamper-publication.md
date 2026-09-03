@@ -37,5 +37,6 @@
     "doi": "10.1257/pandp.20201079",
     "in-clusters": true,
     "pdf name": "",
-    "apa reference": ""
+    "apa reference": "",
+    "lastmod": "2023-12-13"
 }

@@ -38,5 +38,6 @@
     "doi": "10.1017/XPS.2015.19",
     "in-clusters": true,
     "pdf name": "",
-    "apa reference": ""
+    "apa reference": "",
+    "lastmod": "2020-05-31"
 }

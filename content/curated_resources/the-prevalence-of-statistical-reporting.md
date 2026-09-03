@@ -36,5 +36,6 @@
     "doi": "10.3758/s13428-015-0664-2",
     "in-clusters": true,
     "pdf name": "",
-    "apa reference": ""
+    "apa reference": "",
+    "lastmod": "2020-05-26"
 }

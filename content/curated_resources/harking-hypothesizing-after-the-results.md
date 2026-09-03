@@ -34,5 +34,6 @@
     "doi": "10.1207/s15327957pspr0203_4",
     "in-clusters": true,
     "pdf name": "",
-    "apa reference": ""
+    "apa reference": "",
+    "lastmod": "2020-06-03"
 }

@@ -41,5 +41,6 @@
     "doi": "10.3758/s13414-017-1304-y",
     "in-clusters": true,
     "pdf name": "",
-    "apa reference": ""
+    "apa reference": "",
+    "lastmod": "2020-01-01"
 }

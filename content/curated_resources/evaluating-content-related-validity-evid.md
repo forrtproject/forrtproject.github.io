@@ -56,5 +56,6 @@
     "doi": "10.1111/emip.12314",
     "in-clusters": true,
     "pdf name": "",
-    "apa reference": ""
+    "apa reference": "",
+    "lastmod": "2023-10-23"
 }

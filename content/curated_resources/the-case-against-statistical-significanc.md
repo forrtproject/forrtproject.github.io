@@ -32,5 +32,6 @@
     "doi": "10.17763/haer.48.3.t490261645281841",
     "in-clusters": true,
     "pdf name": "",
-    "apa reference": ""
+    "apa reference": "",
+    "lastmod": "2020-05-24"
 }

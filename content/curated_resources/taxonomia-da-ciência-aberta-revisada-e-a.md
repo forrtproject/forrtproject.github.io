@@ -52,5 +52,6 @@
     "doi": "10.5007/1518-2924.2023.e91712",
     "in-clusters": true,
     "pdf name": "",
-    "apa reference": ""
+    "apa reference": "",
+    "lastmod": "2025-02-20"
 }

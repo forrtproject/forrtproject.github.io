@@ -44,5 +44,6 @@
     "doi": "10.31235/osf.io/sbwcq",
     "in-clusters": true,
     "pdf name": "",
-    "apa reference": ""
+    "apa reference": "",
+    "lastmod": "2023-10-27"
 }

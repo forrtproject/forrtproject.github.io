@@ -41,5 +41,6 @@
     "doi": "10.1016/j.joep.2019.01.006",
     "in-clusters": false,
     "pdf name": "",
-    "apa reference": ""
+    "apa reference": "",
+    "lastmod": "2023-10-30"
 }

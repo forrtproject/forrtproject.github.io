@@ -45,5 +45,6 @@
     "doi": "10.1037/pspi0000106",
     "in-clusters": true,
     "pdf name": "",
-    "apa reference": ""
+    "apa reference": "",
+    "lastmod": "2020-05-31"
 }

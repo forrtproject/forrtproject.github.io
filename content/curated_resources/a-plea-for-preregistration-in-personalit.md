@@ -43,5 +43,6 @@
     "doi": "10.1521/pedi_2019_33_426",
     "in-clusters": true,
     "pdf name": "",
-    "apa reference": ""
+    "apa reference": "",
+    "lastmod": "2023-10-27"
 }

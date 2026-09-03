@@ -58,5 +58,6 @@
     "doi": "10.5334/dsj-2024-049",
     "in-clusters": true,
     "pdf name": "",
-    "apa reference": ""
+    "apa reference": "",
+    "lastmod": "2025-02-27"
 }

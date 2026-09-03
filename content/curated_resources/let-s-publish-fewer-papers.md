@@ -39,5 +39,6 @@
     "doi": "10.1080/1047840X.2012.705245",
     "in-clusters": true,
     "pdf name": "",
-    "apa reference": ""
+    "apa reference": "",
+    "lastmod": "2020-06-03"
 }

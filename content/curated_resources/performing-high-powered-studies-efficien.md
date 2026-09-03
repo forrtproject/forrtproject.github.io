@@ -33,5 +33,6 @@
     "doi": "10.1002/ejsp.2023",
     "in-clusters": false,
     "pdf name": "",
-    "apa reference": ""
+    "apa reference": "",
+    "lastmod": "2020-05-28"
 }

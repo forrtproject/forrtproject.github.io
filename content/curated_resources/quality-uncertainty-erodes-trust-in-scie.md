@@ -38,5 +38,6 @@
     "doi": "10.1525/collabra.74",
     "in-clusters": true,
     "pdf name": "",
-    "apa reference": ""
+    "apa reference": "",
+    "lastmod": "2020-06-09"
 }

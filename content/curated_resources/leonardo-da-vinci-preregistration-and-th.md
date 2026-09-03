@@ -38,5 +38,6 @@
     "doi": "10.5334/hpb.30",
     "in-clusters": true,
     "pdf name": "",
-    "apa reference": ""
+    "apa reference": "",
+    "lastmod": "2023-10-27"
 }

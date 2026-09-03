@@ -53,5 +53,6 @@
     "doi": "10.1037/stl0000307",
     "in-clusters": true,
     "pdf name": "",
-    "apa reference": ""
+    "apa reference": "",
+    "lastmod": "2025-03-20"
 }

@@ -62,5 +62,6 @@
     "doi": "10.2519/jospt.2023.12016",
     "in-clusters": true,
     "pdf name": "",
-    "apa reference": ""
+    "apa reference": "",
+    "lastmod": "2023-10-23"
 }

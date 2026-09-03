@@ -35,5 +35,6 @@
     "doi": "10.5334/joc.10",
     "in-clusters": true,
     "pdf name": "",
-    "apa reference": ""
+    "apa reference": "",
+    "lastmod": "2020-06-04"
 }

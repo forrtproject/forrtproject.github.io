@@ -61,5 +61,6 @@
     "doi": "10.36850/mr7",
     "in-clusters": true,
     "pdf name": "",
-    "apa reference": ""
+    "apa reference": "",
+    "lastmod": "2023-10-23"
 }

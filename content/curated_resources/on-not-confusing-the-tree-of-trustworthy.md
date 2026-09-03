@@ -54,5 +54,6 @@
     "doi": "10.1002/jcpy.1213",
     "in-clusters": false,
     "pdf name": "",
-    "apa reference": ""
+    "apa reference": "",
+    "lastmod": "2023-10-06"
 }

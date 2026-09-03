@@ -41,5 +41,6 @@
     "doi": "10.3389/fpsyg.2019.00813",
     "in-clusters": true,
     "pdf name": "",
-    "apa reference": ""
+    "apa reference": "",
+    "lastmod": "2020-01-01"
 }

@@ -44,5 +44,6 @@
     "doi": "10.1016/j.jclinepi.2024.111367",
     "in-clusters": false,
     "pdf name": "",
-    "apa reference": ""
+    "apa reference": "",
+    "lastmod": "2025-01-13"
 }

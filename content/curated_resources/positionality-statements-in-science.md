@@ -43,5 +43,6 @@
     "doi": "10.12688/openreseurope.17058.2",
     "in-clusters": true,
     "pdf name": "",
-    "apa reference": ""
+    "apa reference": "",
+    "lastmod": "2025-01-12"
 }

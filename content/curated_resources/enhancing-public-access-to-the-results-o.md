@@ -44,5 +44,6 @@
     "doi": "10.17226/27480",
     "in-clusters": true,
     "pdf name": "",
-    "apa reference": ""
+    "apa reference": "",
+    "lastmod": "2024-12-19"
 }

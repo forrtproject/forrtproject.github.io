@@ -51,5 +51,6 @@
     "doi": "10.1016/j.jclinepi.2023.10.015",
     "in-clusters": false,
     "pdf name": "",
-    "apa reference": ""
+    "apa reference": "",
+    "lastmod": "2023-10-30"
 }

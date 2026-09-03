@@ -48,5 +48,6 @@
     "doi": "10.1080/02650487.2023.2245278",
     "in-clusters": true,
     "pdf name": "",
-    "apa reference": ""
+    "apa reference": "",
+    "lastmod": "2023-09-12"
 }

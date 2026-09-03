@@ -36,5 +36,6 @@
     "doi": "10.1257/jep.28.2.75",
     "in-clusters": true,
     "pdf name": "",
-    "apa reference": ""
+    "apa reference": "",
+    "lastmod": "2020-06-07"
 }

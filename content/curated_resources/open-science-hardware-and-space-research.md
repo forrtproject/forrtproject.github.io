@@ -43,5 +43,6 @@
     "doi": "10.5281/zenodo.10054521",
     "in-clusters": true,
     "pdf name": "",
-    "apa reference": ""
+    "apa reference": "",
+    "lastmod": "2025-01-09"
 }

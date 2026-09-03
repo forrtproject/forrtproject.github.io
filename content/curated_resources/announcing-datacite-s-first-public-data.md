@@ -45,5 +45,6 @@
     "doi": "10.5438/xcnb-0j33",
     "in-clusters": true,
     "pdf name": "",
-    "apa reference": ""
+    "apa reference": "",
+    "lastmod": "2025-01-12"
 }

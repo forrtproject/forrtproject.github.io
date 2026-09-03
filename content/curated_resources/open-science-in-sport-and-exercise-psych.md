@@ -38,5 +38,6 @@
     "doi": "10.1016/j.psychsport.2017.12.010",
     "in-clusters": false,
     "pdf name": "",
-    "apa reference": ""
+    "apa reference": "",
+    "lastmod": "2020-06-08"
 }

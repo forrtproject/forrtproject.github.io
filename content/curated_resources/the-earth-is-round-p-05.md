@@ -33,5 +33,6 @@
     "doi": "10.1037/0003-066X.49.12.997",
     "in-clusters": true,
     "pdf name": "",
-    "apa reference": ""
+    "apa reference": "",
+    "lastmod": "2020-05-22"
 }

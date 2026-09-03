@@ -39,5 +39,6 @@
     "doi": "10.1016/j.jesp.2016.03.004",
     "in-clusters": false,
     "pdf name": "",
-    "apa reference": ""
+    "apa reference": "",
+    "lastmod": "2020-06-07"
 }

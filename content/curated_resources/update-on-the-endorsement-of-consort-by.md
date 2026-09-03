@@ -41,5 +41,6 @@
     "doi": "10.1186/s13063-016-1408-z",
     "in-clusters": true,
     "pdf name": "",
-    "apa reference": ""
+    "apa reference": "",
+    "lastmod": "2020-01-01"
 }

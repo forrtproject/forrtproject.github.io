@@ -38,5 +38,6 @@
     "doi": "10.1111/infa.12182",
     "in-clusters": true,
     "pdf name": "",
-    "apa reference": ""
+    "apa reference": "",
+    "lastmod": "2020-06-04"
 }

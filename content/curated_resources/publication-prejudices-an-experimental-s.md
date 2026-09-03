@@ -38,5 +38,6 @@
     "doi": "10.1007/BF01173636",
     "in-clusters": false,
     "pdf name": "",
-    "apa reference": ""
+    "apa reference": "",
+    "lastmod": "2020-05-31"
 }

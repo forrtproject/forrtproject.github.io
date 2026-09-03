@@ -40,5 +40,6 @@
     "doi": "10.1016/j.dcn.2024.101388",
     "in-clusters": false,
     "pdf name": "",
-    "apa reference": ""
+    "apa reference": "",
+    "lastmod": "2024-12-12"
 }

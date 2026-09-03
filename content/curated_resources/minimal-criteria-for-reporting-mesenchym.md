@@ -42,5 +42,6 @@
     "doi": "10.1007/s11259-024-10398-w",
     "in-clusters": false,
     "pdf name": "",
-    "apa reference": ""
+    "apa reference": "",
+    "lastmod": "2025-01-13"
 }

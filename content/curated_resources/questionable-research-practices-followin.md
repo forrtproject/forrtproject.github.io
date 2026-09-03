@@ -46,5 +46,6 @@
     "doi": "10.24602/sjpr.62.3_281",
     "in-clusters": true,
     "pdf name": "",
-    "apa reference": ""
+    "apa reference": "",
+    "lastmod": "2023-12-13"
 }

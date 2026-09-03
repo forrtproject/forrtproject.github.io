@@ -37,5 +37,6 @@
     "doi": "10.1093/beheco/14.3.438",
     "in-clusters": true,
     "pdf name": "",
-    "apa reference": ""
+    "apa reference": "",
+    "lastmod": "2020-05-26"
 }

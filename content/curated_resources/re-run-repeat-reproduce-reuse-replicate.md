@@ -43,5 +43,6 @@
     "doi": "10.3389/fninf.2017.00069",
     "in-clusters": true,
     "pdf name": "",
-    "apa reference": ""
+    "apa reference": "",
+    "lastmod": "2020-01-01"
 }

@@ -39,5 +39,6 @@
     "doi": "10.1002/smj.2459",
     "in-clusters": false,
     "pdf name": "",
-    "apa reference": ""
+    "apa reference": "",
+    "lastmod": "2020-05-28"
 }

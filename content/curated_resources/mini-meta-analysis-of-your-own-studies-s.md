@@ -34,5 +34,6 @@
     "doi": "10.1111/spc3.12267",
     "in-clusters": true,
     "pdf name": "",
-    "apa reference": ""
+    "apa reference": "",
+    "lastmod": "2020-06-07"
 }

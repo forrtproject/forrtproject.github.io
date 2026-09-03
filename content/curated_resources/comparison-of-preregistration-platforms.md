@@ -37,5 +37,6 @@
     "doi": "10.31222/osf.io/zry2u",
     "in-clusters": true,
     "pdf name": "",
-    "apa reference": ""
+    "apa reference": "",
+    "lastmod": "2023-12-18"
 }

@@ -38,5 +38,6 @@
     "doi": "10.1016/j.econlet.2018.03.036",
     "in-clusters": false,
     "pdf name": "",
-    "apa reference": ""
+    "apa reference": "",
+    "lastmod": "2023-10-30"
 }

@@ -40,5 +40,6 @@
     "doi": "10.1177/0956797611417632",
     "in-clusters": true,
     "pdf name": "",
-    "apa reference": ""
+    "apa reference": "",
+    "lastmod": "2020-05-31"
 }

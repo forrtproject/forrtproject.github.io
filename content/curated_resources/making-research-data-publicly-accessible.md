@@ -52,5 +52,6 @@
     "doi": "10.29242/report.radsexpense2024",
     "in-clusters": true,
     "pdf name": "",
-    "apa reference": ""
+    "apa reference": "",
+    "lastmod": "2024-12-19"
 }

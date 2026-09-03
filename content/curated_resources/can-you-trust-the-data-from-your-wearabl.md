@@ -38,5 +38,6 @@
     "doi": "10.1111/psyp.70004",
     "in-clusters": true,
     "pdf name": "",
-    "apa reference": ""
+    "apa reference": "",
+    "lastmod": "2025-07-15"
 }

@@ -42,5 +42,6 @@
     "doi": "10.1152/ajpheart.00144.2024",
     "in-clusters": true,
     "pdf name": "",
-    "apa reference": ""
+    "apa reference": "",
+    "lastmod": "2025-01-12"
 }

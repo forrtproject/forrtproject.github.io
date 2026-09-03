@@ -39,5 +39,6 @@
     "doi": "10.1001/jama.2009.1242",
     "in-clusters": false,
     "pdf name": "",
-    "apa reference": ""
+    "apa reference": "",
+    "lastmod": "2020-06-03"
 }

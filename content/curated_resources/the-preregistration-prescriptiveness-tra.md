@@ -56,5 +56,6 @@
     "doi": "10.31222/osf.io/3t7pc",
     "in-clusters": true,
     "pdf name": "",
-    "apa reference": ""
+    "apa reference": "",
+    "lastmod": "2023-10-23"
 }

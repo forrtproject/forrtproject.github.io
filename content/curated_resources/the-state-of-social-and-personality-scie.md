@@ -38,5 +38,6 @@
     "doi": "10.1037/pspa0000084",
     "in-clusters": true,
     "pdf name": "",
-    "apa reference": ""
+    "apa reference": "",
+    "lastmod": "2020-06-04"
 }

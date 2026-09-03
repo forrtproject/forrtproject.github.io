@@ -34,5 +34,6 @@
     "doi": "10.1111/j.1467-9280.1997.tb00536.x",
     "in-clusters": true,
     "pdf name": "",
-    "apa reference": ""
+    "apa reference": "",
+    "lastmod": "2020-06-06"
 }

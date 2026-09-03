@@ -38,5 +38,6 @@
     "doi": "10.1002/9781119095910.ch1",
     "in-clusters": false,
     "pdf name": "",
-    "apa reference": ""
+    "apa reference": "",
+    "lastmod": "2020-06-10"
 }

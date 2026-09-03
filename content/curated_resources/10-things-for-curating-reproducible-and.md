@@ -40,5 +40,6 @@
     "doi": "10.15497/RDA00074",
     "in-clusters": true,
     "pdf name": "",
-    "apa reference": ""
+    "apa reference": "",
+    "lastmod": "2023-06-27"
 }

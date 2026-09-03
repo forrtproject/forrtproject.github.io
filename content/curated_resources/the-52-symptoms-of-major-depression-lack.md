@@ -37,5 +37,6 @@
     "doi": "10.1016/j.jad.2016.10.019",
     "in-clusters": false,
     "pdf name": "",
-    "apa reference": ""
+    "apa reference": "",
+    "lastmod": "2020-06-10"
 }

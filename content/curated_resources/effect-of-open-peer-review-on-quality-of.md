@@ -37,5 +37,6 @@
     "doi": "10.1136/bmj.318.7175.23",
     "in-clusters": true,
     "pdf name": "",
-    "apa reference": ""
+    "apa reference": "",
+    "lastmod": "2020-06-05"
 }

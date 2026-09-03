@@ -38,5 +38,6 @@
     "doi": "10.1007/s10670-024-00834-3",
     "in-clusters": false,
     "pdf name": "",
-    "apa reference": ""
+    "apa reference": "",
+    "lastmod": "2025-02-13"
 }

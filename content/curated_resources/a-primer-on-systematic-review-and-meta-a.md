@@ -45,5 +45,6 @@
     "doi": "10.2337/dci23-0031",
     "in-clusters": true,
     "pdf name": "",
-    "apa reference": ""
+    "apa reference": "",
+    "lastmod": "2023-10-30"
 }

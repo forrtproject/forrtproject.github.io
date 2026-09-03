@@ -46,5 +46,6 @@
     "doi": "10.1016/j.scib.2024.03.006",
     "in-clusters": false,
     "pdf name": "",
-    "apa reference": ""
+    "apa reference": "",
+    "lastmod": "2025-01-12"
 }

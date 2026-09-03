@@ -50,5 +50,6 @@
     "doi": "10.1186/s13063-019-3173-2",
     "in-clusters": true,
     "pdf name": "",
-    "apa reference": ""
+    "apa reference": "",
+    "lastmod": "2020-01-01"
 }

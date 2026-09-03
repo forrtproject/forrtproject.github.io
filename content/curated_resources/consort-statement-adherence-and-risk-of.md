@@ -44,5 +44,6 @@
     "doi": "10.1186/s12903-024-04417-0",
     "in-clusters": true,
     "pdf name": "",
-    "apa reference": ""
+    "apa reference": "",
+    "lastmod": "2024-12-12"
 }

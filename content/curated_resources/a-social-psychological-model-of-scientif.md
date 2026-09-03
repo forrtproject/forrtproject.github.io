@@ -41,5 +41,6 @@
     "doi": "10.5334/pb.496",
     "in-clusters": true,
     "pdf name": "",
-    "apa reference": ""
+    "apa reference": "",
+    "lastmod": "2020-01-01"
 }

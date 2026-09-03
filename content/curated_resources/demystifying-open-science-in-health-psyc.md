@@ -48,5 +48,6 @@
     "doi": "10.31234/osf.io/bgudc",
     "in-clusters": true,
     "pdf name": "",
-    "apa reference": ""
+    "apa reference": "",
+    "lastmod": "2024-12-18"
 }

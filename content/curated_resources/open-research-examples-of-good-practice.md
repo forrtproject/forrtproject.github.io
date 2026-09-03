@@ -40,5 +40,6 @@
     "doi": "10.31219/osf.io/3r8hb",
     "in-clusters": true,
     "pdf name": "",
-    "apa reference": ""
+    "apa reference": "",
+    "lastmod": "2020-10-16"
 }

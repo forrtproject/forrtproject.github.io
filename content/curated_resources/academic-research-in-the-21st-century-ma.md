@@ -38,5 +38,6 @@
     "doi": "10.1089/ees.2016.0223",
     "in-clusters": true,
     "pdf name": "",
-    "apa reference": ""
+    "apa reference": "",
+    "lastmod": "2020-05-27"
 }

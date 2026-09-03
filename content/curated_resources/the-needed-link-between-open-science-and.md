@@ -48,5 +48,6 @@
     "doi": "10.3389/frma.2024.1355393",
     "in-clusters": true,
     "pdf name": "",
-    "apa reference": ""
+    "apa reference": "",
+    "lastmod": "2024-12-12"
 }

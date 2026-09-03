@@ -41,5 +41,6 @@
     "doi": "10.2139/ssrn.4066842",
     "in-clusters": true,
     "pdf name": "",
-    "apa reference": ""
+    "apa reference": "",
+    "lastmod": "2024-12-18"
 }
