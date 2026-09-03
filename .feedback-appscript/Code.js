@@ -48,7 +48,9 @@ function doPost(e) {
 
 function _handleChatFeedback(data) {
   var signals = data.signals || {};
-  var sheet = SpreadsheetApp.openById(SHEET_ID).getSheetByName(SHEET_NAME);
+  var sheet = _getOrCreateSheet(SHEET_NAME, [
+    'received_at', 'ts', 'turn_id', 'rho_exp', 'copy', 'followup', 'fast_exit', 'comment', 'query', 'response',
+  ]);
 
   sheet.appendRow([
     new Date(),                 // received_at (server time)

@@ -25,18 +25,18 @@
       <label for="adopting-feedback-what-worked">2. What worked well, or what did you have to change?</label>
       <textarea id="adopting-feedback-what-worked" name="what_worked" class="form-control" rows="3" required></textarea>
     </div>
-    <div class="form-group">
-      <label>3. What demographic of students did you use these tips for?</label>
+    <fieldset class="form-group">
+      <legend>3. What demographic of students did you use these tips for?</legend>
       <div class="adopting-feedback-checkboxes">
         <label class="adopting-feedback-checkbox"><input type="checkbox" name="demographics" value="bachelor"> Bachelor students</label>
         <label class="adopting-feedback-checkbox"><input type="checkbox" name="demographics" value="masters"> Master’s students</label>
         <label class="adopting-feedback-checkbox"><input type="checkbox" name="demographics" value="phd"> PhD students</label>
         <label class="adopting-feedback-checkbox"><input type="checkbox" name="demographics" value="other"> Other (please specify)</label>
       </div>
-      <div id="adopting-feedback-demographics-other-field" class="adopting-feedback-other-field">
+      <div id="adopting-feedback-demographics-other-field" class="adopting-feedback-other-field" style="display:none">
         <input type="text" id="adopting-feedback-demographics-other" name="demographics_other" class="form-control" placeholder="Please specify">
       </div>
-    </div>
+    </fieldset>
     <div class="form-group">
       <label for="adopting-feedback-additional-comments">4. Additional comments / feedback <span class="adopting-feedback-optional">(Optional)</span></label>
       <textarea id="adopting-feedback-additional-comments" name="additional_comments" class="form-control" rows="3"></textarea>
