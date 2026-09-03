@@ -1,6 +1,6 @@
 {{/* intro.html - Intro text for Open Research Across Disciplines */}}
 
-{{/* Reuse the "Cite us" citation box styling for the source attribution below. */}}
+{{/* Reuse the "Cite us" citation box styling for the citation block below. */}}
 {{ $css := resources.Get "css/cite_us.css" }}
 {{ if $css }}
 {{ $style := $css | minify | fingerprint }}
@@ -8,6 +8,14 @@
 {{ else }}
 {{ warnf "CSS not found: css/cite_us.css. Using static version" }}
 <link rel="stylesheet" href="{{ "css/cite_us.css" | relURL }}">
+{{ end }}
+
+{{ $preprintCitation := "Farran, E. K., Silverstein, P., Ameen, A. A., Misheva, I., & Gilmore, C. (2020, December 15). Open Research: Examples of good practice, and resources across disciplines (2026 edition). https://doi.org/10.31219/osf.io/3r8hb" }}
+{{ $webCitation := "" }}
+{{ $webCitationHTML := "" }}
+{{ with site.Data.disciplines_citation }}
+  {{ $webCitation = .web | default "" }}
+  {{ $webCitationHTML = .web_html | default "" }}
 {{ end }}
 
 <div class="clusters-intro">
@@ -18,20 +26,36 @@
       </p>
 
       <div class="cite-us-section disciplines-attribution">
-        <h4 class="section-title">Adapted and extended from:</h4>
+        <h4 class="section-title">How to cite</h4>
+
         <div class="cite-us-item">
           <div class="cite-us-text">
+            <span class="disciplines-cite-lead">The preprint:</span>
             Farran, E. K., Silverstein, P., Ameen, A. A., Misheva, I., &amp; Gilmore, C. (2020, December 15). Open Research: Examples of good practice, and resources across disciplines (2026 edition).
-            <a href="https://doi.org/10.31219/osf.io/3r8hb" target="_blank" rel="noopener" class="doi-link">https://doi.org/10.31219/osf.io/3r8hb</a>.
-            Updates supported by UKRN and FORRT.
+            <a href="https://doi.org/10.31219/osf.io/3r8hb" target="_blank" rel="noopener" class="doi-link">https://doi.org/10.31219/osf.io/3r8hb</a>
           </div>
-          <button class="copy-button" onclick="copyDisciplinesAttribution(this)">
+          <button class="copy-button" onclick="copyDisciplinesCitation(this, 'preprint')">
             <svg class="copy-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
             </svg>
             Copy
           </button>
         </div>
+
+        {{ if $webCitationHTML }}
+        <div class="cite-us-item">
+          <div class="cite-us-text">
+            <span class="disciplines-cite-lead">This web resource:</span>
+            {{ $webCitationHTML | safeHTML }}
+          </div>
+          <button class="copy-button" onclick="copyDisciplinesCitation(this, 'web')">
+            <svg class="copy-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
+            </svg>
+            Copy
+          </button>
+        </div>
+        {{ end }}
       </div>
 
       <p class="intro-paragraph">
@@ -41,26 +65,38 @@
         If you have resources or disciplines to add, or spot errors, please <a href="https://docs.google.com/forms/d/e/1FAIpQLSfs-BCYWGet5QNZAWQ8IQVZ05TAUUwvD4mkc31Ehrm5tK8q3Q/viewform" target="_blank" rel="noopener">fill out this form</a>.
       </p>
     </div>
+
+    <div class="intro-hero-image disciplines-partner">
+      <p class="disciplines-partner__caption">Supported by</p>
+      <a href="https://www.ukrn.org/" target="_blank" rel="noopener">
+        <img src="UKRN.webp" alt="UK Reproducibility Network (UKRN)" title="UK Reproducibility Network" width="275" height="275">
+      </a>
+    </div>
   </div>
 </div>
 
 <script>
-  async function copyDisciplinesAttribution(button) {
-    const text = "Farran, E. K., Silverstein, P., Ameen, A. A., Misheva, I., & Gilmore, C. (2020, December 15). Open Research: Examples of good practice, and resources across disciplines (2026 edition). https://doi.org/10.31219/osf.io/3r8hb";
+  var disciplinesCitations = {
+    preprint: {{ $preprintCitation }},
+    web: {{ $webCitation }}
+  };
+
+  async function copyDisciplinesCitation(button, key) {
+    var text = disciplinesCitations[key] || '';
     try {
       await navigator.clipboard.writeText(text);
     } catch (err) {
-      const textarea = document.createElement('textarea');
+      var textarea = document.createElement('textarea');
       textarea.value = text;
       document.body.appendChild(textarea);
       textarea.select();
       document.execCommand('copy');
       document.body.removeChild(textarea);
     }
-    const copyIcon = button.innerHTML;
+    var copyIcon = button.innerHTML;
     button.innerHTML = '<svg class="copy-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Copied!';
     button.classList.add('copied');
-    setTimeout(() => {
+    setTimeout(function () {
       button.innerHTML = copyIcon;
       button.classList.remove('copied');
     }, 2000);

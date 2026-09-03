@@ -25,12 +25,18 @@
   <p class="cluster-description">{{ $field.summary }}</p>
   {{ end }}
 
+  {{ with $field.leads }}
+  <div class="disciplines-leads">
+    <span class="disciplines-leads__label">Field lead{{ if strings.Contains . "," }}s{{ end }}:</span> {{ . | markdownify }}
+  </div>
+  {{ end }}
+
   {{ if gt (len $field.disciplines) 0 }}
   <div class="acc-list" id="content-{{ $fid }}">
     {{ range $di, $disc := $field.disciplines }}
     {{/* Stable, human-readable anchor slug derived from the name (not the array index), so shared links survive reordering. Must match sidebar_nav.html. */}}
     {{ $slug := $disc.name | lower | replaceRE "[^a-z0-9]+" "-" | replaceRE "^-+|-+$" "" }}
-    {{ $did := printf "f%d-%s" (int $field.number) $slug }}
+    {{ $did := $slug }}
     <div class="acc-section" id="{{ $did }}">
       <div class="acc-header" role="button" tabindex="0">
         <span class="acc-chevron">&#9656;</span>
@@ -41,6 +47,12 @@
         </button>
       </div>
       <div class="acc-body acc-collapsed">
+
+        {{ with $disc.leads }}
+        <div class="disciplines-leads">
+          <span class="disciplines-leads__label">Discipline lead{{ if strings.Contains . "," }}s{{ end }}:</span> {{ . | markdownify }}
+        </div>
+        {{ end }}
 
         {{ if $disc.examples }}
         <div class="sc-description">
