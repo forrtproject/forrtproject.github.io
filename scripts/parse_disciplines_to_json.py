@@ -7,9 +7,13 @@ Usage:
     python parse_disciplines_to_json.py --from-cache  # Use cached /tmp files instead of fetching
 
 Data sources (Google Sheet 1mSlduu86_nE1sY1gXobw3Pp1vI73B_0iHBsJqjtsJU4):
-    - Fields:       top-level groupings (Name, Summary)
-    - Disciplines:  disciplines within fields (Field, Discipline, Examples)
+    - Fields:       top-level groupings (Name, Summary, Show, Leads)
+    - Disciplines:  disciplines within fields (Field, Discipline, Examples, Leads)
     - Resources:    per-discipline resources (Discipline, Title, Link, Category)
+
+    Show and Leads are optional and located by header name, so they may sit in any
+    column. Leads is free text (markdown allowed) naming the people responsible for
+    a field or discipline; it is exported as "leads" and rendered under the heading.
 
 !! data/disciplines.json IS GENERATED — DO NOT EDIT IT DIRECTLY !!
 
@@ -108,15 +112,30 @@ def _truthy(val: str) -> bool:
     return s in {"true", "yes", "y", "1", "t"}
 
 
+LEADS_HEADERS = {"leads", "lead", "discipline lead", "discipline leads"}
+
+
+def _find_column(header: list[str], names: set[str]) -> int | None:
+    """Index of the first header cell matching one of `names`, or None."""
+    return next((i for i, h in enumerate(header) if h in names), None)
+
+
+def _cell(row: list[str], idx: int | None) -> str:
+    """Value of an optional column, or "" when the column or cell is absent."""
+    if idx is None or idx >= len(row):
+        return ""
+    return str(row[idx]).strip()
+
+
 def build_json(fields_rows, disciplines_rows, resources_rows) -> dict:
     """Build the disciplines.json structure from sheet data."""
 
-    # Locate optional "Show" column on the Fields header (case-insensitive).
-    header = [str(c).strip().lower() for c in (fields_rows[0] if fields_rows else [])]
-    show_idx = next(
-        (i for i, h in enumerate(header) if h in {"show", "visible", "publish"}),
-        None,
-    )
+    # Locate optional "Show" / "Leads" columns by header name (case-insensitive).
+    fields_header = [str(c).strip().lower() for c in (fields_rows[0] if fields_rows else [])]
+    disc_header = [str(c).strip().lower() for c in (disciplines_rows[0] if disciplines_rows else [])]
+    show_idx = _find_column(fields_header, {"show", "visible", "publish"})
+    fields_leads_idx = _find_column(fields_header, LEADS_HEADERS)
+    disc_leads_idx = _find_column(disc_header, LEADS_HEADERS)
 
     # Parse Fields (skip header)
     fields_list = []
@@ -126,7 +145,11 @@ def build_json(fields_rows, disciplines_rows, resources_rows) -> dict:
         show = _truthy(row[show_idx]) if show_idx is not None and show_idx < len(row) else True
         if not show:
             continue
-        fields_list.append({"name": name, "summary": summary})
+        fields_list.append({
+            "name": name,
+            "summary": summary,
+            "leads": _cell(row, fields_leads_idx),
+        })
 
     # Parse Disciplines (skip header) — group by field
     disc_by_field: dict[str, list[dict]] = {}
@@ -137,6 +160,7 @@ def build_json(fields_rows, disciplines_rows, resources_rows) -> dict:
         disc_by_field.setdefault(field_name, []).append({
             "name": disc_name,
             "examples": examples,
+            "leads": _cell(row, disc_leads_idx),
         })
 
     # Parse Resources (skip header) — group by discipline
@@ -163,7 +187,7 @@ def build_json(fields_rows, disciplines_rows, resources_rows) -> dict:
         # For fields with no explicit disciplines entry (e.g. "Relevant across
         # multiple disciplines"), create a single implicit discipline
         if not discs:
-            discs = [{"name": fname, "examples": ""}]
+            discs = [{"name": fname, "examples": "", "leads": ""}]
 
         # Attach resources to each discipline
         for disc in discs:
@@ -173,6 +197,7 @@ def build_json(fields_rows, disciplines_rows, resources_rows) -> dict:
             "number": i + 1,
             "name": fname,
             "summary": field_info["summary"],
+            "leads": field_info.get("leads", ""),
             "disciplines": discs,
         })
 
