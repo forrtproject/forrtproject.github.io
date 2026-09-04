@@ -1568,6 +1568,50 @@ article.article:has(table) .article-container {
   display: inline-block;
 }
 
+/* Partner logo beside the disciplines intro (plain image, no lightbox) */
+.disciplines-partner {
+  text-align: center;
+  max-width: 220px;
+  /* Sit beside the opening paragraph rather than centred against the whole column. */
+  align-self: flex-start;
+  margin-top: 1rem;
+}
+
+.disciplines-partner img {
+  width: 160px;
+  height: auto;
+}
+
+.disciplines-partner__caption {
+  font-size: 0.8rem;
+  color: #666;
+  margin-bottom: 0.4rem;
+  white-space: nowrap;
+}
+
+/* Lead-in label in front of each citation in the disciplines "How to cite" box */
+.disciplines-cite-lead {
+  display: block;
+  font-weight: 600;
+  font-size: 0.82rem;
+  margin-bottom: 0.2rem;
+}
+
+/* Discipline / field leads, shown on the coloured field background */
+.disciplines-leads {
+  font-size: 0.9rem;
+  margin: 0 0 0.75rem;
+}
+
+.disciplines-leads p {
+  margin: 0;
+  display: inline;
+}
+
+.disciplines-leads__label {
+  font-weight: 600;
+}
+
 .update-pending-badge {
   position: absolute;
   bottom: 0.5rem;
@@ -1658,6 +1702,11 @@ article.article:has(table) .article-container {
 
   .intro-hero-image {
     max-width: 260px;
+  }
+
+  .disciplines-partner {
+    align-self: center;
+    margin-top: 0;
   }
 
   .intro-paragraph {
