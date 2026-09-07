@@ -98,22 +98,18 @@ def wrangle_data(df):
     df.fillna('', inplace=True)
 
 
-# Submitters type tags freely into one sheet cell. Commas were the only
-# documented separator, but semicolons are used just as often and newlines slip
-# in from pasted text; splitting on all three is what stops a whole list being
-# stored as the single tag "Replication; Teaching".
+# The cell is free text: commas were the documented separator, but semicolons
+# are used just as often and newlines arrive with pasted text. Splitting on all
+# three is what stops a list being stored as the one tag "Replication; Teaching".
 TAG_SEPARATORS = re.compile(r'[,;\n]+')
 
 
 def clean_tag(raw: str) -> str:
     """One tag, normalised, or '' if the value is not a term at all.
 
-    Collapses whitespace (including the non-breaking spaces that come from
-    pasted text), drops the leading '#' of hashtag-style submissions, and trims
-    stray punctuation from both ends -- "Diversity, Equity, & Inclusion" splits
-    on its commas and leaves "& Inclusion" behind. Returns '' for placeholders: the sheet
-    carries blanks, "-" and "." as stand-ins for "no tags", and a value with no
-    letter or digit is never a term.
+    The '&' in the trim set is for "Diversity, Equity, & Inclusion", which the
+    comma split leaves as a stray "& Inclusion". Anything with no letter or
+    digit is a placeholder: the sheet uses blanks, "-" and "." for "no tags".
     """
     tag = re.sub(r'\s+', ' ', raw.replace('\u00a0', ' ')).strip()
     tag = tag.lstrip('#').strip()
@@ -124,9 +120,8 @@ def clean_tag(raw: str) -> str:
 def split_tags(cell: str) -> list:
     """A tag cell as a list of clean tags, de-duplicated case-insensitively.
 
-    Duplicates are compared case-folded because the same term is submitted in
-    several casings; the first spelling in the cell wins, and `canonical_tags`
-    then settles the casing across the whole sheet.
+    Case-folded because the same term is submitted in several casings; the
+    first spelling wins here and `canonical_tags` settles it sheet-wide.
     """
     tags, seen = [], set()
     for tag in (clean_tag(part) for part in TAG_SEPARATORS.split(cell)):
@@ -136,10 +131,9 @@ def split_tags(cell: str) -> list:
     return tags
 
 
-# Longest all-caps spelling treated as an acronym rather than shouting. Covers
-# the acronyms the sheet actually carries (OSF, FAIR, ADHD, UNESCO, COSMIN) and
-# excludes the shouted words it also carries (LECTURE, PSYCHOLOGY, INTRODUCTION).
-# Measured over letters only, so "COVID-19" counts as five.
+# Longest all-caps spelling still read as an acronym. Six keeps the sheet's
+# acronyms (OSF, FAIR, UNESCO) and drops its shouting (LECTURE, PSYCHOLOGY).
+# Letters only, so "COVID-19" counts as five.
 ACRONYM_MAX_LETTERS = 6
 
 
@@ -148,8 +142,8 @@ def is_shouted(spelling: str) -> bool:
     return spelling.isupper() and len([c for c in spelling if c.isalpha()]) > ACRONYM_MAX_LETTERS
 
 
-# Words English title case leaves lowercase unless they open the term. Used only
-# to score competing spellings against each other, never to rewrite a tag.
+# Lowercase in title case unless they open the term. Only ever used to score
+# competing spellings against each other, never to rewrite a tag.
 FUNCTION_WORDS = frozenset(
     'a an and as at but by for from in into nor of on or the to via vs with'.split()
 )
@@ -158,10 +152,8 @@ FUNCTION_WORDS = frozenset(
 def title_case_score(spelling: str) -> float:
     """How closely a spelling follows title case, from 0 to 1.
 
-    Separates "Evolution of Science" from "Evolution Of Science" and "Data
-    Curation" from "Data curation" when both are equally common. An all-caps
-    word counts as capitalised, so acronyms inside a term ("FAIR Data") are not
-    penalised.
+    Breaks the tie between "Evolution of Science" and "Evolution Of Science".
+    An all-caps word counts as capitalised, so "FAIR Data" is not penalised.
     """
     words = spelling.split()
     matches = 0
@@ -179,14 +171,11 @@ def title_case_score(spelling: str) -> float:
 def canonical_tags(df):
     """Settle on one spelling per tag across the whole sheet.
 
-    "Open Science", "Open science" and "OPEN SCIENCE" are one term submitted
-    three ways; left alone they read as three different labels on the cards.
-    The winner is chosen rather than imposed as Title Case, so acronyms and
-    product names ("OSF", "COVID-19", "RMarkdown") keep the form contributors
-    actually use: shouted spellings last, then the most common, then the
-    closest to title case ("Evolution of Science" over "Evolution Of Science"),
-    then alphabetically so a rebuild of the same sheet is reproducible. Terms
-    submitted only one way are left untouched.
+    "Open Science", "Open science" and "OPEN SCIENCE" read as three labels on
+    the cards. A winner is picked from the spellings in use rather than Title
+    Case imposed, so "OSF", "COVID-19" and "RMarkdown" survive; ranked by
+    shouted last, most common, closest to title case, then alphabetically for
+    a reproducible rebuild. Terms submitted one way only are left alone.
     """
     spellings = {}
     for tags in df['tags'].values:
@@ -210,10 +199,9 @@ def split_cells(df):
     df['education_level'] = [[y.strip() for y in x.split(',')] for x in df['education_level'].values]
     df['subject_areas'] = [[y.strip() for y in x.split(',')] for x in df['subject_areas'].values]
     df['FORRT_clusters'] = [[y.strip() for y in x.split(',')] for x in df['FORRT_clusters'].values]
-    # Tags get their own splitter: they are free text rather than a controlled
-    # vocabulary, so they need separator, placeholder and duplicate handling
-    # the other columns do not. A resource with no usable tags is still kept,
-    # it just ends up untagged.
+    # Tags are free text rather than a controlled vocabulary, so unlike the
+    # columns above they need separator, placeholder and duplicate handling. A
+    # resource with no usable tags is kept, just untagged.
     df['tags'] = [split_tags(x) for x in df['tags'].values]
     df['language'] = [[y.strip() for y in x.split(',')] for x in df['language'].values]
 

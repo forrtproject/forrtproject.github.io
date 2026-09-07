@@ -8,9 +8,7 @@
        - the home page, which is the root of every trail;
        - `clusters`, which builds a richer trail of its own in
          `clusters/cluster_seo_jsonld.html` — two BreadcrumbLists on one page
-         would compete;
-       - thin tag archives, which are `noindex` and so will never render a
-         result to enhance.
+         would compete.
 
      The skips are one wrapping conditional rather than early `return`s: a Hugo
      partial either returns a value or writes output, and mixing the two makes

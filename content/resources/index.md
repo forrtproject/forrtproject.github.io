@@ -4,12 +4,8 @@ type = "widget_page"
 headless = false  # Homepage is headless, other widget pages are not.
 title = "Resources"
 
-# Redirects for the retired `/tag/<term>/` archives. The `tags` taxonomy was
-# removed (see `[taxonomies]` in config/_default/config.toml); these are the
-# terms that were still indexable at the time, so they are the ones search
-# engines and external links can be expected to hold. This page is where they
-# led in substance -- the same resources, searchable by the very tag text that
-# named the archive. Thin terms were already `noindex` and are left to 404.
+# Redirects for the retired `/tag/<term>/` archives (#307). Only the 136 terms
+# that were still indexable: the rest were `noindex`, so nothing points at them.
 aliases = [
   "/tag/aging-science/",
   "/tag/aging/",

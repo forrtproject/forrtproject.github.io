@@ -1,11 +1,7 @@
-{{/* Override of Hugo's built-in sitemap template.
-
-     It previously skipped thin `tags` archives; those pages no longer exist
-     (see `[taxonomies]` in config/_default/config.toml), so the output now
-     matches the built-in except for line breaks between <url> elements. Kept
-     as the hook for any future sitemap filtering, and deliberately close to
-     the built-in template so it stays easy to diff against upstream when Hugo
-     changes. */ -}}
+{{/* Override of Hugo's built-in sitemap template, kept deliberately close to it
+     so it stays easy to diff against upstream. The thin-`tags`-archive filter
+     it was added for went with the taxonomy, so output now differs only in line
+     breaks; retained as the hook for future filtering. */ -}}
 {{ printf "<?xml version=\"1.0\" encoding=\"utf-8\" standalone=\"yes\"?>" | safeHTML }}
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
   {{- range .Pages }}
