@@ -1,0 +1,23 @@
+{{/* Site override of the theme's `tags` partial: renders a page's tags as
+     plain labels rather than links.
+
+     `tags` is no longer a Hugo taxonomy (see `[taxonomies]` in
+     config/_default/config.toml), so `.GetTerms "tags"` -- which the theme
+     partial uses -- returns nothing and there is no term page to link to. The
+     values remain useful as descriptive metadata and are still searchable via
+     the site search index and the resource card filter.
+
+     Reached by every section through `_default/single.html` -> `page_footer`,
+     so the values come from `functions/page_tags.html` rather than raw front
+     matter: one definition of a page's tags for badges, search and structured
+     data alike.
+
+     Inputs: page context. */}}
+
+{{ with partial "functions/page_tags.html" . }}
+<div class="article-tags">
+  {{ range . }}
+  <span class="badge badge-light">{{ . }}</span>
+  {{ end }}
+</div>
+{{ end }}

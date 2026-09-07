@@ -1,0 +1,43 @@
+{{/* A page's `tags`, cleaned, in one place for the whole site.
+
+     Tags reach the site from several sources -- the curated-resources sheet via
+     `content/resources/resource.py`, and hand-written front matter anywhere
+     else -- and every section renders them through the same path
+     (`_default/single.html` -> `page_footer` -> `tags.html`). Cleaning here
+     rather than in each template means a section added later inherits it, and
+     the badges, the search index, the resource cards and the JSON-LD keywords
+     can never disagree about what a page's tags are.
+
+     Applied to each value: split on the separators contributors actually use
+     (`,`, `;`, newline), collapse whitespace, drop a leading `#`, trim leading and trailing
+     sentence punctuation, discard anything with no letter or digit, then
+     de-duplicate case-insensitively keeping the first spelling.
+
+     Casing is deliberately left alone. Settling on one spelling per term needs
+     frequency counts across the whole corpus, which is a data-pipeline job:
+     `canonical_tags()` in `content/resources/resource.py` does it at the source,
+     where it can also fix the raw front matter that Hugo's `[related]` indices
+     read directly.
+
+     Inputs: page context. Output: slice of strings (possibly empty). */}}
+
+{{ $tags := slice }}
+{{ $seen := slice }}
+
+{{ range .Params.tags }}
+  {{ range split (replaceRE `[;\n]+` "," (printf "%v" .)) "," }}
+    {{/* `\s` does not cover the non-breaking spaces that arrive with pasted text. */}}
+    {{ $tag := replaceRE `[\s\x{00a0}]+` " " . }}
+    {{ $tag = trim (strings.TrimPrefix "#" (trim $tag " ")) " " }}
+    {{ $tag = trim $tag " .,;:-&" }}
+    {{ if findRE `[\pL\pN]` $tag 1 }}
+      {{ $key := lower $tag }}
+      {{ if not (in $seen $key) }}
+        {{ $seen = $seen | append $key }}
+        {{ $tags = $tags | append $tag }}
+      {{ end }}
+    {{ end }}
+  {{ end }}
+{{ end }}
+
+{{ return $tags }}

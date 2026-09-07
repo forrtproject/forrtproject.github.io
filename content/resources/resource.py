@@ -20,6 +20,7 @@ import json
 import os
 import re
 import sys
+from collections import Counter
 from pathlib import Path
 
 import pandas as pd
@@ -97,6 +98,111 @@ def wrangle_data(df):
     df.fillna('', inplace=True)
 
 
+# Submitters type tags freely into one sheet cell. Commas were the only
+# documented separator, but semicolons are used just as often and newlines slip
+# in from pasted text; splitting on all three is what stops a whole list being
+# stored as the single tag "Replication; Teaching".
+TAG_SEPARATORS = re.compile(r'[,;\n]+')
+
+
+def clean_tag(raw: str) -> str:
+    """One tag, normalised, or '' if the value is not a term at all.
+
+    Collapses whitespace (including the non-breaking spaces that come from
+    pasted text), drops the leading '#' of hashtag-style submissions, and trims
+    stray punctuation from both ends -- "Diversity, Equity, & Inclusion" splits
+    on its commas and leaves "& Inclusion" behind. Returns '' for placeholders: the sheet
+    carries blanks, "-" and "." as stand-ins for "no tags", and a value with no
+    letter or digit is never a term.
+    """
+    tag = re.sub(r'\s+', ' ', raw.replace('\u00a0', ' ')).strip()
+    tag = tag.lstrip('#').strip()
+    tag = tag.strip(' .,;:-&')
+    return tag if any(ch.isalnum() for ch in tag) else ''
+
+
+def split_tags(cell: str) -> list:
+    """A tag cell as a list of clean tags, de-duplicated case-insensitively.
+
+    Duplicates are compared case-folded because the same term is submitted in
+    several casings; the first spelling in the cell wins, and `canonical_tags`
+    then settles the casing across the whole sheet.
+    """
+    tags, seen = [], set()
+    for tag in (clean_tag(part) for part in TAG_SEPARATORS.split(cell)):
+        if tag and tag.casefold() not in seen:
+            seen.add(tag.casefold())
+            tags.append(tag)
+    return tags
+
+
+# Longest all-caps spelling treated as an acronym rather than shouting. Covers
+# the acronyms the sheet actually carries (OSF, FAIR, ADHD, UNESCO, COSMIN) and
+# excludes the shouted words it also carries (LECTURE, PSYCHOLOGY, INTRODUCTION).
+# Measured over letters only, so "COVID-19" counts as five.
+ACRONYM_MAX_LETTERS = 6
+
+
+def is_shouted(spelling: str) -> bool:
+    """Whether an all-caps spelling reads as emphasis rather than an acronym."""
+    return spelling.isupper() and len([c for c in spelling if c.isalpha()]) > ACRONYM_MAX_LETTERS
+
+
+# Words English title case leaves lowercase unless they open the term. Used only
+# to score competing spellings against each other, never to rewrite a tag.
+FUNCTION_WORDS = frozenset(
+    'a an and as at but by for from in into nor of on or the to via vs with'.split()
+)
+
+
+def title_case_score(spelling: str) -> float:
+    """How closely a spelling follows title case, from 0 to 1.
+
+    Separates "Evolution of Science" from "Evolution Of Science" and "Data
+    Curation" from "Data curation" when both are equally common. An all-caps
+    word counts as capitalised, so acronyms inside a term ("FAIR Data") are not
+    penalised.
+    """
+    words = spelling.split()
+    matches = 0
+    for position, word in enumerate(words):
+        letters = [c for c in word if c.isalpha()]
+        if not letters:
+            matches += 1
+        elif position and word.casefold().strip('.,:;') in FUNCTION_WORDS:
+            matches += not letters[0].isupper()
+        else:
+            matches += letters[0].isupper()
+    return matches / len(words)
+
+
+def canonical_tags(df):
+    """Settle on one spelling per tag across the whole sheet.
+
+    "Open Science", "Open science" and "OPEN SCIENCE" are one term submitted
+    three ways; left alone they read as three different labels on the cards.
+    The winner is chosen rather than imposed as Title Case, so acronyms and
+    product names ("OSF", "COVID-19", "RMarkdown") keep the form contributors
+    actually use: shouted spellings last, then the most common, then the
+    closest to title case ("Evolution of Science" over "Evolution Of Science"),
+    then alphabetically so a rebuild of the same sheet is reproducible. Terms
+    submitted only one way are left untouched.
+    """
+    spellings = {}
+    for tags in df['tags'].values:
+        for tag in tags:
+            spellings.setdefault(tag.casefold(), Counter())[tag] += 1
+
+    def rank(item):
+        spelling, count = item
+        return (is_shouted(spelling), -count, -title_case_score(spelling), spelling)
+
+    canonical = {key: min(counter.items(), key=rank)[0]
+                 for key, counter in spellings.items()}
+
+    df['tags'] = [[canonical[tag.casefold()] for tag in tags] for tags in df['tags'].values]
+
+
 def split_cells(df):
     df['creators'] = [[y.strip() for y in x.split(',')] for x in df['creators'].values]
     df['primary_user'] = [[y.strip() for y in x.split(',')] for x in df['primary_user'].values]
@@ -104,14 +210,11 @@ def split_cells(df):
     df['education_level'] = [[y.strip() for y in x.split(',')] for x in df['education_level'].values]
     df['subject_areas'] = [[y.strip() for y in x.split(',')] for x in df['subject_areas'].values]
     df['FORRT_clusters'] = [[y.strip() for y in x.split(',')] for x in df['FORRT_clusters'].values]
-    # `tags` becomes a Hugo taxonomy, so a blank cell would otherwise yield
-    # [""] and collect every such resource into one archive; the sheet also
-    # carries "-" and "." as stand-ins for "no tags". Anything without a
-    # letter or digit is a placeholder, not a term, so drop it — the resource
-    # itself is kept, it just ends up untagged.
-    df['tags'] = [[y.strip() for y in x.split(',')
-                   if any(ch.isalnum() for ch in y)]
-                  for x in df['tags'].values]
+    # Tags get their own splitter: they are free text rather than a controlled
+    # vocabulary, so they need separator, placeholder and duplicate handling
+    # the other columns do not. A resource with no usable tags is still kept,
+    # it just ends up untagged.
+    df['tags'] = [split_tags(x) for x in df['tags'].values]
     df['language'] = [[y.strip() for y in x.split(',')] for x in df['language'].values]
 
 
@@ -169,6 +272,9 @@ def main():
     # Convert single string into list of values
 
     split_cells(FORRT)
+
+    # After splitting, so every tag in the sheet is compared in its final form.
+    canonical_tags(FORRT)
 
     # Create files
 

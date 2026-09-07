@@ -24,6 +24,6 @@
       "about" (dict "@type" "Thing" "name" "Open and Reproducible Science") -}}
   {{- with $desc }}{{ $article = merge $article (dict "description" .) }}{{ end -}}
   {{- with $authors }}{{ $article = merge $article (dict "author" .) }}{{ end -}}
-  {{- with .Params.tags }}{{ $article = merge $article (dict "keywords" (delimit . ", ")) }}{{ end -}}
+  {{- with partial "functions/page_tags.html" . }}{{ $article = merge $article (dict "keywords" (delimit . ", ")) }}{{ end -}}
   <script type="application/ld+json">{{ $article | jsonify | safeJS }}</script>
 {{- end -}}

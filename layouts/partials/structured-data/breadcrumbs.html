@@ -24,7 +24,6 @@
 {{ $skip := or
   .IsHome
   (eq .Type "clusters")
-  (partial "functions/is_thin_taxonomy.html" .)
 }}
 
 {{ if not $skip }}

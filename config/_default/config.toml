@@ -47,7 +47,6 @@ ignoreFiles = ["\\.ipynb$", ".ipynb_checkpoints$", "\\.Rmd$", "\\.Rmarkdown$", "
   # pages under /authors/<slug>/ (see layouts/authors/list.html). The taxonomy
   # was disabled because it collided with the content/authors/ section, which
   # suppressed every profile whose term slug matched its folder name.
-  tags = "/tag/:slug/"
   categories = "/category/:slug/"
   publication_types = "/publication-type/:slug/"
 
@@ -81,7 +80,14 @@ ignoreFiles = ["\\.ipynb$", ".ipynb_checkpoints$", "\\.Rmd$", "\\.Rmarkdown$", "
 
 # Taxonomies.
 [taxonomies]
-  tag = "tags"
+  # `tag = "tags"` taxonomy removed: `tags` is free text from the curated
+  # resources sheet, so it grew to ~1,700 terms of which three quarters apply to
+  # a single resource. The term pages were 47% of every page the site built and
+  # carried no search intent, and `FORRT_clusters` already provides curated
+  # topical navigation. `tags` stays in front matter as descriptive metadata --
+  # it still feeds site search (`layouts/_default/index.json`), the resource
+  # card filter (`partials/resource_li_card.html`) and the `[related]` indices
+  # below, none of which need a taxonomy. Rendered by `partials/tags.html`.
   category = "categories"
   publication_type = "publication_types"
   # `author = "authors"` taxonomy disabled: it collided with the content/authors/
