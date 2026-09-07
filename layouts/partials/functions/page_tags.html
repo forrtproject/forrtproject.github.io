@@ -16,7 +16,11 @@
 {{ $seen := slice }}
 
 {{ range .Params.tags }}
-  {{ range split (replaceRE `[;\n]+` "," (printf "%v" .)) "," }}
+  {{/* A run of hashtags is a list. Guarded on a leading `#` so an ordinary term
+       carrying a number ("Issue #42") is not split. */}}
+  {{ $cell := printf "%v" . }}
+  {{ if hasPrefix (trim $cell " ") "#" }}{{ $cell = replaceRE `\s+#` ",#" $cell }}{{ end }}
+  {{ range split (replaceRE `[;\n]+` "," $cell) "," }}
     {{/* `\s` does not cover the non-breaking spaces that arrive with pasted text. */}}
     {{ $tag := replaceRE `[\s\x{00a0}]+` " " . }}
     {{ $tag = trim (strings.TrimPrefix "#" (trim $tag " ")) " " }}

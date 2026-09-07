@@ -117,6 +117,15 @@ def clean_tag(raw: str) -> str:
     return tag if any(ch.isalnum() for ch in tag) else ''
 
 
+def split_hashtag_run(cell: str) -> str:
+    """Make "#a #b #c" separable, since a run of hashtags is a list.
+
+    Only applied when the cell opens with '#', so an ordinary term carrying a
+    number ("Issue #42") is left as one tag.
+    """
+    return re.sub(r'\s+#', ',#', cell) if cell.lstrip().startswith('#') else cell
+
+
 def split_tags(cell: str) -> list:
     """A tag cell as a list of clean tags, de-duplicated case-insensitively.
 
@@ -124,7 +133,7 @@ def split_tags(cell: str) -> list:
     first spelling wins here and `canonical_tags` settles it sheet-wide.
     """
     tags, seen = [], set()
-    for tag in (clean_tag(part) for part in TAG_SEPARATORS.split(cell)):
+    for tag in (clean_tag(part) for part in TAG_SEPARATORS.split(split_hashtag_run(cell))):
         if tag and tag.casefold() not in seen:
             seen.add(tag.casefold())
             tags.append(tag)
