@@ -1597,6 +1597,37 @@ article.article:has(table) .article-container {
   margin-bottom: 0.2rem;
 }
 
+/* Keep citation guidance discoverable without letting a growing author list
+ * dominate the page. The native details element is collapsed by default. */
+.disciplines-attribution {
+  margin: 0 0 1.25rem;
+}
+
+.disciplines-citation-summary {
+  cursor: pointer;
+  color: #b3005a;
+  font-size: 1.05rem;
+  font-weight: 700;
+  text-align: center;
+  padding: 0.6rem;
+  list-style-position: inside;
+}
+
+.disciplines-citation-summary:hover,
+.disciplines-citation-summary:focus-visible {
+  color: #8e0048;
+  text-decoration: underline;
+}
+
+.disciplines-attribution[open] .disciplines-citation-summary {
+  margin-bottom: 0.35rem;
+}
+
+.clusters-display-section > .container > .disciplines-attribution {
+  max-width: 760px;
+  margin: 1.5rem auto 0;
+}
+
 /* Discipline / field leads, shown on the coloured field background */
 .disciplines-leads {
   font-size: 0.9rem;

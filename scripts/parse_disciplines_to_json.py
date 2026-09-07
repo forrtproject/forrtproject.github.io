@@ -50,6 +50,8 @@ Data sources (Google Sheet 1mSlduu86_nE1sY1gXobw3Pp1vI73B_0iHBsJqjtsJU4):
     is a content decision rather than a link fix.
 """
 
+from __future__ import annotations
+
 import argparse
 import json
 import os

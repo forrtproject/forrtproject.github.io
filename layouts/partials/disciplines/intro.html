@@ -10,7 +10,6 @@
 <link rel="stylesheet" href="{{ "css/cite_us.css" | relURL }}">
 {{ end }}
 
-{{ $preprintCitation := "Farran, E. K., Silverstein, P., Ameen, A. A., Misheva, I., & Gilmore, C. (2020, December 15). Open Research: Examples of good practice, and resources across disciplines (2026 edition). https://doi.org/10.31219/osf.io/3r8hb" }}
 {{ $webCitation := "" }}
 {{ $webCitationHTML := "" }}
 {{ with site.Data.disciplines_citation }}
@@ -25,8 +24,8 @@
         Open research applies to all disciplines. If the concept of open research is new to you, it might be difficult to determine how you can apply open research practices to your research. This page provides resources and examples of open research practices relevant to your discipline. As a starting point, it may be useful to read the <a href="https://www.ukrn.org/primers/" target="_blank" rel="noopener">UK Reproducibility Network primers</a>.
       </p>
 
-      <div class="cite-us-section disciplines-attribution">
-        <h4 class="section-title">How to cite</h4>
+      <details class="cite-us-section disciplines-attribution">
+        <summary class="disciplines-citation-summary">How to cite</summary>
 
         <div class="cite-us-item">
           <div class="cite-us-text">
@@ -56,7 +55,7 @@
           </button>
         </div>
         {{ end }}
-      </div>
+      </details>
 
       <p class="intro-paragraph">
         Use the sidebar to jump to your overarching field and specific discipline. Resources are categorised into five areas: <span class="badge" style="background:#6c757d;color:#fff;">General</span> <span class="badge" style="background:#17a2b8;color:#fff;">Open Data</span> <span class="badge" style="background:#28a745;color:#fff;">Open Methods</span> <span class="badge" style="background:#fd7e14;color:#fff;">Open Outputs</span> <span class="badge" style="background:#6f42c1;color:#fff;">Open Education</span>.
@@ -77,8 +76,8 @@
 
 <script>
   var disciplinesCitations = {
-    preprint: {{ $preprintCitation }},
-    web: {{ $webCitation }}
+    preprint: {{ "Farran, E. K., Silverstein, P., Ameen, A. A., Misheva, I., & Gilmore, C. (2020, December 15). Open Research: Examples of good practice, and resources across disciplines (2026 edition). https://doi.org/10.31219/osf.io/3r8hb" | jsonify | safeJS }},
+    web: {{ with site.Data.disciplines_citation }}{{ .web | default "" | jsonify | safeJS }}{{ else }}""{{ end }}
   };
 
   async function copyDisciplinesCitation(button, key) {
