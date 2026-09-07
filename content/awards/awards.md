@@ -105,7 +105,7 @@ Thanks to our amazing community, FORRT has become an ***award-winning*** grassro
 
 ### [FORWARD: A UNESCO Decade of Science Programme](../educators-corner/023-forward-a-unesco-decade-of-science-programme/)
 
-<img src="unesco_recognition.webp" width="200" align="left" style="margin-right: 10px;" alt="FORWARD: A UNESCO Decade of Science Programme"> 
+<img src="unesco_recognition.webp" width="200" height="207" align="left" style="margin-right: 10px;" alt="FORWARD: A UNESCO Decade of Science Programme"> 
 
 **FORRT** is one of the few initiatives worldwide to be formally endorsed as a **Programme** of the [International Decade of Sciences for Sustainable Development (IDSSD, 2024–2033)](https://www.un-sciences-decade.org/en/endorsed-activities/forward-forrt-world-development-fostering-open-research-reproducibility-worldwide-accessible?hub=63) , led by UNESCO and the United Nations (UN). This endorsement reflects the highest level of UN policy recognition and positions FORRT’s work in Education & Pedagogy (Curriculum Hub), Metascience & Research (Replication Hub) and Social Justice & DEIA as an **essential contribution to the UN’s strategy for achieving the Sustainable Development Goals (SDGs)**.
 
