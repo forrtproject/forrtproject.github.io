@@ -2000,6 +2000,49 @@ h1.clusters-site-heading.clusters-hub-page__title {
   word-break: break-word;
 }
 
+.disciplines-leads {
+  font-size: 0.9rem;
+  margin: 0 0 0.75rem;
+}
+
+.disciplines-leads p {
+  display: inline;
+  margin: 0;
+}
+
+.disciplines-leads__label {
+  font-weight: 600;
+}
+
+.disciplines-attribution {
+  margin: 0 0 1.25rem;
+}
+
+.disciplines-citation-summary {
+  cursor: pointer;
+  color: #b3005a;
+  font-size: 1.05rem;
+  font-weight: 700;
+  list-style-position: inside;
+  padding: 0.6rem;
+  text-align: center;
+}
+
+.disciplines-citation-summary:hover,
+.disciplines-citation-summary:focus-visible {
+  color: #8e0048;
+  text-decoration: underline;
+}
+
+.disciplines-attribution[open] .disciplines-citation-summary {
+  margin-bottom: 0.35rem;
+}
+
+.clusters-display-section > .container > .disciplines-attribution {
+  max-width: 760px;
+  margin: 1.5rem auto 0;
+}
+
 /* -------------------------------------------------- */
 /* Featured Resources: cards, filters, popups, lists  */
 /* -------------------------------------------------- */
