@@ -41,18 +41,17 @@
       <div class="acc-header" role="button" tabindex="0">
         <span class="acc-chevron">&#9656;</span>
         <h3 class="acc-label">{{ $disc.name }}</h3>
+        {{ with $disc.leads }}
+        <span class="acc-leads">
+          <span class="acc-leads__label">Lead{{ if strings.Contains . "," }}s{{ end }}:</span> {{ . | markdownify }}
+        </span>
+        {{ end }}
         <span class="acc-count">{{ len $disc.resources }} resource{{ if ne (len $disc.resources) 1 }}s{{ end }}</span>
         <button type="button" class="acc-copy-link" data-anchor="{{ $did }}" aria-label="Copy link to this discipline" title="Copy link to this discipline">
           <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M6.5 9.5l3-3M7 4.5l1-1a3 3 0 014.25 4.25l-1 1M9 11.5l-1 1a3 3 0 01-4.25-4.25l1-1"/></svg>
         </button>
       </div>
       <div class="acc-body acc-collapsed">
-
-        {{ with $disc.leads }}
-        <div class="disciplines-leads">
-          <span class="disciplines-leads__label">Discipline lead{{ if strings.Contains . "," }}s{{ end }}:</span> {{ . | markdownify }}
-        </div>
-        {{ end }}
 
         {{ if $disc.examples }}
         <div class="sc-description">

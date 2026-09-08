@@ -492,6 +492,24 @@
   color: inherit;
   font-family: inherit;
 }
+.acc-leads {
+  flex: 0 1 auto;
+  max-width: 42%;
+  padding: 0.12rem 0.4rem;
+  border-left: 2px solid rgba(0,0,0,0.12);
+  color: rgba(0,0,0,0.52);
+  font-size: 0.62rem;
+  font-weight: 400;
+  line-height: 1.3;
+}
+.acc-leads__label {
+  color: rgba(0,0,0,0.66);
+  font-weight: 600;
+}
+.acc-leads p {
+  display: inline;
+  margin: 0;
+}
 .acc-count {
   margin-left: auto;
   font-size: 0.55rem;
@@ -1631,7 +1649,7 @@ article.article:has(table) .article-container {
 /* Discipline / field leads, shown on the coloured field background */
 .disciplines-leads {
   font-size: 0.9rem;
-  margin: 0 0 0.75rem;
+  margin: 0 0 0.55rem;
 }
 
 .disciplines-leads p {
@@ -1641,6 +1659,21 @@ article.article:has(table) .article-container {
 
 .disciplines-leads__label {
   font-weight: 600;
+}
+
+@media (max-width: 600px) {
+  .acc-header {
+    flex-wrap: wrap;
+  }
+
+  .acc-leads {
+    flex-basis: 100%;
+    max-width: none;
+    margin-left: 1rem;
+    padding-top: 0;
+    padding-bottom: 0.1rem;
+    border-left: 0;
+  }
 }
 
 .update-pending-badge {
