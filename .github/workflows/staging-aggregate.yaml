@@ -279,10 +279,21 @@ jobs:
         with:
           workflow: data-processing.yml
           name: data-artifact
-          path: .
+          # Keep the artifact isolated until it can be overlaid without
+          # clobbering files supplied by the PR being previewed.
+          path: .staging-data-artifact
           github_token: ${{ secrets.GITHUB_TOKEN }}
           search_artifacts: true
           if_no_artifact_found: warn
+
+      - name: Overlay data artifact without replacing PR discipline data
+        if: steps.download-artifact.outcome == 'success'
+        run: |
+          rsync -a \
+            --exclude='data/disciplines.json' \
+            --exclude='static/data/disciplines.json' \
+            .staging-data-artifact/ ./
+          rm -rf .staging-data-artifact
 
       # =======================
       # Data Processing (Fallback)
@@ -373,9 +384,18 @@ jobs:
         with:
           workflow: data-processing.yml
           name: data-artifact
-          path: .
+          path: .staging-data-artifact
           github_token: ${{ secrets.GITHUB_TOKEN }}
           run_id: ${{ steps.data-processing.outputs.run_id }}
+
+      - name: Overlay retried data artifact without replacing PR discipline data
+        if: steps.download-artifact-retry.outcome == 'success'
+        run: |
+          rsync -a \
+            --exclude='data/disciplines.json' \
+            --exclude='static/data/disciplines.json' \
+            .staging-data-artifact/ ./
+          rm -rf .staging-data-artifact
 
       - name: Run data processing if needed
         if: steps.download-artifact.outcome == 'failure' && steps.data-processing.outputs.data_processing_triggered != 'true'
