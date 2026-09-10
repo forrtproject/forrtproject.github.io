@@ -4,10 +4,12 @@ newsletters:
   - year: 2026
     color: "#2c7a7b"
     issues:
-      - month: "July"
-        url: "https://eocampaign1.com/web-version?p=8455a014-8c3d-11f1-b08c-dbb2e5f024fe&pt=campaign&t=1785480113&s=15da31ec23987cf79e700fdb8d094a075a7df356c2383bd26a36b8f9aeea97b0"
+      - month: "August"
+        url: "https://eocampaign1.com/web-version?p=70dccb38-a138-11f1-a13e-3dcb3d9116a3&pt=campaign&t=1788139229&s=832e7856e81cd01a0d146de9850e9190c651482bf3676650087db736ff319f4a"
         new: true 
 
+      - month: "July"
+        url: "https://eocampaign1.com/web-version?p=8455a014-8c3d-11f1-b08c-dbb2e5f024fe&pt=campaign&t=1785480113&s=15da31ec23987cf79e700fdb8d094a075a7df356c2383bd26a36b8f9aeea97b0"
       - month: "June"
         url: "https://eocampaign1.com/web-version?p=5afe9fae-760d-11f1-94e3-33635a0d7222&pt=campaign&t=1782993759&s=8f1766757614d5d1e1ecbaf98b2aae797e3a664088663a441adb70908aabd89b"
       - month: "May"

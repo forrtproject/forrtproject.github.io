@@ -19,10 +19,10 @@
 <div class="article-header">
   {{ $img_src := urls.Parse .Params.header.image }}
   {{ if $img_src.Scheme }}
-  <img src="{{ .Params.header.image }}" class="article-banner" alt="">
+  <img src="{{ .Params.header.image }}" class="article-banner" alt="{{ with .Params.header.alt_text }}{{ . }}{{ else }}Header image for {{ .Title }}{{ end }}">
   {{ else }}
   {{ $media_dir := $.Scratch.Get "media_dir" }}
-  <img src="{{ (printf "/%s/%s" $media_dir .Params.header.image) | relURL }}" class="article-banner" alt="">
+  <img src="{{ (printf "/%s/%s" $media_dir .Params.header.image) | relURL }}" class="article-banner" alt="{{ with .Params.header.alt_text }}{{ . }}{{ else }}Header image for {{ .Title }}{{ end }}">
   {{ end }}
 
   {{ with .Params.header.caption }}<span class="article-header-caption">{{ . | markdownify | emojify }}</span>{{ end }}
@@ -67,7 +67,7 @@
 {{/* Featured image */}}
 <div class="article-header {{$image_container}} featured-image-wrapper mt-4 mb-4" style="max-width: {{$image.Width}}px; max-height: {{$image.Height}}px;">
   <div style="position: relative">
-    <img src="{{ $image.RelPermalink }}" alt="{{ with $.Params.image.alt_text }}{{.}}{{ end }}" class="featured-image">
+    <img src="{{ $image.RelPermalink }}" width="{{ $image.Width }}" height="{{ $image.Height }}" alt="{{ with $.Params.image.alt_text }}{{ . }}{{ else }}Featured image for {{ $.Title }}{{ end }}" class="featured-image">
     {{ with $.Params.image.caption }}<span class="article-header-caption">{{ . | markdownify | emojify }}</span>{{ end }}
   </div>
 </div>

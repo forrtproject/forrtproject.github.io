@@ -11,15 +11,19 @@
       {{ printf "<script src=\"%s\" integrity=\"%s\" crossorigin=\"anonymous\"></script>" (printf $js.fancybox.url $js.fancybox.version) $js.fancybox.sri | safeHTML }}
       {{ printf "<script src=\"%s\" integrity=\"%s\" crossorigin=\"anonymous\"></script>" (printf $js.instantpage.url $js.instantpage.version) $js.instantpage.sri | safeHTML }}
 
-      {{ if or .Params.diagram site.Params.diagram }}
-        {{ printf "<script src=\"%s\" integrity=\"%s\" crossorigin=\"anonymous\" title=\"mermaid\"></script>" (printf $js.mermaid.url $js.mermaid.version) $js.mermaid.sri | safeHTML }}
+      {{/* Mermaid and Highlight.js load only on pages that need them; site_head.html sets
+           the "diagram_enabled" and "highlight_enabled" flags. Both are deferred: their
+           only callers sit in academic.js's `$(document).ready` handler, which runs after
+           deferred scripts have executed. */}}
+      {{ if $scr.Get "diagram_enabled" }}
+        {{ printf "<script src=\"%s\" integrity=\"%s\" crossorigin=\"anonymous\" title=\"mermaid\" defer></script>" (printf $js.mermaid.url $js.mermaid.version) $js.mermaid.sri | safeHTML }}
       {{ end }}
 
-      {{ if $.Scratch.Get "highlight_enabled" }}
+      {{ if $scr.Get "highlight_enabled" }}
         {{ $v := $js.highlight.version }}
-        {{ printf "<script src=\"%s\" integrity=\"%s\" crossorigin=\"anonymous\"></script>" (printf $js.highlight.url $v) $js.highlight.sri | safeHTML }}
+        {{ printf "<script src=\"%s\" integrity=\"%s\" crossorigin=\"anonymous\" defer></script>" (printf $js.highlight.url $v) $js.highlight.sri | safeHTML }}
         {{ range site.Params.highlight_languages }}
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/{{ $v }}/languages/{{ . }}.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/{{ $v }}/languages/{{ . }}.min.js" defer></script>
         {{ end }}
       {{ end }}
 

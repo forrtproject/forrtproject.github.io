@@ -263,6 +263,12 @@ jobs:
         uses: actions/checkout@v6
         with:
           ref: ${{ needs.aggregate-prs.outputs.aggregated-branch || 'main' }}
+          fetch-depth: 0  # full history so Hugo's Git-derived dates match production
+
+      # See deploy.yaml: Git quotes non-ASCII paths unless this is off, and
+      # Hugo then finds no date for them.
+      - name: Let Git report non-ASCII paths unquoted
+        run: git config core.quotepath false
 
       - name: Configure Git
         run: |
@@ -279,20 +285,15 @@ jobs:
         with:
           workflow: data-processing.yml
           name: data-artifact
-          # Keep the artifact isolated until it can be overlaid without
-          # clobbering files supplied by the PR being previewed.
           path: .staging-data-artifact
           github_token: ${{ secrets.GITHUB_TOKEN }}
           search_artifacts: true
           if_no_artifact_found: warn
 
-      - name: Overlay data artifact without replacing PR discipline data
+      - name: Select newer committed or artifact data
         if: steps.download-artifact.outcome == 'success'
         run: |
-          rsync -a \
-            --exclude='data/disciplines.json' \
-            --exclude='static/data/disciplines.json' \
-            .staging-data-artifact/ ./
+          python3 scripts/data_artifact.py overlay .staging-data-artifact
           rm -rf .staging-data-artifact
 
       # =======================
@@ -388,13 +389,10 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           run_id: ${{ steps.data-processing.outputs.run_id }}
 
-      - name: Overlay retried data artifact without replacing PR discipline data
+      - name: Select newer data after artifact retry
         if: steps.download-artifact-retry.outcome == 'success'
         run: |
-          rsync -a \
-            --exclude='data/disciplines.json' \
-            --exclude='static/data/disciplines.json' \
-            .staging-data-artifact/ ./
+          python3 scripts/data_artifact.py overlay .staging-data-artifact
           rm -rf .staging-data-artifact
 
       - name: Run data processing if needed
