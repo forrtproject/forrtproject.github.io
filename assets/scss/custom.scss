@@ -3278,8 +3278,8 @@ h1.clusters-site-heading.clusters-hub-page__title {
  *  `subtitle = "---"` / `***` content dividers (which some sections had and
  *  others didn't). Scoped to .home-section so inner pages are unaffected.
  * ============================================================ */
-.home-section .section-heading h1::after,
-.home-section.wg-about-welcome h1::after {
+.home-section .section-heading h2::after,
+.home-section.wg-about-welcome h2::after {
   content: "";
   display: block;
   height: 1px;
@@ -3461,6 +3461,16 @@ h1.clusters-site-heading.clusters-hub-page__title {
 }
 
 /* ---- "What is FORRT?" media column: logo + video stacked, text beside it. ---- */
+/* Featurette images carry intrinsic width/height attributes; scale them with the column. */
+.wg-featurette-alternative img,
+.wg-featurette-welcome img,
+.wg-featurette-team img {
+  height: auto;
+}
+/* About section title: same size as the section headings. */
+.home-section.wg-about-welcome h2 {
+  font-size: 2.25rem;
+}
 .wg-about-welcome .avatar {
   width: 170px;
   height: 170px;
@@ -3561,4 +3571,26 @@ h1.clusters-site-heading.clusters-hub-page__title {
 @media (max-width: 600px) {
   .nla-grid { grid-template-columns: repeat(auto-fill, minmax(95px, 1fr)); }
   .nla-archive-header, .nla-subscribe-band { flex-direction: column; align-items: flex-start; }
+}
+
+/* ============================================================
+ *  Cite modal BibTeX block.
+ *  `<code class="tex hljs">` in the citation modal used to inherit its colours
+ *  and block layout from the highlight.js theme stylesheet, which now loads only
+ *  on pages that actually contain a code block. Without it the snippet falls
+ *  back to the inline-code rule (pink on pink, no padding), so restate the few
+ *  declarations the hljs theme provided. Values mirror highlight.js `github`
+ *  (light) and the existing `.dark code` colours (dark).
+ * ============================================================ */
+code.tex {
+  display: block;
+  overflow-x: auto;
+  padding: 0.5em;
+  color: #333;
+  background: #f8f8f8;
+}
+
+.dark code.tex {
+  color: rgb(139, 233, 253);
+  background: rgb(68, 71, 90);
 }

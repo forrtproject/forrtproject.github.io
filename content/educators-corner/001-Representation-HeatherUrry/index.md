@@ -62,7 +62,7 @@ It’s also marred by the fact that scientists are humans with standpoints that 
 
 I showed them clips from [Picture a Scientist](https://web.archive.org/web/20210529203210/https://www.pictureascientist.com/) so they could appreciate what it’s like to be a woman in science, and the progress that’s been made to remediate gender bias (e.g., [the MIT report from 1999](http://web.mit.edu/fnl/women/women.html)).
  
-![](iceberg.webp) 
+![Iceberg diagram: unwanted sexual attention, coercion and assault sit above the waterline, while subtle exclusions, being left off an email, name-calling, hostility and being passed over for promotion sit below it](iceberg.webp) 
 
 We also talked about the idea that some seem to have been left out, women of color, in particular, but also disabled, LGBTQ, first generation, indigenous people, and all their intersections. 
 
@@ -70,7 +70,7 @@ We talked about the loss to science, especially when innovative ideas put forwar
 
 I showed them powerful clips of one woman of color’s experience as a scientist, professor of chemistry, Raychelle Burks ([@DrRubidium](https://twitter.com/DrRubidium)). Dr. Burks captured so perfectly the importance of representation.
 
-![](her1.webp) ![](her2.webp) 
+![Still from Picture a Scientist: chemistry professor Raychelle Burks speaking to camera](her1.webp) ![Still from Picture a Scientist: Raychelle Burks laughing in her laboratory, wearing safety glasses](her2.webp) 
 
 I talked about how these problems are not limited to male-dominated sciences but that these issues pervade psychological science too. 
 

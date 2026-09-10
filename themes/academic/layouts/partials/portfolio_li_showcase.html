@@ -53,7 +53,7 @@
       {{ with $resource }}
       {{ $image := .Resize "540x" }}
       {{if $do_link}}<a href="{{ $link }}" {{ $target | safeHTMLAttr }}>{{end}}
-        <img src="{{ $image.RelPermalink }}" alt="">
+        <img src="{{ $image.RelPermalink }}" alt="{{ with $item.Params.image.alttext }}{{ . }}{{ else }}Featured image for {{ $item.Title }}{{ end }}">
       {{if $do_link}}</a>{{end}}
       {{end}}
     </div>

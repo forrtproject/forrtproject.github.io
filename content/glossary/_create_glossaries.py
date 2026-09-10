@@ -3,10 +3,15 @@ import re
 import json
 import pandas as pd
 import os
+import sys
 from io import StringIO
+from pathlib import Path
 from pypinyin import lazy_pinyin, Style
 
 script_dir = os.path.dirname(os.path.abspath(__file__))
+
+sys.path.insert(0, str(Path(script_dir).resolve().parents[1] / 'scripts'))
+from generated_lastmod import load_previous, resolve_lastmod, git_commit_dates
 language_map = {
     'EN': 'english',
     'AR': 'arabic',
@@ -289,6 +294,14 @@ for language_code in languages_to_process:
 # Create markdown files
 for language_name, entries in formatted_data.items():
     language_dir = os.path.join(script_dir, language_name)
+
+    # Read the previous entries before deleting them, so each term can keep its
+    # `lastmod` for as long as its content is unchanged. Commit dates are
+    # collected in one pass up front; they only bootstrap entries written
+    # before `lastmod` existed.
+    previous_entries = load_previous(language_dir)
+    commit_dates = git_commit_dates(language_dir)
+
     # Remove existing glossary entry files to ensure deleted entries don't persist
     # Preserve _index.md files as they are not regenerated
     if os.path.exists(language_dir):
@@ -304,7 +317,13 @@ for language_name, entries in formatted_data.items():
     for entry in entries:
         file_name = clean_filename(entry['title'])
         file_path = os.path.join(language_dir, file_name + ".md")
-        
+
+        entry["lastmod"] = resolve_lastmod(
+            entry,
+            previous_entries.get(file_name + ".md"),
+            lambda: commit_dates.get(file_name + ".md"),
+        )
+
         with open(file_path, 'w', encoding='utf-8') as f:
             json.dump(entry, f, ensure_ascii=False, indent=4)
 
