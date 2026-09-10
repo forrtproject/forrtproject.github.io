@@ -285,10 +285,16 @@ jobs:
         with:
           workflow: data-processing.yml
           name: data-artifact
-          path: .
+          path: .staging-data-artifact
           github_token: ${{ secrets.GITHUB_TOKEN }}
           search_artifacts: true
           if_no_artifact_found: warn
+
+      - name: Select newer committed or artifact data
+        if: steps.download-artifact.outcome == 'success'
+        run: |
+          python3 scripts/data_artifact.py overlay .staging-data-artifact
+          rm -rf .staging-data-artifact
 
       # =======================
       # Data Processing (Fallback)
@@ -379,9 +385,15 @@ jobs:
         with:
           workflow: data-processing.yml
           name: data-artifact
-          path: .
+          path: .staging-data-artifact
           github_token: ${{ secrets.GITHUB_TOKEN }}
           run_id: ${{ steps.data-processing.outputs.run_id }}
+
+      - name: Select newer data after artifact retry
+        if: steps.download-artifact-retry.outcome == 'success'
+        run: |
+          python3 scripts/data_artifact.py overlay .staging-data-artifact
+          rm -rf .staging-data-artifact
 
       - name: Run data processing if needed
         if: steps.download-artifact.outcome == 'failure' && steps.data-processing.outputs.data_processing_triggered != 'true'
