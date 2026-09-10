@@ -84,10 +84,10 @@ SHOW_FIELDS = {
     "Methodologies",
 }
 
-# A URL token: lazy match that stops at whitespace, closing brackets, or
+# A URL token: lazy match that stops at whitespace, angle brackets, or
 # the start of the next URL — so two URLs concatenated without a separator
 # (a common artifact when Google Docs hyperlinks are stripped) split cleanly.
-URL_RE = re.compile(r"https?://[^\s)<>]+?(?=https?://|\s|$|[)<>])")
+URL_RE = re.compile(r"https?://[^\s<>]+?(?=https?://|\s|$|[<>])")
 DOI_RE = re.compile(r"\b10\.\d{4,9}/[^\s<>]+", re.I)
 LINK_REPAIRS = json.loads(Path(__file__).with_name("disciplines_link_repairs.json").read_text())
 CATEGORY_ALIASES = {
@@ -106,6 +106,10 @@ def clean_url(url):
         url = parse_qs(urlsplit(url).query).get("url", [url])[0]
     # Word sometimes includes the space after a hyperlink in its target.
     url = re.sub(r"(?:%20|%09|%0a|%0d)+$", "", url.strip(), flags=re.I)
+    # Parentheses inside DOIs are significant; only remove unmatched closers
+    # added by prose such as '(see https://example.org/paper)'.
+    while url.endswith(")") and url.count(")") > url.count("("):
+        url = url[:-1]
     return LINK_REPAIRS.get(url, LINK_REPAIRS.get(url.rstrip("/"), url))
 
 
@@ -149,7 +153,10 @@ def _clean_title(s: str) -> str:
     t = re.sub(r"\s+", " ", s).strip()
     if t.endswith(".") and not re.search(r"\b[a-z]\.[a-z]\.$", t):
         t = t[:-1]
-    return t.strip(" \t").rstrip(":,;").strip()
+    t = t.strip(" \t").rstrip(":,;").strip()
+    while t.endswith("(") and t.count("(") > t.count(")"):
+        t = t[:-1].rstrip()
+    return t
 
 
 def _resource_cell_texts(cells):

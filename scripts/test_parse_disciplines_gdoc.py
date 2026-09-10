@@ -71,6 +71,15 @@ class DocumentConversionTests(unittest.TestCase):
         rows = parse_cell_resources("General", "Paper. https://doi.org/10.1234/paper%20")
         self.assertEqual(rows[0]["link"], "https://doi.org/10.1234/paper")
 
+    def test_parentheses_in_doi_are_not_left_in_title(self):
+        url = "https://doi.org/10.1016/S0313-5926(09)50047-1"
+        self.assertEqual(parse_cell_resources("General", "Paper. " + url)[0], {
+            "title": "Paper", "link": url, "category": "General",
+        })
+        self.assertEqual(parse_cell_resources("General", "Paper (https://example.org/paper)")[0], {
+            "title": "Paper", "link": "https://example.org/paper", "category": "General",
+        })
+
     def test_document_without_cover_and_example_hyperlinks(self):
         doc = Document()
         doc.add_heading("Natural Sciences", 1)
