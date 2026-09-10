@@ -173,7 +173,7 @@ How is AI changing the way research is done, checked and understood? The **FORRT
 
 ## Programme
 
-Here are the sessions and the talks in each, in the order they run. **Click any talk to read its abstract.** The running order is provisional while speakers confirm their slots, so there are no clock times yet; those go up on **10 September**. Until then, plan by day and by morning or afternoon. Sessions run between 09:30 and 18:00 CEST (UTC+2).
+Here are the sessions and the talks in each, in the order they run. **Click any talk to read its abstract.** Clock times go up once the last few speakers have confirmed their slots. Until then, plan by day and by morning or afternoon: sessions run between 09:30 and 18:00 CEST (UTC+2), and nothing clashes.
 
 <!-- PROGRAMME:START -->
 <!-- built by build/public_programme.py in the submission-review repo -->
