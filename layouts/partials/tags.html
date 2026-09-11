@@ -1,0 +1,16 @@
+{{/* Site override of the theme's `tags` partial: tags link to the site-wide
+     tag browser, not to a term page.
+
+     `tags` is no longer a taxonomy (see `[taxonomies]` in config.toml), so the
+     theme's `.GetTerms "tags"` resolves to nothing and there are no per-term
+     archives to link to. `/tags/?tag=` lists every page carrying the term
+     across all sections, which is the browse those archives stood in for.
+     Reached by every section via `_default/single.html` -> `page_footer`. */}}
+
+{{ with partial "functions/page_tags.html" . }}
+<div class="article-tags">
+  {{ range . }}
+  <a class="badge badge-light" href="{{ printf "tags/?tag=%s" (. | urlquery) | relURL }}">{{ . }}</a>
+  {{ end }}
+</div>
+{{ end }}

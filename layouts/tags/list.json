@@ -1,0 +1,23 @@
+{{- /* Every tagged page on the site, for the browser on /tags/.
+
+       A dedicated index rather than the site search's `/index.json`, which
+       carries each page's full plain text and runs to ~5 MB; this is the four
+       fields the tag browser needs, for the pages that actually have tags.
+
+       Tags are lower-cased so the browser matches without repeating the casing
+       rules. Keys are short because they repeat on every row. */ -}}
+{{- $rows := slice -}}
+{{- range site.RegularPages -}}
+  {{- $page := . -}}
+  {{- $tags := partial "functions/page_tags.html" $page -}}
+  {{- if $tags -}}
+    {{- $lower := slice -}}
+    {{- range $tags -}}{{- $lower = $lower | append (lower .) -}}{{- end -}}
+    {{- $rows = $rows | append (dict
+        "t" $page.Title
+        "u" $page.RelPermalink
+        "s" ($page.Section | default "")
+        "g" $lower) -}}
+  {{- end -}}
+{{- end -}}
+{{- $rows | jsonify -}}
