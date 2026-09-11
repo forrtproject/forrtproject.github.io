@@ -62,7 +62,7 @@ jobs:
         # Checkout the repository code to the runner environment
         with:
           # Full history: the generators read per-file commit dates to bootstrap
-          # `lastmod`, which a shallow clone would report as HEAD for every file.
+          # `lastmod` and artifact freshness; shallow clones report HEAD for every file.
           fetch-depth: 0
 
       #======================
@@ -497,12 +497,16 @@ jobs:
       #========================================
       # Upload all processed data files as artifact
       #========================================
+      - name: Record per-file data freshness
+        run: python3 scripts/data_artifact.py manifest
+
       - name: Upload data artifact
         id: upload-artifact
         uses: actions/upload-artifact@v7
         with:
           name: data-artifact
           path: |
+            data-artifact-manifest.json
             content/contributors/tenzing.md
             scripts/forrt_contribs/contributors_cache.csv
             content/curated_resources/
