@@ -1,0 +1,56 @@
+{{/* Every tag in use, with the number of pages carrying it.
+
+     There is no `tags` taxonomy to read counts from any more (see
+     `[taxonomies]` in config/_default/config.toml), so this walks the pages
+     once. `Scratch.SetInMap` mutates one map in place; tallying with `merge`
+     instead would copy a ~1,650-key map on each of ~5,400 tags. The term order
+     is tracked alongside the tally because Hugo has no `keys` function.
+
+     Call through `partialCached` so the walk happens once per build.
+
+     Inputs: none (uses `site`). Output: dict with `rows` (dicts of `tag` and
+     `count`, most used first, one row per term regardless of spelling),
+     `pages` (pages carrying at least one tag) and `total` (tag applications).
+     `pages` is counted here rather than with a `where` on `Params.tags`, which
+     would also match the `tags: []` left on pages cleared in #486. */}}
+
+{{ $tally := newScratch }}
+{{ $terms := slice }}
+{{ $pages := 0 }}
+{{ $total := 0 }}
+
+{{ range site.RegularPages }}
+  {{ $tags := partial "functions/page_tags.html" . }}
+  {{ if $tags }}{{ $pages = add $pages 1 }}{{ end }}
+  {{ range $tags }}
+    {{ $total = add $total 1 }}
+
+    {{/* Tallied case-insensitively to match the card filter, which lower-cases
+         both sides. Counting per spelling would put 415 against "Open Science"
+         where the filter returns 422, reading as an off-by-seven bug. */}}
+    {{ $key := lower . }}
+    {{ $seen := int (index ($tally.Get "n" | default dict) $key | default 0) }}
+    {{ if eq $seen 0 }}{{ $terms = $terms | append $key }}{{ end }}
+    {{ $tally.SetInMap "n" $key (add $seen 1) }}
+
+    {{/* Label: the most common spelling, so it reads the way contributors
+         write it. `canonical_tags()` in content/resources/resource.py settles
+         this at the source; until a sheet rebuild lands, variants coexist. */}}
+    {{ $spellKey := printf "%s\x1e%s" $key . }}
+    {{ $mine := add 1 (int (index ($tally.Get "spell" | default dict) $spellKey | default 0)) }}
+    {{ $tally.SetInMap "spell" $spellKey $mine }}
+    {{ if gt $mine (int (index ($tally.Get "best" | default dict) $key | default 0)) }}
+      {{ $tally.SetInMap "best" $key $mine }}
+      {{ $tally.SetInMap "label" $key . }}
+    {{ end }}
+  {{ end }}
+{{ end }}
+
+{{ $counts := $tally.Get "n" | default dict }}
+{{ $labels := $tally.Get "label" | default dict }}
+{{ $rows := slice }}
+{{ range sort $terms }}
+  {{ $rows = $rows | append (dict "tag" (index $labels .) "count" (int (index $counts .))) }}
+{{ end }}
+
+{{ return (dict "rows" (sort $rows "count" "desc") "pages" $pages "total" $total) }}
