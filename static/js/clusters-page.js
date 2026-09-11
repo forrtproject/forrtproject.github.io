@@ -107,6 +107,39 @@
     }
   }
 
+  /* ---- GA4: per-discipline view tracking (disciplines page only) ---- */
+
+  var trackedDisciplineViews = {};
+
+  /** Text of the field heading, without the leading number badge. */
+  function fieldNameFor(sectionEl) {
+    var clusterSection = sectionEl.closest ? sectionEl.closest('.cluster-section') : null;
+    if (!clusterSection) return '';
+    var titleEl = clusterSection.querySelector('.cluster-title');
+    if (!titleEl) return '';
+    var text = titleEl.textContent || '';
+    var numberEl = titleEl.querySelector('.cluster-number');
+    if (numberEl) text = text.replace(numberEl.textContent, '');
+    return text.replace(/\s+/g, ' ').trim();
+  }
+
+  /** Send a GA4 discipline_view event when a discipline accordion is opened.
+   *  Only fires for disciplines anchors (f<N>-<slug>), once per id per page load.
+   *  `source` is 'hash', 'sidebar' or 'click'. */
+  function trackDisciplineView(sectionEl, source) {
+    if (!sectionEl || !sectionEl.id || !sectionEl.closest('#disciplines-layout')) return;
+    if (trackedDisciplineViews[sectionEl.id]) return;
+    if (typeof window.gtag !== 'function') return;
+    trackedDisciplineViews[sectionEl.id] = true;
+    var labelEl = sectionEl.querySelector('.acc-label');
+    window.gtag('event', 'discipline_view', {
+      discipline: labelEl ? (labelEl.textContent || '').replace(/\s+/g, ' ').trim() : '',
+      field: fieldNameFor(sectionEl),
+      anchor: sectionEl.id,
+      source: source
+    });
+  }
+
   /** Expand an accordion section's .acc-body if it's currently collapsed. Returns
    *  the .acc-header (a good scroll target) or null if this isn't an accordion section. */
   function expandAccordionIfCollapsed(sectionEl) {
@@ -137,6 +170,7 @@
         body.style.maxHeight = body.scrollHeight + 'px';
         body.style.opacity = '1';
         if (chevron) chevron.classList.add('acc-open');
+        trackDisciplineView(header.closest('.acc-section'), 'click');
       } else {
         body.style.maxHeight = '0';
         body.style.opacity = '0';
@@ -544,6 +578,7 @@
         if (target) {
           activateBootstrapTabIfNeeded(sectionId, tabId);
           var accHeader = expandAccordionIfCollapsed(target);
+          trackDisciplineView(target, 'sidebar');
           var scrollEl = accHeader || target;
           setTimeout(function () { scrollElementBelowStickyChrome(scrollEl); }, 50);
         }
@@ -551,14 +586,21 @@
       });
     });
 
-    /* e.g. /clusters/cluster-2/#c2-sc1 or #c2-featured, or /disciplines/#f1-chemistry — scroll to matching section */
+    /* e.g. /clusters/cluster-2/#c2-sc1 or #c2-featured, or /disciplines/#chemistry — scroll to matching section */
     function applyClusterUrlHash() {
       var raw = window.location.hash.replace(/^#/, '');
-      if (!raw || !/^[cf]\d+-[a-z0-9-]+$/.test(raw)) return;
+      if (!raw || !/^[a-z0-9-]+$/.test(raw)) return;
       var target = document.getElementById(raw);
-      if (!target) return;
+      /* Earlier disciplines links used f<N>-<slug>; map them onto the plain slug. */
+      if (!target && /^f\d+-/.test(raw)) {
+        raw = raw.replace(/^f\d+-/, '');
+        target = document.getElementById(raw);
+        if (target) { try { window.history.replaceState(null, '', '#' + raw); } catch (err) {} }
+      }
+      if (!target || !target.closest('.clusters-layout')) return;
       activateBootstrapTabIfNeeded(raw, raw + '-tab');
       var accHeader = expandAccordionIfCollapsed(target);
+      trackDisciplineView(target, 'hash');
       setTimeout(function () {
         var scrollEl = accHeader || target;
         scrollElementBelowStickyChrome(scrollEl);
@@ -599,6 +641,9 @@
       var anchor = btn.getAttribute('data-anchor');
       if (!anchor) return;
       var url = window.location.origin + window.location.pathname + window.location.search + '#' + anchor;
+      if (btn.closest('#disciplines-layout') && typeof window.gtag === 'function') {
+        window.gtag('event', 'discipline_link_copied', { anchor: anchor });
+      }
       /* Reflect the anchor in the address bar without re-scrolling (no hashchange). */
       try { window.history.replaceState(null, '', '#' + anchor); } catch (err) {}
       copyTextToClipboard(url).then(function () {

@@ -20,7 +20,7 @@
           {{ range $di, $disc := $field.disciplines }}
           {{/* Must match the slug scheme in field_section.html */}}
           {{ $slug := $disc.name | lower | replaceRE "[^a-z0-9]+" "-" | replaceRE "^-+|-+$" "" }}
-          {{ $did := printf "f%d-%s" (int $field.number) $slug }}
+          {{ $did := $slug }}
           {{ $subHref := printf "#%s" $fid }}
           <li class="nav-item">
             <a href="{{ $subHref }}" class="nav-link sc-nav-link" data-cluster="{{ $fid }}" data-tab="{{ $did }}-tab">
