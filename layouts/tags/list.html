@@ -1,0 +1,41 @@
+{{ define "main" }}
+{{/* Browse index for a vocabulary that is no longer a Hugo taxonomy.
+
+     Replaces the 1,597 per-term archives and their 160-page paginated index
+     with one page: the terms are worth seeing as a set, the individual archives
+     were not (three quarters listed a single resource). Selecting a term filters
+     a site-wide list of tagged pages in place -- every section, not just curated
+     resources -- from `list.json` via `static/js/tag-browser.js`.
+
+     The cloud is server-rendered so the vocabulary is readable, linkable and
+     indexable with JavaScript off; only the result list needs the script. */}}
+
+{{ $tags := partialCached "functions/tag_counts.html" . }}
+{{ $rows := $tags.rows }}
+
+<div class="universal-wrapper">
+  <h1>{{ .Title }}</h1>
+  {{ with .Params.description }}<p class="lead">{{ . }}</p>{{ end }}
+  <p class="text-muted">
+    {{ len $rows }} tags across {{ $tags.pages }} pages, most used first. Tags are
+    contributor-supplied keywords; for curated topics see
+    <a href="{{ "clusters/" | relURL }}">FORRT clusters</a>.
+  </p>
+
+  {{/* Filled by the script when a tag is selected; stays empty otherwise. */}}
+  <div id="tag-results" class="my-4" hidden>
+    <h2 id="tag-results-heading" class="h4"></h2>
+    <ul id="tag-results-list" class="list-unstyled"></ul>
+    <p><a href="{{ "tags/" | relURL }}">Show all tags</a></p>
+  </div>
+
+  <div id="tag-cloud" class="tag-cloud my-4">
+    {{ range $rows }}
+      <a class="badge badge-light mr-1 mb-1"
+         href="{{ printf "tags/?tag=%s" (.tag | urlquery) | relURL }}"
+         title="{{ .count }} page{{ if ne .count 1 }}s{{ end }}">{{ .tag }}
+        <span class="text-muted">{{ .count }}</span></a>
+    {{ end }}
+  </div>
+</div>
+{{ end }}
