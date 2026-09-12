@@ -1,0 +1,23 @@
+{{/* Intrinsic width/height attributes for the site logo, so the navbar reserves the
+     brand's box before the image loads. The stylesheet sizes the logo by height with
+     `width: auto`, which leaves its width unknown until the file arrives and shifts
+     the menu sideways on first paint.
+     Input: the logo resource (as returned by functions/get_logo).
+     Output: `width="W" height="H"` (safe attribute string), or empty when unavailable.
+
+     Hugo exposes .Width/.Height on raster resources only, so the SVG's aspect ratio is
+     read from the first viewBox in the file, which is the root <svg> element's. */}}
+{{ $dims := "" }}
+{{ with . }}
+  {{ if eq (path.Ext .Name | lower) ".svg" }}
+    {{ with (findRE `viewBox="[^"]+"` .Content 1) }}
+      {{ $nums := findRE `[0-9]+(\.[0-9]+)?` (index . 0) }}
+      {{ if eq (len $nums) 4 }}
+        {{ $dims = printf "width=\"%.0f\" height=\"%.0f\"" (float (index $nums 2)) (float (index $nums 3)) }}
+      {{ end }}
+    {{ end }}
+  {{ else }}
+    {{ $dims = printf "width=\"%d\" height=\"%d\"" .Width .Height }}
+  {{ end }}
+{{ end }}
+{{ return ($dims | safeHTMLAttr) }}

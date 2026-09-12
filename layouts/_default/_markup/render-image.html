@@ -1,0 +1,28 @@
+{{/* Markdown image hook: reproduce Hugo's default <img> and add intrinsic width/height
+     so the browser reserves the image's box before it loads. The site stylesheet sets
+     `img { height: auto; max-width: 100% }`, so the attributes fix the aspect ratio
+     without freezing the rendered size or breaking responsive scaling.
+
+     Dimensions come from the page bundle's own resource first, then from static/, and
+     are skipped for remote images and for formats Hugo cannot measure (SVG). */}}
+{{- $dest := .Destination -}}
+{{- $dims := "" -}}
+{{- $raster := slice "png" "jpeg" "gif" "webp" -}}
+{{- if not (or (strings.HasPrefix $dest "http") (strings.HasPrefix $dest "//") (strings.HasPrefix $dest "data:")) -}}
+  {{- with .PageInner.Resources.Get (strings.TrimPrefix "./" $dest) -}}
+    {{/* Match Hugo's default hook, which links page-bundle images by permalink rather
+         than by the author's page-relative path. */}}
+    {{- $dest = .RelPermalink -}}
+    {{- if in $raster .MediaType.SubType -}}
+      {{- $dims = printf "width=\"%d\" height=\"%d\"" .Width .Height -}}
+    {{- end -}}
+  {{- else -}}
+    {{- $static := printf "static/%s" (strings.TrimPrefix "/" $dest) -}}
+    {{- if and (fileExists $static) (in (slice ".png" ".jpg" ".jpeg" ".gif" ".webp") (path.Ext $static | lower)) -}}
+      {{- with imageConfig $static -}}
+        {{- $dims = printf "width=\"%d\" height=\"%d\"" .Width .Height -}}
+      {{- end -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
+<img src="{{ $dest | safeURL }}" alt="{{ .PlainText }}"{{ with .Title }} title="{{ . }}"{{ end }}{{ with $dims }} {{ . | safeHTMLAttr }}{{ end }}>

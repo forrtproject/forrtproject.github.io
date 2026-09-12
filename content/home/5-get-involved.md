@@ -23,7 +23,7 @@ title = "How can you help?"
 #  icon = "users"
 #  icon_pack = "fas"
   img = "teamwork.webp"
-  imgalttext = "Image of a megaphone"
+  imgalttext = "Several hands stacked on top of each other. Illustration."
   name = "Join Our Teams"
   description = "Everything we develop and produce is in the open and open to anyone willing to help. Check out our [several teams here](/about/teams) and our [get-involved page](/about/get-involved) too."
 
