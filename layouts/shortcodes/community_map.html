@@ -1,0 +1,5 @@
+<!--community_map.html-->
+{{/* Usage: {{< community_map account app height [title] >}}. Title is optional but gives the iframe an accessible name for screen readers. */}}
+<iframe src="https://{{ index .Params 0 }}.shinyapps.io/{{ index .Params 1 }}/"
+        title="{{ .Get 3 | default "Shiny app" }}" loading="lazy"
+        style="height:{{ index .Params 2 }}px;width:100%;border:none;overflow:auto;" scrolling="auto"></iframe>
