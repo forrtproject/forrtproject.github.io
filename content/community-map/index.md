@@ -13,9 +13,13 @@ The FORRT Community Map is a visualization tool that illustrates the global reac
 {{< community_map 600 >}}
 
 
+<!-- FORRT Community Map iframe temporarily disabled. The code below represents the planned future rendering of the map. -->
+
+<!--
 <iframe
-  src="https://forrtproject.github.io/map-community/Forrt-map/Forrt-Mapping/community_map.html"
+  src="https://forrt.org/map-community/"
   title="FORRT Community Map"
   style="width: 100%; height: 600px; border: 0;"
   loading="lazy">
 </iframe>
+-->
