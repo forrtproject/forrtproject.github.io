@@ -492,6 +492,24 @@
   color: inherit;
   font-family: inherit;
 }
+.acc-leads {
+  flex: 0 1 auto;
+  max-width: 42%;
+  padding: 0.12rem 0.4rem;
+  border-left: 2px solid rgba(0,0,0,0.12);
+  color: rgba(0,0,0,0.52);
+  font-size: 0.62rem;
+  font-weight: 400;
+  line-height: 1.3;
+}
+.acc-leads__label {
+  color: rgba(0,0,0,0.66);
+  font-weight: 600;
+}
+.acc-leads p {
+  display: inline;
+  margin: 0;
+}
 .acc-count {
   margin-left: auto;
   font-size: 0.55rem;
@@ -1568,6 +1586,96 @@ article.article:has(table) .article-container {
   display: inline-block;
 }
 
+/* Partner logo beside the disciplines intro (plain image, no lightbox) */
+.disciplines-partner {
+  text-align: center;
+  max-width: 220px;
+  /* Sit beside the opening paragraph rather than centred against the whole column. */
+  align-self: flex-start;
+  margin-top: 1rem;
+}
+
+.disciplines-partner img {
+  width: 160px;
+  height: auto;
+}
+
+.disciplines-partner__caption {
+  font-size: 0.8rem;
+  color: #666;
+  margin-bottom: 0.4rem;
+  white-space: nowrap;
+}
+
+/* Lead-in label in front of each citation in the disciplines "How to cite" box */
+.disciplines-cite-lead {
+  display: block;
+  font-weight: 600;
+  font-size: 0.82rem;
+  margin-bottom: 0.2rem;
+}
+
+/* Keep citation guidance discoverable without letting a growing author list
+ * dominate the page. The native details element is collapsed by default. */
+.disciplines-attribution {
+  margin: 0 0 1.25rem;
+}
+
+.disciplines-citation-summary {
+  cursor: pointer;
+  color: #b3005a;
+  font-size: 1.05rem;
+  font-weight: 700;
+  text-align: center;
+  padding: 0.6rem;
+  list-style-position: inside;
+}
+
+.disciplines-citation-summary:hover,
+.disciplines-citation-summary:focus-visible {
+  color: #8e0048;
+  text-decoration: underline;
+}
+
+.disciplines-attribution[open] .disciplines-citation-summary {
+  margin-bottom: 0.35rem;
+}
+
+.clusters-display-section > .container > .disciplines-attribution {
+  max-width: 760px;
+  margin: 1.5rem auto 0;
+}
+
+/* Discipline / field leads, shown on the coloured field background */
+.disciplines-leads {
+  font-size: 0.9rem;
+  margin: 0 0 0.55rem;
+}
+
+.disciplines-leads p {
+  margin: 0;
+  display: inline;
+}
+
+.disciplines-leads__label {
+  font-weight: 600;
+}
+
+@media (max-width: 600px) {
+  .acc-header {
+    flex-wrap: wrap;
+  }
+
+  .acc-leads {
+    flex-basis: 100%;
+    max-width: none;
+    margin-left: 1rem;
+    padding-top: 0;
+    padding-bottom: 0.1rem;
+    border-left: 0;
+  }
+}
+
 .update-pending-badge {
   position: absolute;
   bottom: 0.5rem;
@@ -1658,6 +1766,11 @@ article.article:has(table) .article-container {
 
   .intro-hero-image {
     max-width: 260px;
+  }
+
+  .disciplines-partner {
+    align-self: center;
+    margin-top: 0;
   }
 
   .intro-paragraph {

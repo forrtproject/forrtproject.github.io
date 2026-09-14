@@ -1,5 +1,6 @@
 {{/* all_fields.html - Render all fields from disciplines.json data */}}
 {{ $data := site.Data.disciplines }}
+{{ $showLeads := .Params.show_leads | default false }}
 {{ if not $data }}
   <div class="alert alert-warning">
     <strong>Data Error:</strong> disciplines.json not found. Run <code>python3 scripts/parse_disciplines_to_json.py</code>.
@@ -20,7 +21,7 @@
 
     <main class="col-12 col-lg-8 col-xl-9 clusters-content">
       {{ range $fi, $field := $data.fields }}
-        {{ partial "disciplines/field_section.html" (dict "field" $field "fi" $fi "colors" $colors) }}
+        {{ partial "disciplines/field_section.html" (dict "field" $field "fi" $fi "colors" $colors "show_leads" $showLeads) }}
       {{ end }}
     </main>
   </div>
