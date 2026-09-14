@@ -17,6 +17,7 @@
 {{/* Get metedata. */}}
 
 {{ $resource := ($item.Resources.ByType "image").GetMatch "*featured*" }}
+{{ $tags := partial "functions/page_tags.html" $item }}
 {{ $js_tag_classes := delimit (apply (apply $item.Params.FORRT_clusters "replace" "." " " "-") "printf" "js-id-%s" ".") " " }}
 
 {{/* Build a hidden, label-free search index spanning all fields (issue #286). The
@@ -29,7 +30,7 @@
   (delimit $item.Params.Material_Type " ")
   (delimit $item.Params.Primary_User " ")
   (delimit $item.Params.Subject_Areas " ")
-  (delimit $item.Params.Tags " ")
+  (delimit $tags " ")
   (delimit $item.Params.Education_Level " ")
   (delimit $item.Params.Language " ")
   ($item.Params.Conditions_of_Use | default "")
@@ -53,7 +54,7 @@
         <p class="small mb-1 pr-2"><strong>Type of resources: </strong>{{delimit $item.Params.Material_Type ", " }}</p>
         <p class="small mb-1 pr-2"><strong>Primary user(s): </strong>{{delimit $item.Params.Primary_User ", " }}</p>
         <p class="small mb-1 pr-2"><strong>Subject area(s): </strong>{{delimit $item.Params.Subject_Areas ", " }}</p>
-        {{ with $item.Params.Tags }} <p class="small mb-1 pr-2 small"><strong>Tag(s): </strong>{{delimit . ", " }}</p>{{end}}
+        {{ with $tags }} <p class="small mb-1 pr-2 small"><strong>Tag(s): </strong>{{delimit . ", " }}</p>{{end}}
         {{with $item.Params.link_to_resource }} <a href="{{ . }}">
           <p class="btn btn-sm btn-outline-primary mb-1 pr-2 d-flex justify-content-around" style="line-height: 1;">Link to resource</p>
         </a>{{end}}

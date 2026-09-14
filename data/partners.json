@@ -275,6 +275,14 @@
     "description": "The LMU Open Science Center has the mission to promote and foster open research practices at LMU Munich. As a central knowledge hub, the OSC provides support for researchers on various aspects of open science, including research data management, FAIR data sharing, licensing, data privacy, and reproducible workflows."
   },
   {
+    "name": "Community for Open Science in Education",
+    "short_name": "COSiE",
+    "logo": "COSiE.webp",
+    "url": "https://openscience-utrecht.com/cosie/",
+    "cluster": "Education & Training",
+    "description": "The Community for Open Science in Education (COSiE) is an interdisciplinary community founded by staff from Utrecht University (UU) and UMC Utrecht. COSiE is a growing and dynamic community with members from different disciplines and faculties. We focus on developing, sharing, and reusing Open Educational Resources (OER) for Open Science education across bachelor’s, master’s, and PhD programmes, with materials that are transferable across disciplines. COSiE supports UU and UMC Utrecht teachers in including Open Science in your teaching by offering pedagogical advice on how to integrate Open Science principles into their courses. It also provides a platform where you can share and gather knowledge, exchange ideas and Open Science OER and connect with others interested in Open Science in Education. You can learn from best practices and experts by experience, while receiving hands-on support to turn your own ideas into reality. For more information, the latest news and how to join, visit [their website](https://openscience-utrecht.com/cosie/)."
+  },
+  {
     "name": "Metadocencia",
     "short_name": "Metadocencia",
     "logo": "MD.webp",

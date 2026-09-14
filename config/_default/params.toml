@@ -70,15 +70,6 @@ social_profiles = [
   "https://facebook.com/forrtproject",
 ]
 
-# Minimum number of entries a `tags` term needs before its archive page is left
-# open to search engines. Tags come from free text on curated resources, and
-# roughly three quarters of them are used exactly once, so without a floor the
-# site publishes ~1,500 near-empty archives that mostly restate a single card.
-# Terms below the floor are still browsable and still pass link equity — they
-# are marked `noindex, follow` and kept out of the sitemap. Set to 0 to index
-# every term again.
-tag_index_min_pages = 5
-
 ############################
 ## Site Features
 ############################
