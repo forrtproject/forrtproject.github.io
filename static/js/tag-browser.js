@@ -1,11 +1,9 @@
 /**
- * Site-wide tag browsing on /tags/.
+ * Tag browsing on /tags/.
  *
- * Tag badges across the site link to `/tags/?tag=<term>` rather than to a
- * per-term archive page; those were removed with the `tags` taxonomy (issue
- * #307). This reads the parameter, fetches the page index built by
- * `layouts/tags/list.json`, and lists every tagged page that carries the term
- * -- any section, not just curated resources.
+ * Tag badges across the site link to `/tags/?tag=<term>`. This reads the
+ * parameter, fetches the page index built by `layouts/tags/list.json`, and
+ * lists every tagged page that carries the term, from any section.
  *
  * With no parameter, or with JavaScript off, the page is the server-rendered
  * tag cloud and nothing here runs.

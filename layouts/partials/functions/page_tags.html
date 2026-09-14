@@ -1,8 +1,9 @@
-{{/* A page's `tags`, cleaned — the single definition for the whole site.
+{{/* A page's `tags`, cleaned and de-duplicated case-insensitively — the single
+     definition for the whole site.
 
      Tags arrive from the curated-resources sheet and from hand-written front
-     matter, and four consumers read them (badges, search index, resource cards,
-     JSON-LD keywords). Cleaning here rather than in each one keeps them from
+     matter, and several consumers read them (badges, search index, resource
+     cards, JSON-LD keywords, the tag browser). Cleaning here keeps them from
      disagreeing, and a section added later inherits it.
 
      Casing is left alone on purpose: picking one spelling per term needs
@@ -16,22 +17,11 @@
 {{ $seen := slice }}
 
 {{ range .Params.tags }}
-  {{/* A run of hashtags is a list. Guarded on a leading `#` so an ordinary term
-       carrying a number ("Issue #42") is not split. */}}
-  {{ $cell := printf "%v" . }}
-  {{ if hasPrefix (trim $cell " ") "#" }}{{ $cell = replaceRE `\s+#` ",#" $cell }}{{ end }}
-  {{ range split (replaceRE `[;\n]+` "," $cell) "," }}
-    {{/* `\s` does not cover the non-breaking spaces that arrive with pasted text. */}}
-    {{ $tag := replaceRE `[\s\x{00a0}]+` " " . }}
-    {{ $tag = trim (strings.TrimPrefix "#" (trim $tag " ")) " " }}
-    {{/* `&` because "Diversity, Equity, & Inclusion" splits into a "& Inclusion". */}}
-    {{ $tag = trim $tag " .,;:-&" }}
-    {{ if findRE `[\pL\pN]` $tag 1 }}
-      {{ $key := lower $tag }}
-      {{ if not (in $seen $key) }}
-        {{ $seen = $seen | append $key }}
-        {{ $tags = $tags | append $tag }}
-      {{ end }}
+  {{ range partial "functions/clean_tag_cell.html" . }}
+    {{ $key := lower . }}
+    {{ if not (in $seen $key) }}
+      {{ $seen = $seen | append $key }}
+      {{ $tags = $tags | append . }}
     {{ end }}
   {{ end }}
 {{ end }}

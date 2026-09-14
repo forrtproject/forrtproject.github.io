@@ -80,9 +80,10 @@ ignoreFiles = ["\\.ipynb$", ".ipynb_checkpoints$", "\\.Rmd$", "\\.Rmarkdown$", "
 
 # Taxonomies.
 [taxonomies]
-  # `tag = "tags"` taxonomy removed (#307): free text, ~1,700 terms, three
-  # quarters of them used once. `tags` stays in front matter — search, the
-  # resource card filter and `[related]` read it directly, no taxonomy needed.
+  # `tags` is deliberately not a taxonomy: it is free text (~1,700 terms, three
+  # quarters used once), and per-term archives would be thin pages. Search, the
+  # resource card filter, `[related]` and the /tags/ browser read it as plain
+  # front matter.
   category = "categories"
   publication_type = "publication_types"
   # `author = "authors"` taxonomy disabled: it collided with the content/authors/

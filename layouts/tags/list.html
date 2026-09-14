@@ -1,14 +1,16 @@
 {{ define "main" }}
-{{/* Browse index for a vocabulary that is no longer a Hugo taxonomy.
-
-     Replaces the 1,597 per-term archives and their 160-page paginated index
-     with one page: the terms are worth seeing as a set, the individual archives
-     were not (three quarters listed a single resource). Selecting a term filters
-     a site-wide list of tagged pages in place -- every section, not just curated
-     resources -- from `list.json` via `static/js/tag-browser.js`.
+{{/* One browse page for the whole `tags` vocabulary.
 
      The cloud is server-rendered so the vocabulary is readable, linkable and
-     indexable with JavaScript off; only the result list needs the script. */}}
+     indexable with JavaScript off. Selecting a term reloads with `?tag=`, and
+     `static/js/tag-browser.js` fills the result list from `list.json` with every
+     tagged page in any section.
+
+     Renders once per build, so it also publishes the legacy `/tag/<term>/`
+     redirects. */}}
+
+{{/* Assigned, not printed: the partial's only output is loop whitespace. */}}
+{{ $_ := partial "publish_legacy_tag_redirects.html" . }}
 
 {{ $tags := partialCached "functions/tag_counts.html" . }}
 {{ $rows := $tags.rows }}
