@@ -1,0 +1,37 @@
+{{/* Writes a redirect at every `/tag/<term>/` URL the former `tags` taxonomy
+     generated, plus `/tag/`, pointing at the matching `/tags/?tag=<term>`.
+
+     Front-matter `aliases` cannot carry the term: the alias template receives
+     only the target page, not the alias path. Each redirect is therefore
+     published as a resource, which also keeps it out of the sitemap.
+
+     Slugs come from the raw `tags` values, as the taxonomy's did. A value that
+     cleans to several terms (a hashtag run, a `;` list) redirects to `/tags/`.
+
+     Call once per build (`layouts/tags/list.html` does). */}}
+
+{{ $written := newScratch }}
+{{ $tagsURL := "tags/" | absURL }}
+
+{{ range site.RegularPages }}
+  {{ range .Params.tags }}
+    {{ $raw := printf "%v" . }}
+    {{/* `urlize` percent-encodes, but the taxonomy wrote literal `#` and
+         non-ASCII characters into its directory names. */}}
+    {{ $slug := urlize $raw | urls.PathUnescape }}
+    {{ if and $slug (not ($written.Get $slug)) }}
+      {{ $written.Set $slug true }}
+      {{ $target := $tagsURL }}
+      {{ with partial "functions/clean_tag_cell.html" $raw }}
+        {{ if eq (len .) 1 }}
+          {{ $target = printf "%s?tag=%s" $tagsURL (index . 0 | urlquery) }}
+        {{ end }}
+      {{ end }}
+      {{ $html := partial "redirect_page.html" (dict "Permalink" $target) }}
+      {{ (resources.FromString (printf "tag/%s/index.html" $slug) $html).Publish }}
+    {{ end }}
+  {{ end }}
+{{ end }}
+
+{{ $html := partial "redirect_page.html" (dict "Permalink" $tagsURL) }}
+{{ (resources.FromString "tag/index.html" $html).Publish }}
