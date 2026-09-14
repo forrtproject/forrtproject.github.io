@@ -14,6 +14,7 @@ sharing_description = "Open research resources and examples across 40 discipline
 keywords = [ "open research", "open science disciplines", "FORRT", "open data", "open methods", "open access", "reproducibility", "research transparency", "discipline-specific open science" ]
 
 draft = false
+show_leads = false # Set to true when field and discipline leads are ready to display.
 
 [sitemap]
   changefreq = "monthly"
