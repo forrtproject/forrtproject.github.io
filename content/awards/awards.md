@@ -121,23 +121,23 @@ Thanks to our amazing community, FORRT has become an ***award-winning*** grassro
 
 <br>
 
-<img src="sips.webp" align="right" alt="Society for the Improvement of Psychological Science logo" /> In 2025, FORRT received the ***[Mission Award for Educational resources on the replication crisis](https://forrt.org/positive-changes-replication-crisis/)*** from the Society for the Improvement of Psychological Science [(Announcement)](https://improvingpsych.org/mission/awards/#:~:text=SEMA3-,June%202025,Educational%20resources%20on%20the%20replication%20crisis,-June%202025).
+<img src="sips.webp" width="200" height="70" align="right" alt="Society for the Improvement of Psychological Science logo" /> In 2025, FORRT received the ***[Mission Award for Educational resources on the replication crisis](https://forrt.org/positive-changes-replication-crisis/)*** from the Society for the Improvement of Psychological Science [(Announcement)](https://improvingpsych.org/mission/awards/#:~:text=SEMA3-,June%202025,Educational%20resources%20on%20the%20replication%20crisis,-June%202025).
 
 <br style="clear: both;" />
 
-<img src="sips.webp" align="right" alt="Society for the Improvement of Psychological Science logo" /> In 2025, FORRT received a ***Commendation Award for [Pownall et al. (2023): Teaching open and reproducible scholarship: a critical review of the evidence base for current pedagogical methods and their outcomes](https://doi.org/10.1098/rsos.221255)*** from the Society for the Improvement of Psychological Science [(Announcement)](https://improvingpsych.org/mission/awards/).
+<img src="sips.webp" width="200" height="70" align="right" alt="Society for the Improvement of Psychological Science logo" /> In 2025, FORRT received a ***Commendation Award for [Pownall et al. (2023): Teaching open and reproducible scholarship: a critical review of the evidence base for current pedagogical methods and their outcomes](https://doi.org/10.1098/rsos.221255)*** from the Society for the Improvement of Psychological Science [(Announcement)](https://improvingpsych.org/mission/awards/).
 
 <br style="clear: both;" />
 
-<img src="sips.webp" align="right" alt="Society for the Improvement of Psychological Science logo" /> In 2025, FORRT received a ***Commendation Award for [Open Science in the Developing World: A Collection of Practical Guides for Researchers in Developing Countries](https://forrt.org/os-developing-world/)*** [(published article)](https://doi.org/10.1177/25152459251357565) from the Society for the Improvement of Psychological Science [(Announcement)](https://improvingpsych.org/mission/awards/).
+<img src="sips.webp" width="200" height="70" align="right" alt="Society for the Improvement of Psychological Science logo" /> In 2025, FORRT received a ***Commendation Award for [Open Science in the Developing World: A Collection of Practical Guides for Researchers in Developing Countries](https://forrt.org/os-developing-world/)*** [(published article)](https://doi.org/10.1177/25152459251357565) from the Society for the Improvement of Psychological Science [(Announcement)](https://improvingpsych.org/mission/awards/).
 
 <br style="clear: both;" />
 
-<img src="sips.webp" align="right" alt="Society for the Improvement of Psychological Science logo" /> In 2025, FORRT received a ***Commendation Award for [International Initiatives to Enhance Awareness and Uptake of Open Research in Psychology: A Systematic Mapping Review](https://doi.org/10.1098/rsos.241726)*** from the Society for the Improvement of Psychological Science [(Announcement)](https://improvingpsych.org/mission/awards/).
+<img src="sips.webp" width="200" height="70" align="right" alt="Society for the Improvement of Psychological Science logo" /> In 2025, FORRT received a ***Commendation Award for [International Initiatives to Enhance Awareness and Uptake of Open Research in Psychology: A Systematic Mapping Review](https://doi.org/10.1098/rsos.241726)*** from the Society for the Improvement of Psychological Science [(Announcement)](https://improvingpsych.org/mission/awards/).
 
 <br style="clear: both;" />
 
-<img src="sips.webp" align="right" alt="Society for the Improvement of Psychological Science logo" /> In 2025, FORRT received a ***[Commendation Award for FORRT Credit Project](https://forrt.org/contributors/)*** from the Society for the Improvement of Psychological Science [(Announcement)](https://improvingpsych.org/mission/awards/).
+<img src="sips.webp" width="200" height="70" align="right" alt="Society for the Improvement of Psychological Science logo" /> In 2025, FORRT received a ***[Commendation Award for FORRT Credit Project](https://forrt.org/contributors/)*** from the Society for the Improvement of Psychological Science [(Announcement)](https://improvingpsych.org/mission/awards/).
 
 <br style="clear: both;" />
 
@@ -153,7 +153,7 @@ Thanks to our amazing community, FORRT has become an ***award-winning*** grassro
 
 <br style="clear: both;" />
 
-<img src="sips.webp" align="right" alt="Society for the Improvement of Psychological Science logo" /> In 2023, FORRT received the ***[Mission Award](https://improvingpsych.org/mission/awards/)*** from the Society for the Improvement of Psychological Science for its overall initiatives.
+<img src="sips.webp" width="200" height="70" align="right" alt="Society for the Improvement of Psychological Science logo" /> In 2023, FORRT received the ***[Mission Award](https://improvingpsych.org/mission/awards/)*** from the Society for the Improvement of Psychological Science for its overall initiatives.
 
 - **[Announcement by SIPS](https://improvingpsych.org/mission/awards/)**
 
@@ -163,7 +163,7 @@ Thanks to our amazing community, FORRT has become an ***award-winning*** grassro
 
 <br style="clear: both;" />
 
-<img src="sips.webp" align="right" alt="Society for the Improvement of Psychological Science logo" /> In 2023, FORRT received a ***Commendation award*** from the Society for the Improvement of Psychological Science for its [Replications & Reversals](https://forrt.org/reversals/) project.
+<img src="sips.webp" width="200" height="70" align="right" alt="Society for the Improvement of Psychological Science logo" /> In 2023, FORRT received a ***Commendation award*** from the Society for the Improvement of Psychological Science for its [Replications & Reversals](https://forrt.org/reversals/) project.
 
 - **[Announcement by SIPS](https://improvingpsych.org/2023/08/22/sips-2023-awards-announced/)**
 
@@ -173,7 +173,7 @@ Thanks to our amazing community, FORRT has become an ***award-winning*** grassro
 
 <br style="clear: both;" />
 
-<img src="sips.webp" align="right" alt="Society for the Improvement of Psychological Science logo" /> In 2022, FORRT received a ***Grants-In-Aid to Reduce Barriers to Improving Psychological Science*** from the Society for the Improvement of Psychological Science for the FORRT's Neurodiversity initiative, receiving $1250.
+<img src="sips.webp" width="200" height="70" align="right" alt="Society for the Improvement of Psychological Science logo" /> In 2022, FORRT received a ***Grants-In-Aid to Reduce Barriers to Improving Psychological Science*** from the Society for the Improvement of Psychological Science for the FORRT's Neurodiversity initiative, receiving $1250.
 
 <br style="clear: both;" />
 
@@ -181,7 +181,7 @@ Thanks to our amazing community, FORRT has become an ***award-winning*** grassro
 
 <br style="clear: both;" />
 
-<img src="sips.webp" align="right" alt="Society for the Improvement of Psychological Science logo" /> In 2022, FORRT received a ***[Commendation](https://improvingpsych.org/mission/awards/)*** from the Society for the Improvement of Psychological Science for its [Summaries of Open Science](https://forrt.org/summaries/) project.
+<img src="sips.webp" width="200" height="70" align="right" alt="Society for the Improvement of Psychological Science logo" /> In 2022, FORRT received a ***[Commendation](https://improvingpsych.org/mission/awards/)*** from the Society for the Improvement of Psychological Science for its [Summaries of Open Science](https://forrt.org/summaries/) project.
 
 <br style="clear: both;" />
 
@@ -197,7 +197,7 @@ In 2021, FORRT has received a ***Kellogg School of Management Consultancy on “
 
 <br style="clear: both;" />
 
-<img src="sips.webp" align="right" alt="Society for the Improvement of Psychological Science logo" /> In 2020, FORRT has received a ***Commendation*** from the [Society for the Improvement of Psychological Science](http://improvingpsych.org/mission/awards/) for its manuscript ["Introducing a Framework for Open and Reproducible Research Training (FORRT)"](https://osf.io/bnh7p/). 
+<img src="sips.webp" width="200" height="70" align="right" alt="Society for the Improvement of Psychological Science logo" /> In 2020, FORRT has received a ***Commendation*** from the [Society for the Improvement of Psychological Science](http://improvingpsych.org/mission/awards/) for its manuscript ["Introducing a Framework for Open and Reproducible Research Training (FORRT)"](https://osf.io/bnh7p/). 
 
 <br>
 
