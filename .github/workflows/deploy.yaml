@@ -240,7 +240,7 @@ jobs:
       # =======================
       # Built HTML Regression Checks
       # =======================
-      - name: Check built HTML (headings, conditional assets, image alt)
+      - name: Check built HTML (headings, conditional assets, image alt and dimensions)
         run: |
           python3 scripts/check_seo_html.py public
 
