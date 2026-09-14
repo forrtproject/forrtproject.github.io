@@ -4,7 +4,7 @@ summary: An interactive map illustrating the global reach and diversity of the F
 ---
 The FORRT Community Map is a visualization tool that illustrates the global reach and
  diversity of the Framework for Open and Reproducible Research Training (FORRT) community.
- As of January 2024, this map provides a snapshot of FORRT's members worldwide, 
+ As of September 2026, this map provides a snapshot of FORRT's members worldwide, 
  highlighting FORRT's extensive international collaboration and
   its commitment to fostering open and reproducible research practices across various regions. 
  The map underscores FORRT's dedication to inclusivity and its efforts to build a 
