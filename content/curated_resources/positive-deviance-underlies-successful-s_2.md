@@ -31,7 +31,7 @@
     "tags": [
         "Deviance",
         "Open Science",
-        "Evolution Of Science"
+        "Evolution of Science"
     ],
     "forrt_clusters_new": "Replication Crisis and Credibility Revolution",
     "forrt_sub_clusters": "History of the replication crisis & credibility revolution",
@@ -39,5 +39,5 @@
     "in-clusters": true,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2025-02-27"
+    "lastmod": "2026-09-15"
 }

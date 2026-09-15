@@ -47,7 +47,7 @@
         "Data Sharing",
         "Data Management",
         "Open Data",
-        "FAIR Data"
+        "FAIR data"
     ],
     "forrt_clusters_new": "FAIR data and materials",
     "forrt_sub_clusters": "Research data management",
@@ -55,5 +55,5 @@
     "in-clusters": false,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2023-10-18"
+    "lastmod": "2026-09-15"
 }

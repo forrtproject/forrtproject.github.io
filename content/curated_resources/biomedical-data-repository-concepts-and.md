@@ -33,8 +33,8 @@
         "Open Data and Materials"
     ],
     "tags": [
-        "Biomedical sciences",
-        "Data repositories"
+        "Biomedical Sciences",
+        "Data Repositories"
     ],
     "forrt_clusters_new": "FAIR data and materials",
     "forrt_sub_clusters": "Repositories, Research data management",
@@ -42,5 +42,5 @@
     "in-clusters": true,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2024-12-12"
+    "lastmod": "2026-09-15"
 }

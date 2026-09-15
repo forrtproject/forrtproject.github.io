@@ -36,7 +36,7 @@
         "Pre-Analysis Plans",
         "Replication Crisis",
         "Predictivism",
-        "P-hacking",
+        "P-Hacking",
         "Philosophy"
     ],
     "forrt_clusters_new": "Pre-analysis Planning",
@@ -45,5 +45,5 @@
     "in-clusters": true,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2023-10-30"
+    "lastmod": "2026-09-15"
 }

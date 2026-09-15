@@ -29,7 +29,12 @@
         "Open Data and Materials"
     ],
     "tags": [
-        "Research; Policy; Evaluation; Open Education Data; Job; Positions"
+        "Research",
+        "Policy",
+        "Evaluation",
+        "Open Education Data",
+        "Job",
+        "Positions"
     ],
     "forrt_clusters_new": "FAIR data and materials",
     "forrt_sub_clusters": "Repositories",
@@ -37,5 +42,5 @@
     "in-clusters": false,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2025-03-17"
+    "lastmod": "2026-09-15"
 }

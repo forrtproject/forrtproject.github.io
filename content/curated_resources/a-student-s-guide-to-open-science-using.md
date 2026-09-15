@@ -33,7 +33,10 @@
         "Replication Research"
     ],
     "tags": [
-        "Replication Crisis; Psychological Research; Academic Reform; Preregistration"
+        "Replication Crisis",
+        "Psychological Research",
+        "Academic Reform",
+        "Preregistration"
     ],
     "forrt_clusters_new": "Replication and meta-research",
     "forrt_sub_clusters": "Meta-research",
@@ -41,5 +44,5 @@
     "in-clusters": false,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2025-03-15"
+    "lastmod": "2026-09-15"
 }

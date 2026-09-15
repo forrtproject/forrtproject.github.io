@@ -27,7 +27,11 @@
         "Academic Life and Culture"
     ],
     "tags": [
-        "Academic Job Market; Higher Education; Academic Labor Conditions; Funding; Transnational"
+        "Academic Job Market",
+        "Higher Education",
+        "Academic Labor Conditions",
+        "Funding",
+        "Transnational"
     ],
     "forrt_clusters_new": "Academic Structures and Institutions, Ways of Working",
     "forrt_sub_clusters": "Types of academic, non-academic, & alt-academic positions, Structures and incentives in academia",
@@ -35,5 +39,5 @@
     "in-clusters": false,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2025-03-15"
+    "lastmod": "2026-09-15"
 }

@@ -29,7 +29,12 @@
         "Replication Research"
     ],
     "tags": [
-        "Research Methods; Psychological Science; Statistics; Methodology; Research Design; Replicability"
+        "Research Methods",
+        "Psychological Science",
+        "Statistics",
+        "Methodology",
+        "Research Design",
+        "Replicability"
     ],
     "forrt_clusters_new": "Replication Crisis and Credibility Revolution",
     "forrt_sub_clusters": "History of the replication crisis & credibility revolution, Questionable research practices & their prevalence",
@@ -37,5 +42,5 @@
     "in-clusters": false,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2025-06-12"
+    "lastmod": "2026-09-15"
 }

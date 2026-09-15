@@ -46,7 +46,7 @@
     ],
     "tags": [
         "Systematic Review",
-        "Meta-Analysis"
+        "Meta-analysis"
     ],
     "forrt_clusters_new": "Transparency and reproducibility in computation and analysis",
     "forrt_sub_clusters": "Analysis and reporting in qualitative research",
@@ -54,5 +54,5 @@
     "in-clusters": false,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2023-10-18"
+    "lastmod": "2026-09-15"
 }

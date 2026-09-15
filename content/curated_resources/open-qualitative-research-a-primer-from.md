@@ -35,7 +35,13 @@
         "Open Data and Materials"
     ],
     "tags": [
-        "Open Qualitative Research; Qualitative Methods; Data Sharing; Participatory Research; Preregistration; Positionality; Open Data"
+        "Open Qualitative Research",
+        "Qualitative Methods",
+        "Data Sharing",
+        "Participatory Research",
+        "Preregistration",
+        "Positionality",
+        "Open Data"
     ],
     "forrt_clusters_new": "Pre-analysis Planning, FAIR data and materials",
     "forrt_sub_clusters": "Reasons to share data and materials, Preregistration",
@@ -43,5 +49,5 @@
     "in-clusters": false,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2025-03-17"
+    "lastmod": "2026-09-15"
 }

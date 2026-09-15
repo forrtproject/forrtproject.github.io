@@ -30,7 +30,8 @@
         "Open Data and Materials"
     ],
     "tags": [
-        "Replicable Science; Psychology"
+        "Replicable Science",
+        "Psychology"
     ],
     "forrt_clusters_new": "FAIR data and materials",
     "forrt_sub_clusters": "FAIR principles applied to Education & Training",
@@ -38,5 +39,5 @@
     "in-clusters": false,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2025-06-10"
+    "lastmod": "2026-09-15"
 }

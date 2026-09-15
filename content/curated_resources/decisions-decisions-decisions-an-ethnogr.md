@@ -33,10 +33,10 @@
     ],
     "tags": [
         "Researcher Discretion",
-        "Researcher Degrees Of Freedom",
+        "Researcher Degrees of Freedom",
         "Ethnography",
         "Research Integrity",
-        "Responsible Conduct Of Research"
+        "Responsible Conduct of Research"
     ],
     "forrt_clusters_new": "Research Integrity",
     "forrt_sub_clusters": "Research Culture, Incentives, and Institutional Responsibilities",
@@ -44,5 +44,5 @@
     "in-clusters": false,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2025-02-27"
+    "lastmod": "2026-09-15"
 }

@@ -35,7 +35,10 @@
         "Academic Life and Culture"
     ],
     "tags": [
-        "authorship; research ethics; publication ethics; research integrity"
+        "Authorship",
+        "Research Ethics",
+        "Publication Ethics",
+        "Research Integrity"
     ],
     "forrt_clusters_new": "Academic Structures and Institutions",
     "forrt_sub_clusters": "Structures and incentives in academia, Citation Politics & Practices",
@@ -43,5 +46,5 @@
     "in-clusters": false,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2024-08-08"
+    "lastmod": "2026-09-15"
 }

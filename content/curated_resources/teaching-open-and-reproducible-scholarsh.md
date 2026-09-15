@@ -100,7 +100,12 @@
         "Academic Life and Culture"
     ],
     "tags": [
-        "Pedagogy; Higher Education; Graduate Education; Teaching Practices; Open Scholarship; Reproducible Scholarship"
+        "Pedagogy",
+        "Higher Education",
+        "Graduate Education",
+        "Teaching Practices",
+        "Open Scholarship",
+        "Reproducible Scholarship"
     ],
     "forrt_clusters_new": "Ways of Working",
     "forrt_sub_clusters": "Proposed science improvement initiatives on statistics, measurement, teaching, data sharing, code sharing, pre-registration, & replication, Research with students (under- and graduate)",
@@ -108,5 +113,5 @@
     "in-clusters": true,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2025-03-20"
+    "lastmod": "2026-09-15"
 }

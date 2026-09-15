@@ -35,7 +35,9 @@
         "Academic Life and Culture"
     ],
     "tags": [
-        "Bad Science ; Research Critique; Reproducible Science"
+        "Bad Science",
+        "Research Critique",
+        "Reproducible Science"
     ],
     "forrt_clusters_new": "Academic Structures and Institutions",
     "forrt_sub_clusters": "Structures and incentives in academia",
@@ -43,5 +45,5 @@
     "in-clusters": false,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2025-02-14"
+    "lastmod": "2026-09-15"
 }

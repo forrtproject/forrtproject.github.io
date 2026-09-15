@@ -34,9 +34,11 @@
         "Open Data and Materials"
     ],
     "tags": [
-        "Summaries; Open and Reproducible Science; Diversity",
+        "Summaries",
+        "Open and Reproducible Science",
+        "Diversity",
         "Equity",
-        "& Inclusion"
+        "Inclusion"
     ],
     "forrt_clusters_new": "FAIR data and materials",
     "forrt_sub_clusters": "FAIR principles applied to Education & Training",
@@ -44,5 +46,5 @@
     "in-clusters": false,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2025-04-08"
+    "lastmod": "2026-09-15"
 }

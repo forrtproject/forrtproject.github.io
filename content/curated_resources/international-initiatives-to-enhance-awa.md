@@ -34,7 +34,15 @@
         "Academic Life and Culture"
     ],
     "tags": [
-        "Open Research; Reproducibility; Replicability; Research Transparency; Psychology; Systematic Mapping Review; International Initiatives; Community-Based Change; Research Culture"
+        "Open Research",
+        "Reproducibility",
+        "Replicability",
+        "Research Transparency",
+        "Psychology",
+        "Systematic Mapping Review",
+        "International Initiatives",
+        "Community-Based Change",
+        "Research Culture"
     ],
     "forrt_clusters_new": "Academic Structures and Institutions",
     "forrt_sub_clusters": "Research assessment, proposals, and reforms",
@@ -42,5 +50,5 @@
     "in-clusters": true,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2025-03-20"
+    "lastmod": "2026-09-15"
 }

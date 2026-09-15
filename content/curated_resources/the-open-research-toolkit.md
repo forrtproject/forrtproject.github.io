@@ -35,7 +35,15 @@
         "Open Data and Materials"
     ],
     "tags": [
-        "Open Research; FAIR Data Principles; Open Access; Reproducibility; Open Educational Resources (OER); Data & Software; Citizen Science; Open Peer Review; Open Policies"
+        "Open Research",
+        "FAIR Data Principles",
+        "Open Access",
+        "Reproducibility",
+        "Open Educational Resources (OER)",
+        "Data & Software",
+        "Citizen Science",
+        "Open Peer Review",
+        "Open Policies"
     ],
     "forrt_clusters_new": "FAIR data and materials",
     "forrt_sub_clusters": "Research data management, FAIR principles applied to Education & Training",
@@ -43,5 +51,5 @@
     "in-clusters": false,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2025-03-13"
+    "lastmod": "2026-09-15"
 }

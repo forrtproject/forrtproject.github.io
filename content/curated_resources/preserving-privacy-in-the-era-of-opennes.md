@@ -34,10 +34,10 @@
         "Open Data and Materials"
     ],
     "tags": [
-        "open data",
+        "Open Data",
         "transparency and openness promotion",
-        "TOP factor",
-        "privacy"
+        "TOP Factor",
+        "Privacy"
     ],
     "forrt_clusters_new": "FAIR data and materials",
     "forrt_sub_clusters": "Reasons not to share: Privacy and security considerations",
@@ -45,5 +45,5 @@
     "in-clusters": true,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2023-12-13"
+    "lastmod": "2026-09-15"
 }

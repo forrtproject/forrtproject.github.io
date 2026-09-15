@@ -38,7 +38,14 @@
         "Replication Research"
     ],
     "tags": [
-        "Replication; Credibility Crisis; Psychology; Research Methods; Resource Planning; Preregistration; Teaching; Workshop"
+        "Replication",
+        "Credibility Crisis",
+        "Psychology",
+        "Research Methods",
+        "Resource Planning",
+        "Preregistration",
+        "Teaching",
+        "Workshop"
     ],
     "forrt_clusters_new": "Replication and meta-research, Replication Crisis and Credibility Revolution",
     "forrt_sub_clusters": "Conducting replication studies; challenges, limitations, and comparisons with the original study, History of the replication crisis & credibility revolution",
@@ -46,5 +53,5 @@
     "in-clusters": false,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2025-03-13"
+    "lastmod": "2026-09-15"
 }

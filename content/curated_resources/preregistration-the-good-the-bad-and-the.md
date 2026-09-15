@@ -42,7 +42,7 @@
         "Preregistration"
     ],
     "tags": [
-        "Meta-science",
+        "Meta-Science",
         "Neuroscience",
         "Social and Behavioral Sciences",
         "Life Sciences"
@@ -53,5 +53,5 @@
     "in-clusters": true,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2023-10-10"
+    "lastmod": "2026-09-15"
 }

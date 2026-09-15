@@ -33,7 +33,7 @@
         "Open Data and Materials"
     ],
     "tags": [
-        "Open science"
+        "Open Science"
     ],
     "forrt_clusters_new": "FAIR data and materials",
     "forrt_sub_clusters": "Reasons to share data and materials",
@@ -41,5 +41,5 @@
     "in-clusters": true,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2020-10-16"
+    "lastmod": "2026-09-15"
 }

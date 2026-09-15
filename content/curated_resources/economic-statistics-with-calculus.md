@@ -28,7 +28,7 @@
     ],
     "tags": [
         "Economics",
-        "statistics"
+        "Statistics"
     ],
     "forrt_clusters_new": "Conceptual and Statistical Knowledge",
     "forrt_sub_clusters": "The logic of null hypothesis testing, p-values, Type I and II errors (and when and why they might happen).",
@@ -36,5 +36,5 @@
     "in-clusters": false,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2021-10-14"
+    "lastmod": "2026-09-15"
 }

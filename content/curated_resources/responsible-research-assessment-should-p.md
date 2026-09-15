@@ -33,7 +33,7 @@
         "Preregistration"
     ],
     "tags": [
-        "Research assessment",
+        "Research Assessment",
         "Open Science",
         "Theory Building"
     ],
@@ -43,5 +43,5 @@
     "in-clusters": true,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2025-02-13"
+    "lastmod": "2026-09-15"
 }

@@ -31,7 +31,7 @@
         "Reproducible Analyses"
     ],
     "tags": [
-        "p-values",
+        "P-values",
         "Statistical Thinking",
         "Categorial Perception",
         "Meta-Science",
@@ -43,5 +43,5 @@
     "in-clusters": true,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2025-01-16"
+    "lastmod": "2026-09-15"
 }

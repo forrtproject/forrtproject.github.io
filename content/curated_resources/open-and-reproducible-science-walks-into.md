@@ -32,7 +32,11 @@
         "Academic Life and Culture"
     ],
     "tags": [
-        "Pedagogy; Psychology; Credibility Revolution; WEIRD Science; Replication;"
+        "Pedagogy",
+        "Psychology",
+        "Credibility Revolution",
+        "WEIRD Science",
+        "Replication"
     ],
     "forrt_clusters_new": "Ways of Working, Replication Crisis and Credibility Revolution",
     "forrt_sub_clusters": "History of the replication crisis & credibility revolution, Research with students (under- and graduate)",
@@ -40,5 +44,5 @@
     "in-clusters": false,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2025-04-08"
+    "lastmod": "2026-09-15"
 }

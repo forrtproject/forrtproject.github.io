@@ -38,8 +38,8 @@
     ],
     "tags": [
         "Biology",
-        "Data repository",
-        "Data curation"
+        "Data Repository",
+        "Data Curation"
     ],
     "forrt_clusters_new": "FAIR data and materials",
     "forrt_sub_clusters": "Repositories, Research data management",
@@ -47,5 +47,5 @@
     "in-clusters": true,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2024-12-12"
+    "lastmod": "2026-09-15"
 }

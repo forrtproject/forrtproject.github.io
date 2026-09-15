@@ -43,7 +43,7 @@
         "Open Data and Materials"
     ],
     "tags": [
-        "data sharing",
+        "Data Sharing",
         "federal policy"
     ],
     "forrt_clusters_new": "FAIR data and materials",
@@ -52,5 +52,5 @@
     "in-clusters": false,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2023-11-18"
+    "lastmod": "2026-09-15"
 }

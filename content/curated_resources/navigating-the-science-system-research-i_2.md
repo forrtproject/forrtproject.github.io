@@ -34,7 +34,7 @@
         "Questionable Research Practices",
         "Epistemology",
         "Labor",
-        "Research culture"
+        "Research Culture"
     ],
     "forrt_clusters_new": "Research Integrity, Academic Structures and Institutions",
     "forrt_sub_clusters": "Questionable Research Practices and Responsible Research Practices, Principles and Frameworks of Research Integrity, Structures and incentives in academia",
@@ -42,5 +42,5 @@
     "in-clusters": false,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2025-02-27"
+    "lastmod": "2026-09-15"
 }

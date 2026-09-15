@@ -27,8 +27,8 @@
     ],
     "tags": [
         "ETHICS REVIEW",
-        "DATA MANAGEMENT",
-        "RESEARCH INTEGRITY"
+        "Data Management",
+        "Research Integrity"
     ],
     "forrt_clusters_new": "Academic Structures and Institutions",
     "forrt_sub_clusters": "Socially Responsible Research",
@@ -36,5 +36,5 @@
     "in-clusters": false,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2024-04-03"
+    "lastmod": "2026-09-15"
 }

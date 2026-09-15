@@ -41,9 +41,9 @@
     ],
     "tags": [
         "rap",
-        "simulation",
+        "Simulation",
         "reproducible",
-        "book"
+        "Book"
     ],
     "forrt_clusters_new": "Transparency and reproducibility in computation and analysis",
     "forrt_sub_clusters": "Computational reproducibility",
@@ -51,5 +51,5 @@
     "in-clusters": false,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2026-03-09"
+    "lastmod": "2026-09-15"
 }

@@ -33,9 +33,9 @@
     ],
     "tags": [
         "Metascience",
-        "science reform",
-        "methodology",
-        "philosophy of science"
+        "Science Reform",
+        "Methodology",
+        "Philosophy of Science"
     ],
     "forrt_clusters_new": "Conceptual and Statistical Knowledge, Replication Crisis and Credibility Revolution",
     "forrt_sub_clusters": "Philosophy of science, Ongoing debates (e.g., incentives for and against open science practices)",
@@ -43,5 +43,5 @@
     "in-clusters": true,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2024-12-19"
+    "lastmod": "2026-09-15"
 }

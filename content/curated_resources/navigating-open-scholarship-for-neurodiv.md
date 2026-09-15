@@ -44,7 +44,14 @@
         "Academic Life and Culture"
     ],
     "tags": [
-        "Neurodiversity; Neurodivergent Researchers; Research Equity; Diversity in Academia; Psychology; Higher Education; Stigma Reduction; Inclusivity"
+        "Neurodiversity",
+        "Neurodivergent Researchers",
+        "Research Equity",
+        "Diversity in Academia",
+        "Psychology",
+        "Higher Education",
+        "Stigma Reduction",
+        "Inclusivity"
     ],
     "forrt_clusters_new": "Academic Structures and Institutions",
     "forrt_sub_clusters": "Neurodiversity, Inclusion, Diversity in Academia",
@@ -52,5 +59,5 @@
     "in-clusters": false,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2025-03-13"
+    "lastmod": "2026-09-15"
 }

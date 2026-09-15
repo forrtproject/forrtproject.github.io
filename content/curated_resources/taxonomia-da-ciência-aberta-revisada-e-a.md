@@ -45,7 +45,7 @@
         "Ci\u00eancia Aberta - Taxonomia",
         "Comunica\u00e7\u00e3o Cient\u00edfica",
         "Representa\u00e7\u00e3o do Conhecimento",
-        "Unesco"
+        "UNESCO"
     ],
     "forrt_clusters_new": "Replication Crisis and Credibility Revolution",
     "forrt_sub_clusters": "Proposed science improvement initiatives on statistics, measurement, teaching, data sharing, code sharing, pre-registration, & replication",
@@ -53,5 +53,5 @@
     "in-clusters": true,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2025-02-20"
+    "lastmod": "2026-09-15"
 }

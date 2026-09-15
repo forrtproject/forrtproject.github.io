@@ -34,8 +34,8 @@
     "tags": [
         "Multiomics",
         "Radiomics",
-        "Artificial intelligence",
-        "Reproducibility of results"
+        "Artificial Intelligence",
+        "Reproducibility of Results"
     ],
     "forrt_clusters_new": "Transparency and reproducibility in computation and analysis, FAIR data and materials",
     "forrt_sub_clusters": "Computational reproducibility, Repositories",
@@ -43,5 +43,5 @@
     "in-clusters": false,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2023-08-18"
+    "lastmod": "2026-09-15"
 }

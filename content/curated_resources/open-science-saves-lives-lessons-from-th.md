@@ -35,7 +35,7 @@
         "Replication Research"
     ],
     "tags": [
-        "Open science"
+        "Open Science"
     ],
     "forrt_clusters_new": "Replication Crisis and Credibility Revolution",
     "forrt_sub_clusters": "Ongoing debates (e.g., incentives for and against open science practices), Proposed science improvement initiatives on statistics, measurement, teaching, data sharing, code sharing, pre-registration, & replication",
@@ -43,5 +43,5 @@
     "in-clusters": true,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2020-10-31"
+    "lastmod": "2026-09-15"
 }

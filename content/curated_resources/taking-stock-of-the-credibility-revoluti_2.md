@@ -33,7 +33,9 @@
         "Reproducibility and Replicability Knowledge"
     ],
     "tags": [
-        "Book; Credibility Revolution; Scientific Reform;"
+        "Book",
+        "Credibility Revolution",
+        "Scientific Reform"
     ],
     "forrt_clusters_new": "Replication Crisis and Credibility Revolution",
     "forrt_sub_clusters": "History of the replication crisis & credibility revolution",
@@ -41,5 +43,5 @@
     "in-clusters": true,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2025-06-25"
+    "lastmod": "2026-09-15"
 }

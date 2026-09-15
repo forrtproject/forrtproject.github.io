@@ -39,7 +39,7 @@
         "Open Data and Materials"
     ],
     "tags": [
-        "Covid-19",
+        "COVID-19",
         "Real World Data",
         "Consortia",
         "Pandemic Response",
@@ -51,5 +51,5 @@
     "in-clusters": false,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2025-01-12"
+    "lastmod": "2026-09-15"
 }

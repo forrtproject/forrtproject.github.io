@@ -29,7 +29,8 @@
         "Academic Life and Culture"
     ],
     "tags": [
-        "CREP; Pedagogy"
+        "CREP",
+        "Pedagogy"
     ],
     "forrt_clusters_new": "Ways of Working",
     "forrt_sub_clusters": "Research with students (under- and graduate)",
@@ -37,5 +38,5 @@
     "in-clusters": false,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2025-04-08"
+    "lastmod": "2026-09-15"
 }

@@ -31,19 +31,19 @@
         "Academic Life and Culture"
     ],
     "tags": [
-        "INTRODUCTION",
+        "Introduction",
         "INTRODUCTORY",
-        "REPRODUCIBLE",
+        "reproducible",
         "PRINCIPLES",
-        "UNDERGRADUATE",
+        "Undergraduate",
         "DISSERTATION",
         "THESIS",
-        "LECTURE",
+        "Lecture",
         "SERIES",
         "VIDEOS",
         "THREE TS",
         "THREE T'S",
-        "PSYCHOLOGY"
+        "Psychology"
     ],
     "forrt_clusters_new": "Pre-analysis Planning, FAIR data and materials",
     "forrt_sub_clusters": "FAIR principles applied to Education & Training, Preregistration, Research data management",
@@ -51,5 +51,5 @@
     "in-clusters": false,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2022-01-31"
+    "lastmod": "2026-09-15"
 }

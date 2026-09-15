@@ -29,7 +29,16 @@
         "Academic Life and Culture"
     ],
     "tags": [
-        "Psychology Education; Representation in Science; Diversity & Inclusion; Student Engagement; Higher Education; Undergraduate Teaching; Equity in Academia; Gender Bias; \nPedagogy; Academic Reform"
+        "Psychology Education",
+        "Representation in Science",
+        "Diversity & Inclusion",
+        "Student Engagement",
+        "Higher Education",
+        "Undergraduate Teaching",
+        "Equity in Academia",
+        "Gender Bias",
+        "Pedagogy",
+        "Academic Reform"
     ],
     "forrt_clusters_new": "Academic Structures and Institutions",
     "forrt_sub_clusters": "Inclusion, Equity",
@@ -37,5 +46,5 @@
     "in-clusters": false,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2025-03-13"
+    "lastmod": "2026-09-15"
 }

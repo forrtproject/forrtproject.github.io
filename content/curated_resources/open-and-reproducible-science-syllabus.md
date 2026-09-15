@@ -33,7 +33,11 @@
         "Academic Life and Culture"
     ],
     "tags": [
-        "FAIR Data & Materials; Course Materials; Open Resources; Readings; Assignments"
+        "FAIR Data & Materials",
+        "Course Materials",
+        "Open Resources",
+        "Readings",
+        "Assignments"
     ],
     "forrt_clusters_new": "FAIR data and materials",
     "forrt_sub_clusters": "FAIR principles applied to Education & Training",
@@ -41,5 +45,5 @@
     "in-clusters": false,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2025-04-08"
+    "lastmod": "2026-09-15"
 }

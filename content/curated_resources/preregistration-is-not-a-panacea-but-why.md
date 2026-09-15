@@ -34,7 +34,7 @@
         "Preregistration",
         "Pre-planning",
         "Open Sciences",
-        "P-hacking",
+        "P-Hacking",
         "HARKing",
         "Transparency"
     ],
@@ -44,5 +44,5 @@
     "in-clusters": false,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2025-02-27"
+    "lastmod": "2026-09-15"
 }

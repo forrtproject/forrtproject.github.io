@@ -37,10 +37,10 @@
         "Open Data and Materials"
     ],
     "tags": [
-        "collaboration",
-        "data management",
+        "Collaboration",
+        "Data Management",
         "introductory guide",
-        "open research",
+        "Open Research",
         "outputs reproducibility research",
         "UKRN"
     ],
@@ -50,5 +50,5 @@
     "in-clusters": false,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2023-11-04"
+    "lastmod": "2026-09-15"
 }

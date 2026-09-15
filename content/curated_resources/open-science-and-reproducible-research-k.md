@@ -31,7 +31,8 @@
         "Replication Research"
     ],
     "tags": [
-        "Course; Open Science"
+        "Course",
+        "Open Science"
     ],
     "forrt_clusters_new": "FAIR data and materials",
     "forrt_sub_clusters": "FAIR principles applied to Education & Training",
@@ -39,5 +40,5 @@
     "in-clusters": false,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2025-07-02"
+    "lastmod": "2026-09-15"
 }

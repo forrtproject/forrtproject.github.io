@@ -29,7 +29,8 @@
         "Conceptual and Statistical Knowledge"
     ],
     "tags": [
-        "Inference\nQuestionable Research Practices",
+        "Inference",
+        "Questionable Research Practices",
         "Power"
     ],
     "forrt_clusters_new": "Conceptual and Statistical Knowledge, Replication Crisis and Credibility Revolution, Research Integrity, Replication and meta-research",
@@ -38,5 +39,5 @@
     "in-clusters": true,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2025-02-06"
+    "lastmod": "2026-09-15"
 }

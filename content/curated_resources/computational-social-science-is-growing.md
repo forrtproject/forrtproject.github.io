@@ -35,7 +35,7 @@
         "Passive Measurement",
         "Digital Trace Data",
         "Validity",
-        "Open science Practices",
+        "Open Science Practices",
         "Metascience"
     ],
     "forrt_clusters_new": "Conceptual and Statistical Knowledge",
@@ -44,5 +44,5 @@
     "in-clusters": true,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2023-12-18"
+    "lastmod": "2026-09-15"
 }

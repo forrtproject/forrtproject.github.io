@@ -32,7 +32,14 @@
         "Academic Life and Culture"
     ],
     "tags": [
-        "Teaching; Pedagogy; Course Materials; Inclusion; Reproducibility; Replicability; Community Resources; Registered Reports"
+        "Teaching",
+        "Pedagogy",
+        "Course Materials",
+        "Inclusion",
+        "Reproducibility",
+        "Replicability",
+        "Community Resources",
+        "Registered Reports"
     ],
     "forrt_clusters_new": "Replication and meta-research, Pre-analysis Planning, Ways of Working",
     "forrt_sub_clusters": "Research with students (under- and graduate), Registered reports, Conducting replication studies; challenges, limitations, and comparisons with the original study",
@@ -40,5 +47,5 @@
     "in-clusters": false,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2025-04-08"
+    "lastmod": "2026-09-15"
 }

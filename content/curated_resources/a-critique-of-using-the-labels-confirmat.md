@@ -32,7 +32,7 @@
         "Confirmatory Research",
         "Big Data",
         "Machine Learning",
-        "Philosophy Of Science"
+        "Philosophy of Science"
     ],
     "forrt_clusters_new": "Conceptual and Statistical Knowledge",
     "forrt_sub_clusters": "Exploratory and confirmatory analyses",
@@ -40,5 +40,5 @@
     "in-clusters": true,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2025-02-27"
+    "lastmod": "2026-09-15"
 }

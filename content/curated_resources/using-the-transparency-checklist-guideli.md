@@ -33,7 +33,15 @@
         "Open Data and Materials"
     ],
     "tags": [
-        "Research Transparency; Transparency Checklist; Student Assignments; Higher Education; Undergraduate Training; Pedagogy; Supervision; Reproducibility; Teaching"
+        "Research Transparency",
+        "Transparency Checklist",
+        "Student Assignments",
+        "Higher Education",
+        "Undergraduate Training",
+        "Pedagogy",
+        "Supervision",
+        "Reproducibility",
+        "Teaching"
     ],
     "forrt_clusters_new": "Replication Crisis and Credibility Revolution",
     "forrt_sub_clusters": "Proposed science improvement initiatives on statistics, measurement, teaching, data sharing, code sharing, pre-registration, & replication",
@@ -41,5 +49,5 @@
     "in-clusters": false,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2025-03-13"
+    "lastmod": "2026-09-15"
 }

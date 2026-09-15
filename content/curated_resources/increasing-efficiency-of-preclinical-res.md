@@ -39,7 +39,7 @@
     ],
     "tags": [
         "Bayesian Method",
-        "Bayesian Statistics",
+        "Bayesian statistics",
         "Clinical Trials",
         "Experimental Design",
         "Medicine and Health Sciences",
@@ -53,5 +53,5 @@
     "in-clusters": true,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2020-01-01"
+    "lastmod": "2026-09-15"
 }

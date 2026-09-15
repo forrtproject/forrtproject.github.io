@@ -31,7 +31,12 @@
         "Academic Life and Culture"
     ],
     "tags": [
-        "Remote Learning; Online Education; Higher Education; Open Access; Global Education; Academic Opportunities"
+        "Remote Learning",
+        "Online Education",
+        "Higher Education",
+        "Open Access",
+        "Global Education",
+        "Academic Opportunities"
     ],
     "forrt_clusters_new": "Academic Structures and Institutions",
     "forrt_sub_clusters": "Accessibility, Inclusion",
@@ -39,5 +44,5 @@
     "in-clusters": false,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2025-03-13"
+    "lastmod": "2026-09-15"
 }

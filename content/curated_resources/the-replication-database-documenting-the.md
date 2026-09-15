@@ -228,7 +228,12 @@
         "Replication Research"
     ],
     "tags": [
-        "Replicability; Replication Studies; Reproducibility; Replication Database; Replication Data; Psychological Research"
+        "Replicability",
+        "Replication Studies",
+        "Reproducibility",
+        "Replication Database",
+        "Replication Data",
+        "Psychological Research"
     ],
     "forrt_clusters_new": "Replication and meta-research, Replication Crisis and Credibility Revolution",
     "forrt_sub_clusters": "Collection of large scale replications, Conducting replication studies; challenges, limitations, and comparisons with the original study",
@@ -236,5 +241,5 @@
     "in-clusters": true,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2025-03-20"
+    "lastmod": "2026-09-15"
 }

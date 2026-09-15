@@ -32,7 +32,7 @@
     ],
     "tags": [
         "Preregistration",
-        "Pre-analysis Plans"
+        "Pre-Analysis Plans"
     ],
     "forrt_clusters_new": "Pre-analysis Planning",
     "forrt_sub_clusters": "Understanding the types of preregistration and writing one.",
@@ -40,5 +40,5 @@
     "in-clusters": true,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2023-12-13"
+    "lastmod": "2026-09-15"
 }

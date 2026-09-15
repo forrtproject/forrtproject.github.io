@@ -49,16 +49,16 @@
         "Academic Life and Culture"
     ],
     "tags": [
-        "Data visualization",
+        "Data Visualization",
         "Code",
         "Reproducibility",
         "Education",
         "Learning",
         "Resource",
         "Tool",
-        "Research cycle",
-        "Research process",
-        "Early career researcher"
+        "Research Cycle",
+        "Research Process",
+        "Early Career Researcher"
     ],
     "forrt_clusters_new": "Replication Crisis and Credibility Revolution",
     "forrt_sub_clusters": "Proposed science improvement initiatives on statistics, measurement, teaching, data sharing, code sharing, pre-registration, & replication",
@@ -66,5 +66,5 @@
     "in-clusters": false,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2024-03-27"
+    "lastmod": "2026-09-15"
 }

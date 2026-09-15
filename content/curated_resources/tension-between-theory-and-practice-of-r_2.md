@@ -28,11 +28,11 @@
         "Reproducibility and Replicability Knowledge"
     ],
     "tags": [
-        "Formal theory",
+        "Formal Theory",
         "Replication",
         "Reproducibility",
-        "Meta-hypothesis",
-        "Multi-site replications",
+        "Meta-Hypothesis",
+        "Multi-site Replications",
         "Scientific Reform"
     ],
     "forrt_clusters_new": "Replication Crisis and Credibility Revolution",
@@ -41,5 +41,5 @@
     "in-clusters": true,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2025-02-27"
+    "lastmod": "2026-09-15"
 }

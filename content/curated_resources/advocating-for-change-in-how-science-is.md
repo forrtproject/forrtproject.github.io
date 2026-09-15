@@ -26,12 +26,12 @@
         ""
     ],
     "tags": [
-        "#centerforopenscience",
-        "#openpractice",
-        "#openscience",
+        "centerforopenscience",
+        "openpractice",
+        "openscience",
         "Reproducibility",
         "Research",
-        "#TOPguidelines"
+        "TOPguidelines"
     ],
     "forrt_clusters_new": "Academic Structures and Institutions, Replication Crisis and Credibility Revolution",
     "forrt_sub_clusters": "Proposed science improvement initiatives on statistics, measurement, teaching, data sharing, code sharing, pre-registration, & replication, Structures and incentives in academia",
@@ -39,5 +39,5 @@
     "in-clusters": false,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2020-01-01"
+    "lastmod": "2026-09-15"
 }

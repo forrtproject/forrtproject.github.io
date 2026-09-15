@@ -31,7 +31,12 @@
         "Academic Life and Culture"
     ],
     "tags": [
-        "Neurodiversity; Inclusivity; Autism; ADHD; Participatory Research; Inclusive Scientific Practices"
+        "Neurodiversity",
+        "Inclusivity",
+        "Autism",
+        "ADHD",
+        "Participatory Research",
+        "Inclusive Scientific Practices"
     ],
     "forrt_clusters_new": "Academic Structures and Institutions, Ways of Working",
     "forrt_sub_clusters": "Neurodiversity, Inclusion, Participatory research",
@@ -39,5 +44,5 @@
     "in-clusters": true,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2025-03-20"
+    "lastmod": "2026-09-15"
 }

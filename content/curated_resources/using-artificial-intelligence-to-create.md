@@ -43,7 +43,7 @@
     ],
     "tags": [
         "Artificial Intelligence",
-        "chatGPT",
+        "ChatGPT",
         "Diversity",
         "Inclusivity"
     ],
@@ -53,5 +53,5 @@
     "in-clusters": true,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2023-12-13"
+    "lastmod": "2026-09-15"
 }

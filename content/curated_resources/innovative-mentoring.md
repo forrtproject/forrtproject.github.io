@@ -28,9 +28,14 @@
         "Academic Life and Culture"
     ],
     "tags": [
-        "Mentoring;  Teaching; Supervision; Lab Management; Equity",
+        "Mentoring",
+        "Teaching",
+        "Supervision",
+        "Lab Management",
+        "Equity",
         "Diversity",
-        "and Inclusion (EDI); Professional Development"
+        "and Inclusion (EDI)",
+        "Professional Development"
     ],
     "forrt_clusters_new": "Academic Structures and Institutions",
     "forrt_sub_clusters": "Equity, Inclusion",
@@ -38,5 +43,5 @@
     "in-clusters": false,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2025-03-13"
+    "lastmod": "2026-09-15"
 }

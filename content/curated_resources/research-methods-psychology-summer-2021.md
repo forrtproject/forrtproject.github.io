@@ -26,7 +26,9 @@
         "Conceptual and Statistical Knowledge"
     ],
     "tags": [
-        "Science Communication; Ethics; Research Methods"
+        "Science Communication",
+        "Ethics",
+        "Research Methods"
     ],
     "forrt_clusters_new": "Conceptual and Statistical Knowledge",
     "forrt_sub_clusters": "Research design, sampling methods, & its implications for inferences.",
@@ -34,5 +36,5 @@
     "in-clusters": false,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2025-06-30"
+    "lastmod": "2026-09-15"
 }

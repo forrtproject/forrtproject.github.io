@@ -43,9 +43,12 @@
         "Academic Life and Culture"
     ],
     "tags": [
-        "Neurodiversity; Power Imbalance; Diversity",
+        "Neurodiversity",
+        "Power Imbalance",
+        "Diversity",
         "Equity",
-        "and Inclusion (DEI); Non-WEIRD Research"
+        "and Inclusion (DEI)",
+        "Non-WEIRD Research"
     ],
     "forrt_clusters_new": "Ways of Working, Academic Structures and Institutions",
     "forrt_sub_clusters": "Neurodiversity, Participatory research",
@@ -53,5 +56,5 @@
     "in-clusters": true,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2025-03-20"
+    "lastmod": "2026-09-15"
 }

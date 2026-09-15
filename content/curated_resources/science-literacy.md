@@ -31,7 +31,7 @@
         "Conceptual and Statistical Knowledge"
     ],
     "tags": [
-        "Scientific communication"
+        "Scientific Communication"
     ],
     "forrt_clusters_new": "Conceptual and Statistical Knowledge",
     "forrt_sub_clusters": "Philosophy of science, Research design, sampling methods, & its implications for inferences.",
@@ -39,5 +39,5 @@
     "in-clusters": false,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2020-10-25"
+    "lastmod": "2026-09-15"
 }

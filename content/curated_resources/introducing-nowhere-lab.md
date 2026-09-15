@@ -29,7 +29,8 @@
         "Academic Life and Culture"
     ],
     "tags": [
-        "Remote Lab; Global Lab"
+        "Remote Lab",
+        "Global Lab"
     ],
     "forrt_clusters_new": "Academic Structures and Institutions, Ways of Working",
     "forrt_sub_clusters": "Big team science, Accessibility",
@@ -37,5 +38,5 @@
     "in-clusters": false,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2025-03-13"
+    "lastmod": "2026-09-15"
 }

@@ -30,7 +30,13 @@
         "Open Data and Materials"
     ],
     "tags": [
-        "Qualitative Research; Open Access; Open Materials; Educational Research; Preregistration; Ethics; Transparency"
+        "Qualitative Research",
+        "Open Access",
+        "Open Materials",
+        "Educational Research",
+        "Preregistration",
+        "Ethics",
+        "Transparency"
     ],
     "forrt_clusters_new": "FAIR data and materials",
     "forrt_sub_clusters": "Research data management",
@@ -38,5 +44,5 @@
     "in-clusters": false,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2025-03-13"
+    "lastmod": "2026-09-15"
 }

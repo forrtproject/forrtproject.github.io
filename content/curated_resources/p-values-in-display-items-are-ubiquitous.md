@@ -31,7 +31,7 @@
         "Analysis",
         "Analysis of Variance",
         "Bayesian Method",
-        "Bayesian Statistics",
+        "Bayesian statistics",
         "Computer Software",
         "Data",
         "Meta-analysis",
@@ -47,5 +47,5 @@
     "in-clusters": true,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2020-01-01"
+    "lastmod": "2026-09-15"
 }

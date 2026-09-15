@@ -28,7 +28,11 @@
         "Conceptual and Statistical Knowledge"
     ],
     "tags": [
-        "Research; Lab Group; Lab Exercises; Tutorial; Error Prevention"
+        "Research",
+        "Lab Group",
+        "Lab Exercises",
+        "Tutorial",
+        "Error Prevention"
     ],
     "forrt_clusters_new": "Conceptual and Statistical Knowledge",
     "forrt_sub_clusters": "Research design, sampling methods, & its implications for inferences.",
@@ -36,5 +40,5 @@
     "in-clusters": true,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2025-06-10"
+    "lastmod": "2026-09-15"
 }

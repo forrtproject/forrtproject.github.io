@@ -28,7 +28,9 @@
         "Reproducibility and Replicability Knowledge"
     ],
     "tags": [
-        "Research Workflow; Meta Data; Annotated Code"
+        "Research Workflow",
+        "Meta Data",
+        "Annotated Code"
     ],
     "forrt_clusters_new": "Replication Crisis and Credibility Revolution",
     "forrt_sub_clusters": "Proposed science improvement initiatives on statistics, measurement, teaching, data sharing, code sharing, pre-registration, & replication",
@@ -36,5 +38,5 @@
     "in-clusters": false,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2025-06-30"
+    "lastmod": "2026-09-15"
 }

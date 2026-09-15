@@ -45,7 +45,7 @@
     "tags": [
         "Open Science",
         "Preregistration",
-        "Rmarkdown",
+        "RMarkdown",
         "R Package"
     ],
     "forrt_clusters_new": "Pre-analysis Planning",
@@ -54,5 +54,5 @@
     "in-clusters": false,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2023-10-27"
+    "lastmod": "2026-09-15"
 }

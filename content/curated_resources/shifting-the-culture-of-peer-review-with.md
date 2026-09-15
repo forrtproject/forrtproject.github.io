@@ -28,8 +28,14 @@
         "Academic Life and Culture"
     ],
     "tags": [
-        "Peer Review; Publishing; Bias in Peer Review; Diversity",
-        "Equity & Inclusion (DEI); Academic Culture Change; Early Career Researchers; Transparency"
+        "Peer Review",
+        "Publishing",
+        "Bias in Peer Review",
+        "Diversity",
+        "Equity & Inclusion (DEI)",
+        "Academic Culture Change",
+        "Early Career Researchers",
+        "Transparency"
     ],
     "forrt_clusters_new": "Academic Structures and Institutions",
     "forrt_sub_clusters": "Racism in science, Diversity in Academia",
@@ -37,5 +43,5 @@
     "in-clusters": false,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2025-03-15"
+    "lastmod": "2026-09-15"
 }

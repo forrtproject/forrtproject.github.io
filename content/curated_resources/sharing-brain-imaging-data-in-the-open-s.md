@@ -52,7 +52,7 @@
     ],
     "tags": [
         "Brain imaging",
-        "data sharing"
+        "Data Sharing"
     ],
     "forrt_clusters_new": "FAIR data and materials",
     "forrt_sub_clusters": "Reasons to share data and materials, Reasons not to share: Privacy and security considerations",
@@ -60,5 +60,5 @@
     "in-clusters": false,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2024-12-12"
+    "lastmod": "2026-09-15"
 }

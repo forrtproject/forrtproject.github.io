@@ -40,7 +40,7 @@
         "Academic Life and Culture"
     ],
     "tags": [
-        "Open science",
+        "Open Science",
         "science diplomacy"
     ],
     "forrt_clusters_new": "Academic Structures and Institutions",
@@ -49,5 +49,5 @@
     "in-clusters": true,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2024-12-12"
+    "lastmod": "2026-09-15"
 }

@@ -28,11 +28,11 @@
         "Academic Life and Culture"
     ],
     "tags": [
-        "Peer review",
-        "open review",
-        "diversity",
-        "inclusion",
-        "equity"
+        "Peer Review",
+        "Open Review",
+        "Diversity",
+        "Inclusion",
+        "Equity"
     ],
     "forrt_clusters_new": "Academic Structures and Institutions",
     "forrt_sub_clusters": "Research assessment, proposals, and reforms, Equity, Inclusion",
@@ -40,5 +40,5 @@
     "in-clusters": true,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2023-01-05"
+    "lastmod": "2026-09-15"
 }

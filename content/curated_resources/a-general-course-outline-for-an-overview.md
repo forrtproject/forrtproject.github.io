@@ -39,7 +39,13 @@
         "Academic Life and Culture"
     ],
     "tags": [
-        "Data Management; FAIR; Citizen Science; Metadata; Culture Change; Author Contract; CC licences"
+        "Data Management",
+        "FAIR",
+        "Citizen Science",
+        "Metadata",
+        "Culture Change",
+        "Author Contract",
+        "CC licences"
     ],
     "forrt_clusters_new": "FAIR data and materials",
     "forrt_sub_clusters": "Research data management, FAIR principles applied to Education & Training, Licenses and reuse",
@@ -47,5 +53,5 @@
     "in-clusters": false,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2025-07-02"
+    "lastmod": "2026-09-15"
 }

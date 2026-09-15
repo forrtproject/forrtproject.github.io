@@ -27,7 +27,13 @@
         "Reproducible Analyses"
     ],
     "tags": [
-        "Credible Science; GitHub; Preregistration; Reliable Science; Replicable science; Reproducible Science; Transparent Workflow"
+        "Credible Science",
+        "GitHub",
+        "Preregistration",
+        "Reliable Science",
+        "Replicable Science",
+        "Reproducible Science",
+        "Transparent Workflow"
     ],
     "forrt_clusters_new": "Transparency and reproducibility in computation and analysis, Replication Crisis and Credibility Revolution",
     "forrt_sub_clusters": "Computational reproducibility, Proposed science improvement initiatives on statistics, measurement, teaching, data sharing, code sharing, pre-registration, & replication",
@@ -35,5 +41,5 @@
     "in-clusters": false,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2025-06-10"
+    "lastmod": "2026-09-15"
 }

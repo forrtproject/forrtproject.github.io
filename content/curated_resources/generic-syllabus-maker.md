@@ -41,7 +41,8 @@
         "Academic Life and Culture"
     ],
     "tags": [
-        "Syllabus; dates"
+        "Syllabus",
+        "dates"
     ],
     "forrt_clusters_new": "Academic Structures and Institutions",
     "forrt_sub_clusters": "Hidden curriculum",
@@ -49,5 +50,5 @@
     "in-clusters": false,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2025-08-15"
+    "lastmod": "2026-09-15"
 }

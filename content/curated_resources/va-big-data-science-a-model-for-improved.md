@@ -34,7 +34,7 @@
     "tags": [
         "Veteran Affairs",
         "Data Sharing",
-        "Covid-19",
+        "COVID-19",
         "Medical Research",
         "Healthcare"
     ],
@@ -44,5 +44,5 @@
     "in-clusters": true,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2025-01-12"
+    "lastmod": "2026-09-15"
 }

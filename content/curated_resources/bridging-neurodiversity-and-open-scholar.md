@@ -43,7 +43,13 @@
         "Academic Life and Culture"
     ],
     "tags": [
-        "Neurodiversity; Inclusivity in Academia; Open Scholarship; Higher Education; Accessibility\nIntersectionality; Systematic Barriers"
+        "Neurodiversity",
+        "Inclusivity in Academia",
+        "Open Scholarship",
+        "Higher Education",
+        "Accessibility",
+        "Intersectionality",
+        "Systematic Barriers"
     ],
     "forrt_clusters_new": "Academic Structures and Institutions",
     "forrt_sub_clusters": "Neurodiversity, Inclusion, Accessibility",
@@ -51,5 +57,5 @@
     "in-clusters": true,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2025-03-20"
+    "lastmod": "2026-09-15"
 }

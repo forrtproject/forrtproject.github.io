@@ -26,7 +26,7 @@
         "Conceptual and Statistical Knowledge"
     ],
     "tags": [
-        "Data management"
+        "Data Management"
     ],
     "forrt_clusters_new": "",
     "forrt_sub_clusters": "",
@@ -34,5 +34,5 @@
     "in-clusters": false,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2020-12-09"
+    "lastmod": "2026-09-15"
 }

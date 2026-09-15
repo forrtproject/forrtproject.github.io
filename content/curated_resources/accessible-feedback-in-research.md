@@ -31,7 +31,13 @@
         "Academic Life and Culture"
     ],
     "tags": [
-        "Diversity & Inclusion; Feedback; Peer Review; Transparency; Marginalised Scholars; Systemic Barriers in Academia; Academic Professional Development"
+        "Diversity & Inclusion",
+        "Feedback",
+        "Peer Review",
+        "Transparency",
+        "Marginalised Scholars",
+        "Systemic Barriers in Academia",
+        "Academic Professional Development"
     ],
     "forrt_clusters_new": "Academic Structures and Institutions",
     "forrt_sub_clusters": "Accessibility, Inclusion, Equity",
@@ -39,5 +45,5 @@
     "in-clusters": false,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2025-03-15"
+    "lastmod": "2026-09-15"
 }

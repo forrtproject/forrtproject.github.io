@@ -32,7 +32,7 @@
     "tags": [
         "Metascience",
         "Popper",
-        "Philosophy Of Science",
+        "Philosophy of Science",
         "Lakatos",
         "Replication Crisis",
         "Theory Testing"
@@ -43,5 +43,5 @@
     "in-clusters": false,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2025-02-06"
+    "lastmod": "2026-09-15"
 }

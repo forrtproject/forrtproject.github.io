@@ -33,7 +33,7 @@
         "Replication Crisis",
         "Ontology",
         "Objective-Subjective",
-        "Philosophy Of Science"
+        "Philosophy of Science"
     ],
     "forrt_clusters_new": "Replication Crisis and Credibility Revolution",
     "forrt_sub_clusters": "Ongoing debates (e.g., incentives for and against open science practices)",
@@ -41,5 +41,5 @@
     "in-clusters": true,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2025-02-13"
+    "lastmod": "2026-09-15"
 }

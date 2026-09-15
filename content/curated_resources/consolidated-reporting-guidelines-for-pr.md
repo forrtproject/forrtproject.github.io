@@ -36,7 +36,7 @@
     ],
     "tags": [
         "Reporting Guidelines",
-        "MAchine Learning",
+        "Machine Learning",
         "Predictive Models",
         "Diagnostic Models",
         "Prognostic Models",
@@ -49,5 +49,5 @@
     "in-clusters": true,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2025-01-16"
+    "lastmod": "2026-09-15"
 }

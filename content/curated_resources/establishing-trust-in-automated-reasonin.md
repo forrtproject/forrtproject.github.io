@@ -29,11 +29,11 @@
         "Reproducible Analyses"
     ],
     "tags": [
-        "computational science",
-        "machine learning",
-        "reliability",
+        "Computational Science",
+        "Machine Learning",
+        "Reliability",
         "reviewability",
-        "software"
+        "Software"
     ],
     "forrt_clusters_new": "Transparency and reproducibility in computation and analysis",
     "forrt_sub_clusters": "Computational reproducibility, Research software engineering",
@@ -41,5 +41,5 @@
     "in-clusters": true,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2024-06-24"
+    "lastmod": "2026-09-15"
 }

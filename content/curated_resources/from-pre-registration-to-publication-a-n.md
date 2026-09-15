@@ -41,7 +41,7 @@
         "Reproducible Analyses"
     ],
     "tags": [
-        "Meta-Analysis",
+        "Meta-analysis",
         "Primer",
         "Methods",
         "Preregistration",
@@ -54,5 +54,5 @@
     "in-clusters": true,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2023-10-27"
+    "lastmod": "2026-09-15"
 }

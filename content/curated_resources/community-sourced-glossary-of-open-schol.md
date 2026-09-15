@@ -36,7 +36,12 @@
         "Open Data and Materials"
     ],
     "tags": [
-        "Glossary; Guide; Open Scholarship; Open Scholarship Terms; Terminology; Teaching"
+        "Glossary",
+        "Guide",
+        "Open Scholarship",
+        "Open Scholarship Terms",
+        "Terminology",
+        "Teaching"
     ],
     "forrt_clusters_new": "FAIR data and materials",
     "forrt_sub_clusters": "FAIR principles applied to Education & Training",
@@ -44,5 +49,5 @@
     "in-clusters": false,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2025-03-08"
+    "lastmod": "2026-09-15"
 }

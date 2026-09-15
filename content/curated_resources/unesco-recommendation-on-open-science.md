@@ -26,7 +26,7 @@
         "Academic Life and Culture"
     ],
     "tags": [
-        "Sustainable Development Goals;"
+        "Sustainable Development Goals"
     ],
     "forrt_clusters_new": "Academic Structures and Institutions",
     "forrt_sub_clusters": "Research assessment, proposals, and reforms, Socially Responsible Research",
@@ -34,5 +34,5 @@
     "in-clusters": false,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2025-07-02"
+    "lastmod": "2026-09-15"
 }

@@ -31,7 +31,7 @@
         "Preregistration"
     ],
     "tags": [
-        "Pre-analysis plans",
+        "Pre-Analysis Plans",
         "Preregistration",
         "Open Science",
         "Motivated Reasoning",
@@ -43,5 +43,5 @@
     "in-clusters": true,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2023-10-30"
+    "lastmod": "2026-09-15"
 }

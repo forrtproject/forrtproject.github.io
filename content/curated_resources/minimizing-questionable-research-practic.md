@@ -31,12 +31,12 @@
         "Reproducibility and Replicability Knowledge"
     ],
     "tags": [
-        "Questionable research practices",
-        "Scientific norms",
-        "Counter norms",
-        "Organizational climate",
+        "Questionable Research Practices",
+        "Scientific Norms",
+        "Counter Norms",
+        "Organizational Climate",
         "Competition",
-        "Ethics training"
+        "Ethics Training"
     ],
     "forrt_clusters_new": "Replication Crisis and Credibility Revolution",
     "forrt_sub_clusters": "Questionable research practices & their prevalence",
@@ -44,5 +44,5 @@
     "in-clusters": false,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2025-01-09"
+    "lastmod": "2026-09-15"
 }

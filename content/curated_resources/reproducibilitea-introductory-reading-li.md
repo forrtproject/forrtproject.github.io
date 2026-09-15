@@ -31,7 +31,10 @@
         "Reproducibility and Replicability Knowledge"
     ],
     "tags": [
-        "Journal club; Reading list; Reproducibility crisis; Open Science"
+        "Journal club",
+        "Reading list",
+        "Reproducibility Crisis",
+        "Open Science"
     ],
     "forrt_clusters_new": "Replication Crisis and Credibility Revolution",
     "forrt_sub_clusters": "History of the replication crisis & credibility revolution",
@@ -39,5 +42,5 @@
     "in-clusters": false,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2025-06-25"
+    "lastmod": "2026-09-15"
 }

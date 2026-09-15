@@ -26,7 +26,7 @@
         "Reproducibility and Replicability Knowledge"
     ],
     "tags": [
-        "Clinical psychology"
+        "Clinical Psychology"
     ],
     "forrt_clusters_new": "Replication Crisis and Credibility Revolution",
     "forrt_sub_clusters": "Proposed science improvement initiatives on statistics, measurement, teaching, data sharing, code sharing, pre-registration, & replication",
@@ -34,5 +34,5 @@
     "in-clusters": false,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2020-12-09"
+    "lastmod": "2026-09-15"
 }

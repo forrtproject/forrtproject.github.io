@@ -42,9 +42,9 @@
         "Open Data and Materials"
     ],
     "tags": [
-        "research",
-        "software",
-        "open software"
+        "Research",
+        "Software",
+        "Open Software"
     ],
     "forrt_clusters_new": "FAIR data and materials",
     "forrt_sub_clusters": "Reasons to share data and materials, Licenses and reuse",
@@ -52,5 +52,5 @@
     "in-clusters": true,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2023-08-18"
+    "lastmod": "2026-09-15"
 }

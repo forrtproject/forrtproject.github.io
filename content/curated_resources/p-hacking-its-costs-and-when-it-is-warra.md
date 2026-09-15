@@ -29,7 +29,7 @@
         "Conceptual and Statistical Knowledge"
     ],
     "tags": [
-        "P-hacking",
+        "P-Hacking",
         "Research Error",
         "Inductive Risk"
     ],
@@ -39,5 +39,5 @@
     "in-clusters": false,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2025-02-13"
+    "lastmod": "2026-09-15"
 }

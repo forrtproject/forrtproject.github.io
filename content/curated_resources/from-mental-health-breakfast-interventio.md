@@ -31,7 +31,11 @@
         "Academic Life and Culture"
     ],
     "tags": [
-        "Teaching; Pedagogy; Critical Skills; Evidence Based Practice; Module"
+        "Teaching",
+        "Pedagogy",
+        "Critical Skills",
+        "Evidence Based Practice",
+        "Module"
     ],
     "forrt_clusters_new": "Ways of Working",
     "forrt_sub_clusters": "Research with students (under- and graduate)",
@@ -39,5 +43,5 @@
     "in-clusters": false,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2025-04-08"
+    "lastmod": "2026-09-15"
 }

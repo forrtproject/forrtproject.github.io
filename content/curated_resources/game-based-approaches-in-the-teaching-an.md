@@ -29,11 +29,11 @@
         "Academic Life and Culture"
     ],
     "tags": [
-        "game-based learning",
-        "research skills",
+        "Game-based Learning",
+        "Research Skills",
         "academic skills",
         "critical thinking",
-        "serious games"
+        "Serious Games"
     ],
     "forrt_clusters_new": "Academic Structures and Institutions",
     "forrt_sub_clusters": "Hidden curriculum",
@@ -41,5 +41,5 @@
     "in-clusters": false,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2025-06-20"
+    "lastmod": "2026-09-15"
 }
