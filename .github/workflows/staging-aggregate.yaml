@@ -3,7 +3,7 @@ name: Staging Aggregate Deployment
 # =======================
 # Staging Deployment Workflow
 # =======================
-# Purpose: Aggregates and deploys staging changes to production
+# Purpose: Aggregates open PRs and deploys the combined site to staging
 # Triggers: PRs to main, monthly schedule, or manual dispatch
 # Features: Multi-PR aggregation, staging deployment, and force deploy option
 #
@@ -12,7 +12,7 @@ name: Staging Aggregate Deployment
 #   note instead of a cryptic token error). To preview a fork PR on staging, a
 #   maintainer runs this workflow manually (Actions -> Run workflow) from `main`
 #   and sets `single_pr` to the PR number. The run resolves the fork from the PR
-#   number and fetches it over its public URL, so there is no need to pick the
+#   number and fetches its pull-request ref, so there is no need to pick the
 #   fork branch in the dropdown.
 
 on:
@@ -49,25 +49,29 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  aggregate-prs:
-    name: Aggregate PRs for Staging
+  build:
+    name: Aggregate PRs and Build Staging
     runs-on: ubuntu-22.04
-    timeout-minutes: 10  # Prevent blocking the queue
+    timeout-minutes: 30  # Includes aggregation and the optional data-processing fallback
     # Skip draft PRs entirely - they should not trigger staging builds
     if: github.event.pull_request.draft != true
     permissions:
-      contents: write
+      contents: read
       pull-requests: read
+      actions: read  # Needed for data artifact access
+    env:
+      HUGO_VERSION: "0.158.0"
+      HUGO_EXTENDED: true
     outputs:
+      site-built: ${{ steps.upload-site.outcome == 'success' }}
       aggregated-branch: ${{ steps.aggregate.outputs.branch }}
       included-prs: ${{ steps.aggregate.outputs.included_prs }}
       attempted-prs: ${{ steps.aggregate.outputs.attempted_prs }}
       total-prs: ${{ steps.aggregate.outputs.total_prs }}
       has-prs: ${{ steps.aggregate.outputs.has_prs }}
     steps:
-      # Fork PRs can't receive secrets, so the checkout/gh steps below would fail
-      # with a cryptic "Input required and not supplied: token". Fail fast with a
-      # clear note pointing maintainers at the manual single_pr dispatch instead.
+      # Fork PRs cannot receive the staging token needed to push the aggregate
+      # branch and deploy. Point maintainers at the manual single_pr dispatch.
       - name: Fork PR — staging not auto-deployed
         if: github.event_name == 'pull_request' && github.event.pull_request.head.repo.full_name != github.repository
         run: |
@@ -83,7 +87,7 @@ jobs:
             echo ""
             echo "    single_pr = ${PR_NUM}"
             echo ""
-            echo "The run pulls this fork in by PR number over its public URL — no need to"
+            echo "The run fetches this fork through its PR ref — no need to"
             echo "select the fork branch in the dropdown."
           } >> "$GITHUB_STEP_SUMMARY"
           echo "::error::Fork PR #${PR_NUM} not auto-deployed. Maintainer: run this workflow manually with single_pr=${PR_NUM} to preview it on staging."
@@ -92,13 +96,25 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v6
         with:
-          fetch-depth: 0
-          token: ${{ secrets.STAGING_GITHUB_TOKEN }}
+          ref: main
+          fetch-depth: 1
+          filter: blob:none
+          persist-credentials: false
+
+      # fetch-depth: 0 in actions/checkout fetches every branch and tag, including
+      # deployment history. Keep all main commits for merging and Hugo page dates,
+      # but fetch historical file contents only when Git needs them.
+      - name: Fetch main history
+        run: |
+          git fetch --no-tags --filter=blob:none --unshallow origin \
+            '+refs/heads/main:refs/remotes/origin/main'
+          git checkout -B main refs/remotes/origin/main
 
       - name: Configure Git
         run: |
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           git config --global user.name "github-actions[bot]"
+          git config core.quotepath false
 
       - name: Aggregate PRs
         id: aggregate
@@ -110,41 +126,40 @@ jobs:
           fi
           
           # Check if single PR mode is enabled
-          SINGLE_PR="${{ github.event.inputs.single_pr }}"
           if [ -n "$SINGLE_PR" ] && [ "$SINGLE_PR" != "" ]; then
             echo "🎯 Single PR mode: deploying only PR #$SINGLE_PR"
             
             # Validate PR exists and is open
             if ! gh pr view "$SINGLE_PR" --json state --jq '.state' | grep -q "OPEN"; then
               echo "❌ PR #$SINGLE_PR is not open or doesn't exist"
-              echo "branch=main" >> $GITHUB_OUTPUT
-              echo "included_prs=" >> $GITHUB_OUTPUT
-              echo "attempted_prs=$SINGLE_PR" >> $GITHUB_OUTPUT
-              echo "total_prs=0" >> $GITHUB_OUTPUT
-              echo "has_prs=false" >> $GITHUB_OUTPUT
+              echo "branch=main" >> "$GITHUB_OUTPUT"
+              echo "included_prs=" >> "$GITHUB_OUTPUT"
+              echo "attempted_prs=$SINGLE_PR" >> "$GITHUB_OUTPUT"
+              echo "total_prs=0" >> "$GITHUB_OUTPUT"
+              echo "has_prs=false" >> "$GITHUB_OUTPUT"
               exit 1
             fi
             
             PRS="$SINGLE_PR"
-            echo "has_prs=true" >> $GITHUB_OUTPUT
-            echo "total_prs=1" >> $GITHUB_OUTPUT
+            echo "has_prs=true" >> "$GITHUB_OUTPUT"
+            echo "total_prs=1" >> "$GITHUB_OUTPUT"
           else
             # Get all open, non-draft PRs targeting main (regardless of CI status)
             PRS=$(gh pr list --base main --state open --json number,title,headRefName,isDraft --jq '.[] | select(.isDraft == false) | .number')
             
             if [ -z "$PRS" ]; then
               echo "No open non-draft PRs found"
-              echo "branch=main" >> $GITHUB_OUTPUT
-              echo "included_prs=" >> $GITHUB_OUTPUT
-              echo "attempted_prs=" >> $GITHUB_OUTPUT
-              echo "total_prs=0" >> $GITHUB_OUTPUT
-              echo "has_prs=false" >> $GITHUB_OUTPUT
+              echo "branch=main" >> "$GITHUB_OUTPUT"
+              echo "included_prs=" >> "$GITHUB_OUTPUT"
+              echo "attempted_prs=" >> "$GITHUB_OUTPUT"
+              echo "total_prs=0" >> "$GITHUB_OUTPUT"
+              echo "has_prs=false" >> "$GITHUB_OUTPUT"
               exit 0
             fi
             
             echo "Found PRs: $PRS"
-            echo "total_prs=$(echo "$PRS" | wc -l)" >> $GITHUB_OUTPUT
-            echo "has_prs=true" >> $GITHUB_OUTPUT
+            echo "total_prs=$(echo "$PRS" | wc -l)" >> "$GITHUB_OUTPUT"
+            echo "has_prs=true" >> "$GITHUB_OUTPUT"
           fi
           
           # Create a new branch for aggregation starting from main
@@ -166,27 +181,15 @@ jobs:
               ATTEMPTED_PRS="$ATTEMPTED_PRS,$pr"
             fi
             
-            # Note: We no longer skip the triggering PR - all PRs should be included
-            # The "self-reference" issue was preventing the latest PR from being included
-            
-            # Get PR details
-            PR_DATA=$(gh pr view $pr --json headRefName,headRepositoryOwner,title)
-            HEAD_REF=$(echo "$PR_DATA" | jq -r '.headRefName')
-            HEAD_OWNER=$(echo "$PR_DATA" | jq -r '.headRepositoryOwner.login')
-            TITLE=$(echo "$PR_DATA" | jq -r '.title')
-            
+            TITLE=$(gh pr view "$pr" --json title --jq '.title')
             echo "Processing PR #$pr: $TITLE"
-            
-            # Add remote if it's a fork
-            if [ "$HEAD_OWNER" != "forrtproject" ]; then
-              git remote add "pr-$pr" "https://github.com/$HEAD_OWNER/forrtproject.github.io.git"
-              git fetch "pr-$pr" "$HEAD_REF"
-              MERGE_REF="pr-$pr/$HEAD_REF"
-            else
-              git fetch origin "$HEAD_REF"
-              MERGE_REF="origin/$HEAD_REF"
-            fi
-            
+
+            # GitHub exposes this ref for both same-repository and fork PRs.
+            # Fetch only this PR, retaining its full ancestry for merge bases.
+            MERGE_REF="refs/remotes/pull/$pr/head"
+            git fetch --no-tags --filter=blob:none origin \
+              "+refs/pull/$pr/head:$MERGE_REF"
+
             # Try to merge into our aggregate branch
             if git merge "$MERGE_REF" --no-edit; then
               echo "✅ Successfully merged PR #$pr"
@@ -206,7 +209,7 @@ jobs:
           done
           
           # Push the aggregate branch
-          git push origin "$AGGREGATE_BRANCH"
+          git -c credential.helper= -c 'credential.helper=!gh auth git-credential' push origin "$AGGREGATE_BRANCH"
           
           # Clean up old staging branches, keeping only the 2 most recent
           echo "🧹 Cleaning up old staging branches..."
@@ -222,20 +225,20 @@ jobs:
             echo "Found $(echo "$OLD_BRANCHES" | wc -l) old staging branches to delete"
             for branch in $OLD_BRANCHES; do
               echo "  Deleting: $branch"
-              git push origin --delete "$branch" || echo "  ⚠️ Failed to delete $branch (may already be deleted)"
+              git -c credential.helper= -c 'credential.helper=!gh auth git-credential' push origin --delete "$branch" || echo "  ⚠️ Failed to delete $branch (may already be deleted)"
             done
             echo "✅ Cleanup completed"
           else
             echo "No old staging branches to delete (keeping 2 most recent)"
           fi
           
-          echo "branch=$AGGREGATE_BRANCH" >> $GITHUB_OUTPUT
-          echo "included_prs=$INCLUDED_PRS" >> $GITHUB_OUTPUT
-          echo "attempted_prs=$ATTEMPTED_PRS" >> $GITHUB_OUTPUT
+          echo "branch=$AGGREGATE_BRANCH" >> "$GITHUB_OUTPUT"
+          echo "included_prs=$INCLUDED_PRS" >> "$GITHUB_OUTPUT"
+          echo "attempted_prs=$ATTEMPTED_PRS" >> "$GITHUB_OUTPUT"
           
           echo "✅ Aggregation completed"
           echo "📊 Summary:"
-          echo "   - Mode: $( [ -n \"$SINGLE_PR\" ] && echo 'Single PR' || echo 'Aggregate' )"
+          echo "   - Mode: $( [ -n "$SINGLE_PR" ] && echo 'Single PR' || echo 'Aggregate' )"
           echo "   - Total PRs found: $(echo "$PRS" | wc -l)"
           echo "   - PRs attempted: $ATTEMPTED_PRS"
           echo "   - PRs successfully merged: $INCLUDED_PRS"
@@ -245,40 +248,13 @@ jobs:
           fi
         env:
           GH_TOKEN: ${{ secrets.STAGING_GITHUB_TOKEN }}
-
-  build:
-    name: Build
-    runs-on: ubuntu-22.04
-    timeout-minutes: 20  # Prevent blocking the queue
-    needs: [aggregate-prs]
-    if: always() && (needs.aggregate-prs.outputs.has-prs == 'true' || github.event.inputs.force_deploy == 'true')
-    permissions:
-      contents: read
-      actions: read  # Needed for artifact access
-    env:
-      HUGO_VERSION: "0.158.0"
-      HUGO_EXTENDED: true
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v6
-        with:
-          ref: ${{ needs.aggregate-prs.outputs.aggregated-branch || 'main' }}
-          fetch-depth: 0  # full history so Hugo's Git-derived dates match production
-
-      # See deploy.yaml: Git quotes non-ASCII paths unless this is off, and
-      # Hugo then finds no date for them.
-      - name: Let Git report non-ASCII paths unquoted
-        run: git config core.quotepath false
-
-      - name: Configure Git
-        run: |
-          git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git config --global user.name "github-actions[bot]"
+          SINGLE_PR: ${{ inputs.single_pr }}
 
       # =======================
       # Data Artifact Retrieval
       # =======================
       - name: Try to download data artifact
+        if: steps.aggregate.outputs.has_prs == 'true' || inputs.force_deploy
         id: download-artifact
         uses: dawidd6/action-download-artifact@v6
         continue-on-error: true
@@ -307,15 +283,10 @@ jobs:
         run: |
           set -e
 
-          # If this is a pull request, we can't easily trigger the external workflow and wait for it
-          # in the same way (or maybe we can, but let's stick to the plan).
-          # Actually, for PRs, we might want to just warn and proceed if it's not critical, 
-          # OR trigger it if we really need the data. 
-          # The original logic skipped it for PRs.
-          
+          # PR runs use the local fallback when no data artifact is available.
           if [ "${{ github.event_name }}" = "pull_request" ]; then
             echo "::warning::Data artifact missing in PR. Skipping trigger."
-            echo "data_processing_triggered=false" >> $GITHUB_OUTPUT
+            echo "data_processing_triggered=false" >> "$GITHUB_OUTPUT"
             exit 0
           fi
 
@@ -333,7 +304,7 @@ jobs:
             -d "{\"ref\":\"$REF\", \"inputs\": {\"skip_deploy\": \"true\"}}" \
             || { echo "::error::Failed to dispatch data-processing workflow"; exit 1; }
             
-          echo "data_processing_triggered=true" >> $GITHUB_OUTPUT
+          echo "data_processing_triggered=true" >> "$GITHUB_OUTPUT"
 
           echo "⏳ Waiting for data-processing workflow run to start and complete..."
 
@@ -359,7 +330,7 @@ jobs:
               if [ "$status" = "completed" ]; then
                 if [ "$conclusion" = "success" ]; then
                   echo "✅ data-processing workflow completed successfully"
-                  echo "run_id=$run_id" >> $GITHUB_OUTPUT
+                  echo "run_id=$run_id" >> "$GITHUB_OUTPUT"
                   exit 0
                 else
                   echo "::error::data-processing workflow completed with conclusion: $conclusion"
@@ -420,18 +391,22 @@ jobs:
 
 
       - name: Setup Hugo
+        if: steps.aggregate.outputs.has_prs == 'true' || inputs.force_deploy
         uses: peaceiris/actions-hugo@75d2e84710de30f6ff7268e08f310b60ef14033f
         with:
           hugo-version: ${{ env.HUGO_VERSION }}
           extended: ${{ env.HUGO_EXTENDED }}
 
       - name: Build site
+        if: steps.aggregate.outputs.has_prs == 'true' || inputs.force_deploy
         run: |
           hugo --gc --minify --cleanDestinationDir --destination public --baseURL https://staging.forrt.org
         env:
           HUGO_ENV: staging
 
       - name: Upload site artifact
+        id: upload-site
+        if: steps.aggregate.outputs.has_prs == 'true' || inputs.force_deploy
         uses: actions/upload-artifact@v7
         with:
           name: forrt-website-aggregate-${{ github.run_number }}
@@ -448,9 +423,9 @@ jobs:
       contents: write
       pull-requests: write
       issues: write
-    needs: [build, aggregate-prs]
-    # Run on successful build OR on schedule (for monthly reports even when no PRs)
-    if: always() && (needs.build.result == 'success' || github.event_name == 'schedule')
+    needs: [build]
+    # Publish only an uploaded site; scheduled runs can still report with no PRs.
+    if: always() && ((needs.build.result == 'success' && needs.build.outputs.site-built == 'true') || github.event_name == 'schedule')
     steps:
       - name: Checkout repository
         uses: actions/checkout@v6
@@ -458,7 +433,7 @@ jobs:
           token: ${{ secrets.STAGING_GITHUB_TOKEN }}
 
       - name: Download Artifact - Website
-        if: needs.build.result == 'success'
+        if: needs.build.result == 'success' && needs.build.outputs.site-built == 'true'
         uses: actions/download-artifact@v7
         with:
           name: forrt-website-aggregate-${{ github.run_number }}
@@ -471,15 +446,15 @@ jobs:
           echo "" >> deployment-summary.md
           echo "**Deployment Time:** $(date -u '+%Y-%m-%d %H:%M:%S UTC')" >> deployment-summary.md
           echo "" >> deployment-summary.md
-          echo "**Aggregated Branch:** ${{ needs.aggregate-prs.outputs.aggregated-branch }}" >> deployment-summary.md
+          echo "**Aggregated Branch:** ${{ needs.build.outputs.aggregated-branch }}" >> deployment-summary.md
           echo "" >> deployment-summary.md
-          echo "**Total PRs Found:** ${{ needs.aggregate-prs.outputs.total-prs }}" >> deployment-summary.md
-          echo "**PRs Attempted:** ${{ needs.aggregate-prs.outputs.attempted-prs }}" >> deployment-summary.md
+          echo "**Total PRs Found:** ${{ needs.build.outputs.total-prs }}" >> deployment-summary.md
+          echo "**PRs Attempted:** ${{ needs.build.outputs.attempted-prs }}" >> deployment-summary.md
           echo "" >> deployment-summary.md
           
-          if [ "${{ needs.aggregate-prs.outputs.included-prs }}" != "" ]; then
+          if [ "${{ needs.build.outputs.included-prs }}" != "" ]; then
             echo "### ✅ PRs Successfully Merged:" >> deployment-summary.md
-            IFS=',' read -ra PR_ARRAY <<< "${{ needs.aggregate-prs.outputs.included-prs }}"
+            IFS=',' read -ra PR_ARRAY <<< "${{ needs.build.outputs.included-prs }}"
             for pr in "${PR_ARRAY[@]}"; do
               echo "- PR #$pr" >> deployment-summary.md
             done
@@ -487,10 +462,10 @@ jobs:
           fi
           
           # Show PRs that were attempted but not successfully merged
-          if [ "${{ needs.aggregate-prs.outputs.attempted-prs }}" != "" ] && [ "${{ needs.aggregate-prs.outputs.included-prs }}" != "" ]; then
+          if [ "${{ needs.build.outputs.attempted-prs }}" != "" ] && [ "${{ needs.build.outputs.included-prs }}" != "" ]; then
             echo "### ⚠️ PRs Attempted but Skipped (Conflicts):" >> deployment-summary.md
-            IFS=',' read -ra ATTEMPTED_ARRAY <<< "${{ needs.aggregate-prs.outputs.attempted-prs }}"
-            IFS=',' read -ra SUCCESSFUL_ARRAY <<< "${{ needs.aggregate-prs.outputs.included-prs }}"
+            IFS=',' read -ra ATTEMPTED_ARRAY <<< "${{ needs.build.outputs.attempted-prs }}"
+            IFS=',' read -ra SUCCESSFUL_ARRAY <<< "${{ needs.build.outputs.included-prs }}"
             
             for attempted_pr in "${ATTEMPTED_ARRAY[@]}"; do
               SKIPPED=true
@@ -515,7 +490,7 @@ jobs:
           echo "- ✅ Shows combined state of all compatible PRs" >> deployment-summary.md
 
       - name: Deploy - GitHub Pages
-        if: needs.build.result == 'success'
+        if: needs.build.result == 'success' && needs.build.outputs.site-built == 'true'
         uses: peaceiris/actions-gh-pages@4f9cc6602d3f66b9c108549d475ec49e8ef4d45e
         with:
           personal_token: ${{ secrets.STAGING_GITHUB_TOKEN }}
@@ -525,15 +500,15 @@ jobs:
           cname: staging.forrt.org
 
       - name: Comment on PRs
-        if: needs.aggregate-prs.outputs.attempted-prs != ''
+        if: needs.build.outputs.attempted-prs != ''
         run: |
           DEPLOYMENT_TIME=$(date -u '+%Y-%m-%d %H:%M:%S UTC')
-          IFS=',' read -ra PR_ARRAY <<< "${{ needs.aggregate-prs.outputs.attempted-prs }}"
+          IFS=',' read -ra PR_ARRAY <<< "${{ needs.build.outputs.attempted-prs }}"
           for pr in "${PR_ARRAY[@]}"; do
             # Check if this PR was successfully merged
             SUCCESSFUL_MERGE=false
-            if [ "${{ needs.aggregate-prs.outputs.included-prs }}" != "" ]; then
-              IFS=',' read -ra SUCCESSFUL_ARRAY <<< "${{ needs.aggregate-prs.outputs.included-prs }}"
+            if [ "${{ needs.build.outputs.included-prs }}" != "" ]; then
+              IFS=',' read -ra SUCCESSFUL_ARRAY <<< "${{ needs.build.outputs.included-prs }}"
               for successful_pr in "${SUCCESSFUL_ARRAY[@]}"; do
                 if [ "$successful_pr" = "$pr" ]; then
                   SUCCESSFUL_MERGE=true
@@ -580,11 +555,11 @@ jobs:
                 -f body="$COMMENT_BODY" 2>&1); then
                 echo "⚠️ Failed to update comment: $UPDATE_OUTPUT"
                 echo "⚠️ Creating a new comment instead"
-                gh pr comment $pr --body "$COMMENT_BODY"
+                gh pr comment "$pr" --body "$COMMENT_BODY"
               fi
             else
               echo "💬 Creating new comment on PR #$pr"
-              gh pr comment $pr --body "$COMMENT_BODY"
+              gh pr comment "$pr" --body "$COMMENT_BODY"
             fi
           done
         env:
