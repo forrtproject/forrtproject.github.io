@@ -42,7 +42,9 @@ def git(root, *args):
 def git_state(root):
     """Return tracked blob hashes and content-change times in two batched reads."""
     if git(root, "rev-parse", "--is-shallow-repository").strip() == b"true":
-        raise ValueError("Freshness comparison requires checkout fetch-depth: 0")
+        raise ValueError(
+            "Freshness comparison requires unshallowed history "
+            "(checkout fetch-depth: 0, or a later git fetch --unshallow)")
     blobs = {}
     for entry in git(root, "ls-tree", "-r", "-z", "HEAD", "--", *DATA_PATHS).split(b"\0"):
         if entry:
