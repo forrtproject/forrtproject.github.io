@@ -3,7 +3,7 @@ name: Staging Aggregate Deployment
 # =======================
 # Staging Deployment Workflow
 # =======================
-# Purpose: Aggregates and deploys staging changes to production
+# Purpose: Aggregates open PRs and deploys the combined site to staging
 # Triggers: PRs to main, monthly schedule, or manual dispatch
 # Features: Multi-PR aggregation, staging deployment, and force deploy option
 #
@@ -12,7 +12,7 @@ name: Staging Aggregate Deployment
 #   note instead of a cryptic token error). To preview a fork PR on staging, a
 #   maintainer runs this workflow manually (Actions -> Run workflow) from `main`
 #   and sets `single_pr` to the PR number. The run resolves the fork from the PR
-#   number and fetches it over its public URL, so there is no need to pick the
+#   number and fetches its pull-request ref, so there is no need to pick the
 #   fork branch in the dropdown.
 
 on:
@@ -49,25 +49,32 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  aggregate-prs:
-    name: Aggregate PRs for Staging
+  build:
+    name: Aggregate PRs and Build Staging
     runs-on: ubuntu-22.04
-    timeout-minutes: 10  # Prevent blocking the queue
+    timeout-minutes: 30  # Includes aggregation and the optional data-processing fallback
     # Skip draft PRs entirely - they should not trigger staging builds
     if: github.event.pull_request.draft != true
     permissions:
-      contents: write
+      contents: read
       pull-requests: read
+      actions: read  # Needed for data artifact access
+    env:
+      HUGO_VERSION: "0.158.0"
+      HUGO_EXTENDED: true
+      # Steps that only matter when there is something to publish share this
+      # guard; force_deploy builds main alone.
+      BUILD_SITE: ${{ github.event_name == 'workflow_dispatch' && inputs.force_deploy }}
     outputs:
+      site-built: ${{ steps.upload-site.outcome == 'success' }}
       aggregated-branch: ${{ steps.aggregate.outputs.branch }}
       included-prs: ${{ steps.aggregate.outputs.included_prs }}
       attempted-prs: ${{ steps.aggregate.outputs.attempted_prs }}
+      conflicted-prs: ${{ steps.aggregate.outputs.conflicted_prs }}
       total-prs: ${{ steps.aggregate.outputs.total_prs }}
-      has-prs: ${{ steps.aggregate.outputs.has_prs }}
     steps:
-      # Fork PRs can't receive secrets, so the checkout/gh steps below would fail
-      # with a cryptic "Input required and not supplied: token". Fail fast with a
-      # clear note pointing maintainers at the manual single_pr dispatch instead.
+      # Fork PRs cannot receive the staging token needed to push the aggregate
+      # branch and deploy. Point maintainers at the manual single_pr dispatch.
       - name: Fork PR — staging not auto-deployed
         if: github.event_name == 'pull_request' && github.event.pull_request.head.repo.full_name != github.repository
         run: |
@@ -83,7 +90,7 @@ jobs:
             echo ""
             echo "    single_pr = ${PR_NUM}"
             echo ""
-            echo "The run pulls this fork in by PR number over its public URL — no need to"
+            echo "The run fetches this fork through its PR ref — no need to"
             echo "select the fork branch in the dropdown."
           } >> "$GITHUB_STEP_SUMMARY"
           echo "::error::Fork PR #${PR_NUM} not auto-deployed. Maintainer: run this workflow manually with single_pr=${PR_NUM} to preview it on staging."
@@ -92,13 +99,27 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v6
         with:
-          fetch-depth: 0
-          token: ${{ secrets.STAGING_GITHUB_TOKEN }}
+          ref: main
+          fetch-depth: 1
+          filter: blob:none
+          persist-credentials: false
+
+      # fetch-depth: 0 in actions/checkout fetches every branch and tag, including
+      # deployment history. Keep all main commits for merging and Hugo page dates,
+      # but fetch historical file contents only when Git needs them.
+      - name: Fetch main history
+        run: |
+          git fetch --no-tags --filter=blob:none --unshallow origin \
+            '+refs/heads/main:refs/remotes/origin/main'
+          git checkout -B main refs/remotes/origin/main
 
       - name: Configure Git
         run: |
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           git config --global user.name "github-actions[bot]"
+          # See deploy.yaml: Git quotes non-ASCII paths unless this is off, and
+          # Hugo then finds no date for them.
+          git config core.quotepath false
 
       - name: Aggregate PRs
         id: aggregate
@@ -110,41 +131,40 @@ jobs:
           fi
           
           # Check if single PR mode is enabled
-          SINGLE_PR="${{ github.event.inputs.single_pr }}"
           if [ -n "$SINGLE_PR" ] && [ "$SINGLE_PR" != "" ]; then
             echo "🎯 Single PR mode: deploying only PR #$SINGLE_PR"
             
             # Validate PR exists and is open
             if ! gh pr view "$SINGLE_PR" --json state --jq '.state' | grep -q "OPEN"; then
               echo "❌ PR #$SINGLE_PR is not open or doesn't exist"
-              echo "branch=main" >> $GITHUB_OUTPUT
-              echo "included_prs=" >> $GITHUB_OUTPUT
-              echo "attempted_prs=$SINGLE_PR" >> $GITHUB_OUTPUT
-              echo "total_prs=0" >> $GITHUB_OUTPUT
-              echo "has_prs=false" >> $GITHUB_OUTPUT
+              echo "branch=main" >> "$GITHUB_OUTPUT"
+              echo "included_prs=" >> "$GITHUB_OUTPUT"
+              echo "attempted_prs=$SINGLE_PR" >> "$GITHUB_OUTPUT"
+              echo "total_prs=0" >> "$GITHUB_OUTPUT"
+              echo "has_prs=false" >> "$GITHUB_OUTPUT"
               exit 1
             fi
             
             PRS="$SINGLE_PR"
-            echo "has_prs=true" >> $GITHUB_OUTPUT
-            echo "total_prs=1" >> $GITHUB_OUTPUT
+            echo "has_prs=true" >> "$GITHUB_OUTPUT"
+            echo "total_prs=1" >> "$GITHUB_OUTPUT"
           else
             # Get all open, non-draft PRs targeting main (regardless of CI status)
             PRS=$(gh pr list --base main --state open --json number,title,headRefName,isDraft --jq '.[] | select(.isDraft == false) | .number')
             
             if [ -z "$PRS" ]; then
               echo "No open non-draft PRs found"
-              echo "branch=main" >> $GITHUB_OUTPUT
-              echo "included_prs=" >> $GITHUB_OUTPUT
-              echo "attempted_prs=" >> $GITHUB_OUTPUT
-              echo "total_prs=0" >> $GITHUB_OUTPUT
-              echo "has_prs=false" >> $GITHUB_OUTPUT
+              echo "branch=main" >> "$GITHUB_OUTPUT"
+              echo "included_prs=" >> "$GITHUB_OUTPUT"
+              echo "attempted_prs=" >> "$GITHUB_OUTPUT"
+              echo "total_prs=0" >> "$GITHUB_OUTPUT"
+              echo "has_prs=false" >> "$GITHUB_OUTPUT"
               exit 0
             fi
             
             echo "Found PRs: $PRS"
-            echo "total_prs=$(echo "$PRS" | wc -l)" >> $GITHUB_OUTPUT
-            echo "has_prs=true" >> $GITHUB_OUTPUT
+            echo "total_prs=$(echo "$PRS" | wc -l)" >> "$GITHUB_OUTPUT"
+            echo "has_prs=true" >> "$GITHUB_OUTPUT"
           fi
           
           # Create a new branch for aggregation starting from main
@@ -154,6 +174,7 @@ jobs:
           
           INCLUDED_PRS=""
           ATTEMPTED_PRS=""
+          CONFLICTED_PRS=""
           
           # Try to merge each PR in order
           for pr in $PRS; do
@@ -166,27 +187,15 @@ jobs:
               ATTEMPTED_PRS="$ATTEMPTED_PRS,$pr"
             fi
             
-            # Note: We no longer skip the triggering PR - all PRs should be included
-            # The "self-reference" issue was preventing the latest PR from being included
-            
-            # Get PR details
-            PR_DATA=$(gh pr view $pr --json headRefName,headRepositoryOwner,title)
-            HEAD_REF=$(echo "$PR_DATA" | jq -r '.headRefName')
-            HEAD_OWNER=$(echo "$PR_DATA" | jq -r '.headRepositoryOwner.login')
-            TITLE=$(echo "$PR_DATA" | jq -r '.title')
-            
+            TITLE=$(gh pr view "$pr" --json title --jq '.title')
             echo "Processing PR #$pr: $TITLE"
-            
-            # Add remote if it's a fork
-            if [ "$HEAD_OWNER" != "forrtproject" ]; then
-              git remote add "pr-$pr" "https://github.com/$HEAD_OWNER/forrtproject.github.io.git"
-              git fetch "pr-$pr" "$HEAD_REF"
-              MERGE_REF="pr-$pr/$HEAD_REF"
-            else
-              git fetch origin "$HEAD_REF"
-              MERGE_REF="origin/$HEAD_REF"
-            fi
-            
+
+            # GitHub exposes this ref for both same-repository and fork PRs.
+            # Fetch only this PR, retaining its full ancestry for merge bases.
+            MERGE_REF="refs/remotes/pull/$pr/head"
+            git fetch --no-tags --filter=blob:none origin \
+              "+refs/pull/$pr/head:$MERGE_REF"
+
             # Try to merge into our aggregate branch
             if git merge "$MERGE_REF" --no-edit; then
               echo "✅ Successfully merged PR #$pr"
@@ -196,17 +205,33 @@ jobs:
                 INCLUDED_PRS="$INCLUDED_PRS,$pr"
               fi
             else
-              echo "⚠️ Merge conflict with PR #$pr - skipping and continuing with next PR"
-              # Only abort if there's an active merge
+              # MERGE_HEAD is only written once the merge starts resolving trees,
+              # so its absence means the merge never got that far - in a blobless
+              # clone most often a failed on-demand fetch of the blobs Git needed.
+              # Contributors must not be told to resolve a conflict that is ours.
               if [ -f .git/MERGE_HEAD ]; then
+                echo "⚠️ Merge conflict with PR #$pr - skipping and continuing with next PR"
+                if [ -z "$CONFLICTED_PRS" ]; then
+                  CONFLICTED_PRS="$pr"
+                else
+                  CONFLICTED_PRS="$CONFLICTED_PRS,$pr"
+                fi
                 git merge --abort
+              else
+                echo "::warning::Merging PR #$pr failed before conflict resolution (not a content conflict) - skipping"
               fi
               # Continue with next PR instead of stopping
             fi
           done
           
-          # Push the aggregate branch
-          git push origin "$AGGREGATE_BRANCH"
+          # The checkout deliberately persists no credentials, so authenticate
+          # only the pushes, from GH_TOKEN, without writing it to .git/config.
+          push_to_origin() {
+            git -c credential.helper= \
+                -c 'credential.helper=!gh auth git-credential' push origin "$@"
+          }
+
+          push_to_origin "$AGGREGATE_BRANCH"
           
           # Clean up old staging branches, keeping only the 2 most recent
           echo "🧹 Cleaning up old staging branches..."
@@ -222,63 +247,38 @@ jobs:
             echo "Found $(echo "$OLD_BRANCHES" | wc -l) old staging branches to delete"
             for branch in $OLD_BRANCHES; do
               echo "  Deleting: $branch"
-              git push origin --delete "$branch" || echo "  ⚠️ Failed to delete $branch (may already be deleted)"
+              push_to_origin --delete "$branch" || echo "  ⚠️ Failed to delete $branch (may already be deleted)"
             done
             echo "✅ Cleanup completed"
           else
             echo "No old staging branches to delete (keeping 2 most recent)"
           fi
           
-          echo "branch=$AGGREGATE_BRANCH" >> $GITHUB_OUTPUT
-          echo "included_prs=$INCLUDED_PRS" >> $GITHUB_OUTPUT
-          echo "attempted_prs=$ATTEMPTED_PRS" >> $GITHUB_OUTPUT
+          echo "branch=$AGGREGATE_BRANCH" >> "$GITHUB_OUTPUT"
+          echo "included_prs=$INCLUDED_PRS" >> "$GITHUB_OUTPUT"
+          echo "attempted_prs=$ATTEMPTED_PRS" >> "$GITHUB_OUTPUT"
+          echo "conflicted_prs=$CONFLICTED_PRS" >> "$GITHUB_OUTPUT"
           
           echo "✅ Aggregation completed"
           echo "📊 Summary:"
-          echo "   - Mode: $( [ -n \"$SINGLE_PR\" ] && echo 'Single PR' || echo 'Aggregate' )"
+          echo "   - Mode: $( [ -n "$SINGLE_PR" ] && echo 'Single PR' || echo 'Aggregate' )"
           echo "   - Total PRs found: $(echo "$PRS" | wc -l)"
           echo "   - PRs attempted: $ATTEMPTED_PRS"
           echo "   - PRs successfully merged: $INCLUDED_PRS"
+          echo "   - PRs skipped over conflicts: $CONFLICTED_PRS"
           echo "   - Workflow trigger: ${{ github.event_name }}"
           if [ "${{ github.event_name }}" = "pull_request" ]; then
             echo "   - Triggering PR: #${{ github.event.pull_request.number }}"
           fi
         env:
           GH_TOKEN: ${{ secrets.STAGING_GITHUB_TOKEN }}
-
-  build:
-    name: Build
-    runs-on: ubuntu-22.04
-    timeout-minutes: 20  # Prevent blocking the queue
-    needs: [aggregate-prs]
-    if: always() && (needs.aggregate-prs.outputs.has-prs == 'true' || github.event.inputs.force_deploy == 'true')
-    permissions:
-      contents: read
-      actions: read  # Needed for artifact access
-    env:
-      HUGO_VERSION: "0.158.0"
-      HUGO_EXTENDED: true
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v6
-        with:
-          ref: ${{ needs.aggregate-prs.outputs.aggregated-branch || 'main' }}
-          fetch-depth: 0  # full history so Hugo's Git-derived dates match production
-
-      # See deploy.yaml: Git quotes non-ASCII paths unless this is off, and
-      # Hugo then finds no date for them.
-      - name: Let Git report non-ASCII paths unquoted
-        run: git config core.quotepath false
-
-      - name: Configure Git
-        run: |
-          git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git config --global user.name "github-actions[bot]"
+          SINGLE_PR: ${{ inputs.single_pr }}
 
       # =======================
       # Data Artifact Retrieval
       # =======================
       - name: Try to download data artifact
+        if: steps.aggregate.outputs.has_prs == 'true' || env.BUILD_SITE == 'true'
         id: download-artifact
         uses: dawidd6/action-download-artifact@v6
         continue-on-error: true
@@ -307,15 +307,10 @@ jobs:
         run: |
           set -e
 
-          # If this is a pull request, we can't easily trigger the external workflow and wait for it
-          # in the same way (or maybe we can, but let's stick to the plan).
-          # Actually, for PRs, we might want to just warn and proceed if it's not critical, 
-          # OR trigger it if we really need the data. 
-          # The original logic skipped it for PRs.
-          
+          # PR runs use the local fallback when no data artifact is available.
           if [ "${{ github.event_name }}" = "pull_request" ]; then
             echo "::warning::Data artifact missing in PR. Skipping trigger."
-            echo "data_processing_triggered=false" >> $GITHUB_OUTPUT
+            echo "data_processing_triggered=false" >> "$GITHUB_OUTPUT"
             exit 0
           fi
 
@@ -333,7 +328,7 @@ jobs:
             -d "{\"ref\":\"$REF\", \"inputs\": {\"skip_deploy\": \"true\"}}" \
             || { echo "::error::Failed to dispatch data-processing workflow"; exit 1; }
             
-          echo "data_processing_triggered=true" >> $GITHUB_OUTPUT
+          echo "data_processing_triggered=true" >> "$GITHUB_OUTPUT"
 
           echo "⏳ Waiting for data-processing workflow run to start and complete..."
 
@@ -359,7 +354,7 @@ jobs:
               if [ "$status" = "completed" ]; then
                 if [ "$conclusion" = "success" ]; then
                   echo "✅ data-processing workflow completed successfully"
-                  echo "run_id=$run_id" >> $GITHUB_OUTPUT
+                  echo "run_id=$run_id" >> "$GITHUB_OUTPUT"
                   exit 0
                 else
                   echo "::error::data-processing workflow completed with conclusion: $conclusion"
@@ -420,23 +415,30 @@ jobs:
 
 
       - name: Setup Hugo
+        if: steps.aggregate.outputs.has_prs == 'true' || env.BUILD_SITE == 'true'
         uses: peaceiris/actions-hugo@75d2e84710de30f6ff7268e08f310b60ef14033f
         with:
           hugo-version: ${{ env.HUGO_VERSION }}
           extended: ${{ env.HUGO_EXTENDED }}
 
       - name: Build site
+        if: steps.aggregate.outputs.has_prs == 'true' || env.BUILD_SITE == 'true'
         run: |
           hugo --gc --minify --cleanDestinationDir --destination public --baseURL https://staging.forrt.org
         env:
           HUGO_ENV: staging
 
       - name: Upload site artifact
+        id: upload-site
+        if: steps.aggregate.outputs.has_prs == 'true' || env.BUILD_SITE == 'true'
         uses: actions/upload-artifact@v7
         with:
           name: forrt-website-aggregate-${{ github.run_number }}
           path: public/
           retention-days: 1
+          # site-built gates deployment on this step's outcome, so an empty
+          # public/ has to fail rather than warn.
+          if-no-files-found: error
 
   deploy-staging:
     name: Deploy - Staging
@@ -448,17 +450,20 @@ jobs:
       contents: write
       pull-requests: write
       issues: write
-    needs: [build, aggregate-prs]
-    # Run on successful build OR on schedule (for monthly reports even when no PRs)
-    if: always() && (needs.build.result == 'success' || github.event_name == 'schedule')
+    needs: [build]
+    # Publish only an uploaded site; scheduled runs can still report with no PRs.
+    if: always() && ((needs.build.result == 'success' && needs.build.outputs.site-built == 'true') || github.event_name == 'schedule')
     steps:
+      # This job runs gh and the Pages action, never the checked-out tree, which
+      # on a pull_request event is the PR's merge ref. Keep the staging PAT out
+      # of its .git/config; the steps below carry it in GH_TOKEN where needed.
       - name: Checkout repository
         uses: actions/checkout@v6
         with:
-          token: ${{ secrets.STAGING_GITHUB_TOKEN }}
+          persist-credentials: false
 
       - name: Download Artifact - Website
-        if: needs.build.result == 'success'
+        if: needs.build.result == 'success' && needs.build.outputs.site-built == 'true'
         uses: actions/download-artifact@v7
         with:
           name: forrt-website-aggregate-${{ github.run_number }}
@@ -466,56 +471,79 @@ jobs:
 
       - name: Create deployment summary
         if: github.event_name != 'workflow_dispatch' || github.event.inputs.create_summary == 'true'
+        env:
+          AGGREGATED_BRANCH: ${{ needs.build.outputs.aggregated-branch }}
+          TOTAL_PRS: ${{ needs.build.outputs.total-prs }}
+          ATTEMPTED_PRS: ${{ needs.build.outputs.attempted-prs }}
+          INCLUDED_PRS: ${{ needs.build.outputs.included-prs }}
+          CONFLICTED_PRS: ${{ needs.build.outputs.conflicted-prs }}
         run: |
-          echo "## 🚀 Staging Deployment Summary" > deployment-summary.md
-          echo "" >> deployment-summary.md
-          echo "**Deployment Time:** $(date -u '+%Y-%m-%d %H:%M:%S UTC')" >> deployment-summary.md
-          echo "" >> deployment-summary.md
-          echo "**Aggregated Branch:** ${{ needs.aggregate-prs.outputs.aggregated-branch }}" >> deployment-summary.md
-          echo "" >> deployment-summary.md
-          echo "**Total PRs Found:** ${{ needs.aggregate-prs.outputs.total-prs }}" >> deployment-summary.md
-          echo "**PRs Attempted:** ${{ needs.aggregate-prs.outputs.attempted-prs }}" >> deployment-summary.md
-          echo "" >> deployment-summary.md
-          
-          if [ "${{ needs.aggregate-prs.outputs.included-prs }}" != "" ]; then
-            echo "### ✅ PRs Successfully Merged:" >> deployment-summary.md
-            IFS=',' read -ra PR_ARRAY <<< "${{ needs.aggregate-prs.outputs.included-prs }}"
-            for pr in "${PR_ARRAY[@]}"; do
-              echo "- PR #$pr" >> deployment-summary.md
-            done
-            echo "" >> deployment-summary.md
-          fi
-          
-          # Show PRs that were attempted but not successfully merged
-          if [ "${{ needs.aggregate-prs.outputs.attempted-prs }}" != "" ] && [ "${{ needs.aggregate-prs.outputs.included-prs }}" != "" ]; then
-            echo "### ⚠️ PRs Attempted but Skipped (Conflicts):" >> deployment-summary.md
-            IFS=',' read -ra ATTEMPTED_ARRAY <<< "${{ needs.aggregate-prs.outputs.attempted-prs }}"
-            IFS=',' read -ra SUCCESSFUL_ARRAY <<< "${{ needs.aggregate-prs.outputs.included-prs }}"
-            
-            for attempted_pr in "${ATTEMPTED_ARRAY[@]}"; do
-              SKIPPED=true
-              for successful_pr in "${SUCCESSFUL_ARRAY[@]}"; do
-                if [ "$attempted_pr" = "$successful_pr" ]; then
-                  SKIPPED=false
-                  break
-                fi
+          {
+            echo "## 🚀 Staging Deployment Summary"
+            echo ""
+            echo "**Deployment Time:** $(date -u '+%Y-%m-%d %H:%M:%S UTC')"
+            echo ""
+            echo "**Aggregated Branch:** $AGGREGATED_BRANCH"
+            echo ""
+            echo "**Total PRs Found:** $TOTAL_PRS"
+            echo "**PRs Attempted:** $ATTEMPTED_PRS"
+            echo ""
+          } > deployment-summary.md
+
+          if [ -n "$INCLUDED_PRS" ]; then
+            {
+              echo "### ✅ PRs Successfully Merged:"
+              IFS=',' read -ra INCLUDED_ARRAY <<< "$INCLUDED_PRS"
+              for pr in "${INCLUDED_ARRAY[@]}"; do
+                echo "- PR #$pr"
               done
-              if [ "$SKIPPED" = true ]; then
-                echo "- PR #$attempted_pr (merge conflicts)" >> deployment-summary.md
-              fi
-            done
-            echo "" >> deployment-summary.md
+              echo ""
+            } >> deployment-summary.md
           fi
-          
-          echo "**Staging URL:** https://staging.forrt.org" >> deployment-summary.md
-          echo "" >> deployment-summary.md
-          echo "### Aggregation Strategy:" >> deployment-summary.md
-          echo "- ✅ All open PRs attempted" >> deployment-summary.md
-          echo "- ✅ Conflicting PRs skipped" >> deployment-summary.md
-          echo "- ✅ Shows combined state of all compatible PRs" >> deployment-summary.md
+
+          if [ -n "$CONFLICTED_PRS" ]; then
+            {
+              echo "### ⚠️ PRs Attempted but Skipped (Conflicts):"
+              IFS=',' read -ra CONFLICTED_ARRAY <<< "$CONFLICTED_PRS"
+              for pr in "${CONFLICTED_ARRAY[@]}"; do
+                echo "- PR #$pr (merge conflicts)"
+              done
+              echo ""
+            } >> deployment-summary.md
+          fi
+
+          # Whatever is left over failed to merge without reaching conflict
+          # resolution, which points at the build rather than at the PR.
+          UNRESOLVED=()
+          IFS=',' read -ra ATTEMPTED_ARRAY <<< "$ATTEMPTED_PRS"
+          for pr in "${ATTEMPTED_ARRAY[@]}"; do
+            [ -n "$pr" ] || continue
+            case ",$INCLUDED_PRS,$CONFLICTED_PRS," in
+              *",$pr,"*) ;;
+              *) UNRESOLVED+=("$pr") ;;
+            esac
+          done
+          if [ ${#UNRESOLVED[@]} -gt 0 ]; then
+            {
+              echo "### ❗ PRs That Could Not Be Merged:"
+              for pr in "${UNRESOLVED[@]}"; do
+                echo "- PR #$pr (merge failed before conflict resolution — not a content conflict)"
+              done
+              echo ""
+            } >> deployment-summary.md
+          fi
+
+          {
+            echo "**Staging URL:** https://staging.forrt.org"
+            echo ""
+            echo "### Aggregation Strategy:"
+            echo "- ✅ All open PRs attempted"
+            echo "- ✅ Conflicting PRs skipped"
+            echo "- ✅ Shows combined state of all compatible PRs"
+          } >> deployment-summary.md
 
       - name: Deploy - GitHub Pages
-        if: needs.build.result == 'success'
+        if: needs.build.result == 'success' && needs.build.outputs.site-built == 'true'
         uses: peaceiris/actions-gh-pages@4f9cc6602d3f66b9c108549d475ec49e8ef4d45e
         with:
           personal_token: ${{ secrets.STAGING_GITHUB_TOKEN }}
@@ -525,70 +553,92 @@ jobs:
           cname: staging.forrt.org
 
       - name: Comment on PRs
-        if: needs.aggregate-prs.outputs.attempted-prs != ''
+        if: needs.build.outputs.attempted-prs != ''
+        env:
+          GH_TOKEN: ${{ secrets.STAGING_GITHUB_TOKEN }}
+          REPO: ${{ github.repository }}
+          ATTEMPTED_PRS: ${{ needs.build.outputs.attempted-prs }}
+          INCLUDED_PRS: ${{ needs.build.outputs.included-prs }}
+          CONFLICTED_PRS: ${{ needs.build.outputs.conflicted-prs }}
         run: |
           DEPLOYMENT_TIME=$(date -u '+%Y-%m-%d %H:%M:%S UTC')
-          IFS=',' read -ra PR_ARRAY <<< "${{ needs.aggregate-prs.outputs.attempted-prs }}"
+          COMMENT_IDENTIFIER="<!-- staging-deployment-comment -->"
+
+          IFS=',' read -ra PR_ARRAY <<< "$ATTEMPTED_PRS"
           for pr in "${PR_ARRAY[@]}"; do
-            # Check if this PR was successfully merged
-            SUCCESSFUL_MERGE=false
-            if [ "${{ needs.aggregate-prs.outputs.included-prs }}" != "" ]; then
-              IFS=',' read -ra SUCCESSFUL_ARRAY <<< "${{ needs.aggregate-prs.outputs.included-prs }}"
-              for successful_pr in "${SUCCESSFUL_ARRAY[@]}"; do
-                if [ "$successful_pr" = "$pr" ]; then
-                  SUCCESSFUL_MERGE=true
-                  break
-                fi
-              done
-            fi
-            
-            # Create the comment body with a unique identifier
-            COMMENT_IDENTIFIER="<!-- staging-deployment-comment -->"
-            if [ "$SUCCESSFUL_MERGE" = true ]; then
-              COMMENT_BODY="${COMMENT_IDENTIFIER}
+            [ -n "$pr" ] || continue
+
+            case ",$INCLUDED_PRS," in
+              *",$pr,"*) OUTCOME=merged ;;
+              *)
+                case ",$CONFLICTED_PRS," in
+                  *",$pr,"*) OUTCOME=conflict ;;
+                  # The merge failed before reaching conflict resolution, so the
+                  # PR has nothing to fix; say so rather than blaming its author.
+                  *) OUTCOME=failed ;;
+                esac
+                ;;
+            esac
+
+            case "$OUTCOME" in
+              merged)
+                COMMENT_BODY="${COMMENT_IDENTIFIER}
           ✅ **Staging Deployment Status**
-          
+
           This PR has been successfully deployed to staging as part of an aggregated deployment.
-          
+
           **Deployed at:** ${DEPLOYMENT_TIME}
           **Staging URL:** https://staging.forrt.org
-          
+
           The staging site shows the combined state of all compatible open PRs."
-            else
-              COMMENT_BODY="${COMMENT_IDENTIFIER}
+                ;;
+              conflict)
+                COMMENT_BODY="${COMMENT_IDENTIFIER}
           ⚠️ **Staging Deployment Status**
-          
+
           This PR was attempted for staging deployment but had merge conflicts and was skipped.
-          
+
           **Attempted at:** ${DEPLOYMENT_TIME}
           **Staging URL:** https://staging.forrt.org
-          
+
           Please resolve conflicts with the base branch and the deployment will be retried automatically."
-            fi
-            
+                ;;
+              *)
+                COMMENT_BODY="${COMMENT_IDENTIFIER}
+          ❗ **Staging Deployment Status**
+
+          This PR could not be merged into the staging aggregate. The merge failed
+          before conflict resolution, so this is a problem with the staging build
+          rather than a conflict in this PR — no action is needed from you.
+
+          **Attempted at:** ${DEPLOYMENT_TIME}
+          **Staging URL:** https://staging.forrt.org
+
+          The deployment will be retried automatically on the next staging run."
+                ;;
+            esac
+
             # Find existing staging deployment comment (search all comments)
             # Note: Don't filter by user since STAGING_GITHUB_TOKEN is a PAT
-            EXISTING_COMMENT_ID=$(gh api "repos/${{ github.repository }}/issues/${pr}/comments" \
+            EXISTING_COMMENT_ID=$(gh api "repos/${REPO}/issues/${pr}/comments" \
               --paginate \
               --jq '.[] | select(.body | contains("<!-- staging-deployment-comment -->")) | .id' 2>/dev/null | head -1)
-            
+
             if [ -n "$EXISTING_COMMENT_ID" ]; then
               echo "💬 Updating existing comment on PR #$pr (comment ID: $EXISTING_COMMENT_ID)"
               # Try to update the comment, fall back to creating a new one if update fails
-              if ! UPDATE_OUTPUT=$(gh api "repos/${{ github.repository }}/issues/comments/${EXISTING_COMMENT_ID}" \
+              if ! UPDATE_OUTPUT=$(gh api "repos/${REPO}/issues/comments/${EXISTING_COMMENT_ID}" \
                 -X PATCH \
                 -f body="$COMMENT_BODY" 2>&1); then
                 echo "⚠️ Failed to update comment: $UPDATE_OUTPUT"
                 echo "⚠️ Creating a new comment instead"
-                gh pr comment $pr --body "$COMMENT_BODY"
+                gh pr comment "$pr" --body "$COMMENT_BODY"
               fi
             else
               echo "💬 Creating new comment on PR #$pr"
-              gh pr comment $pr --body "$COMMENT_BODY"
+              gh pr comment "$pr" --body "$COMMENT_BODY"
             fi
           done
-        env:
-          GH_TOKEN: ${{ secrets.STAGING_GITHUB_TOKEN }}
 
       - name: Create monthly deployment report
         if: github.event_name == 'schedule' || (github.event_name == 'workflow_dispatch' && github.event.inputs.create_summary == 'true')
