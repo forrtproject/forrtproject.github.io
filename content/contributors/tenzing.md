@@ -399,7 +399,7 @@ FORRT is driven by a **large and diverse community of contributors** that shape 
 <li class="contributor-group" id="0000-0003-1462-5346">
   <strong><a href="https://orcid.org/0000-0003-1462-5346">Ahlam A. Almehmadi</a></strong> contributed to
   <ul class="contributions-list">
-    <li class="contribution" data-projects="glossary-arabic-translation" data-roles="supervision,writing-review-and-editing"><a href="https://forrt.org/glossary/arabic/">Glossary - Arabic Translation</a> with <em>Supervision</em> and <em>Writing - review & editing</em></li>
+    <li class="contribution" data-projects="glossary-arabic-translation" data-roles="formal-analysis,supervision,writing-review-and-editing"><a href="https://forrt.org/glossary/arabic/">Glossary - Arabic Translation</a> with <em>Formal analysis</em>, <em>Supervision</em> and <em>Writing - review & editing</em></li>
   </ul>
 </li>
 
