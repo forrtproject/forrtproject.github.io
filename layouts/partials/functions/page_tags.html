@@ -1,0 +1,29 @@
+{{/* A page's `tags`, cleaned and de-duplicated case-insensitively — the single
+     definition for the whole site.
+
+     Tags arrive from the curated-resources sheet and from hand-written front
+     matter, and several consumers read them (badges, search index, resource
+     cards, JSON-LD keywords, the tag browser). Cleaning here keeps them from
+     disagreeing, and a section added later inherits it.
+
+     Casing is left alone on purpose: picking one spelling per term needs
+     frequency counts over the whole corpus, so `canonical_tags()` in
+     `content/resources/resource.py` does it at the source — which is also the
+     only place that can fix what Hugo's `[related]` indices read directly.
+
+     Inputs: page context. Output: slice of strings, possibly empty. */}}
+
+{{ $tags := slice }}
+{{ $seen := slice }}
+
+{{ range .Params.tags }}
+  {{ range partial "functions/clean_tag_cell.html" . }}
+    {{ $key := lower . }}
+    {{ if not (in $seen $key) }}
+      {{ $seen = $seen | append $key }}
+      {{ $tags = $tags | append . }}
+    {{ end }}
+  {{ end }}
+{{ end }}
+
+{{ return $tags }}
