@@ -11,9 +11,11 @@ Hard checks (exit 1 if any fails):
      not count; language-mermaid blocks belong to Mermaid), and mermaid.min.js
      exactly on pages with a language-mermaid block.
   4. Every <img> carries an alt attribute (a bare `alt` counts as present).
+  5. Every homepage <img> carries both width and height, so the browser reserves
+     its box before the file loads (#869).
 
 Report-only sections (never fail): pages with zero or several <h1>, and the
-count of homepage images that carry both width and height.
+site-wide share of images that carry both width and height.
 """
 
 import os
@@ -87,6 +89,11 @@ class Page:
     def imgs_without_alt(self):
         return [img for img in self.imgs if "alt" not in img]
 
+    @property
+    def imgs_without_dims(self):
+        return [img for img in self.imgs
+                if "width" not in img or "height" not in img]
+
 
 def load_pages(public_dir):
     pages = []
@@ -127,6 +134,12 @@ def check_conditional_assets(pages):
     }
 
 
+def check_homepage_img_dims(home):
+    if home is None:
+        return ["index.html (homepage not found)"]
+    return [img.get("src", "(no src)") for img in home.imgs_without_dims]
+
+
 def check_img_alt(pages):
     return ["%s (%d image(s))" % (p.path, len(p.imgs_without_alt))
             for p in pages if p.imgs_without_alt]
@@ -149,6 +162,7 @@ def main(public_dir):
         '1. no <h1>Search</h1>': check_no_search_heading(pages),
         "2. homepage free of mermaid/highlight.js assets": check_homepage_assets(home),
         "4. every <img> has an alt attribute": check_img_alt(pages),
+        "5. every homepage <img> has width and height": check_homepage_img_dims(home),
     }
     conditional = check_conditional_assets(pages)
     results["3. conditional highlight.js / mermaid loading"] = [
@@ -167,14 +181,17 @@ def main(public_dir):
                 if items:
                     print_items(reason, items)
         else:
-            print_items("pages", results[title])
+            # Check 5 lists offending image sources, every other check lists pages.
+            print_items("images" if title.startswith("5.") else "pages", results[title])
 
     print("\nReport only (never fails)")
     print_items("pages with no <h1>", [p.path for p in pages if not p.h1_texts])
     print_items("pages with several <h1>", [p.path for p in pages if len(p.h1_texts) > 1])
-    if home is not None:
-        sized = [i for i in home.imgs if "width" in i and "height" in i]
-        print("  homepage images: %d, with width and height: %d" % (len(home.imgs), len(sized)))
+    all_imgs = sum(len(p.imgs) for p in pages)
+    unsized = sum(len(p.imgs_without_dims) for p in pages)
+    if all_imgs:
+        print("  images site-wide: %d, with width and height: %d (%.1f%%)"
+              % (all_imgs, all_imgs - unsized, 100.0 * (all_imgs - unsized) / all_imgs))
 
     return 1 if any(results.values()) else 0
 
