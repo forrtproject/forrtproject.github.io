@@ -125,12 +125,18 @@
                     {{ if or .altmetric_doi .altmetric_doi_2 }}
                     <div class="pub-metrics">
                         {{ if .altmetric_doi }}
-                        <div class='altmetric-embed' data-badge-type='donut' data-role='box'
-                            data-doi="{{ .altmetric_doi }}"></div>
+                        <div class="pub-metric">
+                            {{ if .altmetric_doi_2 }}<span class="pub-metric-label">Published article</span>{{ end }}
+                            <div class="altmetric-embed" data-badge-type="donut" data-role="box"
+                                data-doi="{{ .altmetric_doi }}"></div>
+                        </div>
                         {{ end }}
                         {{ if .altmetric_doi_2 }}
-                        <div class="altmetric-embed" data-badge-type='donut' data-role='box'
-                            data-doi="{{ .altmetric_doi_2 }}"></div>
+                        <div class="pub-metric">
+                            <span class="pub-metric-label">Preprint</span>
+                            <div class="altmetric-embed" data-badge-type="donut" data-role="box"
+                                data-doi="{{ .altmetric_doi_2 }}"></div>
+                        </div>
                         {{ end }}
                     </div>
                     {{ end }}

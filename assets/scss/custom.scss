@@ -1027,8 +1027,22 @@ article.article:has(table) .article-container {
 
 .pub-metrics {
   display: flex;
-  gap: 8px;
+  gap: 12px;
+  align-items: flex-start;
+}
+
+.pub-metric {
+  display: flex;
+  flex-direction: column;
   align-items: center;
+}
+
+.pub-metric-label {
+  margin-bottom: 4px;
+  color: #495057;
+  font-size: 0.75rem;
+  font-weight: 600;
+  white-space: nowrap;
 }
 
 /* Pill Styles */
