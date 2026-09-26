@@ -219,7 +219,7 @@
         "name": "Leia Organa",
         "title": "General, Rebel Alliance",
         "bio": "Leader of the Rebel Alliance and veteran diplomat. Dedicated to building institutions that serve the collective good and hold power accountable.",
-        "photo": "/img/featured-recommenders/leia-organa-6afb206a.jpg",
+        "photo": "",
         "text": "I led a rebellion that toppled an empire, so trust me: crises drive change. This paper shows how the replication crisis sparked real structural reforms. If the scientific community can self-correct, maybe the Senate could too."
       }
     ]
@@ -2190,7 +2190,7 @@
         "name": "Sarah Connor",
         "title": "Resistance Leader",
         "bio": "Mother, fighter, and strategist. Knows that preparation and understanding your tools are the difference between survival and failure.",
-        "photo": "",
+        "photo": "/img/featured-recommenders/sarah-connor-cb4a371e.jpg",
         "text": "I trained to fight Terminators; now I train researchers to report effect sizes. This primer on Cohen's d and eta-squared is the weapon every scientist needs. If you can't quantify your effect, how do you know you've won the fight?"
       }
     ]
