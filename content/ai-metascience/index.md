@@ -4,7 +4,7 @@ type: plain_page
 url: "/ai-metascience/"
 hide_title: true
 hide_date: true
-summary: "Registration is open for the FORRT AI in Metascience Online Conference, 28–30 September 2026. Online, free to attend, 37 talks and workshops over 3 days."
+summary: "Registration is open for the FORRT AI in Metascience Online Conference, 28–30 September 2026. Online, free to attend, 35+ talks and workshops over 3 days."
 sharing_description: "Register for the FORRT AI in Metascience Online Conference, 28–30 September 2026. Online and free to attend."
 sharing_image_alt: "FORRT AI in Metascience Conference — online, 28–30 September 2026"
 image:
@@ -429,13 +429,13 @@ image:
 }
 </style>
 
-How is AI changing the way research is done, checked and understood? The **FORRT AI in Metascience Online Conference** takes three days over that question, with 37 talks and workshops from people who are studying it or building with it. Registration is now open, and everyone is welcome.
+How is AI changing the way research is done, checked and understood? The **FORRT AI in Metascience Online Conference** takes three days over that question, with 35+ talks and workshops from people who are studying it or building with it. Registration is now open, and everyone is welcome.
 
 <div class="am-facts">
 <div class="am-fact"><span class="am-fact-label">When</span><span class="am-fact-value">28–30 Sept 2026 · 09:30–18:00 CEST (UTC+2)</span></div>
 <div class="am-fact"><span class="am-fact-label">Where</span><span class="am-fact-value">Online, Google Meet</span></div>
 <div class="am-fact"><span class="am-fact-label">Cost</span><span class="am-fact-value">Free</span></div>
-<div class="am-fact"><span class="am-fact-label">Format</span><span class="am-fact-value">Single track, 37 talks &amp; workshops. Follow it all or dip in.</span></div>
+<div class="am-fact"><span class="am-fact-label">Format</span><span class="am-fact-value">Single track, 35+ talks &amp; workshops. Follow it all or dip in.</span></div>
 </div>
 
 <div class="am-reg-cta">
