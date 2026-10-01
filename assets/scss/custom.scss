@@ -623,6 +623,118 @@
   color: #1264ab;
 }
 
+/* ---- Lesson plans (data/lesson_plans.json) ----
+   One green marks lesson-plan sets everywhere: the dot on sub-cluster headers,
+   cluster stats and sidebar entries, the filter chip, and the teaching-materials strip. */
+$lp-green: #2f6b4f;
+
+.lp-dot {
+  display: inline-block;
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 50%;
+  background: $lp-green;
+  margin-left: 0.35rem;
+  vertical-align: 0.05em;
+  flex-shrink: 0;
+}
+.cluster-stats .lp-dot { margin-left: 0; width: 0.45rem; height: 0.45rem; }
+/* Sidebar sub-cluster: dot sits beside the reference count so it never wraps onto its own line */
+.cluster-nav-subs .badge .lp-dot { margin: 0 0.35rem 0 0; vertical-align: 0; }
+
+.lp-strip {
+  background: #fff;
+  border: 1px solid rgba(0,0,0,0.08);
+  border-left: 4px solid $lp-green;
+  border-radius: 4px;
+  padding: 0.45rem 0.7rem 0.4rem;
+  margin: 0.15rem 0 0.55rem;
+}
+.lp-strip__label {
+  display: block;
+  font-size: 0.58rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: $lp-green;
+  margin-bottom: 0.25rem;
+}
+.lp-strip__chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem;
+  margin-bottom: 0.3rem;
+}
+.lp-chip {
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: #333;
+  background: rgba(47,107,79,0.07);
+  border: 1px solid rgba(47,107,79,0.2);
+  border-radius: 3px;
+  padding: 0.12rem 0.45rem;
+  white-space: nowrap;
+}
+.lp-chip__formats {
+  font-weight: 400;
+  color: #777;
+}
+.lp-chip a {
+  color: $lp-green;
+  font-weight: 600;
+  text-decoration: underline;
+  text-decoration-color: rgba(47,107,79,0.35);
+  text-underline-offset: 2px;
+}
+.lp-chip a:hover { color: #1f4a36; text-decoration-color: currentColor; }
+.lp-strip__meta {
+  font-size: 0.62rem;
+  line-height: 1.45;
+  color: #777;
+  margin: 0;
+}
+.lp-strip__meta a { color: #555; text-decoration: underline; text-decoration-color: rgba(0,0,0,0.25); }
+.lp-strip__meta a:hover { color: $lp-green; }
+
+/* Filter chip: same footprint as .fr-tag-btn; pressed state fills green */
+.lp-filter-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-family: inherit;
+  font-size: 0.62rem;
+  font-weight: 600;
+  padding: 0.18rem 0.55rem;
+  border-radius: 3px;
+  border: 1px solid rgba(47,107,79,0.35);
+  background: transparent;
+  color: $lp-green;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s, border-color 0.15s;
+}
+.lp-filter-btn .lp-dot { margin-left: 0; }
+.lp-filter-btn:hover { background: rgba(47,107,79,0.08); }
+.lp-filter-btn[aria-pressed="true"] { background: $lp-green; border-color: $lp-green; color: #fff; }
+.lp-filter-btn[aria-pressed="true"] .lp-dot { background: #fff; }
+
+/* Lesson-plan filter on (.lp-filter-on set by featured-resources.js): hide everything without a set */
+.lp-filter-on .cluster-section:not([data-lp]),
+.lp-filter-on .acc-section:not([data-lp]),
+.lp-filter-on .cluster-nav-group:not([data-lp]),
+.lp-filter-on .cluster-nav-subs .nav-item:not([data-lp]) {
+  display: none;
+}
+/* Remaining sub-clusters lose their visible neighbour, so drop the divider on the first one shown */
+.lp-filter-on .acc-section[data-lp] { border-top: 0; }
+.lp-filter-on .acc-section[data-lp] ~ .acc-section[data-lp] { border-top: 1px solid rgba(0,0,0,0.06); }
+.lp-filter-empty { display: none; }
+.lp-filter-on .lp-filter-empty {
+  display: block;
+  font-size: 0.8rem;
+  color: #666;
+  padding: 1rem 0;
+}
+
 /* ---- Publication list ---- */
 .publication-list {
   padding-left: 1.5rem;

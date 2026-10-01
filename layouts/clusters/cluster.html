@@ -71,6 +71,10 @@
             </div>
             {{ end }}
             {{ partial "clusters/cluster_section.html" (dict "cluster" $cluster "ci" $ci "colors" $colors) }}
+            {{/* Shown by CSS when the lesson-plan filter hides this whole cluster */}}
+            {{ if not (index (partialCached "clusters/lesson_plans.html" "lesson-plans") (printf "%d" $n)) }}
+            <p class="lp-filter-empty">This cluster has no lesson plans yet. The clusters navigation lists the clusters that have them.</p>
+            {{ end }}
           </main>
         </div>
       </div>

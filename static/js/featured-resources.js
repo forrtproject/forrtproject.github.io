@@ -626,6 +626,9 @@
     var specCheckbox = document.getElementById('fr-global-specificity-checkbox');
     var searchInput = document.getElementById('clusters-inline-search-input');
     var clearBtn = document.getElementById('fr-global-clear');
+    /* Lesson-plan toggle: sets .lp-filter-on on the layout; CSS then hides clusters,
+       sub-clusters and sidebar entries without [data-lp]. */
+    var lpBtn = document.getElementById('lp-filter-toggle');
 
     // --- Pre-cache card data so filtering never queries the DOM for text ---
     var sectionCache = [];
@@ -682,12 +685,20 @@
 
     if (specCheckbox) specCheckbox.addEventListener('change', applyGlobalFilters);
 
+    if (lpBtn) {
+      lpBtn.addEventListener('click', function () {
+        lpBtn.setAttribute('aria-pressed', lpBtn.getAttribute('aria-pressed') === 'true' ? 'false' : 'true');
+        applyGlobalFilters();
+      });
+    }
+
     if (clearBtn) {
       clearBtn.addEventListener('click', function () {
         if (searchInput) searchInput.value = '';
         resetGroupToAll(focusGroup);
         resetGroupToAll(typeGroup);
         if (specCheckbox) specCheckbox.checked = false;
+        if (lpBtn) lpBtn.setAttribute('aria-pressed', 'false');
         applyGlobalFilters();
         if (searchInput) searchInput.focus();
       });
@@ -722,7 +733,13 @@
       var showNarrow = specCheckbox ? specCheckbox.checked : false;
       var query = searchInput ? searchInput.value.toLowerCase().trim() : '';
       var tokens = query ? query.split(/\s+/) : [];
-      var isFiltered = activeFocus !== 'all' || activeType !== 'all' || tokens.length > 0;
+      var lpOnly = lpBtn ? lpBtn.getAttribute('aria-pressed') === 'true' : false;
+      document.querySelectorAll('.clusters-layout').forEach(function (el) {
+        el.classList.toggle('lp-filter-on', lpOnly);
+      });
+      /* Counting the lesson-plan toggle as a filter auto-expands the remaining sub-clusters,
+         so their teaching-materials strips are visible straight away. */
+      var isFiltered = activeFocus !== 'all' || activeType !== 'all' || tokens.length > 0 || lpOnly;
       if (clearBtn) clearBtn.hidden = !isFiltered;
 
       // --- Pass 1: compute visibility from cached data (no DOM reads) ---
