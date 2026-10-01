@@ -650,6 +650,8 @@ $lp-green: #2f6b4f;
   padding: 0.45rem 0.7rem 0.4rem;
   margin: 0.15rem 0 0.55rem;
 }
+/* Set topic, shown only when it differs from the sub-cluster it sits under (data: "heading") */
+.lp-strip__heading { text-transform: none; letter-spacing: 0; }
 .lp-strip__label {
   display: block;
   font-size: 0.58rem;

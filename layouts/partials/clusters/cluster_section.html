@@ -75,7 +75,7 @@
         {{/* Teaching materials: one chip per file label, one link per format */}}
         {{ $files := .files }}
         <aside class="lp-strip" aria-label="Teaching materials: {{ .title }}">
-          <span class="lp-strip__label">Teaching materials</span>
+          <span class="lp-strip__label">Teaching materials{{ with .heading }}: <span class="lp-strip__heading">{{ . }}</span>{{ end }}</span>
           <div class="lp-strip__chips">
             {{ $labels := slice }}
             {{ range $files }}{{ if not (in $labels .label) }}{{ $labels = $labels | append .label }}{{ end }}{{ end }}
