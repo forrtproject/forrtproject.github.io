@@ -85,8 +85,8 @@
     doi: "https://doi.org/10.5334/jopd.101"
     postprint: "https://osf.io/preprints/metaarxiv/me2ub"
     project: "https://forrt.org/replication-hub/"
-  altmetric_doi: "10.31222/osf.io/me2ub"
-  altmetric_doi_2: "10.5334/jopd.101"
+  altmetric_doi: "10.5334/jopd.101"
+  altmetric_doi_2: "10.31222/osf.io/me2ub"
   focus_area: "Meta-Research & Scientific Reform"
 
 # 7
@@ -117,7 +117,8 @@
   links:
     doi: "https://doi.org/10.1038/s44271-023-00003-2"
     postprint: "https://doi.org/10.31222/osf.io/r6cvx"
-  altmetric_doi: "10.31222/osf.io/r6cvx"
+  altmetric_doi: "10.1038/s44271-023-00003-2"
+  altmetric_doi_2: "10.31222/osf.io/r6cvx"
   focus_area: "Meta-Research & Scientific Reform"
 
 # 9
