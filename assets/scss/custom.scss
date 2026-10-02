@@ -2311,6 +2311,7 @@ h1.clusters-site-heading.clusters-hub-page__title {
   display: flex;
   align-items: center;
   gap: 0.3rem;
+  margin: 0; /* Bootstrap gives <label> a bottom margin, which lifts it off the button row */
   font-size: 0.68rem;
   color: #666;
   cursor: pointer;
