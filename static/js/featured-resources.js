@@ -626,9 +626,9 @@
     var specCheckbox = document.getElementById('fr-global-specificity-checkbox');
     var searchInput = document.getElementById('clusters-inline-search-input');
     var clearBtn = document.getElementById('fr-global-clear');
-    /* Lesson-plan toggle: sets .lp-filter-on on the layout; CSS then hides clusters,
-       sub-clusters and sidebar entries without [data-lp]. */
-    var lpBtn = document.getElementById('lp-filter-toggle');
+    /* Lesson-plan checkbox: sets .lp-filter-on on the layout; CSS then hides clusters,
+       sub-clusters and sidebar entries without [data-lp]. It filters sections, not cards. */
+    var lpCheckbox = document.getElementById('lp-filter-checkbox');
 
     // --- Pre-cache card data so filtering never queries the DOM for text ---
     var sectionCache = [];
@@ -685,12 +685,7 @@
 
     if (specCheckbox) specCheckbox.addEventListener('change', applyGlobalFilters);
 
-    if (lpBtn) {
-      lpBtn.addEventListener('click', function () {
-        lpBtn.setAttribute('aria-pressed', lpBtn.getAttribute('aria-pressed') === 'true' ? 'false' : 'true');
-        applyGlobalFilters();
-      });
-    }
+    if (lpCheckbox) lpCheckbox.addEventListener('change', applyGlobalFilters);
 
     if (clearBtn) {
       clearBtn.addEventListener('click', function () {
@@ -698,7 +693,7 @@
         resetGroupToAll(focusGroup);
         resetGroupToAll(typeGroup);
         if (specCheckbox) specCheckbox.checked = false;
-        if (lpBtn) lpBtn.setAttribute('aria-pressed', 'false');
+        if (lpCheckbox) lpCheckbox.checked = false;
         applyGlobalFilters();
         if (searchInput) searchInput.focus();
       });
@@ -733,7 +728,7 @@
       var showNarrow = specCheckbox ? specCheckbox.checked : false;
       var query = searchInput ? searchInput.value.toLowerCase().trim() : '';
       var tokens = query ? query.split(/\s+/) : [];
-      var lpOnly = lpBtn ? lpBtn.getAttribute('aria-pressed') === 'true' : false;
+      var lpOnly = lpCheckbox ? lpCheckbox.checked : false;
       document.querySelectorAll('.clusters-layout').forEach(function (el) {
         el.classList.toggle('lp-filter-on', lpOnly);
       });
