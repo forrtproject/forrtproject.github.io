@@ -671,11 +671,12 @@ $lp-green: #2f6b4f;
   font-size: 0.7rem;
   font-weight: 600;
   color: #333;
-  background: rgba(47,107,79,0.07);
-  border: 1px solid rgba(47,107,79,0.2);
+  background: rgba($lp-green,0.07);
+  border: 1px solid rgba($lp-green,0.2);
   border-radius: 3px;
   padding: 0.12rem 0.45rem;
-  white-space: nowrap;
+  max-width: 100%;
+  overflow-wrap: anywhere;
 }
 .lp-chip__formats {
   font-weight: 400;
@@ -685,7 +686,7 @@ $lp-green: #2f6b4f;
   color: $lp-green;
   font-weight: 600;
   text-decoration: underline;
-  text-decoration-color: rgba(47,107,79,0.35);
+  text-decoration-color: rgba($lp-green,0.35);
   text-underline-offset: 2px;
 }
 .lp-chip a:hover { color: #1f4a36; text-decoration-color: currentColor; }
@@ -698,8 +699,7 @@ $lp-green: #2f6b4f;
 .lp-strip__meta a { color: #555; text-decoration: underline; text-decoration-color: rgba(0,0,0,0.25); }
 .lp-strip__meta a:hover { color: $lp-green; }
 
-/* Filter chip: same footprint as .fr-tag-btn; pressed state fills green */
-.lp-filter-toggle { color: $lp-green; }
+/* Lesson-plan filter: a .fr-specificity-toggle checkbox whose label includes the dot */
 .lp-filter-toggle .lp-dot { margin: 0 0.2rem 0 0; }
 
 /* Lesson-plan filter on (.lp-filter-on set by featured-resources.js): hide everything without a set */

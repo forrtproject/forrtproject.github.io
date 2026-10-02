@@ -667,6 +667,7 @@
         body: body,
         chevron: header ? header.querySelector('.acc-chevron') : null,
         ownText: ownText,
+        hasLp: section.hasAttribute('data-lp'),
         cards: cards
       });
     });
@@ -767,6 +768,10 @@
             if (sec.ownText.indexOf(tokens[t2]) === -1) { ownTextMatches = false; break; }
           }
         }
+
+        /* With the lesson-plan filter on, a sub-cluster with a set stays open even if no card
+           matches the other filters: its teaching-materials strip is what the user asked for. */
+        if (lpOnly && sec.hasLp) ownTextMatches = true;
 
         sectionResults.push({ matchCount: matchCount, cardVis: cardVis, ownTextMatches: ownTextMatches });
       }
