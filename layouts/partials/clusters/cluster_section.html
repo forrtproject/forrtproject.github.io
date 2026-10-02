@@ -71,6 +71,10 @@
       </div>
       <div class="acc-body acc-collapsed">
 
+        {{ if $sc.description }}
+        <p class="sc-description">{{ $sc.description }}</p>
+        {{ end }}
+
         {{ with $lp }}
         {{/* Teaching materials: one chip per file label, one link per format */}}
         {{ $files := .files }}
@@ -95,10 +99,6 @@
             <a href="{{ .record }}" target="_blank" rel="noopener">Zenodo record</a>{{ with .doi }} (<a href="https://doi.org/{{ . }}" target="_blank" rel="noopener">doi:{{ . }}</a>){{ end }}
           </p>
         </aside>
-        {{ end }}
-
-        {{ if $sc.description }}
-        <p class="sc-description">{{ $sc.description }}</p>
         {{ end }}
 
         {{ if $sc.publications }}

@@ -1,75 +1,6 @@
 {
   "sets": {
     "2": {
-      "effect-sizes-statistical-power-simulations-confidence-intervals": {
-        "title": "Effect sizes, statistical power, simulations, and confidence intervals",
-        "record": "https://zenodo.org/records/23090870",
-        "doi": "10.5281/zenodo.23090870",
-        "creators": [
-          "Yijing Wang"
-        ],
-        "reviewers": [
-          "Jaitshree Naik",
-          "Carolina Natel"
-        ],
-        "files": [
-          {
-            "label": "Slides",
-            "url": "https://zenodo.org/records/23090870/files/effect-sizes-power-slides.pptx?download=1",
-            "format": "PPTX"
-          },
-          {
-            "label": "Slides",
-            "url": "https://zenodo.org/records/23090870/files/effect-sizes-power-slides.pdf?download=1",
-            "format": "PDF"
-          },
-          {
-            "label": "Lesson plan L1",
-            "url": "https://zenodo.org/records/23090870/files/effect-sizes-power-lesson-plan-L1.docx?download=1",
-            "format": "DOCX"
-          },
-          {
-            "label": "Lesson plan L1",
-            "url": "https://zenodo.org/records/23090870/files/effect-sizes-power-lesson-plan-L1.pdf?download=1",
-            "format": "PDF"
-          },
-          {
-            "label": "Lesson plan L2",
-            "url": "https://zenodo.org/records/23090870/files/effect-sizes-power-lesson-plan-L2.docx?download=1",
-            "format": "DOCX"
-          },
-          {
-            "label": "Lesson plan L2",
-            "url": "https://zenodo.org/records/23090870/files/effect-sizes-power-lesson-plan-L2.pdf?download=1",
-            "format": "PDF"
-          },
-          {
-            "label": "Lesson plan L3",
-            "url": "https://zenodo.org/records/23090870/files/effect-sizes-power-lesson-plan-L3.docx?download=1",
-            "format": "DOCX"
-          },
-          {
-            "label": "Lesson plan L3",
-            "url": "https://zenodo.org/records/23090870/files/effect-sizes-power-lesson-plan-L3.pdf?download=1",
-            "format": "PDF"
-          },
-          {
-            "label": "Quarto exercise: power analysis",
-            "url": "https://zenodo.org/records/23090870/files/power_analysis.qmd?download=1",
-            "format": "QMD"
-          },
-          {
-            "label": "Quarto exercise: effect sizes for ANOVA",
-            "url": "https://zenodo.org/records/23090870/files/effect_size_ANOVA.qmd?download=1",
-            "format": "QMD"
-          },
-          {
-            "label": "Quarto exercise: effect sizes for mean differences",
-            "url": "https://zenodo.org/records/23090870/files/effect_size_mean_difference.qmd?download=1",
-            "format": "QMD"
-          }
-        ]
-      },
       "questionable-measurement-practices-qmps-validity-reliability-issues": {
         "title": "Questionable measurement practices (QMPs), validity, and reliability",
         "record": "https://zenodo.org/records/23090874",
@@ -605,58 +536,6 @@
             "format": "PDF"
           }
         ]
-      },
-      "equity": {
-        "title": "Inequities in higher education",
-        "record": "https://zenodo.org/records/23090912",
-        "doi": "10.5281/zenodo.23090912",
-        "creators": [
-          "Rachel Renbarger"
-        ],
-        "reviewers": [],
-        "files": [
-          {
-            "label": "Slides",
-            "url": "https://zenodo.org/records/23090912/files/inequities-higher-education-slides.pptx?download=1",
-            "format": "PPTX"
-          },
-          {
-            "label": "Slides",
-            "url": "https://zenodo.org/records/23090912/files/inequities-higher-education-slides.pdf?download=1",
-            "format": "PDF"
-          },
-          {
-            "label": "Lesson plan L1",
-            "url": "https://zenodo.org/records/23090912/files/inequities-higher-education-lesson-plan-L1.docx?download=1",
-            "format": "DOCX"
-          },
-          {
-            "label": "Lesson plan L1",
-            "url": "https://zenodo.org/records/23090912/files/inequities-higher-education-lesson-plan-L1.pdf?download=1",
-            "format": "PDF"
-          },
-          {
-            "label": "Lesson plan L2",
-            "url": "https://zenodo.org/records/23090912/files/inequities-higher-education-lesson-plan-L2.docx?download=1",
-            "format": "DOCX"
-          },
-          {
-            "label": "Lesson plan L2",
-            "url": "https://zenodo.org/records/23090912/files/inequities-higher-education-lesson-plan-L2.pdf?download=1",
-            "format": "PDF"
-          },
-          {
-            "label": "Lesson plan L3",
-            "url": "https://zenodo.org/records/23090912/files/inequities-higher-education-lesson-plan-L3.docx?download=1",
-            "format": "DOCX"
-          },
-          {
-            "label": "Lesson plan L3",
-            "url": "https://zenodo.org/records/23090912/files/inequities-higher-education-lesson-plan-L3.pdf?download=1",
-            "format": "PDF"
-          }
-        ],
-        "heading": "Inequities in higher education"
       }
     }
   }
