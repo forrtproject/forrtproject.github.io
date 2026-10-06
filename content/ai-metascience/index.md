@@ -4,8 +4,8 @@ type: plain_page
 url: "/ai-metascience/"
 hide_title: true
 hide_date: true
-summary: "Registration is open for the FORRT AI in Metascience Online Conference, 28–30 September 2026. Online, free to attend, 35+ talks and workshops over 3 days."
-sharing_description: "Register for the FORRT AI in Metascience Online Conference, 28–30 September 2026. Online and free to attend."
+summary: "Programme and recordings of the FORRT AI in Metascience Online Conference, 28–30 September 2026: 35+ talks and workshops over 3 days, most of them on YouTube."
+sharing_description: "Watch the talks from the FORRT AI in Metascience Online Conference, 28–30 September 2026."
 sharing_image_alt: "FORRT AI in Metascience Conference — online, 28–30 September 2026"
 image:
   placement: 1
@@ -78,26 +78,24 @@ image:
 @media (max-width: 640px) { .am-facts { grid-template-columns: 1fr 1fr; } }
 @media (max-width: 400px) { .am-facts { grid-template-columns: 1fr; } }
 
-.am-reg-cta { margin: 1.6rem 0 0.5rem; }
-.am-reg-note {
-  margin: 0 0 1.6rem;
-  color: var(--am-muted);
-  font-size: 0.9rem;
+.am-watch {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.6rem;
+  margin: 1.6rem 0;
+}
+.am-watch a {
+  display: block;
+  padding: 0.75rem 0.9rem;
+  border-radius: 6px;
+  background: var(--am-deep);
+  color: #fff;
+  font-weight: 700;
   text-align: center;
 }
-.am-reg-again {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-between;
-  gap: 0.8rem;
-  margin: 2.2rem 0;
-  padding: 1rem 1.1rem;
-  border: 1px solid var(--am-rule);
-  border-radius: 8px;
-  background: var(--am-card);
-}
-.am-reg-again p { margin: 0; font-size: 1.05rem; }
+.am-watch a::before { content: "\25B6\00A0"; font-size: 0.8em; }
+.am-watch a:hover { color: #fff; text-decoration: underline; }
+@media (max-width: 560px) { .am-watch { grid-template-columns: 1fr; } }
 
 .am-days {
   display: grid;
@@ -457,21 +455,20 @@ image:
 }
 </style>
 
-How is AI changing the way research is done, checked and understood? The **FORRT AI in Metascience Online Conference** takes three days over that question, with 35+ talks and workshops from people who are studying it or building with it. Registration is now open, and everyone is welcome.
+How is AI changing the way research is done, checked and understood? The **FORRT AI in Metascience Online Conference** spent three days on that question, with 35+ talks and workshops from people who are studying it or building with it. Most talks are now on the [FORRT YouTube channel](https://youtube.com/@forrtproject9995), one playlist per day.
 
 <div class="am-facts">
-<div class="am-fact"><span class="am-fact-label">When</span><span class="am-fact-value">28–30 Sept 2026 · 09:30–18:00 CEST (UTC+2)</span></div>
-<div class="am-fact"><span class="am-fact-label">Where</span><span class="am-fact-value">Online, Google Meet</span></div>
-<div class="am-fact"><span class="am-fact-label">Cost</span><span class="am-fact-value">Free</span></div>
-<div class="am-fact"><span class="am-fact-label">Format</span><span class="am-fact-value">Single track, 35+ talks &amp; workshops. Follow it all or dip in.</span></div>
+<div class="am-fact"><span class="am-fact-label">When</span><span class="am-fact-value">28–30 September 2026</span></div>
+<div class="am-fact"><span class="am-fact-label">Where</span><span class="am-fact-value">Online</span></div>
+<div class="am-fact"><span class="am-fact-label">Programme</span><span class="am-fact-value">35+ talks &amp; workshops</span></div>
+<div class="am-fact"><span class="am-fact-label">Recordings</span><span class="am-fact-value">32 talks on YouTube</span></div>
 </div>
 
-<div class="am-reg-cta">
-<a href="https://docs.google.com/forms/d/e/1FAIpQLSdFF-BdifNeBEkOrt-gjfDqAYON5xA3N5YzM40B3aBt-A2ejA/viewform" class="btn btn-primary btn-lg btn-block" style="line-height:1;border-radius:6px;font-size:1.4rem;" target="_blank" rel="noopener">
-  Register
-</a>
+<div class="am-watch">
+<a class="am-day-mon" href="https://www.youtube.com/playlist?list=PLS3VdaYKcrew" target="_blank" rel="noopener">Monday talks</a>
+<a class="am-day-tue" href="https://www.youtube.com/playlist?list=PLSItTTcc91ac" target="_blank" rel="noopener">Tuesday talks</a>
+<a class="am-day-wed" href="https://www.youtube.com/playlist?list=PLZYxy57rykQU" target="_blank" rel="noopener">Wednesday talks</a>
 </div>
-<p class="am-reg-note">Free. Takes a minute. Joining links go out the week before.</p>
 
 <div class="am-days">
 <a class="am-day-card am-day-mon" href="#am-day-mon">
@@ -479,27 +476,27 @@ How is AI changing the way research is done, checked and understood? The **FORRT
 <span class="am-day-date">28 September</span>
 <span class="am-day-theme">AI in the research pipeline</span>
 <span class="am-day-blurb">What AI is already doing to the literature, whether it can carry out evidence synthesis, how it can inform research evaluation, and what legitimate, ethical adoption looks like.</span>
-<span class="am-day-go">See the programme ↓</span>
+<span class="am-day-go">Programme and recordings ↓</span>
 </a>
 <a class="am-day-card am-day-tue" href="#am-day-tue">
 <span class="am-day-name">Tuesday</span>
 <span class="am-day-date">29 September</span>
 <span class="am-day-theme">Replications and reproductions</span>
 <span class="am-day-blurb">Replications and reproductions are key to credible science, yet hard to do and hard to find. Can AI help with both, and what are the risks of handing the work to machines?</span>
-<span class="am-day-go">See the programme ↓</span>
+<span class="am-day-go">Programme and recordings ↓</span>
 </a>
 <a class="am-day-card am-day-wed" href="#am-day-wed">
 <span class="am-day-name">Wednesday</span>
 <span class="am-day-date">30 September</span>
 <span class="am-day-theme">Workshops, and analyst variability</span>
 <span class="am-day-blurb">Three 90-minute hands-on sessions on AI for knowledge management, evidence synthesis and pre-registration review, plus talks on whether a finding survives another analyst.</span>
-<span class="am-day-go">See the programme ↓</span>
+<span class="am-day-go">Programme and recordings ↓</span>
 </a>
 </div>
 
 ## Programme
 
-Here are the sessions and the talks in each, in the order they run. **Click any talk to read its abstract.** All times are CEST (UTC+2), and everything runs in a single track, so nothing clashes. A time marked TBC is still awaiting the speaker's confirmation and may shift by a few minutes.
+Here are the sessions and the talks in each, in the order they ran. **Click any talk to read its abstract**, and use **Watch** to open its recording. All times are CEST (UTC+2).
 
 <nav class="am-switch" aria-label="Jump to a day">
 <a class="am-pill am-day-mon" href="#am-day-mon">Mon 28</a>
@@ -732,24 +729,13 @@ Here are the sessions and the talks in each, in the order they run. **Click any 
 })();
 </script>
 
-<div class="am-reg-again">
-<p>Seen something you want to attend?</p>
-<a href="https://docs.google.com/forms/d/e/1FAIpQLSdFF-BdifNeBEkOrt-gjfDqAYON5xA3N5YzM40B3aBt-A2ejA/viewform" class="btn btn-primary" target="_blank" rel="noopener">Register</a>
-</div>
+## Recordings
 
-## Joining the sessions
-
-Everything runs on Google Meet. We will email joining details to everyone who has registered in the week before the conference, so use an email address you check.
-
-Live captions are on in every session. If anything else would help you take part, tell us on the registration form, and we will do what we can.
-
-Recordings of the talks whose speakers opted in are on the [FORRT YouTube channel](https://youtube.com/@forrtproject9995), with one playlist per day: [Monday](https://www.youtube.com/playlist?list=PLS3VdaYKcrew), [Tuesday](https://www.youtube.com/playlist?list=PLSItTTcc91ac) and [Wednesday](https://www.youtube.com/playlist?list=PLZYxy57rykQU). The **Watch** links in the programme above open each talk.
+The talks whose speakers agreed to publication are on the [FORRT YouTube channel](https://youtube.com/@forrtproject9995), with one playlist per day: [Monday](https://www.youtube.com/playlist?list=PLS3VdaYKcrew), [Tuesday](https://www.youtube.com/playlist?list=PLSItTTcc91ac) and [Wednesday](https://www.youtube.com/playlist?list=PLZYxy57rykQU). Talks without a **Watch** link in the programme were not recorded or are not public. For two of the Wednesday workshops, the playlist has a shorter version.
 
 ## Code of conduct
 
-Everyone taking part, whether presenting or watching, follows the [FORRT code of conduct](https://forrt.org/coc/).
-
-During the conference, raise a concern with the organising committee — message a session chair or the organiser, or email [l.wallrich@bbk.ac.uk](mailto:l.wallrich@bbk.ac.uk). We will act on it the same day. Afterwards, or if you would rather not come to us, report it to the FORRT ethics committee, either by contacting any of its members or through the [anonymous reporting form](https://forms.gle/nQ51x1c8a8nnfQ7a9). FORRT's [confidential advisor](https://forrt.org/about/confidential-advisor-ombuds/) is there if you would like to talk something through first.
+The conference followed the [FORRT code of conduct](https://forrt.org/coc/). To raise a concern about anything that happened at the conference, email the organiser at [l.wallrich@bbk.ac.uk](mailto:l.wallrich@bbk.ac.uk). If you would rather not come to us, report it to the FORRT ethics committee, either by contacting any of its members or through the [anonymous reporting form](https://forms.gle/nQ51x1c8a8nnfQ7a9). FORRT's [confidential advisor](https://forrt.org/about/confidential-advisor-ombuds/) is there if you would like to talk something through first.
 
 ## Questions
 
