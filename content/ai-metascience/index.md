@@ -94,7 +94,7 @@ image:
   text-align: center;
 }
 .am-watch a::before { content: "\25B6\00A0"; font-size: 0.8em; }
-.am-watch a:hover { background: var(--am-accent); color: #fff; text-decoration: none; }
+.am-watch a:hover { color: #fff; text-decoration: underline; }
 @media (max-width: 560px) { .am-watch { grid-template-columns: 1fr; } }
 
 .am-days {
