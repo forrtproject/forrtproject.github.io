@@ -41,7 +41,8 @@ Builds the Hugo site and deploys to GitHub Pages (`gh-pages` branch).
 | Manual dispatch | staging.forrt.org | Manual |
 
 Features:
-- Aggregates all open PRs into a single staging build
+- Aggregates all open PRs and builds Hugo in the same checkout
+- Fetches full commit history only for `main` and selected PR refs, with file contents fetched on demand; Git-derived page dates remain available
 - `single_pr` option to deploy only one PR
 - Queues builds instead of canceling (concurrency)
 - Auto-cleans old staging branches (keeps 2)
