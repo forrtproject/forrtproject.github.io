@@ -45,7 +45,7 @@ FORRT is maintained by volunteers, so response times may vary. We appreciate you
 
 You do not need to install Git or Hugo to fix text or a broken link. Find the relevant Markdown page under [`content/`](https://github.com/forrtproject/forrtproject.github.io/tree/main/content), open it on GitHub, and choose the pencil icon. GitHub will guide you through creating a fork, committing the edit, and opening a pull request against `main`.
 
-Preserve the YAML/TOML front matter at the top of the file and existing Hugo shortcodes. Describe the affected page and link to it in your PR. Generated paths include `content/curated_resources/` (except `_index.md`), `content/glossary/`, `content/contributors/tenzing.md`, `content/contributor-analysis/`, `content/publications/citation_chart.webp`, announcement bundles in `content/post/`, and generated files in `data/`. Their content is refreshed during deployment. Use the source submission form/sheet linked from the public page or open an issue rather than editing the generated output. Local previews use committed copies and can differ from production. For layout or code changes, use the local setup below.
+Preserve the YAML/TOML front matter at the top of the file and existing Hugo shortcodes. Describe the affected page and link to it in your PR. Generated paths include `content/curated_resources/` (except `_index.md`), `content/glossary/`, `content/contributors/tenzing.md`, `content/contributor-analysis/`, `content/publications/citation_chart.webp`, announcement bundles in `content/post/`, `content/replication-hub/flora/_index.md`, `static/data/`, and generated files in `data/`. The manually maintained `data/publications.yaml` is editable; follow the [publication instructions](content/publications/README). Generated content is refreshed during deployment. Use the source submission form/sheet linked from the public page or open an issue rather than editing the generated output. Local previews use committed copies and can differ from production. For layout or code changes, use the local setup below.
 
 ## Local Development Setup
 
@@ -96,6 +96,7 @@ For R users who prefer to work entirely within RStudio.
 
 1. In RStudio, go to **File → New Project → Version Control → Git**.
    - Fork the repository first; use your fork URL: `https://github.com/YOUR-USERNAME/forrtproject.github.io.git`
+   - After cloning, run `git remote add upstream https://github.com/forrtproject/forrtproject.github.io.git` in the RStudio Terminal.
    - Project directory name: `FORRT`
    - Choose a location with **Browse**.
 2. Run the site locally using the **blogdown Addins** in RStudio, or run `hugo server -D` in the RStudio terminal.
@@ -193,7 +194,7 @@ On the 1st of each month, an automated GitHub issue is created with:
 
 - Total PRs processed
 - Successfully merged PRs
-- Skipped PR numbers (labelled as merge conflicts)
+- Skipped PR numbers (labelled as merge conflicts), when at least one attempted PR was included; the current report omits this list if all attempts fail
 - Aggregate branch and deployment time
 
 ---
