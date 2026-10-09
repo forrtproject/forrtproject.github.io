@@ -1,0 +1,22 @@
+{{- /* Returns the lesson-plan sets from data/lesson_plans.json (cluster number -> sub-cluster slug -> set).
+     Fails the build when a key matches no cluster or sub-cluster in clusters_v4.json, so a renamed
+     sub-cluster cannot silently drop its materials. Call via partialCached so the check runs once. */ -}}
+{{- $sets := dict -}}
+{{- with hugo.Data.lesson_plans -}}{{- $sets = .sets | default dict -}}{{- end -}}
+{{- $clusters := hugo.Data.clusters_v4.clusters -}}
+{{- range $ck, $bySlug := $sets -}}
+  {{- $match := false -}}
+  {{- range $clusters -}}{{- if eq (printf "%d" (int .number)) $ck -}}{{- $match = . -}}{{- end -}}{{- end -}}
+  {{- if not $match -}}
+    {{- errorf "data/lesson_plans.json: cluster key %q matches no cluster in clusters_v4.json" $ck -}}
+  {{- else -}}
+    {{- $slugs := slice -}}
+    {{- range $match.sub_clusters -}}{{- $slugs = $slugs | append (partial "clusters/sc_slug.html" .name) -}}{{- end -}}
+    {{- range $sk, $_ := $bySlug -}}
+      {{- if not (in $slugs $sk) -}}
+        {{- errorf "data/lesson_plans.json: key %q/%q matches no sub-cluster of cluster %s in clusters_v4.json" $ck $sk $ck -}}
+      {{- end -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
+{{- return $sets -}}
