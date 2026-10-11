@@ -31,5 +31,6 @@
     "translation_reviewed_by": [
         "Helena Hartmann",
         "Joris Frese"
-    ]
+    ],
+    "lastmod": "2026-08-05"
 }

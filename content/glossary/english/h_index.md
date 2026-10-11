@@ -29,5 +29,6 @@
     "language": "english",
     "aliases": [
         "/glossary/h_index"
-    ]
+    ],
+    "lastmod": "2026-08-05"
 }

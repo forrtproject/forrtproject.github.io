@@ -30,5 +30,6 @@
     "language": "english",
     "aliases": [
         "/glossary/open_scholarship"
-    ]
+    ],
+    "lastmod": "2026-08-05"
 }

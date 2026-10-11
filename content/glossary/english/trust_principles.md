@@ -30,5 +30,6 @@
     "language": "english",
     "aliases": [
         "/glossary/trust_principles"
-    ]
+    ],
+    "lastmod": "2026-08-05"
 }

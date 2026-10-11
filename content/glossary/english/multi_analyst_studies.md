@@ -35,5 +35,6 @@
     "language": "english",
     "aliases": [
         "/glossary/multi_analyst_studies"
-    ]
+    ],
+    "lastmod": "2026-08-05"
 }

@@ -30,5 +30,6 @@
     "language": "english",
     "aliases": [
         "/glossary/embargo_period"
-    ]
+    ],
+    "lastmod": "2026-08-05"
 }

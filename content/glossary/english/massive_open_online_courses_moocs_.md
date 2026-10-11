@@ -30,5 +30,6 @@
     "language": "english",
     "aliases": [
         "/glossary/massive_open_online_courses_moocs_"
-    ]
+    ],
+    "lastmod": "2026-08-05"
 }

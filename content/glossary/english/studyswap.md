@@ -29,5 +29,6 @@
     "language": "english",
     "aliases": [
         "/glossary/studyswap"
-    ]
+    ],
+    "lastmod": "2026-08-05"
 }

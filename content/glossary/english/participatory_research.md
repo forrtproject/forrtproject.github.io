@@ -34,5 +34,6 @@
     "language": "english",
     "aliases": [
         "/glossary/participatory_research"
-    ]
+    ],
+    "lastmod": "2026-08-05"
 }

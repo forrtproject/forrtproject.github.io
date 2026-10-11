@@ -26,5 +26,6 @@
     "language": "english",
     "aliases": [
         "/glossary/dora"
-    ]
+    ],
+    "lastmod": "2026-08-05"
 }

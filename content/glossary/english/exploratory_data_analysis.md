@@ -30,5 +30,6 @@
     "language": "english",
     "aliases": [
         "/glossary/exploratory_data_analysis"
-    ]
+    ],
+    "lastmod": "2026-08-05"
 }

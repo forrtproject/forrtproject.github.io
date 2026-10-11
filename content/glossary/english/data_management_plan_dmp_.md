@@ -32,5 +32,6 @@
     "language": "english",
     "aliases": [
         "/glossary/data_management_plan_dmp_"
-    ]
+    ],
+    "lastmod": "2026-08-05"
 }

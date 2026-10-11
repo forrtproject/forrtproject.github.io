@@ -32,5 +32,6 @@
     "language": "english",
     "aliases": [
         "/glossary/open_code"
-    ]
+    ],
+    "lastmod": "2026-08-05"
 }

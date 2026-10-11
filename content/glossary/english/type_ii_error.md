@@ -31,5 +31,6 @@
     "language": "english",
     "aliases": [
         "/glossary/type_ii_error"
-    ]
+    ],
+    "lastmod": "2026-08-05"
 }

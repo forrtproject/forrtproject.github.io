@@ -37,5 +37,6 @@
     ],
     "translation_reviewed_by": [
         "Merve Öztürk"
-    ]
+    ],
+    "lastmod": "2026-08-05"
 }

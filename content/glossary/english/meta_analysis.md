@@ -34,5 +34,6 @@
     "language": "english",
     "aliases": [
         "/glossary/meta_analysis"
-    ]
+    ],
+    "lastmod": "2026-08-05"
 }
