@@ -28,6 +28,5 @@
     "language": "english",
     "aliases": [
         "/glossary/replicats_project"
-    ],
-    "lastmod": "2026-08-05"
+    ]
 }

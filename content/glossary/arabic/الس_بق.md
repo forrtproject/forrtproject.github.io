@@ -37,6 +37,5 @@
         "Ahlam Ahmed",
         "Ali H. Al-Hoorie",
         "Mohammed Mohsen"
-    ],
-    "lastmod": "2026-08-05"
+    ]
 }

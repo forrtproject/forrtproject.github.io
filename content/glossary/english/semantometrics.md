@@ -27,6 +27,5 @@
     "language": "english",
     "aliases": [
         "/glossary/semantometrics"
-    ],
-    "lastmod": "2026-08-05"
+    ]
 }

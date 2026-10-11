@@ -31,6 +31,5 @@
     "language": "english",
     "aliases": [
         "/glossary/p_value"
-    ],
-    "lastmod": "2026-08-05"
+    ]
 }

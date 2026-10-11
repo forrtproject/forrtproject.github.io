@@ -41,6 +41,5 @@
     "language": "english",
     "aliases": [
         "/glossary/hypothesis"
-    ],
-    "lastmod": "2026-08-05"
+    ]
 }

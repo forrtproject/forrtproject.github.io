@@ -27,6 +27,5 @@
     "language": "english",
     "aliases": [
         "/glossary/under_representation"
-    ],
-    "lastmod": "2026-08-05"
+    ]
 }

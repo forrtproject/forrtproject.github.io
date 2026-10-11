@@ -31,6 +31,5 @@
     "language": "english",
     "aliases": [
         "/glossary/reliability"
-    ],
-    "lastmod": "2026-08-05"
+    ]
 }

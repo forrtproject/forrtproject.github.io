@@ -28,6 +28,5 @@
     "translation_reviewed_by": [
         "Susanne Vogelt",
         "Jennifer Mattschey"
-    ],
-    "lastmod": "2026-08-05"
+    ]
 }

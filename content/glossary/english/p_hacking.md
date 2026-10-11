@@ -31,6 +31,5 @@
     "language": "english",
     "aliases": [
         "/glossary/p_hacking"
-    ],
-    "lastmod": "2026-08-05"
+    ]
 }

@@ -34,6 +34,5 @@
     "language": "english",
     "aliases": [
         "/glossary/double_blind_peer_review"
-    ],
-    "lastmod": "2026-08-05"
+    ]
 }

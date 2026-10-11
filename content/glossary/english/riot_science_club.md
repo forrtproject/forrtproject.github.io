@@ -29,6 +29,5 @@
     "language": "english",
     "aliases": [
         "/glossary/riot_science_club"
-    ],
-    "lastmod": "2026-08-05"
+    ]
 }

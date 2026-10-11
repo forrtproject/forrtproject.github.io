@@ -26,6 +26,5 @@
     "language": "english",
     "aliases": [
         "/glossary/json_file"
-    ],
-    "lastmod": "2026-08-05"
+    ]
 }

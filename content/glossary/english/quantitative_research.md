@@ -28,6 +28,5 @@
     "language": "english",
     "aliases": [
         "/glossary/quantitative_research"
-    ],
-    "lastmod": "2026-08-05"
+    ]
 }

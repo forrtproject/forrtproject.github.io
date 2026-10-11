@@ -28,6 +28,5 @@
     "language": "english",
     "aliases": [
         "/glossary/gaming_the_system_"
-    ],
-    "lastmod": "2026-08-05"
+    ]
 }

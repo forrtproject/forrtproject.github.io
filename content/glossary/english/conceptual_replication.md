@@ -35,6 +35,5 @@
     "language": "english",
     "aliases": [
         "/glossary/conceptual_replication"
-    ],
-    "lastmod": "2026-08-05"
+    ]
 }

@@ -32,6 +32,5 @@
     "language": "english",
     "aliases": [
         "/glossary/python"
-    ],
-    "lastmod": "2026-08-05"
+    ]
 }

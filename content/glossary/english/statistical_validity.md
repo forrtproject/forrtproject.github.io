@@ -26,6 +26,5 @@
     "language": "english",
     "aliases": [
         "/glossary/statistical_validity"
-    ],
-    "lastmod": "2026-08-05"
+    ]
 }

@@ -26,6 +26,5 @@
     "language": "english",
     "aliases": [
         "/glossary/amnesia"
-    ],
-    "lastmod": "2026-08-05"
+    ]
 }

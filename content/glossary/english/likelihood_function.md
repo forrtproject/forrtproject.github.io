@@ -34,6 +34,5 @@
     "language": "english",
     "aliases": [
         "/glossary/likelihood_function"
-    ],
-    "lastmod": "2026-08-05"
+    ]
 }

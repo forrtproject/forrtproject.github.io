@@ -30,6 +30,5 @@
     "language": "english",
     "aliases": [
         "/glossary/reverse_p_hacking"
-    ],
-    "lastmod": "2026-08-05"
+    ]
 }

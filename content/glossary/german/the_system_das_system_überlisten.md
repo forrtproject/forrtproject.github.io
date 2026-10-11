@@ -32,6 +32,5 @@
     "translation_reviewed_by": [
         "Birgit Schmidt",
         "Susanne Vogel"
-    ],
-    "lastmod": "2026-08-05"
+    ]
 }

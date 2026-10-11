@@ -32,6 +32,5 @@
         "Ruoting Liu",
         "Xiujuan Wen",
         "Shuxian Jin"
-    ],
-    "lastmod": "2026-08-05"
+    ]
 }

@@ -33,6 +33,5 @@
         "Awatif Alruwaili",
         "Ali H. Al-Hoorie",
         "Mohammed Mohsen"
-    ],
-    "lastmod": "2026-08-05"
+    ]
 }

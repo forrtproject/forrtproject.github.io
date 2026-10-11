@@ -27,6 +27,5 @@
     "language": "english",
     "aliases": [
         "/glossary/citation_diversity_statement"
-    ],
-    "lastmod": "2026-08-05"
+    ]
 }

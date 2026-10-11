@@ -30,6 +30,5 @@
     "language": "english",
     "aliases": [
         "/glossary/open_licenses"
-    ],
-    "lastmod": "2026-08-05"
+    ]
 }

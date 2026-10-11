@@ -34,6 +34,5 @@
     "language": "english",
     "aliases": [
         "/glossary/systematic_review"
-    ],
-    "lastmod": "2026-08-05"
+    ]
 }

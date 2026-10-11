@@ -30,6 +30,5 @@
     ],
     "translation_reviewed_by": [
         "Ege Emek"
-    ],
-    "lastmod": "2026-08-05"
+    ]
 }

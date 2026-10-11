@@ -30,6 +30,5 @@
     "language": "english",
     "aliases": [
         "/glossary/coar_community_framework_for_good_practices_in_repositories"
-    ],
-    "lastmod": "2026-08-05"
+    ]
 }

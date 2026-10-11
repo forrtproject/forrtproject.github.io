@@ -28,6 +28,5 @@
     "language": "english",
     "aliases": [
         "/glossary/gpower"
-    ],
-    "lastmod": "2026-08-05"
+    ]
 }

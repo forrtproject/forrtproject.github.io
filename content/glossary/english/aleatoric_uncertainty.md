@@ -27,6 +27,5 @@
     "language": "english",
     "aliases": [
         "/glossary/aleatoric_uncertainty"
-    ],
-    "lastmod": "2026-08-05"
+    ]
 }

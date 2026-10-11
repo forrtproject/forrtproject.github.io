@@ -29,6 +29,5 @@
     "language": "english",
     "aliases": [
         "/glossary/communality"
-    ],
-    "lastmod": "2026-08-05"
+    ]
 }

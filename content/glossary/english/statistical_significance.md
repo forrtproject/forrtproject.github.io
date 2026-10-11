@@ -35,6 +35,5 @@
     "language": "english",
     "aliases": [
         "/glossary/statistical_significance"
-    ],
-    "lastmod": "2026-08-05"
+    ]
 }

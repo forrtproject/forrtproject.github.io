@@ -28,6 +28,5 @@
     "language": "english",
     "aliases": [
         "/glossary/article_processing_charge_apc_"
-    ],
-    "lastmod": "2026-08-05"
+    ]
 }

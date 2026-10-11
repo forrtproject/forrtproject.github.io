@@ -30,6 +30,5 @@
     "language": "english",
     "aliases": [
         "/glossary/open_educational_resources_oers_"
-    ],
-    "lastmod": "2026-08-05"
+    ]
 }

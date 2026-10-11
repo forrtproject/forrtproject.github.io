@@ -24,6 +24,5 @@
     "language": "english",
     "aliases": [
         "/glossary/economic_and_societal_impact"
-    ],
-    "lastmod": "2026-08-05"
+    ]
 }

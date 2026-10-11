@@ -29,6 +29,5 @@
     "language": "english",
     "aliases": [
         "/glossary/arrive_guidelines"
-    ],
-    "lastmod": "2026-08-05"
+    ]
 }

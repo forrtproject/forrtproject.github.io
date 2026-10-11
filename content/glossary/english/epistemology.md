@@ -26,6 +26,5 @@
     "language": "english",
     "aliases": [
         "/glossary/epistemology"
-    ],
-    "lastmod": "2026-08-05"
+    ]
 }

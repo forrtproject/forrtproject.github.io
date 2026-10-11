@@ -27,6 +27,5 @@
     "language": "english",
     "aliases": [
         "/glossary/open_scholarship_knowledge_base"
-    ],
-    "lastmod": "2026-08-05"
+    ]
 }

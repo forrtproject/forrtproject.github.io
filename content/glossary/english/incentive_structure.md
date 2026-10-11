@@ -37,6 +37,5 @@
     "language": "english",
     "aliases": [
         "/glossary/incentive_structure"
-    ],
-    "lastmod": "2026-08-05"
+    ]
 }

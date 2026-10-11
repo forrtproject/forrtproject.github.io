@@ -31,6 +31,5 @@
     "language": "english",
     "aliases": [
         "/glossary/reproducibility_crisis_aka_replicability_or_replication_crisis_"
-    ],
-    "lastmod": "2026-08-05"
+    ]
 }

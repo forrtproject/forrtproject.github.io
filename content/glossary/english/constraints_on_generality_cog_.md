@@ -37,6 +37,5 @@
     "language": "english",
     "aliases": [
         "/glossary/constraints_on_generality_cog_"
-    ],
-    "lastmod": "2026-08-05"
+    ]
 }

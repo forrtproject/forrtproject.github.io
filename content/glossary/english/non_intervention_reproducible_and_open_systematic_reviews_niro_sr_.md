@@ -28,6 +28,5 @@
     "language": "english",
     "aliases": [
         "/glossary/non_intervention_reproducible_and_open_systematic_reviews_niro_sr_"
-    ],
-    "lastmod": "2026-08-05"
+    ]
 }

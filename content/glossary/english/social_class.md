@@ -29,6 +29,5 @@
     "language": "english",
     "aliases": [
         "/glossary/social_class"
-    ],
-    "lastmod": "2026-08-05"
+    ]
 }

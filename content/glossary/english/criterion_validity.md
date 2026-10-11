@@ -27,6 +27,5 @@
     "language": "english",
     "aliases": [
         "/glossary/criterion_validity"
-    ],
-    "lastmod": "2026-08-05"
+    ]
 }

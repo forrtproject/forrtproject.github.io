@@ -28,6 +28,5 @@
     "language": "english",
     "aliases": [
         "/glossary/bracketing_interviews"
-    ],
-    "lastmod": "2026-08-05"
+    ]
 }

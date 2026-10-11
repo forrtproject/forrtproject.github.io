@@ -28,6 +28,5 @@
     "language": "english",
     "aliases": [
         "/glossary/journal_impact_factor_"
-    ],
-    "lastmod": "2026-08-05"
+    ]
 }

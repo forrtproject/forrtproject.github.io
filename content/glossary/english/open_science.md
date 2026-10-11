@@ -39,6 +39,5 @@
     "language": "english",
     "aliases": [
         "/glossary/open_science"
-    ],
-    "lastmod": "2026-08-05"
+    ]
 }

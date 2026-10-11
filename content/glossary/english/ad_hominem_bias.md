@@ -27,6 +27,5 @@
     "language": "english",
     "aliases": [
         "/glossary/ad_hominem_bias"
-    ],
-    "lastmod": "2026-08-05"
+    ]
 }

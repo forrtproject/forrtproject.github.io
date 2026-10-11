@@ -27,6 +27,5 @@
     "language": "english",
     "aliases": [
         "/glossary/knowledge_acquisition"
-    ],
-    "lastmod": "2026-08-05"
+    ]
 }

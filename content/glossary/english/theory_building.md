@@ -31,6 +31,5 @@
     "language": "english",
     "aliases": [
         "/glossary/theory_building"
-    ],
-    "lastmod": "2026-08-05"
+    ]
 }

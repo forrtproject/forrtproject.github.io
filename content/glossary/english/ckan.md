@@ -25,6 +25,5 @@
     "language": "english",
     "aliases": [
         "/glossary/ckan"
-    ],
-    "lastmod": "2026-08-05"
+    ]
 }

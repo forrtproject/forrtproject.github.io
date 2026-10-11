@@ -42,6 +42,5 @@
     "language": "english",
     "aliases": [
         "/glossary/publication_bias_file_drawer_problem_"
-    ],
-    "lastmod": "2026-08-05"
+    ]
 }

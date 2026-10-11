@@ -33,6 +33,5 @@
     "translation_reviewed_by": [
         "Susanne Vogel",
         "Joris Frese"
-    ],
-    "lastmod": "2026-08-05"
+    ]
 }

@@ -34,6 +34,5 @@
     "language": "english",
     "aliases": [
         "/glossary/evidence_synthesis"
-    ],
-    "lastmod": "2026-08-05"
+    ]
 }

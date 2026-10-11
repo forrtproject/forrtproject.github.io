@@ -32,6 +32,5 @@
     "language": "english",
     "aliases": [
         "/glossary/analytic_flexibility"
-    ],
-    "lastmod": "2026-08-05"
+    ]
 }

@@ -41,6 +41,5 @@
     "language": "english",
     "aliases": [
         "/glossary/public_trust_in_science"
-    ],
-    "lastmod": "2026-08-05"
+    ]
 }

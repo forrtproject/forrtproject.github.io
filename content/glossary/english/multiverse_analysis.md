@@ -29,6 +29,5 @@
     "language": "english",
     "aliases": [
         "/glossary/multiverse_analysis"
-    ],
-    "lastmod": "2026-08-05"
+    ]
 }

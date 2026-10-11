@@ -31,6 +31,5 @@
     "language": "english",
     "aliases": [
         "/glossary/universal_design_for_learning_udl_"
-    ],
-    "lastmod": "2026-08-05"
+    ]
 }

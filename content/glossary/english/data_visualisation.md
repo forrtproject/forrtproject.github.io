@@ -27,6 +27,5 @@
     "language": "english",
     "aliases": [
         "/glossary/data_visualisation"
-    ],
-    "lastmod": "2026-08-05"
+    ]
 }

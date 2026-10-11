@@ -35,6 +35,5 @@
     "language": "english",
     "aliases": [
         "/glossary/generalizability"
-    ],
-    "lastmod": "2026-08-05"
+    ]
 }

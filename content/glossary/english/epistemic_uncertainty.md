@@ -27,6 +27,5 @@
     "language": "english",
     "aliases": [
         "/glossary/epistemic_uncertainty"
-    ],
-    "lastmod": "2026-08-05"
+    ]
 }

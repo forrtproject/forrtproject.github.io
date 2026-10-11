@@ -26,6 +26,5 @@
     "language": "english",
     "aliases": [
         "/glossary/collaborative_replication_and_education_project_crep_"
-    ],
-    "lastmod": "2026-08-05"
+    ]
 }

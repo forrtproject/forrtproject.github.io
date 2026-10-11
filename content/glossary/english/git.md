@@ -30,6 +30,5 @@
     "language": "english",
     "aliases": [
         "/glossary/git"
-    ],
-    "lastmod": "2026-08-05"
+    ]
 }

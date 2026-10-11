@@ -32,6 +32,5 @@
     "language": "english",
     "aliases": [
         "/glossary/community_projects"
-    ],
-    "lastmod": "2026-08-05"
+    ]
 }

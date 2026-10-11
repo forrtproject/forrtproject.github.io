@@ -30,6 +30,5 @@
     "language": "english",
     "aliases": [
         "/glossary/null_hypothesis_significance_testing_nhst_"
-    ],
-    "lastmod": "2026-08-05"
+    ]
 }

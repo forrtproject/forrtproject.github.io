@@ -31,6 +31,5 @@
     "language": "english",
     "aliases": [
         "/glossary/z_curve"
-    ],
-    "lastmod": "2026-08-05"
+    ]
 }

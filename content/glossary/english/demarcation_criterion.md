@@ -24,6 +24,5 @@
     "language": "english",
     "aliases": [
         "/glossary/demarcation_criterion"
-    ],
-    "lastmod": "2026-08-05"
+    ]
 }

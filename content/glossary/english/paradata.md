@@ -29,6 +29,5 @@
     "language": "english",
     "aliases": [
         "/glossary/paradata"
-    ],
-    "lastmod": "2026-08-05"
+    ]
 }

@@ -30,6 +30,5 @@
     "language": "english",
     "aliases": [
         "/glossary/cultural_taxation"
-    ],
-    "lastmod": "2026-08-05"
+    ]
 }

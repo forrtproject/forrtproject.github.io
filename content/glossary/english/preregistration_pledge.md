@@ -24,6 +24,5 @@
     "language": "english",
     "aliases": [
         "/glossary/preregistration_pledge"
-    ],
-    "lastmod": "2026-08-05"
+    ]
 }

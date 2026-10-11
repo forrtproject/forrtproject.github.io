@@ -33,6 +33,5 @@
     "language": "english",
     "aliases": [
         "/glossary/bayesian_parameter_estimation"
-    ],
-    "lastmod": "2026-08-05"
+    ]
 }

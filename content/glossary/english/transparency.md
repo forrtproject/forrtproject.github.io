@@ -32,6 +32,5 @@
     "language": "english",
     "aliases": [
         "/glossary/transparency"
-    ],
-    "lastmod": "2026-08-05"
+    ]
 }

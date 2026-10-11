@@ -26,6 +26,5 @@
     "language": "english",
     "aliases": [
         "/glossary/research_cycle"
-    ],
-    "lastmod": "2026-08-05"
+    ]
 }

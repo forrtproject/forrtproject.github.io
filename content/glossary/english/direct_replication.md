@@ -35,6 +35,5 @@
     "language": "english",
     "aliases": [
         "/glossary/direct_replication"
-    ],
-    "lastmod": "2026-08-05"
+    ]
 }

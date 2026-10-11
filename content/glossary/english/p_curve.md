@@ -36,6 +36,5 @@
     "language": "english",
     "aliases": [
         "/glossary/p_curve"
-    ],
-    "lastmod": "2026-08-05"
+    ]
 }

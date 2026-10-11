@@ -34,6 +34,5 @@
     "language": "english",
     "aliases": [
         "/glossary/open_material"
-    ],
-    "lastmod": "2026-08-05"
+    ]
 }

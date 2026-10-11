@@ -30,6 +30,5 @@
     "language": "english",
     "aliases": [
         "/glossary/garden_of_forking_paths"
-    ],
-    "lastmod": "2026-08-05"
+    ]
 }

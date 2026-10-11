@@ -31,6 +31,5 @@
     "language": "english",
     "aliases": [
         "/glossary/replication_markets"
-    ],
-    "lastmod": "2026-08-05"
+    ]
 }

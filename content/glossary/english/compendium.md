@@ -29,6 +29,5 @@
     "language": "english",
     "aliases": [
         "/glossary/compendium"
-    ],
-    "lastmod": "2026-08-05"
+    ]
 }

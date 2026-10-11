@@ -27,6 +27,5 @@
     "language": "english",
     "aliases": [
         "/glossary/metadata"
-    ],
-    "lastmod": "2026-08-05"
+    ]
 }

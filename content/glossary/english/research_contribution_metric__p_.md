@@ -27,6 +27,5 @@
     "language": "english",
     "aliases": [
         "/glossary/research_contribution_metric__p_"
-    ],
-    "lastmod": "2026-08-05"
+    ]
 }

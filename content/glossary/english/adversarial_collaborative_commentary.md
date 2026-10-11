@@ -29,6 +29,5 @@
     "language": "english",
     "aliases": [
         "/glossary/adversarial_collaborative_commentary"
-    ],
-    "lastmod": "2026-08-05"
+    ]
 }

@@ -29,6 +29,5 @@
     "language": "english",
     "aliases": [
         "/glossary/matthew_effect_in_science_"
-    ],
-    "lastmod": "2026-08-05"
+    ]
 }

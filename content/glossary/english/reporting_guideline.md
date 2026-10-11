@@ -31,6 +31,5 @@
     "language": "english",
     "aliases": [
         "/glossary/reporting_guideline"
-    ],
-    "lastmod": "2026-08-05"
+    ]
 }

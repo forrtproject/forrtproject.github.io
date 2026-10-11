@@ -30,6 +30,5 @@
     "language": "english",
     "aliases": [
         "/glossary/optional_stopping"
-    ],
-    "lastmod": "2026-08-05"
+    ]
 }

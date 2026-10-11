@@ -23,6 +23,5 @@
     "language": "english",
     "aliases": [
         "/glossary/hidden_moderators"
-    ],
-    "lastmod": "2026-08-05"
+    ]
 }

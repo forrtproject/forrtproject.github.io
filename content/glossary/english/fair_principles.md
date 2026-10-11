@@ -31,6 +31,5 @@
     "language": "english",
     "aliases": [
         "/glossary/fair_principles"
-    ],
-    "lastmod": "2026-08-05"
+    ]
 }

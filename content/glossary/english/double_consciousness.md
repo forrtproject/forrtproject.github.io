@@ -28,6 +28,5 @@
     "language": "english",
     "aliases": [
         "/glossary/double_consciousness"
-    ],
-    "lastmod": "2026-08-05"
+    ]
 }

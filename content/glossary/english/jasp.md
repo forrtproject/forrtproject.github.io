@@ -24,6 +24,5 @@
     "language": "english",
     "aliases": [
         "/glossary/jasp"
-    ],
-    "lastmod": "2026-08-05"
+    ]
 }

@@ -26,6 +26,5 @@
     "language": "english",
     "aliases": [
         "/glossary/i10_index"
-    ],
-    "lastmod": "2026-08-05"
+    ]
 }

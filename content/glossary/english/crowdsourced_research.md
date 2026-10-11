@@ -43,6 +43,5 @@
     "language": "english",
     "aliases": [
         "/glossary/crowdsourced_research"
-    ],
-    "lastmod": "2026-08-05"
+    ]
 }

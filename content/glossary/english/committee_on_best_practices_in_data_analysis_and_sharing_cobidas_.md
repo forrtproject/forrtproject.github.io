@@ -24,6 +24,5 @@
     "language": "english",
     "aliases": [
         "/glossary/committee_on_best_practices_in_data_analysis_and_sharing_cobidas_"
-    ],
-    "lastmod": "2026-08-05"
+    ]
 }

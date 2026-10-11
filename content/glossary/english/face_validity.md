@@ -29,6 +29,5 @@
     "language": "english",
     "aliases": [
         "/glossary/face_validity"
-    ],
-    "lastmod": "2026-08-05"
+    ]
 }

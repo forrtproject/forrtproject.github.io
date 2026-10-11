@@ -25,6 +25,5 @@
     "language": "english",
     "aliases": [
         "/glossary/reflexivity"
-    ],
-    "lastmod": "2026-08-05"
+    ]
 }

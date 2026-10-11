@@ -27,6 +27,5 @@
     "language": "english",
     "aliases": [
         "/glossary/plan_s"
-    ],
-    "lastmod": "2026-08-05"
+    ]
 }

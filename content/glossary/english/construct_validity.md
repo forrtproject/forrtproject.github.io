@@ -32,6 +32,5 @@
     "language": "english",
     "aliases": [
         "/glossary/construct_validity"
-    ],
-    "lastmod": "2026-08-05"
+    ]
 }

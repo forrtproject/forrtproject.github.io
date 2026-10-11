@@ -30,6 +30,5 @@
     "language": "english",
     "aliases": [
         "/glossary/credit"
-    ],
-    "lastmod": "2026-08-05"
+    ]
 }

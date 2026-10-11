@@ -29,6 +29,5 @@
     "language": "english",
     "aliases": [
         "/glossary/data_sharing"
-    ],
-    "lastmod": "2026-08-05"
+    ]
 }

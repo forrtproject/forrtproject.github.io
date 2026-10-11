@@ -29,6 +29,5 @@
     "language": "english",
     "aliases": [
         "/glossary/model_statistical_"
-    ],
-    "lastmod": "2026-08-05"
+    ]
 }

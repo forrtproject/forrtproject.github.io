@@ -27,6 +27,5 @@
     "language": "english",
     "aliases": [
         "/glossary/responsible_research_and_innovation"
-    ],
-    "lastmod": "2026-08-05"
+    ]
 }

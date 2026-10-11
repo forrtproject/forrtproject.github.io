@@ -31,6 +31,5 @@
     "language": "english",
     "aliases": [
         "/glossary/salami_slicing"
-    ],
-    "lastmod": "2026-08-05"
+    ]
 }

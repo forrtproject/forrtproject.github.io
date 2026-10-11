@@ -34,6 +34,5 @@
         "Hala Alghamdi",
         "Ahlam Ahmed",
         "Mohammed Mohsen"
-    ],
-    "lastmod": "2026-08-05"
+    ]
 }

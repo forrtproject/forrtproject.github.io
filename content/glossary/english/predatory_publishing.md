@@ -28,6 +28,5 @@
     "language": "english",
     "aliases": [
         "/glossary/predatory_publishing"
-    ],
-    "lastmod": "2026-08-05"
+    ]
 }

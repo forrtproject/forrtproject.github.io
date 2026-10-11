@@ -28,6 +28,5 @@
     "language": "english",
     "aliases": [
         "/glossary/early_career_researchers_ecrs_"
-    ],
-    "lastmod": "2026-08-05"
+    ]
 }

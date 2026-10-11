@@ -27,6 +27,5 @@
     "language": "english",
     "aliases": [
         "/glossary/free_our_knowledge_platform"
-    ],
-    "lastmod": "2026-08-05"
+    ]
 }

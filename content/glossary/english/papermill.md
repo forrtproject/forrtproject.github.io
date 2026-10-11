@@ -32,6 +32,5 @@
     "language": "english",
     "aliases": [
         "/glossary/papermill"
-    ],
-    "lastmod": "2026-08-05"
+    ]
 }

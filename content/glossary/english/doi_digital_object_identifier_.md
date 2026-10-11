@@ -30,6 +30,5 @@
     "language": "english",
     "aliases": [
         "/glossary/doi_digital_object_identifier_"
-    ],
-    "lastmod": "2026-08-05"
+    ]
 }

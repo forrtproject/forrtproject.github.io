@@ -35,6 +35,5 @@
     "language": "english",
     "aliases": [
         "/glossary/bayesian_inference"
-    ],
-    "lastmod": "2026-08-05"
+    ]
 }

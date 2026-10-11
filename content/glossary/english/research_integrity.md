@@ -36,6 +36,5 @@
     "language": "english",
     "aliases": [
         "/glossary/research_integrity"
-    ],
-    "lastmod": "2026-08-05"
+    ]
 }

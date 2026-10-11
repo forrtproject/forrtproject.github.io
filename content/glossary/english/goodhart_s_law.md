@@ -26,6 +26,5 @@
     "language": "english",
     "aliases": [
         "/glossary/goodhart_s_law"
-    ],
-    "lastmod": "2026-08-05"
+    ]
 }

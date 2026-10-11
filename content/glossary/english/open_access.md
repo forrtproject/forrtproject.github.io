@@ -32,6 +32,5 @@
     "language": "english",
     "aliases": [
         "/glossary/open_access"
-    ],
-    "lastmod": "2026-08-05"
+    ]
 }

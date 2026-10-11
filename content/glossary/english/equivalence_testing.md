@@ -35,6 +35,5 @@
     "language": "english",
     "aliases": [
         "/glossary/equivalence_testing"
-    ],
-    "lastmod": "2026-08-05"
+    ]
 }

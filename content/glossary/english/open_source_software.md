@@ -33,6 +33,5 @@
     "language": "english",
     "aliases": [
         "/glossary/open_source_software"
-    ],
-    "lastmod": "2026-08-05"
+    ]
 }

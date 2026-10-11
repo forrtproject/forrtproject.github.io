@@ -40,6 +40,5 @@
     "language": "english",
     "aliases": [
         "/glossary/registered_report"
-    ],
-    "lastmod": "2026-08-05"
+    ]
 }

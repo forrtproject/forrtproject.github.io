@@ -33,6 +33,5 @@
         "Ahlam Ahmed",
         "Asma Alzahrani",
         "Mohammed Mohsen"
-    ],
-    "lastmod": "2026-08-05"
+    ]
 }

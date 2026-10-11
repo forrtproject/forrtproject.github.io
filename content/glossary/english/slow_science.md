@@ -32,6 +32,5 @@
     "language": "english",
     "aliases": [
         "/glossary/slow_science"
-    ],
-    "lastmod": "2026-08-05"
+    ]
 }

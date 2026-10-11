@@ -35,6 +35,5 @@
     "language": "english",
     "aliases": [
         "/glossary/statistical_assumptions"
-    ],
-    "lastmod": "2026-08-05"
+    ]
 }

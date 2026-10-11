@@ -27,6 +27,5 @@
     "language": "english",
     "aliases": [
         "/glossary/paywall"
-    ],
-    "lastmod": "2026-08-05"
+    ]
 }

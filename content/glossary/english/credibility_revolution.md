@@ -37,6 +37,5 @@
     "language": "english",
     "aliases": [
         "/glossary/credibility_revolution"
-    ],
-    "lastmod": "2026-08-05"
+    ]
 }

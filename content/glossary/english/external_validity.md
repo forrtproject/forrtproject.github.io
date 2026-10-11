@@ -31,6 +31,5 @@
     "language": "english",
     "aliases": [
         "/glossary/external_validity"
-    ],
-    "lastmod": "2026-08-05"
+    ]
 }

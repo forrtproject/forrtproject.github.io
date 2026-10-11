@@ -24,6 +24,5 @@
     "language": "english",
     "aliases": [
         "/glossary/first_last_author_emphasis_norm_flae_"
-    ],
-    "lastmod": "2026-08-05"
+    ]
 }

@@ -34,6 +34,5 @@
     "language": "english",
     "aliases": [
         "/glossary/repository"
-    ],
-    "lastmod": "2026-08-05"
+    ]
 }

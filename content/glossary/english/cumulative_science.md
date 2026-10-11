@@ -31,6 +31,5 @@
     "language": "english",
     "aliases": [
         "/glossary/cumulative_science"
-    ],
-    "lastmod": "2026-08-05"
+    ]
 }
