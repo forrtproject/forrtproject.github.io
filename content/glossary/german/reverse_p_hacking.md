@@ -1,5 +1,6 @@
 {
     "type": "glossary",
+    "en_title": "Reverse p-hacking",
     "title": "Reverse p-hacking",
     "sort_key": "reverse p-hacking",
     "definition": "Ausnutzung der Freiheitsgrade des Forschenden bei der statistischen Analyse, um die Wahrscheinlichkeit zu erhöhen, dass die Nullhypothese beibehalten wird (z. B. *p* \\> .05).",

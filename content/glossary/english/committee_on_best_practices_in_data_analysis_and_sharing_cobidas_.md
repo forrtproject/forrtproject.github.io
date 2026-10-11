@@ -1,5 +1,6 @@
 {
     "type": "glossary",
+    "en_title": "Committee on Best Practices in Data Analysis and Sharing (COBIDAS)",
     "title": "Committee on Best Practices in Data Analysis and Sharing (COBIDAS)",
     "sort_key": "committee on best practices in data analysis and sharing (cobidas)",
     "definition": "The Organization for Human Brain Mapping (OHBM) neuroimaging community has developed a guideline for best practices in neuroimaging data acquisition, analysis, reporting, and sharing of both data and analysis code. It contains eight elements that should be included when writing up or submitting a manuscript, and when sharing neuroimages, in order to optimize transparency and reproducibility.",

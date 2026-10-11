@@ -1,5 +1,6 @@
 {
     "type": "glossary",
+    "en_title": "Open Source software",
     "title": "Software mit offenem Quellcode [Open Source software]",
     "sort_key": "software mit offenem quellcode [open source software]",
     "definition": "Eine Art von Computersoftware, bei der der Quellcode unter einer Lizenz veröffentlicht wird, die es anderen erlaubt, die Software zu nutzen, zu verändern und an jede Person und für jeglichen Zweck weiterzugeben. Open Source ist mehr als nur offen zugänglich: Die Vertriebsbedingungen von Open-Source-Software müssen 10 spezifische Kriterien erfüllen (siehe: [https://opensource.org/osd](https://opensource.org/osd)).",
@@ -15,7 +16,7 @@
     ],
     "references": [
         "Open Source Initiative. (n.d.). <i>The Open Source Definition</i>. https://opensource.org/osd",
-        "Anon. (n.d.). <i>Open Source in Open Science | FOSTER</i>. Retrieved from https://www.fosteropenscience.eu/foster-taxonomy/open-source-open-science"
+        "Anon. (n.d.). <i>Open Source in Open Science | FOSTER</i>. Retrieved from https://web.archive.org/web/20221011101535/https://www.fosteropenscience.eu/foster-taxonomy/open-source-open-science"
     ],
     "drafted_by": [
         "Connor Keating"

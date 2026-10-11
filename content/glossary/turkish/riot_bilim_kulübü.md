@@ -1,5 +1,6 @@
 {
     "type": "glossary",
+    "en_title": "RIOT Science Club",
     "title": "RIOT Bilim Kulübü [RIOT Science Club]",
     "sort_key": "riot bilim kuluzbuz [riot science club]",
     "definition": "RIOT Bilim Kulübü, Yeniden Üretilebilir (Reproducible), Yorumlanabilir (Interpretable), Açık (Open) ve Şeffaf (Transparent) bilim uygulamalarına yönelik farkındalık yaratan ve eğitim sağlayan, çok merkezli bir seminer serisidir. Kulüp, düzenli olarak açık erişimli ve ilgili merkezlerin web siteleri ile YouTube kanallarından tekrar izlenebilir konuşmalar, atölyeler ve konferanslar sunar.",
@@ -11,7 +12,7 @@
         "Transparency"
     ],
     "references": [
-        "<i>RIOT Science Club</i>. (2021). http://riotscience.co.uk/"
+        "<i>RIOT Science Club</i>. (2021). https://web.archive.org/web/20260317091517/https://www.riotscience.co.uk/"
     ],
     "drafted_by": [
         "Tamara Kalandadze"

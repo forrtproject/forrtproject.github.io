@@ -1,5 +1,6 @@
 {
     "type": "glossary",
+    "en_title": "Goodhart’s Law",
     "title": "Goodhart’s Law",
     "sort_key": "goodhart’s law",
     "definition": "A term coined by economist Charles Goodhart to refer to the observation that measuring something inherently changes user behaviour. In relation to examination performance, Strathern (1997) stated that “when a measure becomes a target, it ceases to be a good measure” (p. 308). Applied to open scholarship, and the structure of incentives in academia, Goodhart’s Law would predict that metrics of scientific evaluation will likely be abused and exploited, as evidenced by Muller (2019)",
@@ -10,7 +11,7 @@
     ],
     "references": [
         "Muller, J. Z. (2018). <i>The Tyranny of Metrics</i>. Princeton University Press.",
-        "Strathern, M. (1997). ‘Improving ratings’: audit in the British University system. <i>European Review</i>, <i>5</i>(3), 305–321. https://doi.org/10.1002/(SICI)1234-981X(199707)5:3&#60;305::AID-EURO184&#62;3.0.CO;2-4"
+        "Strathern, M. (1997). ‘Improving ratings’: audit in the British University system. <i>European Review</i>, <i>5</i>(3), 305–321. https://doi.org/10.1002/(SICI)1234-981X(199707)5:3%3C305::AID-EURO184%3E3.0.CO;2-4"
     ],
     "drafted_by": [
         "Adam Parker"

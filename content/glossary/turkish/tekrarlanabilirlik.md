@@ -1,5 +1,6 @@
 {
     "type": "glossary",
+    "en_title": "Replicability",
     "title": "Tekrarlanabilirlik [Replicability]",
     "sort_key": "tekrarlanabilirlik [replicability]",
     "definition": "Araştırma alanları arasında farklı şekillerde kullanılan, doğrudan ve kavramsal replikasyon, hesaplamalı yeniden üretilebilirlik, genellenebilirlik analizi ve sağlamlık analizleri gibi kavramları kapsayan şemsiye bir terimdir. Daha önce kullanılan bazı tanımlar şunlardır: farklı bir araştırma ekibinin, orijinal yazarın materyallerini kullanarak aynı sonuçlara ulaşması (Barba, 2018); yeni veri toplayarak yapılan bir çalışmanın aynı sonuca ulaşması (Claerbout ve Karrenbach, 1992); veya herhangi bir sonucun, önceki bir araştırmadan elde edilen bir iddiaya dair tanısal kanıt olarak değerlendirilebildiği çalışmalar (Nosek ve Errington, 2020).",

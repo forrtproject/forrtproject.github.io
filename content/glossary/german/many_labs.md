@@ -1,5 +1,6 @@
 {
     "type": "glossary",
+    "en_title": "Many Labs",
     "title": "Many Labs",
     "sort_key": "many labs",
     "definition": "Eine von der Open Science Collaboration (2015) geleitete Crowdsourcing-Initiative, bei der mehrere hundert Forschungsgruppen aus verschiedenen Universitäten Replikationsstudien zu veröffentlichten Befunden durchführen. Diese Initiative ist auch unter dem Namen \"Many Labs I\" bekannt und wurde anschließend durch das Projekt \"Many Labs II\" ergänzt, das die Unterschiede zwischen Replikationsergebnissen in verschiedenen Stichproben und Kontexten bewertet. Zu ähnlichen Projekten gehören ManyBabies, EEGManyLabs und der Psychological Science Accelerator.",

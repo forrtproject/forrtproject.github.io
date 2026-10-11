@@ -1,5 +1,6 @@
 {
     "type": "glossary",
+    "en_title": "Type M error",
     "title": "Typ-M-Fehler [Type M error]",
     "sort_key": "typ-m-fehler [type m error]",
     "definition": "Ein Typ-M-Fehler tritt auf, wenn ein/e Forscher:in zu dem Schluss kommt, dass ein Effekt beobachtet wurde, dessen Ausmaß geringer oder größer ist als der wahre Effekt. Ein Typ-M-Fehler tritt beispielsweise auf, wenn ein/e Forscher:in behauptet, dass ein Effekt von geringer Größe beobachtet wurde, obwohl er in Wahrheit groß ist, oder umgekehrt.",

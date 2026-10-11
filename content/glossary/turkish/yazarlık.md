@@ -1,5 +1,6 @@
 {
     "type": "glossary",
+    "en_title": "Authorship",
     "title": "Yazarlık [Authorship]",
     "sort_key": "yazarlizk [authorship]",
     "definition": "Yazarlık, araştırma çıktıları (örneğin makaleler, veriler ve yazılımlar) için hem kredi hem de içerik açısından sorumluluk atfeder (McNutt vd., 2018; Patience vd., 2019). Ne tür katkıların yazarlık için gerekli olduğu, yazar sırasının neyi ifade ettiği (eğer bir şey ifade ediyorsa), sorumlu yazarın araştırma üzerindeki sorumluluğunun derecesi ve yazarların bizzat yürütmedikleri çalışmalardaki bölümlerden ne ölçüde sorumlu tutulacağı gibi beklentiler; disiplinler, kültürler ve hatta araştırma grupları arasında farklılık gösterir.",

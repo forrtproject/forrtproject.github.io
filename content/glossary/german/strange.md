@@ -1,5 +1,6 @@
 {
     "type": "glossary",
+    "en_title": "STRANGE",
     "title": "STRANGE",
     "sort_key": "strange",
     "definition": "Das STRANGE \"Framework\" ist ein Vorschlag und eine Reihe von Fragen, die Tierverhaltensforschenden helfen sollen, Stichprobenverzerrungen bei der Planung, Durchführung und Interpretation von Forschungsarbeiten mit Tieren zu berücksichtigen. STRANGE ist ein Akronym, das verschiedene mögliche Quellen für Stichprobenverzerrungen in der Tierforschung hervorhebt, wie z. B. den Sozialen Hintergrund der Tiere, die Einfangbarkeit (Trappability) und Selbstselektion, die Aufzuchtgeschichte (Rearing), die Akklimatisierung und Gewöhnung, Natürliche Veränderungen der Reaktionsfähigkeit, die Genetische Ausstattung und die Erfahrung.",

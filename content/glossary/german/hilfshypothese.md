@@ -1,5 +1,6 @@
 {
     "type": "glossary",
+    "en_title": "Auxiliary Hypothesis",
     "title": "Hilfshypothese [Auxiliary Hypothesis]",
     "sort_key": "hilfshypothese [auxiliary hypothesis]",
     "definition": "Alle Theorien enthalten Annahmen über die Art von Konstrukten und wie sie gemessen werden können. Allerdings werden nicht alle Vorhersagen aus Theorien abgeleitet, und Annahmen können manchmal aus anderen Prämissen abgeleitet werden. Zusätzliche Annahmen, die getroffen werden, um eine Vorhersage abzuleiten, werden durch Verknüpfung mit beobachtbaren Daten geprüft. Diese Hilfshypothesen werden manchmal herangezogen, um zu erklären, warum ein Replikationsversuch fehlgeschlagen ist.",

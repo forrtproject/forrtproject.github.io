@@ -1,5 +1,6 @@
 {
     "type": "glossary",
+    "en_title": "Economic and societal impact",
     "title": "Economic and societal impact",
     "sort_key": "economic and societal impact",
     "definition": "The contribution a research item makes to the broader economy and society. It also captures the benefits of research to individuals, organisations, and/or nations.",

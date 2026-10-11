@@ -1,5 +1,6 @@
 {
     "type": "glossary",
+    "en_title": "Robustness (analyses)",
     "title": "Robustness (analyses)",
     "sort_key": "robustness (analyses)",
     "definition": "The persistence of support for a hypothesis under perturbations of the methodological/analytical pipeline In other words, applying different methods/analysis pipelines to examine if the same conclusion is supported under analytical different conditions.",

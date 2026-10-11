@@ -1,5 +1,6 @@
 {
     "type": "glossary",
+    "en_title": "Under-representation",
     "title": "Under-representation",
     "sort_key": "under-representation",
     "definition": "Not all voices, perspectives, and members of the community are adequately represented. Under-representation typically occurs when the voices or perspectives of one group dominate, resulting in the marginalization of another. This often affects groups who are a minority in relation to certain personal characteristics.",

@@ -1,5 +1,6 @@
 {
     "type": "glossary",
+    "en_title": "Research Contribution Metric (*p*)",
     "title": "Research Contribution Metric (*p*)",
     "sort_key": "research contribution metric (*p*)",
     "definition": "Type of semantometric measure assessing similarity of publications connected in a citation network. This method uses a simple formula to assess authors’ contributions. Publication *p* can be estimated based on the semantic distance from the publications cited by *p* to publications citing *p*.",

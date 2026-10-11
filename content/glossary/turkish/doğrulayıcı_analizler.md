@@ -1,5 +1,6 @@
 {
     "type": "glossary",
+    "en_title": "Confirmatory analyses",
     "title": "Doğrulayıcı Analizler [Confirmatory analyses]",
     "sort_key": "dogzrulayizciz analizler [confirmatory analyses]",
     "definition": "Doğrulayıcı-keşfedici ayrımın bir parçası (Wagenmakers vd., 2012), burada doğrulayıcı analizler önceden belirlenmiş analizleri ifade eder ve mevcut hipotezleri test eder. Yayımlanmış araştırma bulgularında bu ayrımın yapılmaması, tekrarlanabilirlik sorunlarını açıklayan bir etken olarak öne sürülmüştür. Bu sorunun, doğrulayıcı ve keşfedici analizleri açıkça ayırt eden çalışma ön-kayıtları yoluyla aşılabileceği önerilmektedir. Diğer araştırmacılar bu terimleri sorgulamış ve bunların yerine ‘keşif odaklı’ ve ‘teori test eden araştırma’ terimlerinin kullanılmasını önermişlerdir (Oberauer ve Lewandowsky, 2019; bkz., Szollosi ve Donkin, 2019).",
@@ -10,7 +11,7 @@
     "references": [
         "Box, G. E. P. (1976). Science and statistics. <i>Journal of the American Statistical Association</i>, <i>71</i>(356), 791–799.",
         "Oberauer, K., & Lewandowsky, S. (2019). Addressing the theory crisis in psychology. <i>Psychonomic Bulletin & Review</i>, <i>26</i>(5), 1596–1618. https://doi.org/10.3758/s13423-019-01645-2",
-        "Szollosi, A., & Donkin, C. (2019). Arrested theory development: The misguided distinction between exploratory and confirmatory research. <i>PsyArXiv</i>. https://doi.org/10.31234/osf.io/your_doi_placeholder",
+        "Szollosi, A., & Donkin, C. (2019). Arrested theory development: The misguided distinction between exploratory and confirmatory research. <i>PsyArXiv</i>. https://doi.org/10.31234/osf.io/suzej",
         "Tukey, J. W. (1977). <i>Exploratory data analysis</i>. Addison-Wesley.",
         "Wagenmakers, E. J., Wetzels, R., Borsboom, D., van der Maas, H. L., & Kievit, R. A. (2012). An agenda for purely confirmatory research. <i>Perspectives on Psychological Science</i>, <i>7</i>(6), 632–638. https://doi.org/10.1177/1745691612463078"
     ],

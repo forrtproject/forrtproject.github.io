@@ -1,5 +1,6 @@
 {
     "type": "glossary",
+    "en_title": "Publish or Perish",
     "title": "Publish or Perish",
     "sort_key": "publish or perish",
     "definition": "An aphorism describing the pressure researchers feel to publish academic manuscripts, often in high prestige academic journals, in order to have a successful academic career. This pressure to publish a high quantity of manuscripts can go at the expense of the quality of the manuscripts. This institutional pressure is exacerbated by hiring procedures and funding decisions strongly focusing on the number and impact of publications.",

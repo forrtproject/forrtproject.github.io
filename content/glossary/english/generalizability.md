@@ -1,5 +1,6 @@
 {
     "type": "glossary",
+    "en_title": "Generalizability",
     "title": "Generalizability",
     "sort_key": "generalizability",
     "definition": "Generalizability refers to how applicable a study’s results are to broader groups of people, settings, or situations they study and how the findings relate to this wider context (Frey, 2018; Kukull & Ganguli, 2012).",

@@ -1,5 +1,6 @@
 {
     "type": "glossary",
+    "en_title": "Data management plan (DMP)",
     "title": "DMP خطة إدارة البيانات [Data management plan (DMP)]",
     "sort_key": "dmp خطة إدارة البيانات [data management plan (dmp)]",
     "definition": "يشير هذا المصطلح إلى ملف منظم يصف عمليَّة الحصول على البيانات وتحليلها وإدارتها وتخزينها أثناء قيام بمشروع بحثي ما ، كما تصف ملكيَّة هذه البيانات وكيف سيتم حفظها ونشرها أثناء وبعد الانتهاء من المشروع. توفِّر قوالب إدارة البيانات إرشادات حول كيفيَّة جعل بيانات البحث متوافقة مع مبادئ فير ومتاحة للجميع إن أمكن ذلك. **المصطلحات ذات الصِّلة:** أرشفة البيانات، مشاركة البيانات، تخزين البيانات، مبادئ فير، البيانات المفتوحة.",
@@ -14,7 +15,7 @@
         "Burnette, M., Williams, S., & Imker, H. (2016). From Plan to Action: Successful Data Management Plan Implementation in a Multidisciplinary Project. <i>Journal of eScience Librarianship</i>, <i>5</i>(1), e1101. https://doi.org/10.7191/jeslib.2016.1101",
         "Michener, W. K. (2015). Ten simple rules for creating a good data management plan. <i>PLoS Computational Biology</i>, <i>11</i>(10), e1004525. https://doi.org/10.1371/journal.pcbi.1004525",
         "Research Data Alliance. (2020). <i>Data management plan (DMP) common standard</i>. https://github.com/RDA-DMP-Common/RDA-DMP-Common-Standard",
-        "<i>Data management plans</i>. (n.d.). https://sdr.library.stanford.edu/data-management-plans%20"
+        "<i>Data management plans</i>. (n.d.). https://sdr.library.stanford.edu/documentation/data-management-plans"
     ],
     "drafted_by": [
         "Dominique Roche"

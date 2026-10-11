@@ -1,5 +1,6 @@
 {
     "type": "glossary",
+    "en_title": "General Data Protection Regulation (GDPR)",
     "title": "Genel Veri Koruma Tüzüğü (GDPR) [General Data Protection Regulation (GDPR)]",
     "sort_key": "genel veri koruma tuzzuzgzuz (gdpr) [general data protection regulation (gdpr)]",
     "definition": "Genel Veri Koruma Tüzüğü (GDPR), bireylerin kişisel verilerini korumayı amaçlayan ve Avrupa Birliği (AB) genelinde uygulanan yedi ilkeye dayalı bir yasal çerçevedir. Bu tüzük, vatandaşlara kendi verileri üzerinde kontrol hakkı tanırken, bu verileri saklayan ve işleyen tarafları da düzenlemeye tabi tutar. Ayrıca, kişisel bilgilerin AB içinde ve dışında serbestçe dolaşımını düzenler. Bu nedenle, araştırmacıların bir çalışma tasarlarken ve yürütürken bu düzenlemeyi dikkate almaları gerekir.",

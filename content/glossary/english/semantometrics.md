@@ -1,5 +1,6 @@
 {
     "type": "glossary",
+    "en_title": "Semantometrics",
     "title": "Semantometrics",
     "sort_key": "semantometrics",
     "definition": "A class of metrics for evaluating research using full publication text to measure semantic similarity of publications and highlighting an article’s contribution to the progress of scholarly discussion. It is an extension of tools such as bibliometrics, webometrics, and altmetrics.",

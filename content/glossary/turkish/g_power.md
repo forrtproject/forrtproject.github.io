@@ -1,5 +1,6 @@
 {
     "type": "glossary",
+    "en_title": "GPower",
     "title": "G*Power",
     "sort_key": "g*power",
     "definition": "Güç analizleri yapmak için kullanılan ücretsiz bir istatistiksel yazılımdır. Kullanıcı, istenilen istatistiksel testi (örn., t-testi, regresyon, ANOVA) ve şu dört öğeden üçünü belirtir: grup/gözlem sayısı, etki büyüklüğü, anlamlılık düzeyi veya güç. Yazılım, belirtilmeyen dördüncü öğeyi hesaplar.",
