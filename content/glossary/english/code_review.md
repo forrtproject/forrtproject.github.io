@@ -27,5 +27,6 @@
     "language": "english",
     "aliases": [
         "/glossary/code_review"
-    ]
+    ],
+    "lastmod": "2026-08-05"
 }

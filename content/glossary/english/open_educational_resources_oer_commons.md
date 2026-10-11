@@ -27,5 +27,6 @@
     "language": "english",
     "aliases": [
         "/glossary/open_educational_resources_oer_commons"
-    ]
+    ],
+    "lastmod": "2026-08-05"
 }

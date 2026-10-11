@@ -25,5 +25,6 @@
     "language": "english",
     "aliases": [
         "/glossary/ontology_artificial_intelligence_"
-    ]
+    ],
+    "lastmod": "2026-08-05"
 }

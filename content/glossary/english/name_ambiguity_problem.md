@@ -28,5 +28,6 @@
     "language": "english",
     "aliases": [
         "/glossary/name_ambiguity_problem"
-    ]
+    ],
+    "lastmod": "2026-08-05"
 }

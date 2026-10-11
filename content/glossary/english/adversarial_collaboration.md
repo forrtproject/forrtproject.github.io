@@ -35,5 +35,6 @@
     "language": "english",
     "aliases": [
         "/glossary/adversarial_collaboration"
-    ]
+    ],
+    "lastmod": "2026-08-05"
 }

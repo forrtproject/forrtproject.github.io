@@ -23,5 +23,6 @@
     "language": "english",
     "aliases": [
         "/glossary/meta_science_or_meta_research"
-    ]
+    ],
+    "lastmod": "2026-08-05"
 }

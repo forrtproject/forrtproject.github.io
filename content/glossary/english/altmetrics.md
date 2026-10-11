@@ -31,5 +31,6 @@
     "language": "english",
     "aliases": [
         "/glossary/altmetrics"
-    ]
+    ],
+    "lastmod": "2026-08-05"
 }

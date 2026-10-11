@@ -39,5 +39,6 @@
     "translation_reviewed_by": [
         "Helena Hartmann",
         "Jennifer Mattschey"
-    ]
+    ],
+    "lastmod": "2026-08-05"
 }

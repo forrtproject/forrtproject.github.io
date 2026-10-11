@@ -25,5 +25,6 @@
     "language": "english",
     "aliases": [
         "/glossary/zenodo"
-    ]
+    ],
+    "lastmod": "2026-08-05"
 }

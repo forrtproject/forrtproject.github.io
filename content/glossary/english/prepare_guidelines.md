@@ -26,5 +26,6 @@
     "language": "english",
     "aliases": [
         "/glossary/prepare_guidelines"
-    ]
+    ],
+    "lastmod": "2026-08-05"
 }

@@ -29,5 +29,6 @@
     "language": "english",
     "aliases": [
         "/glossary/registry_of_research_data_repositories"
-    ]
+    ],
+    "lastmod": "2026-08-05"
 }

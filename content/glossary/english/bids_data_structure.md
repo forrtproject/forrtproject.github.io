@@ -26,5 +26,6 @@
     "language": "english",
     "aliases": [
         "/glossary/bids_data_structure"
-    ]
+    ],
+    "lastmod": "2026-08-05"
 }

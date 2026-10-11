@@ -30,5 +30,6 @@
     "language": "english",
     "aliases": [
         "/glossary/transparency_checklist"
-    ]
+    ],
+    "lastmod": "2026-08-05"
 }

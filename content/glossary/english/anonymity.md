@@ -35,5 +35,6 @@
     "language": "english",
     "aliases": [
         "/glossary/anonymity"
-    ]
+    ],
+    "lastmod": "2026-08-05"
 }

@@ -30,5 +30,6 @@
     "language": "english",
     "aliases": [
         "/glossary/confirmation_bias"
-    ]
+    ],
+    "lastmod": "2026-08-05"
 }

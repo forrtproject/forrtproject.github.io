@@ -32,5 +32,6 @@
     "language": "english",
     "aliases": [
         "/glossary/interlocking"
-    ]
+    ],
+    "lastmod": "2026-08-05"
 }

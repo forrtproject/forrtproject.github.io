@@ -42,5 +42,6 @@
     ],
     "translation_reviewed_by": [
         "Neslihan Özhan"
-    ]
+    ],
+    "lastmod": "2026-08-05"
 }
