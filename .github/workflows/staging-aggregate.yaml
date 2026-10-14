@@ -57,7 +57,6 @@ jobs:
     if: github.event.pull_request.draft != true
     permissions:
       contents: read
-      pull-requests: read
       actions: read  # Needed for data artifact access
     env:
       HUGO_VERSION: "0.158.0"
@@ -109,7 +108,11 @@ jobs:
       # but fetch historical file contents only when Git needs them.
       - name: Fetch main history
         run: |
-          git fetch --no-tags --filter=blob:none --unshallow origin \
+          FETCH_ARGS=(--no-tags --filter=blob:none)
+          if [ "$(git rev-parse --is-shallow-repository)" = "true" ]; then
+            FETCH_ARGS+=(--unshallow)
+          fi
+          git fetch "${FETCH_ARGS[@]}" origin \
             '+refs/heads/main:refs/remotes/origin/main'
           git checkout -B main refs/remotes/origin/main
 
@@ -135,7 +138,8 @@ jobs:
             echo "🎯 Single PR mode: deploying only PR #$SINGLE_PR"
             
             # Validate PR exists and is open
-            if ! gh pr view "$SINGLE_PR" --json state --jq '.state' | grep -q "OPEN"; then
+            if ! PR_DATA=$(gh pr view "$SINGLE_PR" --json number,title,state) || \
+               [ "$(printf '%s' "$PR_DATA" | jq -r '.state')" != "OPEN" ]; then
               echo "❌ PR #$SINGLE_PR is not open or doesn't exist"
               echo "branch=main" >> "$GITHUB_OUTPUT"
               echo "included_prs=" >> "$GITHUB_OUTPUT"
@@ -145,12 +149,17 @@ jobs:
               exit 1
             fi
             
-            PRS="$SINGLE_PR"
+            PR_DATA=$(printf '%s' "$PR_DATA" | jq '[.]')
+            PRS=$(printf '%s' "$PR_DATA" | jq -r '.[].number')
             echo "has_prs=true" >> "$GITHUB_OUTPUT"
             echo "total_prs=1" >> "$GITHUB_OUTPUT"
           else
             # Get all open, non-draft PRs targeting main (regardless of CI status)
-            PRS=$(gh pr list --base main --state open --json number,title,headRefName,isDraft --jq '.[] | select(.isDraft == false) | .number')
+            # Paginate rather than relying on gh pr list's default 30-PR limit.
+            # Keep titles in this snapshot instead of requesting each PR again.
+            PR_DATA=$(gh api "repos/${{ github.repository }}/pulls?state=open&base=main&per_page=100" \
+              --paginate | jq -s 'add | map(select(.draft == false))')
+            PRS=$(printf '%s' "$PR_DATA" | jq -r '.[].number')
             
             if [ -z "$PRS" ]; then
               echo "No open non-draft PRs found"
@@ -169,7 +178,6 @@ jobs:
           
           # Create a new branch for aggregation starting from main
           AGGREGATE_BRANCH="staging-aggregate-$(date +%Y%m%d-%H%M%S)"
-          git checkout main
           git checkout -b "$AGGREGATE_BRANCH"
           
           INCLUDED_PRS=""
@@ -183,14 +191,19 @@ jobs:
             # the comma to decide what to report against each PR.
             ATTEMPTED_PRS="${ATTEMPTED_PRS:+$ATTEMPTED_PRS,}$pr"
 
-            TITLE=$(gh pr view "$pr" --json title --jq '.title')
+            TITLE=$(printf '%s' "$PR_DATA" | jq -r --argjson number "$pr" '.[] | select(.number == $number) | .title')
             echo "Processing PR #$pr: $TITLE"
 
             # GitHub exposes this ref for both same-repository and fork PRs.
             # Fetch only this PR, retaining its full ancestry for merge bases.
             MERGE_REF="refs/remotes/pull/$pr/head"
-            git fetch --no-tags --filter=blob:none origin \
-              "+refs/pull/$pr/head:$MERGE_REF"
+            if ! git fetch --no-tags --filter=blob:none origin \
+              "+refs/pull/$pr/head:$MERGE_REF"; then
+              echo "::warning::Fetching PR #$pr failed - skipping and continuing with the next PR"
+              # Attempted PRs absent from both included and conflicted lists are
+              # reported as failed by the deployment job.
+              continue
+            fi
 
             # Try to merge into our aggregate branch
             if git merge "$MERGE_REF" --no-edit; then
@@ -376,10 +389,15 @@ jobs:
           python3 scripts/data_artifact.py overlay .staging-data-artifact
           rm -rf .staging-data-artifact
 
+      - name: Setup Python for data processing
+        if: steps.download-artifact.outcome == 'failure' && steps.data-processing.outputs.data_processing_triggered != 'true'
+        uses: actions/setup-python@v6
+        with:
+          python-version: "3.11"
+
       - name: Run data processing if needed
         if: steps.download-artifact.outcome == 'failure' && steps.data-processing.outputs.data_processing_triggered != 'true'
         env:
-          PYTHON_VERSION: "3.11"
           GA_API_CREDENTIALS: ${{ secrets.GA_API_CREDENTIALS }}
           GA_PROPERTY_ID: ${{ secrets.GA_PROPERTY_ID }}
         run: |
@@ -456,7 +474,7 @@ jobs:
           path: ${{ github.repository }}/forrt-website
 
       - name: Create deployment summary
-        if: github.event_name != 'workflow_dispatch' || github.event.inputs.create_summary == 'true'
+        if: github.event_name != 'workflow_dispatch' || inputs.create_summary
         env:
           AGGREGATED_BRANCH: ${{ needs.build.outputs.aggregated-branch }}
           TOTAL_PRS: ${{ needs.build.outputs.total-prs }}
@@ -498,8 +516,8 @@ jobs:
             } >> deployment-summary.md
           fi
 
-          # Attempted, neither merged nor conflicted: the merge failed short of
-          # conflict resolution, which points at the build rather than at the PR.
+          # Attempted, neither merged nor conflicted: fetching or merging failed
+          # before conflict resolution. Report these separately from conflicts.
           UNRESOLVED=()
           IFS=',' read -ra ATTEMPTED_ARRAY <<< "$ATTEMPTED_PRS"
           for pr in "${ATTEMPTED_ARRAY[@]}"; do
@@ -513,7 +531,7 @@ jobs:
             {
               echo "### ❗ PRs That Could Not Be Merged:"
               for pr in "${UNRESOLVED[@]}"; do
-                echo "- PR #$pr (merge failed before conflict resolution — not a content conflict)"
+                echo "- PR #$pr (fetch or merge failed before conflict resolution — not a content conflict)"
               done
               echo ""
             } >> deployment-summary.md
@@ -591,7 +609,7 @@ jobs:
                 COMMENT_BODY="${COMMENT_IDENTIFIER}
           ❗ **Staging Deployment Status**
 
-          This PR could not be merged into the staging aggregate. The merge failed
+          This PR could not be merged into the staging aggregate. Fetching or merging failed
           before conflict resolution, so this is a problem with the staging build
           rather than a conflict in this PR — no action is needed from you.
 
@@ -624,7 +642,7 @@ jobs:
           done
 
       - name: Create monthly deployment report
-        if: github.event_name == 'schedule' || (github.event_name == 'workflow_dispatch' && github.event.inputs.create_summary == 'true')
+        if: github.event_name == 'schedule' || (github.event_name == 'workflow_dispatch' && inputs.create_summary)
         run: |
           # Only create monthly report on scheduled runs (1st of month)
           CURRENT_DAY=$(date +%d)
