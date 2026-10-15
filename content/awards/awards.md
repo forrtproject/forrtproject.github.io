@@ -106,10 +106,10 @@ Thanks to our amazing community, FORRT has become an ***award-winning*** grassro
 ### [The Leo Waaijers Open Science Award 2026](https://www.openscience.nl/en/news/forrt-awarded-with-the-leo-waaijers-open-science-award-2026)
 
 <div style="display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 10px;">
-  <img src="./Leo_Waaijers_Open_Science_Award_2026/1.png" alt="Leo Waaijers Open Science Award 2026, image 1" style="flex: 1 1 22%; min-width: 0; object-fit: contain;">
-  <img src="./Leo_Waaijers_Open_Science_Award_2026/2.png" alt="Leo Waaijers Open Science Award 2026, image 2" style="flex: 1 1 22%; min-width: 0; object-fit: contain;">
-  <img src="./Leo_Waaijers_Open_Science_Award_2026/3.png" alt="Leo Waaijers Open Science Award 2026, image 3" style="flex: 1 1 22%; min-width: 0; object-fit: contain;">
-  <img src="./Leo_Waaijers_Open_Science_Award_2026/4.png" alt="Leo Waaijers Open Science Award 2026, image 4" style="flex: 1 1 22%; min-width: 0; object-fit: contain;">
+  <img src="./Leo_Waaijers_Open_Science_Award_2026/1.webp" alt="Leo Waaijers Open Science Award 2026, image 1" style="flex: 1 1 22%; min-width: 0; object-fit: contain;">
+  <img src="./Leo_Waaijers_Open_Science_Award_2026/2.webp" alt="Leo Waaijers Open Science Award 2026, image 2" style="flex: 1 1 22%; min-width: 0; object-fit: contain;">
+  <img src="./Leo_Waaijers_Open_Science_Award_2026/3.webp" alt="Leo Waaijers Open Science Award 2026, image 3" style="flex: 1 1 22%; min-width: 0; object-fit: contain;">
+  <img src="./Leo_Waaijers_Open_Science_Award_2026/4.webp" alt="Leo Waaijers Open Science Award 2026, image 4" style="flex: 1 1 22%; min-width: 0; object-fit: contain;">
 </div>
 
 **The Leo Waaijers Open Science Award** aims to recognise and reward outstanding contributions to open science in the Netherlands by highlighting these achievements. The award seeks to inspire others to apply and promote open science, stimulate innovation and strengthen the open science movement.
