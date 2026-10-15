@@ -4,8 +4,10 @@
 {{ $show_logo := site.Params.main_menu.show_logo | default true }}
 {{ $has_logo := fileExists "assets/images/logo.webp" | or (fileExists "assets/images/logo.svg") }}
 {{ $logo := "" }}
+{{ $logo_dims := "" }}
 {{ if $has_logo }}
 {{ $logo = (partial "functions/get_logo" (dict "constraint" "max_height" "size" 70)) }}
+{{ $logo_dims = partial "functions/logo_dims" $logo }}
 {{ end }}
 
 <nav class="navbar navbar-expand-lg navbar-light compensate-for-scrollbar" id="navbar-main">
@@ -15,7 +17,7 @@
     <div class="d-none d-lg-inline-flex">
       <a class="navbar-brand" href="{{ "/" | relLangURL }}">
         {{- if $has_logo -}}
-        <img src="{{ $logo.RelPermalink }}" alt="{{ site.Title }} Logo. Link to homepage">
+        <img src="{{ $logo.RelPermalink }}" {{ $logo_dims }} alt="{{ site.Title }} Logo. Link to homepage">
         {{- else -}}
         {{- site.Title -}}
         {{- end -}}
@@ -34,7 +36,7 @@
     <div class="navbar-brand-mobile-wrapper d-inline-flex d-lg-none">
       <a class="navbar-brand" href="{{ "/" | relLangURL }}">
         {{- if $has_logo -}}
-        <img src="{{ $logo.RelPermalink }}" alt="{{ site.Title }}">
+        <img src="{{ $logo.RelPermalink }}" {{ $logo_dims }} alt="{{ site.Title }}">
         {{- else -}}
         {{- site.Title -}}
         {{- end -}}
