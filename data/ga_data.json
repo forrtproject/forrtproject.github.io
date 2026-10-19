@@ -2,43 +2,43 @@
   "regions": [
     {
       "country": "Singapore",
-      "users": 5858
+      "users": 6511
     },
     {
       "country": "United States of America",
-      "users": 2016
+      "users": 1983
     },
     {
       "country": "China",
-      "users": 1044
+      "users": 1040
     },
     {
       "country": "Netherlands",
-      "users": 507
+      "users": 505
     },
     {
       "country": "United Kingdom",
-      "users": 496
+      "users": 493
     },
     {
       "country": "Germany",
-      "users": 450
+      "users": 436
     },
     {
       "country": "(not set)",
-      "users": 230
+      "users": 231
     },
     {
       "country": "Canada",
-      "users": 223
+      "users": 217
     },
     {
       "country": "Ireland",
-      "users": 207
+      "users": 215
     },
     {
       "country": "India",
-      "users": 141
+      "users": 135
     },
     {
       "country": "Switzerland",
@@ -46,7 +46,7 @@
     },
     {
       "country": "T\u00fcrkiye",
-      "users": 129
+      "users": 124
     },
     {
       "country": "Australia",
@@ -54,35 +54,31 @@
     },
     {
       "country": "France",
-      "users": 111
+      "users": 110
     },
     {
       "country": "Japan",
-      "users": 102
+      "users": 99
     },
     {
       "country": "Brazil",
-      "users": 93
+      "users": 91
     },
     {
       "country": "Italy",
-      "users": 83
+      "users": 81
     },
     {
       "country": "Hong Kong",
-      "users": 73
+      "users": 75
     },
     {
       "country": "Sweden",
-      "users": 61
+      "users": 60
     },
     {
       "country": "Vietnam",
-      "users": 61
-    },
-    {
-      "country": "Norway",
-      "users": 48
+      "users": 60
     },
     {
       "country": "South Korea",
@@ -93,31 +89,31 @@
       "users": 45
     },
     {
+      "country": "Norway",
+      "users": 44
+    },
+    {
       "country": "Belgium",
-      "users": 42
+      "users": 40
     },
     {
       "country": "Indonesia",
-      "users": 39
+      "users": 40
     },
     {
       "country": "Mexico",
-      "users": 37
+      "users": 36
     },
     {
       "country": "Philippines",
-      "users": 35
-    },
-    {
-      "country": "Spain",
-      "users": 31
-    },
-    {
-      "country": "Iran",
-      "users": 30
+      "users": 36
     },
     {
       "country": "Saudi Arabia",
+      "users": 31
+    },
+    {
+      "country": "Spain",
       "users": 30
     },
     {
@@ -125,7 +121,11 @@
       "users": 29
     },
     {
-      "country": "Finland",
+      "country": "Egypt",
+      "users": 28
+    },
+    {
+      "country": "Iran",
       "users": 28
     },
     {
@@ -141,8 +141,8 @@
       "users": 27
     },
     {
-      "country": "Egypt",
-      "users": 27
+      "country": "Finland",
+      "users": 25
     },
     {
       "country": "Malaysia",
@@ -161,19 +161,19 @@
       "users": 21
     },
     {
-      "country": "Poland",
+      "country": "Thailand",
       "users": 20
     },
     {
-      "country": "Russia",
-      "users": 20
-    },
-    {
-      "country": "Denmark",
+      "country": "Morocco",
       "users": 19
     },
     {
-      "country": "Thailand",
+      "country": "Poland",
+      "users": 19
+    },
+    {
+      "country": "Russia",
       "users": 19
     },
     {
@@ -181,15 +181,11 @@
       "users": 19
     },
     {
-      "country": "Colombia",
-      "users": 18
-    },
-    {
-      "country": "Morocco",
-      "users": 18
-    },
-    {
       "country": "Argentina",
+      "users": 18
+    },
+    {
+      "country": "Colombia",
       "users": 17
     },
     {
@@ -201,8 +197,12 @@
       "users": 16
     },
     {
-      "country": "New Zealand",
+      "country": "Denmark",
       "users": 14
+    },
+    {
+      "country": "New Zealand",
+      "users": 13
     },
     {
       "country": "Greece",
@@ -229,27 +229,23 @@
       "users": 9
     },
     {
+      "country": "Chile",
+      "users": 8
+    },
+    {
       "country": "Ecuador",
       "users": 8
     },
     {
-      "country": "Hungary",
+      "country": "Kazakhstan",
       "users": 8
     },
     {
-      "country": "",
+      "country": "Hungary",
       "users": 7
     },
     {
-      "country": "Chile",
-      "users": 7
-    },
-    {
-      "country": "Kazakhstan",
-      "users": 7
-    },
-    {
-      "country": "Tunisia",
+      "country": "Sudan",
       "users": 7
     },
     {
@@ -261,15 +257,15 @@
       "users": 6
     },
     {
+      "country": "Kenya",
+      "users": 6
+    },
+    {
       "country": "Palestine",
       "users": 6
     },
     {
-      "country": "Sudan",
-      "users": 6
-    },
-    {
-      "country": "Kenya",
+      "country": "",
       "users": 5
     },
     {
@@ -277,7 +273,7 @@
       "users": 5
     },
     {
-      "country": "Nepal",
+      "country": "Tunisia",
       "users": 5
     },
     {
@@ -286,6 +282,10 @@
     },
     {
       "country": "Iceland",
+      "users": 4
+    },
+    {
+      "country": "Nepal",
       "users": 4
     },
     {
@@ -321,6 +321,14 @@
       "users": 3
     },
     {
+      "country": "Georgia",
+      "users": 3
+    },
+    {
+      "country": "Latvia",
+      "users": 3
+    },
+    {
       "country": "Libya",
       "users": 3
     },
@@ -329,8 +337,24 @@
       "users": 3
     },
     {
+      "country": "Slovenia",
+      "users": 3
+    },
+    {
       "country": "Syria",
       "users": 3
+    },
+    {
+      "country": "Togo",
+      "users": 3
+    },
+    {
+      "country": "Azerbaijan",
+      "users": 2
+    },
+    {
+      "country": "Bosnia & Herzegovina",
+      "users": 2
     },
     {
       "country": "Bulgaria",
@@ -341,15 +365,11 @@
       "users": 2
     },
     {
-      "country": "Georgia",
+      "country": "Dominican Republic",
       "users": 2
     },
     {
       "country": "Guatemala",
-      "users": 2
-    },
-    {
-      "country": "Latvia",
       "users": 2
     },
     {
@@ -381,15 +401,11 @@
       "users": 2
     },
     {
-      "country": "Slovenia",
-      "users": 2
-    },
-    {
       "country": "Tanzania",
       "users": 2
     },
     {
-      "country": "Togo",
+      "country": "Uzbekistan",
       "users": 2
     },
     {
@@ -405,10 +421,6 @@
       "users": 1
     },
     {
-      "country": "Azerbaijan",
-      "users": 1
-    },
-    {
       "country": "Barbados",
       "users": 1
     },
@@ -421,7 +433,7 @@
       "users": 1
     },
     {
-      "country": "Bosnia & Herzegovina",
+      "country": "Bolivia",
       "users": 1
     },
     {
@@ -458,14 +470,6 @@
     },
     {
       "country": "Guinea",
-      "users": 1
-    },
-    {
-      "country": "Honduras",
-      "users": 1
-    },
-    {
-      "country": "Jamaica",
       "users": 1
     },
     {
@@ -521,10 +525,6 @@
       "users": 1
     },
     {
-      "country": "Uzbekistan",
-      "users": 1
-    },
-    {
       "country": "Yemen",
       "users": 1
     },
@@ -536,46 +536,50 @@
   "top_pages": [
     {
       "page": "/ai-metascience/",
-      "views": 1980
+      "views": 1911
     },
     {
       "page": "/",
-      "views": 1556
-    },
-    {
-      "page": "/resources/",
-      "views": 862
+      "views": 1517
     },
     {
       "page": "/tags/",
-      "views": 642
+      "views": 1143
+    },
+    {
+      "page": "/resources/",
+      "views": 852
     },
     {
       "page": "/awop/",
-      "views": 356
+      "views": 355
     },
     {
       "page": "/about/us/",
-      "views": 328
+      "views": 308
+    },
+    {
+      "page": "/games/",
+      "views": 305
     },
     {
       "page": "/glossary/english/",
       "views": 303
     },
     {
-      "page": "/games/",
-      "views": 298
-    },
-    {
       "page": "/about/get-involved/",
-      "views": 264
+      "views": 260
     },
     {
       "page": "/replication-hub/",
-      "views": 258
+      "views": 251
     }
   ],
   "daily_visitors": [
+    {
+      "date": "2026-10-18",
+      "users": 977
+    },
     {
       "date": "2026-10-12",
       "users": 889
@@ -645,10 +649,6 @@
       "users": 420
     },
     {
-      "date": "2026-09-18",
-      "users": 414
-    },
-    {
       "date": "2026-09-20",
       "users": 405
     },
@@ -694,33 +694,33 @@
     },
     {
       "date": "2026-10-17",
-      "users": 149
+      "users": 243
     }
   ],
   "regions_yearly": [
     {
       "country": "Singapore",
-      "users": 65553
+      "users": 66630
     },
     {
       "country": "China",
-      "users": 32462
+      "users": 32441
     },
     {
       "country": "United States of America",
-      "users": 16384
+      "users": 16398
     },
     {
       "country": "Germany",
-      "users": 4772
+      "users": 4780
     },
     {
       "country": "United Kingdom",
-      "users": 4698
+      "users": 4701
     },
     {
       "country": "Netherlands",
-      "users": 3146
+      "users": 3154
     },
     {
       "country": "Brazil",
@@ -728,27 +728,27 @@
     },
     {
       "country": "Ireland",
-      "users": 1731
+      "users": 1747
     },
     {
       "country": "Vietnam",
-      "users": 1655
+      "users": 1656
     },
     {
       "country": "(not set)",
-      "users": 1541
+      "users": 1545
     },
     {
       "country": "Canada",
-      "users": 1519
+      "users": 1521
     },
     {
       "country": "India",
-      "users": 1519
+      "users": 1517
     },
     {
       "country": "T\u00fcrkiye",
-      "users": 1014
+      "users": 1015
     },
     {
       "country": "France",
@@ -756,7 +756,7 @@
     },
     {
       "country": "Australia",
-      "users": 844
+      "users": 845
     },
     {
       "country": "Poland",
@@ -768,15 +768,15 @@
     },
     {
       "country": "Switzerland",
-      "users": 727
+      "users": 728
     },
     {
       "country": "Hong Kong",
-      "users": 706
+      "users": 710
     },
     {
       "country": "Japan",
-      "users": 705
+      "users": 707
     },
     {
       "country": "Iraq",
@@ -784,19 +784,19 @@
     },
     {
       "country": "Saudi Arabia",
-      "users": 645
+      "users": 646
     },
     {
       "country": "Argentina",
-      "users": 636
+      "users": 639
     },
     {
       "country": "Philippines",
-      "users": 578
+      "users": 579
     },
     {
       "country": "Italy",
-      "users": 544
+      "users": 540
     },
     {
       "country": "Algeria",
@@ -804,15 +804,15 @@
     },
     {
       "country": "Pakistan",
-      "users": 526
+      "users": 527
     },
     {
       "country": "Bangladesh",
-      "users": 521
+      "users": 523
     },
     {
       "country": "Egypt",
-      "users": 515
+      "users": 511
     },
     {
       "country": "Sweden",
@@ -823,11 +823,11 @@
       "users": 464
     },
     {
-      "country": "Malaysia",
-      "users": 442
+      "country": "Mexico",
+      "users": 443
     },
     {
-      "country": "Mexico",
+      "country": "Malaysia",
       "users": 442
     },
     {
@@ -836,6 +836,10 @@
     },
     {
       "country": "Austria",
+      "users": 424
+    },
+    {
+      "country": "South Africa",
       "users": 423
     },
     {
@@ -843,16 +847,12 @@
       "users": 422
     },
     {
-      "country": "South Africa",
-      "users": 421
-    },
-    {
       "country": "United Arab Emirates",
-      "users": 354
+      "users": 353
     },
     {
       "country": "Morocco",
-      "users": 338
+      "users": 340
     },
     {
       "country": "Ukraine",
@@ -872,7 +872,7 @@
     },
     {
       "country": "South Korea",
-      "users": 266
+      "users": 267
     },
     {
       "country": "Norway",
@@ -880,7 +880,7 @@
     },
     {
       "country": "Chile",
-      "users": 235
+      "users": 236
     },
     {
       "country": "Israel",
@@ -903,10 +903,6 @@
       "users": 179
     },
     {
-      "country": "Peru",
-      "users": 170
-    },
-    {
       "country": "Taiwan",
       "users": 170
     },
@@ -915,12 +911,16 @@
       "users": 169
     },
     {
+      "country": "Peru",
+      "users": 169
+    },
+    {
       "country": "Tunisia",
       "users": 166
     },
     {
       "country": "Uzbekistan",
-      "users": 154
+      "users": 155
     },
     {
       "country": "Finland",
@@ -932,7 +932,7 @@
     },
     {
       "country": "New Zealand",
-      "users": 149
+      "users": 148
     },
     {
       "country": "Syria",
@@ -952,7 +952,7 @@
     },
     {
       "country": "Thailand",
-      "users": 126
+      "users": 127
     },
     {
       "country": "Oman",
@@ -972,11 +972,11 @@
     },
     {
       "country": "Kazakhstan",
-      "users": 87
+      "users": 88
     },
     {
       "country": "Azerbaijan",
-      "users": 86
+      "users": 87
     },
     {
       "country": "Serbia",
@@ -1011,16 +1011,16 @@
       "users": 64
     },
     {
+      "country": "Bolivia",
+      "users": 62
+    },
+    {
       "country": "Lebanon",
       "users": 62
     },
     {
       "country": "Paraguay",
       "users": 62
-    },
-    {
-      "country": "Bolivia",
-      "users": 61
     },
     {
       "country": "Kuwait",
@@ -1036,7 +1036,7 @@
     },
     {
       "country": "Sudan",
-      "users": 49
+      "users": 50
     },
     {
       "country": "Senegal",
@@ -1044,18 +1044,18 @@
     },
     {
       "country": "Slovenia",
-      "users": 46
+      "users": 47
     },
     {
       "country": "Dominican Republic",
-      "users": 44
-    },
-    {
-      "country": "Albania",
-      "users": 40
+      "users": 46
     },
     {
       "country": "Georgia",
+      "users": 41
+    },
+    {
+      "country": "Albania",
       "users": 40
     },
     {
@@ -1115,15 +1115,11 @@
       "users": 25
     },
     {
-      "country": "Estonia",
-      "users": 24
-    },
-    {
       "country": "Latvia",
-      "users": 24
+      "users": 25
     },
     {
-      "country": "Puerto Rico",
+      "country": "Estonia",
       "users": 24
     },
     {
@@ -1132,7 +1128,11 @@
     },
     {
       "country": "Bosnia & Herzegovina",
-      "users": 22
+      "users": 23
+    },
+    {
+      "country": "Puerto Rico",
+      "users": 23
     },
     {
       "country": "Honduras",
@@ -1168,7 +1168,7 @@
     },
     {
       "country": "Togo",
-      "users": 16
+      "users": 17
     },
     {
       "country": "Macao",
@@ -1235,10 +1235,6 @@
       "users": 8
     },
     {
-      "country": "",
-      "users": 7
-    },
-    {
       "country": "Barbados",
       "users": 7
     },
@@ -1265,6 +1261,10 @@
     {
       "country": "Maldives",
       "users": 6
+    },
+    {
+      "country": "",
+      "users": 5
     },
     {
       "country": "Gambia",
@@ -1478,43 +1478,43 @@
   "top_pages_yearly": [
     {
       "page": "/",
-      "views": 18103
+      "views": 18092
     },
     {
       "page": "/resources/",
-      "views": 7401
+      "views": 7417
     },
     {
       "page": "/awop/",
-      "views": 4112
+      "views": 4114
     },
     {
       "page": "/ai-metascience/",
-      "views": 3514
+      "views": 3519
     },
     {
       "page": "/reversals/",
-      "views": 3151
+      "views": 3149
     },
     {
       "page": "/replication-hub/",
-      "views": 3102
+      "views": 3094
     },
     {
       "page": "/games/",
-      "views": 2854
+      "views": 2878
+    },
+    {
+      "page": "/tags/",
+      "views": 2837
     },
     {
       "page": "/glossary/english/",
-      "views": 2818
+      "views": 2825
     },
     {
       "page": "/about/get-involved/",
-      "views": 2416
-    },
-    {
-      "page": "/about/us/",
-      "views": 2345
+      "views": 2415
     }
   ],
   "daily_visitors_yearly": [
@@ -1541,6 +1541,10 @@
     {
       "date": "2026-05-13",
       "users": 1098
+    },
+    {
+      "date": "2026-10-18",
+      "users": 977
     },
     {
       "date": "2026-06-03",
@@ -2739,6 +2743,10 @@
       "users": 243
     },
     {
+      "date": "2026-10-17",
+      "users": 243
+    },
+    {
       "date": "2025-12-02",
       "users": 240
     },
@@ -2935,10 +2943,6 @@
       "users": 149
     },
     {
-      "date": "2026-10-17",
-      "users": 149
-    },
-    {
       "date": "2025-12-25",
       "users": 146
     },
@@ -2973,10 +2977,6 @@
     {
       "date": "2025-12-21",
       "users": 127
-    },
-    {
-      "date": "2025-10-18",
-      "users": 107
     }
   ]
 }
