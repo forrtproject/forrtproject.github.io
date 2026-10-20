@@ -33,6 +33,14 @@ Researchers generally support Open Science practices but often struggle navigati
 
 Try the JUST-OS Chatbot. For any issues or suggestions, please submit feedback by opening an issue on GitHub [click here](https://github.com/forrtproject/forrtproject.github.io/issues).
 
+### Acknowledgements
+
+JUST-OS writes its answers with [OpenScholar](https://huggingface.co/OpenSciLM/Llama-3.1_OpenScholar-8B) (Llama-3.1_OpenScholar-8B), an open language model built to synthesise the scientific literature with citations. OpenScholar was developed by Akari Asai and colleagues at the University of Washington and the Allen Institute for AI (Ai2). We thank them for releasing the model and its code openly. The model is hosted on the University of Groningen's LLM service.
+
+If you use or write about JUST-OS, please also cite OpenScholar:
+
+> Asai, A., He, J., Shao, R., et al. (2026). Synthesizing scientific literature with retrieval-augmented language models. *Nature*, *650*(8103), 857–863. [https://doi.org/10.1038/s41586-025-10072-4](https://doi.org/10.1038/s41586-025-10072-4)
+
 
 --- 
 
