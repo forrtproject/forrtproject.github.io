@@ -4,8 +4,8 @@ type: plain_page
 url: "/ai-metascience/"
 hide_title: true
 hide_date: true
-summary: "Registration is open for the FORRT AI in Metascience Online Conference, 28–30 September 2026. Online, free to attend, 35+ talks and workshops over 3 days."
-sharing_description: "Register for the FORRT AI in Metascience Online Conference, 28–30 September 2026. Online and free to attend."
+summary: "Programme and recordings of the FORRT AI in Metascience Online Conference, 28–30 September 2026: 35+ talks and workshops over 3 days, most of them on YouTube."
+sharing_description: "Watch the talks from the FORRT AI in Metascience Online Conference, 28–30 September 2026."
 sharing_image_alt: "FORRT AI in Metascience Conference — online, 28–30 September 2026"
 image:
   placement: 1
@@ -78,26 +78,24 @@ image:
 @media (max-width: 640px) { .am-facts { grid-template-columns: 1fr 1fr; } }
 @media (max-width: 400px) { .am-facts { grid-template-columns: 1fr; } }
 
-.am-reg-cta { margin: 1.6rem 0 0.5rem; }
-.am-reg-note {
-  margin: 0 0 1.6rem;
-  color: var(--am-muted);
-  font-size: 0.9rem;
+.am-watch {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.6rem;
+  margin: 1.6rem 0;
+}
+.am-watch a {
+  display: block;
+  padding: 0.75rem 0.9rem;
+  border-radius: 6px;
+  background: var(--am-deep);
+  color: #fff;
+  font-weight: 700;
   text-align: center;
 }
-.am-reg-again {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-between;
-  gap: 0.8rem;
-  margin: 2.2rem 0;
-  padding: 1rem 1.1rem;
-  border: 1px solid var(--am-rule);
-  border-radius: 8px;
-  background: var(--am-card);
-}
-.am-reg-again p { margin: 0; font-size: 1.05rem; }
+.am-watch a::before { content: "\25B6\00A0"; font-size: 0.8em; }
+.am-watch a:hover { color: #fff; text-decoration: underline; }
+@media (max-width: 560px) { .am-watch { grid-template-columns: 1fr; } }
 
 .am-days {
   display: grid;
@@ -252,9 +250,35 @@ image:
 }
 .am-prog-talks { list-style: none; margin: 0; padding: 0; }
 .am-prog-talks li {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
   padding: 0;
   border-top: 1px solid var(--am-rule);
 }
+.am-prog-watch {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 0.3rem;
+  flex: 0 0 auto;
+  max-width: 11rem;
+}
+.am-prog-watch a,
+.am-prog-playlist a {
+  padding: 0.15rem 0.55rem;
+  border: 1px solid var(--am-accent);
+  border-radius: 999px;
+  color: var(--am-deep);
+  font-size: 0.76rem;
+  white-space: nowrap;
+}
+.am-prog-watch a::before,
+.am-prog-playlist a::before { content: "\25B6\00A0"; font-size: 0.65rem; }
+.am-prog-watch a:hover,
+.am-prog-playlist a:hover { background: var(--am-tint); text-decoration: none; }
+.am-prog-playlist { margin: -0.4rem 0 0.9rem; }
+.am-prog-playlist a { font-size: 0.86rem; }
 .am-prog-talks li:first-child { border-top: 0; }
 .am-prog-item {
   display: flex;
@@ -345,6 +369,8 @@ image:
   .am-prog-item { flex-wrap: wrap; gap: 0.3rem; }
   .am-prog-time { flex: 0 0 100%; }
   .am-prog-text { flex: 1 1 100%; }
+  .am-prog-talks li { flex-wrap: wrap; }
+  .am-prog-watch { flex: 1 1 100%; max-width: none; justify-content: flex-start; padding: 0 0.4rem 0.5rem; }
 }
 
 .am-prog-dialog {
@@ -429,21 +455,20 @@ image:
 }
 </style>
 
-How is AI changing the way research is done, checked and understood? The **FORRT AI in Metascience Online Conference** takes three days over that question, with 35+ talks and workshops from people who are studying it or building with it. Registration is now open, and everyone is welcome.
+How is AI changing the way research is done, checked and understood? The **FORRT AI in Metascience Online Conference** spent three days on that question, with 35+ talks and workshops from people who are studying it or building with it. Most talks are now on the [FORRT YouTube channel](https://youtube.com/@forrtproject9995), one playlist per day.
 
 <div class="am-facts">
-<div class="am-fact"><span class="am-fact-label">When</span><span class="am-fact-value">28–30 Sept 2026 · 09:30–18:00 CEST (UTC+2)</span></div>
-<div class="am-fact"><span class="am-fact-label">Where</span><span class="am-fact-value">Online, Google Meet</span></div>
-<div class="am-fact"><span class="am-fact-label">Cost</span><span class="am-fact-value">Free</span></div>
-<div class="am-fact"><span class="am-fact-label">Format</span><span class="am-fact-value">Single track, 35+ talks &amp; workshops. Follow it all or dip in.</span></div>
+<div class="am-fact"><span class="am-fact-label">When</span><span class="am-fact-value">28–30 September 2026</span></div>
+<div class="am-fact"><span class="am-fact-label">Where</span><span class="am-fact-value">Online</span></div>
+<div class="am-fact"><span class="am-fact-label">Programme</span><span class="am-fact-value">35+ talks &amp; workshops</span></div>
+<div class="am-fact"><span class="am-fact-label">Recordings</span><span class="am-fact-value">32 talks on YouTube</span></div>
 </div>
 
-<div class="am-reg-cta">
-<a href="https://docs.google.com/forms/d/e/1FAIpQLSdFF-BdifNeBEkOrt-gjfDqAYON5xA3N5YzM40B3aBt-A2ejA/viewform" class="btn btn-primary btn-lg btn-block" style="line-height:1;border-radius:6px;font-size:1.4rem;" target="_blank" rel="noopener">
-  Register
-</a>
+<div class="am-watch">
+<a class="am-day-mon" href="https://www.youtube.com/playlist?list=PLS3VdaYKcrew" target="_blank" rel="noopener">Monday talks</a>
+<a class="am-day-tue" href="https://www.youtube.com/playlist?list=PLSItTTcc91ac" target="_blank" rel="noopener">Tuesday talks</a>
+<a class="am-day-wed" href="https://www.youtube.com/playlist?list=PLZYxy57rykQU" target="_blank" rel="noopener">Wednesday talks</a>
 </div>
-<p class="am-reg-note">Free. Takes a minute. Joining links go out the week before.</p>
 
 <div class="am-days">
 <a class="am-day-card am-day-mon" href="#am-day-mon">
@@ -451,27 +476,27 @@ How is AI changing the way research is done, checked and understood? The **FORRT
 <span class="am-day-date">28 September</span>
 <span class="am-day-theme">AI in the research pipeline</span>
 <span class="am-day-blurb">What AI is already doing to the literature, whether it can carry out evidence synthesis, how it can inform research evaluation, and what legitimate, ethical adoption looks like.</span>
-<span class="am-day-go">See the programme ↓</span>
+<span class="am-day-go">Programme and recordings ↓</span>
 </a>
 <a class="am-day-card am-day-tue" href="#am-day-tue">
 <span class="am-day-name">Tuesday</span>
 <span class="am-day-date">29 September</span>
 <span class="am-day-theme">Replications and reproductions</span>
 <span class="am-day-blurb">Replications and reproductions are key to credible science, yet hard to do and hard to find. Can AI help with both, and what are the risks of handing the work to machines?</span>
-<span class="am-day-go">See the programme ↓</span>
+<span class="am-day-go">Programme and recordings ↓</span>
 </a>
 <a class="am-day-card am-day-wed" href="#am-day-wed">
 <span class="am-day-name">Wednesday</span>
 <span class="am-day-date">30 September</span>
 <span class="am-day-theme">Workshops, and analyst variability</span>
 <span class="am-day-blurb">Three 90-minute hands-on sessions on AI for knowledge management, evidence synthesis and pre-registration review, plus talks on whether a finding survives another analyst.</span>
-<span class="am-day-go">See the programme ↓</span>
+<span class="am-day-go">Programme and recordings ↓</span>
 </a>
 </div>
 
 ## Programme
 
-Here are the sessions and the talks in each, in the order they run. **Click any talk to read its abstract.** All times are CEST (UTC+2), and everything runs in a single track, so nothing clashes. A time marked TBC is still awaiting the speaker's confirmation and may shift by a few minutes.
+Here are the sessions and the talks in each, in the order they ran. **Click any talk to read its abstract**, and use **Watch** to open its recording. All times are CEST (UTC+2).
 
 <nav class="am-switch" aria-label="Jump to a day">
 <a class="am-pill am-day-mon" href="#am-day-mon">Mon 28</a>
@@ -485,43 +510,44 @@ Here are the sessions and the talks in each, in the order they run. **Click any 
 <div class="am-prog">
 <section class="am-prog-day am-day-mon" id="am-day-mon">
 <h3 class="am-prog-date">Monday 28 September<span>AI in the research pipeline</span></h3>
+<p class="am-prog-playlist"><a href="https://www.youtube.com/playlist?list=PLS3VdaYKcrew" target="_blank" rel="noopener">All Monday recordings on YouTube</a></p>
 <p class="am-prog-half">Morning</p>
 <div class="am-prog-session am-prog-session-solo"><ul class="am-prog-talks"><li><div class="am-prog-item am-prog-item-plain"><span class="am-prog-time">09:30</span><span class="am-prog-text"><span class="am-prog-title">Welcome and framing</span><span class="am-prog-who">The organisers</span></span></div></li></ul></div>
 <div class="am-prog-session">
 <h4><span class="am-prog-start">09:40</span>When AI writes the literature</h4>
 <p class="am-prog-blurb">The problem as it already shows up in the correction record, the pressure producing it, and two routes to a better literature.</p>
 <ul class="am-prog-talks">
-<li><button type="button" class="am-prog-item" data-talk="c7428997" data-session="When AI writes the literature" data-day="Monday 28 September"><span class="am-prog-time">09:40</span><span class="am-prog-text"><span class="am-prog-title">AI-Generated Content as an Emerging Driver of Journal Retractions</span><span class="am-prog-who">Anton Sokolov (Tyche Institute)</span></span><span class="am-prog-meta"><span class="am-prog-more" aria-hidden="true">Abstract</span></span></button></li>
-<li><button type="button" class="am-prog-item" data-talk="11a897f9" data-session="When AI writes the literature" data-day="Monday 28 September"><span class="am-prog-time">09:50</span><span class="am-prog-text"><span class="am-prog-title">When every hypothesis is published: agentic AI and the collapse of selection at production</span><span class="am-prog-who">Matt Spick (University of Surrey)</span></span><span class="am-prog-meta"><span class="am-prog-more" aria-hidden="true">Abstract</span></span></button></li>
-<li><button type="button" class="am-prog-item" data-talk="e2796f07" data-session="When AI writes the literature" data-day="Monday 28 September"><span class="am-prog-time">10:10</span><span class="am-prog-text"><span class="am-prog-title">The Conceptual Armament Effect: Armed AI Reaches Above a Human 99th-Percentile Paper</span><span class="am-prog-who">Kenji Yamada (independent researcher, Japan)</span></span><span class="am-prog-meta"><span class="am-prog-more" aria-hidden="true">Abstract</span></span></button></li>
-<li><button type="button" class="am-prog-item" data-talk="6e32077e" data-session="When AI writes the literature" data-day="Monday 28 September"><span class="am-prog-time">10:30</span><span class="am-prog-text"><span class="am-prog-title">How should AI-assisted research be documented? Seven guiding questions</span><span class="am-prog-who">Maximilian Frank (LMU Munich)</span></span><span class="am-prog-meta"><span class="am-prog-more" aria-hidden="true">Abstract</span></span></button></li>
+<li><button type="button" class="am-prog-item" data-talk="c7428997" data-session="When AI writes the literature" data-day="Monday 28 September"><span class="am-prog-time">09:40</span><span class="am-prog-text"><span class="am-prog-title">AI-Generated Content as an Emerging Driver of Journal Retractions</span><span class="am-prog-who">Anton Sokolov (Tyche Institute)</span></span><span class="am-prog-meta"><span class="am-prog-more" aria-hidden="true">Abstract</span></span></button><span class="am-prog-watch"><a href="https://youtu.be/0wgatANQbgE" target="_blank" rel="noopener" aria-label="Watch: AI-Generated Content as an Emerging Driver of Journal Retractions">Watch</a></span></li>
+<li><button type="button" class="am-prog-item" data-talk="11a897f9" data-session="When AI writes the literature" data-day="Monday 28 September"><span class="am-prog-time">09:50</span><span class="am-prog-text"><span class="am-prog-title">When every hypothesis is published: agentic AI and the collapse of selection at production</span><span class="am-prog-who">Matt Spick (University of Surrey)</span></span><span class="am-prog-meta"><span class="am-prog-more" aria-hidden="true">Abstract</span></span></button><span class="am-prog-watch"><a href="https://youtu.be/DMT8brUWbh8" target="_blank" rel="noopener" aria-label="Watch: When every hypothesis is published: agentic AI and the collapse of selection at production">Watch</a></span></li>
+<li><button type="button" class="am-prog-item" data-talk="e2796f07" data-session="When AI writes the literature" data-day="Monday 28 September"><span class="am-prog-time">10:10</span><span class="am-prog-text"><span class="am-prog-title">The Conceptual Armament Effect: Armed AI Reaches Above a Human 99th-Percentile Paper</span><span class="am-prog-who">Kenji Yamada (independent researcher, Japan)</span></span><span class="am-prog-meta"><span class="am-prog-more" aria-hidden="true">Abstract</span></span></button><span class="am-prog-watch"><a href="https://youtu.be/EC0IcE0pTLQ" target="_blank" rel="noopener" aria-label="Watch: The Conceptual Armament Effect: Armed AI Reaches Above a Human 99th-Percentile Paper">Watch</a></span></li>
+<li><button type="button" class="am-prog-item" data-talk="6e32077e" data-session="When AI writes the literature" data-day="Monday 28 September"><span class="am-prog-time">10:30</span><span class="am-prog-text"><span class="am-prog-title">How should AI-assisted research be documented? Seven guiding questions</span><span class="am-prog-who">Maximilian Frank (LMU Munich)</span></span><span class="am-prog-meta"><span class="am-prog-more" aria-hidden="true">Abstract</span></span></button><span class="am-prog-watch"><a href="https://youtu.be/4yrXjEuYXao" target="_blank" rel="noopener" aria-label="Watch: How should AI-assisted research be documented? Seven guiding questions">Watch</a></span></li>
 </ul></div>
 <div class="am-prog-session">
 <h4><span class="am-prog-start">11:10</span>Evidence synthesis: capability, comparison, assurance</h4>
 <p class="am-prog-blurb">From what frontier models can extract, through a head-to-head test of the tools built on them, to the safeguards that would make an AI-assisted review checkable.</p>
 <ul class="am-prog-talks">
-<li><button type="button" class="am-prog-item" data-talk="38e3c4bd" data-session="Evidence synthesis: capability, comparison, assurance" data-day="Monday 28 September"><span class="am-prog-time">11:10</span><span class="am-prog-text"><span class="am-prog-title">Can frontier LLMs code studies for meta-analysis?</span><span class="am-prog-who">Shaheed Azaad (University of Münster)</span></span><span class="am-prog-meta"><span class="am-prog-more" aria-hidden="true">Abstract</span></span></button></li>
-<li><button type="button" class="am-prog-item" data-talk="c3984e9c" data-session="Evidence synthesis: capability, comparison, assurance" data-day="Monday 28 September"><span class="am-prog-time">11:30</span><span class="am-prog-text"><span class="am-prog-title">Fast, but incomplete and inaccurate? Performance of AI-powered tools for systematic literature reviews</span><span class="am-prog-who">Rene Bekkers (VU Amsterdam)</span></span><span class="am-prog-meta"><span class="am-prog-more" aria-hidden="true">Abstract</span></span></button></li>
-<li><button type="button" class="am-prog-item" data-talk="e6453c60" data-session="Evidence synthesis: capability, comparison, assurance" data-day="Monday 28 September"><span class="am-prog-time">11:50</span><span class="am-prog-text"><span class="am-prog-title">ReviewAid: confidence-scored, locally runnable LLM screening and extraction</span><span class="am-prog-who">Vihaan Sahu (Georgian National University SEU)</span></span><span class="am-prog-meta"><span class="am-prog-more" aria-hidden="true">Abstract</span></span></button></li>
+<li><button type="button" class="am-prog-item" data-talk="38e3c4bd" data-session="Evidence synthesis: capability, comparison, assurance" data-day="Monday 28 September"><span class="am-prog-time">11:10</span><span class="am-prog-text"><span class="am-prog-title">Can frontier LLMs code studies for meta-analysis?</span><span class="am-prog-who">Shaheed Azaad (University of Münster)</span></span><span class="am-prog-meta"><span class="am-prog-more" aria-hidden="true">Abstract</span></span></button><span class="am-prog-watch"><a href="https://youtu.be/sXhBZRyPz4M" target="_blank" rel="noopener" aria-label="Watch: Can frontier LLMs code studies for meta-analysis?">Watch</a></span></li>
+<li><button type="button" class="am-prog-item" data-talk="c3984e9c" data-session="Evidence synthesis: capability, comparison, assurance" data-day="Monday 28 September"><span class="am-prog-time">11:30</span><span class="am-prog-text"><span class="am-prog-title">Fast, but incomplete and inaccurate? Performance of AI-powered tools for systematic literature reviews</span><span class="am-prog-who">Rene Bekkers (VU Amsterdam)</span></span><span class="am-prog-meta"><span class="am-prog-more" aria-hidden="true">Abstract</span></span></button><span class="am-prog-watch"><a href="https://youtu.be/z30hdcI8lsE" target="_blank" rel="noopener" aria-label="Watch: Fast, but incomplete and inaccurate? Performance of AI-powered tools for systematic literature reviews">Watch</a></span></li>
+<li><button type="button" class="am-prog-item" data-talk="e6453c60" data-session="Evidence synthesis: capability, comparison, assurance" data-day="Monday 28 September"><span class="am-prog-time">11:50</span><span class="am-prog-text"><span class="am-prog-title">ReviewAid: confidence-scored, locally runnable LLM screening and extraction</span><span class="am-prog-who">Vihaan Sahu (Georgian National University SEU)</span></span><span class="am-prog-meta"><span class="am-prog-more" aria-hidden="true">Abstract</span></span></button><span class="am-prog-watch"><a href="https://youtu.be/-xQ6o3WwXeM" target="_blank" rel="noopener" aria-label="Watch: ReviewAid: confidence-scored, locally runnable LLM screening and extraction">Watch</a></span></li>
 </ul></div>
 <p class="am-prog-half">Afternoon</p>
 <div class="am-prog-session">
 <h4><span class="am-prog-start">13:15</span>Evaluating science, and its evaluators</h4>
 <p class="am-prog-blurb">What it takes to make a paper checkable in the first place, what human review actually does, what a computational novelty signal might add, and a tool that checks a paper against what its authors said they would do.</p>
 <ul class="am-prog-talks">
-<li><button type="button" class="am-prog-item" data-talk="d6f0402b" data-session="Evaluating science, and its evaluators" data-day="Monday 28 September"><span class="am-prog-time">13:15</span><span class="am-prog-text"><span class="am-prog-title">Metacheck: automated, validated checks for open science practices</span><span class="am-prog-who">Cristian Mesquida (Eindhoven University of Technology)</span></span><span class="am-prog-meta"><span class="am-prog-more" aria-hidden="true">Abstract</span></span></button></li>
-<li><button type="button" class="am-prog-item" data-talk="f245f8e6" data-session="Evaluating science, and its evaluators" data-day="Monday 28 September"><span class="am-prog-time">13:35</span><span class="am-prog-text"><span class="am-prog-title">Gender and disciplinary differences in 39,280 SNSF grant peer review reports</span><span class="am-prog-who">Stefan Müller (University College Dublin)</span></span><span class="am-prog-meta"><span class="am-prog-more" aria-hidden="true">Abstract</span></span></button></li>
-<li><button type="button" class="am-prog-item" data-talk="f7748099" data-session="Evaluating science, and its evaluators" data-day="Monday 28 September"><span class="am-prog-time">13:55</span><span class="am-prog-text"><span class="am-prog-title">Tracing Scientific Novelty in Transformer Representations: Toward Computational Models of Novelty Signals</span><span class="am-prog-who">Anna Kruzenshtern (LUT University)</span></span><span class="am-prog-meta"><span class="am-prog-more" aria-hidden="true">Abstract</span></span></button></li>
-<li><button type="button" class="am-prog-item" data-talk="330f4e48" data-session="Evaluating science, and its evaluators" data-day="Monday 28 September"><span class="am-prog-time">14:15</span><span class="am-prog-text"><span class="am-prog-title">RegCheck: an LLM-assisted tool for comparing registrations with papers</span><span class="am-prog-who">Jamie Cummins (University of Bern)</span></span><span class="am-prog-meta"><span class="am-prog-more" aria-hidden="true">Abstract</span></span></button></li>
+<li><button type="button" class="am-prog-item" data-talk="d6f0402b" data-session="Evaluating science, and its evaluators" data-day="Monday 28 September"><span class="am-prog-time">13:15</span><span class="am-prog-text"><span class="am-prog-title">Metacheck: automated, validated checks for open science practices</span><span class="am-prog-who">Cristian Mesquida (Eindhoven University of Technology)</span></span><span class="am-prog-meta"><span class="am-prog-more" aria-hidden="true">Abstract</span></span></button><span class="am-prog-watch"><a href="https://youtu.be/0CfQMCImSko" target="_blank" rel="noopener" aria-label="Watch: Metacheck: automated, validated checks for open science practices">Watch</a></span></li>
+<li><button type="button" class="am-prog-item" data-talk="f245f8e6" data-session="Evaluating science, and its evaluators" data-day="Monday 28 September"><span class="am-prog-time">13:35</span><span class="am-prog-text"><span class="am-prog-title">Gender and disciplinary differences in 39,280 SNSF grant peer review reports</span><span class="am-prog-who">Stefan Müller (University College Dublin)</span></span><span class="am-prog-meta"><span class="am-prog-more" aria-hidden="true">Abstract</span></span></button><span class="am-prog-watch"><a href="https://youtu.be/_F7JQqLMbvo" target="_blank" rel="noopener" aria-label="Watch: Gender and disciplinary differences in 39,280 SNSF grant peer review reports">Watch</a></span></li>
+<li><button type="button" class="am-prog-item" data-talk="f7748099" data-session="Evaluating science, and its evaluators" data-day="Monday 28 September"><span class="am-prog-time">13:55</span><span class="am-prog-text"><span class="am-prog-title">Tracing Scientific Novelty in Transformer Representations: Toward Computational Models of Novelty Signals</span><span class="am-prog-who">Anna Kruzenshtern (LUT University)</span></span><span class="am-prog-meta"><span class="am-prog-more" aria-hidden="true">Abstract</span></span></button><span class="am-prog-watch"><a href="https://youtu.be/lVOIy8COC-w" target="_blank" rel="noopener" aria-label="Watch: Tracing Scientific Novelty in Transformer Representations: Toward Computational Models of Novelty Signals">Watch</a></span></li>
+<li><button type="button" class="am-prog-item" data-talk="330f4e48" data-session="Evaluating science, and its evaluators" data-day="Monday 28 September"><span class="am-prog-time">14:15</span><span class="am-prog-text"><span class="am-prog-title">RegCheck: an LLM-assisted tool for comparing registrations with papers</span><span class="am-prog-who">Jamie Cummins (University of Bern)</span></span><span class="am-prog-meta"><span class="am-prog-more" aria-hidden="true">Abstract</span></span></button><span class="am-prog-watch"><a href="https://youtu.be/rgRFuG2zckQ" target="_blank" rel="noopener" aria-label="Watch: RegCheck: an LLM-assisted tool for comparing registrations with papers">Watch</a></span></li>
 </ul></div>
 <div class="am-prog-session">
 <h4><span class="am-prog-start">15:40</span>Conditions for legitimate adoption</h4>
 <p class="am-prog-blurb">What researchers do with these tools, what open infrastructure and open data would require, who gains or loses when the tools arrive, the rules of use that follow, and what it would take to make research outputs readable by machines in the first place.</p>
 <ul class="am-prog-talks">
 <li><button type="button" class="am-prog-item" data-talk="a06e644d" data-session="Conditions for legitimate adoption" data-day="Monday 28 September"><span class="am-prog-time">15:40</span><span class="am-prog-text"><span class="am-prog-title">How health researchers actually use GenAI: findings from a global survey</span><span class="am-prog-who">Danny Maupin (University of Surrey)</span></span><span class="am-prog-meta"><span class="am-prog-more" aria-hidden="true">Abstract</span></span></button></li>
-<li><button type="button" class="am-prog-item" data-talk="53a094fd" data-session="Conditions for legitimate adoption" data-day="Monday 28 September"><span class="am-prog-time">15:55</span><span class="am-prog-text"><span class="am-prog-title">AI and researchers with Specific Learning Disabilities: access gains and new inequities</span><span class="am-prog-who">Chelsea Sawyer (University of Manchester)</span></span><span class="am-prog-meta"><span class="am-prog-more" aria-hidden="true">Abstract</span></span></button></li>
-<li><button type="button" class="am-prog-item" data-talk="ddeb7700" data-session="Conditions for legitimate adoption" data-day="Monday 28 September"><span class="am-prog-time">16:15</span><span class="am-prog-text"><span class="am-prog-title">The FOCUS Framework: Ten Simple Rules for Optimal and Careful Use of Generative AI in Science</span><span class="am-prog-who">Mohamed Helmy (University of Saskatchewan)</span></span><span class="am-prog-meta"><span class="am-prog-more" aria-hidden="true">Abstract</span></span></button></li>
-<li><button type="button" class="am-prog-item" data-talk="bf25861f" data-session="Conditions for legitimate adoption" data-day="Monday 28 September"><span class="am-prog-time">16:35</span><span class="am-prog-text"><span class="am-prog-title">Machine-readable, not AI-interpretable: standards for FAIR data and code</span><span class="am-prog-who">Daniel Lakens (Eindhoven University of Technology)</span></span><span class="am-prog-meta"><span class="am-prog-more" aria-hidden="true">Abstract</span></span></button></li>
+<li><button type="button" class="am-prog-item" data-talk="53a094fd" data-session="Conditions for legitimate adoption" data-day="Monday 28 September"><span class="am-prog-time">15:55</span><span class="am-prog-text"><span class="am-prog-title">AI and researchers with Specific Learning Disabilities: access gains and new inequities</span><span class="am-prog-who">Chelsea Sawyer (University of Manchester)</span></span><span class="am-prog-meta"><span class="am-prog-more" aria-hidden="true">Abstract</span></span></button><span class="am-prog-watch"><a href="https://youtu.be/UnzI8fDysMU" target="_blank" rel="noopener" aria-label="Watch: AI and researchers with Specific Learning Disabilities: access gains and new inequities">Watch</a></span></li>
+<li><button type="button" class="am-prog-item" data-talk="ddeb7700" data-session="Conditions for legitimate adoption" data-day="Monday 28 September"><span class="am-prog-time">16:15</span><span class="am-prog-text"><span class="am-prog-title">The FOCUS Framework: Ten Simple Rules for Optimal and Careful Use of Generative AI in Science</span><span class="am-prog-who">Mohamed Helmy (University of Saskatchewan)</span></span><span class="am-prog-meta"><span class="am-prog-more" aria-hidden="true">Abstract</span></span></button><span class="am-prog-watch"><a href="https://youtu.be/p22kLEsOY8E" target="_blank" rel="noopener" aria-label="Watch: The FOCUS Framework: Ten Simple Rules for Optimal and Careful Use of Generative AI in Science">Watch</a></span></li>
+<li><button type="button" class="am-prog-item" data-talk="bf25861f" data-session="Conditions for legitimate adoption" data-day="Monday 28 September"><span class="am-prog-time">16:35</span><span class="am-prog-text"><span class="am-prog-title">Machine-readable, not AI-interpretable: standards for FAIR data and code</span><span class="am-prog-who">Daniel Lakens (Eindhoven University of Technology)</span></span><span class="am-prog-meta"><span class="am-prog-more" aria-hidden="true">Abstract</span></span></button><span class="am-prog-watch"><a href="https://youtu.be/dwyZo4IVm0M" target="_blank" rel="noopener" aria-label="Watch: Machine-readable, not AI-interpretable: standards for FAIR data and code">Watch</a></span></li>
 </ul></div>
 <div class="am-prog-session">
 <h4><span class="am-prog-start">17:10</span>Closing provocation</h4>
@@ -532,20 +558,21 @@ Here are the sessions and the talks in each, in the order they run. **Click any 
 </section>
 <section class="am-prog-day am-day-tue" id="am-day-tue">
 <h3 class="am-prog-date">Tuesday 29 September<span>Replications and reproductions</span></h3>
+<p class="am-prog-playlist"><a href="https://www.youtube.com/playlist?list=PLSItTTcc91ac" target="_blank" rel="noopener">All Tuesday recordings on YouTube</a></p>
 <p class="am-prog-half">Morning</p>
 <div class="am-prog-session">
 <h4><span class="am-prog-start">09:30</span>Symposium: Can AI Help Us Understand How Findings Move from Animal Studies to Human Studies?</h4>
 <p class="am-prog-blurb">Four talks, mostly by early-career researchers, on tracing the biomedical evidence trail across publications, trial registries and regulatory documents. Chaired by Benjamin Ineichen.</p>
 <ul class="am-prog-talks">
-<li><button type="button" class="am-prog-item" data-talk="6ca60442" data-session="Symposium: Can AI Help Us Understand How Findings Move from Animal Studies to Human Studies?" data-day="Tuesday 29 September"><span class="am-prog-time">09:30</span><span class="am-prog-text"><span class="am-prog-who">Miriam Kober, Tim Chopard, Vera Bernhard &amp; Simona Doneva (University of Bern)</span></span><span class="am-prog-meta"><span class="am-prog-more" aria-hidden="true">Abstract</span></span></button></li>
+<li><button type="button" class="am-prog-item" data-talk="6ca60442" data-session="Symposium: Can AI Help Us Understand How Findings Move from Animal Studies to Human Studies?" data-day="Tuesday 29 September"><span class="am-prog-time">09:30</span><span class="am-prog-text"><span class="am-prog-who">Miriam Kober, Tim Chopard, Vera Bernhard &amp; Simona Doneva (University of Bern)</span></span><span class="am-prog-meta"><span class="am-prog-more" aria-hidden="true">Abstract</span></span></button><span class="am-prog-watch"><a href="https://youtu.be/N83pshT9AVE" target="_blank" rel="noopener" aria-label="Kober: Can AI Help Us Understand How Findings Move from Animal Studies to Human Studies?">Kober</a><a href="https://youtu.be/5iAr-n9jAX4" target="_blank" rel="noopener" aria-label="Chopard: Can AI Help Us Understand How Findings Move from Animal Studies to Human Studies?">Chopard</a><a href="https://youtu.be/vwOTpIdTDxY" target="_blank" rel="noopener" aria-label="Doneva: Can AI Help Us Understand How Findings Move from Animal Studies to Human Studies?">Doneva</a><a href="https://youtu.be/oQ_UPr1nUg4" target="_blank" rel="noopener" aria-label="Ineichen: Can AI Help Us Understand How Findings Move from Animal Studies to Human Studies?">Ineichen</a></span></li>
 </ul></div>
 <div class="am-prog-session">
 <h4><span class="am-prog-start">11:15</span>Reproducing the record</h4>
 <p class="am-prog-blurb">Replication and reproduction as work actually done, with agents in the loop and with the paperwork that makes a result reusable, followed out to whether anyone downstream notices.</p>
 <ul class="am-prog-talks">
-<li><button type="button" class="am-prog-item" data-talk="049ed9f6" data-session="Reproducing the record" data-day="Tuesday 29 September"><span class="am-prog-time">11:15</span><span class="am-prog-text"><span class="am-prog-title">Thirty agent-assisted replications, published as nanopublications: the honest debrief</span><span class="am-prog-who">Anne Fouilloux (Lifewatch ERIC, Spain), Jean Iaquinta (Vitenhub AS, Norway)</span></span><span class="am-prog-meta"><span class="am-prog-more" aria-hidden="true">Abstract</span></span></button></li>
-<li><button type="button" class="am-prog-item" data-talk="30acb82a" data-session="Reproducing the record" data-day="Tuesday 29 September"><span class="am-prog-time">11:35</span><span class="am-prog-text"><span class="am-prog-title">A local, open-weights pipeline for semi-automated replication checklists</span><span class="am-prog-who">Johannes Breuer (CAIS Bochum &amp; University of Duisburg-Essen), Mario Haim &amp; Philipp Knöpfle (LMU Munich), Xinyue Zhao (CAIS Bochum)</span></span><span class="am-prog-meta"><span class="am-prog-more" aria-hidden="true">Abstract</span></span></button></li>
-<li><button type="button" class="am-prog-item" data-talk="b51b5bcc" data-session="Reproducing the record" data-day="Tuesday 29 September"><span class="am-prog-time">11:55</span><span class="am-prog-text"><span class="am-prog-title">Do failed replications make their way into public knowledge?</span><span class="am-prog-who">Youyou Wu (University College London)</span></span><span class="am-prog-meta"><span class="am-prog-more" aria-hidden="true">Abstract</span></span></button></li>
+<li><button type="button" class="am-prog-item" data-talk="049ed9f6" data-session="Reproducing the record" data-day="Tuesday 29 September"><span class="am-prog-time">11:15</span><span class="am-prog-text"><span class="am-prog-title">Thirty agent-assisted replications, published as nanopublications: the honest debrief</span><span class="am-prog-who">Anne Fouilloux (Lifewatch ERIC, Spain), Jean Iaquinta (Vitenhub AS, Norway)</span></span><span class="am-prog-meta"><span class="am-prog-more" aria-hidden="true">Abstract</span></span></button><span class="am-prog-watch"><a href="https://youtu.be/1IjcBmXYilg" target="_blank" rel="noopener" aria-label="Watch: Thirty agent-assisted replications, published as nanopublications: the honest debrief">Watch</a></span></li>
+<li><button type="button" class="am-prog-item" data-talk="30acb82a" data-session="Reproducing the record" data-day="Tuesday 29 September"><span class="am-prog-time">11:35</span><span class="am-prog-text"><span class="am-prog-title">A local, open-weights pipeline for semi-automated replication checklists</span><span class="am-prog-who">Johannes Breuer (CAIS Bochum &amp; University of Duisburg-Essen), Mario Haim &amp; Philipp Knöpfle (LMU Munich), Xinyue Zhao (CAIS Bochum)</span></span><span class="am-prog-meta"><span class="am-prog-more" aria-hidden="true">Abstract</span></span></button><span class="am-prog-watch"><a href="https://youtu.be/daD3XnHdFU0" target="_blank" rel="noopener" aria-label="Watch: A local, open-weights pipeline for semi-automated replication checklists">Watch</a></span></li>
+<li><button type="button" class="am-prog-item" data-talk="b51b5bcc" data-session="Reproducing the record" data-day="Tuesday 29 September"><span class="am-prog-time">11:55</span><span class="am-prog-text"><span class="am-prog-title">Do failed replications make their way into public knowledge?</span><span class="am-prog-who">Youyou Wu (University College London)</span></span><span class="am-prog-meta"><span class="am-prog-more" aria-hidden="true">Abstract</span></span></button><span class="am-prog-watch"><a href="https://youtu.be/2aAW67PfNnQ" target="_blank" rel="noopener" aria-label="Watch: Do failed replications make their way into public knowledge?">Watch</a></span></li>
 </ul></div>
 <p class="am-prog-half">Afternoon</p>
 <div class="am-prog-session">
@@ -558,23 +585,24 @@ Here are the sessions and the talks in each, in the order they run. **Click any 
 <h4><span class="am-prog-start">14:40</span>Predicting replicability</h4>
 <p class="am-prog-blurb">Three talks on forecasting which findings will hold, and what such forecasts are for.</p>
 <ul class="am-prog-talks">
-<li><button type="button" class="am-prog-item" data-talk="b2e596cf" data-session="Predicting replicability" data-day="Tuesday 29 September"><span class="am-prog-time">14:40</span><span class="am-prog-text"><span class="am-prog-title">The Predicting Replicability Challenge: three rounds of automated credibility assessment</span><span class="am-prog-who">Andrew Tyner (Center for Open Science)</span></span><span class="am-prog-meta"><span class="am-prog-more" aria-hidden="true">Abstract</span></span></button></li>
-<li><button type="button" class="am-prog-item" data-talk="roeseler" data-session="Predicting replicability" data-day="Tuesday 29 September"><span class="am-prog-time">15:00</span><span class="am-prog-text"><span class="am-prog-title">What Are Automated Replicability Predictions For?</span><span class="am-prog-who">Lukas Röseler (University of Münster)</span></span><span class="am-prog-meta"><span class="am-prog-more" aria-hidden="true">Abstract</span></span></button></li>
-<li><button type="button" class="am-prog-item" data-talk="c3160a0c" data-session="Predicting replicability" data-day="Tuesday 29 September"><span class="am-prog-time">15:20</span><span class="am-prog-text"><span class="am-prog-title">Multi-agent AI measures of methodological complexity help forecast study reproducibility</span><span class="am-prog-who">Daniele Fanelli (Heriot-Watt &amp; LSE), Yuan Yingfang (Northumbria &amp; Heriot-Watt)</span></span><span class="am-prog-meta"><span class="am-prog-more" aria-hidden="true">Abstract</span></span></button></li>
+<li><button type="button" class="am-prog-item" data-talk="b2e596cf" data-session="Predicting replicability" data-day="Tuesday 29 September"><span class="am-prog-time">14:40</span><span class="am-prog-text"><span class="am-prog-title">The Predicting Replicability Challenge: three rounds of automated credibility assessment</span><span class="am-prog-who">Andrew Tyner (Center for Open Science)</span></span><span class="am-prog-meta"><span class="am-prog-more" aria-hidden="true">Abstract</span></span></button><span class="am-prog-watch"><a href="https://youtu.be/cN0ucONYSak" target="_blank" rel="noopener" aria-label="Watch: The Predicting Replicability Challenge: three rounds of automated credibility assessment">Watch</a></span></li>
+<li><button type="button" class="am-prog-item" data-talk="roeseler" data-session="Predicting replicability" data-day="Tuesday 29 September"><span class="am-prog-time">15:00</span><span class="am-prog-text"><span class="am-prog-title">What Are Automated Replicability Predictions For?</span><span class="am-prog-who">Lukas Röseler (University of Münster)</span></span><span class="am-prog-meta"><span class="am-prog-more" aria-hidden="true">Abstract</span></span></button><span class="am-prog-watch"><a href="https://youtu.be/BYDsj686mKA" target="_blank" rel="noopener" aria-label="Watch: What Are Automated Replicability Predictions For?">Watch</a></span></li>
+<li><button type="button" class="am-prog-item" data-talk="c3160a0c" data-session="Predicting replicability" data-day="Tuesday 29 September"><span class="am-prog-time">15:20</span><span class="am-prog-text"><span class="am-prog-title">Multi-agent AI measures of methodological complexity help forecast study reproducibility</span><span class="am-prog-who">Daniele Fanelli (Heriot-Watt &amp; LSE), Yuan Yingfang (Northumbria &amp; Heriot-Watt)</span></span><span class="am-prog-meta"><span class="am-prog-more" aria-hidden="true">Abstract</span></span></button><span class="am-prog-watch"><a href="https://youtu.be/K8OKMORuywY" target="_blank" rel="noopener" aria-label="Watch: Multi-agent AI measures of methodological complexity help forecast study reproducibility">Watch</a></span></li>
 </ul></div>
 <div class="am-prog-session">
 <h4><span class="am-prog-start">16:05</span>Machines that build and test the replication record</h4>
 <p class="am-prog-blurb">First the benchmarks that measure what these agents can actually do, then the two databases being built on that basis with humans kept in the loop, and last the question the day has been circling: can an agent run the checks at human quality?</p>
 <ul class="am-prog-talks">
-<li><button type="button" class="am-prog-item" data-talk="5939a5fd" data-session="Machines that build and test the replication record" data-day="Tuesday 29 September"><span class="am-prog-time">16:05</span><span class="am-prog-text"><span class="am-prog-title">ReplicatorBench: an end-to-end benchmark for AI agents in research replication</span><span class="am-prog-who">Bang Nguyen (University of Notre Dame), Dominik Soós (Old Dominion University)</span></span><span class="am-prog-meta"><span class="am-prog-more" aria-hidden="true">Abstract</span></span></button></li>
-<li><button type="button" class="am-prog-item" data-talk="4cbc9f34" data-session="Machines that build and test the replication record" data-day="Tuesday 29 September"><span class="am-prog-time">16:25</span><span class="am-prog-text"><span class="am-prog-title">Can AI reviewers catch the errors that matter? A 100-error planted benchmark</span><span class="am-prog-who">Paul Litvak (Robyn Dawes Institute)</span></span><span class="am-prog-meta"><span class="am-prog-more" aria-hidden="true">Abstract</span></span></button></li>
-<li><button type="button" class="am-prog-item" data-talk="flora" data-session="Machines that build and test the replication record" data-day="Tuesday 29 September"><span class="am-prog-time">16:45</span><span class="am-prog-text"><span class="am-prog-title">Keeping humans in the loop: using LLMs to enable replication database validation at scale</span><span class="am-prog-who">Hamidreza Behbood (University of Münster), Rohan Tondlekar (FORRT)</span></span><span class="am-prog-meta"><span class="am-prog-more" aria-hidden="true">Abstract</span></span></button></li>
-<li><button type="button" class="am-prog-item" data-talk="5a69fddc" data-session="Machines that build and test the replication record" data-day="Tuesday 29 September"><span class="am-prog-time">16:55</span><span class="am-prog-text"><span class="am-prog-title">The Metascience Observatory: an AI-built replication database and experiments with AI for forensic metascience</span><span class="am-prog-who">Dan Elton (The Metascience Observatory)</span></span><span class="am-prog-meta"><span class="am-prog-more" aria-hidden="true">Abstract</span></span></button></li>
-<li><button type="button" class="am-prog-item" data-talk="47468cdd" data-session="Machines that build and test the replication record" data-day="Tuesday 29 September"><span class="am-prog-time">17:15</span><span class="am-prog-text"><span class="am-prog-title">Can an agentic LLM run computational reproducibility checks at human quality?</span><span class="am-prog-who">Yoel Inbar (University of British Columbia)</span></span><span class="am-prog-meta"><span class="am-prog-more" aria-hidden="true">Abstract</span></span></button></li>
+<li><button type="button" class="am-prog-item" data-talk="5939a5fd" data-session="Machines that build and test the replication record" data-day="Tuesday 29 September"><span class="am-prog-time">16:05</span><span class="am-prog-text"><span class="am-prog-title">ReplicatorBench: an end-to-end benchmark for AI agents in research replication</span><span class="am-prog-who">Bang Nguyen (University of Notre Dame), Dominik Soós (Old Dominion University)</span></span><span class="am-prog-meta"><span class="am-prog-more" aria-hidden="true">Abstract</span></span></button><span class="am-prog-watch"><a href="https://youtu.be/pzPNMCt-TLA" target="_blank" rel="noopener" aria-label="Watch: ReplicatorBench: an end-to-end benchmark for AI agents in research replication">Watch</a></span></li>
+<li><button type="button" class="am-prog-item" data-talk="4cbc9f34" data-session="Machines that build and test the replication record" data-day="Tuesday 29 September"><span class="am-prog-time">16:25</span><span class="am-prog-text"><span class="am-prog-title">Can AI reviewers catch the errors that matter? A 100-error planted benchmark</span><span class="am-prog-who">Paul Litvak (Robyn Dawes Institute)</span></span><span class="am-prog-meta"><span class="am-prog-more" aria-hidden="true">Abstract</span></span></button><span class="am-prog-watch"><a href="https://youtu.be/9MsBkFTK0FI" target="_blank" rel="noopener" aria-label="Watch: Can AI reviewers catch the errors that matter? A 100-error planted benchmark">Watch</a></span></li>
+<li><button type="button" class="am-prog-item" data-talk="flora" data-session="Machines that build and test the replication record" data-day="Tuesday 29 September"><span class="am-prog-time">16:45</span><span class="am-prog-text"><span class="am-prog-title">Keeping humans in the loop: using LLMs to enable replication database validation at scale</span><span class="am-prog-who">Hamidreza Behbood (University of Münster), Rohan Tondlekar (FORRT)</span></span><span class="am-prog-meta"><span class="am-prog-more" aria-hidden="true">Abstract</span></span></button><span class="am-prog-watch"><a href="https://youtu.be/Hm17GCJzTZU" target="_blank" rel="noopener" aria-label="Watch: Keeping humans in the loop: using LLMs to enable replication database validation at scale">Watch</a></span></li>
+<li><button type="button" class="am-prog-item" data-talk="5a69fddc" data-session="Machines that build and test the replication record" data-day="Tuesday 29 September"><span class="am-prog-time">16:55</span><span class="am-prog-text"><span class="am-prog-title">The Metascience Observatory: an AI-built replication database and experiments with AI for forensic metascience</span><span class="am-prog-who">Dan Elton (The Metascience Observatory)</span></span><span class="am-prog-meta"><span class="am-prog-more" aria-hidden="true">Abstract</span></span></button><span class="am-prog-watch"><a href="https://youtu.be/fLAnLOP2HpE" target="_blank" rel="noopener" aria-label="Watch: The Metascience Observatory: an AI-built replication database and experiments with AI for forensic metascience">Watch</a></span></li>
+<li><button type="button" class="am-prog-item" data-talk="47468cdd" data-session="Machines that build and test the replication record" data-day="Tuesday 29 September"><span class="am-prog-time">17:15</span><span class="am-prog-text"><span class="am-prog-title">Can an agentic LLM run computational reproducibility checks at human quality?</span><span class="am-prog-who">Yoel Inbar (University of British Columbia)</span></span><span class="am-prog-meta"><span class="am-prog-more" aria-hidden="true">Abstract</span></span></button><span class="am-prog-watch"><a href="https://youtu.be/vW3UQ0AVavw" target="_blank" rel="noopener" aria-label="Watch: Can an agentic LLM run computational reproducibility checks at human quality?">Watch</a></span></li>
 </ul></div>
 </section>
 <section class="am-prog-day am-day-wed" id="am-day-wed">
 <h3 class="am-prog-date">Wednesday 30 September<span>Workshops, and analyst variability</span></h3>
+<p class="am-prog-playlist"><a href="https://www.youtube.com/playlist?list=PLZYxy57rykQU" target="_blank" rel="noopener">All Wednesday recordings on YouTube</a></p>
 <p class="am-prog-half">Morning</p>
 <div class="am-prog-session am-prog-session-solo">
 <ul class="am-prog-talks">
@@ -583,19 +611,19 @@ Here are the sessions and the talks in each, in the order they run. **Click any 
 <p class="am-prog-half">Afternoon</p>
 <div class="am-prog-session am-prog-session-solo">
 <ul class="am-prog-talks">
-<li><button type="button" class="am-prog-item" data-talk="392cc8e5" data-session="" data-day="Wednesday 30 September"><span class="am-prog-time">13:00–14:30</span><span class="am-prog-text"><span class="am-prog-title">A personal literature wiki, written and maintained by an AI agent</span><span class="am-prog-who">Yu Heng Daryl Lee &amp; Tao Ma (UCL)</span></span><span class="am-prog-meta"><span class="am-prog-more" aria-hidden="true">Abstract</span></span></button></li>
+<li><button type="button" class="am-prog-item" data-talk="392cc8e5" data-session="" data-day="Wednesday 30 September"><span class="am-prog-time">13:00–14:30</span><span class="am-prog-text"><span class="am-prog-title">A personal literature wiki, written and maintained by an AI agent</span><span class="am-prog-who">Yu Heng Daryl Lee &amp; Tao Ma (UCL)</span></span><span class="am-prog-meta"><span class="am-prog-more" aria-hidden="true">Abstract</span></span></button><span class="am-prog-watch"><a href="https://youtu.be/mWqo8Xq3LSw" target="_blank" rel="noopener" aria-label="Watch: A personal literature wiki, written and maintained by an AI agent">Watch</a></span></li>
 </ul></div>
 <div class="am-prog-session">
 <h4><span class="am-prog-start">15:00</span>Does the finding survive another analyst?</h4>
 <p class="am-prog-blurb">The other way a result fails to hold. The study is not repeated badly; a defensible alternative analysis simply lands somewhere else. And the alternatives increasingly consult the same model.</p>
 <ul class="am-prog-talks">
 <li><button type="button" class="am-prog-item" data-talk="ccd52f0e" data-session="Does the finding survive another analyst?" data-day="Wednesday 30 September"><span class="am-prog-time">15:00</span><span class="am-prog-text"><span class="am-prog-title">Shared model dependence as a source of correlated error in evidence synthesis</span><span class="am-prog-who">Alyssa Columbus (Johns Hopkins &amp; LMU Munich)</span></span><span class="am-prog-meta"><span class="am-prog-more" aria-hidden="true">Abstract</span></span></button></li>
-<li><button type="button" class="am-prog-item" data-talk="b72e79e0" data-session="Does the finding survive another analyst?" data-day="Wednesday 30 September"><span class="am-prog-time">15:20</span><span class="am-prog-text"><span class="am-prog-title">PaperRobust: a multi-agent framework for assessing analytical robustness</span><span class="am-prog-who">Qian Ma (Penn State)</span></span><span class="am-prog-meta"><span class="am-prog-more" aria-hidden="true">Abstract</span></span></button></li>
+<li><button type="button" class="am-prog-item" data-talk="b72e79e0" data-session="Does the finding survive another analyst?" data-day="Wednesday 30 September"><span class="am-prog-time">15:20</span><span class="am-prog-text"><span class="am-prog-title">PaperRobust: a multi-agent framework for assessing analytical robustness</span><span class="am-prog-who">Qian Ma (Penn State)</span></span><span class="am-prog-meta"><span class="am-prog-more" aria-hidden="true">Abstract</span></span></button><span class="am-prog-watch"><a href="https://youtu.be/2E2LAE4cMv4" target="_blank" rel="noopener" aria-label="Watch: PaperRobust: a multi-agent framework for assessing analytical robustness">Watch</a></span></li>
 <li><button type="button" class="am-prog-item" data-talk="7e2f1074" data-session="Does the finding survive another analyst?" data-day="Wednesday 30 September"><span class="am-prog-time">15:30</span><span class="am-prog-text"><span class="am-prog-title">Multiverse Analysis in the Age of Large Language Models</span><span class="am-prog-who">Ardin Kropff, Tygo van Beek &amp; Steven Verheyen (Erasmus University Rotterdam)</span></span><span class="am-prog-meta"><span class="am-prog-more" aria-hidden="true">Abstract</span></span></button></li>
 </ul></div>
 <div class="am-prog-session am-prog-session-solo">
 <ul class="am-prog-talks">
-<li><button type="button" class="am-prog-item" data-talk="3e76d367" data-session="" data-day="Wednesday 30 September"><span class="am-prog-time">16:00–17:30</span><span class="am-prog-text"><span class="am-prog-title">HubMeta: an AI-assisted workflow for systematic review and meta-analysis</span><span class="am-prog-who">Piers Steel (University of Calgary), Hadi Fariborzi (Mount Royal University)</span></span><span class="am-prog-meta"><span class="am-prog-more" aria-hidden="true">Abstract</span></span></button></li>
+<li><button type="button" class="am-prog-item" data-talk="3e76d367" data-session="" data-day="Wednesday 30 September"><span class="am-prog-time">16:00–17:30</span><span class="am-prog-text"><span class="am-prog-title">HubMeta: an AI-assisted workflow for systematic review and meta-analysis</span><span class="am-prog-who">Piers Steel (University of Calgary), Hadi Fariborzi (Mount Royal University)</span></span><span class="am-prog-meta"><span class="am-prog-more" aria-hidden="true">Abstract</span></span></button><span class="am-prog-watch"><a href="https://youtu.be/CKhL16pOdI4" target="_blank" rel="noopener" aria-label="Watch: HubMeta: an AI-assisted workflow for systematic review and meta-analysis">Watch</a></span></li>
 </ul></div>
 </section>
 </div>
@@ -701,24 +729,13 @@ Here are the sessions and the talks in each, in the order they run. **Click any 
 })();
 </script>
 
-<div class="am-reg-again">
-<p>Seen something you want to attend?</p>
-<a href="https://docs.google.com/forms/d/e/1FAIpQLSdFF-BdifNeBEkOrt-gjfDqAYON5xA3N5YzM40B3aBt-A2ejA/viewform" class="btn btn-primary" target="_blank" rel="noopener">Register</a>
-</div>
+## Recordings
 
-## Joining the sessions
-
-Everything runs on Google Meet. We will email joining details to everyone who has registered in the week before the conference, so use an email address you check.
-
-Live captions are on in every session. If anything else would help you take part, tell us on the registration form, and we will do what we can.
-
-Where speakers opt in, their talks are published afterwards on the [FORRT YouTube channel](https://youtube.com/@forrtproject9995).
+The talks whose speakers agreed to publication are on the [FORRT YouTube channel](https://youtube.com/@forrtproject9995), with one playlist per day: [Monday](https://www.youtube.com/playlist?list=PLS3VdaYKcrew), [Tuesday](https://www.youtube.com/playlist?list=PLSItTTcc91ac) and [Wednesday](https://www.youtube.com/playlist?list=PLZYxy57rykQU). Talks without a **Watch** link in the programme were not recorded or are not public. For two of the Wednesday workshops, the playlist has a shorter version.
 
 ## Code of conduct
 
-Everyone taking part, whether presenting or watching, follows the [FORRT code of conduct](https://forrt.org/coc/).
-
-During the conference, raise a concern with the organising committee — message a session chair or the organiser, or email [l.wallrich@bbk.ac.uk](mailto:l.wallrich@bbk.ac.uk). We will act on it the same day. Afterwards, or if you would rather not come to us, report it to the FORRT ethics committee, either by contacting any of its members or through the [anonymous reporting form](https://forms.gle/nQ51x1c8a8nnfQ7a9). FORRT's [confidential advisor](https://forrt.org/about/confidential-advisor-ombuds/) is there if you would like to talk something through first.
+The conference followed the [FORRT code of conduct](https://forrt.org/coc/). To raise a concern about anything that happened at the conference, email the organiser at [l.wallrich@bbk.ac.uk](mailto:l.wallrich@bbk.ac.uk). If you would rather not come to us, report it to the FORRT ethics committee, either by contacting any of its members or through the [anonymous reporting form](https://forms.gle/nQ51x1c8a8nnfQ7a9). FORRT's [confidential advisor](https://forrt.org/about/confidential-advisor-ombuds/) is there if you would like to talk something through first.
 
 ## Questions
 
