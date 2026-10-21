@@ -16,6 +16,6 @@ weight = 31  # Order that this section will appear.
 +++
 
 <div class="nl-band">
-  <p class="nl-band-label">Subscribe to our newsletter to get the latest news about FORRT's initiatives</p>
+  <p class="nl-band-label">Subscribe to our newsletter to get the latest news about FORRT's initiatives, events, and opportunities.</p>
   {{< subscribe >}}
 </div>
