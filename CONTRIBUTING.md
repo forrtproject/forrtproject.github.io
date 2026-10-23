@@ -10,9 +10,12 @@ You can support FORRT by:
 > - Referencing FORRT in your project's readme
 > - Mentioning FORRT at local meetups and to colleagues
 
+Please follow the [FORRT Code of Conduct](https://forrt.org/coc/) in issues, reviews, and other project interactions.
+
 ## Table of Contents
 
 - [Questions, Ideas & Suggestions](#questions-ideas--suggestions)
+- [Edit content in your browser](#edit-content-in-your-browser)
 - [Local Development Setup](#local-development-setup)
   - [Standard Setup](#standard-setup-git--hugo)
   - [RStudio Setup](#rstudio-setup)
@@ -29,7 +32,7 @@ You can support FORRT by:
 
 ## Questions, Ideas & Suggestions
 
-Issues are the best place to raise a question, suggest an improvement, or propose a resource for ilusion (unless you can find the more specific submission form).
+Issues are the best place to raise a question, suggest an improvement, or propose a resource for inclusion (unless you can find the more specific submission form).
 
 - Have a quick look through the existing [Issues](https://github.com/forrtproject/forrtproject.github.io/issues) in case the same idea is already being discussed.
 - Otherwise, [open a new Issue](https://github.com/forrtproject/forrtproject.github.io/issues/new) and go for it — a question, a rough idea, or a fully worked-out proposal are all welcome. Share whatever context is helpful.
@@ -37,6 +40,12 @@ Issues are the best place to raise a question, suggest an improvement, or propos
 FORRT is maintained by volunteers, so response times may vary. We appreciate your patience and your contribution.
 
 ---
+
+## Edit content in your browser
+
+You do not need to install Git or Hugo to fix text or a broken link. Find the relevant Markdown page under [`content/`](https://github.com/forrtproject/forrtproject.github.io/tree/main/content), open it on GitHub, and choose the pencil icon. GitHub will guide you through creating a fork, committing the edit, and opening a pull request against `main`.
+
+Preserve the YAML/TOML front matter at the top of the file and existing Hugo shortcodes. Describe the affected page and link to it in your PR. Generated paths include `content/curated_resources/` (except `_index.md`), `content/glossary/`, `content/contributors/tenzing.md`, `content/contributor-analysis/`, `content/publications/citation_chart.webp`, announcement bundles in `content/post/`, `content/replication-hub/flora/_index.md`, `static/data/fred_citation.txt`, and generated files in `data/`. The manually maintained `data/publications.yaml` is editable; follow the [publication instructions](content/publications/README). Generated content is refreshed during deployment. Use the source submission form/sheet linked from the public page or open an issue rather than editing the generated output. Local previews use committed copies and can differ from production. For layout or code changes, use the local setup below.
 
 ## Local Development Setup
 
@@ -47,16 +56,17 @@ Choose the setup method that suits your workflow.
 **Prerequisites**
 
 - [Git](https://git-scm.com/downloads)
-- [Hugo](https://gohugo.io/getting-started/installing/)
+- [Hugo Extended](https://gohugo.io/getting-started/installing/) **0.158.0**, matching the production and staging workflows
 - A text editor of your choice — [Visual Studio Code](https://code.visualstudio.com/) is recommended.
 
 **Steps**
 
-1. Fork and Clone the repository:
+1. Fork the repository on GitHub, keeping its name `forrtproject.github.io` so staging can fetch it, then clone your fork (replace `YOUR-USERNAME` with your GitHub username):
 
    ```bash
-   git clone https://github.com/forrtproject/forrtproject.github.io.git
+   git clone https://github.com/YOUR-USERNAME/forrtproject.github.io.git
    cd forrtproject.github.io
+   git remote add upstream https://github.com/forrtproject/forrtproject.github.io.git
    ```
 
 2. Start the development server:
@@ -76,7 +86,7 @@ For R users who prefer to work entirely within RStudio.
 **Prerequisites**
 
 - [Git](https://git-scm.com/downloads)
-- [Hugo](https://gohugo.io/getting-started/installing/)
+- [Hugo Extended](https://gohugo.io/getting-started/installing/) **0.158.0**, matching the production and staging workflows
 - [R](https://cran.r-project.org/)
 - [RStudio](https://www.rstudio.com/products/rstudio/download/)
 - [blogdown](https://bookdown.org/yihui/blogdown/)
@@ -85,7 +95,8 @@ For R users who prefer to work entirely within RStudio.
 **Steps**
 
 1. In RStudio, go to **File → New Project → Version Control → Git**.
-   - Repository URL: `https://github.com/forrtproject/forrtproject.github.io.git`
+   - Fork the repository first; use your fork URL: `https://github.com/YOUR-USERNAME/forrtproject.github.io.git`
+   - After cloning, run `git remote add upstream https://github.com/forrtproject/forrtproject.github.io.git` in the RStudio Terminal.
    - Project directory name: `FORRT`
    - Choose a location with **Browse**.
 2. Run the site locally using the **blogdown Addins** in RStudio, or run `hugo server -D` in the RStudio terminal.
@@ -105,19 +116,22 @@ For R users who prefer to work entirely within RStudio.
 
 ## Contribution Workflow
 
+For browser edits, GitHub handles branch creation and opening the PR; see [staging guidance](#how-staging-works) to request a preview.
+
 All proposed changes must be made on a feature branch and submitted via a Pull Request to `main`. We do not use a separate development branch.
 
 1. **Fork and clone** — fork the repository to your account and clone it locally (if you haven't already).
 
-2. **Create a feature branch** — use a short, descriptive name:
+2. **Create a feature branch** from an up-to-date `main` (commit or stash any local work first):
 
    ```bash
-   git checkout -b fix-typo-contributing
-   # or
-   git checkout -b add-new-resource-page
+   git fetch upstream
+   git switch main
+   git merge --ff-only upstream/main
+   git switch -c fix-typo-contributing
    ```
 
-3. **Make and test your changes** — run `hugo server -D` to preview the site locally and verify no errors appear.
+3. **Make and test your changes** — run `hugo server -D` to preview the site locally. Check the affected page, links, and narrow-screen layout. Run `hugo --gc --minify --cleanDestinationDir --destination public` to check a production-style build; do not commit the generated `public/` output. Browser-only contributors can state that they could not run a local build and request a maintainer preview.
 
 4. **Commit with a clear message** — describe what you changed and why:
 
@@ -125,7 +139,7 @@ All proposed changes must be made on a feature branch and submitted via a Pull R
    git commit -m "Fix broken link in contributing guide"
    ```
 
-5. **Push and open a Pull Request** — push your branch and open a PR targeting the `main` branch of `forrtproject/forrtproject.github.io`. Link any related issues and briefly summarise your changes.
+5. **Push and open a Pull Request** — push your branch and open a PR targeting the `main` branch of `forrtproject/forrtproject.github.io`. Use `git push -u origin fix-typo-contributing` (or your branch name). Link any related issues and briefly summarise your changes.
 
 For more on Git, see the [official documentation](https://docs.github.com/en/get-started/using-git/about-git).
 
@@ -138,8 +152,8 @@ If a contribution amounts to running a single prompt, please consider posting th
 ### Content, Licensing & Fact-Checking
 
 - Please **fact-check** anything you add and cite sources where relevant, so the site stays accurate and trustworthy.
-- Make sure you have the right to share the content under the licence applicable to the relevant section of the site.
-- Unless you tell us otherwise, contributions are assumed to be offered under [**CC BY 4.0**](https://creativecommons.org/licenses/by/4.0/).
+- The repository is distributed under [CC BY-NC-SA 4.0](LICENSE.md). Make sure you have the right to contribute the material and retain attribution and source licence notices.
+- Under the existing contribution policy, unless you tell us otherwise, contributions are assumed to be offered under [**CC BY 4.0**](https://creativecommons.org/licenses/by/4.0/).
 
 ---
 
@@ -162,7 +176,7 @@ The FORRT website uses a dual deployment strategy to ensure quality and enable c
 |---|---|
 | URL | [https://staging.forrt.org](https://staging.forrt.org) |
 | Workflow | `.github/workflows/staging-aggregate.yaml` |
-| Trigger | PR opened/updated against `main`; 1st of each month; manual dispatch |
+| Trigger | Same-repository PR opened/updated against `main`; 1st of each month; manual dispatch |
 | Target | External repository (`forrtproject/webpage-staging`) |
 | Purpose | Preview the combined state of all open, compatible PRs |
 
@@ -170,15 +184,9 @@ The FORRT website uses a dual deployment strategy to ensure quality and enable c
 
 ### How Staging Works
 
-When a PR is opened, synchronised, or reopened, the staging workflow:
+Automatic staging collects open, non-draft PRs targeting `main` and merges them in sequence onto a temporary branch. Conflicting PRs are skipped and logged. Inclusion in staging does not mean a PR has passed review or been approved for merging. The workflow posts staging results to PRs and retains two recent staging branches.
 
-1. **Aggregates open PRs** — collects all non-draft PRs targeting `main` and merges them in sequence onto a temporary branch.
-2. **Handles conflicts gracefully** — PRs that merge cleanly are included; conflicting PRs are skipped and logged.
-3. **Posts a deployment comment** on each PR:
-   - ✅ Successfully included in staging
-   - ⚠️ Skipped due to merge conflicts
-4. **Manages concurrency** — builds are queued (not cancelled) with job timeouts of 10–20 minutes.
-5. **Cleans up old branches** — keeps only the 5 most recent staging branches.
+**External forks cannot trigger their own staging deployment.** GitHub withholds repository secrets from fork-triggered runs, so those runs fail with an explanatory message instead of deploying. Fork PRs can still appear in the next aggregate build triggered by a same-repository PR or the monthly schedule. For an earlier preview, ask a maintainer in your PR. The maintainer runs **Actions → Staging Aggregate Deployment → Run workflow** from the upstream `main` branch and enters the PR number in `single_pr`. The workflow resolves the public fork automatically; the maintainer does not need to select the fork branch. This previews the selected PR rather than the full aggregate, and replaces the shared staging site until the next staging deployment.
 
 ### Monthly Reports
 
@@ -186,8 +194,8 @@ On the 1st of each month, an automated GitHub issue is created with:
 
 - Total PRs processed
 - Successfully merged PRs
-- Skipped PRs (with conflict details)
-- Deployment statistics
+- Skipped PR numbers (labelled as merge conflicts), when at least one attempted PR was included; the current report omits this list if all attempts fail
+- Aggregate branch and deployment time
 
 ---
 
