@@ -24,7 +24,16 @@
 {{ end }}
 
 {{/* Load page sections */}}
-{{ range $index, $st := where ( $headless_bundle.Resources.ByType "page" ) ".Params.active" "!=" false }}
+{{ $sections := where ( $headless_bundle.Resources.ByType "page" ) ".Params.active" "!=" false }}
+
+{{/* Every page needs exactly one h1. Hero widgets render a visible one; otherwise emit a
+     visually hidden h1 so that the section titles (h2) have a parent heading. */}}
+{{ $hero_widgets := slice "hero" "hero_welcome" "slider" }}
+{{ $has_hero := false }}
+{{ range $sections }}{{ if in $hero_widgets (.Params.widget | default "blank") }}{{ $has_hero = true }}{{ end }}{{ end }}
+{{ if not $has_hero }}<h1 class="sr-only">{{ if .IsHome }}{{ site.Title }}{{ else }}{{ .Title }}{{ end }}</h1>{{ end }}
+
+{{ range $index, $st := $sections }}
   {{/* Begin widget styling */}}
   {{ $bg := $st.Params.design.background }}
   {{ $style := "" }}

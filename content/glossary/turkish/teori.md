@@ -1,5 +1,6 @@
 {
     "type": "glossary",
+    "en_title": "Theory",
     "title": "Teori [Theory]",
     "sort_key": "teori [theory]",
     "definition": "Teori, bir süreç ya da olgunun birleştirici bir açıklaması ya da betimlemesidir. Bilimsel araştırmalarla, farklı bağımsız araştırmacılar tarafından yürütülen çeşitli deneyler aracılığıyla tekrar tekrar test edilebilir ve doğrulanabilir niteliktedir. Teoriler, bir olguyu daha iyi açıklayan ya da onlarla çelişiyor gibi görünse de daha geniş bir bulgular yelpazesine genellenebilen yeni bir hipotezin titiz biçimde test edilmesi sonrasında reddedilebilir veya söz konusu olgunun yetersiz bir açıklaması olarak değerlendirilebilirilir.",
@@ -9,7 +10,7 @@
         "Theory building"
     ],
     "references": [
-        "Schafersman, S. D. (1997). <i>An Introduction to Science</i>. http://web.archive.org/web/20221109113137/https://www.geo.sunysb.edu/esp/files/scientific-method.html",
+        "Schafersman, S. D. (1997). <i>An Introduction to Science</i>. https://web.archive.org/web/20221109113137/https://www.geo.sunysb.edu/esp/files/scientific-method.html",
         "Wacker, J. (1998). A definition of theory: research guidelines for different theory-building research methods in operations management. <i>Journal of Operations Management</i>, <i>16</i>(4), 361–385. https://doi.org/10.1016/s0272-6963(98)00019-9"
     ],
     "drafted_by": [

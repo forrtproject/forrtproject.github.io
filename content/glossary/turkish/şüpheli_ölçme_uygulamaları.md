@@ -1,5 +1,6 @@
 {
     "type": "glossary",
+    "en_title": "Questionable Measurement Practices (QMP)",
     "title": "Şüpheli Ölçme Uygulamaları [Questionable Measurement Practices (QMP)]",
     "sort_key": "szuzpheli ozlczme uygulamalariz [questionable measurement practices (qmp)]",
     "definition": "Araştırmacıların, bir çalışmada kullanılan ölçüm araçlarının geçerliliği ve dolayısıyla çalışmanın nihai sonuçları hakkında şüphe uyandırabilecek kararlar almalarıdır (Flake ve Fried, 2020). Bu sorunlar genellikle; ölçme uygulamalarının şeffaf biçimde raporlanmaması, yapı geçerliğine yeterince değinilmemesi, ihmalkârlık, bilgisizlik ya da bilgilerin kasıtlı olarak yanlış sunulması gibi durumlardan kaynaklanır.",

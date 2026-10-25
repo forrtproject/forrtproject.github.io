@@ -1,5 +1,6 @@
 {
     "type": "glossary",
+    "en_title": "Free Our Knowledge Platform",
     "title": "Free Our Knowledge Platform",
     "sort_key": "free our knowledge platform",
     "definition": "Eine kollektive Handlungsplattform, die darauf abzielt, die Open-Science-Bewegung zu unterstützen, indem sie Zusagen von Forschenden einholt, dass diese bestimmte Forschungspraktiken (z. B. Präregistrierung, Preprint) anwenden werden. Bei der Initiative handelt es sich um eine Initiative, die von Nachwuchswissenschaftler:innen ins Leben gerufen wurde.",

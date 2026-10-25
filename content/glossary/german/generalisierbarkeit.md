@@ -1,5 +1,6 @@
 {
     "type": "glossary",
+    "en_title": "Generalizability",
     "title": "Generalisierbarkeit [Generalizability]",
     "sort_key": "generalisierbarkeit [generalizability]",
     "definition": "Generalisierbarkeit bezieht sich darauf, inwieweit die Ergebnisse einer Studie auf breitere Personengruppen, Rahmenbedingungen oder Situationen übertragen werden können und wie sich die Ergebnisse auf diesen breiteren Kontext beziehen (Frey, 2018; Kukull & Ganguli, 2012).",

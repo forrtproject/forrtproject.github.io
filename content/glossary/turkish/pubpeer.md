@@ -1,5 +1,6 @@
 {
     "type": "glossary",
+    "en_title": "PubPeer",
     "title": "PubPeer",
     "sort_key": "pubpeer",
     "definition": "Yayımlanmış araştırmalar hakkında kullanıcıların anonim hakem değerlendirmeleri (yani yayımlama sonrası hakem değerlendirmesi) yapmasına olanak tanıyan bir internet sitesidir.",

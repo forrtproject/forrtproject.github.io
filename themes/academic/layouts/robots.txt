@@ -6,4 +6,5 @@ User-agent: *
 Allow: /
 
 Sitemap: {{ .Site.BaseURL }}sitemap.xml
+Sitemap: https://forrt.org/flora-replication-atlas/sitemap.xml
 {{ end }}

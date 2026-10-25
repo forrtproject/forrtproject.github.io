@@ -1,5 +1,6 @@
 {
     "type": "glossary",
+    "en_title": "The Troubling Trio",
     "title": "The Troubling Trio",
     "sort_key": "the troubling trio",
     "definition": "Described as a combination of low statistical power, a surprising result, and a *p*\\-value only slightly lower than .05.",

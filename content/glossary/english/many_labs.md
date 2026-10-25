@@ -1,8 +1,9 @@
 {
     "type": "glossary",
+    "en_title": "Many Labs",
     "title": "Many Labs",
     "sort_key": "many labs",
-    "definition": "A crowdsourcing initiative led by the Open Science Collaboration (2015) whereby several hundred separate research groups from various universities run replication studies of published effects. This initiative is also known as “Many Labs I” and was subsequently followed by a “Many Labs II” project that assessed variation in replication results across samples and settings. Similar projects include ManyBabies, EEGManyLabs, and the Psychological Science Accelerator.",
+    "definition": "A series of crowdsourced replication projects in which independent research teams use shared study protocols to examine the replicability of published psychological effects and variation in results across samples and settings. The first project, Many Labs 1 (Klein et al., 2014), tested 13 effects across 36 independent samples involving 6,344 participants. It was followed by Many Labs 2 (Klein et al., 2018) and further projects investigating different facets of replicability. Similar collaborative initiatives include ManyBabies, EEGManyLabs, and the Psychological Science Accelerator.",
     "related_terms": [
         "Collaboration",
         "Many analysts",
@@ -34,5 +35,6 @@
     "language": "english",
     "aliases": [
         "/glossary/many_labs"
-    ]
+    ],
+    "lastmod": "2026-10-11"
 }

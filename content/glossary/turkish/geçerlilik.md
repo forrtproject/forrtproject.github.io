@@ -1,5 +1,6 @@
 {
     "type": "glossary",
+    "en_title": "Validity",
     "title": "Geçerlilik [Validity]",
     "sort_key": "geczerlilik [validity]",
     "definition": "Geçerlilik, istatistiksel ilkelerin uygulanarak iyi temellendirilmiş—yani büyük olasılıkla gerçek dünyayla doğru bir şekilde örtüşen—kavramlara, sonuçlara veya ölçümlere ulaşılmasını ifade eder. Psikometrik bağlamda ise geçerlik, bir ölçüm aracının amaçladığı ya da iddia ettiği şeyi ne ölçüde gerçekten ölçtüğünü ifade eder. Bu genel kavram altında çeşitli geçerlik türleri bulunur (örneğin; iç geçerlilik, yapı geçerliliği, yüzey geçerliliği, ölçüt geçerliliği, tanısal geçerlilik, ayırt edici geçerlilik, eş zamanlı geçerlilik, yakınsak geçerlilik, yordayıcı geçerlilik, dış geçerlilik).",

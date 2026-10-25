@@ -1,6 +1,8 @@
 ---
 type: citation_politics
 url: "/citation-politics/toolkit/"
+sharing_image: "img/citation-politics-toolkit.webp"
+sharing_image_alt: "Towards Citational Justice Across the Whole Research Cycle — a wheel of citation politics tools and practices for planning, project, paper, and publication stages"
 ---
 
 {{< citation-politics-toolkit >}}

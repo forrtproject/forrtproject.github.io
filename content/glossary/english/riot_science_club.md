@@ -1,5 +1,6 @@
 {
     "type": "glossary",
+    "en_title": "RIOT Science Club",
     "title": "RIOT Science Club",
     "sort_key": "riot science club",
     "definition": "The RIOT Science Club is a multi-site seminar series that raises awareness and provides training in Reproducible, Interpretable, Open & Transparent science practices. It provides regular talks, workshops and conferences, all of which are openly available and rewatchable on the respective location’s websites and Youtube.",

@@ -6,7 +6,7 @@
 
 <div class="row justify-content-center">
   <div class="col-12 section-heading text-center">
-    {{ with $page.Title }}<h1>{{ . | markdownify | emojify }}</h1>{{ end }}
+    {{ with $page.Title }}<h2>{{ . | markdownify | emojify }}</h2>{{ end }}
     {{ with $page.Params.subtitle }}<p>{{ . | markdownify | emojify }}</p>{{ end }}
   </div>
 </div>

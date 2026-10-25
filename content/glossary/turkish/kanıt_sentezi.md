@@ -1,5 +1,6 @@
 {
     "type": "glossary",
+    "en_title": "Evidence Synthesis",
     "title": "Kanıt Sentezi [Evidence Synthesis]",
     "sort_key": "kanizt sentezi [evidence synthesis]",
     "definition": "Kanıt sentezi, belirli bir konu, olgu ya da etkiye ilişkin bir araştırma sorusuna genel çıkarımlar yoluyla yanıt vermeyi amaçlayan bir araştırma yöntemidir. Bu yöntemde, birçok farklı kaynaktan elde edilen araştırma bulguları ve bilgiler incelenir. Sentezlenecek bilgiler hem nitel hem de nicel çalışmalardan elde edilebilir. Bilgilerin sentezinde kullanılan yöntemler nitel (örn., anlatı sentezi), nicel (örn., meta-analiz) veya karma (örn., meta-sentez, sistematik haritalama) olabilir. Kanıt sentezi, sağlık hizmetleri ve kamu politikaları başta olmak üzere çeşitli alanlarda; bunun yanı sıra belirli araştırma alanlarını anlamak ve geliştirmek amacıyla da uygulanmaktadır.",

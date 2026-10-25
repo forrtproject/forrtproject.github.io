@@ -1,0 +1,62 @@
+{{/* Site override of the theme's `jsonld/business.html`.
+
+     Two fixes over the theme version:
+       - it built the `image` URL as `<media_dir>/<sharing_image>`, but
+         `sharing_image` is already a path under `static/`, so the tag pointed
+         at `/media/img/...`, which 404s. `site_head.html` resolves the same
+         param with a plain `absURL`; this now matches it.
+       - it emitted no `sameAs`, leaving search engines nothing to link this
+         site to FORRT's profiles elsewhere when resolving it as an entity.
+
+     Assembled as a dict and passed through `jsonify` so optional fields can be
+     added without hand-managing separators between them. */}}
+
+{{ $org := dict
+  "@context" "https://schema.org"
+  "@type" (site.Params.local_business_type | default site.Params.site_type)
+  "@id" site.BaseURL
+  "url" site.BaseURL
+  "name" (site.Params.org_name | default site.Title)
+  "logo" (partial "functions/get_logo_url" .)
+}}
+
+{{ with site.Params.short_title }}
+  {{ $org = merge $org (dict "alternateName" .) }}
+{{ end }}
+
+{{ with site.Params.description }}
+  {{ $org = merge $org (dict "description" .) }}
+{{ end }}
+
+{{ with site.Params.sharing_image }}
+  {{ $org = merge $org (dict "image" (. | absURL)) }}
+{{ end }}
+
+{{ with site.Params.social_profiles }}
+  {{ $org = merge $org (dict "sameAs" .) }}
+{{ end }}
+
+{{ if and (eq site.Params.site_type "LocalBusiness") site.Params.coordinates }}
+  {{ $org = merge $org (dict "geo" (dict
+    "@type" "GeoCoordinates"
+    "latitude" site.Params.coordinates.latitude
+    "longitude" site.Params.coordinates.longitude
+  )) }}
+{{ end }}
+
+{{ with site.Params.address }}
+  {{ $org = merge $org (dict "address" (dict
+    "@type" "PostalAddress"
+    "streetAddress" (.street | default "")
+    "addressLocality" (.city | default "")
+    "addressRegion" (.region | default "")
+    "postalCode" (.postcode | default "")
+    "addressCountry" (.country_code | default .country | default "")
+  )) }}
+{{ end }}
+
+{{ with site.Params.phone }}
+  {{ $org = merge $org (dict "telephone" .) }}
+{{ end }}
+
+<script type="application/ld+json">{{ $org | jsonify | safeJS }}</script>

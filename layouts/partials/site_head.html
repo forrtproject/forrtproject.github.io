@@ -48,10 +48,20 @@
     {{ $desc = .Params.definition }}
   {{ else if .IsPage }}
     {{ $desc = .Summary }}
-  {{ else if site.Params.description }}
-    {{ $desc = site.Params.description }}
-  {{ else }}
-    {{ $desc = $superuser_role }}
+  {{ end }}
+  {{/* `summary`, `abstract` and `definition` are raw Markdown in front matter,
+       so `**bold**`, `[text](url)` and escaped brackets were reaching search
+       results verbatim (262 glossary definitions carry bold markers alone).
+       Render first, then flatten: `.Summary` is already HTML and passes through
+       unchanged, and `plainify` strips the markup either way. */}}
+  {{ $desc = trim (.RenderString $desc | plainify) " \n\r\t" }}
+  {{/* Widget-composed pages (`headless = true`) render no body of their own, so
+       `.Summary` is empty for them even though `.IsPage` is true. The branch
+       above therefore matches and sets an empty description, which is why the
+       site-wide fallback has to test the *result* for content rather than sit
+       at the end of the chain as another `else if`. */}}
+  {{ if not $desc }}
+    {{ $desc = site.Params.description | default $superuser_role }}
   {{ end }}
   <meta name="description" content='{{ printf "%.254s" $desc }}'>
   {{/* Shorter description for social previews (avoids mid-word truncation). */}}
@@ -64,10 +74,37 @@
     {{ $og_desc = printf "%.200s" $desc }}
   {{ end }}
 
+  {{ $page_lang := partial "functions/page_language.html" . }}
+
   {{ range .Translations }}
   <link rel="alternate" hreflang="{{ .Lang }}" href="{{ .Permalink }}">
   {{ end }}
-  <link rel="alternate" hreflang="{{ site.Language.Locale | default "en-us" }}" href="{{ .Permalink }}">
+
+  {{/* Glossary terms live in five parallel content directories rather than Hugo
+       language sites, so `.Translations` is empty for them. Rebuild the set by
+       grouping on `en_title` and emit the whole cluster on every member —
+       hreflang is only honoured when the annotations are reciprocal and each
+       page also points at itself. */}}
+  {{ $cluster := slice }}
+  {{ if eq .Type "glossary" }}
+    {{ with .Params.en_title }}
+      {{ $translations := partialCached "functions/glossary_translations.html" $ "glossary-translations" }}
+      {{ $cluster = index $translations (lower .) | default slice }}
+    {{ end }}
+  {{ end }}
+
+  {{ if $cluster }}
+    {{ range sort $cluster "tag" }}
+  <link rel="alternate" hreflang="{{ .tag }}" href="{{ .url }}">
+    {{- end }}
+    {{/* English is the source glossary, so it is the sensible landing point for
+         a searcher whose language we do not publish. */}}
+    {{ range where $cluster "tag" "en-US" }}
+  <link rel="alternate" hreflang="x-default" href="{{ .url }}">
+    {{- end }}
+  {{ else }}
+  <link rel="alternate" hreflang="{{ $page_lang }}" href="{{ .Permalink }}">
+  {{ end }}
 
   {{ partial "functions/parse_theme" . }}
   {{ $css := hugo.Data.assets.css }}
@@ -80,6 +117,35 @@
   {{ if or .Params.math site.Params.math }}
   {{ $mathjax_config := resources.Get "js/mathjax-config.js" }}
   <script src="{{ $mathjax_config.RelPermalink }}"></script>
+  {{ end }}
+
+  {{/* Every render-blocking stylesheet below the first comes from a third-party
+       origin, so the browser cannot start fetching any of them until it has
+       paid for a DNS lookup, TCP connection and TLS handshake it does not yet
+       know it needs. Warming the connections costs nothing and moves that work
+       off the critical path. */}}
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  {{/* Decide whether this page needs Highlight.js and Mermaid, and store the answers
+       in $scr so that site_js.html can read them again.
+       Front matter (`highlight:` / `diagram:`) wins; a site param set to true forces the
+       library onto every page; otherwise the library loads only when the page's own
+       Markdown content contains a code block (resp. a Mermaid block). Detection runs on
+       .Content so that the `<pre><code class="tex hljs">` in the cite modal, which every
+       page carries, does not count. */}}
+  {{ $scr.Set "highlight_enabled" (findRE "<pre[^>]*><code" .Content 1 | len | lt 0) }}
+  {{ if isset .Params "highlight" }}
+    {{ $scr.Set "highlight_enabled" .Params.highlight }}
+  {{ else if eq site.Params.highlight true }}
+    {{ $scr.Set "highlight_enabled" true }}
+  {{ end }}
+  {{ $scr.Set "diagram_enabled" (findRE "language-mermaid" .Content 1 | len | lt 0) }}
+  {{ if isset .Params "diagram" }}
+    {{ $scr.Set "diagram_enabled" .Params.diagram }}
+  {{ else if eq site.Params.diagram true }}
+    {{ $scr.Set "diagram_enabled" true }}
   {{ end }}
 
   {{/* Attempt to load local vendor CSS, otherwise load from CDN. */}}
@@ -96,14 +162,6 @@
     {{ printf "<link rel=\"stylesheet\" href=\"%s\" integrity=\"%s\" crossorigin=\"anonymous\">" (printf $css.fontAwesome.url $css.fontAwesome.version) $css.fontAwesome.sri | safeHTML }}
     {{ printf "<link rel=\"stylesheet\" href=\"%s\" integrity=\"%s\" crossorigin=\"anonymous\">" (printf $css.fancybox.url $css.fancybox.version) $css.fancybox.sri | safeHTML }}
 
-    {{/* Default to enabling highlighting, but allow the user to override it in .Params or site.Params.
-         Use $scr to store "highlight_enabled", so that we can read it again in footer.html. */}}
-    {{ $scr.Set "highlight_enabled" true }}
-    {{ if isset .Params "highlight" }}
-      {{ $scr.Set "highlight_enabled" .Params.highlight }}
-    {{ else if isset site.Params "highlight" }}
-      {{ $scr.Set "highlight_enabled" site.Params.highlight }}
-    {{ end }}
     {{ if ($scr.Get "highlight_enabled") }}
       {{ $v := $css.highlight.version }}
       {{ with site.Params.highlight_style }}
@@ -120,7 +178,13 @@
       {{ end }}
     {{ end }}
 
-    {{ if or (eq site.Params.map.engine 2) (eq site.Params.map.engine 3) }}
+    {{/* Leaflet was render-blocking on all ~5,400 pages because `map.engine` is
+         a site-wide setting. The only maps on the site come from the `ga_map`
+         shortcodes; the Contact widget's map needs `coordinates`, which is not
+         set, and the community map and contributor network render inside
+         iframes that load their own copies. So load it per page instead. */}}
+    {{ $needs_map := or (.HasShortcode "ga_map") (.HasShortcode "ga_map_yearly") (.Params.needs_map | default false) }}
+    {{ if and $needs_map (or (eq site.Params.map.engine 2) (eq site.Params.map.engine 3)) }}
     {{ printf "<link rel=\"stylesheet\" href=\"%s\" integrity=\"%s\" crossorigin=\"anonymous\">" (printf $css.leaflet.url $css.leaflet.version) $css.leaflet.sri | safeHTML }}
     {{ end }}
 
@@ -211,6 +275,14 @@
     {{ $og_image = $share_res.Permalink }}
     {{ $og_image_width = $share_res.Width }}
     {{ $og_image_height = $share_res.Height }}
+  {{ else if .Params.sharing_image }}
+    {{/* Path relative to `static/`, e.g. `sharing_image: "img/my-image.webp"` - for pages that aren't
+         Hugo page bundles and so can't use `sharing_image_resource`. */}}
+    {{ $og_image = .Params.sharing_image | absURL }}
+    {{ with images.Config (printf "/static/%s" .Params.sharing_image) }}
+      {{ $og_image_width = .Width }}
+      {{ $og_image_height = .Height }}
+    {{ end }}
   {{ else if .Params.header.image }}
     {{ $og_image = printf "%s/%s" $media_dir .Params.header.image | absURL }}
   {{ else if site.Params.sharing_image }}
@@ -238,7 +310,7 @@
   {{ else if .IsHome }}
     {{ $og_title = site.Title }}
   {{ else }}
-    {{ $og_title = printf "%s | %s" .Title site.Title }}
+    {{ $og_title = printf "%s | %s" .Title (site.Params.short_title | default site.Title) }}
   {{ end }}
   <meta property="og:title" content="{{ $og_title }}">
   <meta property="og:description" content='{{ $og_desc }}'>
@@ -254,7 +326,7 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:image" content="{{ $og_image }}">
   {{- end -}}
-  <meta property="og:locale" content="{{ site.Language.Locale | default "en-us" }}">
+  <meta property="og:locale" content="{{ $page_lang }}">
   {{ if .IsPage }}
     {{ if not .PublishDate.IsZero }}
       <meta property="article:published_time" content="{{ .PublishDate.Format "2006-01-02T15:04:05-07:00" | safeHTML }}">
@@ -272,6 +344,10 @@
 
   {{ partial "custom_head" . }}
 
-  <title>{{ if not .IsHome }}{{ .Title }} | {{ end }}{{ site.Title }}</title>
+  {{/* Search engines truncate titles at roughly 60 characters. Suffixing every
+       page with the full site title spent 61 of those on text that was never
+       displayed, so pages carry the short name and only the home page spells
+       the organisation out in full. */}}
+  <title>{{ if .IsHome }}{{ site.Title }}{{ else }}{{ .Title }} | {{ site.Params.short_title | default site.Title }}{{ end }}</title>
 
 </head>

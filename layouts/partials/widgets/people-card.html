@@ -4,12 +4,15 @@
 {{ $avatar := ($person.Resources.ByType "image").GetMatch "*avatar*" }}
 
 {{ $src := "" }}
+{{ $size := 0 }}
 {{ $initials := "" }}
 {{ if site.Params.avatar.gravatar }}
 {{ $src = printf "https://s.gravatar.com/avatar/%s?s=150" (md5 $person.Params.email) }}
+{{ $size = 150 }}
 {{ else if $avatar }}
 {{ $avatar_image := $avatar.Fill "270x270 Center" }}
 {{ $src = $avatar_image.RelPermalink }}
+{{ $size = 270 }}
 {{ else }}
 {{ $name_parts := split $person.Params.name " " }}
 {{ range first 2 $name_parts }}{{ $initials = print $initials (substr . 0 1 | upper) }}{{ end }}
@@ -39,7 +42,7 @@
 
 <div class="{{ $card_classes }}">
   {{ if $src }}
-  <img class="portrait-cover" src="{{ $src }}" alt="Portrait of {{ $person.Params.name }}">
+  <img class="portrait-cover" src="{{ $src }}" width="{{ $size }}" height="{{ $size }}" alt="Portrait of {{ $person.Params.name }}">
   {{ else }}
   <div class="portrait-cover portrait-cover--initials">{{ $initials }}</div>
   {{ end }}
@@ -64,7 +67,7 @@
 {{ else }}
 <div class="portrait">
   {{ if $src }}
-  <img class="avatar-circle" src="{{ $src }}" alt="Avatar of {{ $person.Params.name }}">
+  <img class="avatar-circle" src="{{ $src }}" width="{{ $size }}" height="{{ $size }}" alt="Avatar of {{ $person.Params.name }}">
   {{ else }}
   <div class="avatar-circle">{{ $initials }}</div>
   {{ end }}

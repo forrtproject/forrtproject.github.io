@@ -1,5 +1,6 @@
 {
     "type": "glossary",
+    "en_title": "Adversarial (collaborative) commentary",
     "title": "Düşmanca (İş birlikçi) Yorumlama [Adversarial (collaborative) commentary]",
     "sort_key": "duzszmanca (i̇sz birlikczi) yorumlama [adversarial (collaborative) commentary]",
     "definition": "Bir çalışmanın orijinal yazarları ve söz konusu çalışmanın eleştirmenlerinin iş birliği yaparak bir konsensüs bildirisi hazırladıkları bir yorum. Amaç, ad hominem safsatalarından uzak, ortak bir anlayışı aktaran veya en azından her iki tarafın hemfikir olduğu ve olmadığı noktaları belirleyen bir yorum hazırlamaktır. Böylelikle, okuyucuyu ayrı yorumlarda aktarılan karşıt görüşler arasında seçim yapmaya bırakmak yerine, net bir mesaj ve ileriye dönük bir yol sunar.",

@@ -1,5 +1,6 @@
 {
     "type": "glossary",
+    "en_title": "Collaborative Replication and Education Project (CREP)",
     "title": "İş Birliğine Dayalı Replikasyon ve Eğitim Projesi (CREP) [Collaborative Replication and Education Project (CREP)]",
     "sort_key": "i̇sz birligzine dayaliz replikasyon ve egzitim projesi (crep) [collaborative replication and education project (crep)]",
     "definition": "İş Birliğine Dayalı Tekrarlama ve Eğitim Projesi (CREP; Collaborative Replication and Education Project), psikoloji alanında çok sayıda atıf alan ampirik çalışmaların tekrarlanması çabalarını organize etmek ve yapılandırmak amacıyla tasarlanmış bir girişimdir. Bu proje, daha yüksek kaliteli doğrudan tekrarlama çalışmalarına ve psikoloji öğrencilerine yönelik ampirik araştırma teknikleri konusunda daha fazla eğitime duyulan ikili ihtiyacı karşılamayı amaçlamaktadır. CREP, çok sayıda atıf alan çalışmaların tekrarlanması ihtiyacını karşılamayı ve tekrarlama projelerini tamamlayan akademisyenlere eğitim, destek ve mesleki gelişim fırsatları sunmayı hedeflemektedir.",

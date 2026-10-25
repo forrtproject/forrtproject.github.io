@@ -1,5 +1,6 @@
 {
     "type": "glossary",
+    "en_title": "Triple-blind peer review",
     "title": "Triple-blind peer review",
     "sort_key": "triple-blind peer review",
     "definition": "Evaluation of research products by qualified experts where the author(s) are anonymous to both the reviewer(s) and editor(s). **“**Blinding of the authors and their affiliations to both editors and reviewers. This approach aims to eliminate institutional, personal, and gender biases” (Tvina et al., 2019, p. 1082).",

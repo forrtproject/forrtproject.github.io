@@ -9,3 +9,8 @@
 {{ if $isClustersPage }}
 <script src="{{ "js/featured-resources.js" | relURL }}" defer></script>
 {{ end }}
+
+{{/* Tag browser: /tags/ filters a site-wide list of tagged pages (issue #307). */}}
+{{ if and .File (strings.HasPrefix .File.Path "tags/") }}
+<script src="{{ "js/tag-browser.js" | relURL }}" defer></script>
+{{ end }}

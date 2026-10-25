@@ -1,8 +1,9 @@
 {
     "type": "glossary",
+    "en_title": "PCI (Peer Community In)",
     "title": "PCI (Peer Community In)",
     "sort_key": "pci (peer community in)",
-    "definition": "PCI is a non-profit organisation that creates communities of researchers who review and recommend unpublished preprints based upon high-quality peer review from at least two researchers in their field. These preprints are then assigned a DOI, similarly to a journal article. PCI was developed to establish a free, transparent and public scientific publication system based on the review and recommendation of preprints.",
+    "definition": "Peer Community In (PCI) is a non-profit organisation that coordinates free, transparent peer review of preprints through communities of researchers in different disciplines. Following review and any necessary revisions, a recommender may recommend a preprint, and the recommendation and review history are made publicly available. This allows research to be evaluated and recognised independently of publication in a journal. Authors can leave their recommended work in an open repository or subsequently publish it in a journal.",
     "related_terms": [
         "Open Access",
         "Open Archives",
@@ -30,5 +31,6 @@
     "language": "english",
     "aliases": [
         "/glossary/pci_peer_community_in_"
-    ]
+    ],
+    "lastmod": "2026-10-11"
 }

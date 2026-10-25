@@ -192,6 +192,14 @@
     "description": "Proactively creates an open and inclusive space for multidisciplinary researchers and practitioners of statistics education globally to connect, learn, and collaborate, toward advancing statistics education research and evidence-based practice."
   },
   {
+    "name": "CARING (CIDD - Applied Research on Inclusion and Neurodiversity Group)",
+    "short_name": "CARING",
+    "logo": "University-of-Portsmouth-logo.webp",
+    "url": "https://sites.google.com/port.ac.uk/caring/home",
+    "cluster": "Open Research Communities",
+      "description": "CARING (CIDD - Applied Research on Inclusion and Neurodiversity Group) is a team of researchers at the University of Portsmouth (UK) working at the <strong>Centre for Interaction, Development and Diversity (CIDD)</strong>. We share our research and resources, with the aim of improving the lives of neurodivergent individuals from early education to university and employment."
+  },
+  {
     "name": "Berkeley Initiative for Transparency in the Social Sciences",
     "short_name": "BITSS",
     "logo": "bitss.webp",
@@ -273,6 +281,14 @@
     "url": "http://www.osc.lmu.de/",
     "cluster": "Education & Training",
     "description": "The LMU Open Science Center has the mission to promote and foster open research practices at LMU Munich. As a central knowledge hub, the OSC provides support for researchers on various aspects of open science, including research data management, FAIR data sharing, licensing, data privacy, and reproducible workflows."
+  },
+  {
+    "name": "Community for Open Science in Education",
+    "short_name": "COSiE",
+    "logo": "COSiE.webp",
+    "url": "https://openscience-utrecht.com/cosie/",
+    "cluster": "Education & Training",
+    "description": "The Community for Open Science in Education (COSiE) is an interdisciplinary community founded by staff from Utrecht University (UU) and UMC Utrecht. COSiE is a growing and dynamic community with members from different disciplines and faculties. We focus on developing, sharing, and reusing Open Educational Resources (OER) for Open Science education across bachelor’s, master’s, and PhD programmes, with materials that are transferable across disciplines. COSiE supports UU and UMC Utrecht teachers in including Open Science in your teaching by offering pedagogical advice on how to integrate Open Science principles into their courses. It also provides a platform where you can share and gather knowledge, exchange ideas and Open Science OER and connect with others interested in Open Science in Education. You can learn from best practices and experts by experience, while receiving hands-on support to turn your own ideas into reality. For more information, the latest news and how to join, visit [their website](https://openscience-utrecht.com/cosie/)."
   },
   {
     "name": "Metadocencia",

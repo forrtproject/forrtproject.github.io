@@ -37,9 +37,18 @@ exclude = [
 # ---------------------
 # Request settings
 # ---------------------
+# Identify as a mainstream browser. Measured against the 2026-08-03 report, this
+# alone converts ~40% of the "403 Forbidden" results (OER Commons, Google Scholar,
+# JSTOR, PsycNet, eScholarship, ORA, NIHR) into real 200s — they were rejecting
+# lychee's default agent string, not the request. Domains are deliberately NOT
+# excluded here: an exclusion drops a link from checking permanently and silently,
+# whereas anything still refusing after this gets a second pass with full browser
+# headers in the workflow, and a Wayback existence check after that.
+user_agent = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
+
 # Accept 2xx/3xx and 429 (rate limiting)
-# Note: 403 is NOT accepted — those are separated into a collapsed section
-# by the workflow's post-processing step, since many publishers block bots.
+# Note: 403 is NOT accepted — those are re-verified and categorised by the
+# workflow's post-processing step, since many publishers block bots.
 accept = ["100..=399", "429"]
 
 # Timeout per request in seconds

@@ -1,5 +1,6 @@
 {
     "type": "glossary",
+    "en_title": "Open Material",
     "title": "Açık Materyal [Open Material]",
     "sort_key": "aczizk materyal [open material]",
     "definition": "Yazarın, bir çalışmada kullanılan “anket maddeleri, uyaran materyallerini ve deney programları” gibi materyalleri kamuya açık şekilde paylaşmasıdır (Kidwell vd., 2016, s. 3). Dijital olarak paylaşılabilir materyaller, bunları herkese açık ve erişilebilir kılan açık erişimli depolara gönderilir. Lisanslamaya bağlı olarak, materyal diğer yazarlar tarafından kendi çalışmalarında yeniden kullanılabilir. Dijital olarak paylaşılamayan bileşenler (örn. biyolojik materyaller, ekipman) yeniden üretilebilirliğe izin verecek kadar ayrıntılı olarak tanımlanmalıdır.",

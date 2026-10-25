@@ -1,0 +1,25 @@
+{{/* Splits one raw `tags` entry into clean terms.
+
+     Entries arrive as free text, so one entry may hold several terms
+     ("Open data; Code", "#openscience #education"). Shared by `page_tags.html`
+     and the legacy `/tag/<term>/` redirects, which must map an old term to the
+     same spelling the badges show.
+
+     Inputs: any value (stringified). Output: slice of strings, in order, possibly
+     empty, not de-duplicated. */}}
+
+{{ $terms := slice }}
+{{ $cell := printf "%v" . }}
+{{/* A run of hashtags is a list. Guarded on a leading `#` so an ordinary term
+     carrying a number ("Issue #42") is not split. */}}
+{{ if hasPrefix (trim $cell " ") "#" }}{{ $cell = replaceRE `\s+#` ",#" $cell }}{{ end }}
+{{ range split (replaceRE `[;\n]+` "," $cell) "," }}
+  {{/* `\s` does not cover the non-breaking spaces that arrive with pasted text. */}}
+  {{ $term := replaceRE `[\s\x{00a0}]+` " " . }}
+  {{ $term = trim (strings.TrimPrefix "#" (trim $term " ")) " " }}
+  {{/* `&` because "Diversity, Equity, & Inclusion" splits into a "& Inclusion". */}}
+  {{ $term = trim $term " .,;:-&" }}
+  {{ if findRE `[\pL\pN]` $term 1 }}{{ $terms = $terms | append $term }}{{ end }}
+{{ end }}
+
+{{ return $terms }}

@@ -53,7 +53,10 @@
     if (match) {
       var target = redirects[i].target;
       for (var j = 1; j < match.length; j++) {
-        target = target.replace('$' + j, match[j]);
+        // Optional groups are undefined when they do not participate in the
+        // match (e.g. /FReD with no trailing path), which would otherwise
+        // append the literal string "undefined" to the target.
+        target = target.replace('$' + j, match[j] || '');
       }
       window.location.replace(target);
       return;

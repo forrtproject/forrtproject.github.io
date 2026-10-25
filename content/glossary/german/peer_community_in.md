@@ -1,5 +1,6 @@
 {
     "type": "glossary",
+    "en_title": "PCI (Peer Community In)",
     "title": "Peer Community In [PCI (Peer Community In)]",
     "sort_key": "peer community in [pci (peer community in)]",
     "definition": "PCI ist eine gemeinnützige Organisation, die Gemeinschaften von Forschenden schafft, die unveröffentlichte Preprints auf der Grundlage eines hochwertigen Peer-Reviews von mindestens zwei Forschenden aus ihrem Fachgebiet überprüfen und empfehlen. Diesen Preprints wird dann ein DOI zugewiesen, ähnlich wie bei einem Zeitschriftenartikel. PCI wurde entwickelt, um ein kostenloses, transparentes und öffentliches wissenschaftliches Publikationssystem zu schaffen, das auf der Überprüfung und Empfehlung von Preprints beruht.",

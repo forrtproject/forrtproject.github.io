@@ -7,9 +7,8 @@
   {{ end }}
 {{ end }}
 
-{{/* Load Inter for the JUST-OS chat UI (the site's body font is Domine). */}}
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+{{/* Load Inter for the JUST-OS chat UI (the site's body font is Domine).
+     site_head.html already preconnects to the Google Fonts origins. */}}
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap">
 
 <style>
@@ -902,7 +901,7 @@
   {{ if $active }}
   <!-- Toggle Button -->
   <button id="just-os-btn" onclick="toggleJustOS()" aria-label="Open Chatbot">
-    <img id="just-os-img" src="/img/just_os_icon.webp" alt="Chat with us">
+    <img id="just-os-img" src="/img/just_os_icon.webp" {{ partial "functions/static_img_dims" "just_os_icon.webp" }} alt="Chat with us">
     <div id="just-os-bubble">
       How can I help you?
     </div>
@@ -934,7 +933,7 @@
   {{ else }}
   <!-- Inactive state: icon links to the standalone page where the full offline notice lives -->
   <a id="just-os-btn" href="/just_os_chatbot/" aria-label="JUST-OS chatbot is offline — open status page">
-    <img id="just-os-img" src="/img/just_os_icon.webp" alt="JUST-OS chatbot (offline)">
+    <img id="just-os-img" src="/img/just_os_icon.webp" {{ partial "functions/static_img_dims" "just_os_icon.webp" }} alt="JUST-OS chatbot (offline)">
     <span id="just-os-offline-badge" aria-hidden="true" title="Chatbot offline">
       <!-- Unplugged plug icon -->
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">

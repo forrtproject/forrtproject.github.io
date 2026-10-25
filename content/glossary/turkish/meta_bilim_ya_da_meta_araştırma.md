@@ -1,5 +1,6 @@
 {
     "type": "glossary",
+    "en_title": "Meta-science or Meta-research",
     "title": "Meta-bilim ya da Meta-araştırma [Meta-science or Meta-research]",
     "sort_key": "meta-bilim ya da meta-arasztizrma [meta-science or meta-research]",
     "definition": "Bilimsel uygulamaları tanımlama, açıklama, değerlendirme ve/veya geliştirme amacıyla bilimin kendisinin bilimsel olarak incelenmesidir. Meta-bilim genellikle bilimsel yöntemleri, analizleri, verilerin raporlanmasını ve değerlendirilmesini, araştırma sonuçlarının yeniden üretilebilirliğini ve tekrarlanabilirliğini ve araştırma teşviklerini araştırır.",

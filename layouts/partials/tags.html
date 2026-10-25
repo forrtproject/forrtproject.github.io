@@ -1,0 +1,13 @@
+{{/* Site override of the theme's `tags` partial, which reads the `tags`
+     taxonomy through `.GetTerms`. `tags` is plain front matter here (see
+     `[taxonomies]` in config.toml), so badges link to the tag browser at
+     `/tags/?tag=`, which lists every page carrying the term. Reached by every
+     section via `_default/single.html` -> `page_footer`. */}}
+
+{{ with partial "functions/page_tags.html" . }}
+<div class="article-tags">
+  {{ range . }}
+  <a class="badge badge-light" href="{{ printf "tags/?tag=%s" (. | urlquery) | relURL }}">{{ . }}</a>
+  {{ end }}
+</div>
+{{ end }}

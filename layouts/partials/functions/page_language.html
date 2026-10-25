@@ -1,0 +1,38 @@
+{{/* Resolves the BCP-47 language tag a page should declare.
+
+     The site is configured as single-language, so `site.Language.Locale` is
+     `en-US` everywhere — including the ~1,000 glossary terms written in German,
+     Arabic, Turkish and Chinese, which were being served as US English. Those
+     pages carry a `language` param naming their glossary, so it is used in
+     preference to the site locale.
+
+     The returned tag is also what `baseof.html` tests against
+     `data/i18n/rtl.toml` to decide text direction, so Arabic must resolve to a
+     bare `ar` for that lookup to match.
+
+     Inputs: page context. Output: language tag (string). */}}
+
+{{ $tags := dict
+  "english" "en-US"
+  "german"  "de"
+  "arabic"  "ar"
+  "turkish" "tr"
+  "chinese" "zh-Hans"
+}}
+
+{{/* Scoped to glossary terms on purpose. `curated_resources` also carry a
+     `language` param, but it records the language of the linked resource (and
+     holds a list, e.g. `["English"]`), not the language this page is written
+     in. */}}
+{{ $tag := site.Language.Locale | default "en-us" }}
+{{ if eq .Type "glossary" }}
+  {{ with .Params.language }}
+    {{ if reflect.IsSlice . }}
+      {{ $tag = index $tags (lower (index . 0)) | default $tag }}
+    {{ else }}
+      {{ $tag = index $tags (lower .) | default $tag }}
+    {{ end }}
+  {{ end }}
+{{ end }}
+
+{{ return $tag }}

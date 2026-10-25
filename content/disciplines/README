@@ -32,22 +32,29 @@ Three tabs, all with header rows:
 
 **Fields** — top-level groupings, in display order
 
-| Name | Summary | Show |
-| --- | --- | --- |
-| Natural Sciences | _(optional one-paragraph intro)_ | TRUE |
-| … | | |
+| Name | Summary | Show | Leads |
+| --- | --- | --- | --- |
+| Natural Sciences | _(optional one-paragraph intro)_ | TRUE | `[Jane Doe](https://orcid.org/0000-0002-1825-0097) (University X)` |
+| … | | | |
 
 - `Show` controls visibility on the page. `TRUE` / `YES` / `1` (or empty) shows the field;
   `FALSE` hides it. Hidden fields stay in the sheet for future use.
+- `Leads` is optional free text, markdown allowed. It renders under the field
+  summary as "Field lead(s):". Separate several people with commas — the label
+  is pluralised when the cell contains a comma.
 
 **Disciplines** — disciplines within each field
 
-| Field | Discipline | Examples |
-| --- | --- | --- |
-| Natural Sciences | Chemistry | _short prose with case-study examples_ |
+| Field | Discipline | Examples | Leads |
+| --- | --- | --- | --- |
+| Natural Sciences | Chemistry | _short prose with case-study examples_ | `[Jane Doe](https://orcid.org/0000-0002-1825-0097) (University X)` |
 
 - The `Field` column must match a `Name` in the Fields tab exactly.
 - `Examples` is plain prose shown under the discipline heading.
+- `Leads` is optional free text, markdown allowed. It renders at the top of the
+  opened discipline as "Discipline lead(s):", with the same comma rule as above.
+
+`Show` and `Leads` are found by header name, so they can sit in any column.
 
 **Resources** — one row per resource link
 
@@ -97,7 +104,9 @@ that mirrors the old Google Doc layout.
 
 After a hackathon refresh, the team produces a new master Google Doc.
 `scripts/parse_disciplines_gdoc.py` rewrites the three sheet tabs from
-that document — destructive, so back up first if you want a copy.
+that document — destructive, so back up first if you want a copy. It clears
+every tab before writing, so the `Leads` columns are lost: copy them out
+beforehand and paste them back after the push.
 
 ```bash
 # 1) Get the file id of the G-Doc from Google Drive (URL ends with /d/<ID>/edit)
@@ -144,6 +153,53 @@ default, and named Authors typically also tick Conceptualization,
 Methodology, etc.
 
 There is no script that maintains this sheet — it is edited by hand.
+
+## Citation
+
+The page carries two citations under "How to cite":
+
+- **The preprint** — hard-coded in `layouts/partials/disciplines/intro.html`.
+- **This web resource** — read from `data/disciplines_citation.json`
+  (`web` is the plain-text form used by the copy button, `web_html` the same
+  string with the URL as a link).
+
+Regenerate the web citation from the [Tenzing sheet][tenzing]:
+
+```bash
+python3 scripts/build_disciplines_citation.py
+```
+
+Author order: contributors with a number in the "Order in publication" column
+come first, ascending; everyone else follows, alphabetically by surname.
+
+If `data/disciplines_citation.json` is absent, the page shows the preprint
+citation only.
+
+## Analytics
+
+Every discipline heading has a shareable link and a copy button next to it.
+The links have the form `https://forrt.org/disciplines/#<slug>`, where `<slug>`
+is the discipline name in lowercase with non-alphanumeric characters replaced
+by hyphens, e.g. `#chemistry`. Links in the earlier `#f<N>-<slug>` form still
+resolve.
+
+Opening a discipline sends a GA4 event `discipline_view` with these parameters:
+
+| Parameter | Value |
+| --- | --- |
+| `discipline` | Discipline name |
+| `field` | Field name |
+| `anchor` | Anchor id, e.g. `chemistry` |
+| `source` | `click` (heading clicked), `sidebar` (sidebar link), or `hash` (page opened on a discipline link) |
+
+Each discipline fires at most once per page load. "Expand all" does not fire
+the event. Copying a discipline link sends `discipline_link_copied` with the
+`anchor` parameter.
+
+To break these down in GA4 reports, register `discipline` (and, if wanted,
+`field`) as event-scoped custom dimensions under Admin → Custom definitions.
+Without that registration the events are counted but the parameter values are
+not reportable.
 
 ## Page mechanics (quick reference)
 

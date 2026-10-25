@@ -1,5 +1,6 @@
 {
     "type": "glossary",
+    "en_title": "Cumulative science",
     "title": "Kümülatif Bilim [Cumulative science]",
     "sort_key": "kuzmuzlatif bilim [cumulative science]",
     "definition": "Herhangi bir deneysel bilimin hedeflerinden biridir ve “bilimin geleceğinin üzerine inşa edilebileceği bir bilgi birikimi temeli oluşturma” sürecini ifade eder (Curran, 2009, s.1). Kümülatif bilim, toplanan veri ve kanıt miktarına bağlı olarak daha kapsamlı ve doğru kuramların gelişeceği fikrine dayanır. Bu tür bilimsel ilerleme ani keşiflerden çok, aşamalı ve artan adımlarla gerçekleşir. Devrimsel bilim nadiren ortaya çıkarken, kümülatif bilim bilimsel üretimin en yaygın biçimidir.",

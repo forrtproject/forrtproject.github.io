@@ -167,7 +167,7 @@
 <div class="row justify-content-center people-widget">
   {{ with $page.Title }}
   <div class="col-md-12 section-heading">
-    <h1>{{ . | markdownify | emojify }}</h1>
+    <h2>{{ . | markdownify | emojify }}</h2>
     {{ if $page.Params.subtitle }}<p>{{ $page.Params.subtitle | markdownify | emojify }}</p>{{ end }}
   </div>
   {{ end }}

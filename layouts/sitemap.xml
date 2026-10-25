@@ -1,0 +1,26 @@
+{{/* Override of Hugo's built-in sitemap template, kept deliberately close to it
+     so it stays easy to diff against upstream. The thin-`tags`-archive filter
+     it was added for went with the taxonomy, so output now differs only in line
+     breaks; retained as the hook for future filtering. */ -}}
+{{ printf "<?xml version=\"1.0\" encoding=\"utf-8\" standalone=\"yes\"?>" | safeHTML }}
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  {{- range .Pages }}
+  <url>
+    <loc>{{ .Permalink }}</loc>
+    {{- if not .Lastmod.IsZero }}
+    <lastmod>{{ .Lastmod.Format "2006-01-02T15:04:05-07:00" | safeHTML }}</lastmod>
+    {{- end }}
+    {{- with .Sitemap.ChangeFreq }}
+    <changefreq>{{ . }}</changefreq>
+    {{- end }}
+    {{- if ge .Sitemap.Priority 0.0 }}
+    <priority>{{ .Sitemap.Priority }}</priority>
+    {{- end }}
+    {{- if .IsTranslated }}
+      {{- range .AllTranslations }}
+    <xhtml:link rel="alternate" hreflang="{{ .Language.LanguageCode }}" href="{{ .Permalink }}" />
+      {{- end }}
+    {{- end }}
+  </url>
+  {{- end }}
+</urlset>

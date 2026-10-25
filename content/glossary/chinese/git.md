@@ -1,5 +1,6 @@
 {
     "type": "glossary",
+    "en_title": "Git",
     "title": "Git",
     "sort_key": "git",
     "definition": "Git是一款由Linus Torvalds开发的，用于追踪本地文件集的更改（本地版本控制）的软件包。程序员通常使用Git在指定的目录、文件夹或文件系统中跟踪和开发计算机源代码。Git还支持远程存储库托管服务（例如，GitHub），通过从本地系统上传贡献来实现协作软件开发。Git 在科研领域被广泛应用，使开放数据、开放代码和可重复性分析成为可能。",

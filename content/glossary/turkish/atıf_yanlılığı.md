@@ -1,5 +1,6 @@
 {
     "type": "glossary",
+    "en_title": "Citation bias",
     "title": "Atıf yanlılığı [Citation bias]",
     "sort_key": "atizf yanlizlizgziz [citation bias]",
     "definition": "Kaynaklar bölümünde atıf yapılan ve yer verilen makalelerin veya yazarların yanlı seçimi. Bu tür bir yanlılık çoğu zaman, yazar(lar)ın veya hakemlerin lehine olacak şekilde, istatistiksel olarak anlamlı sonuçlar içeren çalışmaların aşırı temsil edilmesiyle ya da cinsiyet ve ırk temelli yaygın ön yargıların yansıması olarak ortaya çıkar (Brooks, 1985; Jannot vd., 2013; Zurn vd., 2020). Önerilen çözümlerden biri, yazarların atıf uygulamalarını değerlendirip ortaya çıkmış olabilecek yanlılıkları tespit ettikleri Atıf Çeşitliliği Beyanlarının (Citation Diversity Statements) kullanılmasıdır (Zurn vd., 2020).",

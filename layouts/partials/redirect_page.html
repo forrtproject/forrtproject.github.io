@@ -1,0 +1,17 @@
+{{- /* Instant-redirect document shared by `alias.html` and the legacy
+     `/tag/<term>/` stubs. GitHub Pages cannot send HTTP redirects, so a
+     zero-delay meta refresh plus a canonical link stands in for a 301.
+
+     Inputs: anything with `.Permalink` (the absolute target URL). */ -}}
+<!doctype html>
+<html lang="{{ site.Language.Locale }}">
+  <head>
+    <title>{{ .Permalink }}</title>
+    <link rel="canonical" href="{{ .Permalink }}">
+    <meta charset="utf-8">
+    <meta http-equiv="refresh" content="0; url={{ .Permalink }}">
+  </head>
+  <body>
+    <p>This page has moved. <a href="{{ .Permalink }}">Continue to the new location</a>.</p>
+  </body>
+</html>

@@ -1,5 +1,6 @@
 {
     "type": "glossary",
+    "en_title": "Sherpa Romeo",
     "title": "Sherpa Romeo",
     "sort_key": "sherpa romeo",
     "definition": "Eine Online-Ressource, die die Open-Access-Richtlinien von wissenschaftlichen Verlagen aus der ganzen Welt sammelt und Zusammenfassungen der Urheberrechts- und Open-Access-Archivierungsrichtlinien der einzelnen Zeitschriften bereitstellt.",

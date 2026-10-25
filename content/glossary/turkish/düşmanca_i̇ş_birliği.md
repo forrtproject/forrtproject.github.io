@@ -1,5 +1,6 @@
 {
     "type": "glossary",
+    "en_title": "Adversarial collaboration",
     "title": "Düşmanca İş Birliği [Adversarial collaboration]",
     "sort_key": "duzszmanca i̇sz birligzi [adversarial collaboration]",
     "definition": "Karşıt veya çelişkili teorik görüşlere sahip—ve muhtemelen çalışma sonuçları hakkında ayrışan tahminlerde bulunan—iki veya daha fazla araştırmacının ortak bir projede iş birliği yapması. Amaç, yanlılıkları ve yöntemsel zayıflıkları en aza indirmek ve rakip teorilerin hesaba katması gereken ortak bir olgular tabanı oluşturmaktır.",

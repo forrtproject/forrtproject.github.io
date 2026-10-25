@@ -1,5 +1,6 @@
 {
     "type": "glossary",
+    "en_title": "Code review",
     "title": "Kod değerlendirmesi [Code review]",
     "sort_key": "kod degzerlendirmesi [code review]",
     "definition": "Başka bir araştırmacının programlamasını (özellikle bilgisayar kaynak kodunu), bunlarla sınırlı olmamak üzere; istatistiksel kodlama ve veri modelleme gibi unsurları kontrol etme sürecidir. Bu süreç, hataları tespit edip düzeltmeyi amaçlayarak kod kalitesini artırır. Uygulamada, modern bir hakem değerlendirme süreci GitHub, GitLab veya SourceForge gibi çevrim içi repolar üzerinden yürütülebilir.",

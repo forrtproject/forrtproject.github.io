@@ -4,7 +4,7 @@
 <div class="row featurette">
   {{ with $page.Title }}
   <div class="col-md-12 section-heading">
-    <h1>{{ . | markdownify | emojify }}</h1>
+    <h2>{{ . | markdownify | emojify }}</h2>
     {{ if $page.Params.subtitle }}<p>{{ $page.Params.subtitle | markdownify | emojify }}</p>{{ end }}
   </div>
   {{ end }}
@@ -23,7 +23,7 @@
 <div class="row py-3">
   {{ if eq .imgside "left" }}
       <div class="col-sm-4 align-self-center">
-      {{ if .buttonurl }}<a href="{{ .buttonurl }}">{{end}}<img class="rounded-circle mx-auto d-block my-4 w-50 p-3" {{with .color}}style="background: {{.}}"{{end}} src="{{ (printf "img/%s" .img) | absURL }}" alt="{{ .imgalttext }}"> {{if .buttonurl}} </a> {{end}}
+      {{ $dims := partial "functions/static_img_dims" .img }}{{ if .buttonurl }}<a href="{{ .buttonurl }}">{{end}}<img class="rounded-circle mx-auto d-block my-4 w-50 p-3" {{with .color}}style="background: {{.}}"{{end}} src="{{ (printf "img/%s" .img) | absURL }}" {{ $dims }} alt="{{ .imgalttext }}"> {{if .buttonurl}} </a> {{end}}
       </div>
         <div class="col-sm-8 align-self-center">
         <h3>{{ .name | markdownify | emojify }}</h3>
@@ -39,7 +39,7 @@
       </div>
       <div class="col-sm-4 align-self-center">
       {{ if .buttonurl }}<a href="{{ .buttonurl }}">{{end}}
-        <img class="rounded-circle mx-auto d-block my-4 w-50 p-3" {{with .color}}style="background: {{.}}"{{end}} src="{{ (printf "img/%s" .img) | absURL }}" alt="{{ .imgalttext }}"> {{if .buttonurl}} </a> {{end}}
+        {{ $dims := partial "functions/static_img_dims" .img }}<img class="rounded-circle mx-auto d-block my-4 w-50 p-3" {{with .color}}style="background: {{.}}"{{end}} src="{{ (printf "img/%s" .img) | absURL }}" {{ $dims }} alt="{{ .imgalttext }}"> {{if .buttonurl}} </a> {{end}}
       </div>
 {{ end }}
 </div>  
