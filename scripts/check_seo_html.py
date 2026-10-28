@@ -13,16 +13,21 @@ Hard checks (exit 1 if any fails):
   4. Every <img> carries an alt attribute (a bare `alt` counts as present).
   5. Every homepage <img> carries both width and height, so the browser reserves
      its box before the file loads (#869).
+  6. Every curated-resource page carries exactly one LearningResource JSON-LD
+     block that parses, has a name, url and provider, and holds no empty or
+     placeholder values (#863). Every JSON-LD block on those pages must parse.
 
 Report-only sections (never fail): pages with zero or several <h1>, and the
 site-wide share of images that carry both width and height.
 """
 
+import json
 import os
 import sys
 from html.parser import HTMLParser
 
 MAX_LISTED = 20
+PLACEHOLDERS = {"", "-", "na", "n/a", "n.a.", "none", "other", "anon"}
 
 
 class PageParser(HTMLParser):
@@ -35,12 +40,17 @@ class PageParser(HTMLParser):
         self._in_pre = False
         self._h1_depth = 0
         self._h1_buffer = []
+        self.jsonld = []
+        self._in_jsonld = False
 
     def handle_starttag(self, tag, attrs):
         attrs = dict(attrs)
         if tag == "h1":
             self._h1_depth += 1
         elif tag in ("script", "link"):
+            if tag == "script" and attrs.get("type") == "application/ld+json":
+                self._in_jsonld = True
+                self.jsonld.append("")
             url = attrs.get("src") or attrs.get("href")
             if url:
                 self.urls.append(url)
@@ -54,6 +64,8 @@ class PageParser(HTMLParser):
     def handle_endtag(self, tag):
         if tag == "pre":
             self._in_pre = False
+        if tag == "script":
+            self._in_jsonld = False
         if tag == "h1" and self._h1_depth > 0:
             self._h1_depth -= 1
             if self._h1_depth == 0:
@@ -61,6 +73,8 @@ class PageParser(HTMLParser):
                 self._h1_buffer = []
 
     def handle_data(self, data):
+        if self._in_jsonld:
+            self.jsonld[-1] += data
         if self._h1_depth > 0:
             self._h1_buffer.append(data)
 
@@ -72,6 +86,7 @@ class Page:
         self.urls = parser.urls
         self.imgs = parser.imgs
         self.code_blocks = [cls.split() for cls in parser.code_classes]
+        self.jsonld = parser.jsonld
 
     def loads(self, needle):
         return any(needle in url for url in self.urls)
@@ -145,6 +160,41 @@ def check_img_alt(pages):
             for p in pages if p.imgs_without_alt]
 
 
+def empty_values(node, path="$"):
+    """Paths of empty strings, lists or objects and placeholder strings."""
+    if node is None or node == "" or node == [] or node == {}:
+        return [path]
+    if isinstance(node, dict):
+        return [p for k, v in node.items() for p in empty_values(v, "%s.%s" % (path, k))]
+    if isinstance(node, list):
+        return [p for i, v in enumerate(node) for p in empty_values(v, "%s[%d]" % (path, i))]
+    if isinstance(node, str) and node.strip().lower() in PLACEHOLDERS:
+        return ["%s=%r" % (path, node)]
+    return []
+
+
+def check_learning_resource(pages):
+    bad = []
+    for p in pages:
+        parts = p.path.split(os.sep)
+        if len(parts) != 3 or parts[0] != "curated_resources" or parts[1] == "page":
+            continue
+        try:
+            blocks = [json.loads(b) for b in p.jsonld]
+        except ValueError as err:
+            bad.append("%s (invalid JSON-LD: %s)" % (p.path, err))
+            continue
+        found = [b for b in blocks if isinstance(b, dict) and b.get("@type") == "LearningResource"]
+        if len(found) != 1:
+            bad.append("%s (%d LearningResource blocks)" % (p.path, len(found)))
+            continue
+        problems = ["missing " + k for k in ("name", "url", "provider") if k not in found[0]]
+        problems += empty_values(found[0])
+        if problems:
+            bad.append("%s (%s)" % (p.path, ", ".join(problems[:3])))
+    return bad
+
+
 def print_items(title, items):
     print("  %s: %d" % (title, len(items)))
     for item in items[:MAX_LISTED]:
@@ -163,6 +213,7 @@ def main(public_dir):
         "2. homepage free of mermaid/highlight.js assets": check_homepage_assets(home),
         "4. every <img> has an alt attribute": check_img_alt(pages),
         "5. every homepage <img> has width and height": check_homepage_img_dims(home),
+        "6. curated resources carry one clean LearningResource": check_learning_resource(pages),
     }
     conditional = check_conditional_assets(pages)
     results["3. conditional highlight.js / mermaid loading"] = [

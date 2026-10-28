@@ -1,0 +1,20 @@
+{{/* Cleans a free-text front-matter list for structured data.
+
+     Curated-resource fields arrive from a sheet, so lists carry empty cells,
+     placeholder answers ("n.a.", "other") and repeats. Those must not reach
+     JSON-LD as values.
+
+     Inputs: a slice or a single value. Output: slice of trimmed strings, in
+     order, without empties, placeholders or duplicates (possibly empty). */}}
+
+{{ $placeholders := slice "" "-" "na" "n/a" "n.a." "none" "other" "anon" }}
+{{ $items := cond (reflect.IsSlice .) . (slice .) }}
+{{ $out := slice }}
+{{ range $items }}
+  {{ $v := trim (replaceRE `[\s\p{Zs}]+` " " (printf "%v" .)) " " }}
+  {{ if and (not (in $placeholders (lower $v))) (not (in $out $v)) }}
+    {{ $out = $out | append $v }}
+  {{ end }}
+{{ end }}
+
+{{ return $out }}
