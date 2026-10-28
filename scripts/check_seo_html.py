@@ -14,8 +14,9 @@ Hard checks (exit 1 if any fails):
   5. Every homepage <img> carries both width and height, so the browser reserves
      its box before the file loads (#869).
   6. Breadcrumb JSON-LD (#867): at most one BreadcrumbList per page; every
-     ListItem has a non-empty item URL; positions run 1..n; the last item is
-     the page's canonical URL; no name repeats, except that the current page
+     itemListElement is a non-empty list of objects; every ListItem has a
+     non-empty item URL; positions run 1..n; the page has a canonical link and
+     the last item is that URL; no name repeats, except that the current page
      may share the root's name (an author or glossary term called "FORRT").
 
 Report-only sections (never fail): pages with zero or several <h1>, and the
@@ -194,7 +195,11 @@ def check_breadcrumbs(pages):
         if len(lists) > 1:
             problems.append("%d BreadcrumbLists" % len(lists))
         for bl in lists:
-            items = bl.get("itemListElement") or []
+            items = bl.get("itemListElement")
+            if (not isinstance(items, list) or not items
+                    or any(not isinstance(item, dict) for item in items)):
+                problems.append("invalid itemListElement")
+                continue
             names = [item.get("name") for item in items]
             if any(not item.get("item") for item in items):
                 problems.append("empty item")
@@ -205,7 +210,9 @@ def check_breadcrumbs(pages):
                 names = names[1:]
             if len(set(names)) != len(names):
                 problems.append("repeated name")
-            if items and p.canonical and items[-1].get("item") != p.canonical:
+            if not p.canonical:
+                problems.append("no canonical link")
+            elif items[-1].get("item") != p.canonical:
                 problems.append("last item is not the canonical URL")
         if problems:
             failures.append("%s (%s)" % (p.path, ", ".join(sorted(set(problems)))))
