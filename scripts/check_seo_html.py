@@ -13,7 +13,7 @@ Hard checks (exit 1 if any fails):
   4. Every <img> carries an alt attribute (a bare `alt` counts as present).
   5. Every homepage <img> carries both width and height, so the browser reserves
      its box before the file loads (#869).
-  6. Every curated-resource page carries exactly one LearningResource JSON-LD
+  8. Every curated-resource page carries exactly one LearningResource JSON-LD
      block that parses, has a name, url and provider, and holds no empty or
      placeholder values (#863). Every JSON-LD block on those pages must parse.
 
@@ -213,7 +213,7 @@ def main(public_dir):
         "2. homepage free of mermaid/highlight.js assets": check_homepage_assets(home),
         "4. every <img> has an alt attribute": check_img_alt(pages),
         "5. every homepage <img> has width and height": check_homepage_img_dims(home),
-        "6. curated resources carry one clean LearningResource": check_learning_resource(pages),
+        "8. curated resources carry one clean LearningResource": check_learning_resource(pages),
     }
     conditional = check_conditional_assets(pages)
     results["3. conditional highlight.js / mermaid loading"] = [
