@@ -5,20 +5,26 @@ name: Data Processing
 # Purpose: Automated data fetching and processing for FORRT website content
 # 
 # Triggers:
-# - Daily at midnight UTC (scheduled); some steps run less often (FReD citation on Sundays,
-#   contributor analysis and the GA data PR on the 1st of the month)
-# - Manual trigger via GitHub Actions UI (workflow_dispatch)
-# 
-# Data Sources Processed:
-# 1. Curated Resources (Python script)
-# 3. Google Analytics data (Python script)
-# 4. Contributor analysis (R script) - Monthly only
-# 
+# - Scheduled: daily at midnight UTC. On scheduled runs some steps run less often:
+#   FReD citation on Sundays; contributor analysis and the GA data PR on the 1st of the month.
+# - Manual (workflow_dispatch): skips the Sunday and 1st-of-month guards, so those steps run too.
+#   GA data is downloaded only if `regenerate_ga` is set; glossary terms are regenerated
+#   (and a PR opened) only if `regenerate_glossary` is set.
+#
+# Data sources processed:
+# 1. Curated resources, featured resources and Get Involved data (Python)
+# 2. Glossary references and APA lookup (Node.js, Python); glossary terms on request
+# 3. Tenzing contributor data (Python)
+# 4. Google Analytics data (Python)
+# 5. FReD citation (Python)
+# 6. Google Scholar citations (Python)
+# 7. Contributor analysis (R) - monthly
+#
 # Outputs:
-# - Updated JSON data files in data/ directory
-# - Static copies in static/data/ for client-side access
-# - Automated PRs for contributor analysis (monthly)
-# 
+# - `data-artifact`, which deploy.yaml unpacks over the checkout before Hugo builds
+# - A commit of the generated files to the build-resources branch
+# - PRs for GA data (monthly) and glossary regeneration (on request)
+#
 # The processed data is used throughout the Hugo website for dynamic content.
 
 on:
