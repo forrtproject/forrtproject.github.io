@@ -20,8 +20,8 @@ Hard checks (exit 1 if any fails):
 
 Report-only sections (never fail): pages with zero or several <h1>, the
 site-wide share of images that carry both width and height, and indexable pages
-whose description repeats the homepage's, is shared with another page, or looks
-cut mid-word.
+whose description repeats the homepage's, is shared with another page, contains
+HTML markup as text, or looks cut mid-word.
 """
 
 import os
@@ -32,6 +32,8 @@ from html.parser import HTMLParser
 from urllib.parse import unquote, urlparse
 
 MAX_LISTED = 20
+# Markup that survived flattening, e.g. an indented HTML block rendered as code.
+HTML_TAG = re.compile(r"</?[A-Za-z][A-Za-z0-9]*(\s[^<>]*)?>")
 # Attribute values arrive already unescaped, so any entity left in them was
 # escaped twice in the HTML (e.g. `&amp;ldquo;`).
 LITERAL_ENTITY = re.compile(r"&(#\d+|#x[0-9a-fA-F]+|[A-Za-z][A-Za-z0-9]*);")
@@ -205,6 +207,8 @@ def description_report(pages, home):
     dup_groups = sum(1 for n in counts.values() if n > 1)
     print_items("indexable pages sharing a description (%d distinct descriptions)"
                 % dup_groups, dup_pages)
+    print_items("descriptions containing HTML markup as text",
+                [p.path for p, d in described if HTML_TAG.search(d)])
     # A description at or beyond the old 254-character cut that ends on a letter
     # or digit was almost certainly chopped mid-word.
     print_items("descriptions of 250+ characters ending mid-word",

@@ -103,6 +103,9 @@
   {{- end -}}
 {{- end -}}
 
-{{- $desc = replaceRE `\s+` " " (string $desc) -}}
+{{/* Bodies that show markup as text (escaped tags, e.g. raw HTML the
+     Markdown renderer escaped) still contain tags once entities are decoded. */}}
+{{- $desc = replaceRE `</?[A-Za-z][A-Za-z0-9]*(\s[^<>]*)?>` " " (string $desc) -}}
+{{- $desc = trim (replaceRE `\s+` " " $desc) " " -}}
 {{- if not $desc }}{{ $desc = site.Params.description }}{{ end -}}
 {{- return $desc -}}
