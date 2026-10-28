@@ -13,7 +13,7 @@ Hard checks (exit 1 if any fails):
   4. Every <img> carries an alt attribute (a bare `alt` counts as present).
   5. Every homepage <img> carries both width and height, so the browser reserves
      its box before the file loads (#869).
-  6. Breadcrumb JSON-LD (#867): at most one BreadcrumbList per page; every
+  7. Breadcrumb JSON-LD (#867): at most one BreadcrumbList per page; every
      itemListElement is a non-empty list of objects; every ListItem has a
      non-empty item URL; positions run 1..n; the page has a canonical link and
      the last item is that URL; no name repeats, except that the current page
@@ -237,7 +237,7 @@ def main(public_dir):
         "2. homepage free of mermaid/highlight.js assets": check_homepage_assets(home),
         "4. every <img> has an alt attribute": check_img_alt(pages),
         "5. every homepage <img> has width and height": check_homepage_img_dims(home),
-        "6. breadcrumb JSON-LD is well formed": check_breadcrumbs(pages),
+        "7. breadcrumb JSON-LD is well formed": check_breadcrumbs(pages),
     }
     conditional = check_conditional_assets(pages)
     results["3. conditional highlight.js / mermaid loading"] = [
