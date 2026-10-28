@@ -1,5 +1,5 @@
 ---
-title: "Submit a Replication to FReD"
+title: "Submit a Replication to FLoRA"
 url: "/replication-hub/submit/"
 ---
 

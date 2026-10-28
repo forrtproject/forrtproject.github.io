@@ -379,7 +379,7 @@
   parent = "replications"
 
 [[main]]
-  name = "Submit a replication to FReD"
+  name = "Submit a replication to FLoRA"
   url = "/replication-hub/submit"
   weight = 72
   parent = "replications"
