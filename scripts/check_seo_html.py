@@ -13,9 +13,9 @@ Hard checks (exit 1 if any fails):
   4. Every <img> carries an alt attribute (a bare `alt` counts as present).
   5. Every homepage <img> carries both width and height, so the browser reserves
      its box before the file loads (#869).
-  6. The homepage share image (og:image, twitter:image) is a PNG or JPEG with
-     og:image:width/height, and twitter:card is summary_large_image. X and
-     LinkedIn show no preview for WebP (#870).
+  6. The homepage share image (og:image, twitter:image) is a 1200x630 PNG or
+     JPEG (per og:image:width/height), and twitter:card is summary_large_image.
+     X and LinkedIn show no preview for WebP (#870).
 
 Report-only sections (never fail): pages with zero or several <h1>, the
 site-wide share of images that carry both width and height, and pages whose
@@ -165,9 +165,9 @@ def check_homepage_share_image(home):
     for key in ("og:image", "twitter:image"):
         if not is_share_format(meta.get(key, "")):
             problems.append("%s is %r, not a PNG or JPEG" % (key, meta.get(key)))
-    for key in ("og:image:width", "og:image:height"):
-        if not meta.get(key):
-            problems.append("%s missing" % key)
+    for key, expected in (("og:image:width", "1200"), ("og:image:height", "630")):
+        if meta.get(key) != expected:
+            problems.append("%s is %r, expected %s" % (key, meta.get(key), expected))
     if meta.get("twitter:card") != "summary_large_image":
         problems.append("twitter:card is %r" % meta.get("twitter:card"))
     return problems
@@ -196,7 +196,7 @@ def main(public_dir):
         "2. homepage free of mermaid/highlight.js assets": check_homepage_assets(home),
         "4. every <img> has an alt attribute": check_img_alt(pages),
         "5. every homepage <img> has width and height": check_homepage_img_dims(home),
-        "6. homepage share image is PNG/JPEG with twitter:card": check_homepage_share_image(home),
+        "6. homepage share image is 1200x630 PNG/JPEG with twitter:card": check_homepage_share_image(home),
     }
     conditional = check_conditional_assets(pages)
     results["3. conditional highlight.js / mermaid loading"] = [
