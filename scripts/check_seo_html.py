@@ -13,16 +13,28 @@ Hard checks (exit 1 if any fails):
   4. Every <img> carries an alt attribute (a bare `alt` counts as present).
   5. Every homepage <img> carries both width and height, so the browser reserves
      its box before the file loads (#869).
+  6. Every indexable page (no robots noindex, not a meta-refresh redirect) has a
+     non-empty meta description (#864).
+  7. No meta description contains a double-escaped entity such as `&amp;ldquo;`
+     (#864).
 
-Report-only sections (never fail): pages with zero or several <h1>, and the
-site-wide share of images that carry both width and height.
+Report-only sections (never fail): pages with zero or several <h1>, the
+site-wide share of images that carry both width and height, and indexable pages
+whose description repeats the homepage's, is shared with another page, or looks
+cut mid-word.
 """
 
 import os
+import re
 import sys
+from collections import Counter
 from html.parser import HTMLParser
+from urllib.parse import unquote, urlparse
 
 MAX_LISTED = 20
+# Attribute values arrive already unescaped, so any entity left in them was
+# escaped twice in the HTML (e.g. `&amp;ldquo;`).
+LITERAL_ENTITY = re.compile(r"&(#\d+|#x[0-9a-fA-F]+|[A-Za-z][A-Za-z0-9]*);")
 
 
 class PageParser(HTMLParser):
@@ -32,6 +44,8 @@ class PageParser(HTMLParser):
         self.urls = []
         self.imgs = []
         self.code_classes = []
+        self.metas = []
+        self.canonical = None
         self._in_pre = False
         self._h1_depth = 0
         self._h1_buffer = []
@@ -44,8 +58,12 @@ class PageParser(HTMLParser):
             url = attrs.get("src") or attrs.get("href")
             if url:
                 self.urls.append(url)
+            if tag == "link" and (attrs.get("rel") or "").lower() == "canonical":
+                self.canonical = attrs.get("href")
         elif tag == "img":
             self.imgs.append(attrs)
+        elif tag == "meta":
+            self.metas.append(attrs)
         elif tag == "pre":
             self._in_pre = True
         elif tag == "code" and self._in_pre:
@@ -72,6 +90,20 @@ class Page:
         self.urls = parser.urls
         self.imgs = parser.imgs
         self.code_blocks = [cls.split() for cls in parser.code_classes]
+        self.descriptions = [m.get("content") or "" for m in parser.metas
+                             if (m.get("name") or "").lower() == "description"]
+        robots = " ".join((m.get("content") or "").lower() for m in parser.metas
+                          if (m.get("name") or "").lower() == "robots")
+        refresh = any((m.get("http-equiv") or "").lower() == "refresh"
+                      for m in parser.metas)
+        own = "/" + os.path.dirname(path).replace(os.sep, "/")
+        own = own.rstrip("/") + "/"
+        elsewhere = (parser.canonical is not None and
+                     unquote(urlparse(parser.canonical).path) != unquote(own))
+        # Redirect stubs, noindexed pages and pages canonicalised to another URL
+        # (pagination pages point at page 1) never reach search results as such.
+        self.noindex = "noindex" in robots
+        self.indexable = not self.noindex and not refresh and not elsewhere
 
     def loads(self, needle):
         return any(needle in url for url in self.urls)
@@ -145,6 +177,40 @@ def check_img_alt(pages):
             for p in pages if p.imgs_without_alt]
 
 
+def check_description_present(pages):
+    return [p.path for p in pages
+            if p.indexable and not any(d.strip() for d in p.descriptions)]
+
+
+def check_description_entities(pages):
+    return ["%s (%s)" % (p.path, ", ".join(sorted(set(
+                m.group(0) for d in p.descriptions for m in LITERAL_ENTITY.finditer(d)))))
+            for p in pages if any(LITERAL_ENTITY.search(d) for d in p.descriptions)]
+
+
+def description_report(pages, home):
+    """Report-only: generic, duplicated and hard-cut descriptions on indexable pages."""
+    described = [(p, p.descriptions[0].strip()) for p in pages
+                 if p.indexable and p.descriptions and p.descriptions[0].strip()]
+    generic = home.descriptions[0].strip() if home and home.descriptions else None
+    print_items("indexable pages reusing the homepage description",
+                [p.path for p, d in described if d == generic and p is not home])
+    # Deliberately noindexed pages (empty author profiles) still show in shares
+    # and should describe themselves rather than the site.
+    print_items("noindexed pages reusing the homepage description",
+                [p.path for p in pages if p.noindex and generic is not None
+                 and any(d.strip() == generic for d in p.descriptions)])
+    counts = Counter(d for _p, d in described)
+    dup_pages = sorted(p.path for p, d in described if counts[d] > 1)
+    dup_groups = sum(1 for n in counts.values() if n > 1)
+    print_items("indexable pages sharing a description (%d distinct descriptions)"
+                % dup_groups, dup_pages)
+    # A description at or beyond the old 254-character cut that ends on a letter
+    # or digit was almost certainly chopped mid-word.
+    print_items("descriptions of 250+ characters ending mid-word",
+                [p.path for p, d in described if len(d) >= 250 and d[-1].isalnum()])
+
+
 def print_items(title, items):
     print("  %s: %d" % (title, len(items)))
     for item in items[:MAX_LISTED]:
@@ -163,6 +229,8 @@ def main(public_dir):
         "2. homepage free of mermaid/highlight.js assets": check_homepage_assets(home),
         "4. every <img> has an alt attribute": check_img_alt(pages),
         "5. every homepage <img> has width and height": check_homepage_img_dims(home),
+        "6. every indexable page has a meta description": check_description_present(pages),
+        "7. no double-escaped entity in a meta description": check_description_entities(pages),
     }
     conditional = check_conditional_assets(pages)
     results["3. conditional highlight.js / mermaid loading"] = [
@@ -192,6 +260,7 @@ def main(public_dir):
     if all_imgs:
         print("  images site-wide: %d, with width and height: %d (%.1f%%)"
               % (all_imgs, all_imgs - unsized, 100.0 * (all_imgs - unsized) / all_imgs))
+    description_report(pages, home)
 
     return 1 if any(results.values()) else 0
 
