@@ -13,9 +13,9 @@ Hard checks (exit 1 if any fails):
   4. Every <img> carries an alt attribute (a bare `alt` counts as present).
   5. Every homepage <img> carries both width and height, so the browser reserves
      its box before the file loads (#869).
-  6. Every indexable page (no robots noindex, not a meta-refresh redirect) has a
+  9. Every indexable page (no robots noindex, not a meta-refresh redirect) has a
      non-empty meta description (#864).
-  7. No meta description contains a double-escaped entity such as `&amp;ldquo;`
+  10. No meta description contains a double-escaped entity such as `&amp;ldquo;`
      (#864).
 
 Report-only sections (never fail): pages with zero or several <h1>, the
@@ -229,18 +229,18 @@ def main(public_dir):
         "2. homepage free of mermaid/highlight.js assets": check_homepage_assets(home),
         "4. every <img> has an alt attribute": check_img_alt(pages),
         "5. every homepage <img> has width and height": check_homepage_img_dims(home),
-        "6. every indexable page has a meta description": check_description_present(pages),
-        "7. no double-escaped entity in a meta description": check_description_entities(pages),
+        "9. every indexable page has a meta description": check_description_present(pages),
+        "10. no double-escaped entity in a meta description": check_description_entities(pages),
     }
     conditional = check_conditional_assets(pages)
     results["3. conditional highlight.js / mermaid loading"] = [
         item for items in conditional.values() for item in items]
 
     print("\nSummary")
-    for title in sorted(results):
+    for title in sorted(results, key=lambda t: int(t.split(".")[0])):
         print("  [%s] %s" % ("FAIL" if results[title] else "PASS", title))
 
-    for title in sorted(results):
+    for title in sorted(results, key=lambda t: int(t.split(".")[0])):
         if not results[title]:
             continue
         print("\nFAIL %s" % title)
