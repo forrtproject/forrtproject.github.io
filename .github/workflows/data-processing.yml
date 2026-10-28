@@ -5,7 +5,8 @@ name: Data Processing
 # Purpose: Automated data fetching and processing for FORRT website content
 # 
 # Triggers:
-# - Weekly on Sundays at midnight UTC (scheduled)
+# - Daily at midnight UTC (scheduled); some steps run less often (FReD citation on Sundays,
+#   contributor analysis and the GA data PR on the 1st of the month)
 # - Manual trigger via GitHub Actions UI (workflow_dispatch)
 # 
 # Data Sources Processed:
