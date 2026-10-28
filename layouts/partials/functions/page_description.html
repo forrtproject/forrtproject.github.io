@@ -1,0 +1,111 @@
+{{/* Returns the page's meta description as plain text with real characters
+     (no HTML entities), so the template's attribute escaping encodes it exactly
+     once. Not truncated: `site_head.html` shortens it per use.
+
+     Order (as in the search index, `_default/index.json`): front matter
+     `summary`, `abstract`, `definition`, `description`, then the page body,
+     then a description composed from the page's own metadata for author
+     profiles, curated resources without a usable abstract, subtitles of list
+     pages, taxonomy pages and widget pages. The site-wide description is the
+     last resort and the homepage's own. (#864) */}}
+{{- $page := . -}}
+{{- $ws := " \n\r\t" -}}
+{{- $placeholder := `(?i)^(n\.?\s?a\.?|nan|none|null|tbd|coming soon\.?|-+)$` -}}
+{{/* Closing block tags become spaces so paragraphs do not run together
+     ("alone.The paper") once the markup is stripped. */}}
+{{- $block_end := `(<br\s*/?>|</(p|li|h[1-6]|div|td|blockquote)>)` -}}
+{{- $desc := "" -}}
+
+{{- if $page.IsHome -}}
+  {{- $desc = site.Params.description -}}
+{{- else if and (eq $page.Section "authors") $page.Params.name -}}
+  {{/* Author profiles: the bio or the body, unless it is a template placeholder
+       ("Coming soon.", "nan"); otherwise name, role, organisations and
+       interests. Empty, noindexed profiles still get their own name-led line. */}}
+  {{- $about := $page.Params.bio | default $page.Summary -}}
+  {{- $about = trim ($page.RenderString (string $about) | replaceRE $block_end "$1 " | plainify | htmlUnescape) $ws -}}
+  {{- if and $about (not (findRE $placeholder $about)) -}}
+    {{- $desc = $about -}}
+  {{- else -}}
+    {{- $facts := slice -}}
+    {{- with $page.Params.role }}{{ $facts = $facts | append . }}{{ end -}}
+    {{- range $page.Params.organizations }}{{ with .name }}{{ $facts = $facts | append . }}{{ end }}{{ end -}}
+    {{- $desc = printf "FORRT profile of %s" $page.Params.name -}}
+    {{- with $facts }}{{ $desc = printf "%s, %s" $desc (delimit . ", ") }}{{ end -}}
+    {{- $desc = printf "%s." $desc -}}
+    {{- $interests := slice -}}
+    {{- range $page.Params.interests }}{{ if not (findRE `(?i)^interest \d+$` .) }}{{ $interests = $interests | append . }}{{ end }}{{ end -}}
+    {{- with $interests }}{{ $desc = printf "%s Interests: %s." $desc (delimit . ", ") }}{{ end -}}
+  {{- end -}}
+{{- else -}}
+  {{- with $page.Params.summary -}}
+    {{- $desc = . -}}
+  {{- else -}}
+    {{- with $page.Params.abstract -}}
+      {{- $desc = . -}}
+    {{- else -}}
+      {{- with $page.Params.definition -}}
+        {{- $desc = . -}}
+      {{- else with $page.Params.description -}}
+        {{- $desc = . -}}
+      {{- else -}}
+        {{- $desc = $page.Summary -}}
+      {{- end -}}
+    {{- end -}}
+  {{- end -}}
+  {{/* Front matter is raw Markdown (`**bold**`, links); `.Summary` is HTML.
+       Render, strip the markup, then decode entities such as `&ldquo;` that
+       Markdown typography produced. */}}
+  {{- $desc = trim ($page.RenderString (string $desc) | replaceRE $block_end "$1 " | plainify | htmlUnescape) $ws -}}
+
+  {{/* Curated resources whose abstract is a placeholder ("n.a.") or shared
+       with other resources: lead with the resource's own title, type and
+       creators so the description identifies it. */}}
+  {{- if and (eq $page.Section "curated_resources") $page.IsPage -}}
+    {{- $shared := false -}}
+    {{- with $page.Params.abstract -}}
+      {{- $counts := partialCached "functions/curated_abstract_counts.html" $page "curated-abstract-counts" -}}
+      {{- $shared = gt (index $counts (partial "functions/abstract_key.html" .) | default 0) 1 -}}
+    {{- end -}}
+    {{- $empty := or (not $desc) (findRE $placeholder $desc) -}}
+    {{- if or $empty $shared -}}
+      {{- $lead := $page.Title -}}
+      {{- with $page.Params.material_type }}{{ $lead = printf "%s: %s" $lead (delimit . ", ") }}{{ end -}}
+      {{- with $page.Params.creators -}}
+        {{- $who := delimit (first 3 .) ", " -}}
+        {{- if gt (len .) 3 }}{{ $who = printf "%s et al." $who }}{{ end -}}
+        {{- $lead = printf "%s by %s" $lead $who -}}
+      {{- end -}}
+      {{- $desc = cond $empty (printf "%s." $lead) (printf "%s. %s" $lead $desc) -}}
+    {{- end -}}
+  {{- end -}}
+
+  {{- if not $desc -}}
+    {{- if $page.Params.subtitle -}}
+      {{/* List pages without body text show their subtitle as the lead. */}}
+      {{- $desc = trim ($page.RenderString (string $page.Params.subtitle) | plainify | htmlUnescape) $ws -}}
+    {{- else if eq $page.Kind "term" -}}
+      {{- $kind := replace $page.Data.Singular "_" " " -}}
+      {{- $desc = printf "Browse the %d FORRT pages filed under the %s “%s”." (len $page.Pages) $kind $page.Title -}}
+    {{- else if eq $page.Kind "taxonomy" -}}
+      {{- $terms := slice -}}
+      {{- range $page.Data.Terms.ByCount }}{{ $terms = $terms | append .Page.Title }}{{ end -}}
+      {{- $desc = printf "Browse all %d %s used on FORRT: %s." (len $terms) (replace $page.Data.Plural "_" " ") (delimit $terms ", ") -}}
+    {{- else if eq $page.Type "widget_page" -}}
+      {{/* Widget pages render no body of their own: use the first widget,
+           in the order the page lays them out, that has text. */}}
+      {{- range where ($page.Resources.ByType "page") ".Params.active" "!=" false -}}
+        {{- if not $desc -}}
+          {{- $desc = trim (.Plain | htmlUnescape) $ws -}}
+        {{- end -}}
+      {{- end -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
+
+{{/* Bodies that show markup as text (escaped tags, e.g. raw HTML the
+     Markdown renderer escaped) still contain tags once entities are decoded. */}}
+{{- $desc = replaceRE `</?[A-Za-z][A-Za-z0-9]*(\s[^<>]*)?/?>` " " (string $desc) -}}
+{{- $desc = trim (replaceRE `\s+` " " $desc) " " -}}
+{{- if not $desc }}{{ $desc = site.Params.description }}{{ end -}}
+{{- return $desc -}}
