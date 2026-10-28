@@ -1,0 +1,95 @@
+{{/* LearningResource JSON-LD for curated-resource pages (#863).
+
+     Built only from the page's front matter: fields that are absent, empty or
+     placeholders are left out rather than emitted as "" or []. Values pass
+     through as the sheet records them (creators exactly as the page's "By ..."
+     line shows them); cleaning them up belongs upstream.
+
+     `dateModified` is the page's resolved Lastmod, the date the sitemap and
+     `article:modified_time` use. The sheet `timestamp` is a submission time
+     with placeholder values, so it is not used. */}}
+{{- if and (eq .Type "curated_resources") .IsPage -}}
+  {{- $p := .Params -}}
+
+  {{/* Same entity as the home page's Organization block (same `@id`). */}}
+  {{- $provider := dict
+      "@type" (site.Params.site_type | default "Organization")
+      "@id" site.BaseURL
+      "name" (site.Params.org_name | default site.Title)
+      "url" site.BaseURL -}}
+
+  {{- $lr := dict
+      "@context" "https://schema.org"
+      "@type" "LearningResource"
+      "name" .Title
+      "url" .Permalink
+      "provider" $provider -}}
+
+  {{- with partial "functions/clean_list.html" $p.abstract -}}
+    {{- $lr = merge $lr (dict "abstract" (index . 0)) -}}
+  {{- end -}}
+
+  {{- with partial "functions/clean_list.html" $p.material_type -}}
+    {{- $lr = merge $lr (dict "learningResourceType" .) -}}
+  {{- end -}}
+
+  {{- with partial "functions/clean_list.html" $p.education_level -}}
+    {{- $lr = merge $lr (dict "educationalLevel" .) -}}
+  {{- end -}}
+
+  {{- $audience := slice -}}
+  {{- range partial "functions/clean_list.html" $p.primary_user -}}
+    {{- $audience = $audience | append (dict "@type" "Audience" "audienceType" .) -}}
+  {{- end -}}
+  {{- with $audience }}{{ $lr = merge $lr (dict "audience" .) }}{{ end -}}
+
+  {{- $about := slice -}}
+  {{- range partial "functions/clean_list.html" $p.subject_areas -}}
+    {{- $about = $about | append (dict "@type" "Thing" "name" .) -}}
+  {{- end -}}
+  {{- with $about }}{{ $lr = merge $lr (dict "about" .) }}{{ end -}}
+
+  {{/* `language` names the language of the linked resource; schema.org wants
+       BCP-47 tags. Names without a confident tag (e.g. "Greek (abstract
+       only)") are left out. */}}
+  {{- $tags := dict
+      "english" "en" "spanish" "es" "german" "de" "dutch" "nl" "french" "fr"
+      "portuguese" "pt" "portugese" "pt" "japanese" "ja" "italian" "it"
+      "serbian" "sr" "vietnamese" "vi" "chinese" "zh" "greek" "el"
+      "turkish" "tr" "maori" "mi" "khmer" "km" "swedish" "sv" "polish" "pl"
+      "korean" "ko" "ukrainian" "uk" "uzbek" "uz" "slovak" "sk" -}}
+  {{- $langs := slice -}}
+  {{- range partial "functions/clean_list.html" $p.language -}}
+    {{- with index $tags (lower .) -}}
+      {{- if not (in $langs .) }}{{ $langs = $langs | append . }}{{ end -}}
+    {{- end -}}
+  {{- end -}}
+  {{- with $langs -}}
+    {{- $lr = merge $lr (dict "inLanguage" (cond (eq (len .) 1) (index . 0) .)) -}}
+  {{- end -}}
+
+  {{- if not .Lastmod.IsZero -}}
+    {{- $lr = merge $lr (dict "dateModified" (.Lastmod.Format "2006-01-02T15:04:05Z07:00")) -}}
+  {{- end -}}
+
+  {{/* Names only, no identifiers. Organisation vs person is inferred from the
+       name; anything not recognisably an organisation is a Person. Entries
+       over 150 characters are sentence fragments that leaked into the sheet's
+       creators column, not names, so they are skipped. */}}
+  {{- $orgRE := `(?i)(\b(team|project|consortium|society|network|group|lab|initiative|framework|alliance|association|office|library|carpentries|forrt|unesco|nih|ukrn|wikipedia)\b|center|centre|institut|universit|foundation|collaborat)` -}}
+  {{- $creators := slice -}}
+  {{- range partial "functions/clean_list.html" $p.creators -}}
+    {{- if le (strings.RuneCount .) 150 -}}
+      {{- $type := cond (gt (len (findRE $orgRE . 1)) 0) "Organization" "Person" -}}
+      {{- $creators = $creators | append (dict "@type" $type "name" .) -}}
+    {{- end -}}
+  {{- end -}}
+  {{- with $creators }}{{ $lr = merge $lr (dict "creator" .) }}{{ end -}}
+
+  {{- with partial "functions/clean_list.html" $p.link_to_resource -}}
+    {{- $url := index . 0 -}}
+    {{- if findRE `^https?://` $url 1 }}{{ $lr = merge $lr (dict "isBasedOn" $url) }}{{ end -}}
+  {{- end -}}
+
+  <script type="application/ld+json">{{ $lr | jsonify | safeJS }}</script>
+{{- end -}}
