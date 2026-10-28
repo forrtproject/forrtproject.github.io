@@ -38,40 +38,20 @@
   <meta name="robots" content="noindex, nofollow">
   {{ end }}
 
-  {{/* Generate page description. */}}
-  {{ $desc := "" }}
-  {{ if .Params.summary }}
-    {{ $desc = .Params.summary }}
-  {{ else if .Params.abstract }}
-    {{ $desc = .Params.abstract }}
-  {{ else if .Params.definition }}
-    {{ $desc = .Params.definition }}
-  {{ else if .IsPage }}
-    {{ $desc = .Summary }}
-  {{ end }}
-  {{/* `summary`, `abstract` and `definition` are raw Markdown in front matter,
-       so `**bold**`, `[text](url)` and escaped brackets were reaching search
-       results verbatim (262 glossary definitions carry bold markers alone).
-       Render first, then flatten: `.Summary` is already HTML and passes through
-       unchanged, and `plainify` strips the markup either way. */}}
-  {{ $desc = trim (.RenderString $desc | plainify) " \n\r\t" }}
-  {{/* Widget-composed pages (`headless = true`) render no body of their own, so
-       `.Summary` is empty for them even though `.IsPage` is true. The branch
-       above therefore matches and sets an empty description, which is why the
-       site-wide fallback has to test the *result* for content rather than sit
-       at the end of the chain as another `else if`. */}}
-  {{ if not $desc }}
-    {{ $desc = site.Params.description | default $superuser_role }}
-  {{ end }}
-  <meta name="description" content='{{ printf "%.254s" $desc }}'>
-  {{/* Shorter description for social previews (avoids mid-word truncation). */}}
+  {{/* Generate page description: page-specific plain text (see the partial),
+       shortened on a word boundary. `truncate` HTML-escapes its input, so the
+       result is decoded again and the attribute escaping encodes it once. */}}
+  {{ $full_desc := partial "functions/page_description.html" . }}
+  {{ $desc := replaceRE ` …$` "…" (truncate 250 $full_desc | htmlUnescape) }}
+  <meta name="description" content='{{ $desc }}'>
+  {{/* Shorter description for social previews. */}}
   {{ $og_desc := "" }}
   {{ if .Params.sharing_description }}
     {{ $og_desc = .Params.sharing_description }}
   {{ else if .Params.og_description }}
     {{ $og_desc = .Params.og_description }}
   {{ else }}
-    {{ $og_desc = printf "%.200s" $desc }}
+    {{ $og_desc = replaceRE ` …$` "…" (truncate 200 $full_desc | htmlUnescape) }}
   {{ end }}
 
   {{ $page_lang := partial "functions/page_language.html" . }}
@@ -338,7 +318,7 @@
     {{ if not .Date.IsZero }}<meta property="og:updated_time" content="{{ .Date.Format "2006-01-02T15:04:05-07:00" | safeHTML }}">{{ end }}
   {{ end }}
 
-  {{ partial "jsonld/main" (dict "page" . "summary" $desc) }}
+  {{ partial "jsonld/main" (dict "page" . "summary" $full_desc) }}
 
   {{ partial "cookie_consent" . }}
 
