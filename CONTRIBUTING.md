@@ -186,7 +186,7 @@ The FORRT website uses a dual deployment strategy to ensure quality and enable c
 
 ### How Staging Works
 
-Automatic staging collects open, non-draft PRs targeting `main` and merges them in sequence onto a temporary branch. Draft PRs neither trigger a staging build nor appear in one; mark your PR **Ready for review** when you want it previewed. Conflicting PRs are skipped and logged. Inclusion in staging does not mean a PR has passed review or been approved for merging. The workflow posts staging results to PRs and retains two recent staging branches.
+Automatic staging collects open, non-draft PRs targeting `main` and merges them in sequence onto a temporary branch. Automatic runs skip draft PRs, so mark your PR **Ready for review** when you want it previewed. Conflicting PRs are skipped and logged. Inclusion in staging does not mean a PR has passed review or been approved for merging. The workflow posts staging results to PRs and retains two recent staging branches.
 
 **External forks cannot trigger their own staging deployment.** GitHub withholds repository secrets from fork-triggered runs, so those runs fail with an explanatory message instead of deploying. Fork PRs can still appear in the next aggregate build triggered by a same-repository PR or the monthly schedule. For an earlier preview, ask a maintainer in your PR. The maintainer runs **Actions → Staging Aggregate Deployment → Run workflow** from the upstream `main` branch and enters the PR number in `single_pr`. The workflow resolves the public fork automatically; the maintainer does not need to select the fork branch. This previews the selected PR rather than the full aggregate, and replaces the shared staging site until the next staging deployment.
 
