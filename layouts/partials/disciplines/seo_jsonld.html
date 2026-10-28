@@ -17,4 +17,4 @@
 {{ $itemlist := dict "@type" "ItemList" "@id" (printf "%s#itemlist" .Permalink) "name" "Open Research Across Disciplines" "description" "Fields and disciplines with open research resources and examples." "numberOfItems" (len $data.fields) "itemListElement" $elements }}
 {{ $graph := slice $webpage $itemlist }}
 {{ $root := dict "@context" "https://schema.org" "@graph" $graph }}
-<script type="application/ld+json">{{ $root | jsonify | safeHTML }}</script>
+<script type="application/ld+json">{{ $root | jsonify | safeJS }}</script>
