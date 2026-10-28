@@ -6,11 +6,12 @@
      every page. Abstracts are compared on their first 150 characters
      (whitespace-normalised), because descriptions are shortened and two
      abstracts that differ only further on still produce the same snippet.
-     Output: map of md5(abstract prefix) to its number of resources. */}}
+     Output: map of abstract key (`functions/abstract_key.html`) to its
+     number of resources. */}}
 {{- $counts := newScratch -}}
 {{- range where site.RegularPages "Section" "curated_resources" -}}
   {{- with .Params.abstract -}}
-    {{- $counts.Add (md5 (substr (replaceRE `\s+` " " (trim . " \n\r\t")) 0 150)) 1 -}}
+    {{- $counts.Add (partial "functions/abstract_key.html" .) 1 -}}
   {{- end -}}
 {{- end -}}
 {{- return $counts.Values -}}

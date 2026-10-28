@@ -20,8 +20,8 @@ Hard checks (exit 1 if any fails):
 
 Report-only sections (never fail): pages with zero or several <h1>, the
 site-wide share of images that carry both width and height, and indexable pages
-whose description repeats the homepage's, is shared with another page, contains
-HTML markup as text, or looks cut mid-word.
+whose description repeats the homepage's, is shared with another page or
+contains HTML markup as text.
 """
 
 import os
@@ -33,7 +33,7 @@ from urllib.parse import unquote, urlparse
 
 MAX_LISTED = 20
 # Markup that survived flattening, e.g. an indented HTML block rendered as code.
-HTML_TAG = re.compile(r"</?[A-Za-z][A-Za-z0-9]*(\s[^<>]*)?>")
+HTML_TAG = re.compile(r"</?[A-Za-z][A-Za-z0-9]*(\s[^<>]*)?/?>")
 # Attribute values arrive already unescaped, so any entity left in them was
 # escaped twice in the HTML (e.g. `&amp;ldquo;`).
 LITERAL_ENTITY = re.compile(r"&(#\d+|#x[0-9a-fA-F]+|[A-Za-z][A-Za-z0-9]*);")
@@ -191,7 +191,7 @@ def check_description_entities(pages):
 
 
 def description_report(pages, home):
-    """Report-only: generic, duplicated and hard-cut descriptions on indexable pages."""
+    """Report-only: generic, duplicated and markup-containing descriptions on indexable pages."""
     described = [(p, p.descriptions[0].strip()) for p in pages
                  if p.indexable and p.descriptions and p.descriptions[0].strip()]
     generic = home.descriptions[0].strip() if home and home.descriptions else None
@@ -209,10 +209,6 @@ def description_report(pages, home):
                 % dup_groups, dup_pages)
     print_items("descriptions containing HTML markup as text",
                 [p.path for p, d in described if HTML_TAG.search(d)])
-    # A description at or beyond the old 254-character cut that ends on a letter
-    # or digit was almost certainly chopped mid-word.
-    print_items("descriptions of 250+ characters ending mid-word",
-                [p.path for p, d in described if len(d) >= 250 and d[-1].isalnum()])
 
 
 def print_items(title, items):

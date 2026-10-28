@@ -65,7 +65,7 @@
     {{- $shared := false -}}
     {{- with $page.Params.abstract -}}
       {{- $counts := partialCached "functions/curated_abstract_counts.html" $page "curated-abstract-counts" -}}
-      {{- $shared = gt (index $counts (md5 (substr (replaceRE `\s+` " " (trim . $ws)) 0 150)) | default 0) 1 -}}
+      {{- $shared = gt (index $counts (partial "functions/abstract_key.html" .) | default 0) 1 -}}
     {{- end -}}
     {{- $empty := or (not $desc) (findRE $placeholder $desc) -}}
     {{- if or $empty $shared -}}
@@ -105,7 +105,7 @@
 
 {{/* Bodies that show markup as text (escaped tags, e.g. raw HTML the
      Markdown renderer escaped) still contain tags once entities are decoded. */}}
-{{- $desc = replaceRE `</?[A-Za-z][A-Za-z0-9]*(\s[^<>]*)?>` " " (string $desc) -}}
+{{- $desc = replaceRE `</?[A-Za-z][A-Za-z0-9]*(\s[^<>]*)?/?>` " " (string $desc) -}}
 {{- $desc = trim (replaceRE `\s+` " " $desc) " " -}}
 {{- if not $desc }}{{ $desc = site.Params.description }}{{ end -}}
 {{- return $desc -}}
