@@ -177,7 +177,7 @@ def check_learning_resource(pages):
     bad = []
     for p in pages:
         parts = p.path.split(os.sep)
-        if len(parts) != 3 or parts[0] != "curated_resources" or parts[1] == "page":
+        if len(parts) != 3 or parts[0] != "curated_resources":
             continue
         try:
             blocks = [json.loads(b) for b in p.jsonld]
