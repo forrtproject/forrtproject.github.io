@@ -4,9 +4,9 @@ Hugo site for forrt.org. Setup, contribution workflow and staging are in `CONTRI
 
 ## Generated content: fix the source, then re-run the generator
 
-Much of the site is built from Google Sheets/Docs. To change such content, edit the source named in the generator's docstring and re-run the generator (or let the workflow run); commit only what the generator writes. The paths below that `data-processing.yml` uploads as `data-artifact` (`content/curated_resources/`, `content/glossary/`, `data/` except `partners.json` and `publications.yaml`, `static/data/`, `content/contributors/tenzing.md`, `content/contributor-analysis/`) are unpacked over the checkout by `deploy.yaml` before Hugo builds. A hand edit there is overwritten on the live site, and even a correct regenerated commit appears on forrt.org only after the next data-processing run on `main` (daily, or manual dispatch).
+Much of the site is built from Google Sheets/Docs. To change such content, edit the source named in the generator's docstring and re-run the generator (or let the workflow run); commit only what the generator writes. `data-processing.yml` uploads its checkout of the following paths as `data-artifact` (`content/curated_resources/`, `content/glossary/`, `data/` except `partners.json` and `publications.yaml`, `static/data/`, `static/partials/`, `content/contributors/tenzing.md`, `content/contributor-analysis/`), and `deploy.yaml` unpacks it over the checkout before Hugo builds. Any commit to these paths therefore reaches forrt.org only after the next data-processing run on `main` (daily, or manual dispatch), and a hand edit to a generated output is lost when its generator next runs (schedules below).
 
-Rebuilt on every daily `data-processing.yml` run:
+Rebuilt by `data-processing.yml`, daily unless noted; a manual dispatch rebuilds all of them except GA data:
 
 | Output | Generator | Source |
 |---|---|---|
@@ -16,8 +16,8 @@ Rebuilt on every daily `data-processing.yml` run:
 | `data/get_involved_projects.json` | `scripts/build_get_involved.py` | Get Involved sheet (fallback `scripts/get_involved/projects.csv`) |
 | `data/ga_data.json` | `scripts/download_ga_data.py` | Google Analytics (credentials in CI only) |
 | `content/contributors/tenzing.md` | `scripts/forrt_contribs/tenzing.py` | Tenzing sheets |
-| `static/data/fred_citation.txt` | `scripts/update_fred_citation.py` | FReD-data repo |
-| `content/contributor-analysis/` | `content/contributor-analysis/*.Rmd` (monthly) | Tenzing cache + Google Sheets |
+| `static/data/fred_citation.txt` | `scripts/update_fred_citation.py` (Sundays) | FReD-data repo |
+| `content/contributor-analysis/` | `content/contributor-analysis/*.Rmd` (1st of the month) | Tenzing cache + Google Sheets |
 
 Regenerated on demand; the output is committed:
 
