@@ -56,7 +56,7 @@ Choose the setup method that suits your workflow.
 **Prerequisites**
 
 - [Git](https://git-scm.com/downloads)
-- [Hugo Extended](https://gohugo.io/getting-started/installing/) **0.158.0**, matching the production and staging workflows
+- [Hugo Extended](https://gohugo.io/getting-started/installing/) — any recent version works for local development; production and staging use 0.158.0, so try that version if your build differs from the live site
 - A text editor of your choice — [Visual Studio Code](https://code.visualstudio.com/) is recommended.
 
 **Steps**
@@ -86,7 +86,7 @@ For R users who prefer to work entirely within RStudio.
 **Prerequisites**
 
 - [Git](https://git-scm.com/downloads)
-- [Hugo Extended](https://gohugo.io/getting-started/installing/) **0.158.0**, matching the production and staging workflows
+- [Hugo Extended](https://gohugo.io/getting-started/installing/) — any recent version works for local development; production and staging use 0.158.0, so try that version if your build differs from the live site
 - [R](https://cran.r-project.org/)
 - [RStudio](https://www.rstudio.com/products/rstudio/download/)
 - [blogdown](https://bookdown.org/yihui/blogdown/)
@@ -141,6 +141,8 @@ All proposed changes must be made on a feature branch and submitted via a Pull R
 
 5. **Push and open a Pull Request** — push your branch and open a PR targeting the `main` branch of `forrtproject/forrtproject.github.io`. Use `git push -u origin fix-typo-contributing` (or your branch name). Link any related issues and briefly summarise your changes.
 
+6. **Check the automated feedback** — a spell checker runs on every PR. On PRs from this repository it posts its results as a comment; on PRs from forks they appear in the workflow run summary under the **Checks** tab. Fix genuine typos; if a correct word is flagged (for example, a name or technical term), add it to [`.codespell-ignore.txt`](.codespell-ignore.txt).
+
 For more on Git, see the [official documentation](https://docs.github.com/en/get-started/using-git/about-git).
 
 ### Contributing with AI tools
@@ -176,7 +178,7 @@ The FORRT website uses a dual deployment strategy to ensure quality and enable c
 |---|---|
 | URL | [https://staging.forrt.org](https://staging.forrt.org) |
 | Workflow | `.github/workflows/staging-aggregate.yaml` |
-| Trigger | Same-repository PR opened/updated against `main`; 1st of each month; manual dispatch |
+| Trigger | Non-draft same-repository PR opened, updated or marked ready for review against `main`; 1st of each month; manual dispatch |
 | Target | External repository (`forrtproject/webpage-staging`) |
 | Purpose | Preview the combined state of all open, compatible PRs |
 
@@ -184,7 +186,7 @@ The FORRT website uses a dual deployment strategy to ensure quality and enable c
 
 ### How Staging Works
 
-Automatic staging collects open, non-draft PRs targeting `main` and merges them in sequence onto a temporary branch. Conflicting PRs are skipped and logged. Inclusion in staging does not mean a PR has passed review or been approved for merging. The workflow posts staging results to PRs and retains two recent staging branches.
+Automatic staging collects open, non-draft PRs targeting `main` and merges them in sequence onto a temporary branch. Draft PRs neither trigger a staging build nor appear in one; mark your PR **Ready for review** when you want it previewed. Conflicting PRs are skipped and logged. Inclusion in staging does not mean a PR has passed review or been approved for merging. The workflow posts staging results to PRs and retains two recent staging branches.
 
 **External forks cannot trigger their own staging deployment.** GitHub withholds repository secrets from fork-triggered runs, so those runs fail with an explanatory message instead of deploying. Fork PRs can still appear in the next aggregate build triggered by a same-repository PR or the monthly schedule. For an earlier preview, ask a maintainer in your PR. The maintainer runs **Actions → Staging Aggregate Deployment → Run workflow** from the upstream `main` branch and enters the PR number in `single_pr`. The workflow resolves the public fork automatically; the maintainer does not need to select the fork branch. This previews the selected PR rather than the full aggregate, and replaces the shared staging site until the next staging deployment.
 
