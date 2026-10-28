@@ -178,7 +178,7 @@ The FORRT website uses a dual deployment strategy to ensure quality and enable c
 |---|---|
 | URL | [https://staging.forrt.org](https://staging.forrt.org) |
 | Workflow | `.github/workflows/staging-aggregate.yaml` |
-| Trigger | Non-draft same-repository PR opened, updated or marked ready for review against `main`; 1st of each month; manual dispatch |
+| Trigger | Non-draft same-repository PR opened, updated, reopened or marked ready for review against `main`; 1st of each month; manual dispatch |
 | Target | External repository (`forrtproject/webpage-staging`) |
 | Purpose | Preview the combined state of all open, compatible PRs |
 
