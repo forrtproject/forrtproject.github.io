@@ -3,7 +3,8 @@
     "title": "Scientific apophenia in strategic management research: Significance tests & mistaken inference",
     "link_to_resource": "https://doi.org/10.1002/smj.2459",
     "creators": [
-        "BRENT GOLDFARB and ANDREW A. KING"
+        "Brent Goldfarb",
+        "Andrew A. King"
     ],
     "material_type": [
         "Primary Source",
@@ -40,5 +41,5 @@
     "in-clusters": false,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2020-05-28"
+    "lastmod": "2026-10-29"
 }

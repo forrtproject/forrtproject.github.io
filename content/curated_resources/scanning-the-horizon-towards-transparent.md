@@ -11,7 +11,8 @@
         "Marcus R. Munaf\u00f2",
         "Thomas E. Nichols",
         "Jean-Baptiste Poline",
-        "Edward Vul & Tal Yarkoni"
+        "Edward Vul",
+        "Tal Yarkoni"
     ],
     "material_type": [
         "Primary Source",
@@ -46,5 +47,5 @@
     "in-clusters": true,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2020-05-28"
+    "lastmod": "2026-10-29"
 }

@@ -3,7 +3,7 @@
     "title": "A. Solomon Kurz website",
     "link_to_resource": "https://solomonkurz.netlify.app/blog/",
     "creators": [
-        "A.Solomon Kurz"
+        "A. Solomon Kurz"
     ],
     "material_type": [
         "Reading"
@@ -34,5 +34,5 @@
     "in-clusters": false,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2020-11-21"
+    "lastmod": "2026-10-29"
 }

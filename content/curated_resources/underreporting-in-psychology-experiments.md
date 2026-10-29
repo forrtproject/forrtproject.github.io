@@ -5,7 +5,7 @@
     "creators": [
         "Annie Franco",
         "Neil Malhotra",
-        "and Gabor Simonovits"
+        "Gabor Simonovits"
     ],
     "material_type": [
         "Primary Source",
@@ -41,5 +41,5 @@
     "in-clusters": true,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2020-06-03"
+    "lastmod": "2026-10-29"
 }

@@ -3,7 +3,7 @@
     "title": "Editors at Philosophy & Public Affairs Resign; Will Launch New OA Journal",
     "link_to_resource": "https://dailynous.com/2024/05/22/editors-at-philosophy-will-launch-new-oa-journal/",
     "creators": [
-        "Justin Weinberg."
+        "Justin Weinberg"
     ],
     "material_type": [
         "Reading"
@@ -41,5 +41,5 @@
     "in-clusters": false,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2025-01-09"
+    "lastmod": "2026-10-29"
 }

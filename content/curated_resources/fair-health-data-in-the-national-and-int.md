@@ -13,7 +13,8 @@
         "Lea Michaelis",
         "Ines Reinecke",
         "Martin Sedlmayr",
-        "Sylvia Thun & Dagmar Krefting"
+        "Sylvia Thun",
+        "Dagmar Krefting"
     ],
     "material_type": [
         "Reading"
@@ -50,5 +51,5 @@
     "in-clusters": false,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2025-01-09"
+    "lastmod": "2026-10-29"
 }

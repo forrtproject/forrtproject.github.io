@@ -3,8 +3,7 @@
     "title": "Null hypothesis significance testing: a review of an old and continuing controversy",
     "link_to_resource": "https://doi.org/10.1037/1082-989x.5.2.241",
     "creators": [
-        "Nickerson",
-        "R. S. (2000)."
+        "R. S. Nickerson"
     ],
     "material_type": [
         "Primary Source",
@@ -35,5 +34,5 @@
     "in-clusters": true,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2020-05-31"
+    "lastmod": "2026-10-29"
 }

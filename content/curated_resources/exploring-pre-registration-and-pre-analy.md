@@ -12,7 +12,7 @@
     "education_level": [
         "Adult Education"
     ],
-    "abstract": "In recent years, the discipline of political science has experienced demands and moves toward greater research transparency. While in quantitative research increased transparency through replication has become a fairly accepted convention, in qualitative political science, the debate over whether and how to practice transparency is on-going. The practical tools and guidelines put forward to increase reliability of qualitative work so far emphasize a later stage of research, i.e. the phase of data analysis and sharing transcripts. To complement these suggestions, in this paper we explore how pre-registration and pre-analysis plans \u2013 as more recently introduced in experimental social science \u2013 can foster production transparency and analytic transparency in qualitative research. We argue that a \u201cqualitative version\u201d of pre-registration and PAPs can potentially incorporate a variety of approaches to inference.We discuss the general bene\ufb01ts and costs of such tools, and how they could inform qualitative research.Then, we provide a pre-registration template for such purposes.",
+    "abstract": "In recent years, the discipline of political science has experienced demands and moves toward greater research transparency. While in quantitative research increased transparency through replication has become a fairly accepted convention, in qualitative political science, the debate over whether and how to practice transparency is on-going. The practical tools and guidelines put forward to increase reliability of qualitative work so far emphasize a later stage of research, i.e. the phase of data analysis and sharing transcripts. To complement these suggestions, in this paper we explore how pre-registration and pre-analysis plans \u2013 as more recently introduced in experimental social science \u2013 can foster production transparency and analytic transparency in qualitative research. We argue that a \u201cqualitative version\u201d of pre-registration and PAPs can potentially incorporate a variety of approaches to inference. We discuss the general bene\ufb01ts and costs of such tools, and how they could inform qualitative research. Then, we provide a pre-registration template for such purposes.",
     "language": [
         "English"
     ],
@@ -50,5 +50,5 @@
     "in-clusters": false,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2023-10-30"
+    "lastmod": "2026-10-29"
 }

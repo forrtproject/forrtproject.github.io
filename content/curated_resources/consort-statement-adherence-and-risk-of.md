@@ -10,7 +10,8 @@
         "Mariana Minatel Braga",
         "Fausto Medeiros Mendes",
         "Maximiliano S\u00e9rgio Cenci",
-        "Marie-Charlotte Huysmans & Daniela Pr\u00f3cida Raggio"
+        "Marie-Charlotte Huysmans",
+        "Daniela Pr\u00f3cida Raggio"
     ],
     "material_type": [
         "Reading"
@@ -45,5 +46,5 @@
     "in-clusters": true,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2024-12-12"
+    "lastmod": "2026-10-29"
 }

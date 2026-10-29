@@ -12,7 +12,8 @@
         "Pablo Gomez",
         "Franki Y. H. Kung",
         "Paul C. McKee",
-        "Miriam P\u00e9rez & Sarah M. Stilwell"
+        "Miriam P\u00e9rez",
+        "Sarah M. Stilwell"
     ],
     "material_type": [
         "Reading"
@@ -50,5 +51,5 @@
     "in-clusters": true,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2025-02-20"
+    "lastmod": "2026-10-29"
 }

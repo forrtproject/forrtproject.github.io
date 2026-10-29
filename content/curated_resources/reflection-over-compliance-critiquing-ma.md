@@ -5,7 +5,7 @@
     "creators": [
         "Annayah MB Prosser",
         "Ralph Bagnall",
-        "and Nina Higson-Sweeney"
+        "Nina Higson-Sweeney"
     ],
     "material_type": [
         "Reading"
@@ -44,5 +44,5 @@
     "in-clusters": true,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2025-02-27"
+    "lastmod": "2026-10-29"
 }

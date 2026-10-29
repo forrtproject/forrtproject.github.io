@@ -3,7 +3,8 @@
     "title": "Why most of psychology is statistically unfalsifiable",
     "link_to_resource": "https://github.com/richarddmorey/psychology_resolution/blob/master/paper/response.pdf",
     "creators": [
-        "Richard Morey and Daniel Lakens"
+        "Richard Morey",
+        "Daniel Lakens"
     ],
     "material_type": [
         "Primary Source",
@@ -34,5 +35,5 @@
     "in-clusters": false,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2020-06-08"
+    "lastmod": "2026-10-29"
 }

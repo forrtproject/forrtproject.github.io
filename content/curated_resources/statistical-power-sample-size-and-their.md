@@ -4,10 +4,8 @@
     "link_to_resource": "https://doi.org/10.1001/jama.1994.03520020048013",
     "creators": [
         "David Moher",
-        "MSc; Corinne S. Dulberg",
-        "PhD",
-        "MPH; George A. Wells",
-        "PhD"
+        "Corinne S. Dulberg",
+        "George A. Wells"
     ],
     "material_type": [
         "Primary Source",
@@ -39,5 +37,5 @@
     "in-clusters": false,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2020-06-06"
+    "lastmod": "2026-10-29"
 }

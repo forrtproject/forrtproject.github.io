@@ -3,16 +3,11 @@
     "title": "Eight common but false objections to the discontinuation of significance testing in the analysis of research data.",
     "link_to_resource": "https://www.phil.vt.edu/dmayo/personal_website/Schmidt_Hunter_Eight_Common_But_False_Objections.pdf",
     "creators": [
-        "Schmidt",
-        "J. E. H. F. L.",
-        "Hunter",
-        "J. E.",
-        "Harlow",
-        "L.",
-        "Mulaik",
-        "S.",
-        "& Steiger",
-        "J."
+        "F. L. Schmidt",
+        "J. E. Hunter",
+        "L. Harlow",
+        "S. Mulaik",
+        "J. Steiger"
     ],
     "material_type": [
         "Primary Source",
@@ -47,5 +42,5 @@
     "in-clusters": false,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2020-06-10"
+    "lastmod": "2026-10-29"
 }

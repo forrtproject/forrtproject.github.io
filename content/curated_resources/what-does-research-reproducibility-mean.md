@@ -3,12 +3,9 @@
     "title": "What does research reproducibility mean?",
     "link_to_resource": "https://stm.sciencemag.org/content/8/341/341ps12/tab-pdf",
     "creators": [
-        "Goodman",
-        "S. N.",
-        "Fanelli",
-        "D.",
-        "& Ioannidis",
-        "J. P."
+        "S. N. Goodman",
+        "D. Fanelli",
+        "J. P. Ioannidis"
     ],
     "material_type": [
         "Primary Source",
@@ -45,5 +42,5 @@
     "in-clusters": false,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2020-05-24"
+    "lastmod": "2026-10-29"
 }

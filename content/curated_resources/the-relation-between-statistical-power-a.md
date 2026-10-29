@@ -3,12 +3,9 @@
     "title": "The relation between statistical power and inference in fMRI.",
     "link_to_resource": "https://doi.org/10.1371/journal.pone.0184923",
     "creators": [
-        "Cremers",
-        "H. R.",
-        "Wager",
-        "T. D.",
-        "& Yarkoni",
-        "T."
+        "H. R. Cremers",
+        "T. D. Wager",
+        "T. Yarkoni"
     ],
     "material_type": [
         "Primary Source",
@@ -45,5 +42,5 @@
     "in-clusters": true,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2020-06-06"
+    "lastmod": "2026-10-29"
 }

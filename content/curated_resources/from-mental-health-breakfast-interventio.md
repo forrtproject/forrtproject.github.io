@@ -3,7 +3,8 @@
     "title": "From mental-health breakfast interventions to evidence-based practice",
     "link_to_resource": "https://forrt.org/pedagogies/004-thomas-rhys-evans/",
     "creators": [
-        "Dr. Thomas Rhys Evans & Framework for Open and Reproducible Research Training (FORRT)"
+        "Thomas Rhys Evans",
+        "Framework for Open and Reproducible Research Training (FORRT)"
     ],
     "material_type": [
         "Module",
@@ -43,5 +44,5 @@
     "in-clusters": false,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2026-09-15"
+    "lastmod": "2026-10-29"
 }

@@ -5,7 +5,8 @@
     "creators": [
         "Herman Aguinis",
         "James C Beaty",
-        "Robert J Boik and Charles A Pierce"
+        "Robert J Boik",
+        "Charles A Pierce"
     ],
     "material_type": [
         "Primary Source",
@@ -36,5 +37,5 @@
     "in-clusters": true,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2020-05-26"
+    "lastmod": "2026-10-29"
 }

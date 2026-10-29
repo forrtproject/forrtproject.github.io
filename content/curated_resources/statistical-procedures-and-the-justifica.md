@@ -3,10 +3,8 @@
     "title": "Statistical Procedures and the Justification of Knowledge in Psychological Science ",
     "link_to_resource": "https://doi.org/10.1037/0003-066X.44.10.1276",
     "creators": [
-        "Rosnow",
-        "R.L.",
-        "& Rosenthal",
-        "R."
+        "R. L. Rosnow",
+        "R. Rosenthal"
     ],
     "material_type": [
         "Primary Source",
@@ -42,5 +40,5 @@
     "in-clusters": true,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2020-06-05"
+    "lastmod": "2026-10-29"
 }

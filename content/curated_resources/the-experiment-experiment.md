@@ -13,7 +13,7 @@
     "education_level": [
         "College / Upper Division (Undergraduates)"
     ],
-    "abstract": "A few years back, a famous psychologist published a series of studies that found people could predict the future \u2014 not all the time, but more often than if they were guessing by chance alone.The paper left psychologists with two options. \"Either we have to conclude that ESP is true,\" says Brian Nosek, a psychologist at the University of Virginia, \"or we have to change our beliefs about the right ways to do science.\" Nosek is going with Option B \u2014 and not just for psychology experiments. He thinks there's something wrong with the way we're doing science. And he launched a massive project to try to fix it.",
+    "abstract": "A few years back, a famous psychologist published a series of studies that found people could predict the future \u2014 not all the time, but more often than if they were guessing by chance alone. The paper left psychologists with two options. \"Either we have to conclude that ESP is true,\" says Brian Nosek, a psychologist at the University of Virginia, \"or we have to change our beliefs about the right ways to do science.\" Nosek is going with Option B \u2014 and not just for psychology experiments. He thinks there's something wrong with the way we're doing science. And he launched a massive project to try to fix it.",
     "language": [
         "English"
     ],
@@ -39,5 +39,5 @@
     "in-clusters": false,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2020-05-16"
+    "lastmod": "2026-10-29"
 }

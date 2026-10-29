@@ -139,7 +139,7 @@
         "Rafi Ullah",
         "Raniere Silva",
         "R\u00e9mi Emonet",
-        "reshama shaikh",
+        "Reshama Shaikh",
         "Robert A Beagrie",
         "Ruud Steltenpool",
         "Ry4an Brase",
@@ -202,5 +202,5 @@
     "in-clusters": false,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2020-01-01"
+    "lastmod": "2026-10-29"
 }

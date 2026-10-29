@@ -8,7 +8,8 @@
         "Rory Coyne",
         "Tugce Varol",
         "James A. Green",
-        "James Reynolds and Elaine Toomey"
+        "James Reynolds",
+        "Elaine Toomey"
     ],
     "material_type": [
         "Reading"
@@ -51,5 +52,5 @@
     "in-clusters": true,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2024-12-19"
+    "lastmod": "2026-10-29"
 }

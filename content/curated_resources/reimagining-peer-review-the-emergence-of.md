@@ -3,7 +3,8 @@
     "title": "Reimagining peer review: the emergence of peer community in registered reports system",
     "link_to_resource": "https://doi.org/10.1007/s40620-023-01709-6",
     "creators": [
-        "Carmine Zoccali & Francesca Mallamaci"
+        "Carmine Zoccali",
+        "Francesca Mallamaci"
     ],
     "material_type": [
         "Reading"
@@ -55,5 +56,5 @@
     "in-clusters": false,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2023-08-21"
+    "lastmod": "2026-10-29"
 }

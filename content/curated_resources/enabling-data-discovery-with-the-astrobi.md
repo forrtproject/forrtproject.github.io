@@ -15,7 +15,7 @@
         "Linda L. Jahnke",
         "Sara Rojo",
         "Nathan Stone",
-        "and Mark Vorobets"
+        "Mark Vorobets"
     ],
     "material_type": [
         "Reading"
@@ -52,5 +52,5 @@
     "in-clusters": true,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2025-01-09"
+    "lastmod": "2026-10-29"
 }

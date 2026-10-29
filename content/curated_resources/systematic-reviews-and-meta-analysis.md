@@ -3,12 +3,9 @@
     "title": "Systematic Reviews and Meta-Analysis",
     "link_to_resource": "https://oli.cmu.edu/courses/systematic-reviews-and-meta-analysis-o-f/",
     "creators": [
-        "Valentine",
-        "J. C.",
-        "Littell",
-        "J. H.",
-        "& Young",
-        "S."
+        "J. C. Valentine",
+        "J. H. Littell",
+        "S. Young"
     ],
     "material_type": [
         "Full Course"
@@ -54,5 +51,5 @@
     "in-clusters": false,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2026-09-15"
+    "lastmod": "2026-10-29"
 }

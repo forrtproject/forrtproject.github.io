@@ -7,7 +7,7 @@
         "Vincent Traag",
         "Ioanna Grypari",
         "Lennart Stoy",
-        "and Tony Ross-Hellauer"
+        "Tony Ross-Hellauer"
     ],
     "material_type": [
         "Reading"
@@ -47,5 +47,5 @@
     "in-clusters": true,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2025-02-13"
+    "lastmod": "2026-10-29"
 }

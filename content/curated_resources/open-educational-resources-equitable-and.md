@@ -3,9 +3,8 @@
     "title": "Open Educational Resources: Equitable and Affordable Nursing Education",
     "link_to_resource": "https://doi.org/10.1097/01.NEP.0000000000001180",
     "creators": [
-        "Friday",
-        "Vivienne Evet; Hunt",
-        "Cynthia"
+        "Vivienne Evet Friday",
+        "Cynthia Hunt"
     ],
     "material_type": [
         "Reading"
@@ -45,5 +44,5 @@
     "in-clusters": true,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2023-08-18"
+    "lastmod": "2026-10-29"
 }

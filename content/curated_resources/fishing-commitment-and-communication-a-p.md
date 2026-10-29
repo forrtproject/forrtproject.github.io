@@ -4,7 +4,8 @@
     "link_to_resource": "https://doi.org/10.1093/pan/mps021",
     "creators": [
         "Macartan Humphreys",
-        "Raul Sanchez de la Sierra and Peter van der Windt"
+        "Raul Sanchez de la Sierra",
+        "Peter van der Windt"
     ],
     "material_type": [
         "Primary Source",
@@ -39,5 +40,5 @@
     "in-clusters": true,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2020-06-07"
+    "lastmod": "2026-10-29"
 }

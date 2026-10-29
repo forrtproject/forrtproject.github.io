@@ -3,7 +3,8 @@
     "title": "Reducing bias, increasing transparency and calibrating confidence with preregistration",
     "link_to_resource": "https://doi.org/10.1038/s41562-022-01497-2",
     "creators": [
-        "Tom E. Hardwicke & Eric-Jan Wagenmakers"
+        "Tom E. Hardwicke",
+        "Eric-Jan Wagenmakers"
     ],
     "material_type": [
         "Reading"
@@ -55,5 +56,5 @@
     "in-clusters": true,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2023-10-06"
+    "lastmod": "2026-10-29"
 }

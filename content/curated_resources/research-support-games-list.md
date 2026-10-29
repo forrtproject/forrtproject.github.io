@@ -3,7 +3,8 @@
     "title": "Research Support Games List",
     "link_to_resource": "https://doi.org/10.6084/m9.figshare.16652701",
     "creators": [
-        "George Bray and Valerie McCutcheon"
+        "George Bray",
+        "Valerie McCutcheon"
     ],
     "material_type": [
         "Game",
@@ -58,5 +59,5 @@
     "in-clusters": true,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2025-02-28"
+    "lastmod": "2026-10-29"
 }

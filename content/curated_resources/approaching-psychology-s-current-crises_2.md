@@ -3,10 +3,8 @@
     "title": "Approaching psychology\u2019s current crises by exploring the vagueness of psychological concepts: Recommendations for advancing the discipline.",
     "link_to_resource": "https://doi.org/10.1037/amp0001300",
     "creators": [
-        "Hutmacher",
-        "F.",
-        "& Franz",
-        "D. J."
+        "F. Hutmacher",
+        "D. J. Franz"
     ],
     "material_type": [
         "Reading"
@@ -43,5 +41,5 @@
     "in-clusters": true,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2025-02-20"
+    "lastmod": "2026-10-29"
 }

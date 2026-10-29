@@ -3,7 +3,8 @@
     "title": "Standard Operating Procedures: A Safety Net for Pre-Analysis Plans",
     "link_to_resource": "https://doi.org/10.1017/S1049096516000810",
     "creators": [
-        "Winston Lin and Donald P.Green"
+        "Winston Lin",
+        "Donald P. Green"
     ],
     "material_type": [
         "Primary Source",
@@ -33,5 +34,5 @@
     "in-clusters": true,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2020-06-09"
+    "lastmod": "2026-10-29"
 }

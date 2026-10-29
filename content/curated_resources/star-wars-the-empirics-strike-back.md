@@ -3,10 +3,8 @@
     "title": "Star wars: The empirics strike back",
     "link_to_resource": "https://doi.org/10.1257/app.20150044",
     "creators": [
-        "Sangnier",
-        "M.",
-        "& Zylberberg",
-        "Y."
+        "M. Sangnier",
+        "Y. Zylberberg"
     ],
     "material_type": [
         "Primary Source",
@@ -42,5 +40,5 @@
     "in-clusters": true,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2020-05-24"
+    "lastmod": "2026-10-29"
 }

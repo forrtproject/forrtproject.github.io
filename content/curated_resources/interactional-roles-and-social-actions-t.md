@@ -8,7 +8,8 @@
         "St\u00e9phanie van der Burgt",
         "Saskia Peerdeman",
         "Jeroen Geurts",
-        "Joyce Lamerichs & Linda Douw"
+        "Joyce Lamerichs",
+        "Linda Douw"
     ],
     "material_type": [
         "Reading"
@@ -43,5 +44,5 @@
     "in-clusters": true,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2025-07-16"
+    "lastmod": "2026-10-29"
 }

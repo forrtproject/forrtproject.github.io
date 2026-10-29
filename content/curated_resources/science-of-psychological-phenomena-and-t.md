@@ -3,8 +3,7 @@
     "title": "Science of psychological phenomena and their testing.",
     "link_to_resource": "https://doi.org/10.1037/amp0001362",
     "creators": [
-        "Iso-Ahola",
-        "S. E."
+        "S. E. Iso-Ahola"
     ],
     "material_type": [
         "Reading"
@@ -42,5 +41,5 @@
     "in-clusters": true,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2025-02-20"
+    "lastmod": "2026-10-29"
 }

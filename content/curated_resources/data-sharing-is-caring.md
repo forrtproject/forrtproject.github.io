@@ -3,7 +3,8 @@
     "title": "Data: Sharing Is Caring",
     "link_to_resource": "https://doi.org/10.1177/2515245918758319",
     "creators": [
-        "Margaret C. Levenstein and Jared A. Lyle"
+        "Margaret C. Levenstein",
+        "Jared A. Lyle"
     ],
     "material_type": [
         "Primary Source",
@@ -35,5 +36,5 @@
     "in-clusters": true,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2020-06-03"
+    "lastmod": "2026-10-29"
 }

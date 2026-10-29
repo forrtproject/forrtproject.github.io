@@ -3,7 +3,8 @@
     "title": "Inappropriate fiddling with statistical analyses to obtain a desirable p-value: tests to detect its presence in published literature. ",
     "link_to_resource": "https://doi.org/10.1371/journal.pone.0046363",
     "creators": [
-        "Gary L. Gadbury and David B. Allison"
+        "Gary L. Gadbury",
+        "David B. Allison"
     ],
     "material_type": [
         "Primary Source",
@@ -34,5 +35,5 @@
     "in-clusters": true,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2020-06-04"
+    "lastmod": "2026-10-29"
 }

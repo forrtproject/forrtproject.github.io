@@ -7,7 +7,8 @@
         "Dan Correa",
         "Jordan Dworkin",
         "Paul Niehaus",
-        "Caleb Watney & Heidi Williams"
+        "Caleb Watney",
+        "Heidi Williams"
     ],
     "material_type": [
         "Primary Source",
@@ -57,5 +58,5 @@
     "in-clusters": true,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2023-08-21"
+    "lastmod": "2026-10-29"
 }

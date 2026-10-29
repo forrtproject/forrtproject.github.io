@@ -3,7 +3,8 @@
     "title": "DATA AND OPEN SCIENCE",
     "link_to_resource": "https://periodicos.fgv.br/rae/article/view/80767?articlesBySameAuthorPage=3",
     "creators": [
-        "TONELLI MJ;ZAMBALDI F"
+        "M. J. Tonelli",
+        "F. Zambaldi"
     ],
     "material_type": [
         "Reading"
@@ -34,5 +35,5 @@
     "in-clusters": false,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2025-02-06"
+    "lastmod": "2026-10-29"
 }

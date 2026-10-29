@@ -11,7 +11,8 @@
         "Fabrizio Scorrano",
         "Michael Tsoory",
         "Eoin C. O\u2019Connor",
-        "Stefano Gaburro & Alexandra Bannach-Brown"
+        "Stefano Gaburro",
+        "Alexandra Bannach-Brown"
     ],
     "material_type": [
         "Reading"
@@ -50,5 +51,5 @@
     "in-clusters": true,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2025-01-09"
+    "lastmod": "2026-10-29"
 }

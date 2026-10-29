@@ -3,12 +3,9 @@
     "title": "Experiments with More Than One Random Factor: Designs, Analytic Models, and Statistical Power.",
     "link_to_resource": "https://doi.org/10.1146/annurev-psych-122414-033702",
     "creators": [
-        "Judd",
-        "C. M.",
-        "Westfall",
-        "J.",
-        "& Kenny",
-        "D. A."
+        "C. M. Judd",
+        "J. Westfall",
+        "D. A. Kenny"
     ],
     "material_type": [
         "Primary Source",
@@ -39,5 +36,5 @@
     "in-clusters": true,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2020-05-28"
+    "lastmod": "2026-10-29"
 }

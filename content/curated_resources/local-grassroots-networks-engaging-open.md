@@ -11,7 +11,7 @@
     "education_level": [
         "Graduate / Professional"
     ],
-    "abstract": "This recorded webinar features insights from international panelists currently nurturing culture change in research among their local communities.Representat...",
+    "abstract": "This recorded webinar features insights from international panelists currently nurturing culture change in research among their local communities. Representat...",
     "language": [
         "English"
     ],
@@ -37,5 +37,5 @@
     "in-clusters": false,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2020-01-01"
+    "lastmod": "2026-10-29"
 }

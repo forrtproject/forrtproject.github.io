@@ -3,12 +3,9 @@
     "title": "Der Umgang mit Forschungsdaten im Fach Psychologie: Konkretisierung der DFG-Leitlinien. [Data Management in Psychological Science: Specification of the DFG Guidelines].",
     "link_to_resource": "https://psyarxiv.com/vhx89/",
     "creators": [
-        "Sch\u00f6nbrodt",
-        "F.",
-        "Gollwitzer",
-        "M.",
-        "& Abele-Brehm",
-        "A."
+        "F. Sch\u00f6nbrodt",
+        "M. Gollwitzer",
+        "A. Abele-Brehm"
     ],
     "material_type": [
         "Primary Source",
@@ -48,5 +45,5 @@
     "in-clusters": false,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2020-06-09"
+    "lastmod": "2026-10-29"
 }

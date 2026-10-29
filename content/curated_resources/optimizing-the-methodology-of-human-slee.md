@@ -20,7 +20,8 @@
         "Rebecca M. C. Spencer",
         "Genevieve Albouy",
         "Teod\u00f3ra V\u00e9kony",
-        "Manuel Schabus & Karolina Janacsek"
+        "Manuel Schabus",
+        "Karolina Janacsek"
     ],
     "material_type": [
         "Reading"
@@ -60,5 +61,5 @@
     "in-clusters": false,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2024-06-25"
+    "lastmod": "2026-10-29"
 }

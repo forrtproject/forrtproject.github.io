@@ -20,7 +20,7 @@
         "Courtney K. Soderberg",
         "Andrew Tyner",
         "Huajin Wang",
-        "and Gizem Solmaz-Ratzlaff"
+        "Gizem Solmaz-Ratzlaff"
     ],
     "material_type": [
         "Reading"
@@ -57,5 +57,5 @@
     "in-clusters": true,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2025-02-13"
+    "lastmod": "2026-10-29"
 }

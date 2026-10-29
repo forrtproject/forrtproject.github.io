@@ -5,7 +5,7 @@
     "creators": [
         "Joseph P. Simmons",
         "Leif D. Nelson",
-        "and Uri Simonsohn"
+        "Uri Simonsohn"
     ],
     "material_type": [
         "Primary Source",
@@ -41,5 +41,5 @@
     "in-clusters": true,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2020-06-03"
+    "lastmod": "2026-10-29"
 }

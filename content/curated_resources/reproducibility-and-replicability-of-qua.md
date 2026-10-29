@@ -3,20 +3,13 @@
     "title": "Reproducibility and replicability of qualitative research:an integrative review of concepts, barriers and enablers",
     "link_to_resource": "https://doi.org/10.31222/osf.io/n5zkw",
     "creators": [
-        "Cole",
-        "N. L.",
-        "Ulpts",
-        "S.",
-        "Bochynska",
-        "A.",
-        "Kormann",
-        "E.",
-        "Good",
-        "M.",
-        "Leitner",
-        "B.",
-        "& Ross-Hellauer",
-        "T."
+        "N. L. Cole",
+        "S. Ulpts",
+        "A. Bochynska",
+        "E. Kormann",
+        "M. Good",
+        "B. Leitner",
+        "T. Ross-Hellauer"
     ],
     "material_type": [
         "Reading"
@@ -54,5 +47,5 @@
     "in-clusters": true,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2025-02-13"
+    "lastmod": "2026-10-29"
 }

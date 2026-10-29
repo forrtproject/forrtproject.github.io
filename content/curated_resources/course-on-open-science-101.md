@@ -3,7 +3,8 @@
     "title": "Course on Open Science 101",
     "link_to_resource": "https://forrt.org/educators-corner/017-teaching-os-to-undergraduates/",
     "creators": [
-        "Dermot Lynott & Framework for Open and Reproducible Research Training (FORRT)"
+        "Dermot Lynott",
+        "Framework for Open and Reproducible Research Training (FORRT)"
     ],
     "material_type": [
         "Full Course"
@@ -45,5 +46,5 @@
     "in-clusters": false,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2026-09-15"
+    "lastmod": "2026-10-29"
 }

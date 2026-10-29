@@ -3,14 +3,10 @@
     "title": "An assessment of the magnitude of effect sizes: Evidence from 30 years of meta-analysis in management. ",
     "link_to_resource": "https://doi.org/10.1177/1548051815614321",
     "creators": [
-        "Paterson",
-        "T. A.",
-        "Harms",
-        "P. D.",
-        "Steel",
-        "P.",
-        "& Cred\u00e9",
-        "M"
+        "T. A. Paterson",
+        "P. D. Harms",
+        "P. Steel",
+        "M. Cred\u00e9"
     ],
     "material_type": [
         "Primary Source",
@@ -41,5 +37,5 @@
     "in-clusters": true,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2020-05-28"
+    "lastmod": "2026-10-29"
 }

@@ -32,7 +32,9 @@
         "Positive Deviance",
         "Evolution of Science",
         "Normative Methodologies",
-        "Open Theory"
+        "Open Theory",
+        "Deviance",
+        "Open Science"
     ],
     "forrt_clusters_new": "Replication Crisis and Credibility Revolution",
     "forrt_sub_clusters": "History of the replication crisis & credibility revolution",
@@ -40,5 +42,5 @@
     "in-clusters": true,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2024-12-19"
+    "lastmod": "2026-10-29"
 }

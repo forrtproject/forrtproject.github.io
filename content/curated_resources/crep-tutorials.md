@@ -3,7 +3,7 @@
     "title": "CREP tutorials",
     "link_to_resource": "https://www.youtube.com/playlist?list=PLECcejm-vUj-kOyCGXxN2TeAFTRFj1HU1",
     "creators": [
-        "Dr Jordan Wagge"
+        "Jordan Wagge"
     ],
     "material_type": [
         "Videos"
@@ -37,5 +37,5 @@
     "in-clusters": false,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2020-10-16"
+    "lastmod": "2026-10-29"
 }

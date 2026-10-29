@@ -6,7 +6,7 @@
         "Erin McKiernan",
         "Caitlin Carter",
         "Michael R Dougherty",
-        "and Greg Tananbaum"
+        "Greg Tananbaum"
     ],
     "material_type": [
         "Asssessment"
@@ -41,5 +41,5 @@
     "in-clusters": true,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2025-02-27"
+    "lastmod": "2026-10-29"
 }

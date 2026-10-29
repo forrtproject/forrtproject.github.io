@@ -6,7 +6,8 @@
         "Nicki Lisa Cole",
         "Eva Kormann",
         "Thomas Klebel",
-        "Simon Apartis and Tony Ross-Hellauer"
+        "Simon Apartis",
+        "Tony Ross-Hellauer"
     ],
     "material_type": [
         "Reading"
@@ -49,5 +50,5 @@
     "in-clusters": true,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2025-02-13"
+    "lastmod": "2026-10-29"
 }

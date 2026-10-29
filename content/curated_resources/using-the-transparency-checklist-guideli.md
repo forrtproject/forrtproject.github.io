@@ -3,7 +3,8 @@
     "title": "Using the 'Transparency Checklist Guidelines' as an Educational tool",
     "link_to_resource": "https://forrt.org/educators-corner/002-transparencychecklist-balazsaczel/",
     "creators": [
-        "Balazs Aczel & Framework for Open and Reproducible Research Training (FORRT)"
+        "Balazs Aczel",
+        "Framework for Open and Reproducible Research Training (FORRT)"
     ],
     "material_type": [
         "Lesson",
@@ -49,5 +50,5 @@
     "in-clusters": false,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2026-09-15"
+    "lastmod": "2026-10-29"
 }

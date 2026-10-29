@@ -4,7 +4,8 @@
     "link_to_resource": "https://doi.org/10.1186/s41235-024-00553-x",
     "creators": [
         "V. N. Vimal Rao",
-        "Jeffrey K. Bye & Sashank Varma"
+        "Jeffrey K. Bye",
+        "Sashank Varma"
     ],
     "material_type": [
         "Reading"
@@ -43,5 +44,5 @@
     "in-clusters": true,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2026-09-15"
+    "lastmod": "2026-10-29"
 }

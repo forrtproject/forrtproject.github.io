@@ -6,7 +6,8 @@
         "Maryam Zarghani",
         "Leila Nemati-Anaraki",
         "Shahram Sedghi",
-        "Abdolreza Noroozi Chakoli & Anisa Rowhani-Farid"
+        "Abdolreza Noroozi Chakoli",
+        "Anisa Rowhani-Farid"
     ],
     "material_type": [
         "Reading"
@@ -45,5 +46,5 @@
     "in-clusters": true,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2025-01-09"
+    "lastmod": "2026-10-29"
 }

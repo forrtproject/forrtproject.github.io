@@ -3,9 +3,8 @@
     "title": "Privacy and Data-Based Research",
     "link_to_resource": "https://doi.org/10.1257/jep.28.2.75",
     "creators": [
-        "Heffetz",
-        "Ori",
-        "and Katrina Liggett."
+        "Ori Heffetz",
+        "Katrina Liggett"
     ],
     "material_type": [
         "Primary Source",
@@ -37,5 +36,5 @@
     "in-clusters": true,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2020-06-07"
+    "lastmod": "2026-10-29"
 }

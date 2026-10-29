@@ -3,10 +3,8 @@
     "title": "Open science decoded",
     "link_to_resource": "https://doi.org/10.1038/nphys3313",
     "creators": [
-        "Hey",
-        "T.",
-        "Payne",
-        "M."
+        "T. Hey",
+        "M. Payne"
     ],
     "material_type": [
         "Reading"
@@ -40,5 +38,5 @@
     "in-clusters": true,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2025-02-06"
+    "lastmod": "2026-10-29"
 }

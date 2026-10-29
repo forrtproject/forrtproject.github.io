@@ -6,7 +6,7 @@
         "Will M. Gervais",
         "Jennifer A. Jewell",
         "Maxine B. Najle",
-        "and Ben K. L. Ng"
+        "Ben K. L. Ng"
     ],
     "material_type": [
         "Primary Source",
@@ -42,5 +42,5 @@
     "in-clusters": true,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2020-06-04"
+    "lastmod": "2026-10-29"
 }

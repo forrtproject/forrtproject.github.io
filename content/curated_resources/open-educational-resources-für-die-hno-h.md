@@ -3,13 +3,14 @@
     "title": "Open Educational Resources f\u00fcr die HNO-Heilkunde",
     "link_to_resource": "https://doi.org/10.1007/s00106-024-01465-4",
     "creators": [
-        "C. V. Degen MSc.",
+        "C. V. Degen",
         "F. Schwitzing",
         "S. Long",
         "L. Gickel",
         "M. Behrends",
         "C. J. Busch",
-        "S. Steffens & M. Mikuteit"
+        "S. Steffens",
+        "M. Mikuteit"
     ],
     "material_type": [
         "Reading"
@@ -46,5 +47,5 @@
     "in-clusters": false,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2025-01-13"
+    "lastmod": "2026-10-29"
 }

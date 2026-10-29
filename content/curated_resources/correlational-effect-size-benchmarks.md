@@ -3,16 +3,11 @@
     "title": "Correlational Effect Size Benchmarks",
     "link_to_resource": "https://doi.org/10.1037/a0038047",
     "creators": [
-        "Bosco",
-        "F. A.",
-        "Aguinis",
-        "H.",
-        "Singh",
-        "K.",
-        "Field",
-        "J. G.",
-        "& Pierce",
-        "C. A."
+        "F. A. Bosco",
+        "H. Aguinis",
+        "K. Singh",
+        "J. G. Field",
+        "C. A. Pierce"
     ],
     "material_type": [
         "Primary Source",
@@ -43,5 +38,5 @@
     "in-clusters": true,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2020-06-05"
+    "lastmod": "2026-10-29"
 }

@@ -4,7 +4,8 @@
     "link_to_resource": "https://doi.org/10.1037/pspi0000049",
     "creators": [
         "Etienne P. LeBel",
-        "Lorne Campbell and Timothy J. Loving"
+        "Lorne Campbell",
+        "Timothy J. Loving"
     ],
     "material_type": [
         "Primary Source",
@@ -40,5 +41,5 @@
     "in-clusters": true,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2020-06-04"
+    "lastmod": "2026-10-29"
 }

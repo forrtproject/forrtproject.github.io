@@ -3,7 +3,7 @@
     "title": "Free and low cost resources for graduate students, postdocs, and early career researchers (or really anyone else)",
     "link_to_resource": "https://docs.google.com/document/d/1IFbHIN5OOAO0qz-VfCU9nEx4-x6CfArj1-d8ylA2vsU/edit",
     "creators": [
-        "Dr Jaclyn Siegel"
+        "Jaclyn Siegel"
     ],
     "material_type": [
         "Reading",
@@ -40,5 +40,5 @@
     "in-clusters": false,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2026-09-15"
+    "lastmod": "2026-10-29"
 }

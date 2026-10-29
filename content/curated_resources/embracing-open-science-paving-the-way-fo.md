@@ -3,7 +3,8 @@
     "title": "Embracing Open Science: Paving the Way for Transparent, Collaborative, and Inclusive Research in Traditional, Complementary, and Integrative Medicine",
     "link_to_resource": "https://doi.org/10.1089/jicm.2024.0346",
     "creators": [
-        "Jeremy Y. Ng and Holger Cramer"
+        "Jeremy Y. Ng",
+        "Holger Cramer"
     ],
     "material_type": [
         "Reading"
@@ -37,5 +38,5 @@
     "in-clusters": true,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2024-12-12"
+    "lastmod": "2026-10-29"
 }

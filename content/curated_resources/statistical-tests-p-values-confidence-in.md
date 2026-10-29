@@ -3,20 +3,13 @@
     "title": "Statistical tests, p values, confidence intervals, and power: a guide to misinterpretations. ",
     "link_to_resource": "http://doi.org/10.1007/s10654-016-0149-3",
     "creators": [
-        "Greenland",
-        "S.",
-        "Senn",
-        "S. J.",
-        "Rothman",
-        "K. J.",
-        "Carlin",
-        "J. B.",
-        "Poole",
-        "C.",
-        "Goodman",
-        "S. N.",
-        "& Altman",
-        "D. G."
+        "S. Greenland",
+        "S. J. Senn",
+        "K. J. Rothman",
+        "J. B. Carlin",
+        "C. Poole",
+        "S. N. Goodman",
+        "D. G. Altman"
     ],
     "material_type": [
         "Primary Source",
@@ -47,5 +40,5 @@
     "in-clusters": false,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2020-06-03"
+    "lastmod": "2026-10-29"
 }

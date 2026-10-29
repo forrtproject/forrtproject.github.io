@@ -3,7 +3,8 @@
     "title": "Surrogate Science: The Idol of a Universal Method for Scientific Inference",
     "link_to_resource": "https://doi.org/10.1177/0149206314547522",
     "creators": [
-        "Gerd Gigerenzer and Julian N. Marewski"
+        "Gerd Gigerenzer",
+        "Julian N. Marewski"
     ],
     "material_type": [
         "Primary Source",
@@ -35,5 +36,5 @@
     "in-clusters": true,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2020-05-24"
+    "lastmod": "2026-10-29"
 }

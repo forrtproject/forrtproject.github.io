@@ -19,7 +19,8 @@
         "Florian Naudet",
         "Ulrich Mansmann",
         "Maia Salholz-Hillel",
-        "Anita Bandrowski & Malcolm R. Macleod"
+        "Anita Bandrowski",
+        "Malcolm R. Macleod"
     ],
     "material_type": [
         "Reading"
@@ -56,5 +57,5 @@
     "in-clusters": true,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2025-01-12"
+    "lastmod": "2026-10-29"
 }

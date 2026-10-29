@@ -3,9 +3,7 @@
     "title": "A manifesto for reproducible science",
     "link_to_resource": "https://doi.org/10.1038/s41562-016-0021",
     "creators": [
-        "Munafo",
-        "M. R.",
-        "et al."
+        "M. R. Munafo et al."
     ],
     "material_type": [
         "Primary Source",
@@ -41,5 +39,5 @@
     "in-clusters": true,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2020-06-03"
+    "lastmod": "2026-10-29"
 }

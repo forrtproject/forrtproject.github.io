@@ -4,7 +4,8 @@
     "link_to_resource": "https://doi.org/10.1037/a0039400",
     "creators": [
         "Scott E. Maxwell",
-        "Michael Y. Lau and George S. Howard"
+        "Michael Y. Lau",
+        "George S. Howard"
     ],
     "material_type": [
         "Primary Source",
@@ -40,5 +41,5 @@
     "in-clusters": true,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2020-05-23"
+    "lastmod": "2026-10-29"
 }

@@ -19,7 +19,7 @@
         "LUS24",
         "Maxim Belkin",
         "Miguel Gonz\u00e1lez",
-        "monialo2000",
+        "monialo",
         "Nicol\u00e1s Palopoli",
         "Nohemi Huanca Nunez",
         "Paula Andrea Martinez",
@@ -73,5 +73,5 @@
     "in-clusters": false,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2020-01-01"
+    "lastmod": "2026-10-29"
 }

@@ -3,9 +3,10 @@
     "title": "On Being a Scientist - A Guide to Responsible Conduct in Research: Third Edition",
     "link_to_resource": "https://doi.org/10.17226/12192",
     "creators": [
-        "National Academy of Sciences; National Academy of Engineering; Institute of Medicine; Committee on Science",
-        "Engineering",
-        "and Public Policy"
+        "National Academy of Sciences",
+        "National Academy of Engineering",
+        "Institute of Medicine",
+        "Committee on Science Engineering and Public Policy"
     ],
     "material_type": [
         "Reading",
@@ -46,5 +47,5 @@
     "in-clusters": true,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2025-02-27"
+    "lastmod": "2026-10-29"
 }

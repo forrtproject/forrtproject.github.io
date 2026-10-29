@@ -3,20 +3,13 @@
     "title": "Champions of Transparency in Education: What Journal Reviewers Can Do to Encourage Open Science Practices",
     "link_to_resource": "https://doi.org/10.1177/00169862231184575",
     "creators": [
-        "Renbarger",
-        "R.",
-        "Adelson",
-        "J. L.",
-        "Rosenberg",
-        "J. M.",
-        "Stegenga",
-        "S.",
-        "Lowrey",
-        "O.",
-        "Buckley",
-        "P. R.",
-        "& Zhang",
-        "Q."
+        "R. Renbarger",
+        "J. L. Adelson",
+        "J. M. Rosenberg",
+        "S. Stegenga",
+        "O. Lowrey",
+        "P. R. Buckley",
+        "Q. Zhang"
     ],
     "material_type": [
         "Reading"
@@ -54,5 +47,5 @@
     "in-clusters": true,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2025-02-13"
+    "lastmod": "2026-10-29"
 }

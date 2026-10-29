@@ -3,7 +3,8 @@
     "title": "Estimating the Unobserved: Hierarchical Bayesian Estimation of Evidence Accumulation Models with Missing or Contaminant Data",
     "link_to_resource": "https://timmerj1.github.io/censoring-truncation-study-EAMs/index.pdf",
     "creators": [
-        "https://timmerj1.github.io/censoring-truncation-study-EAMs/index.pdf"
+        "Jeroen E. Timmerman",
+        "Andrew J. Heathcote"
     ],
     "material_type": [
         "Reading"
@@ -41,5 +42,5 @@
     "in-clusters": false,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2025-07-16"
+    "lastmod": "2026-10-29"
 }

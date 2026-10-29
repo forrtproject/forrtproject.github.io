@@ -3,14 +3,10 @@
     "title": "Increasing transparency through a multiverse analysis.",
     "link_to_resource": "https://doi.org/10.1177/1745691616658637",
     "creators": [
-        "Steegen",
-        "S.",
-        "Tuerlinckx",
-        "F.",
-        "Gelman",
-        "A.",
-        "& Vanpaemel",
-        "W."
+        "S. Steegen",
+        "F. Tuerlinckx",
+        "A. Gelman",
+        "W. Vanpaemel"
     ],
     "material_type": [
         "Primary Source",
@@ -47,5 +43,5 @@
     "in-clusters": true,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2020-05-27"
+    "lastmod": "2026-10-29"
 }

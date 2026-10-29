@@ -3,7 +3,8 @@
     "title": "A call for open science in forensics",
     "link_to_resource": "https://doi.org/10.1073/pnas.2321809121",
     "creators": [
-        "Thomas D. Albright and Nicholas Scurich"
+        "Thomas D. Albright",
+        "Nicholas Scurich"
     ],
     "material_type": [
         "Reading"
@@ -41,5 +42,5 @@
     "in-clusters": true,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2024-12-19"
+    "lastmod": "2026-10-29"
 }

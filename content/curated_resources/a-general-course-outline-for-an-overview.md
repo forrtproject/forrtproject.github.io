@@ -10,7 +10,7 @@
         "Joyce Kao",
         "Harini Lakshminarayanan",
         "Franz P\u00f6schel",
-        "and Heidi Seibold"
+        "Heidi Seibold"
     ],
     "material_type": [
         "Full Course"
@@ -53,5 +53,5 @@
     "in-clusters": false,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2026-09-15"
+    "lastmod": "2026-10-29"
 }

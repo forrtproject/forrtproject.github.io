@@ -3,7 +3,8 @@
     "title": "Publication bias and the limited strength model of self-control: has the evidence for ego depletion been overestimated?",
     "link_to_resource": "https://doi.org/10.3389/fpsyg.2014.00823",
     "creators": [
-        "Evan C. Carter and Michael E. McCullough"
+        "Evan C. Carter",
+        "Michael E. McCullough"
     ],
     "material_type": [
         "Primary Source",
@@ -38,5 +39,5 @@
     "in-clusters": true,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2020-06-10"
+    "lastmod": "2026-10-29"
 }

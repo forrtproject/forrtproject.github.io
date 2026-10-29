@@ -4,7 +4,8 @@
     "link_to_resource": "https://doi.org/10.1007/s11192-024-04968-7",
     "creators": [
         "M\u00fcge Simsek",
-        "Mathijs de Vaan & Arnout van de Rijt"
+        "Mathijs de Vaan",
+        "Arnout van de Rijt"
     ],
     "material_type": [
         "Reading"
@@ -51,5 +52,5 @@
     "in-clusters": false,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2024-12-19"
+    "lastmod": "2026-10-29"
 }

@@ -4,7 +4,8 @@
     "link_to_resource": "https://psyarxiv.com/7wkdn/",
     "creators": [
         "David Mellor",
-        "Simine Vazire and D. Lindsay"
+        "Simine Vazire",
+        "D. Lindsay"
     ],
     "material_type": [
         "Primary Source",
@@ -40,5 +41,5 @@
     "in-clusters": false,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2020-06-09"
+    "lastmod": "2026-10-29"
 }

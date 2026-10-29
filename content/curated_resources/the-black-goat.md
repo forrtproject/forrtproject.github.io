@@ -5,7 +5,7 @@
     "creators": [
         "Sanjay Srivastava",
         "Alexa Tullett",
-        "and Simine Vazire"
+        "Simine Vazire"
     ],
     "material_type": [
         "Student Guide",
@@ -45,5 +45,5 @@
     "in-clusters": false,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2020-05-16"
+    "lastmod": "2026-10-29"
 }

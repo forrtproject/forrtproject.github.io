@@ -5,9 +5,8 @@
     "creators": [
         "Kyle Cavagnini",
         "Carolyn Shore",
-        "Megan Snair (National Academies of Sciences",
-        "Engineering",
-        "and Medicine)"
+        "Megan Snair",
+        "National Academies of Sciences Engineering and Medicine"
     ],
     "material_type": [
         "Workshop proceedings"
@@ -45,5 +44,5 @@
     "in-clusters": true,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2024-12-19"
+    "lastmod": "2026-10-29"
 }

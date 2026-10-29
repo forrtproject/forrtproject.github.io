@@ -3,7 +3,8 @@
     "title": "Innovative Mentoring",
     "link_to_resource": "https://forrt.org/educators-corner/007-easy-steps-to-elevate-your-mentoring/",
     "creators": [
-        "Amanda Moehring & Framework for Open and Reproducible Research Training (FORRT)"
+        "Amanda Moehring",
+        "Framework for Open and Reproducible Research Training (FORRT)"
     ],
     "material_type": [
         "Reading",
@@ -43,5 +44,5 @@
     "in-clusters": false,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2026-09-15"
+    "lastmod": "2026-10-29"
 }

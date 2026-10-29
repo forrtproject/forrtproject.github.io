@@ -3,7 +3,8 @@
     "title": "Editorial: Open science in consciousness research",
     "link_to_resource": "https://doi.org/10.1093/nc/niz018",
     "creators": [
-        "SETH AK;HOHWY J"
+        "A. K. Seth",
+        "J. Hohwy"
     ],
     "material_type": [
         "Reading"
@@ -40,5 +41,5 @@
     "in-clusters": true,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2025-02-06"
+    "lastmod": "2026-10-29"
 }

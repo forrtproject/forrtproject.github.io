@@ -4,7 +4,8 @@
     "link_to_resource": "https://psyarxiv.com/ak6jr/",
     "creators": [
         "Bobbie Spellman",
-        "Elizabeth Gilbert and Katherine Corker"
+        "Elizabeth Gilbert",
+        "Katherine Corker"
     ],
     "material_type": [
         "Primary Source",
@@ -43,5 +44,5 @@
     "in-clusters": false,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2020-06-08"
+    "lastmod": "2026-10-29"
 }

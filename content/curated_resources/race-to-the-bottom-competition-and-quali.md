@@ -3,7 +3,8 @@
     "title": "Race to the Bottom: Competition and Quality in Science",
     "link_to_resource": "http://dx.doi.org/10.1093/qje/qjaf010",
     "creators": [
-        "Ryan Hill and Caroline Stein"
+        "Ryan Hill",
+        "Caroline Stein"
     ],
     "material_type": [
         "Reading"
@@ -38,5 +39,5 @@
     "in-clusters": true,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2020-10-31"
+    "lastmod": "2026-10-29"
 }

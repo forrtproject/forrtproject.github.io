@@ -8,8 +8,7 @@
         "Lisa Belin",
         "Christine S. Benn",
         "Marc J.M. Bonten",
-        "Jeffrey D. Cirillo",
-        "et al."
+        "Jeffrey D. Cirillo et al."
     ],
     "material_type": [
         "Article"
@@ -46,5 +45,5 @@
     "in-clusters": true,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2025-07-14"
+    "lastmod": "2026-10-29"
 }

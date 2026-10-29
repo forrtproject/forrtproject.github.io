@@ -3,7 +3,8 @@
     "title": "Academic Research in the 21st Century: Maintaining Scientific Integrity in a Climate of Perverse Incentives and Hypercompetition",
     "link_to_resource": "https://doi.org/10.1089/ees.2016.0223",
     "creators": [
-        "Marc A. Edwards and Siddhartha Roy"
+        "Marc A. Edwards",
+        "Siddhartha Roy"
     ],
     "material_type": [
         "Primary Source",
@@ -39,5 +40,5 @@
     "in-clusters": true,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2020-05-27"
+    "lastmod": "2026-10-29"
 }

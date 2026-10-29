@@ -29,11 +29,13 @@
         "Life Science"
     ],
     "FORRT_clusters": [
-        "Preregistration"
+        "Preregistration",
+        "Reproducibility and Replicability Knowledge"
     ],
     "tags": [
         "Ecology",
-        "Registration"
+        "Registration",
+        "Preregistration"
     ],
     "forrt_clusters_new": "Pre-analysis Planning",
     "forrt_sub_clusters": "Registered reports, Preregistration",
@@ -41,5 +43,5 @@
     "in-clusters": true,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2024-12-12"
+    "lastmod": "2026-10-29"
 }

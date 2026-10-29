@@ -27,17 +27,6 @@
         "Teacher"
     ],
     "subject_areas": [
-        "Applied Science",
-        "Arts and Humanities",
-        "Business and Communication",
-        "Career and Technical Education",
-        "Education",
-        "English Language Arts",
-        "History",
-        "Law",
-        "Life Science",
-        "Math & Statistics",
-        "Physical Science",
         "Social Science"
     ],
     "FORRT_clusters": [
@@ -61,5 +50,5 @@
     "in-clusters": false,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2023-10-27"
+    "lastmod": "2026-10-29"
 }

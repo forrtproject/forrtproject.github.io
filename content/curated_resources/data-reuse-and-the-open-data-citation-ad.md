@@ -3,7 +3,8 @@
     "title": "Data reuse and the open data citation advantage",
     "link_to_resource": "https://doi.org/10.7717/peerj.175",
     "creators": [
-        "Heather A. Piwowar and Todd J. Vision"
+        "Heather A. Piwowar",
+        "Todd J. Vision"
     ],
     "material_type": [
         "Primary Source",
@@ -37,5 +38,5 @@
     "in-clusters": true,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2020-06-05"
+    "lastmod": "2026-10-29"
 }

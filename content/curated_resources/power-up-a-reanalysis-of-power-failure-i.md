@@ -5,7 +5,8 @@
     "creators": [
         "Camilla L. Nord",
         "Vincent Valton",
-        "John Wood and Jonathan P. Roiser"
+        "John Wood",
+        "Jonathan P. Roiser"
     ],
     "material_type": [
         "Primary Source",
@@ -36,5 +37,5 @@
     "in-clusters": true,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2020-06-03"
+    "lastmod": "2026-10-29"
 }

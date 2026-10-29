@@ -8,7 +8,7 @@
         "Hilde E. M. Augusteijn",
         "Marjan Bakker",
         "Robbie C. M. van Aert",
-        "and Marcel A. L. M. van Assen"
+        "Marcel A. L. M. van Assen"
     ],
     "material_type": [
         "Primary Source",
@@ -39,5 +39,5 @@
     "in-clusters": true,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2020-05-26"
+    "lastmod": "2026-10-29"
 }

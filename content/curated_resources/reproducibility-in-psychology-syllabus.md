@@ -3,7 +3,8 @@
     "title": "Reproducibility in Psychology Syllabus",
     "link_to_resource": "https://osf.io/xpe6c/",
     "creators": [
-        "Brent Roberts and Dan Simons"
+        "Brent Roberts",
+        "Dan Simons"
     ],
     "material_type": [
         "Syllabus"
@@ -42,5 +43,5 @@
     "in-clusters": false,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2021-10-14"
+    "lastmod": "2026-10-29"
 }

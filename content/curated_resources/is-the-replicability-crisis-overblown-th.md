@@ -3,10 +3,8 @@
     "title": "Is the replicability crisis overblown? Three arguments examined",
     "link_to_resource": "https://doi.org/10.1177/1745691612463401",
     "creators": [
-        "Pashler",
-        "H.",
-        "& Harris",
-        "C. R."
+        "H. Pashler",
+        "C. R. Harris"
     ],
     "material_type": [
         "Primary Source",
@@ -44,5 +42,5 @@
     "in-clusters": true,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2020-05-26"
+    "lastmod": "2026-10-29"
 }

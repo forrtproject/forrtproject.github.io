@@ -3,10 +3,8 @@
     "title": "Too true to be bad: When sets of studies with significant and nonsignificant findings are probably true",
     "link_to_resource": "https://doi.org/10.1177/1948550617693058",
     "creators": [
-        "Lakens",
-        "D.",
-        "& Etz",
-        "A. J."
+        "D. Lakens",
+        "A. J. Etz"
     ],
     "material_type": [
         "Primary Source",
@@ -36,5 +34,5 @@
     "in-clusters": true,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2020-06-04"
+    "lastmod": "2026-10-29"
 }

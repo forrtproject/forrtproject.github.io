@@ -5,7 +5,7 @@
     "creators": [
         "Dragana Stojmenovska",
         "Thijs Bol",
-        "and Thomas Leopold"
+        "Thomas Leopold"
     ],
     "material_type": [
         "Case Study",
@@ -43,5 +43,5 @@
     "in-clusters": true,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2023-05-22"
+    "lastmod": "2026-10-29"
 }

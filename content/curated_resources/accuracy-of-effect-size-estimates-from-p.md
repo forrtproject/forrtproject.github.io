@@ -3,10 +3,10 @@
     "title": "Accuracy of effect size estimates from published psychological research ",
     "link_to_resource": "https://doi.org/10.1080/00221309.2011.604365",
     "creators": [
-        "ANDREW BRAND",
-        "MICHAEL T. BRADLEY",
-        "LISA A. BEST",
-        "AND GEORGE STOICA"
+        "Andrew Brand",
+        "Michael T. Bradley",
+        "Lisa A. Best",
+        "George Stoica"
     ],
     "material_type": [
         "Primary Source",
@@ -37,5 +37,5 @@
     "in-clusters": true,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2020-05-28"
+    "lastmod": "2026-10-29"
 }

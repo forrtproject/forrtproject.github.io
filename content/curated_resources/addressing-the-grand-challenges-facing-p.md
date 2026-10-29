@@ -3,7 +3,8 @@
     "title": "Addressing the grand challenges facing psychological science",
     "link_to_resource": "https://forrt.org/educators-corner/011-intersectionality-open-science/",
     "creators": [
-        "Annalisa Myer & Framework for Open and Reproducible Research Training (FORRT)"
+        "Annalisa Myer",
+        "Framework for Open and Reproducible Research Training (FORRT)"
     ],
     "material_type": [
         "Reading",
@@ -41,5 +42,5 @@
     "in-clusters": false,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2026-09-15"
+    "lastmod": "2026-10-29"
 }

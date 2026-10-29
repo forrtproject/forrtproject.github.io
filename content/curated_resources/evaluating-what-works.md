@@ -3,7 +3,8 @@
     "title": "Evaluating What Works ",
     "link_to_resource": "https://bookdown.org/dorothy_bishop/Evaluating_What_Works/",
     "creators": [
-        "Dorothy Bishop and Paul Thompson"
+        "Dorothy Bishop",
+        "Paul Thompson"
     ],
     "material_type": [
         "Reading",
@@ -39,5 +40,5 @@
     "in-clusters": false,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2026-09-15"
+    "lastmod": "2026-10-29"
 }

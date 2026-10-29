@@ -6,7 +6,7 @@
         "Felix Holzmeister",
         "Magnus Johannesson",
         "Robert B\u00f6hm",
-        "and Michael Kirchler"
+        "Michael Kirchler"
     ],
     "material_type": [
         "Reading"
@@ -41,5 +41,5 @@
     "in-clusters": true,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2025-02-20"
+    "lastmod": "2026-10-29"
 }

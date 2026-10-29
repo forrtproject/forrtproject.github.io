@@ -3,7 +3,7 @@
     "title": "The Bayes Factor",
     "link_to_resource": "https://sites.tufts.edu/hilab/podcast/",
     "creators": [
-        "Prof. JP De Ruiter"
+        "JP De Ruiter"
     ],
     "material_type": [
         "Student Guide",
@@ -39,5 +39,5 @@
     "in-clusters": false,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2020-05-16"
+    "lastmod": "2026-10-29"
 }

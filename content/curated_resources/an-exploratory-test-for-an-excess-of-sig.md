@@ -3,7 +3,8 @@
     "title": "An exploratory test for an excess of significant findings",
     "link_to_resource": "https://doi.org/10.1177/1740774507079441",
     "creators": [
-        "John PA Ioannidis and Thomas A Trikalinos"
+        "John PA Ioannidis",
+        "Thomas A Trikalinos"
     ],
     "material_type": [
         "Primary Source",
@@ -35,5 +36,5 @@
     "in-clusters": true,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2020-05-22"
+    "lastmod": "2026-10-29"
 }

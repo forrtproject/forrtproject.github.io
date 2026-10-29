@@ -3,8 +3,7 @@
     "title": "What is the Replication Crisis a Crisis Of?",
     "link_to_resource": "https://doi.org/10.1017/psa.2024.2",
     "creators": [
-        "Feest",
-        "U."
+        "U. Feest"
     ],
     "material_type": [
         "Reading"
@@ -41,5 +40,5 @@
     "in-clusters": true,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2025-02-13"
+    "lastmod": "2026-10-29"
 }

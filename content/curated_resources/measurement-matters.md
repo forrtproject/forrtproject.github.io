@@ -3,7 +3,8 @@
     "title": "Measurement Matters",
     "link_to_resource": "https://docs.google.com/document/d/11jyoXtO0m2lUywpC04KjLvI5QcBUY4YtwEvw6cg2cMs/edit",
     "creators": [
-        "Eiko Fried and Jessica Flake"
+        "Eiko Fried",
+        "Jessica Flake"
     ],
     "material_type": [
         "Reading"
@@ -38,5 +39,5 @@
     "in-clusters": false,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2020-05-11"
+    "lastmod": "2026-10-29"
 }

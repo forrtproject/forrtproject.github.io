@@ -4,7 +4,8 @@
     "link_to_resource": "https://doi.org/10.1098/rsos.221042",
     "creators": [
         "Erkan O. Buzbas",
-        "Berna Devezer and Bert Baumgaertner"
+        "Berna Devezer",
+        "Bert Baumgaertner"
     ],
     "material_type": [
         "Reading"
@@ -43,5 +44,5 @@
     "in-clusters": true,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2025-02-27"
+    "lastmod": "2026-10-29"
 }

@@ -3,7 +3,8 @@
     "title": "Learn Stats with Jamovi",
     "link_to_resource": "https://www.learnstatswithjamovi.com/",
     "creators": [
-        "Danielle Navarro and David R Foxcraft"
+        "Danielle Navarro",
+        "David R Foxcraft"
     ],
     "material_type": [
         "Data Set",
@@ -37,5 +38,5 @@
     "in-clusters": false,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2020-05-14"
+    "lastmod": "2026-10-29"
 }

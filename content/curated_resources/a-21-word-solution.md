@@ -3,11 +3,9 @@
     "title": "A 21 word solution.",
     "link_to_resource": "http://dx.doi.org/10.2139/ssrn.2160588",
     "creators": [
-        "Simmons",
-        "Joseph P. and Nelson",
-        "Leif D. and Simonsohn",
-        "Uri",
-        "A"
+        "Joseph P. Simmons",
+        "Leif D. Nelson",
+        "Uri Simonsohn"
     ],
     "material_type": [
         "Primary Source",
@@ -44,5 +42,5 @@
     "in-clusters": true,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2020-05-27"
+    "lastmod": "2026-10-29"
 }

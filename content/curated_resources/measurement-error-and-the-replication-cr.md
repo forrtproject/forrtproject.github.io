@@ -3,10 +3,8 @@
     "title": "Measurement error and the replication crisis. ",
     "link_to_resource": "http://science.sciencemag.org/content/355/6325/584",
     "creators": [
-        "Loken",
-        "E.",
-        "& Gelman",
-        "A."
+        "E. Loken",
+        "A. Gelman"
     ],
     "material_type": [
         "Primary Source",
@@ -37,5 +35,5 @@
     "in-clusters": false,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2020-06-03"
+    "lastmod": "2026-10-29"
 }

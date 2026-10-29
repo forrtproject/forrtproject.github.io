@@ -23,10 +23,12 @@
     ],
     "subject_areas": [
         "Business and Communication",
-        "Social Science"
+        "Social Science",
+        "Applied Science"
     ],
     "FORRT_clusters": [
-        "Academic Life and Culture"
+        "Academic Life and Culture",
+        "Reproducibility and Replicability Knowledge"
     ],
     "tags": [
         "Academic Capitalism",
@@ -35,11 +37,11 @@
         "Administrative Burden",
         "Open Research"
     ],
-    "forrt_clusters_new": "Academic Structures and Institutions",
-    "forrt_sub_clusters": "Structures and incentives in academia, Hidden curriculum",
+    "forrt_clusters_new": "Academic Structures and Institutions, Ways of Working",
+    "forrt_sub_clusters": "Structures and incentives in academia, Hidden curriculum, Slow Science/Slow Scholarship",
     "doi": "10.36850/mr5",
     "in-clusters": true,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2025-02-06"
+    "lastmod": "2026-10-29"
 }

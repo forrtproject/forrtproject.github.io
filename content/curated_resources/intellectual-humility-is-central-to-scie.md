@@ -3,7 +3,8 @@
     "title": "Intellectual humility is central to science",
     "link_to_resource": "https://psyarxiv.com/edh2s/",
     "creators": [
-        "Rink Hoekstra and Simine Vazire"
+        "Rink Hoekstra",
+        "Simine Vazire"
     ],
     "material_type": [
         "Reading"
@@ -37,5 +38,5 @@
     "in-clusters": false,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2020-08-06"
+    "lastmod": "2026-10-29"
 }

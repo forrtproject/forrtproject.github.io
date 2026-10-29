@@ -3,10 +3,8 @@
     "title": "Peer-review practices of psychological journals: The fate of published articles, submitted again. ",
     "link_to_resource": "https://doi.org/https://doi.org/10.1017/S0140525X00011183",
     "creators": [
-        "Peters",
-        "D. P.",
-        "& Ceci",
-        "S. J."
+        "D. P. Peters",
+        "S. J. Ceci"
     ],
     "material_type": [
         "Primary Source",
@@ -41,5 +39,5 @@
     "in-clusters": true,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2020-06-06"
+    "lastmod": "2026-10-29"
 }

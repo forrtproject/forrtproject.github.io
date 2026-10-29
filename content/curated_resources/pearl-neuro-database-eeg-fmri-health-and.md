@@ -3,7 +3,8 @@
     "title": "PEARL-Neuro Database: EEG, fMRI, health and lifestyle data of middle-aged people at risk of dementia",
     "link_to_resource": "https://doi.org/10.1038/s41597-024-03106-5",
     "creators": [
-        "Patrycja Dzianok & Ewa Kublik"
+        "Patrycja Dzianok",
+        "Ewa Kublik"
     ],
     "material_type": [
         "Reading"
@@ -38,5 +39,5 @@
     "in-clusters": true,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2025-01-09"
+    "lastmod": "2026-10-29"
 }

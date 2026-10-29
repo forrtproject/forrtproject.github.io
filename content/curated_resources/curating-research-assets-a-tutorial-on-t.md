@@ -3,7 +3,8 @@
     "title": "Curating Research Assets: A Tutorial on the Git Version Control System",
     "link_to_resource": "https://doi.org/10.1177/2515245918754826",
     "creators": [
-        "Matti Vuorre and James P. Curley"
+        "Matti Vuorre",
+        "James P. Curley"
     ],
     "material_type": [
         "Primary Source",
@@ -34,5 +35,5 @@
     "in-clusters": true,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2020-05-22"
+    "lastmod": "2026-10-29"
 }

@@ -3,7 +3,9 @@
     "title": "Open Science Workshop Materials of the LMU Open Science Center",
     "link_to_resource": "https://osf.io/zjrhu/",
     "creators": [
-        "Angelika Stefan Felix Sch\u00f6nbrodt and Lena Schiestel"
+        "Angelika Stefan",
+        "Felix Sch\u00f6nbrodt",
+        "Lena Schiestel"
     ],
     "material_type": [
         "Syllabus"
@@ -42,5 +44,5 @@
     "in-clusters": false,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2021-10-14"
+    "lastmod": "2026-10-29"
 }

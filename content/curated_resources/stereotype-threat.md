@@ -4,7 +4,8 @@
     "link_to_resource": "https://www.wnycstudios.org/story/stereothreat/",
     "creators": [
         "Simon Adler",
-        "Amanda Aronczyk and Dan Engber"
+        "Amanda Aronczyk",
+        "Dan Engber"
     ],
     "material_type": [
         "Teaching/Learning Strategy",
@@ -43,5 +44,5 @@
     "in-clusters": false,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2020-05-16"
+    "lastmod": "2026-10-29"
 }

@@ -11,7 +11,8 @@
         "Nicholas F. Erickson",
         "Sarah A. Kovac",
         "Ritesh Patel",
-        "Anna Tosolini & Matthew J. West"
+        "Anna Tosolini",
+        "Matthew J. West"
     ],
     "material_type": [
         "Reading"
@@ -44,5 +45,5 @@
     "in-clusters": false,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2024-12-12"
+    "lastmod": "2026-10-29"
 }

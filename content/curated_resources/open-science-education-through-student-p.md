@@ -3,7 +3,8 @@
     "title": "Open Science education through student participation",
     "link_to_resource": "https://forrt.org/pedagogies/003-crep/",
     "creators": [
-        "Jordan Wagge & Framework for Open and Reproducible Research Training (FORRT)"
+        "Jordan Wagge",
+        "Framework for Open and Reproducible Research Training (FORRT)"
     ],
     "material_type": [
         "Interview"
@@ -38,5 +39,5 @@
     "in-clusters": false,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2026-09-15"
+    "lastmod": "2026-10-29"
 }

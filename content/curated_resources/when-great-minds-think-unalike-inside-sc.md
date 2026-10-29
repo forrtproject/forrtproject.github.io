@@ -3,7 +3,8 @@
     "title": "When Great Minds Think Unalike: Inside Science's 'Replication Crisis'",
     "link_to_resource": "https://www.npr.org/2016/05/24/477921050/when-great-minds-think-unlike-inside-sciences-replication-crisis",
     "creators": [
-        "Shankar Vedantam and Maggie Penman"
+        "Shankar Vedantam",
+        "Maggie Penman"
     ],
     "material_type": [
         "Student Guide",
@@ -40,5 +41,5 @@
     "in-clusters": false,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2020-05-16"
+    "lastmod": "2026-10-29"
 }

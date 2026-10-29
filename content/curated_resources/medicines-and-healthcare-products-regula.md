@@ -19,7 +19,7 @@
         "Graham Wheeler",
         "S. Faye Williamson",
         "Christina Yap",
-        "& Thomas Jaki"
+        "Thomas Jaki"
     ],
     "material_type": [
         "Reading"
@@ -60,5 +60,5 @@
     "in-clusters": true,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2023-10-09"
+    "lastmod": "2026-10-29"
 }

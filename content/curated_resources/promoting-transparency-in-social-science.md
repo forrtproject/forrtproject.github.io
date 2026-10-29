@@ -3,8 +3,7 @@
     "title": "Promoting Transparency in Social Science Research",
     "link_to_resource": "https://doi.org/10.1126/science.1245317",
     "creators": [
-        "Miguel",
-        "E.",
+        "E. Miguel",
         "C. Camerer",
         "K. Casey",
         "J. Cohen",
@@ -22,7 +21,7 @@
         "R. Sedlmayr",
         "J. P. Simmons",
         "U. Simonsohn",
-        "M. Van der Laan."
+        "M. Van der Laan"
     ],
     "material_type": [
         "Primary Source",
@@ -58,5 +57,5 @@
     "in-clusters": true,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2020-05-29"
+    "lastmod": "2026-10-29"
 }

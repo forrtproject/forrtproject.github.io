@@ -5,7 +5,8 @@
     "creators": [
         "Matthew Kim",
         "Adrienne D. Woods",
-        "Alexa Ellis and Pamela Davis-Kean"
+        "Alexa Ellis",
+        "Pamela Davis-Kean"
     ],
     "material_type": [
         "Syllabus"
@@ -38,5 +39,5 @@
     "in-clusters": false,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2021-10-14"
+    "lastmod": "2026-10-29"
 }

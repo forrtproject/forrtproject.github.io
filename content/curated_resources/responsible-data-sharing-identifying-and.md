@@ -5,7 +5,7 @@
     "creators": [
         "Kirsten Morehouse",
         "Benedek Kurdi",
-        "and Brian A. Nosek"
+        "Brian A. Nosek"
     ],
     "material_type": [
         "Reading"
@@ -42,5 +42,5 @@
     "in-clusters": true,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2025-01-16"
+    "lastmod": "2026-10-29"
 }

@@ -4,7 +4,8 @@
     "link_to_resource": "https://doi.org/10.1177/1088868313496330",
     "creators": [
         "Kou Murayama",
-        "Reinhard Pekrun and Klaus Fiedler"
+        "Reinhard Pekrun",
+        "Klaus Fiedler"
     ],
     "material_type": [
         "Primary Source",
@@ -42,5 +43,5 @@
     "in-clusters": true,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2020-05-23"
+    "lastmod": "2026-10-29"
 }

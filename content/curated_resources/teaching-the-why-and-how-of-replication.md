@@ -3,7 +3,8 @@
     "title": "Teaching the why and how of replication studies",
     "link_to_resource": "https://forrt.org/educators-corner/004-teaching-why-how-replication/",
     "creators": [
-        "Patrick Forscher & Framework for Open and Reproducible Research Training (FORRT)"
+        "Patrick Forscher",
+        "Framework for Open and Reproducible Research Training (FORRT)"
     ],
     "material_type": [
         "Full Course",
@@ -53,5 +54,5 @@
     "in-clusters": false,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2026-09-15"
+    "lastmod": "2026-10-29"
 }

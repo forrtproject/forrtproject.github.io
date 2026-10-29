@@ -3,9 +3,8 @@
     "title": "The GO FAIR Foundation's FAIR Capacity Building Programme",
     "link_to_resource": "https://osf.io/bthf8",
     "creators": [
-        "Schultes",
-        "Erik  \nMagagna",
-        "Barbara"
+        "Erik Schultes",
+        "Barbara Magagna"
     ],
     "material_type": [
         "Reading"
@@ -39,5 +38,5 @@
     "in-clusters": false,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2026-09-15"
+    "lastmod": "2026-10-29"
 }

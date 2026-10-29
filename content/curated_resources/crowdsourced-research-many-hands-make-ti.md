@@ -3,10 +3,8 @@
     "title": "Crowdsourced research: Many hands make tight work",
     "link_to_resource": "https://doi.org/10.1038/526189a",
     "creators": [
-        "Silberzahn",
-        "R.",
-        "& Uhlmann",
-        "E.L."
+        "R. Silberzahn",
+        "E. L. Uhlmann"
     ],
     "material_type": [
         "Primary Source",
@@ -42,5 +40,5 @@
     "in-clusters": true,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2020-06-03"
+    "lastmod": "2026-10-29"
 }

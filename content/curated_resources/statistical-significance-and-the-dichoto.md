@@ -3,7 +3,8 @@
     "title": "Statistical Significance and the Dichotomization of Evidence",
     "link_to_resource": "https://doi.org/10.1080/01621459.2017.1289846",
     "creators": [
-        "Blakeley B. McShane & David Gal"
+        "Blakeley B. McShane",
+        "David Gal"
     ],
     "material_type": [
         "Primary Source",
@@ -34,5 +35,5 @@
     "in-clusters": true,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2020-06-03"
+    "lastmod": "2026-10-29"
 }

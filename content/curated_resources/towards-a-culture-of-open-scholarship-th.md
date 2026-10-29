@@ -3,25 +3,16 @@
     "title": "Towards a culture of open scholarship: the role of pedagogical communities",
     "link_to_resource": "https://doi.org/10.1186/s13104-022-05944-1",
     "creators": [
-        "Azevedo",
-        "F.",
-        "Liu",
-        "M.",
-        "Pennington",
-        "C. R.",
-        "Pownall",
-        "M.",
-        "Evans",
-        "T. R.",
-        "Parsons",
-        "S.",
-        "Elsherif",
-        "M. M.",
-        "Micheli",
-        "L.",
-        "Westwood",
-        "S.",
-        "& FORRT."
+        "F. Azevedo",
+        "M. Liu",
+        "C. R. Pennington",
+        "M. Pownall",
+        "T. R. Evans",
+        "S. Parsons",
+        "M. M. Elsherif",
+        "L. Micheli",
+        "S. Westwood",
+        "FORRT."
     ],
     "material_type": [
         "Reading"
@@ -60,5 +51,5 @@
     "in-clusters": true,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2026-09-15"
+    "lastmod": "2026-10-29"
 }

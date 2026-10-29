@@ -3,7 +3,8 @@
     "title": "Scientific Utopia: I. Opening Scientific Communication",
     "link_to_resource": "https://doi.org/10.1080/1047840X.2012.692215",
     "creators": [
-        "Brian A. Nosek & Yoav Bar-Anan"
+        "Brian A. Nosek",
+        "Yoav Bar-Anan"
     ],
     "material_type": [
         "Primary Source",
@@ -39,5 +40,5 @@
     "in-clusters": true,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2020-06-05"
+    "lastmod": "2026-10-29"
 }

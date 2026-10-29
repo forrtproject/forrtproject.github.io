@@ -7,7 +7,8 @@
         "Max Korbmacher",
         "Thomas Rhys Evans",
         "Flavio Azevedo",
-        "Charlotte R. Pennington and FORRT"
+        "Charlotte R. Pennington",
+        "FORRT"
     ],
     "material_type": [
         "Reading"
@@ -50,5 +51,5 @@
     "in-clusters": true,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2026-09-15"
+    "lastmod": "2026-10-29"
 }

@@ -16,7 +16,7 @@
     "language": [
         "English"
     ],
-    "conditions_of_use": "CC BY",
+    "conditions_of_use": "I don't see any of these",
     "primary_user": [
         "Student",
         "Teacher"
@@ -41,5 +41,5 @@
     "in-clusters": true,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2025-02-20"
+    "lastmod": "2026-10-29"
 }

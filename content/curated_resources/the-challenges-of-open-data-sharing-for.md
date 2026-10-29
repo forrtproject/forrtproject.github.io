@@ -4,7 +4,7 @@
     "link_to_resource": "https://doi.org/10.1177/13591053241237620",
     "creators": [
         "Danielle Lamb",
-        "Amy Russel",
+        "Amy Russell",
         "Nicola Morant",
         "Fiona Stevenson"
     ],
@@ -26,11 +26,13 @@
     ],
     "subject_areas": [
         "Life Science",
-        "Social Science"
+        "Social Science",
+        "Applied Science"
     ],
     "FORRT_clusters": [
         "Reproducible Analyses",
-        "Open Data and Materials"
+        "Open Data and Materials",
+        "Reproducibility and Replicability Knowledge"
     ],
     "tags": [
         "Epistemology",
@@ -45,5 +47,5 @@
     "in-clusters": true,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2025-01-09"
+    "lastmod": "2026-10-29"
 }

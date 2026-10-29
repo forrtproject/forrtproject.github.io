@@ -5,7 +5,8 @@
     "creators": [
         "Lewis G Halsey",
         "Douglas Curran-Everett",
-        "Sarah L Vowler & Gordon B Drummond"
+        "Sarah L Vowler",
+        "Gordon B Drummond"
     ],
     "material_type": [
         "Primary Source",
@@ -36,5 +37,5 @@
     "in-clusters": true,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2020-06-06"
+    "lastmod": "2026-10-29"
 }

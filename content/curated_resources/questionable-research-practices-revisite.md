@@ -3,7 +3,8 @@
     "title": "Questionable Research Practices Revisited",
     "link_to_resource": "https://doi.org/10.1177/1948550615612150",
     "creators": [
-        "Klaus Fiedler and Norbert Schwarz"
+        "Klaus Fiedler",
+        "Norbert Schwarz"
     ],
     "material_type": [
         "Primary Source",
@@ -40,5 +41,5 @@
     "in-clusters": true,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2020-05-22"
+    "lastmod": "2026-10-29"
 }

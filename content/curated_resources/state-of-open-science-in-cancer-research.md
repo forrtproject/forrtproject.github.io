@@ -6,7 +6,8 @@
         "Cristina Rius",
         "Yiming Liu",
         "Andrea Sixto-Costoya",
-        "Juan Carlos Valderrama-Zuri\u00e1n & Rut Lucas-Dominguez"
+        "Juan Carlos Valderrama-Zuri\u00e1n",
+        "Rut Lucas-Dominguez"
     ],
     "material_type": [
         "Reading"
@@ -45,5 +46,5 @@
     "in-clusters": false,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2025-01-13"
+    "lastmod": "2026-10-29"
 }

@@ -6,7 +6,8 @@
         "Mich\u00e8le B. Nuijten",
         "Chris H. J. Hartgerink",
         "Marcel A. L. M. van Assen",
-        "Sacha Epskamp & Jelte M. Wicherts"
+        "Sacha Epskamp",
+        "Jelte M. Wicherts"
     ],
     "material_type": [
         "Primary Source",
@@ -37,5 +38,5 @@
     "in-clusters": true,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2020-05-26"
+    "lastmod": "2026-10-29"
 }

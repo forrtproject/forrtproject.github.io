@@ -72,7 +72,8 @@
         "Bethan J. Iley",
         "Samuel Guay",
         "Martina Sladekova",
-        "Shanu Sadhwani and FORRT"
+        "Shanu Sadhwani",
+        "FORRT"
     ],
     "material_type": [
         "Reading"
@@ -113,5 +114,5 @@
     "in-clusters": true,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2026-09-15"
+    "lastmod": "2026-10-29"
 }

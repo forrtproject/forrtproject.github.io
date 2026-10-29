@@ -5,7 +5,7 @@
     "creators": [
         "Marco Perugini",
         "Marcello Gallucci",
-        "and Giulio Costantini"
+        "Giulio Costantini"
     ],
     "material_type": [
         "Primary Source",
@@ -36,5 +36,5 @@
     "in-clusters": true,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2020-06-04"
+    "lastmod": "2026-10-29"
 }

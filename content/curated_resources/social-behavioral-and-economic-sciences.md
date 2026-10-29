@@ -3,16 +3,11 @@
     "title": "Social, Behavioral, and Economic Sciences Perspectives on Robust and Reliable Science",
     "link_to_resource": "http://web.stanford.edu/group/bps/cgi-bin/wordpress/wp-content/uploads/2015/09/NSF-Robust-Research-Workshop-Report.pdf",
     "creators": [
-        "Cacioppo",
-        "J. T.",
-        "Kaplan",
-        "R. M.",
-        "Krosnick",
-        "J. A.",
-        "Olds",
-        "J. L.",
-        "& Dean",
-        "H."
+        "J. T. Cacioppo",
+        "R. M. Kaplan",
+        "J. A. Krosnick",
+        "J. L. Olds",
+        "H. Dean"
     ],
     "material_type": [
         "Primary Source",
@@ -48,5 +43,5 @@
     "in-clusters": false,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2020-05-24"
+    "lastmod": "2026-10-29"
 }

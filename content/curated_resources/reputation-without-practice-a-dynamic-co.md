@@ -6,7 +6,7 @@
         "Maximilian Linde",
         "Merle-Marie Pittelkow",
         "Nina R. Schwarzbach",
-        "and Don van Ravenzwaaij"
+        "Don van Ravenzwaaij"
     ],
     "material_type": [
         "Reading"
@@ -44,5 +44,5 @@
     "in-clusters": true,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2025-02-06"
+    "lastmod": "2026-10-29"
 }

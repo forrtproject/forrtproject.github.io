@@ -6,7 +6,8 @@
         "Etienne P. LeBel",
         "Randy J. McCarthy",
         "Brian D. Earp",
-        "Malte Elson and Wolf Vanpaemel"
+        "Malte Elson",
+        "Wolf Vanpaemel"
     ],
     "material_type": [
         "Primary Source",
@@ -46,5 +47,5 @@
     "in-clusters": true,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2020-05-24"
+    "lastmod": "2026-10-29"
 }

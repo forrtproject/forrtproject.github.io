@@ -3,7 +3,8 @@
     "title": "With Low Power Comes Low Credibility? Toward a Principled Critique of Results From Underpowered Tests",
     "link_to_resource": "http://dx.doi.org/10.1177/25152459241296397",
     "creators": [
-        "Lukas L. Lengersdorff and Claus Lamm"
+        "Lukas L. Lengersdorff",
+        "Claus Lamm"
     ],
     "material_type": [
         "Reading"
@@ -39,5 +40,5 @@
     "in-clusters": true,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2026-09-15"
+    "lastmod": "2026-10-29"
 }

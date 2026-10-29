@@ -5,7 +5,7 @@
     "creators": [
         "Joanna Schimizzi",
         "Brandon Butler",
-        "and Becca Neel"
+        "Becca Neel"
     ],
     "material_type": [
         "Lesson"
@@ -40,5 +40,5 @@
     "in-clusters": false,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2023-06-27"
+    "lastmod": "2026-10-29"
 }

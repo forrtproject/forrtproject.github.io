@@ -3,7 +3,8 @@
     "title": "Rigorous Exploration in a Model-Centric Science via Epistemic Iteration",
     "link_to_resource": "https://doi.org/10.1037/mac0000121",
     "creators": [
-        "Berna Devezer and Erkan O. Buzbas"
+        "Berna Devezer",
+        "Erkan O. Buzbas"
     ],
     "material_type": [
         "Reading"
@@ -40,5 +41,5 @@
     "in-clusters": true,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2025-02-27"
+    "lastmod": "2026-10-29"
 }

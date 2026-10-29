@@ -6,7 +6,7 @@
         "Ignasi Labastida i Juan",
         "Iva Melin\u0161\u010dak Zlodi",
         "Vanessa Proudman",
-        "& Jon Treadway"
+        "Jon Treadway"
     ],
     "material_type": [
         "Reading"
@@ -49,5 +49,5 @@
     "in-clusters": true,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2025-02-20"
+    "lastmod": "2026-10-29"
 }

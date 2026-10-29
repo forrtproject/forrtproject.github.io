@@ -3,12 +3,9 @@
     "title": "P-curve: A key to the file-drawer.",
     "link_to_resource": "https://doi.org/10.1037/a0033242",
     "creators": [
-        "Simonsohn",
-        "Uri",
-        "Nelson",
-        "Leif D.",
-        "Simmons",
-        "Joseph P."
+        "Uri Simonsohn",
+        "Leif D. Nelson",
+        "Joseph P. Simmons"
     ],
     "material_type": [
         "Primary Source",
@@ -45,5 +42,5 @@
     "in-clusters": true,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2020-06-06"
+    "lastmod": "2026-10-29"
 }

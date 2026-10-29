@@ -10,7 +10,8 @@
         "Paola Masuzzo",
         "Cooper Smout",
         "Eric Billy",
-        "Maxime Deforet & Cl\u00e9mence Leyrat"
+        "Maxime Deforet",
+        "Cl\u00e9mence Leyrat"
     ],
     "material_type": [
         "Reading"
@@ -50,5 +51,5 @@
     "in-clusters": true,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2025-02-27"
+    "lastmod": "2026-10-29"
 }

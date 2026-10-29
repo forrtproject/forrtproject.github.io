@@ -7,7 +7,8 @@
         "Jeroen Meulenbrugge",
         "Amber Mers",
         "Manon Gerber",
-        "Fleur Alards & Marjolein Zweekhorst"
+        "Fleur Alards",
+        "Marjolein Zweekhorst"
     ],
     "material_type": [
         "Module",
@@ -46,5 +47,5 @@
     "in-clusters": false,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2025-07-16"
+    "lastmod": "2026-10-29"
 }

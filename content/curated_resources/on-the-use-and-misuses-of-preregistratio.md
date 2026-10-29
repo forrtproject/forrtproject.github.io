@@ -6,7 +6,7 @@
         "Colin Vize",
         "Donald Lynam",
         "Josh Miller",
-        "and Nathaniel Phillips"
+        "Nathaniel Phillips"
     ],
     "material_type": [
         "Reading"
@@ -45,5 +45,5 @@
     "in-clusters": true,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2026-09-15"
+    "lastmod": "2026-10-29"
 }

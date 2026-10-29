@@ -6,7 +6,7 @@
         "Daniel Lakens",
         "Cristian Mesquida",
         "Sajedeh Rasti",
-        "and Massimiliano Ditroilo"
+        "Massimiliano Ditroilo"
     ],
     "material_type": [
         "Reading"
@@ -43,5 +43,5 @@
     "in-clusters": true,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2025-01-12"
+    "lastmod": "2026-10-29"
 }

@@ -5,7 +5,7 @@
     "creators": [
         "Crystal N. Steltenpohl",
         "Amy J. Anderson",
-        "and Katherine M. Daniels"
+        "Katherine M. Daniels"
     ],
     "material_type": [
         "Primary Source",
@@ -38,5 +38,5 @@
     "in-clusters": false,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2020-05-22"
+    "lastmod": "2026-10-29"
 }

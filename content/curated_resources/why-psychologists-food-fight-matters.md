@@ -3,7 +3,8 @@
     "title": "Why Psychologists\u2019 Food Fight Matters",
     "link_to_resource": "https://slate.com/technology/2014/07/replication-controversy-in-psychology-bullying-file-drawer-effect-blog-posts-repligate.html",
     "creators": [
-        "Michelle N.Meyer and Christopher Chabris"
+        "Michelle N. Meyer",
+        "Christopher Chabris"
     ],
     "material_type": [
         "Blog"
@@ -37,5 +38,5 @@
     "in-clusters": false,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2020-06-09"
+    "lastmod": "2026-10-29"
 }

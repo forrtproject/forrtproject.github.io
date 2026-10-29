@@ -3,7 +3,8 @@
     "title": "Open and Reproducible Science walks into a classroom",
     "link_to_resource": "https://forrt.org/pedagogies/001-julia-strand/",
     "creators": [
-        "Julia Strand & Framework for Open and Reproducible Research Training"
+        "Julia Strand",
+        "Framework for Open and Reproducible Research Training"
     ],
     "material_type": [
         "Full Course",
@@ -44,5 +45,5 @@
     "in-clusters": false,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2026-09-15"
+    "lastmod": "2026-10-29"
 }

@@ -5,7 +5,8 @@
     "creators": [
         "Ivan A. Hernandez",
         "Jessi L. Smith",
-        "Miguel T. Villodas & Dustin B. Thoman"
+        "Miguel T. Villodas",
+        "Dustin B. Thoman"
     ],
     "material_type": [
         "Reading"
@@ -43,5 +44,5 @@
     "in-clusters": true,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2025-02-20"
+    "lastmod": "2026-10-29"
 }

@@ -4,11 +4,10 @@
     "link_to_resource": "https://doi.org/10.1371/journal.pone.0114876",
     "creators": [
         "Coosje L. S. Veldkamp",
-        "1",
-        "* Mich\u00e8le B. Nuijten",
+        "Mich\u00e8le B. Nuijten",
         "Linda Dominguez-Alvarez",
         "Marcel A. L. M. van Assen",
-        "and Jelte M. Wicherts"
+        "Jelte M. Wicherts"
     ],
     "material_type": [
         "Primary Source",
@@ -42,5 +41,5 @@
     "in-clusters": true,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2020-05-23"
+    "lastmod": "2026-10-29"
 }

@@ -65,7 +65,8 @@
         "Ilaria Sani",
         "Winrich A. Freiwald",
         "Aina Puce",
-        "Nicholas L. Port & Franco Pestilli"
+        "Nicholas L. Port",
+        "Franco Pestilli"
     ],
     "material_type": [
         "Reading"
@@ -105,5 +106,5 @@
     "in-clusters": true,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2025-01-13"
+    "lastmod": "2026-10-29"
 }

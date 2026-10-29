@@ -5,7 +5,7 @@
     "creators": [
         "Matthew C. Makel",
         "Jonathan A. Plucker",
-        "and Boyd Hegarty"
+        "Boyd Hegarty"
     ],
     "material_type": [
         "Primary Source",
@@ -40,5 +40,5 @@
     "in-clusters": true,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2020-05-31"
+    "lastmod": "2026-10-29"
 }

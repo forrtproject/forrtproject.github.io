@@ -3,7 +3,8 @@
     "title": "Key Practices for the Language Scientist",
     "link_to_resource": "https://osf.io/ftxnk/",
     "creators": [
-        "Drs Julia Egger and Eirini Zormpa"
+        "Julia Egger",
+        "Eirini Zormpa"
     ],
     "material_type": [
         "Module",
@@ -37,5 +38,5 @@
     "in-clusters": false,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2020-12-13"
+    "lastmod": "2026-10-29"
 }

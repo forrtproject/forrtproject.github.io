@@ -3,12 +3,9 @@
     "title": "Research preregistration 101",
     "link_to_resource": "https://www.psychologicalscience.org/observer/research-preregistration-101",
     "creators": [
-        "Lindsay",
-        "D.S.",
-        "Simons",
-        "D.J.",
-        "Lilienfeld",
-        "S.O."
+        "D. S. Lindsay",
+        "D. J. Simons",
+        "S. O. Lilienfeld"
     ],
     "material_type": [
         "Blog"
@@ -40,5 +37,5 @@
     "in-clusters": false,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2020-06-11"
+    "lastmod": "2026-10-29"
 }

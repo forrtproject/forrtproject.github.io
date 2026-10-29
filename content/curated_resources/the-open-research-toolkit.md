@@ -3,7 +3,8 @@
     "title": "The Open Research Toolkit",
     "link_to_resource": "https://forrt.org/educators-corner/008-open-research-toolkit/",
     "creators": [
-        "Christopher Eaker & Framework for Open and Reproducible Research Training (FORRT)"
+        "Christopher Eaker",
+        "Framework for Open and Reproducible Research Training (FORRT)"
     ],
     "material_type": [
         "Full Course",
@@ -51,5 +52,5 @@
     "in-clusters": false,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2026-09-15"
+    "lastmod": "2026-10-29"
 }

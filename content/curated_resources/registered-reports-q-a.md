@@ -4,7 +4,7 @@
     "link_to_resource": "https://www.youtube.com/watch?v=NjPJRxADP1U",
     "creators": [
         "Chris Chambers",
-        "david mellor"
+        "David Mellor"
     ],
     "material_type": [
         "Lesson"
@@ -40,5 +40,5 @@
     "in-clusters": false,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2020-01-01"
+    "lastmod": "2026-10-29"
 }

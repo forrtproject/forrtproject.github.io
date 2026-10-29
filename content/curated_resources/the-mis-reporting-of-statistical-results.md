@@ -3,7 +3,8 @@
     "title": "The (mis)reporting of statistical results in psychology journals",
     "link_to_resource": "https://doi.org/10.3758/s13428-011-0089-5",
     "creators": [
-        "Marjan Bakker & Jelte M. Wicherts"
+        "Marjan Bakker",
+        "Jelte M. Wicherts"
     ],
     "material_type": [
         "Primary Source",
@@ -35,5 +36,5 @@
     "in-clusters": true,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2020-05-23"
+    "lastmod": "2026-10-29"
 }

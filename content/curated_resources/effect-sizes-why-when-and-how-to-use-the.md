@@ -3,10 +3,8 @@
     "title": "Effect Sizes: Why, When, and How to Use Them",
     "link_to_resource": "https://doi.org/10.1027/0044-3409.217.1.6",
     "creators": [
-        "Rosnow",
-        "R. L.",
-        "& Rosenthal",
-        "R."
+        "R. L. Rosnow",
+        "R. Rosenthal"
     ],
     "material_type": [
         "Primary Source",
@@ -37,5 +35,5 @@
     "in-clusters": true,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2020-06-07"
+    "lastmod": "2026-10-29"
 }

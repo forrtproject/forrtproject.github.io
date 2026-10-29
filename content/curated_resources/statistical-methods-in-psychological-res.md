@@ -3,7 +3,7 @@
     "title": "Statistical Methods in Psychological Research Syllabus",
     "link_to_resource": "https://crumplab.github.io/psyc3400/",
     "creators": [
-        "Dr Matt Crump"
+        "Matt Crump"
     ],
     "material_type": [
         "Data Set",
@@ -48,5 +48,5 @@
     "in-clusters": false,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2020-05-14"
+    "lastmod": "2026-10-29"
 }

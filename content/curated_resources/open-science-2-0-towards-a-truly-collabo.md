@@ -32,20 +32,13 @@
     ],
     "subject_areas": [
         "Applied Science",
-        "Arts and Humanities",
-        "Business and Communication",
-        "Career and Technical Education",
-        "Education",
-        "English Language Arts",
-        "History",
-        "Law",
         "Life Science",
-        "Math & Statistics",
-        "Physical Science",
         "Social Science"
     ],
     "FORRT_clusters": [
-        "Academic Life and Culture"
+        "Academic Life and Culture",
+        "Reproducibility and Replicability Knowledge",
+        "Open Data and Materials"
     ],
     "tags": [
         "Open Science",
@@ -55,13 +48,15 @@
         "Clinical Trials",
         "Science Policy",
         "Open Data",
-        "Research Quality Assessment"
+        "Research Quality Assessment",
+        "Open Science Initiatives",
+        "Reform"
     ],
-    "forrt_clusters_new": "Academic Structures and Institutions",
-    "forrt_sub_clusters": "Research assessment, proposals, and reforms",
+    "forrt_clusters_new": "Academic Structures and Institutions, Replication Crisis and Credibility Revolution",
+    "forrt_sub_clusters": "Research assessment, proposals, and reforms, Proposed science improvement initiatives on statistics, measurement, teaching, data sharing, code sharing, pre-registration, & replication, Ongoing debates (e.g., incentives for and against open science practices)",
     "doi": "10.1371/journal.pbio.3002362",
     "in-clusters": true,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2023-10-23"
+    "lastmod": "2026-10-29"
 }

@@ -10,7 +10,8 @@
         "Ashleigh Dickson",
         "Daniel J. Davis",
         "Alex DeHaven",
-        "Jaime Bochantin & Jared Borns"
+        "Jaime Bochantin",
+        "Jared Borns"
     ],
     "material_type": [
         "Reading"
@@ -49,5 +50,5 @@
     "in-clusters": false,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2023-12-13"
+    "lastmod": "2026-10-29"
 }

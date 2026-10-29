@@ -3,10 +3,7 @@
     "title": "The Web of Schizotypal Personality Traits: Frequentist Network Replication and Bayesian Network Re-Analysis",
     "link_to_resource": "https://osf.io/4buha/",
     "creators": [
-        "This thesis examines schizotypal personality traits",
-        "risk factors for schizophrenia",
-        "through both frequentist and Bayesian network models. It replicates a prior frequentist analysis by Dodell-Feder et al. (2019) and introduces a Bayesian re-analysis of the same data. Both approaches yielded consistent results",
-        "underscoring the robustness of the network structure and central traits. The project demonstrates the viability and accessibility of Bayesian methods for psychological network analysis."
+        "Julia Stadnik"
     ],
     "material_type": [
         "Reading"
@@ -44,5 +41,5 @@
     "in-clusters": false,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2025-07-16"
+    "lastmod": "2026-10-29"
 }

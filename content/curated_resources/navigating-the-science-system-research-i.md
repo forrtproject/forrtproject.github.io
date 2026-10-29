@@ -3,7 +3,8 @@
     "title": "Navigating the Science System: Research Integrity and Academic Survival Strategies",
     "link_to_resource": "https://doi.org/10.1007/s11948-024-00467-3",
     "creators": [
-        "Andrea Reyes Elizondo & Wolfgang Kaltenbrunner"
+        "Andrea Reyes Elizondo",
+        "Wolfgang Kaltenbrunner"
     ],
     "material_type": [
         "Reading"
@@ -26,7 +27,8 @@
         "Physical Science"
     ],
     "FORRT_clusters": [
-        "Academic Life and Culture"
+        "Academic Life and Culture",
+        "Conceptual and Statistical Knowledge"
     ],
     "tags": [
         "Research Integrity",
@@ -41,5 +43,5 @@
     "in-clusters": false,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2025-01-13"
+    "lastmod": "2026-10-29"
 }

@@ -3,8 +3,7 @@
     "title": "On the plurality of (methodological) worlds: estimating the analytic flexibility of fMRI experiments",
     "link_to_resource": "https://doi.org/10.3389/fnins.2012.00149",
     "creators": [
-        "Carp",
-        "J."
+        "J. Carp"
     ],
     "material_type": [
         "Primary Source",
@@ -42,5 +41,5 @@
     "in-clusters": true,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2020-06-03"
+    "lastmod": "2026-10-29"
 }

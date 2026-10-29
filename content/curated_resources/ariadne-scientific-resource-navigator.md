@@ -11,7 +11,8 @@
         "Susanne Vogel",
         "Yu-Fang Yang",
         "Gordon B. Feld",
-        "Alexandros Kastrinogiannis and Alina Koppold"
+        "Alexandros Kastrinogiannis",
+        "Alina Koppold"
     ],
     "material_type": [
         "Resource Navigator"
@@ -52,5 +53,5 @@
     "in-clusters": false,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2025-02-13"
+    "lastmod": "2026-10-29"
 }

@@ -11,7 +11,7 @@
         "Esther Plomp",
         "Antonio Schettino",
         "Samantha Teplitzky",
-        "and Hao Ye"
+        "Hao Ye"
     ],
     "material_type": [
         "Reading"
@@ -52,5 +52,5 @@
     "in-clusters": true,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2025-02-06"
+    "lastmod": "2026-10-29"
 }

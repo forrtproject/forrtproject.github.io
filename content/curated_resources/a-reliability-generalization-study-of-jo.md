@@ -4,7 +4,8 @@
     "link_to_resource": "https://doi.org/10.1371/journal.pone.0014331",
     "creators": [
         "Lutz Bornmann",
-        "R\u00fcdiger Mutz and Hans-Dieter Daniel"
+        "R\u00fcdiger Mutz",
+        "Hans-Dieter Daniel"
     ],
     "material_type": [
         "Primary Source",
@@ -40,5 +41,5 @@
     "in-clusters": true,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2020-05-31"
+    "lastmod": "2026-10-29"
 }

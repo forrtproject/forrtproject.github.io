@@ -3,16 +3,11 @@
     "title": "An Agenda for Purely Confirmatory Research",
     "link_to_resource": "https://doi.org/10.1177/1745691612463078",
     "creators": [
-        "Wagenmakers",
-        "E.-J.",
-        "Wetzels",
-        "R.",
-        "Borsboom",
-        "D.",
-        "van der Mass",
-        "H. L. J.",
-        "& Kievit",
-        "R. A."
+        "E. J. Wagenmakers",
+        "R. Wetzels",
+        "D. Borsboom",
+        "H. L. J. van der Mass",
+        "R. A. Kievit"
     ],
     "material_type": [
         "Primary Source",
@@ -48,5 +43,5 @@
     "in-clusters": true,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2020-05-29"
+    "lastmod": "2026-10-29"
 }

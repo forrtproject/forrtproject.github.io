@@ -6,7 +6,8 @@
         "Valen E. Johnson",
         "Richard D. Payne",
         "Tianying Wang",
-        "Alex Asher &Soutrik Mandal"
+        "Alex Asher",
+        "Soutrik Mandal"
     ],
     "material_type": [
         "Primary Source",
@@ -42,5 +43,5 @@
     "in-clusters": true,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2020-05-27"
+    "lastmod": "2026-10-29"
 }

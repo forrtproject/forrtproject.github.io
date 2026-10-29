@@ -6,7 +6,7 @@
         "Brian A. Nosek",
         "Charles R. Ebersole",
         "Alexander C. DeHaven",
-        "and David T. Mellor"
+        "David T. Mellor"
     ],
     "material_type": [
         "Primary Source",
@@ -39,5 +39,5 @@
     "in-clusters": false,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2020-05-22"
+    "lastmod": "2026-10-29"
 }

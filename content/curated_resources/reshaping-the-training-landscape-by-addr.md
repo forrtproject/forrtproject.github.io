@@ -4,7 +4,8 @@
     "link_to_resource": "https://doi.org/10.1038/s44159-023-00264-y",
     "creators": [
         "Adrelys Mateo Santana",
-        "Emily N. Satinsky & Chard\u00e9e A. Gal\u00e1n"
+        "Emily N. Satinsky",
+        "Chard\u00e9e A. Gal\u00e1n"
     ],
     "material_type": [
         "Reading"
@@ -41,5 +42,5 @@
     "in-clusters": true,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2025-02-20"
+    "lastmod": "2026-10-29"
 }

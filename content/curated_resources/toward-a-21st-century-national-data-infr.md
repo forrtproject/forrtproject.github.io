@@ -3,9 +3,7 @@
     "title": "Toward a 21st Century National Data Infrastructure: Managing Privacy and Confidentiality Risks with Blended Data",
     "link_to_resource": "https://doi.org/10.17226/27335",
     "creators": [
-        "National Academies of Sciences",
-        "Engineering",
-        "and Medicine"
+        "National Academies of Sciences Engineering and Medicine"
     ],
     "material_type": [
         "Textbook"
@@ -42,5 +40,5 @@
     "in-clusters": true,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2024-12-18"
+    "lastmod": "2026-10-29"
 }

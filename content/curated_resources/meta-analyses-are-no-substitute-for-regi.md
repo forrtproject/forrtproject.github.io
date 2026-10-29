@@ -7,7 +7,8 @@
         "Dora Matzke",
         "Quentin F. Gronau",
         "Maime Guan",
-        "Joachim Vandekerckhove and Eric-Jan Wagenmakers"
+        "Joachim Vandekerckhove",
+        "Eric-Jan Wagenmakers"
     ],
     "material_type": [
         "Primary Source",
@@ -46,5 +47,5 @@
     "in-clusters": true,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2020-05-26"
+    "lastmod": "2026-10-29"
 }

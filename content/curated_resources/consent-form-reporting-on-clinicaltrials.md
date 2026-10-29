@@ -4,14 +4,9 @@
     "link_to_resource": "https://doi.org/10.1001/jamanetworkopen.2024.18895",
     "creators": [
         "Sydney A. Axson",
-        "PhD",
-        "MPH; Reshma Ramachandran",
-        "MD",
-        "MPP",
-        "MHS; Alexa Lisenby",
-        "BS; Nicholas A. Giordano",
-        "PhD",
-        "RN"
+        "Reshma Ramachandran",
+        "Alexa Lisenby",
+        "Nicholas A. Giordano"
     ],
     "material_type": [
         "Reading"
@@ -45,5 +40,5 @@
     "in-clusters": false,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2024-12-12"
+    "lastmod": "2026-10-29"
 }

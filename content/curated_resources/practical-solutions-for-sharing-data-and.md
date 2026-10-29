@@ -5,7 +5,7 @@
     "creators": [
         "Rick O. Gilmore",
         "Joy Lorenzo Kennedy",
-        "and Karen E. Adolph"
+        "Karen E. Adolph"
     ],
     "material_type": [
         "Primary Source",
@@ -39,5 +39,5 @@
     "in-clusters": true,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2020-05-29"
+    "lastmod": "2026-10-29"
 }

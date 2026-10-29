@@ -4,7 +4,8 @@
     "link_to_resource": "https://www.rug.nl/library/open-access/blog/open-pedagogy-how-to-engage-your-students-and-transform-education",
     "creators": [
         "Frederiek van Rij",
-        "Mira Buist-Zhuk & Martijn Blikmans-Middel"
+        "Mira Buist-Zhuk",
+        "Martijn Blikmans-Middel"
     ],
     "material_type": [
         "Reading"
@@ -39,5 +40,5 @@
     "in-clusters": false,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2025-02-13"
+    "lastmod": "2026-10-29"
 }

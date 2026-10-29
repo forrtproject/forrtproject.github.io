@@ -3,16 +3,11 @@
     "title": "The Extent and Consequences of P-Hacking in Science",
     "link_to_resource": "http://doi.org/10.1371/journal.pbio.1002106",
     "creators": [
-        "Head",
-        "M. L.",
-        "Holman",
-        "L.",
-        "Lanfear",
-        "R.",
-        "Kahn",
-        "A. T.",
-        "& Jennions",
-        "M. D."
+        "M. L. Head",
+        "L. Holman",
+        "R. Lanfear",
+        "A. T. Kahn",
+        "M. D. Jennions"
     ],
     "material_type": [
         "Primary Source",
@@ -43,5 +38,5 @@
     "in-clusters": true,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2020-06-03"
+    "lastmod": "2026-10-29"
 }

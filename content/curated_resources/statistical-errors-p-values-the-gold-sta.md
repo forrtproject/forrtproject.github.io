@@ -3,8 +3,7 @@
     "title": "Statistical errors: P values, the \u2018gold standard\u2019 of statistical validity, are not as reliable as many scientists assume",
     "link_to_resource": "https://www.nature.com/news/scientific-method-statistical-errors-1.14700",
     "creators": [
-        "Nuzzo",
-        "R."
+        "R. Nuzzo"
     ],
     "material_type": [
         "Primary Source",
@@ -34,5 +33,5 @@
     "in-clusters": false,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2020-05-24"
+    "lastmod": "2026-10-29"
 }

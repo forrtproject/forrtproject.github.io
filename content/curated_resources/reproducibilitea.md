@@ -4,7 +4,8 @@
     "link_to_resource": "https://reproducibilitea.org/",
     "creators": [
         "Sophia Cruwell",
-        "Amy Orben and Sam Parsons"
+        "Amy Orben",
+        "Sam Parsons"
     ],
     "material_type": [
         "Student Guide",
@@ -46,5 +47,5 @@
     "in-clusters": false,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2020-05-16"
+    "lastmod": "2026-10-29"
 }

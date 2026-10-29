@@ -3,7 +3,8 @@
     "title": "T\u00f3picos Especiais em Biotecnologia: Planejamento e Otimiza\u00e7\u00e3o de Experimentos",
     "link_to_resource": "https://osf.io/qc2w4/",
     "creators": [
-        "Caio Maximino and Monica Gomes Lima-Maximino"
+        "Caio Maximino",
+        "Monica Gomes Lima-Maximino"
     ],
     "material_type": [
         "Syllabus"
@@ -41,5 +42,5 @@
     "in-clusters": false,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2021-10-14"
+    "lastmod": "2026-10-29"
 }

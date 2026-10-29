@@ -6,7 +6,7 @@
         "Evan C. Carter",
         "Felix D. Sch\u00f6nbrodt",
         "Will M. Gervais",
-        "and Joseph Hilgard"
+        "Joseph Hilgard"
     ],
     "material_type": [
         "Primary Source",
@@ -44,5 +44,5 @@
     "in-clusters": true,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2020-06-06"
+    "lastmod": "2026-10-29"
 }

@@ -5,7 +5,8 @@
     "creators": [
         "Sarahanne M. Field",
         "Leonhard Volz",
-        "Artem Kaznatcheev & Noah van Dongen"
+        "Artem Kaznatcheev",
+        "Noah van Dongen"
     ],
     "material_type": [
         "Reading"
@@ -41,5 +42,5 @@
     "in-clusters": false,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2025-02-20"
+    "lastmod": "2026-10-29"
 }

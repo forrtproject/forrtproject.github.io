@@ -10,7 +10,6 @@
         "B\u00e9r\u00e9nice Batut",
         "Bob Freeman",
         "Brittany N. Lasseigne",
-        "PhD",
         "Caryn Johansen",
         "Chris Fields",
         "Darya Vanichkina",
@@ -21,7 +20,6 @@
         "Jason Williams",
         "Joseph Stachelek",
         "Kari L. Jordan",
-        "PhD",
         "Katrin Leinweber",
         "Maxim Belkin",
         "Michael R. Crusoe",
@@ -75,5 +73,5 @@
     "in-clusters": false,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2020-01-01"
+    "lastmod": "2026-10-29"
 }

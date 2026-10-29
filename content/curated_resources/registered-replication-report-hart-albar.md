@@ -3,8 +3,7 @@
     "title": "Registered replication report: Hart & Albarrac\u00edn (2011).",
     "link_to_resource": "https://doi.org/10.1177/1745691615605826",
     "creators": [
-        "Eerland",
-        "A."
+        "A. Eerland"
     ],
     "material_type": [
         "Primary Source",
@@ -41,5 +40,5 @@
     "in-clusters": true,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2020-06-09"
+    "lastmod": "2026-10-29"
 }

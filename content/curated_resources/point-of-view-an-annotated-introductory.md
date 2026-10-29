@@ -3,7 +3,29 @@
     "title": "Point of View: An annotated introductory reading list for neurodiversity",
     "link_to_resource": "https://doi.org/10.7554/eLife.102467",
     "creators": [
-        "Mirela Zaneva  Is a corresponding author Tao Coll-Mart\u00ednYseult H\u00e9jja-BrichardTamara KalandadzeAndrea KisAlicja KoperskaMarie Adrienne Robles ManaliliAdrien MathyChristopher J GrahamAnna HollisRobert M RossSiu Kit YeungVeronica AllenFlavio AzevedoEmily FriedelStephanie FullerVaitsa GiannouliBiljana GjoneskaHelena HartmannMax KorbmacherMahmoud M ElsherifAlyssa Hillary Zisk and FORRT"
+        "Mirela Zaneva",
+        "Tao Coll-Mart\u00edn",
+        "Yseult H\u00e9jja-Brichard",
+        "Tamara Kalandadze",
+        "Andrea Kis",
+        "Alicja Koperska",
+        "Marie Adrienne Robles Manalili",
+        "Adrien Mathy",
+        "Christopher J Graham",
+        "Anna Hollis",
+        "Robert M Ross",
+        "Siu Kit Yeung",
+        "Veronica Allen",
+        "Flavio Azevedo",
+        "Emily Friedel",
+        "Stephanie Fuller",
+        "Vaitsa Giannouli",
+        "Biljana Gjoneska",
+        "Helena Hartmann",
+        "Max Korbmacher",
+        "Mahmoud M Elsherif",
+        "Alyssa Hillary Zisk",
+        "FORRT"
     ],
     "material_type": [
         "Reading"
@@ -44,5 +66,5 @@
     "in-clusters": true,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2026-09-15"
+    "lastmod": "2026-10-29"
 }

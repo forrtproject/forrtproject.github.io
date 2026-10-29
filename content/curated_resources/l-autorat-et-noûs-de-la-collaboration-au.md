@@ -3,10 +3,9 @@
     "title": "L'autorat et \"No\u00fbs\" : De la collaboration au rapport de force dans la production scientifique",
     "link_to_resource": "https://hdl.handle.net/2268/318512",
     "creators": [
-        "Dony",
-        "Christophe ; \nMathy",
-        "Adrien  ;  \nBardiau",
-        "Marjorie"
+        "Christophe Dony",
+        "Adrien Mathy",
+        "Marjorie Bardiau"
     ],
     "material_type": [
         "Lecture Notes",
@@ -46,5 +45,5 @@
     "in-clusters": false,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2026-09-15"
+    "lastmod": "2026-10-29"
 }

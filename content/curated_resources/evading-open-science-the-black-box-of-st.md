@@ -3,9 +3,10 @@
     "title": "Evading Open Science: The Black Box of Student Data Collection",
     "link_to_resource": "https://doi.org/10.32872/spb.9411",
     "creators": [
+        "Tobias Ludwig",
         "Marlene Sophie Altenm\u00fcller",
-        "Matthias Fligge",
-        "Mario Gollwitzer"
+        "Leonhard Falk Florentin Schramm",
+        "Mathias Twardawski"
     ],
     "material_type": [
         "Reading"
@@ -30,7 +31,9 @@
     "FORRT_clusters": [
         "Reproducibility and Replicability Knowledge",
         "Open Data and Materials",
-        "Academic Life and Culture"
+        "Academic Life and Culture",
+        "Conceptual and Statistical Knowledge",
+        "Preregistration"
     ],
     "tags": [
         "Questionable Research Practices",
@@ -39,11 +42,11 @@
         "Supervision",
         "Students"
     ],
-    "forrt_clusters_new": "Replication Crisis and Credibility Revolution, Ways of Working",
-    "forrt_sub_clusters": "Research with students (under- and graduate), Questionable research practices & their prevalence",
+    "forrt_clusters_new": "Replication Crisis and Credibility Revolution, Ways of Working, Pre-analysis Planning",
+    "forrt_sub_clusters": "Research with students (under- and graduate), Questionable research practices & their prevalence, Registered reports",
     "doi": "10.32872/spb.9411",
     "in-clusters": true,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2025-02-20"
+    "lastmod": "2026-10-29"
 }

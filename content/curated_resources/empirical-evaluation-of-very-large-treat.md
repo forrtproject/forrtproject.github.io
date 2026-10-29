@@ -4,10 +4,8 @@
     "link_to_resource": "https://doi.org/10.1001/jama.2012.13444",
     "creators": [
         "Tiago V. Pereira",
-        "PhD Ralph I. Horwitz",
-        "MD John P. A. Ioannidis",
-        "MD",
-        "DSc"
+        "Ralph I. Horwitz",
+        "John P. A. Ioannidis"
     ],
     "material_type": [
         "Primary Source",
@@ -42,5 +40,5 @@
     "in-clusters": false,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2020-06-08"
+    "lastmod": "2026-10-29"
 }

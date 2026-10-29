@@ -3,7 +3,8 @@
     "title": "A Student\u2019s Guide to Open Science: Using the Replication Crisis to Reform Psychology",
     "link_to_resource": "https://forrt.org/educators-corner/014-students-guide-to-open-science/",
     "creators": [
-        "Charlotte R Pennington & Framework for Open and Reproducible Research Training (FORRT)"
+        "Charlotte R Pennington",
+        "Framework for Open and Reproducible Research Training (FORRT)"
     ],
     "material_type": [
         "Reading",
@@ -44,5 +45,5 @@
     "in-clusters": false,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2026-09-15"
+    "lastmod": "2026-10-29"
 }

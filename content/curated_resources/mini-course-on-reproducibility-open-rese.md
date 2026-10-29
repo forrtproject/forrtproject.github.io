@@ -3,8 +3,9 @@
     "title": "Mini course on reproducibility & open research",
     "link_to_resource": "https://www.youtube.com/playlist?list=PLo1sDp2zqD4Rl9AQblQBMQrVblZfEfHcJ",
     "creators": [
-        "Dr Alex Mitchell (University of Edinburgh)",
-        "Niamh MacSweeney (Edinburgh ReproducibiliTea) and Laura Klinkhamer (Edinburgh ReproducibiliTea)"
+        "Alex Mitchell",
+        "Niamh MacSweeney",
+        "Laura Klinkhamer"
     ],
     "material_type": [
         "Lecture"
@@ -51,5 +52,5 @@
     "in-clusters": false,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2026-09-15"
+    "lastmod": "2026-10-29"
 }

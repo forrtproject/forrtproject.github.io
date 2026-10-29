@@ -3,7 +3,8 @@
     "title": "Toward a more credible assessment of the credibility of science by many-analyst studies",
     "link_to_resource": "https://doi.org/10.1073/pnas.2404035121",
     "creators": [
-        "Katrin Auspurg and Josef Br\u00fcderl"
+        "Katrin Auspurg",
+        "Josef Br\u00fcderl"
     ],
     "material_type": [
         "Reading"
@@ -39,5 +40,5 @@
     "in-clusters": true,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2025-02-13"
+    "lastmod": "2026-10-29"
 }

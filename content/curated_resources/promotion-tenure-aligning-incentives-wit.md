@@ -12,7 +12,7 @@
         "Russell Poldrack",
         "Edward Bernat",
         "L. Robert Slevc",
-        "& Conor T. McLennan"
+        "Conor T. McLennan"
     ],
     "material_type": [
         "Case Study",
@@ -54,5 +54,5 @@
     "in-clusters": false,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2023-04-23"
+    "lastmod": "2026-10-29"
 }

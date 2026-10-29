@@ -4,7 +4,8 @@
     "link_to_resource": "https://dagitty.net",
     "creators": [
         "Johannes Texor",
-        "Maciej Li\u015bkiewicz and Benito van der Zander"
+        "Maciej Li\u015bkiewicz",
+        "Benito van der Zander"
     ],
     "material_type": [
         "Teaching/Learning Strategy",
@@ -39,5 +40,5 @@
     "in-clusters": false,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2020-05-08"
+    "lastmod": "2026-10-29"
 }

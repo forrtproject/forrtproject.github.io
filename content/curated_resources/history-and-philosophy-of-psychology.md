@@ -3,7 +3,7 @@
     "title": "History and Philosophy of Psychology",
     "link_to_resource": "https://osf.io/73zyu/",
     "creators": [
-        "Professor E.Machery"
+        "E. Machery"
     ],
     "material_type": [
         "Syllabus"
@@ -36,5 +36,5 @@
     "in-clusters": false,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2021-10-14"
+    "lastmod": "2026-10-29"
 }

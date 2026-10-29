@@ -8,7 +8,7 @@
         "Erin McKiernan",
         "Greg Tananbaum",
         "Zac Parker",
-        "and Carolina Garcia"
+        "Carolina Garcia"
     ],
     "material_type": [
         "Reading"
@@ -41,5 +41,5 @@
     "in-clusters": true,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2024-12-19"
+    "lastmod": "2026-10-29"
 }

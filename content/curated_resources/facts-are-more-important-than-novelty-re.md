@@ -3,7 +3,8 @@
     "title": "Facts Are More Important Than Novelty: Replication in the Education Sciences",
     "link_to_resource": "https://doi.org/10.3102/0013189X14545513",
     "creators": [
-        "Matthew C. Makel and Jonathan A. Plucker"
+        "Matthew C. Makel",
+        "Jonathan A. Plucker"
     ],
     "material_type": [
         "Primary Source",
@@ -40,5 +41,5 @@
     "in-clusters": true,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2020-05-22"
+    "lastmod": "2026-10-29"
 }

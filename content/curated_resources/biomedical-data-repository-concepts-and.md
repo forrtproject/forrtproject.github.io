@@ -8,7 +8,8 @@
         "Kim D. Pruitt",
         "Anupama Gururaj",
         "Christine Melchior",
-        "Charles Schmitt & Susan N. Wright"
+        "Charles Schmitt",
+        "Susan N. Wright"
     ],
     "material_type": [
         "Reading"
@@ -42,5 +43,5 @@
     "in-clusters": true,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2026-09-15"
+    "lastmod": "2026-10-29"
 }

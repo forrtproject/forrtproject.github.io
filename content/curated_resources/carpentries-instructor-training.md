@@ -53,7 +53,7 @@
         "Mik Black",
         "Mike Henry",
         "Murray Cadzow",
-        "naught101",
+        "naught",
         "Neal Davis",
         "Neil Kindlon",
         "Nicholas Tierney",
@@ -119,5 +119,5 @@
     "in-clusters": false,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2020-01-01"
+    "lastmod": "2026-10-29"
 }

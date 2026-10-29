@@ -12,7 +12,8 @@
         "Dora Matzke",
         "Jeffrey N. Rouder",
         "Jennifer S. Trueblood",
-        "Corey N. White & Joachim Vandekerckhove"
+        "Corey N. White",
+        "Joachim Vandekerckhove"
     ],
     "material_type": [
         "Reading"
@@ -62,5 +63,5 @@
     "in-clusters": false,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2023-10-23"
+    "lastmod": "2026-10-29"
 }

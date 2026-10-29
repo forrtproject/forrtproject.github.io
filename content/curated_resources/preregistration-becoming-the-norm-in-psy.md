@@ -3,7 +3,8 @@
     "title": "Preregistration Becoming the Norm in Psychological Science",
     "link_to_resource": "https://www.psychologicalscience.org/observer/preregistration-becoming-the-norm-in-psychological-science/comment-page-1",
     "creators": [
-        "Brian Nosek and Stephen Lindsay"
+        "Brian Nosek",
+        "Stephen Lindsay"
     ],
     "material_type": [
         "Reading",
@@ -36,5 +37,5 @@
     "in-clusters": false,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2020-06-08"
+    "lastmod": "2026-10-29"
 }

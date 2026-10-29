@@ -11,7 +11,7 @@
     "education_level": [
         "Graduate / Professional"
     ],
-    "abstract": "Purpose: To introduce methods and tools in organization, documentation, automation, and dissemination of research that nudge it further along the reproducibility spectrum.OutcomeParticipants feel more confident applying reproducibility methods and tools to their own research projects.ProcessParticipants practice new methods and tools with code and data during the workshop to explore what they do and how they might work in a research workflow. Participants can compare benefits of new practices and ask questions to help clarify which would provide them the most value to adopt.",
+    "abstract": "Purpose: To introduce methods and tools in organization, documentation, automation, and dissemination of research that nudge it further along the reproducibility spectrum. OutcomeParticipants feel more confident applying reproducibility methods and tools to their own research projects. ProcessParticipants practice new methods and tools with code and data during the workshop to explore what they do and how they might work in a research workflow. Participants can compare benefits of new practices and ask questions to help clarify which would provide them the most value to adopt.",
     "language": [
         "English"
     ],
@@ -41,5 +41,5 @@
     "in-clusters": false,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2020-01-01"
+    "lastmod": "2026-10-29"
 }

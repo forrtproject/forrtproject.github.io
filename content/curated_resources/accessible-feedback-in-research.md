@@ -3,9 +3,10 @@
     "title": "Accessible Feedback in Research",
     "link_to_resource": "https://forrt.org/educators-corner/018-accessible-feedback-in-research/",
     "creators": [
-        "Dr Thomas Evans",
+        "Thomas Evans",
         "Roksana Sobolak",
-        "Magda Skubera & Framework for Open and Reproducible Research Training (FORRT)"
+        "Magda Skubera",
+        "Framework for Open and Reproducible Research Training (FORRT)"
     ],
     "material_type": [
         "Reading"
@@ -45,5 +46,5 @@
     "in-clusters": false,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2026-09-15"
+    "lastmod": "2026-10-29"
 }

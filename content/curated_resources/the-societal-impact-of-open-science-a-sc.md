@@ -7,7 +7,7 @@
         "Eva Kormann",
         "Thomas Klebel",
         "Simon Apartis",
-        "and Tony Ross-Hellauer"
+        "Tony Ross-Hellauer"
     ],
     "material_type": [
         "Reading"
@@ -49,5 +49,5 @@
     "in-clusters": true,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2025-01-09"
+    "lastmod": "2026-10-29"
 }

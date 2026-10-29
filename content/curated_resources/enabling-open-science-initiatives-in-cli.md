@@ -3,18 +3,12 @@
     "title": "Enabling Open-Science Initiatives in Clinical Psychology and Psychiatry Without Sacrificing Patients\u2019 Privacy: Current Practices and Future Challenges",
     "link_to_resource": "https://doi.org/10.1177/2515245917749652",
     "creators": [
-        "Walsh",
-        "C.",
-        "Xia",
-        "W.",
-        "Li",
-        "M.",
-        "Denny",
-        "J.",
-        "Harris",
-        "P.",
-        "& Malin",
-        "B"
+        "C. Walsh",
+        "W. Xia",
+        "M. Li",
+        "J. Denny",
+        "P. Harris",
+        "B. Malin"
     ],
     "material_type": [
         "Primary Source",
@@ -50,5 +44,5 @@
     "in-clusters": true,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2020-06-03"
+    "lastmod": "2026-10-29"
 }

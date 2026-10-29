@@ -3,7 +3,18 @@
     "title": "ORCC UKRN Primer on Working in Open Research",
     "link_to_resource": "https://osf.io/346hr/",
     "creators": [
-        "UK Reproducibility NetworkAnna Rhiannon HughesValerie McCutcheonNick SheppardKirsty WallisAngus WhyteIlkay HoltElizabeth NewboldNeil JacobsKirsty MerrettKate Ehrig-PageHelen Clare"
+        "UK Reproducibility Network",
+        "Anna Rhiannon Hughes",
+        "Valerie McCutcheon",
+        "Nick Sheppard",
+        "Kirsty Wallis",
+        "Angus Whyte",
+        "Ilkay Holt",
+        "Elizabeth Newbold",
+        "Neil Jacobs",
+        "Kirsty Merrett",
+        "Kate Ehrig-Page",
+        "Helen Clare"
     ],
     "material_type": [
         "Module",
@@ -50,5 +61,5 @@
     "in-clusters": false,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2026-09-15"
+    "lastmod": "2026-10-29"
 }

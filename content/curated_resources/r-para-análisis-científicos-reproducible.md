@@ -30,7 +30,7 @@
         "Jeff Oliver",
         "Jonah Duckles",
         "Juan M. Barrios",
-        "juli arancio",
+        "Juli Arancio",
         "Katrin Leinweber",
         "Kevin Alquicira",
         "Kevin Mart\u00ednez-Folgar",
@@ -102,5 +102,5 @@
     "in-clusters": false,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2020-01-01"
+    "lastmod": "2026-10-29"
 }

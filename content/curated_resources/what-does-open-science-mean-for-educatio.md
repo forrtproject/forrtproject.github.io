@@ -30,7 +30,7 @@
         "Benjamin Kaveladze",
         "Flavio Azevedo",
         "Candice Odgers",
-        "and Amy Orben"
+        "Amy Orben"
     ],
     "material_type": [
         "Reading"
@@ -69,5 +69,5 @@
     "in-clusters": true,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2025-01-13"
+    "lastmod": "2026-10-29"
 }

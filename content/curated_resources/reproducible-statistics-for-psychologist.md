@@ -3,7 +3,7 @@
     "title": "Reproducible statistics for psychologists with R Lab Tutorials",
     "link_to_resource": "https://crumplab.github.io/rstatsforpsych/index.html",
     "creators": [
-        "Matthew C.Crump"
+        "Matthew C. Crump"
     ],
     "material_type": [
         "Reading",
@@ -39,5 +39,5 @@
     "in-clusters": false,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2020-12-05"
+    "lastmod": "2026-10-29"
 }

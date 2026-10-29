@@ -3,20 +3,13 @@
     "title": "Registered Replication Report: Study 1 From Finkel, Rusbult, Kumashiro, & Hannon (2002).",
     "link_to_resource": "https://doi.org/10.1177/1745691616664694",
     "creators": [
-        "Cheung",
-        "I.",
-        "Campbell",
-        "L.",
-        "LeBel",
-        "E. P.",
-        "Ackerman",
-        "R. A.",
-        "Aykuto\u011flu",
-        "B.",
-        "Bahn\u00edk",
-        "\u0160.",
-        "... & Carcedo",
-        "R. J."
+        "I. Cheung",
+        "L. Campbell",
+        "E. P. LeBel",
+        "R. A. Ackerman",
+        "B. Aykuto\u011flu",
+        "\u0160. Bahn\u00edk",
+        "R. J. Carcedo et al."
     ],
     "material_type": [
         "Primary Source",
@@ -52,5 +45,5 @@
     "in-clusters": true,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2020-06-11"
+    "lastmod": "2026-10-29"
 }

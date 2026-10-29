@@ -3,7 +3,7 @@
     "title": "Theory-Testing in Psychology and Physics: A Methodological Paradox",
     "link_to_resource": "https://doi.org/10.1086/288135",
     "creators": [
-        "Paul E.Meehl"
+        "Paul E. Meehl"
     ],
     "material_type": [
         "Primary Source",
@@ -41,5 +41,5 @@
     "in-clusters": true,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2020-05-27"
+    "lastmod": "2026-10-29"
 }

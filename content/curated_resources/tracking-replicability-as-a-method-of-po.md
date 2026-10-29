@@ -3,10 +3,8 @@
     "title": "Tracking replicability as a method of post-publication open evaluation",
     "link_to_resource": "https://doi.org/10.3389/fncom.2012.00008",
     "creators": [
-        "Hartshorne",
-        "J. K.",
-        "& Schachner",
-        "A."
+        "J. K. Hartshorne",
+        "A. Schachner"
     ],
     "material_type": [
         "Primary Source",
@@ -42,5 +40,5 @@
     "in-clusters": true,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2020-06-03"
+    "lastmod": "2026-10-29"
 }

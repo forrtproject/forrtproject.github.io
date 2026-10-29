@@ -3,12 +3,12 @@
     "title": "Methods and results of studies on reporting guideline adherence are poorly reported: a meta-research study",
     "link_to_resource": "https://doi.org/10.1016/j.jclinepi.2023.05.017",
     "creators": [
-        "Tiffany Dal Santoa",
+        "Tiffany Dal Santo",
         "Danielle B. Rice",
-        "Lara S.N. Amiria",
-        "Amina Tasleema",
-        "Kexin Lia",
-        "Jill T. Boruffe",
+        "Lara S. N. Amiri",
+        "Amina Tasleem",
+        "Kexin Li",
+        "Jill T. Boruff",
         "Marie-Claude Geoffroy",
         "Andrea Benedetti",
         "Brett D. Thombs"
@@ -50,5 +50,5 @@
     "in-clusters": false,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2025-02-27"
+    "lastmod": "2026-10-29"
 }

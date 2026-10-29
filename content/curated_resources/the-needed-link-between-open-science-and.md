@@ -7,7 +7,6 @@
         "Luz M. Cumba Garcia",
         "Laura A. Galvis",
         "Luisa F. Echeverr\u00eda-King",
-        "",
         "Branislav Pantovi\u0107",
         "Claudia Alarcn-Lpez",
         "Vernica Rossana Suarez",
@@ -49,5 +48,5 @@
     "in-clusters": true,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2026-09-15"
+    "lastmod": "2026-10-29"
 }

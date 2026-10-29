@@ -6,7 +6,8 @@
         "Harold Pashler",
         "Doug Rohrer",
         "Ian Abramson",
-        "Tanya Wolfson &Christine R. Harris"
+        "Tanya Wolfson",
+        "Christine R. Harris"
     ],
     "material_type": [
         "Primary Source",
@@ -42,5 +43,5 @@
     "in-clusters": true,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2020-06-10"
+    "lastmod": "2026-10-29"
 }

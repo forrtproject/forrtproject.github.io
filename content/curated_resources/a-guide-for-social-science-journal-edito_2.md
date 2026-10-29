@@ -41,7 +41,7 @@
         "Sean Grant",
         "Thu-Mai Lewis Christian",
         "William X. Q. Ngiam",
-        "and Moin Syed"
+        "Moin Syed"
     ],
     "material_type": [
         "Reading"
@@ -78,5 +78,5 @@
     "in-clusters": true,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2025-02-20"
+    "lastmod": "2026-10-29"
 }

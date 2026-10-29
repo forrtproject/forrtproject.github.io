@@ -3,7 +3,8 @@
     "title": "Introducing Nowhere Lab",
     "link_to_resource": "https://forrt.org/educators-corner/013-introducing-nowhere-lab/",
     "creators": [
-        "Priya Silverstein & Framework for Open and Reproducible Research Training (FORRT)"
+        "Priya Silverstein",
+        "Framework for Open and Reproducible Research Training (FORRT)"
     ],
     "material_type": [
         "Activity/Lab",
@@ -38,5 +39,5 @@
     "in-clusters": false,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2026-09-15"
+    "lastmod": "2026-10-29"
 }

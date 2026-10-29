@@ -4,7 +4,8 @@
     "link_to_resource": "https://doi.org/10.1080/1047840X.2012.705245",
     "creators": [
         "Leif D. Nelson",
-        "Joseph P. Simmons & Uri Simonsohn"
+        "Joseph P. Simmons",
+        "Uri Simonsohn"
     ],
     "material_type": [
         "Primary Source",
@@ -40,5 +41,5 @@
     "in-clusters": true,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2020-06-03"
+    "lastmod": "2026-10-29"
 }

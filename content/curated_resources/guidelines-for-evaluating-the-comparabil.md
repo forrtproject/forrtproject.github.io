@@ -16,7 +16,8 @@
         "Sandra Sanchez-Roige",
         "K. Paige Harden",
         "Abraham A. Palmer",
-        "Danielle M. Dick & Richard Karlsson Linn\u00e9r"
+        "Danielle M. Dick",
+        "Richard Karlsson Linn\u00e9r"
     ],
     "material_type": [
         "Reading"
@@ -59,5 +60,5 @@
     "in-clusters": false,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2023-09-18"
+    "lastmod": "2026-10-29"
 }

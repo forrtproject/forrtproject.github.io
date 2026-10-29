@@ -3,7 +3,8 @@
     "title": "Forcing a Deterministic Frame on Probabilistic Phenomena: A Communication Blind Spot in Media Coverage of the \u201cReplication Crisis''",
     "link_to_resource": "https://doi.org/10.1177/10755470241239947",
     "creators": [
-        "Carol Ting and Sander Greenland"
+        "Carol Ting",
+        "Sander Greenland"
     ],
     "material_type": [
         "Reading"
@@ -37,5 +38,5 @@
     "in-clusters": true,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2025-02-27"
+    "lastmod": "2026-10-29"
 }

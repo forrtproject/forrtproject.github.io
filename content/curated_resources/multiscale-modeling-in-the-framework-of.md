@@ -3,14 +3,10 @@
     "title": "Multiscale modeling in the framework of biological systems and its potential for spaceflight biology studies",
     "link_to_resource": "https://doi.org/10.1016/j.isci.2022.105421",
     "creators": [
-        "MILLAR-WILSON",
-        "A.",
-        "WARD",
-        "O.",
-        "DUFFY",
-        "E.",
-        "HARDIMAN",
-        "G."
+        "A. Millar-Wilson",
+        "O. Ward",
+        "E. Duffy",
+        "G. Hardiman"
     ],
     "material_type": [
         "Reading"
@@ -45,5 +41,5 @@
     "in-clusters": false,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2025-02-06"
+    "lastmod": "2026-10-29"
 }
