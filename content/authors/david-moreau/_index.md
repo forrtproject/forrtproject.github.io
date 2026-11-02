@@ -2,6 +2,8 @@
 # Display name
 name: "David Moreau"
 title: "David Moreau"
+aliases:
+  - /author/name-david-moreau/
 
 
 # Is this the primary user of the site?
