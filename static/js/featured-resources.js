@@ -793,7 +793,7 @@
         if (!header || !body) continue;
 
         if (res.matchCount === 0 && !res.ownTextMatches) {
-          if (!header.classList.contains('acc-disabled')) {
+          if (!header.dataset.wasOpen) {
             header.dataset.wasOpen = body.classList.contains('acc-collapsed') ? '0' : '1';
           }
           header.classList.add('acc-disabled');
