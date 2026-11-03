@@ -24,7 +24,7 @@ import tempfile
 import threading
 from urllib.parse import urlsplit
 
-from playwright.sync_api import sync_playwright
+from playwright.sync_api import Error as PlaywrightError, sync_playwright
 
 WIDTHS = {390: 844, 1024: 768, 1440: 900}
 SCREENS = {
@@ -37,6 +37,19 @@ SCREENS = {
 BLOCK = re.compile(r"googletagmanager|google-analytics|doubleclick|youtube|docs\.google")
 A14_LIMIT = {390: 2.5, 1440: 1.6}
 SHIFT_LIMIT = 0.1
+# A page's own button must not vanish: shell rules on a bare class name have hidden one. Bootstrap's
+# d-*-none classes hide buttons on purpose, such as a menu toggle meant only for phones.
+HIDDEN_BUTTONS = """(root) => {
+  const onPurpose = (el) => {
+    for (let e = el; e; e = e.parentElement) {
+      if (getComputedStyle(e).display === 'none' && /(^|\\s)d-(\\w+-)?none(\\s|$)/.test(e.getAttribute('class') || '')) return true;
+    }
+    return false;
+  };
+  return [...root.querySelectorAll(':is(a,button).btn')]
+    .filter((a) => !a.getClientRects().length && !a.closest('[hidden],.collapse,.modal,.tab-pane,details') && !onPurpose(a))
+    .map((a) => a.textContent.trim().slice(0, 40));
+}"""
 AUDIT = """() => {
   const main = document.querySelector('main');
   const italic = [];
@@ -105,10 +118,7 @@ AUDIT = """() => {
     small: small.slice(0, 5),
     long: long.slice(0, 5),
     h1: document.querySelectorAll('h1').length,
-    // A page's own button must not vanish: shell rules on a bare class name have hidden one.
-    hidden: [...main.querySelectorAll(':is(a,button).btn')]
-      .filter((a) => !a.getClientRects().length && !a.closest('[hidden],.collapse,.modal,.tab-pane,details'))
-      .map((a) => a.textContent.trim().slice(0, 40)),
+    hidden: (""" + HIDDEN_BUTTONS + """)(main),
     broken: [...document.images].filter((i) => i.complete && i.getClientRects().length && !i.naturalWidth).map((i) => i.src),
   };
 }"""
@@ -194,11 +204,40 @@ def check_articles(browser, base, root, failures):
                                ("long", "lines of 80 characters or more"), ("broken", "broken images"), ("hidden", "hidden buttons")):
                 if found[key]:
                     failures.append(f"{path} at {width}: {label}: {found[key][:2]}")
+            gap = page.evaluate(CARD_GAP)
+            if gap > CARD_GAP_LIMIT:
+                failures.append(f"{path} at {width}: {round(gap)} px of empty space between the text and its card")
         page.context.close()
 
 
+# From a page's text to the card beside it, when they are side by side.
+CARD_GAP = """() => {
+  const reading = document.querySelector('.article-layout>.reading');
+  const card = document.querySelector('.article-layout>.article-card');
+  if (!reading || !card) return 0;
+  const box = card.getBoundingClientRect();
+  if (box.top > reading.getBoundingClientRect().bottom) return 0;
+  const lines = [...reading.querySelectorAll('.article-style p')].filter((p) => p.getClientRects().length);
+  const right = Math.max(...(lines.length ? lines : [reading]).map((el) => el.getBoundingClientRect().right));
+  return box.left < right ? 0 : box.left - right;
+}"""
+CARD_GAP_LIMIT = 80
+
+
+def read_settled(page, expression):
+    """Read a page that may be redirecting, as /glossary/ does, by reading again once it has landed."""
+    for _ in range(4):
+        try:
+            return page.evaluate(expression)
+        except PlaywrightError:
+            page.wait_for_timeout(500)
+            page.wait_for_load_state("load")
+    return page.evaluate(expression)
+
+
 def check_samples(browser, base, failures):
-    """Nothing runs wider than the screen on the sample pages, with their retained templates too."""
+    """Nothing runs wider than the screen or hides a button on the sample pages, with their retained
+    templates too."""
     with open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "sample_pages.json"), encoding="utf-8") as handle:
         samples = json.load(handle)
     wider = "document.documentElement.scrollWidth - document.documentElement.clientWidth"
@@ -207,9 +246,12 @@ def check_samples(browser, base, failures):
         for name, path in samples.items():
             page.goto(base + path.lstrip("/"), wait_until="load", timeout=120000)
             page.wait_for_timeout(300)
-            over = page.evaluate(wider)
+            over = read_settled(page, wider)
             if over > 0:
                 failures.append(f"{name} at {width}: {over} px wider than the screen")
+            hidden = read_settled(page, f"({HIDDEN_BUTTONS})(document.querySelector('main') || document.body)")
+            if hidden:
+                failures.append(f"{name} at {width}: hidden buttons: {hidden[:2]}")
         page.context.close()
 
 
