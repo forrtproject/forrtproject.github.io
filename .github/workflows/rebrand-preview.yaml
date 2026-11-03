@@ -6,7 +6,8 @@ name: Doors preview
 # Purpose: Builds the rebrand-doors branch and publishes it at forrt.org/rebrand-doors/
 # Triggers: Push to rebrand-doors, and PRs into it (checks only, no deployment)
 # Target: forrtproject/rebrand-doors, on GitHub Pages under the forrt.org domain
-# Checks: Every run also builds main from the same data, then compares the two builds.
+# Checks: Every run also builds the merge base with main from the same data, then compares
+#         the two builds.
 #         A failed check shows on the run but does not hold back the preview.
 # Note: Uses the same data and announcement artifacts as deploy.yaml. Delete this
 #       workflow when the redesign launches.
@@ -57,8 +58,10 @@ jobs:
       - name: Let Git report non-ASCII paths unquoted
         run: git config core.quotepath false
 
-      - name: Check out main as the reference
-        run: git worktree add --detach "$RUNNER_TEMP/reference" origin/main
+      # The point where the branch last took main, not main's tip: otherwise anything landing
+      # on main shows up here as a change, until main is next merged in.
+      - name: Check out the merge base with main as the reference
+        run: git worktree add --detach "$RUNNER_TEMP/reference" "$(git merge-base origin/main HEAD)"
 
       # =======================
       # Artifacts, as in deploy.yaml
@@ -107,7 +110,7 @@ jobs:
         env:
           HUGO_ENV: staging
 
-      - name: Build main from the same data
+      - name: Build the reference from the same data
         working-directory: ${{ runner.temp }}/reference
         run: hugo --gc --minify --destination "$RUNNER_TEMP/public-reference" --baseURL "$PREVIEW_URL"
         env:
@@ -126,7 +129,7 @@ jobs:
         continue-on-error: true
         run: python3 scripts/rebrand/check_source_rules.py --base origin/main
 
-      - name: URL list, structured data and SEO tags against main
+      - name: URL list, structured data and SEO tags against the reference
         id: compare
         continue-on-error: true
         run: python3 scripts/rebrand/compare_builds.py "$RUNNER_TEMP/public-reference" public
