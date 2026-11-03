@@ -16,6 +16,11 @@ Hard checks (exit 1 if any fails):
   6. The homepage share image (og:image, twitter:image) is a 1200x630 PNG or
      JPEG (per og:image:width/height), and twitter:card is summary_large_image.
      X and LinkedIn show no preview for WebP (#870).
+  7. Breadcrumb JSON-LD (#867): at most one BreadcrumbList per page; every
+     itemListElement is a non-empty list of objects; every ListItem has a
+     non-empty item URL; positions run 1..n; the page has a canonical link and
+     the last item is that URL; no name repeats, except that the current page
+     may share the root's name (an author or glossary term called "FORRT").
   8. Every curated-resource page carries exactly one LearningResource JSON-LD
      block that parses, has a name, url and provider, and holds no empty or
      placeholder values (#863). Every JSON-LD block on those pages must parse.
@@ -46,16 +51,18 @@ class PageParser(HTMLParser):
         self._h1_depth = 0
         self._h1_buffer = []
         self.jsonld = []
-        self._in_jsonld = False
+        self.canonical = None
+        self._jsonld_buffer = None
 
     def handle_starttag(self, tag, attrs):
         attrs = dict(attrs)
+        if tag == "script" and attrs.get("type") == "application/ld+json":
+            self._jsonld_buffer = []
+        elif tag == "link" and attrs.get("rel") == "canonical":
+            self.canonical = attrs.get("href")
         if tag == "h1":
             self._h1_depth += 1
         elif tag in ("script", "link"):
-            if tag == "script" and attrs.get("type") == "application/ld+json":
-                self._in_jsonld = True
-                self.jsonld.append("")
             url = attrs.get("src") or attrs.get("href")
             if url:
                 self.urls.append(url)
@@ -71,10 +78,11 @@ class PageParser(HTMLParser):
             self.code_classes.append(attrs.get("class") or "")
 
     def handle_endtag(self, tag):
+        if tag == "script" and self._jsonld_buffer is not None:
+            self.jsonld.append("".join(self._jsonld_buffer))
+            self._jsonld_buffer = None
         if tag == "pre":
             self._in_pre = False
-        if tag == "script":
-            self._in_jsonld = False
         if tag == "h1" and self._h1_depth > 0:
             self._h1_depth -= 1
             if self._h1_depth == 0:
@@ -82,8 +90,8 @@ class PageParser(HTMLParser):
                 self._h1_buffer = []
 
     def handle_data(self, data):
-        if self._in_jsonld:
-            self.jsonld[-1] += data
+        if self._jsonld_buffer is not None:
+            self._jsonld_buffer.append(data)
         if self._h1_depth > 0:
             self._h1_buffer.append(data)
 
@@ -97,6 +105,7 @@ class Page:
         self.meta = parser.meta
         self.code_blocks = [cls.split() for cls in parser.code_classes]
         self.jsonld = parser.jsonld
+        self.canonical = parser.canonical
 
     def loads(self, needle):
         return any(needle in url for url in self.urls)
@@ -193,6 +202,60 @@ def check_img_alt(pages):
             for p in pages if p.imgs_without_alt]
 
 
+def breadcrumb_lists(page):
+    """BreadcrumbList objects in the page's JSON-LD, top level or in @graph.
+    Blocks that do not parse are returned as None so the check can flag them."""
+    found = []
+    for block in page.jsonld:
+        try:
+            data = json.loads(block)
+        except ValueError:
+            found.append(None)
+            continue
+        nodes = data if isinstance(data, list) else [data]
+        for node in list(nodes):
+            if isinstance(node, dict) and isinstance(node.get("@graph"), list):
+                nodes.extend(node["@graph"])
+        found.extend(n for n in nodes
+                     if isinstance(n, dict) and n.get("@type") == "BreadcrumbList")
+    return found
+
+
+def check_breadcrumbs(pages):
+    failures = []
+    for p in pages:
+        lists = breadcrumb_lists(p)
+        problems = []
+        if None in lists:
+            problems.append("JSON-LD block does not parse")
+            lists = [bl for bl in lists if bl is not None]
+        if len(lists) > 1:
+            problems.append("%d BreadcrumbLists" % len(lists))
+        for bl in lists:
+            items = bl.get("itemListElement")
+            if (not isinstance(items, list) or not items
+                    or any(not isinstance(item, dict) for item in items)):
+                problems.append("invalid itemListElement")
+                continue
+            names = [item.get("name") for item in items]
+            if any(not item.get("item") for item in items):
+                problems.append("empty item")
+            if [item.get("position") for item in items] != list(range(1, len(items) + 1)):
+                problems.append("positions not 1..n")
+            # The page itself may share the root's name (e.g. /authors/forrt/).
+            if len(names) > 1 and names[-1] == names[0]:
+                names = names[1:]
+            if len(set(names)) != len(names):
+                problems.append("repeated name")
+            if not p.canonical:
+                problems.append("no canonical link")
+            elif items[-1].get("item") != p.canonical:
+                problems.append("last item is not the canonical URL")
+        if problems:
+            failures.append("%s (%s)" % (p.path, ", ".join(sorted(set(problems)))))
+    return failures
+
+
 def empty_values(node, path="$"):
     """Paths of empty strings, lists or objects and placeholder strings."""
     if node is None or node == "" or node == [] or node == {}:
@@ -247,6 +310,7 @@ def main(public_dir):
         "4. every <img> has an alt attribute": check_img_alt(pages),
         "5. every homepage <img> has width and height": check_homepage_img_dims(home),
         "6. homepage share image is 1200x630 PNG/JPEG with twitter:card": check_homepage_share_image(home),
+        "7. breadcrumb JSON-LD is well formed": check_breadcrumbs(pages),
         "8. curated resources carry one clean LearningResource": check_learning_resource(pages),
     }
     conditional = check_conditional_assets(pages)
