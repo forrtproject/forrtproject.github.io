@@ -16,6 +16,9 @@ Hard checks (exit 1 if any fails):
   6. The homepage share image (og:image, twitter:image) is a 1200x630 PNG or
      JPEG (per og:image:width/height), and twitter:card is summary_large_image.
      X and LinkedIn show no preview for WebP (#870).
+  8. Every curated-resource page carries exactly one LearningResource JSON-LD
+     block that parses, has a name and url, and holds no empty or placeholder
+     values (#863). Every JSON-LD block on those pages must parse.
   7. Breadcrumb JSON-LD (#867): at most one BreadcrumbList per page; every
      itemListElement is a non-empty list of objects; every ListItem has a
      non-empty item URL; positions run 1..n; the page has a canonical link and
@@ -247,6 +250,45 @@ def breadcrumb_lists(page):
     return found
 
 
+PLACEHOLDERS = {"", "-", "na", "n/a", "n.a.", "none", "other", "<nil>"}
+
+
+def empty_values(node, path="$"):
+    """Paths of empty strings, lists or objects and placeholder strings."""
+    if node is None or node == "" or node == [] or node == {}:
+        return [path]
+    if isinstance(node, dict):
+        return [p for k, v in node.items() for p in empty_values(v, "%s.%s" % (path, k))]
+    if isinstance(node, list):
+        return [p for i, v in enumerate(node) for p in empty_values(v, "%s[%d]" % (path, i))]
+    if isinstance(node, str) and node.strip().lower() in PLACEHOLDERS:
+        return ["%s=%r" % (path, node)]
+    return []
+
+
+def check_learning_resource(pages):
+    bad = []
+    for p in pages:
+        parts = p.path.split(os.sep)
+        if len(parts) != 3 or parts[0] != "curated_resources":
+            continue
+        try:
+            blocks = [json.loads(b) for b in p.jsonld]
+        except ValueError as err:
+            bad.append("%s (invalid JSON-LD: %s)" % (p.path, err))
+            continue
+        found = [b for b in blocks if isinstance(b, dict) and b.get("@type") == "LearningResource"]
+        if len(found) != 1:
+            bad.append("%s (%d LearningResource blocks)" % (p.path, len(found)))
+            continue
+        # The title is the resource's own, so "Other" is a valid one.
+        problems = ["missing " + k for k in ("name", "url") if not found[0].get(k)]
+        problems += empty_values({k: v for k, v in found[0].items() if k != "name"})
+        if problems:
+            bad.append("%s (%s)" % (p.path, ", ".join(problems[:3])))
+    return bad
+
+
 def check_breadcrumbs(pages):
     failures = []
     for p in pages:
@@ -350,6 +392,7 @@ def main(public_dir):
     conditional = check_conditional_assets(pages)
     results["3. conditional highlight.js / mermaid loading"] = [
         item for items in conditional.values() for item in items]
+    results["8. curated resources carry one clean LearningResource"] = check_learning_resource(pages)
 
     print("\nSummary")
     for title in sorted(results, key=lambda t: int(t.split(".")[0])):
