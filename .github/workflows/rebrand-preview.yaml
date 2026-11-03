@@ -150,7 +150,7 @@ jobs:
         id: design
         continue-on-error: true
         run: |
-          pip install --quiet playwright==1.63.0
+          pip install --quiet playwright==1.63.0 pillow
           playwright install --with-deps chromium
           python3 scripts/rebrand/check_design.py public --base "$PREVIEW_BASE"
 
