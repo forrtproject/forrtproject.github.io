@@ -10,6 +10,11 @@
          `clusters/cluster_seo_jsonld.html` — two BreadcrumbLists on one page
          would compete.
 
+     Ancestors that are never rendered (`build.render: never`, e.g. the
+     `/glossary/` section stub, which only exists as a redirect to
+     `/glossary/english/`) have no permalink and are left out: an entry
+     without a URL is invalid, and its title would repeat the next level's.
+
      The skips are one wrapping conditional rather than early `return`s: a Hugo
      partial either returns a value or writes output, and mixing the two makes
      the `return` silently fail to stop rendering.
@@ -30,7 +35,7 @@
   {{ range .Ancestors.Reverse }}
     {{ $ancestor := . }}
     {{ $name := cond .IsHome (site.Params.short_title | default site.Title) (.LinkTitle | default .Title) }}
-    {{ if $name }}
+    {{ if and $name $ancestor.Permalink }}
       {{ $trail = $trail | append (dict
         "@type" "ListItem"
         "position" (add (len $trail) 1)
