@@ -38,10 +38,35 @@ SHIFT_LIMIT = 0.1
 AUDIT = """() => {
   const main = document.querySelector('main');
   const italic = [];
+  const contrast = [];
+  const small = [];
+  const channel = (v) => { v /= 255; return v <= .03928 ? v / 12.92 : ((v + .055) / 1.055) ** 2.4; };
+  const lum = (c) => .2126 * channel(c[0]) + .7152 * channel(c[1]) + .0722 * channel(c[2]);
+  const parse = (s) => { const n = (s.match(/[\d.]+/g) || []).map(Number); return n.length < 3 ? null : [n[0], n[1], n[2], n[3] ?? 1]; };
+  const background = (el) => {
+    for (let e = el; e; e = e.parentElement) {
+      const b = parse(getComputedStyle(e).backgroundColor);
+      if (b && b[3] > .9) return b;
+    }
+    return [255, 255, 255, 1];
+  };
   for (const el of main.querySelectorAll('*')) {
     if (!el.getClientRects().length || !el.textContent.trim()) continue;
-    if (getComputedStyle(el).fontStyle !== 'normal' && !el.closest('.references-list,.csl-bib-body')) {
+    const style = getComputedStyle(el);
+    if (style.fontStyle !== 'normal' && !el.closest('.references-list,.csl-bib-body')) {
       italic.push(el.textContent.trim().slice(0, 40));
+    }
+    if (style.visibility === 'hidden' || !parseFloat(style.opacity)) continue;
+    if (![...el.childNodes].some((n) => n.nodeType === 3 && n.textContent.trim())) continue;
+    const text = el.textContent.trim().slice(0, 40);
+    const size = parseFloat(style.fontSize);
+    if (size < 15 && !el.closest('.mastfoot')) small.push(`${size}: ${text}`);
+    const fg = parse(style.color);
+    if (fg) {
+      const a = lum(fg), b = lum(background(el));
+      const ratio = (Math.max(a, b) + .05) / (Math.min(a, b) + .05);
+      const large = size >= 24 || (size >= 18.66 && Number(style.fontWeight) >= 700);
+      if (ratio < (large ? 3 : 4.5)) contrast.push(`${ratio.toFixed(2)} ${style.color}: ${text}`);
     }
   }
   const lineChars = (el) => {
@@ -65,6 +90,8 @@ AUDIT = """() => {
   return {
     overflow: document.documentElement.scrollWidth - document.documentElement.clientWidth,
     italic: italic.slice(0, 5),
+    contrast: contrast.slice(0, 5),
+    small: small.slice(0, 5),
     long: long.slice(0, 5),
     h1: document.querySelectorAll('h1').length,
     broken: [...document.images].filter((i) => i.complete && i.getClientRects().length && !i.naturalWidth).map((i) => i.src),
@@ -113,11 +140,41 @@ def check_screens(browser, base, failures):
                 failures.append(f"{name} at {width}: {found['overflow']} px wider than the screen")
             if found["h1"] != 1:
                 failures.append(f"{name} at {width}: {found['h1']} h1 elements")
-            for key, label in (("italic", "italic type"), ("long", "lines of 80 characters or more"), ("broken", "broken images")):
+            for key, label in (("italic", "italic type"), ("contrast", "low contrast"), ("small", "text under 15 px"),
+                               ("long", "lines of 80 characters or more"), ("broken", "broken images")):
                 if found[key]:
                     failures.append(f"{name} at {width}: {label}: {found[key]}")
             if errors:
                 failures.append(f"{name} at {width}: script errors: {errors[:2]}")
+            page.context.close()
+
+
+def check_other_widths(browser, base, failures):
+    """No overflow at the layout's breakpoints, or with text enlarged to 200% (checklist C6, C9)."""
+    enlarge = """() => {
+      const sizes = [...document.querySelectorAll('body *')].map((el) => [el, parseFloat(getComputedStyle(el).fontSize)]);
+      sizes.forEach(([el, size]) => { el.style.fontSize = size * 2 + 'px'; });
+    }"""
+    wider = "document.documentElement.scrollWidth - document.documentElement.clientWidth"
+    for name, path in SCREENS.items():
+        for width in (761, 1000, 1001, 1240, 1241):
+            page = new_page(browser, width)
+            page.goto(base + path, wait_until="load", timeout=120000)
+            page.wait_for_timeout(200)
+            over = page.evaluate(wider)
+            if over > 0:
+                failures.append(f"{name} at {width}: {over} px wider than the screen")
+            page.context.close()
+        for width in (390, 760, 1024, 1440):
+            page = new_page(browser, width)
+            page.goto(base + path, wait_until="load", timeout=120000)
+            page.wait_for_timeout(200)
+            page.evaluate(enlarge)
+            page.wait_for_timeout(100)
+            over = page.evaluate(wider)
+            print(f"  {name} at {width}, text 200%: overflow {over}")
+            if over > 0:
+                failures.append(f"{name} at {width} with text at 200%: {over} px wider than the screen")
             page.context.close()
 
 
@@ -305,6 +362,8 @@ def main():
         browser = playwright.chromium.launch()
         print("Screens")
         check_screens(browser, base, failures)
+        print("Breakpoints and enlarged text")
+        check_other_widths(browser, base, failures)
         print("Home page")
         check_home(browser, base, failures)
         print("Resources directory")

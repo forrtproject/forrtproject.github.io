@@ -41,6 +41,9 @@
 .article-layout .copy-link:hover{background:var(--ink);color:#fff}
 .article-layout .article-tags .badge{background:var(--surface);color:var(--ink);font:600 15px/1.4 var(--text);padding:3px 10px;border-radius:var(--r-small);margin:0 6px 6px 0}
 .article-layout .article-widget h3{font-size:24px;margin:28px 0 10px}
+.article-layout .article-foot .meta-nav{font-size:15px;font-weight:700;letter-spacing:0;text-transform:none;color:var(--soft)}
+.article-layout .article-foot .post-nav-item p,.article-layout .article-foot .article-widget li{font-size:16px;line-height:1.4;margin:0}
+.article-layout .article-foot .card-title{font-size:21px}
 .article-layout .article-widget a{color:var(--link)}
 .article-layout .article-card{position:sticky;top:24px;background:var(--surface);border-radius:var(--r-large);padding:22px;font-size:16px;line-height:1.45}
 .article-layout .article-card h2{font-size:23px;line-height:1.15;margin:0 0 8px}
