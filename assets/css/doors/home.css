@@ -75,7 +75,7 @@
 .quote{grid-area:1/1;margin:0;font:var(--display-weight) clamp(34px,4.2vw,60px)/1.08 var(--display);color:var(--ink);overflow-wrap:anywhere;hyphens:auto;text-wrap:balance;opacity:0;visibility:hidden;transition:opacity .4s,visibility 0s .4s}
 .quote.is-active{opacity:1;visibility:visible;transition:opacity .4s}
 .quote .accent{color:var(--edu)}
-.quotes-bar{min-height:44px;padding-top:8px}
+.quotes-bar{min-height:44px;padding-top:8px;text-align:start}
 .forward{padding:28px 30px;background:var(--surface);border-radius:var(--r-large)}
 .forward h3{font-size:clamp(25px,2.2vw,31px);line-height:1.12;margin:0}
 .forward p{margin:12px 0 0;font-size:16px;line-height:1.55;max-width:32em}
