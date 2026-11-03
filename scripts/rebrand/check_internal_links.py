@@ -67,6 +67,8 @@ def broken_target(link, page, base, files, sisters, allow):
     top = path.strip("/").split("/", 1)[0]
     if top in sisters and not (base != "/" and path.startswith(base)):
         return None
+    if any(pattern.search(path) for pattern in allow):
+        return None
     if base != "/":
         # In a subfolder build, a link that leaves the subfolder lands on the live site.
         if not path.startswith(base):

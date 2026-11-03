@@ -1,6 +1,7 @@
 """Tests for the Doors redesign's preview rewriter and build checks."""
 
 import os
+import re
 import sys
 import tempfile
 import unittest
@@ -85,6 +86,12 @@ class RewriteHtmlTests(unittest.TestCase):
         self.assertIn('src="/rebrand-doors/img/a.webp"', html)
         self.assertIn("href=/rebrand-doors/about/us/>", rewriter().html("<head></head><a href=../about/us/>a</a>"))
 
+    def test_climbing_covers_dot_segments_and_spares_sister_sites(self):
+        self.assertIn("href=/rebrand-doors/>", rewriter().html("<head></head><a href=..>a</a>"))
+        self.assertIn('href="/rebrand-doors/img/a.webp"', rewriter().html('<head></head><a href="./../img/a.webp">a</a>'))
+        self.assertIn('href="/rebrand-doors/#top"', rewriter().html('<head></head><a href="..#top">a</a>'))
+        self.assertIn('href="../../fred/"', rewriter().html('<head></head><a href="../../fred/">a</a>', depth=1))
+
     def test_unrelated_attribute_is_left_alone(self):
         self.assertIn('content="/about/us/"', rewriter().html('<head><meta content="/about/us/"></head>'))
 
@@ -143,6 +150,12 @@ class LinkCheckTests(unittest.TestCase):
     def test_link_leaving_the_subfolder_fails_even_if_the_page_exists(self):
         self.assertEqual(self.check("/about/us/"), "/about/us/")
         self.assertEqual(self.check("../about/us/", page="/rebrand-doors/"), "/about/us/")
+
+    def test_allowlist_covers_links_leaving_the_subfolder(self):
+        target = broken_target(
+            "https://forrt.org/retired/", "/rebrand-doors/", "/rebrand-doors/", FILES, SISTERS, [re.compile("^/retired/")]
+        )
+        self.assertIsNone(target)
 
     def test_extract_skips_scripts_templates_and_placeholders(self):
         links = list(
