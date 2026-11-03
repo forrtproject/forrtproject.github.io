@@ -1,5 +1,5 @@
-{{/* Site override of the theme's author card: its name is an h2, so that headings stay in order
-     under an article. */}}
+{{/* Site override of the theme's author card: its name is an h2 and its role plain text, so that
+     headings stay in order under an article. */}}
 {{ $page := .page }}
 {{ $author_urlized := .username }}
 {{ $site_type := site.Params.site_type | default "Person" }}
@@ -16,7 +16,7 @@
     {{ $avatar_shape := site.Params.avatar.shape | default "circle" }}
     <div class="media author-card content-widget-hr">
       {{ if and site.Params.avatar.gravatar .Params.email }}
-        <img class="avatar mr-3 {{if eq $avatar_shape "square"}}avatar-square{{else}}avatar-circle{{end}}" src="https://s.gravatar.com/avatar/{{ md5 .Params.email }}?s=200')" alt="{{.Title}}">
+        <img class="avatar mr-3 {{if eq $avatar_shape "square"}}avatar-square{{else}}avatar-circle{{end}}" src="https://s.gravatar.com/avatar/{{ md5 .Params.email }}?s=200" alt="{{.Title}}">
       {{ else if $avatar }}
         {{ $avatar_image := $avatar.Fill "270x270 Center" }}
         <img class="avatar mr-3 {{if eq $avatar_shape "square"}}avatar-square{{else}}avatar-circle{{end}}" src="{{ $avatar_image.RelPermalink }}" alt="{{.Title}}">
@@ -24,7 +24,7 @@
 
       <div class="media-body">
         <h2 class="card-title"><a href="{{$profile_url}}">{{.Title}}</a></h2>
-        {{ with .Params.role }}<h6 class="card-subtitle">{{. | markdownify | emojify}}</h6>{{end}}
+        {{ with .Params.role }}<p class="card-subtitle">{{. | markdownify | emojify}}</p>{{end}}
         {{ with .Params.bio }}<p class="card-text">{{. | markdownify | emojify}}</p>{{end}}
         {{ partial "social_links" . }}
       </div>

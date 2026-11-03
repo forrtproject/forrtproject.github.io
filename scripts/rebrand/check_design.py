@@ -83,12 +83,16 @@ AUDIT = """() => {
         const range = document.createRange();
         range.setStart(node, match.index);
         range.setEnd(node, match.index + match[0].length);
-        const boxes = range.getClientRects();
-        // A long address breaks across lines, so one "word" says nothing about line length.
-        if (boxes.length === 1) lines[Math.round(boxes[0].top / 6)] = (lines[Math.round(boxes[0].top / 6)] || 0) + match[0].length;
+        // A long address can break across lines, so share its characters out by rendered width.
+        const boxes = [...range.getClientRects()].filter((box) => box.width > 0);
+        const total = boxes.reduce((sum, box) => sum + box.width, 0);
+        for (const box of boxes) {
+          const key = Math.round(box.top / 6);
+          lines[key] = (lines[key] || 0) + match[0].length * box.width / total;
+        }
       }
     }
-    return Math.max(0, ...Object.values(lines));
+    return Math.round(Math.max(0, ...Object.values(lines)));
   };
   const long = [...main.querySelectorAll('.reading p,.reading li,.lede,.about-statement p,.forward p')]
     .filter((el) => el.getClientRects().length && lineChars(el) >= 80)
@@ -182,7 +186,7 @@ def check_articles(browser, base, root, failures):
             if found["overflow"] > 0:
                 failures.append(f"{path} at {width}: {found['overflow']} px wider than the screen")
             for key, label in (("italic", "italic type"), ("contrast", "low contrast"), ("small", "text under 15 px"),
-                               ("long", "lines of 80 characters or more")):
+                               ("long", "lines of 80 characters or more"), ("broken", "broken images")):
                 if found[key]:
                     failures.append(f"{path} at {width}: {label}: {found[key][:2]}")
         page.context.close()

@@ -40,7 +40,7 @@
 .article-layout .article-style pre{max-width:100%;overflow-x:auto;font-size:15px}
 /* The theme's root size shrinks on phones, so rem and small-text rules from it and from older
    Markdown come out as low as 10 px. */
-.article-layout .article-style :is(.btn,small,.small,[style*="font-size"]),.article-layout .btn-links .btn{font-size:15px!important;line-height:1.35}
+.article-layout .article-style :is(small,.small,[style*="font-size:."],[style*="font-size:0."]),.article-layout .article-style .btn:not([style*="font-size"]),.article-layout .btn-links .btn{font-size:15px!important;line-height:1.35}
 .article-layout .article-foot{margin-top:32px;font-size:16px}
 .article-layout .share-link{margin:0 0 18px}
 .article-layout .copy-link{background:#fff;border:1.5px solid var(--ink);border-radius:999px;padding:8px 12px;font:600 15px/1.3 var(--text);color:var(--ink);cursor:pointer}
