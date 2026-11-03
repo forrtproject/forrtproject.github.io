@@ -51,6 +51,8 @@ cards:
         url: "/flora-replication-atlas/"
       - text: "Zotero Replication Checker"
         url: "/flora-zotero/"
+      - text: "FORRT ORE browser extension"
+        url: "/chromium-extension/"
 
   - key: conduct
     title: Conduct
@@ -85,6 +87,4 @@ cards:
         url: "https://ejournals.uni-muenster.de/replicationresearch/mentorshipprogram"
       - text: "Replication Journal Federation"
         url: "/rjf"
-      - text: "Journal Replicability Tracker"
-        url: "/journalranking"
 ---
