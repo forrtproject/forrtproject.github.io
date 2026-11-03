@@ -5,7 +5,8 @@ Run: python3 scripts/rebrand/check_design.py <public-dir> [--base /]
      python3 scripts/rebrand/check_design.py --url https://forrt.org/rebrand-doors/
 
 Needs Playwright. Covers what a build comparison cannot: nothing runs wider than the screen,
-no italic type outside references, reading lines under 80 characters, the home page's topic
+no italic type outside references, reading lines under 80 characters, no page's own button
+hidden, the sample pages' width as well as the designed screens', the home page's topic
 buttons within their position limit (checklist A14), its layout shift on a slow phone, the pause
 control over the castle and the quotes, and the behaviour of the resources directory. On a local build it also weighs the designed screens against the migration
 plan's budgets. Those lines are a report and do not fail the check, because the theme's Bootstrap,
@@ -43,7 +44,7 @@ AUDIT = """() => {
   const small = [];
   const channel = (v) => { v /= 255; return v <= .03928 ? v / 12.92 : ((v + .055) / 1.055) ** 2.4; };
   const lum = (c) => .2126 * channel(c[0]) + .7152 * channel(c[1]) + .0722 * channel(c[2]);
-  const parse = (s) => { const n = (s.match(/[\d.]+/g) || []).map(Number); return n.length < 3 ? null : [n[0], n[1], n[2], n[3] ?? 1]; };
+  const parse = (s) => { const n = (s.match(/[\\d.]+/g) || []).map(Number); return n.length < 3 ? null : [n[0], n[1], n[2], n[3] ?? 1]; };
   // Walks up to the nearest solid background. Text over an image or gradient would be measured
   // against the wrong colour, but the designed screens set none.
   const background = (el) => {
@@ -104,6 +105,10 @@ AUDIT = """() => {
     small: small.slice(0, 5),
     long: long.slice(0, 5),
     h1: document.querySelectorAll('h1').length,
+    // A page's own button must not vanish: shell rules on a bare class name have hidden one.
+    hidden: [...main.querySelectorAll(':is(a,button).btn')]
+      .filter((a) => !a.getClientRects().length && !a.closest('[hidden],.collapse,.modal,.tab-pane,details'))
+      .map((a) => a.textContent.trim().slice(0, 40)),
     broken: [...document.images].filter((i) => i.complete && i.getClientRects().length && !i.naturalWidth).map((i) => i.src),
   };
 }"""
@@ -151,7 +156,7 @@ def check_screens(browser, base, failures):
             if found["h1"] != 1:
                 failures.append(f"{name} at {width}: {found['h1']} h1 elements")
             for key, label in (("italic", "italic type"), ("contrast", "low contrast"), ("small", "text under 15 px"),
-                               ("long", "lines of 80 characters or more"), ("broken", "broken images")):
+                               ("long", "lines of 80 characters or more"), ("broken", "broken images"), ("hidden", "hidden buttons")):
                 if found[key]:
                     failures.append(f"{name} at {width}: {label}: {found[key]}")
             if errors:
@@ -186,9 +191,25 @@ def check_articles(browser, base, root, failures):
             if found["overflow"] > 0:
                 failures.append(f"{path} at {width}: {found['overflow']} px wider than the screen")
             for key, label in (("italic", "italic type"), ("contrast", "low contrast"), ("small", "text under 15 px"),
-                               ("long", "lines of 80 characters or more"), ("broken", "broken images")):
+                               ("long", "lines of 80 characters or more"), ("broken", "broken images"), ("hidden", "hidden buttons")):
                 if found[key]:
                     failures.append(f"{path} at {width}: {label}: {found[key][:2]}")
+        page.context.close()
+
+
+def check_samples(browser, base, failures):
+    """Nothing runs wider than the screen on the sample pages, with their retained templates too."""
+    with open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "sample_pages.json"), encoding="utf-8") as handle:
+        samples = json.load(handle)
+    wider = "document.documentElement.scrollWidth - document.documentElement.clientWidth"
+    for width in WIDTHS:
+        page = new_page(browser, width)
+        for name, path in samples.items():
+            page.goto(base + path.lstrip("/"), wait_until="load", timeout=120000)
+            page.wait_for_timeout(300)
+            over = page.evaluate(wider)
+            if over > 0:
+                failures.append(f"{name} at {width}: {over} px wider than the screen")
         page.context.close()
 
 
@@ -436,6 +457,8 @@ def main():
         if args.public:
             print("Every article page")
             check_articles(browser, base, os.path.abspath(args.public), failures)
+        print("Sample pages")
+        check_samples(browser, base, failures)
         print("Home page")
         check_home(browser, base, failures)
         print("Resources directory")
