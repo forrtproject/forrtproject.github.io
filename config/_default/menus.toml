@@ -361,7 +361,7 @@
     group = "Justice & Equity"
 
 [[main]]
-  name = "Wheel of Privilege"
+  name = "Academic Wheel of Privilege"
   url = "awop"
   weight = 52
   parent = "nexus"
