@@ -1,5 +1,7 @@
 ---
 title: Glossary
+# Meta description: the opening of the introduction below.
+description: "In order to reduce barriers to entry and understanding, we present a Glossary of terms relating to open scholarship. We aim that the glossary will help clarify terminologies, including where terms are used differently/interchangeably or where terms are less known in some fields or among students."
 toc: true
 # View.
 #   1 = List
