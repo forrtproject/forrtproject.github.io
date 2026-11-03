@@ -31,6 +31,7 @@
     (delimit (.Params.language | default slice) " ")
     (.Params.conditions_of_use | default "")
     (.Params.forrt_clusters_new | default "")
+    (.Params.forrt_sub_clusters | default "")
   ) " ")) }}
 {{ end }}
 {{ $base := path.Dir (strings.TrimSuffix "/" (index $index.pages 0).RelPermalink) }}

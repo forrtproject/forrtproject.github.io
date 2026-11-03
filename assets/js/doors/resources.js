@@ -147,6 +147,7 @@ function draw() {
 function redraw() {
   shown = PAGE;
   if (data) draw();
+  else writeAddress(chosen());
 }
 
 function loadSearchText() {

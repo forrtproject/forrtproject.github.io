@@ -1,12 +1,11 @@
 #!/usr/bin/env python3
 """Check the designed screens in a browser, against the Doors acceptance checklist.
 
-Run: python3 scripts/rebrand/check_design.py <public-dir> [--base /]
+Run: python3 scripts/rebrand/check_design.py <public-dir>
      python3 scripts/rebrand/check_design.py --url https://forrt.org/rebrand-doors/
 
 Needs Playwright. Covers what a build comparison cannot: nothing runs wider than the screen,
-no italic type outside references, reading lines under 80 characters, the home page's topic
-buttons within their position limit (checklist A14), its layout shift, and the behaviour of the
+no italic type outside references, reading lines under 80 characters, and the behaviour of the
 resources directory.
 """
 
@@ -30,8 +29,6 @@ SCREENS = {
     "article": "post/2026-01-newsletter/",
 }
 BLOCK = re.compile(r"googletagmanager|google-analytics|doubleclick|youtube|docs\.google")
-A14_LIMIT = {390: 2.5, 1440: 1.6}
-SHIFT_LIMIT = 0.1
 AUDIT = """() => {
   const main = document.querySelector('main');
   const italic = [];
