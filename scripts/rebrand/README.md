@@ -35,7 +35,7 @@ python3 scripts/rebrand/capture_pages.py /tmp/public-main --out /tmp/baseline-sh
 
 ## Other tools
 
-- `check_preview.py` checks the deployed preview in a browser: one URL per rule in the 404 table, a sample of links and assets, noindex and search.
+- `check_preview.py` checks the deployed preview in a browser: one URL per rule in the 404 table, a sample of links and assets, noindex, search, and that the newsletter form loads on a click and not before.
 - `check_design.py` checks the designed screens in a browser, on a build or the preview: overflow, italics, line length, one `h1`, and the resources directory's filters, address, search and pages.
 - `capture_pages.py` also weighs and screenshots a preview build with `--base /rebrand-doors/`.
 - `build_fonts.py` rebuilds `static/fonts/doors/`.

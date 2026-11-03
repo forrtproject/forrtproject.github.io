@@ -3415,25 +3415,6 @@ h1.clusters-site-heading.clusters-hub-page__title {
 }
 
 /* ============================================================
- *  Newsletter (EmailOctopus) submit button — ships Bootstrap-purple;
- *  repaint it in FORRT teal. High specificity + !important to beat the
- *  embed's own injected, later-loaded styles.
- * ============================================================ */
-[id^="octopus-form"] input.btn.btn-primary,
-[id^="octopus-form"] input[type="submit"],
-[id^="octopus-form"] button[type="submit"] {
-  background-color: #004055 !important;
-  border-color: #004055 !important;
-  color: #fff !important;
-}
-[id^="octopus-form"] input.btn.btn-primary:hover,
-[id^="octopus-form"] input[type="submit"]:hover,
-[id^="octopus-form"] button[type="submit"]:hover {
-  background-color: #00566f !important;
-  border-color: #00566f !important;
-}
-
-/* ============================================================
  *  Combined Achievements & Awards section (two columns)
  * ============================================================ */
 .aa-grid {
