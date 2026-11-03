@@ -40,7 +40,7 @@
 .area li a:hover{color:var(--tone);text-decoration-color:currentColor}
 
 /* Topic buttons */
-.topics-section{padding-top:80px}
+.topics-section{padding-top:64px}
 .topics-section h2,.board h2{font-size:clamp(32px,3.2vw,46px);line-height:1.12;margin:0}
 .section-note{margin:8px 0 0}
 .topics{display:flex;flex-wrap:wrap;gap:10px;list-style:none;margin:22px 0 0;padding:0}
@@ -78,8 +78,8 @@
 .quotes-bar{min-height:44px;padding-top:8px}
 .forward{padding:28px 30px;background:var(--surface);border-radius:var(--r-large)}
 .forward h3{font-size:clamp(25px,2.2vw,31px);line-height:1.12;margin:0}
-.forward p{margin:12px 0 0;font-size:16px;line-height:1.55}
-.forward-links{display:flex;flex-wrap:wrap;gap:8px 24px}
+.forward p{margin:12px 0 0;font-size:16px;line-height:1.55;max-width:32em}
+.forward .forward-links{display:flex;flex-wrap:wrap;gap:8px 24px;max-width:none}
 .ledger{display:grid;gap:14px;align-content:center;list-style:none;margin:0;padding:0}
 .ledger a{font:500 clamp(19px,1.6vw,22px)/1.3 var(--display);color:inherit;text-decoration:underline;text-decoration-color:var(--line);text-underline-offset:4px}
 .ledger a:hover{color:var(--link);text-decoration-color:currentColor}
