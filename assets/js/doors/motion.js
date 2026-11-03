@@ -22,7 +22,6 @@ export const onMotionChange = (listener) => listeners.push(listener);
 function showState() {
   document.querySelectorAll('.motion-toggle').forEach((button) => {
     button.textContent = isPaused() ? 'Play animation' : 'Pause animation';
-    button.setAttribute('aria-pressed', String(isPaused()));
   });
 }
 

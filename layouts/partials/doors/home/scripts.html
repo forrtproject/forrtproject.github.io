@@ -2,7 +2,7 @@
      loads later, from castle.js, and only when `doors.castle` is on in params.toml. */}}
 {{ $home := resources.Get "js/doors/home.js" | js.Build (dict "minify" true "format" "iife" "target" "es2019" "targetPath" "js/doors/home.js") | fingerprint "md5" }}
 {{ $bundle := "" }}
-{{ if site.Params.doors.castle | default true }}
+{{ if ne site.Params.doors.castle false }}
   {{ $bundle = (resources.Get "js/castle/castle-scene.js" | js.Build (dict "minify" true "format" "iife" "target" "es2020" "targetPath" "js/castle.js") | fingerprint "md5").RelPermalink }}
 {{ end }}
 <script src="{{ $home.RelPermalink }}"{{ with $bundle }} data-castle-bundle="{{ . }}"{{ end }} defer></script>
