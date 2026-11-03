@@ -8,7 +8,7 @@
 {{ $logo := resources.Get "images/doors/logo-row.webp" }}
 <header class="site-head" id="navbar-main">
   <div class="wrap head-inner">
-    <a href="{{ "/" | relLangURL }}" class="brand" aria-label="FORRT home"><img src="{{ $logo.RelPermalink }}" width="{{ $logo.Width }}" height="{{ $logo.Height }}" alt="FORRT"></a>
+    <a href="{{ "" | relLangURL }}" class="brand" aria-label="FORRT home"><img src="{{ $logo.RelPermalink }}" width="{{ $logo.Width }}" height="{{ $logo.Height }}" alt="FORRT"></a>
     <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primaryNav">Menu</button>
     <nav class="primary" id="primaryNav" aria-label="Main navigation">
       {{ range site.Menus.main }}

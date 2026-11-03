@@ -1,6 +1,8 @@
 {{/* One menu link. Sites outside this one open in a new tab, as they did before.
      Input: dict with `entry` (menu entry) and `page` (current page). */}}
-{{ $url := .entry.URL | relLangURL }}
 {{ $external := or (strings.HasPrefix .entry.URL "http://") (strings.HasPrefix .entry.URL "https://") }}
+{{/* relLangURL leaves a leading slash at the domain root, which a subfolder preview must not. */}}
+{{ $url := .entry.URL }}
+{{ if not $external }}{{ $url = strings.TrimPrefix "/" .entry.URL | relLangURL }}{{ end }}
 {{ $current := eq (strings.TrimSuffix "/" $url) (strings.TrimSuffix "/" .page.RelPermalink) }}
 <a href="{{ $url }}"{{ if $external }} target="_blank" rel="noopener"{{ end }}{{ if $current }} aria-current="page"{{ end }}>{{ .entry.Name }}</a>
