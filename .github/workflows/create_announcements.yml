@@ -31,7 +31,7 @@ concurrency:
 jobs:
   announcements:
     name: Generate announcements
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04   # r2u-setup calls apt-key, which Ubuntu 26.04 (now ubuntu-latest) no longer ships
     permissions:
       contents: read
       actions: read   # read previous artifact
