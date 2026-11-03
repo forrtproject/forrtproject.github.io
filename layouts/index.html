@@ -1,4 +1,8 @@
 {{- define "main" -}}
-{{ partial "doors/hero" . }}
-{{ partial "widget_page.html" . }}
+{{/* The home page's sections come from the files in content/home/, in order of weight. */}}
+{{ $home := site.GetPage "/home/index.md" }}
+{{ range sort ($home.Resources.ByType "page") "Params.weight" }}
+  {{ partial (printf "doors/home/%s" .Params.section) . }}
+{{ end }}
+{{ partial "doors/home/scripts" . }}
 {{- end -}}

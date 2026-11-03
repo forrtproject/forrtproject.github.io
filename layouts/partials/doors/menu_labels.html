@@ -1,0 +1,12 @@
+{{/* Main-menu entries by address: a dict of address, without its outer slashes, to name.
+     A top-level entry wins over a child with the same address. */}}
+{{ $labels := dict }}
+{{ range site.Menus.main }}
+  {{ if .URL }}{{ $labels = merge (dict (strings.Trim .URL "/") .Name) $labels }}{{ end }}
+{{ end }}
+{{ range site.Menus.main }}
+  {{ range .Children }}
+    {{ if .URL }}{{ $labels = merge (dict (strings.Trim .URL "/") .Name) $labels }}{{ end }}
+  {{ end }}
+{{ end }}
+{{ return $labels }}

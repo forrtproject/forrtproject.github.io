@@ -1,6 +1,6 @@
 # The home-page castle
 
-The animated brick tower in the home page's arched door. Hugo bundles it with `js.Build` from `layouts/partials/doors/hero.html`, using Three.js 0.186.0 from `assets/three/`. No Node is needed to build the site.
+The animated brick tower in the home page's arched door. Hugo bundles it with `js.Build` from `layouts/partials/doors/home/scripts.html`, using Three.js 0.186.0 from `assets/three/`. No Node is needed to build the site.
 
 | File | Role |
 |---|---|
@@ -9,7 +9,8 @@ The animated brick tower in the home page's arched door. Hugo bundles it with `j
 | `castle-piles.js` | Baked resting poses of the two heaps. Generated, see below |
 | `bake-castle-piles.js` | Offline physics bake for those poses. Never part of the site's bundle |
 | `illustrations-render.js` | Offline renderer for the four area illustrations. Never part of the site's bundle |
-| `../doors/castle.js` | Loads the bundle after paint and owns playback: pause, hover, tap, off-screen suspension |
+| `../doors/castle.js` | Loads the bundle after paint and owns playback: hover, tap, off-screen suspension |
+| `../doors/motion.js` | The pause state the castle shares with the home page's quotes, remembered between visits |
 
 **Behaviour.** The still image paints first. The bundle loads after that, and not at all under reduced motion, Save-Data or no WebGL, so the home page works if the castle does not. The tower builds once, turns every 120 seconds and takes a colour wave after each change. Hovering dismantles it. The pause button appears on hover, on keyboard focus and after a tap.
 

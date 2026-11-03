@@ -1,33 +1,30 @@
 +++
-# Rotating-quote hero (see layouts/partials/widgets/hero_quotes.html).
-widget = "hero_quotes"
-headless = true  # This file represents a page section.
-active = true  # Activate this widget? true/false
-weight = 10  # Order that this section will appear.
+# The home page's sections are drawn by layouts/partials/doors/home/, in order of weight. Each
+# file here holds one section's wording and links. A link with a `url` and no `label` takes its
+# label from the main menu, so renaming a menu entry renames it here too.
+section = "hero"
+headless = true
+weight = 10
 
-# Key statements to cycle through. Wrap the part to highlight in
-# <span class="accent">…</span>. Drawn from FORRT's vision and mission.
-[[quote]]
-  text = 'Care is not a distraction from the work. <span class="accent">It is the work.</span>'
-[[quote]]
-  text = 'Scientific excellence and social justice, <span class="accent">inseparable.</span>'
-[[quote]]
-  text = 'From a culture of competition <span class="accent">to one of community.</span>'
-[[quote]]
-  text = 'Teaching and community building, <span class="accent">on equal footing with discovery.</span>'
+heading = "Better science.<br>Built together."
+lede = "FORRT is a community of researchers and educators who develop, share and teach open scholarship, and who work to make science more rigorous, more transparent and more just."
 
-[primary_cta]
-  label = "Get involved"
-  url = "/about/get-involved/"
-
-[secondary_cta]
-  label = "About FORRT"
-  url = "#3-what-is-forrt"
-
-[design.spacing]
-  # Customize the section spacing. Order is top, right, bottom, left.
-  padding = ["40px", "0", "44px", "0"]
-
-[design.background]
-  text_color_light = false
+[[quick]]
+  label = "Mission & advocacy"
+  url = "about/mission/"
+[[quick]]
+  label = "Tools"
+  url = "replication-hub/"
+[[quick]]
+  label = "Resources"
+  url = "resources/"
+[[quick]]
+  label = "Publications"
+  url = "publications/"
+[[quick]]
+  label = "Partnerships"
+  url = "about/partnerships/"
+[[quick]]
+  label = "Take part"
+  url = "#take-part"
 +++

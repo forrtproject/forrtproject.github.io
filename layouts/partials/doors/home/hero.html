@@ -1,0 +1,23 @@
+{{/* Home page hero: the opening statement, direct routes, and the castle in its arched door.
+     The still image paints first. castle.js loads the 3D bundle after the page has painted,
+     and not at all under reduced motion, Save-Data or no WebGL. Set `doors.castle = false`
+     in params.toml to show only the still. Context: content/home/1-hero.md. */}}
+{{ $still := resources.Get "images/doors/castle-still.webp" }}
+<section class="hero" aria-labelledby="home-title">
+  <div class="wrap hero-grid">
+    <div class="invite">
+      <h1 id="home-title">{{ .Params.heading | safeHTML }}</h1>
+      <p class="lede">{{ .Params.lede }}</p>
+      <nav class="quick" aria-label="Go straight to">
+        {{ range .Params.quick }}{{ $link := partial "doors/link" . }}<a href="{{ $link.href }}">{{ $link.label }}</a>{{ end }}
+      </nav>
+    </div>
+    <figure class="tower" data-motion-host>
+      <div class="castle-stage" aria-hidden="true">
+        <img class="castle-fallback" src="{{ $still.RelPermalink }}" alt="" width="{{ $still.Width }}" height="{{ $still.Height }}" fetchpriority="high">
+        <canvas id="castle-canvas"></canvas>
+      </div>
+      <figcaption class="motion-bar"><button class="motion-toggle" type="button" aria-pressed="false">Pause animation</button></figcaption>
+    </figure>
+  </div>
+</section>
