@@ -24,7 +24,7 @@ import tempfile
 import threading
 from urllib.parse import urlsplit
 
-from playwright.sync_api import sync_playwright
+from playwright.sync_api import Error as PlaywrightError, sync_playwright
 
 WIDTHS = {390: 844, 1024: 768, 1440: 900}
 SCREENS = {
@@ -39,9 +39,17 @@ A14_LIMIT = {390: 2.5, 1440: 1.6}
 SHIFT_LIMIT = 0.1
 # A page's own button must not vanish: shell rules on a bare class name have hidden one. Bootstrap's
 # d-*-none classes hide buttons on purpose, such as a menu toggle meant only for phones.
-HIDDEN_BUTTONS = """(root) => [...root.querySelectorAll(':is(a,button).btn')]
-  .filter((a) => !a.getClientRects().length && !a.closest('[hidden],.collapse,.modal,.tab-pane,details,[class*="-none"]'))
-  .map((a) => a.textContent.trim().slice(0, 40))"""
+HIDDEN_BUTTONS = """(root) => {
+  const onPurpose = (el) => {
+    for (let e = el; e; e = e.parentElement) {
+      if (getComputedStyle(e).display === 'none' && /(^|\\s)d-(\\w+-)?none(\\s|$)/.test(e.getAttribute('class') || '')) return true;
+    }
+    return false;
+  };
+  return [...root.querySelectorAll(':is(a,button).btn')]
+    .filter((a) => !a.getClientRects().length && !a.closest('[hidden],.collapse,.modal,.tab-pane,details') && !onPurpose(a))
+    .map((a) => a.textContent.trim().slice(0, 40));
+}"""
 AUDIT = """() => {
   const main = document.querySelector('main');
   const italic = [];
@@ -204,13 +212,27 @@ def check_articles(browser, base, root, failures):
 
 # From a page's text to the card beside it, when they are side by side.
 CARD_GAP = """() => {
-  const text = document.querySelector('.article-layout>.reading .article-style>p');
+  const reading = document.querySelector('.article-layout>.reading');
   const card = document.querySelector('.article-layout>.article-card');
-  if (!text || !card || card.getBoundingClientRect().top > text.getBoundingClientRect().top) return 0;
-  if (card.getBoundingClientRect().left < text.getBoundingClientRect().right) return 0;
-  return card.getBoundingClientRect().left - text.getBoundingClientRect().right;
+  if (!reading || !card) return 0;
+  const box = card.getBoundingClientRect();
+  if (box.top > reading.getBoundingClientRect().bottom) return 0;
+  const lines = [...reading.querySelectorAll('.article-style p')].filter((p) => p.getClientRects().length);
+  const right = Math.max(...(lines.length ? lines : [reading]).map((el) => el.getBoundingClientRect().right));
+  return box.left < right ? 0 : box.left - right;
 }"""
 CARD_GAP_LIMIT = 80
+
+
+def read_settled(page, expression):
+    """Read a page that may be redirecting, as /glossary/ does, by reading again once it has landed."""
+    for _ in range(4):
+        try:
+            return page.evaluate(expression)
+        except PlaywrightError:
+            page.wait_for_timeout(500)
+            page.wait_for_load_state("load")
+    return page.evaluate(expression)
 
 
 def check_samples(browser, base, failures):
@@ -224,10 +246,10 @@ def check_samples(browser, base, failures):
         for name, path in samples.items():
             page.goto(base + path.lstrip("/"), wait_until="load", timeout=120000)
             page.wait_for_timeout(300)
-            over = page.evaluate(wider)
+            over = read_settled(page, wider)
             if over > 0:
                 failures.append(f"{name} at {width}: {over} px wider than the screen")
-            hidden = page.evaluate(f"({HIDDEN_BUTTONS})(document.querySelector('main') || document.body)")
+            hidden = read_settled(page, f"({HIDDEN_BUTTONS})(document.querySelector('main') || document.body)")
             if hidden:
                 failures.append(f"{name} at {width}: hidden buttons: {hidden[:2]}")
         page.context.close()
