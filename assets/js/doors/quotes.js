@@ -46,8 +46,9 @@ if (quotes.length > 1) {
   host.addEventListener('pointerdown', (event) => {
     if (event.pointerType !== 'mouse') host.classList.add('show-motion-control');
   });
-  host.addEventListener('focusin', () => {
-    focusInside = true;
+  // Only keyboard focus holds them: a mouse click leaves focus on the button after the pointer goes.
+  host.addEventListener('focusin', (event) => {
+    focusInside = event.target.matches(':focus-visible');
     sync();
   });
   host.addEventListener('focusout', () => {
