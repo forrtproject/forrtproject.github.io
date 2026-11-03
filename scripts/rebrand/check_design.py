@@ -21,6 +21,7 @@ import re
 import sys
 import tempfile
 import threading
+from urllib.parse import urlsplit
 
 from playwright.sync_api import sync_playwright
 
@@ -43,6 +44,8 @@ AUDIT = """() => {
   const channel = (v) => { v /= 255; return v <= .03928 ? v / 12.92 : ((v + .055) / 1.055) ** 2.4; };
   const lum = (c) => .2126 * channel(c[0]) + .7152 * channel(c[1]) + .0722 * channel(c[2]);
   const parse = (s) => { const n = (s.match(/[\d.]+/g) || []).map(Number); return n.length < 3 ? null : [n[0], n[1], n[2], n[3] ?? 1]; };
+  // Walks up to the nearest solid background. Text over an image or gradient would be measured
+  // against the wrong colour, but the designed screens set none.
   const background = (el) => {
     for (let e = el; e; e = e.parentElement) {
       const b = parse(getComputedStyle(e).backgroundColor);
@@ -359,14 +362,16 @@ def check_directory(browser, base, failures):
 def report_budgets(browser, base, root, subfolder):
     from capture_pages import weigh
 
-    origin = base[: -len(subfolder.lstrip("/"))] if subfolder != "/" else base
+    parts = urlsplit(base)
+    origin = f"{parts.scheme}://{parts.netloc}"
+    subfolder = "/" + subfolder.strip("/") + "/" if subfolder.strip("/") else "/"
     for name, path, own, third in (
         ("home", "", 550, 190),
         ("resources", "resources/", 300, 190),
         ("replication hub", "replication-hub/", None, 190),
         ("article", "post/2026-01-newsletter/", None, 190),
     ):
-        weight = weigh(browser, origin.rstrip("/"), f"{subfolder}{path}", root, subfolder)
+        weight = weigh(browser, origin, f"{subfolder}{path}", root, subfolder)
         own_budget = f" (budget {own})" if own else ""
         print(
             f"  {name}: {weight['own_kb']} KB own{own_budget}, {weight['third_party_kb']} KB third-party (budget {third}), "

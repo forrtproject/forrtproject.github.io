@@ -2,6 +2,19 @@
      standalone pages. Calm and readable, in one narrow column, with a side card when there is
      something to put in it. */}}
 {{- define "main" -}}
+{{/* The Steering Committee page is generated with its own layout, and its stylesheet targets the
+     theme's markup, so it stays on that markup until Phase 3 redraws it. */}}
+{{ if eq .Path "/about/steering-committee" }}
+<article class="article">
+  {{ partial "page_header" . }}
+  <div class="article-container">
+    <div class="article-style">
+      {{ .Content }}
+    </div>
+    {{ partial "page_footer" . }}
+  </div>
+</article>
+{{ else }}
 {{ $headings := findRE `<h[23][ >]` .Content }}
 {{ $hasDates := and .Params.date (not (in (slice "page") .Type)) }}
 {{ $wide := in site.Params.doors.wide_pages .Path }}
@@ -36,4 +49,5 @@
     {{ end }}
   </div>
 </div>
+{{ end }}
 {{- end -}}
