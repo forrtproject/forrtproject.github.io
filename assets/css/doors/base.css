@@ -6,10 +6,12 @@ a{color:var(--link)}
 a:hover{color:var(--ink)}
 a:focus-visible,button:focus-visible,input:focus-visible,summary:focus-visible{outline:3px solid var(--ink);outline-offset:3px;border-radius:2px}
 main:focus{outline:none}
+/* Bootstrap rows outside a container reach past the page edge until those sections are redrawn. */
+main{overflow-x:clip}
 
 /* Upright everywhere, with emphasis as semi-bold. Real italics only inside reference lists
    (decision D15). Font Awesome's <i> icons set their own weight, so they are left alone. */
-*,*::before,*::after{font-style:normal!important}
+*,*::before,*::after,.font-italic{font-style:normal!important}
 em,i:not([class]),dfn,cite,var{font-weight:600}
 .references-list :is(em,i),.references-page .article-style :is(em,i),
 :is(h2,h3,h4)[id^=references i]~:is(ul,ol,p) :is(em,i),.csl-bib-body :is(em,i){font-style:italic!important;font-weight:400}
