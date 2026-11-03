@@ -240,10 +240,15 @@ class SourceRuleTests(unittest.TestCase):
             "content/contributors/tenzing.md",
             "data/ga_data.json",
             "static/data/fred_citation.txt",
+            "static/data/other.json",
+            "static/partials/network-graph.html",
+            "content/post/2026-01-newsletter/index.md",
+            "scripts/forrt_contribs/contributors_cache.csv",
         ]:
             self.assertTrue(GENERATED.match(path), path)
         for path in [
             "content/curated_resources/_index.md",
+            "content/post/_index.md",
             "data/partners.json",
             "data/publications.yaml",
             "data/themes/doors.toml",

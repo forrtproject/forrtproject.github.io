@@ -23,17 +23,20 @@ from preview_paths import load_sister_sites  # noqa: E402
 
 ABSOLUTE = re.compile(r"https?://(?:www\.)?forrt\.org(/[^\s\"'<>)}]*)?")
 SCANNED = ("layouts", "config/_default/menus.toml")
-# Generated paths from CONTRIBUTING.md and AGENTS.md.
+# Generated paths from CONTRIBUTING.md and AGENTS.md, including announcement bundles.
 GENERATED = re.compile(
     r"^(content/curated_resources/(?!_index\.md$)"
     r"|content/glossary/"
+    r"|content/post/[^/]+/"
     r"|content/contributors/tenzing\.md$"
     r"|content/contributor-analysis/"
     r"|content/publications/citation_chart\.webp$"
     r"|content/replication-hub/flora/_index\.md$"
     r"|content/clusters/cluster-\d+/index\.md$"
     r"|content/about/steering-committee/index\.md$"
-    r"|static/data/fred_citation\.txt$"
+    r"|static/data/"
+    r"|static/partials/"
+    r"|scripts/forrt_contribs/contributors_cache\.csv$"
     r"|data/(?!partners\.json$|publications\.yaml$|themes/|fonts/)[^/]+$)"
 )
 

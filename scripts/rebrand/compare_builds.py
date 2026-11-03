@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Compare a redesign build with a reference build of main, made from the same data.
+"""Compare a redesign build with a reference build, made from the same data.
 
 Run: python3 scripts/rebrand/compare_builds.py <reference-dir> <candidate-dir>
 
