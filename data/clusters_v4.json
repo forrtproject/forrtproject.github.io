@@ -5407,7 +5407,7 @@
     {
       "number": 10,
       "name": "Qualitative Research",
-      "description": "Invite review of: Qualitative Open Science OS Booklet.pdf Description Qualitative research refers to research conducted with non-numeric data, such as interviews, focus groups, ethnographies, photovoice, and others. There are 10 sub-clusters that can help readers understand open science from a qualitative perspective:",
+      "description": "Qualitative research refers to research conducted with non-numeric data, such as interviews, focus groups, ethnographies, photovoice, and others. There are 10 sub-clusters that can help readers understand open science from a qualitative perspective:",
       "sub_clusters": [
         {
           "name": "FAIR data and materials: Choosing to share data",

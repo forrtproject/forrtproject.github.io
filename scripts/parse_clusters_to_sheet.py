@@ -342,7 +342,9 @@ def parse_subclusters_standard(lines, start, end, toc_names, cluster_name):
                 '(' not in clean_bullet  # No year in parens
             )
 
-            if toc_match and not looks_like_citation(clean_bullet) and not is_incomplete_citation:
+            # A bullet ending in a colon introduces a link on the next line (Cluster 7)
+            if (toc_match and not looks_like_citation(clean_bullet) and not is_incomplete_citation
+                    and not clean_bullet.endswith(':')):
                 save_current()
                 current_sc = SubCluster(
                     name=clean_bullet, cluster_name=cluster_name,
@@ -364,7 +366,8 @@ def parse_subclusters_standard(lines, start, end, toc_names, cluster_name):
         # Non-bullet line: heading, description, or citation continuation?
         clean_text, line_annots = extract_annotations(stripped)
         clean_text = re.sub(r'\s+', ' ', clean_text).strip()
-        is_indented = raw_line.startswith('        ')  # 8+ spaces
+        # 8+ spaces; a comment marker can sit in front of the indent (Cluster 2)
+        is_indented = re.sub(r'^\[[a-z]{1,3}\]', '', raw_line).startswith('        ')
 
         # 1. Indented lines are always continuations (never headings)
         if is_indented:
@@ -478,15 +481,12 @@ def parse_cluster_11(lines, start, end):
 
     description = ' '.join(desc_parts)
 
-    # Find where sub-cluster content begins (after separator)
-    sc_content_start = None
+    # Sub-cluster content begins at the last "Sub-cluster 1" heading; earlier ones are the ToC
+    sc_content_start = i
     for j in range(i, end):
-        if SEPARATOR_RE.match(lines[j].strip()):
-            sc_content_start = j + 1
-            break
-
-    if sc_content_start is None:
-        sc_content_start = i
+        m = C11_SC_RE.match(extract_annotations(lines[j].strip())[0].strip())
+        if m and m.group(1) == '1':
+            sc_content_start = j
 
     # Parse sub-clusters
     sub_clusters = []
@@ -607,16 +607,20 @@ def parse_document(lines):
         if num <= 10:
             # Find Description line (or first content line for clusters like 7)
             desc_start = None
-            for j in range(line_idx + 1, min(line_idx + 5, end)):
-                stripped_j = lines[j].strip()
-                if stripped_j == 'Description':
+            window = range(line_idx + 1, min(line_idx + 5, end))
+            # A Description heading wins over any editor's note above it (Cluster 10)
+            for j in window:
+                if lines[j].strip() == 'Description':
                     desc_start = j + 1
                     break
+            if desc_start is None:
                 # Accept first non-blank content line as fallback (Cluster 7 format)
-                if (stripped_j and not CLUSTER_RE.match(stripped_j)
-                        and not SEPARATOR_RE.match(stripped_j)):
-                    desc_start = j
-                    break
+                for j in window:
+                    stripped_j = lines[j].strip()
+                    if (stripped_j and not CLUSTER_RE.match(stripped_j)
+                            and not SEPARATOR_RE.match(stripped_j)):
+                        desc_start = j
+                        break
             if desc_start is None:
                 desc_start = line_idx + 1
 
