@@ -21,18 +21,32 @@ Hard checks (exit 1 if any fails):
      non-empty item URL; positions run 1..n; the page has a canonical link and
      the last item is that URL; no name repeats, except that the current page
      may share the root's name (an author or glossary term called "FORRT").
+  9. Every indexable page (no robots noindex, not a meta-refresh redirect) has a
+     non-empty meta description (#864).
+  10. No meta description contains a double-escaped entity such as `&amp;ldquo;`
+     (#864). Text that merely looks like an entity (`&name;`) is not one.
 
 Report-only sections (never fail): pages with zero or several <h1>, the
-site-wide share of images that carry both width and height, and pages whose
-og:image is not a PNG or JPEG.
+site-wide share of images that carry both width and height, pages whose
+og:image is not a PNG or JPEG, and indexable pages whose description repeats
+the homepage's, is shared with another page or contains HTML markup as text.
 """
 
 import json
 import os
+import re
 import sys
+from collections import Counter
+from html.entities import html5
 from html.parser import HTMLParser
+from urllib.parse import unquote, urlparse
 
 MAX_LISTED = 20
+# Markup that survived flattening, e.g. an indented HTML block rendered as code.
+HTML_TAG = re.compile(r"</?[A-Za-z][A-Za-z0-9]*(\s[^<>]*)?/?>")
+# Attribute values arrive already unescaped, so any entity left in them was
+# escaped twice in the HTML (e.g. `&amp;ldquo;`).
+LITERAL_ENTITY = re.compile(r"&(#\d+|#x[0-9a-fA-F]+|[A-Za-z][A-Za-z0-9]*);")
 
 
 class PageParser(HTMLParser):
@@ -43,6 +57,7 @@ class PageParser(HTMLParser):
         self.imgs = []
         self.meta = {}
         self.code_classes = []
+        self.metas = []
         self._in_pre = False
         self._h1_depth = 0
         self._h1_buffer = []
@@ -65,6 +80,7 @@ class PageParser(HTMLParser):
         elif tag == "img":
             self.imgs.append(attrs)
         elif tag == "meta":
+            self.metas.append(attrs)
             key = attrs.get("property") or attrs.get("name")
             if key and key not in self.meta:
                 self.meta[key] = attrs.get("content") or ""
@@ -100,6 +116,20 @@ class Page:
         self.imgs = parser.imgs
         self.meta = parser.meta
         self.code_blocks = [cls.split() for cls in parser.code_classes]
+        self.descriptions = [m.get("content") or "" for m in parser.metas
+                             if (m.get("name") or "").lower() == "description"]
+        robots = " ".join((m.get("content") or "").lower() for m in parser.metas
+                          if (m.get("name") or "").lower() == "robots")
+        refresh = any((m.get("http-equiv") or "").lower() == "refresh"
+                      for m in parser.metas)
+        own = "/" + os.path.dirname(path).replace(os.sep, "/")
+        own = own.rstrip("/") + "/"
+        elsewhere = (parser.canonical is not None and
+                     unquote(urlparse(parser.canonical).path) != unquote(own))
+        # Redirect stubs, noindexed pages and pages canonicalised to another URL
+        # (pagination pages point at page 1) never reach search results as such.
+        self.noindex = "noindex" in robots
+        self.indexable = not self.noindex and not refresh and not elsewhere
         self.jsonld = parser.jsonld
         self.canonical = parser.canonical
 
@@ -252,6 +282,48 @@ def check_breadcrumbs(pages):
     return failures
 
 
+def check_description_present(pages):
+    return [p.path for p in pages
+            if p.indexable and not any(d.strip() for d in p.descriptions)]
+
+
+def literal_entities(description):
+    """Real character references left in a description, as opposed to escaped
+    text that only looks like one (`&name;`)."""
+    return {m.group(0) for m in LITERAL_ENTITY.finditer(description)
+            if m.group(1).startswith("#") or m.group(1) + ";" in html5}
+
+
+def check_description_entities(pages):
+    failures = []
+    for p in pages:
+        found = set().union(*map(literal_entities, p.descriptions))
+        if found:
+            failures.append("%s (%s)" % (p.path, ", ".join(sorted(found))))
+    return failures
+
+
+def description_report(pages, home):
+    """Report-only: generic, duplicated and markup-containing descriptions on indexable pages."""
+    described = [(p, p.descriptions[0].strip()) for p in pages
+                 if p.indexable and p.descriptions and p.descriptions[0].strip()]
+    generic = home.descriptions[0].strip() if home and home.descriptions else None
+    print_items("indexable pages reusing the homepage description",
+                [p.path for p, d in described if d == generic and p is not home])
+    # Deliberately noindexed pages (empty author profiles) still show in shares
+    # and should describe themselves rather than the site.
+    print_items("noindexed pages reusing the homepage description",
+                [p.path for p in pages if p.noindex and generic is not None
+                 and any(d.strip() == generic for d in p.descriptions)])
+    counts = Counter(d for _p, d in described)
+    dup_pages = sorted(p.path for p, d in described if counts[d] > 1)
+    dup_groups = sum(1 for n in counts.values() if n > 1)
+    print_items("indexable pages sharing a description (%d distinct descriptions)"
+                % dup_groups, dup_pages)
+    print_items("descriptions containing HTML markup as text",
+                [p.path for p, d in described if HTML_TAG.search(d)])
+
+
 def print_items(title, items):
     print("  %s: %d" % (title, len(items)))
     for item in items[:MAX_LISTED]:
@@ -272,16 +344,18 @@ def main(public_dir):
         "5. every homepage <img> has width and height": check_homepage_img_dims(home),
         "6. homepage share image is 1200x630 PNG/JPEG with twitter:card": check_homepage_share_image(home),
         "7. breadcrumb JSON-LD is well formed": check_breadcrumbs(pages),
+        "9. every indexable page has a meta description": check_description_present(pages),
+        "10. no double-escaped entity in a meta description": check_description_entities(pages),
     }
     conditional = check_conditional_assets(pages)
     results["3. conditional highlight.js / mermaid loading"] = [
         item for items in conditional.values() for item in items]
 
     print("\nSummary")
-    for title in sorted(results):
+    for title in sorted(results, key=lambda t: int(t.split(".")[0])):
         print("  [%s] %s" % ("FAIL" if results[title] else "PASS", title))
 
-    for title in sorted(results):
+    for title in sorted(results, key=lambda t: int(t.split(".")[0])):
         if not results[title]:
             continue
         print("\nFAIL %s" % title)
@@ -305,6 +379,7 @@ def main(public_dir):
     print_items("pages whose og:image is not PNG/JPEG",
                 ["%s (%s)" % (p.path, p.meta["og:image"]) for p in pages
                  if p.meta.get("og:image") and not is_share_format(p.meta["og:image"])])
+    description_report(pages, home)
 
     return 1 if any(results.values()) else 0
 
