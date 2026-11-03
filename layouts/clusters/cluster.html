@@ -64,14 +64,14 @@
         <div class="row">
           {{ partial "clusters/sidebar_nav.html" (dict "data" $data "arrowColors" $arrowColors "link_mode" "subpath" "active_cluster_number" $n) }}
 
-          <main class="col-12 col-lg-8 col-xl-9 clusters-content">
+          <div class="col-12 col-lg-8 col-xl-9 clusters-content">
             {{ with .Content }}
             <div class="article-container pt-2 pb-2">
               <div class="article-style clusters-cluster-lead">{{ . }}</div>
             </div>
             {{ end }}
             {{ partial "clusters/cluster_section.html" (dict "cluster" $cluster "ci" $ci "colors" $colors) }}
-          </main>
+          </div>
         </div>
       </div>
 
