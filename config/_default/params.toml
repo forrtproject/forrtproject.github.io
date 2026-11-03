@@ -339,3 +339,5 @@ plugins_js  = []
 [doors]
   # The 3D castle on the home page. Set to false to show only the still image.
   castle = true
+  # Pages on the article template whose tables, maps or embedded layouts need the full width.
+  wide_pages = ["/about/steering-committee", "/about/visitors", "/replication-hub/large-scale-replication-projects"]

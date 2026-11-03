@@ -97,3 +97,16 @@ document.querySelectorAll('[data-newsletter-src]').forEach((box) => {
     box.append(embed);
   });
 });
+
+// An article's "Copy article link" button.
+document.querySelectorAll('[data-copy-link]').forEach((button) => {
+  const status = button.parentElement.querySelector('[role=status]');
+  button.addEventListener('click', async () => {
+    try {
+      await navigator.clipboard.writeText(button.dataset.copyLink);
+      status.textContent = 'Link copied.';
+    } catch {
+      status.textContent = 'Copy the address from your browser to share this page.';
+    }
+  });
+});

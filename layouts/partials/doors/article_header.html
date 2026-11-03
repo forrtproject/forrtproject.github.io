@@ -1,0 +1,38 @@
+{{/* An article's heading block, in place of the theme's page_header on these pages only: trail,
+     categories, title, subtitle, byline, then any banner or featured image. */}}
+{{ $page := . }}
+{{ $featured := (.Resources.ByType "image").GetMatch "*featured*" }}
+<header class="article-head">
+  <nav class="crumbs" aria-label="Breadcrumb">
+    <a href="{{ "" | relLangURL }}">Home</a>
+    {{ with .Parent }}{{ if not .IsHome }}
+    {{ $label := index (partialCached "doors/menu_labels" . "menu-labels") (strings.Trim .Path "/") | default .LinkTitle }}
+    <span aria-hidden="true">/</span> <a href="{{ .RelPermalink }}">{{ $label }}</a>
+    {{ end }}{{ end }}
+  </nav>
+  {{ with .Params.categories }}<div class="article-meta">{{ range . }}<span>{{ . }}</span>{{ end }}</div>{{ end }}
+  {{ if .Params.hide_title }}<h1 class="sr-only">{{ .Title }}</h1>{{ else }}<h1>{{ .Title }}</h1>{{ end }}
+  {{ with .Params.subtitle }}<p class="standfirst">{{ . | markdownify | emojify }}</p>{{ end }}
+  <div class="byline">
+    {{ with .Params.authors }}<span class="byline-authors">{{ partial "page_metadata_authors" $page }}</span>{{ end }}
+    {{ if eq .Type "post" }}<span class="byline-time">{{ .ReadingTime }} {{ i18n "minute_read" }}</span>{{ end }}
+  </div>
+  {{ partial "page_links_div.html" $page }}
+</header>
+{{ if and .Params.header.image (not (and $featured (not .Params.image.preview_only))) }}
+<figure class="article-image">
+  {{ $src := urls.Parse .Params.header.image }}
+  {{ $file := .Params.header.image }}
+  {{ if not $src.Scheme }}{{ $file = printf "%s/%s" ($.Scratch.Get "media_dir") .Params.header.image | relURL }}{{ end }}
+  <img src="{{ $file }}" alt="{{ with .Params.header.alt_text }}{{ . }}{{ else }}Header image for {{ $.Title }}{{ end }}">
+  {{ with .Params.header.caption }}<figcaption>{{ . | markdownify | emojify }}</figcaption>{{ end }}
+</figure>
+{{ end }}
+{{ if and $featured (not .Params.image.preview_only) }}
+{{ $image := $featured }}
+{{ if gt $featured.Width 720 }}{{ $image = $featured.Resize "720x" }}{{ end }}
+<figure class="article-image">
+  <img src="{{ $image.RelPermalink }}" width="{{ $image.Width }}" height="{{ $image.Height }}" alt="{{ with $.Params.image.alt_text }}{{ . }}{{ else }}Featured image for {{ $.Title }}{{ end }}">
+  {{ with $.Params.image.caption }}<figcaption>{{ . | markdownify | emojify }}</figcaption>{{ end }}
+</figure>
+{{ end }}

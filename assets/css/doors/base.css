@@ -18,6 +18,8 @@ em,i:not([class]),dfn,cite,var{font-weight:600}
 .visually-hidden{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
 .skip{position:fixed;top:-100px;inset-inline-start:12px;z-index:1100;background:var(--ink);color:#fff;padding:12px 16px}
 .skip:focus,.skip:hover{top:8px;color:#fff}
+.crumbs{font-size:15px;line-height:1.4;color:var(--ink)}
+.crumbs a{color:inherit;text-decoration:underline;text-underline-offset:3px}
 .more{font-weight:700;color:var(--link);text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:4px}
 .more:hover{color:var(--ink)}
 
