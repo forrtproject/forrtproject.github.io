@@ -187,13 +187,13 @@
     group = "Stay in touch"
 
 [[main]]
-  name = "Educational NEXUS"
+  name = "Curriculum Hub"
   url = "nexus"
   weight = 30
   identifier = "nexus"
 
 [[main]]
-  name = "About Educational Nexus"
+  name = "About the Curriculum Hub"
   url = "nexus"
   weight = 31
   parent = "nexus"
@@ -539,7 +539,7 @@
   parent = "discover"
 
 [[footer]]
-  name = "Educational NEXUS"
+  name = "Curriculum Hub"
   url = "nexus/"
   weight = 1
   parent = "explore"
