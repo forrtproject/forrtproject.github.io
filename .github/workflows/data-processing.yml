@@ -149,7 +149,7 @@ jobs:
       #========================================
       - name: Setup r2u
         if: steps.monthly-run.outputs.is_monthly == 'true'
-        uses: eddelbuettel/github-actions/r2u-setup@master
+        uses: eddelbuettel/github-actions/r-ci@master
 
       #========================================
       # Install Pandoc for rendering R Markdown documents
