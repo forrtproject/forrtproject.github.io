@@ -6,7 +6,7 @@
 <script>
 (function() {
   // The empty string in production; a preview in a subfolder redirects within itself.
-  var base = '{{ "/" | relURL }}'.replace(/\/$/, '');
+  var base = '{{ strings.TrimSuffix "/" (urls.Parse site.BaseURL).Path }}';
   var path = window.location.pathname;
   if (base && path.indexOf(base + '/') === 0) path = path.slice(base.length);
 

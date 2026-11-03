@@ -125,8 +125,6 @@
        know it needs. Warming the connections costs nothing and moves that work
        off the critical path. */}}
   <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
   {{/* Decide whether this page needs Highlight.js and Mermaid, and store the answers
        in $scr so that site_js.html can read them again.
@@ -235,6 +233,7 @@
     {{- $style = $style | minify | fingerprint "md5" -}}
   {{- end -}}
   <link rel="stylesheet" href="{{ $style.RelPermalink }}">
+  {{ partial "doors/assets" . }}
 
   {{ partial "marketing/google_analytics" . }}
   {{ partial "marketing/google_tag_manager" . }}
@@ -248,7 +247,7 @@
   <link rel="alternate" href="{{.RelPermalink}}" type="application/rss+xml" title="{{site.Title}}">
   {{ end }}
 
-  <link rel="manifest" href="{{ "index.webmanifest" | relLangURL }}">
+  <link rel="manifest" href="{{ "manifest.webmanifest" | relLangURL }}">
   <link rel="icon" type="image/png" href="{{(partial "functions/get_icon" 32).RelPermalink}}">
   <link rel="apple-touch-icon" type="image/png" href="{{(partial "functions/get_icon" 192).RelPermalink}}">
 
