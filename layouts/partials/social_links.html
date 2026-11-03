@@ -14,7 +14,9 @@
       {{ $target = "target=\"_blank\" rel=\"noopener\"" }}
     {{ end }}
     <li>
-      <a href="{{ $link | safeURL }}" {{ $target | safeHTMLAttr }}>
+      {{/* The icon alone says nothing to a screen reader, so the link is named. */}}
+      {{ $name := index (dict "envelope" "Email" "github" "GitHub" "osf" "OSF" "orcid" "ORCID" "google-scholar" "Google Scholar" "linkedin" "LinkedIn" "researchgate" "ResearchGate" "youtube" "YouTube") .icon | default (.icon | humanize | title) }}
+      <a href="{{ $link | safeURL }}" aria-label="{{ $.Title }}: {{ $name }}" {{ $target | safeHTMLAttr }}>
         <i class="{{ $pack }} {{ $pack_prefix }}-{{ .icon }}" aria-hidden="true"></i>
       </a>
     </li>

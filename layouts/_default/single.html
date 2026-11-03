@@ -34,7 +34,7 @@
       </div>
     </article>
     {{ if $hasCard }}
-    <aside class="article-card" aria-label="About this article">
+    <section class="article-card" aria-label="About this article">
       {{ if $hasDates }}
       <dl>
         <dt>Published</dt><dd>{{ .Date.Format "2 January 2006" }}</dd>
@@ -45,7 +45,7 @@
       <h2>On this page</h2>
       <div class="article-toc">{{ .TableOfContents }}</div>
       {{ end }}
-    </aside>
+    </section>
     {{ end }}
   </div>
 </div>

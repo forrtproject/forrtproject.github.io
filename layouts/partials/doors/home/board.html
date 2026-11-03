@@ -22,7 +22,7 @@
       {{ partial "doors/newsletter" . }}
     </div>
   </div>
-  <aside class="standing" id="take-part" aria-labelledby="standing-h">
+  <section class="standing" id="take-part" aria-labelledby="standing-h">
     <h2 id="standing-h">{{ .Params.take_part_heading }}</h2>
     <ul class="standing-list">
       {{ range .Params.take_part }}
@@ -30,5 +30,5 @@
       <li><a href="{{ $link.href }}"><strong>{{ $link.label }}</strong><span>{{ .text }}</span></a></li>
       {{ end }}
     </ul>
-  </aside>
+  </section>
 </section>
