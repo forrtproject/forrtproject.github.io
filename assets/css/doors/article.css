@@ -1,9 +1,9 @@
 /* Articles and plain content, every rule under .article-layout. Content here is Markdown written
    for the old theme, so lists, tables and embeds are styled but not rebuilt. */
-.article-layout{display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:64px;padding:32px 0 32px;align-items:start}
-.article-layout-single{grid-template-columns:minmax(0,1fr)}
-.article-layout .reading{max-width:640px;min-width:0}
-.article-layout-wide .reading{max-width:none}
+.article-layout{display:grid;grid-template-columns:minmax(0,580px) 300px;justify-content:center;gap:64px;padding:32px 0 32px;align-items:start}
+.article-layout-single{grid-template-columns:minmax(0,580px)}
+.article-layout-wide{grid-template-columns:minmax(0,1fr)}
+.article-layout .reading{min-width:0}
 .article-layout .crumbs{margin-bottom:18px}
 .article-layout .article-meta{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:18px;font-size:15px;font-weight:600}
 .article-layout .article-meta span{background:var(--surface);padding:3px 10px;border-radius:var(--r-small)}
@@ -15,8 +15,10 @@
 .article-layout .article-image{margin:0 0 28px}
 .article-layout .article-image img{display:block;width:100%;height:auto;border-radius:var(--r-small)}
 .article-layout figcaption{margin-top:10px;font-size:15px;text-align:center}
-.article-layout .article-style{font-size:18px;line-height:1.7;color:var(--ink);text-align:start;overflow-wrap:break-word}
-.article-layout .article-style p,.article-layout .article-style li{font-size:inherit;line-height:inherit;max-width:27em}
+.article-layout .article-style{font-size:20px;line-height:1.7;color:var(--ink);text-align:start;overflow-wrap:break-word}
+.article-layout .article-style p,.article-layout .article-style li{font-size:inherit;line-height:inherit}
+/* Wide pages keep the reading width for their prose, and give the rest of the page to tables and charts. */
+.article-layout-wide .article-style p,.article-layout-wide .article-style li{max-width:29em}
 .article-layout .article-style p{margin:0 0 18px}
 .article-layout .article-style ul,.article-layout .article-style ol{margin:0 0 18px;padding-inline-start:1.4em}
 .article-layout .article-style li{margin-bottom:6px}
@@ -62,8 +64,9 @@
 .article-layout .article-toc ul ul{padding-inline-start:12px}
 .article-layout .article-toc #TableOfContents a{display:block;padding:5px 0;font-size:16px;line-height:1.35;color:var(--link);text-underline-offset:3px;text-decoration:underline}
 @media(max-width:1000px){
-  .article-layout{grid-template-columns:minmax(0,1fr);gap:36px}
-  .article-layout .article-card{position:static;max-height:none;max-width:640px}
+  .article-layout{grid-template-columns:minmax(0,580px);gap:36px}
+  .article-layout-wide{grid-template-columns:minmax(0,1fr)}
+  .article-layout .article-card{position:static;max-height:none}
 }
 @media(max-width:760px){
   .article-layout{padding:20px 0 24px}
