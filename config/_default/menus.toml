@@ -2,6 +2,7 @@
 # `group` sets the column in the opened menu; columns keep the order of their first entry.
 # An entry with no group goes in a final "More" column, so nothing can drop out of the menu.
 # Menu labels are unchanged from the previous site for now.
+# URLs have no leading slash, so that Hugo resolves them against the base URL.
 
 [[main]]
   name = "About FORRT"
@@ -11,7 +12,7 @@
 
 [[main]]
   name = "About FORRT"
-  url = "/about/us"
+  url = "about/us"
   weight = 11
   parent = "about"
   [main.params]
@@ -27,7 +28,7 @@
 
 [[main]]
   name = "Principles"
-  url = "/about/principles/"
+  url = "about/principles/"
   weight = 13
   parent = "about"
   [main.params]
@@ -35,7 +36,7 @@
 
 [[main]]
   name = "Steering Committee"
-  url = "/about/steering-committee/"
+  url = "about/steering-committee/"
   weight = 14
   parent = "about"
   [main.params]
@@ -51,7 +52,7 @@
 
 [[main]]
   name = "Contributors"
-  url = "/contributors"
+  url = "contributors"
   weight = 16
   parent = "about"
   [main.params]
@@ -59,7 +60,7 @@
 
 [[main]]
   name = "Testimonials"
-  url = "/testimonials/"
+  url = "testimonials/"
   weight = 17
   parent = "about"
   [main.params]
@@ -67,7 +68,7 @@
 
 [[main]]
   name = "Community"
-  url = "/about/community"
+  url = "about/community"
   weight = 18
   parent = "about"
   [main.params]
@@ -83,7 +84,7 @@
 
 [[main]]
   name = "Get Involved"
-  url = "/about/get-involved"
+  url = "about/get-involved"
   weight = 20
   parent = "about"
   [main.params]
@@ -99,7 +100,7 @@
 
 [[main]]
   name = "Code of Conduct"
-  url = "/coc"
+  url = "coc"
   weight = 22
   parent = "about"
   [main.params]
@@ -107,7 +108,7 @@
 
 [[main]]
   name = "Confidential Advisor & Ombuds"
-  url = "/about/confidential-advisor-ombuds/"
+  url = "about/confidential-advisor-ombuds/"
   weight = 23
   parent = "about"
   [main.params]
@@ -115,7 +116,7 @@
 
 [[main]]
   name = "Awards"
-  url = "/awards"
+  url = "awards"
   weight = 24
   parent = "about"
   [main.params]
@@ -131,7 +132,7 @@
 
 [[main]]
   name = "Curriculum Vitae"
-  url = "/cv"
+  url = "cv"
   weight = 26
   parent = "about"
   [main.params]
@@ -139,7 +140,7 @@
 
 [[main]]
   name = "Newsletters"
-  url = "/newsletters"
+  url = "newsletters"
   weight = 27
   parent = "about"
   [main.params]
@@ -147,7 +148,7 @@
 
 [[main]]
   name = "Community Map"
-  url = "/community-map"
+  url = "community-map"
   weight = 28
   parent = "about"
   [main.params]
@@ -155,7 +156,7 @@
 
 [[main]]
   name = "Visitors"
-  url = "/about/visitors"
+  url = "about/visitors"
   weight = 29
   parent = "about"
   [main.params]
@@ -163,7 +164,7 @@
 
 [[main]]
   name = "Feedback"
-  url = "/feedback"
+  url = "feedback"
   weight = 30
   parent = "about"
   [main.params]
@@ -171,7 +172,7 @@
 
 [[main]]
   name = "FORRT Booklet"
-  url = "/booklet/"
+  url = "booklet/"
   weight = 31
   parent = "about"
   [main.params]
@@ -179,7 +180,7 @@
 
 [[main]]
   name = "Calendar"
-  url = "/about/get-involved/#calendar"
+  url = "about/get-involved/#calendar"
   weight = 32
   parent = "about"
   [main.params]
@@ -187,13 +188,13 @@
 
 [[main]]
   name = "Educational NEXUS"
-  url = "/nexus"
+  url = "nexus"
   weight = 30
   identifier = "nexus"
 
 [[main]]
   name = "About Educational Nexus"
-  url = "/nexus"
+  url = "nexus"
   weight = 31
   parent = "nexus"
   [main.params]
@@ -201,7 +202,7 @@
 
 [[main]]
   name = "Lesson Plans"
-  url = "/lesson-plans/"
+  url = "lesson-plans/"
   weight = 32
   parent = "nexus"
   [main.params]
@@ -209,7 +210,7 @@
 
 [[main]]
   name = "Syllabi Collection"
-  url = "/syllabus"
+  url = "syllabus"
   weight = 33
   parent = "nexus"
   [main.params]
@@ -217,7 +218,7 @@
 
 [[main]]
   name = "Pedagogies"
-  url = "/pedagogies"
+  url = "pedagogies"
   weight = 34
   parent = "nexus"
   [main.params]
@@ -225,7 +226,7 @@
 
 [[main]]
   name = "Teaching OS"
-  url = "/teaching_os"
+  url = "teaching_os"
   weight = 35
   parent = "nexus"
   [main.params]
@@ -233,7 +234,7 @@
 
 [[main]]
   name = "Adopting Principled Education"
-  url = "/adopting"
+  url = "adopting"
   weight = 36
   parent = "nexus"
   [main.params]
@@ -241,7 +242,7 @@
 
 [[main]]
   name = "Educators' Corner"
-  url = "/educators-corner"
+  url = "educators-corner"
   weight = 37
   parent = "nexus"
   [main.params]
@@ -257,7 +258,7 @@
 
 [[main]]
   name = "Curated Resources"
-  url = "/resources"
+  url = "resources"
   weight = 39
   parent = "nexus"
   [main.params]
@@ -265,7 +266,7 @@
 
 [[main]]
   name = "Glossary"
-  url = "/glossary"
+  url = "glossary"
   weight = 40
   parent = "nexus"
   [main.params]
@@ -273,7 +274,7 @@
 
 [[main]]
   name = "Summaries"
-  url = "/summaries"
+  url = "summaries"
   weight = 41
   parent = "nexus"
   [main.params]
@@ -281,7 +282,7 @@
 
 [[main]]
   name = "Clusters"
-  url = "/clusters"
+  url = "clusters"
   weight = 42
   parent = "nexus"
   [main.params]
@@ -289,7 +290,7 @@
 
 [[main]]
   name = "Disciplines"
-  url = "/disciplines"
+  url = "disciplines"
   weight = 43
   parent = "nexus"
   [main.params]
@@ -297,7 +298,7 @@
 
 [[main]]
   name = "Impact of OS on students"
-  url = "/impact"
+  url = "impact"
   weight = 44
   parent = "nexus"
   [main.params]
@@ -305,7 +306,7 @@
 
 [[main]]
   name = "Games Portal"
-  url = "/games"
+  url = "games"
   weight = 45
   parent = "nexus"
   [main.params]
@@ -313,7 +314,7 @@
 
 [[main]]
   name = "JUST-OS Chatbot"
-  url = "/just_os_chatbot"
+  url = "just_os_chatbot"
   weight = 46
   parent = "nexus"
   [main.params]
@@ -321,7 +322,7 @@
 
 [[main]]
   name = "Social Justice Initiatives"
-  url = "/dei"
+  url = "dei"
   weight = 47
   parent = "nexus"
   [main.params]
@@ -329,7 +330,7 @@
 
 [[main]]
   name = "Equity in Open Science"
-  url = "/equityinos"
+  url = "equityinos"
   weight = 48
   parent = "nexus"
   [main.params]
@@ -337,7 +338,7 @@
 
 [[main]]
   name = "Developing Countries & OS"
-  url = "/os-developing-world"
+  url = "os-developing-world"
   weight = 49
   parent = "nexus"
   [main.params]
@@ -345,7 +346,7 @@
 
 [[main]]
   name = "Neurodiversity Team"
-  url = "/neurodiversity"
+  url = "neurodiversity"
   weight = 50
   parent = "nexus"
   [main.params]
@@ -353,7 +354,7 @@
 
 [[main]]
   name = "Citation Politics"
-  url = "/citation-politics"
+  url = "citation-politics"
   weight = 51
   parent = "nexus"
   [main.params]
@@ -361,7 +362,7 @@
 
 [[main]]
   name = "Wheel of Privilege"
-  url = "/awop"
+  url = "awop"
   weight = 52
   parent = "nexus"
   [main.params]
@@ -369,7 +370,7 @@
 
 [[main]]
   name = "Mapping OS Communities"
-  url = "/mapping_os"
+  url = "mapping_os"
   weight = 53
   parent = "nexus"
   [main.params]
@@ -377,7 +378,7 @@
 
 [[main]]
   name = "Nowhere Lab"
-  url = "/nowherelab/"
+  url = "nowherelab/"
   weight = 54
   parent = "nexus"
   [main.params]
@@ -385,13 +386,13 @@
 
 [[main]]
   name = "Replication Hub"
-  url = "/replication-hub"
+  url = "replication-hub"
   weight = 60
   identifier = "replications"
 
 [[main]]
   name = "About Replication Hub"
-  url = "/replication-hub"
+  url = "replication-hub"
   weight = 61
   parent = "replications"
   [main.params]
@@ -399,7 +400,7 @@
 
 [[main]]
   name = "Submit a replication to FLoRA"
-  url = "/replication-hub/submit"
+  url = "replication-hub/submit"
   weight = 62
   parent = "replications"
   [main.params]
@@ -415,7 +416,7 @@
 
 [[main]]
   name = "FReD Explorer"
-  url = "/explorer/"
+  url = "explorer/"
   weight = 64
   parent = "replications"
   [main.params]
@@ -463,7 +464,7 @@
 
 [[main]]
   name = "Large-Scale Replication Projects"
-  url = "/replication-hub/large-scale-replication-projects"
+  url = "replication-hub/large-scale-replication-projects"
   weight = 70
   parent = "replications"
   [main.params]
@@ -479,7 +480,7 @@
 
 [[main]]
   name = "Replications & Reversals"
-  url = "/reversals"
+  url = "reversals"
   weight = 72
   parent = "replications"
   [main.params]
@@ -487,7 +488,7 @@
 
 [[main]]
   name = "Positive Changes from the Replication Crisis"
-  url = "/positive-changes-replication-crisis"
+  url = "positive-changes-replication-crisis"
   weight = 73
   parent = "replications"
   [main.params]
@@ -495,7 +496,7 @@
 
 [[main]]
   name = "Publications"
-  url = "/publications/"
+  url = "publications/"
   weight = 80
   identifier = "publications"
 
@@ -515,49 +516,49 @@
 
 [[footer]]
   name = "Mission & principles"
-  url = "/about/mission/"
+  url = "about/mission/"
   weight = 1
   parent = "discover"
 
 [[footer]]
   name = "Teams & contributors"
-  url = "/about/teams/"
+  url = "about/teams/"
   weight = 2
   parent = "discover"
 
 [[footer]]
   name = "Charity & governance"
-  url = "/about/charity/"
+  url = "about/charity/"
   weight = 3
   parent = "discover"
 
 [[footer]]
   name = "Code of conduct"
-  url = "/coc/"
+  url = "coc/"
   weight = 4
   parent = "discover"
 
 [[footer]]
   name = "Educational NEXUS"
-  url = "/nexus/"
+  url = "nexus/"
   weight = 1
   parent = "explore"
 
 [[footer]]
   name = "Replication Hub"
-  url = "/replication-hub/"
+  url = "replication-hub/"
   weight = 2
   parent = "explore"
 
 [[footer]]
   name = "Publications"
-  url = "/publications/"
+  url = "publications/"
   weight = 3
   parent = "explore"
 
 [[footer]]
   name = "News & announcements"
-  url = "/post/"
+  url = "post/"
   weight = 4
   parent = "explore"
 
@@ -569,19 +570,19 @@
 
 [[footer]]
   name = "Join a team"
-  url = "/about/teams/"
+  url = "about/teams/"
   weight = 2
   parent = "take-part"
 
 [[footer]]
   name = "Become a partner"
-  url = "/about/partnerships/"
+  url = "about/partnerships/"
   weight = 3
   parent = "take-part"
 
 [[footer]]
   name = "Ways to support FORRT"
-  url = "/about/get-involved/"
+  url = "about/get-involved/"
   weight = 4
   parent = "take-part"
 

@@ -15,10 +15,15 @@
         {{ if .HasChildren }}
           {{ $id := printf "menu-%s" .Identifier }}
           {{ $groups := slice }}
+          {{ $ungrouped := false }}
           {{ range .Children }}
-            {{ $name := .Params.group | default "More" }}
-            {{ if not (in $groups $name) }}{{ $groups = $groups | append $name }}{{ end }}
+            {{ with .Params.group }}
+              {{ if not (in $groups .) }}{{ $groups = $groups | append . }}{{ end }}
+            {{ else }}
+              {{ $ungrouped = true }}
+            {{ end }}
           {{ end }}
+          {{ if $ungrouped }}{{ $groups = $groups | append "More" }}{{ end }}
           <button class="nav-button" type="button" aria-expanded="false" aria-controls="{{ $id }}">{{ .Name }}</button>
           <div class="mega" id="{{ $id }}" hidden>
             <div class="wrap mega-inner" style="--mega-columns:{{ len $groups }}">
