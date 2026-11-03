@@ -346,6 +346,16 @@ layout: single
     <span class="sc-title-label">Team</span>
     <h3 class="sc-title-text">FORRT Stewards</h3>
     <span class="sc-cbar"></span>
+</div><div class="sc-card" onclick="openModal('ana-carolina-marinho')" style="--team-color:#a16207;--bar-extend:calc(1rem + 1px)">
+    <div class="sc-card-photo">
+        <img src="/authors/ana-carolina-marinho/avatar.webp" alt="Ana Carolina Marinho" class="sc-card-img" />
+        <div class="sc-card-overlay"></div>
+    </div>
+    <div class="sc-card-content">
+        <h4 class="sc-card-name">Ana Carolina Marinho</h4>
+        <p class="sc-card-role">FORRT Steward</p>
+    </div>
+    <span class="sc-cbar"></span>
 </div><div class="sc-card" onclick="openModal('stephanie-zellers')" style="--team-color:#a16207;--bar-extend:calc(1rem + 1px)">
     <div class="sc-card-photo">
         <img src="/authors/stephanie-zellers/avatar.webp" alt="Stephanie Zellers" class="sc-card-img" />
@@ -1091,6 +1101,31 @@ Currently, alongside his professional duties, he is pursuing a PhD at the Univer
                     <h3 class="sc-modal-name">Charlotte Pennington</h3>
                     <p class="sc-modal-role">Director (Communication, Dissemination & Impact)</p>
                     <div class="sc-modal-bio">Dr. Charlotte Pennington is a Senior Lecturer in Psychology at Aston University, Birmingham, UK. As an experimental social psychologist, Charlotte is interested in understanding how people’s complex social environments impact on health and wellbeing, with a particular interest in alcohol consumption and addiction. Charlotte is an expert in Open Scholarship: she is author of “A Student’s Guide to Open Science: Using the Replication Crisis to Reform Psychology”, which won the 2024 British Psychology Society Textbook Award, and is an Action Editor of Registered Reports for Addiction Research &amp; Theory and Peer Community In. Charlotte also sits on the APA Open Science &amp; Methodology Expert Panel, working to deepen commitment to open research, transparency, and methodological rigour. She has been an active member of FORRT for over 6 years, contributing to many initiatives, such as FORRT’s glossary, educator’s corner, impact on students, lesson plans, and mapping of open scholarship communities. As Director of Communication, Dissemination &amp; Impact, Charlotte works to enhance FORRT’s visibility, reach, and mission at a global scale.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div><div id="modal-ana-carolina-marinho" class="sc-modal-backdrop">
+    <div class="sc-modal-content">
+        <div class="sc-modal-header">
+            <button onclick="closeModal('ana-carolina-marinho')" class="sc-close-btn">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 18 12"/></svg>
+            </button>
+        </div>
+        <div class="sc-modal-body">
+            <div class="sc-modal-layout">
+                <div class="sc-modal-sidebar">
+                    <div class="sc-modal-img">
+                        <img src="/authors/ana-carolina-marinho/avatar.webp" alt="Ana Carolina Marinho" />
+                    </div>
+                    <div class="sc-social-links">
+                        <a href="https://orcid.org/0000-0002-8456-4545" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-slate-800 transition-colors"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" x2="22" y1="12" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></a>
+                    </div>
+                </div>
+                <div class="sc-modal-main">
+                    <h3 class="sc-modal-name">Ana Carolina Marinho</h3>
+                    <p class="sc-modal-role">FORRT Steward</p>
+                    <div class="sc-modal-bio">Bio coming soon.</div>
                 </div>
             </div>
         </div>

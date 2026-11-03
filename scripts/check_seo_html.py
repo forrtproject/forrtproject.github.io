@@ -13,9 +13,13 @@ Hard checks (exit 1 if any fails):
   4. Every <img> carries an alt attribute (a bare `alt` counts as present).
   5. Every homepage <img> carries both width and height, so the browser reserves
      its box before the file loads (#869).
+  6. The homepage share image (og:image, twitter:image) is a 1200x630 PNG or
+     JPEG (per og:image:width/height), and twitter:card is summary_large_image.
+     X and LinkedIn show no preview for WebP (#870).
 
-Report-only sections (never fail): pages with zero or several <h1>, and the
-site-wide share of images that carry both width and height.
+Report-only sections (never fail): pages with zero or several <h1>, the
+site-wide share of images that carry both width and height, and pages whose
+og:image is not a PNG or JPEG.
 """
 
 import os
@@ -31,6 +35,7 @@ class PageParser(HTMLParser):
         self.h1_texts = []
         self.urls = []
         self.imgs = []
+        self.meta = {}
         self.code_classes = []
         self._in_pre = False
         self._h1_depth = 0
@@ -46,6 +51,10 @@ class PageParser(HTMLParser):
                 self.urls.append(url)
         elif tag == "img":
             self.imgs.append(attrs)
+        elif tag == "meta":
+            key = attrs.get("property") or attrs.get("name")
+            if key and key not in self.meta:
+                self.meta[key] = attrs.get("content") or ""
         elif tag == "pre":
             self._in_pre = True
         elif tag == "code" and self._in_pre:
@@ -71,6 +80,7 @@ class Page:
         self.h1_texts = parser.h1_texts
         self.urls = parser.urls
         self.imgs = parser.imgs
+        self.meta = parser.meta
         self.code_blocks = [cls.split() for cls in parser.code_classes]
 
     def loads(self, needle):
@@ -140,6 +150,29 @@ def check_homepage_img_dims(home):
     return [img.get("src", "(no src)") for img in home.imgs_without_dims]
 
 
+SHARE_IMAGE_EXTS = (".png", ".jpg", ".jpeg")
+
+
+def is_share_format(url):
+    return url.split("?")[0].lower().endswith(SHARE_IMAGE_EXTS)
+
+
+def check_homepage_share_image(home):
+    if home is None:
+        return ["index.html (homepage not found)"]
+    meta = home.meta
+    problems = []
+    for key in ("og:image", "twitter:image"):
+        if not is_share_format(meta.get(key, "")):
+            problems.append("%s is %r, not a PNG or JPEG" % (key, meta.get(key)))
+    for key, expected in (("og:image:width", "1200"), ("og:image:height", "630")):
+        if meta.get(key) != expected:
+            problems.append("%s is %r, expected %s" % (key, meta.get(key), expected))
+    if meta.get("twitter:card") != "summary_large_image":
+        problems.append("twitter:card is %r" % meta.get("twitter:card"))
+    return problems
+
+
 def check_img_alt(pages):
     return ["%s (%d image(s))" % (p.path, len(p.imgs_without_alt))
             for p in pages if p.imgs_without_alt]
@@ -163,6 +196,7 @@ def main(public_dir):
         "2. homepage free of mermaid/highlight.js assets": check_homepage_assets(home),
         "4. every <img> has an alt attribute": check_img_alt(pages),
         "5. every homepage <img> has width and height": check_homepage_img_dims(home),
+        "6. homepage share image is 1200x630 PNG/JPEG with twitter:card": check_homepage_share_image(home),
     }
     conditional = check_conditional_assets(pages)
     results["3. conditional highlight.js / mermaid loading"] = [
@@ -181,8 +215,9 @@ def main(public_dir):
                 if items:
                     print_items(reason, items)
         else:
-            # Check 5 lists offending image sources, every other check lists pages.
-            print_items("images" if title.startswith("5.") else "pages", results[title])
+            # Checks 5 and 6 list images/problems, every other check lists pages.
+            label = {"5.": "images", "6.": "problems"}.get(title[:2], "pages")
+            print_items(label, results[title])
 
     print("\nReport only (never fails)")
     print_items("pages with no <h1>", [p.path for p in pages if not p.h1_texts])
@@ -192,6 +227,9 @@ def main(public_dir):
     if all_imgs:
         print("  images site-wide: %d, with width and height: %d (%.1f%%)"
               % (all_imgs, all_imgs - unsized, 100.0 * (all_imgs - unsized) / all_imgs))
+    print_items("pages whose og:image is not PNG/JPEG",
+                ["%s (%s)" % (p.path, p.meta["og:image"]) for p in pages
+                 if p.meta.get("og:image") and not is_share_format(p.meta["og:image"])])
 
     return 1 if any(results.values()) else 0
 

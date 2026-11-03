@@ -1,0 +1,17 @@
++++
+# A Skills section created with the Featurette widget.
+
+weight = 70  # Order that this section will appear.
+
+title = "Stay Updated"
+subtitle = "Subscribe to our newsletter to get the latest news about FORRT's initiatives, events, and opportunities."
+[design]
+  columns = "1"
+
+[design.spacing]
+  # Customize the section spacing. Order is top, right, bottom, left.
+  padding = ["0px", "0", "44px", "0"]
+
++++
+
+{{< subscribe >}}
