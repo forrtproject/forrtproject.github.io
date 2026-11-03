@@ -1,0 +1,58 @@
+{{/* Doors site header. Top-level entries with children open a mega menu; its columns come
+     from each child's `group` param in config/_default/menus.toml, and any entry with no
+     group lands in a final "More" column so nothing can drop out of the menu.
+
+     The id is still `navbar-main` because academic.js measures that element for its
+     anchor offset, and it runs on every page until the theme's script is removed. */}}
+{{ $page := . }}
+{{ $logo := resources.Get "images/doors/logo-row.webp" }}
+<header class="site-head" id="navbar-main">
+  <div class="wrap head-inner">
+    <a href="{{ "" | relLangURL }}" class="brand" aria-label="FORRT home"><img src="{{ $logo.RelPermalink }}" width="{{ $logo.Width }}" height="{{ $logo.Height }}" alt="FORRT"></a>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primaryNav">Menu</button>
+    <nav class="primary" id="primaryNav" aria-label="Main navigation">
+      {{ range site.Menus.main }}
+        {{ if .HasChildren }}
+          {{ $id := printf "menu-%s" .Identifier }}
+          {{ $groups := slice }}
+          {{ $ungrouped := false }}
+          {{ range .Children }}
+            {{ with .Params.group }}
+              {{ if not (in $groups .) }}{{ $groups = $groups | append . }}{{ end }}
+            {{ else }}
+              {{ $ungrouped = true }}
+            {{ end }}
+          {{ end }}
+          {{ if $ungrouped }}{{ $groups = $groups | append "More" }}{{ end }}
+          <button class="nav-button" type="button" aria-expanded="false" aria-controls="{{ $id }}">{{ .Name }}</button>
+          <div class="mega" id="{{ $id }}" hidden>
+            <div class="wrap mega-inner" style="--mega-columns:{{ len $groups }}">
+              {{ $children := .Children }}
+              {{ range $groups }}
+                {{ $group := . }}
+                <div>
+                  <p class="mega-title">{{ $group }}</p>
+                  {{ range $children }}
+                    {{ if eq (.Params.group | default "More") $group }}
+                      {{ partial "doors/menu_link" (dict "entry" . "page" $page) }}
+                    {{ end }}
+                  {{ end }}
+                </div>
+              {{ end }}
+            </div>
+          </div>
+        {{ else }}
+          {{ partial "doors/menu_link" (dict "entry" . "page" $page) }}
+        {{ end }}
+      {{ end }}
+    </nav>
+    {{ if site.Params.search.engine }}
+    <form class="search-nav" role="search" action="{{ $page.RelPermalink }}" method="get">
+      <input id="site-search" name="q" type="search" aria-label="Search this site" placeholder="Search" autocomplete="off">
+      <button type="submit" aria-label="Search this site">{{ partial "doors/search_icon" . }}</button>
+    </form>
+    <button class="search-open js-search" type="button" aria-label="Search this site">{{ partial "doors/search_icon" . }}</button>
+    {{ end }}
+    <a href="{{ relref $page "/about/get-involved" }}" class="head-join">Get involved</a>
+  </div>
+</header>
