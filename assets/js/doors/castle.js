@@ -78,7 +78,7 @@ function startControls() {
   new IntersectionObserver((entries) => {
     visible = entries[0].isIntersecting;
     syncMotion();
-  }, { threshold: 0 }).observe(hero);
+  }, { threshold: 0 }).observe(stage);
   document.addEventListener('visibilitychange', syncMotion);
   window.addEventListener('resize', () => {
     castle()?.resize();
@@ -117,7 +117,7 @@ function watchPointer() {
   stage.addEventListener('click', () => {
     if (lastPointer === 'mouse') return;
     figure.classList.add('show-motion-control');
-    if (isPaused()) return;
+    if (isPaused() || !castle()) return;
     tapHeld = !tapHeld;
     castle()?.hold(tapHeld);
   });

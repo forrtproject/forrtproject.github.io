@@ -232,9 +232,26 @@ def check_home(browser, base, failures):
     first = page.evaluate(current)
     page.wait_for_timeout(6500)
     expect(page.evaluate(current) != first, "the quotes change on their own")
-    # Keyboard: Tab order reaches the quotes' button, which appears on focus.
+    held = page.evaluate(current)
+    page.hover(".quote.is-active")
+    page.wait_for_timeout(6500)
+    expect(page.evaluate(current) == held, "a pointer on the quotes holds them")
+    page.mouse.move(2, 2)
+    page.evaluate("scrollTo(0, 0)")
+    page.wait_for_timeout(6500)
+    expect(page.evaluate(current) == held, "the quotes stay put off screen")
+    page.evaluate("document.querySelector('.quotes').scrollIntoView({block:'center'})")
+    page.wait_for_timeout(6500)
+    expect(page.evaluate(current) != held, "the quotes resume when seen again")
+    # A real Tab from the heading above, so that the browser counts it as keyboard focus.
+    page.evaluate("document.querySelector('.quotes').previousElementSibling.setAttribute('tabindex', '-1')")
+    page.evaluate("document.querySelector('.quotes').previousElementSibling.focus()")
+    page.keyboard.press("Tab")
     button = page.locator(".quotes .motion-toggle")
-    button.focus()
+    expect(page.evaluate("document.activeElement.closest('.quotes') !== null"), "Tab reaches the quotes' pause button")
+    held = page.evaluate(current)
+    page.wait_for_timeout(6500)
+    expect(page.evaluate(current) == held, "keyboard focus on the quotes holds them")
     expect(page.evaluate("document.querySelector('.quotes .motion-toggle').getBoundingClientRect().width") > 40,
            "the quotes' pause button appears on keyboard focus")
     page.keyboard.press("Enter")
@@ -270,6 +287,13 @@ def check_home(browser, base, failures):
 
 def check_directory(browser, base, failures):
     expect = expectation(failures, "directory")
+    topics = new_page(browser, 1440)
+    topics.goto(base, wait_until="load")
+    wanted = topics.evaluate("[...document.querySelectorAll('.topic')].map(a => new URL(a.href).searchParams.get('cluster'))")
+    topics.goto(base + "resources/", wait_until="load")
+    known = topics.evaluate("[...document.querySelectorAll('.facet[data-facet=cluster] .chip')].map(c => c.dataset.value)")
+    expect(wanted and set(wanted) <= set(known), f"every topic button names a real cluster: {sorted(set(wanted) - set(known))}")
+    topics.context.close()
     page = new_page(browser, 1440)
     requests = []
     page.on("request", lambda request: requests.append(request.url))

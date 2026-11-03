@@ -14,7 +14,7 @@
         <p class="quote{{ if eq $i 0 }} is-active{{ end }}">{{ $quote | safeHTML }}</p>
         {{ end }}
       </div>
-      <figcaption class="quotes-bar"><button class="motion-toggle" type="button" aria-pressed="false" hidden>Pause animation</button></figcaption>
+      <figcaption class="quotes-bar"><button class="motion-toggle" type="button" hidden>Pause animation</button></figcaption>
     </figure>
     <p>{{ .Params.statement }}</p>
     {{ with .Params.statement_link }}{{ $link := partial "doors/link" . }}<a class="more" href="{{ $link.href }}">{{ $link.label }}</a>{{ end }}
