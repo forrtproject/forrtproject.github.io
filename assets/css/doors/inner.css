@@ -5,6 +5,10 @@
 .btn-outline-primary{color:var(--link);border-color:var(--link);background:transparent}
 .btn-outline-primary:hover{background:var(--link);border-color:var(--link);color:#fff}
 .home-section,.docs-content,.article,.universal-wrapper{background:transparent}
+/* The theme fixes this at 1000 px from a 1001 px screen, wider than its padded parent. */
+.universal-wrapper{max-width:100%}
+/* The theme's sidebar, contents and article columns add up to 13 of 12, so the article takes what is left. */
+@media(min-width:1200px){.docs-sidebar~.docs-content{flex:1 1 0;max-width:none;min-width:0}}
 code,pre,kbd,samp{font-style:normal}
 
 /* Cookie banner: same library and wording, in Doors colours. */
