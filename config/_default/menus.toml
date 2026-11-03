@@ -399,7 +399,7 @@
     group = "Track"
 
 [[main]]
-  name = "Submit a replication to FLoRA"
+  name = "Submit a replication"
   url = "replication-hub/submit"
   weight = 62
   parent = "replications"
