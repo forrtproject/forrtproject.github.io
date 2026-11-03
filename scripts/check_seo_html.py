@@ -32,12 +32,12 @@ og:image is not a PNG or JPEG, and indexable pages whose description repeats
 the homepage's, is shared with another page or contains HTML markup as text.
 """
 
-import html
 import json
 import os
 import re
 import sys
 from collections import Counter
+from html.entities import html5
 from html.parser import HTMLParser
 from urllib.parse import unquote, urlparse
 
@@ -288,10 +288,10 @@ def check_description_present(pages):
 
 
 def literal_entities(description):
-    """Real character references left in a description; `html.unescape` leaves
-    anything else, such as a correctly escaped `&name;`, unchanged."""
+    """Real character references left in a description, as opposed to escaped
+    text that only looks like one (`&name;`)."""
     return {m.group(0) for m in LITERAL_ENTITY.finditer(description)
-            if html.unescape(m.group(0)) != m.group(0)}
+            if m.group(1).startswith("#") or m.group(1) + ";" in html5}
 
 
 def check_description_entities(pages):

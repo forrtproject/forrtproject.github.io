@@ -21,7 +21,9 @@ class DescriptionEntityCheck(unittest.TestCase):
         self.assertEqual(failures_for("R&amp;D &#34;quotes&#34; “curly”"), [])
 
     def test_escaped_text_that_is_not_an_entity_passes(self):
-        self.assertEqual(failures_for("the &amp;name; syntax"), [])
+        for raw in ("the &amp;name; syntax", "the &amp;notanentity; syntax"):
+            with self.subTest(raw):
+                self.assertEqual(failures_for(raw), [])
 
     def test_double_escaped_entities_fail(self):
         for raw, entity in (("&amp;ldquo;quote&amp;rdquo;", "&ldquo;"),
