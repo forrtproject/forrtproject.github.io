@@ -38,6 +38,7 @@ REDIRECTS = {
     "FReD-apps/": "//fred-apps",
     "flora_zotero/": "//flora-zotero",
     "LoveReplicationsWeek/": "//love-replications-week",
+    "plugin_notification_dummy/": "//plugin-notification-dummy",
     "replication_handbook/": "//replication-handbook",
     "TenureRun/": "//tenure-run",
     "Transform-to-Open-Science-Book/": "//transform-to-open-science-book",
@@ -58,7 +59,10 @@ def check_redirects(browser, base, failures):
             pass
         landed = urlsplit(page.url).path
         want = expected[1:] if expected.startswith("//") else root.path + expected
-        ok = landed.rstrip("/") == want.rstrip("/") or landed.rstrip("/").startswith(want.rstrip("/") + "/")
+        ok = landed.rstrip("/") == want.rstrip("/")
+        # A sister site may forward within itself once it has been reached.
+        if expected.startswith("//"):
+            ok = ok or landed.startswith(want.rstrip("/") + "/")
         print(f"  {'ok ' if ok else 'BAD'} {path} -> {landed}")
         if not ok:
             failures.append(f"redirect {path} landed on {landed}, wanted {want}")
@@ -74,9 +78,10 @@ def check_links_assets(browser, base, failures):
 
     def note(request):
         parts = urlsplit(request.url)
-        if parts.hostname == "fonts.googleapis.com" or parts.hostname == "fonts.gstatic.com":
+        # Embedded third-party frames, such as Google Forms, load their own fonts.
+        if parts.hostname in ("fonts.googleapis.com", "fonts.gstatic.com") and request.frame == page.main_frame:
             google.append(request.url)
-        if parts.hostname == "forrt.org" and not parts.path.startswith(root):
+        if parts.hostname in ("forrt.org", "www.forrt.org") and not parts.path.startswith(root):
             if parts.path.strip("/").split("/")[0] not in sisters:
                 outside.append(request.url)
 
@@ -97,7 +102,7 @@ def check_links_assets(browser, base, failures):
             failures.append(f"{sample} has no noindex")
         failures.extend(f"{sample}: broken image {src}" for src in broken_images)
     if google:
-        print(f"  Google Fonts requests on the site's own pages: {sorted(set(google))[:3]}")
+        failures.append(f"Google Fonts requests on the site's own pages: {sorted(set(google))[:3]}")
     if outside:
         failures.append(f"requests to the live site: {sorted(set(outside))[:5]}")
 
