@@ -24,7 +24,7 @@ Hard checks (exit 1 if any fails):
   9. Every indexable page (no robots noindex, not a meta-refresh redirect) has a
      non-empty meta description (#864).
   10. No meta description contains a double-escaped entity such as `&amp;ldquo;`
-     (#864).
+     (#864). Text that merely looks like an entity (`&name;`) is not one.
 
 Report-only sections (never fail): pages with zero or several <h1>, the
 site-wide share of images that carry both width and height, pages whose
@@ -32,6 +32,7 @@ og:image is not a PNG or JPEG, and indexable pages whose description repeats
 the homepage's, is shared with another page or contains HTML markup as text.
 """
 
+import html
 import json
 import os
 import re
@@ -286,10 +287,20 @@ def check_description_present(pages):
             if p.indexable and not any(d.strip() for d in p.descriptions)]
 
 
+def literal_entities(description):
+    """Real character references left in a description; `html.unescape` leaves
+    anything else, such as a correctly escaped `&name;`, unchanged."""
+    return {m.group(0) for m in LITERAL_ENTITY.finditer(description)
+            if html.unescape(m.group(0)) != m.group(0)}
+
+
 def check_description_entities(pages):
-    return ["%s (%s)" % (p.path, ", ".join(sorted(set(
-                m.group(0) for d in p.descriptions for m in LITERAL_ENTITY.finditer(d)))))
-            for p in pages if any(LITERAL_ENTITY.search(d) for d in p.descriptions)]
+    failures = []
+    for p in pages:
+        found = set().union(*map(literal_entities, p.descriptions))
+        if found:
+            failures.append("%s (%s)" % (p.path, ", ".join(sorted(found))))
+    return failures
 
 
 def description_report(pages, home):

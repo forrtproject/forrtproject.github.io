@@ -93,7 +93,9 @@
       {{- $desc = printf "Browse all %d %s used on FORRT: %s." (len $terms) (replace $page.Data.Plural "_" " ") (delimit $terms ", ") -}}
     {{- else if eq $page.Type "widget_page" -}}
       {{/* Widget pages render no body of their own: use the first widget,
-           in the order the page lays them out, that has text. */}}
+           in the order the page lays them out, that has text. `.Plain` includes
+           whatever its shortcodes render, so a page whose first widget opens
+           with interface text (filter buttons) needs a `summary` of its own. */}}
       {{- range where ($page.Resources.ByType "page") ".Params.active" "!=" false -}}
         {{- if not $desc -}}
           {{- $desc = trim (.Plain | htmlUnescape) $ws -}}
