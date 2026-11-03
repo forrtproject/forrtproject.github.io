@@ -47,7 +47,7 @@ Features:
 - Queues builds instead of canceling (concurrency)
 - Auto-cleans old staging branches (keeps 2)
 
-### [rebrand-preview.yaml](workflows/rebrand-preview.yaml)
+### [rebrand-preview.yaml](rebrand-preview.yaml)
 **Preview of the Doors redesign, while it is in progress**
 
 | Trigger | Target | Schedule |

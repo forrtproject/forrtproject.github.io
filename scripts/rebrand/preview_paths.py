@@ -63,7 +63,9 @@ class Rewriter:
             rf"(?<![\w-])({ATTRIBUTES}=[\"']?)https?://(?:www\.)?forrt\.org(/[^\"'\s>]*)?(?=[\"'\s>])",
             re.I,
         )
-        self._climbing = re.compile(rf"(?<![\w-])({ATTRIBUTES}=[\"']?)((?:\.\./)+)", re.I)
+        self._climbing = re.compile(
+            rf"(?<![\w-])({ATTRIBUTES}=[\"']?)((?:\./)?(?:\.\./)*\.\.(?:/|(?=[\"'\s>])))", re.I
+        )
         self._srcset = re.compile(r"(?<![\w-])(srcset=)([\"'])(.*?)\2", re.I | re.S)
         self._css_url = re.compile(rf"(url\(\s*[\"']?)/{not_rebased}", re.I)
         self._script = re.compile(r"(<script\b[^>]*>)(.*?)(</script>)", re.I | re.S)
@@ -87,9 +89,14 @@ class Rewriter:
         # At the domain root, the browser stops `../` at the root. In a subfolder it carries on
         # up to the live site, so keep anything that climbs past the top inside the preview.
         def replace(match):
-            if match.group(2).count("../") > depth:
-                return f"{match.group(1)}{self.base}"
-            return match.group(0)
+            if match.group(2).count("..") <= depth:
+                return match.group(0)
+            rest = re.match(r"[^\"'\s>]*", match.string[match.end():]).group(0)
+            top = re.split(r"[/?#]", rest, maxsplit=1)[0]
+            # A sister site lives at the domain root, which is where this link already lands.
+            if top in self.sisters and top not in self.tops:
+                return match.group(0)
+            return f"{match.group(1)}{self.base}"
         return replace
 
     def _srcset_value(self, match):

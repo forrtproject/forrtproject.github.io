@@ -43,7 +43,7 @@ REDIRECTS = {
     "TenureRun/": "//tenure-run",
     "Transform-to-Open-Science-Book/": "//transform-to-open-science-book",
 }
-BLOCK = re.compile(r"googletagmanager|google-analytics|youtube")
+BLOCK = re.compile(r"googletagmanager|google-analytics|doubleclick|youtube")
 # Google Fonts requests we know about and cannot stop from our side, with the page they come
 # from. EmailOctopus's newsletter script injects Montserrat, and whether that embed stays is
 # an open decision for Phase 2 (D12, D14). This entry goes if it is replaced.

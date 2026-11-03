@@ -22,7 +22,8 @@ function webglAvailable() {
 function startControls() {
   const castle = () => window.forrtCastle;
   let userPaused = false;
-  let paused = false;
+  // Reduced motion may have been turned on while the bundle was loading.
+  let paused = reduced.matches;
   let lastTime = 0;
   let previous = 0;
   let frame = 0;
