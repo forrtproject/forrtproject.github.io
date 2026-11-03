@@ -64,7 +64,7 @@ class Rewriter:
             re.I,
         )
         self._climbing = re.compile(
-            rf"(?<![\w-])({ATTRIBUTES}=[\"']?)((?:\./)?(?:\.\./)*\.\.(?:/|(?=[\"'\s>])))", re.I
+            rf"(?<![\w-])({ATTRIBUTES}=[\"']?)((?:\./)?(?:\.\./)*\.\.(?:/|(?=[\"'\s>?#])))", re.I
         )
         self._srcset = re.compile(r"(?<![\w-])(srcset=)([\"'])(.*?)\2", re.I | re.S)
         self._css_url = re.compile(rf"(url\(\s*[\"']?)/{not_rebased}", re.I)

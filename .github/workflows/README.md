@@ -20,7 +20,7 @@ This document describes the GitHub Actions workflows used in the FORRT website r
 
 ## Deployment Workflows
 
-### [deploy.yaml](workflows/deploy.yaml)
+### [deploy.yaml](deploy.yaml)
 **Production deployment to forrt.org**
 
 | Trigger | Target | Schedule |
@@ -31,7 +31,7 @@ This document describes the GitHub Actions workflows used in the FORRT website r
 
 Builds the Hugo site and deploys to GitHub Pages (`gh-pages` branch).
 
-### [staging-aggregate.yaml](workflows/staging-aggregate.yaml)
+### [staging-aggregate.yaml](staging-aggregate.yaml)
 **Staging deployment for pull requests**
 
 | Trigger | Target | Schedule |
@@ -63,7 +63,7 @@ Features:
 
 ## Data Workflows
 
-### [data-processing.yml](workflows/data-processing.yml)
+### [data-processing.yml](data-processing.yml)
 **Fetches and processes external data sources**
 
 | Trigger | Schedule |
@@ -89,7 +89,7 @@ Triggers `deploy.yaml` after successful processing via `repository_dispatch`.
 
 ## Quality Checks
 
-### [spell-check.yaml](workflows/spell-check.yaml)
+### [spell-check.yaml](spell-check.yaml)
 **Spelling validation using codespell**
 
 | Trigger | Runs on |
@@ -98,7 +98,7 @@ Triggers `deploy.yaml` after successful processing via `repository_dispatch`.
 
 
 
-### [check_images.yaml](workflows/check_images.yaml)
+### [check_images.yaml](check_images.yaml)
 **Image validation in PRs**
 
 | Trigger | Runs on |
@@ -109,7 +109,7 @@ Validates image files and references.
 
 ## Repository Maintenance
 
-### [cleanup-branches.yml](workflows/cleanup-branches.yml)
+### [cleanup-branches.yml](cleanup-branches.yml)
 **Automated branch cleanup**
 
 | Trigger | Schedule |

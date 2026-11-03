@@ -89,6 +89,7 @@ class RewriteHtmlTests(unittest.TestCase):
     def test_climbing_covers_dot_segments_and_spares_sister_sites(self):
         self.assertIn("href=/rebrand-doors/>", rewriter().html("<head></head><a href=..>a</a>"))
         self.assertIn('href="/rebrand-doors/img/a.webp"', rewriter().html('<head></head><a href="./../img/a.webp">a</a>'))
+        self.assertIn('href="/rebrand-doors/#top"', rewriter().html('<head></head><a href="..#top">a</a>'))
         self.assertIn('href="../../fred/"', rewriter().html('<head></head><a href="../../fred/">a</a>', depth=1))
 
     def test_unrelated_attribute_is_left_alone(self):
