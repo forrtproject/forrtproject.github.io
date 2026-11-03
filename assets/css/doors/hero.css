@@ -1,4 +1,7 @@
 /* Home page opening and the castle in its arched door. */
+/* The sections below the hero have Bootstrap rows outside a container, which reach past the
+   page edge. Only the home page is clipped, so wide content elsewhere can still be scrolled to. */
+main:has(.hero){overflow-x:clip}
 .hero{position:relative;isolation:isolate;border-bottom:12px solid var(--edu-bg)}
 .hero-grid{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:48px;align-items:end;padding-top:12px}
 .invite{padding:32px 0 64px;min-width:0;align-self:center}
