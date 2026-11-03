@@ -56,14 +56,16 @@ AUDIT = """() => {
   for (const el of main.querySelectorAll('*')) {
     if (!el.getClientRects().length || !el.textContent.trim()) continue;
     const style = getComputedStyle(el);
-    if (style.fontStyle !== 'normal' && !el.closest('.references-list,.csl-bib-body')) {
+    // Decision D15: real italics only inside references. Same selector as base.css.
+    const reference = el.closest('.references-list,.csl-bib-body') || el.matches(':is(h2,h3,h4)[id^=references i]~:is(ul,ol,p) *');
+    if (style.fontStyle !== 'normal' && !reference) {
       italic.push(el.textContent.trim().slice(0, 40));
     }
     if (style.visibility === 'hidden' || !parseFloat(style.opacity)) continue;
     if (![...el.childNodes].some((n) => n.nodeType === 3 && n.textContent.trim())) continue;
     const text = el.textContent.trim().slice(0, 40);
     const size = parseFloat(style.fontSize);
-    if (size < 15 && !el.closest('.mastfoot')) small.push(`${size}: ${text}`);
+    if (size < 15 && !el.closest('.mastfoot,.leaflet-container,sup,sub')) small.push(`${size}: ${text}`);
     const fg = parse(style.color);
     if (fg) {
       const a = lum(fg), b = lum(background(el));
@@ -81,11 +83,16 @@ AUDIT = """() => {
         const range = document.createRange();
         range.setStart(node, match.index);
         range.setEnd(node, match.index + match[0].length);
-        const box = range.getClientRects()[0];
-        if (box) lines[Math.round(box.top / 6)] = (lines[Math.round(box.top / 6)] || 0) + match[0].length;
+        // A long address can break across lines, so share its characters out by rendered width.
+        const boxes = [...range.getClientRects()].filter((box) => box.width > 0);
+        const total = boxes.reduce((sum, box) => sum + box.width, 0);
+        for (const box of boxes) {
+          const key = Math.round(box.top / 6);
+          lines[key] = (lines[key] || 0) + match[0].length * box.width / total;
+        }
       }
     }
-    return Math.max(0, ...Object.values(lines));
+    return Math.round(Math.max(0, ...Object.values(lines)));
   };
   const long = [...main.querySelectorAll('.reading p,.reading li,.lede,.about-statement p,.forward p')]
     .filter((el) => el.getClientRects().length && lineChars(el) >= 80)
@@ -150,6 +157,39 @@ def check_screens(browser, base, failures):
             if errors:
                 failures.append(f"{name} at {width}: script errors: {errors[:2]}")
             page.context.close()
+
+
+def article_paths(root):
+    """Every page drawn with the article template, from the build."""
+    paths = []
+    for directory, _, files in os.walk(root):
+        if "index.html" in files:
+            with open(os.path.join(directory, "index.html"), encoding="utf-8", errors="replace") as handle:
+                if re.search(r'class="?article-layout', handle.read()):
+                    paths.append(os.path.relpath(directory, root).replace(os.sep, "/") + "/")
+    return sorted(paths)
+
+
+def check_articles(browser, base, root, failures):
+    """The article template across all its pages: content varies more than the layout does."""
+    paths = article_paths(root)
+    print(f"  {len(paths)} pages")
+    for width in WIDTHS:
+        page = new_page(browser, width)
+        for path in paths:
+            page.goto(base + path, wait_until="load", timeout=120000)
+            # Line lengths mean little until the real fonts have arrived.
+            page.wait_for_function("document.fonts.check('18px \"Source Sans 3\"')", timeout=30000)
+            page.evaluate("document.fonts.ready.then(() => null)")
+            page.wait_for_timeout(100)
+            found = page.evaluate(AUDIT)
+            if found["overflow"] > 0:
+                failures.append(f"{path} at {width}: {found['overflow']} px wider than the screen")
+            for key, label in (("italic", "italic type"), ("contrast", "low contrast"), ("small", "text under 15 px"),
+                               ("long", "lines of 80 characters or more"), ("broken", "broken images")):
+                if found[key]:
+                    failures.append(f"{path} at {width}: {label}: {found[key][:2]}")
+        page.context.close()
 
 
 def check_other_widths(browser, base, failures):
@@ -393,6 +433,9 @@ def main():
         check_screens(browser, base, failures)
         print("Breakpoints and enlarged text")
         check_other_widths(browser, base, failures)
+        if args.public:
+            print("Every article page")
+            check_articles(browser, base, os.path.abspath(args.public), failures)
         print("Home page")
         check_home(browser, base, failures)
         print("Resources directory")

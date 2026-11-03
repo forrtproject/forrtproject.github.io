@@ -3,7 +3,7 @@
 .page-heading .crumbs{margin-bottom:26px}
 .heading-grid{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:48px;align-items:center}
 .heading-grid>*{min-width:0}
-.page-heading h1{font-size:clamp(42px,5vw,72px);line-height:1.02;letter-spacing:-.012em;margin:0;text-wrap:balance}
+.page-heading h1{font-size:clamp(42px,5vw,72px);line-height:1.02;letter-spacing:-.012em;margin:0;hyphens:auto;text-wrap:balance}
 .page-heading .lede{font-size:clamp(18px,1.45vw,20px);line-height:1.55;margin:20px 0 0;max-width:32em;color:var(--ink)}
 .heading-plate{margin:0;justify-self:end;width:100%;max-width:300px;background:var(--edu-bg);border-radius:999px 999px 0 0;padding:34px 24px 10px}
 .heading-plate img{display:block;width:100%;height:auto;max-height:190px;object-fit:contain}

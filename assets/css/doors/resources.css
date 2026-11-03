@@ -46,6 +46,7 @@
 .collection-note h2{font-size:clamp(28px,2.6vw,36px);margin:0 0 10px}
 .collection-note p{margin:0 0 12px}
 .collection-about p{font-size:16px;line-height:1.55;margin-top:16px}
+.collection-about a{color:var(--link);text-decoration:underline;text-underline-offset:3px}
 
 @media(max-width:1000px){
   .directory{grid-template-columns:minmax(0,250px) minmax(0,1fr);gap:28px}
