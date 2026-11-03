@@ -56,7 +56,7 @@ def embed_request(request, frame):
     if request.frame != frame:
         return False
     host = urlsplit(request.url).hostname or ""
-    return host.endswith(EMBED_HOSTS) or bool(EMBED_URLS.match(request.url))
+    return any(host == name or host.endswith("." + name) for name in EMBED_HOSTS) or bool(EMBED_URLS.match(request.url))
 
 
 def check_redirects(browser, base, failures):
@@ -100,7 +100,7 @@ def check_links_assets(browser, base, failures):
     page.on("request", note)
     page.route("**/*", lambda route: route.abort() if BLOCK.search(route.request.url) else route.continue_())
     samples = ["", "about/us/", "glossary/english/abstract_bias/", "resources/", "clusters/", "publications/",
-               "newsletters/"]
+               "newsletters/", "about/get-involved/", "nexus/"]
     for sample in samples:
         response = page.goto(base + sample, wait_until="load", timeout=120000)
         page.wait_for_timeout(800)
@@ -146,16 +146,17 @@ def check_newsletter(browser, base, failures):
     """The form loads on a click and not before, and shows EmailOctopus's badge."""
     context = browser.new_context(viewport={"width": 1440, "height": 900})
     page = context.new_page()
+    page.route("**/*", lambda route: route.abort() if BLOCK.search(route.request.url) else route.continue_())
     seen = []
     page.on("request", lambda request: seen.append(request.url) if embed_request(request, page.main_frame) else None)
     page.goto(base + "newsletters/", wait_until="load", timeout=120000)
     page.wait_for_timeout(1500)
     if seen:
         failures.append(f"newsletter page loaded the embed before a click: {seen[:3]}")
-    page.click(".newsletter-open")
     try:
+        page.click(".newsletter-open", timeout=10000)
         page.wait_for_selector(".newsletter-form .emailoctopus-form input[type=email]", timeout=30000)
-        if not page.locator(".newsletter-form .mastfoot a").is_visible():
+        if not page.locator('.newsletter-form .mastfoot a[href*="emailoctopus.com"]').is_visible():
             failures.append("newsletter form: the Powered by EmailOctopus badge is not visible")
         if page.locator(".newsletter-open").count():
             failures.append("newsletter form: the button is still there after the form loaded")
