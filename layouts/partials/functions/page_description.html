@@ -86,7 +86,7 @@
       {{- $desc = trim ($page.RenderString (string $page.Params.subtitle) | plainify | htmlUnescape) $ws -}}
     {{- else if eq $page.Kind "term" -}}
       {{- $kind := replace $page.Data.Singular "_" " " -}}
-      {{- $desc = printf "Browse the %d FORRT pages filed under the %s “%s”." (len $page.Pages) $kind $page.Title -}}
+      {{- $desc = printf "Browse the %d FORRT %s filed under the %s “%s”." (len $page.Pages) (cond (eq (len $page.Pages) 1) "page" "pages") $kind $page.Title -}}
     {{- else if eq $page.Kind "taxonomy" -}}
       {{- $terms := slice -}}
       {{- range $page.Data.Terms.ByCount }}{{ $terms = $terms | append .Page.Title }}{{ end -}}
