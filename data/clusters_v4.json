@@ -782,7 +782,7 @@
     {
       "number": 2,
       "name": "Conceptual and Statistical Knowledge",
-      "description": "Attainment of a grounding in fundamental statistics, measurement, and its implications encompassing conceptual knowledge, application, interpretation and communication of statistical analyses. There are 8 sub-clusters which aim to further parse the learning and teaching process:",
+      "description": "Attainment of a grounding in fundamental statistics, measurement, and its implications encompassing conceptual knowledge, application, interpretation and communication of statistical analyses. There are 7 sub-clusters which aim to further parse the learning and teaching process:",
       "sub_clusters": [
         {
           "name": "Effect sizes, statistical power, simulations, & confidence intervals.",
@@ -3278,16 +3278,10 @@
               "doi": "",
               "apa": "Anon. (n.d.). Plan S rights retention strategy. Plan S. https://www.coalition-s.org/rights-retention-strategy",
               "auto_ref": false
-            }
-          ]
-        },
-        {
-          "name": "SPARC Europe - Rights Retention Helper:",
-          "description": "",
-          "publications": [
+            },
             {
               "doi": "",
-              "apa": "https://sparceurope.org/what-we-do/open-access/copyright/project-retain/rights-retention-helper/",
+              "apa": "SPARC Europe - Rights Retention Helper: https://sparceurope.org/what-we-do/open-access/copyright/project-retain/rights-retention-helper/",
               "auto_ref": false
             },
             {
@@ -3302,7 +3296,7 @@
     {
       "number": 8,
       "name": "Replication and meta-research",
-      "description": "Attainment of a grounding in 'replication research', which takes a variety of forms, each with a different purpose and contribution. Replicable science requires replication research. When teaching, students should understand the purpose and need of replications in its variety of forms and be able to conduct (and join) replication projects. There are 6 sub-clusters which aim to further parse the learning and teaching process:",
+      "description": "Attainment of a grounding in 'replication research', which takes a variety of forms, each with a different purpose and contribution. Replicable science requires replication research. When teaching, students should understand the purpose and need of replications in its variety of forms and be able to conduct (and join) replication projects. There are 7 sub-clusters which aim to further parse the learning and teaching process:",
       "sub_clusters": [
         {
           "name": "Conducting replication studies; challenges, limitations, and comparisons with the original study",
@@ -3761,7 +3755,7 @@
     {
       "number": 9,
       "name": "Academic Structures and Institutions",
-      "description": "Attainment of a grounding in topics related to academia and academics. Students should understand how individuals, teams, institutions, and academic culture work together to promote (or hinder) openness, inclusion, diversity, equity, and transparency. Gathering perspectives on navigating scientific and academic life. Learning the challenges and rewards in the academic setting, the “hidden curriculum” in academic life. There are 17 sub-clusters which aim to further parse the learning and teaching process:",
+      "description": "Attainment of a grounding in topics related to academia and academics. Students should understand how individuals, teams, institutions, and academic culture work together to promote (or hinder) openness, inclusion, diversity, equity, and transparency. Gathering perspectives on navigating scientific and academic life. Learning the challenges and rewards in the academic setting, the “hidden curriculum” in academic life. There are 19 sub-clusters which aim to further parse the learning and teaching process:",
       "sub_clusters": [
         {
           "name": "Accessibility",
