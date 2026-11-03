@@ -72,3 +72,28 @@ if (searchForm) {
     }
   });
 }
+
+// The newsletter form comes from EmailOctopus and loads only when a visitor asks for it. The
+// embed writes itself in beside this script, which it finds by its data-form attribute.
+document.querySelectorAll('[data-newsletter-src]').forEach((box) => {
+  const open = box.querySelector('.newsletter-open');
+  const status = box.querySelector('.newsletter-status');
+  open.addEventListener('click', () => {
+    open.disabled = true;
+    status.textContent = 'Loading the form.';
+    const embed = document.createElement('script');
+    embed.src = box.dataset.newsletterSrc;
+    embed.dataset.form = box.dataset.newsletterId;
+    embed.onload = () => {
+      open.remove();
+      status.textContent = '';
+      box.querySelector('input[type=email]')?.focus();
+    };
+    embed.onerror = () => {
+      embed.remove();
+      open.disabled = false;
+      status.textContent = 'The form did not load. Try again, or ask to join at info@forrt.org.';
+    };
+    box.append(embed);
+  });
+});

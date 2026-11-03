@@ -6,7 +6,8 @@ Run: python3 scripts/rebrand/check_preview.py [--url https://forrt.org/rebrand-d
 Needs Playwright. Reads the live preview, so run it after a deploy has finished. It visits
 one URL per rule in the 404 page's redirect table, follows a sample of links and assets, runs
 a search, and confirms that nothing the preview loads comes from the live site outside the
-subfolder and the sister sites, or from Google Fonts apart from the listed known request.
+subfolder and the sister sites, or from Google Fonts. Pages make no request to the newsletter
+embed or its dependencies until a visitor opens the form, and then the form works.
 """
 
 import argparse
@@ -44,10 +45,18 @@ REDIRECTS = {
     "Transform-to-Open-Science-Book/": "//transform-to-open-science-book",
 }
 BLOCK = re.compile(r"googletagmanager|google-analytics|doubleclick|youtube")
-# Google Fonts requests we know about and cannot stop from our side, with the page they come
-# from. EmailOctopus's newsletter script injects Montserrat, and whether that embed stays is
-# an open decision for Phase 2 (D12, D14). This entry goes if it is replaced.
-KNOWN_GOOGLE_FONTS = {"family=Montserrat", "/s/montserrat/"}
+# The newsletter embed and what it pulls in. None of these may load until a visitor clicks.
+EMBED_HOSTS = ("eocampaign1.com", "eo.page", "fonts.googleapis.com", "fonts.gstatic.com")
+EMBED_URLS = re.compile(r"https://www\.(google\.com|gstatic\.com)/recaptcha/")
+
+
+def embed_request(request, frame):
+    """True for a main-frame request to the newsletter embed or a dependency of it."""
+    # Embedded third-party frames, such as Google Forms, load their own fonts and captchas.
+    if request.frame != frame:
+        return False
+    host = urlsplit(request.url).hostname or ""
+    return any(host == name or host.endswith("." + name) for name in EMBED_HOSTS) or bool(EMBED_URLS.match(request.url))
 
 
 def check_redirects(browser, base, failures):
@@ -78,20 +87,20 @@ def check_links_assets(browser, base, failures):
     root = urlsplit(base).path
     context = browser.new_context(viewport={"width": 1440, "height": 900})
     page = context.new_page()
-    outside, google = [], []
+    outside, embed = [], []
 
     def note(request):
         parts = urlsplit(request.url)
-        # Embedded third-party frames, such as Google Forms, load their own fonts.
-        if parts.hostname in ("fonts.googleapis.com", "fonts.gstatic.com") and request.frame == page.main_frame:
-            google.append(request.url)
+        if embed_request(request, page.main_frame):
+            embed.append(request.url)
         if parts.hostname in ("forrt.org", "www.forrt.org") and not parts.path.startswith(root):
             if parts.path.strip("/").split("/")[0] not in sisters:
                 outside.append(request.url)
 
     page.on("request", note)
     page.route("**/*", lambda route: route.abort() if BLOCK.search(route.request.url) else route.continue_())
-    samples = ["", "about/us/", "glossary/english/abstract_bias/", "resources/", "clusters/", "publications/"]
+    samples = ["", "about/us/", "glossary/english/abstract_bias/", "resources/", "clusters/", "publications/",
+               "newsletters/", "about/get-involved/", "nexus/"]
     for sample in samples:
         response = page.goto(base + sample, wait_until="load", timeout=120000)
         page.wait_for_timeout(800)
@@ -105,12 +114,8 @@ def check_links_assets(browser, base, failures):
         if "noindex" not in robots:
             failures.append(f"{sample} has no noindex")
         failures.extend(f"{sample}: broken image {src}" for src in broken_images)
-    known = sorted({url for url in google if any(item in url for item in KNOWN_GOOGLE_FONTS)})
-    unknown = sorted(set(google) - set(known))
-    if known:
-        print(f"  Known Google Fonts requests, still to remove: {known[:3]}")
-    if unknown:
-        failures.append(f"Google Fonts requests on the site's own pages: {unknown[:3]}")
+    if embed:
+        failures.append(f"newsletter embed or Google Fonts requests before any click: {sorted(set(embed))[:3]}")
     if outside:
         failures.append(f"requests to the live site: {sorted(set(outside))[:5]}")
 
@@ -134,6 +139,33 @@ def check_links_assets(browser, base, failures):
             bad.append(f"{status} {link}")
     print(f"  Checked {len(links)} links, {len(bad)} failed")
     failures.extend(f"home page link {item}" for item in bad)
+    context.close()
+
+
+def check_newsletter(browser, base, failures):
+    """The form loads on a click and not before, and shows EmailOctopus's badge."""
+    context = browser.new_context(viewport={"width": 1440, "height": 900})
+    page = context.new_page()
+    page.route("**/*", lambda route: route.abort() if BLOCK.search(route.request.url) else route.continue_())
+    seen = []
+    page.on("request", lambda request: seen.append(request.url) if embed_request(request, page.main_frame) else None)
+    page.goto(base + "newsletters/", wait_until="load", timeout=120000)
+    page.wait_for_timeout(1500)
+    if seen:
+        failures.append(f"newsletter page loaded the embed before a click: {seen[:3]}")
+    try:
+        page.click(".newsletter-open", timeout=10000)
+        page.wait_for_selector(".newsletter-form .emailoctopus-form input[type=email]", timeout=30000)
+        if not page.locator('.newsletter-form .mastfoot a[href*="emailoctopus.com"]').is_visible():
+            failures.append("newsletter form: the Powered by EmailOctopus badge is not visible")
+        if page.locator(".newsletter-open").count():
+            failures.append("newsletter form: the button is still there after the form loaded")
+        focused = page.evaluate("document.activeElement?.type")
+        print(f"  Form opened; focus on {focused}; requests after the click: {len(seen)}")
+        if focused != "email":
+            failures.append(f"newsletter form: focus went to {focused}, not the email field")
+    except Exception as error:
+        failures.append(f"newsletter form did not appear after a click: {str(error)[:200]}")
     context.close()
 
 
@@ -172,6 +204,8 @@ def main():
         check_redirects(browser, base, failures)
         print("Links, assets, noindex")
         check_links_assets(browser, base, failures)
+        print("Newsletter")
+        check_newsletter(browser, base, failures)
         print("Search")
         check_search(browser, base, failures)
         browser.close()
