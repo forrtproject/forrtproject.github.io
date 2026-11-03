@@ -7,7 +7,9 @@ Run: python3 scripts/rebrand/check_design.py <public-dir> [--base /]
 Needs Playwright. Covers what a build comparison cannot: nothing runs wider than the screen,
 no italic type outside references, reading lines under 80 characters, the home page's topic
 buttons within their position limit (checklist A14), its layout shift on a slow phone, the pause
-control over the castle and the quotes, and the behaviour of the resources directory.
+control over the castle and the quotes, and the behaviour of the resources directory. On a local build it also weighs the designed screens against the migration
+plan's budgets. Those lines are a report and do not fail the check, because the theme's Bootstrap,
+jQuery and Font Awesome stay until Phase 3.
 """
 
 import argparse
@@ -273,6 +275,24 @@ def check_directory(browser, base, failures):
     plain.context.close()
 
 
+def report_budgets(browser, base, root, subfolder):
+    from capture_pages import weigh
+
+    origin = base[: -len(subfolder.lstrip("/"))] if subfolder != "/" else base
+    for name, path, own, third in (
+        ("home", "", 550, 190),
+        ("resources", "resources/", 300, 190),
+        ("replication hub", "replication-hub/", None, 190),
+        ("article", "post/2026-01-newsletter/", None, 190),
+    ):
+        weight = weigh(browser, origin.rstrip("/"), f"{subfolder}{path}", root, subfolder)
+        own_budget = f" (budget {own})" if own else ""
+        print(
+            f"  {name}: {weight['own_kb']} KB own{own_budget}, {weight['third_party_kb']} KB third-party (budget {third}), "
+            f"{len(weight['hosts'])} hosts (budget 6), first HTML {weight['by_kind_kb'].get('document', 0)} KB"
+        )
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("public", nargs="?")
@@ -289,6 +309,9 @@ def main():
         check_home(browser, base, failures)
         print("Resources directory")
         check_directory(browser, base, failures)
+        if args.public:
+            print("Budgets, report only")
+            report_budgets(browser, base, os.path.abspath(args.public), args.base)
         browser.close()
     print(json.dumps({"failures": failures}, indent=1))
     sys.exit(1 if failures else 0)
