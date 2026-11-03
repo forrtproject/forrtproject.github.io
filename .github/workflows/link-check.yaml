@@ -35,7 +35,7 @@ jobs:
         uses: actions/checkout@v6
 
       - name: Download latest build artifact
-        uses: dawidd6/action-download-artifact@07ab29fd4a977ae4d2b275087cf67563dfdf0295
+        uses: dawidd6/action-download-artifact@a92c7ae74cf1df8810783758581e485ac3aaa309 # v28
         with:
           workflow: deploy.yaml
           name: forrt-website-.*
