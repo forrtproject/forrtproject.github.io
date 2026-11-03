@@ -1,0 +1,8 @@
+{{/* One card in the resources directory. Rendered here for the page's own results, and once
+     empty inside a <template> for assets/js/doors/resources.js to fill in, so both look the same.
+     Input: dict with `title`, `url`, `types`, `levels`, `clusters`. */}}
+<article class="res">
+  <p class="res-format"><span class="res-type">{{ delimit .types ", " }}</span> <span class="res-level">{{ delimit .levels ", " }}</span></p>
+  <h2 class="res-title"><a href="{{ .url }}">{{ .title }}</a></h2>
+  <p class="res-tag">{{ delimit .clusters ", " }}</p>
+</article>

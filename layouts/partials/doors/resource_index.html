@@ -1,0 +1,71 @@
+{{/* Every curated resource, with its filters worked out from the sheet's free-text values.
+     Returns a dict: `pages` (A to Z), `items` keyed by RelPermalink, and `facets`, the filter
+     values in display order with their counts. Hugo caches it, as pager pages all need it.
+     Input: the /resources/ section page, whose front matter holds the groupings. */}}
+{{ $section := . }}
+{{/* By file name, which is the title without capitals, quotation marks or stray spaces. */}}
+{{ $pages := sort (where site.RegularPages "Type" "curated_resources") ".File.ContentBaseName" }}
+
+{{ $typeLabel := dict }}{{ $typeOrder := slice }}
+{{ range $section.Params.type_groups }}
+  {{ $label := .label }}{{ $typeOrder = $typeOrder | append $label }}
+  {{ range .values }}{{ $typeLabel = merge $typeLabel (dict (urlize .) $label) }}{{ end }}
+{{ end }}
+{{ $levelLabel := dict }}{{ $levelOrder := slice }}
+{{ range $section.Params.level_groups }}
+  {{ $label := .label }}{{ $levelOrder = $levelOrder | append $label }}
+  {{ range .values }}{{ $levelLabel = merge $levelLabel (dict (urlize .) $label) }}{{ end }}
+{{ end }}
+{{ $clusterLabel := dict }}{{ $clusterOrder := slice }}
+{{ range $section.Params.clusters }}
+  {{ $clusterOrder = $clusterOrder | append . }}
+  {{ $clusterLabel = merge $clusterLabel (dict (urlize .) .) }}
+{{ end }}
+
+{{ $items := dict }}
+{{ $typeCount := dict }}{{ $levelCount := dict }}{{ $clusterCount := dict }}
+{{ range $pages }}
+  {{ $types := slice }}
+  {{ range .Params.material_type }}
+    {{ $label := index $typeLabel (urlize .) | default "Other" }}
+    {{ if not (in $types $label) }}{{ $types = $types | append $label }}{{ end }}
+  {{ end }}
+  {{ $levels := slice }}
+  {{ range .Params.education_level }}
+    {{ $label := index $levelLabel (urlize .) | default "Other" }}
+    {{ if not (in $levels $label) }}{{ $levels = $levels | append $label }}{{ end }}
+  {{ end }}
+  {{ $clusters := slice }}
+  {{ range split (.Params.forrt_clusters_new | default "") "," }}
+    {{ $raw := trim . " " }}
+    {{ with $raw }}
+      {{ $label := index $clusterLabel (urlize .) }}
+      {{ if not $label }}
+        {{ $label = . }}
+        {{ $clusterLabel = merge $clusterLabel (dict (urlize .) .) }}
+        {{ $clusterOrder = $clusterOrder | append . }}
+      {{ end }}
+      {{ if not (in $clusters $label) }}{{ $clusters = $clusters | append $label }}{{ end }}
+    {{ end }}
+  {{ end }}
+  {{ range $types }}{{ $typeCount = merge $typeCount (dict (urlize .) (add 1 (index $typeCount (urlize .) | default 0))) }}{{ end }}
+  {{ range $levels }}{{ $levelCount = merge $levelCount (dict (urlize .) (add 1 (index $levelCount (urlize .) | default 0))) }}{{ end }}
+  {{ range $clusters }}{{ $clusterCount = merge $clusterCount (dict (urlize .) (add 1 (index $clusterCount (urlize .) | default 0))) }}{{ end }}
+  {{ $title := .Title | markdownify | plainify | htmlUnescape }}
+  {{ $items = merge $items (dict .RelPermalink (dict "title" $title "url" .RelPermalink "types" $types "levels" $levels "clusters" $clusters)) }}
+{{ end }}
+
+{{ $facets := slice }}
+{{ range slice
+  (dict "key" "type" "name" "Material type" "order" ($typeOrder | append "Other") "counts" $typeCount)
+  (dict "key" "level" "name" "Education level" "order" ($levelOrder | append "Other") "counts" $levelCount)
+  (dict "key" "cluster" "name" "Cluster" "order" $clusterOrder "counts" $clusterCount)
+}}
+  {{ $counts := .counts }}
+  {{ $values := slice }}
+  {{ range $label := .order }}
+    {{ with index $counts (urlize $label) }}{{ $values = $values | append (dict "label" $label "slug" ($label | lower | replaceRE "[^a-z0-9]+" "-") "count" .) }}{{ end }}
+  {{ end }}
+  {{ $facets = $facets | append (dict "key" .key "name" .name "values" $values) }}
+{{ end }}
+{{ return dict "pages" $pages "items" $items "facets" $facets }}

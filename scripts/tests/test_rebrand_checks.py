@@ -196,6 +196,16 @@ class CompareTests(unittest.TestCase):
         removed, _, _ = compare_paths(["a/index.html"], [], allowed={"a/index.html"})
         self.assertEqual(removed, [])
 
+    def test_a_glob_covers_a_collection_that_grows(self):
+        _, addresses, _ = compare_paths(
+            [], ["resources/page/2/index.html", "resources/page/61/index.html", "other/page/2/index.html"],
+            allowed={"resources/page/*/index.html"},
+        )
+        self.assertEqual(addresses, ["other/page/2/index.html"])
+
+    def test_an_allowed_page_may_change_its_seo_tags(self):
+        self.assertEqual(compare_heads({"a.html": ["x"]}, {"a.html": ["y"]}, allowed={"a.html"}), {})
+
     def test_structured_data_falls_but_may_rise(self):
         drops = compare_structured(
             {"term": {"DefinedTerm": 5, "BreadcrumbList": 5}},

@@ -6,13 +6,15 @@ Run: python3 scripts/rebrand/compare_builds.py <reference-dir> <candidate-dir>
 Fails if an address changes (a page, feed, sitemap or data file appears or goes),
 if a structured-data count falls, or if a page's SEO tags change. New assets such as
 fonts and bundles are listed and allowed. Agreed exceptions go in allowed_changes.txt
-beside this script, one normalised path per line, with a comment saying why.
+beside this script, one normalised path or glob per line, with a comment saying why. A glob
+suits a collection whose size changes with the data, such as numbered pages.
 
 Pass --paths-only to compare against a stored paths.txt from the baseline instead of a
 build. Generated collections keep changing, so this is for records and local checks.
 """
 
 import argparse
+import fnmatch
 import os
 import sys
 
@@ -31,12 +33,16 @@ def load_allowed(path=os.path.join(HERE, "allowed_changes.txt")):
         return {line for line in lines if line}
 
 
+def is_allowed(path, allowed):
+    return path in allowed or any(fnmatch.fnmatchcase(path, pattern) for pattern in allowed)
+
+
 def compare_paths(reference, candidate, allowed=frozenset()):
     """Return (removed, added_addresses, added_assets) as sorted lists."""
     before = {normalise_path(path) for path in reference}
     after = {normalise_path(path) for path in candidate}
-    removed = sorted(before - after - allowed)
-    added = sorted(after - before - allowed)
+    removed = sorted(path for path in before - after if not is_allowed(path, allowed))
+    added = sorted(path for path in after - before if not is_allowed(path, allowed))
     addresses = [path for path in added if path.endswith(PAGE_SUFFIXES)]
     assets = [path for path in added if not path.endswith(PAGE_SUFFIXES)]
     return removed, addresses, assets
@@ -53,11 +59,11 @@ def compare_structured(reference, candidate):
     return drops
 
 
-def compare_heads(reference, candidate):
+def compare_heads(reference, candidate, allowed=frozenset()):
     """Return {path: (only_before, only_after)} for pages whose SEO tags differ."""
     changes = {}
     for path, tags in reference.items():
-        if path not in candidate:
+        if path not in candidate or is_allowed(path, allowed):
             continue
         if tags != candidate[path]:
             before, after = set(tags), set(candidate[path])
@@ -88,9 +94,10 @@ def main():
     else:
         reference = inventory(args.reference)
 
-    removed, addresses, assets = compare_paths(reference["paths"], candidate["paths"], load_allowed())
+    allowed = load_allowed()
+    removed, addresses, assets = compare_paths(reference["paths"], candidate["paths"], allowed)
     drops = compare_structured(reference["structured_data"], candidate["structured_data"])
-    heads = compare_heads(reference["seo_heads"], candidate["seo_heads"])
+    heads = compare_heads(reference["seo_heads"], candidate["seo_heads"], allowed)
 
     print(f"Reference: {len(reference['paths'])} files. Candidate: {len(candidate['paths'])} files.")
     _show("Removed paths", removed)
