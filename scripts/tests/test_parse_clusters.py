@@ -5,7 +5,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
-from parse_clusters_to_sheet import parse_cluster_11, parse_subclusters_standard
+from parse_clusters_to_sheet import parse_cluster_11, parse_document, parse_subclusters_standard
 
 
 class StandardSubClusters(unittest.TestCase):
@@ -29,6 +29,22 @@ class StandardSubClusters(unittest.TestCase):
             "[ai]        Questionable measurement practices and how to avoid them.",
         ]
         self.assertEqual(self.names(lines, [heading]), [heading])
+
+
+class ClusterDescriptions(unittest.TestCase):
+    def test_editors_note_above_description_heading_is_left_out(self):
+        lines = [
+            "Cluster 1: First",
+            "Description",
+            "First description.",
+            "",
+            "Cluster 10: Qualitative Research",
+            "Invite review of: Booklet.pdf",
+            "Description",
+            "Qualitative research description.",
+        ]
+        clusters = parse_document(lines + ["Cluster 11: Research Integrity"])
+        self.assertEqual(clusters[1].description, "Qualitative research description.")
 
 
 class ClusterEleven(unittest.TestCase):
