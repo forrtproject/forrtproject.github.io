@@ -72,7 +72,7 @@
 .about-statement>p{margin:6px 0 16px;font-size:18px;max-width:32em}
 .quotes{margin:0}
 .quote-stage{display:grid}
-.quote{grid-area:1/1;margin:0;font:var(--display-weight) clamp(34px,4.2vw,60px)/1.08 var(--display);color:var(--ink);text-wrap:balance;opacity:0;visibility:hidden;transition:opacity .4s,visibility 0s .4s}
+.quote{grid-area:1/1;margin:0;font:var(--display-weight) clamp(34px,4.2vw,60px)/1.08 var(--display);color:var(--ink);overflow-wrap:anywhere;hyphens:auto;text-wrap:balance;opacity:0;visibility:hidden;transition:opacity .4s,visibility 0s .4s}
 .quote.is-active{opacity:1;visibility:visible;transition:opacity .4s}
 .quote .accent{color:var(--edu)}
 .quotes-bar{min-height:44px;padding-top:8px;text-align:start}
@@ -94,7 +94,7 @@
 @media(max-width:1000px){
   .board{grid-template-columns:1fr}
   .standing-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:28px}
-  .about{grid-template-columns:1fr}
+  .about{grid-template-columns:minmax(0,1fr)}
 }
 @media(max-width:760px){
   .hero-grid{grid-template-columns:1fr;gap:0}

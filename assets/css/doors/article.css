@@ -1,0 +1,65 @@
+/* Articles and plain content, every rule under .article-layout. Content here is Markdown written
+   for the old theme, so lists, tables and embeds are styled but not rebuilt. */
+.article-layout{display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:64px;padding:32px 0 32px;align-items:start}
+.article-layout-single{grid-template-columns:minmax(0,1fr)}
+.article-layout .reading{max-width:640px;min-width:0}
+.article-layout-wide .reading{max-width:none}
+.article-layout .crumbs{margin-bottom:18px}
+.article-layout .article-meta{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:18px;font-size:15px;font-weight:600}
+.article-layout .article-meta span{background:var(--surface);padding:3px 10px;border-radius:var(--r-small)}
+.article-layout .reading h1{font-size:clamp(36px,4.2vw,58px);line-height:1.06;letter-spacing:-.01em;margin:0;text-wrap:balance}
+.article-layout .standfirst{font:500 clamp(21px,1.9vw,25px)/1.4 var(--display);margin:18px 0 0;max-width:30em;color:var(--ink)}
+.article-layout .byline{display:flex;flex-wrap:wrap;gap:4px 18px;margin:16px 0 22px;font-size:16px}
+.article-layout .byline a{color:var(--link);text-underline-offset:3px;text-decoration:underline}
+.article-layout .byline-authors>*{display:inline}
+.article-layout .article-image{margin:0 0 28px}
+.article-layout .article-image img{display:block;width:100%;height:auto;border-radius:var(--r-small)}
+.article-layout figcaption{margin-top:10px;font-size:15px;text-align:center}
+.article-layout .article-style{font-size:18px;line-height:1.7;color:var(--ink);text-align:start;overflow-wrap:break-word}
+.article-layout .article-style p,.article-layout .article-style li{font-size:inherit;line-height:inherit;max-width:32em}
+.article-layout .article-style p{margin:0 0 18px}
+.article-layout .article-style ul,.article-layout .article-style ol{margin:0 0 18px;padding-inline-start:1.4em}
+.article-layout .article-style li{margin-bottom:6px}
+.article-layout .article-style :is(h2,h3,h4){line-height:1.15;margin:34px 0 12px;text-align:start}
+.article-layout .article-style h2{font-size:30px}
+.article-layout .article-style h3{font-size:24px}
+.article-layout .article-style h4{font-size:20px}
+.article-layout .article-style a{color:var(--link);text-decoration:underline;text-underline-offset:3px}
+.article-layout .article-style a:hover{color:var(--ink)}
+.article-layout .article-style blockquote{margin:28px 0;padding:18px 22px;background:var(--edu-bg);border:0;border-radius:var(--r-large);font-size:inherit}
+.article-layout .article-style blockquote p:last-child{margin-bottom:0}
+.article-layout .article-style figure{margin:28px 0}
+.article-layout .article-style img{max-width:100%;height:auto}
+.article-layout .article-style div[style*="display:flex"]{flex-wrap:wrap}
+.article-layout .article-style iframe,.article-layout .article-style video{max-width:100%}
+.article-layout .article-style table{display:block;max-width:100%;overflow-x:auto;margin:0 0 18px;font-size:16px;line-height:1.45;border-collapse:collapse}
+.article-layout .article-style th,.article-layout .article-style td{padding:6px 10px;border-bottom:1px solid var(--line);text-align:start}
+.article-layout .article-style pre{max-width:100%;overflow-x:auto;font-size:15px}
+.article-layout .article-foot{margin-top:32px;font-size:16px}
+.article-layout .share-link{margin:0 0 18px}
+.article-layout .copy-link{background:#fff;border:1.5px solid var(--ink);border-radius:999px;padding:8px 12px;font:600 15px/1.3 var(--text);color:var(--ink);cursor:pointer}
+.article-layout .copy-link:hover{background:var(--ink);color:#fff}
+.article-layout .article-tags .badge{background:var(--surface);color:var(--ink);font:600 15px/1.4 var(--text);padding:3px 10px;border-radius:var(--r-small);margin:0 6px 6px 0}
+.article-layout .article-widget h3{font-size:24px;margin:28px 0 10px}
+.article-layout .article-foot .meta-nav{font-size:15px;font-weight:700;letter-spacing:0;text-transform:none;color:var(--soft)}
+.article-layout .article-foot .post-nav-item p,.article-layout .article-foot .article-widget li{font-size:16px;line-height:1.4;margin:0}
+.article-layout .article-foot .card-title{font-size:21px}
+.article-layout .article-widget a{color:var(--link)}
+.article-layout .article-card{position:sticky;top:24px;background:var(--surface);border-radius:var(--r-large);padding:22px;font-size:16px;line-height:1.45}
+.article-layout .article-card h2{font-size:23px;line-height:1.15;margin:0 0 8px}
+.article-layout .article-card dl{margin:0 0 20px}
+.article-layout .article-card dl:last-child{margin-bottom:0}
+.article-layout .article-card dt{font-weight:700;font-size:15px;margin-top:10px}
+.article-layout .article-card dt:first-child{margin-top:0}
+.article-layout .article-card dd{margin:1px 0 0}
+.article-layout .article-toc ul{list-style:none;margin:0;padding:0}
+.article-layout .article-toc ul ul{padding-inline-start:12px}
+.article-layout .article-toc a{display:block;padding:5px 0;color:var(--link);text-underline-offset:3px;text-decoration:underline}
+@media(max-width:1000px){
+  .article-layout{grid-template-columns:minmax(0,1fr);gap:36px}
+  .article-layout .article-card{position:static;max-width:640px}
+}
+@media(max-width:760px){
+  .article-layout{padding:20px 0 24px}
+  .article-layout .article-style{font-size:17px}
+}

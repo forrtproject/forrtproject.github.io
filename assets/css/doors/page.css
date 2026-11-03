@@ -1,7 +1,6 @@
 /* What the designed inner pages share: the heading block and its arched plate. */
 .page-heading{padding:32px 0 36px}
-.crumbs{font-size:15px;line-height:1.4;margin:0 0 26px;color:var(--ink)}
-.crumbs a{color:inherit;text-decoration:underline;text-underline-offset:3px}
+.page-heading .crumbs{margin-bottom:26px}
 .heading-grid{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:48px;align-items:center}
 .heading-grid>*{min-width:0}
 .page-heading h1{font-size:clamp(42px,5vw,72px);line-height:1.02;letter-spacing:-.012em;margin:0;text-wrap:balance}
@@ -10,7 +9,7 @@
 .heading-plate img{display:block;width:100%;height:auto;max-height:190px;object-fit:contain}
 @media(max-width:760px){
   .page-heading{padding:20px 0 24px}
-  .crumbs{margin-bottom:18px}
+  .page-heading .crumbs{margin-bottom:18px}
   .heading-grid{grid-template-columns:1fr;gap:18px}
   .heading-plate{display:none}
   .page-heading h1{font-size:clamp(38px,11vw,48px)}
