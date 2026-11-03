@@ -1,5 +1,7 @@
 ---
 title: Glossar
+# Meta description: the opening of the introduction below.
+description: "Um Barrieren für den Einstieg und das Verständnis zu verringern, präsentieren wir ein Glossar der Begriffe im Zusammenhang mit Open Science. Wir hoffen, dass das Glossar hilft, Terminologien zu klären, einschließlich der Fälle, in denen Begriffe unterschiedlich oder austauschbar verwendet werden oder in einigen Bereichen oder unter Studierenden weniger bekannt sind."
 toc: true
 # View.
 #   1 = List
