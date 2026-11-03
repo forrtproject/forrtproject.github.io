@@ -1,13 +1,15 @@
 /* Castle playback on the home page, from the Doors mock's controller.
    The still image is already on the page. This loads the 3D bundle once the page has painted,
-   then owns playback: pause, hover and tap, and suspension when off screen or in a hidden tab. */
+   then owns playback: pause, hover and tap, and suspension when off screen or in a hidden tab.
+   A visitor who paused on an earlier visit keeps the still until they press play. */
+import { isPaused, onMotionChange, prefersReduced } from './motion.js';
+
 const script = document.currentScript;
 const stage = document.querySelector('.castle-stage');
 const canvas = document.getElementById('castle-canvas');
 const hero = document.querySelector('.hero');
 const figure = stage?.closest('figure');
-const pauseButton = document.querySelector('.motion-toggle');
-const reduced = matchMedia('(prefers-reduced-motion: reduce)');
+const pauseButton = figure?.querySelector('.motion-toggle');
 
 function webglAvailable() {
   try {
@@ -21,9 +23,6 @@ function webglAvailable() {
 
 function startControls() {
   const castle = () => window.forrtCastle;
-  let userPaused = false;
-  // Reduced motion may have been turned on while the bundle was loading.
-  let paused = reduced.matches;
   let lastTime = 0;
   let previous = 0;
   let frame = 0;
@@ -40,47 +39,33 @@ function startControls() {
   }
   function loop(ms) {
     frame = 0;
-    if (paused || document.hidden || !visible) return;
+    if (isPaused() || document.hidden || !visible) return;
     lastTime += Math.min(0.045, ms - (previous || ms) > 0 ? (ms - (previous || ms)) / 1000 : 0);
     previous = ms;
     draw(lastTime);
     frame = requestAnimationFrame(loop);
   }
   function start() {
-    if (!frame && !paused && visible && !document.hidden) {
+    if (!frame && !isPaused() && visible && !document.hidden) {
       previous = 0;
       frame = requestAnimationFrame(loop);
     }
   }
   function syncMotion() {
-    if (paused || document.hidden || !visible) {
+    if (isPaused() || document.hidden || !visible) {
       cancelAnimationFrame(frame);
       frame = 0;
     } else {
       start();
     }
   }
-  function showPauseState() {
-    pauseButton.textContent = paused ? 'Play animation' : 'Pause animation';
-    pauseButton.setAttribute('aria-pressed', String(paused));
+  onMotionChange(() => {
     syncMotion();
-  }
-
-  pauseButton.addEventListener('click', () => {
-    userPaused = !paused;
-    paused = userPaused;
-    showPauseState();
-  });
-  // Turning on reduced motion mid-visit stops the castle. Turning it off again resumes only
-  // if the visitor had not paused it themselves.
-  reduced.addEventListener('change', () => {
-    paused = reduced.matches || userPaused;
-    showPauseState();
     draw(lastTime);
   });
 
   hero.addEventListener('pointermove', (event) => {
-    if (paused || event.pointerType === 'touch') return;
+    if (isPaused() || event.pointerType === 'touch') return;
     const box = hero.getBoundingClientRect();
     targetX = (event.clientX - box.left) / box.width - 0.5;
     targetY = (event.clientY - box.top) / box.height - 0.5;
@@ -90,15 +75,33 @@ function startControls() {
     targetY = 0;
   });
 
-  /* Hovering with a mouse dismantles the tower, after a short dwell so a passing cursor does
-     nothing; leaving rebuilds it. A tap does the same on touch screens and reveals the pause
-     button; the bricks stay down until the next tap. The figure, not the stage, owns hover,
-     so moving onto the pause button does not start the rebuild. */
+  new IntersectionObserver((entries) => {
+    visible = entries[0].isIntersecting;
+    syncMotion();
+  }, { threshold: 0 }).observe(stage);
+  document.addEventListener('visibilitychange', syncMotion);
+  window.addEventListener('resize', () => {
+    castle()?.resize();
+    draw(lastTime);
+  });
+
+  castle()?.resize();
+  draw(0);
+  start();
+}
+
+/* Hovering with a mouse dismantles the tower, after a short dwell so a passing cursor does nothing;
+   leaving rebuilds it. A tap does the same on touch screens and reveals the pause button; the bricks
+   stay down until the next tap. The figure, not the stage, owns hover, so moving onto the pause
+   button does not start the rebuild. Set up before the bundle arrives, so that a visitor who paused
+   earlier can still find the play button by tapping. */
+function watchPointer() {
+  const castle = () => window.forrtCastle;
   let dwell = 0;
   let tapHeld = false;
   let lastPointer = 'mouse';
   figure.addEventListener('pointerenter', (event) => {
-    if (event.pointerType === 'mouse' && !paused) {
+    if (event.pointerType === 'mouse' && !isPaused()) {
       dwell = setTimeout(() => castle()?.hold(true), 400);
     }
   });
@@ -112,35 +115,24 @@ function startControls() {
     lastPointer = event.pointerType;
   });
   stage.addEventListener('click', () => {
-    if (lastPointer === 'mouse' || paused) return;
-    tapHeld = !tapHeld;
+    if (lastPointer === 'mouse') return;
     figure.classList.add('show-motion-control');
+    if (isPaused() || !castle()) return;
+    tapHeld = !tapHeld;
     castle()?.hold(tapHeld);
   });
-
-  new IntersectionObserver((entries) => {
-    visible = entries[0].isIntersecting;
-    syncMotion();
-  }, { threshold: 0 }).observe(hero);
-  document.addEventListener('visibilitychange', syncMotion);
-  window.addEventListener('resize', () => {
-    castle()?.resize();
-    draw(lastTime);
-  });
-
-  castle()?.resize();
-  showPauseState();
-  draw(0);
-  start();
 }
 
 function allowed() {
-  return !reduced.matches && navigator.connection?.saveData !== true && webglAvailable();
+  return Boolean(script?.dataset.castleBundle) && !prefersReduced() && navigator.connection?.saveData !== true && webglAvailable();
 }
+
+let requested = false;
 
 function loadBundle() {
   // Settings can change during the wait for the first paint.
-  if (!allowed()) return;
+  if (requested || !allowed() || isPaused()) return;
+  requested = true;
   const bundle = document.createElement('script');
   bundle.src = script.dataset.castleBundle;
   bundle.onload = () => {
@@ -150,6 +142,8 @@ function loadBundle() {
 }
 
 if (stage && canvas && allowed()) {
+  watchPointer();
+  onMotionChange(loadBundle);
   // Wait for the first paint, then for the browser to have a moment to spare.
   const afterPaint = () => requestAnimationFrame(() => {
     if (window.requestIdleCallback) requestIdleCallback(loadBundle, { timeout: 1500 });
@@ -157,4 +151,8 @@ if (stage && canvas && allowed()) {
   });
   if (document.readyState === 'complete') afterPaint();
   else window.addEventListener('load', afterPaint, { once: true });
+} else if (pauseButton) {
+  // Nothing here will ever move, so the castle's button has no job.
+  pauseButton.dataset.unusable = 'true';
+  pauseButton.hidden = true;
 }

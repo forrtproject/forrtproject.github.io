@@ -14,6 +14,7 @@ Nothing here runs against production. Delete this folder after launch unless a c
 | Builds compared | `compare_builds.py` | A page, feed or data file appears or goes, a structured-data count falls, JSON-LD is invalid, or a page's SEO tags change |
 | Internal links | `check_internal_links.py` | A link broken here is not also broken at the merge base. Lychee excludes forrt.org, so nothing else checks these |
 | Built HTML | `../check_seo_html.py` | The site's standing rules on headings, conditional assets, image `alt` and home-page images |
+| Designed screens | `check_design.py` | On the designed screens: sideways overflow, italics, line length or more than one `h1`; the home page's topics too far down (A14), layout shift, pause control or the resources directory misbehaving |
 
 Pushes also run `preview_paths.py`, which prefixes root-relative paths for the subfolder and adds noindex to every HTML file, and then deploy. A failed check marks the run red but does not hold the preview back. Tests are in `../tests/test_rebrand_checks.py`.
 

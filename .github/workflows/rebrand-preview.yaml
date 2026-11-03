@@ -46,6 +46,7 @@ jobs:
       compare: ${{ steps.compare.outcome }}
       links: ${{ steps.links.outcome }}
       seo: ${{ steps.seo.outcome }}
+      design: ${{ steps.design.outcome }}
     steps:
       - name: Checkout repository
         uses: actions/checkout@v6
@@ -145,6 +146,14 @@ jobs:
         continue-on-error: true
         run: python3 scripts/check_seo_html.py public
 
+      - name: Designed screens in a browser (overflow, position, layout shift, pause, directory)
+        id: design
+        continue-on-error: true
+        run: |
+          pip install --quiet playwright==1.63.0
+          playwright install --with-deps chromium
+          python3 scripts/rebrand/check_design.py public --base "$PREVIEW_BASE"
+
       - name: Upload site artifact
         if: github.event_name != 'pull_request'
         uses: actions/upload-artifact@v7
@@ -190,11 +199,13 @@ jobs:
           COMPARE: ${{ needs.build.outputs.compare }}
           LINKS: ${{ needs.build.outputs.links }}
           SEO: ${{ needs.build.outputs.seo }}
+          DESIGN: ${{ needs.build.outputs.design }}
         run: |
           echo "Templates and generated paths: $SOURCE_RULES"
           echo "URL list, structured data and SEO tags: $COMPARE"
           echo "Internal links: $LINKS"
           echo "Built HTML: $SEO"
-          for result in "$SOURCE_RULES" "$COMPARE" "$LINKS" "$SEO"; do
+          echo "Designed screens: $DESIGN"
+          for result in "$SOURCE_RULES" "$COMPARE" "$LINKS" "$SEO" "$DESIGN"; do
             [ "$result" = "success" ] || exit 1
           done

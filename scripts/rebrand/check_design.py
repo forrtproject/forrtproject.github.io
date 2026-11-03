@@ -1,12 +1,13 @@
 #!/usr/bin/env python3
 """Check the designed screens in a browser, against the Doors acceptance checklist.
 
-Run: python3 scripts/rebrand/check_design.py <public-dir>
+Run: python3 scripts/rebrand/check_design.py <public-dir> [--base /]
      python3 scripts/rebrand/check_design.py --url https://forrt.org/rebrand-doors/
 
 Needs Playwright. Covers what a build comparison cannot: nothing runs wider than the screen,
-no italic type outside references, reading lines under 80 characters, and the behaviour of the
-resources directory.
+no italic type outside references, reading lines under 80 characters, the home page's topic
+buttons within their position limit (checklist A14), its layout shift on a slow phone, the pause
+control over the castle and the quotes, and the behaviour of the resources directory.
 """
 
 import argparse
@@ -16,6 +17,7 @@ import json
 import os
 import re
 import sys
+import tempfile
 import threading
 
 from playwright.sync_api import sync_playwright
@@ -29,6 +31,8 @@ SCREENS = {
     "article": "post/2026-01-newsletter/",
 }
 BLOCK = re.compile(r"googletagmanager|google-analytics|doubleclick|youtube|docs\.google")
+A14_LIMIT = {390: 2.5, 1440: 1.6}
+SHIFT_LIMIT = 0.1
 AUDIT = """() => {
   const main = document.querySelector('main');
   const italic = [];
@@ -66,14 +70,20 @@ AUDIT = """() => {
 }"""
 
 
-def serve(root):
+def serve(root, subfolder):
+    """Serve a build, from the subfolder it expects if it has been through preview_paths.py."""
     class Quiet(http.server.SimpleHTTPRequestHandler):
         def log_message(self, *args):
             pass
 
-    server = http.server.ThreadingHTTPServer(("127.0.0.1", 0), functools.partial(Quiet, directory=root))
+    folder = subfolder.strip("/")
+    directory = root
+    if folder:
+        directory = tempfile.mkdtemp(prefix="scratch-design-")
+        os.symlink(root, os.path.join(directory, folder))
+    server = http.server.ThreadingHTTPServer(("127.0.0.1", 0), functools.partial(Quiet, directory=directory))
     threading.Thread(target=server.serve_forever, daemon=True).start()
-    return f"http://127.0.0.1:{server.server_address[1]}/"
+    return f"http://127.0.0.1:{server.server_address[1]}/" + (f"{folder}/" if folder else "")
 
 
 def new_page(browser, width, errors=None, **options):
@@ -109,12 +119,122 @@ def check_screens(browser, base, failures):
             page.context.close()
 
 
-def check_directory(browser, base, failures):
+def expectation(failures, area):
     def expect(condition, message):
         print(f"  {'ok ' if condition else 'BAD'} {message}")
         if not condition:
-            failures.append(f"directory: {message}")
+            failures.append(f"{area}: {message}")
 
+    return expect
+
+
+def layout_shift(browser, url):
+    """Layout shift on a cold load at 390 px, over a slow connection on a slow phone."""
+    page = new_page(browser, 390)
+    page.add_init_script(
+        "window.__shift=0;new PerformanceObserver(l=>{for(const e of l.getEntries())"
+        "if(!e.hadRecentInput)window.__shift+=e.value}).observe({type:'layout-shift',buffered:true});"
+    )
+    cdp = page.context.new_cdp_session(page)
+    cdp.send("Network.enable")
+    cdp.send("Network.setCacheDisabled", {"cacheDisabled": True})
+    cdp.send("Network.emulateNetworkConditions", {
+        "offline": False, "latency": 150, "downloadThroughput": 200000, "uploadThroughput": 90000,
+    })
+    cdp.send("Emulation.setCPUThrottlingRate", {"rate": 4})
+    page.goto(url, wait_until="load", timeout=180000)
+    page.wait_for_timeout(4000)
+    shift = page.evaluate("window.__shift")
+    page.context.close()
+    return shift
+
+
+def check_home(browser, base, failures):
+    expect = expectation(failures, "home")
+    for width, limit in A14_LIMIT.items():
+        page = new_page(browser, width)
+        page.goto(base, wait_until="load")
+        page.evaluate("document.fonts.ready")
+        position = page.evaluate("(document.querySelector('.topics').getBoundingClientRect().top + scrollY) / innerHeight")
+        expect(position <= limit, f"topics start at {position:.2f} viewports at {width} px, limit {limit}")
+        page.context.close()
+    shift = layout_shift(browser, base)
+    expect(shift <= SHIFT_LIMIT, f"layout shift on a slow phone is {shift:.3f}, limit {SHIFT_LIMIT}")
+
+    page = new_page(browser, 1440)
+    requests = []
+    page.on("request", lambda request: requests.append(request.url))
+    page.goto(base, wait_until="load")
+    current = "[...document.querySelectorAll('.quote')].findIndex(q => q.classList.contains('is-active'))"
+    expect(page.evaluate("document.querySelector('.tower .motion-toggle').getBoundingClientRect().width") <= 1,
+           "the castle's pause button is out of sight at rest")
+    page.evaluate("document.querySelector('.quotes').scrollIntoView({block:'center'})")
+    page.mouse.move(2, 2)
+    first = page.evaluate(current)
+    page.wait_for_timeout(6500)
+    expect(page.evaluate(current) != first, "the quotes change on their own")
+    held = page.evaluate(current)
+    page.hover(".quote.is-active")
+    page.wait_for_timeout(6500)
+    expect(page.evaluate(current) == held, "a pointer on the quotes holds them")
+    page.mouse.move(2, 2)
+    page.evaluate("scrollTo(0, 0)")
+    page.wait_for_timeout(6500)
+    expect(page.evaluate(current) == held, "the quotes stay put off screen")
+    page.evaluate("document.querySelector('.quotes').scrollIntoView({block:'center'})")
+    page.wait_for_timeout(6500)
+    expect(page.evaluate(current) != held, "the quotes resume when seen again")
+    # A real Tab from the heading above, so that the browser counts it as keyboard focus.
+    page.evaluate("document.querySelector('.quotes').previousElementSibling.setAttribute('tabindex', '-1')")
+    page.evaluate("document.querySelector('.quotes').previousElementSibling.focus()")
+    page.keyboard.press("Tab")
+    button = page.locator(".quotes .motion-toggle")
+    expect(page.evaluate("document.activeElement.closest('.quotes') !== null"), "Tab reaches the quotes' pause button")
+    held = page.evaluate(current)
+    page.wait_for_timeout(6500)
+    expect(page.evaluate(current) == held, "keyboard focus on the quotes holds them")
+    expect(page.evaluate("document.querySelector('.quotes .motion-toggle').getBoundingClientRect().width") > 40,
+           "the quotes' pause button appears on keyboard focus")
+    page.keyboard.press("Enter")
+    expect(button.text_content() == "Play animation", "pressing it pauses, and it says so")
+    expect(page.locator(".tower .motion-toggle").text_content() == "Play animation", "the castle's button shows the same state")
+    page.evaluate("document.activeElement.blur()")
+    page.mouse.move(2, 2)
+    held = page.evaluate(current)
+    page.wait_for_timeout(6500)
+    expect(page.evaluate(current) == held, "paused quotes stay put")
+    requests.clear()
+    page.reload(wait_until="load")
+    page.wait_for_timeout(3000)
+    expect(page.locator(".quotes .motion-toggle").text_content() == "Play animation", "the pause is remembered on the next visit")
+    expect(not any("castle." in url and "controller" not in url for url in requests), "a paused visit does not load the 3D bundle")
+    page.locator(".tower .motion-toggle").focus()
+    page.keyboard.press("Enter")
+    page.wait_for_timeout(3000)
+    expect(any("castle." in url for url in requests), "pressing play loads the castle")
+    page.context.close()
+
+    page = new_page(browser, 1440, reduced_motion="reduce")
+    requests = []
+    page.on("request", lambda request: requests.append(request.url))
+    page.goto(base, wait_until="load")
+    page.evaluate("document.querySelector('.quotes').scrollIntoView({block:'center'})")
+    page.wait_for_timeout(6500)
+    expect(page.evaluate(current) == 0, "reduced motion keeps the first quote")
+    expect(not any("/js/castle." in url for url in requests), "reduced motion does not load the 3D bundle")
+    expect(page.locator(".motion-toggle:visible").count() == 0, "reduced motion shows no pause button")
+    page.context.close()
+
+
+def check_directory(browser, base, failures):
+    expect = expectation(failures, "directory")
+    topics = new_page(browser, 1440)
+    topics.goto(base, wait_until="load")
+    wanted = topics.evaluate("[...document.querySelectorAll('.topic')].map(a => new URL(a.href).searchParams.get('cluster'))")
+    topics.goto(base + "resources/", wait_until="load")
+    known = topics.evaluate("[...document.querySelectorAll('.facet[data-facet=cluster] .chip')].map(c => c.dataset.value)")
+    expect(wanted and set(wanted) <= set(known), f"every topic button names a real cluster: {sorted(set(wanted) - set(known))}")
+    topics.context.close()
     page = new_page(browser, 1440)
     requests = []
     page.on("request", lambda request: requests.append(request.url))
@@ -181,13 +301,16 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("public", nargs="?")
     parser.add_argument("--url")
+    parser.add_argument("--base", default="/", help="subfolder the build expects to be served from")
     args = parser.parse_args()
-    base = args.url.rstrip("/") + "/" if args.url else serve(os.path.abspath(args.public))
+    base = args.url.rstrip("/") + "/" if args.url else serve(os.path.abspath(args.public), args.base)
     failures = []
     with sync_playwright() as playwright:
         browser = playwright.chromium.launch()
         print("Screens")
         check_screens(browser, base, failures)
+        print("Home page")
+        check_home(browser, base, failures)
         print("Resources directory")
         check_directory(browser, base, failures)
         browser.close()
