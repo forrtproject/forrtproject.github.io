@@ -325,6 +325,12 @@
   parent = "replications"
 
 [[main]]
+  name = "FORRT ORE browser extension"
+  url = "https://forrt.org/chromium-extension/"
+  weight = 63
+  parent = "replications"
+
+[[main]]
   name = "FReD Explorer"
   url = "https://forrt.org/explorer"
   weight = 64
