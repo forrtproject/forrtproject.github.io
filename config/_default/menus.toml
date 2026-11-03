@@ -423,7 +423,7 @@
     group = "Explore"
 
 [[main]]
-  name = "FReD R-Package"
+  name = "FReD R package"
   url = "https://forrt.org/fred/index.html"
   weight = 65
   parent = "replications"
