@@ -5,7 +5,7 @@
 # URLs have no leading slash, so that Hugo resolves them against the base URL.
 
 [[main]]
-  name = "About FORRT"
+  name = "About"
   url = ""
   weight = 10
   identifier = "about"
