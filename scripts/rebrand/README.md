@@ -17,7 +17,7 @@ Nothing here runs against production. Delete this folder after launch unless a c
 
 Pushes also run `preview_paths.py`, which prefixes root-relative paths for the subfolder and adds noindex to every HTML file, and then deploy. A failed check marks the run red but does not hold the preview back. Tests are in `../tests/test_rebrand_checks.py`.
 
-Agreed exceptions go in `allowed_changes.txt` (URL list) and `link_allowlist.txt` (retired paths the 404 page redirects), with a comment saying why. Neither exists yet, because no exception has been agreed.
+Agreed exceptions go in `allowed_changes.txt` (URL list) and `link_allowlist.txt` (retired paths the 404 page redirects), with a comment saying why. `link_allowlist.txt` does not exist yet, because no exception has been agreed.
 
 ## Baseline
 

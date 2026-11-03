@@ -12,7 +12,8 @@ const reduced = matchMedia('(prefers-reduced-motion: reduce)');
 function webglAvailable() {
   try {
     const test = document.createElement('canvas');
-    return Boolean(test.getContext('webgl2') || test.getContext('webgl'));
+    // Three.js has required WebGL 2 since r163.
+    return Boolean(test.getContext('webgl2'));
   } catch {
     return false;
   }
@@ -20,6 +21,7 @@ function webglAvailable() {
 
 function startControls() {
   const castle = () => window.forrtCastle;
+  let userPaused = false;
   let paused = false;
   let lastTime = 0;
   let previous = 0;
@@ -64,12 +66,14 @@ function startControls() {
   }
 
   pauseButton.addEventListener('click', () => {
-    paused = !paused;
+    userPaused = !paused;
+    paused = userPaused;
     showPauseState();
   });
-  // Turning on reduced motion mid-visit stops the castle, as if pause had been pressed.
+  // Turning on reduced motion mid-visit stops the castle. Turning it off again resumes only
+  // if the visitor had not paused it themselves.
   reduced.addEventListener('change', () => {
-    paused = reduced.matches;
+    paused = reduced.matches || userPaused;
     showPauseState();
     draw(lastTime);
   });
@@ -129,7 +133,13 @@ function startControls() {
   start();
 }
 
+function allowed() {
+  return !reduced.matches && navigator.connection?.saveData !== true && webglAvailable();
+}
+
 function loadBundle() {
+  // Settings can change during the wait for the first paint.
+  if (!allowed()) return;
   const bundle = document.createElement('script');
   bundle.src = script.dataset.castleBundle;
   bundle.onload = () => {
@@ -138,8 +148,7 @@ function loadBundle() {
   document.body.append(bundle);
 }
 
-const saveData = navigator.connection?.saveData === true;
-if (stage && canvas && !reduced.matches && !saveData && webglAvailable()) {
+if (stage && canvas && allowed()) {
   // Wait for the first paint, then for the browser to have a moment to spare.
   const afterPaint = () => requestAnimationFrame(() => {
     if (window.requestIdleCallback) requestIdleCallback(loadBundle, { timeout: 1500 });

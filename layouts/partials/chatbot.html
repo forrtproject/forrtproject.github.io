@@ -15,11 +15,16 @@
     right: 20px;
     bottom: 20px;
     left: auto;
-    z-index: 900; /* Under the Doors header's menus and the cookie banner. */
+    z-index: 900; /* The launcher sits under the Doors menus and the cookie banner. */
     display: flex;
     flex-direction: column;
     align-items: flex-end;
     font-family: var(--text);
+  }
+
+  /* The opened chat goes above everything, which its own z-index cannot do from in here. */
+  #just-os-widget:has(#just-os-window[style*="flex"]) {
+    z-index: 10000;
   }
 
   /* Standalone full-page chat: positioning context + Inter font */

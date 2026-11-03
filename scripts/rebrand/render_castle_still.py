@@ -21,7 +21,8 @@ WIDTH, HEIGHT = 1360, 800
 
 def main():
     public, output = sys.argv[1:3]
-    bundle = glob.glob(os.path.join(public, "js", "castle.*.js"))[0]
+    # The newest, in case the build directory still holds an older bundle.
+    bundle = max(glob.glob(os.path.join(public, "js", "castle.*.js")), key=os.path.getmtime)
     page_html = (
         "<!doctype html><style>html,body{margin:0;background:transparent}"
         f".castle-stage{{position:relative;width:{WIDTH}px;height:{HEIGHT}px}}canvas{{display:block;width:100%;height:100%}}"

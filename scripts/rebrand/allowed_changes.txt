@@ -1,0 +1,3 @@
+# Paths allowed to differ from main, one normalised path per line. Say why.
+fonts/doors/Newsreader-OFL.txt   # Licence beside the self-hosted font, not a page
+fonts/doors/SourceSans3-OFL.txt  # Licence beside the self-hosted font, not a page

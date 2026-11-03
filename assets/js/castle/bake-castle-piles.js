@@ -55,7 +55,7 @@ for(const part of [...parts].reverse()){
  
 }
 const header=`import { Vector3, Quaternion } from 'three';\n\n// Rigid-body settled poses, deposited from highest castle index to lowest.\n// The offline bake uses each brick's dimensions and stud colliders; earlier\n// deposits become fixed supports so removing later deposits cannot suspend them.\n// No physics engine is shipped to the browser. Floor y = -.035.\nconst SETTLED_POSES = ${JSON.stringify(poses,null,2)};\n\nexport function arrangeBrickPiles(parts) {\n  if (parts.length !== SETTLED_POSES.length) throw new Error('Brick pile poses must be rebaked after changing the castle geometry.');\n  for (const part of parts) {\n    const pose = SETTLED_POSES[part.index];\n    part.staging = new Vector3(...pose.slice(0, 3));\n    part.stagedQuaternion = new Quaternion(...pose.slice(3));\n  }\n  return parts;\n}\n`;
-fs.writeFileSync(process.argv[2] || 'assets/web3/castle-piles.js', header);
+fs.writeFileSync(process.argv[2] || 'assets/js/castle/castle-piles.js', header);
 // Precise vertices exclude empty corners of rotated geometry bounding boxes.
 const actualBounds = new T.Box3();
 for (const part of parts) actualBounds.union(new T.Box3().setFromObject(part.object, true));
