@@ -9,8 +9,9 @@
      `isBasedOn` are left out rather than asserted.
 
      `dateModified` is the page's resolved Lastmod, the date the sitemap and
-     `article:modified_time` use. The sheet `timestamp` is a submission time
-     with placeholder values, so it is not used. */}}
+     `article:modified_time` use. resource.py starts it from the sheet
+     `timestamp`, whose placeholder 01/01/2020 becomes 2020-01-01, so that date
+     is left out. */}}
 {{- if and (eq .Type "curated_resources") .IsPage -}}
   {{- $p := .Params -}}
 
@@ -64,7 +65,7 @@
     {{- $lr = merge $lr (dict "inLanguage" (cond (eq (len .) 1) (index . 0) .)) -}}
   {{- end -}}
 
-  {{- if not .Lastmod.IsZero -}}
+  {{- if and (not .Lastmod.IsZero) (ne (.Lastmod.Format "2006-01-02") "2020-01-01") -}}
     {{- $lr = merge $lr (dict "dateModified" (.Lastmod.Format "2006-01-02T15:04:05Z07:00")) -}}
   {{- end -}}
 
