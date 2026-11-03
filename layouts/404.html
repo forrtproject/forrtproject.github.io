@@ -5,40 +5,44 @@
 
 <script>
 (function() {
+  // The empty string in production; a preview in a subfolder redirects within itself.
+  var base = '{{ "/" | relURL }}'.replace(/\/$/, '');
   var path = window.location.pathname;
+  if (base && path.indexOf(base + '/') === 0) path = path.slice(base.length);
 
   // Special case: /glossary/vbeta/term → try /glossary/english/term, fallback to /glossary/english/
   var vbetaMatch = path.match(/^\/glossary\/vbeta\/(.+)/);
   if (vbetaMatch) {
-    var termPath = '/glossary/english/' + vbetaMatch[1];
+    var termPath = base + '/glossary/english/' + vbetaMatch[1];
     fetch(termPath, { method: 'HEAD' }).then(function(res) {
-      window.location.replace(res.ok ? termPath : '/glossary/english/');
+      window.location.replace(res.ok ? termPath : base + '/glossary/english/');
     }).catch(function() {
-      window.location.replace('/glossary/english/');
+      window.location.replace(base + '/glossary/english/');
     });
     return;
   }
   // /glossary/vbeta with no term
   if (/^\/glossary\/vbeta\/?$/.test(path)) {
-    window.location.replace('/glossary/english/');
+    window.location.replace(base + '/glossary/english/');
     return;
   }
 
   // Old taxonomy index URL (resource tag list root) → main clusters taxonomy page
   if (/^\/forrt_clusters\/?$/i.test(path)) {
-    window.location.replace('/clusters/');
+    window.location.replace(base + '/clusters/');
     return;
   }
 
   var redirects = [
-    { pattern: /^\/curated_resources(\/|$)/, target: '/resources/' },
-    { pattern: /^\/glossary\/([^/]+)\/.+/, target: '/glossary/$1/' },
-    { pattern: /^\/author(\/|$)/, target: '/contributors/' },
-    { pattern: /^\/summaries(\/|$)/, target: '/' },
-    { pattern: /^\/reversals(\/|$)/, target: '/' },
-    { pattern: /^\/re-searchterms\/?$/, target: '/apps/re-searchterms.html' },
+    { pattern: /^\/curated_resources(\/|$)/, target: base + '/resources/' },
+    { pattern: /^\/glossary\/([^/]+)\/.+/, target: base + '/glossary/$1/' },
+    { pattern: /^\/author(\/|$)/, target: base + '/contributors/' },
+    { pattern: /^\/summaries(\/|$)/, target: base + '/' },
+    { pattern: /^\/reversals(\/|$)/, target: base + '/' },
+    { pattern: /^\/re-searchterms\/?$/, target: base + '/apps/re-searchterms.html' },
 
-    // Repo rename redirects (kebab-case migration). Order: longer prefixes first.
+    // Repo rename redirects (kebab-case migration). These sites live at the domain root,
+    // so they take no base. Order: longer prefixes first.
     { pattern: /^\/FReD-apps(\/.*)?$/,                      target: '/fred-apps$1' },
     { pattern: /^\/FReD(\/.*)?$/,                           target: '/fred$1' },
     { pattern: /^\/flora_zotero(\/.*)?$/,                   target: '/flora-zotero$1' },
