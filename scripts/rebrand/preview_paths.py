@@ -63,6 +63,7 @@ class Rewriter:
             rf"(?<![\w-])({ATTRIBUTES}=[\"']?)https?://(?:www\.)?forrt\.org(/[^\"'\s>]*)?(?=[\"'\s>])",
             re.I,
         )
+        self._climbing = re.compile(rf"(?<![\w-])({ATTRIBUTES}=[\"']?)((?:\.\./)+)", re.I)
         self._srcset = re.compile(r"(?<![\w-])(srcset=)([\"'])(.*?)\2", re.I | re.S)
         self._css_url = re.compile(rf"(url\(\s*[\"']?)/{not_rebased}", re.I)
         self._script = re.compile(r"(<script\b[^>]*>)(.*?)(</script>)", re.I | re.S)
@@ -81,6 +82,15 @@ class Rewriter:
         if resolves(path, self.files):
             return f"{match.group(1)}{self.base}{path.lstrip('/')}"
         return match.group(0)
+
+    def _climbs_out(self, depth):
+        # At the domain root, the browser stops `../` at the root. In a subfolder it carries on
+        # up to the live site, so keep anything that climbs past the top inside the preview.
+        def replace(match):
+            if match.group(2).count("../") > depth:
+                return f"{match.group(1)}{self.base}"
+            return match.group(0)
+        return replace
 
     def _srcset_value(self, match):
         candidates = []
@@ -108,7 +118,8 @@ class Rewriter:
             return match.group(0)
         return match.group(1) + self.javascript(match.group(2)) + match.group(3)
 
-    def html(self, text, is_404=False):
+    def html(self, text, is_404=False, depth=0):
+        text = self._climbing.sub(self._climbs_out(depth), text)
         text = self._absolute.sub(self._absolute_link, text)
         text = self._attr.sub(self._attribute, text)
         text = self._srcset.sub(self._srcset_value, text)
@@ -130,7 +141,7 @@ def rewrite_tree(root, base):
     changed = 0
     for path in all_files:
         if path.endswith(".html"):
-            transform = lambda text, is_404=path == "404.html": rewriter.html(text, is_404)
+            transform = lambda text, page=path: rewriter.html(text, page == "404.html", page.count("/"))
         elif path.endswith(".css"):
             transform = rewriter.css
         elif path.endswith(".js") and not path.startswith(SKIP_JS):

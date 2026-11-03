@@ -79,6 +79,12 @@ class RewriteHtmlTests(unittest.TestCase):
             rewriter().html('<head></head><a href="https://forrt.org/retired/">a</a>'),
         )
 
+    def test_links_climbing_past_the_top_stay_in_the_preview(self):
+        html = rewriter().html('<head></head><a href=../about/us/>a</a><img src="../../img/a.webp">', depth=1)
+        self.assertIn("href=../about/us/>", html)
+        self.assertIn('src="/rebrand-doors/img/a.webp"', html)
+        self.assertIn("href=/rebrand-doors/about/us/>", rewriter().html("<head></head><a href=../about/us/>a</a>"))
+
     def test_unrelated_attribute_is_left_alone(self):
         self.assertIn('content="/about/us/"', rewriter().html('<head><meta content="/about/us/"></head>'))
 
@@ -133,6 +139,10 @@ class LinkCheckTests(unittest.TestCase):
 
     def test_stray_live_site_link_fails(self):
         self.assertEqual(self.check("https://forrt.org/retired/"), "/retired/")
+
+    def test_link_leaving_the_subfolder_fails_even_if_the_page_exists(self):
+        self.assertEqual(self.check("/about/us/"), "/about/us/")
+        self.assertEqual(self.check("../about/us/", page="/rebrand-doors/"), "/about/us/")
 
     def test_extract_skips_scripts_templates_and_placeholders(self):
         links = list(
