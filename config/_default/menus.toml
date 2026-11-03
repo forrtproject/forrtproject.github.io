@@ -89,7 +89,7 @@
 
 [[main]]
   name = "FORRT Booklet"  # A link title for your page.
-  url = "https://forrt.org/booklet/"  # The URL of your page.
+  url = "/booklet/"  # The URL of your page.
   weight = 22  # The position of your page in the menu.
   parent = "about"
 
@@ -217,7 +217,6 @@
   [[main]]
     name = "Games Portal"
     url = "/games"
-  # url = "https://forrt.org/apps/open_research_games_portal.html"
     weight = 39
     parent = "nexus"
 
@@ -332,7 +331,7 @@
 
 [[main]]
   name = "FReD Explorer"
-  url = "https://forrt.org/explorer"
+  url = "/explorer/"
   weight = 64
   parent = "replications"
 
