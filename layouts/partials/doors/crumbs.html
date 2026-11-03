@@ -7,10 +7,14 @@
 {{ $here := strings.TrimSuffix "/" $page.RelPermalink }}
 {{ range site.Menus.main }}
   {{ $top := . }}
-  {{ range .Children }}
-    {{ if eq (strings.TrimSuffix "/" (.URL | relLangURL)) $here }}
-      {{ $label = .Name }}
-      {{ if ne (strings.TrimSuffix "/" ($top.URL | relLangURL)) $here }}{{ $parent = $top }}{{ end }}
+  {{ if eq (strings.TrimSuffix "/" (.URL | relLangURL)) $here }}
+    {{ $label = .Name }}
+  {{ else }}
+    {{ range .Children }}
+      {{ if eq (strings.TrimSuffix "/" (.URL | relLangURL)) $here }}
+        {{ $label = .Name }}
+        {{ $parent = $top }}
+      {{ end }}
     {{ end }}
   {{ end }}
 {{ end }}

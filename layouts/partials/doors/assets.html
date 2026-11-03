@@ -12,6 +12,7 @@
 {{ $screen := slice }}
 {{ if .IsHome }}{{ $screen = slice "home" }}{{ end }}
 {{ if eq .Type "resources" }}{{ $screen = slice "page" "resources" }}{{ end }}
+{{ if eq .Type "replication_hub" }}{{ $screen = slice "page" "hub" }}{{ end }}
 {{ with $screen }}
   {{ $parts := slice }}
   {{ range . }}{{ $parts = $parts | append (resources.Get (printf "css/doors/%s.css" .)) }}{{ end }}

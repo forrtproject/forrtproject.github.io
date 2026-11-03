@@ -1,26 +1,34 @@
-{{/* layouts/replication_hub/list.html - Main layout for replication hub page */}}
+{{/* The Replication Hub: the four stages and their tools, from the `cards` list in
+     content/replication-hub/_index.md. */}}
 {{ define "main" }}
-
-  <div class="universal-wrapper pt-3 pb-3">
-    <div class="container">
-      <div class="article-container pt-3">
-        <h1 class="clusters-site-heading clusters-hub-page__title" itemprop="headline">{{ .Params.heading_title | default .Title }}</h1>
+<div class="wrap">
+  <header class="page-heading">
+    {{ partial "doors/crumbs" (dict "page" .) }}
+    <div class="heading-grid">
+      <div>
+        <h1>{{ .Params.heading_title | default .Title }}</h1>
+        <p class="lede">{{ .Params.lede }}</p>
       </div>
+      {{ with .Resources.GetMatch .Params.image }}
+      <figure class="heading-plate-plain"><img src="{{ .RelPermalink }}" alt="{{ $.Params.image_alt }}" width="{{ .Width }}" height="{{ .Height }}" loading="lazy"></figure>
+      {{ end }}
     </div>
+  </header>
+  <div class="stages">
+    {{ range .Params.cards }}
+    <section class="stage stage-{{ .key }}" aria-labelledby="stage-{{ .key }}">
+      <header><h2 id="stage-{{ .key }}">{{ .title }}</h2><p>{{ .summary }}</p></header>
+      <ul>
+        {{ range .links }}
+        {{ $link := partial "doors/link" . }}
+        <li class="tool">
+          <h3><a href="{{ $link.href }}">{{ $link.label }}</a></h3>
+          <p>{{ .note }}</p>
+        </li>
+        {{ end }}
+      </ul>
+    </section>
+    {{ end }}
   </div>
-
-  {{/* INTRO SECTION */}}
-  <section class="clusters-intro-section">
-    <div class="container">
-      {{ partial "replication-hub/intro.html" . }}
-    </div>
-  </section>
-
-  {{/* CARDS SECTION */}}
-  <section class="rephub-cards-section">
-    <div class="container">
-      {{ partial "replication-hub/cards.html" . }}
-    </div>
-  </section>
-
+</div>
 {{ end }}
