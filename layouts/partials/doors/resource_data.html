@@ -1,0 +1,40 @@
+{{/* The two files resources.js loads: a small one for filtering, and one with every field for
+     searching, fetched on the first search. Built once. Input: dict with `index`. */}}
+{{ $index := .index }}
+{{ $facets := dict }}
+{{ $positions := dict }}
+{{ range $index.facets }}
+  {{ $facets = merge $facets (dict .key (apply .values "index" "." "slug")) }}
+  {{ $labels := dict }}
+  {{ range $i, $value := .values }}{{ $labels = merge $labels (dict (urlize $value.label) $i) }}{{ end }}
+  {{ $positions = merge $positions (dict .key $labels) }}
+{{ end }}
+{{ $rows := slice }}
+{{ $search := slice }}
+{{ range $index.pages }}
+  {{ $item := index $index.items .RelPermalink }}
+  {{ $t := slice }}{{ range $item.types }}{{ $t = $t | append (index $positions.type (urlize .)) }}{{ end }}
+  {{ $l := slice }}{{ range $item.levels }}{{ $l = $l | append (index $positions.level (urlize .)) }}{{ end }}
+  {{ $c := slice }}{{ range $item.clusters }}{{ $c = $c | append (index $positions.cluster (urlize .)) }}{{ end }}
+  {{ $rows = $rows | append (dict "t" $item.title "u" (path.Base (strings.TrimSuffix "/" .RelPermalink)) "y" $t "l" $l "c" $c) }}
+  {{/* Every field, as the old page's search had (issue #286). */}}
+  {{ $tags := partial "functions/page_tags.html" . }}
+  {{ $search = $search | append (lower (delimit (slice
+    $item.title
+    (.Params.abstract | default "" | markdownify | plainify | htmlUnescape)
+    (delimit (.Params.creators | default slice) " ")
+    (delimit (.Params.material_type | default slice) " ")
+    (delimit (.Params.primary_user | default slice) " ")
+    (delimit (.Params.subject_areas | default slice) " ")
+    (delimit ($tags | default slice) " ")
+    (delimit (.Params.education_level | default slice) " ")
+    (delimit (.Params.language | default slice) " ")
+    (.Params.conditions_of_use | default "")
+    (.Params.forrt_clusters_new | default "")
+    (.Params.forrt_sub_clusters | default "")
+  ) " ")) }}
+{{ end }}
+{{ $base := path.Dir (strings.TrimSuffix "/" (index $index.pages 0).RelPermalink) }}
+{{ $directory := dict "base" (printf "%s/" $base) "facets" $facets "items" $rows | jsonify | resources.FromString "resources/directory.json" }}
+{{ $searchFile := $search | jsonify | resources.FromString "resources/search.json" }}
+{{ return dict "directory" $directory "search" $searchFile }}
