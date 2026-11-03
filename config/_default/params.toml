@@ -13,7 +13,7 @@
 #   Latest themes (may require updating): https://sourcethemes.com/academic/themes/
 #   Browse built-in themes in `themes/academic/data/themes/`
 #   Browse user installed themes in `data/themes/`
-theme = "forrt"
+theme = "doors"
 logo = "FORRT.svg"
 # Enable users to switch between day and night mode?
 day_night = false
@@ -22,11 +22,11 @@ day_night = false
 #   Latest font sets (may require updating): https://sourcethemes.com/academic/themes/
 #   Browse built-in font sets in `themes/academic/data/fonts/`
 #   Browse user installed font sets in `data/fonts/`
-font = "forrt"
+font = "doors"
 
 # Choose a font size.
 # Sizes: XS (extra small), S (small), M (medium), L (large - DEFAULT), XL (extra large)
-font_size = "L"
+font_size = "M"
 
 ############################
 ## Basic Info
@@ -332,3 +332,10 @@ plugins_js  = []
 [marketing]
   google_analytics = "G-2BTFVS6SPM"
   google_tag_manager = "G-2BTFVS6SPM"
+
+############################
+## Doors redesign
+############################
+[doors]
+  # The 3D castle on the home page. Set to false to show only the still image.
+  castle = true

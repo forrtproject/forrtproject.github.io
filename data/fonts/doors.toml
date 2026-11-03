@@ -1,0 +1,7 @@
+# Self-hosted fonts, declared in assets/css/doors/fonts.css. No google_fonts entry, so
+# site_head.html requests nothing from Google.
+name = "doors"
+heading_font = "Newsreader"
+body_font = "Source Sans 3"
+nav_font = "Source Sans 3"
+mono_font = "ui-monospace"
