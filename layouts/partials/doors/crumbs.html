@@ -14,4 +14,4 @@
     {{ end }}
   {{ end }}
 {{ end }}
-<p class="crumbs"><a href="{{ "" | relLangURL }}">Home</a> <span aria-hidden="true">/</span> {{ with $parent }}{{ if .URL }}<a href="{{ .URL | relLangURL }}">{{ .Name }}</a>{{ else }}{{ .Name }}{{ end }} <span aria-hidden="true">/</span> {{ end }}<span>{{ $label }}</span></p>
+<nav class="crumbs" aria-label="Breadcrumb"><a href="{{ "" | relLangURL }}">Home</a> <span aria-hidden="true">/</span> {{ with $parent }}{{ if .URL }}<a href="{{ .URL | relLangURL }}">{{ .Name }}</a>{{ else }}{{ .Name }}{{ end }} <span aria-hidden="true">/</span> {{ end }}<span aria-current="page">{{ $label }}</span></nav>

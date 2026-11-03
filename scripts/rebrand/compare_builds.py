@@ -14,8 +14,8 @@ build. Generated collections keep changing, so this is for records and local che
 """
 
 import argparse
-import fnmatch
 import os
+import re
 import sys
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
@@ -34,7 +34,10 @@ def load_allowed(path=os.path.join(HERE, "allowed_changes.txt")):
 
 
 def is_allowed(path, allowed):
-    return path in allowed or any(fnmatch.fnmatchcase(path, pattern) for pattern in allowed)
+    """Exact paths and globs. `*` stops at a slash, so a glob cannot hide a deeper route."""
+    return path in allowed or any(
+        re.fullmatch(re.escape(pattern).replace(r"\*", "[^/]*"), path) for pattern in allowed if "*" in pattern
+    )
 
 
 def compare_paths(reference, candidate, allowed=frozenset()):
