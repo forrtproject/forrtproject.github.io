@@ -185,26 +185,35 @@ document.addEventListener('click', (event) => {
   frame.focus();
 });
 
-// A long summaries page shows its first entries, a filter and a count. Without JavaScript all of them show.
-const summaryTools = document.querySelector('[data-summaries]');
+// A long summaries page shows its first entries, a filter and a count, all added here so that
+// without JavaScript every entry shows and no control sits idle.
 const summaryEntries = [...document.querySelectorAll('.summary-entry')];
-let summaryLimit = 30;
-function showSummaries() {
-  const query = summaryTools.querySelector('input').value.trim().toLowerCase();
-  const matches = summaryEntries.filter((entry) => !query || entry.textContent.toLowerCase().includes(query));
-  const shown = query ? matches : matches.slice(0, summaryLimit);
-  summaryEntries.forEach((entry) => { entry.hidden = !shown.includes(entry); });
-  const more = document.querySelector('.summary-more button');
-  more.hidden = shown.length === matches.length;
-  summaryTools.querySelector('[role=status]').textContent = `Showing ${shown.length} of ${query ? `${matches.length} matching, from ` : ''}${summaryEntries.length} summaries.`;
-}
-if (summaryTools && summaryEntries.length) {
-  summaryTools.querySelector('input').addEventListener('input', showSummaries);
-  document.querySelector('.summary-more button').addEventListener('click', () => {
-    summaryLimit += 30;
-    showSummaries();
+if (summaryEntries.length) {
+  const tools = document.createElement('div');
+  tools.className = 'summary-tools';
+  tools.innerHTML = '<label>Filter these summaries <input type="search" autocomplete="off" spellcheck="false"></label><p class="summary-count" role="status"></p>';
+  summaryEntries[0].before(tools);
+  const more = document.createElement('button');
+  more.className = 'btn summary-more';
+  more.type = 'button';
+  more.textContent = 'Show more';
+  summaryEntries[summaryEntries.length - 1].after(more);
+  const input = tools.querySelector('input');
+  let limit = 30;
+  const show = () => {
+    const query = input.value.trim().toLowerCase();
+    const matches = summaryEntries.filter((entry) => !query || entry.textContent.toLowerCase().includes(query));
+    const shown = query ? matches : matches.slice(0, limit);
+    summaryEntries.forEach((entry) => { entry.hidden = !shown.includes(entry); });
+    more.hidden = shown.length === matches.length;
+    tools.querySelector('[role=status]').textContent = `Showing ${shown.length} of ${query ? `${matches.length} matching, from ` : ''}${summaryEntries.length} summaries.`;
+  };
+  input.addEventListener('input', show);
+  more.addEventListener('click', () => {
+    limit += 30;
+    show();
   });
-  showSummaries();
+  show();
 }
 
 // A link to a heading inside a closed section opens the section.
