@@ -47,7 +47,7 @@ HIDDEN_BUTTONS = """(root) => {
     return false;
   };
   return [...root.querySelectorAll(':is(a,button).btn')]
-    .filter((a) => !a.getClientRects().length && !a.closest('[hidden],.collapse,.modal,.tab-pane,details') && !onPurpose(a))
+    .filter((a) => !a.getClientRects().length && !a.closest('[hidden],.collapse,.modal,.tab-pane,details,.click-to-load') && !onPurpose(a))
     .map((a) => a.textContent.trim().slice(0, 40));
 }"""
 AUDIT = """() => {
@@ -260,7 +260,7 @@ CALLOUTS = """() => {
     if (boxes.some((a, i) => boxes.slice(i + 1).some((b) => a.left < b.right && b.left < a.right && a.top < b.bottom && b.top < a.bottom))) problems.push('overlaps the card or another call-out');
   } else {
     if (notes.some((box) => box.left < area.left - 1 || box.right > area.right + 1)) problems.push('outside the text column');
-    if (card && card.top < area.bottom) problems.push('card comes before the text');
+    if (card && card.height && card.top < area.bottom) problems.push('card comes before the text');
   }
   return problems;
 }"""
