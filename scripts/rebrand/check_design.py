@@ -521,7 +521,7 @@ def check_tower_game(browser, base, expect):
 
 
 def check_phone_reading(browser, base, failures):
-    """On a phone the chat launcher leaves the text while reading, and an embed's panel is not clipped."""
+    """On a phone the chat launcher stays in the gutter, and an embed's panel is not clipped."""
     expect = expectation(failures, "phone reading")
     page = new_page(browser, 390)
     page.goto(base + "glossary/english/abstract_bias/", wait_until="load")
@@ -529,16 +529,10 @@ def check_phone_reading(browser, base, failures):
     page.mouse.wheel(0, 500)
     page.wait_for_timeout(500)
     shown = page.evaluate("innerWidth - document.getElementById('just-os-btn').getBoundingClientRect().left")
-    expect(shown <= 24, f"the launcher shows {shown:.0f} px while reading on, limit 24")
-    page.locator("#just-os-btn").focus()
-    page.wait_for_timeout(400)
-    focused = page.evaluate("innerWidth - document.getElementById('just-os-btn').getBoundingClientRect().left")
-    expect(focused > 40, f"keyboard focus brings the launcher back ({focused:.0f} px shown)")
-    page.evaluate("document.activeElement.blur()")
-    page.mouse.wheel(0, -200)
-    page.wait_for_timeout(500)
-    back = page.evaluate("innerWidth - document.getElementById('just-os-btn').getBoundingClientRect().left")
-    expect(back > 40, f"scrolling up brings the launcher back ({back:.0f} px shown)")
+    expect(shown <= 24, f"the launcher takes {shown:.0f} px of the screen's width, limit 24")
+    page.locator("#just-os-btn").tap()
+    page.wait_for_function("document.getElementById('just-os-window')?.style.display === 'flex'", timeout=10000)
+    expect(True, "tapping the tab opens the chat")
     page.goto(base + "neurodiversity-lessonbank/implicit_bias/", wait_until="load")
     page.wait_for_timeout(300)
     panels = page.locator(".click-to-load").count()
