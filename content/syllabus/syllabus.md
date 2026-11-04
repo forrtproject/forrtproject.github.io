@@ -157,20 +157,3 @@ To further facilitate the creation, the updating, improvement, and maintenance o
 * [UNESCO Recommendation on Open Science Syllabus by Jennifer Miller](https://en.m.wikiversity.org/wiki/UNESCO_Recommendation_on_Open_Science)
 * [Evaluating What Works by Dorothy Bishop and Paul Thompson](https://bookdown.org/dorothy_bishop/Evaluating_What_Works/)
 * [Open Science and Reproducible Research (Karolinska Institutet) by Gustav Nilsonne](https://osf.io/6q3dz/)
-
-<br>
-
-----
-
-<br>
-
-
-{{% alert note %}}
-
-If you know of other syllabi not included in this collection, please consider adding it to our collections so that others can benefit from it too! 
-
-[***Click here to add an Open Scholarship Syllabi to FORRT's Collection***](https://docs.google.com/forms/d/e/1FAIpQLScEfLk9TWc_Wc8lQSuJcqWlmWVzLVmXzq8I2f2QTjhA3t12qw/viewform)
-
-{{% /alert %}}
-
-<br>
