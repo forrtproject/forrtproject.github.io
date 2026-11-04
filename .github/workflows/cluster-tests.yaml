@@ -1,0 +1,30 @@
+name: Cluster Tests
+
+# =======================
+# Clusters data checks
+# =======================
+# Purpose: Runs the parser regression tests and checks the stated sub-cluster counts
+# Triggers: PRs that change the clusters data, its parser or these tests
+
+on:
+  pull_request:
+    paths:
+      - 'data/clusters_v4.json'
+      - 'scripts/parse_clusters_to_sheet.py'
+      - 'scripts/tests/test_clusters_data.py'
+      - 'scripts/tests/test_parse_clusters.py'
+      - '.github/workflows/cluster-tests.yaml'
+
+permissions:
+  contents: read
+
+jobs:
+  cluster-tests:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v6
+
+      - name: Run cluster tests
+        run: python3 -m unittest discover -s scripts/tests -p 'test_*clusters*.py'

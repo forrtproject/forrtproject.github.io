@@ -85,8 +85,8 @@
   <div class="article-layout glossary-layout">
     <article class="reading">
       <header class="article-head">
-        <nav class="crumbs" aria-label="Breadcrumb"><a href="{{ "" | relLangURL }}">Home</a> <span aria-hidden="true">/</span> {{ with .Parent }}<a href="{{ .RelPermalink }}">{{ .Title }}</a> <span aria-hidden="true">/</span> {{ end }}<span aria-current="page">{{ .Title }}</span></nav>
-        <h1>{{ .Title }}</h1>
+        <nav class="crumbs" aria-label="Breadcrumb"><a href="{{ "" | relLangURL }}">Home</a> <span aria-hidden="true">/</span> {{ with .Parent }}<a href="{{ .RelPermalink }}">{{ .Title }}</a> <span aria-hidden="true">/</span> {{ end }}<span aria-current="page">{{ partial "doors/term_title" .Title }}</span></nav>
+        <h1{{ if gt (strings.RuneCount .Title) 60 }} class="long-title"{{ end }}>{{ partial "doors/term_title" .Title }}</h1>
       </header>
 
 <div class="language-switcher">

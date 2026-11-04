@@ -155,6 +155,8 @@ If a contribution amounts to running a single prompt, please consider posting th
 
 ### Content, Licensing & Fact-Checking
 
+**Generated content:** `data/clusters_v4.json` and `content/clusters/cluster-N/index.md` are generated, so never edit them by hand. Correct the [Clusters v4.1 Google Doc](https://docs.google.com/document/d/1_TRh7z3Bv_tdxGqjdWMm4kfQerTYvYw3e4wvQLNpTDQ/edit), then run `python3 scripts/parse_clusters_to_sheet.py --json-only` and `python3 scripts/generate_cluster_pages.py`.
+
 - Please **fact-check** anything you add and cite sources where relevant, so the site stays accurate and trustworthy.
 - The repository is distributed under [CC BY-NC-SA 4.0](LICENSE.md). Make sure you have the right to contribute the material and retain attribution and source licence notices.
 - Under the existing contribution policy, unless you tell us otherwise, contributions are assumed to be offered under [**CC BY 4.0**](https://creativecommons.org/licenses/by/4.0/).

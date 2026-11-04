@@ -3,7 +3,7 @@ body{margin-top:0;background:var(--page);color:var(--ink);font:400 var(--text-si
 h1,h2,h3,h4,h5,h6,.h1,.h2,.h3,.h4,.h5,.h6{font-family:var(--display);font-weight:var(--display-weight);color:var(--ink)}
 a{color:var(--link)}
 a:hover{color:var(--ink)}
-a:focus-visible,button:focus-visible,input:focus-visible,summary:focus-visible{outline:3px solid var(--ink);outline-offset:3px;border-radius:2px}
+a:focus-visible,button:focus-visible,input:focus-visible,summary:focus-visible,table:focus-visible{outline:3px solid var(--ink);outline-offset:3px;border-radius:2px}
 main:focus{outline:none}
 /* The cookie banner sits over the foot of the screen until dismissed; site.js sets its height. */
 html{scroll-padding-block-end:var(--banner,0px)}
