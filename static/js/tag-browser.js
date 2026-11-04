@@ -39,8 +39,10 @@
       ? pages.length + (pages.length === 1 ? " page tagged " : " pages tagged ") + "“" + label + "”"
       : "No pages are tagged “" + label + "”";
 
-    pages.forEach(function (page) {
+    var STEP = 50;
+    pages.forEach(function (page, index) {
       var item = document.createElement("li");
+      item.hidden = index >= STEP;
       
       var link = document.createElement("a");
       link.href = page.u;
@@ -56,6 +58,19 @@
       }
       list.appendChild(item);
     });
+
+    if (pages.length > STEP) {
+      var more = document.createElement("button");
+      more.type = "button";
+      more.className = "btn tag-show-more";
+      more.textContent = "Show more";
+      list.after(more);
+      more.addEventListener("click", function () {
+        var waiting = list.querySelectorAll("li[hidden]");
+        for (var i = 0; i < STEP && i < waiting.length; i += 1) waiting[i].hidden = false;
+        if (waiting.length <= STEP) more.remove();
+      });
+    }
 
     results.hidden = false;
     // The results have a link back to every tag, so the cloud would only push the footer away.

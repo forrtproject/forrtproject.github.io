@@ -600,3 +600,4 @@ article.article .article-container .article-title {
   .sc-cbar{display:none}
 }
 #sc-container{width:auto;max-width:none;margin:0;padding:0;position:static}
+.sc-section-desc a{color:var(--link);text-decoration:underline;text-underline-offset:3px}

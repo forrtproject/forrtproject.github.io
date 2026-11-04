@@ -1,5 +1,9 @@
 {{ partial "structured-data/summaries-jsonld.html" (dict "page" .Page "deiOnly" true) }}
 {{ $summaries := hugo.Data.summaries }}
+<div class="summary-tools" data-summaries>
+  <label>Filter these summaries <input type="search" autocomplete="off" spellcheck="false"></label>
+  <p class="summary-count" role="status"></p>
+</div>
 {{ range $summaries}}
 {{ if in .Title "⌺" }}
 
@@ -28,3 +32,4 @@
 </details>
 
 {{end}} {{end}}
+<p class="summary-more"><button class="btn" type="button" hidden>Show more</button></p>

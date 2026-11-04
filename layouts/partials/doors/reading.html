@@ -2,6 +2,8 @@
      Articles and every plain page or section with its own text use it. */}}
 {{/* Hugo's contents, or the headings a shortcode wrote, as on the summaries. */}}
 {{ $body := partial "doors/content" .Content }}
+{{/* The summaries mark their DEI entries with ⌺, which few fonts have and which shows as an empty box. */}}
+{{ $body = replace $body "⌺" `<span class="dei-mark">DEI</span>` | safeHTML }}
 {{ $contents := cond (findRE `(?i)<h1\b` .Content 1 | len | lt 0) slice (findRE `<li` .TableOfContents 1) }}
 {{ $written := findRESubmatch `<h2[^>]*\bid="?([^"> ]+)"?[^>]*>([\s\S]*?)</h2>` $body }}
 {{ $headings := cond (gt (len $contents) 0) (findRE `<h[23][ >]` .Content) $written }}
