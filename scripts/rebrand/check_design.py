@@ -641,8 +641,8 @@ def check_icons(root, failures):
 
 def check_on_request(root, failures):
     """Video posters, forms, calendars and the newsletter embed load only when a visitor asks."""
-    pattern = re.compile(r"""i\.ytimg\.com|<iframe[^>]+\ssrc\s*=\s*["']?https?://(?:www\.)?(?:youtube|youtube-nocookie|calendar\.google|docs\.google)"""
-                         r"""|<script[^>]+\ssrc\s*=\s*["']?https?://eocampaign1\.com|fonts\.(?:googleapis|gstatic)\.com|googletagmanager\.com/gtag/js\?id=G-""", re.I)
+    pattern = re.compile(r"""i\.ytimg\.com|<iframe[^>]*\ssrc\s*=\s*["']?https?://(?:www\.)?(?:youtube|youtube-nocookie|calendar\.google|docs\.google)"""
+                         r"""|<script[^>]*\ssrc\s*=\s*["']?https?://eocampaign1\.com|fonts\.(?:googleapis|gstatic)\.com|googletagmanager\.com/gtag/js\?id=G-""", re.I)
     found = []
     for folder, _, files in os.walk(root):
         if "index.html" in files and os.path.relpath(folder, root) != "admin":
