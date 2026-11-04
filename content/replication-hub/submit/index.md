@@ -14,4 +14,4 @@ If you want to check if a replication study is already included in the database,
 the easiest way is to use the 
 <a href="/annotator" target="_blank">References Annotator</a>
 
-<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeMCwdtP0TPgL55stniuyyTxnNwyC34mO4VUuLcQwYrLI89sQ/viewform", width = "100%", height="800px"></iframe>
+{{< click_to_load src="https://docs.google.com/forms/d/e/1FAIpQLSeMCwdtP0TPgL55stniuyyTxnNwyC34mO4VUuLcQwYrLI89sQ/viewform" provider="Google" label="This document" width="100%" height="800px" >}}

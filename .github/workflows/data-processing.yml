@@ -48,12 +48,10 @@ on:
         type: boolean
         default: false
 
-env:
-  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: "true"
 jobs:
   process-data:
     name: Process Data
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-latest
     permissions:
       contents: write
       pull-requests: write
@@ -149,7 +147,7 @@ jobs:
       #========================================
       - name: Setup r2u
         if: steps.monthly-run.outputs.is_monthly == 'true'
-        uses: eddelbuettel/github-actions/r2u-setup@master
+        uses: eddelbuettel/github-actions/r-ci@master
 
       #========================================
       # Install Pandoc for rendering R Markdown documents
@@ -191,6 +189,21 @@ jobs:
           # Move generated HTML file to static/partials (served via iframe)
           echo "📁 Moving network graph to static/partials..."
           mv content/contributor-analysis/network-graph.html static/partials/
+
+      #========================================
+      # Keep the latest analysis when it was not regenerated (or regeneration failed).
+      # The checkout's committed copy is older and would otherwise replace it in the
+      # artifact and on build-resources.
+      #========================================
+      - name: Restore latest contributor analysis
+        if: steps.contributor-analysis.outcome != 'success'
+        continue-on-error: true
+        run: |
+          git fetch origin +refs/heads/build-resources:refs/remotes/origin/build-resources
+          git restore --source=origin/build-resources --worktree -- \
+            content/contributor-analysis/index.md \
+            'content/contributor-analysis/*.png' \
+            static/partials/network-graph.html
 
       #========================================
       # Setup Node.js for bibliography processing
@@ -567,6 +580,9 @@ jobs:
           
           mkdir -p /tmp/generated-resources/publications
           cp content/publications/citation_chart.webp /tmp/generated-resources/publications/ || true
+
+          mkdir -p /tmp/generated-resources/partials
+          cp static/partials/network-graph.html /tmp/generated-resources/partials/ || true
           
           if [ -f data/summaries.json ]; then
             cp data/summaries.json /tmp/generated-resources/summaries.json
@@ -633,6 +649,8 @@ jobs:
 
           # Copy contributor analysis and citation chart
           cp -r /tmp/generated-resources/contributor-analysis/* content/contributor-analysis/ || true
+          mkdir -p static/partials
+          cp /tmp/generated-resources/partials/network-graph.html static/partials/ || true
           if [ -f /tmp/generated-resources/publications/citation_chart.webp ]; then
             cp /tmp/generated-resources/publications/citation_chart.webp content/publications/
           fi
@@ -663,6 +681,7 @@ jobs:
             git add content/replication-hub/flora/_index.md 2>/dev/null || true
             git add data/summaries.json 2>/dev/null || true
             git add content/contributor-analysis/ 2>/dev/null || true
+            git add static/partials/network-graph.html 2>/dev/null || true
             git add content/publications/citation_chart.webp 2>/dev/null || true
             
             if [ "${{ github.event.inputs.regenerate_glossary }}" = "true" ]; then

@@ -23,7 +23,7 @@ Jason, Leonard A.; Glantsman, Olya; O'Brien, Jack F.; and Ramian, Kaitlyn N., "I
 <br>
 
 <div style="position: relative; padding-bottom: 120%; height: 0; overflow: hidden; margin: 20px 0; min-height: 400px;">
-<iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" src="https://press.rebus.community/introductiontocommunitypsychology/chapter/oppression-and-power/" title="Oppression and Power" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+{{< click_to_load src="https://press.rebus.community/introductiontocommunitypsychology/chapter/oppression-and-power/" provider="Rebus Press" label="This content" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" title="Oppression and Power" >}}
 </div>
 
 <br>
@@ -49,7 +49,7 @@ You can listen to the essay here:
 <br>
 
 <div style="position: relative; padding-bottom: 70%; height: 0; overflow: hidden; margin: 20px 0;">
-<iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" src="https://www.youtube.com/embed/bLdj7Ad4V_c" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+{{< click_to_load src="https://www.youtube-nocookie.com/embed/bLdj7Ad4V_c" provider="YouTube (Google)" label="This video" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" title="YouTube video player" >}}
 </div>
 
 <br>
@@ -65,7 +65,7 @@ How do you understand these words? What do you think about them?
 <br>
 
 <div style="position: relative; padding-bottom: 120%; height: 0; overflow: hidden; margin: 20px 0; min-height: 400px;">
-<iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" src="https://neuroqueer.com/throw-away-the-masters-tools/" title="Nick Walker" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+{{< click_to_load src="https://neuroqueer.com/throw-away-the-masters-tools/" provider="NeuroQueer" label="This page" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" title="Nick Walker" >}}
 </div>
 
 <br>
