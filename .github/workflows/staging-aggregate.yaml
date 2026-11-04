@@ -40,9 +40,6 @@ on:
         type: boolean
         default: false
 
-env:
-  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: "true"
-
 # Workflow-level concurrency to queue staging builds (wait instead of cancel)
 concurrency:
   group: staging-aggregate
@@ -279,7 +276,7 @@ jobs:
       - name: Try to download data artifact
         if: steps.aggregate.outputs.has_prs == 'true' || env.FORCE_BUILD == 'true'
         id: download-artifact
-        uses: dawidd6/action-download-artifact@v6
+        uses: dawidd6/action-download-artifact@a92c7ae74cf1df8810783758581e485ac3aaa309 # v28
         continue-on-error: true
         with:
           workflow: data-processing.yml
@@ -375,7 +372,7 @@ jobs:
       - name: Download data artifact (Retry)
         id: download-artifact-retry
         if: steps.download-artifact.outcome == 'failure' && steps.data-processing.outputs.data_processing_triggered == 'true'
-        uses: dawidd6/action-download-artifact@v6
+        uses: dawidd6/action-download-artifact@a92c7ae74cf1df8810783758581e485ac3aaa309 # v28
         with:
           workflow: data-processing.yml
           name: data-artifact
@@ -420,7 +417,7 @@ jobs:
 
       - name: Setup Hugo
         if: steps.aggregate.outputs.has_prs == 'true' || env.FORCE_BUILD == 'true'
-        uses: peaceiris/actions-hugo@75d2e84710de30f6ff7268e08f310b60ef14033f
+        uses: peaceiris/actions-hugo@2752ce1d29631191ea3f27c23495fa06139a5b78 # v3.2.1
         with:
           hugo-version: ${{ env.HUGO_VERSION }}
           extended: ${{ env.HUGO_EXTENDED }}
@@ -548,7 +545,7 @@ jobs:
 
       - name: Deploy - GitHub Pages
         if: needs.build.result == 'success' && needs.build.outputs.site-built == 'true'
-        uses: peaceiris/actions-gh-pages@4f9cc6602d3f66b9c108549d475ec49e8ef4d45e
+        uses: peaceiris/actions-gh-pages@84c30a85c19949d7eee79c4ff27748b70285e453 # v4.1.0
         with:
           personal_token: ${{ secrets.STAGING_GITHUB_TOKEN }}
           publish_dir: ${{ github.repository }}/forrt-website
