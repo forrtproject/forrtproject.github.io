@@ -93,6 +93,13 @@ if (searchDialog) {
   searchDialog.addEventListener('click', (event) => {
     if (event.target === searchDialog) searchDialog.close();
   });
+  // A search box's own Escape only clears it, so close the dialog at once.
+  searchDialog.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape') {
+      event.preventDefault();
+      searchDialog.close();
+    }
+  });
   searchDialog.addEventListener('close', () => {
     const url = new URL(location.href);
     url.searchParams.delete('q');

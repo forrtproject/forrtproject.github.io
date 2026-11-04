@@ -115,3 +115,6 @@ main:lang(ar) .article-layout .article-style,main:lang(ar) .article-layout .arti
 .sc-page h1{font-size:clamp(36px,4.2vw,58px);line-height:1.06;margin:0 0 18px}
 .sc-page .crumbs{margin-bottom:18px}
 .sc-page #sc-container{padding:0;font-family:var(--text);max-width:none}
+.article-layout .post-nav{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px 24px;margin:0 0 18px}
+.article-layout .post-nav-item{max-width:calc(50% - 12px);min-width:0}
+.article-layout .post-nav-item:last-child:not(:first-child){text-align:end}

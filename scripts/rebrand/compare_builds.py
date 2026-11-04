@@ -89,15 +89,17 @@ def main():
     parser.add_argument("--paths-only", action="store_true")
     args = parser.parse_args()
 
-    candidate = inventory(args.candidate)
+    allowed = load_allowed()
+    # Agreed exceptions do not count towards structured data on either side.
+    skip = lambda path: is_allowed(path, allowed)  # noqa: E731
+    candidate = inventory(args.candidate, skip)
     if args.paths_only:
         with open(args.reference, encoding="utf-8") as handle:
             reference = {"paths": handle.read().split("\n"), "structured_data": {}, "seo_heads": {}}
         reference["paths"] = [path for path in reference["paths"] if path]
     else:
-        reference = inventory(args.reference)
+        reference = inventory(args.reference, skip)
 
-    allowed = load_allowed()
     removed, addresses, assets = compare_paths(reference["paths"], candidate["paths"], allowed)
     drops = compare_structured(reference["structured_data"], candidate["structured_data"])
     heads = compare_heads(reference["seo_heads"], candidate["seo_heads"], allowed)

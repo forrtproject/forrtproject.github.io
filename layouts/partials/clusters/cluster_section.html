@@ -19,7 +19,7 @@
 {{ end }}
 {{ $hasFeatured := and $featuredEnabled $featuredData }}
 
-<section id="{{ $cid }}" class="cluster-section" style="background-color: {{ $color }};">
+<section id="{{ $cid }}" class="cluster-section" style="background-color: {{ $color | safeCSS }};">
   <div class="cluster-header">
     <h2 class="cluster-title">
       <span class="cluster-number">{{ (int $cluster.number) }}</span>

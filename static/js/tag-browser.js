@@ -16,6 +16,11 @@
 
   var needle = tag.toLowerCase();
 
+  /** The address form of a term, as the old /tag/<slug>/ pages had it: /tag/open-science/ arrives here as a slug. */
+  function slug(term) {
+    return term.replace(/[^\p{L}\p{N}\s#_/-]/gu, "").trim().replace(/\s+/g, "-");
+  }
+
   /** "neurodiversity-lessonbank" reads better as "Neurodiversity lessonbank". */
   function sectionLabel(section) {
     if (!section) return "";
@@ -30,13 +35,12 @@
     if (!results || !heading || !list) return;
 
     heading.textContent = pages.length
-      ? pages.length + (pages.length === 1 ? " page tagged " : " pages tagged ") + "“" + tag + "”"
-      : "No pages are tagged “" + tag + "”";
+      ? pages.length + (pages.length === 1 ? " page tagged " : " pages tagged ") + "“" + tag.replace(/-/g, " ") + "”"
+      : "No pages are tagged “" + tag.replace(/-/g, " ") + "”";
 
     pages.forEach(function (page) {
       var item = document.createElement("li");
-      item.className = "mb-2";
-
+      
       var link = document.createElement("a");
       link.href = page.u;
       link.textContent = page.t;
@@ -45,7 +49,7 @@
       var label = sectionLabel(page.s);
       if (label) {
         var badge = document.createElement("span");
-        badge.className = "badge badge-light ml-2";
+        badge.className = "tag-section";
         badge.textContent = label;
         item.appendChild(badge);
       }
@@ -67,7 +71,9 @@
       .then(function (rows) {
         render(
           rows.filter(function (row) {
-            return row.g && row.g.indexOf(needle) !== -1;
+            return row.g && row.g.some(function (term) {
+              return term === needle || slug(term) === needle;
+            });
           })
         );
       })

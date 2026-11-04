@@ -1,0 +1,13 @@
+{{/* One entry in a list page: title, date when it has one, summary and any image. */}}
+{{ $link := .RelPermalink }}
+{{ $target := "" }}
+{{ with .Params.external_link }}{{ $link = . }}{{ $target = `target="_blank" rel="noopener"` }}{{ end }}
+{{ $image := (.Resources.ByType "image").GetMatch "*featured*" }}
+<article class="list-item{{ if $image }} list-item-image{{ end }}">
+  <div>
+    <h2><a href="{{ $link }}" {{ $target | safeHTMLAttr }}>{{ .Title }}</a></h2>
+    <p class="list-meta">{{ with .Params.authors }}{{ partial "page_metadata_authors" $ }}{{ end }}{{ if and .Params.date .Params.authors }} · {{ end }}{{ if .Params.date }}{{ .Date.Format "January 2006" }}{{ end }}</p>
+    <p class="list-summary">{{ if .Params.summary }}{{ .Params.summary | plainify | emojify | truncate 220 }}{{ else if .Params.abstract }}{{ .Params.abstract | plainify | emojify | truncate 220 }}{{ else }}{{ .Summary | plainify | emojify | truncate 220 }}{{ end }}</p>
+  </div>
+  {{ with $image }}{{ $thumb := .Fill "280x210 Center webp" }}<img src="{{ $thumb.RelPermalink }}" width="140" height="105" alt="" loading="lazy">{{ end }}
+</article>

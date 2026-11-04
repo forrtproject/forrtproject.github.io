@@ -1,8 +1,5 @@
 {{- define "main" -}}
 
-{{ $css := resources.Get "css/404.css" | minify | fingerprint }}
-<link rel="stylesheet" href="{{ $css.RelPermalink }}" integrity="{{ $css.Data.Integrity }}">
-
 <script>
 (function() {
   // The empty string in production; a preview in a subfolder redirects within itself.
@@ -33,8 +30,26 @@
     return;
   }
 
+  // Retired paginated list pages (decision D17): back to the cluster's page. /curated_resources/ is below.
+  var clusterPage = path.match(/^\/forrt_clusters\/([^/]+)\/page\/\d+\/?$/i);
+  if (clusterPage) {
+    window.location.replace(base + '/forrt_clusters/' + clusterPage[1] + '/');
+    return;
+  }
+
+  // Former tag pages, which the tag browser reads by slug as well as by term.
+  var tagPage = path.match(/^\/tag\/(.+?)\/?$/);
+  if (tagPage) {
+    window.location.replace(base + '/tags/?tag=' + tagPage[1]);
+    return;
+  }
+  if (/^\/tag\/?$/.test(path)) {
+    window.location.replace(base + '/tags/');
+    return;
+  }
+
   var redirects = [
-    { pattern: /^\/curated_resources(\/|$)/, target: base + '/resources/' },
+    { pattern: /^\/curated_resources\/.+/, target: base + '/resources/' },
     { pattern: /^\/glossary\/([^/]+)\/.+/, target: base + '/glossary/$1/' },
     { pattern: /^\/author(\/|$)/, target: base + '/contributors/' },
     { pattern: /^\/summaries(\/|$)/, target: base + '/' },
@@ -69,36 +84,26 @@
 })();
 </script>
 
-<div class="universal-wrapper pt-3">
-
-  <h1>Whoops! Page not found</h1>
-
-  {{/* Show search box if Academic's search engine is enabled. */}}
-  {{ if eq site.Params.search.engine 1 }}
-  <form class="d-flex align-items-center mb-3">
-    <input name="q" type="search" class="form-control" placeholder="{{ i18n "search_placeholder" }}" autocomplete="off">
-  </form>
-  {{ end }}
-
-  <div class="not-found-content">
-    <p>That page can't be found. <strong>Please help us improve!</strong> If you reached this page through a broken link, let us know at <a href="mailto:info@forrt.org">info@forrt.org</a> or contact Lukas Wallrich on the <a href="https://forrt.slack.com/" target="_blank" rel="noopener">FORRT Slack</a>.</p>
-
-    <div class="not-found-links">
-      <h3>Here are some useful links:</h3>
-      <ul>
-        <li><a href="{{ .Site.BaseURL }}about/us">About FORRT</a></li>
-        <li><a href="{{ .Site.BaseURL }}about/get-involved/">Get Involved</a></li>
-        <li><a href="{{ .Site.BaseURL }}resources/">Curated Resources</a></li>
-        <li><a href="{{ .Site.BaseURL }}glossary/">Glossary</a></li>
-        <li><a href="{{ .Site.BaseURL }}replication-hub/">Replication Hub</a></li>
-        <li><a href="{{ .Site.BaseURL }}lesson-plans/">Lesson Plans</a></li>
-        <li><a href="{{ .Site.BaseURL }}publications/">Publications</a></li>
-        <li><a href="{{ .Site.BaseURL }}clusters/"> FORRT's Clusters</a></li>
-      </ul>
-    </div>
-
-    <p>Return <a href="{{ .Site.BaseURL }}">Home</a>.</p>
+<div class="wrap">
+  <div class="article-layout article-layout-single">
+    <article class="reading">
+      <header class="article-head"><h1>Page not found</h1></header>
+      <div class="article-style">
+        <p>That page can't be found. If you reached it through a broken link, tell us at <a href="mailto:info@forrt.org">info@forrt.org</a> or contact Lukas Wallrich on the <a href="https://forrt.slack.com/" target="_blank" rel="noopener">FORRT Slack</a>.</p>
+        <h2>Useful pages</h2>
+        <ul>
+          <li><a href="{{ "about/us/" | relLangURL }}">About FORRT</a></li>
+          <li><a href="{{ "about/get-involved/" | relLangURL }}">Get involved</a></li>
+          <li><a href="{{ "resources/" | relLangURL }}">Teaching resources</a></li>
+          <li><a href="{{ "glossary/english/" | relLangURL }}">Glossary</a></li>
+          <li><a href="{{ "replication-hub/" | relLangURL }}">Replication Hub</a></li>
+          <li><a href="{{ "lesson-plans/" | relLangURL }}">Lesson plans</a></li>
+          <li><a href="{{ "publications/" | relLangURL }}">Publications</a></li>
+          <li><a href="{{ "clusters/" | relLangURL }}">FORRT's clusters</a></li>
+        </ul>
+        <p>Or go back to the <a href="{{ "" | relLangURL }}">home page</a>.</p>
+      </div>
+    </article>
   </div>
-
 </div>
 {{- end -}}
