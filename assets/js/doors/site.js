@@ -366,3 +366,24 @@ if (termFilter) {
   const current = list.querySelector('[aria-current]');
   if (current) list.scrollTop = current.offsetTop - list.offsetTop - list.clientHeight / 3;
 }
+
+// A table wider than the screen scrolls in its own box, so keyboard users must be able to focus it.
+// Closed sections and late fonts change the answer after load.
+function focusableTable(table) {
+  if (table.scrollWidth > table.clientWidth) table.tabIndex = 0;
+  else table.removeAttribute('tabindex');
+}
+const tables = document.querySelectorAll('.article-style table');
+const tableSizes = new ResizeObserver((entries) => entries.forEach((entry) => focusableTable(entry.target)));
+tables.forEach((table) => tableSizes.observe(table));
+document.fonts?.ready.then(() => tables.forEach(focusableTable));
+
+// Altmetric's badges are links with no text, so each takes the name of what it measures.
+const badges = document.querySelectorAll('.altmetric-embed');
+if (badges.length) {
+  const nameBadges = () => badges.forEach((badge) => {
+    const label = badge.previousElementSibling?.classList.contains('pub-metric-label') ? badge.previousElementSibling.textContent : 'publication';
+    badge.querySelector('a:not([aria-label])')?.setAttribute('aria-label', `Altmetric attention for this ${label.toLowerCase()}`);
+  });
+  new MutationObserver(nameBadges).observe(document.querySelector('.pub-list, .article-style') || document.body, { childList: true, subtree: true });
+}

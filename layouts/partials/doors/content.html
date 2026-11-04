@@ -1,4 +1,10 @@
 {{/* Page content with its own Markdown top-level headings demoted, because the page already has its
      h1 (issue #928). Input: the rendered HTML. */}}
-{{ $demoted := replaceRE `(?i)<(/?)h1\b` "<${1}h2" . | safeHTML }}
-{{ return $demoted }}
+{{ $demoted := replaceRE `(?i)<(/?)h1\b` "<${1}h2" . }}
+{{/* Markdown task lists give their boxes no name. */}}
+{{ $named := replace $demoted `<input checked="" disabled="" type="checkbox">` `<input checked="" disabled="" type="checkbox" aria-label="Done">` }}
+{{ $named = replace $named `<input disabled="" type="checkbox">` `<input disabled="" type="checkbox" aria-label="Not done yet">` }}
+{{/* A Markdown link around a block gets wrapped in a paragraph, which browsers split, leaving an empty link. */}}
+{{ $named = replaceRE `(?s)<p>\s*(<a [^>]*>\s*<center>.*?</center>\s*</a>)\s*</p>` "$1" $named }}
+{{ $out := $named | safeHTML }}
+{{ return $out }}

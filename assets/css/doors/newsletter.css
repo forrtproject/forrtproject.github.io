@@ -6,6 +6,7 @@
 .newsletter-open:hover{background:var(--ink)}
 .newsletter-open:disabled{background:var(--soft);cursor:progress}
 .newsletter-note{margin:8px 0 0;color:var(--soft);font-size:16px;line-height:1.4}
+.newsletter-note a{text-decoration:underline}
 .newsletter-status{margin:8px 0 0;font-size:16px}
 .newsletter-status:empty{display:none}
 .newsletter-form [data-form].inline-container{max-width:none!important}
