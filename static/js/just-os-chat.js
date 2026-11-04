@@ -166,6 +166,7 @@
 
     const bubble = document.createElement('div');
     bubble.className = 'just-os-bubble-content';
+    bubble.dir = 'auto';
 
     if (msg.role === 'user') {
       bubble.textContent = msg.content;

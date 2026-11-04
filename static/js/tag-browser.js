@@ -15,10 +15,11 @@
   if (!tag) return;
 
   var needle = tag.toLowerCase();
+  var label = tag;
 
   /** The address form of a term, as the old /tag/<slug>/ pages had it: /tag/open-science/ arrives here as a slug. */
   function slug(term) {
-    return term.replace(/[^\p{L}\p{N}\s#_/-]/gu, "").trim().replace(/\s+/g, "-");
+    return term.replace(/[^\p{L}\p{N}\s.#_+~/-]/gu, "").trim().replace(/\s/g, "-");
   }
 
   /** "neurodiversity-lessonbank" reads better as "Neurodiversity lessonbank". */
@@ -35,8 +36,8 @@
     if (!results || !heading || !list) return;
 
     heading.textContent = pages.length
-      ? pages.length + (pages.length === 1 ? " page tagged " : " pages tagged ") + "“" + tag.replace(/-/g, " ") + "”"
-      : "No pages are tagged “" + tag.replace(/-/g, " ") + "”";
+      ? pages.length + (pages.length === 1 ? " page tagged " : " pages tagged ") + "“" + label + "”"
+      : "No pages are tagged “" + label + "”";
 
     pages.forEach(function (page) {
       var item = document.createElement("li");
@@ -69,6 +70,10 @@
         return response.json();
       })
       .then(function (rows) {
+        // A slug that only an address could have produced reads better with spaces.
+        if (!rows.some(function (row) { return row.g && row.g.indexOf(needle) !== -1; })) {
+          label = tag.replace(/-/g, " ");
+        }
         render(
           rows.filter(function (row) {
             return row.g && row.g.some(function (term) {

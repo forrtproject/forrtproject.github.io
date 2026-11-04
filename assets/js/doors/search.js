@@ -81,6 +81,8 @@ function show(results, query) {
   hits.replaceChildren(...results.slice(0, LIMIT).map(({ item }) => {
     const row = document.createElement('li');
     row.className = 'search-hit';
+    row.dir = 'auto';
+    row.lang = '';
     const type = document.createElement('span');
     type.className = 'hit-type';
     type.textContent = SECTIONS[item.section] || item.section || 'Page';
@@ -131,6 +133,7 @@ window.doorsSearch = (query) => {
   if (query) {
     run(query);
   } else {
+    latest += 1;
     hits.replaceChildren();
     ready().then(() => { status.textContent = ''; }, () => {
       status.textContent = 'Search is unavailable right now. Reload the page and try again.';

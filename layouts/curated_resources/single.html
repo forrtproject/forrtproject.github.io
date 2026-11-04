@@ -1,26 +1,32 @@
 {{- define "main" -}}
 {{/* A curated resource, on the reading layout: what it is on the left, and its details beside it.
      Pages are generated from the FORRT database sheet, so any list field can be missing. */}}
+{{ $clean := dict }}
+{{ range slice "material_type" "education_level" "primary_user" "subject_areas" "language" "creators" "FORRT_clusters" }}
+  {{ $values := slice }}
+  {{ range index $.Params . }}{{ if . }}{{ $values = $values | append . }}{{ end }}{{ end }}
+  {{ $clean = merge $clean (dict . $values) }}
+{{ end }}
 {{ $details := slice
-  (dict "label" "Type of resources" "values" .Params.material_type)
-  (dict "label" "Education level(s)" "values" .Params.education_level)
-  (dict "label" "Primary user(s)" "values" .Params.primary_user)
-  (dict "label" "Subject area(s)" "values" .Params.subject_areas)
-  (dict "label" "Language(s)" "values" .Params.language)
+  (dict "label" "Type of resources" "values" $clean.material_type)
+  (dict "label" "Education level(s)" "values" $clean.education_level)
+  (dict "label" "Primary user(s)" "values" $clean.primary_user)
+  (dict "label" "Subject area(s)" "values" $clean.subject_areas)
+  (dict "label" "Language(s)" "values" $clean.language)
 }}
 <div class="wrap">
   <div class="article-layout">
     <article class="reading">
       <header class="article-head">
-        <nav class="crumbs" aria-label="Breadcrumb"><a href="{{ "" | relLangURL }}">Home</a> <span aria-hidden="true">/</span> <a href="{{ relref . "/resources" }}">Resources</a></nav>
-        {{ with .Params.material_type }}<div class="article-meta">{{ range . }}<span>{{ . }}</span>{{ end }}</div>{{ end }}
+        <nav class="crumbs" aria-label="Breadcrumb"><a href="{{ "" | relLangURL }}">Home</a> <span aria-hidden="true">/</span> <a href="{{ relref . "/resources" }}">Resources</a> <span aria-hidden="true">/</span> <span aria-current="page">{{ .Title }}</span></nav>
+        {{ with $clean.material_type }}<div class="article-meta">{{ range . }}<span>{{ . }}</span>{{ end }}</div>{{ end }}
         <h1>{{ .Title }}</h1>
         {{ with .Params.subtitle }}<p class="standfirst">{{ . | markdownify | emojify }}</p>{{ end }}
-        {{ with .Params.creators }}<div class="byline"><span class="byline-authors">By {{ delimit . ", " }}</span></div>{{ end }}
+        {{ with $clean.creators }}<div class="byline"><span class="byline-authors">By {{ delimit . ", " }}</span></div>{{ end }}
       </header>
       {{ with partial "doors/resource_url" . }}<p class="resource-open"><a class="btn btn-primary" href="{{ . }}">Open this resource</a></p>{{ end }}
       <div class="article-style">
-        {{ with .Params.abstract }}<h2>{{ i18n "abstract" }}</h2><p>{{ . | markdownify }}</p>{{ end }}
+        {{ with .Params.abstract }}<h2>{{ i18n "abstract" }}</h2>{{ $.RenderString (dict "display" "block") . }}{{ end }}
         {{ partial "doors/content" .Content }}
       </div>
       <div class="article-foot">
@@ -33,7 +39,7 @@
       <h2>About this resource</h2>
       <dl>
         {{ range $details }}{{ if .values }}<dt>{{ .label }}</dt><dd>{{ delimit .values ", " }}</dd>{{ end }}{{ end }}
-        {{ with .Param "FORRT_clusters" }}<dt>Cluster</dt><dd>{{ range $i, $c := . }}{{ if $i }}, {{ end }}{{ $c }}{{ end }}</dd>{{ end }}
+        {{ with $clean.FORRT_clusters }}<dt>Cluster</dt><dd>{{ delimit . ", " }}</dd>{{ end }}
         <dt>Last updated</dt><dd>{{ .Lastmod.Format "2 January 2006" }}</dd>
       </dl>
     </section>

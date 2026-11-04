@@ -58,7 +58,7 @@
       {{ with $avatar }}{{ $img := .Fill "270x270 Center webp" }}<img class="profile-photo{{ if eq $avatar_shape "square" }} avatar-square{{ end }}" src="{{ $img.RelPermalink }}" width="135" height="135" alt="Portrait of {{ $name }}">{{ end }}
       {{ with $page.Params.role }}<p class="profile-role">{{ . | markdownify | emojify }}</p>{{ end }}
       {{ range $page.Params.organizations }}
-        <p class="profile-org">{{ with .url }}<a href="{{ . }}" target="_blank" rel="noopener">{{ end }}{{ .name }}{{ if .url }}</a>{{ end }}</p>
+        <p class="profile-org">{{ with .url }}<a href="{{ if (urls.Parse .).Scheme }}{{ . }}{{ else }}https://{{ . }}{{ end }}" target="_blank" rel="noopener">{{ end }}{{ .name }}{{ if .url }}</a>{{ end }}</p>
       {{ end }}
       {{ partial "social_links" $page }}
     </section>

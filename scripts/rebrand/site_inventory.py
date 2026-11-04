@@ -153,19 +153,22 @@ def inventory(root, skip=None):
     heads = {}
     bad_json = []
     for path in paths:
-        if not path.endswith(".html") or (skip and skip(path)):
+        if not path.endswith(".html"):
             continue
         with open(os.path.join(root, path), encoding="utf-8", errors="replace") as handle:
             text = handle.read()
         group = template_group(path, text)
-        structured[group]["pages"] += 1
+        counted = not (skip and skip(path))
+        if counted:
+            structured[group]["pages"] += 1
         for block in _LD_JSON.findall(text):
             try:
                 data = json.loads(block)
             except ValueError:
                 bad_json.append(path)
                 continue
-            structured[group].update(_ld_types(data))
+            if counted:
+                structured[group].update(_ld_types(data))
         if group not in ("redirect stub", "standalone"):
             heads[path] = seo_head(text)
     return {

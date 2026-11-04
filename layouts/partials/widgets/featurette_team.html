@@ -4,7 +4,7 @@
 <ul class="feature-rows">
   {{ range $page.Params.featurealt }}
   <li>
-    {{ with .img }}{{ $dims := partial "functions/static_img_dims" . }}<img src="{{ (printf "img/%s" .) | relURL }}" {{ $dims }} alt="">{{ end }}
+    {{ if .img }}{{ $dims := partial "functions/static_img_dims" .img }}<img src="{{ (printf "img/%s" .img) | relURL }}" {{ $dims }} alt="{{ .imgalttext }}">{{ end }}
     <div>
       <h3>{{ .name | markdownify | emojify }}</h3>
       {{ with .description }}<p>{{ . | markdownify | emojify }}</p>{{ end }}

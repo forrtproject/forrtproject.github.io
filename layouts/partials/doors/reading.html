@@ -1,8 +1,9 @@
 {{/* The reading layout: one narrow column, with a side card when there is something to put in it.
      Articles and every plain page or section with its own text use it. */}}
 {{/* Hugo's contents, or the headings a shortcode wrote, as on the summaries. */}}
-{{ $contents := findRE `<li` .TableOfContents 1 }}
-{{ $written := findRESubmatch `<h2[^>]*\bid="?([^"> ]+)"?[^>]*>([\s\S]*?)</h2>` .Content }}
+{{ $body := partial "doors/content" .Content }}
+{{ $contents := cond (findRE `(?i)<h1\b` .Content 1 | len | lt 0) slice (findRE `<li` .TableOfContents 1) }}
+{{ $written := findRESubmatch `<h2[^>]*\bid="?([^"> ]+)"?[^>]*>([\s\S]*?)</h2>` $body }}
 {{ $headings := cond (gt (len $contents) 0) (findRE `<h[23][ >]` .Content) $written }}
 {{ $hasDates := and .Params.date (not (in (slice "page") .Type)) }}
 {{ $wide := in site.Params.doors.wide_pages .Path }}
@@ -14,7 +15,7 @@
         {{ partial "doors/article_header" . }}
       {{ end }}
       <div class="article-style">
-        {{ partial "doors/content" .Content }}
+        {{ $body }}
       </div>
       <div class="article-foot">
         {{ if .IsPage }}<p class="share-link"><button class="copy-link" type="button" data-copy-link="{{ .Permalink }}">Copy article link</button> <span role="status"></span></p>{{ end }}

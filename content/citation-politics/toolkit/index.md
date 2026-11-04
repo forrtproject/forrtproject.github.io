@@ -1,5 +1,6 @@
 ---
 type: citation_politics
+heading_title: "Citation Politics Toolkit"
 url: "/citation-politics/toolkit/"
 # Meta description: the page body is a shortcode whose HTML would otherwise
 # appear as text in the auto-generated summary.

@@ -11,7 +11,9 @@
     {{ end }}{{ end }}
   </nav>
   {{ with .Params.categories }}<div class="article-meta">{{ range . }}<span>{{ . }}</span>{{ end }}</div>{{ end }}
-  {{ if .Params.hide_title }}<h1 class="sr-only">{{ .Title }}</h1>{{ else }}<h1>{{ .Title }}</h1>{{ end }}
+  {{ with .Params.header_logo }}<img class="article-logo" src="{{ . | relURL }}" alt="">{{ end }}
+  {{ $heading := .Params.heading_title | default .Title }}
+  {{ if .Params.hide_title }}<h1 class="sr-only">{{ $heading }}</h1>{{ else }}<h1>{{ $heading }}</h1>{{ end }}
   {{ with .Params.subtitle }}<p class="standfirst">{{ . | markdownify | emojify }}</p>{{ end }}
   <div class="byline">
     {{ with .Params.authors }}<span class="byline-authors">{{ partial "page_metadata_authors" $page }}</span>{{ end }}

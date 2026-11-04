@@ -3,6 +3,7 @@ title: Nowhere Lab
 subtitle: An online lab community for those without a lab
 date: 2026-04-28
 sharing_image: "img/nowherelab-logo.png"
+header_logo: "img/nowherelab-logo.png"
 sharing_image_alt: "Nowhere Lab logo"
 ---
 

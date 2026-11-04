@@ -1,8 +1,8 @@
-{{/* Links between the directory's pages: first, last and the two either side of this one.
+{{/* Links between a list's pages: first, last and the two either side of this one.
      Crawlers follow these to reach every resource. Input: a Hugo paginator. */}}
 {{ $pager := . }}
 {{ if gt $pager.TotalPages 1 }}
-<nav class="pager" id="pager" aria-label="Pages of resources">
+<nav class="pager" id="pager" aria-label="Pages">
   {{ with $pager.Prev }}<a href="{{ .URL }}" rel="prev">Previous</a>{{ end }}
   {{ $last := 0 }}
   {{ range $pager.Pagers }}

@@ -62,14 +62,21 @@ def compare_structured(reference, candidate):
     return drops
 
 
+def _without_edit_date(tags):
+    return [re.sub(r'"dateModified":\s*"[^"]*",?', "", tag) for tag in tags if not tag.startswith("article:modified_time")]
+
+
 def compare_heads(reference, candidate, allowed=frozenset()):
     """Return {path: (only_before, only_after)} for pages whose SEO tags differ."""
     changes = {}
     for path, tags in reference.items():
         if path not in candidate or is_allowed(path, allowed):
             continue
-        if tags != candidate[path]:
-            before, after = set(tags), set(candidate[path])
+        # A page's modified date follows its last edit, which is the sitemap check's concern.
+        before = _without_edit_date(tags)
+        after = _without_edit_date(candidate[path])
+        if before != after:
+            before, after = set(before), set(after)
             changes[path] = (sorted(before - after), sorted(after - before))
     return changes
 

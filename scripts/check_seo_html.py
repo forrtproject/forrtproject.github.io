@@ -28,6 +28,7 @@ Hard checks (exit 1 if any fails):
      non-empty meta description (#864).
   10. No meta description contains a double-escaped entity such as `&amp;ldquo;`
      (#864). Text that merely looks like an entity (`&name;`) is not one.
+  11. No page has more than one <h1> (#928).
 
 Report-only sections (never fail): pages with no <h1>, the
 site-wide share of images that carry both width and height, pages whose

@@ -938,7 +938,7 @@
   margin-bottom: 0.35rem;
 }
 
-.clusters-display-section > .container > .disciplines-attribution {
+.clusters-display-section > .wrap > .disciplines-attribution {
   max-width: 760px;
   margin: 1.5rem auto 0;
 }
@@ -1090,14 +1090,6 @@
   margin-bottom: 0 !important;
 }
 
-.cluster-full-width .container {
-  max-width: 100% !important;
-  padding: 15px !important;
-  margin-left: 15px !important;
-  margin-right: 15px !important;
-  margin-top: 0 !important;
-  margin-bottom: 0 !important;
-}
 
 .clusters-intro-section {
   background: linear-gradient(to bottom, #fefdf6 0%, #f9f8f5 100%);
