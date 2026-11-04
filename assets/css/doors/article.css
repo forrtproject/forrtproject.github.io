@@ -9,7 +9,8 @@
 .article-layout .article-head:has(.byline:empty){margin-bottom:0}
 .article-layout .article-meta{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:18px;font-size:15px;font-weight:600}
 .article-layout .article-meta span{background:var(--surface);padding:3px 10px;border-radius:var(--r-small)}
-.article-layout .reading h1{font-size:clamp(36px,4.2vw,58px);line-height:1.06;letter-spacing:-.01em;margin:0;text-wrap:balance}
+.article-layout .reading h1{font-size:clamp(36px,4.2vw,58px);line-height:1.06;letter-spacing:-.01em;margin:0;text-wrap:balance;hyphens:auto}
+.article-layout .reading h1.long-title{font-size:clamp(28px,3vw,42px);line-height:1.12}
 .article-layout .standfirst{font:500 clamp(21px,1.9vw,25px)/1.4 var(--display);margin:18px 0 0;max-width:30em;color:var(--ink)}
 .article-layout .byline{display:flex;flex-wrap:wrap;gap:4px 18px;margin:16px 0 0;font-size:16px}
 .article-layout .byline a{color:var(--link);text-underline-offset:3px;text-decoration:underline}

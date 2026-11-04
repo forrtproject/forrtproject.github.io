@@ -1,0 +1,4 @@
+{{/* A glossary term's title. Translated terms end in the English title in square brackets, which
+     must stay left to right inside an Arabic heading, or its brackets and words change places. */}}
+{{ $out := replaceRE `^(.*) \[(.*)\]$` `$1 <bdi dir="ltr">[$2]</bdi>` (. | htmlEscape) | safeHTML }}
+{{ return $out }}
