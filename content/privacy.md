@@ -18,7 +18,7 @@ We have not appointed a data protection officer.
 ## Summary
 
 - Google Analytics runs only if you allow it.
-- Videos, forms, calendars and other embedded content load only if you click to load them.
+- Videos, forms, calendars and teaching activities load only if you click to load them.
 - Our host receives your IP address and other technical data each time you open a page, and so do the services listed below on the few pages that use them.
 
 ## When you visit a page

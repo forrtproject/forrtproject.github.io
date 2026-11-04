@@ -18,9 +18,12 @@ document.addEventListener('click', function (event) {
     el.setAttribute('allowfullscreen', '');
     el.setAttribute('frameborder', '0');
     if (data.embedTitle) el.title = data.embedTitle;
+    if (data.embedSrc.indexOf('youtube') !== -1) el.setAttribute('allow', 'encrypted-media; picture-in-picture; clipboard-write; web-share');
     el.setAttribute('width', data.embedWidth || '100%');
     if (data.embedHeight) el.setAttribute('height', data.embedHeight);
     if (data.embedStyle) el.setAttribute('style', data.embedStyle);
   }
   box.replaceWith(el);
+  el.tabIndex = -1;
+  el.focus();
 });

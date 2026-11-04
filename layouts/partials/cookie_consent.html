@@ -5,7 +5,7 @@
     {{ $ga = site.Params.marketing.google_tag_manager }}
   {{ end }}
   <link rel="stylesheet" href="{{ "vendor/cookieconsent/cookieconsent.min.css" | relURL }}">
-  <style>.cc-revoke { display: none !important; }</style>
+  <style>.cc-revoke { display: none !important; } .cc-compliance .cc-btn { min-width: 140px; }</style>
   <script src="{{ "vendor/cookieconsent/cookieconsent.min.js" | relURL }}"></script>
   <script>
   (function () {

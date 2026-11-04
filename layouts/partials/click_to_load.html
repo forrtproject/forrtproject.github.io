@@ -3,11 +3,11 @@
 <div class="click-to-load" data-embed-src="{{ .src }}"
      {{- if .script }} data-embed-script="true"{{ end }}
      {{- with .form }} data-embed-form="{{ . }}"{{ end }}
-     {{- with .title }} data-embed-title="{{ . }}"{{ end }}
+     {{- with .title | default (printf "%s from %s" .label .provider) }} data-embed-title="{{ . }}"{{ end }}
      {{- with .width }} data-embed-width="{{ . }}"{{ end }}
      {{- with .height }} data-embed-height="{{ . }}"{{ end }}
      {{- with .style }} data-embed-style="{{ . }}" style="{{ . | safeCSS }}"{{ end }}>
   <p>{{ .label }} comes from {{ .provider }}. Loading it sends your IP address to them and they may set cookies. See our <a href="{{ "privacy/" | relURL }}#embedded-content">privacy policy</a>.</p>
-  <button type="button" class="btn btn-primary">Load</button>
+  <button type="button" class="btn btn-primary" aria-label="Load: {{ .label }}">Load</button>
   {{ with .link }}<a class="click-to-load-link" href="{{ . }}" target="_blank" rel="noopener">Open on the provider's site</a>{{ end }}
 </div>
