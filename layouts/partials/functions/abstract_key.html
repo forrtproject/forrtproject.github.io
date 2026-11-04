@@ -1,0 +1,4 @@
+{{/* Key under which `functions/curated_abstract_counts.html` counts an
+     abstract: md5 of its first 150 characters, whitespace-normalised. Shared so
+     the counting and the lookup in `functions/page_description.html` agree. */}}
+{{- return md5 (substr (replaceRE `\s+` " " (trim . " \n\r\t")) 0 150) -}}

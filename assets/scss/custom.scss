@@ -3589,6 +3589,30 @@ h1.clusters-site-heading.clusters-hub-page__title {
 
 /* ---- "What is FORRT?" media column: logo + video stacked, text beside it. ---- */
 /* Featurette images carry intrinsic width/height attributes; scale them with the column. */
+/* Third-party embeds that load on request (layouts/partials/click_to_load.html) */
+.click-to-load {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  min-height: 12rem;
+  margin: 1rem 0;
+  padding: 1.5rem;
+  overflow: auto;
+  text-align: center;
+  background: #f4f1e8;
+  border: 1px solid #d9d4c5;
+}
+.click-to-load p {
+  max-width: 34rem;
+  margin: 0;
+  font-size: 0.95rem;
+}
+.click-to-load-link {
+  font-size: 0.9rem;
+}
+
 .wg-featurette-alternative img,
 .wg-featurette-welcome img,
 .wg-featurette-team img {
