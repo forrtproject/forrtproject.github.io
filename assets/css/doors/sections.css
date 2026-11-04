@@ -91,4 +91,4 @@
   .partner-content{grid-template-columns:64px minmax(0,1fr);gap:12px}
   .partner-logo{width:64px}
 }
-.article-layout .article-style center{text-align:start}
+.article-layout .article-style center p:not(:has(img)){text-align:start}

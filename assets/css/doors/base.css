@@ -31,11 +31,3 @@ em,i:not([class]),dfn,cite,var{font-weight:600}
 @media(max-width:1240px){.wrap{width:calc(100% - 64px)}}
 @media(max-width:760px){:root{--text-size:16px}.wrap{width:calc(100% - 40px)}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{transition:none!important;animation:none!important}}
-@media print{
-  .site-head,.site-foot,.article-card,.article-foot,.skip,.cc-window{display:none!important}
-  body{background:#fff;color:#000;font-size:12pt}
-  .wrap{width:100%}
-  .article-layout{display:block;padding:0}
-  .article-layout .article-style{font-size:12pt}
-  a{color:#000}
-}

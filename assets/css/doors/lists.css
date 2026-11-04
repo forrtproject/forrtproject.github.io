@@ -74,3 +74,6 @@
   .list-item img{width:88px;height:66px}
   .article-layout .list-item h2{font-size:21px}
 }
+.analysis-page .article-style p:has(img){max-width:none;text-align:center}
+.analysis-page .article-style img{display:inline-block}
+.list-item .btn-links{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}

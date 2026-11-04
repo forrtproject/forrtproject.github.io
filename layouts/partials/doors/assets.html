@@ -15,9 +15,9 @@
 {{ if .IsHome }}{{ $screen = slice "home" }}{{ end }}
 {{ if eq .Type "resources" }}{{ $screen = slice "page" "resources" }}{{ end }}
 {{ if eq .Type "replication_hub" }}{{ $screen = slice "page" "hub" }}{{ end }}
-{{ if eq .Type "widget_page" }}{{ $screen = slice "sections" }}{{ end }}
 {{ if and .IsNode (not .IsHome) (not (in (slice "resources" "replication_hub" "glossary") .Type)) }}{{ $screen = slice "lists" }}{{ end }}
-{{ if in (slice "tags" "newsletters") .Type }}{{ $screen = slice "lists" }}{{ end }}
+{{ if in (slice "tags" "newsletters" "contributors_analysis") .Type }}{{ $screen = slice "lists" }}{{ end }}
+{{ if eq .Type "widget_page" }}{{ $screen = slice "sections" }}{{ end }}
 {{ if in (slice "clusters" "disciplines") .Section }}{{ $screen = slice "clusters" }}{{ end }}
 {{ if eq .Type "welcome" }}{{ $screen = slice "welcome" }}{{ end }}
 {{ with $screen }}

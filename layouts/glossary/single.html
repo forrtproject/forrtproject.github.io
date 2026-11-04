@@ -85,7 +85,7 @@
   <div class="article-layout glossary-layout">
     <article class="reading">
       <header class="article-head">
-        <nav class="crumbs" aria-label="Breadcrumb"><a href="{{ "" | relLangURL }}">Home</a> <span aria-hidden="true">/</span> {{ with .Parent }}<a href="{{ .RelPermalink }}">{{ .Title }}</a>{{ end }}</nav>
+        <nav class="crumbs" aria-label="Breadcrumb"><a href="{{ "" | relLangURL }}">Home</a> <span aria-hidden="true">/</span> {{ with .Parent }}<a href="{{ .RelPermalink }}">{{ .Title }}</a> <span aria-hidden="true">/</span> {{ end }}<span aria-current="page">{{ .Title }}</span></nav>
         <h1>{{ .Title }}</h1>
       </header>
 
@@ -244,7 +244,7 @@
 
       </div>
       <div class="article-foot">
-        {{ partial "section_pager" . }}
+        {{ if and site.Params.docs_section_pager (ne .Params.docs_section_pager false) }}{{ partial "section_pager" . }}{{ end }}
       </div>
     </article>
     {{ partial "doors/glossary_terms" (dict "page" . "labels" $dict "defined_only" true) }}

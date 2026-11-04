@@ -3,18 +3,18 @@
      theme's and stays as it is. */}}
 {{ $js := hugo.Data.assets.js }}
 {{ $search := resources.Get "js/doors/search.js" | js.Build (dict "minify" true "format" "iife" "target" "es2019") | fingerprint "md5" }}
-<dialog class="search-dialog" id="searchDialog" lang="en" dir="ltr" aria-label="Search this site"
+<dialog class="search-dialog" id="searchDialog" aria-label="Search this site"
   data-script="{{ $search.RelPermalink }}"
   data-index="{{ "index.json" | relLangURL }}"
   data-fuse="{{ printf $js.fuse.url $js.fuse.version }}"
   data-fuse-sri="{{ $js.fuse.sri }}"
   data-threshold="{{ site.Params.search.academic.threshold | default 0.3 }}"
   data-min-length="{{ site.Params.search.academic.min_length | default 1 }}">
-  <div class="search-top">
+  <div class="search-top" lang="en" dir="ltr">
     <label><span class="visually-hidden">Search this site</span>
       <input id="searchQuery" type="search" placeholder="Search" autocapitalize="off" autocomplete="off" autocorrect="off" spellcheck="false"></label>
     <button class="search-close" type="button">Close</button>
   </div>
-  <p class="search-status" id="searchStatus" role="status"></p>
+  <p class="search-status" id="searchStatus" role="status" lang="en" dir="ltr"></p>
   <ol class="search-hits" id="searchHits"></ol>
 </dialog>

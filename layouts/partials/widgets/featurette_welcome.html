@@ -7,7 +7,7 @@
   {{ if in (slice "fab" "fas" "far" "fal") $pack }}{{ $prefix = "fa" }}{{ end }}
   <li>
     {{ if .icon }}<i class="{{ $pack }} {{ $prefix }}-{{ .icon }} feature-icon" aria-hidden="true"></i>{{ end }}
-    {{ with .img }}{{ $dims := partial "functions/static_img_dims" . }}<img src="{{ (printf "img/%s" .) | relURL }}" {{ $dims }} alt="">{{ end }}
+    {{ if .img }}{{ $dims := partial "functions/static_img_dims" .img }}<img src="{{ (printf "img/%s" .img) | relURL }}" {{ $dims }} alt="{{ .imgalttext }}">{{ end }}
     <div>
       <h3>{{ .name | markdownify | emojify }}</h3>
       {{ with .description }}<p>{{ . | markdownify | emojify }}</p>{{ end }}

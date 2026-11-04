@@ -3,7 +3,7 @@
 {{ $avatar := ($person.Resources.ByType "image").GetMatch "*avatar*" }}
 <li>
   <a href="{{ $person.RelPermalink }}">
-    {{ with $avatar }}{{ $img := .Fill "120x120 Center webp" }}<img src="{{ $img.RelPermalink }}" width="60" height="60" alt="" loading="lazy">{{ else }}<span class="people-initials" aria-hidden="true">{{ range first 2 (split $person.Params.name " ") }}{{ substr . 0 1 }}{{ end }}</span>{{ end }}
+    {{ with $avatar }}{{ $img := .Fill "120x120 Center webp" }}<img src="{{ $img.RelPermalink }}" width="60" height="60" alt="" loading="lazy">{{ else }}<span class="people-initials" aria-hidden="true">{{ range first 2 (split $person.Params.name " ") }}{{ substr . 0 1 | upper }}{{ end }}</span>{{ end }}
     <span class="people-name">{{ $person.Params.name }}</span>
   </a>
   {{ with $person.Params.role }}<span class="people-role">{{ . | markdownify | emojify }}</span>{{ end }}

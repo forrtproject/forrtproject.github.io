@@ -1,13 +1,3 @@
 {{- define "main" -}}
-<div class="wrap">
-  {{ partial "doors/crumbs" (dict "page" .) }}
-  <h1>{{ .Title }}</h1>
-<div>
-  {{ with .Content }}
-  <div class="article-style">{{ . }}</div>
-  {{ end }}
-</div>
-
-{{ partial "pagination" . }}
-</div>
+{{ partial "doors/reading" . }}
 {{- end -}}

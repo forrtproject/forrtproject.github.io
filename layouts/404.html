@@ -40,7 +40,9 @@
   // Former tag pages, which the tag browser reads by slug as well as by term.
   var tagPage = path.match(/^\/tag\/(.+?)\/?$/);
   if (tagPage) {
-    window.location.replace(base + '/tags/?tag=' + tagPage[1]);
+    var term = tagPage[1];
+    try { term = decodeURIComponent(term); } catch (error) { /* a malformed address keeps its form */ }
+    window.location.replace(base + '/tags/?tag=' + encodeURIComponent(term));
     return;
   }
   if (/^\/tag\/?$/.test(path)) {

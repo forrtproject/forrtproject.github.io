@@ -531,8 +531,9 @@ def check_no_theme(root, failures):
         if "index.html" in files:
             with open(os.path.join(folder, "index.html"), encoding="utf-8", errors="ignore") as handle:
                 text = handle.read()
-            for mark in re.findall(r"css/academic\.[^\"' >]*css|font-awesome/[^\"' >]*css|ajax/libs/jquery/[^\"' >]*js", text):
-                found.setdefault(mark.split("/")[0], os.path.relpath(folder, root))
+            for pattern, label in ((r"css/academic\.", "stylesheet"), (r"font-awesome/", "Font Awesome"), (r"ajax/libs/jquery/", "jQuery")):
+                if re.search(pattern, text):
+                    found.setdefault(label, os.path.relpath(folder, root))
     for mark, where in found.items():
         failures.append(f"/{where}/ still loads the theme's {mark}")
     print(f"  pages still loading theme assets: {len(found)} kinds", flush=True)

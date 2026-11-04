@@ -19,7 +19,7 @@
     {{ $description := .Get "description" }}
     {{ if $title }}
     <div class="section-heading">
-        <h1>{{ $title | markdownify }}</h1>
+        <h2>{{ $title | markdownify }}</h2>
         <hr>
         {{ if $description }}
         <div class="pub-section-description">

@@ -10,7 +10,7 @@
     {{ $target := "" }}
     {{ if not $scheme }}
       {{/* A website written with no https:// would resolve against this site. */}}
-      {{ if findRE `^[\w-]+(\.[\w-]+)+(/|$)` .link }}{{ $link = printf "https://%s" .link }}{{ else }}{{ $link = .link | relLangURL }}{{ end }}
+      {{ if findRE `^[\w-]+(\.[\w-]+)+(/|$)` .link }}{{ $link = printf "https://%s" .link }}{{ $target = `target="_blank" rel="noopener"` }}{{ else }}{{ $link = .link | relLangURL }}{{ end }}
     {{ else if in (slice "http" "https") $scheme }}
       {{ $target = "target=\"_blank\" rel=\"noopener\"" }}
     {{ end }}

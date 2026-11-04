@@ -68,8 +68,10 @@ def compare_heads(reference, candidate, allowed=frozenset()):
     for path, tags in reference.items():
         if path not in candidate or is_allowed(path, allowed):
             continue
-        if tags != candidate[path]:
-            before, after = set(tags), set(candidate[path])
+        # A page's modified date follows its last edit, which is the sitemap check's concern.
+        before = {tag for tag in tags if not tag.startswith("article:modified_time")}
+        after = {tag for tag in candidate[path] if not tag.startswith("article:modified_time")}
+        if before != after:
             changes[path] = (sorted(before - after), sorted(after - before))
     return changes
 

@@ -76,6 +76,7 @@ main:lang(ar) .article-layout .article-style,main:lang(ar) .article-layout .arti
 @media(max-width:760px){
   .article-layout{padding:20px 0 24px}
   .article-layout .article-style{font-size:17px}
+  main:lang(ar) .article-layout .article-style,main:lang(ar) .article-layout .article-style p,main:lang(ar) .article-layout .article-style li{font-size:20px}
 }
 /* Sections that open: the spoiler and expand shortcodes. */
 .article-layout .article-style .spoiler{margin:0 0 12px;background:var(--surface);border-radius:var(--r-small)}
@@ -117,4 +118,15 @@ main:lang(ar) .article-layout .article-style,main:lang(ar) .article-layout .arti
 .sc-page #sc-container{padding:0;font-family:var(--text);max-width:none}
 .article-layout .post-nav{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px 24px;margin:0 0 18px}
 .article-layout .post-nav-item{max-width:calc(50% - 12px);min-width:0}
+.article-layout .post-nav-item:only-child{max-width:none}
 .article-layout .post-nav-item:last-child:not(:first-child){text-align:end}
+.article-logo{float:inline-end;width:96px;height:96px;margin:0 0 12px 18px;border-radius:var(--r-small)}
+@media print{
+  .site-head,.site-foot,.article-foot,.skip,.cc-window,.article-toc,.article-card h2{display:none!important}
+  body{background:#fff;color:#000;font-size:12pt}
+  .wrap{width:100%}
+  .article-layout{display:block;padding:0}
+  .article-layout .article-card{position:static;max-height:none;background:none;padding:0}
+  .article-layout .article-style,.article-layout .article-style :is(p,li){font-size:12pt}
+  a{color:#000}
+}
