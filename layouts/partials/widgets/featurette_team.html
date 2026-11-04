@@ -1,47 +1,15 @@
-{{ $ := .root }}
+{{/* Teams: a short intro, then one row per team with its picture, description and link. */}}
 {{ $page := .page }}
-
-<div class="row featurette">
-  {{ with $page.Title }}
-  <div class="col-md-12 section-heading">
-    <h2>{{ . | markdownify | emojify }}</h2>
-    {{ if $page.Params.subtitle }}<p>{{ $page.Params.subtitle | markdownify | emojify }}</p>{{ end }}
-  </div>
+{{ $page.Content }}
+<ul class="feature-rows">
+  {{ range $page.Params.featurealt }}
+  <li>
+    {{ with .img }}{{ $dims := partial "functions/static_img_dims" . }}<img src="{{ (printf "img/%s" .) | relURL }}" {{ $dims }} alt="">{{ end }}
+    <div>
+      <h3>{{ .name | markdownify | emojify }}</h3>
+      {{ with .description }}<p>{{ . | markdownify | emojify }}</p>{{ end }}
+      {{ with .buttonurl }}<a href="{{ . }}" class="btn btn-outline-primary btn-sm">{{ end }}{{ with .buttondescr }}{{ . | markdownify | emojify }}{{ end }}{{ if .buttonurl }}</a>{{ end }}
+    </div>
+  </li>
   {{ end }}
-  {{ with $page.Content }}
-  <div class="col-md-12">
-    {{ . }}
-  </div>
-  {{ end }}
-</div>
-{{ range $page.Params.featurealt }}
-  {{ $pack := or .icon_pack "fas" }}
-  {{ $pack_prefix := $pack }}
-  {{ if in (slice "fab" "fas" "far" "fal") $pack }}
-    {{ $pack_prefix = "fa" }}
-  {{ end }}
-<div class="row py-3">
-  {{ if eq .imgside "left" }}
-      <div class="col-sm-4 align-self-center">
-      {{ $dims := partial "functions/static_img_dims" .img }}{{ if .buttonurl }}<a href="{{ .buttonurl }}">{{end}}<img class="rounded-circle mx-auto d-block my-4 w-50 p-3" {{with .color}}style="background: {{.}}"{{end}} src="{{ (printf "img/%s" .img) | absURL }}" {{ $dims }} alt="{{ .imgalttext }}"> {{if .buttonurl}} </a> {{end}}
-      </div>
-        <div class="col-sm-8 align-self-center">
-        <h3>{{ .name | markdownify | emojify }}</h3>
-        {{ with .description }}<p>{{ . | markdownify | emojify }}</p>{{ end }}
-        {{ with .buttonurl }}<a href="{{ . }}" class="btn btn-menu btn-outline-primary">{{end}}{{ with .buttondescr }}{{ . | markdownify | emojify }}{{end}} {{if .buttonurl}}<i class="fa fa-angle-right" alt="right arrow" aria-hidden="true"></i></a>{{end}}
-      </div>
-  {{ end }}
-  {{ if eq .imgside "right" }}
-      <div class="col-sm-8 align-self-center">
-        <h3>{{ .name | markdownify | emojify }}</h3>
-        {{ with .description }}<p>{{ . | markdownify | emojify }}</p>{{ end }}
-        {{ with .buttonurl }}<a href="{{ . }}" class="btn btn-menu btn-outline-primary">{{end}}{{ with .buttondescr }}{{ . | markdownify | emojify }}{{end}} {{ if .buttonurl }}<i class="fa fa-angle-right" aria-hidden="true"></i></a> {{ end }}
-      </div>
-      <div class="col-sm-4 align-self-center">
-      {{ if .buttonurl }}<a href="{{ .buttonurl }}">{{end}}
-        {{ $dims := partial "functions/static_img_dims" .img }}<img class="rounded-circle mx-auto d-block my-4 w-50 p-3" {{with .color}}style="background: {{.}}"{{end}} src="{{ (printf "img/%s" .img) | absURL }}" {{ $dims }} alt="{{ .imgalttext }}"> {{if .buttonurl}} </a> {{end}}
-      </div>
-{{ end }}
-</div>  
-{{ end }}
-  
+</ul>

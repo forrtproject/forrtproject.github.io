@@ -25,6 +25,7 @@
 .col{flex:1 0 0}
 .col-auto{flex:0 0 auto;width:auto}
 @media(min-width:576px){.col-sm-4{width:33.333%}.col-sm-8{width:66.667%}.col-sm-auto{flex:0 0 auto;width:auto}.d-sm-flex{display:flex!important}.text-sm-right{text-align:end}}
+@media(min-width:1200px){.col-xl-3{width:25%}.col-xl-9{width:75%}}
 @media(min-width:768px){.col-md-3{width:25%}.col-md-4{width:33.333%}.col-md-8{width:66.667%}.col-md-9{width:75%}.col-md-12{width:100%}.d-md-none{display:none!important}}
 @media(min-width:992px){.col-lg-4{width:33.333%}.col-lg-8{width:66.667%}.col-lg-12{width:100%}.d-lg-none{display:none!important}}
 .media{display:flex;align-items:flex-start;gap:12px}

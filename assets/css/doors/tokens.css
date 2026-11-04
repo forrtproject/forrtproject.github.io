@@ -22,8 +22,8 @@
   --com-bg:#f8eadc;
   --urgent:#b3261e;
   /* Type */
-  --display:'Newsreader',Georgia,serif;
-  --text:'Source Sans 3','Source Sans Pro',system-ui,sans-serif;
+  --display:'Newsreader',Georgia,'Apple Symbols','Segoe UI Symbol','Noto Sans Symbols 2',serif;
+  --text:'Source Sans 3','Source Sans Pro',system-ui,'Apple Symbols','Segoe UI Symbol','Noto Sans Symbols 2',sans-serif;
   --text-size:18px;
   --display-weight:500;
   --r-small:8px;

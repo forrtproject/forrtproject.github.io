@@ -5,11 +5,13 @@
 .article-layout-wide{grid-template-columns:minmax(0,1fr)}
 .article-layout .reading{min-width:0}
 .article-layout .crumbs{margin-bottom:18px}
+.article-layout .article-head{margin-bottom:22px}
+.article-layout .article-head:has(.byline:empty){margin-bottom:0}
 .article-layout .article-meta{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:18px;font-size:15px;font-weight:600}
 .article-layout .article-meta span{background:var(--surface);padding:3px 10px;border-radius:var(--r-small)}
 .article-layout .reading h1{font-size:clamp(36px,4.2vw,58px);line-height:1.06;letter-spacing:-.01em;margin:0;text-wrap:balance}
 .article-layout .standfirst{font:500 clamp(21px,1.9vw,25px)/1.4 var(--display);margin:18px 0 0;max-width:30em;color:var(--ink)}
-.article-layout .byline{display:flex;flex-wrap:wrap;gap:4px 18px;margin:16px 0 22px;font-size:16px}
+.article-layout .byline{display:flex;flex-wrap:wrap;gap:4px 18px;margin:16px 0 0;font-size:16px}
 .article-layout .byline a{color:var(--link);text-underline-offset:3px;text-decoration:underline}
 .article-layout .byline-authors>*{display:inline}
 .article-layout .article-image{margin:0 0 28px}
@@ -19,16 +21,16 @@
 .article-layout .article-style p,.article-layout .article-style li{font-size:inherit;line-height:inherit}
 /* Wide pages keep the reading width for their prose, and give the rest of the page to tables and charts. */
 .article-layout-wide .article-style p,.article-layout-wide .article-style li{max-width:29em}
-.article-layout .article-style p{margin:0 0 18px}
+.article-layout .article-style p{margin:0 0 18px;max-width:28.4em}
 .article-layout .article-style ul,.article-layout .article-style ol{margin:0 0 18px;padding-inline-start:1.4em}
 .article-layout .article-style li{margin-bottom:6px}
 .article-layout .article-style :is(h2,h3,h4){line-height:1.15;margin:34px 0 12px;text-align:start}
 .article-layout .article-style h2{font-size:30px}
 .article-layout .article-style h3{font-size:24px}
 .article-layout .article-style h4{font-size:20px}
-.article-layout .article-style a{color:var(--link);text-decoration:underline;text-underline-offset:3px}
-.article-layout .article-style a:hover{color:var(--ink)}
-.article-layout .article-style blockquote{margin:28px 0;padding:18px 22px;background:var(--edu-bg);border:0;border-radius:var(--r-large);color:var(--ink);font-size:inherit}
+.article-layout .article-style a:not([class]){color:var(--link);text-decoration:underline;text-underline-offset:3px}
+.article-layout .article-style a:not([class]):hover{color:var(--ink)}
+.article-layout .article-style blockquote{margin:28px 0;padding:18px 22px;background:var(--edu-bg);border:0;border-radius:var(--r-large);color:var(--ink);font-size:19px!important}
 .article-layout .article-style blockquote p:last-child{margin-bottom:0}
 .article-layout .article-style figure{margin:28px 0}
 .article-layout .article-style img{max-width:100%;height:auto}
@@ -36,10 +38,13 @@
 .article-layout .article-style iframe,.article-layout .article-style video{max-width:100%}
 /* A hand-coloured red button in one lesson. Our red keeps its meaning and passes on the page. */
 .article-layout .article-style .btn[style*="color:red"]{color:var(--urgent)!important}
-.article-layout .article-style div.alert,.article-layout .article-style div.alert>div{font-size:16px;color:var(--ink)}
+.article-layout .article-style div.alert,.article-layout .article-style div.alert>div{font-size:inherit;color:var(--ink)}
+.article-layout .article-style div[style*="width"]{max-width:100%}
 .article-layout .article-style table{display:block;max-width:100%;overflow-x:auto;margin:0 0 18px;font-size:16px;line-height:1.45;border-collapse:collapse}
 .article-layout .article-style th,.article-layout .article-style td{padding:6px 10px;border-bottom:1px solid var(--line);text-align:start}
 .article-layout .article-style pre{max-width:100%;overflow-x:auto;font-size:15px}
+.article-layout .article-style code{font-size:max(15px,.9em)}
+main:lang(ar) .article-layout .article-style,main:lang(ar) .article-layout .article-style p,main:lang(ar) .article-layout .article-style li{font-size:23px}
 /* The theme's root size shrinks on phones, so rem and small-text rules from it and from older
    Markdown come out as low as 10 px. */
 .article-layout .article-style :is(small,.small,[style*="font-size:."],[style*="font-size:0."]),.article-layout .article-style .btn:not([style*="font-size"]),.article-layout .btn-links .btn{font-size:15px!important;line-height:1.35}
@@ -72,3 +77,41 @@
   .article-layout{padding:20px 0 24px}
   .article-layout .article-style{font-size:17px}
 }
+/* Sections that open: the spoiler and expand shortcodes. */
+.article-layout .article-style .spoiler{margin:0 0 12px;background:var(--surface);border-radius:var(--r-small)}
+.article-layout .article-style .spoiler>summary{padding:10px 14px;font-weight:600;font-size:18px;line-height:1.35;color:var(--link);cursor:pointer}
+.article-layout .article-style .spoiler>summary:hover{color:var(--ink)}
+.article-layout .article-style .spoiler-body{padding:2px 14px 12px;font-size:18px;line-height:1.55}
+.article-layout .article-style .spoiler-body>:last-child{margin-bottom:0}
+/* Buttons in Markdown keep their own colours, against the rule for links in text. */
+/* Glossary pages: the reading layout, with the list of terms in the side card. */
+.glossary-layout .language-switcher{margin:10px 0 14px;font-size:16px}
+.glossary-layout .language-switcher a{color:var(--link);text-decoration:underline;text-underline-offset:3px}
+.glossary-layout .term-definition{padding:0 0 14px;border-bottom:1px solid var(--line)}
+.glossary-layout .article-style .term-line{margin-bottom:8px;font-size:19px;line-height:1.5}
+.glossary-layout .references-list,.glossary-layout .references-list li{font-size:19px!important}
+.glossary-layout .article-style .btn-group{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 18px}
+.glossary-layout .article-style .btn-group .btn{margin:0!important;padding:7px 14px!important;background:#fff;border-radius:999px!important;font-size:16px!important;color:var(--link)}
+.glossary-layout .article-style .btn-group .btn.active{background:var(--ink);border-color:var(--ink);color:#fff}
+.glossary-card{display:flex;flex-direction:column;overflow:hidden!important}
+.glossary-card .form-control{flex:none;margin-bottom:10px}
+.term-list{flex:1;min-height:0;overflow-y:auto;margin-inline:-6px;padding-inline:6px;font-size:16px;line-height:1.3}
+.term-list ul{margin:0;padding:0;list-style:none}
+.term-list a{display:block;padding:5px 0;color:var(--link);text-decoration:underline;text-underline-offset:3px}
+.term-list a:hover{color:var(--ink)}
+.term-list a[aria-current]{color:var(--ink);font-weight:700;text-decoration:none}
+@media(max-width:1000px){.term-list{max-height:340px}}
+.resource-open{margin:0 0 24px}
+.resource-open .btn{padding:10px 22px;font-size:17px}
+.article-layout .article-tags{margin:0 0 18px}
+/* Author profiles: the person's details in the side card. */
+.profile-card .profile-photo{display:block;width:135px;height:135px;margin:0 0 12px;object-fit:cover;border-radius:50%}
+.profile-card .avatar-square{border-radius:var(--r-small)}
+.profile-card p{margin:0 0 6px}
+.profile-card .profile-role{font-weight:700}
+.profile-card a{color:var(--link);text-decoration:underline;text-underline-offset:3px}
+.profile-card ul.network-icon a{text-decoration:none}
+.sc-page{padding:32px 0 40px}
+.sc-page h1{font-size:clamp(36px,4.2vw,58px);line-height:1.06;margin:0 0 18px}
+.sc-page .crumbs{margin-bottom:18px}
+.sc-page #sc-container{padding:0;font-family:var(--text);max-width:none}

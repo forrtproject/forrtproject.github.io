@@ -63,7 +63,7 @@ image:
 .am-fact-label {
   display: block;
   color: var(--am-muted);
-  font-size: 0.72rem;
+  font-size: 15px;
   font-weight: 700;
   letter-spacing: 0.09em;
   text-transform: uppercase;
@@ -274,7 +274,7 @@ image:
   white-space: nowrap;
 }
 .am-prog-watch a::before,
-.am-prog-playlist a::before { content: "\25B6\00A0"; font-size: 0.65rem; }
+.am-prog-playlist a::before { content: "\25B6\00A0"; font-size: 15px; }
 .am-prog-watch a:hover,
 .am-prog-playlist a:hover { background: var(--am-tint); text-decoration: none; }
 .am-prog-playlist { margin: -0.4rem 0 0.9rem; }
@@ -354,7 +354,7 @@ image:
   border-radius: 3px;
   background: #fdf6e0;
   color: #6e5a1d;
-  font-size: 0.66rem;
+  font-size: 15px;
   font-weight: 700;
   letter-spacing: 0.04em;
   text-transform: uppercase;

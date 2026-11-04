@@ -30,7 +30,7 @@
 {{ end }}
 {{ if and $featured (not .Params.image.preview_only) }}
 {{ $image := $featured }}
-{{ if gt $featured.Width 720 }}{{ $image = $featured.Resize "720x" }}{{ end }}
+{{ $image = $featured.Resize (printf "%dx webp q78" (cond (gt $featured.Width 720) 720 $featured.Width)) }}
 <figure class="article-image">
   <img src="{{ $image.RelPermalink }}" width="{{ $image.Width }}" height="{{ $image.Height }}" alt="{{ with $.Params.image.alt_text }}{{ . }}{{ else }}Featured image for {{ $.Title }}{{ end }}">
   {{ with $.Params.image.caption }}<figcaption>{{ . | markdownify | emojify }}</figcaption>{{ end }}

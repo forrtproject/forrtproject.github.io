@@ -93,15 +93,15 @@ body {
 }
 
 .stage-box.paper {
-    border-top-color: #e74c3c;
+    border-top-color: var(--com);
 }
 
 .stage-box.planning {
-    border-top-color: #ffc107;
+    border-top-color: var(--edu);
 }
 
 .stage-box.project {
-    border-top-color: #019e74;
+    border-top-color: var(--res);
 }
 
 /* Stage Title Styles */
@@ -120,15 +120,15 @@ h3 {
 }
 
 .paper .stage-title {
-    background: linear-gradient(135deg, #d55e00, #d55e00);
+    background: var(--com);
 }
 
 .planning .stage-title {
-    background: linear-gradient(135deg, #ffc107, #ffc107);
+    background: var(--edu);
 }
 
 .project .stage-title {
-    background: linear-gradient(135deg, #019e74, #019e74);
+    background: var(--res);
 }
 
 /* Content Styles */

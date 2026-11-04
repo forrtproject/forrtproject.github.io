@@ -10,3 +10,6 @@ home/7-newsletter.md.old     # A retired draft that Hugo copied out by accident,
 about/visitors/index.html    # Its generated description quotes the stats table, whose link text lost "https://" for the preview
 js/load-theme.js                 # The theme's day/night script, gone with the theme's look
 js/academic.min.FINGERPRINT.js   # The theme's script bundle, without its search, under a new name while some pages still need it
+ai-metascience/index.html        # Text sizes edited on the branch, so its modified date moves
+welcome/index.html               # A broken link fixed on the branch, so its modified date moves
+manuscript/index.html            # A stray highlighter setting removed on the branch, so its modified date moves

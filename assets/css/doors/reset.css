@@ -1,6 +1,7 @@
 /* What pages need from a browser reset, in place of Bootstrap's reboot. */
 *,*::before,*::after{box-sizing:border-box}
-html{-webkit-text-size-adjust:100%}
+/* Older Markdown and shortcodes size text in rem, written against the theme's 20 px root. */
+html{-webkit-text-size-adjust:100%;font-size:20px}
 body{margin:0}
 h1,h2,h3,h4,h5,h6,p,ul,ol,dl,figure,blockquote,pre{margin-top:0}
 h1,h2,h3,h4,h5,h6{margin-bottom:.5em;line-height:1.2}

@@ -131,6 +131,7 @@ window.doorsSearch = (query) => {
   if (query) {
     run(query);
   } else {
+    hits.replaceChildren();
     ready().then(() => { status.textContent = ''; }, () => {
       status.textContent = 'Search is unavailable right now. Reload the page and try again.';
     });

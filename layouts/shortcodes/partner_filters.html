@@ -3,14 +3,14 @@
     {{/* Cluster Filter */}}
     <div class="filter-section-title">Filter by Partner Category</div>
     <div id="pill-bar-cluster" class="pill-bar">
-        <span class="filter-pill active" data-group="cluster" data-value="all">All Partners</span>
-        <span class="filter-pill" data-group="cluster" data-value="Global Intergovernmental Organizations">Global Intergovernmental Organizations</span>
-        <span class="filter-pill" data-group="cluster" data-value="Reproducibility Networks">Reproducibility Networks</span>
-        <span class="filter-pill" data-group="cluster" data-value="Open Science Infrastructure">Open Science Infrastructure</span>
-        <span class="filter-pill" data-group="cluster" data-value="Open Research Communities">Open Research Communities</span>
-        <span class="filter-pill" data-group="cluster" data-value="Education & Training">Education & Training</span>
-        <span class="filter-pill" data-group="cluster" data-value="Open Research & Equity">Open Research & Equity</span>
-        <span class="filter-pill" data-group="cluster" data-value="Higher Education Partners">Higher Education Partners</span>
+        <button type="button" class="filter-pill active" aria-pressed="true" data-group="cluster" data-value="all">All Partners</button>
+        <button type="button" class="filter-pill" aria-pressed="false" data-group="cluster" data-value="Global Intergovernmental Organizations">Global Intergovernmental Organizations</button>
+        <button type="button" class="filter-pill" aria-pressed="false" data-group="cluster" data-value="Reproducibility Networks">Reproducibility Networks</button>
+        <button type="button" class="filter-pill" aria-pressed="false" data-group="cluster" data-value="Open Science Infrastructure">Open Science Infrastructure</button>
+        <button type="button" class="filter-pill" aria-pressed="false" data-group="cluster" data-value="Open Research Communities">Open Research Communities</button>
+        <button type="button" class="filter-pill" aria-pressed="false" data-group="cluster" data-value="Education & Training">Education & Training</button>
+        <button type="button" class="filter-pill" aria-pressed="false" data-group="cluster" data-value="Open Research & Equity">Open Research & Equity</button>
+        <button type="button" class="filter-pill" aria-pressed="false" data-group="cluster" data-value="Higher Education Partners">Higher Education Partners</button>
     </div>
 
     {{/* Empty State Warning */}}
@@ -73,8 +73,9 @@
         // Cluster Filters
         clusterPills.forEach(pill => {
             pill.addEventListener('click', () => {
-                clusterPills.forEach(p => p.classList.remove('active'));
+                clusterPills.forEach(p => { p.classList.remove('active'); p.setAttribute('aria-pressed', 'false'); });
                 pill.classList.add('active');
+                pill.setAttribute('aria-pressed', 'true');
                 currentCluster = pill.getAttribute('data-value');
                 filterPartners();
             });

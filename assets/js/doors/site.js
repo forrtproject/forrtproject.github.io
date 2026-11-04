@@ -270,3 +270,16 @@ if (chatWidget) {
     });
   }
 }
+
+// Glossary pages: filter the list of terms, and show the current term inside its card.
+const termFilter = document.getElementById('glossary-search');
+if (termFilter) {
+  const terms = [...document.querySelectorAll('.term-list li')];
+  termFilter.addEventListener('input', () => {
+    const query = termFilter.value.toLowerCase();
+    terms.forEach((term) => { term.hidden = !term.textContent.toLowerCase().includes(query); });
+  });
+  const list = document.querySelector('.term-list');
+  const current = list.querySelector('[aria-current]');
+  if (current) list.scrollTop = current.offsetTop - list.offsetTop - list.clientHeight / 3;
+}

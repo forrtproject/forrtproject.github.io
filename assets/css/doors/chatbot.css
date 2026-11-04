@@ -295,7 +295,7 @@
   border: 1px solid var(--link);
   color: var(--link);
   cursor: pointer;
-  font-size: 0.72rem;
+  font-size: 15px;
   padding: 2px 8px;
   line-height: 1.4;
   border-radius: 12px;
@@ -414,7 +414,7 @@
   background: none;
   border: none;
   color: var(--link);
-  font-size: 0.72rem;
+  font-size: 15px;
   cursor: pointer;
   padding: 0;
   white-space: nowrap;
@@ -640,7 +640,7 @@
 }
 
 .just-os-history-meta {
-  font-size: 0.72rem;
+  font-size: 15px;
   color: var(--soft);
 }
 
