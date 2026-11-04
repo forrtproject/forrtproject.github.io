@@ -324,7 +324,7 @@ if (chatWidget) {
   }, 10000);
   // On a phone the invitation would sit over the text, so it shows only at the top of a page.
   const reading = () => innerWidth <= 760 && scrollY > 120;
-  addEventListener('scroll', () => { if (reading()) chatBubble.classList.remove('bubble-visible'); }, { passive: true });
+  addEventListener('scroll', () => { if (reading() && !chatFailed) chatBubble.classList.remove('bubble-visible'); }, { passive: true });
   if (chatButton.tagName === 'BUTTON') {
     chatButton.addEventListener('click', () => {
       if (window.toggleJustOS) {
