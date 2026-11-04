@@ -53,8 +53,7 @@ subtitle = "Structural, Procedural, and Community Changes in Psychological Scien
 
 <br>
 
-
-## Overview
+# Overview
 ---------------------
 
 This page is dedicated to exploring and showcasing the significant and positive changes that have emerged in the field of psychological science in response to the replication crisis. Our paper, *"[The replication crisis has led to positive structural, procedural, and community changes](https://www.nature.com/articles/s44271-023-00003-2),"* serves as the foundation for this discussion.
@@ -70,8 +69,7 @@ We authored this paper to shed light on the constructive outcomes resulting from
 
 <br>
 
-
-## Educational Toolkit
+# Educational Toolkit
 ---------------------
 
 Our educational toolkit is designed to support educators, researchers, and students in understanding and educating about the replication crisis and recent advancements. The toolkit consists of five key components:
@@ -106,7 +104,7 @@ Our educational toolkit is designed to support educators, researchers, and stude
 
 <br>
 
-### Summary of the paper & argument
+## Summary of the paper & argument
 ------- 
 
 **Positive Changes Detailed:** 
@@ -154,14 +152,7 @@ Our educational toolkit is designed to support educators, researchers, and stude
 
 <br>
 
-
-
-
-
-
 ## Contact Us
 ---------- 
 
 For more information, please contact us: info@forrt.org.
-
-
