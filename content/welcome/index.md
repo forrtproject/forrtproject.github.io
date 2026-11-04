@@ -10,7 +10,7 @@ type: welcome
     step="1"
     title="Learn About FORRT"
     description="Start by understanding our mission and the three-pronged approach we use to support open science education."
-    url="/about/about"
+    url="/about/us/"
 >}}
 
 {{< welcome 

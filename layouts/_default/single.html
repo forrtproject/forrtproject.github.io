@@ -2,52 +2,19 @@
      standalone pages. Calm and readable, in one narrow column, with a side card when there is
      something to put in it. */}}
 {{- define "main" -}}
-{{/* The Steering Committee page is generated with its own layout, and its stylesheet targets the
-     theme's markup, so it stays on that markup until Phase 3 redraws it. */}}
 {{ if eq .Path "/about/steering-committee" }}
-<article class="article">
-  {{ partial "page_header" . }}
-  <div class="article-container">
-    <div class="article-style">
-      {{ .Content }}
-    </div>
-    {{ partial "page_footer" . }}
-  </div>
-</article>
-{{ else }}
-{{ $headings := findRE `<h[23][ >]` .Content }}
-{{ $hasDates := and .Params.date (not (in (slice "page") .Type)) }}
-{{ $wide := in site.Params.doors.wide_pages .Path }}
-{{ $hasCard := and (not $wide) (or $hasDates (gt (len $headings) 1)) }}
-<div class="wrap">
-  <div class="article-layout{{ if not $hasCard }} article-layout-single{{ end }}{{ if $wide }} article-layout-wide{{ end }}">
-    <article class="reading">
-      {{ if not .Params.hide_page_header }}
-        {{ partial "doors/article_header" . }}
-      {{ end }}
-      <div class="article-style">
-        {{ .Content }}
-      </div>
-      <div class="article-foot">
-        <p class="share-link"><button class="copy-link" type="button" data-copy-link="{{ .Permalink }}">Copy article link</button> <span role="status"></span></p>
-        {{ partial "page_footer" . }}
-      </div>
-    </article>
-    {{ if $hasCard }}
-    <section class="article-card" aria-label="About this article">
-      {{ if $hasDates }}
-      <dl>
-        <dt>Published</dt><dd>{{ .Date.Format "2 January 2006" }}</dd>
-        {{ if ne (.Lastmod.Format "2006-01-02") (.Date.Format "2006-01-02") }}<dt>Updated</dt><dd>{{ .Lastmod.Format "2 January 2006" }}</dd>{{ end }}
-      </dl>
-      {{ end }}
-      {{ if gt (len $headings) 1 }}
-      <h2>On this page</h2>
-      <div class="article-toc">{{ .TableOfContents }}</div>
-      {{ end }}
-    </section>
-    {{ end }}
-  </div>
+{{/* Generated with its own stylesheet, heading and Google Fonts link; scripts/generate_sc_profiles.py is the source. */}}
+<div class="wrap sc-page">
+  <header class="article-head">
+    {{ partial "doors/crumbs" (dict "page" .) }}
+    <h1>{{ .Title }}</h1>
+  </header>
+  {{ $body := partial "doors/content" .Content }}
+  {{ $body = replaceRE `<link href="https://fonts\.googleapis[^>]*>` "" $body }}
+  {{ $body = replaceRE `(?s)<h2 class="sc-page-title">.*?</h2>` "" $body }}
+  {{ replaceRE `(</?)main>` "${1}div>" $body | safeHTML }}
 </div>
+{{ else }}
+{{ partial "doors/reading" . }}
 {{ end }}
 {{- end -}}

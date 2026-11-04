@@ -1,0 +1,4 @@
+{{/* Page content with its own Markdown top-level headings demoted, because the page already has its
+     h1 (issue #928). Input: the rendered HTML. */}}
+{{ $demoted := replaceRE `(?i)<(/?)h1\b` "<${1}h2" . | safeHTML }}
+{{ return $demoted }}

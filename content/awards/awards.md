@@ -72,7 +72,9 @@ subtitle = ""
   window.addEventListener("load", () => {
     const jsConfetti = new JSConfetti();
     
-    // Function to trigger confetti
+    // Once, and only for visitors who have not asked for reduced motion.
+    if (matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
     const triggerConfetti = () => {
         jsConfetti.addConfetti({
         emojis: ['🎉', '🥳', '👏', '✨', '⭐','🏆'],
@@ -83,9 +85,6 @@ subtitle = ""
 
     // Trigger immediately on load
     triggerConfetti();
-
-    // Trigger every 60 seconds (60000 ms)
-    setInterval(triggerConfetti, 60000);
   });
 </script>
 

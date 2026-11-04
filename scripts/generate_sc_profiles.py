@@ -82,21 +82,19 @@ CATEGORY_DETAILS = {
 # HTML Templates - Custom CSS (External)
 PAGE_TEMPLATE = r"""
 <!-- Google Fonts -->
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <!-- External CSS -->
 <link rel="stylesheet" href="/css/steering-committee.css">
 
 <div id="sc-container" class="col-lg-12">
-    <h1 class="sc-page-title">Steering Committee</h1>
     <nav class="sc-nav">
         <a href="#strategic">Strategic Focus Areas</a>
         <a href="#operations">Operations & Stewardship</a>
         <a href="#steering">Strategic Facilitation & Integration</a>
         <a href="#guidance">Guidance & Oversight</a>
     </nav>
-    <main>
+    <div>
         __CONTENT__
-    </main>
+    </div>
     <div id="modals-container">
         __MODALS__
     </div>

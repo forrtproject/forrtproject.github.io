@@ -69,6 +69,8 @@ AUDIT = """() => {
   };
   for (const el of main.querySelectorAll('*')) {
     if (!el.getClientRects().length || !el.textContent.trim()) continue;
+    // The flipbook library draws its own controls.
+    if (el.closest('.df-container,._df_book')) continue;
     const style = getComputedStyle(el);
     // Decision D15: real italics only inside references. Same selector as base.css.
     const reference = el.closest('.references-list,.csl-bib-body') || el.matches(':is(h2,h3,h4)[id^=references i]~:is(ul,ol,p) *');
@@ -175,18 +177,26 @@ def check_screens(browser, base, failures):
 
 
 def article_paths(root):
-    """Every page drawn with the article template, from the build."""
+    """Pages drawn on the reading layout, from the build."""
     paths = []
     for directory, _, files in os.walk(root):
         if "index.html" in files:
             with open(os.path.join(directory, "index.html"), encoding="utf-8", errors="replace") as handle:
                 if re.search(r'class="?article-layout', handle.read()):
                     paths.append(os.path.relpath(directory, root).replace(os.sep, "/") + "/")
-    return sorted(paths)
+    # The two generated collections have over a thousand pages from one template, so take a sample.
+    chosen = []
+    seen = {}
+    for path in sorted(paths):
+        section = path.split("/")[0]
+        seen[section] = seen.get(section, 0) + 1
+        if section not in ("curated_resources", "glossary", "authors") or seen[section] % 40 == 1:
+            chosen.append(path)
+    return chosen
 
 
 def check_articles(browser, base, root, failures):
-    """The article template across all its pages: content varies more than the layout does."""
+    """The reading layout across its pages: content varies more than the layout does."""
     paths = article_paths(root)
     print(f"  {len(paths)} pages")
     for width in WIDTHS:
@@ -488,26 +498,42 @@ def check_icons(root, failures):
     with open(os.path.join(here, "..", "..", "assets", "css", "doors", "icons.css"), encoding="utf-8") as handle:
         known = set(re.findall(r"\.(fa-[a-z0-9-]+)::before", handle.read()))
     used = {}
-    # Scripts add a few icons of their own.
+    # The class pattern and sizing modifiers are the same for pages and for scripts that add icons.
+    classes = re.compile(r"""["'](?:[^"']* )?((?:fa[srb]?|fa-solid|fa-regular|fa-brands) [^"']*)["']""")
+    icon = re.compile(r"\bfa-(?!solid\b|regular\b|brands\b|lg\b|fw\b|[0-9.]+x\b)[a-z0-9.-]+")
+
+    def scan(path, where):
+        with open(path, encoding="utf-8", errors="ignore") as handle:
+            for found in classes.findall(handle.read()):
+                for name in icon.findall(found):
+                    if name not in known:
+                        used.setdefault(name, where)
+
     for folder in ("static/js", "assets/js/doors"):
         for name in os.listdir(os.path.join(here, "..", "..", folder)):
             if name.endswith(".js"):
-                with open(os.path.join(here, "..", "..", folder, name), encoding="utf-8", errors="ignore") as handle:
-                    for icon in re.findall(r"\bfa[srb]? (fa-[a-z0-9-]+)", handle.read()):
-                        if icon not in known:
-                            used.setdefault(icon, folder)
+                scan(os.path.join(here, "..", "..", folder, name), folder)
     for folder, _, files in os.walk(root):
         for name in files:
-            if not name.endswith(".html"):
-                continue
-            with open(os.path.join(folder, name), encoding="utf-8", errors="ignore") as handle:
-                for classes in re.findall(r'class="((?:fa[srb]?|fa-solid|fa-regular|fa-brands) [^"]*)"', handle.read()):
-                    for icon in re.findall(r"\bfa-(?!solid\b|regular\b|brands\b|lg\b|fw\b|[0-9.]+x\b)[a-z0-9.-]+", classes):
-                        if icon not in known:
-                            used.setdefault(icon, os.path.relpath(folder, root))
-    for icon, where in sorted(used.items()):
-        failures.append(f"icon {icon} in {where} is missing from assets/css/doors/icons.css (build_fonts.py --icons)")
+            if name.endswith(".html"):
+                scan(os.path.join(folder, name), os.path.relpath(folder, root))
+    for name, where in sorted(used.items()):
+        failures.append(f"icon {name} in {where} is missing from assets/css/doors/icons.css (build_fonts.py --icons)")
     print(f"  {len(known)} icons in the subset, {len(used)} used but missing", flush=True)
+
+
+def check_no_theme(root, failures):
+    """No page loads the theme's stylesheet, Font Awesome's CDN sheet or jQuery from the CDN."""
+    found = {}
+    for folder, _, files in os.walk(root):
+        if "index.html" in files:
+            with open(os.path.join(folder, "index.html"), encoding="utf-8", errors="ignore") as handle:
+                text = handle.read()
+            for mark in re.findall(r"css/academic\.[^\"' >]*css|font-awesome/[^\"' >]*css|ajax/libs/jquery/[^\"' >]*js", text):
+                found.setdefault(mark.split("/")[0], os.path.relpath(folder, root))
+    for mark, where in found.items():
+        failures.append(f"/{where}/ still loads the theme's {mark}")
+    print(f"  pages still loading theme assets: {len(found)} kinds", flush=True)
 
 
 def main():
@@ -521,6 +547,8 @@ def main():
     if args.public:
         print("Icons")
         check_icons(os.path.abspath(args.public), failures)
+        print("Theme assets")
+        check_no_theme(os.path.abspath(args.public), failures)
     with sync_playwright() as playwright:
         browser = playwright.chromium.launch()
         print("Screens")

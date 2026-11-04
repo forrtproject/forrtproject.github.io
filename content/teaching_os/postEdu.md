@@ -52,7 +52,7 @@ You can watch the recording of a part of one of the launch events, where the pro
 <h3 style="color:#38673F"> 🚨 <strong> Phase 2 (October 2024 - April 2025): Module Development
  </strong> </h3>
 
-Using insights from the launch events and following FORRT’s comprehensive clusters (https://forrt.org/clusters/), we will develop content for a self-guided program targeting educators interested in incorporating Open Science into their teaching/mentoring. We will develop three modules, each including active reflections on incorporating the ethos of Open Science and utilising existing open educational resources within different disciplines.
+Using insights from the launch events and following FORRT’s comprehensive [clusters](/clusters/), we will develop content for a self-guided program targeting educators interested in incorporating Open Science into their teaching/mentoring. We will develop three modules, each including active reflections on incorporating the ethos of Open Science and utilising existing open educational resources within different disciplines.
 
 - **Module 1 - “A positive lens”** (Module coordinator: Dr. Thomas Rhys Evans) <br>
 The ethos of Open Science in a teaching context (importance of meta-science, transparency and reproducibility, proposed improved initiatives, and ethical consideration for improved practices). 

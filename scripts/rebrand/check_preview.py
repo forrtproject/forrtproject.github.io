@@ -30,6 +30,10 @@ REDIRECTS = {
     "glossary/vbeta/no-such-term/": "glossary/english/",
     "glossary/vbeta/": "glossary/english/",
     "curated_resources/no-such-resource/": "resources/",
+    "curated_resources/page/3/": "resources/",
+    "forrt_clusters/academic-life-and-culture/page/2/": "forrt_clusters/academic-life-and-culture/",
+    "tag/": "tags/",
+    "tag/open-science/": "tags/?tag=open-science",
     "glossary/english/no-such-term/": "glossary/english/",
     "author/someone/": "contributors/",
     "summaries/no-such-summary/": "",
@@ -71,6 +75,8 @@ def check_redirects(browser, base, failures):
         except Exception:
             pass
         landed = urlsplit(page.url).path
+        if "?" in expected:
+            landed += "?" + urlsplit(page.url).query
         want = expected[1:] if expected.startswith("//") else root.path + expected
         ok = landed.rstrip("/") == want.rstrip("/")
         # A sister site may forward within itself once it has been reached.
