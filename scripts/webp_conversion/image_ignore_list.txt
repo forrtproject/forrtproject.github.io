@@ -1,0 +1,4 @@
+
+static/vendor/assets/leaflet/1.5.1/images/layers.png
+static/vendor/assets/leaflet/1.5.1/images/layers-2x.png
+static/vendor/assets/leaflet/1.5.1/images/marker-icon.png
