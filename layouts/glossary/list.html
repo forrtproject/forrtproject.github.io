@@ -1,80 +1,20 @@
 {{- define "main" -}}
-
-<style>
-  .glossary-toc {
-    order: 99;
-  }
-  @media (min-width: 1200px) {
-    .glossary-toc {
-      order: -1;
-    }
-  }
-</style>
-
-<script>
-  document.addEventListener("DOMContentLoaded", function() {
-    const searchInput = document.getElementById('glossary-search');
-    if (searchInput) {
-      searchInput.addEventListener('input', function() {
-        const query = this.value.toLowerCase();
-        document.querySelectorAll('#TableOfContents .nav-item').forEach(function(item) {
-          const link = item.querySelector('.nav-link');
-          const text = link ? link.textContent.toLowerCase() : '';
-          item.style.display = text.includes(query) ? '' : 'none';
-        });
-      });
-    }
-  });
-</script>
-
-<div class="container-fluid docs">
-  <div class="row flex-xl-nowrap">
-    <div class="col-12 col-xl-3 docs-toc glossary-toc">
-      <ul class="nav toc-top">
-        <li><a href="#" id="back_to_top" class="docs-toc-title">List of terms</a></li>
-      </ul>
-
-      <input type="text" id="glossary-search" class="form-control form-control-sm mb-2"
-             placeholder="Filter terms..."
-             aria-label="Filter terms">
-
-      <nav id="TableOfContents" class="nav flex-column">
-        <ul>
-          {{ $currentSection := .File.Dir }}
-          {{ $glossaryPages := where .Site.RegularPages "Type" "glossary" }}
-          {{ $filteredPages := where $glossaryPages "File.Dir" $currentSection }}
-          {{ $sortedPages := sort $filteredPages "Params.sort_key" }}
-          {{ range $index, $page := $sortedPages }}
-          <li class="nav-item">
-            <a href="{{ .Permalink }}" class="nav-link">{{ .Title }}</a>
-          </li>
-          {{ end }}
-        </ul>
-      </nav>
-    </div>
-
-    <div class="col-12 col-xl-8 pl-md-5 docs-content">
-      <article class="article">
-        <div class="docs-article-container mx-auto">
-          <h1>{{ .Title }}</h1>
-          <div class="article-style">
-            {{ .Content }}
-          </div>
-          {{ partial "tags.html" . }}
-          {{ if site.Params.docs_section_pager }}
-          <div class="article-widget">
-            {{ partial "section_pager" . }}
-          </div>
-          {{ end }}
-        </div>
-        <div class="body-footer">
-          <p>{{ i18n "last_updated" }} {{ $.Lastmod.Format site.Params.date_format }}</p>
-          {{ partial "page_edit" . }}
-        </div>
-      </article>
-
-    </div>
+{{/* A glossary's language index: the introduction beside the list of its terms. */}}
+<div class="wrap">
+  <div class="article-layout glossary-layout">
+    <article class="reading">
+      <header class="article-head">
+        {{ partial "doors/crumbs" (dict "page" .) }}
+        <h1>{{ .Title }}</h1>
+      </header>
+      <div class="article-style">
+        {{ partial "doors/content" .Content }}
+      </div>
+      <div class="article-foot">
+        <p>{{ i18n "last_updated" }} {{ $.Lastmod.Format site.Params.date_format }}</p>
+      </div>
+    </article>
+    {{ partial "doors/glossary_terms" (dict "page" . "labels" (dict "list_of_terms" "List of terms" "filter_terms" "Filter terms...") "defined_only" false) }}
   </div>
 </div>
-
 {{- end -}}

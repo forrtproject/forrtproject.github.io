@@ -80,110 +80,14 @@
     )
 }}
 
-<style>
-  .nav-link.active {
-    font-weight: bold;
-    color: #007bff;
-  }
-
-  .language-switcher {
-    margin-top: 20px;
-  }
-
-  .language-switcher ul {
-    list-style: disc;
-    margin-left: 20px;
-    padding-left: 0;
-  }
-
-  .language-switcher li {
-    margin-bottom: 5px;
-  }
-
-  .language-switcher a {
-    text-decoration: none;
-    color: #007bff;
-    font-weight: bold;
-  }
-
-  .language-switcher a:hover {
-    text-decoration: underline;
-  }
-
-  .glossary-toc {
-    order: 99;
-  }
-
-  @media (min-width: 1200px) {
-    .glossary-toc {
-      order: -1;
-    }
-  }
-
-</style>
-
-
-<script>
-  document.addEventListener("DOMContentLoaded", function() {
-    const tocLinks = document.querySelectorAll("#TableOfContents .nav-link");
-    const currentUrl = window.location.href;
-
-    tocLinks.forEach(link => {
-      if (link.href === currentUrl) {
-        link.classList.add("active");
-        if (window.innerWidth >= 1200) {
-          link.scrollIntoView({ behavior: 'auto', block: 'start' });
-          window.scrollBy(0, -document.querySelector('.docs-toc').offsetHeight);
-        }
-      }
-    });
-
-    const searchInput = document.getElementById('glossary-search');
-    if (searchInput) {
-      searchInput.addEventListener('input', function() {
-        const query = this.value.toLowerCase();
-        document.querySelectorAll('#TableOfContents .nav-item').forEach(function(item) {
-          const link = item.querySelector('.nav-link');
-          const text = link ? link.textContent.toLowerCase() : '';
-          item.style.display = text.includes(query) ? '' : 'none';
-        });
-      });
-    }
-  });
-</script>
-
-
-<div class="container-fluid docs">
-  <div class="row flex-xl-nowrap">
-    <div class="col-12 col-xl-3 docs-toc glossary-toc">
-      <ul class="nav toc-top">
-        <li><a href="#" id="back_to_top" class="docs-toc-title">{{ index (index $dictionary $lang) "list_of_terms" }}</a></li>
-      </ul>
-
-      <input type="text" id="glossary-search" class="form-control form-control-sm mb-2"
-             placeholder="{{ index (index $dictionary $lang) "filter_terms" }}"
-             aria-label="{{ index (index $dictionary $lang) "filter_terms" }}">
-
-      <nav id="TableOfContents" class="nav flex-column">
-        <ul>
-          {{ $currentSection := .File.Dir }}
-          {{ $glossaryPages := where .Site.RegularPages "Type" "glossary" }}
-          {{ $filteredPages := where $glossaryPages "File.Dir" $currentSection }}
-          {{ $withDefinition := where $filteredPages "Params.definition" "!=" nil }}
-          {{ $sortedPages := sort $withDefinition "Params.sort_key" }}
-          {{ range $index, $page := $sortedPages }}
-          <li class="nav-item">
-            <a href="{{ .Permalink }}" class="nav-link">{{ .Title }}</a>
-          </li>
-          {{ end }}
-        </ul>
-      </nav>
-    </div>
-
-    <div class="col-12 col-xl-8 pl-md-5 docs-content">
-      <article class="article"{{ if eq $lang "arabic" }} dir="rtl" style="text-align: right;"{{ end }}>
-        <div class="docs-article-container mx-auto">
-          {{ partial "resource_page_header" . }}
+{{ $dict := index $dictionary $lang }}
+<div class="wrap">
+  <div class="article-layout glossary-layout">
+    <article class="reading">
+      <header class="article-head">
+        <nav class="crumbs" aria-label="Breadcrumb"><a href="{{ "" | relLangURL }}">Home</a> <span aria-hidden="true">/</span> {{ with .Parent }}<a href="{{ .RelPermalink }}">{{ .Title }}</a>{{ end }}</nav>
+        <h1>{{ .Title }}</h1>
+      </header>
 
 <div class="language-switcher">
   {{ $currentLang := .Params.language | default "english" }}
@@ -242,23 +146,22 @@
   {{ end }}
 
   {{ if gt (len $availableLanguages) 0 }}
-    <strong>Also available in: </strong>
+    <strong>Also available in:</strong>
     {{ range $index, $item := $availableLanguages }}
       <a href="{{ $item.page.RelPermalink }}">{{ $item.lang | title }}</a>{{ if lt $index (sub (len $availableLanguages) 1) }} | {{ end }}
     {{ end }}
-    <br /> &nbsp;
   {{ end }}
 </div>
 
 
-          {{ with .Params.definition }}
-          <p class="pub-abstract border-bottom pb-1"><b>{{ index (index $dictionary $lang) "definition" }}: </b>{{ . | markdownify }}</p>
-          {{ end }}
+      <div class="article-style">
+        {{ with .Params.definition }}
+        <p class="term-definition"><b>{{ index $dict "definition" }}: </b>{{ . | markdownify }}</p>
+        {{ end }}
 
-          <div class="article-style">
-            {{ .Content }}
+            {{ partial "doors/content" .Content }}
             {{ with .Params.alt_definition }}
-            <p class="mb-1 pr-2"><b>{{ index (index $dictionary $lang) "alt_definition" }}: </b>{{ . | markdownify }}</p>
+            <p class="term-line"><b>{{ index (index $dictionary $lang) "alt_definition" }}: </b>{{ . | markdownify }}</p>
             {{ end }}
 
             {{ with .Params.related_terms }}
@@ -283,14 +186,14 @@
             {{ end }}
             {{ end }}
             {{ $related_links_string := delimit $related_links ", " | safeHTML }}
-            <p class="mb-1 pr-2"><strong>{{ if gt (len $related_links) 1 }}{{ index (index $dictionary $lang) "related_terms" }}{{ else }}{{ index (index $dictionary $lang) "related_term" }}{{ end }}: </strong>{{ $related_links_string }}</p>
+            <p class="term-line"><strong>{{ if gt (len $related_links) 1 }}{{ index (index $dictionary $lang) "related_terms" }}{{ else }}{{ index (index $dictionary $lang) "related_term" }}{{ end }}: </strong>{{ $related_links_string }}</p>
             {{ end }}
 
             {{ if .Params.alt_related_terms }}
             {{ $alt_related_terms := delimit .Params.alt_related_terms ", " | len }}
             {{ if ne $alt_related_terms 0 }}
             {{ with .Params.alt_related_terms }}
-            <p class="mb-1 pr-2"><strong>{{ if gt (len .) 1 }}{{ index (index $dictionary $lang) "related_terms" }}{{ else }}{{ index (index $dictionary $lang) "related_term" }}{{ end }} to alternative definition: </strong>
+            <p class="term-line"><strong>{{ if gt (len .) 1 }}{{ index (index $dictionary $lang) "related_terms" }}{{ else }}{{ index (index $dictionary $lang) "related_term" }}{{ end }} to alternative definition: </strong>
               {{ delimit (apply (apply (sort .) "partial" "glossary_link" ".") "chomp" ".") ", " }}
             </p>
             {{- end -}}
@@ -300,7 +203,7 @@
             {{ if .Params.references }}
               {{ $references := delimit .Params.references ", " | len }}
               {{ if ne $references 0 }}
-                <p class="mb-1 pr-2"><b>{{ if gt (len .Params.references) 1 }}{{ index (index $dictionary $lang) "references" }}{{ else }}{{ index (index $dictionary $lang) "reference" }}{{ end }}: </b></p>
+                <p class="term-line"><b>{{ if gt (len .Params.references) 1 }}{{ index (index $dictionary $lang) "references" }}{{ else }}{{ index (index $dictionary $lang) "reference" }}{{ end }}: </b></p>
                 <ul class="references-list">
                   {{ range .Params.references }}
                     <li>{{ . | markdownify }}</li>
@@ -312,45 +215,39 @@
             {{ if .Params.drafted_by }}
             {{ $drafted_by := delimit .Params.drafted_by ", " | len }}
             {{ if ne $drafted_by 0 }}
-            <p class="mb-1 pr-2"><b>{{ index (index $dictionary $lang) "originally_drafted_by" }}: </b>{{ delimit .Params.drafted_by ", " }}</p>
+            <p class="term-line"><b>{{ index (index $dictionary $lang) "originally_drafted_by" }}: </b>{{ delimit .Params.drafted_by ", " }}</p>
             {{ end }}
             {{ end }}
 
             {{ if .Params.reviewed_by }}
             {{ $reviewed_by := delimit .Params.reviewed_by ", " | len }}
             {{ if ne $reviewed_by 0 }}
-            <p class="mb-1 pr-2"><b>{{ index (index $dictionary $lang) "reviewed_by" }}: </b>{{ delimit .Params.reviewed_by ", " | markdownify }}</p>
+            <p class="term-line"><b>{{ index (index $dictionary $lang) "reviewed_by" }}: </b>{{ delimit .Params.reviewed_by ", " | markdownify }}</p>
             {{ end }}
             {{ end }}
 
             {{ if .Params.translated_by }}
             {{ $translated_by := delimit .Params.translated_by ", " | len }}
             {{ if ne $translated_by 0 }}
-            <p class="mb-1 pr-2"><b>{{ index (index $dictionary $lang) "translated_by" }}: </b>{{ delimit .Params.translated_by ", " }}</p>
+            <p class="term-line"><b>{{ index (index $dictionary $lang) "translated_by" }}: </b>{{ delimit .Params.translated_by ", " }}</p>
             {{ end }}
             {{ end }}
 
             {{ if .Params.translation_reviewed_by }}
             {{ $translation_reviewed_by := delimit .Params.translation_reviewed_by ", " | len }}
             {{ if ne $translation_reviewed_by 0 }}
-            <p class="mb-1 pr-2"><b>{{ index (index $dictionary $lang) "translation_reviewed_by" }}: </b>{{ delimit .Params.translation_reviewed_by ", " }}</p>
+            <p class="term-line"><b>{{ index (index $dictionary $lang) "translation_reviewed_by" }}: </b>{{ delimit .Params.translation_reviewed_by ", " }}</p>
             {{ end }}
             {{ end }}
 
             {{ partial "glossary_feedback_form" . }}
 
-            {{ if ne .Params.docs_section_pager false }}
-            {{ if site.Params.docs_section_pager }}
-            <div class="article-widget">
-              {{ partial "section_pager" . }}
-            </div>
-            {{ end }}
-            {{ end }}
-          </div>
-        </div>
-      </article>
-
-    </div>
+      </div>
+      <div class="article-foot">
+        {{ partial "section_pager" . }}
+      </div>
+    </article>
+    {{ partial "doors/glossary_terms" (dict "page" . "labels" $dict "defined_only" true) }}
   </div>
 </div>
 
