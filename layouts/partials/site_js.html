@@ -32,6 +32,6 @@
 {{/* Heading links on the summaries. */}}
 {{ if in (slice "book" "docs") .Type }}
   {{ printf "<script src=\"%s\" integrity=\"%s\" crossorigin=\"anonymous\"></script>" (printf $js.anchor.url $js.anchor.version) $js.anchor.sri | safeHTML }}
-  <script>anchors.add();</script>
+  <script>anchors.add('.article-style > h2, .article-style > h3');</script>
 {{ end }}
 {{ partial "custom_js" . }}

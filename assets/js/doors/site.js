@@ -214,7 +214,9 @@ if (summaryEntries.length) {
     // An entry someone has opened, perhaps from a link to it, stays in view.
     summaryEntries.forEach((entry) => { entry.hidden = !shown.includes(entry) && !entry.open; });
     more.hidden = shown.length === matches.length;
-    tools.querySelector('[role=status]').textContent = `Showing ${shown.length} of ${query ? `${matches.length} matching, from ` : ''}${summaryEntries.length} summaries.`;
+    const kept = summaryEntries.filter((entry) => !entry.hidden).length - shown.length;
+    const count = query ? `${matches.length} of ${summaryEntries.length} summaries match.` : `Showing ${shown.length} of ${summaryEntries.length} summaries.`;
+    tools.querySelector('[role=status]').textContent = kept ? `${count} ${kept} you opened ${kept === 1 ? 'stays' : 'stay'} in view.` : count;
   };
   input.addEventListener('input', show);
   more.addEventListener('click', () => {
