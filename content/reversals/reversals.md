@@ -128,7 +128,7 @@ The original project was organized in five stages:
 
 ## **How to contribute?**
 
-This specific reversals project has concluded, and its work has been integrated into the broader [FORRT Replication Hub](https://forrt.org/replication-hub/). To contribute replication data, please submit new entries to the [FORRT Replication Database (FReD)](/replication-hub/submit/) or contact Lukas Röseler at lukas.roeseler@uni-muenster.de for any questions.
+This specific reversals project has concluded, and its work has been integrated into the broader [FORRT Replication Hub](https://forrt.org/replication-hub/). To contribute replication data, please submit new entries to the [FORRT Replication Database (FReD)](/explorer/) or contact Lukas Röseler at lukas.roeseler@uni-muenster.de for any questions.
 
 All **past or current project contributors** are listed at the [bottom of this page](#contributors).
 

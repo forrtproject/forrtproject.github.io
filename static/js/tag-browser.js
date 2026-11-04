@@ -70,13 +70,14 @@
         return response.json();
       })
       .then(function (rows) {
-        // An exact term wins, so C++ never picks up pages tagged C through its slug.
-        var exact = rows.some(function (row) { return row.g && row.g.indexOf(needle) !== -1; });
-        if (!exact) label = tag.replace(/-/g, " ");
+        // A slug that only an address could have produced reads better with spaces.
+        if (!rows.some(function (row) { return row.g && row.g.indexOf(needle) !== -1; })) {
+          label = tag.replace(/-/g, " ");
+        }
         render(
           rows.filter(function (row) {
             return row.g && row.g.some(function (term) {
-              return exact ? term === needle : slug(term) === needle;
+              return term === needle || slug(term) === needle;
             });
           })
         );
