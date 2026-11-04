@@ -72,7 +72,10 @@
     var(--clusters-controls-height) +
     8px
   );
-  max-height: calc(100vh - var(--clusters-sticky-offset) - 20px);
+  max-height: calc(
+    100vh - var(--clusters-sticky-offset) - var(--clusters-sticky-gap) -
+    var(--clusters-controls-height) - 24px - var(--banner, 0px)
+  );
   overflow-y: auto;
   padding: 0 0.75rem 0.75rem;
   background: var(--surface);
