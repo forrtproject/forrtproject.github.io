@@ -1,0 +1,58 @@
+{
+    "arabic": {
+        "Adversarial (collaborative) commentary": [
+            "collaborative_commentary_الت_عليق_الت_عاوني_العدايي"
+        ],
+        "Badges (Open Science)": [
+            "open_science_الش_ارات_العلم_المفتوح"
+        ],
+        "Bottom-up approach (to Open Scholarship)": [
+            "to_open_scholarship_الن_هج_الت_صاعدي_"
+        ],
+        "DOI (digital object identifier)": [
+            "digital_object_identifier_معر_ف_الكاين_الر_قمي"
+        ],
+        "Gaming (the system)": [
+            "the_system_الت_لاعب_بالن_ظام"
+        ],
+        "Gift (or Guest) Authorship": [
+            "or_guest_authorship_الت_اليف_الم_هدى_او_المولف_الض_يف"
+        ],
+        "Matthew effect (in science)": [
+            "in_science_تاثير_ماثيو_في_العلوم"
+        ],
+        "Model (computational)": [
+            "computational_الن_موذج_الحاسوبي_"
+        ],
+        "Model (statistical)": [
+            "statistical_الن_موذج_الاحصايي_"
+        ],
+        "Model (philosophy)": [
+            "philosophy_الن_موذج_الفلسفي_"
+        ],
+        "Ontology (Artificial Intelligence)": [
+            "artificial_intelligence_علم_الوجود_الذ_كاء_الاصطناعي"
+        ],
+        "ORCID (Open Researcher and Contributor ID)": [
+            "open_researcher_and_contributor_id_الاوركيد"
+        ],
+        "PCI (Peer Community In)": [
+            "peer_community_in_منظ_مة_الاقران"
+        ],
+        "PRO (peer review openness) initiative": [
+            "peer_review_openness_initiative_مبادرة_انفتاح_تحكيم_الاقران"
+        ],
+        "Publication bias (File Drawer Problem)": [
+            "file_drawer_problem_تحي_ز_الن_شر_مشكلة_درج_الملف_ات"
+        ],
+        "Reproducibility crisis (aka Replicability or replication crisis)": [
+            "aka_replicability_or_replication_crisis_ازمة_اعادة_الانتاج_او_ازمة_الت_كرار"
+        ],
+        "Research Contribution Metric (*p*)": [
+            "p_مقياس_المساهمة_البحثي_ة_نشر"
+        ],
+        "Robustness (analyses)": [
+            "analyses_المتانة_في_التحليلات"
+        ]
+    }
+}
