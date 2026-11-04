@@ -25,12 +25,12 @@
   #just-os-bubble{display:none}
 }
 
-/* See site.js. A 24 px strip stays on screen, in the page's gutter, to tap. */
+/* On phones a round button would sit over the text wherever it rests, so it is a tab in the page's gutter. */
 @media (max-width:760px){
-  #just-os-widget:not(:has(#just-os-window[style*="flex"])){transition:transform .2s}
-  #just-os-widget.is-tucked:not(:focus-within,:has(#just-os-window[style*="flex"])){transform:translateX(calc(100% - 12px))}
-  #just-os-widget.is-tucked:not(:focus-within) #just-os-dismiss{display:none}
-}
-@media (prefers-reduced-motion:reduce){
-  #just-os-widget:not(:has(#just-os-window[style*="flex"])){transition:none}
+  #just-os-widget{inset-block-end:calc(16px + var(--banner,0px));inset-inline-end:0}
+  #just-os-btn{display:flex;align-items:center;justify-content:center;width:24px;height:52px;border-inline-end:0;border-radius:12px 0 0 12px}
+  #just-os-btn:hover{transform:none}
+  #just-os-img{width:20px;height:20px}
+  #just-os-dismiss{display:none}
+  #just-os-bubble{inset-inline-end:32px;top:10px}
 }
