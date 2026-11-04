@@ -222,6 +222,45 @@ def check_articles(browser, base, root, failures):
         page.context.close()
 
 
+def check_callouts(browser, base, root, failures):
+    """Call-outs sit in the right-hand column on wide screens, clear of each other, and in the text on narrow ones."""
+    paths = []
+    for directory, _, files in os.walk(root):
+        if "index.html" in files:
+            with open(os.path.join(directory, "index.html"), encoding="utf-8", errors="replace") as handle:
+                if '<aside class="callout' in handle.read():
+                    paths.append(os.path.relpath(directory, root).replace(os.sep, "/") + "/")
+    print(f"  {len(paths)} pages")
+    for width in WIDTHS:
+        page = new_page(browser, width)
+        for path in sorted(paths):
+            page.goto(base + path, wait_until="load", timeout=120000)
+            found = page.evaluate(CALLOUTS)
+            for problem in found:
+                failures.append(f"{path} at {width}: call-out {problem}")
+        page.context.close()
+
+
+CALLOUTS = """() => {
+  const reading = document.querySelector('.article-layout>.reading');
+  if (!reading || reading.parentElement.classList.contains('article-layout-wide')) return [];
+  const area = reading.getBoundingClientRect();
+  const notes = [...reading.querySelectorAll('.callout')].map((el) => el.getBoundingClientRect());
+  const card = document.querySelector('.article-layout>.article-card')?.getBoundingClientRect();
+  const problems = [];
+  if (innerWidth > 1000) {
+    const boxes = card ? [card, ...notes] : notes;
+    if (notes.some((box) => box.left < area.right)) problems.push('over the text');
+    if (notes.some((box) => box.right > innerWidth)) problems.push('off the screen');
+    if (boxes.some((a, i) => boxes.slice(i + 1).some((b) => a.left < b.right && b.left < a.right && a.top < b.bottom && b.top < a.bottom))) problems.push('overlaps the card or another call-out');
+  } else {
+    if (notes.some((box) => box.left < area.left - 1 || box.right > area.right + 1)) problems.push('outside the text column');
+    if (card && card.top < area.bottom) problems.push('card comes before the text');
+  }
+  return problems;
+}"""
+
+
 # From a page's text to the card beside it, when they are side by side.
 CARD_GAP = """() => {
   const reading = document.querySelector('.article-layout>.reading');
@@ -561,6 +600,8 @@ def main():
         if args.public:
             print("Every article page")
             check_articles(browser, base, os.path.abspath(args.public), failures)
+            print("Call-outs")
+            check_callouts(browser, base, os.path.abspath(args.public), failures)
         print("Sample pages")
         check_samples(browser, base, failures)
         print("Home page")
