@@ -9,10 +9,10 @@ The animated brick tower in the home page's arched door. Hugo bundles it with `j
 | `castle-piles.js` | Baked resting poses of the two heaps. Generated, see below |
 | `bake-castle-piles.js` | Offline physics bake for those poses. Never part of the site's bundle |
 | `illustrations-render.js` | Offline renderer for the four area illustrations. Never part of the site's bundle |
-| `../doors/castle.js` | Loads the bundle after paint and owns playback: pause, hover, tap, off-screen suspension |
+| `../doors/castle.js` | Loads the bundle after paint and owns playback: pause, hover, tap, off-screen suspension. Also opens the tower game, see `../tower/README.md` |
 | `../doors/motion.js` | The pause state the castle shares with the home page's quotes, remembered between visits |
 
-**Behaviour.** The still image paints first. The bundle loads after that, and not at all under reduced motion, Save-Data or no WebGL, so the home page works if the castle does not. The tower builds once, turns every 120 seconds and takes a colour wave after each change. Hovering dismantles it. The pause button appears on hover, on keyboard focus and after a tap.
+**Behaviour.** The still image paints first. The bundle loads after that, and not at all under reduced motion, Save-Data or no WebGL, so the home page works if the castle does not. The tower builds once, turns every 120 seconds and takes a colour wave after each change. Hovering dismantles it. The pause button and "Build it yourself" appear on hover, on keyboard focus and after a tap.
 
 **To turn it off**, set `doors.castle = false` in `config/_default/params.toml`. Visitors then see only the still.
 

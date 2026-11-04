@@ -16,10 +16,19 @@
 .castle-stage[data-engine=webgl] .castle-fallback{visibility:hidden}
 /* Out of sight until a pointer, keyboard focus or a tap reaches it, so nothing sits beside
    the tower. It does nothing until the 3D castle is running. */
-.motion-bar{position:absolute;left:50%;bottom:8px;transform:translateX(-50%);z-index:3}
-[data-motion-host]:not(:hover):not(.show-motion-control) .motion-toggle:not(:focus){position:absolute;width:1px;height:1px;padding:0;border:0;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
-.motion-toggle{background:#fff;border:1.5px solid var(--ink);border-radius:999px;padding:7px 12px;font-weight:600;font-size:15px;line-height:1.3;color:var(--ink);cursor:pointer;white-space:nowrap}
-.motion-toggle:hover{background:var(--ink);color:#fff}
+.motion-bar{position:absolute;left:50%;bottom:8px;transform:translateX(-50%);z-index:3;display:flex;align-items:center;gap:8px;width:max-content}
+[data-motion-host]:not(:hover):not(:focus-within):not(.show-motion-control) :is(.motion-toggle,.tower-entry){position:absolute;width:1px;height:1px;padding:0;border:0;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
+/* A finger counts as hovering from the moment it touches, which would reveal a button under that
+   finger and send the tap to it. On touch screens only a finished tap reveals these buttons. */
+@media(hover:none){[data-motion-host]:not(:focus-within):not(.show-motion-control) :is(.motion-toggle,.tower-entry){position:absolute;width:1px;height:1px;padding:0;border:0;overflow:hidden;clip-path:inset(50%);white-space:nowrap}}
+.motion-toggle,.tower-entry{background:#fff;border:1.5px solid var(--ink);border-radius:999px;font-weight:600;font-size:15px;line-height:1.3;color:var(--ink);cursor:pointer;white-space:nowrap}
+.tower-entry{padding:7px 12px}
+/* The icon carries the meaning on screen. The words stay in the button for screen readers. */
+.motion-toggle{position:relative;width:36px;height:36px;padding:0;overflow:hidden;text-indent:44px}
+.motion-toggle::before{content:"";position:absolute;left:50%;top:50%;width:11px;height:13px;transform:translate(-50%,-50%);border-inline:3.5px solid currentColor}
+.motion-toggle.is-paused::before{width:0;height:0;margin-left:1px;border-block:7px solid transparent;border-inline:0;border-left:11px solid currentColor}
+@media(hover:hover){.motion-toggle:hover,.tower-entry:hover{background:var(--ink);color:#fff}}
+@media(pointer:coarse){.motion-toggle{width:44px;height:44px}.tower-entry{min-height:44px;padding-block:0;padding-inline:14px}}
 .castle-stage[data-engine=fallback]+.motion-bar{display:none}
 
 
@@ -103,7 +112,8 @@
   .lede{font-size:17px;margin-top:16px}
   .quick{margin-top:18px}
   .quick a{padding:8px 12px;font-size:15px}
-  .tower{padding:18px 12px 8px;max-width:270px;justify-self:center;margin-top:16px}
+  /* The extra room at the foot of the door keeps the 44 px buttons off the tower. */
+  .tower{padding:18px 12px 58px;max-width:270px;justify-self:center;margin-top:16px}
   .castle-stage{height:150px}
   .hero{border-bottom-width:8px}
   .areas{grid-template-columns:1fr;gap:12px;padding-top:18px}

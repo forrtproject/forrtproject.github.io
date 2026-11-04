@@ -411,7 +411,7 @@ def check_home(browser, base, failures):
     held = page.evaluate(current)
     page.wait_for_timeout(6500)
     expect(page.evaluate(current) == held, "keyboard focus on the quotes holds them")
-    expect(page.evaluate("document.querySelector('.quotes .motion-toggle').getBoundingClientRect().width") > 40,
+    expect(page.evaluate("document.querySelector('.quotes .motion-toggle').getBoundingClientRect().width") >= 36,
            "the quotes' pause button appears on keyboard focus")
     page.keyboard.press("Enter")
     expect(button.text_content() == "Play animation", "pressing it pauses, and it says so")
@@ -441,6 +441,73 @@ def check_home(browser, base, failures):
     expect(page.evaluate(current) == 0, "reduced motion keeps the first quote")
     expect(not any("/js/castle." in url for url in requests), "reduced motion does not load the 3D bundle")
     expect(page.locator(".motion-toggle:visible").count() == 0, "reduced motion shows no pause button")
+    page.hover(".castle-stage")
+    expect(page.locator(".tower-entry").is_visible(), "reduced motion still offers the game on hover")
+    page.context.close()
+
+    check_tower_game(browser, base, expect)
+
+
+def check_tower_game(browser, base, expect):
+    box = "document.querySelector('.tower-entry').getBoundingClientRect().width"
+    page = new_page(browser, 1440)
+    requests = []
+    page.on("request", lambda request: requests.append(request.url))
+    page.goto(base, wait_until="load")
+    page.wait_for_timeout(1500)
+    expect(page.evaluate(box) <= 1, "'Build it yourself' is out of sight at rest")
+    expect(not any("/js/tower/" in url for url in requests), "nobody downloads the game before asking for it")
+    page.locator(".tower .motion-toggle").focus()
+    page.keyboard.press("Tab")
+    expect(page.evaluate("document.activeElement.className") == "tower-entry", "Tab goes from pause to 'Build it yourself'")
+    expect(page.locator(".tower .motion-toggle").is_visible() and page.evaluate(box) > 100,
+           "keyboard focus shows both buttons")
+    page.keyboard.press("Enter")
+    page.wait_for_function("document.querySelector('#tower-game')?.open === true", timeout=20000)
+    expect(any("/js/tower/game.bundle.js" in url for url in requests), "pressing the button loads the game")
+    expect(not any("/js/tower/physics" in url for url in requests), "the physics waits for the first wobble warning")
+    page.keyboard.press("Escape")
+    page.keyboard.press("Escape")
+    page.wait_for_function("document.querySelector('#tower-game')?.open === false")
+    page.context.close()
+
+    # A first tap exactly where the button will appear reveals it. It must not open the game.
+    page = new_page(browser, 390)
+    requests = []
+    page.on("request", lambda request: requests.append(request.url))
+    page.goto(base, wait_until="load")
+    page.wait_for_timeout(1500)
+    page.locator(".tower").scroll_into_view_if_needed()
+    expect(page.evaluate(box) <= 1, "'Build it yourself' stays out of sight on a phone until a tap")
+    at = page.evaluate("""() => {
+      const figure = document.querySelector('.tower');
+      figure.classList.add('show-motion-control');
+      const b = document.querySelector('.tower-entry').getBoundingClientRect();
+      figure.classList.remove('show-motion-control');
+      return {x: b.x + b.width / 2, y: b.y + b.height / 2, height: b.height};
+    }""")
+    expect(at["height"] >= 44, f"'Build it yourself' is {at['height']:.0f} px tall on a phone, limit 44")
+    page.touchscreen.tap(at["x"], at["y"])
+    page.wait_for_timeout(600)
+    expect(not any("/js/tower/" in url for url in requests), "a tap on the hidden button's spot does not start the game")
+    expect(page.evaluate(box) <= 1, "that tap does not reveal the button either")
+    page.locator(".castle-stage").tap()
+    page.wait_for_timeout(500)
+    expect(page.evaluate(box) > 100, "a tap on the tower reveals the button")
+    page.touchscreen.tap(at["x"], at["y"])
+    page.wait_for_function("document.querySelector('#tower-game')?.open === true", timeout=20000)
+    page.context.close()
+
+    page = new_page(browser, 1440)
+    page.add_init_script("""
+      const getContext = HTMLCanvasElement.prototype.getContext;
+      HTMLCanvasElement.prototype.getContext = function (type, ...rest) {
+        return /webgl/.test(type) ? null : getContext.call(this, type, ...rest);
+      };
+    """)
+    page.goto(base, wait_until="load")
+    page.hover(".castle-stage")
+    expect(not page.locator(".tower-entry").is_visible(), "without WebGL the game is not offered")
     page.context.close()
 
 
