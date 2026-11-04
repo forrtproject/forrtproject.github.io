@@ -18,8 +18,6 @@ Use the dropdown menus below to search for a specific contributor by name or to 
 <div style="margin-bottom: 40px;"></div>
 
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Domine:wght@400;700&display=swap');
-
 body {
   background-color: #fefdf6;
   font-family: 'Domine', serif;
