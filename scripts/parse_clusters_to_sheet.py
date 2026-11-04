@@ -688,7 +688,9 @@ def tidy_lookup_citation(apa, bibtex=''):
     if booktitle and '\n' in booktitle.group(1):
         full_title = ' '.join(booktitle.group(1).split())
         if full_title not in apa:
-            apa = apa.replace(booktitle.group(1).split('\n')[0].strip(), full_title)
+            first_line = booktitle.group(1).split('\n')[0].strip()
+            if first_line:
+                apa = apa.replace(first_line, full_title)
 
     # Wiley records name the Portico archive as the publisher
     apa = re.sub(r'\. Portico\. (?=https://doi\.org/)', '. ', apa)
