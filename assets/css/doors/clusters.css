@@ -11,24 +11,12 @@
 /* Clusters v4 page styles                            */
 /* -------------------------------------------------- */
 
-/* Sticky offsets: fallbacks before clusters-page.js sets --clusters-sticky-offset inline */
+/* The site header doesn't travel with the page, so nothing sits above pinned parts. */
 .clusters-layout {
   margin-top: 0.5rem;
-  --clusters-sticky-offset: 70px;
+  --clusters-sticky-offset: 0px;
   --clusters-sticky-gap: 0px;
   --clusters-controls-height: 0px;
-}
-
-@media screen and (max-width: 1200px) {
-  .clusters-layout {
-    --clusters-sticky-offset: 50px;
-  }
-}
-
-@media (min-width: 992px) and (max-width: 1350px) {
-  .clusters-layout {
-    --clusters-sticky-offset: 130px;
-  }
 }
 
 .clusters-controls {
@@ -2371,7 +2359,3 @@ h1.clusters-site-heading.clusters-hub-page__title {
   .clusters-back-to-top.clusters-back-to-top{bottom:calc(80px + var(--banner,0px));right:12px}
 }
 .sc-description,.fc-summary,.fc-title{font-size:16px}
-
-/* The site header no longer travels with the page, so nothing sits above the pinned filters. */
-.clusters-layout{--clusters-sticky-offset:0px!important}
-
