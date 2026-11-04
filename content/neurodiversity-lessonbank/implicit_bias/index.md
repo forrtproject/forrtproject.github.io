@@ -111,6 +111,9 @@ Are non-neurotypical brains presented as deficient in the article and the tweet?
 
 <blockquote class="twitter-tweet" data-conversation="none"><p lang="en" dir="ltr"><a href="https://twitter.com/hashtag/Neurodiversity?src=hash&amp;ref_src=twsrc%5Etfw">#Neurodiversity</a> includes neurotypical &amp; neurodivergent people. A person is neurodivergent when their neurology diverges from the neurological majority. Examples of neurodivergence: dyslexia, dyspraxia, OCD/C, personality disorders/conditions, autism, ADHD/C, Tourette's and tics. <a href="https://t.co/swgenhJ4i1">pic.twitter.com/swgenhJ4i1</a></p>&mdash; FORRT @FORRT@mastodon.social (@FORRTproject) <a href="https://twitter.com/FORRTproject/status/1547570517137207296?ref_src=twsrc%5Etfw">July 14, 2022</a></blockquote>
 
+<p style="text-align: center;"><img src="../images/neurodiversity-wheel.webp" alt="A multicoloured circle labelled Neurodiversity, with 13 smaller circles around it: Neurotypicality; Dyslexia, Dyscalculia and Dysgraphia; Developmental Co-ordination Disorder/Condition; Personality Disorders/Conditions; Developmental Language Disorder/Condition; Bipolar Disorder/Condition; Anxiety and Depression; Attention Deficit Hyperactivity Disorder/Condition; Stuttering and Cluttering; Obsessive Compulsive Disorder/Condition; Autism; Tourette's Syndrome and Tics; Panic Disorders/Conditions." width="1000" height="1000" style="width: 100%; max-width: 560px; height: auto;"></p>
+<p class="small" style="text-align: center;">Based on Figure 1 in Elsherif et al. (2022), <a href="https://doi.org/10.31222/osf.io/k7a9p">Bridging Neurodiversity and Open Scholarship</a>, <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>.</p>
+
 **Activity 4 Neurodiversity paradigm: spotting biased language**
 
 *Now choose one of the two articles below and skim the abstract and intro. Discuss or reflect on the questions below.*
