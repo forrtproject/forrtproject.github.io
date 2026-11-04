@@ -1,5 +1,7 @@
 ---
 title: Sözlük
+# Meta description: the opening of the introduction below.
+description: "Giriş ve anlayış önündeki engelleri azaltmak amacıyla, açık bilimle ilişkili terimlerden oluşan bir Sözlük sunuyoruz. Bu sözlüğün, terimlerin nerede farklı ya da birbirinin yerine kullanıldığını ve bazı alanlarda ya da öğrenciler arasında daha az bilinen kavramları açıklığa kavuşturmasına yardımcı olmasını amaçlıyoruz."
 toc: true
 # View.
 #   1 = List
