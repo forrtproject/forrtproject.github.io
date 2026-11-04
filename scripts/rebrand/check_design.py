@@ -104,7 +104,9 @@ AUDIT = """() => {
         const total = boxes.reduce((sum, box) => sum + box.width, 0);
         for (const box of boxes) {
           const key = Math.round(box.top / 6);
-          lines[key] = (lines[key] || 0) + match[0].length * box.width / total;
+          // Arabic vowel marks and other combining marks take up no column of their own.
+          const letters = match[0].replace(/\\p{M}/gu, '').length;
+          lines[key] = (lines[key] || 0) + letters * box.width / total;
         }
       }
     }
