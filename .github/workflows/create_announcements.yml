@@ -61,7 +61,7 @@ jobs:
           fi
 
       - name: Setup r2u
-        uses: eddelbuettel/github-actions/r2u-setup@master
+        uses: eddelbuettel/github-actions/r-ci@master
 
       - name: Install R package dependencies
         # install.packages here runs through r2u/bspm, which fetches .debs via apt.

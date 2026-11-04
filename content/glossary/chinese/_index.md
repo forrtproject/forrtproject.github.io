@@ -1,5 +1,7 @@
 ---
 title: 术语表
+# Meta description: the opening of the introduction below.
+description: "为了降低理解和参与门槛，我们在此提供一份开放学术相关的术语表。我们希望这份术语表能够帮助厘清相关术语的含义，包括说明不同语境下的术语用法和互换关系，以及阐明某些术语在特定领域或学生群体中鲜为人知的情况。"
 toc: true
 # View.
 #   1 = List

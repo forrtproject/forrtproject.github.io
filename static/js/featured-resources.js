@@ -499,7 +499,7 @@
         generatePDF();
       } else {
         var script = document.createElement('script');
-        script.src = 'https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js';
+        script.src = '/vendor/assets/jspdf/2.5.1/jspdf.umd.min.js';
         script.onload = generatePDF;
         script.onerror = function () {
           pdfBtn.disabled = false;

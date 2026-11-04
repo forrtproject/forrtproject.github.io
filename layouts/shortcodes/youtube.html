@@ -1,0 +1,9 @@
+{{ $id := cond .IsNamedParams (.Get "id") (.Get 0) }}
+{{ partial "click_to_load.html" (dict
+  "src" (printf "https://www.youtube-nocookie.com/embed/%s" $id)
+  "link" (printf "https://www.youtube.com/watch?v=%s" $id)
+  "provider" "YouTube (Google)"
+  "label" "This video"
+  "title" (.Get "title" | default "YouTube video")
+  "style" "aspect-ratio: 16 / 9; width: 100%;"
+) }}

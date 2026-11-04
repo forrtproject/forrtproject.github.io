@@ -19,6 +19,7 @@
     {{ with site.GetPage "terms.md" }}
       &middot; {{ printf "<a href=\"%s\">%s</a>" .RelPermalink .Title | safeHTML }}
     {{ end }}
+    &middot; <a href="#" data-cookie-settings>{{ i18n "cookie_settings" }}</a>
   </p>
   {{ end }}
 
