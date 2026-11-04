@@ -199,19 +199,29 @@ if (summaryEntries.length) {
   more.textContent = 'Show more';
   summaryEntries[summaryEntries.length - 1].after(more);
   const input = tools.querySelector('input');
+  // What a filter looks through: title, takeaways, quote and abstract, not the fixed headings or related links.
+  const words = new Map(summaryEntries.map((entry) => {
+    const copy = entry.cloneNode(true);
+    copy.querySelectorAll('h3').forEach((heading) => heading.remove());
+    copy.querySelector('ul:last-of-type')?.remove();
+    return [entry, copy.textContent.toLowerCase()];
+  }));
   let limit = 30;
   const show = () => {
     const query = input.value.trim().toLowerCase();
-    const matches = summaryEntries.filter((entry) => !query || entry.textContent.toLowerCase().includes(query));
+    const matches = summaryEntries.filter((entry) => !query || words.get(entry).includes(query));
     const shown = query ? matches : matches.slice(0, limit);
-    summaryEntries.forEach((entry) => { entry.hidden = !shown.includes(entry); });
+    // An entry someone has opened, perhaps from a link to it, stays in view.
+    summaryEntries.forEach((entry) => { entry.hidden = !shown.includes(entry) && !entry.open; });
     more.hidden = shown.length === matches.length;
     tools.querySelector('[role=status]').textContent = `Showing ${shown.length} of ${query ? `${matches.length} matching, from ` : ''}${summaryEntries.length} summaries.`;
   };
   input.addEventListener('input', show);
   more.addEventListener('click', () => {
+    const next = summaryEntries[limit];
     limit += 30;
     show();
+    next?.querySelector('summary').focus();
   });
   show();
 }

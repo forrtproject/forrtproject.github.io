@@ -68,6 +68,8 @@
       more.addEventListener("click", function () {
         var waiting = list.querySelectorAll("li[hidden]");
         for (var i = 0; i < STEP && i < waiting.length; i += 1) waiting[i].hidden = false;
+        var link = waiting[0].querySelector("a");
+        if (link) link.focus();
         if (waiting.length <= STEP) more.remove();
       });
     }
