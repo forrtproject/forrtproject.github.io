@@ -2,12 +2,13 @@
      it. Fonts are self-hosted; the two used on every page are preloaded, and the italic
      downloads only where a reference list uses it. The designed screens each add a stylesheet
      of their own, so the mock's short class names cannot reach pages still on the theme. */}}
-{{ $files := slice "tokens" "fonts" "base" "shell" "inner" "newsletter" "article" }}
+{{ $files := slice "tokens" "reset" "fonts" "icons" "base" "shell" "launcher" "search" "compat" "inner" "newsletter" "article" }}
 {{ $parts := slice }}
 {{ range $files }}{{ $parts = $parts | append (resources.Get (printf "css/doors/%s.css" .)) }}{{ end }}
 {{ $css := $parts | resources.Concat "css/doors.css" | minify | fingerprint "md5" }}
 <link rel="preload" href="{{ "fonts/doors/source-sans-3-var.woff2" | relURL }}" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="{{ "fonts/doors/newsreader-var.woff2" | relURL }}" as="font" type="font/woff2" crossorigin>
+{{/* Arabic and Chinese content sets its text in system fonts (decision D18). */}}
+{{ if not (in (slice "ar" "zh") (partial "functions/page_language.html" .)) }}<link rel="preload" href="{{ "fonts/doors/newsreader-var.woff2" | relURL }}" as="font" type="font/woff2" crossorigin>{{ end }}
 <link rel="stylesheet" href="{{ $css.RelPermalink }}">
 {{ $screen := slice }}
 {{ if .IsHome }}{{ $screen = slice "home" }}{{ end }}

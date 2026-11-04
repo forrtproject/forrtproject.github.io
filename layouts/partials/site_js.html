@@ -1,0 +1,32 @@
+{{/* In place of the theme's site_js. Doors pages run assets/js/doors/site.js, loaded from the head,
+     and whatever a page itself asks for. jQuery, Bootstrap's script and academic.js load only on
+     pages still on the theme (doors/on_theme). Comments on the conditional libraries are in
+     site_head.html, which decides them. */}}
+{{ $scr := $.Scratch }}
+{{ $js := hugo.Data.assets.js }}
+{{ $themed := partial "doors/on_theme" . }}
+{{ if $themed }}
+  {{ printf "<script src=\"%s\" integrity=\"%s\" crossorigin=\"anonymous\"></script>" (printf $js.jQuery.url $js.jQuery.version) $js.jQuery.sri | safeHTML }}
+  {{ printf "<script src=\"%s\" integrity=\"%s\" crossorigin=\"anonymous\"></script>" (printf $js.imagesLoaded.url $js.imagesLoaded.version) $js.imagesLoaded.sri | safeHTML }}
+  {{ printf "<script src=\"%s\" integrity=\"%s\" crossorigin=\"anonymous\"></script>" (printf $js.isotope.url $js.isotope.version) $js.isotope.sri | safeHTML }}
+  {{ printf "<script src=\"%s\" integrity=\"%s\" crossorigin=\"anonymous\"></script>" (printf $js.fancybox.url $js.fancybox.version) $js.fancybox.sri | safeHTML }}
+{{ end }}
+{{ if $scr.Get "diagram_enabled" }}
+  {{ printf "<script src=\"%s\" integrity=\"%s\" crossorigin=\"anonymous\" title=\"mermaid\" defer></script>" (printf $js.mermaid.url $js.mermaid.version) $js.mermaid.sri | safeHTML }}
+{{ end }}
+{{ if $scr.Get "highlight_enabled" }}
+  {{ $v := $js.highlight.version }}
+  {{ printf "<script src=\"%s\" integrity=\"%s\" crossorigin=\"anonymous\" defer></script>" (printf $js.highlight.url $v) $js.highlight.sri | safeHTML }}
+  {{ range site.Params.highlight_languages }}
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/{{ $v }}/languages/{{ . }}.min.js" defer></script>
+  {{ end }}
+{{ end }}
+{{ if or (.HasShortcode "ga_map") (.HasShortcode "ga_map_yearly") (.Params.needs_map | default false) }}
+  {{ printf "<script src=\"%s\" integrity=\"%s\" crossorigin=\"anonymous\"></script>" (printf $js.leaflet.url $js.leaflet.version) $js.leaflet.sri | safeHTML }}
+{{ end }}
+{{ if $themed }}
+  <script>const code_highlighting = false;</script>
+  {{ $bundle := slice (resources.Get "js/_vendor/bootstrap.min.js") ("\n" | resources.FromString "js/linebreak.js") (resources.Get "js/academic.js") | resources.Concat "js/academic-bundle-pre.js" | minify | fingerprint "md5" }}
+  <script src="{{ $bundle.RelPermalink }}"></script>
+{{ end }}
+{{ partial "custom_js" . }}

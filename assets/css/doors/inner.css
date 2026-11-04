@@ -17,5 +17,17 @@ code,pre,kbd,samp{font-style:normal}
 .cc-window .cc-btn,.cc-window .cc-btn:focus{background:var(--hot);color:var(--ink);border:0;border-radius:999px;font-weight:700;font-size:15px;text-decoration:none}
 .cc-window .cc-btn:hover{background:var(--page);color:var(--ink);text-decoration:none}
 
-/* Author card, whose name is an h2 under the article and elsewhere. */
+/* Author card and its social links. The card's name is an h2 under the article and elsewhere. */
+.author-card{display:flex;align-items:flex-start;gap:14px;margin:0 0 20px}
+.author-card .avatar{flex:none;width:64px;height:64px;border-radius:50%;object-fit:cover;margin:0}
+.author-card .media-body{min-width:0}
 .author-card .card-title{font-size:21px;line-height:1.2;margin:0 0 4px}
+.author-card .card-title a{color:inherit}
+.network-icon{display:flex;flex-wrap:wrap;gap:6px 10px;margin:6px 0 0;padding:0;list-style:none}
+.network-icon li{margin:0}
+.network-icon a{display:inline-flex;align-items:center;justify-content:center;width:24px;height:24px;font-size:18px;color:var(--link)}
+.network-icon a:hover{color:var(--ink)}
+.cite-dialog{width:min(640px,calc(100% - 32px));padding:22px;border:0;border-radius:var(--r-large);background:var(--page);color:var(--ink)}
+.cite-dialog::backdrop{background:rgba(38,45,53,.55)}
+.cite-dialog h2{font-size:26px}
+.cite-dialog pre{max-height:50vh;overflow:auto;padding:12px;background:var(--surface);border-radius:var(--r-small)}

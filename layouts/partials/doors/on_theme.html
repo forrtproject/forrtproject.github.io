@@ -1,0 +1,7 @@
+{{/* Whether a page still needs the theme's stylesheet, Bootstrap's script and jQuery. Everything is
+     moving to false: a page group leaves this list when its template is redrawn on Doors alone. */}}
+{{ $undrawn := slice "glossary" "curated_resources" "authors" "clusters" "disciplines" "docs" "plain_page" "citation_politics" "contributors_analysis" "welcome" "tags" "newsletters" "widget_page" "category" "categories" "forrt_clusters" "search" }}
+{{ $themed := in $undrawn .Type }}
+{{ if and .IsNode (not .IsHome) (not (in (slice "resources" "replication_hub") .Type)) }}{{ $themed = true }}{{ end }}
+{{ if eq .Path "/about/steering-committee" }}{{ $themed = true }}{{ end }}
+{{ return $themed }}

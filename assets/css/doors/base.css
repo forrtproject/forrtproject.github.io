@@ -1,11 +1,15 @@
-/* Site-wide type and colour. Loaded after the theme, whose Bootstrap rules stay in place
-   until inner pages are redesigned, so rules here stay narrow on purpose. */
+/* Site-wide type and colour. */
 body{margin-top:0;background:var(--page);color:var(--ink);font:400 var(--text-size)/1.6 var(--text);overflow-wrap:break-word}
 h1,h2,h3,h4,h5,h6,.h1,.h2,.h3,.h4,.h5,.h6{font-family:var(--display);font-weight:var(--display-weight);color:var(--ink)}
 a{color:var(--link)}
 a:hover{color:var(--ink)}
 a:focus-visible,button:focus-visible,input:focus-visible,summary:focus-visible{outline:3px solid var(--ink);outline-offset:3px;border-radius:2px}
 main:focus{outline:none}
+/* The cookie banner sits over the foot of the screen until dismissed; site.js sets its height. */
+html{scroll-padding-block-end:var(--banner,0px)}
+/* The site's content in system fonts where the Doors faces have no glyphs (decision D18). */
+main:lang(ar){--display:'Noto Naskh Arabic','Geeza Pro','Traditional Arabic','Times New Roman',serif;--text:'Noto Sans Arabic','Segoe UI','Geeza Pro',Tahoma,sans-serif}
+main:lang(zh){--display:'Noto Serif CJK SC','Songti SC','STSong',SimSun,serif;--text:'Noto Sans CJK SC','PingFang SC','Microsoft YaHei','Hiragino Sans GB',sans-serif}
 
 /* Upright everywhere, with emphasis as semi-bold. Real italics only inside reference lists
    (decision D15). Font Awesome's <i> icons set their own weight, so they are left alone. */
