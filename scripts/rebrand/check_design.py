@@ -555,6 +555,12 @@ def check_phone_reading(browser, base, failures):
         }""")
         expect(page.locator(".clusters-back-to-top.is-visible").count() == 1, f"back to top shows after scrolling at {width} px")
         expect(hit, f"the chat launcher can be clicked on a cluster page at {width} px")
+        if width > 760:
+            past = page.evaluate("""() => {
+              const style = getComputedStyle(document.querySelector('.clusters-sidebar-inner'));
+              return parseFloat(style.top) + parseFloat(style.maxHeight) - innerHeight;
+            }""")
+            expect(past <= 0, f"the longest side list fits the window at {width} px ({past:.0f} px past the foot)")
         page.context.close()
 
 
