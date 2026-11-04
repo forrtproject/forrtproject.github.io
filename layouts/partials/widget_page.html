@@ -51,7 +51,7 @@
         {{ with $lede }}<p class="standfirst">{{ . | markdownify | emojify }}</p>{{ end }}
       </header>
       {{/* On phones the side card falls below the text, too late to help on a long page. */}}
-      {{ if and $hasCard (gt (len $toc) 2) }}
+      {{ if $hasCard }}
       <details class="toc-phone">
         <summary>On this page</summary>
         <div class="article-toc"><nav aria-label="On this page"><ul>

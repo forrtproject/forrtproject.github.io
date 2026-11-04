@@ -512,6 +512,14 @@
       }, 80);
     }
 
+    /* The open drawer fills a phone's screen, so it carries its own way out. */
+    var sidebarClose = sidebar ? sidebar.querySelector('.sidebar-close') : null;
+    if (sidebarClose && mobileToggle) {
+      sidebarClose.addEventListener('click', function () {
+        mobileToggle.click();
+        mobileToggle.focus();
+      });
+    }
     if (mobileToggle && sidebar) {
       mobileToggle.addEventListener('click', function () {
         sidebar.classList.toggle('sidebar-open');

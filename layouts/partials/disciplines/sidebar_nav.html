@@ -5,7 +5,7 @@
 
 <div class="col-lg-4 col-xl-3 clusters-sidebar" id="clusters-sidebar">
   <div class="clusters-sidebar-inner">
-    <div class="sidebar-header">Fields &amp; Disciplines</div>
+    <div class="sidebar-header">Fields &amp; Disciplines<button type="button" class="sidebar-close d-lg-none">Close</button></div>
     <nav id="cluster-nav">
       {{ range $fi, $field := $data.fields }}
       {{ $fid := printf "field-%d" (int $field.number) }}
