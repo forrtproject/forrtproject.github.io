@@ -27,10 +27,10 @@
 
 /* See site.js. A 24 px strip stays on screen, in the page's gutter, to tap. */
 @media (max-width:760px){
-  #just-os-widget{transition:transform .2s}
+  #just-os-widget:not(:has(#just-os-window[style*="flex"])){transition:transform .2s}
   #just-os-widget.is-tucked:not(:focus-within,:has(#just-os-window[style*="flex"])){transform:translateX(calc(100% - 12px))}
   #just-os-widget.is-tucked:not(:focus-within) #just-os-dismiss{display:none}
 }
 @media (prefers-reduced-motion:reduce){
-  #just-os-widget{transition:none}
+  #just-os-widget:not(:has(#just-os-window[style*="flex"])){transition:none}
 }
