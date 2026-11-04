@@ -2356,4 +2356,4 @@ h1.clusters-site-heading.clusters-hub-page__title {
 .cluster-section{border:0!important;border-radius:var(--r-large)!important;box-shadow:none!important}
 .acc-count,.cluster-stats,.cluster-description{color:var(--ink)!important;opacity:1!important}
 .clusters-head h1.clusters-site-heading{font-size:clamp(36px,4.2vw,58px);line-height:1.06}
-.clusters-intro a:not(.lightbox-trigger):not(.btn),.disciplines-attribution a,.sc-description a,.disciplines-field-lead a{text-decoration:underline;text-underline-offset:3px}
+.clusters-intro a:not(.lightbox-trigger):not(.btn),.disciplines-attribution a,.sc-description a,.disciplines-leads a{text-decoration:underline;text-underline-offset:3px}

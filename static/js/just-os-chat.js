@@ -1085,13 +1085,19 @@
     const win = document.getElementById('just-os-window');
     if (!win || win.style.display !== 'flex') return;
     if (event.key === 'Escape') {
+      if (activeTooltipTeardown) return;
       window.toggleJustOS();
       const launcher = document.getElementById('just-os-btn');
-      if (launcher) launcher.focus();
+      if (launcher) {
+        launcher.setAttribute('aria-expanded', 'false');
+        launcher.focus();
+      }
       return;
     }
     if (event.key !== 'Tab' || win.offsetWidth < window.innerWidth) return;
-    const stops = Array.from(win.querySelectorAll('button,textarea,a[href]')).filter(function (el) {
+    const history = win.querySelector('.just-os-history-panel');
+    const scope = history && history.style.display === 'flex' ? history : win;
+    const stops = Array.from(scope.querySelectorAll('button,textarea,a[href]')).filter(function (el) {
       return el.getClientRects().length > 0 && !el.disabled;
     });
     const first = stops[0];

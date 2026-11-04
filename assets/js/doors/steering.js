@@ -54,7 +54,10 @@ document.addEventListener('keydown', (event) => {
   const stops = [...open.querySelectorAll('a[href],button')].filter((el) => el.getClientRects().length);
   const first = stops[0];
   const last = stops[stops.length - 1];
-  if (event.shiftKey && document.activeElement === first) {
+  if (!open.contains(document.activeElement)) {
+    event.preventDefault();
+    first.focus();
+  } else if (event.shiftKey && document.activeElement === first) {
     event.preventDefault();
     last.focus();
   } else if (!event.shiftKey && document.activeElement === last) {
