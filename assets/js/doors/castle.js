@@ -68,7 +68,12 @@ function startControls() {
       start();
     }
   }
-  syncCastle = syncMotion;
+  // Also draws once as the game closes, because a resize behind it clears the canvas and a paused
+  // castle would otherwise stay blank.
+  syncCastle = () => {
+    syncMotion();
+    if (!gameOpen) draw(lastTime);
+  };
   onMotionChange(() => {
     syncMotion();
     draw(lastTime);
