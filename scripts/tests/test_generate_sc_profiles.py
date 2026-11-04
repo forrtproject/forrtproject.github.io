@@ -27,6 +27,11 @@ class ExistingAuthorDir(unittest.TestCase):
     def test_hyphenated_folder(self):
         self.assertEqual(self.found("Dr Ana Marinho", ["ana-marinho"]), "ana-marinho")
 
+    def test_two_folders_for_one_name_leave_it_to_similarity(self):
+        # "ana-marinho" is the closer spelling of this name, and sorts first only by luck.
+        self.assertEqual(self.found("Ana Marinho", ["ana-marinho", "anamarinho"]), "ana-marinho")
+        self.assertEqual(self.found("Ana-Marinho", ["ana-marinho", "ana-marin-ho"]), "ana-marinho")
+
     def test_other_people_do_not_match(self):
         self.assertIsNone(self.found("Ruth Van der Hallen, PhD", ["ruth-vander-berg", "ana-marinho"]))
 

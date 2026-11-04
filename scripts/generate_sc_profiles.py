@@ -278,9 +278,12 @@ def find_existing_author_dir(personal_name, authors_dir):
     normalized_target = normalize_name(personal_name)
     # Some folders run the words together ("ruthvanderhallenphd"), which similarity undervalues.
     compact_target = re.sub(r'[^a-z0-9]', '', normalized_target)
-    for existing_dir in sorted(authors_dir.iterdir()):
-        if existing_dir.is_dir() and re.sub(r'[^a-z0-9]', '', normalize_name(existing_dir.name)) == compact_target:
-            return existing_dir.name
+    compact_matches = [
+        existing_dir.name for existing_dir in authors_dir.iterdir()
+        if existing_dir.is_dir() and re.sub(r'[^a-z0-9]', '', normalize_name(existing_dir.name)) == compact_target
+    ]
+    if len(compact_matches) == 1:
+        return compact_matches[0]
     best_match = None
     # 0.9 is deliberately strict: legitimate spelling variants of the SAME person
     # (Dr prefix, missing middle initial, hyphen vs space in a surname) all score >=0.95
