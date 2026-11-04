@@ -3726,3 +3726,23 @@ code.tex {
   color: rgb(139, 233, 253);
   background: rgb(68, 71, 90);
 }
+
+/* Keep pages within the screen width on phones */
+@media (max-width: 767.98px) {
+  section.wg-featurette-welcome > .container > .row {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .article-style,
+  .citation-text {
+    overflow-wrap: anywhere;
+  }
+
+  .home-section img,
+  .article-style img,
+  .mobile-image img {
+    max-width: 100%;
+    height: auto;
+  }
+}
