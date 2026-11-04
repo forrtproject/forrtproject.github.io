@@ -10,7 +10,7 @@
 {{/* Category badge colors */}}
 {{ $catColors := dict "General" "#6c757d" "Open Data" "#17a2b8" "Open Methods" "#28a745" "Open Outputs" "#fd7e14" "Open Education" "#6f42c1" }}
 
-<section id="{{ $fid }}" class="cluster-section" style="background-color: {{ $color }};">
+<section id="{{ $fid }}" class="cluster-section" style="background-color: {{ $color | safeCSS }};">
   <div class="cluster-header">
     <h2 class="cluster-title">
       <span class="cluster-number">{{ (int $field.number) }}</span>

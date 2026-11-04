@@ -145,14 +145,15 @@ def seo_head(text):
     return tags
 
 
-def inventory(root):
-    """Paths, JSON-LD counts by template group, and per-page SEO tags."""
+def inventory(root, skip=None):
+    """Paths, JSON-LD counts by template group, and per-page SEO tags. `skip` leaves pages out of the
+    counts, for agreed removals."""
     paths = list_paths(root)
     structured = defaultdict(Counter)
     heads = {}
     bad_json = []
     for path in paths:
-        if not path.endswith(".html"):
+        if not path.endswith(".html") or (skip and skip(path)):
             continue
         with open(os.path.join(root, path), encoding="utf-8", errors="replace") as handle:
             text = handle.read()

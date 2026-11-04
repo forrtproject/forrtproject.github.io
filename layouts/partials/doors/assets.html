@@ -16,6 +16,10 @@
 {{ if eq .Type "resources" }}{{ $screen = slice "page" "resources" }}{{ end }}
 {{ if eq .Type "replication_hub" }}{{ $screen = slice "page" "hub" }}{{ end }}
 {{ if eq .Type "widget_page" }}{{ $screen = slice "sections" }}{{ end }}
+{{ if and .IsNode (not .IsHome) (not (in (slice "resources" "replication_hub" "glossary") .Type)) }}{{ $screen = slice "lists" }}{{ end }}
+{{ if in (slice "tags" "newsletters") .Type }}{{ $screen = slice "lists" }}{{ end }}
+{{ if in (slice "clusters" "disciplines") .Section }}{{ $screen = slice "clusters" }}{{ end }}
+{{ if eq .Type "welcome" }}{{ $screen = slice "welcome" }}{{ end }}
 {{ with $screen }}
   {{ $parts := slice }}
   {{ range . }}{{ $parts = $parts | append (resources.Get (printf "css/doors/%s.css" .)) }}{{ end }}

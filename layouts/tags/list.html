@@ -4,39 +4,35 @@
      The cloud is server-rendered so the vocabulary is readable, linkable and
      indexable with JavaScript off. Selecting a term reloads with `?tag=`, and
      `static/js/tag-browser.js` fills the result list from `list.json` with every
-     tagged page in any section.
-
-     Renders once per build, so it also publishes the legacy `/tag/<term>/`
-     redirects. */}}
-
-{{/* Assigned, not printed: the partial's only output is loop whitespace. */}}
-{{ $_ := partial "publish_legacy_tag_redirects.html" . }}
+     tagged page in any section. The 404 page sends the old `/tag/<term>/` addresses here. */}}
 
 {{ $tags := partialCached "functions/tag_counts.html" . }}
 {{ $rows := $tags.rows }}
 
-<div class="universal-wrapper">
-  <h1>{{ .Title }}</h1>
-  {{ with .Params.description }}<p class="lead">{{ . }}</p>{{ end }}
-  <p class="text-muted">
+<div class="wrap tags-page">
+  <header class="article-head">
+    {{ partial "doors/crumbs" (dict "page" .) }}
+    <h1>{{ .Title }}</h1>
+    {{ with .Params.description }}<p class="standfirst">{{ . }}</p>{{ end }}
+  </header>
+  <p class="tags-note">
     {{ len $rows }} tags across {{ $tags.pages }} pages, most used first. Tags are
     contributor-supplied keywords; for curated topics see
     <a href="{{ "clusters/" | relURL }}">FORRT clusters</a>.
   </p>
 
   {{/* Filled by the script when a tag is selected; stays empty otherwise. */}}
-  <div id="tag-results" class="my-4" hidden>
-    <h2 id="tag-results-heading" class="h4"></h2>
-    <ul id="tag-results-list" class="list-unstyled"></ul>
+  <div id="tag-results" hidden>
+    <h2 id="tag-results-heading"></h2>
+    <ul id="tag-results-list" class="plain-list"></ul>
     <p><a href="{{ "tags/" | relURL }}">Show all tags</a></p>
   </div>
 
-  <div id="tag-cloud" class="tag-cloud my-4">
+  <div id="tag-cloud" class="tag-cloud">
     {{ range $rows }}
-      <a class="badge badge-light mr-1 mb-1"
-         href="{{ printf "tags/?tag=%s" (.tag | urlquery) | relURL }}"
+      <a href="{{ printf "tags/?tag=%s" (.tag | urlquery) | relURL }}"
          title="{{ .count }} page{{ if ne .count 1 }}s{{ end }}">{{ .tag }}
-        <span class="text-muted">{{ .count }}</span></a>
+        <span class="tag-count">{{ .count }}</span></a>
     {{ end }}
   </div>
 </div>

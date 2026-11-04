@@ -1,12 +1,3 @@
-{{ $css := resources.Get "css/welcome.css" }}
-{{ if $css }}
-  {{ $style := $css | minify | fingerprint }}
-  <link rel="stylesheet" href="{{ $style.RelPermalink }}">
-{{ else }}
-  {{ warnf "CSS not found: css/welcome.css. Using static version" }}
-  <link rel="stylesheet" href="{{ "css/welcome.css" | relURL }}">
-{{ end }}
-
 {{/* Getting Started Step Shortcode */}}
 {{ if and (.Get "title") (.Get "step") }}
 <div class="card step-card">

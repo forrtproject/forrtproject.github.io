@@ -1,25 +1,15 @@
 {{- define "main" -}}
-<style>
-  .universal-wrapper img {
-    display: block;
-    margin: 0 auto;
-  }
-</style>
-<div style="max-width: 100%; padding: 15px; margin: 15px;">
-
-{{ partial "page_header" . }}
-
-<article class="article">
-
-
-  <div class="universal-wrapper">
-
-        {{ .Content }}
-
+<div class="wrap analysis-page">
+  <div class="article-layout article-layout-wide">
+    <article class="reading">
+      <header class="article-head">
+        {{ partial "doors/crumbs" (dict "page" .) }}
+        <h1>{{ .Title }}</h1>
+      </header>
+      <div class="article-style">{{ partial "doors/content" .Content }}</div>
+    </article>
   </div>
-</article>
-
-<div class="universal-wrapper" style="margin-top: 60px;">
+<div class="analysis-network">
   <iframe id="network-graph" src="/partials/network-graph.html" width="100%" style="border: none; overflow: hidden;" scrolling="no"></iframe>
 </div>
 

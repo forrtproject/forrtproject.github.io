@@ -1,9 +1,3 @@
-{{/* Whether a page still needs the theme's stylesheet, Bootstrap's script and jQuery. Everything is
-     moving to false: a page group leaves these lists when its template is redrawn on Doors alone.
-     List pages stay on the theme unless their type is in $drawn_lists. */}}
-{{ $undrawn := slice "clusters" "disciplines" "docs" "plain_page" "citation_politics" "contributors_analysis" "welcome" "tags" "newsletters" "category" "categories" "forrt_clusters" "search" }}
-{{ $themed := in $undrawn .Type }}
-{{ $drawn_lists := slice "resources" "replication_hub" "glossary" "authors" }}
-{{ if and .IsNode (not .IsHome) (not (in $drawn_lists .Type)) }}{{ $themed = true }}{{ end }}
-{{ if eq .Path "/about/steering-committee" }}{{ $themed = true }}{{ end }}
-{{ return $themed }}
+{{/* Whether a page still needs the theme's stylesheet, Bootstrap's script and jQuery. Every template
+     is now drawn on Doors alone, so the answer is no. Phase 6 removes the theme's files and this. */}}
+{{ return false }}

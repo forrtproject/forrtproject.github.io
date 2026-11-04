@@ -1,0 +1,33 @@
+{{- define "main" -}}
+{{/* The simple list page, for categories, clusters' resource lists and sections with no template of
+     their own. A section with no children is just its text. Paginated lists keep their numbered
+     pages, except the curated_resources and forrt_clusters ones (decision D17), which the 404 page
+     sends on. */}}
+{{ if not .Data.Pages }}
+  {{ $_ := .Paginate .Data.Pages }}
+  {{ partial "doors/reading" . }}
+{{ else }}
+<div class="wrap">
+  <div class="article-layout article-layout-single">
+    <article class="reading">
+      <header class="article-head">
+        {{ partial "doors/crumbs" (dict "page" .) }}
+        <h1>{{ .Title }}</h1>
+        {{ with .Params.subtitle }}<p class="standfirst">{{ . | markdownify | emojify }}</p>{{ end }}
+      </header>
+      {{ with .Content }}<div class="article-style">{{ partial "doors/content" . }}</div>{{ end }}
+      {{ if and (in (slice "curated_resources" "forrt_clusters") (.Type | lower)) (ne .Kind "taxonomy") }}
+        <p class="list-count">{{ len .Data.Pages }} resources. Search and filter them all in the <a href="{{ relref . "/resources" }}">resources directory</a>.</p>
+        <ul class="plain-list">
+          {{ range .Data.Pages }}<li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>{{ end }}
+        </ul>
+      {{ else }}
+        {{ $pager := .Paginate .Data.Pages }}
+        <div class="list-items">{{ range $pager.Pages }}{{ partial "doors/list_item" . }}{{ end }}</div>
+        {{ partial "doors/pager" $pager }}
+      {{ end }}
+    </article>
+  </div>
+</div>
+{{ end }}
+{{- end -}}

@@ -1,26 +1,18 @@
 {{- define "main" -}}
-
-{{ partial "page_header.html" . }}
-
-<div class="universal-wrapper">
-
-  {{ with .Content }}
-  <div class="article-style">{{ . }}</div>
-  {{ end }}
-
-  {{ $paginator := .Paginate .Data.Pages }}
-  {{ range $paginator.Pages }}
-    {{ if eq $.Params.view 1 }}
-      {{ partial "li_list" . }}
-    {{ else if eq $.Params.view 3 }}
-      {{ partial "li_card" . }}
-    {{ else }}
-      {{ partial "li_compact" . }}
-    {{ end }}
-  {{ end }}
-
-  {{ partial "pagination" . }}
-
+{{/* A section of articles: its introduction, then the articles newest first, a page at a time. */}}
+{{ $pager := .Paginate .Data.Pages }}
+<div class="wrap">
+  <div class="article-layout article-layout-single">
+    <article class="reading">
+      <header class="article-head">
+        {{ partial "doors/crumbs" (dict "page" .) }}
+        <h1>{{ .Title }}</h1>
+        {{ with .Params.subtitle }}<p class="standfirst">{{ . | markdownify | emojify }}</p>{{ end }}
+      </header>
+      {{ with .Content }}<div class="article-style">{{ partial "doors/content" . }}</div>{{ end }}
+      <div class="list-items">{{ range $pager.Pages }}{{ partial "doors/list_item" . }}{{ end }}</div>
+      {{ partial "doors/pager" $pager }}
+    </article>
+  </div>
 </div>
-
 {{- end -}}

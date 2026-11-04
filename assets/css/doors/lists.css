@@ -1,0 +1,76 @@
+/* List pages: the simple list, news cards, tags and the newsletter archive. */
+.news-page,.tags-page{padding:32px 0 40px}
+.news-page .article-head h1,.tags-page h1,.nla-page h1{font-size:clamp(36px,4.2vw,58px);line-height:1.06;letter-spacing:-.01em;margin:0 0 12px}
+.news-page .crumbs,.tags-page .crumbs,.nla-page .crumbs{margin-bottom:18px}
+.news-page .article-style{max-width:32em;margin-bottom:18px}
+.news-page .standfirst,.tags-page .standfirst{font:500 clamp(19px,1.6vw,22px)/1.35 var(--display);max-width:32em}
+.list-count{margin:0 0 18px;font-size:18px}
+.list-count a{color:var(--link);text-decoration:underline;text-underline-offset:3px}
+.plain-list{margin:0;padding:0;list-style:none;font-size:20px;line-height:1.35}
+.plain-list li{padding:6px 0;border-bottom:1px solid var(--line)}
+.plain-list a{color:var(--link);text-decoration:underline;text-underline-offset:3px}
+.list-items{display:grid;gap:18px;margin-top:8px}
+.list-item{padding:0 0 18px;border-bottom:1px solid var(--line)}
+.list-item-image{display:grid;grid-template-columns:minmax(0,1fr) 140px;gap:18px;align-items:start}
+.list-item img{border-radius:var(--r-small);width:140px;height:105px;object-fit:cover}
+.article-layout .list-item h2{margin:0 0 4px;font-size:24px;line-height:1.2}
+.list-item h2 a{color:var(--link);text-decoration:underline;text-underline-offset:3px;text-decoration-thickness:1.5px}
+.list-item h2 a:hover{color:var(--ink)}
+.list-meta{margin:0 0 4px;max-width:32em;font-size:15px;color:var(--soft)}
+.list-meta a{color:inherit;text-decoration:underline}
+.list-meta:empty{display:none}
+.list-summary{margin:0;font-size:17px;line-height:1.45}
+.pager{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:26px 0 0;font-weight:600;font-size:16px}
+.pager a,.pager-current{display:inline-block;min-width:36px;padding:4px 10px;border-radius:999px;text-align:center;color:var(--link)}
+.pager a:hover{background:var(--surface);color:var(--ink)}
+.pager-current{background:var(--ink);color:#fff}
+.ac-filters{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 22px}
+.ac-chip{padding:5px 14px;background:#fff;border:1.5px solid var(--soft);border-radius:999px;color:var(--ink);font:600 15px/1.3 var(--text)}
+.ac-chip:hover{border-color:var(--ink)}
+.ac-chip.active{background:var(--ink);border-color:var(--ink);color:#fff}
+.announcements-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:18px}
+.announcement-card{position:relative;display:flex;flex-direction:column;height:100%;background:var(--surface);border-radius:var(--r-large);overflow:hidden}
+.announcement-card:hover h2 a{color:var(--ink)}
+.ac-thumb img{display:block;width:100%;height:auto;aspect-ratio:16/9;object-fit:cover}
+.ac-body{padding:14px 18px 18px;font-size:16px;line-height:1.45}
+.ac-meta{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-bottom:6px;font-size:15px;font-weight:600}
+.ac-cat{padding:2px 8px;background:#fff;border-radius:var(--r-small)}
+.ac-body h2{margin:0 0 6px;font-size:21px;line-height:1.2}
+.ac-link{color:var(--link);text-decoration:underline;text-underline-offset:3px}
+.ac-link::after{content:"";position:absolute;inset:0}
+.ac-summary{display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:4;overflow:hidden}
+.ac-summary p{margin:0}
+.ac-summary a{color:inherit}
+.tags-note{max-width:40em;font-size:17px}
+.tags-note a{color:var(--link);text-decoration:underline;text-underline-offset:3px}
+.tag-cloud{display:flex;flex-wrap:wrap;gap:6px;margin:18px 0 0}
+.tag-cloud a{padding:3px 10px;background:var(--surface);border-radius:var(--r-small);font-size:15px;font-weight:600;line-height:1.35;color:var(--ink)}
+.tag-cloud a:hover{background:var(--ink);color:#fff}
+.tag-count{margin-inline-start:4px;font-weight:400}
+#tag-results{margin:18px 0;max-width:40em}
+#tag-results h2{font-size:26px}
+.nla-page{padding:32px 0 40px}
+.nla-subscribe-band{max-width:40em;margin:0 0 26px;padding:18px 20px;background:var(--surface);border-radius:var(--r-large)}
+.nla-subscribe-label{margin:0 0 10px}
+.nla-archive-header{display:flex;flex-wrap:wrap;align-items:center;gap:14px;margin:0 0 18px}
+.nla-archive-title{margin:0;font-size:30px}
+.nla-year-tabs{display:flex;flex-wrap:wrap;gap:6px}
+.nla-year-tab{padding:4px 12px;background:#fff;border:1.5px solid var(--soft);border-radius:999px;color:var(--ink);font:600 15px/1.3 var(--text)}
+.nla-year-tab.active{background:var(--ink);border-color:var(--ink);color:#fff}
+.nla-year-band{display:flex;align-items:center;gap:10px;margin:22px 0 12px;font:var(--display-weight) 24px/1.2 var(--display)}
+.nla-year-band-line{display:none}
+.nla-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:10px}
+.nla-card{display:block;padding:12px 14px;background:var(--surface);border-radius:var(--r-small);color:var(--ink);text-decoration:none}
+.nla-card:hover{background:var(--ink);color:#fff}
+.nla-card-accent{display:none}
+.nla-card-month{font-weight:700}
+.nla-card-year,.nla-card-footer{font-size:15px}
+.nla-badge-new{display:inline-block;margin-bottom:4px;padding:1px 7px;background:var(--res-bg);border-radius:var(--r-small);color:var(--ink);font-size:15px;font-weight:700}
+.analysis-network{margin:32px 0 40px}
+.analysis-page .article-layout{padding-bottom:0}
+@media(max-width:760px){
+  .news-page,.tags-page,.nla-page{padding:20px 0 28px}
+  .list-item-image{grid-template-columns:minmax(0,1fr) 88px;gap:12px}
+  .list-item img{width:88px;height:66px}
+  .article-layout .list-item h2{font-size:21px}
+}
