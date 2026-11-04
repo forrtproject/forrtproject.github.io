@@ -485,7 +485,7 @@ function createGame() {
 
   let dirty = true, running = false, raf = 0, last = 0, drag = null, celebrate = null, aim = null, cursor = null, lastPoint = null, cleared = null, batches = 0, lastPlaced = null, doneAt = -1000;
   const flights = new Set(), rubbleOut = new Set();
-  let toppling = false, collapse = null, collapseWait = 0, cannon = null, lastCollapse = null, reframeIn = 0;
+  let toppling = false, awaitingPhysics = false, collapse = null, collapseWait = 0, cannon = null, lastCollapse = null, reframeIn = 0;
   const stats = { refused: 0, toppled: 0, misses: 0, drops: 0, undos: 0, lost: 0, frames: 0, rotates: 0, turns: 0, keyboard: 0 };
 
   const say = text => { ui.live.textContent = text; };
@@ -502,7 +502,7 @@ function createGame() {
     ui.done.textContent = done ? 'Build on' : 'Done';
     ui.done.setAttribute('aria-label', done ? 'Build on' : 'Done building');
     ui.done.disabled = toppling || (!history.length && !done);
-    ui.undo.disabled = !history.length && !cleared;
+    ui.undo.disabled = awaitingPhysics || (!history.length && !cleared);
     ui.restart.disabled = !history.length;
     ui.plan.hidden = !hintsOn;
     const open = showHints();
@@ -622,10 +622,12 @@ function createGame() {
   async function placeAnyway() {
     const target = warnTarget;
     hideWarning();
-    toppling = true;
+    toppling = awaitingPhysics = true;
     refresh();
-    try { cannon = await loadPhysics(); } catch { toppling = false; refresh(); ui.hint.textContent = 'The physics file did not load, so nothing was placed.'; return; }
-    if (!toppling) return;
+    // Undo waits for the file too, or it would change the tower under the waiting brick.
+    try { cannon = await loadPhysics(); } catch { toppling = awaitingPhysics = false; refresh(); ui.hint.textContent = 'The physics file did not load, so nothing was placed.'; return; }
+    awaitingPhysics = false;
+    if (!toppling) { refresh(); return; }
     const before = snapshot();
     toppling = false;
     const part = placeBrick(target, true);
@@ -740,7 +742,7 @@ function createGame() {
   function leaveDone() { lastPlaced = null; done = false; celebrate = null; model.rotation.y = 0; paintStone(); }
   /* Undo takes back the last action: one brick, everything Build rest added, or Start again. */
   function undo() {
-    if (drag) return;
+    if (drag || awaitingPhysics) return;
     lastPlaced = null;
     if (cleared?.wipe) wipe();
     if (cleared) { restore(); return; }

@@ -432,6 +432,8 @@ def check_tower_game(browser, base, expect):
 
     # A first tap exactly where the button will appear reveals it. It must not open the game.
     page = new_page(browser, 390)
+    requests = []
+    page.on("request", lambda request: requests.append(request.url))
     page.goto(base, wait_until="load")
     page.wait_for_timeout(1500)
     page.locator(".tower").scroll_into_view_if_needed()
@@ -444,10 +446,15 @@ def check_tower_game(browser, base, expect):
       return {x: b.x + b.width / 2, y: b.y + b.height / 2, height: b.height};
     }""")
     expect(at["height"] >= 44, f"'Build it yourself' is {at['height']:.0f} px tall on a phone, limit 44")
-    is_open = "document.querySelector('#tower-game')?.open === true"
     page.touchscreen.tap(at["x"], at["y"])
-    page.wait_for_timeout(100)
-    expect(not page.evaluate(is_open), "the tap that reveals the button does not open the game")
+    page.wait_for_timeout(600)
+    expect(not any("/js/tower/" in url for url in requests), "a tap on the hidden button's spot does not start the game")
+    expect(page.evaluate(box) <= 1, "that tap does not reveal the button either")
+    page.locator(".castle-stage").tap()
+    page.wait_for_timeout(500)
+    expect(page.evaluate(box) > 100, "a tap on the tower reveals the button")
+    page.touchscreen.tap(at["x"], at["y"])
+    page.wait_for_function("document.querySelector('#tower-game')?.open === true", timeout=20000)
     page.context.close()
 
     page = new_page(browser, 1440)

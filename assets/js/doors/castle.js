@@ -92,7 +92,7 @@ function startControls() {
   document.addEventListener('visibilitychange', syncMotion);
   window.addEventListener('resize', () => {
     castle()?.resize();
-    draw(lastTime);
+    if (!gameOpen) draw(lastTime);
   });
 
   castle()?.resize();
