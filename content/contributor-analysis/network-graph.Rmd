@@ -227,23 +227,7 @@ visNetwork(contributor_nodes, plot_edges, width = "100%", height = "800px") |>
   ) |>
   htmlwidgets::onRender("
     function(el, x) {
-      var network = this;
-
-      // Set initial zoom level immediately
-      network.on('initRedraw', function() {
-        network.moveTo({
-          scale: 0.042,
-          animation: false
-        });
-      });
-
-      // Maintain zoom after stabilization
-      network.on('stabilized', function() {
-        network.moveTo({
-          scale: 0.012,
-          animation: false
-        });
-      });
+      var network = this.network;
 
       network.on('click', function(params) {
         if (params.nodes.length === 0) {
