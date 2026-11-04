@@ -161,8 +161,7 @@ projects_plot <- ggplot(project_contributors, aes(y = reorder(`Project Name`, un
         plot.background = element_rect(fill = "#fefdf6", color = NA),
         panel.border = element_blank(),
         panel.spacing = unit(0, "lines"),
-        # Ubuntu 26.04 draws the font wider than ggplot measures it, so long project names need room
-        plot.margin = margin(t = 10, r = 10, b = 60, l = 30))
+        plot.margin = margin(t = 10, r = 10, b = 60, l = 10))
 
 # Roles in projects
 
