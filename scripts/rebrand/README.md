@@ -15,6 +15,7 @@ Nothing here runs against production. Delete this folder after launch unless a c
 | Internal links | `check_internal_links.py` | A link broken here is not also broken at the merge base. Lychee excludes forrt.org, so nothing else checks these |
 | Built HTML | `../check_seo_html.py` | The site's standing rules on headings, conditional assets, image `alt` and home-page images |
 | Designed screens | `check_design.py` | On the designed screens and every page on the reading layout (a sample of the three large collections): sideways overflow, italics, line length, small text, low contrast, broken images or more than one `h1`; an icon outside the subset or a theme asset loaded anywhere; the home page's topics too far down (A14), layout shift, pause control or the resources directory misbehaving; a call-out over the text, the card or another call-out |
+| Accessibility rules | `check_axe.py` | axe-core reports a Level A or AA problem on a sample page at 390 or 1440 px, apart from the provider's markup listed in `KNOWN` |
 
 Pushes also run `preview_paths.py`, which prefixes root-relative paths for the subfolder and adds noindex to every HTML file, and then deploy. A failed check marks the run red but does not hold the preview back. Tests are in `../tests/test_rebrand_checks.py`.
 
@@ -37,7 +38,7 @@ python3 scripts/rebrand/capture_pages.py /tmp/public-main --out /tmp/baseline-sh
 ## Other tools
 
 - `check_preview.py` checks the deployed preview in a browser: one URL per rule in the 404 table, a sample of links and assets, noindex, search, and that the newsletter form loads on a click and not before.
-- `check_design.py` checks the designed screens in a browser, on a build or the preview: overflow, also on the sample pages, italics, line length, one `h1`, hidden buttons, and the resources directory's filters, address, search and pages. On a build it also sweeps the reading layout's pages, including for empty space beside the text, and scans for icons and theme assets.
+- `check_design.py` checks the designed screens in a browser, on a build or the preview, in Chromium by default and with `--browser firefox` or `webkit` in the others: overflow, also on the sample pages, italics, line length, one `h1`, hidden buttons, and the resources directory's filters, address, search and pages. On a build it also sweeps the reading layout's pages, including for empty space beside the text, and scans for icons and theme assets.
 - `capture_pages.py` also weighs and screenshots a preview build with `--base /rebrand-doors/`.
 - `build_fonts.py` rebuilds `static/fonts/doors/`, and with `--icons` the subset of Font Awesome and `assets/css/doors/icons.css`. Add a new icon to its `ICONS` list.
 - `render_castle_still.py` rerenders the home page's still image.
