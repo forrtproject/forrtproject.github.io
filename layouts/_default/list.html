@@ -16,7 +16,10 @@
         {{ with .Params.subtitle }}<p class="standfirst">{{ . | markdownify | emojify }}</p>{{ end }}
       </header>
       {{ with .Content }}<div class="article-style">{{ partial "doors/content" . }}</div>{{ end }}
-      {{ if and (in (slice "curated_resources" "forrt_clusters") (.Type | lower)) (ne .Kind "taxonomy") }}
+      {{ if eq (.Type | lower) "curated_resources" }}
+        <p class="list-count">All {{ len .Data.Pages }} teaching resources are in the directory, where you can search and filter them.</p>
+        <p><a class="btn btn-primary" href="{{ relref . "/resources" }}">Open the resources directory</a></p>
+      {{ else if and (eq (.Type | lower) "forrt_clusters") (ne .Kind "taxonomy") }}
         <p class="list-count">{{ len .Data.Pages }} resources. Search and filter them all in the <a href="{{ relref . "/resources" }}">resources directory</a>.</p>
         <ul class="plain-list">
           {{ range .Data.Pages }}<li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>{{ end }}

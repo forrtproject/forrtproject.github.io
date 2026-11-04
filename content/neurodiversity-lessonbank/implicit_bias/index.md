@@ -50,7 +50,7 @@ Look below at fragments of [this article](https://www.jstor.org/stable/25119452?
 TIP: click on the question marks on both sides of the text to see hints or click on the button above to see the activity in full screen.
 
 <div style="position: relative; padding-bottom: 70%; height: 0; overflow: hidden; margin: 20px 0;">
-<iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" src="https://msgrose-hodge.github.io/ND/h5p-standalone-1.3.x/demo/content-example-2.html" frameborder="0" allowfullscreen="allowfullscreen" allow="geolocation *; microphone *; camera *; midi *; encrypted-media *">
+<iframe title="Embedded material for this lesson" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" src="https://msgrose-hodge.github.io/ND/h5p-standalone-1.3.x/demo/content-example-2.html" frameborder="0" allowfullscreen="allowfullscreen" allow="geolocation *; microphone *; camera *; midi *; encrypted-media *">
 </iframe>
 </div>
 
@@ -135,7 +135,7 @@ Are non-neurotypical brains presented as deficient in the article and the tweet?
 Instructions: drag and drop the fields to match the language found in papers (orange pin) and the corresponding comment (blue pin). Once you find a pair, put the fields side by side. Once you complete the task, check by clicking the icon in the bottom right corner. For full screen view, click on the square in the top right corner.
 
 <div style="position: relative; padding-bottom: 60%; height: 0; overflow: hidden; margin: 20px 0;">
-<iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" src="https://learningapps.org/watch?v=pi3j02pkt23" allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true"></iframe>
+<iframe title="Embedded material for this lesson" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" src="https://learningapps.org/watch?v=pi3j02pkt23" allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true"></iframe>
 </div>
 
 - What is the assumed norm that autistic individuals are often measured against? Is this explicitly stated?
@@ -146,7 +146,7 @@ Instructions: drag and drop the fields to match the language found in papers (or
 Post your reflection below.
 
 <div style="position: relative; padding-bottom: 70%; height: 0; overflow: hidden; margin: 20px 0;">
-<iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" src="https://padlet.com/magdalena_carlo/xfzxjebag7ln693r" allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true"></iframe>
+<iframe title="Embedded material for this lesson" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" src="https://padlet.com/magdalena_carlo/xfzxjebag7ln693r" allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true"></iframe>
 </div>
 Posts are moderated so they may not appear immediately.
 

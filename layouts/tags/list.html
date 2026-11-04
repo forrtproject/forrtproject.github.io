@@ -29,10 +29,12 @@
   </div>
 
   <div id="tag-cloud" class="tag-cloud">
-    {{ range $rows }}
-      <a href="{{ printf "tags/?tag=%s" (.tag | urlquery) | relURL }}"
-         title="{{ .count }} page{{ if ne .count 1 }}s{{ end }}">{{ .tag }}
-        <span class="tag-count">{{ .count }}</span></a>
+    {{ range first 100 $rows }}<a href="{{ printf "tags/?tag=%s" (.tag | urlquery) | relURL }}" title="{{ .count }} page{{ if ne .count 1 }}s{{ end }}">{{ .tag }} <span class="tag-count">{{ .count }}</span></a>{{ end }}
+    {{ with after 100 $rows }}
+    <details class="tag-more">
+      <summary>Show all {{ len $rows }} tags</summary>
+      <div class="tag-cloud">{{ range . }}<a href="{{ printf "tags/?tag=%s" (.tag | urlquery) | relURL }}" title="{{ .count }} page{{ if ne .count 1 }}s{{ end }}">{{ .tag }} <span class="tag-count">{{ .count }}</span></a>{{ end }}</div>
+    </details>
     {{ end }}
   </div>
 </div>

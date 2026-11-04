@@ -576,3 +576,27 @@ article.article .article-container .article-title {
     font-weight: 700;
     font-size: 1.25rem;
 }
+
+/* Doors: one colour per section from the site's palette, readable labels, and a closed profile that
+   no keyboard can reach. The inline --team-color comes from the generated page. */
+#strategic .sc-card,#strategic .sc-title-card{--team-color:var(--edu)!important}
+#operations .sc-card,#operations .sc-title-card{--team-color:var(--res)!important}
+#steering .sc-card,#steering .sc-title-card{--team-color:var(--jus)!important}
+#guidance .sc-card,#guidance .sc-title-card{--team-color:var(--com)!important}
+.sc-title-label{opacity:1;color:#fff;font-size:15px;letter-spacing:0;text-transform:none}
+.sc-section-desc{color:var(--ink);font-size:16px}
+.sc-section-title{font-size:15px;letter-spacing:0;text-transform:none}
+.sc-nav{justify-content:flex-start;flex-wrap:wrap;gap:6px 14px;padding:0 0 18px;margin:0 0 18px;white-space:normal;overflow:visible}
+.sc-nav a{font-size:15px;color:var(--link);text-decoration:underline}
+.sc-nav a::after{content:none!important}
+#sc-container>div{padding:0;max-width:none}
+.sc-section{scroll-margin-top:16px}
+.sc-modal-backdrop{visibility:hidden;transition:opacity .3s ease,visibility .3s}
+.sc-modal-backdrop.active{visibility:visible}
+.sc-card:focus-visible{outline:3px solid var(--ink);outline-offset:2px}
+@media(max-width:639px){
+  .sc-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+  .sc-card,.sc-title-card{width:auto!important;max-width:none}
+  .sc-cbar{display:none}
+}
+#sc-container{width:auto;max-width:none;margin:0;padding:0;position:static}

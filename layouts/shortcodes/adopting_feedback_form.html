@@ -98,7 +98,7 @@
 
   .adopting-feedback-intro {
     margin: 0;
-    color: #6c757d;
+    color: var(--ink);
     font-size: 0.9rem;
     line-height: 1.5;
   }
@@ -115,7 +115,7 @@
 
   .adopting-feedback-optional {
     font-weight: 400;
-    color: #6c757d;
+    color: var(--ink);
     font-size: 0.8rem;
   }
 
@@ -173,10 +173,10 @@
 
   .adopting-feedback-hp {
     position: absolute;
-    left: -9999px;
     width: 1px;
     height: 1px;
     overflow: hidden;
+    clip-path: inset(50%);
   }
 
   .adopting-feedback-thanks {

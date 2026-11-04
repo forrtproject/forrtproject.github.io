@@ -1080,6 +1080,31 @@
     }
   };
 
+  // Escape closes the chat, and where it fills the screen Tab stays inside it.
+  document.addEventListener('keydown', function (event) {
+    const win = document.getElementById('just-os-window');
+    if (!win || win.style.display !== 'flex') return;
+    if (event.key === 'Escape') {
+      window.toggleJustOS();
+      const launcher = document.getElementById('just-os-btn');
+      if (launcher) launcher.focus();
+      return;
+    }
+    if (event.key !== 'Tab' || win.offsetWidth < window.innerWidth) return;
+    const stops = Array.from(win.querySelectorAll('button,textarea,a[href]')).filter(function (el) {
+      return el.getClientRects().length > 0 && !el.disabled;
+    });
+    const first = stops[0];
+    const last = stops[stops.length - 1];
+    if (event.shiftKey && document.activeElement === first) {
+      event.preventDefault();
+      last.focus();
+    } else if (!event.shiftKey && document.activeElement === last) {
+      event.preventDefault();
+      first.focus();
+    }
+  });
+
   function updateFloatIcon(win) {
     var btn = document.getElementById('just-os-float-btn');
     if (!btn) return;

@@ -14,6 +14,8 @@
   {{ $body = replaceRE `(?s)<h2 class="sc-page-title">.*?</h2>` "" $body }}
   {{ replaceRE `(</?)main>` "${1}div>" $body | safeHTML }}
 </div>
+{{ $steering := resources.Get "js/doors/steering.js" | js.Build (dict "minify" true "format" "iife" "target" "es2019") | fingerprint "md5" }}
+<script src="{{ $steering.RelPermalink }}" defer></script>
 {{ else }}
 {{ partial "doors/reading" . }}
 {{ end }}

@@ -144,7 +144,7 @@ You can still contribute to the collection of Lesson Plans by adding your ideas 
 
 ### Pedagogical Activities
 
-<iframe style="border:0px; width:100%; height:100%;" allowfullscreen="true" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRxqwa1rfgn-mB2hdCd3DzQHYMV7bOpQw6hRwXQodSnKjL1QvV4r5Aaf0kr-AVKc9zk60ejgDhZ-FLV/pubhtml?widget=true&amp;headers=false"></iframe>
+<iframe title="Table of lesson plans" style="border:0px; width:100%; height:100%;" allowfullscreen="true" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRxqwa1rfgn-mB2hdCd3DzQHYMV7bOpQw6hRwXQodSnKjL1QvV4r5Aaf0kr-AVKc9zk60ejgDhZ-FLV/pubhtml?widget=true&amp;headers=false"></iframe>
 
 <br>
 

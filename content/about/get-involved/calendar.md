@@ -53,4 +53,4 @@ classtitle = "text-center"
 
 +++
 
-<iframe src="https://calendar.google.com/calendar/embed?src=forrtproject%40gmail.com&ctz=Europe%2FBerlin" style="border: 0" width="100%" height="600" frameborder="0" scrolling="no"></iframe>
+<iframe title="FORRT community calendar" src="https://calendar.google.com/calendar/embed?src=forrtproject%40gmail.com&ctz=Europe%2FBerlin" style="border: 0" width="100%" height="600" frameborder="0" scrolling="no"></iframe>
