@@ -47,7 +47,7 @@ HIDDEN_BUTTONS = """(root) => {
     return false;
   };
   return [...root.querySelectorAll(':is(a,button).btn')]
-    .filter((a) => !a.getClientRects().length && !a.closest('[hidden],.collapse,.modal,.tab-pane,details,.click-to-load') && !onPurpose(a))
+    .filter((a) => !a.getClientRects().length && !a.closest('[hidden],.collapse,.modal,.tab-pane,details') && !onPurpose(a) && !(innerWidth <= 760 && a.closest('.click-to-load[style*="absolute"]:not([data-embed-src*="youtube"])')))
     .map((a) => a.textContent.trim().slice(0, 40));
 }"""
 AUDIT = """() => {
