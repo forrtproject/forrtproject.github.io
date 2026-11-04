@@ -43,8 +43,13 @@ if (quotes.length > 1) {
     }
   });
   // A tap reveals the pause button, as it does on the castle.
+  // On the click, because a button revealed at the touch would sit under the finger and take the tap.
+  let lastPointer = 'mouse';
   host.addEventListener('pointerdown', (event) => {
-    if (event.pointerType !== 'mouse') host.classList.add('show-motion-control');
+    lastPointer = event.pointerType;
+  });
+  host.addEventListener('click', () => {
+    if (lastPointer !== 'mouse') host.classList.add('show-motion-control');
   });
   // Only keyboard focus holds them: a mouse click leaves focus on the button after the pointer goes.
   host.addEventListener('focusin', (event) => {

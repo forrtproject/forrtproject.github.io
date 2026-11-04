@@ -1,6 +1,7 @@
 /* Castle playback on the home page, from the Doors mock's controller.
    The still image is already on the page. This loads the 3D bundle once the page has painted,
-   then owns playback: pause, hover and tap, and suspension when off screen or in a hidden tab.
+   then owns playback: pause, hover and tap, and suspension when off screen, in a hidden tab or behind
+   the tower game. It also opens that game.
    A visitor who paused on an earlier visit keeps the still until they press play. */
 import { isPaused, onMotionChange, prefersReduced } from './motion.js';
 
@@ -10,6 +11,14 @@ const canvas = document.getElementById('castle-canvas');
 const hero = document.querySelector('.hero');
 const figure = stage?.closest('figure');
 const pauseButton = figure?.querySelector('.motion-toggle');
+let gameOpen = false;
+let syncCastle = () => {};
+
+// The tower game calls this as it opens and closes, so the castle stops drawing behind it.
+window.forrtHeroSuspend = (open) => {
+  gameOpen = Boolean(open);
+  syncCastle();
+};
 
 function webglAvailable() {
   try {
@@ -39,26 +48,27 @@ function startControls() {
   }
   function loop(ms) {
     frame = 0;
-    if (isPaused() || document.hidden || !visible) return;
+    if (isPaused() || gameOpen || document.hidden || !visible) return;
     lastTime += Math.min(0.045, ms - (previous || ms) > 0 ? (ms - (previous || ms)) / 1000 : 0);
     previous = ms;
     draw(lastTime);
     frame = requestAnimationFrame(loop);
   }
   function start() {
-    if (!frame && !isPaused() && visible && !document.hidden) {
+    if (!frame && !isPaused() && !gameOpen && visible && !document.hidden) {
       previous = 0;
       frame = requestAnimationFrame(loop);
     }
   }
   function syncMotion() {
-    if (isPaused() || document.hidden || !visible) {
+    if (isPaused() || gameOpen || document.hidden || !visible) {
       cancelAnimationFrame(frame);
       frame = 0;
     } else {
       start();
     }
   }
+  syncCastle = syncMotion;
   onMotionChange(() => {
     syncMotion();
     draw(lastTime);
@@ -100,6 +110,7 @@ function watchPointer() {
   let dwell = 0;
   let tapHeld = false;
   let lastPointer = 'mouse';
+  let revealedAt = -Infinity;
   figure.addEventListener('pointerenter', (event) => {
     if (event.pointerType === 'mouse' && !isPaused()) {
       dwell = setTimeout(() => castle()?.hold(true), 400);
@@ -116,10 +127,46 @@ function watchPointer() {
   });
   stage.addEventListener('click', () => {
     if (lastPointer === 'mouse') return;
+    if (!figure.classList.contains('show-motion-control')) revealedAt = performance.now();
     figure.classList.add('show-motion-control');
     if (isPaused() || !castle()) return;
     tapHeld = !tapHeld;
     castle()?.hold(tapHeld);
+  });
+  // A quick second tap on the tower must not land on a button the first tap has just revealed.
+  figure.querySelector('.motion-bar').addEventListener('click', (event) => {
+    if (performance.now() - revealedAt < 350) event.stopPropagation();
+  }, true);
+}
+
+/* "Build it yourself" opens the tower game. Nobody downloads the game until they press this. It sets
+   window.towerGame, and finds its physics file beside itself. Without WebGL the button stays hidden. */
+function watchBuildButton() {
+  const button = figure.querySelector('.tower-entry');
+  if (!button) return;
+  const label = button.textContent;
+  let loading = false;
+  button.hidden = false;
+  button.addEventListener('click', () => {
+    if (window.towerGame) {
+      window.towerGame.open();
+      return;
+    }
+    if (loading) return;
+    loading = true;
+    button.textContent = 'Loading…';
+    const game = document.createElement('script');
+    game.src = button.dataset.game;
+    game.onload = () => {
+      loading = false;
+      button.textContent = label;
+      window.towerGame.open();
+    };
+    game.onerror = () => {
+      loading = false;
+      button.textContent = 'Could not load the game';
+    };
+    document.body.append(game);
   });
 }
 
@@ -141,8 +188,12 @@ function loadBundle() {
   document.body.append(bundle);
 }
 
-if (stage && canvas && allowed()) {
+if (stage && canvas && webglAvailable()) {
+  // Also under reduced motion and Save-Data, where a tap still has to reveal the button.
   watchPointer();
+  watchBuildButton();
+}
+if (stage && canvas && allowed()) {
   onMotionChange(loadBundle);
   // Wait for the first paint, then for the browser to have a moment to spare.
   const afterPaint = () => requestAnimationFrame(() => {

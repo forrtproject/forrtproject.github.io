@@ -22,6 +22,8 @@ export const onMotionChange = (listener) => listeners.push(listener);
 function showState() {
   document.querySelectorAll('.motion-toggle').forEach((button) => {
     button.textContent = isPaused() ? 'Play animation' : 'Pause animation';
+    button.title = button.textContent;
+    button.classList.toggle('is-paused', isPaused());
   });
 }
 
