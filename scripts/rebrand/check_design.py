@@ -526,7 +526,7 @@ def check_phone_reading(browser, base, failures):
     page = new_page(browser, 390)
     page.goto(base + "glossary/english/abstract_bias/", wait_until="load")
     page.wait_for_timeout(300)
-    page.mouse.wheel(0, 500)
+    page.evaluate("scrollBy(0, 500)")
     page.wait_for_timeout(500)
     shown = page.evaluate("innerWidth - document.getElementById('just-os-btn').getBoundingClientRect().left")
     expect(shown <= 24, f"the launcher takes {shown:.0f} px of the screen's width, limit 24")
@@ -547,7 +547,7 @@ def check_phone_reading(browser, base, failures):
         page.context.add_cookies([{"name": "forrt_analytics_choice", "value": "deny", "url": base}])  # Banner shut.
         page.goto(base + "clusters/cluster-1/", wait_until="load")
         page.wait_for_timeout(800)
-        page.mouse.wheel(0, 1500)
+        page.evaluate("scrollBy(0, 1500)")
         page.wait_for_timeout(800)
         hit = page.evaluate("""() => {
           const box = document.getElementById('just-os-btn').getBoundingClientRect();
@@ -555,6 +555,22 @@ def check_phone_reading(browser, base, failures):
         }""")
         expect(page.locator(".clusters-back-to-top.is-visible").count() == 1, f"back to top shows after scrolling at {width} px")
         expect(hit, f"the chat launcher can be clicked on a cluster page at {width} px")
+        if width > 760:
+            past = page.evaluate("""() => {
+              const style = getComputedStyle(document.querySelector('.clusters-sidebar-inner'));
+              return parseFloat(style.top) + parseFloat(style.maxHeight) - innerHeight;
+            }""")
+            expect(past <= 0, f"the longest side list fits the window at {width} px ({past:.0f} px past the foot)")
+            page.context.clear_cookies()
+            page.reload(wait_until="load")
+            page.wait_for_selector(".cc-window", timeout=10000)
+            page.wait_for_timeout(1200)
+            past = page.evaluate("""() => {
+              const style = getComputedStyle(document.querySelector('.clusters-sidebar-inner'));
+              const banner = document.querySelector('.cc-window').offsetHeight;
+              return parseFloat(style.top) + parseFloat(style.maxHeight) - (innerHeight - banner);
+            }""")
+            expect(past <= 0, f"it also clears the open banner at {width} px ({past:.0f} px)")
         page.context.close()
 
 
