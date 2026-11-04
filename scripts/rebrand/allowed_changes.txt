@@ -21,3 +21,6 @@ css/welcome.min.FINGERPRINT.css  # Folded into the Doors stylesheet
 ai-metascience/index.html        # Text sizes edited on the branch, so its modified date moves
 welcome/index.html               # A broken link fixed on the branch, so its modified date moves
 manuscript/index.html            # A stray highlighter setting removed on the branch, so its modified date moves
+post/*/featured_hu.jpg           # The page's resized image is now WebP, so its generated copy has a new name
+post/*/featured_hu.png           # The same
+ai-metascience/featured_hu.png   # The same
