@@ -21,3 +21,4 @@ css/welcome.min.FINGERPRINT.css  # Folded into the Doors stylesheet
 post/*/featured_hu.jpg           # The page's resized image is now WebP, so its generated copy has a new name
 post/*/featured_hu.png           # The same
 ai-metascience/featured_hu.png   # The same
+accessibility/index.html         # The accessibility statement, new with the redesign
