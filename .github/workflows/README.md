@@ -84,7 +84,7 @@ Triggers `deploy.yaml` after successful processing via `repository_dispatch`.
 
 
 
-### [cluster-tests.yaml](workflows/cluster-tests.yaml)
+### [cluster-tests.yaml](cluster-tests.yaml)
 **Clusters parser regression tests and stated sub-cluster counts**
 
 | Trigger | Runs on |
