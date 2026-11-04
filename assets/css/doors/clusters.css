@@ -11,24 +11,12 @@
 /* Clusters v4 page styles                            */
 /* -------------------------------------------------- */
 
-/* Sticky offsets: fallbacks before clusters-page.js sets --clusters-sticky-offset inline */
+/* The site header doesn't travel with the page, so nothing sits above pinned parts. */
 .clusters-layout {
   margin-top: 0.5rem;
-  --clusters-sticky-offset: 70px;
+  --clusters-sticky-offset: 0px;
   --clusters-sticky-gap: 0px;
   --clusters-controls-height: 0px;
-}
-
-@media screen and (max-width: 1200px) {
-  .clusters-layout {
-    --clusters-sticky-offset: 50px;
-  }
-}
-
-@media (min-width: 992px) and (max-width: 1350px) {
-  .clusters-layout {
-    --clusters-sticky-offset: 130px;
-  }
 }
 
 .clusters-controls {
@@ -2362,5 +2350,12 @@ h1.clusters-site-heading.clusters-hub-page__title {
 /* On phones the pinned filters took half the screen, so they scroll away with the page. */
 @media (max-width:760px){
   .clusters-controls{position:static}
-  .clusters-layout{--clusters-controls-height:0px!important;--clusters-sticky-offset:0px!important}
+  .clusters-layout{--clusters-controls-height:0px!important}
 }
+
+/* Clear of the chat launcher, and of the cookie banner while it is open. */
+.clusters-back-to-top.clusters-back-to-top{bottom:calc(92px + var(--banner,0px));right:20px}
+@media (max-width:760px){
+  .clusters-back-to-top.clusters-back-to-top{bottom:calc(80px + var(--banner,0px));right:12px}
+}
+.sc-description,.fc-summary,.fc-title{font-size:16px}

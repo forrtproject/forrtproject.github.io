@@ -542,6 +542,20 @@ def check_phone_reading(browser, base, failures):
       && panel.getBoundingClientRect().height > panel.parentElement.getBoundingClientRect().height + 1).length""")
     expect(clipped == 0, f"{clipped} embed panels clipped by their box")
     page.context.close()
+    for width in (390, 1024, 1440):
+        page = new_page(browser, width)
+        page.context.add_cookies([{"name": "forrt_analytics_choice", "value": "deny", "url": base}])  # Banner shut.
+        page.goto(base + "clusters/cluster-1/", wait_until="load")
+        page.wait_for_timeout(800)
+        page.mouse.wheel(0, 1500)
+        page.wait_for_timeout(800)
+        hit = page.evaluate("""() => {
+          const box = document.getElementById('just-os-btn').getBoundingClientRect();
+          return !!document.elementFromPoint(box.left + box.width / 2, box.top + box.height / 2)?.closest('#just-os-btn');
+        }""")
+        expect(page.locator(".clusters-back-to-top.is-visible").count() == 1, f"back to top shows after scrolling at {width} px")
+        expect(hit, f"the chat launcher can be clicked on a cluster page at {width} px")
+        page.context.close()
 
 
 def check_directory(browser, base, failures):
