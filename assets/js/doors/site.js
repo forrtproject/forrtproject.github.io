@@ -75,6 +75,11 @@ function openSearch(query = '') {
     const script = document.createElement('script');
     script.src = searchDialog.dataset.script;
     script.onload = start;
+    script.onerror = () => {
+      script.remove();
+      delete searchDialog.dataset.loading;
+      document.getElementById('searchStatus').textContent = 'Search is unavailable right now. Try again in a moment.';
+    };
     document.head.append(script);
   }
 }
@@ -153,10 +158,16 @@ document.addEventListener('DOMContentLoaded', () => {
   if (window.hljs) window.hljs.initHighlighting();
 });
 
+// The theme's figure and gallery shortcodes write their images for lazysizes.
+document.querySelectorAll('img.lazyload[data-src]').forEach((image) => {
+  image.loading = 'lazy';
+  image.src = image.dataset.src;
+});
+
 // Older content opens and closes sections with Bootstrap's data attributes.
 document.addEventListener('click', (event) => {
   const toggle = event.target.closest('[data-toggle=collapse]');
-  if (!toggle) return;
+  if (!toggle || window.jQuery?.fn?.collapse) return;
   const target = document.querySelector(toggle.getAttribute('href') || toggle.dataset.target);
   if (!target) return;
   event.preventDefault();
@@ -215,6 +226,7 @@ if (chatWidget) {
   const chatButton = chatWidget.querySelector('#just-os-btn');
   const chatBubble = chatWidget.querySelector('#just-os-bubble');
   let chatLoading = false;
+  let chatFailed = false;
   const dismissed = () => sessionStorage.getItem('just-os-dismissed');
   if (dismissed()) chatWidget.hidden = true;
   chatWidget.querySelector('#just-os-dismiss').addEventListener('click', () => {
@@ -224,7 +236,7 @@ if (chatWidget) {
   // The invitation shows and hides on a slow cycle, as it always has, and rests while the chat is open.
   const chatOpen = () => document.getElementById('just-os-window')?.style.display === 'flex';
   const invitation = setInterval(() => {
-    if (dismissed()) clearInterval(invitation);
+    if (dismissed() || chatFailed) clearInterval(invitation);
     else if (!chatOpen()) chatBubble.classList.toggle('bubble-visible');
   }, 10000);
   if (chatButton.tagName === 'BUTTON') {
@@ -249,6 +261,7 @@ if (chatWidget) {
       };
       script.onerror = () => {
         chatLoading = false;
+        chatFailed = true;
         document.getElementById('just-os-window')?.remove();
         chatBubble.textContent = 'The chat did not load. Try again in a moment.';
         chatBubble.classList.add('bubble-visible');

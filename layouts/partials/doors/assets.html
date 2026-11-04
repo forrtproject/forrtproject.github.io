@@ -8,7 +8,8 @@
 {{ $css := $parts | resources.Concat "css/doors.css" | minify | fingerprint "md5" }}
 <link rel="preload" href="{{ "fonts/doors/source-sans-3-var.woff2" | relURL }}" as="font" type="font/woff2" crossorigin>
 {{/* Arabic and Chinese content sets its text in system fonts (decision D18). */}}
-{{ if not (in (slice "ar" "zh") (partial "functions/page_language.html" .)) }}<link rel="preload" href="{{ "fonts/doors/newsreader-var.woff2" | relURL }}" as="font" type="font/woff2" crossorigin>{{ end }}
+{{ $language := partial "functions/page_language.html" . }}
+{{ if not (or (hasPrefix $language "ar") (hasPrefix $language "zh")) }}<link rel="preload" href="{{ "fonts/doors/newsreader-var.woff2" | relURL }}" as="font" type="font/woff2" crossorigin>{{ end }}
 <link rel="stylesheet" href="{{ $css.RelPermalink }}">
 {{ $screen := slice }}
 {{ if .IsHome }}{{ $screen = slice "home" }}{{ end }}

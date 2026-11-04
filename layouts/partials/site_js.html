@@ -29,4 +29,9 @@
   {{ $bundle := slice (resources.Get "js/_vendor/bootstrap.min.js") ("\n" | resources.FromString "js/linebreak.js") (resources.Get "js/academic.js") | resources.Concat "js/academic-bundle-pre.js" | minify | fingerprint "md5" }}
   <script src="{{ $bundle.RelPermalink }}"></script>
 {{ end }}
+{{/* Heading links on the summaries. */}}
+{{ if in (slice "book" "docs") .Type }}
+  {{ printf "<script src=\"%s\" integrity=\"%s\" crossorigin=\"anonymous\"></script>" (printf $js.anchor.url $js.anchor.version) $js.anchor.sri | safeHTML }}
+  <script>anchors.add();</script>
+{{ end }}
 {{ partial "custom_js" . }}

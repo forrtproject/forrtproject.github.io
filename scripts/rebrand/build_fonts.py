@@ -44,8 +44,8 @@ ICONS = {
     "solid": ["angle-right", "arrow-alt-circle-right", "arrow-right", "arrow-up", "bars", "book", "book-open",
               "brain", "chart-line", "chevron-down", "chevron-right", "envelope", "external-link-alt",
               "file-alt", "file-pdf", "flask", "folder", "globe", "graduation-cap", "heart", "layer-group",
-              "lightbulb", "link", "play", "project-diagram", "redo", "search", "share-alt", "times-circle",
-              "user", "users"],
+              "lightbulb", "link", "play", "project-diagram", "redo", "search", "share-alt", "star", "times",
+              "times-circle", "user", "users"],
     "regular": ["envelope", "file-alt", "folder", "user"],
 }
 ICON_FILES = {"brands": "fa-brands-400.woff2", "solid": "fa-solid-900.woff2", "regular": "fa-regular-400.woff2"}
@@ -114,6 +114,7 @@ def build(source, limits, output):
 
 def main():
     if sys.argv[1] == "--icons":
+        os.makedirs(sys.argv[3], exist_ok=True)
         build_icons(*sys.argv[2:5])
         return
     source_dir, out_dir = sys.argv[1:3]

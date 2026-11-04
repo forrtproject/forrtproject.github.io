@@ -19,7 +19,7 @@
 .collapse:not(.show){display:none}
 .form-control{display:block;width:100%;padding:8px 12px;background:#fff;border:1.5px solid var(--soft);border-radius:var(--r-small);color:var(--ink);font:400 16px/1.4 var(--text)}
 .form-group{margin-bottom:1em}
-.container,.container-fluid{width:100%;margin-inline:auto}
+.container,.container-fluid{width:100%;margin-inline:auto;padding-inline:12px}
 .row{display:flex;flex-wrap:wrap;margin-inline:-12px}
 .row>*{width:100%;min-width:0;padding-inline:12px}
 .col{flex:1 0 0}

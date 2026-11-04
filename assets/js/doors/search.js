@@ -24,29 +24,37 @@ function loadFuse() {
   });
 }
 
-async function ready() {
-  if (fuse) return fuse;
-  status.textContent = 'Loading search.';
-  const [response] = await Promise.all([fetch(dialog.dataset.index), loadFuse()]);
-  if (!response.ok) throw new Error(response.statusText);
-  fuse = new window.Fuse(await response.json(), {
-    shouldSort: true,
-    includeMatches: true,
-    tokenize: true,
-    threshold: Number(dialog.dataset.threshold),
-    location: 0,
-    distance: 100,
-    maxPatternLength: 32,
-    minMatchCharLength: Number(dialog.dataset.minLength),
-    keys: [
-      { name: 'title', weight: 0.99 },
-      { name: 'summary', weight: 0.6 },
-      { name: 'authors', weight: 0.5 },
-      { name: 'content', weight: 0.2 },
-      { name: 'tags', weight: 0.5 },
-      { name: 'categories', weight: 0.5 },
-    ],
-  });
+function ready() {
+  if (!fuse) {
+    status.textContent = 'Loading search.';
+    fuse = Promise.all([fetch(dialog.dataset.index), loadFuse()])
+      .then(([response]) => {
+        if (!response.ok) throw new Error(response.statusText);
+        return response.json();
+      })
+      .then((index) => new window.Fuse(index, {
+        shouldSort: true,
+        includeMatches: true,
+        tokenize: true,
+        threshold: Number(dialog.dataset.threshold),
+        location: 0,
+        distance: 100,
+        maxPatternLength: 32,
+        minMatchCharLength: Number(dialog.dataset.minLength),
+        keys: [
+          { name: 'title', weight: 0.99 },
+          { name: 'summary', weight: 0.6 },
+          { name: 'authors', weight: 0.5 },
+          { name: 'content', weight: 0.2 },
+          { name: 'tags', weight: 0.5 },
+          { name: 'categories', weight: 0.5 },
+        ],
+      }))
+      .catch((error) => {
+        fuse = undefined;
+        throw error;
+      });
+  }
   return fuse;
 }
 
@@ -72,6 +80,7 @@ function highlighted(text, query) {
 function show(results, query) {
   hits.replaceChildren(...results.slice(0, LIMIT).map(({ item }) => {
     const row = document.createElement('li');
+    row.className = 'search-hit';
     const type = document.createElement('span');
     type.className = 'hit-type';
     type.textContent = SECTIONS[item.section] || item.section || 'Page';
@@ -102,8 +111,7 @@ async function run(query) {
     const engine = await ready();
     if (attempt === latest) show(engine.search(query), query);
   } catch {
-    fuse = undefined;
-    status.textContent = 'Search is unavailable right now. Reload the page and try again.';
+    if (attempt === latest) status.textContent = 'Search is unavailable right now. Reload the page and try again.';
   }
 }
 
@@ -120,6 +128,11 @@ input.addEventListener('keydown', (event) => {
 
 window.doorsSearch = (query) => {
   input.value = query;
-  ready().catch(() => {});
-  if (query) run(query);
+  if (query) {
+    run(query);
+  } else {
+    ready().then(() => { status.textContent = ''; }, () => {
+      status.textContent = 'Search is unavailable right now. Reload the page and try again.';
+    });
+  }
 };
