@@ -331,4 +331,8 @@ please submit it using the form below.&lt;/p&gt;
 &lt;p&gt;If you want to check if a replication study is already included in the database,
 the easiest way is to use the
 &lt;a href="https://forrt.org/annotator" target="_blank"&gt;References Annotator&lt;/a&gt;&lt;/p&gt;
-&lt;iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeMCwdtP0TPgL55stniuyyTxnNwyC34mO4VUuLcQwYrLI89sQ/viewform", width = "100%", height="800px"&gt;&lt;/iframe&gt;</description></item></channel></rss>
+&lt;div class="click-to-load" data-embed-src="https://docs.google.com/forms/d/e/1FAIpQLSeMCwdtP0TPgL55stniuyyTxnNwyC34mO4VUuLcQwYrLI89sQ/viewform" data-embed-title="This document from Google" data-embed-width="100%" data-embed-height="800px"&gt;
+&lt;p&gt;This document comes from Google. Loading it sends your IP address to them and they may set cookies. See our &lt;a href="https://forrt.org/privacy/#embedded-content"&gt;privacy policy&lt;/a&gt;.&lt;/p&gt;
+&lt;button type="button" class="btn btn-primary" aria-label="Load: This document"&gt;Load&lt;/button&gt;
+&lt;a class="click-to-load-link" href="https://docs.google.com/forms/d/e/1FAIpQLSeMCwdtP0TPgL55stniuyyTxnNwyC34mO4VUuLcQwYrLI89sQ/viewform" target="_blank" rel="noopener"&gt;Open on the provider's site&lt;/a&gt;
+&lt;/div&gt;</description></item></channel></rss>
