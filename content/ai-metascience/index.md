@@ -365,13 +365,12 @@ image:
   color: var(--am-deep);
   font-variant-numeric: tabular-nums;
 }
-@media (max-width: 560px) {
-  .am-prog-item { flex-wrap: wrap; gap: 0.3rem; }
-  .am-prog-time { flex: 0 0 100%; }
-  .am-prog-text { flex: 1 1 100%; }
-  .am-prog-talks li { flex-wrap: wrap; }
-  .am-prog-watch { flex: 1 1 100%; max-width: none; justify-content: flex-start; padding: 0 0.4rem 0.5rem; }
-}
+/* Stacked at every width, because the reading column is too narrow for a row. */
+.am-prog-item { flex-wrap: wrap; gap: 0.3rem; }
+.am-prog-time { flex: 0 0 100%; }
+.am-prog-text { flex: 1 1 100%; }
+.am-prog-talks li { flex-wrap: wrap; }
+.am-prog-watch { flex: 1 1 100%; max-width: none; justify-content: flex-start; padding: 0 0.4rem 0.5rem; }
 
 .am-prog-dialog {
   position: relative;

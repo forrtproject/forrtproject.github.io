@@ -387,3 +387,15 @@ if (badges.length) {
   });
   new MutationObserver(nameBadges).observe(document.querySelector('.pub-list, .article-style') || document.body, { childList: true, subtree: true });
 }
+
+// On phones the chat launcher steps to the screen's edge while someone reads on, so it doesn't sit
+// over the text, and comes back when they scroll up.
+const launcher = document.getElementById('just-os-widget');
+if (launcher) {
+  let lastY = scrollY;
+  addEventListener('scroll', () => {
+    if (Math.abs(scrollY - lastY) < 8) return;
+    launcher.classList.toggle('is-tucked', scrollY > lastY && scrollY > 120);
+    lastY = scrollY;
+  }, { passive: true });
+}

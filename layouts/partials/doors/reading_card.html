@@ -10,12 +10,7 @@
   {{ if gt (len .headings) 1 }}
   <h2>On this page</h2>
   <div class="article-toc">
-    {{ if .contents }}{{ $p.TableOfContents }}
-    {{ else }}
-    <nav id="TableOfContents"><ul>
-      {{ range .written }}<li><a href="#{{ index . 1 }}">{{ index . 2 | plainify }}</a></li>{{ end }}
-    </ul></nav>
-    {{ end }}
+    {{ partial "doors/reading_toc" . }}
   </div>
   {{ end }}
 </section>

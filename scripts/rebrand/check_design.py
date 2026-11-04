@@ -520,6 +520,36 @@ def check_tower_game(browser, base, expect):
     page.context.close()
 
 
+def check_phone_reading(browser, base, failures):
+    """On a phone the chat launcher leaves the text while reading, and an embed's panel is not clipped."""
+    expect = expectation(failures, "phone reading")
+    page = new_page(browser, 390)
+    page.goto(base + "glossary/english/abstract_bias/", wait_until="load")
+    page.wait_for_timeout(300)
+    page.mouse.wheel(0, 500)
+    page.wait_for_timeout(500)
+    shown = page.evaluate("innerWidth - document.getElementById('just-os-btn').getBoundingClientRect().left")
+    expect(shown <= 24, f"the launcher shows {shown:.0f} px while reading on, limit 24")
+    page.locator("#just-os-btn").focus()
+    page.wait_for_timeout(400)
+    focused = page.evaluate("innerWidth - document.getElementById('just-os-btn').getBoundingClientRect().left")
+    expect(focused > 40, f"keyboard focus brings the launcher back ({focused:.0f} px shown)")
+    page.evaluate("document.activeElement.blur()")
+    page.mouse.wheel(0, -200)
+    page.wait_for_timeout(500)
+    back = page.evaluate("innerWidth - document.getElementById('just-os-btn').getBoundingClientRect().left")
+    expect(back > 40, f"scrolling up brings the launcher back ({back:.0f} px shown)")
+    page.goto(base + "neurodiversity-lessonbank/implicit_bias/", wait_until="load")
+    page.wait_for_timeout(300)
+    panels = page.locator(".click-to-load").count()
+    expect(panels > 0, f"the lesson page has embed panels ({panels})")
+    clipped = page.evaluate("""[...document.querySelectorAll('.click-to-load')].filter((panel) =>
+      panel.parentElement && getComputedStyle(panel.parentElement).overflow === 'hidden'
+      && panel.getBoundingClientRect().height > panel.parentElement.getBoundingClientRect().height + 1).length""")
+    expect(clipped == 0, f"{clipped} embed panels clipped by their box")
+    page.context.close()
+
+
 def check_directory(browser, base, failures):
     expect = expectation(failures, "directory")
     topics = new_page(browser, 1440)
@@ -704,6 +734,8 @@ def main():
         check_samples(browser, base, failures)
         print("Home page")
         check_home(browser, base, failures)
+        print("Reading on a phone")
+        check_phone_reading(browser, base, failures)
         print("Resources directory")
         check_directory(browser, base, failures)
         if args.public and args.browser == "chromium":
