@@ -47,6 +47,7 @@ jobs:
       links: ${{ steps.links.outcome }}
       seo: ${{ steps.seo.outcome }}
       design: ${{ steps.design.outcome }}
+      axe: ${{ steps.axe.outcome }}
     steps:
       - name: Checkout repository
         uses: actions/checkout@v6
@@ -154,6 +155,13 @@ jobs:
           playwright install --with-deps chromium
           python3 scripts/rebrand/check_design.py public --base "$PREVIEW_BASE"
 
+      - name: Accessibility rules in a browser (axe-core, by WCAG level)
+        id: axe
+        continue-on-error: true
+        run: |
+          curl -fsSL https://cdn.jsdelivr.net/npm/axe-core@4.11.1/axe.min.js -o "$RUNNER_TEMP/axe.min.js"
+          python3 scripts/rebrand/check_axe.py public --base "$PREVIEW_BASE" --axe "$RUNNER_TEMP/axe.min.js"
+
       - name: Upload site artifact
         if: github.event_name != 'pull_request'
         uses: actions/upload-artifact@v7
@@ -200,12 +208,14 @@ jobs:
           LINKS: ${{ needs.build.outputs.links }}
           SEO: ${{ needs.build.outputs.seo }}
           DESIGN: ${{ needs.build.outputs.design }}
+          AXE: ${{ needs.build.outputs.axe }}
         run: |
           echo "Templates and generated paths: $SOURCE_RULES"
           echo "URL list, structured data and SEO tags: $COMPARE"
           echo "Internal links: $LINKS"
           echo "Built HTML: $SEO"
           echo "Designed screens: $DESIGN"
-          for result in "$SOURCE_RULES" "$COMPARE" "$LINKS" "$SEO" "$DESIGN"; do
+          echo "Accessibility rules: $AXE"
+          for result in "$SOURCE_RULES" "$COMPARE" "$LINKS" "$SEO" "$DESIGN" "$AXE"; do
             [ "$result" = "success" ] || exit 1
           done

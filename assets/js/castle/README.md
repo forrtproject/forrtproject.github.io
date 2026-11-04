@@ -14,6 +14,8 @@ The animated brick tower in the home page's arched door. Hugo bundles it with `j
 
 **Behaviour.** The still image paints first. The bundle loads after that, and not at all under reduced motion, Save-Data or no WebGL, so the home page works if the castle does not. The tower builds once, turns every 120 seconds and takes a colour wave after each change. Hovering dismantles it. The pause button and "Build it yourself" appear on hover, on keyboard focus and after a tap.
 
+**To measure it on a device**, add `?fps` to the home page's address, which shows the frame rate, or `?fps=20`, which also caps drawing at that rate.
+
 **To turn it off**, set `doors.castle = false` in `config/_default/params.toml`. Visitors then see only the still.
 
 **After changing the geometry or the scene**, regenerate the still, so it still lines up when the bundle takes over:
