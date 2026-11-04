@@ -185,6 +185,21 @@ document.addEventListener('click', (event) => {
   frame.focus();
 });
 
+// A link to a heading inside a closed section opens the section.
+function openTarget() {
+  let id = location.hash.slice(1);
+  try { id = decodeURIComponent(id); } catch { /* a malformed address keeps its form */ }
+  const target = id && document.getElementById(id);
+  const section = target && target.closest('details');
+  if (section) {
+    section.hidden = false;
+    section.open = true;
+    target.scrollIntoView();
+  }
+}
+addEventListener('hashchange', openTarget);
+openTarget();
+
 // A long summaries page shows its first entries, a filter and a count, all added here so that
 // without JavaScript every entry shows and no control sits idle.
 const summaryEntries = [...document.querySelectorAll('.summary-entry')];
@@ -219,6 +234,7 @@ if (summaryEntries.length) {
     tools.querySelector('[role=status]').textContent = kept ? `${count} ${kept} you opened ${kept === 1 ? 'stays' : 'stay'} in view.` : count;
   };
   input.addEventListener('input', show);
+  addEventListener('hashchange', show);
   more.addEventListener('click', () => {
     const next = summaryEntries[limit];
     limit += 30;
@@ -227,21 +243,6 @@ if (summaryEntries.length) {
   });
   show();
 }
-
-// A link to a heading inside a closed section opens the section.
-function openTarget() {
-  let id = location.hash.slice(1);
-  try { id = decodeURIComponent(id); } catch { /* a malformed address keeps its form */ }
-  const target = id && document.getElementById(id);
-  const section = target && target.closest('details');
-  if (section) {
-    section.hidden = false;
-    section.open = true;
-    target.scrollIntoView();
-  }
-}
-addEventListener('hashchange', openTarget);
-openTarget();
 
 // Older content opens and closes sections with Bootstrap's data attributes.
 document.addEventListener('click', (event) => {
