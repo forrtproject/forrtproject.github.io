@@ -2356,3 +2356,8 @@ h1.clusters-site-heading.clusters-hub-page__title {
 .acc-count,.cluster-stats,.cluster-description{color:var(--ink)!important;opacity:1!important}
 .clusters-head h1.clusters-site-heading{font-size:clamp(36px,4.2vw,58px);line-height:1.06}
 .clusters-intro a:not(.lightbox-trigger):not(.btn),.disciplines-attribution a,.sc-description a,.disciplines-leads a{text-decoration:underline;text-underline-offset:3px}
+
+/* On phones the pinned filters took half the screen, so they scroll away with the page. */
+@media (max-width:760px){
+  .clusters-controls{position:static}
+}

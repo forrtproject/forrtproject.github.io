@@ -320,7 +320,12 @@ if (chatWidget) {
   const chatOpen = () => document.getElementById('just-os-window')?.style.display === 'flex';
   const invitation = setInterval(() => {
     if (dismissed() || chatFailed) clearInterval(invitation);
-    else if (!chatOpen()) chatBubble.classList.toggle('bubble-visible', !chatBubble.classList.contains('bubble-visible') && !reading());
+    else if (!chatOpen()) {
+      const hiding = chatBubble.classList.contains('bubble-visible');
+      chatBubble.classList.toggle('bubble-visible', !hiding && !reading());
+      // On a phone it shows once per page, so it doesn't keep returning over the text.
+      if (hiding && innerWidth <= 760) clearInterval(invitation);
+    }
   }, 10000);
   // On a phone the invitation would sit over the text, so it shows only at the top of a page.
   const reading = () => innerWidth <= 760 && scrollY > 120;
