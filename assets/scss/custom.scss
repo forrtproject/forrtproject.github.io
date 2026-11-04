@@ -3724,7 +3724,7 @@ code.tex {
 
 /* Keep pages within the screen width on phones */
 @media (max-width: 767.98px) {
-  section.wg-featurette-welcome > .row {
+  section.wg-featurette-welcome > .container > .row {
     margin-left: 0;
     margin-right: 0;
   }
