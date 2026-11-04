@@ -1,0 +1,7 @@
+{{/* A reading page's contents: Hugo's own, or the headings a shortcode wrote. */}}
+{{ if .contents }}{{ .page.TableOfContents }}
+{{ else }}
+<nav id="TableOfContents"><ul>
+  {{ range .written }}<li><a href="#{{ index . 1 }}">{{ index . 2 | plainify }}</a></li>{{ end }}
+</ul></nav>
+{{ end }}

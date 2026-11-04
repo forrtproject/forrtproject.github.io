@@ -21,6 +21,11 @@ code,pre,kbd,samp{font-style:normal}
 .click-to-load{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;min-height:12rem;margin:0 0 18px;padding:24px;overflow:auto;background:var(--surface);border:1px solid var(--line);border-radius:var(--r-small);text-align:center}
 .click-to-load p{max-width:34rem;margin:0;font-size:16px;line-height:1.45}
 .click-to-load-link{font-size:16px}
+/* The flipbook's page count, in its own toolbar. */
+label[for=df_book_page_number]{color:var(--ink)!important;opacity:1!important}
+/* Lesson activities sit in a fixed-ratio box meant for the frame. Until it loads, the panel sets its own height. */
+.click-to-load[style*="absolute"]{position:static!important;width:auto!important;height:auto!important}
+:has(>.click-to-load[style*="absolute"]){height:auto!important;padding:0!important;overflow:visible!important}
 
 /* Author card and its social links. The card's name is an h2 under the article and elsewhere. */
 .author-card{display:flex;align-items:flex-start;gap:14px;margin:0 0 20px}
