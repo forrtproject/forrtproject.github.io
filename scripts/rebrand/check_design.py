@@ -482,6 +482,34 @@ def report_budgets(browser, base, root, subfolder):
         )
 
 
+def check_icons(root, failures):
+    """Every Font Awesome class in the build must be in the subset, or its icon shows nothing."""
+    here = os.path.dirname(os.path.abspath(__file__))
+    with open(os.path.join(here, "..", "..", "assets", "css", "doors", "icons.css"), encoding="utf-8") as handle:
+        known = set(re.findall(r"\.(fa-[a-z0-9-]+)::before", handle.read()))
+    used = {}
+    # Scripts add a few icons of their own.
+    for folder in ("static/js", "assets/js/doors"):
+        for name in os.listdir(os.path.join(here, "..", "..", folder)):
+            if name.endswith(".js"):
+                with open(os.path.join(here, "..", "..", folder, name), encoding="utf-8", errors="ignore") as handle:
+                    for icon in re.findall(r"\bfa[srb]? (fa-[a-z0-9-]+)", handle.read()):
+                        if icon not in known:
+                            used.setdefault(icon, folder)
+    for folder, _, files in os.walk(root):
+        for name in files:
+            if not name.endswith(".html"):
+                continue
+            with open(os.path.join(folder, name), encoding="utf-8", errors="ignore") as handle:
+                for classes in re.findall(r'class="((?:fa[srb]?|fa-solid|fa-regular|fa-brands) [^"]*)"', handle.read()):
+                    for icon in re.findall(r"\bfa-(?!solid\b|regular\b|brands\b|lg\b|fw\b|[0-9.]+x\b)[a-z0-9.-]+", classes):
+                        if icon not in known:
+                            used.setdefault(icon, os.path.relpath(folder, root))
+    for icon, where in sorted(used.items()):
+        failures.append(f"icon {icon} in {where} is missing from assets/css/doors/icons.css (build_fonts.py --icons)")
+    print(f"  {len(known)} icons in the subset, {len(used)} used but missing", flush=True)
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("public", nargs="?")
@@ -490,6 +518,9 @@ def main():
     args = parser.parse_args()
     base = args.url.rstrip("/") + "/" if args.url else serve(os.path.abspath(args.public), args.base)
     failures = []
+    if args.public:
+        print("Icons")
+        check_icons(os.path.abspath(args.public), failures)
     with sync_playwright() as playwright:
         browser = playwright.chromium.launch()
         print("Screens")

@@ -1,0 +1,23 @@
+/* What pages need from a browser reset, in place of Bootstrap's reboot. */
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0}
+h1,h2,h3,h4,h5,h6,p,ul,ol,dl,figure,blockquote,pre{margin-top:0}
+h1,h2,h3,h4,h5,h6{margin-bottom:.5em;line-height:1.2}
+p,ul,ol,dl,pre{margin-bottom:1em}
+ul ul,ol ul,ul ol,ol ol{margin-bottom:0}
+dt{font-weight:700}
+dd{margin:0 0 .5em}
+a{text-decoration:none;background:transparent}
+b,strong{font-weight:700}
+img,svg,video,canvas{vertical-align:middle}
+img,video{max-width:100%;height:auto}
+button,input,select,textarea{font:inherit;color:inherit;margin:0}
+button,select{text-transform:none}
+button:not(:disabled),[type=submit]:not(:disabled),summary{cursor:pointer}
+table{border-collapse:collapse}
+th{text-align:inherit}
+hr{border:0;border-top:1px solid var(--line);margin:2em 0}
+[hidden]{display:none!important}
+code,kbd,pre,samp{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:.9em}
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}

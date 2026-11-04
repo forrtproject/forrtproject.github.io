@@ -1,3 +1,5 @@
+{{ $css := resources.Get "css/doors/chatbot.css" | minify | fingerprint "md5" }}
+<link rel="stylesheet" href="{{ $css.RelPermalink }}">
 {{ $active := true }}
 {{ if isset site.Params "justos_chatbot" }}
   {{ $active = default true (index site.Params.justos_chatbot "active") }}
@@ -8,6 +10,7 @@
 {{ end }}
 
 {{ if $active }}
+<script src="{{ "js/just-os-chat.js" | relURL }}" defer></script>
 <div id="just-os-fullpage" class="just-os-fullpage" style="
   width: 100%;
   max-width: 1200px;
