@@ -1,10 +1,11 @@
 {{/* Newsletter sign-up, from the `subscribe` shortcode and the newsletters page. EmailOctopus's
-     embed is heavy, so it loads only when a visitor clicks (assets/js/doors/site.js). Its styles
-     are in assets/css/doors/newsletter.css. Expects at most one form on a page, because the embed
+     embed loads only when a visitor clicks (assets/js/doors/site.js). Its styles are in
+     assets/css/doors/newsletter.css. Expects at most one form on a page, because the embed
      anchors itself to the first script it finds. */}}
 {{ $form := "5fb3cb44-8c81-11f0-9781-f7fc195374ed" }}
 <div class="newsletter-form" data-newsletter-id="{{ $form }}" data-newsletter-src="https://eocampaign1.com/form/{{ $form }}.js">
   <button class="newsletter-open" type="button">Subscribe to the newsletter</button>
+  <p class="newsletter-note">The sign-up form comes from EmailOctopus, with spam protection by Google reCAPTCHA. Loading it sends your IP address to them and they may set cookies. See our <a href="{{ "privacy/" | relURL }}#embedded-content">privacy policy</a>.</p>
   <p class="newsletter-status" role="status"></p>
-  <noscript><style>.newsletter-open{display:none}</style><p>The sign-up form needs JavaScript. You can also ask to join at <a href="mailto:info@forrt.org">info@forrt.org</a>.</p></noscript>
+  <noscript><style>.newsletter-open,.newsletter-note{display:none}</style><p>The sign-up form needs JavaScript. You can also ask to join at <a href="mailto:info@forrt.org">info@forrt.org</a>.</p></noscript>
 </div>

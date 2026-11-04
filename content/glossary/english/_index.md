@@ -87,7 +87,7 @@ Link to the FORRT preprint explaining Phase 1
 
 We plan to continuously improve, extend, and update our items with community involvement. Versioning will allow the study of the evolution of the terminology. The version-controlled source code of the official releases of the complete Glossary is archived on FORRT’s [GitHub](https://github.com/forrtproject/forrtproject.github.io/tree/main/content/glossary), [OSF](https://osf.io/vdb8z/), and [Zenodo](https://zenodo.org/record/5643745). The present glossary is the Beta 0.1 version and can be accessed from within FORRT website (as will its updates) below:
 
-1. Current Version: [FORRT's Glossary | Phase 1 | Beta version 0.1](/glossary/vbeta)
+1. Current Version: [FORRT's Glossary | Phase 1 | Beta version 0.1](/glossary/english/)
 
 
 ### Phase 1
@@ -199,7 +199,7 @@ After the manuscript's submission and the display of defined terms in FORRT's Gl
 
 #### Feedback
 
-Would you like to give feedback, help us review terms, or add terms? You can do so by watching this space, joining [FORRT's Slack channel](https://join.slack.com/t/forrt/shared_invite/zt-alobr3z7-NOR0mTBfD1vKXn9qlOKqaQ), contacting [FORRT](info@forrt.org), or contacting project leads [Sam Parsons](sam.parsons@psy.ox.ac.uk) and [Flávio Azevedo](mailto:flavio.azevedo@uni-jena.de).
+Would you like to give feedback, help us review terms, or add terms? You can do so by watching this space, joining [FORRT's Slack channel](https://join.slack.com/t/forrt/shared_invite/zt-alobr3z7-NOR0mTBfD1vKXn9qlOKqaQ), contacting [FORRT](mailto:info@forrt.org), or contacting project leads [Sam Parsons](mailto:sam.parsons@psy.ox.ac.uk) and [Flávio Azevedo](mailto:flavio.azevedo@uni-jena.de).
 
 {{< /expand >}}
 

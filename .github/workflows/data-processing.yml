@@ -48,12 +48,10 @@ on:
         type: boolean
         default: false
 
-env:
-  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: "true"
 jobs:
   process-data:
     name: Process Data
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-latest
     permissions:
       contents: write
       pull-requests: write
@@ -149,7 +147,7 @@ jobs:
       #========================================
       - name: Setup r2u
         if: steps.monthly-run.outputs.is_monthly == 'true'
-        uses: eddelbuettel/github-actions/r2u-setup@master
+        uses: eddelbuettel/github-actions/r-ci@master
 
       #========================================
       # Install Pandoc for rendering R Markdown documents

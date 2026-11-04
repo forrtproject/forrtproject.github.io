@@ -81,7 +81,6 @@ CATEGORY_DETAILS = {
 
 # HTML Templates - Custom CSS (External)
 PAGE_TEMPLATE = r"""
-<!-- Google Fonts -->
 <!-- External CSS -->
 <link rel="stylesheet" href="/css/steering-committee.css">
 

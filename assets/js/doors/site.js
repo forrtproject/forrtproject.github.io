@@ -128,6 +128,7 @@ document.querySelectorAll('[data-newsletter-src]').forEach((box) => {
     embed.dataset.form = box.dataset.newsletterId;
     embed.onload = () => {
       open.remove();
+      box.querySelector('.newsletter-note')?.remove();
       status.textContent = '';
       box.querySelector('input[type=email]')?.focus();
     };

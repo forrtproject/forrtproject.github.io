@@ -99,13 +99,6 @@
   <script src="{{ $mathjax_config.RelPermalink }}"></script>
   {{ end }}
 
-  {{/* Every render-blocking stylesheet below the first comes from a third-party
-       origin, so the browser cannot start fetching any of them until it has
-       paid for a DNS lookup, TCP connection and TLS handshake it does not yet
-       know it needs. Warming the connections costs nothing and moves that work
-       off the critical path. */}}
-  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
-
   {{/* Decide whether this page needs Highlight.js and Mermaid, and store the answers
        in $scr so that site_js.html can read them again.
        Front matter (`highlight:` / `diagram:`) wins; a site param set to true forces the
@@ -220,9 +213,7 @@
   {{- end -}}
   {{ if partial "doors/on_theme" . }}<link rel="stylesheet" href="{{ $style.RelPermalink }}">{{ end }}
   {{ partial "doors/assets" . }}
-
-  {{ partial "marketing/google_analytics" . }}
-  {{ partial "marketing/google_tag_manager" . }}
+  <script src="{{ "js/click-to-load.js" | relURL }}" defer></script>
 
   {{/* Netlify Identity integration. */}}
   {{ if .IsHome | and (site.Params.cms.netlify_cms | default true) }}

@@ -31,6 +31,7 @@
       {{ with site.GetPage "/imprint" }}<a href="{{ .RelPermalink }}">{{ .Title }}</a>{{ end }}
       {{ with site.GetPage "privacy.md" }}<a href="{{ .RelPermalink }}">{{ .Title }}</a>{{ end }}
       {{ with site.GetPage "terms.md" }}<a href="{{ .RelPermalink }}">{{ .Title }}</a>{{ end }}
+      <a href="#" data-cookie-settings>{{ i18n "cookie_settings" }}</a>
       <span>{{ with site.Copyright }}{{ replace . "{year}" now.Year | markdownify }}{{ end }}</span>
       <span>Published with <a href="https://gohugo.io" rel="noopener">Hugo</a> and the <a href="https://hugoblox.com/" rel="noopener">Academic theme</a>.</span>
     </div>

@@ -1,8 +1,11 @@
-{{/* A YouTube video as a poster and a link. The player, about 1.5 MB, loads when a visitor plays it, from
-     assets/js/doors/site.js. Usage as Hugo's own: {{< youtube ID >}} or {{< youtube id="ID" title="..." >}}. */}}
+{{/* A YouTube video as a poster and a link. Nothing loads from YouTube until a visitor plays it, from
+     assets/js/doors/site.js. Add each video's poster to static/img/video-thumbnails/<id>.webp; without one
+     the poster is a plain panel. Usage as Hugo's own: {{< youtube ID >}} or {{< youtube id="ID" title="..." >}}. */}}
 {{ $id := .Get "id" | default (.Get 0) }}
-{{ $title := .Get "title" | default (printf "Play video %d on this page, on YouTube" (add .Ordinal 1)) }}
+{{ $title := .Get "title" | default (printf "Play video %d on this page" (add .Ordinal 1)) }}
+{{ $poster := printf "img/video-thumbnails/%s.webp" $id }}
 <a class="video-poster" href="https://www.youtube.com/watch?v={{ $id }}" data-video="{{ $id }}" aria-label="{{ $title }}">
-  <img src="https://i.ytimg.com/vi/{{ $id }}/hqdefault.jpg" width="480" height="360" alt="" loading="lazy">
+  {{ if fileExists (printf "static/%s" $poster) }}<img src="{{ $poster | relURL }}" width="480" height="360" alt="" loading="lazy">{{ end }}
   <span class="video-play" aria-hidden="true"><i class="fas fa-play"></i></span>
 </a>
+<p class="video-note">Playing this video loads it from YouTube (Google). See our <a href="{{ "privacy/" | relURL }}#embedded-content">privacy policy</a>.</p>

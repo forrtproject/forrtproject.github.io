@@ -153,6 +153,8 @@ main:lang(ar) .article-layout .article-style,main:lang(ar) .article-layout .arti
 .video-play{position:absolute;inset:50% auto auto 50%;display:flex;align-items:center;justify-content:center;width:64px;height:64px;margin:-32px 0 0 -32px;background:var(--ink);border-radius:50%;color:#fff;font-size:24px}
 .video-poster:hover .video-play,.video-poster:focus-visible .video-play{background:var(--hot);color:var(--ink)}
 .video-frame{display:block;width:100%;aspect-ratio:16/9;margin:0 0 18px;border:0;border-radius:var(--r-small)}
+.video-poster:has(+ .video-note){margin-bottom:6px}
+.video-note,.article-layout .article-style .video-note{margin:0 0 18px;color:var(--soft);font-size:16px;line-height:1.4}
 .article-layout .article-style .summary-entry{margin:0;border-bottom:1px solid var(--line)}
 .article-layout .article-style .summary-entry>summary{padding:12px 0;cursor:pointer}
 .article-layout .article-style .summary-entry>summary h2{display:inline;margin:0;font-size:22px;line-height:1.25}

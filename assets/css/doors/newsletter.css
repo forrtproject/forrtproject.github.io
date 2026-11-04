@@ -5,6 +5,7 @@
 .newsletter-open{background:var(--link);border:0;border-radius:999px;color:#fff;cursor:pointer;font:700 16px/1.3 var(--text);padding:11px 20px}
 .newsletter-open:hover{background:var(--ink)}
 .newsletter-open:disabled{background:var(--soft);cursor:progress}
+.newsletter-note{margin:8px 0 0;color:var(--soft);font-size:16px;line-height:1.4}
 .newsletter-status{margin:8px 0 0;font-size:16px}
 .newsletter-status:empty{display:none}
 .newsletter-form [data-form].inline-container{max-width:none!important}

@@ -1,22 +1,75 @@
-{{/* The theme's cookie banner, without its palette: assets/css/doors/inner.css colours it. */}}
+{{/* Ask before starting analytics. Colours are in assets/css/doors/inner.css, not the plug-in's palette. */}}
 {{ if site.Params.privacy_pack }}
-  {{ $scr := .Scratch }}
-  {{ $js := hugo.Data.assets.js }}
-  {{ $css := hugo.Data.assets.css }}
-  {{ if ($scr.Get "use_cdn") }}
-    {{ printf "<script src=\"%s\" integrity=\"%s\" crossorigin=\"anonymous\"></script>" (printf $js.cookieconsent.url $js.cookieconsent.version) $js.cookieconsent.sri | safeHTML }}
-    {{ printf "<link rel=\"stylesheet\" href=\"%s\" integrity=\"%s\" crossorigin=\"anonymous\">" (printf $css.cookieconsent.url $css.cookieconsent.version) $css.cookieconsent.sri | safeHTML }}
+  {{ $ga := "" }}
+  {{ if in (slice (getenv "HUGO_ENV") hugo.Environment) "production" }}
+    {{ $ga = site.Params.marketing.google_tag_manager }}
   {{ end }}
+  <link rel="stylesheet" href="{{ "vendor/cookieconsent/cookieconsent.min.css" | relURL }}">
+  <style>.cc-revoke { display: none !important; } .cc-compliance .cc-btn { min-width: 140px; }</style>
+  <script src="{{ "vendor/cookieconsent/cookieconsent.min.js" | relURL }}" defer></script>
   <script>
-  window.addEventListener("load", function(){
-    window.cookieconsent.initialise({
-      "theme": "classic",
-      "content": {
-        "message": {{ i18n "cookie_message" | default "This website uses cookies to ensure you get the best experience on our website." }},
-        "dismiss": {{ i18n "cookie_dismiss" | default "Got it!" }},
-        "link": {{ i18n "cookie_learn" | default "Learn more" }},
-        "href": {{ with site.GetPage "privacy.md" }}{{ printf "%s" .RelPermalink }}{{ else }}"https://www.cookiesandyou.com"{{ end }}
-      }
-    })});
+  (function () {
+    var gaId = {{ $ga }};
+    var gaLoaded = false;
+
+    function startAnalytics() {
+      if (!gaId) return;
+      window["ga-disable-" + gaId] = false;
+      if (gaLoaded) return;
+      gaLoaded = true;
+      window.dataLayer = window.dataLayer || [];
+      window.gtag = function () { dataLayer.push(arguments); };
+      gtag("js", new Date());
+      gtag("config", gaId, { allow_google_signals: false, allow_ad_personalization_signals: false });
+      var script = document.createElement("script");
+      script.async = true;
+      script.src = "https://www.googletagmanager.com/gtag/js?id=" + gaId;
+      document.head.appendChild(script);
+    }
+
+    function stopAnalytics() {
+      if (gaId) window["ga-disable-" + gaId] = true;
+      var parts = location.hostname.split(".");
+      document.cookie.split("; ").forEach(function (cookie) {
+        var name = cookie.split("=")[0];
+        if (name !== "_ga" && name.indexOf("_ga_") !== 0) return;
+        // GA sets its cookies on the widest domain it can, so try each level.
+        for (var i = 0; i < parts.length; i++) {
+          document.cookie = name + "=; Max-Age=0; path=/; domain=." + parts.slice(i).join(".");
+        }
+        document.cookie = name + "=; Max-Age=0; path=/";
+      });
+    }
+
+    function applyChoice(status) {
+      if (status === "allow") startAnalytics(); else stopAnalytics();
+    }
+
+    window.addEventListener("load", function () {
+      window.cookieconsent.initialise({
+        type: "opt-in",
+        cookie: { name: "forrt_analytics_choice", expiryDays: 365, secure: location.protocol === "https:" },
+        theme: "classic",
+        compliance: { "opt-in": '<div class="cc-compliance">{{ "{{deny}}{{allow}}" | safeJS }}</div>' },
+        content: {
+          message: {{ i18n "cookie_message" }},
+          allow: {{ i18n "cookie_allow" }},
+          deny: {{ i18n "cookie_deny" }},
+          link: {{ i18n "cookie_learn" }},
+          href: {{ with site.GetPage "privacy.md" }}{{ .RelPermalink }}{{ else }}{{ "/imprint/" | relURL }}{{ end }}
+        },
+        onInitialise: applyChoice,
+        onStatusChange: applyChoice
+      }, function (popup) {
+        if (popup.getStatus() !== "allow") stopAnalytics();
+        document.addEventListener("click", function (event) {
+          var link = event.target.closest && event.target.closest("[data-cookie-settings]");
+          if (!link) return;
+          event.preventDefault();
+          popup.open();
+        });
+      });
+    });
+  })();
   </script>
 {{ end }}
