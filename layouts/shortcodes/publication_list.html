@@ -147,3 +147,11 @@
         {{ end }}
     </div>
 </div>
+{{/* Altmetric's badges are links with no text. */}}
+<script>
+new MutationObserver(function () {
+  document.querySelectorAll('.altmetric-embed a:not([aria-label])').forEach(function (badge) {
+    badge.setAttribute('aria-label', 'Altmetric attention for this publication');
+  });
+}).observe(document.body, { childList: true, subtree: true });
+</script>

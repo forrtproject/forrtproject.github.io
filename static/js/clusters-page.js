@@ -159,6 +159,17 @@
   /** Click/keyboard toggling for .acc-header sections and "Expand all" buttons.
    *  Shared by clusters and disciplines - both render the same accordion markup. */
   function initAccordionToggle() {
+    /* Whichever code opens or closes a section, its button reports it. */
+    var expanded = new MutationObserver(function (changes) {
+      changes.forEach(function (change) {
+        var trigger = change.target.previousElementSibling && change.target.previousElementSibling.querySelector('.acc-trigger');
+        if (trigger) trigger.setAttribute('aria-expanded', String(!change.target.classList.contains('acc-collapsed')));
+      });
+    });
+    document.querySelectorAll('.acc-body').forEach(function (body) {
+      expanded.observe(body, { attributes: true, attributeFilter: ['class'] });
+    });
+
     function toggleSection(header) {
       if (header.classList.contains('acc-disabled')) return;
       var body = header.nextElementSibling;

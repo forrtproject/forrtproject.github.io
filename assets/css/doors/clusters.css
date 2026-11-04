@@ -422,6 +422,7 @@
   user-select: none;
 }
 .acc-header:hover { color: var(--ink); }
+.acc-trigger { padding: 0; border: 0; background: none; color: inherit; font: inherit; text-align: start; cursor: pointer; }
 .acc-header--rec { color: #004055; }
 .acc-header--rec:hover { color: #00556e; }
 .acc-header.acc-disabled {
@@ -1002,8 +1003,7 @@
   gap: 0.35rem;
   margin-top: 0.5rem;
   font-size: 0.78rem;
-  color: #6070a0;
-  opacity: 0.7;
+  color: var(--soft);
   transition: opacity 0.2s;
 }
 
@@ -2116,8 +2116,7 @@ h1.clusters-site-heading.clusters-hub-page__title {
   padding: 2rem 1.25rem;
   text-align: center;
   font-size: 0.78rem;
-  color: #aaa;
-  font-style: italic;
+  color: var(--soft);
 }
 .rl-panel-item {
   display: flex;

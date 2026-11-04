@@ -500,7 +500,8 @@
 }
 
 .just-os-input:focus {
-  outline: none;
+  outline: 3px solid var(--ink);
+  outline-offset: 1px;
   border-color: var(--link);
 }
 

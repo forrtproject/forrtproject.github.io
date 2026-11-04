@@ -366,3 +366,13 @@ if (termFilter) {
   const current = list.querySelector('[aria-current]');
   if (current) list.scrollTop = current.offsetTop - list.offsetTop - list.clientHeight / 3;
 }
+
+// A table wider than the screen scrolls in its own box, so keyboard users must be able to focus it.
+function focusableTables() {
+  document.querySelectorAll('.article-style table').forEach((table) => {
+    if (table.scrollWidth > table.clientWidth) table.tabIndex = 0;
+    else table.removeAttribute('tabindex');
+  });
+}
+focusableTables();
+addEventListener('resize', focusableTables);
