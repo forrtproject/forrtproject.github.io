@@ -199,15 +199,6 @@
       if (toggleBtn) { toggleAllSections(toggleBtn); }
     });
 
-    document.addEventListener('keydown', function (e) {
-      if (e.key !== 'Enter' && e.key !== ' ') return;
-      if (e.target.closest('.acc-copy-link')) return;
-      var header = e.target.closest('.acc-header');
-      if (!header) return;
-      e.preventDefault();
-      toggleSection(header);
-    });
-
     function toggleAllSections(btn) {
       var clusterId = btn.getAttribute('data-cluster');
       var section = clusterId ? document.getElementById(clusterId) : null;
