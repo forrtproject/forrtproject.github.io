@@ -681,7 +681,7 @@ def build_publications(clusters):
 
 def tidy_lookup_citation(apa, bibtex=''):
     """Repair known defects in the APA text doi.org returns."""
-    apa = ' '.join(apa.split())
+    apa = re.sub(r'(?<=\w)\s+-(?=\w)', '-', ' '.join(apa.split()))
 
     # A line break in a conference title can cut the title off in the APA text
     booktitle = re.search(r'booktitle=\{([^}]*)\}', bibtex)
