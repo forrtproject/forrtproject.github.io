@@ -229,9 +229,11 @@ def check_callouts(browser, base, root, failures):
     for directory, _, files in os.walk(root):
         if "index.html" in files:
             with open(os.path.join(directory, "index.html"), encoding="utf-8", errors="replace") as handle:
-                if '<aside class="callout' in handle.read():
+                if re.search(r'<aside class="?callout', handle.read()):  # A minified build drops the quote.
                     paths.append(os.path.relpath(directory, root).replace(os.sep, "/") + "/")
     print(f"  {len(paths)} pages")
+    if not paths:
+        failures.append("no page uses a call-out, so the call-out check tested nothing")
     for width in WIDTHS:
         page = new_page(browser, width)
         for path in sorted(paths):
