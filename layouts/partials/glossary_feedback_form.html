@@ -153,9 +153,9 @@
     border: 1px solid rgba(0, 0, 0, 0.08);
     /* Logical property (not border-left) so the accent stripe flips to the
        visual right automatically on the Arabic (dir="rtl") pages. */
-    border-inline-start: 4px solid #007bff;
+    border-inline-start: 0;
     border-radius: 8px;
-    background: rgba(0, 123, 255, 0.03);
+    background: var(--surface);
   }
 
   .glossary-feedback-header {
@@ -184,8 +184,8 @@
     width: 2.25rem;
     height: 2.25rem;
     border-radius: 50%;
-    background: rgba(0, 123, 255, 0.12);
-    color: #007bff;
+    background: var(--res-bg);
+    color: var(--link);
     font-size: 1.1rem;
   }
 
@@ -198,7 +198,7 @@
 
   .glossary-feedback-chevron {
     flex: none;
-    color: #6c757d;
+    color: var(--soft);
     font-size: 0.8rem;
     transition: transform 0.2s ease;
   }
@@ -214,7 +214,7 @@
 
   .glossary-feedback-intro {
     margin: 0 0 1rem;
-    color: #6c757d;
+    color: var(--soft);
     font-size: 0.9rem;
     line-height: 1.5;
   }
@@ -236,8 +236,8 @@
   }
 
   .glossary-feedback-form .form-control:focus {
-    border-color: #007bff;
-    box-shadow: 0 0 0 0.15rem rgba(0, 123, 255, 0.2);
+    border-color: var(--link);
+    box-shadow: 0 0 0 0.15rem rgba(0, 90, 135, 0.2);
   }
 
   .glossary-feedback-row {
@@ -266,11 +266,11 @@
 
   .glossary-feedback-status {
     font-size: 0.85rem;
-    color: #28a745;
+    color: var(--edu);
   }
 
   .glossary-feedback-status.text-danger {
-    color: #dc3545 !important;
+    color: var(--urgent) !important;
   }
 
   /* Off-screen positioning (not display:none) keeps the field in the
@@ -285,7 +285,7 @@
   }
 
   .dark .glossary-feedback {
-    background: rgba(0, 123, 255, 0.07);
+    background: var(--res-bg);
     border-color: rgb(68, 71, 90);
   }
 

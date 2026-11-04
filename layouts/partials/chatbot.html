@@ -11,7 +11,7 @@
 {{ end }}
 {{ if ne .Path "/just_os_chatbot" }}
 {{ $css := resources.Get "css/doors/chatbot.css" | minify | fingerprint "md5" }}
-<div id="just-os-widget"{{ if not $active }} class="is-offline"{{ end }} data-css="{{ $css.RelPermalink }}" data-js="{{ "js/just-os-chat.js" | relURL }}">
+<div id="just-os-widget" lang="en" dir="ltr"{{ if not $active }} class="is-offline"{{ end }} data-css="{{ $css.RelPermalink }}" data-js="{{ "js/just-os-chat.js" | relURL }}">
   <button id="just-os-dismiss" type="button" aria-label="Dismiss chatbot" title="Dismiss">&times;</button>
   {{ if $active }}
   <button id="just-os-btn" type="button" aria-label="Open the JUST-OS chatbot" aria-expanded="false">

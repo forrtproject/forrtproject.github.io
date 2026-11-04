@@ -1,0 +1,5 @@
+{{/* A curated resource's link. The sheet holds a few bare DOIs, which would resolve against this site.
+     Input: the resource's page. */}}
+{{ $url := .Params.link_to_resource | default "" }}
+{{ if hasPrefix $url "10." }}{{ $url = printf "https://doi.org/%s" $url }}{{ end }}
+{{ return $url }}
