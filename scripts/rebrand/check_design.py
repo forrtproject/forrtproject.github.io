@@ -561,6 +561,16 @@ def check_phone_reading(browser, base, failures):
               return parseFloat(style.top) + parseFloat(style.maxHeight) - innerHeight;
             }""")
             expect(past <= 0, f"the longest side list fits the window at {width} px ({past:.0f} px past the foot)")
+            page.context.clear_cookies()
+            page.reload(wait_until="load")
+            page.wait_for_selector(".cc-window", timeout=10000)
+            page.wait_for_timeout(1200)
+            past = page.evaluate("""() => {
+              const style = getComputedStyle(document.querySelector('.clusters-sidebar-inner'));
+              const banner = document.querySelector('.cc-window').offsetHeight;
+              return parseFloat(style.top) + parseFloat(style.maxHeight) - (innerHeight - banner);
+            }""")
+            expect(past <= 0, f"it also clears the open banner at {width} px ({past:.0f} px)")
         page.context.close()
 
 
