@@ -174,7 +174,7 @@ document.querySelectorAll('img.lazyload[data-src]').forEach((image) => {
 // A video's player replaces its poster when someone asks to play it.
 document.addEventListener('click', (event) => {
   const poster = event.target.closest('[data-video]');
-  if (!poster || event.metaKey || event.ctrlKey) return;
+  if (!poster || event.metaKey || event.ctrlKey || event.shiftKey) return;
   event.preventDefault();
   const frame = document.createElement('iframe');
   frame.src = `https://www.youtube-nocookie.com/embed/${poster.dataset.video}?autoplay=1`;
@@ -187,7 +187,9 @@ document.addEventListener('click', (event) => {
 
 // A link to a heading inside a closed section opens the section.
 function openTarget() {
-  const target = location.hash && document.getElementById(decodeURIComponent(location.hash.slice(1)));
+  let id = location.hash.slice(1);
+  try { id = decodeURIComponent(id); } catch { /* a malformed address keeps its form */ }
+  const target = id && document.getElementById(id);
   const section = target && target.closest('details');
   if (section) {
     section.open = true;

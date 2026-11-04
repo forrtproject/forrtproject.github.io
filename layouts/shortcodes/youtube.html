@@ -1,7 +1,7 @@
 {{/* A YouTube video as a poster and a link. The player, about 1.5 MB, loads when a visitor plays it, from
      assets/js/doors/site.js. Usage as Hugo's own: {{< youtube ID >}} or {{< youtube id="ID" title="..." >}}. */}}
 {{ $id := .Get "id" | default (.Get 0) }}
-{{ $title := .Get "title" | default "Play this video on YouTube" }}
+{{ $title := .Get "title" | default (printf "Play video %d on this page, on YouTube" (add .Ordinal 1)) }}
 <a class="video-poster" href="https://www.youtube.com/watch?v={{ $id }}" data-video="{{ $id }}" aria-label="{{ $title }}">
   <img src="https://i.ytimg.com/vi/{{ $id }}/hqdefault.jpg" width="480" height="360" alt="" loading="lazy">
   <span class="video-play" aria-hidden="true"><i class="fas fa-play"></i></span>
