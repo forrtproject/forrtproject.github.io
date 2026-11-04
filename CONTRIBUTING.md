@@ -47,6 +47,8 @@ You do not need to install Git or Hugo to fix text or a broken link. Find the re
 
 Preserve the YAML/TOML front matter at the top of the file and existing Hugo shortcodes. Describe the affected page and link to it in your PR. Generated paths include `content/curated_resources/` (except `_index.md`), `content/glossary/`, `content/contributors/tenzing.md`, `content/contributor-analysis/`, `content/publications/citation_chart.webp`, announcement bundles in `content/post/`, `content/replication-hub/flora/_index.md`, `static/data/fred_citation.txt`, and generated files in `data/`. The manually maintained `data/publications.yaml` is editable; follow the [publication instructions](content/publications/README). Generated content is refreshed during deployment. Use the source submission form/sheet linked from the public page or open an issue rather than editing the generated output. Local previews use committed copies and can differ from production. For layout or code changes, use the local setup below.
 
+To set a short note beside the text, put `{{% callout title="A title" %}}Your note{{% /callout %}}` just before the paragraph it goes with. On articles and most other text pages it sits in the right-hand column on wide screens, and in the text on phones and on pages set to full width. `title` is optional, and `tone="example"` or `tone="warning"` changes its colour. Keep it short: a long note runs on past the text it goes with.
+
 ## Local Development Setup
 
 Choose the setup method that suits your workflow.

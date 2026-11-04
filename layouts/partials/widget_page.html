@@ -17,12 +17,14 @@
 {{/* Contents: later section titles and the second-level headings inside every section. */}}
 {{ $toc := slice }}
 {{ $rendered := slice }}
+{{ $hasCallouts := false }}
 {{ range $index, $st := $sections }}
   {{ $hash_id := replace $st.File.ContentBaseName "index" (path.Base (path.Split $page.Path).Dir) }}
   {{ $widget := or $st.Params.widget "blank" }}
   {{ if eq $widget "custom" }}{{ $widget = "blank" }}{{ end }}
   {{ $body := partial (printf "widgets/%s.html" $widget) (dict "root" $page "page" $st) }}
   {{ $body = partial "doors/content" $body }}
+  {{ if strings.Contains $body `<aside class="callout` }}{{ $hasCallouts = true }}{{ end }}
   {{ $title := replaceRE `(?i)<br\s*/?>` " " $st.Title | strings.TrimSpace }}
   {{ if and $title (gt $index 0) }}{{ $toc = $toc | append (dict "id" $hash_id "title" $title) }}{{ end }}
   {{ range findRESubmatch `<h2[^>]*\bid="?([^"> ]+)"?[^>]*>([\s\S]*?)</h2>` $body }}
@@ -35,9 +37,13 @@
 {{ end }}
 {{ $wide := in site.Params.doors.wide_pages .Path }}
 {{ $hasCard := and (not $wide) (gt (len $toc) 1) }}
+{{ $hasCallouts = and $hasCallouts (not $wide) }}
+{{ $card := "" }}
+{{ if $hasCard }}{{ $card = partial "doors/toc_card" $toc }}{{ end }}
 
 <div class="wrap">
-  <div class="article-layout{{ if not $hasCard }} article-layout-single{{ end }}{{ if $wide }} article-layout-wide{{ end }}">
+  <div class="article-layout{{ if $hasCallouts }} article-layout-callouts{{ else if not $hasCard }} article-layout-single{{ end }}{{ if $wide }} article-layout-wide{{ end }}">
+    {{ if $hasCallouts }}{{ $card }}{{ end }}
     <article class="reading">
       <header class="article-head">
         {{ partial "doors/crumbs" (dict "page" .) }}
@@ -54,13 +60,6 @@
         {{ end }}
       </div>
     </article>
-    {{ if $hasCard }}
-    <section class="article-card" aria-label="On this page">
-      <h2>On this page</h2>
-      <div class="article-toc"><nav id="TableOfContents"><ul>
-        {{ range $toc }}<li><a href="#{{ .id }}">{{ .title | markdownify | emojify | plainify }}</a></li>{{ end }}
-      </ul></nav></div>
-    </section>
-    {{ end }}
+    {{ if not $hasCallouts }}{{ $card }}{{ end }}
   </div>
 </div>

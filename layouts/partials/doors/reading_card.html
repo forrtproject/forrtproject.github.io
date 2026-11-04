@@ -1,0 +1,21 @@
+{{/* The side card on the reading layout: dates, and contents when there are headings to jump to. */}}
+{{ $p := .page }}
+<section class="article-card" aria-label="About this article">
+  {{ if .hasDates }}
+  <dl>
+    <dt>Published</dt><dd>{{ $p.Date.Format "2 January 2006" }}</dd>
+    {{ if ne ($p.Lastmod.Format "2006-01-02") ($p.Date.Format "2006-01-02") }}<dt>Updated</dt><dd>{{ $p.Lastmod.Format "2 January 2006" }}</dd>{{ end }}
+  </dl>
+  {{ end }}
+  {{ if gt (len .headings) 1 }}
+  <h2>On this page</h2>
+  <div class="article-toc">
+    {{ if .contents }}{{ $p.TableOfContents }}
+    {{ else }}
+    <nav id="TableOfContents"><ul>
+      {{ range .written }}<li><a href="#{{ index . 1 }}">{{ index . 2 | plainify }}</a></li>{{ end }}
+    </ul></nav>
+    {{ end }}
+  </div>
+  {{ end }}
+</section>

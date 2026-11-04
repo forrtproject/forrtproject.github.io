@@ -78,6 +78,23 @@ main:lang(ar) .article-layout .article-style,main:lang(ar) .article-layout .arti
   .article-layout .article-style{font-size:17px}
   main:lang(ar) .article-layout .article-style,main:lang(ar) .article-layout .article-style p,main:lang(ar) .article-layout .article-style li{font-size:20px}
 }
+/* Call-outs: in the text on narrow screens. On wide screens they float into the right-hand column,
+   where clear keeps them under the side card and under each other. The card comes first in the
+   page so that it can do this, which means it can't stay in view while reading. */
+.article-layout .callout{box-sizing:border-box;margin:28px 0;padding:18px 20px;background:var(--res-bg);border-radius:var(--r-large);font-size:17px;line-height:1.5;color:var(--ink)}
+.article-layout .callout-example{background:var(--edu-bg)}
+.article-layout .callout-warning{background:var(--com-bg)}
+.article-layout .article-style .callout p,.article-layout .article-style .callout ul,.article-layout .article-style .callout ol{margin:0 0 10px;max-width:none}
+.article-layout .article-style .callout>:last-child{margin-bottom:0}
+.article-layout .article-style .callout-title{font:500 21px/1.2 var(--display)}
+@media(min-width:1001px){
+  .article-layout-callouts{display:flow-root;max-width:944px;margin-inline:auto}
+  .article-layout-callouts .reading{width:min(580px,calc(100% - 364px))}
+  .article-layout-callouts .article-card{float:right;float:inline-end;box-sizing:border-box;width:300px;margin-bottom:18px;position:static;max-height:none;overflow:visible}
+  .article-layout-callouts .callout{float:right;float:inline-end;clear:right;clear:inline-end;width:300px;margin:4px -364px 18px 0;margin-inline:0 -364px}
+  .article-layout-callouts .doc-section-tinted .callout{margin-inline-end:-388px}
+}
+@media(max-width:1000px){.article-layout-callouts .article-card{order:1}}
 /* Sections that open: the spoiler and expand shortcodes. */
 .article-layout .article-style .spoiler{margin:0 0 12px;background:var(--surface);border-radius:var(--r-small)}
 .article-layout .article-style .spoiler>summary{padding:10px 14px;font-weight:600;font-size:18px;line-height:1.35;color:var(--link);cursor:pointer}
