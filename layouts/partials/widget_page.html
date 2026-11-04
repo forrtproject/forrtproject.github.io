@@ -50,6 +50,15 @@
         <h1>{{ $h1 | markdownify | emojify }}</h1>
         {{ with $lede }}<p class="standfirst">{{ . | markdownify | emojify }}</p>{{ end }}
       </header>
+      {{/* On phones the side card falls below the text, too late to help on a long page. */}}
+      {{ if $hasCard }}
+      <details class="toc-phone">
+        <summary>On this page</summary>
+        <div class="article-toc"><nav aria-label="On this page"><ul>
+          {{ range $toc }}<li><a href="#{{ .id }}">{{ .title | markdownify | emojify | plainify }}</a></li>{{ end }}
+        </ul></nav></div>
+      </details>
+      {{ end }}
       <div class="article-style">
         {{ range $rendered }}
         <section id="{{ .id }}" class="doc-section wg-{{ .widget }}{{ if .tinted }} doc-section-tinted{{ end }}">

@@ -13,6 +13,6 @@
 .search-hits a{font:var(--display-weight) 21px/1.25 var(--display);color:var(--link);text-decoration:underline;text-underline-offset:3px}
 .search-hits a:hover{color:var(--ink)}
 .search-hits .hit-type{display:block;margin-bottom:2px;font-size:15px;font-weight:600;color:var(--soft)}
-.search-hits p{margin:4px 0 0;font-size:16px;line-height:1.45}
+.search-hits p{display:-webkit-box;margin:4px 0 0;overflow:hidden;font-size:16px;line-height:1.45;-webkit-box-orient:vertical;-webkit-line-clamp:3}
 .search-hits mark{background:var(--com-bg);color:inherit}
 @media(max-width:760px){.search-dialog{width:calc(100% - 16px);margin-top:8px;max-height:calc(100dvh - 16px)}.search-top{padding:12px 12px 8px}.search-status{padding:0 12px 8px}.search-hits{padding:0 12px 12px}}

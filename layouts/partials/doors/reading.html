@@ -6,6 +6,8 @@
 {{ $body = replace $body "⌺" `<span class="dei-mark">DEI</span>` | safeHTML }}
 {{ $contents := cond (findRE `(?i)<h1\b` .Content 1 | len | lt 0) slice (findRE `<li` .TableOfContents 1) }}
 {{ $written := findRESubmatch `<h2[^>]*\bid="?([^"> ]+)"?[^>]*>([\s\S]*?)</h2>` $body }}
+{{/* A short page's real sections can sit a level down. */}}
+{{ if lt (len $written) 4 }}{{ $written = findRESubmatch `<h[23][^>]*\bid="?([^"> ]+)"?[^>]*>([\s\S]*?)</h[23]>` $body }}{{ end }}
 {{ $headings := cond (gt (len $contents) 0) (findRE `<h[23][ >]` .Content) $written }}
 {{ $hasDates := and .Params.date (not (in (slice "page") .Type)) }}
 {{ $wide := in site.Params.doors.wide_pages .Path }}
@@ -19,6 +21,13 @@
     <article class="reading">
       {{ if not .Params.hide_page_header }}
         {{ partial "doors/article_header" . }}
+      {{ end }}
+      {{/* On phones the side card falls below the text, too late to help on a long page. */}}
+      {{ if and $hasCard (gt (len $headings) 1) }}
+      <details class="toc-phone">
+        <summary>On this page</summary>
+        <div class="article-toc">{{ replace (partial "doors/reading_toc" (dict "page" . "contents" $contents "written" $written)) `id="TableOfContents"` `aria-label="On this page"` | safeHTML }}</div>
+      </details>
       {{ end }}
       <div class="article-style">
         {{ $body }}

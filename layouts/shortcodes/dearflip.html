@@ -200,6 +200,11 @@
       var viewportHeight = window.innerHeight || document.documentElement.clientHeight;
       var targetHeight = Math.floor(viewportHeight * 0.8);
       targetHeight = Math.max(500, Math.min(1200, targetHeight));
+      // On a phone the book is one small page, so a tall frame is mostly empty.
+      if (window.innerWidth <= 760) {
+        targetHeight = 560;
+        book.style.minHeight = '0';
+      }
       book.style.height = targetHeight + 'px';
       // Also set inline style with !important to override any library styles
       book.style.setProperty('height', targetHeight + 'px', 'important');

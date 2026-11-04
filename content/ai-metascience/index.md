@@ -150,7 +150,7 @@ image:
 
 .am-switch {
   position: sticky;
-  top: 70px;
+  top: 0;
   z-index: 5;
   display: flex;
   gap: 0.5rem;
@@ -186,7 +186,6 @@ image:
   color: #fff;
 }
 /* The navbar is shorter once it collapses to a burger. */
-@media (max-width: 767px) { .am-switch { top: 50px; } }
 @media (max-width: 480px) {
   .am-switch { gap: 0.35rem; }
   .am-pill { padding: 0.28rem 0.55rem; font-size: 0.8rem; }
@@ -365,13 +364,12 @@ image:
   color: var(--am-deep);
   font-variant-numeric: tabular-nums;
 }
-@media (max-width: 560px) {
-  .am-prog-item { flex-wrap: wrap; gap: 0.3rem; }
-  .am-prog-time { flex: 0 0 100%; }
-  .am-prog-text { flex: 1 1 100%; }
-  .am-prog-talks li { flex-wrap: wrap; }
-  .am-prog-watch { flex: 1 1 100%; max-width: none; justify-content: flex-start; padding: 0 0.4rem 0.5rem; }
-}
+/* Stacked at every width, because the reading column is too narrow for a row. */
+.am-prog-item { flex-wrap: wrap; gap: 0.3rem; }
+.am-prog-time { flex: 0 0 100%; }
+.am-prog-text { flex: 1 1 100%; }
+.am-prog-talks li { flex-wrap: wrap; }
+.am-prog-watch { flex: 1 1 100%; max-width: none; justify-content: flex-start; padding: 0 0.4rem 0.5rem; }
 
 .am-prog-dialog {
   position: relative;
@@ -692,8 +690,7 @@ Here are the sessions and the talks in each, in the order they ran. **Click any 
   var clear = 155;
   function place() {
     if (!bar || !navbar) return;
-    var under = Math.max(0, Math.round(
-      navbar.getBoundingClientRect().bottom));
+    var under = getComputedStyle(navbar).position === "fixed" ? Math.round(navbar.getBoundingClientRect().bottom) : 0;
     bar.style.top = under + "px";
     clear = under + bar.offsetHeight + 8;
     days.forEach(function (day) {

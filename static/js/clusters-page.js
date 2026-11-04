@@ -70,14 +70,6 @@
     }
   }
 
-  function getNavbarStickyOffsetPx() {
-    var bodyTop = parseFloat(window.getComputedStyle(document.body).marginTop) || 0;
-    var navbar = document.getElementById('navbar-main');
-    if (!navbar) return bodyTop;
-    var bottom = Math.ceil(navbar.getBoundingClientRect().bottom);
-    return Math.max(bottom, bodyTop);
-  }
-
   function escapeHtml(s) {
     var d = document.createElement('div');
     d.textContent = s;
@@ -435,7 +427,6 @@
     }
 
     function updateStickyLayoutMetrics() {
-      root.style.setProperty('--clusters-sticky-offset', getNavbarStickyOffsetPx() + 'px');
       root.style.setProperty(
         '--clusters-controls-height',
         controls ? controls.offsetHeight + 'px' : '0px'
@@ -512,6 +503,14 @@
       }, 80);
     }
 
+    /* The open drawer fills a phone's screen, so it carries its own way out. */
+    var sidebarClose = sidebar ? sidebar.querySelector('.sidebar-close') : null;
+    if (sidebarClose && mobileToggle) {
+      sidebarClose.addEventListener('click', function () {
+        mobileToggle.click();
+        mobileToggle.focus();
+      });
+    }
     if (mobileToggle && sidebar) {
       mobileToggle.addEventListener('click', function () {
         sidebar.classList.toggle('sidebar-open');

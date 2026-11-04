@@ -318,10 +318,23 @@ if (chatWidget) {
   });
   // The invitation shows and hides on a slow cycle, as it always has, and rests while the chat is open.
   const chatOpen = () => document.getElementById('just-os-window')?.style.display === 'flex';
+  let invited = false;
   const invitation = setInterval(() => {
     if (dismissed() || chatFailed) clearInterval(invitation);
-    else if (!chatOpen()) chatBubble.classList.toggle('bubble-visible');
+    else if (!chatOpen()) {
+      // On a phone it shows once per page, so it doesn't keep returning over the text.
+      if (invited && innerWidth <= 760) {
+        chatBubble.classList.remove('bubble-visible');
+        clearInterval(invitation);
+        return;
+      }
+      chatBubble.classList.toggle('bubble-visible', !chatBubble.classList.contains('bubble-visible') && !reading());
+      if (chatBubble.classList.contains('bubble-visible')) invited = true;
+    }
   }, 10000);
+  // On a phone the invitation would sit over the text, so it shows only at the top of a page.
+  const reading = () => innerWidth <= 760 && scrollY > 120;
+  addEventListener('scroll', () => { if (reading() && !chatFailed) chatBubble.classList.remove('bubble-visible'); }, { passive: true });
   if (chatButton.tagName === 'BUTTON') {
     chatButton.addEventListener('click', () => {
       if (window.toggleJustOS) {
