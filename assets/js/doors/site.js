@@ -318,13 +318,18 @@ if (chatWidget) {
   });
   // The invitation shows and hides on a slow cycle, as it always has, and rests while the chat is open.
   const chatOpen = () => document.getElementById('just-os-window')?.style.display === 'flex';
+  let invited = false;
   const invitation = setInterval(() => {
     if (dismissed() || chatFailed) clearInterval(invitation);
     else if (!chatOpen()) {
-      const hiding = chatBubble.classList.contains('bubble-visible');
-      chatBubble.classList.toggle('bubble-visible', !hiding && !reading());
       // On a phone it shows once per page, so it doesn't keep returning over the text.
-      if (hiding && innerWidth <= 760) clearInterval(invitation);
+      if (invited && innerWidth <= 760) {
+        chatBubble.classList.remove('bubble-visible');
+        clearInterval(invitation);
+        return;
+      }
+      chatBubble.classList.toggle('bubble-visible', !chatBubble.classList.contains('bubble-visible') && !reading());
+      if (chatBubble.classList.contains('bubble-visible')) invited = true;
     }
   }, 10000);
   // On a phone the invitation would sit over the text, so it shows only at the top of a page.

@@ -2360,4 +2360,5 @@ h1.clusters-site-heading.clusters-hub-page__title {
 /* On phones the pinned filters took half the screen, so they scroll away with the page. */
 @media (max-width:760px){
   .clusters-controls{position:static}
+  .clusters-layout{--clusters-controls-height:0px!important;--clusters-sticky-offset:0px!important}
 }
