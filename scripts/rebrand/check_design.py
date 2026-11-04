@@ -235,6 +235,8 @@ def check_callouts(browser, base, root, failures):
         page = new_page(browser, width)
         for path in sorted(paths):
             page.goto(base + path, wait_until="load", timeout=120000)
+            page.wait_for_function("document.fonts.check('18px \\"Source Sans 3\\"')", timeout=30000)
+            page.evaluate("document.fonts.ready.then(() => null)")
             found = page.evaluate(CALLOUTS)
             for problem in found:
                 failures.append(f"{path} at {width}: call-out {problem}")
