@@ -22,4 +22,5 @@
 /* At 400% zoom a full-size launcher would cover a third of the screen. */
 @media (max-height:420px){
   #just-os-img{width:38px;height:38px}
+  #just-os-bubble{display:none}
 }
