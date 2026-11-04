@@ -51,6 +51,8 @@
 .pub-list,.partner-list,.get-involved-projects{display:grid;gap:14px;margin:14px 0}
 .pub-card,.partner-card,.get-involved-card{padding:18px 20px;background:var(--surface);border-radius:var(--r-large);font-size:16px;line-height:1.45}
 .article-layout .article-style :is(.pub-card,.partner-card,.get-involved-card) :is(p,li){font-size:16px;line-height:1.45}
+.pub-card,.pub-card-body{min-width:0;overflow-wrap:anywhere}
+.pub-pill{max-width:100%;white-space:normal}
 .pub-header,.partner-header{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:6px;margin:0 0 8px}
 .pub-tags,.partner-tags{display:flex;flex-wrap:wrap;gap:6px}
 .pub-pill,.partner-pill{padding:2px 9px;background:#fff;border-radius:var(--r-small);font-size:15px;font-weight:600;color:var(--ink)}

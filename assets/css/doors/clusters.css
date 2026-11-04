@@ -234,7 +234,7 @@
 
 .clusters-inline-search__row {
   display: flex;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
   align-items: stretch;
   gap: 0.4rem;
   position: relative;

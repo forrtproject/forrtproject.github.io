@@ -12,7 +12,7 @@
 code,pre,kbd,samp{font-style:normal}
 
 /* Cookie banner: same library and wording, in Doors colours. */
-.cc-window.cc-window{background:var(--ink);color:var(--page);font-family:var(--text);font-size:16px;line-height:1.5}
+.cc-window.cc-window{max-height:100vh;overflow-y:auto;background:var(--ink);color:var(--page);font-family:var(--text);font-size:16px;line-height:1.5}
 .cc-window .cc-link,.cc-window .cc-link:hover,.cc-window .cc-link:visited{color:var(--page);opacity:1}
 .cc-window.cc-window .cc-btn,.cc-window.cc-window .cc-btn:focus{background:var(--hot);color:var(--ink);border:0;border-radius:999px;font-weight:700;font-size:15px;text-decoration:none}
 .cc-window.cc-window .cc-btn:hover{background:var(--page);color:var(--ink);text-decoration:none}
@@ -37,3 +37,9 @@ ul.network-icon a:hover{color:var(--ink)}
 .cite-dialog::backdrop{background:rgba(38,45,53,.55)}
 .cite-dialog h2{font-size:26px}
 .cite-dialog pre{max-height:50vh;overflow:auto;padding:12px;background:var(--surface);border-radius:var(--r-small)}
+
+/* Forced colours drop backgrounds, so filled buttons need an edge, and the dark logo needs a light plate. */
+@media (forced-colors:active){
+  .head-join,.cc-window.cc-window .cc-btn,.newsletter-open,.btn,.tower-entry,.motion-toggle{border:2px solid ButtonText}
+  .brand img{background:#fff;padding:2px;border-radius:4px;forced-color-adjust:none}
+}
