@@ -27,8 +27,6 @@ EXTRA = {
     "privacy": "/privacy/",
     "syllabus": "/syllabus/",
     "lesson bank": "/neurodiversity-lessonbank/implicit_bias/",
-    "video page": "/citation-politics/",
-    "embed page": "/about/get-involved/",
 }
 # Datawrapper's own chart markup on this page.
 KNOWN = {("nowhere lab list", "aria-hidden-focus"), ("nowhere lab list", "nested-interactive"), ("nowhere lab list", "role-img-alt")}
@@ -64,7 +62,11 @@ def main():
             context = browser.new_context(viewport={"width": width, "height": 900}, reduced_motion="reduce")
             for name, path in sample.items():
                 page = context.new_page()
-                page.goto(base + quote(path.lstrip("/"), safe="/%"), wait_until="load", timeout=120000)
+                response = page.goto(base + quote(path.lstrip("/"), safe="/%"), wait_until="load", timeout=120000)
+                if not response or not response.ok:
+                    failures.append(f"{name} at {width}: {path} did not load")
+                    page.close()
+                    continue
                 page.wait_for_timeout(800)
                 if base not in page.url:
                     page.close()

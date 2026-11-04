@@ -57,7 +57,10 @@ function startControls() {
       meter = document.createElement('output');
       meter.style.cssText = 'position:fixed;top:0;left:0;z-index:9999;padding:4px 8px;background:#000;color:#fff;font:16px monospace';
       document.body.append(meter);
+    }
+    if (!countedSince) {
       countedSince = ms;
+      return;
     }
     counted += 1;
     if (ms - countedSince >= 1000) {
@@ -82,6 +85,8 @@ function startControls() {
   function start() {
     if (!frame && !isPaused() && !gameOpen && visible && !document.hidden) {
       previous = 0;
+      counted = 0;
+      countedSince = 0;
       frame = requestAnimationFrame(loop);
     }
   }
