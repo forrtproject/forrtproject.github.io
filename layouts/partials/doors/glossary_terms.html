@@ -9,7 +9,7 @@
   <input type="text" id="glossary-search" class="form-control" placeholder="{{ .labels.filter_terms }}" aria-label="{{ .labels.filter_terms }}">
   <nav class="term-list" aria-label="{{ .labels.list_of_terms }}">
     <ul>
-      {{ range sort $pages "Params.sort_key" }}<li><a href="{{ .RelPermalink }}"{{ if eq .RelPermalink $page.RelPermalink }} aria-current="page"{{ end }}>{{ .Title }}</a></li>{{ end }}
+      {{ range sort $pages "Params.sort_key" }}<li><a href="{{ .RelPermalink }}"{{ if eq .RelPermalink $page.RelPermalink }} aria-current="page"{{ end }}>{{ partial "doors/term_title" .Title }}</a></li>{{ end }}
     </ul>
   </nav>
 </section>
