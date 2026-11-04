@@ -5,7 +5,16 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
-from parse_clusters_to_sheet import parse_cluster_11, parse_document, parse_subclusters_standard
+from parse_clusters_to_sheet import (
+    Cluster,
+    SubCluster,
+    build_export,
+    build_publications,
+    parse_cluster_11,
+    parse_document,
+    parse_subclusters_standard,
+    tidy_lookup_citation,
+)
 
 
 class StandardSubClusters(unittest.TestCase):
@@ -69,6 +78,52 @@ class ClusterEleven(unittest.TestCase):
         self.assertEqual(description, "Research Integrity encompasses standards.")
         self.assertEqual([s.name for s in sub_clusters], ["Principles", "Misconduct"])
         self.assertEqual(sub_clusters[0].description, "Core principles.")
+
+
+class Export(unittest.TestCase):
+    def test_sub_clusters_sharing_a_name_keep_their_own_references(self):
+        def cluster(number, name, citation):
+            sub = SubCluster("Reflexivity", name, "", "", [citation])
+            return Cluster(number, name, "", "", [sub])
+
+        clusters = [cluster(3, "Three", "Doe, A. (2020). From three."), cluster(10, "Ten", "Roe, B. (2021). From ten.")]
+        exported = build_export(clusters, build_publications(clusters))["clusters"]
+        lists = [[p["apa"] for p in c["sub_clusters"][0]["publications"]] for c in exported]
+        self.assertEqual(lists, [["Doe, A. (2020). From three."], ["Roe, B. (2021). From ten."]])
+
+
+class LookupCitations(unittest.TestCase):
+    def test_conference_title_cut_at_a_line_break_is_restored(self):
+        apa = "Doe, A. (2018). Title. 22nd Conference on Electronic. https://doi.org/10.1/x"
+        bibtex = "@inproceedings{d, booktitle={22nd Conference on Electronic\n\t\tPublishing}, year={2018}}"
+        self.assertEqual(
+            tidy_lookup_citation(apa, bibtex),
+            "Doe, A. (2018). Title. 22nd Conference on Electronic Publishing. https://doi.org/10.1/x",
+        )
+
+    def test_complete_title_with_a_line_break_is_not_repeated(self):
+        apa = "Doe, A. (2004). Title. The Handbook for the\n    Sciences, 1–2. https://doi.org/10.1/x"
+        bibtex = "@incollection{d, booktitle={The Handbook for the\n    Sciences}, year={2004}}"
+        self.assertEqual(
+            tidy_lookup_citation(apa, bibtex),
+            "Doe, A. (2004). Title. The Handbook for the Sciences, 1–2. https://doi.org/10.1/x",
+        )
+
+    def test_portico_is_removed(self):
+        self.assertEqual(
+            tidy_lookup_citation("Doe, A. (2014). Title. J, 14(3), 1–2. Portico. https://doi.org/10.1/x"),
+            "Doe, A. (2014). Title. J, 14(3), 1–2. https://doi.org/10.1/x",
+        )
+
+    def test_capitalised_surnames_are_normalised(self):
+        self.assertEqual(
+            tidy_lookup_citation("PIÑEIRO, R., & ROSENBLATT, F. (2016). THE TITLE. https://doi.org/10.1/x"),
+            "Piñeiro, R., & Rosenblatt, F. (2016). THE TITLE. https://doi.org/10.1/x",
+        )
+
+    def test_organisations_and_suffixes_keep_their_capitals(self):
+        for apa in ("KNAW, NFU, & VSNU. (2018). Title.", "Boum II, Y., & Doe, A. (2021). Title."):
+            self.assertEqual(tidy_lookup_citation(apa), apa)
 
 
 if __name__ == "__main__":
