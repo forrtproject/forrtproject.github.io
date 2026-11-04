@@ -6,7 +6,7 @@
 
 <div class="col-lg-4 col-xl-3 clusters-sidebar" id="clusters-sidebar">
   <div class="clusters-sidebar-inner">
-    <div class="sidebar-header">Clusters &amp; Sub-clusters</div>
+    <div class="sidebar-header">Clusters &amp; Sub-clusters<button type="button" class="sidebar-close d-lg-none">Close</button></div>
     <nav id="cluster-nav">
       {{ range $ci, $cluster := $data.clusters }}
       {{ $cid := printf "cluster-%d" (int $cluster.number) }}
