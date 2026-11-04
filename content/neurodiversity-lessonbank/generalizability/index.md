@@ -24,7 +24,7 @@ What factors contribute to it?
 **Activity 1**
 
 <div style="position: relative; padding-bottom: 60%; height: 0; overflow: hidden; margin: 20px 0;">
-<iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" src="https://learningapps.org/watch?v=pruq63b4k23" allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true"></iframe>
+<iframe title="Embedded material for this lesson" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" src="https://learningapps.org/watch?v=pruq63b4k23" allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true"></iframe>
 </div>
 
 **Activity 2 - Case studies**

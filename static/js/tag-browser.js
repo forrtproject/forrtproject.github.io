@@ -58,7 +58,9 @@
     });
 
     results.hidden = false;
-    // The cloud stays available below the results, so no need to hide it.
+    // The results have a link back to every tag, so the cloud would only push the footer away.
+    var cloud = document.getElementById("tag-cloud");
+    if (cloud) cloud.hidden = true;
     results.scrollIntoView({ block: "nearest" });
   }
 

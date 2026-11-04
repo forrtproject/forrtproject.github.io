@@ -130,3 +130,20 @@ main:lang(ar) .article-layout .article-style,main:lang(ar) .article-layout .arti
   .article-layout .article-style,.article-layout .article-style :is(p,li){font-size:12pt}
   a{color:#000}
 }
+/* A video before it plays, the player after, and a section of a long summaries page. */
+.video-poster{position:relative;display:block;margin:0 0 18px;aspect-ratio:16/9;overflow:hidden;background:var(--surface);border-radius:var(--r-small)}
+.article-layout .article-style .video-poster img{display:block;width:100%;height:100%;object-fit:cover}
+.video-play{position:absolute;inset:50% auto auto 50%;display:flex;align-items:center;justify-content:center;width:64px;height:64px;margin:-32px 0 0 -32px;background:var(--ink);border-radius:50%;color:#fff;font-size:24px}
+.video-poster:hover .video-play,.video-poster:focus-visible .video-play{background:var(--hot);color:var(--ink)}
+.video-frame{display:block;width:100%;aspect-ratio:16/9;margin:0 0 18px;border:0;border-radius:var(--r-small)}
+.article-layout .article-style .summary-entry{margin:0;border-bottom:1px solid var(--line)}
+.article-layout .article-style .summary-entry>summary{padding:12px 0;cursor:pointer}
+.article-layout .article-style .summary-entry>summary h2{display:inline;margin:0;font-size:22px;line-height:1.25}
+.article-layout .article-foot .article-widget li{margin-bottom:8px}
+.doi-link,.cite-us-text a{text-decoration:underline;text-underline-offset:3px}
+@media(max-width:1000px){
+  .glossary-index .reading{display:contents}
+  .glossary-index .article-head{order:-2;margin-bottom:0}
+  .glossary-index .glossary-card{order:-1}
+  .glossary-index .term-list{max-height:220px}
+}

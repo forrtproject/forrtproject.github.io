@@ -171,6 +171,32 @@ document.querySelectorAll('img.lazyload[data-src]').forEach((image) => {
   image.src = image.dataset.src;
 });
 
+// A video's player replaces its poster when someone asks to play it.
+document.addEventListener('click', (event) => {
+  const poster = event.target.closest('[data-video]');
+  if (!poster || event.metaKey || event.ctrlKey) return;
+  event.preventDefault();
+  const frame = document.createElement('iframe');
+  frame.src = `https://www.youtube-nocookie.com/embed/${poster.dataset.video}?autoplay=1`;
+  frame.title = poster.getAttribute('aria-label');
+  frame.allow = 'autoplay; encrypted-media; picture-in-picture; fullscreen';
+  frame.className = 'video-frame';
+  poster.replaceWith(frame);
+  frame.focus();
+});
+
+// A link to a heading inside a closed section opens the section.
+function openTarget() {
+  const target = location.hash && document.getElementById(decodeURIComponent(location.hash.slice(1)));
+  const section = target && target.closest('details');
+  if (section) {
+    section.open = true;
+    target.scrollIntoView();
+  }
+}
+addEventListener('hashchange', openTarget);
+openTarget();
+
 // Older content opens and closes sections with Bootstrap's data attributes.
 document.addEventListener('click', (event) => {
   const toggle = event.target.closest('[data-toggle=collapse]');
@@ -185,6 +211,8 @@ document.addEventListener('click', (event) => {
 function watchBanner() {
   const banner = document.querySelector('.cc-window');
   if (!banner) return;
+  banner.lang = 'en';
+  banner.dir = 'ltr';
   new ResizeObserver(() => {
     document.documentElement.style.setProperty('--banner', `${banner.offsetHeight}px`);
   }).observe(banner);
