@@ -1102,7 +1102,10 @@
     });
     const first = stops[0];
     const last = stops[stops.length - 1];
-    if (event.shiftKey && document.activeElement === first) {
+    if (!scope.contains(document.activeElement)) {
+      event.preventDefault();
+      first.focus();
+    } else if (event.shiftKey && document.activeElement === first) {
       event.preventDefault();
       last.focus();
     } else if (!event.shiftKey && document.activeElement === last) {

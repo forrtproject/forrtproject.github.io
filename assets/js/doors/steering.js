@@ -56,7 +56,7 @@ document.addEventListener('keydown', (event) => {
   const last = stops[stops.length - 1];
   if (!open.contains(document.activeElement)) {
     event.preventDefault();
-    first.focus();
+    (event.shiftKey ? last : first).focus();
   } else if (event.shiftKey && document.activeElement === first) {
     event.preventDefault();
     last.focus();

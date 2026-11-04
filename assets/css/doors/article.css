@@ -154,5 +154,5 @@ main:lang(ar) .article-layout .article-style,main:lang(ar) .article-layout .arti
 .summary-more{margin-top:14px}
 .summary-more[hidden]{display:none}
 /* The entries' own titles do this job on a narrow screen, where the contents would sit below them. */
-@media(max-width:1000px){.article-layout:has(.summary-entry) .article-card{display:none}}
+@media(max-width:1000px){.article-layout:has(.summary-entry) .article-card :is(h2,.article-toc){display:none}}
 .dei-mark{padding:0 6px;background:var(--jus-bg);border-radius:var(--r-small);font:600 15px/1.3 var(--text);color:var(--ink);vertical-align:.1em}
