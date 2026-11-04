@@ -84,6 +84,13 @@ Triggers `deploy.yaml` after successful processing via `repository_dispatch`.
 
 
 
+### [cluster-tests.yaml](cluster-tests.yaml)
+**Clusters parser regression tests and stated sub-cluster counts**
+
+| Trigger | Runs on |
+|---------|---------|
+| Pull requests changing the clusters data, parser or tests | PR branches |
+
 ### [check_images.yaml](workflows/check_images.yaml)
 **Image validation in PRs**
 
