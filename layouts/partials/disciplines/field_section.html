@@ -41,9 +41,9 @@
     {{ $slug := $disc.name | lower | replaceRE "[^a-z0-9]+" "-" | replaceRE "^-+|-+$" "" }}
     {{ $did := $slug }}
     <div class="acc-section" id="{{ $did }}">
-      <div class="acc-header" role="button" tabindex="0">
-        <span class="acc-chevron">&#9656;</span>
-        <h3 class="acc-label">{{ $disc.name }}</h3>
+      <div class="acc-header">
+        <span class="acc-chevron" aria-hidden="true">&#9656;</span>
+        <h3 class="acc-label"><button type="button" class="acc-trigger" aria-expanded="false">{{ $disc.name }}</button></h3>
         {{ if $showLeads }}
         {{ with $disc.leads }}
         <span class="acc-leads">

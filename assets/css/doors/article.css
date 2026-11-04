@@ -10,6 +10,9 @@
 .article-layout .article-meta{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:18px;font-size:15px;font-weight:600}
 .article-layout .article-meta span{background:var(--surface);padding:3px 10px;border-radius:var(--r-small)}
 .article-layout .reading h1{font-size:clamp(36px,4.2vw,58px);line-height:1.06;letter-spacing:-.01em;margin:0;text-wrap:balance}
+.article-layout .reading h1.long-title{font-size:clamp(28px,3vw,42px);line-height:1.12}
+/* For long compounds. Not in English, where Safari hyphenates any word at a line end. */
+.article-layout .reading h1:lang(de),.article-layout .reading h1:lang(tr){hyphens:auto}
 .article-layout .standfirst{font:500 clamp(21px,1.9vw,25px)/1.4 var(--display);margin:18px 0 0;max-width:30em;color:var(--ink)}
 .article-layout .byline{display:flex;flex-wrap:wrap;gap:4px 18px;margin:16px 0 0;font-size:16px}
 .article-layout .byline a{color:var(--link);text-underline-offset:3px;text-decoration:underline}
@@ -155,6 +158,7 @@ main:lang(ar) .article-layout .article-style,main:lang(ar) .article-layout .arti
 .video-frame{display:block;width:100%;aspect-ratio:16/9;margin:0 0 18px;border:0;border-radius:var(--r-small)}
 .video-poster:has(+ .video-note){margin-bottom:6px}
 .video-note,.article-layout .article-style .video-note{margin:0 0 18px;color:var(--soft);font-size:16px;line-height:1.4}
+.video-note a{text-decoration:underline}
 .article-layout .article-style .summary-entry{margin:0;border-bottom:1px solid var(--line)}
 .article-layout .article-style .summary-entry>summary{padding:12px 0;cursor:pointer}
 .article-layout .article-style .summary-entry>summary h2{display:inline;margin:0;font-size:22px;line-height:1.25}

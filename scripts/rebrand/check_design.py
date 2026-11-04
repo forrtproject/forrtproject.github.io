@@ -145,9 +145,10 @@ def serve(root, subfolder):
 
 
 def new_page(browser, width, errors=None, **options):
-    context = browser.new_context(
-        viewport={"width": width, "height": WIDTHS.get(width, 900)}, is_mobile=width < 500, has_touch=width < 500, **options
-    )
+    phone = {"has_touch": True} if width < 500 else {}
+    if width < 500 and browser.browser_type.name != "firefox":  # Firefox has no mobile mode in Playwright.
+        phone["is_mobile"] = True
+    context = browser.new_context(viewport={"width": width, "height": WIDTHS.get(width, 900)}, **phone, **options)
     page = context.new_page()
     page.route("**/*", lambda route: route.abort() if BLOCK.search(route.request.url) else route.continue_())
     if errors is not None:
@@ -228,9 +229,11 @@ def check_callouts(browser, base, root, failures):
     for directory, _, files in os.walk(root):
         if "index.html" in files:
             with open(os.path.join(directory, "index.html"), encoding="utf-8", errors="replace") as handle:
-                if '<aside class="callout' in handle.read():
+                if re.search(r'<aside class="?callout', handle.read()):  # A minified build drops the quote.
                     paths.append(os.path.relpath(directory, root).replace(os.sep, "/") + "/")
     print(f"  {len(paths)} pages")
+    if not paths:
+        failures.append("no page uses a call-out, so the call-out check tested nothing")
     for width in WIDTHS:
         page = new_page(browser, width)
         for path in sorted(paths):
@@ -275,6 +278,11 @@ CARD_GAP = """() => {
   return box.left < right ? 0 : box.left - right;
 }"""
 CARD_GAP_LIMIT = 80
+
+
+def press_tab(page):
+    """Tab, or in WebKit Option-Tab, because Safari's Tab skips buttons and links by default."""
+    page.keyboard.press("Alt+Tab" if page.context.browser.browser_type.name == "webkit" else "Tab")
 
 
 def read_settled(page, expression):
@@ -376,8 +384,9 @@ def check_home(browser, base, failures):
         position = page.evaluate("(document.querySelector('.topics').getBoundingClientRect().top + scrollY) / innerHeight")
         expect(position <= limit, f"topics start at {position:.2f} viewports at {width} px, limit {limit}")
         page.context.close()
-    shift = layout_shift(browser, base)
-    expect(shift <= SHIFT_LIMIT, f"layout shift on a slow phone is {shift:.3f}, limit {SHIFT_LIMIT}")
+    if browser.browser_type.name == "chromium":  # The throttling is Chrome's own.
+        shift = layout_shift(browser, base)
+        expect(shift <= SHIFT_LIMIT, f"layout shift on a slow phone is {shift:.3f}, limit {SHIFT_LIMIT}")
 
     page = new_page(browser, 1440)
     requests = []
@@ -405,7 +414,7 @@ def check_home(browser, base, failures):
     # A real Tab from the heading above, so that the browser counts it as keyboard focus.
     page.evaluate("document.querySelector('.quotes').previousElementSibling.setAttribute('tabindex', '-1')")
     page.evaluate("document.querySelector('.quotes').previousElementSibling.focus()")
-    page.keyboard.press("Tab")
+    press_tab(page)
     button = page.locator(".quotes .motion-toggle")
     expect(page.evaluate("document.activeElement.closest('.quotes') !== null"), "Tab reaches the quotes' pause button")
     held = page.evaluate(current)
@@ -458,7 +467,7 @@ def check_tower_game(browser, base, expect):
     expect(page.evaluate(box) <= 1, "'Build it yourself' is out of sight at rest")
     expect(not any("/js/tower/" in url for url in requests), "nobody downloads the game before asking for it")
     page.locator(".tower .motion-toggle").focus()
-    page.keyboard.press("Tab")
+    press_tab(page)
     expect(page.evaluate("document.activeElement.className") == "tower-entry", "Tab goes from pause to 'Build it yourself'")
     expect(page.locator(".tower .motion-toggle").is_visible() and page.evaluate(box) > 100,
            "keyboard focus shows both buttons")
@@ -632,6 +641,22 @@ def check_icons(root, failures):
     print(f"  {len(known)} icons in the subset, {len(used)} used but missing", flush=True)
 
 
+def check_on_request(root, failures):
+    """Video posters, forms, calendars and the newsletter embed load only when a visitor asks."""
+    pattern = re.compile(r"""i\.ytimg\.com|<iframe[^>]*\ssrc\s*=\s*["']?https?://(?:www\.)?(?:youtube|youtube-nocookie|calendar\.google|docs\.google)"""
+                         r"""|<script[^>]*\ssrc\s*=\s*["']?https?://eocampaign1\.com|fonts\.(?:googleapis|gstatic)\.com|googletagmanager\.com/gtag/js\?id=G-""", re.I)
+    found = []
+    for folder, _, files in os.walk(root):
+        if "index.html" in files and os.path.relpath(folder, root) != "admin":
+            with open(os.path.join(folder, "index.html"), encoding="utf-8", errors="ignore") as handle:
+                match = pattern.search(handle.read())
+            if match:
+                found.append((os.path.relpath(folder, root), match.group(0)[:60]))
+    for where, what in found[:10]:
+        failures.append(f"/{where}/ loads {what} before anyone asks")
+    print(f"  pages loading these before anyone asks: {len(found)}", flush=True)
+
+
 def check_no_theme(root, failures):
     """No page loads the theme's stylesheet, Font Awesome's CDN sheet or jQuery from the CDN."""
     found = {}
@@ -652,6 +677,8 @@ def main():
     parser.add_argument("public", nargs="?")
     parser.add_argument("--url")
     parser.add_argument("--base", default="/", help="subfolder the build expects to be served from")
+    parser.add_argument("--browser", default="chromium", choices=("chromium", "firefox", "webkit"),
+                        help="engine to run in; the throttled layout-shift test and the budgets need Chromium")
     args = parser.parse_args()
     base = args.url.rstrip("/") + "/" if args.url else serve(os.path.abspath(args.public), args.base)
     failures = []
@@ -660,8 +687,10 @@ def main():
         check_icons(os.path.abspath(args.public), failures)
         print("Theme assets")
         check_no_theme(os.path.abspath(args.public), failures)
+        print("Embeds load on request")
+        check_on_request(os.path.abspath(args.public), failures)
     with sync_playwright() as playwright:
-        browser = playwright.chromium.launch()
+        browser = getattr(playwright, args.browser).launch()
         print("Screens")
         check_screens(browser, base, failures)
         print("Breakpoints and enlarged text")
@@ -677,7 +706,7 @@ def main():
         check_home(browser, base, failures)
         print("Resources directory")
         check_directory(browser, base, failures)
-        if args.public:
+        if args.public and args.browser == "chromium":
             print("Budgets, report only")
             report_budgets(browser, base, os.path.abspath(args.public), args.base)
         browser.close()

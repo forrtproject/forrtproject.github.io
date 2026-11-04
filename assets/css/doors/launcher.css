@@ -18,3 +18,9 @@
 @media(max-width:760px){#just-os-widget{inset-block-end:calc(12px + var(--banner,0px));inset-inline-end:12px}#just-os-img{width:48px;height:48px}#just-os-bubble{inset-inline-end:58px;top:9px;font-size:14px}}
 @media(hover:none){#just-os-dismiss{opacity:1}}
 @media print{#just-os-widget{display:none}}
+
+/* At 400% zoom a full-size launcher would cover a third of the screen. */
+@media (max-height:420px){
+  #just-os-img{width:38px;height:38px}
+  #just-os-bubble{display:none}
+}

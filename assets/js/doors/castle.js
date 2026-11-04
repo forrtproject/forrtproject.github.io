@@ -46,17 +46,47 @@ function startControls() {
     pointerY += (targetY - pointerY) * 0.04;
     castle()?.render(time, pointerX, pointerY);
   }
+  // For device tests: ?fps shows the frame rate, and ?fps=20 also caps drawing at that rate.
+  const fps = new URLSearchParams(location.search).get('fps');
+  const cap = Number(fps) > 0 ? 1000 / Number(fps) : 0;
+  let meter;
+  let counted = 0;
+  let countedSince = 0;
+  function count(ms) {
+    if (!meter) {
+      meter = document.createElement('output');
+      meter.style.cssText = 'position:fixed;top:0;left:0;z-index:9999;padding:4px 8px;background:#000;color:#fff;font:16px monospace';
+      document.body.append(meter);
+    }
+    if (!countedSince) {
+      countedSince = ms;
+      return;
+    }
+    counted += 1;
+    if (ms - countedSince >= 1000) {
+      meter.textContent = `${Math.round(counted * 1000 / (ms - countedSince))} fps`;
+      counted = 0;
+      countedSince = ms;
+    }
+  }
   function loop(ms) {
     frame = 0;
     if (isPaused() || gameOpen || document.hidden || !visible) return;
-    lastTime += Math.min(0.045, ms - (previous || ms) > 0 ? (ms - (previous || ms)) / 1000 : 0);
+    if (cap && previous && ms - previous < cap) {
+      frame = requestAnimationFrame(loop);
+      return;
+    }
+    lastTime += Math.min(cap ? cap / 1000 : 0.045, ms - (previous || ms) > 0 ? (ms - (previous || ms)) / 1000 : 0);
     previous = ms;
     draw(lastTime);
+    if (fps !== null) count(ms);
     frame = requestAnimationFrame(loop);
   }
   function start() {
     if (!frame && !isPaused() && !gameOpen && visible && !document.hidden) {
       previous = 0;
+      counted = 0;
+      countedSince = 0;
       frame = requestAnimationFrame(loop);
     }
   }
