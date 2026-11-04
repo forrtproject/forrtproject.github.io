@@ -532,12 +532,19 @@
 
   function openHistoryPanel(container) {
     renderHistoryList(container);
-    getHistoryPanel(container).style.display = 'flex';
+    const panel = getHistoryPanel(container);
+    panel.style.display = 'flex';
+    const back = panel.querySelector('.just-os-history-back');
+    if (back) back.focus();
   }
 
   function closeHistoryPanel(container) {
     const panel = container.querySelector('.just-os-history-panel');
-    if (panel) panel.style.display = 'none';
+    if (!panel) return;
+    const hadFocus = panel.contains(document.activeElement);
+    panel.style.display = 'none';
+    const opener = container.querySelector('.just-os-history-btn');
+    if (hadFocus && opener) opener.focus();
   }
 
   /* -------------------------------------------------- */
@@ -1080,23 +1087,30 @@
     }
   };
 
-  // Escape closes the chat, and where it fills the screen Tab stays inside it.
+  // Escape closes the history panel and then the chat. Tab stays inside the history panel while it
+  // covers the chat, and inside the chat where it fills the screen.
   document.addEventListener('keydown', function (event) {
+    const container = getContainer();
+    const history = container && container.querySelector('.just-os-history-panel');
+    const historyOpen = history && history.style.display === 'flex';
     const win = document.getElementById('just-os-window');
-    if (!win || win.style.display !== 'flex') return;
+    const chatOpen = win && win.style.display === 'flex';
     if (event.key === 'Escape') {
       if (activeTooltipTeardown) return;
-      window.toggleJustOS();
-      const launcher = document.getElementById('just-os-btn');
-      if (launcher) {
-        launcher.setAttribute('aria-expanded', 'false');
-        launcher.focus();
+      if (historyOpen) {
+        closeHistoryPanel(container);
+      } else if (chatOpen) {
+        window.toggleJustOS();
+        const launcher = document.getElementById('just-os-btn');
+        if (launcher) {
+          launcher.setAttribute('aria-expanded', 'false');
+          launcher.focus();
+        }
       }
       return;
     }
-    if (event.key !== 'Tab' || win.offsetWidth < window.innerWidth) return;
-    const history = win.querySelector('.just-os-history-panel');
-    const scope = history && history.style.display === 'flex' ? history : win;
+    if (event.key !== 'Tab' || !(historyOpen || (chatOpen && win.offsetWidth >= window.innerWidth))) return;
+    const scope = historyOpen ? history : win;
     const stops = Array.from(scope.querySelectorAll('button,textarea,a[href]')).filter(function (el) {
       return el.getClientRects().length > 0 && !el.disabled;
     });
@@ -1104,7 +1118,7 @@
     const last = stops[stops.length - 1];
     if (!scope.contains(document.activeElement)) {
       event.preventDefault();
-      first.focus();
+      (event.shiftKey ? last : first).focus();
     } else if (event.shiftKey && document.activeElement === first) {
       event.preventDefault();
       last.focus();
