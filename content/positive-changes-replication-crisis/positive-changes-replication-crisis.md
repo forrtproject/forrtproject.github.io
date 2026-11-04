@@ -106,18 +106,6 @@ Our educational toolkit is designed to support educators, researchers, and stude
 
 <br>
 
-<center>
-
-<div style="max-width:900px">
-
-![Visualization - AI generated](Viz_FORRT.webp)
-
-</div>
-
-</center>
-
-<br>
-
 ### Summary of the paper & argument
 ------- 
 
