@@ -93,11 +93,32 @@
 .citation-container img{display:block;width:100%;height:auto}
 .citation-container figcaption{margin-top:6px;text-align:start}
 @media(min-width:761px){
-  .pub-intro{display:grid;grid-template-columns:minmax(0,580px) 320px;justify-content:space-between;gap:48px;align-items:start}
+  .pub-intro{display:grid;grid-template-columns:minmax(0,550px) 240px;justify-content:space-between;gap:48px;align-items:start}
+  .article-layout .article-style .pub-intro p{max-width:none;font-size:18px;line-height:1.55}
   .article-layout .article-style .citation-container{grid-column:2;grid-row:1;width:auto;margin:0}
   .pub-intro>:not(figure){grid-column:1}
 }
 @media(min-width:761px) and (max-width:1000px){.pub-intro{grid-template-columns:minmax(0,1fr) 260px;gap:32px}}
+
+.reading:has(.pub-intro) .article-head{margin-bottom:14px}
+.reading:has(.pub-intro) .doc-section>hr:first-child{margin:0 0 20px}
+
+/* Get Involved: its project cards take the reading column and the call-out column together. */
+@media(min-width:1001px){
+  .article-layout-callouts .article-style .get-involved-projects{clear:both;width:calc(100% + 364px);grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+
+/* PDFs and the booklet are for looking at, so they take the width; their introductions do not. */
+.pdf-open{margin:0 0 12px}
+.pdf-viewer{display:block;width:100%;max-width:960px;border:1px solid var(--line);border-radius:var(--r-small)}
+
+/* The chatbot's page is a tool: on a wide screen its input is in view beside the introduction. */
+@media(min-width:1001px){
+  .article-layout-wide .doc-section:has(>#just-os-fullpage){display:grid;grid-template-columns:minmax(0,560px) minmax(0,1fr);column-gap:48px;align-items:start}
+  .article-layout-wide .doc-section:has(>#just-os-fullpage)>*{grid-column:1}
+  .article-layout-wide .doc-section>#just-os-fullpage{grid-column:2;grid-row:1/span 30;position:sticky;top:24px;height:min(calc(100vh - 260px),640px)!important;min-height:420px;margin:0!important}
+  .article-layout-wide .doc-section:has(>#just-os-fullpage)>br{display:none}
+}
 
 /* Contributors: its generated page carries an older inline style, so these rules name the same ids. */
 .article-layout #filter-menu,.article-layout #filter-collapsed{padding:16px 18px;margin:0 0 22px;background:var(--surface);border:0;border-radius:var(--r-large)}

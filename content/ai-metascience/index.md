@@ -99,7 +99,7 @@ image:
 
 .am-days {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: 1fr;
   gap: 0.8rem;
   margin: 1.8rem 0 2.2rem;
 }
@@ -146,7 +146,17 @@ image:
   color: var(--am-deep);
   font-size: 0.85rem;
 }
-@media (max-width: 640px) { .am-days { grid-template-columns: 1fr; } }
+/* Three cards side by side would be narrow strips in this column, so each is a row. */
+@media (min-width: 641px) {
+  .am-day-card { display: grid; grid-template-columns: 7.5rem minmax(0, 1fr); column-gap: 1rem; }
+  .am-day-name, .am-day-date { grid-column: 1; }
+  .am-day-theme, .am-day-blurb, .am-day-go { grid-column: 2; }
+  .am-day-name { grid-row: 1; }
+  .am-day-date { grid-row: 2; }
+  .am-day-theme { grid-row: 1; margin-top: 0; }
+  .am-day-blurb { grid-row: 2 / span 3; }
+  .am-day-go { grid-row: 5; padding-top: 0.4rem; justify-self: end; }
+}
 
 .am-switch {
   position: sticky;

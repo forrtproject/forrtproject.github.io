@@ -54,11 +54,3 @@ Lesson 10: How can Open Scholarship address structural ableism and racism?
    <a href="./Lesson_Plans/How_can_we_Open%20Scholarship_to_address_the%20structural_ableism_and_racism_in_our_society.pdf" target="_blank"><u>Lesson Plan</u></a>
 
 {{< youtube oMkF8DiAolQ >}}
-
-<a href="https://msgrose-hodge.github.io/ND/h5p-standalone-1.3.x/demo/lhquestions.html" target="_blank">admin</a>
-
-<a href="https://msgrose-hodge.github.io/ND/h5p-standalone-1.3.x/demo/content-example-2.html" target="_blank">admin 2</a>
-
----
-
-<br>

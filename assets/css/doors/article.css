@@ -10,6 +10,8 @@
 .article-layout .article-meta{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:18px;font-size:15px;font-weight:600}
 .article-layout .article-meta span{background:var(--surface);padding:3px 10px;border-radius:var(--r-small)}
 .article-layout .reading h1{font-size:clamp(36px,4.2vw,58px);line-height:1.06;letter-spacing:-.01em;margin:0;text-wrap:balance}
+/* In the narrow column a bigger screen must not mean a taller stack of title lines. */
+.article-layout:not(.article-layout-wide) .reading h1{font-size:clamp(34px,3.2vw,46px);line-height:1.1}
 .article-layout .reading h1.long-title{font-size:clamp(28px,3vw,42px);line-height:1.12}
 /* For long compounds. Not in English, where Safari hyphenates any word at a line end. */
 .article-layout .reading h1:lang(de),.article-layout .reading h1:lang(tr){hyphens:auto}
@@ -136,6 +138,11 @@ main:lang(ar) .article-layout .article-style,main:lang(ar) .article-layout .arti
 .sc-page h1{font-size:clamp(36px,4.2vw,58px);line-height:1.06;margin:0 0 18px}
 .sc-page .crumbs{margin-bottom:18px}
 .sc-page #sc-container{padding:0;font-family:var(--text);max-width:none}
+/* A team's name heads its own row, so it cannot end one row with its people starting the next. */
+.sc-page .sc-grid .sc-title-card{flex:0 0 100%;grid-column:1/-1;width:100%;aspect-ratio:auto;padding:10px 16px;flex-direction:row;align-items:baseline;justify-content:flex-start;gap:10px}
+.sc-page .sc-title-card :is(.sc-title-label,.sc-title-text){margin:0}
+.sc-page .sc-title-card .sc-title-text{font-size:17px}
+.sc-page .sc-title-card .sc-cbar{display:none}
 .article-layout .post-nav{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px 24px;margin:0 0 18px}
 .article-layout .post-nav-item{max-width:calc(50% - 12px);min-width:0}
 .article-layout .post-nav-item:only-child{max-width:none}
@@ -183,8 +190,8 @@ main:lang(ar) .article-layout .article-style,main:lang(ar) .article-layout .arti
 .article-layout .article-style .summary-count{margin:8px 0 0;font-size:16px}
 .summary-more{margin-top:14px}
 .summary-more[hidden]{display:none}
-/* The entries' own titles do this job on a narrow screen, where the contents would sit below them. */
-@media(max-width:1000px){.article-layout:has(.summary-entry) .article-card :is(h2,.article-toc){display:none}}
+/* The list of entries is its own contents, so a second list beside it only repeats the titles. */
+.article-layout:has(.summary-entry) .article-card :is(h2,.article-toc){display:none}
 .dei-mark{padding:0 6px;background:var(--jus-bg);border-radius:var(--r-small);font:600 15px/1.3 var(--text);color:var(--ink);vertical-align:.1em}
 @media print{.toc-phone{display:none!important}}
 .glossary-feedback-header>*{min-width:0;overflow-wrap:anywhere}
