@@ -583,9 +583,11 @@ DIRECTORIES = {
     "about/teams/": ".feature-rows",
     "educators-corner/": ".list-items",
     "pedagogies/": ".list-items",
+    "forrt_clusters/academic-life-and-culture/": ".plain-list",
 }
 DIRECTORY_MIN_WIDTH = 900
 FIRST_VIEW_IMAGE_LIMIT = 0.3
+CHART_WIDTH_LIMIT = 340
 
 
 def check_directory_widths(browser, base, failures):
@@ -598,11 +600,12 @@ def check_directory_widths(browser, base, failures):
         width = page.evaluate("(s) => document.querySelector(s)?.getBoundingClientRect().width || 0", selector)
         expect(width >= DIRECTORY_MIN_WIDTH, f"{path}: {selector} is {width:.0f} px wide, at least {DIRECTORY_MIN_WIDTH}")
     page.goto(base + "publications/", wait_until="load")
-    share = page.evaluate("""() => {
+    chart_width, share = page.evaluate("""() => {
       const box = document.querySelector('.citation-container img').getBoundingClientRect();
       const seen = Math.max(0, Math.min(box.bottom, innerHeight) - Math.max(box.top, 0));
-      return seen * box.width / (innerWidth * innerHeight);
+      return [box.width, seen * box.width / (innerWidth * innerHeight)];
     }""")
+    expect(chart_width <= CHART_WIDTH_LIMIT, f"the citation chart is {chart_width:.0f} px wide, limit {CHART_WIDTH_LIMIT}")
     expect(share <= FIRST_VIEW_IMAGE_LIMIT, f"the citation chart takes {share:.0%} of the first view, limit {FIRST_VIEW_IMAGE_LIMIT:.0%}")
     page.context.close()
 
