@@ -938,6 +938,51 @@ def check_contributor_network(browser, base, failures):
     page.context.close()
 
 
+CONFERENCE = "ai-metascience/"
+CONFERENCE_MIN_WIDTH = 900
+
+
+def check_conference(browser, base, failures):
+    """The conference programme: day tabs that keep every day reachable, the width used, and the abstract dialog."""
+    expect = expectation(failures, "conference programme")
+    # Without JavaScript every day shows, so the audit reaches the days the tabs hide.
+    for width in WIDTHS:
+        page = new_page(browser, width, java_script_enabled=False)
+        page.goto(base + CONFERENCE, wait_until="load")
+        shown = page.evaluate("[...document.querySelectorAll('.am-prog-day')].filter((d) => d.getClientRects().length).length")
+        expect(shown == 3, f"without JavaScript {shown} of 3 days show at {width}")
+        found = page.evaluate(AUDIT)
+        for key in ("overflow", "contrast", "small", "long"):
+            expect(not found[key], f"without JavaScript at {width}, {key}: {found[key] if found[key] else 'none'}")
+        page.context.close()
+    page = new_page(browser, 1440)
+    page.context.add_cookies([{"name": "forrt_analytics_choice", "value": "deny", "url": base}])  # Banner shut.
+    page.goto(base + CONFERENCE, wait_until="load")
+    width = page.evaluate("document.querySelector('.am-prog').getBoundingClientRect().width")
+    expect(width >= CONFERENCE_MIN_WIDTH, f"the programme is {width:.0f} px wide, at least {CONFERENCE_MIN_WIDTH}")
+    visible = "[...document.querySelectorAll('.am-prog-day')].filter((d) => !d.hidden).map((d) => d.id)"
+    expect(page.evaluate(visible) == ["am-day-mon"], "with JavaScript only Monday shows at first")
+    if not page.locator(".am-tab[aria-selected=true]").count():
+        expect(False, "the days have tabs")
+        page.context.close()
+        return
+    page.focus(".am-tab[aria-selected=true]")
+    page.keyboard.press("ArrowRight")
+    focused = page.evaluate("document.activeElement.id")
+    expect(page.evaluate(visible) == ["am-day-tue"] and focused == "am-tab-tue", "the right arrow moves to Tuesday's tab and shows its day")
+    talk = page.locator("#am-day-tue button.am-prog-item:not(.am-prog-item-plain)").first
+    talk.focus()
+    page.keyboard.press("Enter")
+    inside = page.evaluate("document.getElementById('am-prog-dialog').open && document.getElementById('am-prog-dialog').contains(document.activeElement)")
+    expect(inside, "Enter on a talk opens its abstract with the focus inside")
+    page.keyboard.press("Escape")
+    back = page.evaluate("!document.getElementById('am-prog-dialog').open && document.activeElement.matches('#am-day-tue .am-prog-item')")
+    expect(back, "Escape closes the abstract and hands the focus back to the talk")
+    page.goto(base + CONFERENCE + "#am-day-wed", wait_until="load")
+    expect(page.evaluate(visible) == ["am-day-wed"], "a link to #am-day-wed opens on Wednesday")
+    page.context.close()
+
+
 def report_budgets(browser, base, root, subfolder):
     from capture_pages import weigh
 
@@ -1055,6 +1100,8 @@ def main():
         print("Reading on a phone")
         check_phone_reading(browser, base, failures)
         check_directory_widths(browser, base, failures)
+        print("Conference programme")
+        check_conference(browser, base, failures)
         print("Contributor network")
         check_contributor_network(browser, base, failures)
         print("Resources directory")
