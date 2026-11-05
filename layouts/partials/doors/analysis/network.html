@@ -1,0 +1,78 @@
+{{/* The contributor network: a drawing with assets/js/doors/network.js behind it, and the same
+     connections as a list of projects, which is what readers get without scripts. Input: dict with
+     `network` (see network_data.html) and `counts`, the page's totals or an empty dict. */}}
+{{ $network := .network }}
+{{ $members := dict }}
+{{ range $network.people }}
+  {{ $name := index . 0 }}
+  {{ range index . 4 }}
+    {{ $key := string . }}
+    {{ $members = merge $members (dict $key ((index $members $key | default slice) | append $name)) }}
+  {{ end }}
+{{ end }}
+{{ $list := slice }}
+{{ range $i, $project := $network.projects }}
+  {{ $names := index $members (string $i) | default slice }}
+  {{ $list = $list | append (dict "name" (index $project 0) "people" $names "n" (len $names)) }}
+{{ end }}
+{{ $people := len $network.people }}
+{{ $projects := len $network.projects }}
+{{ $summary := printf "%d people and the %d projects they worked on." $people $projects }}
+{{ with $network.largest_group }}{{ $summary = printf "%s %d of those people are connected to one another through shared projects, directly or through others." $summary (int .) }}{{ end }}
+<section class="analysis-network" aria-labelledby="analysis-network-title" data-analysis-network>
+  <div class="network-intro">
+    <h2 id="analysis-network-title">Who has worked with whom</h2>
+    <p>This network shows {{ $summary }} Two people are connected when they share a project{{ with $network.pairs }}, which gives {{ lang.FormatNumberCustom 0 . }} connected pairs{{ end }}.</p>
+    <p class="analysis-note">It uses contribution roles only. The totals above also count project-leadership records and entries with no role listed, so they are higher.</p>
+  </div>
+  <div class="network-panel" data-network-panel hidden>
+    <div class="network-controls">
+      <div class="network-field">
+        <label for="network-person">Find a person</label>
+        <div class="network-combo">
+          <input id="network-person" class="network-input" type="text" role="combobox" aria-expanded="false" aria-controls="network-person-list" aria-autocomplete="list" autocomplete="off" spellcheck="false" placeholder="Type a name">
+          <ul id="network-person-list" class="network-options" role="listbox" aria-label="People" hidden></ul>
+        </div>
+      </div>
+      <div class="network-field">
+        <label for="network-project">Show projects</label>
+        <div class="network-combo">
+          <input id="network-project" class="network-input" type="text" role="combobox" aria-expanded="false" aria-controls="network-project-list" aria-autocomplete="list" autocomplete="off" spellcheck="false" placeholder="Choose or type a project">
+          <ul id="network-project-list" class="network-options" role="listbox" aria-label="Projects" hidden></ul>
+        </div>
+        <ul class="network-chips" data-network-chips aria-label="Projects shown" hidden></ul>
+      </div>
+      <p class="network-status" role="status" data-network-status>Nothing selected. Showing everyone.</p>
+      <div class="network-detail" data-network-detail hidden></div>
+      <div class="network-guide" data-network-guide>
+        <h3>How to read it</h3>
+        <ul class="network-legend">
+          <li><span class="legend-person" aria-hidden="true"></span>A person. Larger dots have more roles on record.</li>
+          <li><span class="legend-project" aria-hidden="true"></span>A project. Larger squares have more people.</li>
+          <li><span class="legend-line" aria-hidden="true"></span>A person worked on that project.</li>
+        </ul>
+        <p class="network-hint">Point at a dot or square for its name, and click it for its connections. Drag to move around. Use the buttons to zoom, or the arrow, plus and minus keys when the drawing has focus.</p>
+      </div>
+    </div>
+    <div class="network-stage" data-network-stage>
+      <canvas class="network-canvas" role="img" aria-label="Network drawing of {{ $summary }} People sit close to the projects they share. The list of projects after this drawing gives the same connections in text." data-network-canvas></canvas>
+      <div class="network-tools" data-network-tools>
+        <button type="button" class="network-tool" data-network-zoom="in" aria-label="Zoom in"><span aria-hidden="true">+</span></button>
+        <button type="button" class="network-tool" data-network-zoom="out" aria-label="Zoom out"><span aria-hidden="true">−</span></button>
+        <button type="button" class="network-tool network-tool-wide" data-network-zoom="fit">Show all</button>
+      </div>
+      <div class="network-tip" data-network-tip hidden></div>
+    </div>
+  </div>
+  <details class="analysis-more network-list">
+    <summary>The network as a list of {{ $projects }} projects and their people</summary>
+    <ul class="network-projects">
+      {{ range sort $list "n" "desc" }}
+      <li><details><summary>{{ .name }} <span class="network-count">{{ .n }} {{ if eq .n 1 }}person{{ else }}people{{ end }}</span></summary><p>{{ delimit .people ", " }}</p></details></li>
+      {{ end }}
+    </ul>
+  </details>
+  <script type="application/json" id="network-data">{{ dict "projects" $network.projects "people" $network.people | jsonify | safeJS }}</script>
+  {{ $js := resources.Get "js/doors/network.js" | js.Build (dict "minify" true "format" "iife" "target" "es2019") | fingerprint "md5" }}
+  <script src="{{ $js.RelPermalink }}" defer></script>
+</section>

@@ -1,0 +1,39 @@
+{{/* The contributor network, read from the file content/contributor-analysis/network-graph.Rmd
+     generates. Returns a dict with `projects` ([name, x, y]) and `people` ([name, roles, x, y,
+     [project indexes]]), empty when the file holds neither form below.
+
+     The Rmd on main writes this data in a script tag of its own. Until the next data run there
+     is only the older widget's data, which has no project positions and separates a person's
+     projects by commas, so that branch can go once a run has produced the new tag. */}}
+{{ $file := "static/partials/network-graph.html" }}
+{{ $result := dict }}
+{{ if fileExists $file }}
+  {{ $html := os.ReadFile $file }}
+  {{ with findRESubmatch `<script type="application/json" id="contributor-network">(.*?)</script>` $html 1 }}
+    {{ $result = index . 0 1 | transform.Unmarshal }}
+  {{ else }}
+    {{ with findRESubmatch `<script type="application/json" data-for="htmlwidget-[0-9a-f]+">(.*?)</script>` $html 1 }}
+      {{ $nodes := (index . 0 1 | transform.Unmarshal).x.nodes }}
+      {{ $indexes := dict }}
+      {{ $projects := slice }}
+      {{ $people := slice }}
+      {{ range $i, $name := $nodes.id }}
+        {{ $joined := slice }}
+        {{ range split (index $nodes.projects $i) "," }}
+          {{/* merge lowers its keys, and index and isset then need the same form. */}}
+          {{ $key := lower . }}
+          {{ if not (isset $indexes $key) }}
+            {{ $indexes = merge $indexes (dict $key (len $projects)) }}
+            {{ $projects = $projects | append (slice . | jsonify) }}
+          {{ end }}
+          {{ $joined = $joined | append (index $indexes $key) }}
+        {{ end }}
+        {{ $x := math.Round (mul 1000 (index $nodes.x $i)) }}
+        {{ $y := math.Round (mul 1000 (index $nodes.y $i)) }}
+        {{ $people = $people | append (printf "[%s,%v,%v,%v,%s]" (jsonify $name) (index $nodes.value $i) $x $y (jsonify $joined)) }}
+      {{ end }}
+      {{ $result = printf `{"projects":[%s],"people":[%s]}` (delimit $projects ",") (delimit $people ",") | transform.Unmarshal }}
+    {{ end }}
+  {{ end }}
+{{ end }}
+{{ return $result }}
