@@ -4,6 +4,7 @@ output:
   html_document:
     self_contained: TRUE
     keep_md: FALSE
+    mathjax: null
 ---
 
 The interactive network visualization below shows the connections between FORRT contributors based on their collaborative work across different projects.
