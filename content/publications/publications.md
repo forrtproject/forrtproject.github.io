@@ -57,7 +57,7 @@ subtitle = "Peer-reviewed research, tools, data, teaching materials, and policy 
 <div class="pub-intro">
 
 <figure class="citation-container">
-  <img src="citation_chart.webp" alt="Citation Chart">
+  <img src="citation_chart.webp" alt="Bar chart of citations to FORRT's work per year, with its total citations and h-index, from Google Scholar">
   <figcaption><a href="https://scholar.google.com/citations?user=JrBcgGMAAAAJ&hl=en&authuser=1" target="_blank">Details on Google Scholar</a></figcaption>
 </figure>
 

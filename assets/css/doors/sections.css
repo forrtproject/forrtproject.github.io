@@ -75,6 +75,30 @@
 .partner-description{font-size:16px}
 .get-involved-card>:last-child{display:flex;flex-wrap:wrap;gap:6px;align-items:center}
 
+/* Directories hold cards and lists rather than running text, so a wide screen takes two or more columns. */
+.article-layout-wide :is(.pub-list,.partner-list){grid-template-columns:repeat(auto-fill,minmax(min(100%,420px),1fr));gap:16px}
+.article-layout-wide .article-style .feature-rows{grid-template-columns:repeat(auto-fill,minmax(min(100%,420px),1fr));gap:28px 40px}
+.article-layout-wide .article-style .feature-rows li{max-width:none}
+.article-layout-wide .pub-card,.article-layout-wide .pub-card-body{display:flex;flex-direction:column}
+.article-layout-wide .pub-card-body{flex:1}
+.article-layout-wide .pub-footer{margin-top:auto;padding-top:10px}
+@media(min-width:1001px){.article-layout-wide #contributor-list{columns:3;column-gap:40px}}
+@media(min-width:761px) and (max-width:1000px){.article-layout-wide #contributor-list{columns:2;column-gap:32px}}
+.article-layout-wide .contributor-group{max-width:none;break-inside:avoid}
+.article-layout-wide .article-style center{text-align:start}
+
+/* The citation chart supports the introduction: beside it on a wide screen, after it on a narrow one. */
+.pub-intro{display:flex;flex-direction:column;margin-bottom:28px}
+.article-layout .article-style .citation-container{order:1;width:min(100%,320px);margin:6px 0 10px}
+.citation-container img{display:block;width:100%;height:auto}
+.citation-container figcaption{margin-top:6px;text-align:start}
+@media(min-width:761px){
+  .pub-intro{display:grid;grid-template-columns:minmax(0,580px) 320px;justify-content:space-between;gap:48px;align-items:start}
+  .article-layout .article-style .citation-container{grid-column:2;grid-row:1;width:auto;margin:0}
+  .pub-intro>:not(figure){grid-column:1}
+}
+@media(min-width:761px) and (max-width:1000px){.pub-intro{grid-template-columns:minmax(0,1fr) 260px;gap:32px}}
+
 /* Contributors: its generated page carries an older inline style, so these rules name the same ids. */
 .article-layout #filter-menu,.article-layout #filter-collapsed{padding:16px 18px;margin:0 0 22px;background:var(--surface);border:0;border-radius:var(--r-large)}
 .article-layout #filter-menu h3{margin:0 0 10px;color:var(--ink);font-size:22px;font-weight:var(--display-weight)}

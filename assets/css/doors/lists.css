@@ -11,6 +11,8 @@
 .plain-list a{color:var(--link);text-decoration:underline;text-underline-offset:3px}
 .list-items{display:grid;gap:18px;margin-top:8px}
 .list-item{padding:0 0 18px;border-bottom:1px solid var(--line)}
+.article-layout-wide .list-items{grid-template-columns:repeat(auto-fill,minmax(min(100%,420px),1fr));gap:24px 40px}
+@media(min-width:1001px){.article-layout-wide .plain-list{columns:2;column-gap:48px}.article-layout-wide .plain-list li{max-width:none;break-inside:avoid}}
 .list-item-image{display:grid;grid-template-columns:minmax(0,1fr) 140px;gap:18px;align-items:start}
 .list-item img{border-radius:var(--r-small);width:140px;height:105px;object-fit:cover}
 .article-layout .list-item h2{margin:0 0 4px;font-size:24px;line-height:1.2}
