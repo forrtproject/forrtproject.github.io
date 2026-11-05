@@ -616,8 +616,8 @@ def check_directory_widths(browser, base, failures):
     frame = page.evaluate("(() => { const box = document.querySelector('._df_book').getBoundingClientRect(); return box.width / box.height; })()")
     expect(frame <= 1.4, f"the booklet's frame is {frame:.2f} times as wide as it is high, so a spread would be clipped; limit 1.4")
     page.goto(base + "about/steering-committee/", wait_until="load")
-    rows = page.evaluate("[...document.querySelectorAll('.sc-team')].filter((team) => team.getBoundingClientRect().width < innerWidth / 2).length")
-    expect(rows > 0, "no small Steering Committee team sits beside another")
+    tops = page.evaluate("[...document.querySelectorAll('.sc-team')].map((team) => Math.round(team.getBoundingClientRect().top))")
+    expect(len(set(tops)) < len(tops), "no small Steering Committee team sits beside another")
     page.context.close()
 
 
