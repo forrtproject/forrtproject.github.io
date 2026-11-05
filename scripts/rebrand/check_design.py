@@ -575,6 +575,37 @@ def check_phone_reading(browser, base, failures):
         page.context.close()
 
 
+# What under the chat launcher has text of its own: the launcher is to rest in the margin, never over the page.
+UNDER_LAUNCHER = """() => {
+  const box = document.getElementById('just-os-btn').getBoundingClientRect();
+  const found = new Set();
+  for (let x = box.left + 1; x < box.right; x += 4) for (let y = box.top + 1; y < box.bottom; y += 4) {
+    const el = document.elementsFromPoint(x, y).find((e) => !e.closest('#just-os-widget') && e.closest('main')
+      && e.tagName !== 'MAIN' && getComputedStyle(e).display !== 'contents' && (e.innerText || '').trim());
+    if (el) found.add(`${el.tagName.toLowerCase()} "${el.innerText.trim().slice(0, 30)}"`);
+  }
+  return [...found];
+}"""
+
+
+def check_launcher_clear(browser, base, failures):
+    """On laptops the launcher is a tab in the gutter, and from 1440 px the round button fits the margin."""
+    expect = expectation(failures, "chat launcher")
+    for width in (1024, 1280, 1440):
+        page = new_page(browser, width)
+        page.context.add_cookies([{"name": "forrt_analytics_choice", "value": "deny", "url": base}])  # Banner shut.
+        for path in ("contributors/", "publications/", "about/teams/"):
+            page.goto(base + path, wait_until="load")
+            page.wait_for_timeout(500)
+            under = set()
+            for y in (0, 700, 1600):
+                page.evaluate(f"scrollTo(0, {y})")
+                page.wait_for_timeout(150)
+                under.update(page.evaluate(UNDER_LAUNCHER))
+            expect(not under, f"the launcher covers nothing on {path} at {width} px{': ' + ', '.join(sorted(under)[:3]) if under else ''}")
+        page.context.close()
+
+
 # Pages of cards or lists, with the element that holds them: a wide screen is not to leave them in the reading column.
 DIRECTORIES = {
     "publications/": ".pub-list",
@@ -585,7 +616,11 @@ DIRECTORIES = {
     "educators-corner/": ".list-items",
     "pedagogies/": ".list-items",
     "forrt_clusters/academic-life-and-culture/": ".plain-list",
+    "syllabus/": ".catalogue",
+    "neurodiversity-lessonbank/": ".lesson-grid",
 }
+# Tool pages lead with their tool: the main action is in the first view, above the page's own text.
+TOOL_PAGES = ("awop/", "citation-politics/", "replication-hub/flora/", "nowherelab/")
 DIRECTORY_MIN_WIDTH = 900
 FIRST_VIEW_IMAGE_LIMIT = 0.3
 CHART_WIDTH_LIMIT = 340
@@ -600,6 +635,17 @@ def check_directory_widths(browser, base, failures):
         page.goto(base + path, wait_until="load")
         width = page.evaluate("(s) => document.querySelector(s)?.getBoundingClientRect().width || 0", selector)
         expect(width >= DIRECTORY_MIN_WIDTH, f"{path}: {selector} is {width:.0f} px wide, at least {DIRECTORY_MIN_WIDTH}")
+    for path in TOOL_PAGES:
+        page.goto(base + path, wait_until="load")
+        bottom = page.evaluate("document.querySelector('.page-actions .btn-primary')?.getBoundingClientRect().bottom ?? Infinity")
+        expect(bottom <= page.viewport_size["height"], f"{path}: the main action ends {bottom:.0f} px down, within the first view")
+    page.goto(base + "post/2026-01-newsletter/", wait_until="load")
+    order = page.evaluate("""() => {
+      const link = [...document.querySelectorAll('.article-style a')].find((a) => /newsletter/i.test(a.textContent));
+      const image = document.querySelector('.reading .article-image');
+      return !!link && (!image || !!(link.compareDocumentPosition(image) & Node.DOCUMENT_POSITION_FOLLOWING));
+    }""")
+    expect(order, "a short news post's link comes before its image")
     page.goto(base + "publications/", wait_until="load")
     chart_width, share = page.evaluate("""() => {
       const box = document.querySelector('.citation-container img').getBoundingClientRect();
@@ -1106,6 +1152,7 @@ def main():
         check_home(browser, base, failures)
         print("Reading on a phone")
         check_phone_reading(browser, base, failures)
+        check_launcher_clear(browser, base, failures)
         check_directory_widths(browser, base, failures)
         print("Conference programme")
         check_conference(browser, base, failures)

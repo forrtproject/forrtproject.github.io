@@ -50,6 +50,7 @@
         <h1>{{ $h1 | markdownify | emojify }}</h1>
         {{ with $lede }}<p class="standfirst">{{ . | markdownify | emojify }}</p>{{ end }}
       </header>
+      {{ partial "doors/page_actions" . }}
       {{/* On phones the side card falls below the text, too late to help on a long page. */}}
       {{ if $hasCard }}
       <details class="toc-phone">
