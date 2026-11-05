@@ -52,6 +52,11 @@ except FileNotFoundError:
     print("Warning: apa_lookup.json not found. References will not be formatted.")
     apa_lookup = {}
 
+# Earlier URL slugs of terms whose title changed, keyed by language and English
+# title. Page addresses are built from titles, so renaming a term moves its page.
+with open(os.path.join(script_dir, '_renamed_terms.json'), 'r', encoding='utf-8') as f:
+    renamed_terms = json.load(f)
+
 def process_references(references_text, apa_lookup, missing_refs_log=None, context=""):
     """Convert citation keys to APA format using the lookup"""
     if not references_text:
@@ -285,6 +290,11 @@ for language_code in languages_to_process:
         # Add aliases for English entries
         if language_code == "EN":
             entry["aliases"] = ["/glossary/" + clean_filename(title)]
+
+        # Keep the old addresses of renamed terms working
+        old_slugs = renamed_terms.get(language_name, {}).get(en_title)
+        if old_slugs:
+            entry["aliases"] = [f"/glossary/{language_name}/{slug}" for slug in old_slugs]
 
         language_entries.append(entry)
     
