@@ -119,6 +119,7 @@
   .article-layout-wide .doc-section>#just-os-fullpage{grid-column:2;grid-row:1/span 30;position:sticky;top:24px;height:min(calc(100vh - 260px),640px)!important;min-height:420px;margin:0!important}
   .article-layout-wide .doc-section:has(>#just-os-fullpage)>br{display:none}
 }
+@media(min-width:1001px) and (max-width:1279px){.article-layout-wide .doc-section:has(>#just-os-fullpage){grid-template-columns:repeat(2,minmax(0,1fr));column-gap:32px}}
 
 /* Contributors: its generated page carries an older inline style, so these rules name the same ids. */
 .article-layout #filter-menu,.article-layout #filter-collapsed{padding:16px 18px;margin:0 0 22px;background:var(--surface);border:0;border-radius:var(--r-large)}
@@ -131,7 +132,9 @@
 .article-layout #filter-collapsed a{color:var(--link)}
 .article-layout .contribution{font-size:17px;line-height:1.45}
 
-/* Testimonials: portraits float beside the text on a wide screen and sit above it on a phone. */
+/* Testimonials: portraits float beside the text on a wide screen and sit above it on a phone.
+   Their inline size would leave the text a strip about 200 px wide. */
+.article-layout .doc-section-tinted [style*="float"]>div[style*="320px"]{width:180px!important;height:180px!important;margin-inline:auto}
 @media(max-width:760px){
   .article-layout .doc-section-tinted img[style*="float"],.article-layout .doc-section-tinted [style*="float"]{float:none!important;display:block;margin:0 auto 12px!important}
   .pub-card,.partner-card,.get-involved-card{padding:14px}

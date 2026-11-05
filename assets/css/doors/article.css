@@ -106,6 +106,12 @@ main:lang(ar) .article-layout .article-style,main:lang(ar) .article-layout .arti
 .article-layout .article-style .spoiler>summary:hover{color:var(--ink)}
 .article-layout .article-style .spoiler-body{padding:2px 14px 12px;font-size:18px;line-height:1.55}
 .article-layout .article-style .spoiler-body>:last-child{margin-bottom:0}
+/* Disclosures hold prose, so they stay at reading width unless a PDF is open inside one. */
+.article-layout-wide .article-style .spoiler:not([open]),.article-layout-wide .article-style .spoiler:not(:has(.pdf-viewer)){max-width:580px}
+.article-layout .article-style [style*="justify"]{text-align:start!important}
+/* A lesson's activity takes more room than the text around it, without growing to the full page. */
+.article-layout-wide .article-style>div[style*="padding-bottom"]:has(>.click-to-load,>iframe){max-width:960px}
+.article-layout-wide .article-style>div[style*="padding-bottom"]:has(>iframe){height:auto!important;padding-bottom:0!important;aspect-ratio:3/2}
 /* Buttons in Markdown keep their own colours, against the rule for links in text. */
 /* Glossary pages: the reading layout, with the list of terms in the side card. */
 .glossary-layout .language-switcher{margin:10px 0 14px;font-size:16px}
@@ -143,6 +149,7 @@ main:lang(ar) .article-layout .article-style,main:lang(ar) .article-layout .arti
 .sc-page .sc-title-card :is(.sc-title-label,.sc-title-text){margin:0}
 .sc-page .sc-title-card .sc-title-text{font-size:17px}
 .sc-page .sc-title-card .sc-cbar{display:none}
+@media(min-width:761px){.sc-page .sc-grid .sc-card{width:190px}}
 .article-layout .post-nav{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px 24px;margin:0 0 18px}
 .article-layout .post-nav-item{max-width:calc(50% - 12px);min-width:0}
 .article-layout .post-nav-item:only-child{max-width:none}
