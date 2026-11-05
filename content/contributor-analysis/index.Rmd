@@ -140,6 +140,7 @@ As of `r format(Sys.Date(), '%d %B %Y')`, FORRT has a total of `r count_projects
 
 ```{r Basic visualizations}
 # Contributors per project
+all_project_contributors <- project_contributors
 
 # Keep only the top 10 projects based on unique_contributors
 project_contributors <- project_contributors |>
@@ -242,4 +243,31 @@ roles_plot
 contributions_long <- contributions_long |>
   unite(Contributor, Surname, `First name`, sep = " ", remove = FALSE, na.rm = TRUE) |>
   mutate(Lead = if_else(Role %in% c("lead", "co-lead"), Role, "other"))
+```
+
+```{r page-data, results='asis'}
+# The numbers behind this page, for the Doors page to draw as text and bars of its own. An
+# HTML comment shows nothing on the current template, and index.md is already carried
+# between monthly runs by data-processing.yml.
+page_data <- list(
+  as_of = format(Sys.Date(), "%Y-%m-%d"),
+  projects = count_projects,
+  contributors = unique_contributors,
+  mean_contributions = round(mean_contributions_per_person, 2),
+  mean_contributors = round(mean_project_contributors),
+  per_project = lapply(seq_len(nrow(all_project_contributors)), function(i) {
+    list(name = as.character(all_project_contributors$`Project Name`[i]),
+         n = all_project_contributors$unique_contributors[i])
+  }),
+  projects_per_person = lapply(seq_len(nrow(projects_per_person)), function(i) {
+    list(label = projects_per_person$label[i], n = projects_per_person$n[i], percent = projects_per_person$percent[i])
+  }),
+  roles = lapply(seq_len(nrow(role_distribution)), function(i) {
+    list(name = role_distribution$Role[i], n = role_distribution$n[i])
+  })
+)
+
+cat("\n\n<!-- contributor-analysis-data ",
+    gsub(">", "\\u003e", jsonlite::toJSON(page_data, auto_unbox = TRUE)),
+    " -->\n", sep = "")
 ```
