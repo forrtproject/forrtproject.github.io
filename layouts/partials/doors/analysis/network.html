@@ -4,7 +4,7 @@
 {{ $network := .network }}
 {{ $members := dict }}
 {{ range $network.people }}
-  {{ $name := index . 0 }}
+  {{ $name := printf "%s (%v)" (index . 0) (index . 1) }}
   {{ range index . 4 }}
     {{ $key := string . }}
     {{ $members = merge $members (dict $key ((index $members $key | default slice) | append $name)) }}
@@ -51,11 +51,11 @@
           <li><span class="legend-project" aria-hidden="true"></span>A project. Larger squares have more people.</li>
           <li><span class="legend-line" aria-hidden="true"></span>A person worked on that project.</li>
         </ul>
-        <p class="network-hint">Point at a dot or square for its name, and click it for its connections. Drag to move around. Use the buttons to zoom, or the arrow, plus and minus keys when the drawing has focus.</p>
+        <p class="network-hint" id="network-hint">Point at a dot or square for its name, and click it for its connections. Drag to move around. Use the buttons to zoom, or the arrow, plus and minus keys when the drawing has focus.</p>
       </div>
     </div>
     <div class="network-stage" data-network-stage>
-      <canvas class="network-canvas" role="img" aria-label="Network drawing of {{ $summary }} People sit close to the projects they share. The list of projects after this drawing gives the same connections in text." data-network-canvas></canvas>
+      <canvas class="network-canvas" role="img" aria-label="Network drawing of {{ $summary }} People sit close to the projects they share. The list of projects after this drawing gives the same connections in text." aria-describedby="network-hint" data-network-canvas></canvas>
       <div class="network-tools" data-network-tools>
         <button type="button" class="network-tool" data-network-zoom="in" aria-label="Zoom in"><span aria-hidden="true">+</span></button>
         <button type="button" class="network-tool" data-network-zoom="out" aria-label="Zoom out"><span aria-hidden="true">−</span></button>
@@ -66,6 +66,7 @@
   </div>
   <details class="analysis-more network-list">
     <summary>The network as a list of {{ $projects }} projects and their people</summary>
+    <p class="analysis-note">The number after each name is that person's roles on record across all projects.</p>
     <ul class="network-projects">
       {{ range sort $list "n" "desc" }}
       <li><details><summary>{{ .name }} <span class="network-count">{{ .n }} {{ if eq .n 1 }}person{{ else }}people{{ end }}</span></summary><p>{{ delimit .people ", " }}</p></details></li>

@@ -689,6 +689,17 @@ def check_directory(browser, base, failures):
 NETWORK_PATH = "contributor-analysis/"
 NETWORK_MIN_SPAN = 0.65
 NETWORK_MAX_LEAN = 0.2
+CHARTS_ENLARGED = """() => {
+  const clashes = [];
+  for (const row of document.querySelectorAll('.bar,.share-list li')) {
+    const parts = [...row.children].filter((part) => part.textContent.trim()).map((part) => [part, part.getBoundingClientRect()]);
+    parts.forEach(([a, x], i) => parts.slice(i + 1).forEach(([b, y]) => {
+      if (x.left < y.right - 1 && y.left < x.right - 1 && x.top < y.bottom - 1 && y.top < x.bottom - 1) clashes.push(a.textContent + ' / ' + b.textContent);
+    }));
+  }
+  const width = (selector) => Math.min(...[...document.querySelectorAll(selector)].map((el) => el.getBoundingClientRect().width));
+  return {bars: document.querySelectorAll('.bar').length, bar: width('.bar-track'), label: width('.share-label'), clashes};
+}"""
 NETWORK_INK = """() => {
   const canvas = document.querySelector('[data-network-canvas]');
   const {width, height} = canvas;
@@ -728,7 +739,7 @@ def framing_problems(ink):
 def check_contributor_network(browser, base, failures):
     """The network is framed, reaches nothing outside the site, and answers to pointer and keyboard."""
     expect = expectation(failures, "contributor network")
-    origin = "/".join(base.split("/")[:3])
+    host = urlsplit(base).netloc
     for width, height in WIDTHS.items():
         page = new_page(browser, width)
         page.context.add_cookies([{"name": "forrt_analytics_choice", "value": "deny", "url": base}])
@@ -739,7 +750,7 @@ def check_contributor_network(browser, base, failures):
         page.wait_for_timeout(300)
         for problem in framing_problems(page.evaluate(NETWORK_INK)):
             expect(False, f"at {width} the network {problem}")
-        outside = [url for url in asked if url.startswith("http") and not url.startswith(origin)]
+        outside = [url for url in asked if url.startswith("http") and urlsplit(url).netloc != host]
         expect(not outside, f"at {width} the page asks no other site for anything: {outside[:3]}")
         expect(page.locator("main iframe").count() == 0, f"at {width} the page embeds no iframe")
         if width >= 1024:
@@ -781,9 +792,30 @@ def check_contributor_network(browser, base, failures):
     page.mouse.move(box["x"] + point["x"], box["y"] + point["y"])
     tip = page.locator("[data-network-tip]")
     expect(tip.is_visible() and person in tip.inner_text(), f"hovering {person} names them")
+    page.keyboard.press("Escape")
+    expect(not tip.is_visible(), "Escape dismisses the name shown by hovering")
+    page.mouse.move(box["x"] + 40, box["y"] + 40)
+    page.mouse.move(box["x"] + point["x"], box["y"] + point["y"])
+    tip_box = tip.bounding_box()
+    page.mouse.move(tip_box["x"] + 5, tip_box["y"] + 5)
+    page.wait_for_timeout(500)
+    expect(tip.is_visible(), "the name stays while the pointer is on it")
+    page.mouse.move(box["x"] + point["x"], box["y"] + point["y"])
     page.mouse.click(box["x"] + point["x"], box["y"] + point["y"])
     expect(person in status.inner_text(), f"clicking {person} selects them: {status.inner_text()!r}")
     expect(page.locator("[data-network-detail] h3").inner_text() == person, "the selection is described in text")
+    # With a long list beside it, an open list of matches goes with its box or shuts.
+    page.locator("#network-project").click()
+    page.locator(".network-controls").evaluate("(side) => { side.scrollTop += 250; }")
+    page.wait_for_timeout(100)
+    options = page.locator("#network-project-list")
+    gap = page.evaluate("""() => {
+      const list = document.querySelector('#network-project-list');
+      return list.hidden ? 0 : Math.abs(list.getBoundingClientRect().top - document.querySelector('#network-project').getBoundingClientRect().bottom);
+    }""")
+    expect(not options.is_visible() or gap < 12, f"a list of matches follows its box when the side panel scrolls: {gap:.0f} px")
+    page.locator("#network-person").focus()
+    page.keyboard.press("Escape")
     page.keyboard.press("Escape")
     canvas.focus()
     page.wait_for_timeout(400)
@@ -815,6 +847,21 @@ def check_contributor_network(browser, base, failures):
     expect(page.evaluate(position, person) == before, "the wheel alone does not zoom the drawing")
     page.context.close()
 
+    # Enlarged text keeps the charts readable as well as inside the screen.
+    for width in (390, 1024):
+        page = new_page(browser, width)
+        page.goto(base + NETWORK_PATH, wait_until="load")
+        page.evaluate("""() => {
+          const sizes = [...document.querySelectorAll('body *')].map((el) => [el, parseFloat(getComputedStyle(el).fontSize)]);
+          sizes.forEach(([el, size]) => { el.style.fontSize = size * 2 + 'px'; });
+        }""")
+        page.wait_for_timeout(100)
+        found = page.evaluate(CHARTS_ENLARGED)
+        expect(found["bar"] >= 80 or not found["bars"], f"at {width} with text at 200% the bars keep their length: {found['bar']:.0f} px")
+        expect(not found["clashes"], f"at {width} with text at 200% chart labels do not run together: {found['clashes'][:2]}")
+        expect(found["label"] >= 50 or not found["bars"], f"at {width} with text at 200% chart labels keep their width: {found['label']:.0f} px")
+        page.context.close()
+
     # Selecting does not animate for those who ask for less motion.
     page = new_page(browser, 1440, reduced_motion="reduce")
     page.context.add_cookies([{"name": "forrt_analytics_choice", "value": "deny", "url": base}])
@@ -840,7 +887,7 @@ def report_budgets(browser, base, root, subfolder):
         ("resources", "resources/", 300, 190),
         ("replication hub", "replication-hub/", None, 190),
         ("article", "post/2026-01-newsletter/", None, 190),
-        ("contributor analysis", "contributor-analysis/", 350, 190),
+        ("contributor analysis", "contributor-analysis/", 350, 0),
     ):
         weight = weigh(browser, origin, f"{subfolder}{path}", root, subfolder)
         own_budget = f" (budget {own})" if own else ""

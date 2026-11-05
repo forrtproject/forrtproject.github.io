@@ -136,6 +136,7 @@ if (canvas) {
   }
 
   function zoomAt(factor, cx = view.width / 2, cy = view.height / 2) {
+    cancelAnimationFrame(animation);
     followFit = false;
     const k = Math.max(view.fitted * 0.7, Math.min(view.fitted * MAX_ZOOM, view.k * factor));
     const applied = k / view.k;
@@ -168,7 +169,9 @@ if (canvas) {
       view.y = view.height / 2 - cy * view.tall * view.k;
       draw();
     }
+    // On a phone it is a picture. Elsewhere it takes keys of its own, and says so.
     canvas.tabIndex = phone.matches ? -1 : 0;
+    canvas.setAttribute('role', phone.matches ? 'img' : 'application');
   }
 
   /* Drawing */
@@ -333,6 +336,7 @@ if (canvas) {
       status.textContent = `${person.name}: ${count(person.projects.length, 'project', 'projects')}, connected to ${count(others.length, 'person', 'people')}.`;
       detail.append(clearButton());
       detail.append(element('h3', person.name));
+      detail.append(element('p', `${count(person.roles, 'role', 'roles')} on record`));
       detail.append(element('h4', count(person.projects.length, 'project', 'projects')));
       detail.append(linkList([...person.projects].sort((a, b) => a.name.localeCompare(b.name)), chooseOnly));
       if (others.length) {
@@ -476,14 +480,14 @@ if (canvas) {
     input.addEventListener('click', open);
     input.addEventListener('blur', close);
     input.addEventListener('keydown', (event) => {
-      const rows = shown.length ? Math.min(shown.length, 60) : 0;
       if (event.key === 'ArrowDown' || event.key === 'ArrowUp') {
         event.preventDefault();
         if (list.hidden) open();
-        const next = event.key === 'ArrowDown' ? active + 1 : active - 1;
-        highlight(rows ? (next + rows) % rows : -1);
+        const count = Math.min(shown.length, 60);
+        const next = event.key === 'ArrowDown' ? active + 1 : (active < 0 ? count : active) - 1;
+        highlight(count ? (next + count) % count : -1);
       } else if (event.key === 'Enter') {
-        if (!list.hidden && rows) {
+        if (!list.hidden && shown.length) {
           event.preventDefault();
           const pick = shown[active < 0 ? 0 : active];
           close();
@@ -496,7 +500,14 @@ if (canvas) {
         }
       }
     });
-    window.addEventListener('scroll', () => { if (!list.hidden) place(); }, { passive: true });
+    // Capturing, to hear the side panel's own scrolling as well as the page's.
+    window.addEventListener('scroll', (event) => {
+      if (list.hidden || event.target === list) return;
+      place();
+      const box = input.getBoundingClientRect();
+      const frame = input.closest('.network-controls').getBoundingClientRect();
+      if (frame.height && (box.bottom < frame.top || box.top > frame.bottom)) close();
+    }, { passive: true, capture: true });
     window.addEventListener('resize', () => { if (!list.hidden) place(); });
     return { input };
   }
@@ -543,16 +554,18 @@ if (canvas) {
     tip.replaceChildren();
     tip.append(element('b', item.name));
     tip.append(item.kind === 'person'
-      ? `${count(item.projects.length, 'project', 'projects')}, connected to ${count(colleagues(item).length, 'person', 'people')}`
+      ? `${count(item.roles, 'role', 'roles')} on ${count(item.projects.length, 'project', 'projects')}, connected to ${count(colleagues(item).length, 'person', 'people')}`
       : count(item.members.length, 'person', 'people'));
     tip.hidden = false;
     const left = Math.max(6, Math.min(view.width - tip.offsetWidth - 6, cx + 12));
-    const top = cy - tip.offsetHeight - 12 < 6 ? cy + 14 : cy - tip.offsetHeight - 12;
+    const above = cy - tip.offsetHeight - 12;
+    const top = above < 6 ? Math.min(cy + 14, view.height - tip.offsetHeight - 6) : above;
     tip.style.left = `${left}px`;
     tip.style.top = `${top}px`;
   }
 
   function setHover(item, cx, cy) {
+    clearTimeout(hoverEnd);
     if (item) showTip(item, cx, cy);
     else tip.hidden = true;
     if (item !== state.hover) {
@@ -562,9 +575,20 @@ if (canvas) {
     }
   }
 
+  // The name stays long enough to move the pointer onto it, and stays while it is there.
+  function endHover() {
+    clearTimeout(hoverEnd);
+    hoverEnd = setTimeout(() => setHover(null), 300);
+  }
+
+  tip.addEventListener('pointerenter', () => clearTimeout(hoverEnd));
+  tip.addEventListener('pointerleave', endHover);
+
   let press = null;
+  let hoverEnd = 0;
 
   canvas.addEventListener('pointerdown', (event) => {
+    cancelAnimationFrame(animation);
     press = { x: event.clientX, y: event.clientY, viewX: view.x, viewY: view.y, moved: false, touch: event.pointerType === 'touch' };
     if (event.pointerType === 'mouse') canvas.setPointerCapture(event.pointerId);
   });
@@ -587,7 +611,11 @@ if (canvas) {
         return;
       }
     }
-    if (event.pointerType === 'mouse') setHover(nodeAt(cx, cy, 7), cx, cy);
+    if (event.pointerType === 'mouse') {
+      const item = nodeAt(cx, cy, 7);
+      if (item) setHover(item, cx, cy);
+      else if (state.hover) endHover();
+    }
   });
 
   canvas.addEventListener('pointerup', (event) => {
@@ -607,7 +635,7 @@ if (canvas) {
     canvas.classList.remove('dragging');
   });
 
-  canvas.addEventListener('pointerleave', () => setHover(null));
+  canvas.addEventListener('pointerleave', endHover);
 
   // The page keeps scrolling over the drawing. Only a pinch or Ctrl and the wheel zooms it.
   canvas.addEventListener('wheel', (event) => {
@@ -622,6 +650,7 @@ if (canvas) {
     const moves = { ArrowLeft: [step, 0], ArrowRight: [-step, 0], ArrowUp: [0, step], ArrowDown: [0, -step] };
     if (moves[event.key]) {
       event.preventDefault();
+      cancelAnimationFrame(animation);
       followFit = false;
       view.x += moves[event.key][0];
       view.y += moves[event.key][1];
@@ -637,6 +666,13 @@ if (canvas) {
       fitAll(true);
     }
   });
+
+  // Escape first dismisses a name shown by hovering, wherever the focus is.
+  document.addEventListener('keydown', (event) => {
+    if (event.key !== 'Escape' || tip.hidden) return;
+    setHover(null);
+    event.stopPropagation();
+  }, { capture: true });
 
   root.addEventListener('keydown', (event) => {
     if (event.key === 'Escape' && (state.person || state.chosen.size)) {

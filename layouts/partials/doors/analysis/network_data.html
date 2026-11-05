@@ -1,6 +1,7 @@
 {{/* The contributor network, read from the file content/contributor-analysis/network-graph.Rmd
      generates. Returns a dict with `projects` ([name, x, y]) and `people` ([name, roles, x, y,
-     [project indexes]]), empty when the file holds neither form below.
+     [project indexes]]), and from the newer form also `pairs` (people who share a project) and
+     `largest_group` (people in the largest connected group). Empty when the file holds neither form.
 
      The Rmd on main writes this data in a script tag of its own. Until the next data run there
      is only the older widget's data, which has no project positions and separates a person's
