@@ -689,6 +689,7 @@ def check_directory(browser, base, failures):
 NETWORK_PATH = "contributor-analysis/"
 NETWORK_MIN_SPAN = 0.65
 NETWORK_MAX_LEAN = 0.2
+NETWORK_MIN_CORE = 0.28
 CHARTS_ENLARGED = """() => {
   const clashes = [];
   for (const row of document.querySelectorAll('.bar,.share-list li')) {
@@ -704,7 +705,9 @@ NETWORK_INK = """() => {
   const canvas = document.querySelector('[data-network-canvas]');
   const {width, height} = canvas;
   const pixels = canvas.getContext('2d').getImageData(0, 0, width, height).data;
-  let left = width, right = -1, top = height, bottom = -1;
+  let left = width, right = -1, top = height, bottom = -1, solid = 0;
+  const columns = new Array(width).fill(0);
+  const rows = new Array(height).fill(0);
   for (let y = 0; y < height; y += 1) {
     for (let x = 0; x < width; x += 1) {
       if (pixels[(y * width + x) * 4 + 3] > 200) {
@@ -712,10 +715,23 @@ NETWORK_INK = """() => {
         if (x > right) right = x;
         if (y < top) top = y;
         if (y > bottom) bottom = y;
+        columns[x] += 1;
+        rows[y] += 1;
+        solid += 1;
       }
     }
   }
-  return {left, right, top, bottom, width, height};
+  // How far the middle 80% of what is drawn spreads, which a few far-out dots cannot stretch.
+  const middle = (counts) => {
+    let seen = 0, first = 0, last = 0;
+    counts.forEach((count, i) => {
+      if (seen < solid * .1) first = i;
+      seen += count;
+      if (seen <= solid * .9) last = i;
+    });
+    return (last - first) / counts.length;
+  };
+  return {left, right, top, bottom, width, height, core_across: middle(columns), core_down: middle(rows)};
 }"""
 
 
@@ -733,6 +749,8 @@ def framing_problems(ink):
     lean_y = abs(ink["top"] - (height - 1 - ink["bottom"])) / height
     if max(lean_x, lean_y) > NETWORK_MAX_LEAN:
         problems.append(f"sits off centre by {lean_x:.0%} across and {lean_y:.0%} down")
+    if ink["core_across"] < NETWORK_MIN_CORE or ink["core_down"] < NETWORK_MIN_CORE:
+        problems.append(f"bunches up: most of it spans {ink['core_across']:.0%} of the width and {ink['core_down']:.0%} of the height")
     return problems
 
 
@@ -925,7 +943,7 @@ def report_budgets(browser, base, root, subfolder):
         ("resources", "resources/", 300, 190),
         ("replication hub", "replication-hub/", None, 190),
         ("article", "post/2026-01-newsletter/", None, 190),
-        ("contributor analysis", "contributor-analysis/", 350, 0),
+        ("contributor analysis", "contributor-analysis/", 360, 0),  # About 190 once a data run replaces its images.
     ):
         weight = weigh(browser, origin, f"{subfolder}{path}", root, subfolder)
         own_budget = f" (budget {own})" if own else ""

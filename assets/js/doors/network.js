@@ -11,8 +11,19 @@ if (canvas) {
     kind: 'person', name, roles, x, y, projects: joined.map((index) => projects[index]),
   }));
   people.forEach((person) => person.projects.forEach((project) => project.members.push(person)));
+  // The older generated file has no positions for projects, and most of its people share one dense
+  // lump. Spreading them by rank on each axis keeps who sits next to whom. Goes with that file.
+  if (projects.length && projects[0].x === undefined) {
+    ['x', 'y'].forEach((axis) => {
+      const sorted = [...people].sort((a, b) => a[axis] - b[axis]);
+      const low = sorted[0][axis];
+      const range = sorted[sorted.length - 1][axis] - low || 1;
+      sorted.forEach((person, i) => {
+        person[axis] = 1000 * (0.75 * (i / (sorted.length - 1 || 1)) + 0.25 * ((person[axis] - low) / range));
+      });
+    });
+  }
   projects.forEach((project) => {
-    // Data from the older generated file has no positions for projects.
     if (project.x === undefined) {
       project.x = project.members.reduce((sum, person) => sum + person.x, 0) / project.members.length;
       project.y = project.members.reduce((sum, person) => sum + person.y, 0) / project.members.length;
@@ -159,7 +170,7 @@ if (canvas) {
     // How wide a force layout runs means nothing, so it can take the stage's proportions.
     view.tall = 1;
     const all = bounds(everything());
-    const proportion = ((view.height - PAD * 2) / (view.width - PAD * 2)) / ((all.bottom - all.top) / (all.right - all.left));
+    const proportion = ((view.height - PAD * 2) / (view.width - PAD * 2)) / (((all.bottom - all.top) || 1) / ((all.right - all.left) || 1));
     view.tall = Math.max(0.8, Math.min(1.6, proportion));
     view.fitted = frameFor(everything(), Infinity).k;
     if (followFit) {
