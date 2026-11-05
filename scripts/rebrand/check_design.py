@@ -980,6 +980,13 @@ def check_conference(browser, base, failures):
     expect(back, "Escape closes the abstract and hands the focus back to the talk")
     page.goto(base + CONFERENCE + "#am-day-wed", wait_until="load")
     expect(page.evaluate(visible) == ["am-day-wed"], "a link to #am-day-wed opens on Wednesday")
+    page.wait_for_timeout(300)
+    tabs_top, cover = page.evaluate("""() => {
+      const bar = document.getElementById('navbar-main');
+      const fixed = bar && ['fixed', 'sticky'].includes(getComputedStyle(bar).position);
+      return [document.querySelector('.am-switch').getBoundingClientRect().top, fixed ? bar.getBoundingClientRect().bottom : 0];
+    }""")
+    expect(tabs_top >= max(cover, 0), f"after a link to a day its tabs are in view, {tabs_top:.0f} px from the top, below the navbar at {cover:.0f}")
     page.context.close()
 
 

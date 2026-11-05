@@ -127,6 +127,8 @@ image:
    note there); the day class (am-day-mon and friends) carries the day's
    colour into every rule below. */
 .am-prog-day { margin: 0 0 40px; }
+/* A link to a day keeps the tabs above it in view. */
+.am-prog-tabbed .am-prog-day { scroll-margin-top: 100px; }
 .am-prog-dayhead {
   display: grid;
   grid-template-columns: minmax(0, 30em) auto;
