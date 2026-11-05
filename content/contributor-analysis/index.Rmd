@@ -7,6 +7,8 @@ output:
     preserve_yaml: true
     toc: false
 type: contributors_analysis
+sharing_image_resource: "treemap-plot-1.png"
+sharing_image_alt: "Treemap showing the share of FORRT contributors by number of projects they contributed to"
 ---
 
 
@@ -123,7 +125,9 @@ contributions_long <- contributions |>
     names_to = "Role", 
     values_to = "Contribution"
   ) |>
-  filter(Contribution == TRUE)
+  filter(Contribution == TRUE) |>
+  # The Tenzing sheets and the leads sheet name this role differently
+  mutate(Role = recode(Role, "Project manager" = "Project Managers"))
 
 role_distribution <- contributions_long |>
   count(Role, sort = TRUE)
@@ -161,7 +165,8 @@ projects_plot <- ggplot(project_contributors, aes(y = reorder(`Project Name`, un
         plot.background = element_rect(fill = "#fefdf6", color = NA),
         panel.border = element_blank(),
         panel.spacing = unit(0, "lines"),
-        plot.margin = margin(t = 10, r = 10, b = 60, l = 10))
+        # Ubuntu 26.04 draws the font wider than ggplot measures it, so long project names need room
+        plot.margin = margin(t = 10, r = 10, b = 60, l = 30))
 
 # Roles in projects
 

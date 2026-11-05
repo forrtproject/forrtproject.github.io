@@ -18,8 +18,6 @@ Use the dropdown menus below to search for a specific contributor by name or to 
 <div style="margin-bottom: 40px;"></div>
 
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Domine:wght@400;700&display=swap');
-
 body {
   background-color: #fefdf6;
   font-family: 'Domine', serif;
@@ -227,23 +225,7 @@ visNetwork(contributor_nodes, plot_edges, width = "100%", height = "800px") |>
   ) |>
   htmlwidgets::onRender("
     function(el, x) {
-      var network = this;
-
-      // Set initial zoom level immediately
-      network.on('initRedraw', function() {
-        network.moveTo({
-          scale: 0.042,
-          animation: false
-        });
-      });
-
-      // Maintain zoom after stabilization
-      network.on('stabilized', function() {
-        network.moveTo({
-          scale: 0.012,
-          animation: false
-        });
-      });
+      var network = this.network;
 
       network.on('click', function(params) {
         if (params.nodes.length === 0) {

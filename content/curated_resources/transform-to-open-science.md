@@ -1,7 +1,7 @@
 {
     "timestamp": "4/17/2026 9:48:59",
     "title": "Transform to Open Science",
-    "link_to_resource": "https://forrt.org/Transform-to-Open-Science-Book/",
+    "link_to_resource": "https://forrt.org/transform-to-open-science-book/",
     "creators": [
         "FORRT (Framework for Open and Reproducible Research Training)"
     ],
@@ -41,5 +41,5 @@
     "in-clusters": false,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2026-04-17"
+    "lastmod": "2026-11-05"
 }

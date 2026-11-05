@@ -102,7 +102,7 @@
     {
       "order": 120,
       "name": "JUST-OS Chatbot",
-      "link": "/just-os-chatbot/",
+      "link": "/just_os_chatbot/",
       "description": "JUST-OS is an AI-based chatbot that helps researchers navigate Open Science resources. Collaborators are welcome for work on technical improvements and content curation.",
       "slack": "",
       "contact_name": "Lukas Wallrich",
