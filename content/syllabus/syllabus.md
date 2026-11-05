@@ -73,6 +73,8 @@ Importantly, this syllabus is not intended to be a “one size fits all” appro
 
 To further facilitate the creation, the updating, improvement, and maintenance of Open Science syllabi, we also curate a list of (possibly) useful other syllabi.
 
+To suggest a syllabus for this list, email us at [info@forrt.org](mailto:info@forrt.org).
+
 * [FORRT's Open and Reproducible Science Syllabus](https://forrt.org/syllabus)
 * [Diversifying Research Methods Syllabi](https://osf.io/y5gr9/)
 * [Overcoming the Knowledge Barrier in Open Science](https://osf.io/bk6r7/)
