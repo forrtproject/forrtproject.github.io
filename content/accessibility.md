@@ -1,6 +1,5 @@
 ---
 title: Accessibility
-date: 2026-11-04
 ---
 
 *Last updated: 4 November 2026*
