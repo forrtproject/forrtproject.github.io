@@ -1,5 +1,21 @@
 /* The steering committee page is generated with click-only cards and always-present dialogs, so this
    gives them what keyboards and screen readers need. scripts/generate_sc_profiles.py is the source. */
+// Keep each team's name with its people, so that small teams can sit side by side.
+document.querySelectorAll('.sc-grid').forEach((grid) => {
+  let team = null;
+  [...grid.children].forEach((tile) => {
+    if (tile.classList.contains('sc-title-card')) {
+      team = document.createElement('div');
+      team.className = 'sc-team';
+      tile.before(team);
+    }
+    if (team) team.append(tile);
+  });
+  grid.querySelectorAll('.sc-team').forEach((group) => {
+    group.style.setProperty('--sc-members', group.querySelectorAll('.sc-card').length);
+  });
+});
+
 let trigger = null;
 const backdrops = [...document.querySelectorAll('.sc-modal-backdrop')];
 
