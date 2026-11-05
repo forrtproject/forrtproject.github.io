@@ -759,6 +759,24 @@ def check_contributor_network(browser, base, failures):
         else:
             touch = page.evaluate("getComputedStyle(document.querySelector('[data-network-canvas]')).touchAction")
             expect(touch == "auto", f"at {width} the drawing leaves touch to the page: {touch}")
+            described = page.evaluate("document.querySelector('[data-network-canvas]').getAttribute('aria-describedby')")
+            expect(not described, f"at {width} the drawing does not describe controls that are hidden: {described}")
+        # An open list of matches stays on the screen, however the page has scrolled.
+        field = page.locator("#network-project")
+        field.scroll_into_view_if_needed()
+        page.evaluate("""() => {
+          const box = document.querySelector('#network-project').getBoundingClientRect();
+          scrollBy(0, box.bottom - innerHeight + 30);
+        }""")
+        page.wait_for_timeout(100)
+        field.click()
+        page.wait_for_timeout(100)
+        reach = page.evaluate("""() => {
+          const box = document.querySelector('#network-project-list').getBoundingClientRect();
+          return [box.top, box.bottom, innerHeight, box.height];
+        }""")
+        expect(reach[0] >= 0 and reach[1] <= reach[2] and reach[3] >= 120,
+               f"at {width} an open list of matches stays on the screen: {reach[0]:.0f} to {reach[1]:.0f} of {reach[2]}, {reach[3]:.0f} px high")
         page.context.close()
 
     page = new_page(browser, 1440)
@@ -785,6 +803,26 @@ def check_contributor_network(browser, base, failures):
     expect(page.locator("[data-network-detail] .network-link").count() > 1, "a chosen project lists its people")
     page.locator(".network-chip").click()
     expect("Showing everyone" in status.inner_text(), "taking the chip off shows everyone again")
+    page.wait_for_timeout(400)
+
+    # Keyboard use through the text: focus lands somewhere after each rebuild, and Escape still works.
+    focused = "document.activeElement.tagName + ':' + (document.activeElement.id || document.activeElement.className)"
+    page.locator("#network-person").focus()
+    page.keyboard.type(person)
+    page.keyboard.press("Enter")
+    page.locator("[data-network-detail] .network-link:not(.network-clear)").first.focus()
+    page.keyboard.press("Enter")
+    expect(page.evaluate("document.activeElement.tagName") == "H3", f"following a link in the text moves focus to its heading: {page.evaluate(focused)}")
+    page.locator(".network-chip").first.focus()
+    page.keyboard.press("Enter")
+    expect(page.evaluate("document.activeElement.id") == "network-project", f"taking off the last chip moves focus to its search box: {page.evaluate(focused)}")
+    page.locator("#network-person").focus()
+    page.keyboard.type(person)
+    page.keyboard.press("Enter")
+    page.locator("[data-network-detail] .network-link:not(.network-clear)").first.focus()
+    page.keyboard.press("Enter")
+    page.keyboard.press("Escape")
+    expect("Showing everyone" in status.inner_text(), "Escape clears a selection reached by following a link")
     page.wait_for_timeout(400)
 
     # Hovering names a node, and clicking selects it.

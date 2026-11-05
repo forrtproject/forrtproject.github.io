@@ -172,6 +172,8 @@ if (canvas) {
     // On a phone it is a picture. Elsewhere it takes keys of its own, and says so.
     canvas.tabIndex = phone.matches ? -1 : 0;
     canvas.setAttribute('role', phone.matches ? 'img' : 'application');
+    if (phone.matches) canvas.removeAttribute('aria-describedby');
+    else canvas.setAttribute('aria-describedby', 'network-hint');
   }
 
   /* Drawing */
@@ -329,6 +331,9 @@ if (canvas) {
   }
 
   function showPanelText() {
+    // Rebuilding removes the control just used, so keyboard users need somewhere to land.
+    const hadFocus = detail.contains(document.activeElement) || chips.contains(document.activeElement);
+    const inChips = chips.contains(document.activeElement);
     detail.replaceChildren();
     const person = state.person;
     if (person) {
@@ -376,6 +381,12 @@ if (canvas) {
       chips.append(item);
     });
     chips.hidden = !state.chosen.size;
+    if (hadFocus) {
+      const heading = detail.querySelector('h3');
+      if (heading) heading.tabIndex = -1;
+      const next = inChips ? chips.querySelector('button') || projectBox.input : heading || personBox.input;
+      next.focus();
+    }
   }
 
   function choosePerson(person) {
@@ -431,9 +442,12 @@ if (canvas) {
       const box = input.getBoundingClientRect();
       list.style.left = `${box.left}px`;
       list.style.width = `${Math.max(box.width, 280)}px`;
-      list.style.top = `${box.bottom + 4}px`;
-      const room = window.innerHeight - box.bottom - 16;
-      list.style.maxHeight = `${Math.max(140, Math.min(280, room))}px`;
+      // Opens upwards when that leaves more of it on the screen.
+      const below = window.innerHeight - box.bottom - 12;
+      const above = box.top - 12;
+      const upwards = below < 200 && above > below;
+      list.style.maxHeight = `${Math.max(0, Math.min(280, upwards ? above : below))}px`;
+      list.style.top = `${upwards ? box.top - 4 - list.offsetHeight : box.bottom + 4}px`;
     }
 
     function highlight(index) {
