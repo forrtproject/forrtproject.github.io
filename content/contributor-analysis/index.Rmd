@@ -191,12 +191,14 @@ roles_plot <- ggplot(role_distribution, aes(y = reorder(Role, n), x = n)) +
         plot.margin = margin(t = 10, r = 10, b = 10, l = 10))
 
 # Treemap: number of projects per contributor
-projects_per_person <- contributions_per_person |>
+# Distinct projects, as one person can have several records on one project
+projects_per_person <- contributions |>
+  summarise(Projects = n_distinct(`Project Name`), .by = c(Surname, `First name`)) |>
   mutate(
     label = case_when(
-      Contributions == 1 ~ "1 project",
-      Contributions >= 5 ~ "5 or more projects",
-      TRUE ~ str_c(Contributions, " projects")
+      Projects == 1 ~ "1 project",
+      Projects >= 5 ~ "5 or more projects",
+      TRUE ~ str_c(Projects, " projects")
     )
   ) |>
   count(label) |>
@@ -260,9 +262,7 @@ page_data <- list(
          n = all_project_contributors$unique_contributors[i])
   }),
   projects_per_person = lapply(seq_len(nrow(projects_per_person)), function(i) {
-    # These count records, which is nearly always but not quite the number of projects.
-    list(label = str_replace(projects_per_person$label[i], "project", "contribution"),
-         n = projects_per_person$n[i], percent = projects_per_person$percent[i])
+    list(label = projects_per_person$label[i], n = projects_per_person$n[i], percent = projects_per_person$percent[i])
   }),
   roles = lapply(seq_len(nrow(role_distribution)), function(i) {
     list(name = role_distribution$Role[i], n = role_distribution$n[i])
