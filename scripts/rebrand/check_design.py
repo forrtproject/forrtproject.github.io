@@ -637,15 +637,16 @@ def check_directory_widths(browser, base, failures):
         expect(width >= DIRECTORY_MIN_WIDTH, f"{path}: {selector} is {width:.0f} px wide, at least {DIRECTORY_MIN_WIDTH}")
     for path in TOOL_PAGES:
         page.goto(base + path, wait_until="load")
+        page.evaluate("document.fonts.ready.then(() => null)")
         bottom = page.evaluate("document.querySelector('.page-actions .btn-primary')?.getBoundingClientRect().bottom ?? Infinity")
         expect(bottom <= page.viewport_size["height"], f"{path}: the main action ends {bottom:.0f} px down, within the first view")
     page.goto(base + "post/2026-01-newsletter/", wait_until="load")
     order = page.evaluate("""() => {
       const link = [...document.querySelectorAll('.article-style a')].find((a) => /newsletter/i.test(a.textContent));
       const image = document.querySelector('.reading .article-image');
-      return !!link && (!image || !!(link.compareDocumentPosition(image) & Node.DOCUMENT_POSITION_FOLLOWING));
+      return !!link && !!image && !!(link.compareDocumentPosition(image) & Node.DOCUMENT_POSITION_FOLLOWING);
     }""")
-    expect(order, "a short news post's link comes before its image")
+    expect(order, "a short news post keeps its image, after its link")
     page.goto(base + "publications/", wait_until="load")
     chart_width, share = page.evaluate("""() => {
       const box = document.querySelector('.citation-container img').getBoundingClientRect();

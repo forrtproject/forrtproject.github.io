@@ -26,7 +26,7 @@
 }
 
 /* The round button needs 80 px of margin, which the page has from 1440 px (.wrap is at most 1280 px wide).
-   Below that it would sit over text, cards or buttons wherever it rested, so it is a tab in the page's gutter. */
+   Below that it would sit over text, cards or buttons wherever it rested, so it is a tab in the page's gutter. site.js uses the same width for the invitation. */
 @media (max-width:1439px){
   #just-os-widget{inset-block-end:calc(16px + var(--banner,0px));inset-inline-end:0}
   #just-os-btn{display:flex;align-items:center;justify-content:center;width:24px;height:52px;border-inline-end:0;border-radius:12px 0 0 12px}

@@ -110,7 +110,7 @@ main:lang(ar) .article-layout .article-style,main:lang(ar) .article-layout .arti
 .article-layout-wide .article-style .spoiler:not([open]),.article-layout-wide .article-style .spoiler:not(:has(.pdf-viewer)){max-width:580px}
 .article-layout .article-style [style*="justify"]{text-align:start!important}
 /* A lesson's activity takes more room than the text around it, without growing to the full page. */
-.article-layout-wide .article-style>div[style*="padding-bottom"]:has(>.click-to-load,>iframe),.article-layout-wide .article-style .video-poster{max-width:960px}
+.article-layout-wide .article-style>div[style*="padding-bottom"]:has(>.click-to-load,>iframe),.article-layout-wide .article-style :is(.video-poster,.video-frame){max-width:960px}
 .article-layout-wide .article-style>div[style*="padding-bottom"]:has(>iframe){height:auto!important;padding-bottom:0!important;aspect-ratio:3/2}
 /* Tables and text panels fit what they hold, so a wide page does not leave them mostly empty. */
 .article-layout-wide .article-style table{width:fit-content}

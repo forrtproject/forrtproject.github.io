@@ -23,7 +23,7 @@ A lesson title that is a link opens the lesson's own page. Lesson plans and text
 
 ## About the workshop
 
-Resources presented at a workshop titled "**Neurodiversify your curriculum** delivered by Lorna Hamilton, Magdalena Grose-Hodge, Mahmoud Elsherif & the FORRT group at the Unconference 2023: Open Scholarship Practices in Education Research. If you would like to provide feedback, please contact Magdalena Grose-Hodge (m.s.grose-hodge@bham.ac.uk).
+Resources presented at a workshop titled "**Neurodiversify your curriculum**", delivered by Lorna Hamilton, Magdalena Grose-Hodge, Mahmoud Elsherif & the FORRT group at the Unconference 2023: Open Scholarship Practices in Education Research. If you would like to provide feedback, please contact Magdalena Grose-Hodge (m.s.grose-hodge@bham.ac.uk).
 
 <a href="https://ray.yorksj.ac.uk/id/eprint/7606/" target="_blank">Read about the project</a>
 
