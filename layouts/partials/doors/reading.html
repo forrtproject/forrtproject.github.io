@@ -22,6 +22,7 @@
       {{ if not .Params.hide_page_header }}
         {{ partial "doors/article_header" . }}
       {{ end }}
+      {{ partial "doors/page_actions" . }}
       {{/* On phones the side card falls below the text, too late to help on a long page. */}}
       {{ if and (or $hasCard $wide) (gt (len $headings) 1) }}
       <details class="toc-phone">
@@ -32,6 +33,7 @@
       <div class="article-style">
         {{ $body }}
       </div>
+      {{ if and (eq .Type "post") (le .ReadingTime 1) (not .Params.image.preview_only) (not .Params.hide_page_header) }}{{ partial "doors/featured_image" . }}{{ end }}
       <div class="article-foot">
         {{ if .IsPage }}<p class="share-link"><button class="copy-link" type="button" data-copy-link="{{ .Permalink }}">Copy article link</button> <span role="status"></span></p>{{ end }}
         {{ partial "page_footer" . }}

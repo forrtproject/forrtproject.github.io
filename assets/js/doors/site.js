@@ -322,8 +322,8 @@ if (chatWidget) {
   const invitation = setInterval(() => {
     if (dismissed() || chatFailed) clearInterval(invitation);
     else if (!chatOpen()) {
-      // On a phone it shows once per page, so it doesn't keep returning over the text.
-      if (invited && innerWidth <= 760) {
+      // Where the launcher is a tab (launcher.css), it shows once per page, so it doesn't keep returning over the text.
+      if (invited && tabbed()) {
         chatBubble.classList.remove('bubble-visible');
         clearInterval(invitation);
         return;
@@ -332,8 +332,9 @@ if (chatWidget) {
       if (chatBubble.classList.contains('bubble-visible')) invited = true;
     }
   }, 10000);
-  // On a phone the invitation would sit over the text, so it shows only at the top of a page.
-  const reading = () => innerWidth <= 760 && scrollY > 120;
+  // Where the launcher is a tab the invitation would sit over the text, so it shows only at the top of a page.
+  const tabbed = () => matchMedia('(max-width:1439px)').matches;
+  const reading = () => tabbed() && scrollY > 120;
   addEventListener('scroll', () => { if (reading() && !chatFailed) chatBubble.classList.remove('bubble-visible'); }, { passive: true });
   if (chatButton.tagName === 'BUTTON') {
     chatButton.addEventListener('click', () => {

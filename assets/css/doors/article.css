@@ -110,7 +110,7 @@ main:lang(ar) .article-layout .article-style,main:lang(ar) .article-layout .arti
 .article-layout-wide .article-style .spoiler:not([open]),.article-layout-wide .article-style .spoiler:not(:has(.pdf-viewer)){max-width:580px}
 .article-layout .article-style [style*="justify"]{text-align:start!important}
 /* A lesson's activity takes more room than the text around it, without growing to the full page. */
-.article-layout-wide .article-style>div[style*="padding-bottom"]:has(>.click-to-load,>iframe){max-width:960px}
+.article-layout-wide .article-style>div[style*="padding-bottom"]:has(>.click-to-load,>iframe),.article-layout-wide .article-style :is(.video-poster,.video-frame){max-width:960px}
 .article-layout-wide .article-style>div[style*="padding-bottom"]:has(>iframe){height:auto!important;padding-bottom:0!important;aspect-ratio:3/2}
 /* Tables and text panels fit what they hold, so a wide page does not leave them mostly empty. */
 .article-layout-wide .article-style table{width:fit-content}
@@ -214,3 +214,26 @@ main:lang(ar) .article-layout .article-style,main:lang(ar) .article-layout .arti
 @media print{.toc-phone{display:none!important}}
 .glossary-feedback-header>*{min-width:0;overflow-wrap:anywhere}
 .glossary-feedback-header>:lang(de),.glossary-feedback-header>:lang(tr){hyphens:auto}
+
+/* Catalogues (Syllabus): groups of links flow in columns across a wide page. */
+.article-style .catalogue{columns:3 300px;column-gap:48px;margin-top:28px}
+.article-style .catalogue-group{break-inside:avoid-column;margin-bottom:28px}
+.article-style .catalogue-group h3{margin:0 0 10px;font-size:23px;line-height:1.2}
+.article-style .catalogue-group ul{margin:0;padding-inline-start:1.1em}
+.article-style .catalogue-group li{margin-bottom:8px;font-size:17px;line-height:1.4}
+/* A long group may run on into the next column rather than leave a gap. */
+.article-style .catalogue-group:has(li:nth-child(15)){break-inside:auto}
+.article-style .catalogue-group:has(li:nth-child(15)) h3{break-after:avoid-column}
+
+/* Lesson bank: one card per lesson, with its plan and texts. */
+.article-layout .article-style .lesson-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,300px),1fr));gap:18px;margin:20px 0 40px;padding:0;list-style:none}
+.article-style .lesson-grid>.lesson-card{max-width:none;margin:0;padding:18px 20px;background:var(--surface);border-radius:var(--r-large)}
+.article-style .lesson-card .lesson-num{margin:0 0 4px;font-size:15px;font-weight:700;color:var(--soft)}
+.article-style .lesson-card h3{margin:0 0 10px;font-size:22px;line-height:1.2}
+.article-style .lesson-card .lesson-materials{margin:0;padding:0;list-style:none}
+.article-style .lesson-card .lesson-materials li{margin:0 0 4px;font-size:16px}
+.article-style .lesson-card .lesson-note{margin:0;font-size:16px;color:var(--soft)}
+
+/* A tool page's direct actions, under its title (doors/page_actions). */
+.article-layout .page-actions{display:flex;flex-wrap:wrap;gap:10px;margin:0 0 28px}
+.article-layout .page-actions .btn{padding:10px 22px;font-size:17px}
