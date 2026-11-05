@@ -3,10 +3,6 @@ title: FORRT Neurodiversity and Open Scholarship Lesson Bank
 type: plain_page
 ---	
 
-![FORRT logo](./images/logo.webp)
-
----
-
 This lesson bank has been developed by FORRT (Framework for Open and Reproducible Research) in order to promote Open Scholarship and Neurodiversity in academia. The materials raise awareness of some of the most recent debates relating to science and invite students engage in epistemological discussions and to reflect on the core values of Open Science.
 
 ---

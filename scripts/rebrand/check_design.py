@@ -574,6 +574,42 @@ def check_phone_reading(browser, base, failures):
         page.context.close()
 
 
+# Pages of cards or lists, with the element that holds them: a wide screen is not to leave them in the reading column.
+DIRECTORIES = {
+    "publications/": ".pub-list",
+    "about/partnerships/": ".partner-list",
+    "contributors/": "#contributor-list",
+    "about/community/": ".people-wall",
+    "about/teams/": ".feature-rows",
+    "educators-corner/": ".list-items",
+    "pedagogies/": ".list-items",
+    "forrt_clusters/academic-life-and-culture/": ".plain-list",
+}
+DIRECTORY_MIN_WIDTH = 900
+FIRST_VIEW_IMAGE_LIMIT = 0.3
+CHART_WIDTH_LIMIT = 340
+
+
+def check_directory_widths(browser, base, failures):
+    """At 1440 px directories use the width, and the chart on Publications does not take over the first view."""
+    expect = expectation(failures, "directory widths")
+    page = new_page(browser, 1440)
+    page.context.add_cookies([{"name": "forrt_analytics_choice", "value": "deny", "url": base}])  # Banner shut.
+    for path, selector in DIRECTORIES.items():
+        page.goto(base + path, wait_until="load")
+        width = page.evaluate("(s) => document.querySelector(s)?.getBoundingClientRect().width || 0", selector)
+        expect(width >= DIRECTORY_MIN_WIDTH, f"{path}: {selector} is {width:.0f} px wide, at least {DIRECTORY_MIN_WIDTH}")
+    page.goto(base + "publications/", wait_until="load")
+    chart_width, share = page.evaluate("""() => {
+      const box = document.querySelector('.citation-container img').getBoundingClientRect();
+      const seen = Math.max(0, Math.min(box.bottom, innerHeight) - Math.max(box.top, 0));
+      return [box.width, seen * box.width / (innerWidth * innerHeight)];
+    }""")
+    expect(chart_width <= CHART_WIDTH_LIMIT, f"the citation chart is {chart_width:.0f} px wide, limit {CHART_WIDTH_LIMIT}")
+    expect(share <= FIRST_VIEW_IMAGE_LIMIT, f"the citation chart takes {share:.0%} of the first view, limit {FIRST_VIEW_IMAGE_LIMIT:.0%}")
+    page.context.close()
+
+
 def check_directory(browser, base, failures):
     expect = expectation(failures, "directory")
     topics = new_page(browser, 1440)
@@ -760,6 +796,7 @@ def main():
         check_home(browser, base, failures)
         print("Reading on a phone")
         check_phone_reading(browser, base, failures)
+        check_directory_widths(browser, base, failures)
         print("Resources directory")
         check_directory(browser, base, failures)
         if args.public and args.browser == "chromium":
