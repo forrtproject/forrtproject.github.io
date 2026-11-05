@@ -33,6 +33,7 @@ SCREENS = {
     "resources": "resources/",
     "resources page 2": "resources/page/2/",
     "article": "post/2026-01-newsletter/",
+    "contributor analysis": "contributor-analysis/",
 }
 BLOCK = re.compile(r"googletagmanager|google-analytics|doubleclick|youtube|docs\.google")
 A14_LIMIT = {390: 2.5, 1440: 1.6}
@@ -685,6 +686,234 @@ def check_directory(browser, base, failures):
     plain.context.close()
 
 
+NETWORK_PATH = "contributor-analysis/"
+NETWORK_MIN_SPAN = 0.65
+NETWORK_MAX_LEAN = 0.2
+CHARTS_ENLARGED = """() => {
+  const clashes = [];
+  for (const row of document.querySelectorAll('.bar,.share-list li')) {
+    const parts = [...row.children].filter((part) => part.textContent.trim()).map((part) => [part, part.getBoundingClientRect()]);
+    parts.forEach(([a, x], i) => parts.slice(i + 1).forEach(([b, y]) => {
+      if (x.left < y.right - 1 && y.left < x.right - 1 && x.top < y.bottom - 1 && y.top < x.bottom - 1) clashes.push(a.textContent + ' / ' + b.textContent);
+    }));
+  }
+  const width = (selector) => Math.min(...[...document.querySelectorAll(selector)].map((el) => el.getBoundingClientRect().width));
+  return {bars: document.querySelectorAll('.bar').length, bar: width('.bar-track'), label: width('.share-label'), clashes};
+}"""
+NETWORK_INK = """() => {
+  const canvas = document.querySelector('[data-network-canvas]');
+  const {width, height} = canvas;
+  const pixels = canvas.getContext('2d').getImageData(0, 0, width, height).data;
+  let left = width, right = -1, top = height, bottom = -1;
+  for (let y = 0; y < height; y += 1) {
+    for (let x = 0; x < width; x += 1) {
+      if (pixels[(y * width + x) * 4 + 3] > 200) {
+        if (x < left) left = x;
+        if (x > right) right = x;
+        if (y < top) top = y;
+        if (y > bottom) bottom = y;
+      }
+    }
+  }
+  return {left, right, top, bottom, width, height};
+}"""
+
+
+def framing_problems(ink):
+    """What is wrong with where the drawn network sits on its canvas, from the box its solid pixels fill."""
+    width, height = ink["width"], ink["height"]
+    if not width or not height or ink["right"] < 0:
+        return ["nothing is drawn"]
+    problems = []
+    across = (ink["right"] - ink["left"]) / width
+    down = (ink["bottom"] - ink["top"]) / height
+    if max(across, down) < NETWORK_MIN_SPAN:
+        problems.append(f"fills only {across:.0%} of the width and {down:.0%} of the height")
+    lean_x = abs(ink["left"] - (width - 1 - ink["right"])) / width
+    lean_y = abs(ink["top"] - (height - 1 - ink["bottom"])) / height
+    if max(lean_x, lean_y) > NETWORK_MAX_LEAN:
+        problems.append(f"sits off centre by {lean_x:.0%} across and {lean_y:.0%} down")
+    return problems
+
+
+def check_contributor_network(browser, base, failures):
+    """The network is framed, reaches nothing outside the site, and answers to pointer and keyboard."""
+    expect = expectation(failures, "contributor network")
+    host = urlsplit(base).netloc
+    for width, height in WIDTHS.items():
+        page = new_page(browser, width)
+        page.context.add_cookies([{"name": "forrt_analytics_choice", "value": "deny", "url": base}])
+        asked = []
+        page.on("request", lambda request: asked.append(request.url))
+        page.goto(base + NETWORK_PATH, wait_until="load")
+        page.wait_for_selector("[data-network-panel]:not([hidden])")
+        page.wait_for_timeout(300)
+        for problem in framing_problems(page.evaluate(NETWORK_INK)):
+            expect(False, f"at {width} the network {problem}")
+        outside = [url for url in asked if url.startswith("http") and urlsplit(url).netloc != host]
+        expect(not outside, f"at {width} the page asks no other site for anything: {outside[:3]}")
+        expect(page.locator("main iframe").count() == 0, f"at {width} the page embeds no iframe")
+        if width >= 1024:
+            panel = page.evaluate("document.querySelector('[data-network-panel]').getBoundingClientRect().height")
+            expect(panel <= height, f"at {width} the network panel, {panel:.0f} px high, fits a {height} px screen")
+        else:
+            touch = page.evaluate("getComputedStyle(document.querySelector('[data-network-canvas]')).touchAction")
+            expect(touch == "auto", f"at {width} the drawing leaves touch to the page: {touch}")
+            described = page.evaluate("document.querySelector('[data-network-canvas]').getAttribute('aria-describedby')")
+            expect(not described, f"at {width} the drawing does not describe controls that are hidden: {described}")
+        # An open list of matches stays on the screen, however the page has scrolled.
+        field = page.locator("#network-project")
+        field.scroll_into_view_if_needed()
+        page.evaluate("""() => {
+          const box = document.querySelector('#network-project').getBoundingClientRect();
+          scrollBy(0, box.bottom - innerHeight + 30);
+        }""")
+        page.wait_for_timeout(100)
+        field.click()
+        page.wait_for_timeout(100)
+        reach = page.evaluate("""() => {
+          const box = document.querySelector('#network-project-list').getBoundingClientRect();
+          return [box.top, box.bottom, innerHeight, box.height];
+        }""")
+        expect(reach[0] >= 0 and reach[1] <= reach[2] and reach[3] >= 120,
+               f"at {width} an open list of matches stays on the screen: {reach[0]:.0f} to {reach[1]:.0f} of {reach[2]}, {reach[3]:.0f} px high")
+        page.context.close()
+
+    page = new_page(browser, 1440)
+    page.context.add_cookies([{"name": "forrt_analytics_choice", "value": "deny", "url": base}])
+    page.goto(base + NETWORK_PATH, wait_until="load")
+    page.wait_for_selector("[data-network-panel]:not([hidden])")
+    status = page.locator("[data-network-status]")
+    canvas = page.locator("[data-network-canvas]")
+    canvas.scroll_into_view_if_needed()
+    position = "(name) => document.querySelector('[data-analysis-network]').networkPosition(name)"
+    data = page.evaluate("JSON.parse(document.getElementById('network-data').textContent)")
+    person = max(data["people"], key=lambda row: len(row[4]))[0]
+    project = data["projects"][0][0]
+    box = canvas.bounding_box()
+
+    # Filtering by keyboard: type, take the first match, take it off again.
+    page.locator("#network-project").focus()
+    page.keyboard.type(project)
+    expect(page.locator("#network-project-list").is_visible(), "typing a project opens its list")
+    page.keyboard.press("ArrowDown")
+    page.keyboard.press("Enter")
+    expect(project in status.inner_text(), f"choosing a project says so: {status.inner_text()!r}")
+    expect(page.locator(".network-chip").count() == 1, "a chosen project gets a chip")
+    expect(page.locator("[data-network-detail] .network-link").count() > 1, "a chosen project lists its people")
+    page.locator(".network-chip").click()
+    expect("Showing everyone" in status.inner_text(), "taking the chip off shows everyone again")
+    page.wait_for_timeout(400)
+
+    # Keyboard use through the text: focus lands somewhere after each rebuild, and Escape still works.
+    focused = "document.activeElement.tagName + ':' + (document.activeElement.id || document.activeElement.className)"
+    page.locator("#network-person").focus()
+    page.keyboard.type(person)
+    page.keyboard.press("Enter")
+    page.locator("[data-network-detail] .network-link:not(.network-clear)").first.focus()
+    page.keyboard.press("Enter")
+    expect(page.evaluate("document.activeElement.tagName") == "H3", f"following a link in the text moves focus to its heading: {page.evaluate(focused)}")
+    page.locator(".network-chip").first.focus()
+    page.keyboard.press("Enter")
+    expect(page.evaluate("document.activeElement.id") == "network-project", f"taking off the last chip moves focus to its search box: {page.evaluate(focused)}")
+    page.locator("#network-person").focus()
+    page.keyboard.type(person)
+    page.keyboard.press("Enter")
+    page.locator("[data-network-detail] .network-link:not(.network-clear)").first.focus()
+    page.keyboard.press("Enter")
+    page.keyboard.press("Escape")
+    expect("Showing everyone" in status.inner_text(), "Escape clears a selection reached by following a link")
+    page.wait_for_timeout(400)
+
+    # Hovering names a node, and clicking selects it.
+    point = page.evaluate(position, person)
+    page.mouse.move(box["x"] + point["x"], box["y"] + point["y"])
+    tip = page.locator("[data-network-tip]")
+    expect(tip.is_visible() and person in tip.inner_text(), f"hovering {person} names them")
+    page.keyboard.press("Escape")
+    expect(not tip.is_visible(), "Escape dismisses the name shown by hovering")
+    page.mouse.move(box["x"] + 40, box["y"] + 40)
+    page.mouse.move(box["x"] + point["x"], box["y"] + point["y"])
+    tip_box = tip.bounding_box()
+    page.mouse.move(tip_box["x"] + 5, tip_box["y"] + 5)
+    page.wait_for_timeout(500)
+    expect(tip.is_visible(), "the name stays while the pointer is on it")
+    page.mouse.move(box["x"] + point["x"], box["y"] + point["y"])
+    page.mouse.click(box["x"] + point["x"], box["y"] + point["y"])
+    expect(person in status.inner_text(), f"clicking {person} selects them: {status.inner_text()!r}")
+    expect(page.locator("[data-network-detail] h3").inner_text() == person, "the selection is described in text")
+    # With a long list beside it, an open list of matches goes with its box or shuts.
+    page.locator("#network-project").click()
+    page.locator(".network-controls").evaluate("(side) => { side.scrollTop += 250; }")
+    page.wait_for_timeout(100)
+    options = page.locator("#network-project-list")
+    gap = page.evaluate("""() => {
+      const list = document.querySelector('#network-project-list');
+      return list.hidden ? 0 : Math.abs(list.getBoundingClientRect().top - document.querySelector('#network-project').getBoundingClientRect().bottom);
+    }""")
+    expect(not options.is_visible() or gap < 12, f"a list of matches follows its box when the side panel scrolls: {gap:.0f} px")
+    page.locator("#network-person").focus()
+    page.keyboard.press("Escape")
+    page.keyboard.press("Escape")
+    canvas.focus()
+    page.wait_for_timeout(400)
+
+    # The person's search box, then the arrow keys on the drawing.
+    page.locator("#network-person").focus()
+    page.keyboard.type(person[:6])
+    page.keyboard.press("Enter")
+    expect("project" in status.inner_text() and "Showing everyone" not in status.inner_text(), "Enter takes the first match")
+    page.locator("#network-person").press("Escape")
+    expect("Showing everyone" in status.inner_text(), "Escape clears the selection")
+    page.wait_for_timeout(400)
+    canvas.focus()
+    before = page.evaluate(position, person)
+    page.keyboard.press("ArrowLeft")
+    page.wait_for_timeout(50)
+    after = page.evaluate(position, person)
+    expect(after["x"] != before["x"], "the arrow keys move the drawing")
+    page.keyboard.press("0")
+    page.wait_for_timeout(400)
+
+    # Scrolling over the drawing scrolls the page and leaves the drawing alone.
+    before = page.evaluate(position, person)
+    top = page.evaluate("scrollY")
+    page.mouse.move(box["x"] + 40, box["y"] + 40)
+    page.mouse.wheel(0, 200)
+    page.wait_for_timeout(200)
+    expect(page.evaluate("scrollY") > top, "the wheel scrolls the page over the drawing")
+    expect(page.evaluate(position, person) == before, "the wheel alone does not zoom the drawing")
+    page.context.close()
+
+    # Enlarged text keeps the charts readable as well as inside the screen.
+    for width in (390, 1024):
+        page = new_page(browser, width)
+        page.goto(base + NETWORK_PATH, wait_until="load")
+        page.evaluate("""() => {
+          const sizes = [...document.querySelectorAll('body *')].map((el) => [el, parseFloat(getComputedStyle(el).fontSize)]);
+          sizes.forEach(([el, size]) => { el.style.fontSize = size * 2 + 'px'; });
+        }""")
+        page.wait_for_timeout(100)
+        found = page.evaluate(CHARTS_ENLARGED)
+        expect(found["bar"] >= 80 or not found["bars"], f"at {width} with text at 200% the bars keep their length: {found['bar']:.0f} px")
+        expect(not found["clashes"], f"at {width} with text at 200% chart labels do not run together: {found['clashes'][:2]}")
+        expect(found["label"] >= 50 or not found["bars"], f"at {width} with text at 200% chart labels keep their width: {found['label']:.0f} px")
+        page.context.close()
+
+    # Selecting does not animate for those who ask for less motion.
+    page = new_page(browser, 1440, reduced_motion="reduce")
+    page.context.add_cookies([{"name": "forrt_analytics_choice", "value": "deny", "url": base}])
+    page.goto(base + NETWORK_PATH, wait_until="load")
+    page.wait_for_selector("[data-network-panel]:not([hidden])")
+    page.locator("#network-project").focus()
+    page.keyboard.type(project)
+    page.keyboard.press("Enter")
+    first = page.evaluate(position, person)
+    page.wait_for_timeout(400)
+    expect(page.evaluate(position, person) == first, "with reduced motion the drawing does not glide")
+    page.context.close()
+
+
 def report_budgets(browser, base, root, subfolder):
     from capture_pages import weigh
 
@@ -696,6 +925,7 @@ def report_budgets(browser, base, root, subfolder):
         ("resources", "resources/", 300, 190),
         ("replication hub", "replication-hub/", None, 190),
         ("article", "post/2026-01-newsletter/", None, 190),
+        ("contributor analysis", "contributor-analysis/", 350, 0),
     ):
         weight = weigh(browser, origin, f"{subfolder}{path}", root, subfolder)
         own_budget = f" (budget {own})" if own else ""
@@ -801,6 +1031,8 @@ def main():
         print("Reading on a phone")
         check_phone_reading(browser, base, failures)
         check_directory_widths(browser, base, failures)
+        print("Contributor network")
+        check_contributor_network(browser, base, failures)
         print("Resources directory")
         check_directory(browser, base, failures)
         if args.public and args.browser == "chromium":

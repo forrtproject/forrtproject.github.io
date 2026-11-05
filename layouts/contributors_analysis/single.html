@@ -1,63 +1,88 @@
 {{- define "main" -}}
-<div class="wrap analysis-page">
-  <div class="article-layout article-layout-wide">
-    <article class="reading">
-      <header class="article-head">
-        {{ partial "doors/crumbs" (dict "page" .) }}
-        <h1>{{ .Title }}</h1>
-      </header>
-      <div class="article-style">{{ partial "doors/content" .Content }}</div>
-    </article>
-  </div>
-<div class="analysis-network">
-  <iframe id="network-graph" title="Network of FORRT contributors" src="/partials/network-graph.html" width="100%" style="border: none; overflow: hidden;" scrolling="no"></iframe>
-</div>
-
-<script>
-  (function() {
-    var iframe = document.getElementById('network-graph');
-    if (!iframe) {
-      return;
-    }
-
-    function resizeIframe() {
-      if (!iframe.contentWindow) {
-        return;
-      }
-      var doc = iframe.contentDocument || iframe.contentWindow.document;
-      if (!doc || !doc.documentElement) {
-        return;
-      }
-      var newHeight = doc.documentElement.scrollHeight;
-      if (!newHeight) {
-        return;
-      }
-      var targetHeight = newHeight + 'px';
-      if (iframe.style.height !== targetHeight) {
-        iframe.style.height = targetHeight;
-      }
-    }
-
-    iframe.addEventListener('load', function() {
-      resizeIframe();
-
-      if (!iframe._autoResizeInterval) {
-        iframe._autoResizeInterval = setInterval(function() {
-          if (!document.body.contains(iframe)) {
-            clearInterval(iframe._autoResizeInterval);
-            iframe._autoResizeInterval = null;
-            return;
-          }
-          resizeIframe();
-        }, 500);
-      }
-    });
-
-    window.addEventListener('resize', resizeIframe);
-  })();
-</script>
-
-</div>
-
+{{/* The numbers and the network come from the two Rmd files in content/contributor-analysis.
+     Until a data run has produced the comment below, index.md only has its text and images, so
+     the page shows those in place of the charts. */}}
+{{- $data := dict -}}
+{{- with findRESubmatch `<!-- contributor-analysis-data (\{.*?\}) -->` .RawContent 1 -}}
+  {{- $data = index . 0 1 | transform.Unmarshal -}}
 {{- end -}}
-      
+{{- $network := partial "doors/analysis/network_data.html" . -}}
+{{- $contributors := relref . "/contributors" -}}
+{{- $join := relref . "/about/get-involved" -}}
+<div class="wrap analysis-page">
+  <header class="analysis-head">
+    {{ partial "doors/crumbs" (dict "page" .) }}
+    <h1>{{ .Title }}</h1>
+    <p class="analysis-standfirst">How many people contribute to FORRT, where they work and what they do, and how shared projects connect them.</p>
+  </header>
+  {{ if $data }}
+  {{ $asOf := time.Format "2 January 2006" (time.AsTime $data.as_of) }}
+  {{ $single := index $data.projects_per_person 0 }}
+  {{ $many := index $data.projects_per_person (sub (len $data.projects_per_person) 1) }}
+  {{ $top := index $data.per_project 0 }}
+  {{ $topRole := index $data.roles 0 }}
+  <dl class="stats">
+    <div class="stat"><dt>Contributors</dt><dd>{{ lang.FormatNumberCustom 0 $data.contributors }}</dd></div>
+    <div class="stat"><dt>Projects and support teams</dt><dd>{{ $data.projects }}</dd></div>
+    <div class="stat"><dt>Mean contributions per person</dt><dd>{{ $data.mean_contributions }}</dd></div>
+    <div class="stat"><dt>Mean contributors per project</dt><dd>{{ $data.mean_contributors }}</dd></div>
+  </dl>
+  <p class="analysis-note">As of {{ $asOf }}, for completed and ongoing work. <a href="{{ $contributors }}">See every contributor and what they did</a>.</p>
+
+  <section class="analysis-section" aria-labelledby="analysis-involvement">
+    <div class="analysis-intro">
+      <h2 id="analysis-involvement">How much people contribute</h2>
+      <p>{{ $single.percent }}% of contributors have one contribution on record, and {{ $many.percent }}% have five or more. A contribution is one entry in FORRT's records, nearly always one person on one project.</p>
+    </div>
+    <div class="analysis-chart">
+      <div class="share-bar" aria-hidden="true">
+        {{ range $i, $part := $data.projects_per_person }}<span class="share-part share-{{ $i }}" style="flex-grow:{{ $part.n }}"></span>{{ end }}
+      </div>
+      <ul class="share-list">
+        {{ range $i, $part := $data.projects_per_person }}
+        <li><span class="share-swatch share-{{ $i }}" aria-hidden="true"></span><span class="share-label">{{ $part.label }}</span><span class="share-number">{{ $part.percent }}%</span><span class="share-people">{{ $part.n }} people</span></li>
+        {{ end }}
+      </ul>
+    </div>
+  </section>
+
+  <section class="analysis-section" aria-labelledby="analysis-projects">
+    <div class="analysis-intro">
+      <h2 id="analysis-projects">Where the most people work</h2>
+      <p>{{ $top.name }} has the most contributors, with {{ $top.n }}. The mean across all {{ $data.projects }} projects and teams is {{ $data.mean_contributors }}.</p>
+    </div>
+    <div class="analysis-chart">
+      {{ partial "doors/analysis/bars.html" (dict "rows" (first 10 $data.per_project) "max" $top.n) }}
+      <details class="analysis-more">
+        <summary>All {{ $data.projects }} projects and teams</summary>
+        {{ partial "doors/analysis/bars.html" (dict "rows" (after 10 $data.per_project) "max" $top.n) }}
+      </details>
+    </div>
+  </section>
+
+  <section class="analysis-section" aria-labelledby="analysis-roles">
+    <div class="analysis-intro">
+      <h2 id="analysis-roles">What contributors do</h2>
+      <p>{{ $topRole.name }} is the most common role, with {{ $topRole.n }} entries. One person can hold several roles, on one project or across many, so these add up to more than the number of contributors.</p>
+    </div>
+    <div class="analysis-chart">
+      {{ partial "doors/analysis/bars.html" (dict "rows" $data.roles "max" $topRole.n) }}
+    </div>
+  </section>
+  {{ else }}
+  <div class="analysis-summary">{{ partial "doors/content" .Content }}</div>
+  {{ end }}
+
+  {{ if $network.people }}
+  {{ partial "doors/analysis/network.html" (dict "network" $network "counts" $data) }}
+  {{ else }}
+  {{ warnf "contributor-analysis: no network data in static/partials/network-graph.html" }}
+  {{ end }}
+
+  <section class="analysis-foot" aria-labelledby="analysis-method">
+    <h2 id="analysis-method">Where these numbers come from</h2>
+    <p>They come from FORRT's contributor records and are refreshed each month. People are matched by first name and surname, so one person listed under two spellings counts twice.</p>
+    <p><a href="{{ $contributors }}">See every contributor</a>, or <a href="{{ $join }}">find out how to get involved</a>.</p>
+  </section>
+</div>
+{{- end -}}

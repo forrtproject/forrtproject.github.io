@@ -71,16 +71,12 @@
 .nla-card-month{font-weight:700}
 .nla-card-year,.nla-card-footer{font-size:15px}
 .nla-badge-new{display:inline-block;margin-bottom:4px;padding:1px 7px;background:var(--res-bg);border-radius:var(--r-small);color:var(--ink);font-size:15px;font-weight:700}
-.analysis-network{margin:32px 0 40px}
-.analysis-page .article-layout{padding-bottom:0}
 @media(max-width:760px){
   .news-page,.tags-page,.nla-page{padding:20px 0 28px}
   .list-item-image{grid-template-columns:minmax(0,1fr) 88px;gap:12px}
   .list-item img{width:88px;height:66px}
   .article-layout .list-item h2{font-size:21px}
 }
-.analysis-page .article-style p:has(img){max-width:none;text-align:center}
-.analysis-page .article-style img{display:inline-block}
 .list-item .btn-links{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}
 .tag-more{flex-basis:100%;margin-top:10px}
 .tag-more>summary{font-weight:700;color:var(--link);cursor:pointer}
