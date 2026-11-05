@@ -116,6 +116,7 @@ main:lang(ar) .article-layout .article-style,main:lang(ar) .article-layout .arti
 .article-layout-wide .article-style table{width:fit-content}
 .article-layout-wide .article-style>div[style*="border"]:not([style*="padding-bottom"]){max-width:640px;margin-inline:0!important;padding:14px 18px!important}
 .article-layout-wide .article-style blockquote{max-width:640px}
+.article-layout-wide .article-style>hr{max-width:580px;margin-inline:0}
 /* Buttons in Markdown keep their own colours, against the rule for links in text. */
 /* Glossary pages: the reading layout, with the list of terms in the side card. */
 .glossary-layout .language-switcher{margin:10px 0 14px;font-size:16px}
