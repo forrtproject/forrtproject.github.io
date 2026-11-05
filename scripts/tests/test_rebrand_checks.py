@@ -267,8 +267,9 @@ class InventoryTests(unittest.TestCase):
 
 
 class NetworkFramingTests(unittest.TestCase):
-    def ink(self, left, right, top, bottom):
-        return {"left": left, "right": right, "top": top, "bottom": bottom, "width": 1000, "height": 700}
+    def ink(self, left, right, top, bottom, core=0.4):
+        return {"left": left, "right": right, "top": top, "bottom": bottom, "width": 1000, "height": 700,
+                "core_across": core, "core_down": core}
 
     def test_a_centred_network_that_fills_its_panel_passes(self):
         self.assertEqual(framing_problems(self.ink(40, 960, 60, 640)), [])
@@ -277,6 +278,10 @@ class NetworkFramingTests(unittest.TestCase):
         problems = framing_problems(self.ink(650, 999, 450, 699))
         self.assertTrue(any("fills only" in problem for problem in problems))
         self.assertTrue(any("off centre" in problem for problem in problems))
+
+    def test_outliers_at_the_edges_do_not_hide_a_dense_lump(self):
+        problems = framing_problems(self.ink(40, 960, 60, 640, core=0.2))
+        self.assertTrue(any("bunches up" in problem for problem in problems))
 
     def test_a_blank_canvas_fails(self):
         self.assertEqual(framing_problems({"left": 1000, "right": -1, "top": 700, "bottom": -1, "width": 1000, "height": 700}),
