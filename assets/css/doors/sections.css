@@ -110,14 +110,19 @@
 
 /* PDFs and the booklet are for looking at, so they take the width; their introductions do not. */
 .pdf-open{margin:0 0 12px}
+/* The flipbook fits a spread to its frame's width, so a frame wider than a spread clips the pages. */
+@media(min-width:761px){.article-style ._df_book{width:min(100%,calc(80vh*1.35));margin-inline:auto!important}}
 .pdf-viewer{display:block;width:100%;max-width:960px;border:1px solid var(--line);border-radius:var(--r-small)}
 
 /* The chatbot's page is a tool: on a wide screen its input is in view beside the introduction. */
 @media(min-width:1001px){
   .article-layout-wide .doc-section:has(>#just-os-fullpage){display:grid;grid-template-columns:minmax(0,560px) minmax(0,1fr);column-gap:48px;align-items:start}
   .article-layout-wide .doc-section:has(>#just-os-fullpage)>*{grid-column:1}
-  .article-layout-wide .doc-section>#just-os-fullpage{grid-column:2;grid-row:1/span 30;position:sticky;top:24px;height:min(calc(100vh - 260px),640px)!important;min-height:420px;margin:0!important}
+  .article-layout-wide .doc-section>#just-os-fullpage{grid-column:2;grid-row:1/span 30;height:min(calc(100vh - 260px),640px)!important;min-height:420px;margin:0!important}
   .article-layout-wide .doc-section:has(>#just-os-fullpage)>br{display:none}
+  /* The team runs across the page below the chat. */
+  .article-layout-wide .doc-section:has(>#just-os-fullpage)>h2:last-of-type{grid-column:1/-1;grid-row:31}
+  .article-layout-wide .doc-section:has(>#just-os-fullpage)>div[style*="flex-wrap"]{grid-column:1/-1;grid-row:32}
 }
 @media(min-width:1001px) and (max-width:1279px){.article-layout-wide .doc-section:has(>#just-os-fullpage){grid-template-columns:repeat(2,minmax(0,1fr));column-gap:32px}}
 

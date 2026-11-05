@@ -112,6 +112,10 @@ main:lang(ar) .article-layout .article-style,main:lang(ar) .article-layout .arti
 /* A lesson's activity takes more room than the text around it, without growing to the full page. */
 .article-layout-wide .article-style>div[style*="padding-bottom"]:has(>.click-to-load,>iframe){max-width:960px}
 .article-layout-wide .article-style>div[style*="padding-bottom"]:has(>iframe){height:auto!important;padding-bottom:0!important;aspect-ratio:3/2}
+/* Tables and text panels fit what they hold, so a wide page does not leave them mostly empty. */
+.article-layout-wide .article-style table{width:fit-content}
+.article-layout-wide .article-style>div[style*="border"]:not([style*="padding-bottom"]){max-width:640px;margin-inline:0!important;padding:14px 18px!important}
+.article-layout-wide .article-style blockquote{max-width:640px}
 /* Buttons in Markdown keep their own colours, against the rule for links in text. */
 /* Glossary pages: the reading layout, with the list of terms in the side card. */
 .glossary-layout .language-switcher{margin:10px 0 14px;font-size:16px}
@@ -149,7 +153,13 @@ main:lang(ar) .article-layout .article-style,main:lang(ar) .article-layout .arti
 .sc-page .sc-title-card :is(.sc-title-label,.sc-title-text){margin:0}
 .sc-page .sc-title-card .sc-title-text{font-size:17px}
 .sc-page .sc-title-card .sc-cbar{display:none}
-@media(min-width:761px){.sc-page .sc-grid .sc-card{width:190px}}
+.sc-team{display:contents}
+@media(min-width:761px){
+  .sc-page .sc-grid{gap:28px 40px}
+  .sc-page .sc-team{display:flex;flex-wrap:wrap;align-content:flex-start;gap:1rem;width:calc(var(--sc-members)*190px + (var(--sc-members) - 1)*1rem);max-width:100%}
+  .sc-page .sc-grid .sc-card{width:190px}
+  .sc-page .sc-grid .sc-title-card{flex-wrap:wrap}
+}
 .article-layout .post-nav{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px 24px;margin:0 0 18px}
 .article-layout .post-nav-item{max-width:calc(50% - 12px);min-width:0}
 .article-layout .post-nav-item:only-child{max-width:none}
