@@ -1,0 +1,47 @@
+/* The Citation Politics Toolkit page (shortcode citation-politics-toolkit), on the wide reading layout.
+   Each stage keeps its colour from the wheel as a thin accent only: the yellow fails as text. */
+.cpt [hidden]{display:none!important}
+.cpt-intro{display:grid;grid-template-columns:minmax(0,580px) minmax(0,380px);justify-content:start;gap:24px 56px;align-items:start;margin:0 0 12px}
+.article-layout .article-style .cpt-lede p{margin:0 0 18px}
+.cpt-stages ul{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 22px!important;padding:0!important;list-style:none}
+.article-layout .article-style .cpt-stages li{margin:0;font-size:16px;line-height:1.3}
+.article-layout .article-style .cpt-stages a{display:inline-flex;align-items:center;gap:8px;padding:6px 12px;background:#fff;border:1.5px solid var(--soft);border-radius:999px;color:var(--ink);font-weight:600;text-decoration:none}
+.cpt-stages a::before{content:"";width:10px;height:10px;border-radius:50%;background:var(--stage,var(--soft))}
+.article-layout .article-style .cpt-stages a:hover{border-color:var(--ink)}
+.cpt-search label{display:block;margin:0 0 6px;font-size:16px;font-weight:700}
+.cpt-search input{width:100%;max-width:440px;padding:10px 14px;background:#fff;border:1.5px solid var(--soft);border-radius:var(--r-small);font:400 18px/1.3 var(--text);color:var(--ink)}
+.cpt-search input::placeholder{color:var(--soft);opacity:1}
+.cpt-result{display:flex;flex-wrap:wrap;align-items:center;gap:8px 14px;max-width:440px;margin:10px 0 0}
+.article-layout .article-style .cpt-status{margin:0;font-size:16px;line-height:1.4;color:var(--soft)}
+.article-layout .article-style .cpt-status:empty{display:none}
+.cpt-result.is-empty{padding:14px 18px;background:var(--surface);border-radius:var(--r-large)}
+.article-layout .article-style .cpt-result.is-empty .cpt-status{color:var(--ink)}
+.cpt-wheel{margin:0!important}
+.cpt-wheel a{display:block;color:var(--link);text-decoration:none}
+.cpt-wheel img{display:block;width:100%;height:auto;border-radius:var(--r-small)}
+.cpt-wheel-open{display:block;margin-top:8px;font-size:16px;font-weight:600;text-decoration:underline;text-underline-offset:3px}
+.cpt-wheel a:hover .cpt-wheel-open{color:var(--ink)}
+.cpt-clear{padding:6px 14px;background:#fff;border:1.5px solid var(--ink);border-radius:999px;font:600 16px/1.3 var(--text);color:var(--ink);cursor:pointer}
+.cpt-clear:hover{background:var(--ink);color:#fff}
+.cpt-group{margin:40px 0 0}
+.article-layout .article-style .cpt-group>h2{display:flex;align-items:center;gap:12px;margin:0 0 4px}
+.cpt-group>h2::before{content:"";flex:none;width:6px;height:.9em;border-radius:3px;background:var(--stage,var(--soft))}
+.article-layout .article-style .cpt-wheel-note{margin:0 0 14px;font-size:16px;color:var(--soft)}
+.cpt-items{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,360px),1fr));gap:12px;margin:14px 0 0!important;padding:0!important;list-style:none}
+.article-layout .article-style .cpt-item{display:flex;flex-direction:column;align-items:flex-start;gap:4px;max-width:none;margin:0;padding:14px 18px;background:var(--surface);border-radius:var(--r-large);font-size:16px;line-height:1.45;overflow-wrap:anywhere}
+.cpt-kind{padding:1px 8px;border-radius:var(--r-small);font-size:15px;font-weight:600;color:var(--ink)}
+.cpt-kind-tool{background:var(--res-bg)}
+.cpt-kind-practice{background:var(--edu-bg)}
+.cpt-name{font:var(--display-weight) 20px/1.25 var(--display);color:var(--ink)}
+a.cpt-name,a.cpt-also{color:var(--link);text-decoration:underline;text-underline-offset:3px}
+a.cpt-name:hover,a.cpt-also:hover{color:var(--ink)}
+.cpt-source,.cpt-note{color:var(--soft)}
+.cpt-text{color:var(--ink)}
+.cpt-cite{margin:44px 0 0}
+.article-layout .article-style .cpt-cite h2{margin:0 0 12px}
+.article-layout .article-style .cpt-cite blockquote{max-width:580px;margin:0}
+.article-layout .article-style .cpt-cite blockquote p{overflow-wrap:anywhere}
+@media(max-width:960px){
+  .cpt-intro{grid-template-columns:minmax(0,1fr)}
+  .cpt-wheel{max-width:340px}
+}
