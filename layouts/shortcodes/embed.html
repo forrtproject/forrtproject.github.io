@@ -1,4 +1,6 @@
-<object data="/files/{{ .Get "name" }}" type="application/pdf" width="100%" height="1000px">
+{{/* A PDF: a link to open it whole, then the browser's viewer, with its side panel of page thumbnails shut. */}}
+<p class="pdf-open"><a class="btn btn-outline-primary" href="/files/{{ .Get "name" }}" target="_blank" rel="noopener">Open or download the PDF</a></p>
+<object class="pdf-viewer" data="/files/{{ .Get "name" }}#navpanes=0" type="application/pdf" width="100%" height="1000px">
     <embed src="/files/{{ .Get "name" }}">
         <p>This browser does not support PDFs. Please download the PDF to view it: <a href="/files/{{ .Get "name" }}">Download PDF</a>.</p>
     </embed>

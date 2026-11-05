@@ -1,7 +1,6 @@
-
-
-
-# Code of Conduct
+---
+title: Code of Conduct
+---
 
 FORRT is committed to making participation in our community a harassment-free experience for everyone. We welcome people regardless of age, body size, disability (visible or invisible), ethnicity, sex characteristics, gender identity and expression, level of experience, education, socioeconomic status, nationality, personal appearance, race, religion, neurodiversity, or sexual identity and orientation.
 

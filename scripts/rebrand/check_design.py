@@ -607,6 +607,10 @@ def check_directory_widths(browser, base, failures):
     }""")
     expect(chart_width <= CHART_WIDTH_LIMIT, f"the citation chart is {chart_width:.0f} px wide, limit {CHART_WIDTH_LIMIT}")
     expect(share <= FIRST_VIEW_IMAGE_LIMIT, f"the citation chart takes {share:.0%} of the first view, limit {FIRST_VIEW_IMAGE_LIMIT:.0%}")
+    page.goto(base + "just_os_chatbot/", wait_until="load")
+    page.wait_for_selector(".just-os-input")
+    bottom = page.evaluate("document.querySelector('.just-os-input').getBoundingClientRect().bottom - innerHeight")
+    expect(bottom <= 0, f"the chatbot page's input ends {bottom:.0f} px below the first view")
     page.context.close()
 
 
