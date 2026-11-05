@@ -93,7 +93,7 @@
 .citation-container img{display:block;width:100%;height:auto}
 .citation-container figcaption{margin-top:6px;text-align:start}
 @media(min-width:761px){
-  .pub-intro{display:grid;grid-template-columns:minmax(0,600px) 240px;justify-content:space-between;gap:48px;align-items:start}
+  .pub-intro{display:grid;grid-template-columns:minmax(0,550px) 240px;justify-content:space-between;gap:48px;align-items:start}
   .article-layout .article-style .pub-intro p{max-width:none;font-size:18px;line-height:1.55}
   .article-layout .article-style .citation-container{grid-column:2;grid-row:1;width:auto;margin:0}
   .pub-intro>:not(figure){grid-column:1}
