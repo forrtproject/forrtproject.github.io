@@ -5,7 +5,7 @@
 # URLs have no leading slash, so that Hugo resolves them against the base URL.
 
 [[main]]
-  name = "About FORRT"
+  name = "About"
   url = ""
   weight = 10
   identifier = "about"
@@ -187,13 +187,13 @@
     group = "Stay in touch"
 
 [[main]]
-  name = "Educational NEXUS"
+  name = "Curriculum Hub"
   url = "nexus"
   weight = 30
   identifier = "nexus"
 
 [[main]]
-  name = "About Educational Nexus"
+  name = "About the Curriculum Hub"
   url = "nexus"
   weight = 31
   parent = "nexus"
@@ -361,7 +361,7 @@
     group = "Justice & Equity"
 
 [[main]]
-  name = "Wheel of Privilege"
+  name = "Academic Wheel of Privilege"
   url = "awop"
   weight = 52
   parent = "nexus"
@@ -399,7 +399,15 @@
     group = "Track"
 
 [[main]]
-  name = "Submit a replication to FLoRA"
+  name = "FLoRA"
+  url = "replication-hub/flora/"
+  weight = 61
+  parent = "replications"
+  [main.params]
+    group = "Track"
+
+[[main]]
+  name = "Submit a replication"
   url = "replication-hub/submit"
   weight = 62
   parent = "replications"
@@ -423,7 +431,7 @@
     group = "Explore"
 
 [[main]]
-  name = "FReD R-Package"
+  name = "FReD R package"
   url = "https://forrt.org/fred/index.html"
   weight = 65
   parent = "replications"
@@ -539,7 +547,7 @@
   parent = "discover"
 
 [[footer]]
-  name = "Educational NEXUS"
+  name = "Curriculum Hub"
   url = "nexus/"
   weight = 1
   parent = "explore"
