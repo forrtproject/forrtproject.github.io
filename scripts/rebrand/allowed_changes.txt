@@ -18,6 +18,7 @@ tag/*/*/index.html                   # The same, for the one tag with a slash in
 css/academic.css                 # The theme's stylesheet: no template needs it
 css/404.min.FINGERPRINT.css      # Folded into the Doors stylesheet
 css/welcome.min.FINGERPRINT.css  # Folded into the Doors stylesheet
+css/citations.min.FINGERPRINT.css  # The old toolkit stylesheet, replaced by css/doors/toolkit.css
 post/*/featured_hu.jpg           # The page's resized image is now WebP, so its generated copy has a new name
 post/*/featured_hu.png           # The same
 ai-metascience/featured_hu.png   # The same

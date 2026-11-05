@@ -618,16 +618,32 @@ DIRECTORIES = {
     "forrt_clusters/academic-life-and-culture/": ".plain-list",
     "syllabus/": ".catalogue",
     "neurodiversity-lessonbank/": ".lesson-grid",
+    "citation-politics/toolkit/": ".cpt-items",
 }
 # Tool pages lead with their tool: the main action is in the first view, above the page's own text.
 TOOL_PAGES = ("awop/", "citation-politics/", "replication-hub/flora/", "nowherelab/")
 DIRECTORY_MIN_WIDTH = 900
 FIRST_VIEW_IMAGE_LIMIT = 0.3
 CHART_WIDTH_LIMIT = 340
+WHEEL_WIDTH_LIMIT = 420
+TOOLKIT_SEARCH = """async () => {
+  const input = document.querySelector('#cpt-search-input');
+  const shown = () => [...document.querySelectorAll('[data-cpt-item]')].filter((el) => el.getClientRects().length).length;
+  const type = (value) => { input.value = value; input.dispatchEvent(new Event('input')); };
+  const before = shown();
+  type('zzqx');
+  const none = shown(), empty = document.querySelector('.cpt-result').classList.contains('is-empty') && Boolean(document.querySelector('.cpt-clear').getClientRects().length);
+  type('gender');
+  const some = shown();
+  type('zzqx');
+  document.querySelector('.cpt-clear').click();
+  return {before, none, empty, some, after: shown(), cleared: input.value === ''};
+}"""
 
 
 def check_directory_widths(browser, base, failures):
-    """At 1440 px directories use the width, and the chart on Publications does not take over the first view."""
+    """At 1440 px directories use the width, the chart on Publications and the toolkit's wheel do not take over
+    the first view, and the toolkit's search empties, narrows and restores its entries."""
     expect = expectation(failures, "directory widths")
     page = new_page(browser, 1440)
     page.context.add_cookies([{"name": "forrt_analytics_choice", "value": "deny", "url": base}])  # Banner shut.
@@ -655,6 +671,18 @@ def check_directory_widths(browser, base, failures):
     }""")
     expect(chart_width <= CHART_WIDTH_LIMIT, f"the citation chart is {chart_width:.0f} px wide, limit {CHART_WIDTH_LIMIT}")
     expect(share <= FIRST_VIEW_IMAGE_LIMIT, f"the citation chart takes {share:.0%} of the first view, limit {FIRST_VIEW_IMAGE_LIMIT:.0%}")
+    page.goto(base + "citation-politics/toolkit/", wait_until="load")
+    wheel_width, share = page.evaluate("""() => {
+      const box = document.querySelector('.cpt-wheel img').getBoundingClientRect();
+      const seen = Math.max(0, Math.min(box.bottom, innerHeight) - Math.max(box.top, 0));
+      return [box.width, seen * box.width / (innerWidth * innerHeight)];
+    }""")
+    expect(wheel_width <= WHEEL_WIDTH_LIMIT, f"the toolkit's wheel is {wheel_width:.0f} px wide, limit {WHEEL_WIDTH_LIMIT}")
+    expect(share <= FIRST_VIEW_IMAGE_LIMIT, f"the toolkit's wheel takes {share:.0%} of the first view, limit {FIRST_VIEW_IMAGE_LIMIT:.0%}")
+    found = page.evaluate(TOOLKIT_SEARCH)
+    expect(found["before"] > 0 and found["none"] == 0 and found["empty"], f"a toolkit search with no match hides every entry and says so: {found}")
+    expect(0 < found["some"] < found["before"], f"a toolkit search for 'gender' narrows the entries: {found}")
+    expect(found["after"] == found["before"] and found["cleared"], f"clearing the toolkit search shows every entry again: {found}")
     page.goto(base + "just_os_chatbot/", wait_until="load")
     page.wait_for_selector(".just-os-input")
     bottom = page.evaluate("document.querySelector('.just-os-input').getBoundingClientRect().bottom - innerHeight")
