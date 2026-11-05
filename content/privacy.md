@@ -1,9 +1,9 @@
 ---
 title: Privacy policy
-date: 2026-11-03
+date: 2026-11-05
 ---
 
-*Last updated: 3 November 2026*
+*Last updated: 5 November 2026*
 
 This policy explains what happens to personal data when you use forrt.org, why, and what rights you have.
 
@@ -19,6 +19,7 @@ We have not appointed a data protection officer.
 
 - Google Analytics runs only if you allow it.
 - Videos, forms, calendars and teaching activities load only if you click to load them.
+- The JUST-OS chatbot sends what you type to a service at the University of Groningen, and only once you send a message.
 - Our host receives your IP address and other technical data each time you open a page, and so do the services listed below on the few pages that use them.
 
 ## When you visit a page
@@ -77,6 +78,12 @@ Videos use the `youtube-nocookie.com` player.
 **Newsletter.** The sign-up form loads from EmailOctopus (Three Hearts Digital Ltd, 86-90 Paul Street, London EC2A 4NE, UK), and also loads Google reCAPTCHA for spam protection. If you subscribe, EmailOctopus stores your email address as our processor, under the data processing schedule in its terms, and we use it to send the newsletter. Its [sub-processors are listed here](https://emailoctopus.com/legal/subprocessors). The legal basis is your consent (Art. 6(1)(a) GDPR). You can unsubscribe through the link in every email, and we then remove you from the list. The European Commission has found that the UK provides adequate protection.
 
 **Forms and feedback.** Our Google Forms and the feedback forms on glossary and other pages store what you enter, and any email address you choose to give, in Google Sheets. We hold this in our forrtproject@gmail.com account, and use it to act on your message or application. We keep it for as long as we need it for that purpose, and then delete it. The legal basis is our legitimate interest in improving our resources and running our programmes (Art. 6(1)(f) GDPR), or your consent where a form asks for it. Google stores this data and may process it in the USA, as described under Analytics.
+
+**JUST-OS chatbot.** The chatbot contacts no server until you send a message. Each message then goes, with a random ID for the chat and for that message, to our chat service at `bot.just-os.org`. This service runs at the University of Groningen in the Netherlands, writes its answers with a language model hosted there, and receives your IP address and standard request data. We use your messages to answer you, which is our legitimate interest in helping people find open science resources (Art. 6(1)(f) GDPR). Please do not include personal details in your messages.
+
+Your browser keeps your conversations in its local storage so that you can return to them. They stay on your device, and you can delete each one from the chat's **History** list.
+
+If you rate an answer, your question, the answer, your rating and any comment are stored in a Google Sheet. We also record, without your question or the answer, whether you copied an answer, sent another question within 30 seconds or left within 10 seconds. We use this to improve the chatbot, which is our legitimate interest (Art. 6(1)(f) GDPR). Google stores this data and may process it in the USA, as described under Analytics.
 
 **Email.** If you email us, we use your message and address to reply (Art. 6(1)(f) GDPR). Google Mail hosts our email. We keep messages for as long as we need them to deal with your request.
 
