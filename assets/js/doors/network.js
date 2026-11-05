@@ -19,7 +19,7 @@ if (canvas) {
       const low = sorted[0][axis];
       const range = sorted[sorted.length - 1][axis] - low || 1;
       sorted.forEach((person, i) => {
-        person[axis] = 1000 * (0.75 * (i / (sorted.length - 1)) + 0.25 * ((person[axis] - low) / range));
+        person[axis] = 1000 * (0.75 * (i / (sorted.length - 1 || 1)) + 0.25 * ((person[axis] - low) / range));
       });
     });
   }
@@ -170,7 +170,7 @@ if (canvas) {
     // How wide a force layout runs means nothing, so it can take the stage's proportions.
     view.tall = 1;
     const all = bounds(everything());
-    const proportion = ((view.height - PAD * 2) / (view.width - PAD * 2)) / ((all.bottom - all.top) / (all.right - all.left));
+    const proportion = ((view.height - PAD * 2) / (view.width - PAD * 2)) / (((all.bottom - all.top) || 1) / ((all.right - all.left) || 1));
     view.tall = Math.max(0.8, Math.min(1.6, proportion));
     view.fitted = frameFor(everything(), Infinity).k;
     if (followFit) {
