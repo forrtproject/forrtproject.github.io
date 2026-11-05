@@ -39,8 +39,8 @@ a.cpt-name:hover,a.cpt-also:hover{color:var(--ink)}
 .cpt-text{color:var(--ink)}
 .cpt-cite{margin:44px 0 0}
 .article-layout .article-style .cpt-cite h2{margin:0 0 12px}
-.article-layout .article-style .cpt-cite blockquote{margin:0}
-.article-layout .article-style .cpt-cite blockquote p{max-width:none;overflow-wrap:anywhere}
+.article-layout .article-style .cpt-cite blockquote{max-width:580px;margin:0}
+.article-layout .article-style .cpt-cite blockquote p{overflow-wrap:anywhere}
 @media(max-width:960px){
   .cpt-intro{grid-template-columns:minmax(0,1fr)}
   .cpt-wheel{max-width:340px}
