@@ -23,7 +23,8 @@ from preview_paths import load_sister_sites, resolves  # noqa: E402
 from site_inventory import list_paths  # noqa: E402
 
 MAX_LISTED = 40
-_ATTR = re.compile(r"(?<![\w-])(?:href|src|action|poster)=(?:\"([^\"]*)\"|'([^']*)'|([^\s>]+))", re.I)
+# The lookbehind also skips ?src= and &amp;src= inside another attribute's URL, which are not links here.
+_ATTR = re.compile(r"(?<![\w?;&-])(?:href|src|action|poster)=(?:\"([^\"]*)\"|'([^']*)'|([^\s>]+))", re.I)
 _OPAQUE = re.compile(r"<(script|style|template|textarea|pre|code)\b.*?</\1>", re.I | re.S)
 _SKIP_SCHEMES = ("mailto:", "tel:", "javascript:", "data:", "#", "sms:", "blob:", "about:")
 FORRT_HOSTS = ("forrt.org", "www.forrt.org")
