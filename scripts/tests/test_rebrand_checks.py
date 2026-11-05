@@ -166,6 +166,10 @@ class LinkCheckTests(unittest.TestCase):
         )
         self.assertEqual(links, ["/a", "c.webp"])
 
+    def test_extract_skips_src_in_another_attributes_query(self):
+        links = list(extract_links('<div data-u="/a?src=/b"></div><div data-u="x&amp;src=/c"></div><img src=d.webp>'))
+        self.assertEqual(links, ["d.webp"])
+
     def test_find_broken_walks_a_build(self):
         with tempfile.TemporaryDirectory() as root:
             Path(root, "about").mkdir()
