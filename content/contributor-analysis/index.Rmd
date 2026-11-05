@@ -227,15 +227,15 @@ treemap_plot <- ggplot(projects_per_person, aes(area = n, fill = sort_order)) +
 ```
 
 
-```{r projects-plot, fig.alt = "Bar chart of contributors per project", fig.width = 10, fig.height = 7}
+```{r projects-plot, fig.alt = str_c("Contributors in FORRT's 10 biggest projects: ", str_c(project_contributors$`Project Name`, " ", project_contributors$unique_contributors, collapse = "; "), "."), fig.width = 10, fig.height = 7}
 projects_plot
 ```
 
-```{r treemap-plot, fig.alt = "Treemap of number of projects per contributor", fig.width = 10, fig.height = 7}
+```{r treemap-plot, fig.alt = str_c("Share of contributors by number of projects: ", str_c(projects_per_person$label, " ", projects_per_person$percent, "%", collapse = "; "), "."), fig.width = 10, fig.height = 7}
 treemap_plot
 ```
 
-```{r roles-plot, fig.alt = "Bar chart of contributions by Tenzing role", fig.width = 10, fig.height = 7}
+```{r roles-plot, fig.alt = str_c("Contributions by role: ", str_c(role_distribution$Role, " ", role_distribution$n, collapse = "; "), "."), fig.width = 10, fig.height = 7}
 roles_plot
 ```
 
@@ -260,7 +260,9 @@ page_data <- list(
          n = all_project_contributors$unique_contributors[i])
   }),
   projects_per_person = lapply(seq_len(nrow(projects_per_person)), function(i) {
-    list(label = projects_per_person$label[i], n = projects_per_person$n[i], percent = projects_per_person$percent[i])
+    # These count records, which is nearly always but not quite the number of projects.
+    list(label = str_replace(projects_per_person$label[i], "project", "contribution"),
+         n = projects_per_person$n[i], percent = projects_per_person$percent[i])
   }),
   roles = lapply(seq_len(nrow(role_distribution)), function(i) {
     list(name = role_distribution$Role[i], n = role_distribution$n[i])
@@ -268,6 +270,6 @@ page_data <- list(
 )
 
 cat("\n\n<!-- contributor-analysis-data ",
-    gsub(">", "\\u003e", jsonlite::toJSON(page_data, auto_unbox = TRUE)),
+    gsub(">", "\\u003e", jsonlite::toJSON(page_data, auto_unbox = TRUE), fixed = TRUE),
     " -->\n", sep = "")
 ```

@@ -244,7 +244,7 @@ network_data <- list(
 )
 
 cat('\n<script type="application/json" id="contributor-network">',
-    gsub("<", "\\u003c", jsonlite::toJSON(network_data, auto_unbox = TRUE)),
+    gsub("<", "\\u003c", jsonlite::toJSON(network_data, auto_unbox = TRUE), fixed = TRUE),
     '</script>\n', sep = "")
 ```
 
