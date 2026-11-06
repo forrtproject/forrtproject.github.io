@@ -29,7 +29,7 @@
         "Academic Life and Culture"
     ],
     "tags": [
-        "Game-based Learning",
+        "Game-Based Learning",
         "Research Skills",
         "academic skills",
         "critical thinking",
@@ -41,5 +41,5 @@
     "in-clusters": false,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2026-09-15"
+    "lastmod": "2026-11-06"
 }
