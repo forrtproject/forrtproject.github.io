@@ -554,7 +554,15 @@ def check_phone_reading(browser, base, failures):
           const box = document.getElementById('just-os-btn').getBoundingClientRect();
           return !!document.elementFromPoint(box.left + box.width / 2, box.top + box.height / 2)?.closest('#just-os-btn');
         }""")
-        expect(page.locator(".clusters-back-to-top.is-visible").count() == 1, f"back to top shows after scrolling at {width} px")
+        # When back to top shows is check_floating_controls' job (only beside the fields or clusters,
+        # so not over this page's foot at a fixed scroll); here it must not sit on the launcher.
+        clash = page.evaluate("""() => {
+          const top = document.querySelector('.clusters-back-to-top.is-visible');
+          if (!top) return false;
+          const a = top.getBoundingClientRect(), b = document.getElementById('just-os-btn').getBoundingClientRect();
+          return a.left < b.right && b.left < a.right && a.top < b.bottom && b.top < a.bottom;
+        }""")
+        expect(not clash, f"back to top does not sit on the chat launcher on a cluster page at {width} px")
         expect(hit, f"the chat launcher can be clicked on a cluster page at {width} px")
         if width > 760:
             past = page.evaluate("""() => {
