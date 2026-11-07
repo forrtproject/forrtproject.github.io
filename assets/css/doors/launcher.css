@@ -4,9 +4,9 @@
 /* The opened chat goes above everything, which its own z-index cannot do from in here. */
 #just-os-widget:has(#just-os-window[style*="flex"]){z-index:10000}
 .just-os-fullpage{position:relative;font-family:var(--text)}
-#just-os-btn{position:relative;z-index:2;display:inline-block;padding:0;background:#fff;border:1.5px solid var(--ink);border-radius:50%;box-shadow:0 2px 10px rgba(38,45,53,.2);cursor:pointer;text-decoration:none;transition:transform .2s ease}
+#just-os-btn{position:relative;z-index:2;display:inline-block;padding:0;background:#fff;border:1.5px solid var(--ink);border-radius:50%;box-shadow:0 1px 4px rgba(38,45,53,.25);cursor:pointer;text-decoration:none;transition:transform .2s ease}
 /* At 1440 px the margin beside .wrap is 80 px, so the button (55 px, 20 px from the edge) clears the page by 5 px.
-   Nothing may reach past it: no growth on hover, and the focus ring is drawn inside. */
+   Nothing may reach past it: no growth on hover, a shadow within 4 px, and the focus ring drawn inside. */
 #just-os-btn:focus-visible{outline:3px solid var(--ink);outline-offset:-6px}
 #just-os-img{display:block;width:52px;height:52px;border-radius:50%}
 #just-os-dismiss{position:absolute;top:-6px;inset-inline-end:-6px;z-index:3;width:22px;height:22px;padding:0;background:#fff;border:1.5px solid var(--ink);border-radius:50%;color:var(--ink);font-size:14px;line-height:18px;text-align:center;cursor:pointer;opacity:0;transition:opacity .2s ease}
