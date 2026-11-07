@@ -678,7 +678,7 @@ def check_floating_controls(browser, base, failures):
 
     The launcher is checked closed, hovered, focused from the keyboard and inviting (on a fake clock, so that its
     ten-second cycle runs at once), at the top, a third and two thirds of the way down, and at the end of each page.
-    The disciplines page has a field open, and the clusters page on a phone has its navigation drawer open at the end.
+    The disciplines page has a field open, cluster 1 has every sub-cluster open, and the clusters page on a phone has its navigation drawer open at the end.
     The invitation is to stay (decision D19), so it must also show somewhere, and back to top must show beside
     the fields or clusters and hide while the drawer is open.
     """
@@ -702,6 +702,8 @@ def check_floating_controls(browser, base, failures):
             page.wait_for_timeout(300)
             if path == "disciplines/":
                 page.locator(".acc-trigger", has_text="Psychology").first.click()
+            if path == "clusters/cluster-1/":
+                page.locator(".acc-toggle-all").first.click()  # Every sub-cluster open: the page a reader scrolls.
             page.clock.run_for(10500)  # The invitation's first turn, at the top of the page.
             page.wait_for_timeout(400)
             look("invitation at the top")
@@ -736,7 +738,7 @@ def check_floating_controls(browser, base, failures):
                 look("back to top over the open drawer", ".clusters-back-to-top")
                 look("launcher over the open drawer", "#just-os-btn")
                 expect(not page.evaluate(BACK_TO_TOP_SHOWN), f"{path} at {width} px: back to top hides while the drawer is open")
-            if path in ("disciplines/", "clusters/"):
+            if path in ("disciplines/", "clusters/", "clusters/cluster-1/"):
                 expect(back_to_top, f"{path} at {width} px: back to top shows beside the fields or clusters")
             for state, items in covered.items():
                 expect(False, f"{path} at {width} px, {state}: covers {', '.join(sorted(set(items))[:3])}")
