@@ -1,5 +1,43 @@
 <!--community_map.html-->
 {{/* Usage: {{< community_map [height] >}}. Embeds the static Leaflet map at static/apps/community_map.html, regenerated from https://github.com/forrtproject/map-community; height is in px (default 600). */}}
-<iframe src="{{ "apps/community_map.html" | relURL }}"
+<style>
+  .community-map-frame{display:block;width:100%;height:var(--map-height);border:none}
+  /* A world map is wider than it is tall, so a tall frame on a phone is mostly empty sea. */
+  @media (max-width:760px){.community-map-frame{height:min(var(--map-height),440px)}}
+</style>
+<iframe src="{{ "apps/community_map.html" | relURL }}" class="community-map-frame"
         title="FORRT Community Map" loading="lazy"
-        style="height:{{ .Get 0 | default "600" }}px;width:100%;border:none;"></iframe>
+        style="--map-height:{{ .Get 0 | default "600" }}px"></iframe>
+<script>
+  /* The generated map opens at zoom 2, its lowest, which on a phone shows Europe and Africa and
+     cannot zoom out. On a narrow frame, fit it to its members instead, and let it zoom out to the
+     whole world. Done from here, because static/apps/community_map.html is regenerated elsewhere. */
+  (function() {
+    var frame = document.currentScript.previousElementSibling;
+    if (frame.clientWidth >= 700) return;
+    function fit(tries) {
+      var win = frame.contentWindow;
+      var widget = win && win.HTMLWidgets && win.HTMLWidgets.find('.leaflet');
+      var map = widget && widget.getMap && widget.getMap();
+      if (!map) { if (tries > 0) setTimeout(function() { fit(tries - 1); }, 200); return; }
+      var data = JSON.parse(win.document.querySelector('script[data-for]').textContent).x.limits;
+      var members = [[data.lat[0], data.lng[0]], [data.lat[1], data.lng[1]]];
+      function view() { map.fitBounds(members, { padding: [12, 12], animate: false }); }
+      map.setMinZoom(0);
+      map.invalidateSize();
+      view();
+      map.setMinZoom(Math.min(map.getZoom(), map.getBoundsZoom([[-60, -180], [78, 180]])));
+      // Its reset button would go back to zoom 2; make it come back to this view.
+      win.document.addEventListener('click', function(event) {
+        if (event.target.closest && event.target.closest('.easy-button-button')) {
+          event.stopPropagation();
+          event.preventDefault();
+          view();
+        }
+      }, true);
+    }
+    function start() { fit(50); }
+    frame.addEventListener('load', start);
+    if (frame.contentDocument && frame.contentDocument.readyState === 'complete' && frame.contentWindow.location.href !== 'about:blank') start();
+  })();
+</script>

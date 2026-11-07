@@ -2362,3 +2362,10 @@ h1.clusters-site-heading.clusters-hub-page__title {
   .clusters-back-to-top.clusters-back-to-top{bottom:calc(80px + var(--banner,0px));right:12px}
 }
 .sc-description,.fc-summary,.fc-title{font-size:16px}
+
+/* Explanations inside the panels keep to the reading measure of .article-style; the cards and
+   resource lists around them stay wide. */
+.cluster-description,.sc-description{max-width:580px}
+/* Labels, tags and counts at the site's smallest UI size, as the design check requires. */
+.acc-count,.cluster-stats,.acc-toggle-all,.fc-tags .tag,.disciplines-category-badge{font-size:15px}
+.fc-tags{flex-wrap:wrap}

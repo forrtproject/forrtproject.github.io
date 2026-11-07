@@ -138,78 +138,64 @@
 <!-- themify-icons -->
 <link href="/vendor/assets/themify-icons/themify-icons.css" rel="stylesheet" type="text/css">
 
-{{ with .Get "id" }}
-<!-- Container for the flipbook -->
-<div class="_df_book" id="flipbook-{{ . }}"
-     source="{{ $.Get "pdf" | default "/files/FORRT_Booklet(A5).pdf" }}"
-     style="height: {{ $.Get "height" | default "80vh" }}; margin: 20px 0; min-height: 500px; max-height: 1200px;">
-</div>
-{{ else }}
-<!-- Container for the flipbook -->
-<div class="_df_book" id="flipbook-default"
-     source="{{ .Get "pdf" | default "/files/FORRT_Booklet(A5).pdf" }}"
-     style="height: {{ .Get "height" | default "80vh" }}; margin: 20px 0; min-height: 500px; max-height: 1200px;">
-</div>
-{{ end }}
+{{ $pdf := .Get "pdf" | default "/files/FORRT_Booklet(A5).pdf" }}
+{{ $id := printf "flipbook-%s" (.Get "id" | default "default") }}
+<p class="booklet-open"><a class="btn btn-primary" href="{{ $pdf }}">Open the PDF</a> to read it full screen or save it.</p>
+<div class="_df_book" id="{{ $id }}" source="{{ $pdf }}" style="height:{{ .Get "height" | default "80vh" }};margin:20px 0;min-height:500px;max-height:1200px;"></div>
 
-<!-- Initialize DearFlip once jQuery and DearFlip library are available -->
 <script>
   if (typeof window !== 'undefined' && !window.pdfjsWorkerSrc) {
     window.pdfjsWorkerSrc = '/lib/dflip/js/libs/pdf.worker.min.js';
   }
   (function() {
-    function initializeDFlip() {
-      var $ = window.jQuery;
-      if (!$) { setTimeout(initializeDFlip,100); return; }
-      if (!$.fn.dFlip) { setTimeout(initializeDFlip,100); return; }
-      try {
-        $('._df_book').dFlip();
-        remapFlipbookIcons(); // run after init
-        // Apply dynamic height after DearFlip initialization
-        setTimeout(function() {
-          updateBookletHeight();
-        }, 100);
-      } catch(e){ console.error('DearFlip init failed:', e); }
+    var book = document.getElementById('{{ $id }}');
+    // DearFlip shows one page at a time only when the user agent names a phone, so a narrow
+    // window that does not (a desktop browser, an iPad, a headless browser) turned to a spread
+    // too small to read. Its options take a page mode: 1 is one page, 2 turns it like a booklet.
+    var narrow = book.clientWidth < 700;
+    window['option_' + book.id] = narrow ? { pageMode: 1, singlePageMode: 2 } : {};
+
+    function size() {
+      var height;
+      if (narrow) {
+        // One A5 page across the frame (210 by 148 mm), with room for the toolbar below it.
+        height = Math.round(book.clientWidth * 210 / 148) + 70;
+        book.style.minHeight = '0';
+      } else {
+        height = Math.max(500, Math.min(1200, Math.floor((window.innerHeight || document.documentElement.clientHeight) * 0.8)));
+      }
+      book.style.setProperty('height', height + 'px', 'important');
+    }
+    // Sized before the library measures the frame on creation.
+    size();
+
+    // The library swaps in its own toolbar after it has read the PDF; give it the site's glyphs.
+    function remapWhenReady(tries) {
+      if (book.querySelector('.df-ui-btn')) { remapFlipbookIcons(); return; }
+      if (tries > 0) setTimeout(function() { remapWhenReady(tries - 1); }, 200);
     }
     function loadDFlip() {
-      var s=document.createElement('script');
-      s.src='/lib/dflip/js/dflip.min.js';
-      s.onload=function(){
-        if (document.readyState==='loading')
-          document.addEventListener('DOMContentLoaded', initializeDFlip);
-        else initializeDFlip();
-      };
+      var s = document.createElement('script');
+      s.src = '/lib/dflip/js/dflip.min.js';
+      // dflip.min.js builds every ._df_book itself on document ready, from the options above.
+      s.onload = function() { remapWhenReady(150); };
       document.head.appendChild(s);
     }
-    if (typeof jQuery==='undefined') {
-      var jq=document.createElement('script');
-      jq.src='/lib/dflip/js/libs/jquery.min.js';
-      jq.onload=loadDFlip;
+    if (typeof jQuery === 'undefined') {
+      var jq = document.createElement('script');
+      jq.src = '/lib/dflip/js/libs/jquery.min.js';
+      jq.onload = loadDFlip;
       document.head.appendChild(jq);
     } else {
       loadDFlip();
     }
-  })();
 
-  /* Dynamic booklet sizing: adjust height based on viewport */
-  function updateBookletHeight() {
-    var books = document.querySelectorAll('._df_book');
-    books.forEach(function(book){
-      // Calculate optimal height: 80% of viewport height
-      // Ensuring minimum of 500px and maximum of 1200px
-      var viewportHeight = window.innerHeight || document.documentElement.clientHeight;
-      var targetHeight = Math.floor(viewportHeight * 0.8);
-      targetHeight = Math.max(500, Math.min(1200, targetHeight));
-      // On a phone the book is one small page, so a tall frame is mostly empty.
-      if (window.innerWidth <= 760) {
-        targetHeight = 560;
-        book.style.minHeight = '0';
-      }
-      book.style.height = targetHeight + 'px';
-      // Also set inline style with !important to override any library styles
-      book.style.setProperty('height', targetHeight + 'px', 'important');
+    var resizeTimer;
+    window.addEventListener('resize', function() {
+      clearTimeout(resizeTimer);
+      resizeTimer = setTimeout(size, 250);
     });
-  }
+  })();
 
   /* Remap ti-* classes to df-icon-* so glyphs display */
   function remapFlipbookIcons() {
@@ -264,17 +250,4 @@
     }).observe(book,{childList:true,subtree:true});
   });
 
-  /* Update on window resize with debouncing */
-  var resizeTimer;
-  window.addEventListener('resize', function() {
-    clearTimeout(resizeTimer);
-    resizeTimer = setTimeout(function() {
-      updateBookletHeight();
-    }, 250);
-  });
-
-  /* Initial height update after page fully loads */
-  window.addEventListener('load', function() {
-    setTimeout(updateBookletHeight, 500);
-  });
 </script>
