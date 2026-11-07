@@ -16,6 +16,7 @@ tag/index.html                       # The migration plan's one 404 rule replace
 tag/*/index.html                     # The migration plan's one 404 rule replaces the /tag/ stubs
 tag/*/*/index.html                   # The same, for the one tag with a slash in it
 css/academic.css                 # The theme's stylesheet: no template needs it
+css/academic.min.FINGERPRINT.css # The same stylesheet under its production name, which only rehearse_launch.py's builds show
 css/404.min.FINGERPRINT.css      # Folded into the Doors stylesheet
 css/welcome.min.FINGERPRINT.css  # Folded into the Doors stylesheet
 css/citations.min.FINGERPRINT.css  # The old toolkit stylesheet, replaced by css/doors/toolkit.css

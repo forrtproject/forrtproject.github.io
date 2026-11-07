@@ -2,12 +2,17 @@
 """Check the deployed preview in a browser: redirects, links, search, noindex and fonts.
 
 Run: python3 scripts/rebrand/check_preview.py [--url https://forrt.org/rebrand-doors/]
+After launch: python3 scripts/rebrand/check_preview.py --production [--url https://forrt.org/]
 
 Needs Playwright. Reads the live preview, so run it after a deploy has finished. It visits
 one URL per rule in the 404 page's redirect table, follows a sample of links and assets, runs
 a search, and confirms that nothing the preview loads comes from the live site outside the
 subfolder and the sister sites, or from Google Fonts. Pages make no request to the newsletter
 embed or its dependencies until a visitor opens the form, and then the form works.
+
+With --production it checks the launched site instead: the base must be a site root (forrt.org by
+default), sampled pages must carry no noindex, and their canonical URL must sit on that root and
+not under /rebrand-doors/. The redirect, link, asset, search and newsletter checks are the same.
 """
 
 import argparse
@@ -16,8 +21,6 @@ import os
 import re
 import sys
 from urllib.parse import urlsplit
-
-from playwright.sync_api import sync_playwright
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE)
@@ -48,6 +51,8 @@ REDIRECTS = {
     "TenureRun/": "//tenure-run",
     "Transform-to-Open-Science-Book/": "//transform-to-open-science-book",
 }
+PREVIEW_URL = "https://forrt.org/rebrand-doors/"
+SITE_URL = "https://forrt.org/"
 BLOCK = re.compile(r"googletagmanager|google-analytics|doubleclick|youtube")
 # The newsletter embed and what it pulls in. None of these may load until a visitor clicks.
 EMBED_HOSTS = ("eocampaign1.com", "eo.page", "fonts.googleapis.com", "fonts.gstatic.com")
@@ -63,12 +68,58 @@ def embed_request(request, frame):
     return any(host == name or host.endswith("." + name) for name in EMBED_HOSTS) or bool(EMBED_URLS.match(request.url))
 
 
-def check_redirects(browser, base, failures):
+def resolve_base(url, production):
+    """The base URL with one trailing slash. Production defaults to the site and must be a root."""
+    base = (url or (SITE_URL if production else PREVIEW_URL)).rstrip("/") + "/"
+    if production and urlsplit(base).path != "/":
+        raise ValueError(f"--production checks a site root, not {base}")
+    return base
+
+
+def robots_problem(sample, robots, production):
+    """The preview must carry noindex; the launched site must not."""
+    if production:
+        return f"{sample} has noindex ({robots})" if "noindex" in robots else None
+    return None if "noindex" in robots else f"{sample} has no noindex"
+
+
+def canonical_problem(sample, canonical, base):
+    """Production only: the canonical URL sits on the site root and outside the preview."""
+    if not canonical:
+        return f"{sample} has no canonical URL"
+    if not canonical.startswith(base) or "/rebrand-doors/" in canonical:
+        return f"{sample} has canonical {canonical}, outside {base}"
+    return None
+
+
+def redirect_target(base, expected):
+    """The path a retired URL should land on. A leading "//" names a path at the domain root."""
+    return expected[1:] if expected.startswith("//") else urlsplit(base).path + expected
+
+
+def production_expectation(path, expected, sisters):
+    """On forrt.org a sister site's own repository answers before the 404 page, so a retired path
+    that starts with a sister site's name lands on that site rather than on the preview's rule."""
+    first = path.strip("/").split("/")[0]
+    return "//" + first if first in sisters else expected
+
+
+def redirect_ok(landed, want, expected):
+    ok = landed.rstrip("/") == want.rstrip("/")
+    # A sister site may forward within itself once it has been reached.
+    if expected.startswith("//"):
+        ok = ok or landed.startswith(want.rstrip("/") + "/")
+    return ok
+
+
+def check_redirects(browser, base, failures, production=False):
+    sisters = load_sister_sites()
     context = browser.new_context()
     page = context.new_page()
     page.route("**/*", lambda route: route.abort() if BLOCK.search(route.request.url) else route.continue_())
-    root = urlsplit(base)
     for path, expected in REDIRECTS.items():
+        if production:
+            expected = production_expectation(path, expected, sisters)
         page.goto(base + path, wait_until="load", timeout=60000)
         try:
             page.wait_for_url(lambda url: not url.rstrip("/").endswith(path.rstrip("/")), timeout=6000)
@@ -77,18 +128,15 @@ def check_redirects(browser, base, failures):
         landed = urlsplit(page.url).path
         if "?" in expected:
             landed += "?" + urlsplit(page.url).query
-        want = expected[1:] if expected.startswith("//") else root.path + expected
-        ok = landed.rstrip("/") == want.rstrip("/")
-        # A sister site may forward within itself once it has been reached.
-        if expected.startswith("//"):
-            ok = ok or landed.startswith(want.rstrip("/") + "/")
+        want = redirect_target(base, expected)
+        ok = redirect_ok(landed, want, expected)
         print(f"  {'ok ' if ok else 'BAD'} {path} -> {landed}")
         if not ok:
             failures.append(f"redirect {path} landed on {landed}, wanted {want}")
     context.close()
 
 
-def check_links_assets(browser, base, failures):
+def check_links_assets(browser, base, failures, production=False):
     sisters = load_sister_sites()
     root = urlsplit(base).path
     context = browser.new_context(viewport={"width": 1440, "height": 900})
@@ -111,14 +159,18 @@ def check_links_assets(browser, base, failures):
         response = page.goto(base + sample, wait_until="load", timeout=120000)
         page.wait_for_timeout(800)
         robots = page.evaluate("document.querySelector('meta[name=robots]')?.content || ''")
+        canonical = page.evaluate("document.querySelector('link[rel=canonical]')?.href || ''")
         broken_images = page.evaluate(
             "[...document.images].filter(i=>i.complete&&!i.naturalWidth&&i.src.includes('forrt.org')).map(i=>i.src)"
         )
-        print(f"  {sample or '(home)'}: {response.status}, robots={robots!r}, broken images {len(broken_images)}")
+        print(f"  {sample or '(home)'}: {response.status}, robots={robots!r}, broken images {len(broken_images)}"
+              + (f", canonical {canonical}" if production else ""))
         if response.status != 200:
             failures.append(f"{sample} returned {response.status}")
-        if "noindex" not in robots:
-            failures.append(f"{sample} has no noindex")
+        problems = [robots_problem(sample, robots, production)]
+        if production:
+            problems.append(canonical_problem(sample, canonical, base))
+        failures.extend(problem for problem in problems if problem)
         failures.extend(f"{sample}: broken image {src}" for src in broken_images)
     if embed:
         failures.append(f"newsletter embed or Google Fonts requests before any click: {sorted(set(embed))[:3]}")
@@ -200,20 +252,35 @@ def check_search(browser, base, failures):
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--url", default="https://forrt.org/rebrand-doors/")
+    parser.add_argument("--url", help=f"base URL (default {PREVIEW_URL}, or {SITE_URL} with --production)")
+    parser.add_argument("--production", action="store_true",
+                        help="check the launched site: a site root, no noindex, canonical URLs on that root")
     args = parser.parse_args()
-    base = args.url.rstrip("/") + "/"
+    try:
+        base = resolve_base(args.url, args.production)
+    except ValueError as error:
+        parser.error(str(error))
     failures = []
+    from playwright.sync_api import sync_playwright
+
+    checks = [
+        ("Redirects", lambda browser: check_redirects(browser, base, failures, args.production)),
+        ("Links, assets, noindex" + (", canonical" if args.production else ""),
+         lambda browser: check_links_assets(browser, base, failures, args.production)),
+        ("Newsletter", lambda browser: check_newsletter(browser, base, failures)),
+        ("Search", lambda browser: check_search(browser, base, failures)),
+    ]
     with sync_playwright() as playwright:
         browser = playwright.chromium.launch()
-        print("Redirects")
-        check_redirects(browser, base, failures)
-        print("Links, assets, noindex")
-        check_links_assets(browser, base, failures)
-        print("Newsletter")
-        check_newsletter(browser, base, failures)
-        print("Search")
-        check_search(browser, base, failures)
+        for title, check in checks:
+            print(title)
+            try:
+                check(browser)
+            except Exception as error:
+                # On launch day one missing element should not hide the other results.
+                if not args.production:
+                    raise
+                failures.append(f"{title} stopped: {str(error).splitlines()[0][:200]}")
         browser.close()
     print(json.dumps({"failures": failures}, indent=1))
     sys.exit(1 if failures else 0)

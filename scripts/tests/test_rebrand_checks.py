@@ -11,6 +11,9 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "rebrand"))
 
 from check_design import framing_problems  # noqa: E402
 from check_internal_links import broken_target, extract_links, find_broken  # noqa: E402
+from check_preview import (  # noqa: E402
+    canonical_problem, production_expectation, redirect_ok, redirect_target, resolve_base, robots_problem,
+)
 from check_source_rules import GENERATED, absolute_url_findings  # noqa: E402
 from compare_builds import compare_heads, compare_paths, compare_structured  # noqa: E402
 from preview_paths import Rewriter, resolves  # noqa: E402
@@ -325,6 +328,54 @@ class SourceRuleTests(unittest.TestCase):
             findings = absolute_url_findings(root, sisters={"fred"})
         self.assertEqual(len(findings), 1)
         self.assertIn("forrt.org/about/us", findings[0])
+
+
+class PreviewCheckModeTests(unittest.TestCase):
+    def test_default_base_is_the_preview(self):
+        self.assertEqual(resolve_base(None, False), "https://forrt.org/rebrand-doors/")
+        self.assertEqual(resolve_base("https://forrt.org/rebrand-doors", False), "https://forrt.org/rebrand-doors/")
+
+    def test_production_base_is_the_site_root(self):
+        self.assertEqual(resolve_base(None, True), "https://forrt.org/")
+        self.assertEqual(resolve_base("https://forrt.org", True), "https://forrt.org/")
+        with self.assertRaises(ValueError):
+            resolve_base("https://forrt.org/rebrand-doors/", True)
+
+    def test_preview_needs_noindex(self):
+        self.assertIsNone(robots_problem("about/us/", "noindex, nofollow", False))
+        self.assertEqual(robots_problem("about/us/", "", False), "about/us/ has no noindex")
+
+    def test_production_forbids_noindex(self):
+        self.assertIsNone(robots_problem("about/us/", "", True))
+        self.assertIsNone(robots_problem("about/us/", "index, follow", True))
+        self.assertIn("has noindex", robots_problem("about/us/", "noindex", True))
+
+    def test_canonical_on_the_root(self):
+        base = "https://forrt.org/"
+        self.assertIsNone(canonical_problem("about/us/", "https://forrt.org/about/us/", base))
+        self.assertIn("no canonical", canonical_problem("about/us/", "", base))
+        self.assertIn("outside", canonical_problem("about/us/", "https://forrt.org/rebrand-doors/about/us/", base))
+        self.assertIn("outside", canonical_problem("about/us/", "https://staging.forrt.org/about/us/", base))
+        self.assertIn("outside", canonical_problem("about/us/", "http://forrt.org/about/us/", base))
+
+    def test_redirect_targets_follow_the_base(self):
+        self.assertEqual(redirect_target("https://forrt.org/rebrand-doors/", "resources/"), "/rebrand-doors/resources/")
+        self.assertEqual(redirect_target("https://forrt.org/", "resources/"), "/resources/")
+        self.assertEqual(redirect_target("https://forrt.org/rebrand-doors/", "//fred"), "/fred")
+        self.assertEqual(redirect_target("https://forrt.org/", "//fred"), "/fred")
+
+    def test_sister_sites_answer_first_in_production(self):
+        sisters = {"re-searchterms", "fred"}
+        self.assertEqual(production_expectation("re-searchterms", "apps/re-searchterms.html", sisters), "//re-searchterms")
+        self.assertEqual(production_expectation("tag/", "tags/", sisters), "tags/")
+        # Sister-site names are case-sensitive paths, as on GitHub Pages.
+        self.assertEqual(production_expectation("FReD/", "//fred", sisters), "//fred")
+
+    def test_redirect_ok(self):
+        self.assertTrue(redirect_ok("/resources", "/resources/", "resources/"))
+        self.assertFalse(redirect_ok("/resources/page/2/", "/resources/", "resources/"))
+        self.assertTrue(redirect_ok("/fred/explorer/", "/fred", "//fred"))
+        self.assertFalse(redirect_ok("/fredx/", "/fred", "//fred"))
 
 
 if __name__ == "__main__":
