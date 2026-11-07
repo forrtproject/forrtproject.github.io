@@ -33,6 +33,17 @@ class DecodeEntitiesTests(unittest.TestCase):
         text = "R&D, AT&T and P&notes &copy 2020 & more"
         self.assertEqual(self.decode(title=text)["title"], text)
 
+    def test_unknown_names_are_left_alone(self):
+        # html.unescape alone would decode the known prefix: "¬anentity;".
+        text = "x &notanentity; y"
+        self.assertEqual(self.decode(title=text)["title"], text)
+
+    def test_angle_brackets_stay_encoded(self):
+        # Abstracts are rendered as Markdown with raw HTML allowed.
+        text = "&lt;img src=x onerror=alert(1)&gt; &#60;b&#x3E;"
+        self.assertEqual(self.decode(abstract=text)["abstract"], text)
+        self.assertEqual(self.decode(abstract="&amp;lt;b&amp;gt;")["abstract"], "&lt;b&gt;")
+
     def test_other_columns_are_untouched(self):
         url = "https://example.org/?a=1&amp;b=2"
         self.assertEqual(self.decode(title="x", link_to_resource=url)["link_to_resource"], url)

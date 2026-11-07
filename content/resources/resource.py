@@ -17,6 +17,7 @@
 """
 
 import html
+import html.entities
 import json
 import os
 import re
@@ -102,15 +103,26 @@ def wrangle_data(df):
 # Titles and abstracts pasted from publisher pages can carry HTML entities such as
 # "&ldquo;". Hugo escapes the "&" again, so pages showed "&ldquo;" as text and the
 # meta description failed check 10 of scripts/check_seo_html.py. Only complete
-# entities ending in ";" are decoded, so a bare "&" stays as it is.
+# entities ending in ";" are decoded, so a bare "&" stays as it is, and a name is
+# decoded only if the whole name is an HTML entity. "<" and ">" stay encoded:
+# abstracts are rendered as Markdown with raw HTML allowed, so decoding them
+# would turn escaped text into markup.
 ENTITY = re.compile(r'&(?:#[0-9]+|#[xX][0-9a-fA-F]+|[A-Za-z][A-Za-z0-9]*);')
 TEXT_COLUMNS = ['title', 'abstract', 'creators']
+
+
+def decode_entity(match):
+    reference = match.group(0)
+    if not reference.startswith('&#') and reference[1:] not in html.entities.html5:
+        return reference
+    character = html.unescape(reference)
+    return reference if character in ('<', '>') else character
 
 
 def decode_entities(df):
     for column in TEXT_COLUMNS:
         if column in df.columns:
-            df[column] = [ENTITY.sub(lambda m: html.unescape(m.group(0)), value) if isinstance(value, str) else value
+            df[column] = [ENTITY.sub(decode_entity, value) if isinstance(value, str) else value
                           for value in df[column].values]
 
 
