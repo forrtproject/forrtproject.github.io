@@ -1,0 +1,42 @@
+{
+    "timestamp": "11/6/2026",
+    "title": "In praise of open research measures",
+    "link_to_resource": "https://doi.org/10.1038/498170b",
+    "creators": [
+        "Eugene Kolker"
+    ],
+    "material_type": [
+        "Reading"
+    ],
+    "education_level": [
+        "College / Upper Division (Undergraduates)",
+        "Graduate / Professional"
+    ],
+    "abstract": "A scholarly resource on In praise of open research measures selected through FORRT's JUST-OS resource-curation materials.",
+    "language": [
+        "English"
+    ],
+    "conditions_of_use": "I don't see any of these",
+    "primary_user": [
+        "Student",
+        "Teacher"
+    ],
+    "subject_areas": [
+        "Social Science"
+    ],
+    "FORRT_clusters": [
+        "Reproducibility and Replicability Knowledge"
+    ],
+    "tags": [
+        "Open Science",
+        "Credibility Revolution",
+        "JUST-OS Resource Curation"
+    ],
+    "forrt_clusters_new": "Replication Crisis and Credibility Revolution",
+    "forrt_sub_clusters": "History of the replication crisis & credibility revolution",
+    "doi": "10.1038/498170b",
+    "in-clusters": "",
+    "pdf name": "",
+    "apa reference": "Eugene Kolker (2013). In praise of open research measures. Nature. https://doi.org/10.1038/498170b",
+    "lastmod": "2026-11-07"
+}
