@@ -608,35 +608,126 @@ def check_specialist_cards(browser, base, failures):
     page.context.close()
 
 
-# What under the chat launcher has text of its own: the launcher is to rest in the margin, never over the page.
-UNDER_LAUNCHER = """() => {
-  const box = document.getElementById('just-os-btn').getBoundingClientRect();
+# What of the page's own a floating control covers: text, a control, an image or a card (anything with its own
+# background, shadow or side borders that does not span the screen; a rule along one edge is not a card). Each overlap is confirmed by hit testing,
+# so that content scrolled out of its box or under another layer does not count. It is independent of
+# site.js's own test for empty space, and a control counts as covering only while it is shown.
+FLOATING_OVER = """(selector) => {
+  const floating = document.querySelector(selector);
+  if (!floating) return [];
+  const own = floating.closest('#just-os-widget') || floating;
+  const style = getComputedStyle(floating);
+  const box = floating.getBoundingClientRect();
+  if (style.visibility === 'hidden' || parseFloat(style.opacity) < 0.5 || !box.width || !box.height) return [];
+  const meets = (r) => r.width > 0 && r.height > 0 && r.left < box.right - 0.5 && box.left < r.right - 0.5 && r.top < box.bottom - 0.5 && box.top < r.bottom - 0.5;
+  const shown = (el, r) => {
+    const left = Math.max(r.left, box.left), right = Math.min(r.right, box.right);
+    const top = Math.max(r.top, box.top), bottom = Math.min(r.bottom, box.bottom);
+    for (const fx of [0.2, 0.5, 0.8]) for (const fy of [0.2, 0.5, 0.8]) {
+      const hit = document.elementsFromPoint(left + (right - left) * fx, top + (bottom - top) * fy).find((e) => !own.contains(e));
+      if (hit && (hit === el || el.contains(hit))) return true;
+    }
+    return false;
+  };
+  const name = (el) => el.tagName.toLowerCase() + (el.id ? '#' + el.id : el.classList[0] ? '.' + el.classList[0] : '');
   const found = new Set();
-  for (let x = box.left + 1; x < box.right; x += 4) for (let y = box.top + 1; y < box.bottom; y += 4) {
-    const el = document.elementsFromPoint(x, y).find((e) => !e.closest('#just-os-widget') && e.closest('main')
-      && e.tagName !== 'MAIN' && getComputedStyle(e).display !== 'contents' && (e.innerText || '').trim());
-    if (el) found.add(`${el.tagName.toLowerCase()} "${el.innerText.trim().slice(0, 30)}"`);
+  const screen = document.documentElement.clientWidth;
+  const range = document.createRange();
+  const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
+  for (let node = walker.nextNode(); node; node = walker.nextNode()) {
+    const parent = node.parentElement;
+    if (!node.data.trim() || !parent || own.contains(parent) || !meets(parent.getBoundingClientRect())) continue;
+    range.selectNodeContents(node);
+    if ([...range.getClientRects()].some((r) => meets(r) && shown(parent, r))) found.add(`text "${node.data.trim().slice(0, 30)}"`);
+  }
+  for (const el of document.body.querySelectorAll('*')) {
+    if (own.contains(el) || el.contains(own)) continue;
+    const r = el.getBoundingClientRect();
+    if (!meets(r)) continue;
+    const control = el.matches('a[href],button,input,select,textarea,summary,[role=button],[tabindex]:not([tabindex="-1"]),img,svg,video,iframe,canvas');
+    const look = getComputedStyle(el);
+    const painted = look.backgroundColor !== 'rgba(0, 0, 0, 0)' || look.backgroundImage !== 'none' || look.boxShadow !== 'none'
+      || ['Left', 'Right'].every((side) => look[`border${side}Style`] !== 'none' && parseFloat(look[`border${side}Width`]));
+    const card = painted && (r.left > 1 || r.right < screen - 1);
+    if ((control || card) && shown(el, r)) found.add(`${control ? 'control' : 'card'} ${name(el)}`);
   }
   return [...found];
 }"""
 
+BUBBLE_SHOWN = "() => parseFloat(getComputedStyle(document.getElementById('just-os-bubble')).opacity) >= 0.5"
 
-def check_launcher_clear(browser, base, failures):
-    """On laptops the launcher is a tab in the gutter, and from 1440 px the round button fits the margin."""
-    expect = expectation(failures, "chat launcher")
-    for width in (1024, 1280, 1440):
+# Where the floating controls are checked: long pages of text, cards and lists, the pages with back to top,
+# and a page on the reading layout, whose empty margin the invitation may use.
+FLOATING_PAGES = ("contributors/", "citation-politics/toolkit/", "disciplines/", "clusters/", "clusters/cluster-1/",
+                  "publications/", "about/teams/", "about/")
+FLOATING_WIDTHS = (390, 1024, 1280, 1440)
+
+
+def check_floating_controls(browser, base, failures):
+    """The chat launcher, its invitation and label, and back to top cover nothing of the page, wherever it is scrolled.
+
+    The launcher is checked closed, hovered, focused from the keyboard and inviting (on a fake clock, so that its
+    ten-second cycle runs at once), at the top, a third and two thirds of the way down, and at the end of each page.
+    The disciplines page has a field open, and the clusters page on a phone has its navigation drawer open at the end.
+    The invitation is to stay (decision D19), so it must also show somewhere.
+    """
+    expect = expectation(failures, "floating controls")
+    invited = set()
+    for width in FLOATING_WIDTHS:
         page = new_page(browser, width)
         page.context.add_cookies([{"name": "forrt_analytics_choice", "value": "deny", "url": base}])  # Banner shut.
-        for path in ("contributors/", "publications/", "about/teams/"):
-            page.goto(base + path, wait_until="load")
-            page.wait_for_timeout(500)
-            under = set()
-            for y in (0, 700, 1600):
-                page.evaluate(f"scrollTo(0, {y})")
-                page.wait_for_timeout(150)
-                under.update(page.evaluate(UNDER_LAUNCHER))
-            expect(not under, f"the launcher covers nothing on {path} at {width} px{': ' + ', '.join(sorted(under)[:3]) if under else ''}")
+        page.clock.install()
+        for path in FLOATING_PAGES:
+            covered = {}
+
+            def look(state, selector="#just-os-bubble"):
+                for item in page.evaluate(FLOATING_OVER, selector):
+                    covered.setdefault(state, []).append(item)
+                if state.startswith("invitation") and page.evaluate(BUBBLE_SHOWN):
+                    invited.add(f"{path} at {width} px")
+
+            page.goto(base + path, wait_until="load", timeout=120000)
+            page.wait_for_timeout(300)
+            if path == "disciplines/":
+                page.locator(".acc-trigger", has_text="Psychology").first.click()
+            page.clock.run_for(10500)  # The invitation's first turn, at the top of the page.
+            page.wait_for_timeout(400)
+            look("invitation at the top")
+            end = page.evaluate("document.documentElement.scrollHeight - innerHeight")
+            for y in sorted({0, end // 3, 2 * end // 3, end}):
+                where = f"scrolled {y} px"
+                page.mouse.move(1, 1)
+                page.evaluate(f"scrollTo(0, {y}); dispatchEvent(new Event('scroll'))")
+                page.wait_for_timeout(400)
+                look(f"launcher at {where}", "#just-os-btn")
+                look(f"back to top at {where}", ".clusters-back-to-top")
+                for turn in range(2):  # One of two turns of its cycle shows the invitation, where it may show.
+                    page.clock.run_for(10000)
+                    page.wait_for_timeout(400)
+                    look(f"invitation at {where}")
+                page.hover("#just-os-btn")
+                page.wait_for_timeout(400)
+                look(f"hover label at {where}")
+                page.mouse.move(1, 1)
+                page.keyboard.press("Tab")  # Keyboard use first, so that the launcher's focus shows as it would.
+                page.focus("#just-os-btn")
+                page.wait_for_timeout(400)
+                look(f"focus label at {where}")
+                page.evaluate("document.activeElement.blur()")
+            if path == "clusters/" and width < 992:
+                toggle = page.locator("#clusters-mobile-toggle")
+                toggle.scroll_into_view_if_needed()
+                toggle.click()
+                page.evaluate("scrollBy(0, 600)")
+                page.wait_for_timeout(400)
+                look("back to top over the open drawer", ".clusters-back-to-top")
+                look("launcher over the open drawer", "#just-os-btn")
+            for state, items in covered.items():
+                expect(False, f"{path} at {width} px, {state}: covers {', '.join(sorted(set(items))[:3])}")
+            if not covered:
+                expect(True, f"{path} at {width} px covers nothing")
         page.context.close()
+    expect(invited, f"the invitation shows where there is room for it ({', '.join(sorted(invited)[:3]) or 'nowhere'})")
 
 
 # Pages of cards or lists, with the element that holds them: a wide screen is not to leave them in the reading column.
@@ -1270,7 +1361,8 @@ def main():
         check_home(browser, base, failures)
         print("Reading on a phone")
         check_phone_reading(browser, base, failures)
-        check_launcher_clear(browser, base, failures)
+        print("Floating controls")
+        check_floating_controls(browser, base, failures)
         check_directory_widths(browser, base, failures)
         print("Specialist resources on cluster pages")
         check_specialist_cards(browser, base, failures)

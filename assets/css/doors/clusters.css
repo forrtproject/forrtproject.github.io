@@ -2356,11 +2356,20 @@ h1.clusters-site-heading.clusters-hub-page__title {
   .clusters-layout{--clusters-controls-height:0px!important}
 }
 
-/* Clear of the chat launcher, and of the cookie banner while it is open. */
-.clusters-back-to-top.clusters-back-to-top{bottom:calc(92px + var(--banner,0px));right:20px}
-@media (max-width:760px){
-  .clusters-back-to-top.clusters-back-to-top{bottom:calc(80px + var(--banner,0px));right:12px}
+/* Back to top rests in the margin beside the fields or clusters, which .cluster-full-width widens by 15 px
+   (35 px on phones, 47 px or more on laptops, 80 px from 1440), so it never covers text or a control.
+   clusters-page.js shows it only alongside that section. It sits above the chat launcher, clear of the cookie banner,
+   and its focus ring stays inside it. */
+.clusters-back-to-top.clusters-back-to-top{right:6px;bottom:calc(84px + var(--banner,0px));width:36px;height:36px;font-size:14px;background:var(--ink);box-shadow:none}
+.clusters-back-to-top.clusters-back-to-top:focus{outline:none}
+.clusters-back-to-top.clusters-back-to-top:focus-visible{outline:2px solid #fff;outline-offset:-5px}
+@media (min-width:1440px){
+  .clusters-back-to-top.clusters-back-to-top{right:20px;bottom:calc(92px + var(--banner,0px));width:44px;height:44px;font-size:16px}
 }
+@media (max-width:760px){
+  .clusters-back-to-top.clusters-back-to-top{right:4px;bottom:calc(80px + var(--banner,0px));width:28px;height:28px;font-size:13px}
+}
+body.clusters-mobile-nav-open .clusters-back-to-top{display:none}
 .sc-description,.fc-summary,.fc-title{font-size:16px}
 
 /* Explanations inside the panels keep to the reading measure of .article-style; the cards and

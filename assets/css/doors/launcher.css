@@ -11,7 +11,10 @@
 #just-os-widget:hover #just-os-dismiss,#just-os-dismiss:focus-visible{opacity:1}
 #just-os-dismiss:hover{background:var(--ink);color:#fff}
 #just-os-bubble{position:absolute;inset-inline-end:70px;top:14px;padding:6px 12px;background:#fff;border:1.5px solid var(--ink);border-radius:999px;color:var(--ink);font-size:15px;font-weight:600;line-height:1.3;white-space:nowrap;opacity:0;transform:translateX(-6px);transition:opacity .25s ease,transform .25s ease;pointer-events:none}
-#just-os-btn:hover #just-os-bubble,.bubble-visible{opacity:1!important;transform:none!important}
+/* The bubble never covers the page. The invitation shows only where site.js finds empty space under it,
+   and the hover or focus label only where the margin holds it beside the button: from 1800 px, as .wrap is at most 1280 px wide. */
+.bubble-visible{opacity:1!important;transform:none!important}
+@media (min-width:1800px){#just-os-btn:is(:hover,:focus-visible) #just-os-bubble{opacity:1;transform:none}}
 #just-os-widget.is-offline #just-os-img{filter:grayscale(1);opacity:.7}
 #just-os-offline-badge{position:absolute;inset-block-end:-2px;inset-inline-start:-2px;width:22px;height:22px;display:flex;align-items:center;justify-content:center;background:#fff;border:1.5px solid var(--ink);border-radius:50%;color:var(--urgent)}
 #just-os-offline-badge svg{width:14px;height:14px}
@@ -34,4 +37,12 @@
   #just-os-img{width:20px;height:20px}
   #just-os-dismiss{display:none}
   #just-os-bubble{inset-inline-end:32px;top:10px}
+  /* The ring stays inside the tab, which an outside ring would take off the screen and over the page. */
+  #just-os-btn:focus-visible{outline-offset:-3px}
+}
+/* Phones have a 20 px margin (base.css), so the tab is 20 px wide and stays off the cards. */
+@media (max-width:760px){
+  #just-os-btn{width:20px}
+  #just-os-img{width:16px;height:16px}
+  #just-os-bubble{inset-inline-end:28px}
 }
