@@ -2363,7 +2363,7 @@ h1.clusters-site-heading.clusters-hub-page__title {
 .clusters-back-to-top.clusters-back-to-top{right:6px;bottom:calc(84px + var(--banner,0px));width:36px;height:36px;font-size:14px;background:var(--ink);box-shadow:none}
 .clusters-back-to-top.clusters-back-to-top:hover{background:var(--link)}
 .clusters-back-to-top.clusters-back-to-top:focus{outline:none}
-.clusters-back-to-top.clusters-back-to-top:focus-visible{outline:2px solid #fff;outline-offset:-5px}
+.clusters-back-to-top.clusters-back-to-top:focus-visible{outline:2px solid #fff;outline-offset:-5px;border-radius:999px}
 @media (min-width:1440px){
   .clusters-back-to-top.clusters-back-to-top{right:20px;bottom:calc(92px + var(--banner,0px));width:44px;height:44px;font-size:16px}
 }
