@@ -41,8 +41,12 @@
       });
     }
 
+    var returnTo = null;
+
     function applyChoice(status) {
       if (status === "allow") startAnalytics(); else stopAnalytics();
+      if (returnTo) returnTo.focus();
+      returnTo = null;
     }
 
     window.addEventListener("load", function () {
@@ -55,6 +59,13 @@
         },
         theme: "classic",
         compliance: { "opt-in": '<div class="cc-compliance">{{ "{{deny}}{{allow}}" | safeJS }}</div>' },
+        {{/* The plug-in's own buttons are links with no address, which Enter cannot press, and its labels don't match what they say. */}}
+        elements: {
+          allow: '<button type="button" class="cc-btn cc-allow">{{ "{{allow}}" | safeJS }}</button>',
+          deny: '<button type="button" class="cc-btn cc-deny">{{ "{{deny}}" | safeJS }}</button>',
+          messagelink: '<span id="cookieconsent:desc" class="cc-message">{{ "{{message}}" | safeJS }} <a class="cc-link" href="{{ "{{href}}" | safeJS }}">{{ "{{link}}" | safeJS }}</a></span>'
+        },
+        window: '<div role="dialog" aria-live="polite" aria-label="{{ i18n "cookie_settings" }}" aria-describedby="cookieconsent:desc" class="cc-window {{ "{{classes}}" | safeJS }}">{{ "{{children}}" | safeJS }}</div>',
         content: {
           message: {{ i18n "cookie_message" }},
           allow: {{ i18n "cookie_allow" }},
@@ -70,7 +81,9 @@
           var link = event.target.closest && event.target.closest("[data-cookie-settings]");
           if (!link) return;
           event.preventDefault();
+          returnTo = link;
           popup.open();
+          popup.element.querySelector(".cc-deny").focus();
         });
       });
     });
