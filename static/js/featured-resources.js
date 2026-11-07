@@ -708,6 +708,10 @@
       });
     }
 
+    /* Start in the state the controls show: specialist resources stay hidden
+       until their checkbox is ticked. Only pages with the checkbox can reveal them. */
+    if (specCheckbox) applyGlobalFilters();
+
     function applyGlobalFilters() {
       var activeFocus = 'all';
       if (focusGroup) {
