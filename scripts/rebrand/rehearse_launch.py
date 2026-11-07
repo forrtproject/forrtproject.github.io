@@ -19,14 +19,14 @@ Nothing is pushed and no workflow is dispatched. The script
    compare_builds.py against main and against baseline/paths.txt;
 5. checks what only production shows: noindex, canonical and og:url hosts, sitemap size,
    robots.txt and any `/rebrand-doors` left in the output;
-6. sorts the data artifact's files by how they differ from the Doors checkout and, if any would
-   revert or resurrect a Doors file, builds the merge again without them and lists the output that
+6. sorts the data artifact's files by how they differ from the launch merge and, if any would
+   revert or resurrect a file there, builds the merge again without them and lists the output that
    changes;
 7. serves the build on localhost and loads sample pages in Chromium, listing every request to
    another host before any choice is made on a banner.
 
 Results go to <work>/logs and <work>/summary.json. The worktrees, branch, artifacts, builds and
-Hugo are deleted at the end unless --keep is given. Exit status 1 means a hard check failed.
+Hugo are deleted at the end, also after a failure, unless --keep is given. Exit status 1 means a hard check failed.
 """
 
 import argparse
@@ -122,7 +122,9 @@ def newest_artifact(name, branch):
     sys.exit(f"No unexpired {name} from a successful run on {branch}")
 
 
-def download(name, run_id, dest):
+def download(name, run_id, artifacts):
+    """Download once per run id, so a reused --work never builds from another run's artifact."""
+    dest = artifacts / f"{name}-{run_id}"
     if not dest.exists() or not any(dest.iterdir()):
         dest.mkdir(parents=True, exist_ok=True)
         run(["gh", "run", "download", str(run_id), "-n", name, "-D", dest])
@@ -301,6 +303,7 @@ def production_checks(main_public, launch_public):
     hard = (result["noindex_pages"]["launch_only"] or result["canonical_off_site"]["launch_only"]
             or result["og_url_off_site"] or undoored or old_refs
             or result["sitemap_urls"]["off_site"] or result["sitemap_urls"]["no_built_file"]
+            or result["sitemap_urls"]["only_main"] or result["sitemap_urls"]["only_launch"]
             or result["rebrand_doors_in_output"]
             or result["google_fonts_in_output"]
             or abs(len(launch_urls) - len(main_urls)) > 0.02 * max(len(main_urls), 1))
@@ -327,12 +330,12 @@ def blob_ids(ref):
 
 
 def classify_artifact(data_dir, main_ref, doors_ref):
-    """Sort each artifact file by how it relates to the Doors and main checkouts.
+    """Sort each artifact file by how it relates to the launch merge (`doors_ref`) and main.
 
-    unchanged: same as Doors. fresh: differs from Doors, Doors matches main (new data, as on main).
-    reverted: Doors changed it and the artifact restores main's copy. overridden: Doors changed it
-    and the artifact replaces it with something else. resurrected: Doors deleted it, main has it.
-    new: in neither checkout (generated only).
+    unchanged: same as the merge. fresh: differs from the merge, which matches main (new data, as on
+    main). reverted: the merge changed it and the artifact restores main's copy. overridden: the
+    merge changed it and the artifact replaces it with something else. resurrected: the merge
+    deleted it, main has it. new: in neither checkout (generated only).
     """
     doors_blobs, main_blobs = blob_ids(doors_ref), blob_ids(main_ref)
     groups = {key: [] for key in ("unchanged", "fresh", "reverted", "overridden", "resurrected", "new")}
@@ -366,8 +369,8 @@ def diff_trees(a, b):
 
 
 def artifact_ab(launch_dir, groups, doors_ref, hugo, logs):
-    """Rebuild the launch with reverted and resurrected files set back to Doors, and list the output
-    that changes. An empty list means the stale files do not reach the site."""
+    """Rebuild the launch with reverted and resurrected files set back to the merge (`doors_ref`),
+    and list the output that changes. An empty list means the stale files do not reach the site."""
     suspects = groups["reverted"] + groups["overridden"] + groups["resurrected"]
     if not suspects:
         return []
@@ -442,6 +445,24 @@ def main():
         sys.exit("--work must be outside the repository")
     logs = work / "logs"
     logs.mkdir(parents=True, exist_ok=True)
+    try:
+        failed = rehearse(args, work, logs)
+    finally:
+        # Also after a failure part-way, so no worktree, branch or download is left behind.
+        if not args.keep:
+            for name in ("main", "launch"):
+                if (work / name).exists():
+                    git("worktree", "remove", "--force", str(work / name), check=False)
+            git("worktree", "prune", check=False)
+            git("branch", "-D", BRANCH, check=False)
+            for name in ("artifacts", "hugo", "public-launch-with-artifact"):
+                shutil.rmtree(work / name, ignore_errors=True)
+    print("FAILED: " + "; ".join(failed) if failed else "OK: nothing would fail or regress at launch.")
+    sys.exit(1 if failed else 0)
+
+
+def rehearse(args, work, logs):
+    """Run every step; return the list of hard failures."""
     git("fetch", "origin", "--quiet")
     summary = {"main_ref": git("rev-parse", args.main_ref), "doors_ref": git("rev-parse", args.doors_ref)}
     failed = []
@@ -455,13 +476,15 @@ def main():
     ann_run, ann_date = (args.announcements_run, None) if args.announcements_run else newest_artifact("announcements-artifact", "main")
     summary["artifacts"] = {"data": {"run": data_run, "created": data_date},
                             "announcements": {"run": ann_run, "created": ann_date}}
-    data_dir = download("data-artifact", data_run, work / "artifacts" / "data")
-    ann_dir = download("announcements-artifact", ann_run, work / "artifacts" / "announcements")
+    data_dir = download("data-artifact", data_run, work / "artifacts")
+    ann_dir = download("announcements-artifact", ann_run, work / "artifacts")
 
     print("Merging and building ...", flush=True)
     main_dir, launch_dir, same_tree = make_checkouts(work, args.main_ref, args.doors_ref)
-    summary["merge"] = {"head": git("rev-parse", "HEAD", cwd=launch_dir), "tree_equals_doors": same_tree}
-    groups = classify_artifact(data_dir, args.main_ref, args.doors_ref)
+    merge_head = git("rev-parse", "HEAD", cwd=launch_dir)
+    summary["merge"] = {"head": merge_head, "tree_equals_doors": same_tree}
+    # Judge the artifact against the merge that will be deployed, not the branch alone.
+    groups = classify_artifact(data_dir, args.main_ref, merge_head)
     summary["artifact_files"] = {key: (len(value) if key in ("unchanged", "fresh", "new") else value)
                                  for key, value in groups.items()}
     publics = {}
@@ -479,6 +502,7 @@ def main():
                                     ("compare-baseline", launch_dir / "scripts/rebrand/baseline/paths.txt", ["--paths-only"])):
         result = run(["python3", compare, *extra, reference, publics["launch"]], log=logs / f"{label}.log", check=False)
         summary[label] = {"exit": result.returncode, "log": str(logs / f"{label}.log")}
+    # The baseline is a fixed record of 3 November; main has changed since, so it is reported, not judged.
     failed += ["compare_builds against main"] if summary["compare-main"]["exit"] else []
 
     summary["structured_data"] = {label: inventory(public)["structured_data"] for label, public in publics.items()}
@@ -492,22 +516,14 @@ def main():
         summary["third_party_before_consent"] = third_party_requests(publics["launch"])
 
     print("Rebuilding without stale artifact files ...", flush=True)
-    summary["stale_artifact_output_changes"] = artifact_ab(launch_dir, groups, args.doors_ref, hugo, logs)
+    summary["stale_artifact_output_changes"] = artifact_ab(launch_dir, groups, merge_head, hugo, logs)
     failed += ["stale artifact files change the output"] if summary["stale_artifact_output_changes"] else []
 
     summary["failed"] = failed
     (work / "summary.json").write_text(json.dumps(summary, indent=1, ensure_ascii=False), encoding="utf-8")
     print(json.dumps({k: v for k, v in summary.items() if k != "production"}, indent=1, ensure_ascii=False)[:6000])
     print(f"\nFull results: {work / 'summary.json'}; logs in {logs}")
-
-    if not args.keep:
-        for path in (main_dir, launch_dir):
-            git("worktree", "remove", "--force", str(path), check=False)
-        git("branch", "-D", BRANCH, check=False)
-        for name in ("artifacts", "hugo", "public-launch-with-artifact"):
-            shutil.rmtree(work / name, ignore_errors=True)
-    print("FAILED: " + "; ".join(failed) if failed else "OK: nothing would fail or regress at launch.")
-    sys.exit(1 if failed else 0)
+    return failed
 
 
 if __name__ == "__main__":

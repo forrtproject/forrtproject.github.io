@@ -104,6 +104,12 @@ def production_expectation(path, expected, sisters):
     return "//" + first if first in sisters else expected
 
 
+def off_origin(url, base):
+    """True for an absolute URL on another scheme or host than the base. Relative URLs stay on it."""
+    parts, root = urlsplit(url), urlsplit(base)
+    return bool(parts.netloc) and (parts.scheme, parts.netloc) != (root.scheme, root.netloc)
+
+
 def redirect_ok(landed, want, expected):
     ok = landed.rstrip("/") == want.rstrip("/")
     # A sister site may forward within itself once it has been reached.
@@ -130,6 +136,8 @@ def check_redirects(browser, base, failures, production=False):
             landed += "?" + urlsplit(page.url).query
         want = redirect_target(base, expected)
         ok = redirect_ok(landed, want, expected)
+        if production and off_origin(page.url, base):
+            ok, landed = False, page.url
         print(f"  {'ok ' if ok else 'BAD'} {path} -> {landed}")
         if not ok:
             failures.append(f"redirect {path} landed on {landed}, wanted {want}")
@@ -227,7 +235,7 @@ def check_newsletter(browser, base, failures):
     context.close()
 
 
-def check_search(browser, base, failures):
+def check_search(browser, base, failures, production=False):
     context = browser.new_context(viewport={"width": 1440, "height": 900})
     page = context.new_page()
     page.route("**/*", lambda route: route.abort() if BLOCK.search(route.request.url) else route.continue_())
@@ -243,7 +251,7 @@ def check_search(browser, base, failures):
     first = page.locator(".search-hit a").first.get_attribute("href")
     count = page.locator(".search-hit").count()
     print(f"  Search: {count} hits, first {first}")
-    if not first or not urlsplit(first).path.startswith(urlsplit(base).path):
+    if not first or not urlsplit(first).path.startswith(urlsplit(base).path) or (production and off_origin(first, base)):
         failures.append(f"search result outside the preview: {first}")
     if page.request.get(page.url.split("?")[0]).status != 200:
         failures.append("search page did not load")
@@ -268,7 +276,7 @@ def main():
         ("Links, assets, noindex" + (", canonical" if args.production else ""),
          lambda browser: check_links_assets(browser, base, failures, args.production)),
         ("Newsletter", lambda browser: check_newsletter(browser, base, failures)),
-        ("Search", lambda browser: check_search(browser, base, failures)),
+        ("Search", lambda browser: check_search(browser, base, failures, args.production)),
     ]
     with sync_playwright() as playwright:
         browser = playwright.chromium.launch()
@@ -280,7 +288,8 @@ def main():
                 # On launch day one missing element should not hide the other results.
                 if not args.production:
                     raise
-                failures.append(f"{title} stopped: {str(error).splitlines()[0][:200]}")
+                message = (str(error).splitlines() or [type(error).__name__])[0]
+                failures.append(f"{title} stopped: {message[:200]}")
         browser.close()
     print(json.dumps({"failures": failures}, indent=1))
     sys.exit(1 if failures else 0)

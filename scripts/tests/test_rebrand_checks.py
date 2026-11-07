@@ -12,7 +12,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "rebrand"))
 from check_design import framing_problems  # noqa: E402
 from check_internal_links import broken_target, extract_links, find_broken  # noqa: E402
 from check_preview import (  # noqa: E402
-    canonical_problem, production_expectation, redirect_ok, redirect_target, resolve_base, robots_problem,
+    canonical_problem, off_origin, production_expectation, redirect_ok, redirect_target, resolve_base, robots_problem,
 )
 from check_source_rules import GENERATED, absolute_url_findings  # noqa: E402
 from compare_builds import compare_heads, compare_paths, compare_structured  # noqa: E402
@@ -370,6 +370,13 @@ class PreviewCheckModeTests(unittest.TestCase):
         self.assertEqual(production_expectation("tag/", "tags/", sisters), "tags/")
         # Sister-site names are case-sensitive paths, as on GitHub Pages.
         self.assertEqual(production_expectation("FReD/", "//fred", sisters), "//fred")
+
+    def test_off_origin(self):
+        base = "https://forrt.org/"
+        self.assertFalse(off_origin("https://forrt.org/resources/", base))
+        self.assertFalse(off_origin("/glossary/english/preregistration/", base))
+        self.assertTrue(off_origin("https://example.org/resources/", base))
+        self.assertTrue(off_origin("http://forrt.org/resources/", base))
 
     def test_redirect_ok(self):
         self.assertTrue(redirect_ok("/resources", "/resources/", "resources/"))
