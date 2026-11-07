@@ -1099,7 +1099,7 @@ def check_conference(browser, base, failures):
 
 
 # The explanations inside cluster and discipline panels keep to the reading measure (.article-style).
-PANEL_MEASURE = 600
+PANEL_MEASURE = 580
 PANEL_TEXT = """() => [...document.querySelectorAll('.cluster-description, .acc-body:not(.acc-collapsed) .sc-description')]
   .filter((el) => el.getClientRects().length).map((el) => Math.round(el.getBoundingClientRect().width))"""
 
@@ -1140,14 +1140,17 @@ def check_review_pages(browser, base, failures):
     try:
         page.wait_for_function(f"""() => {{ const w = document.querySelector("{frame}").contentWindow;
           const m = w && w.HTMLWidgets && w.HTMLWidgets.find('.leaflet')?.getMap(); return m && m.getMinZoom() < 2; }}""", timeout=30000)
+        ready = True
     except PlaywrightError:
-        pass
-    found = page.frame_locator(frame).locator("body").evaluate("""() => {
-      const m = HTMLWidgets.find('.leaflet').getMap(), b = m.getBounds();
-      return {span: b.getEast() - b.getWest(), zoomOut: m.getZoom() > m.getMinZoom()};
-    }""")
-    expect(found["span"] >= 300, f"the community map opens on its members from America to New Zealand at 390: {found['span']:.0f} degrees across")
-    expect(found["zoomOut"], "the community map can zoom out from its first view at 390")
+        ready = False
+    expect(ready, "the community map is ready, with a minimum zoom below 2, within 30 s at 390")
+    if ready:
+        found = page.frame_locator(frame).locator("body").evaluate("""() => {
+          const m = HTMLWidgets.find('.leaflet').getMap(), b = m.getBounds();
+          return {span: b.getEast() - b.getWest(), zoomOut: m.getZoom() > m.getMinZoom()};
+        }""")
+        expect(found["span"] >= 300, f"the community map opens on its members from America to New Zealand at 390: {found['span']:.0f} degrees across")
+        expect(found["zoomOut"], "the community map can zoom out from its first view at 390")
     page.context.close()
 
 
