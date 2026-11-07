@@ -140,6 +140,7 @@ As of `r format(Sys.Date(), '%d %B %Y')`, FORRT has a total of `r count_projects
 
 ```{r Basic visualizations}
 # Contributors per project
+all_project_contributors <- project_contributors
 
 # Keep only the top 10 projects based on unique_contributors
 project_contributors <- project_contributors |>
@@ -190,12 +191,14 @@ roles_plot <- ggplot(role_distribution, aes(y = reorder(Role, n), x = n)) +
         plot.margin = margin(t = 10, r = 10, b = 10, l = 10))
 
 # Treemap: number of projects per contributor
-projects_per_person <- contributions_per_person |>
+# Distinct projects, as one person can have several records on one project
+projects_per_person <- contributions |>
+  summarise(Projects = n_distinct(`Project Name`), .by = c(Surname, `First name`)) |>
   mutate(
     label = case_when(
-      Contributions == 1 ~ "1 project",
-      Contributions >= 5 ~ "5 or more projects",
-      TRUE ~ str_c(Contributions, " projects")
+      Projects == 1 ~ "1 project",
+      Projects >= 5 ~ "5 or more projects",
+      TRUE ~ str_c(Projects, " projects")
     )
   ) |>
   count(label) |>
@@ -226,15 +229,15 @@ treemap_plot <- ggplot(projects_per_person, aes(area = n, fill = sort_order)) +
 ```
 
 
-```{r projects-plot, fig.alt = "Bar chart of contributors per project", fig.width = 10, fig.height = 7}
+```{r projects-plot, fig.alt = str_c("Contributors in FORRT's 10 biggest projects: ", str_c(project_contributors$`Project Name`, " ", project_contributors$unique_contributors, collapse = "; "), "."), fig.width = 10, fig.height = 7}
 projects_plot
 ```
 
-```{r treemap-plot, fig.alt = "Treemap of number of projects per contributor", fig.width = 10, fig.height = 7}
+```{r treemap-plot, fig.alt = str_c("Share of contributors by number of projects: ", str_c(projects_per_person$label, " ", projects_per_person$percent, "%", collapse = "; "), "."), fig.width = 10, fig.height = 7}
 treemap_plot
 ```
 
-```{r roles-plot, fig.alt = "Bar chart of contributions by Tenzing role", fig.width = 10, fig.height = 7}
+```{r roles-plot, fig.alt = str_c("Contributions by role: ", str_c(role_distribution$Role, " ", role_distribution$n, collapse = "; "), "."), fig.width = 10, fig.height = 7}
 roles_plot
 ```
 
@@ -242,4 +245,31 @@ roles_plot
 contributions_long <- contributions_long |>
   unite(Contributor, Surname, `First name`, sep = " ", remove = FALSE, na.rm = TRUE) |>
   mutate(Lead = if_else(Role %in% c("lead", "co-lead"), Role, "other"))
+```
+
+```{r page-data, results='asis'}
+# The numbers behind this page, for the Doors page to draw as text and bars of its own. An
+# HTML comment shows nothing on the current template, and index.md is already carried
+# between monthly runs by data-processing.yml.
+page_data <- list(
+  as_of = format(Sys.Date(), "%Y-%m-%d"),
+  projects = count_projects,
+  contributors = unique_contributors,
+  mean_contributions = round(mean_contributions_per_person, 2),
+  mean_contributors = round(mean_project_contributors),
+  per_project = lapply(seq_len(nrow(all_project_contributors)), function(i) {
+    list(name = as.character(all_project_contributors$`Project Name`[i]),
+         n = all_project_contributors$unique_contributors[i])
+  }),
+  projects_per_person = lapply(seq_len(nrow(projects_per_person)), function(i) {
+    list(label = projects_per_person$label[i], n = projects_per_person$n[i], percent = projects_per_person$percent[i])
+  }),
+  roles = lapply(seq_len(nrow(role_distribution)), function(i) {
+    list(name = role_distribution$Role[i], n = role_distribution$n[i])
+  })
+)
+
+cat("\n\n<!-- contributor-analysis-data ",
+    gsub(">", "\\u003e", jsonlite::toJSON(page_data, auto_unbox = TRUE), fixed = TRUE),
+    " -->\n", sep = "")
 ```
