@@ -1,4 +1,4 @@
-"""Tests for the Doors redesign's preview rewriter and build checks."""
+"""Tests for the build checks kept from the Doors redesign, and the path helpers they use."""
 
 import os
 import re
@@ -9,7 +9,6 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "rebrand"))
 
-from check_design import framing_problems  # noqa: E402
 from check_internal_links import broken_target, extract_links, find_broken  # noqa: E402
 from check_source_rules import GENERATED, absolute_url_findings  # noqa: E402
 from compare_builds import compare_heads, compare_paths, compare_structured  # noqa: E402
@@ -264,28 +263,6 @@ class InventoryTests(unittest.TestCase):
         self.assertIn("alternate:de=/de", tags)
         self.assertIn('{"@type":"X"}', tags)
         self.assertFalse([tag for tag in tags if "s.css" in tag or tag.startswith("viewport")])
-
-
-class NetworkFramingTests(unittest.TestCase):
-    def ink(self, left, right, top, bottom, core=0.4):
-        return {"left": left, "right": right, "top": top, "bottom": bottom, "width": 1000, "height": 700,
-                "core_across": core, "core_down": core}
-
-    def test_a_centred_network_that_fills_its_panel_passes(self):
-        self.assertEqual(framing_problems(self.ink(40, 960, 60, 640)), [])
-
-    def test_the_network_pressed_into_a_corner_fails(self):
-        problems = framing_problems(self.ink(650, 999, 450, 699))
-        self.assertTrue(any("fills only" in problem for problem in problems))
-        self.assertTrue(any("off centre" in problem for problem in problems))
-
-    def test_outliers_at_the_edges_do_not_hide_a_dense_lump(self):
-        problems = framing_problems(self.ink(40, 960, 60, 640, core=0.2))
-        self.assertTrue(any("bunches up" in problem for problem in problems))
-
-    def test_a_blank_canvas_fails(self):
-        self.assertEqual(framing_problems({"left": 1000, "right": -1, "top": 700, "bottom": -1, "width": 1000, "height": 700}),
-                         ["nothing is drawn"])
 
 
 class SourceRuleTests(unittest.TestCase):
