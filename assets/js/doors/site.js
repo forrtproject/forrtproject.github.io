@@ -362,7 +362,8 @@ if (chatWidget) {
     offered = true;
     if (!shown && overEmptySpace(chatBubble.getBoundingClientRect())) chatBubble.classList.add('bubble-visible');
   }, 10000);
-  addEventListener('scroll', () => { if (!chatFailed) chatBubble.classList.remove('bubble-visible'); }, { passive: true });
+  // Any scroll hides it, and the message that the chat did not load, which replaces it after a click.
+  addEventListener('scroll', () => chatBubble.classList.remove('bubble-visible'), { passive: true });
   if (chatButton.tagName === 'BUTTON') {
     chatButton.addEventListener('click', () => {
       if (window.toggleJustOS) {
