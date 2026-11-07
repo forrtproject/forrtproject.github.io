@@ -53,11 +53,7 @@ This same pedagogic activity can then be expanded to teach about open science re
 
 ![This activity asks students to write a preregistration for a replication study, using the As Predicted dot org template. The learning outcomes for this are: To understand how to transparently plan a study. To demonstrate understanding of how open science practices can aid transparency, replication, and reproducibility. To interpret research articles and apply this learning to conducting independent research studies.](aspredicted-template.webp)
 
-In addition to these pedagogic resources, the book also contains top tips for implementing open science practices into student’s research training, including for preprints, preregistration, Registered Reports, and open materials, data, and code. Whilst the focus is mainly on quantitative research, it also provides links and resources to qualitative research. In addition, throughout it discusses the many different organisations and initiatives that have shaped my own learning of open science (see Box 3), thus providing a detailed overview of everything we have learnt so far from the advent of the replication crisis through to current open science reform.
-
-**Box 3. Key resources to get started with open science.**
-
-{{% alert note %}}
+{{% callout title="Box 3. Key resources to get started with open science" %}}
 
 **Charlotte's Key Open Science Resources**
 
@@ -70,7 +66,9 @@ In addition to these pedagogic resources, the book also contains top tips for im
 - The [Open Research Calendar](https://openresearchcalendar.org/)
 - New meta-research articles via [MetaArXiv](https://osf.io/preprints/metaarxiv/)
 
-{{% /alert %}}
+{{% /callout %}}
+
+In addition to these pedagogic resources, the book also contains top tips for implementing open science practices into student’s research training, including for preprints, preregistration, Registered Reports, and open materials, data, and code. Whilst the focus is mainly on quantitative research, it also provides links and resources to qualitative research. In addition, throughout it discusses the many different organisations and initiatives that have shaped my own learning of open science (see Box 3), thus providing a detailed overview of everything we have learnt so far from the advent of the replication crisis through to current open science reform.
 
 ## Become a student of open science!
 The replication crisis and open science reform is not currently embedded within the teaching of psychology. It is my hope that with all of these wonderful new and ever-evolving resources, today’s students become critical consumers of science and pave the way to creating a truly robust, transparent, replicable, reproducible and representative psychological science.

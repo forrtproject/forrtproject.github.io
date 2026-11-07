@@ -28,8 +28,9 @@ Hard checks (exit 1 if any fails):
      non-empty meta description (#864).
   10. No meta description contains a double-escaped entity such as `&amp;ldquo;`
      (#864). Text that merely looks like an entity (`&name;`) is not one.
+  11. No page has more than one <h1> (#928).
 
-Report-only sections (never fail): pages with zero or several <h1>, the
+Report-only sections (never fail): pages with no <h1>, the
 site-wide share of images that carry both width and height, pages whose
 og:image is not a PNG or JPEG, and indexable pages whose description repeats
 the homepage's, is shared with another page or contains HTML markup as text.
@@ -388,6 +389,7 @@ def main(public_dir):
         "7. breadcrumb JSON-LD is well formed": check_breadcrumbs(pages),
         "9. every indexable page has a meta description": check_description_present(pages),
         "10. no double-escaped entity in a meta description": check_description_entities(pages),
+        "11. no page has several <h1>": [p.path for p in pages if len(p.h1_texts) > 1],
     }
     conditional = check_conditional_assets(pages)
     results["3. conditional highlight.js / mermaid loading"] = [
@@ -413,7 +415,6 @@ def main(public_dir):
 
     print("\nReport only (never fails)")
     print_items("pages with no <h1>", [p.path for p in pages if not p.h1_texts])
-    print_items("pages with several <h1>", [p.path for p in pages if len(p.h1_texts) > 1])
     all_imgs = sum(len(p.imgs) for p in pages)
     unsized = sum(len(p.imgs_without_dims) for p in pages)
     if all_imgs:

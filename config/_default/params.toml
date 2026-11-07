@@ -13,7 +13,7 @@
 #   Latest themes (may require updating): https://sourcethemes.com/academic/themes/
 #   Browse built-in themes in `themes/academic/data/themes/`
 #   Browse user installed themes in `data/themes/`
-theme = "forrt"
+theme = "doors"
 logo = "FORRT.svg"
 # Enable users to switch between day and night mode?
 day_night = false
@@ -22,11 +22,11 @@ day_night = false
 #   Latest font sets (may require updating): https://sourcethemes.com/academic/themes/
 #   Browse built-in font sets in `themes/academic/data/fonts/`
 #   Browse user installed font sets in `data/fonts/`
-font = "forrt"
+font = "doors"
 
 # Choose a font size.
 # Sizes: XS (extra small), S (small), M (medium), L (large - DEFAULT), XL (extra large)
-font_size = "L"
+font_size = "M"
 
 ############################
 ## Basic Info
@@ -332,3 +332,25 @@ plugins_js  = []
 [marketing]
   google_analytics = "G-2BTFVS6SPM"
   google_tag_manager = "G-2BTFVS6SPM"
+
+############################
+## Doors redesign
+############################
+[doors]
+  # The 3D castle on the home page. Set to false to show only the still image.
+  castle = true
+  # Pages whose tables, maps, cards or lists need the full width: their paragraphs stay at reading width.
+  wide_pages = ["/about/visitors", "/replication-hub/large-scale-replication-projects", "/citation-politics/toolkit", "/publications", "/about/partnerships", "/contributors", "/about/community", "/about/teams", "/cv", "/manuscript", "/about/booklet", "/just_os_chatbot", "/community-map", "/lesson-plans", "/neurodiversity-lessonbank/implicit_bias", "/neurodiversity-lessonbank/masterstools", "/neurodiversity-lessonbank/diversity-and-research", "/neurodiversity-lessonbank/community-psychology-diversity", "/neurodiversity-lessonbank/generalizability", "/ai-metascience", "/syllabus", "/neurodiversity-lessonbank"]
+  # Direct actions under a tool page's title (layouts/partials/doors/page_actions.html); the first is the main one.
+  [[doors.page_actions]]
+    path = "/awop"
+    links = [{label = "Open the AWoP web app", url = "/awop_app/"}, {label = "Read the paper", url = "https://doi.org/10.31222/osf.io/af4nk_v2"}]
+  [[doors.page_actions]]
+    path = "/citation-politics"
+    links = [{label = "Open the toolkit", url = "/citation-politics/toolkit/"}, {label = "Read the paper", url = "https://doi.org/10.31222/osf.io/qjecy_v2"}]
+  [[doors.page_actions]]
+    path = "/replication-hub/flora"
+    links = [{label = "Explore FLoRA", url = "https://forrt.org/flora-explorer/"}, {label = "Look up a study", url = "https://forrt.org/flora-replication-atlas/"}, {label = "Submit a replication", url = "/replication-hub/submit/"}]
+  [[doors.page_actions]]
+    path = "/nowherelab"
+    links = [{label = "Join Nowhere Lab by email", url = "mailto:priyasilverstein@gmail.com"}, {label = "Open the Slack channel", url = "https://forrt.slack.com/archives/C0B0FKG3GH2"}]

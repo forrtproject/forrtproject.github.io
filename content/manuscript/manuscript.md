@@ -85,7 +85,7 @@ FORRT is an evolving, community-driven framework comprised of educators from mul
 
 {{< expand "Read FORRT's manuscript (.pdf)" >}}
 
-# {{< embed name="forrt_v1.pdf" height=1000 >}}
+{{< embed name="forrt_v1.pdf" height=1000 >}}
 
 {{< /expand >}}
 

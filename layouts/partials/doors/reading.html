@@ -1,0 +1,44 @@
+{{/* The reading layout: one narrow column, with a side card when there is something to put in it.
+     Articles and every plain page or section with its own text use it. */}}
+{{/* Hugo's contents, or the headings a shortcode wrote, as on the summaries. */}}
+{{ $body := partial "doors/content" .Content }}
+{{/* The summaries mark their DEI entries with ⌺, which few fonts have and which shows as an empty box. */}}
+{{ $body = replace $body "⌺" `<span class="dei-mark">DEI</span>` | safeHTML }}
+{{ $contents := cond (findRE `(?i)<h1\b` .Content 1 | len | lt 0) slice (findRE `<li` .TableOfContents 1) }}
+{{ $written := findRESubmatch `<h2[^>]*\bid="?([^"> ]+)"?[^>]*>([\s\S]*?)</h2>` $body }}
+{{/* A short page's real sections can sit a level down. */}}
+{{ if lt (len $written) 4 }}{{ $written = findRESubmatch `<h[23][^>]*\bid="?([^"> ]+)"?[^>]*>([\s\S]*?)</h[23]>` $body }}{{ end }}
+{{ $headings := cond (gt (len $contents) 0) (findRE `<h[23][ >]` .Content) $written }}
+{{ $hasDates := and .Params.date (not (in (slice "page") .Type)) }}
+{{ $wide := in site.Params.doors.wide_pages .Path }}
+{{ $hasCard := and (not $wide) (or $hasDates (gt (len $headings) 1)) }}
+{{ $hasCallouts := and (not $wide) (strings.Contains $body `<aside class="callout`) }}
+{{ $card := "" }}
+{{ if $hasCard }}{{ $card = partial "doors/reading_card" (dict "page" . "hasDates" $hasDates "headings" $headings "contents" $contents "written" $written) }}{{ end }}
+<div class="wrap">
+  <div class="article-layout{{ if $hasCallouts }} article-layout-callouts{{ else if not $hasCard }} article-layout-single{{ end }}{{ if $wide }} article-layout-wide{{ end }}">
+    {{ if $hasCallouts }}{{ $card }}{{ end }}
+    <article class="reading">
+      {{ if not .Params.hide_page_header }}
+        {{ partial "doors/article_header" . }}
+      {{ end }}
+      {{ partial "doors/page_actions" . }}
+      {{/* On phones the side card falls below the text, too late to help on a long page. */}}
+      {{ if and (or $hasCard $wide) (gt (len $headings) 1) }}
+      <details class="toc-phone">
+        <summary>On this page</summary>
+        <div class="article-toc">{{ replace (partial "doors/reading_toc" (dict "page" . "contents" $contents "written" $written)) `id="TableOfContents"` `aria-label="On this page"` | safeHTML }}</div>
+      </details>
+      {{ end }}
+      <div class="article-style">
+        {{ $body }}
+      </div>
+      {{ if and (eq .Type "post") (le .ReadingTime 1) (not .Params.image.preview_only) (not .Params.hide_page_header) }}{{ partial "doors/featured_image" . }}{{ end }}
+      <div class="article-foot">
+        {{ if .IsPage }}<p class="share-link"><button class="copy-link" type="button" data-copy-link="{{ .Permalink }}">Copy article link</button> <span role="status"></span></p>{{ end }}
+        {{ partial "page_footer" . }}
+      </div>
+    </article>
+    {{ if not $hasCallouts }}{{ $card }}{{ end }}
+  </div>
+</div>

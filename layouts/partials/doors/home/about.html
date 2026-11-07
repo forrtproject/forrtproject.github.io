@@ -1,0 +1,35 @@
+{{/* The band lower on the page: quotes that change one at a time, the statement, FORWARD and the
+     figures. All the quotes sit in one grid cell, so the height is set by the longest and nothing
+     moves when they change. Without JavaScript, or under reduced motion, the first stays.
+     quotes.js changes them, and they obey the same pause control as the castle.
+     Context: content/home/5-about.md. */}}
+{{ $contributors := len (findRE `class="contributor-group"` (readFile "content/contributors/tenzing.md")) }}
+{{ $partners := len hugo.Data.partners }}
+<section class="wrap about" aria-labelledby="about-h">
+  <div class="about-statement">
+    <h2 id="about-h" class="visually-hidden">What FORRT stands for</h2>
+    <figure class="quotes" data-motion-host>
+      <div class="quote-stage" aria-live="off">
+        {{ range $i, $quote := .Params.quotes }}
+        <p class="quote{{ if eq $i 0 }} is-active{{ end }}">{{ $quote | safeHTML }}</p>
+        {{ end }}
+      </div>
+      <figcaption class="quotes-bar"><button class="motion-toggle" type="button" hidden>Pause animation</button></figcaption>
+    </figure>
+    <p>{{ .Params.statement }}</p>
+    {{ with .Params.statement_link }}{{ $link := partial "doors/link" . }}<a class="more" href="{{ $link.href }}">{{ $link.label }}</a>{{ end }}
+  </div>
+  <div class="forward">
+    <h3>{{ .Params.forward.title }}</h3>
+    <p>{{ .Params.forward.text }}</p>
+    <p class="forward-links">
+      {{ range .Params.forward.links }}{{ $link := partial "doors/link" . }}<a class="more" href="{{ $link.href }}">{{ $link.label }}</a>{{ end }}
+    </p>
+  </div>
+  <ul class="ledger">
+    <li><a href="{{ relref . "/contributors" }}">{{ lang.FormatNumber 0 $contributors }} people have contributed to FORRT projects</a></li>
+    <li><a href="{{ .Params.facts.projects_url | relLangURL }}">{{ .Params.facts.projects }}</a></li>
+    <li><a href="{{ relref . "/about/partnerships" }}">{{ $partners }} partner organisations and networks</a></li>
+    <li><a href="{{ .Params.facts.awards_url | relLangURL }}">{{ .Params.facts.awards }}</a></li>
+  </ul>
+</section>

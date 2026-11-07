@@ -50,4 +50,4 @@ subtitle = "Fill out the form below or ***[open the Google form in a new window]
  css_class = "text-center"
 +++
 
-{{< gform src="1FAIpQLSfY6yQ2givfg1TBoCuh_55HrUE7YsEjKAIj0-4MidII_3LSEg" width="100%" height="500px" alt="Loading..." >}}
+{{< gform src="1FAIpQLSfY6yQ2givfg1TBoCuh_55HrUE7YsEjKAIj0-4MidII_3LSEg" width="100%" height="900px" alt="Loading..." >}}

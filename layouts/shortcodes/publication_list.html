@@ -18,8 +18,8 @@
 <div class="pub-section-group">
     {{ $description := .Get "description" }}
     {{ if $title }}
-    <div class="section-heading" align="center">
-        <h1>{{ $title | markdownify }}</h1>
+    <div class="section-heading">
+        <h2>{{ $title | markdownify }}</h2>
         <hr>
         {{ if $description }}
         <div class="pub-section-description">

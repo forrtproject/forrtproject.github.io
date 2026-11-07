@@ -1,0 +1,16 @@
+# Doors theme metadata for the Academic theme's Sass variables. The design's own colours
+# are the CSS variables in assets/css/doors/tokens.css; these repeat the few it needs so
+# Bootstrap-based pages match until they are redesigned. Values from the identity guide.
+name = "doors"
+light = true
+
+primary = "#005a87"
+menu_primary = "#fefdf6"
+menu_text = "#262d35"
+menu_text_active = "#005a87"
+menu_title = "#262d35"
+home_section_odd = "#fefdf6"
+home_section_even = "#fefdf6"
+background = "#fefdf6"
+link = "#005a87"
+link_hover = "#262d35"

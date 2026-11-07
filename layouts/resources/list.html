@@ -1,0 +1,70 @@
+{{/* The curated resources directory. /resources/ and /resources/page/N/ carry their cards as
+     HTML, so search engines and visitors without JavaScript can walk the whole collection.
+     resources.js loads a small data file for filtering and a fuller one for searching on first
+     use, and keeps the state in the address, which is where the home page's topics link to. */}}
+{{ define "main" }}
+{{ $index := partialCached "doors/resource_index" . "resources" }}
+{{ $total := len $index.pages }}
+{{ $pager := .Paginate $index.pages 24 }}
+{{ $data := partialCached "doors/resource_data" (dict "index" $index) "resources" }}
+{{ $plate := resources.Get "images/doors/area-education.webp" }}
+<div class="wrap">
+  <header class="page-heading">
+    {{ partial "doors/crumbs" (dict "page" .) }}
+    <div class="heading-grid">
+      <div>
+        <h1>{{ .Params.heading }}</h1>
+        <p class="lede">{{ printf .Params.lede (lang.FormatNumber 0 $total) }}</p>
+      </div>
+      <figure class="heading-plate"><img src="{{ $plate.RelPermalink }}" alt="A brick pencil standing on an open green book." width="{{ $plate.Width }}" height="{{ $plate.Height }}"></figure>
+    </div>
+  </header>
+
+  <div class="directory" id="directory" data-directory-url="{{ $data.directory.RelPermalink }}" data-search-url="{{ $data.search.RelPermalink }}" data-list-url="{{ .RelPermalink }}" data-total="{{ $total }}">
+    <section class="filters" aria-label="Resource filters">
+      <details class="filter-drawer" id="filterDrawer">
+        <summary>Filter by type, level and cluster <span class="filter-badge" id="filterBadge"></span></summary>
+        {{ range $index.facets }}
+        <fieldset class="facet" data-facet="{{ .key }}">
+          <legend class="filter-title">{{ .name }}</legend>
+          <div class="chips">
+            {{ range .values }}<button class="chip" type="button" aria-pressed="false" data-value="{{ .slug }}">{{ .label }} <span class="chip-count">{{ .count }}</span></button>{{ end }}
+          </div>
+        </fieldset>
+        {{ end }}
+      </details>
+      {{/* Open on wider screens before the first paint, so the page does not jump. */}}
+      <script>if(matchMedia('(min-width:761px)').matches)document.getElementById('filterDrawer').open=true</script>
+      <noscript><p class="filter-note">Filters and search need JavaScript. Every resource is still listed in the pages below.</p></noscript>
+    </section>
+    <div class="catalogue">
+      <label for="resource-search" class="search-label">Search the collection</label>
+      <input class="resource-search" id="resource-search" type="search" placeholder="Try preregistration, data or Bayesian" aria-describedby="resultCount" autocomplete="off">
+      <div class="result-bar">
+        <p class="result-count" id="resultCount" role="status">{{ if gt $pager.TotalPages 1 }}Showing page {{ $pager.PageNumber }} of {{ $pager.TotalPages }}, from {{ lang.FormatNumber 0 $total }} resources{{ else }}Showing all {{ lang.FormatNumber 0 $total }} resources{{ end }}</p>
+        <button class="text-button" id="clearFilters" type="button" hidden>Reset filters</button>
+      </div>
+      <p class="active-filters" id="activeFilters" hidden></p>
+      <div class="res-grid" id="results">
+        {{ range $pager.Pages }}{{ partial "doors/resource_card" (index $index.items .RelPermalink) }}{{ end }}
+      </div>
+      <div class="empty" id="empty" hidden>
+        <h2>No resources match these filters.</h2>
+        <p>Remove a filter or try a broader search term. If something is missing from the collection, <a href="{{ .Params.form_url }}" rel="noopener">suggest a resource</a>.</p>
+        <p><button class="text-button" id="emptyReset" type="button">Reset filters and search</button></p>
+      </div>
+      <button class="show-more" id="showMore" type="button" hidden>Show more resources</button>
+      {{ partial "doors/pager" $pager }}
+    </div>
+  </div>
+
+  <section class="collection-note" id="form" aria-labelledby="collection-h">
+    <h2 id="collection-h">Missing a resource?</h2>
+    <p><a class="more" href="{{ .Params.form_url }}" rel="noopener">Suggest a resource through our form</a></p>
+    <div class="collection-about">{{ .Content }}</div>
+  </section>
+</div>
+<template id="resCard">{{ partial "doors/resource_card" (dict "title" "" "url" "" "types" slice "levels" slice "clusters" slice) }}</template>
+{{ $js := resources.Get "js/doors/resources.js" | js.Build (dict "minify" true "format" "iife" "target" "es2019") | fingerprint "md5" }}
+<script src="{{ $js.RelPermalink }}" defer></script>
+{{ end }}

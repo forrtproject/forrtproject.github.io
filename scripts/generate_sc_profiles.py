@@ -85,16 +85,15 @@ PAGE_TEMPLATE = r"""
 <link rel="stylesheet" href="/css/steering-committee.css">
 
 <div id="sc-container" class="col-lg-12">
-    <h1 class="sc-page-title">Steering Committee</h1>
     <nav class="sc-nav">
         <a href="#strategic">Strategic Focus Areas</a>
         <a href="#operations">Operations & Stewardship</a>
         <a href="#steering">Strategic Facilitation & Integration</a>
         <a href="#guidance">Guidance & Oversight</a>
     </nav>
-    <main>
+    <div>
         __CONTENT__
-    </main>
+    </div>
     <div id="modals-container">
         __MODALS__
     </div>
@@ -276,6 +275,14 @@ def find_existing_author_dir(personal_name, authors_dir):
     sources disagrees with what's already on disk.
     """
     normalized_target = normalize_name(personal_name)
+    # Some folders run the words together ("ruthvanderhallenphd"), which similarity undervalues.
+    compact_target = re.sub(r'[^a-z0-9]', '', normalized_target)
+    compact_matches = [
+        existing_dir.name for existing_dir in authors_dir.iterdir()
+        if existing_dir.is_dir() and re.sub(r'[^a-z0-9]', '', normalize_name(existing_dir.name)) == compact_target
+    ]
+    if len(compact_matches) == 1:
+        return compact_matches[0]
     best_match = None
     # 0.9 is deliberately strict: legitimate spelling variants of the SAME person
     # (Dr prefix, missing middle initial, hyphen vs space in a surname) all score >=0.95

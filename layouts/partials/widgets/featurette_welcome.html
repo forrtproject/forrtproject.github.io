@@ -1,75 +1,26 @@
-{{ $ := .root }}
+{{/* A few short items with an icon or picture, and links. */}}
 {{ $page := .page }}
-
-<div class="row featurette justify-content-around">
-  {{ with $page.Title }}
-  <div class="col-md-12 section-heading">
-    <h2>{{ . | markdownify | emojify }}</h2>
-    {{ if $page.Params.subtitle }}<p>{{ $page.Params.subtitle | markdownify | emojify }}</p>{{ end }}
-  </div>
-  {{ end }}
-
+<ul class="feature-rows feature-rows-small">
   {{ range $page.Params.feature }}
   {{ $pack := or .icon_pack "fas" }}
-  {{ $pack_prefix := $pack }}
-  {{ if in (slice "fab" "fas" "far" "fal") $pack }}
-    {{ $pack_prefix = "fa" }}
+  {{ $prefix := $pack }}
+  {{ if in (slice "fab" "fas" "far" "fal") $pack }}{{ $prefix = "fa" }}{{ end }}
+  <li>
+    {{ if .icon }}<i class="{{ $pack }} {{ $prefix }}-{{ .icon }} feature-icon" aria-hidden="true"></i>{{ end }}
+    {{ if .img }}{{ $dims := partial "functions/static_img_dims" .img }}<img src="{{ (printf "img/%s" .img) | relURL }}" {{ $dims }} alt="{{ .imgalttext }}">{{ end }}
+    <div>
+      <h3>{{ .name | markdownify | emojify }}</h3>
+      {{ with .description }}<p>{{ . | markdownify | emojify }}</p>{{ end }}
+    </div>
+  </li>
   {{ end }}
-  <div class="col-12 col-sm-4">
-    {{ if .icon }}<div class="featurette-icon"><i class="{{ $pack }} {{ $pack_prefix }}-{{ .icon }}" alt="{{ .iconalttext }}"></i></div>{{ end }}
-    {{ if .img }}<div class="pb-2">{{ $dims := partial "functions/static_img_dims" .img }}<img src="{{ (printf "img/%s" .img) | absURL }}" {{ $dims }} class="mx-auto w-25" alt="{{ .imgalttext }}"></div>{{ end }}
-    <h3>{{ .name | markdownify | emojify }}</h3>
-    {{ with .description }}<p>{{ . | markdownify | emojify }}</p>{{ end }}
-  </div>
+</ul>
+<p class="feature-links">
+  {{ range slice "cta" "cta_alt" }}
+    {{ with index $page.Params . }}{{ if .url }}
+      {{ $link := .url }}{{ if not (urls.Parse .url).Scheme }}{{ $link = .url | relLangURL }}{{ end }}
+      <a href="{{ $link | safeURL }}" class="btn btn-outline-primary">{{ .label | markdownify | emojify }}</a>
+    {{ end }}{{ end }}
   {{ end }}
-
-
-    {{/* Call-to-action link */}}
-    {{ if $page.Params.cta.url }}
-      {{ $pack := or $page.Params.cta.icon_pack "fas" }}
-      {{ $pack_prefix := $pack }}
-      {{ if in (slice "fab" "fas" "far" "fal") $pack }}
-        {{ $pack_prefix = "fa" }}
-      {{ end }}
-      {{ $link := $page.Params.cta.url }}
-      {{ $scheme := (urls.Parse $link).Scheme }}
-      {{ $target := "" }}
-      {{ if not $scheme }}
-        {{ $link = $link | relLangURL }}
-      {{ else if in (slice "http" "https") $scheme }}
-        {{ $target = "target=\"_blank\" rel=\"noopener\"" }}
-      {{ end }}
-   <div class="col-12 col-sm-8">  
-    <p class="cta-btns mx-auto pt-3">
-      <a href="{{ $link | safeURL }}" {{ $target | safeHTMLAttr }} class="btn btn-primary btn-lg">{{ if $page.Params.cta.icon }}<i class="{{ $pack }} {{ $pack_prefix }}-{{ $page.Params.cta.icon }} pr-1" aria-hidden="true"></i>{{end}}{{ $page.Params.cta.label | markdownify | emojify | safeHTML }}</a>
-
-      {{/* Alternative Call-to-action link */}}
-      {{ if $page.Params.cta_alt.url }}
-        {{ $link := $page.Params.cta_alt.url }}
-        {{ $scheme := (urls.Parse $link).Scheme }}
-        {{ $target := "" }}
-        {{ if not $scheme }}
-          {{ $link = $link | relLangURL }}
-        {{ else if in (slice "http" "https") $scheme }}
-          {{ $target = "target=\"_blank\" rel=\"noopener\"" }}
-        {{ end }}
-      <a href="{{ $link | safeURL }}" {{ $target | safeHTMLAttr }} class="hero-cta-alt pl-4">{{ $page.Params.cta_alt.label | markdownify | emojify | safeHTML }} <i class="fas fa-angle-right" aria-hidden="true"></i></a>
-      {{ end }}
-    </p>
-    {{ end }}
- </div>
-    {{/* Call-to-action note */}}
-    {{ with $page.Params.cta_note }}
-    <p class="hero-note text-muted mb-0">
-      {{ .label | markdownify | emojify | safeHTML }}
-    </p>
-    {{ end }}
-</div>
-<div class="row">
-  {{ with $page.Content }}
-  <div class="col-md-12">
-    {{ . }}
-  </div>
-  {{ end }}
-
-</div>
+</p>
+{{ with $page.Content }}{{ . }}{{ end }}

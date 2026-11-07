@@ -27,50 +27,16 @@
   {{- end -}}
   {{- $posts = sort $posts "Date" "desc" -}}
 
-<section id="profile-page" class="pt-5">
-  <div class="container">
-    <div class="row">
-
-      <div class="col-12 col-lg-4">
-        <div id="profile">
-          {{ with $avatar }}
-            {{ $img := .Fill "270x270 Center" }}
-            <img class="avatar {{ if eq $avatar_shape "square" }}avatar-square{{ else }}avatar-circle{{ end }}" src="{{ $img.RelPermalink }}" width="270" height="270" alt="{{ $name }}" loading="lazy">
-          {{ end }}
-          <div class="portrait-title">
-            <h1>{{ $name }}</h1>
-            {{ with $page.Params.role }}<h3>{{ . | markdownify | emojify }}</h3>{{ end }}
-            {{ range $page.Params.organizations }}
-            <h3>
-              {{ with .url }}<a href="{{ . }}" target="_blank" rel="noopener">{{ end }}
-              <span>{{ .name }}</span>
-              {{ if .url }}</a>{{ end }}
-            </h3>
-            {{ end }}
-          </div>
-
-          <ul class="network-icon" aria-hidden="true">
-            {{ range $page.Params.social }}
-              {{ $pack := or .icon_pack "fas" }}
-              {{ $pack_prefix := $pack }}
-              {{ if in (slice "fab" "fas" "far" "fal") $pack }}{{ $pack_prefix = "fa" }}{{ end }}
-              {{ $link := .link }}
-              {{ $scheme := (urls.Parse $link).Scheme }}
-              {{ $target := "" }}
-              {{ if not $scheme }}{{ $link = .link | relLangURL }}{{ else if in (slice "http" "https") $scheme }}{{ $target = "target=\"_blank\" rel=\"noopener\"" }}{{ end }}
-              <li>
-                <a href="{{ $link | safeURL }}" {{ $target | safeHTMLAttr }}>
-                  <i class="{{ $pack }} {{ $pack_prefix }}-{{ .icon }} big-icon"></i>
-                </a>
-              </li>
-            {{ end }}
-          </ul>
-        </div>
-      </div>
-
-      <div class="col-12 col-lg-8">
-        {{ with $page.Params.bio }}{{ . | markdownify | emojify }}{{ end }}
-        {{ $page.Content }}
+<div class="wrap">
+  <div class="article-layout">
+    <article class="reading">
+      <header class="article-head">
+        <nav class="crumbs" aria-label="Breadcrumb"><a href="{{ "" | relLangURL }}">Home</a> <span aria-hidden="true">/</span> <a href="{{ relref . "/authors" }}">People</a></nav>
+        <h1>{{ $name }}</h1>
+      </header>
+      <div class="article-style">
+        {{ with $page.Params.bio }}<p>{{ . | markdownify | emojify }}</p>{{ end }}
+        {{ partial "doors/content" $page.Content }}
 
         {{/* Interests, dropping the Wowchemy template placeholders ("Interest 1"). */}}
         {{ $interests := slice }}
@@ -78,40 +44,46 @@
           {{ if not (findRE `(?i)^interest \d+$` .) }}{{ $interests = $interests | append . }}{{ end }}
         {{ end }}
         {{ with $interests }}
-        <h3>{{ i18n "interests" | default "Interests" | markdownify }}</h3>
-        <ul class="ul-interests">
-          {{ range . }}<li>{{ . | markdownify | emojify }}</li>{{ end }}
-        </ul>
+        <h2>{{ i18n "interests" | default "Interests" | markdownify }}</h2>
+        <ul>{{ range . }}<li>{{ . | markdownify | emojify }}</li>{{ end }}</ul>
         {{ end }}
 
         {{ with $posts }}
-        <div class="article-widget content-widget-hr">
-          <h3>{{ i18n "user_profile_latest" | default "Latest" }}</h3>
-          <ul>
-            {{ range . }}<li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>{{ end }}
-          </ul>
-        </div>
+        <h2>{{ i18n "user_profile_latest" | default "Latest" }}</h2>
+        <ul>{{ range . }}<li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>{{ end }}</ul>
         {{ end }}
       </div>
-
-    </div>
+    </article>
+    <section class="article-card profile-card" aria-label="About {{ $name }}">
+      {{ with $avatar }}{{ $img := .Fill "270x270 Center webp" }}<img class="profile-photo{{ if eq $avatar_shape "square" }} avatar-square{{ end }}" src="{{ $img.RelPermalink }}" width="135" height="135" alt="Portrait of {{ $name }}">{{ end }}
+      {{ with $page.Params.role }}<p class="profile-role">{{ . | markdownify | emojify }}</p>{{ end }}
+      {{ range $page.Params.organizations }}
+        <p class="profile-org">{{ with .url }}<a href="{{ if (urls.Parse .).Scheme }}{{ . }}{{ else }}https://{{ . }}{{ end }}" target="_blank" rel="noopener">{{ end }}{{ .name }}{{ if .url }}</a>{{ end }}</p>
+      {{ end }}
+      {{ partial "social_links" $page }}
+    </section>
   </div>
-</section>
+</div>
 
 {{- else -}}
 {{/* =========================================================================
      Authors index  (/authors/) — lists every author who has a profile page.
      ========================================================================= */}}
-<section class="pt-5">
-  <div class="universal-wrapper">
-    <h1>{{ $page.Title | default "Authors" }}</h1>
-    {{ $page.Content }}
-    <ul class="authors-index">
-      {{ range $page.Pages.ByParam "name" }}
-        <li><a href="{{ .RelPermalink }}">{{ .Params.name | default .Title }}</a></li>
-      {{ end }}
-    </ul>
+<div class="wrap">
+  <div class="article-layout article-layout-single">
+    <article class="reading">
+      <header class="article-head">
+        {{ partial "doors/crumbs" (dict "page" $page) }}
+        <h1>{{ $page.Title | default "Authors" }}</h1>
+      </header>
+      {{ with $page.Content }}<div class="article-style">{{ partial "doors/content" . }}</div>{{ end }}
+      <ul class="plain-list authors-index">
+        {{ range $page.Pages.ByParam "name" }}
+          <li><a href="{{ .RelPermalink }}">{{ .Params.name | default .Title }}</a></li>
+        {{ end }}
+      </ul>
+    </article>
   </div>
-</section>
+</div>
 {{- end -}}
 {{- end -}}

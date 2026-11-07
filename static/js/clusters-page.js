@@ -70,14 +70,6 @@
     }
   }
 
-  function getNavbarStickyOffsetPx() {
-    var bodyTop = parseFloat(window.getComputedStyle(document.body).marginTop) || 0;
-    var navbar = document.getElementById('navbar-main');
-    if (!navbar) return bodyTop;
-    var bottom = Math.ceil(navbar.getBoundingClientRect().bottom);
-    return Math.max(bottom, bodyTop);
-  }
-
   function escapeHtml(s) {
     var d = document.createElement('div');
     d.textContent = s;
@@ -159,6 +151,17 @@
   /** Click/keyboard toggling for .acc-header sections and "Expand all" buttons.
    *  Shared by clusters and disciplines - both render the same accordion markup. */
   function initAccordionToggle() {
+    /* Whichever code opens or closes a section, its button reports it. */
+    var expanded = new MutationObserver(function (changes) {
+      changes.forEach(function (change) {
+        var trigger = change.target.previousElementSibling && change.target.previousElementSibling.querySelector('.acc-trigger');
+        if (trigger) trigger.setAttribute('aria-expanded', String(!change.target.classList.contains('acc-collapsed')));
+      });
+    });
+    document.querySelectorAll('.acc-body').forEach(function (body) {
+      expanded.observe(body, { attributes: true, attributeFilter: ['class'] });
+    });
+
     function toggleSection(header) {
       if (header.classList.contains('acc-disabled')) return;
       var body = header.nextElementSibling;
@@ -186,15 +189,6 @@
       if (header) { toggleSection(header); return; }
       var toggleBtn = e.target.closest('.acc-toggle-all');
       if (toggleBtn) { toggleAllSections(toggleBtn); }
-    });
-
-    document.addEventListener('keydown', function (e) {
-      if (e.key !== 'Enter' && e.key !== ' ') return;
-      if (e.target.closest('.acc-copy-link')) return;
-      var header = e.target.closest('.acc-header');
-      if (!header) return;
-      e.preventDefault();
-      toggleSection(header);
     });
 
     function toggleAllSections(btn) {
@@ -433,7 +427,6 @@
     }
 
     function updateStickyLayoutMetrics() {
-      root.style.setProperty('--clusters-sticky-offset', getNavbarStickyOffsetPx() + 'px');
       root.style.setProperty(
         '--clusters-controls-height',
         controls ? controls.offsetHeight + 'px' : '0px'
@@ -510,6 +503,14 @@
       }, 80);
     }
 
+    /* The open drawer fills a phone's screen, so it carries its own way out. */
+    var sidebarClose = sidebar ? sidebar.querySelector('.sidebar-close') : null;
+    if (sidebarClose && mobileToggle) {
+      sidebarClose.addEventListener('click', function () {
+        mobileToggle.click();
+        mobileToggle.focus();
+      });
+    }
     if (mobileToggle && sidebar) {
       mobileToggle.addEventListener('click', function () {
         sidebar.classList.toggle('sidebar-open');

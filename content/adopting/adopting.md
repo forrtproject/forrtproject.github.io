@@ -95,7 +95,7 @@ classtitle = "text-center"
 A great first step is to reflect on your own current teaching and mentoring practices, and the extent to which they communicate the basic tenets of open and reproducible science.
 
 <details>
-<summary><FONT COLOR="#A9A9A9">How ?</FONT></summary>
+<summary>How ?</summary>
 
 * FORRT has developed the [FORRT’s Clusters Page](https://docs.google.com/document/d/1_TRh7z3Bv_tdxGqjdWMm4kfQerTYvYw3e4wvQLNpTDQ/edit?tab=t.0#heading=h.9uywlkccaw1) that provides a framework that can be used to help educators make sense of the different key themes of open and reproducible science for independent evaluation of one’s own practices.
 
@@ -106,7 +106,7 @@ A great first step is to reflect on your own current teaching and mentoring prac
 Including sources in your syllabus that discuss open and transparent research can enrich students’ education by helping them think about research more critically. This can be a great addition to research methods courses or any other course that requires students to evaluate or synthesize knowledge.
 
 <details>
-<summary><FONT COLOR="#A9A9A9">How ?</FONT></summary>
+<summary>How ?</summary>
 
 * Find suitable reading materials for your course syllabus:  
   * [FORRT’s Lesson Plans](https://forrt.org/lesson-plans) provide community-built open educational resources that can be integrated into taught courses ‘out of the box’.   
@@ -159,7 +159,7 @@ Including sources in your syllabus that discuss open and transparent research ca
 Open educational resources allow community members to make contributions and continuously improve the materials. For example, they can enhance their documentation, add media (transcripts, voice, video), translate materials, improve accessibility, and much more. Educators can then reuse and adapt these materials for their own courses, thus reducing the need to produce high-quality materials on their own and saving time better used for teaching and mentoring. 
 
 <details>
-<summary><FONT COLOR="#A9A9A9">How ?</FONT></summary>
+<summary>How ?</summary>
 
 * Explore existing instances of principled education:   
   * [FORRT Pedagogies](https://forrt.org/pedagogies) aims to collect and catalogue exemplary instances of principled education \- i.e., successful instances of teaching or mentoring of open and reproducible principles, and detailed examples of the processes by which ideals in teaching, mentoring, and openness of these materials come to materialize.  
@@ -206,7 +206,7 @@ Open educational resources allow community members to make contributions and con
 Educators and mentors can actively support students in exploring open and reproducible science through curated resources, experiential learning, and community engagement. This means not only sharing accessible introductory materials, but also encouraging participation in clubs, workshops, or mentorship initiatives. 
 
 <details>
-<summary><FONT COLOR="#A9A9A9">How ?</FONT></summary>
+<summary>How ?</summary>
 
 * Use one of the following pedagogical resources:   
   * [‘The 4-Step Robustness Check’](https://www.metascience2019.org/presentations/michele-nuijten/) breaks down concepts of reproducibility and replicability exceedingly well:  
@@ -241,7 +241,7 @@ Educators and mentors can actively support students in exploring open and reprod
 Involving students in open science projects is an effective way to deepen their understanding of transparent and collaborative research practices. These experiences can also help them connect with like-minded researchers, gain mentorship, and build valuable skills—especially early in their academic journey.
 
 <details>
-<summary><FONT COLOR="#A9A9A9">How ?</FONT></summary>
+<summary>How ?</summary>
 
 * Join Established Collaborative Projects  
   * The [Collaborative Replications and Education Project in Psychology](https://osf.io/wfc6u/wiki) supports student-led replication studies in psychology, often for dissertations, in collaboration with other universities.   
@@ -281,7 +281,7 @@ Involving students in open science projects is an effective way to deepen their 
 Sharing your research openly helps others learn from your work. Educators can use open data and materials in their teaching—for example, in hands-on classroom activities like data analysis or mini-replication projects. This makes your work more impactful and supports student learning at both undergraduate and graduate levels.
 
 <details>
-<summary><FONT COLOR="#A9A9A9">How ?</FONT></summary>
+<summary>How ?</summary>
 
 * [Open Science Framework](https://osf.io/): A popular platform where research data and materials can be easily shared and indexed.  
 * [Zenodo](http://zenodo.org/): Another trusted platform for uploading and sharing research outputs. Supports a range of file types and provides DOIs.  
@@ -303,7 +303,7 @@ Common structural barriers and how to address them:
 * Neurodiversity → predictable structure, multiple submission formats, low-sensory options.
 
 <details>
-<summary><FONT COLOR="#A9A9A9">How ?</FONT></summary>
+<summary>How ?</summary>
 
 * Foster an inclusive classroom culture:  
   * Check out [Stanford’s Inclusive Teaching Guide](https://teachingcommons.stanford.edu/teaching-guides/inclusive-teaching-guide) for tips on creating equitable learning environments, supporting diverse student needs, and embedding inclusion into everyday teaching practices.  
@@ -331,7 +331,7 @@ Common structural barriers and how to address them:
 A great way to adopt the values of principled education is to advocate in your own institution for incorporating the values of open science and transparent research into teaching.
 
 <details>
-<summary><FONT COLOR="#A9A9A9">How ?</FONT></summary>
+<summary>How ?</summary>
 
 * Within your institution:  
   * If you're part of a teaching committee, suggest adding open science topics to course content, as simple as adding a slide or a real-world example.  

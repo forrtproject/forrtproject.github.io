@@ -20,7 +20,7 @@ This document describes the GitHub Actions workflows used in the FORRT website r
 
 ## Deployment Workflows
 
-### [deploy.yaml](workflows/deploy.yaml)
+### [deploy.yaml](deploy.yaml)
 **Production deployment to forrt.org**
 
 | Trigger | Target | Schedule |
@@ -31,7 +31,7 @@ This document describes the GitHub Actions workflows used in the FORRT website r
 
 Builds the Hugo site and deploys to GitHub Pages (`gh-pages` branch).
 
-### [staging-aggregate.yaml](workflows/staging-aggregate.yaml)
+### [staging-aggregate.yaml](staging-aggregate.yaml)
 **Staging deployment for pull requests**
 
 | Trigger | Target | Schedule |
@@ -47,9 +47,23 @@ Features:
 - Queues builds instead of canceling (concurrency)
 - Auto-cleans old staging branches (keeps 2)
 
+### [rebrand-preview.yaml](rebrand-preview.yaml)
+**Preview of the Doors redesign, while it is in progress**
+
+| Trigger | Target | Schedule |
+|---------|--------|----------|
+| Push to `rebrand-doors` | forrt.org/rebrand-doors/ (`forrtproject/rebrand-doors`) | On push |
+| PR into `rebrand-doors` | Checks only, no deployment | On PR events |
+
+Features:
+- Uses the same data and announcement artifacts as `deploy.yaml`, with noindex and no analytics
+- Compares each build with its merge base with `main`: URL list, structured data, SEO tags and internal links. See `scripts/rebrand/README.md`
+- A failed check marks the run red but still updates the preview
+- Delete this workflow when the redesign launches
+
 ## Data Workflows
 
-### [data-processing.yml](workflows/data-processing.yml)
+### [data-processing.yml](data-processing.yml)
 **Fetches and processes external data sources**
 
 | Trigger | Schedule |
@@ -75,7 +89,7 @@ Triggers `deploy.yaml` after successful processing via `repository_dispatch`.
 
 ## Quality Checks
 
-### [spell-check.yaml](workflows/spell-check.yaml)
+### [spell-check.yaml](spell-check.yaml)
 **Spelling validation using codespell**
 
 | Trigger | Runs on |
@@ -91,7 +105,7 @@ Triggers `deploy.yaml` after successful processing via `repository_dispatch`.
 |---------|---------|
 | Pull requests changing the clusters data, parser or tests | PR branches |
 
-### [check_images.yaml](workflows/check_images.yaml)
+### [check_images.yaml](check_images.yaml)
 **Image validation in PRs**
 
 | Trigger | Runs on |
@@ -102,7 +116,7 @@ Validates image files and references.
 
 ## Repository Maintenance
 
-### [cleanup-branches.yml](workflows/cleanup-branches.yml)
+### [cleanup-branches.yml](cleanup-branches.yml)
 **Automated branch cleanup**
 
 | Trigger | Schedule |

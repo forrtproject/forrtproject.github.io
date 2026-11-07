@@ -1,0 +1,75 @@
+{{/* The generic section page: a page built from Markdown sections, on the same reading layout as an
+     article (see _default/single.html). The first section's title is the page's h1, and the side
+     card lists what follows when there is more than one thing to jump to. The theme's per-section
+     columns and backgrounds no longer apply, except that a section that had a colour stays set off. */}}
+{{ $page := . }}
+{{ $sections := where (.Resources.ByType "page") ".Params.active" "!=" false }}
+{{ $sections = where $sections ".Params.widget" "!=" "hero_welcome" }}
+{{ $first := index $sections 0 }}
+{{ $h1 := .Title }}
+{{ $lede := "" }}
+{{ with $first }}
+  {{ with .Title }}{{ $h1 = . }}{{ end }}
+  {{ with .Params.subtitle }}{{ $lede = . }}{{ end }}
+{{ end }}
+{{ $h1 = replaceRE `(?i)<br\s*/?>` " " $h1 | strings.TrimSpace }}
+
+{{/* Contents: later section titles and the second-level headings inside every section. */}}
+{{ $toc := slice }}
+{{ $rendered := slice }}
+{{ $hasCallouts := false }}
+{{ range $index, $st := $sections }}
+  {{ $hash_id := replace $st.File.ContentBaseName "index" (path.Base (path.Split $page.Path).Dir) }}
+  {{ $widget := or $st.Params.widget "blank" }}
+  {{ if eq $widget "custom" }}{{ $widget = "blank" }}{{ end }}
+  {{ $body := partial (printf "widgets/%s.html" $widget) (dict "root" $page "page" $st) }}
+  {{ $body = partial "doors/content" $body }}
+  {{ if strings.Contains $body `<aside class="callout` }}{{ $hasCallouts = true }}{{ end }}
+  {{ $title := replaceRE `(?i)<br\s*/?>` " " $st.Title | strings.TrimSpace }}
+  {{ if and $title (gt $index 0) }}{{ $toc = $toc | append (dict "id" $hash_id "title" $title) }}{{ end }}
+  {{ range findRESubmatch `<h2[^>]*\bid="?([^"> ]+)"?[^>]*>([\s\S]*?)</h2>` $body }}
+    {{ $text := index . 2 | plainify | strings.TrimSpace }}
+    {{ if $text }}{{ $toc = $toc | append (dict "id" (index . 1) "title" $text) }}{{ end }}
+  {{ end }}
+  {{ $tinted := false }}
+  {{ with $st.Params.design.background.color }}{{ if not (in (slice "#fefdf6" "#FEFDF6") .) }}{{ $tinted = true }}{{ end }}{{ end }}
+  {{ $rendered = $rendered | append (dict "id" $hash_id "title" (cond (gt $index 0) $title "") "subtitle" (cond (gt $index 0) ($st.Params.subtitle | default "") "") "body" $body "widget" $widget "tinted" $tinted) }}
+{{ end }}
+{{ $wide := in site.Params.doors.wide_pages .Path }}
+{{ $hasCard := and (not $wide) (gt (len $toc) 1) }}
+{{ $hasCallouts = and $hasCallouts (not $wide) }}
+{{ $card := "" }}
+{{ if $hasCard }}{{ $card = partial "doors/toc_card" $toc }}{{ end }}
+
+<div class="wrap">
+  <div class="article-layout{{ if $hasCallouts }} article-layout-callouts{{ else if not $hasCard }} article-layout-single{{ end }}{{ if $wide }} article-layout-wide{{ end }}">
+    {{ if $hasCallouts }}{{ $card }}{{ end }}
+    <article class="reading">
+      <header class="article-head">
+        {{ partial "doors/crumbs" (dict "page" .) }}
+        <h1>{{ $h1 | markdownify | emojify }}</h1>
+        {{ with $lede }}<p class="standfirst">{{ . | markdownify | emojify }}</p>{{ end }}
+      </header>
+      {{ partial "doors/page_actions" . }}
+      {{/* On phones the side card falls below the text, too late to help on a long page. */}}
+      {{ if $hasCard }}
+      <details class="toc-phone">
+        <summary>On this page</summary>
+        <div class="article-toc"><nav aria-label="On this page"><ul>
+          {{ range $toc }}<li><a href="#{{ .id }}">{{ .title | markdownify | emojify | plainify }}</a></li>{{ end }}
+        </ul></nav></div>
+      </details>
+      {{ end }}
+      <div class="article-style">
+        {{ range $rendered }}
+        <section id="{{ .id }}" class="doc-section wg-{{ .widget }}{{ if .tinted }} doc-section-tinted{{ end }}">
+          {{ with .title }}<h2>{{ . | markdownify | emojify }}</h2>{{ end }}
+          {{ with .subtitle }}<p class="section-lede">{{ . | markdownify | emojify }}</p>{{ end }}
+          {{ .body }}
+        </section>
+        {{ end }}
+      </div>
+    </article>
+    {{ if not $hasCallouts }}{{ $card }}{{ end }}
+  </div>
+</div>

@@ -1,0 +1,239 @@
+/* Articles and plain content, every rule under .article-layout. Content here is Markdown written
+   for the old theme, so lists, tables and embeds are styled but not rebuilt. */
+.article-layout{display:grid;grid-template-columns:minmax(0,580px) 300px;justify-content:center;gap:64px;padding:32px 0 32px;align-items:start}
+.article-layout-single{grid-template-columns:minmax(0,580px)}
+.article-layout-wide{grid-template-columns:minmax(0,1fr)}
+.article-layout .reading{min-width:0}
+.article-layout .crumbs{margin-bottom:18px}
+.article-layout .article-head{margin-bottom:22px}
+.article-layout .article-head:has(.byline:empty){margin-bottom:0}
+.article-layout .article-meta{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:18px;font-size:15px;font-weight:600}
+.article-layout .article-meta span{background:var(--surface);padding:3px 10px;border-radius:var(--r-small)}
+.article-layout .reading h1{font-size:clamp(36px,4.2vw,58px);line-height:1.06;letter-spacing:-.01em;margin:0;text-wrap:balance}
+/* In the narrow column a bigger screen must not mean a taller stack of title lines. */
+.article-layout:not(.article-layout-wide) .reading h1{font-size:clamp(34px,3.2vw,46px);line-height:1.1}
+.article-layout .reading h1.long-title{font-size:clamp(28px,3vw,42px);line-height:1.12}
+/* For long compounds. Not in English, where Safari hyphenates any word at a line end. */
+.article-layout .reading h1:lang(de),.article-layout .reading h1:lang(tr){hyphens:auto}
+.article-layout .standfirst{font:500 clamp(21px,1.9vw,25px)/1.4 var(--display);margin:18px 0 0;max-width:30em;color:var(--ink)}
+.article-layout .byline{display:flex;flex-wrap:wrap;gap:4px 18px;margin:16px 0 0;font-size:16px}
+.article-layout .byline a{color:var(--link);text-underline-offset:3px;text-decoration:underline}
+.article-layout .byline-authors>*{display:inline}
+.article-layout .article-image{margin:0 0 28px}
+.article-layout .article-image img{display:block;width:100%;height:auto;border-radius:var(--r-small)}
+.article-layout figcaption{margin-top:10px;font-size:15px;text-align:center}
+.article-layout .article-style{font-size:20px;line-height:1.7;color:var(--ink);text-align:start;overflow-wrap:break-word}
+.article-layout .article-style p,.article-layout .article-style li{font-size:inherit;line-height:inherit}
+/* Wide pages keep the reading width for their prose, and give the rest of the page to tables and charts. */
+.article-layout-wide .article-style p,.article-layout-wide .article-style li{max-width:29em}
+.article-layout .article-style p{margin:0 0 18px;max-width:28.4em}
+.article-layout .article-style ul,.article-layout .article-style ol{margin:0 0 18px;padding-inline-start:1.4em}
+.article-layout .article-style li{margin-bottom:6px}
+.article-layout .article-style :is(h2,h3,h4){line-height:1.15;margin:34px 0 12px;text-align:start}
+.article-layout .article-style h2{font-size:30px}
+.article-layout .article-style h3{font-size:24px}
+.article-layout .article-style h4{font-size:20px}
+.article-layout .article-style a:not([class]){color:var(--link);text-decoration:underline;text-underline-offset:3px}
+.article-layout .article-style a:not([class]):hover{color:var(--ink)}
+.article-layout .article-style blockquote{margin:28px 0;padding:18px 22px;background:var(--edu-bg);border:0;border-radius:var(--r-large);color:var(--ink);font-size:19px!important}
+.article-layout .article-style blockquote p:last-child{margin-bottom:0}
+.article-layout .article-style figure{margin:28px 0}
+.article-layout .article-style img{max-width:100%;height:auto}
+.article-layout .article-style div[style*="display:flex"]{flex-wrap:wrap}
+.article-layout .article-style iframe,.article-layout .article-style video{max-width:100%}
+/* A hand-coloured red button in one lesson. Our red keeps its meaning and passes on the page. */
+.article-layout .article-style .btn[style*="color:red"]{color:var(--urgent)!important}
+.article-layout .article-style div.alert,.article-layout .article-style div.alert>div{font-size:inherit;color:var(--ink)}
+.article-layout .article-style div[style*="width"]{max-width:100%}
+.article-layout .article-style table{display:block;max-width:100%;overflow-x:auto;margin:0 0 18px;font-size:16px;line-height:1.45;border-collapse:collapse}
+.article-layout .article-style th,.article-layout .article-style td{padding:6px 10px;border-bottom:1px solid var(--line);text-align:start}
+.article-layout .article-style pre{max-width:100%;overflow-x:auto;font-size:15px}
+.article-layout .article-style code{font-size:max(15px,.9em)}
+main:lang(ar) .article-layout .article-style,main:lang(ar) .article-layout .article-style p,main:lang(ar) .article-layout .article-style li{font-size:23px}
+/* The theme's root size shrinks on phones, so rem and small-text rules from it and from older
+   Markdown come out as low as 10 px. */
+.article-layout .article-style :is(small,.small,[style*="font-size:."],[style*="font-size:0."]),.article-layout .article-style .btn:not([style*="font-size"]),.article-layout .btn-links .btn{font-size:15px!important;line-height:1.35}
+.article-layout .article-foot{margin-top:32px;font-size:16px}
+.article-layout .share-link{margin:0 0 18px}
+.article-layout .copy-link{background:#fff;border:1.5px solid var(--ink);border-radius:999px;padding:8px 12px;font:600 15px/1.3 var(--text);color:var(--ink);cursor:pointer}
+.article-layout .copy-link:hover{background:var(--ink);color:#fff}
+.article-layout .article-tags .badge{background:var(--surface);color:var(--ink);font:600 15px/1.4 var(--text);padding:3px 10px;border-radius:var(--r-small);margin:0 6px 6px 0}
+.article-layout .article-widget h3{font-size:24px;margin:28px 0 10px}
+.article-layout .article-foot .meta-nav{font-size:15px;font-weight:700;letter-spacing:0;text-transform:none;color:var(--soft)}
+.article-layout .article-foot .post-nav-item p,.article-layout .article-foot .article-widget li{font-size:16px;line-height:1.4;margin:0}
+.article-layout .article-foot :is(.card-subtitle,.card-text){font-size:16px;max-width:30em}
+.article-layout .article-widget a{color:var(--link)}
+.article-layout .article-card{position:sticky;top:24px;max-height:calc(100vh - 48px - var(--banner,0px));overflow-y:auto;background:var(--surface);border-radius:var(--r-large);padding:22px;font-size:16px;line-height:1.45}
+.article-layout .article-card h2{font-size:23px;line-height:1.15;margin:0 0 8px}
+.article-layout .article-card dl{margin:0 0 20px}
+.article-layout .article-card dl:last-child{margin-bottom:0}
+.article-layout .article-card dt{font-weight:700;font-size:15px;margin-top:10px}
+.article-layout .article-card dt:first-child{margin-top:0}
+.article-layout .article-card dd{margin:1px 0 0}
+.article-layout .article-toc ul{list-style:none;margin:0;padding:0}
+.article-layout .article-toc ul ul{padding-inline-start:12px}
+.article-layout .article-toc #TableOfContents a{display:block;padding:5px 0;font-size:16px;line-height:1.35;color:var(--link);text-underline-offset:3px;text-decoration:underline}
+@media(max-width:1000px){
+  .article-layout{grid-template-columns:minmax(0,580px);gap:36px}
+  .article-layout-wide{grid-template-columns:minmax(0,1fr)}
+  .article-layout .article-card{position:static;max-height:none}
+}
+@media(max-width:760px){
+  .article-layout{padding:20px 0 24px}
+  .article-layout .article-style{font-size:17px}
+  main:lang(ar) .article-layout .article-style,main:lang(ar) .article-layout .article-style p,main:lang(ar) .article-layout .article-style li{font-size:20px}
+}
+/* Call-outs: in the text on narrow screens. On wide screens they float into the right-hand column,
+   where clear keeps them under the side card and under each other. The card comes first in the
+   page so that it can do this, which means it can't stay in view while reading. */
+.article-layout .callout{box-sizing:border-box;margin:28px 0;padding:18px 20px;background:var(--res-bg);border-radius:var(--r-large);font-size:17px;line-height:1.5;color:var(--ink)}
+.article-layout .callout-example{background:var(--edu-bg)}
+.article-layout .callout-warning{background:var(--com-bg)}
+.article-layout .article-style .callout p,.article-layout .article-style .callout ul,.article-layout .article-style .callout ol{margin:0 0 10px;max-width:none}
+.article-layout .article-style .callout>:last-child{margin-bottom:0}
+.article-layout .article-style .callout-title{font:500 21px/1.2 var(--display)}
+@media(min-width:1001px){
+  .article-layout-callouts{display:flow-root;max-width:944px;margin-inline:auto}
+  .article-layout-callouts .reading{width:min(580px,calc(100% - 364px))}
+  .article-layout-callouts .article-card{float:right;float:inline-end;box-sizing:border-box;width:300px;margin-bottom:18px;position:static;max-height:none;overflow:visible}
+  .article-layout-callouts .callout{float:right;float:inline-end;clear:right;clear:inline-end;width:300px;margin:4px -364px 18px 0;margin-inline:0 -364px}
+  .article-layout-callouts .doc-section-tinted .callout{margin-inline-end:-388px}
+}
+@media(max-width:1000px){.article-layout-callouts .article-card{order:1}}
+/* Sections that open: the spoiler and expand shortcodes. */
+.article-layout .article-style .spoiler{margin:0 0 12px;background:var(--surface);border-radius:var(--r-small)}
+.article-layout .article-style .spoiler>summary{padding:10px 14px;font-weight:600;font-size:18px;line-height:1.35;color:var(--link);cursor:pointer}
+.article-layout .article-style .spoiler>summary:hover{color:var(--ink)}
+.article-layout .article-style .spoiler-body{padding:2px 14px 12px;font-size:18px;line-height:1.55}
+.article-layout .article-style .spoiler-body>:last-child{margin-bottom:0}
+/* Disclosures hold prose, so they stay at reading width unless a PDF is open inside one. */
+.article-layout-wide .article-style .spoiler:not([open]),.article-layout-wide .article-style .spoiler:not(:has(.pdf-viewer)){max-width:580px}
+.article-layout .article-style [style*="justify"]{text-align:start!important}
+/* A lesson's activity takes more room than the text around it, without growing to the full page. */
+.article-layout-wide .article-style>div[style*="padding-bottom"]:has(>.click-to-load,>iframe),.article-layout-wide .article-style :is(.video-poster,.video-frame){max-width:960px}
+.article-layout-wide .article-style>div[style*="padding-bottom"]:has(>iframe){height:auto!important;padding-bottom:0!important;aspect-ratio:3/2}
+/* Tables and text panels fit what they hold, so a wide page does not leave them mostly empty. */
+.article-layout-wide .article-style table{width:fit-content}
+.article-layout-wide .article-style>div[style*="border"]:not([style*="padding-bottom"]){max-width:640px;margin-inline:0!important;padding:14px 18px!important}
+.article-layout-wide .article-style blockquote{max-width:640px}
+.article-layout-wide .article-style>hr{max-width:580px;margin-inline:0}
+/* Buttons in Markdown keep their own colours, against the rule for links in text. */
+/* Glossary pages: the reading layout, with the list of terms in the side card. */
+.glossary-layout .language-switcher{margin:10px 0 14px;font-size:16px}
+.glossary-layout .language-switcher a{color:var(--link);text-decoration:underline;text-underline-offset:3px}
+.glossary-layout .term-definition{padding:0 0 14px;border-bottom:1px solid var(--line)}
+.glossary-layout .article-style .term-line{margin-bottom:8px;font-size:19px;line-height:1.5}
+.glossary-layout .references-list,.glossary-layout .references-list li{font-size:19px!important}
+.glossary-layout .article-style .btn-group{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 18px}
+.glossary-layout .article-style .btn-group .btn{margin:0!important;padding:7px 14px!important;background:#fff;border-radius:999px!important;font-size:16px!important;color:var(--link)}
+.glossary-layout .article-style .btn-group .btn.active{background:var(--ink);border-color:var(--ink);color:#fff}
+.glossary-card{display:flex;flex-direction:column;overflow:hidden!important}
+.glossary-card .form-control{flex:none;margin-bottom:10px}
+.term-list{flex:1;min-height:0;overflow-y:auto;margin-inline:-6px;padding-inline:6px;font-size:16px;line-height:1.3}
+.term-list ul{margin:0;padding:0;list-style:none}
+.term-list a{display:block;padding:5px 0;color:var(--link);text-decoration:underline;text-underline-offset:3px}
+.term-list a:hover{color:var(--ink)}
+.term-list a[aria-current]{color:var(--ink);font-weight:700;text-decoration:none}
+@media(max-width:1000px){.term-list{max-height:340px}}
+.resource-open{margin:0 0 24px}
+.resource-open .btn{padding:10px 22px;font-size:17px}
+.article-layout .article-tags{margin:0 0 18px}
+/* Author profiles: the person's details in the side card. */
+.profile-card .profile-photo{display:block;width:135px;height:135px;margin:0 0 12px;object-fit:cover;border-radius:50%}
+.profile-card .avatar-square{border-radius:var(--r-small)}
+.profile-card p{margin:0 0 6px}
+.profile-card .profile-role{font-weight:700}
+.profile-card a{color:var(--link);text-decoration:underline;text-underline-offset:3px}
+.profile-card ul.network-icon a{text-decoration:none}
+.sc-page{padding:32px 0 40px}
+.sc-page h1{font-size:clamp(36px,4.2vw,58px);line-height:1.06;margin:0 0 18px}
+.sc-page .crumbs{margin-bottom:18px}
+.sc-page #sc-container{padding:0;font-family:var(--text);max-width:none}
+/* A team's name heads its own row, so it cannot end one row with its people starting the next. */
+.sc-page .sc-grid .sc-title-card{flex:0 0 100%;grid-column:1/-1;width:100%;aspect-ratio:auto;padding:10px 16px;flex-direction:row;align-items:baseline;justify-content:flex-start;gap:10px}
+.sc-page .sc-title-card :is(.sc-title-label,.sc-title-text){margin:0}
+.sc-page .sc-title-card .sc-title-text{font-size:17px}
+.sc-page .sc-title-card .sc-cbar{display:none}
+.sc-team{display:contents}
+@media(min-width:761px){
+  .sc-page .sc-grid{gap:28px 40px}
+  .sc-page .sc-team{display:flex;flex-wrap:wrap;align-content:flex-start;gap:1rem;width:calc(var(--sc-members)*190px + (var(--sc-members) - 1)*1rem);max-width:100%}
+  .sc-page .sc-grid .sc-card{width:190px}
+  .sc-page .sc-grid .sc-title-card{flex-wrap:wrap}
+}
+.article-layout .post-nav{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px 24px;margin:0 0 18px}
+.article-layout .post-nav-item{max-width:calc(50% - 12px);min-width:0}
+.article-layout .post-nav-item:only-child{max-width:none}
+.article-layout .post-nav-item:last-child:not(:first-child){text-align:end}
+.article-logo{float:inline-end;width:96px;height:96px;margin:0 0 12px 18px;border-radius:var(--r-small)}
+@media print{
+  .site-head,.site-foot,.article-foot,.skip,.cc-window,.article-toc,.article-card h2{display:none!important}
+  body{background:#fff;color:#000;font-size:12pt}
+  .wrap{width:100%}
+  .article-layout{display:block;padding:0}
+  .article-layout .article-card{position:static;max-height:none;background:none;padding:0}
+  .article-layout .article-style,.article-layout .article-style :is(p,li){font-size:12pt}
+  a{color:#000}
+}
+/* A video before it plays, the player after, and a section of a long summaries page. */
+.video-poster{position:relative;display:block;margin:0 0 18px;aspect-ratio:16/9;overflow:hidden;background:var(--surface);border-radius:var(--r-small)}
+.article-layout .article-style .video-poster img{display:block;width:100%;height:100%;object-fit:cover}
+.video-play{position:absolute;inset:50% auto auto 50%;display:flex;align-items:center;justify-content:center;width:64px;height:64px;margin:-32px 0 0 -32px;background:var(--ink);border-radius:50%;color:#fff;font-size:24px}
+.video-poster:hover .video-play,.video-poster:focus-visible .video-play{background:var(--hot);color:var(--ink)}
+.video-frame{display:block;width:100%;aspect-ratio:16/9;margin:0 0 18px;border:0;border-radius:var(--r-small)}
+.video-poster:has(+ .video-note){margin-bottom:6px}
+.video-note,.article-layout .article-style .video-note{margin:0 0 18px;color:var(--soft);font-size:16px;line-height:1.4}
+.video-note a{text-decoration:underline}
+.article-layout .article-style .summary-entry{margin:0;border-bottom:1px solid var(--line)}
+.article-layout .article-style .summary-entry>summary{padding:12px 0;cursor:pointer}
+.article-layout .article-style .summary-entry>summary h2{display:inline;margin:0;font-size:22px;line-height:1.25}
+.article-layout .article-foot .article-widget li{margin-bottom:8px}
+.doi-link,.cite-us-text a{text-decoration:underline;text-underline-offset:3px}
+.toc-phone{display:none}
+@media(max-width:1000px){
+  .toc-phone{display:block;margin:0 0 20px;padding:12px 16px;background:var(--surface);border-radius:var(--r-small)}
+  .toc-phone summary{font-weight:700;cursor:pointer}
+  .toc-phone .article-toc{margin-top:8px}
+  .toc-phone a{display:block;padding:5px 0;font-size:16px;line-height:1.35;color:var(--link);text-decoration:underline}
+  .article-layout:has(.toc-phone) .article-card :is(h2,.article-toc){display:none}
+  .article-layout:has(.toc-phone) .article-card:not(:has(dl)){display:none}
+  .glossary-index .reading{display:contents}
+  .glossary-index .article-head{order:-2;margin-bottom:0}
+  .glossary-index .glossary-card{order:-1}
+  .glossary-index .term-list{max-height:220px}
+}
+.summary-tools{margin:0 0 14px;padding:14px 18px;background:var(--surface);border-radius:var(--r-large)}
+.summary-tools label{display:block;margin:0;font-size:16px;font-weight:700}
+.summary-tools input{display:block;width:100%;margin-top:6px;padding:8px 14px;background:#fff;border:1.5px solid var(--soft);border-radius:999px;font:400 16px/1.3 var(--text)}
+.article-layout .article-style .summary-count{margin:8px 0 0;font-size:16px}
+.summary-more{margin-top:14px}
+.summary-more[hidden]{display:none}
+/* The list of entries is its own contents, so a second list beside it only repeats the titles. */
+.article-layout:has(.summary-entry) .article-card :is(h2,.article-toc){display:none}
+.dei-mark{padding:0 6px;background:var(--jus-bg);border-radius:var(--r-small);font:600 15px/1.3 var(--text);color:var(--ink);vertical-align:.1em}
+@media print{.toc-phone{display:none!important}}
+.glossary-feedback-header>*{min-width:0;overflow-wrap:anywhere}
+.glossary-feedback-header>:lang(de),.glossary-feedback-header>:lang(tr){hyphens:auto}
+
+/* Catalogues (Syllabus): groups of links flow in columns across a wide page. */
+.article-style .catalogue{columns:3 300px;column-gap:48px;margin-top:28px}
+.article-style .catalogue-group{break-inside:avoid-column;margin-bottom:28px}
+.article-style .catalogue-group h3{margin:0 0 10px;font-size:23px;line-height:1.2}
+.article-style .catalogue-group ul{margin:0;padding-inline-start:1.1em}
+.article-style .catalogue-group li{margin-bottom:8px;font-size:17px;line-height:1.4}
+/* A long group may run on into the next column rather than leave a gap. */
+.article-style .catalogue-group:has(li:nth-child(15)){break-inside:auto}
+.article-style .catalogue-group:has(li:nth-child(15)) h3{break-after:avoid-column}
+
+/* Lesson bank: one card per lesson, with its plan and texts. */
+.article-layout .article-style .lesson-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,300px),1fr));gap:18px;margin:20px 0 40px;padding:0;list-style:none}
+.article-style .lesson-grid>.lesson-card{max-width:none;margin:0;padding:18px 20px;background:var(--surface);border-radius:var(--r-large)}
+.article-style .lesson-card .lesson-num{margin:0 0 4px;font-size:15px;font-weight:700;color:var(--soft)}
+.article-style .lesson-card h3{margin:0 0 10px;font-size:22px;line-height:1.2}
+.article-style .lesson-card .lesson-materials{margin:0;padding:0;list-style:none}
+.article-style .lesson-card .lesson-materials li{margin:0 0 4px;font-size:16px}
+.article-style .lesson-card .lesson-note{margin:0;font-size:16px;color:var(--soft)}
+
+/* A tool page's direct actions, under its title (doors/page_actions). */
+.article-layout .page-actions{display:flex;flex-wrap:wrap;gap:10px;margin:0 0 28px}
+.article-layout .page-actions .btn{padding:10px 22px;font-size:17px}

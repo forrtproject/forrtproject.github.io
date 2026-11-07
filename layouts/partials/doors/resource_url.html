@@ -1,0 +1,6 @@
+{{/* A curated resource's link. The sheet holds a few bare DOIs and web addresses, which would resolve
+     against this site. Input: the resource's page. */}}
+{{ $url := strings.TrimSpace (.Params.link_to_resource | default "") }}
+{{ if hasPrefix $url "10." }}{{ $url = printf "https://doi.org/%s" $url }}
+{{ else if and $url (not (urls.Parse $url).Scheme) }}{{ $url = printf "https://%s" $url }}{{ end }}
+{{ return $url }}

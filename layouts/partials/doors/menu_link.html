@@ -1,0 +1,6 @@
+{{/* One menu link. Sites outside this one open in a new tab, as they did before.
+     Input: dict with `entry` (menu entry) and `page` (current page). */}}
+{{ $url := .entry.URL | relLangURL }}
+{{ $external := or (strings.HasPrefix .entry.URL "http://") (strings.HasPrefix .entry.URL "https://") }}
+{{ $current := eq (strings.TrimSuffix "/" $url) (strings.TrimSuffix "/" .page.RelPermalink) }}
+<a href="{{ $url }}"{{ if $external }} target="_blank" rel="noopener"{{ end }}{{ if $current }} aria-current="page"{{ end }}>{{ .entry.Name }}</a>

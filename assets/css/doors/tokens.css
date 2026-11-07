@@ -1,0 +1,31 @@
+/* Doors design tokens: the one place colours and type are defined.
+   Values come from the FORRT Identity & Design guide unless marked otherwise. */
+:root{
+  /* Guide: backgrounds, neutral elements, text */
+  --ink:#262d35;
+  --page:#fefdf6;
+  --foot:#dce4ea;
+  --soft:#4c5e72;
+  --line:#bdc5ca;
+  /* Guide: highlights, important elements, links */
+  --link:#005a87;
+  --hot:#ff6b00;
+  --edu:#2d5750;
+  --res:#005a87;
+  /* Outside the guide, chosen for the Doors mock (migration plan, Doors README) */
+  --jus:#65478c;
+  --com:#9c4a0e;
+  --surface:#f0f3f5;
+  --edu-bg:#e3efec;
+  --res-bg:#e1eef6;
+  --jus-bg:#ebe6f4;
+  --com-bg:#f8eadc;
+  --urgent:#b3261e;
+  /* Type */
+  --display:'Newsreader',Georgia,'Apple Symbols','Segoe UI Symbol','Noto Sans Symbols 2',serif;
+  --text:'Source Sans 3','Source Sans Pro',system-ui,'Apple Symbols','Segoe UI Symbol','Noto Sans Symbols 2',sans-serif;
+  --text-size:18px;
+  --display-weight:500;
+  --r-small:8px;
+  --r-large:18px;
+}

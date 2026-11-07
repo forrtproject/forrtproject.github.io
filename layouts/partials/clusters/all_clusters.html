@@ -18,11 +18,11 @@
   <div class="row">
     {{ partial "clusters/sidebar_nav.html" (dict "data" $data "arrowColors" $arrowColors "link_mode" "anchor") }}
 
-    <main class="col-12 col-lg-8 col-xl-9 clusters-content">
+    <div class="col-12 col-lg-8 col-xl-9 clusters-content">
       {{ range $ci, $cluster := $data.clusters }}
         {{ partial "clusters/cluster_section.html" (dict "cluster" $cluster "ci" $ci "colors" $colors) }}
       {{ end }}
-    </main>
+    </div>
   </div>
 </div>
 

@@ -15,6 +15,12 @@
   if (!tag) return;
 
   var needle = tag.toLowerCase();
+  var label = tag;
+
+  /** The address form of a term, as the old /tag/<slug>/ pages had it: /tag/open-science/ arrives here as a slug. */
+  function slug(term) {
+    return term.replace(/[^\p{L}\p{N}\s.#_+~/-]/gu, "").trim().replace(/\s/g, "-");
+  }
 
   /** "neurodiversity-lessonbank" reads better as "Neurodiversity lessonbank". */
   function sectionLabel(section) {
@@ -30,13 +36,14 @@
     if (!results || !heading || !list) return;
 
     heading.textContent = pages.length
-      ? pages.length + (pages.length === 1 ? " page tagged " : " pages tagged ") + "“" + tag + "”"
-      : "No pages are tagged “" + tag + "”";
+      ? pages.length + (pages.length === 1 ? " page tagged " : " pages tagged ") + "“" + label + "”"
+      : "No pages are tagged “" + label + "”";
 
-    pages.forEach(function (page) {
+    var STEP = 50;
+    pages.forEach(function (page, index) {
       var item = document.createElement("li");
-      item.className = "mb-2";
-
+      item.hidden = index >= STEP;
+      
       var link = document.createElement("a");
       link.href = page.u;
       link.textContent = page.t;
@@ -45,15 +52,32 @@
       var label = sectionLabel(page.s);
       if (label) {
         var badge = document.createElement("span");
-        badge.className = "badge badge-light ml-2";
+        badge.className = "tag-section";
         badge.textContent = label;
         item.appendChild(badge);
       }
       list.appendChild(item);
     });
 
+    if (pages.length > STEP) {
+      var more = document.createElement("button");
+      more.type = "button";
+      more.className = "btn tag-show-more";
+      more.textContent = "Show more";
+      list.after(more);
+      more.addEventListener("click", function () {
+        var waiting = list.querySelectorAll("li[hidden]");
+        for (var i = 0; i < STEP && i < waiting.length; i += 1) waiting[i].hidden = false;
+        var link = waiting[0].querySelector("a");
+        if (link) link.focus();
+        if (waiting.length <= STEP) more.remove();
+      });
+    }
+
     results.hidden = false;
-    // The cloud stays available below the results, so no need to hide it.
+    // The results have a link back to every tag, so the cloud would only push the footer away.
+    var cloud = document.getElementById("tag-cloud");
+    if (cloud) cloud.hidden = true;
     results.scrollIntoView({ block: "nearest" });
   }
 
@@ -65,9 +89,15 @@
         return response.json();
       })
       .then(function (rows) {
+        // A slug that only an address could have produced reads better with spaces.
+        if (!rows.some(function (row) { return row.g && row.g.indexOf(needle) !== -1; })) {
+          label = tag.replace(/-/g, " ");
+        }
         render(
           rows.filter(function (row) {
-            return row.g && row.g.indexOf(needle) !== -1;
+            return row.g && row.g.some(function (term) {
+              return term === needle || slug(term) === needle;
+            });
           })
         );
       })

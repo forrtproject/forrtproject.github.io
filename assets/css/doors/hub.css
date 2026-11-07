@@ -1,0 +1,18 @@
+/* The Replication Hub. Loaded only on /replication-hub/. */
+.heading-plate-plain{margin:0;justify-self:end;width:100%;max-width:400px}
+.heading-plate-plain img{display:block;width:100%;height:auto}
+.stages{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px;align-items:start}
+.stage{--tone:#44598c;min-width:0;background:var(--surface);border-radius:var(--r-large);padding:22px 20px;border-top:6px solid var(--tone)}
+.stage-explore{--tone:#25705f}
+.stage-conduct{--tone:#a34a0c}
+.stage-disseminate{--tone:#7a5c3d}
+.stage h2{font-size:30px;line-height:1.12;margin:0;color:var(--tone)}
+.stage header p{margin:6px 0 0;font-size:16px;line-height:1.45}
+.stage ul{list-style:none;display:grid;gap:10px;margin:16px 0 0;padding:0}
+.tool{background:#fff;border-radius:var(--r-small);padding:14px}
+.tool h3{font-size:19px;line-height:1.25;margin:0;overflow-wrap:anywhere}
+.tool h3 a{color:var(--ink);text-decoration:underline;text-decoration-color:var(--tone);text-decoration-thickness:2px;text-underline-offset:3px}
+.tool h3 a:hover{color:var(--tone)}
+.tool p{margin:6px 0 0;font-size:16px;line-height:1.45}
+@media(max-width:1240px){.stages{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:760px){.stages{grid-template-columns:1fr;gap:14px}.heading-plate-plain{display:none}}

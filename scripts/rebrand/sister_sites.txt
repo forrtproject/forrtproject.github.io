@@ -1,0 +1,31 @@
+# Other FORRT repositories that GitHub Pages serves at forrt.org/<name>/.
+# From: gh api --paginate orgs/forrtproject/repos --jq '.[]|select(.has_pages)|.name'
+# The redesign must not claim these paths. Links to them are allowed to leave the build.
+Transform-to-Open-Science-Book-jupyter
+best-practices-psychology
+chromium-extension
+diamond-reviewer
+flora-explorer
+flora-pubpeer
+flora-replication-atlas
+flora-validation
+flora-zotero
+fred
+fred-apps
+handbook
+journalranking
+love-replications-week
+map-community
+marco
+merch-design-vote
+open-research-course
+open-social-psychology
+plugin-notification-dummy
+re-searchterms
+replicate-this
+replicatethis
+replication-handbook
+reprocrowd
+rjf
+tenure-run
+transform-to-open-science-book

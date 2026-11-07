@@ -1,10 +1,12 @@
 {{- define "main" -}}
 
-{{ partial "page_header.html" . }}
-
-<div class="universal-wrapper">
-
-  {{ with .Content }}<div class="article-style text-center mb-4">{{ . }}</div>{{ end }}
+<div class="wrap news-page">
+  <header class="article-head">
+    {{ partial "doors/crumbs" (dict "page" .) }}
+    <h1>{{ .Title }}</h1>
+    {{ with .Params.subtitle }}<p class="standfirst">{{ . | markdownify | emojify }}</p>{{ end }}
+  </header>
+  {{ with .Content }}<div class="article-style">{{ partial "doors/content" . }}</div>{{ end }}
 
   {{ $posts := sort .Pages "Date" "desc" }}
 
@@ -14,8 +16,8 @@
   {{ $cats = uniq $cats }}
 
   <div class="ac-filters">
-    <button class="ac-chip active" data-cat="all">All</button>
-    {{ range $cats }}<button class="ac-chip" data-cat="{{ lower . }}">{{ . }}</button>{{ end }}
+    <button class="ac-chip active" type="button" aria-pressed="true" data-cat="all">All</button>
+    {{ range $cats }}<button class="ac-chip" type="button" aria-pressed="false" data-cat="{{ lower . }}">{{ . }}</button>{{ end }}
   </div>
 
   <div class="announcements-grid ac-grid-page">
@@ -30,8 +32,9 @@
 <script>
 document.querySelectorAll('.ac-chip').forEach(function (chip) {
   chip.addEventListener('click', function () {
-    document.querySelectorAll('.ac-chip').forEach(function (c) { c.classList.remove('active'); });
+    document.querySelectorAll('.ac-chip').forEach(function (c) { c.classList.remove('active'); c.setAttribute('aria-pressed', 'false'); });
     chip.classList.add('active');
+    chip.setAttribute('aria-pressed', 'true');
     var cat = chip.getAttribute('data-cat');
     document.querySelectorAll('.ac-item').forEach(function (it) {
       it.style.display = (cat === 'all' || it.getAttribute('data-cat') === cat) ? '' : 'none';
