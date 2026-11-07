@@ -16,6 +16,7 @@
     equivalents were not, and reverted on the next build.
 """
 
+import html
 import json
 import os
 import re
@@ -96,6 +97,21 @@ def wrangle_data(df):
                             df.columns[df.columns.str.contains(pat = 'user tags')][0]: 'tags'},
               inplace = True)
     df.fillna('', inplace=True)
+
+
+# Titles and abstracts pasted from publisher pages can carry HTML entities such as
+# "&ldquo;". Hugo escapes the "&" again, so pages showed "&ldquo;" as text and the
+# meta description failed check 10 of scripts/check_seo_html.py. Only complete
+# entities ending in ";" are decoded, so a bare "&" stays as it is.
+ENTITY = re.compile(r'&(?:#[0-9]+|#[xX][0-9a-fA-F]+|[A-Za-z][A-Za-z0-9]*);')
+TEXT_COLUMNS = ['title', 'abstract', 'creators']
+
+
+def decode_entities(df):
+    for column in TEXT_COLUMNS:
+        if column in df.columns:
+            df[column] = [ENTITY.sub(lambda m: html.unescape(m.group(0)), value) if isinstance(value, str) else value
+                          for value in df[column].values]
 
 
 # The cell is free text: commas were the documented separator, but semicolons
@@ -265,6 +281,8 @@ def main():
     FORRT = drop_excluded(FORRT)
 
     wrangle_data(FORRT)
+
+    decode_entities(FORRT)
 
     # Convert single string into list of values
 
