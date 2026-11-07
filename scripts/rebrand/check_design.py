@@ -575,6 +575,39 @@ def check_phone_reading(browser, base, failures):
         page.context.close()
 
 
+SPECIALIST_SHOWN = """() => {
+  const cards = [...document.querySelectorAll('.clusters-content [data-specificity=narrow]')];
+  return [cards.length, cards.filter((card) => getComputedStyle(card).display !== 'none').length];
+}"""
+
+
+def check_specialist_cards(browser, base, failures):
+    """A cluster page hides its specialist resources until their checkbox is ticked, as the box shows."""
+    expect = expectation(failures, "specialist resources")
+    page = new_page(browser, 1440)
+    page.context.add_cookies([{"name": "forrt_analytics_choice", "value": "deny", "url": base}])  # Banner shut.
+    for number in range(1, 12):
+        page.goto(base + f"clusters/cluster-{number}/", wait_until="load")
+        page.wait_for_timeout(500)
+        total, shown = page.evaluate(SPECIALIST_SHOWN)
+        if total:
+            break
+    expect(total > 0, "a cluster page has specialist resources to test")
+    if total:
+        box = page.locator("#fr-global-specificity-checkbox")
+        expect(not box.is_checked(), f"cluster {number}: the box starts unticked")
+        expect(shown == 0, f"cluster {number}: {shown} of {total} specialist resources shown on load")
+        box.check()
+        page.wait_for_timeout(200)
+        shown = page.evaluate(SPECIALIST_SHOWN)[1]
+        expect(shown == total, f"cluster {number}: {shown} of {total} shown after ticking the box")
+        box.uncheck()
+        page.wait_for_timeout(200)
+        shown = page.evaluate(SPECIALIST_SHOWN)[1]
+        expect(shown == 0, f"cluster {number}: {shown} of {total} still shown after unticking it")
+    page.context.close()
+
+
 # What under the chat launcher has text of its own: the launcher is to rest in the margin, never over the page.
 UNDER_LAUNCHER = """() => {
   const box = document.getElementById('just-os-btn').getBoundingClientRect();
@@ -1183,6 +1216,8 @@ def main():
         check_phone_reading(browser, base, failures)
         check_launcher_clear(browser, base, failures)
         check_directory_widths(browser, base, failures)
+        print("Specialist resources on cluster pages")
+        check_specialist_cards(browser, base, failures)
         print("Conference programme")
         check_conference(browser, base, failures)
         print("Contributor network")
