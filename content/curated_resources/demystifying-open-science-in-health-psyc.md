@@ -18,7 +18,7 @@
         "College / Upper Division (Undergraduates)",
         "Graduate / Professional"
     ],
-    "abstract": "Open Science practices are integral to increasing transparency, reproducibility and accessibility of research in health psychology and behavioral medicine. Drives to facilitate Open Science practices are becoming increasingly evident in journal editorial policies, including the establishment of new paper formats such as Registered Reports and Data Notes. This paper provides: i) an overview of the current state of Open Science policies within health psychology and behavioral medicine, ii) a call for submissions to an Article Collection of Registered Reports and Data Notes as new paper formats within the journal of Health Psychology &amp; Behavioral Medicine, iii) an overview of Registered Reports and Data Notes, and iv) practical considerations for authors and reviewers of Registered Reports and Data Notes.",
+    "abstract": "Open Science practices are integral to increasing transparency, reproducibility and accessibility of research in health psychology and behavioral medicine. Drives to facilitate Open Science practices are becoming increasingly evident in journal editorial policies, including the establishment of new paper formats such as Registered Reports and Data Notes. This paper provides: i) an overview of the current state of Open Science policies within health psychology and behavioral medicine, ii) a call for submissions to an Article Collection of Registered Reports and Data Notes as new paper formats within the journal of Health Psychology & Behavioral Medicine, iii) an overview of Registered Reports and Data Notes, and iv) practical considerations for authors and reviewers of Registered Reports and Data Notes.",
     "language": [
         "English"
     ],
@@ -49,5 +49,5 @@
     "in-clusters": true,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2026-10-29"
+    "lastmod": "2026-11-07"
 }

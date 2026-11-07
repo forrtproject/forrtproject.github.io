@@ -11,7 +11,7 @@
     "education_level": [
         "Graduate / Professional"
     ],
-    "abstract": "<p>Special Issue of&nbsp;Educational Psychologist - Educational Psychology in the Open Science Era</p><p>Recently, scholars have noted how several &ldquo;old school&rdquo; practices&mdash;a host of well-regarded, long-standing scientific norms&mdash;in combination, sometimes compromise the credibility of research. In response, other scholarly fields have developed several &ldquo;open science&rdquo; norms and practices to address these credibility issues. Against this backdrop, this special issue explores the extent to which and how these norms should be adopted and adapted for educational psychology and education more broadly.</p>",
+    "abstract": "<p>Special Issue of\u00a0Educational Psychologist - Educational Psychology in the Open Science Era</p><p>Recently, scholars have noted how several \u201cold school\u201d practices\u2014a host of well-regarded, long-standing scientific norms\u2014in combination, sometimes compromise the credibility of research. In response, other scholarly fields have developed several \u201copen science\u201d norms and practices to address these credibility issues. Against this backdrop, this special issue explores the extent to which and how these norms should be adopted and adapted for educational psychology and education more broadly.</p>",
     "language": [
         "English"
     ],
@@ -34,5 +34,5 @@
     "in-clusters": false,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2020-01-01"
+    "lastmod": "2026-11-07"
 }

@@ -36,9 +36,9 @@
     ],
     "forrt_clusters_new": "Academic Structures and Institutions",
     "forrt_sub_clusters": "Racism in science, Diversity in Academia, Equity",
-    "doi": "",
-    "in-clusters": false,
+    "doi": "10.1038/d41586-022-04386-w",
+    "in-clusters": true,
     "pdf name": "",
-    "apa reference": "",
-    "lastmod": "2025-02-13"
+    "apa reference": "Gibney, E. (2022). How UK science is failing Black researchers\u2014in nine stark charts. Nature, 612, 390\u2013395. https://doi.org/10.1038/d41586-022-04386-w",
+    "lastmod": "2026-11-07"
 }

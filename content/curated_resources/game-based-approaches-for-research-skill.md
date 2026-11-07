@@ -28,7 +28,7 @@
         "Academic Life and Culture"
     ],
     "tags": [
-        "Game-Based Learning",
+        "Game-based Learning",
         "Serious Games",
         "Researcher Development",
         "Research Skills",
@@ -41,5 +41,5 @@
     "in-clusters": false,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2026-11-06"
+    "lastmod": "2026-11-07"
 }
