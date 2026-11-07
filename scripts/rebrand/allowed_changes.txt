@@ -8,6 +8,7 @@ resources/search.json        # The directory's search data, fetched on first sea
 resources/index.html         # Became a list page for its pager, so its SEO tags gain CollectionPage
 home/7-newsletter.md.old     # A retired draft that Hugo copied out by accident, not a page
 about/visitors/index.html    # Its generated description quotes the stats table, whose link text lost "https://" for the preview
+booklet/index.html           # Its generated description quotes the line about the PDF, reworded when the link moved above the viewer
 js/load-theme.js                 # The theme's day/night script, gone with the theme's look
 js/academic.min.FINGERPRINT.js   # The theme's script bundle, without its search, under a new name while some pages still need it
 curated_resources/page/*/index.html  # Decision D17: paginated lists removed, and the 404 page sends old links to /resources/
