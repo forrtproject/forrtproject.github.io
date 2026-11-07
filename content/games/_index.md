@@ -4,9 +4,7 @@ type: plain_page
 ---
 FORRT is excited to launch the Open Research Games Portal – a crowdsourced, pedagogically informed database of games and interactive activities for teaching open and reproducible research practices. This initiative recognizes the power of game-based learning to make complex topics more accessible, memorable, and engaging for learners – from students and early-career researchers to educators and professionals. Whether you're looking for a lighthearted icebreaker or a serious, learning-focused game to integrate into your curriculum, the Portal helps you find what you need.
 
-<a href="/open-research-games-portal/" class="btn btn-primary btn-lg btn-block" style="line-height:1;border-radius:6px; font-size:1.5rem; ">
-  Open Research Games Portal
-</a>
+<a href="/open-research-games-portal/" class="btn btn-primary">Open Research Games Portal</a>
 
 <br>
 

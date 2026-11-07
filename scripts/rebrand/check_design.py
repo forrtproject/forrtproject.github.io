@@ -1098,6 +1098,59 @@ def check_conference(browser, base, failures):
     page.context.close()
 
 
+# The explanations inside cluster and discipline panels keep to the reading measure (.article-style).
+PANEL_MEASURE = 600
+PANEL_TEXT = """() => [...document.querySelectorAll('.cluster-description, .acc-body:not(.acc-collapsed) .sc-description')]
+  .filter((el) => el.getClientRects().length).map((el) => Math.round(el.getBoundingClientRect().width))"""
+
+
+def check_review_pages(browser, base, failures):
+    """Fixes from the final design review: the abstract toggle says what it does, panel text keeps to
+    the reading measure on a wide screen, the booklet turns one page at a time on a phone whatever its
+    browser calls itself, and the community map opens on its members and can zoom out on a phone."""
+    expect = expectation(failures, "review fixes")
+    page = new_page(browser, 1440)
+    page.goto(base + "publications/", wait_until="load", timeout=120000)
+    toggle = page.locator(".btn-toggle-abstract").first
+    state = "(el) => [el.textContent.trim(), el.getAttribute('aria-expanded')]"
+    expect(toggle.evaluate(state) == ["Show Abstract", "false"], f"a closed abstract offers Show Abstract: {toggle.evaluate(state)}")
+    toggle.click()
+    expect(toggle.evaluate(state) == ["Hide Abstract", "true"], f"an open abstract offers Hide Abstract: {toggle.evaluate(state)}")
+    toggle.click()
+    expect(toggle.evaluate(state) == ["Show Abstract", "false"], "closing it again offers Show Abstract")
+    for path in ("clusters/", "disciplines/"):
+        page.goto(base + path, wait_until="load", timeout=120000)
+        page.evaluate("document.querySelectorAll('.acc-toggle-all').forEach((b) => b.click())")
+        page.wait_for_timeout(300)
+        widths = page.evaluate(PANEL_TEXT)
+        expect(widths and max(widths) <= PANEL_MEASURE, f"{path} panel text at most {PANEL_MEASURE} px wide at 1440: widest {max(widths or [0])}")
+    page.context.close()
+
+    page = new_page(browser, 390)
+    page.goto(base + "booklet/", wait_until="load", timeout=120000)
+    page.wait_for_selector(".df-ui-next:not(.df-ui-alt)", timeout=60000)
+    page.wait_for_timeout(1500)
+    page.locator(".df-ui-next:not(.df-ui-alt)").first.click()
+    page.wait_for_timeout(1500)
+    turned = page.evaluate("document.querySelector('#df_book_page_number')?.value")
+    expect(turned == "2", f"one turn of the booklet at 390 shows page 2, not a spread: page {turned}")
+    page.goto(base + "community-map/", wait_until="load", timeout=120000)
+    frame = "iframe[title='FORRT Community Map']"
+    page.locator(frame).scroll_into_view_if_needed()
+    try:
+        page.wait_for_function(f"""() => {{ const w = document.querySelector("{frame}").contentWindow;
+          const m = w && w.HTMLWidgets && w.HTMLWidgets.find('.leaflet')?.getMap(); return m && m.getMinZoom() < 2; }}""", timeout=30000)
+    except PlaywrightError:
+        pass
+    found = page.frame_locator(frame).locator("body").evaluate("""() => {
+      const m = HTMLWidgets.find('.leaflet').getMap(), b = m.getBounds();
+      return {span: b.getEast() - b.getWest(), zoomOut: m.getZoom() > m.getMinZoom()};
+    }""")
+    expect(found["span"] >= 300, f"the community map opens on its members from America to New Zealand at 390: {found['span']:.0f} degrees across")
+    expect(found["zoomOut"], "the community map can zoom out from its first view at 390")
+    page.context.close()
+
+
 def report_budgets(browser, base, root, subfolder):
     from capture_pages import weigh
 
@@ -1220,6 +1273,8 @@ def main():
         check_specialist_cards(browser, base, failures)
         print("Conference programme")
         check_conference(browser, base, failures)
+        print("Final review fixes")
+        check_review_pages(browser, base, failures)
         print("Contributor network")
         check_contributor_network(browser, base, failures)
         print("Resources directory")

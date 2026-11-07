@@ -144,6 +144,8 @@ You can still contribute to the collection of Lesson Plans by adding your ideas 
 
 ### Pedagogical Activities
 
+[Open the full table](https://docs.google.com/spreadsheets/d/e/2PACX-1vRxqwa1rfgn-mB2hdCd3DzQHYMV7bOpQw6hRwXQodSnKjL1QvV4r5Aaf0kr-AVKc9zk60ejgDhZ-FLV/pubhtml) in Google Sheets. On a narrow screen, the table below scrolls sideways.
+
 {{< click_to_load src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRxqwa1rfgn-mB2hdCd3DzQHYMV7bOpQw6hRwXQodSnKjL1QvV4r5Aaf0kr-AVKc9zk60ejgDhZ-FLV/pubhtml?widget=true&headers=false" provider="Google" label="This document" title="Table of lesson plans" height="700" style="border:0px; width:100%;" >}}
 
 <br>
