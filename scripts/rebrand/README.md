@@ -10,4 +10,11 @@ The Doors redesign was built on the `rebrand-doors` branch with a preview workfl
 
 Build both sides from the same data and announcement artifacts as `deploy.yaml`, or generated collections will differ. `site_inventory.py` lists a build's paths, structured data and SEO tags for `compare_builds.py`. The checks use `resolves()` and `sister_sites.txt` (FORRT's other sites under forrt.org) from `preview_paths.py`, whose path rewriting served the preview. Tests are in `../tests/test_rebrand_checks.py`.
 
+## Asset tools
+
+These rebuild files the site serves, so they stay too:
+
+- `build_fonts.py` rebuilds `static/fonts/doors/`, and with `--icons` the Font Awesome subset and `assets/css/doors/icons.css`. Add a new icon to its `ICONS` list.
+- `render_castle_still.py` rerenders the home page's still image of the castle.
+
 The removed tools, including the browser checks of the design, accessibility and the launched site, are in `scripts/rebrand/` in the history of the `rebrand-doors` branch.
