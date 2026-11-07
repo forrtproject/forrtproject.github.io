@@ -825,6 +825,7 @@
           section.top < button.top - 8 && section.bottom > button.bottom + 8);
       }
       window.addEventListener('scroll', toggleBackToTop, { passive: true });
+      window.addEventListener('resize', toggleBackToTop);
       toggleBackToTop();
       backToTopBtn.addEventListener('click', function () {
         window.scrollTo({ top: 0, behavior: 'smooth' });

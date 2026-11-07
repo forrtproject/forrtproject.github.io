@@ -655,12 +655,14 @@ FLOATING_OVER = """(selector) => {
 }"""
 
 BUBBLE_SHOWN = "() => parseFloat(getComputedStyle(document.getElementById('just-os-bubble')).opacity) >= 0.5"
+BACK_TO_TOP_SHOWN = """() => { const el = document.querySelector('.clusters-back-to-top');
+  return !!el && getComputedStyle(el).visibility === 'visible' && el.getBoundingClientRect().width > 0; }"""
 
 # Where the floating controls are checked: long pages of text, cards and lists, the pages with back to top,
 # and a page on the reading layout, whose empty margin the invitation may use.
 FLOATING_PAGES = ("contributors/", "citation-politics/toolkit/", "disciplines/", "clusters/", "clusters/cluster-1/",
                   "publications/", "about/teams/", "about/")
-FLOATING_WIDTHS = (390, 1024, 1280, 1440)
+FLOATING_WIDTHS = (390, 1024, 1280, 1440, 1800)  # From 1800 px the launcher has its hover and focus label.
 
 
 def check_floating_controls(browser, base, failures):
@@ -669,7 +671,8 @@ def check_floating_controls(browser, base, failures):
     The launcher is checked closed, hovered, focused from the keyboard and inviting (on a fake clock, so that its
     ten-second cycle runs at once), at the top, a third and two thirds of the way down, and at the end of each page.
     The disciplines page has a field open, and the clusters page on a phone has its navigation drawer open at the end.
-    The invitation is to stay (decision D19), so it must also show somewhere.
+    The invitation is to stay (decision D19), so it must also show somewhere, and back to top must show beside
+    the fields or clusters and hide while the drawer is open.
     """
     expect = expectation(failures, "floating controls")
     invited = set()
@@ -686,6 +689,7 @@ def check_floating_controls(browser, base, failures):
                 if state.startswith("invitation") and page.evaluate(BUBBLE_SHOWN):
                     invited.add(f"{path} at {width} px")
 
+            back_to_top = False
             page.goto(base + path, wait_until="load", timeout=120000)
             page.wait_for_timeout(300)
             if path == "disciplines/":
@@ -701,6 +705,7 @@ def check_floating_controls(browser, base, failures):
                 page.wait_for_timeout(400)
                 look(f"launcher at {where}", "#just-os-btn")
                 look(f"back to top at {where}", ".clusters-back-to-top")
+                back_to_top = back_to_top or page.evaluate(BACK_TO_TOP_SHOWN)
                 for turn in range(2):  # One of two turns of its cycle shows the invitation, where it may show.
                     page.clock.run_for(10000)
                     page.wait_for_timeout(400)
@@ -722,6 +727,9 @@ def check_floating_controls(browser, base, failures):
                 page.wait_for_timeout(400)
                 look("back to top over the open drawer", ".clusters-back-to-top")
                 look("launcher over the open drawer", "#just-os-btn")
+                expect(not page.evaluate(BACK_TO_TOP_SHOWN), f"{path} at {width} px: back to top hides while the drawer is open")
+            if path in ("disciplines/", "clusters/"):
+                expect(back_to_top, f"{path} at {width} px: back to top shows beside the fields or clusters")
             for state, items in covered.items():
                 expect(False, f"{path} at {width} px, {state}: covers {', '.join(sorted(set(items))[:3])}")
             if not covered:
