@@ -32,7 +32,7 @@ DATA_PATHS = (
     "static/partials", "content/contributor-analysis",
     "content/publications/citation_chart.webp",
 )
-EXCLUDED = {"data/partners.json", "data/publications.yaml"}
+EXCLUDED = {"data/lesson_plans.json", "data/partners.json", "data/publications.yaml"}
 
 
 def git(root, *args):

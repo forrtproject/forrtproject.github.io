@@ -19,13 +19,17 @@
 {{ end }}
 {{ $hasFeatured := and $featuredEnabled $featuredData }}
 
-<section id="{{ $cid }}" class="cluster-section" style="background-color: {{ $color }};">
+{{/* Lesson-plan sets for this cluster, keyed by sub-cluster slug (keys validated in lesson_plans.html) */}}
+{{ $lpSets := index (partialCached "clusters/lesson_plans.html" "lesson-plans") (printf "%d" (int $cluster.number)) | default dict }}
+{{ $lpLabel := "Has lesson plans and slides" }}
+
+<section id="{{ $cid }}" class="cluster-section" style="background-color: {{ $color }};"{{ if $lpSets }} data-lp{{ end }}>
   <div class="cluster-header">
     <h2 class="cluster-title">
       <span class="cluster-number">{{ (int $cluster.number) }}</span>
       {{ $cluster.name }}
     </h2>
-    <span class="cluster-stats">{{ len $cluster.sub_clusters }} sub-clusters &middot; {{ $totalPubs }} references</span>
+    <span class="cluster-stats">{{ len $cluster.sub_clusters }} sub-clusters &middot; {{ $totalPubs }} references{{ with len $lpSets }} &middot; <span class="lp-dot" aria-hidden="true"></span> {{ . }} with lesson plans{{ end }}</span>
     <button class="acc-toggle-all" data-cluster="{{ $cid }}">Expand all</button>
   </div>
 
@@ -52,13 +56,14 @@
     {{ end }}
 
     {{ range $si, $sc := $cluster.sub_clusters }}
-    {{/* Stable, human-readable anchor slug derived from the name (not the array index), so shared links survive reordering. Must match sidebar_nav.html. */}}
-    {{ $slug := $sc.name | lower | replaceRE "[^a-z0-9]+" "-" | replaceRE "^-+|-+$" "" }}
+    {{/* Stable, human-readable anchor slug derived from the name (not the array index), so shared links survive reordering. */}}
+    {{ $slug := partial "clusters/sc_slug.html" $sc.name }}
     {{ $scid := printf "c%d-%s" (int $cluster.number) $slug }}
-    <div class="acc-section" id="{{ $scid }}">
+    {{ $lp := index $lpSets $slug }}
+    <div class="acc-section" id="{{ $scid }}"{{ if $lp }} data-lp{{ end }}>
       <div class="acc-header" role="button" tabindex="0">
         <span class="acc-chevron">&#9656;</span>
-        <h3 class="acc-label">{{ $sc.name }}</h3>
+        <h3 class="acc-label">{{ $sc.name }}{{ if $lp }}<span class="lp-dot" role="img" title="{{ $lpLabel }}" aria-label="{{ $lpLabel }}"></span>{{ end }}</h3>
         <span class="acc-count"><span class="acc-count-match">{{ len $sc.publications }}</span> / {{ len $sc.publications }}</span>
         <button type="button" class="acc-copy-link" data-anchor="{{ $scid }}" aria-label="Copy link to this sub-cluster" title="Copy link to this sub-cluster">
           <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M6.5 9.5l3-3M7 4.5l1-1a3 3 0 014.25 4.25l-1 1M9 11.5l-1 1a3 3 0 01-4.25-4.25l1-1"/></svg>
@@ -68,6 +73,32 @@
 
         {{ if $sc.description }}
         <p class="sc-description">{{ $sc.description }}</p>
+        {{ end }}
+
+        {{ with $lp }}
+        {{/* Teaching materials: one chip per file label, one link per format */}}
+        {{ $files := .files }}
+        <aside class="lp-strip" aria-label="Teaching materials: {{ .title }}">
+          <span class="lp-strip__label">Teaching materials{{ with .heading }}: <span class="lp-strip__heading">{{ . }}</span>{{ end }}</span>
+          <div class="lp-strip__chips">
+            {{ $labels := slice }}
+            {{ range $files }}{{ if not (in $labels .label) }}{{ $labels = $labels | append .label }}{{ end }}{{ end }}
+            {{ range $label := $labels }}
+            <span class="lp-chip">{{ $label }} <span class="lp-chip__formats">(
+              {{- range $fi, $f := where $files "label" $label -}}
+              {{- if $fi }} &middot; {{ end -}}
+              <a href="{{ $f.url }}" aria-label="{{ $label }} ({{ $f.format }})">{{ $f.format }}</a>
+              {{- end -}}
+            )</span></span>
+            {{ end }}
+          </div>
+          <p class="lp-strip__meta">
+            {{ with .creators }}By {{ delimit . ", " " and " }} &middot; {{ end }}
+            {{- with .reviewers }}reviewed by {{ delimit . ", " " and " }} &middot; {{ end }}
+            <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener license">CC BY-NC-SA 4.0</a> &middot;
+            <a href="{{ .record }}" target="_blank" rel="noopener">Zenodo record</a>{{ with .doi }} (<a href="https://doi.org/{{ . }}" target="_blank" rel="noopener">doi:{{ . }}</a>){{ end }}
+          </p>
+        </aside>
         {{ end }}
 
         {{ if $sc.publications }}
