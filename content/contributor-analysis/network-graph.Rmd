@@ -179,6 +179,75 @@ plot_edges <- bind_rows(
 )
 ```
 
+```{r page-data, results='asis'}
+# Data for the Doors page, which draws the network itself instead of embedding this widget.
+# It travels inside this file because data-processing.yml already carries the file between
+# monthly runs. The widget above stays until production moves to the Doors page.
+#
+# The layout is computed on the person-project graph. In the person-person graph every
+# project is a clique, so one project of 200 people adds about 20,000 lines and pulls
+# everyone into one dense mass. Two people are still connected exactly when they share a
+# project, so the connections themselves are unchanged.
+memberships <- credit_roles_long |>
+  distinct(Contributor, `Project Name`) |>
+  mutate(hub = str_c("project: ", `Project Name`))
+
+layout_graph <- graph_from_data_frame(select(memberships, Contributor, hub), directed = FALSE)
+groups <- components(layout_graph)
+hub_size <- degree(layout_graph)[startsWith(V(layout_graph)$name, "project: ")]
+main_group <- which.max(groups$csize)
+main_hub <- names(which.max(hub_size[groups$membership[names(hub_size)] == main_group]))
+
+# Tie any separate group to the largest project, for the layout only, so it stays near the rest.
+for (group in setdiff(seq_along(groups$csize), main_group)) {
+  in_group <- names(hub_size)[groups$membership[names(hub_size)] == group]
+  layout_graph <- add_edges(layout_graph, c(in_group[which.max(hub_size[in_group])], main_hub))
+}
+
+set.seed(1001)
+positions <- layout_with_fr(layout_graph, niter = 3000)
+rownames(positions) <- V(layout_graph)$name
+
+# Pull far outliers in, so that a few distant people do not shrink everything else, and
+# stretch sideways to suit a wide panel. Only the picture changes.
+centred <- scale(positions, center = TRUE, scale = FALSE)
+radius <- sqrt(rowSums(centred^2))
+limit <- unname(quantile(radius, 0.9))
+pulled <- ifelse(radius > limit, limit + (radius - limit) * 0.3, radius) / pmax(radius, 1e-9)
+positions <- centred * pulled
+positions[, 1] <- positions[, 1] * 1.35
+positions <- round(sweep(positions, 2, apply(positions, 2, min)) * 1000 / max(positions - min(positions)))
+
+network_projects <- sort(unique(memberships$`Project Name`))
+display_names <- credit_roles_long |>
+  distinct(Contributor, .keep_all = TRUE) |>
+  mutate(name = str_squish(str_replace_na(str_c(coalesce(`First name`, ""), " ", coalesce(Surname, ""))))) |>
+  select(Contributor, name)
+
+network_people <- contributor_nodes |>
+  arrange(id) |>
+  left_join(display_names, join_by(id == Contributor))
+
+network_data <- list(
+  projects = lapply(network_projects, function(project) {
+    hub <- str_c("project: ", project)
+    list(project, unname(positions[hub, 1]), unname(positions[hub, 2]))
+  }),
+  people = lapply(seq_len(nrow(network_people)), function(i) {
+    person <- network_people[i, ]
+    joined <- memberships$`Project Name`[memberships$Contributor == person$id]
+    list(person$name, person$value, unname(positions[person$id, 1]), unname(positions[person$id, 2]),
+         as.list(match(joined, network_projects) - 1L))
+  }),
+  pairs = nrow(contributor_edges),
+  largest_group = max(groups$csize) - sum(startsWith(names(groups$membership)[groups$membership == main_group], "project: "))
+)
+
+cat('\n<script type="application/json" id="contributor-network">',
+    gsub("<", "\\u003c", jsonlite::toJSON(network_data, auto_unbox = TRUE), fixed = TRUE),
+    '</script>\n', sep = "")
+```
+
 ```{r network-visualization, echo=FALSE}
 # Create the network visualization
 visNetwork(contributor_nodes, plot_edges, width = "100%", height = "800px") |>
@@ -227,6 +296,9 @@ visNetwork(contributor_nodes, plot_edges, width = "100%", height = "800px") |>
   htmlwidgets::onRender("
     function(el, x) {
       var network = this.network;
+
+      // The layout comes from igraph, so nothing else frames it in the panel.
+      network.fit({animation: false});
 
       network.on('click', function(params) {
         if (params.nodes.length === 0) {
