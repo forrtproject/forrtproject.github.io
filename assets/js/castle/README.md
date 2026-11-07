@@ -18,12 +18,7 @@ The animated brick tower in the home page's arched door. Hugo bundles it with `j
 
 **To turn it off**, set `doors.castle = false` in `config/_default/params.toml`. Visitors then see only the still.
 
-**After changing the geometry or the scene**, regenerate the still, so it still lines up when the bundle takes over:
-
-```sh
-hugo --destination /tmp/castle-build
-python3 scripts/rebrand/render_castle_still.py /tmp/castle-build assets/images/doors/castle-still.webp
-```
+**After changing the geometry or the scene**, regenerate the still, so it still lines up when the bundle takes over. Its renderer, `render_castle_still.py`, left the repository at launch with the other Doors preview tools; recover it from `scripts/rebrand/` in the history of the `rebrand-doors` branch.
 
 **After changing which bricks move**, re-bake the heaps. This is the one step that needs Node, and only on the machine doing it:
 

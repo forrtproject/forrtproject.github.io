@@ -47,20 +47,6 @@ Features:
 - Queues builds instead of canceling (concurrency)
 - Auto-cleans old staging branches (keeps 2)
 
-### [rebrand-preview.yaml](rebrand-preview.yaml)
-**Preview of the Doors redesign, while it is in progress**
-
-| Trigger | Target | Schedule |
-|---------|--------|----------|
-| Push to `rebrand-doors` | forrt.org/rebrand-doors/ (`forrtproject/rebrand-doors`) | On push |
-| PR into `rebrand-doors` | Checks only, no deployment | On PR events |
-
-Features:
-- Uses the same data and announcement artifacts as `deploy.yaml`, with noindex and no analytics
-- Compares each build with its merge base with `main`: URL list, structured data, SEO tags and internal links. See `scripts/rebrand/README.md`
-- A failed check marks the run red but still updates the preview
-- Delete this workflow when the redesign launches
-
 ## Data Workflows
 
 ### [data-processing.yml](data-processing.yml)
