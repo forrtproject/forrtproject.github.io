@@ -625,7 +625,11 @@ FLOATING_OVER = """(selector) => {
   if (!floating) return [];
   const own = floating.closest('#just-os-widget') || floating;
   const style = getComputedStyle(floating);
-  const box = floating.getBoundingClientRect();
+  const rect = floating.getBoundingClientRect();
+  // A focus ring drawn outside the box covers the page as much as the box does.
+  const ring = style.outlineStyle !== 'none' ? Math.max(0, parseFloat(style.outlineWidth) + parseFloat(style.outlineOffset)) : 0;
+  const box = {left: rect.left - ring, right: rect.right + ring, top: rect.top - ring, bottom: rect.bottom + ring,
+               width: rect.width + 2 * ring, height: rect.height + 2 * ring};
   if (style.visibility === 'hidden' || parseFloat(style.opacity) < 0.5 || !box.width || !box.height) return [];
   const meets = (r) => r.width > 0 && r.height > 0 && r.left < box.right - 0.5 && box.left < r.right - 0.5 && r.top < box.bottom - 0.5 && box.top < r.bottom - 0.5;
   const shown = (el, r) => {
@@ -669,7 +673,7 @@ BACK_TO_TOP_SHOWN = """() => { const el = document.querySelector('.clusters-back
 # Where the floating controls are checked: long pages of text, cards and lists, the pages with back to top,
 # and a page on the reading layout, whose empty margin the invitation may use.
 FLOATING_PAGES = ("contributors/", "citation-politics/toolkit/", "disciplines/", "clusters/", "clusters/cluster-1/",
-                  "publications/", "about/teams/", "about/")
+                  "publications/", "about/teams/", "about/", "contributor-analysis/")
 FLOATING_WIDTHS = (390, 1024, 1280, 1440, 1800)  # From 1800 px the launcher has its hover and focus label.
 
 
