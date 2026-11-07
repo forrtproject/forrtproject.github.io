@@ -44,11 +44,11 @@ import sys
 import tarfile
 import threading
 from pathlib import Path
-from urllib.parse import urlsplit
+from urllib.parse import unquote, urlsplit
 
 HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
-from site_inventory import _REDIRECT, seo_head  # noqa: E402
+from site_inventory import _REDIRECT, inventory, seo_head  # noqa: E402
 
 REPO = HERE.parents[1]
 HUGO_VERSION = "0.158.0"
@@ -236,6 +236,16 @@ def sitemap_urls(public):
     return urls
 
 
+def unresolved(public, urls):
+    """Sitemap URLs on the site with no built file behind them."""
+    missing = []
+    for url in urls:
+        path = unquote(urlsplit(url).path).lstrip("/")
+        if url.startswith(SITE) and not ((public / path).is_file() or (public / path / "index.html").is_file()):
+            missing.append(url)
+    return missing
+
+
 def grep_outputs(public, pattern):
     hits = []
     for path in public.rglob("*"):
@@ -280,7 +290,8 @@ def production_checks(main_public, launch_public):
         "sitemap_urls": {"main": len(main_urls), "launch": len(launch_urls),
                          "off_site": sorted(u for u in launch_urls if not u.startswith(SITE) or "/rebrand-doors" in u),
                          "only_main": sorted(set(main_urls) - set(launch_urls)),
-                         "only_launch": sorted(set(launch_urls) - set(main_urls))},
+                         "only_launch": sorted(set(launch_urls) - set(main_urls)),
+                         "no_built_file": unresolved(launch_public, launch_urls)},
         "robots_txt_same": robots[0] == robots[1],
         "rebrand_doors_in_output": grep_outputs(launch_public, re.compile(r"/rebrand-doors")),
         "google_fonts_in_output": grep_outputs(launch_public, GOOGLE_FONTS),
@@ -289,7 +300,8 @@ def production_checks(main_public, launch_public):
     }
     hard = (result["noindex_pages"]["launch_only"] or result["canonical_off_site"]["launch_only"]
             or result["og_url_off_site"] or undoored or old_refs
-            or result["sitemap_urls"]["off_site"] or result["rebrand_doors_in_output"]
+            or result["sitemap_urls"]["off_site"] or result["sitemap_urls"]["no_built_file"]
+            or result["rebrand_doors_in_output"]
             or result["google_fonts_in_output"]
             or abs(len(launch_urls) - len(main_urls)) > 0.02 * max(len(main_urls), 1))
     return result, bool(hard)
@@ -433,6 +445,10 @@ def main():
     git("fetch", "origin", "--quiet")
     summary = {"main_ref": git("rev-parse", args.main_ref), "doors_ref": git("rev-parse", args.doors_ref)}
     failed = []
+    # Hugo's Git calls inherit GIT_ENV; confirm Git reads it as deploy.yaml's setting.
+    summary["git_core_quotepath"] = git("config", "core.quotepath")
+    if summary["git_core_quotepath"] != "false":
+        sys.exit("core.quotepath is not false for this run")
 
     hugo, summary["hugo"] = get_hugo(work)
     data_run, data_date = (args.data_run, None) if args.data_run else newest_artifact("data-artifact", "main")
@@ -464,6 +480,8 @@ def main():
         result = run(["python3", compare, *extra, reference, publics["launch"]], log=logs / f"{label}.log", check=False)
         summary[label] = {"exit": result.returncode, "log": str(logs / f"{label}.log")}
     failed += ["compare_builds against main"] if summary["compare-main"]["exit"] else []
+
+    summary["structured_data"] = {label: inventory(public)["structured_data"] for label, public in publics.items()}
 
     print("Checking production-only output ...", flush=True)
     summary["production"], hard = production_checks(publics["main"], publics["launch"])
