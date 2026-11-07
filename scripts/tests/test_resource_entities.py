@@ -22,11 +22,11 @@ class DecodeEntitiesTests(unittest.TestCase):
         row = self.decode(
             title="Youngsuk &ldquo;Y.S.&rdquo; Chi",
             abstract="Open&nbsp;science &amp; health &#8211; a review &#x2014; part 1",
-            creators="Fran&ccedil;ois Dupont",
+            creators="&Aring;sa Berg",
         )
         self.assertEqual(row["title"], "Youngsuk “Y.S.” Chi")
         self.assertEqual(row["abstract"], "Open science & health – a review — part 1")
-        self.assertEqual(row["creators"], "François Dupont")
+        self.assertEqual(row["creators"], "Åsa Berg")
 
     def test_bare_ampersands_are_left_alone(self):
         # html.unescape alone would turn "&not" and "&copy" into symbols.
