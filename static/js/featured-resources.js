@@ -626,6 +626,9 @@
     var specCheckbox = document.getElementById('fr-global-specificity-checkbox');
     var searchInput = document.getElementById('clusters-inline-search-input');
     var clearBtn = document.getElementById('fr-global-clear');
+    /* Lesson-plan checkbox: sets .lp-filter-on on the layout; CSS then hides clusters,
+       sub-clusters and sidebar entries without [data-lp]. It filters sections, not cards. */
+    var lpCheckbox = document.getElementById('lp-filter-checkbox');
 
     // --- Pre-cache card data so filtering never queries the DOM for text ---
     var sectionCache = [];
@@ -664,6 +667,7 @@
         body: body,
         chevron: header ? header.querySelector('.acc-chevron') : null,
         ownText: ownText,
+        hasLp: section.hasAttribute('data-lp'),
         cards: cards
       });
     });
@@ -682,12 +686,15 @@
 
     if (specCheckbox) specCheckbox.addEventListener('change', applyGlobalFilters);
 
+    if (lpCheckbox) lpCheckbox.addEventListener('change', applyGlobalFilters);
+
     if (clearBtn) {
       clearBtn.addEventListener('click', function () {
         if (searchInput) searchInput.value = '';
         resetGroupToAll(focusGroup);
         resetGroupToAll(typeGroup);
         if (specCheckbox) specCheckbox.checked = false;
+        if (lpCheckbox) lpCheckbox.checked = false;
         applyGlobalFilters();
         if (searchInput) searchInput.focus();
       });
@@ -726,7 +733,13 @@
       var showNarrow = specCheckbox ? specCheckbox.checked : false;
       var query = searchInput ? searchInput.value.toLowerCase().trim() : '';
       var tokens = query ? query.split(/\s+/) : [];
-      var isFiltered = activeFocus !== 'all' || activeType !== 'all' || tokens.length > 0;
+      var lpOnly = lpCheckbox ? lpCheckbox.checked : false;
+      document.querySelectorAll('.clusters-layout').forEach(function (el) {
+        el.classList.toggle('lp-filter-on', lpOnly);
+      });
+      /* Counting the lesson-plan toggle as a filter auto-expands the remaining sub-clusters,
+         so their teaching-materials strips are visible straight away. */
+      var isFiltered = activeFocus !== 'all' || activeType !== 'all' || tokens.length > 0 || lpOnly;
       if (clearBtn) clearBtn.hidden = !isFiltered;
 
       // --- Pass 1: compute visibility from cached data (no DOM reads) ---
@@ -760,6 +773,10 @@
           }
         }
 
+        /* With the lesson-plan filter on, a sub-cluster with a set stays open even if no card
+           matches the other filters: its teaching-materials strip is what the user asked for. */
+        if (lpOnly && sec.hasLp) ownTextMatches = true;
+
         sectionResults.push({ matchCount: matchCount, cardVis: cardVis, ownTextMatches: ownTextMatches });
       }
 
@@ -780,7 +797,7 @@
         if (!header || !body) continue;
 
         if (res.matchCount === 0 && !res.ownTextMatches) {
-          if (!header.classList.contains('acc-disabled')) {
+          if (!header.dataset.wasOpen) {
             header.dataset.wasOpen = body.classList.contains('acc-collapsed') ? '0' : '1';
           }
           header.classList.add('acc-disabled');
