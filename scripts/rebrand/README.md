@@ -2,7 +2,7 @@
 
 Tools for the long-lived `rebrand-doors` branch, which moves forrt.org to the Doors design. The branch stays a draft PR until launch; its preview is at <https://forrt.org/rebrand-doors/>.
 
-Nothing here runs against production. Delete this folder after launch unless a check has been promoted into the normal workflows.
+Only `check_preview.py --production` runs against production, after launch; everything else checks the branch, its builds or the preview. Delete this folder after launch unless a check has been promoted into the normal workflows.
 
 ## What runs on every push and PR
 
@@ -37,7 +37,8 @@ python3 scripts/rebrand/capture_pages.py /tmp/public-main --out /tmp/baseline-sh
 
 ## Other tools
 
-- `check_preview.py` checks the deployed preview in a browser: one URL per rule in the 404 table, a sample of links and assets, noindex, search, and that the newsletter form loads on a click and not before.
+- `check_preview.py` checks the deployed preview in a browser: one URL per rule in the 404 table, a sample of links and assets, noindex, search, and that the newsletter form loads on a click and not before. After launch, `check_preview.py --production` runs the same checks on <https://forrt.org/> and instead requires that sampled pages carry no noindex and that their canonical URLs sit on the root domain and outside `/rebrand-doors/`. Redirects and search results must also stay on that origin. A retired path that names a sister site lands on that site there, because its own repository answers first.
+- `rehearse_launch.py --work <dir> [--doors-ref <ref>]` rehearses the launch without pushing anything. It merges the branch into a throwaway branch from `main` with `--no-ff`, builds that merge and `main` as `deploy.yaml` does (production artifacts, Hugo 0.158.0, `HUGO_ENV=production`), and runs `deploy.yaml`'s checks and `compare_builds.py` on both. It then checks noindex, canonical URLs, the sitemap and leftover `/rebrand-doors` paths, rebuilds without any data-artifact file that would revert a Doors change, and loads sample pages on localhost to list requests to other hosts. Results go to `<dir>/summary.json`; everything else is deleted unless `--keep` is given.
 - `check_design.py` checks the designed screens in a browser, on a build or the preview, in Chromium by default and with `--browser firefox` or `--browser webkit` in the others: overflow, also on the sample pages, italics, line length, one `h1`, hidden buttons, and the resources directory's filters, address, search and pages. On a build it also sweeps the reading layout's pages, including for empty space beside the text, and scans for icons and theme assets.
 - `capture_pages.py` also weighs and screenshots a preview build with `--base /rebrand-doors/`.
 - `build_fonts.py` rebuilds `static/fonts/doors/`, and with `--icons` the subset of Font Awesome and `assets/css/doors/icons.css`. Add a new icon to its `ICONS` list.
