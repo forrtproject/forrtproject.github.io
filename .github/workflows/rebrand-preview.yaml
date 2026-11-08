@@ -76,6 +76,7 @@ jobs:
           path: ${{ runner.temp }}/artifacts/data
           github_token: ${{ secrets.GITHUB_TOKEN }}
           search_artifacts: true
+          branch: main  # as in deploy.yaml: only main's runs, never a branch test run (#960)
           if_no_artifact_found: warn
 
       - name: Download announcements artifact
@@ -87,6 +88,7 @@ jobs:
           path: ${{ runner.temp }}/artifacts/announcements
           github_token: ${{ secrets.GITHUB_TOKEN }}
           search_artifacts: true
+          branch: main  # as in deploy.yaml: only main's runs, never a branch test run (#960)
           if_no_artifact_found: warn
 
       - name: Apply artifacts to both checkouts
