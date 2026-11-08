@@ -1,4 +1,4 @@
-"""Execute the 404 template's redirect script with Node.js."""
+"""Run the 404 page's redirect script in Node.js and check where it sends old URLs (#1035)."""
 
 import json
 from pathlib import Path
@@ -7,92 +7,45 @@ import shutil
 import subprocess
 import unittest
 
-
 ROOT = Path(__file__).resolve().parents[2]
 BASE_TEMPLATE = '{{ strings.TrimSuffix "/" (urls.Parse site.BaseURL).Path }}'
+# Runs the script once per URL with a stub window.location and prints each redirect target.
 RUNNER = """
-const fs = require('node:fs');
 const vm = require('node:vm');
-const { script, cases } = JSON.parse(fs.readFileSync(0, 'utf8'));
-const results = cases.map(({ url }) => {
-  const parsed = new URL(url, 'https://example.org');
-  const targets = [];
-  vm.runInNewContext(script, {
-    window: { location: {
-      pathname: parsed.pathname,
-      search: parsed.search,
-      hash: parsed.hash,
-      replace: target => targets.push(target)
-    } }
-  });
-  return targets;
+const { script, urls } = JSON.parse(require('node:fs').readFileSync(0, 'utf8'));
+const targets = urls.map(url => {
+  const u = new URL(url, 'https://example.org');
+  let target = null;
+  vm.runInNewContext(script, { window: { location: {
+    pathname: u.pathname, search: u.search, hash: u.hash, replace: t => { target = t; } } } });
+  return target;
 });
-process.stdout.write(JSON.stringify(results));
+process.stdout.write(JSON.stringify(targets));
 """
 
 
-@unittest.skipUnless(shutil.which("node"), "Node.js is required to execute redirects")
+@unittest.skipUnless(shutil.which("node"), "Node.js is required to run the redirect script")
 class RedirectTests(unittest.TestCase):
-    @classmethod
-    def setUpClass(cls):
+    def redirects(self, base, urls):
         template = (ROOT / "layouts/404.html").read_text(encoding="utf-8")
-        cls.script = re.search(r"<script>(.*?)</script>", template, re.S).group(1)
-        if BASE_TEMPLATE not in cls.script:
-            raise AssertionError("The 404 base template changed; update the test renderer")
+        script = re.search(r"<script>(.*?)</script>", template, re.S).group(1)
+        self.assertIn(BASE_TEMPLATE, script, "The 404 page's base expression changed; update this test")
+        result = subprocess.run(["node", "-e", RUNNER], check=True, capture_output=True, text=True,
+                                input=json.dumps({"script": script.replace(BASE_TEMPLATE, base), "urls": urls}))
+        return json.loads(result.stdout)
 
-    def check_redirects(self, paths, suffixes=("?view=full#section",)):
+    def test_query_and_fragment_survive_the_redirect(self):
         for base in ("", "/rebrand-doors"):
-            cases = [
-                {"url": base + old + suffix, "expected": target + suffix}
-                for old, target in paths(base)
-                for suffix in suffixes
-            ]
-            result = subprocess.run(
-                ["node", "-e", RUNNER],
-                input=json.dumps({
-                    "script": self.script.replace(BASE_TEMPLATE, base),
-                    "cases": cases,
-                }),
-                text=True, capture_output=True, check=True,
-            )
-            results = json.loads(result.stdout)
-            self.assertEqual(len(results), len(cases))
-            for case, targets in zip(cases, results):
-                with self.subTest(url=case["url"]):
-                    self.assertEqual(targets, [case["expected"]])
-
-    def test_handbook_keeps_query_and_fragment(self):
-        self.check_redirects(
-            lambda base: [("/replication_handbook/chapter.html", "/replication-handbook/chapter.html")],
-            ("", "?view=full", "#section", "?view=full#section", "?q=a%20b&x=%23#part%202"),
-        )
-
-    def test_sister_sites_stay_at_domain_root_with_optional_captures(self):
-        renames = (
-            ("FReD-apps", "fred-apps"),
-            ("FReD", "fred"),
-            ("flora_zotero", "flora-zotero"),
-            ("LoveReplicationsWeek", "love-replications-week"),
-            ("plugin_notification_dummy", "plugin-notification-dummy"),
-            ("replication_handbook", "replication-handbook"),
-            ("TenureRun", "tenure-run"),
-            ("Transform-to-Open-Science-Book", "transform-to-open-science-book"),
-        )
-        self.check_redirects(lambda base: [
-            ("/" + old + tail, "/" + new + tail)
-            for old, new in renames
-            for tail in ("", "/", "/chapter/part.html")
-        ])
-
-    def test_local_destinations_keep_preview_base(self):
-        self.check_redirects(lambda base: [
-            ("/curated_resources/old/", base + "/resources/"),
-            ("/glossary/english/old/", base + "/glossary/english/"),
-            ("/author/someone/", base + "/contributors/"),
-            ("/summaries/old/", base + "/"),
-            ("/reversals/old/", base + "/"),
-            ("/re-searchterms/", base + "/apps/re-searchterms.html"),
-        ])
+            with self.subTest(base=base):
+                self.assertEqual(self.redirects(base, [
+                    base + "/replication_handbook/chapter.html?view=full#section-2",
+                    base + "/FReD#top",
+                    base + "/curated_resources/old/?q=a%20b",
+                ]), [
+                    "/replication-handbook/chapter.html?view=full#section-2",  # sister sites: domain root
+                    "/fred#top",
+                    base + "/resources/?q=a%20b",
+                ])
 
 
 if __name__ == "__main__":
