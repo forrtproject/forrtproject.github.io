@@ -4,7 +4,9 @@
 Run after the clusters change: build the site, then
     python3 scripts/render_clusters_share_image.py <build-dir>
 It writes content/clusters/FORRT_Clusters.webp (1200x630), the page's sharing_image_resource;
-the build turns it into a PNG for social previews. Needs Playwright with Chromium.
+the build turns it into a PNG for social previews.
+
+Needs Playwright and Pillow: `pip install playwright pillow`, then `python3 -m playwright install chromium`.
 """
 import functools
 import http.server
@@ -21,12 +23,14 @@ OUT = ROOT / "content/clusters/FORRT_Clusters.webp"
 
 ISOLATE = """() => {
   const map = document.querySelector('.clusters-map').cloneNode(true);
-  const title = document.querySelector('h1').cloneNode(true);
+  const head = document.createElement('div');
+  head.className = 'clusters-head';  // keeps the page's heading style
+  head.append(document.querySelector('h1').cloneNode(true));
   document.body.innerHTML = '';
   const main = document.createElement('main');
   main.style.cssText = 'padding:36px 56px;width:1200px;box-sizing:border-box';
-  title.style.margin = '0';
-  main.append(title, map);
+  head.firstChild.style.margin = '0';
+  main.append(head, map);
   document.body.append(main);
 }"""
 

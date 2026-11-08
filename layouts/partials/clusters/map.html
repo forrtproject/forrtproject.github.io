@@ -1,7 +1,8 @@
 {{/* Clusters map: a wheel with one segment per cluster, plus a legend, both linking to the
      clusters. Drawn from data/clusters_v4.json at build time, so it always matches the list.
      Expects dict: link_mode ("anchor" for #cluster-N on /clusters/, else /clusters/cluster-N/). */}}
-{{ $clusters := hugo.Data.clusters_v4.clusters }}
+{{ with hugo.Data.clusters_v4 }}{{ with .clusters }}
+{{ $clusters := . }}
 {{ $palette := (partial "clusters/colors.html").arrowColors }}
 {{ $n := len $clusters }}
 {{ $cx := 200.0 }}{{ $cy := 200.0 }}{{ $R := 196.0 }}{{ $r := 104.0 }}
@@ -27,15 +28,15 @@
       "subs" (len $c.sub_clusters)) }}
 {{ end }}
 <figure class="clusters-map" data-clusters-map>
-  {{/* The legend carries the links for keyboard and screen-reader users; the wheel repeats
-       them for pointer users only, so it is hidden from assistive technology. */}}
+  {{/* The legend carries the links. The wheel is a pointer shortcut to the same places, with
+       no links of its own, so it is hidden from assistive technology and holds nothing focusable. */}}
   <svg class="clusters-map__wheel" viewBox="0 0 400 400" aria-hidden="true" focusable="false">
     {{ range $items }}
-    <a href="{{ .href }}" class="clusters-map__segment" data-cluster="{{ .num }}" tabindex="-1">
+    <g class="clusters-map__segment" data-cluster="{{ .num }}" data-href="{{ .href }}">
       <title>{{ .num }}. {{ .name }}</title>
       <path d="{{ .path }}" style="fill: {{ .color | safeCSS }}"></path>
       <text x="{{ printf "%.1f" .x }}" y="{{ printf "%.1f" .y }}" dy=".35em">{{ .num }}</text>
-    </a>
+    </g>
     {{ end }}
     <text class="clusters-map__hub" x="200" y="192">FORRT</text>
     <text class="clusters-map__hub-sub" x="200" y="224">{{ $n }} clusters</text>
@@ -54,9 +55,12 @@
 </figure>
 <script>
 (function () {
-  /* Highlight a cluster in the wheel and the legend together. */
+  /* Highlight a cluster in the wheel and the legend together; a wheel segment follows its link. */
   var map = document.currentScript.previousElementSibling;
   var parts = map.querySelectorAll('[data-cluster]');
+  map.querySelectorAll('.clusters-map__segment').forEach(function (seg) {
+    seg.addEventListener('click', function () { window.location.href = seg.getAttribute('data-href'); });
+  });
   function show(num) {
     map.classList.toggle('is-pointing', !!num);
     parts.forEach(function (el) { el.classList.toggle('is-active', el.getAttribute('data-cluster') === num); });
@@ -70,3 +74,4 @@
   });
 })();
 </script>
+{{ end }}{{ end }}
