@@ -285,7 +285,8 @@ jobs:
         continue-on-error: true
         with:
           workflow: data-processing.yml
-          name: data-artifact
+          # Branch runs of data-processing.yml upload data-artifact-preview (#1030)
+          name: ${{ github.event.inputs.data_branch != '' && 'data-artifact-preview' || 'data-artifact' }}
           path: .staging-data-artifact
           github_token: ${{ secrets.GITHUB_TOKEN }}
           search_artifacts: true
