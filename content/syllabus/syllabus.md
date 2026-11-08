@@ -57,7 +57,7 @@ To provide educators with an example of how they can draw resources from FORRT�
 
 FORRT’s syllabus was developed as a seminar series covering 9 weeks of teaching. In an attempt to be comprehensive of the open scholarship literature, the syllabus builds on [FORRT’s cluster framework](https://forrt.org/clusters). As such, the proposed topic for each week is one of FORRT’s clusters and its related literature. For each week, there are suggestions of core and additional readings. The syllabus is comprised of a series of assignments and proposed activities for students. 
 
-Importantly, this syllabus is not intended to be a “one size fits all” approach. While educators are welcomed to use this syllabus in its current format, they can also adapt it to meet their current courses and needs. We hope it can serve as a starting point for your class.
+Importantly, this syllabus is not intended to be a “one size fits all” approach. While educators are welcome to use this syllabus in its current format, they can also adapt it to meet their current courses and needs. We hope it can serve as a starting point for your class.
 
 > ### FORRT's Open and Reproducible Science Syllabus
 > * [Open the syllabus (editable Google Doc or Word)](https://docs.google.com/document/d/1pfFro5MbwBHzzXTeM_lE1gjFuq7AnnKWSDWkVwOBAtE/edit#)

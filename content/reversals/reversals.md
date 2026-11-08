@@ -108,7 +108,7 @@ The original project was organized in five stages:
 
 {{% alert example %}}
 
- {{< hl >}}We were shortlisted for the **Einstein Foundations Award for Promoting Quality in Research 2023** in the category Early Career Award! Check out our project "Tracking and Mainstreaming Replications across the Social, Behavioral and Cognitive Sciences" [here](https://web.archive.org/web/20231204000615/https://www.einsteinfoundation.de/en/award/events/meet-the-finalists/)!{{< /hl >}}
+ {{< hl >}}We were shortlisted for the **Einstein Foundation Award for Promoting Quality in Research 2023** in the category Early Career Award! Check out our project "Tracking and Mainstreaming Replications across the Social, Behavioral and Cognitive Sciences" [here](https://web.archive.org/web/20231204000615/https://www.einsteinfoundation.de/en/award/events/meet-the-finalists/)!{{< /hl >}}
 
  {{% /alert %}}
 

@@ -73,7 +73,7 @@ We compiled lesson plans and activities, and categorized them based on their the
 
 You can find *all lesson plans* [in this OSF repository](https://osf.io/th254/), and here's one example about [Interpreting effect sizes and confidence intervals](LessonPlans1.pdf) and another on [Prediction Markets](LessonPlans2.pdf). 
 
-Each has suitable context: (e.g., entry-level/undergraduate/postgraduate), total time: (e.g., 1 hour, 2 hours, 1 day, etc.), pre-requisites, related resources (e.g. slides, assignment materials, lecture recordings, etc), learning outcomes, broken down per activity length (10min, 30min, etc.). Here's all the topics that we prepared Lesson Plans so far:
+Each has suitable context: (e.g., entry-level/undergraduate/postgraduate), total time: (e.g., 1 hour, 2 hours, 1 day, etc.), pre-requisites, related resources (e.g. slides, assignment materials, lecture recordings, etc), learning outcomes, broken down per activity length (10min, 30min, etc.). Here are all the topics for which we have prepared Lesson Plans so far:
 
 1. [Interpreting effect sizes and confidence intervals](https://osf.io/8jmbu/)
 1. [Registered Replication Report](https://osf.io/2znr4/)
@@ -156,6 +156,6 @@ These resources were created as part of the Society for Improving Psychological 
 
 #### Contributorship 
 
-In line with principles enshrined in FORRT, this google-sheet is an open online contributorship project. The work of all contributors is valued and are formally recognized. With this, we hope to expand the scope and diversity of FORRT’s mission and its team.
+In line with principles enshrined in FORRT, this google-sheet is an open online contributorship project. The work of all contributors is valued and formally recognized. With this, we hope to expand the scope and diversity of FORRT’s mission and its team.
 
 <br>
