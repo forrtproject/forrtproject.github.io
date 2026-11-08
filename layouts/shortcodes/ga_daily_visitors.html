@@ -6,6 +6,7 @@ document.addEventListener('DOMContentLoaded', function() {
   var dailyData = {{ hugo.Data.ga_data.daily_visitors | jsonify | safeJS }};
   if (dailyData && dailyData.length) {
     dailyData.sort((a, b) => new Date(a.date) - new Date(b.date));
+    {{/* The last row is the day that has just ended and is provisional because the workflow runs just after midnight UTC, so it is dropped on purpose. */}}
     dailyData.pop();
     var labels = dailyData.map(function(entry) { return entry.date; });
     var dataPoints = dailyData.map(function(entry) { return entry.users; });
