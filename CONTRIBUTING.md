@@ -16,6 +16,7 @@ Please follow the [FORRT Code of Conduct](https://forrt.org/coc/) in issues, rev
 
 - [Questions, Ideas & Suggestions](#questions-ideas--suggestions)
 - [Edit content in your browser](#edit-content-in-your-browser)
+  - [Linking glossary terms](#linking-glossary-terms)
 - [Local Development Setup](#local-development-setup)
   - [Standard Setup](#standard-setup-git--hugo)
   - [RStudio Setup](#rstudio-setup)
@@ -52,7 +53,7 @@ To set a short note beside the text, put `{{% callout title="A title" %}}Your no
 
 ### Linking glossary terms
 
-On hand-written pages, use `{{< term "Preregistration" >}}` to link an English glossary term. To change the displayed wording, use `{{< term "Preregistration" "preregistered" >}}`. Titles are matched without regard to case. Mark only the first occurrence of each term on a page, and keep existing resource links intact. Hover, keyboard focus, or a first touch tap shows a short definition; the popover links to the full entry. Mouse clicks and Enter follow the term link, which also works without JavaScript. Unknown terms render as plain text and produce a Hugo build warning; check the [English glossary](https://forrt.org/glossary/english/) for the exact title. Do not add these shortcodes to generated content.
+On hand-written pages, use `{{< term "Preregistration" >}}` to link an English glossary term. To change the displayed wording, use `{{< term "Preregistration" "preregistered" >}}`. Titles are matched without regard to case. Mark only the first occurrence of each term on a page, and keep existing resource links intact. Hover, keyboard focus, or a first touch tap shows a short definition; the popover links to the full entry. A repeat tap on the open trigger, mouse clicks, and Enter follow the term link, which also works without JavaScript. Unknown terms render as plain text and produce a Hugo build warning; check the [English glossary](https://forrt.org/glossary/english/) for the exact title. Do not add these shortcodes to generated content.
 
 ## Local Development Setup
 

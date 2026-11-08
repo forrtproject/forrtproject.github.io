@@ -57,6 +57,9 @@ async function show(trigger, mode, data = loadIndex()) {
     changingPopover = true;
     try {
       openPopover(trigger, content, { label: `Glossary: ${term.title}`, hover: mode !== 'touch' });
+      // Replacing a touch/citation panel restores its old trigger's focus. Keep
+      // an incoming keyboard focus on the glossary link the reader moved to.
+      if (mode === 'focus' && document.activeElement !== trigger) trigger.focus({ preventScroll: true });
     } finally {
       changingPopover = false;
     }
@@ -110,19 +113,21 @@ document.addEventListener('pointerdown', (event) => {
   touchTrigger = event.pointerType === 'touch' ? event.target.closest(selector) : null;
   if (!event.target.closest(`${selector},.doors-popover`)) cancelOpening();
 });
+document.addEventListener('pointercancel', () => { touchTrigger = null; });
 document.addEventListener('click', (event) => {
   const trigger = event.target.closest(selector);
   if (!trigger || (event.pointerType !== 'touch' && trigger !== touchTrigger)) return;
   if (event.button || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
-  event.preventDefault();
   touchTrigger = null;
+  if (panelFor(trigger)) return;
+  event.preventDefault();
   cancelOpening();
   show(trigger, 'touch');
 });
 document.addEventListener('keydown', (event) => {
   if (event.key === 'Tab') pointerFocus = false;
-  if (event.key === 'Escape') {
-    // A touch-opened panel returns focus on Escape; that must not reopen it.
+  if (event.key === 'Escape' || ((event.key === 'Enter' || event.key === ' ') && event.target.closest('.doors-popover-close'))) {
+    // Explicit dismissal returns focus to the trigger; that must not reopen it.
     pointerFocus = true;
     cancelOpening();
     clearTimeout(closing);
