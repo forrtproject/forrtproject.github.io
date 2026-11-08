@@ -26,5 +26,6 @@
     "language": "english",
     "aliases": [
         "/glossary/sensitive_research"
-    ]
+    ],
+    "lastmod": "2026-08-05"
 }

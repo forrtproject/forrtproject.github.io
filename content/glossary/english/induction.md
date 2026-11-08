@@ -20,5 +20,6 @@
     "language": "english",
     "aliases": [
         "/glossary/induction"
-    ]
+    ],
+    "lastmod": "2026-08-05"
 }

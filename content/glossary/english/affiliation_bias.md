@@ -25,5 +25,6 @@
     "language": "english",
     "aliases": [
         "/glossary/affiliation_bias"
-    ]
+    ],
+    "lastmod": "2026-08-05"
 }

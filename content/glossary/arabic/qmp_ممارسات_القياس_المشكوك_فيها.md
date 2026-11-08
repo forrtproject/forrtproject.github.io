@@ -7,7 +7,7 @@
     "related_terms": [
         "Construct validity",
         "Measurement schmeasurement",
-        "*P*\\-hacking",
+        "p-hacking",
         "Psychometrics",
         "Questionable Research Practices or Questionable Reporting Practices (QRPs)",
         "Validity"
@@ -30,12 +30,13 @@
     ],
     "language": "arabic",
     "translated_by": [
-        "Mai Helmy."
+        "Mai Helmy"
     ],
     "translation_reviewed_by": [
         "Ali H. Al-Hoorie",
         "Hiba Alomary",
         "Asma Alzahrani",
         "Mohammed Mohsen"
-    ]
+    ],
+    "lastmod": "2026-11-08"
 }

@@ -33,5 +33,6 @@
     "language": "english",
     "aliases": [
         "/glossary/computational_reproducibility"
-    ]
+    ],
+    "lastmod": "2026-08-05"
 }

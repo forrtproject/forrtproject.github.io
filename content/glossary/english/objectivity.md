@@ -29,5 +29,6 @@
     "language": "english",
     "aliases": [
         "/glossary/objectivity"
-    ]
+    ],
+    "lastmod": "2026-08-05"
 }

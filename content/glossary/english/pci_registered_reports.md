@@ -33,5 +33,6 @@
     "language": "english",
     "aliases": [
         "/glossary/pci_registered_reports"
-    ]
+    ],
+    "lastmod": "2026-08-05"
 }

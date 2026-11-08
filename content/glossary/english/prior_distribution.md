@@ -27,5 +27,6 @@
     "language": "english",
     "aliases": [
         "/glossary/prior_distribution"
-    ]
+    ],
+    "lastmod": "2026-08-05"
 }

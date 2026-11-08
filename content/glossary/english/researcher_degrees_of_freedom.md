@@ -9,7 +9,7 @@
         "Garden of forking paths",
         "Model uncertainty",
         "Multiverse analysis",
-        "*P*\\-hacking",
+        "p-hacking",
         "Robustness (analyses)",
         "Specification curve analysis"
     ],
@@ -34,5 +34,6 @@
     "language": "english",
     "aliases": [
         "/glossary/researcher_degrees_of_freedom"
-    ]
+    ],
+    "lastmod": "2026-11-08"
 }

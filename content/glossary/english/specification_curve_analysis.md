@@ -30,5 +30,6 @@
     "language": "english",
     "aliases": [
         "/glossary/specification_curve_analysis"
-    ]
+    ],
+    "lastmod": "2026-08-05"
 }
