@@ -1,0 +1,19 @@
+{{/* Keep the resources pager identical in the head and body. Do not initialize
+     pagination on other lists: their templates choose their own collections. */}}
+{{ $metadata := dict "url" .Permalink "title" .Title "breadcrumb_title" (.LinkTitle | default .Title) "description" (partial "functions/page_description.html" .) "pages" .Pages }}
+{{ if and .IsSection (eq .Section "resources") }}
+  {{ $index := partialCached "doors/resource_index" . "resources" }}
+  {{ $pager := .Paginate $index.pages 24 }}
+  {{ $metadata = merge $metadata (dict "pages" $pager.Pages) }}
+  {{ if gt $pager.PageNumber 1 }}
+    {{ $start := add (mul (sub $pager.PageNumber 1) 24) 1 }}
+    {{ $end := add (sub $start 1) (len $pager.Pages) }}
+    {{ $metadata = merge $metadata (dict
+      "url" ($pager.URL | absURL)
+      "title" (printf "%s – Page %d" .Title $pager.PageNumber)
+      "breadcrumb_title" (printf "%s – Page %d" .Title $pager.PageNumber)
+      "description" (printf "%s, page %d of %d: resources %d–%d of %d. %s" .Title $pager.PageNumber $pager.TotalPages $start $end $pager.TotalNumberOfElements $metadata.description)
+    ) }}
+  {{ end }}
+{{ end }}
+{{ return $metadata }}

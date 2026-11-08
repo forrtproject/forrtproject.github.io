@@ -4,7 +4,8 @@
 Run: python3 scripts/rebrand/compare_builds.py <reference-dir> <candidate-dir>
 
 Fails if an address changes (a page, feed, sitemap or data file appears or goes),
-if a structured-data count falls, or if a page's SEO tags change. New assets such as
+if a structured-data count falls, or if a page's SEO tags change (except same-image
+WebP-to-PNG/JPEG social derivatives and their size/type tags). New assets such as
 fonts and bundles are listed and allowed. Agreed exceptions go in allowed_changes.txt
 beside this script, one normalised path or glob per line, with a comment saying why. A glob
 suits a collection whose size changes with the data, such as numbered pages.
@@ -17,6 +18,7 @@ import argparse
 import os
 import re
 import sys
+from urllib.parse import unquote, urlsplit
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from site_inventory import PAGE_SUFFIXES, inventory, normalise_path  # noqa: E402
@@ -66,6 +68,40 @@ def _without_edit_date(tags):
     return [re.sub(r'"dateModified":\s*"[^"]*",?', "", tag) for tag in tags if not tag.startswith("article:modified_time")]
 
 
+def _social_derivative(original, derivative):
+    """A format-only Hugo derivative of the same WebP, including static imports."""
+    before, after = urlsplit(original), urlsplit(derivative)
+    if (before.scheme, before.netloc, before.query, before.fragment) != (after.scheme, after.netloc, after.query, after.fragment):
+        return False
+    if not before.path.lower().endswith(".webp") or not after.path.lower().endswith((".png", ".jpg", ".jpeg")):
+        return False
+    # Hugo retains the source basename and adds a processing hash. Static sources
+    # enter the pipeline under social/; preview prefixes and all other path parts stay.
+    def stem(path):
+        return re.sub(r"_hu_?[0-9a-f]{8,}$", "", unquote(os.path.splitext(path)[0]))
+
+    source, target = stem(before.path), stem(after.path)
+    return target == source or target.replace("/social/", "/", 1) == source
+
+
+def _equivalent_social_images(before, after):
+    """Normalize only recognized WebP conversions and their size/type companions.
+
+    Alt text, every other tag, and PNG/JPEG-to-PNG/JPEG changes still compare exactly.
+    Duplicate image tags are deliberately left for the ordinary comparison.
+    """
+    for key in ("og:image", "twitter:image"):
+        old = [tag[len(key) + 1:] for tag in before if tag.startswith(key + "=")]
+        new = [tag[len(key) + 1:] for tag in after if tag.startswith(key + "=")]
+        if len(old) != 1 or len(new) != 1 or not _social_derivative(old[0], new[0]):
+            continue
+        companions = {key + ":" + name for name in ("width", "height", "type")}
+        before = [tag for tag in before if tag.partition("=")[0] not in companions]
+        after = [key + "=" + old[0] if tag.startswith(key + "=") else tag
+                 for tag in after if tag.partition("=")[0] not in companions]
+    return before, after
+
+
 def compare_heads(reference, candidate, allowed=frozenset()):
     """Return {path: (only_before, only_after)} for pages whose SEO tags differ."""
     changes = {}
@@ -75,6 +111,7 @@ def compare_heads(reference, candidate, allowed=frozenset()):
         # A page's modified date follows its last edit, which is the sitemap check's concern.
         before = _without_edit_date(tags)
         after = _without_edit_date(candidate[path])
+        before, after = _equivalent_social_images(before, after)
         if before != after:
             before, after = set(before), set(after)
             changes[path] = (sorted(before - after), sorted(after - before))

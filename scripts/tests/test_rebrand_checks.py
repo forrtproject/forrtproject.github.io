@@ -232,6 +232,62 @@ class CompareTests(unittest.TestCase):
         self.assertEqual(changes, {"a": (["y"], ["w"])})
 
 
+    def social_tags(self, image, image_type="image/webp", width="100", height="50"):
+        return sorted(["og:image=" + image, "twitter:image=" + image,
+                       "og:image:type=" + image_type, "og:image:width=" + width,
+                       "og:image:height=" + height, "og:image:alt=Same image",
+                       "twitter:image:alt=Same image", "title=Page", "description=Description",
+                       "canonical:=https://example.org/page/"])
+
+    def test_same_bundle_and_static_social_derivatives_are_equivalent(self):
+        for before, after in (
+            ("https://example.org/post/example/featured.webp", "https://example.org/post/example/featured_hu_0123456789abcdef.png"),
+            ("https://example.org/img/toolkit.webp", "https://example.org/social/img/toolkit_hu_0123456789abcdef.jpg"),
+            ("https://example.org/rebrand-doors/img/toolkit.webp", "https://example.org/rebrand-doors/social/img/toolkit_hu_0123456789abcdef.jpeg"),
+            ("https://example.org/a/avatar_hu_0123456789abcdef.webp", "https://example.org/a/avatar_hu_fedcba9876543210.png"),
+        ):
+            with self.subTest(after=after):
+                new_type = "image/png" if after.endswith(".png") else "image/jpeg"
+                self.assertEqual(compare_heads({"a": self.social_tags(before)},
+                                               {"a": self.social_tags(after, new_type, "200", "100")}), {})
+
+    def test_unrelated_social_images_and_other_metadata_still_fail(self):
+        before = self.social_tags("https://example.org/post/example/featured.webp")
+        derivative = "https://example.org/post/example/featured_hu_0123456789abcdef.png"
+        for url in (
+            derivative.replace("featured", "unrelated"),
+            derivative.replace("/example/", "/another/"),
+            derivative.replace("example.org", "another.org"),
+            derivative + "?different=1",
+        ):
+            with self.subTest(url=url):
+                self.assertIn("a", compare_heads({"a": before}, {"a": self.social_tags(url, "image/png")}))
+        after = self.social_tags(derivative, "image/png")
+        for old in ("title=Page", "description=Description", "og:image:alt=Same image",
+                    "twitter:image:alt=Same image", "canonical:=https://example.org/page/"):
+            with self.subTest(tag=old):
+                changed = sorted("changed=" + tag if tag == old else tag for tag in after)
+                self.assertIn("a", compare_heads({"a": before}, {"a": changed}))
+        self.assertIn("a", compare_heads({"a": before}, {"a": sorted(after + ['{"@type":"Changed"}'])}))
+
+    def test_png_jpeg_comparisons_and_unconverted_companions_stay_exact(self):
+        for suffix, image_type in (("png", "image/png"), ("jpg", "image/jpeg"), ("webp", "image/webp")):
+            image = "https://example.org/img/source." + suffix
+            before = self.social_tags(image, image_type)
+            for after in (self.social_tags(image, image_type, width="200"),
+                          self.social_tags(image.replace("source", "other"), image_type),
+                          self.social_tags(image.replace("source", "source_hu_0123456789abcdef"), image_type),
+                          self.social_tags(image, "image/incorrect")):
+                with self.subTest(suffix=suffix):
+                    self.assertIn("a", compare_heads({"a": before}, {"a": after}))
+
+    def test_duplicate_image_tags_are_not_normalized(self):
+        original = "https://example.org/img/source.webp"
+        before = sorted(self.social_tags(original) + ["og:image=" + original])
+        after = self.social_tags("https://example.org/social/img/source_hu_0123456789abcdef.png", "image/png")
+        self.assertIn("a", compare_heads({"a": before}, {"a": after}))
+
+
 class InventoryTests(unittest.TestCase):
     def test_template_groups(self):
         cases = {
