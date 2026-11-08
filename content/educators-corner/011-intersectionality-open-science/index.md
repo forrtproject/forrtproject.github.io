@@ -34,7 +34,7 @@ projects: []
 
 ### 1. Globalization and diversity
 
-Psychological science has been repeatedly described as WEIRD, meaning Western, Educated, Industrial, Rich, and Democratic. In particular, the persistent use of predominately White and North American college students to study human behaviour has raised concerns about the generalizability of our findings, as well as our legitimacy as a science (Arnett, 2008; Henrich, Heine, & Norenzayan, 2010; IJzerman et al., 2021; Thalmayer et al., 2021; Tindle, 2021). Others argue that we should get rid of the dichotomy altogether (Ghai, 2021). 
+Psychological science has been repeatedly described as WEIRD, meaning Western, Educated, Industrial, Rich, and Democratic. In particular, the persistent use of predominately White and North American college students to study human behaviour has raised concerns about the generalizability of our findings, as well as our legitimacy as a science {{< cite "HenrichHeineNorenzayan2010" >}} (see also Arnett, 2008; IJzerman et al., 2021; Thalmayer et al., 2021; Tindle, 2021). Others argue that we should get rid of the dichotomy altogether (Ghai, 2021).
 
 **Here’s what you can do to enhance globalization and diversity within psychological science:**
 
@@ -46,11 +46,11 @@ Psychological science has been repeatedly described as WEIRD, meaning Western, E
 
 ### 2. Research integrity and applicability
 
-Many of us have been warned about the replication crisis in psychology (also commonly referred to as the replicability or reproducibility crisis, as well as the credibility revolution). Not unique to psychology, the crisis highlights that the results of many peer-reviewed scientific studies are either difficult or impossible to replicate (Open Science Collaboration, 2015). However, the legitimacy of the concern with regards to replication remains hotly contested (Feest, 2019; Maxwell, et al., 2015). 
+Many of us have been warned about the replication crisis in psychology (also commonly referred to as the replicability or reproducibility crisis, as well as the credibility revolution). Not unique to psychology, the crisis highlights that the results of many peer-reviewed scientific studies are either difficult or impossible to replicate {{< cite "Open_Science_Collaboration2015" >}}. However, the legitimacy of the concern with regards to replication remains hotly contested (Feest, 2019; Maxwell, et al., 2015).
 
 **Here’s what you can do to promote research integrity and applicability within psychological science:**
 
-* Challenge bias against open science as valuable or legitimate; incentivize early career and contingent scientists to participate by reshaping institutional norms or program milestones (e.g., encouraging students to pre-register dissertation studies; Bahlai, et al., 2019)
+* Challenge bias against open science as valuable or legitimate; incentivize early career and contingent scientists to participate by reshaping institutional norms or program milestones (e.g., encouraging students to pre-register dissertation studies; see {{< cite key="BahlaiEtAl2019" narrative="true" >}})
 * Shift mentality to encourage collaboration rather than competition (e.g., scientists working across departments or multiple working groups rather than in a singular lab at a particular campus)
 * Raise awareness about the unique experiences of intersectionally invisible participants (e.g., people who share two or more marginalized identities such as Black women; Coles & Pasek, 2020; Purdie-Vaughns & Eibach, 2008) 
 * Use existing resources, such as [the Open Science Framework](https://osf.io/) or [aspredicted.org](http://aspredicted.org) to collaborate, document, archive, share and register research projects, materials, code, and data; join the [Psychological Science Accelerator](https://psysciacc.org/) 
@@ -90,3 +90,5 @@ It is possible that I am overoptimistic about the future of psychological scienc
 * Spread the word about FORRT (e.g., share this post with your colleagues, tag us on Twitter) 
 
 **Contact information**: Annalisa Myer ([amyer@gradcenter.cuny.edu](mailto:amyer@gradcenter.cuny.edu)), Twitter [@MyerAnnalisa](https://twitter.com/MyerAnnalisa).
+
+{{< references >}}

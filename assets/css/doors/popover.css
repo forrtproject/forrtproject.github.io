@@ -1,0 +1,12 @@
+/* Shared by citation and term popovers. Below the header, cookie banner and chat. */
+.doors-popover{position:fixed;z-index:800;box-sizing:border-box;width:min(28rem,calc(100vw - 32px));max-height:calc(100vh - 32px);overflow:auto;background:#fff;border:1px solid var(--line);border-radius:var(--r-small);box-shadow:0 8px 24px rgba(38,45,53,.18);padding:14px 36px 14px 16px;color:var(--ink);font:400 .95rem/1.5 var(--text)}
+.doors-popover{animation:popover-in 120ms ease}
+.doors-popover-close{position:absolute;top:2px;right:2px;width:32px;height:32px;padding:0;background:none;border:0;color:var(--soft);font:inherit;font-size:1.3rem;cursor:pointer}
+.doors-popover-close:hover,.doors-popover-close:focus{color:var(--ink)}
+.popover-actions{display:flex;flex-wrap:wrap;gap:16px;margin-top:10px;font-size:.9rem}
+.popover-actions a,.popover-actions button{background:none;border:0;padding:0;color:var(--link);text-decoration:underline;font:inherit;cursor:pointer}
+.doors-popover :is(em,i){font-style:italic!important;font-weight:400}
+@keyframes popover-in{from{opacity:0}to{opacity:1}}
+@media(max-width:599px){.doors-popover{width:calc(100vw - 32px)}}
+@media(prefers-reduced-motion:reduce){.doors-popover{animation:none!important}}
+@media print{.doors-popover{display:none!important}}

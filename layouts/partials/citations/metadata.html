@@ -1,0 +1,32 @@
+{{/* Pure APA-string -> metadata partial; no page state. Keep initials out of short citations.
+     Corporate authors have no surname/initials pairs and retain their full name. */}}
+{{- $plain := . | plainify | htmlUnescape -}}
+{{- $date := "" -}}
+{{- with findRE `\((?:[0-9]{4}[a-z]?(?:[–-][0-9]{4})?|n\.d\.)\)` $plain 1 -}}{{- $date = index . 0 -}}{{- end -}}
+{{- $year := strings.Trim $date "()" -}}
+{{- $authors := $plain -}}
+{{- with $date -}}{{- $authors = strings.TrimSpace (index (split $plain .) 0) -}}{{- end -}}
+{{- $names := slice -}}
+{{- range findRE `(?:^|,\s*(?:&\s*)?)([^,]+),\s*(?:[\p{L}]\.\s*)+` $authors -}}
+  {{- $name := replaceRE `^,\s*(?:&\s*)?` "" . -}}
+  {{- $names = $names | append (strings.TrimSpace (index (split $name ",") 0)) -}}
+{{- end -}}
+{{- $short := strings.TrimSuffix "." $authors -}}
+{{- $first := $short -}}
+{{- with $names -}}
+  {{- $first = index . 0 -}}
+  {{- $short = $first -}}
+  {{- if or (ge (len .) 3) (in $authors "others") (in $authors "...") (in $authors "…") -}}
+    {{- $short = printf "%s et al." $first -}}
+  {{- else if eq (len .) 2 -}}
+    {{- $short = printf "%s & %s" $first (index . 1) -}}
+  {{- end -}}
+{{- end -}}
+{{- $url := "" -}}
+{{- $urls := findRE `https?://[^\s<>]+` $plain -}}
+{{- with $urls -}}{{- $url = index . 0 -}}{{- end -}}
+{{- range $urls -}}{{- if findRE `https?://(?:dx\.)?doi\.org/` . -}}{{- $url = . -}}{{- break -}}{{- end -}}{{- end -}}
+{{- if not $url -}}
+  {{- with findRE `10\.[0-9]{4,9}/[^\s<>]+` $plain 1 -}}{{- $url = printf "https://doi.org/%s" (index . 0) -}}{{- end -}}
+{{- end -}}
+{{- return (dict "author" $short "first" $first "year" $year "url" (strings.TrimRight ".,;" $url) "plain" $plain) -}}

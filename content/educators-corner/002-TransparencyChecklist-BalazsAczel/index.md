@@ -60,8 +60,9 @@ Supervisors and instructors can require students to create a Transparency Report
 *   In the requirements, indicate which items should have a “yes” response. Should you want to make it easier for the students, you can require only the Short (12-item) Checklist: [http://www.shinyapps.org/apps/ShortTransparencyChecklist/](http://www.shinyapps.org/apps/ShortTransparencyChecklist/)
 *   When possible, check whether the manuscript is in line with the checklist answers.
 
-## Reference
+## About the checklist
 
-The following paper introduces the Transparency Checklist and describes how an initial set of items was iteratively evaluated by 45 journal editors, as well as 18 open-science advocates until a consensus was reached about the content and form of the checklist.
+The paper by {{< cite key="Aczel2020" narrative="true" >}} introduces the Transparency Checklist and describes how an initial set of items was iteratively evaluated by 45 journal editors, as well as 18 open-science advocates until a consensus was reached about the content and form of the checklist.
 
-Aczel, B., Szaszi, B., Sarafoglou, A. et al. A consensus-based transparency checklist. Nat Hum Behav 4, 4–6 (2020). [https://www.nature.com/articles/s41562-019-0772-6](https://www.nature.com/articles/s41562-019-0772-6)
+
+{{< references >}}

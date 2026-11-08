@@ -162,7 +162,7 @@
 
             {{ partial "doors/content" .Content }}
             {{ with .Params.alt_definition }}
-            <p class="term-line"><b>{{ index (index $dictionary $lang) "alt_definition" }}: </b>{{ . | markdownify }}</p>
+            <p class="term-line term-alt-definition"><b>{{ index (index $dictionary $lang) "alt_definition" }}: </b>{{ . | markdownify }}</p>
             {{ end }}
 
             {{ with .Params.related_terms }}
@@ -206,8 +206,10 @@
               {{ if ne $references 0 }}
                 <p class="term-line"><b>{{ if gt (len .Params.references) 1 }}{{ index (index $dictionary $lang) "references" }}{{ else }}{{ index (index $dictionary $lang) "reference" }}{{ end }}: </b></p>
                 <ul class="references-list">
+                  {{ $keys := partialCached "citations/keys" . "bibliography-keys" }}
                   {{ range .Params.references }}
-                    <li>{{ . | markdownify }}</li>
+                    {{ $key := index $keys . | default (printf "local-%s" (md5 .)) }}
+                    {{ partial "citations/entry" (dict "key" $key "apa" .) }}
                   {{ end }}
                 </ul>
               {{ end }}

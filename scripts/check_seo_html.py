@@ -35,6 +35,7 @@ Hard checks (exit 1 if any fails):
       positive dimensions (#927). Unsupported formats remain report-only.
   14. No page inlines more than 200 KB in one <script> (#993). Large data belongs in a
      separate file the page fetches when it needs it.
+  15. Every citation links to its reference on the same page (#200).
 
 Report-only sections (never fail): pages with no <h1>, the
 site-wide share of images that carry both width and height, pages whose
@@ -83,11 +84,17 @@ class PageParser(HTMLParser):
         self._jsonld_buffer = None
         self.largest_inline_script = 0
         self._inline_script = None
+        self.ids = set()
+        self.citations = []
 
     def handle_starttag(self, tag, attrs):
         attrs = dict(attrs)
         if tag == "script" and not attrs.get("src"):
             self._inline_script = 0
+        if attrs.get("id"):
+            self.ids.add(attrs["id"])
+        if tag == "a" and "cite" in attrs.get("class", "").split():
+            self.citations.append(attrs.get("href", ""))
         if tag == "script" and attrs.get("type") == "application/ld+json":
             self._jsonld_buffer = []
         elif tag == "link" and attrs.get("rel") == "canonical":
@@ -180,6 +187,8 @@ class Page:
         self.jsonld = parser.jsonld
         self.canonical = parser.canonical
         self.largest_inline_script = parser.largest_inline_script
+        self.ids = parser.ids
+        self.citations = parser.citations
 
     def loads(self, needle):
         return any(needle in url for url in self.urls)
@@ -275,6 +284,12 @@ def check_homepage_share_image(home):
 def check_img_alt(pages):
     return ["%s (%d image(s))" % (p.path, len(p.imgs_without_alt))
             for p in pages if p.imgs_without_alt]
+
+
+def check_citation_targets(pages):
+    return ["%s (%s)" % (p.path, href or "missing href")
+            for p in pages for href in p.citations
+            if not href.startswith("#ref-") or unquote(href[1:]) not in p.ids]
 
 
 def breadcrumb_lists(page):
@@ -524,6 +539,7 @@ def main(public_dir):
         "12. resource subsets have consistent, unique metadata": check_resource_pagination(pages),
         "13. compatible social images have type, dimensions and matching URLs": check_share_image_metadata(pages),
         "14. no inline <script> over 200 KB": check_inline_scripts(pages),
+        "15. every citation has a local reference target": check_citation_targets(pages),
     }
     conditional = check_conditional_assets(pages)
     results["3. conditional highlight.js / mermaid loading"] = [

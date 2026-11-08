@@ -1,0 +1,2 @@
+{{/* One source of truth, read once per build. Never edit this generated file here. */}}
+{{ return (os.ReadFile "content/glossary/apa_lookup.json" | transform.Unmarshal) }}

@@ -62,7 +62,7 @@ FORRT’s Team Pedagogies took the opportunity to ask Gilad some questions on hi
 
 1. **You have an incredible amount of Open Science resources ranging from courses and replications to incentives to other researchers to replicate or find mistakes in your own work. How did you embark on this Open Science journey?**
 
-***Gilad***: In 2015, [the big Science paper](https://www.science.org/doi/full/10.1126/science.aac4716) came out, showing replication rates that in my opinion were alarming. I didn’t understand how bad things really were until this paper came out. I remember being a postdoc and thinking that something big was happening and that I couldn’t in good faith continue with the research I was doing without figuring this out. I then started to think about my principles and decided on my main goals: my research has to be trustworthy, reproducible, replicable. Over time, I also started thinking about equity and inclusion issues. I set my own principles, such as to share materials, data and code. Back in 2016, this was scary stuff! I started to supervise students according to Open Science principles, and the CORE team (Collaborative Open-science and meta REsearch) developed from this. ![Slide, Team Open-Science Principles: collaboration and community, registered reports, simplicity, effect-size focus, power, replications and preprints, in service of trustworthiness, reproducibility, replicability and inclusion](FigQ1.webp)
+***Gilad***: In 2015, the big Science paper {{< cite "Open_Science_Collaboration2015" >}} came out, showing replication rates that in my opinion were alarming. I didn’t understand how bad things really were until this paper came out. I remember being a postdoc and thinking that something big was happening and that I couldn’t in good faith continue with the research I was doing without figuring this out. I then started to think about my principles and decided on my main goals: my research has to be trustworthy, reproducible, replicable. Over time, I also started thinking about equity and inclusion issues. I set my own principles, such as to share materials, data and code. Back in 2016, this was scary stuff! I started to supervise students according to Open Science principles, and the CORE team (Collaborative Open-science and meta REsearch) developed from this. ![Slide, Team Open-Science Principles: collaboration and community, registered reports, simplicity, effect-size focus, power, replications and preprints, in service of trustworthiness, reproducibility, replicability and inclusion](FigQ1.webp)
  
 <br>
 
@@ -162,6 +162,8 @@ In my PhD, I just remember a lot of interactions between students and professors
 * [The .pdf version of this page, with Gilad's answers to the community's question](GF-interview.pdf)
 
 <br>
+
+{{< references >}}
 
 ***Suggested Citation***
 ________

@@ -172,5 +172,25 @@ class InlineScriptCheck(unittest.TestCase):
         self.assertEqual(self.failures("<script>window.DATA = '%s';" % data), ["index.html (200 KB)"])
 
 
+class CitationTargetCheck(unittest.TestCase):
+    def check(self, html):
+        parser = seo.PageParser()
+        parser.feed(html)
+        return seo.check_citation_targets([seo.Page("example/index.html", parser)])
+
+    def test_reference_after_citation(self):
+        self.assertEqual(self.check('<a class="cite" href="#ref-Key">Author, 2020</a>'
+                                    '<li id="ref-Key">Reference</li>'), [])
+
+    def test_missing_reference_or_nonlocal_link(self):
+        for href in ('#ref-Unknown', '/other/#ref-Key', '#Key', ''):
+            with self.subTest(href):
+                self.assertTrue(self.check('<a class="other cite" href="%s">Citation</a>'
+                                           '<li id="ref-Key">Reference</li>' % href))
+
+    def test_other_links_are_ignored(self):
+        self.assertEqual(self.check('<a href="#elsewhere">Link</a>'), [])
+
+
 if __name__ == "__main__":
     unittest.main()
