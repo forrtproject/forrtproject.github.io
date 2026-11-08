@@ -19,7 +19,7 @@ The following are examples of behaviour that will not be tolerated in any FORRT 
 
 **Where does the Code of Conduct apply?**
 
-The code of conduct applies to all FORRT spaces (e.g. Website and FORRT events), and in any situation where you are representing FORRT (e.g, online or in-person conferences, workshops, or events).By engaging with FORRT either via the Slack channel or by being a part of a project, you are agreeing to this code of conduct.
+The code of conduct applies to all FORRT spaces (e.g. Website and FORRT events), and in any situation where you are representing FORRT (e.g., online or in-person conferences, workshops, or events). By engaging with FORRT either via the Slack channel or by being a part of a project, you are agreeing to this code of conduct.
 
 
 **What are the consequences for violating the Code of Conduct?**

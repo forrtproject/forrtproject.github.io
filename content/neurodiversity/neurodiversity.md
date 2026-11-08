@@ -78,7 +78,7 @@ Although originally written about autistic people, we believe that this quote su
 - There is a community of people who research or teach for a living. They are known as academics and they often work in universities. There is a special culture associated with academics and their students, known as academia. 
 - Academics are expected to work very hard. How hard they work is measured by how many times they write or talk about their research. Academics sometimes compete with each other over who writes and talks the most, which makes them work even harder.
 - Neurodivergent people in academia face a lot of extra challenges. For example, they might behave in ways that neurotypicals do not expect. This can mean that the neurotypicals do not listen to them when they talk about their research.
-- We think that the neurodiversity movement can help to make academia better for everyone, by promoting acceptance, inclusion and support for anyone that needs it. - We are doing our best to advertise the benefits of the neurodiversity movement.
+- We think that the neurodiversity movement can help to make academia better for everyone, by promoting acceptance, inclusion and support for anyone that needs it. We are doing our best to advertise the benefits of the neurodiversity movement.
 
 ### How can I learn more?
 We are developing a lot of resources about neurodiversity in academia. Right now, these are mostly aimed at academics, so they can be a bit complicated or written using technical terms. You are welcome to read them and share them regardless!
