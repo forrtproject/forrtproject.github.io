@@ -31,6 +31,8 @@ This document describes the GitHub Actions workflows used in the FORRT website r
 
 Builds the Hugo site and deploys to GitHub Pages (`gh-pages` branch).
 
+It uses the newest `data-artifact` and `announcements-artifact` from runs on `main` only. A `data-processing.yml` or `create_announcements.yml` run dispatched from another branch, for example to test a pipeline change, produces an artifact that deploys and staging ignore (#960). To try such an artifact, download it from the run and build locally. If no artifact is found, the fallback dispatches `data-processing.yml` on `main`.
+
 ### [staging-aggregate.yaml](workflows/staging-aggregate.yaml)
 **Staging deployment for pull requests**
 
