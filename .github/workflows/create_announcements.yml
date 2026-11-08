@@ -45,7 +45,7 @@ jobs:
         continue-on-error: true
         with:
           workflow: create_announcements.yml
-          name: announcements-artifact
+          name: ${{ github.ref == 'refs/heads/main' && 'announcements-artifact' || 'announcements-artifact-preview' }}
           path: .prev
           github_token: ${{ secrets.GITHUB_TOKEN }}
           search_artifacts: true
@@ -107,14 +107,15 @@ jobs:
         if: steps.gen.outputs.changed == 'true'
         uses: actions/upload-artifact@v7
         with:
-          name: announcements-artifact
+          # Production downloads by name, so branch test runs need a separate name.
+          name: ${{ github.ref == 'refs/heads/main' && 'announcements-artifact' || 'announcements-artifact-preview' }}
           path: |
             announcements.tar.gz
             gs_announcement_hash.txt
           retention-days: 90
 
       - name: Trigger production deploy
-        if: steps.gen.outputs.changed == 'true'
+        if: github.ref == 'refs/heads/main' && steps.gen.outputs.changed == 'true'
         run: |
           curl -s -X POST \
             -H "Authorization: Bearer ${{ secrets.FORRT_PAT }}" \
