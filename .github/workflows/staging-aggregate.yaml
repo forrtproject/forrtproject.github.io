@@ -302,9 +302,15 @@ jobs:
       # =======================
       # Data Processing (Fallback)
       # =======================
+      - name: Stop if the requested branch's data artifact is missing
+        if: steps.download-artifact.outcome == 'failure' && github.event.inputs.data_branch != ''
+        run: |
+          echo "::error::No data artifact from branch '${{ github.event.inputs.data_branch }}'. Run data-processing.yml on that branch first; staging won't substitute main's data."
+          exit 1
+
       - name: Run data processing if artifact missing
         id: data-processing
-        if: steps.download-artifact.outcome == 'failure'
+        if: steps.download-artifact.outcome == 'failure' && github.event.inputs.data_branch == ''
         env:
           GITHUB_TOKEN: ${{ secrets.FORRT_PAT }}
         run: |
