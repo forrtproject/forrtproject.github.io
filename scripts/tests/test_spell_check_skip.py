@@ -6,7 +6,8 @@ import unittest
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "spell_check"))
 import check_spelling as spell  # noqa: E402
 
-PATTERNS = ["content/glossary/german", "*.json", "content/glossary/english/open_material.md", "themes"]
+ROOT = Path(__file__).resolve().parents[2]
+PATTERNS = spell.skip_patterns(ROOT / ".codespellrc")  # the real config, so the tests follow it
 
 
 class SkipListTests(unittest.TestCase):
@@ -22,8 +23,7 @@ class SkipListTests(unittest.TestCase):
                 self.assertFalse(spell.is_skipped(path, PATTERNS))
 
     def test_repository_config_is_read(self):
-        root = Path(__file__).resolve().parents[2]
-        self.assertIn("content/glossary/turkish", spell.skip_patterns(root / ".codespellrc"))
+        self.assertIn("content/glossary/turkish", PATTERNS)
 
 
 if __name__ == "__main__":
