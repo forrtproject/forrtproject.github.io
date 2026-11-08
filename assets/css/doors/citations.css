@@ -1,0 +1,2 @@
+a.cite{color:inherit;text-decoration:underline dotted 1px var(--soft);text-underline-offset:3px}
+a.cite:hover,a.cite:focus{color:var(--link)}

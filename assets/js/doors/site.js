@@ -1,6 +1,8 @@
 /* Header behaviour for every page: mega menus, the phone menu and the search box.
    Closing rules follow the Doors mock: Escape, a click outside and a second click all close,
    and an opened menu is next in the Tab order because it follows its button in the page. */
+import './citations.js';
+
 const toggle = document.querySelector('.menu-toggle');
 const nav = document.querySelector('nav.primary');
 const head = document.querySelector('.site-head');
