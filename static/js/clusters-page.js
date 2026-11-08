@@ -816,10 +816,16 @@
     }
 
     if (backToTopBtn) {
+      // Only beside the fields or clusters, whose margin holds it (clusters.css); elsewhere it would cover the page.
+      var backToTopBeside = document.querySelector('.cluster-full-width');
       function toggleBackToTop() {
-        backToTopBtn.classList.toggle('is-visible', window.scrollY > 500);
+        var section = backToTopBeside ? backToTopBeside.getBoundingClientRect() : null;
+        var button = backToTopBtn.getBoundingClientRect();
+        backToTopBtn.classList.toggle('is-visible', window.scrollY > 500 && !!section &&
+          section.top < button.top - 8 && section.bottom > button.bottom + 8);
       }
       window.addEventListener('scroll', toggleBackToTop, { passive: true });
+      window.addEventListener('resize', toggleBackToTop);
       toggleBackToTop();
       backToTopBtn.addEventListener('click', function () {
         window.scrollTo({ top: 0, behavior: 'smooth' });

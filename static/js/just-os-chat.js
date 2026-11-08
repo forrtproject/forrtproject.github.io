@@ -1073,7 +1073,6 @@
 
     if (win.style.display === 'flex') {
       win.style.display = 'none';
-      bubble.classList.add('bubble-visible');
       win.classList.remove('floating');
       // Reset any drag-resize inline styles
       win.style.width = '';

@@ -33,6 +33,7 @@ SCREENS = {
     "resources": "resources/",
     "resources page 2": "resources/page/2/",
     "article": "post/2026-01-newsletter/",
+    "contributor analysis": "contributor-analysis/",
 }
 BLOCK = re.compile(r"googletagmanager|google-analytics|doubleclick|youtube|docs\.google")
 A14_LIMIT = {390: 2.5, 1440: 1.6}
@@ -553,7 +554,15 @@ def check_phone_reading(browser, base, failures):
           const box = document.getElementById('just-os-btn').getBoundingClientRect();
           return !!document.elementFromPoint(box.left + box.width / 2, box.top + box.height / 2)?.closest('#just-os-btn');
         }""")
-        expect(page.locator(".clusters-back-to-top.is-visible").count() == 1, f"back to top shows after scrolling at {width} px")
+        # When back to top shows is check_floating_controls' job (only beside the fields or clusters,
+        # so not over this page's foot at a fixed scroll); here it must not sit on the launcher.
+        clash = page.evaluate("""() => {
+          const top = document.querySelector('.clusters-back-to-top.is-visible');
+          if (!top) return false;
+          const a = top.getBoundingClientRect(), b = document.getElementById('just-os-btn').getBoundingClientRect();
+          return a.left < b.right && b.left < a.right && a.top < b.bottom && b.top < a.bottom;
+        }""")
+        expect(not clash, f"back to top does not sit on the chat launcher on a cluster page at {width} px")
         expect(hit, f"the chat launcher can be clicked on a cluster page at {width} px")
         if width > 760:
             past = page.evaluate("""() => {
@@ -572,6 +581,265 @@ def check_phone_reading(browser, base, failures):
             }""")
             expect(past <= 0, f"it also clears the open banner at {width} px ({past:.0f} px)")
         page.context.close()
+
+
+SPECIALIST_SHOWN = """() => {
+  const cards = [...document.querySelectorAll('.clusters-content [data-specificity=narrow]')];
+  return [cards.length, cards.filter((card) => getComputedStyle(card).display !== 'none').length];
+}"""
+
+
+def check_specialist_cards(browser, base, failures):
+    """A cluster page hides its specialist resources until their checkbox is ticked, as the box shows."""
+    expect = expectation(failures, "specialist resources")
+    page = new_page(browser, 1440)
+    page.context.add_cookies([{"name": "forrt_analytics_choice", "value": "deny", "url": base}])  # Banner shut.
+    for number in range(1, 12):
+        page.goto(base + f"clusters/cluster-{number}/", wait_until="load")
+        page.wait_for_timeout(500)
+        total, shown = page.evaluate(SPECIALIST_SHOWN)
+        if total:
+            break
+    expect(total > 0, "a cluster page has specialist resources to test")
+    if total:
+        box = page.locator("#fr-global-specificity-checkbox")
+        expect(not box.is_checked(), f"cluster {number}: the box starts unticked")
+        expect(shown == 0, f"cluster {number}: {shown} of {total} specialist resources shown on load")
+        box.check()
+        page.wait_for_timeout(200)
+        shown = page.evaluate(SPECIALIST_SHOWN)[1]
+        expect(shown == total, f"cluster {number}: {shown} of {total} shown after ticking the box")
+        box.uncheck()
+        page.wait_for_timeout(200)
+        shown = page.evaluate(SPECIALIST_SHOWN)[1]
+        expect(shown == 0, f"cluster {number}: {shown} of {total} still shown after unticking it")
+    page.context.close()
+
+
+# What of the page's own a floating control covers: text, a control, an image or a card (anything with its own
+# background, shadow or side borders that does not span the screen; a rule along one edge is not a card). Each overlap is confirmed by hit testing,
+# so that content scrolled out of its box or under another layer does not count. It is independent of
+# site.js's own test for empty space, and a control counts as covering only while it is shown.
+FLOATING_OVER = """(selector) => {
+  const floating = document.querySelector(selector);
+  if (!floating) return [];
+  const own = floating.closest('#just-os-widget') || floating;
+  const style = getComputedStyle(floating);
+  const rect = floating.getBoundingClientRect();
+  // A focus ring drawn outside the box covers the page as much as the box does.
+  const ring = style.outlineStyle !== 'none' ? Math.max(0, parseFloat(style.outlineWidth) + parseFloat(style.outlineOffset)) : 0;
+  const box = {left: rect.left - ring, right: rect.right + ring, top: rect.top - ring, bottom: rect.bottom + ring,
+               width: rect.width + 2 * ring, height: rect.height + 2 * ring};
+  if (style.visibility === 'hidden' || parseFloat(style.opacity) < 0.5 || !box.width || !box.height) return [];
+  const meets = (r) => r.width > 0 && r.height > 0 && r.left < box.right - 0.5 && box.left < r.right - 0.5 && r.top < box.bottom - 0.5 && box.top < r.bottom - 0.5;
+  const shown = (el, r) => {
+    const left = Math.max(r.left, box.left), right = Math.min(r.right, box.right);
+    const top = Math.max(r.top, box.top), bottom = Math.min(r.bottom, box.bottom);
+    for (const fx of [0.2, 0.5, 0.8]) for (const fy of [0.2, 0.5, 0.8]) {
+      const hit = document.elementsFromPoint(left + (right - left) * fx, top + (bottom - top) * fy).find((e) => !own.contains(e));
+      if (hit && (hit === el || el.contains(hit))) return true;
+    }
+    return false;
+  };
+  const name = (el) => el.tagName.toLowerCase() + (el.id ? '#' + el.id : el.classList[0] ? '.' + el.classList[0] : '');
+  const found = new Set();
+  const screen = document.documentElement.clientWidth;
+  const range = document.createRange();
+  const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
+  for (let node = walker.nextNode(); node; node = walker.nextNode()) {
+    const parent = node.parentElement;
+    if (!node.data.trim() || !parent || own.contains(parent) || !meets(parent.getBoundingClientRect())) continue;
+    range.selectNodeContents(node);
+    if ([...range.getClientRects()].some((r) => meets(r) && shown(parent, r))) found.add(`text "${node.data.trim().slice(0, 30)}"`);
+  }
+  for (const el of document.body.querySelectorAll('*')) {
+    if (own.contains(el) || el.contains(own)) continue;
+    const r = el.getBoundingClientRect();
+    if (!meets(r)) continue;
+    const control = el.matches('a[href],button,input,select,textarea,summary,[role=button],[tabindex]:not([tabindex="-1"]),img,svg,video,iframe,canvas');
+    const look = getComputedStyle(el);
+    const painted = look.backgroundColor !== 'rgba(0, 0, 0, 0)' || look.backgroundImage !== 'none' || look.boxShadow !== 'none'
+      || ['Left', 'Right'].every((side) => look[`border${side}Style`] !== 'none' && parseFloat(look[`border${side}Width`]));
+    const card = painted && (r.left > 1 || r.right < screen - 1);
+    if ((control || card) && shown(el, r)) found.add(`${control ? 'control' : 'card'} ${name(el)}`);
+  }
+  return [...found];
+}"""
+
+BUBBLE_SHOWN = "() => parseFloat(getComputedStyle(document.getElementById('just-os-bubble')).opacity) >= 0.5"
+BACK_TO_TOP_SHOWN = """() => { const el = document.querySelector('.clusters-back-to-top');
+  return !!el && getComputedStyle(el).visibility === 'visible' && el.getBoundingClientRect().width > 0; }"""
+
+# Where the floating controls are checked: long pages of text, cards and lists, the pages with back to top,
+# and a page on the reading layout, whose empty margin the invitation may use.
+FLOATING_PAGES = ("contributors/", "citation-politics/toolkit/", "disciplines/", "clusters/", "clusters/cluster-1/",
+                  "publications/", "about/teams/", "about/", "contributor-analysis/")
+FLOATING_WIDTHS = (390, 1024, 1280, 1440, 1800)  # From 1800 px the launcher has its hover and focus label.
+
+
+def check_floating_controls(browser, base, failures):
+    """The chat launcher, its invitation and label, and back to top cover nothing of the page, wherever it is scrolled.
+
+    The launcher is checked closed, hovered, focused from the keyboard and inviting (on a fake clock, so that its
+    ten-second cycle runs at once), at the top, a third and two thirds of the way down, and at the end of each page.
+    The disciplines page has a field open, cluster 1 has every sub-cluster open, and the clusters page on a phone has its navigation drawer open at the end.
+    The invitation is to stay (decision D19), so it must also show somewhere, and back to top must show beside
+    the fields or clusters and hide while the drawer is open.
+    """
+    expect = expectation(failures, "floating controls")
+    invited = set()
+    for width in FLOATING_WIDTHS:
+        page = new_page(browser, width)
+        page.context.add_cookies([{"name": "forrt_analytics_choice", "value": "deny", "url": base}])  # Banner shut.
+        page.clock.install()
+        for path in FLOATING_PAGES:
+            covered = {}
+
+            def look(state, selector="#just-os-bubble"):
+                for item in page.evaluate(FLOATING_OVER, selector):
+                    covered.setdefault(state, []).append(item)
+                if state.startswith("invitation") and page.evaluate(BUBBLE_SHOWN):
+                    invited.add(f"{path} at {width} px")
+
+            back_to_top = False
+            page.goto(base + path, wait_until="load", timeout=120000)
+            page.wait_for_timeout(300)
+            if path == "disciplines/":
+                page.locator(".acc-trigger", has_text="Psychology").first.click()
+            if path == "clusters/cluster-1/":
+                page.locator(".acc-toggle-all").first.click()  # Every sub-cluster open: the page a reader scrolls.
+            page.clock.run_for(10500)  # The invitation's first turn, at the top of the page.
+            page.wait_for_timeout(400)
+            look("invitation at the top")
+            end = page.evaluate("document.documentElement.scrollHeight - innerHeight")
+            for y in sorted({0, end // 3, 2 * end // 3, end}):
+                where = f"scrolled {y} px"
+                page.mouse.move(1, 1)
+                page.evaluate(f"scrollTo(0, {y}); dispatchEvent(new Event('scroll'))")
+                page.wait_for_timeout(400)
+                look(f"launcher at {where}", "#just-os-btn")
+                look(f"back to top at {where}", ".clusters-back-to-top")
+                back_to_top = back_to_top or page.evaluate(BACK_TO_TOP_SHOWN)
+                for turn in range(2):  # One of two turns of its cycle shows the invitation, where it may show.
+                    page.clock.run_for(10000)
+                    page.wait_for_timeout(400)
+                    look(f"invitation at {where}")
+                page.hover("#just-os-btn")
+                page.wait_for_timeout(400)
+                look(f"hover label at {where}")
+                page.mouse.move(1, 1)
+                page.keyboard.press("Tab")  # Keyboard use first, so that the launcher's focus shows as it would.
+                page.focus("#just-os-btn")
+                page.wait_for_timeout(400)
+                look(f"focus label at {where}")
+                page.evaluate("document.activeElement.blur()")
+            if path == "clusters/" and width < 992:
+                toggle = page.locator("#clusters-mobile-toggle")
+                toggle.scroll_into_view_if_needed()
+                toggle.click()
+                page.evaluate("scrollBy(0, 600)")
+                page.wait_for_timeout(400)
+                look("back to top over the open drawer", ".clusters-back-to-top")
+                look("launcher over the open drawer", "#just-os-btn")
+                expect(not page.evaluate(BACK_TO_TOP_SHOWN), f"{path} at {width} px: back to top hides while the drawer is open")
+            if path in ("disciplines/", "clusters/", "clusters/cluster-1/"):
+                expect(back_to_top, f"{path} at {width} px: back to top shows beside the fields or clusters")
+            for state, items in covered.items():
+                expect(False, f"{path} at {width} px, {state}: covers {', '.join(sorted(set(items))[:3])}")
+            if not covered:
+                expect(True, f"{path} at {width} px covers nothing")
+        page.context.close()
+    expect(invited, f"the invitation shows where there is room for it ({', '.join(sorted(invited)[:3]) or 'nowhere'})")
+
+
+# Pages of cards or lists, with the element that holds them: a wide screen is not to leave them in the reading column.
+DIRECTORIES = {
+    "publications/": ".pub-list",
+    "about/partnerships/": ".partner-list",
+    "contributors/": "#contributor-list",
+    "about/community/": ".people-wall",
+    "about/teams/": ".feature-rows",
+    "educators-corner/": ".list-items",
+    "pedagogies/": ".list-items",
+    "forrt_clusters/academic-life-and-culture/": ".plain-list",
+    "syllabus/": ".catalogue",
+    "neurodiversity-lessonbank/": ".lesson-grid",
+    "citation-politics/toolkit/": ".cpt-items",
+}
+# Tool pages lead with their tool: the main action is in the first view, above the page's own text.
+TOOL_PAGES = ("awop/", "citation-politics/", "replication-hub/flora/", "nowherelab/")
+DIRECTORY_MIN_WIDTH = 900
+FIRST_VIEW_IMAGE_LIMIT = 0.3
+CHART_WIDTH_LIMIT = 340
+WHEEL_WIDTH_LIMIT = 420
+TOOLKIT_SEARCH = """async () => {
+  const input = document.querySelector('#cpt-search-input');
+  const shown = () => [...document.querySelectorAll('[data-cpt-item]')].filter((el) => el.getClientRects().length).length;
+  const type = (value) => { input.value = value; input.dispatchEvent(new Event('input')); };
+  const before = shown();
+  type('zzqx');
+  const none = shown(), empty = document.querySelector('.cpt-result').classList.contains('is-empty') && Boolean(document.querySelector('.cpt-clear').getClientRects().length);
+  type('gender');
+  const some = shown();
+  type('zzqx');
+  document.querySelector('.cpt-clear').click();
+  return {before, none, empty, some, after: shown(), cleared: input.value === ''};
+}"""
+
+
+def check_directory_widths(browser, base, failures):
+    """At 1440 px directories use the width, the chart on Publications and the toolkit's wheel do not take over
+    the first view, and the toolkit's search empties, narrows and restores its entries."""
+    expect = expectation(failures, "directory widths")
+    page = new_page(browser, 1440)
+    page.context.add_cookies([{"name": "forrt_analytics_choice", "value": "deny", "url": base}])  # Banner shut.
+    for path, selector in DIRECTORIES.items():
+        page.goto(base + path, wait_until="load")
+        width = page.evaluate("(s) => document.querySelector(s)?.getBoundingClientRect().width || 0", selector)
+        expect(width >= DIRECTORY_MIN_WIDTH, f"{path}: {selector} is {width:.0f} px wide, at least {DIRECTORY_MIN_WIDTH}")
+    for path in TOOL_PAGES:
+        page.goto(base + path, wait_until="load")
+        page.evaluate("document.fonts.ready.then(() => null)")
+        bottom = page.evaluate("document.querySelector('.page-actions .btn-primary')?.getBoundingClientRect().bottom ?? Infinity")
+        expect(bottom <= page.viewport_size["height"], f"{path}: the main action ends {bottom:.0f} px down, within the first view")
+    page.goto(base + "post/2026-01-newsletter/", wait_until="load")
+    order = page.evaluate("""() => {
+      const link = [...document.querySelectorAll('.article-style a')].find((a) => /newsletter/i.test(a.textContent));
+      const image = document.querySelector('.reading .article-image');
+      return !!link && !!image && !!(link.compareDocumentPosition(image) & Node.DOCUMENT_POSITION_FOLLOWING);
+    }""")
+    expect(order, "a short news post keeps its image, after its link")
+    page.goto(base + "publications/", wait_until="load")
+    chart_width, share = page.evaluate("""() => {
+      const box = document.querySelector('.citation-container img').getBoundingClientRect();
+      const seen = Math.max(0, Math.min(box.bottom, innerHeight) - Math.max(box.top, 0));
+      return [box.width, seen * box.width / (innerWidth * innerHeight)];
+    }""")
+    expect(chart_width <= CHART_WIDTH_LIMIT, f"the citation chart is {chart_width:.0f} px wide, limit {CHART_WIDTH_LIMIT}")
+    expect(share <= FIRST_VIEW_IMAGE_LIMIT, f"the citation chart takes {share:.0%} of the first view, limit {FIRST_VIEW_IMAGE_LIMIT:.0%}")
+    page.goto(base + "citation-politics/toolkit/", wait_until="load")
+    wheel_width, share = page.evaluate("""() => {
+      const box = document.querySelector('.cpt-wheel img').getBoundingClientRect();
+      const seen = Math.max(0, Math.min(box.bottom, innerHeight) - Math.max(box.top, 0));
+      return [box.width, seen * box.width / (innerWidth * innerHeight)];
+    }""")
+    expect(wheel_width <= WHEEL_WIDTH_LIMIT, f"the toolkit's wheel is {wheel_width:.0f} px wide, limit {WHEEL_WIDTH_LIMIT}")
+    expect(share <= FIRST_VIEW_IMAGE_LIMIT, f"the toolkit's wheel takes {share:.0%} of the first view, limit {FIRST_VIEW_IMAGE_LIMIT:.0%}")
+    found = page.evaluate(TOOLKIT_SEARCH)
+    expect(found["before"] > 0 and found["none"] == 0 and found["empty"], f"a toolkit search with no match hides every entry and says so: {found}")
+    expect(0 < found["some"] < found["before"], f"a toolkit search for 'gender' narrows the entries: {found}")
+    expect(found["after"] == found["before"] and found["cleared"], f"clearing the toolkit search shows every entry again: {found}")
+    page.goto(base + "just_os_chatbot/", wait_until="load")
+    page.wait_for_selector(".just-os-input")
+    bottom = page.evaluate("document.querySelector('.just-os-input').getBoundingClientRect().bottom - innerHeight")
+    expect(bottom <= 0, f"the chatbot page's input ends {bottom:.0f} px below the first view")
+    page.goto(base + "booklet/", wait_until="load")
+    frame = page.evaluate("(() => { const box = document.querySelector('._df_book').getBoundingClientRect(); return box.width / box.height; })()")
+    expect(frame <= 1.4, f"the booklet's frame is {frame:.2f} times as wide as it is high, so a spread would be clipped; limit 1.4")
+    page.goto(base + "about/steering-committee/", wait_until="load")
+    tops = page.evaluate("[...document.querySelectorAll('.sc-team')].map((team) => Math.round(team.getBoundingClientRect().top))")
+    expect(len(set(tops)) < len(tops), "no small Steering Committee team sits beside another")
+    page.context.close()
 
 
 def check_directory(browser, base, failures):
@@ -645,6 +913,360 @@ def check_directory(browser, base, failures):
     plain.context.close()
 
 
+NETWORK_PATH = "contributor-analysis/"
+NETWORK_MIN_SPAN = 0.65
+NETWORK_MAX_LEAN = 0.2
+NETWORK_MIN_CORE = 0.28
+CHARTS_ENLARGED = """() => {
+  const clashes = [];
+  for (const row of document.querySelectorAll('.bar,.share-list li')) {
+    const parts = [...row.children].filter((part) => part.textContent.trim()).map((part) => [part, part.getBoundingClientRect()]);
+    parts.forEach(([a, x], i) => parts.slice(i + 1).forEach(([b, y]) => {
+      if (x.left < y.right - 1 && y.left < x.right - 1 && x.top < y.bottom - 1 && y.top < x.bottom - 1) clashes.push(a.textContent + ' / ' + b.textContent);
+    }));
+  }
+  const width = (selector) => Math.min(...[...document.querySelectorAll(selector)].map((el) => el.getBoundingClientRect().width));
+  return {bars: document.querySelectorAll('.bar').length, bar: width('.bar-track'), label: width('.share-label'), clashes};
+}"""
+NETWORK_INK = """() => {
+  const canvas = document.querySelector('[data-network-canvas]');
+  const {width, height} = canvas;
+  const pixels = canvas.getContext('2d').getImageData(0, 0, width, height).data;
+  let left = width, right = -1, top = height, bottom = -1, solid = 0;
+  const columns = new Array(width).fill(0);
+  const rows = new Array(height).fill(0);
+  for (let y = 0; y < height; y += 1) {
+    for (let x = 0; x < width; x += 1) {
+      if (pixels[(y * width + x) * 4 + 3] > 200) {
+        if (x < left) left = x;
+        if (x > right) right = x;
+        if (y < top) top = y;
+        if (y > bottom) bottom = y;
+        columns[x] += 1;
+        rows[y] += 1;
+        solid += 1;
+      }
+    }
+  }
+  // How far the middle 80% of what is drawn spreads, which a few far-out dots cannot stretch.
+  const middle = (counts) => {
+    let seen = 0, first = 0, last = 0;
+    counts.forEach((count, i) => {
+      if (seen < solid * .1) first = i;
+      seen += count;
+      if (seen <= solid * .9) last = i;
+    });
+    return (last - first) / counts.length;
+  };
+  return {left, right, top, bottom, width, height, core_across: middle(columns), core_down: middle(rows)};
+}"""
+
+
+def framing_problems(ink):
+    """What is wrong with where the drawn network sits on its canvas, from the box its solid pixels fill."""
+    width, height = ink["width"], ink["height"]
+    if not width or not height or ink["right"] < 0:
+        return ["nothing is drawn"]
+    problems = []
+    across = (ink["right"] - ink["left"]) / width
+    down = (ink["bottom"] - ink["top"]) / height
+    if max(across, down) < NETWORK_MIN_SPAN:
+        problems.append(f"fills only {across:.0%} of the width and {down:.0%} of the height")
+    lean_x = abs(ink["left"] - (width - 1 - ink["right"])) / width
+    lean_y = abs(ink["top"] - (height - 1 - ink["bottom"])) / height
+    if max(lean_x, lean_y) > NETWORK_MAX_LEAN:
+        problems.append(f"sits off centre by {lean_x:.0%} across and {lean_y:.0%} down")
+    if ink["core_across"] < NETWORK_MIN_CORE or ink["core_down"] < NETWORK_MIN_CORE:
+        problems.append(f"bunches up: most of it spans {ink['core_across']:.0%} of the width and {ink['core_down']:.0%} of the height")
+    return problems
+
+
+def check_contributor_network(browser, base, failures):
+    """The network is framed, reaches nothing outside the site, and answers to pointer and keyboard."""
+    expect = expectation(failures, "contributor network")
+    host = urlsplit(base).netloc
+    for width, height in WIDTHS.items():
+        page = new_page(browser, width)
+        page.context.add_cookies([{"name": "forrt_analytics_choice", "value": "deny", "url": base}])
+        asked = []
+        page.on("request", lambda request: asked.append(request.url))
+        page.goto(base + NETWORK_PATH, wait_until="load")
+        page.wait_for_selector("[data-network-panel]:not([hidden])")
+        page.wait_for_timeout(300)
+        for problem in framing_problems(page.evaluate(NETWORK_INK)):
+            expect(False, f"at {width} the network {problem}")
+        outside = [url for url in asked if url.startswith("http") and urlsplit(url).netloc != host]
+        expect(not outside, f"at {width} the page asks no other site for anything: {outside[:3]}")
+        expect(page.locator("main iframe").count() == 0, f"at {width} the page embeds no iframe")
+        if width >= 1024:
+            panel = page.evaluate("document.querySelector('[data-network-panel]').getBoundingClientRect().height")
+            expect(panel <= height, f"at {width} the network panel, {panel:.0f} px high, fits a {height} px screen")
+        else:
+            touch = page.evaluate("getComputedStyle(document.querySelector('[data-network-canvas]')).touchAction")
+            expect(touch == "auto", f"at {width} the drawing leaves touch to the page: {touch}")
+            described = page.evaluate("document.querySelector('[data-network-canvas]').getAttribute('aria-describedby')")
+            expect(not described, f"at {width} the drawing does not describe controls that are hidden: {described}")
+        # An open list of matches stays on the screen, however the page has scrolled.
+        field = page.locator("#network-project")
+        field.scroll_into_view_if_needed()
+        page.evaluate("""() => {
+          const box = document.querySelector('#network-project').getBoundingClientRect();
+          scrollBy(0, box.bottom - innerHeight + 30);
+        }""")
+        page.wait_for_timeout(100)
+        field.click()
+        page.wait_for_timeout(100)
+        reach = page.evaluate("""() => {
+          const box = document.querySelector('#network-project-list').getBoundingClientRect();
+          return [box.top, box.bottom, innerHeight, box.height];
+        }""")
+        expect(reach[0] >= 0 and reach[1] <= reach[2] and reach[3] >= 120,
+               f"at {width} an open list of matches stays on the screen: {reach[0]:.0f} to {reach[1]:.0f} of {reach[2]}, {reach[3]:.0f} px high")
+        page.context.close()
+
+    page = new_page(browser, 1440)
+    page.context.add_cookies([{"name": "forrt_analytics_choice", "value": "deny", "url": base}])
+    page.goto(base + NETWORK_PATH, wait_until="load")
+    page.wait_for_selector("[data-network-panel]:not([hidden])")
+    status = page.locator("[data-network-status]")
+    canvas = page.locator("[data-network-canvas]")
+    canvas.scroll_into_view_if_needed()
+    position = "(name) => document.querySelector('[data-analysis-network]').networkPosition(name)"
+    data = page.evaluate("JSON.parse(document.getElementById('network-data').textContent)")
+    person = max(data["people"], key=lambda row: len(row[4]))[0]
+    project = data["projects"][0][0]
+    box = canvas.bounding_box()
+
+    # Filtering by keyboard: type, take the first match, take it off again.
+    page.locator("#network-project").focus()
+    page.keyboard.type(project)
+    expect(page.locator("#network-project-list").is_visible(), "typing a project opens its list")
+    page.keyboard.press("ArrowDown")
+    page.keyboard.press("Enter")
+    expect(project in status.inner_text(), f"choosing a project says so: {status.inner_text()!r}")
+    expect(page.locator(".network-chip").count() == 1, "a chosen project gets a chip")
+    expect(page.locator("[data-network-detail] .network-link").count() > 1, "a chosen project lists its people")
+    page.locator(".network-chip").click()
+    expect("Showing everyone" in status.inner_text(), "taking the chip off shows everyone again")
+    page.wait_for_timeout(400)
+
+    # Keyboard use through the text: focus lands somewhere after each rebuild, and Escape still works.
+    focused = "document.activeElement.tagName + ':' + (document.activeElement.id || document.activeElement.className)"
+    page.locator("#network-person").focus()
+    page.keyboard.type(person)
+    page.keyboard.press("Enter")
+    page.locator("[data-network-detail] .network-link:not(.network-clear)").first.focus()
+    page.keyboard.press("Enter")
+    expect(page.evaluate("document.activeElement.tagName") == "H3", f"following a link in the text moves focus to its heading: {page.evaluate(focused)}")
+    page.locator(".network-chip").first.focus()
+    page.keyboard.press("Enter")
+    expect(page.evaluate("document.activeElement.id") == "network-project", f"taking off the last chip moves focus to its search box: {page.evaluate(focused)}")
+    page.locator("#network-person").focus()
+    page.keyboard.type(person)
+    page.keyboard.press("Enter")
+    page.locator("[data-network-detail] .network-link:not(.network-clear)").first.focus()
+    page.keyboard.press("Enter")
+    page.keyboard.press("Escape")
+    expect("Showing everyone" in status.inner_text(), "Escape clears a selection reached by following a link")
+    page.wait_for_timeout(400)
+
+    # Hovering names a node, and clicking selects it.
+    point = page.evaluate(position, person)
+    page.mouse.move(box["x"] + point["x"], box["y"] + point["y"])
+    tip = page.locator("[data-network-tip]")
+    expect(tip.is_visible() and person in tip.inner_text(), f"hovering {person} names them")
+    page.keyboard.press("Escape")
+    expect(not tip.is_visible(), "Escape dismisses the name shown by hovering")
+    page.mouse.move(box["x"] + 40, box["y"] + 40)
+    page.mouse.move(box["x"] + point["x"], box["y"] + point["y"])
+    tip_box = tip.bounding_box()
+    page.mouse.move(tip_box["x"] + 5, tip_box["y"] + 5)
+    page.wait_for_timeout(500)
+    expect(tip.is_visible(), "the name stays while the pointer is on it")
+    page.mouse.move(box["x"] + point["x"], box["y"] + point["y"])
+    page.mouse.click(box["x"] + point["x"], box["y"] + point["y"])
+    expect(person in status.inner_text(), f"clicking {person} selects them: {status.inner_text()!r}")
+    expect(page.locator("[data-network-detail] h3").inner_text() == person, "the selection is described in text")
+    # With a long list beside it, an open list of matches goes with its box or shuts.
+    page.locator("#network-project").click()
+    page.locator(".network-controls").evaluate("(side) => { side.scrollTop += 250; }")
+    page.wait_for_timeout(100)
+    options = page.locator("#network-project-list")
+    gap = page.evaluate("""() => {
+      const list = document.querySelector('#network-project-list');
+      return list.hidden ? 0 : Math.abs(list.getBoundingClientRect().top - document.querySelector('#network-project').getBoundingClientRect().bottom);
+    }""")
+    expect(not options.is_visible() or gap < 12, f"a list of matches follows its box when the side panel scrolls: {gap:.0f} px")
+    page.locator("#network-person").focus()
+    page.keyboard.press("Escape")
+    page.keyboard.press("Escape")
+    canvas.focus()
+    page.wait_for_timeout(400)
+
+    # The person's search box, then the arrow keys on the drawing.
+    page.locator("#network-person").focus()
+    page.keyboard.type(person[:6])
+    page.keyboard.press("Enter")
+    expect("project" in status.inner_text() and "Showing everyone" not in status.inner_text(), "Enter takes the first match")
+    page.locator("#network-person").press("Escape")
+    expect("Showing everyone" in status.inner_text(), "Escape clears the selection")
+    page.wait_for_timeout(400)
+    canvas.focus()
+    before = page.evaluate(position, person)
+    page.keyboard.press("ArrowLeft")
+    page.wait_for_timeout(50)
+    after = page.evaluate(position, person)
+    expect(after["x"] != before["x"], "the arrow keys move the drawing")
+    page.keyboard.press("0")
+    page.wait_for_timeout(400)
+
+    # Scrolling over the drawing scrolls the page and leaves the drawing alone.
+    before = page.evaluate(position, person)
+    top = page.evaluate("scrollY")
+    page.mouse.move(box["x"] + 40, box["y"] + 40)
+    page.mouse.wheel(0, 200)
+    page.wait_for_timeout(200)
+    expect(page.evaluate("scrollY") > top, "the wheel scrolls the page over the drawing")
+    expect(page.evaluate(position, person) == before, "the wheel alone does not zoom the drawing")
+    page.context.close()
+
+    # Enlarged text keeps the charts readable as well as inside the screen.
+    for width in (390, 1024):
+        page = new_page(browser, width)
+        page.goto(base + NETWORK_PATH, wait_until="load")
+        page.evaluate("""() => {
+          const sizes = [...document.querySelectorAll('body *')].map((el) => [el, parseFloat(getComputedStyle(el).fontSize)]);
+          sizes.forEach(([el, size]) => { el.style.fontSize = size * 2 + 'px'; });
+        }""")
+        page.wait_for_timeout(100)
+        found = page.evaluate(CHARTS_ENLARGED)
+        expect(found["bar"] >= 80 or not found["bars"], f"at {width} with text at 200% the bars keep their length: {found['bar']:.0f} px")
+        expect(not found["clashes"], f"at {width} with text at 200% chart labels do not run together: {found['clashes'][:2]}")
+        expect(found["label"] >= 50 or not found["bars"], f"at {width} with text at 200% chart labels keep their width: {found['label']:.0f} px")
+        page.context.close()
+
+    # Selecting does not animate for those who ask for less motion.
+    page = new_page(browser, 1440, reduced_motion="reduce")
+    page.context.add_cookies([{"name": "forrt_analytics_choice", "value": "deny", "url": base}])
+    page.goto(base + NETWORK_PATH, wait_until="load")
+    page.wait_for_selector("[data-network-panel]:not([hidden])")
+    page.locator("#network-project").focus()
+    page.keyboard.type(project)
+    page.keyboard.press("Enter")
+    first = page.evaluate(position, person)
+    page.wait_for_timeout(400)
+    expect(page.evaluate(position, person) == first, "with reduced motion the drawing does not glide")
+    page.context.close()
+
+
+CONFERENCE = "ai-metascience/"
+CONFERENCE_MIN_WIDTH = 900
+
+
+def check_conference(browser, base, failures):
+    """The conference programme: day tabs that keep every day reachable, the width used, and the abstract dialog."""
+    expect = expectation(failures, "conference programme")
+    # Without JavaScript every day shows, so the audit reaches the days the tabs hide.
+    for width in WIDTHS:
+        page = new_page(browser, width, java_script_enabled=False)
+        page.goto(base + CONFERENCE, wait_until="load")
+        shown = page.evaluate("[...document.querySelectorAll('.am-prog-day')].filter((d) => d.getClientRects().length).length")
+        expect(shown == 3, f"without JavaScript {shown} of 3 days show at {width}")
+        found = page.evaluate(AUDIT)
+        for key in ("overflow", "contrast", "small", "long"):
+            expect(not found[key], f"without JavaScript at {width}, {key}: {found[key] if found[key] else 'none'}")
+        page.context.close()
+    page = new_page(browser, 1440)
+    page.context.add_cookies([{"name": "forrt_analytics_choice", "value": "deny", "url": base}])  # Banner shut.
+    page.goto(base + CONFERENCE, wait_until="load")
+    width = page.evaluate("document.querySelector('.am-prog').getBoundingClientRect().width")
+    expect(width >= CONFERENCE_MIN_WIDTH, f"the programme is {width:.0f} px wide, at least {CONFERENCE_MIN_WIDTH}")
+    visible = "[...document.querySelectorAll('.am-prog-day')].filter((d) => !d.hidden).map((d) => d.id)"
+    expect(page.evaluate(visible) == ["am-day-mon"], "with JavaScript only Monday shows at first")
+    if not page.locator(".am-tab[aria-selected=true]").count():
+        expect(False, "the days have tabs")
+        page.context.close()
+        return
+    page.focus(".am-tab[aria-selected=true]")
+    page.keyboard.press("ArrowRight")
+    focused = page.evaluate("document.activeElement.id")
+    expect(page.evaluate(visible) == ["am-day-tue"] and focused == "am-tab-tue", "the right arrow moves to Tuesday's tab and shows its day")
+    talk = page.locator("#am-day-tue button.am-prog-item:not(.am-prog-item-plain)").first
+    talk.focus()
+    page.keyboard.press("Enter")
+    inside = page.evaluate("document.getElementById('am-prog-dialog').open && document.getElementById('am-prog-dialog').contains(document.activeElement)")
+    expect(inside, "Enter on a talk opens its abstract with the focus inside")
+    page.keyboard.press("Escape")
+    back = page.evaluate("!document.getElementById('am-prog-dialog').open && document.activeElement.matches('#am-day-tue .am-prog-item')")
+    expect(back, "Escape closes the abstract and hands the focus back to the talk")
+    page.goto(base + CONFERENCE + "#am-day-wed", wait_until="load")
+    expect(page.evaluate(visible) == ["am-day-wed"], "a link to #am-day-wed opens on Wednesday")
+    page.wait_for_timeout(300)
+    tabs_top, cover = page.evaluate("""() => {
+      const bar = document.getElementById('navbar-main');
+      const fixed = bar && ['fixed', 'sticky'].includes(getComputedStyle(bar).position);
+      return [document.querySelector('.am-switch').getBoundingClientRect().top, fixed ? bar.getBoundingClientRect().bottom : 0];
+    }""")
+    expect(tabs_top >= max(cover, 0), f"after a link to a day its tabs are in view, {tabs_top:.0f} px from the top, below the navbar at {cover:.0f}")
+    page.context.close()
+
+
+# The explanations inside cluster and discipline panels keep to the reading measure (.article-style).
+PANEL_MEASURE = 580
+PANEL_TEXT = """() => [...document.querySelectorAll('.cluster-description, .acc-body:not(.acc-collapsed) .sc-description')]
+  .filter((el) => el.getClientRects().length).map((el) => Math.round(el.getBoundingClientRect().width))"""
+
+
+def check_review_pages(browser, base, failures):
+    """Fixes from the final design review: the abstract toggle says what it does, panel text keeps to
+    the reading measure on a wide screen, the booklet turns one page at a time on a phone whatever its
+    browser calls itself, and the community map opens on its members and can zoom out on a phone."""
+    expect = expectation(failures, "review fixes")
+    page = new_page(browser, 1440)
+    page.goto(base + "publications/", wait_until="load", timeout=120000)
+    toggle = page.locator(".btn-toggle-abstract").first
+    state = "(el) => [el.textContent.trim(), el.getAttribute('aria-expanded')]"
+    expect(toggle.evaluate(state) == ["Show Abstract", "false"], f"a closed abstract offers Show Abstract: {toggle.evaluate(state)}")
+    toggle.click()
+    expect(toggle.evaluate(state) == ["Hide Abstract", "true"], f"an open abstract offers Hide Abstract: {toggle.evaluate(state)}")
+    toggle.click()
+    expect(toggle.evaluate(state) == ["Show Abstract", "false"], "closing it again offers Show Abstract")
+    for path in ("clusters/", "disciplines/"):
+        page.goto(base + path, wait_until="load", timeout=120000)
+        page.evaluate("document.querySelectorAll('.acc-toggle-all').forEach((b) => b.click())")
+        page.wait_for_timeout(300)
+        widths = page.evaluate(PANEL_TEXT)
+        expect(widths and max(widths) <= PANEL_MEASURE, f"{path} panel text at most {PANEL_MEASURE} px wide at 1440: widest {max(widths or [0])}")
+    page.context.close()
+
+    page = new_page(browser, 390)
+    page.goto(base + "booklet/", wait_until="load", timeout=120000)
+    page.wait_for_selector(".df-ui-next:not(.df-ui-alt)", timeout=60000)
+    page.wait_for_timeout(1500)
+    page.locator(".df-ui-next:not(.df-ui-alt)").first.click()
+    page.wait_for_timeout(1500)
+    turned = page.evaluate("document.querySelector('#df_book_page_number')?.value")
+    expect(turned == "2", f"one turn of the booklet at 390 shows page 2, not a spread: page {turned}")
+    page.goto(base + "community-map/", wait_until="load", timeout=120000)
+    frame = "iframe[title='FORRT Community Map']"
+    page.locator(frame).scroll_into_view_if_needed()
+    try:
+        page.wait_for_function(f"""() => {{ const w = document.querySelector("{frame}").contentWindow;
+          const m = w && w.HTMLWidgets && w.HTMLWidgets.find('.leaflet')?.getMap(); return m && m.getMinZoom() < 2; }}""", timeout=30000)
+        ready = True
+    except PlaywrightError:
+        ready = False
+    expect(ready, "the community map is ready, with a minimum zoom below 2, within 30 s at 390")
+    if ready:
+        found = page.frame_locator(frame).locator("body").evaluate("""() => {
+          const m = HTMLWidgets.find('.leaflet').getMap(), b = m.getBounds();
+          return {span: b.getEast() - b.getWest(), zoomOut: m.getZoom() > m.getMinZoom()};
+        }""")
+        expect(found["span"] >= 300, f"the community map opens on its members from America to New Zealand at 390: {found['span']:.0f} degrees across")
+        expect(found["zoomOut"], "the community map can zoom out from its first view at 390")
+    page.context.close()
+
+
 def report_budgets(browser, base, root, subfolder):
     from capture_pages import weigh
 
@@ -656,6 +1278,7 @@ def report_budgets(browser, base, root, subfolder):
         ("resources", "resources/", 300, 190),
         ("replication hub", "replication-hub/", None, 190),
         ("article", "post/2026-01-newsletter/", None, 190),
+        ("contributor analysis", "contributor-analysis/", 360, 0),  # About 190 once a data run replaces its images.
     ):
         weight = weigh(browser, origin, f"{subfolder}{path}", root, subfolder)
         own_budget = f" (budget {own})" if own else ""
@@ -760,6 +1383,17 @@ def main():
         check_home(browser, base, failures)
         print("Reading on a phone")
         check_phone_reading(browser, base, failures)
+        print("Floating controls")
+        check_floating_controls(browser, base, failures)
+        check_directory_widths(browser, base, failures)
+        print("Specialist resources on cluster pages")
+        check_specialist_cards(browser, base, failures)
+        print("Conference programme")
+        check_conference(browser, base, failures)
+        print("Final review fixes")
+        check_review_pages(browser, base, failures)
+        print("Contributor network")
+        check_contributor_network(browser, base, failures)
         print("Resources directory")
         check_directory(browser, base, failures)
         if args.public and args.browser == "chromium":

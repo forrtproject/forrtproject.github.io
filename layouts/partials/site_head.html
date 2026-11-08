@@ -38,10 +38,12 @@
   <meta name="robots" content="noindex, nofollow">
   {{ end }}
 
+  {{ $metadata := partial "functions/resource_metadata.html" . }}
+
   {{/* Generate page description: page-specific plain text (see the partial),
        shortened on a word boundary. `truncate` HTML-escapes its input, so the
        result is decoded again and the attribute escaping encodes it once. */}}
-  {{ $full_desc := partial "functions/page_description.html" . }}
+  {{ $full_desc := $metadata.description }}
   {{ $desc := replaceRE ` …$` "…" (truncate 250 $full_desc | htmlUnescape) }}
   <meta name="description" content='{{ $desc }}'>
   {{/* Shorter description for social previews. */}}
@@ -83,7 +85,7 @@
   <link rel="alternate" hreflang="x-default" href="{{ .url }}">
     {{- end }}
   {{ else }}
-  <link rel="alternate" hreflang="{{ $page_lang }}" href="{{ .Permalink }}">
+  <link rel="alternate" hreflang="{{ $page_lang }}" href="{{ $metadata.url }}">
   {{ end }}
 
   {{ partial "functions/parse_theme" . }}
@@ -228,26 +230,30 @@
   <link rel="icon" type="image/png" href="{{(partial "functions/get_icon" 32).RelPermalink}}">
   <link rel="apple-touch-icon" type="image/png" href="{{(partial "functions/get_icon" 192).RelPermalink}}">
 
-  <link rel="canonical" href="{{ .Permalink }}">
+  <link rel="canonical" href="{{ $metadata.url }}">
 
   {{/* Get page image for sharing. */}}
   {{ $featured_image := (.Resources.ByType "image").GetMatch "*featured*" }}
   {{ $avatar_image := (.Resources.ByType "image").GetMatch "avatar*" }}
   {{ $has_logo := fileExists "assets/images/logo.webp" | or (fileExists "assets/images/logo.svg") }}
   {{ $og_image := "" }}
+  {{ $og_resource := false }}
   {{ $og_image_width := 0 }}
   {{ $og_image_height := 0 }}
   {{ if (and (eq .Kind "taxonomy") $avatar_image) }}
     {{ $avatar_fill := $avatar_image.Fill "270x270 Center" }}
+    {{ $og_resource = $avatar_fill }}
     {{ $og_image = $avatar_fill.Permalink }}
     {{ $og_image_width = $avatar_fill.Width }}
     {{ $og_image_height = $avatar_fill.Height }}
   {{ else if $featured_image }}
+    {{ $og_resource = $featured_image }}
     {{ $og_image = $featured_image.Permalink }}
     {{ $og_image_width = $featured_image.Width }}
     {{ $og_image_height = $featured_image.Height }}
   {{ else if and .Params.sharing_image_resource (.Resources.GetMatch .Params.sharing_image_resource) }}
     {{ $share_res := .Resources.GetMatch .Params.sharing_image_resource }}
+    {{ $og_resource = $share_res }}
     {{ $og_image = $share_res.Permalink }}
     {{ $og_image_width = $share_res.Width }}
     {{ $og_image_height = $share_res.Height }}
@@ -268,15 +274,41 @@
       {{ $og_image_height = .Height }}
     {{ end }}
   {{ else if $has_logo }}
-    {{ $og_image = (partial "functions/get_logo" (dict "constraint" "fit" "size" 300)).Permalink }}
+    {{ $og_resource = partial "functions/get_logo" (dict "constraint" "fit" "size" 300) }}
+    {{ $og_image = $og_resource.Permalink }}
   {{ else }}
-    {{ $og_image = (partial "functions/get_icon" 512).Permalink }}
+    {{ $og_resource = partial "functions/get_icon" 512 }}
+    {{ $og_image = $og_resource.Permalink }}
+  {{ end }}
+  {{/* Static images join the same pipeline without moving or copying their sources.
+       absURL/relURL keep preview prefixes on the published derivative. */}}
+  {{ if not $og_resource }}
+    {{ $static_path := "" }}
+    {{ if .Params.sharing_image }}
+      {{ $static_path = .Params.sharing_image }}
+    {{ else if .Params.header.image }}
+      {{ $static_path = printf "%s/%s" $media_dir .Params.header.image }}
+    {{ else if site.Params.sharing_image }}
+      {{ $static_path = site.Params.sharing_image }}
+    {{ end }}
+    {{ if and $static_path (not (urls.Parse $static_path).IsAbs) (not (in (slice ".png" ".jpg" ".jpeg") (path.Ext $static_path | lower))) }}
+      {{ $source := printf "static/%s" (strings.TrimPrefix "/" $static_path) }}
+      {{ if fileExists $source }}
+        {{ $og_resource = resources.FromString (printf "social/%s" (strings.TrimPrefix "/" $static_path)) (readFile $source) }}
+      {{ end }}
+    {{ end }}
+  {{ end }}
+  {{ with $og_resource }}
+    {{ $social := partialCached "functions/social_image.html" . .Key }}
+    {{ $og_image = $social.Permalink }}
+    {{ $og_image_width = $social.Width }}
+    {{ $og_image_height = $social.Height }}
   {{ end }}
   {{ $scr.Set "og_image" $og_image }}{{/* Set `og_image` globally for `rss.xml`. */}}
   {{ $og_image_alt := site.Params.sharing_image_alt | default site.Title }}
   {{ if .Params.sharing_image_alt }}{{ $og_image_alt = .Params.sharing_image_alt }}{{ end }}
   <meta property="og:site_name" content="{{ site.Title }}">
-  <meta property="og:url" content="{{ .Permalink }}">
+  <meta property="og:url" content="{{ $metadata.url }}">
   {{/* Sharing title: allow override, else append site name for context in previews. */}}
   {{ $og_title := "" }}
   {{ if .Params.sharing_title }}
@@ -286,7 +318,7 @@
   {{ else if .IsHome }}
     {{ $og_title = site.Title }}
   {{ else }}
-    {{ $og_title = printf "%s | %s" .Title (site.Params.short_title | default site.Title) }}
+    {{ $og_title = printf "%s | %s" $metadata.title (site.Params.short_title | default site.Title) }}
   {{ end }}
   <meta property="og:title" content="{{ $og_title }}">
   <meta property="og:description" content='{{ $og_desc }}'>
@@ -330,6 +362,6 @@
        page with the full site title spent 61 of those on text that was never
        displayed, so pages carry the short name and only the home page spells
        the organisation out in full. */}}
-  <title>{{ if .IsHome }}{{ site.Title }}{{ else }}{{ .Title }} | {{ site.Params.short_title | default site.Title }}{{ end }}</title>
+  <title>{{ if .IsHome }}{{ site.Title }}{{ else }}{{ $metadata.title }} | {{ site.Params.short_title | default site.Title }}{{ end }}</title>
 
 </head>

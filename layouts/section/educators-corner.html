@@ -2,7 +2,7 @@
 {{/* A section of articles: its introduction, then the articles newest first, a page at a time. */}}
 {{ $pager := .Paginate .Data.Pages }}
 <div class="wrap">
-  <div class="article-layout article-layout-single">
+  <div class="article-layout article-layout-wide">
     <article class="reading">
       <header class="article-head">
         {{ partial "doors/crumbs" (dict "page" .) }}

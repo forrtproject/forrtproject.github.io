@@ -9,7 +9,11 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "rebrand"))
 
+from check_design import framing_problems  # noqa: E402
 from check_internal_links import broken_target, extract_links, find_broken  # noqa: E402
+from check_preview import (  # noqa: E402
+    canonical_problem, off_origin, production_expectation, redirect_ok, redirect_target, resolve_base, robots_problem,
+)
 from check_source_rules import GENERATED, absolute_url_findings  # noqa: E402
 from compare_builds import compare_heads, compare_paths, compare_structured  # noqa: E402
 from preview_paths import Rewriter, resolves  # noqa: E402
@@ -166,6 +170,10 @@ class LinkCheckTests(unittest.TestCase):
         )
         self.assertEqual(links, ["/a", "c.webp"])
 
+    def test_extract_skips_src_in_another_attributes_query(self):
+        links = list(extract_links('<div data-u="/a?src=/b"></div><div data-u="x&amp;src=/c"></div><img src=d.webp>'))
+        self.assertEqual(links, ["d.webp"])
+
     def test_find_broken_walks_a_build(self):
         with tempfile.TemporaryDirectory() as root:
             Path(root, "about").mkdir()
@@ -224,6 +232,79 @@ class CompareTests(unittest.TestCase):
         self.assertEqual(changes, {"a": (["y"], ["w"])})
 
 
+    def social_tags(self, image, image_type="image/webp", width="100", height="50"):
+        return sorted(["og:image=" + image, "twitter:image=" + image,
+                       "og:image:type=" + image_type, "og:image:width=" + width,
+                       "og:image:height=" + height, "og:image:alt=Same image",
+                       "twitter:image:alt=Same image", "title=Page", "description=Description",
+                       "canonical:=https://example.org/page/"])
+
+    def test_same_bundle_and_static_social_derivatives_are_equivalent(self):
+        for before, after in (
+            ("https://example.org/post/example/featured.webp", "https://example.org/post/example/featured_hu_0123456789abcdef.png"),
+            ("https://example.org/img/toolkit.webp", "https://example.org/social/img/toolkit_hu_0123456789abcdef.jpg"),
+            ("https://example.org/rebrand-doors/img/toolkit.webp", "https://example.org/rebrand-doors/social/img/toolkit_hu_0123456789abcdef.jpeg"),
+            ("https://example.org/a/avatar_hu_0123456789abcdef.webp", "https://example.org/a/avatar_hu_fedcba9876543210.png"),
+        ):
+            with self.subTest(after=after):
+                new_type = "image/png" if after.endswith(".png") else "image/jpeg"
+                self.assertEqual(compare_heads({"a": self.social_tags(before)},
+                                               {"a": self.social_tags(after, new_type, "200", "100")}), {})
+
+    def test_unrelated_social_images_and_other_metadata_still_fail(self):
+        before = self.social_tags("https://example.org/post/example/featured.webp")
+        derivative = "https://example.org/post/example/featured_hu_0123456789abcdef.png"
+        for url in (
+            derivative.replace("featured", "unrelated"),
+            derivative.replace("/example/", "/another/"),
+            derivative.replace("example.org", "another.org"),
+            derivative + "?different=1",
+        ):
+            with self.subTest(url=url):
+                self.assertIn("a", compare_heads({"a": before}, {"a": self.social_tags(url, "image/png")}))
+        after = self.social_tags(derivative, "image/png")
+        for old in ("title=Page", "description=Description", "og:image:alt=Same image",
+                    "twitter:image:alt=Same image", "canonical:=https://example.org/page/"):
+            with self.subTest(tag=old):
+                changed = sorted("changed=" + tag if tag == old else tag for tag in after)
+                self.assertIn("a", compare_heads({"a": before}, {"a": changed}))
+        self.assertIn("a", compare_heads({"a": before}, {"a": sorted(after + ['{"@type":"Changed"}'])}))
+
+    def test_png_jpeg_comparisons_and_unconverted_companions_stay_exact(self):
+        for suffix, image_type in (("png", "image/png"), ("jpg", "image/jpeg"), ("webp", "image/webp")):
+            image = "https://example.org/img/source." + suffix
+            before = self.social_tags(image, image_type)
+            for after in (self.social_tags(image, image_type, width="200"),
+                          self.social_tags(image.replace("source", "other"), image_type),
+                          self.social_tags(image.replace("source", "source_hu_0123456789abcdef"), image_type),
+                          self.social_tags(image, "image/incorrect")):
+                with self.subTest(suffix=suffix):
+                    self.assertIn("a", compare_heads({"a": before}, {"a": after}))
+
+    def test_duplicate_image_tags_are_not_normalized(self):
+        original = "https://example.org/img/source.webp"
+        before = sorted(self.social_tags(original) + ["og:image=" + original])
+        after = self.social_tags("https://example.org/social/img/source_hu_0123456789abcdef.png", "image/png")
+        self.assertIn("a", compare_heads({"a": before}, {"a": after}))
+
+    def test_social_derivatives_require_processing_hash(self):
+        before = self.social_tags("https://example.org/img/source.webp")
+        for image in ("https://example.org/img/source.png", "https://example.org/social/img/source.png"):
+            with self.subTest(image=image):
+                self.assertIn("a", compare_heads({"a": before}, {"a": self.social_tags(image, "image/png")}))
+
+    def test_social_derivative_companions_cannot_disappear(self):
+        before = self.social_tags("https://example.org/img/source.webp")
+        after = self.social_tags("https://example.org/social/img/source_hu_0123456789abcdef.png", "image/png")
+        for key in ("og:image:width", "og:image:height", "og:image:type"):
+            for side in ("before", "after"):
+                with self.subTest(key=key, side=side):
+                    old = [tag for tag in before if side != "before" or not tag.startswith(key + "=")]
+                    new = [tag for tag in after if side != "after" or not tag.startswith(key + "=")]
+                    self.assertIn("a", compare_heads({"a": old}, {"a": new}))
+        self.assertIn("a", compare_heads({"a": before + ["twitter:image:width=100"]}, {"a": after}))
+
+
 class InventoryTests(unittest.TestCase):
     def test_template_groups(self):
         cases = {
@@ -259,6 +340,28 @@ class InventoryTests(unittest.TestCase):
         self.assertIn("alternate:de=/de", tags)
         self.assertIn('{"@type":"X"}', tags)
         self.assertFalse([tag for tag in tags if "s.css" in tag or tag.startswith("viewport")])
+
+
+class NetworkFramingTests(unittest.TestCase):
+    def ink(self, left, right, top, bottom, core=0.4):
+        return {"left": left, "right": right, "top": top, "bottom": bottom, "width": 1000, "height": 700,
+                "core_across": core, "core_down": core}
+
+    def test_a_centred_network_that_fills_its_panel_passes(self):
+        self.assertEqual(framing_problems(self.ink(40, 960, 60, 640)), [])
+
+    def test_the_network_pressed_into_a_corner_fails(self):
+        problems = framing_problems(self.ink(650, 999, 450, 699))
+        self.assertTrue(any("fills only" in problem for problem in problems))
+        self.assertTrue(any("off centre" in problem for problem in problems))
+
+    def test_outliers_at_the_edges_do_not_hide_a_dense_lump(self):
+        problems = framing_problems(self.ink(40, 960, 60, 640, core=0.2))
+        self.assertTrue(any("bunches up" in problem for problem in problems))
+
+    def test_a_blank_canvas_fails(self):
+        self.assertEqual(framing_problems({"left": 1000, "right": -1, "top": 700, "bottom": -1, "width": 1000, "height": 700}),
+                         ["nothing is drawn"])
 
 
 class SourceRuleTests(unittest.TestCase):
@@ -298,6 +401,61 @@ class SourceRuleTests(unittest.TestCase):
             findings = absolute_url_findings(root, sisters={"fred"})
         self.assertEqual(len(findings), 1)
         self.assertIn("forrt.org/about/us", findings[0])
+
+
+class PreviewCheckModeTests(unittest.TestCase):
+    def test_default_base_is_the_preview(self):
+        self.assertEqual(resolve_base(None, False), "https://forrt.org/rebrand-doors/")
+        self.assertEqual(resolve_base("https://forrt.org/rebrand-doors", False), "https://forrt.org/rebrand-doors/")
+
+    def test_production_base_is_the_site_root(self):
+        self.assertEqual(resolve_base(None, True), "https://forrt.org/")
+        self.assertEqual(resolve_base("https://forrt.org", True), "https://forrt.org/")
+        with self.assertRaises(ValueError):
+            resolve_base("https://forrt.org/rebrand-doors/", True)
+
+    def test_preview_needs_noindex(self):
+        self.assertIsNone(robots_problem("about/us/", "noindex, nofollow", False))
+        self.assertEqual(robots_problem("about/us/", "", False), "about/us/ has no noindex")
+
+    def test_production_forbids_noindex(self):
+        self.assertIsNone(robots_problem("about/us/", "", True))
+        self.assertIsNone(robots_problem("about/us/", "index, follow", True))
+        self.assertIn("has noindex", robots_problem("about/us/", "noindex", True))
+
+    def test_canonical_on_the_root(self):
+        base = "https://forrt.org/"
+        self.assertIsNone(canonical_problem("about/us/", "https://forrt.org/about/us/", base))
+        self.assertIn("no canonical", canonical_problem("about/us/", "", base))
+        self.assertIn("outside", canonical_problem("about/us/", "https://forrt.org/rebrand-doors/about/us/", base))
+        self.assertIn("outside", canonical_problem("about/us/", "https://staging.forrt.org/about/us/", base))
+        self.assertIn("outside", canonical_problem("about/us/", "http://forrt.org/about/us/", base))
+
+    def test_redirect_targets_follow_the_base(self):
+        self.assertEqual(redirect_target("https://forrt.org/rebrand-doors/", "resources/"), "/rebrand-doors/resources/")
+        self.assertEqual(redirect_target("https://forrt.org/", "resources/"), "/resources/")
+        self.assertEqual(redirect_target("https://forrt.org/rebrand-doors/", "//fred"), "/fred")
+        self.assertEqual(redirect_target("https://forrt.org/", "//fred"), "/fred")
+
+    def test_sister_sites_answer_first_in_production(self):
+        sisters = {"re-searchterms", "fred"}
+        self.assertEqual(production_expectation("re-searchterms", "apps/re-searchterms.html", sisters), "//re-searchterms")
+        self.assertEqual(production_expectation("tag/", "tags/", sisters), "tags/")
+        # Sister-site names are case-sensitive paths, as on GitHub Pages.
+        self.assertEqual(production_expectation("FReD/", "//fred", sisters), "//fred")
+
+    def test_off_origin(self):
+        base = "https://forrt.org/"
+        self.assertFalse(off_origin("https://forrt.org/resources/", base))
+        self.assertFalse(off_origin("/glossary/english/preregistration/", base))
+        self.assertTrue(off_origin("https://example.org/resources/", base))
+        self.assertTrue(off_origin("http://forrt.org/resources/", base))
+
+    def test_redirect_ok(self):
+        self.assertTrue(redirect_ok("/resources", "/resources/", "resources/"))
+        self.assertFalse(redirect_ok("/resources/page/2/", "/resources/", "resources/"))
+        self.assertTrue(redirect_ok("/fred/explorer/", "/fred", "//fred"))
+        self.assertFalse(redirect_ok("/fredx/", "/fred", "//fred"))
 
 
 if __name__ == "__main__":

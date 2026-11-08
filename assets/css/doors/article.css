@@ -10,6 +10,8 @@
 .article-layout .article-meta{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:18px;font-size:15px;font-weight:600}
 .article-layout .article-meta span{background:var(--surface);padding:3px 10px;border-radius:var(--r-small)}
 .article-layout .reading h1{font-size:clamp(36px,4.2vw,58px);line-height:1.06;letter-spacing:-.01em;margin:0;text-wrap:balance}
+/* In the narrow column a bigger screen must not mean a taller stack of title lines. */
+.article-layout:not(.article-layout-wide) .reading h1{font-size:clamp(34px,3.2vw,46px);line-height:1.1}
 .article-layout .reading h1.long-title{font-size:clamp(28px,3vw,42px);line-height:1.12}
 /* For long compounds. Not in English, where Safari hyphenates any word at a line end. */
 .article-layout .reading h1:lang(de),.article-layout .reading h1:lang(tr){hyphens:auto}
@@ -104,6 +106,17 @@ main:lang(ar) .article-layout .article-style,main:lang(ar) .article-layout .arti
 .article-layout .article-style .spoiler>summary:hover{color:var(--ink)}
 .article-layout .article-style .spoiler-body{padding:2px 14px 12px;font-size:18px;line-height:1.55}
 .article-layout .article-style .spoiler-body>:last-child{margin-bottom:0}
+/* Disclosures hold prose, so they stay at reading width unless a PDF is open inside one. */
+.article-layout-wide .article-style .spoiler:not([open]),.article-layout-wide .article-style .spoiler:not(:has(.pdf-viewer)){max-width:580px}
+.article-layout .article-style [style*="justify"]{text-align:start!important}
+/* A lesson's activity takes more room than the text around it, without growing to the full page. */
+.article-layout-wide .article-style>div[style*="padding-bottom"]:has(>.click-to-load,>iframe),.article-layout-wide .article-style :is(.video-poster,.video-frame){max-width:960px}
+.article-layout-wide .article-style>div[style*="padding-bottom"]:has(>iframe){height:auto!important;padding-bottom:0!important;aspect-ratio:3/2}
+/* Tables and text panels fit what they hold, so a wide page does not leave them mostly empty. */
+.article-layout-wide .article-style table{width:fit-content}
+.article-layout-wide .article-style>div[style*="border"]:not([style*="padding-bottom"]){max-width:640px;margin-inline:0!important;padding:14px 18px!important}
+.article-layout-wide .article-style blockquote{max-width:640px}
+.article-layout-wide .article-style>hr{max-width:580px;margin-inline:0}
 /* Buttons in Markdown keep their own colours, against the rule for links in text. */
 /* Glossary pages: the reading layout, with the list of terms in the side card. */
 .glossary-layout .language-switcher{margin:10px 0 14px;font-size:16px}
@@ -136,6 +149,18 @@ main:lang(ar) .article-layout .article-style,main:lang(ar) .article-layout .arti
 .sc-page h1{font-size:clamp(36px,4.2vw,58px);line-height:1.06;margin:0 0 18px}
 .sc-page .crumbs{margin-bottom:18px}
 .sc-page #sc-container{padding:0;font-family:var(--text);max-width:none}
+/* A team's name heads its own row, so it cannot end one row with its people starting the next. */
+.sc-page .sc-grid .sc-title-card{flex:0 0 100%;grid-column:1/-1;width:100%;aspect-ratio:auto;padding:10px 16px;flex-direction:row;align-items:baseline;justify-content:flex-start;gap:10px}
+.sc-page .sc-title-card :is(.sc-title-label,.sc-title-text){margin:0}
+.sc-page .sc-title-card .sc-title-text{font-size:17px}
+.sc-page .sc-title-card .sc-cbar{display:none}
+.sc-team{display:contents}
+@media(min-width:761px){
+  .sc-page .sc-grid{gap:28px 40px}
+  .sc-page .sc-team{display:flex;flex-wrap:wrap;align-content:flex-start;gap:1rem;width:calc(var(--sc-members)*190px + (var(--sc-members) - 1)*1rem);max-width:100%}
+  .sc-page .sc-grid .sc-card{width:190px}
+  .sc-page .sc-grid .sc-title-card{flex-wrap:wrap}
+}
 .article-layout .post-nav{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px 24px;margin:0 0 18px}
 .article-layout .post-nav-item{max-width:calc(50% - 12px);min-width:0}
 .article-layout .post-nav-item:only-child{max-width:none}
@@ -183,9 +208,34 @@ main:lang(ar) .article-layout .article-style,main:lang(ar) .article-layout .arti
 .article-layout .article-style .summary-count{margin:8px 0 0;font-size:16px}
 .summary-more{margin-top:14px}
 .summary-more[hidden]{display:none}
-/* The entries' own titles do this job on a narrow screen, where the contents would sit below them. */
-@media(max-width:1000px){.article-layout:has(.summary-entry) .article-card :is(h2,.article-toc){display:none}}
+/* The list of entries is its own contents, so a second list beside it only repeats the titles. */
+.article-layout:has(.summary-entry) .article-card :is(h2,.article-toc){display:none}
 .dei-mark{padding:0 6px;background:var(--jus-bg);border-radius:var(--r-small);font:600 15px/1.3 var(--text);color:var(--ink);vertical-align:.1em}
 @media print{.toc-phone{display:none!important}}
 .glossary-feedback-header>*{min-width:0;overflow-wrap:anywhere}
 .glossary-feedback-header>:lang(de),.glossary-feedback-header>:lang(tr){hyphens:auto}
+
+/* Catalogues (Syllabus): groups of links flow in columns across a wide page. */
+.article-style .catalogue{columns:3 300px;column-gap:48px;margin-top:28px}
+.article-style .catalogue-group{break-inside:avoid-column;margin-bottom:28px}
+.article-style .catalogue-group h3{margin:0 0 10px;font-size:23px;line-height:1.2}
+.article-style .catalogue-group ul{margin:0;padding-inline-start:1.1em}
+.article-style .catalogue-group li{margin-bottom:8px;font-size:17px;line-height:1.4}
+/* A long group may run on into the next column rather than leave a gap. */
+.article-style .catalogue-group:has(li:nth-child(15)){break-inside:auto}
+.article-style .catalogue-group:has(li:nth-child(15)) h3{break-after:avoid-column}
+
+/* Lesson bank: one card per lesson, with its plan and texts. */
+.article-layout .article-style .lesson-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,300px),1fr));gap:18px;margin:20px 0 40px;padding:0;list-style:none}
+.article-style .lesson-grid>.lesson-card{max-width:none;margin:0;padding:18px 20px;background:var(--surface);border-radius:var(--r-large)}
+.article-style .lesson-card .lesson-num{margin:0 0 4px;font-size:15px;font-weight:700;color:var(--soft)}
+.article-style .lesson-card h3{margin:0 0 10px;font-size:22px;line-height:1.2}
+.article-style .lesson-card .lesson-materials{margin:0;padding:0;list-style:none}
+.article-style .lesson-card .lesson-materials li{margin:0 0 4px;font-size:16px}
+.article-style .lesson-card .lesson-note{margin:0;font-size:16px;color:var(--soft)}
+
+/* A tool page's direct actions, under its title (doors/page_actions). */
+.article-layout .page-actions{display:flex;flex-wrap:wrap;gap:10px;margin:0 0 28px}
+.article-layout .page-actions .btn{padding:10px 22px;font-size:17px}
+/* On phones a tall cover image pushed the page's contents a screen down, so it is held to part of the screen. */
+@media(max-width:760px){.article-layout .article-image img{width:auto;max-width:100%;max-height:280px;margin-inline:auto}}

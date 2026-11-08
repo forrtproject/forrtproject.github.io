@@ -29,11 +29,18 @@ Hard checks (exit 1 if any fails):
   10. No meta description contains a double-escaped entity such as `&amp;ldquo;`
      (#864). Text that merely looks like an entity (`&name;`) is not one.
   11. No page has more than one <h1> (#928).
+  12. Numbered resource subsets have unique, self-canonical metadata and
+      CollectionPage data matching their HTML cards (#868).
+  13. PNG/JPEG social images have matching Open Graph/Twitter URLs, type and
+      positive dimensions (#927). Unsupported formats remain report-only.
+  14. No page inlines more than 200 KB in one <script> (#993). Large data belongs in a
+     separate file the page fetches when it needs it.
 
 Report-only sections (never fail): pages with no <h1>, the
 site-wide share of images that carry both width and height, pages whose
 og:image is not a PNG or JPEG, and indexable pages whose description repeats
-the homepage's, is shared with another page or contains HTML markup as text.
+the homepage's, is shared with another page, contains HTML markup as text, or
+contains a raw HTTP(S) URL or forrt.org/ path (#987).
 """
 
 import json
@@ -46,10 +53,12 @@ from html.parser import HTMLParser
 from urllib.parse import unquote, urlparse
 
 MAX_LISTED = 20
+MAX_INLINE_SCRIPT = 200_000  # bytes in one inline <script> (#993)
 # Markup that survived flattening, e.g. an indented HTML block rendered as code.
 HTML_TAG = re.compile(r"</?[A-Za-z][A-Za-z0-9]*(\s[^<>]*)?/?>")
 # Attribute values arrive already unescaped, so any entity left in them was
 # escaped twice in the HTML (e.g. `&amp;ldquo;`).
+DESCRIPTION_URL = re.compile(r"https?://|\bforrt\.org/", re.I)
 LITERAL_ENTITY = re.compile(r"&(#\d+|#x[0-9a-fA-F]+|[A-Za-z][A-Za-z0-9]*);")
 
 
@@ -67,14 +76,28 @@ class PageParser(HTMLParser):
         self._h1_buffer = []
         self.jsonld = []
         self.canonical = None
+        self.title = ""
+        self.resource_links = []
+        self._in_title = False
+        self._in_resource_heading = False
         self._jsonld_buffer = None
+        self.largest_inline_script = 0
+        self._inline_script = None
 
     def handle_starttag(self, tag, attrs):
         attrs = dict(attrs)
+        if tag == "script" and not attrs.get("src"):
+            self._inline_script = 0
         if tag == "script" and attrs.get("type") == "application/ld+json":
             self._jsonld_buffer = []
         elif tag == "link" and attrs.get("rel") == "canonical":
             self.canonical = attrs.get("href")
+        if tag == "title":
+            self._in_title = True
+        if tag == "h2" and "res-title" in attrs.get("class", "").split():
+            self._in_resource_heading = True
+        if tag == "a" and self._in_resource_heading and attrs.get("href"):
+            self.resource_links.append(attrs["href"])
         if tag == "h1":
             self._h1_depth += 1
         elif tag in ("script", "link"):
@@ -94,9 +117,16 @@ class PageParser(HTMLParser):
             self.code_classes.append(attrs.get("class") or "")
 
     def handle_endtag(self, tag):
+        if tag == "script" and self._inline_script is not None:
+            self.largest_inline_script = max(self.largest_inline_script, self._inline_script)
+            self._inline_script = None
         if tag == "script" and self._jsonld_buffer is not None:
             self.jsonld.append("".join(self._jsonld_buffer))
             self._jsonld_buffer = None
+        if tag == "title":
+            self._in_title = False
+        if tag == "h2":
+            self._in_resource_heading = False
         if tag == "pre":
             self._in_pre = False
         if tag == "h1" and self._h1_depth > 0:
@@ -105,7 +135,18 @@ class PageParser(HTMLParser):
                 self.h1_texts.append("".join(self._h1_buffer).strip())
                 self._h1_buffer = []
 
+    def close(self):
+        super().close()
+        # A script left open at the end of the file still counts.
+        if self._inline_script is not None:
+            self.largest_inline_script = max(self.largest_inline_script, self._inline_script)
+            self._inline_script = None
+
     def handle_data(self, data):
+        if self._in_title:
+            self.title += data
+        if self._inline_script is not None:
+            self._inline_script += len(data.encode("utf-8"))
         if self._jsonld_buffer is not None:
             self._jsonld_buffer.append(data)
         if self._h1_depth > 0:
@@ -116,6 +157,8 @@ class Page:
     def __init__(self, path, parser):
         self.path = path
         self.h1_texts = parser.h1_texts
+        self.title = parser.title.strip()
+        self.resource_links = parser.resource_links
         self.urls = parser.urls
         self.imgs = parser.imgs
         self.meta = parser.meta
@@ -131,11 +174,12 @@ class Page:
         elsewhere = (parser.canonical is not None and
                      unquote(urlparse(parser.canonical).path) != unquote(own))
         # Redirect stubs, noindexed pages and pages canonicalised to another URL
-        # (pagination pages point at page 1) never reach search results as such.
+        # never reach search results as such.
         self.noindex = "noindex" in robots
         self.indexable = not self.noindex and not refresh and not elsewhere
         self.jsonld = parser.jsonld
         self.canonical = parser.canonical
+        self.largest_inline_script = parser.largest_inline_script
 
     def loads(self, needle):
         return any(needle in url for url in self.urls)
@@ -169,6 +213,7 @@ def load_pages(public_dir):
             parser = PageParser()
             with open(full, encoding="utf-8", errors="replace") as handle:
                 parser.feed(handle.read())
+            parser.close()
             pages.append(Page(os.path.relpath(full, public_dir), parser))
     pages.sort(key=lambda page: page.path)
     return pages
@@ -346,6 +391,92 @@ def check_description_entities(pages):
     return failures
 
 
+
+def check_description_urls(pages):
+    return [p.path for p in pages
+            if p.indexable and any(DESCRIPTION_URL.search(d) for d in p.descriptions)]
+
+
+def check_share_image_metadata(pages):
+    failures = []
+    for p in pages:
+        image = p.meta.get("og:image", "")
+        if not is_share_format(image):
+            continue  # Undecodable originals and standalone pages are reported below.
+        expected_type = "image/png" if urlparse(image).path.lower().endswith(".png") else "image/jpeg"
+        problems = []
+        if p.meta.get("twitter:image") != image:
+            problems.append("Open Graph and Twitter images differ")
+        if p.meta.get("og:image:type") != expected_type:
+            problems.append("incorrect image type")
+        for key in ("og:image:width", "og:image:height"):
+            value = p.meta.get(key, "")
+            if not value.isdigit() or int(value) <= 0:
+                problems.append("missing or invalid " + key)
+        if problems:
+            failures.append("%s (%s)" % (p.path, ", ".join(problems)))
+    return failures
+
+
+def check_resource_pagination(pages):
+    """Check the directory and every numbered subset, including preview base paths."""
+    directory = next((p for p in pages if p.path == os.path.join("resources", "index.html")), None)
+    if directory is None:
+        return []  # This check also supports small fixtures with no directory.
+    failures = []
+    titles, descriptions = set(), set()
+    root = (directory.canonical or "").rstrip("/") + "/"
+    for p in pages:
+        match = re.fullmatch(r"resources/page/([2-9]|[1-9]\d+)/index\.html", p.path.replace(os.sep, "/"))
+        if p is not directory and not match:
+            continue
+        number = int(match[1]) if match else 1
+        expected = root if number == 1 else root + "page/%d/" % number
+        problems = []
+        if not directory.canonical or p.canonical != expected:
+            problems.append("not self-canonical")
+        if p.meta.get("og:url") != expected:
+            problems.append("og:url does not match canonical")
+        if p.noindex != directory.noindex:
+            problems.append("subset robots metadata differs from the directory")
+        for label, value, seen in (("title", p.title, titles),
+                                   ("description", next(iter(p.descriptions), ""), descriptions)):
+            if not value or value in seen:
+                problems.append("empty or repeated " + label)
+            seen.add(value)
+        if p.meta.get("og:title") != p.title:
+            problems.append("og:title does not match title")
+        if number > 1 and ("Page %d" % number not in p.title
+                           or "page %d" % number not in next(iter(p.descriptions), "")):
+            problems.append("metadata omits page number")
+        try:
+            blocks = [json.loads(block) for block in p.jsonld]
+            collections = [block for block in blocks if isinstance(block, dict)
+                           and block.get("@type") == "CollectionPage"]
+        except ValueError:
+            collections = []
+        if len(collections) != 1:
+            problems.append("missing CollectionPage")
+        else:
+            collection = collections[0]
+            if (collection.get("url") != expected
+                    or collection.get("@id") != expected + "#collection"
+                    or collection.get("name") != p.title.rsplit(" | ", 1)[0]):
+                problems.append("CollectionPage URL/name does not match metadata")
+            items = collection.get("mainEntity", {})
+            listed = items.get("itemListElement", [])
+            links = [urlparse(item.get("url", "")).path for item in listed]
+            if (not p.resource_links or links != p.resource_links
+                    or items.get("numberOfItems") != len(p.resource_links)):
+                problems.append("CollectionPage subset does not match HTML cards")
+        if problems:
+            failures.append("%s (%s)" % (p.path, ", ".join(problems)))
+    return failures
+def check_inline_scripts(pages):
+    return ["%s (%d KB)" % (p.path, p.largest_inline_script // 1000) for p in pages
+            if p.largest_inline_script > MAX_INLINE_SCRIPT]
+
+
 def description_report(pages, home):
     """Report-only: generic, duplicated and markup-containing descriptions on indexable pages."""
     described = [(p, p.descriptions[0].strip()) for p in pages
@@ -390,6 +521,9 @@ def main(public_dir):
         "9. every indexable page has a meta description": check_description_present(pages),
         "10. no double-escaped entity in a meta description": check_description_entities(pages),
         "11. no page has several <h1>": [p.path for p in pages if len(p.h1_texts) > 1],
+        "12. resource subsets have consistent, unique metadata": check_resource_pagination(pages),
+        "13. compatible social images have type, dimensions and matching URLs": check_share_image_metadata(pages),
+        "14. no inline <script> over 200 KB": check_inline_scripts(pages),
     }
     conditional = check_conditional_assets(pages)
     results["3. conditional highlight.js / mermaid loading"] = [
@@ -423,6 +557,7 @@ def main(public_dir):
     print_items("pages whose og:image is not PNG/JPEG",
                 ["%s (%s)" % (p.path, p.meta["og:image"]) for p in pages
                  if p.meta.get("og:image") and not is_share_format(p.meta["og:image"])])
+    print_items("pages whose meta description contains a raw URL", check_description_urls(pages))
     description_report(pages, home)
 
     return 1 if any(results.values()) else 0

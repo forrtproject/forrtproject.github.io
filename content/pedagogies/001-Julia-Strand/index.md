@@ -3,7 +3,7 @@
 
 title: "Open and Reproducible Science walks into a classroom"
 subtitle: "Insights from teaching a course on Psychology’s Credibility Revolution"
-summary: "Julia Strand shares her *know-how*, didactics, and teaching materials for her course on Psychology’s Credibility Revolution."
+summary: "Julia Strand shares her know-how, didactics, and teaching materials for her course on Psychology’s Credibility Revolution."
 authors: ['Julia Strand']
 tags: []
 categories: []

@@ -13,6 +13,7 @@
 
 {{ $page := .page }}
 {{ $summary := .summary }}
+{{ $metadata := partial "functions/resource_metadata.html" $page }}
 {{ $site_type := site.Params.site_type | default "Person" }}
 
 {{- if $page.IsHome -}}
@@ -38,9 +39,9 @@
   {{ $collection := dict
     "@context" "https://schema.org"
     "@type" "CollectionPage"
-    "@id" (printf "%s#collection" $page.Permalink)
-    "url" $page.Permalink
-    "name" $page.Title
+    "@id" (printf "%s#collection" $metadata.url)
+    "url" $metadata.url
+    "name" $metadata.title
     "isPartOf" (dict "@type" "WebSite" "@id" site.BaseURL "name" site.Title)
     "inLanguage" (partial "functions/page_language.html" $page)
   }}
@@ -52,7 +53,7 @@
   {{/* Capped: these lists run to hundreds of entries, and the point is to
        describe what the page covers, not to mirror it. */}}
   {{ $elements := slice }}
-  {{ range $i, $item := first 25 $page.Pages }}
+  {{ range $i, $item := first 25 $metadata.pages }}
     {{ $elements = $elements | append (dict
       "@type" "ListItem"
       "position" (add $i 1)
@@ -64,7 +65,7 @@
   {{ if $elements }}
     {{ $collection = merge $collection (dict "mainEntity" (dict
       "@type" "ItemList"
-      "numberOfItems" (len $page.Pages)
+      "numberOfItems" (len $metadata.pages)
       "itemListElement" $elements
     )) }}
   {{ end }}

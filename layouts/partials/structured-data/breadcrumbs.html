@@ -30,6 +30,7 @@
 }}
 
 {{ if not $skip }}
+  {{ $metadata := partial "functions/resource_metadata.html" . }}
   {{ $trail := slice }}
 
   {{ range .Ancestors.Reverse }}
@@ -49,8 +50,8 @@
     {{ $trail = $trail | append (dict
       "@type" "ListItem"
       "position" (add (len $trail) 1)
-      "name" .
-      "item" $.Permalink
+      "name" $metadata.breadcrumb_title
+      "item" $metadata.url
     ) }}
   {{ end }}
 

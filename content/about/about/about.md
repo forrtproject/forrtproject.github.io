@@ -59,7 +59,7 @@ In a nutshell, FORRT is a ***F***ramework for ***O***pen and ***R***eproducible 
 
 FORRT provides a pedagogical infrastructure and open educational resources designed to support the teaching and mentoring of open and reproducible science. FORRT strives to (a) raise awareness of the pedagogical implications of open and reproducible science and its associated challenges (i.e., curricular reform, epistemological uncertainty, methods of education); (b) respond to calls to consider open scholarship as inclusive scholarship; (c) advocate for the opening and formal recognition of teaching and mentoring materials to facilitate access, discovery, and learning to those who otherwise would be educationally disenfranchised.
 
-***Here's a 5 minutes introduction to FORRT***
+***Here's a 5-minute introduction to FORRT***
 
 <br>
 
@@ -75,9 +75,9 @@ FORRT provides a pedagogical infrastructure and open educational resources desig
 
 <br>
 
-Learn more about FORRT in the interactive flipbook <a href="https://forrt.org/booklet/" class="btn btn-primary btn-lg btn-block" style="line-height:1;border-radius:6px; font-size:1.5rem;">
-  FORRT Booklet
-</a>
+Learn more about FORRT in the interactive flipbook:
+
+<a href="/booklet/" class="btn btn-primary">FORRT Booklet</a>
 
 ***Want to learn more about us?***
 
@@ -87,7 +87,7 @@ If you’re looking for **open educational resources**, please take a look at ou
 
 For more information about our **goals and values**, read our [Mission Statement](/about/mission), [Code of Conduct](/coc), and our quest towards [Principled Teaching and Mentoring](/about/principles).
 
-If you’re looking for information about who we are or our **organizational structure**, take a look the [teams that compose FORRT](/about/teams), the institutions and initiatives with which [we are partners](/about/partnerships), and [our community members](/about/community).
+If you’re looking for information about who we are or our **organizational structure**, take a look at the [teams that compose FORRT](/about/teams), the institutions and initiatives with which [we are partners](/about/partnerships), and [our community members](/about/community).
 
 Would you like to **get involved** more with FORRT? Check out our [getting involved page](/about/get-involved)!
 

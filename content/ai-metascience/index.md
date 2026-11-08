@@ -16,7 +16,7 @@ image:
 <style>
 /* Palette, drawn from the banner mosaic. Each day sets --am-accent (rules and
    borders), --am-deep (text and filled pills, 4.5:1 or better on white and on
-   the day tint) and --am-tint (card and hover backgrounds). */
+   the day tint) and --am-tint (selected tab and hover backgrounds). */
 :root {
   --am-ink: #313131;
   --am-muted: #5d6b70;
@@ -49,10 +49,15 @@ image:
   --am-tint: var(--am-wed-tint);
 }
 
+/* The page is wide so that the programme can use the width; the banner and
+   the facts stay at the reading width of the text around them. */
+.article-layout-wide .article-image { max-width: 580px; }
+
 .am-facts {
   display: grid;
   grid-template-columns: 1.2fr 0.85fr 0.5fr 1.45fr;
   gap: 0 1.1rem;
+  max-width: 580px;
   margin: 1.5rem 0;
   padding: 0.8rem 1.1rem;
   border: 1px solid var(--am-rule);
@@ -72,220 +77,190 @@ image:
   display: block;
   margin-top: 0.25rem;
   color: var(--am-ink);
-  font-size: 1rem;
+  font-size: 17px;
   line-height: 1.35;
 }
 @media (max-width: 640px) { .am-facts { grid-template-columns: 1fr 1fr; } }
 @media (max-width: 400px) { .am-facts { grid-template-columns: 1fr; } }
 
-.am-watch {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 0.6rem;
-  margin: 1.6rem 0;
-}
-.am-watch a {
-  display: block;
-  padding: 0.75rem 0.9rem;
-  border-radius: 6px;
-  background: var(--am-deep);
-  color: #fff;
-  font-weight: 700;
-  text-align: center;
-}
-.am-watch a::before { content: "\25B6\00A0"; font-size: 0.8em; }
-.am-watch a:hover { color: #fff; text-decoration: underline; }
-@media (max-width: 560px) { .am-watch { grid-template-columns: 1fr; } }
-
-.am-days {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 0.8rem;
-  margin: 1.8rem 0 2.2rem;
-}
-.am-day-card {
-  display: flex;
-  flex-direction: column;
-  padding: 1rem;
-  border-top: 4px solid var(--am-accent);
-  border-radius: 8px;
-  background: var(--am-tint);
-  color: var(--am-ink);
-  text-decoration: none;
-  transition: transform 150ms ease, box-shadow 150ms ease;
-}
-.am-day-card:focus { color: var(--am-ink); text-decoration: none; }
-.am-day-card:hover {
-  color: var(--am-ink);
-  text-decoration: none;
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(49, 49, 49, 0.14);
-}
-.am-day-card:focus-visible {
-  outline: 2px solid var(--am-accent);
-  outline-offset: 2px;
-}
-.am-day-name { font-size: 1.05rem; font-weight: 700; line-height: 1.2; }
-.am-day-date { color: var(--am-muted); font-size: 0.85rem; }
-.am-day-theme {
-  margin-top: 0.45rem;
-  color: var(--am-deep);
-  font-size: 1rem;
-  font-weight: 700;
-  line-height: 1.3;
-}
-.am-day-blurb {
-  margin-top: 0.35rem;
-  font-size: 0.9rem;
-  line-height: 1.45;
-}
-.am-day-go {
-  margin-top: auto;
-  padding-top: 0.8rem;
-  align-self: flex-end;
-  color: var(--am-deep);
-  font-size: 0.85rem;
-}
-@media (max-width: 640px) { .am-days { grid-template-columns: 1fr; } }
-
+/* Days. Without JavaScript these are links to the three days, all shown in
+   turn; the script below turns them into tabs that show one day at a time. */
 .am-switch {
-  position: sticky;
-  top: 0;
-  z-index: 5;
   display: flex;
-  gap: 0.5rem;
-  margin: 0 0 1.4rem;
-  padding: 0.6rem 0;
+  gap: 8px;
+  margin: 0 0 20px;
   border-bottom: 1px solid var(--am-rule);
-  background: var(--am-paper);
 }
-.am-pill {
-  flex: 0 0 auto;
-  padding: 0.3rem 0.85rem;
+.am-tab {
+  flex: 1 1 0;
+  min-width: 0;
+  padding: 10px 16px 9px;
   border: 1px solid var(--am-rule);
-  border-radius: 999px;
+  border-bottom: 0;
+  border-top: 4px solid var(--am-accent);
+  border-radius: 8px 8px 0 0;
   background: var(--am-card);
   color: var(--am-ink);
-  font-size: 0.88rem;
+  line-height: 1.3;
   text-decoration: none;
-  white-space: nowrap;
-  transition: background-color 150ms ease, color 150ms ease;
+  transition: background-color 150ms ease;
 }
-.am-pill:hover, .am-pill:focus {
-  color: var(--am-ink);
-  text-decoration: none;
-  border-color: var(--am-accent);
+.am-tab:hover, .am-tab:focus { color: var(--am-ink); text-decoration: none; background: var(--am-tint); }
+.am-tab:focus-visible { outline: 2px solid var(--am-deep); outline-offset: 2px; }
+.am-tab-day { display: block; font-size: 17px; font-weight: 700; }
+.am-tab-theme { display: block; color: var(--am-deep); font-size: 15px; }
+.am-tab[aria-selected="true"] {
+  position: relative;
+  margin-bottom: -1px;
+  padding-bottom: 10px;
+  background: var(--am-tint);
 }
-.am-pill:focus-visible {
-  outline: 2px solid var(--am-accent);
-  outline-offset: 2px;
-}
-.am-pill-on, .am-pill-on:hover, .am-pill-on:focus {
-  border-color: var(--am-deep);
-  background: var(--am-deep);
-  color: #fff;
-}
-/* The navbar is shorter once it collapses to a burger. */
-@media (max-width: 480px) {
-  .am-switch { gap: 0.35rem; }
-  .am-pill { padding: 0.28rem 0.55rem; font-size: 0.8rem; }
+.am-tab[aria-selected="true"] .am-tab-day { color: var(--am-deep); }
+@media (max-width: 599px) {
+  .am-switch { gap: 4px; }
+  .am-tab { padding: 8px 6px 7px; text-align: center; }
+  .am-tab-day { font-size: 16px; }
+  .am-tab-theme { display: none; }
 }
 
-/* Programme: the markup between the PROGRAMME markers is generated. The
-   generator emits the day class (am-day-mon and friends) that carries the
-   day's colour into every rule below. */
-.am-prog-day {
-  margin: 0 0 2.5rem;
-  scroll-margin-top: 155px;
+/* Programme. The markup between the PROGRAMME markers was generated (see the
+   note there); the day class (am-day-mon and friends) carries the day's
+   colour into every rule below. */
+.am-prog-day { margin: 0 0 40px; }
+/* A link to a day keeps the tabs above it in view. */
+.am-prog-tabbed .am-prog-day { scroll-margin-top: 100px; }
+.am-prog-dayhead {
+  display: grid;
+  grid-template-columns: minmax(0, 30em) auto;
+  justify-content: space-between;
+  align-items: start;
+  gap: 4px 32px;
+  margin: 0 0 8px;
 }
-.am-prog-date {
-  margin: 0 0 0.6rem;
-  padding-left: 0.8rem;
+.am-prog-dayhead > * { grid-column: 1; }
+.article-layout .article-style .am-prog-date {
+  margin: 0;
+  padding-left: 12px;
   border-left: 6px solid var(--am-accent);
-  font-size: 1.5rem;
+  font-size: 26px;
   line-height: 1.25;
 }
 .am-prog-date span {
   display: block;
-  margin-top: 0.15rem;
+  margin-top: 2px;
   color: var(--am-deep);
-  font-size: 1rem;
+  font-size: 18px;
   font-weight: 400;
 }
-.am-prog-half {
+.article-layout .article-style .am-prog-daytext {
+  max-width: 30em;
+  margin: 0;
+  font-size: 17px;
+  line-height: 1.5;
+}
+.article-layout .article-style .am-prog-playlist {
+  grid-column: 2;
+  grid-row: 1 / span 2;
+  margin: 0;
+}
+.article-layout .article-style .am-prog-playlist a {
+  display: inline-block;
+  padding: 8px 16px;
+  border-radius: 6px;
+  background: var(--am-deep);
+  color: #fff;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.3;
+  white-space: nowrap;
+}
+.am-prog-playlist a::before { content: "\25B6\00A0"; font-size: 15px; }
+.article-layout .article-style .am-prog-playlist a { text-decoration: none; }
+.article-layout .article-style .am-prog-playlist a:hover,
+.article-layout .article-style .am-prog-playlist a:focus { color: #fff; text-decoration: underline; }
+.am-prog-playlist a:focus-visible { outline: 2px solid var(--am-deep); outline-offset: 2px; }
+/* With tabs on, the selected tab names the day, so its heading is left to screen readers. */
+@media (min-width: 600px) {
+  .am-prog-tabbed .am-prog-date {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+  }
+}
+@media (max-width: 760px) {
+  .am-prog-dayhead { grid-template-columns: minmax(0, 1fr); }
+  .article-layout .article-style .am-prog-playlist { grid-column: 1; grid-row: auto; margin-top: 6px; }
+}
+
+/* Morning and afternoon run side by side once there is room for two columns. */
+.am-prog-halves { display: grid; gap: 0 36px; max-width: 34rem; }
+@media (min-width: 1100px) {
+  .am-prog-halves { grid-template-columns: repeat(2, minmax(0, 1fr)); max-width: none; }
+}
+.article-layout .article-style .am-prog-half {
   display: flex;
   align-items: center;
-  gap: 0.6rem;
-  margin: 1.6rem 0 0.6rem;
-  font-size: 0.8rem;
+  gap: 10px;
+  max-width: none;
+  margin: 14px 0 8px;
+  color: var(--am-muted);
+  font-size: 15px;
   font-weight: 700;
   letter-spacing: 0.08em;
+  line-height: 1.3;
   text-transform: uppercase;
-  color: var(--am-muted);
 }
-.am-prog-half::after {
-  content: "";
-  flex: 1;
-  height: 1px;
-  background: var(--am-rule);
-}
+.am-prog-half::after { content: ""; flex: 1; height: 1px; background: var(--am-rule); }
 .am-prog-session {
-  margin: 0 0 1rem;
-  padding: 1rem 1.1rem;
+  margin: 0 0 10px;
+  padding: 8px 12px 4px;
   border: 1px solid var(--am-rule);
   border-left: 4px solid var(--am-accent);
   border-radius: 8px;
   background: var(--am-card);
 }
-.am-prog-session h4 {
-  margin: 0 0 0.25rem;
-  font-size: 1.05rem;
+.am-prog-session-solo { padding-top: 4px; }
+.article-layout .article-style .am-prog-session h4 {
+  margin: 0 0 2px;
+  font-size: 18px;
   line-height: 1.3;
 }
-.am-prog-blurb {
-  margin: 0 0 0.5rem;
-  color: var(--am-muted);
-  font-size: 0.9rem;
+.am-prog-start {
+  margin-right: 8px;
+  color: var(--am-deep);
+  font-variant-numeric: tabular-nums;
 }
-.am-prog-talks { list-style: none; margin: 0; padding: 0; }
-.am-prog-talks li {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
+.article-layout .article-style .am-prog-blurb {
+  max-width: 30em;
+  margin: 0 0 4px;
+  color: var(--am-muted);
+  font-size: 15px;
+  line-height: 1.45;
+}
+.article-layout .article-style .am-prog-talks { list-style: none; margin: 0; padding: 0; }
+.article-layout .article-style .am-prog-talks li {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: end;
+  gap: 0 8px;
+  max-width: none;
+  margin: 0;
   padding: 0;
   border-top: 1px solid var(--am-rule);
+  font-size: 16px;
+  line-height: 1.35;
 }
-.am-prog-watch {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: flex-end;
-  gap: 0.3rem;
-  flex: 0 0 auto;
-  max-width: 11rem;
-}
-.am-prog-watch a,
-.am-prog-playlist a {
-  padding: 0.15rem 0.55rem;
-  border: 1px solid var(--am-accent);
-  border-radius: 999px;
-  color: var(--am-deep);
-  font-size: 0.76rem;
-  white-space: nowrap;
-}
-.am-prog-watch a::before,
-.am-prog-playlist a::before { content: "\25B6\00A0"; font-size: 15px; }
-.am-prog-watch a:hover,
-.am-prog-playlist a:hover { background: var(--am-tint); text-decoration: none; }
-.am-prog-playlist { margin: -0.4rem 0 0.9rem; }
-.am-prog-playlist a { font-size: 0.86rem; }
-.am-prog-talks li:first-child { border-top: 0; }
+.article-layout .article-style .am-prog-talks li:first-child { border-top: 0; }
 .am-prog-item {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 0.9rem;
+  display: grid;
+  grid-template-columns: 3.6em minmax(0, 1fr) auto;
+  align-items: end;
+  gap: 0 8px;
   width: 100%;
-  padding: 0.5rem 0.4rem;
+  padding: 6px 4px;
   border: 0;
   border-radius: 4px;
   background: none;
@@ -295,81 +270,78 @@ image:
   cursor: pointer;
   transition: background-color 150ms ease;
 }
-.am-prog-text { flex: 1 1 auto; }
+.am-prog-time {
+  align-self: start;
+  padding-top: 1px;
+  color: var(--am-deep);
+  font-size: 15px;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+.am-prog-text { min-width: 0; max-width: 26em; }
 .am-prog-title {
   display: block;
   color: var(--am-ink);
-  font-size: 1rem;
-  font-weight: 400;
-  line-height: 1.35;
+  font-size: 17px;
+  line-height: 1.3;
 }
-.am-prog-session-solo .am-prog-title { font-size: 1.05rem; font-weight: 700; }
-.am-prog-who {
-  display: block;
-  color: var(--am-muted);
-  font-size: 0.86rem;
-}
-.am-prog-meta {
-  display: flex;
-  align-items: center;
-  gap: 0.55rem;
-  flex: 0 0 auto;
-}
-.am-prog-more {
-  color: var(--am-deep);
-  font-size: 0.76rem;
-  white-space: nowrap;
-}
+.am-prog-session-solo .am-prog-title { font-weight: 700; }
+.am-prog-who { display: block; color: var(--am-muted); font-size: 15px; }
+.am-prog-more { color: var(--am-deep); font-size: 15px; white-space: nowrap; }
 .am-prog-more::after { content: " \203A"; }
 .am-prog-item:not(.am-prog-item-plain):hover,
-.am-prog-item:not(.am-prog-item-plain):focus-visible {
-  background: var(--am-tint);
-}
+.am-prog-item:not(.am-prog-item-plain):focus-visible { background: var(--am-tint); }
 .am-prog-item:not(.am-prog-item-plain):hover .am-prog-title,
-.am-prog-item:not(.am-prog-item-plain):focus-visible .am-prog-title {
-  text-decoration: underline;
-}
-.am-prog-item:focus-visible {
-  outline: 2px solid var(--am-accent);
-  outline-offset: 2px;
-}
+.am-prog-item:not(.am-prog-item-plain):focus-visible .am-prog-title { text-decoration: underline; }
+.am-prog-item:focus-visible { outline: 2px solid var(--am-deep); outline-offset: 0; }
 .am-prog-item-plain { cursor: default; }
 .am-prog-item-plain .am-prog-more { display: none; }
-.am-prog-time {
-  flex: 0 0 5.6rem;
-  align-self: flex-start;
-  padding-top: 0.08rem;
+.am-prog-watch {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 4px;
+  max-width: 10.5rem;
+  padding: 6px 0;
+}
+.article-layout .article-style .am-prog-watch a {
+  padding: 1px 9px;
+  border: 1px solid var(--am-accent);
+  border-radius: 999px;
   color: var(--am-deep);
-  font-size: 0.9rem;
-  font-weight: 700;
-  font-variant-numeric: tabular-nums;
+  font-size: 15px;
   white-space: nowrap;
 }
-.am-prog-tbc-tag {
+.am-prog-watch a::before { content: "\25B6\00A0"; font-size: 15px; }
+.article-layout .article-style .am-prog-watch a { text-decoration: none; }
+.article-layout .article-style .am-prog-watch a:hover { background: var(--am-tint); color: var(--am-deep); text-decoration: underline; }
+.am-prog-watch a:focus-visible { outline: 2px solid var(--am-deep); outline-offset: 1px; }
+/* On a phone the time and the abstract link share the first line, and the
+   recordings go under the speakers. */
+@media (max-width: 599px) {
+  .article-layout .article-style .am-prog-talks li { grid-template-columns: minmax(0, 1fr); }
+  .am-prog-item { grid-template-columns: minmax(0, 1fr) auto; }
+  .am-prog-time { grid-column: 1; grid-row: 1; }
+  .am-prog-meta { grid-column: 2; grid-row: 1; align-self: start; }
+  .am-prog-text { grid-column: 1 / -1; }
+  .am-prog-watch { justify-content: flex-start; max-width: none; padding: 0 4px 8px; }
+}
+
+.am-prog-next {
   display: inline-block;
-  margin-left: 0.3rem;
-  padding: 0 0.3rem;
-  border: 1px solid #d8c98a;
-  border-radius: 3px;
-  background: #fdf6e0;
-  color: #6e5a1d;
-  font-size: 15px;
-  font-weight: 700;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  vertical-align: 0.1rem;
-}
-.am-prog-start {
-  margin-right: 0.45rem;
+  margin-top: 6px;
+  padding: 6px 14px;
+  border: 1px solid var(--am-accent);
+  border-radius: 6px;
+  background: var(--am-card);
   color: var(--am-deep);
-  font-variant-numeric: tabular-nums;
+  font: inherit;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
 }
-/* Stacked at every width, because the reading column is too narrow for a row. */
-.am-prog-item { flex-wrap: wrap; gap: 0.3rem; }
-.am-prog-time { flex: 0 0 100%; }
-.am-prog-text { flex: 1 1 100%; }
-.am-prog-talks li { flex-wrap: wrap; }
-.am-prog-watch { flex: 1 1 100%; max-width: none; justify-content: flex-start; padding: 0 0.4rem 0.5rem; }
+.am-prog-next:hover { background: var(--am-tint); }
+.am-prog-next:focus-visible { outline: 2px solid var(--am-deep); outline-offset: 2px; }
 
 .am-prog-dialog {
   position: relative;
@@ -433,23 +405,12 @@ image:
 @media (max-width: 480px) {
   .am-prog-dialog { padding: 1.2rem 1rem 1.2rem; }
 }
-.am-prog-tbc {
-  display: inline-block;
-  float: right;
-  margin: 0.15rem 0 0.3rem 0.6rem;
-  padding: 0.12rem 0.55rem;
-  border: 1px solid #c8a951;
-  border-radius: 999px;
-  background: transparent;
-  color: #6e5a1d;
-  font-size: 0.7rem;
-  font-weight: 700;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
+@media print {
+  .am-prog-day[hidden] { display: block !important; }
+  .am-switch, .am-prog-next { display: none; }
 }
 @media (prefers-reduced-motion: reduce) {
-  .am-day-card, .am-pill, .am-prog-item { transition: none; }
-  .am-day-card:hover, .am-day-card:focus { transform: none; }
+  .am-tab, .am-prog-item { transition: none; }
 }
 </style>
 
@@ -462,53 +423,30 @@ How is AI changing the way research is done, checked and understood? The **FORRT
 <div class="am-fact"><span class="am-fact-label">Recordings</span><span class="am-fact-value">32 talks on YouTube</span></div>
 </div>
 
-<div class="am-watch">
-<a class="am-day-mon" href="https://www.youtube.com/playlist?list=PLS3VdaYKcrew" target="_blank" rel="noopener">Monday talks</a>
-<a class="am-day-tue" href="https://www.youtube.com/playlist?list=PLSItTTcc91ac" target="_blank" rel="noopener">Tuesday talks</a>
-<a class="am-day-wed" href="https://www.youtube.com/playlist?list=PLZYxy57rykQU" target="_blank" rel="noopener">Wednesday talks</a>
-</div>
-
-<div class="am-days">
-<a class="am-day-card am-day-mon" href="#am-day-mon">
-<span class="am-day-name">Monday</span>
-<span class="am-day-date">28 September</span>
-<span class="am-day-theme">AI in the research pipeline</span>
-<span class="am-day-blurb">What AI is already doing to the literature, whether it can carry out evidence synthesis, how it can inform research evaluation, and what legitimate, ethical adoption looks like.</span>
-<span class="am-day-go">Programme and recordings ↓</span>
-</a>
-<a class="am-day-card am-day-tue" href="#am-day-tue">
-<span class="am-day-name">Tuesday</span>
-<span class="am-day-date">29 September</span>
-<span class="am-day-theme">Replications and reproductions</span>
-<span class="am-day-blurb">Replications and reproductions are key to credible science, yet hard to do and hard to find. Can AI help with both, and what are the risks of handing the work to machines?</span>
-<span class="am-day-go">Programme and recordings ↓</span>
-</a>
-<a class="am-day-card am-day-wed" href="#am-day-wed">
-<span class="am-day-name">Wednesday</span>
-<span class="am-day-date">30 September</span>
-<span class="am-day-theme">Workshops, and analyst variability</span>
-<span class="am-day-blurb">Three 90-minute hands-on sessions on AI for knowledge management, evidence synthesis and pre-registration review, plus talks on whether a finding survives another analyst.</span>
-<span class="am-day-go">Programme and recordings ↓</span>
-</a>
-</div>
-
 ## Programme
 
-Here are the sessions and the talks in each, in the order they ran. **Click any talk to read its abstract**, and use **Watch** to open its recording. All times are CEST (UTC+2).
+Pick a day to see its sessions and talks in the order they ran. **Click any talk to read its abstract**, and use **Watch** to open its recording. All times are CEST (UTC+2).
 
-<nav class="am-switch" aria-label="Jump to a day">
-<a class="am-pill am-day-mon" href="#am-day-mon">Mon 28</a>
-<a class="am-pill am-day-tue" href="#am-day-tue">Tue 29</a>
-<a class="am-pill am-day-wed" href="#am-day-wed">Wed 30</a>
+<nav class="am-switch" aria-label="Conference days">
+<a class="am-tab am-day-mon" href="#am-day-mon"><span class="am-tab-day">Mon 28 Sep</span><span class="am-tab-theme">AI in the research pipeline</span></a>
+<a class="am-tab am-day-tue" href="#am-day-tue"><span class="am-tab-day">Tue 29 Sep</span><span class="am-tab-theme">Replications and reproductions</span></a>
+<a class="am-tab am-day-wed" href="#am-day-wed"><span class="am-tab-day">Wed 30 Sep</span><span class="am-tab-theme">Workshops, and analyst variability</span></a>
 </nav>
 
 <!-- PROGRAMME:START -->
-<!-- built by build/public_programme.py in the submission-review repo -->
+<!-- built by build/public_programme.py in the submission-review repo, then edited by hand:
+     the day heads (am-prog-dayhead, with the day blurbs) and the half-day wrappers
+     (am-prog-halves, am-prog-halfblock) are not in the generator's output. -->
 
 <div class="am-prog">
 <section class="am-prog-day am-day-mon" id="am-day-mon">
+<div class="am-prog-dayhead">
 <h3 class="am-prog-date">Monday 28 September<span>AI in the research pipeline</span></h3>
+<p class="am-prog-daytext">What AI is already doing to the literature, whether it can carry out evidence synthesis, how it can inform research evaluation, and what legitimate, ethical adoption looks like.</p>
 <p class="am-prog-playlist"><a href="https://www.youtube.com/playlist?list=PLS3VdaYKcrew" target="_blank" rel="noopener">All Monday recordings on YouTube</a></p>
+</div>
+<div class="am-prog-halves">
+<div class="am-prog-halfblock">
 <p class="am-prog-half">Morning</p>
 <div class="am-prog-session am-prog-session-solo"><ul class="am-prog-talks"><li><div class="am-prog-item am-prog-item-plain"><span class="am-prog-time">09:30</span><span class="am-prog-text"><span class="am-prog-title">Welcome and framing</span><span class="am-prog-who">The organisers</span></span></div></li></ul></div>
 <div class="am-prog-session">
@@ -528,6 +466,8 @@ Here are the sessions and the talks in each, in the order they ran. **Click any 
 <li><button type="button" class="am-prog-item" data-talk="c3984e9c" data-session="Evidence synthesis: capability, comparison, assurance" data-day="Monday 28 September"><span class="am-prog-time">11:30</span><span class="am-prog-text"><span class="am-prog-title">Fast, but incomplete and inaccurate? Performance of AI-powered tools for systematic literature reviews</span><span class="am-prog-who">Rene Bekkers (VU Amsterdam)</span></span><span class="am-prog-meta"><span class="am-prog-more" aria-hidden="true">Abstract</span></span></button><span class="am-prog-watch"><a href="https://youtu.be/z30hdcI8lsE" target="_blank" rel="noopener" aria-label="Watch: Fast, but incomplete and inaccurate? Performance of AI-powered tools for systematic literature reviews">Watch</a></span></li>
 <li><button type="button" class="am-prog-item" data-talk="e6453c60" data-session="Evidence synthesis: capability, comparison, assurance" data-day="Monday 28 September"><span class="am-prog-time">11:50</span><span class="am-prog-text"><span class="am-prog-title">ReviewAid: confidence-scored, locally runnable LLM screening and extraction</span><span class="am-prog-who">Vihaan Sahu (Georgian National University SEU)</span></span><span class="am-prog-meta"><span class="am-prog-more" aria-hidden="true">Abstract</span></span></button><span class="am-prog-watch"><a href="https://youtu.be/-xQ6o3WwXeM" target="_blank" rel="noopener" aria-label="Watch: ReviewAid: confidence-scored, locally runnable LLM screening and extraction">Watch</a></span></li>
 </ul></div>
+</div>
+<div class="am-prog-halfblock">
 <p class="am-prog-half">Afternoon</p>
 <div class="am-prog-session">
 <h4><span class="am-prog-start">13:15</span>Evaluating science, and its evaluators</h4>
@@ -553,10 +493,17 @@ Here are the sessions and the talks in each, in the order they ran. **Click any 
 <ul class="am-prog-talks">
 <li><button type="button" class="am-prog-item" data-talk="f60b8d27" data-session="Closing provocation" data-day="Monday 28 September"><span class="am-prog-time">17:10</span><span class="am-prog-text"><span class="am-prog-title">Rethinking how AI is approached to address wicked problems and global challenges in a polycrisis world</span><span class="am-prog-who">Batool Almarzouq (University of Edinburgh)</span></span><span class="am-prog-meta"><span class="am-prog-more" aria-hidden="true">Abstract</span></span></button></li>
 </ul></div>
+</div>
+</div>
 </section>
 <section class="am-prog-day am-day-tue" id="am-day-tue">
+<div class="am-prog-dayhead">
 <h3 class="am-prog-date">Tuesday 29 September<span>Replications and reproductions</span></h3>
+<p class="am-prog-daytext">Replications and reproductions are key to credible science, yet hard to do and hard to find. Can AI help with both, and what are the risks of handing the work to machines?</p>
 <p class="am-prog-playlist"><a href="https://www.youtube.com/playlist?list=PLSItTTcc91ac" target="_blank" rel="noopener">All Tuesday recordings on YouTube</a></p>
+</div>
+<div class="am-prog-halves">
+<div class="am-prog-halfblock">
 <p class="am-prog-half">Morning</p>
 <div class="am-prog-session">
 <h4><span class="am-prog-start">09:30</span>Symposium: Can AI Help Us Understand How Findings Move from Animal Studies to Human Studies?</h4>
@@ -572,6 +519,8 @@ Here are the sessions and the talks in each, in the order they ran. **Click any 
 <li><button type="button" class="am-prog-item" data-talk="30acb82a" data-session="Reproducing the record" data-day="Tuesday 29 September"><span class="am-prog-time">11:35</span><span class="am-prog-text"><span class="am-prog-title">A local, open-weights pipeline for semi-automated replication checklists</span><span class="am-prog-who">Johannes Breuer (CAIS Bochum &amp; University of Duisburg-Essen), Mario Haim &amp; Philipp Knöpfle (LMU Munich), Xinyue Zhao (CAIS Bochum)</span></span><span class="am-prog-meta"><span class="am-prog-more" aria-hidden="true">Abstract</span></span></button><span class="am-prog-watch"><a href="https://youtu.be/daD3XnHdFU0" target="_blank" rel="noopener" aria-label="Watch: A local, open-weights pipeline for semi-automated replication checklists">Watch</a></span></li>
 <li><button type="button" class="am-prog-item" data-talk="b51b5bcc" data-session="Reproducing the record" data-day="Tuesday 29 September"><span class="am-prog-time">11:55</span><span class="am-prog-text"><span class="am-prog-title">Do failed replications make their way into public knowledge?</span><span class="am-prog-who">Youyou Wu (University College London)</span></span><span class="am-prog-meta"><span class="am-prog-more" aria-hidden="true">Abstract</span></span></button><span class="am-prog-watch"><a href="https://youtu.be/2aAW67PfNnQ" target="_blank" rel="noopener" aria-label="Watch: Do failed replications make their way into public knowledge?">Watch</a></span></li>
 </ul></div>
+</div>
+<div class="am-prog-halfblock">
 <p class="am-prog-half">Afternoon</p>
 <div class="am-prog-session">
 <h4><span class="am-prog-start">13:20</span>Getting our hands dirty: experimenting with agentic reproductions and robustness checks</h4>
@@ -597,15 +546,24 @@ Here are the sessions and the talks in each, in the order they ran. **Click any 
 <li><button type="button" class="am-prog-item" data-talk="5a69fddc" data-session="Machines that build and test the replication record" data-day="Tuesday 29 September"><span class="am-prog-time">16:55</span><span class="am-prog-text"><span class="am-prog-title">The Metascience Observatory: an AI-built replication database and experiments with AI for forensic metascience</span><span class="am-prog-who">Dan Elton (The Metascience Observatory)</span></span><span class="am-prog-meta"><span class="am-prog-more" aria-hidden="true">Abstract</span></span></button><span class="am-prog-watch"><a href="https://youtu.be/fLAnLOP2HpE" target="_blank" rel="noopener" aria-label="Watch: The Metascience Observatory: an AI-built replication database and experiments with AI for forensic metascience">Watch</a></span></li>
 <li><button type="button" class="am-prog-item" data-talk="47468cdd" data-session="Machines that build and test the replication record" data-day="Tuesday 29 September"><span class="am-prog-time">17:15</span><span class="am-prog-text"><span class="am-prog-title">Can an agentic LLM run computational reproducibility checks at human quality?</span><span class="am-prog-who">Yoel Inbar (University of British Columbia)</span></span><span class="am-prog-meta"><span class="am-prog-more" aria-hidden="true">Abstract</span></span></button><span class="am-prog-watch"><a href="https://youtu.be/vW3UQ0AVavw" target="_blank" rel="noopener" aria-label="Watch: Can an agentic LLM run computational reproducibility checks at human quality?">Watch</a></span></li>
 </ul></div>
+</div>
+</div>
 </section>
 <section class="am-prog-day am-day-wed" id="am-day-wed">
+<div class="am-prog-dayhead">
 <h3 class="am-prog-date">Wednesday 30 September<span>Workshops, and analyst variability</span></h3>
+<p class="am-prog-daytext">Three 90-minute hands-on sessions on AI for knowledge management, evidence synthesis and pre-registration review, plus talks on whether a finding survives another analyst.</p>
 <p class="am-prog-playlist"><a href="https://www.youtube.com/playlist?list=PLZYxy57rykQU" target="_blank" rel="noopener">All Wednesday recordings on YouTube</a></p>
+</div>
+<div class="am-prog-halves">
+<div class="am-prog-halfblock">
 <p class="am-prog-half">Morning</p>
 <div class="am-prog-session am-prog-session-solo">
 <ul class="am-prog-talks">
 <li><button type="button" class="am-prog-item" data-talk="9787bae8" data-session="" data-day="Wednesday 30 September"><span class="am-prog-time">10:00–11:30</span><span class="am-prog-text"><span class="am-prog-title">How to use PreCheck: An AI-Assisted Tool and Evaluation Framework for Preregistration Quality</span><span class="am-prog-who">Bence Palfi (Goldsmiths, London)</span></span><span class="am-prog-meta"><span class="am-prog-more" aria-hidden="true">Abstract</span></span></button></li>
 </ul></div>
+</div>
+<div class="am-prog-halfblock">
 <p class="am-prog-half">Afternoon</p>
 <div class="am-prog-session am-prog-session-solo">
 <ul class="am-prog-talks">
@@ -623,6 +581,8 @@ Here are the sessions and the talks in each, in the order they ran. **Click any 
 <ul class="am-prog-talks">
 <li><button type="button" class="am-prog-item" data-talk="3e76d367" data-session="" data-day="Wednesday 30 September"><span class="am-prog-time">16:00–17:30</span><span class="am-prog-text"><span class="am-prog-title">HubMeta: an AI-assisted workflow for systematic review and meta-analysis</span><span class="am-prog-who">Piers Steel (University of Calgary), Hadi Fariborzi (Mount Royal University)</span></span><span class="am-prog-meta"><span class="am-prog-more" aria-hidden="true">Abstract</span></span></button><span class="am-prog-watch"><a href="https://youtu.be/CKhL16pOdI4" target="_blank" rel="noopener" aria-label="Watch: HubMeta: an AI-assisted workflow for systematic review and meta-analysis">Watch</a></span></li>
 </ul></div>
+</div>
+</div>
 </section>
 </div>
 <dialog class="am-prog-dialog" id="am-prog-dialog">
@@ -643,6 +603,10 @@ Here are the sessions and the talks in each, in the order they ran. **Click any 
   var who = dialog.querySelector(".am-prog-dialog-who");
   var eyebrow = dialog.querySelector(".am-prog-dialog-eyebrow");
   var body = dialog.querySelector(".am-prog-dialog-abstract");
+  var opener = null;
+  dialog.addEventListener("close", function () {
+    if (opener) opener.focus();
+  });
   document.querySelectorAll(".am-prog-item").forEach(function (button) {
     var talk = data[button.dataset.talk];
     if (!talk || !talk.abstract) {
@@ -650,6 +614,7 @@ Here are the sessions and the talks in each, in the order they ran. **Click any 
       return;
     }
     button.addEventListener("click", function () {
+      opener = button;
       var day = button.dataset.day || "";
       var session = button.dataset.session || "";
       eyebrow.textContent = session ? day + " \u00b7 " + session : day;
@@ -676,53 +641,78 @@ Here are the sessions and the talks in each, in the order they ran. **Click any 
 <!-- PROGRAMME:END -->
 
 <script>
-// Jumps to a day, and fills the pill for whichever day is at the top of the
-// viewport. The site's own anchor handler offsets by the navbar alone, which
-// leaves the day header under the sticky pills, so these links scroll
-// themselves and let scroll-margin-top place the header.
+// Turns the day links into tabs that show one day at a time. Without
+// JavaScript every day shows, one after another, and the links jump to them.
 (function () {
-  var pills = document.querySelectorAll(".am-pill");
-  var days = document.querySelectorAll(".am-prog-day");
-  var bar = document.querySelector(".am-switch");
+  var nav = document.querySelector(".am-switch");
+  var prog = document.querySelector(".am-prog");
+  if (!nav || !prog) return;
+  var tabs = Array.prototype.slice.call(nav.querySelectorAll(".am-tab"));
+  var panels = tabs.map(function (tab) {
+    return document.getElementById(tab.getAttribute("href").slice(1));
+  });
+  if (panels.indexOf(null) !== -1) return;
   var navbar = document.getElementById("navbar-main");
-  // The fixed navbar is one row on a wide window and two on a narrow one, so
-  // the pills are parked and the day headers offset by its measured height.
-  var clear = 155;
-  function place() {
-    if (!bar || !navbar) return;
-    var under = getComputedStyle(navbar).position === "fixed" ? Math.round(navbar.getBoundingClientRect().bottom) : 0;
-    bar.style.top = under + "px";
-    clear = under + bar.offsetHeight + 8;
-    days.forEach(function (day) {
-      day.style.scrollMarginTop = clear + "px";
+  nav.setAttribute("role", "tablist");
+  tabs.forEach(function (tab, i) {
+    tab.setAttribute("role", "tab");
+    tab.id = "am-tab-" + panels[i].id.replace("am-day-", "");
+    tab.setAttribute("aria-controls", panels[i].id);
+    panels[i].setAttribute("role", "tabpanel");
+    panels[i].setAttribute("aria-labelledby", tab.id);
+    var next = tabs[i + 1];
+    if (next) {
+      var button = document.createElement("button");
+      button.type = "button";
+      button.className = "am-prog-next";
+      button.textContent = "Next day: " + next.querySelector(".am-tab-day").textContent + " →";
+      button.addEventListener("click", function () {
+        select(i + 1, true);
+        var top = nav.getBoundingClientRect().top;
+        var under = navbar && getComputedStyle(navbar).position === "fixed" ? navbar.getBoundingClientRect().bottom : 0;
+        if (top < under) window.scrollBy(0, top - under - 12);
+      });
+      panels[i].appendChild(button);
+    }
+  });
+  prog.classList.add("am-prog-tabbed");
+  function select(index, focus) {
+    tabs.forEach(function (tab, i) {
+      var on = i === index;
+      tab.setAttribute("aria-selected", on ? "true" : "false");
+      tab.tabIndex = on ? 0 : -1;
+      panels[i].hidden = !on;
     });
+    if (focus) tabs[index].focus();
   }
-  place();
-  window.addEventListener("resize", place);
-  document.querySelectorAll(".am-pill, .am-day-card").forEach(function (link) {
-    link.addEventListener("click", function (event) {
-      var target = document.querySelector(link.getAttribute("href"));
-      if (!target) return;
+  function fromHash() {
+    var target = location.hash && document.getElementById(location.hash.slice(1));
+    for (var i = 0; target && i < panels.length; i++) {
+      if (panels[i].contains(target)) return i;
+    }
+    return -1;
+  }
+  tabs.forEach(function (tab, i) {
+    tab.addEventListener("click", function (event) {
       event.preventDefault();
       event.stopImmediatePropagation();
-      place();
-      target.scrollIntoView();
-      history.replaceState(null, "", link.getAttribute("href"));
+      select(i, false);
+      history.replaceState(null, "", tab.getAttribute("href"));
     }, true);
+    tab.addEventListener("keydown", function (event) {
+      var to = { ArrowRight: i + 1, ArrowLeft: i - 1, Home: 0, End: tabs.length - 1 }[event.key];
+      if (event.key === " ") { event.preventDefault(); tab.click(); return; }
+      if (to === undefined) return;
+      event.preventDefault();
+      select((to + tabs.length) % tabs.length, true);
+    });
   });
-  if (!pills.length || !days.length || !window.IntersectionObserver) return;
-  function light(id) {
-    pills.forEach(function (pill) {
-      pill.classList.toggle(
-        "am-pill-on", pill.getAttribute("href") === "#" + id);
-    });
-  }
-  var observer = new IntersectionObserver(function (entries) {
-    entries.forEach(function (entry) {
-      if (entry.isIntersecting) light(entry.target.id);
-    });
-  }, { rootMargin: "-" + clear + "px 0px -60% 0px" });
-  days.forEach(function (day) { observer.observe(day); });
+  var start = fromHash();
+  select(start < 0 ? 0 : start, false);
+  window.addEventListener("hashchange", function () {
+    var i = fromHash();
+    if (i >= 0) select(i, false);
+  });
 })();
 </script>
 

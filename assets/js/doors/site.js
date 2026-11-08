@@ -303,6 +303,37 @@ document.addEventListener('click', async (event) => {
   }
 });
 
+// Whether nothing of the page's own lies under a box (with a 6 px margin): no text, control, image or card,
+// a card being anything with its own background, shadow or side borders that does not span the screen.
+const textRange = document.createRange();
+function emptyAt(el, x, y) {
+  if (el === document.documentElement || el === document.body) return true;
+  if (el.closest('a,button,input,select,textarea,summary,label,img,svg,video,iframe,canvas,[role=button],[tabindex]:not([tabindex="-1"])')) return false;
+  for (const node of el.childNodes) {
+    if (node.nodeType !== Node.TEXT_NODE || !node.data.trim()) continue;
+    textRange.selectNodeContents(node);
+    if ([...textRange.getClientRects()].some((r) => x >= r.left && x <= r.right && y >= r.top && y <= r.bottom)) return false;
+  }
+  const screen = document.documentElement.clientWidth;
+  for (let e = el; e && e !== document.body; e = e.parentElement) {
+    const style = getComputedStyle(e);
+    const painted = style.backgroundColor !== 'rgba(0, 0, 0, 0)' || style.backgroundImage !== 'none' || style.boxShadow !== 'none'
+      || ['Left', 'Right'].every((side) => style[`border${side}Style`] !== 'none' && parseFloat(style[`border${side}Width`]));
+    const box = e.getBoundingClientRect();
+    if (painted && (box.left > 1 || box.right < screen - 1)) return false;
+  }
+  return true;
+}
+function overEmptySpace(box) {
+  for (let x = box.left - 6; x <= box.right + 6; x += 6) {
+    for (let y = box.top - 6; y <= box.bottom + 6; y += 6) {
+      const el = document.elementsFromPoint(x, y).find((e) => !e.closest('#just-os-widget'));
+      if (el && !emptyAt(el, x, y)) return false;
+    }
+  }
+  return true;
+}
+
 // The chatbot launcher. The chat's own script, styles and window load on the first click.
 const chatWidget = document.getElementById('just-os-widget');
 if (chatWidget) {
@@ -317,24 +348,22 @@ if (chatWidget) {
     sessionStorage.setItem('just-os-dismissed', '1');
   });
   // The invitation shows and hides on a slow cycle, as it always has, and rests while the chat is open.
+  // It shows only over empty space, so it never covers text, a card or a control.
+  // Where the launcher is a tab (launcher.css) the margin is too narrow for it: there it is offered once, at the top of the page.
   const chatOpen = () => document.getElementById('just-os-window')?.style.display === 'flex';
-  let invited = false;
+  const tabbed = () => matchMedia('(max-width:1439px)').matches;
+  let offered = false;
   const invitation = setInterval(() => {
-    if (dismissed() || chatFailed) clearInterval(invitation);
-    else if (!chatOpen()) {
-      // On a phone it shows once per page, so it doesn't keep returning over the text.
-      if (invited && innerWidth <= 760) {
-        chatBubble.classList.remove('bubble-visible');
-        clearInterval(invitation);
-        return;
-      }
-      chatBubble.classList.toggle('bubble-visible', !chatBubble.classList.contains('bubble-visible') && !reading());
-      if (chatBubble.classList.contains('bubble-visible')) invited = true;
-    }
+    if (dismissed() || chatFailed) return clearInterval(invitation);
+    if (chatOpen()) return;
+    const shown = chatBubble.classList.contains('bubble-visible');
+    chatBubble.classList.remove('bubble-visible');
+    if (tabbed() && (offered || scrollY > 0)) return clearInterval(invitation);
+    offered = true;
+    if (!shown && overEmptySpace(chatBubble.getBoundingClientRect())) chatBubble.classList.add('bubble-visible');
   }, 10000);
-  // On a phone the invitation would sit over the text, so it shows only at the top of a page.
-  const reading = () => innerWidth <= 760 && scrollY > 120;
-  addEventListener('scroll', () => { if (reading() && !chatFailed) chatBubble.classList.remove('bubble-visible'); }, { passive: true });
+  // Any scroll hides it, and the message that the chat did not load, which replaces it after a click.
+  addEventListener('scroll', () => chatBubble.classList.remove('bubble-visible'), { passive: true });
   if (chatButton.tagName === 'BUTTON') {
     chatButton.addEventListener('click', () => {
       if (window.toggleJustOS) {
