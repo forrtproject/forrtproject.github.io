@@ -965,19 +965,11 @@
   }
 }
 
-.update-pending-badge {
-  position: absolute;
-  bottom: 0.5rem;
-  left: 50%;
-  transform: translateX(-50%);
-  background: rgba(0, 0, 0, 0.65);
-  color: #fff;
-  font-size: 0.7rem;
-  font-weight: 600;
-  padding: 0.2rem 0.6rem;
-  border-radius: 4px;
-  letter-spacing: 0.03em;
-  white-space: nowrap;
+.intro-caption {
+  margin: 0.5rem 0 0;
+  color: var(--soft);
+  font-size: 16px;
+  line-height: 1.4;
 }
 
 .lightbox-trigger {
