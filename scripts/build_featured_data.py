@@ -100,6 +100,12 @@ def extract_doi(url: str) -> str | None:
     return None
 
 
+def clean_apa_reference(apa: str) -> str:
+    """Remove the Portico archive-provider artefact immediately before a DOI URL."""
+    # Same narrow repair as parse_clusters_to_sheet.tidy_lookup_citation (#984).
+    return re.sub(r'\. Portico\. (?=https://doi\.org/)', '. ', apa.strip())
+
+
 def make_short_ref(apa: str) -> str:
     """Generate a compact citation like 'Munafo et al. (2017)' from an APA string."""
     if not apa:
@@ -275,7 +281,7 @@ def main():
 
         oa_url = row[COL_OA_LINK].strip()
         is_oa = bool(oa_url)
-        apa = row[COL_APA].strip()
+        apa = clean_apa_reference(row[COL_APA])
 
         card = {
             "title": row[COL_TITLE].strip(),
