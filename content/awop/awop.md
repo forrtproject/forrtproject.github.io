@@ -106,7 +106,6 @@ We provide a comprehensive suite of resources within the AWoP toolkit:
 
 The AWoP is already being recognized and implemented in various settings, including:
 - [UK Research Integrity Office (UKRIO)](https://ukrio.org/ukrio-resources/equality-diversity-and-inclusion/academic-wheel-of-privilege/)
-- Other publications and web pages (add more links as they become available)
 
 ## Contact Us
 ---
