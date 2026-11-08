@@ -1,6 +1,8 @@
 /* Site-wide type and colour. */
 body{margin-top:0;background:var(--page);color:var(--ink);font:400 var(--text-size)/1.6 var(--text);overflow-wrap:break-word}
 h1,h2,h3,h4,h5,h6,.h1,.h2,.h3,.h4,.h5,.h6{font-family:var(--display);font-weight:var(--display-weight);color:var(--ink)}
+/* When the window is narrow for its text size (below about 300px at normal text, or 600px with text at 200%, whether the whole page or only text is zoomed), long words in headings no longer fit; hyphenate them rather than break at any letter (#983). */
+@media (max-width:19em){h1,h2,h3,h4,h5,h6,.h1,.h2,.h3,.h4,.h5,.h6{hyphens:auto}}
 a{color:var(--link)}
 a:hover{color:var(--ink)}
 a:focus-visible,button:focus-visible,input:focus-visible,summary:focus-visible,table:focus-visible{outline:3px solid var(--ink);outline-offset:3px;border-radius:2px}
