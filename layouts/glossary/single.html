@@ -81,13 +81,6 @@
 }}
 
 {{ $dict := index $dictionary $lang }}
-{{ range $field := slice "definition" "alt_definition" }}
-  {{ with index $.Params $field }}
-    {{ range partial "citations/unresolved" (dict "html" (. | markdownify) "references" $.Params.references) }}
-      {{ warnf "Unresolved glossary citation %q in %s (%s): %s" .citation $.File.Path $field .reason }}
-    {{ end }}
-  {{ end }}
-{{ end }}
 <div class="wrap">
   {{ $hasTerms := where (where (where site.RegularPages "Type" "glossary") "File.Dir" .File.Dir) "Params.definition" "!=" nil }}
   <div class="article-layout glossary-layout{{ if not $hasTerms }} article-layout-single{{ end }}">

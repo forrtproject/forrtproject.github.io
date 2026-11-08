@@ -45,7 +45,8 @@ registerPopover('a.cite[data-cite]', (trigger) => {
   content.append(reference);
   const actions = document.createElement('div');
   actions.className = 'popover-actions';
-  if (entry.dataset.source) {
+  // Offer the source separately only when the reference itself doesn't already link it.
+  if (entry.dataset.source && !reference.querySelector('a[href]')) {
     const open = document.createElement('a');
     open.href = entry.dataset.source;
     open.target = '_blank';
