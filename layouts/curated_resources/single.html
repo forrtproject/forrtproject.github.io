@@ -2,7 +2,7 @@
 {{/* A curated resource, on the reading layout: what it is on the left, and its details beside it.
      Pages are generated from the FORRT database sheet, so any list field can be missing. */}}
 {{ $clean := dict }}
-{{ range slice "material_type" "education_level" "primary_user" "subject_areas" "language" "creators" "FORRT_clusters" }}
+{{ range slice "material_type" "education_level" "primary_user" "subject_areas" "language" "creators" }}
   {{ $values := slice }}
   {{ range index $.Params . }}{{ if . }}{{ $values = $values | append . }}{{ end }}{{ end }}
   {{ $clean = merge $clean (dict . $values) }}
@@ -39,7 +39,8 @@
       <h2>About this resource</h2>
       <dl>
         {{ range $details }}{{ if .values }}<dt>{{ .label }}</dt><dd>{{ delimit .values ", " }}</dd>{{ end }}{{ end }}
-        {{ with $clean.FORRT_clusters }}<dt>Cluster</dt><dd>{{ delimit . ", " }}</dd>{{ end }}
+        {{/* The clusters the directory filters by, from forrt_clusters_new; none when that is empty. */}}
+        {{ with index (partialCached "doors/resource_index" (site.GetPage "/resources") "resources").items .RelPermalink }}{{ with .clusters }}<dt>Cluster</dt><dd>{{ delimit . ", " }}</dd>{{ end }}{{ end }}
         <dt>Last updated</dt><dd>{{ .Lastmod.Format "2 January 2006" }}</dd>
       </dl>
     </section>
