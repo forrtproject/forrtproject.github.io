@@ -155,11 +155,12 @@ Hand-written pages can cite works in [`content/glossary/apa_lookup.json`](conten
 ```text
 {{< cite "Nosek2018" "Simmons2011" >}}
 {{< cite key="Nosek2018" narrative="true" >}}
+(e.g. Smith, 2019; {{< cite key="Nosek2018" bare="true" >}})
 ```
 
-These render as “(Nosek et al., 2018; Simmons et al., 2011)” and “Nosek et al. (2018)”. Every page that cites must include `{{< references >}}` once, after its last citation, to add an alphabetical reference list. The built-HTML check fails citation links without matching reference entries. Clicking a citation opens its full APA reference with source and copy actions; without JavaScript it jumps to the reference list. Unknown keys produce a build warning and appear in square brackets.
+These render as “(Nosek et al., 2018; Simmons et al., 2011)”, “Nosek et al. (2018)” and “(e.g. Smith, 2019; Nosek et al., 2018)”. Use `bare` inside brackets you write yourself, for example alongside a work that isn't in the bibliography, so the author's wording stays as it was. Every page that cites must include `{{< references >}}` once, after its last citation, to add an alphabetical reference list. The built-HTML check fails citation links without matching reference entries. Clicking a citation opens its full APA reference with source and copy actions; without JavaScript it jumps to the reference list. Unknown keys produce a build warning and appear in square brackets.
 
-Do not edit the generated bibliography or glossary terms. Request additions to the Glossary BibTeX Doc through an issue; the bibliography generator supplies the APA text. Glossary definitions automatically link citations only when their first author and year identify exactly one of the term’s listed references and their author lists agree. The build warns about recognisable author–year citations with missing, ambiguous or mismatched references, including the term’s source path and definition field; these citations stay plain text. Citations already linked to a source are left alone.
+Do not edit the generated bibliography or glossary terms. Request additions to the Glossary BibTeX Doc through an issue; the bibliography generator supplies the APA text. Glossary definitions automatically link citations only when their first author and year identify exactly one of the term’s listed references and their author lists agree. Other citations stay plain text. Citations already linked to a source are left alone.
 
 ### Contributing with AI tools
 

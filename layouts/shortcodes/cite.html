@@ -1,11 +1,13 @@
 {{- $keys := .Params -}}
 {{- $narrative := false -}}
+{{- $bare := false -}}{{/* bare="true": "Author, Year" without brackets, for a citation inside the author's own brackets */}}
 {{- if .IsNamedParams -}}
   {{- $keys = slice (.Get "key") -}}
   {{- $narrative = eq (printf "%v" (.Get "narrative")) "true" -}}
+  {{- $bare = eq (printf "%v" (.Get "bare")) "true" -}}
 {{- end -}}
 {{- $bib := partialCached "citations/bibliography" . "bibliography" -}}
-{{- if not $narrative -}}({{- end -}}
+{{- if not (or $narrative $bare) -}}({{- end -}}
 {{- range $i, $key := $keys -}}
   {{- if $i -}}; {{ end -}}
   {{- with index $bib $key -}}
@@ -17,4 +19,4 @@
     [{{ $key }}]
   {{- end -}}
 {{- end -}}
-{{- if not $narrative -}}){{- end -}}
+{{- if not (or $narrative $bare) -}}){{- end -}}
