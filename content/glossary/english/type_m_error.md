@@ -29,5 +29,6 @@
     "language": "english",
     "aliases": [
         "/glossary/type_m_error"
-    ]
+    ],
+    "lastmod": "2026-08-05"
 }

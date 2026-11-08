@@ -29,5 +29,6 @@
     "language": "english",
     "aliases": [
         "/glossary/the_troubling_trio"
-    ]
+    ],
+    "lastmod": "2026-08-05"
 }

@@ -34,5 +34,6 @@
     "language": "english",
     "aliases": [
         "/glossary/researcher_degrees_of_freedom"
-    ]
+    ],
+    "lastmod": "2026-08-05"
 }

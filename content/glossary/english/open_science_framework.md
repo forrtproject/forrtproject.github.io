@@ -30,5 +30,6 @@
     "language": "english",
     "aliases": [
         "/glossary/open_science_framework"
-    ]
+    ],
+    "lastmod": "2026-08-05"
 }

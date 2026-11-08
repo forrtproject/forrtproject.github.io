@@ -48,5 +48,6 @@
     "language": "english",
     "aliases": [
         "/glossary/questionable_research_practices_or_questionable_reporting_practices_qrps_"
-    ]
+    ],
+    "lastmod": "2026-08-05"
 }

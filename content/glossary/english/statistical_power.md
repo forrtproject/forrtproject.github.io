@@ -49,5 +49,6 @@
     "language": "english",
     "aliases": [
         "/glossary/statistical_power"
-    ]
+    ],
+    "lastmod": "2026-08-05"
 }

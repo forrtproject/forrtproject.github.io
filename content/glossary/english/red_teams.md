@@ -27,5 +27,6 @@
     "language": "english",
     "aliases": [
         "/glossary/red_teams"
-    ]
+    ],
+    "lastmod": "2026-08-05"
 }

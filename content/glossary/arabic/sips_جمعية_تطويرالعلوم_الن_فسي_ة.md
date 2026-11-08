@@ -24,12 +24,13 @@
     ],
     "language": "arabic",
     "translated_by": [
-        "Mai Helmy."
+        "Mai Helmy"
     ],
     "translation_reviewed_by": [
         "Ahlam Ahmed",
         "Ali H. Al-Hoorie",
         "Hala Alghamdi",
         "Mohammed Mohsen"
-    ]
+    ],
+    "lastmod": "2026-11-08"
 }
