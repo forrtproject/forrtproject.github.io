@@ -30,12 +30,13 @@
     ],
     "language": "arabic",
     "translated_by": [
-        "Mai Helmy."
+        "Mai Helmy"
     ],
     "translation_reviewed_by": [
         "Ali H. Al-Hoorie",
         "Hiba Alomary",
         "Asma Alzahrani",
         "Mohammed Mohsen"
-    ]
+    ],
+    "lastmod": "2026-11-08"
 }

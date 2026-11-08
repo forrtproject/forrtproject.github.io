@@ -30,5 +30,6 @@
     "language": "english",
     "aliases": [
         "/glossary/preprint"
-    ]
+    ],
+    "lastmod": "2026-08-05"
 }

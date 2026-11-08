@@ -31,5 +31,6 @@
     "language": "english",
     "aliases": [
         "/glossary/feminist_psychology"
-    ]
+    ],
+    "lastmod": "2026-08-05"
 }

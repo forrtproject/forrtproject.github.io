@@ -27,5 +27,6 @@
     "language": "english",
     "aliases": [
         "/glossary/r"
-    ]
+    ],
+    "lastmod": "2026-08-05"
 }

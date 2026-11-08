@@ -28,5 +28,6 @@
     "language": "english",
     "aliases": [
         "/glossary/pro_peer_review_openness_initiative"
-    ]
+    ],
+    "lastmod": "2026-08-05"
 }

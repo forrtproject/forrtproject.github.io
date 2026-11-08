@@ -24,5 +24,6 @@
     "language": "english",
     "aliases": [
         "/glossary/webometrics"
-    ]
+    ],
+    "lastmod": "2026-08-05"
 }

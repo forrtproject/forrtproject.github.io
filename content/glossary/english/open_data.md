@@ -37,5 +37,6 @@
     "language": "english",
     "aliases": [
         "/glossary/open_data"
-    ]
+    ],
+    "lastmod": "2026-08-05"
 }
