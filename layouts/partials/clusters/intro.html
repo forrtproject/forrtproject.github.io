@@ -13,7 +13,7 @@
     <div class="intro-hero-image">
       <a href="FORRT_Clusters.webp" class="lightbox-trigger" aria-label="View full-size FORRT Clusters diagram">
         <div class="intro-thumbnail-wrapper">
-          <img src="FORRT_Clusters.webp" alt="FORRT's Clusters hierarchy diagram" class="intro-thumbnail" loading="lazy">
+          <img src="FORRT_Clusters-thumbnail.webp" width="720" height="538" alt="FORRT's Clusters hierarchy diagram" class="intro-thumbnail" loading="lazy">
         </div>
         <span class="lightbox-hint">
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
@@ -27,7 +27,8 @@
   {{/* Lightbox overlay */}}
   <div class="lightbox-overlay" id="clusters-lightbox" role="dialog" aria-modal="true" aria-label="FORRT Clusters diagram">
     <button class="lightbox-close" aria-label="Close">&times;</button>
-    <img src="FORRT_Clusters.webp" alt="FORRT's Clusters hierarchy diagram" class="lightbox-image">
+    {{/* The full diagram is about 1 MB, so it loads when the lightbox first opens. */}}
+    <img data-src="FORRT_Clusters.webp" alt="FORRT's Clusters hierarchy diagram" class="lightbox-image">
   </div>
 
   <script>
@@ -36,7 +37,13 @@
     var overlay = document.getElementById('clusters-lightbox');
     var closeBtn = overlay.querySelector('.lightbox-close');
 
-    function open(e) { e.preventDefault(); overlay.classList.add('active'); }
+    var image = overlay.querySelector('.lightbox-image');
+
+    function open(e) {
+      e.preventDefault();
+      if (!image.getAttribute('src')) image.src = image.dataset.src;
+      overlay.classList.add('active');
+    }
     function close() { overlay.classList.remove('active'); }
 
     trigger.addEventListener('click', open);

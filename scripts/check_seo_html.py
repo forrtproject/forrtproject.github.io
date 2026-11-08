@@ -29,6 +29,8 @@ Hard checks (exit 1 if any fails):
   10. No meta description contains a double-escaped entity such as `&amp;ldquo;`
      (#864). Text that merely looks like an entity (`&name;`) is not one.
   11. No page has more than one <h1> (#928).
+  12. No page inlines more than 200 KB in one <script> (#993). Large data belongs in a
+     separate file the page fetches when it needs it.
 
 Report-only sections (never fail): pages with no <h1>, the
 site-wide share of images that carry both width and height, pages whose
@@ -46,6 +48,7 @@ from html.parser import HTMLParser
 from urllib.parse import unquote, urlparse
 
 MAX_LISTED = 20
+MAX_INLINE_SCRIPT = 200_000  # bytes in one inline <script> (#993)
 # Markup that survived flattening, e.g. an indented HTML block rendered as code.
 HTML_TAG = re.compile(r"</?[A-Za-z][A-Za-z0-9]*(\s[^<>]*)?/?>")
 # Attribute values arrive already unescaped, so any entity left in them was
@@ -68,9 +71,13 @@ class PageParser(HTMLParser):
         self.jsonld = []
         self.canonical = None
         self._jsonld_buffer = None
+        self.largest_inline_script = 0
+        self._inline_script = None
 
     def handle_starttag(self, tag, attrs):
         attrs = dict(attrs)
+        if tag == "script" and not attrs.get("src"):
+            self._inline_script = 0
         if tag == "script" and attrs.get("type") == "application/ld+json":
             self._jsonld_buffer = []
         elif tag == "link" and attrs.get("rel") == "canonical":
@@ -94,6 +101,9 @@ class PageParser(HTMLParser):
             self.code_classes.append(attrs.get("class") or "")
 
     def handle_endtag(self, tag):
+        if tag == "script" and self._inline_script is not None:
+            self.largest_inline_script = max(self.largest_inline_script, self._inline_script)
+            self._inline_script = None
         if tag == "script" and self._jsonld_buffer is not None:
             self.jsonld.append("".join(self._jsonld_buffer))
             self._jsonld_buffer = None
@@ -106,6 +116,8 @@ class PageParser(HTMLParser):
                 self._h1_buffer = []
 
     def handle_data(self, data):
+        if self._inline_script is not None:
+            self._inline_script += len(data.encode("utf-8"))
         if self._jsonld_buffer is not None:
             self._jsonld_buffer.append(data)
         if self._h1_depth > 0:
@@ -136,6 +148,7 @@ class Page:
         self.indexable = not self.noindex and not refresh and not elsewhere
         self.jsonld = parser.jsonld
         self.canonical = parser.canonical
+        self.largest_inline_script = parser.largest_inline_script
 
     def loads(self, needle):
         return any(needle in url for url in self.urls)
@@ -346,6 +359,11 @@ def check_description_entities(pages):
     return failures
 
 
+def check_inline_scripts(pages):
+    return ["%s (%d KB)" % (p.path, p.largest_inline_script // 1000) for p in pages
+            if p.largest_inline_script > MAX_INLINE_SCRIPT]
+
+
 def description_report(pages, home):
     """Report-only: generic, duplicated and markup-containing descriptions on indexable pages."""
     described = [(p, p.descriptions[0].strip()) for p in pages
@@ -390,6 +408,7 @@ def main(public_dir):
         "9. every indexable page has a meta description": check_description_present(pages),
         "10. no double-escaped entity in a meta description": check_description_entities(pages),
         "11. no page has several <h1>": [p.path for p in pages if len(p.h1_texts) > 1],
+        "12. no inline <script> over 200 KB": check_inline_scripts(pages),
     }
     conditional = check_conditional_assets(pages)
     results["3. conditional highlight.js / mermaid loading"] = [

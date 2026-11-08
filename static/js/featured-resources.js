@@ -1,6 +1,8 @@
 /**
  * Featured Resources: reference popup, reading list, voting, filtering.
- * Depends on window.FORRT_FEATURED being set by featured_global.html.
+ * Depends on window.FORRT_FEATURED being set by featured_global.html. The publication
+ * cards (window.FORRT_PUB_CARDS_URL, about 2 MB) are fetched only when a reference or the
+ * reading list needs an entry the featured data doesn't have.
  */
 (function () {
   'use strict';
@@ -32,10 +34,29 @@
     return idx;
   }
 
+  /** Returns a function that fetches the publication cards once and merges them into idx
+   *  (featured entries take precedence). It always resolves, even if the fetch fails. */
+  function pubCardLoader(idx, url) {
+    var pending = null;
+    return function () {
+      if (!pending) {
+        pending = !url ? Promise.resolve() : fetch(url)
+          .then(function (res) { return res.ok ? res.json() : {}; })
+          .then(function (cards) {
+            Object.keys(cards || {}).forEach(function (doi) {
+              if (!idx[doi]) idx[doi] = cards[doi];
+            });
+          })
+          .catch(function () {});
+      }
+      return pending;
+    };
+  }
+
   /* ================================================================
      REFERENCE POPUP
      ================================================================ */
-  function initReferencePopup(resourceIdx) {
+  function initReferencePopup(resourceIdx, loadPubCards) {
     var backdrop = document.getElementById('fr-ref-popup-backdrop');
     var body = document.getElementById('fr-ref-popup-body');
     var closeBtn = backdrop ? backdrop.querySelector('.ref-popup-close') : null;
@@ -43,7 +64,10 @@
 
     function open(doi) {
       var r = resourceIdx[doi];
-      if (!r) return;
+      if (!r) {
+        loadPubCards().then(function () { if (resourceIdx[doi]) open(doi); });
+        return;
+      }
       var html = '';
       // Tags + title
       html += '<div class="ref-popup-tags">';
@@ -147,7 +171,7 @@
   /* ================================================================
      READING LIST
      ================================================================ */
-  function initReadingList(resourceIdx) {
+  function initReadingList(resourceIdx, loadPubCards) {
     var LS_KEY = 'forrt-reading-list';
     var LS_TOOLTIP_KEY = 'forrt-rl-tooltip-shown';
     var pill = document.getElementById('fr-rl-pill');
@@ -262,6 +286,9 @@
 
     function openPanel() {
       renderPanel();
+      if (getList().some(function (doi) { return !resourceIdx[doi]; })) {
+        loadPubCards().then(renderPanel);
+      }
       if (backdrop) backdrop.classList.add('open');
       if (panel) panel.classList.add('open');
       document.body.style.overflow = 'hidden';
@@ -850,18 +877,24 @@
      ================================================================ */
   onReady(function () {
     var data = window.FORRT_FEATURED;
-    var pubCards = window.FORRT_PUB_CARDS;
-    if (!data && !pubCards) return;
+    var pubCardsUrl = window.FORRT_PUB_CARDS_URL;
+    if (!data && !pubCardsUrl) return;
     var resourceIdx = buildResourceIndex(data);
-    // Merge pub_cards into resource index (featured entries take precedence)
-    if (pubCards) {
-      Object.keys(pubCards).forEach(function (doi) {
-        if (!resourceIdx[doi]) resourceIdx[doi] = pubCards[doi];
-      });
+    var loadPubCards = pubCardLoader(resourceIdx, pubCardsUrl);
+    // Start the fetch as soon as a visitor points at, touches or tabs to a reference or
+    // save control, so the popup is usually ready by the time they click.
+    var intents = ['pointerover', 'touchstart', 'focusin'];
+    function onIntent(e) {
+      if (!e.target.closest || !e.target.closest('.fr-ref-trigger, .fr-bookmark-btn, #fr-rl-pill')) return;
+      loadPubCards();
+      intents.forEach(function (type) { document.removeEventListener(type, onIntent, true); });
     }
+    intents.forEach(function (type) {
+      document.addEventListener(type, onIntent, { capture: true, passive: true });
+    });
 
-    initReferencePopup(resourceIdx);
-    initReadingList(resourceIdx);
+    initReferencePopup(resourceIdx, loadPubCards);
+    initReadingList(resourceIdx, loadPubCards);
     initVoting();
     initCarousels();
     sortCardsByFocus();
