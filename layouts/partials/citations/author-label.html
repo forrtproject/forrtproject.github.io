@@ -1,0 +1,3 @@
+{{/* Compare narrative/parenthetical author lists without punctuation or conjunction style. */}}
+{{- $label := lower . | replaceRE `\b(and)\b|[,&.]` " " -}}
+{{- return (strings.TrimSpace (replaceRE `\s+` " " $label)) -}}

@@ -13,15 +13,18 @@
 {{- end -}}
 {{- $short := strings.TrimSuffix "." $authors -}}
 {{- $first := $short -}}
+{{- $etal := false -}}
 {{- with $names -}}
   {{- $first = index . 0 -}}
   {{- $short = $first -}}
-  {{- if or (ge (len .) 3) (in $authors "others") (in $authors "...") (in $authors "…") -}}
+  {{- if or (ge (len .) 3) (findRE `\bothers\b` $authors) (in $authors "...") (in $authors "…") -}}
     {{- $short = printf "%s et al." $first -}}
+    {{- $etal = true -}}
   {{- else if eq (len .) 2 -}}
     {{- $short = printf "%s & %s" $first (index . 1) -}}
   {{- end -}}
 {{- end -}}
+{{- if not $names -}}{{- $names = slice $first -}}{{- end -}}
 {{- $url := "" -}}
 {{- $urls := findRE `https?://[^\s<>]+` $plain -}}
 {{- with $urls -}}{{- $url = index . 0 -}}{{- end -}}
@@ -29,4 +32,4 @@
 {{- if not $url -}}
   {{- with findRE `10\.[0-9]{4,9}/[^\s<>]+` $plain 1 -}}{{- $url = printf "https://doi.org/%s" (index . 0) -}}{{- end -}}
 {{- end -}}
-{{- return (dict "author" $short "first" $first "year" $year "url" (strings.TrimRight ".,;" $url) "plain" $plain) -}}
+{{- return (dict "author" $short "names" $names "etal" $etal "first" $first "year" $year "url" (strings.TrimRight ".,;" $url) "plain" $plain) -}}

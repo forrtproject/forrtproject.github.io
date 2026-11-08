@@ -11,7 +11,7 @@
   {{- with index $bib $key -}}
     {{- $meta := partialCached "citations/metadata" . . -}}
     {{- $.Page.Store.SetInMap "citations" $key (dict "key" $key "apa" . "sort" (lower $meta.plain)) -}}
-    <a class="cite" href="#ref-{{ $key }}" data-cite="{{ $key }}">{{ $meta.author }}{{ if $narrative }} ({{ $meta.year }}){{ else }}, {{ $meta.year }}{{ end }}</a>
+    <a class="cite" href="#ref-{{ $key }}" data-cite="{{ $key }}">{{ if $narrative }}{{ replace $meta.author " & " " and " }} ({{ $meta.year }}){{ else }}{{ $meta.author }}, {{ $meta.year }}{{ end }}</a>
   {{- else -}}
     {{- warnf "Unknown citation key %q on %s" $key $.Page.File.Path -}}
     [{{ $key }}]

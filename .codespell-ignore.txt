@@ -99,3 +99,6 @@ sie
 tru
 ublication
 doubleclick
+
+# German glossary label
+Referenz

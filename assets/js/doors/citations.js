@@ -7,6 +7,7 @@ const entries = [...document.querySelectorAll('[data-reference]')];
 const references = new Map(entries.map((entry) => [entry.dataset.reference, entry]));
 const termReferences = entries.filter((entry) => entry.closest('.glossary-layout')).map((entry) => ({
   key: entry.dataset.reference, first: entry.dataset.firstAuthor, year: entry.dataset.year,
+  authors: JSON.parse(entry.dataset.authors), etal: entry.dataset.etal === 'true',
 }));
 
 document.querySelectorAll('.term-definition,.term-alt-definition').forEach((definition) => {

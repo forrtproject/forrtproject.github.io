@@ -4,7 +4,8 @@
    registerPopover(selector, (trigger) => contentNode | null, {label, hover = false})
    delegates click/Enter; opt-in hover opens after 250ms, closes after 200ms away from both.
    A null builder leaves the original link alone. Hover never takes focus; other opens focus
-   the first control. closePopover() restores focus to the trigger. No feature data lives here. */
+   the first control. label is required by both opening APIs. closePopover() restores focus
+   to the trigger, including outside-click dismissal as specified. No feature data lives here. */
 let current = null;
 let opening;
 let closing;
