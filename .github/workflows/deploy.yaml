@@ -65,7 +65,7 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           search_artifacts: true
           branch: main  # only main's runs feed deploys; branch test runs must not (#960)
-          if_no_artifact_found: warn
+          if_no_artifact_found: fail  # continue-on-error is set; failure triggers the fallback below
 
       # =======================
       # Data Processing (Fallback)
@@ -93,6 +93,8 @@ jobs:
           # Always regenerate from main: deploys use main's data only (#960)
           REF="main"
 
+          # Only runs created from now on can be the one this job dispatches
+          SINCE=$(date -u -d '-5 seconds' +%Y-%m-%dT%H:%M:%SZ)
           echo "🚀 Dispatching data-processing workflow for ref: $REF because artifact was missing"
           curl -s -X POST \
             -H "Authorization: Bearer $GITHUB_TOKEN" \
@@ -115,7 +117,7 @@ jobs:
           while [ $attempts -lt $max_attempts ]; do
             # Get the latest run triggered by workflow_dispatch
             runs_json=$(curl -s -H "Authorization: Bearer $GITHUB_TOKEN" -H "Accept: application/vnd.github+json" \
-              "https://api.github.com/repos/${{ github.repository }}/actions/workflows/data-processing.yml/runs?event=workflow_dispatch&branch=$REF&per_page=1")
+              "https://api.github.com/repos/${{ github.repository }}/actions/workflows/data-processing.yml/runs?event=workflow_dispatch&branch=$REF&created=%3E%3D$SINCE&per_page=1")
             
             run_id=$(echo "$runs_json" | jq -r '.workflow_runs[0].id')
             status=$(echo "$runs_json" | jq -r '.workflow_runs[0].status')
