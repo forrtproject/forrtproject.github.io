@@ -66,6 +66,18 @@ def _without_edit_date(tags):
     return [re.sub(r'"dateModified":\s*"[^"]*",?', "", tag) for tag in tags if not tag.startswith("article:modified_time")]
 
 
+_IMAGE_SIZE = re.compile(r"^(og:image:width|og:image:height)=")
+
+
+def _without_same_image_size(before, after):
+    """A share image kept at the same address may change size (#993); drop its width and height."""
+    images = lambda tags: [tag for tag in tags if tag.startswith("og:image=")]  # noqa: E731
+    if images(before) and images(before) == images(after):
+        before = [tag for tag in before if not _IMAGE_SIZE.match(tag)]
+        after = [tag for tag in after if not _IMAGE_SIZE.match(tag)]
+    return before, after
+
+
 def compare_heads(reference, candidate, allowed=frozenset()):
     """Return {path: (only_before, only_after)} for pages whose SEO tags differ."""
     changes = {}
@@ -73,8 +85,7 @@ def compare_heads(reference, candidate, allowed=frozenset()):
         if path not in candidate or is_allowed(path, allowed):
             continue
         # A page's modified date follows its last edit, which is the sitemap check's concern.
-        before = _without_edit_date(tags)
-        after = _without_edit_date(candidate[path])
+        before, after = _without_same_image_size(_without_edit_date(tags), _without_edit_date(candidate[path]))
         if before != after:
             before, after = set(before), set(after)
             changes[path] = (sorted(before - after), sorted(after - before))

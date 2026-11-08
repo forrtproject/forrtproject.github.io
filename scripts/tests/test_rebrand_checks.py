@@ -227,6 +227,17 @@ class CompareTests(unittest.TestCase):
         )
         self.assertEqual(drops, [("term", "DefinedTerm", 5, 4)])
 
+    def test_same_share_image_may_change_size(self):
+        before = ["og:image=https://forrt.org/a.webp", "og:image:width=12695", "og:image:height=9492"]
+        after = ["og:image=https://forrt.org/a.webp", "og:image:width=2400", "og:image:height=1795"]
+        self.assertEqual(compare_heads({"p": before}, {"p": after}), {})
+
+    def test_a_different_share_image_still_counts(self):
+        before = ["og:image=https://forrt.org/a.webp", "og:image:width=100"]
+        after = ["og:image=https://forrt.org/b.webp", "og:image:width=200"]
+        self.assertEqual(compare_heads({"p": before}, {"p": after}),
+                         {"p": (sorted(before), sorted(after))})
+
     def test_heads_report_only_differences(self):
         changes = compare_heads({"a": ["x", "y"], "b": ["z"]}, {"a": ["x", "w"], "b": ["z"]})
         self.assertEqual(changes, {"a": (["y"], ["w"])})
