@@ -115,6 +115,13 @@ class PageParser(HTMLParser):
                 self.h1_texts.append("".join(self._h1_buffer).strip())
                 self._h1_buffer = []
 
+    def close(self):
+        super().close()
+        # A script left open at the end of the file still counts.
+        if self._inline_script is not None:
+            self.largest_inline_script = max(self.largest_inline_script, self._inline_script)
+            self._inline_script = None
+
     def handle_data(self, data):
         if self._inline_script is not None:
             self._inline_script += len(data.encode("utf-8"))
@@ -182,6 +189,7 @@ def load_pages(public_dir):
             parser = PageParser()
             with open(full, encoding="utf-8", errors="replace") as handle:
                 parser.feed(handle.read())
+            parser.close()
             pages.append(Page(os.path.relpath(full, public_dir), parser))
     pages.sort(key=lambda page: page.path)
     return pages

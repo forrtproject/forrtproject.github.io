@@ -49,6 +49,10 @@ class InlineScriptCheck(unittest.TestCase):
         data = "x" * (seo.MAX_INLINE_SCRIPT + 1)
         self.assertEqual(self.failures("<script>window.DATA = '%s';</script>" % data), ["index.html (200 KB)"])
 
+    def test_unclosed_inline_data_fails(self):
+        data = "x" * (seo.MAX_INLINE_SCRIPT + 1)
+        self.assertEqual(self.failures("<script>window.DATA = '%s';" % data), ["index.html (200 KB)"])
+
 
 if __name__ == "__main__":
     unittest.main()

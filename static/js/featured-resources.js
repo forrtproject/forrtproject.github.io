@@ -35,19 +35,23 @@
   }
 
   /** Returns a function that fetches the publication cards once and merges them into idx
-   *  (featured entries take precedence). It always resolves, even if the fetch fails. */
+   *  (featured entries take precedence). It always resolves; after a failed fetch the
+   *  next call tries again. */
   function pubCardLoader(idx, url) {
     var pending = null;
     return function () {
       if (!pending) {
         pending = !url ? Promise.resolve() : fetch(url)
-          .then(function (res) { return res.ok ? res.json() : {}; })
+          .then(function (res) {
+            if (!res.ok) throw new Error('HTTP ' + res.status);
+            return res.json();
+          })
           .then(function (cards) {
             Object.keys(cards || {}).forEach(function (doi) {
               if (!idx[doi]) idx[doi] = cards[doi];
             });
           })
-          .catch(function () {});
+          .catch(function () { pending = null; });
       }
       return pending;
     };
@@ -62,10 +66,17 @@
     var closeBtn = backdrop ? backdrop.querySelector('.ref-popup-close') : null;
     if (!backdrop || !body) return;
 
-    function open(doi) {
+    var latest = null;  // the reference asked for last, so a slow fetch can't open an older one
+
+    function open(doi, trigger) {
+      latest = doi;
       var r = resourceIdx[doi];
       if (!r) {
-        loadPubCards().then(function () { if (resourceIdx[doi]) open(doi); });
+        if (trigger) trigger.setAttribute('aria-busy', 'true');
+        loadPubCards().then(function () {
+          if (trigger) trigger.removeAttribute('aria-busy');
+          if (latest === doi && resourceIdx[doi]) open(doi);
+        });
         return;
       }
       var html = '';
@@ -132,7 +143,7 @@
       var trigger = e.target.closest('.fr-ref-trigger[data-doi]');
       if (trigger) {
         e.preventDefault();
-        open(trigger.getAttribute('data-doi'));
+        open(trigger.getAttribute('data-doi'), trigger);
         return;
       }
       // Copy buttons inside popup
@@ -386,18 +397,20 @@
 
     // Export BibTeX
     if (exportBtn) exportBtn.addEventListener('click', function () {
-      var list = getList();
-      var bibtex = list.map(function (doi) {
-        var r = resourceIdx[doi];
-        return r && r.bibtex ? r.bibtex : '% No BibTeX available for DOI: ' + doi;
-      }).join('\n\n');
-      var blob = new Blob([bibtex], { type: 'text/plain;charset=utf-8' });
-      var url = URL.createObjectURL(blob);
-      var a = document.createElement('a');
-      a.href = url;
-      a.download = 'forrt-reading-list.bib';
-      a.click();
-      URL.revokeObjectURL(url);
+      loadPubCards().then(function () {
+        var list = getList();
+        var bibtex = list.map(function (doi) {
+          var r = resourceIdx[doi];
+          return r && r.bibtex ? r.bibtex : '% No BibTeX available for DOI: ' + doi;
+        }).join('\n\n');
+        var blob = new Blob([bibtex], { type: 'text/plain;charset=utf-8' });
+        var url = URL.createObjectURL(blob);
+        var a = document.createElement('a');
+        a.href = url;
+        a.download = 'forrt-reading-list.bib';
+        a.click();
+        URL.revokeObjectURL(url);
+      });
     });
 
     // Download PDF
@@ -521,20 +534,22 @@
         pdfBtn.innerHTML = origHTML;
       }
 
-      // Load jsPDF from CDN if not already loaded
-      if (window.jspdf) {
-        generatePDF();
-      } else {
-        var script = document.createElement('script');
-        script.src = '/vendor/assets/jspdf/2.5.1/jspdf.umd.min.js';
-        script.onload = generatePDF;
-        script.onerror = function () {
-          pdfBtn.disabled = false;
-          pdfBtn.innerHTML = origHTML;
-          alert('Could not load PDF library. Please check your internet connection.');
-        };
-        document.head.appendChild(script);
-      }
+      // Load jsPDF if not already loaded, once the publication cards are in
+      loadPubCards().then(function () {
+        if (window.jspdf) {
+          generatePDF();
+        } else {
+          var script = document.createElement('script');
+          script.src = '/vendor/assets/jspdf/2.5.1/jspdf.umd.min.js';
+          script.onload = generatePDF;
+          script.onerror = function () {
+            pdfBtn.disabled = false;
+            pdfBtn.innerHTML = origHTML;
+            alert('Could not load PDF library. Please check your internet connection.');
+          };
+          document.head.appendChild(script);
+        }
+      });
     });
 
     // Initial state
