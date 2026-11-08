@@ -8,3 +8,9 @@ a.gloss-term:hover,
 a.gloss-term:focus {
   color: var(--edu);
 }
+.doors-popover .gloss-popover-title {
+  font-family: var(--display);
+  font-size: 1.1rem;
+  font-weight: 500;
+  margin: 0 0 6px;
+}
