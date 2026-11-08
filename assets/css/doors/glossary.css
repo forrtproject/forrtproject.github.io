@@ -1,0 +1,10 @@
+/* Explicit glossary links keep the surrounding text colour. */
+a.gloss-term {
+  color: inherit;
+  text-decoration: underline dotted 2px var(--edu);
+  text-underline-offset: 3px;
+}
+a.gloss-term:hover,
+a.gloss-term:focus {
+  color: var(--edu);
+}

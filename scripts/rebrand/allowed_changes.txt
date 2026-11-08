@@ -31,3 +31,4 @@ post/*/featured_hu.png           # The same
 ai-metascience/featured_hu.png   # The same
 coc/index.html  # Its title was empty (" | FORRT"), and it now says Code of Conduct
 about/charity/gep/index.html  # #973: redirect from the address printed in the GEP PDF to /about/charity/, not a page
+data/glossary-terms.*.json  # Build-time English glossary lookup, fetched on first term interaction (#227); not a page

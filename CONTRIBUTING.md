@@ -50,6 +50,10 @@ Preserve the YAML/TOML front matter at the top of the file and existing Hugo sho
 
 To set a short note beside the text, put `{{% callout title="A title" %}}Your note{{% /callout %}}` just before the paragraph it goes with. On articles and most other text pages it sits in the right-hand column on wide screens, and in the text on phones and on pages set to full width. `title` is optional, and `tone="example"` or `tone="warning"` changes its colour. Keep it short: a long note runs on past the text it goes with.
 
+### Linking glossary terms
+
+On hand-written pages, use `{{< term "Preregistration" >}}` to link an English glossary term. To change the displayed wording, use `{{< term "Preregistration" "preregistered" >}}`. Titles are matched without regard to case. Mark only the first occurrence of each term on a page, and keep existing resource links intact. The link works without JavaScript. Unknown terms render as plain text and produce a Hugo build warning; check the [English glossary](https://forrt.org/glossary/english/) for the exact title. Do not add these shortcodes to generated content.
+
 ## Local Development Setup
 
 Choose the setup method that suits your workflow.

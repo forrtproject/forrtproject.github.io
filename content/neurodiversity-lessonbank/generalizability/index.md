@@ -10,7 +10,7 @@ Duration: 60 minutes
 
 Learning Objectives:
 
-- Understand the concept of generalizability in research
+- Understand the concept of {{< term "Generalizability" "generalizability" >}} in research
 - Recognize the factors that contribute to the generalizability crisis
 - Discuss the implications of the generalizability crisis in various fields
 

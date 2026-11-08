@@ -35,7 +35,7 @@ We made a distinction between "[Open and Reproducible Science](/summaries/open-r
 
 FORRT’s summaries are a community-curated resource that aims to satisfy three of [FORRT’s Goals](/about/mission/): 
 *   Support scholars in their efforts to learn and stay up-to-date on best practices regarding open and reproducible research;
-*   Facilitating conversations about the ethics and social impact of teaching substantive topics with due regard to scientific openness, epistemic uncertainty and the credibility revolution;
+*   Facilitating conversations about the ethics and social impact of teaching substantive topics with due regard to scientific openness, epistemic uncertainty and the {{< term "Credibility revolution" "credibility revolution" >}};
 *   Foster social justice through the democratization of scientific educational resources and its pedagogies.
 
 and four of [FORRT’s Mission](/about/mission/):

@@ -32,7 +32,7 @@ projects: []
 
 ### Main Text
 
-The replication crisis has raised many questions for researchers, but it also poses unique challenges for those teaching about science and the scientific process.  We now know that many scientific studies cannot be accurately reproduced or their findings replicated, and this has raised concerns about the validity and reliability of scientific research, leading to calls for increased transparency and reproducibility in scientific inquiry. 
+The replication crisis has raised many questions for researchers, but it also poses unique challenges for those teaching about science and the scientific process.  We now know that many scientific studies cannot be accurately reproduced or their findings replicated, and this has raised concerns about the validity and reliability of scientific research, leading to calls for increased transparency and {{< term "Reproducibility" "reproducibility" >}} in scientific inquiry.
 
 For those involved in teaching science, it is therefore not possible to simply continue as we have been, for example, accepting and presenting published scientific works as the “truth” or final word on any given phenomenon. Rather, we need to take a step back and teach students about the entirety of the research process, both in its idealised form, and addressing the complex reality of a scientific process that is impacted by cognitive biases, human behaviour, and incentive structures. 
 
@@ -47,7 +47,7 @@ In exposing students to open research and to questions of research integrity, th
 #### The Course Content 
 The content presented here was jointly developed with colleagues at Lancaster University (Dr. Marina Bazhydai, Dr. Sally Linkenauger, Dr. Neil McLatchie), as part of two undergraduate psychology modules, formally listed as Research Integrity and Open Science I (PSYC123) and Research Integrity and Open Science II (PSYC124). 
 
-Because the courses assume no knowledge of the research process, the course first focusses on the scientific method, thinking about experimental design, and questions of confounds, reliability, and validity. Once we have that under our belts we move on to contrasting “traditional” approaches to research vs an “open science” approach, and cover topics of study preregistration, replications, and sample size considerations. 
+Because the courses assume no knowledge of the research process, the course first focusses on the scientific method, thinking about experimental design, and questions of confounds, reliability, and validity. Once we have that under our belts we move on to contrasting “traditional” approaches to research vs an “open science” approach, and cover topics of study {{< term "Preregistration" "preregistration" >}}, replications, and sample size considerations.
 
 We then turn to some of the thornier questions science and scientists have been faced with: How do we determine what is true in science? How do we know which theories are well supported by evidence and which ones are not? How can we tell if researchers are trying to pull the wool over our eyes? To start to think about these questions we look at learning how to spot and avoid questionable research practices, in favour of practices that are open, transparent and reproducible. In this way, we think about some of the problems faced by researchers, such as cognitive biases, researcher flexibility in reporting outcomes, and even fraud. We ask how we can assess research findings in the face of such problems?
 
