@@ -97,3 +97,4 @@ class HugoMetadataTests(unittest.TestCase):
             raw = (self.root / "public" / image["url"].removeprefix("/rebrand-doors/")).read_bytes()
             self.assertEqual(raw[:8], b"\x89PNG\r\n\x1a\n")
             self.assertEqual(struct.unpack(">II", raw[16:24]), (7, 5))
+            self.assertIn(raw[25], (4, 6), "Transparent source must retain a PNG alpha channel")

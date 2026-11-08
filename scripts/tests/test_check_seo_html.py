@@ -73,6 +73,15 @@ class DescriptionURLReport(unittest.TestCase):
                 self.assertEqual(seo.main(public), 0)
             self.assertIn("pages whose meta description contains a raw URL: 1", output.getvalue())
 
+    def test_nonindexable_descriptions_are_not_reported(self):
+        for exclusion in ("<meta name='robots' content='noindex'>",
+                          "<meta http-equiv='refresh' content='0;url=/other/'>",
+                          "<link rel='canonical' href='https://example.org/other/'>"):
+            with self.subTest(exclusion=exclusion):
+                page = page_from_html("<meta name='description' content='See https://example.org'>" + exclusion)
+                self.assertFalse(page.indexable)
+                self.assertEqual(seo.check_description_urls([page]), [])
+
 
 class ShareImageMetadataCheck(unittest.TestCase):
     def page(self, **overrides):

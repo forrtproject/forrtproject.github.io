@@ -75,6 +75,8 @@ def _social_derivative(original, derivative):
         return False
     if not before.path.lower().endswith(".webp") or not after.path.lower().endswith((".png", ".jpg", ".jpeg")):
         return False
+    if not re.search(r"_hu_?[0-9a-f]{8,}$", os.path.splitext(unquote(after.path))[0]):
+        return False
     # Hugo retains the source basename and adds a processing hash. Static sources
     # enter the pipeline under social/; preview prefixes and all other path parts stay.
     def stem(path):
@@ -96,6 +98,13 @@ def _equivalent_social_images(before, after):
         if len(old) != 1 or len(new) != 1 or not _social_derivative(old[0], new[0]):
             continue
         companions = {key + ":" + name for name in ("width", "height", "type")}
+        old_keys = [tag.partition("=")[0] for tag in before if tag.partition("=")[0] in companions]
+        new_keys = [tag.partition("=")[0] for tag in after if tag.partition("=")[0] in companions]
+        # Open Graph needs all three fields. Twitter emits none, but any supplied
+        # companions must remain present exactly once on both sides.
+        if (sorted(old_keys) != sorted(new_keys) or len(set(old_keys)) != len(old_keys)
+                or (key == "og:image" and set(old_keys) != companions)):
+            continue
         before = [tag for tag in before if tag.partition("=")[0] not in companions]
         after = [key + "=" + old[0] if tag.startswith(key + "=") else tag
                  for tag in after if tag.partition("=")[0] not in companions]

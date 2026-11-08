@@ -287,6 +287,23 @@ class CompareTests(unittest.TestCase):
         after = self.social_tags("https://example.org/social/img/source_hu_0123456789abcdef.png", "image/png")
         self.assertIn("a", compare_heads({"a": before}, {"a": after}))
 
+    def test_social_derivatives_require_processing_hash(self):
+        before = self.social_tags("https://example.org/img/source.webp")
+        for image in ("https://example.org/img/source.png", "https://example.org/social/img/source.png"):
+            with self.subTest(image=image):
+                self.assertIn("a", compare_heads({"a": before}, {"a": self.social_tags(image, "image/png")}))
+
+    def test_social_derivative_companions_cannot_disappear(self):
+        before = self.social_tags("https://example.org/img/source.webp")
+        after = self.social_tags("https://example.org/social/img/source_hu_0123456789abcdef.png", "image/png")
+        for key in ("og:image:width", "og:image:height", "og:image:type"):
+            for side in ("before", "after"):
+                with self.subTest(key=key, side=side):
+                    old = [tag for tag in before if side != "before" or not tag.startswith(key + "=")]
+                    new = [tag for tag in after if side != "after" or not tag.startswith(key + "=")]
+                    self.assertIn("a", compare_heads({"a": old}, {"a": new}))
+        self.assertIn("a", compare_heads({"a": before + ["twitter:image:width=100"]}, {"a": after}))
+
 
 class InventoryTests(unittest.TestCase):
     def test_template_groups(self):

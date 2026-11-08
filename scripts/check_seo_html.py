@@ -373,7 +373,7 @@ def check_description_entities(pages):
 
 def check_description_urls(pages):
     return [p.path for p in pages
-            if any(DESCRIPTION_URL.search(d) for d in p.descriptions)]
+            if p.indexable and any(DESCRIPTION_URL.search(d) for d in p.descriptions)]
 
 
 def check_share_image_metadata(pages):
