@@ -1665,7 +1665,6 @@ h1.clusters-site-heading.clusters-hub-page__title {
 }
 .fr-ref-trigger[aria-busy="true"] {
   cursor: progress;
-  opacity: 0.6;
 }
 .fr-ref-trigger svg {
   width: 11px;
