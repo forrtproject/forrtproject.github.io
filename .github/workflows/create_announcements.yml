@@ -49,7 +49,7 @@ jobs:
           path: .prev
           github_token: ${{ secrets.GITHUB_TOKEN }}
           search_artifacts: true
-          branch: main  # only main's runs feed deploys; branch test runs must not (#960)
+          branch: ${{ github.ref_name }}  # compare with this branch's own previous run; deploys take main's only (#960)
           if_no_artifact_found: warn
 
       - name: Seed previous hash
