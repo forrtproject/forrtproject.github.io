@@ -7,6 +7,11 @@ resources/directory.json     # The directory's filter data (D16, #868)
 resources/search.json        # The directory's search data, fetched on first search (D16, #868)
 resources/index.html         # Became a list page for its pager, so its SEO tags gain CollectionPage
 home/7-newsletter.md.old     # A retired draft that Hugo copied out by accident, not a page
+resources/resource.py  # #976: generator script (or draft) Hugo published by accident, not a page
+summaries/summaries.py  # #976: generator script (or draft) Hugo published by accident, not a page
+glossary/_create_glossaries.py  # #976: generator script (or draft) Hugo published by accident, not a page
+glossary/_build_references.py  # #976: generator script (or draft) Hugo published by accident, not a page
+replication-hub/submit/submit.mdOUT  # #976: generator script (or draft) Hugo published by accident, not a page
 data/pub_cards.*.json        # #993: the clusters pages' publication cards, fetched on demand instead of inlined
 about/visitors/index.html    # Its generated description quotes the stats table, whose link text lost "https://" for the preview
 js/load-theme.js                 # The theme's day/night script, gone with the theme's look
