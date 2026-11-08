@@ -22,3 +22,4 @@ post/*/featured_hu.jpg           # The page's resized image is now WebP, so its 
 post/*/featured_hu.png           # The same
 ai-metascience/featured_hu.png   # The same
 coc/index.html  # Its title was empty (" | FORRT"), and it now says Code of Conduct
+about/charity/gep/index.html  # #973: redirect from the address printed in the GEP PDF to /about/charity/, not a page
