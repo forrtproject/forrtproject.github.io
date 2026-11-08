@@ -101,7 +101,7 @@ Reflect on how you see or identify yourself in relation to these dimensions. Whi
 
 **Reading:**
 
-(to be be done before or after the lesson)
+(to be done before or after the lesson)
 
 Jason, Leonard A.; Glantsman, Olya; O'Brien, Jack F.; and Ramian, Kaitlyn N., "Introduction to Community Psychology: Becoming an Agent of Change" (2019). College of Science and Health Full Text Publications. 1. https://via.library.depaul.edu/cshtextbooks/1
 

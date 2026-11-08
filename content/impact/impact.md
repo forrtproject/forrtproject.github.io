@@ -79,7 +79,7 @@ To review and synthesize the evidence that investigates whether embedding open a
 
 Our review of the evidence is summarized in a manuscript entitled *Teaching open and reproducible scholarship: a critical review of the evidence base for current pedagogical methods and their outcomes*. This describes the available (empirical) evidence of the impact and importance of integrating open scholarship into higher education, its benefits and challenges within three areas: students’ (a) scientific literacy; (b) engagement with science; and (c) attitudes towards science.
 
-Our manuscript has been **published**!. Cite as:
+Our manuscript has been **published**! Cite as:
 
 > Pownall, M., Azevedo, F., König, L. M., Slack, H. R., Evans, T. R., Flack, Z., ... & FORRT. (2023). Teaching open and reproducible scholarship: a critical review of the evidence base for current pedagogical methods and their outcomes. *Royal Society Open Science*, *10*(5), Article 221255. https://doi.org/10.1098/rsos.221255
 

@@ -64,7 +64,7 @@ Hence, we at FORRT, have devised ***4 ways*** to be proactive in the outreach to
 <br>
 
 * FORRT's ***Equity in Open Scholarship***
-   - Together with the <a href="https://www.sparksociety.org/">SPARK Society</a> and <a href="hhttps://improvingpsych.org/">SIPS</a>, we are aligning social justice & representation with open scholarship, rigor, & reproducible research*, where our aim is to focus our discussion on the needs and concerns of researchers from historically marginalized groups.
+   - Together with the <a href="https://www.sparksociety.org/">SPARK Society</a> and <a href="https://improvingpsych.org/">SIPS</a>, we are aligning social justice & representation with open scholarship, rigor, & reproducible research, where our aim is to focus our discussion on the needs and concerns of researchers from historically marginalized groups.
    - Please check our [web portal for advocacy, events, and collated resources](/equityinos).
 
 <br>
@@ -80,7 +80,7 @@ Hence, we at FORRT, have devised ***4 ways*** to be proactive in the outreach to
    - FORRT also aims to document this process and give proper commendation to those Mentors willing to give this a try so that our community is also supportive of researchers’ visibility, prestige, tenure and promotion reviews.
        - If you are interested in serving as a Bachelor's or Master's Mentor, [please fill in the G-form below "For mentors" (in Red-ish)](#form-mentor) where we ask you a few questions about your expertise and how you would like to volunteer. 
        - If you are interested in getting help as a Mentee, [please fill in the G-form below "For mentees" (in Green-ish)](#form-mentee).
-       - How does it work? For every person who fill in the Mentees form, FORRT community will try to find a volunteer Mentor with appropriate skills and fitting expertise. Provided that a match can be found, we will contact the Mentor for their approval, and then put mentor and menteee in contact with each other.
+       - How does it work? For every person who fills in the Mentees form, the FORRT community will try to find a volunteer Mentor with appropriate skills and fitting expertise. Provided that a match can be found, we will contact the Mentor for their approval, and then put mentor and mentee in contact with each other.
 
 <br>
 
@@ -88,7 +88,7 @@ Hence, we at FORRT, have devised ***4 ways*** to be proactive in the outreach to
    - Underprivileged and underrepresented minorities who are early-career researchers suffer racism, discrimination and significant barriers to their professional development, and as 'structural racism will not go away without intentional action from those who have historically wielded the most power' (Roberson, 2020, p. 773), we at FORRT would like to be pro-active and contribute positively to a fairer academia. FORRT aims to promote the thriving of underprivileged and underrepresented students, trainees and early career scholars by serving as a link between willing mentors and mentees in their engagement with academia, its several duties (e.g., application materials, grant/funding proposals, academic writing, research development, statistical analyses, etc.), as well as open and reproducible science practices. It is FORRT's goal to chip away at the barriers that exist and to promote a more inclusive environment for all (Roberson, 2020). 
        - If you are interested in serving as a Mentor (providing help), [please fill in the G-form below "For mentors" (in Red-ish)](#form-mentor) where we ask you a few questions about your expertise and how you want to volunteer. 
        - If you are interested in getting help as a Mentee, [please fill in the G-form below "For mentees" (in Green-ish)](#form-mentee).
-       - How does it work? For every person who fill in the Mentees form, FORRT community will try to find a volunteer Mentor with appropriate skills and fitting expertise. Provided that a match can be found, we will contact the Mentor for their approval, and then put mentor and menteee in contact with each other.
+       - How does it work? For every person who fills in the Mentees form, the FORRT community will try to find a volunteer Mentor with appropriate skills and fitting expertise. Provided that a match can be found, we will contact the Mentor for their approval, and then put mentor and mentee in contact with each other.
 
 
 <br>

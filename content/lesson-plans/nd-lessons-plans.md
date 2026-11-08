@@ -73,7 +73,7 @@ We compiled lesson plans and activities, and categorized them based on their the
 
 You can find *all lesson plans* [in this OSF repository](https://osf.io/th254/), and here's one example about [Interpreting effect sizes and confidence intervals](LessonPlans1.pdf) and another on [Prediction Markets](LessonPlans2.pdf). 
 
-Each has suitable context: (e.g., entry-level/undergraduate/postgraduate), total time: (e.g., 1 hour, 2 hours, 1 day, etc.), pre-requisites, related resources (e.g. slides, assignment materials, lecture recordings, etc), learning outcomes, brokendown per activity length (10min, 30min, etc.). Here's all the topics that we prepared Lesson Plans far:
+Each has suitable context: (e.g., entry-level/undergraduate/postgraduate), total time: (e.g., 1 hour, 2 hours, 1 day, etc.), pre-requisites, related resources (e.g. slides, assignment materials, lecture recordings, etc), learning outcomes, broken down per activity length (10min, 30min, etc.). Here are all the topics for which we have prepared Lesson Plans so far:
 
 1. [Interpreting effect sizes and confidence intervals](https://osf.io/8jmbu/)
 1. [Registered Replication Report](https://osf.io/2znr4/)
@@ -90,8 +90,8 @@ Each has suitable context: (e.g., entry-level/undergraduate/postgraduate), total
 1. [Diversity and research](../neurodiversity-lessonbank/diversity-and-research/)
 1. [Oppression and Power](../neurodiversity-lessonbank/masterstools/)
 1. [Generalizability Crisis](../neurodiversity-lessonbank/generalizability/)
-1. The myth of the normality How neurodiversity dismantles the generalisability crisis[Text 1](https://journalofethics.ama-assn.org/article/myth-normal-brain-embracing-neurodiversity/2015-04) [Text 2](https://www.cambridge.org/core/journals/behavioral-and-brain-sciences/article/abs/generalizability-crisis/AD386115BA539A759ACB3093760F4824)
-1. [The myth of the normality How neurodiversity dismantles the generalisability crisis - Lesson Plan](../neurodiversity-lessonbank/Lesson_Plans/The_myth_of_the_normality_How_neurodiversity_dismantles_the_generalisability_crisis.pdf)
+1. The myth of the normality: How neurodiversity dismantles the generalisability crisis [Text 1](https://journalofethics.ama-assn.org/article/myth-normal-brain-embracing-neurodiversity/2015-04) [Text 2](https://www.cambridge.org/core/journals/behavioral-and-brain-sciences/article/abs/generalizability-crisis/AD386115BA539A759ACB3093760F4824)
+1. [The myth of the normality: How neurodiversity dismantles the generalisability crisis - Lesson Plan](../neurodiversity-lessonbank/Lesson_Plans/The_myth_of_the_normality_How_neurodiversity_dismantles_the_generalisability_crisis.pdf)
 1. [Neurodiversity Culture and Teaching - text](http://web.archive.org/web/20240802211120/https://www.rapidintellect.com/AEQweb/ed-5971.pdf) Lesson Plan Pdf[Neurodiversity Culture and Teaching - Lesson Plan](../neurodiversity-lessonbank/Lesson_Plans/Neuro_para.pdf)
 1. [Avoiding ableist language to diversify OS - text](https://www.liebertpub.com/doi/10.1089/aut.2020.0014)Lesson Plan pdf[Avoiding ableist language to diversify OS](../neurodiversity-lessonbank/Lesson_Plans/Avoiding_ableist%20language_to_diversify_open_scholarship.pdf)
 1. How can Open Scholarship address structural ableism and racism? [Text 1](https://www.apa.org/science/about/psa/2019/02/open-science) [Text 2](https://doi.org/10.1080/09638288.2023.2173315) LessonPlan Pdf[How can Open Scholarship address structural ableism and racism?](../neurodiversity-lessonbank/Lesson_Plans/How_can_we_Open%20Scholarship_to_address_the%20structural_ableism_and_racism_in_our_society.pdf)
@@ -156,6 +156,6 @@ These resources were created as part of the Society for Improving Psychological 
 
 #### Contributorship 
 
-In line with principles enshrined in FORRT, this google-sheet is an open online contributorship project. The work of all contributors are valued and are formally recognized. With this, we hope to expand the scope and diversity of FORRT’s mission and its team.
+In line with principles enshrined in FORRT, this google-sheet is an open online contributorship project. The work of all contributors is valued and formally recognized. With this, we hope to expand the scope and diversity of FORRT’s mission and its team.
 
 <br>

@@ -68,6 +68,6 @@ But FORRT has offered me so much more than just web-development experience. Thro
 
 FORRT’s commitment to pedagogical reform and inclusive open scholarship is truly inspiring. I’m grateful for the amazing people behind this initiative and for every opportunity to grow alongside them.
 
-**To anyone considering joining FORRT: jump in! You’ll learn more, contribute more, and have far more fun than you ever imagined. Cheers!”**
+**To anyone considering joining FORRT: jump in! You’ll learn more, contribute more, and have far more fun than you ever imagined. Cheers!**
 
 ### **---Richard Dushime**

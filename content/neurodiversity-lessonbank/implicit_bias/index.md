@@ -156,7 +156,7 @@ Posts are moderated so they may not appear immediately.
 
 **Reading:**
 
-(to be be done before or after the lesson)
+(to be done before or after the lesson)
 
 Bottema-Beutel, K., Kapp, S. K., Lester, J. N., Sasson, N. J., & Hand, B. N. (2021). Avoiding Ableist Language: Suggestions for Autism Researchers. Autism in adulthood : challenges and management, 3(1), 18–29. https://doi.org/10.1089/aut.2020.0014
 
