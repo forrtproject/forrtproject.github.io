@@ -29,6 +29,7 @@ Regenerated on demand; the output is committed:
 | `data/clusters_v4.json` | `scripts/parse_clusters_to_sheet.py --export-json` | Clusters v4.1 Google Doc |
 | `content/clusters/cluster-N/index.md` | `scripts/generate_cluster_pages.py` | `data/clusters_v4.json` |
 | `content/about/steering-committee/index.md` (rewritten on re-run) | `scripts/generate_sc_profiles.py` | Steering committee sheets |
+| `content/clusters/FORRT_Clusters.webp` (the /clusters/ share image; the on-page map itself is drawn at build time) | `scripts/render_clusters_share_image.py <build-dir>`, after rebuilding | `layouts/partials/clusters/map.html` and `data/clusters_v4.json` |
 
 Announcement posts (`content/post/<Slug>/`) come from the "FORRT Announcements" sheet via `scripts/create_announcements.R` in `create_announcements.yml`; `deploy.yaml` replaces the committed post bundles with that artifact.
 
