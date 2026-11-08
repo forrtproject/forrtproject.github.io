@@ -1663,6 +1663,9 @@ h1.clusters-site-heading.clusters-hub-page__title {
   color: #b8336a;
   border-bottom-color: rgba(184,51,106,0.4);
 }
+.fr-ref-trigger[aria-busy="true"] {
+  cursor: progress;
+}
 .fr-ref-trigger svg {
   width: 11px;
   height: 11px;

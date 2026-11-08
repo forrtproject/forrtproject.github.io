@@ -33,6 +33,8 @@ Hard checks (exit 1 if any fails):
       CollectionPage data matching their HTML cards (#868).
   13. PNG/JPEG social images have matching Open Graph/Twitter URLs, type and
       positive dimensions (#927). Unsupported formats remain report-only.
+  14. No page inlines more than 200 KB in one <script> (#993). Large data belongs in a
+     separate file the page fetches when it needs it.
 
 Report-only sections (never fail): pages with no <h1>, the
 site-wide share of images that carry both width and height, pages whose
@@ -51,6 +53,7 @@ from html.parser import HTMLParser
 from urllib.parse import unquote, urlparse
 
 MAX_LISTED = 20
+MAX_INLINE_SCRIPT = 200_000  # bytes in one inline <script> (#993)
 # Markup that survived flattening, e.g. an indented HTML block rendered as code.
 HTML_TAG = re.compile(r"</?[A-Za-z][A-Za-z0-9]*(\s[^<>]*)?/?>")
 # Attribute values arrive already unescaped, so any entity left in them was
@@ -78,9 +81,13 @@ class PageParser(HTMLParser):
         self._in_title = False
         self._in_resource_heading = False
         self._jsonld_buffer = None
+        self.largest_inline_script = 0
+        self._inline_script = None
 
     def handle_starttag(self, tag, attrs):
         attrs = dict(attrs)
+        if tag == "script" and not attrs.get("src"):
+            self._inline_script = 0
         if tag == "script" and attrs.get("type") == "application/ld+json":
             self._jsonld_buffer = []
         elif tag == "link" and attrs.get("rel") == "canonical":
@@ -110,6 +117,9 @@ class PageParser(HTMLParser):
             self.code_classes.append(attrs.get("class") or "")
 
     def handle_endtag(self, tag):
+        if tag == "script" and self._inline_script is not None:
+            self.largest_inline_script = max(self.largest_inline_script, self._inline_script)
+            self._inline_script = None
         if tag == "script" and self._jsonld_buffer is not None:
             self.jsonld.append("".join(self._jsonld_buffer))
             self._jsonld_buffer = None
@@ -125,9 +135,18 @@ class PageParser(HTMLParser):
                 self.h1_texts.append("".join(self._h1_buffer).strip())
                 self._h1_buffer = []
 
+    def close(self):
+        super().close()
+        # A script left open at the end of the file still counts.
+        if self._inline_script is not None:
+            self.largest_inline_script = max(self.largest_inline_script, self._inline_script)
+            self._inline_script = None
+
     def handle_data(self, data):
         if self._in_title:
             self.title += data
+        if self._inline_script is not None:
+            self._inline_script += len(data.encode("utf-8"))
         if self._jsonld_buffer is not None:
             self._jsonld_buffer.append(data)
         if self._h1_depth > 0:
@@ -160,6 +179,7 @@ class Page:
         self.indexable = not self.noindex and not refresh and not elsewhere
         self.jsonld = parser.jsonld
         self.canonical = parser.canonical
+        self.largest_inline_script = parser.largest_inline_script
 
     def loads(self, needle):
         return any(needle in url for url in self.urls)
@@ -193,6 +213,7 @@ def load_pages(public_dir):
             parser = PageParser()
             with open(full, encoding="utf-8", errors="replace") as handle:
                 parser.feed(handle.read())
+            parser.close()
             pages.append(Page(os.path.relpath(full, public_dir), parser))
     pages.sort(key=lambda page: page.path)
     return pages
@@ -451,6 +472,9 @@ def check_resource_pagination(pages):
         if problems:
             failures.append("%s (%s)" % (p.path, ", ".join(problems)))
     return failures
+def check_inline_scripts(pages):
+    return ["%s (%d KB)" % (p.path, p.largest_inline_script // 1000) for p in pages
+            if p.largest_inline_script > MAX_INLINE_SCRIPT]
 
 
 def description_report(pages, home):
@@ -499,6 +523,7 @@ def main(public_dir):
         "11. no page has several <h1>": [p.path for p in pages if len(p.h1_texts) > 1],
         "12. resource subsets have consistent, unique metadata": check_resource_pagination(pages),
         "13. compatible social images have type, dimensions and matching URLs": check_share_image_metadata(pages),
+        "14. no inline <script> over 200 KB": check_inline_scripts(pages),
     }
     conditional = check_conditional_assets(pages)
     results["3. conditional highlight.js / mermaid loading"] = [

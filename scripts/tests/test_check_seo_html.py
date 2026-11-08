@@ -154,5 +154,23 @@ class ResourcePaginationCheck(unittest.TestCase):
         self.assertIn("not self-canonical", seo.check_resource_pagination(pages)[0])
 
 
+class InlineScriptCheck(unittest.TestCase):
+    def failures(self, body):
+        with tempfile.TemporaryDirectory() as public:
+            (Path(public) / "index.html").write_text("<html><body>%s</body></html>" % body, encoding="utf-8")
+            return seo.check_inline_scripts(seo.load_pages(public))
+
+    def test_small_inline_and_external_scripts_pass(self):
+        self.assertEqual(self.failures("<script>var a = 1;</script><script src='big.js'></script>"), [])
+
+    def test_inline_data_over_the_limit_fails(self):
+        data = "x" * (seo.MAX_INLINE_SCRIPT + 1)
+        self.assertEqual(self.failures("<script>window.DATA = '%s';</script>" % data), ["index.html (200 KB)"])
+
+    def test_unclosed_inline_data_fails(self):
+        data = "x" * (seo.MAX_INLINE_SCRIPT + 1)
+        self.assertEqual(self.failures("<script>window.DATA = '%s';" % data), ["index.html (200 KB)"])
+
+
 if __name__ == "__main__":
     unittest.main()
