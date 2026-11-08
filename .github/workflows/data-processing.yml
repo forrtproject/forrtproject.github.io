@@ -21,8 +21,9 @@ name: Data Processing
 # 7. Contributor analysis (R) - monthly
 #
 # Outputs:
-# - `data-artifact`, which deploy.yaml unpacks over the checkout before Hugo builds
-# - A commit of the generated files to the build-resources branch
+# - On main, `data-artifact`, which deploy.yaml unpacks before Hugo builds
+# - On other refs, `data-artifact-preview`, for testing without production publishing
+# - On main, a commit of the generated files to the build-resources branch
 # - PRs for GA data (monthly) and glossary regeneration (on request)
 #
 # The processed data is used throughout the Hugo website for dynamic content.
