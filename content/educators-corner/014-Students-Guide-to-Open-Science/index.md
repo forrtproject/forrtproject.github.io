@@ -74,7 +74,7 @@ In addition to these pedagogic resources, the book also contains top tips for im
 The replication crisis and open science reform is not currently embedded within the teaching of psychology. It is my hope that with all of these wonderful new and ever-evolving resources, today’s students become critical consumers of science and pave the way to creating a truly robust, transparent, replicable, reproducible and representative psychological science.
 
 ## Author Bio & Contact: 
-Dr Charlotte Pennington is a Lecturer in Psychology at Aston University, Birmingham, a Fellow of the Higher Education Academy, and a member of FORRT. Her book, “*A Student’s Guide to Open Science: Using the Replication Crisis to Reform Psychology*” is available in all good bookstores and inspection copies are available from [McGraw Hill](https://www.mheducation.com.au/a-student-s-guide-to-open-science-using-the-replication-crisis-to-reform-psychology-9780335251162-aus) for review. If you have trouble accessing it, please let Charlotte know via the contact details below and she will do her best to help. 
+Dr Charlotte Pennington is a Lecturer in Psychology at Aston University, Birmingham, a Fellow of the Higher Education Academy, and a member of FORRT. Her book, “*A Student’s Guide to Open Science: Using the Replication Crisis to Reform Psychology*” is available in all good bookstores and inspection copies are available from [McGraw Hill](https://www.mheducation.co.uk/a-student-s-guide-to-open-science-using-the-replication-crisis-to-reform-psychology-9780335251162-emea-group) for review. If you have trouble accessing it, please let Charlotte know via the contact details below and she will do her best to help.
 
 Email: [c.pennington@aston.ac.uk](mailto:c.pennington@aston.ac.uk)
 
