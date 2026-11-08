@@ -852,29 +852,6 @@
   line-height: 1.7;
 }
 
-/* Thumbnail in the hero */
-.intro-thumbnail {
-  width: 100%;
-  height: auto;
-  border-radius: 8px;
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
-  border: 2px solid rgba(255, 255, 255, 0.8);
-  background: white;
-  padding: 3px;
-  cursor: pointer;
-  transition: box-shadow 0.2s ease, transform 0.2s ease;
-}
-
-.intro-thumbnail:hover {
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.18);
-  transform: scale(1.02);
-}
-
-.intro-thumbnail-wrapper {
-  position: relative;
-  display: inline-block;
-}
-
 /* Partner logo beside the disciplines intro (plain image, no lightbox) */
 .disciplines-partner {
   text-align: center;
@@ -965,77 +942,28 @@
   }
 }
 
-.intro-caption {
-  margin: 0.5rem 0 0;
-  color: var(--soft);
-  font-size: 16px;
-  line-height: 1.4;
-}
-
-.lightbox-trigger {
-  display: block;
-  text-decoration: none;
-  position: relative;
-}
-
-/* "Click to enlarge" hint */
-.lightbox-hint {
-  display: flex;
+/* Clusters map: wheel and legend (partials/clusters/map.html) */
+.clusters-map {
+  display: grid;
+  grid-template-columns: minmax(220px, 320px) 1fr;
+  gap: 1.5rem 2.5rem;
   align-items: center;
-  justify-content: center;
-  gap: 0.35rem;
-  margin-top: 0.5rem;
-  font-size: 0.78rem;
-  color: var(--soft);
-  transition: opacity 0.2s;
+  margin: 1.75rem 0 0.5rem;
 }
-
-.lightbox-trigger:hover .lightbox-hint {
-  opacity: 1;
-}
-
-/* Lightbox overlay */
-.lightbox-overlay {
-  display: none;
-  position: fixed;
-  inset: 0;
-  z-index: 9999;
-  background: rgba(0, 0, 0, 0.8);
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
-}
-
-.lightbox-overlay.active {
-  display: flex;
-}
-
-.lightbox-image {
-  max-width: 90vw;
-  max-height: 90vh;
-  border-radius: 8px;
-  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.4);
-  background: white;
-  padding: 6px;
-}
-
-.lightbox-close {
-  position: absolute;
-  top: 1rem;
-  right: 1.5rem;
-  font-size: 2.5rem;
-  color: #fff;
-  background: none;
-  border: none;
-  cursor: pointer;
-  line-height: 1;
-  opacity: 0.8;
-  transition: opacity 0.2s;
-}
-
-.lightbox-close:hover {
-  opacity: 1;
-}
+.clusters-map__wheel { width: 100%; height: auto; display: block; }
+.clusters-map__segment path { transition: opacity 0.15s; }
+.clusters-map__segment text { fill: #fff; font: 700 21px var(--text); text-anchor: middle; pointer-events: none; }
+.clusters-map.is-pointing .clusters-map__segment:not(.is-active) path { opacity: 0.3; }
+.clusters-map__hub { fill: var(--ink); font: 500 38px var(--display); text-anchor: middle; }
+.clusters-map__hub-sub { fill: var(--soft); font: 400 21px var(--text); text-anchor: middle; }
+.clusters-map__legend ol { list-style: none; margin: 0; padding: 0; columns: 2; column-gap: 1.5rem; }
+.clusters-map__legend li { break-inside: avoid; padding: 6px 8px; border-radius: var(--r-small); }
+.clusters-map__legend li.is-active { background: var(--surface); }
+.clusters-map__legend a { display: flex; align-items: flex-start; gap: 0.6rem; color: var(--ink); text-decoration: none; line-height: 1.3; }
+.clusters-map__legend a:hover .clusters-map__name, .clusters-map__legend a:focus-visible .clusters-map__name { text-decoration: underline; text-underline-offset: 3px; }
+.clusters-map__chip { flex: 0 0 1.7rem; height: 1.7rem; border-radius: 50%; color: #fff; font-weight: 700; font-size: 0.85rem; display: inline-flex; align-items: center; justify-content: center; }
+.clusters-map__name { padding-top: 0.15rem; }
+.clusters-map__count { display: block; margin-left: 2.3rem; font-size: 0.85rem; color: var(--soft); }
 
 /* Stack on small screens */
 @media (max-width: 768px) {
@@ -1056,6 +984,14 @@
   .intro-paragraph {
     font-size: 0.9rem;
   }
+
+  .clusters-map { grid-template-columns: 1fr; }
+  .clusters-map__wheel { max-width: 280px; margin: 0 auto; }
+  .clusters-map__legend ol { columns: 1; }
+  .clusters-map__legend li { padding: 4px 6px; }
+  .clusters-map__count { display: inline; margin-left: 0.4rem; }
+  .clusters-map__count::before { content: "· "; }
+  .clusters-map__legend li { display: flex; flex-wrap: wrap; align-items: baseline; }
 }
 
 
@@ -2341,7 +2277,7 @@ h1.clusters-site-heading.clusters-hub-page__title {
 .cluster-section{border:0!important;border-radius:var(--r-large)!important;box-shadow:none!important}
 .acc-count,.cluster-stats,.cluster-description{color:var(--ink)!important;opacity:1!important}
 .clusters-head h1.clusters-site-heading{font-size:clamp(36px,4.2vw,58px);line-height:1.06}
-.clusters-intro a:not(.lightbox-trigger):not(.btn),.disciplines-attribution a,.sc-description a,.disciplines-leads a{text-decoration:underline;text-underline-offset:3px}
+.clusters-intro a:not(.btn, .clusters-map a),.disciplines-attribution a,.sc-description a,.disciplines-leads a{text-decoration:underline;text-underline-offset:3px}
 
 .sidebar-header:has(.sidebar-close){display:flex;align-items:center;justify-content:space-between;gap:8px}
 .sidebar-close{padding:8px 14px;background:#fff;border:1.5px solid var(--ink);border-radius:999px;color:var(--ink);font:600 15px/1.2 var(--text);letter-spacing:0;text-transform:none;cursor:pointer}

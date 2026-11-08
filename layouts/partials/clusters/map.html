@@ -1,0 +1,72 @@
+{{/* Clusters map: a wheel with one segment per cluster, plus a legend, both linking to the
+     clusters. Drawn from data/clusters_v4.json at build time, so it always matches the list.
+     Expects dict: link_mode ("anchor" for #cluster-N on /clusters/, else /clusters/cluster-N/). */}}
+{{ $clusters := hugo.Data.clusters_v4.clusters }}
+{{ $palette := (partial "clusters/colors.html").arrowColors }}
+{{ $n := len $clusters }}
+{{ $cx := 200.0 }}{{ $cy := 200.0 }}{{ $R := 196.0 }}{{ $r := 104.0 }}
+{{ $gap := 1.2 }}{{/* degrees left blank between segments */}}
+{{ $step := div 360.0 $n }}
+{{ $items := slice }}
+{{ range $i, $c := $clusters }}
+  {{ $num := int $c.number }}
+  {{ $href := cond (eq $.link_mode "anchor") (printf "#cluster-%d" $num) ((printf "/clusters/cluster-%d/" $num) | relURL) }}
+  {{ $a0 := math.ToRadians (add -90.0 (add (mul $i $step) (div $gap 2))) }}
+  {{ $a1 := math.ToRadians (add -90.0 (sub (mul (add $i 1) $step) (div $gap 2))) }}
+  {{ $mid := math.ToRadians (add -90.0 (mul (add $i 0.5) $step)) }}
+  {{ $path := printf "M%.2f %.2fA%.0f %.0f 0 0 1 %.2f %.2fL%.2f %.2fA%.0f %.0f 0 0 0 %.2f %.2fZ"
+      (add $cx (mul $R (math.Cos $a0))) (add $cy (mul $R (math.Sin $a0))) $R $R
+      (add $cx (mul $R (math.Cos $a1))) (add $cy (mul $R (math.Sin $a1)))
+      (add $cx (mul $r (math.Cos $a1))) (add $cy (mul $r (math.Sin $a1))) $r $r
+      (add $cx (mul $r (math.Cos $a0))) (add $cy (mul $r (math.Sin $a0))) }}
+  {{ $lr := div (add $R $r) 2 }}
+  {{ $items = $items | append (dict
+      "num" $num "name" $c.name "href" $href "path" $path
+      "color" (index $palette (mod $i (len $palette)))
+      "x" (add $cx (mul $lr (math.Cos $mid))) "y" (add $cy (mul $lr (math.Sin $mid)))
+      "subs" (len $c.sub_clusters)) }}
+{{ end }}
+<figure class="clusters-map" data-clusters-map>
+  {{/* The legend carries the links for keyboard and screen-reader users; the wheel repeats
+       them for pointer users only, so it is hidden from assistive technology. */}}
+  <svg class="clusters-map__wheel" viewBox="0 0 400 400" aria-hidden="true" focusable="false">
+    {{ range $items }}
+    <a href="{{ .href }}" class="clusters-map__segment" data-cluster="{{ .num }}" tabindex="-1">
+      <title>{{ .num }}. {{ .name }}</title>
+      <path d="{{ .path }}" style="fill: {{ .color | safeCSS }}"></path>
+      <text x="{{ printf "%.1f" .x }}" y="{{ printf "%.1f" .y }}" dy=".35em">{{ .num }}</text>
+    </a>
+    {{ end }}
+    <text class="clusters-map__hub" x="200" y="192">FORRT</text>
+    <text class="clusters-map__hub-sub" x="200" y="224">{{ $n }} clusters</text>
+  </svg>
+  <figcaption class="clusters-map__legend">
+    <h2 class="visually-hidden">The {{ $n }} clusters</h2>
+    <ol>
+      {{ range $items }}
+      <li data-cluster="{{ .num }}">
+        <a href="{{ .href }}"><span class="clusters-map__chip" style="background: {{ .color | safeCSS }}" aria-hidden="true">{{ .num }}</span><span class="clusters-map__name">{{ .name }}</span></a>
+        <span class="clusters-map__count">{{ .subs }} sub-clusters</span>
+      </li>
+      {{ end }}
+    </ol>
+  </figcaption>
+</figure>
+<script>
+(function () {
+  /* Highlight a cluster in the wheel and the legend together. */
+  var map = document.currentScript.previousElementSibling;
+  var parts = map.querySelectorAll('[data-cluster]');
+  function show(num) {
+    map.classList.toggle('is-pointing', !!num);
+    parts.forEach(function (el) { el.classList.toggle('is-active', el.getAttribute('data-cluster') === num); });
+  }
+  parts.forEach(function (el) {
+    var num = el.getAttribute('data-cluster');
+    el.addEventListener('mouseenter', function () { show(num); });
+    el.addEventListener('mouseleave', function () { show(null); });
+    el.addEventListener('focusin', function () { show(num); });
+    el.addEventListener('focusout', function () { show(null); });
+  });
+})();
+</script>
