@@ -13,7 +13,7 @@
 {{- $name := `(?:(?:[Vv]an|[Vv]on|[Dd]e|[Dd]en|[Dd]er|[Dd]el|[Ll]a|[Ll]e|[Dd]a|[Dd]i)\s+)*[\p{Lu}][\p{L}\p{M}'’.-]*(?:\s+[\p{Lu}][\p{L}\p{M}'’.-]*)*` -}}
 {{- $others := printf `(?:\s+et\s+al\.?|(?:,\s*%s)*(?:,?\s+(?:&|and)\s+%s))?` $name $name -}}
 {{- $date := `(?:[0-9]{4}[a-z]?|n\.d\.)` -}}
-{{- $pattern := printf `(%s)%s(?:,\s*(%s)|\s+\((%s)\))` $name $others $date $date -}}
+{{- $pattern := printf `(%s)%s(?:(?:,\s*|\s+)(%s)|\s+\((%s)\))` $name $others $date $date -}}
 {{- $diagnostics := slice -}}
 {{- range findRE $pattern $text | uniq -}}
   {{- $first := replaceRE $pattern "$1" . -}}
@@ -26,7 +26,7 @@
   {{- else if gt $reference.count 1 -}}
     {{- $reason = "ambiguous first author and year" -}}
   {{- else -}}
-    {{- $label := replaceRE (printf `(?:,\s*%s|\s+\(%s\))$` $date $date) "" . | partial "citations/author-label" -}}
+    {{- $label := replaceRE (printf `(?:(?:,\s*|\s+)%s|\s+\(%s\))$` $date $date) "" . | partial "citations/author-label" -}}
     {{- $short := partial "citations/author-label" $reference.meta.author -}}
     {{- $full := partial "citations/author-label" (delimit $reference.meta.names " ") -}}
     {{- if and (ne $label $short) (ne $label $full) -}}{{- $reason = "author list does not match the listed reference" -}}{{- end -}}

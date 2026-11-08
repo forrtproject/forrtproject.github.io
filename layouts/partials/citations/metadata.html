@@ -11,6 +11,11 @@
   {{- $name := replaceRE `^,\s*(?:&\s*)?` "" . -}}
   {{- $names = $names | append (strings.TrimSpace (index (split $name ",") 0)) -}}
 {{- end -}}
+{{/* Citation.js also emits corporate author lists ending in "& others" without initials. */}}
+{{- if and (not $names) (findRE `(?:,\s*|\s+)&\s*others\.?$` $authors) -}}
+  {{- $corporate := replaceRE `(?:,\s*|\s+)&\s*others\.?$` "" $authors -}}
+  {{- range split $corporate "," -}}{{- $names = $names | append (strings.TrimSpace .) -}}{{- end -}}
+{{- end -}}
 {{- $short := strings.TrimSuffix "." $authors -}}
 {{- $first := $short -}}
 {{- $etal := false -}}

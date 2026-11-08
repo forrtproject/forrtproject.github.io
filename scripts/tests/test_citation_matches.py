@@ -22,6 +22,10 @@ const refs = [
 const keys = (text, listed = refs) => citationMatches(text, listed).map((m) => m.key);
 assert.deepEqual(keys('(Duval & Tweedie, 2000; Nosek et al., 2018)'), ['duval', 'nosek']);
 assert.deepEqual(keys('Duval and Tweedie (2000); Nosek et al. (2018)'), ['duval', 'nosek']);
+assert.deepEqual(keys('(Duval & Tweedie 2000; Nosek et al. 2018)'), ['duval', 'nosek']);
+assert.deepEqual(keys('Nosek et al. 2018a; Unknown et al. 2099'), []);
+assert.deepEqual(keys('Smith and Jones 2020', [{key: 's', first: 'Smith', year: '2020'}]), []);
+assert.deepEqual(keys('(Example Collaboration et al. 2019)', [{key: 'c', first: 'Example Collaboration', year: '2019', authors: ['Example Collaboration'], etal: true}]), ['c']);
 assert.deepEqual(keys('(Duval, Tweedie, and Smith, 2000)'), []);
 assert.deepEqual(keys('(Duval, Tweedie, and Smith, 2000)', [{...refs[0], authors: ['Duval', 'Tweedie', 'Smith'], etal: true}]), ['duval']);
 assert.deepEqual(keys('(Duval & Other, 2000; Duval et al., 2000)'), []);
