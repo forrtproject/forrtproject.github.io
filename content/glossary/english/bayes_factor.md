@@ -33,5 +33,6 @@
     "language": "english",
     "aliases": [
         "/glossary/bayes_factor"
-    ]
+    ],
+    "lastmod": "2026-08-05"
 }

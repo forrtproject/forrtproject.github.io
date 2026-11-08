@@ -30,5 +30,6 @@
     "language": "english",
     "aliases": [
         "/glossary/orcid_open_researcher_and_contributor_id_"
-    ]
+    ],
+    "lastmod": "2026-08-05"
 }

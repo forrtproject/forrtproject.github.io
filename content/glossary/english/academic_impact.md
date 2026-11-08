@@ -29,5 +29,6 @@
     "language": "english",
     "aliases": [
         "/glossary/academic_impact"
-    ]
+    ],
+    "lastmod": "2026-08-05"
 }

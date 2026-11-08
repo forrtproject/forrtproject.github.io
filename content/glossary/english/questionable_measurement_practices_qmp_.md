@@ -31,5 +31,6 @@
     "language": "english",
     "aliases": [
         "/glossary/questionable_measurement_practices_qmp_"
-    ]
+    ],
+    "lastmod": "2026-08-05"
 }

@@ -29,5 +29,6 @@
     "language": "english",
     "aliases": [
         "/glossary/sherpa_romeo"
-    ]
+    ],
+    "lastmod": "2026-08-05"
 }

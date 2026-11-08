@@ -26,5 +26,6 @@
     "language": "english",
     "aliases": [
         "/glossary/likelihood_principle"
-    ]
+    ],
+    "lastmod": "2026-08-05"
 }

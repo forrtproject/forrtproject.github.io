@@ -31,5 +31,6 @@
     "language": "english",
     "aliases": [
         "/glossary/research_workflow"
-    ]
+    ],
+    "lastmod": "2026-08-05"
 }

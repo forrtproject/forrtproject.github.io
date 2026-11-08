@@ -23,5 +23,6 @@
     "language": "english",
     "aliases": [
         "/glossary/post_publication_peer_review"
-    ]
+    ],
+    "lastmod": "2026-08-05"
 }
