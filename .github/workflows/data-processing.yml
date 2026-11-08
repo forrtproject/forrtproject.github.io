@@ -21,8 +21,9 @@ name: Data Processing
 # 7. Contributor analysis (R) - monthly
 #
 # Outputs:
-# - `data-artifact`, which deploy.yaml unpacks over the checkout before Hugo builds
-# - A commit of the generated files to the build-resources branch
+# - On main, `data-artifact`, which deploy.yaml unpacks before Hugo builds
+# - On other refs, `data-artifact-preview`, for testing without production publishing
+# - On main, a commit of the generated files to the build-resources branch
 # - PRs for GA data (monthly) and glossary regeneration (on request)
 #
 # The processed data is used throughout the Hugo website for dynamic content.
@@ -524,7 +525,8 @@ jobs:
         id: upload-artifact
         uses: actions/upload-artifact@v7
         with:
-          name: data-artifact
+          # Production downloads by name, so branch test runs need a separate name.
+          name: ${{ github.ref == 'refs/heads/main' && 'data-artifact' || 'data-artifact-preview' }}
           path: |
             data-artifact-manifest.json
             content/contributors/tenzing.md
@@ -544,7 +546,7 @@ jobs:
       # Commit generated files to build-resources branch (via worktree)
       #========================================
       - name: Commit to build-resources branch
-        if: github.event_name != 'pull_request'
+        if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
         continue-on-error: true
         run: |
           echo "📝 Committing generated files to build-resources branch via worktree..."
@@ -726,7 +728,7 @@ jobs:
       # Trigger the deploy workflow to publish updated data
       #========================================
       - name: Trigger deployment
-        if: github.event_name != 'pull_request' && inputs.skip_deploy != true
+        if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request' && inputs.skip_deploy != true
         run: |
           echo "🚀 Triggering deployment workflow..."
           curl -s -X POST \

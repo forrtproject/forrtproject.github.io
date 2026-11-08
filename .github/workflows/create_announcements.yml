@@ -6,12 +6,13 @@ name: Create announcements
 # commits to main and never runs the full data-processing pipeline.
 #
 # Flow:
-#   1. Download the previous run's announcements artifact (for the cached
+#   1. Download this branch's previous announcements artifact (for the cached
 #      sheet hash) to decide whether anything changed.
 #   2. Run scripts/create_announcements.R. It no-ops (exits early) when the
 #      sheet hash is unchanged.
-#   3. If — and only if — the sheet changed, upload content/post as the
-#      `announcements-artifact` and fire the `data-update` repository_dispatch.
+#   3. If — and only if — the sheet changed, upload content/post as
+#      `announcements-artifact` on main or `announcements-artifact-preview`
+#      on other refs. Only main fires the `data-update` repository_dispatch.
 #
 # deploy.yaml downloads `announcements-artifact` and unpacks it over
 # content/post before the Hugo build (see "Apply announcements" there). The
@@ -45,7 +46,8 @@ jobs:
         continue-on-error: true
         with:
           workflow: create_announcements.yml
-          name: announcements-artifact
+          name: ${{ github.ref == 'refs/heads/main' && 'announcements-artifact' || 'announcements-artifact-preview' }}
+          branch: ${{ github.ref_name }}
           path: .prev
           github_token: ${{ secrets.GITHUB_TOKEN }}
           search_artifacts: true
@@ -107,14 +109,15 @@ jobs:
         if: steps.gen.outputs.changed == 'true'
         uses: actions/upload-artifact@v7
         with:
-          name: announcements-artifact
+          # Production downloads by name, so branch test runs need a separate name.
+          name: ${{ github.ref == 'refs/heads/main' && 'announcements-artifact' || 'announcements-artifact-preview' }}
           path: |
             announcements.tar.gz
             gs_announcement_hash.txt
           retention-days: 90
 
       - name: Trigger production deploy
-        if: steps.gen.outputs.changed == 'true'
+        if: github.ref == 'refs/heads/main' && steps.gen.outputs.changed == 'true'
         run: |
           curl -s -X POST \
             -H "Authorization: Bearer ${{ secrets.FORRT_PAT }}" \
