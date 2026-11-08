@@ -8,6 +8,7 @@ document.addEventListener('DOMContentLoaded', function() {
   var dailyData = {{ hugo.Data.ga_data.daily_visitors_yearly | jsonify | safeJS }};
   if (dailyData && dailyData.length) {
     dailyData.sort((a, b) => new Date(a.date) - new Date(b.date));
+    {{/* The workflow fetches just after midnight UTC. The latest available row is provisional (the day just ended, or partial current-day data), so it is dropped on purpose. */}}
     dailyData.pop();
     var labels = dailyData.map(function(entry) { return entry.date; });
     var dataPoints = dailyData.map(function(entry) { return entry.users; });
