@@ -93,8 +93,9 @@ jobs:
           # Always regenerate from main: deploys use main's data only (#960)
           REF="main"
 
-          # Only runs created from now on can be the one this job dispatches
-          SINCE=$(date -u -d '-5 seconds' +%Y-%m-%dT%H:%M:%SZ)
+          # The run this job dispatches is the first one newer than any that exists now
+          RUNS_URL="https://api.github.com/repos/${{ github.repository }}/actions/workflows/data-processing.yml/runs?event=workflow_dispatch&branch=$REF&per_page=100"
+          BEFORE=$(curl -s -H "Authorization: Bearer $GITHUB_TOKEN" -H "Accept: application/vnd.github+json" "$RUNS_URL" | jq '[.workflow_runs[].id] | max // 0')
           echo "🚀 Dispatching data-processing workflow for ref: $REF because artifact was missing"
           curl -s -X POST \
             -H "Authorization: Bearer $GITHUB_TOKEN" \
@@ -115,9 +116,9 @@ jobs:
           sleep 10
 
           while [ $attempts -lt $max_attempts ]; do
-            # Get the latest run triggered by workflow_dispatch
+            # The first run created after the dispatch is ours
             runs_json=$(curl -s -H "Authorization: Bearer $GITHUB_TOKEN" -H "Accept: application/vnd.github+json" \
-              "https://api.github.com/repos/${{ github.repository }}/actions/workflows/data-processing.yml/runs?event=workflow_dispatch&branch=$REF&created=%3E%3D$SINCE&per_page=1")
+              "$RUNS_URL" | jq --argjson before "$BEFORE" '{workflow_runs: [.workflow_runs[] | select(.id > $before)] | sort_by(.id)}')
             
             run_id=$(echo "$runs_json" | jq -r '.workflow_runs[0].id')
             status=$(echo "$runs_json" | jq -r '.workflow_runs[0].status')
