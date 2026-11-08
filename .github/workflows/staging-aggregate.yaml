@@ -284,6 +284,7 @@ jobs:
           path: .staging-data-artifact
           github_token: ${{ secrets.GITHUB_TOKEN }}
           search_artifacts: true
+          branch: main  # only main's runs feed deploys; branch test runs must not (#960)
           if_no_artifact_found: warn
 
       - name: Select newer committed or artifact data
@@ -310,11 +311,8 @@ jobs:
             exit 0
           fi
 
-          # Determine branch ref to dispatch (must be a branch or tag)
-          REF="${GITHUB_REF#refs/heads/}"
-          if [ -z "$REF" ]; then
-            REF="main"
-          fi
+          # Always regenerate from main: deploys use main's data only (#960)
+          REF="main"
 
           echo "🚀 Dispatching data-processing workflow for ref: $REF because artifact was missing"
           curl -s -X POST \
