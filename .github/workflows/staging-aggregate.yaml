@@ -286,7 +286,7 @@ jobs:
         with:
           workflow: data-processing.yml
           # Branch runs of data-processing.yml upload data-artifact-preview (#1030)
-          name: ${{ github.event.inputs.data_branch != '' && 'data-artifact-preview' || 'data-artifact' }}
+          name: ${{ (github.event.inputs.data_branch != '' && github.event.inputs.data_branch != 'main') && 'data-artifact-preview' || 'data-artifact' }}
           path: .staging-data-artifact
           github_token: ${{ secrets.GITHUB_TOKEN }}
           search_artifacts: true
@@ -304,7 +304,7 @@ jobs:
       # Data Processing (Fallback)
       # =======================
       - name: Stop if the requested branch's data artifact is missing
-        if: steps.download-artifact.outcome == 'failure' && github.event.inputs.data_branch != ''
+        if: steps.download-artifact.outcome == 'failure' && github.event.inputs.data_branch != '' && github.event.inputs.data_branch != 'main'
         env:
           DATA_BRANCH: ${{ github.event.inputs.data_branch }}  # via env, never interpolated into the script
         run: |
@@ -313,7 +313,7 @@ jobs:
 
       - name: Run data processing if artifact missing
         id: data-processing
-        if: steps.download-artifact.outcome == 'failure' && github.event.inputs.data_branch == ''
+        if: steps.download-artifact.outcome == 'failure' && (github.event.inputs.data_branch == '' || github.event.inputs.data_branch == 'main')
         env:
           GITHUB_TOKEN: ${{ secrets.FORRT_PAT }}
         run: |
