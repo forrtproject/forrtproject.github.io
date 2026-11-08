@@ -31,7 +31,7 @@ This document describes the GitHub Actions workflows used in the FORRT website r
 
 Builds the Hugo site and deploys to GitHub Pages (`gh-pages` branch).
 
-It uses the newest `data-artifact` and `announcements-artifact` from runs on `main` only. A `data-processing.yml` or `create_announcements.yml` run dispatched from another branch, for example to test a pipeline change, produces an artifact that deploys and staging ignore (#960). To stage such an artifact, run `data-processing.yml` on the branch, then dispatch `staging-aggregate.yaml` with `data_branch` set to that branch (combine with `single_pr` to stage only the PR that changes the pipeline). Production never uses it. If no artifact is found, the fallback dispatches `data-processing.yml` on `main`.
+It uses the newest `data-artifact` and `announcements-artifact` from runs on `main` only. A `data-processing.yml` or `create_announcements.yml` run dispatched from another branch, for example to test a pipeline change, produces an artifact that production ignores, and staging ignores unless asked (#960). To stage such an artifact, run `data-processing.yml` on the branch, then dispatch `staging-aggregate.yaml` with `data_branch` set to that branch (combine with `single_pr` to stage only the PR that changes the pipeline). Production never uses it. If no artifact is found, the fallback dispatches `data-processing.yml` on `main`.
 
 ### [staging-aggregate.yaml](workflows/staging-aggregate.yaml)
 **Staging deployment for pull requests**
@@ -145,4 +145,5 @@ All workflows support `workflow_dispatch` for manual execution via GitHub Action
 | `cleanup-branches` | `dry_run` | Preview deletions without executing |
 | `staging-aggregate` | `force_deploy` | Deploy even with no PRs |
 | `staging-aggregate` | `single_pr` | Deploy only specified PR number |
+| `staging-aggregate` | `data_branch` | Use that branch's data artifact instead of main's |
 | `data-processing` | `skip_deploy` | Skip triggering production deploy |
